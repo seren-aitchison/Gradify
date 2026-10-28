@@ -20,6 +20,7 @@ assets/studio.js    Notes Studio: PDF or pasted notes → clean notes, flashcard
                     narrated video, chant and audio quiz (runs for real in the browser)
 assets/calendar.js  Plan: the time-blocking calendar
 assets/tree.js      Gradify Tree and Forest drawings
+assets/features.js  feature bubbles, the Gradify road, and the Gradify AI button in the corner
 assets/vendor/pdfjs pdf.js 3.11.174 (Apache 2.0) for reading PDFs in the browser
 docs/AI-PIPELINE.md how the full Notes Studio will work on Gradify AI
 assets/community.js Community: study group, weekly challenge, optional leaderboard

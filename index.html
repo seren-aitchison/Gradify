@@ -21,6 +21,7 @@
   <script type="module" src="assets/lifeos.js"></script>
   <script type="module" src="assets/nav.js"></script>
   <script type="module" src="assets/os.js"></script>
+  <script type="module" src="assets/features.js"></script>
 </head>
 <body>
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
@@ -32,6 +33,7 @@
         Gradify
       </a>
       <nav class="sections" aria-label="Sections">
+        <a href="#features">Features</a>
         <a href="#lifeos">LifeOS</a>
         <a href="#stage">Stage of life</a>
         <a href="#profession">Profession</a>
@@ -48,6 +50,8 @@
         </button>
       </div>
       <nav class="menu" id="menu" aria-label="Menu" hidden>
+        <a href="#features">All features</a>
+        <a href="#journey">The Gradify road</a>
         <span class="menu-label">LifeOS</span>
         <a href="#lifeos">Overview</a>
         <a href="#command">Today</a>
@@ -131,6 +135,30 @@
       </div>
     </section>
 
+
+
+    <!-- Every feature -->
+    <section class="showcase" id="features" aria-labelledby="features-title">
+      <div class="section-head">
+        <span class="badge"><span class="spark" aria-hidden="true"></span><span id="feature-count"></span></span>
+        <h2 id="features-title">Everything that makes Gradify work</h2>
+        <p>The same toolkit runs on every Gradify site and in the app. Tap a bubble to see what it does. The ones with a white dot you can try right now in the LifeOS preview.</p>
+      </div>
+      <div class="seg bubble-filter" id="bubble-filter" role="group" aria-label="Filter features"></div>
+      <div class="bubble-stage">
+        <div class="bubbles" id="bubbles"></div>
+        <aside class="panel glass bubble-detail" id="bubble-detail" aria-live="polite"></aside>
+      </div>
+    </section>
+
+    <!-- The Gradify road -->
+    <section class="journey" id="journey" aria-labelledby="journey-title">
+      <div class="section-head">
+        <h2 id="journey-title">The Gradify road</h2>
+        <p>From your first lesson to your first job. Scroll to drive it.</p>
+      </div>
+      <div class="road glass" id="road"></div>
+    </section>
 
     <!-- LifeOS preview (example data; rendered by assets/lifeos.js) -->
     <section class="lifeos" id="lifeos" aria-labelledby="lifeos-title">
@@ -563,6 +591,7 @@
       </div>
     </footer>
   </div>
+  <button type="button" class="ai-fab lg" id="ai-fab" aria-label="Ask Gradify AI"><span class="ai-av" aria-hidden="true"></span><span class="fab-txt">Ask Gradify AI</span></button>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
     if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));

@@ -34,6 +34,7 @@ export const GROUPS = [
       { n: "PharmaGradify", i: "pill", c: "f99246", d: "Medicinal chemistry, drug mechanisms, therapeutics and pharmacy exams.", u: "gradifypharma.com" },
       { n: "HealthGradify", i: "heartbeat", c: "0e98e5", d: "Health literacy, wellbeing, and the fundamentals of anatomy and physiology.", u: "gradifyhealth.com" },
       { n: "PsychGradify", i: "brain", c: "bbabbe", d: "Cognitive science, behaviour, research methods, statistics and psychology exams." },
+      { n: "InternshipGradify", i: "badge", c: "0aa4c9", d: "Internships and work experience, matched to what you've learned on Gradify." },
       { n: "EngineerGradify", i: "cog", c: "ff5600", d: "Maths, mechanics, materials, systems and engineering problem-solving.", u: "gradifyeng.com" },
     ],
   },
@@ -100,6 +101,7 @@ export const KEYWORDS = {
   SportGradify: "fitness gym exercise workout training running",
   CreateGradify: "creative creativity making crafts video",
   "TechGradify · ForgeLab": "coding programming python ai machine learning data science software developer forge",
+  InternshipGradify: "internship work experience placement job graduate scheme summer",
   Klerio: "contacts crm spreadsheet data cleaning",
 };
 

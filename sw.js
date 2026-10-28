@@ -4,7 +4,7 @@ const CACHE = "gradify-v3";
 const SHELL = [
   "./", "index.html", "manifest.webmanifest",
   "assets/styles.css", "assets/app.js", "assets/sites.js", "assets/icons.js", "assets/colour.js", "assets/nav.js",
-  "assets/os.js", "assets/lifeos.js", "assets/earth.js", "assets/plan.js", "assets/assistant.js", "assets/community.js", "assets/study.js", "assets/calendar.js", "assets/tree.js", "assets/studio.js", "assets/vendor/pdfjs/pdf.min.js", "assets/vendor/pdfjs/pdf.worker.min.js", "assets/favicon.svg", "assets/icons/icon-192.png", "assets/icons/icon-512.png",
+  "assets/os.js", "assets/lifeos.js", "assets/earth.js", "assets/plan.js", "assets/assistant.js", "assets/community.js", "assets/study.js", "assets/calendar.js", "assets/tree.js", "assets/studio.js", "assets/features.js", "assets/vendor/pdfjs/pdf.min.js", "assets/vendor/pdfjs/pdf.worker.min.js", "assets/favicon.svg", "assets/icons/icon-192.png", "assets/icons/icon-512.png",
 ];
 
 self.addEventListener("install", (e) => {

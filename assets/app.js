@@ -319,4 +319,4 @@ const spy = new IntersectionObserver((entries) => {
     for (const a of navLinks) a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id);
   }
 }, { rootMargin: "-45% 0px -50% 0px" });
-document.querySelectorAll(".group, #lifeos, #organisations, #everywhere, #roadmap, #faq").forEach((s) => spy.observe(s));
+document.querySelectorAll(".group, #features, #lifeos, #organisations, #everywhere, #roadmap, #faq").forEach((s) => spy.observe(s));

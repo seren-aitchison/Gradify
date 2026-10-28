@@ -3,7 +3,7 @@
 import { icon } from "./icons.js";
 
 const $ = (s, el = document) => el.querySelector(s);
-let ctx, joined = false, boardOn = false;
+let ctx, joined = false, boardOn = false, boardTab = "group";
 
 const MEMBERS = [
   { n: "Priya S.", c: "f055dd", xp: 610 }, { n: "Tom W.", c: "40d4b1", xp: 545 },
@@ -46,16 +46,30 @@ function renderChallenge() {
     <p class="sub">${done ? "Challenge complete. Nice work!" : `Resets on Monday. ${7 - week.length} ${7 - week.length === 1 ? "day" : "days"} left after today.`}</p>`;
 }
 
+// Friends Alex follows, and the school-wide board (example names)
+const FRIENDS = [
+  { n: "Sam R.", c: "ff8a3d", xp: 520 }, { n: "Leah M.", c: "a0ff74", xp: 300 }, { n: "Kofi A.", c: "6a60ff", xp: 470 },
+];
+const SCHOOL = [
+  { n: "Ella P.", c: "f055dd", xp: 1240 }, { n: "Noah B.", c: "40d4b1", xp: 1105 }, { n: "Amira H.", c: "ffc002", xp: 980 },
+  { n: "Ravi T.", c: "3c78d8", xp: 890 }, { n: "Grace O.", c: "e52153", xp: 860 }, { n: "Ben C.", c: "0e98e5", xp: 805 },
+  { n: "Isla F.", c: "8c27ca", xp: 760 }, { n: "Yusuf D.", c: "e69138", xp: 702 },
+];
 function renderBoard() {
-  const rows = [...MEMBERS, { n: "Alex (you)", c: "ffffff", xp: ctx.weekXp(), me: true }].sort((a, b) => b.xp - a.xp);
+  const pool = boardTab === "friends" ? FRIENDS : boardTab === "school" ? SCHOOL : MEMBERS;
+  const all = [...pool, { n: "Alex (you)", c: "ffffff", xp: ctx.weekXp(), me: true }].sort((a, b) => b.xp - a.xp);
+  // school board: top 5, then Alex's own row with the real rank
+  const rows = boardTab === "school" ? all.slice(0, 5).concat(all.findIndex((r) => r.me) >= 5 ? [all.find((r) => r.me)] : []) : all;
   const me = rows.findIndex((r) => r.me) + 1;
   $("#board").innerHTML = `
     <div class="panel-head"><div><span class="kicker">${icon("star")}Leaderboard</span><h3 class="big">Weekly XP</h3></div>
+      
       <label class="switch"><input type="checkbox" id="board-on" role="switch" ${boardOn ? "checked" : ""}><span class="sw-track lg" aria-hidden="true"><span class="sw-knob"></span></span><span>Show</span></label></div>
     ${boardOn ? `
-      <ol class="board">${rows.map((r, i) => `<li class="${r.me ? "me" : ""}"><span class="rank">${i + 1}</span><span class="av" style="--c:#${r.c}">${r.me ? "AM" : initials(r.n)}</span><span class="nm">${r.n}</span><b>${r.xp.toLocaleString("en-GB")} XP</b></li>`).join("")}</ol>
+      <div class="seg board-tabs" role="tablist" aria-label="Leaderboard">${[["group", "Study group"], ["friends", "Friends"], ["school", "School"]].map(([k, l]) => `<button type="button" class="chip" data-board="${k}" aria-pressed="${k === boardTab}">${l}</button>`).join("")}</div>
+      <ol class="board">${rows.map((r) => `<li class="${r.me ? "me" : ""}"><span class="rank">${all.indexOf(r) + 1}</span><span class="av" style="--c:#${r.c}">${r.me ? "AM" : initials(r.n)}</span><span class="nm">${r.n}</span><b>${r.xp.toLocaleString("en-GB")} XP</b></li>`).join("")}</ol>
       <button type="button" class="btn btn-ghost lg btn-sm" id="share">${icon("share")}<span>Share</span></button>
-      <p class="sub">Only your study group can see this. You can turn it off at any time.</p>` : `
+      <p class="sub">${boardTab === "school" ? `${all.length} students at your school use Gradify. ` : ""}Only people on this board can see your rank. Turn it off at any time.</p>` : `
       <p class="sub">Leaderboards are optional and off by default. Turn this on to compare weekly XP with your study group. You'd be number ${me} this week.</p>`}`;
 }
 
@@ -72,6 +86,8 @@ export function initCommunity(context) {
       renderGroup();
       return;
     }
+    const bt = e.target.closest("[data-board]");
+    if (bt) { boardTab = bt.dataset.board; renderBoard(); return; }
     if (e.target.closest("#share")) {
       const rank = [...MEMBERS.map((m) => m.xp), ctx.weekXp()].sort((a, b) => b - a).indexOf(ctx.weekXp()) + 1;
       const text = `I'm number ${rank} in my Gradify study group this week, with ${ctx.weekXp()} XP.`;
