@@ -18,6 +18,7 @@ assets/assistant.js Gradify AI preview (scripted replies worked out from the exa
 assets/os.js        LifeOS window: the sidebar views, and links that open the right view
 assets/capture.js   Capture: notes to flashcards and calendar dates (runs for real in the browser)
 assets/community.js Community: study group, weekly challenge, optional leaderboard
+assets/study.js     Study: the flashcard feed, with spaced repetition, overview and exam mode
 assets/nav.js       top bar search button, phone menu and the install-as-app button
 assets/icons/       app icons (PNG) for installing the site
 manifest.webmanifest + sw.js   make the site installable and let it open offline

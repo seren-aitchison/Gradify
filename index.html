@@ -56,6 +56,7 @@
         <a href="#plan">Path</a>
         <a href="#ai">Gradify AI</a>
         <a href="#path-panel">Learning path</a>
+        <a href="#study">Flashcard feed</a>
         <span class="menu-label">All sites</span>
         <a href="#stage">Stage of life</a>
         <a href="#profession">Profession</a>
@@ -147,6 +148,7 @@
           <button type="button" class="rail-btn" role="tab" data-view="path" aria-controls="view-path" aria-selected="false"><span class="rail-ico" data-icon="route"></span><span>Path</span></button>
           <button type="button" class="rail-btn" role="tab" data-view="ai" aria-controls="view-ai" aria-selected="false"><span class="rail-ico" data-icon="sparkles"></span><span>Gradify AI</span></button>
           <button type="button" class="rail-btn" role="tab" data-view="learn" aria-controls="view-learn" aria-selected="false"><span class="rail-ico" data-icon="book"></span><span>Learn</span></button>
+          <button type="button" class="rail-btn" role="tab" data-view="study" aria-controls="view-study" aria-selected="false"><span class="rail-ico" data-icon="layers"></span><span>Study</span></button>
           <button type="button" class="rail-btn" role="tab" data-view="capture" aria-controls="view-capture" aria-selected="false"><span class="rail-ico" data-icon="upload"></span><span>Capture</span></button>
           <button type="button" class="rail-btn" role="tab" data-view="community" aria-controls="view-community" aria-selected="false"><span class="rail-ico" data-icon="people"></span><span>Community</span></button>
           <button type="button" class="rail-btn" role="tab" data-view="settings" aria-controls="view-settings" aria-selected="false"><span class="rail-ico" data-icon="cog"></span><span>Settings</span></button>
@@ -207,6 +209,11 @@
       </div>
 
       <div class="areas" id="areas"></div>
+
+      <div class="panel glass tree-panel" id="tree">
+        <div class="panel-head"><div><h3>Gradify Tree</h3><p class="sub">Each branch is a connected site. Leaves grow with activity over the last 30 days, and the gold fruit are credentials you've earned.</p></div><span class="pill-dark" id="tree-level"></span></div>
+        <div class="tree-wrap" id="tree-svg"></div>
+      </div>
 
       <div class="panel glass stats-week" id="study-stats">
         <div class="panel-head"><div><h3>Study time</h3><p class="sub" id="study-sub"></p></div><span class="pill-dark">Last 8 weeks</span></div>
@@ -282,6 +289,22 @@
           <div class="rows" id="cred-list"></div>
           <p class="cred-note">Every certificate gets a unique ID and a public page, so an employer or university can check it's genuine in one click.</p>
         </div>
+      </div>
+        </section>
+        <section class="os-view " data-view="study" id="view-study" aria-label="Study" hidden>
+      <div class="panel glass study-panel" id="study">
+        <div class="panel-head study-head">
+          <div><h3>Flashcard feed</h3><p class="sub">Swipe through cards from all your Gradify sites, mixed with tips and bonus facts. Rate how well you knew each one and it comes back at the right time.</p></div>
+          <div class="study-tools">
+            <div class="seg" role="group" aria-label="View">
+              <button type="button" class="chip" data-mode="feed" aria-pressed="true">Feed</button>
+              <button type="button" class="chip" data-mode="overview" aria-pressed="false">Overview</button>
+            </div>
+            <label class="switch"><input type="checkbox" id="exam-mode" role="switch"><span class="sw-track lg" aria-hidden="true"><span class="sw-knob"></span></span><span>Exam mode</span></label>
+          </div>
+        </div>
+        <div class="study-progress"><span id="study-count"></span><span class="goal-bar"><i id="study-bar"></i></span></div>
+        <div id="study-body"></div>
       </div>
         </section>
         <section class="os-view " data-view="capture" id="view-capture" aria-label="Capture" hidden>
@@ -394,7 +417,7 @@
         <div class="panel glass device now"><span class="phase-tag">Now</span><h3>Web</h3><p>Every Gradify site, in any browser.</p></div>
         <div class="panel glass device now"><span class="phase-tag">Now</span><h3>Install as an app</h3><p>Add getgradify.com to your home screen or dock. It opens in its own window and works offline.</p><button type="button" class="btn btn-light lg btn-sm" id="install" hidden><span>Install Gradify</span></button><p class="sub" id="install-help"></p></div>
         <div class="panel glass device"><span class="phase-tag">Later</span><h3>iOS, Android and desktop</h3><p>Native apps for phones, tablets, Mac and Windows.</p></div>
-        <div class="panel glass device tablet-card"><span class="phase-tag">Later</span><h3>The Gradify study tablet</h3><p>A distraction-free tablet built for studying, with handwriting, focus mode and Gradify Earth.</p><div class="tablet" aria-hidden="true"><div class="tablet-screen"><i></i><i></i><i></i></div></div></div>
+        <div class="panel glass device tablet-card"><span class="phase-tag">Later</span><h3>Gradify Tab</h3><p>A study tablet. Write by hand, turn notes into flashcards, revise in focus mode and explore Gradify Earth, all synced to your account.</p><div class="tablet" aria-hidden="true"><div class="tablet-screen"><i></i><i></i><i></i></div></div></div>
       </div>
     </section>
 
@@ -440,7 +463,7 @@
             <li>Portals for universities, teachers, parents and employers</li>
             <li>A developer API</li>
             <li>Mobile and desktop apps</li>
-            <li>A dedicated Gradify study tablet</li>
+            <li>Gradify Tab, a dedicated study tablet</li>
           </ul>
         </article>
       </div>

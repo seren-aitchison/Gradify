@@ -92,8 +92,9 @@ export function initCapture(context) {
     if (add) {
       ctx.logActivity("MedGradify", `Made ${cards.length} flashcards from notes`, "capture", Math.min(40, cards.length * 5));
       ctx.addEvent({ in: 1, what: `Review ${cards.length} new flashcards`, site: "MedGradify", planned: true });
+      document.dispatchEvent(new CustomEvent("lifeos:cards", { detail: cards }));
       add.disabled = true;
-      add.querySelector("span").textContent = "Added ✓ First review is tomorrow";
+      add.querySelector("span").textContent = "Added ✓ They're in your flashcard feed";
       return;
     }
     const d = e.target.closest(".add-date");
