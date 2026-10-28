@@ -22,7 +22,7 @@ for (const g of GROUPS) {
 
   for (const s of g.items) {
     total++;
-    const isLive = !!s.u;
+    const isLive = !!s.u && !s.soon;
     if (isLive) live++;
     const card = document.createElement(isLive ? "a" : "div");
     card.className = `card glass ${isLive ? "live" : "soon"}${s.n.includes("ForgeLab") ? " featured" : ""}`;
@@ -40,7 +40,7 @@ for (const g of GROUPS) {
       <h3>${name}</h3>
       <p>${esc(s.d)}</p>
       <span class="foot">
-        <span class="domain">${isLive ? esc(s.label || s.u.replace(/^https?:\/\//, "")) : "Domain to be added"}</span>
+        <span class="domain">${s.u ? esc(s.label || s.u.replace(/^https?:\/\//, "")) : "Domain to be added"}</span>
         <span class="go">${isLive ? 'Visit <span aria-hidden="true">↗</span>' : "Coming soon"}</span>
       </span>`;
     grid.appendChild(card);

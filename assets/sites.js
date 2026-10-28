@@ -2,6 +2,7 @@
 // To add a site, add a line to the right group. A site with no `url` shows as "Coming soon".
 //   n: name   c: brand colour (hex, no #)   d: one-line description
 //   u: domain or full URL   label: optional text to show instead of the URL
+//   soon: true shows the domain but not as a link yet (for domains bought but not live)
 export const GROUPS = [
   {
     id: "stage",
@@ -60,7 +61,7 @@ export const GROUPS = [
       {
         n: "TechGradify · ForgeLab", c: "666666",
         d: "Hands-on coding, data science and AI engineering, with instant feedback. Forge is the future of TechGradify.",
-        u: "http://localhost:3000/learn", label: "localhost:3000/learn",
+        u: "techgradify.com", soon: true,
       },
       { n: "Klerio", c: "2a8c82", d: "Clean contact lists and see what changed every week.", u: "getklerio.com", tm: false },
     ],
