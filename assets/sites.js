@@ -50,7 +50,7 @@ export const GROUPS = [
       { n: "LanguageGradify", i: "languages", c: "dd7d6b", d: "Languages.", u: "gradifylanguage.com" },
       { n: "ArtGradify", i: "palette", c: "f055dd", d: "Art and design.", u: "gradifyart.com" },
       { n: "MusicGradify", i: "music", c: "a4834a", d: "Music.", u: "gradifymusic.com" },
-      { n: "SportGradify", i: "trophy", c: "0c26b8", d: "Sport and exercise.", u: "gradifysport.com" },
+      { n: "SportGradify", i: "dumbbell", c: "0c26b8", d: "Sport and exercise.", u: "gradifysport.com" },
       { n: "CreateGradify", i: "bulb", c: "e52153", d: "Creative skills." },
     ],
   },
