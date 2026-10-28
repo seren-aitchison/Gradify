@@ -65,11 +65,11 @@ for (const g of GROUPS) {
       <span class="body">
         <span class="status ${live ? "is-live" : "is-soon"}">${live ? "Live" : "Coming soon"}</span>
         <h3>${nameOf(s)}${badge}</h3>
-        ${s.who ? `<p class="who"><b>For:</b> ${esc(s.who)}</p>` : ""}
+        ${s.who ? `<p class="card-who"><b>For:</b> ${esc(s.who)}</p>` : ""}
         <p>${esc(what)}</p>
         <span class="actions-row">
           ${live
-            ? `<a class="btn btn-light lg btn-sm visit" href="${href(s.u)}" target="_blank" rel="noopener" title="Opens ${domainOf(s)} in a new tab"><span>Visit ${domainOf(s)}</span> <span aria-hidden="true">↗</span></a>`
+            ? `<a class="btn btn-light lg btn-sm visit" href="${href(s.u)}" target="_blank" rel="noopener" title="Opens ${domainOf(s)} in a new tab"><span>Visit site</span> <span aria-hidden="true">↗</span></a><span class="domain soon-domain">${domainOf(s)}</span>`
             : `<button type="button" class="btn btn-ghost lg btn-sm notify" data-site="${esc(s.n)}"><span>Notify me</span></button>${s.u ? `<span class="domain soon-domain">${domainOf(s)}</span>` : ""}`}
           ${study}
         </span>

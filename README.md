@@ -1,5 +1,7 @@
 # Gradify™
 
+**Bring your notes into Gradify. Turn them into useful study materials. Learn, track your progress and know what to do next.**
+
 The parent site for the Gradify family of learning sites. It links out to every Gradify site, plus TechGradify · ForgeLab and Klerio.
 
 It's a plain static site with no build step: HTML, CSS and one JavaScript module.
@@ -54,3 +56,29 @@ DNS is on Cloudflare: four `A` records for `getgradify.com` point at GitHub Page
 ## Gradify LifeOS preview
 
 The `#lifeos` section shows how Gradify LifeOS will work, using example data for one made-up learner that's generated in the browser. Nothing is saved. The learner, goals, deadlines, life areas, each site's learning path and the credentials are all in `assets/lifeos.js`; the knowledge map's modules, topics and evidence are in `assets/earth.js`. In the full version this data will come from each Gradify site's progress API.
+
+## The Gradify app
+
+`app.html` is the real product: choose a goal and subject, upload notes (PDF or text), get flashcards checked against your notes, revise them with spaced repetition, and see Today, Progress and Plan update from the same data.
+
+```
+app.html                 the app
+assets/app/main.js       screens: setup, add notes, deck review, revision session, Today, Progress, Plan, Account
+assets/app/store.js      where data lives: this browser (default) or a Gradify account (Supabase)
+assets/app/engine.js     notes → study pack: Gradify AI on the server, or the browser extractor
+assets/app/srs.js        spaced repetition
+assets/app/config.js     Supabase URL and public key (empty = this-device mode)
+supabase/migrations/     database schema with row-level security
+supabase/functions/      study-pack: the Claude-powered Edge Function, and shared pack logic
+tests/                   unit tests and note fixtures
+scripts/eval-notes.mjs   quality report for study packs
+docs/SETUP.md            switching on accounts and Gradify AI
+```
+
+```bash
+npm test
+```
+
+```bash
+npm run eval
+```

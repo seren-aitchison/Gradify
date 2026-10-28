@@ -64,7 +64,7 @@ const routes = { today: renderToday, start: renderStart, new: renderNew, deck: r
 async function route() {
   const [name, arg] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
   if (!profile.goal && !["start", "account"].includes(name)) { location.replace("#/start"); return; }
-  document.querySelectorAll(".app-nav a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === name || (name === "deck" && a.dataset.route === "notes") || (name === "new" && a.dataset.route === "notes"))));
+  document.querySelectorAll(".app-nav a, .tabbar a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === name || (name === "deck" && a.dataset.route === "notes") || (name === "new" && a.dataset.route === "notes"))));
   view.innerHTML = '<div class="loading" aria-busy="true"></div>';
   try { await (routes[name] || renderToday)(arg); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
   view.focus({ preventScroll: true });
@@ -345,7 +345,7 @@ async function renderStudy(deckId) {
   const draw = () => {
     const c = queue[i];
     const p = preview(c);
-    view.innerHTML = `<section class="session">
+    view.innerHTML = `<section class="study-session">
       <div class="sess-top"><a href="${deckId ? `#/deck/${deckId}` : "#/today"}" class="back">✕ End</a><span class="goal-bar"><i style="width:${(i / total) * 100}%"></i></span><span class="sub">${Math.min(i + 1, total)} / ${total}${practice ? " · practice" : ""}</span></div>
       <article class="flash-card ${shown ? "shown" : ""}" aria-live="polite">
         <span class="kicker">${esc(c.topic || "")}${c.reps ? "" : " · new"}</span>

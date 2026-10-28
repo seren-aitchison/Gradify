@@ -1,0 +1,14 @@
+{
+  "name": "gradify",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.mjs",
+    "eval": "node scripts/eval-notes.mjs",
+    "eval:claude": "node scripts/eval-notes.mjs --claude",
+    "serve": "python3 -m http.server 8080"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "0.133.0"
+  }
+}

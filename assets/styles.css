@@ -1313,8 +1313,8 @@ code { font: 12px var(--mono); color: var(--mute); }
 .card p { margin: 6px 0 0; font-size: 15px; color: var(--mute); line-height: 1.5; }
 .card .foot { margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 4px 4px 4px 14px; font-size: 13px; color: var(--mute); position: relative; }
 .card .body p { margin-bottom: 0; }
-.card .body p.who { margin-top: 6px; font-size: 13px; color: var(--fg); }
-.card .body p.who b { color: var(--faint); font-weight: 500; }
+.card .body p.card-who { margin-top: 6px; font-size: 13px; color: var(--fg); }
+.card .body p.card-who b { color: var(--faint); font-weight: 500; }
 .card .status { align-self: flex-start; font-size: 11px; font-weight: 600; letter-spacing: .04em; padding: 2px 9px; border-radius: 999px; margin-top: 2px; }
 .card .status.is-live { background: rgba(79, 224, 166, .14); color: #4fe0a6; }
 .card .status.is-soon { background: rgba(255, 255, 255, .06); color: var(--faint); }
