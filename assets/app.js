@@ -5,12 +5,26 @@ const href = (u) => (/^https?:/.test(u) ? u : "https://" + u);
 const slug = (n) => n.toLowerCase().replace(/[^a-z]+/g, "-").replace(/^-|-$/g, "");
 const esc = (s) => s.replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
 
+// Colour helpers: a lighter tint for the icon gradient, and dark or white text for contrast
+const rgb = (h) => [0, 2, 4].map((i) => parseInt(h.substr(i, 2), 16));
+const mix = (h, t) => "#" + rgb(h).map((v) => Math.round(v + (255 - v) * t).toString(16).padStart(2, "0")).join("");
+const lum = (h) => {
+  const [r, g, b] = rgb(h).map((v) => { v /= 255; return v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; });
+  return .2126 * r + .7152 * g + .0722 * b;
+};
+const ink = (h) => (lum(h) > .45 ? "#14151b" : "#fff");
+const tile = (h) => `linear-gradient(135deg, ${mix(h, .28)} 0%, #${h} 70%)`;
+// "MedGradify" -> "Me", "TechGradify · ForgeLab" -> "Te", "Klerio" -> "K"
+const initials = (n) => { const base = n.split(/Gradify/)[0].trim(); return base ? base.slice(0, 2) : n[0]; };
+
+const ARROW = '<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
 // ---------- Render ----------
 const groupsEl = $("#groups");
-const spine = $("#spine");
-const tip = $("#spine-tip");
+const tiles = $("#tiles");
+const tip = $("#tile-tip span:last-child");
 const chips = $("#chips");
-let total = 0, live = 0;
+let total = 0;
 
 for (const g of GROUPS) {
   const sec = document.createElement("section");
@@ -23,11 +37,12 @@ for (const g of GROUPS) {
   for (const s of g.items) {
     total++;
     const isLive = !!s.u && !s.soon;
-    if (isLive) live++;
+    const featured = s.n.includes("ForgeLab");
     const card = document.createElement(isLive ? "a" : "div");
-    card.className = `card glass ${isLive ? "live" : "soon"}${s.n.includes("ForgeLab") ? " featured" : ""}`;
+    card.className = `card glass ${isLive ? "live" : "soon"}${featured ? " featured" : ""}`;
     card.id = slug(s.n);
     card.style.setProperty("--c", "#" + s.c);
+    card.style.setProperty("--tile", tile(s.c));
     card.dataset.search = `${s.n} ${s.d} ${g.title}`.toLowerCase();
     if (isLive) {
       card.href = href(s.u);
@@ -35,22 +50,29 @@ for (const g of GROUPS) {
       card.rel = "noopener";
     }
     const name = esc(s.n) + (s.tm === false ? "" : "™");
+    const badge = featured ? '<span class="badge">The future of TechGradify</span>' : "";
     card.innerHTML = `
-      <span class="orb" aria-hidden="true"></span>
-      <h3>${name}</h3>
-      <p>${esc(s.d)}</p>
-      <span class="foot">
-        <span class="domain">${s.u ? esc(s.label || s.u.replace(/^https?:\/\//, "")) : "Domain to be added"}</span>
-        <span class="go">${isLive ? 'Visit <span aria-hidden="true">↗</span>' : "Coming soon"}</span>
+      <span class="icon" style="color:${ink(s.c)}" aria-hidden="true">${esc(initials(s.n))}</span>
+      <span class="body">
+        <h3>${name}${badge}</h3>
+        <p>${esc(s.d)}</p>
+        <span class="foot">
+          <span class="track" aria-hidden="true"><i></i></span>
+          ${s.u ? `<span class="domain">${esc(s.label || s.u.replace(/^https?:\/\//, ""))}</span>` : ""}
+          ${isLive ? ARROW : '<span class="badge neutral">Coming soon</span>'}
+        </span>
       </span>`;
     grid.appendChild(card);
 
-    const stripe = document.createElement("a");
-    stripe.href = "#" + card.id;
-    stripe.style.background = "#" + s.c;
-    stripe.setAttribute("aria-label", s.n);
-    stripe.dataset.name = s.n;
-    spine.appendChild(stripe);
+    const t = document.createElement("a");
+    t.href = "#" + card.id;
+    t.style.setProperty("--tile", tile(s.c));
+    t.style.setProperty("--c", "#" + s.c);
+    t.style.color = ink(s.c);
+    t.textContent = initials(s.n);
+    t.setAttribute("aria-label", s.n);
+    t.dataset.name = s.n;
+    tiles.appendChild(t);
   }
   groupsEl.appendChild(sec);
 
@@ -62,22 +84,23 @@ for (const g of GROUPS) {
   chip.textContent = g.title.replace(/^By /, "").replace(/^./, (c) => c.toUpperCase());
   chips.appendChild(chip);
 }
-$("#count").textContent = total;
+document.querySelectorAll(".js-count").forEach((el) => { el.textContent = total; });
 
-// ---------- Spine tooltip ----------
-const showTip = (e) => { tip.textContent = e.target.dataset.name || ""; };
-spine.addEventListener("mouseover", showTip);
-spine.addEventListener("focusin", showTip);
-spine.addEventListener("mouseleave", () => { tip.textContent = "Hover a colour to see its site. Click to jump to it."; });
+// ---------- Tile tooltip ----------
+const DEFAULT_TIP = tip.textContent;
+const showTip = (e) => { if (e.target.dataset.name) tip.textContent = e.target.dataset.name; };
+tiles.addEventListener("mouseover", showTip);
+tiles.addEventListener("focusin", showTip);
+tiles.addEventListener("mouseleave", () => { tip.textContent = DEFAULT_TIP; });
 
-// Briefly highlight a card when you jump to it from the spine
-spine.addEventListener("click", (e) => {
+// Briefly highlight a card when you jump to it from a tile
+tiles.addEventListener("click", (e) => {
   const id = e.target.getAttribute("href")?.slice(1);
   const card = id && document.getElementById(id);
   if (!card) return;
   resetFilters();
   card.animate(
-    [{ boxShadow: "0 0 0 0 var(--c)" }, { boxShadow: "0 0 0 6px var(--c)" }, { boxShadow: "0 0 0 0 var(--c)" }],
+    [{ borderColor: "var(--line)" }, { borderColor: "var(--c)", boxShadow: "0 0 0 3px var(--c)" }, { borderColor: "var(--line)" }],
     { duration: 1400, easing: "ease-out" },
   );
 });
@@ -124,15 +147,12 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && document.activeElement === q) { resetFilters(); q.blur(); }
 });
 
-// ---------- Theme toggle ----------
-const root = document.documentElement;
-const btn = $("#theme");
-const isDark = () => root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-function paintBtn() { btn.setAttribute("aria-label", isDark() ? "Switch to light mode" : "Switch to dark mode"); }
-try { const saved = localStorage.getItem("gradify-theme"); if (saved) root.dataset.theme = saved; } catch {}
-paintBtn();
-btn.addEventListener("click", () => {
-  root.dataset.theme = isDark() ? "light" : "dark";
-  try { localStorage.setItem("gradify-theme", root.dataset.theme); } catch {}
-  paintBtn();
-});
+// ---------- Nav: highlight the section in view ----------
+const navLinks = [...document.querySelectorAll(".bar nav a")];
+const spy = new IntersectionObserver((entries) => {
+  for (const en of entries) {
+    if (!en.isIntersecting) continue;
+    for (const a of navLinks) a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id);
+  }
+}, { rootMargin: "-45% 0px -50% 0px" });
+document.querySelectorAll(".group").forEach((s) => spy.observe(s));
