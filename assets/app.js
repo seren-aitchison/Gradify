@@ -1,4 +1,5 @@
 import { GROUPS, FEATURED, START_HERE } from "./sites.js";
+import { icon } from "./icons.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const href = (u) => (/^https?:/.test(u) ? u : "https://" + u);
@@ -16,8 +17,8 @@ const lum = (h) => {
 };
 const ink = (h) => (lum(h) > .45 ? "#14151b" : "#fff");
 const tile = (h) => `linear-gradient(135deg, ${mix(h, .28)} 0%, #${h} 70%)`;
-// "MedGradify" -> "Me", "TechGradify · ForgeLab" -> "Te", "Klerio" -> "K"
-const initials = (n) => { const base = n.split(/Gradify/)[0].trim(); return base ? base.slice(0, 2) : n[0]; };
+// A site's icon, falling back to its first letters ("MedGradify" -> "Me") if it has none
+const mark = (s, cls) => icon(s.i, cls) || esc((s.n.split(/Gradify/)[0].trim() || s.n).slice(0, 2));
 const domainOf = (s) => esc(s.label || s.u.replace(/^https?:\/\//, ""));
 const nameOf = (s) => esc(s.n) + (s.tm === false ? "" : "™");
 const isLive = (s) => !!s.u && !s.soon;
@@ -73,7 +74,7 @@ for (const g of GROUPS) {
       ? `<span class="domain">${domainOf(s)}</span><span class="go">${ICON.chev}</span>`
       : `<span class="domain">${s.u ? domainOf(s) + " · " : ""}Coming soon</span><span class="go wait">${ICON.clock}</span>`;
     card.innerHTML = `
-      <span class="icon" aria-hidden="true">${esc(initials(s.n))}</span>
+      <span class="icon" aria-hidden="true">${mark(s)}</span>
       <span class="body">
         <h3>${nameOf(s)}${badge}</h3>
         <p>${esc(s.d)}</p>
@@ -99,7 +100,7 @@ for (const s of ALL) {
   const t = document.createElement("a");
   t.href = "#" + slug(s.n);
   colour(t, s);
-  t.textContent = initials(s.n);
+  t.innerHTML = mark(s);
   t.setAttribute("aria-label", s.n);
   t.dataset.name = s.n;
   tiles.appendChild(t);
@@ -164,7 +165,7 @@ for (const name of START_HERE) {
   if (live) { r.target = "_blank"; r.rel = "noopener"; }
   colour(r, s);
   r.innerHTML = `
-    <span class="icon" aria-hidden="true">${esc(initials(s.n))}</span>
+    <span class="icon" aria-hidden="true">${mark(s)}</span>
     <span class="row-txt"><b>${nameOf(s)}</b><span>${esc(s.d.replace(/\.$/, ""))} · <em>${live ? domainOf(s) : "coming soon"}</em></span></span>
     <span class="go">${ICON.chev}</span>`;
   rows.appendChild(r);
@@ -191,7 +192,7 @@ function showSpot(i) {
   spot.style.setProperty("--c", "#" + c);
   spot.style.setProperty("--c2", mix(c, .45));
   spot.style.setProperty("--glow", triple(c));
-  $("#spot-initials").textContent = initials(s.n);
+  $("#spot-mark").innerHTML = mark(s);
   $("#spot-group").textContent = groupLabel(s.group);
   $("#spot-name").innerHTML = nameOf(s);
   $("#spot-desc").textContent = s.d;
