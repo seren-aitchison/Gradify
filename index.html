@@ -51,6 +51,7 @@
         <span class="menu-label">LifeOS</span>
         <a href="#lifeos">Overview</a>
         <a href="#command">Today</a>
+        <a href="#plan-cal">Time blocking</a>
         <a href="#life-heat">Life progress</a>
         <a href="#earth">Gradify Earth</a>
         <a href="#plan">Path</a>
@@ -143,6 +144,7 @@
       <div class="os" id="os">
         <nav class="os-rail glass" role="tablist" aria-label="LifeOS views">
           <button type="button" class="rail-btn" role="tab" data-view="today" aria-controls="view-today" aria-selected="false"><span class="rail-ico" data-icon="home"></span><span>Today</span></button>
+          <button type="button" class="rail-btn" role="tab" data-view="plan" aria-controls="view-plan" aria-selected="false"><span class="rail-ico" data-icon="calendar"></span><span>Plan</span></button>
           <button type="button" class="rail-btn" role="tab" data-view="progress" aria-controls="view-progress" aria-selected="false"><span class="rail-ico" data-icon="trend"></span><span>Progress</span></button>
           <button type="button" class="rail-btn" role="tab" data-view="earth" aria-controls="view-earth" aria-selected="false"><span class="rail-ico" data-icon="globe"></span><span>Earth</span></button>
           <button type="button" class="rail-btn" role="tab" data-view="path" aria-controls="view-path" aria-selected="false"><span class="rail-ico" data-icon="route"></span><span>Path</span></button>
@@ -186,6 +188,30 @@
       <div class="panel glass feed-panel">
         <div class="panel-head"><h3>Activity across Gradify</h3><span class="pill-dark">Live feed</span></div>
         <ol class="feed" id="feed"></ol>
+      </div>
+        </section>
+        <section class="os-view " data-view="plan" id="view-plan" aria-label="Plan" hidden>
+      <div class="panel glass cal-panel" id="plan-cal">
+        <div class="cal-top">
+          <div><h3>Time blocking</h3><p class="sub" id="cal-title"></p></div>
+          <div class="cal-ctrls">
+            <div class="cal-steps" id="cal-steps"><button type="button" class="icon-btn" data-step="-1" aria-label="Previous day">‹</button><button type="button" class="icon-btn" data-step="1" aria-label="Next day">›</button></div>
+            <div class="seg" role="group" aria-label="Calendar view">
+              <button type="button" class="chip" data-calview="day" aria-pressed="false">Day</button>
+              <button type="button" class="chip" data-calview="week" aria-pressed="true">Week</button>
+            </div>
+            <button type="button" class="btn btn-primary lg btn-sm" id="auto-plan"><span>Auto-plan my week</span></button>
+          </div>
+        </div>
+        <div class="cal-body">
+          <aside class="cal-side">
+            <div class="cal-sum" id="cal-sum"></div>
+            <span class="mini-label">Calendars</span>
+            <div class="cal-list" id="cal-list"></div>
+            <div class="cal-edit inset-card" id="cal-edit"></div>
+          </aside>
+          <div class="cal-scroll" id="cal-scroll"><div class="cal-grid" id="cal-grid"></div></div>
+        </div>
       </div>
         </section>
         <section class="os-view " data-view="progress" id="view-progress" aria-label="Progress" hidden>
@@ -514,7 +540,7 @@
         </div>
         <nav aria-label="LifeOS">
           <b>LifeOS</b>
-          <a href="#command">Today</a><a href="#life-heat">Life progress</a><a href="#earth">Gradify Earth</a><a href="#plan">Path</a><a href="#ai">Gradify AI</a>
+          <a href="#command">Today</a><a href="#plan-cal">Time blocking</a><a href="#life-heat">Life progress</a><a href="#earth">Gradify Earth</a><a href="#plan">Path</a><a href="#ai">Gradify AI</a>
         </nav>
         <nav aria-label="Sites">
           <b>Sites</b>

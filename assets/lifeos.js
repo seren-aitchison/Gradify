@@ -9,6 +9,7 @@ import { initAssistant } from "./assistant.js";
 import { initCapture } from "./capture.js";
 import { initCommunity } from "./community.js";
 import { initStudy } from "./study.js";
+import { initCalendar } from "./calendar.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
@@ -480,6 +481,7 @@ function addEvent(ev) {
   EVENTS.push(ev);
   EVENTS.sort((a, b) => a.in - b.in || (b.planned ? 1 : 0) - (a.planned ? 1 : 0));
   renderUpcoming();
+  document.dispatchEvent(new CustomEvent("lifeos:events"));
 }
 
 // ---------- Credentials ----------
@@ -597,13 +599,14 @@ initEarth({
 const ctx = {
   toast, addEvent, startReview, showTopic, logActivity,
   goals: GOALS, paths: PATHS, days, today, DAY, fmt, esc, short, colourOf, site: (n) => SITES.get(n),
-  weekXp: () => 420 + sessionXp, aiStyle: () => aiStyle,
+  weekXp: () => 420 + sessionXp, aiStyle: () => aiStyle, events: () => EVENTS,
 };
 initPlan(ctx);
 initAssistant(ctx);
 initCapture(ctx);
 initCommunity(ctx);
 initStudy(ctx);
+initCalendar(ctx);
 renderTree();
 renderSettings();
 renderLegends();

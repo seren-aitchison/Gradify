@@ -5,7 +5,7 @@ const SHELL = [
   "./", "index.html", "manifest.webmanifest",
   "assets/styles.css", "assets/app.js", "assets/sites.js", "assets/icons.js", "assets/colour.js", "assets/nav.js",
   "assets/os.js", "assets/lifeos.js", "assets/earth.js", "assets/plan.js", "assets/assistant.js", "assets/capture.js",
-  "assets/community.js", "assets/study.js", "assets/favicon.svg", "assets/icons/icon-192.png", "assets/icons/icon-512.png",
+  "assets/community.js", "assets/study.js", "assets/calendar.js", "assets/favicon.svg", "assets/icons/icon-192.png", "assets/icons/icon-512.png",
 ];
 
 self.addEventListener("install", (e) => {
