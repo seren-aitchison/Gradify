@@ -99,6 +99,19 @@ function reply(text) {
     <div class="ai-try-row">${SUGGESTIONS.map((s) => `<button type="button" class="chip ai-try">${ctx.esc(s)}</button>`).join("")}</div>`;
 }
 
+// Apply the style chosen in Settings
+function styled(html) {
+  const style = ctx.aiStyle();
+  if (style === "concise") {
+    const div = document.createElement("div");
+    div.innerHTML = html;
+    div.querySelectorAll("p").forEach((p, i) => { if (i > 0 && !p.closest(".ai-actions")) p.remove(); });
+    return div.innerHTML;
+  }
+  if (style === "coach") return html + '<p class="ai-coach">Don\'t wait for the perfect moment: start the first step now. I\'ll check in tonight.</p>';
+  return html;
+}
+
 // ---------- Chat UI ----------
 function add(who, html) {
   const log = $("#ai-log");
@@ -114,7 +127,7 @@ function ask(text) {
   add("me", ctx.esc(text));
   const typing = add("ai", '<span class="typing"><i></i><i></i><i></i></span>');
   setTimeout(() => {
-    typing.querySelector(".bubble").innerHTML = reply(text);
+    typing.querySelector(".bubble").innerHTML = styled(reply(text));
     $("#ai-log").scrollTop = $("#ai-log").scrollHeight;
   }, 650);
 }

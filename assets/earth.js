@@ -183,7 +183,7 @@ function select(id) {
 
 export function showTopic(id) {
   select(id);
-  document.getElementById("earth").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  document.dispatchEvent(new CustomEvent("lifeos:goto", { detail: "earth" }));
 }
 
 export function review(id) {

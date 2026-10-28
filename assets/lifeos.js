@@ -6,6 +6,8 @@ import { ink, tile, triple } from "./colour.js";
 import { initEarth, TOPICS, stateOf, review, showTopic } from "./earth.js";
 import { initPlan } from "./plan.js";
 import { initAssistant } from "./assistant.js";
+import { initCapture } from "./capture.js";
+import { initCommunity } from "./community.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
@@ -92,7 +94,8 @@ const heat = $("#heat");
 const tip = $("#heat-tip");
 let area = "all";
 
-const inArea = (n) => area === "all" || AREAS.find((a) => a.id === area).sites.includes(n);
+const off = new Set(); // sites disconnected in Settings
+const inArea = (n) => !off.has(n) && (area === "all" || AREAS.find((a) => a.id === area).sites.includes(n));
 function summarise(day) {
   const parts = Object.entries(day.counts).filter(([n]) => inArea(n)).sort((a, b) => b[1] - a[1]);
   return { parts, total: parts.reduce((t, [, c]) => t + c, 0) };
@@ -165,8 +168,52 @@ filter.addEventListener("click", (e) => {
 });
 
 // Legend: one dot per site the learner uses
-$("#heat-legend").innerHTML = SOURCES.map((s) =>
-  `<span><i style="background:#${colourOf(s.n)}"></i>${esc(short(s.n))}</span>`).join("");
+const legend = () => SOURCES.map((s) =>
+  `<span class="${off.has(s.n) ? "is-off" : ""}"><i style="background:#${colourOf(s.n)}"></i>${esc(short(s.n))}</span>`).join("");
+function renderLegends() {
+  $("#heat-legend").innerHTML = legend();
+  $("#study-legend").innerHTML = legend();
+}
+
+// ---------- Study time: last 8 weeks, stacked by site ----------
+const MIN_PER = 15; // example: minutes per logged activity
+const hm = (m) => `${Math.floor(m / 60)}h${m % 60 ? ` ${m % 60}m` : ""}`;
+function renderStudy() {
+  const weeks = [];
+  for (let w = 7; w >= 0; w--) {
+    const slice = days.slice(Math.max(0, days.length - (w + 1) * 7), days.length - w * 7);
+    const by = {};
+    for (const d of slice) for (const [n, c] of Object.entries(d.counts)) if (!off.has(n)) by[n] = (by[n] || 0) + c * MIN_PER;
+    weeks.push({ start: slice[0].date, by, total: Object.values(by).reduce((a, b) => a + b, 0) });
+  }
+  const max = Math.max(...weeks.map((w) => w.total), 60);
+  const [prev, cur] = weeks.slice(-2);
+  const change = prev.total ? Math.round(((cur.total - prev.total) / prev.total) * 100) : 0;
+  $("#study-sub").textContent = `Last 7 days: ${hm(cur.total)} · ${change >= 0 ? "up" : "down"} ${Math.abs(change)}% on the week before`;
+  $("#study-chart").innerHTML = weeks.map((w, i) => `
+    <div class="sc-col${i === weeks.length - 1 ? " now" : ""}" title="${hm(w.total)}">
+      <span class="sc-val">${hm(w.total)}</span>
+      <span class="sc-bar" style="height:${(w.total / max) * 100}%">${SOURCES.filter((s) => w.by[s.n]).map((s) => `<i style="flex:${w.by[s.n]};background:#${colourOf(s.n)}"></i>`).join("")}</span>
+      <span class="sc-lab">${i === weeks.length - 1 ? "This week" : fmt(w.start, { day: "numeric", month: "short" })}</span>
+    </div>`).join("");
+}
+
+// ---------- Activity feed ----------
+const FEED = [
+  { site: "MedGradify", what: "Finished “Coronary arteries”", when: "Yesterday, 21:10", xp: 20 },
+  { site: "SportGradify", what: "Logged a workout: upper body", when: "Yesterday, 18:30", xp: 15 },
+  { site: FORGE, what: "Solved 3 problems in “The forward pass”", when: "Yesterday, 14:05", xp: 45 },
+  { site: "LanguageGradify", what: "Finished “Buying tickets”", when: "Monday, 08:20", xp: 20 },
+  { site: "HealthGradify", what: "Hit the sleep goal 5 nights in a row", when: "Monday, 07:00", xp: 10 },
+  { site: "UnderGradify", what: "Submitted the anatomy practical write-up", when: "Sunday, 16:45", xp: 30 },
+];
+function renderFeed() {
+  $("#feed").innerHTML = FEED.filter((f) => !off.has(f.site)).slice(0, 7).map((f) => {
+    const c = colourOf(f.site);
+    return `<li class="${f.fresh ? "fresh" : ""}"><span class="icon" style="--c:#${c};--tile:${tile(c)};--ink:${ink(c)}">${icon(SITES.get(f.site).i)}</span>
+      <span class="feed-txt"><b>${esc(f.what)}</b><span>${esc(short(f.site))} · ${esc(f.when)}</span></span><em>+${f.xp} XP</em></li>`;
+  }).join("");
+}
 
 // ---------- Life areas ----------
 const R = 26, CIRC = 2 * Math.PI * R;
@@ -260,6 +307,10 @@ function logActivity(site, what, kind, gained) {
   for (const a of AREAS) if (a.sites.includes(site)) a.pct = Math.min(100, a.pct + 1);
   for (const g of GOALS) if (g.counts(site, kind)) g.n = Math.min(g.of, g.n + 1);
   addXp(gained);
+  FEED.forEach((f) => { f.fresh = false; });
+  FEED.unshift({ site, what, when: "Just now", xp: gained, fresh: true });
+  renderFeed();
+  renderStudy();
   renderHeat();
   renderAreas();
   renderGoals();
@@ -273,8 +324,10 @@ function logActivity(site, what, kind, gained) {
 const LEVELS = ["Explorer", "Apprentice", "Scholar", "Specialist", "Expert"];
 let userLevel = 14, xp = 2340;
 const xpFor = (lv) => 1000 + lv * 140; // XP needed to finish this level
+let sessionXp = 0;
 function addXp(n) {
   xp += n;
+  sessionXp += n;
   while (xp >= xpFor(userLevel)) { xp -= xpFor(userLevel); userLevel++; unlock("level"); toast(`Level up! Alex is now level ${userLevel}.`); }
   renderProfile();
 }
@@ -411,6 +464,64 @@ $(".cred-panel").addEventListener("click", (e) => {
   if (e.target.closest(".verify")) toast("In the full version, this opens a public page where anyone can check the certificate is genuine.");
 });
 
+// ---------- Settings ----------
+let aiStyle = "friendly";
+const STYLES = {
+  friendly: { name: "Friendly", note: "Warm and encouraging, with a bit more explanation." },
+  coach: { name: "Coach", note: "Direct. Pushes you to start now and holds you to your goals." },
+  concise: { name: "Concise", note: "Short answers: just the plan and the next step." },
+};
+const REMINDERS = [
+  { label: "Daily plan at 8:00", on: true },
+  { label: "Streak reminder at 20:00 if nothing's logged", on: true },
+  { label: "Deadline alerts 3 days before", on: true },
+  { label: "Weekly progress summary on Sunday", on: false },
+];
+const sw = (id, label, on, extra = "") => `<label class="switch row-switch"><span>${label}</span><input type="checkbox" ${extra} data-id="${id}" role="switch" ${on ? "checked" : ""}><span class="sw-track lg" aria-hidden="true"><span class="sw-knob"></span></span></label>`;
+function renderSettings() {
+  $("#site-toggles").innerHTML = SOURCES.map((s) => {
+    const c = colourOf(s.n);
+    return `<div class="site-row"><span class="icon" style="--c:#${c};--tile:${tile(c)};--ink:${ink(c)}">${icon(SITES.get(s.n).i)}</span>${sw(s.n, esc(short(s.n)), !off.has(s.n), 'data-kind="site"')}</div>`;
+  }).join("");
+  $("#ai-style").innerHTML = Object.entries(STYLES).map(([k, v]) => `<button type="button" class="chip" role="radio" data-style="${k}" aria-checked="${k === aiStyle}" aria-pressed="${k === aiStyle}">${v.name}</button>`).join("");
+  $("#ai-style-note").textContent = STYLES[aiStyle].note;
+  $("#reminders").innerHTML = REMINDERS.map((r, i) => sw(i, esc(r.label), r.on, 'data-kind="reminder"')).join("");
+}
+$(".settings").addEventListener("change", (e) => {
+  const t = e.target;
+  if (t.dataset.kind === "site") {
+    if (t.checked) off.delete(t.dataset.id); else off.add(t.dataset.id);
+    renderHeat(); renderLegends(); renderStudy(); renderFeed();
+    toast(t.checked ? `${esc(short(t.dataset.id))} is connected again.` : `${esc(short(t.dataset.id))} is disconnected. Its activity is hidden from LifeOS until you reconnect it.`);
+  }
+  if (t.dataset.kind === "reminder") {
+    REMINDERS[+t.dataset.id].on = t.checked;
+    toast(`${REMINDERS[+t.dataset.id].label}: ${t.checked ? "on" : "off"}.`);
+  }
+});
+$(".settings").addEventListener("click", (e) => {
+  const st = e.target.closest("[data-style]");
+  if (st) { aiStyle = st.dataset.style; renderSettings(); toast(`Gradify AI will now use the ${STYLES[aiStyle].name.toLowerCase()} style.`); return; }
+  if (e.target.closest("#export")) {
+    const data = {
+      note: "Example data from the Gradify LifeOS preview. Not a real person.",
+      learner: "Alex Morgan", level: userLevel, xp, goals: GOALS.map(({ label, n, of }) => ({ label, done: n, of })),
+      lifeAreas: AREAS.map(({ name, pct }) => ({ name, pct })),
+      topics: TOPICS.map((t) => ({ name: t.name, state: stateOf(t), evidence: t.ev })),
+      calendar: EVENTS.map((ev) => ({ what: ev.what, site: ev.site, date: new Date(+today + ev.in * DAY).toISOString().slice(0, 10) })),
+      activity: days.filter((d) => Object.keys(d.counts).length).map((d) => ({ date: d.date.toISOString().slice(0, 10), ...d.counts })),
+    };
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }));
+    a.download = "gradify-lifeos-example-data.json";
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    toast("Downloaded Alex's example data as a JSON file.");
+    return;
+  }
+  if (e.target.closest("#delete")) toast("In the real LifeOS this permanently deletes your account and data, after you confirm by email. There's nothing to delete in this preview.");
+});
+
 // ---------- Toast ----------
 const toastEl = $("#toast");
 let toastTimer;
@@ -439,14 +550,23 @@ initEarth({
 });
 const ctx = {
   toast, addEvent, startReview, showTopic, logActivity,
-  goals: GOALS, paths: PATHS, today, DAY, fmt, esc, short, colourOf, site: (n) => SITES.get(n),
+  goals: GOALS, paths: PATHS, days, today, DAY, fmt, esc, short, colourOf, site: (n) => SITES.get(n),
+  weekXp: () => 420 + sessionXp, aiStyle: () => aiStyle,
 };
 initPlan(ctx);
 initAssistant(ctx);
+initCapture(ctx);
+initCommunity(ctx);
+renderSettings();
+renderLegends();
+renderStudy();
+renderFeed();
 renderHeat();
 renderAreas();
 renderTabs();
 renderPath();
 renderCreds();
-const scroller = $("#heat-scroll");
-scroller.scrollLeft = scroller.scrollWidth; // phones: start at the most recent weeks
+// phones: start the heatmap at the most recent weeks whenever Progress opens
+document.addEventListener("lifeos:view", (e) => {
+  if (e.detail === "progress") requestAnimationFrame(() => { const sc = $("#heat-scroll"); sc.scrollLeft = sc.scrollWidth; });
+});

@@ -69,6 +69,40 @@ export const GROUPS = [
   },
 ];
 
+// Extra words people might search for, so "doctor" finds MedGradify.
+export const KEYWORDS = {
+  UnderGradify: "university uni degree student undergraduate bachelor freshers",
+  PostGradify: "masters phd doctorate research dissertation thesis",
+  ProGradify: "career job work professional development cpd promotion",
+  EduGradify: "teacher teaching school educator lesson planning",
+  YouthGradify: "teen teenager gcse a-level secondary school exams",
+  JuniorGradify: "kids children primary school child",
+  LawGradify: "solicitor barrister legal lawyer sqe bar",
+  BusinessGradify: "management mba startup entrepreneur marketing",
+  FinanceGradify: "accounting accountant acca cfa banking money",
+  InvestorGradify: "stocks shares investing trading markets portfolio",
+  MedGradify: "doctor medical medicine anatomy physiology clinical ukmla",
+  DentalGradify: "dentist teeth dental oral",
+  VetGradify: "vet veterinary animals pets",
+  NurseGradify: "nurse nursing midwife midwifery healthcare",
+  PharmaGradify: "pharmacist pharmacy drugs medicines pharmacology",
+  HealthGradify: "wellbeing sleep nutrition diet mental health habits",
+  PsychGradify: "psychology mind behaviour therapy counselling",
+  EngineerGradify: "engineering mechanical electrical civil",
+  MathGradify: "maths math algebra calculus statistics numbers",
+  SciGradify: "science physics chemistry biology",
+  EcoGradify: "environment climate ecology sustainability nature",
+  SocGradify: "sociology politics economics history geography",
+  LitGradify: "english reading books poetry writing literature",
+  LanguageGradify: "spanish french german languages vocabulary speaking",
+  ArtGradify: "drawing painting design illustration",
+  MusicGradify: "instrument piano guitar singing theory",
+  SportGradify: "fitness gym exercise workout training running",
+  CreateGradify: "creative creativity making crafts video",
+  "TechGradify · ForgeLab": "coding programming python ai machine learning data science software developer forge",
+  Klerio: "contacts crm spreadsheet data cleaning",
+};
+
 // Sites that rotate through the big featured card at the top of the page, in order.
 export const FEATURED = ["TechGradify · ForgeLab", "MedGradify", "LawGradify", "Klerio"];
 

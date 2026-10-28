@@ -1,4 +1,4 @@
-import { GROUPS, FEATURED, START_HERE } from "./sites.js";
+import { GROUPS, FEATURED, START_HERE, KEYWORDS } from "./sites.js";
 import { icon } from "./icons.js";
 import { triple, mix, ink, tile } from "./colour.js";
 
@@ -54,7 +54,7 @@ for (const g of GROUPS) {
     card.className = `card glass ${live ? "live" : "soon"}${featured ? " featured" : ""}`;
     card.id = slug(s.n);
     colour(card, s);
-    card.dataset.search = `${s.n} ${s.d} ${g.title}`.toLowerCase();
+    card.dataset.search = `${s.n} ${s.d} ${g.title} ${KEYWORDS[s.n] || ""}`.toLowerCase();
     if (live) {
       card.href = href(s.u);
       card.target = "_blank";
@@ -244,12 +244,72 @@ chips.addEventListener("click", (e) => {
   const c = e.target.closest(".chip");
   if (c) setFilter(c.dataset.filter);
 });
-q.addEventListener("input", apply);
+q.addEventListener("input", () => { apply(); suggest(); });
 liveOnly.addEventListener("change", apply);
 document.addEventListener("keydown", (e) => {
-  if (e.key === "/" && document.activeElement !== q) { e.preventDefault(); q.focus(); }
-  if (e.key === "Escape" && document.activeElement === q) { resetFilters(); q.blur(); }
+  const typing = e.target.closest?.("input, textarea, select, [contenteditable]");
+  if (e.key === "/" && !typing) { e.preventDefault(); q.focus(); }
+  if (e.key === "Escape" && document.activeElement === q) {
+    if (!sugg.hidden) closeSuggest(); else { resetFilters(); q.blur(); }
+  }
 });
+
+// ---------- Search suggestions ----------
+const sugg = $("#suggest");
+let picks = [], cursor = -1;
+function suggest() {
+  const term = q.value.trim().toLowerCase();
+  picks = !term ? [] : ALL.map((s) => {
+    const name = s.n.toLowerCase();
+    const hay = `${name} ${s.d} ${KEYWORDS[s.n] || ""}`.toLowerCase();
+    const word = new RegExp(`\\b${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`).test(hay);
+    const score = name.startsWith(term) ? 4 : name.includes(term) ? 3 : word ? 2 : hay.includes(term) ? 1 : 0;
+    return { s, score };
+  }).filter((x) => x.score).sort((a, b) => b.score - a.score || (isLive(b.s) - isLive(a.s))).slice(0, 6).map((x) => x.s);
+  cursor = -1;
+  if (!picks.length) { closeSuggest(); return; }
+  sugg.innerHTML = picks.map((s, i) => `
+    <li role="option" id="sg-${i}" aria-selected="false" data-i="${i}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}">
+      <span class="icon" aria-hidden="true">${mark(s)}</span>
+      <span class="sg-txt"><b>${nameOf(s)}</b><span>${esc(s.d.replace(/\.$/, ""))} · ${esc(groupLabel(s.group))}</span></span>
+      <em>${isLive(s) ? domainOf(s) : "Coming soon"}</em>
+    </li>`).join("");
+  sugg.hidden = false;
+  q.setAttribute("aria-expanded", "true");
+}
+function closeSuggest() {
+  sugg.hidden = true;
+  q.setAttribute("aria-expanded", "false");
+  q.removeAttribute("aria-activedescendant");
+}
+function choose(i) {
+  const s = picks[i];
+  if (!s) return;
+  closeSuggest();
+  q.value = "";
+  setFilter("all");
+  const card = document.getElementById(slug(s.n));
+  card.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+  card.animate([{ boxShadow: "0 0 0 0 var(--c)" }, { boxShadow: "0 0 0 3px var(--c)" }, { boxShadow: "0 0 0 0 var(--c)" }], { duration: 1600, easing: "ease-out" });
+}
+q.addEventListener("keydown", (e) => {
+  if (sugg.hidden || !picks.length) return;
+  if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+    e.preventDefault();
+    cursor = (cursor + (e.key === "ArrowDown" ? 1 : -1) + picks.length) % picks.length;
+    sugg.querySelectorAll("li").forEach((li, i) => li.setAttribute("aria-selected", String(i === cursor)));
+    q.setAttribute("aria-activedescendant", `sg-${cursor}`);
+  } else if (e.key === "Enter") {
+    e.preventDefault();
+    choose(cursor < 0 ? 0 : cursor);
+  }
+});
+sugg.addEventListener("mousedown", (e) => {
+  const li = e.target.closest("li");
+  if (li) { e.preventDefault(); choose(+li.dataset.i); }
+});
+q.addEventListener("blur", () => setTimeout(closeSuggest, 100));
+q.addEventListener("focus", () => { if (q.value.trim()) suggest(); });
 
 // ---------- Nav: highlight the section in view ----------
 const navLinks = [...document.querySelectorAll(".bar .sections a")];
@@ -259,4 +319,4 @@ const spy = new IntersectionObserver((entries) => {
     for (const a of navLinks) a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id);
   }
 }, { rootMargin: "-45% 0px -50% 0px" });
-document.querySelectorAll(".group, #lifeos, #roadmap, #faq").forEach((s) => spy.observe(s));
+document.querySelectorAll(".group, #lifeos, #organisations, #everywhere, #roadmap, #faq").forEach((s) => spy.observe(s));

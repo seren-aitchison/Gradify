@@ -15,7 +15,12 @@ assets/lifeos.js    the Gradify LifeOS preview: today panel, life heatmap, life 
 assets/earth.js     Gradify Earth: the 2D knowledge map in the LifeOS preview
 assets/plan.js      Path: goals, readiness, gaps and routes in the LifeOS preview
 assets/assistant.js Gradify AI preview (scripted replies worked out from the example data)
-assets/nav.js       top bar search button and the phone menu
+assets/os.js        LifeOS window: the sidebar views, and links that open the right view
+assets/capture.js   Capture: notes to flashcards and calendar dates (runs for real in the browser)
+assets/community.js Community: study group, weekly challenge, optional leaderboard
+assets/nav.js       top bar search button, phone menu and the install-as-app button
+assets/icons/       app icons (PNG) for installing the site
+manifest.webmanifest + sw.js   make the site installable and let it open offline
 assets/favicon.svg  icon
 ```
 
@@ -35,7 +40,7 @@ Edit `assets/sites.js`. A site with no `u` (URL) shows as "Coming soon".
 
 ## Deploy
 
-Live on GitHub Pages at https://getgradify.com, deployed from the `main` branch root. Every push to `main` goes live within a minute or so. `CNAME` holds the custom domain, and `.nojekyll` tells Pages to serve the files as they are.
+Live on GitHub Pages at https://getgradify.com, deployed from the `main` branch root. Every push to `main` goes live within a minute or so. The service worker fetches from the network first, so visitors get new versions straight away; if you add a new file to the site, also add it to the `SHELL` list in `sw.js` so it works offline. `CNAME` holds the custom domain, and `.nojekyll` tells Pages to serve the files as they are.
 
 DNS is on Cloudflare: four `A` records for `getgradify.com` point at GitHub Pages, and `www` is a `CNAME` to `seren-aitchison.github.io`.
 
