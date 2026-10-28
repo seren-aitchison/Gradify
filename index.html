@@ -58,6 +58,7 @@
         <a href="#ai">Gradify AI</a>
         <a href="#path-panel">Learning path</a>
         <a href="#study">Flashcard feed</a>
+        <a href="#capture">Notes Studio</a>
         <span class="menu-label">All sites</span>
         <a href="#stage">Stage of life</a>
         <a href="#profession">Profession</a>
@@ -151,7 +152,7 @@
           <button type="button" class="rail-btn" role="tab" data-view="ai" aria-controls="view-ai" aria-selected="false"><span class="rail-ico" data-icon="sparkles"></span><span>Gradify AI</span></button>
           <button type="button" class="rail-btn" role="tab" data-view="learn" aria-controls="view-learn" aria-selected="false"><span class="rail-ico" data-icon="book"></span><span>Learn</span></button>
           <button type="button" class="rail-btn" role="tab" data-view="study" aria-controls="view-study" aria-selected="false"><span class="rail-ico" data-icon="layers"></span><span>Study</span></button>
-          <button type="button" class="rail-btn" role="tab" data-view="capture" aria-controls="view-capture" aria-selected="false"><span class="rail-ico" data-icon="upload"></span><span>Capture</span></button>
+          <button type="button" class="rail-btn" role="tab" data-view="capture" aria-controls="view-capture" aria-selected="false"><span class="rail-ico" data-icon="upload"></span><span>Notes Studio</span></button>
           <button type="button" class="rail-btn" role="tab" data-view="community" aria-controls="view-community" aria-selected="false"><span class="rail-ico" data-icon="people"></span><span>Community</span></button>
           <button type="button" class="rail-btn" role="tab" data-view="settings" aria-controls="view-settings" aria-selected="false"><span class="rail-ico" data-icon="cog"></span><span>Settings</span></button>
         </nav>
@@ -237,8 +238,14 @@
       <div class="areas" id="areas"></div>
 
       <div class="panel glass tree-panel" id="tree">
-        <div class="panel-head"><div><h3>Gradify Tree</h3><p class="sub">Each branch is a connected site. Leaves grow with activity over the last 30 days, and the gold fruit are credentials you've earned.</p></div><span class="pill-dark" id="tree-level"></span></div>
-        <div class="tree-wrap" id="tree-svg"></div>
+        <div class="panel-head tree-head">
+          <div><h3>Gradify Tree <span class="pill-dark" id="tree-level"></span></h3><p class="sub" id="tree-sub"></p></div>
+          <div class="seg" role="group" aria-label="Tree or forest">
+            <button type="button" class="chip" data-grow="tree" aria-pressed="true">Tree</button>
+            <button type="button" class="chip" data-grow="forest" aria-pressed="false">Forest</button>
+          </div>
+        </div>
+        <div class="grow-body"><div class="tree-wrap" id="tree-svg"></div><aside class="grow-side" id="grow-side"></aside></div>
       </div>
 
       <div class="panel glass stats-week" id="study-stats">
@@ -335,24 +342,23 @@
         </section>
         <section class="os-view " data-view="capture" id="view-capture" aria-label="Capture" hidden>
 
-      <div class="panel glass capture-panel" id="capture">
-        <div class="panel-head">
-          <div><h3>Capture</h3><p class="sub">Paste notes and turn them into flashcards, and pick out any dates for your calendar. This part really works: try your own notes.</p></div>
+      <div class="panel glass studio" id="capture">
+        <div class="panel-head studio-head">
+          <div><h3>Notes Studio</h3><p class="sub">Upload a PDF of messy notes, or paste them. Gradify turns them into a study pack for every way of learning. Try your own notes: this part really works.</p></div>
+          <span class="pill-dark">Runs in your browser</span>
         </div>
-        <div class="capture-body">
-          <div class="capture-in">
-            <label class="mini-label" for="notes">Your notes</label>
-            <textarea id="notes" rows="10" placeholder="Paste or type notes here"></textarea>
-            <div class="capture-actions">
-              <button type="button" class="btn btn-primary lg btn-sm" id="make-cards"><span>Make flashcards</span></button>
-              <button type="button" class="btn btn-ghost lg btn-sm" id="sample-notes"><span>Use Alex's notes</span></button>
-            </div>
-            <div class="dropzone" aria-hidden="true"><span>PDFs, photos, voice notes and handwriting</span><em>Coming with accounts</em></div>
-          </div>
-          <div class="capture-out" id="capture-out" aria-live="polite">
-            <p class="empty-note">Your flashcards will appear here.</p>
+        <div class="studio-in">
+          <label class="dropzone" id="dropzone"><input type="file" id="notes-file" accept=".pdf,.txt,.md,application/pdf,text/plain"><span class="dz-ico" data-icon="upload"></span><span><b>Drop a PDF here or choose a file</b><em>PDF with selectable text, .txt or .md. Photos, handwriting, voice notes and YouTube links come with Gradify AI.</em></span></label>
+          <label class="sr-only" for="notes">Your notes</label>
+          <textarea id="notes" rows="7" placeholder="…or paste your notes here, however messy"></textarea>
+          <div class="capture-actions">
+            <button type="button" class="btn btn-primary lg btn-sm" id="make-cards"><span>Make my study pack</span></button>
+            <button type="button" class="btn btn-ghost lg btn-sm" id="sample-notes"><span>Try Alex's messy notes</span></button>
+            <span class="sub" id="studio-status" aria-live="polite"></span>
           </div>
         </div>
+        <div class="studio-tabs" id="studio-tabs" role="tablist" aria-label="Study pack"></div>
+        <div class="studio-out" id="studio-out"></div>
       </div>
         </section>
         <section class="os-view " data-view="community" id="view-community" aria-label="Community" hidden>

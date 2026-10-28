@@ -16,7 +16,12 @@ assets/earth.js     Gradify Earth: the 2D knowledge map in the LifeOS preview
 assets/plan.js      Path: goals, readiness, gaps and routes in the LifeOS preview
 assets/assistant.js Gradify AI preview (scripted replies worked out from the example data)
 assets/os.js        LifeOS window: the sidebar views, and links that open the right view
-assets/capture.js   Capture: notes to flashcards and calendar dates (runs for real in the browser)
+assets/studio.js    Notes Studio: PDF or pasted notes → clean notes, flashcards, spidermap, cheat sheet,
+                    narrated video, chant and audio quiz (runs for real in the browser)
+assets/calendar.js  Plan: the time-blocking calendar
+assets/tree.js      Gradify Tree and Forest drawings
+assets/vendor/pdfjs pdf.js 3.11.174 (Apache 2.0) for reading PDFs in the browser
+docs/AI-PIPELINE.md how the full Notes Studio will work on Gradify AI
 assets/community.js Community: study group, weekly challenge, optional leaderboard
 assets/study.js     Study: the flashcard feed, with spaced repetition, overview and exam mode
 assets/nav.js       top bar search button, phone menu and the install-as-app button

@@ -23,7 +23,7 @@ $("#nav-search").addEventListener("click", (e) => {
 });
 
 // Section icons
-document.querySelectorAll(".org-ico[data-icon]").forEach((el) => { el.innerHTML = icon(el.dataset.icon); });
+document.querySelectorAll(".org-ico[data-icon], .dz-ico[data-icon]").forEach((el) => { el.innerHTML = icon(el.dataset.icon); });
 
 // Install as an app: use the browser's own prompt where there is one
 let installEvent = null;

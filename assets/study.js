@@ -110,6 +110,7 @@ function applyRating(el, how) {
   const i = +el.dataset.i;
   rate(DECK[i], how);
   rated++;
+  if (how === "good" || how === "easy") document.dispatchEvent(new CustomEvent("lifeos:learnt", { detail: `${DECK[i].front} ${DECK[i].back}` }));
   if (rated % 5 === 0) ctx.logActivity(DECK[i].site, "Reviewed 5 flashcards", "cards", 10);
   const sc = $("#feed-scroll");
   const pos = sc.scrollTop;

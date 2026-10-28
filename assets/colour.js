@@ -13,3 +13,5 @@ export const lum = (h) => {
 export const ink = (h) => (lum(h) > .45 ? "#14151b" : "#fff");
 // Glossy icon-tile gradient
 export const tile = (h) => `linear-gradient(135deg, ${mix(h, .28)} 0%, #${h} 70%)`;
+// Mix towards black by t (0–1); returns "#rrggbb"
+export const shade = (h, t) => "#" + rgb(h).map((v) => Math.round(v * (1 - t)).toString(16).padStart(2, "0")).join("");

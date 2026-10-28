@@ -6,10 +6,11 @@ import { ink, tile, triple } from "./colour.js";
 import { initEarth, TOPICS, stateOf, review, showTopic } from "./earth.js";
 import { initPlan } from "./plan.js";
 import { initAssistant } from "./assistant.js";
-import { initCapture } from "./capture.js";
+import { initStudio } from "./studio.js";
 import { initCommunity } from "./community.js";
 import { initStudy } from "./study.js";
 import { initCalendar } from "./calendar.js";
+import { drawTree, drawForest, drawDonut } from "./tree.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
@@ -200,49 +201,45 @@ function renderStudy() {
     </div>`).join("");
 }
 
-// ---------- Gradify Tree ----------
-// One branch per connected site. Branch length and leaves come from the last 30 days of
-// activity on that site; gold fruit are its credentials.
+// ---------- Gradify Tree and Forest ----------
+let growMode = "tree";
 function renderTree() {
   const sites = SOURCES.map((x) => x.n).filter((n) => !off.has(n));
-  const recent = days.slice(-30);
-  const act = (n) => recent.reduce((a, d) => a + (d.counts[n] || 0), 0);
-  const rand = rng(7);
-  const W = 720, base = 350, fork = 236;
-  let leaves = 0, svg = "";
-  sites.forEach((n, i) => {
-    const a = sites.length === 1 ? 0 : -80 + (160 * i) / (sites.length - 1);
-    const rad = (a * Math.PI) / 180;
-    const k = Math.min(1, act(n) / 36);
-    const len = 120 + 100 * k;
-    const ox = W / 2 + Math.sign(a) * Math.min(6, Math.abs(a) * 0.1), oy = fork - 14 - (i % 2) * 22 + Math.abs(a) * 0.5;
-    const ex = ox + Math.sin(rad) * len, ey = oy - Math.cos(rad) * len;
-    const cx = ox + Math.sin(rad) * len * 0.35, cy = oy - Math.cos(rad) * len * 0.65;
-    const c = "#" + colourOf(n);
-    svg += `<path d="M${ox} ${oy} Q${cx} ${cy} ${ex} ${ey}" class="branch" style="stroke-width:${3 + 5 * k}"/>`;
-    const count = Math.max(2, Math.min(16, Math.round(act(n) / 2.2)));
-    leaves += count;
-    for (let j = 0; j < count; j++) {
-      const t = 0.35 + (0.65 * (j + 0.5)) / count;
-      const px = (1 - t) * (1 - t) * ox + 2 * (1 - t) * t * cx + t * t * ex;
-      const py = (1 - t) * (1 - t) * oy + 2 * (1 - t) * t * cy + t * t * ey;
-      const jx = (rand() - 0.5) * 30, jy = (rand() - 0.5) * 22, r = 5 + rand() * 5;
-      svg += `<circle cx="${(px + jx).toFixed(1)}" cy="${(py + jy).toFixed(1)}" r="${r.toFixed(1)}" class="leaf" style="--c:${c};animation-delay:${(j * 40 + i * 90)}ms"/>`;
-    }
-    CREDS.filter((cr) => cr.site === n).forEach((_, f) => {
-      svg += `<circle cx="${ex + (f ? 14 : -6)}" cy="${ey + 10 + f * 6}" r="6.5" class="fruit"><title>Credential</title></circle>`;
-    });
-    svg += `<text x="${(ex + Math.sin(rad) * 30).toFixed(1)}" y="${(ey - Math.cos(rad) * 30 + 4).toFixed(1)}" class="branch-label">${esc(short(n).replace("Gradify", ""))}</text>`;
-  });
-  $("#tree-level").textContent = `Level ${userLevel} · ${leaves} leaves`;
-  $("#tree-svg").innerHTML = `<svg viewBox="0 0 ${W} 370" role="img" aria-label="Gradify Tree with ${sites.length} branches and ${leaves} leaves">
-    <defs><linearGradient id="bark" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5a5a5a"/><stop offset=".5" stop-color="#d9d9d9"/><stop offset="1" stop-color="#4a4a4a"/></linearGradient>
-    <radialGradient id="soil" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff" stop-opacity=".12"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
-    <ellipse cx="${W / 2}" cy="${base + 6}" rx="220" ry="16" fill="url(#soil)"/>
-    <path d="M${W / 2 - 20} ${base} C${W / 2 - 9} ${base - 50} ${W / 2 - 12} ${fork + 40} ${W / 2 - 6} ${fork - 20} L${W / 2 + 6} ${fork - 20} C${W / 2 + 12} ${fork + 40} ${W / 2 + 9} ${base - 50} ${W / 2 + 20} ${base} Z" fill="url(#bark)"/>
-    ${svg}
-  </svg>`;
+  const sum = (list, n) => list.reduce((a, d) => a + (d.counts[n] || 0), 0);
+  if (growMode === "tree") {
+    const recent = days.slice(-30);
+    const data = sites.map((n) => ({ n, c: colourOf(n), act: sum(recent, n), k: Math.min(1, sum(recent, n) / 36), creds: CREDS.filter((cr) => cr.site === n) }));
+    const bars = days.slice(-60).map((d) => Object.entries(d.counts).filter(([n]) => !off.has(n)).reduce((a, [, c]) => a + c, 0));
+    drawTree($("#tree-svg"), { sites: data, bars, rand: rng(7) });
+    const leaves = data.reduce((a, x) => a + 4 + Math.round(x.k * 10), 0);
+    const week = days.slice(-7).reduce((a, d) => a + Object.entries(d.counts).filter(([n]) => !off.has(n)).reduce((t, [, c]) => t + c, 0), 0);
+    const top = [...data].sort((p, q) => q.act - p.act)[0];
+    $("#tree-sub").textContent = "Each limb is a connected site. Its canopy fills out with activity over the last 30 days, and gold fruit are credentials. Behind it: every day's study for the last 60 days.";
+    $("#grow-side").innerHTML = `
+      <div class="grow-stats">
+        <div><b>${leaves}</b><span>leaf clusters</span></div>
+        <div><b>${data.reduce((a, x) => a + x.creds.length, 0)}</b><span>fruit</span></div>
+        <div><b>${week}</b><span>activities this week</span></div>
+        <div><b>${top ? esc(short(top.n).replace("Gradify", "")) : "–"}</b><span>strongest limb</span></div>
+      </div>
+      <ul class="grow-legend">${data.map((x) => `<li><i style="background:#${x.c}"></i><span>${esc(short(x.n))}</span><em>${x.act}</em></li>`).join("")}</ul>`;
+  } else {
+    const span = days.slice(-84).map((d) => ({ ...d, today: d === todayCell }));
+    drawForest($("#tree-svg"), { days: span, colourOf: (n) => colourOf(n), off });
+    const rows = sites.map((n) => ({ name: esc(short(n)), c: colourOf(n), min: sum(span, n) * MIN_PER })).filter((r) => r.min).sort((p, q) => q.min - p.min);
+    const studied = span.filter((d) => Object.keys(d.counts).some((n) => !off.has(n))).length;
+    $("#tree-sub").textContent = `A tree for every day you studied in the last 12 weeks: ${studied} of ${span.length} days. Each tree takes the colour of that day's main site.`;
+    drawDonut($("#grow-side"), rows);
+  }
+  $("#tree-level").textContent = `Level ${userLevel}`;
 }
+$("#tree").addEventListener("click", (e) => {
+  const b = e.target.closest("[data-grow]");
+  if (!b) return;
+  growMode = b.dataset.grow;
+  $("#tree").querySelectorAll("[data-grow]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+  renderTree();
+});
 
 // ---------- Activity feed ----------
 const FEED = [
@@ -603,7 +600,7 @@ const ctx = {
 };
 initPlan(ctx);
 initAssistant(ctx);
-initCapture(ctx);
+initStudio(ctx);
 initCommunity(ctx);
 initStudy(ctx);
 initCalendar(ctx);
