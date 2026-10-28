@@ -1,5 +1,6 @@
 import { GROUPS, FEATURED, START_HERE } from "./sites.js";
 import { icon } from "./icons.js";
+import { triple, mix, ink, tile } from "./colour.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const href = (u) => (/^https?:/.test(u) ? u : "https://" + u);
@@ -7,16 +8,6 @@ const slug = (n) => n.toLowerCase().replace(/[^a-z]+/g, "-").replace(/^-|-$/g, "
 const esc = (s) => s.replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// Colour helpers: a lighter tint for gradients, an "r, g, b" string for glows, and dark or white text for contrast
-const rgb = (h) => [0, 2, 4].map((i) => parseInt(h.substr(i, 2), 16));
-const triple = (h) => rgb(h).join(", ");
-const mix = (h, t) => "#" + rgb(h).map((v) => Math.round(v + (255 - v) * t).toString(16).padStart(2, "0")).join("");
-const lum = (h) => {
-  const [r, g, b] = rgb(h).map((v) => { v /= 255; return v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; });
-  return .2126 * r + .7152 * g + .0722 * b;
-};
-const ink = (h) => (lum(h) > .45 ? "#14151b" : "#fff");
-const tile = (h) => `linear-gradient(135deg, ${mix(h, .28)} 0%, #${h} 70%)`;
 // A site's icon, falling back to its first letters ("MedGradify" -> "Me") if it has none
 const mark = (s, cls) => icon(s.i, cls) || esc((s.n.split(/Gradify/)[0].trim() || s.n).slice(0, 2));
 const domainOf = (s) => esc(s.label || s.u.replace(/^https?:\/\//, ""));
@@ -268,4 +259,4 @@ const spy = new IntersectionObserver((entries) => {
     for (const a of navLinks) a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id);
   }
 }, { rootMargin: "-45% 0px -50% 0px" });
-document.querySelectorAll(".group").forEach((s) => spy.observe(s));
+document.querySelectorAll(".group, #lifeos").forEach((s) => spy.observe(s));

@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="assets/styles.css">
   <script type="module" src="assets/app.js"></script>
+  <script type="module" src="assets/lifeos.js"></script>
 </head>
 <body>
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
@@ -26,6 +27,7 @@
         Gradify
       </a>
       <nav aria-label="Sections">
+        <a href="#lifeos">LifeOS</a>
         <a href="#stage">Stage of life</a>
         <a href="#profession">Profession</a>
         <a href="#subject">Subject</a>
@@ -39,12 +41,12 @@
 
     <section class="hero" id="top">
       <div>
-        <span class="badge"><span class="spark" aria-hidden="true"></span><span>New: TechGradify · ForgeLab is coming</span></span>
+        <a class="badge" href="#lifeos"><span class="spark" aria-hidden="true"></span><span>New: Gradify LifeOS, your whole life's progress in one place</span></a>
         <h1>One family of learning sites. <span class="grad">Find yours.</span></h1>
-        <p class="lede">Every Gradify site is built for one kind of learner, from your first school subject to medicine, law and AI engineering. Pick your stage, profession or subject and go straight there.</p>
+        <p class="lede">Every Gradify site is built for one kind of learner, from your first school subject to medicine, law and AI engineering. Learn on any of them, and your progress comes together here in Gradify LifeOS.</p>
         <div class="actions">
           <a class="btn btn-primary lg" href="#find"><span>Find your site</span> <span aria-hidden="true">→</span></a>
-          <a class="btn btn-ghost lg" href="#stage"><span>Browse all <span class="js-count">30</span> sites</span></a>
+          <a class="btn btn-ghost lg" href="#lifeos"><span>Explore LifeOS</span></a>
         </div>
       </div>
 
@@ -96,6 +98,65 @@
         <div class="rows" id="start-rows"></div>
       </div>
     </section>
+
+
+    <!-- LifeOS preview (example data; rendered by assets/lifeos.js) -->
+    <section class="lifeos" id="lifeos" aria-labelledby="lifeos-title">
+      <div class="life-head">
+        <span class="badge"><span class="spark" aria-hidden="true"></span>Gradify LifeOS · Preview</span>
+        <h2 id="lifeos-title">Your whole life's progress, <span class="grad">in one place.</span></h2>
+        <p>Health, career, knowledge, fitness, your degree and every course you take. Each Gradify site has its own learning path and heatmap, and every lesson you finish lands here on your life heatmap straight away. Courses you complete become credentials anyone can verify.</p>
+        <p class="example-note">This preview uses example data for one learner. Try the learning path below and watch the heatmap update.</p>
+      </div>
+
+      <div class="panel glass heat-panel" id="life-heat">
+        <div class="panel-head heat-top">
+          <div>
+            <h3>Life progress</h3>
+            <p class="sub" id="heat-sub">Every activity across Gradify in the last year</p>
+          </div>
+          <div class="heat-stats" id="heat-stats"></div>
+        </div>
+        <div class="seg area-filter" id="area-filter" role="group" aria-label="Show one life area"></div>
+        <div class="heat-scroll" id="heat-scroll">
+          <div class="heat" id="heat" role="img" aria-label="Heatmap of daily activity over the last year"></div>
+        </div>
+        <div class="heat-foot">
+          <div class="heat-legend" id="heat-legend"></div>
+          <div class="heat-scale" aria-hidden="true">Less <i></i><i></i><i></i><i></i><i></i> More</div>
+        </div>
+        <div class="heat-tip" id="heat-tip" role="tooltip" hidden></div>
+      </div>
+
+      <div class="areas" id="areas"></div>
+
+      <div class="life-split">
+        <div class="panel glass path-panel">
+          <div class="panel-head">
+            <h3>Learning path</h3>
+            <div class="seg path-tabs" id="path-tabs" role="tablist" aria-label="Choose a site"></div>
+          </div>
+          <div class="unit-banner" id="unit-banner"></div>
+          <ol class="path" id="path" aria-label="Lessons in this unit"></ol>
+          <div class="mini">
+            <div class="mini-head"><span id="mini-title">Site heatmap</span><span class="sync"><span class="dot" aria-hidden="true"></span>Syncs to LifeOS</span></div>
+            <div class="mini-heat" id="mini-heat" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="panel glass cred-panel">
+          <div class="panel-head">
+            <h3>Credentials</h3>
+            <span class="pill-dark" id="cred-count"></span>
+          </div>
+          <div id="cred-feature"></div>
+          <div class="rows" id="cred-list"></div>
+          <p class="cred-note">Every certificate gets a unique ID and a public page, so an employer or university can check it's genuine in one click.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="toast lg" id="toast" role="status" aria-live="polite" hidden></div>
 
     <main id="find">
       <div class="controls glass" role="search">
