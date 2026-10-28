@@ -68,7 +68,7 @@ for (const g of GROUPS) {
       card.target = "_blank";
       card.rel = "noopener";
     }
-    const badge = featured ? '<span class="badge">The future of TechGradify</span>' : "";
+    const badge = featured ? '<span class="badge"><span class="spark" aria-hidden="true"></span>The future of TechGradify</span>' : "";
     const foot = live
       ? `<span class="domain">${domainOf(s)}</span><span class="go">${ICON.chev}</span>`
       : `<span class="domain">${s.u ? domainOf(s) + " · " : ""}Coming soon</span><span class="go wait">${ICON.clock}</span>`;
@@ -123,12 +123,22 @@ document.addEventListener("click", (e) => {
 });
 
 // ---------- At a glance: ring + bars ----------
+// One segment per site: live sites in their own colour, the rest in grey
 $("#live-count").textContent = liveTotal;
-const ringFill = $("#ring-fill");
-const C = 2 * Math.PI * 60;
-ringFill.style.strokeDasharray = `${C}`;
-ringFill.style.strokeDashoffset = `${C}`;
-requestAnimationFrame(() => requestAnimationFrame(() => { ringFill.style.strokeDashoffset = `${C * (1 - liveTotal / total)}`; }));
+const segs = $("#ring-segs");
+const C = 2 * Math.PI * 60, seg = C / total, gap = 2.2;
+ALL.forEach((s, i) => {
+  const el = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+  el.setAttribute("cx", 80); el.setAttribute("cy", 80); el.setAttribute("r", 60);
+  el.setAttribute("class", "seg" + (isLive(s) ? " live" : ""));
+  el.style.stroke = isLive(s) ? "#" + s.c : "rgba(255,255,255,.14)";
+  el.style.setProperty("--c", "#" + s.c);
+  el.style.strokeDasharray = `${seg - gap} ${C}`;
+  el.style.strokeDashoffset = `${-i * seg}`;
+  el.style.transitionDelay = `${i * 30}ms`;
+  segs.appendChild(el);
+});
+requestAnimationFrame(() => requestAnimationFrame(() => $("#ring").classList.add("on")));
 
 const bars = $("#bars");
 const max = Math.max(...GROUPS.map((g) => g.items.length));
@@ -137,7 +147,7 @@ for (const g of GROUPS) {
   const b = document.createElement("a");
   b.href = "#" + g.id;
   b.className = "bar-col" + (n === max ? " top" : "");
-  b.innerHTML = `<span class="bar-val">${n}</span><span class="bar" style="--h:${(n / max) * 100}%"></span><span class="bar-name">${esc(groupLabel(g).split(" ")[0])}</span>`;
+  b.innerHTML = `<span class="bar-val">${n}</span><span class="bar-fill" style="--h:${(n / max) * 100}%">${g.items.map((s) => `<i style="--c:#${s.c}"></i>`).join("")}</span><span class="bar-name">${esc(groupLabel(g).split(" ")[0])}</span>`;
   b.setAttribute("aria-label", `${groupLabel(g)}: ${n} sites`);
   bars.appendChild(b);
 }

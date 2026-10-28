@@ -8,7 +8,7 @@
   <meta property="og:title" content="Gradify™">
   <meta property="og:description" content="One family of learning sites. Find yours.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#07060a">
+  <meta name="theme-color" content="#000000">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
   <div class="wrap">
     <header class="bar glass">
       <a class="brand" href="#top">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a3d"/><stop offset="1" stop-color="#ff4d8d"/></linearGradient></defs><path d="M12 2.5 21.5 12 12 21.5 2.5 12Z" fill="none" stroke="url(#lg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M12 8.2 15.8 12 12 15.8 8.2 12Z" fill="url(#lg)"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><path d="M12 2.5 21.5 12 12 21.5 2.5 12Z" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round"/><path d="M12 8.2 15.8 12 12 15.8 8.2 12Z" fill="url(#lg)"/></svg>
         Gradify
       </a>
       <nav aria-label="Sections">
@@ -39,7 +39,7 @@
 
     <section class="hero" id="top">
       <div>
-        <span class="badge"><span aria-hidden="true">◆</span><span>New: TechGradify · ForgeLab is coming</span></span>
+        <span class="badge"><span class="spark" aria-hidden="true"></span><span>New: TechGradify · ForgeLab is coming</span></span>
         <h1>One family of learning sites. <span class="grad">Find yours.</span></h1>
         <p class="lede">Every Gradify site is built for one kind of learner, from your first school subject to medicine, law and AI engineering. Pick your stage, profession or subject and go straight there.</p>
         <div class="actions">
@@ -77,12 +77,11 @@
 
       <div class="panel glass stats-panel">
         <div class="panel-head"><h3>At a glance</h3></div>
-        <div class="ring">
+        <div class="ring" id="ring">
           <svg viewBox="0 0 160 160" aria-hidden="true">
-            <defs><linearGradient id="ringg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a3d"/><stop offset="1" stop-color="#ff4d8d"/></linearGradient></defs>
             <circle cx="80" cy="80" r="74" class="ticks"/>
             <circle cx="80" cy="80" r="60" class="track"/>
-            <circle cx="80" cy="80" r="60" class="fill" id="ring-fill"/>
+            <g id="ring-segs"></g>
           </svg>
           <div class="ring-label"><b id="live-count">0</b><span>live of <span class="js-count">30</span></span></div>
         </div>
