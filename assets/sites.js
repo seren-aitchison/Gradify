@@ -3,6 +3,7 @@
 //   n: name   c: brand colour (hex, no #)   d: one-line description
 //   u: domain or full URL   label: optional text to show instead of the URL
 //   soon: true shows the domain but not as a link yet (for domains bought but not live)
+//   spot: optional colour for the big featured card at the top (defaults to c)
 export const GROUPS = [
   {
     id: "stage",
@@ -61,9 +62,15 @@ export const GROUPS = [
       {
         n: "TechGradify · ForgeLab", c: "666666",
         d: "Hands-on coding, data science and AI engineering, with instant feedback. Forge is the future of TechGradify.",
-        u: "techgradify.com", soon: true,
+        u: "techgradify.com", soon: true, spot: "ff5a4d",
       },
       { n: "Klerio", c: "2a8c82", d: "Clean contact lists and see what changed every week.", u: "getklerio.com", tm: false },
     ],
   },
 ];
+
+// Sites that rotate through the big featured card at the top of the page, in order.
+export const FEATURED = ["TechGradify · ForgeLab", "MedGradify", "LawGradify", "Klerio"];
+
+// Sites listed in the "Start with your stage" panel.
+export const START_HERE = ["UnderGradify", "PostGradify", "ProGradify"];
