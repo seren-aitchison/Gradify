@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="assets/styles.css">
   <script type="module" src="assets/app.js"></script>
   <script type="module" src="assets/lifeos.js"></script>
+  <script type="module" src="assets/nav.js"></script>
 </head>
 <body>
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
@@ -26,7 +27,7 @@
         <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Gradify
       </a>
-      <nav aria-label="Sections">
+      <nav class="sections" aria-label="Sections">
         <a href="#lifeos">LifeOS</a>
         <a href="#stage">Stage of life</a>
         <a href="#profession">Profession</a>
@@ -34,9 +35,27 @@
         <a href="#tech">Technology</a>
       </nav>
       <div class="right">
-        <a class="link" href="#tech">ForgeLab</a>
+        <a class="icon-btn" href="#find" id="nav-search" aria-label="Search all sites" title="Search (/)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </a>
         <a class="btn btn-primary btn-sm lg" href="#find">Find your site</a>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
       </div>
+      <nav class="menu" id="menu" aria-label="Menu" hidden>
+        <span class="menu-label">LifeOS</span>
+        <a href="#lifeos">Overview</a>
+        <a href="#command">Today</a>
+        <a href="#life-heat">Life progress</a>
+        <a href="#earth">Gradify Earth</a>
+        <a href="#path-panel">Learning path</a>
+        <span class="menu-label">All sites</span>
+        <a href="#stage">Stage of life</a>
+        <a href="#profession">Profession</a>
+        <a href="#subject">Subject</a>
+        <a href="#tech">Technology</a>
+      </nav>
     </header>
 
     <section class="hero" id="top">
@@ -106,7 +125,35 @@
         <span class="badge"><span class="spark" aria-hidden="true"></span>Gradify LifeOS · Preview</span>
         <h2 id="lifeos-title">Your whole life's progress, <span class="grad">in one place.</span></h2>
         <p>Health, career, knowledge, fitness, your degree and every course you take. Each Gradify site has its own learning path and heatmap, and every lesson you finish lands here on your life heatmap straight away. Courses you complete become credentials anyone can verify.</p>
-        <p class="example-note">This preview uses example data for one learner. Try the learning path below and watch the heatmap update.</p>
+        <p class="example-note">This preview uses example data for one learner, Alex. Try it: start the recommended session, review a fading topic on Gradify Earth, or finish a lesson on the learning path, and watch Alex's XP, goals and heatmap update.</p>
+      </div>
+
+
+      <!-- Command: what to do today -->
+      <div class="command" id="command">
+        <div class="panel glass profile">
+          <div class="avatar" aria-hidden="true">AM</div>
+          <div class="who"><b>Alex Morgan</b><span id="level-name"></span></div>
+          <div class="xp">
+            <div class="xp-top"><span id="xp-level"></span><span id="xp-text"></span></div>
+            <div class="xp-bar"><i id="xp-fill"></i></div>
+          </div>
+          <div class="badges" id="badges" aria-label="Achievements"></div>
+          <div class="connected"><span>Connected Gradify sites</span><div id="connected"></div></div>
+        </div>
+
+        <div class="panel glass next" id="next"></div>
+
+        <div class="panel glass goals">
+          <div class="panel-head"><h3>Goals</h3><span class="pill-dark">Linked to activity</span></div>
+          <div class="goal-list" id="goals"></div>
+        </div>
+
+        <div class="panel glass upcoming">
+          <div class="panel-head"><h3>Coming up</h3><span class="pill-dark" id="week-label"></span></div>
+          <div class="week" id="week" aria-hidden="true"></div>
+          <div class="events" id="events"></div>
+        </div>
       </div>
 
       <div class="panel glass heat-panel" id="life-heat">
@@ -130,8 +177,25 @@
 
       <div class="areas" id="areas"></div>
 
+
+      <!-- Gradify Earth: the knowledge map -->
+      <div class="panel glass earth-panel" id="earth">
+        <div class="panel-head earth-top">
+          <div>
+            <h3>Gradify Earth</h3>
+            <p class="sub">Alex's degree as a world. Each module is a region, each topic a city, and the roads are prerequisites. A topic only counts as mastered with evidence: recall, explanation, application, retention and connections.</p>
+          </div>
+          <span class="pill-dark">2D preview · 3D world coming</span>
+        </div>
+        <div class="earth-body">
+          <div class="earth-map" id="earth-map"></div>
+          <aside class="inset-card inspector" id="inspector" aria-live="polite"></aside>
+        </div>
+        <div class="earth-legend" id="earth-legend"></div>
+      </div>
+
       <div class="life-split">
-        <div class="panel glass path-panel">
+        <div class="panel glass path-panel" id="path-panel">
           <div class="panel-head">
             <h3>Learning path</h3>
             <div class="seg path-tabs" id="path-tabs" role="tablist" aria-label="Choose a site"></div>

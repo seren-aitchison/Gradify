@@ -252,7 +252,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 // ---------- Nav: highlight the section in view ----------
-const navLinks = [...document.querySelectorAll(".bar nav a")];
+const navLinks = [...document.querySelectorAll(".bar .sections a")];
 const spy = new IntersectionObserver((entries) => {
   for (const en of entries) {
     if (!en.isIntersecting) continue;

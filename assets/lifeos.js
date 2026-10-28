@@ -3,6 +3,7 @@
 import { GROUPS } from "./sites.js";
 import { icon } from "./icons.js";
 import { ink, tile, triple } from "./colour.js";
+import { initEarth, TOPICS, stateOf, review } from "./earth.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
@@ -242,20 +243,131 @@ $("#path").addEventListener("click", (e) => {
   }
   const finished = i === p.done;
   if (finished) p.done++;
-  logActivity(pathSite, finished ? `Finished “${p.lessons[i]}”` : `Practised “${p.lessons[i]}”`);
+  logActivity(pathSite, finished ? `Finished “${p.lessons[i]}”` : `Practised “${p.lessons[i]}”`, finished ? "lesson" : "practice", finished ? 20 : 10);
   renderPath();
-  if (finished && p.done === p.lessons.length) toast(`Unit ${p.unit} complete in ${short(pathSite)}. In the full version, finishing a course issues a verified credential.`);
+  if (finished && p.done === p.lessons.length) {
+    unlock("unit");
+    toast(`Unit ${p.unit} complete in ${short(pathSite)}. Achievement unlocked: Unit finisher. In the full version, finishing a course issues a verified credential.`);
+  }
 });
 
-// The key idea: every lesson on any site lands on the LifeOS heatmap at once
-function logActivity(site, what) {
+// The key idea: every activity on any site lands in LifeOS at once:
+// the heatmap, life areas, XP and goals all update together.
+function logActivity(site, what, kind, gained) {
   todayCell.counts[site] = (todayCell.counts[site] || 0) + 1;
   for (const a of AREAS) if (a.sites.includes(site)) a.pct = Math.min(100, a.pct + 1);
+  for (const g of GOALS) if (g.counts(site, kind)) g.n = Math.min(g.of, g.n + 1);
+  addXp(gained);
   renderHeat();
   renderAreas();
-  const cell = heat.querySelector("i.today");
-  cell?.classList.add("bump");
-  toast(`${what} in ${short(site)}. <a href="#life-heat">Added to your life heatmap ↑</a>`, true);
+  renderGoals();
+  renderNext();
+  heat.querySelector("i.today")?.classList.add("bump");
+  toast(`${what} in ${short(site)}: +${gained} XP. <a href="#life-heat">Added to your life heatmap ↑</a>`, true);
+}
+
+// ---------- Command: today ----------
+const LEVELS = ["Explorer", "Apprentice", "Scholar", "Specialist", "Expert"];
+let userLevel = 14, xp = 2340;
+const xpFor = (lv) => 1000 + lv * 140; // XP needed to finish this level
+function addXp(n) {
+  xp += n;
+  while (xp >= xpFor(userLevel)) { xp -= xpFor(userLevel); userLevel++; unlock("level"); toast(`Level up! Alex is now level ${userLevel}.`); }
+  renderProfile();
+}
+function renderProfile() {
+  $("#level-name").textContent = `Level ${userLevel} · ${LEVELS[Math.min(LEVELS.length - 1, Math.floor(userLevel / 6))]}`;
+  $("#xp-level").textContent = `Level ${userLevel + 1}`;
+  $("#xp-text").textContent = `${xp.toLocaleString("en-GB")} / ${xpFor(userLevel).toLocaleString("en-GB")} XP`;
+  $("#xp-fill").style.width = `${(xp / xpFor(userLevel)) * 100}%`;
+}
+
+const BADGES = [
+  { id: "streak", i: "flame", name: "7-day streak", c: "ff8a3d", got: true },
+  { id: "cred", i: "award", name: "First credential", c: "ff5a4d", got: true },
+  { id: "lessons", i: "star", name: "100 lessons", c: "ffc002", got: true },
+  { id: "unit", i: "trophy", name: "Unit finisher: complete a unit", c: "40d4b1", got: false },
+  { id: "level", i: "cap", name: "Level up", c: "3c78d8", got: false },
+];
+function renderBadges() {
+  $("#badges").innerHTML = BADGES.map((b) =>
+    `<span class="ach ${b.got ? "got" : "locked"}" style="--c:#${b.c}" title="${esc(b.name)}${b.got ? "" : " (locked)"}" role="img" aria-label="${esc(b.name)}${b.got ? "" : ", locked"}">${icon(b.got ? b.i : "lock")}</span>`).join("");
+}
+function unlock(id) {
+  const b = BADGES.find((x) => x.id === id);
+  if (b && !b.got) { b.got = true; renderBadges(); }
+}
+
+// Goals count real activity, not ticked boxes
+const GOALS = [
+  { label: "Finish 3 lessons", n: 1, of: 3, i: "star", counts: (site, kind) => kind === "lesson" },
+  { label: "Review 2 fading topics", n: 0, of: 2, i: "flame", counts: (site, kind) => kind === "review-fading" },
+  { label: "Practise Spanish", n: 0, of: 1, i: "languages", counts: (site) => site === "LanguageGradify" },
+  { label: "Work out 4 times this week", n: 3, of: 4, i: "dumbbell", counts: (site) => site === "SportGradify", week: true },
+];
+function renderGoals() {
+  $("#goals").innerHTML = GOALS.map((g) => {
+    const done = g.n >= g.of;
+    return `<div class="goal ${done ? "done" : ""}">
+      <span class="goal-ico">${icon(done ? "check" : g.i)}</span>
+      <span class="goal-txt"><b>${esc(g.label)}</b><span>${g.week ? "This week" : "Today"} · ${g.n}/${g.of}</span></span>
+      <span class="goal-bar"><i style="width:${(g.n / g.of) * 100}%"></i></span>
+    </div>`;
+  }).join("");
+}
+
+// Recommended next action: the most urgent fading topic on Gradify Earth
+const PRIORITY = ["cycle", "thorax", "enzymes", "inherit"];
+function renderNext() {
+  const t = PRIORITY.map((id) => TOPICS.find((x) => x.id === id)).find((x) => stateOf(x) === "fading");
+  const c = colourOf("MedGradify");
+  const box = $("#next");
+  box.style.setProperty("--c", "#" + c);
+  box.style.setProperty("--glow", triple(c));
+  if (!t) {
+    box.innerHTML = `<span class="kicker">Recommended now</span><b class="next-title">You're all caught up</b>
+      <p>No fading topics left. Next, carry on with Unit 2 of MedGradify on the learning path.</p>
+      <div class="next-actions"><a class="btn btn-light lg btn-sm" href="#path-panel"><span>Go to learning path</span></a></div>`;
+    return;
+  }
+  box.innerHTML = `
+    <span class="kicker">${icon("flame")}Recommended now</span>
+    <b class="next-title">Review “${esc(t.name)}”</b>
+    <p>Retention is down to ${t.ev[3]}% and the Cardiovascular exam is in 15 days. A short review now will bring it back.</p>
+    <div class="chips-row"><span>15 min</span><span>MedGradify</span><span>+30 XP</span></div>
+    <div class="next-actions">
+      <button type="button" class="btn btn-light lg btn-sm" data-topic="${t.id}">${icon("star")}<span>Start session</span></button>
+      <a class="see" href="#earth">See it on Gradify Earth</a>
+    </div>`;
+}
+$("#next").addEventListener("click", (e) => {
+  const b = e.target.closest("[data-topic]");
+  if (!b) return;
+  const t = TOPICS.find((x) => x.id === b.dataset.topic);
+  review(t.id);
+  logActivity("MedGradify", `Reviewed “${t.name}”`, "review-fading", 30);
+});
+
+// Coming up: this week, plus deadlines
+const EVENTS = [
+  { in: 2, what: "Unit 4 challenge due", site: FORGE },
+  { in: 6, what: "Physiology lab report", site: "UnderGradify" },
+  { in: 15, what: "Cardiovascular exam", site: "MedGradify" },
+  { in: 23, what: "Spanish B2 speaking test", site: "LanguageGradify" },
+];
+function renderUpcoming() {
+  const d0 = today;
+  $("#week-label").textContent = fmt(d0, { month: "long", year: "numeric" });
+  $("#week").innerHTML = Array.from({ length: 7 }, (_, k) => {
+    const d = new Date(+d0 + k * DAY);
+    const ev = EVENTS.find((e) => e.in === k);
+    return `<span class="${k === 0 ? "now" : ""}"><em>${fmt(d, { weekday: "narrow" })}</em><b>${d.getDate()}</b>${ev ? `<i style="background:#${colourOf(ev.site)}"></i>` : "<i></i>"}</span>`;
+  }).join("");
+  $("#events").innerHTML = EVENTS.map((e) => {
+    const d = new Date(+d0 + e.in * DAY), c = colourOf(e.site);
+    return `<div class="event"><span class="date"><b>${d.getDate()}</b>${fmt(d, { month: "short" })}</span>
+      <span class="ev-txt"><b>${esc(e.what)}</b><span><i style="background:#${c}"></i>${esc(short(e.site))} · in ${e.in} days</span></span></div>`;
+  }).join("");
 }
 
 // ---------- Credentials ----------
@@ -300,6 +412,18 @@ function toast(msg, html = false) {
 }
 
 // ---------- Go ----------
+$("#connected").innerHTML = SOURCES.map((s) => {
+  const c = colourOf(s.n);
+  return `<span class="icon" style="--c:#${c};--tile:${tile(c)};--ink:${ink(c)}" title="${esc(s.n)}" role="img" aria-label="${esc(s.n)}">${icon(SITES.get(s.n).i)}</span>`;
+}).join("");
+renderProfile();
+renderBadges();
+renderGoals();
+renderNext();
+renderUpcoming();
+initEarth({
+  onReview: (t) => logActivity("MedGradify", `Reviewed “${t.name}”`, t.wasFading ? "review-fading" : "review", 15),
+});
 renderHeat();
 renderAreas();
 renderTabs();

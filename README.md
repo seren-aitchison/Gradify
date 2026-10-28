@@ -11,7 +11,9 @@ assets/styles.css   liquid-glass styling, light + dark mode
 assets/app.js       renders the cards, colour strip, search, filters, theme toggle
 assets/icons.js     line icons for each site and the interface
 assets/colour.js    colour helpers shared by the scripts
-assets/lifeos.js    the Gradify LifeOS preview: life heatmap, life areas, learning path, credentials
+assets/lifeos.js    the Gradify LifeOS preview: today panel, life heatmap, life areas, learning path, credentials
+assets/earth.js     Gradify Earth: the 2D knowledge map in the LifeOS preview
+assets/nav.js       top bar search button and the phone menu
 assets/favicon.svg  icon
 ```
 
@@ -37,4 +39,4 @@ DNS is on Cloudflare: four `A` records for `getgradify.com` point at GitHub Page
 
 ## Gradify LifeOS preview
 
-The `#lifeos` section shows how Gradify LifeOS will work, using example data for one made-up learner that's generated in the browser. Nothing is saved. The learner, the life areas, each site's learning path and the credentials are all at the top of `assets/lifeos.js`. In the full version this data will come from each Gradify site's progress API.
+The `#lifeos` section shows how Gradify LifeOS will work, using example data for one made-up learner that's generated in the browser. Nothing is saved. The learner, goals, deadlines, life areas, each site's learning path and the credentials are all in `assets/lifeos.js`; the knowledge map's modules, topics and evidence are in `assets/earth.js`. In the full version this data will come from each Gradify site's progress API.
