@@ -3,7 +3,9 @@
 import { GROUPS } from "./sites.js";
 import { icon } from "./icons.js";
 import { ink, tile, triple } from "./colour.js";
-import { initEarth, TOPICS, stateOf, review } from "./earth.js";
+import { initEarth, TOPICS, stateOf, review, showTopic } from "./earth.js";
+import { initPlan } from "./plan.js";
+import { initAssistant } from "./assistant.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
@@ -263,6 +265,7 @@ function logActivity(site, what, kind, gained) {
   renderGoals();
   renderNext();
   heat.querySelector("i.today")?.classList.add("bump");
+  document.dispatchEvent(new CustomEvent("lifeos:activity", { detail: { site, kind } }));
   toast(`${what} in ${short(site)}: +${gained} XP. <a href="#life-heat">Added to your life heatmap ↑</a>`, true);
 }
 
@@ -340,12 +343,16 @@ function renderNext() {
       <a class="see" href="#earth">See it on Gradify Earth</a>
     </div>`;
 }
+// Review a topic from anywhere (the recommendation, the assistant): Earth, XP, goals and heatmap all update
+function startReview(id) {
+  const t = TOPICS.find((x) => x.id === id);
+  const wasFading = stateOf(t) === "fading";
+  review(id);
+  logActivity("MedGradify", `Reviewed “${t.name}”`, wasFading ? "review-fading" : "review", 30);
+}
 $("#next").addEventListener("click", (e) => {
   const b = e.target.closest("[data-topic]");
-  if (!b) return;
-  const t = TOPICS.find((x) => x.id === b.dataset.topic);
-  review(t.id);
-  logActivity("MedGradify", `Reviewed “${t.name}”`, "review-fading", 30);
+  if (b) startReview(b.dataset.topic);
 });
 
 // Coming up: this week, plus deadlines
@@ -363,11 +370,17 @@ function renderUpcoming() {
     const ev = EVENTS.find((e) => e.in === k);
     return `<span class="${k === 0 ? "now" : ""}"><em>${fmt(d, { weekday: "narrow" })}</em><b>${d.getDate()}</b>${ev ? `<i style="background:#${colourOf(ev.site)}"></i>` : "<i></i>"}</span>`;
   }).join("");
-  $("#events").innerHTML = EVENTS.map((e) => {
+  const when = (n) => (n === 0 ? "today" : n === 1 ? "tomorrow" : `in ${n} days`);
+  $("#events").innerHTML = EVENTS.slice(0, 5).map((e) => {
     const d = new Date(+d0 + e.in * DAY), c = colourOf(e.site);
-    return `<div class="event"><span class="date"><b>${d.getDate()}</b>${fmt(d, { month: "short" })}</span>
-      <span class="ev-txt"><b>${esc(e.what)}</b><span><i style="background:#${c}"></i>${esc(short(e.site))} · in ${e.in} days</span></span></div>`;
+    return `<div class="event${e.planned ? " planned" : ""}"><span class="date"><b>${d.getDate()}</b>${fmt(d, { month: "short" })}</span>
+      <span class="ev-txt"><b>${esc(e.what)}</b><span><i style="background:#${c}"></i>${e.planned ? "Planned · " : ""}${esc(short(e.site))} · ${when(e.in)}</span></span></div>`;
   }).join("");
+}
+function addEvent(ev) {
+  EVENTS.push(ev);
+  EVENTS.sort((a, b) => a.in - b.in || (b.planned ? 1 : 0) - (a.planned ? 1 : 0));
+  renderUpcoming();
 }
 
 // ---------- Credentials ----------
@@ -424,6 +437,12 @@ renderUpcoming();
 initEarth({
   onReview: (t) => logActivity("MedGradify", `Reviewed “${t.name}”`, t.wasFading ? "review-fading" : "review", 15),
 });
+const ctx = {
+  toast, addEvent, startReview, showTopic, logActivity,
+  goals: GOALS, paths: PATHS, today, DAY, fmt, esc, short, colourOf, site: (n) => SITES.get(n),
+};
+initPlan(ctx);
+initAssistant(ctx);
 renderHeat();
 renderAreas();
 renderTabs();

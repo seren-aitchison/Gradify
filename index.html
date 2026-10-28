@@ -49,12 +49,17 @@
         <a href="#command">Today</a>
         <a href="#life-heat">Life progress</a>
         <a href="#earth">Gradify Earth</a>
+        <a href="#plan">Path</a>
+        <a href="#ai">Gradify AI</a>
         <a href="#path-panel">Learning path</a>
         <span class="menu-label">All sites</span>
         <a href="#stage">Stage of life</a>
         <a href="#profession">Profession</a>
         <a href="#subject">Subject</a>
         <a href="#tech">Technology</a>
+        <span class="menu-label">Gradify</span>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#faq">Questions</a>
       </nav>
     </header>
 
@@ -194,6 +199,35 @@
         <div class="earth-legend" id="earth-legend"></div>
       </div>
 
+
+      <!-- Path planner + Gradify AI -->
+      <div class="plan-ai">
+        <div class="panel glass plan-panel" id="plan">
+          <div class="panel-head plan-head">
+            <div>
+              <h3>Path</h3>
+              <p class="sub">Choose a goal. LifeOS compares where you are with where you need to be, then shows the routes there.</p>
+            </div>
+          </div>
+          <div class="seg plan-goals" id="plan-goals" role="group" aria-label="Choose a goal"></div>
+          <div id="plan-body"></div>
+        </div>
+
+        <div class="panel glass ai-panel" id="ai">
+          <div class="panel-head">
+            <div class="ai-title"><span class="ai-av" aria-hidden="true"></span><div><h3>Gradify AI</h3><p class="sub">One assistant that knows your progress on every Gradify site</p></div></div>
+            <span class="pill-dark">Scripted preview</span>
+          </div>
+          <div class="ai-log" id="ai-log" aria-live="polite"></div>
+          <div class="ai-suggest" id="ai-suggest" aria-label="Suggested questions"></div>
+          <form class="ai-form" id="ai-form">
+            <label class="sr-only" for="ai-input">Ask Gradify AI</label>
+            <input id="ai-input" class="lg" type="text" placeholder="Ask about Alex's study, exams or plans" autocomplete="off">
+            <button type="submit" class="icon-btn send" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </form>
+        </div>
+      </div>
+
       <div class="life-split">
         <div class="panel glass path-panel" id="path-panel">
           <div class="panel-head">
@@ -245,9 +279,115 @@
       <p class="empty glass" id="empty">No site matches that search. Try a different word.</p>
     </main>
 
+
+    <!-- Roadmap -->
+    <section class="roadmap" id="roadmap" aria-labelledby="roadmap-title">
+      <div class="section-head">
+        <span class="badge"><span class="spark" aria-hidden="true"></span>Roadmap</span>
+        <h2 id="roadmap-title">Built in three phases</h2>
+        <p>The full vision is big, so Gradify is being built step by step: first a reliable account and dashboard people come back to, then a connected LifeOS, then the wider ecosystem.</p>
+      </div>
+      <div class="phases">
+        <article class="panel glass phase now">
+          <span class="phase-tag">Phase 1 · Now</span>
+          <h3>A working parent platform</h3>
+          <ul>
+            <li class="done">Directory of all 30 sites, with search and filters</li>
+            <li class="done">LifeOS preview: heatmap, goals, Earth, Path and AI</li>
+            <li>Sign up, log in and account settings</li>
+            <li>Real dashboard with XP, goals, streaks and progress</li>
+            <li>ForgeLab connected as the first full learning product</li>
+            <li>Progress saved and synced across devices</li>
+          </ul>
+        </article>
+        <article class="panel glass phase">
+          <span class="phase-tag">Phase 2 · Next</span>
+          <h3>Connected Gradify LifeOS</h3>
+          <ul>
+            <li>One account across every Gradify site</li>
+            <li>Unified calendar, reminders and daily plan</li>
+            <li>Gradify AI assistant and recommendations</li>
+            <li>Readiness forecasts and learning analytics</li>
+            <li>Achievements, challenges and study groups</li>
+            <li>Subscriptions and verified credentials</li>
+            <li>First Gradify Earth prototype</li>
+          </ul>
+        </article>
+        <article class="panel glass phase">
+          <span class="phase-tag">Phase 3 · Later</span>
+          <h3>The wider ecosystem</h3>
+          <ul>
+            <li>A persistent 3D Gradify Earth</li>
+            <li>AI planning and personal automation, with your permission</li>
+            <li>Portals for universities, teachers, parents and employers</li>
+            <li>A developer API</li>
+            <li>Mobile and desktop apps</li>
+            <li>A dedicated Gradify study tablet</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="section-head">
+        <h2 id="faq-title">Questions</h2>
+      </div>
+      <div class="faq-list">
+        <details class="glass">
+          <summary>What is Gradify?</summary>
+          <p>A family of learning sites, each built for one kind of learner: a stage of life like UnderGradify, a profession like MedGradify, or a subject like LanguageGradify. getgradify.com is the home of all of them, and of Gradify LifeOS.</p>
+        </details>
+        <details class="glass">
+          <summary>What is Gradify LifeOS?</summary>
+          <p>One place for your whole learning life. Every Gradify site has its own learning path and heatmap, and everything you do on any of them comes together in LifeOS: one heatmap, one set of goals, XP and streaks, your knowledge map on Gradify Earth, and every course you've completed.</p>
+        </details>
+        <details class="glass">
+          <summary>Can I use LifeOS yet?</summary>
+          <p>Not yet. The LifeOS section on this page is a preview with example data, so you can see how it will work. Accounts come first, then ForgeLab will be the first site connected to it.</p>
+        </details>
+        <details class="glass">
+          <summary>Will Gradify courses count as qualifications?</summary>
+          <p>That's the aim. Every completed course will come with a certificate that has a unique ID and a public page where anyone, such as an employer or a university, can check it's genuine. Which organisations recognise them will build up over time.</p>
+        </details>
+        <details class="glass">
+          <summary>How much will it cost?</summary>
+          <p>Pricing hasn't been decided yet. It will be published before accounts open.</p>
+        </details>
+        <details class="glass">
+          <summary>Which sites are live?</summary>
+          <p>Each site's card shows whether it's live or coming soon. Turn on “Live only” in the directory to see just the live ones.</p>
+        </details>
+        <details class="glass">
+          <summary>What happens to my data?</summary>
+          <p>LifeOS is being designed so your progress belongs to you: you'll be able to export it or delete it, and each Gradify site will only see the data it needs.</p>
+        </details>
+      </div>
+    </section>
+
     <footer class="glass">
-      <p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p>
-      <p>© <span id="year">2026</span> Gradify™</p>
+      <div class="foot-cols">
+        <div class="foot-brand">
+          <b>Gradify™</b>
+          <p>One family of learning sites, and the LifeOS that brings your progress together.</p>
+        </div>
+        <nav aria-label="LifeOS">
+          <b>LifeOS</b>
+          <a href="#command">Today</a><a href="#life-heat">Life progress</a><a href="#earth">Gradify Earth</a><a href="#plan">Path</a><a href="#ai">Gradify AI</a>
+        </nav>
+        <nav aria-label="Sites">
+          <b>Sites</b>
+          <a href="#stage">Stage of life</a><a href="#profession">Profession</a><a href="#subject">Subject</a><a href="#tech">Technology</a>
+        </nav>
+        <nav aria-label="Gradify">
+          <b>Gradify</b>
+          <a href="#roadmap">Roadmap</a><a href="#faq">Questions</a>
+        </nav>
+      </div>
+      <div class="foot-base">
+        <p><b>Also from the Gradify team:</b> Seren Aitchison (portfolio blog), BioFrontier, Eirova™, Erya™ and Vizeon™.</p>
+        <p>© <span id="year">2026</span> Gradify™</p>
+      </div>
     </footer>
   </div>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>

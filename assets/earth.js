@@ -7,7 +7,7 @@ const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
 const SVG = "http://www.w3.org/2000/svg";
 
-const MODULES = {
+export const MODULES = {
   anat: { name: "Anatomy", c: "#f99246" },
   bio: { name: "Biochemistry", c: "#a855f7" },
   gen: { name: "Genetics", c: "#3c78d8" },
@@ -45,7 +45,7 @@ export const TOPICS = [
   { id: "pk", m: "pharm", name: "Pharmacokinetics", x: 470, y: 395, ev: [58, 50, 36, 0, 44], days: 2, learning: true },
   { id: "placements", m: null, name: "Clinical placements", x: 800, y: 280, ev: [0, 0, 0, 0, 0], locked: true },
 ];
-const ROADS = [
+export const ROADS = [
   ["bones", "muscles"], ["muscles", "thorax"], ["thorax", "chambers"], ["chambers", "coronary"], ["chambers", "cycle"],
   ["cycle", "sounds"], ["cycle", "ecg"], ["cycle", "bp"], ["bp", "renal"], ["enzymes", "metab"], ["metab", "signal"],
   ["signal", "receptors"], ["receptors", "pk"], ["dna", "inherit"], ["ecg", "placements"],
@@ -73,7 +73,7 @@ export function stateOf(t) {
   if (t.ev[3] < 50 && !t.learning) return "fading";
   return "learning";
 }
-const strength = (t) => Math.round(t.ev.reduce((a, b) => a + b, 0) / t.ev.length);
+export const strength = (t) => Math.round(t.ev.reduce((a, b) => a + b, 0) / t.ev.length);
 
 let selected = "cycle";
 let onReview = () => {};
@@ -179,6 +179,11 @@ function select(id) {
   selected = id;
   draw();
   inspect();
+}
+
+export function showTopic(id) {
+  select(id);
+  document.getElementById("earth").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
 }
 
 export function review(id) {

@@ -13,6 +13,8 @@ assets/icons.js     line icons for each site and the interface
 assets/colour.js    colour helpers shared by the scripts
 assets/lifeos.js    the Gradify LifeOS preview: today panel, life heatmap, life areas, learning path, credentials
 assets/earth.js     Gradify Earth: the 2D knowledge map in the LifeOS preview
+assets/plan.js      Path: goals, readiness, gaps and routes in the LifeOS preview
+assets/assistant.js Gradify AI preview (scripted replies worked out from the example data)
 assets/nav.js       top bar search button and the phone menu
 assets/favicon.svg  icon
 ```
