@@ -1,0 +1,8 @@
+Photosynthesis (bio wk 6)
+photosynthesis = how plants make glucose from CO2 + water using light energy
+happens in chloroplasts. chlorophyll is the green pigment that absorbs light (mostly red + blue)
+2 stages:
+1) light-dependent reactions -> in thylakoid membranes. water split (photolysis), O2 released, makes ATP + NADPH
+2) Calvin cycle (light-independent) -> in the stroma. fixes CO2 into sugar using ATP + NADPH
+rubisco is the enzyme that fixes CO2 in the calvin cycle
+limiting factors: light intensity, CO2 concentration, temperature

@@ -9,7 +9,7 @@ const $ = (s, el = document) => el.querySelector(s);
 let ctx, pack = null, tab = "notes", stopPlayback = () => {};
 const learnt = new Set();
 
-const SAMPLE = `CARDIAC CYCLE - lecture 4 notes
+export const SAMPLE = `CARDIAC CYCLE - lecture 4 notes
 cardiac cycle = sequence of events in 1 heartbeat!!
 - systole is the phase when ventricles contract + eject blood
 -diastole is the phase when the ventricles relax and fill w/ blood
@@ -122,7 +122,7 @@ function analyse(raw) {
       // a heading like "ECG:" followed by several "x = y" pairs
       const head = clause.match(/^([A-Za-z ]{2,20}):\s*(.+=.+,.+=.+)$/);
       const pieces = head ? head[2].split(/,\s*/) : (clause.match(/=/g) || []).length > 1 ? clause.split(/,\s*/) : [clause];
-      for (const p of pieces) { const f = readFact(p, abbr); if (f) facts.push(f); }
+      for (const p of pieces) { const f = readFact(p, abbr); if (f) { f.src = strip(p); facts.push(f); } }
     }
   }
   // equations in symbols: "cardiac output equals stroke volume multiplied by heart rate" → CO = SV × HR
@@ -334,7 +334,7 @@ function audioView(p) {
 }
 
 // ---------- 5. Playback ----------
-const synth = window.speechSynthesis;
+const synth = typeof window !== "undefined" ? window.speechSynthesis : undefined;
 function voice() {
   const vs = synth?.getVoices() || [];
   return vs.find((v) => /en-GB/i.test(v.lang) && /female|libby|sonia|serena|kate/i.test(v.name)) || vs.find((v) => /en-GB/i.test(v.lang)) || vs.find((v) => /^en/i.test(v.lang));
@@ -484,7 +484,7 @@ function loadPdfJs() {
   });
   return pdfReady;
 }
-async function readFile(file) {
+export async function readFile(file) {
   if (/\.pdf$/i.test(file.name) || file.type === "application/pdf") {
     const lib = await loadPdfJs();
     const doc = await lib.getDocument({ data: await file.arrayBuffer() }).promise;
@@ -530,6 +530,17 @@ async function make() {
   status.textContent = `Found ${pack.facts.length} facts in ${pack.groups.length} ${pack.groups.length === 1 ? "group" : "groups"}, ${pack.cards.length} flashcards${pack.dates.length ? ` and ${pack.dates.length} ${pack.dates.length === 1 ? "date" : "dates"}` : ""}.`;
   tab = "notes";
   render();
+}
+
+// The notes after tidying (bullets, shorthand), as the extractor saw them
+export const normaliseNotes = (raw) => normalise(raw).join("\n");
+
+// The browser extractor on its own, for the Gradify app and the eval script
+export function analyseNotes(raw, today = new Date()) {
+  const prev = ctx;
+  const t = new Date(today); t.setHours(0, 0, 0, 0);
+  ctx = { ...(prev || {}), today: t, DAY: 864e5 };
+  try { return analyse(raw); } finally { ctx = prev; }
 }
 
 export function initStudio(context) {

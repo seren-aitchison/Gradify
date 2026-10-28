@@ -1,0 +1,13 @@
+CARDIAC CYCLE - lecture 4 notes
+cardiac cycle = sequence of events in 1 heartbeat!!
+- systole is the phase when ventricles contract + eject blood
+-diastole is the phase when the ventricles relax and fill w/ blood
+- isovolumetric contraction - all 4 valves closed, pressure rises fast
+S1 (first heart sound) is caused by closure of the mitral + tricuspid valves
+S2 (second heart sound) is caused by closure of aortic + pulmonary valves
+stroke volume (SV) is the amount of blood ejected by each ventricle per beat
+cardiac output (CO) equals stroke volume multiplied by heart rate (HR)
+ECG: P wave = atrial depolarisation, QRS complex = ventricular depolarisation, T wave = ventricular repolarisation
+preload = how much the ventricles stretch before they contract
+afterload is the pressure the ventricle has to pump against
+quiz on Friday!! lab report due 3 November

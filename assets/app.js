@@ -1,6 +1,7 @@
 import { GROUPS, FEATURED, START_HERE, KEYWORDS } from "./sites.js";
 import { icon } from "./icons.js";
 import { triple, mix, ink, tile } from "./colour.js";
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from "./app/config.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const href = (u) => (/^https?:/.test(u) ? u : "https://" + u);
@@ -50,26 +51,29 @@ for (const g of GROUPS) {
   for (const s of g.items) {
     const live = isLive(s);
     const featured = s.n.includes("ForgeLab");
-    const card = document.createElement(live ? "a" : "div");
+    const card = document.createElement("article");
     card.className = `card glass ${live ? "live" : "soon"}${featured ? " featured" : ""}`;
     card.id = slug(s.n);
     colour(card, s);
-    card.dataset.search = `${s.n} ${s.d} ${g.title} ${KEYWORDS[s.n] || ""}`.toLowerCase();
-    if (live) {
-      card.href = href(s.u);
-      card.target = "_blank";
-      card.rel = "noopener";
-    }
+    card.dataset.search = `${s.n} ${s.d} ${s.who || ""} ${g.title} ${KEYWORDS[s.n] || ""}`.toLowerCase();
     const badge = featured ? '<span class="badge"><span class="spark" aria-hidden="true"></span>The future of TechGradify</span>' : "";
-    const foot = live
-      ? `<span class="domain">${domainOf(s)}</span><span class="go">${ICON.chev}</span>`
-      : `<span class="domain">${s.u ? domainOf(s) + " · " : ""}Coming soon</span><span class="go wait">${ICON.clock}</span>`;
+    // what it does, without repeating the "For …:" lead-in that some descriptions have
+    const what = s.d.replace(/^For [^:]+:\s*/, "").replace(/^./, (c) => c.toUpperCase());
+    const study = s.n === "Klerio" ? "" : `<a class="study-link" href="app.html?site=${encodeURIComponent(s.n)}">Study ${esc(s.n.replace(" · ForgeLab", "").replace(/Gradify$/, "") || s.n)} in Gradify ${ICON.chev}</a>`;
     card.innerHTML = `
       <span class="icon" aria-hidden="true">${mark(s)}</span>
       <span class="body">
+        <span class="status ${live ? "is-live" : "is-soon"}">${live ? "Live" : "Coming soon"}</span>
         <h3>${nameOf(s)}${badge}</h3>
-        <p>${esc(s.d)}</p>
-        <span class="foot inset">${foot}</span>
+        ${s.who ? `<p class="who"><b>For:</b> ${esc(s.who)}</p>` : ""}
+        <p>${esc(what)}</p>
+        <span class="actions-row">
+          ${live
+            ? `<a class="btn btn-light lg btn-sm visit" href="${href(s.u)}" target="_blank" rel="noopener" title="Opens ${domainOf(s)} in a new tab"><span>Visit ${domainOf(s)}</span> <span aria-hidden="true">↗</span></a>`
+            : `<button type="button" class="btn btn-ghost lg btn-sm notify" data-site="${esc(s.n)}"><span>Notify me</span></button>${s.u ? `<span class="domain soon-domain">${domainOf(s)}</span>` : ""}`}
+          ${study}
+        </span>
+        <form class="notify-form" hidden><label class="sr-only" for="nf-${card.id}">Email for ${esc(s.n)} launch news</label><input id="nf-${card.id}" type="email" required placeholder="you@example.com" autocomplete="email"><button class="btn btn-light lg btn-sm" type="submit"><span>Join</span></button></form>
       </span>`;
     grid.appendChild(card);
   }
@@ -82,6 +86,41 @@ for (const g of GROUPS) {
   chip.setAttribute("aria-pressed", "false");
   chip.textContent = groupLabel(g);
   chips.appendChild(chip);
+}
+
+// ---------- Notify me (sites that aren't live yet) ----------
+groupsEl.addEventListener("click", (e) => {
+  const b = e.target.closest(".notify");
+  if (!b) return;
+  const form = b.closest(".card").querySelector(".notify-form");
+  form.hidden = false;
+  b.hidden = true;
+  form.querySelector("input").focus();
+});
+groupsEl.addEventListener("submit", async (e) => {
+  const form = e.target.closest(".notify-form");
+  if (!form) return;
+  e.preventDefault();
+  const site = form.closest(".card").querySelector(".notify").dataset.site;
+  const email = form.querySelector("input").value.trim();
+  let msg;
+  try {
+    msg = await joinWaitlist(email, site);
+  } catch { msg = "Sorry, that didn't work. Please try again."; }
+  form.outerHTML = `<p class="notify-done">${esc(msg)}</p>`;
+});
+async function joinWaitlist(email, site) {
+  if (SUPABASE_URL && SUPABASE_ANON_KEY) {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+      method: "POST",
+      headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}`, "Content-Type": "application/json", Prefer: "return=minimal,resolution=ignore-duplicates" },
+      body: JSON.stringify({ email, site }),
+    });
+    if (!res.ok && res.status !== 409) throw new Error(String(res.status));
+    return `Thanks. We'll email you when ${site} launches.`;
+  }
+  try { const list = JSON.parse(localStorage.getItem("gradify.waitlist") || "[]"); list.push({ email, site, at: Date.now() }); localStorage.setItem("gradify.waitlist", JSON.stringify(list)); } catch { /* storage blocked */ }
+  return `Noted on this device. Launch emails start when Gradify accounts open.`;
 }
 
 // ---------- Colour tiles ----------
