@@ -28,4 +28,6 @@ Edit `assets/sites.js`. A site with no `u` (URL) shows as "Coming soon".
 
 ## Deploy
 
-Any static host works: GitHub Pages, Netlify, Vercel or Cloudflare Pages. Point it at the repo root. No build command is needed.
+Live on GitHub Pages at https://getgradify.com, deployed from the `main` branch root. Every push to `main` goes live within a minute or so. `CNAME` holds the custom domain, and `.nojekyll` tells Pages to serve the files as they are.
+
+DNS is on Cloudflare: four `A` records for `getgradify.com` point at GitHub Pages, and `www` is a `CNAME` to `seren-aitchison.github.io`.
