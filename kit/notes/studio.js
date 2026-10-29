@@ -230,49 +230,171 @@ function cardsView(p) {
   <div class="out-actions"><button type="button" class="btn btn-light lg btn-sm" id="add-cards"><span>Add ${p.cards.length} cards to my flashcard feed</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-dl="csv"><span>Download for Anki (.csv)</span></button></div>`;
 }
 
-// The mind map: a left-to-right tree like a holographic file browser. The notes' title is the
-// root; each topic branches off it, each term off its topic, with a short definition beside it.
-// Branches draw themselves in. Terms glow once you've rated them Good or Easy.
+// The mind map, drawn like handwritten revision notes on dotted paper: the title in a cloud
+// in the middle, topics either side as hand-drawn boxes or highlighter strips, and every term
+// written out with its definition, joined by hand-drawn arrows that draw themselves in.
+// Terms you've rated Good or Easy in the flashcard feed get a highlighter tick.
+const HAND_FONTS = "https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Patrick+Hand&display=swap";
+function loadHandFonts() {
+  if (typeof document === "undefined" || document.querySelector(`link[href="${HAND_FONTS}"]`)) return;
+  const l = document.createElement("link");
+  l.rel = "stylesheet"; l.href = HAND_FONTS;
+  document.head.appendChild(l);
+}
+const mixHex = (h, t, to = 255) => "#" + [0, 2, 4].map((k) => Math.round(parseInt(h.substr(k, 2), 16) * (1 - t) + to * t).toString(16).padStart(2, "0")).join("");
+// a little deterministic wobble, so lines look drawn rather than plotted
+const jit = (n, k = 1) => (Math.sin(n * 12.9898 + k * 78.233) * 43758.5453 % 1) * 2;
+function wrapWords(text, max) {
+  const out = []; let line = "";
+  for (const w of text.split(" ")) { if ((line + " " + w).trim().length > max) { if (line) out.push(line.trim()); line = w; } else line += " " + w; }
+  if (line.trim()) out.push(line.trim());
+  return out;
+}
+
 function mapView(p) {
-  const ROW = 34, GAP = 22, X0 = 30, XG = 250, XL = 500;
-  const tw = (t, px) => t.length * px * 0.56 + 18;   // rough text width for a chip
-  // the definitions start clear of the widest term, and the picture is as wide as they need
-  const XD = Math.max(...p.groups.flatMap((g) => g.facts.map((f) => XL + tw(short(f.term, 4), 12) + 26)), 640) + 26;
-  const defs = p.groups.flatMap((g) => g.facts.map((f) => short(f.def, 6)));
-  const blocks = p.groups.map((g) => Math.max(1, g.facts.length) * ROW);
-  const H = Math.max(260, blocks.reduce((a, b) => a + b, 0) + GAP * (p.groups.length - 1) + 80);
-  const W = Math.max(960, XD + Math.max(...defs.map((d) => d.length)) * 6.9 + 30), rootY = H / 2;
-  const curve = (x1, y1, x2, y2) => `M${x1} ${y1} C${x1 + (x2 - x1) * 0.55} ${y1}, ${x2 - (x2 - x1) * 0.55} ${y2}, ${x2} ${y2}`;
-  const title = short(p.title, 4), rootW = tw(title, 15) + 30;
-  let y = 40, links = "", nodes = "", n = 0;
-  p.groups.forEach((g, gi) => {
-    const gy = y + blocks[gi] / 2, c = `#${g.c}`;
-    const label = short(g.theme, 3), gw = tw(label, 13) + 40;
-    links += `<path d="${curve(X0 + rootW, rootY, XG, gy)}" class="mm-branch" stroke="url(#mm-g${gi})" style="--d:${(n++) * 0.06}s" pathLength="1"/>`;
-    g.facts.forEach((f, j) => {
-      const fy = y + j * ROW + ROW / 2, on = learnt.has(f.term.toLowerCase());
-      const term = short(f.term, 4), fw = tw(term, 12) + 26;
-      links += `<path d="${curve(XG + gw, gy, XL, fy)}" class="mm-twig" stroke="${c}" style="--d:${(n++) * 0.05}s" pathLength="1"/>`;
-      links += `<path d="M${XL + fw} ${fy} H${XD - 8}" class="mm-leafline" stroke="${c}"/>`;
-      nodes += `<g class="mm-leaf ${on ? "learnt" : ""}" transform="translate(${XL} ${fy})" style="--c:${c};--d:${0.3 + j * 0.05 + gi * 0.08}s">
-        <rect x="0" y="-12" width="${fw}" height="24" rx="7"/><circle cx="12" cy="0" r="3.5"/><text x="22" y="4">${ctx.esc(term)}</text><title>${ctx.esc(f.text)}</title></g>
-        <text class="mm-def" x="${XD}" y="${fy + 4}">${ctx.esc(short(f.def, 6))}</text>`;
+  loadHandFonts();
+  // phones get a page you read top to bottom instead of one you scroll sideways
+  const narrow = (typeof document !== "undefined" ? document.querySelector("#studio-out")?.clientWidth || 999 : 999) < 620;
+  if (narrow) return mapViewNarrow(p);
+  const LH = 19, BLOCK_GAP = 16, GROUP_GAP = 34, LEAF_GAP = 56, MARGIN = 48;
+  // the title's cloud, and the topics start just clear of it
+  const tl = wrapWords(p.title.toUpperCase(), 14), cw = Math.max(100, Math.max(...tl.map((l) => l.length)) * 8.4 + 34), ch = 44 + tl.length * 14;
+  const CLOUD_GAP = cw + 46;
+  // rough handwriting widths: headings ~10.5px a letter, terms ~9.6, definitions ~7.8
+  const headW = (g) => Math.max(...wrapWords(g.label.toUpperCase(), 16).map((l) => l.length)) * 10.5 + 34;
+  // topics alternate left and right of the centre; each column is a stack of topic blocks
+  const sides = [[], []];
+  p.groups.forEach((g, i) => sides[i % 2].push(g));
+  const layout = sides.map((col, side) => {
+    let y = 70;
+    return col.map((g) => {
+      const leaves = g.facts.map((f) => {
+        const head = `${f.term}${f.ab ? ` (${f.ab})` : ""}`;
+        const body = wrapWords(f.kind === "cause" ? `is ${f.def}` : f.kind === "eq" ? `= ${f.def}` : f.def, 30);
+        return { f, head, body, h: (body.length + 1) * LH + 6, w: Math.max(head.length * 9.6, ...body.map((l) => l.length * 7.8)) };
+      });
+      const h = Math.max(70, leaves.reduce((a, l) => a + l.h + BLOCK_GAP, -BLOCK_GAP));
+      const block = { g, side, y, h, leaves };
+      y += h + GROUP_GAP;
+      return block;
     });
-    nodes += `<g class="mm-group" transform="translate(${XG} ${gy})" style="--c:${c};--d:${0.15 + gi * 0.08}s">
-      <rect x="0" y="-17" width="${gw}" height="34" rx="9"/><text class="mm-sym" x="14" y="5">${symbolFor(g.label + " " + g.facts.map((x) => x.def).join(" "))}</text><text x="34" y="5">${ctx.esc(label)}</text>
-      ${g.facts.length > 1 ? `<g transform="translate(${gw + 8} 0)"><rect class="mm-acr" x="0" y="-10" width="${g.acronym.length * 8 + 14}" height="20" rx="10"/><text class="mm-acr-t" x="${(g.acronym.length * 8 + 14) / 2}" y="4">${g.acronym}</text></g>` : ""}</g>`;
-    y += blocks[gi] + GAP;
   });
-  const grads = p.groups.map((g, gi) => `<linearGradient id="mm-g${gi}" x1="0" x2="1"><stop offset="0" stop-color="#5ef0ff"/><stop offset="1" stop-color="#${g.c}"/></linearGradient>`).join("");
-  nodes += `<g class="mm-root" transform="translate(${X0} ${rootY})"><rect x="0" y="-21" width="${rootW}" height="42" rx="12"/><text x="${rootW / 2}" y="5">${ctx.esc(title)}</text></g>`;
-  return `<div class="mindmap holo">
-      <span class="holo-kicker">Mind map</span>
-      <div class="mm-scroll"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Mind map of ${ctx.esc(p.title)}">
-        <defs>${grads}<filter id="mm-glow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-        <g filter="url(#mm-glow)">${links}</g>${nodes}</svg></div>
-      ${sparkles(9)}
+  const H = Math.max(520, ...layout.map((col) => (col.length ? col.at(-1).y + col.at(-1).h + 50 : 0)));
+  const CY = H / 2;
+  // each side is as wide as its widest heading and term need, and the page is symmetrical
+  const sideW = Math.max(...layout.map((col) => Math.max(0, ...col.map((b) => CLOUD_GAP + headW(b.g) + LEAF_GAP + Math.max(...b.leaves.map((l) => l.w)))))) + MARGIN;
+  const W = Math.max(900, sideW * 2), CX = W / 2;
+  let ink = "", boxes = "", text = "", n = 0;
+  const arrow = (x1, y1, x2, y2, colour, k) => {
+    const mx = (x1 + x2) / 2 + jit(k, 1) * 10, my = (y1 + y2) / 2 + jit(k, 2) * 12 - 8;
+    ink += `<path d="M${x1.toFixed(1)} ${y1.toFixed(1)} Q${mx.toFixed(1)} ${my.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}" class="hm-line" stroke="${colour}" marker-end="url(#hm-arrow)" style="--d:${(n++) * 0.05}s" pathLength="1"/>`;
+  };
+  layout.forEach((col) => col.forEach((b, gi) => {
+    const { g, side } = b, dir = side ? 1 : -1;
+    const c = `#${g.c}`, dark = mixHex(g.c, 0.35, 0), pastel = mixHex(g.c, 0.62);
+    // topic heading, in the column next to the centre cloud
+    const label = g.label.toUpperCase(), lines = wrapWords(label, 16);
+    const hw = Math.max(...lines.map((l) => l.length)) * 10.5 + 34, hh = lines.length * 22 + 20;
+    const hx = side ? CX + CLOUD_GAP : CX - CLOUD_GAP - hw, hy = b.y + b.h / 2 - hh / 2;
+    const tilt = jit(gi + side * 7, 3) * 1.6;
+    // from the cloud to the heading
+    arrow(CX + dir * (cw + 12), CY + (hy + hh / 2 - CY) * 0.35, side ? hx - 4 : hx + hw + 4, hy + hh / 2, "#3a3a46", gi + side * 11);
+    const style = (gi + side) % 2;   // alternate the two styles from the references
+    boxes += `<g class="hm-head" transform="rotate(${tilt.toFixed(2)} ${hx + hw / 2} ${hy + hh / 2})" style="--d:${0.2 + gi * 0.1}s">` +
+      (style === 0
+        ? `<rect x="${hx + 6}" y="${hy + 6}" width="${hw}" height="${hh}" fill="${pastel}" stroke="${dark}" stroke-width="1.6"/>
+           <rect x="${hx}" y="${hy}" width="${hw}" height="${hh}" fill="#fffefb" stroke="${dark}" stroke-width="2"/>`
+        : `<path d="M${hx - 4} ${hy + 4} L${hx + hw + 6} ${hy + 1} L${hx + hw + 3} ${hy + hh - 2} L${hx - 2} ${hy + hh + 1} Z" fill="${pastel}" opacity=".85"/>`) +
+      lines.map((l, k) => `<text class="hm-head-t" x="${hx + hw / 2}" y="${hy + 20 + k * 22 + 6}" fill="${dark}">${ctx.esc(l)}</text>`).join("") +
+      (g.facts.length > 1 ? `<text class="hm-acr" x="${hx + hw / 2}" y="${hy + hh + 22}" fill="${dark}">${g.acronym}</text>` : "") + `</g>`;
+    // the terms, in the outer column, each with an arrow from its topic
+    let ly = b.y + (b.h - b.leaves.reduce((a, l) => a + l.h + BLOCK_GAP, -BLOCK_GAP)) / 2;
+    b.leaves.forEach((l, k) => {
+      const lx = side ? CX + CLOUD_GAP + hw + LEAF_GAP : CX - CLOUD_GAP - hw - LEAF_GAP;
+      const bw = 245, anchor = side ? "start" : "end", tx = side ? lx : lx;
+      const on = learnt.has(l.f.term.toLowerCase());
+      arrow(side ? hx + hw + 6 : hx - 6, hy + hh / 2 + (k - (b.leaves.length - 1) / 2) * 6, side ? lx - 10 : lx + 10, ly + 12, c, 100 + gi * 10 + k + side * 50);
+      const hlW = l.head.length * 9.2 + 10;
+      text += `<g class="hm-leaf ${on ? "learnt" : ""}" style="--d:${0.45 + gi * 0.1 + k * 0.05}s">` +
+        (on ? `<rect x="${side ? lx - 4 : lx - hlW + 4}" y="${ly - 2}" width="${hlW}" height="20" fill="${pastel}" opacity=".9" transform="rotate(-1 ${lx} ${ly})"/>` : "") +
+        `<text class="hm-term" x="${tx}" y="${ly + 13}" text-anchor="${anchor}" fill="${dark}">${ctx.esc(l.head)}${on ? " ✓" : ""}</text>` +
+        l.body.map((line, m) => `<text class="hm-def" x="${tx}" y="${ly + 13 + (m + 1) * LH}" text-anchor="${anchor}">${ctx.esc(line)}</text>`).join("") +
+        `<title>${ctx.esc(l.f.text)}</title></g>`;
+      ly += l.h + BLOCK_GAP;
+      void bw;
+    });
+  }));
+  // the title in a cloud
+  const bumps = 11, cloud = Array.from({ length: bumps }, (_, k) => {
+    const a0 = (k / bumps) * Math.PI * 2, a1 = ((k + 1) / bumps) * Math.PI * 2;
+    const x1 = CX + Math.cos(a1) * cw, y1 = CY + Math.sin(a1) * ch;
+    return `${k ? "" : `M${(CX + Math.cos(a0) * cw).toFixed(1)} ${(CY + Math.sin(a0) * ch).toFixed(1)}`} A${18 + jit(k, 4) * 4} ${16 + jit(k, 5) * 3} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)}`;
+  }).join(" ");
+  const centre = `<g class="hm-cloud"><path d="${cloud} Z" fill="#fffefb" stroke="#5b4a8a" stroke-width="2.2"/>${tl.map((l, k) => `<text x="${CX}" y="${CY - (tl.length - 1) * 15 + k * 30 + 9}">${ctx.esc(l)}</text>`).join("")}</g>`;
+  return `<div class="handmap">
+      <div class="hm-scroll"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Mind map of ${ctx.esc(p.title)}">
+        <defs>
+          <pattern id="hm-dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#c9c6d6"/></pattern>
+          <marker id="hm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#3a3a46" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+        </defs>
+        <rect width="${W}" height="${H}" fill="#fdfcf9"/><rect width="${W}" height="${H}" fill="url(#hm-dots)"/>
+        ${[0.18, 0.5, 0.82].map((f) => `<circle cx="18" cy="${H * f}" r="7" fill="#e9e6ee" stroke="#d4d0dc"/>`).join("")}
+        <g class="hm-ink">${ink}</g>${boxes}${centre}${text}
+      </svg></div>
     </div>
-    <p class="sub">Coloured pills are memory hooks: the first letters of the terms in that branch. Terms glow once you've rated them Good or Easy in the flashcard feed.</p>`;
+    <p class="sub">Drawn from your notes. The letters under each topic are memory hooks: the first letters of its terms. Terms you rate Good or Easy in the flashcard feed get a highlighter tick.</p>`;
+}
+
+function mapViewNarrow(p) {
+  const W = 400, LH = 19, X0 = 22;
+  const tl = wrapWords(p.title.toUpperCase(), 14), cw = Math.max(90, Math.max(...tl.map((l) => l.length)) * 8.2 + 30), ch = 40 + tl.length * 14;
+  const CX = W / 2, CY = 30 + ch, SPINE = 14;
+  let y = CY + ch + 34, ink = "", out = "", n = 0, lastHead = 0;
+  const arrow = (x1, y1, x2, y2, colour, k) => {
+    const mx = (x1 + x2) / 2 + jit(k, 1) * 8 - 10, my = (y1 + y2) / 2 + jit(k, 2) * 6;
+    ink += `<path d="M${x1.toFixed(1)} ${y1.toFixed(1)} Q${mx.toFixed(1)} ${my.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}" class="hm-line" stroke="${colour}" marker-end="url(#hm-arrow)" style="--d:${(n++) * 0.05}s" pathLength="1"/>`;
+  };
+  p.groups.forEach((g, gi) => {
+    const dark = mixHex(g.c, 0.35, 0), pastel = mixHex(g.c, 0.62), c = `#${g.c}`;
+    const lines = wrapWords(g.label.toUpperCase(), 20), hw = Math.min(W - X0 - 70, Math.max(...lines.map((l) => l.length)) * 12.4 + 30), hh = lines.length * 22 + 18;
+    const hx = X0 + 12, hy = y, tilt = jit(gi, 3) * 1.4;
+    // a short arrow from the spine down the margin to this topic
+    arrow(SPINE, hy + hh / 2 - 10, hx - 6, hy + hh / 2, "#3a3a46", gi);
+    lastHead = hy + hh / 2 - 10;
+    out += `<g class="hm-head" transform="rotate(${tilt.toFixed(2)} ${hx + hw / 2} ${hy + hh / 2})" style="--d:${0.15 + gi * 0.1}s">` +
+      (gi % 2 === 0
+        ? `<rect x="${hx + 5}" y="${hy + 5}" width="${hw}" height="${hh}" fill="${pastel}" stroke="${dark}" stroke-width="1.5"/><rect x="${hx}" y="${hy}" width="${hw}" height="${hh}" fill="#fffefb" stroke="${dark}" stroke-width="1.8"/>`
+        : `<path d="M${hx - 4} ${hy + 4} L${hx + hw + 6} ${hy + 1} L${hx + hw + 3} ${hy + hh - 2} L${hx - 2} ${hy + hh + 1} Z" fill="${pastel}" opacity=".85"/>`) +
+      lines.map((l, k) => `<text class="hm-head-t" x="${hx + hw / 2}" y="${hy + 24 + k * 22}" fill="${dark}">${ctx.esc(l)}</text>`).join("") +
+      (g.facts.length > 1 ? `<text class="hm-acr" x="${hx + hw + 30}" y="${hy + hh / 2 + 5}" fill="${dark}">${g.acronym}</text>` : "") + `</g>`;
+    y += hh + 24;
+    g.facts.forEach((f, k) => {
+      const head = `${f.term}${f.ab ? ` (${f.ab})` : ""}`, on = learnt.has(f.term.toLowerCase());
+      const body = wrapWords(f.kind === "cause" ? `is ${f.def}` : f.kind === "eq" ? `= ${f.def}` : f.def, 38);
+      const lx = X0 + 58;
+      arrow(hx + 18, hy + hh + 6, lx - 8, y + 8, c, 50 + gi * 10 + k);
+      out += `<g class="hm-leaf ${on ? "learnt" : ""}" style="--d:${0.35 + gi * 0.1 + k * 0.05}s">` +
+        (on ? `<rect x="${lx - 4}" y="${y - 3}" width="${head.length * 9.2 + 10}" height="20" fill="${pastel}" opacity=".9"/>` : "") +
+        `<text class="hm-term" x="${lx}" y="${y + 12}" fill="${dark}">${ctx.esc(head)}${on ? " ✓" : ""}</text>` +
+        body.map((l, m) => `<text class="hm-def" x="${lx}" y="${y + 12 + (m + 1) * LH}">${ctx.esc(l)}</text>`).join("") + `<title>${ctx.esc(f.text)}</title></g>`;
+      y += (body.length + 1) * LH + 14;
+    });
+    y += 22;
+  });
+  const H = y + 10;
+  // the spine: from the cloud, round to the left margin and down past every topic
+  ink = `<path d="M${(CX - cw * 0.75).toFixed(1)} ${(CY + ch * 0.55).toFixed(1)} Q${SPINE + 4} ${CY + ch * 0.7} ${SPINE} ${CY + ch + 30} L${SPINE + 1.5} ${lastHead}" class="hm-line" stroke="#3a3a46" pathLength="1"/>` + ink;
+  const bumps = 10, cloud = Array.from({ length: bumps }, (_, k) => {
+    const a0 = (k / bumps) * Math.PI * 2, a1 = ((k + 1) / bumps) * Math.PI * 2;
+    return `${k ? "" : `M${(CX + Math.cos(a0) * cw).toFixed(1)} ${(CY + Math.sin(a0) * ch).toFixed(1)}`} A${16 + jit(k, 4) * 3} ${14 + jit(k, 5) * 3} 0 0 1 ${(CX + Math.cos(a1) * cw).toFixed(1)} ${(CY + Math.sin(a1) * ch).toFixed(1)}`;
+  }).join(" ");
+  const centre = `<g class="hm-cloud"><path d="${cloud} Z" fill="#fffefb" stroke="#5b4a8a" stroke-width="2"/>${tl.map((l, k) => `<text x="${CX}" y="${CY - (tl.length - 1) * 14 + k * 28 + 8}">${ctx.esc(l)}</text>`).join("")}</g>`;
+  return `<div class="handmap narrow"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Mind map of ${ctx.esc(p.title)}">
+      <defs><pattern id="hm-dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#c9c6d6"/></pattern>
+        <marker id="hm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#3a3a46" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+      <rect width="${W}" height="${H}" fill="#fdfcf9"/><rect width="${W}" height="${H}" fill="url(#hm-dots)"/>
+      <g class="hm-ink">${ink}</g>${centre}${out}</svg></div>
+    <p class="sub">Drawn from your notes. The letters beside each topic are memory hooks. Terms you rate Good or Easy in the flashcard feed get a highlighter tick.</p>`;
 }
 
 function sheetSvg(p) {

@@ -639,32 +639,20 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .nt-dates .date b, .nt-dates .ev-txt b { color: #fff; }
 .nt-dates .go { background: rgb(var(--holo)); color: #00242c; }
 
-/* Mind map: a glowing left-to-right tree */
-.mindmap { padding: 22px 18px 18px; }
-.mm-scroll { overflow-x: auto; scrollbar-width: thin; }
-.mindmap svg { display: block; width: 100%; min-width: 640px; height: auto; }
-.mm-branch, .mm-twig { fill: none; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw-in .9s var(--d, 0s) cubic-bezier(.4, 0, .2, 1) forwards; }
-.mm-branch { stroke-width: 2.4; }
-.mm-twig { stroke-width: 1.4; opacity: .85; }
-.mm-leafline { stroke-width: 1; stroke-dasharray: 2 4; opacity: .35; }
+/* Mind map: handwritten revision notes on dotted paper */
+.handmap { border-radius: 18px; overflow: hidden; background: #fdfcf9; box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 24px 50px -24px rgba(0, 0, 0, .8); }
+.hm-scroll { overflow-x: auto; scrollbar-width: thin; }
+.handmap svg { display: block; width: 100%; min-width: 760px; height: auto; }
+.handmap.narrow svg { min-width: 0; }
+.hm-line { fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw-in .8s var(--d, 0s) ease-out forwards; }
 @keyframes draw-in { to { stroke-dashoffset: 0; } }
-.mm-root rect { fill: rgba(8, 34, 44, .95); stroke: #5ef0ff; stroke-width: 1.6; filter: drop-shadow(0 0 10px rgba(94, 240, 255, .7)); }
-.mm-root text { fill: #eaffff; font: 600 15px var(--sans); text-anchor: middle; }
-.mm-group, .mm-leaf, .mm-def { opacity: 0; animation: fade-in .5s var(--d, 0s) forwards; }
-.mm-def { animation-delay: .6s; }
+.hm-head, .hm-leaf { opacity: 0; animation: fade-in .45s var(--d, 0s) forwards; }
 @keyframes fade-in { to { opacity: 1; } }
-.mm-group rect { fill: color-mix(in srgb, var(--c) 18%, #061820); stroke: var(--c); stroke-width: 1.4; filter: drop-shadow(0 0 8px color-mix(in srgb, var(--c) 70%, transparent)); }
-.mm-group text { fill: #fff; font: 600 13px var(--sans); }
-.mm-sym { font-size: 14px; }
-.mm-acr { fill: var(--c); }
-.mm-acr-t { fill: #fff; font: 700 10px var(--mono); text-anchor: middle; letter-spacing: .08em; }
-.mm-leaf rect { fill: rgba(6, 22, 30, .9); stroke: color-mix(in srgb, var(--c) 55%, transparent); }
-.mm-leaf circle { fill: none; stroke: var(--c); stroke-width: 1.5; }
-.mm-leaf text { fill: #d9f3f7; font: 500 12px var(--sans); }
-.mm-leaf.learnt rect { stroke: var(--c); filter: drop-shadow(0 0 8px var(--c)); }
-.mm-leaf.learnt circle { fill: var(--c); }
-.mm-def { fill: #7fb8c4; font: 400 11.5px var(--mono); }
-
+.hm-head-t { font: 400 19px "Architects Daughter", "Patrick Hand", "Comic Sans MS", cursive; text-anchor: middle; letter-spacing: .04em; }
+.hm-acr { font: 400 13px "Architects Daughter", cursive; text-anchor: middle; letter-spacing: .25em; opacity: .75; }
+.hm-cloud text { fill: #5b4a8a; font: 400 25px "Architects Daughter", "Patrick Hand", cursive; text-anchor: middle; letter-spacing: .05em; }
+.hm-term { font: 400 17px "Architects Daughter", "Patrick Hand", cursive; letter-spacing: .02em; }
+.hm-def { fill: #2f2f38; font: 400 16.5px "Patrick Hand", "Comic Sans MS", cursive; }
 .sheet svg { display: block; width: 100%; height: auto; border-radius: 20px; box-shadow: 0 0 42px -14px rgba(94, 240, 255, .5); }
 
 /* Flashcards: holo cards that flip in 3D */
