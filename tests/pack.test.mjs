@@ -1,7 +1,7 @@
 // Run: node --experimental-strip-types --test tests/
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { groundingScore, cardsFromPack, packStats } from "../supabase/functions/_shared/pack.js";
+import { groundingScore, cardsFromPack, packStats } from "../kit/notes/pack.js";
 
 const notes = `CARDIAC CYCLE - lec 4
 - systole is the phase when ventricles contract + eject blood
@@ -43,4 +43,9 @@ test("stats catch ungrounded facts and answers leaked into questions", () => {
   assert.equal(s.answerLeaks, 1);
   assert.equal(s.unclear, 1);
   assert.ok(Math.abs(s.grounded - 2 / 3) < 1e-9);
+});
+
+test("the Supabase function's copy of pack.js matches the kit's (run npm run sync after editing it)", async () => {
+  const { readFile } = await import("node:fs/promises");
+  assert.equal(await readFile("supabase/functions/_shared/pack.js", "utf8"), await readFile("kit/notes/pack.js", "utf8"));
 });

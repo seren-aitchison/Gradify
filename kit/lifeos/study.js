@@ -2,7 +2,7 @@
 // tips, bonus facts and reminders. Rate each card (Again, Hard, Good, Easy) and a simple
 // spaced-repetition schedule decides when you'll see it next. Zoom out for an overview of
 // every card. Cards made in Capture join the feed.
-import { icon } from "./icons.js";
+import { icon } from "../core/icons.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 let ctx, mode = "feed", exam = false, rated = 0, timer = null;

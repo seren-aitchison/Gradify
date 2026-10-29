@@ -1,7 +1,7 @@
 // Homepage showcase: every Gradify feature as a floating bubble, and "The Gradify road",
 // a winding road with a car that drives along it as you scroll.
-import { icon } from "./icons.js";
-import { tile, ink } from "./colour.js";
+import { icon } from "../kit/core/icons.js";
+import { tile, ink } from "../kit/core/colour.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 

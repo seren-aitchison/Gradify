@@ -1,6 +1,6 @@
 // Community: a study group, a cross-site challenge and an optional leaderboard.
 // Example data; the people in the group are made up.
-import { icon } from "./icons.js";
+import { icon } from "../core/icons.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 let ctx, joined = false, boardOn = false, boardTab = "group";

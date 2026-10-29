@@ -1,7 +1,7 @@
 // Where the learner's data lives. Two stores with the same async API:
 //  - LocalStore: this browser only (works with no setup; the default until Supabase is configured)
 //  - CloudStore: their Gradify account in Supabase, protected by row-level security
-import { SUPABASE_URL, SUPABASE_ANON_KEY } from "./config.js";
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
 
 const uid = () => (crypto.randomUUID ? crypto.randomUUID() : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`);
 const now = () => new Date().toISOString();
@@ -122,4 +122,29 @@ export class CloudStore {
     const { xp, ...profile } = m.profile;
     await this.saveProfile(profile);
   }
+}
+
+// A sub-site's view of the shared account: only its own notes, cards, answers and activity.
+// Everything else (sign-in, saving) passes straight through to the underlying store. On
+// getgradify.com, the parent of every site, the app uses the unscoped store and sees it all.
+export function scopeToSite(store, site) {
+  const scoped = Object.create(store);
+  const docIds = async () => new Set((await store.listDocuments()).filter((d) => d.site === site).map((d) => d.id));
+  return Object.assign(scoped, {
+    site,
+    async listDocuments() { return (await store.listDocuments()).filter((d) => d.site === site); },
+    async listCards(filter = {}) { const ids = await docIds(); return (await store.listCards(filter)).filter((c) => ids.has(c.document_id)); },
+    async listReviews(sinceDays) { const ids = new Set((await scoped.listCards()).map((c) => c.id)); return (await store.listReviews(sinceDays)).filter((r) => ids.has(r.card_id)); },
+    async listActivity(sinceDays) { return (await store.listActivity(sinceDays)).filter((a) => a.site === site); },
+    async getProfile() { return { ...(await store.getProfile()), site }; },
+    async saveProfile(patch) { return { ...(await store.saveProfile({ ...patch, site })), site }; },
+    async exportAll() {
+      const all = await store.exportAll(), docs = new Set(all.documents.filter((d) => d.site === site).map((d) => d.id));
+      const cards = all.cards.filter((c) => docs.has(c.document_id)), cardIds = new Set(cards.map((c) => c.id));
+      return { ...all, documents: all.documents.filter((d) => docs.has(d.id)), packs: (all.packs || []).filter((p) => docs.has(p.document_id)), cards,
+        reviews: all.reviews.filter((r) => cardIds.has(r.card_id)), activity: all.activity.filter((a) => a.site === site) };
+    },
+    // deletes this site's notes (their cards and answers go with them), not the whole account
+    async wipe() { for (const d of await scoped.listDocuments()) await store.deleteDocument(d.id); },
+  });
 }

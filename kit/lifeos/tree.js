@@ -2,7 +2,7 @@
 // Tree: one limb per connected site, a canopy that fills out with that site's activity over
 // the last 30 days, gold fruit for credentials, standing over a landscape of daily study bars.
 // Forest: an isometric garden where every day you studied grows a tree, plus time by site.
-import { mix, shade } from "./colour.js";
+import { mix, shade } from "../core/colour.js";
 
 const f1 = (n) => n.toFixed(1);
 

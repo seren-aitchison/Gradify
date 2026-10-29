@@ -1,12 +1,12 @@
 // Gradify LifeOS preview. Everything here is example data for one made-up learner,
 // generated in the browser. In the real LifeOS this comes from each site's progress API.
-import { GROUPS } from "./sites.js";
-import { icon } from "./icons.js";
-import { ink, tile, triple } from "./colour.js";
+import { GROUPS } from "../core/sites.js";
+import { icon } from "../core/icons.js";
+import { ink, tile, triple } from "../core/colour.js";
 import { initEarth, TOPICS, stateOf, review, showTopic } from "./earth.js";
 import { initPlan } from "./plan.js";
 import { initAssistant } from "./assistant.js";
-import { initStudio } from "./studio.js";
+import { initStudio } from "../notes/studio.js";
 import { initCommunity } from "./community.js";
 import { initStudy } from "./study.js";
 import { initCalendar } from "./calendar.js";

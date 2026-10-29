@@ -1,7 +1,7 @@
-import { GROUPS, FEATURED, START_HERE, KEYWORDS } from "./sites.js";
-import { icon } from "./icons.js";
-import { triple, mix, ink, tile } from "./colour.js";
-import { SUPABASE_URL, SUPABASE_ANON_KEY } from "./app/config.js";
+import { GROUPS, FEATURED, START_HERE, KEYWORDS } from "../kit/core/sites.js";
+import { icon } from "../kit/core/icons.js";
+import { triple, mix, ink, tile } from "../kit/core/colour.js";
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../gradify.config.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const href = (u) => (/^https?:/.test(u) ? u : "https://" + u);

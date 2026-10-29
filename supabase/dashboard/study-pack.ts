@@ -1,13 +1,14 @@
 // Gradify study-pack function: SINGLE-FILE VERSION for pasting into the Supabase dashboard.
-// Generated from supabase/functions/study-pack/index.ts + supabase/functions/_shared/pack.js.
-// Don't edit this file by hand; edit those two and run: npm run build:dashboard
+// Generated from supabase/functions/study-pack/index.ts + kit/notes/pack.js.
+// Don't edit this file by hand; edit those two and run: npm run sync
 import Anthropic from "npm:@anthropic-ai/sdk@0.133.0";
 import { createClient } from "npm:@supabase/supabase-js@2.117.0";
 
 // ---------- Shared pack logic ----------
 // Shared, dependency-free logic (plain JavaScript, so the browser can import it too) for the study-pack pipeline: the knowledge-pack schema sent
 // to Claude, the prompt, grounding checks against the learner's own notes, and conversion
-// to flashcards. Used by the Supabase function (Deno) and the eval script (Node).
+// to flashcards. Used by the browser, the Supabase function (Deno) and the eval script (Node).
+// This is the source: supabase/functions/_shared/pack.js is a copy made by `npm run sync`.
 
 const MODEL = "claude-opus-5-5";
 

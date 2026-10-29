@@ -1,6 +1,6 @@
 // Gradify AI preview. This is not a language model: replies are scripted, but they are
 // worked out from Alex's live example data, the same data the rest of LifeOS shows.
-import { icon } from "./icons.js";
+import { icon } from "../core/icons.js";
 import { TOPICS, ROADS, MODULES, stateOf } from "./earth.js";
 import { TARGETS, readiness, forecast, gapsOf } from "./plan.js";
 

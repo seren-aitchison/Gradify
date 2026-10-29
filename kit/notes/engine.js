@@ -1,9 +1,9 @@
 // Turning notes into a study pack. With a Gradify account, Claude does it on the server
 // (supabase/functions/study-pack). Otherwise the browser extractor from Notes Studio runs
 // locally. Both return the same shape, and both are fact-checked against the notes.
-import { SUPABASE_URL, SUPABASE_ANON_KEY } from "./config.js";
-import { analyseNotes, normaliseNotes, deeperQuestions } from "../studio.js";
-import { cardsFromPack, packStats, questionCards } from "../../supabase/functions/_shared/pack.js";
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
+import { analyseNotes, normaliseNotes, deeperQuestions } from "./studio.js";
+import { cardsFromPack, packStats, questionCards } from "./pack.js";
 
 // Browser extractor → the same pack shape Claude returns
 function browserPack(text, title) {

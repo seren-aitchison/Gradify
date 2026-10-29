@@ -1,10 +1,19 @@
 // Gradify service worker: lets the site open offline.
 // Network first, so a new deploy shows straight away; the cache is the fallback.
-const CACHE = "gradify-v13";
+const CACHE = "gradify-v14";
 const SHELL = [
-  "./", "index.html", "app.html", "assets/app/app.css", "assets/app/main.js", "assets/app/store.js", "assets/app/engine.js", "assets/app/srs.js", "assets/app/mastery.js", "assets/app/config.js", "supabase/functions/_shared/pack.js", "assets/vendor/supabase/supabase.js", "manifest.webmanifest",
-  "assets/styles.css", "assets/app.js", "assets/sites.js", "assets/icons.js", "assets/colour.js", "assets/nav.js",
-  "assets/os.js", "assets/lifeos.js", "assets/earth.js", "assets/globe.js", "assets/earth-land.js", "assets/plan.js", "assets/assistant.js", "assets/community.js", "assets/study.js", "assets/calendar.js", "assets/tree.js", "assets/studio.js", "assets/features.js", "assets/vendor/pdfjs/pdf.min.js", "assets/vendor/pdfjs/pdf.worker.min.js", "assets/favicon.svg", "assets/icons/icon-192.png", "assets/icons/icon-512.png",
+  "./", "index.html", "app.html", "manifest.webmanifest", "gradify.config.js",
+  // homepage
+  "assets/styles.css", "assets/app.js", "assets/nav.js", "assets/features.js", "assets/favicon.svg", "assets/icons/icon-192.png", "assets/icons/icon-512.png",
+  // the Gradify Kit
+  "kit/styles/base.css", "kit/styles/components.css",
+  "kit/core/icons.js", "kit/core/colour.js", "kit/core/sites.js",
+  "kit/app/main.js", "kit/app/app.css", "kit/data/store.js",
+  "kit/learning/srs.js", "kit/learning/mastery.js",
+  "kit/notes/studio.js", "kit/notes/engine.js", "kit/notes/pack.js",
+  "kit/earth/globe.js", "kit/earth/earth-land.js",
+  "kit/lifeos/lifeos.js", "kit/lifeos/os.js", "kit/lifeos/earth.js", "kit/lifeos/plan.js", "kit/lifeos/calendar.js", "kit/lifeos/assistant.js", "kit/lifeos/community.js", "kit/lifeos/study.js", "kit/lifeos/tree.js",
+  "kit/vendor/pdfjs/pdf.min.js", "kit/vendor/pdfjs/pdf.worker.min.js", "kit/vendor/supabase/supabase.js",
 ];
 
 self.addEventListener("install", (e) => {

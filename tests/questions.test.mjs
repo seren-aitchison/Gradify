@@ -1,8 +1,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { cardsFromPack, questionCards, packStats, PACK_SCHEMA, QUESTIONS_SCHEMA } from "../supabase/functions/_shared/pack.js";
-import { SAMPLE, analyseNotes, deeperQuestions, normaliseNotes } from "../assets/studio.js";
-import { topicProfiles } from "../assets/app/mastery.js";
+import { cardsFromPack, questionCards, packStats, PACK_SCHEMA, QUESTIONS_SCHEMA } from "../kit/notes/pack.js";
+import { SAMPLE, analyseNotes, deeperQuestions, normaliseNotes } from "../kit/notes/studio.js";
+import { topicProfiles } from "../kit/learning/mastery.js";
 
 const NOTES = "Cardiac output equals stroke volume multiplied by heart rate. S1 is caused by closure of the mitral and tricuspid valves.";
 

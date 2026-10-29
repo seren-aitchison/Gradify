@@ -1,8 +1,8 @@
 // Gradify Earth preview: a 3D globe of one learner's degree (example data).
 // Planet = the degree, continents = years, regions = modules, cities = topics,
 // roads = prerequisites, portals = links to other Gradify sites.
-import { icon } from "./icons.js";
-import { createGlobe, vec } from "./globe.js";
+import { icon } from "../core/icons.js";
+import { createGlobe, vec } from "../earth/globe.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);

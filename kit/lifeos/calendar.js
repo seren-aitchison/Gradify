@@ -2,7 +2,7 @@
 // block to move it (across days too), drag its bottom edge to resize, and click to edit.
 // "Auto-plan my week" fills free time with study blocks worked out from goals, fading
 // topics and deadlines. Example data; nothing is saved.
-import { icon } from "./icons.js";
+import { icon } from "../core/icons.js";
 import { TOPICS, stateOf } from "./earth.js";
 
 const $ = (s, el = document) => el.querySelector(s);

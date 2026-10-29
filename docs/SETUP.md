@@ -52,7 +52,7 @@ Your API key only ever lives in Supabase's secrets. It is never sent to the brow
 ## 5. Connect the site
 
 1. In Supabase, open **Project Settings → API**. Copy the **Project URL** and the **anon public** key.
-2. Put them in `assets/app/config.js`:
+2. Put them in `gradify.config.js`, at the root of the site:
 
    ```js
    export const SUPABASE_URL = "https://YOUR_PROJECT_REF.supabase.co";

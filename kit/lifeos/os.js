@@ -1,6 +1,6 @@
 // LifeOS window: the sidebar switches between views. Links to anything inside a view
 // (from the menu, footer, toasts or other panels) open that view first.
-import { icon } from "./icons.js";
+import { icon } from "../core/icons.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const os = $("#os");

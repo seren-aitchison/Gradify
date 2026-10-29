@@ -3,7 +3,7 @@
 // a chant with a beat, and an audio quiz. This preview runs entirely in the browser with
 // simple rules, the browser's own voices and Web Audio. The full version runs on Gradify AI
 // (see docs/AI-PIPELINE.md in the repo).
-import { icon } from "./icons.js";
+import { icon } from "../core/icons.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 let ctx, pack = null, tab = "notes", stopPlayback = () => {};
@@ -477,8 +477,8 @@ let pdfReady;
 function loadPdfJs() {
   pdfReady ||= new Promise((ok, fail) => {
     const s = document.createElement("script");
-    s.src = "assets/vendor/pdfjs/pdf.min.js";
-    s.onload = () => { window.pdfjsLib.GlobalWorkerOptions.workerSrc = "assets/vendor/pdfjs/pdf.worker.min.js"; ok(window.pdfjsLib); };
+    s.src = new URL("../vendor/pdfjs/pdf.min.js", import.meta.url).href;
+    s.onload = () => { window.pdfjsLib.GlobalWorkerOptions.workerSrc = new URL("../vendor/pdfjs/pdf.worker.min.js", import.meta.url).href; ok(window.pdfjsLib); };
     s.onerror = fail;
     document.head.appendChild(s);
   });

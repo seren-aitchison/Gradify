@@ -1,13 +1,14 @@
 // Gradify app: bring your notes, get a checked study pack, revise it, and watch your progress.
 // Every screen reads and writes the same store, so they always agree.
-import { GROUPS } from "../sites.js";
-import { icon } from "../icons.js";
-import { tile, ink } from "../colour.js";
-import { SAMPLE, readFile } from "../studio.js";
-import { LocalStore, CloudStore, cloudConfigured } from "./store.js";
-import { generate, regenerateCard, generateQuestions } from "./engine.js";
-import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "./srs.js";
-import { topicProfiles, practiceOrder, DIMENSIONS, LEVELS } from "./mastery.js";
+import { GROUPS } from "../core/sites.js";
+import { icon } from "../core/icons.js";
+import { tile, ink } from "../core/colour.js";
+import { SAMPLE, readFile } from "../notes/studio.js";
+import { LocalStore, CloudStore, cloudConfigured, scopeToSite } from "../data/store.js";
+import { SITE } from "../../gradify.config.js";
+import { generate, regenerateCard, generateQuestions } from "../notes/engine.js";
+import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "../learning/srs.js";
+import { topicProfiles, practiceOrder, DIMENSIONS, LEVELS } from "../learning/mastery.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -99,6 +100,7 @@ async function renderStart(stepArg) {
     });
     return;
   }
+  if (step === 2 && SITE) { location.replace("#/start/3"); return; }
   if (step === 2) {
     const picked = p.site || "";
     const groups = GROUPS.filter((g) => g.id !== "tech").concat(GROUPS.filter((g) => g.id === "tech"));
@@ -120,7 +122,7 @@ async function renderStart(stepArg) {
     return;
   }
   const goal = picks.goal || p.goal || "course";
-  const site = picks.site || p.site || "UnderGradify";
+  const site = SITE || picks.site || p.site || "UnderGradify";
   view.innerHTML = `<section class="setup"><div class="setup-dots">${dots}</div>
     <h1>A couple of details</h1><p class="sub">So Gradify can pace your revision.</p>
     <form class="setup-form panel glass" id="details">
@@ -729,18 +731,18 @@ async function renderAccount() {
     <form class="panel glass setup-form" id="prefs">
       <h3>Your learning</h3>
       <label><span>Goal</span><select name="goal">${GOALS.map((g) => `<option value="${g.id}" ${profile.goal === g.id ? "selected" : ""}>${g.t}</option>`).join("")}</select></label>
-      <label><span>Subject</span><select name="site">${SITES.map((x) => `<option ${x.n === s.n ? "selected" : ""}>${esc(x.n)}</option>`).join("")}</select></label>
+      ${SITE ? "" : `<label><span>Subject</span><select name="site">${SITES.map((x) => `<option ${x.n === s.n ? "selected" : ""}>${esc(x.n)}</option>`).join("")}</select></label>`}
       <label><span>Exam date</span><input type="date" name="exam_date" value="${profile.exam_date || ""}"></label>
       <label><span>Daily study time</span><select name="daily_minutes">${[10, 20, 30, 45, 60, 90].map((m) => `<option value="${m}" ${Number(profile.daily_minutes) === m ? "selected" : ""}>${m} minutes</option>`).join("")}</select></label>
       <button class="btn btn-light lg btn-sm" type="submit"><span>Save</span></button>
     </form>
-    <article class="panel glass"><h3>Your data</h3><p class="sub">It's yours. Download everything, or delete it.</p>
+    <article class="panel glass"><h3>Your data</h3><p class="sub">${SITE ? `It's yours. Download or delete everything you've added on ${esc(SITE)}. Your notes on other Gradify sites stay as they are.` : "It's yours. Download everything, or delete it."}</p>
       <div class="row-actions"><button type="button" class="btn btn-light lg btn-sm" id="export"><span>Download my data</span></button><button type="button" class="btn btn-ghost lg btn-sm danger" id="wipe"><span>Delete all my data</span></button></div></article>
   </section>`;
   $("#prefs").addEventListener("submit", async (e) => {
     e.preventDefault();
     const f = new FormData(e.target);
-    profile = await store.saveProfile({ goal: f.get("goal"), site: f.get("site"), exam_date: f.get("exam_date") || null, daily_minutes: Number(f.get("daily_minutes")) });
+    profile = await store.saveProfile({ goal: f.get("goal"), site: SITE || f.get("site"), exam_date: f.get("exam_date") || null, daily_minutes: Number(f.get("daily_minutes")) });
     toast("Saved.");
   });
   $("#export").addEventListener("click", async () => {
@@ -775,13 +777,21 @@ async function boot() {
     catch (e) { console.error(e); toast("Couldn't move this device's data into your account. It's still saved here."); }
   }
   cloud?.onAuth((u) => { if (Boolean(u) !== Boolean(user)) location.reload(); });
+  // on a sub-site, the app only sees that site's notes and progress
+  if (SITE) { store = scopeToSite(store, SITE); picks.site = SITE; }
   profile = await store.getProfile();
-  // arriving from a site card: "Study MedGradify in Gradify"
-  const fromSite = new URLSearchParams(location.search).get("site");
+  // arriving from a site card on getgradify.com: "Study MedGradify in Gradify"
+  const fromSite = SITE ? null : new URLSearchParams(location.search).get("site");
   if (fromSite && SITES.some((x) => x.n === fromSite)) {
     picks.site = fromSite;
     if (profile.goal && profile.site !== fromSite) { profile = await store.saveProfile({ site: fromSite }); toast(`Switched to ${esc(fromSite)}.`); }
     history.replaceState(null, "", location.pathname + location.hash);
+  }
+  // a sub-site's own name and icon in the top bar
+  if (SITE) {
+    const s = siteOf(SITE), brand = $(".brand");
+    if (brand) brand.innerHTML = `<span class="icon" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}">${icon(s.i)}</span>${esc(SITE)}`;
+    document.title = SITE;
   }
   $("#mode").innerHTML = user ? `${icon("check")}<span>${esc(user.email)}</span>` : `${icon("lock")}<span>On this device</span>`;
   addEventListener("hashchange", route);

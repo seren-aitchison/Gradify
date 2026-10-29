@@ -8,8 +8,8 @@ const lines = (await readFile("supabase/functions/study-pack/index.ts", "utf8"))
 const imports = lines.filter((l) => l.startsWith("import "));
 const rest = lines.filter((l) => !l.startsWith("import "));
 const out = `// Gradify study-pack function: SINGLE-FILE VERSION for pasting into the Supabase dashboard.
-// Generated from supabase/functions/study-pack/index.ts + supabase/functions/_shared/pack.js.
-// Don't edit this file by hand; edit those two and run: npm run build:dashboard
+// Generated from supabase/functions/study-pack/index.ts + kit/notes/pack.js.
+// Don't edit this file by hand; edit those two and run: npm run sync
 ${imports.join("\n")}
 
 // ---------- Shared pack logic ----------

@@ -2,7 +2,7 @@
 
 How the full version of Notes Studio turns a PDF of messy notes into a study pack for every way of learning: clean notes, flashcards, a spidermap, a cheat-sheet poster, a narrated video and a catchy song.
 
-The version on getgradify.com today is a **browser-only preview**: simple rules plus pdf.js, the browser's voices and Web Audio (`assets/studio.js`). It shows the shape of the product. This document is the plan for the real thing, built on the Claude API. Nothing here is built yet.
+The version on getgradify.com today is a **browser-only preview**: simple rules plus pdf.js, the browser's voices and Web Audio (`kit/notes/studio.js`). It shows the shape of the product. This document is the plan for the real thing, built on the Claude API. Nothing here is built yet.
 
 ---
 

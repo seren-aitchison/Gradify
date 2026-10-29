@@ -3,8 +3,8 @@
 //   ANTHROPIC_API_KEY=... node scripts/eval-notes.mjs --claude   also Gradify AI (costs a few pence per file)
 // Add your own notes to tests/fixtures/ and the key terms a good pack must cover to expected.json.
 import { readFile, readdir, writeFile, mkdir } from "node:fs/promises";
-import { analyseNotes, normaliseNotes } from "../assets/studio.js";
-import { MODEL, PACK_SCHEMA, SYSTEM_PROMPT, userPrompt, cardsFromPack, packStats } from "../supabase/functions/_shared/pack.js";
+import { analyseNotes, normaliseNotes } from "../kit/notes/studio.js";
+import { MODEL, PACK_SCHEMA, SYSTEM_PROMPT, userPrompt, cardsFromPack, packStats } from "../kit/notes/pack.js";
 
 const DIR = new URL("../tests/fixtures/", import.meta.url);
 const expected = JSON.parse(await readFile(new URL("expected.json", DIR), "utf8"));

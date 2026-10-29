@@ -1,6 +1,7 @@
 // Shared, dependency-free logic (plain JavaScript, so the browser can import it too) for the study-pack pipeline: the knowledge-pack schema sent
 // to Claude, the prompt, grounding checks against the learner's own notes, and conversion
-// to flashcards. Used by the Supabase function (Deno) and the eval script (Node).
+// to flashcards. Used by the browser, the Supabase function (Deno) and the eval script (Node).
+// This is the source: supabase/functions/_shared/pack.js is a copy made by `npm run sync`.
 
 export const MODEL = "claude-opus-5-5";
 

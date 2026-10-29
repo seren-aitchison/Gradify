@@ -1,7 +1,7 @@
 // Path: the planning view of LifeOS. Pick a goal, compare where you are with where you
 // need to be, see the gaps and choose a route. Example data; the exam goal reads live
 // from Gradify Earth, so reviewing topics there raises readiness here.
-import { icon } from "./icons.js";
+import { icon } from "../core/icons.js";
 import { TOPICS, MODULES, strength } from "./earth.js";
 
 const $ = (s, el = document) => el.querySelector(s);

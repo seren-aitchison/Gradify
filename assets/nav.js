@@ -1,5 +1,5 @@
 // Top bar search button, the menu on small screens, and installing the site as an app.
-import { icon } from "./icons.js";
+import { icon } from "../kit/core/icons.js";
 
 const $ = (s) => document.querySelector(s);
 

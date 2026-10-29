@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { topicProfiles, recallProbability, practiceOrder } from "../assets/app/mastery.js";
+import { topicProfiles, recallProbability, practiceOrder } from "../kit/learning/mastery.js";
 
 const DAY = 864e5;
 const NOW = Date.parse("2026-10-29T12:00:00Z");
