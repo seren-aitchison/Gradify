@@ -6,7 +6,8 @@ import { tile, ink } from "../colour.js";
 import { SAMPLE, readFile } from "../studio.js";
 import { LocalStore, CloudStore, cloudConfigured } from "./store.js";
 import { generate, regenerateCard } from "./engine.js";
-import { schedule, preview, isDue, isLearned, strength, fmtInterval, RATINGS } from "./srs.js";
+import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "./srs.js";
+import { topicProfiles, practiceOrder, DIMENSIONS, LEVELS } from "./mastery.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -35,7 +36,8 @@ function toast(msg) {
 
 // ---------- Derived numbers (one place, used by every screen) ----------
 async function stats() {
-  const [cards, acts, reviews, docs] = await Promise.all([store.listCards(), store.listActivity(400), store.listReviews(30), store.listDocuments()]);
+  const [cards, acts, allReviews, docs] = await Promise.all([store.listCards(), store.listActivity(400), store.listReviews(400), store.listDocuments()]);
+  const reviews = allReviews.filter((r) => Date.parse(r.reviewed_at) >= Date.now() - 30 * DAY);
   const byDay = {};
   for (const a of acts) { const k = dayKey(a.at); byDay[k] = (byDay[k] || 0) + 1; }
   let streak = 0;
@@ -54,17 +56,19 @@ async function stats() {
   return {
     cards: live, due, learned, docs, acts, byDay, streak, longest,
     accuracy: reviews.length ? right / reviews.length : null, reviews30: reviews.length,
-    readiness: live.length ? learned.length / live.length : 0,
+    // readiness: average mastery across topics, weighted by how many cards each has
+    topics: topicProfiles(live, allReviews, { examDate: profile.exam_date || null }),
+    get readiness() { const t = this.topics, n = t.reduce((a, x) => a + x.cards, 0); return n ? t.reduce((a, x) => a + x.mastery * x.cards, 0) / n : 0; },
     xp: profile.xp || acts.reduce((a, x) => a + (x.xp || 0), 0),
   };
 }
 
 // ---------- Router ----------
-const routes = { today: renderToday, start: renderStart, new: renderNew, deck: renderDeck, study: renderStudy, progress: renderProgress, plan: renderPlan, account: renderAccount };
+const routes = { today: renderToday, start: renderStart, new: renderNew, deck: renderDeck, study: renderStudy, topic: renderTopic, progress: renderProgress, plan: renderPlan, account: renderAccount };
 async function route() {
   const [name, arg] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
   if (!profile.goal && !["start", "account"].includes(name)) { location.replace("#/start"); return; }
-  document.querySelectorAll(".app-nav a, .tabbar a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === name || (name === "deck" && a.dataset.route === "notes") || (name === "new" && a.dataset.route === "notes"))));
+  document.querySelectorAll(".app-nav a, .tabbar a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === name || ((name === "deck" || name === "topic") && a.dataset.route === (name === "topic" ? "progress" : "notes")) || (name === "new" && a.dataset.route === "notes"))));
   view.innerHTML = '<div class="loading" aria-busy="true"></div>';
   try { await (routes[name] || renderToday)(arg); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
   view.focus({ preventScroll: true });
@@ -325,48 +329,67 @@ async function renderNotes() {
 routes.notes = renderNotes;
 
 // ---------- Revision session ----------
-async function renderStudy(deckId) {
+// Answering a card: first say how sure you are (that's evidence too: confident wrong answers point
+// to misconceptions), then see the answer and rate it.
+const SURE_BUTTONS = [["sure", "I know it", "J"], ["unsure", "Not sure", "K"], ["guess", "No idea", "L"]];
+async function renderStudy(arg) {
+  // #/study/<deck id>, or #/study/t:<topic key> for a targeted practice session on one topic
+  const topicKey = arg?.startsWith("t:") ? decodeURIComponent(arg.slice(2)) : null;
+  const deckId = topicKey ? topicKey.split("|")[0] : arg;
   const all = await store.listCards(deckId ? { documentId: deckId } : {});
-  let queue = all.filter((c) => isDue(c) && !c.suspended);
-  const practice = !queue.length && deckId;
-  if (practice) queue = [...all].sort(() => Math.random() - 0.5);
+  let queue, practice = false, topicName = null;
+  if (topicKey) {
+    const [p] = topicProfiles(all, await store.listReviews(400)).filter((x) => x.key === topicKey);
+    topicName = p?.topic || "Topic";
+    queue = p ? practiceOrder(all.filter((c) => `${c.document_id}|${c.topic || "Cards"}` === topicKey), p).slice(0, 12) : [];
+  } else {
+    queue = all.filter((c) => isDue(c) && !c.suspended);
+    practice = !queue.length && deckId;
+    if (practice) queue = [...all].sort(() => Math.random() - 0.5);
+  }
   const cap = Math.max(10, Math.round(((profile.daily_minutes || 20) * 60) / SEC_PER_CARD));
-  // reviews first, then new cards
-  queue.sort((a, b) => (a.reps ? 0 : 1) - (b.reps ? 0 : 1) || new Date(a.due_at) - new Date(b.due_at));
+  // reviews first, then new cards (a topic session keeps the engine's order)
+  if (!topicKey) queue.sort((a, b) => (a.reps ? 0 : 1) - (b.reps ? 0 : 1) || new Date(a.due_at) - new Date(b.due_at));
   queue = queue.slice(0, cap);
   if (!queue.length) {
-    view.innerHTML = `<div class="empty-state panel glass">${icon("check")}<h3>All caught up</h3><p class="sub">Nothing is due right now. Add more notes, or come back later.</p><div class="row-actions"><a class="btn btn-primary lg" href="#/new"><span>Add notes</span></a><a class="btn btn-ghost lg" href="#/today"><span>Back to Today</span></a></div></div>`;
+    view.innerHTML = `<div class="empty-state panel glass">${icon("check")}<h3>${topicKey ? "No cards in this topic" : "All caught up"}</h3><p class="sub">Nothing is due right now. Add more notes, or come back later.</p><div class="row-actions"><a class="btn btn-primary lg" href="#/new"><span>Add notes</span></a><a class="btn btn-ghost lg" href="#/today"><span>Back to Today</span></a></div></div>`;
     return;
   }
   const total = queue.length;
   const results = { again: 0, hard: 0, good: 0, easy: 0 };
-  let i = 0, shown = false, t0 = Date.now(), xp = 0;
+  let i = 0, shown = false, sure = null, t0 = Date.now(), xp = 0;
   const again = [];
   const draw = () => {
     const c = queue[i];
     const p = preview(c);
     view.innerHTML = `<section class="study-session">
-      <div class="sess-top"><a href="${deckId ? `#/deck/${deckId}` : "#/today"}" class="back">✕ End</a><span class="goal-bar"><i style="width:${(i / total) * 100}%"></i></span><span class="sub">${Math.min(i + 1, total)} / ${total}${practice ? " · practice" : ""}</span></div>
+      <div class="sess-top"><a href="${topicKey ? `#/topic/${encodeURIComponent(topicKey)}` : deckId ? `#/deck/${deckId}` : "#/today"}" class="back">✕ End</a><span class="goal-bar"><i style="width:${(i / total) * 100}%"></i></span><span class="sub">${Math.min(i + 1, total)} / ${total}${practice ? " · practice" : ""}${topicName ? ` · ${esc(topicName)}` : ""}</span></div>
       <article class="flash-card ${shown ? "shown" : ""}" aria-live="polite">
         <span class="kicker">${esc(c.topic || "")}${c.reps ? "" : " · new"}</span>
         <p class="fc-front">${esc(c.front)}</p>
         ${shown ? `<p class="fc-back">${esc(c.back)}</p>${c.source_quote ? `<p class="c-src">From your notes: “${esc(c.source_quote)}”</p>` : ""}` : ""}
       </article>
       ${shown ? `<div class="rate4" role="group" aria-label="How well did you know it?">${RATINGS.map((r, k) => `<button type="button" class="r-${r}" data-r="${r}"><b>${r[0].toUpperCase() + r.slice(1)}</b><span>${fmtInterval(p[r])}</span><kbd>${k + 1}</kbd></button>`).join("")}</div>`
-        : `<button type="button" class="btn btn-light lg reveal" id="reveal"><span>Show answer</span><kbd>Space</kbd></button>`}
+        : `<div class="sure" role="group" aria-label="How sure are you? Choosing one shows the answer.">
+            <span class="sure-q">How sure are you?</span>
+            ${SURE_BUTTONS.map(([k, label, key]) => `<button type="button" data-sure="${k}" class="sure-${k}"><b>${label}</b><kbd>${key}</kbd></button>`).join("")}
+            <button type="button" class="sure-skip" id="reveal">Just show me <kbd>Space</kbd></button>
+          </div>`}
     </section>`;
   };
   const rate = async (r) => {
     const c = queue[i];
-    const next = practice ? {} : schedule(c, r);
+    // in a topic session, cards that aren't due yet only move if you've forgotten them
+    const reschedule = !practice && (!topicKey || !c.reps || isDue(c) || r === "again");
+    const next = reschedule ? schedule(c, r) : {};
     results[r]++;
     xp += r === "again" ? 1 : 2;
     if (!practice) {
-      await store.updateCard(c.id, next);
-      await store.addReview({ card_id: c.id, rating: r, interval_days: next.interval_days, ms: Date.now() - t0 });
+      if (reschedule) await store.updateCard(c.id, next);
+      await store.addReview({ card_id: c.id, rating: r, interval_days: next.interval_days ?? null, ms: Date.now() - t0, confidence: sure, mode: reschedule ? "scheduled" : "practice" });
       if (r === "again" && !again.includes(c.id)) { again.push(c.id); queue.push({ ...c, ...next }); }
     }
-    i++; shown = false; t0 = Date.now();
+    i++; shown = false; sure = null; t0 = Date.now();
     if (i >= queue.length) return finish();
     draw();
   };
@@ -374,7 +397,7 @@ async function renderStudy(deckId) {
     removeEventListener("keydown", keys);
     const answered = Object.values(results).reduce((a, b) => a + b, 0);
     xp += 10;
-    await store.logActivity({ site: profile.site, kind: "session", xp: Math.min(xp, 500), detail: { cards: answered, ...results, practice: Boolean(practice) } });
+    await store.logActivity({ site: profile.site, kind: "session", xp: Math.min(xp, 500), detail: { cards: answered, ...results, practice: Boolean(practice), topic: topicName } });
     // tick off today's review block in the plan
     const blocks = await store.listBlocks(today(), today());
     for (const b of blocks) if (b.auto && !b.done && /review/i.test(b.title)) await store.saveBlock({ ...b, done: true });
@@ -392,21 +415,28 @@ async function renderStudy(deckId) {
         <div><b>Level ${levelOf(s.xp)}</b><span>${s.xp} XP</span></div>
       </div>
       <div class="rate-sum">${RATINGS.map((r) => `<span class="r-${r}"><b>${results[r]}</b>${r}</span>`).join("")}</div>
-      <div class="row-actions"><a class="btn btn-primary lg" href="#/today"><span>Back to Today</span></a><a class="btn btn-ghost lg" href="#/progress"><span>See progress</span></a></div>
+      ${topicKey ? `<div class="row-actions"><a class="btn btn-primary lg" href="#/topic/${encodeURIComponent(topicKey)}"><span>See ${esc(topicName)}'s mastery</span></a><a class="btn btn-ghost lg" href="#/today"><span>Back to Today</span></a></div>`
+        : `<div class="row-actions"><a class="btn btn-primary lg" href="#/today"><span>Back to Today</span></a><a class="btn btn-ghost lg" href="#/progress"><span>See progress</span></a></div>`}
     </section>`;
   };
   const keys = (e) => {
     if (e.target.closest("input, textarea")) return;
     if (!shown && (e.key === " " || e.key === "Enter")) { e.preventDefault(); shown = true; draw(); }
+    else if (!shown && SURE_BUTTONS.some(([, , k]) => k.toLowerCase() === e.key.toLowerCase())) { sure = SURE_BUTTONS.find(([, , k]) => k.toLowerCase() === e.key.toLowerCase())[0]; shown = true; draw(); }
     else if (shown && ["1", "2", "3", "4"].includes(e.key)) rate(RATINGS[+e.key - 1]);
   };
-  addEventListener("keydown", keys);
-  addEventListener("hashchange", () => removeEventListener("keydown", keys), { once: true });
+  // listeners last only as long as this session; otherwise a second session in the same visit
+  // would also answer for the first
+  const session = new AbortController();
+  addEventListener("keydown", keys, { signal: session.signal });
+  addEventListener("hashchange", () => session.abort(), { once: true });
   view.addEventListener("click", (e) => {
     if (e.target.closest("#reveal")) { shown = true; draw(); return; }
+    const sb = e.target.closest("[data-sure]");
+    if (sb) { sure = sb.dataset.sure; shown = true; draw(); return; }
     const r = e.target.closest("[data-r]");
     if (r) rate(r.dataset.r);
-  });
+  }, { signal: session.signal });
   draw();
 }
 
@@ -440,11 +470,27 @@ async function renderToday() {
   const lv = levelOf(s.xp), into = s.xp - xpForLevel(lv), need = xpForLevel(lv + 1) - xpForLevel(lv);
   const examIn = profile.exam_date ? Math.ceil((new Date(profile.exam_date) - new Date(today())) / DAY) : null;
   const mins = Math.ceil((s.due.length * SEC_PER_CARD) / 60);
+  // One answer to "what should I do next?": a misconception first (it spreads), then due reviews
+  // (cheap now, expensive later), then whichever topic the Mastery Engine ranks highest.
+  const shaky = s.topics.find((t) => t.level === "shaky");
+  const top = s.topics.find((t) => t.next.kind !== "done");
+  const dueTopics = new Set(s.due.map((c) => `${c.document_id}|${c.topic || "Cards"}`)).size;
   const next = !s.cards.length
     ? { t: "Add your first notes", d: "Upload a PDF or paste your notes. Gradify turns them into flashcards you can trust.", href: "#/new", cta: "Add notes" }
+    : shaky ? { t: `${shaky.next.label}: ${esc(shaky.topic)}`, d: esc(shaky.next.why), href: studyHref(shaky.key), cta: `Start · ${shaky.next.mins} min` }
     : s.due.length
-      ? { t: `Review ${s.due.length} ${s.due.length === 1 ? "card" : "cards"}`, d: `About ${mins} ${mins === 1 ? "minute" : "minutes"}. Cards come back just before you'd forget them.`, href: "#/study", cta: "Start session" }
-      : { t: "You're all caught up", d: "Nothing is due. Add the next lecture's notes while it's fresh.", href: "#/new", cta: "Add notes" };
+      ? { t: `Review ${s.due.length} ${s.due.length === 1 ? "card" : "cards"}`, d: `About ${mins} ${mins === 1 ? "minute" : "minutes"}, across ${dueTopics} ${dueTopics === 1 ? "topic" : "topics"}. These are the cards you're about to forget: reviewing them now is what makes memory last.`, href: "#/study", cta: `Start · ${mins} min` }
+      : top ? { t: `${top.next.label}: ${esc(top.topic)}`, d: esc(top.next.why), href: studyHref(top.key), cta: `Start · ${top.next.mins} min` }
+      : { t: "You're all caught up", d: "Every topic is mastered and nothing is due. Add the next lecture's notes while it's fresh.", href: "#/new", cta: "Add notes" };
+  // Realistic workload: what today needs, against the time you said you have
+  const capMins = profile.daily_minutes || 20;
+  const fading = s.topics.filter((t) => t.level === "fading");
+  const notReady = s.topics.reduce((a, t) => a + t.cards * (1 - t.mastery), 0);
+  const needPerDay = examIn > 0 ? Math.ceil((notReady * SEC_PER_CARD * 2.5) / 60 / examIn) : null; // each card needs ~2–3 more answers
+  const briefing = [];
+  if (s.cards.length) briefing.push({ ico: "clock", c: mins > capMins ? "warn" : "", t: s.due.length ? `${mins} min of reviews due today` : "No reviews due today", d: `You said you have ${capMins} min a day.${mins > capMins ? " Today needs more than that: do the oldest first and the rest will wait a day." : ""}` });
+  if (fading.length) briefing.push({ ico: "alert", c: "warn", t: `${fading.length} ${fading.length === 1 ? "topic is" : "topics are"} fading`, d: `${fading.slice(0, 3).map((t) => esc(t.topic)).join(", ")}. You knew ${fading.length === 1 ? "it" : "them"}, but haven't practised recently.`, href: studyHref(fading[0].key), cta: "Review" });
+  if (needPerDay != null && s.cards.length) briefing.push({ ico: "calendar", c: needPerDay > capMins ? "risk" : "", t: needPerDay > capMins ? `Exam risk: you need about ${needPerDay} min a day` : `On track for your exam`, d: needPerDay > capMins ? `At ${capMins} min a day you won't reach mastery on everything in ${examIn} days. Add time in Plan, or focus on the topics below.` : `${needPerDay < 5 ? "A few minutes a day" : `About ${needPerDay} min a day`} keeps every topic on course for mastery in ${examIn} days.`, href: needPerDay > capMins ? "#/plan" : null, cta: "Open Plan" });
   const hour = new Date().getHours();
   view.innerHTML = `<section class="today">
     <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""}</h1>
@@ -453,6 +499,11 @@ async function renderToday() {
         <span class="kicker">${icon("flame")}Do this next</span><h2>${next.t}</h2><p class="sub">${next.d}</p>
         <a class="btn btn-light lg" href="${next.href}"><span>${next.cta}</span></a>
       </article>
+      ${briefing.length || s.topics.length ? `<article class="panel glass briefing">
+        <div class="panel-head"><h3>Your briefing</h3><span class="pill-dark">${fmtDate(Date.now(), { weekday: "long", day: "numeric", month: "short" })}</span></div>
+        ${briefing.length ? `<ul class="brief-list">${briefing.map((b) => `<li class="${b.c}">${icon(b.ico)}<span><b>${b.t}</b><em>${b.d}</em></span>${b.href ? `<a class="btn btn-ghost lg btn-sm" href="${b.href}"><span>${b.cta}</span></a>` : ""}</li>`).join("")}</ul>` : ""}
+        ${s.topics.filter((t) => t.next.kind !== "done").length > 1 ? `<h4 class="brief-h">Then, in order</h4><ol class="focus-list">${s.topics.filter((t) => t.next.kind !== "done").slice(0, 3).map((t) => `<li><a href="${topicHref(t.key)}"><span><b>${esc(t.topic)}</b><em>${esc(t.next.label)} · ${t.next.mins} min</em></span>${levelPill(t.level)}</a></li>`).join("")}</ol>` : ""}
+      </article>` : ""}
       <article class="panel glass stat-tiles">
         <div><b>${s.streak}</b><span>day streak</span></div>
         <div><b>${s.learned.length}<small>/${s.cards.length}</small></b><span>cards learned</span></div>
@@ -462,7 +513,7 @@ async function renderToday() {
       ${examIn != null ? `<article class="panel glass exam">
         <span class="kicker">${icon("calendar")}${examIn >= 0 ? `Exam in ${examIn} ${examIn === 1 ? "day" : "days"}` : "Exam date has passed"}</span>
         <div class="ring-sm"><svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="34" class="track"/><circle cx="40" cy="40" r="34" class="fill" style="stroke-dasharray:${2 * Math.PI * 34};stroke-dashoffset:${2 * Math.PI * 34 * (1 - s.readiness)}"/></svg><b>${Math.round(s.readiness * 100)}%</b></div>
-        <p class="sub">ready: the share of your cards you've learned.${(() => { const n = Math.ceil((s.cards.length - s.learned.length) / Math.max(1, examIn)); return s.cards.length && examIn > 0 && n ? ` Learn about ${n} more ${n === 1 ? "card" : "cards"} a day to be ready in time.` : ""; })()}</p>
+        <p class="sub">ready: your average mastery across every topic, from the evidence in your answers.</p>
       </article>` : ""}
       <article class="panel glass plan-today">
         <div class="panel-head"><h3>Today's plan</h3><a class="see" href="#/plan">Plan the week</a></div>
@@ -472,6 +523,60 @@ async function renderToday() {
         <div class="panel-head"><h3>Last 16 weeks</h3><a class="see" href="#/progress">Progress</a></div>
         ${heatmap(s.byDay)}
       </article>
+    </div>
+  </section>`;
+}
+
+// ---------- Topic: its mastery profile ----------
+const pctOf = (v) => `${Math.round(v * 100)}%`;
+const levelPill = (level) => `<span class="lvl-pill lvl-${level}">${LEVELS[level].label}</span>`;
+const topicHref = (key) => `#/topic/${encodeURIComponent(key)}`;
+const studyHref = (key) => `#/study/t:${encodeURIComponent(key)}`;
+const NO_EVIDENCE = {
+  recall: "Answer some of this topic's cards to measure it.",
+  explain: "Comes from “why” cards. This topic doesn't have any answered yet.",
+  apply: "Needs application questions, which arrive with quizzes. Gradify won't guess.",
+  confidence: "Choose how sure you are before seeing each answer.",
+  retention: "Measured once you've reviewed a card at least once.",
+};
+async function renderTopic(arg) {
+  const key = decodeURIComponent(arg || "");
+  const s = await stats();
+  const t = s.topics.find((x) => x.key === key);
+  if (!t) { view.innerHTML = `<div class="empty-state panel glass"><h3>Topic not found</h3><p class="sub">It may have been deleted.</p><a class="btn btn-ghost lg" href="#/progress"><span>Back to Progress</span></a></div>`; return; }
+  const doc = s.docs.find((d) => d.id === t.documentId);
+  const seenAgo = t.lastSeen ? Math.floor((Date.now() - t.lastSeen) / DAY) : null;
+  view.innerHTML = `<section class="topic-page">
+    <a class="back" href="#/progress">← Progress</a>
+    <div class="topic-head">
+      <div><span class="kicker">${esc(doc?.title || "Your notes")}</span><h1>${esc(t.topic)}</h1>
+        <p class="sub">${levelPill(t.level)} ${LEVELS[t.level].note}</p></div>
+      <div class="ring-sm big" aria-label="Mastery ${pctOf(t.mastery)}"><svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="34" class="track"/><circle cx="40" cy="40" r="34" class="fill" style="stroke-dasharray:${2 * Math.PI * 34};stroke-dashoffset:${2 * Math.PI * 34 * (1 - t.mastery)}"/></svg><b>${pctOf(t.mastery)}</b><span>mastery</span></div>
+    </div>
+    <article class="panel glass next-up step-${t.next.kind}" style="--c:${t.next.kind === "misconception" ? "#ff5a4d" : t.next.kind === "review" ? "#ffb44d" : "#4fe0a6"}">
+      <span class="kicker">${icon("flame")}Next step${t.next.mins ? ` · about ${t.next.mins} min` : ""}</span>
+      <h2>${esc(t.next.label)}</h2><p class="sub">${esc(t.next.why)}</p>
+      ${t.next.kind === "done" ? "" : `<a class="btn btn-light lg" href="${studyHref(t.key)}"><span>Start</span></a>`}
+    </article>
+    <div class="prog-grid">
+      <article class="panel glass"><div class="panel-head"><h3>Mastery profile</h3><span class="pill-dark">from your answers</span></div>
+        <ul class="dims">${DIMENSIONS.map((d) => { const v = t.dims[d.key]; return `<li class="${v.value == null ? "none" : ""}">
+          <div class="dim-top"><b>${d.label}</b><em>${v.value == null ? "No evidence yet" : pctOf(v.value)}</em></div>
+          <span class="goal-bar"><i style="width:${v.value == null ? 0 : Math.round(v.value * 100)}%" class="${v.value != null && v.value >= 0.7 ? "ok" : ""}"></i></span>
+          <span class="dim-note">${v.value == null ? NO_EVIDENCE[d.key] : `${d.what} · ${v.n} ${d.key === "retention" ? (v.n === 1 ? "card" : "cards") : v.n === 1 ? "answer" : "answers"}`}</span></li>`; }).join("")}</ul>
+      </article>
+      <div class="topic-side">
+        ${t.misconceptions.length ? `<article class="panel glass warn-card"><div class="panel-head"><h3>Possible misconceptions</h3></div>
+          <p class="sub">You said you knew these, then got them wrong. Check the answer against your notes.</p>
+          <ul class="mis-list">${t.misconceptions.map((m) => `<li>${esc(m.front)}</li>`).join("")}</ul></article>` : ""}
+        ${t.underconfident >= 3 ? `<article class="panel glass"><h3>You know more than you think</h3><p class="sub">${t.underconfident} times you weren't sure, but got it right. Trust yourself a little more in the exam.</p></article>` : ""}
+        <article class="panel glass"><div class="panel-head"><h3>Cards</h3><a class="see" href="#/deck/${t.documentId}">Open deck</a></div>
+          <div class="deck-stats two"><div><b>${t.seen}<small>/${t.cards}</small></b><span>tested</span></div><div><b>${t.due}</b><span>due now</span></div>
+          <div><b>${t.fresh}</b><span>not started</span></div><div><b>${seenAgo == null ? "–" : seenAgo === 0 ? "Today" : `${seenAgo}d`}</b><span>last practised</span></div></div>
+        </article>
+        <details class="panel glass how"><summary>How Gradify works this out</summary>
+          <p class="sub">Every score comes from your own answers, with recent ones counting more. Recall comes from definition, fill-the-gap and reverse cards; explanation from “why” cards. Retention estimates how much you'd remember if tested right now, from when you last saw each card and how long you've been remembering it. Depth measures how long your memory of each card has lasted between reviews: everything looks remembered straight after a session, so mastery only grows as cards survive longer gaps. A topic is mastered only when you've answered every card, each more than once, with recall and retention above 85% and memories lasting a week or more.</p></details>
+      </div>
     </div>
   </section>`;
 }
@@ -486,8 +591,6 @@ async function renderProgress() {
     return s.cards.filter((c) => { const t = new Date(c.due_at).getTime(); return t >= start && t < end; }).length;
   });
   const fmax = Math.max(1, ...forecast);
-  const topics = {};
-  for (const c of s.cards) { const k = `${c.document_id}|${c.topic || "Cards"}`; (topics[k] ||= []).push(c); }
   view.innerHTML = `<section class="progress">
     <h1>Progress</h1>
     <div class="deck-stats">
@@ -496,11 +599,10 @@ async function renderProgress() {
     </div>
     <article class="panel glass"><div class="panel-head"><h3>Your year</h3><span class="pill-dark">${Object.keys(s.byDay).length} active days</span></div><div class="hm-scroll">${heatmap(s.byDay, 52)}</div></article>
     <div class="prog-grid">
-      <article class="panel glass"><div class="panel-head"><h3>Mastery by topic</h3></div>
-        ${Object.keys(topics).length ? `<ul class="mastery">${Object.entries(topics).map(([k, cs]) => {
-          const [docId, t] = k.split("|"); const d = docs.find((x) => x.id === docId);
-          const m = cs.reduce((a, c) => a + strength(c), 0) / cs.length;
-          return `<li><a href="#/deck/${docId}"><span><b>${esc(t)}</b><em>${esc(d?.title || "")}</em></span><span class="goal-bar"><i style="width:${Math.round(m * 100)}%"></i></span><em>${cs.filter(isLearned).length}/${cs.length}</em></a></li>`;
+      <article class="panel glass"><div class="panel-head"><h3>Mastery by topic</h3><span class="pill-dark">most urgent first</span></div>
+        ${s.topics.length ? `<ul class="mastery">${s.topics.map((t) => {
+          const d = docs.find((x) => x.id === t.documentId);
+          return `<li><a href="${topicHref(t.key)}"><span><b>${esc(t.topic)}</b><em>${esc(d?.title || "")}</em></span><span class="m-mid">${levelPill(t.level)}<span class="goal-bar"><i style="width:${Math.round(t.mastery * 100)}%"></i></span></span><em>${pctOf(t.mastery)}</em></a></li>`;
         }).join("")}</ul>` : `<p class="sub">Add notes to see your topics here.</p>`}
       </article>
       <article class="panel glass"><div class="panel-head"><h3>Reviews due this week</h3></div>

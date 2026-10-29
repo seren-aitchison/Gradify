@@ -112,7 +112,7 @@ export class CloudStore {
       const [row] = await this.q(this.db.from("cards").insert({ ...rest, document_id: docIds[document_id] || null }).select());
       cardIds[id] = row.id;
     }
-    const reviews = m.reviews.filter((r) => cardIds[r.card_id]).map(({ id, card_id, ...r }) => ({ ...r, card_id: cardIds[card_id] }));
+    const reviews = m.reviews.filter((r) => cardIds[r.card_id]).map(({ id, card_id, ...r }) => ({ ...r, card_id: cardIds[card_id], confidence: r.confidence ?? null, mode: r.mode || "scheduled" }));
     if (reviews.length) await this.q(this.db.from("reviews").insert(reviews));
     // activity in chunks, capped per row by the database
     const acts = m.activity.map(({ id, ...a }) => ({ ...a, xp: Math.min(500, a.xp || 0) }));

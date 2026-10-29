@@ -13,7 +13,8 @@ You need: a free Supabase account, an Anthropic API key, and about 30 minutes.
 
 1. In the project, open **SQL Editor**, then **New query**.
 2. Paste the whole of `supabase/migrations/20261028120000_gradify_core.sql` and click **Run**.
-3. Open **Table Editor**. You should see `profiles`, `documents`, `packs`, `cards`, `reviews`, `activity`, `plan_blocks` and `waitlist`, each marked "RLS enabled".
+3. Do the same with `supabase/migrations/20261029120000_mastery_evidence.sql` (it adds the Mastery Engine's evidence to `reviews`). Run the files in date order.
+4. Open **Table Editor**. You should see `profiles`, `documents`, `packs`, `cards`, `reviews`, `activity`, `plan_blocks` and `waitlist`, each marked "RLS enabled".
 
 ## 3. Turn on sign-in
 
