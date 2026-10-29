@@ -639,25 +639,35 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .nt-dates .date b, .nt-dates .ev-txt b { color: #fff; }
 .nt-dates .go { background: rgb(var(--holo)); color: #00242c; }
 
-/* Mind map: laid out like a page of revision notes (title in a cloud, topics either side,
-   terms written out around them), drawn in the holo style */
-.handmap { padding: 22px 14px 14px; }
-.hm-scroll { overflow-x: auto; scrollbar-width: thin; }
-.handmap svg { display: block; width: 100%; min-width: 760px; height: auto; }
-.handmap.narrow svg { min-width: 0; }
-.hm-line { fill: none; stroke-width: 1.6; stroke-linecap: round; opacity: .9; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw-in .8s var(--d, 0s) ease-out forwards; }
+/* Mind map: shaped like a flow diagram (notes → spine of topics → terms → definitions), holo style */
+.flowmap { padding: 22px 14px 14px; }
+.fm-scroll { overflow-x: auto; scrollbar-width: thin; }
+.flowmap svg { display: block; width: 100%; min-width: 760px; height: auto; }
+.flowmap.narrow svg { min-width: 0; }
+.fm-line { fill: none; stroke: rgba(223, 249, 255, .8); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw-in .8s var(--d, 0s) ease-out forwards; }
+.fm-spine { stroke: rgba(223, 249, 255, .85); stroke-width: 2.4; }
+.fm-branch { stroke: color-mix(in srgb, var(--c) 70%, #dff9ff); stroke-width: 1.8; }
+.fm-twig { stroke: color-mix(in srgb, var(--c) 45%, rgba(223, 249, 255, .5)); stroke-width: 1.4; opacity: .8; }
 @keyframes draw-in { to { stroke-dashoffset: 0; } }
-.hm-head, .hm-leaf { opacity: 0; animation: fade-in .45s var(--d, 0s) forwards; }
+.fm-pill { opacity: 0; animation: fade-in .45s var(--d, 0s) forwards; }
+.fm-deftext { opacity: 0; animation: fade-in .45s var(--d, 0s) forwards; }
 @keyframes fade-in { to { opacity: 1; } }
-.hm-chip { fill: rgba(6, 24, 32, .94); stroke: var(--c); stroke-width: 1.5; filter: drop-shadow(0 0 8px color-mix(in srgb, var(--c) 65%, transparent)); }
-.hm-back { fill: color-mix(in srgb, var(--c) 30%, transparent); stroke: var(--c); stroke-opacity: .55; }
-.hm-slab { fill: color-mix(in srgb, var(--c) 24%, rgba(6, 24, 32, .9)); stroke: var(--c); stroke-opacity: .7; filter: drop-shadow(0 0 10px color-mix(in srgb, var(--c) 55%, transparent)); }
-.hm-head-t { font: 600 15px var(--sans); text-anchor: middle; letter-spacing: .08em; }
-.hm-acr { font: 600 11px var(--mono); text-anchor: middle; letter-spacing: .3em; opacity: .8; }
-.hm-cloud path { fill: rgba(8, 34, 44, .92); stroke: #5ef0ff; stroke-width: 1.8; filter: drop-shadow(0 0 12px rgba(94, 240, 255, .65)); }
-.hm-cloud text { fill: #eaffff; font: 700 19px var(--sans); text-anchor: middle; letter-spacing: .1em; }
-.hm-term { font: 600 15px var(--sans); }
-.hm-def { fill: #bfdde4; font: 400 14px var(--sans); }
+.fm-pill text { text-anchor: middle; font: 600 12.5px var(--sans); fill: #eaffff; }
+.fm-start rect { fill: rgba(94, 240, 255, .2); stroke: #5ef0ff; stroke-width: 1.6; filter: drop-shadow(0 0 10px rgba(94, 240, 255, .6)); }
+.fm-start text { font-size: 15px; font-weight: 700; }
+.fm-topic rect { fill: color-mix(in srgb, var(--c) 38%, #06161e); stroke: var(--c); stroke-width: 1.6; filter: drop-shadow(0 0 9px color-mix(in srgb, var(--c) 60%, transparent)); }
+.fm-topic text { font-size: 13.5px; font-weight: 700; }
+.fm-term rect { fill: color-mix(in srgb, var(--c) 16%, rgba(6, 22, 30, .92)); stroke: color-mix(in srgb, var(--c) 65%, transparent); stroke-width: 1.2; }
+.fm-term.learnt rect { fill: color-mix(in srgb, var(--c) 45%, #06161e); stroke: var(--c); filter: drop-shadow(0 0 8px var(--c)); }
+.fm-def rect { fill: rgba(94, 240, 255, .06); stroke: rgba(94, 240, 255, .28); }
+.fm-def text { font-weight: 400; fill: #bfdde4; font-size: 11.5px; }
+.fm-deftext text { font: 400 12.5px var(--sans); fill: #bfdde4; }
+.fm-acr { font: 600 10.5px var(--mono); letter-spacing: .3em; fill: color-mix(in srgb, var(--c) 60%, #fff); opacity: .85; }
+.fm-legend text { font: 500 12.5px var(--sans); fill: #cfe9ee; }
+.fm-legend.fm-start circle { fill: rgba(94, 240, 255, .35); stroke: #5ef0ff; }
+.fm-legend.fm-topic circle { fill: rgba(160, 120, 255, .45); stroke: #a78bfa; }
+.fm-legend.fm-term circle { fill: rgba(94, 240, 255, .12); stroke: rgba(94, 240, 255, .6); }
+.fm-legend.fm-def circle { fill: rgba(94, 240, 255, .05); stroke: rgba(94, 240, 255, .3); }
 .sheet svg { display: block; width: 100%; height: auto; border-radius: 20px; box-shadow: 0 0 42px -14px rgba(94, 240, 255, .5); }
 
 /* Flashcards: holo cards that flip in 3D */
