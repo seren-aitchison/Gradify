@@ -1,6 +1,6 @@
 // Gradify service worker: lets the site open offline.
 // Network first, so a new deploy shows straight away; the cache is the fallback.
-const CACHE = "gradify-v7";
+const CACHE = "gradify-v8";
 const SHELL = [
   "./", "index.html", "app.html", "assets/app/app.css", "assets/app/main.js", "assets/app/store.js", "assets/app/engine.js", "assets/app/srs.js", "assets/app/config.js", "supabase/functions/_shared/pack.js", "assets/vendor/supabase/supabase.js", "manifest.webmanifest",
   "assets/styles.css", "assets/app.js", "assets/sites.js", "assets/icons.js", "assets/colour.js", "assets/nav.js",

@@ -486,6 +486,7 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .lg-dot.fading { border: 1.5px dashed #fff; opacity: .6; }
 .lg-dot.learning { border: 2.5px solid #fff; }
 .lg-dot.new { border: 1.5px solid rgba(255, 255, 255, .3); }
+.lg-dot.hub { border: 0; background: radial-gradient(circle, #ffecd2 0 22%, #ff8a3d 34%, rgba(255, 90, 20, 0) 72%); box-shadow: 0 0 8px rgba(255, 120, 40, .7); }
 .lg-dot.portal { border: 2px solid #ff5a4d; background: radial-gradient(circle, #ff5a4d 40%, #000 45%); }
 .lg-road { width: 18px; height: 2px; background: rgba(255, 255, 255, .35); display: inline-block; }
 

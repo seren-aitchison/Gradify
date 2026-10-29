@@ -112,6 +112,27 @@ export function createGlobe(canvas, { onPick, onHover }) {
       }
     }
 
+    // hubs: glowing orange city markers, like the reference
+    ctx.globalCompositeOperation = "lighter";
+    const hubLabels = [];
+    for (const [i, hub] of (scene.hubs || []).entries()) {
+      const p = project(hub.v);
+      if (p.z < 0.05) continue;
+      const k = 0.35 + 0.65 * p.z, beat = 0.85 + 0.15 * Math.sin(t * 2.2 + i * 1.7), gr = (14 + r / 20) * beat;
+      const glow = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, gr);
+      glow.addColorStop(0, `rgba(255,190,110,${k})`); glow.addColorStop(0.2, `rgba(255,120,45,${0.8 * k})`); glow.addColorStop(0.5, `rgba(255,90,30,${0.25 * k})`); glow.addColorStop(1, "rgba(255,80,20,0)");
+      ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(p.x, p.y, gr, 0, 7); ctx.fill();
+      ctx.fillStyle = `rgba(255,236,210,${k})`; ctx.beginPath(); ctx.arc(p.x, p.y, 3, 0, 7); ctx.fill();
+      if (p.z > 0.35) hubLabels.push([hub.name.toUpperCase(), p.x + 8, p.y - 6, k]);
+    }
+    ctx.globalCompositeOperation = "source-over";
+    for (const [text, x, y, k] of hubLabels) {
+      ctx.font = `600 ${W < 500 ? 8.5 : 10}px Geist, Inter, system-ui, sans-serif`;
+      ctx.textAlign = "left";
+      ctx.lineWidth = 3; ctx.strokeStyle = "rgba(0,0,0,.8)"; ctx.strokeText(text, x, y);
+      ctx.fillStyle = `rgba(255,255,255,${0.85 * k})`; ctx.fillText(text, x, y);
+    }
+
     // prerequisites: great-circle arcs lifted a little off the surface
     for (const rd of scene.roads) {
       ctx.beginPath();

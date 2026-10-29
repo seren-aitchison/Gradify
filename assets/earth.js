@@ -20,6 +20,12 @@ export const MODULES = {
 // north and west, Year 2 in the south and east, and Year 3 is still in the fog over East Asia.
 const CENTRES = { anat: [50, 12], bio: [6, 20], gen: [24, 78], cardio: [-14, -58], phys: [40, -98], pharm: [-25, 134], placements: [36, 106] };
 const YEAR1 = new Set(["anat", "bio", "gen"]);
+// Hubs: cities where other Gradify learners are studying right now (example data)
+const HUBS = [
+  ["New York", 40.7, -74], ["London", 51.5, -0.1], ["São Paulo", -23.5, -46.6],
+  ["Lagos", 6.5, 3.4], ["Cape Town", -33.9, 18.4], ["Dubai", 25.2, 55.3], ["Mumbai", 19.1, 72.9],
+  ["Tokyo", 35.7, 139.7], ["Sydney", -33.9, 151.2],
+];
 
 // Evidence order: recall, explain, apply, retain, connect (0–100)
 const EVIDENCE = ["Recall", "Explain", "Apply to new problems", "Retained over time", "Connected to other topics"];
@@ -106,6 +112,7 @@ function scene() {
   return {
     regions,
     rings: true,
+    hubs: HUBS.map(([name, lat, lon]) => ({ name, v: vec(lat, lon) })),
     selected,
     pins: TOPICS.map((t) => ({ id: t.id, v: place[t.id], c: MODULES[t.m]?.c ?? "#777777", name: t.name, state: stateOf(t), strength: strength(t) })),
     roads: ROADS.map(([a, b]) => ({
@@ -188,6 +195,6 @@ export function initEarth(opts) {
   });
   $("#earth-legend").innerHTML = ["mastered", "recent", "fading", "learning", "new"].map((s) =>
     `<span><i class="lg-dot ${s}"></i>${STATES[s].label}</span>`).join("") +
-    '<span><i class="lg-dot portal"></i>Portal to another Gradify site</span><span><i class="lg-road"></i>Prerequisite</span>';
+    '<span><i class="lg-dot portal"></i>Portal to another Gradify site</span><span><i class="lg-dot hub"></i>Learners studying now</span><span><i class="lg-road"></i>Prerequisite</span>';
   select(selected, true);
 }
