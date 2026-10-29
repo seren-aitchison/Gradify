@@ -1,6 +1,7 @@
 import { GROUPS, FEATURED, START_HERE, KEYWORDS } from "../kit/core/sites.js";
 import { icon } from "../kit/core/icons.js";
 import { triple, mix, ink, tile } from "../kit/core/colour.js";
+import { pathOf } from "../kit/core/site.js";
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../gradify.config.js";
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -11,9 +12,12 @@ const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // A site's icon, falling back to its first letters ("MedGradify" -> "Me") if it has none
 const mark = (s, cls) => icon(s.i, cls) || esc((s.n.split(/Gradify/)[0].trim() || s.n).slice(0, 2));
-const domainOf = (s) => esc(s.label || s.u.replace(/^https?:\/\//, ""));
+// a built sub-site lives in its own folder here (getgradify.com/medgradify/); others link to their own domain
+const domainOf = (s) => esc(s.built ? `getgradify.com${pathOf(s).replace(/\/$/, "")}` : s.label || s.u.replace(/^https?:\/\//, ""));
+const siteHref = (s) => (s.built ? pathOf(s) : href(s.u));
+const newTab = (s) => (s.built ? "" : ' target="_blank" rel="noopener"');
 const nameOf = (s) => esc(s.n) + (s.tm === false ? "" : "™");
-const isLive = (s) => !!s.u && !s.soon;
+const isLive = (s) => !!s.built || (!!s.u && !s.soon);
 const groupLabel = (g) => g.title.replace(/^By /, "").replace(/^./, (c) => c.toUpperCase());
 
 const ICON = {
@@ -59,7 +63,7 @@ for (const g of GROUPS) {
     const badge = featured ? '<span class="badge"><span class="spark" aria-hidden="true"></span>The future of TechGradify</span>' : "";
     // what it does, without repeating the "For …:" lead-in that some descriptions have
     const what = s.d.replace(/^For [^:]+:\s*/, "").replace(/^./, (c) => c.toUpperCase());
-    const study = s.n === "Klerio" ? "" : `<a class="study-link" href="app.html?site=${encodeURIComponent(s.n)}">Study ${esc(s.n.replace(" · ForgeLab", "").replace(/Gradify$/, "") || s.n)} in Gradify ${ICON.chev}</a>`;
+    const study = s.n === "Klerio" ? "" : `<a class="study-link" href="${s.built ? `${pathOf(s)}app.html` : `app.html?site=${encodeURIComponent(s.n)}`}">Study ${esc(s.n.replace(" · ForgeLab", "").replace(/Gradify$/, "") || s.n)} in Gradify ${ICON.chev}</a>`;
     card.innerHTML = `
       <span class="icon" aria-hidden="true">${mark(s)}</span>
       <span class="body">
@@ -69,7 +73,7 @@ for (const g of GROUPS) {
         <p>${esc(what)}</p>
         <span class="actions-row">
           ${live
-            ? `<a class="btn btn-light lg btn-sm visit" href="${href(s.u)}" target="_blank" rel="noopener" title="Opens ${domainOf(s)} in a new tab"><span>Visit site</span> <span aria-hidden="true">↗</span></a><span class="domain soon-domain">${domainOf(s)}</span>`
+            ? `<a class="btn btn-light lg btn-sm visit" href="${siteHref(s)}"${newTab(s)} title="${s.built ? `Go to ${esc(s.n)}` : `Opens ${domainOf(s)} in a new tab`}"><span>Visit site</span> <span aria-hidden="true">↗</span></a><span class="domain soon-domain">${domainOf(s)}</span>`
             : `<button type="button" class="btn btn-ghost lg btn-sm notify" data-site="${esc(s.n)}"><span>Notify me</span></button>${s.u ? `<span class="domain soon-domain">${domainOf(s)}</span>` : ""}`}
           ${study}
         </span>
@@ -191,8 +195,8 @@ for (const name of START_HERE) {
   const live = isLive(s);
   const r = document.createElement("a");
   r.className = "row inset";
-  r.href = live ? href(s.u) : "#" + slug(s.n);
-  if (live) { r.target = "_blank"; r.rel = "noopener"; }
+  r.href = live ? siteHref(s) : "#" + slug(s.n);
+  if (live && !s.built) { r.target = "_blank"; r.rel = "noopener"; }
   colour(r, s);
   r.innerHTML = `
     <span class="icon" aria-hidden="true">${mark(s)}</span>
@@ -227,7 +231,7 @@ function showSpot(i) {
   $("#spot-name").innerHTML = nameOf(s);
   $("#spot-desc").textContent = s.d;
   $("#spot-actions").innerHTML = isLive(s)
-    ? `<a class="btn btn-light lg" href="${href(s.u)}" target="_blank" rel="noopener"><span>Visit ${esc(s.n)}</span> <span aria-hidden="true">↗</span></a><span class="spot-domain">${domainOf(s)}</span>`
+    ? `<a class="btn btn-light lg" href="${siteHref(s)}"${newTab(s)}><span>Visit ${esc(s.n)}</span> <span aria-hidden="true">↗</span></a><span class="spot-domain">${domainOf(s)}</span>`
     : `<a class="btn btn-light lg" href="#${slug(s.n)}"><span>Coming soon</span></a><span class="spot-domain">${s.u ? domainOf(s) : ""}</span>`;
   [...dots.children].forEach((d, j) => d.setAttribute("aria-current", String(j === spotIndex)));
   const body = $("#spot-body");

@@ -20,71 +20,50 @@ Version: see `VERSION`.
 | `styles/` | `base.css` (tokens, glass, buttons, top bar) and `components.css` (panels, rings, charts, switches and every LifeOS view) | **Real** |
 | `lifeos/` | The LifeOS window: Today, time-blocking Plan, Progress, Earth, Path, Gradify AI, Learn, Study feed, Notes Studio, Community, Settings, and the Tree and Forest | **Preview.** Runs on Alex's example data. Wire each view to real data before you rely on it |
 | `vendor/` | pdf.js 3.11.174 (reads PDFs in the browser) and supabase-js 2.117.0 | Third-party |
-| `templates/` | `app.html`, `lifeos.html` and `gradify.config.js`, to copy to a new site | |
+| `templates/subsite/` | The homepage, app and LifeOS pages for a new sub-site, used by `npm run new-site` | |
 
 The backend (database and the Gradify AI function) is not in the kit. Every site shares the one in the Gradify repository's `supabase/` folder, so one account works across the whole family.
 
 ## Start a new Gradify site
 
-1. Make the site's repository, then add the kit as a subtree at its root. This copies the kit in and remembers where it came from, so you can update it later:
+Every sub-site lives in its own folder on getgradify.com, in this repository: MedGradify is `getgradify.com/medgradify/`. They all use this one `kit/` folder, so a change to the kit reaches every site at once.
 
-   ```bash
-   git subtree add --prefix kit https://github.com/seren-aitchison/gradify-kit.git main --squash
-   ```
+```bash
+npm run new-site -- MedGradify
+```
 
-   Then copy the templates into the site's root:
-   - `kit/templates/app.html` → `app.html`
-   - `kit/templates/gradify.config.js` → `gradify.config.js`
-   - optionally `kit/templates/lifeos.html` → `lifeos.html`
+That makes `medgradify/` with:
+- `index.html`: a starter homepage (the site's icon, name and description, in the Gradify look) to build the site out from
+- `app.html`: the study app, branded as MedGradify
 
-   The kit expects to sit at the site's root, in a folder called `kit/`, with `gradify.config.js` next to it.
+Add `--lifeos` to include `lifeos.html`, the LifeOS window. The script also marks the site `built: true` in `kit/core/sites.js`, so the directory on getgradify.com links to `getgradify.com/medgradify/` in the same tab instead of to the site's domain.
 
-2. In `gradify.config.js`, set `SITE` to the site's name exactly as it is in `kit/core/sites.js` (for example `"MedGradify"`), and fill in the same `SUPABASE_URL` and `SUPABASE_ANON_KEY` as getgradify.com.
+Push, and it's live a minute later. To try it first:
 
-3. Build the site's own homepage however you like. Load `kit/styles/base.css` (and `components.css` if you use panels or LifeOS pieces) to match the Gradify look, and link to `app.html`.
+```bash
+python3 -m http.server 8080
+```
 
-4. Serve it locally to check:
+Then open http://localhost:8080/medgradify/.
 
-   ```bash
-   python3 -m http.server 8080
-   ```
-
-5. Before going live, in the Gradify repository:
-   - add the site's URL (`u`) to its line in `kit/core/sites.js`, so the directory links to it
-   - in Supabase, **Authentication → URL Configuration**, add `https://yoursite.com/app.html` to the redirect URLs
-   - add the domain to the function's allowed origins:
-
-     ```bash
-     supabase secrets set GRADIFY_ALLOWED_ORIGINS=https://getgradify.com,https://medgradify.com
-     ```
-
-What `SITE` changes in the app:
+How the kit knows which site a page belongs to: each sub-site page has `<meta name="gradify-site" content="MedGradify">`, and failing that the kit works it out from the folder name. In the app that means:
 - The top bar shows the site's own icon and name.
 - Setup skips "Which Gradify site?".
 - New notes are tagged with the site.
 - The app only shows that site's notes, cards, answers and activity.
 - "Delete my data" deletes only that site's notes.
-- getgradify.com leaves `SITE` empty and sees everything: it's the LifeOS for the whole family.
 
-## Keep it up to date
+Because every site is on getgradify.com, signing in once signs you in everywhere, and the same notes are there on every device. getgradify.com's own app belongs to no single site and sees everything: it's the LifeOS for the whole family.
 
-The kit lives in its own repository, https://github.com/seren-aitchison/gradify-kit. Every Gradify site, getgradify.com included, has a copy in its `kit/` folder.
+Supabase needs one setting for this: in **Authentication → URL Configuration**, add `https://getgradify.com/**` to the redirect URLs, so sign-in links work from any sub-site. Gradify AI needs nothing extra, since every site is on the same domain.
 
-Get the latest kit into a site:
+A site's domain (for example gradifymed.com) can forward to its folder later; set that up in Cloudflare.
 
-```bash
-git subtree pull --prefix kit https://github.com/seren-aitchison/gradify-kit.git main --squash
-```
+## Changing the kit
 
-Changed the kit while working on a site? Send the change back to the kit repository, then pull it into the other sites:
+Edit it here. Everything in `kit/` is shared, so check a change on getgradify.com and on a sub-site before pushing, and bump `VERSION`.
 
-```bash
-git subtree push --prefix kit https://github.com/seren-aitchison/gradify-kit.git main
-```
-
-A site's `gradify.config.js` and pages aren't inside `kit/`, so updates never touch them. Bump `VERSION` when you change the kit, so you can tell which sites are behind.
-
-The backend isn't in the kit: the database and the Gradify AI function live in the Gradify repository's `supabase/` folder. After editing `notes/pack.js`, run `npm run sync` there to copy it into the function, then redeploy the function.
+The backend isn't in the kit: the database and the Gradify AI function are in `supabase/`. After editing `notes/pack.js`, run `npm run sync` to copy it into the function, then redeploy the function.
 
 ## Using the pieces on their own
 

@@ -131,7 +131,6 @@ h1 {
 .road-lit { fill: none; stroke-width: 36; stroke-linecap: round; opacity: .92; filter: drop-shadow(0 0 16px rgba(240, 85, 221, .4)); }
 .road-dash { fill: none; stroke: rgba(255, 255, 255, .6); stroke-width: 2.2; stroke-dasharray: 12 14; stroke-linecap: round; }
 .car { filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .5)); }
-.car-beam { mix-blend-mode: screen; }
 /* stops: reached ones are white; the one you're at pulses; the next one waits with a ring */
 .stop-dot { fill: #0b0b0b; stroke: #3a3a3a; stroke-width: 3; transition: fill .3s, stroke .3s; }
 .stop-n { fill: var(--mute); font: 700 13px var(--sans); text-anchor: middle; transition: fill .3s; }

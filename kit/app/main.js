@@ -5,7 +5,9 @@ import { icon } from "../core/icons.js";
 import { tile, ink } from "../core/colour.js";
 import { SAMPLE, readFile } from "../notes/studio.js";
 import { LocalStore, CloudStore, cloudConfigured, scopeToSite } from "../data/store.js";
-import { SITE } from "../../gradify.config.js";
+import { currentSite } from "../core/site.js";
+// on a sub-site (getgradify.com/medgradify/), the app belongs to that site
+const SITE = currentSite();
 import { generate, regenerateCard, generateQuestions } from "../notes/engine.js";
 import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "../learning/srs.js";
 import { topicProfiles, practiceOrder, DIMENSIONS, LEVELS } from "../learning/mastery.js";

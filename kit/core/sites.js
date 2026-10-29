@@ -3,6 +3,8 @@
 //   n: name   who: who it's for   i: icon (see icons.js)   c: brand colour (hex, no #)   d: one-line description
 //   u: domain or full URL   label: optional text to show instead of the URL
 //   soon: true shows the domain but not as a link yet (for domains bought but not live)
+//   built: true once its sub-site exists at getgradify.com/<name>/ (npm run new-site does this);
+//          the directory then links there instead of to the domain
 //   spot: optional colour for the big featured card at the top (defaults to c)
 export const GROUPS = [
   {

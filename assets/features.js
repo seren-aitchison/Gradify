@@ -92,25 +92,30 @@ const STOPS = [
 // The car, seen from above and pointing right: a glossy white body with the spectrum roof,
 // tinted windows, tyres tucked under, headlights throwing a soft beam, and tail lights.
 const CAR = `
-  <path class="car-beam" d="M24 -9 L118 -34 Q132 0 118 34 L24 9 Z" fill="url(#beam)"/>
-  <ellipse cx="0" cy="3" rx="31" ry="17" fill="#000" opacity=".5" filter="url(#soft)"/>
+  <path d="M27 -10 L120 -40 Q128 -12 112 4 L27 -5 Z" fill="url(#rd-beam)"/>
+  <path d="M27 5 L112 -4 Q128 12 120 40 L27 10 Z" fill="url(#rd-beam)"/>
+  <ellipse cx="0" cy="4" rx="31" ry="17" fill="url(#rd-shadow)"/>
   <rect x="-20" y="-17" width="13" height="6" rx="2.5" fill="#0b0b0b"/><rect x="10" y="-17" width="13" height="6" rx="2.5" fill="#0b0b0b"/>
   <rect x="-20" y="11" width="13" height="6" rx="2.5" fill="#0b0b0b"/><rect x="10" y="11" width="13" height="6" rx="2.5" fill="#0b0b0b"/>
-  <path d="M-27 -6 Q-27 -14 -18 -14 H14 Q26 -14 29 -5 Q30 0 29 5 Q26 14 14 14 H-18 Q-27 14 -27 6 Z" fill="url(#carbody)" stroke="rgba(0,0,0,.25)" stroke-width=".8"/>
+  <path d="M-27 -6 Q-27 -14 -18 -14 H14 Q26 -14 29 -5 Q30 0 29 5 Q26 14 14 14 H-18 Q-27 14 -27 6 Z" fill="url(#rd-body)" stroke="rgba(0,0,0,.25)" stroke-width=".8"/>
   <path d="M-12 -10 H8 Q12 -10 12 -6 V6 Q12 10 8 10 H-12 Q-16 10 -16 6 V-6 Q-16 -10 -12 -10 Z" fill="url(#roadg)"/>
   <path d="M12 -8.5 Q19 -6 19 0 Q19 6 12 8.5 Z" fill="#141826" opacity=".9"/>
   <path d="M-16 -7.5 Q-21 -5 -21 0 Q-21 5 -16 7.5 Z" fill="#141826" opacity=".8"/>
   <path d="M-10 -9 H6" stroke="#fff" stroke-opacity=".55" stroke-width="1.2" stroke-linecap="round"/>
-  <rect x="25" y="-11" width="4" height="5" rx="1.5" fill="#fff6c9" filter="url(#glow)"/><rect x="25" y="6" width="4" height="5" rx="1.5" fill="#fff6c9" filter="url(#glow)"/>
-  <rect x="-28.5" y="-11" width="3" height="5" rx="1.2" fill="#ff5a4d" filter="url(#glow)"/><rect x="-28.5" y="6" width="3" height="5" rx="1.2" fill="#ff5a4d" filter="url(#glow)"/>`;
+  <circle cx="28" cy="-7.5" r="11" fill="url(#rd-lamp)"/><circle cx="28" cy="7.5" r="11" fill="url(#rd-lamp)"/>
+  <rect x="25" y="-11" width="5" height="6" rx="2" fill="#fffbe6"/><rect x="25" y="5" width="5" height="6" rx="2" fill="#fffbe6"/>
+  <circle cx="-28" cy="-8" r="7" fill="url(#rd-tail)"/><circle cx="-28" cy="8" r="7" fill="url(#rd-tail)"/>
+  <rect x="-29" y="-11" width="3.5" height="6" rx="1.4" fill="#ff5a4d"/><rect x="-29" y="5" width="3.5" height="6" rx="1.4" fill="#ff5a4d"/>`;
+// gradients only (no filters or blend modes), so the lights show in every browser
 const ROAD_DEFS = `<defs>
     <linearGradient id="roadg" x1="0" x2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient>
     <linearGradient id="roadgv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient>
-    <linearGradient id="carbody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#eeeef2"/><stop offset="1" stop-color="#c9c9d2"/></linearGradient>
-    <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#fff6c9" stop-opacity=".5"/><stop offset="1" stop-color="#fff6c9" stop-opacity="0"/></linearGradient>
-    <radialGradient id="halo"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
-    <filter id="glow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="rd-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#eeeef2"/><stop offset="1" stop-color="#c9c9d2"/></linearGradient>
+    <linearGradient id="rd-beam" x1="0" x2="1"><stop offset="0" stop-color="#fff3b8" stop-opacity=".7"/><stop offset=".45" stop-color="#fff3b8" stop-opacity=".25"/><stop offset="1" stop-color="#fff3b8" stop-opacity="0"/></linearGradient>
+    <radialGradient id="rd-lamp"><stop offset="0" stop-color="#fffbe6" stop-opacity=".95"/><stop offset=".35" stop-color="#ffe9a3" stop-opacity=".55"/><stop offset="1" stop-color="#ffe9a3" stop-opacity="0"/></radialGradient>
+    <radialGradient id="rd-tail"><stop offset="0" stop-color="#ff5a4d" stop-opacity=".85"/><stop offset="1" stop-color="#ff5a4d" stop-opacity="0"/></radialGradient>
+    <radialGradient id="rd-shadow"><stop offset=".55" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <radialGradient id="rd-halo"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
   </defs>`;
 // Desktop: the road winds left to right. Phones: it winds down the screen, with each stop's words beside it.
 const ROADS = {
@@ -138,7 +143,7 @@ function initRoad() {
       <path d="${R.d}" class="road-lit" id="road-lit" stroke="url(#${R.grad})"/>
       <path d="${R.d}" class="road-dash"/>
       <g id="stops"></g>
-      <circle id="road-halo" r="70" fill="url(#halo)"/>
+      <circle id="road-halo" r="70" fill="url(#rd-halo)"/>
       <g id="car" class="car">${CAR}</g>
     </svg>
     <ol class="road-stops" id="road-stops">${STOPS.map((s, i) => `<li data-i="${i}"><em>${i + 1}</em><b>${s.t}</b><span>${s.d}</span></li>`).join("")}</ol>`;

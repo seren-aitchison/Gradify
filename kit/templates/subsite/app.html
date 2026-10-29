@@ -3,23 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Gradify</title>
-  <!-- Gradify Kit: the study app. Copy this page to the root of a Gradify site, next to kit/
-       and gradify.config.js. With SITE set in gradify.config.js, the top bar shows that site's
-       name and icon, and the app only shows that site's notes and progress. -->
-  <meta name="description" content="Bring your notes into Gradify. Turn them into flashcards you can trust, revise them, and see your progress.">
+  <title>{{NAME}}</title>
+  <!-- {{NAME}}'s study app, made from kit/templates/subsite by npm run new-site. The meta tag below
+       tells the kit which site this is: the top bar shows its name and icon, and the app only
+       shows its notes and progress. Sign-in is shared with every Gradify site. -->
+  <meta name="gradify-site" content="{{NAME}}">
+  <meta name="description" content="{{NAME}}: bring your notes. Turn them into flashcards you can trust, revise them, and see your progress.">
   <meta name="theme-color" content="#000000">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="kit/styles/base.css">
-  <link rel="stylesheet" href="kit/styles/components.css">
-  <link rel="stylesheet" href="kit/app/app.css">
-  <script src="kit/vendor/supabase/supabase.js" defer></script>
-  <script type="module" src="kit/app/main.js"></script>
+  <link rel="stylesheet" href="../kit/styles/base.css">
+  <link rel="stylesheet" href="../kit/styles/components.css">
+  <link rel="stylesheet" href="../kit/app/app.css">
+  <script src="../kit/vendor/supabase/supabase.js" defer></script>
+  <script type="module" src="../kit/app/main.js"></script>
 </head>
 <body class="app-body">
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>

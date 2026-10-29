@@ -19,7 +19,7 @@ You need: a free Supabase account, an Anthropic API key, and about 30 minutes.
 ## 3. Turn on sign-in
 
 1. **Authentication → Providers**: Email is on by default (sign-in links). Optionally turn on **Google**.
-2. **Authentication → URL Configuration**: set **Site URL** to `https://getgradify.com/app.html` and add `https://getgradify.com/app.html` under **Redirect URLs**.
+2. **Authentication → URL Configuration**: set **Site URL** to `https://getgradify.com/app.html` and add `https://getgradify.com/**` under **Redirect URLs**, so sign-in works from getgradify.com and from every sub-site (getgradify.com/medgradify/ and so on).
 
 ## 4. Deploy the Gradify AI function
 
