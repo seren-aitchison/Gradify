@@ -459,7 +459,7 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .earth-zoom { display: flex; flex-direction: column; gap: 6px; }
 .earth-zoom button { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .14); background: rgba(0, 0, 0, .6); color: #fff; font: 600 16px var(--sans); cursor: pointer; backdrop-filter: blur(10px); }
 .earth-zoom button:hover { background: rgba(255, 255, 255, .12); }
-.earth-hint { position: absolute; bottom: 10px; left: 0; right: 0; margin: 0; text-align: center; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(160, 200, 255, .5); pointer-events: none; }
+.earth-hint { position: absolute; bottom: 12px; left: 16px; margin: 0; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(160, 200, 255, .5); pointer-events: none; }
 
 .inset-card { padding: 18px; border-radius: 18px; background: var(--inset); border: 1px solid rgba(255, 255, 255, .06); }
 .inspector { --c: #888; display: flex; flex-direction: column; gap: 8px; }

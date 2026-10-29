@@ -74,22 +74,25 @@ export function createGlobe(canvas, { onPick, onHover }) {
     g.addColorStop(0, "rgba(120,180,255,0)"); g.addColorStop(1, "rgba(140,200,255,.38)");
     ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.fill();
 
-    // land dots: dim blue-white, warm "city lights", and module regions in their colour
-    const size = Math.max(1.2, r / 165);
+    // land dots: bright blue-white, warm "city lights", and module regions in their colour,
+    // added together so dense land glows like the reference
+    const size = Math.max(1.3, r / 150);
+    ctx.globalCompositeOperation = "lighter";
     for (let i = 0; i < LAND_V.length; i++) {
       const p = project(LAND_V[i]);
       if (p.z < 0.02) continue;
-      const shade = 0.3 + 0.7 * p.z, h = hash(i), tint = dotTint[i];
-      let col, a, s = size * (0.8 + p.z * 0.5);
+      const shade = 0.4 + 0.6 * p.z, h = hash(i), tint = dotTint[i];
+      let col, a, s = size * (0.75 + p.z * 0.45);
       if (tint && !tint.locked) {
-        const k = 0.5 + tint.k * 0.5;
-        col = tint.rgb; a = shade * k * (0.75 + 0.25 * Math.sin(t * 1.6 + h * 20));
-        s *= 1 + tint.k * 0.5;
-      } else if (h > 0.86) { col = [255, 214, 150]; a = shade * (0.55 + 0.45 * Math.sin(t * 2 + h * 40)); }
-      else { col = tint?.locked ? [130, 130, 140] : [165, 205, 255]; a = shade * (tint?.locked ? 0.35 : 0.7); }
-      ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${a.toFixed(3)})`;
+        const k = 0.6 + tint.k * 0.4;
+        col = tint.rgb; a = shade * k * (0.8 + 0.2 * Math.sin(t * 1.6 + h * 20));
+        s *= 1 + tint.k * 0.35;
+      } else if (h > 0.88) { col = [255, 150, 90]; a = shade * (0.7 + 0.3 * Math.sin(t * 2 + h * 40)); s *= 1.25; }
+      else { col = tint?.locked ? [150, 150, 165] : [120, 175, 255]; a = shade * (tint?.locked ? 0.45 : 0.95); }
+      ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${Math.min(1, a).toFixed(3)})`;
       ctx.fillRect(p.x - s / 2, p.y - s / 2, s, s);
     }
+    ctx.globalCompositeOperation = "source-over";
 
     // contour rings floating around the planet, like orbits
     if (scene.rings) {
@@ -126,8 +129,8 @@ export function createGlobe(canvas, { onPick, onHover }) {
 
     // portals: arcs up into space towards another Gradify site
     for (const po of scene.portals) {
-      const base = project(po.v), tip = project(po.v, 1.32);
-      if (behind(tip, 1.32) && base.z < 0) continue;
+      const base = project(po.v);
+      if (base.z < 0) continue;  // only portals whose topic faces you
       ctx.beginPath();
       let started = false;
       for (let k = 0; k <= 20; k++) {
