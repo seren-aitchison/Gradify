@@ -1391,7 +1391,7 @@ footer b { color: var(--fg); font-weight: 600; }
   .ready-ring { width: 88px; height: 88px; }
   .command { grid-template-columns: 1fr; }
   .earth-top { flex-wrap: wrap; }
-  .earth-map { height: 420px; }
+  .earth-map { height: auto; aspect-ratio: 1 / 1.18; margin: 0 -14px; border-radius: 16px; }
   .areas { grid-template-columns: 1fr; }
   .path-panel .panel-head { flex-direction: column; align-items: flex-start; }
   .path-tabs { max-width: 100%; overflow-x: auto; scrollbar-width: none; }

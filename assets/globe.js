@@ -33,7 +33,7 @@ export function createGlobe(canvas, { onPick, onHover }) {
     W = r.width; H = r.height;
     canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    cx = W / 2; cy = H / 2;
+    cx = W / 2; cy = H / 2 + (W < 500 ? 14 : 0);  // clear of the controls on phones
   }
 
   // rotate a unit vector by the current view, then project (orthographic)
@@ -287,10 +287,12 @@ export function createGlobe(canvas, { onPick, onHover }) {
   }
   function setZoom(z) { zoom = Math.max(0.75, Math.min(2.2, z)); }
 
-  const ro = new ResizeObserver(() => { resize(); R = Math.min(W, H) * 0.41; });
+  // the globe fills more of the frame on phones, where there's less room around it
+  const fit = () => { R = Math.min(W, H) * (W < 500 ? 0.46 : 0.41); };
+  const ro = new ResizeObserver(() => { resize(); fit(); });
   ro.observe(canvas);
   new IntersectionObserver(([en]) => { visible = en.isIntersecting; if (visible) kick(); }).observe(canvas);
-  resize(); R = Math.min(W, H) * 0.4;
+  resize(); fit();
 
   const api = {
     setScene,
