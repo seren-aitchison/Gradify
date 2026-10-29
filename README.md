@@ -6,7 +6,7 @@ The parent site for the Gradify family of learning sites. It links out to every 
 
 It's a plain static site with no build step: HTML, CSS and JavaScript modules.
 
-Everything that Gradify's sub-sites share lives in **`kit/`, the Gradify Kit**: the study app, the notes pipeline, spaced repetition, the Mastery Engine, the 3D globe, the LifeOS components and the design system. This site uses the kit itself, so what's live here is what the sub-sites get. See [kit/README.md](kit/README.md) for how to use it on a sub-site.
+Everything that Gradify's sub-sites share lives in **`kit/`, the Gradify Kit**: the study app, the notes pipeline, spaced repetition, the Mastery Engine, the 3D globe, the LifeOS components and the design system. This site uses the kit itself, so what's live here is what the sub-sites get. The kit has its own repository, [seren-aitchison/gradify-kit](https://github.com/seren-aitchison/gradify-kit); `kit/` here is a git subtree of it. See [kit/README.md](kit/README.md) for how to use it on a sub-site and how to send changes back.
 
 ```
 index.html             the homepage

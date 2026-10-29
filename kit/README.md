@@ -26,13 +26,18 @@ The backend (database and the Gradify AI function) is not in the kit. Every site
 
 ## Start a new Gradify site
 
-1. Make the site's repository, then copy into its root:
-   - the whole `kit/` folder
+1. Make the site's repository, then add the kit as a subtree at its root. This copies the kit in and remembers where it came from, so you can update it later:
+
+   ```bash
+   git subtree add --prefix kit https://github.com/seren-aitchison/gradify-kit.git main --squash
+   ```
+
+   Then copy the templates into the site's root:
    - `kit/templates/app.html` → `app.html`
    - `kit/templates/gradify.config.js` → `gradify.config.js`
    - optionally `kit/templates/lifeos.html` → `lifeos.html`
 
-   The kit expects to sit at the site's root, with `gradify.config.js` next to it.
+   The kit expects to sit at the site's root, in a folder called `kit/`, with `gradify.config.js` next to it.
 
 2. In `gradify.config.js`, set `SITE` to the site's name exactly as it is in `kit/core/sites.js` (for example `"MedGradify"`), and fill in the same `SUPABASE_URL` and `SUPABASE_ANON_KEY` as getgradify.com.
 
@@ -63,9 +68,23 @@ What `SITE` changes in the app:
 
 ## Keep it up to date
 
-Change the kit in the Gradify repository, never in a sub-site's copy. Then copy the new `kit/` folder over the old one in each site. Your `gradify.config.js` and pages aren't inside `kit/`, so they're untouched. Bump `VERSION` when you change the kit, so you can tell which sites are behind.
+The kit lives in its own repository, https://github.com/seren-aitchison/gradify-kit. Every Gradify site, getgradify.com included, has a copy in its `kit/` folder.
 
-After editing `notes/pack.js`, run `npm run sync` in the Gradify repository to copy it into the Supabase function, then redeploy the function.
+Get the latest kit into a site:
+
+```bash
+git subtree pull --prefix kit https://github.com/seren-aitchison/gradify-kit.git main --squash
+```
+
+Changed the kit while working on a site? Send the change back to the kit repository, then pull it into the other sites:
+
+```bash
+git subtree push --prefix kit https://github.com/seren-aitchison/gradify-kit.git main
+```
+
+A site's `gradify.config.js` and pages aren't inside `kit/`, so updates never touch them. Bump `VERSION` when you change the kit, so you can tell which sites are behind.
+
+The backend isn't in the kit: the database and the Gradify AI function live in the Gradify repository's `supabase/` folder. After editing `notes/pack.js`, run `npm run sync` there to copy it into the function, then redeploy the function.
 
 ## Using the pieces on their own
 
