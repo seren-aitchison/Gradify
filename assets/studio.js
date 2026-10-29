@@ -543,6 +543,51 @@ export function analyseNotes(raw, today = new Date()) {
   try { return analyse(raw); } finally { ctx = prev; }
 }
 
+// Deeper questions without the AI, for the Mastery Engine's explanation and application
+// evidence. Only what the notes support: differences between related terms and causes
+// ("why"), and what an equation predicts when one input changes ("apply").
+// Returns [{ group, type, question, answer, quote }], where group indexes analysis.groups.
+export function deeperQuestions(a) {
+  const out = [];
+  const lower = (t) => (/^[A-Z0-9]{2,}|^[A-Z]\s/.test(t) ? t : t[0].toLowerCase() + t.slice(1));
+  const keep = (t) => /^[A-Z0-9]{2,}|^[A-Z]\s/.test(t);
+  const named = (f, the = false) => `${the && !keep(f.term) && f.term.includes(" ") ? "the " : ""}${lower(f.term)}${f.ab ? ` (${f.ab})` : ""}`;
+  const groupOf = (f) => a.groups.findIndex((g) => g.facts.includes(f));
+  a.groups.forEach((g, gi) => {
+    // why: the two definitions in this group that share the most words are worth contrasting
+    const defs = g.facts.filter((f) => f.kind === "def" && f.term);
+    let pair = null, best = 0;
+    for (let i = 0; i < defs.length; i++) for (let j = i + 1; j < defs.length; j++) {
+      const A = new Set(words(defs[i].def)), common = words(defs[j].def).filter((w) => A.has(w));
+      // worth contrasting only when the definitions have the same shape: they start or end on
+      // the same word ("phase when…" / "phase when…", "atrial depolarisation" / "ventricular depolarisation")
+      const wi = words(defs[i].def), wj = words(defs[j].def);
+      const ok = wi.length && wj.length && (wi[0] === wj[0] || wi.at(-1) === wj.at(-1));
+      if (ok && common.length > best) { best = common.length; pair = [defs[i], defs[j]]; }
+    }
+    if (pair) out.push({ group: gi, type: "why", question: `Explain the difference between ${named(pair[0])} and ${named(pair[1])}.`,
+      answer: `${cap(pair[0].term)} is the ${pair[0].def.replace(/^the /, "")}, whereas ${lower(pair[1].term)} is the ${pair[1].def.replace(/^the /, "")}.`, quote: pair[0].src });
+    // why: causes become "explain what produces it"
+    for (const f of g.facts.filter((x) => x.kind === "cause").slice(0, 2)) {
+      out.push({ group: gi, type: "why", question: `Explain what produces ${named(f, true)}.`, answer: `${cap(named(f, true))} is ${f.def}.`, quote: f.src });
+    }
+  });
+  // apply: products and quotients. "CO = SV × HR": if HR rises with SV unchanged, CO rises.
+  for (const f of a.facts.filter((x) => x.kind === "eq" && x.term)) {
+    const m = f.def.match(/^(.+?)\s+(multiplied by|times|divided by)\s+(.+)$/i);
+    if (!m) continue;
+    const [x, y] = [strip(m[1]), strip(m[3])], divide = /divided/i.test(m[2]);
+    const name = (t) => { const ab = a.abbr[t.toLowerCase()]; return `${t.toLowerCase()}${ab ? ` (${ab})` : ""}`; };
+    const target = lower(f.term), rule = `${cap(f.term.toLowerCase())} = ${x.toLowerCase()} ${divide ? "÷" : "×"} ${y.toLowerCase()}`;
+    const gi = Math.max(0, groupOf(f));
+    out.push({ group: gi, type: "apply", question: `${cap(name(y))} rises while ${name(x)} stays the same. What happens to ${target}, and why?`,
+      answer: `${cap(target)} ${divide ? "falls" : "rises"}. ${rule}, so ${divide ? "a bigger divisor gives a smaller result" : "increasing one factor increases the product"}.`, quote: f.src });
+    if (!divide) out.push({ group: gi, type: "apply", question: `${cap(name(x))} doubles but ${name(y)} halves. What happens to ${target}?`,
+      answer: `It stays the same. ${rule}, and doubling one factor while halving the other leaves the product unchanged.`, quote: f.src });
+  }
+  return out;
+}
+
 export function initStudio(context) {
   ctx = context;
   const root = $("#capture");

@@ -5,7 +5,7 @@ import { icon } from "../icons.js";
 import { tile, ink } from "../colour.js";
 import { SAMPLE, readFile } from "../studio.js";
 import { LocalStore, CloudStore, cloudConfigured } from "./store.js";
-import { generate, regenerateCard } from "./engine.js";
+import { generate, regenerateCard, generateQuestions } from "./engine.js";
 import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "./srs.js";
 import { topicProfiles, practiceOrder, DIMENSIONS, LEVELS } from "./mastery.js";
 
@@ -226,6 +226,7 @@ async function renderDeck(id) {
   const flagged = cards.filter((c) => c.grounded === "no" || c.grounded === "partly");
   const due = cards.filter((c) => isDue(c) && !c.suspended);
   const topics = [...new Set(cards.map((c) => c.topic || "Cards"))];
+  const deeper = { why: cards.filter((c) => c.kind === "why").length, apply: cards.filter((c) => c.kind === "apply").length };
   view.innerHTML = `<section class="deck">
     <a class="back" href="#/notes">← All notes</a>
     <div class="deck-head">
@@ -241,6 +242,11 @@ async function renderDeck(id) {
     </div>
     ${(pack?.pack?.unclear || []).length ? `<div class="unclear panel glass"><b>${icon("bell")}Gradify AI noticed</b><ul>${pack.pack.unclear.map((u) => `<li>${esc(u)}</li>`).join("")}</ul></div>` : ""}
     ${flagged.length ? `<p class="sub">Cards marked <span class="g-pill warn">to check</span> couldn't be fully matched to your notes. Edit them, regenerate them or delete them before you revise.</p>` : ""}
+    <div class="deeper panel glass">
+      <div><b>${icon("brain")}Explain and apply</b>
+        <p class="sub">${deeper.why || deeper.apply ? `${deeper.why} ${deeper.why === 1 ? "question asks" : "questions ask"} you to explain why, and ${deeper.apply} to apply what you know. They're what Gradify uses to measure explanation and application.` : "Recall cards show you remember. These questions show you understand: explaining why something happens, and using it on a problem you haven't seen."}</p></div>
+      <button type="button" class="btn ${deeper.why || deeper.apply ? "btn-ghost" : "btn-light"} lg btn-sm" id="add-deeper"><span>${deeper.why || deeper.apply ? "Write more" : "Add explain and apply questions"}</span></button>
+    </div>
     <div class="deck-tools"><button type="button" class="btn btn-ghost lg btn-sm" id="add-card"><span>+ Add a card</span></button>
       <button type="button" class="btn btn-ghost lg btn-sm danger" id="del-deck"><span>Delete these notes</span></button></div>
     ${topics.map((t) => `<h3 class="topic-h">${esc(t)}</h3><div class="card-list">${cards.filter((c) => (c.topic || "Cards") === t).map(cardRow).join("")}</div>`).join("")}
@@ -256,6 +262,24 @@ async function renderDeck(id) {
       el?.querySelector('[data-act="edit"]').click();
       return;
     }
+    if (e.target.closest("#add-deeper")) {
+      const btn = e.target.closest("button");
+      btn.disabled = true; btn.querySelector("span").textContent = store.mode === "cloud" ? "Gradify AI is writing questions…" : "Writing questions…";
+      try {
+        const full = await store.getDocument(id);
+        const have = new Set(cards.map((c) => c.front.trim().toLowerCase()));
+        const fresh = (await generateQuestions({ text: full.text || "", title: doc.title, site: doc.site || profile.site, level: profile.level, topics, store }))
+          .filter((c) => !have.has(c.front.trim().toLowerCase()));
+        if (!fresh.length) {
+          toast(store.mode === "cloud" ? "No new questions this time. Try again, or add your own." : "These notes don't give Gradify enough to write new explain or apply questions on this device. Sign in to use Gradify AI, or add your own.");
+          renderDeck(id); return;
+        }
+        await store.addCards(fresh.map((c) => ({ document_id: id, topic: c.topic, front: c.front, back: c.back, kind: c.kind, source_quote: c.sourceQuote, source_page: c.sourcePage, grounded: c.grounded })));
+        toast(`Added ${fresh.length} ${fresh.length === 1 ? "question" : "questions"}.`);
+        renderDeck(id);
+      } catch (err) { toast(esc(err.message)); renderDeck(id); }
+      return;
+    }
     if (e.target.closest("#del-deck")) {
       if (!confirm(`Delete “${doc.title}” and its ${cards.length} cards? This can't be undone.`)) return;
       await store.deleteDocument(id);
@@ -267,14 +291,16 @@ async function renderDeck(id) {
     const card = cards.find((c) => c.id === row.dataset.id);
     if (act === "edit") {
       row.classList.add("editing");
-      row.querySelector(".c-body").innerHTML = `<label><span>Question</span><textarea class="e-front" rows="2">${esc(card.front)}</textarea></label><label><span>Answer</span><textarea class="e-back" rows="3">${esc(card.back)}</textarea></label>
+      row.querySelector(".c-body").innerHTML = `<label><span>Type</span><select class="e-kind">${[["definition", "Recall"], ["cloze", "Fill the gap"], ["why", "Explain why"], ["apply", "Apply it"]].map(([k, l]) => `<option value="${k}" ${(card.kind === k || (k === "definition" && !["cloze", "why", "apply"].includes(card.kind))) ? "selected" : ""}>${l}</option>`).join("")}</select></label><label><span>Question</span><textarea class="e-front" rows="2">${esc(card.front)}</textarea></label><label><span>Answer</span><textarea class="e-back" rows="3">${esc(card.back)}</textarea></label>
         <div class="row-actions"><button type="button" class="btn btn-light lg btn-sm" data-act="save"><span>Save</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-act="cancel"><span>Cancel</span></button></div>`;
       row.querySelector(".e-front").focus();
     } else if (act === "cancel") renderDeck(id);
     else if (act === "save") {
       const front = row.querySelector(".e-front").value.trim(), back = row.querySelector(".e-back").value.trim();
       if (!front || !back) { toast("A card needs a question and an answer."); return; }
-      await store.updateCard(card.id, { front, back, edited: true, grounded: card.grounded === "no" || card.grounded === "partly" ? "bonus" : card.grounded });
+      const kind = row.querySelector(".e-kind").value;
+      // "Recall" covers definition and reverse cards, so a reverse card keeps its kind
+      await store.updateCard(card.id, { front, back, edited: true, kind: kind === "definition" && card.kind === "reverse" ? "reverse" : kind, grounded: card.grounded === "no" || card.grounded === "partly" ? "bonus" : card.grounded });
       toast("Saved.");
       renderDeck(id);
     } else if (act === "regen") {
@@ -297,7 +323,7 @@ async function renderDeck(id) {
 function cardRow(c) {
   const [cls, label] = GROUNDED[c.grounded] || GROUNDED.bonus;
   return `<article class="c-row panel glass" data-id="${c.id}">
-    <div class="c-body"><p class="c-front">${esc(c.front)}</p><p class="c-back">${esc(c.back)}</p>
+    <div class="c-body">${c.kind === "why" || c.kind === "apply" ? `<span class="kind-tag ${c.kind}">${c.kind === "why" ? "Explain" : "Apply"}</span>` : ""}<p class="c-front">${esc(c.front)}</p><p class="c-back">${esc(c.back)}</p>
       ${c.edited ? `<p class="c-src"><span class="g-pill info">Edited by you</span>${c.source_quote ? ` Source: “${esc(c.source_quote)}”` : ""}</p>`
         : c.source_quote ? `<p class="c-src"><span class="g-pill ${cls}">${label}</span> “${esc(c.source_quote)}”${c.source_page ? ` · page ${c.source_page}` : ""}</p>` : `<p class="c-src"><span class="g-pill ${cls}">${label}</span></p>`}
     </div>
@@ -359,15 +385,18 @@ async function renderStudy(arg) {
   const results = { again: 0, hard: 0, good: 0, easy: 0 };
   let i = 0, shown = false, sure = null, t0 = Date.now(), xp = 0;
   const again = [];
+  let attempt = "";
   const draw = () => {
     const c = queue[i];
     const p = preview(c);
+    const deep = c.kind === "why" || c.kind === "apply";
     view.innerHTML = `<section class="study-session">
       <div class="sess-top"><a href="${topicKey ? `#/topic/${encodeURIComponent(topicKey)}` : deckId ? `#/deck/${deckId}` : "#/today"}" class="back">✕ End</a><span class="goal-bar"><i style="width:${(i / total) * 100}%"></i></span><span class="sub">${Math.min(i + 1, total)} / ${total}${practice ? " · practice" : ""}${topicName ? ` · ${esc(topicName)}` : ""}</span></div>
       <article class="flash-card ${shown ? "shown" : ""}" aria-live="polite">
-        <span class="kicker">${esc(c.topic || "")}${c.reps ? "" : " · new"}</span>
+        <span class="kicker">${deep ? `<b class="kind-tag ${c.kind}">${c.kind === "why" ? "Explain" : "Apply"}</b>` : ""}${esc(c.topic || "")}${c.reps ? "" : " · new"}</span>
         <p class="fc-front">${esc(c.front)}</p>
-        ${shown ? `<p class="fc-back">${esc(c.back)}</p>${c.source_quote ? `<p class="c-src">From your notes: “${esc(c.source_quote)}”</p>` : ""}` : ""}
+        ${deep && !shown ? `<label class="fc-write"><span>${c.kind === "why" ? "Explain it in your own words" : "Work it out"} <em>optional, just for you</em></span><textarea id="attempt" rows="3" placeholder="${c.kind === "why" ? "Because…" : "It would…, because…"}">${esc(attempt)}</textarea></label>` : ""}
+        ${shown ? `${deep && attempt.trim() ? `<div class="fc-compare"><span>Your answer</span><p>${esc(attempt)}</p></div><span class="fc-model">Model answer</span>` : ""}<p class="fc-back">${esc(c.back)}</p>${c.source_quote ? `<p class="c-src">From your notes: “${esc(c.source_quote)}”</p>` : ""}${deep ? `<p class="c-src">Rate how close your ${c.kind === "why" ? "explanation" : "reasoning"} was, not just the result.</p>` : ""}` : ""}
       </article>
       ${shown ? `<div class="rate4" role="group" aria-label="How well did you know it?">${RATINGS.map((r, k) => `<button type="button" class="r-${r}" data-r="${r}"><b>${r[0].toUpperCase() + r.slice(1)}</b><span>${fmtInterval(p[r])}</span><kbd>${k + 1}</kbd></button>`).join("")}</div>`
         : `<div class="sure" role="group" aria-label="How sure are you? Choosing one shows the answer.">
@@ -389,7 +418,7 @@ async function renderStudy(arg) {
       await store.addReview({ card_id: c.id, rating: r, interval_days: next.interval_days ?? null, ms: Date.now() - t0, confidence: sure, mode: reschedule ? "scheduled" : "practice" });
       if (r === "again" && !again.includes(c.id)) { again.push(c.id); queue.push({ ...c, ...next }); }
     }
-    i++; shown = false; sure = null; t0 = Date.now();
+    i++; shown = false; sure = null; attempt = ""; t0 = Date.now();
     if (i >= queue.length) return finish();
     draw();
   };
@@ -420,7 +449,8 @@ async function renderStudy(arg) {
     </section>`;
   };
   const keys = (e) => {
-    if (e.target.closest("input, textarea")) return;
+    // typing an answer: ⌘/Ctrl+Enter shows the model answer
+    if (e.target.closest("input, textarea")) { if (e.key === "Enter" && (e.metaKey || e.ctrlKey) && !shown) { attempt = e.target.value; shown = true; draw(); } return; }
     if (!shown && (e.key === " " || e.key === "Enter")) { e.preventDefault(); shown = true; draw(); }
     else if (!shown && SURE_BUTTONS.some(([, , k]) => k.toLowerCase() === e.key.toLowerCase())) { sure = SURE_BUTTONS.find(([, , k]) => k.toLowerCase() === e.key.toLowerCase())[0]; shown = true; draw(); }
     else if (shown && ["1", "2", "3", "4"].includes(e.key)) rate(RATINGS[+e.key - 1]);
@@ -431,6 +461,7 @@ async function renderStudy(arg) {
   addEventListener("keydown", keys, { signal: session.signal });
   addEventListener("hashchange", () => session.abort(), { once: true });
   view.addEventListener("click", (e) => {
+    attempt = view.querySelector("#attempt")?.value ?? attempt;
     if (e.target.closest("#reveal")) { shown = true; draw(); return; }
     const sb = e.target.closest("[data-sure]");
     if (sb) { sure = sb.dataset.sure; shown = true; draw(); return; }
@@ -480,7 +511,7 @@ async function renderToday() {
     : shaky ? { t: `${shaky.next.label}: ${esc(shaky.topic)}`, d: esc(shaky.next.why), href: studyHref(shaky.key), cta: `Start · ${shaky.next.mins} min` }
     : s.due.length
       ? { t: `Review ${s.due.length} ${s.due.length === 1 ? "card" : "cards"}`, d: `About ${mins} ${mins === 1 ? "minute" : "minutes"}, across ${dueTopics} ${dueTopics === 1 ? "topic" : "topics"}. These are the cards you're about to forget: reviewing them now is what makes memory last.`, href: "#/study", cta: `Start · ${mins} min` }
-      : top ? { t: `${top.next.label}: ${esc(top.topic)}`, d: esc(top.next.why), href: studyHref(top.key), cta: `Start · ${top.next.mins} min` }
+      : top ? { t: `${top.next.label}: ${esc(top.topic)}`, d: esc(top.next.why), href: stepHref(top), cta: top.next.kind === "deepen" ? "Open the deck" : `Start · ${top.next.mins} min` }
       : { t: "You're all caught up", d: "Every topic is mastered and nothing is due. Add the next lecture's notes while it's fresh.", href: "#/new", cta: "Add notes" };
   // Realistic workload: what today needs, against the time you said you have
   const capMins = profile.daily_minutes || 20;
@@ -532,10 +563,12 @@ const pctOf = (v) => `${Math.round(v * 100)}%`;
 const levelPill = (level) => `<span class="lvl-pill lvl-${level}">${LEVELS[level].label}</span>`;
 const topicHref = (key) => `#/topic/${encodeURIComponent(key)}`;
 const studyHref = (key) => `#/study/t:${encodeURIComponent(key)}`;
+// where a topic's next step happens: adding questions is on the deck page, everything else is a session
+const stepHref = (t) => (t.next.kind === "deepen" ? `#/deck/${t.documentId}` : studyHref(t.key));
 const NO_EVIDENCE = {
   recall: "Answer some of this topic's cards to measure it.",
-  explain: "Comes from “why” cards. This topic doesn't have any answered yet.",
-  apply: "Needs application questions, which arrive with quizzes. Gradify won't guess.",
+  explain: "Comes from Explain questions. Add them from this topic's deck, then answer a few.",
+  apply: "Comes from Apply questions. Add them from this topic's deck, then answer a few. Gradify won't guess.",
   confidence: "Choose how sure you are before seeing each answer.",
   retention: "Measured once you've reviewed a card at least once.",
 };
@@ -556,7 +589,7 @@ async function renderTopic(arg) {
     <article class="panel glass next-up step-${t.next.kind}" style="--c:${t.next.kind === "misconception" ? "#ff5a4d" : t.next.kind === "review" ? "#ffb44d" : "#4fe0a6"}">
       <span class="kicker">${icon("flame")}Next step${t.next.mins ? ` · about ${t.next.mins} min` : ""}</span>
       <h2>${esc(t.next.label)}</h2><p class="sub">${esc(t.next.why)}</p>
-      ${t.next.kind === "done" ? "" : `<a class="btn btn-light lg" href="${studyHref(t.key)}"><span>Start</span></a>`}
+      ${t.next.kind === "done" ? "" : `<a class="btn btn-light lg" href="${stepHref(t)}"><span>${t.next.kind === "deepen" ? "Open the deck" : "Start"}</span></a>`}
     </article>
     <div class="prog-grid">
       <article class="panel glass"><div class="panel-head"><h3>Mastery profile</h3><span class="pill-dark">from your answers</span></div>
@@ -575,7 +608,7 @@ async function renderTopic(arg) {
           <div><b>${t.fresh}</b><span>not started</span></div><div><b>${seenAgo == null ? "–" : seenAgo === 0 ? "Today" : `${seenAgo}d`}</b><span>last practised</span></div></div>
         </article>
         <details class="panel glass how"><summary>How Gradify works this out</summary>
-          <p class="sub">Every score comes from your own answers, with recent ones counting more. Recall comes from definition, fill-the-gap and reverse cards; explanation from “why” cards. Retention estimates how much you'd remember if tested right now, from when you last saw each card and how long you've been remembering it. Depth measures how long your memory of each card has lasted between reviews: everything looks remembered straight after a session, so mastery only grows as cards survive longer gaps. A topic is mastered only when you've answered every card, each more than once, with recall and retention above 85% and memories lasting a week or more.</p></details>
+          <p class="sub">Every score comes from your own answers, with recent ones counting more. Recall comes from definition, fill-the-gap and reverse cards; explanation from Explain questions; application from Apply questions. Retention estimates how much you'd remember if tested right now, from when you last saw each card and how long you've been remembering it. Depth measures how long your memory of each card has lasted between reviews: everything looks remembered straight after a session, so mastery only grows as cards survive longer gaps. A topic is mastered only when you've answered every card, each more than once, with recall and retention above 85% and memories lasting a week or more.</p></details>
       </div>
     </div>
   </section>`;

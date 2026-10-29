@@ -1,10 +1,12 @@
 // Supabase Edge Function: study-pack
 // POST { mode: "pack", title, site, level, text, pdfBase64? }  → { pack, cards, stats, packId }
-// POST { mode: "card", fact, notes, avoid }                   → { card }   (regenerate one card)
+// POST { mode: "card", fact, notes, avoid, kind? }            → { card }   (regenerate one card)
+// POST { mode: "questions", title, site, level, text, topics } → { cards } (why and application
+//      questions for a deck made before they existed)
 // The learner must be signed in. The Claude API key stays here as a server secret.
 import Anthropic from "npm:@anthropic-ai/sdk@0.133.0";
 import { createClient } from "npm:@supabase/supabase-js@2.117.0";
-import { MODEL, PACK_SCHEMA, SYSTEM_PROMPT, userPrompt, cardsFromPack, packStats } from "../_shared/pack.js";
+import { MODEL, PACK_SCHEMA, QUESTIONS_SCHEMA, SYSTEM_PROMPT, userPrompt, cardsFromPack, packStats, questionCards } from "../_shared/pack.js";
 
 const DAILY_PACKS = Number(Deno.env.get("GRADIFY_DAILY_PACKS") ?? 10);    // per learner per day
 const MAX_CHARS = Number(Deno.env.get("GRADIFY_MAX_CHARS") ?? 120_000);    // about 30k tokens of notes
@@ -45,7 +47,7 @@ async function ask(system: string, content: Anthropic.Beta.BetaContentBlockParam
 
 const CARD_SCHEMA: Record<string, unknown> = {
   type: "object", additionalProperties: false, required: ["type", "front", "back"],
-  properties: { type: { type: "string", enum: ["definition", "cloze", "why", "reverse"] }, front: { type: "string" }, back: { type: "string" } },
+  properties: { type: { type: "string", enum: ["definition", "cloze", "why", "reverse", "apply"] }, front: { type: "string" }, back: { type: "string" } },
 };
 
 Deno.serve(async (req) => {
@@ -66,20 +68,34 @@ Deno.serve(async (req) => {
       const prompt = `Write one new flashcard for this fact from a learner's notes. Make it different from these existing versions: ${JSON.stringify(body.avoid ?? [])}.
 Fact: ${String(body.fact ?? "").slice(0, 2000)}
 Supporting notes: ${String(body.notes ?? "").slice(0, 4000)}
-Use only what the fact and notes say. Front under 25 words, back under 40. Never put the answer in the question.`;
+Use only what the fact and notes say. Front under 25 words, back under 40. Never put the answer in the question.${["why", "apply"].includes(body.kind) ? ` Keep it a "${body.kind}" question: ${body.kind === "why" ? "the learner must explain a cause, mechanism or difference" : "the learner must use the idea on a situation or problem"}. Backs for these can run to 60 words.` : ""}`;
       const { data } = await ask(SYSTEM_PROMPT, [{ type: "text", text: prompt }], CARD_SCHEMA, "medium");
       return json(req, { card: data });
     }
 
-    // mode "pack": daily limit per learner, counted from their saved packs
+    // modes "pack" and "questions": daily limit per learner, counted from their saved packs
     const since = new Date(Date.now() - 864e5).toISOString();
-    const { count } = await db.from("packs").select("id", { count: "exact", head: true }).eq("engine", "claude").gte("created_at", since);
+    const { count } = await db.from("packs").select("id", { count: "exact", head: true }).in("engine", ["claude", "claude-questions"]).gte("created_at", since);
     if ((count ?? 0) >= DAILY_PACKS) return json(req, { error: `You've made ${DAILY_PACKS} study packs today, the daily limit. Try again tomorrow.` }, 429);
 
     const text = String(body.text ?? "");
     const hasPdf = typeof body.pdfBase64 === "string" && body.pdfBase64.length > 0;
     if (!text.trim() && !hasPdf) return json(req, { error: "No notes were sent." }, 400);
     if (text.length > MAX_CHARS) return json(req, { error: "These notes are too long. Try uploading one lecture at a time." }, 413);
+
+    if (body.mode === "questions") {
+      if (!text.trim()) return json(req, { error: "These notes have no text to write questions from." }, 400);
+      const topics = (Array.isArray(body.topics) ? body.topics : []).map(String).slice(0, 20);
+      const ask_ = `${userPrompt({ title: String(body.title ?? "My notes").slice(0, 200), site: String(body.site ?? "Gradify"), level: String(body.level ?? "undergraduate"), text, today: new Date().toISOString().slice(0, 10) })}
+
+The learner already has recall flashcards for these notes. Write only the deeper questions ("why" and "apply"), following the rules for deeper questions. Use exactly these topic names: ${JSON.stringify(topics)}.`;
+      const { data, usage, model } = await ask(SYSTEM_PROMPT, [{ type: "text", text: ask_ }], QUESTIONS_SCHEMA, "high");
+      const seen = new Set<string>();
+      const cards = (data.topics ?? []).flatMap((t: { name: string; questions: unknown[] }) => questionCards(t, text, seen));
+      // recorded (without a document, so it never replaces the deck's pack) to count towards the daily limit
+      await db.from("packs").insert({ user_id: user.id, document_id: null, engine: "claude-questions", model, pack: data, stats: { why: cards.filter((c: { kind: string }) => c.kind === "why").length, apply: cards.filter((c: { kind: string }) => c.kind === "apply").length }, input_tokens: usage.input_tokens, output_tokens: usage.output_tokens });
+      return json(req, { cards });
+    }
 
     const content: Anthropic.Beta.BetaContentBlockParam[] = [];
     // Scanned or handwritten PDFs have no text layer: send the pages for Claude to read.

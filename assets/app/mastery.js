@@ -128,7 +128,8 @@ function profileOf(g, byCard, now, examDays) {
 
   // the weakest kind of evidence that has any data
   const weakest = ["recall", "explain", "apply", "retention"].filter((k) => dims[k].value != null).sort((a, b) => dims[a].value - dims[b].value)[0] || null;
-  const next = nextStep({ level, fresh, due, misconceptions, weakest, dims, retention, seen: seen.length, total: g.cards.length });
+  const deep = g.cards.some((c) => c.kind === "why" || c.kind === "apply");
+  const next = nextStep({ level, fresh, due, misconceptions, weakest, dims, retention, seen: seen.length, total: g.cards.length, deep });
 
   // how urgently this topic needs attention: low mastery, slipping memory, misconceptions,
   // cards already due, and an exam getting close
@@ -154,7 +155,7 @@ function depthOf(card) {
 function pct(v) { return `${Math.round(v * 100)}%`; }
 
 // One clear next step for a topic, with the reason in plain words
-function nextStep({ level, fresh, due, misconceptions, weakest, dims, retention, seen, total }) {
+function nextStep({ level, fresh, due, misconceptions, weakest, dims, retention, seen, total, deep }) {
   if (level === "shaky") return { kind: "misconception", label: "Check your understanding", mins: Math.max(3, misconceptions.length * 2),
     why: `You were sure about ${misconceptions.length === 1 ? "an answer" : `${misconceptions.length} answers`} that turned out wrong. Fixing a misunderstanding early stops it spreading to later topics.` };
   if (level === "fading") return { kind: "review", label: "Review before you forget", mins: Math.max(3, Math.ceil(((due || 4) * 25) / 60)),
@@ -165,6 +166,9 @@ function nextStep({ level, fresh, due, misconceptions, weakest, dims, retention,
     why: "These cards are due: reviewing them now, just before you'd forget, is what makes memory last." };
   if (fresh > 0) return { kind: "learn", label: `Learn ${Math.min(fresh, 10)} more ${Math.min(fresh, 10) === 1 ? "card" : "cards"}`, mins: Math.max(2, Math.ceil((Math.min(fresh, 10) * 25) / 60)),
     why: `You've been tested on ${seen} of ${total} cards. Gradify can't count the rest as known until you've answered them.` };
+  // recall is solid but nothing yet tests understanding
+  if (!deep && (level === "strong" || level === "mastered")) return { kind: "deepen", label: "Add explain and apply questions", mins: 1,
+    why: "You recall this well. Explaining why it works and using it on new problems is the next level, and it's what exams test." };
   if (level === "mastered") return { kind: "done", label: "Nothing needed now", mins: 0, why: "It's mastered. Gradify will bring it back before you'd forget it." };
   if (weakest === "explain") return { kind: "practise", label: "Practise explaining", mins: 5, why: `Your explanation answers are at ${pct(dims.explain.value)}, below your recall. Being able to explain it is what exams test.` };
   const name = weakest ? DIMENSIONS.find((d) => d.key === weakest).label.toLowerCase() : null;

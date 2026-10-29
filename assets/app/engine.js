@@ -2,13 +2,15 @@
 // (supabase/functions/study-pack). Otherwise the browser extractor from Notes Studio runs
 // locally. Both return the same shape, and both are fact-checked against the notes.
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "./config.js";
-import { analyseNotes, normaliseNotes } from "../studio.js";
-import { cardsFromPack, packStats } from "../../supabase/functions/_shared/pack.js";
+import { analyseNotes, normaliseNotes, deeperQuestions } from "../studio.js";
+import { cardsFromPack, packStats, questionCards } from "../../supabase/functions/_shared/pack.js";
 
 // Browser extractor → the same pack shape Claude returns
 function browserPack(text, title) {
   const a = analyseNotes(text);
-  const topics = a.groups.map((g) => ({
+  const deeper = deeperQuestions(a);
+  const topics = a.groups.map((g, gi) => ({
+    questions: deeper.filter((q) => q.group === gi).map(({ type, question, answer, quote }) => ({ type, question, answer, quote, page: null })),
     name: g.label, theme: g.theme, mnemonic: g.facts.length > 1 ? g.acronym : null,
     facts: g.facts.map((f) => {
       const card = a.cards.find((c) => c.q && f.term && c.q.toLowerCase().includes(f.term.toLowerCase())) || { type: "Definition", q: `What is ${f.term}?`, a: f.def };
@@ -48,6 +50,33 @@ export async function generate({ text, pdfBase64, title, site, level, store }) {
   return { engine: "browser", model: null, pack, cards, stats: packStats(pack, cards) };
 }
 
+// Why and application questions for a deck made before they existed. With an account, Claude
+// writes them; otherwise the browser extractor does what the notes allow.
+export async function generateQuestions({ text, title, site, level, topics, store }) {
+  const session = store.mode === "cloud" ? await store.session() : null;
+  if (session) {
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/study-pack`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}`, apikey: SUPABASE_ANON_KEY },
+      body: JSON.stringify({ mode: "questions", text, title, site, level, topics }),
+    });
+    const body = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(body.error || "Gradify AI couldn't write questions for these notes.");
+    return body.cards;
+  }
+  if (!text?.trim()) throw new Error("These notes have no text Gradify can read on this device. Sign in to use Gradify AI.");
+  const a = analyseNotes(text), notes = normaliseNotes(text);
+  const deeper = deeperQuestions(a);
+  // file each question under the existing topic that shares its source quote, else the extractor's group name
+  return a.groups.flatMap((g, gi) => questionCards({ name: g.label, questions: deeper.filter((q) => q.group === gi).map((q) => ({ ...q, page: null })) }, notes))
+    .map((c) => ({ ...c, topic: topics.find((t) => t === c.topic) || bestTopic(c, topics) }));
+}
+function bestTopic(card, topics) {
+  if (!topics.length) return card.topic;
+  const w = new Set((`${card.front} ${card.back}`.toLowerCase().match(/[a-z]{4,}/g) || []));
+  return topics.reduce((best, t) => { const n = (t.toLowerCase().match(/[a-z]{4,}/g) || []).filter((x) => w.has(x)).length; return n > best.n ? { t, n } : best; }, { t: topics[0], n: -1 }).t;
+}
+
 // A new version of one card
 export async function regenerateCard({ card, notes, store }) {
   const session = store.mode === "cloud" ? await store.session() : null;
@@ -55,12 +84,13 @@ export async function regenerateCard({ card, notes, store }) {
     const res = await fetch(`${SUPABASE_URL}/functions/v1/study-pack`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}`, apikey: SUPABASE_ANON_KEY },
-      body: JSON.stringify({ mode: "card", fact: `${card.front} → ${card.back}`, notes: card.source_quote || notes.slice(0, 2000), avoid: [card.front] }),
+      body: JSON.stringify({ mode: "card", fact: `${card.front} → ${card.back}`, notes: card.source_quote || notes.slice(0, 2000), avoid: [card.front], kind: card.kind }),
     });
     const body = await res.json().catch(() => ({}));
     if (!res.ok) throw new Error(body.error || "Couldn't regenerate this card.");
     return { front: body.card.front, back: body.card.back, kind: body.card.type };
   }
+  if (card.kind === "why" || card.kind === "apply") throw new Error("Rewriting Explain and Apply questions needs Gradify AI. You can edit this one yourself.");
   // Without the AI: flip between a question and a fill-in-the-blank version
   if (card.kind === "cloze") {
     const answer = card.back;
