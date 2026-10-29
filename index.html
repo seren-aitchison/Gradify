@@ -289,12 +289,23 @@
         <div class="panel-head earth-top">
           <div>
             <h3>Gradify Earth</h3>
-            <p class="sub">Alex's degree as a world. Each module is a region, each topic a city, and the roads are prerequisites. A topic only counts as mastered with evidence: recall, explanation, application, retention and connections.</p>
+            <p class="sub">Alex's degree as a world. Each module lights up a continent, each topic is a pin, and the arcs are prerequisites. A topic only counts as mastered with evidence: recall, explanation, application, retention and connections.</p>
           </div>
-          <span class="pill-dark">2D preview · 3D world coming</span>
+          <span class="pill-dark">3D · drag to turn</span>
         </div>
         <div class="earth-body">
-          <div class="earth-map" id="earth-map"></div>
+          <div class="earth-map" id="earth-map">
+            <canvas id="earth-canvas" tabindex="0" aria-label="Gradify Earth globe. Drag or use the arrow keys to turn it, plus and minus to zoom. Use Jump to topic to choose a topic."></canvas>
+            <div class="earth-tools">
+              <label class="earth-jump"><span class="sr-only">Jump to topic</span><select id="earth-jump"></select></label>
+              <div class="earth-zoom">
+                <button type="button" id="earth-in" aria-label="Zoom in">+</button>
+                <button type="button" id="earth-out" aria-label="Zoom out">−</button>
+                <button type="button" id="earth-reset" aria-label="Reset view">⟲</button>
+              </div>
+            </div>
+            <p class="earth-hint" aria-hidden="true">Drag to turn · tap a pin</p>
+          </div>
           <aside class="inset-card inspector" id="inspector" aria-live="polite"></aside>
         </div>
         <div class="earth-legend" id="earth-legend"></div>

@@ -1,11 +1,11 @@
-// Gradify Earth preview: a 2D knowledge map of one learner's degree (example data).
+// Gradify Earth preview: a 3D globe of one learner's degree (example data).
 // Planet = the degree, continents = years, regions = modules, cities = topics,
 // roads = prerequisites, portals = links to other Gradify sites.
 import { icon } from "./icons.js";
+import { createGlobe, vec } from "./globe.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
-const SVG = "http://www.w3.org/2000/svg";
 
 export const MODULES = {
   anat: { name: "Anatomy", c: "#f99246" },
@@ -16,12 +16,10 @@ export const MODULES = {
   pharm: { name: "Pharmacology", c: "#ffc002" },
 };
 
-// Continents: soft shapes behind the regions
-const CONTINENTS = [
-  { name: "Year 1", x: 245, y: 250, rx: 175, ry: 150 },
-  { name: "Year 2 · now", x: 545, y: 235, rx: 185, ry: 165, lx: 665, ly: 100 },
-  { name: "Year 3", x: 790, y: 300, rx: 90, ry: 120, fog: true },
-];
+// Where each module sits on the globe: [lat, lon] of its region's centre. Year 1 lies in the
+// north and west, Year 2 in the south and east, and Year 3 is still in the fog over East Asia.
+const CENTRES = { anat: [50, 12], bio: [6, 20], gen: [24, 78], cardio: [-14, -58], phys: [40, -98], pharm: [-25, 134], placements: [36, 106] };
+const YEAR1 = new Set(["anat", "bio", "gen"]);
 
 // Evidence order: recall, explain, apply, retain, connect (0–100)
 const EVIDENCE = ["Recall", "Explain", "Apply to new problems", "Retained over time", "Connected to other topics"];
@@ -52,8 +50,8 @@ export const ROADS = [
 ];
 // Portals: links to other Gradify sites
 const PORTALS = [
-  { to: "pk", site: "ForgeLab", what: "Data analysis for drug trials", c: "#ff5a4d", x: 345, y: 440 },
-  { to: "chambers", site: "LanguageGradify", what: "Medical Spanish: el corazón", c: "#dd7d6b", x: 420, y: 62 },
+  { to: "pk", site: "ForgeLab", what: "Data analysis for drug trials", c: "#ff5a4d", dir: [0.3, -0.45, 0.15] },
+  { to: "chambers", site: "LanguageGradify", what: "Medical Spanish: el corazón", c: "#dd7d6b", dir: [-0.4, 0.4, 0.15] },
 ];
 
 const STATES = {
@@ -78,84 +76,50 @@ export const strength = (t) => Math.round(t.ev.reduce((a, b) => a + b, 0) / t.ev
 let selected = "cycle";
 let onReview = () => {};
 
-function el(name, attrs = {}, parent) {
-  const n = document.createElementNS(SVG, name);
-  for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
-  parent?.appendChild(n);
-  return n;
+let globe = null;
+
+// The topics' x/y were laid out on a flat map; turn each one's offset from its module's centre
+// into a spot on the globe (about 5px to a degree), so neighbours on the map stay neighbours.
+const place = (() => {
+  const out = {};
+  for (const key of Object.keys(CENTRES)) {
+    const ts = TOPICS.filter((t) => (t.m ?? "placements") === key);
+    const mx = ts.reduce((a, t) => a + t.x, 0) / ts.length, my = ts.reduce((a, t) => a + t.y, 0) / ts.length;
+    const [lat0, lon0] = CENTRES[key];
+    for (const t of ts) {
+      const lat = lat0 - (t.y - my) / 5;
+      out[t.id] = vec(lat, lon0 + (t.x - mx) / 5 / Math.cos(lat * Math.PI / 180));
+    }
+  }
+  return out;
+})();
+
+const rgb = (h) => { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
+
+function scene() {
+  const regions = Object.entries(MODULES).map(([key, m]) => {
+    const ts = TOPICS.filter((t) => t.m === key);
+    return { v: vec(...CENTRES[key]), radius: 0.5, rgb: rgb(m.c), light: ts.reduce((a, t) => a + strength(t), 0) / ts.length / 100 };
+  });
+  regions.push({ v: vec(...CENTRES.placements), radius: 0.4, rgb: [120, 120, 130], light: 0, locked: true });
+  const byId = Object.fromEntries(TOPICS.map((t) => [t.id, t]));
+  return {
+    regions,
+    rings: true,
+    selected,
+    pins: TOPICS.map((t) => ({ id: t.id, v: place[t.id], c: MODULES[t.m]?.c ?? "#777777", name: t.name, state: stateOf(t), strength: strength(t) })),
+    roads: ROADS.map(([a, b]) => ({
+      a: place[a], b: place[b],
+      weak: ["fading", "new", "locked"].includes(stateOf(byId[a])) || ["new", "locked"].includes(stateOf(byId[b])),
+    })),
+    portals: PORTALS.map((p) => ({ v: place[p.to], dir: p.dir, c: p.c, site: p.site })),
+  };
 }
 
 function draw() {
-  const map = $("#earth-map");
-  map.innerHTML = "";
-  const svg = el("svg", { viewBox: "0 0 900 480", role: "group", "aria-label": "Knowledge map. Choose a topic to see its evidence." }, map);
-  const defs = el("defs", {}, svg);
-  defs.innerHTML = `
-    <radialGradient id="planet" cx="45%" cy="38%" r="70%"><stop offset="0" stop-color="#1a1d26"/><stop offset=".7" stop-color="#0c0d12"/><stop offset="1" stop-color="#050506"/></radialGradient>
-    <radialGradient id="rim" cx="50%" cy="50%" r="50%"><stop offset=".86" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#9fb4ff" stop-opacity=".22"/></radialGradient>
-    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="28"/></filter>
-    <filter id="fog" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
-    <clipPath id="globe"><ellipse cx="450" cy="250" rx="440" ry="235"/></clipPath>`;
-
-  // planet body, latitude/longitude lines and rim light
-  el("ellipse", { cx: 450, cy: 250, rx: 440, ry: 235, fill: "url(#planet)" }, svg);
-  const g = el("g", { "clip-path": "url(#globe)" }, svg);
-  for (let i = 1; i < 6; i++) el("ellipse", { cx: 450, cy: 250, rx: 440, ry: 235 * i / 6, class: "grid-line" }, g);
-  for (let i = 1; i < 8; i++) el("ellipse", { cx: 450, cy: 250, rx: 440 * i / 8, ry: 235, class: "grid-line" }, g);
-
-  // continents and module regions, as soft glows
-  for (const c of CONTINENTS) {
-    el("ellipse", { cx: c.x, cy: c.y, rx: c.rx, ry: c.ry, class: "continent" + (c.fog ? " fog" : ""), filter: c.fog ? "url(#fog)" : "" }, g);
-    const t = el("text", { x: c.lx ?? c.x, y: c.ly ?? c.y - c.ry + 22, class: "continent-label" }, g);
-    t.textContent = c.name;
-  }
-  for (const [key, m] of Object.entries(MODULES)) {
-    const ts = TOPICS.filter((t) => t.m === key);
-    const cx = ts.reduce((a, t) => a + t.x, 0) / ts.length, cy = ts.reduce((a, t) => a + t.y, 0) / ts.length;
-    const lit = ts.reduce((a, t) => a + strength(t), 0) / ts.length / 100;
-    el("ellipse", { cx, cy, rx: 85, ry: 60, fill: m.c, opacity: (0.12 + lit * 0.3).toFixed(2), filter: "url(#soft)" }, g);
-    const label = el("text", { x: cx, y: Math.max(...ts.map((t) => t.y)) + 34, class: "region-label", fill: m.c }, g);
-    label.textContent = m.name;
-  }
-  el("ellipse", { cx: 450, cy: 250, rx: 440, ry: 235, fill: "url(#rim)", "pointer-events": "none" }, svg);
-
-  // roads (prerequisites)
-  const byId = Object.fromEntries(TOPICS.map((t) => [t.id, t]));
-  for (const [a, b] of ROADS) {
-    const A = byId[a], B = byId[b];
-    const weak = ["fading", "new", "locked"].includes(stateOf(A)) || ["new", "locked"].includes(stateOf(B));
-    el("line", { x1: A.x, y1: A.y, x2: B.x, y2: B.y, class: "road" + (weak ? " weak" : "") }, svg);
-  }
-
-  // portals to other sites
-  for (const p of PORTALS) {
-    const T = byId[p.to];
-    el("line", { x1: p.x, y1: p.y, x2: T.x, y2: T.y, class: "portal-link", stroke: p.c }, svg);
-    const pg = el("g", { class: "portal", transform: `translate(${p.x} ${p.y})` }, svg);
-    el("circle", { r: 12, stroke: p.c }, pg);
-    el("circle", { r: 6, fill: p.c }, pg);
-    const tt = el("title", {}, pg);
-    tt.textContent = `Portal to ${p.site}: ${p.what}`;
-    const pl = el("text", { y: p.y < 250 ? -18 : 26, class: "portal-label", fill: p.c }, pg);
-    pl.textContent = `→ ${p.site}`;
-  }
-
-  // cities (topics)
-  for (const t of TOPICS) {
-    const st = stateOf(t), m = MODULES[t.m];
-    const c = m ? m.c : "#666";
-    const r = 6 + strength(t) / 18;
-    const node = el("g", {
-      class: `city ${st}${t.id === selected ? " selected" : ""}`, transform: `translate(${t.x} ${t.y})`,
-      tabindex: 0, role: "button", "aria-label": `${t.name}: ${STATES[st].label}`, "data-id": t.id, style: `--c:${c}`,
-    }, svg);
-    if (st === "recent") el("circle", { r: r + 4, class: "pulse" }, node);
-    el("circle", { r: r + 6, class: "hit" }, node);
-    el("circle", { r, class: "core" }, node);
-    if (st === "mastered" || st === "recent") el("rect", { x: -2.5, y: -r - 9, width: 5, height: 9, rx: 1, class: "tower" }, node);
-    const label = el("text", { y: r + 15, class: "city-label" }, node);
-    label.textContent = t.name;
-  }
+  globe?.setScene(scene());
+  const jump = $("#earth-jump");
+  if (jump) jump.value = selected;
 }
 
 function inspect() {
@@ -165,7 +129,7 @@ function inspect() {
   const needs = t.ev.map((v, i) => [v, EVIDENCE[i]]).filter(([v]) => v < 70).map(([, n]) => n.toLowerCase());
   $("#inspector").style.setProperty("--c", c);
   $("#inspector").innerHTML = `
-    <span class="kicker">${m ? `${esc(m.name)} · ${t.x < 380 ? "Year 1" : "Year 2"}` : "Year 3"}</span>
+    <span class="kicker">${m ? `${esc(m.name)} · ${YEAR1.has(t.m) ? "Year 1" : "Year 2"}` : "Year 3"}</span>
     <b class="topic">${esc(t.name)}</b>
     <span class="state-pill ${st}">${STATES[st].label}</span>
     <p>${STATES[st].note}${t.days !== undefined && st !== "new" ? ` Last studied ${t.days === 0 ? "today" : t.days === 1 ? "yesterday" : `${t.days} days ago`}.` : ""}</p>
@@ -175,14 +139,15 @@ function inspect() {
     ${st === "new" ? "" : `<button type="button" class="btn btn-light lg btn-sm" id="review">${icon("flame")}<span>${st === "learning" ? "Continue" : "Review"} · 10 min</span></button>`}`}`;
 }
 
-function select(id) {
+function select(id, turn) {
   selected = id;
   draw();
   inspect();
+  if (turn) globe?.faceTo(place[id]);
 }
 
 export function showTopic(id) {
-  select(id);
+  select(id, true);
   document.dispatchEvent(new CustomEvent("lifeos:goto", { detail: "earth" }));
 }
 
@@ -196,20 +161,24 @@ export function review(id) {
   t.recent = true;
   if (t.ev.every((v) => v >= 70)) t.learning = false;
   select(id);
-  $("#earth-map").querySelector(`[data-id="${id}"]`)?.classList.add("boost");
 }
 
 export function initEarth(opts) {
   onReview = opts.onReview;
-  const map = $("#earth-map");
-  map.addEventListener("click", (e) => {
-    const n = e.target.closest(".city");
-    if (n) select(n.dataset.id);
+  const canvas = $("#earth-canvas");
+  globe = createGlobe(canvas, {
+    onPick: (id) => select(id),
+    onHover: (id) => { canvas.title = id ? TOPICS.find((t) => t.id === id).name : ""; },
   });
-  map.addEventListener("keydown", (e) => {
-    const n = e.target.closest(".city");
-    if (n && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); select(n.dataset.id); map.querySelector(`[data-id="${n.dataset.id}"]`)?.focus(); }
-  });
+  // keyboard and screen-reader route to every topic, since the globe itself is a picture
+  const jump = $("#earth-jump");
+  jump.innerHTML = Object.entries(MODULES).map(([key, m]) => `<optgroup label="${esc(m.name)}">${TOPICS.filter((t) => t.m === key).map((t) =>
+    `<option value="${t.id}">${esc(t.name)} · ${STATES[stateOf(t)].label}</option>`).join("")}</optgroup>`).join("") +
+    `<optgroup label="Year 3">${TOPICS.filter((t) => !t.m).map((t) => `<option value="${t.id}">${esc(t.name)} · Locked</option>`).join("")}</optgroup>`;
+  jump.addEventListener("change", () => select(jump.value, true));
+  $("#earth-in").addEventListener("click", () => globe.zoomBy(1.2));
+  $("#earth-out").addEventListener("click", () => globe.zoomBy(1 / 1.2));
+  $("#earth-reset").addEventListener("click", () => globe.reset());
   $("#inspector").addEventListener("click", (e) => {
     if (!e.target.closest("#review")) return;
     const t = TOPICS.find((x) => x.id === selected);
@@ -220,5 +189,5 @@ export function initEarth(opts) {
   $("#earth-legend").innerHTML = ["mastered", "recent", "fading", "learning", "new"].map((s) =>
     `<span><i class="lg-dot ${s}"></i>${STATES[s].label}</span>`).join("") +
     '<span><i class="lg-dot portal"></i>Portal to another Gradify site</span><span><i class="lg-road"></i>Prerequisite</span>';
-  select(selected);
+  select(selected, true);
 }

@@ -117,7 +117,7 @@ function add(who, html) {
   const log = $("#ai-log");
   const m = document.createElement("div");
   m.className = `msg ${who}`;
-  m.innerHTML = who === "ai" ? `<span class="ai-av" aria-hidden="true">${icon("star")}</span><div class="bubble">${html}</div>` : `<div class="bubble">${html}</div>`;
+  m.innerHTML = who === "ai" ? `<span class="ai-av" aria-hidden="true">${icon("star")}</span><div class="chat-bubble">${html}</div>` : `<div class="chat-bubble">${html}</div>`;
   log.appendChild(m);
   log.scrollTop = log.scrollHeight;
   return m;
@@ -127,7 +127,7 @@ function ask(text) {
   add("me", ctx.esc(text));
   const typing = add("ai", '<span class="typing"><i></i><i></i><i></i></span>');
   setTimeout(() => {
-    typing.querySelector(".bubble").innerHTML = styled(reply(text));
+    typing.querySelector(".chat-bubble").innerHTML = styled(reply(text));
     $("#ai-log").scrollTop = $("#ai-log").scrollHeight;
   }, 650);
 }

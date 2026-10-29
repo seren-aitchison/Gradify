@@ -449,38 +449,17 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .earth-top { align-items: flex-start; }
 .earth-top .sub { max-width: 52em; }
 .earth-body { display: grid; grid-template-columns: 1fr 300px; gap: 16px; align-items: stretch; }
-.earth-map { min-width: 0; border-radius: 18px; overflow: hidden; background: radial-gradient(80% 80% at 50% 40%, #0a0b10, #000); }
-.earth-map svg { display: block; width: 100%; height: auto; }
-.grid-line { fill: none; stroke: rgba(255, 255, 255, .045); stroke-width: 1; }
-.continent { fill: rgba(255, 255, 255, .035); stroke: rgba(255, 255, 255, .06); }
-.continent.fog { fill: rgba(255, 255, 255, .06); }
-.continent-label { fill: rgba(255, 255, 255, .4); font: 600 12px var(--sans); letter-spacing: .1em; text-transform: uppercase; text-anchor: middle; }
-.portal-label { font: 600 10px var(--sans); text-anchor: middle; paint-order: stroke; stroke: #000; stroke-width: 3px; }
-.region-label { font: 600 12px var(--sans); text-anchor: middle; opacity: .85; }
-.road { stroke: rgba(255, 255, 255, .35); stroke-width: 2; stroke-linecap: round; }
-.road.weak { stroke: rgba(255, 255, 255, .14); stroke-dasharray: 3 5; }
-.portal-link { stroke-width: 1.5; stroke-dasharray: 2 4; opacity: .7; }
-.portal circle:first-child { fill: #000; stroke-width: 2; }
-.portal { animation: spin-glow 3s ease-in-out infinite; }
-@keyframes spin-glow { 50% { opacity: .55; } }
-.city { cursor: pointer; outline: none; }
-.city .hit { fill: transparent; }
-.city .core { fill: var(--c); stroke: rgba(255, 255, 255, .7); stroke-width: 1.5; filter: drop-shadow(0 0 6px var(--c)); transition: r .3s; }
-.city .tower { fill: #fff; opacity: .85; }
-.city-label { fill: rgba(255, 255, 255, .78); font: 500 11px var(--sans); text-anchor: middle; pointer-events: none; paint-order: stroke; stroke: #000; stroke-width: 3px; }
-.city.fading .core { fill: color-mix(in srgb, var(--c) 35%, #000); stroke: var(--c); stroke-dasharray: 3 3; filter: none; }
-.city.fading .city-label { fill: rgba(255, 255, 255, .5); }
-.city.learning .core { fill: #000; stroke: var(--c); stroke-width: 3; filter: drop-shadow(0 0 4px var(--c)); }
-.city.new .core { fill: #000; stroke: rgba(255, 255, 255, .3); filter: none; }
-.city.new .city-label, .city.locked .city-label { fill: rgba(255, 255, 255, .35); }
-.city.locked .core { fill: #1a1a1a; stroke: rgba(255, 255, 255, .15); filter: none; }
-.city .pulse { fill: none; stroke: var(--c); stroke-width: 2; animation: city-pulse 2s ease-out infinite; transform-origin: center; transform-box: fill-box; }
-@keyframes city-pulse { from { opacity: .9; transform: scale(.8); } to { opacity: 0; transform: scale(2.2); } }
-.city:hover .core, .city:focus-visible .core { stroke: #fff; stroke-width: 3; }
-.city.selected .core { stroke: #fff; stroke-width: 3.5; }
-.city.selected .city-label { fill: #fff; font-weight: 700; }
-.city.boost .core { animation: boost 1.2s ease-out; transform-box: fill-box; transform-origin: center; }
-@keyframes boost { 30% { transform: scale(1.8); } }
+.earth-map { position: relative; min-width: 0; height: 540px; border-radius: 18px; overflow: hidden; background: radial-gradient(70% 70% at 50% 45%, #07152a, #02050b 60%, #000); }
+.earth-map canvas { display: block; width: 100%; height: 100%; cursor: grab; touch-action: pan-y; outline: none; }
+.earth-map canvas.grabbing { cursor: grabbing; }
+.earth-map canvas:focus-visible { box-shadow: inset 0 0 0 2px rgba(140, 190, 255, .8); border-radius: 18px; }
+.earth-tools { position: absolute; top: 12px; left: 12px; right: 12px; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; pointer-events: none; }
+.earth-tools > * { pointer-events: auto; }
+.earth-jump select { max-width: 220px; height: 34px; padding: 0 10px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .14); background: rgba(0, 0, 0, .6); color: #fff; font: 500 13px var(--sans); backdrop-filter: blur(10px); }
+.earth-zoom { display: flex; flex-direction: column; gap: 6px; }
+.earth-zoom button { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .14); background: rgba(0, 0, 0, .6); color: #fff; font: 600 16px var(--sans); cursor: pointer; backdrop-filter: blur(10px); }
+.earth-zoom button:hover { background: rgba(255, 255, 255, .12); }
+.earth-hint { position: absolute; bottom: 10px; left: 0; right: 0; margin: 0; text-align: center; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(160, 200, 255, .5); pointer-events: none; }
 
 .inset-card { padding: 18px; border-radius: 18px; background: var(--inset); border: 1px solid rgba(255, 255, 255, .06); }
 .inspector { --c: #888; display: flex; flex-direction: column; gap: 8px; }
@@ -575,11 +554,11 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .ai-log { flex: 1; min-height: 300px; max-height: 460px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding: 4px 2px; scrollbar-width: thin; }
 .msg { display: flex; gap: 10px; align-items: flex-start; }
 .msg.me { justify-content: flex-end; }
-.bubble { max-width: 88%; padding: 10px 14px; border-radius: 18px; font-size: 14px; line-height: 1.5; }
-.msg.ai .bubble { background: var(--inset); border: 1px solid rgba(255, 255, 255, .06); border-top-left-radius: 6px; }
-.msg.me .bubble { background: #fff; color: #000; border-top-right-radius: 6px; }
-.bubble p { margin: 0 0 8px; }
-.bubble p:last-child { margin-bottom: 0; }
+.chat-bubble { max-width: 88%; padding: 10px 14px; border-radius: 18px; font-size: 14px; line-height: 1.5; }
+.msg.ai .chat-bubble { background: var(--inset); border: 1px solid rgba(255, 255, 255, .06); border-top-left-radius: 6px; }
+.msg.me .chat-bubble { background: #fff; color: #000; border-top-right-radius: 6px; }
+.chat-bubble p { margin: 0 0 8px; }
+.chat-bubble p:last-child { margin-bottom: 0; }
 .ai-dim { color: var(--faint); font-size: 13px; }
 .ai-steps { margin: 4px 0 10px; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
 .ai-steps li b { display: block; font-weight: 600; }
@@ -603,8 +582,8 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .ai-week span { color: var(--mute); }
 .ai-try-row, .ai-suggest { display: flex; gap: 6px; flex-wrap: wrap; }
 .ai-try-row { margin-top: 8px; }
-.ai-suggest .chip, .bubble .ai-try { font-size: 13px; padding: 6px 12px; background: rgba(255, 255, 255, .05); border: 1px solid var(--line); color: var(--fg); }
-.ai-suggest .chip:hover, .bubble .ai-try:hover { background: rgba(255, 255, 255, .1); }
+.ai-suggest .chip, .chat-bubble .ai-try { font-size: 13px; padding: 6px 12px; background: rgba(255, 255, 255, .05); border: 1px solid var(--line); color: var(--fg); }
+.ai-suggest .chip:hover, .chat-bubble .ai-try:hover { background: rgba(255, 255, 255, .1); }
 .typing { display: inline-flex; gap: 4px; padding: 4px 0; }
 .typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--mute); animation: dot 1s ease-in-out infinite; }
 .typing i:nth-child(2) { animation-delay: .15s; }
@@ -1408,8 +1387,7 @@ footer b { color: var(--fg); font-weight: 600; }
   .ready-ring { width: 88px; height: 88px; }
   .command { grid-template-columns: 1fr; }
   .earth-top { flex-wrap: wrap; }
-  .earth-map { overflow-x: auto; }
-  .earth-map svg { min-width: 680px; }
+  .earth-map { height: 420px; }
   .areas { grid-template-columns: 1fr; }
   .path-panel .panel-head { flex-direction: column; align-items: flex-start; }
   .path-tabs { max-width: 100%; overflow-x: auto; scrollbar-width: none; }
