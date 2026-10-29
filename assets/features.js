@@ -89,18 +89,57 @@ const STOPS = [
   { t: "InternshipGradify", d: "Turn what you've learned into real work experience." },
   { t: "Your career", d: "LifeOS keeps tracking your progress, for life." },
 ];
+// The car, seen from above and pointing right: a glossy white body with the spectrum roof,
+// tinted windows, tyres tucked under, headlights throwing a soft beam, and tail lights.
+const CAR = `
+  <path class="car-beam" d="M24 -9 L118 -34 Q132 0 118 34 L24 9 Z" fill="url(#beam)"/>
+  <ellipse cx="0" cy="3" rx="31" ry="17" fill="#000" opacity=".5" filter="url(#soft)"/>
+  <rect x="-20" y="-17" width="13" height="6" rx="2.5" fill="#0b0b0b"/><rect x="10" y="-17" width="13" height="6" rx="2.5" fill="#0b0b0b"/>
+  <rect x="-20" y="11" width="13" height="6" rx="2.5" fill="#0b0b0b"/><rect x="10" y="11" width="13" height="6" rx="2.5" fill="#0b0b0b"/>
+  <path d="M-27 -6 Q-27 -14 -18 -14 H14 Q26 -14 29 -5 Q30 0 29 5 Q26 14 14 14 H-18 Q-27 14 -27 6 Z" fill="url(#carbody)" stroke="rgba(0,0,0,.25)" stroke-width=".8"/>
+  <path d="M-12 -10 H8 Q12 -10 12 -6 V6 Q12 10 8 10 H-12 Q-16 10 -16 6 V-6 Q-16 -10 -12 -10 Z" fill="url(#roadg)"/>
+  <path d="M12 -8.5 Q19 -6 19 0 Q19 6 12 8.5 Z" fill="#141826" opacity=".9"/>
+  <path d="M-16 -7.5 Q-21 -5 -21 0 Q-21 5 -16 7.5 Z" fill="#141826" opacity=".8"/>
+  <path d="M-10 -9 H6" stroke="#fff" stroke-opacity=".55" stroke-width="1.2" stroke-linecap="round"/>
+  <rect x="25" y="-11" width="4" height="5" rx="1.5" fill="#fff6c9" filter="url(#glow)"/><rect x="25" y="6" width="4" height="5" rx="1.5" fill="#fff6c9" filter="url(#glow)"/>
+  <rect x="-28.5" y="-11" width="3" height="5" rx="1.2" fill="#ff5a4d" filter="url(#glow)"/><rect x="-28.5" y="6" width="3" height="5" rx="1.2" fill="#ff5a4d" filter="url(#glow)"/>`;
+const ROAD_DEFS = `<defs>
+    <linearGradient id="roadg" x1="0" x2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient>
+    <linearGradient id="roadgv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient>
+    <linearGradient id="carbody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#eeeef2"/><stop offset="1" stop-color="#c9c9d2"/></linearGradient>
+    <linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#fff6c9" stop-opacity=".5"/><stop offset="1" stop-color="#fff6c9" stop-opacity="0"/></linearGradient>
+    <radialGradient id="halo"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="glow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>`;
+// Desktop: the road winds left to right. Phones: it winds down the screen, with each stop's words beside it.
+const ROADS = {
+  wide: { W: 1000, H: 470, y0: 40, grad: "roadg", d: "M40 440 C 200 440 180 300 330 300 S 470 440 600 420 S 720 200 860 200 S 960 90 960 70",
+    // where each stop's label sits, relative to the stop
+    tags: [[16, -44], [0, -40], [70, -48], [10, 46], [-8, -40], [-70, 8]] },
+  // the road winds down the left; the words sit in a column on the right
+  tall: { W: 400, H: 1100, y0: 0, grad: "roadgv", textX: 222, d: "M110 30 C 110 110 175 130 175 210 S 50 300 50 380 S 175 470 175 550 S 50 640 50 720 S 175 810 175 890 S 110 980 110 1060" },
+};
+const wrapLine = (text, max) => { const out = []; let line = ""; for (const w of text.split(" ")) { if ((line + " " + w).trim().length > max) { out.push(line.trim()); line = w; } else line += " " + w; } out.push(line.trim()); return out; };
+
+let roadUpdate = null;
 function initRoad() {
   const road = $("#road");
   if (!road) return;
-  const W = 1000, H = 520;
-  const d = "M40 440 C 200 440 180 300 330 300 S 470 440 600 420 S 720 200 860 200 S 960 90 960 60";
-  road.innerHTML = `<svg viewBox="0 30 ${W} ${H - 50}" aria-hidden="true">
-      <defs><linearGradient id="roadg" x1="0" x2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs>
-      <path d="${d}" class="road-base"/>
-      <path d="${d}" class="road-lit" id="road-lit"/>
-      <path d="${d}" class="road-dash"/>
+  const tall = matchMedia("(max-width: 640px)").matches;
+  const R = ROADS[tall ? "tall" : "wide"];
+  road.classList.toggle("tall", tall);
+  road.innerHTML = `
+    <div class="road-hud"><span class="road-dot"></span><span id="road-now">Start your engine</span><i class="road-meter"><b id="road-meter"></b></i></div>
+    <svg viewBox="0 ${R.y0} ${R.W} ${R.H - R.y0}" aria-hidden="true">${ROAD_DEFS}
+      <path d="${R.d}" class="road-shadow"/>
+      <path d="${R.d}" class="road-edge"/>
+      <path d="${R.d}" class="road-base"/>
+      <path d="${R.d}" class="road-lit" id="road-lit" stroke="url(#${R.grad})"/>
+      <path d="${R.d}" class="road-dash"/>
       <g id="stops"></g>
-      <g id="car" class="car"><rect x="-22" y="-11" width="44" height="22" rx="8" fill="#fff"/><rect x="-8" y="-8" width="16" height="16" rx="4" fill="url(#roadg)"/><rect x="14" y="-8" width="5" height="5" rx="1.5" fill="#ffd36b"/><rect x="14" y="3" width="5" height="5" rx="1.5" fill="#ffd36b"/><circle cx="-14" cy="-12" r="4" fill="#111"/><circle cx="12" cy="-12" r="4" fill="#111"/><circle cx="-14" cy="12" r="4" fill="#111"/><circle cx="12" cy="12" r="4" fill="#111"/></g>
+      <circle id="road-halo" r="70" fill="url(#halo)"/>
+      <g id="car" class="car">${CAR}</g>
     </svg>
     <ol class="road-stops" id="road-stops">${STOPS.map((s, i) => `<li data-i="${i}"><em>${i + 1}</em><b>${s.t}</b><span>${s.d}</span></li>`).join("")}</ol>`;
   const path = road.querySelector(".road-base");
@@ -109,23 +148,49 @@ function initRoad() {
   lit.style.strokeDasharray = `${len}`;
   const at = (t) => path.getPointAtLength(Math.max(0, Math.min(1, t)) * len);
   const stopT = STOPS.map((_, i) => 0.03 + (0.94 * i) / (STOPS.length - 1));
-  $("#stops").innerHTML = stopT.map((t, i) => { const p = at(t); return `<g class="stop" data-i="${i}" transform="translate(${p.x} ${p.y})"><circle r="16"/><text y="5">${i + 1}</text></g>`; }).join("");
+  $("#stops").innerHTML = stopT.map((t, i) => {
+    const p = at(t), last = i === STOPS.length - 1;
+    let tag = "";
+    if (tall) {
+      // the stop's name and description in the column on the right, joined by a dotted line
+      const dx = R.textX - p.x;
+      tag = `<path class="stop-lead" d="M24 0 H${dx - 10}"/><g class="stop-tag tall" transform="translate(${dx} 0)"><text class="st-t" y="-4">${STOPS[i].t}</text>${wrapLine(STOPS[i].d, 22).map((l, k) => `<text class="st-d" y="${16 + k * 17}">${l}</text>`).join("")}</g>`;
+    } else {
+      const [dx, dy] = R.tags[i], w = STOPS[i].t.length * 7.4 + 24;
+      tag = `<g class="stop-tag" transform="translate(${dx - w / 2} ${dy - 14})"><rect width="${w}" height="28" rx="14"/><text x="${w / 2}" y="18">${STOPS[i].t}</text></g>`;
+    }
+    const flag = last ? `<g class="stop-flag" transform="translate(4 -50)"><path d="M0 0 V32" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><path d="M1 1 H22 L17 8 L22 15 H1 Z" fill="url(#roadg)"/></g>` : "";
+    return `<g class="stop" data-i="${i}" transform="translate(${p.x} ${p.y})">${tag}<circle class="stop-pulse" r="18"/><circle class="stop-ring" r="22"/><circle class="stop-dot" r="17"/><text class="stop-n" y="5">${i + 1}</text>${flag}</g>`;
+  }).join("");
   const labels = [...road.querySelectorAll(".road-stops li")];
   const stops = [...road.querySelectorAll(".stop")];
-  const car = $("#car");
+  const car = $("#car"), halo = $("#road-halo"), now = $("#road-now"), meter = $("#road-meter");
   let raf = 0;
-  const update = () => {
+  roadUpdate = () => {
     raf = 0;
     const r = road.getBoundingClientRect();
-    const t = Math.max(0, Math.min(1, (innerHeight * 0.75 - r.top) / (r.height + innerHeight * 0.2)));
+    // wide: drive across as the road scrolls through the screen; tall: the car stays near the middle of the screen
+    const t = tall ? Math.max(0, Math.min(1, (innerHeight * 0.55 - r.top - 40) / (r.height - 80)))
+      : Math.max(0, Math.min(1, (innerHeight * 0.75 - r.top) / (r.height + innerHeight * 0.2)));
     const p = at(t), q = at(t + 0.004);
     car.setAttribute("transform", `translate(${p.x} ${p.y}) rotate(${(Math.atan2(q.y - p.y, q.x - p.x) * 180) / Math.PI})`);
+    halo.setAttribute("cx", p.x); halo.setAttribute("cy", p.y);
     lit.style.strokeDashoffset = `${len * (1 - t)}`;
-    stopT.forEach((s, i) => { const on = t >= s - 0.01; stops[i].classList.toggle("on", on); labels[i].classList.toggle("on", on); });
+    let reached = -1;
+    stopT.forEach((s, i) => { if (t >= s - 0.01) reached = i; });
+    stops.forEach((el, i) => { el.classList.toggle("on", i <= reached); el.classList.toggle("here", i === reached); el.classList.toggle("next", i === reached + 1); });
+    labels.forEach((el, i) => { el.classList.toggle("on", i <= reached); el.classList.toggle("here", i === reached); });
+    now.textContent = reached < 0 ? "Start your engine" : reached === STOPS.length - 1 ? `Arrived · ${STOPS[reached].t}` : `Stop ${reached + 1} of ${STOPS.length} · ${STOPS[reached].t}`;
+    meter.style.width = `${t * 100}%`;
   };
-  addEventListener("scroll", () => { raf ||= requestAnimationFrame(update); }, { passive: true });
-  addEventListener("resize", update);
-  update();
+  if (!initRoad.bound) {
+    initRoad.bound = true;
+    addEventListener("scroll", () => { raf ||= requestAnimationFrame(() => roadUpdate?.()); }, { passive: true });
+    addEventListener("resize", () => roadUpdate?.());
+    // rebuild when switching between the wide and tall roads
+    matchMedia("(max-width: 640px)").addEventListener("change", initRoad);
+  }
+  roadUpdate();
 }
 
 export function initFeatures() {

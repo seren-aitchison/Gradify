@@ -124,22 +124,57 @@ h1 {
 .bubble-detail .btn, .bubble-detail .pill-dark { align-self: flex-start; }
 /* The Gradify road */
 .road { position: relative; padding: 18px; border-radius: 28px; }
-.road svg { display: block; width: 100%; height: auto; }
-.road-base { fill: none; stroke: #1c1c1c; stroke-width: 34; stroke-linecap: round; }
-.road-lit { fill: none; stroke: url(#roadg); stroke-width: 34; stroke-linecap: round; opacity: .9; filter: drop-shadow(0 0 14px rgba(240, 85, 221, .35)); }
-.road-dash { fill: none; stroke: rgba(255, 255, 255, .55); stroke-width: 2; stroke-dasharray: 10 14; }
-.stop circle { fill: #0b0b0b; stroke: #444; stroke-width: 3; transition: fill .3s, stroke .3s; }
-.stop text { fill: var(--mute); font: 700 13px var(--sans); text-anchor: middle; }
-.stop.on circle { fill: #fff; stroke: #fff; }
-.stop.on text { fill: #000; }
-.car { filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .7)); }
+.road svg { display: block; width: 100%; height: auto; overflow: visible; }
+.road-shadow { fill: none; stroke: #000; stroke-width: 48; stroke-linecap: round; opacity: .55; filter: blur(8px); }
+.road-edge { fill: none; stroke: rgba(255, 255, 255, .1); stroke-width: 40; stroke-linecap: round; }
+.road-base { fill: none; stroke: #1a1a1a; stroke-width: 36; stroke-linecap: round; }
+.road-lit { fill: none; stroke-width: 36; stroke-linecap: round; opacity: .92; filter: drop-shadow(0 0 16px rgba(240, 85, 221, .4)); }
+.road-dash { fill: none; stroke: rgba(255, 255, 255, .6); stroke-width: 2.2; stroke-dasharray: 12 14; stroke-linecap: round; }
+.car { filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .5)); }
+.car-beam { mix-blend-mode: screen; }
+/* stops: reached ones are white; the one you're at pulses; the next one waits with a ring */
+.stop-dot { fill: #0b0b0b; stroke: #3a3a3a; stroke-width: 3; transition: fill .3s, stroke .3s; }
+.stop-n { fill: var(--mute); font: 700 13px var(--sans); text-anchor: middle; transition: fill .3s; }
+.stop.on .stop-dot { fill: #fff; stroke: #fff; }
+.stop.on .stop-n { fill: #000; }
+.stop-ring { fill: none; stroke: rgba(255, 255, 255, .5); stroke-width: 1.5; stroke-dasharray: 3 5; opacity: 0; transition: opacity .3s; transform-box: fill-box; transform-origin: center; }
+.stop.next .stop-ring { opacity: 1; animation: ring-spin 6s linear infinite; }
+@keyframes ring-spin { to { transform: rotate(360deg); } }
+.stop-pulse { fill: none; stroke: #fff; stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center; }
+.stop.here .stop-pulse { animation: stop-pulse 1.8s ease-out infinite; }
+@keyframes stop-pulse { from { opacity: .8; transform: scale(1); } to { opacity: 0; transform: scale(2); } }
+.stop-tag rect { fill: rgba(20, 20, 20, .82); stroke: rgba(255, 255, 255, .14); }
+.stop-tag text { fill: var(--mute); font: 600 13px var(--sans); text-anchor: middle; transition: fill .3s; }
+.stop.on .stop-tag rect { stroke: rgba(255, 255, 255, .3); }
+.stop.on .stop-tag text { fill: #fff; }
+.stop.here .stop-tag rect { fill: #fff; }
+.stop.here .stop-tag text { fill: #000; }
+.stop-tag.tall text { text-anchor: start; }
+.stop-lead { fill: none; stroke: rgba(255, 255, 255, .18); stroke-width: 1.5; stroke-dasharray: 2 5; stroke-linecap: round; }
+.stop.on .stop-lead { stroke: rgba(255, 255, 255, .45); }
+.stop-tag.tall .st-t { font: 700 17px var(--sans); fill: var(--mute); }
+.stop-tag.tall .st-d { font: 400 13.5px var(--sans); fill: var(--faint); }
+.stop.on .stop-tag.tall .st-t { fill: #fff; }
+.stop.on .stop-tag.tall .st-d { fill: var(--mute); }
+.stop-flag { opacity: .5; transition: opacity .3s; }
+.stop.on .stop-flag { opacity: 1; }
+/* where you are */
+.road-hud { position: absolute; top: 18px; left: 18px; z-index: 2; display: flex; align-items: center; gap: 10px; padding: 7px 14px 7px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; background: rgba(10, 10, 10, .75); border: 1px solid var(--line); backdrop-filter: blur(10px); }
+.road-dot { width: 8px; height: 8px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px #fff; }
+.road-meter { display: block; width: 70px; height: 4px; border-radius: 4px; background: rgba(255, 255, 255, .12); overflow: hidden; }
+.road-meter b { display: block; height: 100%; width: 0; background: var(--spectrum); }
 .road-stops { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
-.road-stops li { display: flex; flex-direction: column; gap: 4px; opacity: .45; transition: opacity .3s; }
+.road-stops li { display: flex; flex-direction: column; gap: 4px; opacity: .45; transition: opacity .3s; padding-top: 10px; border-top: 2px solid transparent; }
 .road-stops li.on { opacity: 1; }
+.road-stops li.here { border-image: var(--spectrum) 1; }
 .road-stops em { font-style: normal; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 700; border: 2px solid #444; color: var(--mute); }
 .road-stops li.on em { background: #fff; border-color: #fff; color: #000; }
 .road-stops b { font-size: 14px; }
 .road-stops span { font-size: 12px; color: var(--mute); line-height: 1.4; }
+/* phones: the tall road carries its own words */
+.road.tall { padding: 14px 6px; }
+.road.tall .road-stops { display: none; }
+.road.tall .road-hud { top: 12px; left: 12px; }
 /* Gradify AI in the corner */
 .ai-fab {
   --glow: 240, 85, 221; position: fixed; right: 20px; bottom: 20px; z-index: 40; display: flex; align-items: center; gap: 10px;
