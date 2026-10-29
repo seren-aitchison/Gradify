@@ -23,7 +23,7 @@ export function createGlobe(canvas, { onPick, onHover }) {
   let vyaw = 0, vpitch = 0, dragging = false, moved = false, last = null, idle = 0;
   let target = null;                                      // animate to face a topic
   let scene = { regions: [], pins: [], roads: [], portals: [], selected: null, rings: true };
-  let pinsOnScreen = [], visible = true, raf = 0, t0 = performance.now();
+  let pinsOnScreen = [], hubsOnScreen = [], visible = true, raf = 0, t0 = performance.now();
   // dots tinted by the nearest module region, worked out once per scene
   let dotTint = [];
 
@@ -115,6 +115,7 @@ export function createGlobe(canvas, { onPick, onHover }) {
     // hubs: glowing orange city markers, like the reference
     ctx.globalCompositeOperation = "lighter";
     const hubLabels = [];
+    hubsOnScreen = [];
     for (const [i, hub] of (scene.hubs || []).entries()) {
       const p = project(hub.v);
       if (p.z < 0.05) continue;
@@ -123,14 +124,16 @@ export function createGlobe(canvas, { onPick, onHover }) {
       glow.addColorStop(0, `rgba(255,190,110,${k})`); glow.addColorStop(0.2, `rgba(255,120,45,${0.8 * k})`); glow.addColorStop(0.5, `rgba(255,90,30,${0.25 * k})`); glow.addColorStop(1, "rgba(255,80,20,0)");
       ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(p.x, p.y, gr, 0, 7); ctx.fill();
       ctx.fillStyle = `rgba(255,236,210,${k})`; ctx.beginPath(); ctx.arc(p.x, p.y, 3, 0, 7); ctx.fill();
-      if (p.z > 0.35) hubLabels.push([hub.name.toUpperCase(), p.x + 8, p.y - 6, k]);
+      if (p.z > 0.35) hubLabels.push([hub.name.toUpperCase(), p.x + 8, p.y - 6, k, hub.id === scene.selected]);
+      if (hub.id === scene.selected) { ctx.globalCompositeOperation = "source-over"; ctx.beginPath(); ctx.arc(p.x, p.y, 11, 0, 7); ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.stroke(); ctx.globalCompositeOperation = "lighter"; }
+      if (p.z > 0.2) hubsOnScreen.push({ id: hub.id, x: p.x, y: p.y, r: 14 });
     }
     ctx.globalCompositeOperation = "source-over";
-    for (const [text, x, y, k] of hubLabels) {
-      ctx.font = `600 ${W < 500 ? 8.5 : 10}px Geist, Inter, system-ui, sans-serif`;
+    for (const [text, x, y, k, on] of hubLabels) {
+      ctx.font = `${on ? 700 : 600} ${on ? 12 : W < 500 ? 8.5 : 10}px Geist, Inter, system-ui, sans-serif`;
       ctx.textAlign = "left";
       ctx.lineWidth = 3; ctx.strokeStyle = "rgba(0,0,0,.8)"; ctx.strokeText(text, x, y);
-      ctx.fillStyle = `rgba(255,255,255,${0.85 * k})`; ctx.fillText(text, x, y);
+      ctx.fillStyle = on ? "#fff" : `rgba(255,255,255,${0.85 * k})`; ctx.fillText(text, x, y);
     }
 
     // prerequisites: great-circle arcs lifted a little off the surface
@@ -278,6 +281,8 @@ export function createGlobe(canvas, { onPick, onHover }) {
   function pick(x, y) {
     let best = null, d = 1e9;
     for (const p of pinsOnScreen) { const dd = Math.hypot(p.x - x, p.y - y); if (dd < Math.max(14, p.r) && dd < d) { d = dd; best = p.id; } }
+    // cities too, so whichever marker is nearest the tap wins
+    for (const p of hubsOnScreen) { const dd = Math.hypot(p.x - x, p.y - y); if (dd < p.r && dd < d) { d = dd; best = p.id; } }
     return best;
   }
   function setZoom(z) { zoom = Math.max(0.75, Math.min(2.2, z)); }
@@ -287,18 +292,21 @@ export function createGlobe(canvas, { onPick, onHover }) {
   new IntersectionObserver(([en]) => { visible = en.isIntersecting; if (visible) kick(); }).observe(canvas);
   resize(); R = Math.min(W, H) * 0.4;
 
-  return {
+  const api = {
     setScene,
     // face a point: put its longitude in the middle and tilt to its latitude
-    faceTo(v) {
+    faceTo(v, instant) {
       const lon = Math.atan2(v[0], v[2]), lat = Math.asin(v[1]);
       target = { yaw: lon, pitch: clampPitch(lat) };
+      if (instant) { yaw = target.yaw; pitch = target.pitch; target = null; vyaw = vpitch = 0; }
       idle = 0;
       kick();
     },
     zoomBy(f) { setZoom(zoom * f); kick(); },
     reset() { target = { ...HOME }; zoom = 1; idle = 0; kick(); },
   };
+  canvas.globe = api;  // for tests
+  return api;
 }
 
 export { vec };

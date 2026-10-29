@@ -20,12 +20,20 @@ export const MODULES = {
 // north and west, Year 2 in the south and east, and Year 3 is still in the fog over East Asia.
 const CENTRES = { anat: [50, 12], bio: [6, 20], gen: [24, 78], cardio: [-14, -58], phys: [40, -98], pharm: [-25, 134], placements: [36, 106] };
 const YEAR1 = new Set(["anat", "bio", "gen"]);
-// Hubs: cities where other Gradify learners are studying right now (example data)
+// Hubs: cities where other Gradify learners are studying right now (example data).
+// Each has how many are studying, and how many per module.
 const HUBS = [
-  ["New York", 40.7, -74], ["London", 51.5, -0.1], ["São Paulo", -23.5, -46.6],
-  ["Lagos", 6.5, 3.4], ["Cape Town", -33.9, 18.4], ["Dubai", 25.2, 55.3], ["Mumbai", 19.1, 72.9],
-  ["Tokyo", 35.7, 139.7], ["Sydney", -33.9, 151.2],
-];
+  { name: "New York", lat: 40.7, lon: -74, n: 342, by: { cardio: 96, phys: 74, pharm: 61, anat: 58, bio: 53 } },
+  { name: "London", lat: 51.5, lon: -0.1, n: 214, by: { cardio: 71, anat: 48, pharm: 39, phys: 31, gen: 25 } },
+  { name: "São Paulo", lat: -23.5, lon: -46.6, n: 167, by: { anat: 52, cardio: 44, bio: 33, phys: 21, gen: 17 } },
+  { name: "Lagos", lat: 6.5, lon: 3.4, n: 128, by: { bio: 41, anat: 35, gen: 22, cardio: 18, phys: 12 } },
+  { name: "Cape Town", lat: -33.9, lon: 18.4, n: 86, by: { phys: 27, cardio: 22, pharm: 17, anat: 12, bio: 8 } },
+  { name: "Dubai", lat: 25.2, lon: 55.3, n: 74, by: { pharm: 24, cardio: 19, bio: 14, gen: 10, phys: 7 } },
+  { name: "Mumbai", lat: 19.1, lon: 72.9, n: 291, by: { bio: 82, gen: 68, anat: 57, pharm: 48, cardio: 36 } },
+  { name: "Tokyo", lat: 35.7, lon: 139.7, n: 153, by: { gen: 46, phys: 38, bio: 31, pharm: 22, cardio: 16 } },
+  { name: "Sydney", lat: -33.9, lon: 151.2, n: 119, by: { pharm: 37, cardio: 29, anat: 24, phys: 17, gen: 12 } },
+].map((h) => ({ ...h, id: `hub:${h.name}`, v: vec(h.lat, h.lon) }));
+
 
 // Evidence order: recall, explain, apply, retain, connect (0–100)
 const EVIDENCE = ["Recall", "Explain", "Apply to new problems", "Retained over time", "Connected to other topics"];
@@ -79,7 +87,7 @@ export function stateOf(t) {
 }
 export const strength = (t) => Math.round(t.ev.reduce((a, b) => a + b, 0) / t.ev.length);
 
-let selected = "cycle";
+let selected = "cycle", lastTopic = "cycle";
 let onReview = () => {};
 
 let globe = null;
@@ -112,7 +120,7 @@ function scene() {
   return {
     regions,
     rings: true,
-    hubs: HUBS.map(([name, lat, lon]) => ({ name, v: vec(lat, lon) })),
+    hubs: HUBS,
     selected,
     pins: TOPICS.map((t) => ({ id: t.id, v: place[t.id], c: MODULES[t.m]?.c ?? "#777777", name: t.name, state: stateOf(t), strength: strength(t) })),
     roads: ROADS.map(([a, b]) => ({
@@ -129,7 +137,28 @@ function draw() {
   if (jump) jump.value = selected;
 }
 
+// A city card: who is studying there, and which modules. The bars use each module's colour.
+function inspectHub(h) {
+  const top = Math.max(...Object.values(h.by));
+  const mine = TOPICS.find((x) => x.id === lastTopic);
+  const same = h.by[mine?.m] ?? 0;
+  $("#inspector").style.setProperty("--c", "#ff8a3d");
+  $("#inspector").innerHTML = `
+    <span class="kicker">Learners studying now · example</span>
+    <b class="topic">${esc(h.name)}</b>
+    <span class="state-pill hub">${h.n} studying now</span>
+    <p>${same && mine ? `${same} of them are in ${esc(MODULES[mine.m].name)}, like you.` : "Gradify learners in this city, right now."}</p>
+    <ul class="evidence">${Object.entries(h.by).map(([k, v]) => `
+      <li style="--c:${MODULES[k].c}"><span>${esc(MODULES[k].name)}</span><em>${v}</em><i><b style="width:${Math.round((v / top) * 100)}%" class="ok"></b></i></li>`).join("")}</ul>
+    <div class="hub-actions">
+      <button type="button" class="btn btn-light lg btn-sm" id="hub-groups">${icon("people")}<span>Find a study group</span></button>
+      ${mine ? `<button type="button" class="btn btn-ghost lg btn-sm" id="hub-back">Back to ${esc(mine.name)}</button>` : ""}
+    </div>`;
+}
+
 function inspect() {
+  const hub = HUBS.find((h) => h.id === selected);
+  if (hub) return inspectHub(hub);
   const t = TOPICS.find((x) => x.id === selected);
   const st = stateOf(t), m = MODULES[t.m];
   const c = m ? m.c : "#888";
@@ -148,9 +177,10 @@ function inspect() {
 
 function select(id, turn) {
   selected = id;
+  if (!id.startsWith("hub:")) lastTopic = id;
   draw();
   inspect();
-  if (turn) globe?.faceTo(place[id]);
+  if (turn) globe?.faceTo(place[id] ?? HUBS.find((h) => h.id === id).v);
 }
 
 export function showTopic(id) {
@@ -175,18 +205,24 @@ export function initEarth(opts) {
   const canvas = $("#earth-canvas");
   globe = createGlobe(canvas, {
     onPick: (id) => select(id),
-    onHover: (id) => { canvas.title = id ? TOPICS.find((t) => t.id === id).name : ""; },
+    onHover: (id) => {
+      const hub = HUBS.find((h) => h.id === id);
+      canvas.title = hub ? `${hub.name}: ${hub.n} learners studying now` : id ? TOPICS.find((t) => t.id === id).name : "";
+    },
   });
   // keyboard and screen-reader route to every topic, since the globe itself is a picture
   const jump = $("#earth-jump");
   jump.innerHTML = Object.entries(MODULES).map(([key, m]) => `<optgroup label="${esc(m.name)}">${TOPICS.filter((t) => t.m === key).map((t) =>
     `<option value="${t.id}">${esc(t.name)} · ${STATES[stateOf(t)].label}</option>`).join("")}</optgroup>`).join("") +
-    `<optgroup label="Year 3">${TOPICS.filter((t) => !t.m).map((t) => `<option value="${t.id}">${esc(t.name)} · Locked</option>`).join("")}</optgroup>`;
+    `<optgroup label="Year 3">${TOPICS.filter((t) => !t.m).map((t) => `<option value="${t.id}">${esc(t.name)} · Locked</option>`).join("")}</optgroup>` +
+    `<optgroup label="Learners studying now">${HUBS.map((h) => `<option value="${h.id}">${esc(h.name)} · ${h.n} studying</option>`).join("")}</optgroup>`;
   jump.addEventListener("change", () => select(jump.value, true));
   $("#earth-in").addEventListener("click", () => globe.zoomBy(1.2));
   $("#earth-out").addEventListener("click", () => globe.zoomBy(1 / 1.2));
   $("#earth-reset").addEventListener("click", () => globe.reset());
   $("#inspector").addEventListener("click", (e) => {
+    if (e.target.closest("#hub-groups")) return document.dispatchEvent(new CustomEvent("lifeos:goto", { detail: "group" }));
+    if (e.target.closest("#hub-back")) return select(lastTopic, true);
     if (!e.target.closest("#review")) return;
     const t = TOPICS.find((x) => x.id === selected);
     t.wasFading = stateOf(t) === "fading";
