@@ -135,6 +135,7 @@ kbd { font: 11px var(--mono); padding: 1px 6px; border-radius: 5px; border: 1px 
 .r-again b { color: #ff6b6b; } .r-hard b { color: #ffb44d; } .r-good b { color: #4fe0a6; } .r-easy b { color: #7aa8ff; }
 .done-screen { align-items: center; text-align: center; max-width: 720px; margin: 0 auto; }
 .done-screen .deck-stats { width: 100%; }
+@keyframes pop { from { transform: scale(.4) rotate(-10deg); opacity: 0; } }
 .done-burst { width: 80px; height: 80px; border-radius: 50%; display: grid; place-items: center; background: #fff; color: #000; box-shadow: 0 0 60px -10px rgba(240, 85, 221, .8); animation: pop .6s cubic-bezier(.2, 1.4, .4, 1); }
 .done-burst .ico { width: 38px; height: 38px; }
 .rate-sum { display: flex; gap: 16px; font-size: 13px; color: var(--faint); text-transform: capitalize; }

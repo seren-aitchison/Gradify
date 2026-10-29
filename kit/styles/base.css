@@ -49,6 +49,7 @@ a { color: inherit; }
 .aurora span:nth-child(2) { width: 40vmax; height: 36vmax; top: 30vh; right: -18vmax; background: #fff; opacity: .05; animation-duration: 38s; animation-delay: -8s; }
 .aurora span:nth-child(3) { width: 40vmax; height: 34vmax; bottom: -20vmax; left: 10vw; background: #fff; opacity: .04; animation-duration: 35s; animation-delay: -14s; }
 .aurora span:nth-child(4), .aurora span:nth-child(5) { display: none; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @keyframes drift {
   0%   { transform: translate(0, 0) scale(1); }
   50%  { transform: translate(5vw, 3vh) scale(1.06); }

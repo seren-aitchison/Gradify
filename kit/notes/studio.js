@@ -4,6 +4,7 @@
 // simple rules, the browser's own voices and Web Audio. The full version runs on Gradify AI
 // (see docs/AI-PIPELINE.md in the repo).
 import { icon } from "../core/icons.js";
+import { mountVideo } from "./video3d.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 let ctx, pack = null, tab = "notes", stopPlayback = () => {};
@@ -200,70 +201,126 @@ const bold = (f) => `<b>${ctx.esc(f.term)}</b>${f.ab ? ` <em class="ab">${ctx.es
 
 function notesView(p) {
   const loose = p.facts.filter((f) => !f.term);
-  return `<article class="clean-notes">
+  const kind = (f) => (f.kind === "cause" ? "Cause" : f.kind === "eq" ? "Equation" : "Definition");
+  return `<article class="clean-notes holo">
+    <span class="holo-kicker">Clean notes</span>
     <h2>${ctx.esc(p.title)}</h2>
-    <p class="nt-summary"><b>In short:</b> ${p.groups.length} big ideas: ${p.groups.map((g) => ctx.esc(g.theme.toLowerCase())).join(", ")}. ${p.facts.filter((f) => f.term).length} key terms${p.equations.length ? `, ${p.equations.length} equation` : ""}${p.dates.length ? ` and ${p.dates.length} ${p.dates.length === 1 ? "date" : "dates"} for your calendar` : ""}.</p>
+    <p class="nt-summary"><b>In short</b> ${p.groups.length} big ideas: ${p.groups.map((g) => ctx.esc(g.theme.toLowerCase())).join(", ")}. ${p.facts.filter((f) => f.term).length} key terms${p.equations.length ? `, ${p.equations.length} equation` : ""}${p.dates.length ? ` and ${p.dates.length} ${p.dates.length === 1 ? "date" : "dates"} for your calendar` : ""}.</p>
     ${p.equations.length ? `<div class="nt-eq">${p.equations.map((e) => `<code>${ctx.esc(e)}</code>`).join("")}</div>` : ""}
-    ${p.groups.map((g) => `<section style="--c:#${g.c}"><h3>${ctx.esc(g.label)} ${g.facts.length > 1 ? `<span class="acr" title="Memory hook">${g.acronym}</span>` : ""}</h3><ul>${g.facts.map((f) => `<li>${bold(f)}</li>`).join("")}</ul></section>`).join("")}
-    ${loose.length ? `<section><h3>Other points</h3><ul>${loose.map((f) => `<li>${ctx.esc(f.text)}</li>`).join("")}</ul></section>` : ""}
+    <div class="nt-tree">
+      ${p.groups.map((g, gi) => `<section style="--c:#${g.c};--d:${gi * 0.08}s"><h3><span class="nt-sym" aria-hidden="true">${symbolFor(g.label + " " + g.facts.map((f) => f.def).join(" "))}</span>${ctx.esc(g.label)} ${g.facts.length > 1 ? `<span class="acr" title="Memory hook: the first letters of these terms">${g.acronym}</span>` : ""}</h3>
+        <ul>${g.facts.map((f) => `<li><span class="nt-kind">${kind(f)}</span>${bold(f)}</li>`).join("")}</ul></section>`).join("")}
+      ${loose.length ? `<section style="--c:#8a8a8a"><h3>Other points</h3><ul>${loose.map((f) => `<li>${ctx.esc(f.text)}</li>`).join("")}</ul></section>` : ""}
+    </div>
     ${p.dates.length ? `<section class="nt-dates"><h3>Dates</h3>${p.dates.map((d, i) => `<div class="event"><span class="date"><b>${d.when.getDate()}</b>${ctx.fmt(d.when, { month: "short" })}</span><span class="ev-txt"><b>${ctx.esc(d.what)}</b><span>${ctx.fmt(d.when, { weekday: "long" })} · in ${d.in} ${d.in === 1 ? "day" : "days"}</span></span><button type="button" class="go add-date" data-i="${i}" aria-label="Add ${ctx.esc(d.what)} to calendar">+</button></div>`).join("")}</section>` : ""}
+    ${sparkles(6)}
   </article>
   <div class="out-actions"><button type="button" class="btn btn-ghost lg btn-sm" data-dl="md"><span>Download notes (.md)</span></button></div>`;
 }
 
+// a few twinkling points of light for the holo panels
+const sparkles = (n) => `<span class="holo-sparks" aria-hidden="true">${Array.from({ length: n }, (_, i) => `<i style="--x:${(i * 37 + 11) % 97}%;--y:${(i * 53 + 7) % 91}%;--t:${(i * 0.7) % 3}s"></i>`).join("")}</span>`;
+
 function cardsView(p) {
-  return `<div class="cap-cards">${p.cards.map((c) => `<button type="button" class="flash" aria-pressed="false"><em class="tag">${c.type}</em><span class="q">${ctx.esc(c.q)}</span><span class="a">${ctx.esc(c.a)}</span></button>`).join("")}</div>
+  return `<div class="holo-cards">${p.cards.map((c, i) => `<button type="button" class="holo-card" aria-pressed="false" style="--d:${Math.min(i, 12) * 0.04}s" aria-label="${ctx.esc(c.q)}. Press to see the answer.">
+      <span class="hc-inner">
+        <span class="hc-face hc-front"><em class="hc-tag">${c.type}</em><span class="q">${ctx.esc(c.q)}</span><span class="hc-hint">Tap to flip</span></span>
+        <span class="hc-face hc-back"><em class="hc-tag">Answer</em><span class="a">${ctx.esc(c.a)}</span></span>
+      </span></button>`).join("")}</div>
   <div class="out-actions"><button type="button" class="btn btn-light lg btn-sm" id="add-cards"><span>Add ${p.cards.length} cards to my flashcard feed</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-dl="csv"><span>Download for Anki (.csv)</span></button></div>`;
 }
 
+// The mind map: a left-to-right tree like a holographic file browser. The notes' title is the
+// root; each topic branches off it, each term off its topic, with a short definition beside it.
+// Branches draw themselves in. Terms glow once you've rated them Good or Easy.
 function mapView(p) {
-  const W = 820, H = 560, CX = W / 2, CY = H / 2;
-  let links = "", nodes = "";
-  p.groups.forEach((g, i) => {
-    const a = -Math.PI / 2 + (i * 2 * Math.PI) / p.groups.length;
-    const gx = CX + Math.cos(a) * 190, gy = CY + Math.sin(a) * 150;
-    links += `<path d="M${CX} ${CY} Q${(CX + gx) / 2 + Math.sin(a) * 20} ${(CY + gy) / 2 - Math.cos(a) * 20} ${gx} ${gy}" class="sp-link" stroke="#${g.c}"/>`;
-    if (g.facts.length > 1) links += `<g class="sp-acr" transform="translate(${(CX + gx) / 2} ${(CY + gy) / 2})"><rect x="-${g.acronym.length * 5 + 8}" y="-11" width="${g.acronym.length * 10 + 16}" height="22" rx="11" fill="#${g.c}"/><text y="4">${g.acronym}</text></g>`;
+  const ROW = 34, GAP = 22, X0 = 30, XG = 250, XL = 500;
+  const tw = (t, px) => t.length * px * 0.56 + 18;   // rough text width for a chip
+  // the definitions start clear of the widest term, and the picture is as wide as they need
+  const XD = Math.max(...p.groups.flatMap((g) => g.facts.map((f) => XL + tw(short(f.term, 4), 12) + 26)), 640) + 26;
+  const defs = p.groups.flatMap((g) => g.facts.map((f) => short(f.def, 6)));
+  const blocks = p.groups.map((g) => Math.max(1, g.facts.length) * ROW);
+  const H = Math.max(260, blocks.reduce((a, b) => a + b, 0) + GAP * (p.groups.length - 1) + 80);
+  const W = Math.max(960, XD + Math.max(...defs.map((d) => d.length)) * 6.9 + 30), rootY = H / 2;
+  const curve = (x1, y1, x2, y2) => `M${x1} ${y1} C${x1 + (x2 - x1) * 0.55} ${y1}, ${x2 - (x2 - x1) * 0.55} ${y2}, ${x2} ${y2}`;
+  const title = short(p.title, 4), rootW = tw(title, 15) + 30;
+  let y = 40, links = "", nodes = "", n = 0;
+  p.groups.forEach((g, gi) => {
+    const gy = y + blocks[gi] / 2, c = `#${g.c}`;
+    const label = short(g.theme, 3), gw = tw(label, 13) + 40;
+    links += `<path d="${curve(X0 + rootW, rootY, XG, gy)}" class="mm-branch" stroke="url(#mm-g${gi})" style="--d:${(n++) * 0.06}s" pathLength="1"/>`;
     g.facts.forEach((f, j) => {
-      const spread = Math.min(2.4, 0.75 * (g.facts.length - 1));
-      const b = a + (g.facts.length === 1 ? 0 : -spread / 2 + (spread * j) / (g.facts.length - 1));
-      const fx = gx + Math.cos(b) * 108, fy = gy + Math.sin(b) * 78;
-      const on = learnt.has(f.term.toLowerCase());
-      const cs = Math.cos(b), sn = Math.sin(b);
-      const anchor = cs > 0.35 ? "start" : cs < -0.35 ? "end" : "middle";
-      const tx = anchor === "start" ? 13 : anchor === "end" ? -13 : 0, ty = anchor === "middle" ? (sn > 0 ? 24 : -15) : 4;
-      links += `<line x1="${gx}" y1="${gy}" x2="${fx}" y2="${fy}" class="sp-leaf-link" stroke="#${g.c}"/>`;
-      nodes += `<g class="sp-leaf ${on ? "learnt" : ""}" transform="translate(${fx.toFixed(1)} ${fy.toFixed(1)})" style="--c:#${g.c}"><circle r="${on ? 9 : 7}"/><text x="${tx}" y="${ty}" text-anchor="${anchor}">${ctx.esc(short(f.term, 3))}</text><title>${ctx.esc(f.text)}</title></g>`;
+      const fy = y + j * ROW + ROW / 2, on = learnt.has(f.term.toLowerCase());
+      const term = short(f.term, 4), fw = tw(term, 12) + 26;
+      links += `<path d="${curve(XG + gw, gy, XL, fy)}" class="mm-twig" stroke="${c}" style="--d:${(n++) * 0.05}s" pathLength="1"/>`;
+      links += `<path d="M${XL + fw} ${fy} H${XD - 8}" class="mm-leafline" stroke="${c}"/>`;
+      nodes += `<g class="mm-leaf ${on ? "learnt" : ""}" transform="translate(${XL} ${fy})" style="--c:${c};--d:${0.3 + j * 0.05 + gi * 0.08}s">
+        <rect x="0" y="-12" width="${fw}" height="24" rx="7"/><circle cx="12" cy="0" r="3.5"/><text x="22" y="4">${ctx.esc(term)}</text><title>${ctx.esc(f.text)}</title></g>
+        <text class="mm-def" x="${XD}" y="${fy + 4}">${ctx.esc(short(f.def, 6))}</text>`;
     });
-    nodes += `<g class="sp-group" transform="translate(${gx.toFixed(1)} ${gy.toFixed(1)})" style="--c:#${g.c}"><circle r="34"/><text y="4">${ctx.esc(short(g.theme, 2))}</text></g>`;
+    nodes += `<g class="mm-group" transform="translate(${XG} ${gy})" style="--c:${c};--d:${0.15 + gi * 0.08}s">
+      <rect x="0" y="-17" width="${gw}" height="34" rx="9"/><text class="mm-sym" x="14" y="5">${symbolFor(g.label + " " + g.facts.map((x) => x.def).join(" "))}</text><text x="34" y="5">${ctx.esc(label)}</text>
+      ${g.facts.length > 1 ? `<g transform="translate(${gw + 8} 0)"><rect class="mm-acr" x="0" y="-10" width="${g.acronym.length * 8 + 14}" height="20" rx="10"/><text class="mm-acr-t" x="${(g.acronym.length * 8 + 14) / 2}" y="4">${g.acronym}</text></g>` : ""}</g>`;
+    y += blocks[gi] + GAP;
   });
-  nodes += `<g class="sp-centre" transform="translate(${CX} ${CY})"><circle r="52"/><text y="5">${ctx.esc(short(p.title, 3))}</text></g>`;
-  return `<div class="spidermap"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Spidermap of ${ctx.esc(p.title)}">${links}${nodes}</svg></div>
-    <p class="sub">Coloured pills are memory hooks: the first letters of the terms in that branch. Facts glow once you've rated them Good or Easy in the flashcard feed.</p>`;
+  const grads = p.groups.map((g, gi) => `<linearGradient id="mm-g${gi}" x1="0" x2="1"><stop offset="0" stop-color="#5ef0ff"/><stop offset="1" stop-color="#${g.c}"/></linearGradient>`).join("");
+  nodes += `<g class="mm-root" transform="translate(${X0} ${rootY})"><rect x="0" y="-21" width="${rootW}" height="42" rx="12"/><text x="${rootW / 2}" y="5">${ctx.esc(title)}</text></g>`;
+  return `<div class="mindmap holo">
+      <span class="holo-kicker">Mind map</span>
+      <div class="mm-scroll"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Mind map of ${ctx.esc(p.title)}">
+        <defs>${grads}<filter id="mm-glow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <g filter="url(#mm-glow)">${links}</g>${nodes}</svg></div>
+      ${sparkles(9)}
+    </div>
+    <p class="sub">Coloured pills are memory hooks: the first letters of the terms in that branch. Terms glow once you've rated them Good or Easy in the flashcard feed.</p>`;
 }
 
 function sheetSvg(p) {
-  const facts = p.facts.filter((f) => f.term);
-  const cols = 3, tw = 290, th = 112, pad = 20, top = 150 + (p.equations.length ? 56 : 0);
+  // terms in topic order, so each topic's colour reads as a block
+  const facts = p.groups.flatMap((g) => g.facts.filter((f) => f.term));
+  const cols = 3, tw = 290, th = 112, pad = 28, gap = 14, top = 164 + (p.equations.length ? 64 : 0);
   const rows = Math.ceil(facts.length / cols);
-  const H = top + rows * (th + 14) + 70;
+  const W = pad * 2 + cols * tw + (cols - 1) * gap;
+  const hooks = p.groups.filter((g) => g.facts.length > 1).map((g) => `${g.acronym} = ${g.facts.map((f) => f.term).join(", ")}`);
+  // memory hooks wrap onto as many lines as they need, about 120 characters each
+  const hookLines = hooks.reduce((ls, h) => { const lastLine = ls.at(-1); if (lastLine !== undefined && (lastLine + "  ·  " + h).length <= 120) ls[ls.length - 1] = lastLine + "  ·  " + h; else ls.push(h); return ls; }, []);
+  const H = top + rows * (th + gap) + 50 + hookLines.length * 20;
   const colourOf = (f) => (p.groups.find((g) => g.facts.includes(f)) || { c: "888888" }).c;
   const wrap = (s, n) => { const out = []; let line = ""; for (const w of s.split(" ")) { if ((line + " " + w).trim().length > n) { out.push(line.trim()); line = w; } else line += " " + w; } out.push(line.trim()); return out.slice(0, 3); };
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${pad * 2 + cols * tw + (cols - 1) * 14} ${H}" font-family="Geist, Inter, system-ui, sans-serif">
-    <rect width="100%" height="100%" rx="24" fill="#0b0b0b"/>
-    <text x="${pad + 4}" y="60" font-size="34" font-weight="700" fill="#fff">${ctx.esc(p.title)}</text>
-    <text x="${pad + 4}" y="92" font-size="15" fill="#9a9a9a">Cheat sheet · ${facts.length} key terms · made with Gradify</text>
-    <rect x="${pad + 4}" y="110" width="160" height="5" rx="2.5" fill="url(#spec)"/>
-    <defs><linearGradient id="spec"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs>
-    ${p.equations.map((e, i) => `<rect x="${pad + i * 230}" y="138" width="216" height="42" rx="12" fill="#1a1a1a" stroke="#333"/><text x="${pad + i * 230 + 108}" y="166" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">${ctx.esc(e)}</text>`).join("")}
+  const bracket = (x, y, dx, dy) => `<path d="M${x} ${y + dy * 22} V${y} H${x + dx * 22}" fill="none" stroke="#5ef0ff" stroke-width="2" stroke-linecap="round"/>`;
+  let grid = "";
+  for (let x = 0; x <= W; x += 32) grid += `<line x1="${x}" y1="0" x2="${x}" y2="${H}"/>`;
+  for (let y = 0; y <= H; y += 32) grid += `<line x1="0" y1="${y}" x2="${W}" y2="${y}"/>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" font-family="Geist, Inter, system-ui, sans-serif">
+    <defs>
+      <linearGradient id="cs-bg" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="#0b2a36"/><stop offset=".55" stop-color="#06141c"/><stop offset="1" stop-color="#03090d"/></linearGradient>
+      <radialGradient id="cs-glow" cx="0.15" cy="0" r="0.9"><stop offset="0" stop-color="#5ef0ff" stop-opacity=".18"/><stop offset="1" stop-color="#5ef0ff" stop-opacity="0"/></radialGradient>
+      <linearGradient id="cs-card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#10303c" stop-opacity=".85"/><stop offset="1" stop-color="#071820" stop-opacity=".9"/></linearGradient>
+      <filter id="cs-soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
+      <linearGradient id="spec"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient>
+    </defs>
+    <rect width="100%" height="100%" rx="24" fill="url(#cs-bg)"/>
+    <rect width="100%" height="100%" rx="24" fill="url(#cs-glow)"/>
+    <g stroke="#5ef0ff" stroke-opacity=".05">${grid}</g>
+    <rect x="1" y="1" width="${W - 2}" height="${H - 2}" rx="23" fill="none" stroke="#5ef0ff" stroke-opacity=".35"/>
+    ${bracket(14, 14, 1, 1)}${bracket(W - 14, 14, -1, 1)}${bracket(14, H - 14, 1, -1)}${bracket(W - 14, H - 14, -1, -1)}
+    <text x="${pad + 4}" y="58" font-size="12" font-weight="600" letter-spacing="3" fill="#5ef0ff">CHEAT SHEET · ${facts.length} KEY TERMS</text>
+    <text x="${pad + 4}" y="100" font-size="36" font-weight="700" fill="#fff">${ctx.esc(p.title)}</text>
+    <rect x="${pad + 4}" y="120" width="160" height="4" rx="2" fill="url(#spec)"/>
+    <text x="${W - pad - 4}" y="58" font-size="12" fill="#7fb8c4" text-anchor="end">made with Gradify</text>
+    ${p.equations.map((e, i) => `<g transform="translate(${pad + i * 250} 146)"><rect width="234" height="46" rx="12" fill="#5ef0ff" fill-opacity=".1" filter="url(#cs-soft)"/><rect width="234" height="46" rx="12" fill="#0a2630" stroke="#5ef0ff" stroke-opacity=".7"/><text x="117" y="30" font-size="21" font-weight="700" fill="#e8feff" text-anchor="middle">${ctx.esc(e)}</text></g>`).join("")}
     ${facts.map((f, i) => {
-      const x = pad + (i % cols) * (tw + 14), y = top + Math.floor(i / cols) * (th + 14), c = colourOf(f);
-      return `<g transform="translate(${x} ${y})"><rect width="${tw}" height="${th}" rx="16" fill="#151515" stroke="#${c}" stroke-opacity=".7"/>
-        <circle cx="34" cy="34" r="20" fill="#${c}" fill-opacity=".25"/><text x="34" y="42" font-size="20" text-anchor="middle">${symbolFor(f.term + " " + f.def)}</text>
-        <text x="64" y="32" font-size="16" font-weight="700" fill="#fff">${ctx.esc(short(f.term, 4))}${f.ab ? ` (${ctx.esc(f.ab)})` : ""}</text>
-        ${wrap(f.def, 38).map((l, k) => `<text x="20" y="${70 + k * 17}" font-size="13" fill="#bdbdbd">${ctx.esc(l)}</text>`).join("")}</g>`;
+      const x = pad + (i % cols) * (tw + gap), y = top + Math.floor(i / cols) * (th + gap), c = colourOf(f);
+      return `<g transform="translate(${x} ${y})">
+        <rect width="${tw}" height="${th}" rx="16" fill="#${c}" fill-opacity=".12" filter="url(#cs-soft)"/>
+        <rect width="${tw}" height="${th}" rx="16" fill="url(#cs-card)" stroke="#${c}" stroke-opacity=".75"/>
+        <rect x="18" y="0" width="56" height="2" fill="#${c}"/>
+        <circle cx="34" cy="36" r="19" fill="#${c}" fill-opacity=".2" stroke="#${c}" stroke-opacity=".6"/><text x="34" y="43" font-size="19" text-anchor="middle">${symbolFor(f.term + " " + f.def)}</text>
+        <text x="64" y="34" font-size="16" font-weight="700" fill="#fff">${ctx.esc(short(f.term, 4))}${f.ab ? ` (${ctx.esc(f.ab)})` : ""}</text>
+        <text x="64" y="52" font-size="10" font-weight="600" letter-spacing="1.5" fill="#${c}">${f.kind === "cause" ? "CAUSE" : f.kind === "eq" ? "EQUATION" : "DEFINITION"}</text>
+        ${wrap(f.def, 38).map((l, k) => `<text x="20" y="${78 + k * 16}" font-size="13" fill="#b9d4da">${ctx.esc(l)}</text>`).join("")}</g>`;
     }).join("")}
-    <text x="${pad + 4}" y="${H - 28}" font-size="13" fill="#8a8a8a">Memory hooks: ${p.groups.filter((g) => g.facts.length > 1).map((g) => `${g.acronym} = ${g.facts.map((f) => f.term).join(", ")}`).map(ctx.esc).join("  ·  ")}</text>
+    ${hookLines.map((l, k) => `<text x="${pad + 4}" y="${top + rows * (th + gap) + 22 + k * 20}" font-size="13" fill="#7fb8c4">${k === 0 ? "Memory hooks: " : ""}${ctx.esc(l)}</text>`).join("")}
   </svg>`;
 }
 function sheetView(p) {
@@ -279,13 +336,8 @@ function slidesOf(p) {
   return s;
 }
 function videoView(p) {
-  const slides = slidesOf(p);
-  return `<div class="video" id="video" data-i="0">
-    ${slides.map((s, i) => `<div class="slide ${i === 0 ? "on" : ""}" style="--c:#${s.c}"><span class="sl-sym">${s.sym}</span><h4>${ctx.esc(s.h)}</h4>${s.sub ? `<p>${ctx.esc(s.sub)}</p>` : ""}${s.big ? `<p class="sl-big">${ctx.esc(s.big)}</p>` : ""}${s.pts ? `<ul>${s.pts.map((x) => `<li>${ctx.esc(x)}</li>`).join("")}</ul>` : ""}</div>`).join("")}
-    <div class="caption" id="caption"></div>
-    <div class="v-bar"><i id="v-prog"></i></div>
-  </div>
-  <div class="out-actions"><button type="button" class="btn btn-light lg btn-sm" id="v-play"><span>▶ Play with voiceover</span></button><button type="button" class="btn btn-ghost lg btn-sm" id="v-stop"><span>Stop</span></button><span class="sub">${slides.length} slides · uses your device's voice</span></div>`;
+  return `<div id="video-root" class="video-root"></div>
+  <p class="sub">${slidesOf(p).length} scenes · drag the timeline to scrub, Space to play, ↑ ↓ to jump between keyframes · narrated with your device's voice</p>`;
 }
 
 // Chant: lyrics on a beat, made with Web Audio
@@ -352,22 +404,6 @@ function say(text, opts = {}) {
   });
 }
 const wait = (ms, token) => new Promise((r) => { const t = setTimeout(r, ms); token.timers.push(t); });
-
-async function playVideo() {
-  stopPlayback();
-  const token = { stop: false, timers: [] };
-  stopPlayback = () => { token.stop = true; token.timers.forEach(clearTimeout); synth?.cancel(); };
-  const slides = slidesOf(pack);
-  const els = [...document.querySelectorAll("#video .slide")];
-  for (let i = 0; i < slides.length && !token.stop; i++) {
-    els.forEach((e, j) => e.classList.toggle("on", j === i));
-    $("#v-prog").style.width = `${((i + 1) / slides.length) * 100}%`;
-    $("#caption").textContent = slides[i].say;
-    await say(slides[i].say, { rate: 1.02 });
-    if (!token.stop) await wait(500, token);
-  }
-  if (!token.stop) $("#caption").textContent = "";
-}
 
 async function playQuiz() {
   stopPlayback();
@@ -505,17 +541,23 @@ const TABS = [
   { id: "cards", name: "Flashcards", i: "layers", type: "Active recall" },
   { id: "map", name: "Spidermap", i: "route", type: "Visual" },
   { id: "sheet", name: "Cheat sheet", i: "palette", type: "Visual" },
-  { id: "video", name: "Video", i: "sparkles", type: "Watch and listen" },
+  { id: "video", name: "3D video", i: "sparkles", type: "Animate and watch" },
   { id: "song", name: "Chant", i: "music", type: "Listen and repeat" },
   { id: "audio", name: "Audio quiz", i: "bell", type: "Listen and answer" },
 ];
+let video = null;   // the mounted 3D video, while its tab is open
 function render() {
   stopPlayback();
+  video?.destroy(); video = null;
   $("#studio-tabs").innerHTML = TABS.map((t) => `<button type="button" class="st-tab" role="tab" data-tab="${t.id}" aria-selected="${t.id === tab}" ${pack ? "" : "disabled"}>${icon(t.i)}<span><b>${t.name}</b><em>${t.type}</em></span></button>`).join("");
   const out = $("#studio-out");
   if (!pack) { out.innerHTML = '<p class="empty-note">Your study pack appears here: clean notes, flashcards, a spidermap, a cheat sheet, a narrated video, a chant and an audio quiz.</p>'; return; }
   if (!pack.facts.length) { out.innerHTML = '<p class="empty-note">No facts found. Try notes with lines like “systole is the phase when the ventricles contract” or “stroke volume = blood pumped per beat”.</p>'; return; }
   out.innerHTML = { notes: notesView, cards: cardsView, map: mapView, sheet: sheetView, video: videoView, song: songView, audio: audioView }[tab](pack);
+  if (tab === "video") {
+    video = mountVideo($("#video-root"), { slides: slidesOf(pack), say, cancelSpeech: () => synth?.cancel(), esc: ctx.esc, toast: ctx.toast });
+    stopPlayback = () => video?.stop();
+  }
 }
 
 async function make() {
@@ -608,7 +650,7 @@ export function initStudio(context) {
   root.addEventListener("click", (e) => {
     const t = e.target.closest("[data-tab]");
     if (t) { tab = t.dataset.tab; render(); return; }
-    const f = e.target.closest(".flash");
+    const f = e.target.closest(".holo-card");
     if (f) { f.setAttribute("aria-pressed", String(f.getAttribute("aria-pressed") !== "true")); return; }
     const dl = e.target.closest("[data-dl]");
     if (dl) { downloadAs(dl.dataset.dl); return; }
@@ -628,10 +670,9 @@ export function initStudio(context) {
       ctx.toast(`Added “${ctx.esc(x.what)}” to your calendar.`);
       return;
     }
-    if (e.target.closest("#v-play")) playVideo();
     if (e.target.closest("#s-play")) playSong();
     if (e.target.closest("#aq-play")) playQuiz();
-    if (e.target.closest("#v-stop, #s-stop, #aq-stop")) stopPlayback();
+    if (e.target.closest("#s-stop, #aq-stop")) stopPlayback();
   });
   // facts rated Good or Easy in the flashcard feed light up on the spidermap
   document.addEventListener("lifeos:learnt", (e) => {

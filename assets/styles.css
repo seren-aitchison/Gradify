@@ -56,7 +56,6 @@ h1 {
 @keyframes float { from { transform: translateY(-6px); } to { transform: translateY(8px); } }
 .spot-body { max-width: 30em; }
 .spot-body.in { animation: rise .5s cubic-bezier(.2, .8, .2, 1); }
-@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 .spot-top { display: flex; gap: 8px; margin-bottom: 14px; }
 .spotlight h2 { margin: 0; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.05; letter-spacing: -.03em; font-weight: 700; text-shadow: 0 2px 16px rgba(0, 0, 0, .3); }
 .spotlight p { margin: 8px 0 0; color: rgba(255, 255, 255, .78); font-size: 15px; line-height: 1.5; max-width: 26em; }

@@ -1,6 +1,6 @@
 // Gradify service worker: lets the site open offline.
 // Network first, so a new deploy shows straight away; the cache is the fallback.
-const CACHE = "gradify-v14";
+const CACHE = "gradify-v15";
 const SHELL = [
   "./", "index.html", "app.html", "manifest.webmanifest", "gradify.config.js",
   // homepage
@@ -10,7 +10,7 @@ const SHELL = [
   "kit/core/icons.js", "kit/core/colour.js", "kit/core/sites.js",
   "kit/app/main.js", "kit/app/app.css", "kit/data/store.js",
   "kit/learning/srs.js", "kit/learning/mastery.js",
-  "kit/notes/studio.js", "kit/notes/engine.js", "kit/notes/pack.js",
+  "kit/notes/studio.js", "kit/notes/video3d.js", "kit/notes/engine.js", "kit/notes/pack.js",
   "kit/earth/globe.js", "kit/earth/earth-land.js",
   "kit/lifeos/lifeos.js", "kit/lifeos/os.js", "kit/lifeos/earth.js", "kit/lifeos/plan.js", "kit/lifeos/calendar.js", "kit/lifeos/assistant.js", "kit/lifeos/community.js", "kit/lifeos/study.js", "kit/lifeos/tree.js",
   "kit/vendor/pdfjs/pdf.min.js", "kit/vendor/pdfjs/pdf.worker.min.js", "kit/vendor/supabase/supabase.js",
