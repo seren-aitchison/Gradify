@@ -6,7 +6,8 @@
     "test": "node --test tests/*.mjs",
     "eval": "node scripts/eval-notes.mjs",
     "eval:claude": "node scripts/eval-notes.mjs --claude",
-    "serve": "python3 -m http.server 8080"
+    "serve": "python3 -m http.server 8080",
+    "build:dashboard": "node scripts/build-dashboard-function.mjs"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "0.133.0"
