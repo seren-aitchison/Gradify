@@ -83,10 +83,12 @@ export function createGlobe(canvas, { onPick, onHover }) {
       if (p.z < 0.02) continue;
       const shade = 0.4 + 0.6 * p.z, h = hash(i), tint = dotTint[i];
       let col, a, s = size * (0.75 + p.z * 0.45);
-      if (tint && !tint.locked) {
-        const k = 0.6 + tint.k * 0.4;
-        col = tint.rgb; a = shade * k * (0.8 + 0.2 * Math.sin(t * 1.6 + h * 20));
-        s *= 1 + tint.k * 0.35;
+      if (tint && !tint.locked && h <= 0.88) {
+        // fade from the module's colour at the centre of its region to blue at the edge
+        const m = Math.min(1, tint.k * 1.8), blue = [120, 175, 255];
+        col = blue.map((c, j) => Math.round(c + (tint.rgb[j] - c) * m));
+        a = shade * (0.95 - 0.1 * m + 0.1 * m * Math.sin(t * 1.6 + h * 20));
+        s *= 1 + m * 0.3;
       } else if (h > 0.88) { col = [255, 150, 90]; a = shade * (0.7 + 0.3 * Math.sin(t * 2 + h * 40)); s *= 1.25; }
       else { col = tint?.locked ? [150, 150, 165] : [120, 175, 255]; a = shade * (tint?.locked ? 0.45 : 0.95); }
       ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${Math.min(1, a).toFixed(3)})`;

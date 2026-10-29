@@ -99,7 +99,7 @@ const rgb = (h) => { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255
 function scene() {
   const regions = Object.entries(MODULES).map(([key, m]) => {
     const ts = TOPICS.filter((t) => t.m === key);
-    return { v: vec(...CENTRES[key]), radius: 0.5, rgb: rgb(m.c), light: ts.reduce((a, t) => a + strength(t), 0) / ts.length / 100 };
+    return { v: vec(...CENTRES[key]), radius: 0.3, rgb: rgb(m.c), light: ts.reduce((a, t) => a + strength(t), 0) / ts.length / 100 };
   });
   regions.push({ v: vec(...CENTRES.placements), radius: 0.4, rgb: [120, 120, 130], light: 0, locked: true });
   const byId = Object.fromEntries(TOPICS.map((t) => [t.id, t]));
