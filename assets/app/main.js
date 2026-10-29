@@ -339,16 +339,19 @@ function cardRow(c) {
 
 // ---------- All notes ----------
 async function renderNotes() {
-  const [docs, cards] = await Promise.all([store.listDocuments(), store.listCards()]);
+  const [docs, cards, reviews] = await Promise.all([store.listDocuments(), store.listCards(), store.listReviews(400)]);
+  // each deck's bar is its topics' mastery, weighted by how many cards each topic has
+  const topics = topicProfiles(cards, reviews);
+  const masteryOf = (docId) => { const ts = topics.filter((t) => t.documentId === docId), n = ts.reduce((a, t) => a + t.cards, 0); return n ? ts.reduce((a, t) => a + t.mastery * t.cards, 0) / n : 0; };
   view.innerHTML = `<section class="notes">
     <div class="deck-head"><div><h1>Your notes</h1><p class="sub">Every set of notes you've added, with its cards.</p></div><a class="btn btn-primary lg" href="#/new"><span>+ Add notes</span></a></div>
     ${docs.length ? `<div class="doc-grid">${docs.map((d) => {
       const cs = cards.filter((c) => c.document_id === d.id);
       const due = cs.filter((c) => isDue(c)).length;
       const s = siteOf(d.site);
-      const m = cs.length ? cs.reduce((a, c) => a + strength(c), 0) / cs.length : 0;
+      const m = masteryOf(d.id);
       return `<a class="doc panel glass" href="#/deck/${d.id}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="icon">${icon(s.i)}</span><b>${esc(d.title)}</b>
-        <span class="sub">${cs.length} cards · ${due ? `${due} due` : "nothing due"} · ${fmtDate(d.created_at)}</span><span class="goal-bar"><i style="width:${Math.round(m * 100)}%"></i></span></a>`;
+        <span class="sub">${cs.length} cards · ${due ? `${due} due` : "nothing due"} · ${fmtDate(d.created_at)}</span><span class="goal-bar" title="${Math.round(m * 100)}% mastery"><i style="width:${Math.round(m * 100)}%"></i></span></a>`;
     }).join("")}</div>` : `<div class="empty-state panel glass">${icon("upload")}<h3>No notes yet</h3><p class="sub">Add your first set of notes and Gradify will make flashcards from them.</p><a class="btn btn-primary lg" href="#/new"><span>Add notes</span></a></div>`}
   </section>`;
 }
