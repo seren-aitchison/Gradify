@@ -230,17 +230,9 @@ function cardsView(p) {
   <div class="out-actions"><button type="button" class="btn btn-light lg btn-sm" id="add-cards"><span>Add ${p.cards.length} cards to my flashcard feed</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-dl="csv"><span>Download for Anki (.csv)</span></button></div>`;
 }
 
-// The mind map, drawn like handwritten revision notes on dotted paper: the title in a cloud
-// in the middle, topics either side as hand-drawn boxes or highlighter strips, and every term
-// written out with its definition, joined by hand-drawn arrows that draw themselves in.
-// Terms you've rated Good or Easy in the flashcard feed get a highlighter tick.
-const HAND_FONTS = "https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Patrick+Hand&display=swap";
-function loadHandFonts() {
-  if (typeof document === "undefined" || document.querySelector(`link[href="${HAND_FONTS}"]`)) return;
-  const l = document.createElement("link");
-  l.rel = "stylesheet"; l.href = HAND_FONTS;
-  document.head.appendChild(l);
-}
+// The mind map, laid out like a page of revision notes: the title in a cloud in the middle,
+// topics either side, every term written out with its definition, and curved arrows that
+// draw themselves in, all in the holographic style. Terms rated Good or Easy get a tick.
 const mixHex = (h, t, to = 255) => "#" + [0, 2, 4].map((k) => Math.round(parseInt(h.substr(k, 2), 16) * (1 - t) + to * t).toString(16).padStart(2, "0")).join("");
 // a little deterministic wobble, so lines look drawn rather than plotted
 const jit = (n, k = 1) => (Math.sin(n * 12.9898 + k * 78.233) * 43758.5453 % 1) * 2;
@@ -252,7 +244,6 @@ function wrapWords(text, max) {
 }
 
 function mapView(p) {
-  loadHandFonts();
   // phones get a page you read top to bottom instead of one you scroll sideways
   const narrow = (typeof document !== "undefined" ? document.querySelector("#studio-out")?.clientWidth || 999 : 999) < 620;
   if (narrow) return mapViewNarrow(p);
@@ -291,20 +282,18 @@ function mapView(p) {
   };
   layout.forEach((col) => col.forEach((b, gi) => {
     const { g, side } = b, dir = side ? 1 : -1;
-    const c = `#${g.c}`, dark = mixHex(g.c, 0.35, 0), pastel = mixHex(g.c, 0.62);
+    const c = `#${g.c}`, dark = mixHex(g.c, 0.45), pastel = c;
     // topic heading, in the column next to the centre cloud
     const label = g.label.toUpperCase(), lines = wrapWords(label, 16);
     const hw = Math.max(...lines.map((l) => l.length)) * 10.5 + 34, hh = lines.length * 22 + 20;
     const hx = side ? CX + CLOUD_GAP : CX - CLOUD_GAP - hw, hy = b.y + b.h / 2 - hh / 2;
-    const tilt = jit(gi + side * 7, 3) * 1.6;
     // from the cloud to the heading
-    arrow(CX + dir * (cw + 12), CY + (hy + hh / 2 - CY) * 0.35, side ? hx - 4 : hx + hw + 4, hy + hh / 2, "#3a3a46", gi + side * 11);
+    arrow(CX + dir * (cw + 12), CY + (hy + hh / 2 - CY) * 0.35, side ? hx - 4 : hx + hw + 4, hy + hh / 2, "#5ef0ff", gi + side * 11);
     const style = (gi + side) % 2;   // alternate the two styles from the references
-    boxes += `<g class="hm-head" transform="rotate(${tilt.toFixed(2)} ${hx + hw / 2} ${hy + hh / 2})" style="--d:${0.2 + gi * 0.1}s">` +
+    boxes += `<g class="hm-head" style="--d:${0.2 + gi * 0.1}s;--c:${c}">` +
       (style === 0
-        ? `<rect x="${hx + 6}" y="${hy + 6}" width="${hw}" height="${hh}" fill="${pastel}" stroke="${dark}" stroke-width="1.6"/>
-           <rect x="${hx}" y="${hy}" width="${hw}" height="${hh}" fill="#fffefb" stroke="${dark}" stroke-width="2"/>`
-        : `<path d="M${hx - 4} ${hy + 4} L${hx + hw + 6} ${hy + 1} L${hx + hw + 3} ${hy + hh - 2} L${hx - 2} ${hy + hh + 1} Z" fill="${pastel}" opacity=".85"/>`) +
+        ? `<rect class="hm-back" x="${hx + 6}" y="${hy + 6}" width="${hw}" height="${hh}" rx="10"/><rect class="hm-chip" x="${hx}" y="${hy}" width="${hw}" height="${hh}" rx="10"/>`
+        : `<rect class="hm-slab" x="${hx}" y="${hy}" width="${hw}" height="${hh}" rx="10"/>`) +
       lines.map((l, k) => `<text class="hm-head-t" x="${hx + hw / 2}" y="${hy + 20 + k * 22 + 6}" fill="${dark}">${ctx.esc(l)}</text>`).join("") +
       (g.facts.length > 1 ? `<text class="hm-acr" x="${hx + hw / 2}" y="${hy + hh + 22}" fill="${dark}">${g.acronym}</text>` : "") + `</g>`;
     // the terms, in the outer column, each with an arrow from its topic
@@ -316,7 +305,7 @@ function mapView(p) {
       arrow(side ? hx + hw + 6 : hx - 6, hy + hh / 2 + (k - (b.leaves.length - 1) / 2) * 6, side ? lx - 10 : lx + 10, ly + 12, c, 100 + gi * 10 + k + side * 50);
       const hlW = l.head.length * 9.2 + 10;
       text += `<g class="hm-leaf ${on ? "learnt" : ""}" style="--d:${0.45 + gi * 0.1 + k * 0.05}s">` +
-        (on ? `<rect x="${side ? lx - 4 : lx - hlW + 4}" y="${ly - 2}" width="${hlW}" height="20" fill="${pastel}" opacity=".9" transform="rotate(-1 ${lx} ${ly})"/>` : "") +
+        (on ? `<rect x="${side ? lx - 4 : lx - hlW + 4}" y="${ly - 2}" width="${hlW}" height="20" rx="6" fill="${pastel}" opacity=".22"/>` : "") +
         `<text class="hm-term" x="${tx}" y="${ly + 13}" text-anchor="${anchor}" fill="${dark}">${ctx.esc(l.head)}${on ? " ✓" : ""}</text>` +
         l.body.map((line, m) => `<text class="hm-def" x="${tx}" y="${ly + 13 + (m + 1) * LH}" text-anchor="${anchor}">${ctx.esc(line)}</text>`).join("") +
         `<title>${ctx.esc(l.f.text)}</title></g>`;
@@ -330,19 +319,18 @@ function mapView(p) {
     const x1 = CX + Math.cos(a1) * cw, y1 = CY + Math.sin(a1) * ch;
     return `${k ? "" : `M${(CX + Math.cos(a0) * cw).toFixed(1)} ${(CY + Math.sin(a0) * ch).toFixed(1)}`} A${18 + jit(k, 4) * 4} ${16 + jit(k, 5) * 3} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)}`;
   }).join(" ");
-  const centre = `<g class="hm-cloud"><path d="${cloud} Z" fill="#fffefb" stroke="#5b4a8a" stroke-width="2.2"/>${tl.map((l, k) => `<text x="${CX}" y="${CY - (tl.length - 1) * 15 + k * 30 + 9}">${ctx.esc(l)}</text>`).join("")}</g>`;
-  return `<div class="handmap">
+  const centre = `<g class="hm-cloud"><path d="${cloud} Z"/>${tl.map((l, k) => `<text x="${CX}" y="${CY - (tl.length - 1) * 15 + k * 30 + 9}">${ctx.esc(l)}</text>`).join("")}</g>`;
+  return `<div class="handmap holo">
+      <span class="holo-kicker">Mind map</span>
       <div class="hm-scroll"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Mind map of ${ctx.esc(p.title)}">
         <defs>
-          <pattern id="hm-dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#c9c6d6"/></pattern>
-          <marker id="hm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#3a3a46" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          <marker id="hm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="hm-glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
         </defs>
-        <rect width="${W}" height="${H}" fill="#fdfcf9"/><rect width="${W}" height="${H}" fill="url(#hm-dots)"/>
-        ${[0.18, 0.5, 0.82].map((f) => `<circle cx="18" cy="${H * f}" r="7" fill="#e9e6ee" stroke="#d4d0dc"/>`).join("")}
-        <g class="hm-ink">${ink}</g>${boxes}${centre}${text}
+        <g class="hm-ink" filter="url(#hm-glow)">${ink}</g>${boxes}${centre}${text}
       </svg></div>
+      ${sparkles(9)}
     </div>
-    <p class="sub">Drawn from your notes. The letters under each topic are memory hooks: the first letters of its terms. Terms you rate Good or Easy in the flashcard feed get a highlighter tick.</p>`;
+    <p class="sub">The letters under each topic are memory hooks: the first letters of its terms. Terms you rate Good or Easy in the flashcard feed get a tick.</p>`;
 }
 
 function mapViewNarrow(p) {
@@ -355,16 +343,16 @@ function mapViewNarrow(p) {
     ink += `<path d="M${x1.toFixed(1)} ${y1.toFixed(1)} Q${mx.toFixed(1)} ${my.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}" class="hm-line" stroke="${colour}" marker-end="url(#hm-arrow)" style="--d:${(n++) * 0.05}s" pathLength="1"/>`;
   };
   p.groups.forEach((g, gi) => {
-    const dark = mixHex(g.c, 0.35, 0), pastel = mixHex(g.c, 0.62), c = `#${g.c}`;
+    const c = `#${g.c}`, dark = mixHex(g.c, 0.45), pastel = c;
     const lines = wrapWords(g.label.toUpperCase(), 20), hw = Math.min(W - X0 - 70, Math.max(...lines.map((l) => l.length)) * 12.4 + 30), hh = lines.length * 22 + 18;
-    const hx = X0 + 12, hy = y, tilt = jit(gi, 3) * 1.4;
+    const hx = X0 + 12, hy = y;
     // a short arrow from the spine down the margin to this topic
-    arrow(SPINE, hy + hh / 2 - 10, hx - 6, hy + hh / 2, "#3a3a46", gi);
+    arrow(SPINE, hy + hh / 2 - 10, hx - 6, hy + hh / 2, "#5ef0ff", gi);
     lastHead = hy + hh / 2 - 10;
-    out += `<g class="hm-head" transform="rotate(${tilt.toFixed(2)} ${hx + hw / 2} ${hy + hh / 2})" style="--d:${0.15 + gi * 0.1}s">` +
+    out += `<g class="hm-head" style="--d:${0.15 + gi * 0.1}s;--c:${c}">` +
       (gi % 2 === 0
-        ? `<rect x="${hx + 5}" y="${hy + 5}" width="${hw}" height="${hh}" fill="${pastel}" stroke="${dark}" stroke-width="1.5"/><rect x="${hx}" y="${hy}" width="${hw}" height="${hh}" fill="#fffefb" stroke="${dark}" stroke-width="1.8"/>`
-        : `<path d="M${hx - 4} ${hy + 4} L${hx + hw + 6} ${hy + 1} L${hx + hw + 3} ${hy + hh - 2} L${hx - 2} ${hy + hh + 1} Z" fill="${pastel}" opacity=".85"/>`) +
+        ? `<rect class="hm-back" x="${hx + 5}" y="${hy + 5}" width="${hw}" height="${hh}" rx="10"/><rect class="hm-chip" x="${hx}" y="${hy}" width="${hw}" height="${hh}" rx="10"/>`
+        : `<rect class="hm-slab" x="${hx}" y="${hy}" width="${hw}" height="${hh}" rx="10"/>`) +
       lines.map((l, k) => `<text class="hm-head-t" x="${hx + hw / 2}" y="${hy + 24 + k * 22}" fill="${dark}">${ctx.esc(l)}</text>`).join("") +
       (g.facts.length > 1 ? `<text class="hm-acr" x="${hx + hw + 30}" y="${hy + hh / 2 + 5}" fill="${dark}">${g.acronym}</text>` : "") + `</g>`;
     y += hh + 24;
@@ -374,7 +362,7 @@ function mapViewNarrow(p) {
       const lx = X0 + 58;
       arrow(hx + 18, hy + hh + 6, lx - 8, y + 8, c, 50 + gi * 10 + k);
       out += `<g class="hm-leaf ${on ? "learnt" : ""}" style="--d:${0.35 + gi * 0.1 + k * 0.05}s">` +
-        (on ? `<rect x="${lx - 4}" y="${y - 3}" width="${head.length * 9.2 + 10}" height="20" fill="${pastel}" opacity=".9"/>` : "") +
+        (on ? `<rect x="${lx - 4}" y="${y - 3}" width="${head.length * 9.2 + 10}" height="20" rx="6" fill="${pastel}" opacity=".22"/>` : "") +
         `<text class="hm-term" x="${lx}" y="${y + 12}" fill="${dark}">${ctx.esc(head)}${on ? " ✓" : ""}</text>` +
         body.map((l, m) => `<text class="hm-def" x="${lx}" y="${y + 12 + (m + 1) * LH}">${ctx.esc(l)}</text>`).join("") + `<title>${ctx.esc(f.text)}</title></g>`;
       y += (body.length + 1) * LH + 14;
@@ -383,18 +371,17 @@ function mapViewNarrow(p) {
   });
   const H = y + 10;
   // the spine: from the cloud, round to the left margin and down past every topic
-  ink = `<path d="M${(CX - cw * 0.75).toFixed(1)} ${(CY + ch * 0.55).toFixed(1)} Q${SPINE + 4} ${CY + ch * 0.7} ${SPINE} ${CY + ch + 30} L${SPINE + 1.5} ${lastHead}" class="hm-line" stroke="#3a3a46" pathLength="1"/>` + ink;
+  ink = `<path d="M${(CX - cw * 0.75).toFixed(1)} ${(CY + ch * 0.55).toFixed(1)} Q${SPINE + 4} ${CY + ch * 0.7} ${SPINE} ${CY + ch + 30} L${SPINE + 1.5} ${lastHead}" class="hm-line" stroke="#5ef0ff" pathLength="1"/>` + ink;
   const bumps = 10, cloud = Array.from({ length: bumps }, (_, k) => {
     const a0 = (k / bumps) * Math.PI * 2, a1 = ((k + 1) / bumps) * Math.PI * 2;
     return `${k ? "" : `M${(CX + Math.cos(a0) * cw).toFixed(1)} ${(CY + Math.sin(a0) * ch).toFixed(1)}`} A${16 + jit(k, 4) * 3} ${14 + jit(k, 5) * 3} 0 0 1 ${(CX + Math.cos(a1) * cw).toFixed(1)} ${(CY + Math.sin(a1) * ch).toFixed(1)}`;
   }).join(" ");
-  const centre = `<g class="hm-cloud"><path d="${cloud} Z" fill="#fffefb" stroke="#5b4a8a" stroke-width="2"/>${tl.map((l, k) => `<text x="${CX}" y="${CY - (tl.length - 1) * 14 + k * 28 + 8}">${ctx.esc(l)}</text>`).join("")}</g>`;
-  return `<div class="handmap narrow"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Mind map of ${ctx.esc(p.title)}">
-      <defs><pattern id="hm-dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#c9c6d6"/></pattern>
-        <marker id="hm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#3a3a46" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-      <rect width="${W}" height="${H}" fill="#fdfcf9"/><rect width="${W}" height="${H}" fill="url(#hm-dots)"/>
-      <g class="hm-ink">${ink}</g>${centre}${out}</svg></div>
-    <p class="sub">Drawn from your notes. The letters beside each topic are memory hooks. Terms you rate Good or Easy in the flashcard feed get a highlighter tick.</p>`;
+  const centre = `<g class="hm-cloud"><path d="${cloud} Z"/>${tl.map((l, k) => `<text x="${CX}" y="${CY - (tl.length - 1) * 14 + k * 28 + 8}">${ctx.esc(l)}</text>`).join("")}</g>`;
+  return `<div class="handmap holo narrow"><span class="holo-kicker">Mind map</span><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Mind map of ${ctx.esc(p.title)}">
+      <defs>
+        <marker id="hm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker><filter id="hm-glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+      <g class="hm-ink" filter="url(#hm-glow)">${ink}</g>${centre}${out}</svg>${sparkles(7)}</div>
+    <p class="sub">The letters beside each topic are memory hooks. Terms you rate Good or Easy in the flashcard feed get a tick.</p>`;
 }
 
 function sheetSvg(p) {

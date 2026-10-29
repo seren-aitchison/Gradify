@@ -639,20 +639,25 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .nt-dates .date b, .nt-dates .ev-txt b { color: #fff; }
 .nt-dates .go { background: rgb(var(--holo)); color: #00242c; }
 
-/* Mind map: handwritten revision notes on dotted paper */
-.handmap { border-radius: 18px; overflow: hidden; background: #fdfcf9; box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 24px 50px -24px rgba(0, 0, 0, .8); }
+/* Mind map: laid out like a page of revision notes (title in a cloud, topics either side,
+   terms written out around them), drawn in the holo style */
+.handmap { padding: 22px 14px 14px; }
 .hm-scroll { overflow-x: auto; scrollbar-width: thin; }
 .handmap svg { display: block; width: 100%; min-width: 760px; height: auto; }
 .handmap.narrow svg { min-width: 0; }
-.hm-line { fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw-in .8s var(--d, 0s) ease-out forwards; }
+.hm-line { fill: none; stroke-width: 1.6; stroke-linecap: round; opacity: .9; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw-in .8s var(--d, 0s) ease-out forwards; }
 @keyframes draw-in { to { stroke-dashoffset: 0; } }
 .hm-head, .hm-leaf { opacity: 0; animation: fade-in .45s var(--d, 0s) forwards; }
 @keyframes fade-in { to { opacity: 1; } }
-.hm-head-t { font: 400 19px "Architects Daughter", "Patrick Hand", "Comic Sans MS", cursive; text-anchor: middle; letter-spacing: .04em; }
-.hm-acr { font: 400 13px "Architects Daughter", cursive; text-anchor: middle; letter-spacing: .25em; opacity: .75; }
-.hm-cloud text { fill: #5b4a8a; font: 400 25px "Architects Daughter", "Patrick Hand", cursive; text-anchor: middle; letter-spacing: .05em; }
-.hm-term { font: 400 17px "Architects Daughter", "Patrick Hand", cursive; letter-spacing: .02em; }
-.hm-def { fill: #2f2f38; font: 400 16.5px "Patrick Hand", "Comic Sans MS", cursive; }
+.hm-chip { fill: rgba(6, 24, 32, .94); stroke: var(--c); stroke-width: 1.5; filter: drop-shadow(0 0 8px color-mix(in srgb, var(--c) 65%, transparent)); }
+.hm-back { fill: color-mix(in srgb, var(--c) 30%, transparent); stroke: var(--c); stroke-opacity: .55; }
+.hm-slab { fill: color-mix(in srgb, var(--c) 24%, rgba(6, 24, 32, .9)); stroke: var(--c); stroke-opacity: .7; filter: drop-shadow(0 0 10px color-mix(in srgb, var(--c) 55%, transparent)); }
+.hm-head-t { font: 600 15px var(--sans); text-anchor: middle; letter-spacing: .08em; }
+.hm-acr { font: 600 11px var(--mono); text-anchor: middle; letter-spacing: .3em; opacity: .8; }
+.hm-cloud path { fill: rgba(8, 34, 44, .92); stroke: #5ef0ff; stroke-width: 1.8; filter: drop-shadow(0 0 12px rgba(94, 240, 255, .65)); }
+.hm-cloud text { fill: #eaffff; font: 700 19px var(--sans); text-anchor: middle; letter-spacing: .1em; }
+.hm-term { font: 600 15px var(--sans); }
+.hm-def { fill: #bfdde4; font: 400 14px var(--sans); }
 .sheet svg { display: block; width: 100%; height: auto; border-radius: 20px; box-shadow: 0 0 42px -14px rgba(94, 240, 255, .5); }
 
 /* Flashcards: holo cards that flip in 3D */
