@@ -2,7 +2,7 @@
 // open-anatomy-3d, CC BY 4.0), shown as a muscle figure like a sports science atlas, with the
 // joints that act as levers and the heart and lungs that power them. Notes cover muscle physiology,
 // training principles, biomechanics and energy systems.
-import { loadAnatomy, take, ATTRIBUTION } from "./anatomy-glb.js";
+import { loadAnatomy, take, inflate, ATTRIBUTION } from "./anatomy-glb.js";
 
 const s = (group, name, desc, facts, cards, keys) => ({ group, name, desc, facts, cards, keys });
 
@@ -149,7 +149,7 @@ export default {
     for (const key of Object.keys(byKey).filter((x) => /^(veins|vena)/.test(x))) for (const mesh of take(byKey, key)) { mesh.material = vessel("#34519c"); decor(mesh, "engine"); }
     const skinMat = new THREE.MeshPhysicalMaterial({ color: "#d4a184", roughness: 0.55, sheen: 0.7, sheenColor: new THREE.Color("#ffd6c2"), transparent: true, opacity: 0.3, depthWrite: false, depthFunc: THREE.LessEqualDepth });
     const skin = new THREE.Group(), depthOnly = new THREE.MeshBasicMaterial({ colorWrite: false });
-    for (const mesh of take(byKey, "skin")) { mesh.material = skinMat; mesh.renderOrder = 2; skin.add(mesh); const pre = new THREE.Mesh(mesh.geometry, depthOnly); pre.position.copy(mesh.position); pre.renderOrder = 1; skin.add(pre); }
+    for (const mesh of take(byKey, "skin").map((m) => inflate(m))) { mesh.material = skinMat; mesh.renderOrder = 2; skin.add(mesh); const pre = new THREE.Mesh(mesh.geometry, depthOnly); pre.position.copy(mesh.position); pre.renderOrder = 1; skin.add(pre); }
     decor(skin);
     k.slider("skin", (v) => { skinMat.opacity = v; skin.visible = v > 0; });
     const heart = parts.heart || [], lungs = parts.lungs || [];

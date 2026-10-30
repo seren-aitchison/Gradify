@@ -6,7 +6,7 @@
 // (thyroid, lymph nodes, the brachial plexus and sciatic nerve) are drawn in place from landmarks.
 // The heart beats and the lungs breathe.
 import { GROUPS, STRUCTURES as BASE, NOTES } from "./body-data.js";
-import { loadAnatomy, take, ATTRIBUTION } from "./anatomy-glb.js";
+import { loadAnatomy, take, inflate, ATTRIBUTION } from "./anatomy-glb.js";
 
 // structures the scan models as one piece are taught as one: merge their content
 const STRUCTURES = { ...BASE };
@@ -86,7 +86,7 @@ export default {
     // ---------- skin: real skin, faded in with the slider, drawn as one front surface ----------
     const skinMat = new THREE.MeshPhysicalMaterial({ color: "#d4a184", roughness: 0.55, sheen: 0.7, sheenColor: new THREE.Color("#ffd6c2"), sheenRoughness: 0.6, clearcoat: 0.08, transparent: true, opacity: 0.3, depthWrite: false, depthFunc: THREE.LessEqualDepth });
     const depthOnly = new THREE.MeshBasicMaterial({ colorWrite: false }), skin = new THREE.Group();
-    for (const mesh of take(byKey, "skin")) { mesh.material = skinMat; mesh.renderOrder = 2; skin.add(mesh); const pre = new THREE.Mesh(mesh.geometry, depthOnly); pre.position.copy(mesh.position); pre.renderOrder = 1; skin.add(pre); }
+    for (const mesh of take(byKey, "skin").map((m) => inflate(m))) { mesh.material = skinMat; mesh.renderOrder = 2; skin.add(mesh); const pre = new THREE.Mesh(mesh.geometry, depthOnly); pre.position.copy(mesh.position); pre.renderOrder = 1; skin.add(pre); }
     decor(skin);
     k.slider("skin", (v) => { skinMat.opacity = v; skin.visible = v > 0; });
 

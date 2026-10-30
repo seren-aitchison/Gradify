@@ -51,3 +51,11 @@ function boxUV(g) {
 
 // a copy of meshes for one model (the shared geometry isn't duplicated)
 export const take = (byKey, key) => (byKey[key] || []).map((m) => { const c = new THREE.Mesh(m.geometry); c.position.copy(m.position); c.name = key; return c; });
+
+// the scan's skin sits a few millimetres inside parts of its muscle layer (the neck, around the eyes):
+// push it out along its normals so everything is covered
+export function inflate(mesh, by = 0.004) {
+  const g = mesh.geometry.clone(), p = g.attributes.position, n = g.attributes.normal;
+  for (let i = 0; i < p.count; i++) p.setXYZ(i, p.getX(i) + n.getX(i) * by, p.getY(i) + n.getY(i) * by, p.getZ(i) + n.getZ(i) * by);
+  g.computeBoundingSphere(); mesh.geometry = g; return mesh;
+}
