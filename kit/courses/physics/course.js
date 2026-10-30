@@ -4,7 +4,7 @@ export default {
   site: "SciGradify", slug: "physics", name: "Physics", app: "../app.html",
   units: UNITS, tracks: TRACKS, paths: PATHS,
   // the units whose notes are written so far (tests/site.test.mjs checks this matches notes/)
-  written: ["u01", "u02", "u03", "u04", "u05", "u06"],
+  written: ["u01", "u02", "u03", "u04", "u05", "u06", "u07"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
   extras: [
     ["The cell in 3D", "SciGradify's interactive 3D cell, for where physics meets biology.", "../3d.html"],
