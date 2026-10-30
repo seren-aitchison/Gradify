@@ -28,25 +28,27 @@
     .site-foot a { color: var(--mute); }
   </style>
   <script type="module">
-    import { SITES } from "../kit/core/site.js";
+    import { SITES, nameHtml } from "../kit/core/site.js";
     import { icon } from "../kit/core/icons.js";
     import { tile, ink } from "../kit/core/colour.js";
     const s = SITES.find((x) => x.n === "{{NAME}}");
     const el = document.querySelector(".site-hero .icon");
     if (s && el) { el.innerHTML = icon(s.i); el.style.cssText = `--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}`; }
+    // the site's name with its first word in the accent colour, everywhere it appears
+    if (s) document.querySelectorAll("[data-site-name]").forEach((n) => { n.innerHTML = nameHtml(s); });
   </script>
 </head>
 <body>
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
   <div class="wrap">
     <header class="bar glass">
-      <a class="brand" href="./">{{NAME}}</a>
+      <a class="brand" href="./" data-site-name>{{NAME}}</a>
       <a class="btn btn-ghost lg btn-sm" href="/"><span>Part of Gradify</span></a>
     </header>
     <main>
       <section class="site-hero">
         <span class="icon"></span>
-        <h1>{{NAME}}</h1>
+        <h1 data-site-name>{{NAME}}</h1>
         <p class="site-who"><b>For:</b> {{WHO}}</p>
         <p>{{DESC}}</p>
         <div class="site-actions">
@@ -55,7 +57,7 @@
         </div>
       </section>
     </main>
-    <footer class="site-foot">{{NAME}} is part of <a href="/">Gradify</a>. One account works on every Gradify site.</footer>
+    <footer class="site-foot"><span data-site-name>{{NAME}}</span> is part of <a href="/">Gradify</a>. One account works on every Gradify site.</footer>
   </div>
 </body>
 </html>

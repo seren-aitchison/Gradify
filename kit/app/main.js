@@ -5,7 +5,7 @@ import { icon } from "../core/icons.js";
 import { tile, ink } from "../core/colour.js";
 import { SAMPLE, readFile } from "../notes/studio.js";
 import { LocalStore, CloudStore, cloudConfigured, scopeToSite } from "../data/store.js";
-import { currentSite } from "../core/site.js";
+import { currentSite, nameHtml } from "../core/site.js";
 // on a sub-site (getgradify.com/medgradify/), the app belongs to that site
 const SITE = currentSite();
 import { generate, regenerateCard, generateQuestions } from "../notes/engine.js";
@@ -792,7 +792,7 @@ async function boot() {
   // a sub-site's own name and icon in the top bar
   if (SITE) {
     const s = siteOf(SITE), brand = $(".brand");
-    if (brand) brand.innerHTML = `<span class="icon" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}">${icon(s.i)}</span>${esc(SITE)}`;
+    if (brand) brand.innerHTML = `<span class="icon" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}">${icon(s.i)}</span>${nameHtml(s)}`;
     document.title = SITE;
   }
   $("#mode").innerHTML = user ? `${icon("check")}<span>${esc(user.email)}</span>` : `${icon("lock")}<span>On this device</span>`;

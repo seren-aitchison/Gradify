@@ -13,3 +13,13 @@ test("each sub-site has its own folder on getgradify.com", () => {
 test("outside a browser, a page belongs to no single site unless the config says so", () => {
   assert.equal(currentSite(), null);
 });
+
+test("a site's first word is drawn in its accent colour", async () => {
+  const { nameHtml, accentOf } = await import("../kit/core/site.js");
+  const med = SITES.find((s) => s.n === "MedGradify");
+  assert.match(nameHtml(med), /<span class="site-accent" style="color:[^"]+">Med<\/span>Gradify<\/span>$/);
+  assert.match(nameHtml(SITES.find((s) => s.n === "TechGradify · ForgeLab")), />Tech<\/span>Gradify · ForgeLab/);
+  // bright colours are used as they are; dark ones are lifted so they read on black
+  assert.equal(accentOf({ c: "a0ff74" }), "#a0ff74");
+  assert.notEqual(accentOf({ c: "2e5e18" }), "#2e5e18");
+});
