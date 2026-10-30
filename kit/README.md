@@ -16,10 +16,11 @@ Version: see `VERSION`.
 | `learning/` | Spaced repetition (`srs.js`) and the Mastery Engine (`mastery.js`) | **Real**, unit-tested |
 | `data/` | Where a learner's data lives: `LocalStore` (this browser), `CloudStore` (Supabase), `scopeToSite` (one site's view of the shared account) | **Real** |
 | `earth/` | The 3D dot globe: drag to turn, pins, arcs, portals, glowing city markers | **Real component.** You give it the scene |
+| `models/` | The 3D model viewer (`viewer.js`) and one model per sub-site: the body, mouth, dog, brain, cell, engine, courtroom, solar system and more. Each has a full page of notes per section, flashcards, "in your notes" and a quiz | **Real.** Models are built in code, not scanned |
 | `core/` | Icons, colour helpers, and the list of every Gradify site | **Real** |
 | `styles/` | `base.css` (tokens, glass, buttons, top bar) and `components.css` (panels, rings, charts, switches and every LifeOS view) | **Real** |
 | `lifeos/` | The LifeOS window: Today, time-blocking Plan, Progress, Earth, Path, Gradify AI, Learn, Study feed, Notes Studio, Community, Settings, and the Tree and Forest | **Preview.** Runs on Alex's example data. Wire each view to real data before you rely on it |
-| `vendor/` | pdf.js 3.11.174 (reads PDFs in the browser) and supabase-js 2.117.0 | Third-party |
+| `vendor/` | pdf.js 3.11.174 (reads PDFs in the browser), supabase-js 2.117.0, and three.js r169 with its post-processing and environment add-ons | Third-party |
 | `templates/subsite/` | The homepage, app and LifeOS pages for a new sub-site, used by `npm run new-site` | |
 
 The backend (database and the Gradify AI function) is not in the kit. Every site shares the one in the Gradify repository's `supabase/` folder, so one account works across the whole family.
@@ -115,6 +116,23 @@ globe.faceTo(vec(-10, -60));   // turn to a point; also zoomBy(f), reset()
 ```
 
 Pin states: `mastered`, `recent`, `fading`, `learning`, `new`, `locked`. `kit/lifeos/earth.js` shows a full example.
+
+### 3D models
+
+Every sub-site with an entry in `models/index.js` gets a page at `<site>/3d.html` (run `npm run add-3d` after adding one; it also adds the link to the site's navigation). A model is a module:
+
+```js
+export default {
+  title: "The engine in 3D",
+  groups: { mechanism: { name: "Crank mechanism", c: "#7ee0ff" } },          // show/hide chips and notes tabs
+  structures: { piston: { group: "mechanism", name: "Piston", desc, facts: [3], cards: [[q, a] x3], keys: ["piston"] } },
+  notes: { mechanism: { title, lead, sections: [["Heading", "Paragraph", "- bullet", "! callout", "> key point"]] } },
+  camera: { pos, target, min, max }, views: { Front: [pos, target] },
+  build(k) { k.add("piston", mesh); k.tick((t, dt, motion) => {}); },          // k has the geometry and material helpers
+};
+```
+
+The viewer handles the rest: HD rendering (environment light, bump detail, bloom), zoom (scroll, pinch, +/−, double-click to fly in), picking, labels, pulling apart, the info panel, flashcards from a part or a whole section, the learner's own matching cards, and a find-the-part quiz. A model that moves its own parts sets `explode: false` or marks them `userData.moves`; `onPick(object, id)` reacts to clicks (the piano plays its keys). `tests/site.test.mjs` checks that every part has three facts and three cards and every section has notes.
 
 ### Data
 
