@@ -120,7 +120,7 @@ function text(str, { size = 0.06, colour = "#eaffff", bg = null, weight = 600 } 
   if (bg) { g.fillStyle = bg; g.beginPath(); g.roundRect(0, 0, w, c.height, c.height / 2); g.fill(); }
   g.fillStyle = colour; g.fillText(str, 20, c.height / 2 + 2);
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4;
-  const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: t, transparent: true, depthWrite: false }));
+  const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: t, transparent: true, depthWrite: false, depthTest: false })); s.renderOrder = 10;   // labels stay readable in front of the model
   s.scale.set((size * w) / c.height, size, 1);
   return s;
 }
