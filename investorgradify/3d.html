@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>InvestorGradify · Risk and return in 3D</title>
+  <!-- InvestorGradify's interactive 3D model (kit/models/portfolio.js, shown by kit/models/viewer.js), with the notes for each section under it. -->
+  <meta name="gradify-site" content="InvestorGradify">
+  <meta name="description" content="Asset classes at their long-run risk and return, the efficient frontier, diversification and compounding with and without fees. Click anything to see what it means for your money.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../kit/styles/base.css">
+  <link rel="stylesheet" href="../kit/styles/components.css">
+  <link rel="stylesheet" href="../kit/styles/subsite.css">
+  <link rel="stylesheet" href="../kit/styles/model.css">
+  <script src="../kit/vendor/supabase/supabase.js" defer></script>
+  <script type="module">
+    import { SITES, nameHtml, accentOf } from "../kit/core/site.js";
+    import { icon } from "../kit/core/icons.js";
+    import { tile, ink } from "../kit/core/colour.js";
+    import { modelOf } from "../kit/models/index.js";
+    import { mountModel } from "../kit/models/viewer.js";
+    const name = document.querySelector('meta[name="gradify-site"]').content, s = SITES.find((x) => x.n === name);
+    if (s) {
+      document.body.style.setProperty("--accent", accentOf(s));
+      document.querySelectorAll(".sub-brand .icon").forEach((el) => { el.innerHTML = icon(s.i); el.style.cssText = `--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}`; });
+      document.querySelectorAll("[data-site-name]").forEach((n) => { n.innerHTML = nameHtml(s); });
+    }
+    const m = modelOf(name);
+    const model = (await import(`../kit/models/${m.file}`)).default;
+    mountModel(document.getElementById("model"), name, model);
+  </script>
+</head>
+<body class="sub-page">
+  <div class="wrap">
+    <header class="sub-nav glass">
+      <a class="sub-brand" href="./"><span class="icon"></span><span data-site-name>InvestorGradify</span></a>
+      <nav class="sub-links" aria-label="InvestorGradify">
+        <a href="app.html#/study">Learn</a>
+        <a href="app.html#/notes">Notes</a>
+        <a href="app.html#/progress">Progress</a>
+        <a href="map.html">Map</a>
+        <a href="3d.html" aria-current="page">Risk &amp; return 3D</a>
+        <a href="/">Gradify</a>
+      </nav>
+      <div class="sub-right">
+        <a class="signin" href="app.html#/account">Sign in</a>
+        <a class="btn btn-light lg btn-sm" href="app.html"><span>Start free</span></a>
+      </div>
+    </header>
+    <main class="map-page">
+      <div class="sm-head"><h2>Risk and return in 3D</h2><p>Asset classes at their long-run risk and return, the efficient frontier, diversification and compounding with and without fees. Click anything to see what it means for your money.</p></div>
+      <div id="model"></div>
+    </main>
+    <footer class="sub-foot"><span data-site-name>InvestorGradify</span> is part of <a href="/">Gradify</a>. One account works on every Gradify site.</footer>
+  </div>
+</body>
+</html>
