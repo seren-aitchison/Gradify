@@ -22,6 +22,9 @@
     import { SITES, nameHtml, accentOf } from "../kit/core/site.js";
     import { icon } from "../kit/core/icons.js";
     import { tile, ink } from "../kit/core/colour.js";
+    import { renderHome } from "../kit/core/subsite-home.js";
+    // the rest of the page (how it works, topics, features, progress, a day, questions), from kit/core/site-content.js
+    renderHome(document.getElementById("sub-more"), document.querySelector('meta[name="gradify-site"]').content);
     const s = SITES.find((x) => x.n === "HealthGradify");
     if (s) {
       document.body.style.setProperty("--accent", accentOf(s));
@@ -84,6 +87,7 @@
           <div class="sw-tests"><span class="sw-run">Checking your answer…</span><ul><li>Body clock</li><li>Sleep quality</li><li>Practical tip</li><li>Evidence</li></ul></div>
         </div>
       </section>
+      <div id="sub-more"></div>
     </main>
     <footer class="sub-foot"><span data-site-name>HealthGradify</span> is part of <a href="/">Gradify</a>. One account works on every Gradify site.</footer>
   </div>

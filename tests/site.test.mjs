@@ -31,3 +31,14 @@ test("every site with a page has a headline, three ticks and four checks", async
     assert.equal(p.h.length, 2); assert.equal(p.ticks.length, 3); assert.equal(p.card.checks.length, 4);
   }
 });
+
+test("every built site has homepage content for a known audience, with six topics", async () => {
+  const { KINDS, SITES_CONTENT } = await import("../kit/core/site-content.js");
+  const { SITE_PAGES } = await import("../kit/core/site-pages.js");
+  for (const name of Object.keys(SITE_PAGES)) {
+    const c = SITES_CONTENT[name];
+    assert.ok(c, `${name} has content`);
+    assert.ok(KINDS[c.kind], `${name}'s audience exists`);
+    assert.equal(c.topics.length, 6, `${name} has six topics`);
+  }
+});
