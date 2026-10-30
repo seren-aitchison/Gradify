@@ -414,7 +414,7 @@ export async function mountModel(root, siteName, model) {
 
   // ---------- camera ----------
   let tween = null;
-  function flyTo(pos, target) { tween = { from: camera.position.clone(), to: pos, tFrom: controls.target.clone(), tTo: target, t: 0 }; }
+  function flyTo(pos, target) { tween = { from: camera.position.clone(), to: pos, tFrom: controls.target.clone(), tTo: target, t: 0, start: performance.now() }; }
   function focus(id) {
     const p = parts[id], at = p.centre.clone().add(p.centre.clone().sub(centre).multiplyScalar(state.explode * 0.9));
     const d = Math.max(cam.min * 3, p.size * 1.9), dir = camera.position.clone().sub(controls.target).normalize();
@@ -508,7 +508,7 @@ export async function mountModel(root, siteName, model) {
       p.objs.forEach((m) => { if (!m.userData.moves) m.position.copy(m.userData.home).add(off); });   // parts the model animates itself are left alone
     }
     if (tween) {
-      tween.t = Math.min(1, tween.t + dt * 1.6);
+      tween.t = Math.min(1, (performance.now() - tween.start) / 650);   // by the clock, so slow devices still arrive on time
       const e = tween.t < 0.5 ? 4 * tween.t ** 3 : 1 - (-2 * tween.t + 2) ** 3 / 2;
       camera.position.lerpVectors(tween.from, tween.to, e); controls.target.lerpVectors(tween.tFrom, tween.tTo, e);
       if (tween.t >= 1) tween = null;
