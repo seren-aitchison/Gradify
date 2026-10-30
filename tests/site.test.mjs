@@ -65,3 +65,23 @@ test("your own topics are sorted into the subject's areas, following their deck 
   assert.equal(placed.find((p) => p.topic.key === "b").area, 1, "follows its deck");
   assert.deepEqual(unplaced.map((t) => t.key), ["c"]);
 });
+
+test("every sub-site's 3D model teaches what it shows: each part has facts and cards, each section has notes", async () => {
+  const { MODELS } = await import("../kit/models/index.js");
+  const { existsSync } = await import("node:fs");
+  for (const [name, m] of Object.entries(MODELS)) {
+    assert.ok(SITES.some((s) => s.n === name), `${name} is a real site`);
+    assert.ok(existsSync(`kit/models/${m.file}`), `${name}'s model file exists`);
+    assert.ok(existsSync(`${slugOf(name)}/3d.html`), `${name} has its 3D page (npm run add-3d)`);
+    const model = (await import(`../kit/models/${m.file}`)).default;
+    assert.equal(typeof model.build, "function");
+    for (const [id, st] of Object.entries(model.structures)) {
+      assert.ok(model.groups[st.group], `${m.file}: ${id} is in a known group`);
+      assert.ok(st.facts.length >= 3 && st.cards.length >= 3, `${m.file}: ${id} has three facts and three cards`);
+    }
+    for (const g of Object.keys(model.groups)) {
+      assert.ok(model.notes[g]?.sections.length >= 3, `${m.file}: ${g} has a page of notes`);
+      assert.ok(Object.values(model.structures).some((st) => st.group === g), `${m.file}: ${g} has something in the model`);
+    }
+  }
+});

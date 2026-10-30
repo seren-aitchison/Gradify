@@ -173,5 +173,5 @@
 .sm-3d h2 { margin: 6px 0 0; font-size: clamp(28px, 3.6vw, 44px); letter-spacing: -.035em; }
 .sm-3d p { margin: 12px 0 0; color: var(--mute); font-size: 16.5px; line-height: 1.6; }
 .sm-3d .sub-ctas { margin-top: 22px; }
-.sm-3d-art { position: relative; display: block; height: 260px; border-radius: 22px; overflow: hidden; background: url("../anatomy/preview.webp") center 30% / cover no-repeat, #03080c; border: 1px solid rgba(94, 240, 255, .3); box-shadow: 0 0 50px -16px rgba(94, 240, 255, .6); }
+.sm-3d-art { position: relative; display: block; height: 260px; border-radius: 22px; overflow: hidden; background: #03080c center 30% / cover no-repeat; border: 1px solid rgba(94, 240, 255, .3); box-shadow: 0 0 50px -16px rgba(94, 240, 255, .6); }
 @media (max-width: 960px) { .sm-3d { grid-template-columns: 1fr; padding: 24px; } }

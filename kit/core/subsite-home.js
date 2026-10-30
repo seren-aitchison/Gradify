@@ -4,6 +4,7 @@ import { SITES, nameHtml, accentOf } from "./site.js";
 import { KINDS, SITES_CONTENT } from "./site-content.js";
 import { icon } from "./icons.js";
 import { ink } from "./colour.js";
+import { modelOf } from "../models/index.js";
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 const DIMS = {
@@ -15,7 +16,7 @@ const LEVELS = [["mastered", "Mastered"], ["strong", "Strong"], ["fading", "Fadi
 export function renderHome(el, siteName) {
   const site = SITES.find((s) => s.n === siteName), c = SITES_CONTENT[siteName];
   if (!site || !c) return;
-  const k = KINDS[c.kind];
+  const k = KINDS[c.kind], model = modelOf(siteName);
   const who = (site.who || "learners").replace(/^./, (x) => x.toLowerCase());
   const fill = (t) => esc(t).replaceAll("{site}", site.n).replaceAll("{who}", esc(who)).replaceAll("{exams}", esc(c.exams || "your exams")).replaceAll("{topic}", esc(c.topics[0][0]));
   const fillName = (t) => fill(t).replaceAll(esc(site.n), nameHtml(site));
@@ -28,7 +29,7 @@ export function renderHome(el, siteName) {
     section("how", fill(k.stepsTitle), "", `<ol class="sm-steps">${k.steps.map(([t, d], i) => `<li class="glass"><em>${i + 1}</em><b>${fill(t)}</b><p>${fill(d)}</p></li>`).join("")}</ol>`),
 
     // sites with a 3D model get a section for it
-    siteName === "MedGradify" ? `<section class="sm-sec sm-3d glass"><div><span class="sm-kicker">New · 3D anatomy</span><h2>The body, in 3D</h2><p>Turn it, look inside, and learn every structure: the heart beats, the lungs breathe and blood flows. Click anything for the key facts, make flashcards from it, or quiz yourself on where everything is.</p><div class="sub-ctas"><a class="btn btn-light lg" href="anatomy.html"><span>Open the 3D body</span> <span aria-hidden="true">→</span></a></div></div><a class="sm-3d-art" href="anatomy.html" aria-label="Open the 3D anatomy model"><span></span></a></section>` : "",
+    model ? `<section class="sm-sec sm-3d glass"><div><span class="sm-kicker">New · 3D model</span><h2>${esc(model.title)}</h2><p>${esc(model.blurb)}</p><div class="sub-ctas"><a class="btn btn-light lg" href="3d.html"><span>Open ${esc(model.nav)}</span> <span aria-hidden="true">→</span></a></div></div><a class="sm-3d-art" href="3d.html" aria-label="Open the 3D model" style="background-image:url(../kit/models/previews/${model.file.replace(".js", ".webp")})"><span></span></a></section>` : "",
 
     section("topics", fill(k.topicsTitle), fill(k.topicsSub), `<div class="sm-topics">${c.topics.map(([t, d]) => `<a class="sm-topic glass" href="app.html"><i></i><b>${esc(t)}</b><span>${esc(d)}</span><span class="go" aria-hidden="true">→</span></a>`).join("")}</div>`),
 
