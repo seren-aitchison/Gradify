@@ -103,7 +103,7 @@ export default {
     const label = (g, str, y, c = "#ffffff") => { const l = text(str, { size: 0.035, colour: c, bg: "rgba(0,0,0,0.55)" }); l.position.set(0, y, 0); g.add(l); };
     // sensory memory: a fan of fading inputs on the left
     const sen = new THREE.Group(); sen.position.set(-0.85, 0.4, 0);
-    sen.add(new THREE.Mesh(new THREE.SphereGeometry(0.11, 48, 32), holo("#5ef0ff", "#0d3b52", 0.8)));
+    sen.add(new THREE.Mesh(new THREE.SphereGeometry(0.11, 48, 32), holo("#bfdcea", "#0d3b52", 0.8)));
     for (const [i, c] of [[0, "#ffe066"], [1, "#5ef0ff"], [2, "#f055dd"], [3, "#6bffb8"]]) { const ic = new THREE.Mesh(i % 2 ? new THREE.TorusGeometry(0.025, 0.008, 12, 32) : new THREE.OctahedronGeometry(0.025), mat(c, { detail: "none", emissive: new THREE.Color(c).multiplyScalar(0.3) })); ic.position.set(-0.22, -0.12 + i * 0.08, 0); sen.add(ic); }
     label(sen, "Sensory memory", 0.17); add("sensory", sen);
     // working memory: the central executive and its three slaves, inside a glass dome

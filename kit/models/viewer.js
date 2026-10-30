@@ -53,6 +53,27 @@ function detail(kind) {
   return (textures[kind] = t);
 }
 
+// a colour version of a detail texture, multiplied into the material's colour: muscle striations
+// with pale fascia streaks, mottled soft tissue, porous bone
+const tones = {};
+function tone(kind) {
+  if (kind === "none" || !kind) return null;
+  if (tones[kind]) return tones[kind];
+  const src = detail(kind).image, c = document.createElement("canvas"); c.width = src.width; c.height = src.height;
+  const g = c.getContext("2d"); g.drawImage(src, 0, 0);
+  const img = g.getImageData(0, 0, c.width, c.height), d = img.data;
+  const lo = { fibre: 0.62, bone: 0.86, fold: 0.8, tissue: 0.8 }[kind] ?? 0.82;
+  for (let i = 0; i < d.length; i += 4) {
+    let v = lo + (1 - lo) * (d[i] / 255);
+    let r = v, gg = v, b = v;
+    if (kind === "fibre" && d[i] > 235) { r = 1.25; gg = 1.18; b = 1.12; }   // thin pale streaks of fascia between fibre bundles
+    d[i] = Math.min(255, r * 235); d[i + 1] = Math.min(255, gg * 235); d[i + 2] = Math.min(255, b * 235);
+  }
+  g.putImageData(img, 0, 0);
+  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.SRGBColorSpace;
+  return (tones[kind] = t);
+}
+
 // ---------- materials ----------
 // a hologram that glows at its edges (fresnel), so you see through it: skin, outlines, ghosts
 function holo(colour = "#5ef0ff", base = "#0d3b52", opacity = 0.55) {
@@ -73,6 +94,7 @@ function mat(c, { detail: d = "tissue", repeat = 2, bump = 0.6, ...extra } = {})
   const m = new THREE.MeshPhysicalMaterial({ color: c, roughness: 0.42, metalness: 0.02, clearcoat: 0.55, clearcoatRoughness: 0.35, sheen: 0.25, sheenColor: new THREE.Color(c).lerp(new THREE.Color("#ffffff"), 0.4), emissive: new THREE.Color(c).multiplyScalar(0.07), ...extra });
   const t = detail(d);
   if (t) { m.bumpMap = t.clone(); m.bumpMap.needsUpdate = true; m.bumpMap.repeat.set(repeat, repeat); m.bumpScale = bump; }
+  if (t && mat.realistic && !extra.map) { m.map = tone(d).clone(); m.map.needsUpdate = true; m.map.repeat.set(repeat, repeat); }
   return m;
 }
 const bone = (c = "#ece5d2") => mat(c, { detail: "bone", repeat: 3, bump: 0.8, roughness: 0.6, clearcoat: 0.15, sheen: 0, emissive: new THREE.Color("#221e15") });
@@ -145,14 +167,48 @@ function cut(geo, pt, n) {
   const out = new THREE.BufferGeometry(); out.setAttribute("position", new THREE.Float32BufferAttribute(keep, 3)); out.computeVertexNormals();
   return out;
 }
-const line = (pts, c, opacity = 0.8) => new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: c, transparent: true, opacity, blending: THREE.AdditiveBlending, depthWrite: false }));
-export const helpers = { V, holo, mat, bone, glow, limb, tube, taper, blob, lathe, box, text, line, detail, slice, cut };
+const line = (pts, c, opacity = 0.8) => new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: c, transparent: true, opacity, blending: mat.realistic ? THREE.NormalBlending : THREE.AdditiveBlending, depthWrite: false }));
+// a muscle that wraps part of the way round a limb or the trunk, like the muscle layer in an
+// anatomy atlas: a curved sheet over the axis a→b, between angles th0 and th1 (0 = lateral,
+// π/2 = front, −π/2 = back; side −1 mirrors it for the patient's right), lying on a surface of
+// radius r(t) (sx, sz squash it into an ellipse), swelling to `thick` in its belly. Its two ends
+// turn into pale tendon, and `bands` (fractions along it) add tendinous lines across it.
+function wrap({ a, b, r, th0, th1, side = 1, sx = 1, sz = 1, thick = 0.012, t0 = 0, t1 = 1, tendon = 0.14, bands = [], narrow = 0.55, colour = "#a8352c", segU = 48, segV = 28, front = new THREE.Vector3(0, 0, 1) }) {
+  const d = b.clone().sub(a).normalize(), Z = front.clone().sub(d.clone().multiplyScalar(front.dot(d))).normalize(), X = new THREE.Vector3().crossVectors(d, Z).normalize();
+  if (X.x < 0) X.negate();   // angle 0 always points to the model's +x side, whichever way the axis runs
+  const len = a.distanceTo(b), pos = [], uv = [], col = [], idx = [], c = new THREE.Color(colour), pale = new THREE.Color("#efe6d8"), tmp = new THREE.Color();
+  const rr = typeof r === "function" ? r : () => r;
+  for (let i = 0; i <= segU; i++) {
+    const u = i / segU, t = t0 + (t1 - t0) * u;
+    for (let j = 0; j <= segV; j++) {
+      // fusiform: the muscle narrows towards its tendons (narrow 0 keeps a flat sheet's full width)
+      const w = 1 - narrow * (1 - Math.sin(Math.PI * u) ** 0.8), vm = 0.5 + (j / segV - 0.5) * w, v = j / segV;
+      const th0s = side < 0 ? Math.PI - th0 : th0, th1s = side < 0 ? Math.PI - th1 : th1, th = th0s + (th1s - th0s) * vm;
+      const belly = Math.sin(Math.PI * u) ** 0.7 * Math.sin(Math.PI * v) ** 0.45;
+      let dip = 1; for (const bd of bands) dip *= 1 - 0.45 * Math.exp(-(((u - bd) / 0.014) ** 2));
+      const R = rr(t) + thick * belly * dip + 0.0015;
+      const p = a.clone().add(d.clone().multiplyScalar(t * len)).add(X.clone().multiplyScalar(Math.cos(th) * R * sx)).add(Z.clone().multiplyScalar(Math.sin(th) * R * sz));
+      pos.push(p.x, p.y, p.z); uv.push(v * Math.max(1, (Math.abs(th1 - th0) * rr(t)) / 0.1), u * Math.max(1, len * (t1 - t0) / 0.06));
+      const tend = Math.max(0, 1 - Math.min(u, 1 - u) / tendon) ** 2.2, line = 1 - dip;
+      tmp.copy(c).lerp(pale, Math.min(1, tend * 0.9 + line * 1.4)); col.push(tmp.r, tmp.g, tmp.b);
+    }
+  }
+  for (let i = 0; i < segU; i++) for (let j = 0; j < segV; j++) { const q = i * (segV + 1) + j; idx.push(q, q + segV + 1, q + 1, q + 1, q + segV + 1, q + segV + 2); }
+  const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute("uv", new THREE.Float32BufferAttribute(uv, 2)); g.setAttribute("color", new THREE.Float32BufferAttribute(col, 3)); g.setIndex(idx); g.computeVertexNormals();
+  const m = mat("#ffffff", { detail: "fibre", repeat: 1, bump: 1.6, roughness: 0.5, clearcoat: 0.45, vertexColors: true, side: THREE.DoubleSide, emissive: new THREE.Color("#000000"), sheen: 0.3, sheenColor: new THREE.Color("#ffc8b8") });
+  return new THREE.Mesh(g, m);
+}
+export const helpers = { V, holo, mat, bone, glow, limb, tube, taper, blob, lathe, box, text, line, detail, slice, cut, wrap };
 
 export async function mountModel(root, siteName, model) {
   const G = model.groups, S = model.structures;
   const cam = { pos: [0, 1, 3.6], target: [0, 0.9, 0], min: 0.06, max: 6, fov: 32, ...model.camera };
   const sliders = [...(model.sliders || []), ...(model.explode === false ? [] : [{ key: "explode", label: "Pull apart", value: 0 }])];
-  root.classList.add("mv"); if (model.look === "studio") root.classList.add("mv-studio");
+  // every model is shown like an anatomy app (studio light, real materials, no glow) unless it asks
+  // for the holographic look with look: "holo"
+  const studio = model.look !== "holo";
+  mat.realistic = studio;
+  root.classList.add("mv"); if (studio) root.classList.add("mv-studio");
   root.innerHTML = `
     <div class="mv-top-row">
       <div class="mv-stage">
@@ -192,11 +248,10 @@ export async function mountModel(root, siteName, model) {
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   // "studio" models (the body) look like an anatomy atlas: a neutral backdrop, white studio light,
   // real shadows and no glow. The rest keep Gradify's holographic look.
-  const studio = model.look === "studio";
   if (studio) { renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap; renderer.toneMappingExposure = 1.0; }
   const scene = new THREE.Scene();
   const bg = document.createElement("canvas"); bg.width = bg.height = 512;
-  { const g = bg.getContext("2d"), r = g.createRadialGradient(256, 220, 10, 256, 256, 380); r.addColorStop(0, model.bg?.[0] || (studio ? "#4a4a4f" : "#123c4c")); r.addColorStop(0.55, model.bg?.[1] || (studio ? "#2a2a2e" : "#061620")); r.addColorStop(1, studio ? "#141416" : "#020609"); g.fillStyle = r; g.fillRect(0, 0, 512, 512); }
+  { const g = bg.getContext("2d"), r = g.createRadialGradient(256, 220, 10, 256, 256, 380); r.addColorStop(0, studio ? "#4a4a4f" : model.bg?.[0] || "#123c4c"); r.addColorStop(0.55, studio ? "#2a2a2e" : model.bg?.[1] || "#061620"); r.addColorStop(1, studio ? "#141416" : "#020609"); g.fillStyle = r; g.fillRect(0, 0, 512, 512); }   // the studio is always neutral grey
   scene.background = new THREE.CanvasTexture(bg); scene.background.colorSpace = THREE.SRGBColorSpace;
   const pmrem = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
@@ -250,8 +305,18 @@ export async function mountModel(root, siteName, model) {
   const body = new THREE.Group(); scene.add(body);
   const groups = {}; for (const k of Object.keys(G)) { groups[k] = new THREE.Group(); groups[k].visible = !G[k].off; body.add(groups[k]); }
   const pickables = [], parts = {}, ticks = [], flows = [], onSlider = {}, attached = [];
+  // in the studio look, the holographic helpers make real materials instead: see-through skin or
+  // glass in place of the fresnel hologram, solid colour in place of additive glow, no self-lighting
+  const studioHolo = (colour = "#5ef0ff", base, opacity = 0.35) => {
+    const skinTone = colour === "#5ef0ff";
+    const m = new THREE.MeshPhysicalMaterial({ color: skinTone ? "#d4a184" : colour, roughness: skinTone ? 0.55 : 0.2, sheen: skinTone ? 0.7 : 0, sheenColor: new THREE.Color("#ffd6c2"), clearcoat: skinTone ? 0.08 : 0.6, transparent: true, opacity: Math.min(0.45, opacity), depthWrite: false });
+    m.uniforms = { uOpacity: { get value() { return m.opacity; }, set value(v) { m.opacity = Math.min(0.6, v); } } };   // models fade skin through uOpacity
+    return m;
+  };
+  const studioGlow = (c, opacity = 0.9) => new THREE.MeshBasicMaterial({ color: c, transparent: opacity < 1, opacity, depthWrite: opacity >= 1 });
+  const studioMat = (c, o = {}) => helpers.mat(c, { ...o, emissive: o.emissive ? new THREE.Color(o.emissive).multiplyScalar(0.25) : new THREE.Color("#000000") });
   const k = {
-    THREE, ...helpers, scene, camera, root: body, groups,
+    THREE, ...helpers, ...(studio ? { holo: studioHolo, glow: studioGlow, mat: studioMat } : {}), scene, camera, root: body, groups,
     add(id, mesh) {
       if (!S[id]) throw new Error(`No structure called ${id}`);
       // a mesh, or a group of meshes that moves as one (a heart of chambers, a lung of lobes)
@@ -271,7 +336,7 @@ export async function mountModel(root, siteName, model) {
       const geo = new THREE.BufferGeometry(), pos = new Float32Array(n * 3), seeds = [];
       for (let i = 0; i < n; i++) seeds.push([i % curves.length, Math.random()]);
       geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
-      const pts = new THREE.Points(geo, new THREE.PointsMaterial({ color: colour, size, transparent: true, opacity: 0.95, blending: THREE.AdditiveBlending, depthWrite: false }));
+      const pts = new THREE.Points(geo, new THREE.PointsMaterial({ color: colour, size: studio ? size * 0.7 : size, transparent: true, opacity: studio ? 0.85 : 0.95, blending: studio ? THREE.NormalBlending : THREE.AdditiveBlending, depthWrite: false }));
       pts.frustumCulled = false;
       flows.push({ pts, curves, seeds, speed, pos });
       (grp ? groups[grp] : body).add(pts);

@@ -133,7 +133,7 @@ export default {
     const { THREE, V, holo, mat, bone, limb, tube, taper, blob, add, decor } = k;
     const L = [-1, 1], b = bone();
     // the holographic body (head towards +z)
-    const skinMat = holo(), skin = new THREE.Group();
+    const skinMat = holo("#a87d58", "#3a2818", 0.4), skin = new THREE.Group();   // the coat, see-through
     const torso = new THREE.Mesh(blob(0.15, 0.95, 1.05, 2.6, (v) => { if (v.z < -0.1) { const q = 1 + (v.z + 0.1) * 1.6; v.x *= q; v.y = v.y * q + (1 - q) * 0.03; } if (v.y < -0.05 && v.z > -0.1 && v.z < 0.15) v.y -= 0.03; }, 96), skinMat); torso.position.set(0, 0.47, 0); skin.add(torso);
     skin.add(limb(V(0, 0.52, 0.3), V(0, 0.66, 0.47), 0.075, skinMat));
     const head = new THREE.Mesh(blob(0.085, 0.9, 0.9, 1.1), skinMat); head.position.set(0, 0.71, 0.55); skin.add(head);

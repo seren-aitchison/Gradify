@@ -118,13 +118,13 @@ export default {
   motion: "Running stride and heartbeat",
   camera: { pos: [1.4, 1.1, 3.0], target: [0, 0.95, 0], min: 0.05, max: 6 },
   views: { Front: [[0, 1.0, 3.4], [0, 0.95, 0]], Side: [[3.4, 1.0, 0], [0, 0.95, 0]], Back: [[0, 1.0, -3.4], [0, 0.95, 0]], Arms: [[0.9, 1.3, 1.1], [0.15, 1.25, 0]], Legs: [[0.9, 0.5, 1.4], [0.05, 0.5, 0]] },
-  sliders: [{ key: "skin", label: "Skin", value: 35 }],
+  sliders: [{ key: "skin", label: "Skin", value: 0 }],
   labelMax: 0.6,
   explode: false,
   build(k) {
     const { THREE, V, holo, mat, bone, limb, blob, add, decor } = k;
     const skinMat = holo(), M = (c) => mat(c, { detail: "fibre", repeat: 1, bump: 1.4, roughness: 0.45, clearcoat: 0.4 });
-    const red = M("#d24a40"), red2 = M("#b83a35"), b = bone();
+    const b = bone();
     // a rig of joints that the stride animates; muscles and skin hang off the segments
     const rig = {};
     const seg = (name, parent, pos) => { const g = new THREE.Group(); g.position.copy(pos); (parent ? rig[parent] : null)?.add(g) ?? decor(g); rig[name] = g; return g; };
@@ -146,31 +146,47 @@ export default {
       rig["arm" + n].add(limb(V(0, 0, 0), V(0, -0.28, 0), 0.045, skinMat)); rig["fore" + n].add(limb(V(0, 0, 0), V(0, -0.3, 0), 0.035, skinMat));
       for (const [g, a, bb, r] of [["thigh", 0, -0.43, 0.014], ["shin", 0, -0.42, 0.011], ["arm", 0, -0.28, 0.01], ["fore", 0, -0.29, 0.008]]) { const m = limb(V(0, a, 0), V(0, bb, 0), r, b); rig[g + n].add(m); }
     }
-    // muscles, added to their segments so they move with the stride
+    // muscles, wrapped round each segment like an anatomy figure's muscle layer, and added to the
+    // segments so they move with the stride
     const put = (id, parent, mesh) => { rig[parent].add(mesh); add(id, mesh); return mesh; };
+    const P = Math.PI, col = "#b03a30";
+    // the trunk's surface (in pelvis coordinates), matching the torso shape above
+    const trunkR = (y) => { const yl = y - 0.24, base = 0.16 * Math.sqrt(Math.max(0.02, 1 - (yl / 0.248) ** 2)); return base * (yl > 0.1 ? 1 + (yl - 0.1) * 1.2 : 1); };
+    const trunk = (id, seg, y0, y1, th0, th1, sd, o = {}) => { const off = seg === "chest" ? 0.45 : 0; return put(id, seg, k.wrap({ a: V(0, y0 - off, 0), b: V(0, y1 - off, 0), r: (t) => Math.max(o.min || 0, trunkR(y0 + (y1 - y0) * t)), sz: 0.66, th0, th1, side: sd, narrow: 0.15, colour: col, ...o })); };
     for (const sd of [-1, 1]) {
       const n = sd < 0 ? "R" : "L";
-      const del = new THREE.Mesh(blob(0.045, 0.8, 1.2, 1, (v) => { if (v.y < 0) { v.x *= 1 + v.y * 4; v.z *= 1 + v.y * 4; } }), red); del.position.set(0, -0.02, 0); put("deltoid", "arm" + n, del);
-      const pec = new THREE.Mesh(blob(0.075, 1, 0.7, 0.22), red2); pec.position.set(sd * 0.08, -0.06, 0.08); pec.rotation.y = sd * 0.3; put("pectoralis", "chest", pec);
-      const bic = new THREE.Mesh(blob(0.032, 0.9, 3.4, 1), red); bic.position.set(0, -0.14, 0.03); put("biceps", "arm" + n, bic);
-      const tri = new THREE.Mesh(blob(0.034, 0.9, 3.4, 1), red2); tri.position.set(0, -0.13, -0.035); put("biceps", "arm" + n, tri);
-      const lat = new THREE.Mesh(blob(0.1, 0.6, 1.6, 0.25), red2); lat.position.set(sd * 0.1, -0.14, -0.085); lat.rotation.z = sd * -0.2; put("lats", "chest", lat);
-      const trap = new THREE.Mesh(blob(0.06, 1, 0.9, 0.22), red); trap.position.set(sd * 0.055, 0.03, -0.075); put("lats", "chest", trap);
-      const obl = new THREE.Mesh(blob(0.07, 0.5, 1.3, 0.6), red2); obl.position.set(sd * 0.12, 0.2, 0.05); put("abdominals", "pelvis", obl);
-      const ere = new THREE.Mesh(blob(0.03, 0.8, 7, 0.9), red); ere.position.set(sd * 0.035, 0.25, -0.09); put("erector", "pelvis", ere);
-      const glu = new THREE.Mesh(blob(0.085, 1, 1, 0.8), red2); glu.position.set(sd * 0.085, -0.04, -0.07); put("glutes", "pelvis", glu);
-      const quad = new THREE.Mesh(blob(0.065, 1, 3.3, 0.9), red); quad.position.set(0, -0.2, 0.035); put("quadriceps", "thigh" + n, quad);
-      const ham = new THREE.Mesh(blob(0.055, 1, 3.4, 0.9), red2); ham.position.set(0, -0.21, -0.04); put("hamstrings", "thigh" + n, ham);
-      const calf = new THREE.Mesh(blob(0.045, 1, 2.6, 1.05, (v) => { if (v.y < 0) { v.x *= 1 + v.y * 5; v.z *= 1 + v.y * 5; } }), red); calf.position.set(0, -0.12, -0.04); put("calves", "shin" + n, calf);
-      // joints
-      const sj = new THREE.Mesh(new THREE.SphereGeometry(0.035, 24, 24), mat("#7ee0ff", { detail: "none", transmission: 0.4, thickness: 0.05, roughness: 0.2 })); put("shoulderJoint", "arm" + n, sj);
-      const kn = new THREE.Mesh(new THREE.SphereGeometry(0.035, 24, 24), mat("#7ee0ff", { detail: "none", transmission: 0.4, thickness: 0.05, roughness: 0.2 })); put("knee", "shin" + n, kn);
-      const hp = new THREE.Mesh(new THREE.SphereGeometry(0.038, 24, 24), mat("#7ee0ff", { detail: "none", transmission: 0.4, thickness: 0.05, roughness: 0.2 })); put("hip", "thigh" + n, hp);
+      const seg = (id, parent, len, r, th0, th1, o = {}) => put(id, parent, k.wrap({ a: V(0, 0, 0), b: V(0, -len, 0), r, th0, th1, side: sd, colour: col, ...o }));
+      trunk("pectoralis", "chest", 0.29, 0.45, 0.1 * P, 0.49 * P, sd, { thick: 0.018, tendon: 0.06, narrow: 0.3 });
+      trunk("lats", "chest", 0.08, 0.42, 0.06 * P, -0.45 * P, sd, { thick: 0.012, tendon: 0.1 });
+      trunk("lats", "chest", 0.38, 0.5, -0.2 * P, -0.49 * P, sd, { thick: 0.012, tendon: 0.12, min: 0.07 });   // trapezius
+      trunk("abdominals", "pelvis", 0.02, 0.3, 0.385 * P, 0.49 * P, sd, { thick: 0.012, tendon: 0.04, bands: [0.45, 0.65, 0.85], narrow: 0.1 });
+      trunk("abdominals", "pelvis", 0.04, 0.34, -0.06 * P, 0.4 * P, sd, { thick: 0.009, tendon: 0.08 });   // obliques
+      trunk("erector", "pelvis", 0.04, 0.42, -0.42 * P, -0.5 * P, sd, { thick: 0.014, tendon: 0.1, narrow: 0.2 });
+      trunk("glutes", "pelvis", -0.12, 0.08, -0.04 * P, -0.47 * P, sd, { thick: 0.03, tendon: 0.1, min: 0.13 });
+      seg("deltoid", "arm" + n, 0.12, (t) => 0.048 - 0.01 * t, -0.42 * P, 0.55 * P, { t0: -0.2, thick: 0.014, tendon: 0.1 });
+      seg("biceps", "arm" + n, 0.28, (t) => 0.042 - 0.008 * t, 0.25 * P, 0.75 * P, { t0: 0.15, t1: 0.95, thick: 0.013 });
+      seg("biceps", "arm" + n, 0.28, (t) => 0.042 - 0.008 * t, -0.8 * P, -0.15 * P, { t0: 0.1, t1: 0.92, thick: 0.013 });   // triceps
+      seg("biceps", "fore" + n, 0.3, (t) => 0.034 - 0.012 * t, -0.95 * P, 0.95 * P, { t0: 0.02, t1: 0.8, thick: 0.01, tendon: 0.28 });   // forearm
+      seg("quadriceps", "thigh" + n, 0.43, (t) => 0.07 - 0.022 * t, -0.05 * P, 0.95 * P, { t0: 0.05, t1: 0.97, thick: 0.018, tendon: 0.12 });
+      seg("hamstrings", "thigh" + n, 0.43, (t) => 0.07 - 0.022 * t, -0.95 * P, -0.1 * P, { t0: 0.1, t1: 0.94, thick: 0.015, tendon: 0.14 });
+      seg("calves", "shin" + n, 0.42, (t) => 0.046 - 0.018 * t, -0.95 * P, -0.05 * P, { t0: 0.03, t1: 0.62, thick: 0.022, tendon: 0.16 });
+      seg("calves", "shin" + n, 0.42, (t) => 0.046 - 0.018 * t, 0.12 * P, 0.48 * P, { t0: 0.08, t1: 0.88, thick: 0.008, tendon: 0.3 });   // tibialis anterior
+      const tend = mat("#ece2d0", { detail: "fibre", repeat: 1, bump: 0.4, roughness: 0.35, clearcoat: 0.6 });
+      rig["shin" + n].add(limb(V(0, -0.24, -0.055), V(0, -0.42, -0.04), 0.006, tend));   // Achilles tendon
+      const hand = new THREE.Mesh(blob(0.035, 0.75, 1.5, 0.95), tend); hand.position.set(0, -0.34, 0); rig["fore" + n].add(hand);
+      const foot = limb(V(0, 0, -0.02), V(0, -0.03, 0.13), 0.026, tend); rig["foot" + n].add(foot);
+      // joints: pale capsules where the bones meet
+      const capsule = () => mat("#e6dccb", { detail: "tissue", repeat: 3, roughness: 0.35, clearcoat: 0.6 });
+      const sj = new THREE.Mesh(new THREE.SphereGeometry(0.035, 24, 24), capsule()); put("shoulderJoint", "arm" + n, sj);
+      const kn = new THREE.Mesh(new THREE.SphereGeometry(0.035, 24, 24), capsule()); put("knee", "shin" + n, kn);
+      const hp = new THREE.Mesh(new THREE.SphereGeometry(0.038, 24, 24), capsule()); put("hip", "thigh" + n, hp);
     }
-    for (let i = 0; i < 4; i++) for (const sd of [-1, 1]) { const ab = new THREE.Mesh(blob(0.025, 1, 1.15, 0.45), red); ab.position.set(sd * 0.03, 0.06 + i * 0.065, 0.1); put("abdominals", "pelvis", ab); }
-    const heart = new THREE.Mesh(blob(0.055, 1, 1.15, 0.9, (v) => { if (v.y < 0) { const q = 1 + v.y * 9; v.x *= q; v.z *= q; } }), mat("#ff4d6d", { detail: "fibre", repeat: 2 })); heart.position.set(0.02, -0.12, 0.03); heart.rotation.z = -0.5; put("heart", "chest", heart);
+    // the head: facial muscles over the skull
+    const head2 = new THREE.Mesh(blob(0.1, 0.88, 1.12, 1, (v) => { if (v.y < -0.03 && v.z > 0) v.z *= 0.9; }), M("#b44a3e")); head2.position.set(0, 0.3, 0.01); rig.chest.add(head2);
+    rig.chest.add(limb(V(0, 0.05, -0.01), V(0, 0.2, 0.0), 0.042, M("#a8382e")));   // neck
+    const heart = new THREE.Mesh(blob(0.055, 1, 1.15, 0.9, (v) => { if (v.y < 0) { const q = 1 + v.y * 9; v.x *= q; v.z *= q; } }), mat("#8c2422", { detail: "fibre", repeat: 2 })); heart.position.set(0.02, -0.12, 0.03); heart.rotation.z = -0.5; put("heart", "chest", heart);
     const lungs = [];
-    for (const sd of [-1, 1]) { const lu = new THREE.Mesh(blob(0.09, 0.75, 1.4, 0.75, (v) => { if (v.x * sd < 0) v.x *= 0.45; }), mat("#7cc8ff", { repeat: 5, transmission: 0.2, thickness: 0.05, roughness: 0.5 })); lu.position.set(sd * 0.08, -0.12, 0); put("lungs", "chest", lu); lungs.push(lu); }
+    for (const sd of [-1, 1]) { const lu = new THREE.Mesh(blob(0.09, 0.75, 1.4, 0.75, (v) => { if (v.x * sd < 0) v.x *= 0.45; }), mat("#d18882", { repeat: 6, roughness: 0.55 })); lu.position.set(sd * 0.08, -0.12, 0); put("lungs", "chest", lu); lungs.push(lu); }
     // skin visibility
     const skinMeshes = []; Object.values(rig).forEach((g) => g.traverse((o) => { if (o.material === skinMat) skinMeshes.push(o); }));
     k.slider("skin", (v) => { skinMat.uniforms.uOpacity.value = v; skinMeshes.forEach((m) => { m.visible = v > 0; }); });

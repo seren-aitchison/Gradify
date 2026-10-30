@@ -32,19 +32,19 @@ export default {
     // real skin, not a hologram: fade it in with the slider to see the body's outline over the anatomy
     const skinMat = new THREE.MeshPhysicalMaterial({ color: "#d4a184", roughness: 0.55, sheen: 0.7, sheenColor: new THREE.Color("#ffd6c2"), sheenRoughness: 0.6, clearcoat: 0.08, transparent: true, opacity: 0.3, depthWrite: false, side: THREE.FrontSide });
     const skin = new THREE.Group();
-    const torso = lathe([[0.0, 0.855], [0.06, 0.862], [0.115, 0.89], [0.158, 0.94], [0.17, 1.0], [0.155, 1.06], [0.135, 1.12], [0.142, 1.2], [0.16, 1.3], [0.172, 1.38], [0.175, 1.43], [0.15, 1.475], [0.08, 1.5], [0.05, 1.515], [0.0, 1.52]], skinMat, 128);
-    torso.scale.set(1, 1, 0.6); skin.add(torso);
+    const torso = lathe([[0.0, 0.855], [0.06, 0.862], [0.115, 0.89], [0.158, 0.94], [0.172, 1.0], [0.168, 1.06], [0.162, 1.12], [0.164, 1.2], [0.16, 1.3], [0.172, 1.38], [0.175, 1.43], [0.15, 1.475], [0.08, 1.5], [0.05, 1.515], [0.0, 1.52]], skinMat, 128);
+    torso.scale.set(1.1, 1, 0.86); skin.add(torso);
     skin.add(taper([V(0, 1.49, -0.005), V(0, 1.56, 0.0), V(0, 1.62, 0.01)], 0.052, 0.046, skinMat, 24));
     const head = new THREE.Mesh(blob(0.105, 0.88, 1.16, 1.02, (v) => { if (v.y < -0.03 && v.z > 0) v.z *= 0.92; if (v.y < -0.05) { v.x *= 0.85; } if (v.z > 0.08 && Math.abs(v.x) < 0.02 && v.y > -0.03 && v.y < 0.02) v.z += 0.012; }, 96), skinMat); head.position.set(0, 1.71, 0.005); skin.add(head);
     const joint = (p, r) => { const m = new THREE.Mesh(new THREE.SphereGeometry(r, 32, 24), skinMat); m.position.copy(p); skin.add(m); };
     for (const s of L) {
       const sh = V(s * 0.175, 1.42, 0), el = V(s * 0.24, 1.15, -0.01), wr = V(s * 0.27, 0.9, 0.04), hp = V(s * 0.095, 0.93, 0), kn = V(s * 0.1, 0.52, 0.005), an = V(s * 0.11, 0.08, -0.015);
-      joint(sh, 0.05); joint(el, 0.034); joint(kn, 0.05);
-      skin.add(taper([sh, sh.clone().lerp(el, 0.5).add(V(s * 0.005, 0, 0)), el], 0.047, 0.034, skinMat, 32));
-      skin.add(taper([el, el.clone().lerp(wr, 0.4).add(V(0, 0, 0.006)), wr], 0.036, 0.024, skinMat, 32));
+      joint(sh, 0.058); joint(el, 0.042); joint(kn, 0.058);
+      skin.add(taper([sh, sh.clone().lerp(el, 0.5).add(V(s * 0.005, 0, 0)), el], 0.058, 0.042, skinMat, 32));
+      skin.add(taper([el, el.clone().lerp(wr, 0.4).add(V(0, 0, 0.006)), wr], 0.044, 0.03, skinMat, 32));
       const hand = new THREE.Mesh(blob(0.036, 0.75, 1.6, 0.95), skinMat); hand.position.copy(wr).add(V(s * 0.004, -0.06, 0.008)); hand.rotation.z = s * 0.05; skin.add(hand);
-      skin.add(taper([V(s * 0.075, 1.0, 0), hp, hp.clone().lerp(kn, 0.4).add(V(s * 0.006, 0, 0.008)), kn], 0.085, 0.05, skinMat, 40));   // starts inside the hips so its open end is hidden
-      skin.add(taper([kn, kn.clone().lerp(an, 0.3).add(V(0, 0, -0.012)), an], 0.05, 0.03, skinMat, 32));
+      skin.add(taper([V(s * 0.075, 1.0, 0), hp, hp.clone().lerp(kn, 0.4).add(V(s * 0.006, 0, 0.008)), kn], 0.095, 0.06, skinMat, 40));   // starts inside the hips so its open end is hidden
+      skin.add(taper([kn, kn.clone().lerp(an, 0.3).add(V(0, 0, -0.012)), an], 0.07, 0.036, skinMat, 32));
       const foot = new THREE.Mesh(blob(0.04, 0.85, 0.55, 2.2, (v) => { if (v.z < 0) v.y *= 1.4; }), skinMat); foot.position.set(s * 0.115, 0.035, 0.04); skin.add(foot);
     }
     for (const sd of L) { const ear = new THREE.Mesh(blob(0.022, 0.35, 1, 0.7), skinMat); ear.position.set(sd * 0.093, 1.7, -0.005); skin.add(ear); }
@@ -112,21 +112,37 @@ export default {
       add("leg", limb(V(s * 0.11, 0.06, -0.035), V(s * 0.12, 0.035, 0.11), 0.012, b));
     }
 
-    // ---------- muscular (hidden at first) ----------
+    // ---------- muscular ----------
+    // muscles wrap the trunk and limbs like the muscle layer of an anatomy atlas: striated fibres,
+    // pale tendons at each end, tendinous lines across rectus abdominis
     const mus = (c = "#9e2f28") => mat(c, { detail: "fibre", repeat: 1, bump: 1.2, roughness: 0.5, clearcoat: 0.35 });
     const M = mus(), tendon = mat("#e9e0cc", { detail: "fibre", repeat: 1, bump: 0.4, roughness: 0.35, clearcoat: 0.6 });
+    const prof = [[0.06, 0.862], [0.115, 0.89], [0.158, 0.94], [0.172, 1.0], [0.168, 1.06], [0.162, 1.12], [0.164, 1.2], [0.16, 1.3], [0.172, 1.38], [0.175, 1.43], [0.15, 1.475], [0.08, 1.5]];
+    const rT = (y) => { for (let n = 1; n < prof.length; n++) if (y <= prof[n][1]) { const [r0, y0] = prof[n - 1], [r1, y1] = prof[n]; return r0 + (r1 - r0) * Math.max(0, (y - y0) / (y1 - y0)); } return prof[prof.length - 1][0]; };
+    const trunk = (id, y0, y1, th0, th1, s, o = {}) => add(id, k.wrap({ a: V(0, y0, 0), b: V(0, y1, 0), r: (t) => Math.max(o.min || 0, rT(y0 + (y1 - y0) * t) * 0.96), sx: 1.02, sz: 0.78, th0, th1, side: s, colour: "#a3322b", narrow: 0.15, ...o }));
+    const P = Math.PI;
     for (const s of L) {
+      const sh = V(s * 0.175, 1.42, 0), el = V(s * 0.24, 1.15, -0.01), wr = V(s * 0.27, 0.9, 0.04), hp = V(s * 0.095, 0.93, 0), kn = V(s * 0.1, 0.52, 0.005), an = V(s * 0.11, 0.08, -0.015);
+      const limbW = (id, a, b, r, th0, th1, o = {}) => add(id, k.wrap({ a, b, r, th0, th1, side: s, colour: "#a3322b", ...o }));
+      trunk("pectoralis", 1.25, 1.47, 0.1 * P, 0.49 * P, s, { thick: 0.018, tendon: 0.06, narrow: 0.3 });
+      trunk("rectus", 0.9, 1.3, 0.385 * P, 0.49 * P, s, { thick: 0.012, tendon: 0.04, bands: [0.5, 0.68, 0.86], narrow: 0.1 });
+      trunk("obliques", 0.92, 1.34, -0.06 * P, 0.4 * P, s, { thick: 0.009, tendon: 0.08 });
+      trunk("latissimus", 1.06, 1.38, -0.08 * P, -0.43 * P, s, { thick: 0.009, tendon: 0.12 });
+      trunk("trapezius", 1.32, 1.5, -0.22 * P, -0.49 * P, s, { thick: 0.01, tendon: 0.12 });
+      trunk("gluteus", 0.84, 1.0, -0.06 * P, -0.47 * P, s, { thick: 0.026, tendon: 0.1, min: 0.14 });
+      limbW("deltoid", V(s * 0.165, 1.47, 0), el, (t) => 0.05 - 0.012 * t, -0.55 * P, 0.65 * P, { t1: 0.42, thick: 0.014, tendon: 0.1 });
+      limbW("biceps", sh, el, (t) => 0.042 - 0.009 * t, 0.25 * P, 0.75 * P, { t0: 0.18, t1: 0.95, thick: 0.012 });
+      limbW("triceps", sh, el, (t) => 0.042 - 0.009 * t, -0.8 * P, -0.15 * P, { t0: 0.12, t1: 0.92, thick: 0.012 });
+      limbW("forearmMuscles", el, wr, (t) => 0.033 - 0.012 * t, -0.95 * P, 0.95 * P, { t0: 0.02, t1: 0.8, thick: 0.01, tendon: 0.28 });
+      limbW("quadriceps", hp, kn, (t) => 0.072 - 0.024 * t, -0.05 * P, 0.95 * P, { t0: 0.06, t1: 0.97, thick: 0.016, tendon: 0.12 });
+      limbW("hamstrings", hp, kn, (t) => 0.072 - 0.024 * t, -0.95 * P, -0.1 * P, { t0: 0.1, t1: 0.94, thick: 0.014, tendon: 0.14 });
+      limbW("gastrocnemius", kn, an, (t) => 0.046 - 0.018 * t, -0.95 * P, -0.05 * P, { t0: 0.03, t1: 0.62, thick: 0.02, tendon: 0.16 });
+      limbW("tibialisAnterior", kn, an, (t) => 0.046 - 0.018 * t, 0.12 * P, 0.48 * P, { t0: 0.08, t1: 0.88, thick: 0.008, tendon: 0.3 });
+      if (s > 0) add("rectus", k.wrap({ a: V(0, 0.88, 0), b: V(0, 1.31, 0), r: (t) => rT(0.88 + 0.43 * t) * 0.96, sx: 1.02, sz: 0.78, th0: 0.475 * P, th1: 0.525 * P, thick: 0.009, narrow: 0, tendon: 0.5, colour: "#e8ddca" }));   // linea alba
       add("scm", taper([V(s * 0.06, 1.665, -0.015), V(s * 0.05, 1.6, 0.02), V(s * 0.025, 1.49, 0.06)], 0.012, 0.009, M, 32));
-      const del = new THREE.Mesh(blob(0.05, 0.75, 1.2, 0.95, (v) => { if (v.y < 0) { v.x *= 1 + v.y * 4; v.z *= 1 + v.y * 4; } }), M); del.position.set(s * 0.19, 1.39, 0); del.rotation.z = s * 0.25; add("deltoid", del);
-      const pec = new THREE.Mesh(blob(0.08, 1, 0.75, 0.22, (v) => { if (v.x * s > 0.03) v.y *= 1 - (v.x * s - 0.03) * 8; }), M); pec.position.set(s * 0.085, 1.37, 0.1); pec.rotation.set(-0.1, s * 0.3, s * -0.2); add("pectoralis", pec);
-      const bic = new THREE.Mesh(blob(0.026, 0.95, 3.6, 1, (v) => { const t = 1 - Math.abs(v.y) / 0.094; v.x *= 0.4 + 0.6 * t; v.z *= 0.4 + 0.6 * t; }), M); bic.position.set(s * 0.215, 1.27, 0.03); bic.rotation.z = s * 0.23; add("biceps", bic);
-      for (let i = 0; i < 4; i++) { const seg = box(0.045, 0.058, 0.014, M, 0.006); seg.position.set(s * 0.027, 1.17 - i * 0.065, 0.085 + (i > 2 ? -0.008 : 0)); add("rectus", seg); }
-      const quad = new THREE.Mesh(blob(0.06, 1, 3.4, 0.9, (v) => { const t = 1 - Math.abs(v.y) / 0.2; v.x *= 0.35 + 0.65 * t; v.z *= 0.35 + 0.65 * t; }), M); quad.position.set(s * 0.1, 0.72, 0.035); quad.rotation.z = s * -0.04; add("quadriceps", quad);
-      add("quadriceps", limb(V(s * 0.1, 0.54, 0.04), V(s * 0.1, 0.45, 0.03), 0.008, tendon));
-      for (const h of [-1, 1]) { const g = new THREE.Mesh(blob(0.03, 1, 3, 1.1, (v) => { if (v.y < 0) { v.x *= 1 + v.y * 6; } }), M); g.position.set(s * 0.1 + h * 0.016, 0.38, -0.04); add("gastrocnemius", g); }
-      add("gastrocnemius", limb(V(s * 0.105, 0.28, -0.045), V(s * 0.11, 0.06, -0.05), 0.006, tendon));
+      add("quadriceps", limb(V(s * 0.1, 0.54, 0.05), V(s * 0.1, 0.45, 0.04), 0.008, tendon));   // patellar ligament
+      add("gastrocnemius", limb(V(s * 0.105, 0.3, -0.06), V(s * 0.11, 0.06, -0.05), 0.006, tendon));   // calcaneal (Achilles) tendon
     }
-    add("rectus", limb(V(0, 1.24, 0.088), V(0, 0.9, 0.06), 0.003, tendon));   // linea alba
 
     // ---------- nervous ----------
     const brainMat = mat("#e3b4a6", { detail: "fold", repeat: 3, bump: 2.2, roughness: 0.55 });
