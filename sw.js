@@ -1,13 +1,13 @@
 // Gradify service worker: lets the site open offline.
 // Network first, so a new deploy shows straight away; the cache is the fallback.
-const CACHE = "gradify-v25";
+const CACHE = "gradify-v26";
 const SHELL = [
   "./", "index.html", "app.html", "manifest.webmanifest", "gradify.config.js",
   // homepage
   "assets/styles.css", "assets/app.js", "assets/nav.js", "assets/features.js", "assets/favicon.svg", "assets/icons/icon-192.png", "assets/icons/icon-512.png",
   // the Gradify Kit
   "kit/styles/base.css", "kit/styles/components.css",
-  "kit/core/icons.js", "kit/core/colour.js", "kit/core/sites.js", "kit/core/site.js", "kit/core/site-pages.js", "kit/core/site-content.js", "kit/core/subsite-home.js", "kit/core/site-maps.js", "kit/earth/subject-map.js", "kit/learning/topic-match.js", "kit/styles/subsite.css",
+  "kit/core/icons.js", "kit/core/colour.js", "kit/core/sites.js", "kit/core/site.js", "kit/core/site-pages.js", "kit/core/site-content.js", "kit/core/subsite-home.js", "kit/core/site-maps.js", "kit/earth/subject-map.js", "kit/learning/topic-match.js", "kit/anatomy/anatomy.js", "kit/anatomy/anatomy-data.js", "kit/anatomy/preview.webp", "kit/styles/anatomy.css", "kit/vendor/three/three.module.min.js", "kit/vendor/three/OrbitControls.js", "kit/styles/subsite.css",
   "kit/app/main.js", "kit/app/app.css", "kit/data/store.js",
   "kit/learning/srs.js", "kit/learning/mastery.js",
   "kit/notes/studio.js", "kit/notes/video3d.js", "kit/notes/engine.js", "kit/notes/pack.js",

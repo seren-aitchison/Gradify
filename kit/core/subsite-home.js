@@ -27,6 +27,9 @@ export function renderHome(el, siteName) {
   el.innerHTML = [
     section("how", fill(k.stepsTitle), "", `<ol class="sm-steps">${k.steps.map(([t, d], i) => `<li class="glass"><em>${i + 1}</em><b>${fill(t)}</b><p>${fill(d)}</p></li>`).join("")}</ol>`),
 
+    // sites with a 3D model get a section for it
+    siteName === "MedGradify" ? `<section class="sm-sec sm-3d glass"><div><span class="sm-kicker">New · 3D anatomy</span><h2>The body, in 3D</h2><p>Turn it, look inside, and learn every structure: the heart beats, the lungs breathe and blood flows. Click anything for the key facts, make flashcards from it, or quiz yourself on where everything is.</p><div class="sub-ctas"><a class="btn btn-light lg" href="anatomy.html"><span>Open the 3D body</span> <span aria-hidden="true">→</span></a></div></div><a class="sm-3d-art" href="anatomy.html" aria-label="Open the 3D anatomy model"><span></span></a></section>` : "",
+
     section("topics", fill(k.topicsTitle), fill(k.topicsSub), `<div class="sm-topics">${c.topics.map(([t, d]) => `<a class="sm-topic glass" href="app.html"><i></i><b>${esc(t)}</b><span>${esc(d)}</span><span class="go" aria-hidden="true">→</span></a>`).join("")}</div>`),
 
     section("features", fillName(k.featuresTitle), "", `<div class="sm-features">${k.features.map(([i, t, d]) => `<article class="sm-feature glass"><span class="sm-ico">${icon(i)}</span><b>${fill(t)}</b><p>${fill(d)}</p></article>`).join("")}</div>`),
