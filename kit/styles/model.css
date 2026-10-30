@@ -85,3 +85,10 @@
   .mv-hint { display: none; }
   .mv-views { bottom: 12px; }
 }
+
+/* the studio look (the body): a neutral, atlas-like stage instead of the holographic one */
+.mv-studio .mv-stage { background: #1c1c1f; border-color: rgba(255, 255, 255, .12); box-shadow: 0 20px 60px -30px rgba(0, 0, 0, .8); }
+.mv-studio .mv-hint { color: rgba(220, 220, 225, .5); }
+.mv-studio .mv-labels span, .mv-studio .mv-tip { background: rgba(20, 20, 22, .85); border-color: rgba(255, 255, 255, .25); color: #f4f4f6; box-shadow: none; }
+.mv-studio .mv-views button, .mv-studio .mv-zoom { border-color: rgba(255, 255, 255, .18); }
+.mv-studio .mv-views button, .mv-studio .mv-zoom button { color: #f0f0f2; }

@@ -152,7 +152,7 @@ export async function mountModel(root, siteName, model) {
   const G = model.groups, S = model.structures;
   const cam = { pos: [0, 1, 3.6], target: [0, 0.9, 0], min: 0.06, max: 6, fov: 32, ...model.camera };
   const sliders = [...(model.sliders || []), ...(model.explode === false ? [] : [{ key: "explode", label: "Pull apart", value: 0 }])];
-  root.classList.add("mv");
+  root.classList.add("mv"); if (model.look === "studio") root.classList.add("mv-studio");
   root.innerHTML = `
     <div class="mv-top-row">
       <div class="mv-stage">
@@ -190,13 +190,17 @@ export async function mountModel(root, siteName, model) {
   renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1));
   renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
+  // "studio" models (the body) look like an anatomy atlas: a neutral backdrop, white studio light,
+  // real shadows and no glow. The rest keep Gradify's holographic look.
+  const studio = model.look === "studio";
+  if (studio) { renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap; renderer.toneMappingExposure = 1.0; }
   const scene = new THREE.Scene();
   const bg = document.createElement("canvas"); bg.width = bg.height = 512;
-  { const g = bg.getContext("2d"), r = g.createRadialGradient(256, 220, 10, 256, 256, 380); r.addColorStop(0, model.bg?.[0] || "#123c4c"); r.addColorStop(0.55, model.bg?.[1] || "#061620"); r.addColorStop(1, "#020609"); g.fillStyle = r; g.fillRect(0, 0, 512, 512); }
+  { const g = bg.getContext("2d"), r = g.createRadialGradient(256, 220, 10, 256, 256, 380); r.addColorStop(0, model.bg?.[0] || (studio ? "#4a4a4f" : "#123c4c")); r.addColorStop(0.55, model.bg?.[1] || (studio ? "#2a2a2e" : "#061620")); r.addColorStop(1, studio ? "#141416" : "#020609"); g.fillStyle = r; g.fillRect(0, 0, 512, 512); }
   scene.background = new THREE.CanvasTexture(bg); scene.background.colorSpace = THREE.SRGBColorSpace;
   const pmrem = new THREE.PMREMGenerator(renderer);
   scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-  scene.environmentIntensity = model.envIntensity ?? 0.4;
+  scene.environmentIntensity = model.envIntensity ?? (studio ? 0.7 : 0.4);
   const camera = new THREE.PerspectiveCamera(cam.fov, 1, 0.005, 80);
   camera.position.set(...cam.pos);
   const controls = new OrbitControls(camera, canvas);
@@ -207,15 +211,24 @@ export async function mountModel(root, siteName, model) {
   controls.maxPolarAngle = model.maxPolar ?? Math.PI * 0.92;
   controls.autoRotateSpeed = 1.2;
 
-  scene.add(new THREE.HemisphereLight("#bfe6ff", "#1a1022", 0.7));
-  const key = new THREE.DirectionalLight("#ffffff", 2.0); key.position.set(1.5, 3, 2.5); scene.add(key);
-  const fill = new THREE.DirectionalLight("#9fdcff", 0.6); fill.position.set(-2, 1, 1.5); scene.add(fill);
-  const rimA = new THREE.PointLight("#5ef0ff", 5, 8); rimA.position.set(-1.6, 1.6, -1.2); scene.add(rimA);
-  const rimB = new THREE.PointLight("#f055dd", 3, 8); rimB.position.set(1.6, 0.6, -1.4); scene.add(rimB);
+  scene.add(new THREE.HemisphereLight(studio ? "#fff6ee" : "#bfe6ff", studio ? "#3a3430" : "#1a1022", studio ? 0.55 : 0.7));
+  const key = new THREE.DirectionalLight(studio ? "#fff4e8" : "#ffffff", studio ? 2.4 : 2.0); key.position.set(1.5, 3, 2.5); scene.add(key);
+  const fill = new THREE.DirectionalLight(studio ? "#e8eeff" : "#9fdcff", 0.6); fill.position.set(-2, 1, 1.5); scene.add(fill);
+  const rimA = new THREE.PointLight(studio ? "#ffffff" : "#5ef0ff", studio ? 2 : 5, 8); rimA.position.set(-1.6, 1.6, -1.2); scene.add(rimA);
+  const rimB = new THREE.PointLight(studio ? "#ffe8d8" : "#f055dd", studio ? 1.5 : 3, 8); rimB.position.set(1.6, 0.6, -1.4); scene.add(rimB);
+  if (studio) {
+    key.castShadow = true; key.shadow.mapSize.set(2048, 2048); key.shadow.bias = -0.0004; key.shadow.normalBias = 0.01;
+    Object.assign(key.shadow.camera, { left: -1.2, right: 1.2, top: 2.2, bottom: -0.4, near: 0.5, far: 8 }); key.shadow.camera.updateProjectionMatrix();
+  }
 
   // the platform: glowing rings and a faint polar grid under the model
   const platform = new THREE.Group();
-  if (model.platform !== false) {
+  if (studio && model.platform !== false) {
+    // a plain floor that catches the model's shadow
+    const floor = new THREE.Mesh(new THREE.CircleGeometry(model.platform?.r ? model.platform.r * 2.5 : 1.4, 96), new THREE.ShadowMaterial({ opacity: 0.35 }));
+    floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; platform.add(floor);
+    platform.position.y = model.platform?.y ?? 0; scene.add(platform);
+  } else if (model.platform !== false) {
     const pr = model.platform?.r ?? 0.55;
     for (const [r, w, o] of [[1, 0.022, 0.9], [1.27, 0.011, 0.5], [1.64, 0.007, 0.3]]) {
       const ring = new THREE.Mesh(new THREE.RingGeometry(pr * r - pr * w, pr * r + pr * w, 160), glow("#5ef0ff", o)); ring.material.side = THREE.DoubleSide;
@@ -230,8 +243,7 @@ export async function mountModel(root, siteName, model) {
 
   const composer = new EffectComposer(renderer);
   composer.addPass(new RenderPass(scene, camera));
-  const bloom = new UnrealBloomPass(new THREE.Vector2(256, 256), model.bloom ?? 0.28, 0.5, 0.9);
-  composer.addPass(bloom);
+  if (!studio) composer.addPass(new UnrealBloomPass(new THREE.Vector2(256, 256), model.bloom ?? 0.28, 0.5, 0.9));
   composer.addPass(new OutputPass());
 
   // ---------- the model ----------
@@ -268,6 +280,7 @@ export async function mountModel(root, siteName, model) {
   };
   await model.build(k);
   scene.updateMatrixWorld(true);
+  if (studio) body.traverse((o) => { if (o.isMesh && !o.material.transparent) { o.castShadow = true; o.receiveShadow = true; } });
 
   // where each part sits, for pulling apart, focus and labels
   const all = new THREE.Box3().setFromObject(body);
@@ -285,7 +298,13 @@ export async function mountModel(root, siteName, model) {
   const hoverMat = new THREE.MeshStandardMaterial({ color: "#d8fbff", emissive: "#5ef0ff", emissiveIntensity: 0.35, roughness: 0.35 });
   function paint() {
     for (const p of Object.values(parts)) for (const m of p.meshes) {
-      m.material = p.id === state.selected ? highlight : p.id === state.hovered ? hoverMat : m.userData.mat;
+      const on = p.id === state.selected ? "sel" : p.id === state.hovered ? "hov" : null;
+      if (!studio) { m.material = on === "sel" ? highlight : on === "hov" ? hoverMat : m.userData.mat; continue; }
+      // in the studio look, a picked part keeps its own colour and texture, lit with a soft warm glow
+      if (!on || Array.isArray(m.userData.mat)) { m.material = m.userData.mat; continue; }
+      const tint = (m.userData.tint ||= {});
+      tint[on] ||= (() => { const c = m.userData.mat.clone(); if (c.emissive) { c.emissive = new THREE.Color(on === "sel" ? "#ffcf8a" : "#ffe6c4"); c.emissiveIntensity = on === "sel" ? 0.45 : 0.2; } return c; })();
+      m.material = tint[on];
     }
   }
 
