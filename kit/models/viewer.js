@@ -18,6 +18,7 @@ import { RenderPass } from "../vendor/three/addons/RenderPass.js";
 import { UnrealBloomPass } from "../vendor/three/addons/UnrealBloomPass.js";
 import { OutputPass } from "../vendor/three/addons/OutputPass.js";
 import { RoomEnvironment } from "../vendor/three/addons/RoomEnvironment.js";
+import { mergeVertices } from "../vendor/three/addons/BufferGeometryUtils.js";
 import { LocalStore, CloudStore, scopeToSite } from "../data/store.js";
 
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
@@ -164,8 +165,9 @@ function cut(geo, pt, n) {
     let out = 0; for (let j = 0; j < 3; j++) { v.fromBufferAttribute(p, i + j); if (v.clone().sub(pt).dot(n) > 0) out++; }
     if (out < 3) for (let j = 0; j < 3; j++) keep.push(p.getX(i + j), p.getY(i + j), p.getZ(i + j));
   }
-  const out = new THREE.BufferGeometry(); out.setAttribute("position", new THREE.Float32BufferAttribute(keep, 3)); out.computeVertexNormals();
-  return out;
+  const out = new THREE.BufferGeometry(); out.setAttribute("position", new THREE.Float32BufferAttribute(keep, 3));
+  const smooth = mergeVertices(out, 1e-6); smooth.computeVertexNormals();   // re-join shared corners so it shades smoothly
+  return smooth;
 }
 const line = (pts, c, opacity = 0.8) => new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: c, transparent: true, opacity, blending: mat.realistic ? THREE.NormalBlending : THREE.AdditiveBlending, depthWrite: false }));
 // a muscle that wraps part of the way round a limb or the trunk, like the muscle layer in an
@@ -220,6 +222,7 @@ export async function mountModel(root, siteName, model) {
         <div class="mv-zoom" role="group" aria-label="Zoom"><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="out" aria-label="Zoom out">−</button><button type="button" data-zoom="reset" aria-label="Reset the view">⟲</button></div>
         <div class="mv-views">${Object.keys(model.views || {}).map((v) => `<button type="button" data-view="${esc(v)}">${esc(v)}</button>`).join("")}</div>
         <p class="mv-hint">Drag to turn · scroll or pinch to zoom · double-click to fly in</p>
+        ${model.credit ? `<p class="mv-credit">${esc(model.credit)} <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>` : ""}
       </div>
       <aside class="mv-side">
         <div class="mv-controls">
@@ -472,8 +475,10 @@ export async function mountModel(root, siteName, model) {
   const tip = $(".mv-tip");
   let down = null;
   canvas.addEventListener("pointerdown", (e) => { down = [e.clientX, e.clientY]; tween = null; });
+  let lastHover = 0;
   canvas.addEventListener("pointermove", (e) => {
     if (e.buttons || e.pointerType === "touch") return;
+    const now = performance.now(); if (now - lastHover < 60) return; lastHover = now;   // detailed models: test hover at most ~16 times a second
     const id = hitAt(e)?.object.userData.id || null;
     if (id !== state.hovered) { state.hovered = id; paint(); canvas.style.cursor = id ? "pointer" : "grab"; }
     tip.hidden = !id || !!state.quiz;

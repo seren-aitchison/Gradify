@@ -16,11 +16,11 @@ Version: see `VERSION`.
 | `learning/` | Spaced repetition (`srs.js`) and the Mastery Engine (`mastery.js`) | **Real**, unit-tested |
 | `data/` | Where a learner's data lives: `LocalStore` (this browser), `CloudStore` (Supabase), `scopeToSite` (one site's view of the shared account) | **Real** |
 | `earth/` | The 3D dot globe: drag to turn, pins, arcs, portals, glowing city markers | **Real component.** You give it the scene |
-| `models/` | The 3D model viewer (`viewer.js`) and one model per sub-site: the body, mouth, dog, brain, cell, engine, courtroom, solar system and more. Each has a full page of notes per section, flashcards, "in your notes" and a quiz | **Real.** Models are built in code, not scanned |
+| `models/` | The 3D model viewer (`viewer.js`) and one model per sub-site: the body, mouth, dog, brain, cell, engine, courtroom, solar system and more. Each has a full page of notes per section, flashcards, "in your notes" and a quiz | **Real.** The body, athlete and brain use real scanned anatomy (`anatomy-glb.js`); the other models are built in code |
 | `core/` | Icons, colour helpers, and the list of every Gradify site | **Real** |
 | `styles/` | `base.css` (tokens, glass, buttons, top bar) and `components.css` (panels, rings, charts, switches and every LifeOS view) | **Real** |
 | `lifeos/` | The LifeOS window: Today, time-blocking Plan, Progress, Earth, Path, Gradify AI, Learn, Study feed, Notes Studio, Community, Settings, and the Tree and Forest | **Preview.** Runs on Alex's example data. Wire each view to real data before you rely on it |
-| `vendor/` | pdf.js 3.11.174 (reads PDFs in the browser), supabase-js 2.117.0, and three.js r169 with its post-processing and environment add-ons | Third-party |
+| `vendor/` | pdf.js 3.11.174 (reads PDFs in the browser), supabase-js 2.117.0, three.js r169 with its post-processing, environment and glTF add-ons, and `anatomy/`: the BodyParts3D human anatomy model (DBCLS) as prepared by open-anatomy-3d, CC BY 4.0. Show its credit wherever it appears (the viewer does, from the model's `credit`) | Third-party |
 | `templates/subsite/` | The homepage, app and LifeOS pages for a new sub-site, used by `npm run new-site` | |
 
 The backend (database and the Gradify AI function) is not in the kit. Every site shares the one in the Gradify repository's `supabase/` folder, so one account works across the whole family.

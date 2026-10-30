@@ -1,6 +1,9 @@
-// PsychGradify's 3D model: the brain, with the four cortical lobes, the limbic system, the deep
-// structures and the hindbrain. Fade the cortex to see inside. Signals travel along the main
-// pathways (the corpus callosum, the circuit of Papez, the dopamine pathways).
+// PsychGradify's 3D model: the real brain from scan data (BodyParts3D via open-anatomy-3d, CC BY 4.0)
+// split into the four cortical lobes, with the limbic system, the deep structures and the hindbrain.
+// Fade the cortex to see inside. Signals travel along the main pathways (the corpus callosum, the
+// circuit of Papez, the dopamine pathways).
+import { loadAnatomy, take, ATTRIBUTION } from "./anatomy-glb.js";
+
 const s = (group, name, desc, facts, cards, keys) => ({ group, name, desc, facts, cards, keys });
 
 const GROUPS = {
@@ -105,57 +108,58 @@ export default {
   views: { Left: [[-1.25, 0.35, 0.05], [0, 0.32, 0]], Right: [[1.25, 0.35, 0.05], [0, 0.32, 0]], Top: [[0.05, 1.4, 0.1], [0, 0.32, 0]], Front: [[0.05, 0.38, 1.25], [0, 0.32, 0]], Back: [[0.05, 0.4, -1.25], [0, 0.32, 0]], Inside: [[0.55, 0.3, 0.25], [0, 0.28, 0]] },
   sliders: [{ key: "cortex", label: "Cortex", value: 100 }],
   platform: { r: 0.42, y: 0.02 },
-  build(k) {
+  credit: ATTRIBUTION,
+  async build(k) {
     const { THREE, V, mat, tube, taper, blob, cut, add } = k;
     const L = [-1, 1];
-    // a hemisphere, folded, then sliced into lobes along the central, lateral and parieto-occipital sulci
-    const hemi = (sd) => blob(0.2, 0.62, 0.7, 1.1, (v) => {
-      if (v.x * sd < 0) v.x *= 0.15;                                                          // flat medial surface
-      if (v.y < -0.03 && v.z > -0.05) v.y = -0.03 + (v.y + 0.03) * 0.7;
-      const n = Math.sin(v.x * 70 + v.z * 30) * Math.sin(v.y * 75) * Math.sin(v.z * 65 + v.y * 20) + 0.5 * Math.sin(v.x * 140) * Math.sin(v.z * 130 + v.y * 60);
-      v.multiplyScalar(1 + n * 0.034);
-    }, 160);
+    // the real brain from the scan (BodyParts3D), enlarged so it fills the stage, split into its
+    // hemispheres and then into lobes along the central, lateral and parieto-occipital sulci
+    const { byKey } = await loadAnatomy();
+    const S = 2.35, real = byKey.brain[0], centre = V(0, 0.34, 0);
+    const src = real.geometry.clone(); src.scale(S, S, S);
+    const hemi = (sd) => cut(src, V(0, 0, 0), V(-sd, 0, 0));   // keep the triangles on this side of the midline
+    const placeReal = (key) => { const m = take(byKey, key)[0]; m.geometry = m.geometry.clone(); m.geometry.scale(S, S, S); m.position.sub(real.position).multiplyScalar(S).add(centre); return m; };
     const central = [V(0, 0, 0.0), V(0, -0.25, 0.97).normalize()], lateral = [V(0, -0.04, 0), V(0, 1, 0.5).normalize()], po = [V(0, 0, -0.13), V(0, -0.35, 1).normalize()];
     const neg = ([p, n]) => [p, n.clone().negate()];
     const lobes = {
-      frontal: { planes: [central, lateral], c: "#f7b2c2" },
-      parietal: { planes: [neg(central), po, lateral], c: "#f4c3a8" },
-      temporal: { planes: [neg(lateral), [V(0, 0, -0.12), V(0, 0, 1)]], c: "#c9b3f2" },
-      occipital: { planes: [neg(po)], c: "#a9d8f2" },
+      frontal: { planes: [central, lateral], c: "#d9a294" },
+      parietal: { planes: [neg(central), po, lateral], c: "#d8b08e" },
+      temporal: { planes: [neg(lateral), [V(0, 0, -0.12), V(0, 0, 1)]], c: "#c49aa8" },
+      occipital: { planes: [neg(po)], c: "#b5aab4" },
     };
     const cortexMats = [];
     for (const sd of L) {
       const g = hemi(sd);
       for (const [id, { planes, c }] of Object.entries(lobes)) {
-        const m = mat(c, { detail: "fold", repeat: 4, bump: 3, roughness: 0.5, transparent: true });
+        const m = mat(c, { detail: "fold", repeat: 1, bump: 1.4, roughness: 0.5, clearcoat: 0.5, transparent: true, side: THREE.DoubleSide });
         cortexMats.push(m);
         const mesh = new THREE.Mesh(planes.reduce((geo, [pt, n]) => cut(geo, pt, n.clone().negate()), g), m);   // keep the surface on the lobe's side of each sulcus
-        mesh.position.set(sd * 0.008, 0.34, 0); add(id, mesh);
+        mesh.position.set(sd * 0.006, centre.y, centre.z); add(id, mesh);
       }
     }
     k.slider("cortex", (v) => { for (const m of cortexMats) { m.opacity = 0.08 + v * 0.92; m.depthWrite = v > 0.9; } });
     // limbic structures
     for (const sd of L) {
       const hip = []; for (let i = 0; i <= 20; i++) { const t = i / 20; hip.push(V(sd * (0.07 + Math.sin(t * Math.PI) * 0.015), 0.27 - Math.sin(t * Math.PI * 0.9) * 0.02 + t * 0.06, 0.03 - t * 0.12)); }
-      add("hippocampus", taper(hip, 0.016, 0.009, mat("#ff8f6b", { detail: "fold", repeat: 2, bump: 1 }), 48));
-      const am = new THREE.Mesh(blob(0.017, 1, 0.9, 1.1), mat("#ff5a4d", { detail: "tissue" })); am.position.set(sd * 0.075, 0.265, 0.05); add("amygdala", am);
+      add("hippocampus", taper(hip, 0.016, 0.009, mat("#c98a6a", { detail: "fold", repeat: 2, bump: 1 }), 48));
+      const am = new THREE.Mesh(blob(0.017, 1, 0.9, 1.1), mat("#b8574a", { detail: "tissue" })); am.position.set(sd * 0.075, 0.265, 0.05); add("amygdala", am);
       const cg = []; for (let i = 0; i <= 30; i++) { const a = Math.PI * 0.05 + (i / 30) * Math.PI * 1.15; cg.push(V(sd * 0.018, 0.34 + Math.sin(a) * 0.1, Math.cos(a) * 0.15 + 0.01)); }
-      add("cingulate", tube(cg, 0.012, mat("#ffb36b", { detail: "fold", repeat: 2 }), 64));
-      const th = new THREE.Mesh(blob(0.028, 0.8, 0.8, 1.3), mat("#7ee0ff", { detail: "tissue" })); th.position.set(sd * 0.02, 0.32, -0.01); add("thalamus", th);
+      add("cingulate", tube(cg, 0.012, mat("#d4a070", { detail: "fold", repeat: 2 }), 64));
+      const th = new THREE.Mesh(blob(0.028, 0.8, 0.8, 1.3), mat("#8fa3b8", { detail: "tissue" })); th.position.set(sd * 0.02, 0.32, -0.01); add("thalamus", th);
       const cd = []; for (let i = 0; i <= 20; i++) { const t = i / 20; cd.push(V(sd * (0.05 + t * 0.02), 0.36 + Math.sin(t * Math.PI) * 0.02 - t * 0.06, 0.08 - t * 0.17)); }
-      add("basalGanglia", taper(cd, 0.022, 0.006, mat("#5aa9ff", { detail: "tissue" }), 48));
-      const put = new THREE.Mesh(blob(0.03, 0.6, 1, 1.3), mat("#4f8dff", { detail: "tissue" })); put.position.set(sd * 0.075, 0.32, 0.03); add("basalGanglia", put);
+      add("basalGanglia", taper(cd, 0.022, 0.006, mat("#9a8a9e", { detail: "tissue" }), 48));
+      const put = new THREE.Mesh(blob(0.03, 0.6, 1, 1.3), mat("#8a7a90", { detail: "tissue" })); put.position.set(sd * 0.075, 0.32, 0.03); add("basalGanglia", put);
     }
-    const hyp = new THREE.Mesh(blob(0.018, 1.2, 0.8, 1), mat("#ffd36b", { detail: "tissue" })); hyp.position.set(0, 0.28, 0.035); add("hypothalamus", hyp);
+    const hyp = new THREE.Mesh(blob(0.018, 1.2, 0.8, 1), mat("#d4b06a", { detail: "tissue" })); hyp.position.set(0, 0.28, 0.035); add("hypothalamus", hyp);
     const cc = []; for (let i = 0; i <= 30; i++) { const a = Math.PI * 0.12 + (i / 30) * Math.PI * 0.95; cc.push(V(0, 0.33 + Math.sin(a) * 0.07, Math.cos(a) * 0.12)); }
-    const callosum = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(cc), 64, 0.012, 12), mat("#e8f4ff", { detail: "fibre", repeat: 2, bump: 0.6 })); callosum.scale.set(5, 1, 1); add("corpusCallosum", callosum);
+    const callosum = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(cc), 64, 0.012, 12), mat("#efe8dc", { detail: "fibre", repeat: 2, bump: 0.6 })); callosum.scale.set(5, 1, 1); add("corpusCallosum", callosum);
     // hindbrain
-    const cb = new THREE.Mesh(blob(0.08, 1.35, 0.62, 0.8, (v) => { v.y += Math.sin(v.y * 700) * 0.002; if (Math.abs(v.x) < 0.012) v.multiplyScalar(0.93); }, 128), mat("#c79bff", { detail: "fold", repeat: 8, bump: 2.6 })); cb.position.set(0, 0.215, -0.16); add("cerebellum", cb);
-    add("brainstem", taper([V(0, 0.3, -0.02), V(0, 0.22, -0.05), V(0, 0.17, -0.065), V(0, 0.11, -0.075)], 0.028, 0.017, mat("#e0c3ff", { detail: "fibre", repeat: 1 }), 48));
+    const cb = placeReal("cerebellum"); cb.material = mat("#c99a8e", { detail: "fold", repeat: 1, bump: 2, roughness: 0.5, side: THREE.DoubleSide }); add("cerebellum", cb);
+    const bs = placeReal("brainstem"); bs.material = mat("#d6b39c", { detail: "fibre", repeat: 1, bump: 0.6, side: THREE.DoubleSide }); add("brainstem", bs);
     // signals: across the callosum, round the circuit of Papez, along the dopamine pathways
     const across = []; for (let i = 0; i < 6; i++) { const z = -0.08 + i * 0.035; across.push([V(-0.13, 0.4, z), V(0, 0.38 + Math.sin(i) * 0.01, z), V(0.13, 0.4, z)]); }
-    k.flow(across, "#bfe9ff", 40, 0.35, "deep", 0.01);
-    k.flow([[V(0.07, 0.27, 0.03), V(0.03, 0.3, -0.08), V(0.02, 0.32, -0.01), V(0.02, 0.42, 0.05), V(0.02, 0.38, -0.12), V(0.07, 0.29, -0.06)]], "#ffb36b", 18, 0.25, "limbic", 0.01);
-    k.flow([[V(0, 0.25, -0.04), V(0.04, 0.3, 0.02), V(0.075, 0.33, 0.04)], [V(0, 0.25, -0.04), V(0.0, 0.3, 0.1), V(0.0, 0.36, 0.17)]], "#6bffb8", 20, 0.3, "deep", 0.009);
+    k.flow(across, "#f4ead8", 40, 0.35, "deep", 0.01);
+    k.flow([[V(0.07, 0.27, 0.03), V(0.03, 0.3, -0.08), V(0.02, 0.32, -0.01), V(0.02, 0.42, 0.05), V(0.02, 0.38, -0.12), V(0.07, 0.29, -0.06)]], "#e0a070", 18, 0.25, "limbic", 0.01);
+    k.flow([[V(0, 0.25, -0.04), V(0.04, 0.3, 0.02), V(0.075, 0.33, 0.04)], [V(0, 0.25, -0.04), V(0.0, 0.3, 0.1), V(0.0, 0.36, 0.17)]], "#8fd0a0", 20, 0.3, "deep", 0.009);
   },
 };

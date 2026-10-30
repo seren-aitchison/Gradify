@@ -92,3 +92,6 @@
 .mv-studio .mv-labels span, .mv-studio .mv-tip { background: rgba(20, 20, 22, .85); border-color: rgba(255, 255, 255, .25); color: #f4f4f6; box-shadow: none; }
 .mv-studio .mv-views button, .mv-studio .mv-zoom { border-color: rgba(255, 255, 255, .18); }
 .mv-studio .mv-views button, .mv-studio .mv-zoom button { color: #f0f0f2; }
+.mv-credit { position: absolute; right: 14px; bottom: 10px; max-width: 60%; margin: 0; font: 500 10.5px/1.35 var(--sans); color: rgba(220, 220, 225, .55); text-align: right; pointer-events: auto; }
+.mv-credit a { color: inherit; }
+@media (max-width: 640px) { .mv-credit { left: 14px; right: 14px; max-width: none; bottom: 48px; text-align: left; } }
