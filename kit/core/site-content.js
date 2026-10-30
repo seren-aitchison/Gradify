@@ -177,3 +177,17 @@ export const SITES_CONTENT = {
   SportGradify: { kind: "uni", exams: "sport science exams and coaching qualifications", topics: [["Physiology", "How the body adapts to training."], ["Training principles", "Overload, specificity and recovery."], ["Biomechanics", "Movement, force and technique."], ["Nutrition", "Fuelling training and recovery."], ["Psychology", "Motivation, focus and pressure."], ["Coaching", "Plan sessions and seasons."]] },
   CreateGradify: { kind: "self", exams: "", topics: [["Ideation", "Methods for more and better ideas."], ["Design thinking", "Empathise, define, prototype, test."], ["Problem framing", "Find the question worth answering."], ["Prototyping", "Make it quickly, learn from it."], ["Feedback", "Give and use critique well."], ["Creative habits", "Practice that keeps ideas coming."]] },
 };
+
+// The two sites each site's learning map has portals to.
+export const RELATED = {
+  UnderGradify: ["PostGradify", "InternshipGradify"], PostGradify: ["UnderGradify", "PsychGradify"], ProGradify: ["BusinessGradify", "FinanceGradify"],
+  EduGradify: ["YouthGradify", "JuniorGradify"], YouthGradify: ["JuniorGradify", "UnderGradify"], JuniorGradify: ["YouthGradify", "MathGradify"],
+  LawGradify: ["BusinessGradify", "SocGradify"], BusinessGradify: ["FinanceGradify", "ProGradify"], FinanceGradify: ["InvestorGradify", "BusinessGradify"],
+  InvestorGradify: ["FinanceGradify", "MathGradify"], MedGradify: ["PharmaGradify", "NurseGradify"], DentalGradify: ["MedGradify", "PharmaGradify"],
+  VetGradify: ["MedGradify", "SciGradify"], NurseGradify: ["MedGradify", "PharmaGradify"], PharmaGradify: ["MedGradify", "SciGradify"],
+  HealthGradify: ["SportGradify", "MedGradify"], PsychGradify: ["SocGradify", "HealthGradify"], InternshipGradify: ["ProGradify", "UnderGradify"],
+  EngineerGradify: ["MathGradify", "SciGradify"], MathGradify: ["EngineerGradify", "SciGradify"], SciGradify: ["EcoGradify", "MathGradify"],
+  EcoGradify: ["SciGradify", "SocGradify"], SocGradify: ["PsychGradify", "LawGradify"], LitGradify: ["LanguageGradify", "ArtGradify"],
+  LanguageGradify: ["LitGradify", "YouthGradify"], ArtGradify: ["CreateGradify", "MusicGradify"], MusicGradify: ["ArtGradify", "CreateGradify"],
+  SportGradify: ["HealthGradify", "MedGradify"], CreateGradify: ["ArtGradify", "BusinessGradify"],
+};

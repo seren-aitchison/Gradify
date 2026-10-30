@@ -51,3 +51,17 @@ test("every built site's learning map has three subtopics for each of its six to
     assert.ok(SITE_MAPS[name].every((a) => a.length === 3 && a.every(Boolean)), `${name} has three subtopics each`);
   }
 });
+
+test("your own topics are sorted into the subject's areas, following their deck when unsure", async () => {
+  const { matchTopics } = await import("../kit/learning/topic-match.js");
+  const areas = [{ name: "Anatomy", subs: ["Thorax", "Abdomen", "Neuroanatomy"] }, { name: "Physiology", desc: "How each system works", subs: ["Cardiac cycle", "Renal function", "Respiration"] }];
+  const { placed, unplaced } = matchTopics(areas, [
+    { key: "a", doc: "d1", topic: "Cardiac cycle and output", text: "systole diastole" },
+    { key: "b", doc: "d1", topic: "Heart sounds", text: "valves close" },
+    { key: "c", doc: "d2", topic: "Medieval poetry", text: "Chaucer" },
+  ]);
+  assert.equal(placed.find((p) => p.topic.key === "a").area, 1);
+  assert.equal(placed.find((p) => p.topic.key === "a").slot, 0, "takes the Cardiac cycle pin's place");
+  assert.equal(placed.find((p) => p.topic.key === "b").area, 1, "follows its deck");
+  assert.deepEqual(unplaced.map((t) => t.key), ["c"]);
+});

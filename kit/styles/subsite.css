@@ -159,3 +159,10 @@
 .map-page { padding: 40px 0 10px; }
 .map-page .sm-head { margin-bottom: 18px; }
 .sub-links a[aria-current="page"] { color: var(--fg); background: rgba(255, 255, 255, .08); }
+.map-stats { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 16px; }
+.map-stats > div { display: flex; align-items: baseline; gap: 8px; padding: 10px 16px; border-radius: 14px; background: rgba(255, 255, 255, .04); border: 1px solid var(--line); }
+.map-stats b { font-size: 20px; }
+.map-stats span { font-size: 13px; color: var(--mute); }
+.map-portals { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; margin: 14px 0 0; font-size: 14px; color: var(--faint); }
+.map-portals a { color: var(--fg); text-decoration: none; }
+.map-portals a:hover { text-decoration: underline; }
