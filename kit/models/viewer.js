@@ -237,7 +237,7 @@ export async function mountModel(root, siteName, model) {
   // ---------- the model ----------
   const body = new THREE.Group(); scene.add(body);
   const groups = {}; for (const k of Object.keys(G)) { groups[k] = new THREE.Group(); groups[k].visible = !G[k].off; body.add(groups[k]); }
-  const pickables = [], parts = {}, ticks = [], flows = [], onSlider = {};
+  const pickables = [], parts = {}, ticks = [], flows = [], onSlider = {}, attached = [];
   const k = {
     THREE, ...helpers, scene, camera, root: body, groups,
     add(id, mesh) {
@@ -246,7 +246,8 @@ export async function mountModel(root, siteName, model) {
       const p = (parts[id] ||= { id, objs: [], meshes: [] });
       p.objs.push(mesh);
       mesh.traverse((m) => { if (m.isMesh) { m.userData.id = id; p.meshes.push(m); pickables.push(m); } });
-      groups[S[id].group].add(mesh);
+      // parts already placed in the model's own hierarchy (a rig that animates) stay there
+      if (mesh.parent) { mesh.userData.group = S[id].group; attached.push(mesh); } else groups[S[id].group].add(mesh);
       return mesh;
     },
     decor(obj, grp) { (grp ? groups[grp] : body).add(obj); return obj; },
@@ -266,6 +267,7 @@ export async function mountModel(root, siteName, model) {
     },
   };
   await model.build(k);
+  scene.updateMatrixWorld(true);
 
   // where each part sits, for pulling apart, focus and labels
   const all = new THREE.Box3().setFromObject(body);
@@ -431,6 +433,7 @@ export async function mountModel(root, siteName, model) {
     const g = b.dataset.grp, on = !state.visible.has(g);
     on ? state.visible.add(g) : state.visible.delete(g);
     b.classList.toggle("on", on); b.setAttribute("aria-pressed", String(on)); groups[g].visible = on;
+    attached.forEach((m) => { if (m.userData.group === g) m.visible = on; });
   });
   root.addEventListener("input", (e) => {
     const s = e.target.dataset.slider; if (!s) return;
@@ -485,6 +488,7 @@ export async function mountModel(root, siteName, model) {
   let onScreen = true;
   new IntersectionObserver(([en]) => { onScreen = en.isIntersecting; }).observe(canvas);
   const clock = new THREE.Clock(), tmp = new THREE.Vector3(), off = new THREE.Vector3();
+  let shownMotion = null;
   const holos = []; scene.traverse((o) => { if (o.material?.uniforms?.uTime) holos.push(o.material); });
   renderer.setAnimationLoop(() => {
     if (!onScreen) return;
@@ -492,15 +496,15 @@ export async function mountModel(root, siteName, model) {
     for (const m of holos) m.uniforms.uTime.value = t;
     platform.rotation.y += dt * 0.15;
     for (const fn of ticks) fn(t, dt, state.motion);
+    if (state.motion !== shownMotion) { flows.forEach((f) => { f.pts.visible = state.motion; }); shownMotion = state.motion; }   // a model can hide a flow itself while running
     if (state.motion) for (const f of flows) {
-      f.pts.visible = true;
       f.seeds.forEach(([c, s], i) => { f.curves[c].getPointAt((s + t * f.speed) % 1, tmp); f.pos[i * 3] = tmp.x; f.pos[i * 3 + 1] = tmp.y; f.pos[i * 3 + 2] = tmp.z; });
       f.pts.geometry.attributes.position.needsUpdate = true;
-    } else flows.forEach((f) => { f.pts.visible = false; });
+    }
     // pulling apart: each part moves out from the model's centre
     if (model.explode !== false) for (const p of Object.values(parts)) {
       off.copy(p.centre).sub(centre).multiplyScalar(state.explode * 0.9);
-      p.objs.forEach((m) => m.position.copy(m.userData.home).add(off));
+      p.objs.forEach((m) => { if (!m.userData.moves) m.position.copy(m.userData.home).add(off); });   // parts the model animates itself are left alone
     }
     if (tween) {
       tween.t = Math.min(1, tween.t + dt * 1.6);
