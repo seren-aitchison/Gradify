@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SciGradify · Physics</title>
+  <!-- SciGradify Physics: the whole syllabus (kit/courses/physics/) as a course, run by kit/course/course.js. -->
+  <meta name="gradify-site" content="SciGradify">
+  <meta name="description" content="Physics from first principles to research: 54 units and 1,308 lessons with full notes, check questions, flashcards, unit quizzes, XP and streaks.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../../kit/styles/base.css">
+  <link rel="stylesheet" href="../../kit/styles/components.css">
+  <link rel="stylesheet" href="../../kit/styles/subsite.css">
+  <link rel="stylesheet" href="../../kit/styles/model.css">
+  <link rel="stylesheet" href="../../kit/styles/course.css">
+  <script src="../../kit/vendor/supabase/supabase.js" defer></script>
+  <script type="module">
+    import { SITES, nameHtml, accentOf } from "../../kit/core/site.js";
+    import { icon } from "../../kit/core/icons.js";
+    import { tile, ink } from "../../kit/core/colour.js";
+    import { mountCourse } from "../../kit/course/course.js";
+    import physics from "../../kit/courses/physics/course.js";
+    const s = SITES.find((x) => x.n === "SciGradify");
+    if (s) {
+      document.body.style.setProperty("--accent", accentOf(s));
+      document.querySelectorAll(".sub-brand .icon").forEach((el) => { el.innerHTML = icon(s.i); el.style.cssText = `--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}`; });
+      document.querySelectorAll("[data-site-name]").forEach((n) => { n.innerHTML = nameHtml(s); });
+    }
+    mountCourse(document.getElementById("course"), physics);
+  </script>
+</head>
+<body class="sub-page">
+  <div class="wrap">
+    <header class="sub-nav glass">
+      <a class="sub-brand" href="../"><span class="icon"></span><span data-site-name>SciGradify</span></a>
+      <nav class="sub-links" aria-label="SciGradify">
+        <a href="./" aria-current="page">Physics</a>
+        <a href="../app.html#/study">Study</a>
+        <a href="../app.html#/notes">Notes</a>
+        <a href="../map.html">Map</a>
+        <a href="../3d.html">Cell 3D</a>
+        <a href="/">Gradify</a>
+      </nav>
+      <div class="sub-right">
+        <a class="signin" href="../app.html#/account">Sign in</a>
+        <a class="btn btn-light lg btn-sm" href="#/learn"><span>Start free</span></a>
+      </div>
+    </header>
+    <div id="course"></div>
+    <footer class="sub-foot"><span data-site-name>SciGradify</span> is part of <a href="/">Gradify</a>. One account works on every Gradify site.</footer>
+  </div>
+</body>
+</html>
