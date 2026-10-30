@@ -23,3 +23,11 @@ test("a site's first word is drawn in its accent colour", async () => {
   assert.equal(accentOf({ c: "a0ff74" }), "#a0ff74");
   assert.notEqual(accentOf({ c: "2e5e18" }), "#2e5e18");
 });
+
+test("every site with a page has a headline, three ticks and four checks", async () => {
+  const { SITE_PAGES } = await import("../kit/core/site-pages.js");
+  for (const [name, p] of Object.entries(SITE_PAGES)) {
+    assert.ok(SITES.some((s) => s.n === name), `${name} is a real site`);
+    assert.equal(p.h.length, 2); assert.equal(p.ticks.length, 3); assert.equal(p.card.checks.length, 4);
+  }
+});

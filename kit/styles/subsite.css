@@ -1,0 +1,74 @@
+/* Gradify Kit: sub-site homepages (getgradify.com/<site>/), in the style of techgradify.com.
+   Load after base.css. The page sets --accent to the site's colour. */
+.sub-page { --accent: #4641ff; min-height: 100vh; background:
+    radial-gradient(60% 50% at 85% 10%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%),
+    radial-gradient(50% 40% at 10% 100%, rgba(255, 120, 60, .08), transparent 70%),
+    linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px) 0 0 / 64px 64px,
+    linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px) 0 0 / 64px 64px,
+    #050505; }
+.sub-page .aurora { display: none; }
+
+/* top bar */
+.sub-nav { display: flex; align-items: center; gap: 22px; padding: 10px 12px 10px 14px; margin-top: 12px; border-radius: 22px; }
+.sub-brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; font-size: 19px; letter-spacing: -.02em; text-decoration: none; color: var(--fg); }
+.sub-brand .icon { width: 38px; height: 38px; border-radius: 11px; }
+.sub-brand .icon .ico { width: 19px; height: 19px; }
+.sub-links { display: flex; gap: 4px; margin-left: 12px; }
+.sub-links a { padding: 8px 12px; border-radius: 999px; font-size: 15px; color: var(--mute); text-decoration: none; }
+.sub-links a:hover { color: var(--fg); background: rgba(255, 255, 255, .06); }
+.sub-right { margin-left: auto; display: flex; align-items: center; gap: 14px; }
+.sub-right .signin { font-size: 15px; color: var(--mute); text-decoration: none; }
+.sub-right .signin:hover { color: var(--fg); }
+
+/* hero */
+.sub-hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 44px; align-items: center; padding: 72px 0 64px; }
+.sub-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; font-size: 13.5px; font-weight: 600; color: var(--fg); text-decoration: none; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .12); }
+.sub-badge i { width: 7px; height: 7px; border-radius: 50%; background: var(--spectrum); box-shadow: 0 0 8px rgba(240, 85, 221, .8); }
+.sub-badge:hover { background: rgba(255, 255, 255, .08); }
+.sub-hero h1 { margin: 26px 0 0; font-size: clamp(38px, 4.5vw, 72px); line-height: 1.03; letter-spacing: -.045em; font-weight: 700; }
+.sub-hero h1 > span { display: block; white-space: nowrap; }
+.sub-hero h1 .fade { background: linear-gradient(90deg, #fff 0%, #fff 45%, #7d7d7d 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.sub-hero .lede { margin: 26px 0 0; max-width: 31em; font-size: clamp(16px, 1.6vw, 19px); line-height: 1.6; color: var(--mute); }
+.sub-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+.sub-ctas .btn { font-size: 17px; padding: 15px 26px; }
+.sub-ctas .btn .ico { width: 18px; height: 18px; }
+.sub-ticks { list-style: none; margin: 30px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px 30px; font-size: 15px; color: var(--mute); }
+.sub-ticks li { display: inline-flex; align-items: center; gap: 10px; }
+.sub-ticks li::before { content: ""; width: 14px; height: 8px; border-left: 2px solid #4fe0a6; border-bottom: 2px solid #4fe0a6; transform: rotate(-45deg) translateY(-2px); }
+
+/* the demo window, like a code editor running tests */
+.sub-window { position: relative; border-radius: 22px; overflow: hidden; background: linear-gradient(180deg, rgba(28, 24, 34, .92), rgba(14, 12, 18, .96)); border: 1px solid rgba(255, 255, 255, .1);
+  box-shadow: 0 40px 90px -40px color-mix(in srgb, var(--accent) 55%, transparent), 0 0 0 1px rgba(255, 255, 255, .03) inset; }
+.sw-top { display: flex; align-items: center; gap: 8px; padding: 14px 18px; border-bottom: 1px solid rgba(255, 255, 255, .07); background: rgba(255, 255, 255, .02); }
+.sw-top i { width: 12px; height: 12px; border-radius: 50%; }
+.sw-top i:nth-child(1) { background: #ff5f57; } .sw-top i:nth-child(2) { background: #febc2e; } .sw-top i:nth-child(3) { background: #28c840; }
+.sw-file { margin-left: 12px; font: 500 14px var(--mono); color: rgba(255, 255, 255, .45); }
+.sw-level { margin-left: auto; padding: 4px 12px; border-radius: 999px; font-size: 13px; font-weight: 600; color: #ffc46e; background: rgba(255, 180, 77, .1); border: 1px solid rgba(255, 180, 77, .35); }
+.sw-code { margin: 0; padding: 22px 24px; font: 400 15px/1.85 var(--mono); color: #e8e8f0; white-space: pre-wrap; }
+.sw-code .c { color: #8c8ca6; }
+.sw-code .k { color: #c792ea; }
+.sw-code .a { color: #82d4ff; }
+.sw-tests { padding: 18px 24px 22px; border-top: 1px solid rgba(255, 255, 255, .07); display: flex; flex-direction: column; gap: 10px; }
+.sw-run { display: flex; align-items: center; gap: 10px; font-size: 14.5px; font-weight: 600; color: var(--mute); }
+.sw-run::before { content: ""; width: 0; height: 0; border-left: 9px solid currentColor; border-top: 6px solid transparent; border-bottom: 6px solid transparent; opacity: .7; }
+.sw-tests ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.sw-tests li { display: flex; align-items: center; gap: 12px; font-size: 15.5px; color: rgba(255, 255, 255, .32); transition: color .3s; }
+.sw-tests li::before { content: ""; width: 20px; height: 20px; border-radius: 50%; background: rgba(255, 255, 255, .06); transition: background .3s; }
+.sw-tests li.ok { color: var(--fg); }
+.sw-tests li.ok::before { background: rgba(79, 224, 166, .18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%234fe0a6' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% no-repeat; }
+
+.sub-foot { margin: 40px 0 30px; font-size: 13px; color: var(--faint); }
+.sub-foot a { color: var(--mute); }
+
+@media (max-width: 960px) {
+  .sub-links { display: none; }
+  .sub-hero { grid-template-columns: 1fr; padding-top: 48px; }
+}
+@media (max-width: 640px) {
+  .sub-hero h1 > span { white-space: normal; }
+  .sub-nav { gap: 10px; }
+  .sub-right .signin { display: none; }
+  .sub-brand { font-size: 17px; }
+  .sub-ctas .btn { width: 100%; justify-content: center; }
+  .sw-code { font-size: 13.5px; padding: 18px; }
+}

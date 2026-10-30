@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>YouthGradify · LifeOS</title>
+  <meta name="theme-color" content="#000000">
+  <meta name="gradify-site" content="YouthGradify">
+  <!-- Gradify Kit: the LifeOS window on its own, as on getgradify.com, with Alex's example data.
+       Keep the ids and data-view names: the scripts in kit/lifeos/ look for them. Delete any
+       view (its rail button and its <section>) you don't want on your site. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../kit/styles/base.css">
+  <link rel="stylesheet" href="../kit/styles/components.css">
+  <script type="module" src="../kit/lifeos/lifeos.js"></script>
+  <script type="module" src="../kit/lifeos/os.js"></script>
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+  <main class="wrap">
+    <section class="lifeos" id="lifeos" aria-labelledby="lifeos-title">
+      <div class="life-head">
+        <span class="badge"><span class="spark" aria-hidden="true"></span>Gradify LifeOS · Interactive tour</span>
+        <h2 id="lifeos-title">Your whole life's progress, <span class="grad">in one place.</span></h2>
+        <p>Health, career, knowledge, fitness, your degree and every course you take. Each Gradify site has its own learning path and heatmap, and every lesson you finish lands here on your life heatmap straight away. Courses you complete become credentials anyone can verify.</p>
+        <p class="example-note">This tour uses example data for one learner, Alex, and shows where Gradify is heading. The parts that already work with your own notes are in the app.</p>
+        <div class="row-actions"><a class="btn btn-primary lg btn-sm" href="app.html"><span>Open the Gradify app</span></a></div>
+      </div>
+
+
+      <div class="os" id="os">
+        <nav class="os-rail glass" role="tablist" aria-label="LifeOS views">
+          <button type="button" class="rail-btn" role="tab" data-view="today" aria-controls="view-today" aria-selected="false"><span class="rail-ico" data-icon="home"></span><span>Today</span></button>
+          <button type="button" class="rail-btn" role="tab" data-view="plan" aria-controls="view-plan" aria-selected="false"><span class="rail-ico" data-icon="calendar"></span><span>Plan</span></button>
+          <button type="button" class="rail-btn" role="tab" data-view="progress" aria-controls="view-progress" aria-selected="false"><span class="rail-ico" data-icon="trend"></span><span>Progress</span></button>
+          <button type="button" class="rail-btn" role="tab" data-view="earth" aria-controls="view-earth" aria-selected="false"><span class="rail-ico" data-icon="globe"></span><span>Earth</span></button>
+          <button type="button" class="rail-btn" role="tab" data-view="path" aria-controls="view-path" aria-selected="false"><span class="rail-ico" data-icon="route"></span><span>Path</span></button>
+          <button type="button" class="rail-btn" role="tab" data-view="ai" aria-controls="view-ai" aria-selected="false"><span class="rail-ico" data-icon="sparkles"></span><span>Gradify AI</span></button>
+          <button type="button" class="rail-btn" role="tab" data-view="learn" aria-controls="view-learn" aria-selected="false"><span class="rail-ico" data-icon="book"></span><span>Learn</span></button>
+          <button type="button" class="rail-btn" role="tab" data-view="study" aria-controls="view-study" aria-selected="false"><span class="rail-ico" data-icon="layers"></span><span>Study</span></button>
+          <button type="button" class="rail-btn" role="tab" data-view="capture" aria-controls="view-capture" aria-selected="false"><span class="rail-ico" data-icon="upload"></span><span>Notes Studio</span></button>
+          <button type="button" class="rail-btn" role="tab" data-view="community" aria-controls="view-community" aria-selected="false"><span class="rail-ico" data-icon="people"></span><span>Community</span></button>
+          <button type="button" class="rail-btn" role="tab" data-view="settings" aria-controls="view-settings" aria-selected="false"><span class="rail-ico" data-icon="cog"></span><span>Settings</span></button>
+        </nav>
+        <div class="os-main">
+        <section class="os-view " data-view="today" id="view-today" aria-label="Today" hidden>
+      <!-- Command: what to do today -->
+      <div class="command" id="command">
+        <div class="panel glass profile">
+          <div class="avatar" aria-hidden="true">AM</div>
+          <div class="who"><b>Alex Morgan</b><span id="level-name"></span></div>
+          <div class="xp">
+            <div class="xp-top"><span id="xp-level"></span><span id="xp-text"></span></div>
+            <div class="xp-bar"><i id="xp-fill"></i></div>
+          </div>
+          <div class="badges" id="badges" aria-label="Achievements"></div>
+          <div class="connected"><span>Connected Gradify sites</span><div id="connected"></div></div>
+        </div>
+
+        <div class="panel glass next" id="next"></div>
+
+        <div class="panel glass goals">
+          <div class="panel-head"><h3>Goals</h3><span class="pill-dark">Linked to activity</span></div>
+          <div class="goal-list" id="goals"></div>
+        </div>
+
+        <div class="panel glass upcoming">
+          <div class="panel-head"><h3>Coming up</h3><span class="pill-dark" id="week-label"></span></div>
+          <div class="week" id="week" aria-hidden="true"></div>
+          <div class="events" id="events"></div>
+        </div>
+      </div>
+
+
+      <div class="panel glass feed-panel">
+        <div class="panel-head"><h3>Activity across Gradify</h3><span class="pill-dark">Live feed</span></div>
+        <ol class="feed" id="feed"></ol>
+      </div>
+        </section>
+        <section class="os-view " data-view="plan" id="view-plan" aria-label="Plan" hidden>
+      <div class="panel glass cal-panel" id="plan-cal">
+        <div class="cal-top">
+          <div><h3>Time blocking</h3><p class="sub" id="cal-title"></p></div>
+          <div class="cal-ctrls">
+            <div class="cal-steps" id="cal-steps"><button type="button" class="icon-btn" data-step="-1" aria-label="Previous day">‹</button><button type="button" class="icon-btn" data-step="1" aria-label="Next day">›</button></div>
+            <div class="seg" role="group" aria-label="Calendar view">
+              <button type="button" class="chip" data-calview="day" aria-pressed="false">Day</button>
+              <button type="button" class="chip" data-calview="week" aria-pressed="true">Week</button>
+            </div>
+            <button type="button" class="btn btn-primary lg btn-sm" id="auto-plan"><span>Auto-plan my week</span></button>
+          </div>
+        </div>
+        <div class="cal-body">
+          <aside class="cal-side">
+            <div class="cal-sum" id="cal-sum"></div>
+            <span class="mini-label">Calendars</span>
+            <div class="cal-list" id="cal-list"></div>
+            <div class="cal-edit inset-card" id="cal-edit"></div>
+          </aside>
+          <div class="cal-scroll" id="cal-scroll"><div class="cal-grid" id="cal-grid"></div></div>
+        </div>
+      </div>
+        </section>
+        <section class="os-view " data-view="progress" id="view-progress" aria-label="Progress" hidden>
+      <div class="panel glass heat-panel" id="life-heat">
+        <div class="panel-head heat-top">
+          <div>
+            <h3>Life progress</h3>
+            <p class="sub" id="heat-sub">Every activity across Gradify in the last year</p>
+          </div>
+          <div class="heat-stats" id="heat-stats"></div>
+        </div>
+        <div class="seg area-filter" id="area-filter" role="group" aria-label="Show one life area"></div>
+        <div class="heat-scroll" id="heat-scroll">
+          <div class="heat" id="heat" role="img" aria-label="Heatmap of daily activity over the last year"></div>
+        </div>
+        <div class="heat-foot">
+          <div class="heat-legend" id="heat-legend"></div>
+          <div class="heat-scale" aria-hidden="true">Less <i></i><i></i><i></i><i></i><i></i> More</div>
+        </div>
+        <div class="heat-tip" id="heat-tip" role="tooltip" hidden></div>
+      </div>
+
+      <div class="areas" id="areas"></div>
+
+      <div class="panel glass tree-panel" id="tree">
+        <div class="panel-head tree-head">
+          <div><h3>Gradify Tree <span class="pill-dark" id="tree-level"></span></h3><p class="sub" id="tree-sub"></p></div>
+          <div class="seg" role="group" aria-label="Tree or forest">
+            <button type="button" class="chip" data-grow="tree" aria-pressed="true">Tree</button>
+            <button type="button" class="chip" data-grow="forest" aria-pressed="false">Forest</button>
+          </div>
+        </div>
+        <div class="grow-body"><div class="tree-wrap" id="tree-svg"></div><aside class="grow-side" id="grow-side"></aside></div>
+      </div>
+
+      <div class="panel glass stats-week" id="study-stats">
+        <div class="panel-head"><div><h3>Study time</h3><p class="sub" id="study-sub"></p></div><span class="pill-dark">Last 8 weeks</span></div>
+        <div class="study-chart" id="study-chart"></div>
+        <div class="heat-legend" id="study-legend"></div>
+      </div>
+        </section>
+        <section class="os-view " data-view="earth" id="view-earth" aria-label="Gradify Earth" hidden>
+      <!-- Gradify Earth: the knowledge map -->
+      <div class="panel glass earth-panel" id="earth">
+        <div class="panel-head earth-top">
+          <div>
+            <h3>Gradify Earth</h3>
+            <p class="sub">Alex's degree as a world. Each module lights up a continent, each topic is a pin, and the arcs are prerequisites. A topic only counts as mastered with evidence: recall, explanation, application, retention and connections.</p>
+          </div>
+          <span class="pill-dark">3D · drag to turn</span>
+        </div>
+        <div class="earth-body">
+          <div class="earth-map" id="earth-map">
+            <canvas id="earth-canvas" tabindex="0" aria-label="Gradify Earth globe. Drag or use the arrow keys to turn it, plus and minus to zoom. Use Jump to topic to choose a topic."></canvas>
+            <div class="earth-tools">
+              <label class="earth-jump"><span class="sr-only">Jump to topic</span><select id="earth-jump"></select></label>
+              <div class="earth-zoom">
+                <button type="button" id="earth-in" aria-label="Zoom in">+</button>
+                <button type="button" id="earth-out" aria-label="Zoom out">−</button>
+                <button type="button" id="earth-reset" aria-label="Reset view">⟲</button>
+              </div>
+            </div>
+            <p class="earth-hint" aria-hidden="true">Drag to turn · tap a pin or city</p>
+          </div>
+          <aside class="inset-card inspector" id="inspector" aria-live="polite"></aside>
+        </div>
+        <div class="earth-legend" id="earth-legend"></div>
+      </div>
+        </section>
+        <section class="os-view " data-view="path" id="view-path" aria-label="Path" hidden>
+        <div class="panel glass plan-panel" id="plan">
+          <div class="panel-head plan-head">
+            <div>
+              <h3>Path</h3>
+              <p class="sub">Choose a goal. LifeOS compares where you are with where you need to be, then shows the routes there.</p>
+            </div>
+          </div>
+          <div class="seg plan-goals" id="plan-goals" role="group" aria-label="Choose a goal"></div>
+          <div id="plan-body"></div>
+        </div>
+        </section>
+        <section class="os-view " data-view="ai" id="view-ai" aria-label="Gradify AI" hidden>
+        <div class="panel glass ai-panel" id="ai">
+          <div class="panel-head">
+            <div class="ai-title"><span class="ai-av" aria-hidden="true"></span><div><h3>Gradify AI</h3><p class="sub">One assistant that knows your progress on every Gradify site</p></div></div>
+            <span class="pill-dark">Scripted preview</span>
+          </div>
+          <div class="ai-log" id="ai-log" aria-live="polite"></div>
+          <div class="ai-suggest" id="ai-suggest" aria-label="Suggested questions"></div>
+          <form class="ai-form" id="ai-form">
+            <label class="sr-only" for="ai-input">Ask Gradify AI</label>
+            <input id="ai-input" class="lg" type="text" placeholder="Ask about Alex's study, exams or plans" autocomplete="off">
+            <button type="submit" class="icon-btn send" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </form>
+        </div>
+        </section>
+        <section class="os-view " data-view="learn" id="view-learn" aria-label="Learn" hidden>
+      <div class="life-split">
+        <div class="panel glass path-panel" id="path-panel">
+          <div class="panel-head">
+            <h3>Learning path</h3>
+            <div class="seg path-tabs" id="path-tabs" role="tablist" aria-label="Choose a site"></div>
+          </div>
+          <div class="unit-banner" id="unit-banner"></div>
+          <ol class="path" id="path" aria-label="Lessons in this unit"></ol>
+          <div class="mini">
+            <div class="mini-head"><span id="mini-title">Site heatmap</span><span class="sync"><span class="dot" aria-hidden="true"></span>Syncs to LifeOS</span></div>
+            <div class="mini-heat" id="mini-heat" aria-hidden="true"></div>
+          </div>
+        </div>
+
+        <div class="panel glass cred-panel">
+          <div class="panel-head">
+            <h3>Credentials</h3>
+            <span class="pill-dark" id="cred-count"></span>
+          </div>
+          <div id="cred-feature"></div>
+          <div class="rows" id="cred-list"></div>
+          <p class="cred-note">Every certificate gets a unique ID and a public page, so an employer or university can check it's genuine in one click.</p>
+        </div>
+      </div>
+        </section>
+        <section class="os-view " data-view="study" id="view-study" aria-label="Study" hidden>
+      <div class="panel glass study-panel" id="study">
+        <div class="panel-head study-head">
+          <div><h3>Flashcard feed</h3><p class="sub">Swipe through cards from all your Gradify sites, mixed with tips and bonus facts. Rate how well you knew each one and it comes back at the right time.</p></div>
+          <div class="study-tools">
+            <div class="seg" role="group" aria-label="View">
+              <button type="button" class="chip" data-mode="feed" aria-pressed="true">Feed</button>
+              <button type="button" class="chip" data-mode="overview" aria-pressed="false">Overview</button>
+            </div>
+            <label class="switch"><input type="checkbox" id="exam-mode" role="switch"><span class="sw-track lg" aria-hidden="true"><span class="sw-knob"></span></span><span>Exam mode</span></label>
+          </div>
+        </div>
+        <div class="study-progress"><span id="study-count"></span><span class="goal-bar"><i id="study-bar"></i></span></div>
+        <div id="study-body"></div>
+      </div>
+        </section>
+        <section class="os-view " data-view="capture" id="view-capture" aria-label="Capture" hidden>
+
+      <div class="panel glass studio" id="capture">
+        <div class="panel-head studio-head">
+          <div><h3>Notes Studio</h3><p class="sub">Upload a PDF of messy notes, or paste them. Gradify turns them into a study pack for every way of learning. Try your own notes: this part really works.</p></div>
+          <span class="pill-dark">Runs in your browser</span>
+        </div>
+        <div class="studio-in">
+          <label class="dropzone" id="dropzone"><input type="file" id="notes-file" accept=".pdf,.txt,.md,application/pdf,text/plain"><span class="dz-ico" data-icon="upload"></span><span><b>Drop a PDF here or choose a file</b><em>PDF with selectable text, .txt or .md. Photos, handwriting, voice notes and YouTube links come with Gradify AI.</em></span></label>
+          <label class="sr-only" for="notes">Your notes</label>
+          <textarea id="notes" rows="7" placeholder="…or paste your notes here, however messy"></textarea>
+          <div class="capture-actions">
+            <button type="button" class="btn btn-primary lg btn-sm" id="make-cards"><span>Make my study pack</span></button>
+            <button type="button" class="btn btn-ghost lg btn-sm" id="sample-notes"><span>Try Alex's messy notes</span></button>
+            <span class="sub" id="studio-status" aria-live="polite"></span>
+          </div>
+        </div>
+        <div class="studio-tabs" id="studio-tabs" role="tablist" aria-label="Study pack"></div>
+        <div class="studio-out" id="studio-out"></div>
+      </div>
+        </section>
+        <section class="os-view " data-view="community" id="view-community" aria-label="Community" hidden>
+
+      <div class="community">
+        <div class="panel glass group-card" id="group"></div>
+        <div class="panel glass challenge-card" id="challenge"></div>
+        <div class="panel glass board-card" id="board"></div>
+      </div>
+        </section>
+        <section class="os-view " data-view="settings" id="view-settings" aria-label="Settings" hidden>
+
+      <div class="settings">
+        <div class="panel glass" id="set-sites">
+          <div class="panel-head"><div><h3>Connected sites</h3><p class="sub">Choose which Gradify sites share progress with LifeOS. Each site only sees its own data.</p></div></div>
+          <div class="toggles" id="site-toggles"></div>
+        </div>
+        <div class="panel glass" id="set-ai">
+          <div class="panel-head"><div><h3>Gradify AI style</h3><p class="sub">How the assistant talks to you.</p></div></div>
+          <div class="seg" id="ai-style" role="radiogroup" aria-label="AI style"></div>
+          <p class="sub" id="ai-style-note"></p>
+          <div class="panel-head reminders-head"><h3>Reminders</h3></div>
+          <div class="toggles" id="reminders"></div>
+        </div>
+        <div class="panel glass" id="set-data">
+          <div class="panel-head"><div><h3>Your data</h3><p class="sub">Your progress belongs to you.</p></div></div>
+          <button type="button" class="btn btn-light lg btn-sm" id="export"><span>Download my data</span></button>
+          <button type="button" class="btn btn-ghost lg btn-sm danger" id="delete"><span>Delete my account</span></button>
+          <p class="sub">In this preview, the download is Alex's example data as a JSON file.</p>
+        </div>
+      </div>
+        </section>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="toast lg" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

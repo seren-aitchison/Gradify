@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FinanceGradify: Pass the exams finance runs on.</title>
+  <!-- FinanceGradify's homepage, made from kit/templates/subsite by npm run new-site, with the opening
+       copy from kit/core/site-pages.js. Build the site out from here; the look comes from
+       kit/styles/subsite.css, shared by every sub-site. -->
+  <meta name="gradify-site" content="FinanceGradify">
+  <meta name="description" content="Accounting, valuation and financial concepts made memorable, with worked problems and steady practice for professional qualifications.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../kit/styles/base.css">
+  <link rel="stylesheet" href="../kit/styles/components.css">
+  <link rel="stylesheet" href="../kit/styles/subsite.css">
+  <script type="module">
+    import { SITES, nameHtml, accentOf } from "../kit/core/site.js";
+    import { icon } from "../kit/core/icons.js";
+    import { tile, ink } from "../kit/core/colour.js";
+    const s = SITES.find((x) => x.n === "FinanceGradify");
+    if (s) {
+      document.body.style.setProperty("--accent", accentOf(s));
+      document.querySelectorAll(".sub-brand .icon").forEach((el) => { el.innerHTML = icon(s.i); el.style.cssText = `--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}`; });
+      // the site's name with its first word in the accent colour, everywhere it appears
+      document.querySelectorAll("[data-site-name]").forEach((n) => { n.innerHTML = nameHtml(s); });
+      document.querySelectorAll("[data-icon]").forEach((el) => { el.innerHTML = icon(el.dataset.icon); });
+    }
+    // the checks in the demo window tick off one by one, like tests passing, then start again
+    const checks = [...document.querySelectorAll(".sw-tests li")], run = document.querySelector(".sw-run");
+    const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let k = 0;
+    const step = () => {
+      if (k > checks.length) { checks.forEach((c) => c.classList.remove("ok")); k = 0; }
+      checks.forEach((c, i) => c.classList.toggle("ok", i < k));
+      run.textContent = k >= checks.length ? `All ${checks.length} checks passed` : `Checking your answer…`;
+      k++;
+    };
+    if (still) { checks.forEach((c) => c.classList.add("ok")); run.textContent = `All ${checks.length} checks passed`; }
+    else { step(); setInterval(step, 1100); }
+  </script>
+</head>
+<body class="sub-page">
+  <div class="wrap">
+    <header class="sub-nav glass">
+      <a class="sub-brand" href="./"><span class="icon"></span><span data-site-name>FinanceGradify</span></a>
+      <nav class="sub-links" aria-label="FinanceGradify">
+        <a href="app.html#/study">Learn</a>
+        <a href="app.html#/notes">Notes</a>
+        <a href="app.html#/progress">Progress</a>
+        <a href="app.html#/plan">Plan</a>
+        <a href="lifeos.html">LifeOS</a>
+        <a href="/">Gradify</a>
+      </nav>
+      <div class="sub-right">
+        <a class="signin" href="app.html#/account">Sign in</a>
+        <a class="btn btn-light lg btn-sm" href="app.html"><span>Start free</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="sub-hero">
+        <div>
+          <a class="sub-badge" href="/#lifeos"><i></i>A Gradify site: your progress counts in Gradify LifeOS <span aria-hidden="true">→</span></a>
+          <h1><span>Pass the exams</span><span class="fade">finance runs on.</span></h1>
+          <p class="lede">Accounting, valuation and financial concepts made memorable, with worked problems and steady practice for professional qualifications.</p>
+          <div class="sub-ctas">
+            <a class="btn btn-light lg" href="app.html"><span>Start your first topic</span> <span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost lg" href="lifeos.html#earth"><span data-icon="route"></span><span>Open the learning map</span></a>
+          </div>
+          <ul class="sub-ticks"><li>Worked problems</li><li>ACCA, CFA and CIMA prep</li><li>Free to start</li></ul>
+        </div>
+        <div class="sub-window" aria-label="An example of FinanceGradify checking an answer">
+          <div class="sw-top"><i></i><i></i><i></i><span class="sw-file">npv-workings.xlsx</span><span class="sw-level">CFA Level 1</span></div>
+          <pre class="sw-code"><span class="c"># Question</span>
+<span class="k">A project costs 100 and returns 60 a year for 2 years at 10%. Accept?</span>
+
+<span class="c"># Your answer</span>
+<span class="a">NPV = 60/1.1 + 60/1.21 − 100 = 4.1, so accept.</span></pre>
+          <div class="sw-tests"><span class="sw-run">Checking your answer…</span><ul><li>Correct discounting</li><li>NPV of 4.1</li><li>Decision rule</li><li>States the assumption</li></ul></div>
+        </div>
+      </section>
+    </main>
+    <footer class="sub-foot"><span data-site-name>FinanceGradify</span> is part of <a href="/">Gradify</a>. One account works on every Gradify site.</footer>
+  </div>
+</body>
+</html>
