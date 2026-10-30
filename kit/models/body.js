@@ -56,6 +56,7 @@ export default {
   title: "The body in 3D",
   kicker: "3D anatomy",
   intro: { title: "Explore the body", text: "Real human anatomy from the BodyParts3D scan data, in nine systems. Click any structure for its key relations and clinical points, make flashcards from it, or find it in your notes. Hide systems, fade in the skin, pull the organs apart, or zoom right in: the full notes for each system are below the model." },
+  trueColour: true,   // anatomy keeps its own tissue colours
   groups: GROUPS, structures: STRUCTURES, notes: NOTES,
   calloutName: "Clinical",
   quiz: "find the structure",

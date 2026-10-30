@@ -77,6 +77,7 @@ const NOTES = {
 export default {
   title: "The voice in 3D", kicker: "3D phonetics",
   intro: { title: "Explore the vocal tract", text: "Every language is spoken with the same machine. Watch the lips, tongue and soft palate move, the vocal folds vibrate, and air flow through the mouth or nose. Click any part for the sounds it makes and the tricky sounds of each language, and read the full notes below." },
+  trueColour: true,   // anatomy keeps its own tissue colours
   groups: GROUPS, structures: STRUCTURES, notes: NOTES,
   calloutName: "Practise",
   quiz: "find the part",

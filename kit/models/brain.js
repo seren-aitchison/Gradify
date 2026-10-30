@@ -100,6 +100,7 @@ const NOTES = {
 export default {
   title: "The brain in 3D", kicker: "3D neuroscience",
   intro: { title: "Explore the brain", text: "The four lobes, the limbic system, the deep structures and the hindbrain. Fade the cortex to see inside, click any region for its functions and the key studies, and read the full notes for each section below." },
+  trueColour: true,   // anatomy keeps its own tissue colours
   groups: GROUPS, structures: STRUCTURES, notes: NOTES,
   calloutName: "Key point",
   quiz: "find the region",

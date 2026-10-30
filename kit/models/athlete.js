@@ -115,6 +115,7 @@ const NOTES = {
 export default {
   title: "The athlete in 3D", kicker: "3D sport science",
   intro: { title: "Explore the athlete", text: "Every major muscle group from real anatomy scan data, the joints that act as levers, and the heart and lungs that power it all. Click any muscle for its role in movement and training, show the skeleton to see the joints, and read the full notes below." },
+  trueColour: true,   // anatomy keeps its own tissue colours
   groups: GROUPS, structures: STRUCTURES, notes: NOTES,
   calloutName: "In practice",
   quiz: "find the muscle or joint",

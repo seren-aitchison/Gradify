@@ -1,5 +1,8 @@
-// DentalGradify's 3D model: both dental arches on their jaws, with a molar cut in half beside them
-// to show enamel, dentine, pulp and the periodontium, and the inferior alveolar nerve in the mandible.
+// DentalGradify's 3D model: the real skull, jaw and all the teeth from scan data (BodyParts3D via
+// open-anatomy-3d, CC BY 4.0), each tooth labelled by type, with the gums and the inferior alveolar
+// nerve placed on them, and a molar cut in half beside them to show enamel, dentine, pulp and the periodontium.
+import { loadAnatomy, take, ATTRIBUTION } from "./anatomy-glb.js";
+
 const s = (group, name, desc, facts, cards, keys) => ({ group, name, desc, facts, cards, keys });
 
 const GROUPS = {
@@ -108,71 +111,74 @@ const NOTES = {
 
 export default {
   title: "The mouth in 3D", kicker: "3D dental anatomy",
-  intro: { title: "Explore the mouth", text: "Both arches on their jaws, a molar cut in half beside them, and the nerve that runs under the lower teeth. Click anything to learn it, zoom in on any tooth, and read the full notes for each section below." },
+  intro: { title: "Explore the mouth", text: "The real skull, jaw and every tooth from anatomy scan data, enlarged, with the gums and the nerve under the lower teeth, and a molar cut in half beside them. Click any tooth to learn it, zoom right in, and read the full notes for each section below." },
+  trueColour: true,   // anatomy keeps its own tissue colours
   groups: GROUPS, structures: STRUCTURES, notes: NOTES, calloutName: "Clinical",
   quiz: "find the structure",
-  camera: { pos: [0.3, 0.32, 1.3], target: [0.2, 0.06, 0], min: 0.03, max: 3 },
-  views: { Front: [[0, 0.1, 1.1], [0.05, 0.08, 0]], Side: [[1.0, 0.15, 0.2], [0.05, 0.08, 0]], Above: [[0.05, 0.9, 0.35], [0.05, 0.08, 0]], "Upper arch": [[0, -0.6, 0.45], [0, 0.11, 0.05]], "Lower arch": [[0, 0.7, 0.45], [0, 0.03, 0.05]], "Tooth section": [[0.48, 0.06, 0.38], [0.46, 0.03, 0]] },
-  platform: { r: 0.42, y: -0.17 },
+  credit: ATTRIBUTION,
+  camera: { pos: [0.6, 0.45, 1.9], target: [0.15, 0.2, 0], min: 0.03, max: 3 },
+  views: { Skull: [[0.6, 0.45, 1.9], [0.15, 0.2, 0]], Front: [[0, 0.1, 1.0], [0, 0.08, 0]], Side: [[1.0, 0.15, 0.1], [0, 0.08, 0]], Above: [[0.02, 0.9, 0.3], [0, 0.06, 0]], "Upper arch": [[0, -0.55, 0.4], [0, 0.1, 0.02]], "Lower arch": [[0, 0.65, 0.4], [0, 0.04, 0.02]], "Tooth section": [[0.64, 0.06, 0.48], [0.62, 0.03, 0.1]] },
+  platform: { r: 0.5, y: -0.24 },
   labelMax: 0.3,
-  build(k) {
-    const { THREE, V, mat, bone, tube, blob, lathe, box, add, decor } = k;
-    const enamel = mat("#f6f2e6", { detail: "none", roughness: 0.18, clearcoat: 1, clearcoatRoughness: 0.08, transmission: 0.08, thickness: 0.01, sheen: 0.2 });
-    const b = bone("#e6dcc4"), gum = mat("#e47b8c", { detail: "tissue", repeat: 6, roughness: 0.35, clearcoat: 0.8 });
-    const at = (i, upper) => {   // position on the arch: i from -7.5 to 7.5 (centre between the central incisors)
-      const a = (i / 7.6) * 1.32, R = 0.2;
-      return { p: V(Math.sin(a) * R * 1.05, upper ? 0.11 : 0.04, Math.cos(a) * R * 0.95 - 0.08), a };
-    };
-    const kinds = ["incisors", "incisors", "canines", "premolars", "premolars", "molars", "molars", "thirdMolars"];
-    function tooth(kind, upper) {
-      const g = new THREE.Group(), dir = upper ? -1 : 1;   // crowns point down on the upper arch
-      let crown;
-      if (kind === "incisors") crown = new THREE.Mesh(blob(0.011, 0.9, 1.5, 0.45, (v) => { v.z *= 1 - Math.max(0, v.y * dir) * 40; }), enamel);
-      else if (kind === "canines") crown = new THREE.Mesh(blob(0.011, 0.85, 1.6, 0.75, (v) => { if (v.y * dir > 0) { v.x *= 1 - v.y * dir * 45; } }), enamel);
-      else {
-        const w = kind === "premolars" ? 0.009 : 0.0125, cusps = kind === "premolars" ? [[0, 0.5], [0, -0.5]] : [[0.5, 0.5], [-0.5, 0.5], [0.5, -0.5], [-0.5, -0.5]];
-        crown = new THREE.Mesh(blob(w, 1.05, 0.95, 1, (v) => { if (v.y * dir > w * 0.2) { let h = 0; for (const [cx, cz] of cusps) h = Math.max(h, 1 - Math.hypot(v.x / w - cx * 0.7, v.z / w - cz * 0.7) * 1.2); v.y = dir * (w * 0.2 + (v.y * dir - w * 0.2) * (0.4 + 0.6 * h)); } }), enamel);
-      }
-      crown.position.y = dir * 0.012; g.add(crown);
-      const roots = kind === "molars" || kind === "thirdMolars" ? (upper ? 3 : 2) : 1, rl = kind === "canines" ? 0.03 : 0.022;
-      for (let r = 0; r < roots; r++) {
-        const off = roots === 1 ? V(0, 0, 0) : V(Math.cos((r / roots) * Math.PI * 2) * 0.005, 0, Math.sin((r / roots) * Math.PI * 2) * 0.005);
-        const root = new THREE.Mesh(new THREE.ConeGeometry(roots === 1 ? 0.0065 : 0.0045, rl, 16), mat("#efe2c4", { detail: "none", roughness: 0.4 }));
-        root.position.copy(off).add(V(0, -dir * rl * 0.4, 0)); root.rotation.x = dir > 0 ? Math.PI : 0;   // roots point away from the crown
-        g.add(root);
-      }
-      return g;
+  async build(k) {
+    const { THREE, V, mat, bone, tube, blob, add } = k;
+    const { mergeVertices } = await import("../vendor/three/addons/BufferGeometryUtils.js");
+    const { byKey } = await loadAnatomy();
+    // everything is enlarged about the teeth so the dentition fills the stage
+    const SC = 5, teethMesh = byKey.teeth[0], origin = teethMesh.position.clone(), at = V(0, 0.08, 0);
+    const place = (g, pos) => { g = g.clone(); g.scale(SC, SC, SC); const m = new THREE.Mesh(g); m.position.copy(pos).sub(origin).multiplyScalar(SC).add(at); return m; };
+    const enamel = mat("#f3eee0", { detail: "none", roughness: 0.2, clearcoat: 1, clearcoatRoughness: 0.1, side: THREE.DoubleSide });
+    const boneMat = Object.assign(bone("#e6d9bd"), { side: THREE.DoubleSide });
+    const gum = mat("#cf7480", { detail: "tissue", repeat: 2, bump: 0.5, roughness: 0.3, clearcoat: 0.9, side: THREE.DoubleSide });
+
+    // the whole skull and the mandible, with their shared corners re-joined so they shade smoothly
+    const smooth = (geo) => { const m = mergeVertices(geo.clone().deleteAttribute("normal").deleteAttribute("uv"), 1e-5); m.computeVertexNormals(); return m; };
+    const sk = byKey.skull[0], maxilla = place(smooth(sk.geometry), sk.position); maxilla.material = boneMat; add("maxilla", maxilla);
+    const man = take(byKey, "mandible")[0], mandible = place(smooth(man.geometry), man.position); mandible.material = boneMat; add("mandible", mandible);
+
+    // the teeth: split the scan's dentition into its separate teeth and name each by its place in the arch
+    const g = mergeVertices(teethMesh.geometry.clone().deleteAttribute("uv"), 1e-5), idx = g.index.array, pos = g.attributes.position, n = pos.count;
+    const par = Int32Array.from({ length: n }, (_, i) => i), find = (x) => { while (par[x] !== x) { par[x] = par[par[x]]; x = par[x]; } return x; };
+    for (let i = 0; i < idx.length; i += 3) { const a = find(idx[i]), b = find(idx[i + 1]), c = find(idx[i + 2]); par[b] = a; par[find(c)] = a; }
+    const comps = new Map();
+    for (let i = 0; i < idx.length; i += 3) { const r = find(idx[i]); if (!comps.has(r)) comps.set(r, []); comps.get(r).push(idx[i], idx[i + 1], idx[i + 2]); }
+    const teeth = [];
+    for (const tris of comps.values()) {
+      if (tris.length < 90) continue;   // specks
+      const used = [...new Set(tris)], remap = new Map(used.map((v, j) => [v, j])), p = new Float32Array(used.length * 3);
+      used.forEach((v, j) => { p[j * 3] = pos.getX(v); p[j * 3 + 1] = pos.getY(v); p[j * 3 + 2] = pos.getZ(v); });
+      const tg = new THREE.BufferGeometry(); tg.setAttribute("position", new THREE.BufferAttribute(p, 3)); tg.setIndex(tris.map((v) => remap.get(v))); tg.computeVertexNormals(); tg.computeBoundingBox();
+      const size = tg.boundingBox.getSize(new THREE.Vector3());
+      if (Math.max(size.x, size.z) > 0.02) { const m = place(tg, origin); m.material = gum; add("gingiva", m); continue; }   // the tooth sockets, not a tooth: covered by the gums
+      teeth.push({ g: tg, c: tg.boundingBox.getCenter(new THREE.Vector3()), box: tg.boundingBox.clone() });
     }
-    for (const upper of [true, false]) for (let q = -1; q <= 1; q += 2) for (let n = 0; n < 8; n++) {
-      const i = q * (n + 0.5), { p, a } = at(i, upper), t = tooth(kinds[n], upper);
-      t.position.copy(p); t.rotation.y = a; t.scale.setScalar(1.45); if (kinds[n] === "incisors" || kinds[n] === "canines") t.rotation.x = upper ? -0.12 : 0.1;
-      add(kinds[n], t);
+    const archY = teeth.reduce((a, t) => a + t.c.y, 0) / teeth.length, archZ = Math.min(...teeth.map((t) => t.c.z));
+    const KIND = ["incisors", "incisors", "canines", "premolars", "premolars", "molars", "molars", "thirdMolars"];
+    const lowerRoots = { "-1": [], "1": [] };
+    for (const upper of [true, false]) for (const sd of [-1, 1]) {
+      const row = teeth.filter((t) => (t.c.y > archY) === upper && Math.sign(t.c.x || 1e-6) === sd);
+      row.sort((a, b) => Math.atan2(Math.abs(a.c.x), a.c.z - archZ) - Math.atan2(Math.abs(b.c.x), b.c.z - archZ));   // from the midline backwards
+      row.forEach((t, i) => {
+        const m = place(t.g, origin); m.material = enamel; add(KIND[Math.min(i, 7)], m);
+        if (!upper && i >= 3) lowerRoots[sd].push(V(t.c.x, t.box.min.y, t.c.z));
+      });
     }
-    // gums along each arch
-    for (const upper of [true, false]) {
-      const pts = []; for (let i = -7.6; i <= 7.6; i += 0.4) { const { p } = at(i, upper); pts.push(p.clone().add(V(0, upper ? 0.008 : -0.008, -0.002))); }
-      const g = tube(pts, 0.0125, gum, 160, false, 20); add("gingiva", g);
-    }
-    // the jaws
-    const maxPts = []; for (let i = -8; i <= 8; i += 0.5) { const { p } = at(i, true); maxPts.push(p.clone().add(V(0, 0.04, -0.006))); }
-    add("maxilla", tube(maxPts, 0.017, b, 160, false, 20));
-    const palate = new THREE.Mesh(new THREE.SphereGeometry(0.15, 48, 24, 0, Math.PI * 2, 0, Math.PI * 0.3), b); palate.material = b.clone(); palate.material.side = THREE.DoubleSide;
-    palate.scale.set(1.15, 0.35, 1.15); palate.position.set(0, 0.125, -0.06); palate.rotation.x = Math.PI; add("maxilla", palate);
-    const manPts = []; for (let i = -8.6; i <= 8.6; i += 0.5) { const { p } = at(i, false); manPts.push(p.clone().add(V(0, -0.042, -0.004))); }
-    const body = tube(manPts, 0.019, b, 160, false, 20); body.scale.set(1, 1.3, 1); add("mandible", body);
+    const toStage = (p) => p.clone().sub(origin).multiplyScalar(SC).add(at);
+    // the inferior alveolar nerve: from the mandibular foramen, under the lower roots, out at the mental foramen
+    const nerveMat = mat("#eedc94", { detail: "fibre", repeat: 1, bump: 0.3, roughness: 0.4 });
     for (const sd of [-1, 1]) {
-      const ramus = box(0.018, 0.13, 0.05, b, 0.008); ramus.position.set(sd * 0.2, 0.05, -0.24); ramus.rotation.set(-0.2, 0, sd * 0.04); add("mandible", ramus);
-      const cor = new THREE.Mesh(new THREE.ConeGeometry(0.01, 0.04, 12), b); cor.position.set(sd * 0.2, 0.125, -0.215); add("mandible", cor);
-      const cond = new THREE.Mesh(blob(0.012, 1.6, 1, 1), b); cond.position.set(sd * 0.2, 0.125, -0.27); add("tmj", cond);
-      const disc = new THREE.Mesh(new THREE.TorusGeometry(0.011, 0.003, 10, 24), mat("#7ee0ff", { detail: "none", transmission: 0.3 })); disc.rotation.x = Math.PI / 2; disc.position.set(sd * 0.2, 0.138, -0.27); add("tmj", disc);
-      const fossa = new THREE.Mesh(new THREE.SphereGeometry(0.02, 24, 12, 0, Math.PI * 2, 0, Math.PI * 0.45), b); fossa.material = b.clone(); fossa.material.side = THREE.DoubleSide; fossa.position.set(sd * 0.2, 0.135, -0.27); add("tmj", fossa);
-      // the inferior alveolar nerve: into the mandibular foramen, under the teeth, out at the mental foramen
-      const nerve = []; nerve.push(V(sd * 0.2, 0.09, -0.235)); for (let i = 7.4; i >= 3.4; i -= 0.5) { const { p } = at(sd * i, false); nerve.push(p.clone().add(V(0, -0.038, 0))); }
-      const { p: mf } = at(sd * 3.2, false); nerve.push(mf.clone().add(V(sd * 0.012, -0.03, 0.02)));
-      add("ian", tube(nerve, 0.0032, mat("#ffe066", { detail: "none", emissive: new THREE.Color("#4a3c00") }), 64));
+      const roots = lowerRoots[sd].sort((a, b) => Math.abs(b.x) - Math.abs(a.x)); if (roots.length < 2) continue;
+      const back = roots[0], front = roots[roots.length - 1];
+      const path = [back.clone().add(V(sd * 0.004, 0.012, -0.022)), ...roots.map((r) => r.clone().add(V(0, -0.004, 0))), front.clone().add(V(sd * 0.008, -0.002, 0.008))].map(toStage);
+      add("ian", tube(path, 0.007, nerveMat, 96));
+      // the temporomandibular joint: an articular disc over the top of the condyle
+      const mp = man.geometry.attributes.position; let top = null;
+      for (let i = 0; i < mp.count; i++) { const x = mp.getX(i) + man.position.x; if (x * sd <= 0.02) continue; const y = mp.getY(i) + man.position.y; if (!top || y > top.y) top = V(x, y, mp.getZ(i) + man.position.z); }
+      if (top) { const disc = new THREE.Mesh(blob(0.006 * SC, 1.4, 0.4, 1.1), mat("#c8d6d8", { detail: "none", roughness: 0.3, clearcoat: 0.8 })); disc.position.copy(toStage(top)).add(V(0, 0.012, 0)); add("tmj", disc); }
     }
+
     // a molar cut in half, enlarged, beside the arches
-    const S = 0.8, O = V(0.46, 0.0, 0);
+    const S = 0.8, O = V(0.62, 0.0, 0.1);
     const prof = {
       bone: [[0, -0.13], [0.07, -0.13], [0.075, -0.05], [0.072, 0.02], [0.05, 0.03], [0.042, 0.028], [0.03, -0.1], [0, -0.115]],
       pdl: [[0, -0.115], [0.03, -0.105], [0.044, 0.028], [0.0, 0.028]],
@@ -182,7 +188,7 @@ export default {
       pulp: [[0, -0.1], [0.006, -0.095], [0.012, 0.0], [0.02, 0.06], [0.014, 0.075], [0, 0.072]],
       gingiva: [[0.042, 0.02], [0.08, 0.02], [0.082, 0.05], [0.05, 0.05], [0.044, 0.04]],
     };
-    const colours = { bone: "#e3d6b8", pdl: "#ff8fa3", cementum: "#d9c38f", dentine: "#f1dca8", enamel: "#fbfaf4", pulp: "#d23b4b", gingiva: "#e47b8c" };
+    const colours = { bone: "#e3d6b8", pdl: "#d88c8c", cementum: "#d9c38f", dentine: "#f1dca8", enamel: "#fbfaf4", pulp: "#b8333e", gingiva: "#d4737e" };
     const ids = { bone: "alveolarBone", pdl: "pdl", cementum: "cementum", dentine: "dentine", enamel: "enamel", pulp: "pulp", gingiva: "gingiva" };
     const order = ["bone", "gingiva", "pdl", "cementum", "dentine", "enamel", "pulp"];
     order.forEach((key, depth) => {
@@ -195,6 +201,6 @@ export default {
       add(ids[key], half);
     });
     const vessels = []; for (const x of [-0.004, 0.004]) vessels.push([V(O.x + x, O.y - 0.12, 0.002), V(O.x + x * 2, O.y - 0.03, 0.002), V(O.x + x * 4, O.y + 0.06, 0.002)]);
-    k.flow(vessels, "#ff8fa3", 30, 0.25, "tooth", 0.008);
+    k.flow(vessels, "#c0282c", 30, 0.25, "tooth", 0.008);
   },
 };

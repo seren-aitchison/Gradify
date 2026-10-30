@@ -121,6 +121,7 @@ const NOTES = {
 export default {
   title: "The dog in 3D", kicker: "3D veterinary anatomy",
   intro: { title: "Explore the dog", text: "Skeleton, thorax, abdomen, urinary and nervous systems, with the heart beating and the lungs breathing. Click anything for its comparative anatomy and common diseases, and read the full notes for each system below." },
+  trueColour: true,   // anatomy keeps its own tissue colours
   groups: GROUPS, structures: STRUCTURES, notes: NOTES, calloutName: "Clinical",
   quiz: "find the structure",
   motion: "Heartbeat and breathing",

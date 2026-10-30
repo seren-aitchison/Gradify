@@ -140,7 +140,8 @@ function text(str, { size = 0.06, colour = "#eaffff", bg = null, weight = 600 } 
   g.font = `${weight} ${px}px Geist, system-ui, sans-serif`;
   const w = Math.ceil(g.measureText(str).width) + 40; c.width = w; c.height = px + 36;
   g.font = `${weight} ${px}px Geist, system-ui, sans-serif`; g.textBaseline = "middle";
-  if (bg) { g.fillStyle = bg; g.beginPath(); g.roundRect(0, 0, w, c.height, c.height / 2); g.fill(); }
+  if (mat.realistic) { bg = "rgba(246, 242, 234, 0.94)"; colour = "#2b2722"; }   // in the studio, labels are printed cards
+  if (bg) { g.fillStyle = bg; g.beginPath(); g.roundRect(0, 0, w, c.height, mat.realistic ? 10 : c.height / 2); g.fill(); }
   g.fillStyle = colour; g.fillText(str, 20, c.height / 2 + 2);
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4;
   const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: t, transparent: true, depthWrite: false, depthTest: false })); s.renderOrder = 10;   // labels stay readable in front of the model
@@ -282,9 +283,17 @@ export async function mountModel(root, siteName, model) {
   // the platform: glowing rings and a faint polar grid under the model
   const platform = new THREE.Group();
   if (studio && model.platform !== false) {
-    // a plain floor that catches the model's shadow
+    // a plain floor that catches the model's shadow; models that aren't anatomy stand on a display
+    // turntable, like a model photographed in a studio
     const floor = new THREE.Mesh(new THREE.CircleGeometry(model.platform?.r ? model.platform.r * 2.5 : 1.4, 96), new THREE.ShadowMaterial({ opacity: 0.35 }));
     floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; platform.add(floor);
+    if (!model.trueColour) {
+      const r = (model.platform?.r ?? 0.55) * 1.9, top = -0.006;
+      const base = new THREE.Mesh(new THREE.CylinderGeometry(r, r * 1.01, 0.03, 128), new THREE.MeshPhysicalMaterial({ color: "#2b2b2f", roughness: 0.55, metalness: 0.1, clearcoat: 0.4, clearcoatRoughness: 0.4 }));
+      base.position.y = top - 0.015; base.receiveShadow = true; platform.add(base);
+      const rim = new THREE.Mesh(new THREE.TorusGeometry(r, 0.004, 8, 160), new THREE.MeshStandardMaterial({ color: "#8a8a90", metalness: 0.9, roughness: 0.3 })); rim.rotation.x = Math.PI / 2; rim.position.y = top; platform.add(rim);
+      floor.position.y = top + 0.0005;
+    }
     platform.position.y = model.platform?.y ?? 0; scene.add(platform);
   } else if (model.platform !== false) {
     const pr = model.platform?.r ?? 0.55;
@@ -312,12 +321,20 @@ export async function mountModel(root, siteName, model) {
   // glass in place of the fresnel hologram, solid colour in place of additive glow, no self-lighting
   const studioHolo = (colour = "#5ef0ff", base, opacity = 0.35) => {
     const skinTone = colour === "#5ef0ff";
-    const m = new THREE.MeshPhysicalMaterial({ color: skinTone ? "#d4a184" : colour, roughness: skinTone ? 0.55 : 0.2, sheen: skinTone ? 0.7 : 0, sheenColor: new THREE.Color("#ffd6c2"), clearcoat: skinTone ? 0.08 : 0.6, transparent: true, opacity: Math.min(0.45, opacity), depthWrite: false });
+    const m = new THREE.MeshPhysicalMaterial({ color: skinTone ? "#d4a184" : real(colour), roughness: skinTone ? 0.55 : 0.2, sheen: skinTone ? 0.7 : 0, sheenColor: new THREE.Color("#ffd6c2"), clearcoat: skinTone ? 0.08 : 0.6, transparent: true, opacity: Math.min(0.45, opacity), depthWrite: false });
     m.uniforms = { uOpacity: { get value() { return m.opacity; }, set value(v) { m.opacity = Math.min(0.6, v); } } };   // models fade skin through uOpacity
     return m;
   };
-  const studioGlow = (c, opacity = 0.9) => new THREE.MeshBasicMaterial({ color: c, transparent: opacity < 1, opacity, depthWrite: opacity >= 1 });
-  const studioMat = (c, o = {}) => helpers.mat(c, { ...o, emissive: o.emissive ? new THREE.Color(o.emissive).multiplyScalar(0.25) : new THREE.Color("#000000") });
+  // models that aren't anatomy were designed in neon: in the studio their colours become natural
+  // (less saturated, never glaring), as if painted or made of real materials
+  const real = (c) => { if (model.trueColour || c == null) return c; const col = new THREE.Color(c), h = {}; col.getHSL(h); return col.setHSL(h.h, Math.min(0.62, h.s * 0.75), Math.min(0.36, Math.max(0.12, h.l * 0.5))); };
+  const studioGlow = (c, opacity = 0.9) => new THREE.MeshStandardMaterial({ color: real(c), roughness: 0.5, transparent: opacity < 1, opacity, depthWrite: opacity >= 1 });
+  const studioMat = (c, o = {}) => {
+    // a painted or moulded surface: matte, faintly textured, with only a little sheen
+    const glassy = o.transmission && o.transparent && (o.opacity ?? 1) < 0.6;   // only truly see-through parts stay glass
+    const surface = model.trueColour || o.metalness > 0.5 || glassy ? o : { ...o, transmission: 0, thickness: 0, transparent: (o.opacity ?? 1) < 0.6, opacity: (o.opacity ?? 1) < 0.6 ? o.opacity : 1, detail: !o.detail || o.detail === "none" ? "tissue" : o.detail, repeat: o.repeat ?? 3, bump: Math.min(o.bump ?? 0.15, 0.3), roughness: Math.max(o.roughness ?? 0.6, 0.55), clearcoat: Math.min(o.clearcoat ?? 0.15, 0.25), sheen: 0.15 };
+    return helpers.mat(real(c), { ...surface, emissive: o.emissive ? new THREE.Color(o.emissive).multiplyScalar(0.25) : new THREE.Color("#000000") });
+  };
   const k = {
     THREE, ...helpers, ...(studio ? { holo: studioHolo, glow: studioGlow, mat: studioMat } : {}), scene, camera, root: body, groups,
     add(id, mesh) {
@@ -339,7 +356,7 @@ export async function mountModel(root, siteName, model) {
       const geo = new THREE.BufferGeometry(), pos = new Float32Array(n * 3), seeds = [];
       for (let i = 0; i < n; i++) seeds.push([i % curves.length, Math.random()]);
       geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
-      const pts = new THREE.Points(geo, new THREE.PointsMaterial({ color: colour, size: studio ? size * 0.7 : size, transparent: true, opacity: studio ? 0.85 : 0.95, blending: studio ? THREE.NormalBlending : THREE.AdditiveBlending, depthWrite: false }));
+      const pts = new THREE.Points(geo, new THREE.PointsMaterial({ color: studio ? real(colour) : colour, size: studio ? size * 0.7 : size, transparent: true, opacity: studio ? 0.85 : 0.95, blending: studio ? THREE.NormalBlending : THREE.AdditiveBlending, depthWrite: false }));
       pts.frustumCulled = false;
       flows.push({ pts, curves, seeds, speed, pos });
       (grp ? groups[grp] : body).add(pts);
