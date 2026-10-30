@@ -1,7 +1,7 @@
 // Start a Gradify sub-site at getgradify.com/<name>/:
 //   npm run new-site -- MedGradify     one site
 //   npm run new-site -- --all          every site that has opening copy in kit/core/site-pages.js
-// Makes the folder from kit/templates/subsite (homepage, study app and LifeOS window), fills in
+// Makes the folder from kit/templates/subsite (homepage, study app, learning map and LifeOS window), fills in
 // the homepage's opening section from kit/core/site-pages.js, and marks the site built in
 // kit/core/sites.js so the directory on getgradify.com links to it. Never overwrites a folder.
 import { readFile, writeFile, mkdir, access } from "node:fs/promises";
@@ -15,7 +15,7 @@ if (!targets.length) {
   process.exit(1);
 }
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
-const templates = Object.fromEntries(await Promise.all(["index.html", "app.html", "lifeos.html"].map(async (f) => [f, await readFile(`kit/templates/subsite/${f}`, "utf8")])));
+const templates = Object.fromEntries(await Promise.all(["index.html", "app.html", "lifeos.html", "map.html"].map(async (f) => [f, await readFile(`kit/templates/subsite/${f}`, "utf8")])));
 let sitesSrc = await readFile("kit/core/sites.js", "utf8");
 const made = [];
 

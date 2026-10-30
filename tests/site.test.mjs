@@ -42,3 +42,12 @@ test("every built site has homepage content for a known audience, with six topic
     assert.equal(c.topics.length, 6, `${name} has six topics`);
   }
 });
+
+test("every built site's learning map has three subtopics for each of its six topics", async () => {
+  const { SITE_MAPS } = await import("../kit/core/site-maps.js");
+  const { SITES_CONTENT } = await import("../kit/core/site-content.js");
+  for (const name of Object.keys(SITES_CONTENT)) {
+    assert.equal(SITE_MAPS[name]?.length, 6, `${name} has six areas`);
+    assert.ok(SITE_MAPS[name].every((a) => a.length === 3 && a.every(Boolean)), `${name} has three subtopics each`);
+  }
+});

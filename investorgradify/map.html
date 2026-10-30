@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>InvestorGradify · Learning map</title>
+  <!-- InvestorGradify's learning map: its topics as a world on the 3D globe (kit/earth/subject-map.js),
+       with the subtopics from kit/core/site-maps.js and the learner's own notes from this site. -->
+  <meta name="gradify-site" content="InvestorGradify">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="../kit/styles/base.css">
+  <link rel="stylesheet" href="../kit/styles/components.css">
+  <link rel="stylesheet" href="../kit/styles/subsite.css">
+  <script src="../kit/vendor/supabase/supabase.js" defer></script>
+  <script type="module">
+    import { SITES, nameHtml, accentOf } from "../kit/core/site.js";
+    import { icon } from "../kit/core/icons.js";
+    import { tile, ink } from "../kit/core/colour.js";
+    import { mountSubjectMap } from "../kit/earth/subject-map.js";
+    const name = document.querySelector('meta[name="gradify-site"]').content, s = SITES.find((x) => x.n === name);
+    if (s) {
+      document.body.style.setProperty("--accent", accentOf(s));
+      document.querySelectorAll(".sub-brand .icon").forEach((el) => { el.innerHTML = icon(s.i); el.style.cssText = `--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}`; });
+      document.querySelectorAll("[data-site-name]").forEach((n) => { n.innerHTML = nameHtml(s); });
+    }
+    mountSubjectMap(name);
+  </script>
+</head>
+<body class="sub-page">
+  <div class="wrap">
+    <header class="sub-nav glass">
+      <a class="sub-brand" href="./"><span class="icon"></span><span data-site-name>InvestorGradify</span></a>
+      <nav class="sub-links" aria-label="InvestorGradify">
+        <a href="app.html#/study">Learn</a>
+        <a href="app.html#/notes">Notes</a>
+        <a href="app.html#/progress">Progress</a>
+        <a href="map.html" aria-current="page">Map</a>
+        <a href="/">Gradify</a>
+      </nav>
+      <div class="sub-right">
+        <a class="signin" href="app.html#/account">Sign in</a>
+        <a class="btn btn-light lg btn-sm" href="app.html"><span>Start free</span></a>
+      </div>
+    </header>
+    <main class="map-page">
+      <div class="sm-head"><h2>The <span data-site-name>InvestorGradify</span> learning map</h2><p id="map-note"></p></div>
+      <div class="panel glass earth-panel" id="earth">
+        <div class="earth-body">
+          <div class="earth-map" id="earth-map">
+            <canvas id="earth-canvas" tabindex="0" aria-label="Learning map globe. Drag or use the arrow keys to turn it, plus and minus to zoom. Use Jump to topic to choose a topic."></canvas>
+            <div class="earth-tools">
+              <label class="earth-jump"><span class="sr-only">Jump to topic</span><select id="earth-jump"></select></label>
+              <div class="earth-zoom">
+                <button type="button" id="earth-in" aria-label="Zoom in">+</button>
+                <button type="button" id="earth-out" aria-label="Zoom out">−</button>
+                <button type="button" id="earth-reset" aria-label="Reset view">⟲</button>
+              </div>
+            </div>
+            <p class="earth-hint" aria-hidden="true">Drag to turn · tap a pin</p>
+          </div>
+          <aside class="inset-card inspector" id="inspector" aria-live="polite"></aside>
+        </div>
+        <div class="earth-legend" id="earth-legend"></div>
+      </div>
+    </main>
+    <footer class="sub-foot"><span data-site-name>InvestorGradify</span> is part of <a href="/">Gradify</a>. One account works on every Gradify site.</footer>
+  </div>
+</body>
+</html>
