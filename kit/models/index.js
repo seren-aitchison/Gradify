@@ -24,5 +24,7 @@ export const MODELS = {
   YouthGradify: { file: "atoms.js", nav: "Science 3D", title: "Atoms and DNA in 3D", blurb: "A carbon atom, the three kinds of chemical bond and a turning DNA double helix. Click anything for the facts you need for GCSE and A level." },
   LitGradify: { file: "globe.js", nav: "Globe 3D", title: "The Globe in 3D", blurb: "Shakespeare's Globe: the thrust stage, the heavens and the trapdoor, the groundlings' yard and the galleries. Click any part to see how it shaped the plays you study." },
   LanguageGradify: { file: "voice.js", nav: "Voice 3D", title: "The voice in 3D", blurb: "The vocal tract in cross-section, speaking: lips, tongue, soft palate and vocal folds at work. Click any part for the sounds it makes and the tricky sounds in each language." },
+  MusicGradify: { file: "piano.js", nav: "Keyboard 3D", title: "Music theory in 3D", blurb: "A keyboard you can play, with the major scale as a staircase, chords lit above the keys, a grand stave and the circle of fifths. Click a key or a chord to hear it." },
+  ArtGradify: { file: "colour.js", nav: "Colour 3D", title: "Colour and light in 3D", blurb: "A colour solid with the wheel and its harmonies, a still life lit from one side, and a picture plane with the rule of thirds and perspective. Click anything for the theory." },
 };
 export const modelOf = (siteName) => MODELS[siteName] || null;

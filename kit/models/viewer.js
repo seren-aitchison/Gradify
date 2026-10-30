@@ -398,7 +398,8 @@ export async function mountModel(root, siteName, model) {
   canvas.addEventListener("pointerleave", () => { tip.hidden = true; if (state.hovered) { state.hovered = null; paint(); } });
   canvas.addEventListener("pointerup", (e) => {
     if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 5) return;
-    const id = hitAt(e)?.object.userData.id || null;
+    const hit = hitAt(e), id = hit?.object.userData.id || null;
+    if (hit) model.onPick?.(hit.object, id);   // e.g. a piano key plays its note
     if (state.quiz) return answer(id);
     if (id) select(id); else { state.selected = null; paint(); showIntro(); }
   });
