@@ -14,4 +14,20 @@ export const QA = {
   u03: { reviewed: null, sources: null, signoff: null },
   u04: { reviewed: null, sources: null, signoff: null },
   u05: { reviewed: null, sources: null, signoff: null },
+  // written to standard 2: lesson metadata is a hard check
+  u06: {
+    standard: 2,
+    reviewed: {
+      date: "2026-10-31", by: "Claude (AI review against docs/CURRICULUM_QA.md checklist; not an expert clinical review)",
+      findings: [
+        "Every lesson separates theoretical understanding from supervised, assessed competence (SAFE box), and covers indications or purpose, contraindications and risks, infection prevention, consent, supervision and local policy where they apply.",
+        "Procedures are taught as principles, with the Royal Marsden Manual and local procedures named for step-by-step practice; no doses or thresholds beyond published national guidance (NEWS2, BTS oxygen targets, NG pH 5.5, BLS 5-6 cm at 100-120/min, hypoglycaemia below 4.0 mmol/L).",
+        "QA run found and fixed: a question duplicating School 4, five thin explanations, 30 questions where the right answer was conspicuously longest (distractors rewritten as realistic misconceptions), too few hard questions (5 multi-step M3 questions added).",
+        "ECG ordering question reworded to ask about placement order.",
+      ],
+      accepted: [],
+      open: [],
+    },
+    sources: null, signoff: null,
+  },
 };

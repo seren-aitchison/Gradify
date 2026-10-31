@@ -69,3 +69,7 @@ The full brief arrived. Schools 6–17 are now in the syllabus with modules (497
 - **Learning disability**: School 13; the conditions most relevant to people with learning disabilities (respiratory, neurological, gastrointestinal); public health and inequalities modules of School 14.
 
 **Overlaps to manage when writing:** Schools 8 and 9 revisit topics from Schools 3, 5 and 6 (hand hygiene, PPE, NEWS2, sepsis), and School 17 revisits School 1. Each later school must go deeper or apply rather than repeat: School 6 is the practical skill, School 8 the science and systems, School 9 the acute response, School 17 the law in detail.
+
+## Status after the School 6 batch
+
+School 6 (Core Nursing Procedures and Clinical Skills, 35 lessons) is the first school written to content standard 2: learning objectives, prerequisites, competence and safety boxes, key terms, summaries, typed and dated sources, and multi-format questions (single best answer, multi-select, ordering, matching, short answer). It has passed the technical checks and an AI content review; source verification and expert clinical sign-off are outstanding, so it is labelled as a draft. Schools 1, 3, 4 and 5 need upgrading to standard 2 at their review. Schools 2 and 7–17 are not yet written. See docs/CURRICULUM_PROGRESS.md for the live status.

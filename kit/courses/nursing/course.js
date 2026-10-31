@@ -28,7 +28,7 @@ export default {
     { id: "medicines", title: "Medicines safety", sub: "Pharmacology and medicines management. Education only: it doesn't assess your competence to give medicines.", units: [4], format: "mixed", count: 30, minutes: 45, pass: 0.8 },
   ],
   // the schools whose notes are written so far (tests/courses.test.mjs checks this matches notes/)
-  written: ["u01", "u03", "u04", "u05"],
+  written: ["u01", "u03", "u04", "u05", "u06"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
   extras: [
     ["The body in 3D", "Every body system you'll care for, in 3D.", "../3d.html"],
