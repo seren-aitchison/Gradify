@@ -40,7 +40,7 @@ export function canvas(host, { aspect = 0.56, max = 520 } = {}) {
 // requestAnimationFrame loop that stops by itself when its element leaves the page
 export function loop(el, fn) {
   let id = 0, last = performance.now(), on = true;
-  const tick = (t) => { if (!on || !el.isConnected) return; const dt = Math.min(0.05, (t - last) / 1000); last = t; fn(dt, t / 1000); id = requestAnimationFrame(tick); };
+  const tick = (t) => { if (!on || !el.isConnected) return; const dt = Math.max(0, Math.min(0.05, (t - last) / 1000)); last = t; /* the first frame's timestamp can precede performance.now() */ fn(dt, t / 1000); id = requestAnimationFrame(tick); };
   id = requestAnimationFrame(tick);
   return () => { on = false; cancelAnimationFrame(id); };
 }

@@ -29,7 +29,7 @@ export function stage3d(host, { aspect = 0.62, max = 520, distance = 12, backgro
   let on = true, spin = 0, onFrame = null, last = performance.now();
   const tick = (t) => {
     if (!on || !box.isConnected) { cleanup(); return; }
-    const dt = Math.min(0.05, (t - last) / 1000); last = t;
+    const dt = Math.max(0, Math.min(0.05, (t - last) / 1000)); last = t;
     if (spin) root.rotation.y += spin * dt;
     onFrame?.(dt, t / 1000);
     controls.update(); renderer.render(scene, camera);
