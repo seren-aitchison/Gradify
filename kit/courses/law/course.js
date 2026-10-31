@@ -6,7 +6,7 @@ export default {
   // shown under the title on every page of the course
   notice: "<b>Study material, not legal advice.</b> The law is stated for England and Wales unless a lesson says otherwise; Scotland and Northern Ireland differ (School 17). Completing a LawGradify course is not a legal qualification and does not authorise you to practise. Law changes: check current sources before you rely on anything here.",
   // the schools whose notes are written so far (tests/courses.test.mjs checks this matches notes/)
-  written: [],
+  written: ["u01"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
   extras: [
     ["SQE1 pathways", "FLK1 and FLK2 as two separate routes, with single-best-answer questions in every lesson.", "#/paths"],
