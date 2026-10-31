@@ -48,6 +48,9 @@ export class LocalStore {
   async addReview(r) { this.mem.reviews.push({ id: this.mem.reviews.length + 1, reviewed_at: now(), ...r }); this.save(); }
   async listReviews(sinceDays = 400) { const t = Date.now() - sinceDays * 864e5; return this.mem.reviews.filter((r) => Date.parse(r.reviewed_at) >= t); }
   async logActivity(a) { const row = { id: this.mem.activity.length + 1, at: now(), site: "Gradify", xp: 0, ...a }; this.mem.activity.push(row); this.mem.profile.xp += row.xp; this.save(); return row; }
+  // assessment attempts (kit/assess/attempts.js); kept to the most recent 5,000 on this device
+  async logAttempt(a) { (this.mem.attempts ||= []).push(a); if (this.mem.attempts.length > 5000) this.mem.attempts.splice(0, this.mem.attempts.length - 5000); this.save(); return a; }
+  async listAttempts(sinceDays = 400) { const t = Date.now() - sinceDays * 864e5; return (this.mem.attempts || []).filter((a) => Date.parse(a.at) >= t); }
   async listActivity(sinceDays = 400) { const t = Date.now() - sinceDays * 864e5; return this.mem.activity.filter((a) => Date.parse(a.at) >= t); }
   async listBlocks(fromDay, toDay) { return this.mem.blocks.filter((b) => b.day >= fromDay && b.day <= toDay); }
   async saveBlock(b) { if (b.id) { Object.assign(this.mem.blocks.find((x) => x.id === b.id), b); } else { b = { id: uid(), created_at: now(), done: false, auto: false, ...b }; this.mem.blocks.push(b); } this.save(); return b; }
@@ -91,6 +94,14 @@ export class CloudStore {
   async addReview(r) { await this.q(this.db.from("reviews").insert(r)); }
   async listReviews(sinceDays = 400) { return this.q(this.db.from("reviews").select("*").gte("reviewed_at", new Date(Date.now() - sinceDays * 864e5).toISOString())); }
   async logActivity(a) { return this.q(this.db.from("activity").insert({ site: a.site || "Gradify", kind: a.kind, xp: a.xp || 0, detail: a.detail || null }).select().single()); }
+  // assessment attempts: one row per answer (supabase/migrations/20261101120000_assessment_attempts.sql)
+  async logAttempt(a) {
+    return this.q(this.db.from("assessment_attempts").insert({ id: a.id, site: a.site, subject: a.subject, context: a.context, context_id: a.contextId, question_id: a.question.id, question_version: a.question.v, question_type: a.question.type, difficulty: a.question.d, objectives: a.question.objectives, lesson_id: a.lesson, module: a.module, unit_id: a.unit, response: a.response, score: a.score, correct: a.correct, attempt: a.attempt, confidence: a.confidence, ms: a.ms, misconception: a.misconception, marking_method: a.marking.method, marking_status: a.marking.status, schema: a.schema, created_at: a.at }));
+  }
+  async listAttempts(sinceDays = 400) {
+    const rows = await this.q(this.db.from("assessment_attempts").select("*").gte("created_at", new Date(Date.now() - sinceDays * 864e5).toISOString()).order("created_at"));
+    return rows.map((r) => ({ schema: r.schema, id: r.id, at: r.created_at, site: r.site, subject: r.subject, context: r.context, contextId: r.context_id, question: { id: r.question_id, v: r.question_version, type: r.question_type, d: r.difficulty, objectives: r.objectives || [] }, lesson: r.lesson_id, module: r.module, unit: r.unit_id, response: r.response, score: Number(r.score), correct: r.correct, attempt: r.attempt, confidence: r.confidence, ms: r.ms, misconception: r.misconception, marking: { method: r.marking_method, status: r.marking_status } }));
+  }
   async listActivity(sinceDays = 400) { return this.q(this.db.from("activity").select("*").gte("at", new Date(Date.now() - sinceDays * 864e5).toISOString())); }
   async listBlocks(fromDay, toDay) { return this.q(this.db.from("plan_blocks").select("*").gte("day", fromDay).lte("day", toDay)); }
   async saveBlock(b) { return b.id ? this.q(this.db.from("plan_blocks").update(b).eq("id", b.id).select().single()) : this.q(this.db.from("plan_blocks").insert(b).select().single()); }
@@ -136,6 +147,7 @@ export function scopeToSite(store, site) {
     async listCards(filter = {}) { const ids = await docIds(); return (await store.listCards(filter)).filter((c) => ids.has(c.document_id)); },
     async listReviews(sinceDays) { const ids = new Set((await scoped.listCards()).map((c) => c.id)); return (await store.listReviews(sinceDays)).filter((r) => ids.has(r.card_id)); },
     async listActivity(sinceDays) { return (await store.listActivity(sinceDays)).filter((a) => a.site === site); },
+    async listAttempts(sinceDays) { return (await store.listAttempts?.(sinceDays) || []).filter((a) => a.site === site); },
     async getProfile() { return { ...(await store.getProfile()), site }; },
     async saveProfile(patch) { return { ...(await store.saveProfile({ ...patch, site })), site }; },
     async exportAll() {

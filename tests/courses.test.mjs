@@ -11,10 +11,15 @@ import { parseSyllabus } from "../kit/course/syllabus.js";
 
 for (const [name, course, dir] of [["law", law, "law"], ["nursing", nursing, "nursing"]]) {
   test(`${name}: every permanent lesson id still exists with its recorded title, and every lesson has one`, async () => {
-    const { IDS } = await import(`../kit/courses/${dir}/ids.js`);
+    const { IDS, RETIRED } = await import(`../kit/courses/${dir}/ids.js`);
     const byId = new Map(course.units.flatMap((u) => u.lessons.map((l) => [l.id, l])));
+    for (const id of Object.keys(RETIRED)) {
+      assert.ok(!byId.has(id), `${id} is retired and must never be used again`);
+      assert.ok(!IDS[id], `${id} can't be both live and retired`);
+      assert.ok(RETIRED[id].title && /^\d{4}-\d{2}-\d{2}$/.test(RETIRED[id].retired), `${id} records its title and retirement date`);
+    }
     for (const [id, title] of Object.entries(IDS)) {
-      assert.ok(byId.has(id), `${id} ("${title}") has disappeared: saved progress would be lost. Restore it, or keep the id with a new title.`);
+      assert.ok(byId.has(id), `${id} ("${title}") has disappeared: saved progress would be lost. Restore it, keep the id with a new title, or retire it in ids.js.`);
       assert.equal(norm(byId.get(id).title), norm(title), `${id} title changed: update ids.js deliberately if this is a rename`);
     }
     for (const id of byId.keys()) assert.ok(IDS[id], `${id} isn't in ids.js yet: run npm run qa to record it`);
@@ -133,4 +138,11 @@ test("nursing: four distinct field pathways, each with the shared core and its o
   }
   const sig = new Set(fields.map((p) => JSON.stringify([p.units, p.select || {}])));
   assert.equal(sig.size, 4, "no two field pathways are the same");
+});
+
+test("retired ids are never reused, even for a lesson with the retired title", () => {
+  const lock = { "u02-01": "Alpha", "u02-02": "Beta" }, retired = { "u02-03": { title: "Gamma", retired: "2026-10-31", reason: "merged" } };
+  const [u] = parseSyllabus("2. Test\n> M\n* Alpha\n* Beta\n* Gamma\n* Delta", lock, retired);
+  assert.deepEqual(u.lessons.map((l) => l.id), ["u02-01", "u02-02", "u02-04", "u02-05"]);
+  assert.deepEqual(u.lessons.map((l) => l.position.order), [1, 2, 3, 4], "position is separate from the id");
 });

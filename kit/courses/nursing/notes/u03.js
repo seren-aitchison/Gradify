@@ -25,8 +25,8 @@ K: Assessment is a professional responsibility of the registered nurse (NMC plat
 !: A normal score on a tool does not overrule your clinical concern. If you are worried, escalate.
 Q: List the five stages of the nursing process. | Assess, identify needs (diagnose), plan, implement, evaluate.
 Q: Name three types of nursing assessment. | Comprehensive, focused, ongoing (reassessment), emergency (ABCDE), and risk assessments (any three).
-M1: Which comes first in the nursing process? | Assessment | Planning | Implementation | Evaluation | Discharge | Care must be based on an assessment of needs.
-M2: A patient's NEWS2 score is 0, but the nurse feels something is wrong because the patient is unusually quiet. What should the nurse do? | Escalate their concern according to local policy and reassess sooner | Do nothing because the score is normal | Wait until the next scheduled observations | Ask the patient to call if they feel worse | Record "patient quiet" and continue | Clinical concern is a valid reason to escalate regardless of the score.
+M1#nursing-u03-01-q1: Which comes first in the nursing process? | Assessment | Planning | Implementation | Evaluation | Discharge | Care must be based on an assessment of needs.
+M2#nursing-u03-01-q2: A patient's NEWS2 score is 0, but the nurse feels something is wrong because the patient is unusually quiet. What should the nurse do? | Escalate their concern according to local policy and reassess sooner | Do nothing because the score is normal | Wait until the next scheduled observations | Ask the patient to call if they feel worse | Record "patient quiet" and continue | Clinical concern is a valid reason to escalate regardless of the score.
 
 ## Person-centred assessment
 S: Person-centred assessment puts the person's own experiences, values, preferences and goals at the centre. It treats the person as an expert in their own life and builds a partnership for care.
@@ -47,8 +47,8 @@ K: Person-centred care is a core NMC value (Code 1 and 2): treat people as indiv
 !: Diagnostic overshadowing is a known cause of avoidable deaths in people with learning disabilities. Assess new symptoms as new.
 Q: What is diagnostic overshadowing? | Wrongly attributing new symptoms to an existing diagnosis (such as a learning disability or mental illness) instead of assessing them.
 Q: What is a hospital passport? | A document, usually held by a person with a learning disability, setting out their needs, communication and preferences for health staff.
-M1: Which question best supports person-centred assessment? | "What matters to you most while you're here?" | "Have you taken your tablets?" | "Is your pain better?" | "Which ward were you on before?" | "Do you understand the rules?" | Asking what matters to the person centres care on their goals.
-M2: A man with a learning disability becomes agitated; staff say "that's just his behaviour". What should the nurse do first? | Assess for a new physical cause such as pain, constipation or infection, using his passport and carers' knowledge | Accept the explanation and give PRN sedation | Ask him to calm down | Record "challenging behaviour" | Wait until his carer visits | Behaviour change may signal pain or illness; avoid diagnostic overshadowing.
+M1#nursing-u03-02-q1: Which question best supports person-centred assessment? | "What matters to you most while you're here?" | "Have you taken your tablets?" | "Is your pain better?" | "Which ward were you on before?" | "Do you understand the rules?" | Asking what matters to the person centres care on their goals.
+M2#nursing-u03-02-q2: A man with a learning disability becomes agitated; staff say "that's just his behaviour". What should the nurse do first? | Assess for a new physical cause such as pain, constipation or infection, using his passport and carers' knowledge | Accept the explanation and give PRN sedation | Ask him to calm down | Record "challenging behaviour" | Wait until his carer visits | Behaviour change may signal pain or illness; avoid diagnostic overshadowing.
 
 ## History taking
 S: History taking is a structured conversation to understand a person's presenting problem and its context. A good history often points to the most likely explanation before any examination or test.
@@ -73,8 +73,8 @@ P: Where the person can't give a full history (confusion, reduced consciousness,
 K: Record allergies with the reaction: "penicillin: rash" is safer than "penicillin allergy".
 Q: What does SOCRATES stand for? | Site, Onset, Character, Radiation, Associated symptoms, Time course, Exacerbating and relieving factors, Severity.
 Q: What does ICE stand for? | The person's Ideas, Concerns and Expectations.
-M1: Which is an open question? | "Tell me about the pain." | "Is the pain sharp?" | "Did it start today?" | "Is it 7 out of 10?" | "Does it go to your arm?" | Open questions invite the person to describe in their own words.
-M2: A confused older woman can't say what medicines she takes. What is the best next step? | Seek a collateral history from family or carers and check GP and pharmacy records | Assume she takes nothing | Ask her to guess | Wait until she is less confused | Give her usual hospital medicines | A collateral history and records help build an accurate medicines history.
+M1#nursing-u03-03-q1: Which is an open question? | "Tell me about the pain." | "Is the pain sharp?" | "Did it start today?" | "Is it 7 out of 10?" | "Does it go to your arm?" | Open questions invite the person to describe in their own words.
+M2#nursing-u03-03-q2: A confused older woman can't say what medicines she takes. What is the best next step? | Seek a collateral history from family or carers and check GP and pharmacy records | Assume she takes nothing | Ask her to guess | Wait until she is less confused | Give her usual hospital medicines | A collateral history and records help build an accurate medicines history.
 
 ## Subjective and objective data
 S: Assessment uses two kinds of information: subjective data (what the person tells you) and objective data (what you observe, measure or test). Both are valid, and good assessment puts them together.
@@ -92,8 +92,8 @@ H: Putting them together
 K: Pain is what the person says it is. Subjective data aren't less important than measurements.
 Q: Give two examples of subjective data. | Any two of: pain description, nausea, anxiety, breathlessness described by the person, fatigue.
 Q: Give two examples of objective data. | Any two of: respiratory rate, blood pressure, temperature, oxygen saturation, examination findings, test results.
-M1: Which is objective data? | Oxygen saturation of 92% | "I feel short of breath" | "I'm worried about going home" | A pain score of 6/10 reported by the patient | "I feel dizzy" | Measurements are objective; reports of feelings are subjective.
-M2: A patient says they feel fine, but their respiratory rate has risen from 16 to 26 over two hours. What should the nurse conclude? | The objective change is significant and needs escalation, whatever the patient reports | The patient is fine because they say so | The reading must be wrong | Respiratory rate isn't important | Wait for the patient to complain | A rising respiratory rate is an early sign of deterioration.
+M1#nursing-u03-04-q1: Which is objective data? | Oxygen saturation of 92% | "I feel short of breath" | "I'm worried about going home" | A pain score of 6/10 reported by the patient | "I feel dizzy" | Measurements are objective; reports of feelings are subjective.
+M2#nursing-u03-04-q2: A patient says they feel fine, but their respiratory rate has risen from 16 to 26 over two hours. What should the nurse conclude? | The objective change is significant and needs escalation, whatever the patient reports | The patient is fine because they say so | The reading must be wrong | Respiratory rate isn't important | Wait for the patient to complain | A rising respiratory rate is an early sign of deterioration.
 
 ## Physical assessment
 S: Physical assessment is the systematic examination of the body to gather objective data. Nurses use four core techniques: inspection, palpation, percussion and auscultation, within their competence and local scope.
@@ -116,8 +116,8 @@ H: Approaches
 K: Advanced examination skills such as percussion and detailed auscultation need further training. Use the skills you are competent in, and refer or escalate for the rest.
 Q: Name the four core techniques of physical examination. | Inspection, palpation, percussion and auscultation.
 Q: Why is the abdomen auscultated before palpation? | Because palpation can stimulate the bowel and alter the bowel sounds.
-M1: Feeling the skin for warmth and checking for pitting oedema is which technique? | Palpation | Inspection | Percussion | Auscultation | Observation | Palpation uses the hands to feel temperature, texture, tenderness, pulses and oedema; inspection is looking, and auscultation is listening.
-M2: A student is asked to examine a patient's chest but hasn't been taught auscultation. What should they do? | Explain this to their supervisor and carry out only what they are competent to do under supervision | Try it anyway to learn | Write "chest clear" | Ask the patient to describe their breathing instead and record it as examined | Refuse to assess the patient at all | Students practise under supervision and within competence.
+M1#nursing-u03-05-q1: Feeling the skin for warmth and checking for pitting oedema is which technique? | Palpation | Inspection | Percussion | Auscultation | Observation | Palpation uses the hands to feel temperature, texture, tenderness, pulses and oedema; inspection is looking, and auscultation is listening.
+M2#nursing-u03-05-q2: A student is asked to examine a patient's chest but hasn't been taught auscultation. What should they do? | Explain this to their supervisor and carry out only what they are competent to do under supervision | Try it anyway to learn | Write "chest clear" | Ask the patient to describe their breathing instead and record it as examined | Refuse to assess the patient at all | Students practise under supervision and within competence.
 
 ## General inspection
 S: General inspection is the first impression you form when you approach a person: how they look, behave and breathe. It takes seconds and can tell you whether someone is seriously unwell before any measurement.
@@ -135,8 +135,8 @@ P: Before touching anything, take a few seconds at the door or bedside. Look at 
 K: Trust your first impression of "unwell". Mottled skin, confusion and laboured breathing are warning signs.
 Q: Name three colours you might note on general inspection. | Pallor, cyanosis, jaundice, flushing, mottling (any three).
 Q: What does speaking in only short phrases suggest? | Significant breathlessness.
-M1: Which finding on inspection suggests central cyanosis? | Blue discolouration of the lips and tongue | Pale fingertips in a cold room | Yellow sclera | Red cheeks | Bruising on the arm | Central cyanosis indicates low oxygen in arterial blood.
-M2: On entering a bay, a nurse sees a patient sitting forward, using neck muscles to breathe and unable to finish a sentence. What should the nurse do first? | Call for help and start an ABCDE assessment | Complete the admission paperwork | Offer a cup of tea | Wait to record routine observations at the next round | Ask the patient to lie flat | Signs of respiratory distress need an immediate response.
+M1#nursing-u03-06-q1: Which finding on inspection suggests central cyanosis? | Blue discolouration of the lips and tongue | Pale fingertips in a cold room | Yellow sclera | Red cheeks | Bruising on the arm | Central cyanosis indicates low oxygen in arterial blood.
+M2#nursing-u03-06-q2: On entering a bay, a nurse sees a patient sitting forward, using neck muscles to breathe and unable to finish a sentence. What should the nurse do first? | Call for help and start an ABCDE assessment | Complete the admission paperwork | Offer a cup of tea | Wait to record routine observations at the next round | Ask the patient to lie flat | Signs of respiratory distress need an immediate response.
 
 ## Vital signs
 S: Vital signs (observations) are measurements of the body's most basic functions: respiratory rate, oxygen saturation, blood pressure, pulse, consciousness level and temperature. Trends in vital signs are among the earliest indicators of deterioration.
@@ -159,8 +159,8 @@ H: Good practice
 K: An observation that isn't acted on is no better than one that isn't taken. Scores trigger responses: know your local escalation policy.
 Q: List the six physiological parameters in NEWS2. | Respiratory rate, oxygen saturation, systolic blood pressure, pulse rate, level of consciousness or new confusion, and temperature (plus a score for supplemental oxygen).
 Q: Is NEWS2 used for children? | No. Children use paediatric early warning scores with age-appropriate ranges.
-M1: Which vital sign is most often recorded inaccurately and is an early sign of deterioration? | Respiratory rate | Temperature | Weight | Height | Blood glucose | Respiratory rate is often estimated rather than counted, yet it changes early.
-M2: A nurse records a NEWS2 score of 6 but doesn't tell anyone because the patient "looks OK". What is the main problem? | A score of 5 or more needs an urgent response under NEWS2; failure to escalate risks harm | There's no problem if the patient looks well | The score should be rounded down | NEWS2 is only advisory | Only doctors can act on NEWS2 | Scores should trigger the agreed clinical response.
+M1#nursing-u03-07-q1: Which vital sign is most often recorded inaccurately and is an early sign of deterioration? | Respiratory rate | Temperature | Weight | Height | Blood glucose | Respiratory rate is often estimated rather than counted, yet it changes early.
+M2#nursing-u03-07-q2: A nurse records a NEWS2 score of 6 but doesn't tell anyone because the patient "looks OK". What is the main problem? | A score of 5 or more needs an urgent response under NEWS2; failure to escalate risks harm | There's no problem if the patient looks well | The score should be rounded down | NEWS2 is only advisory | Only doctors can act on NEWS2 | Scores should trigger the agreed clinical response.
 
 ## Temperature
 S: Body temperature reflects the balance between heat production and heat loss. Fever, hypothermia and changes from baseline can signal infection, inflammation, environmental exposure or other illness.
@@ -183,8 +183,8 @@ K: In NEWS2, a temperature of 35.0°C or below scores 3; 39.1°C or above scores
 !: Treating a fever with antipyretics doesn't treat its cause. Look for the source and escalate as needed.
 Q: What temperature defines hypothermia? | A core temperature below 35.0°C.
 Q: Why might an older person with infection not have a fever? | Ageing and immunosuppression can blunt the fever response.
-M1: What is the usual threshold for fever in adults? | 38.0°C or above | 37.0°C or above | 36.5°C or above | 39.5°C or above | 40.0°C or above | Fever is generally defined as 38.0°C or more.
-M2: A patient's temperature is 35.4°C, pulse 118 and respiratory rate 24. They seem confused. What should the nurse consider? | Possible sepsis: low temperature can occur in sepsis; escalate urgently according to policy | The patient is just cold, so offer a blanket only | Recheck in four hours | The temperature is normal | Give paracetamol | A low temperature with tachycardia, tachypnoea and new confusion is a red flag.
+M1#nursing-u03-08-q1: What is the usual threshold for fever in adults? | 38.0°C or above | 37.0°C or above | 36.5°C or above | 39.5°C or above | 40.0°C or above | Fever is generally defined as 38.0°C or more.
+M2#nursing-u03-08-q2: A patient's temperature is 35.4°C, pulse 118 and respiratory rate 24. They seem confused. What should the nurse consider? | Possible sepsis: low temperature can occur in sepsis; escalate urgently according to policy | The patient is just cold, so offer a blanket only | Recheck in four hours | The temperature is normal | Give paracetamol | A low temperature with tachycardia, tachypnoea and new confusion is a red flag.
 
 ## Pulse
 S: The pulse is the wave of pressure felt as the heart ejects blood into the arteries. Its rate, rhythm and character give important information about the heart and circulation.
@@ -204,8 +204,8 @@ P: Pulse oximeters and blood pressure machines display a heart rate, but can mis
 K: A rising heart rate, especially with a falling blood pressure, suggests shock until proven otherwise.
 Q: How long should you count an irregular pulse? | A full 60 seconds.
 Q: What is a pulse deficit? | The difference between the apical and radial pulse rates, found when some beats don't produce a palpable radial pulse (for example in atrial fibrillation).
-M1: What is the normal resting heart rate range for adults? | 60 to 100 beats per minute | 40 to 60 | 100 to 140 | 20 to 40 | 120 to 160 | 60–100 bpm is the usual adult resting range.
-M2: A post-operative patient's pulse rises from 80 to 118 over three hours, with blood pressure falling. What should the nurse suspect and do? | Possible bleeding or shock: assess with ABCDE and escalate urgently | Anxiety: reassure and recheck in four hours | Normal post-operative response, no action | Equipment fault, ignore | Give a beta-blocker | Rising heart rate with falling blood pressure is a warning sign of hypovolaemia.
+M1#nursing-u03-09-q1: What is the normal resting heart rate range for adults? | 60 to 100 beats per minute | 40 to 60 | 100 to 140 | 20 to 40 | 120 to 160 | 60–100 bpm is the usual adult resting range.
+M2#nursing-u03-09-q2: A post-operative patient's pulse rises from 80 to 118 over three hours, with blood pressure falling. What should the nurse suspect and do? | Possible bleeding or shock: assess with ABCDE and escalate urgently | Anxiety: reassure and recheck in four hours | Normal post-operative response, no action | Equipment fault, ignore | Give a beta-blocker | Rising heart rate with falling blood pressure is a warning sign of hypovolaemia.
 
 ## Respiratory rate
 S: Respiratory rate is the number of breaths per minute. It is one of the most sensitive early signs of deterioration and one of the most poorly recorded.
@@ -224,8 +224,8 @@ K: A respiratory rate of 25 or more, or 8 or fewer, scores 3 on its own in NEWS2
 !: Never estimate or write "18" by habit. Inaccurate respiratory rates hide deterioration.
 Q: What is the normal adult respiratory rate? | 12–20 breaths per minute.
 Q: Name two causes of a low respiratory rate. | Opioids, sedatives, raised intracranial pressure, exhaustion, hypothermia (any two).
-M1: How long should respiratory rate be counted? | A full 60 seconds | 10 seconds | 15 seconds, then multiply by four | Until the person notices | It can be estimated | Counting for a full minute gives an accurate rate.
-M2: A patient on a morphine infusion has a respiratory rate of 7 and is difficult to rouse. What should the nurse do first? | Call for urgent help, follow local policy for opioid toxicity, and support the airway and breathing | Record it and recheck in an hour | Increase the morphine because they are comfortable | Wait for the doctor's round | Encourage oral fluids | Respiratory depression with reduced consciousness is an emergency.
+M1#nursing-u03-10-q1: How long should respiratory rate be counted? | A full 60 seconds | 10 seconds | 15 seconds, then multiply by four | Until the person notices | It can be estimated | Counting for a full minute gives an accurate rate.
+M2#nursing-u03-10-q2: A patient on a morphine infusion has a respiratory rate of 7 and is difficult to rouse. What should the nurse do first? | Call for urgent help, follow local policy for opioid toxicity, and support the airway and breathing | Record it and recheck in an hour | Increase the morphine because they are comfortable | Wait for the doctor's round | Encourage oral fluids | Respiratory depression with reduced consciousness is an emergency.
 
 ## Blood pressure
 S: Blood pressure is the pressure of blood against arterial walls: systolic (when the heart contracts) over diastolic (when it relaxes). Accurate measurement and interpretation in context are essential.
@@ -243,8 +243,8 @@ P: Measure lying (after 5 minutes), then standing at 1 and 3 minutes. A drop of 
 K: Falling blood pressure is a late sign of shock in many people: heart rate and respiratory rate rise first.
 Q: Why does cuff size matter? | A cuff too small overestimates blood pressure; too large underestimates it.
 Q: What defines postural hypotension? | A fall of at least 20 mmHg systolic or 10 mmHg diastolic within 3 minutes of standing (or symptoms).
-M1: What is the NEWS2 score for a systolic blood pressure of 88 mmHg? | 3 | 0 | 1 | 2 | 4 | In NEWS2, a systolic pressure of 90 mmHg or less scores 3, which on its own triggers an urgent clinical review.
-M2: An older patient's lying BP is 140/80 and standing BP at 3 minutes is 112/70, and they feel dizzy. What does this suggest, and why does it matter? | Orthostatic hypotension, increasing falls risk; report and review medicines and fluids | A normal finding | Hypertension | Faulty equipment, so ignore it | A sign of fever | A 28 mmHg systolic fall with symptoms is postural hypotension.
+M1#nursing-u03-11-q1: What is the NEWS2 score for a systolic blood pressure of 88 mmHg? | 3 | 0 | 1 | 2 | 4 | In NEWS2, a systolic pressure of 90 mmHg or less scores 3, which on its own triggers an urgent clinical review.
+M2#nursing-u03-11-q2: An older patient's lying BP is 140/80 and standing BP at 3 minutes is 112/70, and they feel dizzy. What does this suggest, and why does it matter? | Orthostatic hypotension, increasing falls risk; report and review medicines and fluids | A normal finding | Hypertension | Faulty equipment, so ignore it | A sign of fever | A 28 mmHg systolic fall with symptoms is postural hypotension.
 
 ## Oxygen saturation
 S: Oxygen saturation (SpO2) measured by pulse oximetry estimates the percentage of haemoglobin carrying oxygen. It is a quick, non-invasive measurement, but it has important limitations.
@@ -265,8 +265,8 @@ K: A normal SpO2 on high-flow oxygen does not mean the person is well. Look at t
 !: Don't give high-concentration oxygen to someone with known type 2 respiratory failure without monitoring their target, but never withhold oxygen from a hypoxic person in an emergency.
 Q: What is the usual target saturation range for acutely ill adults? | 94–98% (BTS guidance).
 Q: Name three limitations of pulse oximetry. | Poor perfusion, movement, nail varnish, carbon monoxide poisoning, overestimation in darker skin, no information about CO2 (any three).
-M1: For a patient with known hypercapnic respiratory failure, what target saturation is usually prescribed? | 88–92% | 94–98% | 100% | 80–85% | 92–96% | Lower targets reduce the risk of worsening hypercapnia in at-risk patients.
-M2: A patient on 4 L/min oxygen has SpO2 97% but a respiratory rate of 28 and is becoming drowsy. What is the best interpretation? | The patient is deteriorating despite normal saturation; escalate urgently | The patient is stable because saturation is normal | Reduce oxygen and recheck in four hours | Drowsiness means they're comfortable | Remove the oximeter as it's wrong | Rising respiratory rate and drowsiness are warning signs; saturation alone is reassuring only in context.
+M1#nursing-u03-12-q1: For a patient with known hypercapnic respiratory failure, what target saturation is usually prescribed? | 88–92% | 94–98% | 100% | 80–85% | 92–96% | Lower targets reduce the risk of worsening hypercapnia in at-risk patients.
+M2#nursing-u03-12-q2: A patient on 4 L/min oxygen has SpO2 97% but a respiratory rate of 28 and is becoming drowsy. What is the best interpretation? | The patient is deteriorating despite normal saturation; escalate urgently | The patient is stable because saturation is normal | Reduce oxygen and recheck in four hours | Drowsiness means they're comfortable | Remove the oximeter as it's wrong | Rising respiratory rate and drowsiness are warning signs; saturation alone is reassuring only in context.
 
 ## Pain assessment
 S: Pain is an unpleasant sensory and emotional experience. Accurate, regular assessment, using the right tool for the person, is essential to relieve suffering and to detect complications.
@@ -289,8 +289,8 @@ P: New or severe pain, pain out of proportion, pain with abnormal observations, 
 K: Assess, treat, reassess, document. Unrelieved pain is harmful, not just uncomfortable.
 Q: Name two pain tools for people who cannot self-report. | Abbey Pain Scale, PAINAD, FLACC (any two).
 Q: When should pain be reassessed after giving oral analgesia? | When the medicine is expected to work, typically about 30–60 minutes later, and as local policy specifies.
-M1: Which tool is designed for people with advanced dementia? | Abbey Pain Scale | Glasgow Coma Scale | MUST | Waterlow | NEWS2 | The Abbey Pain Scale uses observed behaviours.
-M2: A patient with a new plaster cast reports severe pain that isn't relieved by analgesia and gets worse when the toes are moved. What should the nurse do? | Escalate urgently: pain out of proportion can indicate compartment syndrome | Give more analgesia and recheck in four hours | Reassure that pain is normal with casts | Elevate the arm and leave it | Remove the cast without advice | Disproportionate pain with passive stretch is a red flag for compartment syndrome.
+M1#nursing-u03-13-q1: Which tool is designed for people with advanced dementia? | Abbey Pain Scale | Glasgow Coma Scale | MUST | Waterlow | NEWS2 | The Abbey Pain Scale uses observed behaviours.
+M2#nursing-u03-13-q2: A patient with a new plaster cast reports severe pain that isn't relieved by analgesia and gets worse when the toes are moved. What should the nurse do? | Escalate urgently: pain out of proportion can indicate compartment syndrome | Give more analgesia and recheck in four hours | Reassure that pain is normal with casts | Elevate the arm and leave it | Remove the cast without advice | Disproportionate pain with passive stretch is a red flag for compartment syndrome.
 
 ## Neurological observations
 S: Neurological observations assess consciousness, pupils, limb power and vital signs to detect changes in brain function. Deterioration can be rapid, so accurate and timely measurement is vital.
@@ -313,8 +313,8 @@ P: Always check blood glucose in someone with reduced consciousness or new confu
 K: Report the components and the trend. "GCS 13 (E3 V4 M6), was 15 an hour ago" tells the team what has changed.
 Q: What are the three components of the GCS and their maximum scores? | Eye opening 4, verbal response 5, motor response 6 (total 15).
 Q: What does ACVPU stand for? | Alert, new Confusion, Voice, Pain, Unresponsive.
-M1: What is the lowest possible GCS score? | 3 | 0 | 1 | 5 | 8 | Each component scores at least 1, so the minimum total is 3.
-M2: A patient with a head injury had GCS 15; now their right pupil is larger and sluggish and GCS is 12. What should the nurse do? | Call for emergency help immediately according to local policy and continue close neurological monitoring | Recheck in four hours | Give analgesia and let them sleep | Document only | Wait for the next ward round | Pupil changes with falling GCS suggest raised intracranial pressure.
+M1#nursing-u03-14-q1: What is the lowest possible GCS score? | 3 | 0 | 1 | 5 | 8 | Each component scores at least 1, so the minimum total is 3.
+M2#nursing-u03-14-q2: A patient with a head injury had GCS 15; now their right pupil is larger and sluggish and GCS is 12. What should the nurse do? | Call for emergency help immediately according to local policy and continue close neurological monitoring | Recheck in four hours | Give analgesia and let them sleep | Document only | Wait for the next ward round | Pupil changes with falling GCS suggest raised intracranial pressure.
 
 ## Cardiovascular assessment
 S: Cardiovascular assessment examines the heart and circulation to identify problems with cardiac output, perfusion and fluid status. It combines history, observations and examination.
@@ -333,8 +333,8 @@ P: Treat new chest pain as potentially cardiac until assessed. Escalate immediat
 K: Capillary refill time over 2 seconds, cold mottled peripheries and a falling blood pressure are signs of poor perfusion.
 Q: What is a normal capillary refill time? | 2 seconds or less.
 Q: What is orthopnoea? | Breathlessness when lying flat, relieved by sitting up, common in heart failure.
-M1: Which finding suggests fluid overload in heart failure? | Bilateral pitting ankle oedema and a rapid weight gain | Capillary refill of 1 second | Bradycardia only | Dry mucous membranes | Low urine specific gravity | Oedema and weight gain reflect fluid retention.
-M2: A patient complains of central crushing chest pain radiating to the left arm. What should the nurse do first? | Call for urgent help, stay with the patient, perform an ABCDE assessment and record an ECG as local policy directs | Give paracetamol and recheck later | Ask them to walk to see if it improves | Document and inform at handover | Wait for the doctor's round | Possible acute coronary syndrome needs immediate escalation.
+M1#nursing-u03-15-q1: Which finding suggests fluid overload in heart failure? | Bilateral pitting ankle oedema and a rapid weight gain | Capillary refill of 1 second | Bradycardia only | Dry mucous membranes | Low urine specific gravity | Oedema and weight gain reflect fluid retention.
+M2#nursing-u03-15-q2: A patient complains of central crushing chest pain radiating to the left arm. What should the nurse do first? | Call for urgent help, stay with the patient, perform an ABCDE assessment and record an ECG as local policy directs | Give paracetamol and recheck later | Ask them to walk to see if it improves | Document and inform at handover | Wait for the doctor's round | Possible acute coronary syndrome needs immediate escalation.
 
 ## Respiratory assessment
 S: Respiratory assessment looks at how well a person is breathing and oxygenating. It combines history, observation of breathing, vital signs and, where competent, examination of the chest.
@@ -352,8 +352,8 @@ H: Measurements
 K: A quiet chest in a person having an asthma attack is a life-threatening sign, not an improvement.
 Q: What does stridor indicate? | Upper airway obstruction, which is a medical emergency.
 Q: Name two causes of crackles on auscultation. | Pulmonary oedema, pneumonia, pulmonary fibrosis, bronchiectasis (any two).
-M1: In acute asthma, what does a "silent chest" suggest? | Life-threatening asthma with very little air movement | Recovery | Normal breathing | A blocked stethoscope | Anxiety | A silent chest means air entry is severely reduced.
-M2: A patient with pneumonia has respiratory rate 26, SpO2 91% on air and is using accessory muscles. What should the nurse do? | Escalate urgently, start oxygen as per local policy and prescription to target, and reassess | Encourage a short walk | Recheck observations in four hours | Give a cough linctus | Lie them flat to rest | These are signs of respiratory compromise needing urgent review.
+M1#nursing-u03-16-q1: In acute asthma, what does a "silent chest" suggest? | Life-threatening asthma with very little air movement | Recovery | Normal breathing | A blocked stethoscope | Anxiety | A silent chest means air entry is severely reduced.
+M2#nursing-u03-16-q2: A patient with pneumonia has respiratory rate 26, SpO2 91% on air and is using accessory muscles. What should the nurse do? | Escalate urgently, start oxygen as per local policy and prescription to target, and reassess | Encourage a short walk | Recheck observations in four hours | Give a cough linctus | Lie them flat to rest | These are signs of respiratory compromise needing urgent review.
 
 ## Abdominal assessment
 S: Abdominal assessment explores symptoms and signs from the digestive, urinary and reproductive systems. Many serious conditions present with abdominal pain, and early recognition matters.
@@ -372,8 +372,8 @@ P: Rigid abdomen with guarding, severe pain with abnormal observations, vomiting
 K: Auscultate before palpation, and always watch the person's face during palpation.
 Q: Why use the Bristol Stool Chart? | To describe stool consistency consistently (types 1–7), helping to identify constipation or diarrhoea.
 Q: What does melaena suggest? | Bleeding from the upper gastrointestinal tract (black, tarry, offensive stool).
-M1: In what order should the abdomen be examined? | Inspect, auscultate, percuss, palpate | Palpate, percuss, auscultate, inspect | Inspect, palpate, percuss, auscultate | Auscultate only | Percuss, inspect, palpate | Auscultation comes before palpation for the abdomen.
-M2: A post-operative patient has a distended abdomen, is vomiting and has had no bowel sounds or flatus for two days. What should the nurse do? | Escalate for urgent medical review, keep nil by mouth as advised, and monitor fluid balance | Encourage a large meal | Give a laxative without review | Reassure that it's normal | Recheck tomorrow | These features suggest ileus or obstruction.
+M1#nursing-u03-17-q1: In what order should the abdomen be examined? | Inspect, auscultate, percuss, palpate | Palpate, percuss, auscultate, inspect | Inspect, palpate, percuss, auscultate | Auscultate only | Percuss, inspect, palpate | Auscultation comes before palpation for the abdomen.
+M2#nursing-u03-17-q2: A post-operative patient has a distended abdomen, is vomiting and has had no bowel sounds or flatus for two days. What should the nurse do? | Escalate for urgent medical review, keep nil by mouth as advised, and monitor fluid balance | Encourage a large meal | Give a laxative without review | Reassure that it's normal | Recheck tomorrow | These features suggest ileus or obstruction.
 
 ## Skin assessment
 S: Skin assessment examines the skin, hair and nails for colour, integrity, temperature, moisture and lesions. It detects pressure damage, wounds, infection, dehydration and systemic disease.
@@ -392,8 +392,8 @@ H: Wounds
 K: Check every pressure area on admission and at regular intervals according to the person's risk.
 Q: What is the glass test? | Pressing a clear glass on a rash: if the rash doesn't fade (non-blanching), it may indicate meningococcal disease, which is an emergency.
 Q: How can early pressure damage be detected on darker skin? | Compare colour with surrounding skin and feel for warmth, coolness, firmness, swelling or bogginess; ask about pain or itch.
-M1: Which area is a common site for pressure ulcers in a person lying on their back? | Sacrum and heels | Forearms | Thighs | Abdomen | Palms | Bony prominences under pressure, such as the sacrum and heels, are at highest risk.
-M2: A feverish child develops a purple rash that doesn't fade under a glass. What should the nurse do? | Treat as an emergency: escalate immediately according to local sepsis or meningitis pathway | Recheck in an hour | Apply cream to the rash | Give paracetamol and observe | Advise fluids and rest | A non-blanching rash with fever can indicate meningococcal sepsis.
+M1#nursing-u03-18-q1: Which area is a common site for pressure ulcers in a person lying on their back? | Sacrum and heels | Forearms | Thighs | Abdomen | Palms | Bony prominences under pressure, such as the sacrum and heels, are at highest risk.
+M2#nursing-u03-18-q2: A feverish child develops a purple rash that doesn't fade under a glass. What should the nurse do? | Treat as an emergency: escalate immediately according to local sepsis or meningitis pathway | Recheck in an hour | Apply cream to the rash | Give paracetamol and observe | Advise fluids and rest | A non-blanching rash with fever can indicate meningococcal sepsis.
 
 ## Hydration assessment
 S: Hydration assessment identifies dehydration and fluid overload by combining history, observation, examination, fluid balance and test results. Both under- and over-hydration cause harm.
@@ -412,8 +412,8 @@ P: Urea, creatinine and electrolytes help interpret fluid status and kidney func
 K: Fluid balance charts are only useful if they are complete and acted on. An unrecorded drink or catheter emptying makes the chart wrong.
 Q: What is the approximate minimum hourly urine output in adults? | About 0.5 mL per kg per hour (follow local guidance).
 Q: Name three signs of dehydration. | Thirst, dry mucous membranes, concentrated or reduced urine, tachycardia, hypotension, confusion (any three).
-M1: Which is the most reliable day-to-day measure of fluid change in heart failure? | Daily weight | Thirst | Skin turgor | Single blood pressure reading | Mouth care | Weight changes reflect fluid gain or loss.
-M2: A 70 kg patient's catheter has drained 60 mL in the last three hours. What should the nurse do? | Check the catheter is not blocked, assess the patient, and escalate low urine output according to policy | Do nothing until the end of the shift | Give a large drink and leave | Remove the catheter | Record it and inform at handover | 20 mL/hour is below 0.5 mL/kg/hour (35 mL/hour) and needs review.
+M1#nursing-u03-19-q1: Which is the most reliable day-to-day measure of fluid change in heart failure? | Daily weight | Thirst | Skin turgor | Single blood pressure reading | Mouth care | Weight changes reflect fluid gain or loss.
+M2#nursing-u03-19-q2: A 70 kg patient's catheter has drained 60 mL in the last three hours. What should the nurse do? | Check the catheter is not blocked, assess the patient, and escalate low urine output according to policy | Do nothing until the end of the shift | Give a large drink and leave | Remove the catheter | Record it and inform at handover | 20 mL/hour is below 0.5 mL/kg/hour (35 mL/hour) and needs review.
 
 ## Nutritional assessment
 S: Nutritional assessment identifies people who are malnourished or at risk, so that they get the right support. Malnutrition is common in hospital and community settings and slows recovery.
@@ -433,8 +433,8 @@ K: Screen on admission and repeat regularly (often weekly in hospital), or as lo
 !: Severely malnourished people are at risk of refeeding syndrome when feeding restarts. Follow medical and dietetic advice.
 Q: What are the three scores in MUST? | BMI score, weight loss score, and acute disease effect score.
 Q: What MUST total indicates high risk? | 2 or more.
-M1: A patient's BMI is 19 and they have lost 7% of their weight unintentionally in 3 months. What is their MUST score (no acute disease effect)? | 2: high risk | 0: low risk | 1: medium risk | 3: very high risk | Not enough information | BMI 18.5–20 scores 1, and 5–10% weight loss scores 1, totalling 2.
-M2: Which is the best action for a person found to be at high risk of malnutrition? | Follow the local high-risk plan: refer to a dietitian, monitor intake and weight, and support eating | Weigh them again in a month only | Give a large meal immediately without assessment | Start a nasogastric tube without review | Do nothing if they say they aren't hungry | High risk needs treatment and dietetic input.
+M1#nursing-u03-20-q1: A patient's BMI is 19 and they have lost 7% of their weight unintentionally in 3 months. What is their MUST score (no acute disease effect)? | 2: high risk | 0: low risk | 1: medium risk | 3: very high risk | Not enough information | BMI 18.5–20 scores 1, and 5–10% weight loss scores 1, totalling 2.
+M2#nursing-u03-20-q2: Which is the best action for a person found to be at high risk of malnutrition? | Follow the local high-risk plan: refer to a dietitian, monitor intake and weight, and support eating | Weigh them again in a month only | Give a large meal immediately without assessment | Start a nasogastric tube without review | Do nothing if they say they aren't hungry | High risk needs treatment and dietetic input.
 
 ## Mental state examination
 S: The mental state examination (MSE) is a structured description of a person's mental state at a point in time, based on observation and conversation. It is the psychological equivalent of a physical examination and a core skill in every field of nursing.
@@ -454,8 +454,8 @@ P: An acute change in attention and cognition, often fluctuating, triggered by i
 K: Describe what you see and hear, using the person's own words for mood and thoughts. Avoid labels.
 Q: What is the difference between mood and affect? | Mood is the person's own description of their emotional state; affect is the emotional state the observer sees.
 Q: What tool is commonly used to screen for delirium? | The 4AT.
-M1: Hearing voices when no one is there is a disturbance of which MSE domain? | Perception | Speech | Mood | Insight | Appearance | Hallucinations are perceptual disturbances.
-M2: An older patient becomes suddenly confused and inattentive overnight, after being well yesterday. What should the nurse suspect? | Delirium, which needs urgent assessment to find the cause | Dementia, which needs no action | Normal ageing | Tiredness only | Attention seeking | Acute onset and fluctuating attention suggest delirium.
+M1#nursing-u03-21-q1: Hearing voices when no one is there is a disturbance of which MSE domain? | Perception | Speech | Mood | Insight | Appearance | Hallucinations are perceptual disturbances.
+M2#nursing-u03-21-q2: An older patient becomes suddenly confused and inattentive overnight, after being well yesterday. What should the nurse suspect? | Delirium, which needs urgent assessment to find the cause | Dementia, which needs no action | Normal ageing | Tiredness only | Attention seeking | Acute onset and fluctuating attention suggest delirium.
 
 ## Mobility assessment
 S: Mobility assessment considers how a person moves, transfers and walks, and what support they need. It helps maintain independence, prevent falls and pressure ulcers, and plan safe moving and handling.
@@ -475,8 +475,8 @@ P: Staying in bed causes rapid muscle loss in older people. Campaigns such as "g
 K: Refer to physiotherapy and occupational therapy when mobility has changed or is unsafe.
 Q: Why is early mobilisation important for older inpatients? | Bed rest causes rapid loss of muscle strength and function (deconditioning), increasing dependence and falls risk.
 Q: Which regulations govern manual handling at work in Great Britain? | The Manual Handling Operations Regulations 1992.
-M1: Which is an unsafe moving and handling technique? | A drag lift under the person's arms | Using a slide sheet with two trained staff | Using a hoist with the correct sling | Encouraging the person to stand with a frame | Following the moving and handling plan | Drag lifts can injure both the person and staff.
-M2: A patient who walked independently before admission now needs two staff to stand. What should the nurse do? | Update the mobility assessment and plan, and refer to physiotherapy and occupational therapy | Keep the patient in bed until discharge | Ask relatives to mobilise them | Ignore it, as it's temporary | Discharge with no change | A significant change in mobility needs reassessment and therapy input.
+M1#nursing-u03-22-q1: Which is an unsafe moving and handling technique? | A drag lift under the person's arms | Using a slide sheet with two trained staff | Using a hoist with the correct sling | Encouraging the person to stand with a frame | Following the moving and handling plan | Drag lifts can injure both the person and staff.
+M2#nursing-u03-22-q2: A patient who walked independently before admission now needs two staff to stand. What should the nurse do? | Update the mobility assessment and plan, and refer to physiotherapy and occupational therapy | Keep the patient in bed until discharge | Ask relatives to mobilise them | Ignore it, as it's temporary | Discharge with no change | A significant change in mobility needs reassessment and therapy input.
 
 ## Falls assessment
 S: Falls are a leading cause of injury in older people and are common in hospitals and care homes. Assessment identifies the factors that increase a person's risk so that they can be reduced.
@@ -500,8 +500,8 @@ H: After a fall
 K: Falls prevention is about individual factors, not a score. Address each risk you find.
 Q: Name five factors in a multifactorial falls assessment. | Falls history, gait and balance, postural hypotension, medicines, cognition, continence, vision, footwear, environment (any five).
 Q: Why do people on anticoagulants need careful review after a fall? | They are at higher risk of intracranial bleeding, so may need neurological observations and medical review even without obvious injury.
-M1: Which medicine group most increases falls risk? | Sedatives and hypnotics | Topical moisturisers | Vitamin D | Eye lubricants | Antacids | Sedatives and hypnotics slow reactions and impair alertness and balance, especially in older people; review them in every falls assessment.
-M2: A patient on an anticoagulant is found on the floor after an unwitnessed fall. They say they're fine. What should the nurse do? | Assess for injury before moving, follow the post-fall protocol (including medical review and neurological observations), use safe lifting equipment and report the incident | Help them back to bed and carry on | Lift them manually and document later | Ignore it because they feel fine | Remove their call bell | Unwitnessed falls in anticoagulated patients need careful assessment.
+M1#nursing-u03-23-q1: Which medicine group most increases falls risk? | Sedatives and hypnotics | Topical moisturisers | Vitamin D | Eye lubricants | Antacids | Sedatives and hypnotics slow reactions and impair alertness and balance, especially in older people; review them in every falls assessment.
+M2#nursing-u03-23-q2: A patient on an anticoagulant is found on the floor after an unwitnessed fall. They say they're fine. What should the nurse do? | Assess for injury before moving, follow the post-fall protocol (including medical review and neurological observations), use safe lifting equipment and report the incident | Help them back to bed and carry on | Lift them manually and document later | Ignore it because they feel fine | Remove their call bell | Unwitnessed falls in anticoagulated patients need careful assessment.
 
 ## Pressure ulcer risk assessment
 S: Pressure ulcers are localised damage to the skin and underlying tissue, usually over a bony prominence, caused by pressure or pressure combined with shear. Most are preventable with risk assessment and good care.
@@ -521,8 +521,8 @@ H: Prevention: the aSSKINg framework
 K: Pressure ulcers that develop in care are reportable incidents in most organisations. Prevention is everyone's job.
 Q: What is a Category 1 pressure ulcer? | Intact skin with non-blanching redness (or a colour change in darker skin) over a bony prominence.
 Q: What does aSSKINg stand for? | Assess risk, Skin assessment, Surface, Keep moving, Incontinence and moisture, Nutrition and hydration, giving information.
-M1: A pressure ulcer with full-thickness skin loss where fat is visible, but no bone or tendon, is which category? | Category 3 | Category 1 | Category 2 | Category 4 | Deep tissue injury | Category 3 involves full-thickness skin loss without exposed bone, tendon or muscle.
-M2: A patient's heel shows a purple area under intact skin after a long stay in theatre. What should the nurse suspect and do? | Possible deep tissue injury: offload the heel, document, report and review the care plan | Normal bruising, no action | Category 1, which needs no action | Apply heat | Massage the area firmly | Purple discolouration under intact skin may indicate deep tissue injury.
+M1#nursing-u03-24-q1: A pressure ulcer with full-thickness skin loss where fat is visible, but no bone or tendon, is which category? | Category 3 | Category 1 | Category 2 | Category 4 | Deep tissue injury | Category 3 involves full-thickness skin loss without exposed bone, tendon or muscle.
+M2#nursing-u03-24-q2: A patient's heel shows a purple area under intact skin after a long stay in theatre. What should the nurse suspect and do? | Possible deep tissue injury: offload the heel, document, report and review the care plan | Normal bruising, no action | Category 1, which needs no action | Apply heat | Massage the area firmly | Purple discolouration under intact skin may indicate deep tissue injury.
 
 ## Clinical reasoning
 S: Clinical reasoning is the thinking process nurses use to collect and interpret information, identify problems, decide on actions, and evaluate their effect. It turns assessment data into safe decisions.
@@ -548,8 +548,8 @@ H: Cognitive biases
 K: Clinical reasoning is visible in your documentation and handover: what you found, what you think it means, what you did and what happened next.
 Q: Name four stages of the clinical reasoning cycle. | Consider the situation, collect cues, process information, identify problems, establish goals, take action, evaluate, reflect (any four).
 Q: What is anchoring bias? | Relying too heavily on an initial impression and failing to adjust when new information appears.
-M1: Which question helps counter premature closure? | "What else could this be?" | "Is it time for handover?" | "Has the patient eaten?" | "What did the last nurse think?" | "Is this the usual ward?" | Considering alternatives reduces premature closure.
-M2: A patient admitted with "anxiety" has a rising heart rate and respiratory rate and new chest pain. What is the main reasoning risk? | Anchoring on the anxiety label and missing a physical cause | Overtreating anxiety | Under-documenting | Too many observations | Asking for help too early | New physiological changes must be assessed afresh, not explained away.
+M1#nursing-u03-25-q1: Which question helps counter premature closure? | "What else could this be?" | "Is it time for handover?" | "Has the patient eaten?" | "What did the last nurse think?" | "Is this the usual ward?" | Considering alternatives reduces premature closure.
+M2#nursing-u03-25-q2: A patient admitted with "anxiety" has a rising heart rate and respiratory rate and new chest pain. What is the main reasoning risk? | Anchoring on the anxiety label and missing a physical cause | Overtreating anxiety | Under-documenting | Too many observations | Asking for help too early | New physiological changes must be assessed afresh, not explained away.
 
 ## Differential considerations
 S: Differential considerations are the possible explanations for a person's symptoms and signs. Nurses don't make medical diagnoses, but thinking about what could be causing a problem helps them gather the right information, recognise urgency and communicate clearly.
@@ -566,8 +566,8 @@ P: Consider what would be most dangerous to miss, and rule it in or out quickly.
 K: Recognising possibilities helps you ask the right questions and escalate with the right urgency. Leave diagnosis to the appropriate clinician, within agreed roles.
 Q: Name four possible causes of new confusion in an older person. | Infection, dehydration, hypoglycaemia, hypoxia, constipation, urinary retention, pain, medicines, alcohol withdrawal, stroke (any four).
 Q: What does "think worst first" mean? | Consider and rule out the most dangerous possible causes before the more benign ones.
-M1: A patient with diabetes becomes sweaty, shaky and confused. What should the nurse check first? | Capillary blood glucose | Temperature only | Weight | Urine dipstick | Bowel chart | Hypoglycaemia is a common, dangerous and quickly treatable cause.
-M2: A patient's sudden facial droop and slurred speech began 30 minutes ago. What should the nurse do? | Treat as a possible stroke: call for emergency help, note the time of onset, check blood glucose, and follow the stroke pathway | Wait to see if it resolves | Give a drink to check swallowing | Lie the patient flat and recheck in an hour | Document and inform at handover | Rapid recognition and escalation of possible stroke is time-critical.
+M1#nursing-u03-26-q1: A patient with diabetes becomes sweaty, shaky and confused. What should the nurse check first? | Capillary blood glucose | Temperature only | Weight | Urine dipstick | Bowel chart | Hypoglycaemia is a common, dangerous and quickly treatable cause.
+M2#nursing-u03-26-q2: A patient's sudden facial droop and slurred speech began 30 minutes ago. What should the nurse do? | Treat as a possible stroke: call for emergency help, note the time of onset, check blood glucose, and follow the stroke pathway | Wait to see if it resolves | Give a drink to check swallowing | Lie the patient flat and recheck in an hour | Document and inform at handover | Rapid recognition and escalation of possible stroke is time-critical.
 
 ## Recognising deterioration
 S: Recognising deterioration means noticing early signs that a person is becoming more unwell and acting promptly. Most people who deteriorate in hospital show warning signs hours beforehand.
@@ -593,8 +593,8 @@ P: Families often notice subtle changes first. Systems such as Martha's Rule (be
 K: Call for help early. It is always better to escalate a concern that turns out to be minor than to miss deterioration.
 Q: What does ABCDE stand for? | Airway, Breathing, Circulation, Disability, Exposure.
 Q: Why should problems be treated as they are found in ABCDE? | Because problems earlier in the sequence (airway, breathing) are the most immediately life-threatening.
-M1: In the ABCDE approach, where is blood glucose checked? | Disability | Airway | Breathing | Circulation | Exposure | Blood glucose is checked under Disability, with consciousness and pupils.
-M2: A daughter tells the nurse her father "isn't himself" and is unusually sleepy. His observations were normal 3 hours ago. What should the nurse do? | Take the concern seriously: repeat a full set of observations, assess with ABCDE and escalate if worried | Reassure her that the observations were normal | Wait for the next scheduled observations | Ask her to stop worrying | Tell her he's probably tired | Family concerns can be the earliest sign of deterioration.
+M1#nursing-u03-27-q1: In the ABCDE approach, where is blood glucose checked? | Disability | Airway | Breathing | Circulation | Exposure | Blood glucose is checked under Disability, with consciousness and pupils.
+M2#nursing-u03-27-q2: A daughter tells the nurse her father "isn't himself" and is unusually sleepy. His observations were normal 3 hours ago. What should the nurse do? | Take the concern seriously: repeat a full set of observations, assess with ABCDE and escalate if worried | Reassure her that the observations were normal | Wait for the next scheduled observations | Ask her to stop worrying | Tell her he's probably tired | Family concerns can be the earliest sign of deterioration.
 
 ## Escalation of concerns
 S: Escalation is communicating concerns about a person's condition to someone who can provide the right level of help, in time. Delayed escalation is a common factor in avoidable harm.
@@ -616,8 +616,8 @@ P: Hierarchy, fear of being wrong, workload and unclear pathways. Psychological 
 K: Escalation isn't complete until the right person has responded. If they haven't, escalate again.
 Q: What does SBAR stand for? | Situation, Background, Assessment, Recommendation.
 Q: What is the usual internal emergency number in UK hospitals? | 2222 (check your local number).
-M1: In SBAR, where would you state "I think he may have sepsis"? | Assessment | Situation | Background | Recommendation | None: nurses shouldn't say this | Assessment is your interpretation of the problem.
-M2: A nurse escalates a patient with NEWS2 of 7 to the ward doctor, who says they'll come "when they can". Thirty minutes later no one has arrived and the patient is worse. What should the nurse do? | Escalate further according to local policy, for example to the critical care outreach team or a senior doctor, and document | Wait for the ward doctor | Recheck in four hours | Ask the family to call the doctor | Give extra fluids without a prescription | A score of 7 or more needs an emergency response; escalate up the chain if the response is inadequate.
+M1#nursing-u03-28-q1: In SBAR, where would you state "I think he may have sepsis"? | Assessment | Situation | Background | Recommendation | None: nurses shouldn't say this | Assessment is your interpretation of the problem.
+M2#nursing-u03-28-q2: A nurse escalates a patient with NEWS2 of 7 to the ward doctor, who says they'll come "when they can". Thirty minutes later no one has arrived and the patient is worse. What should the nurse do? | Escalate further according to local policy, for example to the critical care outreach team or a senior doctor, and document | Wait for the ward doctor | Recheck in four hours | Ask the family to call the doctor | Give extra fluids without a prescription | A score of 7 or more needs an emergency response; escalate up the chain if the response is inadequate.
 
 ## Structured handover
 S: Handover transfers responsibility and information about a person's care from one professional or team to another. Structured handover reduces omissions and misunderstandings.
@@ -641,8 +641,8 @@ H: Good practice
 K: Handover is a transfer of responsibility. Don't leave until the receiving nurse has the information they need and has accepted the handover.
 Q: What does ISBAR add to SBAR? | Identify: identifying yourself and the person at the start.
 Q: Name three risks to include in handover. | Falls, pressure ulcers, nutrition, safeguarding, infection, resuscitation status (any three).
-M1: What does RSVP stand for in handover? | Reason, Story, Vital signs, Plan | Respond, Support, Validate, Plan | Rest, Sleep, Vitals, Protocol | Risk, Safety, Values, People | Review, Situation, Vitals, Priority | RSVP (Reason, Story, Vital signs, Plan) is a structured handover and escalation tool, like SBAR, that keeps key information from being missed.
-M2: During handover the outgoing nurse forgets to mention that a patient's blood culture results are pending. What is the main risk? | A significant result may not be followed up in time | None, as results are always phoned through | The patient may be discharged too early only | The bloods may need repeating | The handover takes too long | Outstanding investigations must be handed over so results are acted on.
+M1#nursing-u03-29-q1: What does RSVP stand for in handover? | Reason, Story, Vital signs, Plan | Respond, Support, Validate, Plan | Rest, Sleep, Vitals, Protocol | Risk, Safety, Values, People | Review, Situation, Vitals, Priority | RSVP (Reason, Story, Vital signs, Plan) is a structured handover and escalation tool, like SBAR, that keeps key information from being missed.
+M2#nursing-u03-29-q2: During handover the outgoing nurse forgets to mention that a patient's blood culture results are pending. What is the main risk? | A significant result may not be followed up in time | None, as results are always phoned through | The patient may be discharged too early only | The bloods may need repeating | The handover takes too long | Outstanding investigations must be handed over so results are acted on.
 
 ## Documentation and reassessment
 S: Documentation of assessment and reassessment shows what was found, what was done and whether it worked. Reassessment closes the loop of the nursing process and detects change early.
@@ -662,6 +662,6 @@ H: Evaluating care
 K: Every intervention needs an evaluation recorded. "Paracetamol given 14:00; pain 7/10 → 3/10 at 14:45" closes the loop.
 Q: Why must interventions be followed by reassessment? | To find out whether they worked, detect deterioration and adjust the plan.
 Q: What should be documented when escalating a concern? | What was found, who was informed, when, what was said and agreed, and the outcome.
-M1: Which entry best shows evaluation? | "Salbutamol nebuliser given 10:00. 10:20 RR 22 (was 28), SpO2 95% (was 91%), speaking full sentences." | "Nebuliser given." | "Patient better." | "Obs done." | "Breathing OK at end of shift." | Evaluation compares the effect against baseline with objective data.
-M2: A patient's Waterlow score was low on admission, but they have since become immobile after a stroke. What should happen? | Reassess the pressure ulcer risk and update the care plan now | Keep the admission score until discharge | Reassess only if a sore develops | Ask the family to reposition them | Score them weekly regardless | Risk assessments must be repeated when the person's condition changes.
+M1#nursing-u03-30-q1: Which entry best shows evaluation? | "Salbutamol nebuliser given 10:00. 10:20 RR 22 (was 28), SpO2 95% (was 91%), speaking full sentences." | "Nebuliser given." | "Patient better." | "Obs done." | "Breathing OK at end of shift." | Evaluation compares the effect against baseline with objective data.
+M2#nursing-u03-30-q2: A patient's Waterlow score was low on admission, but they have since become immobile after a stroke. What should happen? | Reassess the pressure ulcer risk and update the care plan now | Keep the admission score until discharge | Reassess only if a sore develops | Ask the family to reposition them | Score them weekly regardless | Risk assessments must be repeated when the person's condition changes.
 `;

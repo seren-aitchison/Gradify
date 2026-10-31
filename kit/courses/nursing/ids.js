@@ -1,6 +1,7 @@
 // Permanent lesson ids for this course (see kit/course/syllabus.js). Never delete or reuse an id: saved
 // progress, notes, flashcards and bookmarks depend on them. To rename a lesson, change its title here and
-// in the syllabus. New lessons are added by npm run qa.
+// in the syllabus. New lessons are added by npm run qa. To remove a lesson, move its id to RETIRED:
+// retired ids are reserved forever and never given to another lesson.
 export const IDS = {
   "u01-01": "Introduction to nursing",
   "u01-02": "History and development of nursing",
@@ -500,3 +501,6 @@ export const IDS = {
   "u17-27": "Professional misconduct",
   "u17-28": "Regulatory investigations"
 };
+
+// retired ids: { "u07-31": { title, retired: "YYYY-MM-DD", reason } }
+export const RETIRED = {};

@@ -18,8 +18,8 @@ H: What differs
 K: Always state the jurisdiction. A rule of English law may not be the law in Scotland or Northern Ireland, even if the statute has the same name.
 Q: How many legal systems are there in the UK? | Three: England and Wales, Scotland, and Northern Ireland.
 Q: Which court is the final court of appeal for Scottish criminal cases? | The High Court of Justiciary (except for devolution and compatibility issues, which can go to the UK Supreme Court).
-M1: Which instrument preserved Scotland's separate legal system? | The Treaty and Acts of Union 1707 | The Scotland Act 1998 | The Human Rights Act 1998 | The Government of Ireland Act 1920 | The Constitutional Reform Act 2005 | The Union settlement preserved Scots law and courts.
-M2: A client in Glasgow asks whether an English Court of Appeal decision on tenancy law binds their case. What is the best answer? | It is not binding in Scotland; Scots law and Scottish legislation govern, though English cases may be persuasive in some areas | It binds all UK courts | It binds only if the Supreme Court approved it | It binds Scottish sheriff courts but not the Court of Session | Scottish courts must follow it on housing matters | English decisions don't bind Scottish courts; housing law is devolved and different.
+M1#law-u17-01-q1: Which instrument preserved Scotland's separate legal system? | The Treaty and Acts of Union 1707 | The Scotland Act 1998 | The Human Rights Act 1998 | The Government of Ireland Act 1920 | The Constitutional Reform Act 2005 | The Union settlement preserved Scots law and courts.
+M2#law-u17-01-q2: A client in Glasgow asks whether an English Court of Appeal decision on tenancy law binds their case. What is the best answer? | It is not binding in Scotland; Scots law and Scottish legislation govern, though English cases may be persuasive in some areas | It binds all UK courts | It binds only if the Supreme Court approved it | It binds Scottish sheriff courts but not the Court of Session | Scottish courts must follow it on housing matters | English decisions don't bind Scottish courts; housing law is devolved and different.
 
 ## Scots law: a mixed legal system
 S: Scots law is a "mixed" or "hybrid" legal system, drawing on both the civilian (Roman law) tradition of continental Europe and the common law tradition shared with England.
@@ -38,8 +38,8 @@ H: Sources of Scots law
 K: Many Scottish legal concepts look familiar but work differently. Learn the Scots terms and structures, not just the English equivalents.
 Q: Why is Scots law called a mixed legal system? | It combines civilian (Roman law) principles and common law influences.
 Q: Name two institutional writers of Scots law. | Any two of: Stair, Erskine, Bell, Hume (criminal law), Bankton, Mackenzie.
-M1: What is the Scots law equivalent of the English law of tort? | Delict | Equity | Quasi-contract | Moveables | Servitudes | Civil wrongs in Scotland are called delict.
-M2: A Scottish court faces a novel issue not covered by statute or case law. Which source might it consult that would not be authoritative in England? | The institutional writers, such as Stair | The Law Commission for England and Wales | Halsbury's Laws of England | Hansard only | A US Supreme Court decision | Institutional writings are a formal source of Scots law.
+M1#law-u17-02-q1: What is the Scots law equivalent of the English law of tort? | Delict | Equity | Quasi-contract | Moveables | Servitudes | Civil wrongs in Scotland are called delict.
+M2#law-u17-02-q2: A Scottish court faces a novel issue not covered by statute or case law. Which source might it consult that would not be authoritative in England? | The institutional writers, such as Stair | The Law Commission for England and Wales | Halsbury's Laws of England | Hansard only | A US Supreme Court decision | Institutional writings are a formal source of Scots law.
 
 ## The Scottish courts
 S: Scotland has its own hierarchy of civil and criminal courts, with distinct names, procedures and personnel.
@@ -58,8 +58,8 @@ H: Judges and prosecutors
 K: Scottish civil procedure uses its own vocabulary: pursuer (claimant), defender (defendant), interdict (injunction), decree (judgment).
 Q: What is the supreme civil court in Scotland? | The Court of Session (Outer House at first instance, Inner House on appeal), subject to appeal to the UK Supreme Court.
 Q: Who prosecutes crime in Scotland? | The Crown Office and Procurator Fiscal Service, headed by the Lord Advocate.
-M1: In Scottish civil proceedings, what is the person bringing the action called? | The pursuer | The claimant | The plaintiff | The applicant | The prosecutor | The Scottish term is pursuer; the other side is the defender.
-M2: A business in Edinburgh is owed £3,000 by a customer. Which procedure is most likely? | Simple procedure in the sheriff court | An action in the Outer House of the Court of Session | A small claims track in the County Court | A petition to the High Court of Justiciary | A claim in the Sheriff Appeal Court | Simple procedure covers sheriff court claims up to £5,000.
+M1#law-u17-03-q1: In Scottish civil proceedings, what is the person bringing the action called? | The pursuer | The claimant | The plaintiff | The applicant | The prosecutor | The Scottish term is pursuer; the other side is the defender.
+M2#law-u17-03-q2: A business in Edinburgh is owed £3,000 by a customer. Which procedure is most likely? | Simple procedure in the sheriff court | An action in the Outer House of the Court of Session | A small claims track in the County Court | A petition to the High Court of Justiciary | A claim in the Sheriff Appeal Court | Simple procedure covers sheriff court claims up to £5,000.
 
 ## The Scottish Parliament and devolved law
 S: The Scotland Act 1998 created the Scottish Parliament, which can make primary legislation (Acts of the Scottish Parliament) on all matters not reserved to Westminster. Its powers were extended by the Scotland Acts 2012 and 2016.
@@ -76,8 +76,8 @@ P: Westminster can still legislate for Scotland on devolved matters. The **Sewel
 K: To find the law in Scotland, check both Westminster Acts that extend to Scotland and Acts of the Scottish Parliament.
 Q: Which Act created the Scottish Parliament? | The Scotland Act 1998.
 Q: What happens to an Act of the Scottish Parliament that is outside legislative competence? | It is not law, so far as it is outside competence (s 29).
-M1: Which is a reserved matter? | Foreign affairs | Criminal law | Education | Health | Housing | Foreign affairs is reserved to Westminster under Schedule 5.
-M2: What did the UK Supreme Court decide in the 2022 independence referendum reference? | A bill providing for an independence referendum would relate to reserved matters and was outside competence | The Scottish Parliament could hold a binding referendum | The Sewel convention was legally enforceable | The Union with England was dissolved | The court refused to answer the question | Reference by the Lord Advocate [2022] UKSC 31: a referendum on independence would relate to the Union and the UK Parliament, which are reserved, so the bill was outside competence.
+M1#law-u17-04-q1: Which is a reserved matter? | Foreign affairs | Criminal law | Education | Health | Housing | Foreign affairs is reserved to Westminster under Schedule 5.
+M2#law-u17-04-q2: What did the UK Supreme Court decide in the 2022 independence referendum reference? | A bill providing for an independence referendum would relate to reserved matters and was outside competence | The Scottish Parliament could hold a binding referendum | The Sewel convention was legally enforceable | The Union with England was dissolved | The court refused to answer the question | Reference by the Lord Advocate [2022] UKSC 31: a referendum on independence would relate to the Union and the UK Parliament, which are reserved, so the bill was outside competence.
 
 ## Scots contract law and promise
 S: Scots contract law shares many principles with English law, but differs in important ways: it has no doctrine of consideration, it enforces unilateral promises, and its rules on formation have been reformed by statute.
@@ -97,8 +97,8 @@ H: Remedies
 K: In Scotland, a promise can bind without anything given in return. That changes the analysis of many English "consideration" problems.
 Q: Does Scots law require consideration for a contract? | No. Gratuitous obligations can be binding.
 Q: Which Act governs third-party rights in Scots contract law? | The Contract (Third Party Rights) (Scotland) Act 2017.
-M1: In Scotland, a person promises in writing, signed, to give £1,000 to a friend's charity. No business is involved. Is it binding? | Yes: a signed written gratuitous unilateral promise is binding | No: there is no consideration | No: promises are never binding in Scotland | Only if the charity accepts in writing | Only if made by deed | Scots law enforces unilateral promises; writing is required for gratuitous ones outside business.
-M2: An English student applies Foakes v Beer to a Scottish debt settlement problem. What is the main error? | Scots law has no consideration doctrine, so Foakes v Beer doesn't apply in that way | Foakes v Beer is a Scottish case | Debts can't be settled in Scotland | Scots law follows English contract law exactly | Only the Court of Session can apply it | Without consideration, the analysis turns on agreement and Scots principles.
+M1#law-u17-05-q1: In Scotland, a person promises in writing, signed, to give £1,000 to a friend's charity. No business is involved. Is it binding? | Yes: a signed written gratuitous unilateral promise is binding | No: there is no consideration | No: promises are never binding in Scotland | Only if the charity accepts in writing | Only if made by deed | Scots law enforces unilateral promises; writing is required for gratuitous ones outside business.
+M2#law-u17-05-q2: An English student applies Foakes v Beer to a Scottish debt settlement problem. What is the main error? | Scots law has no consideration doctrine, so Foakes v Beer doesn't apply in that way | Foakes v Beer is a Scottish case | Debts can't be settled in Scotland | Scots law follows English contract law exactly | Only the Court of Session can apply it | Without consideration, the analysis turns on agreement and Scots principles.
 
 ## Delict: the Scots law of wrongs
 S: Delict is the Scots law of civil wrongs, equivalent in function to the English law of tort. It is based on general principles of fault (culpa) rather than a list of separate torts, though in practice the results are often similar.
@@ -115,8 +115,8 @@ H: Differences from English law
 K: Many English tort cases are persuasive in Scotland, but always check the Scots statute and terminology.
 Q: What is solatium? | Damages for pain, suffering and loss of amenity (non-patrimonial loss) in Scots law.
 Q: Which famous negligence case came from Scotland? | Donoghue v Stevenson [1932].
-M1: What is the Scots term for an injunction? | Interdict | Decree | Implement | Solatium | Reparation | Interdict is the Scots equivalent of an injunction.
-M2: A Scottish newspaper defames a person in Edinburgh. Which statute governs the claim? | The Defamation and Malicious Publication (Scotland) Act 2021 | The Defamation Act 2013 | The Defamation Act 1996 only | The Scotland Act 1998 | The Human Rights Act 1998 only | Defamation is devolved; Scotland has its own 2021 Act.
+M1#law-u17-06-q1: What is the Scots term for an injunction? | Interdict | Decree | Implement | Solatium | Reparation | Interdict is the Scots equivalent of an injunction.
+M2#law-u17-06-q2: A Scottish newspaper defames a person in Edinburgh. Which statute governs the claim? | The Defamation and Malicious Publication (Scotland) Act 2021 | The Defamation Act 2013 | The Defamation Act 1996 only | The Scotland Act 1998 | The Human Rights Act 1998 only | Defamation is devolved; Scotland has its own 2021 Act.
 
 ## Scots criminal law and procedure
 S: Scots criminal law is largely common law, defined by the courts and the institutional writer Hume, with growing statutory reform. Its procedure differs significantly from England's.
@@ -135,8 +135,8 @@ H: Police and prosecution
 K: Never assume an English offence, defence or procedural rule applies in Scotland. The structures, the language and often the substance differ.
 Q: What is the age of criminal responsibility in Scotland? | 12.
 Q: What is the Scottish equivalent of manslaughter? | Culpable homicide.
-M1: How many jurors sit on a Scottish criminal jury? | 15 | 12 | 10 | 9 | 7 | Scottish criminal juries have 15 members.
-M2: An English textbook says a defendant can be convicted on the evidence of one credible witness. Why might this not apply in Scotland? | Scots law traditionally requires corroboration of the essential facts | Scotland has no witnesses | Scottish juries can't hear witnesses | Scotland has no criminal trials | Scotland only allows written evidence | Corroboration is a distinctive requirement of Scots criminal procedure.
+M1#law-u17-07-q1: How many jurors sit on a Scottish criminal jury? | 15 | 12 | 10 | 9 | 7 | Scottish criminal juries have 15 members.
+M2#law-u17-07-q2: An English textbook says a defendant can be convicted on the evidence of one credible witness. Why might this not apply in Scotland? | Scots law traditionally requires corroboration of the essential facts | Scotland has no witnesses | Scottish juries can't hear witnesses | Scotland has no criminal trials | Scotland only allows written evidence | Corroboration is a distinctive requirement of Scots criminal procedure.
 
 ## Scots property law and land registration
 S: Scots property law has its own concepts and terminology. It distinguishes heritable (land) from moveable property and corporeal from incorporeal property, and recognises real rights rather than English legal and equitable estates.
@@ -157,8 +157,8 @@ P: Most new private residential lets since December 2017 are **private residenti
 K: In Scotland, property is bought by missives, registered in the Land Register, and taxed by LBTT.
 Q: What is the Scottish equivalent of a mortgage? | A standard security.
 Q: What tax applies to land transactions in Scotland? | Land and Buildings Transaction Tax (LBTT).
-M1: How is a contract for the sale of a house formed in Scotland? | By an exchange of missives between solicitors | By exchange of contracts as in England | By registration only | By oral agreement | By an auction notice | Missives are the formal letters forming the contract.
-M2: A student applies the English doctrine of overreaching to a Scottish property problem. What is the main issue? | Scots law has no legal/equitable division of ownership, so English overreaching doesn't apply in the same way | Overreaching is a Scottish doctrine | Scotland has no property law | Overreaching applies only in the Court of Session | It applies if the property is in the Sasine Register | Scots property law uses different concepts.
+M1#law-u17-08-q1: How is a contract for the sale of a house formed in Scotland? | By an exchange of missives between solicitors | By exchange of contracts as in England | By registration only | By oral agreement | By an auction notice | Missives are the formal letters forming the contract.
+M2#law-u17-08-q2: A student applies the English doctrine of overreaching to a Scottish property problem. What is the main issue? | Scots law has no legal/equitable division of ownership, so English overreaching doesn't apply in the same way | Overreaching is a Scottish doctrine | Scotland has no property law | Overreaching applies only in the Court of Session | It applies if the property is in the Sasine Register | Scots property law uses different concepts.
 
 ## Succession in Scotland
 S: Scots succession law limits testamentary freedom more than English law: a surviving spouse, civil partner and children have "legal rights" to part of the moveable estate whatever the will says. Estates are administered by executors under a grant called confirmation.
@@ -177,8 +177,8 @@ H: Executors
 K: In Scotland, disinheriting a spouse or children completely is not possible for moveable property: legal rights protect them.
 Q: What are legal rights in Scots succession law? | Fixed shares of the moveable estate for a surviving spouse or civil partner (jus relicti/relictae) and children (legitim), available whatever the will says.
 Q: What is confirmation? | The court grant authorising executors to administer an estate in Scotland (equivalent to probate).
-M1: From what age can a person make a will in Scotland? | 12 | 16 | 18 | 21 | 10 | Under the Age of Legal Capacity (Scotland) Act 1991, a person aged 12 or over can make a will in Scotland; in England and Wales the age is 18.
-M2: A Scottish testator leaves everything to a friend, leaving out his two children. What can the children do? | Claim legitim from the moveable estate | Nothing: testamentary freedom is absolute | Claim the whole estate | Apply under the Inheritance (Provision for Family and Dependants) Act 1975 | Have the will automatically revoked | Legitim gives children a fixed share of moveables.
+M1#law-u17-09-q1: From what age can a person make a will in Scotland? | 12 | 16 | 18 | 21 | 10 | Under the Age of Legal Capacity (Scotland) Act 1991, a person aged 12 or over can make a will in Scotland; in England and Wales the age is 18.
+M2#law-u17-09-q2: A Scottish testator leaves everything to a friend, leaving out his two children. What can the children do? | Claim legitim from the moveable estate | Nothing: testamentary freedom is absolute | Claim the whole estate | Apply under the Inheritance (Provision for Family and Dependants) Act 1975 | Have the will automatically revoked | Legitim gives children a fixed share of moveables.
 
 ## Northern Ireland's legal system
 S: Northern Ireland has a common law legal system closely related to England's, but with its own courts, legal professions, legislature and a substantial body of separate legislation.
@@ -198,8 +198,8 @@ H: Distinctive areas
 K: Northern Ireland law is often similar to English law but contained in different instruments. Find the NI statute, not the English one.
 Q: Which agreement underpins Northern Ireland's devolved institutions? | The Belfast (Good Friday) Agreement 1998, implemented by the Northern Ireland Act 1998.
 Q: What is the Northern Ireland equivalent of PACE 1984? | The Police and Criminal Evidence (Northern Ireland) Order 1989.
-M1: Which instrument places a statutory equality duty on public authorities in Northern Ireland? | Section 75 of the Northern Ireland Act 1998 | The Equality Act 2010, s 149 | The Human Rights Act 1998, s 6 | The Scotland Act 1998 | The Windsor Framework | Section 75 is Northern Ireland's equality duty.
-M2: A client in Belfast relies on the Equality Act 2010. What should you check? | Whether the relevant protection applies in Northern Ireland, which has separate equality legislation | Nothing: the Equality Act applies across the UK | Scottish equality law | Only EU law | Whether the Assembly has approved it this year | Most of the Equality Act 2010 does not extend to Northern Ireland.
+M1#law-u17-10-q1: Which instrument places a statutory equality duty on public authorities in Northern Ireland? | Section 75 of the Northern Ireland Act 1998 | The Equality Act 2010, s 149 | The Human Rights Act 1998, s 6 | The Scotland Act 1998 | The Windsor Framework | Section 75 is Northern Ireland's equality duty.
+M2#law-u17-10-q2: A client in Belfast relies on the Equality Act 2010. What should you check? | Whether the relevant protection applies in Northern Ireland, which has separate equality legislation | Nothing: the Equality Act applies across the UK | Scottish equality law | Only EU law | Whether the Assembly has approved it this year | Most of the Equality Act 2010 does not extend to Northern Ireland.
 
 ## The Northern Ireland courts
 S: Northern Ireland has its own court system, structured much like England and Wales, with the UK Supreme Court as the final appeal court.
@@ -219,8 +219,8 @@ H: Legal professions
 K: The structure looks familiar, but the institutions, rules of court and practice directions are Northern Ireland's own.
 Q: Who prosecutes crime in Northern Ireland? | The Public Prosecution Service for Northern Ireland.
 Q: Which Act allows certain criminal trials in Northern Ireland to be held without a jury? | The Justice and Security (Northern Ireland) Act 2007.
-M1: Which body regulates solicitors in Northern Ireland? | The Law Society of Northern Ireland | The SRA | The Law Society of Scotland | The Bar Standards Board | The Legal Ombudsman for England and Wales | Solicitors in Northern Ireland are admitted and regulated by the Law Society of Northern Ireland, not by the SRA or the Law Society of Scotland.
-M2: A solicitor qualified in England wants to appear in a Belfast court next month. What should they check first? | Whether they need to be admitted in Northern Ireland, under the Law Society of Northern Ireland's requirements | Nothing: English qualification covers all UK courts | Only Scottish requirements | The SQE rules | The BSB's rules for barristers | Qualification is jurisdiction-specific; cross-qualification may be needed.
+M1#law-u17-11-q1: Which body regulates solicitors in Northern Ireland? | The Law Society of Northern Ireland | The SRA | The Law Society of Scotland | The Bar Standards Board | The Legal Ombudsman for England and Wales | Solicitors in Northern Ireland are admitted and regulated by the Law Society of Northern Ireland, not by the SRA or the Law Society of Scotland.
+M2#law-u17-11-q2: A solicitor qualified in England wants to appear in a Belfast court next month. What should they check first? | Whether they need to be admitted in Northern Ireland, under the Law Society of Northern Ireland's requirements | Nothing: English qualification covers all UK courts | Only Scottish requirements | The SQE rules | The BSB's rules for barristers | Qualification is jurisdiction-specific; cross-qualification may be needed.
 
 ## The Northern Ireland Assembly and devolved law
 S: The Northern Ireland Assembly makes laws for Northern Ireland on transferred matters, under a power-sharing system established by the Northern Ireland Act 1998.
@@ -237,8 +237,8 @@ P: The UK Parliament can legislate for Northern Ireland on any matter, and has d
 K: Northern Ireland's devolution is built on power-sharing and cross-community consent, which shapes how and when law is made there.
 Q: Name the three categories of matter under the Northern Ireland Act 1998. | Excepted, reserved and transferred matters.
 Q: When were policing and justice devolved to Northern Ireland? | 2010.
-M1: Which is an excepted matter? | Defence | Health | Education | Agriculture | Most criminal law | Defence is permanently reserved to Westminster.
-M2: Why did Westminster legislate on abortion in Northern Ireland in 2019? | The Assembly was not sitting, and Parliament passed the Northern Ireland (Executive Formation etc) Act 2019 | Abortion is an excepted matter | The Assembly asked it to | The Supreme Court ordered it | EU law required it | Westminster legislated while devolved institutions were suspended.
+M1#law-u17-12-q1: Which is an excepted matter? | Defence | Health | Education | Agriculture | Most criminal law | Defence is permanently reserved to Westminster.
+M2#law-u17-12-q2: Why did Westminster legislate on abortion in Northern Ireland in 2019? | The Assembly was not sitting, and Parliament passed the Northern Ireland (Executive Formation etc) Act 2019 | Abortion is an excepted matter | The Assembly asked it to | The Supreme Court ordered it | EU law required it | Westminster legislated while devolved institutions were suspended.
 
 ## Northern Ireland criminal law and procedure
 S: Northern Ireland's criminal law and procedure are close to England's but contained in separate legislation, with some important differences in practice and structure.
@@ -254,8 +254,8 @@ H: Distinctive features
 K: When advising on an NI criminal matter, find the NI statute and code of practice; don't cite the English Act even where the wording is the same.
 Q: Which instrument governs police powers in Northern Ireland? | The Police and Criminal Evidence (Northern Ireland) Order 1989 and its codes.
 Q: What is the age of criminal responsibility in Northern Ireland? | 10.
-M1: Which statute contains the law of theft in Northern Ireland? | The Theft Act (Northern Ireland) 1969 | The Theft Act 1968 | The Criminal Law (Scotland) Act 1995 | The Fraud Act 2006 only | The Justice and Security (NI) Act 2007 | NI has its own Theft Act mirroring the English one.
-M2: A student cites PACE 1984, s 24 for an arrest in Derry. What is the correction? | Cite the equivalent article of the PACE (NI) Order 1989 | No correction is needed | Cite Scottish common law | Cite the Human Rights Act only | Cite the Justice and Security Act 2007 | PACE 1984 applies to England and Wales; NI has its own Order.
+M1#law-u17-13-q1: Which statute contains the law of theft in Northern Ireland? | The Theft Act (Northern Ireland) 1969 | The Theft Act 1968 | The Criminal Law (Scotland) Act 1995 | The Fraud Act 2006 only | The Justice and Security (NI) Act 2007 | NI has its own Theft Act mirroring the English one.
+M2#law-u17-13-q2: A student cites PACE 1984, s 24 for an arrest in Derry. What is the correction? | Cite the equivalent article of the PACE (NI) Order 1989 | No correction is needed | Cite Scottish common law | Cite the Human Rights Act only | Cite the Justice and Security Act 2007 | PACE 1984 applies to England and Wales; NI has its own Order.
 
 ## Northern Ireland land law and conveyancing
 S: Northern Ireland land law shares English common law roots but retains older features and has its own registration system and conveyancing practice.
@@ -270,8 +270,8 @@ H: Conveyancing
 K: Check which register a title is in and use the NI statutory framework; don't assume the Land Registration Act 2002 applies.
 Q: Which tax applies to land purchases in Northern Ireland? | Stamp Duty Land Tax.
 Q: Name the two systems recording land in Northern Ireland. | The Land Registry of Northern Ireland and the Registry of Deeds.
-M1: A buyer is purchasing a house in Cardiff. Which tax is payable on the purchase? | Land Transaction Tax, collected by the Welsh Revenue Authority | Stamp Duty Land Tax | Land and Buildings Transaction Tax | Council Tax on completion | No tax: Wales has abolished taxes on land purchases | Since April 2018 Wales has had its own Land Transaction Tax in place of SDLT; Scotland has LBTT; Northern Ireland and England still use SDLT.
-M2: A student applies the Land Registration Act 2002 to a Belfast title problem. What should they do instead? | Apply the Land Registration Act (Northern Ireland) 1970 and NI practice | Apply Scottish law | Apply the 2002 Act, which extends to all the UK | Apply EU law | Apply no statute | The 2002 Act applies in England and Wales.
+M1#law-u17-14-q1: A buyer is purchasing a house in Cardiff. Which tax is payable on the purchase? | Land Transaction Tax, collected by the Welsh Revenue Authority | Stamp Duty Land Tax | Land and Buildings Transaction Tax | Council Tax on completion | No tax: Wales has abolished taxes on land purchases | Since April 2018 Wales has had its own Land Transaction Tax in place of SDLT; Scotland has LBTT; Northern Ireland and England still use SDLT.
+M2#law-u17-14-q2: A student applies the Land Registration Act 2002 to a Belfast title problem. What should they do instead? | Apply the Land Registration Act (Northern Ireland) 1970 and NI practice | Apply Scottish law | Apply the 2002 Act, which extends to all the UK | Apply EU law | Apply no statute | The 2002 Act applies in England and Wales.
 
 ## Cross-border issues within the UK
 S: Because the UK has three legal systems, lawyers must decide which courts have jurisdiction, which law applies and how judgments are enforced when a matter crosses internal borders.
@@ -288,8 +288,8 @@ H: Family and succession
 K: In any cross-border problem, ask three questions: which court, which law, and how will the judgment be enforced?
 Q: Which Act allocates civil jurisdiction between the parts of the UK? | The Civil Jurisdiction and Judgments Act 1982 (Schedule 4).
 Q: How is a Scottish money judgment enforced in England? | By registration under Schedule 6 of the Civil Jurisdiction and Judgments Act 1982.
-M1: A person domiciled in Scotland dies owning a flat in London. Which law generally governs succession to the flat? | The law of England and Wales, where the land is | Scots law, because of the domicile | EU law | Northern Ireland law | The law chosen by the executor | Immoveable property is governed by the law of the place where it is.
-M2: A Glasgow company and a Manchester company sign a contract choosing Scots law and Scottish courts. A dispute arises. What is the likely starting point? | The parties' choice of Scots law and Scottish jurisdiction will usually be respected | English courts always have jurisdiction | The contract is void for choosing a foreign law | The UK Supreme Court must hear it first | Northern Ireland law applies by default | Party choice generally governs within the UK.
+M1#law-u17-15-q1: A person domiciled in Scotland dies owning a flat in London. Which law generally governs succession to the flat? | The law of England and Wales, where the land is | Scots law, because of the domicile | EU law | Northern Ireland law | The law chosen by the executor | Immoveable property is governed by the law of the place where it is.
+M2#law-u17-15-q2: A Glasgow company and a Manchester company sign a contract choosing Scots law and Scottish courts. A dispute arises. What is the likely starting point? | The parties' choice of Scots law and Scottish jurisdiction will usually be respected | English courts always have jurisdiction | The contract is void for choosing a foreign law | The UK Supreme Court must hear it first | Northern Ireland law applies by default | Party choice generally governs within the UK.
 
 ## Qualifying and practising in Scotland and Northern Ireland
 S: Each UK jurisdiction has its own legal professions and qualification routes. Qualifying in England and Wales doesn't automatically entitle a lawyer to practise in Scotland or Northern Ireland.
@@ -306,6 +306,6 @@ P: The "Law across the UK" path introduces each system's distinctive law. If you
 K: Professional qualifications are jurisdiction-specific. Plan your route for where you want to practise.
 Q: What is "devilling"? | The period of training that intending advocates complete with an experienced member of the Faculty of Advocates in Scotland.
 Q: Which body regulates solicitors in Scotland? | The Law Society of Scotland.
-M1: Which postgraduate course do intending Scottish solicitors complete? | The Diploma in Professional Legal Practice | The Legal Practice Course | The SQE only | The Bar course | The GDL | The Diploma is part of the Scottish route.
-M2: An English solicitor wants to practise Scots law in Edinburgh. What is the best advice? | Check the Law Society of Scotland's requirements for transferring solicitors | Nothing is needed: SRA admission covers the UK | Join the Faculty of Advocates automatically | Pass SQE2 again | Register with the BSB | Scotland has its own profession and transfer route.
+M1#law-u17-16-q1: Which postgraduate course do intending Scottish solicitors complete? | The Diploma in Professional Legal Practice | The Legal Practice Course | The SQE only | The Bar course | The GDL | The Diploma is part of the Scottish route.
+M2#law-u17-16-q2: An English solicitor wants to practise Scots law in Edinburgh. What is the best advice? | Check the Law Society of Scotland's requirements for transferring solicitors | Nothing is needed: SRA admission covers the UK | Join the Faculty of Advocates automatically | Pass SQE2 again | Register with the BSB | Scotland has its own profession and transfer route.
 `;

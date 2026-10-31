@@ -317,7 +317,16 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(255, 255, 2
 .aq-opts { display: grid; gap: 8px; }
 .aq-opts button, .aq-checks label, .aq-steps li, .aq-match label { display: flex; gap: 10px; align-items: center; width: 100%; text-align: left; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: rgba(255, 255, 255, .03); color: var(--fg); font: inherit; cursor: pointer; }
 .aq-opts button:hover { border-color: var(--line-strong, var(--line)); }
-.aq-opts button.picked { border-color: var(--fg); }
+.aq-opts button.picked, .aq-opts button[aria-pressed="true"] { border-color: var(--fg); background: rgba(255, 255, 255, .07); }
+.aq-opts button, .aq-checks label, .aq-steps li, .aq-match label { min-height: 48px; }
+.aq button:focus-visible, .aq input:focus-visible, .aq select:focus-visible, .aq textarea:focus-visible, .aq-checks label:focus-within, .aq-conf label:focus-within { outline: 2px solid var(--fg); outline-offset: 2px; }
+.aq-conf { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 10px; padding: 0; border: 0; }
+.aq-conf legend { width: 100%; margin-bottom: 6px; font-size: 13px; color: var(--mute); }
+.aq-conf label { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); cursor: pointer; font-size: 14px; }
+.aq-conf label:has(input:checked) { border-color: var(--fg); background: rgba(255, 255, 255, .07); }
+.aq-hint, .aq-note { margin: 0 0 8px; font-size: 13px; color: var(--mute); }
+.aq-optlist { margin: 10px 0 0; padding-left: 18px; display: grid; gap: 6px; }
+.aq-optwhy { color: var(--mute); }
 .aq .right { border-color: #2ecc71 !important; background: rgba(46, 204, 113, .1) !important; }
 .aq .wrong { border-color: #ff5a4d !important; background: rgba(255, 90, 77, .1) !important; }
 .aq-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; counter-reset: step; }
@@ -407,3 +416,7 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(255, 255, 2
 .tx-courtinfo { margin-top: 10px; padding: 10px 12px; border-radius: 12px; background: rgba(255, 255, 255, .04); }
 @media (max-width: 560px) { .tx-table { table-layout: fixed; font-size: 13px; } .tx-table th, .tx-table td { padding: 6px 4px; word-wrap: break-word; } .tx-table th:first-child, .tx-table td:first-child { width: 36%; } .tx-table select { padding: 4px; max-width: 100%; } }
 .tx-resp select { max-width: 100%; min-width: 0; }
+
+.co-insight h4 { margin: 16px 0 6px; font-size: 14px; }
+.co-weak { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+.co-weak small { color: var(--mute); margin-left: 6px; }

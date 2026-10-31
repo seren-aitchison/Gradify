@@ -7,7 +7,7 @@
 // Hierarchy: school (numbered) → module ("> ") → lesson ("* "). Schools 10–13 are the four fields of
 // nursing; each field pathway below combines the shared core with its field school.
 import { parseSyllabus } from "../../course/syllabus.js";
-import { IDS } from "./ids.js";
+import { IDS, RETIRED } from "./ids.js";
 
 export const SYLLABUS = `
 1. Foundations of Nursing and Professional Practice
@@ -691,4 +691,4 @@ export const PATHS = [
 ];
 
 // the syllabus as schools, modules and lessons; lesson ids are u01-01 style
-export const UNITS = parseSyllabus(SYLLABUS, IDS);
+export const UNITS = parseSyllabus(SYLLABUS, IDS, RETIRED);

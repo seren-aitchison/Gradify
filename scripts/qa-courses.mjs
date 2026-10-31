@@ -8,6 +8,7 @@
 // The stages after "tested" come from kit/courses/<slug>/qa.js and are never set by this script.
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { parseNotes, norm } from "../kit/course/notes.js";
+import { updateRegistry } from "./curriculum-registry.mjs";
 
 const COURSES = [
   { slug: "law", name: "LawGradify", expert: "a practising solicitor or barrister",
@@ -66,6 +67,9 @@ await mkdir(new URL("../docs/qa/", import.meta.url), { recursive: true });
 for (const C of COURSES) {
   const course = (await import(`../kit/courses/${C.slug}/course.js`)).default;
   const { QA } = await import(`../kit/courses/${C.slug}/qa.js`);
+  // permanent question ids and lesson/question versions (scripts/curriculum-registry.mjs)
+  const { log: regLog } = await updateRegistry(C.slug, course);
+  if (regLog.length) console.log(`${C.name}: registry updated (${regLog.length} change${regLog.length > 1 ? "s" : ""})${process.argv.includes("--all") || regLog.length <= 12 ? `\n  ${regLog.join("\n  ")}` : ""}`);
   // record any new lessons in the permanent id lock (kit/course/syllabus.js)
   const { IDS } = await import(`../kit/courses/${C.slug}/ids.js`);
   const fresh = course.units.flatMap((u) => u.lessons).filter((l) => !IDS[l.id]);
@@ -104,6 +108,10 @@ for (const C of COURSES) {
         if (!L.summary.length) meta.push("summary");
         if (L.terms.length < 2) meta.push("key terms");
         if (!L.sources.length) meta.push("sources");
+        // every question names the lesson objective(s) it assesses, and those objectives exist
+        const qs = [...L.mcq.map((m) => m.Q), ...L.tasks];
+        if (qs.some((q) => !q.objectives?.length)) meta.push("questions linked to objectives (@n)");
+        for (const q of qs) for (const o of q.objectives || []) if (o < 1 || o > L.objectives.length) row.hard.push(`${where}: ${q.id || q.q.slice(0, 40)} names objective ${o}, but the lesson has ${L.objectives.length}`);
         for (const x of L.sources) if (!x.kind || !/^\d{4}(-\d{2}){0,2}$/.test(x.date)) row.hard.push(`${where}: source "${x.cite.slice(0, 40)}" needs a kind and a date`);
         if (meta.length) (QA[unit.id]?.standard >= 2 ? row.hard : row.metaGaps).push(`${where}: ${meta.join(", ")}`);
         for (const t of L.tasks) diff[t.d]++, (taskTypes[t.type] = (taskTypes[t.type] || 0) + 1);

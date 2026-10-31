@@ -4,7 +4,7 @@
 // Jurisdiction: England and Wales unless a lesson says otherwise. School 17 covers Scotland and
 // Northern Ireland; most lessons also end with a short "Elsewhere in the UK" section.
 import { parseSyllabus } from "../../course/syllabus.js";
-import { IDS } from "./ids.js";
+import { IDS, RETIRED } from "./ids.js";
 
 export const SYLLABUS = `
 1. Legal Foundations and the English Legal System
@@ -636,4 +636,4 @@ export const PATHS = [
 ];
 
 // the syllabus as schools, modules and lessons; lesson ids are u01-01 style
-export const UNITS = parseSyllabus(SYLLABUS, IDS);
+export const UNITS = parseSyllabus(SYLLABUS, IDS, RETIRED);

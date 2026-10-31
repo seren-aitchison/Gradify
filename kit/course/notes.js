@@ -10,8 +10,9 @@
 //   !: a pitfall, a common mistake
 //   Q: a flashcard, "question | answer"
 //   M: a check question, "question | right answer | wrong | wrong | wrong | why" (M1: easy, M3: hard)
-//   MS: SEQ: MATCH: SA: further question types (multi-select, ordering, matching, short answer):
-//      see kit/assess/questions.js
+//   TF: MS: SEQ: MATCH: SA: further question types (true or false, multi-select, ordering, matching,
+//      short answer). Any question tag may carry a permanent id and objectives: M2#law-u03-05-q2@1:
+//      see kit/assess/model.js
 // Lesson metadata (optional for older lessons; expected in new ones, see docs/CURRICULUM_CONTENT_STANDARD.md):
 //   O: a learning objective ("By the end of this lesson you can…")
 //   PRE: prerequisite knowledge, ideally a lesson title from the same course
@@ -36,7 +37,7 @@ export function parseNotes(text) {
     if (!L) continue;
     if (line.startsWith("> ") && ex) { ex.steps.push(line.slice(2)); continue; }
     ex = null;
-    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|M[123]?|MS[123]?|SEQ[123]?|MATCH[123]?|SA[123]?):\s*(.*)$/);
+    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|(?:M|TF|MS|SEQ|MATCH|SA)[123]?(?:#[a-z0-9-]+)?(?:@[\d,]+)?):\s*(.*)$/);
     const [tag, body] = m ? [m[1], m[2]] : line.startsWith("- ") ? ["-", line.slice(2)] : ["P", line];
     const last = L.blocks.at(-1);
     if (tag === "S") L.lead += (L.lead ? " " : "") + body;
@@ -57,7 +58,9 @@ export function parseNotes(text) {
     else if (tag === "READ") L.reading.push(body);
     else {
       const Q = parseQuestion(tag, body);
-      if (Q && (Q.type === "sba" || Q.type === "mcq")) L.mcq.push({ q: Q.q, right: Q.right, wrong: Q.wrong, why: Q.why, d: Q.d });
+      // single-choice questions keep the original { q, right, wrong, why, d } view (used by older code and
+      // the physics course) alongside the full question in Q
+      if (Q && (Q.type === "sba" || Q.type === "mcq")) L.mcq.push({ q: Q.q, right: Q.options.find((o) => o.correct).text, wrong: Q.options.filter((o) => !o.correct).map((o) => o.text), why: Q.why, d: Q.d, id: Q.id, Q });
       else if (Q) L.tasks.push(Q);
     }
   }

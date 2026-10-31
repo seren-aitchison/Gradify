@@ -58,6 +58,8 @@ Record the outcome in `qa.js`, rerun `npm run qa`, and commit.
 
 **Warnings** (must be resolved or explicitly accepted at stage 3): short lessons; law lessons with no authority cited (acceptable for conceptual lessons, but say so); law questions with fewer than five options; nursing clinical lessons with no escalation, safety or local-policy statement; School 5 condition lessons missing any of the thirteen headings; medicines calculations not labelled illustrative; the right answer being much the longest option in more than a quarter of a school's questions; fewer than 10% hard questions.
 
+**Registry** (run first): gives new questions permanent ids, increases the version of any edited question or lesson, retires deleted questions (ids reserved forever) and refuses a reused retired id. `tests/registry.test.mjs` fails if this step wasn't run after an edit. Standard-2 schools must also link every question to the lesson objective(s) it assesses (`@n`).
+
 ## Current limitation: primary sources
 
 This development environment can't reach legislation.gov.uk, the National Archives' Find Case Law, BAILII, the SRA, the NMC, NICE, the BNF, the Resuscitation Council UK, the British Thoracic Society, gov.uk or the MHRA. Stage 4 can't be completed here. To enable it, allow those domains in the cloud environment's network settings, or verify the citation registers outside this environment and record the results in `qa.js`.

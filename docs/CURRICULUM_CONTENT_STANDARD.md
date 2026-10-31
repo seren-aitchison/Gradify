@@ -19,6 +19,8 @@ One file per unit (school): `kit/courses/<slug>/notes/uNN.js`, `export default \
 | `Q:` | A flashcard: `question \| answer` |
 | `M1:` `M2:` `M3:` | A check question (easy, medium, hard): `question \| right answer \| wrong \| wrong \| wrong \| … \| why` |
 
+Other question types (`TF`, `MS`, `SEQ`, `MATCH`, `SA`), per-option explanations (`wrong option :: why it is wrong`) and objective links (`M2@1,3:`) are described in `docs/ASSESSMENT_DATA.md`. Don't write or edit the `#id` part of a question tag: `npm run qa` assigns it.
+
 Inline: `**bold**`, `*italic*`, `` `code` ``, `x^{2}`, `v_{0}`. Don't use `|` inside a flashcard or question except as the separator.
 
 **Important:** the last field of an `M` line is the explanation **only when there are at least four fields after the right answer**. Always write at least three wrong answers and an explanation, and the parser can't mistake a distractor for the explanation.

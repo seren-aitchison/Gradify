@@ -44,6 +44,9 @@ The bridge between them: **Save notes and cards** on any course lesson writes th
 |---|---|---|---|
 | Flashcard | `Q: question \| answer` | Lesson flashcards, Review, saved to account | Self-rated (again, hard, good, easy) |
 | Check question / single best answer | `M1:`, `M2:`, `M3:` `question \| right \| wrong \| wrong \| wrong \| … \| why` | End of lesson, unit quiz, problem bank | Automatic; the explanation shows after an answer |
+| True or false, choose all that apply, ordering, matching, short answer | `TF`, `MS`, `SEQ`, `MATCH`, `SA` (see `docs/ASSESSMENT_DATA.md`) | Lesson checks, quizzes, problems, mixed exams | Automatic with partial credit; short answers self-assessed and provisional |
+
+Every answer is recorded as a structured attempt (question id and version, confidence, time, attempt number, objectives, misconception, marking method and status): see `docs/ASSESSMENT_DATA.md`.
 
 For law, every check question is written as a **single best answer** (one right option and four plausible distractors, usually a short client scenario), which is the SQE1 format. For nursing, scenario-based questions use realistic patient vignettes.
 
