@@ -193,7 +193,8 @@ export async function startBodyApp(root) {
   }
   const tip = $(".bi-tip");
   function onHover(name, x, y) {
-    tip.hidden = !name; if (!name) return;
+    const pinned = root.querySelector(".bi-pin");
+    tip.hidden = !name || (pinned && !pinned.hidden && pinned.textContent === name); if (tip.hidden) return;   // no tooltip repeating the pinned label
     tip.textContent = name;
     tip.style.transform = `translate(${x + 14}px, ${y + 12}px)`;
   }

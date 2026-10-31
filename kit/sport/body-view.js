@@ -81,7 +81,7 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
   { const g = bg.getContext("2d"), r = g.createRadialGradient(256, 190, 10, 256, 260, 420); r.addColorStop(0, "#34363d"); r.addColorStop(0.45, "#1a1b20"); r.addColorStop(1, "#08080a"); g.fillStyle = r; g.fillRect(0, 0, 512, 512); }
   scene.background = new THREE.CanvasTexture(bg); scene.background.colorSpace = THREE.SRGBColorSpace;
   const pmrem = new THREE.PMREMGenerator(renderer);
-  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture; scene.environmentIntensity = 0.35;
+  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture; scene.environmentIntensity = 0.25;
 
   scene.add(new THREE.HemisphereLight("#fff6ee", "#2d2724", 0.45));
   const key = new THREE.DirectionalLight("#fff3e6", 2.2); key.position.set(1.3, 3.3, 2.6); key.castShadow = true;
@@ -112,7 +112,8 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
   // physical muscle with a view-dependent rim: surfaces turning away from the camera pick up a
   // faint edge light, which separates overlapping muscles and reads their shape
   function muscleMat() {
-    const m = new THREE.MeshPhysicalMaterial({ color: MUSCLE_BASE.clone(), roughness: 0.5, metalness: 0, clearcoat: 0.3, clearcoatRoughness: 0.38, sheen: 0.12, sheenRoughness: 0.6, sheenColor: new THREE.Color("#ffd2c6"), emissive: new THREE.Color("#000000") });
+    // low clearcoat and sheen: strong white reflections would wash the heat colours out to pastels
+    const m = new THREE.MeshPhysicalMaterial({ color: MUSCLE_BASE.clone(), roughness: 0.58, metalness: 0, clearcoat: 0.12, clearcoatRoughness: 0.45, sheen: 0.04, sheenRoughness: 0.7, sheenColor: new THREE.Color("#ffd2c6"), emissive: new THREE.Color("#000000") });
     m.bumpMap = fibre; m.bumpScale = 0.55;
     m.userData.rim = { value: new THREE.Color("#8a96ad").multiplyScalar(0.22) };
     m.onBeforeCompile = (sh) => {
@@ -163,7 +164,7 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
     for (const list of Object.values(meshes)) for (const mesh of list) {
       const ud = mesh.userData, c = (state.detail && ud.pkey && state.partColours[ud.pkey]) || state.colours[ud.key];
       // heat colours at full strength with a little self-light, so they stay saturated under bright studio light
-      let col = c ? new THREE.Color(...c.rgb).multiplyScalar(0.6) : NO_DATA.clone();
+      let col = c ? new THREE.Color(...c.rgb).multiplyScalar(0.7) : NO_DATA.clone();
       let glow = c ? new THREE.Color(...c.rgb).multiplyScalar(0.13) : new THREE.Color(0, 0, 0);
       if (state.preview) {   // exercise preview: primary and secondary muscles light up, the rest fade
         const w = state.preview[ud.muscle] || 0, pf = ud.part && state.previewParts?.[ud.muscle]?.[ud.part];

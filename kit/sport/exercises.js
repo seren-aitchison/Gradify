@@ -32,7 +32,7 @@ export const MUSCLES = {
     about: "Lifts the thigh: the knee drive in sprinting and the top of a leg raise." },
   gluteal: { name: "Glutes", detail: "Gluteus maximus, medius and minimus", region: "lower", sided: true,
     about: "Extends and stabilises the hip: the main engine of squats, deadlifts, jumping and sprinting." },
-  quadriceps: { name: "Quadriceps", detail: "Rectus femoris, vastus lateralis, vastus medialis, vastus intermedius", region: "lower", sided: true,
+  quadriceps: { name: "Quadriceps", detail: "Rectus femoris, vastus lateralis, vastus medialis, vastus intermedius (the model's quadriceps mesh also contains sartorius)", region: "lower", sided: true,
     about: "Straightens the knee. Squats, lunges, cycling and jumping all depend on them." },
   hamstrings: { name: "Hamstrings", detail: "Biceps femoris, semitendinosus, semimembranosus", region: "lower", sided: true,
     about: "Bends the knee and extends the hip. Often injured in sprinting; eccentric work (Nordics) protects them." },
