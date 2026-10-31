@@ -131,7 +131,7 @@ for (const { C, course, QA, rows } of report) {
   for (const r of rows) {
     const q = QA[r.unit.id] || {}, tested = r.written && !r.hard.length;
     const ready = tested && q.reviewed && q.sources && q.signoff;
-    md.push(`| ${r.unit.n}. ${r.unit.title} | ${r.planned} | ${tick(r.written)} | ${r.written ? (tested ? "✅" : `❌ ${r.hard.length}`) : "—"} | ${q.reviewed ? `✅ ${q.reviewed.date}` : "—"} | ${q.sources ? `✅ ${q.sources.date}` : "—"} | ${ready ? "✅" : "—"} | ${r.stats?.cards ?? ""} | ${r.stats ? `${r.stats.mcq} (${r.stats.diff.slice(1).join("/")})` : ""} | ${r.stats?.cites ?? ""} | ${r.written ? r.warn.length : ""} |`);
+    md.push(`| ${r.unit.n}. ${r.unit.title} | ${r.planned} | ${tick(r.written)} | ${r.written ? (tested ? "✅" : `❌ ${r.hard.length}`) : "—"} | ${q.reviewed ? `✅ ${q.reviewed.date}` : "—"} | ${q.sources ? `✅ ${q.sources.date}` : "—"} | ${ready ? "✅" : "—"} | ${r.stats?.cards ?? ""} | ${r.stats ? `${r.stats.mcq} (${r.stats.diff.slice(1).join("/")})` : ""} | ${r.stats?.cites ?? ""} | ${r.written ? `${r.warn.length}${q.reviewed?.accepted?.length ? " (reviewed)" : ""}` : ""} |`);
   }
   md.push("");
   const withWarn = rows.filter((r) => r.written && (r.warn.length || r.hard.length));

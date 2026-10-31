@@ -6,7 +6,7 @@
 //   signoff   — a qualified subject expert (registered nurse educator in the relevant field) has approved it
 // A school is "ready for publication" only when all five are complete. Until then the course shows it
 // as a draft. Record facts here, never aspirations: leave a stage null until it has actually happened.
-//   reviewed: { date: "YYYY-MM-DD", by: "name (role)", findings: ["…"], open: ["…"] }
+//   reviewed: { date: "YYYY-MM-DD", by: "name (role)", findings: ["…"], accepted: ["warnings accepted, with reason"], open: ["…"] }
 //   sources:  { date, by, method: "…", checked: n, corrected: ["…"], open: ["…"] }
 //   signoff:  { date, by: "name, qualification" }
 export const QA = {
