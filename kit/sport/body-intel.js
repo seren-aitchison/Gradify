@@ -12,7 +12,8 @@
 //   workout  { id, date: "YYYY-MM-DD", name?, sets: [{ exercise, reps, load_kg, rpe?, side? }] }
 //   checkin  { id, at: ISO time, soreness: { [muscle]: 0..3 }, fatigue?: 1..5, note? }
 //   test     { id, date: "YYYY-MM-DD", test, value }
-import { MUSCLES, EXERCISES, TESTS } from "./exercises.js";
+import { MUSCLES, EXERCISES, TESTS, partFactor } from "./exercises.js";
+import { PARTS } from "./anatomy-parts.js";
 
 const DAY = 864e5;
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
@@ -45,6 +46,15 @@ export function setLoads(set) {
   return out;
 }
 
+// individual muscles inside the groups: "quadriceps_l.rectus_femoris", "abdominal_muscles.left"
+export const partKeysOf = (meshKey) => Object.keys(PARTS[muscleOfKey(meshKey)] || {}).map((p) => `${meshKey}.${p}`);
+export const ALL_PART_KEYS = ALL_KEYS.flatMap(partKeysOf);
+export function partLoads(set) {
+  const out = {};
+  for (const [k, v] of Object.entries(setLoads(set))) for (const pk of partKeysOf(k)) out[pk] = v * partFactor(set.exercise, muscleOfKey(k), pk.split(".")[1]);
+  return out;
+}
+
 const setsBefore = (workouts, at, fromDays) => {
   const out = [];
   for (const w of workouts) {
@@ -60,11 +70,11 @@ const setsBefore = (workouts, at, fromDays) => {
 // total × ln 2 reads as "effective sets per week". Common evidence-based guidance for muscle
 // growth is roughly 10–20 hard sets per muscle per week, so 20 maps to the top of the scale.
 export const STIMULUS_TOP = 20, HALF_LIFE = 7;
-export function stimulus(workouts, at = Date.now()) {
-  const raw = Object.fromEntries(ALL_KEYS.map((k) => [k, 0]));
+export function stimulus(workouts, at = Date.now(), { parts = false } = {}) {
+  const raw = Object.fromEntries((parts ? ALL_PART_KEYS : ALL_KEYS).map((k) => [k, 0])), loads = parts ? partLoads : setLoads;
   for (const s of setsBefore(workouts, at, 6 * HALF_LIFE)) {
     const decay = 0.5 ** ((at - s.t) / DAY / HALF_LIFE);
-    for (const [k, v] of Object.entries(setLoads(s))) raw[k] += v * decay;
+    for (const [k, v] of Object.entries(loads(s))) if (k in raw) raw[k] += v * decay;
   }
   return Object.fromEntries(Object.entries(raw).map(([k, v]) => { const weekly = v * Math.LN2; return [k, { weekly, t: clamp(weekly / STIMULUS_TOP) }]; }));
 }
@@ -101,16 +111,17 @@ export function development(workouts, at = Date.now(), recentDays = 28, baseDays
 // Fatigue from sets in the last 7 days decays with a 36-hour time constant; reported soreness
 // (0–3) adds to it and decays the same way. Estimated hours until fatigue falls below 1.5.
 export const RECOVERY_TAU = 36;
-export function recovery(workouts, checkins = [], at = Date.now()) {
-  const f = Object.fromEntries(ALL_KEYS.map((k) => [k, 0]));
+export function recovery(workouts, checkins = [], at = Date.now(), { parts = false } = {}) {
+  const f = Object.fromEntries((parts ? ALL_PART_KEYS : ALL_KEYS).map((k) => [k, 0])), loads = parts ? partLoads : setLoads;
   for (const s of setsBefore(workouts, at, 7)) {
     const h = (at - s.t) / 36e5;
-    for (const [k, v] of Object.entries(setLoads(s))) f[k] += v * Math.exp(-h / RECOVERY_TAU);
+    for (const [k, v] of Object.entries(loads(s))) if (k in f) f[k] += v * Math.exp(-h / RECOVERY_TAU);
   }
+  // soreness is reported per muscle group, so it applies to every part of the group
   for (const c of checkins) {
     const t = dayTime(c.at); if (t > at || at - t > 4 * DAY) continue;
     const decay = Math.exp(-(at - t) / 36e5 / RECOVERY_TAU);
-    for (const [m, lvl] of Object.entries(c.soreness || {})) for (const k of meshKeys(m)) if (k in f) f[k] += Number(lvl) * 1.5 * decay;
+    for (const [m, lvl] of Object.entries(c.soreness || {})) for (const k of meshKeys(m)) for (const key of parts ? partKeysOf(k) : [k]) if (key in f) f[key] += Number(lvl) * 1.5 * decay;
   }
   return Object.fromEntries(Object.entries(f).map(([k, v]) => [k, { fatigue: v, t: clamp(v / 6), hours: v > 1.5 ? Math.round(RECOVERY_TAU * Math.log(v / 1.5)) : 0, state: v > 4 ? "fatigued" : v > 1.5 ? "recovering" : "recovered" }]));
 }
@@ -146,13 +157,21 @@ export function muscleSummary(m, workouts, checkins, at = Date.now()) {
     byEx[s.exercise] = (byEx[s.exercise] || 0) + load; sessions.add(s.workout);
   }
   const avg = (o, f) => keys.reduce((a, k) => a + f(o[k]), 0) / keys.length;
+  const before = stimulus(workouts, at - 28 * DAY), total = Object.values(byEx).reduce((a, v) => a + v, 0);
+  // individual muscles inside this group (both sides averaged), where the model separates them
+  const pst = stimulus(workouts, at, { parts: true }), prec = recovery(workouts, checkins, at, { parts: true });
+  const parts = Object.entries(PARTS[m] || {}).map(([p, info]) => {
+    const pk = keys.map((k) => `${k}.${p}`);
+    return { id: p, name: info.name, about: info.about, weekly: pk.reduce((a, k) => a + pst[k].weekly, 0) / pk.length, sides: pk.length === 2 ? { l: pst[pk[0]].weekly, r: pst[pk[1]].weekly } : null, recovery: pk.map((k) => prec[k]).sort((a, b) => b.fatigue - a.fatigue)[0] };
+  });
   return {
     muscle: m, ...MUSCLES[m],
-    weekly: avg(st, (v) => v.weekly), sides: keys.length === 2 ? { l: st[keys[0]].weekly, r: st[keys[1]].weekly } : null,
-    sessions28: sessions.size, lastTrained: last ? new Date(last).toISOString().slice(0, 10) : null,
-    weeks, topExercises: Object.entries(byEx).sort((a, b) => b[1] - a[1]).slice(0, 5).map(([id, v]) => ({ id, name: EXERCISES[id]?.name || id, sets: v })),
+    weekly: avg(st, (v) => v.weekly), weeklyBefore: avg(before, (v) => v.weekly),
+    sides: keys.length === 2 ? { l: st[keys[0]].weekly, r: st[keys[1]].weekly } : null,
+    sessions28: sessions.size, perWeek: sessions.size / 4, lastTrained: last ? new Date(last).toISOString().slice(0, 10) : null,
+    weeks, topExercises: Object.entries(byEx).sort((a, b) => b[1] - a[1]).slice(0, 6).map(([id, v]) => ({ id, name: EXERCISES[id]?.name || id, sets: v, share: total ? v / total : 0 })),
     recovery: rec[keys[0]].fatigue >= (rec[keys[1]]?.fatigue ?? -1) ? rec[keys[0]] : rec[keys[1]],
-    development: dev[keys[0]],
+    development: dev[keys[0]], parts,
   };
 }
 

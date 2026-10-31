@@ -83,3 +83,50 @@ test("muscle summary and colours", () => {
   assert.equal(hex(heatColour(0)), "#1c40bf"); assert.equal(hex(heatColour(1)), "#e83329");
   assert.deepEqual(meshKeys("abdominal_muscles"), ["abdominal_muscles"]);
 });
+
+// ---------- individual muscles, recommendations ----------
+import { identify, PARTS } from "../kit/sport/anatomy-parts.js";
+import { stimulus as st2, ALL_PART_KEYS, partLoads } from "../kit/sport/body-intel.js";
+import { PART_FACTORS } from "../kit/sport/exercises.js";
+import { recommendations } from "../kit/sport/recommend.js";
+
+test("individual muscles are identified the same way on both sides, and only from real surfaces", () => {
+  const f = JSON.parse(readFileSync("tests/fixtures/anatomy-components.json", "utf8"));
+  for (const [k, big] of Object.entries(f)) {
+    const g = k.replace(/_[lr]$/, ""), r = identify(g, big);
+    assert.ok(r, `${k} splits`);
+    assert.equal(r.length, big.length, `${k}: every large surface gets a part`);
+    for (const [, p] of r) assert.ok(PARTS[g][p], `${k}: ${p}`);
+    if (k.endsWith("_l")) {
+      const right = identify(g, f[k.replace(/_l$/, "_r")]);
+      const sig = (x) => x.map(([s, p]) => `${p}`).sort().join();
+      assert.equal(sig(r), sig(right), `${g}: left and right identify the same parts`);
+      for (const [s, p] of r) { const m = right.find(([s2, p2]) => p2 === p && Math.abs(s2.tris - s.tris) / s.tris < 0.15); assert.ok(m, `${g} ${p}: a right-side surface of similar size`); }
+    }
+  }
+  assert.equal(identify("hamstrings", f.hamstrings_l.slice(0, 3)), null, "unexpected geometry: no split");
+});
+
+test("part factors reflect biomechanics: hinges spare the biceps femoris short head, curls load it", () => {
+  for (const [ex, groups] of Object.entries(PART_FACTORS)) for (const [g, parts] of Object.entries(groups)) for (const p of Object.keys(parts)) assert.ok(PARTS[g]?.[p], `${ex}: ${g}.${p}`);
+  const rdl = partLoads({ exercise: "romanian_deadlift", reps: 8, load_kg: 80, rpe: 8 }), curl = partLoads({ exercise: "leg_curl", reps: 10, load_kg: 40, rpe: 8 });
+  assert.ok(rdl["hamstrings_l.biceps_femoris_short"] < 0.2 && rdl["hamstrings_l.biceps_femoris_long"] === 1);
+  assert.equal(curl["hamstrings_l.biceps_femoris_short"], 1);
+  assert.ok(ALL_PART_KEYS.includes("abdominal_muscles.left"));
+  const s = st2([{ id: "x", date: day(30), sets: [{ exercise: "incline_bench", reps: 8, load_kg: 60, rpe: 8 }] }], AT, { parts: true });
+  assert.ok(s["chest_muscles_l.clavicular"].weekly > s["chest_muscles_l.sternal"].weekly);
+});
+
+test("recommendations come only from logged data and cite it", () => {
+  assert.deepEqual(recommendations({}, AT), []);
+  const d = (n) => new Date(AT - n * 864e5).toISOString().slice(0, 10);
+  const workouts = [];
+  for (let wk = 0; wk < 6; wk++) for (const off of [1, 4]) workouts.push({ id: `${wk}-${off}`, date: d(wk * 7 + off), sets: [...Array(5).fill({ exercise: "bench_press", reps: 8, load_kg: 80, rpe: 8 }), ...Array(5).fill({ exercise: "back_squat", reps: 5, load_kg: 100, rpe: 8 })] });
+  workouts.push({ id: "old", date: d(40), sets: Array(3).fill({ exercise: "pull_up", reps: 8, load_kg: 0, rpe: 8 }) });
+  const r = recommendations({ workouts }, AT), ids = r.map((x) => x.id);
+  assert.ok(ids.includes("push-pull"), "chest far ahead of back");
+  assert.ok(ids.includes("quad-ham"), "quads far ahead of hamstrings");
+  assert.ok(ids.includes("gap-back_muscles"), "back not trained recently");
+  for (const x of r) { assert.ok(["calculated", "estimated", "measured"].includes(x.basis)); assert.ok(x.detail.length > 20); assert.ok(x.muscles.every((m) => MUSCLES[m])); }
+  assert.ok(r.every((x, i) => i === 0 || r[i - 1].priority <= x.priority), "sorted by priority");
+});
