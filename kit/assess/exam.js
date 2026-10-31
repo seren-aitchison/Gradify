@@ -12,6 +12,7 @@ import { esc, inline } from "../core/text.js";
 export const FORMATS = {
   sba: { label: "Single best answer", types: ["sba"], perQuestion: 1.7, note: "One best answer from five options, as in SQE1." },
   mixed: { label: "Mixed question types", types: ["sba", "mcq", "multi", "order", "match"], perQuestion: 1.5, note: "Single best answer, multiple choice, multi-select, ordering and matching questions." },
+  science: { label: "Mixed, with calculations", types: ["sba", "mcq", "tf", "multi", "order", "match", "num"], perQuestion: 1.6, note: "Multiple choice, true or false, multi-select, ordering, matching and numerical calculation questions." },
 };
 
 // choose questions: filter by type, spread across groups as evenly as possible, deterministic for a seed

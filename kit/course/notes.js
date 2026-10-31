@@ -10,8 +10,8 @@
 //   !: a pitfall, a common mistake
 //   Q: a flashcard, "question | answer"
 //   M: a check question, "question | right answer | wrong | wrong | wrong | why" (M1: easy, M3: hard)
-//   TF: MS: SEQ: MATCH: SA: further question types (true or false, multi-select, ordering, matching,
-//      short answer). Any question tag may carry a permanent id and objectives: M2#law-u03-05-q2@1:
+//   TF: MS: SEQ: MATCH: SA: NUM: further question types (true or false, multi-select, ordering, matching,
+//      short answer, numerical calculation). Any question tag may carry a permanent id and objectives: M2#law-u03-05-q2@1:
 //      see kit/assess/model.js
 // Lesson metadata (optional for older lessons; expected in new ones, see docs/CURRICULUM_CONTENT_STANDARD.md):
 //   O: a learning objective ("By the end of this lesson you can…")
@@ -22,6 +22,7 @@
 //   SRC: a source, "citation | kind | date | link" where kind is legislation, case, rule, guidance,
 //        standard, primary or secondary, and date is the version or the date checked (YYYY-MM or YYYY-MM-DD)
 //   READ: further reading
+//   IX: the id of one of the course's interactives (config.interactives), embedded at this point in the notes
 // Inline: **bold**, *italic*, `code`, x^{2} and v_{0}.
 export { esc, inline, norm } from "../core/text.js";
 import { esc, inline } from "../core/text.js";
@@ -37,7 +38,7 @@ export function parseNotes(text) {
     if (!L) continue;
     if (line.startsWith("> ") && ex) { ex.steps.push(line.slice(2)); continue; }
     ex = null;
-    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|(?:M|TF|MS|SEQ|MATCH|SA)[123]?(?:#[a-z0-9-]+)?(?:@[\d,]+)?):\s*(.*)$/);
+    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|(?:M|TF|MS|SEQ|MATCH|SA|NUM)[123]?(?:#[a-z0-9-]+)?(?:@[\d,]+)?):\s*(.*)$/);
     const [tag, body] = m ? [m[1], m[2]] : line.startsWith("- ") ? ["-", line.slice(2)] : ["P", line];
     const last = L.blocks.at(-1);
     if (tag === "S") L.lead += (L.lead ? " " : "") + body;
@@ -56,6 +57,7 @@ export function parseNotes(text) {
     else if (tag === "SAFE") L.blocks.push({ t: "safe", x: body });
     else if (tag === "SRC") { const [cite, kind = "", date = "", url = ""] = body.split(" | ").map((x) => x.trim()); if (cite) L.sources.push({ cite, kind, date, url }); }
     else if (tag === "READ") L.reading.push(body);
+    else if (tag === "IX") L.blocks.push({ t: "ix", id: body.trim() });
     else {
       const Q = parseQuestion(tag, body);
       // single-choice questions keep the original { q, right, wrong, why, d } view (used by older code and
@@ -86,6 +88,7 @@ function block(b) {
   if (b.t === "key") return `<p class="mv-key">${inline(b.x)}</p>`;
   if (b.t === "safe") return `<div class="co-safe"><b>Competence and safety</b>${inline(b.x)}</div>`;
   if (b.t === "pit") return `<div class="mv-clin co-pit"><b>Common mistake</b>${inline(b.x)}</div>`;
+  if (b.t === "ix") return `<div class="co-ixslot" data-ix="${esc(b.id)}"></div>`;
   return "";
 }
 // the lesson as plain text, for saving to the learner's documents
@@ -97,6 +100,7 @@ export function lessonText(L) {
     else if (b.t === "eq") out.push(...b.rows.map(([x, n]) => `${x}${n ? `  (${n})` : ""}`));
     else if (b.t === "ex") out.push(`Example: ${b.x}`, ...b.steps.map((s, i) => `  ${i + 1}. ${s}`));
     else if (b.t === "pit") out.push(`Mistake to avoid: ${b.x}`);
+    else if (b.t === "ix") continue;
     else out.push(b.x);
   }
   return out.join("\n").replace(/\*\*|`|\^\{|_\{|\}/g, "");

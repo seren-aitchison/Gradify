@@ -13,7 +13,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { norm } from "../kit/core/text.js";
 
 export const hash = (s) => createHash("sha256").update(s).digest("hex").slice(0, 12);
-const Q_LINE = /^(\s*)((?:M|TF|MS|SEQ|MATCH|SA)[123]?)(#[a-z0-9-]+)?(@[\d,]+)?:(.*)$/;
+const Q_LINE = /^(\s*)((?:M|TF|MS|SEQ|MATCH|SA|NUM)[123]?)(#[a-z0-9-]+)?(@[\d,]+)?:(.*)$/;
 
 // question lines in a notes source, with the lesson title each belongs to
 export function scanQuestions(src) {
@@ -30,7 +30,7 @@ export function scanQuestions(src) {
 // lesson blocks keyed by normalised title, with question ids removed so assigning an id isn't an edit
 export function lessonBlocks(src) {
   const map = new Map(); let title = null, buf = [];
-  const flush = () => { if (title) map.set(norm(title), buf.join("\n").replace(/^(\s*(?:M|TF|MS|SEQ|MATCH|SA)[123]?)#[a-z0-9-]+/gm, "$1").trim()); };
+  const flush = () => { if (title) map.set(norm(title), buf.join("\n").replace(/^(\s*(?:M|TF|MS|SEQ|MATCH|SA|NUM)[123]?)#[a-z0-9-]+/gm, "$1").trim()); };
   for (const line of src.split("\n")) { if (line.trim().startsWith("## ")) { flush(); title = line.trim().slice(3).trim(); buf = [line.trim()]; } else if (title) buf.push(line.trimEnd()); }
   flush(); return map;
 }

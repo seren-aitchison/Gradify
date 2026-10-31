@@ -70,6 +70,10 @@ export function mountCourse(root, cfg) {
   const KEY = `gradify.course.${cfg.slug}`;
   // what a course calls its units ("Unit" for physics, "School" for law and nursing)
   const U = cfg.unitWord || "Unit", u1 = U.toLowerCase();
+  // what a course calls its tracks ("Track" by default, "Stage" for the SciGradify sciences)
+  const TW = cfg.trackWord || "Track", tw1 = TW.toLowerCase();
+  // the interactives tab: "Practice" (law, nursing) or "Lab" (sciences); interactives can also sit inside lessons (IX: lines)
+  const PL = cfg.practiceLabel || "Practice", ixs = cfg.interactives || [], ixById = Object.fromEntries(ixs.map((x) => [x.id, x]));
   // courses with a QA record (cfg.qa) label any unit that hasn't passed every quality stage as a draft
   const isReady = (u) => !cfg.qa || Boolean(cfg.qa[u.id]?.reviewed && cfg.qa[u.id]?.sources && cfg.qa[u.id]?.signoff);
   const units = cfg.units, lessons = units.flatMap((u) => u.lessons.map((l, i) => ({ ...l, unit: u, i })));
@@ -193,11 +197,12 @@ export function mountCourse(root, cfg) {
   }
 
   // ---------- layout ----------
-  const VIEWS = [["learn", "Learn"], ["review", "Review"], ["paths", "Paths"], ["tracks", "Tracks"], ["problems", "Problems"],
-    ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", "Practice"]] : []),
+  const VIEWS = [...(cfg.overview ? [["overview", "Overview"]] : []), ["learn", "Learn"], ["review", "Review"], ["paths", "Paths"], ["tracks", `${TW}s`], ["problems", "Problems"],
+    ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []),
     ["leaderboard", "Leaderboard"], ["me", "My progress"], ["features", "Features"]];
   roadDefs();
   root.classList.add("co");
+  if (cfg.theme) { root.classList.add("co-themed"); if (cfg.theme.spectrum) root.style.setProperty("--spectrum", cfg.theme.spectrum); if (cfg.theme.accent) root.style.setProperty("--co-accent", cfg.theme.accent); }
   root.innerHTML = `
     <div class="co-head">
       <div class="co-title"><span class="co-kicker">${esc(cfg.site)} course</span><h1>${esc(cfg.name)}</h1></div>
@@ -211,12 +216,16 @@ export function mountCourse(root, cfg) {
 
   // search
   const q = root.querySelector(".co-search input"), res = root.querySelector(".co-results");
-  q.addEventListener("input", () => {
-    const t = norm(q.value);
-    if (t.length < 2) { res.hidden = true; return; }
+  const searchHtml = (raw) => {
+    const t = norm(raw);
     const hits = [...units.filter((u) => norm(u.title).includes(t)).map((u) => ({ href: `#/learn/${u.id}`, k: `${U} ${u.n}`, t: u.title })),
+      ...ixs.filter((x) => norm(x.title).includes(t)).map((x) => ({ href: `#/practice/${x.id}`, k: x.kind, t: x.title })),
       ...lessons.filter((l) => norm(l.title).includes(t)).map((l) => ({ href: `#/lesson/${l.id}`, k: `${U} ${l.unit.n} · ${S.done[l.id] ? "done" : "lesson"}`, t: l.title }))].slice(0, 12);
-    res.innerHTML = hits.length ? hits.map((h) => `<a href="${h.href}"><small>${esc(h.k)}</small>${esc(h.t)}</a>`).join("") : `<p>No lessons match.</p>`;
+    return hits.length ? hits.map((h) => `<a href="${h.href}"><small>${esc(h.k)}</small>${esc(h.t)}</a>`).join("") : `<p>No lessons match.</p>`;
+  };
+  q.addEventListener("input", () => {
+    if (norm(q.value).length < 2) { res.hidden = true; return; }
+    res.innerHTML = searchHtml(q.value);
     res.hidden = false;
   });
   res.addEventListener("click", () => { res.hidden = true; q.value = ""; });
@@ -360,6 +369,7 @@ export function mountCourse(root, cfg) {
     </article>`;
     scrollTo(0, 0);
     wirePractice(main, "lesson", id);
+    mountIxSlots(main);
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", () => flashcards(N.cards, l)));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
     main.querySelector(".co-complete").addEventListener("click", async (e) => {
@@ -486,7 +496,7 @@ export function mountCourse(root, cfg) {
     main.querySelectorAll("[data-path]").forEach((b) => b.addEventListener("click", () => { S.path = S.path === b.dataset.path ? null : b.dataset.path; save(); if (S.path) { toast(`Following <b>${esc(cfg.paths.find((p) => p.id === S.path).name)}</b>`); go("learn"); } else viewPaths(); paintSide(); }));
   }
   function viewTracks() {
-    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Tracks</span><h2>${cfg.tracks.length} tracks, ${units.length} ${u1}s, ${lessons.length.toLocaleString()} lessons</h2><p>The whole of ${esc(cfg.name)}, grouped by theme. Jump into any unit.</p></div>
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">${TW}s</span><h2>${cfg.tracks.length} ${tw1}s, ${units.length} ${u1}s, ${lessons.length.toLocaleString()} lessons</h2><p>The whole of ${esc(cfg.name)}, grouped by theme. Jump into any unit.</p></div>
       <div class="co-grid">${cfg.tracks.map((t) => { const us = t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean), tot = us.reduce((a, u) => a + u.lessons.length, 0), dn = us.reduce((a, u) => a + unitDone(u), 0);
         return `<div class="co-tcard" style="--a:${t.from};--b:${t.to}"><div class="co-tban"><h3>${esc(t.name)}</h3><small>${dn} / ${tot} lessons</small></div><ul>${us.map((u) => `<li><a href="#/learn/${u.id}"><span>${U} ${u.n}</span>${esc(u.title)}</a><i style="--p:${unitDone(u) / u.lessons.length}"></i></li>`).join("")}</ul></div>`; }).join("")}</div>`;
   }
@@ -553,7 +563,7 @@ export function mountCourse(root, cfg) {
       ${insightHtml()}
       <section class="co-panel"><h3>Activity</h3><div class="co-heat">${cells}</div><p class="co-dayinfo">Pick a day to see what you did.</p></section>
       <section class="co-panel"><h3>XP, last 14 days</h3><div class="co-bars">${last14.map(([d, v]) => `<div title="${d}: ${v} XP"><i style="height:${(v / mx) * 100}%" class="${v >= S.goal ? "hit" : ""}"></i><small>${d.slice(8)}</small></div>`).join("")}<span class="co-goalline" style="bottom:${(S.goal / mx) * 100}%">goal ${S.goal}</span></div></section>
-      <section class="co-panel"><h3>Tracks</h3><div class="co-mastery">${cfg.tracks.map((t) => { const us = t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean), tot = us.reduce((a, u) => a + u.lessons.length, 0), dn = us.reduce((a, u) => a + unitDone(u), 0); return `<div style="--a:${t.from};--b:${t.to}"><span>${esc(t.name)}</span><div class="co-bar"><i style="width:${(dn / tot) * 100}%"></i></div><small>${dn}/${tot}</small></div>`; }).join("")}</div></section>
+      <section class="co-panel"><h3>${TW}s</h3><div class="co-mastery">${cfg.tracks.map((t) => { const us = t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean), tot = us.reduce((a, u) => a + u.lessons.length, 0), dn = us.reduce((a, u) => a + unitDone(u), 0); return `<div style="--a:${t.from};--b:${t.to}"><span>${esc(t.name)}</span><div class="co-bar"><i style="width:${(dn / tot) * 100}%"></i></div><small>${dn}/${tot}</small></div>`; }).join("")}</div></section>
       <section class="co-panel"><h3>Badges</h3><div class="co-badgelist">${BADGES.map((b) => `<div class="${b.ok(st) ? "on" : ""}">${ic(b.ok(st) ? "star" : "lock")}<b>${b.name}</b><small>${b.d}</small></div>`).join("")}</div></section>
       <section class="co-panel co-saved"><h3>Saved to your account</h3><p class="co-empty">Loading…</p></section>`;
     main.querySelectorAll("[data-day]").forEach((b) => b.addEventListener("click", () => {
@@ -631,26 +641,96 @@ export function mountCourse(root, cfg) {
   }
 
   // ---------- practice: subject interactives (kit/interactive/) ----------
+  // ---------- practice / lab: subject interactives (kit/interactive/, kit/labs/) ----------
+  // ctx for a mounted interactive: onComplete({ score }) passes the whole interactive (+quiz XP, once);
+  // complete(task, label) records one challenge inside it (+problem XP, once); solved(task) reads that back
+  const ixCtx = (x) => ({ ...x,
+    onComplete: (r) => { const k = `ix:${x.id}`; if (!S.solved[k] && r?.score >= 0.7) { S.solved[k] = Date.now(); save(); award(XP.quiz, "practice", x.id, `${cfg.name}: ${x.title}`); } },
+    complete: (task, label) => { const k = `ix:${x.id}:${task}`; if (!S.solved[k]) { S.solved[k] = Date.now(); save(); award(XP.problem, "practice", k, `${cfg.name}: ${x.title}${label ? ` (${label})` : ""}`); } },
+    solved: (task) => Boolean(S.solved[`ix:${x.id}:${task}`]) });
+  const mounted = new Set();
+  const unmountIx = () => { for (const stop of mounted) { try { stop(); } catch { /* already gone */ } } mounted.clear(); };
+  async function mountIx(x, el) {
+    try { const mod = await x.load(); el.innerHTML = ""; const stop = mod.mount(el, ixCtx(x)); if (typeof stop === "function") mounted.add(stop); }
+    catch (e) { el.innerHTML = `<p class="co-empty">This interactive couldn't load (${esc(e.message)}).</p>`; }
+  }
+  const ixCard = (x, open) => `<div class="co-lab" data-ix="${esc(x.id)}"><div class="co-labhead"><span class="co-kicker">${esc(PL === "Lab" ? `Interactive · ${x.kind}` : x.kind)}</span><h3>${esc(x.title)}</h3><p>${esc(x.sub)}</p></div><div class="co-labstage co-ix"><p class="co-empty">Loading the interactive…</p></div>${x.note ? `<p class="co-labnote"><b>Model:</b> ${inline(x.note)}</p>` : ""}</div>`;
+  let ixObserver = null;
+  function mountIxSlots(el) {
+    el.querySelectorAll(".co-ixslot").forEach((slot) => { const x = ixById[slot.dataset.ix]; slot.outerHTML = x ? ixCard(x) : ""; });
+    ixObserver?.disconnect();
+    const go1 = (box) => { if (box.dataset.on) return; box.dataset.on = "1"; mountIx(ixById[box.dataset.ix], box.querySelector(".co-labstage")); };
+    ixObserver = "IntersectionObserver" in window ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { ixObserver.unobserve(e.target); go1(e.target); } }), { rootMargin: "200px" }) : null;
+    el.querySelectorAll(".co-lab[data-ix]").forEach((box) => (ixObserver ? ixObserver.observe(box) : go1(box)));
+  }
+  const ixDone = (x) => Object.keys(S.solved).filter((k) => k.startsWith(`ix:${x.id}:`)).length;
+  const ixTile = (x) => `<a class="co-labtile" href="#/practice/${x.id}"><span class="co-kicker">${esc(x.kind)}</span><b>${esc(x.title)}</b><p>${esc(x.sub)}</p><small>${x.tasks ? `${ixDone(x)} / ${x.tasks} challenges` : x.schools ? `${U} ${x.schools.join(", ")}` : ""}</small></a>`;
   async function viewPractice(id) {
-    const list = cfg.interactives;
+    const list = ixs;
     if (!id) {
-      main.innerHTML = `<div class="co-intro"><span class="co-kicker">Practice</span><h2>Interactive practice</h2><p>${esc(cfg.practiceNote || "Work through scenarios and exercises that apply what you've learned.")}</p></div>
-        <div class="co-grid">${list.map((x) => `<a class="co-pcard" href="#/practice/${x.id}"><h3>${esc(x.title)}</h3><p>${esc(x.sub)}</p><small>${esc(x.kind)}${x.schools ? ` · ${U} ${x.schools.join(", ")}` : ""}</small></a>`).join("")}</div>`;
+      // grouped by track when the interactives name their lessons (sciences); a flat grid otherwise (law, nursing)
+      const grouped = list.every((x) => x.lessons?.length);
+      main.innerHTML = `<div class="co-intro"><span class="co-kicker">${esc(PL)}</span><h2>${PL === "Practice" ? "Interactive practice" : `${list.length} interactives`}</h2><p>${esc(cfg.practiceNote || "Work through scenarios and exercises that apply what you've learned.")}</p></div>
+        ${grouped ? cfg.tracks.map((t) => { const g = list.filter((x) => trackOf(byId[x.lessons[0]].unit) === t); return g.length ? `<div class="co-track"><span>${esc(t.name)}</span></div><div class="co-labgrid">${g.map(ixTile).join("")}</div>` : ""; }).join("")
+          : `<div class="co-grid">${list.map((x) => `<a class="co-pcard" href="#/practice/${x.id}"><h3>${esc(x.title)}</h3><p>${esc(x.sub)}</p><small>${esc(x.kind)}${x.schools ? ` · ${U} ${x.schools.join(", ")}` : ""}</small></a>`).join("")}</div>`}`;
       return;
     }
     const x = list.find((y) => y.id === id); if (!x) return go("practice");
-    main.innerHTML = `<div class="co-crumbs"><a href="#/practice">← Practice</a><span>${esc(x.kind)}</span></div><div class="co-panel co-ix"></div>`;
+    if (x.lessons?.length) {
+      const used = x.lessons.map((l) => byId[l]).filter(Boolean);
+      main.innerHTML = `<div class="co-crumbs"><a href="#/practice">← ${esc(PL)}</a><span>${esc(x.kind)}</span></div>${ixCard(x, true)}
+        ${used.length ? `<section class="co-panel"><h3>Learn the ideas behind it</h3><ul class="co-used">${used.map((l) => `<li><a href="#/lesson/${l.id}"><small>${U} ${l.unit.n}${l.module ? ` · ${esc(l.module)}` : ""}</small>${esc(l.title)}</a></li>`).join("")}</ul></section>` : ""}`;
+      return mountIx(x, main.querySelector(".co-labstage"));
+    }
+    main.innerHTML = `<div class="co-crumbs"><a href="#/practice">← ${esc(PL)}</a><span>${esc(x.kind)}</span></div><div class="co-panel co-ix"></div>`;
     const mod = await x.load();
-    mod.mount(main.querySelector(".co-ix"), { ...x, onComplete: (r) => { const k = `ix:${x.id}`; if (!S.solved[k] && r?.score >= 0.7) { S.solved[k] = Date.now(); save(); award(XP.quiz, "practice", x.id, `${cfg.name}: ${x.title}`); } } });
+    mod.mount(main.querySelector(".co-ix"), ixCtx(x));
+  }
+
+
+  // ---------- overview: a subject's landing page (only when the course sets cfg.overview) ----------
+  const isWritten = (u) => !cfg.written || cfg.written.includes(u.id);
+  function viewOverview() {
+    const O = cfg.overview, nl = nextLesson(), st = stats(), L = levelOf(st.xp), sk = streak(), t0 = cfg.tracks[0];
+    const mods = units.reduce((a, u) => a + (u.modules?.filter((m) => m.title).length || 0), 0);
+    const started = st.lessons > 0 || st.xp > 0, feat = (O.featured || []).map((id) => ixById[id]).filter(Boolean);
+    const count = (f) => units.filter(f).reduce((a, u) => a + u.lessons.length, 0);
+    main.innerHTML = `<section class="co-hero" style="--a:${t0.from};--b:${cfg.tracks.at(-1).to}">
+        <div class="co-herotext"><span class="co-kicker">${esc(cfg.site)} · ${esc(cfg.name)}</span><h2>${esc(O.headline || cfg.name)}</h2><p>${esc(O.intro)}</p>
+          <div class="co-herostats">${[[units.length, `${u1}s`], [mods, "modules"], [lessons.length, "lessons"], [ixs.length, "interactives"]].map(([n, k]) => `<div><b>${n.toLocaleString()}</b><small>${k}</small></div>`).join("")}</div>
+          <div class="co-row">${nl ? `<a class="btn btn-light lg" href="#/lesson/${nl.id}"><span>${started ? `Continue: ${esc(nl.title)}` : `Start with ${esc(nl.title)}`}</span></a>` : ""}<a class="btn btn-ghost lg" href="#/paths"><span>Choose a path</span></a></div>
+          <label class="co-bigsearch">${ic("search")}<input type="search" placeholder="Search ${lessons.length.toLocaleString()} lessons${ixs.length ? ` and ${ixs.length} interactives` : ""}" aria-label="Search ${esc(cfg.name)}"><div class="co-results" hidden></div></label></div>
+        ${feat.length ? `<div class="co-herolab">${ixCard(feat[0], true)}</div>` : ""}
+      </section>
+      ${O.learn?.length ? `<section class="co-osec"><div class="co-intro"><span class="co-kicker">What you'll learn</span><h2>${esc(O.learnTitle || `${cfg.name} from first ideas to research`)}</h2></div><div class="co-learn">${O.learn.map(([h, d]) => `<div><b>${esc(h)}</b><p>${esc(d)}</p></div>`).join("")}</div></section>` : ""}
+      <section class="co-osec"><div class="co-intro"><span class="co-kicker">Your progress</span><h2>${started ? `Level ${L.n} · ${st.xp.toLocaleString()} XP` : "Your progress will show here"}</h2><p>${started ? `${st.lessons} of ${lessons.length} lessons done, a ${sk.n}-day streak, ${st.quizzes} ${u1} quiz${st.quizzes === 1 ? "" : "zes"} passed.` : `XP, streaks, quizzes and saved notes count in your Gradify account, alongside every other Gradify course.`} <a href="#/me">See all your progress →</a></p></div>
+        <div class="co-dots big">${units.map((u) => { const t = trackOf(u), p = unitDone(u) / u.lessons.length; return `<a href="#/learn/${u.id}" title="${U} ${u.n}: ${esc(u.title)} (${Math.round(p * 100)}%)" style="--a:${t.from};--b:${t.to};--p:${p}"></a>`; }).join("")}</div></section>
+      <section class="co-osec"><div class="co-intro"><span class="co-kicker">Curriculum</span><h2>${units.length} ${u1}s in ${cfg.tracks.length} ${tw1}s</h2><p>Each ${u1} is divided into modules and lessons. A written lesson has notes, worked examples, key terms, sources, check questions at three levels and flashcards; ${u1}s still being written are marked.</p></div>
+        ${cfg.tracks.map((t) => `<div class="co-track"><span>${esc(t.name)}</span></div><div class="co-schools">${t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean).map((u) => { const d = unitDone(u), w = isWritten(u);
+          return `<a class="co-school" href="#/learn/${u.id}" style="--a:${t.from};--b:${t.to}"><span class="co-kicker">${U} ${u.n}${w ? (isReady(u) ? "" : " · draft") : " · being written"}</span><h3>${esc(u.title)}</h3>${cfg.blurbs?.[u.n] ? `<p>${esc(cfg.blurbs[u.n])}</p>` : ""}<small>${u.modules.filter((m) => m.title).length} modules · ${u.lessons.length} lessons${d ? ` · ${d} done` : ""}</small><div class="co-bar"><i style="width:${(d / u.lessons.length) * 100}%"></i></div></a>`; }).join("")}</div>`).join("")}</section>
+      <section class="co-osec"><div class="co-intro"><span class="co-kicker">Learning paths</span><h2>Routes for different goals</h2><p>Follow a path and the Learn page and your next milestone follow it.</p></div>
+        <div class="co-grid">${cfg.paths.map((p) => { const t = trackOf(units.find((u) => u.n === p.units[0])), pct = p.units.reduce((a, n) => a + unitPct(n, p), 0) / p.units.length; return `<a class="co-pcard mini" href="#/paths" style="--a:${t.from};--b:${t.to}"><h3>${esc(p.name)}</h3><p>${esc(p.sub)}</p><small>${p.units.length} ${u1}s · ${Math.round(pct * 100)}% done</small></a>`; }).join("")}</div></section>
+      ${feat.length > 1 ? `<section class="co-osec"><div class="co-intro"><span class="co-kicker">Interactives</span><h2>Explore it, don't just read it</h2><p>${ixs.length} simulations, models and exercises. Each one states what it simplifies.</p></div>
+        <div class="co-labgrid">${feat.slice(1).map(ixTile).join("")}</div><p><a class="co-more" href="#/practice">All ${ixs.length} interactives →</a></p></section>` : ""}
+      <section class="co-osec"><div class="co-intro"><span class="co-kicker">Study tools</span><h2>Everything to make it stick</h2></div>
+        <div class="co-feats">${[["Spaced review", "Flashcards from the lessons you've finished come back just before you'd forget them.", "#/review"], ["Problem bank", `Every question in the course by level: ${LEVELS.join(", ").toLowerCase()}.`, "#/problems"], ...(cfg.exams ? [["Exams", `Timed cumulative exams over each ${tw1} and the whole course, with weak areas identified.`, "#/exams"]] : []), [`${U} quizzes`, `Ten questions at the end of every ${u1}; pass with 75%.`, "#/learn"], ...(O.tools || [])].map(([h, d, href]) => `<a class="co-feat" href="${href}"><b>${esc(h)}</b><p>${esc(d)}</p></a>`).join("")}</div></section>
+      ${cfg.qa ? `<section class="co-osec co-govern"><div class="co-intro"><span class="co-kicker">How the content is made</span><h2>Original notes, checked in stages</h2><p>Lessons are written in original words from authoritative sources (${esc(O.sources || "open textbooks and primary references")}), each cited in the lesson with its date. A ${u1} is published as a draft until it has been reviewed, its sources checked and an expert has signed it off.</p></div>
+        <div class="co-tiles">${[["Being written", count((u) => !isWritten(u))], ["Written (draft)", count((u) => isWritten(u) && !isReady(u))], ["Reviewed, checked and signed off", count((u) => isWritten(u) && isReady(u))]].map(([k, v]) => `<div><small>${k}</small><b>${v.toLocaleString()}</b></div>`).join("")}</div>
+        <p class="co-empty">Counts are lessons. The stages are written, technically tested, content reviewed, sources checked and expert sign-off (docs/CURRICULUM_QA.md).</p></section>` : ""}`;
+    const bq = main.querySelector(".co-bigsearch input"), br = main.querySelector(".co-bigsearch .co-results");
+    bq.addEventListener("input", () => { if (norm(bq.value).length < 2) { br.hidden = true; return; } br.innerHTML = searchHtml(bq.value); br.hidden = false; });
+    if (feat.length) mountIx(feat[0], main.querySelector(".co-herolab .co-labstage"));
   }
 
   // ---------- router ----------
   const go = (h) => { location.hash = `#/${h}`; };
   async function route() {
-    const [v = "learn", arg] = location.hash.replace(/^#\/?/, "").split("/");
-    const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam"].includes(v) ? v : "learn";
+    unmountIx();
+    const home = cfg.overview ? "overview" : "learn";
+    const [v0, arg] = location.hash.replace(/^#\/?/, "").split("/"), v = v0 || home;
+    const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam"].includes(v) ? v : home;
     root.querySelectorAll(".co-tabs a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === (view === "lesson" || view === "quiz" ? "learn" : view === "exam" ? "exams" : view)));
-    const wide = ["me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice"].includes(view);
+    const wide = ["me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview"].includes(view);
     side.hidden = wide; root.querySelector(".co-body").classList.toggle("wide", wide);
     if (view !== "learn") scrollTo(0, 0);
     if (view === "learn") { if (arg) openUnit(arg); viewLearn(arg); }
@@ -663,6 +743,7 @@ export function mountCourse(root, cfg) {
     else if (view === "exams") await viewExams();
     else if (view === "exam") await viewExam(arg);
     else if (view === "practice") await viewPractice(arg);
+    else if (view === "overview") viewOverview();
     else if (view === "leaderboard") viewLeaderboard();
     else if (view === "me") await viewMe();
     else viewFeatures();

@@ -12,6 +12,14 @@ import { esc, inline } from "../core/text.js";
 import { option, splitParts, splitList } from "./model.js";
 
 const seeded = (seed) => { let s = [...String(seed)].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 7); return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296); };
+// a typed number: commas and spaces ignored; "3.2e-4", "3.2 × 10^-4", "3.2x10-4" and a unicode minus accepted
+export function numberOf(v) {
+  if (v == null) return null;
+  const s = String(v).trim().replace(/[\s,]/g, "").replace(/−/g, "-").replace(/(?:×|x|\*)10\^?\(?(-?\d+)\)?/i, "e$1");
+  if (!/^[-+]?(\d+\.?\d*|\.\d+)(e[-+]?\d+)?$/i.test(s)) return null;
+  return Number(s);
+}
+const fmtNum = (n) => (Math.abs(n) >= 1e5 || (Math.abs(n) < 1e-3 && n !== 0) ? n.toExponential(3).replace(/\.?0+e/, "e") : String(+n.toPrecision(6)));
 export const shuffle = (a, seed) => { const r = seeded(seed); a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 
 // single choice from options (single best answer, multiple choice, true or false)
@@ -113,6 +121,32 @@ export const TYPES = {
     paint(box, Q) { box.querySelectorAll(".aq-match select").forEach((s) => s.parentElement.classList.toggle("right", Q.pairs.find(([l]) => l === s.dataset.left)?.[1] === s.value)); },
     answer: (Q) => Q.pairs.map(([a, b]) => `${a} → ${b}`).join("; "),
   },
+  num: {
+    // a calculation: "question | answer | tolerance | unit | why"; tolerance is absolute ("0.05") or relative ("2%").
+    // Answers may be typed with commas, spaces, "e" notation or "× 10^"; the unit is shown, not typed
+    label: "Calculation", auto: true,
+    parse(body) {
+      const [q, ans, tol = "0", unit = "", why = ""] = body.split(" | ").map((x) => x.trim());
+      const answer = Number(ans); if (!q || !Number.isFinite(answer)) return null;
+      return { type: "num", q, answer, tol: tol.endsWith("%") ? { rel: Number(tol.slice(0, -1)) / 100 } : { abs: Number(tol) || 0 }, unit, why };
+    },
+    render(Q, ctx) { return `<div class="aq-num"><label class="sr-only" for="${esc(ctx.key)}-num">Your answer</label><input id="${esc(ctx.key)}-num" type="text" inputmode="decimal" autocomplete="off" placeholder="Your answer">${Q.unit ? `<span>${inline(Q.unit)}</span>` : ""}</div><button type="button" class="btn btn-ghost lg btn-sm aq-submit"><span>Check answer</span></button>`; },
+    wire(box, Q, emit, ctx) {
+      const inp = box.querySelector(".aq-num input"), read = () => inp.value;
+      if (ctx.mode === "exam") inp.addEventListener("input", () => emit(read(), { silent: true }));
+      box.querySelector(".aq-submit").addEventListener("click", () => emit(read()));
+      inp.addEventListener("keydown", (e) => { if (e.key === "Enter") emit(read()); });
+    },
+    restore(box, Q, v) { box.querySelector(".aq-num input").value = v || ""; },
+    mark(Q, v) {
+      const x = numberOf(v); if (x == null) return { score: 0, correct: false, detail: "Not a number" };
+      const tol = Q.tol.rel != null ? Math.abs(Q.answer) * Q.tol.rel : Q.tol.abs, ok = Math.abs(x - Q.answer) <= tol + 1e-12 * Math.max(1, Math.abs(Q.answer));
+      return { score: ok ? 1 : 0, correct: ok, detail: ok ? "Within tolerance" : `You gave ${v}` };
+    },
+    feedback(Q, v, res) { return res.correct ? "" : `<p><b>Answer:</b> ${esc(fmtNum(Q.answer))}${Q.unit ? ` ${inline(Q.unit)}` : ""}${Q.tol.rel ? ` (within ${+(Q.tol.rel * 100).toFixed(2)}%)` : Q.tol.abs ? ` (± ${Q.tol.abs})` : ""}</p>`; },
+    paint(box, Q, v, res) { box.querySelector(".aq-num input").classList.toggle(res.correct ? "right" : "wrong", true); },
+    answer: (Q) => `${fmtNum(Q.answer)}${Q.unit ? ` ${Q.unit}` : ""}`,
+  },
   short: {
     // not machine-marked: the learner compares with the model answer and ticks the points covered.
     // The result is "provisional" until confirmed by a human marker; an AI-assisted suggestion, if one
@@ -138,4 +172,4 @@ export const TYPES = {
 
 // the handler for a question's type ("sba" and "mcq" share the choice handler)
 export const handlerFor = (Q) => TYPES[Q.type === "sba" || Q.type === "mcq" ? "choice" : Q.type];
-export const LABELS = { sba: "Single best answer", mcq: "Multiple choice", tf: "True or false", multi: "Choose all that apply", order: "Put in order", match: "Match the pairs", short: "Short answer" };
+export const LABELS = { sba: "Single best answer", mcq: "Multiple choice", tf: "True or false", multi: "Choose all that apply", order: "Put in order", match: "Match the pairs", short: "Short answer", num: "Calculation" };

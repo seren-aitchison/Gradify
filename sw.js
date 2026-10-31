@@ -1,6 +1,6 @@
 // Gradify service worker: lets the site open offline.
 // Network first, so a new deploy shows straight away; the cache is the fallback.
-const CACHE = "gradify-v38";
+const CACHE = "gradify-v39";
 const SHELL = [
   "./", "index.html", "app.html", "manifest.webmanifest", "gradify.config.js",
   // homepage
@@ -11,6 +11,9 @@ const SHELL = [
   "kit/app/main.js", "kit/app/app.css", "kit/data/store.js",
   "kit/learning/srs.js", "kit/learning/mastery.js",
   "kit/course/course.js", "kit/course/notes.js", "kit/course/road.js", "kit/course/syllabus.js", "kit/core/text.js", "kit/assess/questions.js", "kit/assess/model.js", "kit/assess/types.js", "kit/assess/attempts.js", "kit/assess/exam.js", "kit/styles/course.css", "kit/courses/physics/course.js", "kit/courses/physics/syllabus.js", "kit/courses/law/course.js", "kit/courses/law/syllabus.js", "kit/courses/law/qa.js", "kit/courses/law/ids.js", "kit/courses/law/registry.js", "kit/courses/law/map.js", "kit/courses/nursing/course.js", "kit/courses/nursing/syllabus.js", "kit/courses/nursing/qa.js", "kit/courses/nursing/ids.js", "kit/courses/nursing/registry.js", "kit/courses/nursing/map.js",
+  "kit/labs/lab.js", "kit/styles/labs.css",
+  "kit/courses/biology/course.js", "kit/courses/biology/syllabus.js", "kit/courses/biology/ids.js", "kit/courses/biology/qa.js", "kit/courses/biology/interactives.js",
+  "kit/courses/chemistry/course.js", "kit/courses/chemistry/syllabus.js", "kit/courses/chemistry/ids.js", "kit/courses/chemistry/qa.js", "kit/courses/chemistry/interactives.js",
   "kit/notes/studio.js", "kit/notes/video3d.js", "kit/notes/engine.js", "kit/notes/pack.js",
   "kit/earth/globe.js", "kit/earth/earth-land.js",
   "kit/lifeos/lifeos.js", "kit/lifeos/os.js", "kit/lifeos/earth.js", "kit/lifeos/plan.js", "kit/lifeos/calendar.js", "kit/lifeos/assistant.js", "kit/lifeos/community.js", "kit/lifeos/study.js", "kit/lifeos/tree.js",

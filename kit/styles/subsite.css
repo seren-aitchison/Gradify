@@ -182,3 +182,8 @@
 .sm-3d .sub-ctas { margin-top: 22px; }
 .sm-3d-art { position: relative; display: block; height: 260px; border-radius: 22px; overflow: hidden; background: #03080c center 30% / cover no-repeat; border: 1px solid rgba(94, 240, 255, .3); box-shadow: 0 0 50px -16px rgba(94, 240, 255, .6); }
 @media (max-width: 960px) { .sm-3d { grid-template-columns: 1fr; padding: 24px; } }
+/* SciGradify's three subject courses side by side (Physics keeps the original colours) */
+.sub-courses { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 0 0 40px; }
+.sub-courses .sub-course { margin: 0; }
+.sub-course.bio { background: linear-gradient(120deg, #84cc16, #10b981 50%, #0891b2); box-shadow: 0 30px 70px -35px #10b981; }
+.sub-course.chem { background: linear-gradient(120deg, #facc15, #f59e0b 45%, #ea580c); box-shadow: 0 30px 70px -35px #f59e0b; }
