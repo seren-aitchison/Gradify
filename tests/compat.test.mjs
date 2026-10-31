@@ -2,32 +2,35 @@
 // Physics notes were written before question ids, options-with-explanations and new question types.
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { execFileSync } from "node:child_process";
 import { parseNotes } from "../kit/course/notes.js";
 import { markQuestion, normalize, renderQuestion } from "../kit/assess/questions.js";
 import physics from "../kit/courses/physics/course.js";
 
-// the parser as it was before the library (the last commit), for a like-for-like comparison
-const oldSrc = (p) => { try { return execFileSync("git", ["show", `HEAD:${p}`], { encoding: "utf8" }); } catch { return null; } };
+// the parser as it was before the library (commit cdd837e), frozen in tests/fixtures/legacy-parser
+import * as old from "./fixtures/legacy-parser/kit/course/notes.js";
 
 test("physics: every lesson parses to the same check questions, in the same order, as before", async () => {
-  const src = oldSrc("kit/course/notes.js");
-  if (!src) return; // no git history available
-  const { mkdtemp, writeFile, mkdir, cp } = await import("node:fs/promises");
-  const dir = await mkdtemp(new URL("../.compat-", import.meta.url).pathname);
-  try {
-    await mkdir(`${dir}/kit/course`, { recursive: true }); await cp(new URL("../kit/core", import.meta.url).pathname, `${dir}/kit/core`, { recursive: true });
-    for (const f of ["kit/course/notes.js", "kit/assess/questions.js"]) { const s = oldSrc(f); if (s) { await mkdir(`${dir}/${f.split("/").slice(0, -1).join("/")}`, { recursive: true }); await writeFile(`${dir}/${f}`, s); } }
-    const old = await import(`${dir}/kit/course/notes.js`);
-    for (const id of physics.written) {
-      const text = await physics.notes(id), a = old.parseNotes(text), b = parseNotes(text);
-      assert.equal(b.length, a.length, id);
-      a.forEach((L, i) => {
-        assert.equal(b[i].mcq.length, L.mcq.length, `${id} ${L.title}: same number of questions, so saved keys ${"lesson#index"} still match`);
-        L.mcq.forEach((m, j) => { const n = b[i].mcq[j]; assert.equal(n.q, m.q); assert.equal(n.right, m.right); assert.deepEqual(n.wrong, m.wrong); assert.equal(n.d, m.d); });
-      });
+  for (const id of physics.written) {
+    const text = await physics.notes(id), a = old.parseNotes(text), b = parseNotes(text);
+    assert.equal(b.length, a.length, id);
+    a.forEach((L, i) => {
+      assert.equal(b[i].mcq.length, L.mcq.length, `${id} ${L.title}: same number of questions, so saved lesson#index keys still match`);
+      L.mcq.forEach((m, j) => { const n = b[i].mcq[j]; assert.equal(n.q, m.q); assert.equal(n.right, m.right); assert.deepEqual(n.wrong, m.wrong); assert.equal(n.d, m.d); });
+      assert.equal(b[i].cards.length, L.cards.length, `${id} ${L.title}: flashcards unchanged`);
+    });
+  }
+});
+
+test("nursing and law: the old parser and the new one find the same single-choice questions (ids aside)", async () => {
+  for (const slug of ["nursing", "law"]) {
+    const course = (await import(`../kit/courses/${slug}/course.js`)).default;
+    for (const id of course.written) {
+      const text = await course.notes(id);
+      const strip = text.replace(/^((?:M|TF|MS|SEQ|MATCH|SA)[123]?)(?:#[a-z0-9-]+)?(?:@[\d,]+)?:/gm, "$1:");
+      const a = old.parseNotes(strip), b = parseNotes(text);
+      a.forEach((L, i) => assert.equal(b[i].mcq.length, L.mcq.length, `${slug} ${id} ${L.title}`));
     }
-  } finally { (await import("node:fs/promises")).rm(dir, { recursive: true, force: true }); }
+  }
 });
 
 test("a question in the old { right, wrong } shape renders and marks", () => {
