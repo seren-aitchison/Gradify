@@ -66,3 +66,17 @@ For law, every check question is written as a **single best answer** (one right 
 - **Shared assessment library** `kit/assess/questions.js`: one question model (single best answer, multiple choice, multi-select, ordering, matching, short answer) with parsing, rendering, keyboard-accessible interaction and marking (partial credit where appropriate). Any site can import it. Short answers are self-assessed against a model answer and marking points until an AI-marking mode exists.
 - **Paths with module selection**: a path can take only some modules of a shared school (`select`), so the four nursing field pathways share foundations but differ in content, not just order.
 - **Mapping and provenance** in `map.js`, reported by `npm run qa` as framework coverage.
+
+## Mock exams and interactive practice
+
+**Mock exams** (`kit/assess/exam.js`, Exams tab when a course defines `exams`):
+- Config per exam: format (`sba` or `mixed`, defined in `FORMATS`, so new formats are a data change), question count, time limit, practice pass mark, feedback timing, and the source (a path, with its module selection, or a list of schools).
+- Questions are spread evenly across modules, drawn only from written schools, and never include questions that can't be machine-marked.
+- The exam is timed, with a question map, flagging and going back to questions. Results show the score, time used, a breakdown by module (weakest first), weak areas linked to their lessons, and every question with the correct answer and its explanation. Attempts are saved in the course's progress, and passing awards XP.
+- Configured now: SQE1 FLK1 (45 questions, and full paper length of 90 in 153 minutes), FLK2, contract and tort; the four nursing field exams; medicines safety. Pass marks are practice thresholds, not official ones.
+
+**Interactive practice** (Practice tab when a course defines `interactives`):
+- **Shared foundations** in `kit/interactive/`: `scenario.js`, a branching case engine with a state panel, scored decisions with feedback, safety-critical flags, a debrief, and a stable shuffled option order so position never gives an answer away (with `validateScenario` for tests); `news2.js`, the RCP NEWS2 scoring and response functions, unit-tested at every band boundary; `trainers.js`, with generated practice items.
+- **Clinical reasoning** (NurseGradify): "The quiet patient in bay 3", a deteriorating post-operative patient worked through ABCDE with live observations and NEWS2, sepsis recognition and SBAR escalation; NEWS2 scoring practice; and medicines calculations with invented medicines and worked methods. Every simulation states that it doesn't assess or authorise competence.
+- **Legal reasoning** (LawGradify): "Okoye v Harbour Cameras", a case file worked through IRAC (identify issues, apply authorities, advise), with the documents and the learner's growing analysis in the panel; and the court hierarchy and precedent explorer.
+- Adding one: write a module exporting `mount(el, { onComplete })` (or a scenario object for the engine) and list it in the course's `interactives`.

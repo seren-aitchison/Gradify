@@ -11,6 +11,12 @@ export default {
   qa: QA,
   // shown under the title on every page of the course
   notice: "<b>Study material, not legal advice.</b> The law is stated for England and Wales unless a lesson says otherwise; Scotland and Northern Ireland differ (School 17). Completing a LawGradify course is not a legal qualification and does not authorise you to practise. Law changes: check current sources before you rely on anything here.",
+  // interactive practice (kit/interactive/): legal reasoning
+  practiceNote: "Legal reasoning practice: case files worked issue by issue, and the court hierarchy. Fictional facts; the law of England and Wales as at 2026.",
+  interactives: [
+    { id: "okoye", kind: "Legal reasoning case file", title: "Okoye v Harbour Cameras: was there a contract?", sub: "Identify the issues, apply offer, acceptance and the postal rule to a sequence of messages, and advise the client, building an IRAC analysis as you go.", schools: [3], load: () => import("./interactives/offer-acceptance.js") },
+    { id: "courts", kind: "Precedent explorer", title: "Court hierarchy and precedent", sub: "Explore the courts of England and Wales and decide whether earlier decisions bind, persuade or must be taken into account.", schools: [1], load: () => import("../../interactive/trainers.js").then((m) => ({ mount: m.mountCourts })) },
+  ],
   // mock exams (kit/assess/exam.js): drawn from written schools only; pass marks are practice thresholds,
   // not the SRA's (which are set for each sitting)
   exams: [

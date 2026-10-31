@@ -11,6 +11,13 @@ export default {
   qa: QA,
   // shown under the title on every page of the course
   notice: "<b>Education, not clinical authorisation.</b> NurseGradify doesn't give NMC registration, replace approved practice placements or assess your competence. Practise clinical skills and give medicines only within your scope, under supervision where required, and following your local policies. NMC standards apply UK-wide; laws, policies and services that differ between England, Scotland, Wales and Northern Ireland are labelled.",
+  // interactive practice (kit/interactive/): clinical reasoning, all educational simulations
+  practiceNote: "Clinical reasoning practice with fictional patients and illustrative numbers. These simulations build understanding; they don't assess or authorise clinical competence, which is developed and assessed in supervised practice.",
+  interactives: [
+    { id: "deteriorating", kind: "Clinical reasoning scenario", title: "The quiet patient in bay 3", sub: "A post-operative patient deteriorates: assess with ABCDE, score NEWS2 as the observations change, and escalate with SBAR.", schools: [3, 9], load: () => import("./interactives/deteriorating.js") },
+    { id: "news2", kind: "Observation interpretation", title: "NEWS2 scoring practice", sub: "Score generated sets of adult observations parameter by parameter and choose the clinical response.", schools: [3, 9], load: () => import("../../interactive/trainers.js").then((m) => ({ mount: m.mountNews2 })) },
+    { id: "calculations", kind: "Medicines numeracy", title: "Medicines calculations", sub: "Tablets, liquids, infusion and drip rates, unit conversions and weight-based doses, with worked methods. Illustrative numbers only.", schools: [4, 6], load: () => import("../../interactive/trainers.js").then((m) => ({ mount: m.mountCalc })) },
+  ],
   // mock exams (kit/assess/exam.js): one per field pathway, plus medicines safety. Practice thresholds only;
   // they don't replace university assessments or numeracy tests.
   exams: [
