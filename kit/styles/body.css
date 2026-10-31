@@ -18,8 +18,13 @@
 .bi-ticks { display: flex; justify-content: space-between; margin-top: 5px; font: 500 10.5px var(--sans); color: var(--mute); gap: 4px; }
 .bi-ticks .nd { margin-left: 8px; display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
 .bi-ticks .nd i { width: 9px; height: 9px; border-radius: 50%; background: #5f5a60; display: inline-block; }
-.bi-layers { position: absolute; right: 12px; bottom: 40px; display: flex; flex-direction: column; gap: 6px; padding: 10px 12px; border-radius: 14px; background: rgba(0, 0, 0, .6); border: 1px solid var(--line); font: 500 12.5px var(--sans); color: #e6e6e6; backdrop-filter: blur(10px); }
-.bi-layers label { display: flex; align-items: center; gap: 7px; cursor: pointer; }
+.bi-layers { position: absolute; right: 12px; bottom: 40px; display: block; padding: 10px 12px; border-radius: 14px; background: rgba(0, 0, 0, .6); border: 1px solid var(--line); font: 500 12.5px var(--sans); color: #e6e6e6; backdrop-filter: blur(10px); }
+.bi-layers label { display: flex; align-items: center; gap: 7px; cursor: pointer; margin-top: 6px; }
+.bi-layers summary { cursor: pointer; font-weight: 600; color: #fff; list-style: none; }
+.bi-layers summary::-webkit-details-marker { display: none; }
+.bi-layers summary::after { content: " ▾"; color: var(--mute); }
+.bi-layers[open] summary { margin-bottom: 4px; }
+.bi-layers[open] summary::after { content: " ▴"; }
 .bi-tip { position: absolute; top: 0; left: 0; pointer-events: none; padding: 5px 10px; border-radius: 8px; background: rgba(0, 0, 0, .8); color: #fff; font: 600 12.5px var(--sans); white-space: nowrap; }
 .bi-credit { position: absolute; left: 12px; right: 12px; bottom: 8px; margin: 0; font: 400 10.5px var(--sans); color: var(--faint); }
 .bi-credit a { color: inherit; }
@@ -105,7 +110,7 @@
 @media (max-width: 560px) {
   .bi-stage { border-radius: 18px; height: 64vh; }
   .bi-legend { bottom: 56px; }
-  .bi-layers { bottom: auto; top: 108px; right: 12px; padding: 8px 10px; font-size: 12px; }
+  .bi-layers { bottom: auto; top: 160px; right: 12px; padding: 7px 10px; font-size: 12px; }
   .bi-views { top: auto; bottom: 8px; left: 12px; }
   .bi-credit { display: none; }
   .bi-row { grid-template-columns: repeat(2, 1fr) 28px; }

@@ -35,13 +35,13 @@ export async function startBodyApp(root) {
       </div>
       <div class="bi-views" role="group" aria-label="Views">${["front", "back", "left", "right"].map((v) => `<button type="button" data-view="${v}">${v[0].toUpperCase() + v.slice(1)}</button>`).join("")}</div>
       <div class="bi-legend"><p class="bi-legend-label"></p><div class="bi-ramp"></div><div class="bi-ticks"></div></div>
-      <div class="bi-layers" role="group" aria-label="Layers">
+      <details class="bi-layers"${innerWidth > 700 ? " open" : ""}><summary>Layers</summary>
         <label><input type="checkbox" data-layer="skeleton" checked> Skeleton</label>
         <label><input type="checkbox" data-layer="organs"> Heart &amp; lungs</label>
         <label><input type="checkbox" data-layer="skin"> Skin</label>
         <label><input type="checkbox" data-detail> Individual muscles</label>
         <label><input type="checkbox" data-spin> Turn</label>
-      </div>
+      </details>
       <div class="bi-tip" hidden></div>
       <div class="bi-loading">Loading the anatomy model…</div>
       <p class="bi-credit">${esc(ATTRIBUTION)} <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></p>
