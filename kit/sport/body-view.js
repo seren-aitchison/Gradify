@@ -38,7 +38,7 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
   { const g = bg.getContext("2d"), r = g.createRadialGradient(256, 200, 10, 256, 256, 400); r.addColorStop(0, "#3a3b42"); r.addColorStop(0.5, "#1c1d22"); r.addColorStop(1, "#0b0b0d"); g.fillStyle = r; g.fillRect(0, 0, 512, 512); }
   scene.background = new THREE.CanvasTexture(bg); scene.background.colorSpace = THREE.SRGBColorSpace;
   const pmrem = new THREE.PMREMGenerator(renderer);
-  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture; scene.environmentIntensity = 0.65;
+  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture; scene.environmentIntensity = 0.5;
 
   scene.add(new THREE.HemisphereLight("#fff6ee", "#2d2724", 0.5));
   const key = new THREE.DirectionalLight("#fff3e6", 2.6); key.position.set(1.4, 3.2, 2.6); key.castShadow = true;
@@ -64,7 +64,7 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
   // ---------- materials ----------
   const fibre = helpers.detail("fibre"), boneTex = helpers.detail("bone");
   function muscleMat() {
-    const m = new THREE.MeshPhysicalMaterial({ color: MUSCLE_BASE.clone(), roughness: 0.48, metalness: 0, clearcoat: 0.45, clearcoatRoughness: 0.32, sheen: 0.35, sheenRoughness: 0.5, sheenColor: new THREE.Color("#ffb7a6"), emissive: new THREE.Color("#000000") });
+    const m = new THREE.MeshPhysicalMaterial({ color: MUSCLE_BASE.clone(), roughness: 0.5, metalness: 0, clearcoat: 0.3, clearcoatRoughness: 0.38, sheen: 0.12, sheenRoughness: 0.6, sheenColor: new THREE.Color("#ffd2c6"), emissive: new THREE.Color("#000000") });
     m.bumpMap = fibre; m.bumpScale = 0.55;
     return m;
   }
@@ -97,8 +97,10 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
   function refresh() {
     for (const [k, list] of Object.entries(meshes)) {
       const m = muscleOfKey(k), c = state.colours[k];
-      let col = c ? MUSCLE_BASE.clone().lerp(new THREE.Color(...c.rgb), 0.9) : NO_DATA.clone();
-      let glow = c ? new THREE.Color(...c.rgb).multiplyScalar(0.12) : new THREE.Color(0, 0, 0);
+      // heat colours are applied at full strength with a little self-light so they stay saturated
+      // under the bright studio lighting (filmic tone mapping desaturates highlights)
+      let col = c ? new THREE.Color(...c.rgb).multiplyScalar(0.82) : NO_DATA.clone();
+      let glow = c ? new THREE.Color(...c.rgb).multiplyScalar(0.2) : new THREE.Color(0, 0, 0);
       if (state.preview) {   // exercise preview: primary and secondary muscles light up, the rest fade
         const w = state.preview[m] || 0;
         col = w ? MUSCLE_BASE.clone().lerp(new THREE.Color("#ff5a3c"), 0.25 + 0.75 * w) : NO_DATA.clone().multiplyScalar(0.7);
@@ -107,8 +109,8 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
       const sel = state.selected === m, hov = state.hovered === m, dim = state.selected && !sel;
       for (const mesh of list) {
         const mat = mesh.material;
-        mat.color.copy(dim ? col.clone().multiplyScalar(0.55) : col);
-        mat.emissive.copy(sel ? glow.clone().add(WHITE.clone().multiplyScalar(0.16)) : hov ? glow.clone().add(WHITE.clone().multiplyScalar(0.08)) : glow);
+        mat.color.copy(dim ? col.clone().lerp(NO_DATA, 0.5).multiplyScalar(0.45) : col);
+        mat.emissive.copy(dim ? glow.clone().multiplyScalar(0.3) : sel ? glow.clone().add(WHITE.clone().multiplyScalar(0.22)) : hov ? glow.clone().add(WHITE.clone().multiplyScalar(0.08)) : glow);
         mat.transparent = state.xray; mat.opacity = state.xray ? 0.28 : 1; mat.depthWrite = !state.xray;
       }
     }
