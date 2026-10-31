@@ -58,3 +58,11 @@ For law, every check question is written as a **single best answer** (one right 
 | Interactive simulations (client interview, deterioration scenario) | Text case files only (School 19 for law) | Branching scenario format (`B:` lines) rendered by the engine; later AI role-play through the Edge Function |
 | Course progress in the cloud | Partly: XP and saved lessons sync; lesson completion is per device | A `course_progress` table (owner-only RLS) mirroring `S.done`, `S.quiz` and `S.cards` |
 | Per-site entitlement (paid courses) | Not built anywhere | Check an `entitlements` row before unlocking units beyond a free set, once subscriptions exist |
+
+## Architecture added for LawGradify and NurseGradify
+
+- **One curriculum structure** for every course: school → module → lesson, parsed by `kit/course/syllabus.js`, with permanent lesson ids (`ids.js`) and title-based module ids. Physics still works unchanged.
+- **Lesson framing**: objectives and prerequisites before the notes; summary, key terms, dated and typed sources and further reading after (`lessonFrame` in `kit/course/notes.js`).
+- **Shared assessment library** `kit/assess/questions.js`: one question model (single best answer, multiple choice, multi-select, ordering, matching, short answer) with parsing, rendering, keyboard-accessible interaction and marking (partial credit where appropriate). Any site can import it. Short answers are self-assessed against a model answer and marking points until an AI-marking mode exists.
+- **Paths with module selection**: a path can take only some modules of a shared school (`select`), so the four nursing field pathways share foundations but differ in content, not just order.
+- **Mapping and provenance** in `map.js`, reported by `npm run qa` as framework coverage.

@@ -7,8 +7,48 @@ import { readdir } from "node:fs/promises";
 import { parseNotes, norm } from "../kit/course/notes.js";
 import law from "../kit/courses/law/course.js";
 import nursing from "../kit/courses/nursing/course.js";
+import { parseSyllabus } from "../kit/course/syllabus.js";
 
 for (const [name, course, dir] of [["law", law, "law"], ["nursing", nursing, "nursing"]]) {
+  test(`${name}: every permanent lesson id still exists with its recorded title, and every lesson has one`, async () => {
+    const { IDS } = await import(`../kit/courses/${dir}/ids.js`);
+    const byId = new Map(course.units.flatMap((u) => u.lessons.map((l) => [l.id, l])));
+    for (const [id, title] of Object.entries(IDS)) {
+      assert.ok(byId.has(id), `${id} ("${title}") has disappeared: saved progress would be lost. Restore it, or keep the id with a new title.`);
+      assert.equal(norm(byId.get(id).title), norm(title), `${id} title changed: update ids.js deliberately if this is a rename`);
+    }
+    for (const id of byId.keys()) assert.ok(IDS[id], `${id} isn't in ids.js yet: run npm run qa to record it`);
+    assert.equal(new Set(byId.keys()).size, byId.size, "no two lessons share an id");
+  });
+
+  test(`${name}: the mapping covers every school with real framework items and real modules`, () => {
+    const items = new Set(Object.values(course.frameworks).flatMap((f) => f.items));
+    for (const u of course.units) {
+      const m = course.map[u.id]; assert.ok(m, `${u.id} is mapped`);
+      const tags = (x) => Object.entries(x).filter(([k]) => course.frameworks[k]).flatMap(([, v]) => v);
+      for (const t of tags(m)) assert.ok(items.has(t), `${u.id}: "${t}" is a framework item`);
+      for (const [title, sub] of Object.entries(m.modules || {})) {
+        assert.ok(u.modules.some((x) => x.title === title), `${u.id}: module "${title}" exists`);
+        for (const t of tags(sub)) assert.ok(items.has(t), `${u.id} ${title}: "${t}" is a framework item`);
+      }
+    }
+    for (const f of Object.values(course.frameworks)) assert.ok(f.name && f.owner && "verified" in f || f.items, "frameworks record their provenance");
+  });
+
+  test(`${name}: path module selections name real modules`, () => {
+    for (const p of course.paths) for (const [n, titles] of Object.entries(p.select || {})) {
+      const u = course.units.find((x) => x.n === Number(n)); assert.ok(u && p.units.includes(Number(n)), `${p.id} selects from school ${n}, which is on the path`);
+      for (const t of titles) assert.ok(u.modules.some((m) => m.title === t), `${p.id}: school ${n} has module "${t}"`);
+    }
+  });
+
+  test(`${name}: every lesson belongs to a named module`, () => {
+    for (const u of course.units) {
+      assert.ok(u.modules.length >= 1 && u.modules.every((m) => m.title && m.lessons.length), `school ${u.n} has named modules`);
+      assert.equal(u.modules.reduce((a, m) => a + m.lessons.length, 0), u.lessons.length);
+    }
+  });
+
   test(`${name}: schools are numbered in order, each in exactly one track, and every path names real schools`, () => {
     assert.deepEqual(course.units.map((u) => u.n), Array.from({ length: course.units.length }, (_, i) => i + 1));
     const inTracks = course.tracks.flatMap((t) => t.units).sort((a, b) => a - b);
@@ -72,4 +112,25 @@ test("nursing: the notice says it doesn't register, replace placements or certif
   assert.match(nursing.notice, /placements/);
   assert.match(nursing.notice, /competence/);
   assert.match(nursing.notice, /local policies/);
+});
+
+test("moving or inserting lessons never changes a locked id", () => {
+  const lock = { "u01-01": "Alpha", "u01-02": "Beta", "u01-03": "Gamma" };
+  const [u] = parseSyllabus("1. Test\n> One\n* Gamma\n* New topic\n> Two\n* Alpha\n* Beta", lock);
+  const id = Object.fromEntries(u.lessons.map((l) => [l.title, l.id]));
+  assert.deepEqual(id, { Gamma: "u01-03", "New topic": "u01-04", Alpha: "u01-01", Beta: "u01-02" });
+  assert.deepEqual(u.modules.map((m) => [m.id, m.lessons]), [["u01:one", ["u01-03", "u01-04"]], ["u01:two", ["u01-01", "u01-02"]]]);
+});
+
+test("nursing: four distinct field pathways, each with the shared core and its own field school", () => {
+  const fields = nursing.paths.filter((p) => p.field);
+  assert.deepEqual(fields.map((p) => p.field).sort(), ["Adult", "Children's", "Learning disability", "Mental health"]);
+  const fieldSchool = { Adult: 10, "Children's": 11, "Mental health": 12, "Learning disability": 13 };
+  for (const p of fields) {
+    for (const n of nursing.core) assert.ok(p.units.includes(n), `${p.field} includes core school ${n}`);
+    assert.ok(p.units.includes(fieldSchool[p.field]), `${p.field} includes its field school`);
+    for (const [f, n] of Object.entries(fieldSchool)) if (f !== p.field) assert.ok(!p.units.includes(n), `${p.field} doesn't include another field's school`);
+  }
+  const sig = new Set(fields.map((p) => JSON.stringify([p.units, p.select || {}])));
+  assert.equal(sig.size, 4, "no two field pathways are the same");
 });

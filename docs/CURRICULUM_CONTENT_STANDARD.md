@@ -72,3 +72,25 @@ Target: physics lessons average about 2.5 KB. Aim for 1.5–3 KB per lesson: den
 - British English. Plain, direct sentences. Define a term the first time it appears.
 - Case names in italics are optional; keep citations short: *Donoghue v Stevenson* [1932] AC 562 (HL), or just [1932] UKHL 100 style where neutral citations exist.
 - Inclusive, person-first language in nursing ("a person with diabetes").
+
+## Standard 2 (all new schools)
+
+From the School 6 batch onwards every lesson follows standard 2, and `npm run qa` enforces it as a hard check for any school whose `qa.js` record has `standard: 2`. Older schools gain the metadata at their review.
+
+**The hierarchy.** School → module → lesson (each topic in the brief is taught as one lesson) → learning activities (worked examples, scenarios, interactives) → assessment (check questions in the lesson, school quiz, mock exams). Modules are `> Title` lines in the syllabus.
+
+**Lesson metadata, in the notes file**
+
+| Tag | Content | Minimum |
+|---|---|---|
+| `O:` | A learning objective, phrased as what the learner can do | 2 |
+| `PRE:` | Prerequisite knowledge, ideally a lesson title | as needed |
+| `T:` | Key term: `term \| definition` | 2 |
+| `SUM:` | Summary point | 1 |
+| `SRC:` | Source: `citation \| kind \| date \| link`; kind is legislation, case, rule, guidance, standard, primary or secondary; date is the version or the date checked | 1, every one with kind and date |
+| `READ:` | Further reading | optional |
+| `SAFE:` | Competence and safety statement (clinical skills: theory versus demonstrated, supervised competence; contraindications and local policy) | every nursing procedure lesson |
+
+**Question types** (`kit/assess/questions.js`): `M` single best answer or multiple choice; `MS` multi-select; `SEQ` ordering; `MATCH` matching; `SA` short answer with a model answer and marking points (self-assessed). Every auto-marked question needs an explanation.
+
+**Other metadata lives in data, not in each lesson:** subject, school and module (the syllabus); framework mapping, level, jurisdiction or field (`map.js`); review status, reviewer, dates and version (`qa.js` and git history); permanent ids (`ids.js`).

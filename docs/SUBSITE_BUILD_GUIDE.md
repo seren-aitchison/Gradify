@@ -67,3 +67,16 @@ Open `http://localhost:8080/<site>/` and `/<site>/<course-folder>/` at desktop a
 - Don't add a framework, bundler or npm runtime dependency.
 - No secrets in site code. Paid APIs go in Supabase Edge Functions.
 - Regulated subjects (law, health, finance) carry a standing notice saying what the course is not.
+
+## Course data files (law and nursing pattern)
+
+| File | What it holds |
+|---|---|
+| `syllabus.js` | Schools, modules (`> Title`) and lessons (`* Title`) as text, plus tracks and paths. Parsed by the shared `kit/course/syllabus.js` |
+| `ids.js` | The permanent id of every lesson. Progress, saved notes and flashcards are keyed by these ids, so lessons can be moved, regrouped or inserted without losing anyone's progress. `npm run qa` records new lessons; tests fail if a locked id disappears |
+| `map.js` | Mapping of schools and modules to frameworks (SQE, NMC platforms, fields), with each framework's owner, URL, version and verification status |
+| `qa.js` | Review, source verification and expert sign-off records per school |
+| `notes/uNN.js` | Lesson content |
+| `course.js` | The config handed to the engine: units, tracks, paths (with optional per-school module `select`), map, qa, notice, unitWord |
+
+Another Gradify subject can adopt the same structure by creating these files; nothing in the engine is law- or nursing-specific.

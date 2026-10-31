@@ -12,7 +12,8 @@
 import { schedule, isDue, preview, fmtInterval } from "../learning/srs.js";
 import { LocalStore, CloudStore, scopeToSite } from "../data/store.js";
 import { roadDefs, car } from "./road.js";
-import { parseNotes, lessonHtml, lessonText, esc, inline, norm } from "./notes.js";
+import { parseNotes, lessonHtml, lessonText, lessonFrame, esc, inline, norm } from "./notes.js";
+import { renderQuestion, wireQuestions } from "../assess/questions.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -254,8 +255,9 @@ export function mountCourse(root, cfg) {
       if (it.kind === "lesson") {
         const st = S.done[it.l.id] ? "done" : i === ci ? "cur" : "next";
         const side = x > W / 2 ? "l" : "r";
+        const modStart = it.l.module && (it.l.i === 0 || u.lessons[it.l.i - 1].module !== it.l.module);
         return `<a class="co-node ${st}" style="${style}" href="#/lesson/${it.l.id}" aria-label="Lesson ${it.l.i + 1}: ${esc(it.l.title)}${st === "done" ? " (done)" : ""}">
-          ${ic(st === "done" ? "check" : it.l.i === 0 && st === "cur" ? "star" : "play")}<span class="co-label ${side}">${st === "cur" ? `<b>${it.l.i === 0 ? "Start here" : "Up next"}</b>` : `<small>${it.l.i + 1}</small>`}${esc(it.l.title)}</span></a>`;
+          ${ic(st === "done" ? "check" : it.l.i === 0 && st === "cur" ? "star" : "play")}<span class="co-label ${side}">${modStart ? `<em class="co-mod">${esc(it.l.module)}</em>` : ""}${st === "cur" ? `<b>${it.l.i === 0 ? "Start here" : "Up next"}</b>` : `<small>${it.l.i + 1}</small>`}${esc(it.l.title)}</span></a>`;
       }
       if (it.kind === "chest") {
         const ready = it.after.every((l) => S.done[l.id]), got = S.chests[it.id];
@@ -309,11 +311,12 @@ export function mountCourse(root, cfg) {
       <div class="co-crumbs"><a href="#/learn/${u.id}">← ${U} ${u.n}: ${esc(u.title)}</a><span>Lesson ${l.i + 1} of ${u.lessons.length}</span></div>
       <div class="co-steps">${u.lessons.map((x) => `<a href="#/lesson/${x.id}" class="${S.done[x.id] ? "done" : ""} ${x.id === id ? "here" : ""}" title="${esc(x.title)}"></a>`).join("")}</div>
       <div class="mv-page co-notes" style="--c:${t.from}">
-        <header><span class="kicker">${esc(t.name)} · ${U} ${u.n}</span><h2>${esc(l.title)}</h2>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
+        <header><span class="kicker">${esc(t.name)} · ${U} ${u.n}${l.module ? ` · ${esc(l.module)}` : ""}</span><h2>${esc(l.title)}</h2>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
           <div class="mv-chips">${S.done[id] ? `<span class="co-chip lit">${ic("check")} Completed</span>` : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${N?.mcq.length ? `<span class="co-chip">${N.mcq.length} check question${N.mcq.length > 1 ? "s" : ""}</span>` : ""}${N?.cards.length ? `<button data-cards>${ic("cards")} Flashcards (${N.cards.length})</button>` : ""}</div></header>
         ${N && !isReady(u) ? `<p class="co-draft" role="note"><b>Draft.</b> This ${u1} is written but hasn't yet completed content review, source checking and expert sign-off. Use it alongside your course materials and official sources.</p>` : ""}
-        ${N ? `<div class="mv-cols">${lessonHtml(N)}</div>` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
-        ${N?.mcq.length ? `<section class="co-check"><h3>${ic("target")} Check yourself</h3>${N.mcq.map((m, i) => mcqHtml(m, `${id}#${i}`)).join("")}</section>` : ""}
+        ${N ? lessonFrame(N).top : ""}
+        ${N ? `<div class="mv-cols">${lessonHtml(N)}</div>${lessonFrame(N).end}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
+        ${N?.mcq.length || N?.tasks.length ? `<section class="co-check"><h3>${ic("target")} Check yourself</h3>${N.mcq.map((m, i) => mcqHtml(m, `${id}#${i}`)).join("")}${N.tasks.map((q, i) => renderQuestion(q, `${id}#t${i}`)).join("")}</section>` : ""}
         <footer>
           <button class="btn btn-light lg co-complete" ${S.done[id] ? "disabled" : ""}><span>${S.done[id] ? "Completed ✓" : `Complete lesson · +${XP.lesson} XP`}</span></button>
           ${N?.cards.length ? `<button class="btn btn-ghost lg" data-cards><span>${ic("cards")} Flashcards</span></button>` : ""}
@@ -324,6 +327,10 @@ export function mountCourse(root, cfg) {
     </article>`;
     scrollTo(0, 0);
     wireMcq(main);
+    if (N?.tasks.length) wireQuestions(main, (qid) => N.tasks[Number(qid.split("#t")[1])], (q, res, first, box) => {
+      const pid = box.dataset.id;
+      if (first && res.score >= 0.7 && !S.solved[pid]) { S.solved[pid] = Date.now(); save(); award(XP.check, "check", pid); }
+    });
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", () => flashcards(N.cards, l)));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
     main.querySelector(".co-complete").addEventListener("click", async (e) => {
@@ -459,13 +466,16 @@ export function mountCourse(root, cfg) {
   }
 
   // ---------- paths and tracks ----------
-  const unitPct = (n) => { const u = units.find((x) => x.n === n); return u ? unitDone(u) / u.lessons.length : 0; };
+  // the lessons a path covers in a school: the modules it selects, or the whole school
+  const pathLessons = (p, u) => { const pick = p?.select?.[u.n]; return pick ? u.lessons.filter((l) => pick.includes(l.module)) : u.lessons; };
+  const unitPct = (n, p) => { const u = units.find((x) => x.n === n); const ls = u ? pathLessons(p, u) : []; return ls.length ? ls.filter((l) => S.done[l.id]).length / ls.length : 0; };
   function viewPaths() {
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">Paths</span><h2>Choose a route through ${esc(cfg.name)}</h2><p>Each path picks the ${u1}s for one goal, in the order to learn them. Follow one and the Learn page and your next milestone follow it too.</p></div>
-      <div class="co-grid">${cfg.paths.map((p) => { const pct = p.units.reduce((a, n) => a + unitPct(n), 0) / p.units.length, ls = p.units.reduce((a, n) => a + (units.find((u) => u.n === n)?.lessons.length || 0), 0);
+      <div class="co-grid">${cfg.paths.map((p) => { const pct = p.units.reduce((a, n) => a + unitPct(n, p), 0) / p.units.length, ls = p.units.reduce((a, n) => { const u = units.find((x) => x.n === n); return a + (u ? pathLessons(p, u).length : 0); }, 0);
         const t = trackOf(units.find((u) => u.n === p.units[0]));
         return `<div class="co-pcard ${S.path === p.id ? "on" : ""}" style="--a:${t.from};--b:${t.to}"><h3>${esc(p.name)}</h3><p>${esc(p.sub)}</p><small>${p.units.length} ${u1}s · ${ls} lessons · ${Math.round(pct * 100)}% done</small><div class="co-bar"><i style="width:${pct * 100}%"></i></div>
-          <ol>${p.units.map((n) => { const u = units.find((x) => x.n === n); return `<li class="${unitPct(n) === 1 ? "done" : ""}"><a href="#/learn/${u.id}">${esc(u.title)}</a></li>`; }).join("")}</ol>
+          ${p.field ? `<span class="co-chip lit">${esc(p.field)} field</span>` : ""}
+          <ol>${p.units.map((n) => { const u = units.find((x) => x.n === n), pick = p.select?.[n]; return `<li class="${unitPct(n, p) === 1 ? "done" : ""}"><a href="#/learn/${u.id}">${esc(u.title)}</a>${pick ? `<small class="co-pick"> · ${pick.map(esc).join(", ")}</small>` : ""}</li>`; }).join("")}</ol>
           <button class="btn ${S.path === p.id ? "btn-ghost" : "btn-light"} lg btn-sm" data-path="${p.id}"><span>${S.path === p.id ? "Following ✓ (stop)" : "Follow this path"}</span></button></div>`; }).join("")}</div>`;
     main.querySelectorAll("[data-path]").forEach((b) => b.addEventListener("click", () => { S.path = S.path === b.dataset.path ? null : b.dataset.path; save(); if (S.path) { toast(`Following <b>${esc(cfg.paths.find((p) => p.id === S.path).name)}</b>`); go("learn"); } else viewPaths(); paintSide(); }));
   }

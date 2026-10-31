@@ -10,12 +10,21 @@
 //   !: a pitfall, a common mistake
 //   Q: a flashcard, "question | answer"
 //   M: a check question, "question | right answer | wrong | wrong | wrong | why" (M1: easy, M3: hard)
+//   MS: SEQ: MATCH: SA: further question types (multi-select, ordering, matching, short answer):
+//      see kit/assess/questions.js
+// Lesson metadata (optional for older lessons; expected in new ones, see docs/CURRICULUM_CONTENT_STANDARD.md):
+//   O: a learning objective ("By the end of this lesson you can…")
+//   PRE: prerequisite knowledge, ideally a lesson title from the same course
+//   T: a key term, "term | definition"
+//   SUM: a summary point
+//   SAFE: a competence or safety statement, boxed (clinical skills: what this lesson does not authorise)
+//   SRC: a source, "citation | kind | date | link" where kind is legislation, case, rule, guidance,
+//        standard, primary or secondary, and date is the version or the date checked (YYYY-MM or YYYY-MM-DD)
+//   READ: further reading
 // Inline: **bold**, *italic*, `code`, x^{2} and v_{0}.
-export const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
-export const inline = (s) => esc(s)
-  .replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/(^|[^*])\*([^*\s][^*]*?)\*/g, "$1<i>$2</i>")
-  .replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\^\{([^}]*)\}/g, "<sup>$1</sup>").replace(/_\{([^}]*)\}/g, "<sub>$1</sub>");
-export const norm = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+export { esc, inline, norm } from "../core/text.js";
+import { esc, inline } from "../core/text.js";
+import { parseQuestion } from "../assess/questions.js";
 
 export function parseNotes(text) {
   const lessons = [];
@@ -23,11 +32,11 @@ export function parseNotes(text) {
   for (const raw of String(text || "").split("\n")) {
     const line = raw.trim();
     if (!line) { ex = null; continue; }
-    if (line.startsWith("## ")) { L = { title: line.slice(3).trim(), lead: "", blocks: [], cards: [], mcq: [] }; lessons.push(L); ex = null; continue; }
+    if (line.startsWith("## ")) { L = { title: line.slice(3).trim(), lead: "", blocks: [], cards: [], mcq: [], tasks: [], objectives: [], prereq: [], terms: [], summary: [], sources: [], reading: [] }; lessons.push(L); ex = null; continue; }
     if (!L) continue;
     if (line.startsWith("> ") && ex) { ex.steps.push(line.slice(2)); continue; }
     ex = null;
-    const m = line.match(/^(S|H|P|E|X|K|!|Q|M[123]?):\s*(.*)$/);
+    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|M[123]?|MS[123]?|SEQ[123]?|MATCH[123]?|SA[123]?):\s*(.*)$/);
     const [tag, body] = m ? [m[1], m[2]] : line.startsWith("- ") ? ["-", line.slice(2)] : ["P", line];
     const last = L.blocks.at(-1);
     if (tag === "S") L.lead += (L.lead ? " " : "") + body;
@@ -39,10 +48,17 @@ export function parseNotes(text) {
     else if (tag === "K") L.blocks.push({ t: "key", x: body });
     else if (tag === "!") L.blocks.push({ t: "pit", x: body });
     else if (tag === "Q") { const [q, a] = body.split(" | "); if (q && a) L.cards.push([q.trim(), a.trim()]); }
-    else if (tag[0] === "M") {
-      const [q, right, ...rest] = body.split(" | ").map((s) => s.trim());
-      const why = rest.length > 3 ? rest.pop() : "";
-      if (q && right && rest.length) L.mcq.push({ q, right, wrong: rest, why, d: Number(tag[1] || 2) });
+    else if (tag === "O") L.objectives.push(body);
+    else if (tag === "PRE") L.prereq.push(body);
+    else if (tag === "T") { const [t, d] = body.split(" | "); if (t && d) L.terms.push([t.trim(), d.trim()]); }
+    else if (tag === "SUM") L.summary.push(body);
+    else if (tag === "SAFE") L.blocks.push({ t: "safe", x: body });
+    else if (tag === "SRC") { const [cite, kind = "", date = "", url = ""] = body.split(" | ").map((x) => x.trim()); if (cite) L.sources.push({ cite, kind, date, url }); }
+    else if (tag === "READ") L.reading.push(body);
+    else {
+      const Q = parseQuestion(tag, body);
+      if (Q && (Q.type === "sba" || Q.type === "mcq")) L.mcq.push({ q: Q.q, right: Q.right, wrong: Q.wrong, why: Q.why, d: Q.d });
+      else if (Q) L.tasks.push(Q);
     }
   }
   return lessons;
@@ -65,6 +81,7 @@ function block(b) {
   if (b.t === "eq") return `<div class="co-eq">${b.rows.map(([x, n]) => `<div><code>${inline(x)}</code>${n ? `<span>${inline(n)}</span>` : ""}</div>`).join("")}</div>`;
   if (b.t === "ex") return `<div class="co-ex"><b>Worked example</b><p>${inline(b.x)}</p>${b.steps.length ? `<ol>${b.steps.map((s) => `<li>${inline(s)}</li>`).join("")}</ol>` : ""}</div>`;
   if (b.t === "key") return `<p class="mv-key">${inline(b.x)}</p>`;
+  if (b.t === "safe") return `<div class="co-safe"><b>Competence and safety</b>${inline(b.x)}</div>`;
   if (b.t === "pit") return `<div class="mv-clin co-pit"><b>Common mistake</b>${inline(b.x)}</div>`;
   return "";
 }
@@ -80,4 +97,18 @@ export function lessonText(L) {
     else out.push(b.x);
   }
   return out.join("\n").replace(/\*\*|`|\^\{|_\{|\}/g, "");
+}
+
+// the lesson's framing (objectives, prerequisites) and its closing material (summary, key terms,
+// sources with their kind and date, further reading), drawn around the notes
+export function lessonFrame(L) {
+  const top = (L.objectives.length || L.prereq.length) ? `<div class="co-frame">${L.objectives.length ? `<section><h3>By the end of this lesson you can</h3><ul>${L.objectives.map((o) => `<li>${inline(o)}</li>`).join("")}</ul></section>` : ""}${L.prereq.length ? `<section><h3>Before you start</h3><ul>${L.prereq.map((o) => `<li>${inline(o)}</li>`).join("")}</ul></section>` : ""}</div>` : "";
+  const KIND = { legislation: "Legislation", case: "Case law", rule: "Professional rules", guidance: "Guidance", standard: "Standard", primary: "Primary source", secondary: "Secondary source" };
+  const end = [
+    L.summary.length ? `<section><h3>Summary</h3><ul>${L.summary.map((x) => `<li>${inline(x)}</li>`).join("")}</ul></section>` : "",
+    L.terms.length ? `<section><h3>Key terms</h3><dl class="co-terms">${L.terms.map(([t, d]) => `<dt>${inline(t)}</dt><dd>${inline(d)}</dd>`).join("")}</dl></section>` : "",
+    L.sources.length ? `<section><h3>Sources</h3><ul class="co-sources">${L.sources.map((x) => `<li>${x.url && /^https:\/\//.test(x.url) ? `<a href="${esc(x.url)}" rel="noopener" target="_blank">${inline(x.cite)}</a>` : inline(x.cite)}${x.kind ? ` <small>${esc(KIND[x.kind] || x.kind)}${x.date ? ` · ${esc(x.date)}` : ""}</small>` : ""}</li>`).join("")}</ul></section>` : "",
+    L.reading.length ? `<section><h3>Further reading</h3><ul>${L.reading.map((x) => `<li>${inline(x)}</li>`).join("")}</ul></section>` : "",
+  ].join("");
+  return { top, end: end ? `<div class="co-frame co-end">${end}</div>` : "" };
 }

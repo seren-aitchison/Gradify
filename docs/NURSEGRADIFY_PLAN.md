@@ -57,3 +57,15 @@ Every lesson labels which level a rule comes from:
 - **Clinical accuracy.** Mitigation: content standard, sources named (NMC, NICE, Resuscitation Council UK, RCP), dated figures, clinical review by a registered nurse educator before any pathway is promoted.
 - **Implied competence.** Mitigation: the notice on every view, no certificates, safety lines in every procedure and medicines lesson.
 - **Nation differences.** Mitigation: explicit labels, and the IEN pathway.
+
+## Update: full curriculum architecture (Schools 6–17) and field pathways
+
+The full brief arrived. Schools 6–17 are now in the syllabus with modules (497 lessons in 17 schools, 127 modules). Each field school (10–13) has an added module on placement preparation and reflective learning (and, for adult nursing, law and professional considerations), because the brief requires them in every field pathway.
+
+**Four field pathways**, each = the shared core (Schools 1–8 and 17) + the field's own school + selected modules of shared schools:
+- **Adult**: all of Schools 5, 9, 10, 14 and 15.
+- **Children's**: School 11; from School 5 only disease processes and critical illness; from School 9 deterioration, resuscitation and vital functions; from School 14 prevention, community roles and maternal health.
+- **Mental health**: School 12; physical health modules of School 5 relevant to serious mental illness; cognition (School 15).
+- **Learning disability**: School 13; the conditions most relevant to people with learning disabilities (respiratory, neurological, gastrointestinal); public health and inequalities modules of School 14.
+
+**Overlaps to manage when writing:** Schools 8 and 9 revisit topics from Schools 3, 5 and 6 (hand hygiene, PPE, NEWS2, sepsis), and School 17 revisits School 1. Each later school must go deeper or apply rather than repeat: School 6 is the practical skill, School 8 the science and systems, School 9 the acute response, School 17 the law in detail.
