@@ -46,7 +46,7 @@ H: Themes
 K: Registration exists to protect the public: it sets standards and allows unsafe practitioners to be removed.
 Q: What did the Nurses Registration Act 1919 establish? | State registration of nurses through General Nursing Councils.
 Q: When did all new UK nurses start qualifying with a degree? | 2013 (for programmes starting from that year).
-M1: Which body has regulated nurses and midwives in the UK since 2002? | The Nursing and Midwifery Council (NMC) | The General Nursing Council | The UKCC | The Royal College of Nursing | The Care Quality Commission | The NMC replaced the UKCC in 2002.
+M1: Which body has regulated nurses and midwives in the UK since 2002? | The Nursing and Midwifery Council (NMC) | The General Nursing Council | The UKCC | The Royal College of Nursing | The Care Quality Commission | The NMC replaced the UKCC in 2002, under the Nursing and Midwifery Order 2001; the RCN is a professional body and union, and the CQC inspects services.
 M2: Nightingale's work in the Crimea is often cited as an early use of what? | Statistical evidence to change practice | Antibiotic therapy | Nurse prescribing | Electronic records | Clinical audit software | Her mortality data and diagrams showed the effect of sanitation, an early form of evidence-based change.
 
 ## The nursing profession
@@ -185,7 +185,7 @@ P: There is generally no legal duty to help a stranger in an emergency in the UK
 K: A duty of care is not a duty to override someone's decisions. It is a duty to act with reasonable skill and care, including respecting autonomy.
 Q: What are the four elements of negligence? | Duty of care, breach of duty, causation, and harm (damage).
 Q: What is the Bolam test? | A professional is not negligent if they acted in accordance with a practice accepted as proper by a responsible body of professional opinion (subject to Bolitho's logical analysis).
-M1: Which case established that a body of professional opinion must withstand logical analysis? | Bolitho v City and Hackney HA | Bolam v Friern HMC | Donoghue v Stevenson | Montgomery v Lanarkshire | Gillick v West Norfolk AHA | Bolitho qualified the Bolam test.
+M1: Which case established that a body of professional opinion must withstand logical analysis? | Bolitho v City and Hackney HA | Bolam v Friern HMC | Donoghue v Stevenson | Montgomery v Lanarkshire | Gillick v West Norfolk AHA | Bolitho qualified Bolam: a court must be satisfied that the professional opinion relied on has a logical basis, having weighed the risks and benefits.
 M2: A newly qualified nurse attempts a procedure they have not been trained in because the ward is busy, and the patient is harmed. Which statement is correct? | The nurse is judged by the standard of a competent nurse doing that procedure; inexperience is no defence | The nurse is judged as a student | The ward manager is solely liable | There is no breach because the ward was busy | Newly qualified nurses owe no duty of care | Wilsher: the standard attaches to the task undertaken; nurses must work within competence and seek help.
 
 ## Duty of candour
@@ -301,7 +301,7 @@ K: Confidentiality is about trust and the person; data protection is about lawfu
 !: Viewing your own family member's record "just to check" without a care reason is still a breach.
 Q: What is "special category" data? | Sensitive personal data, including health data, that needs extra legal conditions to process.
 Q: Within what time must an organisation report a serious data breach to the ICO? | Within 72 hours of becoming aware of it.
-M1: Which regulator enforces data protection law in the UK? | The Information Commissioner's Office | The NMC | The CQC | The Caldicott Guardian | The Health and Safety Executive | The ICO regulates data protection.
+M1: Which regulator enforces data protection law in the UK? | The Information Commissioner's Office | The NMC | The CQC | The Caldicott Guardian | The Health and Safety Executive | The Information Commissioner's Office enforces the UK GDPR and the Data Protection Act 2018; the NMC regulates registrants and the CQC inspects services.
 M2: A nurse looks up a neighbour's records because she is worried about them, though she isn't involved in their care. What is the correct view? | It is a breach of data protection and confidentiality and may be a criminal offence | It is acceptable because she meant well | It is acceptable if she tells no one | It is acceptable if she is a senior nurse | It is only a problem if the neighbour complains | Access needs a legitimate purpose; good intentions don't make it lawful.
 
 ## Documentation
@@ -347,7 +347,7 @@ H: Records and law
 K: Records belong to the organisation, but the information is about the person, and they have rights over it.
 Q: Give three purposes of health records. | Continuity of care, communication, legal evidence, audit and quality improvement, research (any three).
 Q: Who decides how long records are kept? | Each nation's records management code of practice and local policy, based on legal requirements.
-M1: Who may access a patient's record? | Staff with a legitimate reason related to the person's care or their role | Any staff member employed by the trust | The patient's employer | Any family member | Students on other wards | Access requires a legitimate purpose.
+M1: Who may access a patient's record? | Staff with a legitimate reason related to the person's care or their role | Any staff member employed by the trust | The patient's employer | Any family member | Students on other wards | Records can be accessed only by staff with a legitimate reason related to the person's care or their role; employment by the same organisation is not enough.
 M2: A patient asks to see their own records. What is the best response? | Explain they have a right of access and how to make a request under local procedure | Tell them records belong to the hospital and cannot be seen | Hand over the notes immediately on the ward | Ask the doctor to decide whether they deserve to see them | Tell them to ask a solicitor | People have a right of access (subject access request), handled through the organisation's process.
 
 ## Professional boundaries

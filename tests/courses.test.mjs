@@ -39,7 +39,7 @@ for (const [name, course, dir] of [["law", law, "law"], ["nursing", nursing, "nu
         assert.ok(L.mcq.length >= 2, `${l.title}: check questions`);
         for (const m of L.mcq) {
           assert.ok(m.wrong.length >= 2 && !m.wrong.includes(m.right), `${l.title}: "${m.q}"`);
-          assert.ok(m.why.length > 20, `${l.title}: "${m.q}" explains its answer`);
+          assert.ok(m.why.length > 40, `${l.title}: "${m.q}" explains its answer`);
         }
       }
     }
