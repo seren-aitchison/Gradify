@@ -84,7 +84,11 @@ export function challenges(host, api, list) {
   const paint = () => { box.innerHTML = `<b>Challenges</b><ul>${list.map((c) => `<li class="${done.has(c.id) ? "ok" : ""}">${done.has(c.id) ? "✓" : "○"} ${c.text}</li>`).join("")}</ul>`; };
   paint();
   return {
-    check(state) { for (const c of list) if (!done.has(c.id) && c.test(state)) { done.add(c.id); api?.complete?.(c.id, c.text.replace(/<[^>]+>/g, "")); paint(); } },
+    check(state) {
+      let changed = false;
+      for (const c of list) if (!done.has(c.id) && c.test(state)) { done.add(c.id); changed = true; api?.complete?.(c.id, c.text.replace(/<[^>]+>/g, "")); }
+      if (changed) { paint(); if (done.size === list.length) api?.onComplete?.({ score: 1 }); }
+    },
     done: (id) => done.has(id),
   };
 }
@@ -132,3 +136,31 @@ export function seeded(s = 1) { return () => ((s = (s * 1664525 + 1013904223) >>
 
 // a simple info panel that updates its HTML
 export function panel(host, cls = "lab-info") { const d = document.createElement("div"); d.className = cls; host.append(d); return (html) => { d.innerHTML = html; }; }
+
+// a few questions inside a lab, each a challenge: { id, q, options: [...], answer (index), why }
+export function quiz(host, ctx, items, title = "Check your understanding") {
+  const box = document.createElement("div"); box.className = "lab-ch lab-quiz"; host.append(box);
+  const done = new Set(items.filter((x) => ctx?.solved?.(x.id)).map((x) => x.id));
+  const paint = () => {
+    box.innerHTML = `<b>${title}</b>${items.map((x, i) => `<div class="lab-qz" data-i="${i}"><p>${x.q}</p><div class="lab-chips">${x.options.map((o, j) => `<button type="button" data-j="${j}" class="${done.has(x.id) && j === x.answer ? "ok" : ""}">${o}</button>`).join("")}</div><p class="lab-msg ${done.has(x.id) ? "ok" : ""}">${done.has(x.id) ? x.why : ""}</p></div>`).join("")}`;
+  };
+  paint();
+  box.addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-j]"); if (!b) return;
+    const wrap = b.closest(".lab-qz"), x = items[Number(wrap.dataset.i)], j = Number(b.dataset.j), msg = wrap.querySelector(".lab-msg");
+    if (j === x.answer) { b.classList.add("ok"); msg.className = "lab-msg ok"; msg.innerHTML = x.why; if (!done.has(x.id)) { done.add(x.id); ctx?.complete?.(x.id, x.q.replace(/<[^>]+>/g, "").slice(0, 60)); if (done.size === items.length) ctx?.onComplete?.({ score: 1 }); } }
+    else { b.classList.add("no"); msg.className = "lab-msg no"; msg.textContent = "Not quite: look again at the model and try another answer."; }
+  });
+  return { done: (id) => done.has(id) };
+}
+
+// statistics: the regularised lower incomplete gamma function and the chi-squared upper-tail p-value
+function gammaln(x) { const c = [76.18009172947146, -86.50532032941677, 24.01409824083091, -1.231739572450155, 0.1208650973866179e-2, -0.5395239384953e-5]; let y = x, tmp = x + 5.5; tmp -= (x + 0.5) * Math.log(tmp); let ser = 1.000000000190015; for (const v of c) ser += v / ++y; return -tmp + Math.log((2.5066282746310005 * ser) / x); }
+export function gammaP(a, x) {
+  if (x <= 0) return 0;
+  if (x < a + 1) { let sum = 1 / a, del = sum, ap = a; for (let n = 0; n < 500; n++) { ap++; del *= x / ap; sum += del; if (Math.abs(del) < Math.abs(sum) * 1e-12) break; } return sum * Math.exp(-x + a * Math.log(x) - gammaln(a)); }
+  let b = x + 1 - a, c = 1e300, d = 1 / b, h = d;
+  for (let i = 1; i < 500; i++) { const an = -i * (i - a); b += 2; d = an * d + b; if (Math.abs(d) < 1e-300) d = 1e-300; c = b + an / c; if (Math.abs(c) < 1e-300) c = 1e-300; d = 1 / d; const del = d * c; h *= del; if (Math.abs(del - 1) < 1e-12) break; }
+  return 1 - Math.exp(-x + a * Math.log(x) - gammaln(a)) * h;
+}
+export const chiSquareP = (x2, df) => 1 - gammaP(df / 2, x2 / 2);

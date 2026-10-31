@@ -42,3 +42,8 @@
 .lab-svg { width: 100%; height: auto; display: block; border-radius: 14px; background: #0b0c0e; border: 1px solid var(--line); }
 .lab-svg .hot { cursor: pointer; transition: filter .15s; } .lab-svg .hot:hover, .lab-svg .hot.sel { filter: brightness(1.35) drop-shadow(0 0 6px rgba(255, 255, 255, .5)); }
 @media (max-width: 760px) { .lab-cols { grid-template-columns: 1fr; } .lab-sl { grid-template-columns: 1fr minmax(56px, auto); } .lab-sl span { grid-column: 1 / -1; } }
+.lab-quiz .lab-qz { margin-top: 10px; } .lab-quiz .lab-qz p { margin: 0 0 6px; }
+.lab-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--mute); }
+.lab-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+.pq-h, .pq-c { display: flex; align-items: center; justify-content: center; min-height: 42px; border-radius: 8px; font: 600 14px var(--mono); }
+.pq-h { color: var(--mute); background: rgba(255, 255, 255, .04); } .pq-c { color: #fff; border: 1px solid var(--line); }
