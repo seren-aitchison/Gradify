@@ -33,6 +33,22 @@ The user's body in 3D, coloured by their own training data. It uses the existing
   - fitness tests (10 types)
   - workout history with delete, and JSON export
 
+## Layers
+
+Every mesh in the figure has exactly one classification in the view's layer registry (`kit/sport/body-view.js`), and each toggle only changes the visibility of its own meshes:
+
+| Layer | Meshes |
+|---|---|
+| **Muscles** | The 34 tracked muscle-group meshes, split into individual muscles (92 meshes in all), plus untracked hand, foot and intercostal muscles |
+| **Skeleton** | The 28 bones, including the skull, mandible and teeth |
+| **Head** | The skin surface above the jaw, opaque and neutral. The anatomy model has no head or face muscles (its head is only the skull, organs and skin), so without this layer the muscle figure is headless whenever the skeleton is hidden |
+| **Heart & lungs** | Heart and both lungs. Inside the body, so they're only visible with X-ray on or with muscles hidden |
+| **Skin** | The full translucent skin surface |
+
+**X-ray** is a separate setting that makes muscles and bones see-through; it changes nothing else. Fitness mode turns on Heart & lungs and X-ray together, with both boxes visibly ticked.
+
+**Bug fixed (31 October 2026):** "Heart & lungs" used to switch on x-ray as a side effect, making every muscle and bone see-through. That was one toggle changing other layers' materials. `scripts/check-body-layers.cjs` now checks all 32 layer combinations in a real browser.
+
 ## Individual muscles (added 31 October 2026)
 
 - **What it is:** turn on **Individual muscles**, or pick one from a muscle's panel, to tap and colour single muscles, such as rectus femoris, the biceps femoris short head, the lateral deltoid, the upper trapezius, supraspinatus or the gluteus medius.
