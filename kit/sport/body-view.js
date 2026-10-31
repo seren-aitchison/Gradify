@@ -133,9 +133,22 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
   // ---------- the model ----------
   const { byKey } = await loadAnatomy();
   const body = new THREE.Group(); scene.add(body);
-  const layers = { skeleton: new THREE.Group(), organs: new THREE.Group(), skin: new THREE.Group(), extra: new THREE.Group() };
-  for (const g of Object.values(layers)) body.add(g);
-  layers.organs.visible = false; layers.skin.visible = false;
+  // Layer registry. Every mesh gets exactly one anatomical classification (userData.layer) and
+  // visibility is applied per mesh from that classification, never by hiding parent groups, so a
+  // toggle can only ever affect meshes of its own layer. X-ray is a separate, explicit setting that
+  // only changes the opacity of muscle and bone; no layer toggle changes another layer's materials.
+  //   muscles  · the 34 tracked muscle-group meshes (split into individual muscles) + untracked
+  //              muscles (hands, feet, intercostals)
+  //   skeleton · the 28 bones, including the skull, mandible and teeth
+  //   organs   · heart and lungs
+  //   skin     · the full translucent skin surface
+  //   head     · the skin surface above the jaw, opaque and neutral. The model has no head or face
+  //              muscles (its only head structures are the skull, organs and skin), so without this
+  //              the muscle figure would be headless whenever the skeleton is hidden.
+  const LAYERS = ["muscles", "skeleton", "organs", "skin", "head"];
+  const shown = { muscles: true, skeleton: true, organs: false, skin: false, head: true };
+  const registry = [];   // every mesh in the figure, each with userData.layer
+  const register = (mesh, layer) => { mesh.userData.layer = layer; registry.push(mesh); body.add(mesh); return mesh; };
   const meshes = {}, pickables = [], partsOf = {};
   for (const k of ALL_KEYS) for (const src of take(byKey, k)) {
     const group = muscleOfKey(k), split = splitParts(src, group);
@@ -143,18 +156,41 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
       const mesh = new THREE.Mesh(geometry, muscleMat()); mesh.position.copy(src.position);
       mesh.castShadow = mesh.receiveShadow = true;
       mesh.userData = { key: k, muscle: group, part, pkey: part ? `${k}.${part}` : null };
-      (meshes[k] ||= []).push(mesh); pickables.push(mesh); body.add(mesh);
+      (meshes[k] ||= []).push(mesh); pickables.push(mesh); register(mesh, "muscles");
       if (part) (partsOf[group] ||= new Set()).add(part);
     }
   }
-  // muscles the heat map doesn't track: hands, feet, the ribs' intercostals
+  // muscles the heat map doesn't track: hands, feet, the ribs' intercostals (same layer, not pickable)
   const neutral = muscleMat(); neutral.color.copy(NO_DATA);
-  for (const k of ["hand_muscles_l", "hand_muscles_r", "foot_muscles_l", "foot_muscles_r", "intercostals_l", "intercostals_r"]) for (const mesh of take(byKey, k)) { mesh.material = neutral; mesh.castShadow = true; layers.extra.add(mesh); }
-  for (const k of ["skull", "mandible", "spine_cervical", "spine_thoracic", "spine_lumbar", "ribs_l", "ribs_r", "sternum", "pelvis", "clavicle_l", "clavicle_r", "scapula_l", "scapula_r", "humerus_l", "humerus_r", "forearm_l", "forearm_r", "hand_l", "hand_r", "femur_l", "femur_r", "patella_l", "patella_r", "lower_leg_l", "lower_leg_r", "foot_l", "foot_r", "teeth"]) for (const mesh of take(byKey, k)) { mesh.material = boneMat; mesh.castShadow = true; layers.skeleton.add(mesh); }
+  for (const k of ["hand_muscles_l", "hand_muscles_r", "foot_muscles_l", "foot_muscles_r", "intercostals_l", "intercostals_r"]) for (const mesh of take(byKey, k)) { mesh.material = neutral; mesh.castShadow = true; mesh.userData = { key: k }; register(mesh, "muscles"); }
+  const SKELETON = ["skull", "mandible", "teeth", "spine_cervical", "spine_thoracic", "spine_lumbar", "ribs_l", "ribs_r", "sternum", "pelvis", "clavicle_l", "clavicle_r", "scapula_l", "scapula_r", "humerus_l", "humerus_r", "forearm_l", "forearm_r", "hand_l", "hand_r", "femur_l", "femur_r", "patella_l", "patella_r", "lower_leg_l", "lower_leg_r", "foot_l", "foot_r"];
+  for (const k of SKELETON) for (const mesh of take(byKey, k)) { mesh.material = boneMat; mesh.castShadow = true; mesh.userData = { key: k }; register(mesh, "skeleton"); }
   const organs = {};
-  for (const [k, c] of [["heart", "#a3262a"], ["lung_l", "#d98f8a"], ["lung_r", "#d98f8a"]]) for (const mesh of take(byKey, k)) { mesh.material = organMat(c); mesh.userData = { key: k, organ: k.startsWith("lung") ? "lung" : "heart", base: new THREE.Color(c) }; (organs[k] ||= []).push(mesh); layers.organs.add(mesh); }
+  for (const [k, c] of [["heart", "#a3262a"], ["lung_l", "#d98f8a"], ["lung_r", "#d98f8a"]]) for (const mesh of take(byKey, k)) { mesh.material = organMat(c); mesh.userData = { key: k, organ: k.startsWith("lung") ? "lung" : "heart", base: new THREE.Color(c) }; (organs[k] ||= []).push(mesh); register(mesh, "organs"); }
   const skinMat = new THREE.MeshPhysicalMaterial({ color: "#d4a184", roughness: 0.55, sheen: 0.7, sheenColor: new THREE.Color("#ffd6c2"), transparent: true, opacity: 0.22, depthWrite: false });
-  for (const mesh of take(byKey, "skin").map((m) => inflate(m))) { mesh.material = skinMat; mesh.renderOrder = 3; layers.skin.add(mesh); }
+  const skinMeshes = take(byKey, "skin").map((m) => inflate(m));
+  for (const mesh of skinMeshes) { mesh.material = skinMat; mesh.renderOrder = 3; mesh.userData = { key: "skin" }; register(mesh, "skin"); }
+  // the head surface: the same skin geometry, kept only above the jaw (discarded below in the shader)
+  const jaw = new THREE.Box3(); for (const m of take(byKey, "mandible")) jaw.expandByObject(m);
+  const headCut = { value: jaw.isEmpty() ? 1.55 : jaw.min.y - 0.015 };
+  const headMat = new THREE.MeshPhysicalMaterial({ color: "#7d7471", roughness: 0.62, clearcoat: 0.08, sheen: 0.2, sheenColor: new THREE.Color("#e8d6cc") });
+  headMat.onBeforeCompile = (sh) => {
+    sh.uniforms.uCut = headCut;
+    sh.vertexShader = sh.vertexShader.replace("void main() {", "varying float vWY;\nvoid main() {").replace("#include <project_vertex>", "#include <project_vertex>\n  vWY = (modelMatrix * vec4(transformed, 1.0)).y;");
+    sh.fragmentShader = sh.fragmentShader.replace("void main() {", "uniform float uCut; varying float vWY;\nvoid main() {\n  if (vWY < uCut) discard;");
+  };
+  headMat.customProgramCacheKey = () => "bi-head-surface";
+  for (const src of skinMeshes) { const mesh = new THREE.Mesh(src.geometry, headMat); mesh.position.copy(src.position); mesh.castShadow = true; mesh.receiveShadow = true; mesh.userData = { key: "head" }; register(mesh, "head"); }
+
+  // apply visibility and x-ray from the registry; each mesh depends only on its own layer
+  function applyLayers() {
+    for (const mesh of registry) mesh.visible = shown[mesh.userData.layer];
+    const xr = state.xray;
+    for (const mat of [boneMat, neutral]) if (mat.transparent !== xr) { mat.transparent = xr; mat.depthWrite = !xr; mat.needsUpdate = true; }
+    boneMat.opacity = xr ? 0.25 : 1; neutral.opacity = xr ? 0.35 : 1;
+    // transparent surfaces don't cast shadows (a see-through muscle shouldn't shade the organs)
+    for (const mesh of registry) if (mesh.userData.layer === "muscles" || mesh.userData.layer === "skeleton") mesh.castShadow = !xr;
+  }
 
   // ---------- painting ----------
   const state = { colours: {}, organColours: {}, partColours: {}, selected: null, selPart: null, hovered: null, hovPart: null, preview: null, xray: false, detail: false };
@@ -178,7 +214,7 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
       mat.emissive.copy(dim ? glow.clone().multiplyScalar(0.3) : sel ? glow.clone().add(WHITE.clone().multiplyScalar(0.12)) : hov ? glow.clone().add(WHITE.clone().multiplyScalar(0.08)) : glow);
       mat.userData.rim.value.set("#8a96ad").multiplyScalar(dim ? 0.08 : sel ? 0.5 : 0.22);
       if (mat.transparent !== state.xray) { mat.transparent = state.xray; mat.depthWrite = !state.xray; mat.needsUpdate = true; }   // switching transparency needs a shader recompile
-      mat.opacity = state.xray ? 0.22 : 1;
+      mat.opacity = state.xray ? 0.35 : 1;
     }
     for (const [k, list] of Object.entries(organs)) {
       const c = state.organColours[k];
@@ -188,7 +224,7 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
     for (const o of outlines.splice(0)) o.removeFromParent();
     if (state.selected && !state.xray) for (const list of Object.values(meshes)) for (const mesh of list) if (isSel(mesh.userData)) { const o = new THREE.Mesh(mesh.geometry, outlineMat); o.position.copy(mesh.position); o.renderOrder = -1; body.add(o); outlines.push(o); }
   }
-  refresh();
+  refresh(); applyLayers();
 
   // ---------- picking ----------
   const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
@@ -196,7 +232,8 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
     const r = canvas.getBoundingClientRect();
     ndc.set(((x - r.left) / r.width) * 2 - 1, -((y - r.top) / r.height) * 2 + 1);
     ray.setFromCamera(ndc, camera);
-    const targets = state.xray ? [...pickables, ...layers.organs.children] : pickables;
+    // only meshes that are visible can be picked; organs only when nothing opaque covers them
+    const targets = [...pickables.filter((m) => m.visible), ...((state.xray || !shown.muscles) && shown.organs ? Object.values(organs).flat() : [])];
     return ray.intersectObjects(targets, false)[0] || null;
   }
   const label = (ud) => (ud.organ ? (ud.organ === "heart" ? "Heart" : "Lungs") : state.detail && ud.part ? partName(ud.muscle, ud.part) : MUSCLES[ud.muscle].name);
@@ -283,14 +320,18 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
     detail(on) { state.detail = on; if (!on) state.selPart = null; refresh(); },
     parts: (m) => [...(partsOf[m] || [])],
     layer(name, on) {
-      if (name === "organs") { layers.organs.visible = on; state.xray = on; for (const mat of [boneMat, neutral]) { mat.transparent = on; mat.opacity = on ? 0.15 : 1; mat.depthWrite = !on; mat.needsUpdate = true; } refresh(); }   // x-ray: muscles and bones go see-through so the heart and lungs show
-      else if (layers[name]) layers[name].visible = on;
+      if (name === "xray") { state.xray = on; refresh(); applyLayers(); return; }
+      if (!LAYERS.includes(name)) return;
+      shown[name] = on;
+      if (name === "muscles" && !on) { state.selected = null; state.selPart = null; refresh(); }   // can't keep a hidden muscle selected
+      applyLayers();
     },
+    layers: () => ({ ...shown, xray: state.xray }),
     view(name) { flyTo(viewPos(name === "reset" ? "front" : name), TARGET); },
     zoom(f) { const d = camera.position.clone().sub(controls.target); d.setLength(THREE.MathUtils.clamp(d.length() * f, controls.minDistance, controls.maxDistance)); flyTo(controls.target.clone().add(d), controls.target.clone()); },
     spin(on) { controls.autoRotate = on && !reduce; },
     focus: focusSelection,
     // for tests and screenshots
-    _debug: { meshes, camera, controls, state },
+    _debug: { meshes, camera, controls, state, registry, shown, renderer, scene, render: () => renderer.render(scene, camera) },
   };
 }

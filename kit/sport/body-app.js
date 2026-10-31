@@ -36,9 +36,12 @@ export async function startBodyApp(root) {
       <div class="bi-views" role="group" aria-label="Views">${["front", "back", "left", "right"].map((v) => `<button type="button" data-view="${v}">${v[0].toUpperCase() + v.slice(1)}</button>`).join("")}</div>
       <div class="bi-legend"><p class="bi-legend-label"></p><div class="bi-ramp"></div><div class="bi-ticks"></div></div>
       <details class="bi-layers"${innerWidth > 700 ? " open" : ""}><summary>Layers</summary>
+        <label><input type="checkbox" data-layer="muscles" checked> Muscles</label>
         <label><input type="checkbox" data-layer="skeleton" checked> Skeleton</label>
+        <label title="The skin surface of the head: the anatomy model has no head muscles"><input type="checkbox" data-layer="head" checked> Head</label>
         <label><input type="checkbox" data-layer="organs"> Heart &amp; lungs</label>
         <label><input type="checkbox" data-layer="skin"> Skin</label>
+        <label title="See-through muscles and bones"><input type="checkbox" data-layer="xray"> X-ray</label>
         <label><input type="checkbox" data-detail> Individual muscles</label>
         <label><input type="checkbox" data-spin> Turn</label>
       </details>
@@ -281,7 +284,7 @@ export async function startBodyApp(root) {
 
   root.addEventListener("click", async (e) => {
     const b = e.target.closest("button"); if (!b) return;
-    if (b.dataset.mode) { ui.mode = b.dataset.mode; $$(".bi-modes button").forEach((x) => x.setAttribute("aria-selected", String(x === b))); if (ui.mode === "fitness") { const box = $('[data-layer="organs"]'); if (!box.checked && data.tests.some((t) => TESTS[t.test]?.organs)) { box.checked = true; view?.layer("organs", true); } } if (ui.preview) { ui.preview = null; renderEx(); } repaint(); }
+    if (b.dataset.mode) { ui.mode = b.dataset.mode; $$(".bi-modes button").forEach((x) => x.setAttribute("aria-selected", String(x === b))); if (ui.mode === "fitness" && data.tests.some((t) => TESTS[t.test]?.organs)) { for (const l of ["organs", "xray"]) { const box = $(`[data-layer="${l}"]`); if (!box.checked) { box.checked = true; view?.layer(l, true); } } } /* show the heart and lungs: both toggles visibly ticked */ if (ui.preview) { ui.preview = null; renderEx(); } repaint(); }
     else if (b.dataset.zoom) view?.zoom(Number(b.dataset.zoom));
     else if (b.dataset.view) view?.view(b.dataset.view);
     else if (b.dataset.tab) openTab(b.dataset.tab);
