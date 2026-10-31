@@ -176,7 +176,8 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
       mat.color.copy(dim ? col.clone().lerp(NO_DATA, 0.5).multiplyScalar(0.45) : col);
       mat.emissive.copy(dim ? glow.clone().multiplyScalar(0.3) : sel ? glow.clone().add(WHITE.clone().multiplyScalar(0.12)) : hov ? glow.clone().add(WHITE.clone().multiplyScalar(0.08)) : glow);
       mat.userData.rim.value.set("#8a96ad").multiplyScalar(dim ? 0.08 : sel ? 0.5 : 0.22);
-      mat.transparent = state.xray; mat.opacity = state.xray ? 0.28 : 1; mat.depthWrite = !state.xray;
+      if (mat.transparent !== state.xray) { mat.transparent = state.xray; mat.depthWrite = !state.xray; mat.needsUpdate = true; }   // switching transparency needs a shader recompile
+      mat.opacity = state.xray ? 0.22 : 1;
     }
     for (const [k, list] of Object.entries(organs)) {
       const c = state.organColours[k];
@@ -281,7 +282,7 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
     detail(on) { state.detail = on; if (!on) state.selPart = null; refresh(); },
     parts: (m) => [...(partsOf[m] || [])],
     layer(name, on) {
-      if (name === "organs") { layers.organs.visible = on; state.xray = on; for (const mat of [boneMat, neutral]) { mat.transparent = on; mat.opacity = on ? 0.18 : 1; mat.depthWrite = !on; } refresh(); }   // x-ray: muscles and bones go see-through so the heart and lungs show
+      if (name === "organs") { layers.organs.visible = on; state.xray = on; for (const mat of [boneMat, neutral]) { mat.transparent = on; mat.opacity = on ? 0.15 : 1; mat.depthWrite = !on; mat.needsUpdate = true; } refresh(); }   // x-ray: muscles and bones go see-through so the heart and lungs show
       else if (layers[name]) layers[name].visible = on;
     },
     view(name) { flyTo(viewPos(name === "reset" ? "front" : name), TARGET); },
