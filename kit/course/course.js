@@ -14,6 +14,7 @@ import { LocalStore, CloudStore, scopeToSite } from "../data/store.js";
 import { roadDefs, car } from "./road.js";
 import { parseNotes, lessonHtml, lessonText, lessonFrame, esc, inline, norm } from "./notes.js";
 import { renderQuestion, wireQuestions } from "../assess/questions.js";
+import { buildExam, runExam, FORMATS } from "../assess/exam.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -74,7 +75,7 @@ export function mountCourse(root, cfg) {
   const byId = Object.fromEntries(lessons.map((l) => [l.id, l]));
   const trackOf = (u) => cfg.tracks.find((t) => t.units.includes(u.n)) || cfg.tracks[0];
   let S = (() => { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { return null; } })() || {};
-  S = { done: {}, chests: {}, quiz: {}, solved: {}, cards: {}, log: [], goal: 30, path: null, open: [], closed: [], weekly: {}, saved: {}, ...S };
+  S = { done: {}, chests: {}, quiz: {}, solved: {}, cards: {}, log: [], goal: 30, path: null, open: [], closed: [], weekly: {}, saved: {}, mocks: {}, ...S };
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch { /* private mode: progress lasts this visit */ } };
 
   // the learner's Gradify account (this device, or their cloud account when signed in)
@@ -162,7 +163,9 @@ export function mountCourse(root, cfg) {
   }
 
   // ---------- layout ----------
-  const VIEWS = [["learn", "Learn"], ["review", "Review"], ["paths", "Paths"], ["tracks", "Tracks"], ["problems", "Problems"], ["leaderboard", "Leaderboard"], ["me", "My progress"], ["features", "Features"]];
+  const VIEWS = [["learn", "Learn"], ["review", "Review"], ["paths", "Paths"], ["tracks", "Tracks"], ["problems", "Problems"],
+    ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", "Practice"]] : []),
+    ["leaderboard", "Leaderboard"], ["me", "My progress"], ["features", "Features"]];
   roadDefs();
   root.classList.add("co");
   root.innerHTML = `
@@ -567,13 +570,65 @@ export function mountCourse(root, cfg) {
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">Features</span><h2>Everything in ${esc(cfg.name)}</h2></div><div class="co-feats">${f.map(([t, d, href]) => `<${href ? `a href="${href}"` : "div"} class="co-feat"><b>${t}</b><p>${d}</p></${href ? "a" : "div"}>`).join("")}</div>`;
   }
 
+  // ---------- mock exams (kit/assess/exam.js) ----------
+  // the question pool for a set of schools (respecting a path's module selection), from written notes only
+  async function examPool(unitNs, path) {
+    const out = [];
+    for (const n of unitNs) {
+      const u = units.find((x) => x.n === n); if (!u || (cfg.written && !cfg.written.includes(u.id))) continue;
+      const N = await unitNotes(u), ls = path ? pathLessons(path, u) : u.lessons;
+      for (const l of ls) {
+        const L = N[l.id]; if (!L) continue;
+        const group = l.module ? `${u.id}:${l.module}` : u.id, groupLabel = l.module ? `${U} ${u.n}: ${l.module}` : `${U} ${u.n}: ${u.title}`, link = `#/lesson/${l.id}`;
+        L.mcq.forEach((m, i) => out.push({ Q: { type: m.wrong.length >= 4 ? "sba" : "mcq", ...m }, id: `${l.id}#${i}`, group, groupLabel, link }));
+        L.tasks.forEach((q, i) => out.push({ Q: q, id: `${l.id}#t${i}`, group, groupLabel, link }));
+      }
+    }
+    return out;
+  }
+  async function viewExams() {
+    const exams = cfg.exams;
+    const rows = await Promise.all(exams.map(async (e) => { const p = e.path && cfg.paths.find((x) => x.id === e.path); const pool = await examPool(e.units || p?.units || [], p); return { e, n: buildExam(pool, e, 1).length }; }));
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Exams</span><h2>Mock exams</h2><p>Timed practice exams drawn from the written ${u1}s, marked at the end with every answer explained and your weak areas identified. They're for practice: pass marks here are practice thresholds, not official ones.</p></div>
+      <div class="co-grid">${rows.map(({ e, n }) => { const hist = S.mocks[e.id] || [], best = hist.length ? Math.max(...hist.map((h) => h.score)) : null;
+        return `<div class="co-pcard"><h3>${esc(e.title)}</h3><p>${esc(e.sub || "")}</p><small>${FORMATS[e.format || "mixed"].label} · ${Math.min(e.count, n)} questions · ${e.minutes} minutes · practice pass mark ${Math.round((e.pass ?? 0.6) * 100)}%${best !== null ? ` · best ${Math.round(best * 100)}%` : ""}</small>
+        ${n ? `<a class="btn btn-light lg btn-sm" href="#/exam/${e.id}"><span>Start exam</span></a>` : `<p class="co-empty">Opens when the ${u1}s it covers have notes.</p>`}
+        ${hist.length ? `<details><summary>Past attempts (${hist.length})</summary><ul>${hist.slice(-5).reverse().map((h) => `<li>${new Date(h.t).toLocaleDateString()}: ${Math.round(h.score * 100)}%${h.pass ? " · passed" : ""}</li>`).join("")}</ul></details>` : ""}</div>`; }).join("")}</div>`;
+  }
+  async function viewExam(id) {
+    const e = cfg.exams?.find((x) => x.id === id); if (!e) return go("exams");
+    const p = e.path && cfg.paths.find((x) => x.id === e.path);
+    const items = buildExam(await examPool(e.units || p?.units || [], p), e);
+    if (!items.length) return go("exams");
+    side.hidden = true; root.querySelector(".co-body").classList.add("wide");
+    runExam(main, { ...e, minutes: e.minutes }, items, (summary, again) => {
+      if (again) return viewExam(id);
+      (S.mocks[e.id] ||= []).push(summary); save();
+      if (summary.pass) award(XP.quiz, "mock", e.id, `${cfg.name}: ${e.title} ${Math.round(summary.score * 100)}%`);
+    });
+  }
+
+  // ---------- practice: subject interactives (kit/interactive/) ----------
+  async function viewPractice(id) {
+    const list = cfg.interactives;
+    if (!id) {
+      main.innerHTML = `<div class="co-intro"><span class="co-kicker">Practice</span><h2>Interactive practice</h2><p>${esc(cfg.practiceNote || "Work through scenarios and exercises that apply what you've learned.")}</p></div>
+        <div class="co-grid">${list.map((x) => `<a class="co-pcard" href="#/practice/${x.id}"><h3>${esc(x.title)}</h3><p>${esc(x.sub)}</p><small>${esc(x.kind)}${x.schools ? ` · ${U} ${x.schools.join(", ")}` : ""}</small></a>`).join("")}</div>`;
+      return;
+    }
+    const x = list.find((y) => y.id === id); if (!x) return go("practice");
+    main.innerHTML = `<div class="co-crumbs"><a href="#/practice">← Practice</a><span>${esc(x.kind)}</span></div><div class="co-panel co-ix"></div>`;
+    const mod = await x.load();
+    mod.mount(main.querySelector(".co-ix"), { ...x, onComplete: (r) => { const k = `ix:${x.id}`; if (!S.solved[k] && r?.score >= 0.7) { S.solved[k] = Date.now(); save(); award(XP.quiz, "practice", x.id, `${cfg.name}: ${x.title}`); } } });
+  }
+
   // ---------- router ----------
   const go = (h) => { location.hash = `#/${h}`; };
   async function route() {
     const [v = "learn", arg] = location.hash.replace(/^#\/?/, "").split("/");
-    const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz"].includes(v) ? v : "learn";
-    root.querySelectorAll(".co-tabs a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === (view === "lesson" || view === "quiz" ? "learn" : view)));
-    const wide = ["me", "features", "leaderboard", "tracks", "paths"].includes(view);
+    const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam"].includes(v) ? v : "learn";
+    root.querySelectorAll(".co-tabs a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === (view === "lesson" || view === "quiz" ? "learn" : view === "exam" ? "exams" : view)));
+    const wide = ["me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice"].includes(view);
     side.hidden = wide; root.querySelector(".co-body").classList.toggle("wide", wide);
     if (view !== "learn") scrollTo(0, 0);
     if (view === "learn") { if (arg) openUnit(arg); viewLearn(arg); }
@@ -583,6 +638,9 @@ export function mountCourse(root, cfg) {
     else if (view === "paths") viewPaths();
     else if (view === "tracks") viewTracks();
     else if (view === "problems") await viewProblems();
+    else if (view === "exams") await viewExams();
+    else if (view === "exam") await viewExam(arg);
+    else if (view === "practice") await viewPractice(arg);
     else if (view === "leaderboard") viewLeaderboard();
     else if (view === "me") await viewMe();
     else viewFeatures();

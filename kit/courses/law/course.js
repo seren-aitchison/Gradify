@@ -11,6 +11,14 @@ export default {
   qa: QA,
   // shown under the title on every page of the course
   notice: "<b>Study material, not legal advice.</b> The law is stated for England and Wales unless a lesson says otherwise; Scotland and Northern Ireland differ (School 17). Completing a LawGradify course is not a legal qualification and does not authorise you to practise. Law changes: check current sources before you rely on anything here.",
+  // mock exams (kit/assess/exam.js): drawn from written schools only; pass marks are practice thresholds,
+  // not the SRA's (which are set for each sitting)
+  exams: [
+    { id: "flk1-short", title: "SQE1 FLK1 practice: 45 questions", sub: "Single best answer questions from the FLK1 schools, timed at the SQE1 pace of about 1.7 minutes a question.", path: "sqe1-flk1", format: "sba", count: 45, minutes: 77, pass: 0.6 },
+    { id: "flk1-full", title: "SQE1 FLK1 practice: full paper length", sub: "90 questions in 153 minutes, the length of one SQE1 session.", path: "sqe1-flk1", format: "sba", count: 90, minutes: 153, pass: 0.6 },
+    { id: "flk2-short", title: "SQE1 FLK2 practice: 45 questions", sub: "Single best answer questions from the FLK2 schools.", path: "sqe1-flk2", format: "sba", count: 45, minutes: 77, pass: 0.6 },
+    { id: "obligations", title: "Contract and tort", sub: "Mixed questions on the law of obligations, for LLB and GDL revision.", units: [3, 4], format: "mixed", count: 30, minutes: 50, pass: 0.6 },
+  ],
   // the schools whose notes are written so far (tests/courses.test.mjs checks this matches notes/)
   written: ["u01", "u03", "u04", "u15", "u17", "u18", "u19"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),

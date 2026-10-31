@@ -54,7 +54,7 @@ const DIFF = ["", "Easy", "Medium", "Hard"];
 export function renderQuestion(Q, id, { mode = "practice" } = {}) {
   const r = seeded(id), head = `<p class="aq-q">${inline(Q.q)}<small>${TYPES[Q.type].label} · ${DIFF[Q.d]}</small></p>`;
   const why = Q.why ? `<p class="aq-why" hidden>${inline(Q.why)}</p>` : "";
-  const wrap = (body, extra = "") => `<div class="aq aq-${Q.type}" data-id="${esc(id)}" data-mode="${mode}">${head}${body}${extra}<div class="aq-result" role="status" aria-live="polite"></div>${why}</div>`;
+  const wrap = (body, extra = "") => `<div class="aq aq-type-${Q.type}" data-id="${esc(id)}" data-mode="${mode}">${head}${body}${extra}<div class="aq-result" role="status" aria-live="polite"></div>${why}</div>`;
   if (Q.type === "sba" || Q.type === "mcq") {
     const opts = shuffle([Q.right, ...Q.wrong], r);
     return wrap(`<div class="aq-opts">${opts.map((o) => `<button type="button" data-v="${esc(o)}">${inline(o)}</button>`).join("")}</div>`);
@@ -65,7 +65,7 @@ export function renderQuestion(Q, id, { mode = "practice" } = {}) {
   }
   if (Q.type === "order") {
     let opts = shuffle(Q.steps, r); if (opts.every((s, i) => s === Q.steps[i])) opts = [...opts.slice(1), opts[0]];
-    return wrap(`<ol class="aq-order">${opts.map((o) => `<li data-v="${esc(o)}"><span>${inline(o)}</span><button type="button" data-up aria-label="Move up">↑</button><button type="button" data-down aria-label="Move down">↓</button></li>`).join("")}</ol>`, `<button type="button" class="btn btn-ghost lg btn-sm aq-submit"><span>Check order</span></button>`);
+    return wrap(`<ol class="aq-steps">${opts.map((o) => `<li data-v="${esc(o)}"><span>${inline(o)}</span><button type="button" data-up aria-label="Move up">↑</button><button type="button" data-down aria-label="Move down">↓</button></li>`).join("")}</ol>`, `<button type="button" class="btn btn-ghost lg btn-sm aq-submit"><span>Check order</span></button>`);
   }
   if (Q.type === "match") {
     const rights = shuffle(Q.pairs.map((p) => p[1]), r);
@@ -117,7 +117,7 @@ export function wireQuestions(el, lookup, onAnswer) {
       return;
     }
     if (Q.type === "order") {
-      const ol = box.querySelector(".aq-order");
+      const ol = box.querySelector(".aq-steps");
       ol.addEventListener("click", (e) => {
         const li = e.target.closest("li"); if (!li) return;
         if (e.target.closest("[data-up]") && li.previousElementSibling) ol.insertBefore(li, li.previousElementSibling);
@@ -127,7 +127,7 @@ export function wireQuestions(el, lookup, onAnswer) {
     }
     box.querySelector(".aq-submit")?.addEventListener("click", () => {
       if (Q.type === "multi") { const v = [...box.querySelectorAll("input:checked")].map((x) => x.value); finish(v, (res) => box.querySelectorAll(".aq-checks label").forEach((l) => { const val = l.querySelector("input").value; l.classList.toggle("right", Q.right.includes(val)); l.classList.toggle("wrong", !Q.right.includes(val) && l.querySelector("input").checked); })); }
-      if (Q.type === "order") { const v = [...box.querySelectorAll(".aq-order li")].map((x) => x.dataset.v); finish(v, () => box.querySelectorAll(".aq-order li").forEach((li, i) => li.classList.toggle("right", li.dataset.v === Q.steps[i]))); }
+      if (Q.type === "order") { const v = [...box.querySelectorAll(".aq-steps li")].map((x) => x.dataset.v); finish(v, () => box.querySelectorAll(".aq-steps li").forEach((li, i) => li.classList.toggle("right", li.dataset.v === Q.steps[i]))); }
       if (Q.type === "match") { const v = Object.fromEntries([...box.querySelectorAll("select")].map((s) => [s.dataset.left, s.value])); finish(v, () => box.querySelectorAll("select").forEach((s) => s.parentElement.classList.toggle("right", Q.pairs.find(([l]) => l === s.dataset.left)?.[1] === s.value))); }
       if (Q.type === "short") { box.querySelector(".aq-model").hidden = false; box.querySelector(".aq-submit").hidden = true; if (!Q.points.length) finish([]); }
     });
