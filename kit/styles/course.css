@@ -290,3 +290,7 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(255, 255, 2
 .co-notice { margin: 14px 0 0; padding: 12px 16px; border: 1px solid var(--line); border-left: 3px solid var(--accent, #fff); border-radius: 14px; background: rgba(255, 255, 255, .04); color: var(--mute); font-size: 14px; line-height: 1.5; }
 .co-notice b { color: var(--fg, #fff); }
 .co-notice a { color: inherit; }
+
+/* a unit that hasn't passed its quality stages (cfg.qa) */
+.co-draft { margin: 0 0 18px; padding: 10px 14px; border-radius: 12px; border: 1px dashed var(--line-strong, var(--line)); color: var(--mute); font-size: 13.5px; line-height: 1.5; }
+.co-draft b { color: var(--fg); }

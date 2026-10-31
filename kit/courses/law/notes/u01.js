@@ -98,6 +98,7 @@ H: The differences
 - **Courts**: magistrates' courts and the Crown Court; county court and High Court.
 E: Criminal: sure (beyond reasonable doubt) :: the prosecution bears the burden
 E: Civil: more likely than not (balance of probabilities) :: the claimant usually bears the burden
+H: One set of facts, two cases
 X: A driver runs a red light and injures a cyclist.
 > Criminal: the CPS may prosecute for a driving offence; the result is a fine, disqualification or prison.
 > Civil: the cyclist can sue in negligence for damages for injury and losses.

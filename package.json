@@ -10,7 +10,8 @@
     "build:dashboard": "node scripts/build-dashboard-function.mjs",
     "sync": "node scripts/sync-kit.mjs",
     "new-site": "node scripts/new-site.mjs",
-    "add-3d": "node scripts/add-3d.mjs"
+    "add-3d": "node scripts/add-3d.mjs",
+    "qa": "node scripts/qa-courses.mjs"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "0.133.0"

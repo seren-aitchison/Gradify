@@ -724,6 +724,8 @@ H: Aetiology and types
 - **Dementia with Lewy bodies**: fluctuating cognition, visual hallucinations, parkinsonism; very sensitive to antipsychotics.
 - **Frontotemporal dementia**: personality and behaviour or language change, often at a younger age.
 - Risk factors: age, genetics, cardiovascular risk factors, hearing loss, inactivity, smoking, head injury, low education.
+H: Pathophysiology
+- Progressive loss of neurones and their connections. In Alzheimer's disease, amyloid plaques and tau tangles spread from the memory areas (hippocampus) outwards; in vascular dementia, reduced blood supply damages brain tissue; in Lewy body dementia, abnormal alpha-synuclein deposits disrupt cognition and movement. Reduced acetylcholine contributes to memory symptoms.
 H: Signs, symptoms and investigations
 - Memory loss, disorientation, language difficulties, poor judgement, changes in mood and behaviour, loss of function.
 - Cognitive testing, blood tests to exclude reversible causes, brain imaging, specialist memory assessment.
@@ -928,7 +930,9 @@ M2: A patient with a urinary infection has NEWS2 of 7, BP 85/50 and lactate 4.1.
 
 ## Shock
 S: Shock is a life-threatening state of circulatory failure in which tissues don't receive enough oxygen. Without rapid treatment, it leads to organ failure and death.
-H: Types
+H: Definition and epidemiology
+- Shock is acute circulatory failure in which oxygen delivery to the tissues is inadequate for their needs. Most shock seen on wards is septic or hypovolaemic; it has a high mortality, especially when recognised late.
+H: Aetiology and types
 - **Hypovolaemic**: loss of blood or fluid (haemorrhage, burns, vomiting and diarrhoea).
 - **Cardiogenic**: the heart fails as a pump (myocardial infarction, arrhythmias).
 - **Distributive**: vessels dilate and leak: **septic**, **anaphylactic** and **neurogenic** (spinal cord injury) shock.
@@ -945,6 +949,8 @@ H: Nursing assessment, management and monitoring
 - Call for help early; frequent or continuous observations; position flat with legs raised if appropriate (not in cardiogenic shock with breathlessness); IV access by trained staff; fluid balance and hourly urine output; warmth; reassurance; accurate documentation.
 H: Complications
 - Multi-organ failure, AKI, ARDS, cardiac arrest.
+H: Patient education
+- After recovery: explain what happened and why, the warning signs to seek help for (for example, of sepsis or bleeding), and how to manage the underlying cause (such as anticoagulant safety or allergy action plans and adrenaline auto-injectors after anaphylaxis).
 H: Escalation and safety
 P: Shock is an emergency: escalate immediately to the emergency or critical care outreach team. A falling blood pressure is a late sign; act on rising heart rate, rising respiratory rate and poor perfusion.
 K: In shock, compensation hides the problem: don't wait for hypotension.

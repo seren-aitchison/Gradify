@@ -1,8 +1,11 @@
 // LawGradify: the curriculum plus where its notes live, handed to the course engine (kit/course/course.js).
 import { UNITS, TRACKS, PATHS } from "./syllabus.js";
+import { QA } from "./qa.js";
 export default {
   site: "LawGradify", slug: "law", name: "Law", app: "../app.html", unitWord: "School",
   units: UNITS, tracks: TRACKS, paths: PATHS,
+  // quality record per school (docs/CURRICULUM_QA.md); unready schools are labelled as drafts
+  qa: QA,
   // shown under the title on every page of the course
   notice: "<b>Study material, not legal advice.</b> The law is stated for England and Wales unless a lesson says otherwise; Scotland and Northern Ireland differ (School 17). Completing a LawGradify course is not a legal qualification and does not authorise you to practise. Law changes: check current sources before you rely on anything here.",
   // the schools whose notes are written so far (tests/courses.test.mjs checks this matches notes/)

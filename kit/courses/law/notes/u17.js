@@ -270,7 +270,7 @@ H: Conveyancing
 K: Check which register a title is in and use the NI statutory framework; don't assume the Land Registration Act 2002 applies.
 Q: Which tax applies to land purchases in Northern Ireland? | Stamp Duty Land Tax.
 Q: Name the two systems recording land in Northern Ireland. | The Land Registry of Northern Ireland and the Registry of Deeds.
-M1: Which land transaction tax applies in Wales? | Land Transaction Tax | Stamp Duty Land Tax | LBTT | Council Tax | Capital Gains Tax only | Wales replaced SDLT with Land Transaction Tax in 2018.
+M1: A buyer is purchasing a house in Cardiff. Which tax is payable on the purchase? | Land Transaction Tax, collected by the Welsh Revenue Authority | Stamp Duty Land Tax | Land and Buildings Transaction Tax | Council Tax on completion | No tax: Wales has abolished taxes on land purchases | Since April 2018 Wales has had its own Land Transaction Tax in place of SDLT; Scotland has LBTT; Northern Ireland and England still use SDLT.
 M2: A student applies the Land Registration Act 2002 to a Belfast title problem. What should they do instead? | Apply the Land Registration Act (Northern Ireland) 1970 and NI practice | Apply Scottish law | Apply the 2002 Act, which extends to all the UK | Apply EU law | Apply no statute | The 2002 Act applies in England and Wales.
 
 ## Cross-border issues within the UK

@@ -67,6 +67,8 @@ export function mountCourse(root, cfg) {
   const KEY = `gradify.course.${cfg.slug}`;
   // what a course calls its units ("Unit" for physics, "School" for law and nursing)
   const U = cfg.unitWord || "Unit", u1 = U.toLowerCase();
+  // courses with a QA record (cfg.qa) label any unit that hasn't passed every quality stage as a draft
+  const isReady = (u) => !cfg.qa || Boolean(cfg.qa[u.id]?.reviewed && cfg.qa[u.id]?.sources && cfg.qa[u.id]?.signoff);
   const units = cfg.units, lessons = units.flatMap((u) => u.lessons.map((l, i) => ({ ...l, unit: u, i })));
   const byId = Object.fromEntries(lessons.map((l) => [l.id, l]));
   const trackOf = (u) => cfg.tracks.find((t) => t.units.includes(u.n)) || cfg.tracks[0];
@@ -309,6 +311,7 @@ export function mountCourse(root, cfg) {
       <div class="mv-page co-notes" style="--c:${t.from}">
         <header><span class="kicker">${esc(t.name)} · ${U} ${u.n}</span><h2>${esc(l.title)}</h2>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
           <div class="mv-chips">${S.done[id] ? `<span class="co-chip lit">${ic("check")} Completed</span>` : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${N?.mcq.length ? `<span class="co-chip">${N.mcq.length} check question${N.mcq.length > 1 ? "s" : ""}</span>` : ""}${N?.cards.length ? `<button data-cards>${ic("cards")} Flashcards (${N.cards.length})</button>` : ""}</div></header>
+        ${N && !isReady(u) ? `<p class="co-draft" role="note"><b>Draft.</b> This ${u1} is written but hasn't yet completed content review, source checking and expert sign-off. Use it alongside your course materials and official sources.</p>` : ""}
         ${N ? `<div class="mv-cols">${lessonHtml(N)}</div>` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N?.mcq.length ? `<section class="co-check"><h3>${ic("target")} Check yourself</h3>${N.mcq.map((m, i) => mcqHtml(m, `${id}#${i}`)).join("")}</section>` : ""}
         <footer>
