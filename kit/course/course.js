@@ -12,7 +12,10 @@
 import { schedule, isDue, preview, fmtInterval } from "../learning/srs.js";
 import { LocalStore, CloudStore, scopeToSite } from "../data/store.js";
 import { roadDefs, car } from "./road.js";
-import { parseNotes, lessonHtml, lessonText, esc, inline, norm } from "./notes.js";
+import { parseNotes, lessonHtml, lessonText, lessonFrame, esc, inline, norm } from "./notes.js";
+import { renderQuestion, wireQuestions, normalize, TYPES as QTYPES } from "../assess/questions.js";
+import { makeAttempt, analyse } from "../assess/attempts.js";
+import { buildExam, runExam, FORMATS } from "../assess/exam.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -65,11 +68,15 @@ const CHALLENGES = [
 
 export function mountCourse(root, cfg) {
   const KEY = `gradify.course.${cfg.slug}`;
+  // what a course calls its units ("Unit" for physics, "School" for law and nursing)
+  const U = cfg.unitWord || "Unit", u1 = U.toLowerCase();
+  // courses with a QA record (cfg.qa) label any unit that hasn't passed every quality stage as a draft
+  const isReady = (u) => !cfg.qa || Boolean(cfg.qa[u.id]?.reviewed && cfg.qa[u.id]?.sources && cfg.qa[u.id]?.signoff);
   const units = cfg.units, lessons = units.flatMap((u) => u.lessons.map((l, i) => ({ ...l, unit: u, i })));
   const byId = Object.fromEntries(lessons.map((l) => [l.id, l]));
   const trackOf = (u) => cfg.tracks.find((t) => t.units.includes(u.n)) || cfg.tracks[0];
   let S = (() => { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { return null; } })() || {};
-  S = { done: {}, chests: {}, quiz: {}, solved: {}, cards: {}, log: [], goal: 30, path: null, open: [], closed: [], weekly: {}, saved: {}, ...S };
+  S = { done: {}, chests: {}, quiz: {}, solved: {}, cards: {}, log: [], goal: 30, path: null, open: [], closed: [], weekly: {}, saved: {}, mocks: {}, attempts: [], ...S };
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch { /* private mode: progress lasts this visit */ } };
 
   // the learner's Gradify account (this device, or their cloud account when signed in)
@@ -83,10 +90,39 @@ export function mountCourse(root, cfg) {
   const cache = {};
   const unitNotes = (u) => (cache[u.id] ||= Promise.resolve(!cfg.written || cfg.written.includes(u.id) ? cfg.notes(u.id) : null).catch(() => null).then((txt) => {
     const parsed = parseNotes(txt), byTitle = Object.fromEntries(parsed.map((p) => [norm(p.title), p]));
-    return Object.fromEntries(u.lessons.map((l, i) => [l.id, byTitle[norm(l.title)] || null]));
+    const out = Object.fromEntries(u.lessons.map((l) => [l.id, byTitle[norm(l.title)] || null]));
+    // every question gets a key: its permanent id where it has one, else the older position-based key
+    // (physics). Progress saved under a position-based key moves to the permanent id the first time
+    // the notes load, while positions still match what the learner answered.
+    let moved = false;
+    for (const l of u.lessons) {
+      const L = out[l.id]; if (!L) continue;
+      L.items = [...L.mcq.map((m, i) => ({ Q: m.Q || normalize(m), key: m.id || `${l.id}#${i}`, legacy: `${l.id}#${i}` })), ...L.tasks.map((q, i) => ({ Q: q, key: q.id || `${l.id}#t${i}`, legacy: `${l.id}#t${i}` }))];
+      for (const it of L.items) { it.l = byId[l.id]; it.v = cfg.questionVersions?.[it.key]?.v ?? null; if (it.key !== it.legacy && S.solved[it.legacy] && !S.solved[it.key]) { S.solved[it.key] = S.solved[it.legacy]; delete S.solved[it.legacy]; moved = true; } }
+    }
+    if (moved) save();
+    return out;
   }));
   const notesFor = async (l) => (await unitNotes(l.unit))[l.id];
   const allNotes = async () => Object.assign({}, ...(await Promise.all(units.map(unitNotes))));
+
+  // ---------- assessment: one path for every question (kit/assess) ----------
+  const LEVELS = cfg.levels || ["Easy", "Medium", "Hard"];
+  const pageQs = new Map();                                   // key → item, for questions on the current view
+  const qHtml = (it, opts = {}) => { pageQs.set(it.key, it); return renderQuestion(it.Q, it.key, { levels: LEVELS, ...opts }); };
+  function record(it, context, contextId, res, meta = {}) {
+    const a = makeAttempt({ site: cfg.site, subject: cfg.slug, context, contextId, Q: it.Q, key: it.key, version: it.v, lesson: it.l?.id, module: it.l?.module, unit: it.l?.unit.id, response: meta.response, result: res, meta });
+    S.attempts.push(a); if (S.attempts.length > 2000) S.attempts.splice(0, S.attempts.length - 2000); save();
+    store().then((st) => st.logAttempt?.(a)).catch(() => {});
+    return a;
+  }
+  // wire practice questions in el: records every attempt; first-try success solves the question for XP
+  function wirePractice(el, context, contextId, xp = XP.check) {
+    wireQuestions(el, (k) => pageQs.get(k)?.Q, (Q, res, first, box, meta) => {
+      const it = pageQs.get(box.dataset.key); record(it, context, contextId, res, meta);
+      if (first && res.score >= 0.7 && !S.solved[it.key]) { S.solved[it.key] = Date.now(); save(); award(xp, "check", it.key); }
+    });
+  }
 
   // ---------- XP, levels, streaks ----------
   const totalXp = () => S.log.reduce((a, r) => a + r.xp, 0);
@@ -157,7 +193,9 @@ export function mountCourse(root, cfg) {
   }
 
   // ---------- layout ----------
-  const VIEWS = [["learn", "Learn"], ["review", "Review"], ["paths", "Paths"], ["tracks", "Tracks"], ["problems", "Problems"], ["leaderboard", "Leaderboard"], ["me", "My progress"], ["features", "Features"]];
+  const VIEWS = [["learn", "Learn"], ["review", "Review"], ["paths", "Paths"], ["tracks", "Tracks"], ["problems", "Problems"],
+    ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", "Practice"]] : []),
+    ["leaderboard", "Leaderboard"], ["me", "My progress"], ["features", "Features"]];
   roadDefs();
   root.classList.add("co");
   root.innerHTML = `
@@ -165,6 +203,7 @@ export function mountCourse(root, cfg) {
       <div class="co-title"><span class="co-kicker">${esc(cfg.site)} course</span><h1>${esc(cfg.name)}</h1></div>
       <div class="co-hud" aria-label="Your progress"></div>
     </div>
+    ${cfg.notice ? `<p class="co-notice" role="note">${cfg.notice}</p>` : ""}
     <nav class="co-tabs" aria-label="${esc(cfg.name)}">${VIEWS.map(([id, t]) => `<a href="#/${id}" data-v="${id}">${t}${id === "review" ? '<i class="co-due" hidden></i>' : ""}</a>`).join("")}
       <label class="co-search">${ic("search")}<input type="search" placeholder="Search ${lessons.length.toLocaleString()} lessons" aria-label="Search lessons"><div class="co-results" hidden></div></label></nav>
     <div class="co-body"><main class="co-main"></main><aside class="co-side"></aside></div>`;
@@ -175,8 +214,8 @@ export function mountCourse(root, cfg) {
   q.addEventListener("input", () => {
     const t = norm(q.value);
     if (t.length < 2) { res.hidden = true; return; }
-    const hits = [...units.filter((u) => norm(u.title).includes(t)).map((u) => ({ href: `#/learn/${u.id}`, k: `Unit ${u.n}`, t: u.title })),
-      ...lessons.filter((l) => norm(l.title).includes(t)).map((l) => ({ href: `#/lesson/${l.id}`, k: `Unit ${l.unit.n} · ${S.done[l.id] ? "done" : "lesson"}`, t: l.title }))].slice(0, 12);
+    const hits = [...units.filter((u) => norm(u.title).includes(t)).map((u) => ({ href: `#/learn/${u.id}`, k: `${U} ${u.n}`, t: u.title })),
+      ...lessons.filter((l) => norm(l.title).includes(t)).map((l) => ({ href: `#/lesson/${l.id}`, k: `${U} ${l.unit.n} · ${S.done[l.id] ? "done" : "lesson"}`, t: l.title }))].slice(0, 12);
     res.innerHTML = hits.length ? hits.map((h) => `<a href="${h.href}"><small>${esc(h.k)}</small>${esc(h.t)}</a>`).join("") : `<p>No lessons match.</p>`;
     res.hidden = false;
   });
@@ -216,10 +255,10 @@ export function mountCourse(root, cfg) {
           <small class="co-streak">${ic("flame")} ${st.n}-day streak${st.today ? "" : st.n ? " · learn today to keep it" : ""}</small>
           <select aria-label="Daily goal">${[20, 30, 50, 100].map((g) => `<option value="${g}" ${g === S.goal ? "selected" : ""}>${g} XP a day</option>`).join("")}</select></div>
       </section>
-      ${nl ? `<section class="co-card"><span class="co-kicker">${ic("flag")} Next milestone</span><h3>Finish Unit ${nu.n}: ${esc(nu.title)}</h3><p>${left} lesson${left === 1 ? "" : "s"} to go, then the unit quiz for +${XP.quiz} XP.</p><a class="btn btn-light lg btn-sm co-go" href="#/lesson/${nl.id}"><span>Continue: ${esc(nl.title)}</span></a></section>` : `<section class="co-card"><h3>Course complete</h3><p>Every lesson done. Keep your memory fresh in Review.</p></section>`}
+      ${nl ? `<section class="co-card"><span class="co-kicker">${ic("flag")} Next milestone</span><h3>Finish ${U} ${nu.n}: ${esc(nu.title)}</h3><p>${left} lesson${left === 1 ? "" : "s"} to go, then the ${u1} quiz for +${XP.quiz} XP.</p><a class="btn btn-light lg btn-sm co-go" href="#/lesson/${nl.id}"><span>Continue: ${esc(nl.title)}</span></a></section>` : `<section class="co-card"><h3>Course complete</h3><p>Every lesson done. Keep your memory fresh in Review.</p></section>`}
       <section class="co-card"><span class="co-kicker">${ic("trophy")} Weekly challenge</span><h3>${c.name}</h3><p>${c.d}. Reward: +${XP.weekly} XP.</p><div class="co-bar warm"><i style="width:${(cw / c.n) * 100}%"></i></div><small>${cw} / ${c.n}${S.weekly[String(weekStart())] ? " · claimed" : ""} · resets Monday</small></section>
       <section class="co-card"><span class="co-kicker">Course progress</span><h3>${Object.keys(S.done).length} / ${lessons.length} lessons</h3>
-        <div class="co-dots">${units.map((u) => { const t = trackOf(u), p = unitDone(u) / u.lessons.length; return `<a href="#/learn/${u.id}" title="Unit ${u.n}: ${esc(u.title)} (${Math.round(p * 100)}%)" style="--a:${t.from};--b:${t.to};--p:${p}"></a>`; }).join("")}</div></section>
+        <div class="co-dots">${units.map((u) => { const t = trackOf(u), p = unitDone(u) / u.lessons.length; return `<a href="#/learn/${u.id}" title="${U} ${u.n}: ${esc(u.title)} (${Math.round(p * 100)}%)" style="--a:${t.from};--b:${t.to};--p:${p}"></a>`; }).join("")}</div></section>
       <section class="co-card"><span class="co-kicker">Badges · ${got.size} / ${BADGES.length}</span><div class="co-badges">${BADGES.map((b) => `<span class="${got.has(b.id) ? "on" : ""}" title="${b.name}: ${b.d}">${ic(got.has(b.id) ? "star" : "lock")}</span>`).join("")}</div><a class="co-more" href="#/me">See all your progress →</a></section>`;
     side.querySelector("select").addEventListener("change", (e) => { S.goal = Number(e.target.value); save(); paintSide(); });
   }
@@ -249,15 +288,16 @@ export function mountCourse(root, cfg) {
       if (it.kind === "lesson") {
         const st = S.done[it.l.id] ? "done" : i === ci ? "cur" : "next";
         const side = x > W / 2 ? "l" : "r";
+        const modStart = it.l.module && (it.l.i === 0 || u.lessons[it.l.i - 1].module !== it.l.module);
         return `<a class="co-node ${st}" style="${style}" href="#/lesson/${it.l.id}" aria-label="Lesson ${it.l.i + 1}: ${esc(it.l.title)}${st === "done" ? " (done)" : ""}">
-          ${ic(st === "done" ? "check" : it.l.i === 0 && st === "cur" ? "star" : "play")}<span class="co-label ${side}">${st === "cur" ? `<b>${it.l.i === 0 ? "Start here" : "Up next"}</b>` : `<small>${it.l.i + 1}</small>`}${esc(it.l.title)}</span></a>`;
+          ${ic(st === "done" ? "check" : it.l.i === 0 && st === "cur" ? "star" : "play")}<span class="co-label ${side}">${modStart ? `<em class="co-mod">${esc(it.l.module)}</em>` : ""}${st === "cur" ? `<b>${it.l.i === 0 ? "Start here" : "Up next"}</b>` : `<small>${it.l.i + 1}</small>`}${esc(it.l.title)}</span></a>`;
       }
       if (it.kind === "chest") {
         const ready = it.after.every((l) => S.done[l.id]), got = S.chests[it.id];
         return `<button class="co-node chest ${got ? "done" : ready ? "ready" : ""}" style="${style}" data-chest="${it.id}" ${ready && !got ? "" : "disabled"} aria-label="Reward chest${got ? " (opened)" : ready ? ": open for XP" : ": finish the lessons before it"}">${ic("chest")}<span class="co-tip">${got ? "Opened" : ready ? `Open for +${XP.chest} XP` : "Finish the lessons before it"}</span></button>`;
       }
       const qz = S.quiz[u.id];
-      return `<a class="co-node quiz ${qz?.pass ? "done" : ""}" style="${style}" href="#/quiz/${u.id}" aria-label="Unit ${u.n} quiz">${ic("trophy")}<span class="co-tip">Unit quiz${qz ? ` · best ${Math.round(qz.best * 100)}%` : ` · +${XP.quiz} XP`}</span></a>`;
+      return `<a class="co-node quiz ${qz?.pass ? "done" : ""}" style="${style}" href="#/quiz/${u.id}" aria-label="${U} ${u.n} quiz">${ic("trophy")}<span class="co-tip">Unit quiz${qz ? ` · best ${Math.round(qz.best * 100)}%` : ` · +${XP.quiz} XP`}</span></a>`;
     }).join("");
     const doneTo = lastDone >= 0 ? pts.slice(0, lastDone + 1) : [];
     return `<div class="co-road" style="height:${H}px">
@@ -270,9 +310,9 @@ export function mountCourse(root, cfg) {
   function banner(u, open) {
     const t = trackOf(u), d = unitDone(u), qz = S.quiz[u.id];
     return `<div class="co-banner" style="--a:${t.from};--b:${t.to}">
-      <div><span class="co-kicker">Unit ${u.n}</span><h2>${esc(u.title)}</h2><small>${d} / ${u.lessons.length} lessons${qz?.pass ? ` · quiz ${Math.round(qz.best * 100)}%` : ""}</small>
+      <div><span class="co-kicker">${U} ${u.n}</span><h2>${esc(u.title)}</h2><small>${d} / ${u.lessons.length} lessons${qz?.pass ? ` · quiz ${Math.round(qz.best * 100)}%` : ""}</small>
       <div class="co-ubar"><i style="width:${(d / u.lessons.length) * 100}%"></i></div></div>
-      <div class="co-bbtns"><a class="co-bbtn" href="#/quiz/${u.id}">${ic("trophy")}<span>Unit quiz</span></a>
+      <div class="co-bbtns"><a class="co-bbtn" href="#/quiz/${u.id}">${ic("trophy")}<span>${U} quiz</span></a>
       <button class="co-bbtn ghost" data-toggle="${u.id}" aria-expanded="${open}">${open ? "Hide path" : "Show path"}</button></div></div>`;
   }
   function viewLearn(focus, keep) {
@@ -301,13 +341,15 @@ export function mountCourse(root, cfg) {
     const l = byId[id]; if (!l) return go("learn");
     const u = l.unit, t = trackOf(u), N = await notesFor(l), prev = u.lessons[l.i - 1], next = u.lessons[l.i + 1] || units[u.n]?.lessons[0];
     main.innerHTML = `<article class="co-lesson" style="--a:${t.from};--b:${t.to}">
-      <div class="co-crumbs"><a href="#/learn/${u.id}">← Unit ${u.n}: ${esc(u.title)}</a><span>Lesson ${l.i + 1} of ${u.lessons.length}</span></div>
+      <div class="co-crumbs"><a href="#/learn/${u.id}">← ${U} ${u.n}: ${esc(u.title)}</a><span>Lesson ${l.i + 1} of ${u.lessons.length}</span></div>
       <div class="co-steps">${u.lessons.map((x) => `<a href="#/lesson/${x.id}" class="${S.done[x.id] ? "done" : ""} ${x.id === id ? "here" : ""}" title="${esc(x.title)}"></a>`).join("")}</div>
       <div class="mv-page co-notes" style="--c:${t.from}">
-        <header><span class="kicker">${esc(t.name)} · Unit ${u.n}</span><h2>${esc(l.title)}</h2>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
-          <div class="mv-chips">${S.done[id] ? `<span class="co-chip lit">${ic("check")} Completed</span>` : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${N?.mcq.length ? `<span class="co-chip">${N.mcq.length} check question${N.mcq.length > 1 ? "s" : ""}</span>` : ""}${N?.cards.length ? `<button data-cards>${ic("cards")} Flashcards (${N.cards.length})</button>` : ""}</div></header>
-        ${N ? `<div class="mv-cols">${lessonHtml(N)}</div>` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
-        ${N?.mcq.length ? `<section class="co-check"><h3>${ic("target")} Check yourself</h3>${N.mcq.map((m, i) => mcqHtml(m, `${id}#${i}`)).join("")}</section>` : ""}
+        <header><span class="kicker">${esc(t.name)} · ${U} ${u.n}${l.module ? ` · ${esc(l.module)}` : ""}</span><h2>${esc(l.title)}</h2>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
+          <div class="mv-chips">${S.done[id] ? `<span class="co-chip lit">${ic("check")} Completed</span>` : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${N?.items?.length ? `<span class="co-chip">${N.items.length} check question${N.items.length > 1 ? "s" : ""}</span>` : ""}${N?.cards.length ? `<button data-cards>${ic("cards")} Flashcards (${N.cards.length})</button>` : ""}</div></header>
+        ${N && !isReady(u) ? `<p class="co-draft" role="note"><b>Draft.</b> This ${u1} is written but hasn't yet completed content review, source checking and expert sign-off. Use it alongside your course materials and official sources.</p>` : ""}
+        ${N ? lessonFrame(N).top : ""}
+        ${N ? `<div class="mv-cols">${lessonHtml(N)}</div>${lessonFrame(N).end}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
+        ${N?.items?.length ? `<section class="co-check"><h3>${ic("target")} Check yourself</h3>${N.items.map((it) => qHtml(it, { confidence: true })).join("")}</section>` : ""}
         <footer>
           <button class="btn btn-light lg co-complete" ${S.done[id] ? "disabled" : ""}><span>${S.done[id] ? "Completed ✓" : `Complete lesson · +${XP.lesson} XP`}</span></button>
           ${N?.cards.length ? `<button class="btn btn-ghost lg" data-cards><span>${ic("cards")} Flashcards</span></button>` : ""}
@@ -317,36 +359,15 @@ export function mountCourse(root, cfg) {
       <div class="co-pn">${prev ? `<a href="#/lesson/${prev.id}">← ${esc(prev.title)}</a>` : "<span></span>"}${next ? `<a href="#/lesson/${next.id}">${esc(next.title)} →</a>` : ""}</div>
     </article>`;
     scrollTo(0, 0);
-    wireMcq(main);
+    wirePractice(main, "lesson", id);
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", () => flashcards(N.cards, l)));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
     main.querySelector(".co-complete").addEventListener("click", async (e) => {
       if (S.done[id]) return;
       S.done[id] = Date.now(); save(); e.currentTarget.disabled = true; e.currentTarget.querySelector("span").textContent = "Completed ✓";
       await award(XP.lesson, "lesson", id, `${cfg.name}: ${l.title}`);
-      if (unitDone(u) === u.lessons.length) celebrate(`Unit ${u.n} complete`, `${esc(u.title)}: every lesson done. Take the unit quiz for +${XP.quiz} XP.`, `<a class="btn btn-ghost lg btn-sm" href="#/quiz/${u.id}"><span>Unit quiz</span></a>`);
+      if (unitDone(u) === u.lessons.length) celebrate(`${U} ${u.n} complete`, `${esc(u.title)}: every lesson done. Take the unit quiz for +${XP.quiz} XP.`, `<a class="btn btn-ghost lg btn-sm" href="#/quiz/${u.id}"><span>${U} quiz</span></a>`);
       else if (next) setTimeout(() => go(`lesson/${next.id}`), 650);
-    });
-  }
-  function mcqHtml(m, pid) {
-    const opts = shuffle([m.right, ...m.wrong], rng([...pid].reduce((a, c) => a * 31 + c.charCodeAt(0), 7) >>> 0));
-    return `<div class="co-mcq" data-pid="${esc(pid)}" data-right="${esc(m.right)}"><p class="co-q">${inline(m.q)}<small>${["", "Easy", "Medium", "Hard"][m.d]}</small></p>
-      <div class="co-opts">${opts.map((o) => `<button>${inline(o)}</button>`).join("")}</div>${m.why ? `<p class="co-why" hidden>${inline(m.why)}</p>` : ""}</div>`;
-  }
-  function wireMcq(el, onAnswer) {
-    el.querySelectorAll(".co-mcq").forEach((box) => {
-      let tried = false;
-      box.querySelectorAll(".co-opts button").forEach((b) => b.addEventListener("click", () => {
-        if (box.classList.contains("solved")) return;
-        const ok = b.innerHTML === inline(box.dataset.right);
-        b.classList.add(ok ? "right" : "wrong");
-        if (ok) {
-          box.classList.add("solved"); box.querySelector(".co-why")?.removeAttribute("hidden");
-          const pid = box.dataset.pid;
-          if (!tried && !S.solved[pid]) { S.solved[pid] = Date.now(); save(); award(XP.check, "check", pid); }
-        } else if (!tried) { tried = true; box.querySelector(".co-why")?.removeAttribute("hidden"); }
-        onAnswer?.(ok, tried);
-      }));
     });
   }
   async function saveLesson(l, N, btn) {
@@ -384,36 +405,34 @@ export function mountCourse(root, cfg) {
   async function viewQuiz(uid) {
     const u = units.find((x) => x.id === uid); if (!u) return go("learn");
     const N = await unitNotes(u), t = trackOf(u);
-    const pool = u.lessons.flatMap((l) => (N[l.id]?.mcq || []).map((m) => ({ ...m, l })));
+    const pool = u.lessons.flatMap((l) => (N[l.id]?.items || []).filter((it) => QTYPES[it.Q.type]?.auto));
     const qs = shuffle(pool).slice(0, Math.min(10, pool.length));
-    if (!qs.length) { main.innerHTML = `<div class="co-panel"><h2>Unit ${u.n} quiz</h2><p>This quiz opens when the unit's notes are in.</p><a class="co-link" href="#/learn/${u.id}">← Back to the unit</a></div>`; return; }
+    if (!qs.length) { main.innerHTML = `<div class="co-panel"><h2>${U} ${u.n} quiz</h2><p>This quiz opens when the ${u1}'s notes are in.</p><a class="co-link" href="#/learn/${u.id}">← Back to the unit</a></div>`; return; }
     let k = 0, score = 0;
     const step = () => {
       if (k >= qs.length) return finish();
-      const m = qs[k];
-      main.innerHTML = `<div class="co-quiz" style="--a:${t.from};--b:${t.to}"><div class="co-crumbs"><a href="#/learn/${u.id}">← Unit ${u.n}: ${esc(u.title)}</a><span>Question ${k + 1} of ${qs.length} · ${score} right</span></div>
+      const it = qs[k];
+      main.innerHTML = `<div class="co-quiz" style="--a:${t.from};--b:${t.to}"><div class="co-crumbs"><a href="#/learn/${u.id}">← ${U} ${u.n}: ${esc(u.title)}</a><span>Question ${k + 1} of ${qs.length} · ${score} right</span></div>
         <div class="co-qbar"><i style="width:${(k / qs.length) * 100}%"></i></div>
-        <div class="co-panel">${mcqHtml(m, `quiz-${u.id}-${k}-${Date.now()}`)}<p class="co-from">From: <a href="#/lesson/${m.l.id}">${esc(m.l.title)}</a></p><button class="btn btn-light lg btn-sm co-nextq" hidden><span>${k < qs.length - 1 ? "Next question →" : "See your score"}</span></button></div></div>`;
-      const box = main.querySelector(".co-mcq");
-      box.querySelectorAll(".co-opts button").forEach((b) => b.addEventListener("click", () => {
+        <div class="co-panel">${qHtml(it)}<p class="co-from">From: <a href="#/lesson/${it.l.id}">${esc(it.l.title)}</a></p><button class="btn btn-light lg btn-sm co-nextq" hidden><span>${k < qs.length - 1 ? "Next question →" : "See your score"}</span></button></div></div>`;
+      // one try per quiz question: the first answer counts, then the explanation and the next button show
+      wireQuestions(main, (key) => pageQs.get(key)?.Q, (Q, res, first, box, meta) => {
         if (box.classList.contains("done")) return;
-        box.classList.add("done", "solved");
-        const ok = b.innerHTML === inline(m.right); if (ok) score++;
-        b.classList.add(ok ? "right" : "wrong");
-        box.querySelectorAll(".co-opts button").forEach((x) => { if (x.innerHTML === inline(m.right)) x.classList.add("right"); });
-        box.querySelector(".co-why")?.removeAttribute("hidden");
+        box.classList.add("done");
+        score += res.score; record(it, "quiz", u.id, res, meta);
+        box.querySelectorAll("button:not(.co-nextq), input, select, textarea").forEach((x) => { x.disabled = true; });
         main.querySelector(".co-nextq").hidden = false; main.querySelector(".co-nextq").focus();
-      }));
+      });
       main.querySelector(".co-nextq").addEventListener("click", () => { k++; step(); });
     };
     const finish = async () => {
       const p = score / qs.length, pass = p >= 0.75, prev = S.quiz[u.id];
       S.quiz[u.id] = { best: Math.max(p, prev?.best || 0), pass: pass || prev?.pass || false, t: Date.now() }; save();
-      main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic(pass ? "trophy" : "target")}</div><h2>${score} / ${qs.length}</h2><p>${pass ? `Passed Unit ${u.n}: ${esc(u.title)}.` : `You need 75% to pass. Look back over the lessons you missed, then try again.`}</p>
-        <div class="co-row"><a class="btn btn-ghost lg btn-sm" href="#/learn/${u.id}"><span>Back to the unit</span></a><button class="btn btn-light lg btn-sm" data-again><span>Try again</span></button></div></div>`;
+      main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic(pass ? "trophy" : "target")}</div><h2>${Math.round(score * 10) / 10} / ${qs.length}</h2><p>${pass ? `Passed ${U} ${u.n}: ${esc(u.title)}.` : `You need 75% to pass. Look back over the lessons you missed, then try again.`}</p>
+        <div class="co-row"><a class="btn btn-ghost lg btn-sm" href="#/learn/${u.id}"><span>Back to the ${u1}</span></a><button class="btn btn-light lg btn-sm" data-again><span>Try again</span></button></div></div>`;
       main.querySelector("[data-again]").addEventListener("click", () => viewQuiz(uid));
-      if (pass && !prev?.pass) { confetti(); await award(XP.quiz + (p === 1 ? XP.perfect : 0), "quiz", u.id, `${cfg.name}: Unit ${u.n} quiz ${Math.round(p * 100)}%`); }
-      else if (p === 1 && prev?.best < 1) await award(XP.perfect, "quiz", u.id, `${cfg.name}: Unit ${u.n} quiz 100%`);
+      if (pass && !prev?.pass) { confetti(); await award(XP.quiz + (p === 1 ? XP.perfect : 0), "quiz", u.id, `${cfg.name}: ${U} ${u.n} quiz ${Math.round(p * 100)}%`); }
+      else if (p === 1 && prev?.best < 1) await award(XP.perfect, "quiz", u.id, `${cfg.name}: ${U} ${u.n} quiz 100%`);
     };
     step();
   }
@@ -453,39 +472,42 @@ export function mountCourse(root, cfg) {
   }
 
   // ---------- paths and tracks ----------
-  const unitPct = (n) => { const u = units.find((x) => x.n === n); return u ? unitDone(u) / u.lessons.length : 0; };
+  // the lessons a path covers in a school: the modules it selects, or the whole school
+  const pathLessons = (p, u) => { const pick = p?.select?.[u.n]; return pick ? u.lessons.filter((l) => pick.includes(l.module)) : u.lessons; };
+  const unitPct = (n, p) => { const u = units.find((x) => x.n === n); const ls = u ? pathLessons(p, u) : []; return ls.length ? ls.filter((l) => S.done[l.id]).length / ls.length : 0; };
   function viewPaths() {
-    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Paths</span><h2>Choose a route through ${esc(cfg.name)}</h2><p>Each path picks the units for one goal, in the order to learn them. Follow one and the Learn page and your next milestone follow it too.</p></div>
-      <div class="co-grid">${cfg.paths.map((p) => { const pct = p.units.reduce((a, n) => a + unitPct(n), 0) / p.units.length, ls = p.units.reduce((a, n) => a + (units.find((u) => u.n === n)?.lessons.length || 0), 0);
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Paths</span><h2>Choose a route through ${esc(cfg.name)}</h2><p>Each path picks the ${u1}s for one goal, in the order to learn them. Follow one and the Learn page and your next milestone follow it too.</p></div>
+      <div class="co-grid">${cfg.paths.map((p) => { const pct = p.units.reduce((a, n) => a + unitPct(n, p), 0) / p.units.length, ls = p.units.reduce((a, n) => { const u = units.find((x) => x.n === n); return a + (u ? pathLessons(p, u).length : 0); }, 0);
         const t = trackOf(units.find((u) => u.n === p.units[0]));
-        return `<div class="co-pcard ${S.path === p.id ? "on" : ""}" style="--a:${t.from};--b:${t.to}"><h3>${esc(p.name)}</h3><p>${esc(p.sub)}</p><small>${p.units.length} units · ${ls} lessons · ${Math.round(pct * 100)}% done</small><div class="co-bar"><i style="width:${pct * 100}%"></i></div>
-          <ol>${p.units.map((n) => { const u = units.find((x) => x.n === n); return `<li class="${unitPct(n) === 1 ? "done" : ""}"><a href="#/learn/${u.id}">${esc(u.title)}</a></li>`; }).join("")}</ol>
+        return `<div class="co-pcard ${S.path === p.id ? "on" : ""}" style="--a:${t.from};--b:${t.to}"><h3>${esc(p.name)}</h3><p>${esc(p.sub)}</p><small>${p.units.length} ${u1}s · ${ls} lessons · ${Math.round(pct * 100)}% done</small><div class="co-bar"><i style="width:${pct * 100}%"></i></div>
+          ${p.field ? `<span class="co-chip lit">${esc(p.field)} field</span>` : ""}
+          <ol>${p.units.map((n) => { const u = units.find((x) => x.n === n), pick = p.select?.[n]; return `<li class="${unitPct(n, p) === 1 ? "done" : ""}"><a href="#/learn/${u.id}">${esc(u.title)}</a>${pick ? `<small class="co-pick"> · ${pick.map(esc).join(", ")}</small>` : ""}</li>`; }).join("")}</ol>
           <button class="btn ${S.path === p.id ? "btn-ghost" : "btn-light"} lg btn-sm" data-path="${p.id}"><span>${S.path === p.id ? "Following ✓ (stop)" : "Follow this path"}</span></button></div>`; }).join("")}</div>`;
     main.querySelectorAll("[data-path]").forEach((b) => b.addEventListener("click", () => { S.path = S.path === b.dataset.path ? null : b.dataset.path; save(); if (S.path) { toast(`Following <b>${esc(cfg.paths.find((p) => p.id === S.path).name)}</b>`); go("learn"); } else viewPaths(); paintSide(); }));
   }
   function viewTracks() {
-    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Tracks</span><h2>${cfg.tracks.length} tracks, ${units.length} units, ${lessons.length.toLocaleString()} lessons</h2><p>The whole of ${esc(cfg.name)}, grouped by theme. Jump into any unit.</p></div>
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Tracks</span><h2>${cfg.tracks.length} tracks, ${units.length} ${u1}s, ${lessons.length.toLocaleString()} lessons</h2><p>The whole of ${esc(cfg.name)}, grouped by theme. Jump into any unit.</p></div>
       <div class="co-grid">${cfg.tracks.map((t) => { const us = t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean), tot = us.reduce((a, u) => a + u.lessons.length, 0), dn = us.reduce((a, u) => a + unitDone(u), 0);
-        return `<div class="co-tcard" style="--a:${t.from};--b:${t.to}"><div class="co-tban"><h3>${esc(t.name)}</h3><small>${dn} / ${tot} lessons</small></div><ul>${us.map((u) => `<li><a href="#/learn/${u.id}"><span>Unit ${u.n}</span>${esc(u.title)}</a><i style="--p:${unitDone(u) / u.lessons.length}"></i></li>`).join("")}</ul></div>`; }).join("")}</div>`;
+        return `<div class="co-tcard" style="--a:${t.from};--b:${t.to}"><div class="co-tban"><h3>${esc(t.name)}</h3><small>${dn} / ${tot} lessons</small></div><ul>${us.map((u) => `<li><a href="#/learn/${u.id}"><span>${U} ${u.n}</span>${esc(u.title)}</a><i style="--p:${unitDone(u) / u.lessons.length}"></i></li>`).join("")}</ul></div>`; }).join("")}</div>`;
   }
 
   // ---------- problems: every check question in the course, filterable ----------
   async function viewProblems() {
     main.innerHTML = `<div class="co-panel"><p>Loading the problem bank…</p></div>`;
     const all = await allNotes();
-    const probs = lessons.flatMap((l) => (all[l.id]?.mcq || []).map((m, i) => ({ ...m, l, pid: `${l.id}#${i}` })));
+    const probs = lessons.flatMap((l) => (all[l.id]?.items || []).filter((it) => QTYPES[it.Q.type]?.auto).map((it) => ({ ...it, d: it.Q.d, pid: it.key })));
     const f = { unit: "", d: "", s: "" };
     const paint = () => {
       const list = probs.filter((p) => (!f.unit || p.l.unit.id === f.unit) && (!f.d || p.d === Number(f.d)) && (!f.s || (f.s === "solved") === Boolean(S.solved[p.pid])));
       const shown = list.slice(0, 40);
-      main.querySelector(".co-plist").innerHTML = shown.length ? shown.map((p) => `<div class="co-prob ${S.solved[p.pid] ? "is-solved" : ""}"><div class="co-pmeta"><a href="#/lesson/${p.l.id}">Unit ${p.l.unit.n} · ${esc(p.l.title)}</a><span class="d${p.d}">${["", "Easy", "Medium", "Hard"][p.d]}</span>${S.solved[p.pid] ? `<span class="ok">${ic("check")} Solved</span>` : ""}</div>${mcqHtml(p, p.pid)}</div>`).join("") + (list.length > 40 ? `<p class="co-empty">Showing 40 of ${list.length}. Narrow it down with the filters.</p>` : "") : `<p class="co-empty">No problems match these filters.</p>`;
+      main.querySelector(".co-plist").innerHTML = shown.length ? shown.map((p) => `<div class="co-prob ${S.solved[p.pid] ? "is-solved" : ""}"><div class="co-pmeta"><a href="#/lesson/${p.l.id}">${U} ${p.l.unit.n} · ${esc(p.l.title)}</a><span class="d${p.d}">${esc(LEVELS[p.d - 1] || "")}</span>${S.solved[p.pid] ? `<span class="ok">${ic("check")} Solved</span>` : ""}</div>${qHtml(p)}</div>`).join("") + (list.length > 40 ? `<p class="co-empty">Showing 40 of ${list.length}. Narrow it down with the filters.</p>` : "") : `<p class="co-empty">No problems match these filters.</p>`;
       main.querySelector(".co-pcount").textContent = `${list.length} problems · ${probs.filter((p) => S.solved[p.pid]).length} solved`;
-      wireMcq(main.querySelector(".co-plist"));
+      wirePractice(main.querySelector(".co-plist"), "problems", null);
     };
-    const withNotes = units.filter((u) => u.lessons.some((l) => all[l.id]?.mcq.length));
+    const withNotes = units.filter((u) => u.lessons.some((l) => all[l.id]?.items?.length));
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">Problems</span><h2>Problem bank</h2><p>Every check question in the course in one place. Solve one first time for +${XP.problem} XP.</p></div>
-      <div class="co-filters"><select data-f="unit"><option value="">All units</option>${withNotes.map((u) => `<option value="${u.id}">Unit ${u.n}: ${esc(u.title)}</option>`).join("")}</select>
-      <select data-f="d"><option value="">Any difficulty</option><option value="1">Easy</option><option value="2">Medium</option><option value="3">Hard</option></select>
+      <div class="co-filters"><select data-f="unit"><option value="">All ${u1}s</option>${withNotes.map((u) => `<option value="${u.id}">${U} ${u.n}: ${esc(u.title)}</option>`).join("")}</select>
+      <select data-f="d"><option value="">Any difficulty</option>${LEVELS.map((x, i) => `<option value="${i + 1}">${esc(x)}</option>`).join("")}</select>
       <select data-f="s"><option value="">Solved and unsolved</option><option value="unsolved">Unsolved</option><option value="solved">Solved</option></select><span class="co-pcount"></span></div><div class="co-plist"></div>`;
     main.querySelectorAll("[data-f]").forEach((s) => s.addEventListener("change", () => { f[s.dataset.f] = s.value; paint(); }));
     paint();
@@ -504,6 +526,22 @@ export function mountCourse(root, cfg) {
   }
 
   // ---------- my progress: the course and the account together ----------
+  // assessment insight from attempt records (kit/assess/attempts.js): final marks only
+  function insightHtml() {
+    const r = analyse(S.attempts || []);
+    if (r.total < 5) return `<section class="co-panel co-insight"><h3>How you're answering</h3><p class="co-empty">Answer a few more questions (${r.total} so far) to see your weak areas, common mistakes and how well your confidence matches your answers.</p></section>`;
+    const pct = (x) => `${Math.round(x * 100)}%`;
+    const weak = r.byLesson.filter((g) => g.n >= 2 && g.latest < 0.7).slice(0, 5);
+    const lt = (id) => (byId[id] ? `<a href="#/lesson/${id}">${esc(byId[id].title)}</a>` : esc(id || ""));
+    const c = r.calibration;
+    return `<section class="co-panel co-insight"><h3>How you're answering</h3>
+      <div class="co-tiles">${[["Answers", r.total], ["Questions", r.questions], ["First-try score", pct(r.byUnit.reduce((s, g) => s + (g.firstTry ?? 0) * g.n, 0) / Math.max(1, r.byUnit.reduce((s, g) => s + (g.firstTry == null ? 0 : g.n), 0)))], ["Improvement on retries", r.improvement ? `${r.improvement.mean >= 0 ? "+" : ""}${pct(r.improvement.mean)}` : "–"]].map(([k, v]) => `<div><small>${k}</small><b>${v}</b></div>`).join("")}</div>
+      <h4>Lessons to revisit</h4>${weak.length ? `<ul class="co-weak">${weak.map((g) => `<li>${lt(g.key)} <small>latest ${pct(g.latest)} over ${g.n} answers</small></li>`).join("")}</ul>` : `<p class="co-empty">Nothing below 70% on your latest answers.</p>`}
+      ${r.misconceptions.length ? `<h4>Answers you've chosen that were wrong</h4><ul class="co-weak">${r.misconceptions.slice(0, 4).map((m) => `<li>“${inline(m.option)}” <small>${m.n}× · ${lt(m.lesson)}</small></li>`).join("")}</ul>` : ""}
+      ${c ? `<p class="co-empty">Confidence: of ${c.rated} rated answers, ${c.sureButWrong} were marked “Sure” but wrong, and ${c.unsureButRight} marked “Guessing” were right.${c.sureButWrong ? " Check those topics: confident mistakes are the ones most worth correcting." : ""}</p>` : ""}
+      <p class="co-acct">Self-assessed short answers are provisional and aren't counted here.</p></section>`;
+  }
+
   async function viewMe() {
     const st = stats(), xp = st.xp, L = levelOf(xp), sk = streak();
     const byDay = {}; for (const r of S.log) byDay[day(r.t)] = (byDay[day(r.t)] || 0) + r.xp;
@@ -512,6 +550,7 @@ export function mountCourse(root, cfg) {
     const last14 = Array.from({ length: 14 }, (_, i) => { const d = day(Date.now() - (13 - i) * DAY); return [d, byDay[d] || 0]; }), mx = Math.max(S.goal, ...last14.map((x) => x[1]));
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">My progress</span><h2>Your ${esc(cfg.name)}</h2><p>Everything you've done here, and what's saved to your Gradify account.</p></div>
       <div class="co-tiles">${[["Level", L.n], ["Total XP", xp.toLocaleString()], ["Day streak", sk.n], ["Best streak", sk.best], ["Lessons", `${st.lessons} / ${lessons.length}`], ["Units cleared", st.units], ["Quizzes passed", st.quizzes], ["Problems solved", st.solved]].map(([k, v]) => `<div><small>${k}</small><b>${v}</b></div>`).join("")}</div>
+      ${insightHtml()}
       <section class="co-panel"><h3>Activity</h3><div class="co-heat">${cells}</div><p class="co-dayinfo">Pick a day to see what you did.</p></section>
       <section class="co-panel"><h3>XP, last 14 days</h3><div class="co-bars">${last14.map(([d, v]) => `<div title="${d}: ${v} XP"><i style="height:${(v / mx) * 100}%" class="${v >= S.goal ? "hit" : ""}"></i><small>${d.slice(8)}</small></div>`).join("")}<span class="co-goalline" style="bottom:${(S.goal / mx) * 100}%">goal ${S.goal}</span></div></section>
       <section class="co-panel"><h3>Tracks</h3><div class="co-mastery">${cfg.tracks.map((t) => { const us = t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean), tot = us.reduce((a, u) => a + u.lessons.length, 0), dn = us.reduce((a, u) => a + unitDone(u), 0); return `<div style="--a:${t.from};--b:${t.to}"><span>${esc(t.name)}</span><div class="co-bar"><i style="width:${(dn / tot) * 100}%"></i></div><small>${dn}/${tot}</small></div>`; }).join("")}</div></section>
@@ -536,9 +575,9 @@ export function mountCourse(root, cfg) {
       ["Full notes", "Every lesson has notes: the ideas, equations, worked examples and common mistakes."],
       ["Check questions", "Questions at the end of each lesson, with an explanation for every answer."],
       ["Flashcards", "Flip through a lesson's cards, or save them to your account for daily study."],
-      ["Unit quizzes", `Pass with 75% for +${XP.quiz} XP; score 100% for a bonus.`],
+      [`${U} quizzes`, `Pass with 75% for +${XP.quiz} XP; score 100% for a bonus.`],
       ["Spaced review", "Cards come back just before you'd forget them."],
-      ["Problem bank", "Every question in the course, filtered by unit, difficulty and whether you've solved it."],
+      ["Problem bank", `Every question in the course, filtered by ${u1}, difficulty and whether you've solved it.`],
       ["Paths", `${cfg.paths.length} routes through the course for different goals.`],
       ["XP and levels", "Earn XP for everything you do. Levels get further apart as you go."],
       ["Streaks and daily goals", "Set a daily XP goal and keep your streak alive."],
@@ -551,13 +590,67 @@ export function mountCourse(root, cfg) {
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">Features</span><h2>Everything in ${esc(cfg.name)}</h2></div><div class="co-feats">${f.map(([t, d, href]) => `<${href ? `a href="${href}"` : "div"} class="co-feat"><b>${t}</b><p>${d}</p></${href ? "a" : "div"}>`).join("")}</div>`;
   }
 
+  // ---------- mock exams (kit/assess/exam.js) ----------
+  // the question pool for a set of schools (respecting a path's module selection), from written notes only
+  async function examPool(unitNs, path) {
+    const out = [];
+    for (const n of unitNs) {
+      const u = units.find((x) => x.n === n); if (!u || (cfg.written && !cfg.written.includes(u.id))) continue;
+      const N = await unitNotes(u), ls = path ? pathLessons(path, u) : u.lessons;
+      for (const l of ls) {
+        const L = N[l.id]; if (!L) continue;
+        const group = l.module ? `${u.id}:${l.module}` : u.id, groupLabel = l.module ? `${U} ${u.n}: ${l.module}` : `${U} ${u.n}: ${u.title}`, link = `#/lesson/${l.id}`;
+        for (const it of L.items) out.push({ Q: it.Q, id: it.key, item: it, group, groupLabel, link });
+      }
+    }
+    return out;
+  }
+  async function viewExams() {
+    const exams = cfg.exams;
+    const rows = await Promise.all(exams.map(async (e) => { const p = e.path && cfg.paths.find((x) => x.id === e.path); const pool = await examPool(e.units || p?.units || [], p); return { e, n: buildExam(pool, e, 1).length }; }));
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Exams</span><h2>Mock exams</h2><p>Timed practice exams drawn from the written ${u1}s, marked at the end with every answer explained and your weak areas identified. They're for practice: pass marks here are practice thresholds, not official ones.</p></div>
+      <div class="co-grid">${rows.map(({ e, n }) => { const hist = S.mocks[e.id] || [], best = hist.length ? Math.max(...hist.map((h) => h.score)) : null;
+        return `<div class="co-pcard"><h3>${esc(e.title)}</h3><p>${esc(e.sub || "")}</p><small>${FORMATS[e.format || "mixed"].label} · ${Math.min(e.count, n)} questions · ${e.minutes} minutes · practice pass mark ${Math.round((e.pass ?? 0.6) * 100)}%${best !== null ? ` · best ${Math.round(best * 100)}%` : ""}</small>
+        ${n ? `<a class="btn btn-light lg btn-sm" href="#/exam/${e.id}"><span>Start exam</span></a>` : `<p class="co-empty">Opens when the ${u1}s it covers have notes.</p>`}
+        ${hist.length ? `<details><summary>Past attempts (${hist.length})</summary><ul>${hist.slice(-5).reverse().map((h) => `<li>${new Date(h.t).toLocaleDateString()}: ${Math.round(h.score * 100)}%${h.pass ? " · passed" : ""}</li>`).join("")}</ul></details>` : ""}</div>`; }).join("")}</div>`;
+  }
+  async function viewExam(id) {
+    const e = cfg.exams?.find((x) => x.id === id); if (!e) return go("exams");
+    const p = e.path && cfg.paths.find((x) => x.id === e.path);
+    const items = buildExam(await examPool(e.units || p?.units || [], p), e);
+    if (!items.length) return go("exams");
+    side.hidden = true; root.querySelector(".co-body").classList.add("wide");
+    runExam(main, { ...e, minutes: e.minutes, levels: LEVELS }, items, (summary, again) => {
+      if (again) return viewExam(id);
+      // every exam answer is an attempt record; the summary keeps only scores and weak areas
+      for (const r of summary.items || []) if (r.item && !r.unanswered) record(r.item, "exam", e.id, r, { response: r.response, ms: r.ms, attempt: 1 });
+      const { items: _drop, ...keep } = summary;
+      (S.mocks[e.id] ||= []).push(keep); save();
+      if (summary.pass) award(XP.quiz, "mock", e.id, `${cfg.name}: ${e.title} ${Math.round(summary.score * 100)}%`);
+    });
+  }
+
+  // ---------- practice: subject interactives (kit/interactive/) ----------
+  async function viewPractice(id) {
+    const list = cfg.interactives;
+    if (!id) {
+      main.innerHTML = `<div class="co-intro"><span class="co-kicker">Practice</span><h2>Interactive practice</h2><p>${esc(cfg.practiceNote || "Work through scenarios and exercises that apply what you've learned.")}</p></div>
+        <div class="co-grid">${list.map((x) => `<a class="co-pcard" href="#/practice/${x.id}"><h3>${esc(x.title)}</h3><p>${esc(x.sub)}</p><small>${esc(x.kind)}${x.schools ? ` · ${U} ${x.schools.join(", ")}` : ""}</small></a>`).join("")}</div>`;
+      return;
+    }
+    const x = list.find((y) => y.id === id); if (!x) return go("practice");
+    main.innerHTML = `<div class="co-crumbs"><a href="#/practice">← Practice</a><span>${esc(x.kind)}</span></div><div class="co-panel co-ix"></div>`;
+    const mod = await x.load();
+    mod.mount(main.querySelector(".co-ix"), { ...x, onComplete: (r) => { const k = `ix:${x.id}`; if (!S.solved[k] && r?.score >= 0.7) { S.solved[k] = Date.now(); save(); award(XP.quiz, "practice", x.id, `${cfg.name}: ${x.title}`); } } });
+  }
+
   // ---------- router ----------
   const go = (h) => { location.hash = `#/${h}`; };
   async function route() {
     const [v = "learn", arg] = location.hash.replace(/^#\/?/, "").split("/");
-    const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz"].includes(v) ? v : "learn";
-    root.querySelectorAll(".co-tabs a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === (view === "lesson" || view === "quiz" ? "learn" : view)));
-    const wide = ["me", "features", "leaderboard", "tracks", "paths"].includes(view);
+    const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam"].includes(v) ? v : "learn";
+    root.querySelectorAll(".co-tabs a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === (view === "lesson" || view === "quiz" ? "learn" : view === "exam" ? "exams" : view)));
+    const wide = ["me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice"].includes(view);
     side.hidden = wide; root.querySelector(".co-body").classList.toggle("wide", wide);
     if (view !== "learn") scrollTo(0, 0);
     if (view === "learn") { if (arg) openUnit(arg); viewLearn(arg); }
@@ -567,6 +660,9 @@ export function mountCourse(root, cfg) {
     else if (view === "paths") viewPaths();
     else if (view === "tracks") viewTracks();
     else if (view === "problems") await viewProblems();
+    else if (view === "exams") await viewExams();
+    else if (view === "exam") await viewExam(arg);
+    else if (view === "practice") await viewPractice(arg);
     else if (view === "leaderboard") viewLeaderboard();
     else if (view === "me") await viewMe();
     else viewFeatures();
