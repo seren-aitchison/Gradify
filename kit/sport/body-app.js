@@ -117,8 +117,10 @@ export async function startBodyApp(root) {
     return list.map((r) => `<li class="bi-rec k-${r.kind}"><div><b>${esc(r.title)}</b> ${tag(r.basis)}<p>${esc(r.detail)}</p></div>${r.muscles.length ? `<button type="button" class="bi-show" data-show='${esc(JSON.stringify(r.muscles))}'>Show</button>` : ""}</li>`).join("");
   }
 
+  let lastShown = "";
   function renderPanel() {
-    const pane = $('[data-pane="muscle"]');
+    const pane = $('[data-pane="muscle"]'), shown = `${ui.selected}|${ui.part}|${ui.organ}`;
+    if (shown !== lastShown) { $(".bi-side").scrollTop = 0; lastShown = shown; }   // a new selection starts at the top of the panel
     if (ui.organ) return (pane.innerHTML = organPanel(ui.organ));
     if (!ui.selected) return (pane.innerHTML = overview());
     const s = muscleSummary(ui.selected, data.workouts, data.checkins, ui.at), f = fitness(data.tests, ui.at).map[meshKeys(ui.selected)[0]];

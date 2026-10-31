@@ -74,17 +74,17 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
   const maxDpr = () => Math.min(innerWidth < 700 ? 2 : 2.5, devicePixelRatio || 1);
   renderer.setPixelRatio(maxDpr());
   renderer.outputColorSpace = THREE.SRGBColorSpace;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 0.95;
   renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   const scene = new THREE.Scene();
   const bg = document.createElement("canvas"); bg.width = bg.height = 512;
   { const g = bg.getContext("2d"), r = g.createRadialGradient(256, 190, 10, 256, 260, 420); r.addColorStop(0, "#34363d"); r.addColorStop(0.45, "#1a1b20"); r.addColorStop(1, "#08080a"); g.fillStyle = r; g.fillRect(0, 0, 512, 512); }
   scene.background = new THREE.CanvasTexture(bg); scene.background.colorSpace = THREE.SRGBColorSpace;
   const pmrem = new THREE.PMREMGenerator(renderer);
-  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture; scene.environmentIntensity = 0.45;
+  scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture; scene.environmentIntensity = 0.35;
 
   scene.add(new THREE.HemisphereLight("#fff6ee", "#2d2724", 0.45));
-  const key = new THREE.DirectionalLight("#fff3e6", 2.7); key.position.set(1.3, 3.3, 2.6); key.castShadow = true;
+  const key = new THREE.DirectionalLight("#fff3e6", 2.2); key.position.set(1.3, 3.3, 2.6); key.castShadow = true;
   key.shadow.mapSize.set(2048, 2048); key.shadow.bias = -0.0004; key.shadow.normalBias = 0.012;
   Object.assign(key.shadow.camera, { left: -1.1, right: 1.1, top: 2.1, bottom: -0.3, near: 0.5, far: 8 }); key.shadow.camera.updateProjectionMatrix();
   scene.add(key);
@@ -123,7 +123,7 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
     m.customProgramCacheKey = () => "bi-muscle-rim";
     return m;
   }
-  const boneMat = new THREE.MeshPhysicalMaterial({ color: "#d9cfb6", roughness: 0.66, clearcoat: 0.1, bumpMap: boneTex, bumpScale: 0.7 });
+  const boneMat = new THREE.MeshPhysicalMaterial({ color: "#a39a86", roughness: 0.66, clearcoat: 0.1, bumpMap: boneTex, bumpScale: 0.7 });
   const organMat = (c) => new THREE.MeshPhysicalMaterial({ color: c, roughness: 0.4, clearcoat: 0.6, clearcoatRoughness: 0.25, sheen: 0.3, sheenColor: new THREE.Color("#ffd0c8") });
   // selection outline: the selected muscle drawn again, slightly inflated, back faces only
   const outlineMat = new THREE.MeshBasicMaterial({ color: "#ffffff", side: THREE.BackSide, transparent: true, opacity: 0.9, depthWrite: false });
@@ -163,8 +163,8 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
     for (const list of Object.values(meshes)) for (const mesh of list) {
       const ud = mesh.userData, c = (state.detail && ud.pkey && state.partColours[ud.pkey]) || state.colours[ud.key];
       // heat colours at full strength with a little self-light, so they stay saturated under bright studio light
-      let col = c ? new THREE.Color(...c.rgb).multiplyScalar(0.82) : NO_DATA.clone();
-      let glow = c ? new THREE.Color(...c.rgb).multiplyScalar(0.2) : new THREE.Color(0, 0, 0);
+      let col = c ? new THREE.Color(...c.rgb).multiplyScalar(0.6) : NO_DATA.clone();
+      let glow = c ? new THREE.Color(...c.rgb).multiplyScalar(0.13) : new THREE.Color(0, 0, 0);
       if (state.preview) {   // exercise preview: primary and secondary muscles light up, the rest fade
         const w = state.preview[ud.muscle] || 0, pf = ud.part && state.previewParts?.[ud.muscle]?.[ud.part];
         const v = w * (pf ?? 1);
@@ -235,7 +235,7 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
     const front = c.z >= -0.01 || ["chest_muscles", "abdominal_muscles", "quadriceps", "iliopsoas", "shin_muscles"].includes(state.selected);
     const dir = camera.position.clone().sub(controls.target).setY(0).normalize();
     if ((dir.z >= 0) !== front) dir.z = -dir.z;
-    flyTo(c.clone().add(dir.multiplyScalar(Math.max(0.7, size * 1.7))).add(new THREE.Vector3(0, 0.05, 0)), c);
+    flyTo(c.clone().add(dir.multiplyScalar(Math.max(1.0, size * 2.4))).add(new THREE.Vector3(0, 0.05, 0)), c);
   }
 
   // ---------- render loop (paused when off screen or the tab is hidden) ----------
