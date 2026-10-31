@@ -187,7 +187,7 @@ export async function mountBody(stage, { onSelect = () => {}, onHover = () => {}
     select(m, zoom = false) { state.selected = m; state.preview = null; refresh(); if (m && zoom) focusMuscle(m); },
     preview(weights) { state.preview = weights; state.selected = null; refresh(); },
     layer(name, on) {
-      if (name === "organs") { layers.organs.visible = on; state.xray = on; refresh(); }
+      if (name === "organs") { layers.organs.visible = on; state.xray = on; for (const mat of [boneMat, neutral]) { mat.transparent = on; mat.opacity = on ? 0.18 : 1; mat.depthWrite = !on; } refresh(); }   // x-ray: muscles and bones go see-through so the heart and lungs show
       else if (layers[name]) layers[name].visible = on;
     },
     view(name) { if (name === "reset") { flyTo(VIEWS.front, [0, 0.95, 0]); return; } const p = VIEWS[name]; if (p) flyTo(p, [0, 0.95, 0]); },
