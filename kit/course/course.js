@@ -65,6 +65,8 @@ const CHALLENGES = [
 
 export function mountCourse(root, cfg) {
   const KEY = `gradify.course.${cfg.slug}`;
+  // what a course calls its units ("Unit" for physics, "School" for law and nursing)
+  const U = cfg.unitWord || "Unit", u1 = U.toLowerCase();
   const units = cfg.units, lessons = units.flatMap((u) => u.lessons.map((l, i) => ({ ...l, unit: u, i })));
   const byId = Object.fromEntries(lessons.map((l) => [l.id, l]));
   const trackOf = (u) => cfg.tracks.find((t) => t.units.includes(u.n)) || cfg.tracks[0];
@@ -165,6 +167,7 @@ export function mountCourse(root, cfg) {
       <div class="co-title"><span class="co-kicker">${esc(cfg.site)} course</span><h1>${esc(cfg.name)}</h1></div>
       <div class="co-hud" aria-label="Your progress"></div>
     </div>
+    ${cfg.notice ? `<p class="co-notice" role="note">${cfg.notice}</p>` : ""}
     <nav class="co-tabs" aria-label="${esc(cfg.name)}">${VIEWS.map(([id, t]) => `<a href="#/${id}" data-v="${id}">${t}${id === "review" ? '<i class="co-due" hidden></i>' : ""}</a>`).join("")}
       <label class="co-search">${ic("search")}<input type="search" placeholder="Search ${lessons.length.toLocaleString()} lessons" aria-label="Search lessons"><div class="co-results" hidden></div></label></nav>
     <div class="co-body"><main class="co-main"></main><aside class="co-side"></aside></div>`;
@@ -175,8 +178,8 @@ export function mountCourse(root, cfg) {
   q.addEventListener("input", () => {
     const t = norm(q.value);
     if (t.length < 2) { res.hidden = true; return; }
-    const hits = [...units.filter((u) => norm(u.title).includes(t)).map((u) => ({ href: `#/learn/${u.id}`, k: `Unit ${u.n}`, t: u.title })),
-      ...lessons.filter((l) => norm(l.title).includes(t)).map((l) => ({ href: `#/lesson/${l.id}`, k: `Unit ${l.unit.n} · ${S.done[l.id] ? "done" : "lesson"}`, t: l.title }))].slice(0, 12);
+    const hits = [...units.filter((u) => norm(u.title).includes(t)).map((u) => ({ href: `#/learn/${u.id}`, k: `${U} ${u.n}`, t: u.title })),
+      ...lessons.filter((l) => norm(l.title).includes(t)).map((l) => ({ href: `#/lesson/${l.id}`, k: `${U} ${l.unit.n} · ${S.done[l.id] ? "done" : "lesson"}`, t: l.title }))].slice(0, 12);
     res.innerHTML = hits.length ? hits.map((h) => `<a href="${h.href}"><small>${esc(h.k)}</small>${esc(h.t)}</a>`).join("") : `<p>No lessons match.</p>`;
     res.hidden = false;
   });
@@ -216,10 +219,10 @@ export function mountCourse(root, cfg) {
           <small class="co-streak">${ic("flame")} ${st.n}-day streak${st.today ? "" : st.n ? " · learn today to keep it" : ""}</small>
           <select aria-label="Daily goal">${[20, 30, 50, 100].map((g) => `<option value="${g}" ${g === S.goal ? "selected" : ""}>${g} XP a day</option>`).join("")}</select></div>
       </section>
-      ${nl ? `<section class="co-card"><span class="co-kicker">${ic("flag")} Next milestone</span><h3>Finish Unit ${nu.n}: ${esc(nu.title)}</h3><p>${left} lesson${left === 1 ? "" : "s"} to go, then the unit quiz for +${XP.quiz} XP.</p><a class="btn btn-light lg btn-sm co-go" href="#/lesson/${nl.id}"><span>Continue: ${esc(nl.title)}</span></a></section>` : `<section class="co-card"><h3>Course complete</h3><p>Every lesson done. Keep your memory fresh in Review.</p></section>`}
+      ${nl ? `<section class="co-card"><span class="co-kicker">${ic("flag")} Next milestone</span><h3>Finish ${U} ${nu.n}: ${esc(nu.title)}</h3><p>${left} lesson${left === 1 ? "" : "s"} to go, then the ${u1} quiz for +${XP.quiz} XP.</p><a class="btn btn-light lg btn-sm co-go" href="#/lesson/${nl.id}"><span>Continue: ${esc(nl.title)}</span></a></section>` : `<section class="co-card"><h3>Course complete</h3><p>Every lesson done. Keep your memory fresh in Review.</p></section>`}
       <section class="co-card"><span class="co-kicker">${ic("trophy")} Weekly challenge</span><h3>${c.name}</h3><p>${c.d}. Reward: +${XP.weekly} XP.</p><div class="co-bar warm"><i style="width:${(cw / c.n) * 100}%"></i></div><small>${cw} / ${c.n}${S.weekly[String(weekStart())] ? " · claimed" : ""} · resets Monday</small></section>
       <section class="co-card"><span class="co-kicker">Course progress</span><h3>${Object.keys(S.done).length} / ${lessons.length} lessons</h3>
-        <div class="co-dots">${units.map((u) => { const t = trackOf(u), p = unitDone(u) / u.lessons.length; return `<a href="#/learn/${u.id}" title="Unit ${u.n}: ${esc(u.title)} (${Math.round(p * 100)}%)" style="--a:${t.from};--b:${t.to};--p:${p}"></a>`; }).join("")}</div></section>
+        <div class="co-dots">${units.map((u) => { const t = trackOf(u), p = unitDone(u) / u.lessons.length; return `<a href="#/learn/${u.id}" title="${U} ${u.n}: ${esc(u.title)} (${Math.round(p * 100)}%)" style="--a:${t.from};--b:${t.to};--p:${p}"></a>`; }).join("")}</div></section>
       <section class="co-card"><span class="co-kicker">Badges · ${got.size} / ${BADGES.length}</span><div class="co-badges">${BADGES.map((b) => `<span class="${got.has(b.id) ? "on" : ""}" title="${b.name}: ${b.d}">${ic(got.has(b.id) ? "star" : "lock")}</span>`).join("")}</div><a class="co-more" href="#/me">See all your progress →</a></section>`;
     side.querySelector("select").addEventListener("change", (e) => { S.goal = Number(e.target.value); save(); paintSide(); });
   }
@@ -257,7 +260,7 @@ export function mountCourse(root, cfg) {
         return `<button class="co-node chest ${got ? "done" : ready ? "ready" : ""}" style="${style}" data-chest="${it.id}" ${ready && !got ? "" : "disabled"} aria-label="Reward chest${got ? " (opened)" : ready ? ": open for XP" : ": finish the lessons before it"}">${ic("chest")}<span class="co-tip">${got ? "Opened" : ready ? `Open for +${XP.chest} XP` : "Finish the lessons before it"}</span></button>`;
       }
       const qz = S.quiz[u.id];
-      return `<a class="co-node quiz ${qz?.pass ? "done" : ""}" style="${style}" href="#/quiz/${u.id}" aria-label="Unit ${u.n} quiz">${ic("trophy")}<span class="co-tip">Unit quiz${qz ? ` · best ${Math.round(qz.best * 100)}%` : ` · +${XP.quiz} XP`}</span></a>`;
+      return `<a class="co-node quiz ${qz?.pass ? "done" : ""}" style="${style}" href="#/quiz/${u.id}" aria-label="${U} ${u.n} quiz">${ic("trophy")}<span class="co-tip">Unit quiz${qz ? ` · best ${Math.round(qz.best * 100)}%` : ` · +${XP.quiz} XP`}</span></a>`;
     }).join("");
     const doneTo = lastDone >= 0 ? pts.slice(0, lastDone + 1) : [];
     return `<div class="co-road" style="height:${H}px">
@@ -270,9 +273,9 @@ export function mountCourse(root, cfg) {
   function banner(u, open) {
     const t = trackOf(u), d = unitDone(u), qz = S.quiz[u.id];
     return `<div class="co-banner" style="--a:${t.from};--b:${t.to}">
-      <div><span class="co-kicker">Unit ${u.n}</span><h2>${esc(u.title)}</h2><small>${d} / ${u.lessons.length} lessons${qz?.pass ? ` · quiz ${Math.round(qz.best * 100)}%` : ""}</small>
+      <div><span class="co-kicker">${U} ${u.n}</span><h2>${esc(u.title)}</h2><small>${d} / ${u.lessons.length} lessons${qz?.pass ? ` · quiz ${Math.round(qz.best * 100)}%` : ""}</small>
       <div class="co-ubar"><i style="width:${(d / u.lessons.length) * 100}%"></i></div></div>
-      <div class="co-bbtns"><a class="co-bbtn" href="#/quiz/${u.id}">${ic("trophy")}<span>Unit quiz</span></a>
+      <div class="co-bbtns"><a class="co-bbtn" href="#/quiz/${u.id}">${ic("trophy")}<span>${U} quiz</span></a>
       <button class="co-bbtn ghost" data-toggle="${u.id}" aria-expanded="${open}">${open ? "Hide path" : "Show path"}</button></div></div>`;
   }
   function viewLearn(focus, keep) {
@@ -301,10 +304,10 @@ export function mountCourse(root, cfg) {
     const l = byId[id]; if (!l) return go("learn");
     const u = l.unit, t = trackOf(u), N = await notesFor(l), prev = u.lessons[l.i - 1], next = u.lessons[l.i + 1] || units[u.n]?.lessons[0];
     main.innerHTML = `<article class="co-lesson" style="--a:${t.from};--b:${t.to}">
-      <div class="co-crumbs"><a href="#/learn/${u.id}">← Unit ${u.n}: ${esc(u.title)}</a><span>Lesson ${l.i + 1} of ${u.lessons.length}</span></div>
+      <div class="co-crumbs"><a href="#/learn/${u.id}">← ${U} ${u.n}: ${esc(u.title)}</a><span>Lesson ${l.i + 1} of ${u.lessons.length}</span></div>
       <div class="co-steps">${u.lessons.map((x) => `<a href="#/lesson/${x.id}" class="${S.done[x.id] ? "done" : ""} ${x.id === id ? "here" : ""}" title="${esc(x.title)}"></a>`).join("")}</div>
       <div class="mv-page co-notes" style="--c:${t.from}">
-        <header><span class="kicker">${esc(t.name)} · Unit ${u.n}</span><h2>${esc(l.title)}</h2>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
+        <header><span class="kicker">${esc(t.name)} · ${U} ${u.n}</span><h2>${esc(l.title)}</h2>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
           <div class="mv-chips">${S.done[id] ? `<span class="co-chip lit">${ic("check")} Completed</span>` : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${N?.mcq.length ? `<span class="co-chip">${N.mcq.length} check question${N.mcq.length > 1 ? "s" : ""}</span>` : ""}${N?.cards.length ? `<button data-cards>${ic("cards")} Flashcards (${N.cards.length})</button>` : ""}</div></header>
         ${N ? `<div class="mv-cols">${lessonHtml(N)}</div>` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N?.mcq.length ? `<section class="co-check"><h3>${ic("target")} Check yourself</h3>${N.mcq.map((m, i) => mcqHtml(m, `${id}#${i}`)).join("")}</section>` : ""}
@@ -324,7 +327,7 @@ export function mountCourse(root, cfg) {
       if (S.done[id]) return;
       S.done[id] = Date.now(); save(); e.currentTarget.disabled = true; e.currentTarget.querySelector("span").textContent = "Completed ✓";
       await award(XP.lesson, "lesson", id, `${cfg.name}: ${l.title}`);
-      if (unitDone(u) === u.lessons.length) celebrate(`Unit ${u.n} complete`, `${esc(u.title)}: every lesson done. Take the unit quiz for +${XP.quiz} XP.`, `<a class="btn btn-ghost lg btn-sm" href="#/quiz/${u.id}"><span>Unit quiz</span></a>`);
+      if (unitDone(u) === u.lessons.length) celebrate(`${U} ${u.n} complete`, `${esc(u.title)}: every lesson done. Take the unit quiz for +${XP.quiz} XP.`, `<a class="btn btn-ghost lg btn-sm" href="#/quiz/${u.id}"><span>${U} quiz</span></a>`);
       else if (next) setTimeout(() => go(`lesson/${next.id}`), 650);
     });
   }
@@ -386,12 +389,12 @@ export function mountCourse(root, cfg) {
     const N = await unitNotes(u), t = trackOf(u);
     const pool = u.lessons.flatMap((l) => (N[l.id]?.mcq || []).map((m) => ({ ...m, l })));
     const qs = shuffle(pool).slice(0, Math.min(10, pool.length));
-    if (!qs.length) { main.innerHTML = `<div class="co-panel"><h2>Unit ${u.n} quiz</h2><p>This quiz opens when the unit's notes are in.</p><a class="co-link" href="#/learn/${u.id}">← Back to the unit</a></div>`; return; }
+    if (!qs.length) { main.innerHTML = `<div class="co-panel"><h2>${U} ${u.n} quiz</h2><p>This quiz opens when the ${u1}'s notes are in.</p><a class="co-link" href="#/learn/${u.id}">← Back to the unit</a></div>`; return; }
     let k = 0, score = 0;
     const step = () => {
       if (k >= qs.length) return finish();
       const m = qs[k];
-      main.innerHTML = `<div class="co-quiz" style="--a:${t.from};--b:${t.to}"><div class="co-crumbs"><a href="#/learn/${u.id}">← Unit ${u.n}: ${esc(u.title)}</a><span>Question ${k + 1} of ${qs.length} · ${score} right</span></div>
+      main.innerHTML = `<div class="co-quiz" style="--a:${t.from};--b:${t.to}"><div class="co-crumbs"><a href="#/learn/${u.id}">← ${U} ${u.n}: ${esc(u.title)}</a><span>Question ${k + 1} of ${qs.length} · ${score} right</span></div>
         <div class="co-qbar"><i style="width:${(k / qs.length) * 100}%"></i></div>
         <div class="co-panel">${mcqHtml(m, `quiz-${u.id}-${k}-${Date.now()}`)}<p class="co-from">From: <a href="#/lesson/${m.l.id}">${esc(m.l.title)}</a></p><button class="btn btn-light lg btn-sm co-nextq" hidden><span>${k < qs.length - 1 ? "Next question →" : "See your score"}</span></button></div></div>`;
       const box = main.querySelector(".co-mcq");
@@ -409,11 +412,11 @@ export function mountCourse(root, cfg) {
     const finish = async () => {
       const p = score / qs.length, pass = p >= 0.75, prev = S.quiz[u.id];
       S.quiz[u.id] = { best: Math.max(p, prev?.best || 0), pass: pass || prev?.pass || false, t: Date.now() }; save();
-      main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic(pass ? "trophy" : "target")}</div><h2>${score} / ${qs.length}</h2><p>${pass ? `Passed Unit ${u.n}: ${esc(u.title)}.` : `You need 75% to pass. Look back over the lessons you missed, then try again.`}</p>
-        <div class="co-row"><a class="btn btn-ghost lg btn-sm" href="#/learn/${u.id}"><span>Back to the unit</span></a><button class="btn btn-light lg btn-sm" data-again><span>Try again</span></button></div></div>`;
+      main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic(pass ? "trophy" : "target")}</div><h2>${score} / ${qs.length}</h2><p>${pass ? `Passed ${U} ${u.n}: ${esc(u.title)}.` : `You need 75% to pass. Look back over the lessons you missed, then try again.`}</p>
+        <div class="co-row"><a class="btn btn-ghost lg btn-sm" href="#/learn/${u.id}"><span>Back to the ${u1}</span></a><button class="btn btn-light lg btn-sm" data-again><span>Try again</span></button></div></div>`;
       main.querySelector("[data-again]").addEventListener("click", () => viewQuiz(uid));
-      if (pass && !prev?.pass) { confetti(); await award(XP.quiz + (p === 1 ? XP.perfect : 0), "quiz", u.id, `${cfg.name}: Unit ${u.n} quiz ${Math.round(p * 100)}%`); }
-      else if (p === 1 && prev?.best < 1) await award(XP.perfect, "quiz", u.id, `${cfg.name}: Unit ${u.n} quiz 100%`);
+      if (pass && !prev?.pass) { confetti(); await award(XP.quiz + (p === 1 ? XP.perfect : 0), "quiz", u.id, `${cfg.name}: ${U} ${u.n} quiz ${Math.round(p * 100)}%`); }
+      else if (p === 1 && prev?.best < 1) await award(XP.perfect, "quiz", u.id, `${cfg.name}: ${U} ${u.n} quiz 100%`);
     };
     step();
   }
@@ -455,18 +458,18 @@ export function mountCourse(root, cfg) {
   // ---------- paths and tracks ----------
   const unitPct = (n) => { const u = units.find((x) => x.n === n); return u ? unitDone(u) / u.lessons.length : 0; };
   function viewPaths() {
-    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Paths</span><h2>Choose a route through ${esc(cfg.name)}</h2><p>Each path picks the units for one goal, in the order to learn them. Follow one and the Learn page and your next milestone follow it too.</p></div>
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Paths</span><h2>Choose a route through ${esc(cfg.name)}</h2><p>Each path picks the ${u1}s for one goal, in the order to learn them. Follow one and the Learn page and your next milestone follow it too.</p></div>
       <div class="co-grid">${cfg.paths.map((p) => { const pct = p.units.reduce((a, n) => a + unitPct(n), 0) / p.units.length, ls = p.units.reduce((a, n) => a + (units.find((u) => u.n === n)?.lessons.length || 0), 0);
         const t = trackOf(units.find((u) => u.n === p.units[0]));
-        return `<div class="co-pcard ${S.path === p.id ? "on" : ""}" style="--a:${t.from};--b:${t.to}"><h3>${esc(p.name)}</h3><p>${esc(p.sub)}</p><small>${p.units.length} units · ${ls} lessons · ${Math.round(pct * 100)}% done</small><div class="co-bar"><i style="width:${pct * 100}%"></i></div>
+        return `<div class="co-pcard ${S.path === p.id ? "on" : ""}" style="--a:${t.from};--b:${t.to}"><h3>${esc(p.name)}</h3><p>${esc(p.sub)}</p><small>${p.units.length} ${u1}s · ${ls} lessons · ${Math.round(pct * 100)}% done</small><div class="co-bar"><i style="width:${pct * 100}%"></i></div>
           <ol>${p.units.map((n) => { const u = units.find((x) => x.n === n); return `<li class="${unitPct(n) === 1 ? "done" : ""}"><a href="#/learn/${u.id}">${esc(u.title)}</a></li>`; }).join("")}</ol>
           <button class="btn ${S.path === p.id ? "btn-ghost" : "btn-light"} lg btn-sm" data-path="${p.id}"><span>${S.path === p.id ? "Following ✓ (stop)" : "Follow this path"}</span></button></div>`; }).join("")}</div>`;
     main.querySelectorAll("[data-path]").forEach((b) => b.addEventListener("click", () => { S.path = S.path === b.dataset.path ? null : b.dataset.path; save(); if (S.path) { toast(`Following <b>${esc(cfg.paths.find((p) => p.id === S.path).name)}</b>`); go("learn"); } else viewPaths(); paintSide(); }));
   }
   function viewTracks() {
-    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Tracks</span><h2>${cfg.tracks.length} tracks, ${units.length} units, ${lessons.length.toLocaleString()} lessons</h2><p>The whole of ${esc(cfg.name)}, grouped by theme. Jump into any unit.</p></div>
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Tracks</span><h2>${cfg.tracks.length} tracks, ${units.length} ${u1}s, ${lessons.length.toLocaleString()} lessons</h2><p>The whole of ${esc(cfg.name)}, grouped by theme. Jump into any unit.</p></div>
       <div class="co-grid">${cfg.tracks.map((t) => { const us = t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean), tot = us.reduce((a, u) => a + u.lessons.length, 0), dn = us.reduce((a, u) => a + unitDone(u), 0);
-        return `<div class="co-tcard" style="--a:${t.from};--b:${t.to}"><div class="co-tban"><h3>${esc(t.name)}</h3><small>${dn} / ${tot} lessons</small></div><ul>${us.map((u) => `<li><a href="#/learn/${u.id}"><span>Unit ${u.n}</span>${esc(u.title)}</a><i style="--p:${unitDone(u) / u.lessons.length}"></i></li>`).join("")}</ul></div>`; }).join("")}</div>`;
+        return `<div class="co-tcard" style="--a:${t.from};--b:${t.to}"><div class="co-tban"><h3>${esc(t.name)}</h3><small>${dn} / ${tot} lessons</small></div><ul>${us.map((u) => `<li><a href="#/learn/${u.id}"><span>${U} ${u.n}</span>${esc(u.title)}</a><i style="--p:${unitDone(u) / u.lessons.length}"></i></li>`).join("")}</ul></div>`; }).join("")}</div>`;
   }
 
   // ---------- problems: every check question in the course, filterable ----------
@@ -478,13 +481,13 @@ export function mountCourse(root, cfg) {
     const paint = () => {
       const list = probs.filter((p) => (!f.unit || p.l.unit.id === f.unit) && (!f.d || p.d === Number(f.d)) && (!f.s || (f.s === "solved") === Boolean(S.solved[p.pid])));
       const shown = list.slice(0, 40);
-      main.querySelector(".co-plist").innerHTML = shown.length ? shown.map((p) => `<div class="co-prob ${S.solved[p.pid] ? "is-solved" : ""}"><div class="co-pmeta"><a href="#/lesson/${p.l.id}">Unit ${p.l.unit.n} · ${esc(p.l.title)}</a><span class="d${p.d}">${["", "Easy", "Medium", "Hard"][p.d]}</span>${S.solved[p.pid] ? `<span class="ok">${ic("check")} Solved</span>` : ""}</div>${mcqHtml(p, p.pid)}</div>`).join("") + (list.length > 40 ? `<p class="co-empty">Showing 40 of ${list.length}. Narrow it down with the filters.</p>` : "") : `<p class="co-empty">No problems match these filters.</p>`;
+      main.querySelector(".co-plist").innerHTML = shown.length ? shown.map((p) => `<div class="co-prob ${S.solved[p.pid] ? "is-solved" : ""}"><div class="co-pmeta"><a href="#/lesson/${p.l.id}">${U} ${p.l.unit.n} · ${esc(p.l.title)}</a><span class="d${p.d}">${["", "Easy", "Medium", "Hard"][p.d]}</span>${S.solved[p.pid] ? `<span class="ok">${ic("check")} Solved</span>` : ""}</div>${mcqHtml(p, p.pid)}</div>`).join("") + (list.length > 40 ? `<p class="co-empty">Showing 40 of ${list.length}. Narrow it down with the filters.</p>` : "") : `<p class="co-empty">No problems match these filters.</p>`;
       main.querySelector(".co-pcount").textContent = `${list.length} problems · ${probs.filter((p) => S.solved[p.pid]).length} solved`;
       wireMcq(main.querySelector(".co-plist"));
     };
     const withNotes = units.filter((u) => u.lessons.some((l) => all[l.id]?.mcq.length));
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">Problems</span><h2>Problem bank</h2><p>Every check question in the course in one place. Solve one first time for +${XP.problem} XP.</p></div>
-      <div class="co-filters"><select data-f="unit"><option value="">All units</option>${withNotes.map((u) => `<option value="${u.id}">Unit ${u.n}: ${esc(u.title)}</option>`).join("")}</select>
+      <div class="co-filters"><select data-f="unit"><option value="">All ${u1}s</option>${withNotes.map((u) => `<option value="${u.id}">${U} ${u.n}: ${esc(u.title)}</option>`).join("")}</select>
       <select data-f="d"><option value="">Any difficulty</option><option value="1">Easy</option><option value="2">Medium</option><option value="3">Hard</option></select>
       <select data-f="s"><option value="">Solved and unsolved</option><option value="unsolved">Unsolved</option><option value="solved">Solved</option></select><span class="co-pcount"></span></div><div class="co-plist"></div>`;
     main.querySelectorAll("[data-f]").forEach((s) => s.addEventListener("change", () => { f[s.dataset.f] = s.value; paint(); }));
@@ -536,9 +539,9 @@ export function mountCourse(root, cfg) {
       ["Full notes", "Every lesson has notes: the ideas, equations, worked examples and common mistakes."],
       ["Check questions", "Questions at the end of each lesson, with an explanation for every answer."],
       ["Flashcards", "Flip through a lesson's cards, or save them to your account for daily study."],
-      ["Unit quizzes", `Pass with 75% for +${XP.quiz} XP; score 100% for a bonus.`],
+      [`${U} quizzes`, `Pass with 75% for +${XP.quiz} XP; score 100% for a bonus.`],
       ["Spaced review", "Cards come back just before you'd forget them."],
-      ["Problem bank", "Every question in the course, filtered by unit, difficulty and whether you've solved it."],
+      ["Problem bank", `Every question in the course, filtered by ${u1}, difficulty and whether you've solved it.`],
       ["Paths", `${cfg.paths.length} routes through the course for different goals.`],
       ["XP and levels", "Earn XP for everything you do. Levels get further apart as you go."],
       ["Streaks and daily goals", "Set a daily XP goal and keep your streak alive."],

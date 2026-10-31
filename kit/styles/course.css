@@ -285,3 +285,8 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(255, 255, 2
   .co-side { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { .co-node.cur::before, .co-bubble, .co-node.chest.ready { animation: none; } }
+
+/* a course's standing notice (for example: study material, not a qualification), set with cfg.notice */
+.co-notice { margin: 14px 0 0; padding: 12px 16px; border: 1px solid var(--line); border-left: 3px solid var(--accent, #fff); border-radius: 14px; background: rgba(255, 255, 255, .04); color: var(--mute); font-size: 14px; line-height: 1.5; }
+.co-notice b { color: var(--fg, #fff); }
+.co-notice a { color: inherit; }
