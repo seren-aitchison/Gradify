@@ -47,3 +47,9 @@
 .lab-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
 .pq-h, .pq-c { display: flex; align-items: center; justify-content: center; min-height: 42px; border-radius: 8px; font: 600 14px var(--mono); }
 .pq-h { color: var(--mute); background: rgba(255, 255, 255, .04); } .pq-c { color: #fff; border: 1px solid var(--line); }
+.pt-grid { display: grid; grid-template-columns: repeat(18, minmax(34px, 1fr)); grid-template-rows: repeat(7, 40px) 10px 40px 40px; gap: 3px; min-width: 660px; }
+.pt-el { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0; border: 1px solid rgba(0, 0, 0, .3); border-radius: 6px; color: #111; cursor: pointer; font-family: var(--sans); line-height: 1; }
+.pt-el b { font-size: 14px; } .pt-el small { font-size: 9px; opacity: .75; }
+.pt-el.sel, .pt-el:hover { outline: 2px solid #fff; outline-offset: 1px; z-index: 1; }
+.ob { width: 34px; height: 34px; border-radius: 6px; font: 600 15px var(--mono); color: var(--fg); background: rgba(255, 255, 255, .05); border: 1px solid var(--line-strong); cursor: pointer; letter-spacing: -2px; }
+.ob:hover { background: rgba(255, 255, 255, .12); }
