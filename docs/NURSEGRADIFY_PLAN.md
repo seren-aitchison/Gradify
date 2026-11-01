@@ -81,3 +81,7 @@ School 2 (Human Anatomy and Physiology, 30 lessons) is written to standard 2. Ev
 ## Status after the School 7 batch
 
 School 7 (Clinical Practice and Care Planning, 27 lessons) is written to standard 2 with no QA warnings. It covers the nursing process, person-centred care, prevention and recovery, transitions and coordination, and safe practice (risk, prioritisation, delegation, escalation, advocacy, end-of-life care). Later schools go deeper rather than repeat: School 15 for palliative care, School 17 for the law on capacity and advocacy. Draft until content review, source verification and expert sign-off. Written: Schools 1–7 (226 of 497 lessons). Next: Schools 8 and 17.
+
+## Status after the School 8 batch
+
+School 8 (Infection Prevention and Control, 28 lessons) is written to standard 2 with no QA warnings. It builds on School 6's practical skills and School 2's microbiology with the science, evidence and organisational systems of infection prevention: transmission, standard and transmission-based precautions, decontamination (Spaulding), healthcare-associated infections, antimicrobial resistance and stewardship, outbreaks, waste, sharps, occupational exposure and surveillance. Draft until content review, source verification and expert sign-off. Written: Schools 1–8 (254 of 497 lessons). Next: School 17.
