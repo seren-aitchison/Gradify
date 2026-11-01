@@ -1,0 +1,38 @@
+/* PsychGradify and SocGradify labs (kit/labs/social/ui.js and the labs in kit/labs/psychology/, kit/labs/sociology/).
+   Built on labs.css; nothing here changes the science labs. */
+.sx-data, .sx-caveat { margin: 8px 0; padding: 7px 10px; border-radius: 10px; font-size: 12.5px; line-height: 1.45; color: var(--mute); border: 1px solid var(--line); background: rgba(255, 255, 255, .03); }
+.sx-data b, .sx-caveat b { color: var(--fg); }
+.sx-data.real { border-color: rgba(52, 211, 153, .35); } .sx-data.real b { color: #34d399; }
+.sx-data.sim { border-color: rgba(251, 191, 36, .35); } .sx-data.sim b { color: #fbbf24; }
+.sx-caveat { border-color: rgba(167, 139, 250, .35); }
+.sx-cases, .sx-sort, .sx-panel { display: grid; gap: 10px; }
+.sx-head { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; } .sx-head span { color: var(--mute); font: 12px var(--mono); }
+.sx-case { padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255, 255, 255, .03); }
+.sx-case h4 { margin: 0 0 6px; } .sx-text { color: var(--mute); line-height: 1.55; } .sx-text p { margin: 0 0 8px; }
+.sx-q { margin: 8px 0; font-weight: 600; }
+.sx-opts { display: grid; gap: 6px; }
+.sx-opts button, .sx-btns button { min-height: 44px; padding: 8px 12px; text-align: left; border-radius: 10px; font: 500 14px/1.4 var(--sans); color: var(--fg); background: rgba(255, 255, 255, .04); border: 1px solid var(--line-strong, var(--line)); cursor: pointer; }
+.sx-opts button:focus-visible, .sx-btns button:focus-visible, .sx-sort select:focus-visible, .sx-key:focus-visible { outline: 2px solid var(--co-accent, #a78bfa); outline-offset: 2px; }
+.sx-opts button.ok, .sx-btns button.ok { border-color: #40d4b1; color: #40d4b1; } .sx-opts button.no, .sx-btns button.no { border-color: #ff3d6e; color: #ff8aa5; }
+.sx-btns button[aria-pressed="true"] { border-color: var(--co-accent, #a78bfa); background: rgba(167, 139, 250, .15); }
+.sx-fb { margin: 6px 0 0; min-height: 1.4em; color: var(--mute); line-height: 1.5; } .sx-fb.ok b { color: #40d4b1; } .sx-fb.no b { color: #ff8aa5; }
+.sx-nav { display: flex; justify-content: space-between; gap: 8px; }
+.sx-sort ol { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+.sx-sort li { display: grid; grid-template-columns: 1fr minmax(140px, 220px); gap: 4px 10px; align-items: center; }
+.sx-sort li.ok select { border-color: #40d4b1; } .sx-sort li.no select { border-color: #ff3d6e; }
+.sx-sort select, .sx-panel select, .sx-panel input[type="text"], .sx-panel input[type="number"], .sx-panel textarea { min-height: 40px; padding: 6px 8px; border-radius: 8px; color: var(--fg); background: #111318; border: 1px solid var(--line-strong, var(--line)); font: 14px var(--sans); }
+.sx-panel textarea { width: 100%; min-height: 90px; resize: vertical; line-height: 1.45; }
+.sx-why { grid-column: 1 / -1; color: var(--mute); }
+.sx-tbl { width: 100%; border-collapse: collapse; font-size: 13px; } .sx-tbl th, .sx-tbl td { padding: 5px 8px; border-bottom: 1px solid var(--line); text-align: left; } .sx-tbl thead th { color: var(--mute); font-weight: 500; } .sx-tbl td { font-family: var(--mono); }
+.sx-stage { display: grid; place-items: center; min-height: 220px; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: #0b0c0e; text-align: center; }
+.sx-big { font: 700 clamp(30px, 6vw, 54px)/1.1 var(--sans); letter-spacing: .02em; }
+.sx-key { min-width: 64px; min-height: 48px; padding: 8px 12px; border-radius: 10px; font: 600 15px var(--sans); color: var(--fg); background: rgba(255, 255, 255, .05); border: 1px solid var(--line-strong, var(--line)); cursor: pointer; }
+.sx-keys { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px; }
+.sx-meter { height: 8px; border-radius: 999px; background: rgba(255, 255, 255, .08); overflow: hidden; } .sx-meter i { display: block; height: 100%; background: var(--co-accent, #a78bfa); }
+.sx-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; } .sx-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.sx-card { padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255, 255, 255, .03); } .sx-card h5 { margin: 0 0 4px; font-size: 13px; } .sx-card p { margin: 0; color: var(--mute); font-size: 13px; line-height: 1.5; }
+.sx-svg { width: 100%; height: auto; display: block; } .sx-svg [data-part] { cursor: pointer; transition: opacity .15s; } .sx-svg [data-part]:hover, .sx-svg [data-part]:focus { opacity: .85; outline: none; } .sx-svg [data-part].on { stroke: #fff; stroke-width: 2.5; }
+.sx-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.sx-time { display: grid; gap: 6px; } .sx-time button { display: grid; grid-template-columns: 70px 1fr; gap: 10px; text-align: left; }
+@media (max-width: 760px) { .sx-grid2, .sx-grid3 { grid-template-columns: 1fr; } .sx-sort li { grid-template-columns: 1fr; } }
+.sx-view .sx-svg { max-height: 360px; margin: 0 auto; }

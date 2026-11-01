@@ -16,6 +16,7 @@ const SHELL = [
   "kit/courses/chemistry/course.js", "kit/courses/chemistry/syllabus.js", "kit/courses/chemistry/ids.js", "kit/courses/chemistry/qa.js", "kit/courses/chemistry/interactives.js",
   "kit/courses/psychology/course.js", "kit/courses/psychology/syllabus.js", "kit/courses/psychology/ids.js", "kit/courses/psychology/qa.js", "kit/courses/psychology/interactives.js", "kit/courses/psychology/registry.js",
   "kit/courses/sociology/course.js", "kit/courses/sociology/syllabus.js", "kit/courses/sociology/ids.js", "kit/courses/sociology/qa.js", "kit/courses/sociology/interactives.js", "kit/courses/sociology/registry.js",
+  "kit/styles/social-labs.css", "kit/labs/social/stats.js", "kit/labs/social/ui.js",
   "kit/notes/studio.js", "kit/notes/video3d.js", "kit/notes/engine.js", "kit/notes/pack.js",
   "kit/earth/globe.js", "kit/earth/earth-land.js",
   "kit/lifeos/lifeos.js", "kit/lifeos/os.js", "kit/lifeos/earth.js", "kit/lifeos/plan.js", "kit/lifeos/calendar.js", "kit/lifeos/assistant.js", "kit/lifeos/community.js", "kit/lifeos/study.js", "kit/lifeos/tree.js",

@@ -35,7 +35,7 @@ export default {
       ["Mental health", "How disorders are understood, classified and treated, and what the evidence shows."],
       ["Research and statistics", "Designing studies, ethics, open science and the statistics to analyse them."],
     ],
-    featured: [],
+    featured: ["stroop", "brain-explorer", "classical", "conformity", "serial-position", "biases", "hypothesis-test", "sleep"],
     tools: [["Notes Studio", "Turn your own lecture notes and PDFs into flashcards and questions.", "../app.html#/notes"], ["The brain in 3D", "PsychGradify's interactive 3D brain.", "../3d.html"], ["SocGradify", "Sociology: how structures, institutions and cultures shape lives.", "/socgradify/course/"]],
   },
   extras: [
