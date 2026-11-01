@@ -26,3 +26,14 @@ await writeFile(`${OUT}/inequality.js`, head("Income inequality: Gini index and 
 await writeFile(`${OUT}/demography.js`, head("Population: birth and death rates, fertility, life expectancy, urbanisation, total population") + `export const COUNTRIES = ${JSON.stringify(names)};\nexport const DATA = ${JSON.stringify(demo)};\n`);
 await writeFile(`${OUT}/pyramids.js`, head("Population by five-year age band and sex, 1960, 1990 and 2023") + `export const COUNTRIES = ${JSON.stringify(names)};\nexport const PYRAMIDS = ${JSON.stringify(pyr)};\n`);
 console.log("ok", Object.keys(ineq["SI.POV.GINI"].values), Object.keys(pyr.values));
+
+// ---- indicators for the data explorer: 22 countries, 1990 onwards ----
+const C2 = ["GBR","USA","SWE","DEU","FRA","JPN","KOR","AUS","CAN","BRA","MEX","ARG","ZAF","NGA","KEN","ETH","EGY","IND","CHN","IDN","BGD","RUS"];
+const names2 = {}; { const r = await (await fetch(`https://api.worldbank.org/v2/country/${C2.join(";")}?format=json&per_page=100`)).json(); for (const c of r[1]) names2[c.id] = c.name; }
+const IND = { "SI.POV.GINI": "Gini index", "SI.POV.DDAY": "Extreme poverty", "NY.GDP.PCAP.PP.KD": "GDP per capita (PPP)", "SP.DYN.LE00.IN": "Life expectancy", "SL.UEM.TOTL.ZS": "Unemployment",
+  "SL.TLF.CACT.FE.ZS": "Female labour force participation", "SL.TLF.CACT.MA.ZS": "Male labour force participation", "SG.GEN.PARL.ZS": "Women in parliament", "SE.ENR.TERT.FM.ZS": "Tertiary enrolment gender parity",
+  "SE.TER.ENRR": "Tertiary enrolment", "SE.PRM.CMPT.ZS": "Primary completion", "VC.IHR.PSRC.P5": "Homicide rate", "EN.GHG.CO2.PC.CE.AR5": "CO2 emissions per person", "SP.URB.TOTL.IN.ZS": "Urban population" };
+const ind = {};
+for (const [code, short] of Object.entries(IND)) { const w = await wb(code, C2, "1990:2024"); ind[code] = { ...meta(code, w), short, values: w.out }; }
+await writeFile(`${OUT}/indicators.js`, head("Social indicators for 22 countries, 1990 onwards: inequality, poverty, income, health, work, gender, education, crime, emissions, urbanisation") + `export const COUNTRIES = ${JSON.stringify(names2)};\nexport const DATA = ${JSON.stringify(ind)};\n`);
+console.log("indicators", Object.keys(ind).map((k) => `${k}:${Object.keys(ind[k].values).length}`).join(" "));

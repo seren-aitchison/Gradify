@@ -18,7 +18,28 @@ export const ANSCOMBE = {
 const f2 = (v, d = 2) => (Number.isFinite(v) ? v.toFixed(d) : "–");
 const pf = (p) => (p < 0.001 ? "< .001" : p.toFixed(3).replace(/^0/, ""));
 
-export function mount(el, ctx = {}) { return ({ describe, correlation, ttest }[ctx.mode] || describe)(el, ctx); }
+export function mount(el, ctx = {}) { return ({ describe, correlation, ttest, crosstab }[ctx.mode] || describe)(el, ctx); }
+
+// crosstab: a contingency table with row percentages, expected counts, chi-square and Cramér's V. The example counts are
+// invented for practice; type in counts from a real table to analyse it.
+export const CROSSTAB_EXAMPLE = { rows: ["Degree", "No degree"], cols: ["Voted", "Didn't vote"], n: [[160, 40], [210, 140]] };
+function crosstab(el, ctx) {
+  const E = CROSSTAB_EXAMPLE, $ = shell(el, `<div class="sx-panel"><table class="sx-tbl"><thead><tr><th></th>${E.cols.map((c) => `<th scope="col">${c}</th>`).join("")}</tr></thead><tbody>${E.rows.map((r, i) => `<tr><th scope="row">${r}</th>${E.cols.map((c, j) => `<td><label class="sr-only" for="ct${i}${j}">${r}, ${c}</label><input id="ct${i}${j}" type="number" min="0" value="${E.n[i][j]}" style="width:90px"></td>`).join("")}</tr>`).join("")}</tbody></table></div><div class="lab-ctrl"></div><div class="lab-out"></div>`);
+  const out = panel($(".lab-out")), ctrl = $(".lab-ctrl"), st = {};
+  dataLabel(ctrl, { real: false, how: "Invented counts for practice; enter the counts from a published table to analyse real data." });
+  const ch = challenges(ctrl, ctx, [{ id: "sig", text: "Read the result for the example table", test: (x) => x.run }, { id: "none", text: "Enter counts with no association (equal row percentages)", test: (x) => x.V < 0.02 }]);
+  const read = () => [0, 1].map((i) => [0, 1].map((j) => Math.max(0, Number($(`#ct${i}${j}`).value) || 0)));
+  el.addEventListener("input", run);
+  function run() {
+    const T = read(); if (T.flat().some((v) => v === 0) && T.flat().reduce((a, b) => a + b, 0) === 0) return;
+    const R = S.chiSquare(T); st.run = true; st.V = R.V; ch.check(st);
+    const pct = T.map((r) => r.map((v) => (100 * v) / (r[0] + r[1] || 1)));
+    out(`${table(["", ...E.cols.map((c) => `${c} (row %)`), "Expected counts"], T.map((r, i) => [E.rows[i], ...pct[i].map((p) => `${p.toFixed(1)}%`), R.expected[i].map((v) => v.toFixed(1)).join(" · ")]))}
+      <p><b>χ²(${R.df}) = ${f2(R.x2)}, p ${pf(R.p).startsWith("<") ? pf(R.p) : `= ${pf(R.p)}`}, Cramér's V = ${f2(R.V)}.</b> ${R.p < 0.05 ? "The difference in percentages is unlikely if there were no association in the population." : "Differences this size could easily arise by chance."}</p>
+      <p class="sx-fb">Compare row percentages to describe the association; χ² says whether it is statistically significant, and Cramér's V how strong it is (0 to 1). χ² needs expected counts of at least 5 in each cell. An association isn't causation: education and voting are both linked to age and class.</p>`);
+  }
+  run();
+}
 
 function describe(el, ctx) {
   const $ = shell(el, `<div class="lab-cols"><div class="sx-panel"><label for="sx-nums"><b>Your data</b> (numbers separated by spaces, commas or new lines)</label><textarea id="sx-nums"></textarea><div class="sx-btns sx-list"></div><div class="lab-stage"></div></div><div class="lab-ctrl"></div></div><div class="lab-out"></div>`);

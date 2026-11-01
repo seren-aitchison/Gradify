@@ -98,3 +98,44 @@ test("psychology: the two-process model of sleep", async () => {
   assert.ok(lateMax > normMax, "staying up late raises peak sleep pressure");
   near(1 - (1 - 0) * Math.exp(-18.2 / 18.2), 0.632, 1e-3, "S rises 63% of the way in one time constant");
 });
+
+test("sociology: mobility matrices, poverty scenarios and real quintile data", async () => {
+  const { matrix, absolute, oddsRatio } = await import("../kit/labs/sociology/mobility.js");
+  for (const f of [0, 0.4, 1]) for (const row of matrix(f, 0.2)) near(row.reduce((a, b) => a + b, 0), 1, 1e-12, "each row of a transition matrix sums to 1");
+  near(oddsRatio(matrix(1, 0)), 1, 1e-12, "perfect fluidity gives an odds ratio of 1");
+  assert.ok(oddsRatio(matrix(0.2, 0)) > oddsRatio(matrix(0.6, 0)), "less fluidity, more unequal relative chances");
+  near(oddsRatio(matrix(0.4, 0)), oddsRatio(matrix(0.4, 0.3)), 1.5, "structural change alone barely moves relative chances");
+  assert.ok(absolute([0.55, 0.25, 0.2], matrix(0.4, 0.3)) > absolute([0.55, 0.25, 0.2], matrix(0.4, 0)), "structural change raises absolute mobility");
+  const { population, SCENARIOS, quintiles } = await import("../kit/labs/sociology/inequality.js");
+  const base = population();
+  near(S.povertyRate(SCENARIOS.all10[1](base)).rate, S.povertyRate(base).rate, 1e-12, "a uniform rise leaves relative poverty unchanged");
+  assert.ok(S.povertyRate(SCENARIOS.middle[1](base)).rate > S.povertyRate(base).rate, "middle incomes rising raises relative poverty");
+  const se = quintiles("SWE"), za = quintiles("ZAF");
+  assert.ok(se && za && S.giniFromShares(za.shares) > S.giniFromShares(se.shares), "South Africa is more unequal than Sweden");
+  assert.ok(S.giniFromShares(za.shares) * 100 < za.gini, "grouped data understates the published Gini");
+});
+
+test("sociology: network measures, sampling bias and the transition model", async () => {
+  const { betweenness, degree, density, components, PRESETS } = await import("../kit/labs/sociology/network.js");
+  const star = PRESETS.star; assert.equal(betweenness(star.n, star.e)[0], 28, "star centre lies on all C(8,2) = 28 paths");
+  assert.deepEqual(betweenness(3, [[0, 1], [1, 2]]), [0, 1, 0]); assert.equal(degree(star.n, star.e)[0], 8); near(density(4, [[0, 1], [1, 2], [2, 3]]), 0.5, 1e-12, "density");
+  assert.equal(components(4, [[0, 1], [2, 3]]), 2);
+  const c = PRESETS.clusters, bt = betweenness(c.n, c.e); assert.ok([4, 5, 6].includes(bt.indexOf(Math.max(...bt))) && Math.min(bt[4], bt[5], bt[6]) > 3 * Math.max(...bt.filter((_, i) => ![4, 5, 6].includes(i))), "the people on the bridge (E, F, G) have by far the highest betweenness");
+  const { makePopulation, METHODS } = await import("../kit/labs/sociology/sampling.js");
+  const P = makePopulation(), truth = S.mean(P.map((p) => p.hours)), r = S.rng(5);
+  const est = (m) => S.mean(Array.from({ length: 200 }, () => S.mean(METHODS[m][1](P, 100, r).map((p) => p.hours))));
+  assert.ok(Math.abs(est("random") - truth) < 1, "random sampling is unbiased"); assert.ok(est("opportunity") - truth < -3, "the online poll is biased"); assert.ok(Math.abs(est("volunteer") - truth) > 3, "volunteers are biased");
+  const { project } = await import("../kit/labs/sociology/population.js");
+  const R = project([40, 40, 40, 40, 40]); assert.equal(R.length, 200); assert.ok(R[119].P > R[39].P * 2, "stages 2 and 3 drive growth"); assert.ok(R[199].P < R[159].P, "stage 5 declines");
+});
+
+test("sociology: content analysis counts and method recommendations", async () => {
+  const { analyse, EXAMPLE, DEFAULT_CATS } = await import("../kit/labs/sociology/content.js");
+  const A = analyse("The cheat, the cheats and food bank queues. Food bank use rises.", "Deviance: cheat, cheats\nHardship: food bank");
+  assert.equal(A.words, 12); assert.deepEqual(A.rows.map((r) => r.n), [2, 2]);
+  assert.ok(analyse(EXAMPLE, DEFAULT_CATS).rows.every((r) => r.n > 0));
+  const { recommend } = await import("../kit/labs/sociology/methods.js");
+  assert.match(recommend({ aim: "measure", scale: "large", access: "yes", topic: "no", time: "no" })[0][0], /survey/i);
+  assert.match(recommend({ aim: "understand", scale: "small", access: "hidden", topic: "no", time: "no" })[0][0], /observation|ethnograph/i);
+  assert.ok(recommend({ aim: "measure", scale: "small", access: "none", topic: "yes", time: "yes" }).length >= 3);
+});

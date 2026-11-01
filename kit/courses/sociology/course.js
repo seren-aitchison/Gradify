@@ -34,7 +34,7 @@ export default {
       ["A changing world", "Globalisation, cities, population, technology and the environment."],
       ["Research and data", "Surveys, interviews, ethnography, documents, official statistics and data science."],
     ],
-    featured: [],
+    featured: ["lorenz", "theorists", "data-gender", "mobility", "pyramids", "sampling", "network", "marx-durkheim-weber"],
     tools: [["Notes Studio", "Turn your own sociology notes and readings into flashcards and questions.", "../app.html#/notes"], ["PsychGradify", "Psychology: individual cognition, behaviour and development.", "/psychgradify/course/"]],
   },
   extras: [
