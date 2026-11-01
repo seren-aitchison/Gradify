@@ -23,6 +23,9 @@
 //        standard, primary or secondary, and date is the version or the date checked (YYYY-MM or YYYY-MM-DD)
 //   READ: further reading
 //   IX: the id of one of the course's interactives (config.interactives), embedded at this point in the notes
+//   EV: how well supported a claim is, "established | claim", "contested | claim" or "hypothetical | claim",
+//       listed at the end under "How strong is the evidence?" (optional; used by the social sciences)
+//   LV: the lesson's level and difficulty, shown as a chip under the title, e.g. "Introductory · Foundation"
 // Inline: **bold**, *italic*, `code`, x^{2} and v_{0}.
 export { esc, inline, norm } from "../core/text.js";
 import { esc, inline } from "../core/text.js";
@@ -34,11 +37,11 @@ export function parseNotes(text) {
   for (const raw of String(text || "").split("\n")) {
     const line = raw.trim();
     if (!line) { ex = null; continue; }
-    if (line.startsWith("## ")) { L = { title: line.slice(3).trim(), lead: "", blocks: [], cards: [], mcq: [], tasks: [], objectives: [], prereq: [], terms: [], summary: [], sources: [], reading: [] }; lessons.push(L); ex = null; continue; }
+    if (line.startsWith("## ")) { L = { title: line.slice(3).trim(), lead: "", blocks: [], cards: [], mcq: [], tasks: [], objectives: [], prereq: [], terms: [], summary: [], sources: [], reading: [], evidence: [], level: "" }; lessons.push(L); ex = null; continue; }
     if (!L) continue;
     if (line.startsWith("> ") && ex) { ex.steps.push(line.slice(2)); continue; }
     ex = null;
-    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|(?:M|TF|MS|SEQ|MATCH|SA|NUM)[123]?(?:#[a-z0-9-]+)?(?:@[\d,]+)?):\s*(.*)$/);
+    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|EV|LV|(?:M|TF|MS|SEQ|MATCH|SA|NUM)[123]?(?:#[a-z0-9-]+)?(?:@[\d,]+)?):\s*(.*)$/);
     const [tag, body] = m ? [m[1], m[2]] : line.startsWith("- ") ? ["-", line.slice(2)] : ["P", line];
     const last = L.blocks.at(-1);
     if (tag === "S") L.lead += (L.lead ? " " : "") + body;
@@ -58,6 +61,8 @@ export function parseNotes(text) {
     else if (tag === "SRC") { const [cite, kind = "", date = "", url = ""] = body.split(" | ").map((x) => x.trim()); if (cite) L.sources.push({ cite, kind, date, url }); }
     else if (tag === "READ") L.reading.push(body);
     else if (tag === "IX") L.blocks.push({ t: "ix", id: body.trim() });
+    else if (tag === "EV") { const [status, claim] = body.split(" | ").map((x) => x.trim()); if (status && claim) L.evidence.push({ status: status.toLowerCase(), claim }); }
+    else if (tag === "LV") L.level = body.trim();
     else {
       const Q = parseQuestion(tag, body);
       // single-choice questions keep the original { q, right, wrong, why, d } view (used by older code and
@@ -110,11 +115,13 @@ export function lessonText(L) {
 // sources with their kind and date, further reading), drawn around the notes
 export function lessonFrame(L) {
   const top = (L.objectives.length || L.prereq.length) ? `<div class="co-frame">${L.objectives.length ? `<section><h3>By the end of this lesson you can</h3><ul>${L.objectives.map((o) => `<li>${inline(o)}</li>`).join("")}</ul></section>` : ""}${L.prereq.length ? `<section><h3>Before you start</h3><ul>${L.prereq.map((o) => `<li>${inline(o)}</li>`).join("")}</ul></section>` : ""}</div>` : "";
-  const KIND = { legislation: "Legislation", case: "Case law", rule: "Professional rules", guidance: "Guidance", standard: "Standard", primary: "Primary source", secondary: "Secondary source" };
+  const KIND = { legislation: "Legislation", case: "Case law", rule: "Professional rules", guidance: "Guidance", standard: "Standard", primary: "Primary source", secondary: "Secondary source", data: "Data source" };
+  const EVN = { established: "Established", contested: "Contested", hypothetical: "Hypothetical" };
   const end = [
     L.summary.length ? `<section><h3>Summary</h3><ul>${L.summary.map((x) => `<li>${inline(x)}</li>`).join("")}</ul></section>` : "",
     L.terms.length ? `<section><h3>Key terms</h3><dl class="co-terms">${L.terms.map(([t, d]) => `<dt>${inline(t)}</dt><dd>${inline(d)}</dd>`).join("")}</dl></section>` : "",
     L.sources.length ? `<section><h3>Sources</h3><ul class="co-sources">${L.sources.map((x) => `<li>${x.url && /^https:\/\//.test(x.url) ? `<a href="${esc(x.url)}" rel="noopener" target="_blank">${inline(x.cite)}</a>` : inline(x.cite)}${x.kind ? ` <small>${esc(KIND[x.kind] || x.kind)}${x.date ? ` · ${esc(x.date)}` : ""}</small>` : ""}</li>`).join("")}</ul></section>` : "",
+    L.evidence?.length ? `<section><h3>How strong is the evidence?</h3><ul class="co-evidence">${L.evidence.map((e) => `<li><span class="co-ev co-ev-${esc(e.status)}">${esc(EVN[e.status] || e.status)}</span> ${inline(e.claim)}</li>`).join("")}</ul></section>` : "",
     L.reading.length ? `<section><h3>Further reading</h3><ul>${L.reading.map((x) => `<li>${inline(x)}</li>`).join("")}</ul></section>` : "",
   ].join("");
   return { top, end: end ? `<div class="co-frame co-end">${end}</div>` : "" };

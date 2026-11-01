@@ -1,6 +1,6 @@
 // Gradify service worker: lets the site open offline.
 // Network first, so a new deploy shows straight away; the cache is the fallback.
-const CACHE = "gradify-v39";
+const CACHE = "gradify-v40";
 const SHELL = [
   "./", "index.html", "app.html", "manifest.webmanifest", "gradify.config.js",
   // homepage
@@ -14,6 +14,8 @@ const SHELL = [
   "kit/labs/lab.js", "kit/styles/labs.css",
   "kit/courses/biology/course.js", "kit/courses/biology/syllabus.js", "kit/courses/biology/ids.js", "kit/courses/biology/qa.js", "kit/courses/biology/interactives.js",
   "kit/courses/chemistry/course.js", "kit/courses/chemistry/syllabus.js", "kit/courses/chemistry/ids.js", "kit/courses/chemistry/qa.js", "kit/courses/chemistry/interactives.js",
+  "kit/courses/psychology/course.js", "kit/courses/psychology/syllabus.js", "kit/courses/psychology/ids.js", "kit/courses/psychology/qa.js", "kit/courses/psychology/interactives.js", "kit/courses/psychology/registry.js",
+  "kit/courses/sociology/course.js", "kit/courses/sociology/syllabus.js", "kit/courses/sociology/ids.js", "kit/courses/sociology/qa.js", "kit/courses/sociology/interactives.js", "kit/courses/sociology/registry.js",
   "kit/notes/studio.js", "kit/notes/video3d.js", "kit/notes/engine.js", "kit/notes/pack.js",
   "kit/earth/globe.js", "kit/earth/earth-land.js",
   "kit/lifeos/lifeos.js", "kit/lifeos/os.js", "kit/lifeos/earth.js", "kit/lifeos/plan.js", "kit/lifeos/calendar.js", "kit/lifeos/assistant.js", "kit/lifeos/community.js", "kit/lifeos/study.js", "kit/lifeos/tree.js",

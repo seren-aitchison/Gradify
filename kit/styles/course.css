@@ -459,3 +459,12 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(255, 255, 2
 .co-used a { display: block; padding: 10px 12px; border-radius: 12px; color: var(--fg); text-decoration: none; background: rgba(255, 255, 255, .03); border: 1px solid var(--line); } .co-used small { display: block; color: var(--mute); font-size: 12px; }
 @media (max-width: 900px) { .co-hero { grid-template-columns: 1fr; } }
 
+
+/* evidence status (EV: lines) and the review line (cfg.reviewLine): social-science courses */
+.co-evidence { list-style: none; padding-left: 0 !important; }
+.co-evidence li { margin: 6px 0; }
+.co-ev { display: inline-block; min-width: 92px; margin-right: 6px; padding: 1px 8px; border-radius: 999px; font: 600 11px/1.6 var(--mono); text-align: center; border: 1px solid var(--line); }
+.co-ev-established { color: #34d399; border-color: rgba(52, 211, 153, .45); }
+.co-ev-contested { color: #fbbf24; border-color: rgba(251, 191, 36, .45); }
+.co-ev-hypothetical { color: #a78bfa; border-color: rgba(167, 139, 250, .45); }
+.co-reviewed { margin: 0 0 14px; color: var(--mute); font: 12px/1.5 var(--mono); }
