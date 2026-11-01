@@ -13,6 +13,7 @@ export const QA = {
   u01: { reviewed: null, sources: null, signoff: null },
   // written to standard 2; awaiting its structured review
   u02: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u07: { standard: 2, reviewed: null, sources: null, signoff: null },
   u03: { reviewed: null, sources: null, signoff: null },
   u04: { reviewed: null, sources: null, signoff: null },
   u05: { reviewed: null, sources: null, signoff: null },

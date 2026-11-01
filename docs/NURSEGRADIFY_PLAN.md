@@ -77,3 +77,7 @@ School 6 (Core Nursing Procedures and Clinical Skills, 35 lessons) is the first 
 ## Status after the School 2 batch
 
 School 2 (Human Anatomy and Physiology, 30 lessons) is written to standard 2. Every question is linked to its lesson objectives, it passes all hard checks with no warnings, and normal values are given as typical adult reference ranges with the note that laboratories set their own. Content review, source verification and expert sign-off are outstanding, so it is labelled as a draft. Written: Schools 1–6 (199 of 497 lessons). Next, in order: Schools 7, 8 and 17 (the rest of the shared core), then the field schools 10–13, then 9, 14, 15 and 16.
+
+## Status after the School 7 batch
+
+School 7 (Clinical Practice and Care Planning, 27 lessons) is written to standard 2 with no QA warnings. It covers the nursing process, person-centred care, prevention and recovery, transitions and coordination, and safe practice (risk, prioritisation, delegation, escalation, advocacy, end-of-life care). Later schools go deeper rather than repeat: School 15 for palliative care, School 17 for the law on capacity and advocacy. Draft until content review, source verification and expert sign-off. Written: Schools 1–7 (226 of 497 lessons). Next: Schools 8 and 17.
