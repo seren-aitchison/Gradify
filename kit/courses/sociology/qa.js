@@ -10,6 +10,7 @@
 export const QA = {
   // written to standard 2 on 2026-11-01; linked sources checked by scripts/check-sources.mjs (docs/qa/sociology-source-check.md); review pending
   u01: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u02: { standard: 2, reviewed: null, sources: null, signoff: null },
 };
 // the date each school's notes were first written (shown on every lesson with the review state)
-export const WRITTEN_ON = { u01: "2026-11-01" };
+export const WRITTEN_ON = { u01: "2026-11-01", u02: "2026-11-01" };
