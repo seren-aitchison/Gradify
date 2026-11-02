@@ -21,11 +21,11 @@ for (const [url, s] of seen) {
       const r = await fetch(`https://api.crossref.org/works/${encodeURIComponent(doi)}`, { headers: { "User-Agent": "Gradify source check (mailto:hello@getgradify.com)" } });
       if (!r.ok) { status = "✗"; note = `Crossref ${r.status}`; }
       else {
-        const m = (await r.json()).message, year = (m.issued?.["date-parts"]?.[0]?.[0]) ?? (m.published?.["date-parts"]?.[0]?.[0]), title = (m.title || [""])[0];
-        const overlap = [...words(title)].filter((w) => words(s.cite).has(w)).length, yearOk = String(year) === s.date.slice(0, 4);
+        const m = (await r.json()).message, year = (m.issued?.["date-parts"]?.[0]?.[0]) ?? (m.published?.["date-parts"]?.[0]?.[0]), title = String((m.title || [""])[0]).replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+        const tw = [...words(title)], need = Math.min(2, tw.length), overlap = tw.filter((w) => words(s.cite).has(w)).length, yearOk = String(year) === s.date.slice(0, 4);
         // older articles are often registered with the year they were digitised; accept them if volume and first page match
         const vp = s.cite.match(/(\d+)(?:\([^)]*\))?:([A-Za-z]?\d+)/), volPageOk = vp && String(m.volume) === vp[1] && String(m.page || "").split(/[-–]/)[0] === vp[2];
-        status = (yearOk || volPageOk) && overlap >= 2 ? "✓" : "⚠"; note = `${title} (${year})${yearOk ? "" : volPageOk ? ` · Crossref dates the digitised record ${year}; volume and pages match the citation` : ` · year differs from ${s.date}`}${overlap >= 2 ? "" : " · title words don't match the citation"}`;
+        status = (yearOk || volPageOk) && overlap >= need ? "✓" : "⚠"; note = `${title} (${year})${yearOk ? "" : volPageOk ? ` · Crossref dates the digitised record ${year}; volume and pages match the citation` : ` · year differs from ${s.date}`}${overlap >= need ? "" : " · title words don't match the citation"}`;
       }
     } else {
       const r = await fetch(url, { redirect: "follow", headers: { "User-Agent": "Mozilla/5.0 Gradify source check" } });
