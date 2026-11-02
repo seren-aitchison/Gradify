@@ -117,3 +117,16 @@ School 14 (Community, Public Health and Health Promotion, 25 lessons) is written
 ## Status after the School 15 batch
 
 School 15 (Older Adult, Palliative and End-of-Life Nursing, 22 lessons) is written to standard 2 with no QA warnings. It goes beyond Schools 2, 6, 7, 10, 12 and 17: homeostenosis and pharmacokinetics in ageing, frailty models (Fried phenotype, cumulative deficits, eFI), multifactorial falls assessment (lying and standing BP, falls-risk drugs, the long lie), dementia types (Lewy body antipsychotic sensitivity, Herbert Protocol), delirium (4AT components, multicomponent prevention), polypharmacy (STOPP/START, anticholinergic burden, deprescribing), continence and incontinence-associated dermatitis, nutrition and hydration, pressure injury categories, mobility and deconditioning, intermediate care and reablement, care homes, safeguarding older people, advance care planning, illness trajectories and the six national ambitions, symptom management (anti-emetics by cause), pain (total pain, regular and breakthrough dosing, checked opioid conversions), SPIKES and collusion, the five priorities for care of the dying person, grief models and prolonged grief disorder, family support and the four quadrants of clinical ethics. Draft until clinical review and sign-off. Written: 467 of 497 lessons. Remaining: School 16.
+
+## Status after the School 16 batch
+
+School 16 (Research, Evidence-Based Practice and Nursing Leadership) is written to content standard 2: 30 lessons covering research methods and appraisal, research ethics and consent, evidence into practice, quality and safety, leadership and teams, and governance, policy and digital health. It passes the QA hard checks with no warnings.
+
+**All 17 schools and all 497 nursing lessons are now written.** Schools 1 and 3–5 still carry 29 older warnings (pre-standard-2 metadata and question balance) to clear at review.
+
+Expert review flags for School 16:
+- Healthcare policy: the 10 Year Health Plan, NHS England's planned abolition and ICS structures change often; check current status before sign-off.
+- Digital health: DCB0129/DCB0160, DTAC and AI guidance are under active revision.
+- Safe staffing: check the current status of NICE SG1 and the National Quality Board guidance.
+- Evidence-based practice: the "17 years" lag figure is presented as an often-quoted estimate (Morris and others, 2011), not a fixed fact.
+- Informed consent in research: check the wording on children's consent in non-CTIMP research against current HRA guidance.
