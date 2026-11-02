@@ -17,6 +17,7 @@ Gradify is a **static site with no build step**: plain HTML pages, ES modules an
 | `<site>gradify/` | One folder per sub-site (31 of them): `index.html`, `app.html`, `map.html`, `lifeos.html`, optionally `3d.html` and course folders | Per site |
 | `scigradify/physics/` | The reference course page: mounts the course engine on the physics curriculum | Per site |
 | `lawgradify/course/`, `nursegradify/course/` | The law and nursing course pages (this work) | Per site |
+| `psychgradify/course/`, `socgradify/course/` | The psychology and sociology course pages, with labs in `kit/labs/{psychology,sociology,social}/` (see `docs/PSYCHGRADIFY_SOCGRADIFY.md`) | Per site |
 | `supabase/migrations/` | Database schema, row-level security, XP triggers | Shared backend |
 | `supabase/functions/study-pack/` | The only server code: the Gradify AI Edge Function (notes → study pack) | Shared backend |
 | `supabase/dashboard/` | A single-file build of the function for pasting into the Supabase dashboard (`npm run build:dashboard`) | Shared backend |

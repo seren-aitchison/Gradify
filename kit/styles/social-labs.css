@@ -36,3 +36,6 @@
 .sx-time { display: grid; gap: 6px; } .sx-time button { display: grid; grid-template-columns: 70px 1fr; gap: 10px; text-align: left; }
 @media (max-width: 760px) { .sx-grid2, .sx-grid3 { grid-template-columns: 1fr; } .sx-sort li { grid-template-columns: 1fr; } }
 .sx-view .sx-svg { max-height: 360px; margin: 0 auto; }
+/* wide data tables scroll inside their box instead of widening the page (e.g. a lab embedded in the overview hero) */
+.lab .sx-tbl { display: block; max-width: 100%; overflow-x: auto; }
+.lab, .lab-cols > *, .sx-panel, .lab-out, .lab-info { min-width: 0; }
