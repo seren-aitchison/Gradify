@@ -12,6 +12,7 @@ export const QA = {
   u01: { standard: 2, reviewed: null, sources: null, signoff: null },
   u02: { standard: 2, reviewed: null, sources: null, signoff: null },
   u17: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u18: { standard: 2, reviewed: null, sources: null, signoff: null },
 };
 // the date each school's notes were first written (shown on every lesson with the review state)
-export const WRITTEN_ON = { u01: "2026-11-01", u02: "2026-11-01", u17: "2026-11-02" };
+export const WRITTEN_ON = { u01: "2026-11-01", u02: "2026-11-01", u17: "2026-11-02", u18: "2026-11-02" };
