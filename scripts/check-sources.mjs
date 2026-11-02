@@ -23,7 +23,9 @@ for (const [url, s] of seen) {
       else {
         const m = (await r.json()).message, year = (m.issued?.["date-parts"]?.[0]?.[0]) ?? (m.published?.["date-parts"]?.[0]?.[0]), title = (m.title || [""])[0];
         const overlap = [...words(title)].filter((w) => words(s.cite).has(w)).length, yearOk = String(year) === s.date.slice(0, 4);
-        status = yearOk && overlap >= 2 ? "✓" : "⚠"; note = `${title} (${year})${yearOk ? "" : ` · year differs from ${s.date}`}${overlap >= 2 ? "" : " · title words don't match the citation"}`;
+        // older articles are often registered with the year they were digitised; accept them if volume and first page match
+        const vp = s.cite.match(/(\d+)(?:\([^)]*\))?:([A-Za-z]?\d+)/), volPageOk = vp && String(m.volume) === vp[1] && String(m.page || "").split(/[-–]/)[0] === vp[2];
+        status = (yearOk || volPageOk) && overlap >= 2 ? "✓" : "⚠"; note = `${title} (${year})${yearOk ? "" : volPageOk ? ` · Crossref dates the digitised record ${year}; volume and pages match the citation` : ` · year differs from ${s.date}`}${overlap >= 2 ? "" : " · title words don't match the citation"}`;
       }
     } else {
       const r = await fetch(url, { redirect: "follow", headers: { "User-Agent": "Mozilla/5.0 Gradify source check" } });
