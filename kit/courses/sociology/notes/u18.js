@@ -55,7 +55,7 @@ H: Three averages
 H: Income and wealth
 P: Income and especially wealth distributions are **positively skewed**: most people have modest amounts and a few have very large amounts. The mean is pulled upwards by top incomes, so it lies above what a typical household has. Official statistics on household income therefore usually report the **median**, and the UK's relative poverty line is set at 60% of median income.
 IX: stats-describe
-X: Mean versus median in a small town
+X: Mean versus median in a small town (illustrative figures)
 > Nine households earn £20k, £22k, £24k, £25k, £27k, £30k, £32k, £35k and £400k.
 > Mean = £615k ÷ 9 ≈ £68,300. Median = £27,000 (the fifth value).
 > Only one household earns more than the mean; the median describes the typical household far better.
@@ -126,7 +126,7 @@ O: Interpret frequency distributions of social variables
 PRE: Types of social data
 H: Frequency tables
 P: A **frequency table** lists the categories of a variable, the **frequency** (count) in each, the **percentage** of the total and, for ordered variables, the **cumulative percentage**. Percentages make groups of different sizes comparable; valid percentages exclude missing responses.
-X: Highest qualification in a sample of 200
+X: Highest qualification in a sample of 200 (illustrative figures)
 > No qualifications: 20 (10%). GCSE or equivalent: 60 (30%). A level or equivalent: 50 (25%). Degree or above: 70 (35%).
 > Cumulative: 10%, 40%, 65%, 100%.
 > So 40% have GCSE-level qualifications or below, and 65% have no degree.
@@ -204,7 +204,7 @@ H: Probability basics
 P: A probability (from 0 to 1) expresses how likely an event is. In social research, a proportion in a population can be read as a probability: if 20% of households rent privately, a randomly chosen household has a 0.2 probability of renting privately. Random sampling relies on known probabilities of selection.
 H: Conditional probability
 P: **Conditional probability** is the probability of one event given another: the probability of being unemployed given that someone has no qualifications. Comparing conditional probabilities across groups is how sociologists describe **life chances**. Confusing p(A | B) with p(B | A) is a common error.
-X: Base rates and risk profiling
+X: Base rates and risk profiling (illustrative figures)
 > Suppose 1% of young people in an area are involved in serious youth violence.
 > A screening tool flags 80% of those involved, but also 10% of those not involved.
 > Of 1,000 young people: 8 true flags and about 99 false flags. Only about 7% of flagged young people are actually involved.
@@ -241,7 +241,7 @@ P: Each random sample gives a slightly different estimate. The distribution of e
 IX: sampling
 H: Margins of error
 P: The **margin of error** for a 95% confidence level is about 1.96 × SE. For a poll of 1,000 people with p = 0.5, SE ≈ √(0.25 ÷ 1,000) ≈ 0.016, so the margin of error is about ±3 percentage points. This only describes **random sampling error**; it doesn't cover non-response, coverage or question wording.
-X: Interpreting a poll
+X: Interpreting a poll (illustrative figures)
 > A poll of 1,000 adults finds 42% support for a policy, margin of error ±3 points.
 > The population figure is plausibly between about 39% and 45%.
 > A rise to 44% in the next poll is within sampling error and may not be a real change.
@@ -345,7 +345,7 @@ O: Explain why confidence intervals are more informative than significance tests
 PRE: Sampling distributions
 H: A range of plausible values
 P: A **95% confidence interval** for a proportion is approximately p ± 1.96 × SE, where SE = √(p(1 − p) ÷ n). If the same survey were repeated many times, about 95% of such intervals would contain the true population value. Narrow intervals mean precise estimates; wide intervals, imprecise ones.
-X: Interval for a survey estimate
+X: Interval for a survey estimate (illustrative figures)
 > In a sample of 900, 36% say they trust the police "a great deal" or "quite a lot".
 > SE = √(0.36 × 0.64 ÷ 900) = √0.000256 = 0.016.
 > 95% CI ≈ 36% ± 3.1 points, about 32.9% to 39.1%.
@@ -382,7 +382,7 @@ H: Common effect sizes
 - **Ratios (relative risk)**: 70 ÷ 55 ≈ 1.27, so graduates are 1.27 times as likely to vote.
 - **Odds ratios**: odds are p ÷ (1 − p). Graduates' odds of voting are 0.7 ÷ 0.3 ≈ 2.33; non-graduates' 0.55 ÷ 0.45 ≈ 1.22; the odds ratio is about 1.9. Odds ratios are standard in mobility research and logistic regression.
 - **Correlation coefficients** and **Cramér's V** for associations.
-X: Percentage points or per cent?
+X: Percentage points or per cent? (illustrative figures)
 > Child poverty falls from 30% to 27%.
 > That is a fall of 3 percentage points, or a 10% relative fall (3 ÷ 30).
 > Reporting both avoids confusion; headlines often mix them up.
@@ -490,7 +490,7 @@ PRE: Frequency distributions
 H: Crosstabulations
 P: A **crosstabulation** (contingency table) shows the joint distribution of two categorical variables. Percentages make it readable, but they must be calculated in the right direction: percentage **within** the categories of the explanatory variable, so that the outcome can be compared across groups.
 IX: crosstab
-X: Tenure by age group
+X: Tenure by age group (illustrative figures)
 > Of 400 people aged 18–34, 160 own their home (40%); of 600 aged 35 and over, 420 own (70%).
 > Row percentages within age groups answer "how does home ownership differ by age?".
 > Column percentages within tenure groups would instead answer "what is the age make-up of owners and renters?", a different question.
