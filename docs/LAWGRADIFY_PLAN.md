@@ -64,3 +64,36 @@ The brief's FLK1 list omits **Constitutional and Administrative Law and EU Law**
 - **Legal accuracy and currency.** Mitigation: content standard, dated notes, flagged reforms, a review pass by a qualified lawyer before marketing any pathway as exam preparation.
 - **Implied qualification.** Mitigation: the notice, School 18, and no "certificate" language anywhere.
 - **SQE specification changes.** Mitigation: pathways reference schools, not SRA wording; update the path descriptions when the SRA changes the split.
+
+## Status after clearing the QA warnings (2026-11-03)
+
+All seven written law schools (1, 3, 4, 15, 17, 18 and 19; 165 lessons) are now held to content standard 2. Every lesson has learning objectives, a summary, key terms and dated sources, and every question is linked to an objective. Answer options were rebalanced so the right answer is no longer conspicuously the longest, and each school now has at least 10% hard (M3) questions. LawGradify QA reports **0 warnings**.
+
+Content added to lesson bodies (not just metadata):
+- School 1: an authority in What is law? (Theft Act 1968), Court structures (Courts Act 1971; Constitutional Reform Act 2005), Parliament and the legislative process (Parliament Acts 1911 and 1949; R (Jackson) v Attorney General), Legal research and authority (Anderton v Ryan overruled by R v Shivpuri), Legal writing (CPR Part 16).
+- School 4, Assault: a short section on the Protection from Harassment Act 1997.
+- School 15, Conflicts of interest: the source paragraphs (SRA Code 6.1–6.2) and Prince Jefri Bolkiah v KPMG.
+- School 17: Stair's Institutions and Donoghue v Stevenson (Scots law), the Courts Reform (Scotland) Act 2014 (Scottish courts), youth conferencing under the Justice (Northern Ireland) Act 2002 (NI criminal justice), and the Solicitors (Scotland) Act 1980 and Solicitors (NI) Order 1976 (qualifying).
+
+Expert review flags:
+- Sources and citations were added after the event from memory; check every case citation, year and statute section against a primary source before the "sources" QA stage is signed off.
+- Scotland: check the Victims, Witnesses, and Justice Reform (Scotland) Act 2025's commencement and its effect on jury size and majority before relying on "15-person juries" and the not proven abolition.
+- SQE and Bar pages (Schools 18–19) cite SRA and BSB pages dated 2026; recheck against the current specifications.
+- Rewritten answer options are shorter paraphrases; check none has changed the legal meaning, especially in the School 15 conduct scenarios.
+
+## Status after writing the remaining schools (2026-11-03)
+
+**All 19 law schools and all 480 lessons are now written** to content standard 2. The 12 schools written in this batch, in order, were 5 (Criminal Law, 37 lessons), 7 (Land Law, 30), 9 (Equity and Trusts, 27), 11 (Business Law and Practice, 30), 12 (Dispute Resolution, 26), 8 (Property Law and Practice, 25), 10 (Wills and Probate, 20), 6 (Criminal Practice, 27), 2 (Constitutional and Administrative Law, 30), 13 (Human Rights, 23), 14 (EU and International Law, 20) and 16 (Legal Research and Skills, 20). Each lesson has objectives, a summary, key terms, dated sources and an authority in the text; every question is linked to an objective; each school has at least 10% hard questions and no answer-length giveaways. LawGradify QA reports **0 warnings**.
+
+Expert review flags for this batch (a qualified solicitor or barrister should check before sign-off):
+- **Citations**: all case citations, years, report references and statute sections were written from memory. Check every one against a primary source before the sources stage is signed off. Recent cases to check closely include R (Ayinde) v Haringey LBC [2025] EWHC 1383 (Admin) (fake AI citations), Re AGPS Bondco [2024] EWCA Civ 24, Attorney General's Reference (No 1 of 2022) [2022] EWCA Crim 1259 and R (AAA) v SSHD [2023] UKSC 42.
+- **Figures that change**: SDLT bands and reliefs (School 8), the intestacy statutory legacy of £322,000 (School 10), IHT bands and the April 2026 business and agricultural relief reforms (School 10), corporation tax rates and the VAT threshold (School 11), magistrates' sentencing powers (School 6), the prescribed part and preferential debts (School 11), CPR track limits and fixed costs (School 12).
+- **Law in transition**: the Renters' Rights Act 2025 commencement (School 7), the Leasehold and Freehold Reform Act 2024 commencement (School 8), out-of-court disposal reforms under the PCSCA 2022 (School 6), House of Lords reform (School 2), protest law (School 13), UK-EU agreements after 2024 (School 14), asylum legislation (School 14), and the Arbitration Act 2025 (Schools 12 and 14).
+- **Simplifications**: some lessons compress complex areas (for example, the Scots and NI references in School 2, state liability after Brexit in School 14, and the order of distribution in insolvent estates in School 10). Check that nothing material is misstated.
+
+## Status: citation check (2026-11-03)
+
+- Claude ran a web-search citation check covering 36 authorities, each searched individually and mostly post-2015. The rest of the case, statute and section citations were read through for consistency.
+- 3 corrections, all in u05 and u09: Shayler, Nicklinson, and a made-up distractor statute.
+- Details are in `docs/qa/law-citation-check.md`, and the check is logged in `SOURCE_CHECKS` in `kit/courses/law/qa.js`.
+- **This is not the `sources` stage.** Every school still needs each authority checked against a primary source by a person, plus a check of CPR, CrimPR and guidance references and of figures that change.

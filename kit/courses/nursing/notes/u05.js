@@ -7,6 +7,14 @@
 export default `
 ## Introduction to disease processes
 S: Pathophysiology is the study of how normal body functions are disrupted by disease. Understanding it lets nurses explain symptoms, anticipate complications and see why treatments work.
+O: Describe the main causes of disease and key pathophysiology terms
+O: Link pathophysiology to signs, symptoms and deterioration
+T: Pathophysiology | The study of how normal body functions are disrupted by disease
+T: Aetiology | The cause or causes of a disease
+SUM: Pathophysiology explains symptoms, complications and why treatments work.
+SUM: Cells respond to injury by adaptation, reversible injury or death; health inequalities shape disease.
+SRC: Kumar V, Abbas AK, Aster JC, Robbins and Cotran Pathologic Basis of Disease, 10th edition, Elsevier | secondary | 2020
+SRC: Marmot M and others, Health equity in England: the Marmot review 10 years on, Institute of Health Equity | primary | 2020 | https://www.instituteofhealthequity.org/resources-reports/marmot-review-10-years-on
 H: Causes of disease
 - **Genetic** (inherited or new mutations), **infectious**, **immune**, **degenerative**, **neoplastic** (cancer), **metabolic and endocrine**, **traumatic**, **environmental and lifestyle** (smoking, diet, alcohol, inactivity), and **iatrogenic** (caused by treatment).
 - Most common diseases are **multifactorial**: genes, environment and behaviour interact.
@@ -24,11 +32,18 @@ P: Disease isn't evenly distributed. Deprivation, ethnicity, disability (includi
 K: Linking pathophysiology to signs and symptoms helps you recognise deterioration early: you know what to look for and why.
 Q: What is the difference between incidence and prevalence? | Incidence is the number of new cases in a period; prevalence is the number of existing cases at a point or period in time.
 Q: What is the difference between necrosis and apoptosis? | Necrosis is uncontrolled cell death that triggers inflammation; apoptosis is programmed, orderly cell death.
-M1#nursing-u05-01-q1: Which term describes the cause of a disease? | Aetiology | Prognosis | Prevalence | Morbidity | Pathogenesis | Aetiology means cause; pathogenesis is how the disease develops.
-M2#nursing-u05-01-q2: Why should nurses understand pathophysiology? | To link signs and symptoms to the underlying process, anticipate complications and recognise deterioration | To make medical diagnoses independently | To replace investigations | To prescribe all treatments | Only to pass exams | Knowing the mechanism helps nurses assess and act safely.
+M1#nursing-u05-01-q1@1: Which term describes the cause of a disease? | Aetiology | Prognosis | Prevalence | Morbidity | Pathogenesis | Aetiology means cause; pathogenesis is how the disease develops.
+M2#nursing-u05-01-q2@2: Why should nurses understand pathophysiology? | To link signs to causes and spot deterioration | To make medical diagnoses independently | To replace the need for investigations | To prescribe all treatments themselves | Only to pass written exams | Knowing the mechanism helps nurses assess and act safely.
 
 ## Inflammation
 S: Inflammation is the body's protective response to injury or infection. It brings immune cells and fluid to the damaged area to remove the cause and begin repair, but if excessive or prolonged it causes harm.
+O: Describe the process and cardinal signs of acute inflammation
+O: Interpret inflammatory markers with the clinical picture
+T: Acute inflammation | A rapid, short-lived protective response to injury or infection
+T: C-reactive protein | A blood marker that rises with inflammation
+SUM: Inflammation brings immune cells and fluid to damaged tissue.
+SUM: Raised CRP and white cells show inflammation, not necessarily infection.
+SRC: Kumar V, Abbas AK, Aster JC, Robbins and Cotran Pathologic Basis of Disease, 10th edition, Elsevier | secondary | 2020
 H: Acute inflammation
 - Triggered by infection, trauma, burns, chemicals or dead tissue.
 - **Vascular changes**: vasodilation and increased capillary permeability let fluid and proteins leak into tissues (oedema).
@@ -46,11 +61,20 @@ P: Inflammation explains wound redness, swollen joints, post-operative fever and
 K: Raised CRP and white cells show inflammation, not necessarily infection. Interpret them with the clinical picture.
 Q: Name the five cardinal signs of inflammation. | Redness, heat, swelling, pain and loss of function.
 Q: Which white cells arrive first in acute inflammation? | Neutrophils.
-M1#nursing-u05-02-q1: What causes the swelling in acute inflammation? | Increased capillary permeability allowing fluid and proteins into the tissues | Fat deposition | Bone growth | Reduced blood flow | Dehydration | Inflammatory mediators such as histamine make capillaries leaky, so fluid and proteins move into the tissues and cause swelling (oedema).
-M2#nursing-u05-02-q2: A patient's surgical wound is red, warm and swollen, with a rising temperature and heart rate. What should the nurse do? | Assess the wound and observations, consider infection and sepsis, and escalate in line with local policy | Assume normal healing and do nothing | Apply heat | Remove the dressing and leave it open | Wait for the next routine dressing change | Inflammatory signs with systemic changes may signal infection.
+M1#nursing-u05-02-q1@1: What causes the swelling in acute inflammation? | Leaky capillaries letting fluid into tissues | Deposition of fat in the tissues | Growth of new bone at the site | Reduced blood flow to the area | Dehydration of the local tissues | Inflammatory mediators such as histamine make capillaries leaky, so fluid and proteins move into the tissues and cause swelling (oedema).
+M2#nursing-u05-02-q2@2: A patient's surgical wound is red, warm and swollen, with a rising temperature and heart rate. What should the nurse do? | Assess, consider infection and sepsis, escalate | Assume normal healing and do nothing | Apply heat to reduce the swelling | Remove the dressing and leave it open | Wait for the next routine dressing change | Inflammatory signs with systemic changes may signal infection.
 
 ## Infection
 S: Infection is the invasion and multiplication of micro-organisms in the body, causing harm. Infection prevention and early recognition are central nursing responsibilities.
+O: Describe the chain of infection and healthcare-associated infections
+O: Recognise infection and apply infection prevention and control measures
+T: Chain of infection | The links needed for infection to spread, from agent to susceptible host
+T: Healthcare-associated infection | An infection acquired as a result of healthcare
+SUM: Breaking the chain of infection prevents spread; hand hygiene is the most important measure.
+SUM: Recognise infection early and consider sepsis.
+SAFE: If a person with suspected infection has abnormal observations, escalate using NEWS2 and the local sepsis pathway; report suspected outbreaks to the infection prevention and control team.
+SRC: NHS England, National infection prevention and control manual for England | guidance | 2023 | https://www.england.nhs.uk/national-infection-prevention-and-control-manual-nipcm-for-england/
+SRC: World Health Organization, WHO guidelines on hand hygiene in health care | guidance | 2009 | https://www.who.int/publications/i/item/9789241597906
 H: The chain of infection
 - **Infectious agent** → **reservoir** → **portal of exit** → **mode of transmission** (contact, droplet, airborne, faecal-oral, blood-borne) → **portal of entry** → **susceptible host**.
 - Breaking any link prevents spread: hand hygiene, personal protective equipment, aseptic technique, cleaning, isolation, vaccination.
@@ -69,11 +93,19 @@ H: Treatment and nursing management
 K: Hand hygiene is the single most important measure to prevent healthcare-associated infection.
 Q: List the six links in the chain of infection. | Infectious agent, reservoir, portal of exit, mode of transmission, portal of entry, susceptible host.
 Q: Why should urinary catheters be reviewed daily? | Because the risk of catheter-associated urinary tract infection rises with every day the catheter remains.
-M1#nursing-u05-03-q1: Which is the most effective single measure to prevent healthcare-associated infection? | Hand hygiene | Antibiotics for everyone | Wearing a uniform | Air fresheners | Visiting restrictions alone | Hand hygiene breaks the chain at transmission.
-M2#nursing-u05-03-q2: An older patient becomes newly confused with a raised respiratory rate, but no fever. What should the nurse consider? | Infection, including sepsis, can present without fever in older people: assess fully and escalate | Confusion is normal with age | Fever is required to diagnose infection | Wait until a fever develops | Give a sedative | Atypical presentations are common in older adults.
+M1#nursing-u05-03-q1@1: Which is the most effective single measure to prevent healthcare-associated infection? | Hand hygiene | Antibiotics for everyone | Wearing a uniform | Air fresheners | Visiting restrictions alone | Hand hygiene breaks the chain at transmission.
+M2#nursing-u05-03-q2@2: An older patient becomes newly confused with a raised respiratory rate, but no fever. What should the nurse consider? | Infection may present without fever: assess, escalate | Confusion is a normal part of ageing | Fever is required to diagnose infection | Wait until a fever develops before acting | Give a sedative to settle the confusion | Atypical presentations are common in older adults.
 
 ## Immune dysfunction
 S: Immune dysfunction occurs when the immune system is underactive (immunodeficiency), overactive (hypersensitivity), or misdirected against the body (autoimmunity). Each causes different risks and needs different care.
+O: Distinguish immunodeficiency, hypersensitivity and autoimmunity
+O: Respond to neutropenic sepsis and hypersensitivity reactions
+T: Immunodeficiency | Reduced ability of the immune system to fight infection
+T: Autoimmunity | An immune response directed against the body's own tissues
+SUM: Immune dysfunction may be under-active, over-active or misdirected.
+SUM: Treat fever after chemotherapy as possible neutropenic sepsis.
+SRC: National Institute for Health and Care Excellence, Neutropenic sepsis: prevention and management in people with cancer (CG151) | guidance | 2012 | https://www.nice.org.uk/guidance/cg151
+SRC: Resuscitation Council UK, Emergency treatment of anaphylaxis | guidance | 2021 | https://www.resus.org.uk/library/additional-guidance/guidance-anaphylaxis/emergency-treatment
 H: Immunodeficiency
 - **Primary**: inherited, rare.
 - **Secondary**: much more common: chemotherapy, immunosuppressant medicines, steroids, HIV, malnutrition, diabetes, older age, splenectomy.
@@ -93,11 +125,19 @@ H: Nursing management
 K: A person on chemotherapy with a temperature or feeling unwell must be treated as possible neutropenic sepsis until proven otherwise.
 Q: Give three causes of secondary immunodeficiency. | Chemotherapy, immunosuppressant drugs, steroids, HIV, malnutrition, diabetes, older age, splenectomy (any three).
 Q: Which type of hypersensitivity causes anaphylaxis? | Type I (IgE-mediated) hypersensitivity.
-M1#nursing-u05-04-q1: Which is an autoimmune condition? | Type 1 diabetes | Type 2 diabetes | Osteoarthritis | Asthma triggered only by exercise | Iron deficiency anaemia | In type 1 diabetes, the immune system destroys insulin-producing beta cells.
-M2#nursing-u05-04-q2: A patient who had chemotherapy 8 days ago phones the ward feeling shivery with a temperature of 38.2°C. What should the nurse advise? | Attend urgently as per the acute oncology pathway: possible neutropenic sepsis needs immediate assessment and IV antibiotics | Take paracetamol and rest at home | Wait 24 hours | Book a routine GP appointment | Drink more fluids only | Neutropenic sepsis can deteriorate rapidly.
+M1#nursing-u05-04-q1@1: Which is an autoimmune condition? | Type 1 diabetes | Type 2 diabetes | Osteoarthritis | Asthma triggered only by exercise | Iron deficiency anaemia | In type 1 diabetes, the immune system destroys insulin-producing beta cells.
+M3#nursing-u05-04-q2@2: A patient who had chemotherapy 8 days ago phones the ward feeling shivery with a temperature of 38.2°C. What should the nurse advise? | Attend urgently: possible neutropenic sepsis | Take paracetamol and rest at home | Wait 24 hours to see if it settles | Book a routine GP appointment this week | Drink more fluids and stay at home | Neutropenic sepsis can deteriorate rapidly.
 
 ## Cardiovascular disease
 S: Cardiovascular disease (CVD) is a group of conditions affecting the heart and blood vessels, mostly caused by atherosclerosis. It is one of the leading causes of death and disability in the UK.
+O: Describe atherosclerosis and cardiovascular risk factors
+O: Support prevention through risk-factor modification
+T: Atherosclerosis | Build-up of fatty plaques in artery walls
+T: Making Every Contact Count | An approach using everyday contacts to support healthier choices
+SUM: CVD is mostly caused by atherosclerosis and is a leading cause of death.
+SUM: Most risk is modifiable; every contact is a chance to support change.
+SRC: National Institute for Health and Care Excellence, Cardiovascular disease: risk assessment and reduction, including lipid modification (NG238) | guidance | 2023 | https://www.nice.org.uk/guidance/ng238
+SRC: British Heart Foundation, UK factsheet | guidance | 2025 | https://www.bhf.org.uk/what-we-do/our-research/heart-statistics
 H: Definition and epidemiology
 - Includes coronary heart disease, stroke and transient ischaemic attack, peripheral arterial disease and aortic disease.
 - Millions of people in the UK live with CVD; it causes about a quarter of all deaths, with higher rates in more deprived areas.
@@ -116,11 +156,18 @@ H: Nursing role
 K: Most cardiovascular risk is modifiable: every contact is an opportunity to support healthier choices ("Making Every Contact Count").
 Q: Name four modifiable risk factors for cardiovascular disease. | Smoking, high blood pressure, high cholesterol, diabetes, obesity, inactivity, poor diet, excess alcohol (any four).
 Q: What happens when an atherosclerotic plaque ruptures? | A blood clot forms on it and can block the artery, causing myocardial infarction or stroke.
-M1#nursing-u05-05-q1: Which is a non-modifiable cardiovascular risk factor? | Age | Smoking | High cholesterol | Obesity | Physical inactivity | Age is a non-modifiable risk factor; smoking, cholesterol, weight and activity can all be changed to reduce cardiovascular risk.
-M2#nursing-u05-05-q2: During a routine admission, a patient mentions they smoke 20 a day and would like to stop. What should the nurse do? | Give very brief advice and refer to stop smoking support, offering nicotine replacement as per local policy | Tell them to stop and move on | Ignore it as it's not why they're admitted | Advise cutting down only | Tell them it's too late | Brief advice and referral increase quit rates.
+M1#nursing-u05-05-q1@1: Which is a non-modifiable cardiovascular risk factor? | Age | Smoking | High cholesterol | Obesity | Physical inactivity | Age is a non-modifiable risk factor; smoking, cholesterol, weight and activity can all be changed to reduce cardiovascular risk.
+M2#nursing-u05-05-q2@2: During a routine admission, a patient mentions they smoke 20 a day and would like to stop. What should the nurse do? | Give very brief advice and refer to stop smoking support | Tell them to stop smoking and then move on | Ignore it, as it's not why they were admitted | Advise them to cut down a little, but not stop | Tell them it's too late for stopping to help | Brief advice and referral increase quit rates.
 
 ## Hypertension
 S: Hypertension is persistently raised arterial blood pressure. It usually causes no symptoms but greatly increases the risk of stroke, heart attack, heart failure, kidney disease and dementia.
+O: Describe the definition, causes and complications of hypertension
+O: Measure, monitor and educate people with hypertension
+T: Primary hypertension | Raised blood pressure with no single identifiable cause
+T: Ambulatory blood pressure monitoring | Repeated automated readings over 24 hours to confirm diagnosis
+SUM: Hypertension is usually symptomless but raises the risk of stroke, MI and kidney disease.
+SUM: Education about adherence is a key nursing task.
+SRC: National Institute for Health and Care Excellence, Hypertension in adults: diagnosis and management (NG136) | guidance | 2019 | https://www.nice.org.uk/guidance/ng136
 H: Definition and epidemiology
 - NICE: clinic blood pressure of 140/90 mmHg or higher, confirmed by ambulatory (ABPM) or home monitoring (average 135/85 mmHg or higher). Severe hypertension: clinic systolic 180 or diastolic 120 or more.
 - Very common: affects about a third of adults in England, many undiagnosed.
@@ -147,11 +194,19 @@ P: Escalate urgently for very high readings with symptoms (headache, visual chan
 K: Hypertension is a "silent" disease: education about why to take medicines when you feel well is a key nursing task.
 Q: What clinic reading suggests hypertension under NICE guidance? | 140/90 mmHg or higher, confirmed by ambulatory or home monitoring.
 Q: Name four complications of untreated hypertension. | Stroke, myocardial infarction, heart failure, chronic kidney disease, retinopathy, vascular dementia (any four).
-M1#nursing-u05-06-q1: How is a diagnosis of hypertension usually confirmed? | Ambulatory or home blood pressure monitoring | A single clinic reading | Patient symptoms | A chest X-ray | An ECG alone | NICE recommends confirming a raised clinic reading with ambulatory (ABPM) or home (HBPM) monitoring, because single clinic readings can be misleading.
-M2#nursing-u05-06-q2: A patient's BP is 220/130 and they report a severe headache and blurred vision. What should the nurse do? | Escalate immediately: these may indicate a hypertensive emergency | Recheck next week | Give paracetamol and observe | Advise less salt | Tell them to rest and leave | Severe hypertension with symptoms needs urgent medical assessment.
+M1#nursing-u05-06-q1@1: How is a diagnosis of hypertension usually confirmed? | Ambulatory or home blood pressure monitoring | A single clinic reading | Patient symptoms | A chest X-ray | An ECG alone | NICE recommends confirming a raised clinic reading with ambulatory (ABPM) or home (HBPM) monitoring, because single clinic readings can be misleading.
+M2#nursing-u05-06-q2@2: A patient's BP is 220/130 and they report a severe headache and blurred vision. What should the nurse do? | Escalate now: possible hypertensive emergency | Recheck the blood pressure next week | Give paracetamol for the headache | Advise them to eat less salt | Tell them to rest and leave it | Severe hypertension with symptoms needs urgent medical assessment.
 
 ## Heart failure
 S: Heart failure is a clinical syndrome in which the heart can't pump enough blood to meet the body's needs, or can only do so at high filling pressures. It causes breathlessness, fatigue and fluid retention, and is a leading cause of hospital admission in older people.
+O: Describe the causes and pathophysiology of heart failure
+O: Monitor fluid status and educate people with heart failure
+T: Heart failure | A syndrome in which the heart can't pump enough blood to meet the body's needs
+T: Ejection fraction | The percentage of blood pumped out of the left ventricle with each beat
+SUM: Heart failure causes breathlessness, fatigue and fluid retention.
+SUM: Daily weight is the most useful single measure of fluid status.
+SRC: National Institute for Health and Care Excellence, Chronic heart failure in adults: diagnosis and management (NG106) | guidance | 2018 | https://www.nice.org.uk/guidance/ng106
+SRC: National Institute for Health and Care Excellence, Acute heart failure (CG187) | guidance | 2014 | https://www.nice.org.uk/guidance/cg187
 H: Definition and epidemiology
 - Classified by ejection fraction: **reduced** (HFrEF), **mildly reduced** and **preserved** (HFpEF).
 - About a million people in the UK live with heart failure; prevalence rises steeply with age.
@@ -179,11 +234,19 @@ P: Acute pulmonary oedema (severe breathlessness, frothy sputum, low saturations
 K: Daily weight is the most useful single measure of fluid status in heart failure.
 Q: What is orthopnoea? | Breathlessness when lying flat, relieved by sitting up.
 Q: Which blood test helps diagnose heart failure? | NT-proBNP (natriuretic peptide).
-M1#nursing-u05-07-q1: Which sign suggests right-sided heart failure? | Ankle oedema and raised jugular venous pressure | Frothy pink sputum alone | Wheeze only | Low urine sodium | A heart murmur only | Right-sided failure causes systemic congestion.
-M2#nursing-u05-07-q2: A patient with heart failure has gained 3 kg in two days and is more breathless lying flat. What should the nurse do? | Recognise fluid overload: assess, sit them up, and escalate for review of diuretics | Encourage more fluids | Lie them flat to rest | Wait until the next weight in a week | Restrict all medicines | Rapid weight gain and orthopnoea signal worsening heart failure.
+M1#nursing-u05-07-q1@1: Which sign suggests right-sided heart failure? | Ankle oedema and raised jugular venous pressure | Frothy pink sputum alone | Wheeze only | Low urine sodium | A heart murmur only | Right-sided failure causes systemic congestion.
+M2#nursing-u05-07-q2@2: A patient with heart failure has gained 3 kg in two days and is more breathless lying flat. What should the nurse do? | Fluid overload: sit up, assess and escalate | Encourage them to drink more fluids | Lie them flat so that they can rest | Wait for next week's weight check | Stop all their medicines for now | Rapid weight gain and orthopnoea signal worsening heart failure.
 
 ## Ischaemic heart disease
 S: Ischaemic heart disease (coronary heart disease) occurs when the coronary arteries are narrowed by atherosclerosis, reducing blood supply to the heart muscle. It presents as stable angina or as acute coronary syndromes.
+O: Describe the pathophysiology and presentations of ischaemic heart disease
+O: Recognise unstable angina and respond to chest pain
+T: Stable angina | Predictable chest pain on exertion relieved by rest or GTN
+T: Acute coronary syndrome | Unstable angina or myocardial infarction caused by plaque rupture
+SUM: Narrowed coronary arteries reduce blood supply to the heart muscle.
+SUM: A change in angina pattern needs urgent assessment.
+SRC: National Institute for Health and Care Excellence, Stable angina: management (CG126) | guidance | 2016 | https://www.nice.org.uk/guidance/cg126
+SRC: National Institute for Health and Care Excellence, Acute coronary syndromes (NG185) | guidance | 2020 | https://www.nice.org.uk/guidance/ng185
 H: Definition and epidemiology
 - The commonest single cause of death in the UK.
 H: Aetiology and risk factors
@@ -210,11 +273,19 @@ P: Chest pain at rest, lasting more than 15 minutes, or not relieved by GTN may 
 K: Angina that changes pattern (more frequent, at rest, longer) is unstable and needs urgent assessment.
 Q: How should a person use GTN for angina? | Sit down, use the spray, repeat after 5 minutes if needed, and call 999 if pain persists 5 minutes after the second dose.
 Q: Name three components of secondary prevention in ischaemic heart disease. | Antiplatelet therapy, a statin, blood pressure control, smoking cessation, exercise and diet (any three).
-M1#nursing-u05-08-q1: Which feature distinguishes stable angina? | Pain brought on by exertion and relieved by rest or GTN | Pain at rest lasting an hour | Pain worse on breathing in | Pain relieved by antacids | Pain only at night | Stable angina is predictable and exertional.
-M2#nursing-u05-08-q2: A patient with known angina has chest pain at rest that hasn't settled after two doses of GTN. What should the nurse do? | Treat as possible acute coronary syndrome: call for urgent help, record an ECG and follow local chest pain pathway | Give a third and fourth dose and wait | Encourage a walk | Give an antacid | Document and review in the morning | Chest pain at rest that persists after GTN suggests unstable angina or myocardial infarction, so it needs an urgent ECG and escalation, not more waiting.
+M1#nursing-u05-08-q1@1: Which feature distinguishes stable angina? | Pain brought on by exertion and relieved by rest or GTN | Pain at rest lasting an hour | Pain worse on breathing in | Pain relieved by antacids | Pain only at night | Stable angina is predictable and exertional.
+M3#nursing-u05-08-q2@2: A patient with known angina has chest pain at rest that hasn't settled after two doses of GTN. What should the nurse do? | Possible ACS: get help and record an ECG | Give a third and fourth GTN dose and wait | Encourage a short walk to ease the pain | Give an antacid for possible indigestion | Document it and review in the morning | Chest pain at rest that persists after GTN suggests unstable angina or myocardial infarction, so it needs an urgent ECG and escalation, not more waiting.
 
 ## Myocardial infarction
 S: A myocardial infarction (MI, heart attack) is death of heart muscle caused by prolonged ischaemia, usually from a blood clot on a ruptured coronary plaque. Rapid treatment saves heart muscle and lives.
+O: Describe the causes, signs and investigations of myocardial infarction
+O: Support rapid assessment and reperfusion and monitor for complications
+T: STEMI | ST-elevation myocardial infarction
+T: Troponin | A cardiac protein released into the blood when heart muscle is damaged
+SUM: MI is heart muscle death from prolonged ischaemia.
+SUM: Time is muscle: rapid ECG and reperfusion save heart muscle.
+SRC: National Institute for Health and Care Excellence, Acute coronary syndromes (NG185) | guidance | 2020 | https://www.nice.org.uk/guidance/ng185
+SRC: Resuscitation Council UK, Adult advanced life support guidelines | guidance | 2021 | https://www.resus.org.uk/library/2021-resuscitation-guidelines
 H: Definition and epidemiology
 - Part of the acute coronary syndromes: **STEMI** (ST-elevation MI, usually complete occlusion) and **NSTEMI** (non-ST-elevation MI). Tens of thousands of MIs occur in the UK each year.
 H: Aetiology and risk factors
@@ -241,11 +312,19 @@ P: Chest pain suggestive of MI is an emergency: call for help immediately, get a
 K: Time is muscle. Rapid ECG and reperfusion determine how much heart is saved.
 Q: What is the immediate investigation for suspected MI? | A 12-lead ECG, followed by serial troponin blood tests.
 Q: What is the preferred treatment for STEMI? | Urgent reperfusion with primary percutaneous coronary intervention (PCI).
-M1#nursing-u05-09-q1: Which blood test is used to detect heart muscle damage? | Troponin | Amylase | D-dimer | Ferritin | TSH | Troponin rises when myocardial cells are damaged.
-M2#nursing-u05-09-q2: After PCI via the femoral artery, a patient's groin is swelling and their blood pressure falls. What should the nurse do? | Apply firm pressure above the site, call for urgent help and monitor closely, following local policy | Encourage the patient to walk | Remove the dressing and wait | Give a laxative | Recheck in an hour | These signs suggest bleeding from the access site.
+M1#nursing-u05-09-q1@1: Which blood test is used to detect heart muscle damage? | Troponin | Amylase | D-dimer | Ferritin | TSH | Troponin rises when myocardial cells are damaged.
+M2#nursing-u05-09-q2@2: After PCI via the femoral artery, a patient's groin is swelling and their blood pressure falls. What should the nurse do? | Press above the site and get urgent help | Encourage the patient to walk around | Remove the dressing and wait | Give a laxative to reduce straining | Recheck the site in an hour | These signs suggest bleeding from the access site.
 
 ## Arrhythmias
 S: An arrhythmia is an abnormal heart rhythm. Some are harmless; others cause poor cardiac output, stroke or sudden death. Atrial fibrillation is the most common.
+O: Describe common arrhythmias, especially atrial fibrillation
+O: Assess an irregular pulse and escalate compromising arrhythmias
+T: Atrial fibrillation | An irregular, often fast heart rhythm caused by chaotic atrial activity
+T: Anticoagulation | Treatment to reduce clotting, used to prevent stroke in AF
+SUM: AF is the most common arrhythmia and raises stroke risk.
+SUM: An irregular pulse should be followed by a 12-lead ECG.
+SRC: National Institute for Health and Care Excellence, Atrial fibrillation: diagnosis and management (NG196) | guidance | 2021 | https://www.nice.org.uk/guidance/ng196
+SRC: Resuscitation Council UK, Adult tachycardia and bradycardia algorithms | guidance | 2021 | https://www.resus.org.uk/library/2021-resuscitation-guidelines
 H: Definition and epidemiology
 - **Tachyarrhythmias** (fast): atrial fibrillation (AF), atrial flutter, supraventricular tachycardia, ventricular tachycardia (VT), ventricular fibrillation (VF).
 - **Bradyarrhythmias** (slow): sinus bradycardia, heart block.
@@ -273,11 +352,19 @@ P: An arrhythmia with adverse features (shock, syncope, chest pain, heart failur
 K: An irregular pulse should always be followed by a 12-lead ECG.
 Q: Why does atrial fibrillation increase stroke risk? | Blood stagnates in the quivering atria, allowing clots to form that can travel to the brain.
 Q: Name the four adverse features in a tachyarrhythmia or bradyarrhythmia. | Shock, syncope, myocardial ischaemia and heart failure.
-M1#nursing-u05-10-q1: What is the characteristic pulse in atrial fibrillation? | Irregularly irregular | Regular and slow | Regularly irregular | Bounding and regular | Absent | In atrial fibrillation, chaotic atrial activity reaches the ventricles irregularly, giving an irregularly irregular pulse; confirm with a 12-lead ECG.
-M2#nursing-u05-10-q2: A patient's monitor shows a broad complex tachycardia; they are unresponsive with no pulse. What should the nurse do? | Call the cardiac arrest team, start CPR and follow the advanced life support algorithm | Record a 12-lead ECG first | Give oral beta-blocker | Check blood glucose and wait | Call the next morning's team | Pulseless ventricular tachycardia is a cardiac arrest: start CPR, call the arrest team and defibrillate per the advanced life support algorithm.
+M1#nursing-u05-10-q1@1: What is the characteristic pulse in atrial fibrillation? | Irregularly irregular | Regular and slow | Regularly irregular | Bounding and regular | Absent | In atrial fibrillation, chaotic atrial activity reaches the ventricles irregularly, giving an irregularly irregular pulse; confirm with a 12-lead ECG.
+M3#nursing-u05-10-q2@2: A patient's monitor shows a broad complex tachycardia; they are unresponsive with no pulse. What should the nurse do? | Call the arrest team and start CPR | Record a 12-lead ECG first | Give an oral beta-blocker | Check blood glucose and wait | Ask the next morning's team | Pulseless ventricular tachycardia is a cardiac arrest: start CPR, call the arrest team and defibrillate per the advanced life support algorithm.
 
 ## Stroke
 S: A stroke is a sudden loss of brain function caused by an interruption of blood supply: either a blocked artery (ischaemic stroke) or bleeding (haemorrhagic stroke). It is a medical emergency in which every minute counts.
+O: Describe ischaemic and haemorrhagic stroke and their signs
+O: Act quickly on suspected stroke and provide nursing care after stroke
+T: Ischaemic stroke | A stroke caused by a blocked artery
+T: Thrombolysis | Treatment to dissolve a clot in eligible ischaemic stroke
+SUM: Stroke is a medical emergency; FAST helps recognition.
+SUM: Note the onset time; it decides which treatments are possible.
+SRC: National Institute for Health and Care Excellence, Stroke and transient ischaemic attack in over 16s (NG128) | guidance | 2022 | https://www.nice.org.uk/guidance/ng128
+SRC: Intercollegiate Stroke Working Party, National clinical guideline for stroke for the UK and Ireland | guidance | 2023 | https://www.strokeguideline.org/
 H: Definition and epidemiology
 - About 85% of strokes are ischaemic and 15% haemorrhagic. A **transient ischaemic attack (TIA)** is temporary neurological dysfunction without infarction and warns of high stroke risk.
 - Stroke is a leading cause of death and the largest cause of complex disability in the UK.
@@ -308,11 +395,19 @@ P: Suspected stroke: note the time of onset (or last seen well), check blood glu
 K: Time is brain. Note when symptoms started: it decides which treatments are possible.
 Q: What does FAST stand for? | Face, Arm, Speech, Time to call 999.
 Q: Why must a swallow screen be done before oral intake after stroke? | Stroke often impairs swallowing, risking aspiration and pneumonia.
-M1#nursing-u05-11-q1: What is the most important modifiable risk factor for stroke? | High blood pressure | Hair colour | Height | Shoe size | Blood group | Hypertension is the biggest single modifiable risk.
-M2#nursing-u05-11-q2: A patient develops sudden slurred speech and right arm weakness. What should the nurse do first? | Call for emergency help, note the time of onset, check blood glucose and activate the stroke pathway | Give a drink to check swallowing | Wait to see if symptoms resolve | Lie them flat and recheck in an hour | Give aspirin straight away | Rapid recognition and escalation are critical; aspirin isn't given until haemorrhage is excluded.
+M1#nursing-u05-11-q1@1: What is the most important modifiable risk factor for stroke? | High blood pressure | Hair colour | Height | Shoe size | Blood group | Hypertension is the biggest single modifiable risk.
+M2#nursing-u05-11-q2@2: A patient develops sudden slurred speech and right arm weakness. What should the nurse do first? | Get emergency help, note onset, check glucose | Give a drink to check their swallowing | Wait to see if the symptoms resolve | Lie them flat and recheck in an hour | Give aspirin straight away | Rapid recognition and escalation are critical; aspirin isn't given until haemorrhage is excluded.
 
 ## Respiratory disease
 S: Respiratory diseases affect the airways, lung tissue, blood vessels or breathing muscles. They are a major cause of illness, hospital admission and death in the UK, especially in winter and in deprived communities.
+O: Describe the main groups of respiratory disease
+O: Recognise early signs of respiratory deterioration
+T: Obstructive lung disease | Disease that limits airflow out of the lungs, such as asthma and COPD
+T: Restrictive lung disease | Disease that limits lung expansion, such as pulmonary fibrosis
+SUM: Respiratory diseases are a major cause of admission, especially in winter.
+SUM: A rising respiratory rate is often the first sign of deterioration.
+SRC: British Thoracic Society, Guideline for oxygen use in healthcare and emergency settings | guidance | 2017 | https://www.brit-thoracic.org.uk/
+SRC: Royal College of Physicians, National Early Warning Score (NEWS) 2 | guidance | 2017 | https://www.rcp.ac.uk/improving-care/resources/national-early-warning-score-news-2/
 H: Main groups
 - **Obstructive airway disease**: asthma, COPD, bronchiectasis.
 - **Infections**: pneumonia, influenza, COVID-19, tuberculosis.
@@ -331,11 +426,19 @@ H: Nursing role
 K: Rising respiratory rate is often the first sign of respiratory deterioration, before saturation falls.
 Q: What is the difference between type 1 and type 2 respiratory failure? | Type 1 is low oxygen with normal or low CO2; type 2 is low oxygen with raised CO2 from inadequate ventilation.
 Q: Name three obstructive airway diseases. | Asthma, COPD and bronchiectasis.
-M1#nursing-u05-12-q1: Which condition commonly causes type 2 respiratory failure? | Severe COPD | Mild asthma between attacks | Anaemia | Hypertension | Simple anxiety | COPD can impair ventilation and cause CO2 retention.
-M2#nursing-u05-12-q2: A patient's respiratory rate rises from 16 to 24 over a few hours while SpO2 stays at 95%. What should the nurse do? | Recognise early deterioration: reassess fully, calculate the early warning score and escalate as per policy | Ignore it while saturation is normal | Wait for saturation to drop | Give a sedative | Recheck tomorrow | Respiratory rate often rises hours before oxygen saturation falls, so a rising rate with normal saturation is an early warning that needs action.
+M1#nursing-u05-12-q1@1: Which condition commonly causes type 2 respiratory failure? | Severe COPD | Mild asthma between attacks | Anaemia | Hypertension | Simple anxiety | COPD can impair ventilation and cause CO2 retention.
+M2#nursing-u05-12-q2@2: A patient's respiratory rate rises from 16 to 24 over a few hours while SpO2 stays at 95%. What should the nurse do? | Reassess, calculate NEWS2 and escalate | Ignore it while saturation is normal | Wait for the saturation to drop | Give a sedative to slow the breathing | Recheck the observations tomorrow | Respiratory rate often rises hours before oxygen saturation falls, so a rising rate with normal saturation is an early warning that needs action.
 
 ## Asthma
 S: Asthma is a chronic inflammatory condition of the airways causing variable, reversible airflow obstruction, with symptoms of wheeze, breathlessness, chest tightness and cough. Attacks can be fatal, and many asthma deaths are preventable.
+O: Describe the pathophysiology and diagnosis of asthma
+O: Assess the severity of acute asthma and support self-management
+T: Peak expiratory flow | The maximum speed of breathing out, used to assess asthma
+T: Personalised asthma action plan | A written plan for managing symptoms and attacks
+SUM: Asthma causes variable, reversible airway obstruction.
+SUM: A silent chest, exhaustion or normal CO2 in a breathless patient means life-threatening asthma.
+SRC: British Thoracic Society, National Institute for Health and Care Excellence and Scottish Intercollegiate Guidelines Network, Asthma: diagnosis, monitoring and chronic asthma management | guidance | 2024 | https://www.nice.org.uk/guidance/ng245
+SRC: British Thoracic Society and Scottish Intercollegiate Guidelines Network, British guideline on the management of asthma (SIGN 158) | guidance | 2019 | https://www.brit-thoracic.org.uk/
 H: Definition and epidemiology
 - Around 5 million people in the UK receive treatment for asthma. People still die from asthma attacks each year; national reviews have found that many deaths involved poor control and missed warning signs.
 H: Aetiology and risk factors
@@ -363,11 +466,19 @@ P: Features of acute severe or life-threatening asthma need an emergency respons
 K: In asthma, a normal or rising CO2 in a breathless patient, a silent chest or exhaustion means life-threatening asthma.
 Q: Name four features of life-threatening asthma. | Peak flow below 33%, SpO2 below 92%, silent chest, cyanosis, poor respiratory effort, exhaustion, arrhythmia, hypotension, altered consciousness (any four).
 Q: What should every person with asthma have? | A personalised asthma action plan, with inhaler technique checked regularly.
-M1#nursing-u05-13-q1: Which finding indicates acute severe (not yet life-threatening) asthma? | Peak flow 40% of best and unable to complete sentences | Peak flow 80% | Silent chest | Cyanosis | Exhaustion with confusion | Peak flow 33–50% and inability to complete sentences indicate acute severe asthma.
-M2#nursing-u05-13-q2: A young woman with asthma has become quiet, drowsy and has a silent chest. What should the nurse do? | Call for emergency help immediately: these are life-threatening features | Reassure her she is improving | Encourage her to rest | Measure peak flow and wait | Give oral steroids only | Silent chest and drowsiness indicate a pre-arrest state.
+M1#nursing-u05-13-q1@1: Which finding indicates acute severe (not yet life-threatening) asthma? | Peak flow 40% of best and unable to complete sentences | Peak flow 80% | Silent chest | Cyanosis | Exhaustion with confusion | Peak flow 33–50% and inability to complete sentences indicate acute severe asthma.
+M2#nursing-u05-13-q2@2: A young woman with asthma has become quiet, drowsy and has a silent chest. What should the nurse do? | Call for emergency help immediately | Reassure her that she is improving | Encourage her to rest quietly | Measure peak flow and then wait | Give oral steroids only and observe | Silent chest and drowsiness indicate a pre-arrest state.
 
 ## COPD
 S: Chronic obstructive pulmonary disease (COPD) is a common, preventable lung condition with persistent breathlessness and airflow obstruction that is not fully reversible, usually caused by smoking. It is punctuated by exacerbations that often lead to hospital admission.
+O: Describe the causes and pathophysiology of COPD
+O: Manage oxygen safely and support people with COPD
+T: COPD | Chronic obstructive pulmonary disease: persistent, not fully reversible airflow obstruction
+T: Pulmonary rehabilitation | A programme of exercise and education for people with lung disease
+SUM: COPD is preventable and usually caused by smoking.
+SUM: Give oxygen to a target range and monitor.
+SRC: National Institute for Health and Care Excellence, Chronic obstructive pulmonary disease in over 16s: diagnosis and management (NG115) | guidance | 2019 | https://www.nice.org.uk/guidance/ng115
+SRC: British Thoracic Society, Guideline for oxygen use in healthcare and emergency settings | guidance | 2017 | https://www.brit-thoracic.org.uk/
 H: Definition and epidemiology
 - Includes chronic bronchitis and emphysema. Over a million people in the UK are diagnosed, with many more undiagnosed; COPD is a leading cause of emergency admissions.
 H: Aetiology and risk factors
@@ -390,11 +501,19 @@ P: Rising CO2 (drowsiness, confusion, flapping tremor, headache) in someone on o
 K: In COPD, too much oxygen can be harmful. Prescribe and give to a target, and monitor.
 Q: What spirometry result confirms airflow obstruction in COPD? | A post-bronchodilator FEV1/FVC ratio below 0.7.
 Q: What is the single most effective intervention to slow COPD progression? | Stopping smoking.
-M1#nursing-u05-14-q1: What is the usual target oxygen saturation for someone with COPD at risk of hypercapnia? | 88–92% | 94–98% | 100% | 80–85% | 92–96% | BTS guidance sets 88–92% for those at risk of hypercapnic failure.
-M2#nursing-u05-14-q2: A patient with a COPD exacerbation becomes drowsy with a flapping tremor on 60% oxygen. What should the nurse suspect? | Rising CO2 (hypercapnia): reduce oxygen to target, escalate urgently and arrange blood gases | Improvement | Hypoglycaemia only | Anxiety | Normal tiredness | Drowsiness and a flapping tremor on high-flow oxygen suggest hypercapnia; oxygen should be reduced to the prescribed target and blood gases checked urgently.
+M1#nursing-u05-14-q1@1: What is the usual target oxygen saturation for someone with COPD at risk of hypercapnia? | 88–92% | 94–98% | 100% | 80–85% | 92–96% | BTS guidance sets 88–92% for those at risk of hypercapnic failure.
+M3#nursing-u05-14-q2@2: A patient with a COPD exacerbation becomes drowsy with a flapping tremor on 60% oxygen. What should the nurse suspect? | Rising CO2: reduce oxygen to target and escalate | Improvement, as they are now resting | Hypoglycaemia, needing a sugary drink | Anxiety, needing reassurance only | Normal tiredness after a long day | Drowsiness and a flapping tremor on high-flow oxygen suggest hypercapnia; oxygen should be reduced to the prescribed target and blood gases checked urgently.
 
 ## Pneumonia
 S: Pneumonia is infection of the lung tissue, causing inflammation and consolidation of the alveoli. It is common, can be life-threatening, and is a frequent cause of sepsis.
+O: Describe the causes, signs and investigations of pneumonia
+O: Provide nursing care and prevent hospital-acquired pneumonia
+T: Consolidation | Lung tissue filled with fluid or exudate instead of air
+T: Aspiration pneumonia | Pneumonia caused by inhaling food, fluid or secretions
+SUM: Pneumonia is common, can be life-threatening and often causes sepsis.
+SUM: Oral care and early mobilisation help prevent it.
+SRC: British Thoracic Society, Guidelines for the management of community acquired pneumonia in adults | guidance | 2009 | https://www.brit-thoracic.org.uk/
+SRC: National Institute for Health and Care Excellence, Suspected sepsis: recognition, diagnosis and early management (NG51) | guidance | 2024 | https://www.nice.org.uk/guidance/ng51
 H: Definition and epidemiology
 - **Community-acquired pneumonia** (CAP), **hospital-acquired pneumonia** (onset 48 hours or more after admission) and **aspiration pneumonia**.
 - Common in older people and those with chronic illness; a leading infectious cause of death.
@@ -419,11 +538,19 @@ P: Rising respiratory rate, falling saturation, rising oxygen requirement, hypot
 K: Good oral care and early mobilisation help prevent hospital-acquired and aspiration pneumonia.
 Q: What does CURB-65 stand for? | Confusion, Urea over 7 mmol/L, Respiratory rate 30 or more, low Blood pressure, age 65 or over.
 Q: What is the commonest bacterial cause of community-acquired pneumonia? | Streptococcus pneumoniae.
-M1#nursing-u05-15-q1: Which finding is part of CURB-65? | New confusion | Wheeze | Ankle oedema | Rash | Low blood glucose | CURB-65 scores Confusion, Urea over 7, Respiratory rate 30 or more, low Blood pressure and age 65 or over; new confusion is one point.
-M2#nursing-u05-15-q2: A patient with pneumonia has a respiratory rate of 30, BP 88/50 and is newly confused. What should the nurse do? | Recognise possible sepsis and severe pneumonia: escalate urgently and follow the sepsis pathway | Encourage oral fluids and recheck later | Give paracetamol and wait | Lie them flat | Document for the next ward round | Respiratory rate 30, hypotension and new confusion suggest severe pneumonia with possible sepsis, needing immediate escalation and the sepsis pathway.
+M1#nursing-u05-15-q1@1: Which finding is part of CURB-65? | New confusion | Wheeze | Ankle oedema | Rash | Low blood glucose | CURB-65 scores Confusion, Urea over 7, Respiratory rate 30 or more, low Blood pressure and age 65 or over; new confusion is one point.
+M2#nursing-u05-15-q2@2: A patient with pneumonia has a respiratory rate of 30, BP 88/50 and is newly confused. What should the nurse do? | Possible sepsis: escalate and follow the pathway | Encourage oral fluids and recheck later | Give paracetamol and wait for it to work | Lie them flat to help them rest | Document it for the next ward round | Respiratory rate 30, hypotension and new confusion suggest severe pneumonia with possible sepsis, needing immediate escalation and the sepsis pathway.
 
 ## Pulmonary embolism
 S: A pulmonary embolism (PE) is a blockage of the pulmonary arteries, usually by a blood clot from a deep vein thrombosis (DVT) in the leg. It can cause sudden death, and many cases are preventable.
+O: Describe Virchow's triad and how PE develops
+O: Recognise PE and support VTE prevention
+T: Venous thromboembolism | DVT and PE together
+T: Virchow's triad | Stasis, vessel damage and hypercoagulability
+SUM: PE usually comes from a DVT and can cause sudden death.
+SUM: Risk assessment and prophylaxis on admission prevent many deaths.
+SRC: National Institute for Health and Care Excellence, Venous thromboembolic diseases: diagnosis, management and thrombophilia testing (NG158) | guidance | 2023 | https://www.nice.org.uk/guidance/ng158
+SRC: National Institute for Health and Care Excellence, Venous thromboembolism in over 16s: reducing the risk (NG89) | guidance | 2018 | https://www.nice.org.uk/guidance/ng89
 H: Definition and epidemiology
 - Together, DVT and PE make up venous thromboembolism (VTE), a major cause of preventable death in hospital.
 H: Aetiology and risk factors (Virchow's triad: stasis, vessel damage, hypercoagulability)
@@ -448,11 +575,20 @@ P: Sudden breathlessness, chest pain or collapse in an at-risk person is an emer
 K: VTE risk assessment and prophylaxis on admission prevent many deaths.
 Q: What is Virchow's triad? | Venous stasis, vessel wall damage and hypercoagulability: the three factors that promote thrombosis.
 Q: Which imaging test is commonly used to diagnose PE? | CT pulmonary angiography (CTPA).
-M1#nursing-u05-16-q1: Which is a major risk factor for PE? | Recent major orthopaedic surgery | Regular walking | Good hydration | Young age with no illness | Taking vitamin C | Surgery and immobility increase VTE risk.
-M2#nursing-u05-16-q2: Three days after hip surgery, a patient becomes suddenly breathless with chest pain and a heart rate of 120. What should the nurse do? | Call for urgent help, assess with ABCDE, give oxygen to target as per policy and follow the PE pathway | Encourage deep breathing and wait | Give an antacid | Mobilise them to the toilet | Recheck in four hours | Sudden breathlessness, chest pain and tachycardia after surgery suggest pulmonary embolism, which can be fatal; emergency assessment comes before anything else.
+M1#nursing-u05-16-q1@1: Which is a major risk factor for PE? | Recent major orthopaedic surgery | Regular walking | Good hydration | Young age with no illness | Taking vitamin C | Surgery and immobility increase VTE risk.
+M3#nursing-u05-16-q2@2: Three days after hip surgery, a patient becomes suddenly breathless with chest pain and a heart rate of 120. What should the nurse do? | Get help, assess ABCDE, follow the PE pathway | Encourage deep breathing and wait | Give an antacid for the chest pain | Walk them to the toilet to mobilise | Recheck the observations in four hours | Sudden breathlessness, chest pain and tachycardia after surgery suggest pulmonary embolism, which can be fatal; emergency assessment comes before anything else.
 
 ## Diabetes
 S: Diabetes mellitus is a group of conditions in which blood glucose is persistently raised because the body produces too little insulin, responds poorly to it, or both. It is common, serious and largely managed by the person themselves with support.
+O: Describe the types and pathophysiology of diabetes
+O: Monitor, manage and educate people with diabetes, including emergencies
+T: Type 1 diabetes | Diabetes caused by autoimmune destruction of insulin-producing cells
+T: Diabetic ketoacidosis | A life-threatening emergency from insulin deficiency, with ketones and acidosis
+SUM: Diabetes causes persistently raised blood glucose.
+SUM: Never omit insulin in type 1 diabetes; recognise DKA and hypoglycaemia.
+SRC: National Institute for Health and Care Excellence, Type 1 diabetes in adults (NG17) | guidance | 2022 | https://www.nice.org.uk/guidance/ng17
+SRC: National Institute for Health and Care Excellence, Type 2 diabetes in adults (NG28) | guidance | 2022 | https://www.nice.org.uk/guidance/ng28
+SRC: Joint British Diabetes Societies for Inpatient Care, The management of diabetic ketoacidosis in adults | guidance | 2023 | https://abcd.care/joint-british-diabetes-societies-jbds-inpatient-care-group
 H: Definition and epidemiology
 - **Type 1** (about 8–10%): autoimmune destruction of insulin-producing beta cells; insulin is needed for life.
 - **Type 2** (about 90%): insulin resistance and relative insulin deficiency.
@@ -484,11 +620,18 @@ P: Escalate DKA features urgently (vomiting, abdominal pain, deep rapid breathin
 K: Never omit insulin for a person with type 1 diabetes, even if they aren't eating.
 Q: Give the HbA1c threshold for diagnosing diabetes. | 48 mmol/mol or above.
 Q: Name three acute complications of diabetes. | Hypoglycaemia, diabetic ketoacidosis and hyperosmolar hyperglycaemic state.
-M1#nursing-u05-17-q1: Which type of diabetes is caused by autoimmune destruction of beta cells? | Type 1 | Type 2 | Gestational | Steroid-induced | Monogenic | Type 1 is autoimmune and needs insulin for life.
-M2#nursing-u05-17-q2: A person with type 1 diabetes is vomiting, breathing deeply and has blood ketones of 4.2 mmol/L. What should the nurse do? | Escalate urgently for suspected DKA and follow the local DKA pathway | Stop their insulin | Give a sugary drink | Recheck tomorrow | Encourage them to sleep | These are features of DKA, a medical emergency.
+M1#nursing-u05-17-q1@1: Which type of diabetes is caused by autoimmune destruction of beta cells? | Type 1 | Type 2 | Gestational | Steroid-induced | Monogenic | Type 1 is autoimmune and needs insulin for life.
+M2#nursing-u05-17-q2@2: A person with type 1 diabetes is vomiting, breathing deeply and has blood ketones of 4.2 mmol/L. What should the nurse do? | Escalate urgently for suspected DKA | Stop their insulin straight away | Give them a sugary drink to help | Recheck the ketones tomorrow | Encourage them to sleep it off | These are features of DKA, a medical emergency.
 
 ## Thyroid disease
 S: Thyroid disease is common, especially in women. An underactive thyroid (hypothyroidism) slows body functions; an overactive thyroid (hyperthyroidism) speeds them up. Both are treatable, but extreme forms are emergencies.
+O: Describe hypothyroidism and hyperthyroidism
+O: Interpret thyroid tests and recognise thyroid emergencies
+T: TSH | Thyroid-stimulating hormone, the main screening test for thyroid function
+T: Thyroid storm | A life-threatening emergency of extreme hyperthyroidism
+SUM: Hypothyroidism slows body functions; hyperthyroidism speeds them up.
+SUM: TSH is high in primary hypothyroidism and low in primary hyperthyroidism.
+SRC: National Institute for Health and Care Excellence, Thyroid disease: assessment and management (NG145) | guidance | 2019 | https://www.nice.org.uk/guidance/ng145
 H: Definition, epidemiology and aetiology
 - **Hypothyroidism**: in the UK most often autoimmune (Hashimoto's thyroiditis); also after thyroid surgery or radioactive iodine, and from medicines (amiodarone, lithium).
 - **Hyperthyroidism**: most often Graves' disease (autoimmune), toxic nodular goitre, thyroiditis, medicines.
@@ -514,11 +657,19 @@ P: Escalate urgently for sore throat or fever on carbimazole, signs of thyroid s
 K: In primary hypothyroidism TSH is high; in primary hyperthyroidism TSH is low.
 Q: What is the commonest cause of hyperthyroidism in the UK? | Graves' disease.
 Q: What are the TSH and T4 results in primary hypothyroidism? | High TSH and low free T4.
-M1#nursing-u05-18-q1: Which symptom suggests hyperthyroidism? | Heat intolerance and weight loss | Cold intolerance | Weight gain | Constipation | Slow pulse | Excess thyroid hormone raises metabolic rate, causing heat intolerance, weight loss, tremor and palpitations; cold intolerance and weight gain suggest hypothyroidism.
-M2#nursing-u05-18-q2: After a thyroidectomy, a patient reports tingling around the mouth and in the fingers. What should the nurse suspect and do? | Low calcium (hypocalcaemia) from parathyroid damage: escalate for urgent calcium check and treatment | Normal anaesthetic effects | Anxiety only | Thyroid storm | Hyperglycaemia | Parathyroid injury can cause hypocalcaemia after thyroid surgery.
+M1#nursing-u05-18-q1@1: Which symptom suggests hyperthyroidism? | Heat intolerance and weight loss | Cold intolerance | Weight gain | Constipation | Slow pulse | Excess thyroid hormone raises metabolic rate, causing heat intolerance, weight loss, tremor and palpitations; cold intolerance and weight gain suggest hypothyroidism.
+M2#nursing-u05-18-q2@2: After a thyroidectomy, a patient reports tingling around the mouth and in the fingers. What should the nurse suspect and do? | Hypocalcaemia: escalate for urgent calcium check | Normal after-effects of the anaesthetic | Anxiety only, needing reassurance | Thyroid storm from the surgery | Hyperglycaemia from the stress response | Parathyroid injury can cause hypocalcaemia after thyroid surgery.
 
 ## Renal disease
 S: The kidneys filter blood, remove waste, balance fluid and electrolytes, regulate acid-base and blood pressure, make erythropoietin and activate vitamin D. Renal disease disrupts all of these, and is common, often silent and frequently made worse by medicines.
+O: Describe the functions of the kidney and main renal conditions
+O: Assess kidney function and manage fluid and electrolytes
+T: eGFR | Estimated glomerular filtration rate, a measure of kidney function
+T: Hyperkalaemia | A raised blood potassium level
+SUM: Renal disease disrupts filtration, fluid, electrolytes and hormones.
+SUM: Low urine output is an early sign of kidney stress.
+SRC: National Institute for Health and Care Excellence, Chronic kidney disease: assessment and management (NG203) | guidance | 2021 | https://www.nice.org.uk/guidance/ng203
+SRC: National Institute for Health and Care Excellence, Acute kidney injury (NG148) | guidance | 2019 | https://www.nice.org.uk/guidance/ng148
 H: Main conditions
 - **Acute kidney injury (AKI)** and **chronic kidney disease (CKD)** (next lessons).
 - **Urinary tract infections** and pyelonephritis.
@@ -535,11 +686,19 @@ P: Kidney disease commonly causes high potassium, fluid overload, acidosis and a
 K: Low urine output is an early sign of kidney stress. Record it accurately and act on it.
 Q: Name four functions of the kidneys. | Filtering waste, fluid and electrolyte balance, acid-base balance, blood pressure regulation, erythropoietin production, vitamin D activation (any four).
 Q: What are the features of nephrotic syndrome? | Heavy proteinuria, low serum albumin and oedema (often with high cholesterol).
-M1#nursing-u05-19-q1: Which blood test is used to estimate kidney function? | Creatinine, giving eGFR | Troponin | Amylase | TSH | HbA1c | eGFR is calculated from serum creatinine.
-M2#nursing-u05-19-q2: A man with an enlarged prostate hasn't passed urine for 8 hours and has lower abdominal pain. What should the nurse do? | Assess for urinary retention (bladder scan per policy) and escalate for catheterisation and review | Encourage more fluids | Give a diuretic | Wait until morning | Give a laxative | Acute urinary retention causes pain and can lead to AKI.
+M1#nursing-u05-19-q1@1: Which blood test is used to estimate kidney function? | Creatinine, giving eGFR | Troponin | Amylase | TSH | HbA1c | eGFR is calculated from serum creatinine.
+M2#nursing-u05-19-q2@2: A man with an enlarged prostate hasn't passed urine for 8 hours and has lower abdominal pain. What should the nurse do? | Check for retention and escalate | Encourage more oral fluids | Give a diuretic to increase output | Wait until the morning to review | Give a laxative for constipation | Acute urinary retention causes pain and can lead to AKI.
 
 ## Acute kidney injury
 S: Acute kidney injury (AKI) is a sudden fall in kidney function over hours to days. It is common in hospital, often preventable, and associated with longer stays and higher mortality.
+O: Describe the causes and KDIGO definition of acute kidney injury
+O: Prevent, recognise and manage AKI
+T: Acute kidney injury | A sudden fall in kidney function over hours to days
+T: Pre-renal AKI | AKI caused by reduced blood flow to the kidneys
+SUM: Most AKI is pre-renal and preventable.
+SUM: Monitor urine output and creatinine and review medicines.
+SRC: National Institute for Health and Care Excellence, Acute kidney injury: prevention, detection and management (NG148) | guidance | 2019 | https://www.nice.org.uk/guidance/ng148
+SRC: Kidney Disease: Improving Global Outcomes, KDIGO clinical practice guideline for acute kidney injury | guidance | 2012 | https://kdigo.org/guidelines/acute-kidney-injury/
 H: Definition and epidemiology
 - KDIGO criteria: a rise in creatinine of 26 µmol/L or more within 48 hours; or a rise to 1.5 times baseline or more within 7 days; or urine output below 0.5 mL/kg/hour for more than 6 hours. Staged 1 to 3 by severity.
 - Affects a significant proportion of emergency admissions; national AKI warning algorithms alert staff.
@@ -568,11 +727,19 @@ P: Escalate urgently: potassium 6.5 mmol/L or above (or with ECG changes), falli
 K: Most AKI is pre-renal and develops in people who are dehydrated, septic or on risky medicines: prevention is a nursing priority.
 Q: State the KDIGO urine output criterion for AKI. | Urine output below 0.5 mL/kg/hour for more than 6 hours.
 Q: Name four medicines to review in AKI. | NSAIDs, ACE inhibitors, ARBs, diuretics, metformin, aminoglycosides (any four).
-M1#nursing-u05-20-q1: What is the most common category of AKI? | Pre-renal | Post-renal | Glomerulonephritis | Polycystic | Congenital | Reduced perfusion is the commonest cause.
-M2#nursing-u05-20-q2: A patient's potassium is reported as 6.8 mmol/L. What should the nurse do? | Inform the medical team immediately, arrange an ECG and cardiac monitoring per local hyperkalaemia protocol | Recheck in the morning | Give a banana | Encourage oral fluids only | Ignore it if the patient feels well | Severe hyperkalaemia can cause cardiac arrest.
+M1#nursing-u05-20-q1@1: What is the most common category of AKI? | Pre-renal | Post-renal | Glomerulonephritis | Polycystic | Congenital | Reduced perfusion is the commonest cause.
+M2#nursing-u05-20-q2@2: A patient's potassium is reported as 6.8 mmol/L. What should the nurse do? | Inform the team now and arrange an ECG | Recheck the potassium in the morning | Give a banana to replace potassium | Encourage oral fluids only | Ignore it if the patient feels well | Severe hyperkalaemia can cause cardiac arrest.
 
 ## Chronic kidney disease
 S: Chronic kidney disease (CKD) is long-term reduced kidney function or kidney damage lasting more than 3 months. It is common, usually progresses slowly and greatly increases cardiovascular risk.
+O: Describe the causes and staging of chronic kidney disease
+O: Care for people with CKD, including dialysis access
+T: Chronic kidney disease | Reduced kidney function or damage lasting more than 3 months
+T: Arteriovenous fistula | A surgically created connection used for haemodialysis access
+SUM: CKD is common, progresses slowly and raises cardiovascular risk.
+SUM: Protect the fistula arm.
+SRC: National Institute for Health and Care Excellence, Chronic kidney disease: assessment and management (NG203) | guidance | 2021 | https://www.nice.org.uk/guidance/ng203
+SRC: UK Kidney Association, Clinical practice guidelines | guidance | 2024 | https://ukkidney.org/health-professionals/guidelines/guidelines-commentaries
 H: Definition and epidemiology
 - eGFR below 60 mL/min/1.73m² for more than 3 months, or markers of kidney damage (such as ACR 3 mg/mmol or more) whatever the eGFR.
 - Classified by eGFR (G1–G5) and albuminuria (A1–A3). Stage G5 is kidney failure.
@@ -601,11 +768,19 @@ P: Escalate high potassium, fluid overload with breathlessness, signs of fistula
 K: Protect the fistula arm: it is the person's lifeline for dialysis.
 Q: How is CKD defined? | Reduced kidney function (eGFR below 60) or markers of kidney damage, lasting more than 3 months.
 Q: Name the three forms of kidney replacement therapy. | Haemodialysis, peritoneal dialysis and kidney transplantation.
-M1#nursing-u05-21-q1: What are the two leading causes of CKD in the UK? | Diabetes and hypertension | Asthma and COPD | Migraine and epilepsy | Gout and psoriasis | Anaemia and obesity | Diabetes and high blood pressure damage the kidneys' small blood vessels and filters over years, and together cause most chronic kidney disease in the UK.
-M2#nursing-u05-21-q2: A healthcare assistant is about to take a blood pressure on the arm with a dialysis fistula. What should the nurse do? | Stop them and use the other arm, explaining why the fistula must be protected | Allow it, as it's quick | Use a smaller cuff on the fistula arm | Take blood from the fistula instead | Ask the patient to decide | Pressure on the fistula can damage or block it.
+M1#nursing-u05-21-q1@1: What are the two leading causes of CKD in the UK? | Diabetes and hypertension | Asthma and COPD | Migraine and epilepsy | Gout and psoriasis | Anaemia and obesity | Diabetes and high blood pressure damage the kidneys' small blood vessels and filters over years, and together cause most chronic kidney disease in the UK.
+M2#nursing-u05-21-q2@2: A healthcare assistant is about to take a blood pressure on the arm with a dialysis fistula. What should the nurse do? | Stop them and use the other arm | Allow it, as it's quick and harmless | Use a smaller cuff on the fistula arm | Take blood from the fistula instead | Ask the patient to decide which arm | Pressure on the fistula can damage or block it.
 
 ## Liver disease
 S: Liver disease is a growing cause of death in the UK, largely preventable and often diagnosed late. Cirrhosis, the end stage of many liver diseases, causes life-threatening complications.
+O: Describe the causes and complications of liver disease
+O: Provide nursing care, including in alcohol withdrawal
+T: Cirrhosis | Scarring of the liver from long-term damage
+T: Hepatic encephalopathy | Confusion caused by liver failure
+SUM: Liver disease is a growing, largely preventable cause of death.
+SUM: Give thiamine before glucose in alcohol withdrawal per local protocol.
+SRC: National Institute for Health and Care Excellence, Cirrhosis in over 16s (NG50) | guidance | 2016 | https://www.nice.org.uk/guidance/ng50
+SRC: National Institute for Health and Care Excellence, Alcohol-use disorders: diagnosis and management of physical complications (CG100) | guidance | 2017 | https://www.nice.org.uk/guidance/cg100
 H: Definition, epidemiology and aetiology
 - Main causes: **alcohol-related liver disease**, **metabolic dysfunction-associated steatotic liver disease** (MASLD, formerly called non-alcoholic fatty liver disease) linked to obesity and diabetes, and **viral hepatitis** (B and C). Others: autoimmune hepatitis, haemochromatosis, drug-induced injury (including paracetamol overdose).
 H: Pathophysiology
@@ -629,11 +804,19 @@ P: Vomiting blood or passing black stools in someone with liver disease is an em
 K: In alcohol withdrawal, thiamine before glucose helps prevent Wernicke's encephalopathy: follow your local protocol.
 Q: Name three common causes of liver disease in the UK. | Alcohol, MASLD (fatty liver disease linked to metabolic risk) and viral hepatitis.
 Q: What is hepatic encephalopathy? | Confusion and reduced consciousness caused by toxins (such as ammonia) that the failing liver can't clear.
-M1#nursing-u05-22-q1: Which medicine is commonly used to treat hepatic encephalopathy? | Lactulose | Furosemide alone | Paracetamol | Aspirin | Salbutamol | Lactulose reduces ammonia absorption from the gut.
-M2#nursing-u05-22-q2: A patient with cirrhosis vomits a large amount of fresh blood. What should the nurse do first? | Call for emergency help, assess ABCDE and follow the upper GI bleed pathway | Give an antacid | Lie them flat and recheck in an hour | Encourage oral fluids | Document and wait for the ward round | Varices from portal hypertension can bleed massively, so vomiting fresh blood in cirrhosis needs an immediate emergency response and the upper GI bleed pathway.
+M1#nursing-u05-22-q1@1: Which medicine is commonly used to treat hepatic encephalopathy? | Lactulose | Furosemide alone | Paracetamol | Aspirin | Salbutamol | Lactulose reduces ammonia absorption from the gut.
+M2#nursing-u05-22-q2@2: A patient with cirrhosis vomits a large amount of fresh blood. What should the nurse do first? | Get emergency help, assess ABCDE, follow the pathway | Give an antacid to settle the stomach | Lie them flat and recheck in an hour | Encourage oral fluids to replace losses | Document it and wait for the ward round | Varices from portal hypertension can bleed massively, so vomiting fresh blood in cirrhosis needs an immediate emergency response and the upper GI bleed pathway.
 
 ## Gastrointestinal disorders
 S: Gastrointestinal (GI) disorders range from common, mild problems such as reflux and constipation to life-threatening bleeding, obstruction and cancer. Nurses assess bowel function every day and are often first to spot a serious change.
+O: Describe common upper and lower GI disorders
+O: Assess bowel function and escalate GI red flags
+T: Bristol Stool Chart | A seven-type scale for describing stool form
+T: Upper GI bleed | Bleeding from the oesophagus, stomach or duodenum
+SUM: GI disorders range from reflux and constipation to bleeding and obstruction.
+SUM: Use the Bristol Stool Chart and escalate red flags.
+SRC: National Institute for Health and Care Excellence, Acute upper gastrointestinal bleeding in over 16s (CG141) | guidance | 2016 | https://www.nice.org.uk/guidance/cg141
+SRC: Lewis SJ, Heaton KW, Stool form scale as a useful guide to intestinal transit time, Scandinavian Journal of Gastroenterology 32(9):920–924 | primary | 1997
 H: Upper GI
 - **GORD** (reflux): heartburn; lifestyle advice and PPIs.
 - **Peptic ulcer disease**: caused mostly by Helicobacter pylori and NSAIDs; can bleed or perforate.
@@ -654,11 +837,19 @@ P: Vomiting blood or black stools, severe abdominal pain with a rigid abdomen, s
 K: Use the Bristol Stool Chart for every bowel record: "BNO" or "bowels fine" doesn't tell the next nurse enough.
 Q: What are the two main forms of inflammatory bowel disease? | Crohn's disease and ulcerative colitis.
 Q: Name the two commonest causes of peptic ulcers. | Helicobacter pylori infection and NSAIDs.
-M1#nursing-u05-23-q1: Which condition is treated with a lifelong gluten-free diet? | Coeliac disease | Crohn's disease | Diverticulitis | GORD | Appendicitis | Coeliac disease is an autoimmune reaction to gluten.
-M2#nursing-u05-23-q2: A patient with ulcerative colitis has ten bloody stools a day, a heart rate of 115 and a temperature of 38.3°C. What should the nurse do? | Recognise a possible acute severe flare: escalate urgently, monitor fluid balance and observations | Give loperamide and wait | Encourage normal diet only | Recheck tomorrow | Reassure them it's a typical flare | Acute severe colitis is a medical emergency.
+M1#nursing-u05-23-q1@1: Which condition is treated with a lifelong gluten-free diet? | Coeliac disease | Crohn's disease | Diverticulitis | GORD | Appendicitis | Coeliac disease is an autoimmune reaction to gluten.
+M2#nursing-u05-23-q2@2: A patient with ulcerative colitis has ten bloody stools a day, a heart rate of 115 and a temperature of 38.3°C. What should the nurse do? | Possible severe flare: escalate and monitor | Give loperamide and wait for it to settle | Encourage a normal diet only | Recheck the symptoms tomorrow | Reassure them that it's a typical flare | Acute severe colitis is a medical emergency.
 
 ## Neurological disorders
 S: Neurological disorders affect the brain, spinal cord, nerves or muscles. They range from common headaches to progressive conditions, and acute neurological changes are often emergencies.
+O: Describe common neurological disorders
+O: Assess and escalate acute neurological change
+T: Neurological red flag | A sign suggesting a serious, time-critical neurological problem
+T: Thunderclap headache | A sudden, severe headache that may indicate bleeding
+SUM: Neurological disorders range from headache to progressive disease.
+SUM: Acute neurological change is time-critical; record when it started.
+SRC: National Institute for Health and Care Excellence, Headaches in over 12s (CG150) | guidance | 2021 | https://www.nice.org.uk/guidance/cg150
+SRC: National Institute for Health and Care Excellence, Head injury (NG232) | guidance | 2023 | https://www.nice.org.uk/guidance/ng232
 H: Main conditions
 - **Stroke and TIA**, **epilepsy**, **dementia** and **Parkinson's disease** (own lessons).
 - **Multiple sclerosis**: autoimmune demyelination; relapsing or progressive; visual, sensory, motor and bladder symptoms.
@@ -679,11 +870,18 @@ P: Sudden severe ("thunderclap") headache, falling GCS, new focal weakness, seiz
 K: Any acute neurological change is time-critical: record exactly when it started.
 Q: What are the classic features of meningitis? | Fever, headache, neck stiffness, photophobia, and sometimes a non-blanching rash and confusion.
 Q: What are the red flags for cauda equina syndrome? | Saddle anaesthesia, bladder or bowel dysfunction, bilateral sciatica or leg weakness.
-M1#nursing-u05-24-q1: Which condition causes progressive ascending weakness after an infection? | Guillain-Barré syndrome | Migraine | Parkinson's disease | Alzheimer's disease | Essential tremor | Guillain-Barré is an acute inflammatory neuropathy.
-M2#nursing-u05-24-q2: A patient with Guillain-Barré syndrome reports increasing breathlessness and has a weak cough. What should the nurse do? | Escalate urgently, as respiratory muscles may be failing; check breathing measurements as directed | Encourage rest | Give a nebuliser and wait | Lie them flat | Recheck tomorrow | Guillain-Barré can weaken the breathing muscles quickly; breathlessness and a weak cough mean urgent review and breathing measurements are needed.
+M1#nursing-u05-24-q1@1: Which condition causes progressive ascending weakness after an infection? | Guillain-Barré syndrome | Migraine | Parkinson's disease | Alzheimer's disease | Essential tremor | Guillain-Barré is an acute inflammatory neuropathy.
+M2#nursing-u05-24-q2@2: A patient with Guillain-Barré syndrome reports increasing breathlessness and has a weak cough. What should the nurse do? | Escalate urgently: breathing muscles may fail | Encourage rest and recheck later | Give a nebuliser and then wait | Lie them flat to ease breathing | Recheck everything tomorrow | Guillain-Barré can weaken the breathing muscles quickly; breathlessness and a weak cough mean urgent review and breathing measurements are needed.
 
 ## Epilepsy
 S: Epilepsy is a condition of recurrent, unprovoked seizures caused by abnormal electrical activity in the brain. Most people achieve good control with medicines, but seizures, status epilepticus and sudden unexpected death in epilepsy (SUDEP) are serious risks.
+O: Describe the causes and types of seizure
+O: Care for a person during and after a seizure and recognise status epilepticus
+T: Status epilepticus | A prolonged seizure, or repeated seizures without recovery between them
+T: Rescue medicine | Medicine such as buccal midazolam given for prolonged seizures
+SUM: Epilepsy is recurrent, unprovoked seizures.
+SUM: Time every seizure; duration decides when rescue medicine is needed.
+SRC: National Institute for Health and Care Excellence, Epilepsies in children, young people and adults (NG217) | guidance | 2022 | https://www.nice.org.uk/guidance/ng217
 H: Definition and epidemiology
 - About 1 in 100 people in the UK have epilepsy. More common in people with learning disabilities.
 H: Aetiology and risk factors
@@ -711,11 +909,19 @@ P: Call for emergency help if a convulsive seizure lasts 5 minutes or more, seiz
 K: Time every seizure: duration determines whether rescue medicine and an emergency response are needed.
 Q: What should you do during a tonic-clonic seizure? | Keep the person safe, protect the head, don't restrain or put anything in the mouth, time it, and place in the recovery position once convulsions stop.
 Q: When is a convulsive seizure an emergency? | When it lasts 5 minutes or more, or seizures repeat without recovery (status epilepticus), among other reasons.
-M1#nursing-u05-25-q1: What should never be put in the mouth of a person having a seizure? | Anything at all | A rescue medicine given per buccal route as per care plan | Oxygen mask over the face | A pillow under the head | A blanket | Objects in the mouth can cause injury or obstruction; buccal medicine is given carefully per plan.
-M2#nursing-u05-25-q2: A patient's tonic-clonic seizure has lasted 6 minutes. They have a care plan for buccal midazolam. What should the nurse do? | Give rescue medicine per care plan, call for emergency help, and support airway and breathing | Wait for it to stop | Restrain the patient | Give oral medicine | Leave to get help without timing | Prolonged seizures need rescue treatment and emergency help.
+M1#nursing-u05-25-q1@1: What should never be put in the mouth of a person having a seizure? | Anything at all | A rescue medicine given per buccal route as per care plan | Oxygen mask over the face | A pillow under the head | A blanket | Objects in the mouth can cause injury or obstruction; buccal medicine is given carefully per plan.
+M2#nursing-u05-25-q2@2: A patient's tonic-clonic seizure has lasted 6 minutes. They have a care plan for buccal midazolam. What should the nurse do? | Give rescue medicine and call for help | Wait for the seizure to stop by itself | Restrain the patient to prevent injury | Give their usual oral medicine now | Leave to get help without timing it | Prolonged seizures need rescue treatment and emergency help.
 
 ## Dementia
 S: Dementia is a syndrome of progressive decline in memory, thinking, behaviour and the ability to perform everyday activities, caused by brain disease. Person-centred care and recognising delirium and pain are central nursing skills.
+O: Describe the types and features of dementia
+O: Provide person-centred care and distinguish dementia from delirium
+T: Dementia | A progressive syndrome of decline in memory, thinking and daily function
+T: Delirium | An acute, fluctuating disturbance of attention and awareness
+SUM: Dementia has several causes, including Alzheimer's disease and vascular disease.
+SUM: Distressed behaviour is communication; look for unmet needs first.
+SRC: National Institute for Health and Care Excellence, Dementia: assessment, management and support (NG97) | guidance | 2018 | https://www.nice.org.uk/guidance/ng97
+SRC: National Institute for Health and Care Excellence, Delirium (CG103) | guidance | 2023 | https://www.nice.org.uk/guidance/cg103
 H: Definition and epidemiology
 - Around 900,000 to 1 million people in the UK live with dementia, and the number is rising. Many people in hospital have dementia.
 H: Aetiology and types
@@ -746,11 +952,19 @@ P: Escalate a sudden change in confusion, behaviour or function (possible deliri
 K: Distressed behaviour is communication. Look for pain, hunger, thirst, constipation, infection, fear or unmet need before considering medication.
 Q: Which type of dementia is very sensitive to antipsychotics? | Dementia with Lewy bodies.
 Q: What tool can screen for delirium in a person with dementia? | The 4AT.
-M1#nursing-u05-26-q1: What is the commonest cause of dementia? | Alzheimer's disease | Vascular dementia | Lewy body dementia | Frontotemporal dementia | Alcohol-related brain damage | Alzheimer's accounts for the largest share.
-M2#nursing-u05-26-q2: A man with dementia becomes agitated and calls out at night, newly over the last two days. What should the nurse do first? | Assess for delirium and physical causes such as pain, infection, constipation or retention | Request an antipsychotic | Restrain him for safety | Assume it's his dementia progressing | Move him to another ward | New behaviour change needs assessment for reversible causes.
+M1#nursing-u05-26-q1@1: What is the commonest cause of dementia? | Alzheimer's disease | Vascular dementia | Lewy body dementia | Frontotemporal dementia | Alcohol-related brain damage | Alzheimer's accounts for the largest share.
+M2#nursing-u05-26-q2@2: A man with dementia becomes agitated and calls out at night, newly over the last two days. What should the nurse do first? | Assess for delirium and physical causes | Request an antipsychotic to calm him | Restrain him for his own safety | Assume his dementia is progressing | Move him to another ward | New behaviour change needs assessment for reversible causes.
 
 ## Parkinson's disease
 S: Parkinson's disease is a progressive neurological condition caused by loss of dopamine-producing neurones in the brain. It affects movement and many other body functions, and medicine timing is critical.
+O: Describe the pathophysiology and signs of Parkinson's disease
+O: Give time-critical medicines and manage complications
+T: Bradykinesia | Slowness of movement
+T: Dopamine | A neurotransmitter lost in Parkinson's disease
+SUM: Parkinson's is caused by loss of dopamine-producing neurones.
+SUM: Missed or late doses quickly cause loss of mobility and swallowing.
+SRC: National Institute for Health and Care Excellence, Parkinson's disease in adults (NG71) | guidance | 2017 | https://www.nice.org.uk/guidance/ng71
+SRC: Parkinson's UK, Get It On Time | guidance | 2023 | https://www.parkinsons.org.uk/
 H: Definition and epidemiology
 - Around 150,000 people in the UK have Parkinson's; it is the fastest-growing neurological condition.
 H: Aetiology and risk factors
@@ -778,11 +992,19 @@ P: Escalate if doses are missed or can't be taken, swallowing worsens, or the pe
 K: In Parkinson's, a missed or late dose can quickly cause loss of mobility and swallowing. Get it on time.
 Q: Name the three cardinal motor features of Parkinson's disease. | Bradykinesia, rigidity and resting tremor (with postural instability later).
 Q: Name two medicines to avoid in Parkinson's disease. | Haloperidol and metoclopramide (also prochlorperazine and most typical antipsychotics).
-M1#nursing-u05-27-q1: Which neurotransmitter is deficient in Parkinson's disease? | Dopamine | Serotonin | Acetylcholine | Insulin | Adrenaline | Parkinson's disease is caused by loss of dopamine-producing neurones in the substantia nigra, which disrupts movement control.
-M2#nursing-u05-27-q2: A patient with Parkinson's is nil by mouth before surgery and their levodopa is due. What should the nurse do? | Escalate immediately so an alternative is prescribed (seek specialist or pharmacist advice) | Omit the dose until after surgery | Give it later in the day | Give metoclopramide instead | Do nothing | Omitting levodopa can cause severe rigidity, swallowing problems and a dangerous withdrawal syndrome, so an alternative route must be arranged straight away.
+M1#nursing-u05-27-q1@1: Which neurotransmitter is deficient in Parkinson's disease? | Dopamine | Serotonin | Acetylcholine | Insulin | Adrenaline | Parkinson's disease is caused by loss of dopamine-producing neurones in the substantia nigra, which disrupts movement control.
+M2#nursing-u05-27-q2@2: A patient with Parkinson's is nil by mouth before surgery and their levodopa is due. What should the nurse do? | Escalate now so an alternative is prescribed | Omit the dose until after the surgery | Give it later in the day instead | Give metoclopramide instead | Do nothing, as one dose won't matter | Omitting levodopa can cause severe rigidity, swallowing problems and a dangerous withdrawal syndrome, so an alternative route must be arranged straight away.
 
 ## Cancer
 S: Cancer is uncontrolled growth of abnormal cells that can invade nearby tissue and spread (metastasise). About half of people in the UK will get cancer in their lifetime, and early diagnosis greatly improves outcomes.
+O: Describe how cancer develops and spreads
+O: Recognise oncological emergencies and support people with cancer
+T: Metastasis | Spread of cancer from its original site to other parts of the body
+T: Metastatic spinal cord compression | Compression of the spinal cord by cancer, an emergency
+SUM: Cancer is uncontrolled growth of abnormal cells; early diagnosis improves outcomes.
+SUM: New back pain and leg weakness in cancer needs urgent assessment.
+SRC: National Institute for Health and Care Excellence, Suspected cancer: recognition and referral (NG12) | guidance | 2023 | https://www.nice.org.uk/guidance/ng12
+SRC: National Institute for Health and Care Excellence, Spinal metastases and metastatic spinal cord compression (NG234) | guidance | 2023 | https://www.nice.org.uk/guidance/ng234
 H: Definition and epidemiology
 - The commonest cancers in the UK are breast, prostate, lung and bowel cancer. Lung cancer causes the most deaths.
 H: Aetiology and risk factors
@@ -808,11 +1030,20 @@ P: Escalate urgently any suspected oncological emergency, especially fever after
 K: A person with cancer who has new back pain and leg weakness needs urgent assessment for spinal cord compression.
 Q: What does TNM stand for? | Tumour size, lymph node involvement and metastasis.
 Q: Name four oncological emergencies. | Neutropenic sepsis, metastatic spinal cord compression, hypercalcaemia, superior vena cava obstruction, tumour lysis syndrome (any four).
-M1#nursing-u05-28-q1: What is the biggest preventable cause of cancer in the UK? | Smoking | Mobile phones | Coffee | Cold weather | Stress alone | Smoking causes the largest share of preventable cancers.
-M2#nursing-u05-28-q2: A patient with prostate cancer reports new back pain and says his legs feel heavy and numb. What should the nurse do? | Escalate urgently for suspected metastatic spinal cord compression and follow local pathway (including lying flat if advised) | Give analgesia and recheck tomorrow | Encourage walking | Book a routine physiotherapy appointment | Reassure that it's muscle strain | MSCC needs urgent imaging and treatment to prevent paralysis.
+M1#nursing-u05-28-q1@1: What is the biggest preventable cause of cancer in the UK? | Smoking | Mobile phones | Coffee | Cold weather | Stress alone | Smoking causes the largest share of preventable cancers.
+M3#nursing-u05-28-q2@2: A patient with prostate cancer reports new back pain and says his legs feel heavy and numb. What should the nurse do? | Escalate urgently: possible spinal cord compression | Give analgesia and recheck tomorrow | Encourage walking to ease the pain | Book a routine physiotherapy appointment | Reassure them that it's muscle strain | MSCC needs urgent imaging and treatment to prevent paralysis.
 
 ## Haematological disorders
 S: Haematological disorders affect the blood and blood-forming organs: red cells, white cells, platelets, clotting and the bone marrow. They range from common anaemia to blood cancers.
+O: Describe anaemia, sickle cell disease, clotting disorders and blood cancers
+O: Give blood transfusions safely
+T: Anaemia | A low haemoglobin concentration
+T: Sickle cell crisis | An acute painful episode caused by blocked blood vessels in sickle cell disease
+SUM: Haematological disorders affect red cells, white cells, platelets and clotting.
+SUM: Bedside identity checks prevent wrong blood transfusions.
+SRC: National Institute for Health and Care Excellence, Blood transfusion (NG24) | guidance | 2015 | https://www.nice.org.uk/guidance/ng24
+SRC: Serious Hazards of Transfusion (SHOT), Annual SHOT report | guidance | 2024 | https://www.shotuk.org/
+SRC: National Institute for Health and Care Excellence, Sickle cell disease: managing acute painful episodes in hospital (CG143) | guidance | 2012 | https://www.nice.org.uk/guidance/cg143
 H: Anaemia
 - Low haemoglobin. Causes: iron deficiency (blood loss, diet, malabsorption), vitamin B12 or folate deficiency, chronic disease, kidney disease, haemolysis, bone marrow failure.
 - Symptoms: tiredness, breathlessness, pallor, palpitations, headache.
@@ -830,11 +1061,19 @@ H: Blood transfusion safety
 K: Wrong blood transfusions are largely preventable by bedside identity checks: never skip them.
 Q: When should analgesia be given to a person in sickle cell crisis? | Quickly, within 30 minutes of arrival (NICE), with frequent reassessment.
 Q: What should you do if a transfusion reaction is suspected? | Stop the transfusion, keep IV access open, assess ABCDE, call for help and follow the transfusion reaction protocol.
-M1#nursing-u05-29-q1: Which is the most common cause of anaemia worldwide? | Iron deficiency | Vitamin C deficiency | Sickle cell disease | Leukaemia | Haemophilia | Iron deficiency, from blood loss, poor intake or malabsorption, is the commonest cause of anaemia in the UK and worldwide.
-M2#nursing-u05-29-q2: Ten minutes into a red cell transfusion, a patient develops a fever, rigors and back pain. What should the nurse do? | Stop the transfusion, keep the line open, call for urgent help and follow the reaction protocol | Slow the transfusion | Give paracetamol and continue | Finish the unit quickly | Ignore it as anxiety | These signs can indicate a serious reaction, including incompatibility.
+M1#nursing-u05-29-q1@1: Which is the most common cause of anaemia worldwide? | Iron deficiency | Vitamin C deficiency | Sickle cell disease | Leukaemia | Haemophilia | Iron deficiency, from blood loss, poor intake or malabsorption, is the commonest cause of anaemia in the UK and worldwide.
+M3#nursing-u05-29-q2@2: Ten minutes into a red cell transfusion, a patient develops a fever, rigors and back pain. What should the nurse do? | Stop it, keep the line open, get help | Slow the transfusion right down | Give paracetamol and continue | Finish the unit quickly | Ignore it as anxiety | These signs can indicate a serious reaction, including incompatibility.
 
 ## Musculoskeletal disease
 S: Musculoskeletal (MSK) conditions affect bones, joints, muscles and connective tissue. They are among the commonest causes of pain and disability, and fractures in older people often mark a turning point in independence.
+O: Describe osteoporosis, hip fracture, osteoarthritis and back pain
+O: Carry out neurovascular observations and orthopaedic care
+T: Osteoporosis | Reduced bone density and quality, raising fracture risk
+T: Compartment syndrome | Raised pressure in a muscle compartment that compromises blood supply
+SUM: MSK conditions are common causes of pain and disability.
+SUM: Neurovascular observations detect compartment syndrome early.
+SRC: National Institute for Health and Care Excellence, Hip fracture: management (CG124) | guidance | 2023 | https://www.nice.org.uk/guidance/cg124
+SRC: National Institute for Health and Care Excellence, Osteoarthritis in over 16s (NG226) | guidance | 2022 | https://www.nice.org.uk/guidance/ng226
 H: Osteoporosis
 - Reduced bone density and quality, increasing fracture risk ("fragility fractures" of the hip, spine and wrist). Risk: age, female sex, menopause, steroids, low body weight, smoking, alcohol.
 - Risk assessment (FRAX or QFracture), bone density scan, calcium and vitamin D, bisphosphonates and other treatments, falls prevention.
@@ -851,11 +1090,19 @@ H: Back pain
 K: After a fracture or cast, regular neurovascular observations detect compartment syndrome early.
 Q: What does NICE recommend for the timing of hip fracture surgery? | On the day of, or the day after, admission.
 Q: What are the components of neurovascular observations? | Colour, warmth, movement, sensation, pulses, capillary refill and pain.
-M1#nursing-u05-30-q1: Which condition increases fragility fracture risk? | Osteoporosis | Osteoarthritis only | Gout | Psoriasis | Hypertension | Osteoporosis reduces bone density and quality, so minor falls cause fragility fractures of the hip, spine and wrist.
-M2#nursing-u05-30-q2: An older woman admitted with a hip fracture is in severe pain and becoming confused. What should the nurse prioritise? | Effective analgesia, delirium assessment and preparing for timely surgery per the hip fracture pathway | Withhold analgesia to avoid confusion | Mobilise her immediately | Wait for her family | Restrain her | Pain causes delirium; good analgesia and early surgery improve outcomes.
+M1#nursing-u05-30-q1@1: Which condition increases fragility fracture risk? | Osteoporosis | Osteoarthritis only | Gout | Psoriasis | Hypertension | Osteoporosis reduces bone density and quality, so minor falls cause fragility fractures of the hip, spine and wrist.
+M2#nursing-u05-30-q2@2: An older woman admitted with a hip fracture is in severe pain and becoming confused. What should the nurse prioritise? | Analgesia, delirium screening and timely surgery | Withhold analgesia to avoid confusion | Mobilise her on the leg immediately | Wait for her family before doing anything | Restrain her to stop her moving | Pain causes delirium; good analgesia and early surgery improve outcomes.
 
 ## Rheumatological conditions
 S: Rheumatological conditions are inflammatory and autoimmune diseases of joints, muscles and connective tissue. Early recognition and treatment prevent permanent damage, and many treatments need careful monitoring.
+O: Describe the main inflammatory and autoimmune joint conditions
+O: Monitor disease-modifying treatments safely
+T: DMARD | Disease-modifying antirheumatic drug
+T: Rheumatoid arthritis | An autoimmune inflammatory arthritis of the joints
+SUM: Early treatment prevents permanent joint damage.
+SUM: Methotrexate is once weekly; check the day every time.
+SRC: National Institute for Health and Care Excellence, Rheumatoid arthritis in adults (NG100) | guidance | 2020 | https://www.nice.org.uk/guidance/ng100
+SRC: National Patient Safety Agency, Improving compliance with oral methotrexate guidelines | guidance | 2006
 H: Main conditions
 - **Rheumatoid arthritis (RA)**: symmetrical inflammatory arthritis of small joints with morning stiffness; can damage joints and affect other organs. Early referral and disease-modifying antirheumatic drugs (DMARDs) improve outcomes.
 - **Gout**: urate crystal arthritis, often the big toe; very painful, hot, swollen joint; treated with NSAIDs, colchicine or steroids, then urate-lowering therapy.
@@ -872,11 +1119,19 @@ H: Nursing role
 K: Methotrexate for rheumatology is a once-weekly medicine. Check the day of the week every time.
 Q: How often is methotrexate usually taken for rheumatoid arthritis? | Once a week, on the same day each week.
 Q: Why is giant cell arteritis an emergency? | It can cause sudden permanent loss of vision if not treated promptly with steroids.
-M1#nursing-u05-31-q1: Which joint is classically affected first in gout? | The big toe | The knee only | The spine | The jaw | The shoulder | The first metatarsophalangeal joint is typical.
-M2#nursing-u05-31-q2: A patient's chart shows methotrexate 10 mg once daily. What should the nurse do? | Not give it; query urgently with the prescriber and pharmacist, as methotrexate is usually once weekly | Give it as charted | Give half | Give it with folic acid | Ask the patient if they want it | Daily methotrexate is a known, potentially fatal error.
+M1#nursing-u05-31-q1@1: Which joint is classically affected first in gout? | The big toe | The knee only | The spine | The jaw | The shoulder | The first metatarsophalangeal joint is typical.
+M2#nursing-u05-31-q2@2: A patient's chart shows methotrexate 10 mg once daily. What should the nurse do? | Don't give it; query urgently (usually weekly) | Give it as charted on the drug chart | Give half the dose as a compromise | Give it with folic acid to be safe | Ask the patient if they want it | Daily methotrexate is a known, potentially fatal error.
 
 ## Skin conditions
 S: The skin is the largest organ, and skin conditions are common causes of discomfort, distress and infection. Nurses assess skin every day and care for wounds, ulcers and chronic skin disease.
+O: Describe common skin conditions and leg ulcers
+O: Assess skin and recognise red flags
+T: ABPI | Ankle brachial pressure index, used to assess arterial supply before compression
+T: Cellulitis | A bacterial infection of the deeper skin and tissue
+SUM: Skin conditions cause discomfort, distress and infection.
+SUM: Never apply compression without a vascular assessment.
+SRC: National Wound Care Strategy Programme, Lower limb recommendations for clinical care | guidance | 2020 | https://www.nationalwoundcarestrategy.net/
+SRC: National Institute for Health and Care Excellence, Cellulitis and erysipelas: antimicrobial prescribing (NG141) | guidance | 2019 | https://www.nice.org.uk/guidance/ng141
 H: Common conditions
 - **Eczema (atopic dermatitis)**: dry, itchy, inflamed skin; emollients and topical steroids; flares with infection.
 - **Psoriasis**: well-defined red scaly plaques; topical treatments, phototherapy, systemic and biologic therapy; associated arthritis and cardiovascular risk.
@@ -893,11 +1148,19 @@ P: Rapidly spreading redness with systemic signs, a non-blanching rash with feve
 K: Never apply compression bandaging to a leg ulcer without a vascular assessment (ABPI): arterial disease makes compression dangerous.
 Q: What is the ABCDE of melanoma? | Asymmetry, Border irregularity, Colour variation, Diameter (over 6 mm), Evolving.
 Q: How do venous and arterial leg ulcers differ? | Venous ulcers are usually shallow, around the ankle, with oedema; arterial ulcers are painful, punched out, often on the feet, with cool skin and weak pulses.
-M1#nursing-u05-32-q1: What is the first-line treatment for most venous leg ulcers? | Compression therapy, after vascular assessment | High-dose steroids | Antibiotics for all | Leaving uncovered | Heat packs | Compression treats venous hypertension, once arterial disease is excluded.
-M2#nursing-u05-32-q2: A patient with cellulitis of the leg develops a temperature of 38.9°C, heart rate 118 and confusion. What should the nurse do? | Recognise possible sepsis: escalate urgently and follow the sepsis pathway | Mark the edge and recheck tomorrow | Elevate the leg only | Apply a cold compress and wait | Give oral fluids only | Systemic signs with cellulitis indicate possible sepsis.
+M1#nursing-u05-32-q1@1: What is the first-line treatment for most venous leg ulcers? | Compression therapy, after vascular assessment | High-dose steroids | Antibiotics for all | Leaving uncovered | Heat packs | Compression treats venous hypertension, once arterial disease is excluded.
+M2#nursing-u05-32-q2@2: A patient with cellulitis of the leg develops a temperature of 38.9°C, heart rate 118 and confusion. What should the nurse do? | Recognise possible sepsis: escalate urgently and follow the sepsis pathway | Mark the edge and recheck tomorrow | Elevate the leg only | Apply a cold compress and wait | Give oral fluids only | Systemic signs with cellulitis indicate possible sepsis.
 
 ## Sepsis
 S: Sepsis is a life-threatening reaction to an infection in which the body's response damages its own tissues and organs. It can progress quickly to septic shock and death; early recognition and treatment save lives.
+O: Describe the pathophysiology and signs of sepsis
+O: Recognise and respond to sepsis using local pathways
+T: Sepsis | Life-threatening organ dysfunction caused by a dysregulated response to infection
+T: Septic shock | Sepsis with circulatory failure despite fluids
+SUM: Sepsis can progress quickly to shock and death.
+SUM: Ask "could this be sepsis?" and act early.
+SRC: National Institute for Health and Care Excellence, Suspected sepsis: recognition, diagnosis and early management (NG51) | guidance | 2024 | https://www.nice.org.uk/guidance/ng51
+SRC: Singer M and others, The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3), JAMA 315(8):801–810 | primary | 2016
 H: Definition and epidemiology
 - Sepsis-3 definition: life-threatening organ dysfunction caused by a dysregulated host response to infection. **Septic shock**: sepsis with circulatory and metabolic failure needing vasopressors and with raised lactate.
 - Tens of thousands of people die from sepsis-related illness in the UK each year.
@@ -925,11 +1188,19 @@ P: Suspected sepsis is a medical emergency: escalate immediately using SBAR, sta
 K: Ask "could this be sepsis?" for every patient with infection and abnormal observations.
 Q: What is sepsis (Sepsis-3)? | Life-threatening organ dysfunction caused by a dysregulated host response to infection.
 Q: Name the six actions in the Sepsis Six. | Give oxygen to target, take blood cultures, give IV antibiotics, give IV fluids, measure lactate, monitor urine output.
-M1#nursing-u05-33-q1: Which observation finding is a red flag for sepsis? | New confusion with a high respiratory rate | Temperature 37.0°C alone | Heart rate 72 | Respiratory rate 16 | Normal blood pressure alone | Altered mental state and tachypnoea suggest organ dysfunction.
-M2#nursing-u05-33-q2: A patient with a urinary infection has NEWS2 of 7, BP 85/50 and lactate 4.1. What is the priority? | Emergency escalation and immediate sepsis pathway treatment, including IV antibiotics within the hour | Oral antibiotics tomorrow | Encourage drinking water only | Recheck in four hours | Wait for urine culture results | This is high-risk sepsis needing immediate treatment.
+M1#nursing-u05-33-q1@1: Which observation finding is a red flag for sepsis? | New confusion with a high respiratory rate | Temperature 37.0°C alone | Heart rate 72 | Respiratory rate 16 | Normal blood pressure alone | Altered mental state and tachypnoea suggest organ dysfunction.
+M2#nursing-u05-33-q2@2: A patient with a urinary infection has NEWS2 of 7, BP 85/50 and lactate 4.1. What is the priority? | Escalate now; IV antibiotics within the hour | Start oral antibiotics tomorrow | Encourage drinking water only | Recheck the observations in four hours | Wait for the urine culture results | This is high-risk sepsis needing immediate treatment.
 
 ## Shock
 S: Shock is a life-threatening state of circulatory failure in which tissues don't receive enough oxygen. Without rapid treatment, it leads to organ failure and death.
+O: Describe the types and pathophysiology of shock
+O: Recognise compensated shock and respond urgently
+T: Shock | Circulatory failure in which tissues don't receive enough oxygen
+T: Compensated shock | Shock in which blood pressure is maintained by compensatory mechanisms
+SUM: Shock may be hypovolaemic, distributive, cardiogenic or obstructive.
+SUM: Don't wait for hypotension; compensation hides the problem.
+SRC: Resuscitation Council UK, The ABCDE approach | guidance | 2021 | https://www.resus.org.uk/library/abcde-approach
+SRC: National Institute for Health and Care Excellence, Intravenous fluid therapy in adults in hospital (CG174) | guidance | 2017 | https://www.nice.org.uk/guidance/cg174
 H: Definition and epidemiology
 - Shock is acute circulatory failure in which oxygen delivery to the tissues is inadequate for their needs. Most shock seen on wards is septic or hypovolaemic; it has a high mortality, especially when recognised late.
 H: Aetiology and types
@@ -956,11 +1227,20 @@ P: Shock is an emergency: escalate immediately to the emergency or critical care
 K: In shock, compensation hides the problem: don't wait for hypotension.
 Q: Name the four main types of shock. | Hypovolaemic, cardiogenic, distributive (septic, anaphylactic, neurogenic) and obstructive.
 Q: Why can blood pressure be normal in early shock? | Compensatory mechanisms (tachycardia and vasoconstriction) maintain blood pressure until they fail.
-M1#nursing-u05-34-q1: Which type of shock does a tension pneumothorax cause? | Obstructive | Hypovolaemic | Cardiogenic | Neurogenic | Anaphylactic | A tension pneumothorax raises pressure in the chest and blocks blood returning to the heart, causing obstructive shock that needs immediate decompression.
-M2#nursing-u05-34-q2: After a fall from a ladder, a man has heart rate 130, respiratory rate 28, cool clammy skin and BP 105/70. What should the nurse conclude? | He may be in compensated hypovolaemic shock (for example, from bleeding): call for emergency help | He is stable because BP is normal | He is anxious only | He needs rest | He needs oral fluids only | Tachycardia, tachypnoea and poor perfusion signal shock before hypotension.
+M1#nursing-u05-34-q1@1: Which type of shock does a tension pneumothorax cause? | Obstructive | Hypovolaemic | Cardiogenic | Neurogenic | Anaphylactic | A tension pneumothorax raises pressure in the chest and blocks blood returning to the heart, causing obstructive shock that needs immediate decompression.
+M3#nursing-u05-34-q2@2: After a fall from a ladder, a man has heart rate 130, respiratory rate 28, cool clammy skin and BP 105/70. What should the nurse conclude? | Possible compensated shock: get emergency help | He is stable because his BP is normal | He is anxious and needs reassurance only | He needs rest and a recheck later | He needs oral fluids and nothing else | Tachycardia, tachypnoea and poor perfusion signal shock before hypotension.
 
 ## Multimorbidity
 S: Multimorbidity is the presence of two or more long-term health conditions in one person. It is increasingly common with age and deprivation, and it changes how care should be organised.
+O: Describe the epidemiology and impact of multimorbidity
+O: Apply a person-centred approach that reduces treatment burden
+T: Multimorbidity | Two or more long-term conditions in one person
+T: Treatment burden | The workload and impact of managing health care
+SUM: Multimorbidity is increasingly common with age and deprivation.
+SUM: The person's priorities should guide treatment decisions.
+SAFE: Report signs of medicine harm, such as falls or confusion, to the prescriber and request a medication review rather than adding new medicines to treat side effects.
+SRC: National Institute for Health and Care Excellence, Multimorbidity: clinical assessment and management (NG56) | guidance | 2016 | https://www.nice.org.uk/guidance/ng56
+SRC: Barnett K and others, Epidemiology of multimorbidity and implications for health care, research, and medical education, The Lancet 380(9836):37–43 | primary | 2012
 H: Definition and epidemiology
 - Includes physical and mental health conditions, learning disability, sensory impairment, frailty and substance misuse.
 - Most older adults in the UK live with multimorbidity; it also affects younger people in deprived areas.
@@ -977,11 +1257,19 @@ H: Nursing role
 K: In multimorbidity, the person's own priorities should guide which treatments are worth the burden.
 Q: What is multimorbidity? | The presence of two or more long-term health conditions in one person.
 Q: What is treatment burden? | The workload of health care on the person: appointments, tests, medicines and self-management tasks.
-M1#nursing-u05-35-q1: Which NICE guideline covers multimorbidity? | NG56 | NG51 | NG5 | NG148 | NG217 | NICE NG56 sets out an approach to multimorbidity.
-M2#nursing-u05-35-q2: An older woman with five long-term conditions says she is exhausted by appointments and tablets. What should the nurse do? | Explore what matters most to her and request a coordinated review of her treatments and medicines | Add another appointment | Tell her all treatments are essential | Discharge her from services | Ignore it | A tailored, person-centred review can reduce treatment burden.
+M1#nursing-u05-35-q1@1: Which NICE guideline covers multimorbidity? | NG56 | NG51 | NG5 | NG148 | NG217 | NICE NG56 sets out an approach to multimorbidity.
+M2#nursing-u05-35-q2@2: An older woman with five long-term conditions says she is exhausted by appointments and tablets. What should the nurse do? | Ask what matters most and request a joint review | Add another hospital appointment for her | Tell her all her treatments are essential | Discharge her from all of her services | Ignore it, as burden is to be expected | A tailored, person-centred review can reduce treatment burden.
 
 ## Frailty
 S: Frailty is a long-term condition in which reduced reserve across many body systems makes a person vulnerable to sudden, dramatic changes in health after minor events such as an infection or a new medicine.
+O: Describe frailty and how to recognise it
+O: Apply comprehensive geriatric assessment and frailty-aware care
+T: Frailty | Reduced reserve across body systems causing vulnerability to sudden decline
+T: Clinical Frailty Scale | A 9-point scale from very fit to terminally ill
+SUM: Frailty predicts vulnerability to minor events.
+SUM: Good care can maintain independence.
+SRC: Rockwood K and others, A global clinical measure of fitness and frailty in elderly people, CMAJ 173(5):489–495 | primary | 2005
+SRC: British Geriatrics Society, Fit for Frailty | guidance | 2014 | https://www.bgs.org.uk/resources/fit-for-frailty-part-1
 H: Definition and epidemiology
 - Related to ageing but not the same: not all older people are frail, and some younger people with multiple conditions are.
 - Around 10% of people over 65 and a much higher proportion of over-85s live with frailty.
@@ -1000,11 +1288,19 @@ P: In frail people, a fall, new confusion or "off legs" presentation may be the 
 K: Frailty predicts vulnerability, not destiny: good care can maintain independence.
 Q: What scale is commonly used to assess frailty in hospital? | The Clinical Frailty Scale (Rockwood).
 Q: Name the classic frailty syndromes. | Falls, immobility, delirium, incontinence and susceptibility to medicine side effects.
-M1#nursing-u05-36-q1: What is the core intervention for frail older people in hospital? | Comprehensive geriatric assessment | Bed rest | Routine sedation | Discharge without review | Restricted visiting | CGA improves outcomes for frail older people.
-M2#nursing-u05-36-q2: A frail 88-year-old is admitted "off legs" with no obvious cause. What should the nurse do? | Assess fully for underlying illness (infection, delirium, medicines, dehydration) and escalate | Assume it's old age | Keep her in bed until she improves | Discharge home with no change | Give a sedative | "Off legs" is a frailty syndrome often signalling acute illness.
+M1#nursing-u05-36-q1@1: What is the core intervention for frail older people in hospital? | Comprehensive geriatric assessment | Bed rest | Routine sedation | Discharge without review | Restricted visiting | CGA improves outcomes for frail older people.
+M2#nursing-u05-36-q2@2: A frail 88-year-old is admitted "off legs" with no obvious cause. What should the nurse do? | Look for an underlying cause and escalate | Assume it's just old age | Keep them in bed until they improve | Discharge home with no change | Give a sedative to settle them | "Off legs" is a frailty syndrome often signalling acute illness.
 
 ## Palliative and end-of-life conditions
 S: Palliative care improves quality of life for people with life-limiting illness and their families, through relief of pain and other symptoms and attention to psychological, social and spiritual needs. End-of-life care focuses on the last months, weeks and days of life.
+O: Describe palliative care, advance care planning and recognising dying
+O: Provide care in the last days of life and after death
+T: Palliative care | Care that improves quality of life for people with life-limiting illness
+T: Advance care planning | Discussions about future wishes and care
+SUM: Palliative care addresses physical, psychological, social and spiritual needs.
+SUM: The Five Priorities of Care guide care in the last days of life.
+SRC: National Institute for Health and Care Excellence, Care of dying adults in the last days of life (NG31) | guidance | 2015 | https://www.nice.org.uk/guidance/ng31
+SRC: Leadership Alliance for the Care of Dying People, One chance to get it right | guidance | 2014 | https://www.gov.uk/government/publications/liverpool-care-pathway-review-response-to-recommendations
 H: Who needs palliative care
 - People with advanced cancer, organ failure (heart, lung, kidney, liver), neurological disease, dementia and frailty. Many people would benefit from earlier palliative care than they receive.
 H: Advance care planning
@@ -1026,6 +1322,6 @@ H: Care after death
 K: Good end-of-life care is planned, person-centred and communicated: there's only one chance to get it right.
 Q: What is a ReSPECT form? | A Recommended Summary Plan for Emergency Care and Treatment, recording a person's preferences and clinical recommendations for emergency situations.
 Q: Name five symptoms commonly covered by anticipatory medicines. | Pain, breathlessness, nausea and vomiting, agitation, respiratory secretions.
-M1#nursing-u05-37-q1: Which is a sign that a person may be entering the last days of life? | Increasing drowsiness, reduced intake and mottled peripheries | Improved appetite | Increased mobility | Stable alertness | Rising energy | Increasing drowsiness, reduced intake and cool mottled peripheries are common signs that a person may be in the last days of life, to be agreed by the team.
-M2#nursing-u05-37-q2: A dying patient's family ask why he isn't on a drip, as they fear he is thirsty. What should the nurse do? | Listen, explain sensitively the approach to hydration in the last days, offer mouth care and sips if wanted, and involve the medical team in reviewing the decision | Tell them nothing can be done | Start a drip without a prescription | Tell them he can't feel thirst | Avoid the conversation | Communication and comfort care are central priorities.
+M1#nursing-u05-37-q1@1: Which is a sign that a person may be entering the last days of life? | Increasing drowsiness, reduced intake and mottled peripheries | Improved appetite | Increased mobility | Stable alertness | Rising energy | Increasing drowsiness, reduced intake and cool mottled peripheries are common signs that a person may be in the last days of life, to be agreed by the team.
+M2#nursing-u05-37-q2@2: A dying patient's family ask why he isn't on a drip, as they fear he is thirsty. What should the nurse do? | Listen, explain, offer mouth care and sips, review | Tell them that nothing more can be done | Start a drip without any prescription | Tell them flatly he can't feel thirst | Avoid the conversation and leave the room | Communication and comfort care are central priorities.
 `;
