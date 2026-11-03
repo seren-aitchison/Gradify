@@ -31,7 +31,7 @@ export default {
     { id: "obligations", title: "Contract and tort", sub: "Mixed questions on the law of obligations, for LLB and GDL revision.", units: [3, 4], format: "mixed", count: 30, minutes: 50, pass: 0.6 },
   ],
   // the schools whose notes are written so far (tests/courses.test.mjs checks this matches notes/)
-  written: ["u01", "u03", "u04", "u05", "u06", "u07", "u08", "u09", "u10", "u11", "u12", "u15", "u17", "u18", "u19"],
+  written: ["u01", "u02", "u03", "u04", "u05", "u06", "u07", "u08", "u09", "u10", "u11", "u12", "u15", "u17", "u18", "u19"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
   extras: [
     ["SQE1 pathways", "FLK1 and FLK2 as two separate routes, with single-best-answer questions in every lesson.", "#/paths"],
