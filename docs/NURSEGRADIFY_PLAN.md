@@ -139,3 +139,10 @@ Expert review flags for this batch:
 - Sources were added to the lessons after the event, so check that each cited guideline still says what the lesson says, especially fast-moving ones (NICE NG249 falls, NG245 asthma, NG51 sepsis, NG238 CVD, the BTS oxygen guideline).
 - Check the publication or update years on the NICE, JBDS and BAPEN sources against the current versions.
 - Rewritten answer options in Schools 3–5 are shorter paraphrases of the originals; check that the clinical meaning hasn't changed (especially the escalation scenarios).
+
+## Status: published in full (2026-11-03)
+
+- At the owner's request, every school is now published (`publish: true` in `kit/courses/nursing/course.js`). Schools are no longer labelled as drafts.
+- The course-wide notice stays, and the "How the content is made" section shows review progress.
+- What still needs checking is bookmarked in `docs/qa/nursing-review-queue.md`, which `npm run qa` regenerates: the stages each school is missing (content review, source check, expert sign-off), plus lesson-by-lesson priority flags.
+- Record completed checks in `kit/courses/nursing/qa.js`.
