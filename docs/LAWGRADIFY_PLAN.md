@@ -64,3 +64,19 @@ The brief's FLK1 list omits **Constitutional and Administrative Law and EU Law**
 - **Legal accuracy and currency.** Mitigation: content standard, dated notes, flagged reforms, a review pass by a qualified lawyer before marketing any pathway as exam preparation.
 - **Implied qualification.** Mitigation: the notice, School 18, and no "certificate" language anywhere.
 - **SQE specification changes.** Mitigation: pathways reference schools, not SRA wording; update the path descriptions when the SRA changes the split.
+
+## Status after clearing the QA warnings (2026-11-03)
+
+All seven written law schools (1, 3, 4, 15, 17, 18 and 19; 165 lessons) are now held to content standard 2. Every lesson has learning objectives, a summary, key terms and dated sources, and every question is linked to an objective. Answer options were rebalanced so the right answer is no longer conspicuously the longest, and each school now has at least 10% hard (M3) questions. LawGradify QA reports **0 warnings**.
+
+Content added to lesson bodies (not just metadata):
+- School 1: an authority in What is law? (Theft Act 1968), Court structures (Courts Act 1971; Constitutional Reform Act 2005), Parliament and the legislative process (Parliament Acts 1911 and 1949; R (Jackson) v Attorney General), Legal research and authority (Anderton v Ryan overruled by R v Shivpuri), Legal writing (CPR Part 16).
+- School 4, Assault: a short section on the Protection from Harassment Act 1997.
+- School 15, Conflicts of interest: the source paragraphs (SRA Code 6.1–6.2) and Prince Jefri Bolkiah v KPMG.
+- School 17: Stair's Institutions and Donoghue v Stevenson (Scots law), the Courts Reform (Scotland) Act 2014 (Scottish courts), youth conferencing under the Justice (Northern Ireland) Act 2002 (NI criminal justice), and the Solicitors (Scotland) Act 1980 and Solicitors (NI) Order 1976 (qualifying).
+
+Expert review flags:
+- Sources and citations were added after the event from memory; check every case citation, year and statute section against a primary source before the "sources" QA stage is signed off.
+- Scotland: check the Victims, Witnesses, and Justice Reform (Scotland) Act 2025's commencement and its effect on jury size and majority before relying on "15-person juries" and the not proven abolition.
+- SQE and Bar pages (Schools 18–19) cite SRA and BSB pages dated 2026; recheck against the current specifications.
+- Rewritten answer options are shorter paraphrases; check none has changed the legal meaning, especially in the School 15 conduct scenarios.

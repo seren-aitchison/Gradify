@@ -3,10 +3,19 @@
 export default `
 ## What is law?
 S: Law is a system of rules, recognised and enforced by the state, that governs how people, organisations and the state itself behave. This lesson separates legal rules from moral and social ones and introduces the questions legal theory asks.
+O: Distinguish legal rules from moral, social and other rules
+O: Compare theoretical accounts of what law is
+T: Legal positivism | The view that law is a matter of social fact, separate from morality
+T: Natural law | The view that law is connected to moral principles
+SUM: Legal rules are recognised and enforced by the state.
+SUM: Positivists and natural lawyers disagree about the link between law and morality.
+SRC: Hart HLA, The Concept of Law, 3rd edition, Oxford University Press | secondary | 2012
+SRC: Theft Act 1968 | legislation | 1968 | https://www.legislation.gov.uk/ukpga/1968/60
 H: Legal rules and other rules
 - **Legal rules** are made or recognised by a legitimate authority (Parliament, the courts) and backed by state enforcement: prosecution, damages, injunctions, invalidity.
 - **Moral rules** concern right and wrong. Many overlap with law (do not kill, keep promises) but many don't (lying to a friend is not usually unlawful).
 - **Social rules and customs** (queueing, dress codes) are enforced by disapproval, not courts.
+P: Statute shows the difference in practice: the Theft Act 1968 makes dishonestly appropriating another's property a crime enforced by the state, whereas breaking a purely moral rule, such as lying to a friend, carries no legal sanction.
 K: What makes a rule legal is its source and its enforceability, not its content. An unjust law can still be valid law, and a moral duty can exist without any legal duty.
 H: How theorists answer the question
 - **Legal positivism** (Bentham, Austin, Hart): law is whatever the recognised sources lay down. Hart described law as the union of primary rules (duties) and secondary rules, including a "rule of recognition" that identifies valid law.
@@ -19,11 +28,18 @@ X: A statute requires drivers to stop at red lights at 3 a.m. on an empty road.
 !: Don't assume "illegal" means "immoral" or that everything immoral is illegal. Exam answers that blur the two lose marks for imprecision.
 Q: What two features distinguish a legal rule from a moral rule? | Its source (made or recognised by a legitimate legal authority) and its enforceability by the state.
 Q: What is Hart's "rule of recognition"? | A secondary rule that identifies which rules count as valid law in a system, such as "what Parliament enacts is law".
-M1#law-u01-01-q1: Which statement best describes legal positivism? | Law is identified by its source, whatever its moral content | A rule that is unjust cannot be law | Law is only what judges do in practice | Law and custom are the same thing | Law depends on public opinion polls | Positivists separate the question "is it law?" from "is it good law?"; natural lawyers connect them.
-M2#law-u01-01-q2: A client says, "Breaking my promise to help a friend move house must be illegal because it's wrong." What is the best response? | A social promise is usually unenforceable because there is no intention to create legal relations | Any promise is enforceable as a contract if the other person relied on it at all | Breaking a promise is a moral wrong, so it is also a civil wrong in tort | The promise is enforceable because it was made to a friend, not a stranger | The promise is binding because consideration is never needed between friends | Contract law requires, among other things, an intention to create legal relations, which is presumed absent in social and domestic arrangements (Balfour v Balfour [1919]).
+M1#law-u01-01-q1@1: Which statement best describes legal positivism? | Law is identified by its source, whatever its moral content | A rule that is unjust cannot be law | Law is only what judges do in practice | Law and custom are the same thing | Law depends on public opinion polls | Positivists separate the question "is it law?" from "is it good law?"; natural lawyers connect them.
+M2#law-u01-01-q2@2: A client says, "Breaking my promise to help a friend move house must be illegal because it's wrong." What is the best response? | A social promise is usually unenforceable because there is no intention to create legal relations | Any promise is enforceable as a contract if the other person relied on it at all | Breaking a promise is a moral wrong, so it is also a civil wrong in tort | The promise is enforceable because it was made to a friend, not a stranger | The promise is binding because consideration is never needed between friends | Contract law requires, among other things, an intention to create legal relations, which is presumed absent in social and domestic arrangements (Balfour v Balfour [1919]).
 
 ## The nature and purposes of law
 S: Law serves several purposes at once: keeping order, settling disputes, protecting rights, regulating activity and expressing a society's values. Seeing these purposes helps explain why rules take the shape they do.
+O: Identify the main purposes of law
+O: Analyse tensions between those purposes
+T: Social control | Using law to maintain order and regulate behaviour
+T: Legal certainty | The principle that law should be clear and predictable
+SUM: Law keeps order, settles disputes, protects rights, regulates activity and expresses values.
+SUM: Purposes can conflict, such as certainty against justice in individual cases.
+SRC: Slapper G, Kelly D, The English Legal System, 21st edition, Routledge | secondary | 2021
 H: Main purposes
 - **Order and security**: criminal law deters and punishes harmful conduct.
 - **Dispute resolution**: civil courts and tribunals give a peaceful, final way to settle disagreements.
@@ -41,11 +57,19 @@ X: Why are contracts for the sale of land required to be in writing (Law of Prop
 !: "The purpose of law is justice" is too vague to score marks. Name the specific purpose and show how the rule serves it.
 Q: Name four purposes of law. | Any four of: keeping order, resolving disputes, facilitating private arrangements, protecting rights, regulating risk, promoting social change.
 Q: Which purpose does company law mainly serve? | Facilitation: it lets people create businesses with separate legal personality and limited liability.
-M1#law-u01-02-q1: Which area of law is mainly facilitative? | Contract law | Criminal law | Judicial review | Public order law | Sentencing law | Contract law lets people create binding obligations they choose; the others mainly restrain or regulate conduct.
-M2#law-u01-02-q2: A minister says a new rule should be "fixed and mechanical, with no exceptions". Which value does this mainly promote, at the cost of which? | Certainty, at the cost of fairness in individual cases | Fairness, at the cost of certainty | Liberty, at the cost of order | Discretion, at the cost of predictability | Flexibility, at the cost of efficiency | Rigid rules are predictable but cannot adjust to unusual facts; discretion does the reverse.
+M1#law-u01-02-q1@1: Which area of law is mainly facilitative? | Contract law | Criminal law | Judicial review | Public order law | Sentencing law | Contract law lets people create binding obligations they choose; the others mainly restrain or regulate conduct.
+M2#law-u01-02-q2@2: A minister says a new rule should be "fixed and mechanical, with no exceptions". Which value does this mainly promote, at the cost of which? | Certainty, at the cost of fairness in individual cases | Fairness, at the cost of certainty | Liberty, at the cost of order | Discretion, at the cost of predictability | Flexibility, at the cost of efficiency | Rigid rules are predictable but cannot adjust to unusual facts; discretion does the reverse.
 
 ## Sources of law
 S: The sources of law in England and Wales are legislation, case law (common law and equity), retained or assimilated law from the UK's EU membership, and, less directly, custom, conventions and international law. Knowing which source a rule comes from tells you how much weight it carries.
+O: Identify the sources of law in England and Wales
+O: Explain the status of assimilated law and secondary sources
+T: Primary legislation | Acts of Parliament
+T: Assimilated law | Former retained EU law, renamed by the 2023 Act
+SUM: The main sources are legislation and case law.
+SUM: Assimilated law, international law and secondary sources play lesser roles.
+SRC: Retained EU Law (Revocation and Reform) Act 2023 | legislation | 2023 | https://www.legislation.gov.uk/ukpga/2023/28
+SRC: European Union (Withdrawal) Act 2018 | legislation | 2018 | https://www.legislation.gov.uk/ukpga/2018/16
 H: Primary sources
 - **Acts of Parliament (primary legislation)**: the highest source; courts cannot strike them down.
 - **Delegated (secondary) legislation**: statutory instruments, byelaws and orders made under powers in an Act. Valid only within the parent Act's powers.
@@ -60,12 +84,20 @@ K: Hierarchy: Act of Parliament > delegated legislation (if within powers) > bin
 !: Don't cite a textbook as authority for a legal rule. Cite the statute or the case; use the textbook only for commentary.
 Q: What is "assimilated law"? | EU-derived law kept in UK law after Brexit, renamed from "retained EU law" from 1 January 2024 by the Retained EU Law (Revocation and Reform) Act 2023.
 Q: What does it mean that the UK is "dualist"? | A treaty does not become part of domestic law until Parliament passes legislation to incorporate it.
-M1#law-u01-03-q1: Which is a primary source of law? | A Court of Appeal judgment | A leading textbook | A Law Commission consultation paper | A law journal article | A newspaper report of a trial | Judgments are primary sources; the rest are secondary and at most persuasive.
-M2#law-u01-03-q2: A client relies on an unincorporated treaty the UK has ratified to challenge a decision in an English court. What is the best advice? | The treaty does not of itself create rights enforceable in domestic courts | The treaty overrides any conflicting Act | The treaty binds courts as if it were a statute | Ratification makes every treaty part of the common law | Only the Supreme Court may apply treaties | Under the dualist approach, an unincorporated treaty creates no domestic rights, though courts may use it to help interpret ambiguous legislation.
-M3#law-u01-03-q3: Delegated legislation conflicts with the Act under which it was made. What follows? | The delegated legislation can be declared ultra vires and invalid | The delegated legislation prevails because it is more recent | Both stand until Parliament repeals one | The courts must apply both equally | Only the minister can resolve the conflict | Delegated legislation is valid only within the powers granted by its parent Act; courts can quash it on judicial review.
+M1#law-u01-03-q1@1: Which is a primary source of law? | A Court of Appeal judgment | A leading textbook | A Law Commission consultation paper | A law journal article | A newspaper report of a trial | Judgments are primary sources; the rest are secondary and at most persuasive.
+M2#law-u01-03-q2@2: A client relies on an unincorporated treaty the UK has ratified to challenge a decision in an English court. What is the best advice? | The treaty does not of itself create rights enforceable in domestic courts | The treaty overrides any conflicting Act | The treaty binds courts as if it were a statute | Ratification makes every treaty part of the common law | Only the Supreme Court may apply treaties | Under the dualist approach, an unincorporated treaty creates no domestic rights, though courts may use it to help interpret ambiguous legislation.
+M3#law-u01-03-q3@2: Delegated legislation conflicts with the Act under which it was made. What follows? | The delegated legislation can be declared ultra vires and invalid | The delegated legislation prevails because it is more recent | Both stand until Parliament repeals one | The courts must apply both equally | Only the minister can resolve the conflict | Delegated legislation is valid only within the powers granted by its parent Act; courts can quash it on judicial review.
 
 ## Common law and equity
 S: The common law is the law developed by judges in the royal courts from the twelfth century; equity grew up in the Court of Chancery to soften its rigidity. Since the Judicature Acts 1873–75 the same courts administer both, and where they conflict, equity prevails.
+O: Explain the origins of the common law and equity
+O: Apply equitable maxims and remedies
+T: Equity | A body of rules developed in the Court of Chancery to soften the common law
+T: Equitable remedy | A discretionary remedy such as an injunction or specific performance
+SUM: The Judicature Acts 1873–75 fused the administration of common law and equity.
+SUM: Where they conflict, equity prevails.
+SRC: Supreme Court of Judicature Act 1873 | legislation | 1873
+SRC: Earl of Oxford's Case (1615) 1 Ch Rep 1 | case | 1615
 H: Common law
 - Developed from local customs into law "common" to the whole kingdom by itinerant royal judges.
 - Worked through a writ system: no writ, no remedy. Its main remedy is **damages**, available as of right once liability is proved.
@@ -83,13 +115,21 @@ K: The Judicature Acts fused the administration of law and equity, not their rul
 !: Damages are available as of right; equitable remedies are not. Say "the court may grant" an injunction, not "the claimant is entitled to" one.
 Q: What is the main common law remedy? | Damages, available as of right once liability is established.
 Q: Which case first established that equity prevails over the common law? | The Earl of Oxford's Case (1615).
-M1#law-u01-04-q1: Which remedy is equitable? | Specific performance | Damages for breach of contract | Nominal damages | Debt | Liquidated damages | Specific performance was developed by the Court of Chancery and is discretionary.
-M2#law-u01-04-q2: A buyer delays four years before seeking specific performance of a contract to buy a house, with no explanation. Which maxim most threatens the claim? | Delay defeats equity | Equity follows the law | Equity looks to the substance, not the form | Equity acts in personam | Equity will not suffer a wrong without a remedy | Unexplained delay (laches) can lead a court to refuse a discretionary equitable remedy.
-M3#law-u01-04-q3: What did the Judicature Acts 1873–75 achieve? | All divisions of the new High Court could administer both law and equity, with equity prevailing in a conflict | They abolished equity | They merged the rules of law and equity into one set | They gave the Court of Chancery exclusive jurisdiction over contracts | They made all remedies discretionary | Administration was fused; the two bodies of rules remain distinct, with equity prevailing.
-M3#law-u01-04-q4: A buyer seeks specific performance of a contract to buy a flat. The seller shows that the buyer misled him about her finances during negotiations, though not in a way that made the contract voidable. What is the most likely result? | The court may refuse specific performance and leave the buyer to damages | The buyer is entitled to specific performance once breach is proved | The contract is automatically void | The court must award specific performance because land is unique | The buyer loses any right to damages as well | Equitable remedies are discretionary; "clean hands" can justify refusal, while the common law right to damages remains.
+M1#law-u01-04-q1@1: Which remedy is equitable? | Specific performance | Damages for breach of contract | Nominal damages | Debt | Liquidated damages | Specific performance was developed by the Court of Chancery and is discretionary.
+M2#law-u01-04-q2@2: A buyer delays four years before seeking specific performance of a contract to buy a house, with no explanation. Which maxim most threatens the claim? | Delay defeats equity | Equity follows the law | Equity looks to the substance, not the form | Equity acts in personam | Equity will not suffer a wrong without a remedy | Unexplained delay (laches) can lead a court to refuse a discretionary equitable remedy.
+M3#law-u01-04-q3@2: What did the Judicature Acts 1873–75 achieve? | All divisions of the new High Court could administer both law and equity, with equity prevailing in a conflict | They abolished equity | They merged the rules of law and equity into one set | They gave the Court of Chancery exclusive jurisdiction over contracts | They made all remedies discretionary | Administration was fused; the two bodies of rules remain distinct, with equity prevailing.
+M3#law-u01-04-q4@2: A buyer seeks specific performance of a contract to buy a flat. The seller shows that the buyer misled him about her finances during negotiations, though not in a way that made the contract voidable. What is the most likely result? | The court may refuse specific performance and leave the buyer to damages | The buyer is entitled to specific performance once breach is proved | The contract is automatically void | The court must award specific performance because land is unique | The buyer loses any right to damages as well | Equitable remedies are discretionary; "clean hands" can justify refusal, while the common law right to damages remains.
 
 ## Civil and criminal law
 S: Criminal law deals with wrongs against society, prosecuted by the state and punished; civil law deals with disputes between private parties, usually ended with compensation or another remedy. The same facts can give rise to both.
+O: Distinguish civil and criminal law by parties, purpose, standard of proof and outcome
+O: Apply both to a single set of facts
+T: Burden of proof | The obligation to prove a case
+T: Standard of proof | Beyond reasonable doubt in criminal cases; balance of probabilities in civil cases
+SUM: Criminal law punishes wrongs against society; civil law resolves private disputes.
+SUM: One set of facts can lead to both a prosecution and a civil claim.
+SRC: Woolmington v DPP [1935] AC 462 | case | 1935
+SRC: Re B (Children) [2008] UKHL 35 | case | 2008
 H: The differences
 - **Purpose**: criminal law punishes and protects the public; civil law compensates and puts matters right.
 - **Parties**: R (the Crown) v Defendant; Claimant v Defendant.
@@ -108,11 +148,19 @@ K: An acquittal does not prevent a civil claim, because the civil standard of pr
 !: Don't say a defendant is "guilty" in a civil case, or that a criminal court awards "damages" as its main outcome. Use "liable" for civil and "guilty" for criminal. (Criminal courts can make compensation orders, but that is ancillary.)
 Q: What is the standard of proof in criminal cases? | Beyond reasonable doubt: the jury or magistrates must be sure of guilt.
 Q: How is a criminal case named? | R v [Defendant], because the Crown prosecutes.
-M1#law-u01-05-q1: Who must prove the case in a typical civil claim, and to what standard? | The claimant, on the balance of probabilities | The defendant, beyond reasonable doubt | The claimant, beyond reasonable doubt | The court, on its own initiative | The state, on the balance of probabilities | In civil cases the claimant usually bears the burden, on the balance of probabilities.
-M2#law-u01-05-q2: A client was acquitted of assault and asks whether the victim can still sue them. What is the best advice? | Yes: a civil claim can succeed on the lower civil standard despite the acquittal | No: an acquittal bars any later claim | No: civil claims must be brought before criminal trials | Yes, but only if new evidence emerges | Only the CPS can bring the civil claim | The civil standard is lower, so a civil court can find liability where a criminal court was not sure of guilt.
+M1#law-u01-05-q1@1: Who must prove the case in a typical civil claim, and to what standard? | The claimant, on the balance of probabilities | The defendant, beyond reasonable doubt | The claimant, beyond reasonable doubt | The court, on its own initiative | The state, on the balance of probabilities | In civil cases the claimant usually bears the burden, on the balance of probabilities.
+M2#law-u01-05-q2@2: A client was acquitted of assault and asks whether the victim can still sue them. What is the best advice? | Yes: a civil claim can succeed on the lower civil standard despite the acquittal | No: an acquittal bars any later claim | No: civil claims must be brought before criminal trials | Yes, but only if new evidence emerges | Only the CPS can bring the civil claim | The civil standard is lower, so a civil court can find liability where a criminal court was not sure of guilt.
 
 ## Public and private law
 S: Public law governs the state's relationship with individuals and the organisation of the state itself; private law governs relationships between individuals and organisations. The line matters because it decides which procedures, remedies and principles apply.
+O: Distinguish public law from private law
+O: Explain why the distinction matters procedurally
+T: Public law | Law governing the state and its relationship with individuals
+T: Judicial review | The court's supervision of the lawfulness of public decisions
+SUM: Public law covers constitutional, administrative and criminal law.
+SUM: Private law covers contract, tort, property and family law.
+SRC: O'Reilly v Mackman [1983] 2 AC 237 | case | 1982
+SRC: Senior Courts Act 1981, section 31 | legislation | 1981 | https://www.legislation.gov.uk/ukpga/1981/54/section/31
 H: Public law
 - **Constitutional law**: the structure and powers of the state.
 - **Administrative law**: the control of public bodies, mainly through judicial review.
@@ -128,11 +176,19 @@ K: The test is what kind of relationship and what kind of right is involved, not
 !: Don't assume every claim against a public body is public law. A council's breach of a building contract is a private law claim.
 Q: Is criminal law public or private law? | Public law: the state prosecutes wrongs against society.
 Q: What is the time limit for a judicial review claim? | Promptly and in any event within three months of the grounds arising (CPR 54.5), shorter in some areas such as planning.
-M1#law-u01-06-q1: Which is private law? | Tort | Constitutional law | Administrative law | Criminal law | Human rights law against a public authority | Tort governs wrongs between private persons and is enforced by the person harmed.
-M2#law-u01-06-q2: A council fails to pay a builder for work under a contract. Which route is most appropriate? | An ordinary contract claim | Judicial review | A criminal prosecution | A complaint under the Human Rights Act only | An appeal to the Supreme Court | The dispute is about private contractual rights, so it is a private law claim even though one party is a public body.
+M1#law-u01-06-q1@1: Which is private law? | Tort | Constitutional law | Administrative law | Criminal law | Human rights law against a public authority | Tort governs wrongs between private persons and is enforced by the person harmed.
+M2#law-u01-06-q2@2: A council fails to pay a builder for work under a contract. Which route is most appropriate? | An ordinary contract claim | Judicial review | A criminal prosecution | A complaint under the Human Rights Act only | An appeal to the Supreme Court | The dispute is about private contractual rights, so it is a private law claim even though one party is a public body.
 
 ## The English legal system
 S: The English legal system is the law, institutions and people that make, interpret and apply law in England and Wales. It is one of three legal systems in the UK, alongside Scotland and Northern Ireland.
+O: Describe the key features of the English legal system
+O: Distinguish it from the legal systems of Scotland and Northern Ireland
+T: Common law system | A legal system in which judicial decisions are a major source of law
+T: Jurisdiction | The territory or range of matters over which a legal system or court has authority
+SUM: England and Wales is one of three UK legal systems.
+SUM: Welsh devolved law is growing within the shared jurisdiction.
+SRC: Government of Wales Act 2006 | legislation | 2006 | https://www.legislation.gov.uk/ukpga/2006/32
+SRC: Slapper G, Kelly D, The English Legal System, 21st edition, Routledge | secondary | 2021
 H: Key features
 - **A common law system**: judges' decisions are a major source of law, unlike civil law systems built on comprehensive codes.
 - **Adversarial procedure**: parties present their cases; the judge acts as a neutral umpire rather than an investigator.
@@ -150,11 +206,19 @@ H: Elsewhere in the UK
 P: Scotland has a mixed civil-common law system with its own courts (Court of Session, High Court of Justiciary, sheriff courts). Northern Ireland has a common law system close to England's but separate courts and much separate legislation. The UK Supreme Court hears appeals from all three, except Scottish criminal appeals, which end in the High Court of Justiciary (subject to devolution and compatibility issues).
 Q: Name two features of the English legal system that distinguish it from civil law systems. | Judge-made case law as a major source, and adversarial (rather than inquisitorial) procedure.
 Q: How many legal systems are there in the UK? | Three: England and Wales, Scotland, and Northern Ireland.
-M1#law-u01-07-q1: What role does the judge mainly play in adversarial proceedings? | A neutral umpire deciding on the evidence the parties present | An investigator who gathers the evidence | A prosecutor | A representative of the government | A mediator who must reach a settlement | In an adversarial system the parties investigate and present; the judge decides.
-M2#law-u01-07-q2: A Welsh tenant asks whether a recent English tenancy statute applies to them. What is the best first step? | Check whether the statute extends to Wales and whether Senedd legislation governs the area | Assume it applies because England and Wales share one legal system | Assume it doesn't apply because Wales has its own legal system | Check Scottish law instead | Apply the European Convention directly | Renting is devolved and Wales has its own regime, so check the statute's extent and the Welsh legislation.
+M1#law-u01-07-q1@1: What role does the judge mainly play in adversarial proceedings? | A neutral umpire deciding on the evidence the parties present | An investigator who gathers the evidence | A prosecutor | A representative of the government | A mediator who must reach a settlement | In an adversarial system the parties investigate and present; the judge decides.
+M2#law-u01-07-q2@2: A Welsh tenant asks whether a recent English tenancy statute applies to them. What is the best first step? | Check whether the statute extends to Wales and whether Senedd legislation governs the area | Assume it applies because England and Wales share one legal system | Assume it doesn't apply because Wales has its own legal system | Check Scottish law instead | Apply the European Convention directly | Renting is devolved and Wales has its own regime, so check the statute's extent and the Welsh legislation.
 
 ## Court structures and jurisdiction
 S: Courts in England and Wales are divided into civil and criminal, and into trial (first instance) and appellate courts. A court's jurisdiction is the range of cases it has power to hear.
+O: Describe the criminal and civil courts of England and Wales
+O: Identify which court has jurisdiction over a case
+T: First instance court | A court where a case is first tried
+T: Appellate court | A court that hears appeals
+SUM: Courts are divided into civil and criminal, trial and appellate.
+SUM: The Supreme Court is the final court of appeal.
+SRC: Constitutional Reform Act 2005 | legislation | 2005 | https://www.legislation.gov.uk/ukpga/2005/4
+SRC: Courts Act 1971 | legislation | 1971 | https://www.legislation.gov.uk/ukpga/1971/23
 H: Criminal courts
 - **Magistrates' courts**: try summary offences and most either-way offences; send indictable-only cases to the Crown Court. Lay magistrates or a district judge.
 - **Crown Court**: trials on indictment with judge and jury; appeals from magistrates; sentencing of cases committed by magistrates.
@@ -167,15 +231,24 @@ H: Civil courts
 H: The top
 - **The UK Supreme Court**: final appeal court for civil cases throughout the UK and criminal cases from England and Wales and Northern Ireland; hears points of law of general public importance.
 - **Judicial Committee of the Privy Council**: final court for some Commonwealth countries and Crown Dependencies.
+P: The modern structure owes much to statute: the Courts Act 1971 created the Crown Court, and the Constitutional Reform Act 2005 created the Supreme Court, which replaced the Appellate Committee of the House of Lords in 2009.
 K: Trial courts decide facts and law; appeal courts mainly review law and procedure and rarely rehear evidence.
 !: The "Queen's Bench Division" became the **King's Bench Division** in September 2022. Use the current name.
 Q: Which High Court division hears trusts and insolvency cases? | The Chancery Division (within the Business and Property Courts).
 Q: Where is an indictable-only offence tried? | In the Crown Court, before a judge and jury.
-M1#law-u01-08-q1: Which court is the final court of appeal for civil cases from England and Wales? | The UK Supreme Court | The Court of Appeal | The Privy Council | The High Court | The European Court of Human Rights | The Supreme Court is the UK's final domestic appeal court; Strasbourg is not an appeal court.
-M2#law-u01-08-q2: A client wants to sue for £8,000 over defective building work. Where will the claim normally be started and heard? | The County Court | The High Court, King's Bench Division | The Crown Court | The magistrates' court | The Court of Appeal | Claims of this value start in the County Court; the High Court is for higher-value or specialist claims.
+M1#law-u01-08-q1@1: Which court is the final court of appeal for civil cases from England and Wales? | The UK Supreme Court | The Court of Appeal | The Privy Council | The High Court | The European Court of Human Rights | The Supreme Court is the UK's final domestic appeal court; Strasbourg is not an appeal court.
+M2#law-u01-08-q2@2: A client wants to sue for £8,000 over defective building work. Where will the claim normally be started and heard? | The County Court | The High Court, King's Bench Division | The Crown Court | The magistrates' court | The Court of Appeal | Claims of this value start in the County Court; the High Court is for higher-value or specialist claims.
 
 ## The hierarchy of courts
 S: Courts are arranged in a hierarchy that decides which decisions bind which courts. Under precedent, a court is bound by courts above it and, sometimes, by its own earlier decisions.
+O: Describe the hierarchy of courts for the purposes of precedent
+O: Determine which decisions bind which courts
+T: Binding precedent | A decision a lower court must follow
+T: Practice Statement 1966 | The statement allowing the House of Lords to depart from its own decisions
+SUM: Courts are bound by courts above them and sometimes by their own decisions.
+SUM: The Supreme Court can depart from its own decisions.
+SRC: Practice Statement (Judicial Precedent) [1966] 1 WLR 1234 | case | 1966
+SRC: Young v Bristol Aeroplane Co Ltd [1944] KB 718 | case | 1944
 H: From the top
 - **UK Supreme Court**: binds all lower courts. Not strictly bound by its own decisions: under the 1966 Practice Statement (adopted by the Supreme Court) it may depart when it appears right to do so.
 - **Court of Appeal**: binds courts below it and, generally, itself, subject to the Young v Bristol Aeroplane Co [1944] exceptions. The Criminal Division takes a little more flexibility where liberty is at stake.
@@ -188,12 +261,20 @@ H: Outside the hierarchy
 K: Ask two questions: which court made the earlier decision, and which court is deciding now? That tells you whether it binds.
 Q: Is the Supreme Court bound by its own previous decisions? | No. Under the 1966 Practice Statement it may depart from them when it appears right to do so, though it does so sparingly.
 Q: What must English courts do with Strasbourg case law? | Take it into account (Human Rights Act 1998, s 2); it is not binding.
-M1#law-u01-09-q1: Which court's decisions bind the High Court? | The Court of Appeal and the Supreme Court | The Supreme Court only, never the Court of Appeal | Other High Court judges sitting alone | The Court of Appeal only, never the Supreme Court | The Privy Council and the Supreme Court | Courts are bound by courts above them in the hierarchy.
-M2#law-u01-09-q2: A County Court judge is referred to a High Court decision on the same point and a contrary Privy Council decision. What should the judge normally do? | Follow the High Court decision, which binds the County Court | Follow the Privy Council decision, which binds all courts | Choose whichever is more recent | Refer the question to the Supreme Court | Ignore both | High Court decisions bind lower courts; Privy Council decisions are persuasive unless the Board directs otherwise in the Willers v Joyce way.
-M3#law-u01-09-q3: The Court of Appeal is asked to follow its own earlier decision, which conflicts with a later House of Lords decision that didn't mention it. What should it do? | Decline to follow its own decision, under the Young v Bristol Aeroplane exceptions | Follow its own decision, as it is always bound by itself | Follow whichever decision is more recent in time | Refer the conflict to the Supreme Court before deciding | Treat both as persuasive and choose the better reasoning | Young v Bristol Aeroplane allows the Court of Appeal to depart from its own decision where it can't stand with a later House of Lords or Supreme Court decision.
+M1#law-u01-09-q1@1: Which court's decisions bind the High Court? | The Court of Appeal and the Supreme Court | The Supreme Court only, never the Court of Appeal | Other High Court judges sitting alone | The Court of Appeal only, never the Supreme Court | The Privy Council and the Supreme Court | Courts are bound by courts above them in the hierarchy.
+M2#law-u01-09-q2@2: A County Court judge is referred to a High Court decision on the same point and a contrary Privy Council decision. What should the judge normally do? | Follow the High Court decision, which binds the County Court | Follow the Privy Council decision, which binds all courts | Choose whichever is more recent | Refer the question to the Supreme Court | Ignore both | High Court decisions bind lower courts; Privy Council decisions are persuasive unless the Board directs otherwise in the Willers v Joyce way.
+M3#law-u01-09-q3@2: The Court of Appeal is asked to follow its own earlier decision, which conflicts with a later House of Lords decision that didn't mention it. What should it do? | Decline to follow its own decision, under the Young v Bristol Aeroplane exceptions | Follow its own decision, as it is always bound by itself | Follow whichever decision is more recent in time | Refer the conflict to the Supreme Court before deciding | Treat both as persuasive and choose the better reasoning | Young v Bristol Aeroplane allows the Court of Appeal to depart from its own decision where it can't stand with a later House of Lords or Supreme Court decision.
 
 ## The doctrine of precedent
 S: Under the doctrine of precedent (stare decisis, "to stand by things decided"), courts follow the legal principles in earlier decisions of higher courts so that like cases are treated alike. It gives the common law its consistency and its capacity to develop.
+O: Explain stare decisis and the kinds of precedent
+O: Apply techniques for avoiding a precedent
+T: Stare decisis | Standing by things decided: following earlier decisions
+T: Distinguishing | Avoiding a precedent because the material facts differ
+SUM: Precedent brings consistency and predictability.
+SUM: Courts may distinguish, overrule or reverse precedents.
+SRC: Donoghue v Stevenson [1932] AC 562 | case | 1932
+SRC: R v Shivpuri [1987] AC 1 | case | 1986
 H: Kinds of precedent
 - **Binding**: the ratio of a higher court (or, sometimes, the same court) must be followed.
 - **Persuasive**: obiter dicta, dissenting judgments, decisions of lower courts, the Privy Council and other common law jurisdictions, which a court may follow.
@@ -210,11 +291,19 @@ K: Precedent binds the ratio, not the result. You follow the principle the earli
 !: Don't confuse overruling (a different, later case) with reversing (the same case on appeal).
 Q: What does stare decisis mean? | "To stand by things decided": courts follow the principles of earlier decisions.
 Q: What is distinguishing? | Declining to follow an earlier decision because its material facts differ significantly from the present case.
-M1#law-u01-10-q1: The Court of Appeal decides a case; the Supreme Court later hears a different case on the same point and says the Court of Appeal was wrong. What has the Supreme Court done? | Overruled the earlier decision | Reversed the earlier decision | Distinguished the earlier decision | Followed the earlier decision | Departed from its own decision | Overruling happens in a later, different case; reversing happens on appeal in the same case.
-M2#law-u01-10-q2: Counsel argues that a binding precedent should not apply because, in that case, the parties were living together amicably, whereas here they had separated. What technique is counsel using? | Distinguishing | Overruling | Reversing | Applying the Practice Statement | Relying on obiter dicta | Showing a materially different fact to avoid an otherwise binding ratio is distinguishing (compare Balfour v Balfour with Merritt v Merritt).
+M1#law-u01-10-q1@1: The Court of Appeal decides a case; the Supreme Court later hears a different case on the same point and says the Court of Appeal was wrong. What has the Supreme Court done? | Overruled the earlier decision | Reversed the earlier decision | Distinguished the earlier decision | Followed the earlier decision | Departed from its own decision | Overruling happens in a later, different case; reversing happens on appeal in the same case.
+M2#law-u01-10-q2@2: Counsel argues that a binding precedent should not apply because, in that case, the parties were living together amicably, whereas here they had separated. What technique is counsel using? | Distinguishing | Overruling | Reversing | Applying the Practice Statement | Relying on obiter dicta | Showing a materially different fact to avoid an otherwise binding ratio is distinguishing (compare Balfour v Balfour with Merritt v Merritt).
 
 ## Ratio decidendi and obiter dicta
 S: The ratio decidendi ("reason for deciding") is the legal principle necessary for the decision on the material facts, and it is the binding part of a judgment. Obiter dicta ("things said by the way") are everything else, and they persuade but don't bind.
+O: Identify the ratio decidendi of a case
+O: Distinguish obiter dicta and explain their persuasive weight
+T: Ratio decidendi | The legal principle necessary for the decision on the material facts
+T: Obiter dictum | A statement in a judgment that isn't necessary for the decision
+SUM: The ratio binds; obiter dicta can persuade.
+SUM: Finding the ratio means identifying the material facts and the reasoning.
+SRC: Hedley Byrne and Co Ltd v Heller and Partners Ltd [1964] AC 465 | case | 1963
+SRC: R v Howe [1987] AC 417 | case | 1987
 H: Finding the ratio
 - Identify the **material facts** the court relied on.
 - Identify the **legal question** and the **answer** the court gave.
@@ -230,12 +319,21 @@ X: In Donoghue v Stevenson [1932], what is the ratio, and what is obiter?
 K: The ratio is never just the outcome ("the claimant won"). It is the legal proposition the outcome depended on.
 Q: What is the ratio decidendi? | The legal principle necessary for the decision on the material facts; the binding part of a judgment.
 Q: Is a dissenting judgment binding? | No. Its reasoning is obiter and at most persuasive.
-M1#law-u01-11-q1: Which part of a Supreme Court judgment binds a later Court of Appeal? | The ratio decidendi | Every statement in the leading judgment | Obiter dicta | Dissenting judgments | The summary of counsel's arguments | Only the ratio binds; obiter dicta and dissents persuade.
-M2#law-u01-11-q2: A judge remarks that "had the defendant been a professional, the result would have been different", but the defendant was not a professional. How should a later court treat this remark? | As obiter: persuasive, not binding | As part of the ratio, binding on lower courts | As a binding rule for all professionals | As irrelevant and inadmissible | As overruling earlier cases | Statements about hypothetical facts that did not arise are obiter dicta.
-M3#law-u01-11-q3: A Supreme Court judgment states a wide principle, but the case could have been decided on a narrower ground that all five justices agreed on. A later court faces facts outside the narrow ground. What is the best approach? | Treat the narrow agreed ground as the ratio and the wide principle as highly persuasive obiter | Treat the wide principle as binding because the Supreme Court stated it | Ignore the wide principle because obiter has no value | Follow the dissent if it addressed the new facts | Refer the question back to the Supreme Court | The ratio is the reasoning necessary to the decision; wider statements are obiter, though Supreme Court obiter carries great weight (compare R v Gotts following R v Howe).
+M1#law-u01-11-q1@1: Which part of a Supreme Court judgment binds a later Court of Appeal? | The ratio decidendi | Every statement in the leading judgment | Obiter dicta | Dissenting judgments | The summary of counsel's arguments | Only the ratio binds; obiter dicta and dissents persuade.
+M2#law-u01-11-q2@2: A judge remarks that "had the defendant been a professional, the result would have been different", but the defendant was not a professional. How should a later court treat this remark? | As obiter: persuasive, not binding | As part of the ratio, binding on lower courts | As a binding rule for all professionals | As irrelevant and inadmissible | As overruling earlier cases | Statements about hypothetical facts that did not arise are obiter dicta.
+M3#law-u01-11-q3@2: A Supreme Court judgment states a wide principle, but the case could have been decided on a narrower ground that all five justices agreed on. A later court faces facts outside the narrow ground. What is the best approach? | Treat the narrow agreed ground as the ratio and the wide principle as highly persuasive obiter | Treat the wide principle as binding because the Supreme Court stated it | Ignore the wide principle because obiter has no value | Follow the dissent if it addressed the new facts | Refer the question back to the Supreme Court | The ratio is the reasoning necessary to the decision; wider statements are obiter, though Supreme Court obiter carries great weight (compare R v Gotts following R v Howe).
 
 ## Statutory interpretation
 S: Statutory interpretation is how courts work out what an Act means when it is applied to facts. The modern approach is contextual and purposive, informed by older rules, presumptions and permitted aids.
+O: Describe the traditional rules and the modern purposive approach
+O: Apply aids, presumptions and section 3 of the Human Rights Act 1998
+T: Purposive approach | Interpreting legislation to give effect to its purpose
+T: Pepper v Hart | The case allowing reference to Hansard in limited circumstances
+SUM: Courts use literal, golden and mischief rules within a contextual, purposive approach.
+SUM: Section 3 HRA requires Convention-compatible interpretation where possible.
+SRC: Pepper v Hart [1993] AC 593 | case | 1992
+SRC: Ghaidan v Godin-Mendoza [2004] UKHL 30 | case | 2004
+SRC: R (O) v Secretary of State for the Home Department [2022] UKSC 3 | case | 2022
 H: The traditional rules
 - **Literal rule**: give words their ordinary meaning even if the result is harsh (Whiteley v Chappell (1868)).
 - **Golden rule**: depart from the literal meaning to avoid an absurd or repugnant result (Re Sigsworth [1935]; Adler v George [1964]).
@@ -252,13 +350,22 @@ P: Under the Human Rights Act 1998, s 3, legislation must be read and given effe
 K: Start from the words, read in their context and with their purpose; use the older rules as labels for reasoning, not as a menu.
 Q: What does the golden rule allow? | A court to depart from the literal meaning to avoid an absurd or repugnant result.
 Q: When may Hansard be used? | Under Pepper v Hart: where the legislation is ambiguous or obscure or leads to absurdity, the statement is by a minister or promoter, and the statement is clear.
-M1#law-u01-12-q1: Which rule asks what problem the Act was passed to fix? | The mischief rule | The literal rule | The golden rule | Ejusdem generis | Expressio unius | The mischief rule, from Heydon's Case, looks to the defect in the earlier law that the Act remedies.
-M2#law-u01-12-q2: A statute bans "dogs, cats, rabbits and other animals" from a park. A visitor brings a lion. Which approach most directly suggests the lion is not covered? | Ejusdem generis: "other animals" is read as animals like those listed | The literal rule: "animals" plainly includes every animal | Pepper v Hart: Hansard shows what the minister meant | Expressio unius: listing pets excludes all other animals | The golden rule: a lion is too absurd to consider | General words following a list of specific items are limited to things of the same kind. (A purposive reading might reach the opposite conclusion, which is why the rules guide rather than decide.)
-M3#law-u01-12-q3: Section 3 of the Human Rights Act 1998 cannot be used to give a statute a Convention-compatible reading. What can a higher court do? | Make a declaration of incompatibility, leaving the statute in force | Declare the statute void from the date of the judgment | Disapply the incompatible section in this case only | Order the minister to amend the statute by remedial order | Read words into the statute regardless of its meaning | Section 4 allows a declaration of incompatibility, which does not affect the statute's validity.
-M3#law-u01-12-q4: A statute makes it an offence to "sell" an offensive weapon. A shopkeeper displays one in his window with a price tag. Which result is most likely under the traditional approach, and why? | No offence: a display is an invitation to treat, not a sale or offer for sale (Fisher v Bell) | An offence: the mischief rule extends "sell" to displays | An offence: Pepper v Hart shows Parliament meant displays | No offence, because the golden rule always favours defendants | An offence under the purposive approach in every case | Fisher v Bell applied the contract law meaning of offer; Parliament then amended the law to cover offering for sale.
+M1#law-u01-12-q1@1: Which rule asks what problem the Act was passed to fix? | The mischief rule | The literal rule | The golden rule | Ejusdem generis | Expressio unius | The mischief rule, from Heydon's Case, looks to the defect in the earlier law that the Act remedies.
+M2#law-u01-12-q2@2: A statute bans "dogs, cats, rabbits and other animals" from a park. A visitor brings a lion. Which approach most directly suggests the lion is not covered? | Ejusdem generis: "other animals" is read as animals like those listed | The literal rule: "animals" plainly includes every animal | Pepper v Hart: Hansard shows what the minister meant | Expressio unius: listing pets excludes all other animals | The golden rule: a lion is too absurd to consider | General words following a list of specific items are limited to things of the same kind. (A purposive reading might reach the opposite conclusion, which is why the rules guide rather than decide.)
+M3#law-u01-12-q3@2: Section 3 of the Human Rights Act 1998 cannot be used to give a statute a Convention-compatible reading. What can a higher court do? | Make a declaration of incompatibility, leaving the statute in force | Declare the statute void from the date of the judgment | Disapply the incompatible section in this case only | Order the minister to amend the statute by remedial order | Read words into the statute regardless of its meaning | Section 4 allows a declaration of incompatibility, which does not affect the statute's validity.
+M3#law-u01-12-q4@2: A statute makes it an offence to "sell" an offensive weapon. A shopkeeper displays one in his window with a price tag. Which result is most likely under the traditional approach, and why? | No offence: a display is an invitation to treat, not a sale or offer for sale (Fisher v Bell) | An offence: the mischief rule extends "sell" to displays | An offence: Pepper v Hart shows Parliament meant displays | No offence, because the golden rule always favours defendants | An offence under the purposive approach in every case | Fisher v Bell applied the contract law meaning of offer; Parliament then amended the law to cover offering for sale.
 
 ## Parliamentary sovereignty
 S: Parliamentary sovereignty means the King in Parliament can make or unmake any law, and no court or other body can set aside an Act of Parliament. It is the central principle of the UK constitution.
+O: Explain Dicey's account of parliamentary sovereignty
+O: Evaluate challenges and qualifications to sovereignty
+T: Parliamentary sovereignty | The principle that Parliament can make or unmake any law
+T: Implied repeal | A later Act overriding an earlier inconsistent Act
+SUM: No court can set aside an Act of Parliament.
+SUM: EU membership, devolution and the HRA raised qualifications.
+SRC: Dicey AV, Introduction to the Study of the Law of the Constitution | secondary | 1885
+SRC: R (Miller) v Secretary of State for Exiting the European Union [2017] UKSC 5 | case | 2017
+SRC: R (Jackson) v Attorney General [2005] UKHL 56 | case | 2005
 H: Dicey's three limbs
 - Parliament can make or unmake any law whatever.
 - No Parliament can bind its successors.
@@ -275,12 +382,21 @@ H: Challenges and qualifications
 K: Sovereignty is a legal principle. Political, conventional and practical limits exist, but no court will hold an Act invalid.
 Q: What are Dicey's three limbs of parliamentary sovereignty? | Parliament can make or unmake any law; no Parliament can bind its successors; no one can override or set aside an Act.
 Q: What is the enrolled Act rule? | Courts will not inquire into the internal procedure by which an Act was passed (Pickin).
-M1#law-u01-13-q1: An Act passed in 2026 conflicts with an ordinary Act of 1990. What normally happens? | The 2026 Act impliedly repeals the 1990 Act to the extent of the conflict | The 1990 Act prevails as the older law | The courts strike down the 2026 Act | Both remain fully in force | The courts refer the conflict to the Supreme Court | Under implied repeal the later Act prevails (Ellen Street Estates), unless the earlier Act is a constitutional statute.
-M2#law-u01-13-q2: Parliament passes an Act on a devolved matter without the Scottish Parliament's consent. A client asks a court to declare it invalid. What is the likely outcome? | The Act is valid: the Sewel convention is not legally enforceable | The Act is void for breach of the Sewel convention | The Act applies only in England | The Supreme Court will strike it down | The Act needs a referendum | Miller (2017) held that the Sewel convention is a political, not legal, constraint.
-M3#law-u01-13-q3: A 2025 Act conflicts with the Human Rights Act 1998, and the conflict can't be resolved by interpretation. A party asks the High Court to apply the 1998 Act instead. What is the likely outcome? | The 2025 Act applies; a higher court may make a declaration of incompatibility | The 1998 Act prevails as a constitutional statute | The 2025 Act is impliedly repealed by the 1998 Act | The High Court disapplies the 2025 Act as in Factortame | The court strikes down the 2025 Act as unconstitutional | A later Act prevails; constitutional status protects the HRA only from implied repeal, and courts can't disapply primary legislation for Convention incompatibility (s 4).
+M1#law-u01-13-q1@1: An Act passed in 2026 conflicts with an ordinary Act of 1990. What normally happens? | The 2026 Act impliedly repeals the 1990 Act to the extent of the conflict | The 1990 Act prevails as the older law | The courts strike down the 2026 Act | Both remain fully in force | The courts refer the conflict to the Supreme Court | Under implied repeal the later Act prevails (Ellen Street Estates), unless the earlier Act is a constitutional statute.
+M2#law-u01-13-q2@2: Parliament passes an Act on a devolved matter without the Scottish Parliament's consent. A client asks a court to declare it invalid. What is the likely outcome? | The Act is valid: the Sewel convention is not legally enforceable | The Act is void for breach of the Sewel convention | The Act applies only in England | The Supreme Court will strike it down | The Act needs a referendum | Miller (2017) held that the Sewel convention is a political, not legal, constraint.
+M3#law-u01-13-q3@2: A 2025 Act conflicts with the Human Rights Act 1998, and the conflict can't be resolved by interpretation. A party asks the High Court to apply the 1998 Act instead. What is the likely outcome? | The 2025 Act applies; a higher court may make a declaration of incompatibility | The 1998 Act prevails as a constitutional statute | The 2025 Act is impliedly repealed by the 1998 Act | The High Court disapplies the 2025 Act as in Factortame | The court strikes down the 2025 Act as unconstitutional | A later Act prevails; constitutional status protects the HRA only from implied repeal, and courts can't disapply primary legislation for Convention incompatibility (s 4).
 
 ## The rule of law
 S: The rule of law is the principle that everyone, including government, is subject to the law, and that law should be clear, public, stable and applied fairly by independent courts. It is recognised in statute (Constitutional Reform Act 2005, s 1) and protected by the courts.
+O: Compare classic accounts of the rule of law
+O: Explain how the courts uphold the rule of law
+T: Rule of law | The principle that everyone, including government, is subject to the law
+T: Legality | The principle that state action must have legal authority
+SUM: Dicey and Bingham gave influential accounts of the rule of law.
+SUM: Courts uphold it through judicial review and access to justice.
+SRC: Bingham T, The Rule of Law, Allen Lane | secondary | 2010
+SRC: Entick v Carrington (1765) 19 St Tr 1029 | case | 1765
+SRC: R (UNISON) v Lord Chancellor [2017] UKSC 51 | case | 2017
 H: Classic accounts
 - **Dicey**: no punishment except for a distinct breach of law proved before the ordinary courts; equality before the law; constitutional rights flow from judicial decisions.
 - **Raz**: a formal account: laws should be prospective, open, clear, stable, and applied by independent courts.
@@ -294,11 +410,19 @@ K: The rule of law is both a principle courts use to interpret statutes and a st
 !: The rule of law does not let courts override clear statutory words; it shapes interpretation and the common law.
 Q: Which statute recognises the rule of law? | The Constitutional Reform Act 2005, s 1 (and s 17 for the Lord Chancellor's oath).
 Q: What did R (UNISON) v Lord Chancellor decide? | Employment tribunal fees were unlawful because they effectively prevented access to justice.
-M1#law-u01-14-q1: Which case established that state officials need legal authority to search private property? | Entick v Carrington | Donoghue v Stevenson | Pepper v Hart | Factortame | Thoburn v Sunderland | Entick v Carrington (1765) rejected general warrants: officials must point to legal authority.
-M2#law-u01-14-q2: A government department ignores a court order on the ground that the minister is acting in the public interest. Which authority most directly supports holding the minister to account? | M v Home Office: ministers can be in contempt of court | Entick v Carrington: officials need authority to search | Jackson v Attorney General: limits on sovereignty | Miller (2019): prorogation was unlawful | Witham: court fees blocking access are unlawful | M v Home Office confirmed that ministers are subject to the courts' contempt jurisdiction.
+M1#law-u01-14-q1@1: Which case established that state officials need legal authority to search private property? | Entick v Carrington | Donoghue v Stevenson | Pepper v Hart | Factortame | Thoburn v Sunderland | Entick v Carrington (1765) rejected general warrants: officials must point to legal authority.
+M2#law-u01-14-q2@2: A government department ignores a court order on the ground that the minister is acting in the public interest. Which authority most directly supports holding the minister to account? | M v Home Office: ministers can be in contempt of court | Entick v Carrington: officials need authority to search | Jackson v Attorney General: limits on sovereignty | Miller (2019): prorogation was unlawful | Witham: court fees blocking access are unlawful | M v Home Office confirmed that ministers are subject to the courts' contempt jurisdiction.
 
 ## Separation of powers
 S: The separation of powers divides state power between the legislature, the executive and the judiciary so that no one branch holds unchecked power. The UK has a partial separation with significant overlaps and strong checks and balances.
+O: Describe the three branches of state power
+O: Analyse overlaps and reforms in the UK
+T: Separation of powers | Dividing state power between legislature, executive and judiciary
+T: Checks and balances | Mechanisms allowing each branch to limit the others
+SUM: The UK has a partial separation of powers.
+SUM: The Constitutional Reform Act 2005 strengthened it.
+SRC: Montesquieu, The Spirit of the Laws | secondary | 1748
+SRC: Constitutional Reform Act 2005 | legislation | 2005 | https://www.legislation.gov.uk/ukpga/2005/4
 H: The three branches
 - **Legislature**: Parliament (Commons, Lords, the King) makes law.
 - **Executive**: the King's government (Prime Minister, Cabinet, departments, civil service) runs the state and makes delegated legislation.
@@ -313,11 +437,20 @@ H: Strengthening the separation
 K: The UK model is checks and balances, not strict separation. Each branch limits the others in recognised ways.
 Q: What did the Constitutional Reform Act 2005 change about the Lord Chancellor? | It removed the Lord Chancellor's judicial role, made the Lord Chief Justice head of the judiciary, and created the Supreme Court and the Judicial Appointments Commission.
 Q: Name one overlap between the legislature and the executive in the UK. | Ministers sit in and are drawn from Parliament; the government usually controls the Commons; ministers make delegated legislation.
-M1#law-u01-15-q1: Which body is the executive? | The government and its departments | Parliament | The Supreme Court | The Judicial Appointments Commission | Magistrates | The executive governs and implements law.
-M2#law-u01-15-q2: A student argues the UK has "no separation of powers at all". What is the best response? | There is a partial separation with checks and balances, strengthened in 2005 | There is a strict, codified separation like that of the United States | Only the executive is separate; Parliament and the courts are fused | The 2005 Act removed ministers from Parliament to separate the branches | Separation exists only by convention and has no legal effect at all | The branches overlap but are separated in important ways, particularly the independence of the judiciary.
+M1#law-u01-15-q1@1: Which body is the executive? | The government and its departments | Parliament | The Supreme Court | The Judicial Appointments Commission | Magistrates | The executive governs and implements law.
+M2#law-u01-15-q2@2: A student argues the UK has "no separation of powers at all". What is the best response? | There is a partial separation with checks and balances, strengthened in 2005 | There is a strict, codified separation like that of the United States | Only the executive is separate; Parliament and the courts are fused | The 2005 Act removed ministers from Parliament to separate the branches | Separation exists only by convention and has no legal effect at all | The branches overlap but are separated in important ways, particularly the independence of the judiciary.
 
 ## Judicial independence
 S: Judicial independence means judges decide cases free from pressure by government, Parliament, parties, the media or anyone else. It is essential to the rule of law and protected by statute and convention.
+O: Explain how judicial independence is protected
+O: Apply the test for apparent bias
+T: Judicial independence | Judges deciding cases free from outside pressure
+T: Apparent bias | Where a fair-minded and informed observer would conclude there was a real possibility of bias
+SUM: Security of tenure, salary protection and statutory duties protect independence.
+SUM: Impartiality requires the absence of actual and apparent bias.
+SRC: Constitutional Reform Act 2005, section 3 | legislation | 2005 | https://www.legislation.gov.uk/ukpga/2005/4/section/3
+SRC: Porter v Magill [2001] UKHL 67 | case | 2001
+SRC: R v Bow Street Metropolitan Stipendiary Magistrate, ex p Pinochet Ugarte (No 2) [2000] 1 AC 119 | case | 1999
 H: How it is protected
 - **Security of tenure**: senior judges hold office during good behaviour and can be removed only on an address of both Houses (Senior Courts Act 1981, s 11; Constitutional Reform Act 2005, s 33 for Supreme Court justices).
 - **Salaries** are charged on the Consolidated Fund and cannot be reduced.
@@ -330,11 +463,20 @@ P: Independence protects judges from outside pressure; impartiality concerns bia
 K: Independence is institutional (protecting the judiciary); impartiality is individual (protecting the parties in a case).
 Q: How can a High Court judge be removed? | Only by the King on an address presented by both Houses of Parliament.
 Q: What is the test for apparent bias? | Whether a fair-minded and informed observer, having considered the facts, would conclude there was a real possibility that the tribunal was biased (Porter v Magill).
-M1#law-u01-16-q1: Which statute imposes a duty on ministers to uphold judicial independence? | The Constitutional Reform Act 2005 | The Human Rights Act 1998 | The Senior Courts Act 1981 | The Courts Act 1971 | The Legal Services Act 2007 | Section 3 of the Constitutional Reform Act 2005.
-M2#law-u01-16-q2: A judge hearing a case is an unpaid director of a charity that intervened in it. Which case is most relevant? | Pinochet (No 2): automatic disqualification for an interest in the case | Porter v Magill: no bias, because the director is unpaid | Locabail: a judge's charity work never disqualifies them | M v Home Office: the judge is in contempt of court | The Constitutional Reform Act 2005 bars judges from charities | In Pinochet (No 2) a Law Lord's link to an intervening charity led to automatic disqualification and the decision was set aside.
+M1#law-u01-16-q1@1: Which statute imposes a duty on ministers to uphold judicial independence? | The Constitutional Reform Act 2005 | The Human Rights Act 1998 | The Senior Courts Act 1981 | The Courts Act 1971 | The Legal Services Act 2007 | Section 3 of the Constitutional Reform Act 2005.
+M2#law-u01-16-q2@2: A judge hearing a case is an unpaid director of a charity that intervened in it. Which case is most relevant? | Pinochet (No 2): automatic disqualification for an interest in the case | Porter v Magill: no bias, because the director is unpaid | Locabail: a judge's charity work never disqualifies them | M v Home Office: the judge is in contempt of court | The Constitutional Reform Act 2005 bars judges from charities | In Pinochet (No 2) a Law Lord's link to an intervening charity led to automatic disqualification and the decision was set aside.
 
 ## Parliament and the legislative process
 S: Parliament makes primary legislation through a structured process of readings, committee scrutiny and Royal Assent. Understanding the stages helps you read legislative history and judge how much scrutiny a provision received.
+O: Describe the kinds of bill and the stages of the legislative process
+O: Explain the limits on the House of Lords
+T: Royal Assent | The monarch's formal agreement that turns a bill into an Act
+T: Parliament Acts | The 1911 and 1949 Acts limiting the Lords' power to block bills
+SUM: Bills pass through readings, committee, report and Royal Assent.
+SUM: The Parliament Acts limit the Lords to delaying most bills.
+SRC: Parliament Act 1911 | legislation | 1911 | https://www.legislation.gov.uk/ukpga/Geo5/1-2/13
+SRC: Parliament Act 1949 | legislation | 1949 | https://www.legislation.gov.uk/ukpga/Geo6/12-13-14/103
+SRC: R (Jackson) v Attorney General [2005] UKHL 56 | case | 2005
 H: Kinds of bill
 - **Public bills**: change the general law; most are government bills.
 - **Private Members' bills**: introduced by backbenchers; few become law without government support.
@@ -351,14 +493,23 @@ H: The stages
 - **Royal Assent**: the bill becomes an Act. Commencement may be on Assent, on a set date or by commencement regulations.
 H: Limits on the Lords
 P: Under the Parliament Acts 1911 and 1949, the Lords can delay a money bill by one month and most other public bills by about a year; the Commons can then pass them without Lords consent. The Salisbury convention means the Lords don't block manifesto bills at second reading.
+P: The Parliament Acts 1911 and 1949 let the Commons present a bill for Royal Assent without the Lords' consent after a set delay. The Hunting Act 2004 was passed this way, and its validity was upheld in R (Jackson) v Attorney General [2005] UKHL 56.
 K: An Act is not necessarily in force on Royal Assent. Always check commencement.
 Q: What happens at second reading? | The House debates the general principles of the bill.
 Q: How long can the Lords delay most public bills under the Parliament Acts? | About one year (two sessions, with one year between Commons second reading and passing).
-M1#law-u01-17-q1: At which stage is a bill examined line by line? | Committee stage | First reading | Second reading | Royal Assent | Third reading | Committee stage is where detailed amendments are considered.
-M2#law-u01-17-q2: A client says a new Act received Royal Assent last month so its provisions must apply to their contract today. What should you check first? | The commencement provisions and any commencement regulations | Whether the Lords debated it | Hansard for the second reading | Whether the Act is a money bill | Whether it was a Private Member's bill | Many provisions only come into force on a later date or by commencement order.
+M1#law-u01-17-q1@1: At which stage is a bill examined line by line? | Committee stage | First reading | Second reading | Royal Assent | Third reading | Committee stage is where detailed amendments are considered.
+M2#law-u01-17-q2@2: A client says a new Act received Royal Assent last month so its provisions must apply to their contract today. What should you check first? | The commencement provisions and any commencement regulations | Whether the Lords debated it | Hansard for the second reading | Whether the Act is a money bill | Whether it was a Private Member's bill | Many provisions only come into force on a later date or by commencement order.
 
 ## Delegated legislation
 S: Delegated (secondary) legislation is law made by a person or body other than Parliament, under powers given by an Act (the parent or enabling Act). It is now far more voluminous than primary legislation.
+O: Describe the forms of delegated legislation and why Parliament delegates
+O: Explain parliamentary and judicial controls
+T: Statutory instrument | The most common form of delegated legislation
+T: Ultra vires | Beyond the powers granted by the parent Act
+SUM: Delegated legislation is made under powers in a parent Act.
+SUM: It is controlled by affirmative and negative procedures and judicial review.
+SRC: Statutory Instruments Act 1946 | legislation | 1946 | https://www.legislation.gov.uk/ukpga/Geo6/9-10/36
+SRC: R (Public Law Project) v Lord Chancellor [2016] UKSC 39 | case | 2016
 H: Forms
 - **Statutory instruments**: made by ministers; the commonest form.
 - **Orders in Council**: made by the King on the advice of the Privy Council, often in emergencies or to transfer functions.
@@ -374,12 +525,20 @@ P: Wide "Henry VIII powers" let ministers amend or repeal Acts by statutory inst
 K: Delegated legislation is valid only if made within the parent Act's powers by the right procedure. That's what makes it reviewable when Acts are not.
 Q: What is a Henry VIII power? | A power in an Act allowing ministers to amend or repeal primary legislation by delegated legislation.
 Q: What is the negative resolution procedure? | The instrument becomes or stays law unless either House annuls it within a set period (usually 40 days).
-M1#law-u01-18-q1: Which body makes byelaws? | Local authorities and certain public bodies | Government ministers, as statutory instruments | The Privy Council, as Orders in Council | Magistrates' courts, for their local area | The Law Commission, after consultation | Byelaws are made by local and public bodies for their areas.
-M2#law-u01-18-q2: A minister makes regulations without the consultation the parent Act requires. What is the likely ground of challenge? | Procedural ultra vires | Substantive ultra vires | Implied repeal | Breach of the Sewel convention | Parliamentary privilege | Failing to follow a mandatory procedure in the parent Act is procedural ultra vires (Aylesbury Mushrooms).
-M3#law-u01-18-q3: A minister makes regulations under an Act that allows rules "for the efficient running of tribunals". The regulations impose fees so high that most claimants can't bring claims. Which challenge is strongest? | The regulations are ultra vires, because the Act doesn't authorise preventing access to justice (UNISON) | The regulations are void because they weren't debated in Parliament | The regulations are valid because Parliament delegated the power | The fees breach the Human Rights Act, so Parliament must repeal them | The minister acted irrationally, which can't be reviewed for statutory instruments | General words don't authorise interference with the constitutional right of access to the courts.
+M1#law-u01-18-q1@1: Which body makes byelaws? | Local authorities and certain public bodies | Government ministers, as statutory instruments | The Privy Council, as Orders in Council | Magistrates' courts, for their local area | The Law Commission, after consultation | Byelaws are made by local and public bodies for their areas.
+M2#law-u01-18-q2@2: A minister makes regulations without the consultation the parent Act requires. What is the likely ground of challenge? | Procedural ultra vires | Substantive ultra vires | Implied repeal | Breach of the Sewel convention | Parliamentary privilege | Failing to follow a mandatory procedure in the parent Act is procedural ultra vires (Aylesbury Mushrooms).
+M3#law-u01-18-q3@2: A minister makes regulations under an Act that allows rules "for the efficient running of tribunals". The regulations impose fees so high that most claimants can't bring claims. Which challenge is strongest? | The regulations are ultra vires, because the Act doesn't authorise preventing access to justice (UNISON) | The regulations are void because they weren't debated in Parliament | The regulations are valid because Parliament delegated the power | The fees breach the Human Rights Act, so Parliament must repeal them | The minister acted irrationally, which can't be reviewed for statutory instruments | General words don't authorise interference with the constitutional right of access to the courts.
 
 ## The judiciary
 S: The judiciary is the body of judges and magistrates who decide cases. Its structure, appointment and diversity affect public confidence in the justice system.
+O: Describe the structure and appointment of the judiciary
+O: Evaluate judicial diversity and the judicial role
+T: Judicial Appointments Commission | The body that selects candidates for judicial office in England and Wales
+T: Lord Chief Justice | The head of the judiciary of England and Wales
+SUM: Judges are appointed on merit through the Judicial Appointments Commission.
+SUM: Diversity remains a concern for public confidence.
+SRC: Constitutional Reform Act 2005, Part 4 | legislation | 2005 | https://www.legislation.gov.uk/ukpga/2005/4
+SRC: Judicial Office, Diversity of the judiciary statistics | guidance | 2025 | https://www.judiciary.uk/about-the-judiciary/diversity/
 H: Who the judges are
 - **Superior judges**: Justices of the Supreme Court, Lords and Lady Justices of Appeal, High Court judges.
 - **Inferior judges**: circuit judges (Crown Court and County Court), recorders (part-time), district judges, district judges (magistrates' courts), tribunal judges.
@@ -396,11 +555,19 @@ H: The judicial role
 K: Judges declare and develop the law, but the democratic legitimacy to make major policy choices lies with Parliament. That tension runs through debates on judicial law-making.
 Q: Who is the head of the judiciary of England and Wales? | The Lord Chief Justice.
 Q: What is the mandatory retirement age for judges? | 75, since the Public Service Pensions and Judicial Offices Act 2022.
-M1#law-u01-19-q1: Who appoints most judges in England and Wales? | The Judicial Appointments Commission selects candidates on merit | The Prime Minister chooses, advised by the Cabinet | Parliament elects judges by a free vote | The Lord Chancellor chooses without a selection body | The Law Society and Bar Council nominate them | The JAC runs selection on merit; formal appointment follows.
-M2#law-u01-19-q2: A bench in the magistrates' court is made up of three lay justices. Who advises them on the law? | A legally qualified legal adviser who sits with the bench | The prosecutor, as an officer of the court | A district judge from the same courthouse | The defence solicitor, if the defendant agrees | A Crown Court judge, by telephone if needed | Lay magistrates are advised on law and procedure by a qualified legal adviser, but decide the case themselves.
+M1#law-u01-19-q1@1: Who appoints most judges in England and Wales? | The Judicial Appointments Commission selects candidates on merit | The Prime Minister chooses, advised by the Cabinet | Parliament elects judges by a free vote | The Lord Chancellor chooses without a selection body | The Law Society and Bar Council nominate them | The JAC runs selection on merit; formal appointment follows.
+M2#law-u01-19-q2@2: A bench in the magistrates' court is made up of three lay justices. Who advises them on the law? | A legally qualified legal adviser who sits with the bench | The prosecutor, as an officer of the court | A district judge from the same courthouse | The defence solicitor, if the defendant agrees | A Crown Court judge, by telephone if needed | Lay magistrates are advised on law and procedure by a qualified legal adviser, but decide the case themselves.
 
 ## Tribunals
 S: Tribunals decide disputes in specialist areas, mostly between individuals and the state (benefits, immigration, tax) and some between private parties (employment). They handle far more cases each year than the civil courts.
+O: Describe the structure of the tribunal system
+O: Evaluate the advantages and drawbacks of tribunals
+T: First-tier Tribunal | The tribunal that hears most first-instance tribunal cases
+T: Upper Tribunal | The tribunal that hears appeals from the First-tier Tribunal
+SUM: Tribunals decide specialist disputes, mostly between individuals and the state.
+SUM: They are cheaper and more expert but can be hard to navigate without help.
+SRC: Tribunals, Courts and Enforcement Act 2007 | legislation | 2007 | https://www.legislation.gov.uk/ukpga/2007/15
+SRC: R (Cart) v Upper Tribunal [2011] UKSC 28 | case | 2011
 H: The structure
 - The **Tribunals, Courts and Enforcement Act 2007** created a unified system: the **First-tier Tribunal** (organised into chambers, such as Social Entitlement, Immigration and Asylum, Tax, Property) and the **Upper Tribunal**, which hears appeals on points of law and some judicial review.
 - **Employment tribunals** and the **Employment Appeal Tribunal** sit outside the two-tier structure but within the same leadership.
@@ -416,11 +583,19 @@ K: Upper Tribunal decisions on unappealable matters remain subject to judicial r
 !: Employment tribunals have their own fee and costs history: fees were abolished after R (UNISON) v Lord Chancellor [2017]. Check the current position before stating whether fees apply.
 Q: Which Act created the First-tier and Upper Tribunals? | The Tribunals, Courts and Enforcement Act 2007.
 Q: Where does an appeal on a point of law from the Upper Tribunal go? | To the Court of Appeal, with permission.
-M1#law-u01-20-q1: Which body hears appeals from the First-tier Tribunal on points of law? | The Upper Tribunal | The Crown Court | The County Court | The Supreme Court directly | The Privy Council | The Upper Tribunal is the appellate tier of the unified tribunal system.
-M2#law-u01-20-q2: A client refused a disability benefit wants to challenge the decision. Where would the appeal normally be heard first? | The First-tier Tribunal, after mandatory reconsideration | The High Court, by judicial review of the decision | The Upper Tribunal, as the specialist benefits court | The County Court, as a claim against the department | The Social Security Ombudsman, after a complaint | Benefit appeals go to the First-tier Tribunal; judicial review is a last resort where no appeal route exists.
+M1#law-u01-20-q1@1: Which body hears appeals from the First-tier Tribunal on points of law? | The Upper Tribunal | The Crown Court | The County Court | The Supreme Court directly | The Privy Council | The Upper Tribunal is the appellate tier of the unified tribunal system.
+M2#law-u01-20-q2@2: A client refused a disability benefit wants to challenge the decision. Where would the appeal normally be heard first? | The First-tier Tribunal, after mandatory reconsideration | The High Court, by judicial review of the decision | The Upper Tribunal, as the specialist benefits court | The County Court, as a claim against the department | The Social Security Ombudsman, after a complaint | Benefit appeals go to the First-tier Tribunal; judicial review is a last resort where no appeal route exists.
 
 ## Alternative dispute resolution
 S: Alternative dispute resolution (ADR) covers ways of settling disputes outside a court trial: negotiation, mediation, conciliation, early neutral evaluation, adjudication and arbitration. The civil justice system now actively expects parties to consider it.
+O: Describe the main forms of ADR
+O: Explain the courts' approach to encouraging ADR
+T: Mediation | A neutral third party helping parties reach their own settlement
+T: Arbitration | A binding decision by a private tribunal chosen by the parties
+SUM: ADR includes negotiation, mediation, conciliation and arbitration.
+SUM: Courts can order parties to engage in ADR.
+SRC: Churchill v Merthyr Tydfil County Borough Council [2023] EWCA Civ 1416 | case | 2023
+SRC: Arbitration Act 1996 | legislation | 1996 | https://www.legislation.gov.uk/ukpga/1996/23
 H: Main forms
 - **Negotiation**: the parties (or their lawyers) settle directly.
 - **Mediation**: a neutral mediator helps the parties reach their own agreement; non-binding unless they sign a settlement.
@@ -435,11 +610,19 @@ H: Courts and ADR
 K: ADR is not an alternative to justice; it is part of the system. Advising a client means assessing both the merits and the best route to resolve the dispute.
 Q: Is a mediator's view binding? | No. A mediator helps the parties reach their own agreement; only a signed settlement binds.
 Q: What did Churchill v Merthyr Tydfil decide? | Courts may order parties to engage in non-court dispute resolution, provided it is proportionate and does not impair the essence of the right to a fair trial.
-M1#law-u01-21-q1: Which ADR method produces a binding decision enforceable like a court judgment? | Arbitration | Mediation | Negotiation | Early neutral evaluation | Conciliation | Arbitration awards are binding and enforceable under the Arbitration Act 1996.
-M2#law-u01-21-q2: A client refuses the other side's reasonable offer to mediate, then wins at trial. What risk does the client face? | A costs penalty for unreasonably refusing ADR | Automatic loss of the judgment | A criminal sanction | Having to pay the other side's damages | Nothing: refusing ADR is never relevant after trial | Courts can reduce or refuse costs to a party who unreasonably refused ADR (Halsey, and now Churchill).
+M1#law-u01-21-q1@1: Which ADR method produces a binding decision enforceable like a court judgment? | Arbitration | Mediation | Negotiation | Early neutral evaluation | Conciliation | Arbitration awards are binding and enforceable under the Arbitration Act 1996.
+M2#law-u01-21-q2@2: A client refuses the other side's reasonable offer to mediate, then wins at trial. What risk does the client face? | A costs penalty for unreasonably refusing ADR | Automatic loss of the judgment | A criminal sanction | Having to pay the other side's damages | Nothing: refusing ADR is never relevant after trial | Courts can reduce or refuse costs to a party who unreasonably refused ADR (Halsey, and now Churchill).
 
 ## Legal institutions and regulators
 S: A web of institutions supports the legal system: government departments, prosecutors, law reform bodies and professional regulators. Knowing who does what is part of commercial awareness and is tested on SQE1 under Legal Services.
+O: Identify the main government and prosecution bodies
+O: Describe the bodies responsible for law reform and regulating legal services
+T: Crown Prosecution Service | The main public prosecutor in England and Wales
+T: Legal Services Board | The oversight regulator for legal services in England and Wales
+SUM: The Ministry of Justice and CPS have key roles in the justice system.
+SUM: The Law Commission proposes reform; the LSB oversees front-line regulators.
+SRC: Legal Services Act 2007 | legislation | 2007 | https://www.legislation.gov.uk/ukpga/2007/29
+SRC: Law Commissions Act 1965 | legislation | 1965 | https://www.legislation.gov.uk/ukpga/1965/22
 H: Government and prosecution
 - **Ministry of Justice**: courts, prisons, probation and legal aid policy; led by the Lord Chancellor and Secretary of State for Justice.
 - **HM Courts and Tribunals Service (HMCTS)**: runs courts and tribunals.
@@ -459,11 +642,19 @@ K: Regulators deal with conduct and standards; the Legal Ombudsman deals with se
 !: Regulatory arrangements change (the regulation of chartered legal executives has been under review, for example). Check the current regulator before naming it in an answer.
 Q: Name the six reserved legal activities. | Rights of audience, conduct of litigation, reserved instrument activities, probate activities, notarial activities and the administration of oaths (Legal Services Act 2007, s 12).
 Q: Who regulates solicitors? | The Solicitors Regulation Authority (SRA).
-M1#law-u01-22-q1: Which body handles complaints about poor service from a solicitor? | The Legal Ombudsman | The Solicitors Disciplinary Tribunal | The Law Commission | The Crown Prosecution Service | The Judicial Appointments Commission | Service complaints go to the Legal Ombudsman after the firm's own complaints procedure.
-M2#law-u01-22-q2: An unqualified adviser offers to issue court proceedings for clients for a fee. Which concept is engaged? | Conduct of litigation is reserved to authorised persons | Anyone may conduct litigation if they don't call themselves a solicitor | It is lawful if the client signs a written waiver first | Only the issuing of claims over £10,000 is reserved | It is lawful if the adviser has a law degree | Carrying on a reserved legal activity without authorisation is an offence under the Legal Services Act 2007, s 14.
+M1#law-u01-22-q1@1: Which body handles complaints about poor service from a solicitor? | The Legal Ombudsman | The Solicitors Disciplinary Tribunal | The Law Commission | The Crown Prosecution Service | The Judicial Appointments Commission | Service complaints go to the Legal Ombudsman after the firm's own complaints procedure.
+M2#law-u01-22-q2@2: An unqualified adviser offers to issue court proceedings for clients for a fee. Which concept is engaged? | Conduct of litigation is reserved to authorised persons | Anyone may conduct litigation if they don't call themselves a solicitor | It is lawful if the client signs a written waiver first | Only the issuing of claims over £10,000 is reserved | It is lawful if the adviser has a law degree | Carrying on a reserved legal activity without authorisation is an offence under the Legal Services Act 2007, s 14.
 
 ## The legal profession
 S: The legal profession in England and Wales is split mainly between solicitors and barristers, with chartered legal executives and other authorised professionals. The roles overlap more than they used to, but differences remain.
+O: Describe the roles of solicitors, barristers and other authorised professionals
+O: Explain how each branch qualifies and is regulated
+T: Solicitors Qualifying Examination | The SRA's centralised assessment for qualifying as a solicitor
+T: Rights of audience | The right to appear and conduct proceedings in court
+SUM: Solicitors and barristers are the main branches of the profession.
+SUM: The SRA, BSB and CILEx Regulation regulate them.
+SRC: Legal Services Act 2007 | legislation | 2007 | https://www.legislation.gov.uk/ukpga/2007/29
+SRC: Solicitors Regulation Authority, SQE | guidance | 2026 | https://www.sra.org.uk/become-solicitor/sqe/
 H: Solicitors
 - Advise clients directly on almost every area of law; draft documents; run transactions and litigation.
 - Work in firms, in-house for companies and public bodies, or in the CPS and government legal service.
@@ -480,11 +671,19 @@ H: Others
 K: Who you instruct depends on what the client needs: solicitors manage the matter and the client; barristers provide specialist advocacy and opinion.
 Q: What is the cab-rank rule? | A self-employed barrister must accept instructions in their field and at a proper fee if available, regardless of the client's identity or cause.
 Q: What does KC stand for? | King's Counsel: senior barristers (and some solicitor-advocates) appointed for excellence in advocacy.
-M1#law-u01-23-q1: Who normally instructs a self-employed barrister? | A solicitor, or the client directly under public access | Only the court, through the list office | Only a solicitor; direct instruction is banned | The Bar Council, which allocates cases | The client, but only in criminal cases | Barristers are usually instructed by solicitors; public access allows direct instruction in suitable cases.
-M2#law-u01-23-q2: A barrister declines a brief because they find the defendant's views offensive, though the case is in their field and they are free. What principle is at stake? | The cab-rank rule | Legal professional privilege | The duty of candour | The rule in Pepper v Hart | Without-prejudice protection | The cab-rank rule requires a barrister to accept work within their competence regardless of the client's identity or views.
+M1#law-u01-23-q1@1: Who normally instructs a self-employed barrister? | A solicitor, or the client directly under public access | Only the court, through the list office | Only a solicitor; direct instruction is banned | The Bar Council, which allocates cases | The client, but only in criminal cases | Barristers are usually instructed by solicitors; public access allows direct instruction in suitable cases.
+M2#law-u01-23-q2@2: A barrister declines a brief because they find the defendant's views offensive, though the case is in their field and they are free. What principle is at stake? | The cab-rank rule | Legal professional privilege | The duty of candour | The rule in Pepper v Hart | Without-prejudice protection | The cab-rank rule requires a barrister to accept work within their competence regardless of the client's identity or views.
 
 ## Access to justice
 S: Access to justice means people can understand their rights, get advice and bring or defend claims fairly, whatever their means. It is a principle of the rule of law and a practical problem of cost, complexity and delay.
+O: Identify barriers to access to justice
+O: Evaluate ways of widening access, including court protection
+T: Access to justice | People's ability to understand their rights and resolve legal problems fairly
+T: Pro bono | Free legal work done in the public interest
+SUM: Cost, complexity and advice deserts limit access to justice.
+SUM: Courts have protected access as a constitutional right.
+SRC: R (UNISON) v Lord Chancellor [2017] UKSC 51 | case | 2017
+SRC: Genn H, Paths to Justice: what people do and think about going to law, Hart | primary | 1999
 H: Barriers
 - **Cost**: legal fees, court fees and the risk of paying the other side's costs.
 - **Complexity**: procedure and language that unrepresented people find hard.
@@ -501,11 +700,19 @@ P: The constitutional right of access to the courts is protected at common law: 
 K: Access to justice is not only about courts; early advice prevents problems from escalating, which is why advice deserts matter.
 Q: What is a McKenzie friend? | A person who assists a litigant in person in court, by taking notes and quietly advising, usually without rights of audience.
 Q: What is a conditional fee agreement? | A "no win, no fee" agreement: the lawyer is paid (often with a success fee) only if the case succeeds.
-M1#law-u01-24-q1: Which case held that court fees which prevented access to the courts were unlawful? | R v Lord Chancellor, ex p Witham | Donoghue v Stevenson | Pepper v Hart | Halsey v Milton Keynes | Porter v Magill | Witham established the common law right of access to the courts against prohibitive fees.
-M2#law-u01-24-q2: A client with a strong personal injury claim cannot afford to pay a solicitor by the hour. What is the most likely funding route? | A conditional fee agreement, usually with after-the-event insurance | Civil legal aid, which covers most personal injury claims | Pro bono representation by the court | The Legal Ombudsman's fund | Crown funding through the CPS | Most personal injury claims were removed from legal aid by LASPO 2012 and are funded by CFAs.
+M1#law-u01-24-q1@1: Which case held that court fees which prevented access to the courts were unlawful? | R v Lord Chancellor, ex p Witham | Donoghue v Stevenson | Pepper v Hart | Halsey v Milton Keynes | Porter v Magill | Witham established the common law right of access to the courts against prohibitive fees.
+M2#law-u01-24-q2@2: A client with a strong personal injury claim cannot afford to pay a solicitor by the hour. What is the most likely funding route? | A conditional fee agreement, usually with after-the-event insurance | Civil legal aid, which covers most personal injury claims | Pro bono representation by the court | The Legal Ombudsman's fund | Crown funding through the CPS | Most personal injury claims were removed from legal aid by LASPO 2012 and are funded by CFAs.
 
 ## Legal aid
 S: Legal aid is public funding for legal advice and representation for people who cannot afford it. In England and Wales it is governed by the Legal Aid, Sentencing and Punishment of Offenders Act 2012 (LASPO) and administered by the Legal Aid Agency.
+O: Describe civil and criminal legal aid under LASPO 2012
+O: Evaluate debates about the scope of legal aid
+T: Legal aid | Public funding for legal advice and representation
+T: Means test | An assessment of financial eligibility for legal aid
+SUM: LASPO 2012 removed many civil matters from scope.
+SUM: Criminal legal aid is subject to an interests of justice test and means testing.
+SRC: Legal Aid, Sentencing and Punishment of Offenders Act 2012 | legislation | 2012 | https://www.legislation.gov.uk/ukpga/2012/10
+SRC: Ministry of Justice, Post-implementation review of Part 1 of LASPO | primary | 2019 | https://www.gov.uk/government/publications/post-implementation-review-of-part-1-of-laspo
 H: Civil legal aid
 - Available only for matters in **Schedule 1** to LASPO: for example, some family cases (especially involving domestic abuse or child protection), housing where a home is at risk, debt where a home is at risk, some immigration and asylum, mental health, community care, discrimination and judicial review.
 - Most personal injury, clinical negligence (except some birth injury), contract, employment and private family disputes (without evidence of abuse) are out of scope.
@@ -519,12 +726,20 @@ P: LASPO cut civil legal aid sharply. Critics point to more litigants in person,
 K: Police station advice is free and non-means-tested. Make sure detained clients know that.
 Q: Which Act governs legal aid in England and Wales? | The Legal Aid, Sentencing and Punishment of Offenders Act 2012 (LASPO).
 Q: What is the interests of justice test? | The test for criminal legal aid representation: whether, for example, the defendant risks losing liberty, the case raises a substantial point of law, or the defendant cannot follow the proceedings.
-M1#law-u01-25-q1: Which is free to everyone, regardless of means? | Legal advice at the police station | Representation in the Crown Court | Civil legal aid for contract disputes | Advice on personal injury claims | Private family law advice | Police station advice is non-means-tested.
-M2#law-u01-25-q2: A client wants legal aid to sue a builder for breach of contract. What is the best advice? | Contract claims are generally outside the scope of LASPO | They qualify if they are on means-tested benefits | Legal aid covers any civil claim with good merits | They qualify through exceptional case funding automatically | They qualify if the claim is under £10,000 | Contract disputes are not in Schedule 1 to LASPO; other funding is needed.
-M3#law-u01-25-q3: A tenant faces eviction because of rent arrears, and the landlord's claim is due to be heard next week. Which statement about legal aid is most accurate? | Civil legal aid may be available because her home is at risk, subject to means and merits | No legal aid is available for any housing matter after LASPO | Legal aid is available without a means test because the hearing is urgent | Only criminal legal aid can help because arrears are an offence | Legal aid is only available if she brings a counterclaim | Housing matters where the home is at risk remain in scope of LASPO, Schedule 1, subject to the tests (and the Housing Loss Prevention Advice Service offers advice at possession hearings).
+M1#law-u01-25-q1@1: Which is free to everyone, regardless of means? | Legal advice at the police station | Representation in the Crown Court | Civil legal aid for contract disputes | Advice on personal injury claims | Private family law advice | Police station advice is non-means-tested.
+M2#law-u01-25-q2@2: A client wants legal aid to sue a builder for breach of contract. What is the best advice? | Contract claims are generally outside the scope of LASPO | They qualify if they are on means-tested benefits | Legal aid covers any civil claim with good merits | They qualify through exceptional case funding automatically | They qualify if the claim is under £10,000 | Contract disputes are not in Schedule 1 to LASPO; other funding is needed.
+M3#law-u01-25-q3@2: A tenant faces eviction because of rent arrears, and the landlord's claim is due to be heard next week. Which statement about legal aid is most accurate? | Civil legal aid may be available because her home is at risk, subject to means and merits | No legal aid is available for any housing matter after LASPO | Legal aid is available without a means test because the hearing is urgent | Only criminal legal aid can help because arrears are an offence | Legal aid is only available if she brings a counterclaim | Housing matters where the home is at risk remain in scope of LASPO, Schedule 1, subject to the tests (and the Housing Loss Prevention Advice Service offers advice at possession hearings).
 
 ## Legal research and authority
 S: Legal research is finding the law that applies to a question and judging how much weight each source carries. Authority is the reason a source counts: a binding statute or ratio outranks a persuasive judgment, which outranks commentary.
+O: Rank sources by authority
+O: Check that a source is still good law
+T: Authority | The reason a legal source carries weight
+T: Citator | A tool showing how a case or statute has later been treated
+SUM: Binding authority outranks persuasive authority.
+SUM: Always check whether a case has been overruled or a provision amended.
+SRC: R v Shivpuri [1987] AC 1 | case | 1986
+SRC: legislation.gov.uk, Understanding legislation | guidance | 2026 | https://www.legislation.gov.uk/understanding-legislation
 H: The order of authority
 - Statute (as amended and in force) and delegated legislation.
 - Binding case law, from the highest relevant court.
@@ -535,15 +750,24 @@ H: Checking that law is good law
 - Has the case been **overruled**, **doubted** or **distinguished**? Use a citator in a database.
 - Is the case from the right **jurisdiction**? A Scottish decision persuades but doesn't bind an English court.
 - Is it **reported**, and in which report? Prefer the official Law Reports (AC, QB/KB, Ch, Fam) where available.
+P: Checking later treatment matters: Anderton v Ryan [1985] AC 560 was overruled by the House of Lords in R v Shivpuri [1987] AC 1 within a year, so citing Anderton alone would mislead.
 K: Good research ends with an answer and its authority, checked as current law. Unchecked law is a professional risk.
 !: Don't rely on a single headnote. Read the judgment's relevant passage before citing it.
 Q: Where can you find the current revised text of UK legislation for free? | legislation.gov.uk, checking for changes not yet applied.
 Q: Name three ways a case may have been treated later. | Followed, applied, distinguished, doubted, overruled, reversed (any three).
-M1#law-u01-26-q1: Which source carries the most authority on a point covered by both? | A section of an Act in force | A leading practitioner textbook | A Court of Appeal obiter dictum | A Law Commission report | A journal article | Primary legislation in force is the highest source.
-M2#law-u01-26-q2: You find a Court of Appeal case squarely on point from 1985. What must you do before relying on it? | Check it hasn't been overruled and any statute is unchanged | Confirm it was reported in the official Law Reports | Confirm it was a unanimous decision of the court | Find a practitioner textbook that cites it | Check it has been followed at least once since | A case may have been overruled or affected by later legislation; a citator check is essential.
+M1#law-u01-26-q1@1: Which source carries the most authority on a point covered by both? | A section of an Act in force | A leading practitioner textbook | A Court of Appeal obiter dictum | A Law Commission report | A journal article | Primary legislation in force is the highest source.
+M2#law-u01-26-q2@2: You find a Court of Appeal case squarely on point from 1985. What must you do before relying on it? | Check it hasn't been overruled and any statute is unchanged | Confirm it was reported in the official Law Reports | Confirm it was a unanimous decision of the court | Find a practitioner textbook that cites it | Check it has been followed at least once since | A case may have been overruled or affected by later legislation; a citator check is essential.
 
 ## Case law analysis
 S: Case law analysis is reading a judgment to extract the material facts, the issues, the decision, the ratio, and how the case fits with others. It is the core skill of common law study and practice.
+O: Read a law report and identify its parts
+O: Apply a method for analysing a judgment
+T: Law report | A published account of a judgment with headnote and citation
+T: Material facts | The facts that the court treated as legally significant
+SUM: Extract material facts, issues, decision and ratio.
+SUM: Place the case in the line of authority.
+SRC: Donoghue v Stevenson [1932] AC 562 | case | 1932
+SRC: Holland JA, Webb JS, Learning Legal Rules, 11th edition, Oxford University Press | secondary | 2022
 H: Reading a law report
 - **Citation and court**: tells you the year, report and level of authority.
 - **Headnote**: the reporter's summary; useful, never authoritative.
@@ -566,11 +790,19 @@ X: Briefing Carlill v Carbolic Smoke Ball Co [1893] 1 QB 256 (CA).
 K: A good case note is short: facts that matter, the principle, and one line on significance.
 Q: Is a headnote part of the judgment? | No. It is the law reporter's summary and has no authority.
 Q: What should you record about each judge in an appellate case? | Whether they gave the leading judgment, concurred (and on what reasoning) or dissented.
-M1#law-u01-27-q1: Which part of a law report has no authority? | The headnote | The leading judgment | The court's order | The ratio decidendi | The concurring judgments | The headnote is written by the reporter, not the court.
-M2#law-u01-27-q2: In a three-judge Court of Appeal case, two judges allow the appeal for different reasons and one dissents. What is the main difficulty in finding the ratio? | There may be no shared majority reasoning, so no clear ratio | The leading judgment's reasoning is the ratio | The headnote's statement of the ratio is binding | The dissent's reasoning becomes persuasive authority only | The case cannot be cited in a later court | When majority judges give different reasons, the binding principle is limited to what they share, if anything.
+M1#law-u01-27-q1@1: Which part of a law report has no authority? | The headnote | The leading judgment | The court's order | The ratio decidendi | The concurring judgments | The headnote is written by the reporter, not the court.
+M2#law-u01-27-q2@2: In a three-judge Court of Appeal case, two judges allow the appeal for different reasons and one dissents. What is the main difficulty in finding the ratio? | There may be no shared majority reasoning, so no clear ratio | The leading judgment's reasoning is the ratio | The headnote's statement of the ratio is binding | The dissent's reasoning becomes persuasive authority only | The case cannot be cited in a later court | When majority judges give different reasons, the binding principle is limited to what they share, if anything.
 
 ## Legal citation and referencing
 S: Legal citation identifies sources precisely so a reader can find them. Most UK law schools use OSCOLA (the Oxford University Standard for the Citation of Legal Authorities); courts have their own practice directions.
+O: Cite cases, legislation and secondary sources using OSCOLA
+O: Apply court practice on citation of judgments
+T: OSCOLA | The Oxford University Standard for the Citation of Legal Authorities
+T: Neutral citation | A court-issued citation independent of any law report
+SUM: OSCOLA is the standard citation style in most UK law schools.
+SUM: Courts expect neutral citations and the most authoritative report.
+SRC: Faculty of Law, University of Oxford, OSCOLA, 4th edition | guidance | 2012 | https://www.law.ox.ac.uk/oscola
+SRC: Practice Direction (Citation of Authorities) [2012] 1 WLR 780 | rule | 2012
 H: Cases
 - **Neutral citation** (from 2001): [year] court number, for example [2019] UKSC 41, [2023] EWCA Civ 1416, [2016] EWHC 123 (Ch).
 - **Law report**: [year] volume report first page, for example [1932] AC 562. Square brackets where the year identifies the volume; round brackets where volume numbers do, for example (1868) LR 3 HL 330.
@@ -588,11 +820,19 @@ P: In court, use the most authoritative report, which for cases reported there i
 K: Accurate citation is part of professional competence and academic integrity. Always cite what you have actually read.
 Q: What is a neutral citation? | A court-assigned citation independent of any law report, for example [2019] UKSC 41.
 Q: How does OSCOLA cite a section of an Act? | Short title and year without a comma, then the section: Human Rights Act 1998, s 3.
-M1#law-u01-28-q1: In [2023] EWCA Civ 1416, what does "EWCA Civ" mean? | Court of Appeal of England and Wales, Civil Division | High Court of England and Wales, Chancery Division | England and Wales County Court, civil list | Court of Appeal of England and Wales, Criminal Division | England and Wales Civil Appeals Tribunal | EWCA Civ identifies the Civil Division of the Court of Appeal.
-M2#law-u01-28-q2: You are citing a Supreme Court case reported in the Appeal Cases. What is the best OSCOLA form? | Case name in italics, neutral citation, then the AC citation | Only the newspaper report | The headnote's summary | The AC citation followed by the neutral citation in brackets | The case name alone | OSCOLA gives the neutral citation followed by the most authoritative report.
+M1#law-u01-28-q1@1: In [2023] EWCA Civ 1416, what does "EWCA Civ" mean? | Court of Appeal of England and Wales, Civil Division | High Court of England and Wales, Chancery Division | England and Wales County Court, civil list | Court of Appeal of England and Wales, Criminal Division | England and Wales Civil Appeals Tribunal | EWCA Civ identifies the Civil Division of the Court of Appeal.
+M2#law-u01-28-q2@2: You are citing a Supreme Court case reported in the Appeal Cases. What is the best OSCOLA form? | Case name in italics, neutral citation, then the AC citation | Only the newspaper report | The headnote's summary | The AC citation followed by the neutral citation in brackets | The case name alone | OSCOLA gives the neutral citation followed by the most authoritative report.
 
 ## Legal writing
 S: Legal writing must be accurate, clear and organised for its reader, whether that is an examiner, a judge or a client. Good legal writing makes the answer and its authority easy to find.
+O: Apply the principles of clear, accurate legal writing
+O: Identify and correct common faults
+T: IRAC | Issue, rule, application, conclusion: a structure for legal problem answers
+T: Plain English | Clear, direct language suited to the reader
+SUM: Legal writing must be accurate, clear and organised for its reader.
+SUM: Avoid unsupported assertions, waffle and missing authority.
+SRC: Civil Procedure Rules, Part 16 | rule | 2026 | https://www.justice.gov.uk/courts/procedure-rules/civil/rules/part16
+SRC: Garner BA, Legal Writing in Plain English, 2nd edition, University of Chicago Press | secondary | 2013
 H: Principles
 - **Know the reader and purpose**: an exam answer, a client letter and a skeleton argument need different things.
 - **Answer first**: lead with the conclusion, then support it.
@@ -609,14 +849,23 @@ H: Common faults
 X: Rewrite: "It is the opinion of the writer that it is possible that the client may potentially have a claim."
 > Remove hedging and passive voice.
 > "Mrs Patel has a strong claim in negligence against the council, for these reasons."
+P: Courts expect the same discipline: CPR Part 16 and its Practice Direction set out what a statement of case must contain, and judges regularly criticise documents that are long, unfocused or unclear.
 K: Every legal paragraph should do one job: state a rule, apply it, or conclude. Readers should be able to tell which.
 Q: What is the "answer first" principle? | Put the conclusion at the start, then give the reasons and authority.
 Q: Name two common faults in legal writing. | Any two of: narrating facts without analysis; stating law without applying it; excessive hedging; legalese; inaccuracy.
-M1#law-u01-29-q1: Which is the clearest opening for advice to a client? | "You are likely to succeed in recovering your deposit, for three reasons." | "It is respectfully submitted that there may be a possibility of recovery." | "The law of contract is very old and complex." | "Hereinafter, the deposit shall be referred to as the sum." | "We have read the documents." | Plain, direct, conclusion-first writing serves a lay client best.
-M2#law-u01-29-q2: An exam answer sets out the law on duty of care accurately but never mentions the facts given. What is the main weakness? | It fails to apply the law to the facts | It cites too many cases | It is too short | It uses plain English | It doesn't give a conclusion first | Problem questions reward application: the law must be used on the facts.
+M1#law-u01-29-q1@1: Which is the clearest opening for advice to a client? | "You are likely to succeed in recovering your deposit, for three reasons." | "It is respectfully submitted that there may be a possibility of recovery." | "The law of contract is very old and complex." | "Hereinafter, the deposit shall be referred to as the sum." | "We have read the documents." | Plain, direct, conclusion-first writing serves a lay client best.
+M2#law-u01-29-q2@2: An exam answer sets out the law on duty of care accurately but never mentions the facts given. What is the main weakness? | It fails to apply the law to the facts | It cites too many cases | It is too short | It uses plain English | It doesn't give a conclusion first | Problem questions reward application: the law must be used on the facts.
 
 ## Introduction to legal argument
 S: Legal argument persuades a decision-maker that the law, applied to the facts, produces a particular result. It combines rules, authorities, reasoning by analogy and policy, and must deal honestly with the other side's best points.
+O: Identify the building blocks of legal argument
+O: Structure an argument within professional limits
+T: Reasoning by analogy | Arguing that like cases should be treated alike
+T: Duty to the court | A lawyer's overriding duty not to mislead the court
+SUM: Legal argument combines rules, authorities, analogy and policy.
+SUM: Lawyers must not mislead the court, including about adverse authority.
+SRC: Solicitors Regulation Authority, Code of Conduct for Solicitors, RELs and RFLs, paragraphs 2.4–2.7 | rule | 2019 | https://www.sra.org.uk/solicitors/standards-regulations/code-conduct-solicitors/
+SRC: MacCormick N, Legal Reasoning and Legal Theory, Oxford University Press | secondary | 1978
 H: Building blocks
 - **Rules**: statute and binding ratio.
 - **Analogy**: this case is like (or unlike) a decided case in its material facts.
@@ -635,6 +884,6 @@ P: Lawyers must not mislead the court. They must draw the court's attention to r
 K: The strongest argument addresses the weakest point in your case before your opponent does.
 Q: Name four building blocks of legal argument. | Rules, analogy with decided cases, statutory interpretation, policy, principle (any four).
 Q: Must a lawyer cite a binding authority that hurts their client's case? | Yes. Lawyers must draw the court's attention to relevant authorities, including adverse ones, and must not mislead the court.
-M1#law-u01-30-q1: Arguing that "this case is materially the same as Merritt v Merritt" is an example of which technique? | Reasoning by analogy | Statutory interpretation | Policy argument | Overruling | Obiter dicta | Comparing material facts with a decided case is analogy.
-M2#law-u01-30-q2: Counsel knows of a recent binding Court of Appeal decision against their client that the opponent has missed. What must counsel do? | Draw it to the court's attention | Keep quiet, since it is the opponent's job to find it | Mention it only if the judge asks | Wait to see if the client wins first | Tell the opponent privately after the hearing | The duty not to mislead the court includes citing relevant adverse binding authority.
+M1#law-u01-30-q1@1: Arguing that "this case is materially the same as Merritt v Merritt" is an example of which technique? | Reasoning by analogy | Statutory interpretation | Policy argument | Overruling | Obiter dicta | Comparing material facts with a decided case is analogy.
+M2#law-u01-30-q2@2: Counsel knows of a recent binding Court of Appeal decision against their client that the opponent has missed. What must counsel do? | Draw it to the court's attention | Keep quiet, since it is the opponent's job to find it | Mention it only if the judge asks | Wait to see if the client wins first | Tell the opponent privately after the hearing | The duty not to mislead the court includes citing relevant adverse binding authority.
 `;

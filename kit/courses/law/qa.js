@@ -11,6 +11,7 @@
 //   signoff:  { date, by: "name, qualification" }
 export const QA = {
   u01: {
+    standard: 2,
     reviewed: {
       date: "2026-10-31", by: "Claude (AI review against docs/CURRICULUM_QA.md checklist; not an expert review)",
       findings: [
@@ -19,16 +20,17 @@ export const QA = {
         "Parliamentary sovereignty: EU supremacy updated for the Retained EU Law (Revocation and Reform) Act 2023.",
         "Civil and criminal law: added a second section heading.",
         "Assessment: 17 questions where the right answer was conspicuously the longest option rewritten with balanced, plausible distractors; 7 hard (M3) multi-step questions added (10 of 70 now hard).",
+        "2026-11-03: lesson metadata (objectives, summaries, key terms, dated sources) added to all 30 lessons; an authority added to the five lessons that had none (Theft Act 1968, Courts Act 1971 and Constitutional Reform Act 2005, Parliament Acts and Jackson, Anderton v Ryan and Shivpuri, CPR Part 16).",
       ],
-      accepted: ["No authority cited in What is law?, Court structures and jurisdiction, Parliament and the legislative process, Legal research and authority, Legal writing: conceptual or skills lessons where citation isn't needed."],
+      accepted: [],
       open: [],
     },
     sources: null, signoff: null,
   },
-  u03: { reviewed: null, sources: null, signoff: null },
-  u04: { reviewed: null, sources: null, signoff: null },
-  u15: { reviewed: null, sources: null, signoff: null },
-  u17: { reviewed: null, sources: null, signoff: null },
-  u18: { reviewed: null, sources: null, signoff: null },
-  u19: { reviewed: null, sources: null, signoff: null },
+  u03: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u04: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u15: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u17: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u18: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u19: { standard: 2, reviewed: null, sources: null, signoff: null },
 };
