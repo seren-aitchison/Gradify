@@ -20,7 +20,7 @@ export default {
     { id: "theory", title: "Social theory", sub: "Classical and contemporary theory, compared and evaluated.", units: [1, 2, 3], format: "mixed", count: 25, minutes: 40, pass: 0.7 },
     { id: "whole", title: "Whole course", sub: "Forty mixed questions from every written school.", units: UNITS.map((u) => u.n), format: "science", count: 40, minutes: 60, pass: 0.7 },
   ],
-  written: ["u01", "u02", "u17", "u18"],
+  written: ["u01", "u02", "u03", "u17", "u18"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
   overview: {
     headline: "How society shapes lives",
