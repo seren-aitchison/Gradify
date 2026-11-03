@@ -130,3 +130,12 @@ Expert review flags for School 16:
 - Safe staffing: check the current status of NICE SG1 and the National Quality Board guidance.
 - Evidence-based practice: the "17 years" lag figure is presented as an often-quoted estimate (Morris and others, 2011), not a fixed fact.
 - Informed consent in research: check the wording on children's consent in non-CTIMP research against current HRA guidance.
+
+## Status after clearing the School 1 and 3–5 warnings
+
+Schools 1, 3, 4 and 5 (134 lessons) are now held to content standard 2. Every lesson has learning objectives, a summary, key terms and dated sources, and every question is linked to an objective. Answer options were rebalanced so the right answer is no longer conspicuously the longest, and each school now has at least 10% hard (M3) questions. Safety and escalation statements were added where the clinical-school rule asked for them. NurseGradify QA now reports **0 warnings** across all 17 schools.
+
+Expert review flags for this batch:
+- Sources were added to the lessons after the event, so check that each cited guideline still says what the lesson says, especially fast-moving ones (NICE NG249 falls, NG245 asthma, NG51 sepsis, NG238 CVD, the BTS oxygen guideline).
+- Check the publication or update years on the NICE, JBDS and BAPEN sources against the current versions.
+- Rewritten answer options in Schools 3–5 are shorter paraphrases of the originals; check that the clinical meaning hasn't changed (especially the escalation scenarios).
