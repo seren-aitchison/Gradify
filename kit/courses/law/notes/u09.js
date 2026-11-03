@@ -28,7 +28,7 @@ SRC: Supreme Court of Judicature Act 1873 | legislation | 1873
 SRC: Senior Courts Act 1981, section 49 | legislation | 1981 | https://www.legislation.gov.uk/ukpga/1981/54/section/49
 Q: Which case confirmed that equity prevails over the common law in conflict? | The Earl of Oxford's Case (1615).
 Q: What did the Judicature Acts 1873–75 do? | Merged the courts so that law and equity are administered together.
-M1#law-u09-01-q1@1: Which statute now provides that equity prevails over the common law where they conflict? | Senior Courts Act 1981, s 49 | Law of Property Act 1925, s 1 | Trustee Act 2000, s 1 | Charities Act 2011, s 3 | Judicature Act 1925 | Section 49 continues the Judicature Acts rule.
+M1#law-u09-01-q1@1: Which statute now provides that equity prevails over the common law where they conflict? | Senior Courts Act 1981, s 49 | Law of Property Act 1925, s 1 | Trustee Act 2000, s 1 | Charities Act 2011, s 3 | Supreme Court of Judicature Act 1873, s 25 (repealed) | Section 49 continues the Judicature Acts rule.
 M2#law-u09-01-q2@2: What is the "two streams" view of fusion? | Law and equity remain distinct, administered together | Law and equity became one body of rules | Equity was abolished | Equity applies only in Chancery | The common law was abolished | The two streams view says only administration was fused.
 
 ## Equitable principles

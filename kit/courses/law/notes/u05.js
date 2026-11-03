@@ -1111,8 +1111,8 @@ H: Re A (Conjoined Twins) [2001] Fam 147
 - Separating conjoined twins, knowing one would die, was lawful. Brooke LJ set out requirements: the act is needed to avoid inevitable and irreparable evil; no more is done than is reasonably necessary; the evil inflicted is not disproportionate to the evil avoided.
 - The decision is limited to its unique facts.
 H: Other cases
-- **R v Shayler [2001] UKHL 11**: necessity merges with duress of circumstances and requires imminent threat of death or serious injury.
-- **R (Nicklinson) v Ministry of Justice [2014] UKSC 38**: necessity doesn't provide a defence to assisting suicide.
+- **R v Shayler [2001] EWCA Crim 1977**: the Court of Appeal treated necessity as merging with duress of circumstances, requiring an imminent threat of death or serious injury. On further appeal ([2002] UKHL 11) the House of Lords said the necessity point didn't arise on the facts.
+- **R (Nicklinson) v Ministry of Justice [2013] EWCA Civ 961**: the Court of Appeal held that necessity can't be a defence to voluntary euthanasia; the argument wasn't pursued in the Supreme Court ([2014] UKSC 38).
 - In medical cases, necessity justifies treating patients who lack capacity in their best interests (now largely under the Mental Capacity Act 2005).
 K: Necessity is very narrow: mostly absorbed into duress of circumstances, never a defence to murder save the unique Re A situation.
 !: Relying on Re A as authority for a general necessity defence to killing.
@@ -1121,7 +1121,7 @@ SUM: Re A allowed necessity in a unique medical case.
 SUM: Necessity largely operates through duress of circumstances (Shayler).
 SRC: R v Dudley and Stephens (1884) 14 QBD 273 | case | 1884
 SRC: Re A (Children) (Conjoined Twins: Surgical Separation) [2001] Fam 147 | case | 2000
-SRC: R v Shayler [2001] UKHL 11 | case | 2001
+SRC: R v Shayler [2001] EWCA Crim 1977 | case | 2001
 Q: What did R v Dudley and Stephens decide? | Necessity is no defence to murder.
 Q: What are Brooke LJ's three requirements in Re A? | Avoiding inevitable and irreparable evil; doing no more than reasonably necessary; the evil inflicted not disproportionate to the evil avoided.
 M1#law-u05-35-q1@1: Which case refused necessity as a defence to murder on the high seas? | R v Dudley and Stephens | Re A | R v Shayler | R v Martin | Southwark LBC v Williams | The sailors' killing of the cabin boy was murder.

@@ -90,3 +90,10 @@ Expert review flags for this batch (a qualified solicitor or barrister should ch
 - **Figures that change**: SDLT bands and reliefs (School 8), the intestacy statutory legacy of £322,000 (School 10), IHT bands and the April 2026 business and agricultural relief reforms (School 10), corporation tax rates and the VAT threshold (School 11), magistrates' sentencing powers (School 6), the prescribed part and preferential debts (School 11), CPR track limits and fixed costs (School 12).
 - **Law in transition**: the Renters' Rights Act 2025 commencement (School 7), the Leasehold and Freehold Reform Act 2024 commencement (School 8), out-of-court disposal reforms under the PCSCA 2022 (School 6), House of Lords reform (School 2), protest law (School 13), UK-EU agreements after 2024 (School 14), asylum legislation (School 14), and the Arbitration Act 2025 (Schools 12 and 14).
 - **Simplifications**: some lessons compress complex areas (for example, the Scots and NI references in School 2, state liability after Brexit in School 14, and the order of distribution in insolvent estates in School 10). Check that nothing material is misstated.
+
+## Status: citation check (2026-11-03)
+
+- Claude ran a web-search citation check covering 36 authorities, each searched individually and mostly post-2015. The rest of the case, statute and section citations were read through for consistency.
+- 3 corrections, all in u05 and u09: Shayler, Nicklinson, and a made-up distractor statute.
+- Details are in `docs/qa/law-citation-check.md`, and the check is logged in `SOURCE_CHECKS` in `kit/courses/law/qa.js`.
+- **This is not the `sources` stage.** Every school still needs each authority checked against a primary source by a person, plus a check of CPR, CrimPR and guidance references and of figures that change.

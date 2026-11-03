@@ -46,3 +46,22 @@ export const QA = {
   u18: { standard: 2, reviewed: null, sources: null, signoff: null },
   u19: { standard: 2, reviewed: null, sources: null, signoff: null },
 };
+
+// Partial citation checks that do NOT complete a school's `sources` stage. Kept so the work isn't repeated.
+export const SOURCE_CHECKS = [
+  {
+    date: "2026-11-03", by: "Claude (web search; not an expert review)",
+    method: "36 authorities searched individually against BAILII, supremecourt.uk, jcpc.uk, Find Case Law and legislation.gov.uk (mostly post-2015 cases); the remaining case, statute and section citations read through for consistency and against well-established citations, not each confirmed. Details: docs/qa/law-citation-check.md",
+    checked: 36,
+    corrected: [
+      "u05 necessity: R v Shayler [2001] UKHL 11 (no such citation) changed to [2001] EWCA Crim 1977, noting the House of Lords [2002] UKHL 11.",
+      "u05 necessity: Nicklinson's rejection of necessity attributed to the Court of Appeal [2013] EWCA Civ 961, not the Supreme Court [2014] UKSC 38.",
+      "u09-01 question: the made-up 'Judicature Act 1925' distractor replaced with Supreme Court of Judicature Act 1873, s 25 (repealed).",
+    ],
+    open: [
+      "Every school's sources stage: a person must check each authority against a primary source.",
+      "CPR, CrimPR and regulator guidance references, and figures that change (fees, thresholds, limits), were not checked.",
+      "Party names: Benkharbouche, Times Travel and Allister use titles that differ from the Supreme Court's.",
+    ],
+  },
+];
