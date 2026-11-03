@@ -61,10 +61,11 @@ Every topic in the brief is a lesson, in brief order. Lessons that aren't writte
 | Sociology | 1 Foundations of Sociology | 19 | 95 | Written, passing all automated checks; **draft** |
 | Sociology | 2 Classical Sociological Theory | 23 | 115 | Written, passing all automated checks; **draft** |
 | Sociology | 3 Contemporary Sociological Theory | 24 | 120 | Written, passing all automated checks; **draft** |
+| Sociology | 5 Social Stratification and Inequality | 26 | 139 | Written, passing all automated checks; **draft** |
 | Sociology | 17 Research Methods | 38 | 190 | Written, passing all automated checks; **draft** |
 | Sociology | 18 Social Statistics and Data Science | 25 | 125 | Written, passing all automated checks; **draft** |
 
-That is **341 of 831 lessons** (212 of 393 psychology, 129 of 438 sociology), with 1,725 questions and 682 flashcards. The other 21 schools (Psychology 7–9 and 12–16; Sociology 4–16) are registered but unwritten.
+That is **367 of 831 lessons** (212 of 393 psychology, 155 of 438 sociology), with 1,864 questions and 734 flashcards. The other 20 schools (Psychology 7–9 and 12–16; Sociology 4 and 6–16) are registered but unwritten.
 
 **Every written lesson has:**
 
@@ -142,7 +143,7 @@ Every lab says what kind it is and what it simplifies. Data is labelled either *
 ## Next batches (suggested order)
 
 1. **Psychology:** 7 Personality and Individual Differences, then 12–16; 8 and 9 (clinical) need an education-not-diagnosis statement in every lesson and should be reviewed by a clinical psychologist.
-2. **Sociology:** 5 Stratification and Inequality, 4 Culture, Identity and Socialisation, then 6–16.
+2. **Sociology:** 4 Culture, Identity and Socialisation, then 6–16.
 3. **Clinical schools** (Psychology 8 and 9) should be written with a clinical psychologist's review planned from the start.
 4. **Human review:** give each written school a structured review, a full source check and expert sign-off, recorded in `qa.js`.
 5. **UK data:** add official UK data (ONS, DfE, Home Office) to the sociology labs.
