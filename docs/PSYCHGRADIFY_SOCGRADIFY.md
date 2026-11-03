@@ -51,11 +51,21 @@ Every topic in the brief is a lesson, in brief order. Lessons that aren't writte
 | Course | School | Lessons | Questions | Status |
 |---|---|---|---|---|
 | Psychology | 1 Foundations of Psychology | 21 | 105 | Written, passing all automated checks; **draft** |
+| Psychology | 2 Biological Psychology and Neuroscience | 28 | 148 | Written, passing all automated checks; **draft** |
+| Psychology | 3 Cognitive Psychology | 32 | 167 | Written, passing all automated checks; **draft** |
 | Psychology | 4 Learning and Behaviour | 20 | 100 | Written, passing all automated checks; **draft** |
+| Psychology | 5 Developmental Psychology | 26 | 133 | Written, passing all automated checks; **draft** |
+| Psychology | 6 Social Psychology | 26 | 132 | Written, passing all automated checks; **draft** |
+| Psychology | 10 Research Methods | 34 | 170 | Written, passing all automated checks; **draft** |
+| Psychology | 11 Statistics | 25 | 125 | Written, passing all automated checks; **draft** |
 | Sociology | 1 Foundations of Sociology | 19 | 95 | Written, passing all automated checks; **draft** |
 | Sociology | 2 Classical Sociological Theory | 23 | 115 | Written, passing all automated checks; **draft** |
+| Sociology | 3 Contemporary Sociological Theory | 24 | 120 | Written, passing all automated checks; **draft** |
+| Sociology | 5 Social Stratification and Inequality | 26 | 139 | Written, passing all automated checks; **draft** |
+| Sociology | 17 Research Methods | 38 | 190 | Written, passing all automated checks; **draft** |
+| Sociology | 18 Social Statistics and Data Science | 25 | 125 | Written, passing all automated checks; **draft** |
 
-That is **83 of 831 lessons** (41 of 393 psychology, 42 of 438 sociology), with 415 questions and 166 flashcards. The other 30 schools are registered but unwritten.
+That is **367 of 831 lessons** (212 of 393 psychology, 155 of 438 sociology), with 1,864 questions and 734 flashcards. The other 20 schools (Psychology 7–9 and 12–16; Sociology 4 and 6–16) are registered but unwritten.
 
 **Every written lesson has:**
 
@@ -132,8 +142,8 @@ Every lab says what kind it is and what it simplifies. Data is labelled either *
 
 ## Next batches (suggested order)
 
-1. **Psychology:** School 10 Research Methods and School 11 Statistics (the brief's emphasis), then 3 Cognitive, 2 Biological, 6 Social and 5 Developmental.
-2. **Sociology:** School 17 Research Methods and School 18 Social Statistics, then 3 Contemporary Theory, 5 Stratification and 4 Culture, Identity and Socialisation.
+1. **Psychology:** 7 Personality and Individual Differences, then 12–16; 8 and 9 (clinical) need an education-not-diagnosis statement in every lesson and should be reviewed by a clinical psychologist.
+2. **Sociology:** 4 Culture, Identity and Socialisation, then 6–16.
 3. **Clinical schools** (Psychology 8 and 9) should be written with a clinical psychologist's review planned from the start.
 4. **Human review:** give each written school a structured review, a full source check and expert sign-off, recorded in `qa.js`.
 5. **UK data:** add official UK data (ONS, DfE, Home Office) to the sociology labs.

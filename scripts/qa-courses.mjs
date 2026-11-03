@@ -91,7 +91,8 @@ function psychRules(unit, L, text) {
 function socRules(unit, L, text) {
   const w = socialRules(unit, L);
   // a percentage or rate should carry the year or period it describes
-  if (/\d+(\.\d+)?\s?(%|per cent)/.test(text) && !/(19|20)\d\d/.test(text)) w.push("a statistic without a year");
+  // (worked examples with invented numbers must say so: "illustrative")
+  if (/\d+(\.\d+)?\s?(%|per cent)/.test(text) && !/(19|20)\d\d/.test(text) && !/illustrative|invented/i.test(text)) w.push("a statistic without a year");
   return w;
 }
 
