@@ -10,9 +10,10 @@
 export const QA = {
   // written to standard 2 on 2026-11-01; linked sources checked by scripts/check-sources.mjs (docs/qa/psychology-source-check.md); review pending
   u01: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u03: { standard: 2, reviewed: null, sources: null, signoff: null },
   u04: { standard: 2, reviewed: null, sources: null, signoff: null },
   u10: { standard: 2, reviewed: null, sources: null, signoff: null },
   u11: { standard: 2, reviewed: null, sources: null, signoff: null },
 };
 // the date each school's notes were first written (shown on every lesson with the review state)
-export const WRITTEN_ON = { u01: "2026-11-01", u04: "2026-11-02", u10: "2026-11-02", u11: "2026-11-02" };
+export const WRITTEN_ON = { u01: "2026-11-01", u03: "2026-11-03", u04: "2026-11-02", u10: "2026-11-02", u11: "2026-11-02" };
