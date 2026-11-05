@@ -190,3 +190,7 @@ See the status sections below as schools are added. Content is written by Claude
 ## Status: School 15, Special Populations (2026-11-05)
 
 12 lessons: children, neonates, pregnancy, breastfeeding, older people, renal and hepatic impairment (with a Cockcroft-Gault calculation), polypharmacy and deprescribing, frailty, learning disabilities (STOMP), swallowing difficulties and covert administration, care homes. Points to the BNF, BNFC, UKTIS, SPS and NICE.
+
+## Status: School 18, Prescribing and Clinical Assessment (2026-11-05)
+
+16 lessons: independent prescribing law and scope (prescribers at registration from 2026), RPS competency framework, governance, consultation models, history, examination, vital signs and NEWS2, blood tests, diagnostic reasoning, writing prescriptions, safety, antimicrobial and remote prescribing, influences, monitoring, case reviews. Normal ranges marked illustrative.
