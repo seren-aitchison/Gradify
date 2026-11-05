@@ -569,3 +569,30 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(255, 255, 2
 .co-plan-on-track { border-color: rgba(79, 224, 166, .35); }
 .co-plan-tight { border-color: rgba(255, 180, 77, .4); }
 .co-plan-behind, .co-plan-past { border-color: rgba(255, 90, 77, .4); }
+
+/* Gradify AI tutor panel (kit/course/tutor-panel.js) */
+.co-tmodes { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+.co-tmodes button { font: 500 13px var(--sans); color: var(--mute); background: transparent; border: 1px solid var(--line); border-radius: 99px; padding: 6px 12px; cursor: pointer; }
+.co-tmodes button[aria-selected="true"] { color: var(--fg); background: rgba(255, 255, 255, .08); border-color: var(--line-strong); }
+.co-tintro { color: var(--mute); font-size: 14px; margin: 0 0 10px; }
+.co-tin { width: 100%; padding: 9px 12px; border-radius: 11px; background: #141417; color: var(--fg); border: 1px solid var(--line-strong); font: 14px var(--sans); margin-bottom: 10px; box-sizing: border-box; }
+.co-chat { display: flex; flex-direction: column; gap: 8px; margin: 0 0 10px; }
+.co-msg { padding: 10px 12px; border-radius: 12px; background: rgba(255, 255, 255, .04); font-size: 14px; }
+.co-msg.learner { background: rgba(143, 186, 255, .1); align-self: flex-end; max-width: 85%; }
+.co-msg b { display: block; font-size: 12px; color: var(--faint); margin-bottom: 2px; }
+.co-msg p { margin: 0 0 6px; color: var(--fg); } .co-msg p:last-child { margin: 0; }
+.co-reply { margin-bottom: 8px; }
+.co-chq { padding: 12px 0; border-top: 1px solid var(--line); }
+.co-chq p { margin: 0 0 8px; }
+.co-chopts { display: flex; flex-direction: column; gap: 6px; }
+.co-chopts button { text-align: left; font: 14px var(--sans); color: var(--fg); background: rgba(255, 255, 255, .03); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; cursor: pointer; }
+.co-chopts button.ok { border-color: #4fe0a6; background: rgba(79, 224, 166, .1); }
+.co-chopts button.no { border-color: #ff7a6b; background: rgba(255, 122, 107, .1); }
+.co-chwhy { color: var(--mute); font-size: 13px; }
+.co-whyw { margin-top: 10px; }
+.co-diag { margin-top: 10px; padding: 12px 14px; border-radius: 12px; background: rgba(255, 255, 255, .03); border: 1px solid var(--line); font-size: 14px; }
+.co-diag p { color: var(--mute); margin: 0 0 8px; } .co-diag b { color: var(--fg); }
+.co-dirbox { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+.co-director ol { padding-left: 20px; display: flex; flex-direction: column; gap: 10px; }
+.co-director li p { margin: 2px 0 0; color: var(--mute); font-size: 13px; }
+.co-dact { display: block; font: 500 11px var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--faint); }

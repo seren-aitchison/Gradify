@@ -23,6 +23,7 @@ import { mergeProgress, cloudCopy } from "./progress.js";
 import { mountRevalidation } from "./revalidation.js";
 import { scoreFeedback } from "../assess/tutor.js";
 import { feedbackHtml, paras } from "../assess/tutor-view.js";
+import { mountTutorPanel, directorHtml } from "./tutor-panel.js";
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
 import { buildExam, runExam, FORMATS } from "../assess/exam.js";
 
@@ -168,7 +169,23 @@ export function mountCourse(root, cfg) {
   function wirePractice(el, context, contextId, xp = XP.check) {
     wireQuestions(el, (k) => pageQs.get(k)?.Q, (Q, res, first, box, meta) => {
       const it = pageQs.get(box.dataset.key); record(it, context, contextId, res, meta);
+      if (!res.correct && !res.self && Q.options && it.l && !box.querySelector(".co-whyw")) offerDiagnosis(box, Q, it, meta.response);
       if (first && res.score >= 0.7 && !S.solved[it.key]) { S.solved[it.key] = Date.now(); save(); award(xp, "check", it.key); }
+    });
+  }
+
+  // "Why was I wrong?": Gradify AI names the likely misconception behind a wrong choice and gives a check question
+  function offerDiagnosis(box, Q, it, chosen) {
+    const wrap = document.createElement("div"); wrap.className = "co-whyw";
+    wrap.innerHTML = `<button type="button" class="btn btn-ghost btn-sm"><span>Why was I wrong?</span></button><div class="co-whyout" aria-live="polite"></div>`;
+    box.append(wrap);
+    wrap.querySelector("button").addEventListener("click", async (e) => {
+      const out = wrap.querySelector(".co-whyout"); e.currentTarget.disabled = true; out.innerHTML = `<p class="co-empty">Looking at your answer…</p>`;
+      try {
+        const N = await notesFor(it.l);
+        const r = await askTutor({ mode: "diagnose", lesson: { title: it.l.title, text: lessonText(N) }, question: { q: Q.q, options: Q.options.map((o) => ({ text: o.text, correct: o.correct })), chosen, why: Q.why } });
+        out.innerHTML = `<div class="co-diag"><p><b>${esc(r.misconception)}</b></p>${paras(r.explanation)}<details><summary>Check: ${esc(r.check.question)}</summary><p>${esc(r.check.answer)}</p></details><p class="aq-note">From Gradify AI${r.fromLesson === false ? ", going beyond this lesson's notes" : ", using this lesson's notes"}. It can be wrong.</p></div>`;
+      } catch (err) { out.innerHTML = err.signin ? signinLine("This", "") : `<p class="co-empty">${esc(err.message)}</p>`; e.currentTarget.disabled = false; }
     });
   }
 
@@ -434,7 +451,7 @@ export function mountCourse(root, cfg) {
         ${N ? lessonFrame(N).top : ""}
         ${N ? `<div class="mv-cols">${lessonHtml(N)}</div>${lessonFrame(N).end}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
-        ${N && cfg.tutor ? `<section class="co-ask"><h3>${ic("search")} Ask about this lesson</h3><form class="co-askform"><label class="sr-only" for="co-askq">Your question about this lesson</label><input id="co-askq" type="text" maxlength="1000" autocomplete="off" placeholder="For example: why does this rule exist?"><button class="btn btn-ghost lg btn-sm" type="submit"><span>Ask</span></button></form><div class="co-askout" aria-live="polite"></div><p class="aq-note">${esc(cfg.tutor)}</p></section>` : ""}
+        ${N ? `<section class="co-ask co-tutor"></section>` : ""}
         ${N?.items?.length ? `<section class="co-check"><h3>${ic("target")} Check yourself</h3>${N.items.map((it) => qHtml(it, { confidence: true })).join("")}</section>` : ""}
         <footer>
           <button class="btn btn-light lg co-complete" ${S.done[id] ? "disabled" : ""}><span>${S.done[id] ? "Completed ✓" : `Complete lesson · +${XP.lesson} XP`}</span></button>
@@ -449,15 +466,12 @@ export function mountCourse(root, cfg) {
     mountIxSlots(main);
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", () => flashcards(N.cards, l)));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
-    main.querySelector(".co-askform")?.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const input = e.currentTarget.querySelector("input"), out = main.querySelector(".co-askout"), q = input.value.trim(); if (q.length < 5) return;
-      out.innerHTML = `<p class="co-empty">Thinking…</p>`;
-      try {
-        const r = await askTutor({ mode: "explain", lesson: { title: l.title, text: lessonText(N) }, question: q });
-        out.innerHTML = `<div class="co-askans"><p class="co-askq">${esc(q)}</p>${paras(r.answer)}${r.fromLesson ? "" : `<p class="aq-note">This goes beyond what the lesson covers, so check it against your course materials.</p>`}</div>`;
-        input.value = "";
-      } catch (err) { out.innerHTML = err.signin ? signinLine("Asking the tutor", "") : `<p class="co-empty">${esc(err.message)}</p>`; }
+    const tp = main.querySelector(".co-tutor");
+    if (tp) mountTutorPanel(tp, {
+      ask: askTutor, lesson: { id, title: l.title, text: lessonText(N) }, note: cfg.tutor || TUTOR_NOTE,
+      focus: sixProfiles(evidenceFromAttempts((S.attempts || []).filter((a) => a.lesson === id), { levels: cfg.levels || null })).all.weakest || "apply",
+      candidates: () => connectCandidates(l), unavailable: (what) => signinLine(what, ""),
+      link: (lid) => `#/lesson/${lid}`, titleOf: (lid) => byId[lid]?.title || lid,
     });
     main.querySelector(".co-complete").addEventListener("click", async (e) => {
       if (S.done[id]) return;
@@ -481,7 +495,16 @@ export function mountCourse(root, cfg) {
     if (!res?.ok) throw new Error(out.error || "The tutor isn't available right now. You can still self-assess with the rubric.");
     return out;
   }
-  const signinLine = (what, or = "self-assess with the rubric") => `<p class="co-empty">${esc(what)} uses Gradify AI, which needs a free account. <a href="${cfg.app || "app.html"}#/account">Sign in</a>${or ? `, or ${esc(or)}` : ""}.</p>`;
+  // until Gradify accounts are switched on (gradify.config.js), say so rather than offering a sign-in that can't work
+  const signinLine = (what, or = "self-assess with the rubric") => SUPABASE_URL
+    ? `<p class="co-empty">${esc(what)} uses Gradify AI, which needs a free account. <a href="${cfg.app || "app.html"}#/account">Sign in</a>${or ? `, or ${esc(or)}` : ""}.</p>`
+    : `<p class="co-empty">${esc(what)} uses Gradify AI, which isn't switched on yet: it arrives with Gradify accounts.${or ? ` For now, ${esc(or)}.` : ""}</p>`;
+  const TUTOR_NOTE = "Answers come from Gradify AI, using this lesson's notes. It's study help and it can be wrong: check anything important against the notes and your course materials.";
+  // lessons the tutor may link to: this school first, then nearby schools, then the rest (titles only)
+  function connectCandidates(l) {
+    const near = (u) => Math.abs(u.n - l.unit.n);
+    return [...units].sort((a, b) => near(a) - near(b)).flatMap((u) => u.lessons).filter((x) => x.id !== l.id).slice(0, 400).map((x) => ({ id: x.id, title: `${x.title} (${U} ${x.unit.n})` }));
+  }
   // a finished written task is recorded like any other answer (provisional), and earns XP the first time
   function recordTask(t, score, method, response) {
     const u = units.find((x) => x.id === t.unit);
@@ -793,7 +816,23 @@ export function mountCourse(root, cfg) {
       <p class="co-empty">${all.mastery == null ? `Gradify gives an overall mastery figure once at least two kinds of evidence have ${3}+ answers each. It won't guess from less.` : `<b>${pc(all.mastery)}</b> overall, measured from ${all.measured.length} of the 6 kinds of evidence.${all.missing.length ? ` Not yet measured: ${all.missing.map(label).join(", ")}.` : ""}`}</p>
       ${sixHtml(all)}${calibrationHtml(all)}
       ${schools.length ? `<h4>By ${u1}</h4><ul class="co-weak">${schools.map(({ g, u }) => `<li><a href="#/learn/${u.id}">${U} ${u.n}: ${esc(u.title)}</a> <small>${g.mastery == null ? `${g.answers} answers: not enough evidence yet` : `${pc(g.mastery)}${g.weakest ? ` · weakest: ${label(g.weakest)}` : ""}`}</small></li>`).join("")}</ul>` : ""}
-      <p>${revisitLink()}</p></section>`;
+      <p>${revisitLink()}</p>
+      <div class="co-dirbox"><h4>Your next session</h4><p class="co-empty">The Gradify AI study director turns this evidence into a plan for your next session.</p><button type="button" class="btn btn-ghost btn-sm" data-director><span>Plan my next session</span></button><div class="co-dirout" aria-live="polite"></div></div></section>`;
+  }
+  // what the study director sees: this summary and the lessons it may name, nothing else
+  function directorRequest() {
+    const ev = evidenceFromAttempts(S.attempts || [], { levels: cfg.levels || null });
+    const all = sixProfiles(ev).all, byLesson = sixProfiles(ev).groups.filter((g) => byId[g.key]);
+    const weak = byLesson.filter((g) => g.answers >= 2).sort((a, b) => (a.mastery ?? a.dims.recognition.value ?? 1) - (b.mastery ?? b.dims.recognition.value ?? 1)).slice(0, 6)
+      .map((g) => ({ id: g.key, title: byId[g.key].title, note: `${g.mastery == null ? "not enough evidence" : `${Math.round(g.mastery * 100)}% mastery`}${g.weakest ? `, weakest ${g.weakest}` : ""}${g.calibration?.sureWrong ? `, ${g.calibration.sureWrong} confident mistakes` : ""}` }));
+    const due = revisionQueue(S.attempts || [], { limit: 500 });
+    const upcoming = []; for (const x of lessons) { if (upcoming.length >= 6) break; if (!S.done[x.id] && (!cfg.written || cfg.written.includes(x.unit.id))) upcoming.push(x); }
+    const ids = [...new Set([...weak.map((w) => w.id), ...due.map((q) => q.lesson).filter(Boolean), ...upcoming.map((x) => x.id)])].slice(0, 40);
+    const c = all.calibration, examDate = prof?.site === cfg.site ? prof?.exam_date : null;
+    return { mode: "director", course: cfg.name, candidates: ids.map((i) => ({ id: i, title: byId[i]?.title || i })),
+      summary: { dailyMinutes: prof?.daily_minutes || 20, examDate, done: Object.keys(S.done).length, total: lessons.length, dueCards: dueCards().length, dueQuestions: due.length,
+        mastery: all.mastery, dims: Object.fromEntries(SIX.map((d) => [d.key, { value: all.dims[d.key].value, certainty: all.dims[d.key].certainty }])),
+        calibration: c ? `${c.sure} answers marked sure, ${c.sureWrong} of them wrong; ${c.guessRight} guesses right` : "", weak, pace: "" } };
   }
 
   async function viewMe() {
@@ -811,6 +850,11 @@ export function mountCourse(root, cfg) {
       <section class="co-panel"><h3>${TW}s</h3><div class="co-mastery">${cfg.tracks.map((t) => { const us = t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean), tot = us.reduce((a, u) => a + u.lessons.length, 0), dn = us.reduce((a, u) => a + unitDone(u), 0); return `<div style="--a:${t.from};--b:${t.to}"><span>${esc(t.name)}</span><div class="co-bar"><i style="width:${(dn / tot) * 100}%"></i></div><small>${dn}/${tot}</small></div>`; }).join("")}</div></section>
       <section class="co-panel"><h3>Badges</h3><div class="co-badgelist">${BADGES.map((b) => `<div class="${b.ok(st) ? "on" : ""}">${ic(b.ok(st) ? "star" : "lock")}<b>${b.name}</b><small>${b.d}</small></div>`).join("")}</div></section>
       <section class="co-panel co-saved"><h3>Saved to your account</h3><p class="co-empty">Loading…</p></section>`;
+    main.querySelector("[data-director]")?.addEventListener("click", async (e) => {
+      const out = main.querySelector(".co-dirout"); e.currentTarget.disabled = true; out.innerHTML = `<p class="co-empty">Planning from your progress…</p>`;
+      try { out.innerHTML = directorHtml(await askTutor(directorRequest()), { link: (lid) => `#/lesson/${lid}`, titleOf: (lid) => byId[lid]?.title || "" }); }
+      catch (err) { out.innerHTML = err.signin ? signinLine("The study director", "use Revisit and Your plan") : `<p class="co-empty">${esc(err.message)}</p>`; e.currentTarget.disabled = false; }
+    });
     main.querySelectorAll("[data-day]").forEach((b) => b.addEventListener("click", () => {
       const rows = S.log.filter((r) => day(r.t) === b.dataset.day), kinds = {};
       for (const r of rows) kinds[r.k] = (kinds[r.k] || 0) + 1;

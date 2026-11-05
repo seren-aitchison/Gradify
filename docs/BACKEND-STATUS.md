@@ -13,7 +13,7 @@ A feature existing in the repository is not the same as a feature working for a 
 ## What's known now (5 November 2026)
 
 1. **Code: in the repository.**
-   - 8 migrations: core, mastery evidence, Body Intelligence, assessment attempts, course progress, tutor usage, revalidation and the learner profile. The check confirms each one has been run.
+   - 9 migrations: core, mastery evidence, Body Intelligence, assessment attempts, course progress, tutor usage, revalidation, the learner profile and the tutor modes. The check confirms each one has been run.
    - The `study-pack` and `course-tutor` Edge Functions.
    - The cloud store in `kit/data/store.js`, with a local fallback.
 2. **Project: unknown.** No project URL is recorded anywhere in the repository or its history. Whether one exists can only be seen in the Supabase dashboard.

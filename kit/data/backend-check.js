@@ -17,6 +17,7 @@ export const TABLES = {
   "20261105120000_course_progress": ["course_progress"],
   "20261105130000_tutor_usage": ["tutor_usage"],
   "20261105140000_revalidation": ["revalidation_entries"],
+  "20261106130000_tutor_modes": ["tutor_usage"],
   "20261106120000_learner_profile": ["profiles?select=learner"],
 };
 

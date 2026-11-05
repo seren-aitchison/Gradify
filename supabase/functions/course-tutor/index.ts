@@ -3,12 +3,17 @@
 // POST { mode: "roleplay", subject, case: { client, persona, facts }, turns }            → { reply }
 // POST { mode: "debrief", subject, case, rubric, turns }                                 → { feedback }
 // POST { mode: "explain", subject, lesson: { title, text }, question }                   → { answer, fromLesson }
+// POST { mode: "diagnose", subject, lesson, question: { q, options, chosen, why } }        → { misconception, explanation, check }
+// POST { mode: "socratic" | "examiner", subject, lesson, goal?, turns }                 → { reply }
+// POST { mode: "challenge", subject, lesson, focus }                                     → { questions }
+// POST { mode: "connect", subject, lesson, candidates: [{ id, title }] }                 → { links }
+// POST { mode: "director", subject, course, summary, candidates }                        → { message, steps }
 // The learner must be signed in; each mode has a daily limit per learner (DAILY in _shared/tutor.js),
 // counted from the tutor_usage table. The Claude API key stays here as a server secret.
 // The prompts, schemas and input checks are in _shared/tutor.js (a copy of kit/assess/tutor.js).
 import Anthropic from "npm:@anthropic-ai/sdk@0.133.0";
 import { createClient } from "npm:@supabase/supabase-js@2.117.0";
-import { MODEL, DAILY, buildRequest } from "../_shared/tutor.js";
+import { MODEL, DAILY, FEEDBACK_MODES, buildRequest, checkReply } from "../_shared/tutor.js";
 
 const ALLOWED = (Deno.env.get("GRADIFY_ALLOWED_ORIGINS") ?? "https://getgradify.com,http://localhost:8080").split(",");
 const anthropic = new Anthropic(); // reads ANTHROPIC_API_KEY
@@ -62,8 +67,9 @@ Deno.serve(async (req) => {
     const text = msg.content.filter((b) => b.type === "text").map((b) => (b as { text: string }).text).join("").trim();
     await db.from("tutor_usage").insert({ mode: r.mode, site: String(body.subject ?? "").slice(0, 40), input_tokens: msg.usage.input_tokens, output_tokens: msg.usage.output_tokens });
     if (!r.schema) return json(req, { reply: text, model: msg.model });
-    const data = JSON.parse(text);
-    return json(req, r.mode === "explain" ? { ...data, model: msg.model } : { feedback: data, model: msg.model });
+    // lesson ids must be ones the request offered, choice questions need one right answer (checkReply)
+    const data = checkReply(r.mode, JSON.parse(text), body);
+    return json(req, FEEDBACK_MODES.includes(r.mode) ? { feedback: data, model: msg.model } : { ...data, model: msg.model });
   } catch (e) {
     console.error(e);
     return json(req, { error: "The tutor is busy or unavailable. Please try again in a minute." }, 502);
