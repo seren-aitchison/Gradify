@@ -135,3 +135,8 @@ See the status sections below as schools are added. Content is written by Claude
 - **Written:** 5 of 19 schools (101 of 318 lessons): 1, 2, 6, 16 and 17. Calculations practice, drug cards, 3D links, 4 mock exams, 6 written tasks and a consultation role-play are live.
 - **Still to write:** Schools 3, 4, 5, 7 to 15, 18 and 19, in the order set out above.
 - **Not started:** a GPhC version of the revalidation tracker (the nursing one is NMC-specific), a prescription clinical-check simulation, and an expert review of everything above.
+
+## Status: School 3, Pharmacokinetics and Biopharmaceutics (2026-11-05)
+
+- 21 lessons, written to content standard 2: ADME, routes, bioavailability, first-pass metabolism, volume of distribution, protein binding, phase I and II, CYP enzymes (including the smoking and clozapine interaction), renal and biliary excretion, clearance, half-life, steady state, loading and maintenance doses, saturable kinetics (phenytoin), compartment models (digoxin sampling), TDM, renal and hepatic impairment, dissolution and the BCS, and bioequivalence (MHRA antiepileptic categories, brand-only drugs). QA reports 0 warnings.
+- **Expert review:** check the TDM sampling times and target ranges, the bioequivalence limits and the MHRA antiepileptic categories against current guidance.
