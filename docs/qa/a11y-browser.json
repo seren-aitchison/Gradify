@@ -1,0 +1,618 @@
+{
+ "date": "2026-11-05",
+ "base": "http://localhost:8090",
+ "results": {
+  "UnderGradify": [
+   {
+    "url": "undergradify/",
+    "contrast": {
+     "checked": 93,
+     "pass": 93,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "PostGradify": [
+   {
+    "url": "postgradify/",
+    "contrast": {
+     "checked": 90,
+     "pass": 90,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "ProGradify": [
+   {
+    "url": "progradify/",
+    "contrast": {
+     "checked": 105,
+     "pass": 105,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "EduGradify": [
+   {
+    "url": "edugradify/",
+    "contrast": {
+     "checked": 97,
+     "pass": 97,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "YouthGradify": [
+   {
+    "url": "youthgradify/",
+    "contrast": {
+     "checked": 87,
+     "pass": 87,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "JuniorGradify": [
+   {
+    "url": "juniorgradify/",
+    "contrast": {
+     "checked": 85,
+     "pass": 85,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "LawGradify": [
+   {
+    "url": "lawgradify/",
+    "contrast": {
+     "checked": 87,
+     "pass": 87,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "lawgradify/course/",
+    "contrast": {
+     "checked": 90,
+     "pass": 88,
+     "skipped": 0,
+     "fails": [
+      {
+       "text": "Hide path",
+       "ratio": 4.18,
+       "need": 4.5
+      },
+      {
+       "text": "level",
+       "ratio": 3.76,
+       "need": 4.5
+      }
+     ]
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "BusinessGradify": [
+   {
+    "url": "businessgradify/",
+    "contrast": {
+     "checked": 93,
+     "pass": 93,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "FinanceGradify": [
+   {
+    "url": "financegradify/",
+    "contrast": {
+     "checked": 93,
+     "pass": 93,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "InvestorGradify": [
+   {
+    "url": "investorgradify/",
+    "contrast": {
+     "checked": 101,
+     "pass": 101,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "MedGradify": [
+   {
+    "url": "medgradify/",
+    "contrast": {
+     "checked": 81,
+     "pass": 81,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "DentalGradify": [
+   {
+    "url": "dentalgradify/",
+    "contrast": {
+     "checked": 81,
+     "pass": 81,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "VetGradify": [
+   {
+    "url": "vetgradify/",
+    "contrast": {
+     "checked": 81,
+     "pass": 81,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "NurseGradify": [
+   {
+    "url": "nursegradify/",
+    "contrast": {
+     "checked": 71,
+     "pass": 71,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "nursegradify/course/",
+    "contrast": {
+     "checked": 89,
+     "pass": 87,
+     "skipped": 0,
+     "fails": [
+      {
+       "text": "Hide path",
+       "ratio": 4.3,
+       "need": 4.5
+      },
+      {
+       "text": "level",
+       "ratio": 3.76,
+       "need": 4.5
+      }
+     ]
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "PharmaGradify": [
+   {
+    "url": "pharmagradify/",
+    "contrast": {
+     "checked": 72,
+     "pass": 72,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "pharmagradify/course/",
+    "contrast": {
+     "checked": 88,
+     "pass": 85,
+     "skipped": 0,
+     "fails": [
+      {
+       "text": "0 / 20 lessons",
+       "ratio": 4.2,
+       "need": 4.5
+      },
+      {
+       "text": "Hide path",
+       "ratio": 2.61,
+       "need": 4.5
+      },
+      {
+       "text": "level",
+       "ratio": 3.76,
+       "need": 4.5
+      }
+     ]
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "HealthGradify": [
+   {
+    "url": "healthgradify/",
+    "contrast": {
+     "checked": 87,
+     "pass": 87,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "PsychGradify": [
+   {
+    "url": "psychgradify/",
+    "contrast": {
+     "checked": 73,
+     "pass": 73,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "psychgradify/course/",
+    "contrast": {
+     "checked": 106,
+     "pass": 106,
+     "skipped": 0,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "InternshipGradify": [
+   {
+    "url": "internshipgradify/",
+    "contrast": {
+     "checked": 93,
+     "pass": 93,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "EngineerGradify": [
+   {
+    "url": "engineergradify/",
+    "contrast": {
+     "checked": 81,
+     "pass": 81,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "MathGradify": [
+   {
+    "url": "mathgradify/",
+    "contrast": {
+     "checked": 85,
+     "pass": 85,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "SciGradify": [
+   {
+    "url": "scigradify/",
+    "contrast": {
+     "checked": 80,
+     "pass": 80,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "scigradify/physics/",
+    "contrast": {
+     "checked": 81,
+     "pass": 80,
+     "skipped": 0,
+     "fails": [
+      {
+       "text": "level",
+       "ratio": 3.76,
+       "need": 4.5
+      }
+     ]
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "EcoGradify": [
+   {
+    "url": "ecogradify/",
+    "contrast": {
+     "checked": 79,
+     "pass": 79,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "SocGradify": [
+   {
+    "url": "socgradify/",
+    "contrast": {
+     "checked": 83,
+     "pass": 83,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "socgradify/course/",
+    "contrast": {
+     "checked": 130,
+     "pass": 130,
+     "skipped": 0,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "LitGradify": [
+   {
+    "url": "litgradify/",
+    "contrast": {
+     "checked": 81,
+     "pass": 81,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "LanguageGradify": [
+   {
+    "url": "languagegradify/",
+    "contrast": {
+     "checked": 89,
+     "pass": 89,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "ArtGradify": [
+   {
+    "url": "artgradify/",
+    "contrast": {
+     "checked": 85,
+     "pass": 85,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "MusicGradify": [
+   {
+    "url": "musicgradify/",
+    "contrast": {
+     "checked": 85,
+     "pass": 85,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "SportGradify": [
+   {
+    "url": "sportgradify/",
+    "contrast": {
+     "checked": 83,
+     "pass": 83,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   },
+   {
+    "url": "sportgradify/body.html",
+    "contrast": {
+     "checked": 63,
+     "pass": 62,
+     "skipped": 0,
+     "fails": [
+      {
+       "text": "Sport",
+       "ratio": 3.66,
+       "need": 4.5
+      }
+     ]
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ],
+  "CreateGradify": [
+   {
+    "url": "creategradify/",
+    "contrast": {
+     "checked": 101,
+     "pass": 101,
+     "skipped": 1,
+     "fails": []
+    },
+    "focus": {
+     "stops": 25,
+     "visible": 25,
+     "fails": []
+    }
+   }
+  ]
+ }
+}

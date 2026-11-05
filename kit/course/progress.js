@@ -33,6 +33,7 @@ export function mergeProgress(local = {}, cloud = {}) {
     solved: union(local.solved, cloud.solved, first),
     weekly: union(local.weekly, cloud.weekly),
     saved: union(local.saved, cloud.saved),
+    drafts: union(local.drafts, cloud.drafts),
     quiz: union(local.quiz, cloud.quiz, quiz),
     cards: union(local.cards, cloud.cards, card),
     mocks,

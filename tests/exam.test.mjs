@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import { buildExam, markExam, FORMATS } from "../kit/assess/exam.js";
 import law from "../kit/courses/law/course.js";
 import nursing from "../kit/courses/nursing/course.js";
+import pharmacy from "../kit/courses/pharmacy/course.js";
 
 const pool = [];
 for (const g of ["a", "b", "c"]) for (let i = 0; i < 10; i++) pool.push({ id: `${g}${i}`, group: g, groupLabel: g.toUpperCase(), Q: { type: i % 2 ? "sba" : "multi", q: `${g}${i}`, right: i % 2 ? "R" : ["R1", "R2"], wrong: i % 2 ? ["w1", "w2", "w3", "w4"] : ["w1", "w2"], why: "because" } });
@@ -28,7 +29,7 @@ test("marking scores, finds weak areas weakest first, and counts unanswered ques
   assert.equal(r.groups.at(-1).group, "b");
 });
 
-for (const [name, course] of [["law", law], ["nursing", nursing]]) test(`${name}: every configured exam has a valid format, size, time and source`, () => {
+for (const [name, course] of [["law", law], ["nursing", nursing], ["pharmacy", pharmacy]]) test(`${name}: every configured exam has a valid format, size, time and source`, () => {
   for (const e of course.exams) {
     assert.ok(FORMATS[e.format], `${e.id} format`); assert.ok(e.count > 0 && e.minutes > 0 && e.pass > 0 && e.pass < 1, `${e.id} numbers`);
     assert.ok(e.units?.every((n) => course.units.some((u) => u.n === n)) || course.paths.some((p) => p.id === e.path), `${e.id} draws from real schools or a path`);

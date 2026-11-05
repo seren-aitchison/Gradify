@@ -15,7 +15,17 @@ import { roadDefs, car } from "./road.js";
 import { parseNotes, lessonHtml, lessonText, lessonFrame, authorityCards, esc, inline, norm } from "./notes.js";
 import { renderQuestion, wireQuestions, normalize, TYPES as QTYPES } from "../assess/questions.js";
 import { makeAttempt, analyse } from "../assess/attempts.js";
+import { evidenceFromAttempts, sixProfiles, revisionQueue, SIX } from "../learning/mastery.js";
+import { sixHtml, calibrationHtml } from "../learning/mastery-view.js";
+import { learnerOf, needsSetup, applyPrefs } from "../data/profile.js";
+import { paceFor } from "../learning/pace.js";
+import { trackView, track } from "../core/analytics.js";
 import { mergeProgress, cloudCopy } from "./progress.js";
+import { mountRevalidation } from "./revalidation.js";
+import { scoreFeedback } from "../assess/tutor.js";
+import { feedbackHtml, paras } from "../assess/tutor-view.js";
+import { mountTutorPanel, directorHtml } from "./tutor-panel.js";
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
 import { buildExam, runExam, FORMATS } from "../assess/exam.js";
 
 const DAY = 864e5;
@@ -119,6 +129,14 @@ export function mountCourse(root, cfg) {
     catch { return scopeToSite(new LocalStore(), cfg.site); }
   })());
 
+  // the shared learner profile (kit/data/profile.js): exam date, daily time, prior knowledge, display
+  // settings. The daily XP goal follows the learner's daily study time until they pick one here.
+  applyPrefs();
+  trackView(cfg.site);
+  let prof = null;
+  const GOAL_FOR = (m) => (m <= 10 ? 20 : m <= 20 ? 30 : m <= 45 ? 50 : 100);
+  store().then((st) => st.getProfile()).then((p) => { prof = { ...p, learner: learnerOf(p) }; if (!S.goalChosen && p?.daily_minutes) S.goal = GOAL_FOR(p.daily_minutes); paintSide(); }).catch(() => {});
+
   // notes, loaded a unit at a time
   const cache = {};
   const unitNotes = (u) => (cache[u.id] ||= Promise.resolve(!cfg.written || cfg.written.includes(u.id) ? cfg.notes(u.id) : null).catch(() => null).then((txt) => {
@@ -153,7 +171,23 @@ export function mountCourse(root, cfg) {
   function wirePractice(el, context, contextId, xp = XP.check) {
     wireQuestions(el, (k) => pageQs.get(k)?.Q, (Q, res, first, box, meta) => {
       const it = pageQs.get(box.dataset.key); record(it, context, contextId, res, meta);
+      if (!res.correct && !res.self && Q.options && it.l && !box.querySelector(".co-whyw")) offerDiagnosis(box, Q, it, meta.response);
       if (first && res.score >= 0.7 && !S.solved[it.key]) { S.solved[it.key] = Date.now(); save(); award(xp, "check", it.key); }
+    });
+  }
+
+  // "Why was I wrong?": Gradify AI names the likely misconception behind a wrong choice and gives a check question
+  function offerDiagnosis(box, Q, it, chosen) {
+    const wrap = document.createElement("div"); wrap.className = "co-whyw";
+    wrap.innerHTML = `<button type="button" class="btn btn-ghost btn-sm"><span>Why was I wrong?</span></button><div class="co-whyout" aria-live="polite"></div>`;
+    box.append(wrap);
+    wrap.querySelector("button").addEventListener("click", async (e) => {
+      const out = wrap.querySelector(".co-whyout"); e.currentTarget.disabled = true; out.innerHTML = `<p class="co-empty">Looking at your answer…</p>`;
+      try {
+        const N = await notesFor(it.l);
+        const r = await askTutor({ mode: "diagnose", lesson: { title: it.l.title, text: lessonText(N) }, question: { q: Q.q, options: Q.options.map((o) => ({ text: o.text, correct: o.correct })), chosen, why: Q.why } });
+        out.innerHTML = `<div class="co-diag"><p><b>${esc(r.misconception)}</b></p>${paras(r.explanation)}<details><summary>Check: ${esc(r.check.question)}</summary><p>${esc(r.check.answer)}</p></details><p class="aq-note">From Gradify AI${r.fromLesson === false ? ", going beyond this lesson's notes" : ", using this lesson's notes"}. It can be wrong.</p></div>`;
+      } catch (err) { out.innerHTML = err.signin ? signinLine("This", "") : `<p class="co-empty">${esc(err.message)}</p>`; e.currentTarget.disabled = false; }
     });
   }
 
@@ -227,7 +261,7 @@ export function mountCourse(root, cfg) {
 
   // ---------- layout ----------
   const VIEWS = [...(cfg.overview ? [["overview", "Overview"]] : []), ["learn", "Learn"], ["review", "Review"], ["paths", "Paths"], ["tracks", `${TW}s`], ["problems", "Problems"],
-    ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []),
+    ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing?.length ? [["write", "Write"]] : []), ...(cfg.revalidation ? [["revalidation", "Revalidation"]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []),
     ["leaderboard", "Leaderboard"], ["me", "My progress"], ["features", "Features"]];
   roadDefs();
   root.classList.add("co");
@@ -293,12 +327,42 @@ export function mountCourse(root, cfg) {
           <small class="co-streak">${ic("flame")} ${st.n}-day streak${st.today ? "" : st.n ? " · learn today to keep it" : ""}</small>
           <select aria-label="Daily goal">${[20, 30, 50, 100].map((g) => `<option value="${g}" ${g === S.goal ? "selected" : ""}>${g} XP a day</option>`).join("")}</select></div>
       </section>
+      ${planHtml()}
       ${nl ? `<section class="co-card"><span class="co-kicker">${ic("flag")} Next milestone</span><h3>Finish ${U} ${nu.n}: ${esc(nu.title)}</h3><p>${left} lesson${left === 1 ? "" : "s"} to go, then the ${u1} quiz for +${XP.quiz} XP.</p><a class="btn btn-light lg btn-sm co-go" href="#/lesson/${nl.id}"><span>Continue: ${esc(nl.title)}</span></a></section>` : `<section class="co-card"><h3>Course complete</h3><p>Every lesson done. Keep your memory fresh in Review.</p></section>`}
       <section class="co-card"><span class="co-kicker">${ic("trophy")} Weekly challenge</span><h3>${c.name}</h3><p>${c.d}. Reward: +${XP.weekly} XP.</p><div class="co-bar warm"><i style="width:${(cw / c.n) * 100}%"></i></div><small>${cw} / ${c.n}${S.weekly[String(weekStart())] ? " · claimed" : ""} · resets Monday</small></section>
       <section class="co-card"><span class="co-kicker">Course progress</span><h3>${Object.keys(S.done).length} / ${lessons.length} lessons</h3>
         <div class="co-dots">${units.map((u) => { const t = trackOf(u), p = unitDone(u) / u.lessons.length; return `<a href="#/learn/${u.id}" title="${U} ${u.n}: ${esc(u.title)} (${Math.round(p * 100)}%)" style="--a:${t.from};--b:${t.to};--p:${p}"></a>`; }).join("")}</div></section>
       <section class="co-card"><span class="co-kicker">Badges · ${got.size} / ${BADGES.length}</span><div class="co-badges">${BADGES.map((b) => `<span class="${got.has(b.id) ? "on" : ""}" title="${b.name}: ${b.d}">${ic(got.has(b.id) ? "star" : "lock")}</span>`).join("")}</div><a class="co-more" href="#/me">See all your progress →</a></section>`;
-    side.querySelector("select").addEventListener("change", (e) => { S.goal = Number(e.target.value); save(); paintSide(); });
+    side.querySelector("select").addEventListener("change", (e) => { S.goal = Number(e.target.value); S.goalChosen = true; save(); paintSide(); });
+  }
+
+  // ---------- your plan: today's work and exam pace, from the shared profile ----------
+  function planHtml() {
+    if (!prof) return "";
+    const acct = `${cfg.app || "app.html"}#/account`;
+    if (needsSetup(prof) || !prof.daily_minutes) return `<section class="co-card co-plan"><span class="co-kicker">${ic("target")} Your plan</span><p>Tell Gradify your exam date and how long you can study each day, and every course plans your days around it.</p><a class="btn btn-ghost btn-sm" href="${acct}"><span>Set up your plan</span></a></section>`;
+    const path = S.path && cfg.paths.find((p) => p.id === S.path);
+    const pool = units.filter((u) => (!cfg.written || cfg.written.includes(u.id)) && (!path || path.units.includes(u.n))).flatMap((u) => (path ? pathLessons(path, u) : u.lessons));
+    const remaining = pool.filter((l) => !S.done[l.id]).length, prior = prof.learner.prior[cfg.site] || "new";
+    // the profile's exam date belongs to the learner's main subject
+    const examDate = prof.site === cfg.site ? prof.exam_date : null;
+    const p = paceFor({ examDate, dailyMinutes: prof.daily_minutes, remaining, dueCards: dueCards().length, dueQuestions: revisionQueue(S.attempts || [], { limit: 500 }).length, prior });
+    const t = p.today, parts = [t.cards && `${t.cards} flashcard${t.cards === 1 ? "" : "s"}`, t.questions && `${t.questions} question${t.questions === 1 ? "" : "s"} to revisit`, t.lessons && `${t.lessons} new lesson${t.lessons === 1 ? "" : "s"}`].filter(Boolean);
+    const fmt = (d) => new Date(`${d}T12:00:00Z`).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
+    const n1 = (x) => (x < 1 ? x.toFixed(1) : Math.round(x));
+    const scope = `${remaining} ${path ? `lessons on the ${esc(path.name)} path` : "lessons"}${cfg.written ? " written so far" : ""}`;
+    const line = {
+      done: `You've finished every ${path ? "lesson on this path" : "written lesson"}. Keep it fresh with Review.`,
+      "no-date": `${scope} left. At ${prof.daily_minutes} minutes a day you'd finish around ${fmt(p.finish)}.`,
+      "on-track": `On track for ${fmt(examDate)}: about ${n1(p.needPerDay)} lessons a day covers the ${scope}, with the last days left for revision.`,
+      tight: `Tight for ${fmt(examDate)}: you need about ${n1(p.needPerDay)} lessons a day and ${prof.daily_minutes} minutes fits about ${n1(p.lessonsPerDay)}. About ${p.minutesNeeded} minutes a day would do it.`,
+      behind: `Behind for ${fmt(examDate)}: at ${prof.daily_minutes} minutes a day you'd finish around ${fmt(p.finish)}. You'd need about ${p.minutesNeeded} minutes a day${cfg.paths.length ? ", or a path that covers less" : ""}.`,
+      past: `Your exam date (${fmt(examDate || "2000-01-01")}) has passed. Update it to get a new plan.`,
+    }[p.status];
+    return `<section class="co-card co-plan co-plan-${p.status}"><span class="co-kicker">${ic("target")} Your plan today</span>
+      <h3>${parts.length ? parts.join(", ") : "Nothing due"}</h3><p>${t.minutes ? `About ${t.minutes} minutes. ` : ""}${line}</p>
+      ${prior === "confident" && cfg.exams?.length && Object.keys(S.done).length < 5 ? `<p>You said you already know a lot of this. <a href="#/exams">Take an exam</a> to find where to start.</p>` : ""}
+      <small><a href="${acct}">Change exam date or study time</a></small></section>`;
   }
 
   // ---------- Learn: the road ----------
@@ -389,6 +453,7 @@ export function mountCourse(root, cfg) {
         ${N ? lessonFrame(N).top : ""}
         ${N ? `<div class="mv-cols">${lessonHtml(N)}</div>${lessonFrame(N).end}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
+        ${N ? `<section class="co-ask co-tutor"></section>` : ""}
         ${N?.items?.length ? `<section class="co-check"><h3>${ic("target")} Check yourself</h3>${N.items.map((it) => qHtml(it, { confidence: true })).join("")}</section>` : ""}
         <footer>
           <button class="btn btn-light lg co-complete" ${S.done[id] ? "disabled" : ""}><span>${S.done[id] ? "Completed ✓" : `Complete lesson · +${XP.lesson} XP`}</span></button>
@@ -403,19 +468,130 @@ export function mountCourse(root, cfg) {
     mountIxSlots(main);
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", () => flashcards(N.cards, l)));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
+    const tp = main.querySelector(".co-tutor");
+    if (tp) mountTutorPanel(tp, {
+      ask: askTutor, lesson: { id, title: l.title, text: lessonText(N) }, note: cfg.tutor || TUTOR_NOTE,
+      focus: sixProfiles(evidenceFromAttempts((S.attempts || []).filter((a) => a.lesson === id), { levels: cfg.levels || null })).all.weakest || "apply",
+      candidates: () => connectCandidates(l), unavailable: (what) => signinLine(what, ""),
+      link: (lid) => `#/lesson/${lid}`, titleOf: (lid) => byId[lid]?.title || lid,
+    });
     main.querySelector(".co-complete").addEventListener("click", async (e) => {
       if (S.done[id]) return;
-      S.done[id] = Date.now(); save(); e.currentTarget.disabled = true; e.currentTarget.querySelector("span").textContent = "Completed ✓";
+      S.done[id] = Date.now(); save(); track("lesson_complete", cfg.site); e.currentTarget.disabled = true; e.currentTarget.querySelector("span").textContent = "Completed ✓";
       await award(XP.lesson, "lesson", id, `${cfg.name}: ${l.title}`);
       if (unitDone(u) === u.lessons.length) celebrate(`${U} ${u.n} complete`, `${esc(u.title)}: every lesson done. Take the unit quiz for +${XP.quiz} XP.`, `<a class="btn btn-ghost lg btn-sm" href="#/quiz/${u.id}"><span>${U} quiz</span></a>`);
       else if (next) setTimeout(() => go(`lesson/${next.id}`), 650);
     });
   }
+// ---------- the AI tutor (kit/assess/tutor.js → supabase/functions/course-tutor) and written practice ----------
+  async function askTutor(body) {
+    const s = await store();
+    const session = s.mode === "cloud" ? await s.session?.() : null;
+    if (!session) throw Object.assign(new Error("Sign in to use the tutor."), { signin: true });
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/course-tutor`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}`, apikey: SUPABASE_ANON_KEY },
+      body: JSON.stringify({ subject: cfg.slug, ...body }),
+    }).catch(() => null);
+    const out = res ? await res.json().catch(() => ({})) : {};
+    if (!res?.ok) throw new Error(out.error || "The tutor isn't available right now. You can still self-assess with the rubric.");
+    track("tutor", cfg.site);
+    return out;
+  }
+  // until Gradify accounts are switched on (gradify.config.js), say so rather than offering a sign-in that can't work
+  const signinLine = (what, or = "self-assess with the rubric") => SUPABASE_URL
+    ? `<p class="co-empty">${esc(what)} uses Gradify AI, which needs a free account. <a href="${cfg.app || "app.html"}#/account">Sign in</a>${or ? `, or ${esc(or)}` : ""}.</p>`
+    : `<p class="co-empty">${esc(what)} uses Gradify AI, which isn't switched on yet: it arrives with Gradify accounts.${or ? ` For now, ${esc(or)}.` : ""}</p>`;
+  const TUTOR_NOTE = "Answers come from Gradify AI, using this lesson's notes. It's study help and it can be wrong: check anything important against the notes and your course materials.";
+  // lessons the tutor may link to: this school first, then nearby schools, then the rest (titles only)
+  function connectCandidates(l) {
+    const near = (u) => Math.abs(u.n - l.unit.n);
+    return [...units].sort((a, b) => near(a) - near(b)).flatMap((u) => u.lessons).filter((x) => x.id !== l.id).slice(0, 400).map((x) => ({ id: x.id, title: `${x.title} (${U} ${x.unit.n})` }));
+  }
+  // a finished written task is recorded like any other answer (provisional), and earns XP the first time
+  function recordTask(t, score, method, response) {
+    const u = units.find((x) => x.id === t.unit);
+    record({ Q: { type: "short", d: 3, objectives: [] }, key: t.id, v: null, l: u ? { id: null, module: null, unit: u } : null }, "practice", `write:${t.id}`,
+      { score, correct: score >= 0.7, method, status: "provisional" }, { response });
+    if (!S.solved[t.id]) { S.solved[t.id] = Date.now(); save(); award(XP.problem * 4, "write", t.id); }
+  }
+  const modelBlock = (t) => `<details class="co-model"><summary>Model answer</summary>${paras(t.model)}<p class="aq-note">A guide to what a strong answer covers, not the only acceptable wording.</p></details>`;
+  async function viewWrite(arg) {
+    const tasks = cfg.writing || [];
+    if (!arg) {
+      main.innerHTML = `<div class="co-intro"><span class="co-kicker">Written practice</span><h2>${esc(cfg.writingTitle || "Write it, then get feedback")}</h2><p>${esc(cfg.writingNote || "")} Check your answer against a rubric and a model answer, or sign in for provisional feedback from the Gradify AI tutor.</p></div>
+        <div class="co-wlist">${tasks.map((t) => { const u = units.find((x) => x.id === t.unit); return `<a class="co-wtask${S.solved[t.id] ? " is-solved" : ""}" href="#/write/${t.id}"><span class="co-kicker">${esc(t.kind)}${u ? ` · ${U} ${u.n}` : ""} · ${t.minutes} min</span><h3>${esc(t.title)}</h3><p>${esc(t.brief)}</p>${S.solved[t.id] ? `<small>${ic("check")} Done</small>` : ""}</a>`; }).join("")}</div>`;
+      return;
+    }
+    const t = tasks.find((x) => x.id === arg); if (!t) { location.hash = "#/write"; return; }
+    const head = `<div class="co-crumbs"><a href="#/write">← Written practice</a></div>
+      <div class="co-intro"><span class="co-kicker">${esc(t.kind)} · about ${t.minutes} minutes</span><h2>${esc(t.title)}</h2><p>${esc(t.brief)}</p></div>`;
+    const rubric = `<section class="co-panel co-rubric"><h3>What a good answer covers</h3><ol>${t.rubric.map((r) => `<li>${esc(r)}</li>`).join("")}</ol></section>`;
+    if (t.interview) return viewInterview(t, head, rubric);
+    S.drafts ||= {};
+    main.innerHTML = `${head}<section class="co-panel co-wprompt"><h3>The task</h3><p>${inline(t.prompt)}</p></section>
+      <label class="sr-only" for="co-wtext">Your answer</label><textarea id="co-wtext" class="aq-text co-wtext" rows="14" placeholder="Write your answer here. It's saved as you type.">${esc(S.drafts[t.id] || "")}</textarea>
+      <p class="co-wcount"></p>
+      <div class="co-wactions"><button type="button" class="btn btn-light lg btn-sm" data-ai><span>Get AI feedback</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-self><span>Self-assess with the rubric</span></button></div>
+      <div class="co-wout" aria-live="polite"></div>${rubric}`;
+    const ta = main.querySelector(".co-wtext"), out = main.querySelector(".co-wout"), count = () => { main.querySelector(".co-wcount").textContent = `${(ta.value.match(/\S+/g) || []).length} words`; };
+    let dt = null; count();
+    ta.addEventListener("input", () => { count(); clearTimeout(dt); dt = setTimeout(() => { S.drafts[t.id] = ta.value; save(); }, 800); });
+    main.querySelector("[data-self]").addEventListener("click", () => {
+      out.innerHTML = `<section class="co-panel"><h3>Self-assessment</h3><p>Tick each point your answer covers well, then record it.</p>${t.rubric.map((r, i) => `<label class="co-tick"><input type="checkbox" data-r="${i}"><span>${esc(r)}</span></label>`).join("")}
+        <button type="button" class="btn btn-light lg btn-sm" data-rec><span>Record my self-assessment</span></button></section>${modelBlock(t)}`;
+      out.querySelector("[data-rec]").addEventListener("click", (e) => {
+        const n = out.querySelectorAll("[data-r]:checked").length, score = Math.round((n / t.rubric.length) * 1000) / 1000;
+        recordTask(t, score, "self", { text: ta.value, ticked: [...out.querySelectorAll("[data-r]:checked")].map((x) => Number(x.dataset.r)) });
+        e.currentTarget.outerHTML = `<p class="co-empty">${ic("check")} Recorded: ${n} of ${t.rubric.length} points (self-assessed, provisional).</p>`;
+      });
+    });
+    main.querySelector("[data-ai]").addEventListener("click", async (e) => {
+      const btn = e.currentTarget; S.drafts[t.id] = ta.value; save();
+      btn.disabled = true; out.innerHTML = `<p class="co-empty">The tutor is reading your answer…</p>`;
+      try {
+        const { feedback } = await askTutor({ mode: "mark", task: { title: t.title, brief: t.brief, prompt: t.prompt, rubric: t.rubric, model: t.model }, answer: ta.value });
+        out.innerHTML = feedbackHtml(feedback) + modelBlock(t);
+        recordTask(t, scoreFeedback(feedback), "ai-assisted", { text: ta.value, ratings: feedback.criteria.map((c) => c.rating) });
+      } catch (err) { out.innerHTML = err.signin ? signinLine("AI feedback") : `<p class="co-empty">${esc(err.message)}</p>`; }
+      btn.disabled = false;
+    });
+  }
+  // a practice interview: the tutor plays the client or patient (t.who), then gives feedback on the whole interview
+  function viewInterview(t, head, rubric) {
+    const turns = [], kase = { client: t.client, persona: t.persona, facts: t.facts }, who = t.who || "client", Who = who[0].toUpperCase() + who.slice(1);
+    main.innerHTML = `${head}<section class="co-panel co-client"><h3>Your ${who}</h3><p>${esc(t.client)}</p></section>
+      <div class="co-chat" aria-live="polite"><p class="co-empty">The ${who} is waiting. Introduce yourself to begin.</p></div>
+      <form class="co-chatform"><label class="sr-only" for="co-say">What you say to the ${who}</label><textarea id="co-say" rows="2" maxlength="1500" placeholder="What do you say?"></textarea><button type="submit" class="btn btn-light lg btn-sm"><span>Say</span></button></form>
+      <div class="co-wactions"><button type="button" class="btn btn-ghost lg btn-sm" data-end><span>End the interview and get feedback</span></button></div>
+      <div class="co-wout" aria-live="polite"></div>${rubric}
+      <details class="co-casefile"><summary>No account? Practise with a friend playing the ${who} (spoiler: the case file)</summary><p>Give your friend this case file. They answer only what you ask.</p><p><b>${Who}:</b> ${esc(t.client)}</p><p><b>How they come across:</b> ${esc(t.persona)}</p><p><b>What they know:</b> ${esc(t.facts)}</p>${modelBlock(t)}</details>`;
+    const chat = main.querySelector(".co-chat"), form = main.querySelector(".co-chatform"), say = form.querySelector("textarea"), out = main.querySelector(".co-wout");
+    const paint = (busy) => { chat.innerHTML = turns.map((m) => `<p class="co-say ${m.role}"><b>${m.role === "learner" ? "You" : Who}</b>${esc(m.text)}</p>`).join("") + (busy ? `<p class="co-say client co-typing"><b>${Who}</b>…</p>` : ""); chat.scrollTop = chat.scrollHeight; };
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault(); const text = say.value.trim(); if (!text) return;
+      turns.push({ role: "learner", text }); say.value = ""; paint(true); form.querySelector("button").disabled = true;
+      try { const { reply } = await askTutor({ mode: "roleplay", case: kase, turns }); turns.push({ role: "client", text: reply }); paint(); }
+      catch (err) { paint(); out.innerHTML = err.signin ? signinLine(`The practice ${who}`, "practise with a friend using the case file below") : `<p class="co-empty">${esc(err.message)}</p>`; }
+      form.querySelector("button").disabled = false; say.focus();
+    });
+    say.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); form.requestSubmit(); } });
+    main.querySelector("[data-end]").addEventListener("click", async (e) => {
+      const btn = e.currentTarget; btn.disabled = true; out.innerHTML = `<p class="co-empty">The tutor is reviewing your interview…</p>`;
+      try {
+        const { feedback } = await askTutor({ mode: "debrief", case: kase, rubric: t.rubric, turns });
+        out.innerHTML = feedbackHtml(feedback) + modelBlock(t);
+        recordTask(t, scoreFeedback(feedback), "ai-assisted", { turns: turns.length });
+      } catch (err) { out.innerHTML = err.signin ? signinLine("Interview feedback") : `<p class="co-empty">${esc(err.message)}</p>`; }
+      btn.disabled = false;
+    });
+  }
+
   // a link from an anatomy lesson to the 3D model, opened on one system with a quiz (cfg.anatomy3d)
   function anatomyPanel(system) {
     const href = (mode) => `${cfg.anatomy3d.href}?${system ? `system=${encodeURIComponent(system)}&` : ""}quiz=${mode}`;
-    const name = system ? `the ${system} system` : "every body system";
-    return `<section class="co-3d"><h3>${ic("cube")} Practise in 3D</h3><p>Open the 3D body showing ${esc(name)} and test yourself on the real anatomy.</p>
+    const A = cfg.anatomy3d, name = system ? (A.names?.[system] || `the ${system} system`) : (A.all || "every body system");
+    return `<section class="co-3d"><h3>${ic("cube")} Practise in 3D</h3><p>Open ${esc(A.model || "the 3D body")} showing ${esc(name)} and ${esc(A.test || "test yourself on the real anatomy")}.</p>
       <div class="co-3d-actions"><a class="btn btn-light lg btn-sm" href="${href("find")}"><span>Find the structure</span></a><a class="btn btn-ghost lg btn-sm" href="${href("name")}"><span>Name the structure</span></a></div></section>`;
   }
   async function saveLesson(l, N, btn) {
@@ -494,17 +670,32 @@ export function mountCourse(root, cfg) {
     return cardPool;
   }
   const dueCards = () => (cardPool || []).filter((c) => { const st = S.cards[c.id]; return !st || isDue(st); });
+  // spaced retrieval of course questions (kit/learning/mastery.js revisionQueue): wrong answers come
+  // back soon, right ones at growing gaps. Answers here are recorded in the "review" context.
+  async function viewRetrieval() {
+    const due = revisionQueue(S.attempts || [], { limit: 10 });
+    if (!due.length) { main.innerHTML = `<div class="co-panel"><span class="co-kicker">Revisit</span><h2>No questions due</h2><p>Questions you got wrong come back after a few hours, and ones you got right return after 1, 3, 7, 21 and 60 days, so that what you know lasts.</p><a class="btn btn-light lg btn-sm" href="#/review"><span>Flashcard review</span></a></div>`; return; }
+    main.innerHTML = `<div class="co-panel"><p>Loading your questions…</p></div>`;
+    const need = new Set(due.map((q) => q.unit));
+    const notes = Object.assign({}, ...(await Promise.all(units.filter((u) => need.has(u.id)).map(unitNotes))));
+    const items = due.map((q) => ({ q, it: notes[q.lesson]?.items?.find((i) => i.key === q.id) })).filter((x) => x.it);
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Revisit</span><h2>${items.length} ${items.length === 1 ? "question" : "questions"} to bring back</h2><p>Answer without looking at the notes first. Recalling something just as it starts to fade is what makes it last. These answers count as retention evidence in My progress.</p></div>
+      <div class="co-plist">${items.map(({ q, it }) => `<div class="co-prob"><div class="co-pmeta"><a href="#/lesson/${it.l.id}">${U} ${it.l.unit.n} · ${esc(it.l.title)}</a><span>${q.reason === "wrong" ? "Wrong last time" : `Last right ${Math.round((Date.now() - q.lastAt) / DAY)}d ago`}</span></div>${qHtml(it)}</div>`).join("")}</div>`;
+    wirePractice(main.querySelector(".co-plist"), "review", "retrieval");
+  }
+  const revisitLink = () => { const n = revisionQueue(S.attempts || [], { limit: 200 }).length; return n ? `<a class="btn btn-ghost btn-sm" href="#/review/questions"><span>Revisit ${n} ${n === 1 ? "question" : "questions"}</span></a>` : ""; };
+
   async function viewReview() {
     await reviewPool(); paintHud();
     const due = shuffle(dueCards()).slice(0, 30);
     const learned = Object.keys(S.cards).length, total = cardPool.length;
     if (!due.length) {
-      main.innerHTML = `<div class="co-panel"><span class="co-kicker">Review</span><h2>${total ? "All caught up" : "Nothing to review yet"}</h2><p>${total ? `You've seen ${learned} of ${total} cards. The next ones come due as their intervals pass, so come back tomorrow.` : "Complete lessons and their flashcards join your review queue. Spaced repetition brings each card back just before you'd forget it."}</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Go to the path</span></a></div>`;
+      main.innerHTML = `<div class="co-panel"><span class="co-kicker">Review</span><h2>${total ? "All caught up" : "Nothing to review yet"}</h2><p>${total ? `You've seen ${learned} of ${total} cards. The next ones come due as their intervals pass, so come back tomorrow.` : "Complete lessons and their flashcards join your review queue. Spaced repetition brings each card back just before you'd forget it."}</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Go to the path</span></a> ${revisitLink()}</div>`;
       return;
     }
     let k = 0, done = 0;
     const step = () => {
-      if (k >= due.length) { main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic("cards")}</div><h2>${done} cards reviewed</h2><p>+${done * XP.review} XP. Come back tomorrow for the next batch.</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Back to the path</span></a></div>`; return; }
+      if (k >= due.length) { main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic("cards")}</div><h2>${done} cards reviewed</h2><p>+${done * XP.review} XP. Come back tomorrow for the next batch.</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Back to the path</span></a> ${revisitLink()}</div>`; save(); return; }
       const c = due[k], st = S.cards[c.id] || {}, pv = preview(st);
       main.innerHTML = `<div class="co-review"><div class="co-crumbs"><span>Review · ${k + 1} of ${due.length}</span><a href="#/lesson/${c.lesson}">${esc(byId[c.lesson].title)}</a></div><div class="co-qbar"><i style="width:${(k / due.length) * 100}%"></i></div>
         <button class="co-card3d big"><span class="f"><div>${inline(c.front)}</div><small>Tap or press space to reveal</small></span><span class="b"><div>${inline(c.back)}</div></span></button>
@@ -512,7 +703,10 @@ export function mountCourse(root, cfg) {
       const card = main.querySelector(".co-card3d"), rate = main.querySelector(".co-rate");
       card.onclick = () => { card.classList.add("flip"); rate.hidden = false; };
       rate.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
-        S.cards[c.id] = { ...st, ...schedule(st, b.dataset.r) }; save(); done++; k++;
+        S.cards[c.id] = { ...st, ...schedule(st, b.dataset.r) }; done++; k++;
+        // the rating is evidence too: recall, and retention once the card comes back after a gap
+        const score = { again: 0, hard: 0.6, good: 1, easy: 1 }[b.dataset.r];
+        record({ Q: { type: "card" }, key: `card:${c.id}`, l: byId[c.lesson] }, "review", "cards", { score, correct: score >= 0.6, method: "self" }, { response: b.dataset.r });
         award(XP.review, "review", c.id); step();
       }));
     };
@@ -548,10 +742,12 @@ export function mountCourse(root, cfg) {
     const sortKey = (x) => x.a.name.replace(/^(R|Re|In re)\s+(\(|v\s)?/i, "").toLowerCase();
     items.sort((x, y) => sortKey(x).localeCompare(sortKey(y)));
     const f = { unit: "", kind: "", q: "" };
-    main.innerHTML = `<div class="co-intro"><span class="co-kicker">${esc(cfg.authorities)}</span><h2>Case and statute cards</h2><p>${items.filter((x) => x.a.kind === "case").length} cases and ${items.filter((x) => x.a.kind === "law").length} statutory provisions from the lessons: facts, decision and principle for each case; what each provision does. Each card is also a flashcard in its lesson.</p></div>
-      <div class="co-filters co-auths-tools"><input type="search" class="co-auth-q" placeholder="Search cases and statutes" aria-label="Search cases and statutes">
+    const nK = (k) => items.filter((x) => x.a.kind === k).length, drugs = nK("drug");
+    const kinds = [["case", "Cases"], ["law", "Statutes"], ["drug", "Drugs"]].filter(([k]) => nK(k));
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">${esc(cfg.authorities)}</span><h2>${drugs && kinds.length === 1 ? "Drug cards" : "Case and statute cards"}</h2><p>${drugs && kinds.length === 1 ? `${drugs} drug cards from the lessons: class and mechanism, uses, key adverse effects and cautions, and monitoring and counselling. They're study summaries, not prescribing information: check the current BNF and SPC.` : `${nK("case")} cases and ${nK("law")} statutory provisions from the lessons: facts, decision and principle for each case; what each provision does.`} Each card is also a flashcard in its lesson.</p></div>
+      <div class="co-filters co-auths-tools"><input type="search" class="co-auth-q" placeholder="Search the cards" aria-label="Search the cards">
         <select class="co-auth-u" aria-label="${U}"><option value="">Every ${u1}</option>${units.filter((u) => items.some((x) => x.l.unit === u)).map((u) => `<option value="${u.id}">${U} ${u.n}: ${esc(u.title)}</option>`).join("")}</select>
-        <select class="co-auth-kind" aria-label="Kind"><option value="">Cases and statutes</option><option value="case">Cases</option><option value="law">Statutes</option></select></div>
+        ${kinds.length > 1 ? `<select class="co-auth-kind" aria-label="Kind"><option value="">All cards</option>${kinds.map(([k, l]) => `<option value="${k}">${l}</option>`).join("")}</select>` : ""}</div>
       <p class="co-pcount co-auth-n"></p><div class="co-auth-list"></div>`;
     const paint = () => {
       const q = norm(f.q), list = items.filter((x) => (!f.unit || x.l.unit.id === f.unit) && (!f.kind || x.a.kind === f.kind) && (!q || norm(Object.values(x.a).join(" ")).includes(q)));
@@ -560,7 +756,7 @@ export function mountCourse(root, cfg) {
     };
     main.querySelector(".co-auth-q").addEventListener("input", (e) => { f.q = e.target.value; paint(); });
     main.querySelector(".co-auth-u").addEventListener("change", (e) => { f.unit = e.target.value; paint(); });
-    main.querySelector(".co-auth-kind").addEventListener("change", (e) => { f.kind = e.target.value; paint(); });
+    main.querySelector(".co-auth-kind")?.addEventListener("change", (e) => { f.kind = e.target.value; paint(); });
     paint();
   }
 
@@ -614,6 +810,34 @@ export function mountCourse(root, cfg) {
       <p class="co-acct">Self-assessed short answers are provisional and aren't counted here.</p></section>`;
   }
 
+  // six-dimension mastery from every answer in this course (kit/learning/mastery.js)
+  function masteryHtml() {
+    const ev = evidenceFromAttempts(S.attempts || [], { levels: cfg.levels || null }), { all, groups } = sixProfiles(ev, { by: (e) => e.unit });
+    const pc = (x) => `${Math.round(x * 100)}%`, label = (k) => SIX.find((d) => d.key === k)?.label.toLowerCase();
+    const schools = groups.map((g) => ({ g, u: units.find((x) => x.id === g.key) })).filter((x) => x.u).sort((a, b) => a.u.n - b.u.n);
+    return `<section class="co-panel co-mx"><h3>Mastery</h3>
+      <p class="co-empty">${all.mastery == null ? `Gradify gives an overall mastery figure once at least two kinds of evidence have ${3}+ answers each. It won't guess from less.` : `<b>${pc(all.mastery)}</b> overall, measured from ${all.measured.length} of the 6 kinds of evidence.${all.missing.length ? ` Not yet measured: ${all.missing.map(label).join(", ")}.` : ""}`}</p>
+      ${sixHtml(all)}${calibrationHtml(all)}
+      ${schools.length ? `<h4>By ${u1}</h4><ul class="co-weak">${schools.map(({ g, u }) => `<li><a href="#/learn/${u.id}">${U} ${u.n}: ${esc(u.title)}</a> <small>${g.mastery == null ? `${g.answers} answers: not enough evidence yet` : `${pc(g.mastery)}${g.weakest ? ` · weakest: ${label(g.weakest)}` : ""}`}</small></li>`).join("")}</ul>` : ""}
+      <p>${revisitLink()}</p>
+      <div class="co-dirbox"><h4>Your next session</h4><p class="co-empty">The Gradify AI study director turns this evidence into a plan for your next session.</p><button type="button" class="btn btn-ghost btn-sm" data-director><span>Plan my next session</span></button><div class="co-dirout" aria-live="polite"></div></div></section>`;
+  }
+  // what the study director sees: this summary and the lessons it may name, nothing else
+  function directorRequest() {
+    const ev = evidenceFromAttempts(S.attempts || [], { levels: cfg.levels || null });
+    const all = sixProfiles(ev).all, byLesson = sixProfiles(ev).groups.filter((g) => byId[g.key]);
+    const weak = byLesson.filter((g) => g.answers >= 2).sort((a, b) => (a.mastery ?? a.dims.recognition.value ?? 1) - (b.mastery ?? b.dims.recognition.value ?? 1)).slice(0, 6)
+      .map((g) => ({ id: g.key, title: byId[g.key].title, note: `${g.mastery == null ? "not enough evidence" : `${Math.round(g.mastery * 100)}% mastery`}${g.weakest ? `, weakest ${g.weakest}` : ""}${g.calibration?.sureWrong ? `, ${g.calibration.sureWrong} confident mistakes` : ""}` }));
+    const due = revisionQueue(S.attempts || [], { limit: 500 });
+    const upcoming = []; for (const x of lessons) { if (upcoming.length >= 6) break; if (!S.done[x.id] && (!cfg.written || cfg.written.includes(x.unit.id))) upcoming.push(x); }
+    const ids = [...new Set([...weak.map((w) => w.id), ...due.map((q) => q.lesson).filter(Boolean), ...upcoming.map((x) => x.id)])].slice(0, 40);
+    const c = all.calibration, examDate = prof?.site === cfg.site ? prof?.exam_date : null;
+    return { mode: "director", course: cfg.name, candidates: ids.map((i) => ({ id: i, title: byId[i]?.title || i })),
+      summary: { dailyMinutes: prof?.daily_minutes || 20, examDate, done: Object.keys(S.done).length, total: lessons.length, dueCards: dueCards().length, dueQuestions: due.length,
+        mastery: all.mastery, dims: Object.fromEntries(SIX.map((d) => [d.key, { value: all.dims[d.key].value, certainty: all.dims[d.key].certainty }])),
+        calibration: c ? `${c.sure} answers marked sure, ${c.sureWrong} of them wrong; ${c.guessRight} guesses right` : "", weak, pace: "" } };
+  }
+
   async function viewMe() {
     const st = stats(), xp = st.xp, L = levelOf(xp), sk = streak();
     const byDay = {}; for (const r of S.log) byDay[day(r.t)] = (byDay[day(r.t)] || 0) + r.xp;
@@ -622,12 +846,18 @@ export function mountCourse(root, cfg) {
     const last14 = Array.from({ length: 14 }, (_, i) => { const d = day(Date.now() - (13 - i) * DAY); return [d, byDay[d] || 0]; }), mx = Math.max(S.goal, ...last14.map((x) => x[1]));
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">My progress</span><h2>Your ${esc(cfg.name)}</h2><p>Everything you've done here, and what's saved to your Gradify account.</p></div>
       <div class="co-tiles">${[["Level", L.n], ["Total XP", xp.toLocaleString()], ["Day streak", sk.n], ["Best streak", sk.best], ["Lessons", `${st.lessons} / ${lessons.length}`], ["Units cleared", st.units], ["Quizzes passed", st.quizzes], ["Problems solved", st.solved]].map(([k, v]) => `<div><small>${k}</small><b>${v}</b></div>`).join("")}</div>
+      ${masteryHtml()}
       ${insightHtml()}
       <section class="co-panel"><h3>Activity</h3><div class="co-heat">${cells}</div><p class="co-dayinfo">Pick a day to see what you did.</p></section>
       <section class="co-panel"><h3>XP, last 14 days</h3><div class="co-bars">${last14.map(([d, v]) => `<div title="${d}: ${v} XP"><i style="height:${(v / mx) * 100}%" class="${v >= S.goal ? "hit" : ""}"></i><small>${d.slice(8)}</small></div>`).join("")}<span class="co-goalline" style="bottom:${(S.goal / mx) * 100}%">goal ${S.goal}</span></div></section>
       <section class="co-panel"><h3>${TW}s</h3><div class="co-mastery">${cfg.tracks.map((t) => { const us = t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean), tot = us.reduce((a, u) => a + u.lessons.length, 0), dn = us.reduce((a, u) => a + unitDone(u), 0); return `<div style="--a:${t.from};--b:${t.to}"><span>${esc(t.name)}</span><div class="co-bar"><i style="width:${(dn / tot) * 100}%"></i></div><small>${dn}/${tot}</small></div>`; }).join("")}</div></section>
       <section class="co-panel"><h3>Badges</h3><div class="co-badgelist">${BADGES.map((b) => `<div class="${b.ok(st) ? "on" : ""}">${ic(b.ok(st) ? "star" : "lock")}<b>${b.name}</b><small>${b.d}</small></div>`).join("")}</div></section>
       <section class="co-panel co-saved"><h3>Saved to your account</h3><p class="co-empty">Loading…</p></section>`;
+    main.querySelector("[data-director]")?.addEventListener("click", async (e) => {
+      const out = main.querySelector(".co-dirout"); e.currentTarget.disabled = true; out.innerHTML = `<p class="co-empty">Planning from your progress…</p>`;
+      try { out.innerHTML = directorHtml(await askTutor(directorRequest()), { link: (lid) => `#/lesson/${lid}`, titleOf: (lid) => byId[lid]?.title || "" }); }
+      catch (err) { out.innerHTML = err.signin ? signinLine("The study director", "use Revisit and Your plan") : `<p class="co-empty">${esc(err.message)}</p>`; e.currentTarget.disabled = false; }
+    });
     main.querySelectorAll("[data-day]").forEach((b) => b.addEventListener("click", () => {
       const rows = S.log.filter((r) => day(r.t) === b.dataset.day), kinds = {};
       for (const r of rows) kinds[r.k] = (kinds[r.k] || 0) + 1;
@@ -696,6 +926,7 @@ export function mountCourse(root, cfg) {
       if (again) return viewExam(id);
       // every exam answer is an attempt record; the summary keeps only scores and weak areas
       for (const r of summary.items || []) if (r.item && !r.unanswered) record(r.item, "exam", e.id, r, { response: r.response, ms: r.ms, attempt: 1 });
+      track("exam_finish", cfg.site);
       const { items: _drop, ...keep } = summary;
       (S.mocks[e.id] ||= []).push(keep); save();
       if (summary.pass) award(XP.quiz, "mock", e.id, `${cfg.name}: ${e.title} ${Math.round(summary.score * 100)}%`);
@@ -798,11 +1029,13 @@ export function mountCourse(root, cfg) {
     if (view === "learn") { if (arg) openUnit(arg); viewLearn(arg); }
     else if (view === "lesson") await viewLesson(arg);
     else if (view === "quiz") await viewQuiz(arg);
-    else if (view === "review") await viewReview();
+    else if (view === "review") await (arg === "questions" ? viewRetrieval() : viewReview());
     else if (view === "paths") viewPaths();
     else if (view === "tracks") viewTracks();
     else if (view === "problems") await viewProblems();
     else if (view === "cases") await viewAuthorities();
+    else if (view === "write") await viewWrite(arg);
+    else if (view === "revalidation") await mountRevalidation(main, await store(), { accountHref: `${cfg.app || "app.html"}#/account` });
     else if (view === "exams") await viewExams();
     else if (view === "exam") await viewExam(arg);
     else if (view === "practice") await viewPractice(arg);

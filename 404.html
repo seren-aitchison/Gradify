@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Page not found · Gradify</title>
+  <meta name="description" content="This page doesn't exist on getgradify.com. Find the Gradify site or course you were looking for.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#000000">
+  <!-- GitHub Pages serves this file for any missing address, at that address, so every path here is absolute -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/kit/styles/base.css">
+  <style>
+    main { max-width: 680px; margin: 0 auto; padding: 72px 16px 80px; }
+    .code { font: 500 13px var(--mono); letter-spacing: .12em; color: var(--faint); }
+    h1 { font-size: clamp(32px, 6vw, 52px); letter-spacing: -.03em; margin: 8px 0 10px; }
+    p { color: var(--mute); line-height: 1.6; }
+    .guess { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); padding: 14px 16px; margin: 20px 0; }
+    ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+    li a { display: block; padding: 12px 14px; border: 1px solid var(--line); border-radius: 14px; text-decoration: none; color: var(--fg); background: rgba(255, 255, 255, .02); }
+    li a small { display: block; color: var(--faint); margin-top: 2px; }
+    li a:hover { border-color: var(--line-strong); }
+    .row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="code">404</span>
+    <h1>This page doesn't exist</h1>
+    <p>The address may have a typo, or the page may have moved.</p>
+    <div class="guess" id="guess" hidden></div>
+    <h2>Courses you can take now</h2>
+    <ul id="sites"><li><a href="/lawgradify/">LawGradify</a></li><li><a href="/scigradify/">SciGradify</a></li><li><a href="/nursegradify/">NurseGradify</a></li></ul>
+    <div class="row"><a class="btn btn-light btn-sm" href="/"><span>Go to getgradify.com</span></a><a class="btn btn-ghost btn-sm" href="/app.html"><span>Open the Gradify app</span></a></div>
+  </main>
+  <script type="module">
+    import { SITES, slugOf } from "/kit/core/site.js";
+    // the live and beta sites, from the same list as the homepage
+    const open = SITES.filter((s) => s.built && ["live", "beta"].includes(s.status));
+    document.getElementById("sites").innerHTML = open.map((s) => `<li><a href="/${slugOf(s)}/">${s.n}<small>${s.status === "beta" ? "Beta" : "Live"}</small></a></li>`).join("");
+    // a likely match for a mistyped site folder: getgradify.com/lawgradfy/ → LawGradify
+    const first = location.pathname.split("/").filter(Boolean)[0]?.toLowerCase() || "";
+    const dist = (a, b) => { const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]); for (let j = 1; j <= b.length; j++) d[0][j] = j; for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); return d[a.length][b.length]; };
+    const best = first && SITES.filter((s) => s.built).map((s) => ({ s, d: dist(first, slugOf(s)) })).sort((a, b) => a.d - b.d)[0];
+    if (best && best.d > 0 && best.d <= 3) { const g = document.getElementById("guess"); g.hidden = false; g.innerHTML = `Did you mean <a href="/${slugOf(best.s)}/">${best.s.n}</a>?`; }
+  </script>
+</body>
+</html>

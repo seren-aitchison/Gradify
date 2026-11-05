@@ -5,12 +5,17 @@ import { icon } from "../core/icons.js";
 import { tile, ink } from "../core/colour.js";
 import { SAMPLE, readFile } from "../notes/studio.js";
 import { LocalStore, CloudStore, cloudConfigured, scopeToSite } from "../data/store.js";
+import { learnerOf, saveLearner, syncMirror, needsSetup, applyPrefs, PRIOR } from "../data/profile.js";
+import { trackView } from "../core/analytics.js";
+applyPrefs();
 import { currentSite, nameHtml } from "../core/site.js";
 // on a sub-site (getgradify.com/medgradify/), the app belongs to that site
 const SITE = currentSite();
+trackView(SITE || "Gradify app");
 import { generate, regenerateCard, generateQuestions } from "../notes/engine.js";
 import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "../learning/srs.js";
-import { topicProfiles, practiceOrder, DIMENSIONS, LEVELS } from "../learning/mastery.js";
+import { topicProfiles, practiceOrder, LEVELS } from "../learning/mastery.js";
+import { sixHtml, calibrationHtml, HOW } from "../learning/mastery-view.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -70,7 +75,7 @@ async function stats() {
 const routes = { today: renderToday, start: renderStart, new: renderNew, deck: renderDeck, study: renderStudy, topic: renderTopic, progress: renderProgress, plan: renderPlan, account: renderAccount };
 async function route() {
   const [name, arg] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
-  if (!profile.goal && !["start", "account"].includes(name)) { location.replace("#/start"); return; }
+  if (needsSetup(profile) && !["start", "account"].includes(name)) { location.replace("#/start"); return; }
   document.querySelectorAll(".app-nav a, .tabbar a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === name || ((name === "deck" || name === "topic") && a.dataset.route === (name === "topic" ? "progress" : "notes")) || (name === "new" && a.dataset.route === "notes"))));
   view.innerHTML = '<div class="loading" aria-busy="true"></div>';
   try { await (routes[name] || renderToday)(arg); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
@@ -86,6 +91,11 @@ const GOALS = [
   { id: "curious", t: "Learn something new", d: "No deadline, just progress", i: "bulb" },
 ];
 const picks = {}; // choices made during setup, saved together at the end
+// accessibility settings, shared by set-up and Account; applied on every Gradify site
+const prefsFields = (pr) => `<fieldset class="setup-prefs"><legend>Display</legend>
+  <label class="check"><input type="checkbox" name="motion" ${pr.motion === "reduce" ? "checked" : ""}> <span>Reduce motion (no animations)</span></label>
+  <label class="check"><input type="checkbox" name="text" ${pr.text === "large" ? "checked" : ""}> <span>Larger text</span></label></fieldset>`;
+const prefsFrom = (f) => ({ motion: f.get("motion") ? "reduce" : "auto", text: f.get("text") ? "large" : "normal" });
 async function renderStart(stepArg) {
   const step = Number(stepArg) || 1;
   const p = profile;
@@ -93,7 +103,9 @@ async function renderStart(stepArg) {
   if (step === 1) {
     view.innerHTML = `<section class="setup"><div class="setup-dots">${dots}</div>
       <h1>What do you want to achieve?</h1><p class="sub">Gradify plans your revision around it. You can change it any time.</p>
-      <div class="goal-grid">${GOALS.map((g) => `<button type="button" class="goal-card glass ${p.goal === g.id ? "on" : ""}" data-goal="${g.id}"><span class="g-ico">${icon(g.i)}</span><b>${g.t}</b><span>${g.d}</span></button>`).join("")}</div></section>`;
+      <div class="goal-grid">${GOALS.map((g) => `<button type="button" class="goal-card glass ${p.goal === g.id ? "on" : ""}" data-goal="${g.id}"><span class="g-ico">${icon(g.i)}</span><b>${g.t}</b><span>${g.d}</span></button>`).join("")}</div>
+      <p class="setup-skip"><button type="button" class="btn btn-ghost btn-sm" id="skip"><span>Skip for now</span></button> <small>You can set this up later from Account.</small></p></section>`;
+    $("#skip").addEventListener("click", async () => { await saveLearner(store, { skipped_at: new Date().toISOString() }); profile = await store.getProfile(); location.hash = "#/today"; });
     view.querySelector(".goal-grid").addEventListener("click", (e) => {
       const b = e.target.closest("[data-goal]");
       if (!b) return;
@@ -132,13 +144,18 @@ async function renderStart(stepArg) {
       <label><span>How long can you study on a normal day?</span>
         <select name="daily_minutes">${[10, 20, 30, 45, 60, 90].map((m) => `<option value="${m}" ${Number(p.daily_minutes || 20) === m ? "selected" : ""}>${m} minutes</option>`).join("")}</select></label>
       <label><span>Level</span><select name="level">${[["school", "School"], ["undergraduate", "University"], ["postgraduate", "Postgraduate"], ["professional", "Professional"]].map(([v, l]) => `<option value="${v}" ${p.level === v ? "selected" : ""}>${l}</option>`).join("")}</select></label>
+      <label><span>How much do you already know? <em class="hint">${esc(siteOf(site).n)}: ${esc((siteOf(site).d || "").split(/[:.]/)[0].toLowerCase())}</em></span><select name="prior">${PRIOR.map(([v, l]) => `<option value="${v}" ${(learnerOf(p).prior[site] || "new") === v ? "selected" : ""}>${l}</option>`).join("")}</select></label>
       <label><span>Your first name (optional)</span><input name="display_name" autocomplete="given-name" value="${esc(p.display_name || "")}"></label>
+      ${prefsFields(learnerOf(p).prefs)}
       <button class="btn btn-primary lg" type="submit"><span>Next: add your notes</span></button>
     </form></section>`;
   $("#details").addEventListener("submit", async (e) => {
     e.preventDefault();
     const f = new FormData(e.target);
     profile = await store.saveProfile({ goal, site, exam_date: f.get("exam_date") || null, daily_minutes: Number(f.get("daily_minutes")), level: f.get("level"), display_name: (f.get("display_name") || "").trim() || null });
+    const l = learnerOf(profile);
+    await saveLearner(store, { subjects: [...new Set([...l.subjects, site])], prior: { [site]: f.get("prior") }, prefs: prefsFrom(f), onboarded_at: l.onboarded_at || new Date().toISOString(), skipped_at: null });
+    profile = await store.getProfile();
     location.hash = "#/new";
   });
 }
@@ -572,12 +589,15 @@ const topicHref = (key) => `#/topic/${encodeURIComponent(key)}`;
 const studyHref = (key) => `#/study/t:${encodeURIComponent(key)}`;
 // where a topic's next step happens: adding questions is on the deck page, everything else is a session
 const stepHref = (t) => (t.next.kind === "deepen" ? `#/deck/${t.documentId}` : studyHref(t.key));
-const NO_EVIDENCE = {
+// where each dimension's evidence comes from, for a deck of flashcards
+const SIX_HOW = {
+  ...HOW,
+  recognition: "Flashcards don't test this: it comes from multiple-choice questions in Gradify courses.",
   recall: "Answer some of this topic's cards to measure it.",
   explain: "Comes from Explain questions. Add them from this topic's deck, then answer a few.",
   apply: "Comes from Apply questions. Add them from this topic's deck, then answer a few. Gradify won't guess.",
-  confidence: "Choose how sure you are before seeing each answer.",
-  retention: "Measured once you've reviewed a card at least once.",
+  transfer: "Comes from mixed exams in Gradify courses. Flashcards on their own can't show it.",
+  retention: "Measured when you answer a card again a day or more after last seeing it.",
 };
 async function renderTopic(arg) {
   const key = decodeURIComponent(arg || "");
@@ -600,10 +620,7 @@ async function renderTopic(arg) {
     </article>
     <div class="prog-grid">
       <article class="panel glass"><div class="panel-head"><h3>Mastery profile</h3><span class="pill-dark">from your answers</span></div>
-        <ul class="dims">${DIMENSIONS.map((d) => { const v = t.dims[d.key]; return `<li class="${v.value == null ? "none" : ""}">
-          <div class="dim-top"><b>${d.label}</b><em>${v.value == null ? "No evidence yet" : pctOf(v.value)}</em></div>
-          <span class="goal-bar"><i style="width:${v.value == null ? 0 : Math.round(v.value * 100)}%" class="${v.value != null && v.value >= 0.7 ? "ok" : ""}"></i></span>
-          <span class="dim-note">${v.value == null ? NO_EVIDENCE[d.key] : `${d.what} · ${v.n} ${d.key === "retention" ? (v.n === 1 ? "card" : "cards") : v.n === 1 ? "answer" : "answers"}`}</span></li>`; }).join("")}</ul>
+        ${sixHtml(t.six, { how: SIX_HOW })}${calibrationHtml(t.six)}
       </article>
       <div class="topic-side">
         ${t.misconceptions.length ? `<article class="panel glass warn-card"><div class="panel-head"><h3>Possible misconceptions</h3></div>
@@ -736,6 +753,10 @@ async function renderAccount() {
       ${SITE ? "" : `<label><span>Subject</span><select name="site">${SITES.map((x) => `<option ${x.n === s.n ? "selected" : ""}>${esc(x.n)}</option>`).join("")}</select></label>`}
       <label><span>Exam date</span><input type="date" name="exam_date" value="${profile.exam_date || ""}"></label>
       <label><span>Daily study time</span><select name="daily_minutes">${[10, 20, 30, 45, 60, 90].map((m) => `<option value="${m}" ${Number(profile.daily_minutes) === m ? "selected" : ""}>${m} minutes</option>`).join("")}</select></label>
+      <label><span>Level</span><select name="level">${[["school", "School"], ["undergraduate", "University"], ["postgraduate", "Postgraduate"], ["professional", "Professional"]].map(([v, l]) => `<option value="${v}" ${profile.level === v ? "selected" : ""}>${l}</option>`).join("")}</select></label>
+      <label><span>What you already know about ${esc(s.n)}</span><select name="prior">${PRIOR.map(([v, l]) => `<option value="${v}" ${(learnerOf(profile).prior[s.n] || "new") === v ? "selected" : ""}>${l}</option>`).join("")}</select></label>
+      ${prefsFields(learnerOf(profile).prefs)}
+      <p class="sub">Every Gradify site uses these: courses pace your plan from your exam date and daily time.${learnerOf(profile).onboarded_at ? "" : ` <a href="#/start">Run set-up</a>`}</p>
       <button class="btn btn-light lg btn-sm" type="submit"><span>Save</span></button>
     </form>
     <article class="panel glass"><h3>Your data</h3><p class="sub">${SITE ? `It's yours. Download or delete everything you've added on ${esc(SITE)}. Your notes on other Gradify sites stay as they are.` : "It's yours. Download everything, or delete it."}</p>
@@ -744,7 +765,11 @@ async function renderAccount() {
   $("#prefs").addEventListener("submit", async (e) => {
     e.preventDefault();
     const f = new FormData(e.target);
-    profile = await store.saveProfile({ goal: f.get("goal"), site: SITE || f.get("site"), exam_date: f.get("exam_date") || null, daily_minutes: Number(f.get("daily_minutes")) });
+    const site = SITE || f.get("site");
+    profile = await store.saveProfile({ goal: f.get("goal"), site, exam_date: f.get("exam_date") || null, daily_minutes: Number(f.get("daily_minutes")), level: f.get("level") });
+    const l = learnerOf(profile);
+    await saveLearner(store, { subjects: [...new Set([...l.subjects, site])], prior: { [site]: f.get("prior") }, prefs: prefsFrom(f) });
+    profile = await store.getProfile();
     toast("Saved.");
   });
   $("#export").addEventListener("click", async () => {
@@ -782,6 +807,7 @@ async function boot() {
   // on a sub-site, the app only sees that site's notes and progress
   if (SITE) { store = scopeToSite(store, SITE); picks.site = SITE; }
   profile = await store.getProfile();
+  syncMirror(profile);   // the account's settings, for every site in this browser
   // arriving from a site card on getgradify.com: "Study MedGradify in Gradify"
   const fromSite = SITE ? null : new URLSearchParams(location.search).get("site");
   if (fromSite && SITES.some((x) => x.n === fromSite)) {

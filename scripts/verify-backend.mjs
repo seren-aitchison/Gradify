@@ -29,7 +29,7 @@ const show = (s) => { steps.push(s); console.log(`  ${MARK[s.ok]} ${s.label}${s.
 
 // 1. code: in the repository
 console.log("1 Code in the repository");
-const files = [...Object.keys(TABLES).map((m) => `supabase/migrations/${m}.sql`), "supabase/functions/study-pack/index.ts", "kit/data/store.js"];
+const files = [...Object.keys(TABLES).map((m) => `supabase/migrations/${m}.sql`), "supabase/functions/study-pack/index.ts", "supabase/functions/course-tutor/index.ts", "kit/data/store.js"];
 const absent = [];
 for (const f of files) if (!(await access(new URL(f, root)).then(() => true, () => false))) absent.push(f);
 show({ stage: 1, id: "code", label: "Migrations, study-pack function and cloud store exist", ok: absent.length === 0, detail: absent.length ? `missing ${absent.join(", ")}` : `${files.length} files` });
