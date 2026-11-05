@@ -479,3 +479,9 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(255, 255, 2
 .co-ev-contested { color: #fbbf24; border-color: rgba(251, 191, 36, .45); }
 .co-ev-hypothetical { color: #a78bfa; border-color: rgba(167, 139, 250, .45); }
 .co-reviewed { margin: 0 0 14px; color: var(--mute); font: 12px/1.5 var(--mono); }
+
+/* link from an anatomy lesson to the 3D model quizzes (cfg.anatomy3d) */
+.co-3d { margin: 22px 0 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 16px; background: rgba(94, 240, 255, .04); }
+.co-3d h3 { margin: 0 0 6px; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+.co-3d p { margin: 0 0 12px; color: var(--mute); }
+.co-3d-actions { display: flex; flex-wrap: wrap; gap: 8px; }

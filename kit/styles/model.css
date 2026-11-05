@@ -47,6 +47,13 @@
 .mv-mine a { color: var(--c); text-decoration: none; }
 .mv-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
 .quizzing .mv-controls .mv-quiz { display: none; }
+.quizzing .mv-labels { display: none; }
+.mv-quizzes { display: flex; flex-wrap: wrap; gap: 8px; }
+.mv-opts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.mv-opts button { padding: 7px 11px; border-radius: 10px; border: 1px solid var(--line-strong); background: rgba(0, 0, 0, .45); color: var(--fg); font: 13px var(--sans); cursor: pointer; }
+.mv-opts button:hover { background: rgba(255, 255, 255, .08); }
+.mv-opts button.is-right { border-color: #4fe0a6; background: rgba(79, 224, 166, .18); }
+.mv-opts button.is-wrong { border-color: #ff6b6b; background: rgba(255, 107, 107, .16); }
 
 /* the notes under the model */
 .mv-notes { margin-top: 28px; scroll-margin-top: 90px; }
@@ -95,3 +102,6 @@
 .mv-credit { position: absolute; right: 14px; bottom: 10px; max-width: 60%; margin: 0; font: 500 10.5px/1.35 var(--sans); color: rgba(220, 220, 225, .55); text-align: right; pointer-events: auto; }
 .mv-credit a { color: inherit; }
 @media (max-width: 640px) { .mv-credit { left: 14px; right: 14px; max-width: none; bottom: 48px; text-align: left; } }
+/* name-it quiz: the bar holds answer buttons, so it wraps */
+.mv-quizbar:has(.mv-opts) { border-radius: 16px; flex-wrap: wrap; width: min(560px, calc(100% - 24px)); justify-content: center; }
+.mv-quizbar .mv-q { min-width: 0; text-align: center; }

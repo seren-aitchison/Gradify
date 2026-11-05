@@ -28,6 +28,7 @@ const rng = (s) => () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
 export const levelOf = (xp) => { let n = 1; while (50 * n * (n + 1) <= xp) n++; return { n, from: 50 * (n - 1) * n, to: 50 * n * (n + 1) }; };
 const ICON = {
   play: '<path d="M9 6.5v11l9-5.5z" fill="currentColor"/>',
+  cube: '<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z M4 7.5l8 4.5 8-4.5 M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>',
   check: '<path d="M6 12.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>',
   star: '<path d="M12 3.5l2.6 5.6 6 .7-4.5 4.1 1.2 6-5.3-3-5.3 3 1.2-6L3.4 9.8l6-.7z" fill="currentColor"/>',
   lock: '<rect x="6" y="11" width="12" height="9" rx="2" fill="currentColor"/><path d="M8.5 11V8.5a3.5 3.5 0 017 0V11" fill="none" stroke="currentColor" stroke-width="2"/>',
@@ -387,6 +388,7 @@ export function mountCourse(root, cfg) {
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${N ? lessonFrame(N).top : ""}
         ${N ? `<div class="mv-cols">${lessonHtml(N)}</div>${lessonFrame(N).end}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
+        ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
         ${N?.items?.length ? `<section class="co-check"><h3>${ic("target")} Check yourself</h3>${N.items.map((it) => qHtml(it, { confidence: true })).join("")}</section>` : ""}
         <footer>
           <button class="btn btn-light lg co-complete" ${S.done[id] ? "disabled" : ""}><span>${S.done[id] ? "Completed ✓" : `Complete lesson · +${XP.lesson} XP`}</span></button>
@@ -408,6 +410,13 @@ export function mountCourse(root, cfg) {
       if (unitDone(u) === u.lessons.length) celebrate(`${U} ${u.n} complete`, `${esc(u.title)}: every lesson done. Take the unit quiz for +${XP.quiz} XP.`, `<a class="btn btn-ghost lg btn-sm" href="#/quiz/${u.id}"><span>${U} quiz</span></a>`);
       else if (next) setTimeout(() => go(`lesson/${next.id}`), 650);
     });
+  }
+  // a link from an anatomy lesson to the 3D model, opened on one system with a quiz (cfg.anatomy3d)
+  function anatomyPanel(system) {
+    const href = (mode) => `${cfg.anatomy3d.href}?${system ? `system=${encodeURIComponent(system)}&` : ""}quiz=${mode}`;
+    const name = system ? `the ${system} system` : "every body system";
+    return `<section class="co-3d"><h3>${ic("cube")} Practise in 3D</h3><p>Open the 3D body showing ${esc(name)} and test yourself on the real anatomy.</p>
+      <div class="co-3d-actions"><a class="btn btn-light lg btn-sm" href="${href("find")}"><span>Find the structure</span></a><a class="btn btn-ghost lg btn-sm" href="${href("name")}"><span>Name the structure</span></a></div></section>`;
   }
   async function saveLesson(l, N, btn) {
     btn.disabled = true;
