@@ -200,3 +200,7 @@ a { color: inherit; }
 @media (max-width: 640px) {
   .bar .right .btn-primary { display: none; }
 }
+
+/* learner settings (kit/data/profile.js applyPrefs): reduce motion and larger text, on every site */
+html[data-motion="reduce"] *, html[data-motion="reduce"] *::before, html[data-motion="reduce"] *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+html[data-text="large"] body { zoom: 1.15; }

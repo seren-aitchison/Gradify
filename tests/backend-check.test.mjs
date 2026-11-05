@@ -7,7 +7,7 @@ import { checkBackend, keyKind, parseConfig, summarise } from "../kit/data/backe
 const jwt = (role) => `x.${Buffer.from(JSON.stringify({ role })).toString("base64url")}.y`;
 const ANON = jwt("anon");
 
-function fakeSupabase({ rls = true, tables = ["profiles", "documents", "packs", "cards", "reviews", "activity", "plan_blocks", "waitlist", "workouts", "body_checkins", "fitness_tests", "assessment_attempts", "course_progress"], fn = true, xpGuard = true } = {}) {
+function fakeSupabase({ rls = true, tables = ["profiles", "documents", "packs", "cards", "reviews", "activity", "plan_blocks", "waitlist", "workouts", "body_checkins", "fitness_tests", "assessment_attempts", "course_progress", "tutor_usage", "revalidation_entries"], fn = true, xpGuard = true } = {}) {
   const users = { "a@x": { id: "uA", password: "pa" }, "b@x": { id: "uB", password: "pb" } };
   const sessions = {}, refresh = {};
   const db = { profiles: [{ id: "uA", xp: 40, daily_minutes: 20 }, { id: "uB", xp: 0, daily_minutes: 20 }], course_progress: [], assessment_attempts: [] };

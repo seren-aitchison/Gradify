@@ -159,8 +159,10 @@ export class CloudStore {
     for (let i = 0; i < acts.length; i += 200) await this.q(this.db.from("activity").insert(acts.slice(i, i + 200)));
     // the revalidation record, if the table exists
     for (const e of m.revalidation || []) { try { const { id, ...rest } = e; await this.saveRevalidation(rest); } catch { break; } }
-    const { xp, ...profile } = m.profile;
+    // the set-up answers go separately: the learner column may not exist yet (kit/data/profile.js)
+    const { xp, learner, ...profile } = m.profile;
     await this.saveProfile(profile);
+    if (learner) try { await this.saveProfile({ learner }); } catch { /* kept on this device */ }
   }
 }
 

@@ -318,3 +318,11 @@ kbd { font: 11px var(--mono); padding: 1px 6px; border-radius: 5px; border: 1px 
 /* a sub-site's icon tile in the top bar */
 .brand .icon { width: 30px; height: 30px; border-radius: 9px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), inset 0 -4px 8px rgba(0, 0, 0, .18); }
 .brand .icon .ico { width: 16px; height: 16px; }
+
+/* set-up: skip, and display settings (kit/data/profile.js) */
+.setup-skip { margin-top: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; color: var(--faint); }
+.setup-prefs { border: 0; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.setup-prefs legend { font-size: 14px; color: var(--mute); margin-bottom: 6px; padding: 0; }
+.setup-form label.check { flex-direction: row; align-items: center; gap: 10px; color: var(--fg); }
+.setup-form label.check input { width: 18px; height: 18px; padding: 0; margin: 0; accent-color: #4fe0a6; flex: none; }
+.setup-form .hint { display: block; font-style: normal; color: var(--faint); font-size: 12px; margin-top: 2px; }

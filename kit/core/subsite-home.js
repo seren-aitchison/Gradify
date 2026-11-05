@@ -5,6 +5,8 @@ import { KINDS, SITES_CONTENT } from "./site-content.js";
 import { icon } from "./icons.js";
 import { ink } from "./colour.js";
 import { modelOf } from "../models/index.js";
+import { applyPrefs } from "../data/profile.js";
+applyPrefs();
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 const DIMS = {

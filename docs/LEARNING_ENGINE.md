@@ -125,3 +125,33 @@ Where it shows:
 Both views use one renderer, `kit/learning/mastery-view.js`. The original five-dimension card profile (`topicProfiles`) is unchanged, still drives levels, next steps and Earth, and now also carries `six`.
 
 **Not connected yet:** XP rewards for retrieval, LifeOS goals and recommendations, Earth/Tree, and the AI tutor. Each can now read `sixProfile` rather than inventing its own measure.
+
+## Learner profile, set-up and plans
+
+There is one learner profile for every site (`kit/data/profile.js`).
+- **Core fields:** goal, site, level, exam date, daily minutes and name. These are the existing `profiles` columns.
+- **Set-up answers:** a `learner` object holding subjects, prior knowledge per site, display settings, and when set-up was done or skipped. It's added by `supabase/migrations/20261106120000_learner_profile.sql`.
+- **Shared on this browser:** the profile is mirrored in `localStorage` (`gradify.learner`). Every site lives on getgradify.com, so they all read the same copy, and settings apply before anything async loads.
+- **Before the migration runs:** the learner object stays on the device and nothing else changes. Moving a device's data into an account saves it separately, so a missing column can't break the move.
+
+**Set-up** is the existing three steps in `app.html`:
+1. Goal.
+2. Subject.
+3. Details: exam date, daily time, level, **how much you already know**, name, and **display settings**.
+
+Changes to how it works:
+- It can now be skipped ("Skip for now"); a skipped learner isn't sent back to it.
+- Everything can be changed later on the Account page.
+
+**Display settings** apply on the homepage, every sub-site, every course, LifeOS and the app:
+- **Reduce motion** turns off CSS animations and transitions.
+- **Larger text** scales the page up 15%.
+
+**Your plan** (`kit/learning/pace.js`) appears in every course's side panel:
+- **Today's work:** due flashcards and due questions first (at most 60% of the daily time), then new lessons. It counts only written lessons on the learner's chosen path.
+- **Pace against the exam date:** on track, tight, behind or past. The last days before the exam are kept for revision. A "behind" plan says how many minutes a day would be enough.
+- The exam date is used only in the learner's main subject's course.
+- Learners who said they know a lot are offered an exam to find where to start, and their lessons are paced as quicker.
+- Each course's daily XP goal follows the learner's daily study time until they pick a goal there.
+
+Time estimates (12 minutes a lesson, about 25 seconds a card, 90 seconds a question) are shown as estimates.

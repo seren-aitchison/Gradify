@@ -561,3 +561,11 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(255, 255, 2
 .rv-del { padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line); background: none; color: var(--mute); font: inherit; font-size: 12px; cursor: pointer; }
 .rv-add summary { cursor: pointer; font-weight: 600; margin: 4px 0 10px; }
 @media print { .co-nav, .co-hud, .rv-add, .rv-del, .co-wactions, .rv-settings button { display: none !important; } .rv-list details { display: block; } }
+
+/* your plan (kit/learning/pace.js) */
+.co-plan h3 { margin: 6px 0; font-size: 16px; }
+.co-plan p { margin: 0 0 8px; font-size: 13px; color: var(--mute); line-height: 1.45; }
+.co-plan small a { color: var(--faint); }
+.co-plan-on-track { border-color: rgba(79, 224, 166, .35); }
+.co-plan-tight { border-color: rgba(255, 180, 77, .4); }
+.co-plan-behind, .co-plan-past { border-color: rgba(255, 90, 77, .4); }

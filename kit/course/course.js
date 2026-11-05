@@ -17,6 +17,8 @@ import { renderQuestion, wireQuestions, normalize, TYPES as QTYPES } from "../as
 import { makeAttempt, analyse } from "../assess/attempts.js";
 import { evidenceFromAttempts, sixProfiles, revisionQueue, SIX } from "../learning/mastery.js";
 import { sixHtml, calibrationHtml } from "../learning/mastery-view.js";
+import { learnerOf, needsSetup, applyPrefs } from "../data/profile.js";
+import { paceFor } from "../learning/pace.js";
 import { mergeProgress, cloudCopy } from "./progress.js";
 import { mountRevalidation } from "./revalidation.js";
 import { scoreFeedback } from "../assess/tutor.js";
@@ -124,6 +126,13 @@ export function mountCourse(root, cfg) {
     try { const cloud = await CloudStore.create(), user = cloud ? await cloud.user() : null; return scopeToSite(user ? cloud : new LocalStore(), cfg.site); }
     catch { return scopeToSite(new LocalStore(), cfg.site); }
   })());
+
+  // the shared learner profile (kit/data/profile.js): exam date, daily time, prior knowledge, display
+  // settings. The daily XP goal follows the learner's daily study time until they pick one here.
+  applyPrefs();
+  let prof = null;
+  const GOAL_FOR = (m) => (m <= 10 ? 20 : m <= 20 ? 30 : m <= 45 ? 50 : 100);
+  store().then((st) => st.getProfile()).then((p) => { prof = { ...p, learner: learnerOf(p) }; if (!S.goalChosen && p?.daily_minutes) S.goal = GOAL_FOR(p.daily_minutes); paintSide(); }).catch(() => {});
 
   // notes, loaded a unit at a time
   const cache = {};
@@ -299,12 +308,42 @@ export function mountCourse(root, cfg) {
           <small class="co-streak">${ic("flame")} ${st.n}-day streak${st.today ? "" : st.n ? " · learn today to keep it" : ""}</small>
           <select aria-label="Daily goal">${[20, 30, 50, 100].map((g) => `<option value="${g}" ${g === S.goal ? "selected" : ""}>${g} XP a day</option>`).join("")}</select></div>
       </section>
+      ${planHtml()}
       ${nl ? `<section class="co-card"><span class="co-kicker">${ic("flag")} Next milestone</span><h3>Finish ${U} ${nu.n}: ${esc(nu.title)}</h3><p>${left} lesson${left === 1 ? "" : "s"} to go, then the ${u1} quiz for +${XP.quiz} XP.</p><a class="btn btn-light lg btn-sm co-go" href="#/lesson/${nl.id}"><span>Continue: ${esc(nl.title)}</span></a></section>` : `<section class="co-card"><h3>Course complete</h3><p>Every lesson done. Keep your memory fresh in Review.</p></section>`}
       <section class="co-card"><span class="co-kicker">${ic("trophy")} Weekly challenge</span><h3>${c.name}</h3><p>${c.d}. Reward: +${XP.weekly} XP.</p><div class="co-bar warm"><i style="width:${(cw / c.n) * 100}%"></i></div><small>${cw} / ${c.n}${S.weekly[String(weekStart())] ? " · claimed" : ""} · resets Monday</small></section>
       <section class="co-card"><span class="co-kicker">Course progress</span><h3>${Object.keys(S.done).length} / ${lessons.length} lessons</h3>
         <div class="co-dots">${units.map((u) => { const t = trackOf(u), p = unitDone(u) / u.lessons.length; return `<a href="#/learn/${u.id}" title="${U} ${u.n}: ${esc(u.title)} (${Math.round(p * 100)}%)" style="--a:${t.from};--b:${t.to};--p:${p}"></a>`; }).join("")}</div></section>
       <section class="co-card"><span class="co-kicker">Badges · ${got.size} / ${BADGES.length}</span><div class="co-badges">${BADGES.map((b) => `<span class="${got.has(b.id) ? "on" : ""}" title="${b.name}: ${b.d}">${ic(got.has(b.id) ? "star" : "lock")}</span>`).join("")}</div><a class="co-more" href="#/me">See all your progress →</a></section>`;
-    side.querySelector("select").addEventListener("change", (e) => { S.goal = Number(e.target.value); save(); paintSide(); });
+    side.querySelector("select").addEventListener("change", (e) => { S.goal = Number(e.target.value); S.goalChosen = true; save(); paintSide(); });
+  }
+
+  // ---------- your plan: today's work and exam pace, from the shared profile ----------
+  function planHtml() {
+    if (!prof) return "";
+    const acct = `${cfg.app || "app.html"}#/account`;
+    if (needsSetup(prof) || !prof.daily_minutes) return `<section class="co-card co-plan"><span class="co-kicker">${ic("target")} Your plan</span><p>Tell Gradify your exam date and how long you can study each day, and every course plans your days around it.</p><a class="btn btn-ghost btn-sm" href="${acct}"><span>Set up your plan</span></a></section>`;
+    const path = S.path && cfg.paths.find((p) => p.id === S.path);
+    const pool = units.filter((u) => (!cfg.written || cfg.written.includes(u.id)) && (!path || path.units.includes(u.n))).flatMap((u) => (path ? pathLessons(path, u) : u.lessons));
+    const remaining = pool.filter((l) => !S.done[l.id]).length, prior = prof.learner.prior[cfg.site] || "new";
+    // the profile's exam date belongs to the learner's main subject
+    const examDate = prof.site === cfg.site ? prof.exam_date : null;
+    const p = paceFor({ examDate, dailyMinutes: prof.daily_minutes, remaining, dueCards: dueCards().length, dueQuestions: revisionQueue(S.attempts || [], { limit: 500 }).length, prior });
+    const t = p.today, parts = [t.cards && `${t.cards} flashcard${t.cards === 1 ? "" : "s"}`, t.questions && `${t.questions} question${t.questions === 1 ? "" : "s"} to revisit`, t.lessons && `${t.lessons} new lesson${t.lessons === 1 ? "" : "s"}`].filter(Boolean);
+    const fmt = (d) => new Date(`${d}T12:00:00Z`).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
+    const n1 = (x) => (x < 1 ? x.toFixed(1) : Math.round(x));
+    const scope = `${remaining} ${path ? `lessons on the ${esc(path.name)} path` : "lessons"}${cfg.written ? " written so far" : ""}`;
+    const line = {
+      done: `You've finished every ${path ? "lesson on this path" : "written lesson"}. Keep it fresh with Review.`,
+      "no-date": `${scope} left. At ${prof.daily_minutes} minutes a day you'd finish around ${fmt(p.finish)}.`,
+      "on-track": `On track for ${fmt(examDate)}: about ${n1(p.needPerDay)} lessons a day covers the ${scope}, with the last days left for revision.`,
+      tight: `Tight for ${fmt(examDate)}: you need about ${n1(p.needPerDay)} lessons a day and ${prof.daily_minutes} minutes fits about ${n1(p.lessonsPerDay)}. About ${p.minutesNeeded} minutes a day would do it.`,
+      behind: `Behind for ${fmt(examDate)}: at ${prof.daily_minutes} minutes a day you'd finish around ${fmt(p.finish)}. You'd need about ${p.minutesNeeded} minutes a day${cfg.paths.length ? ", or a path that covers less" : ""}.`,
+      past: `Your exam date (${fmt(examDate || "2000-01-01")}) has passed. Update it to get a new plan.`,
+    }[p.status];
+    return `<section class="co-card co-plan co-plan-${p.status}"><span class="co-kicker">${ic("target")} Your plan today</span>
+      <h3>${parts.length ? parts.join(", ") : "Nothing due"}</h3><p>${t.minutes ? `About ${t.minutes} minutes. ` : ""}${line}</p>
+      ${prior === "confident" && cfg.exams?.length && Object.keys(S.done).length < 5 ? `<p>You said you already know a lot of this. <a href="#/exams">Take an exam</a> to find where to start.</p>` : ""}
+      <small><a href="${acct}">Change exam date or study time</a></small></section>`;
   }
 
   // ---------- Learn: the road ----------

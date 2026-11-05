@@ -3,6 +3,8 @@ import { icon } from "../kit/core/icons.js";
 import { triple, mix, ink, tile } from "../kit/core/colour.js";
 import { pathOf, nameHtml } from "../kit/core/site.js";
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../gradify.config.js";
+import { applyPrefs } from "../kit/data/profile.js";
+applyPrefs();
 
 const $ = (s, el = document) => el.querySelector(s);
 const href = (u) => (/^https?:/.test(u) ? u : "https://" + u);
