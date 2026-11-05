@@ -194,3 +194,7 @@ See the status sections below as schools are added. Content is written by Claude
 ## Status: School 18, Prescribing and Clinical Assessment (2026-11-05)
 
 16 lessons: independent prescribing law and scope (prescribers at registration from 2026), RPS competency framework, governance, consultation models, history, examination, vital signs and NEWS2, blood tests, diagnostic reasoning, writing prescriptions, safety, antimicrobial and remote prescribing, influences, monitoring, case reviews. Normal ranges marked illustrative.
+
+## Status: School 19, Registration Assessment and Foundation Training (2026-11-05)
+
+11 lessons: the GPhC registration assessment, framework, SBA and EMQ technique, reference use, revision strategy, foundation year (with prescribing from 2025/26), learning outcomes and evidence, supervision, registration, revalidation. Format details point to current GPhC guidance.
