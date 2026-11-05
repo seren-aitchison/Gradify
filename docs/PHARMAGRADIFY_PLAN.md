@@ -174,3 +174,7 @@ See the status sections below as schools are added. Content is written by Claude
 ## Status: School 11, Infection and Antimicrobial Stewardship (2026-11-05)
 
 17 lessons covering microbiology, antibiotic classes, AMR and stewardship, common infections (NICE prescribing guidance), sepsis, C. difficile, TB, antifungals, antivirals, HIV, hepatitis, vaccines and travel health. Antibiotic choices point to NICE and local formularies; doses marked illustrative.
+
+## Status: School 12, Gastrointestinal, Renal and Hepatic Therapeutics (2026-11-05)
+
+14 lessons: dyspepsia, ulcers and H. pylori, nausea, constipation, diarrhoea, IBD, IBS, AKI, CKD, electrolytes, fluids, liver disease and drug handling, DILI, alcohol-related liver disease. Points to NICE, the BNF and local protocols; doses marked illustrative.

@@ -38,7 +38,7 @@ export default {
     { id: "law-ethics", title: "Law and ethics", sub: "Medicines law, controlled drugs, regulation and ethics.", units: [16], format: "sba", count: 30, minutes: 45, pass: 0.7 },
   ],
   // the schools whose notes are written so far (tests/courses.test.mjs checks this matches notes/)
-  written: ["u01", "u02", "u03", "u06", "u07", "u08", "u09", "u10", "u11", "u16", "u17"],
+  written: ["u01", "u02", "u03", "u06", "u07", "u08", "u09", "u10", "u11", "u12", "u16", "u17"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
   extras: [
     ["Drug targets in 3D", "Receptors, channels, transporters and enzymes in a cell membrane, in 3D.", "../3d.html"],
