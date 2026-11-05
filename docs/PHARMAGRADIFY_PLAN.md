@@ -178,3 +178,7 @@ See the status sections below as schools are added. Content is written by Claude
 ## Status: School 12, Gastrointestinal, Renal and Hepatic Therapeutics (2026-11-05)
 
 14 lessons: dyspepsia, ulcers and H. pylori, nausea, constipation, diarrhoea, IBD, IBS, AKI, CKD, electrolytes, fluids, liver disease and drug handling, DILI, alcohol-related liver disease. Points to NICE, the BNF and local protocols; doses marked illustrative.
+
+## Status: School 13, Musculoskeletal, Skin, Eye and Inflammatory Conditions (2026-11-05)
+
+13 lessons: NSAIDs, osteoarthritis, RA, gout, DMARDs (methotrexate safety), eczema, psoriasis, acne (isotretinoin), skin infections and infestations, eye and ear conditions. Points to NICE, MHRA, the BNF and SPCs.
