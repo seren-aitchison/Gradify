@@ -45,6 +45,18 @@ Follow `docs/SETUP.md` to create the project, run the migrations and deploy the 
 
 The check uses only the public anon key, and refuses a `service_role` or `sb_secret_` key. Everything it writes (a `_verify` course-progress row and answer) is deleted before it finishes.
 
+## Wording that waits for a passing check
+
+Until questions 4 and 5 are **working** in a live run, the sites don't claim features that don't work yet:
+
+| Now says | Goes back to, once verified |
+|---|---|
+| "One Gradify account is coming to every Gradify site; until then, your progress is saved in this browser." (every sub-site footer) | "One account works on every Gradify site." |
+| "A Gradify site, designed to connect with Gradify LifeOS" (every sub-site badge) | "A Gradify site: your progress counts in Gradify LifeOS" |
+| AI buttons: "Gradify AI isn't switched on yet" | Generated automatically once `gradify.config.js` is filled in |
+
+Two content claims were changed for accuracy, not because of the backend: LawGradify's "Cases and statutes, checked" is now "Cases, statutes and legal reasoning", until the case cards have had independent legal review. NurseGradify's "Placement-ready" is now "Placement preparation", because exercises can't establish clinical competence.
+
 ## Last verification run
 
 <!-- verify:start -->

@@ -1,23 +1,28 @@
-# Checks every push and pull request: the test suite, every site's release status against its content,
-# broken internal links, and that sitemap.xml and the shared server copies are up to date.
-# Nothing here needs a secret, and nothing is deployed: GitHub Pages publishes the branch as before.
-name: CI
+# Tests every push and pull request, and publishes getgradify.com only when they pass.
+#   push to main      test → (pass) → deploy to GitHub Pages
+#                           (fail) → nothing is published; the live site stays as it was
+#   any other branch  test only
+#   pull request      test only, never deploys
+# For this to be the only way the site is published, GitHub Pages must use "GitHub Actions" as its source
+# (Settings → Pages → Build and deployment → Source). Until then the old branch deploy also runs.
+# Nothing here needs a secret.
+name: Test and deploy
 
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
 
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
-  check:
+  test:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    concurrency:
+      group: test-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - uses: actions/checkout@v4
 
@@ -42,3 +47,37 @@ jobs:
             echo "::error::Generated files are out of date. Run node scripts/build-sitemap.mjs and npm run sync, then commit."
             exit 1
           }
+
+  deploy:
+    # only after every test step has passed, and only from main (never from a pull request or another branch)
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      # the site is the repository as committed (.nojekyll: no build step), without the tooling folders
+      - name: Assemble the site
+        run: |
+          mkdir -p "$RUNNER_TEMP/site"
+          rsync -a --exclude '.git' --exclude '.github' --exclude 'node_modules' --exclude 'tests' ./ "$RUNNER_TEMP/site/"
+          test -f "$RUNNER_TEMP/site/index.html" && test -f "$RUNNER_TEMP/site/CNAME"
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
