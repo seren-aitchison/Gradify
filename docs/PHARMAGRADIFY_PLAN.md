@@ -152,3 +152,9 @@ See the status sections below as schools are added. Content is written by Claude
 - 11 lessons, written to content standard 2: adult and childhood asthma under BTS/NICE/SIGN NG245 (2024: AIR and MART), COPD (NG115), inhaler technique and carbon footprint, bronchodilators, inhaled corticosteroids (beclometasone by brand, steroid cards), acute asthma and COPD exacerbations, allergic rhinitis, anaphylaxis (Resuscitation Council UK; two auto-injectors), cough and self-care (NG120), and smoking cessation (NG209, CYP1A2).
 - **Drug cards:** beclometasone (inhaled) and varenicline. QA reports 0 warnings.
 - **Expert review:** check NG245's step details for children and the codeine cough medicine classification against current guidance.
+
+## Status: School 9, Endocrine and Diabetes Therapeutics (2026-11-05)
+
+- 13 lessons, written to content standard 2: type 1 diabetes (NG17, CGM, sick day rules), insulin types and safety, type 2 diabetes (NG28 and HbA1c targets), glucose-lowering drug classes, hypoglycaemia (JBDS and DVLA), special situations (steroids, pregnancy, Ramadan), DKA and HHS, thyroid disease (levothyroxine, carbimazole agranulocytosis), adrenal insufficiency and steroid cards, osteoporosis (NOGG, bisphosphonate counselling, denosumab rebound), contraception (UKMEC and emergency contraception), menopause and HRT (NG23), and obesity (NG246, safe supply).
+- **Drug cards:** insulin glargine, metformin, dapagliflozin, levothyroxine, carbimazole and alendronic acid. QA reports 0 warnings.
+- **Expert review:** check the thresholds (HbA1c targets, metformin eGFR cut-offs, steroid card criteria), the FSRH emergency contraception dosing and the NICE obesity criteria against current guidance.
