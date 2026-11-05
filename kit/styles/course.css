@@ -535,3 +535,29 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(255, 255, 2
 .co-askans p { color: var(--mute); }
 .co-askq { color: var(--fg) !important; font-weight: 600; }
 .co-ask .aq-note { margin: 10px 0 0; }
+
+/* NMC revalidation helper (kit/course/revalidation.js) */
+.rv-root .co-panel { margin-bottom: 14px; }
+.rv-f { display: grid; gap: 4px; margin: 0 0 10px; }
+.rv-f span { font-size: 13px; color: var(--mute); }
+.rv-f input, .rv-f textarea { padding: 9px 12px; border-radius: 11px; background: #141417; color: var(--fg); border: 1px solid var(--line-strong); font: 14px var(--sans); min-width: 0; }
+.rv-root fieldset { border: 1px solid var(--line); border-radius: 12px; margin: 6px 0 12px; padding: 8px 12px; }
+.rv-root legend { font-size: 13px; color: var(--mute); padding: 0 4px; }
+.rv-window { margin: 10px 0 0; color: var(--mute); font-size: 13px; }
+.rv-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 10px 0; border-top: 1px solid var(--line); }
+.rv-row b { display: block; font-size: 14px; }
+.rv-row small { color: var(--mute); font-size: 12px; }
+.rv-row span { font: 600 13px var(--mono); color: var(--mute); align-self: center; white-space: nowrap; }
+.rv-row.done span { color: #4fe0a6; }
+.rv-row i { grid-column: 1 / -1; height: 6px; border-radius: 99px; background: rgba(255, 255, 255, .08); position: relative; overflow: hidden; }
+.rv-row i::after { content: ""; position: absolute; inset: 0; width: calc(var(--p) * 100%); background: #5ef0ff; border-radius: inherit; }
+.rv-row.done i::after { background: #4fe0a6; }
+.rv-kind h3 small { font: 600 12px var(--mono); color: var(--mute); margin-left: 6px; }
+.rv-list { list-style: none; margin: 0 0 10px; padding: 0; }
+.rv-list li { border-top: 1px solid var(--line); padding: 8px 0; }
+.rv-list summary { cursor: pointer; overflow-wrap: anywhere; }
+.rv-list summary span { font: 12px var(--mono); color: var(--mute); margin-right: 6px; }
+.rv-list p { margin: 6px 0; color: var(--mute); font-size: 14px; overflow-wrap: anywhere; }
+.rv-del { padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line); background: none; color: var(--mute); font: inherit; font-size: 12px; cursor: pointer; }
+.rv-add summary { cursor: pointer; font-weight: 600; margin: 4px 0 10px; }
+@media print { .co-nav, .co-hud, .rv-add, .rv-del, .co-wactions, .rv-settings button { display: none !important; } .rv-list details { display: block; } }

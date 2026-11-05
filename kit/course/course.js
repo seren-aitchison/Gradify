@@ -16,6 +16,7 @@ import { parseNotes, lessonHtml, lessonText, lessonFrame, authorityCards, esc, i
 import { renderQuestion, wireQuestions, normalize, TYPES as QTYPES } from "../assess/questions.js";
 import { makeAttempt, analyse } from "../assess/attempts.js";
 import { mergeProgress, cloudCopy } from "./progress.js";
+import { mountRevalidation } from "./revalidation.js";
 import { scoreFeedback } from "../assess/tutor.js";
 import { feedbackHtml, paras } from "../assess/tutor-view.js";
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
@@ -230,7 +231,7 @@ export function mountCourse(root, cfg) {
 
   // ---------- layout ----------
   const VIEWS = [...(cfg.overview ? [["overview", "Overview"]] : []), ["learn", "Learn"], ["review", "Review"], ["paths", "Paths"], ["tracks", `${TW}s`], ["problems", "Problems"],
-    ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing ? [["write", "Write"]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []),
+    ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing ? [["write", "Write"]] : []), ...(cfg.revalidation ? [["revalidation", "Revalidation"]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []),
     ["leaderboard", "Leaderboard"], ["me", "My progress"], ["features", "Features"]];
   roadDefs();
   root.classList.add("co");
@@ -912,6 +913,7 @@ export function mountCourse(root, cfg) {
     else if (view === "problems") await viewProblems();
     else if (view === "cases") await viewAuthorities();
     else if (view === "write") await viewWrite(arg);
+    else if (view === "revalidation") await mountRevalidation(main, await store(), { accountHref: `${cfg.app || "app.html"}#/account` });
     else if (view === "exams") await viewExams();
     else if (view === "exam") await viewExam(arg);
     else if (view === "practice") await viewPractice(arg);

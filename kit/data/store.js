@@ -55,6 +55,15 @@ export class LocalStore {
   async listBlocks(fromDay, toDay) { return this.mem.blocks.filter((b) => b.day >= fromDay && b.day <= toDay); }
   async saveBlock(b) { if (b.id) { Object.assign(this.mem.blocks.find((x) => x.id === b.id), b); } else { b = { id: uid(), created_at: now(), done: false, auto: false, ...b }; this.mem.blocks.push(b); } this.save(); return b; }
   async deleteBlock(id) { this.mem.blocks = this.mem.blocks.filter((b) => b.id !== id); this.save(); }
+  // NMC revalidation record (kit/course/revalidation.js)
+  async listRevalidation() { return [...(this.mem.revalidation ||= [])]; }
+  async saveRevalidation(e) {
+    const list = (this.mem.revalidation ||= []);
+    const row = { ...e, id: e.id || uid(), updated_at: now(), created_at: e.created_at || now() };
+    const i = list.findIndex((x) => x.id === row.id); if (i >= 0) list[i] = row; else list.push(row);
+    this.save(); return row;
+  }
+  async deleteRevalidation(id) { this.mem.revalidation = (this.mem.revalidation || []).filter((x) => x.id !== id); this.save(); }
   async exportAll() { return JSON.parse(JSON.stringify(this.mem)); }
   async wipe() { this.mem = EMPTY(); this.save(); }
   hasData() { return this.mem.documents.length > 0 || this.mem.cards.length > 0; }
@@ -109,17 +118,27 @@ export class CloudStore {
   async listBlocks(fromDay, toDay) { return this.q(this.db.from("plan_blocks").select("*").gte("day", fromDay).lte("day", toDay)); }
   async saveBlock(b) { return b.id ? this.q(this.db.from("plan_blocks").update(b).eq("id", b.id).select().single()) : this.q(this.db.from("plan_blocks").insert(b).select().single()); }
   async deleteBlock(id) { await this.q(this.db.from("plan_blocks").delete().eq("id", id)); }
+  // NMC revalidation record: one row per entry, the fields in jsonb (revalidation_entries table)
+  async listRevalidation() { return (await this.q(this.db.from("revalidation_entries").select("*").order("occurred_on"))).map((r) => ({ ...r.entry, id: r.id, kind: r.kind, date: r.occurred_on })); }
+  async saveRevalidation(e) {
+    const { id, kind, date, created_at, updated_at, ...entry } = e;
+    const row = { kind, occurred_on: date || new Date().toISOString().slice(0, 10), entry, updated_at: now() };
+    const saved = id ? await this.q(this.db.from("revalidation_entries").update(row).eq("id", id).select().single()) : await this.q(this.db.from("revalidation_entries").insert(row).select().single());
+    return { ...saved.entry, id: saved.id, kind: saved.kind, date: saved.occurred_on };
+  }
+  async deleteRevalidation(id) { await this.q(this.db.from("revalidation_entries").delete().eq("id", id)); }
   async exportAll() {
     const t = ["profiles", "documents", "packs", "cards", "reviews", "activity", "plan_blocks"];
     const out = {};
     for (const name of t) out[name] = await this.q(this.db.from(name).select("*"));
     // tables added by later migrations: included when the migration has been run
-    for (const name of ["assessment_attempts", "course_progress"]) { try { out[name] = await this.q(this.db.from(name).select("*")); } catch { /* not set up yet */ } }
+    for (const name of ["assessment_attempts", "course_progress", "revalidation_entries"]) { try { out[name] = await this.q(this.db.from(name).select("*")); } catch { /* not set up yet */ } }
     return out;
   }
   async wipe() {
     for (const t of ["documents", "activity", "plan_blocks"]) await this.q(this.db.from(t).delete().not("id", "is", null));
     try { await this.q(this.db.from("course_progress").delete().not("subject", "is", null)); } catch { /* not set up yet */ }
+    try { await this.q(this.db.from("revalidation_entries").delete().not("id", "is", null)); } catch { /* not set up yet */ }
   }
 
   // Move everything from this device into the account (after first sign-in)
@@ -138,6 +157,8 @@ export class CloudStore {
     // activity in chunks, capped per row by the database
     const acts = m.activity.map(({ id, ...a }) => ({ ...a, xp: Math.min(500, a.xp || 0) }));
     for (let i = 0; i < acts.length; i += 200) await this.q(this.db.from("activity").insert(acts.slice(i, i + 200)));
+    // the revalidation record, if the table exists
+    for (const e of m.revalidation || []) { try { const { id, ...rest } = e; await this.saveRevalidation(rest); } catch { break; } }
     const { xp, ...profile } = m.profile;
     await this.saveProfile(profile);
   }

@@ -171,3 +171,18 @@ Expert review flags for this batch:
   - The API key stays server-side. Learners' answers aren't stored by the function.
 - **Safety:** every tutor prompt carries the course's boundary. For law: no advice on real legal problems. For nursing: no advice about real patients, doses or escalation, which go through local policy, the prescriber and the supervisor.
 - **To go live:** run the migration and deploy the function (`docs/SETUP.md`). Until then, the AI buttons explain that sign-in is needed, and self-assessment works for everyone.
+
+## Status: revalidation helper (2026-11-05)
+
+- **NMC revalidation record** (`#/revalidation`, `kit/course/revalidation.js`), a private log with progress against the NMC's three-yearly requirements:
+  - practice hours (450, or 900 for dual registration);
+  - CPD (35 hours, including 20 participatory);
+  - five pieces of practice-related feedback;
+  - five written reflective accounts, each linked to the Code's four themes;
+  - the reflective discussion.
+- The declarations are a checklist.
+- Progress counts the three years up to the registrant's renewal date and shows the days left.
+- The record can be printed or downloaded.
+- Records are kept in the owner-only `revalidation_entries` table when signed in (migration `20261105140000_revalidation.sql`), and on the device otherwise. They move into the account on first sign-in and are included in the account export and deletion.
+- The page tells users not to record identifiable information, and that NMC Online is the official record.
+- **Expert review:** check the requirements against the NMC's current revalidation guidance. They are coded in `REQUIREMENTS` and tested.
