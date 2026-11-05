@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gradify system status</title>
+  <meta name="description" content="Checks, from this browser, whether Gradify accounts, saved progress and Gradify AI are working.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="kit/styles/base.css">
+  <style>
+    main { max-width: 760px; margin: 0 auto; padding: 48px 16px 80px; }
+    h1 { font-size: clamp(28px, 5vw, 40px); letter-spacing: -.02em; margin: 0 0 8px; }
+    .lede { color: var(--mute); margin: 0 0 28px; line-height: 1.5; }
+    .stage { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); padding: 16px 18px; margin: 0 0 12px; }
+    .stage h2 { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; font-size: 16px; margin: 0 0 8px; }
+    .verdict { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .06em; padding: 3px 8px; border-radius: 99px; border: 1px solid var(--line-strong); color: var(--mute); white-space: nowrap; }
+    .verdict.working { color: #5fe3a1; border-color: #5fe3a155; }
+    .verdict.failing { color: #ff7a6b; border-color: #ff7a6b55; }
+    .stage ul { list-style: none; margin: 0; padding: 0; }
+    .stage li { display: grid; grid-template-columns: 20px 1fr; gap: 6px; padding: 4px 0; font-size: 14px; line-height: 1.45; }
+    .stage li small { display: block; color: var(--mute); overflow-wrap: anywhere; }
+    .ok { color: #5fe3a1; } .bad { color: #ff7a6b; } .skip { color: var(--faint); }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 28px; }
+    .note { color: var(--mute); font-size: 14px; line-height: 1.5; }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>System status</h1>
+    <p class="lede">This page checks, from your browser on this site, whether each part of Gradify's backend is actually working, not just whether its code exists. It only ever uses the site's public key. Anything it saves while testing is deleted again.</p>
+    <div class="actions">
+      <button class="btn btn-primary btn-sm" id="run">Run the checks again</button>
+      <button class="btn btn-ghost btn-sm" id="ai" hidden>Also test Gradify AI (makes one flashcard)</button>
+      <a class="btn btn-ghost btn-sm" href="app.html#/account">Account</a>
+    </div>
+    <div id="out" aria-live="polite"></div>
+    <p class="note" id="foot"></p>
+  </main>
+  <script src="kit/vendor/supabase/supabase.js"></script>
+  <script type="module">
+    import { SUPABASE_URL, SUPABASE_ANON_KEY } from "./gradify.config.js";
+    import { checkBackend } from "./kit/data/backend-check.js";
+    const STAGES = { 2: "Supabase project", 3: "This site is connected to it", 4: "Your account and saved progress", 5: "Gradify AI" };
+    const out = document.getElementById("out"), foot = document.getElementById("foot"), aiBtn = document.getElementById("ai");
+    const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+    async function session() {
+      if (!SUPABASE_URL || !SUPABASE_ANON_KEY || !window.supabase) return null;
+      try { const { data } = await window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY).auth.getSession(); return data.session; } catch { return null; }
+    }
+    async function run(ai = false) {
+      out.innerHTML = `<p class="note">Checking…</p>`;
+      const s = await session();
+      const { steps, summary } = await checkBackend({ url: SUPABASE_URL, anonKey: SUPABASE_ANON_KEY, siteConfig: { url: SUPABASE_URL, anonKey: SUPABASE_ANON_KEY, where: location.host }, session: s, ai, origin: location.origin });
+      out.innerHTML = [2, 3, 4, 5].map((n) => {
+        const list = steps.filter((x) => x.stage === n);
+        const items = list.length ? list : [{ ok: null, label: "Not checked", detail: "An earlier step has to pass first." }];
+        return `<section class="stage"><h2>${STAGES[n]} <span class="verdict ${summary[n]}">${esc(summary[n])}</span></h2><ul>${items.map((x) => `<li><span class="${x.ok === true ? "ok" : x.ok === false ? "bad" : "skip"}">${x.ok === true ? "✓" : x.ok === false ? "✗" : "–"}</span><span>${esc(x.label)}${x.detail ? `<small>${esc(x.detail)}</small>` : ""}</span></li>`).join("")}</ul></section>`;
+      }).join("");
+      aiBtn.hidden = !(s && steps.some((x) => x.id === "deployed" && x.ok));
+      foot.innerHTML = s
+        ? `Tested with your account (${esc(s.user?.email || "signed in")}). To check another device, sign in there and open this page.`
+        : SUPABASE_URL ? `Sign in on the <a href="app.html#/account">Account</a> page, then come back, to test saving and reading progress with a real account.` : `How to switch accounts on: docs/SETUP.md in the repository.`;
+    }
+    document.getElementById("run").onclick = () => run(false);
+    aiBtn.onclick = () => run(true);
+    run();
+  </script>
+</body>
+</html>

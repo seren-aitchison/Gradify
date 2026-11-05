@@ -72,6 +72,8 @@ Your API key only ever lives in Supabase's secrets. It is never sent to the brow
 
 ## 6. Check it works
 
+Run the end-to-end check in `docs/BACKEND-STATUS.md` (`node scripts/verify-backend.mjs`, and `status.html` on the live site). It signs a test learner in, saves and reads back progress, checks that one learner can't see another's, and calls Gradify AI. Then check by hand:
+
 1. Open `https://getgradify.com/app.html`, go to **Account** and sign in with your email.
 2. Add notes. The page should say "Gradify AI (Claude) will read your notes", and the deck should be badged "Made by Gradify AI".
 3. In Supabase's Table Editor you should see your rows. Sign in as a second person and confirm they can't see the first person's notes.
@@ -97,4 +99,4 @@ This runs the notes in `tests/fixtures/` through Gradify AI and reports key-term
 ## Known limits
 
 - XP comes from activity rows the learner's browser writes (capped at 500 per row). A determined user could inflate their own XP. Leaderboards should move XP to server-side functions before they launch.
-- The Supabase-connected code paths haven't yet been run against a live project, because no project existed when they were written. Test steps 6.1–6.3 carefully the first time.
+- The Supabase-connected code paths haven't yet been run against a live project, because no project existed when they were written. `docs/BACKEND-STATUS.md` records what has been verified.

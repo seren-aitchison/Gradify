@@ -289,6 +289,7 @@ h1 {
 .card .status { align-self: flex-start; font-size: 11px; font-weight: 600; letter-spacing: .04em; padding: 2px 9px; border-radius: 999px; margin-top: 2px; }
 .card .status.is-live { background: rgba(79, 224, 166, .14); color: #4fe0a6; }
 .card .status.is-soon { background: rgba(255, 255, 255, .06); color: var(--faint); }
+.card .status.is-beta { background: rgba(255, 192, 2, .14); color: #ffc002; }
 .card h3 { margin-top: 6px; }
 .card .actions-row { margin-top: auto; padding-top: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
 .card .visit { max-width: 100%; }

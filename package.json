@@ -11,7 +11,9 @@
     "sync": "node scripts/sync-kit.mjs",
     "new-site": "node scripts/new-site.mjs",
     "add-3d": "node scripts/add-3d.mjs",
-    "qa": "node scripts/qa-courses.mjs"
+    "qa": "node scripts/qa-courses.mjs",
+    "verify:backend": "node scripts/verify-backend.mjs",
+    "audit": "node scripts/audit-sites.mjs"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "0.133.0"
