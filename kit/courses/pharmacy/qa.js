@@ -14,5 +14,6 @@ export const QA = {
   u01: { standard: 2, reviewed: null, sources: null, signoff: null },
   u02: { standard: 2, reviewed: null, sources: null, signoff: null },
   u16: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u17: { standard: 2, reviewed: null, sources: null, signoff: null },
   u06: { standard: 2, reviewed: null, sources: null, signoff: null },
 };

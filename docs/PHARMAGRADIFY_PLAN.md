@@ -118,3 +118,20 @@ See the status sections below as schools are added. Content is written by Claude
   - a **patient consultation role-play** (heartburn with hidden red flags: dysphagia and weight loss).
 - The AI tutor's role-play and debrief now adapt to the course (`SCENES` in `kit/assess/tutor.js`): a client for law, a patient for pharmacy and nursing. The interview page's wording follows the task's `who`.
 - **Expert review:** the model answers (interaction management, methotrexate counselling, the apixaban dose criteria, NICE NG12 referral criteria) should be checked by a pharmacist.
+
+## Status: School 17, Clinical Pharmacy and Medicines Optimisation (2026-11-05)
+
+- **17 lessons, written to content standard 2**:
+  - the clinical check, medicines reconciliation, and interactions in practice;
+  - ADRs and Yellow Card, and interventions and SOAP documentation;
+  - medicines optimisation, adherence, structured medication reviews and shared decision-making;
+  - counselling (including high-risk medicines), responding to symptoms and red flags, and minor illness and referral;
+  - Pharmacy First in England (the seven conditions and their age limits), NMS and DMS, hospital clinical pharmacy, and transfers of care.
+- **QA:** 0 warnings.
+- **Expert review:** the service specifications (Pharmacy First age limits and pathways, NMS conditions and timings, DMS) change, so check them against the current NHS England specifications and the equivalents in the other nations.
+
+## Where the pharmacy course stands
+
+- **Written:** 5 of 19 schools (101 of 318 lessons): 1, 2, 6, 16 and 17. Calculations practice, drug cards, 3D links, 4 mock exams, 6 written tasks and a consultation role-play are live.
+- **Still to write:** Schools 3, 4, 5, 7 to 15, 18 and 19, in the order set out above.
+- **Not started:** a GPhC version of the revalidation tracker (the nursing one is NMC-specific), a prescription clinical-check simulation, and an expert review of everything above.
