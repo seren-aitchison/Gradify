@@ -95,6 +95,9 @@ export class CloudStore {
   async listReviews(sinceDays = 400) { return this.q(this.db.from("reviews").select("*").gte("reviewed_at", new Date(Date.now() - sinceDays * 864e5).toISOString())); }
   async logActivity(a) { return this.q(this.db.from("activity").insert({ site: a.site || "Gradify", kind: a.kind, xp: a.xp || 0, detail: a.detail || null }).select().single()); }
   // assessment attempts: one row per answer (supabase/migrations/20261101120000_assessment_attempts.sql)
+  // course progress (kit/course/progress.js): one row per learner per course
+  async getCourseProgress(subject) { const rows = await this.q(this.db.from("course_progress").select("state,updated_at").eq("subject", subject).limit(1)); return rows[0]?.state || null; }
+  async saveCourseProgress(subject, site, state) { const u = await this.user(); await this.q(this.db.from("course_progress").upsert({ user_id: u.id, subject, site, state, updated_at: now() })); }
   async logAttempt(a) {
     return this.q(this.db.from("assessment_attempts").insert({ id: a.id, site: a.site, subject: a.subject, context: a.context, context_id: a.contextId, question_id: a.question.id, question_version: a.question.v, question_type: a.question.type, difficulty: a.question.d, objectives: a.question.objectives, lesson_id: a.lesson, module: a.module, unit_id: a.unit, response: a.response, score: a.score, correct: a.correct, attempt: a.attempt, confidence: a.confidence, ms: a.ms, misconception: a.misconception, marking_method: a.marking.method, marking_status: a.marking.status, schema: a.schema, created_at: a.at }));
   }
@@ -110,9 +113,14 @@ export class CloudStore {
     const t = ["profiles", "documents", "packs", "cards", "reviews", "activity", "plan_blocks"];
     const out = {};
     for (const name of t) out[name] = await this.q(this.db.from(name).select("*"));
+    // tables added by later migrations: included when the migration has been run
+    for (const name of ["assessment_attempts", "course_progress"]) { try { out[name] = await this.q(this.db.from(name).select("*")); } catch { /* not set up yet */ } }
     return out;
   }
-  async wipe() { for (const t of ["documents", "activity", "plan_blocks"]) await this.q(this.db.from(t).delete().not("id", "is", null)); }
+  async wipe() {
+    for (const t of ["documents", "activity", "plan_blocks"]) await this.q(this.db.from(t).delete().not("id", "is", null));
+    try { await this.q(this.db.from("course_progress").delete().not("subject", "is", null)); } catch { /* not set up yet */ }
+  }
 
   // Move everything from this device into the account (after first sign-in)
   async importLocal(local) {

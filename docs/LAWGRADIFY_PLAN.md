@@ -97,3 +97,10 @@ Expert review flags for this batch (a qualified solicitor or barrister should ch
 - 3 corrections, all in u05 and u09: Shayler, Nicklinson, and a made-up distractor statute.
 - Details are in `docs/qa/law-citation-check.md`, and the check is logged in `SOURCE_CHECKS` in `kit/courses/law/qa.js`.
 - **This is not the `sources` stage.** Every school still needs each authority checked against a primary source by a person, plus a check of CPR, CrimPR and guidance references and of figures that change.
+
+## Status: published in full (2026-11-03)
+
+- At the owner's request, every school is now published (`publish: true` in `kit/courses/law/course.js`). Schools are no longer labelled as drafts.
+- The course-wide notice stays, and the "How the content is made" section shows review progress.
+- What still needs checking is bookmarked in `docs/qa/law-review-queue.md`, which `npm run qa` regenerates: the stages each school is missing (content review, source check, expert sign-off), plus lesson-by-lesson priority flags.
+- Record completed checks in `kit/courses/law/qa.js`.
