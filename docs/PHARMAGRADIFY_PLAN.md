@@ -66,3 +66,11 @@ See the status sections below as schools are added. Content is written by Claude
 - **Expert review:** the arithmetic was checked by hand, and the trainer's arithmetic by tests. A pharmacist educator should still review:
   - the clinical framing: MHRA advice on CrCl versus eGFR, Devine IBW, children's dosing practice, infusion practice;
   - the registration assessment description, which must be checked against the GPhC's current information.
+
+## Status: School 2, Pharmacology: How Drugs Act (2026-11-05)
+
+- **24 lessons, written to content standard 2**: targets, receptor families, agonism and antagonism, dose-response, potency and efficacy, tolerance and dependence, G protein signalling, ion channels, enzymes, transporters, nuclear receptors, autonomic, cholinergic, adrenergic and histamine pharmacology, eicosanoids, brain transmitters, ADRs, interactions, toxicity, pharmacogenomics, drug development, and biologics.
+- **12 drug cards** (naloxone, omeprazole, digoxin, sertraline, prednisolone, atropine, salbutamol, propranolol, cetirizine, ibuprofen, codeine, adalimumab).
+- **3D links:** six lessons link to the drug-target model.
+- **QA:** 0 warnings.
+- **Expert review:** the drug cards and the MHRA-based statements (codeine restrictions, DPD testing, CrCl advice, steroid cards) need checking by a pharmacist against the current BNF, SPCs and MHRA advice.
