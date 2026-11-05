@@ -1098,7 +1098,7 @@ T: Right to withdraw | Participants' right to stop taking part, and usually to r
 T: Presumptive consent | Inferring consent by asking similar people whether they would agree
 SUM: Valid consent is informed, voluntary and given with capacity, and includes the right to withdraw.
 SUM: Alternatives such as prior general, presumptive and retrospective consent are weaker and need approval.
-SRC: British Psychological Society, Code of Human Research Ethics | standard | 2021 | https://www.bps.org.uk/guideline/bps-code-human-research-ethics
+SRC: British Psychological Society, Code of Human Research Ethics | standard | 2021
 SRC: Spielman R. M. et al., Psychology 2e, OpenStax, section 2.4 "Ethics" | secondary | 2020 | https://openstax.org/books/psychology-2e/pages/2-4-ethics
 Q: Name three things participants should be told before consenting. | Any three of the aims, what they'll do, risks, how data are used and stored, their right to withdraw.
 Q: What is retrospective consent? | Asking participants for consent after they have taken part and been debriefed.
@@ -1135,7 +1135,7 @@ T: Deductive disclosure | Identifying a participant from a combination of detail
 SUM: Confidentiality keeps identities private; anonymity means data can't be linked to anyone.
 SUM: Data protection law governs storage and use; confidentiality has limits where there is risk of harm.
 SRC: Data Protection Act 2018, c. 12 | legislation | 2018 | https://www.legislation.gov.uk/ukpga/2018/12/contents
-SRC: British Psychological Society, Code of Human Research Ethics | standard | 2021 | https://www.bps.org.uk/guideline/bps-code-human-research-ethics
+SRC: British Psychological Society, Code of Human Research Ethics | standard | 2021
 Q: What is the difference between anonymity and confidentiality? | Anonymity means data can't be linked to anyone; confidentiality means identities are known to researchers but kept private.
 Q: When might confidentiality be broken? | When a participant discloses a serious risk of harm to themselves or others.
 M1#psychology-u10-31-q1@1: Which UK law, alongside the UK GDPR, governs personal data in research? | The Data Protection Act 2018 | The Equality Act 2010 | The Human Tissue Act 2004 | The Mental Health Act 1983 | The Data Protection Act 2018 sits alongside the UK GDPR.
@@ -1208,7 +1208,7 @@ T: Capacity | The ability to understand, retain and weigh information to make a 
 SUM: Vulnerability arises from limited capacity, higher risk or dependent relationships.
 SUM: Safeguards include parental consent and child assent, legal procedures for adults lacking capacity, and independent recruitment.
 SRC: Mental Capacity Act 2005, c. 9 | legislation | 2005 | https://www.legislation.gov.uk/ukpga/2005/9/contents
-SRC: British Psychological Society, Code of Human Research Ethics | standard | 2021 | https://www.bps.org.uk/guideline/bps-code-human-research-ethics
+SRC: British Psychological Society, Code of Human Research Ethics | standard | 2021
 Q: What is assent? | A child's or vulnerable person's own agreement to take part, alongside formal consent from someone else.
 Q: Which law governs research with adults lacking capacity in England and Wales? | The Mental Capacity Act 2005.
 M1#psychology-u10-33-q1@1: Why may prisoners be considered vulnerable participants? | They may find it hard to refuse because of their dependent situation | They are always unable to understand information | They are under 16 | They have no legal rights | Dependent relationships can undermine voluntary consent.
@@ -1245,7 +1245,7 @@ T: Research governance | The framework of rules, review and accountability for c
 SUM: Ethics committees review proposals against professional codes and law before research begins.
 SUM: Review protects participants but can be slow or overcautious, and ethical responsibility continues during the study.
 SRC: Health Research Authority, "Research Ethics Committees" | guidance | 2026-11 | https://www.hra.nhs.uk/
-SRC: British Psychological Society, Code of Human Research Ethics | standard | 2021 | https://www.bps.org.uk/guideline/bps-code-human-research-ethics
+SRC: British Psychological Society, Code of Human Research Ethics | standard | 2021
 Q: What does a research ethics committee do? | Independently reviews research proposals, weighing risks and benefits and checking consent, confidentiality and safeguards.
 Q: Which body coordinates NHS research ethics review in the UK? | The Health Research Authority (HRA).
 M1#psychology-u10-34-q1@1: Which document sets out ethical principles for psychological research in the UK? | The BPS research ethics code | The Mental Health Act | The Equality Act | The National Curriculum | The BPS Code is the professional standard for research.

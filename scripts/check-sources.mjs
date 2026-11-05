@@ -28,7 +28,13 @@ for (const [url, s] of seen) {
         status = (yearOk || volPageOk) && overlap >= need ? "✓" : "⚠"; note = `${title} (${year})${yearOk ? "" : volPageOk ? ` · Crossref dates the digitised record ${year}; volume and pages match the citation` : ` · year differs from ${s.date}`}${overlap >= need ? "" : " · title words don't match the citation"}`;
       }
     } else {
-      const r = await fetch(url, { redirect: "follow", headers: { "User-Agent": "Mozilla/5.0 Gradify source check" } });
+      // rate-limited sites (HTTP 429, e.g. ons.gov.uk) get two slower retries before counting as a failure
+      let r;
+      for (let tries = 0; tries < 3; tries++) {
+        r = await fetch(url, { redirect: "follow", headers: { "User-Agent": "Mozilla/5.0 Gradify source check" } });
+        if (r.status !== 429) break;
+        await new Promise((ok) => setTimeout(ok, 5000 * (tries + 1)));
+      }
       status = r.ok ? "✓" : "✗"; note = `HTTP ${r.status}`;
     }
   } catch (e) { status = "✗"; note = String(e.message || e).slice(0, 80); }
