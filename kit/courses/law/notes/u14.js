@@ -56,6 +56,7 @@ H: The Court of Justice
 P: Through preliminary references, national courts ask the Court of Justice to interpret EU law; courts of last instance must refer unless the answer is clear or already decided (CILFIT (Case 283/81) [1982] ECR 3415).
 K: The Commission proposes, the Parliament and Council legislate, and the Court of Justice interprets EU law, largely through preliminary references.
 !: Confusing the Council of the EU (ministers) with the Council of Europe (the ECHR body).
+CASE: CILFIT (Case 283/81) [1982] ECR 3415 | An Italian court of last instance asked whether it had to refer a question of EU law to the Court of Justice. | Courts of last instance must refer unless the question is irrelevant, already decided, or the answer is so obvious as to leave no reasonable doubt (acte clair). | Sets the limits of the duty to make a preliminary reference under what is now Article 267 TFEU.
 SUM: Seven institutions are listed in Article 13 TEU.
 SUM: The ordinary legislative procedure needs Parliament and Council.
 SUM: Preliminary references link national courts to the Court of Justice.
@@ -144,6 +145,9 @@ H: Charter
 P: Some Charter rights can have horizontal effect in disputes within the scope of EU law (Egenberger (Case C-414/16), 2018).
 K: Clear, precise and unconditional provisions have direct effect; directives bind only the state directly, so use indirect effect or state liability against private parties.
 !: Relying on an unimplemented directive directly against a private employer.
+CASE: Van Gend en Loos (Case 26/62) [1963] ECR 1 | A Dutch importer challenged a customs duty increase as breaching a Treaty provision. | The Treaty provision created rights individuals could enforce in national courts. | Direct effect: clear, precise and unconditional Treaty provisions confer rights enforceable by individuals.
+CASE: Marshall v Southampton and South West Hampshire AHA (Case 152/84) [1986] ECR 723 | A health authority dietitian was required to retire at 62, when male colleagues retired at 65. | She could rely on the Equal Treatment Directive against the authority as an emanation of the state. | Directives have vertical but not horizontal direct effect.
+CASE: Marleasing (Case C-106/89) [1990] ECR I-4135 | A Spanish dispute between private companies turned on a Civil Code provision inconsistent with an unimplemented directive. | The national court had to interpret national law, as far as possible, in light of the directive. | Indirect effect: the duty of consistent interpretation.
 SUM: Van Gend en Loos founded direct effect.
 SUM: Directives have only vertical direct effect (Marshall).
 SUM: Indirect effect requires consistent interpretation (Marleasing).
@@ -176,6 +180,8 @@ H: Member states' courts
 P: Some national constitutional courts accept supremacy only within limits, for example the German Federal Constitutional Court's 2020 PSPP judgment questioning an ECB programme.
 K: Supremacy requires national courts to set aside conflicting national law; in the UK it ended with the 2023 Act.
 !: Saying EU supremacy still applies to UK law after 2023.
+CASE: Costa v ENEL (Case 6/64) [1964] ECR 585 | An Italian consumer challenged the nationalisation of electricity as contrary to the Treaty; Italian law said a later Italian statute prevailed. | EU law takes precedence over conflicting national law, including later legislation. | The supremacy of EU law over the law of member states.
+CASE: R v Secretary of State for Transport, ex p Factortame Ltd (No 2) [1991] 1 AC 603 | Spanish-owned fishing companies challenged the Merchant Shipping Act 1988's nationality rules as contrary to EU law. | The courts disapplied the Act and granted an interim injunction against the Crown. | While the UK was a member, UK courts gave EU law priority over conflicting Acts of Parliament (through the European Communities Act 1972).
 SUM: Costa v ENEL established supremacy.
 SUM: Simmenthal requires national courts to set aside conflicting law.
 SUM: The REUL Act 2023 ended supremacy in the UK.
@@ -208,6 +214,8 @@ H: After Brexit
 P: The European Union (Withdrawal) Act 2018 removed the right to Francovich damages in UK law for breaches after the end of the transition period, subject to transitional provisions.
 K: State liability needs a rights-conferring rule, a sufficiently serious breach and causation; UK Francovich claims have ended for new breaches.
 !: Assuming any breach of EU law, however technical, gives a right to damages.
+CASE: Francovich v Italy (Joined Cases C-6/90 and C-9/90) [1991] ECR I-5357 | Italy failed to implement a directive guaranteeing employees' wages on their employer's insolvency, and the claimants lost wages. | Italy was liable to compensate them. | A member state is liable to individuals for loss caused by its breach of EU law.
+CASE: Brasserie du Pêcheur and Factortame III (Joined Cases C-46/93 and C-48/93) [1996] ECR I-1029 | A French brewer excluded from the German market and the Spanish fishermen sought damages from Germany and the UK. | State liability extends to all breaches, including by the legislature. | Liability requires a rule intended to confer rights, a sufficiently serious breach and a direct causal link.
 SUM: Francovich created state liability.
 SUM: Brasserie set three conditions.
 SUM: Non-transposition is sufficiently serious per se.
@@ -238,6 +246,8 @@ H: The UK now
 P: The UK left the single market and customs union. The Trade and Cooperation Agreement provides tariff-free trade in goods meeting rules of origin, but not free movement of people or full market access for services.
 K: Free movement of goods catches any rule capable of hindering trade, subject to justifications, mutual recognition and the Keck exception.
 !: Treating every national rule affecting sales as an MEQR without considering Keck.
+CASE: Rewe-Zentral (Cassis de Dijon) (Case 120/78) [1979] ECR 649 | Germany banned the sale of a French blackcurrant liqueur because its alcohol content was below the German minimum. | The ban was a measure having equivalent effect to a quantitative restriction. | Mutual recognition: goods lawfully marketed in one member state may be sold in another, subject to mandatory requirements.
+CASE: Keck (Joined Cases C-267/91 and C-268/91) [1993] ECR I-6097 | French supermarket managers were prosecuted for reselling goods at a loss. | National rules on selling arrangements fall outside Article 34 if they apply to all traders and affect domestic and imported goods alike. | The Keck distinction between product requirements and certain selling arrangements.
 SUM: Dassonville defines MEQRs broadly.
 SUM: Cassis introduced mutual recognition and mandatory requirements.
 SUM: Keck excludes certain selling arrangements.
@@ -271,6 +281,7 @@ H: After Brexit
 P: The Withdrawal Agreement protects citizens' rights of EU nationals in the UK and UK nationals in the EU who were resident before the end of 2020. In the UK, they apply through the EU Settlement Scheme.
 K: EU citizens can move and reside under Directive 2004/38, with limits on access to benefits; Brexit ended UK nationals' citizenship, with protections for existing residents.
 !: Assuming EU citizens have an unconditional right to social assistance in any member state.
+CASE: Dano v Jobcenter Leipzig (Case C-333/13) | A Romanian national living in Germany, who hadn't worked or sought work, claimed basic subsistence benefits. | Germany could refuse the benefits. | Economically inactive EU citizens without sufficient resources may be refused social assistance under the Citizenship Directive.
 SUM: Citizenship gives movement, residence and political rights.
 SUM: Directive 2004/38 sets conditions; Dano limits benefits.
 SUM: The Withdrawal Agreement protects pre-2021 residents.
@@ -302,6 +313,7 @@ H: UK regime
 - The Digital Markets, Competition and Consumers Act 2024 lets the CMA designate firms with strategic market status and impose conduct requirements.
 K: Article 101 targets anti-competitive agreements and Article 102 abuse of dominance; the UK mirrors them in the Competition Act 1998.
 !: Assuming being dominant is itself unlawful: only abuse is prohibited.
+CASE: United Brands v Commission (Case 27/76) [1978] ECR 207 | United Brands imposed restrictions on distributors and charged different prices for bananas in different member states. | It held a dominant position and abused it. | Dominance is the power to behave to an appreciable extent independently of competitors, customers and consumers.
 SUM: Article 101 prohibits anti-competitive agreements.
 SUM: Article 102 prohibits abuse of dominance.
 SUM: The CMA enforces UK equivalents and the DMCC digital regime.
@@ -366,6 +378,8 @@ H: Practice
 P: When advising on an area once governed by EU law, identify whether the rule survived as assimilated law, whether it has been amended, and how much weight earlier CJEU case law still carries.
 K: EU law survived Brexit as retained, now assimilated, law, without supremacy, and higher courts can depart from retained case law.
 !: Treating CJEU judgments given after Brexit as binding on UK courts.
+CASE: TuneIn Inc v Warner Music UK Ltd [2021] EWCA Civ 441 | Music companies sued an online radio aggregator for copyright infringement; the question included departing from retained EU case law. | The Court of Appeal exercised its new power but saw no reason to depart from the EU case law here. | Courts given the power to depart from retained EU case law use the Supreme Court's test for departing from its own decisions.
+LAW: Retained EU Law (Revocation and Reform) Act 2023 | Renamed retained EU law 'assimilated law' from 1 January 2024, ended the principle of supremacy of EU law and general principles for that law, and widened courts' powers to depart from retained EU case law.
 SUM: The 2018 Act created retained EU law.
 SUM: The 2023 Act renamed it assimilated law and ended supremacy.
 SUM: Higher courts can depart from retained case law.
@@ -427,6 +441,7 @@ H: UK practice
 - Treaties don't change domestic law without legislation (JH Rayner (Mincing Lane) Ltd v Department of Trade and Industry [1990] 2 AC 418).
 K: Treaties bind states in good faith and are interpreted under the VCLT; in the UK they need legislation to have domestic effect.
 !: Arguing a treaty the UK has ratified but not incorporated directly gives rights in a UK court.
+CASE: JH Rayner (Mincing Lane) Ltd v Department of Trade and Industry [1990] 2 AC 418 | Creditors of the International Tin Council sought to enforce its debts against member states. | Unincorporated treaties create no rights or obligations in domestic law. | The dualist principle: a treaty has domestic effect only if Parliament incorporates it.
 SUM: The VCLT governs treaties.
 SUM: Pacta sunt servanda requires good faith performance.
 SUM: The CRAG Act 2010 gives Parliament a role before ratification.
@@ -456,6 +471,8 @@ H: In UK law
 - But the courts won't create new criminal offences from international custom without legislation (R v Jones (Margaret) [2006] UKHL 16: aggression isn't a domestic crime).
 K: Custom needs widespread practice and opinio juris; in the UK it forms part of the common law, subject to statute.
 !: Assuming widespread practice alone creates custom without opinio juris.
+CASE: Trendtex Trading Corp v Central Bank of Nigeria [1977] QB 529 | The Central Bank of Nigeria claimed state immunity for unpaid letters of credit. | The bank had no immunity under the restrictive doctrine. | Customary international law is part of the common law, and changes in it are applied by the courts.
+CASE: R v Jones (Margaret) [2006] UKHL 16 | Protesters damaged military bases, claiming they were preventing the crime of aggression against Iraq. | Aggression is a crime in customary international law but not a crime in domestic law. | Customary international crimes don't automatically become domestic offences; creating crimes is for Parliament.
 SUM: Custom needs state practice and opinio juris.
 SUM: Persistent objectors may escape new rules.
 SUM: Custom is part of UK common law (Trendtex), but doesn't create crimes (Jones).
@@ -487,6 +504,7 @@ H: Reparation
 P: Full reparation for injury: restitution, compensation or satisfaction (Factory at Chorzów (Germany v Poland) (1928) PCIJ Series A No 17). States may also espouse their nationals' claims through diplomatic protection, after local remedies are exhausted.
 K: A state is responsible for attributable conduct breaching an international obligation, unless a recognised excuse applies, and must make full reparation.
 !: Attributing a private group's acts to a state without showing effective control.
+CASE: Military and Paramilitary Activities in and against Nicaragua (Nicaragua v USA) [1986] ICJ Rep 14 | Nicaragua claimed the US had supported the contra rebels and mined its harbours. | The US breached customary international law, including the prohibition on the use of force; it wasn't responsible for the contras' acts as it lacked effective control. | State responsibility for non-state actors requires effective control of the operations.
 SUM: Wrongful acts need attribution and breach.
 SUM: Effective control is required for non-state actors.
 SUM: Chorzów Factory requires full reparation.
@@ -518,6 +536,7 @@ H: Other bodies
 - **Permanent Court of Arbitration**: administers inter-state and investor-state arbitrations.
 K: The ICJ decides state disputes by consent and gives advisory opinions; other tribunals cover crimes, the sea, human rights and trade.
 !: Assuming individuals can bring cases before the ICJ.
+CASE: Legal Consequences of the Separation of the Chagos Archipelago from Mauritius in 1965 (Advisory Opinion) [2019] ICJ Rep 95 | The UN General Assembly asked whether the UK's separation of the Chagos Archipelago from Mauritius before independence was lawful. | Decolonisation wasn't lawfully completed; the UK should end its administration as quickly as possible. | An advisory opinion of the ICJ, not binding as such, on the right to self-determination.
 SUM: The ICJ hears state disputes with consent.
 SUM: Advisory opinions are influential but not binding.
 SUM: Specialist courts cover crimes, the sea, rights and trade.
@@ -550,6 +569,7 @@ H: Immunities in UK law
 - **Diplomatic immunity**: Vienna Convention on Diplomatic Relations 1961, given effect by the Diplomatic Privileges Act 1964.
 K: States legislate on recognised bases, enforce territorially, and respect state and diplomatic immunities subject to statutory exceptions.
 !: Assuming a foreign state is always immune, even for commercial contracts.
+CASE: The Case of the SS Lotus (France v Turkey) (1927) PCIJ Series A No 10 | A French ship collided with a Turkish ship on the high seas, killing Turkish nationals; Turkey prosecuted the French officer. | Turkey didn't breach international law. | The Lotus principle: states may act unless a rule of international law prohibits it (since much qualified).
 SUM: Jurisdiction rests on territory, nationality, protection or universality.
 SUM: Enforcement is territorial.
 SUM: The State Immunity Act 1978 applies restrictive immunity.

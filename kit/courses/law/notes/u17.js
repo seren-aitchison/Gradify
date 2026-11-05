@@ -94,6 +94,7 @@ O: Explain the legislative competence of the Scottish Parliament
 O: Describe the checks on devolved legislation
 T: Legislative competence | The range of matters on which a devolved legislature may make law
 T: Sewel convention | The convention that Westminster won't normally legislate on devolved matters without consent
+CASE: AXA General Insurance Ltd v HM Advocate [2011] UKSC 46 | Insurers challenged an Act of the Scottish Parliament making pleural plaques actionable. | The Act was valid; Acts of the Scottish Parliament aren't reviewable on common law grounds of irrationality. | Acts of the Scottish Parliament can be challenged only for exceeding competence or, exceptionally, offending the rule of law.
 SUM: The Scottish Parliament legislates on matters not reserved.
 SUM: Acts outside competence are not law; the Supreme Court can rule on this.
 SRC: Scotland Act 1998, sections 28–29 | legislation | 1998 | https://www.legislation.gov.uk/ukpga/1998/46
@@ -319,6 +320,8 @@ O: Distinguish transferred, reserved and excepted matters
 O: Explain power-sharing and its effect on law-making
 T: Excepted matter | A matter permanently kept at Westminster under the Northern Ireland Act 1998
 T: Petition of concern | A mechanism requiring cross-community support for an Assembly vote
+CASE: Robinson v Secretary of State for Northern Ireland [2002] UKHL 32 | The Assembly elected the First Minister and Deputy First Minister after the six-week deadline in the Northern Ireland Act 1998. | The election was valid. | The Northern Ireland Act 1998 is a constitution and is interpreted generously and purposively.
+LAW: Northern Ireland Act 1998, s 1 | Northern Ireland remains part of the United Kingdom and won't cease to be without the consent of a majority of its people voting in a poll held under Schedule 1.
 SUM: The Assembly legislates on transferred matters.
 SUM: Power-sharing and suspensions have shaped law-making.
 SRC: Northern Ireland Act 1998 | legislation | 1998 | https://www.legislation.gov.uk/ukpga/1998/47

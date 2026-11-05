@@ -51,6 +51,7 @@ function lawFlags(L, text) {
   if (/\bCPR\b|\bCrimPR\b|\bPD\s?\d|\br(ule)?\s\d+\.\d+/.test(text)) f.push("procedure rule numbers (not yet checked)");
   if (L.sources.some((x) => x.kind === "guidance" || x.kind === "rule")) f.push("regulator guidance or rules (not yet checked)");
   if (/Shayler|Nicklinson/.test(text)) f.push("citation corrected 2026-11-03: confirm");
+  if (L.authorities?.length) f.push(`${L.authorities.length} case or statute card${L.authorities.length > 1 ? "s" : ""}: check facts and holdings`);
   return f;
 }
 function nursingFlags(L, text) {
@@ -136,7 +137,13 @@ for (const C of COURSES) {
     const written = course.written.includes(unit.id);
     const row = { unit, written, planned: unit.lessons.length, hard: [], warn: [], metaGaps: [], stats: null };
     if (written) {
-      const parsed = parseNotes(await course.notes(unit.id)), byTitle = new Map(parsed.map((p) => [norm(p.title), p]));
+      const rawNotes = await course.notes(unit.id);
+      const parsed = parseNotes(rawNotes), byTitle = new Map(parsed.map((p) => [norm(p.title), p]));
+      // CASE: and LAW: lines that don't have all their parts are dropped by the parser; catch them here
+      for (const line of String(rawNotes).split("\n").map((x) => x.trim())) {
+        if (line.startsWith("CASE:") && line.slice(5).split(" | ").filter((x) => x.trim()).length !== 4) row.hard.push(`case card needs "name | facts | held | principle": ${line.slice(0, 60)}`);
+        if (line.startsWith("LAW:") && line.slice(4).split(" | ").filter((x) => x.trim()).length !== 2) row.hard.push(`statute card needs "provision | what it provides": ${line.slice(0, 60)}`);
+      }
       const missing = unit.lessons.filter((l) => !byTitle.has(norm(l.title)));
       const extra = parsed.filter((p) => !unit.lessons.some((l) => norm(l.title) === norm(p.title)));
       for (const l of missing) row.hard.push(`no notes for "${l.title}"`);

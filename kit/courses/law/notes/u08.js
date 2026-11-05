@@ -119,6 +119,7 @@ H: Identity fraud
 - Warning signs: unoccupied or mortgage-free property, rushed timescales, changes of contact details, reluctance to meet.
 K: Verify identity from reliable independent sources, apply enhanced checks where risk is high, and watch for impersonation.
 !: Relying on photocopied ID without verifying it, especially for a mortgage-free, unoccupied property.
+CASE: Dreamvar (UK) Ltd v Mishcon de Reya [2018] EWCA Civ 1082 | A fraudster posed as the owner of a property and 'sold' it; the buyer's solicitors paid the money to the fraudster's solicitors. | The seller's solicitors were liable for breach of trust (holding money for completion that never truly occurred); the buyer's solicitors weren't relieved under s 61. | In identity fraud the seller's solicitor, holding money on trust for genuine completion, can bear the loss, though acting honestly.
 SUM: The MLRs require CDD on every client.
 SUM: Enhanced due diligence applies to PEPs and high-risk matters.
 SUM: Identity fraud can make solicitors liable (Dreamvar).
@@ -187,6 +188,8 @@ H: Firm obligations
 P: Firms must carry out a firm-wide risk assessment (reg 18), have policies and controls, train staff and keep records. The SRA supervises solicitors for AML.
 K: Report suspicions to the MLRO, don't proceed without consent where needed, and never tip off the client.
 !: Telling the client the transaction is delayed "because we've reported it to the NCA".
+LAW: Proceeds of Crime Act 2002, ss 327 to 329 | The principal money laundering offences: concealing, converting or transferring criminal property (s 327), entering into an arrangement facilitating it (s 328), and acquiring, using or possessing it (s 329), with a defence for an authorised disclosure (a suspicious activity report).
+LAW: Money Laundering, Terrorist Financing and Transfer of Funds (Information on the Payer) Regulations 2017 | Require regulated firms, including conveyancers, to assess risk and carry out customer due diligence: identify and verify the client and beneficial owners, understand the purpose of the business, and monitor it.
 SUM: POCA ss 327–329 are the principal offences.
 SUM: The regulated sector must report suspicions (s 330).
 SUM: Tipping off is an offence (s 333A).
@@ -317,6 +320,7 @@ H: Buyer's response
 P: The buyer's solicitor reviews the package, raises enquiries and amends the contract to protect the buyer. Sellers sometimes offer limited title guarantee (for example, personal representatives), which gives the buyer weaker covenants.
 K: The contract package provides the documents the buyer needs to investigate title and the property; the draft contract sets the terms.
 !: Accepting a limited title guarantee without understanding the weaker protection it gives.
+LAW: Law of Property (Miscellaneous Provisions) Act 1989, s 2 | A contract for the sale or other disposition of an interest in land can only be made in writing, incorporating all the expressly agreed terms in one document (or each part where contracts are exchanged), signed by or for each party.
 SUM: The package contains the contract, title evidence and property forms.
 SUM: The contract sets particulars, title guarantee and special conditions.
 SUM: The buyer reviews and amends before exchange.
@@ -442,6 +446,7 @@ H: Late completion (Standard Conditions)
 - If completion doesn't happen, either party ready to complete may serve a notice to complete; the other then has 10 working days (SC 6.8).
 K: Complete pre-completion searches and funding, use the Code for Completion by Post, and know the Standard Conditions on late completion.
 !: Releasing funds before receiving confirmation that completion has taken place under the Code.
+LAW: Law of Property Act 1925, s 52 | A conveyance of land or of any interest in it is void for the purpose of creating or conveying a legal estate unless made by deed (subject to exceptions such as short leases).
 SUM: Pre-completion steps differ for buyer and seller.
 SUM: Completion uses the Code for Completion by Post and undertakings.
 SUM: Late completion attracts compensation; notice to complete gives 10 working days.
@@ -473,6 +478,7 @@ H: Why timing matters
 P: If registration is late, another application may gain priority, and until registration the buyer holds only the equitable title (LRA 2002, s 27). Late SDLT returns attract penalties and interest. Delay can expose the firm to claims.
 K: Seller: redeem and account. Buyer: SDLT within 14 days and register within the priority period.
 !: Missing the priority period of the official search, risking loss of priority.
+LAW: Land Registration Act 2002, s 27 | Registrable dispositions (such as a transfer of a registered estate or the grant of a legal charge) don't operate at law until the registration requirements are met.
 SUM: The seller's solicitor redeems the mortgage and accounts.
 SUM: The buyer's solicitor files SDLT and registers the dealing.
 SUM: Leasehold purchases need notices to the landlord.
@@ -506,6 +512,7 @@ H: Practice
 P: SDLT is imposed by the Finance Act 2003, Part 4. Take instructions on the buyer's circumstances at the outset. Rates and reliefs change often, so check HMRC's current guidance and calculator.
 K: Calculate SDLT using the current bands, applying first-time buyer relief or the higher rates as the buyer's circumstances require.
 !: Applying first-time buyers' relief to a property costing over £500,000.
+LAW: Finance Act 2003, Part 4 | Stamp Duty Land Tax: charged on land transactions in England and Northern Ireland, with a return and payment due within 14 days of the effective date (normally completion). Rates and reliefs change: check the current figures.
 SUM: SDLT applies in England and Northern Ireland.
 SUM: Bands, first-time buyer relief and higher rates apply to residential property.
 SUM: Wales and Scotland have their own taxes.
@@ -573,6 +580,8 @@ H: Lease extensions and reform
 P: Qualifying tenants of flats can extend their lease (Leasehold Reform, Housing and Urban Development Act 1993). The Leasehold and Freehold Reform Act 2024 changes valuation and eligibility rules, being brought into force in stages; check commencement.
 K: Review the lease, landlord consents, charges and building safety position, and check the remaining term against the lender's requirements.
 !: Ignoring a short unexpired term that will make the flat unmortgageable.
+LAW: Landlord and Tenant Act 1988, s 1 | Where a lease permits assignment only with the landlord's consent, not to be unreasonably withheld, the landlord must give consent within a reasonable time unless it is reasonable not to, and must give written notice of the decision and any conditions or reasons.
+LAW: Landlord and Tenant (Covenants) Act 1995, s 5 | For new leases (from 1 January 1996), a tenant who lawfully assigns the whole of the premises is released from the tenant covenants, subject to any authorised guarantee agreement.
 SUM: Leasehold purchases need lease review and management information.
 SUM: Consent to assignment can't be unreasonably withheld under the 1988 Act.
 SUM: Service charges, ground rent and building safety are regulated.
@@ -704,6 +713,7 @@ H: Codes and regulation
 P: The RICS Code for leasing business premises (2020) sets mandatory requirements for RICS members on lease negotiations. Leases over seven years must be registered, and SDLT is calculated on the net present value of the rent.
 K: Negotiate rent, repair, alienation and break terms carefully, and decide whether to contract out of the 1954 Act.
 !: Failing to follow the s 38A procedure before the lease is granted, leaving the tenant with security of tenure.
+LAW: Landlord and Tenant Act 1954, Part II | Business tenants of qualifying tenancies have security of tenure: the tenancy continues after its term until ended under the Act, and the landlord can oppose a new tenancy only on specified grounds (s 30), unless the protection was excluded by the agreed procedure.
 SUM: Commercial leases cover rent review, repair, alienation and breaks.
 SUM: The 1954 Act gives security of tenure unless contracted out.
 SUM: Break conditions are strictly enforced.

@@ -104,3 +104,17 @@ Expert review flags for this batch (a qualified solicitor or barrister should ch
 - The course-wide notice stays, and the "How the content is made" section shows review progress.
 - What still needs checking is bookmarked in `docs/qa/law-review-queue.md`, which `npm run qa` regenerates: the stages each school is missing (content review, source check, expert sign-off), plus lesson-by-lesson priority flags.
 - Record completed checks in `kit/courses/law/qa.js`.
+
+## Status: case and statute cards (2026-11-05)
+
+- 378 cards across 18 schools (297 cases, 81 statutory provisions), written as `CASE:` and `LAW:` lines in the notes.
+- Each case card gives the facts, the decision and the principle, and becomes two flashcards: case to facts, and principle to case. Each statute card becomes one flashcard.
+- The cards appear at the end of each lesson and in a searchable **Cases** tab (`#/cases`).
+- QA rejects incomplete card lines, and a test checks that every case card has a citation.
+- **Expert review:** the facts and holdings were written from memory. They are flagged lesson by lesson in `docs/qa/law-review-queue.md` ("case or statute card: check facts and holdings").
+
+## Status: course progress in the account (2026-11-05)
+
+- Course progress now follows a signed-in learner across devices: the `course_progress` table (migration `20261105120000_course_progress.sql`).
+- The device and account copies are merged, never overwritten (`kit/course/progress.js`).
+- The migration must be run in the Supabase SQL editor (`docs/SETUP.md`). Until then, progress stays on the device as before.

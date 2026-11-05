@@ -12,7 +12,7 @@
 import { schedule, isDue, preview, fmtInterval } from "../learning/srs.js";
 import { LocalStore, CloudStore, scopeToSite } from "../data/store.js";
 import { roadDefs, car } from "./road.js";
-import { parseNotes, lessonHtml, lessonText, lessonFrame, esc, inline, norm } from "./notes.js";
+import { parseNotes, lessonHtml, lessonText, lessonFrame, authorityCards, esc, inline, norm } from "./notes.js";
 import { renderQuestion, wireQuestions, normalize, TYPES as QTYPES } from "../assess/questions.js";
 import { makeAttempt, analyse } from "../assess/attempts.js";
 import { mergeProgress, cloudCopy } from "./progress.js";
@@ -226,7 +226,7 @@ export function mountCourse(root, cfg) {
 
   // ---------- layout ----------
   const VIEWS = [...(cfg.overview ? [["overview", "Overview"]] : []), ["learn", "Learn"], ["review", "Review"], ["paths", "Paths"], ["tracks", `${TW}s`], ["problems", "Problems"],
-    ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []),
+    ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []),
     ["leaderboard", "Leaderboard"], ["me", "My progress"], ["features", "Features"]];
   roadDefs();
   root.classList.add("co");
@@ -531,6 +531,30 @@ export function mountCourse(root, cfg) {
   }
 
   // ---------- problems: every check question in the course, filterable ----------
+  // case and statute cards from every lesson (CASE: and LAW: lines), searchable (cfg.authorities names the tab)
+  async function viewAuthorities() {
+    main.innerHTML = `<div class="co-panel"><p>Loading the cards…</p></div>`;
+    const all = await allNotes();
+    const items = lessons.flatMap((l) => (all[l.id]?.authorities || []).map((a) => ({ a, l })));
+    const sortKey = (x) => x.a.name.replace(/^(R|Re|In re)\s+(\(|v\s)?/i, "").toLowerCase();
+    items.sort((x, y) => sortKey(x).localeCompare(sortKey(y)));
+    const f = { unit: "", kind: "", q: "" };
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">${esc(cfg.authorities)}</span><h2>Case and statute cards</h2><p>${items.filter((x) => x.a.kind === "case").length} cases and ${items.filter((x) => x.a.kind === "law").length} statutory provisions from the lessons: facts, decision and principle for each case; what each provision does. Each card is also a flashcard in its lesson.</p></div>
+      <div class="co-filters co-auths-tools"><input type="search" class="co-auth-q" placeholder="Search cases and statutes" aria-label="Search cases and statutes">
+        <select class="co-auth-u" aria-label="${U}"><option value="">Every ${u1}</option>${units.filter((u) => items.some((x) => x.l.unit === u)).map((u) => `<option value="${u.id}">${U} ${u.n}: ${esc(u.title)}</option>`).join("")}</select>
+        <select class="co-auth-kind" aria-label="Kind"><option value="">Cases and statutes</option><option value="case">Cases</option><option value="law">Statutes</option></select></div>
+      <p class="co-pcount co-auth-n"></p><div class="co-auth-list"></div>`;
+    const paint = () => {
+      const q = norm(f.q), list = items.filter((x) => (!f.unit || x.l.unit.id === f.unit) && (!f.kind || x.a.kind === f.kind) && (!q || norm(Object.values(x.a).join(" ")).includes(q)));
+      main.querySelector(".co-auth-n").textContent = `${list.length} card${list.length === 1 ? "" : "s"}${list.length > 60 ? " · showing the first 60" : ""}`;
+      main.querySelector(".co-auth-list").innerHTML = list.length ? `<div class="co-auths">${list.slice(0, 60).map((x) => authorityCards([x.a]).replace(/^<div class="co-auths">|<\/div>$/g, "").replace(/<\/article>$/, `<a class="co-auth-from" href="#/lesson/${x.l.id}">${U} ${x.l.unit.n} · ${esc(x.l.title)}</a></article>`)).join("")}</div>` : `<p class="co-empty">No cards match.</p>`;
+    };
+    main.querySelector(".co-auth-q").addEventListener("input", (e) => { f.q = e.target.value; paint(); });
+    main.querySelector(".co-auth-u").addEventListener("change", (e) => { f.unit = e.target.value; paint(); });
+    main.querySelector(".co-auth-kind").addEventListener("change", (e) => { f.kind = e.target.value; paint(); });
+    paint();
+  }
+
   async function viewProblems() {
     main.innerHTML = `<div class="co-panel"><p>Loading the problem bank…</p></div>`;
     const all = await allNotes();
@@ -769,6 +793,7 @@ export function mountCourse(root, cfg) {
     else if (view === "paths") viewPaths();
     else if (view === "tracks") viewTracks();
     else if (view === "problems") await viewProblems();
+    else if (view === "cases") await viewAuthorities();
     else if (view === "exams") await viewExams();
     else if (view === "exam") await viewExam(arg);
     else if (view === "practice") await viewPractice(arg);

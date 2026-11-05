@@ -25,6 +25,7 @@ H: A method for problems
 P: Identify the offence; break it into its actus reus and mens rea elements; apply each to the facts with authority; consider causation where a result is required; then consider defences. State a conclusion on each charge.
 K: Every element must be proved by the prosecution beyond reasonable doubt; a defence once raised must be disproved.
 !: Jumping straight to defences before establishing that the elements of the offence are made out.
+CASE: Woolmington v DPP [1935] AC 462 | Woolmington shot his estranged wife and said it was an accident; the judge told the jury he had to prove it was. | Conviction quashed: the prosecution must prove guilt. | The 'golden thread': the prosecution bears the burden of proving guilt beyond reasonable doubt, subject to insanity and statutory exceptions.
 SUM: Criminal liability needs actus reus, mens rea and no defence.
 SUM: The prosecution proves guilt beyond reasonable doubt (Woolmington).
 SUM: Work through offence elements, causation, then defences.
@@ -61,6 +62,7 @@ H: Omissions
 - Withdrawing treatment from a patient in a persistent vegetative state can be an omission, not an act (Airedale NHS Trust v Bland [1993] AC 789).
 K: An omission is criminal only if the defendant was under a duty to act and the offence can be committed by omission.
 !: Assuming a bystander who fails to help commits an offence: without a duty, there is generally no liability.
+CASE: R v Stone and Dobinson [1977] QB 354 | A couple took in Stone's frail sister, who became bedridden and died of neglect. | Guilty of manslaughter: by voluntarily assuming her care they came under a duty and grossly breached it. | Liability for omission arises where there is a duty to act, including one voluntarily assumed towards a dependant.
 SUM: Actus reus covers conduct, circumstances and consequences.
 SUM: Conduct must be voluntary.
 SUM: Omissions are criminal only where a duty exists, such as by contract, relationship or creating danger.
@@ -96,6 +98,8 @@ H: Other forms
 - **Transferred malice**: mens rea for one victim transfers to the unintended victim of the same kind of offence (R v Latimer (1886)).
 K: Intention and recklessness are subjective: the question is what this defendant intended or foresaw, not what a reasonable person would have.
 !: Treating foresight of virtual certainty as automatically equal to intention: it is evidence from which the jury may find it.
+CASE: R v G [2003] UKHL 50 | Two boys aged 11 and 12 set fire to newspapers behind a shop; the fire spread and caused about £1 million of damage. They hadn't foreseen the risk. | Convictions quashed: recklessness is subjective. | D is reckless if aware of a risk and it is unreasonable to take it in the circumstances known to them (overruling Caldwell).
+CASE: R v Woollin [1999] 1 AC 82 | A father threw his baby onto a hard surface and the baby died. | The jury may find intention only if death or serious harm was a virtual certainty and D appreciated that. | Oblique intention: the jury may find intent where the result was a virtual certainty and D appreciated it.
 SUM: Intention may be direct or oblique (Woollin).
 SUM: Recklessness is subjective foresight of an unreasonable risk (R v G).
 SUM: Malice can transfer between victims for the same offence.
@@ -127,6 +131,8 @@ H: Why it matters
 P: The principle protects people from liability for accidental harm while the flexible approaches stop defendants escaping liability on technicalities when the events are, in reality, one wrongful episode.
 K: Look for a continuing act or a single transaction where mens rea and actus reus seem to be separated in time.
 !: Concluding there is no liability simply because the fatal act came after the defendant believed the victim was already dead.
+CASE: Fagan v Metropolitan Police Commissioner [1969] 1 QB 439 | Fagan accidentally drove onto a police officer's foot, then refused to move when told. | Guilty of assault: the act was continuing, and mens rea arose during it. | A continuing act lets mens rea formed during it coincide with the actus reus.
+CASE: Thabo Meli v R [1954] 1 WLR 228 | Defendants beat a man, believed him dead and rolled him off a cliff; he died of exposure. | Guilty of murder: the series of acts formed one transaction. | Where acts form a single transaction, mens rea at any point suffices.
 SUM: Actus reus and mens rea must coincide.
 SUM: Fagan treats some acts as continuing.
 SUM: Thabo Meli and Le Brun treat a sequence of acts as one transaction.
@@ -157,6 +163,8 @@ H: Intervening acts
 - **Thin skull rule**: R v Blaue [1975] 1 WLR 1411: a Jehovah's Witness refused a blood transfusion after being stabbed; D was still the cause of death.
 K: The chain of causation is broken only by an intervening act that is free, deliberate and informed, or so unforeseeable or potent that D's contribution becomes insignificant.
 !: Assuming negligent medical treatment always breaks the chain of causation.
+CASE: R v White [1910] 2 KB 124 | White poisoned his mother's drink; she died of a heart attack before the poison could act. | Not guilty of murder (but guilty of attempt): the poison didn't cause death. | Factual causation: D's act must be a 'but for' cause of the result.
+CASE: R v Smith [1959] 2 QB 35 | A soldier stabbed in a barracks fight was dropped twice on the way to treatment and given poor treatment; he died. | The stab wound was still an operating and substantial cause. | D remains liable if the original wound is still an operating and substantial cause of death.
 SUM: Causation needs factual (but for) and legal (operating and substantial) causes.
 SUM: Medical treatment rarely breaks the chain; free, informed acts can.
 SUM: D takes the victim as they find them (Blaue).
@@ -191,6 +199,7 @@ H: Arguments
 P: For: protects the public, eases enforcement, encourages high standards. Against: convicts the morally blameless. Some statutes include due diligence defences to soften the effect.
 K: Start with the presumption of mens rea (Sweet v Parsley) and apply the Gammon factors to decide whether it is displaced.
 !: Assuming an offence is strict liability because it is regulatory, without applying the presumption of mens rea.
+CASE: Sweet v Parsley [1970] AC 132 | A teacher sub-let a farmhouse whose tenants smoked cannabis there, without her knowledge. | Conviction quashed: the offence required mens rea. | There is a presumption that mens rea is required, displaced only clearly by Parliament.
 SUM: Strict liability removes mens rea for at least one element.
 SUM: Courts presume mens rea unless the statute clearly displaces it (Sweet v Parsley; Gammon).
 SUM: Strict liability is common in regulatory areas.
@@ -225,6 +234,9 @@ H: Impossibility
 - **R v Shivpuri [1987] AC 1**: D was guilty of attempting to deal in drugs even though the substance was harmless vegetable matter.
 K: Attempts need an act more than merely preparatory and intention to commit the full offence; impossibility is no defence.
 !: Accepting recklessness as the mens rea for attempted murder: only intent to kill will do.
+CASE: R v Gullefer [1990] 1 WLR 1063 | Gullefer jumped onto a dog track to stop a race so he could reclaim his bet. | Not an attempt to steal: his acts were merely preparatory. | An act is more than merely preparatory once D has embarked on the crime proper.
+CASE: R v Shivpuri [1987] AC 1 | Shivpuri believed he was dealing in prohibited drugs; it was in fact snuff-like vegetable matter. | Guilty of attempt: impossibility is no defence. | Under the Criminal Attempts Act 1981 a person can attempt the impossible (overruling Anderton v Ryan).
+LAW: Criminal Attempts Act 1981, s 1(1) | A person is guilty of attempt if, with intent to commit an indictable offence, they do an act which is more than merely preparatory to its commission.
 SUM: The actus reus is an act more than merely preparatory (s 1(1) CAA 1981).
 SUM: Intention to commit the offence is required.
 SUM: Impossibility is no defence (Shivpuri).
@@ -259,6 +271,7 @@ H: Withdrawal
 - In spontaneous violence, simply leaving may be enough (R v Mitchell and King (1999)).
 K: Secondary liability needs assistance or encouragement plus intention to assist or encourage, with knowledge of the essential facts (Jogee).
 !: Treating mere presence at the scene as aiding and abetting without evidence of intentional encouragement.
+CASE: R v Jogee [2016] UKSC 8 | Jogee encouraged a friend who stabbed and killed a man; he was convicted on the basis of foresight that the friend might use the knife. | Conviction set aside: foresight is only evidence of intention. | An accessory must intend to assist or encourage the principal's crime; foresight alone isn't enough (correcting Chan Wing-Siu).
 SUM: Accessories are liable as principals under s 8 of the 1861 Act.
 SUM: Mens rea is intention to assist or encourage with knowledge of the essential facts.
 SUM: Withdrawal must be timely and effective.
@@ -321,6 +334,7 @@ H: Failure to prevent
 - **Economic Crime and Corporate Transparency Act 2023, s 199**: failure to prevent fraud by large organisations, with a reasonable procedures defence (in force from September 2025).
 K: Use identification (now widened for economic crime by the 2023 Act), corporate manslaughter, or failure to prevent offences, depending on the crime.
 !: Assuming a junior employee's mens rea can be attributed to a company at common law.
+CASE: Tesco Supermarkets Ltd v Nattrass [1972] AC 153 | A store manager's failure led to goods being sold above the advertised price. | Tesco wasn't liable: the manager wasn't part of the company's directing mind and will. | Identification doctrine: a company's fault is that of its directing mind (now extended to senior managers for economic crime by the ECCTA 2023).
 SUM: Companies can be liable directly, vicariously or through identification.
 SUM: The 2023 Act attributes senior managers' economic crimes to the company.
 SUM: Corporate manslaughter and failure to prevent offences target organisational failures.
@@ -386,6 +400,7 @@ H: Criticism and reform
 - The mandatory life sentence makes the line between murder and manslaughter especially important.
 K: Murder needs intention to kill or to cause really serious harm; the GBH rule is controversial but settled.
 !: Requiring an intention to kill for murder: intent to cause GBH is enough.
+CASE: R v Vickers [1957] 2 QB 664 | During a burglary Vickers hit an elderly woman who disturbed him; she died. | Guilty of murder: intention to cause GBH is sufficient. | The mens rea of murder is intention to kill or to cause grievous bodily harm.
 SUM: Murder is unlawful killing with malice aforethought.
 SUM: Malice aforethought is intent to kill or intent to cause GBH.
 SUM: Reform proposals haven't been implemented.
@@ -448,6 +463,8 @@ H: Procedure
 P: The defendant bears the legal burden on the balance of probabilities (s 2(2)). Expert psychiatric evidence is in practice essential, but the decision is for the jury (R v Brennan [2014] EWCA Crim 2387).
 K: Diminished responsibility needs a recognised medical condition causing a substantial impairment that significantly contributed to the killing.
 !: Treating voluntary drunkenness on its own as a recognised medical condition.
+CASE: R v Golds [2016] UKSC 61 | Golds, who had a mental disorder, stabbed his partner to death; the issue was the meaning of 'substantially impaired'. | Ordinarily the judge needn't define 'substantially'; if asked, it means significant or appreciable, not merely more than trivial. | Diminished responsibility requires an impairment that is substantial in the sense of significant or appreciable.
+LAW: Homicide Act 1957, s 2 | Murder is reduced to manslaughter where D had an abnormality of mental functioning from a recognised medical condition that substantially impaired the ability to understand their conduct, form a rational judgment or exercise self-control, and provides an explanation for the killing.
 SUM: The defence has four elements under s 2 as amended in 2009.
 SUM: Substantial means important or weighty (Golds).
 SUM: Voluntary intoxication alone doesn't qualify; dependence syndrome can.
@@ -484,6 +501,8 @@ H: The objective test
 P: D's circumstances (such as a history of abuse) can be taken into account, but not characteristics that only affect D's general capacity for tolerance and self-restraint, such as a short temper (s 54(3)).
 K: Loss of control needs an actual loss of self-control, a qualifying trigger and a reaction a normal person might have had; revenge and sexual infidelity alone don't qualify.
 !: Requiring the loss of self-control to be sudden: the 2009 Act removed that requirement.
+CASE: R v Clinton [2012] EWCA Crim 2 | Clinton killed his wife after she taunted him about her affairs and his suicidal thoughts. | Sexual infidelity is excluded as a qualifying trigger on its own but can be considered as context for other triggers. | Infidelity may be taken into account where it is integral to the context of a permissible trigger.
+LAW: Coroners and Justice Act 2009, s 54 | Murder is reduced to manslaughter where D lost self-control, there was a qualifying trigger (fear of serious violence or circumstances of an extremely grave character causing a justifiable sense of being seriously wronged), and a person of D's sex and age with ordinary tolerance might have acted similarly.
 SUM: Three elements: loss of control, qualifying trigger, objective test.
 SUM: Triggers are fear of serious violence or extremely grave circumstances.
 SUM: Revenge and sexual infidelity alone are excluded.
@@ -546,6 +565,8 @@ H: Key cases
 - **R v Wacker [2002] EWCA Crim 1944**: a duty can arise despite a joint illegal enterprise.
 K: Gross negligence manslaughter requires a reasonably foreseeable, serious and obvious risk of death at the time of breach, and negligence so bad it is criminal.
 !: Using hindsight to decide whether the risk of death was obvious: Rose requires foreseeability at the time.
+CASE: R v Adomako [1995] 1 AC 171 | An anaesthetist failed for about six minutes to notice that a patient's oxygen tube had become disconnected; the patient died. | Guilty: the breach was so bad as to be criminal. | Gross negligence manslaughter needs a duty, breach causing death, and negligence so gross the jury considers it criminal.
+CASE: R v Rose [2017] EWCA Crim 1168 | An optometrist failed to examine the back of a boy's eyes, missing swelling that would have revealed a fatal condition. | Conviction quashed: the risk of death must be serious and obvious on the information available at the time, not on what a proper check would have shown. | The risk of death must have been reasonably foreseeable on the knowledge D actually had at the time of breach.
 SUM: Elements: duty, breach, serious and obvious risk of death, causation, gross negligence.
 SUM: The risk must be of death and foreseeable at the time (Rose).
 SUM: The jury decides whether the negligence was criminal.
@@ -579,6 +600,8 @@ H: Causation
 - Drug supply cases: where V freely and knowingly self-injects, the supplier's act doesn't cause death (R v Kennedy (No 2) [2007] UKHL 38).
 K: Unlawful act manslaughter needs a criminal act that a sober, reasonable person would see as risking some harm, causing death.
 !: Requiring D to foresee harm: the dangerousness test is objective.
+CASE: R v Church [1966] 1 QB 59 | After a fight Church thought a woman was dead and threw her in a river; she drowned. | Guilty of manslaughter. | The unlawful act must be dangerous: a sober and reasonable person would recognise it risked some harm.
+CASE: DPP v Newbury and Jones [1977] AC 500 | Two boys pushed a paving stone off a bridge onto a train, killing the guard. | Guilty: D needn't foresee harm as long as the act was unlawful and objectively dangerous. | The danger test is objective; D needn't realise the act was dangerous.
 SUM: The elements are an unlawful, dangerous act causing death.
 SUM: Dangerousness is objective (Church; Newbury).
 SUM: A free, informed self-injection breaks the chain of causation (Kennedy).
@@ -642,6 +665,7 @@ H: Consent and everyday contact
 P: Ordinary jostling in daily life is impliedly consented to. Consent as a defence, and its limits, are covered later in this school.
 K: Assault is apprehension of immediate force; battery is the force itself; both need intention or subjective recklessness.
 !: Assuming an assault requires physical contact or a threat that could be carried out instantly.
+CASE: R v Ireland [1998] AC 147 | Ireland made silent phone calls to women, causing psychiatric illness. | Silent calls can be an assault; psychiatric injury can be actual bodily harm. | Words or silence can cause apprehension of immediate violence, and recognised psychiatric illness is bodily harm.
 SUM: Assault needs apprehension of immediate unlawful force.
 SUM: Battery needs unlawful force, which may be indirect.
 SUM: Mens rea is intention or subjective recklessness.
@@ -671,6 +695,8 @@ H: Mens rea
 - The mens rea of assault or battery is enough; D needn't intend or foresee ABH (R v Savage; DPP v Parmenter [1992] 1 AC 699).
 K: For s 47, prove an assault or battery that causes ABH; the mens rea is only that of the assault or battery.
 !: Requiring D to foresee actual bodily harm.
+CASE: R v Savage; DPP v Parmenter [1992] 1 AC 699 | Savage threw beer at a woman and the glass slipped, cutting her wrist. | Guilty under s 47: no mens rea is needed as to the ABH itself. | For s 47, the mens rea of assault or battery suffices; for s 20, D must foresee some harm.
+LAW: Offences Against the Person Act 1861, s 47 | An assault occasioning actual bodily harm, punishable by up to five years' imprisonment.
 SUM: ABH is harm interfering with health or comfort that isn't trivial.
 SUM: Psychiatric injury counts, but not mere emotions.
 SUM: The mens rea is that of the assault or battery (Savage).
@@ -703,6 +729,7 @@ H: Section 18
 - Where the charge is causing GBH with intent to do GBH, nothing less than intention to cause GBH will do; foresight is evidence of intention under the Woollin approach.
 K: Section 20 needs foresight of some harm; s 18 needs intention to cause really serious harm.
 !: Requiring foresight of serious harm for s 20: foresight of some harm is enough.
+LAW: Offences Against the Person Act 1861, ss 18 and 20 | Section 20: unlawfully and maliciously wounding or inflicting GBH (foresight of some harm); section 18: wounding or causing GBH with intent to do GBH or resist arrest (maximum life).
 SUM: GBH is really serious harm, judged in context.
 SUM: Section 20 requires foresight of some harm (Mowatt).
 SUM: Section 18 requires specific intent to cause GBH (or resist arrest).
@@ -738,6 +765,8 @@ H: Key cases
 - **R v Lawrance [2020] EWCA Crim 971**: a lie about a vasectomy did not negate consent, because it went to the broad circumstances rather than the physical act.
 K: Consent is agreement by choice with freedom and capacity; deception about the act itself, or breach of a condition about the physical act, can negate it.
 !: Treating the absence of resistance or protest as evidence of consent.
+CASE: R v Bree [2007] EWCA Crim 804 | After both had drunk heavily, Bree had sex with a woman who was very drunk. | Conviction quashed for misdirection: a drunk complainant may still have capacity to consent; capacity can be lost before unconsciousness. | Voluntarily drunk consent is still consent if the complainant had capacity to choose.
+LAW: Sexual Offences Act 2003, s 74 | A person consents if they agree by choice and have the freedom and capacity to make that choice.
 SUM: Rape requires penetration without consent and without reasonable belief in consent.
 SUM: Section 74 defines consent; ss 75–76 set out presumptions.
 SUM: Conditions about the physical act can limit consent (Assange; F).
@@ -765,6 +794,8 @@ H: Mens rea
 - **Intention to permanently deprive (s 6)**: includes treating the thing as one's own to dispose of; borrowing can be enough if the thing is returned with its "goodness" gone (R v Lloyd [1985] QB 829).
 K: Theft needs an appropriation of property belonging to another, with dishonesty and intention to permanently deprive.
 !: Applying the old two-stage Ghosh test for dishonesty: Ivey and Barton replaced it.
+CASE: R v Gomez [1993] AC 442 | A shop assistant persuaded his manager to accept stolen cheques for goods. | Appropriation can occur with the owner's consent obtained by deception. | Any assumption of an owner's right is appropriation, even with consent.
+LAW: Theft Act 1968, s 1 | A person is guilty of theft if they dishonestly appropriate property belonging to another with the intention of permanently depriving the other of it.
 SUM: Section 1 defines theft; ss 2–6 explain the elements.
 SUM: Appropriation can be with consent (Gomez; Hinks).
 SUM: Dishonesty follows Ivey and Barton; s 6 extends intention to permanently deprive.
@@ -795,6 +826,7 @@ H: Completion and sentence
 - Robbery is indictable only, with a maximum of life imprisonment.
 K: Robbery is theft plus force (or the threat of it) used immediately before or at the time of the theft, in order to steal.
 !: Concluding there is robbery when force is used after the theft is complete and D has escaped.
+LAW: Theft Act 1968, s 8 | A person is guilty of robbery if they steal and, immediately before or at the time and in order to do so, use force on any person or put or seek to put any person in fear of force.
 SUM: Robbery requires a completed theft.
 SUM: Force can be slight and used on any person.
 SUM: Force must be used at or before the time of stealing and in order to steal.
@@ -828,6 +860,8 @@ H: Sentence
 P: The maximum is 14 years for a dwelling and 10 years for other buildings; aggravated burglary carries life.
 K: Burglary needs entry into a building or part of one as a trespasser, plus the intent (s 9(1)(a)) or the further offence (s 9(1)(b)).
 !: Assuming a person with general permission to enter can never be a trespasser: exceeding the permission can make them one.
+CASE: R v Walkington [1979] 1 WLR 1169 | Walkington went behind a shop's counter area and opened the till. | The counter area was a 'part of a building' from which customers were excluded, so he entered it as a trespasser. | Burglary can be committed by entering part of a building as a trespasser.
+LAW: Theft Act 1968, s 9 | Burglary: entering a building or part of one as a trespasser with intent to steal, inflict GBH or do unlawful damage (s 9(1)(a)), or having entered as a trespasser, stealing or inflicting GBH or attempting either (s 9(1)(b)).
 SUM: Section 9(1)(a) needs intent on entry; s 9(1)(b) needs a further offence after entry.
 SUM: Entry must be effective; buildings need permanence.
 SUM: Exceeding permission can make D a trespasser (Jones and Smith).
@@ -864,6 +898,8 @@ H: Related offences
 P: Possession and making of articles for use in fraud (ss 6–7) and obtaining services dishonestly (s 11). Fraud carries a maximum of 10 years.
 K: Fraud is a conduct crime: the dishonest false representation with intent is enough, whether or not anyone is deceived or any loss results.
 !: Requiring proof that someone was actually deceived or suffered loss.
+CASE: Ivey v Genting Casinos (UK) Ltd [2017] UKSC 67 | A professional gambler used 'edge-sorting' to win £7.7 million at baccarat; the casino refused to pay. | He had cheated; and the second (subjective) limb of the Ghosh test was disapproved. | Dishonesty: find D's actual belief about the facts, then ask whether conduct was dishonest by the standards of ordinary decent people (applied in crime by Barton and Booth).
+LAW: Fraud Act 2006, s 2 | Fraud by false representation: dishonestly making a false representation, intending to make a gain or cause loss or risk of loss.
 SUM: Fraud can be by false representation, failure to disclose, or abuse of position.
 SUM: No actual deception, gain or loss is needed.
 SUM: Dishonesty follows Ivey and Barton.
@@ -896,6 +932,7 @@ H: Aggravated damage and arson
 - Both carry a maximum of life imprisonment; basic damage carries up to 10 years.
 K: Criminal damage needs damage to another's property with intention or subjective recklessness and no lawful excuse.
 !: Assuming lawful excuse under s 5 is unavailable when D's belief was induced by drink.
+CASE: Jaggard v Dickinson [1981] QB 527 | Drunk, D broke into a house she believed was her friend's, who she believed would consent; it was a stranger's. | She had a lawful excuse: an honest belief in consent counts, even if drunk. | Under s 5(2) of the Criminal Damage Act 1971, an honestly held belief is enough, however induced.
 SUM: Damage is a matter of fact and degree, including temporary impairment.
 SUM: Section 5 lawful excuse includes belief in consent and protection of property.
 SUM: Aggravated damage and arson carry life.
@@ -961,6 +998,8 @@ H: Effect
 P: Successful self-defence leads to complete acquittal. Excessive force in a murder case isn't a partial defence in itself, though it may support loss of control based on fear of serious violence.
 K: Ask whether D honestly believed force was necessary, and whether the force was reasonable on the facts as D believed them.
 !: Allowing a drunken mistake about the need for force to support self-defence.
+CASE: R v Gladstone Williams (1984) 78 Cr App R 276 | Williams intervened when he saw a man dragging a youth, believing an assault was taking place; in fact it was a lawful arrest. | D is judged on the facts as they honestly believed them to be, whether or not the belief was reasonable. | Self-defence is judged on D's honest belief about the circumstances; the force must be reasonable in those circumstances.
+LAW: Criminal Justice and Immigration Act 2008, s 76 | Reasonable force is judged on the circumstances as D believed them to be; force grossly disproportionate is never reasonable, and in householder cases force that is disproportionate but not grossly so may be reasonable.
 SUM: Self-defence has a subjective belief stage and an objective reasonableness stage.
 SUM: Drunken mistakes don't count (s 76(5)).
 SUM: Householders may use force that isn't grossly disproportionate.
@@ -994,6 +1033,7 @@ H: Criticism
 P: The rules date from 1843 and label conditions such as epilepsy and diabetes as "insanity". The Law Commission's discussion paper (Criminal Liability: Insanity and Automatism, 2013) proposed a new defence of "not criminally responsible by reason of a recognised medical condition".
 K: Insanity needs a defect of reason from an internal disease of the mind, causing D not to know what they were doing or that it was legally wrong.
 !: Treating "wrong" as morally wrong: under Windle, it means legally wrong.
+CASE: R v Sullivan [1984] AC 156 | During an epileptic seizure Sullivan kicked a man. | Epilepsy is a disease of the mind for the M'Naghten Rules. | A 'disease of the mind' is a legal concept covering any internal cause impairing reason, memory and understanding.
 SUM: The M'Naghten Rules govern insanity.
 SUM: Disease of the mind is any internal cause, including physical illness.
 SUM: The special verdict allows flexible disposals.
@@ -1022,6 +1062,7 @@ H: Self-induced automatism
 - Where the automatism results from voluntary intoxication with dangerous drugs or alcohol, the intoxication rules apply. Taking a drug normally sedative (such as Valium) is treated differently (R v Hardie [1985] 1 WLR 64).
 K: Non-insane automatism needs an external cause and a total loss of control; if self-induced, it may fail for basic intent offences.
 !: Accepting reduced awareness, such as tiredness at the wheel, as automatism.
+CASE: R v Quick [1973] QB 910 | A diabetic nurse attacked a patient during hypoglycaemia after taking insulin and not eating. | Non-insane automatism should have been left to the jury: the malfunction was caused by an external factor (the insulin). | External causes give non-insane automatism; internal causes give insanity.
 SUM: Automatism needs an external cause and total loss of control.
 SUM: It leads to a complete acquittal.
 SUM: Self-induced automatism may fail for basic intent crimes (Bailey).
@@ -1055,6 +1096,7 @@ H: Intoxicated mistakes
 - A drunken mistaken belief can't support self-defence (s 76(5) CJIA 2008; R v O'Grady), but can support lawful excuse for criminal damage (Jaggard v Dickinson).
 K: Voluntary intoxication can negate specific intent but not basic intent; involuntary intoxication helps only if D actually lacked mens rea.
 !: Arguing that being drunk is a defence to a basic intent offence such as assault.
+CASE: DPP v Majewski [1977] AC 443 | Majewski, drunk and on drugs, assaulted people in a pub and police. | Voluntary intoxication is no defence to a basic intent offence. | Voluntary intoxication can negate the mens rea of specific intent offences only.
 SUM: Majewski distinguishes specific and basic intent offences.
 SUM: A drunken intent is still intent (Kingston; Sheehan).
 SUM: Drunken mistakes don't support self-defence.
@@ -1086,6 +1128,8 @@ H: Duress of circumstances
 - The same test applies where the threat arises from circumstances (R v Willer (1986) 83 Cr App R 225; R v Conway [1989] QB 290; R v Martin [1989] 1 All ER 652: driving while disqualified to stop a suicide threat).
 K: Duress needs a threat of death or serious injury that a reasonable person sharing D's characteristics would have yielded to, with no safe escape; it is never a defence to murder.
 !: Allowing duress where D joined a gang knowing it used violence to enforce compliance.
+CASE: R v Hasan [2005] UKHL 22 | Hasan associated with a violent drug dealer who forced him to commit a burglary. | Duress unavailable: he voluntarily associated with people he knew or ought to have known might coerce him. | Duress requires a threat of death or serious injury, and fails where D voluntarily exposed themselves to the risk of compulsion.
+CASE: R v Howe [1987] AC 417 | Defendants took part in killings under threats from a dangerous man. | Duress is no defence to murder, as principal or secondary party. | Duress is not available for murder (nor attempted murder: R v Gotts).
 SUM: The Graham test has a subjective and an objective stage.
 SUM: Hasan limits duress strictly, including voluntary association.
 SUM: Duress isn't available for murder or attempted murder.
@@ -1116,6 +1160,7 @@ H: Other cases
 - In medical cases, necessity justifies treating patients who lack capacity in their best interests (now largely under the Mental Capacity Act 2005).
 K: Necessity is very narrow: mostly absorbed into duress of circumstances, never a defence to murder save the unique Re A situation.
 !: Relying on Re A as authority for a general necessity defence to killing.
+CASE: R v Dudley and Stephens (1884) 14 QBD 273 | Shipwrecked sailors killed and ate a cabin boy to survive. | Guilty of murder. | Necessity is not a defence to murder.
 SUM: Dudley and Stephens: no necessity defence to murder.
 SUM: Re A allowed necessity in a unique medical case.
 SUM: Necessity largely operates through duress of circumstances (Shayler).
@@ -1150,6 +1195,7 @@ H: Informed consent and deception
 - Deception as to identity or the nature of the act vitiates consent (R v Tabassum [2000] 2 Cr App R 328); deception about qualifications doesn't (R v Richardson [1999] QB 444: a suspended dentist).
 K: Consent defeats assault and battery; for ABH and above, it works only within recognised public interest exceptions.
 !: Assuming adults can consent to any level of harm in private.
+CASE: R v Brown [1994] 1 AC 212 | A group of men consensually inflicted injuries on each other in private sadomasochistic encounters. | Consent was no defence to ABH or wounding outside recognised exceptions. | Consent is a defence to actual bodily harm or worse only within accepted categories (such as sport, surgery and tattooing).
 SUM: Consent can't generally cover ABH or worse (Brown).
 SUM: Exceptions include surgery, sport, horseplay and adornment.
 SUM: Consent must be informed; some deceptions vitiate it.

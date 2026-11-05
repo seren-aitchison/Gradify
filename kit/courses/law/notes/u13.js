@@ -119,6 +119,8 @@ H: Private parties
 P: The HRA doesn't directly bind private parties, but courts, as public authorities, develop the common law compatibly. This produced the tort of misuse of private information (Campbell v MGN Ltd [2004] UKHL 22).
 K: Use the HRA within one year, expect modest damages, and remember s 12's protection of expression.
 !: Missing the one-year time limit for a standalone HRA claim.
+CASE: Campbell v MGN Ltd [2004] UKHL 22 | The Daily Mirror published that the model Naomi Campbell was attending Narcotics Anonymous, with photographs of her leaving a meeting. | The details of treatment and the photographs were a misuse of private information. | Misuse of private information: a reasonable expectation of privacy, then a balance between Articles 8 and 10.
+LAW: Human Rights Act 1998, s 2 | A court determining a question about a Convention right must take into account Strasbourg judgments, decisions and opinions, so far as relevant; they are not binding.
 SUM: The HRA covers most Convention rights but not Article 13.
 SUM: Claims must normally be brought within one year.
 SUM: Section 12 protects expression; courts give indirect horizontal effect.
@@ -185,6 +187,7 @@ H: Limits
 P: Article 2 doesn't create a right to die (Pretty v United Kingdom (2002) 35 EHRR 1). Debates on assisted dying are for Parliament.
 K: The state must not take life unlawfully, must protect against known real and immediate risks, and must investigate deaths properly.
 !: Applying the Osman duty where the risk wasn't real and immediate or known to the authorities.
+CASE: Rabone v Pennine Care NHS Foundation Trust [2012] UKSC 2 | A voluntary psychiatric patient at high risk of suicide was allowed home leave and took her own life. | The trust breached the Article 2 operational duty. | The operational duty to protect life can extend to voluntary psychiatric patients at a real and immediate risk of suicide.
 SUM: Lethal force must be absolutely necessary (McCann).
 SUM: Osman sets the operational duty to protect life.
 SUM: Deaths must be effectively investigated (Middleton).
@@ -216,6 +219,8 @@ H: Positive duties
 - To investigate credible allegations; serious failures in police investigation can breach Article 3 (Commissioner of Police of the Metropolis v DSD [2018] UKSC 11).
 K: Article 3 is absolute: no justification, no balancing, and it bars removal to a real risk of ill-treatment.
 !: Arguing that national security can justify deporting someone to face torture.
+CASE: Chahal v United Kingdom (1996) 23 EHRR 413 | The UK sought to deport a Sikh separatist to India on national security grounds, despite a risk of torture there. | Deportation would violate Article 3, whatever the security risk. | Article 3 is absolute: a real risk of torture or inhuman treatment in the receiving state bars removal.
+CASE: Commissioner of Police of the Metropolis v DSD [2018] UKSC 11 | The police failed to investigate properly the many sexual assaults of a 'black cab rapist'. | The failures breached Article 3. | Article 3 imposes a duty on the state to conduct an effective investigation into serious ill-treatment, breached by serious operational failures.
 SUM: Ill-treatment must reach a minimum level of severity.
 SUM: Removal to a real risk of ill-treatment is prohibited (Soering; Chahal).
 SUM: Positive duties include protection and investigation (DSD).
@@ -275,6 +280,7 @@ H: UK practice
 P: Detention of people lacking capacity in care settings needs authorisation, currently through the Deprivation of Liberty Safeguards under the Mental Capacity Act 2005, with reform to the Liberty Protection Safeguards delayed.
 K: Decide whether there is a deprivation of liberty, then whether it fits an Article 5(1) ground with lawful procedure and safeguards.
 !: Assuming a comfortable care home placement can't be a deprivation of liberty.
+CASE: Austin v United Kingdom (2012) 55 EHRR 14 | Police 'kettled' demonstrators and bystanders in Oxford Circus for about seven hours during a protest. | No deprivation of liberty in the circumstances. | Whether a measure is a deprivation of liberty depends on its type, duration, effects and manner, including its context and purpose.
 SUM: Deprivation of liberty is assessed on type, duration and effect.
 SUM: The Article 5(1) grounds are exhaustive.
 SUM: Procedural rights include reasons, prompt hearing and review.
@@ -305,6 +311,7 @@ H: Hearsay
 P: Admitting the statement of an absent witness isn't automatically unfair if there's good reason for absence and sufficient counterbalancing safeguards (Al-Khawaja and Tahery v United Kingdom (2012) 54 EHRR 23; R v Horncastle [2009] UKSC 14).
 K: Article 6 requires an independent, impartial, public and timely hearing, with implied rights and extra criminal safeguards.
 !: Assuming any reliance on hearsay from an absent witness breaches Article 6.
+CASE: Saunders v United Kingdom (1997) 23 EHRR 313 | Statements compelled by DTI inspectors under threat of penalty were used in Saunders's criminal trial. | A breach of Article 6. | The privilege against self-incrimination is part of the right to a fair trial.
 SUM: Article 6 applies to civil rights and criminal charges.
 SUM: Implied rights include access to court and the right to silence.
 SUM: Hearsay may be fair with counterbalancing safeguards.
@@ -336,6 +343,7 @@ H: Applications
 - Privacy against the press: Campbell v MGN Ltd [2004] UKHL 22.
 K: Article 8 is broad; interferences must be lawful, for a legitimate aim and proportionate.
 !: Assuming a policy is "in accordance with the law" just because some law authorises it, without safeguards.
+CASE: Big Brother Watch v United Kingdom (2021) Application nos 58170/13 and others (Grand Chamber) | Groups challenged GCHQ's bulk interception of communications revealed by Edward Snowden. | The bulk interception regime breached Articles 8 and 10 for lack of end-to-end safeguards. | Bulk interception isn't unlawful in itself but needs robust safeguards at every stage.
 SUM: Article 8 protects private life, family life, home and correspondence.
 SUM: Interferences must be lawful, legitimate and proportionate.
 SUM: It underpins privacy, data and immigration cases.
@@ -365,6 +373,7 @@ H: Related protection
 P: The Equality Act 2010 protects religion or belief as a characteristic, giving domestic remedies in employment and services alongside Article 9.
 K: Belief is absolutely protected; manifestation can be limited if lawful, legitimate and proportionate.
 !: Treating every workplace dress rule affecting religious symbols as a violation.
+CASE: R (Begum) v Headteacher and Governors of Denbigh High School [2006] UKHL 15 | A pupil was refused permission to wear a jilbab when the school uniform allowed a shalwar kameez. | No unlawful interference with her right to manifest her religion. | Article 9 isn't infringed where a person can manifest their religion elsewhere without undue hardship; any interference was justified.
 SUM: Holding beliefs is absolutely protected.
 SUM: Manifestation can be limited under Article 9(2).
 SUM: Eweida, Begum and SAS illustrate the balance.
@@ -396,6 +405,7 @@ H: Domestic protection
 P: The HRA, s 12, protects expression in applications for injunctions, and the Defamation Act 2013 includes a public interest defence (s 4).
 K: Article 10 protects even shocking speech; restrictions need clear law, a legitimate aim and strict necessity, especially for political speech.
 !: Assuming offensive speech is automatically outside Article 10.
+CASE: Sunday Times v United Kingdom (1979) 2 EHRR 245 | An injunction stopped the Sunday Times publishing an article about thalidomide while litigation was pending. | The injunction violated Article 10. | A restriction must be prescribed by law (accessible and foreseeable) and necessary in a democratic society.
 SUM: Article 10 protects offensive and shocking ideas (Handyside).
 SUM: Political speech and the press get strong protection.
 SUM: Restrictions must be lawful, legitimate and necessary.
@@ -424,6 +434,7 @@ H: Protest in UK law
 - The Police, Crime, Sentencing and Courts Act 2022 and the Public Order Act 2023 expanded police powers and created new offences such as locking on.
 K: Article 11 protects peaceful, even disruptive, protest and association, but recent law narrows protection for serious disruption and damage.
 !: Assuming any criminal act during a protest is protected by Article 11.
+CASE: DPP v Ziegler [2021] UKSC 23 | Protesters blocked a road to an arms fair by locking themselves to equipment. | Their acquittal stood: the court had to assess whether a conviction was proportionate. | For obstruction of the highway, the 'lawful excuse' defence requires a fact-specific proportionality assessment of the Article 10 and 11 rights.
 SUM: Article 11 protects peaceful assembly and association.
 SUM: States must protect peaceful protest.
 SUM: Ziegler's proportionality approach has been narrowed.
@@ -455,6 +466,7 @@ H: Protocol 12 and domestic law
 P: Protocol 12 creates a freestanding right to non-discrimination, but the UK hasn't ratified it. The Equality Act 2010 provides domestic protection in many areas.
 K: Article 14 needs the ambit of another right, a difference in treatment on a status ground, analogous situations and no objective justification.
 !: Bringing an Article 14 claim that isn't within the ambit of another Convention right.
+CASE: R (SC) v Secretary of State for Work and Pensions [2021] UKSC 26 | The 'two-child limit' restricted child benefit in universal credit to two children. | Not unlawful discrimination: it was justified. | In welfare benefits policy, courts give weight to Parliament's democratic judgment, under the 'manifestly without reasonable foundation' approach in a refined form.
 SUM: Article 14 isn't freestanding.
 SUM: Discrimination needs objective and reasonable justification.
 SUM: Welfare policy gets a more deferential test.
@@ -485,6 +497,7 @@ H: Justification
 - A wide margin of appreciation in economic and social policy (AXA General Insurance Ltd v HM Advocate [2011] UKSC 46).
 K: Protocol 1 Article 1 allows deprivation or control of property in the public interest, if lawful and a fair balance is struck.
 !: Assuming any regulation of property use requires compensation.
+CASE: James v United Kingdom (1986) 8 EHRR 123 | Trustees of the Duke of Westminster's estate challenged leasehold enfranchisement legislation allowing tenants to buy freeholds. | No breach of A1P1: the legislation pursued a legitimate aim in the public interest. | States have a wide margin of appreciation in social and economic policy on property.
 SUM: Sporrong set out three rules.
 SUM: Possessions include some benefits and claims.
 SUM: Interferences need a fair balance; compensation usually for deprivation.
@@ -546,6 +559,7 @@ H: Structure
 P: Domestic courts usually apply the four-stage test from Bank Mellat v HM Treasury (No 2) [2013] UKSC 39: important aim, rational connection, less intrusive means, fair balance.
 K: Necessity means a pressing social need; domestic courts decide proportionality themselves, giving appropriate weight to decision-makers.
 !: Treating proportionality as a review of whether the decision-maker considered rights, rather than whether rights were actually violated.
+CASE: Handyside v United Kingdom (1976) 1 EHRR 737 | A publisher was convicted under obscenity law for the Little Red Schoolbook, aimed at children. | No violation of Article 10. | The margin of appreciation: national authorities are better placed to assess the necessity of restrictions on morals, subject to European supervision.
 SUM: Necessity requires a pressing social need.
 SUM: Domestic courts decide proportionality themselves.
 SUM: Weight to decision-makers varies with the subject.
@@ -578,6 +592,7 @@ H: Review
 P: Courts give weight to the government's assessment of whether there is an emergency, but scrutinise closely whether the measures are strictly required and non-discriminatory.
 K: Derogation needs a genuine emergency, strictly required measures and notification; some rights can't be derogated from.
 !: Believing a state can derogate from Article 3 in an emergency.
+LAW: Human Rights Act 1998, s 14 | Provides for designated derogations: the UK's derogations from Convention rights under Article 15 in time of war or public emergency threatening the life of the nation.
 SUM: Article 15 allows derogation in war or public emergency.
 SUM: Articles 2, 3, 4(1) and 7 are non-derogable.
 SUM: Courts scrutinise whether measures are strictly required (A v SSHD).
@@ -610,6 +625,7 @@ H: Effect
 P: Remedies often lead to wider legal change, such as new legislation following declarations of incompatibility or Strasbourg judgments.
 K: HRA remedies include modest damages, declarations and public law orders; Strasbourg adds violations, just satisfaction and interim measures.
 !: Expecting substantial damages for most HRA breaches.
+LAW: Human Rights Act 1998, s 8 | A court may grant such relief or remedy within its powers as it considers just and appropriate; damages only where necessary for just satisfaction, taking Strasbourg principles into account.
 SUM: HRA damages are modest and discretionary.
 SUM: Declarations and remedial orders address incompatible law.
 SUM: Strasbourg judgments bind the state; interim measures prevent irreparable harm.
@@ -641,6 +657,7 @@ H: Hybrid bodies
 P: Bodies with some public functions are bound only in respect of those functions (s 6(3)(b) and (5)); the factors are discussed in the constitutional law school.
 K: Section 6 binds public authorities, including courts, subject to the s 6(2) defence; private parties are affected indirectly through courts and s 3.
 !: Suing a private company directly under s 6 HRA for breach of privacy.
+CASE: Ghaidan v Godin-Mendoza [2004] UKHL 30 | On a tenant's death, his same-sex partner was denied a statutory tenancy that a surviving spouse or 'as his wife or husband' partner would get. | The Act was read under s 3 to include same-sex partners. | Section 3 can require words to be read in, as long as this goes with the grain of the legislation.
 SUM: Section 6 covers acts and failures to act.
 SUM: Section 6(2) protects authorities bound by incompatible legislation.
 SUM: Courts give indirect horizontal effect.
@@ -702,6 +719,7 @@ H: Customary law and the UK
 P: Some norms, such as the prohibition of torture, are jus cogens. In R v Bow Street Metropolitan Stipendiary Magistrate, ex p Pinochet Ugarte (No 3) [2000] 1 AC 147, a former head of state wasn't immune from extradition for torture after the UK incorporated the Convention against Torture.
 K: International frameworks complement the ECHR; they influence UK law through incorporation, interpretation and customary law.
 !: Assuming the ECHR is the only international human rights system relevant to the UK.
+CASE: R v Bow Street Metropolitan Stipendiary Magistrate, ex p Pinochet Ugarte (No 3) [2000] 1 AC 147 | Spain sought the extradition from the UK of Chile's former head of state for torture. | He had no immunity for torture committed after the UK ratified the Torture Convention. | A former head of state has no immunity from criminal proceedings for torture as defined in the Convention.
 SUM: The UN system sets global standards and monitors states.
 SUM: Regional systems operate in the Americas and Africa.
 SUM: International criminal law and jus cogens norms reach individuals.
