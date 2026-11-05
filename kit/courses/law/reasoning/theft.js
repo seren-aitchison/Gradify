@@ -1,0 +1,102 @@
+// LawGradify reasoning case: theft (England and Wales, as at 2026). Fictional facts.
+// Authorities: Theft Act 1968, ss 1–6; R v Gomez [1993] AC 442; Ivey v Genting Casinos (UK) Ltd [2017]
+// UKSC 67; R v Barton and Booth [2020] EWCA Crim 575; R v Lloyd [1985] QB 829.
+export default {
+  id: "dropped-note", title: "Dan, a dropped £20 note and a borrowed console", area: "Criminal law: theft", jurisdiction: "England and Wales",
+  brief: "You work for a criminal defence firm. Dan Pryce has been interviewed by the police about two incidents and asks whether he has committed theft in either. Analyse his liability under the Theft Act 1968.",
+  facts: [
+    [["In a supermarket queue, Dan saw the woman in front of him drop a £20 note as she paid.", "She is the owner and was identifiable on the spot: central to s 5 and s 2(1)(c)."],
+      ["She was still at the till, a metre away, packing her bags.", "Shows the owner could easily have been found by taking reasonable steps."],
+      ["Dan picked the note up, put it in his pocket and said nothing.", "Picking up and keeping the note is an appropriation (s 3(1))."],
+      ["When the police asked him about it, he said: \"Finders keepers. She should have been more careful.\"", "His stated belief is evidence for the dishonesty question (Ivey)."],
+      ["Dan once worked at that supermarket."]],
+    [["The following Friday, Dan took his housemate Ali's games console from Ali's room without asking.", "A taking without consent: the question is intention to permanently deprive."],
+      ["He played it at a friend's house over the weekend and returned it, undamaged, on Sunday evening.", "A short borrowing, returned with its value intact: R v Lloyd and s 6."],
+      ["Ali was furious and reported both incidents to the police."],
+      ["Dan says he assumed Ali wouldn't mind, as they often share things.", "Relevant to whether he'd be dishonest, but the console question turns first on intention to permanently deprive."]],
+  ],
+  issues: [
+    { id: "appropriation", correct: true, label: "Did Dan appropriate property belonging to another when he kept the £20 note?", why: "The actus reus of theft needs an appropriation of property belonging to another: a dropped note doesn't stop belonging to its owner.",
+      lessons: ["u05-24"], core: ["Theft Act 1968, s 3", "Theft Act 1968, s 5"], support: ["Theft Act 1968, s 1", "R v Gomez"],
+      rule: "Theft is dishonestly appropriating property belonging to another with the intention of permanently depriving the other of it (s 1). Any assumption of the rights of an owner is an appropriation, including keeping or dealing with property as owner (s 3(1)); property belongs to anyone having possession, control or a proprietary interest in it (s 5(1)).",
+      points: [
+        { text: "The note is property, and it still belonged to the woman who dropped it (s 5(1)).", cues: [["belong", "owner", "her note", "her money", "s 5", "section 5"]] },
+        { text: "It wasn't abandoned: she dropped it accidentally and was still present.", cues: [["abandon", "accident", "dropped"]] },
+        { text: "Picking it up and keeping it as his own assumed the owner's rights: an appropriation (s 3(1)).", cues: [["appropriat", "assum"], ["kept", "keep", "pocket", "picked", "picking"]] },
+      ],
+      conclusion: { q: "What's your conclusion on the actus reus for the note?", options: [
+        { t: "Dan appropriated property belonging to another.", correct: true, why: "Keeping the note assumed the owner's rights over property that was still hers." },
+        { t: "There was no appropriation because the note was on the floor.", why: "Where the property happens to be doesn't change who owns it; picking it up and keeping it is an appropriation." },
+        { t: "The note belonged to Dan once he found it.", why: "Finding doesn't transfer ownership while the owner is identifiable and hasn't abandoned it." },
+        { t: "The note belonged to the supermarket.", why: "It was the customer's money; the supermarket hadn't received it." },
+      ] } },
+    { id: "dishonesty", correct: true, label: "Was Dan dishonest in keeping the note?", why: "Dishonesty is the heart of this incident: s 2(1)(c) may protect a finder, and otherwise the Ivey test applies.",
+      lessons: ["u05-24"], core: ["Theft Act 1968, s 2", "Ivey v Genting Casinos (UK) Ltd", "R v Barton and Booth"], support: [],
+      rule: "Appropriation isn't dishonest if the defendant believes the owner can't be discovered by taking reasonable steps (s 2(1)(c)). Otherwise the test is in Ivey v Genting Casinos, confirmed for criminal law in R v Barton and Booth: first find the defendant's actual state of knowledge or belief as to the facts, then decide whether the conduct was dishonest by the standards of ordinary decent people. There's no requirement that the defendant realised it was dishonest by those standards.",
+      points: [
+        { text: "Section 2(1)(c) protects a finder who believes the owner can't be found by reasonable steps.", cues: [["2(1)(c)", "reasonable steps", "can't be found", "cannot be found", "can't be discovered", "cannot be discovered"]] },
+        { text: "That can't help Dan: the owner was a metre away, so he couldn't genuinely believe she couldn't be found.", cues: [["metre", "still at the till", "in front", "present", "right there", "nearby", "next to"]] },
+        { text: "Under Ivey, first establish his actual knowledge or belief as to the facts.", cues: [["ivey"], ["belief", "knowledge", "knew", "state of mind"]] },
+        { text: "Then apply the objective standards of ordinary decent people, by which keeping it is dishonest.", cues: [["ordinary", "decent", "objective"]] },
+        { text: "\"Finders keepers\" is no defence: Dan needn't think it dishonest himself (Barton and Booth; the old Ghosh test no longer applies).", cues: [["finders keepers", "ghosh", "barton", "doesn't matter whether he", "does not matter whether he", "need not", "needn't"]] },
+      ],
+      conclusion: { q: "What's your conclusion on dishonesty?", options: [
+        { t: "Dan was almost certainly dishonest: he knew who the owner was, and ordinary decent people would regard keeping the note as dishonest.", correct: true, why: "Section 2(1)(c) can't apply when the owner is in plain view, and the Ivey test is objective once his belief is established." },
+        { t: "Dan wasn't dishonest because he genuinely thought \"finders keepers\" applied.", why: "His view of honesty doesn't decide it: Ivey asks what ordinary decent people would think, given what he knew." },
+        { t: "Dan is protected by s 2(1)(c) because he found the note.", why: "Section 2(1)(c) needs a belief that the owner can't be found by reasonable steps: here she was a metre away." },
+        { t: "Dishonesty depends on whether Dan realised ordinary people would think it dishonest (Ghosh).", why: "That second limb of Ghosh was rejected in Ivey and in Barton and Booth." },
+      ] } },
+    { id: "ipd", correct: true, label: "Did Dan intend permanently to deprive Ali of the console?", why: "Taking the console without consent is an appropriation, but a temporary borrowing usually lacks the intention to permanently deprive.",
+      lessons: ["u05-24"], core: ["Theft Act 1968, s 6", "R v Lloyd"], support: ["Theft Act 1968, s 1"],
+      rule: "Theft requires an intention to permanently deprive. Borrowing is generally not enough, but s 6(1) treats a borrowing as such an intention if it is for a period and in circumstances making it equivalent to an outright taking. In R v Lloyd that was explained as returning the thing with all its goodness or virtue gone.",
+      points: [
+        { text: "Taking the console without asking is still an appropriation of Ali's property.", cues: [["appropriat", "without asking", "without consent", "without permission"]] },
+        { text: "Dan intended to return it and did, after a weekend: a temporary borrowing.", cues: [["return", "borrow", "weekend", "temporar"]] },
+        { text: "Section 6(1) applies only to a borrowing equivalent to an outright taking.", cues: [["s 6", "section 6", "6(1)", "outright"]] },
+        { text: "The console came back undamaged, with its goodness or virtue intact (R v Lloyd), so s 6 doesn't apply.", cues: [["lloyd", "goodness", "virtue", "undamaged", "value"]] },
+      ],
+      conclusion: { q: "What's your conclusion on the console?", options: [
+        { t: "No theft: Dan lacked the intention to permanently deprive, as the console was borrowed briefly and returned undamaged.", correct: true, why: "A weekend's borrowing, with the console's value intact, isn't equivalent to an outright taking under s 6 or Lloyd." },
+        { t: "Theft, because any taking without consent is theft.", why: "Theft also needs dishonesty and an intention to permanently deprive; a temporary taking usually lacks the latter." },
+        { t: "Theft, because Ali was furious.", why: "The owner's reaction doesn't supply Dan's intention." },
+        { t: "Theft, because s 6 treats all borrowing as permanent deprivation.", why: "Section 6 covers only borrowing equivalent to an outright taking." },
+      ] } },
+    { id: "robbery", correct: false, label: "Did Dan commit robbery?", why: "Robbery (s 8) is theft with force or the threat of force: there was none." },
+    { id: "burglary", correct: false, label: "Did Dan commit burglary by entering Ali's room?", why: "Burglary needs entry as a trespasser with intent to steal (or a theft after entry). Dan lives in the house, and he lacked any intention to steal the console." },
+    { id: "fraud", correct: false, label: "Did Dan commit fraud by false representation?", why: "Fraud by false representation (Fraud Act 2006, s 2) needs a representation; Dan didn't represent anything to anyone." },
+  ],
+  bank: [
+    { name: "Theft Act 1968, s 1", cite: "1968 c 60", gist: "Theft: dishonestly appropriating property belonging to another with the intention of permanently depriving the other of it." },
+    { name: "Theft Act 1968, s 2", cite: "1968 c 60", gist: "Situations that aren't dishonest, including a belief that the owner can't be discovered by taking reasonable steps (s 2(1)(c))." },
+    { name: "Theft Act 1968, s 3", cite: "1968 c 60", gist: "Any assumption of the rights of an owner is an appropriation, including keeping or dealing with property as owner." },
+    { name: "Theft Act 1968, s 5", cite: "1968 c 60", gist: "Property belongs to anyone having possession, control or a proprietary interest in it." },
+    { name: "Theft Act 1968, s 6", cite: "1968 c 60", gist: "Intention to permanently deprive includes treating the thing as one's own to dispose of, and borrowing equivalent to an outright taking." },
+    { name: "Theft Act 1968, s 8", cite: "1968 c 60", gist: "Robbery: stealing, using force or putting someone in fear of force, immediately before or at the time." },
+    { name: "R v Gomez", cite: "[1993] AC 442", gist: "An appropriation can occur even with the owner's consent." },
+    { name: "Ivey v Genting Casinos (UK) Ltd", cite: "[2017] UKSC 67", gist: "Dishonesty: establish the defendant's actual knowledge or belief as to the facts, then apply the standards of ordinary decent people." },
+    { name: "R v Barton and Booth", cite: "[2020] EWCA Crim 575", gist: "The Court of Appeal confirmed the Ivey test applies in criminal cases, replacing Ghosh." },
+    { name: "R v Ghosh", cite: "[1982] QB 1053", gist: "The old two-stage test for dishonesty, whose second (subjective) limb was rejected in Ivey and Barton and Booth." },
+    { name: "R v Lloyd", cite: "[1985] QB 829", gist: "Borrowing is equivalent to an outright taking only if the thing is returned with all its goodness or virtue gone." },
+    { name: "Fraud Act 2006, s 2", cite: "2006 c 35", gist: "Fraud by false representation." },
+  ],
+  advice: { q: "What should you advise Dan?", options: [
+    { t: "He is likely to be guilty of theft of the £20 note, but not of the console, because he lacked an intention to permanently deprive Ali of it.", correct: true, why: "The note: appropriation, property belonging to another, dishonesty under Ivey, and intention to keep it. The console: a short borrowing returned intact." },
+    { t: "He is guilty of theft of both the note and the console.", why: "The console was borrowed and returned undamaged, so the intention to permanently deprive is missing." },
+    { t: "He isn't guilty of either, because he believed finders keepers and that Ali wouldn't mind.", why: "His own view of honesty doesn't decide it (Ivey), and s 2(1)(c) can't apply with the owner a metre away." },
+    { t: "He is guilty of robbery for the note.", why: "Robbery needs force or the threat of it." },
+  ] },
+  rubric: [
+    "Sets out the elements of theft under s 1 of the Theft Act 1968",
+    "Explains why the note was property belonging to another (s 5) and that keeping it was an appropriation (s 3)",
+    "Considers s 2(1)(c) and explains why it doesn't apply when the owner was present",
+    "Applies the Ivey test (confirmed in Barton and Booth) correctly, including that Dan's own view of honesty isn't decisive",
+    "Deals with intention to permanently deprive for the console, applying s 6 and R v Lloyd",
+    "Dismisses robbery, burglary or fraud briefly and correctly if raised",
+    "Gives a clear conclusion on each incident",
+  ],
+  model: `Theft is dishonestly appropriating property belonging to another with the intention of permanently depriving the other of it (Theft Act 1968, s 1).
+The £20 note: the note is property, and it still belonged to the woman who dropped it: she had a proprietary interest and hadn't abandoned it (s 5(1)). By picking it up and keeping it as his own, Dan assumed the rights of an owner, which is an appropriation (s 3(1)). He plainly intended to keep it, so he intended to permanently deprive her.
+Dishonesty: under s 2(1)(c), an appropriation isn't dishonest if the defendant believes the owner can't be discovered by taking reasonable steps. That can't help Dan: the owner was a metre away at the till, so he couldn't have held that belief. The test is therefore the one in Ivey v Genting Casinos, confirmed for criminal cases in R v Barton and Booth: first establish Dan's actual knowledge or belief as to the facts (he knew whose note it was and that she was right there), then ask whether his conduct was dishonest by the standards of ordinary decent people. Keeping a stranger's dropped money when she is standing next to you would almost certainly be regarded as dishonest. His view that it was \"finders keepers\" doesn't help: since Ivey, it doesn't matter whether he realised ordinary people would see it as dishonest (the second limb of R v Ghosh no longer applies). Dan is likely to be guilty of theft of the note.
+The console: taking Ali's console without asking was an appropriation of property belonging to another. But Dan intended to return it, and did so after the weekend. A borrowing is treated as an intention to permanently deprive only if it is for a period and in circumstances equivalent to an outright taking (s 6(1)), which R v Lloyd explained as returning the thing with all its goodness or virtue gone. The console came back undamaged and fully usable, so Dan lacked the intention to permanently deprive and isn't guilty of theft of it (whatever the position about his dishonesty). There was no force (so no robbery), he lives in the house (so no burglary), and he made no representation (so no fraud).`,
+  review: { verified: null, note: "Check the statement of the Ivey test and s 6 against current sources before relying on it." },
+};

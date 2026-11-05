@@ -133,3 +133,24 @@ Expert review flags for this batch (a qualified solicitor or barrister should ch
   - The API key stays server-side. Learners' answers aren't stored by the function.
 - **Safety:** every tutor prompt carries the course's boundary. For law: no advice on real legal problems. For nursing: no advice about real patients, doses or escalation, which go through local policy, the prescriber and the supervisor.
 - **To go live:** run the migration and deploy the function (`docs/SETUP.md`). Until then, the AI buttons explain that sign-in is needed, and self-assessment works for everyone.
+
+## Reasoning section: the legal reasoning engine (added November 2026)
+
+The **Reasoning** tab (`#/reasoning`) is where a student works a problem question the way a lawyer does, and gets feedback on each part of their reasoning, not just the final answer. Engine: `kit/interactive/reasoning.js`; cases: `kit/courses/law/reasoning/`; wired through the course engine's generic `workspace` section (`kit/course/course.js`), which NurseGradify's Simulation also uses.
+
+Six stages: mark the material facts in the client's account, identify the issues (with red herrings), choose the authorities for each issue from a bank (with irrelevant ones), write the rule and its application to the facts, conclude on each issue and advise (with a confidence rating), then a feedback report by dimension (material facts, issue spotting, authorities, application, conclusions), with the model answer, lessons to revisit, and optional AI feedback from the course tutor (`mark` mode, the case rubric).
+
+Every marked part is an attempt record, so the work feeds the shared mastery engine (application is `apply` evidence). Written application is checked automatically for the key points a strong answer makes: that's a heuristic, recorded as **provisional**, and the report says so.
+
+| Case | Area | Authorities |
+| --- | --- | --- |
+| Leo's crash (`learner-driver`) | Negligence, contributory negligence | Robinson, Nettleship v Weston, Barnett, Wagon Mound (No 1), Froom v Butcher, 1945 Act s 1 |
+| Dan and the dropped note (`dropped-note`) | Theft | Theft Act 1968 ss 1–6, Gomez, Ivey, Barton and Booth, Lloyd |
+| Owen's café (`cafe-sale`) | Misrepresentation | Bisset v Wilkinson, Smith v Land and House, With v O'Flanagan, Redgrave v Hurd, Misrepresentation Act 1967 s 2, Royscot, Derry v Peek |
+| Rosa's rent reduction (`rent-reduction`) | Consideration, promissory estoppel | Foakes v Beer, Re Selectmove, Williams v Roffey, High Trees, Hughes v Metropolitan Railway, D & C Builders v Rees |
+| Mia and the boathouse (`boathouse`) | Occupiers' liability to a child trespasser | Occupiers' Liability Act 1984 s 1, Wheat v Lacon, Keown, Tomlinson, Herrington |
+| Ella and the raised arm (`bar-push`) | s 20 wounding, mistaken self-defence | OAPA 1861 s 20, JCC v Eisenhower, Mowatt, Savage and Parmenter, CJIA 2008 s 76, Gladstone Williams, Palmer |
+
+**Status.** Tested: structure and marking (`tests/reasoning.test.mjs`: each model answer scores 100% and an empty answer 0%; red herrings, irrelevant authorities and over-marking cost marks) and a full run through in a browser. Deployed: with the site (static). The AI feedback button needs the course-tutor function deployed and a signed-in learner. **Awaiting expert review:** all six cases (`review.verified: null`) need checking by a qualified lawyer: the facts, authorities, model answers and the key points used for marking.
+
+Next: more cases across the SQE1 FLK subjects; a written-only mode (no option lists) for advanced students; timed exam conditions.

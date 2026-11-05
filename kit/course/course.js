@@ -20,12 +20,13 @@ import { sixHtml, calibrationHtml } from "../learning/mastery-view.js";
 import { learnerOf, needsSetup, applyPrefs } from "../data/profile.js";
 import { paceFor } from "../learning/pace.js";
 import { trackView, track } from "../core/analytics.js";
-import { mergeProgress, cloudCopy } from "./progress.js";
+import { callFunction } from "../data/functions.js";
+import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, confirmAttempts } from "./progress.js";
 import { mountRevalidation } from "./revalidation.js";
 import { scoreFeedback } from "../assess/tutor.js";
 import { feedbackHtml, paras } from "../assess/tutor-view.js";
 import { mountTutorPanel, directorHtml } from "./tutor-panel.js";
-import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
+import { SUPABASE_URL } from "../../gradify.config.js";
 import { buildExam, runExam, FORMATS } from "../assess/exam.js";
 
 const DAY = 864e5;
@@ -105,9 +106,48 @@ export function mountCourse(root, cfg) {
     try { localStorage.setItem(KEY, JSON.stringify(S)); } catch { /* private mode: progress lasts this visit */ }
     clearTimeout(syncT); syncT = setTimeout(pushProgress, 3000);
   };
+  // write the device copy without scheduling another account sync (used for bookkeeping such as sync status)
+  const keep = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch { /* private mode */ } };
+  let retryT = null;
+  const failed = (e) => {
+    const msg = String(e?.message || e || ""), auth = /jwt|token|auth|401|sign/i.test(msg) || e?.status === 401;
+    S.sync = { ...(S.sync || {}), failedAt: Date.now(), reason: !navigator.onLine ? "offline" : auth ? "signed-out" : "error" }; keep(); paintSide();
+    // try again in a minute while the page is open; the next visit and coming back online also retry
+    clearTimeout(retryT); retryT = setTimeout(() => { pushProgress(); flushOutbox(); }, 60000);
+  };
   async function pushProgress() {
-    try { const s = await store(); if (s.mode === "cloud" && s.saveCourseProgress) await s.saveCourseProgress(cfg.slug, cfg.site, cloudCopy(S)); }
-    catch { /* offline, or the course_progress table isn't set up yet: the device copy is kept */ }
+    clearTimeout(syncT); syncT = null;
+    let s; try { s = await store(); } catch { return; }
+    if (s.mode !== "cloud" || !s.saveCourseProgress) return;
+    try { await s.saveCourseProgress(cfg.slug, cfg.site, cloudCopy(S)); const was = S.sync?.failedAt; S.sync = { ok: Date.now() }; keep(); if (was) paintSide(); }
+    catch (e) { failed(e); }   // the device copy is kept, and nothing completed is lost: the next sync merges it
+  }
+  // answers waiting for the account (kit/course/progress.js outbox): sent in batches, removed only once confirmed
+  let flushing = false;
+  async function flushOutbox() {
+    if (flushing || !(S.outbox || []).length) return;
+    let s; try { s = await store(); } catch { return; }
+    if (s.mode !== "cloud" || !s.logAttempts) return;
+    const list = outboxAttempts(S); flushing = true;
+    try { await s.logAttempts(list); confirmAttempts(S, list.map((a) => a.id)); keep(); }
+    catch (e) { failed(e); }
+    finally { flushing = false; }
+  }
+  // leaving the page or losing the tab: send what's waiting now rather than after the usual delay
+  const flushNow = () => { if (syncT) pushProgress(); flushOutbox(); };
+  addEventListener("pagehide", flushNow);
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") flushNow(); });
+  addEventListener("online", () => { pushProgress(); flushOutbox(); });
+  // what the learner is told about where their work is (only shown when signed in, or when something is waiting)
+  function syncText(mode) {
+    const waiting = (S.outbox || []).length, f = S.sync?.failedAt && (!S.sync.ok || S.sync.failedAt > S.sync.ok) ? S.sync.reason : null;
+    const n = waiting ? ` ${waiting} ${waiting === 1 ? "answer is" : "answers are"} waiting to sync.` : "";
+    if (mode !== "cloud") return null;
+    if (f === "offline") return { warn: true, text: `You're offline. Everything is saved on this device and will sync when you're back online.${n}` };
+    if (f === "signed-out") return { warn: true, text: `Your sign-in has expired. Everything is saved on this device; sign in again to sync it.${n}` };
+    if (f) return { warn: true, text: `Couldn't reach your account just now. Everything is saved on this device and Gradify will try again.${n}` };
+    if (waiting) return { warn: false, text: `Saving to your account…${n}` };
+    return S.sync?.ok ? { warn: false, text: `Synced to your account at ${new Date(S.sync.ok).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}.` } : { warn: false, text: "Signed in: your progress syncs to every device." };
   }
   // on load: merge the account's copy into this device's, then show the result
   async function pullProgress() {
@@ -116,17 +156,23 @@ export function mountCourse(root, cfg) {
       const cloud = await s.getCourseProgress(cfg.slug);
       const before = JSON.stringify(cloudCopy(S));
       if (cloud) S = mergeProgress(S, cloud);
-      try { localStorage.setItem(KEY, JSON.stringify(S)); } catch { /* private mode */ }
-      if (!cloud || JSON.stringify(cloudCopy(S)) !== JSON.stringify(cloud)) pushProgress();
-      if (JSON.stringify(cloudCopy(S)) !== before) route();
+      // answers made on other devices, so mastery, Revisit and Your plan see every one
+      let added = 0;
+      try { const mine = (await s.listAttempts(400)).filter((a) => a.subject === cfg.slug), n = S.attempts.length; S.attempts = mergeAttempts(S.attempts, mine); added = S.attempts.length - n; } catch { /* attempts table not set up yet */ }
+      keep();
+      if (!cloud || JSON.stringify(cloudCopy(S)) !== JSON.stringify(cloud)) pushProgress(); else { S.sync = { ok: Date.now() }; keep(); }
+      flushOutbox();
+      if (JSON.stringify(cloudCopy(S)) !== before || added) route();
     } catch { /* offline or not set up: carry on with the device copy */ }
   }
 
   // the learner's Gradify account (this device, or their cloud account when signed in)
-  let storeP = null;
+  let storeP = null, storeMode = null;
   const store = () => (storeP ||= (async () => {
-    try { const cloud = await CloudStore.create(), user = cloud ? await cloud.user() : null; return scopeToSite(user ? cloud : new LocalStore(), cfg.site); }
-    catch { return scopeToSite(new LocalStore(), cfg.site); }
+    let st;
+    try { const cloud = await CloudStore.create(), user = cloud ? await cloud.user() : null; st = scopeToSite(user ? cloud : new LocalStore(), cfg.site); }
+    catch { st = scopeToSite(new LocalStore(), cfg.site); }
+    storeMode = st.mode; return st;
   })());
 
   // the shared learner profile (kit/data/profile.js): exam date, daily time, prior knowledge, display
@@ -163,8 +209,9 @@ export function mountCourse(root, cfg) {
   const qHtml = (it, opts = {}) => { pageQs.set(it.key, it); return renderQuestion(it.Q, it.key, { levels: LEVELS, ...opts }); };
   function record(it, context, contextId, res, meta = {}) {
     const a = makeAttempt({ site: cfg.site, subject: cfg.slug, context, contextId, Q: it.Q, key: it.key, version: it.v, lesson: it.l?.id, module: it.l?.module, unit: it.l?.unit.id, response: meta.response, result: res, meta });
-    S.attempts.push(a); if (S.attempts.length > 2000) S.attempts.splice(0, S.attempts.length - 2000); save();
-    store().then((st) => st.logAttempt?.(a)).catch(() => {});
+    S.attempts.push(a); if (S.attempts.length > 2000) S.attempts.splice(0, S.attempts.length - 2000);
+    queueAttempt(S, a.id); save();
+    flushOutbox();
     return a;
   }
   // wire practice questions in el: records every attempt; first-try success solves the question for XP
@@ -261,7 +308,7 @@ export function mountCourse(root, cfg) {
 
   // ---------- layout ----------
   const VIEWS = [...(cfg.overview ? [["overview", "Overview"]] : []), ["learn", "Learn"], ["review", "Review"], ["paths", "Paths"], ["tracks", `${TW}s`], ["problems", "Problems"],
-    ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing?.length ? [["write", "Write"]] : []), ...(cfg.revalidation ? [["revalidation", "Revalidation"]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []),
+    ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing?.length ? [["write", "Write"]] : []), ...(cfg.revalidation ? [["revalidation", "Revalidation"]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []), ...(cfg.workspace ? [[cfg.workspace.route, cfg.workspace.label]] : []),
     ["leaderboard", "Leaderboard"], ["me", "My progress"], ["features", "Features"]];
   roadDefs();
   root.classList.add("co");
@@ -313,6 +360,7 @@ export function mountCourse(root, cfg) {
     paintHud();
     if (side.hidden) return;
     const xp = totalXp(), L = levelOf(xp), st = streak(), tx = todayXp(), nl = nextLesson(), c = challenge(), cw = Math.min(c.n, c.of(week()));
+    const sw = syncText(storeMode), syncWarn = sw?.warn ? sw.text : null;
     const nu = nl ? byId[nl.id].unit : null, left = nu ? nu.lessons.length - unitDone(nu) : 0;
     const ring = Math.min(1, tx / S.goal), R = 30, C = 2 * Math.PI * R;
     const got = new Set(earned().map((b) => b.id));
@@ -327,6 +375,7 @@ export function mountCourse(root, cfg) {
           <small class="co-streak">${ic("flame")} ${st.n}-day streak${st.today ? "" : st.n ? " · learn today to keep it" : ""}</small>
           <select aria-label="Daily goal">${[20, 30, 50, 100].map((g) => `<option value="${g}" ${g === S.goal ? "selected" : ""}>${g} XP a day</option>`).join("")}</select></div>
       </section>
+      ${syncWarn ? `<section class="co-card co-syncwarn" role="status"><p>${esc(syncWarn)}</p></section>` : ""}
       ${planHtml()}
       ${nl ? `<section class="co-card"><span class="co-kicker">${ic("flag")} Next milestone</span><h3>Finish ${U} ${nu.n}: ${esc(nu.title)}</h3><p>${left} lesson${left === 1 ? "" : "s"} to go, then the ${u1} quiz for +${XP.quiz} XP.</p><a class="btn btn-light lg btn-sm co-go" href="#/lesson/${nl.id}"><span>Continue: ${esc(nl.title)}</span></a></section>` : `<section class="co-card"><h3>Course complete</h3><p>Every lesson done. Keep your memory fresh in Review.</p></section>`}
       <section class="co-card"><span class="co-kicker">${ic("trophy")} Weekly challenge</span><h3>${c.name}</h3><p>${c.d}. Reward: +${XP.weekly} XP.</p><div class="co-bar warm"><i style="width:${(cw / c.n) * 100}%"></i></div><small>${cw} / ${c.n}${S.weekly[String(weekStart())] ? " · claimed" : ""} · resets Monday</small></section>
@@ -484,17 +533,9 @@ export function mountCourse(root, cfg) {
     });
   }
 // ---------- the AI tutor (kit/assess/tutor.js → supabase/functions/course-tutor) and written practice ----------
+  // One request to the course-tutor function (kit/data/functions.js turns every failure into a clear message)
   async function askTutor(body) {
-    const s = await store();
-    const session = s.mode === "cloud" ? await s.session?.() : null;
-    if (!session) throw Object.assign(new Error("Sign in to use the tutor."), { signin: true });
-    const res = await fetch(`${SUPABASE_URL}/functions/v1/course-tutor`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}`, apikey: SUPABASE_ANON_KEY },
-      body: JSON.stringify({ subject: cfg.slug, ...body }),
-    }).catch(() => null);
-    const out = res ? await res.json().catch(() => ({})) : {};
-    if (!res?.ok) throw new Error(out.error || "The tutor isn't available right now. You can still self-assess with the rubric.");
+    const out = await callFunction(await store(), "course-tutor", { subject: cfg.slug, ...body }, { fallback: "The tutor isn't available right now. You can still self-assess with the rubric." });
     track("tutor", cfg.site);
     return out;
   }
@@ -867,7 +908,7 @@ export function mountCourse(root, cfg) {
       const s = await store(), docs = (await s.listDocuments()).filter((d) => d.title?.startsWith(`${cfg.name}: `)), cards = await s.listCards();
       const count = (id) => cards.filter((c) => c.document_id === id).length;
       main.querySelector(".co-saved").innerHTML = `<h3>Saved to your account · ${docs.length} lesson${docs.length === 1 ? "" : "s"}</h3>${docs.length ? `<ul class="co-docs">${docs.map((d) => { const lid = d.file_name?.split("/")[1]; return `<li><div><b>${esc(d.title.slice(cfg.name.length + 2))}</b><small>${count(d.id)} cards · saved ${new Date(d.created_at).toLocaleDateString()}</small></div>${lid && byId[lid] ? `<a href="#/lesson/${lid}">Notes</a>` : ""}<a href="${cfg.app || "app.html"}#/deck/${d.id}">Study the cards</a></li>`; }).join("")}</ul>` : `<p class="co-empty">Nothing saved yet. Use <b>Save notes and cards</b> on any lesson to keep it in your Gradify account, where the cards join your daily study.</p>`}
-        <p class="co-acct">${s.mode === "cloud" ? "Signed in: this syncs to every device." : `Saved on this device. <a href="${cfg.app || "app.html"}#/account">Sign in</a> to keep it everywhere.`}</p>`;
+        <p class="co-acct ${syncText(s.mode)?.warn ? "co-warn" : ""}">${s.mode === "cloud" ? esc(syncText("cloud").text) : `Saved on this device. <a href="${cfg.app || "app.html"}#/account">Sign in</a> to keep it everywhere.`}</p>`;
     } catch { main.querySelector(".co-saved").innerHTML = `<h3>Saved to your account</h3><p class="co-empty">Your account isn't reachable from this browser.</p>`; }
   }
 
@@ -958,6 +999,45 @@ export function mountCourse(root, cfg) {
   }
   const ixDone = (x) => Object.keys(S.solved).filter((k) => k.startsWith(`ix:${x.id}:`)).length;
   const ixTile = (x) => `<a class="co-labtile" href="#/practice/${x.id}"><span class="co-kicker">${esc(x.kind)}</span><b>${esc(x.title)}</b><p>${esc(x.sub)}</p><small>${x.tasks ? `${ixDone(x)} / ${x.tasks} challenges` : x.schools ? `${U} ${x.schools.join(", ")}` : ""}</small></a>`;
+  // ---------- workspace: a site's own reasoning environment (law: legal reasoning; nursing: clinical
+  // simulation). cfg.workspace = { route, label, kicker, title, intro, banner, engine: () => import(…),
+  // cases: [{ id, title, sub, kind, lessons, load: () => import(…) }] }. The engine mounts a case with
+  // ctx.record (attempt records → mastery), ctx.finish (best score, XP once), ctx.ask (the AI tutor).
+  const WS = cfg.workspace;
+  const wsBest = (id) => S.ws?.[id]?.best;
+  async function viewWorkspace(id) {
+    S.ws ||= {};
+    const list = WS.cases, base = `#/${WS.route}`;
+    if (!id) {
+      main.innerHTML = `<div class="co-intro"><span class="co-kicker">${esc(WS.kicker || WS.label)}</span><h2>${esc(WS.title)}</h2><p>${inline(WS.intro || "")}</p></div>
+        ${WS.banner ? `<p class="sx-banner" role="note">${inline(WS.banner)}</p>` : ""}
+        <div class="co-grid">${list.map((c) => { const b = wsBest(c.id); return `<a class="co-pcard" href="${base}/${c.id}"><span class="co-kicker">${esc(c.kind || "")}</span><h3>${esc(c.title)}</h3><p>${esc(c.sub)}</p><small>${b != null ? `Best ${Math.round(b * 100)}% · ${S.ws[c.id].runs} ${S.ws[c.id].runs === 1 ? "attempt" : "attempts"}` : "Not attempted yet"}</small></a>`; }).join("")}</div>`;
+      return;
+    }
+    const c = list.find((x) => x.id === id);
+    if (!c) { main.innerHTML = `<p class="co-empty">That case isn't here. <a href="${base}">Back to ${esc(WS.label)}</a></p>`; return; }
+    main.innerHTML = `<div class="co-crumbs"><a href="${base}">← ${esc(WS.label)}</a><span>${esc(c.kind || "")}</span></div><div class="co-ws"><p class="co-empty">Loading…</p></div>`;
+    const el = main.querySelector(".co-ws");
+    try {
+      const [engine, data] = await Promise.all([WS.engine(), c.load()]);
+      unmountIx();
+      const stop = engine.mount(el, data.default || data, wsCtx(c));
+      if (typeof stop === "function") mounted.add(stop);
+    } catch (e) { el.innerHTML = `<p class="co-empty">This case couldn't load (${esc(e.message)}).</p>`; }
+  }
+  const wsCtx = (c) => ({
+    site: cfg.site, subject: cfg.slug,
+    lessonHref: (lid) => `#/lesson/${lid}`, lessonTitle: (lid) => byId[lid]?.title || "",
+    // one attempt record per marked part of the case, so the work counts in mastery and analytics
+    record: (task, { type = "reasoning", d = 3, score = 0, response = null, lesson = null, method = "auto", status = "final" } = {}) =>
+      record({ Q: { type, d, objectives: [] }, key: `ws:${c.id}:${task}`, v: null, l: lesson ? byId[lesson] : undefined }, "practice", c.id, { score, correct: score >= 0.7, method, status }, { response }),
+    finish: (score) => {
+      const w = (S.ws[c.id] ||= { best: 0, runs: 0 }); w.runs++; w.last = score; w.best = Math.max(w.best || 0, score); w.at = Date.now(); save();
+      const k = `ws:${c.id}`; if (!S.solved[k] && score >= 0.7) { S.solved[k] = Date.now(); save(); award(XP.quiz, "practice", c.id, `${cfg.name}: ${c.title}`); }
+    },
+    draft: (k, v) => { S.drafts ||= {}; const key = `ws:${c.id}:${k}`; if (v === undefined) return S.drafts[key] || ""; S.drafts[key] = v; save(); },
+    ask: askTutor, signinLine,
+  });
   async function viewPractice(id) {
     const list = ixs;
     if (!id) {
@@ -1023,7 +1103,7 @@ export function mountCourse(root, cfg) {
     const [v0, arg] = location.hash.replace(/^#\/?/, "").split("/"), v = v0 || home;
     const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam"].includes(v) ? v : home;
     root.querySelectorAll(".co-tabs a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === (view === "lesson" || view === "quiz" ? "learn" : view === "exam" ? "exams" : view)));
-    const wide = ["me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview"].includes(view);
+    const wide = ["me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview", cfg.workspace?.route].includes(view);
     side.hidden = wide; root.querySelector(".co-body").classList.toggle("wide", wide);
     if (view !== "learn") scrollTo(0, 0);
     if (view === "learn") { if (arg) openUnit(arg); viewLearn(arg); }
@@ -1039,6 +1119,7 @@ export function mountCourse(root, cfg) {
     else if (view === "exams") await viewExams();
     else if (view === "exam") await viewExam(arg);
     else if (view === "practice") await viewPractice(arg);
+    else if (cfg.workspace && view === cfg.workspace.route) await viewWorkspace(arg);
     else if (view === "overview") viewOverview();
     else if (view === "leaderboard") viewLeaderboard();
     else if (view === "me") await viewMe();

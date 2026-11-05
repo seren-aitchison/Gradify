@@ -215,7 +215,7 @@ const APPLIED = /appl|reason|analys|evaluat/i;
 export function dimensionOf(a, levels = null) {
   const t = a.question?.type, d = a.question?.d;
   if (t === "card") return "recall";
-  if (t === "num") return "apply";
+  if (t === "num" || t === "reasoning" || t === "sim") return "apply";   // worked problems, legal reasoning, clinical simulation
   if (t === "short") return "explain";
   if (CHOICE.has(t)) return (levels?.[d - 1] ? APPLIED.test(levels[d - 1]) : d === 3) ? "apply" : "recognition";
   return "recall";

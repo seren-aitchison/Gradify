@@ -31,6 +31,20 @@ export default {
     { id: "news2", kind: "Observation interpretation", title: "NEWS2 scoring practice", sub: "Score generated sets of adult observations parameter by parameter and choose the clinical response.", schools: [3, 9], load: () => import("../../interactive/trainers.js").then((m) => ({ mount: m.mountNews2 })) },
     { id: "calculations", kind: "Medicines numeracy", title: "Medicines calculations", sub: "Tablets, liquids, infusion and drip rates, unit conversions and weight-based doses, with worked methods. Illustrative numbers only.", schools: [4, 6], load: () => import("../../interactive/trainers.js").then((m) => ({ mount: m.mountCalc })) },
   ],
+  // the Simulation section (kit/interactive/clinsim.js): simulated patients whose condition responds to the
+  // student's choices over simulated time; feeds the shared mastery engine
+  workspace: { route: "simulation", label: "Simulation", kicker: "Clinical simulation", title: "Look after a deteriorating patient",
+    intro: "Assess your patient, interpret their observations, score NEWS2, decide what to do first, escalate with SBAR and document your care. The patient responds to what you do and don't do: delay and they deteriorate; act well and the picture changes. The debrief shows what was happening, minute by minute.",
+    banner: "<b>Simulation for education only.</b> Simplified physiology and illustrative numbers. It doesn't assess or authorise clinical competence, isn't a substitute for clinical supervision, and local policies always apply. These scenarios are awaiting clinical validation by a nurse educator.",
+    engine: () => import("../../interactive/clinsim.js"),
+    cases: [
+      { id: "post-op-sepsis", kind: "Adult · surgical ward", title: "Mr Reid, day 2 after bowel surgery", sub: "Fever, a rising heart rate and falling urine output: recognise sepsis, escalate and carry out the plan before he deteriorates.", load: () => import("./simulation/sepsis.js") },
+      { id: "opioid-toxicity", kind: "Adult · orthopaedic ward, night shift", title: "Mrs Hartley, difficult to rouse at 02:00", sub: "Slow breathing and pinpoint pupils after morphine: airway, help, naloxone as prescribed, and watching for re-sedation.", load: () => import("./simulation/opioid.js") },
+      { id: "hypoglycaemia", kind: "Adult · medical ward", title: "Mr Owusu, sweaty and muddled before lunch", sub: "Recognise and treat hypoglycaemia under the protocol, recheck, prevent a second drop, and get his insulin reviewed.", load: () => import("./simulation/hypoglycaemia.js") },
+      { id: "anaphylaxis", kind: "Adult · medical admissions", title: "Mrs Begum, five minutes into her first antibiotic dose", sub: "Swollen lips, wheeze and falling blood pressure: stop the trigger, IM adrenaline, repeat at 5 minutes, and record the allergy.", load: () => import("./simulation/anaphylaxis.js") },
+      { id: "gi-bleed", kind: "Adult · care of older people", title: "Mr Hollis, vomiting blood after breakfast", sub: "An upper GI bleed on apixaban: keep him safe, withhold the anticoagulant, crossmatch early and transfuse safely.", load: () => import("./simulation/gi-bleed.js") },
+      { id: "stroke", kind: "Adult · surgical ward", title: "Mrs Adeyemi, a weak arm and slurred speech", sub: "A stroke with a NEWS2 of 1: FAST, time last known well, glucose, a stroke alert and nothing by mouth.", load: () => import("./simulation/stroke.js") },
+    ] },
   // mock exams (kit/assess/exam.js): one per field pathway, plus medicines safety. Practice thresholds only;
   // they don't replace university assessments or numeracy tests.
   exams: [
