@@ -13,6 +13,7 @@ import { SITE_MAPS } from "../core/site-maps.js";
 import { LocalStore, CloudStore, scopeToSite } from "../data/store.js";
 import { topicProfiles } from "../learning/mastery.js";
 import { matchTopics } from "../learning/topic-match.js";
+import { loadLearner, schoolTopic } from "../learning/learner-data.js";
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
@@ -46,9 +47,9 @@ function exampleTopic(name, i) {
 function realTopic(t) {
   const recent = t.lastSeen && Date.now() - t.lastSeen < 2 * 864e5;
   const state = t.level === "new" ? "new" : t.level === "mastered" ? "mastered" : ["fading", "shaky"].includes(t.level) ? "fading" : recent ? "recent" : "learning";
-  const pct = (x) => (x.value == null ? 0 : Math.round(x.value * 100));
+  const pct = (x) => (x.value == null ? null : Math.round(x.value * 100));   // null: no evidence yet, never shown as 0%
   return { state, strength: Math.round(t.mastery * 100), ev: [pct(t.dims.recall), pct(t.dims.explain), pct(t.dims.apply), pct(t.dims.retention), Math.round(t.coverage * 100)],
-    days: t.lastSeen ? Math.floor((Date.now() - t.lastSeen) / 864e5) : null, key: t.key, next: t.next, misconceptions: t.misconceptions.length };
+    days: t.lastSeen ? Math.floor((Date.now() - t.lastSeen) / 864e5) : null, key: t.key, next: t.next, misconceptions: t.misconceptions.length, course: Boolean(t.course), href: t.href || null };
 }
 
 async function loadMine(siteName) {
@@ -61,7 +62,11 @@ async function loadMine(siteName) {
     // each topic's cards, as text for matching it to an area
     const text = {};
     for (const c of cards) { const k = `${c.document_id}|${c.topic || "Cards"}`; text[k] = `${text[k] || ""} ${c.front} ${c.back}`; }
-    return profiles.map((p) => ({ ...p, text: text[p.key] || "", doc: p.documentId }));
+    const decks = profiles.map((p) => ({ ...p, text: text[p.key] || "", doc: p.documentId }));
+    // the schools of this site's courses that the learner has started, with their six-dimension mastery
+    let schools = [];
+    try { schools = (await loadLearner()).courses.filter((c) => c.site === siteName).flatMap((c) => c.schools.map((sch) => schoolTopic(c, sch))); } catch { /* no course progress */ }
+    return [...decks, ...schools];
   } catch (e) { console.warn("Couldn't read your notes for the map", e); return []; }
 }
 
@@ -107,7 +112,7 @@ export async function mountSubjectMap(siteName) {
   loose.forEach((t, k) => {
     const a = (k / Math.max(1, loose.length)) * Math.PI * 2, r = loose.length > 1 ? 9 : 0, rt = realTopic(t), id = `r-${t.key}`;
     pins.push({ id, v: vec(MINE[0] + Math.sin(a) * r, MINE[1] + Math.cos(a) * r * 2.2), c: "#ffffff", name: t.topic, state: rt.state, strength: rt.strength });
-    info[id] = { area: "Your notes", c: "ffffff", ...rt };
+    info[id] = { area: "Your topics", c: "ffffff", ...rt };
   });
   if (loose.length) regions.push({ v: vec(...MINE), radius: 0.3, rgb: [230, 230, 240], light: loose.reduce((s, t) => s + t.mastery, 0) / loose.length });
 
@@ -144,22 +149,24 @@ export async function mountSubjectMap(siteName) {
     const hub = hubs.find((h) => h.id === selected);
     if (hub) return inspectHub(hub);
     const t = info[selected], p = pinById(selected), [label, note] = STATES[t.state];
-    const needs = t.ev.map((v, i) => [v, EVIDENCE[i]]).filter(([v]) => v < 70).map(([, n]) => n.toLowerCase());
+    const evName = (i) => (i === 4 && !t.example ? (t.course ? "Lessons done" : "Cards tested") : EVIDENCE[i]);
+    const needs = t.ev.map((v, i) => [v, evName(i)]).filter(([v]) => v != null && v < 70).map(([, n]) => n.toLowerCase());
     const el = $("#inspector");
     el.style.setProperty("--c", `#${t.c}`);
     const days = t.days == null ? "" : ` Last studied ${t.days === 0 ? "today" : t.days === 1 ? "yesterday" : `${t.days} days ago`}.`;
     const action = t.example
       ? `<a class="btn btn-light lg btn-sm" href="app.html#/new"><span>Add notes on this</span></a>`
+      : t.course ? `<a class="btn btn-light lg btn-sm" href="${esc(t.href)}"><span>${esc(t.next?.label || "Open")}</span></a>`
       : `<a class="btn btn-light lg btn-sm" href="app.html#/study/t:${encodeURIComponent(t.key)}"><span>${esc(t.next?.kind === "done" ? "Practise anyway" : t.next?.label || "Practise")}${t.next?.mins ? ` · ${t.next.mins} min` : ""}</span></a>
          <a class="btn btn-ghost lg btn-sm" href="app.html#/topic/${encodeURIComponent(t.key)}"><span>Full profile</span></a>`;
     el.innerHTML = `
-      <span class="kicker">${esc(t.area)}${t.example ? " · example" : " · your notes"}</span>
+      <span class="kicker">${esc(t.area)}${t.example ? " · example" : t.course ? " · your course" : " · your notes"}</span>
       <b class="topic">${esc(p.name)}</b>
       <span class="state-pill ${t.state}">${label}</span>
       <p>${t.example ? note + days : esc(t.next?.why || note) + days}</p>
       ${t.misconceptions ? `<p class="verdict">${t.misconceptions} possible ${t.misconceptions === 1 ? "misconception" : "misconceptions"} to check.</p>` : ""}
-      ${t.state === "new" ? "" : `<ul class="evidence">${t.ev.map((v, i) => `<li><span>${i === 4 && !t.example ? "Cards tested" : EVIDENCE[i]}</span><em>${v}%</em><i><b style="width:${v}%" class="${v >= 70 ? "ok" : ""}"></b></i></li>`).join("")}</ul>
-      <p class="verdict">${needs.length ? `To master it: ${needs.join(", ")} need to reach 70%.` : "Every kind of evidence is above 70%."}</p>`}
+      ${t.state === "new" ? "" : `<ul class="evidence">${t.ev.map((v, i) => `<li><span>${evName(i)}</span><em>${v == null ? "no evidence yet" : `${v}%`}</em><i><b style="width:${v ?? 0}%" class="${v >= 70 ? "ok" : ""}"></b></i></li>`).join("")}</ul>
+      <p class="verdict">${needs.length ? `To master it: ${needs.join(", ")} need to reach 70%.` : t.ev.some((v) => v == null) ? "What's measured is above 70%; the rest needs more answers before Gradify can judge it." : "Every kind of evidence is above 70%."}</p>`}
       <div class="hub-actions">${action}</div>`;
   }
   function select(id, turn) {
@@ -173,7 +180,7 @@ export async function mountSubjectMap(siteName) {
 
   const opt = (id, label) => `<option value="${esc(id)}">${esc(label)}</option>`;
   $("#earth-jump").innerHTML = areas.map((a) => `<optgroup label="${esc(a.name)}">${a.ids.map((id) => opt(id, pinById(id).name + (info[id].example ? "" : " · yours"))).join("")}</optgroup>`).join("") +
-    (loose.length ? `<optgroup label="Your notes">${loose.map((t) => opt(`r-${t.key}`, t.topic)).join("")}</optgroup>` : "") +
+    (loose.length ? `<optgroup label="Your topics">${loose.map((t) => opt(`r-${t.key}`, t.topic)).join("")}</optgroup>` : "") +
     `<optgroup label="Learners studying now">${hubs.map((h) => opt(h.id, `${h.name} · ${h.n} studying`)).join("")}</optgroup>`;
   $("#earth-jump").addEventListener("change", (e) => select(e.target.value, true));
   $("#earth-in").addEventListener("click", () => globe.zoomBy(1.2));
