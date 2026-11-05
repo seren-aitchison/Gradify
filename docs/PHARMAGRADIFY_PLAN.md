@@ -58,3 +58,11 @@ It runs on the shared Gradify course engine (`kit/course/course.js`), the same o
 ## Status
 
 See the status sections below as schools are added. Content is written by Claude from general knowledge and checked by the QA rules. It still needs review by a registered pharmacist before any pathway is promoted as exam preparation.
+
+## Status: School 6, Pharmaceutical Calculations (2026-11-05)
+
+- **20 lessons, written to content standard 2**: units, rounding, proportion, percentage and ratio strengths, ppm, millimoles and milliequivalents, dilutions, alligation, doses, weight- and BSA-based dosing, children's doses, quantities, infusion and drug-infusion rates, displacement values, Cockcroft-Gault, renal dose adjustment, pharmacokinetic equations, and the registration assessment.
+- **Questions:** each lesson has worked examples, single-best-answer questions and a numerical question. QA reports 0 warnings.
+- **Expert review:** the arithmetic was checked by hand, and the trainer's arithmetic by tests. A pharmacist educator should still review:
+  - the clinical framing: MHRA advice on CrCl versus eGFR, Devine IBW, children's dosing practice, infusion practice;
+  - the registration assessment description, which must be checked against the GPhC's current information.
