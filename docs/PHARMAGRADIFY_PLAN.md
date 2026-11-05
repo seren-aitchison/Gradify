@@ -170,3 +170,7 @@ See the status sections below as schools are added. Content is written by Claude
   - pain assessment, simple analgesics and NG193, opioids (Opioids Aware), neuropathic pain (CG173), and palliative anticipatory medicines (NG31).
 - **Drug cards:** mirtazapine, lithium, olanzapine, methadone, lamotrigine and oral morphine. QA reports 0 warnings.
 - **Expert review:** check the clozapine monitoring schedule, the lithium monitoring intervals, the valproate and topiramate pregnancy prevention requirements and the opioid conversion guidance against current MHRA and BNF advice.
+
+## Status: School 11, Infection and Antimicrobial Stewardship (2026-11-05)
+
+17 lessons covering microbiology, antibiotic classes, AMR and stewardship, common infections (NICE prescribing guidance), sepsis, C. difficile, TB, antifungals, antivirals, HIV, hepatitis, vaccines and travel health. Antibiotic choices point to NICE and local formularies; doses marked illustrative.
