@@ -1,7 +1,7 @@
 // Turning notes into a study pack. With a Gradify account, Claude does it on the server
 // (supabase/functions/study-pack). Otherwise the browser extractor from Notes Studio runs
 // locally. Both return the same shape, and both are fact-checked against the notes.
-import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
+import { callFunction } from "../data/functions.js";
 import { analyseNotes, normaliseNotes, deeperQuestions } from "./studio.js";
 import { cardsFromPack, packStats, questionCards } from "./pack.js";
 
@@ -33,16 +33,10 @@ function browserPack(text, title) {
 }
 
 export async function generate({ text, pdfBase64, title, site, level, store }) {
-  const session = store.mode === "cloud" ? await store.session() : null;
+  const session = store.mode === "cloud" ? await store.session().catch(() => null) : null;
   if (session) {
-    const res = await fetch(`${SUPABASE_URL}/functions/v1/study-pack`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}`, apikey: SUPABASE_ANON_KEY },
-      body: JSON.stringify({ mode: "pack", text, pdfBase64, title, site, level }),
-    });
-    const body = await res.json().catch(() => ({}));
-    if (!res.ok) throw new Error(body.error || "Gradify AI couldn't make a pack from these notes.");
-    return { engine: "claude", model: "claude-opus-5-5", packId: body.packId, pack: body.pack, cards: body.cards, stats: body.stats };
+    const body = await callFunction(store, "study-pack", { mode: "pack", text, pdfBase64, title, site, level }, { fallback: "Gradify AI couldn't make a pack from these notes." });
+    return { engine: "claude", model: body.model || null, packId: body.packId, pack: body.pack, cards: body.cards, stats: body.stats };
   }
   if (!text.trim()) throw new Error("This PDF has no text layer (it's probably scanned or handwritten). Sign in to use Gradify AI, which can read scans.");
   const pack = browserPack(text, title);
@@ -53,17 +47,8 @@ export async function generate({ text, pdfBase64, title, site, level, store }) {
 // Why and application questions for a deck made before they existed. With an account, Claude
 // writes them; otherwise the browser extractor does what the notes allow.
 export async function generateQuestions({ text, title, site, level, topics, store }) {
-  const session = store.mode === "cloud" ? await store.session() : null;
-  if (session) {
-    const res = await fetch(`${SUPABASE_URL}/functions/v1/study-pack`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}`, apikey: SUPABASE_ANON_KEY },
-      body: JSON.stringify({ mode: "questions", text, title, site, level, topics }),
-    });
-    const body = await res.json().catch(() => ({}));
-    if (!res.ok) throw new Error(body.error || "Gradify AI couldn't write questions for these notes.");
-    return body.cards;
-  }
+  const session = store.mode === "cloud" ? await store.session().catch(() => null) : null;
+  if (session) return (await callFunction(store, "study-pack", { mode: "questions", text, title, site, level, topics }, { fallback: "Gradify AI couldn't write questions for these notes." })).cards;
   if (!text?.trim()) throw new Error("These notes have no text Gradify can read on this device. Sign in to use Gradify AI.");
   const a = analyseNotes(text), notes = normaliseNotes(text);
   const deeper = deeperQuestions(a);
@@ -79,15 +64,9 @@ function bestTopic(card, topics) {
 
 // A new version of one card
 export async function regenerateCard({ card, notes, store }) {
-  const session = store.mode === "cloud" ? await store.session() : null;
+  const session = store.mode === "cloud" ? await store.session().catch(() => null) : null;
   if (session) {
-    const res = await fetch(`${SUPABASE_URL}/functions/v1/study-pack`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}`, apikey: SUPABASE_ANON_KEY },
-      body: JSON.stringify({ mode: "card", fact: `${card.front} → ${card.back}`, notes: card.source_quote || notes.slice(0, 2000), avoid: [card.front], kind: card.kind }),
-    });
-    const body = await res.json().catch(() => ({}));
-    if (!res.ok) throw new Error(body.error || "Couldn't regenerate this card.");
+    const body = await callFunction(store, "study-pack", { mode: "card", fact: `${card.front} → ${card.back}`, notes: card.source_quote || notes.slice(0, 2000), avoid: [card.front], kind: card.kind }, { fallback: "Couldn't regenerate this card." });
     return { front: body.card.front, back: body.card.back, kind: body.card.type };
   }
   if (card.kind === "why" || card.kind === "apply") throw new Error("Rewriting Explain and Apply questions needs Gradify AI. You can edit this one yourself.");
