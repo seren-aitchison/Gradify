@@ -93,3 +93,16 @@ See the status sections below as schools are added. Content is written by Claude
   - the CD schedules of individual drugs;
   - Northern Ireland differences.
 - I deliberately left out details I wasn't sure of, such as repeat-dispensing defaults, and pointed to the RPS guide instead.
+
+## Status: School 1, Foundations of Pharmacy Practice (2026-11-05)
+
+- **20 lessons, written to content standard 2**:
+  - the profession, its sectors and the team, and delegation;
+  - the GPhC and RPS, and the nine standards;
+  - person-centred care, consultation skills and health literacy;
+  - consent and capacity across the UK, confidentiality and Caldicott, and equality;
+  - judgement and accountability, speaking up and candour, and patient safety;
+  - evidence-based practice, reflection and GPhC revalidation;
+  - NHS structures and services in each nation, public health, multidisciplinary teams, and digital pharmacy.
+- **QA:** 0 warnings, after rewriting the wrong options in 15 questions so that answer length doesn't give the answer away.
+- **Expert review:** service names and contracts in each nation change often (for example, Wales's Common Ailments Service now sits within the Clinical Community Pharmacy Service). Check them, and the dates of GPhC guidance, against current sources.

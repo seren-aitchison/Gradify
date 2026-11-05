@@ -485,7 +485,7 @@ H: Regulation
 - The GPhC regulates pharmacy in Great Britain; the PSNI regulates it in Northern Ireland.
 H: Services and charges
 - **Prescription charges**: payable in England (with exemptions); abolished in Wales, Scotland and Northern Ireland.
-- **Minor illness services**: NHS Pharmacy First in England (including seven common conditions under PGDs, launched 2024); NHS Pharmacy First Scotland; the Common Ailments Service in Wales; Pharmacy First services in Northern Ireland.
+- **Minor illness services**: NHS Pharmacy First in England (including seven common conditions under PGDs, launched 2024); NHS Pharmacy First Scotland; the Common Ailments Service (part of the Clinical Community Pharmacy Service) in Wales; Pharmacy First services in Northern Ireland.
 - **Contracts and services** differ: for example, community pharmacy contractual frameworks and independent prescribing services.
 - **Health boards and trusts**: integrated care boards in England; health boards in Scotland and Wales; health and social care trusts in Northern Ireland.
 K: Law is mostly UK-wide; regulation (GPhC or PSNI), NHS services and prescription charges differ by nation.
