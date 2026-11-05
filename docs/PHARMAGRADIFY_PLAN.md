@@ -186,3 +186,7 @@ See the status sections below as schools are added. Content is written by Claude
 ## Status: School 14, Oncology, Haematology and Immunology (2026-11-05)
 
 10 lessons: anaemias, blood products and reversal agents, cancer treatment principles, cytotoxics, targeted therapy and immunotherapy, supportive care and oncological emergencies, safe handling, immunosuppressants, transplantation, biologics. Specialist areas: points to protocols, MHRA, the BNF and SPCs.
+
+## Status: School 15, Special Populations (2026-11-05)
+
+12 lessons: children, neonates, pregnancy, breastfeeding, older people, renal and hepatic impairment (with a Cockcroft-Gault calculation), polypharmacy and deprescribing, frailty, learning disabilities (STOMP), swallowing difficulties and covert administration, care homes. Points to the BNF, BNFC, UKTIS, SPS and NICE.
