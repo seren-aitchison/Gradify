@@ -158,3 +158,15 @@ See the status sections below as schools are added. Content is written by Claude
 - 13 lessons, written to content standard 2: type 1 diabetes (NG17, CGM, sick day rules), insulin types and safety, type 2 diabetes (NG28 and HbA1c targets), glucose-lowering drug classes, hypoglycaemia (JBDS and DVLA), special situations (steroids, pregnancy, Ramadan), DKA and HHS, thyroid disease (levothyroxine, carbimazole agranulocytosis), adrenal insufficiency and steroid cards, osteoporosis (NOGG, bisphosphonate counselling, denosumab rebound), contraception (UKMEC and emergency contraception), menopause and HRT (NG23), and obesity (NG246, safe supply).
 - **Drug cards:** insulin glargine, metformin, dapagliflozin, levothyroxine, carbimazole and alendronic acid. QA reports 0 warnings.
 - **Expert review:** check the thresholds (HbA1c targets, metformin eGFR cut-offs, steroid card criteria), the FSRH emergency contraception dosing and the NICE obesity criteria against current guidance.
+
+## Status: School 10, Central Nervous System and Mental Health Therapeutics (2026-11-05)
+
+- 20 lessons, written to content standard 2:
+  - depression and antidepressants (NG222, tapering, serotonin syndrome, hyponatraemia);
+  - anxiety (CG113), bipolar disorder and lithium (CG185; MHRA 2024 valproate restrictions);
+  - psychosis and clozapine (CG178), antipsychotics and physical health monitoring;
+  - ADHD (NG87), dementia (NG97), insomnia (CBT-I, TA922), and substance misuse and OST;
+  - epilepsy (NG217) and antiseizure medicines (MHRA categories, lamotrigine titration), Parkinson's disease (time-critical doses), migraine (CG150), multiple sclerosis (NG220);
+  - pain assessment, simple analgesics and NG193, opioids (Opioids Aware), neuropathic pain (CG173), and palliative anticipatory medicines (NG31).
+- **Drug cards:** mirtazapine, lithium, olanzapine, methadone, lamotrigine and oral morphine. QA reports 0 warnings.
+- **Expert review:** check the clozapine monitoring schedule, the lithium monitoring intervals, the valproate and topiramate pregnancy prevention requirements and the opioid conversion guidance against current MHRA and BNF advice.
