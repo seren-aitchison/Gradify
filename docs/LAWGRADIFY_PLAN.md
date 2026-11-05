@@ -147,7 +147,10 @@ Every marked part is an attempt record, so the work feeds the shared mastery eng
 | Leo's crash (`learner-driver`) | Negligence, contributory negligence | Robinson, Nettleship v Weston, Barnett, Wagon Mound (No 1), Froom v Butcher, 1945 Act s 1 |
 | Dan and the dropped note (`dropped-note`) | Theft | Theft Act 1968 ss 1–6, Gomez, Ivey, Barton and Booth, Lloyd |
 | Owen's café (`cafe-sale`) | Misrepresentation | Bisset v Wilkinson, Smith v Land and House, With v O'Flanagan, Redgrave v Hurd, Misrepresentation Act 1967 s 2, Royscot, Derry v Peek |
+| Rosa's rent reduction (`rent-reduction`) | Consideration, promissory estoppel | Foakes v Beer, Re Selectmove, Williams v Roffey, High Trees, Hughes v Metropolitan Railway, D & C Builders v Rees |
+| Mia and the boathouse (`boathouse`) | Occupiers' liability to a child trespasser | Occupiers' Liability Act 1984 s 1, Wheat v Lacon, Keown, Tomlinson, Herrington |
+| Ella and the raised arm (`bar-push`) | s 20 wounding, mistaken self-defence | OAPA 1861 s 20, JCC v Eisenhower, Mowatt, Savage and Parmenter, CJIA 2008 s 76, Gladstone Williams, Palmer |
 
-**Status.** Tested: structure and marking (`tests/reasoning.test.mjs`: each model answer scores 100% and an empty answer 0%; red herrings, irrelevant authorities and over-marking cost marks) and a full run through in a browser. Deployed: with the site (static). The AI feedback button needs the course-tutor function deployed and a signed-in learner. **Awaiting expert review:** all three cases (`review.verified: null`) need checking by a qualified lawyer: the facts, authorities, model answers and the key points used for marking.
+**Status.** Tested: structure and marking (`tests/reasoning.test.mjs`: each model answer scores 100% and an empty answer 0%; red herrings, irrelevant authorities and over-marking cost marks) and a full run through in a browser. Deployed: with the site (static). The AI feedback button needs the course-tutor function deployed and a signed-in learner. **Awaiting expert review:** all six cases (`review.verified: null`) need checking by a qualified lawyer: the facts, authorities, model answers and the key points used for marking.
 
 Next: more cases across the SQE1 FLK subjects; a written-only mode (no option lists) for advanced students; timed exam conditions.

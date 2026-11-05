@@ -13,7 +13,7 @@ const perfect = (c) => {
 };
 
 test("legal reasoning: every case is well formed, links to real lessons and matches its config", () => {
-  assert.ok(cases.length >= 3);
+  assert.ok(cases.length >= 6);
   for (const { meta, data: c } of cases) {
     assert.equal(c.id, meta.id);
     assert.deepEqual(R.validateCase(c), [], c.id);

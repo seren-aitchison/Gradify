@@ -62,7 +62,8 @@ export const clockAt = (c, t) => { const [h, m] = c.clock.split(":").map(Number)
 export function begin(c) {
   const s = { t: 0, v: structuredClone(c.vitals), f: structuredClone(c.flags || {}), did: {}, log: [], obs: [], news: [], calls: [], events: [], track: [], note: null, ended: null, triggerAt: null };
   s.track.push(snap(s));
-  if (isTrigger(trueNews(s))) s.triggerAt = 0;
+  // a case can start as an emergency whatever the NEWS2 (for example a stroke, where NEWS2 can be 0)
+  if (c.emergency || isTrigger(trueNews(s))) s.triggerAt = 0;
   return s;
 }
 const snap = (s) => ({ t: s.t, ...shown(s.v), news: trueNews(s).total });
@@ -80,7 +81,7 @@ function minute(c, s) {
   for (const call of s.calls) if (!call.arrived && s.t >= call.at + call.delay) {
     call.arrived = s.t;
     const out = c.arrive(s, call) || {};
-    s.events.push({ t: s.t, kind: "arrival", who: call.who, text: out.text || `${RESPONDERS[call.who].label} arrives.` });
+    s.events.push({ t: s.t, kind: "arrival", who: call.who, label: call.label, text: out.text || `${call.label} arrives.` });
   }
   const why = c.collapse?.(s);
   if (why && !s.ended) s.ended = { kind: "collapse", t: s.t, text: why };
@@ -124,14 +125,17 @@ export function enterNews(s, value) {
 
 // a routine call to the doctor is no more than telling the nurse in charge; an emergency call to the
 // doctor is treated as an emergency-level response
-const effLevel = (call) => (call.who === "doctor" ? { routine: 1, urgent: 2, emergency: 3 }[call.urgency] : RESPONDERS[call.who].level);
+const effLevel = (call, R) => (call.who === "doctor" ? { routine: 1, urgent: 2, emergency: 3 }[call.urgency] : R[call.who].level);
+// the people a student can call: the standard four, plus any the case adds (a stroke team, a midwife…)
+export const responders = (c) => ({ ...RESPONDERS, ...(c.responders || {}) });
 export const needLevel = (c, n, s) => (c.needLevel ? c.needLevel(n, s) : n.total >= 7 ? 3 : isTrigger(n) ? 2 : 1);
 export function escalate(c, s, { who, urgency, sbar = {} }) {
-  if (!RESPONDERS[who] || !URGENCY[urgency] || s.ended) return null;
-  const n = trueNews(s), call = { who, urgency, sbar, at: s.t, delay: RESPONDERS[who].delay[urgency], news: n.total, red: n.red, need: needLevel(c, n, s), arrived: null };
-  call.level = effLevel(call);
+  const R = responders(c);
+  if (!R[who] || !URGENCY[urgency] || s.ended) return null;
+  const n = trueNews(s), call = { who, label: R[who].label, urgency, sbar, at: s.t, delay: R[who].delay[urgency], news: n.total, red: n.red, need: needLevel(c, n, s), arrived: null };
+  call.level = effLevel(call, R);
   s.calls.push(call);
-  s.log.push({ t: s.t, id: "escalate", label: `Escalated to the ${RESPONDERS[who].label.toLowerCase()} (${urgency})`, group: "Escalate", unsafe: null, partial: null });
+  s.log.push({ t: s.t, id: "escalate", label: `Escalated to the ${R[who].label.toLowerCase()} (${urgency})`, group: "Escalate", unsafe: null, partial: null });
   advance(c, s, 2);
   return call;
 }
@@ -221,7 +225,7 @@ export function mount(el, c, ctx = {}) {
     <div class="cs-patient"><b>${esc(c.patient.name)}, ${c.patient.age}</b> · ${esc(c.patient.where)}<p>${inline(c.patient.summary)}</p></div>`;
   const chart = () => `<aside class="cs-chart" aria-label="Observation chart"><h4>Observation chart</h4>${s.obs.length ? `<div class="cs-tablewrap"><table><thead><tr><th>Time</th><th>RR</th><th>SpO2</th><th>BP</th><th>HR</th><th>T</th><th>AVPU</th><th>NEWS2</th></tr></thead><tbody>${s.obs.map((o) => `<tr><td>${clockAt(c, o.t)}</td><td>${o.rr}</td><td>${o.spo2}${o.o2 ? "<small>O2</small>" : ""}</td><td>${o.sbp}/${o.dia}</td><td>${o.hr}</td><td>${o.temp}</td><td>${o.avpu}</td><td>${o.entered ?? "?"}</td></tr>`).join("")}</tbody></table></div>` : `<p class="tx-note">No observations recorded yet.</p>`}
     <h4>Background</h4><ul>${c.patient.background.map((b) => `<li>${inline(b)}</li>`).join("")}</ul>
-    ${s.calls.length ? `<h4>Escalation</h4><ul>${s.calls.map((x) => `<li>${clockAt(c, x.at)}: ${esc(RESPONDERS[x.who].label)} (${esc(x.urgency)})${x.arrived ? `, arrived ${clockAt(c, x.arrived)}` : ", on the way"}</li>`).join("")}</ul>` : ""}</aside>`;
+    ${s.calls.length ? `<h4>Escalation</h4><ul>${s.calls.map((x) => `<li>${clockAt(c, x.at)}: ${esc(x.label)} (${esc(x.urgency)})${x.arrived ? `, arrived ${clockAt(c, x.arrived)}` : ", on the way"}</li>`).join("")}</ul>` : ""}</aside>`;
   const menu = () => { const list = actions(c, s); return `<div class="cs-menu">${GROUPS.map((g) => { const xs = list.filter((a) => a.group === g); return xs.length ? `<div class="cs-group"><h4>${g === "Act" ? "Act" : g}</h4>${xs.map((a) => `<button type="button" data-act="${esc(a.id)}">${esc(a.label)}<small>${a.mins} min</small></button>`).join("")}</div>` : ""; }).join("")}
     <div class="cs-group"><h4>Escalate</h4><button type="button" data-escalate>Call for help or escalate (SBAR)</button></div></div>`; };
   const feedHtml = () => `<ol class="cs-feed">${feed.map((x) => `<li class="${x.cls}"><time>${clockAt(c, x.t)}</time><div>${x.text}</div></li>`).join("")}</ol>`;
@@ -229,7 +233,7 @@ export function mount(el, c, ctx = {}) {
   const centre = () => {
     if (mode === "news") return `<form class="cs-news" data-news><label for="cs-n"><b>What is the NEWS2 score for these observations?</b></label><p>${esc(obsLine(s.obs[s.obs.length - 1]))}</p><input id="cs-n" type="number" min="0" max="20" required inputmode="numeric"><button class="btn btn-light lg btn-sm"><span>Record score</span></button></form>`;
     if (mode === "escalate") return `<form class="cs-sbar" data-sbar><h3>Escalate using SBAR</h3><p class="tx-note">Write what you would say. The simulation keeps running while you call (2 minutes).</p>
-      <label>Who are you calling?<select name="who" required><option value="">Choose…</option>${Object.entries(RESPONDERS).map(([k, r]) => `<option value="${k}">${esc(r.label)}</option>`).join("")}</select></label>
+      <label>Who are you calling?<select name="who" required><option value="">Choose…</option>${Object.entries(responders(c)).map(([k, r]) => `<option value="${k}">${esc(r.label)}</option>`).join("")}</select></label>
       <label>How urgently?<select name="urgency" required><option value="">Choose…</option>${Object.entries(URGENCY).map(([k, t]) => `<option value="${k}">${esc(t)}</option>`).join("")}</select></label>
       ${[["s", "Situation", "Who you are, who the patient is, and what's worrying you"], ["b", "Background", "Relevant history: admission, surgery, conditions, medicines"], ["a", "Assessment", "Your ABCDE findings and the NEWS2 score"], ["r", "Recommendation", "What you need, and how quickly"]].map(([k, t, h]) => `<label>${t}<small>${h}</small><textarea name="${k}" rows="2" required></textarea></label>`).join("")}
       <div class="cs-row"><button class="btn btn-light lg btn-sm"><span>Make the call</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-cancel><span>Cancel</span></button></div></form>`;
@@ -279,7 +283,7 @@ export function mount(el, c, ctx = {}) {
     wire();
   };
   const after = () => {
-    for (const e of s.events.splice(0)) say(e.t, `<b>${esc(RESPONDERS[e.who].label)} arrives.</b> ${inline(e.text)}`, "arrive");
+    for (const e of s.events.splice(0)) say(e.t, `<b>${esc(e.label)} arrives.</b> ${inline(e.text)}`, "arrive");
     if (s.ended && mode === "play") { say(s.t, `<b>${esc(s.ended.text)}</b>`, s.ended.kind === "collapse" ? "crit" : ""); mode = "note"; }
   };
   function wire() {
@@ -301,7 +305,7 @@ export function mount(el, c, ctx = {}) {
     el.querySelector("[data-sbar]")?.addEventListener("submit", (e) => {
       e.preventDefault(); const f = new FormData(e.target);
       const call = escalate(c, s, { who: f.get("who"), urgency: f.get("urgency"), sbar: { s: f.get("s"), b: f.get("b"), a: f.get("a"), r: f.get("r") } });
-      if (call) { const html = `You call the ${esc(RESPONDERS[call.who].label.toLowerCase())}: ${esc(URGENCY[call.urgency].toLowerCase())}. ${call.delay <= 2 ? "They're on their way now." : `They say they'll be there in about ${call.delay} minutes.`}`; say(call.at, html); last = { html }; }
+      if (call) { const html = `You call the ${esc(call.label.toLowerCase())}: ${esc(URGENCY[call.urgency].toLowerCase())}. ${call.delay <= 2 ? "They're on their way now." : `They say they'll be there in about ${call.delay} minutes.`}`; say(call.at, html); last = { html }; }
       mode = "play"; after(); paint();
     });
     el.querySelector("[data-note]")?.addEventListener("submit", (e) => { e.preventDefault(); s.note = e.target.querySelector("textarea").value; mode = "debrief"; paint(); el.querySelector(".cs-debrief h3")?.focus?.(); });
@@ -313,7 +317,7 @@ export function mount(el, c, ctx = {}) {
     if (!ctx.ask) { out.innerHTML = `<p class="co-empty">AI feedback isn't available here.</p>`; return; }
     btn.disabled = true; out.innerHTML = `<p class="co-empty">The tutor is reading your SBAR and record…</p>`;
     const call = s.calls[s.calls.length - 1];
-    const answer = `SBAR (to ${call ? RESPONDERS[call.who].label : "nobody: no escalation was made"}):\nS: ${call?.sbar.s || ""}\nB: ${call?.sbar.b || ""}\nA: ${call?.sbar.a || ""}\nR: ${call?.sbar.r || ""}\n\nRECORD ENTRY:\n${s.note || ""}\n\nTIMELINE:\n${s.log.map((l) => `${clockAt(c, l.t)} ${l.label}`).join("\n")}`;
+    const answer = `SBAR (to ${call ? call.label : "nobody: no escalation was made"}):\nS: ${call?.sbar.s || ""}\nB: ${call?.sbar.b || ""}\nA: ${call?.sbar.a || ""}\nR: ${call?.sbar.r || ""}\n\nRECORD ENTRY:\n${s.note || ""}\n\nTIMELINE:\n${s.log.map((l) => `${clockAt(c, l.t)} ${l.label}`).join("\n")}`;
     try {
       const { feedback } = await ctx.ask({ mode: "mark", task: { title: c.title, brief: "A simulated nursing scenario (education only). Judge the learner's escalation (SBAR) and record entry.", prompt: `${c.handover}\n\nPATIENT: ${c.patient.summary}\nBACKGROUND: ${c.patient.background.join("; ")}`, rubric: c.rubric, model: c.model }, answer });
       out.innerHTML = `<ul class="rx-points">${feedback.criteria.map((x) => `<li class="${x.rating === "met" ? "ok" : x.rating === "partly" ? "part" : "miss"}"><b>${esc(x.criterion)}</b>: ${esc(x.rating)}. ${esc(x.comment)}</li>`).join("")}</ul><p>${esc(feedback.summary || "")}</p>`;

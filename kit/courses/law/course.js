@@ -40,6 +40,9 @@ export default {
       { id: "learner-driver", kind: "Tort: negligence", title: "Leo's crash: a learner driver and a passenger without a seatbelt", sub: "Duty, breach, causation and contributory negligence, with Nettleship v Weston and Froom v Butcher.", load: () => import("./reasoning/negligence.js") },
       { id: "dropped-note", kind: "Criminal law: theft", title: "Dan, a dropped £20 note and a borrowed console", sub: "Appropriation, property belonging to another, dishonesty after Ivey, and intention to permanently deprive.", load: () => import("./reasoning/theft.js") },
       { id: "cafe-sale", kind: "Contract: misrepresentation", title: "Owen's café: a turnover figure that was no longer true", sub: "Statements of fact and opinion, a change of circumstances, reliance, rescission and damages under s 2(1).", load: () => import("./reasoning/misrepresentation.js") },
+      { id: "rent-reduction", kind: "Contract: consideration and estoppel", title: "Rosa's rent reduction during the roadworks", sub: "Part payment and Foakes v Beer, why practical benefit doesn't help, promissory estoppel and when full rent revives.", load: () => import("./reasoning/estoppel.js") },
+      { id: "boathouse", kind: "Tort: occupiers' liability", title: "Mia and the derelict boathouse roof", sub: "A child trespasser, the Occupiers' Liability Act 1984, and the state of the premises versus a risky activity.", load: () => import("./reasoning/occupiers.js") },
+      { id: "bar-push", kind: "Criminal law: offences against the person", title: "Ella, a raised arm and a cut head", sub: "Wounding under s 20, its mens rea, and self-defence based on a genuine mistake.", load: () => import("./reasoning/self-defence.js") },
     ] },
   // mock exams (kit/assess/exam.js): drawn from written schools only; pass marks are practice thresholds,
   // not the SRA's (which are set for each sitting)

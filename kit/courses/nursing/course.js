@@ -41,6 +41,9 @@ export default {
       { id: "post-op-sepsis", kind: "Adult · surgical ward", title: "Mr Reid, day 2 after bowel surgery", sub: "Fever, a rising heart rate and falling urine output: recognise sepsis, escalate and carry out the plan before he deteriorates.", load: () => import("./simulation/sepsis.js") },
       { id: "opioid-toxicity", kind: "Adult · orthopaedic ward, night shift", title: "Mrs Hartley, difficult to rouse at 02:00", sub: "Slow breathing and pinpoint pupils after morphine: airway, help, naloxone as prescribed, and watching for re-sedation.", load: () => import("./simulation/opioid.js") },
       { id: "hypoglycaemia", kind: "Adult · medical ward", title: "Mr Owusu, sweaty and muddled before lunch", sub: "Recognise and treat hypoglycaemia under the protocol, recheck, prevent a second drop, and get his insulin reviewed.", load: () => import("./simulation/hypoglycaemia.js") },
+      { id: "anaphylaxis", kind: "Adult · medical admissions", title: "Mrs Begum, five minutes into her first antibiotic dose", sub: "Swollen lips, wheeze and falling blood pressure: stop the trigger, IM adrenaline, repeat at 5 minutes, and record the allergy.", load: () => import("./simulation/anaphylaxis.js") },
+      { id: "gi-bleed", kind: "Adult · care of older people", title: "Mr Hollis, vomiting blood after breakfast", sub: "An upper GI bleed on apixaban: keep him safe, withhold the anticoagulant, crossmatch early and transfuse safely.", load: () => import("./simulation/gi-bleed.js") },
+      { id: "stroke", kind: "Adult · surgical ward", title: "Mrs Adeyemi, a weak arm and slurred speech", sub: "A stroke with a NEWS2 of 1: FAST, time last known well, glucose, a stroke alert and nothing by mouth.", load: () => import("./simulation/stroke.js") },
     ] },
   // mock exams (kit/assess/exam.js): one per field pathway, plus medicines safety. Practice thresholds only;
   // they don't replace university assessments or numeracy tests.

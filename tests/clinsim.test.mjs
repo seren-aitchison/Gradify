@@ -7,7 +7,7 @@ import { IDS } from "../kit/courses/nursing/ids.js";
 const cases = await Promise.all(nursing.workspace.cases.map(async (c) => ({ meta: c, data: (await c.load()).default })));
 
 test("clinical simulation: every case is well formed and links to real lessons", () => {
-  assert.ok(cases.length >= 3);
+  assert.ok(cases.length >= 6);
   for (const { meta, data: c } of cases) {
     assert.equal(c.id, meta.id);
     for (const k of E.ABCDE) assert.equal(typeof c.find[k], "function", `${c.id}: finds ${k}`);
@@ -22,7 +22,7 @@ test("clinical simulation: every case is well formed and links to real lessons",
 test("clinical simulation: every patient starts at an escalation trigger and deteriorates if nothing is done", () => {
   for (const { data: c } of cases) {
     const s = E.begin(c);
-    assert.ok(E.isTrigger(E.trueNews(s)), `${c.id}: starts at a trigger`);
+    assert.ok(E.isTrigger(E.trueNews(s)) || c.emergency, `${c.id}: starts at a trigger (or is an emergency whatever the NEWS2)`);
     let n = 0; while (!s.ended && n++ < 500) E.act(c, s, "wait");
     assert.equal(s.ended.kind, "collapse", `${c.id}: collapses without care`);
     const d = E.debriefData(c, s);
@@ -62,4 +62,23 @@ test("clinical simulation: SBAR and note marking recognise the NEWS2 and times",
   assert.ok(E.covers(`NEWS2 is ${n}`, [["{news}"]], s) && !E.covers(`NEWS2 is ${n + 10}`, [["{news}"]], s));
   assert.ok(E.covers("12:24 found confused", [["{time}"]], s));
   assert.ok(E.markNote(c, "12:24 glucose 2.6 mmol/L, confused and sweating; juice given per protocol; Dr Evans informed; plan hourly monitoring and insulin review.", s).score === 1);
+});
+
+test("clinical simulation: a stroke is an emergency even with a low NEWS2, and the case's own responders can be called", () => {
+  const { data: c } = cases.find((x) => x.meta.id === "stroke");
+  const s = E.begin(c);
+  assert.ok(E.trueNews(s).total <= 2 && s.triggerAt === 0);
+  assert.ok(E.responders(c).stroke);
+  E.act(c, s, "fast");
+  const call = E.escalate(c, s, { who: "stroke", urgency: "emergency", sbar: { s: "stroke", b: "", a: "", r: "" } });
+  assert.equal(call.label, "Stroke team (in-hospital stroke alert)");
+  assert.equal(E.debriefData(c, s).esc, 1);
+});
+
+test("clinical simulation: in anaphylaxis, adrenaline changes the outcome", () => {
+  const { data: c } = cases.find((x) => x.meta.id === "anaphylaxis");
+  const a = E.begin(c), b = E.begin(c);
+  E.act(c, a, "stop"); E.act(c, b, "stop"); E.act(c, b, "adrenaline");
+  E.advance(c, a, 5); E.advance(c, b, 5);
+  assert.ok(b.v.sbp > a.v.sbp + 10, "adrenaline raises blood pressure");
 });
