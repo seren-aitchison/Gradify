@@ -12,3 +12,7 @@ test("every site has a release status consistent with its content", async () => 
 test("a site with no written course can't be live", () => {
   assert.equal(statusProblems([{ name: "X", status: "live", written: 0, courses: [], tools: [] }]).length, 1);
 });
+test("a site with a studiable course can't stay coming soon", () => {
+  assert.equal(statusProblems([{ name: "X", status: "soon", written: 120, courses: ["X"], tools: [] }]).length, 1);
+  assert.equal(statusProblems([{ name: "X", status: "soon", written: 40, courses: ["X"], tools: [] }]).length, 0);
+});
