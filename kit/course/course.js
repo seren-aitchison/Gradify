@@ -19,6 +19,7 @@ import { evidenceFromAttempts, sixProfiles, revisionQueue, SIX } from "../learni
 import { sixHtml, calibrationHtml } from "../learning/mastery-view.js";
 import { learnerOf, needsSetup, applyPrefs } from "../data/profile.js";
 import { paceFor } from "../learning/pace.js";
+import { trackView, track } from "../core/analytics.js";
 import { mergeProgress, cloudCopy } from "./progress.js";
 import { mountRevalidation } from "./revalidation.js";
 import { scoreFeedback } from "../assess/tutor.js";
@@ -131,6 +132,7 @@ export function mountCourse(root, cfg) {
   // the shared learner profile (kit/data/profile.js): exam date, daily time, prior knowledge, display
   // settings. The daily XP goal follows the learner's daily study time until they pick one here.
   applyPrefs();
+  trackView(cfg.site);
   let prof = null;
   const GOAL_FOR = (m) => (m <= 10 ? 20 : m <= 20 ? 30 : m <= 45 ? 50 : 100);
   store().then((st) => st.getProfile()).then((p) => { prof = { ...p, learner: learnerOf(p) }; if (!S.goalChosen && p?.daily_minutes) S.goal = GOAL_FOR(p.daily_minutes); paintSide(); }).catch(() => {});
@@ -475,7 +477,7 @@ export function mountCourse(root, cfg) {
     });
     main.querySelector(".co-complete").addEventListener("click", async (e) => {
       if (S.done[id]) return;
-      S.done[id] = Date.now(); save(); e.currentTarget.disabled = true; e.currentTarget.querySelector("span").textContent = "Completed ✓";
+      S.done[id] = Date.now(); save(); track("lesson_complete", cfg.site); e.currentTarget.disabled = true; e.currentTarget.querySelector("span").textContent = "Completed ✓";
       await award(XP.lesson, "lesson", id, `${cfg.name}: ${l.title}`);
       if (unitDone(u) === u.lessons.length) celebrate(`${U} ${u.n} complete`, `${esc(u.title)}: every lesson done. Take the unit quiz for +${XP.quiz} XP.`, `<a class="btn btn-ghost lg btn-sm" href="#/quiz/${u.id}"><span>${U} quiz</span></a>`);
       else if (next) setTimeout(() => go(`lesson/${next.id}`), 650);
@@ -493,6 +495,7 @@ export function mountCourse(root, cfg) {
     }).catch(() => null);
     const out = res ? await res.json().catch(() => ({})) : {};
     if (!res?.ok) throw new Error(out.error || "The tutor isn't available right now. You can still self-assess with the rubric.");
+    track("tutor", cfg.site);
     return out;
   }
   // until Gradify accounts are switched on (gradify.config.js), say so rather than offering a sign-in that can't work
@@ -923,6 +926,7 @@ export function mountCourse(root, cfg) {
       if (again) return viewExam(id);
       // every exam answer is an attempt record; the summary keeps only scores and weak areas
       for (const r of summary.items || []) if (r.item && !r.unanswered) record(r.item, "exam", e.id, r, { response: r.response, ms: r.ms, attempt: 1 });
+      track("exam_finish", cfg.site);
       const { items: _drop, ...keep } = summary;
       (S.mocks[e.id] ||= []).push(keep); save();
       if (summary.pass) award(XP.quiz, "mock", e.id, `${cfg.name}: ${e.title} ${Math.round(summary.score * 100)}%`);

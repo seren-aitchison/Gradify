@@ -6,10 +6,12 @@ import { tile, ink } from "../core/colour.js";
 import { SAMPLE, readFile } from "../notes/studio.js";
 import { LocalStore, CloudStore, cloudConfigured, scopeToSite } from "../data/store.js";
 import { learnerOf, saveLearner, syncMirror, needsSetup, applyPrefs, PRIOR } from "../data/profile.js";
+import { trackView } from "../core/analytics.js";
 applyPrefs();
 import { currentSite, nameHtml } from "../core/site.js";
 // on a sub-site (getgradify.com/medgradify/), the app belongs to that site
 const SITE = currentSite();
+trackView(SITE || "Gradify app");
 import { generate, regenerateCard, generateQuestions } from "../notes/engine.js";
 import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "../learning/srs.js";
 import { topicProfiles, practiceOrder, LEVELS } from "../learning/mastery.js";

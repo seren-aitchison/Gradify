@@ -11,7 +11,9 @@ import { initCommunity } from "./community.js";
 import { initStudy } from "./study.js";
 import { initCalendar } from "./calendar.js";
 import { applyPrefs } from "../data/profile.js";
+import { trackView } from "../core/analytics.js";
 applyPrefs();
+trackView("Gradify LifeOS");
 import { drawTree, drawForest, drawDonut } from "./tree.js";
 
 const $ = (s, el = document) => el.querySelector(s);

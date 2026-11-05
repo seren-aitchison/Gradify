@@ -4,7 +4,9 @@ import { triple, mix, ink, tile } from "../kit/core/colour.js";
 import { pathOf, nameHtml } from "../kit/core/site.js";
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../gradify.config.js";
 import { applyPrefs } from "../kit/data/profile.js";
+import { trackView } from "../kit/core/analytics.js";
 applyPrefs();
+trackView("Gradify");
 
 const $ = (s, el = document) => el.querySelector(s);
 const href = (u) => (/^https?:/.test(u) ? u : "https://" + u);

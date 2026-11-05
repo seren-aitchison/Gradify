@@ -1,0 +1,8 @@
+# getgradify.com
+User-agent: *
+Allow: /
+# internal pages: the system status check and the interactive test harness
+Disallow: /status.html
+Disallow: /harness.html
+
+Sitemap: https://getgradify.com/sitemap.xml

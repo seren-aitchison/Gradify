@@ -7,7 +7,7 @@
   --bg: #000;
   --fg: #fff;
   --mute: #a3a3a3;
-  --faint: #6e6e6e;
+  --faint: #8a8a8a;   /* 5.6:1 on black: WCAG AA for body text (was #6e6e6e, 4.0:1) */
   --panel: rgba(20, 20, 20, .6);
   --panel-strong: rgba(18, 18, 18, .9);
   --inset: rgba(0, 0, 0, .55);

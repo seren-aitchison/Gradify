@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Privacy · Gradify</title>
+  <meta name="description" content="What Gradify keeps about you, where it's kept, what Gradify AI sees, and how to download or delete it.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/kit/styles/base.css">
+  <style>
+    main { max-width: 720px; margin: 0 auto; padding: 48px 16px 80px; line-height: 1.6; }
+    h1 { font-size: clamp(30px, 5vw, 44px); letter-spacing: -.02em; margin: 0 0 6px; }
+    h2 { font-size: 19px; margin: 34px 0 8px; }
+    p, li { color: var(--mute); } b, strong { color: var(--fg); }
+    ul { padding-left: 20px; } li { margin: 4px 0; }
+    code { font: 13px var(--mono); color: var(--fg); }
+    .note { border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; background: var(--panel); }
+    .row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 10px; }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+  <main>
+    <a href="/">← Gradify</a>
+    <h1>Privacy</h1>
+    <p>A plain-English account of what Gradify keeps about you and where. It describes how the site works today.</p>
+    <p class="note"><b>Not yet final.</b> This page hasn't been reviewed by a lawyer yet. The name of the organisation responsible for your data, and a contact address, will be added before Gradify accounts open.</p>
+
+    <h2>No account: everything stays in this browser</h2>
+    <p>Gradify works without an account. Everything you do is saved in this browser's storage, on this device:</p>
+    <ul>
+      <li>notes, flashcards, reviews and plans (<code>gradify.v1</code>)</li>
+      <li>progress in each course (<code>gradify.course.…</code>)</li>
+      <li>your set-up answers and display settings (<code>gradify.learner</code>)</li>
+    </ul>
+    <p>Gradify doesn't set cookies. Clearing this site's data in your browser deletes all of it.</p>
+
+    <h2>With a Gradify account</h2>
+    <p>When accounts are switched on and you sign in, the same things are saved to your account so they follow you between devices:</p>
+    <ul>
+      <li>your profile and set-up answers</li>
+      <li>notes you upload, with their extracted text</li>
+      <li>study packs, flashcards and reviews</li>
+      <li>course progress and your answers to questions</li>
+      <li>study plans and activity</li>
+      <li>any SportGradify training logs or NurseGradify revalidation records you add</li>
+    </ul>
+    <p>The data is stored with Supabase. Every table is protected so that only you can read your own rows: other learners can't, and neither can visitors who aren't signed in. You can download everything, or delete it, from <b>Account</b> in the Gradify app.</p>
+
+    <h2>Gradify AI</h2>
+    <p>When you use a Gradify AI feature, the text it needs is sent from Gradify's server to Anthropic's Claude API to produce the answer. Depending on the feature, that's:</p>
+    <ul>
+      <li>your notes</li>
+      <li>your written answer</li>
+      <li>the lesson's notes</li>
+      <li>the conversation so far</li>
+      <li>a summary of your progress</li>
+    </ul>
+    <p>Gradify saves the study packs it makes from your notes to your account. It doesn't keep tutor conversations, only a count of how many requests you've made each day, so it can apply daily limits. AI features need an account and only run when you choose to use them.</p>
+    <p><b>Don't put personal details about other people</b>, such as patients or clients, into notes, answers or questions.</p>
+
+    <h2>Usage counts</h2>
+    <p>To see whether Gradify is used, the site counts page views, finished lessons, finished exams and tutor requests. Each count records:</p>
+    <ul>
+      <li>the site</li>
+      <li>the page address, without anything after <code>#</code> or <code>?</code></li>
+      <li>the website that linked to it, if any</li>
+      <li>whether you're on a phone, tablet or computer</li>
+      <li>the date</li>
+    </ul>
+    <p>It records no name, account, cookie or identifier of any kind, and no time of day, so counts can't be linked to you or to each other. Nothing is counted if your browser sends Do Not Track or Global Privacy Control, or if you turn counting off here.</p>
+    <div class="row"><button type="button" class="btn btn-ghost btn-sm" id="opt"><span>…</span></button><span id="opt-state" aria-live="polite"></span></div>
+
+    <h2>Your choices</h2>
+    <ul>
+      <li><b>Download</b> or <b>delete</b> everything from Account in the Gradify app.</li>
+      <li>Use Gradify without an account, and nothing leaves this browser except the anonymous counts above.</li>
+      <li>Turn the counts off on this page.</li>
+    </ul>
+  </main>
+  <script type="module">
+    import { analyticsOptedOut, setAnalytics, analyticsAllowed } from "/kit/core/analytics.js";
+    const btn = document.getElementById("opt"), state = document.getElementById("opt-state");
+    const paint = () => {
+      const off = analyticsOptedOut();
+      btn.querySelector("span").textContent = off ? "Count my visits again" : "Don't count my visits";
+      state.textContent = off ? "Counting is off in this browser." : analyticsAllowed() ? "Counting is on in this browser." : "Nothing is being counted right now (your browser asks not to be tracked, or counting isn't switched on yet).";
+    };
+    btn.addEventListener("click", () => { setAnalytics(analyticsOptedOut()); paint(); });
+    paint();
+  </script>
+</body>
+</html>

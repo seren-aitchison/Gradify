@@ -13,7 +13,7 @@ You need: a free Supabase account, an Anthropic API key, and about 30 minutes.
 
 1. In the project, open **SQL Editor**, then **New query**.
 2. Paste the whole of `supabase/migrations/20261028120000_gradify_core.sql` and click **Run**.
-3. Do the same with `supabase/migrations/20261029120000_mastery_evidence.sql` (it adds the Mastery Engine's evidence to `reviews`), then `supabase/migrations/20261031120000_sport_body_intelligence.sql` (SportGradify Body Intelligence: `workouts`, `body_checkins`, `fitness_tests`), `supabase/migrations/20261101120000_assessment_attempts.sql` (every answer in every course) `supabase/migrations/20261105120000_course_progress.sql` (course progress that follows a learner across devices), `supabase/migrations/20261105130000_tutor_usage.sql` (the AI course tutor's daily limits) `supabase/migrations/20261105140000_revalidation.sql` (NurseGradify's NMC revalidation record) `supabase/migrations/20261106120000_learner_profile.sql` (the set-up answers every Gradify site reads) and `supabase/migrations/20261106130000_tutor_modes.sql` (the AI tutor's newer modes). Run the files in date order. Until the newer ones are run, courses keep progress, answers and revalidation records on the device only, and the AI tutor stays off.
+3. Do the same with `supabase/migrations/20261029120000_mastery_evidence.sql` (it adds the Mastery Engine's evidence to `reviews`), then `supabase/migrations/20261031120000_sport_body_intelligence.sql` (SportGradify Body Intelligence: `workouts`, `body_checkins`, `fitness_tests`), `supabase/migrations/20261101120000_assessment_attempts.sql` (every answer in every course) `supabase/migrations/20261105120000_course_progress.sql` (course progress that follows a learner across devices), `supabase/migrations/20261105130000_tutor_usage.sql` (the AI course tutor's daily limits) `supabase/migrations/20261105140000_revalidation.sql` (NurseGradify's NMC revalidation record) `supabase/migrations/20261106120000_learner_profile.sql` (the set-up answers every Gradify site reads) `supabase/migrations/20261106130000_tutor_modes.sql` (the AI tutor's newer modes) and `supabase/migrations/20261106140000_page_events.sql` (anonymous usage counts). Run the files in date order. Until the newer ones are run, courses keep progress, answers and revalidation records on the device only, and the AI tutor stays off.
 4. Open **Table Editor**. You should see `profiles`, `documents`, `packs`, `cards`, `reviews`, `activity`, `plan_blocks` and `waitlist`, each marked "RLS enabled".
 
 ## 3. Turn on sign-in
@@ -100,3 +100,40 @@ This runs the notes in `tests/fixtures/` through Gradify AI and reports key-term
 
 - XP comes from activity rows the learner's browser writes (capped at 500 per row). A determined user could inflate their own XP. Leaderboards should move XP to server-side functions before they launch.
 - The Supabase-connected code paths haven't yet been run against a live project, because no project existed when they were written. `docs/BACKEND-STATUS.md` records what has been verified.
+
+## Usage counts
+
+Once accounts are switched on, the site counts page views, finished lessons, finished exams and tutor requests in `page_events` (`kit/core/analytics.js`). Each row is anonymous: no account, no cookie, no identifier and no time of day. It counts nothing for browsers that send Do Not Track or Global Privacy Control, or for anyone who turns counting off on `privacy.html`.
+
+Nobody can read the rows through the API. To see them, use Supabase's **SQL Editor**:
+
+```sql
+select * from daily_usage where day > current_date - 30 order by day desc, n desc;
+```
+
+```sql
+select site, count(*) filter (where event = 'view') as views, count(*) filter (where event = 'lesson_complete') as lessons, count(*) filter (where event = 'exam_finish') as exams from page_events where day > current_date - 7 group by site order by views desc;
+```
+
+## Launch checks
+
+```bash
+node scripts/audit-sites.mjs
+```
+
+```bash
+node scripts/qa-audit.mjs
+```
+
+```bash
+node scripts/build-sitemap.mjs
+```
+
+```bash
+node scripts/check-a11y.cjs
+```
+
+- `audit-sites.mjs` checks each site's release status against its content.
+- `qa-audit.mjs` writes the site scores to `docs/QA-SCORES.md` and fails on broken internal links.
+- `build-sitemap.mjs` rebuilds `sitemap.xml`. A test fails if it's out of date.
+- `check-a11y.cjs` runs contrast and keyboard-focus checks in a real browser. Run `npm run serve` first, then set `BASE=http://localhost:8080`.
