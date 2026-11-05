@@ -792,7 +792,7 @@ T: Graduate Basis for Chartered Membership (GBC) | BPS eligibility gained from a
 SUM: UK practitioner psychologists hold one of seven HCPC-protected titles after accredited postgraduate training.
 SUM: Psychology graduates also enter many other careers, valued for research, statistical and interpersonal skills.
 SRC: Health and Care Professions Council, "Practitioner psychologists" (protected titles and standards) | standard | 2026-11 | https://www.hcpc-uk.org/
-SRC: British Psychological Society, "Become a psychologist" (careers and accreditation information) | guidance | 2026-11 | https://www.bps.org.uk/
+SRC: British Psychological Society, "Become a psychologist" (careers and accreditation information) | guidance | 2026-11
 SRC: Spielman R. M. et al., Psychology 2e, OpenStax, section 1.4 "Careers in psychology" | secondary | 2020 | https://openstax.org/books/psychology-2e/pages/1-4-careers-in-psychology
 Q: Which body regulates practitioner psychologists in the UK? | The Health and Care Professions Council (HCPC).
 Q: Name three protected practitioner psychologist titles. | Any three of: clinical, counselling, educational, forensic, health, occupational, sport and exercise psychologist.

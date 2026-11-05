@@ -1009,7 +1009,7 @@ T: Attrition | Participants dropping out of a longitudinal study
 T: Assent | A child's own agreement to take part, alongside parental consent
 SUM: Cross-sectional, longitudinal, cohort-sequential and microgenetic designs each have strengths and limits.
 SUM: Cohort effects, attrition and practice effects matter; research with children needs consent, assent and safeguarding.
-SRC: British Psychological Society, Code of Human Research Ethics | guidance | 2021 | https://www.bps.org.uk/guideline/bps-code-human-research-ethics
+SRC: British Psychological Society, Code of Human Research Ethics | guidance | 2021
 SRC: Centre for Longitudinal Studies, UCL, Millennium Cohort Study | data | 2026-11 | https://cls.ucl.ac.uk/cls-studies/millennium-cohort-study/
 Q: What is a cohort effect? | A difference caused by growing up in a different era, not by age.
 Q: What is assent? | A child's own agreement to take part, alongside parental consent.
