@@ -20,7 +20,7 @@ test("law notes: every case card names a citation", async () => {
   const dir = new URL("../kit/courses/law/notes/", import.meta.url);
   for (const f of (await readdir(dir)).filter((x) => /^u\d\d\.js$/.test(x))) {
     for (const line of (await readFile(new URL(f, dir), "utf8")).split("\n").filter((x) => x.startsWith("CASE: "))) {
-      assert.match(line.split(" | ")[0], /\[\d{4}\]|\(\d{4}\)|Case \d+|Application no/, `${f}: ${line.slice(0, 60)}`);
+      assert.match(line.split(" | ")[0], /\[\d{4}\]|\(\d{4}\)|Cases? C?-?\d+|Application no/, `${f}: ${line.slice(0, 60)}`);
     }
   }
 });
