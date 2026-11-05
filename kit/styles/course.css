@@ -689,3 +689,8 @@ button.rx-s { cursor: pointer; border-bottom: 1px dashed var(--line-strong); } b
 .cs-trend figcaption { font-size: 12.5px; color: var(--mute); margin-top: 6px; }
 .cs-timeline { margin: 8px 0 0; padding-left: 0; list-style: none; } .cs-timeline li { padding: 4px 0; } .cs-timeline time { font: 600 12px var(--mono); color: var(--mute); margin-right: 8px; } .cs-timeline li.crit { color: #ff8a7a; }
 @media (max-width: 900px) { .cs-body { grid-template-columns: 1fr; } .cs-chart { position: static; max-height: none; } .cs-head { flex-direction: column; } .cs-clock { text-align: left; } }
+
+/* sync status (kit/course/course.js syncText): shown when work hasn't reached the account yet */
+.co-syncwarn { border-color: rgba(255, 180, 77, .45); background: rgba(255, 180, 77, .06); }
+.co-syncwarn p { margin: 0; font-size: 13px; line-height: 1.45; color: var(--fg); }
+.co-acct.co-warn { color: #ffcf8a; }

@@ -18,7 +18,7 @@ const dedupe = (list, key) => { const seen = new Set(); return list.filter((x) =
 
 // the part of the course state that goes to the account
 export function cloudCopy(S) {
-  const { attempts, ...rest } = S;
+  const { attempts, outbox, sync, ...rest } = S;   // attempts have their own table; outbox and sync status are per device
   return rest;
 }
 
@@ -46,4 +46,26 @@ export function mergeProgress(local = {}, cloud = {}) {
     attempts: local.attempts || [],
     updated: later(local.updated, cloud.updated) || 0,
   };
+}
+
+// ---------- assessment attempts across devices ----------
+// Attempts are uploaded one row per answer (assessment_attempts), and downloaded again on other devices so
+// mastery, Revisit and Your plan see every answer. Each attempt has a unique id, so uploads can be retried
+// safely: a row that already exists is ignored, never duplicated.
+export const ATTEMPT_CAP = 2000;
+export function mergeAttempts(local = [], cloud = [], cap = ATTEMPT_CAP) {
+  const byId = new Map();
+  for (const a of [...local, ...cloud]) if (a?.id && !byId.has(a.id)) byId.set(a.id, a);
+  const all = [...byId.values()].sort((x, y) => String(x.at).localeCompare(String(y.at)));
+  return all.length > cap ? all.slice(all.length - cap) : all;
+}
+// the outbox: ids of attempts not yet confirmed in the account. Kept with the course state on this device, so a
+// failed or interrupted upload is retried on the next visit, when the connection returns, or after sign-in.
+export function queueAttempt(S, id) { S.outbox = [...new Set([...(S.outbox || []), id])]; return S; }
+export function outboxAttempts(S) { const ids = new Set(S.outbox || []); return (S.attempts || []).filter((a) => ids.has(a.id)); }
+export function confirmAttempts(S, ids) {
+  const done = new Set(ids), have = new Set((S.attempts || []).map((a) => a.id));
+  // forget ids that were confirmed, and ids whose attempt has aged out of the device copy (nothing left to send)
+  S.outbox = (S.outbox || []).filter((id) => !done.has(id) && have.has(id));
+  return S;
 }

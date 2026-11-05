@@ -49,6 +49,7 @@ export class LocalStore {
   async listReviews(sinceDays = 400) { const t = Date.now() - sinceDays * 864e5; return this.mem.reviews.filter((r) => Date.parse(r.reviewed_at) >= t); }
   async logActivity(a) { const row = { id: this.mem.activity.length + 1, at: now(), site: "Gradify", xp: 0, ...a }; this.mem.activity.push(row); this.mem.profile.xp += row.xp; this.save(); return row; }
   // assessment attempts (kit/assess/attempts.js); kept to the most recent 5,000 on this device
+  async logAttempts(list) { for (const a of list) if (!(this.mem.attempts || []).some((x) => x.id === a.id)) await this.logAttempt(a); }
   async logAttempt(a) { (this.mem.attempts ||= []).push(a); if (this.mem.attempts.length > 5000) this.mem.attempts.splice(0, this.mem.attempts.length - 5000); this.save(); return a; }
   async listAttempts(sinceDays = 400) { const t = Date.now() - sinceDays * 864e5; return (this.mem.attempts || []).filter((a) => Date.parse(a.at) >= t); }
   async listActivity(sinceDays = 400) { const t = Date.now() - sinceDays * 864e5; return this.mem.activity.filter((a) => Date.parse(a.at) >= t); }
@@ -79,6 +80,8 @@ export class CloudStore {
   }
   async user() { const { data } = await this.db.auth.getUser(); return data.user; }
   async session() { const { data } = await this.db.auth.getSession(); return data.session; }
+  // a new access token from the refresh token, when the old one has expired; null if the sign-in has ended
+  async refreshSession() { const { data, error } = await this.db.auth.refreshSession(); return error ? null : data.session; }
   async signInWithEmail(email) {
     const { error } = await this.db.auth.signInWithOtp({ email, options: { emailRedirectTo: location.origin + location.pathname } });
     if (error) throw error;
@@ -107,8 +110,13 @@ export class CloudStore {
   // course progress (kit/course/progress.js): one row per learner per course
   async getCourseProgress(subject) { const rows = await this.q(this.db.from("course_progress").select("state,updated_at").eq("subject", subject).limit(1)); return rows[0]?.state || null; }
   async saveCourseProgress(subject, site, state) { const u = await this.user(); await this.q(this.db.from("course_progress").upsert({ user_id: u.id, subject, site, state, updated_at: now() })); }
-  async logAttempt(a) {
-    return this.q(this.db.from("assessment_attempts").insert({ id: a.id, site: a.site, subject: a.subject, context: a.context, context_id: a.contextId, question_id: a.question.id, question_version: a.question.v, question_type: a.question.type, difficulty: a.question.d, objectives: a.question.objectives, lesson_id: a.lesson, module: a.module, unit_id: a.unit, response: a.response, score: a.score, correct: a.correct, attempt: a.attempt, confidence: a.confidence, ms: a.ms, misconception: a.misconception, marking_method: a.marking.method, marking_status: a.marking.status, schema: a.schema, created_at: a.at }));
+  // Uploads are idempotent: each attempt has a unique id, and a row that already exists is skipped, so a failed
+  // or interrupted upload can simply be sent again (kit/course/progress.js keeps the outbox).
+  async logAttempt(a) { return this.logAttempts([a]); }
+  async logAttempts(list) {
+    if (!list.length) return;
+    const rows = list.map((a) => ({ id: a.id, site: a.site, subject: a.subject, context: a.context, context_id: a.contextId, question_id: a.question.id, question_version: a.question.v, question_type: a.question.type, difficulty: a.question.d, objectives: a.question.objectives, lesson_id: a.lesson, module: a.module, unit_id: a.unit, response: a.response, score: a.score, correct: a.correct, attempt: a.attempt, confidence: a.confidence, ms: a.ms, misconception: a.misconception, marking_method: a.marking.method, marking_status: a.marking.status, schema: a.schema, created_at: a.at }));
+    for (let i = 0; i < rows.length; i += 200) await this.q(this.db.from("assessment_attempts").upsert(rows.slice(i, i + 200), { onConflict: "id", ignoreDuplicates: true }));
   }
   async listAttempts(sinceDays = 400) {
     const rows = await this.q(this.db.from("assessment_attempts").select("*").gte("created_at", new Date(Date.now() - sinceDays * 864e5).toISOString()).order("created_at"));
