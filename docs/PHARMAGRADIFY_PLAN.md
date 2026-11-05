@@ -146,3 +146,15 @@ See the status sections below as schools are added. Content is written by Claude
 - 18 lessons, written to content standard 2, following NICE NG136, NG238, CG126, NG185, NG106, NG196, NG158, NG89, NG128 and CG147. Covers: hypertension diagnosis and NICE steps, lipids and QRISK3, angina and GTN counselling, ACS and DAPT, secondary prevention, HFrEF's four pillars, AF (CHA₂DS₂-VASc and ORBIT), antiarrhythmics (amiodarone monitoring), VTE, anticoagulants and reversal, warfarin, DOACs (where they're unsuitable), antiplatelets, stroke and TIA, PAD, and cardiovascular ADRs.
 - **Drug cards:** ramipril, amlodipine, atorvastatin, bisoprolol, amiodarone, warfarin, apixaban and clopidogrel. QA reports 0 warnings.
 - **Expert review:** check the NICE thresholds, targets and treatment steps (NG136 and NG238 are updated often), the DOAC criteria and the warfarin INR targets.
+
+## Status: School 8, Respiratory Therapeutics (2026-11-05)
+
+- 11 lessons, written to content standard 2: adult and childhood asthma under BTS/NICE/SIGN NG245 (2024: AIR and MART), COPD (NG115), inhaler technique and carbon footprint, bronchodilators, inhaled corticosteroids (beclometasone by brand, steroid cards), acute asthma and COPD exacerbations, allergic rhinitis, anaphylaxis (Resuscitation Council UK; two auto-injectors), cough and self-care (NG120), and smoking cessation (NG209, CYP1A2).
+- **Drug cards:** beclometasone (inhaled) and varenicline. QA reports 0 warnings.
+- **Expert review:** check NG245's step details for children and the codeine cough medicine classification against current guidance.
+
+## Status: School 9, Endocrine and Diabetes Therapeutics (2026-11-05)
+
+- 13 lessons, written to content standard 2: type 1 diabetes (NG17, CGM, sick day rules), insulin types and safety, type 2 diabetes (NG28 and HbA1c targets), glucose-lowering drug classes, hypoglycaemia (JBDS and DVLA), special situations (steroids, pregnancy, Ramadan), DKA and HHS, thyroid disease (levothyroxine, carbimazole agranulocytosis), adrenal insufficiency and steroid cards, osteoporosis (NOGG, bisphosphonate counselling, denosumab rebound), contraception (UKMEC and emergency contraception), menopause and HRT (NG23), and obesity (NG246, safe supply).
+- **Drug cards:** insulin glargine, metformin, dapagliflozin, levothyroxine, carbimazole and alendronic acid. QA reports 0 warnings.
+- **Expert review:** check the thresholds (HbA1c targets, metformin eGFR cut-offs, steroid card criteria), the FSRH emergency contraception dosing and the NICE obesity criteria against current guidance.

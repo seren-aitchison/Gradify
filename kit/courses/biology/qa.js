@@ -9,4 +9,5 @@
 export const QA = {
   // written to standard 2; checks pending
   u01: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u02: { standard: 2, reviewed: null, sources: null, signoff: null },
 };

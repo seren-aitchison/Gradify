@@ -1,0 +1,44 @@
+# Checks every push and pull request: the test suite, every site's release status against its content,
+# broken internal links, and that sitemap.xml and the shared server copies are up to date.
+# Nothing here needs a secret, and nothing is deployed: GitHub Pages publishes the branch as before.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Tests
+        run: npm test
+
+      - name: Release statuses match content
+        run: node scripts/audit-sites.mjs
+
+      - name: No broken internal links
+        run: node scripts/qa-audit.mjs
+
+      - name: Generated files are up to date
+        run: |
+          node scripts/build-sitemap.mjs
+          npm run sync
+          git diff --exit-code -- sitemap.xml supabase/functions/_shared/ supabase/dashboard/ || {
+            echo "::error::Generated files are out of date. Run node scripts/build-sitemap.mjs and npm run sync, then commit."
+            exit 1
+          }
