@@ -106,3 +106,15 @@ See the status sections below as schools are added. Content is written by Claude
   - NHS structures and services in each nation, public health, multidisciplinary teams, and digital pharmacy.
 - **QA:** 0 warnings, after rewriting the wrong options in 15 questions so that answer length doesn't give the answer away.
 - **Expert review:** service names and contracts in each nation change often (for example, Wales's Common Ailments Service now sits within the Clinical Community Pharmacy Service). Check them, and the dates of GPhC guidance, against current sources.
+
+## Status: written practice and consultation role-play (2026-11-05)
+
+- **Six tasks** in `writing.js`:
+  - a clinical check and intervention (clarithromycin with simvastatin, using SBAR);
+  - counselling on weekly methotrexate;
+  - medicines reconciliation on admission;
+  - responding to symptoms (a cough with red flags);
+  - a GPhC reflective account on a near miss;
+  - a **patient consultation role-play** (heartburn with hidden red flags: dysphagia and weight loss).
+- The AI tutor's role-play and debrief now adapt to the course (`SCENES` in `kit/assess/tutor.js`): a client for law, a patient for pharmacy and nursing. The interview page's wording follows the task's `who`.
+- **Expert review:** the model answers (interaction management, methotrexate counselling, the apixaban dose criteria, NICE NG12 referral criteria) should be checked by a pharmacist.

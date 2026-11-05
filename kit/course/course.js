@@ -554,22 +554,22 @@ export function mountCourse(root, cfg) {
       btn.disabled = false;
     });
   }
-  // a practice client interview: the tutor plays the client, then gives feedback on the whole interview
+  // a practice interview: the tutor plays the client or patient (t.who), then gives feedback on the whole interview
   function viewInterview(t, head, rubric) {
-    const turns = [], kase = { client: t.client, persona: t.persona, facts: t.facts };
-    main.innerHTML = `${head}<section class="co-panel co-client"><h3>Your client</h3><p>${esc(t.client)}</p></section>
-      <div class="co-chat" aria-live="polite"><p class="co-empty">The client is waiting. Introduce yourself to begin.</p></div>
-      <form class="co-chatform"><label class="sr-only" for="co-say">What you say to the client</label><textarea id="co-say" rows="2" maxlength="1500" placeholder="What do you say?"></textarea><button type="submit" class="btn btn-light lg btn-sm"><span>Say</span></button></form>
+    const turns = [], kase = { client: t.client, persona: t.persona, facts: t.facts }, who = t.who || "client", Who = who[0].toUpperCase() + who.slice(1);
+    main.innerHTML = `${head}<section class="co-panel co-client"><h3>Your ${who}</h3><p>${esc(t.client)}</p></section>
+      <div class="co-chat" aria-live="polite"><p class="co-empty">The ${who} is waiting. Introduce yourself to begin.</p></div>
+      <form class="co-chatform"><label class="sr-only" for="co-say">What you say to the ${who}</label><textarea id="co-say" rows="2" maxlength="1500" placeholder="What do you say?"></textarea><button type="submit" class="btn btn-light lg btn-sm"><span>Say</span></button></form>
       <div class="co-wactions"><button type="button" class="btn btn-ghost lg btn-sm" data-end><span>End the interview and get feedback</span></button></div>
       <div class="co-wout" aria-live="polite"></div>${rubric}
-      <details class="co-casefile"><summary>No account? Practise with a friend playing the client (spoiler: the case file)</summary><p>Give your friend this case file. They answer only what you ask.</p><p><b>Client:</b> ${esc(t.client)}</p><p><b>How they come across:</b> ${esc(t.persona)}</p><p><b>What they know:</b> ${esc(t.facts)}</p>${modelBlock(t)}</details>`;
+      <details class="co-casefile"><summary>No account? Practise with a friend playing the ${who} (spoiler: the case file)</summary><p>Give your friend this case file. They answer only what you ask.</p><p><b>${Who}:</b> ${esc(t.client)}</p><p><b>How they come across:</b> ${esc(t.persona)}</p><p><b>What they know:</b> ${esc(t.facts)}</p>${modelBlock(t)}</details>`;
     const chat = main.querySelector(".co-chat"), form = main.querySelector(".co-chatform"), say = form.querySelector("textarea"), out = main.querySelector(".co-wout");
-    const paint = (busy) => { chat.innerHTML = turns.map((m) => `<p class="co-say ${m.role}"><b>${m.role === "learner" ? "You" : "Client"}</b>${esc(m.text)}</p>`).join("") + (busy ? `<p class="co-say client co-typing"><b>Client</b>…</p>` : ""); chat.scrollTop = chat.scrollHeight; };
+    const paint = (busy) => { chat.innerHTML = turns.map((m) => `<p class="co-say ${m.role}"><b>${m.role === "learner" ? "You" : Who}</b>${esc(m.text)}</p>`).join("") + (busy ? `<p class="co-say client co-typing"><b>${Who}</b>…</p>` : ""); chat.scrollTop = chat.scrollHeight; };
     form.addEventListener("submit", async (e) => {
       e.preventDefault(); const text = say.value.trim(); if (!text) return;
       turns.push({ role: "learner", text }); say.value = ""; paint(true); form.querySelector("button").disabled = true;
       try { const { reply } = await askTutor({ mode: "roleplay", case: kase, turns }); turns.push({ role: "client", text: reply }); paint(); }
-      catch (err) { paint(); out.innerHTML = err.signin ? signinLine("The practice client", "practise with a friend using the case file below") : `<p class="co-empty">${esc(err.message)}</p>`; }
+      catch (err) { paint(); out.innerHTML = err.signin ? signinLine(`The practice ${who}`, "practise with a friend using the case file below") : `<p class="co-empty">${esc(err.message)}</p>`; }
       form.querySelector("button").disabled = false; say.focus();
     });
     say.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); form.requestSubmit(); } });

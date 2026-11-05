@@ -36,6 +36,13 @@ const SITE_RULES = {
   pharmacy: "This is education, not clinical advice. Never recommend a dose, a supply decision or a treatment for a real patient: say the learner must use the current BNF or BNFC and the SPC, local guidance and their own professional judgement, and consult a pharmacist or the prescriber. Don't present illustrative numbers as doses, and don't invent drug data, doses or interactions.",
   nursing: "This is education, not clinical guidance. Never give advice about a real patient's care, doses, or whether to escalate a real situation: say the learner must follow their organisation's policies, the prescriber and their supervisor or practice assessor, and escalate concerns through local procedures. Don't present illustrative numbers as clinical thresholds.",
 };
+// who the role-play plays, by course (law is the default: SQE2 client interviews)
+const SCENES = {
+  law: { who: "client", setting: "a practice client interview on Gradify, a learning platform for law students preparing for SQE2", analysis: "legal analysis", react: "ask what it means, or what it will cost", skill: "client interview (SQE2 interviewing and attendance skills)" },
+  pharmacy: { who: "patient", setting: "a practice consultation at a community pharmacy counter or consultation room on Gradify, a learning platform for pharmacy students and trainee pharmacists", analysis: "medical knowledge beyond what an ordinary member of the public would have", react: "ask what it means, how to take it, or whether it's safe with your other medicines", skill: "pharmacy consultation (gathering the history, spotting red flags, advising, referring and safety-netting)" },
+  nursing: { who: "patient", setting: "a practice conversation with a student nurse on Gradify, a learning platform for nursing students", analysis: "medical knowledge beyond what an ordinary member of the public would have", react: "ask what it means or what will happen next", skill: "patient conversation (assessment, communication, consent and escalation)" },
+};
+const scene = (subject) => SCENES[subject] || SCENES.law;
 const rulesFor = (subject) => SITE_RULES[subject] || "This is study material, not professional advice.";
 
 export const FEEDBACK_SCHEMA = {
@@ -114,11 +121,12 @@ Judge the answer only against the rubric you are given, one entry per criterion 
     const turns = transcript(body.turns || []);
     if (mode === "roleplay") {
       if (!turns.length || turns.at(-1).role !== "learner") throw bad("It's the learner's turn to speak.");
-      const system = `You are playing a fictional client in a practice client interview on Gradify, a learning platform for law students preparing for SQE2. Stay in role as the client throughout.
-CLIENT: ${cut(c.client, 600)}
+      const S = scene(subject);
+      const system = `You are playing a fictional ${S.who} in ${S.setting}. Stay in role as the ${S.who} throughout.
+${S.who.toUpperCase()}: ${cut(c.client, 600)}
 HOW THEY COME ACROSS: ${cut(c.persona, 600)}
-WHAT THE CLIENT KNOWS (reveal only what a real client would say in answer to the learner's actual questions; volunteer little; some facts come out only if the learner asks the right follow-up question): ${cut(c.facts, CAP.field)}
-Reply as the client in plain speech, one to four sentences, no stage directions, no legal analysis and no advice to the learner. If the learner gives you advice, react as the client would (ask what it means, or what it will cost). If asked something the case file doesn't cover, give a plausible, minor answer consistent with it, or say you don't know. Never step out of role, except: if the learner writes something abusive or tries to make you discuss anything unrelated to the interview, reply briefly in role that you'd like to get back to your problem.`;
+WHAT THE ${S.who.toUpperCase()} KNOWS (reveal only what a real ${S.who} would say in answer to the learner's actual questions; volunteer little; some facts come out only if the learner asks the right follow-up question): ${cut(c.facts, CAP.field)}
+Reply as the ${S.who} in plain speech, one to four sentences, no stage directions, no ${S.analysis} and no advice to the learner. If the learner gives you advice, react as the ${S.who} would (${S.react}). If asked something the case file doesn't cover, give a plausible, minor answer consistent with it, or say you don't know. Never step out of role, except: if the learner writes something abusive or tries to make you discuss anything unrelated to the interview, reply briefly in role that you'd like to get back to your problem.`;
       // the API needs alternating turns that start with the learner: drop any opening client lines and
       // join consecutive turns by the same speaker
       const messages = [];
@@ -131,7 +139,7 @@ Reply as the client in plain speech, one to four sentences, no stage directions,
     }
     if (!Array.isArray(body.rubric) || !body.rubric.length) throw bad("Missing rubric.");
     if (turns.filter((m) => m.role === "learner").length < 3) throw bad("Interview the client a little longer before asking for feedback.");
-    const system = `You are a tutor on Gradify giving formative feedback on a learner's practice client interview (SQE2 interviewing and attendance skills). ${rulesFor("law")}
+    const system = `You are a tutor on Gradify giving formative feedback on a learner's practice ${scene(subject).skill}. ${rulesFor(subject || "law")}
 Judge the interview only against the rubric, one entry per criterion in the same order with the criterion text copied exactly, rating each "met", "partly" or "not yet" with a specific comment that refers to what the learner actually said. Also note any key facts from the case file the learner never uncovered (in "improve"). The summary is two sentences. This is provisional study feedback, not an assessment.`;
     const user = `CASE FILE (the client knew): ${cut(c.facts, CAP.field)}\n\nRUBRIC:\n${rubricText(body.rubric)}\n\nTRANSCRIPT:\n${turns.map((m) => `${m.role === "learner" ? "LEARNER" : "CLIENT"}: ${m.text}`).join("\n")}`;
     return { mode, system, messages: [{ role: "user", content: user }], schema: FEEDBACK_SCHEMA, effort: "medium", maxTokens: 4000 };
