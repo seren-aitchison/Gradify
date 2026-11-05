@@ -74,3 +74,22 @@ See the status sections below as schools are added. Content is written by Claude
 - **3D links:** six lessons link to the drug-target model.
 - **QA:** 0 warnings.
 - **Expert review:** the drug cards and the MHRA-based statements (codeine restrictions, DPD testing, CrCl advice, steroid cards) need checking by a pharmacist against the current BNF, SPCs and MHRA advice.
+
+## Status: School 16, Pharmacy Law, Ethics and Governance (2026-11-05)
+
+- **20 lessons, written to content standard 2**:
+  - the legal framework;
+  - POM, P and GSL;
+  - prescription requirements and validity, and who can prescribe;
+  - emergency supply, PGDs and PSDs, wholesale dealing, and labelling;
+  - controlled drug schedules, prescriptions, registers, and safe custody and destruction;
+  - the responsible pharmacist, records, and fitness to practise;
+  - safeguarding, clinical governance, the four nations, ethics, and veterinary medicines.
+- **QA:** 0 warnings.
+- **Expert review: highest priority.** Medicines law has detailed exceptions and changes. A pharmacist should check every rule against the current legislation and the RPS *Medicines, Ethics and Practice* guide, especially:
+  - emergency supply quantities and CD limits;
+  - what can be amended on a CD prescription;
+  - retention periods, RP absence rules and wholesale exceptions;
+  - the CD schedules of individual drugs;
+  - Northern Ireland differences.
+- I deliberately left out details I wasn't sure of, such as repeat-dispensing defaults, and pointed to the RPS guide instead.
