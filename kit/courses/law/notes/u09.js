@@ -20,6 +20,8 @@ H: Fusion debate
 P: Lawyers still argue whether the Acts fused only the administration of law and equity (the "two streams" view) or the rules themselves. Courts generally treat the doctrines as distinct while allowing them to influence each other (see Walsh v Lonsdale (1882) 21 Ch D 9).
 K: Equity supplements the common law; after the Judicature Acts both are administered together, and equity prevails where they conflict.
 !: Thinking equity was abolished in 1875: only the separate courts were.
+CASE: Earl of Oxford's Case (1615) 1 Ch Rep 1 | A common law judgment was obtained by fraud, and the Chancellor issued a common injunction restraining its enforcement. | Lord Ellesmere held that equity could act on the conscience of the party, and James I backed the Chancery. | Where common law and equity conflict, equity prevails (now Senior Courts Act 1981, s 49).
+LAW: Senior Courts Act 1981, s 49 | Every court shall continue to administer law and equity together; where there is any conflict or variance between the rules of equity and the common law on the same matter, equity prevails.
 SUM: Equity developed to soften the rigid common law.
 SUM: The Earl of Oxford's Case confirmed equity's priority.
 SUM: The Judicature Acts merged administration; equity prevails in conflict.
@@ -86,6 +88,7 @@ H: Kinds of trust
 - **Private** trusts and **charitable** trusts.
 K: A trust separates legal and equitable ownership and imposes binding obligations on the trustee.
 !: Confusing a power (discretion) with a trust (obligation).
+CASE: Saunders v Vautier (1841) 4 Beav 115 | Stock was left on trust to accumulate dividends until the beneficiary was 25; at 21 he claimed the fund. | He was entitled to have the fund transferred to him once he was an adult. | Adult beneficiaries of full capacity, together absolutely entitled, can end the trust and call for the property.
 SUM: Trusts involve a settlor, trustees and beneficiaries.
 SUM: Saunders v Vautier lets absolutely entitled beneficiaries end the trust.
 SUM: Trusts differ from contracts, gifts, agency and powers.
@@ -117,6 +120,8 @@ H: Requirements
 P: Every express trust needs certainty of intention, subject matter and objects (Knight v Knight (1840) 3 Beav 148), must be completely constituted, and must not breach rules on perpetuities or the beneficiary principle.
 K: An express trust is created by transfer or declaration, satisfies the three certainties, and meets any formality for land, wills or dispositions.
 !: Overlooking s 53(1)(c) when a beneficiary tries to transfer their equitable interest orally.
+CASE: Grey v IRC [1960] AC 1 | A settlor orally directed trustees to hold shares on other trusts, to avoid stamp duty on a written transfer. | The oral direction was a disposition of an equitable interest, void for lack of writing. | A direction to trustees to hold for another is a disposition needing writing under LPA 1925, s 53(1)(c).
+LAW: Law of Property Act 1925, s 53(1)(b) and (c) | A declaration of trust of land must be evidenced in signed writing (s 53(1)(b)); a disposition of a subsisting equitable interest must itself be in signed writing (s 53(1)(c)).
 SUM: Express trusts are created by transfer or self-declaration.
 SUM: Land trusts need signed writing; dispositions of equitable interests need writing.
 SUM: The three certainties and constitution are essential.
@@ -147,6 +152,7 @@ H: Theory
 P: Lord Browne-Wilkinson in Westdeutsche Landesbank Girozentrale v Islington LBC [1996] AC 669 explained that resulting trusts give effect to the presumed intention of the transferor, and constructive trusts arise where the trustee's conscience is affected.
 K: Resulting trusts return benefit to the transferor; constructive trusts respond to unconscionability. Neither needs writing.
 !: Applying s 53(1)(b) to defeat a constructive trust of land.
+CASE: Westdeutsche Landesbank Girozentrale v Islington LBC [1996] AC 669 | A bank paid money to a council under an interest rate swap later found void, and claimed compound interest on the basis of a resulting trust. | No resulting trust arose; the bank had a personal claim in restitution only. | A trust requires the trustee's conscience to be affected; Lord Browne-Wilkinson set out when resulting trusts arise.
 SUM: Implied trusts are resulting or constructive.
 SUM: They arise by operation of law.
 SUM: Section 53(2) exempts them from formalities.
@@ -176,6 +182,7 @@ H: Family homes
 P: In the family home, the common intention constructive trust has largely replaced the resulting trust (Stack v Dowden [2007] UKHL 17), though resulting trusts remain relevant for investment property in some cases.
 K: Presumed resulting trusts depend on rebuttable presumptions; automatic ones arise when a trust fails, including Quistclose loans.
 !: Assuming the presumption of advancement has been abolished: s 199 of the Equality Act 2010 isn't in force.
+CASE: Vandervell v IRC [1967] 2 AC 291 | Vandervell transferred shares to the Royal College of Surgeons, with an option to repurchase held by his trustee company on undefined trusts. | The option was held on resulting trust for him, so he was taxed on the dividends. | Where a beneficial interest isn't effectively disposed of, it results to the transferor.
 SUM: Presumed resulting trusts follow voluntary transfers and purchase money.
 SUM: Automatic resulting trusts follow failed trusts.
 SUM: Quistclose trusts protect lenders for specific purposes.
@@ -206,6 +213,8 @@ H: Institutional, not remedial
 - The trust arises from the date of the facts, which matters for priority in insolvency.
 K: Constructive trusts arise automatically from unconscionable conduct in recognised situations, including fiduciary profits and family homes.
 !: Asking the court to impose a constructive trust as a discretionary remedy to beat other creditors.
+CASE: Stack v Dowden [2007] UKHL 17 | An unmarried couple bought a home in joint names with no declaration of their beneficial shares; she contributed far more. | She took 65%: the presumption of equal shares was rebutted on the whole course of dealing. | Joint legal owners are presumed to be joint beneficial owners; the presumption can be rebutted by their common intention.
+CASE: Lloyds Bank plc v Rosset [1991] 1 AC 107 | A house was in the husband's sole name; the wife supervised the builders renovating it. | No constructive trust: there was no express agreement and her work wasn't enough to infer one. | In sole-name cases a common intention constructive trust needs express discussions or direct contributions to the price (since relaxed by Stack and Kernott).
 SUM: Constructive trusts respond to unconscionability.
 SUM: FHR confirms bribes are held on constructive trust.
 SUM: English law rejects the remedial constructive trust.
@@ -236,6 +245,7 @@ H: Shams
 P: A document that both parties intend to give a false impression of their rights is a sham and is disregarded (Snook v London and West Riding Investments Ltd [1967] 2 QB 786).
 K: Look for an intention to impose a binding obligation, read from the words and conduct as a whole.
 !: Treating every use of the word "trust" as conclusive, or every hope as a trust.
+CASE: Re Kayford Ltd [1975] 1 WLR 279 | A mail-order company in difficulty paid customers' deposits into a separate bank account to protect them. | A trust was created for the customers, so the money didn't go to the creditors on insolvency. | Intention to create a trust can be inferred from conduct; no particular words are needed.
 SUM: Intention to impose a binding obligation is required.
 SUM: Precatory words usually fail, unless the context shows otherwise.
 SUM: Conduct and segregation of funds can show intention (Re Kayford).
@@ -267,6 +277,8 @@ H: Consequences
 P: If the subject matter is uncertain, no trust arises; if the property is certain but the shares aren't, there may be a resulting trust for the settlor.
 K: Identify the trust property and each share clearly; tangibles from a bulk need segregation, but intangible identical shares may not.
 !: Applying Hunter v Moss to unsegregated tangible goods.
+CASE: Re Goldcorp Exchange Ltd [1995] 1 AC 74 | Customers bought bullion for storage that was never separated from the company's general stock; it became insolvent. | The customers had no proprietary interest: the gold was not identified. | A trust of generic goods requires the property to be identified and separated.
+CASE: Hunter v Moss [1994] 1 WLR 452 | An employer declared himself trustee of 50 of his 950 identical shares in a company for an employee. | A valid trust, despite no segregation. | A trust of part of a holding of identical intangible assets such as shares can be valid without segregation.
 SUM: Trust property must be clearly identifiable.
 SUM: Tangible goods need segregation (London Wine; Goldcorp).
 SUM: Beneficial shares must be ascertainable (Boyce v Boyce).
@@ -298,6 +310,7 @@ H: Kinds of uncertainty
 - **Administrative unworkability**: a discretionary trust for all the inhabitants of West Yorkshire failed (R v District Auditor, ex p West Yorkshire Metropolitan County Council (1986) 26 RVR 24).
 K: Fixed trusts need a complete list; discretionary trusts and powers need the is or is not test, without conceptual uncertainty or unworkability.
 !: Applying the complete list test to a discretionary trust: McPhail replaced it.
+CASE: McPhail v Doulton [1971] AC 424 | Trustees had a discretion to benefit staff, ex-staff and their relatives and dependants. | The 'complete list' test was replaced for discretionary trusts. | The test for discretionary trusts, as for powers, is whether it can be said of any given person that they are or are not within the class.
 SUM: Fixed trusts: complete list test.
 SUM: Discretionary trusts: is or is not test (McPhail v Doulton).
 SUM: Conceptual uncertainty and unworkability are fatal; evidential uncertainty isn't.
@@ -329,6 +342,9 @@ H: Exceptions
 - **Proprietary estoppel**.
 K: Unless the property is vested in the trustees, equity won't help a volunteer, save for the recognised exceptions.
 !: Treating a failed outright gift as a declaration of trust: Milroy v Lord forbids this.
+CASE: Milroy v Lord (1862) 4 De GF and J 264 | A settlor executed a deed to transfer shares to a trustee, but the transfer wasn't registered with the bank. | The gift failed: equity won't perfect an imperfect gift. | A gift must be completed by the method appropriate to the property; a failed transfer isn't treated as a declaration of trust.
+CASE: Re Rose [1952] Ch 499 | Rose executed share transfers and gave them with the certificates to the transferees; registration followed some months later. | The equitable interest passed when he had done all he could. | Equity treats a gift as complete once the donor has done everything in their power to transfer the property.
+CASE: Pennington v Waine [2002] EWCA Civ 227 | A donor signed a share transfer form and told the donee, but the form was never delivered to the donee or company. | The gift was effective: it would have been unconscionable to withdraw. | Equity may perfect a gift where it would be unconscionable for the donor to resile.
 SUM: Constitution requires vesting the property in the trustees.
 SUM: Re Rose and Pennington v Waine soften the rule.
 SUM: Strong v Bird, DMCs and estoppel are further exceptions.
@@ -363,6 +379,8 @@ H: Decisions
 P: Trustees must consider relevant matters and ignore irrelevant ones. Pitt v Holt [2013] UKSC 26 limits setting aside decisions under the "Hastings-Bass" rule to cases of breach of duty.
 K: Trustees must protect the property, act impartially and personally, meet the statutory duty of care and follow the investment rules.
 !: Assuming lay trustees owe no duty of care because they are unpaid.
+CASE: Pitt v Holt [2013] UKSC 26 | A receiver settled an injured husband's compensation on a trust that triggered an unexpected inheritance tax charge. | The rule in Hastings-Bass needs a breach of duty; the settlement was set aside for mistake. | A trustee's decision is voidable only for breach of duty in reaching it; serious mistake can justify rescinding a voluntary disposition.
+LAW: Trustee Act 2000, s 1 | The statutory duty of care: a trustee must exercise such care and skill as is reasonable in the circumstances, having regard to special knowledge or experience, and higher for a professional trustee.
 SUM: Trustees safeguard property and act impartially and personally.
 SUM: The Trustee Act 2000 sets the duty of care and investment duties.
 SUM: Pitt v Holt limits challenges to decisions.
@@ -393,6 +411,8 @@ H: Appointment and retirement
 P: New trustees may be appointed under Trustee Act 1925, s 36, or at the direction of adult beneficiaries absolutely entitled (TOLATA 1996, s 19).
 K: Trustees have wide statutory powers, but must use them for proper purposes and in line with their duties.
 !: Applying the old half-share limit to an advancement from a trust created after October 2014.
+CASE: Pilkington v IRC [1964] AC 612 | Trustees proposed to use the power of advancement to resettle a beneficiary's share on new trusts to save estate duty. | This could be an advancement for her benefit. | 'Benefit' under s 32 of the Trustee Act 1925 is wide and can include tax-saving resettlements.
+LAW: Trustee Act 1925, s 32 | Trustees may advance capital for the benefit of a beneficiary with an interest in capital; for trusts created since 1 October 2014 this can be the whole of the presumptive share.
 SUM: Trustees have a general power of investment (s 3 TA 2000).
 SUM: They may delegate to agents, nominees and custodians.
 SUM: Sections 31 and 32 TA 1925 govern maintenance and advancement.
@@ -426,6 +446,8 @@ H: Authorisation
 P: Fiduciaries can act if authorised by the trust instrument, by fully informed consent of the beneficiaries, or by the court. Without authorisation, honesty and benefit to the trust are no defence.
 K: Fiduciaries must avoid conflicts and unauthorised profits; good faith doesn't excuse a breach.
 !: Arguing that a fiduciary's profit is permitted because the trust also benefited.
+CASE: Boardman v Phipps [1967] 2 AC 46 | A trust's solicitor and a beneficiary used information gained acting for the trust to buy shares, profiting both themselves and the trust. | They were liable to account for their profit, with an allowance for their work. | A fiduciary mustn't profit from their position without informed consent, even acting honestly and benefiting the trust.
+CASE: FHR European Ventures LLP v Cedar Capital Partners LLC [2014] UKSC 45 | An agent took a €10 million secret commission from a hotel's seller while acting for the buyer. | The bribe was held on constructive trust for the principal. | A bribe or secret commission received by an agent is held on trust for the principal.
 SUM: Fiduciaries owe a duty of loyalty (Mothew).
 SUM: The no-conflict and no-profit rules are strict (Keech; Boardman).
 SUM: Authorisation or informed consent is the only escape.
@@ -456,6 +478,8 @@ H: Remedies
 P: Beneficiaries may also claim proprietary remedies (tracing) to recover trust property or its proceeds, which is especially valuable if the trustee is insolvent.
 K: Breaching trustees must restore the fund; s 61, exemption clauses, consent and limitation may protect them, but never against fraud.
 !: Assuming an exemption clause can protect a dishonest trustee.
+CASE: Target Holdings Ltd v Redferns [1996] AC 421 | Solicitors released mortgage money in breach of trust before completion; completion happened but the lender suffered a loss for other reasons. | The solicitors weren't liable: the loss wasn't caused by the breach. | Equitable compensation for breach of trust requires a causal link between the breach and the loss (confirmed in AIB v Redler).
+CASE: Armitage v Nurse [1998] Ch 241 | A trust deed excluded trustee liability for loss unless caused by actual fraud. | The clause was valid and protected against negligence, even gross negligence. | Trustee exemption clauses can exclude liability for negligence, but not for actual fraud (dishonesty).
 SUM: Trustees are personally liable to restore the fund.
 SUM: Liability is joint and several.
 SUM: Defences include s 61, exemption clauses, consent and limitation.
@@ -520,6 +544,8 @@ H: Claims and defences
 - Tracing stops against a bona fide purchaser for value without notice, and change of position can be a defence to personal claims.
 K: Tracing identifies substitute assets; the rules in Hallett, Oatway and Roscoe v Winder protect beneficiaries against wrongdoing trustees.
 !: Allowing the claimant to trace into money paid into the account after the balance fell to nothing.
+CASE: Re Hallett's Estate (1880) 13 Ch D 696 | A solicitor mixed client trust money with his own and withdrew sums for himself. | He was presumed to have spent his own money first. | When tracing into a mixed account, a trustee is presumed to spend their own money first.
+CASE: Re Oatway [1903] 2 Ch 155 | A trustee mixed trust money with his own, bought shares with some of it, then dissipated the rest. | The beneficiaries could claim the shares. | Beneficiaries may claim the asset bought from a mixed fund where the remaining money is dissipated.
 SUM: Tracing identifies substitutes so proprietary claims can be made.
 SUM: Hallett and Oatway resolve mixtures with a trustee's money.
 SUM: Lowest intermediate balance and bona fide purchase limit claims.
@@ -551,6 +577,7 @@ H: Nature of the liability
 - Change of position may be relevant to receipt-based claims in some cases.
 K: A recipient of misapplied trust property is personally liable if their knowledge makes keeping it unconscionable.
 !: Requiring proof of dishonesty for knowing receipt: Akindele requires only unconscionability.
+CASE: BCCI (Overseas) Ltd v Akindele [2001] Ch 437 | Akindele received large sums from a fraudulent BCCI scheme in a deal that was unusual but not obviously fraudulent to him. | Not liable: his knowledge didn't make it unconscionable to keep the receipt. | Knowing receipt requires that the recipient's knowledge makes it unconscionable to retain the benefit.
 SUM: Knowing receipt needs beneficial receipt of misapplied property.
 SUM: The test is unconscionability (Akindele).
 SUM: Liability is personal, to account for value received.
@@ -581,6 +608,8 @@ H: Liability
 P: Liability is personal and joint and several with the trustee. Assistants such as banks, solicitors and accountants who turn a blind eye to obvious wrongdoing can be liable.
 K: An assistant is liable if they dishonestly helped a breach, judged by ordinary standards given what they knew.
 !: Requiring that the trustee acted dishonestly: only the assistant's dishonesty matters.
+CASE: Royal Brunei Airlines Sdn Bhd v Tan [1995] 2 AC 378 | A travel agent's managing director used ticket money held on trust for the airline in breach of trust. | He was liable for dishonestly assisting, even though the company (trustee) wasn't dishonest. | Accessory liability depends on the assistant's dishonesty, not the trustee's.
+CASE: Barlow Clowes International Ltd v Eurotrust International Ltd [2005] UKPC 37 | An offshore administrator helped move investors' money from a fraudulent scheme, suspecting but not asking about its source. | He was liable for dishonest assistance. | Dishonesty is judged objectively, by ordinary standards, against the defendant's actual knowledge (later confirmed in Ivey).
 SUM: Dishonest assistance doesn't require receipt of property.
 SUM: The assistant's dishonesty is judged objectively (Barlow Clowes; Ivey).
 SUM: Liability is personal and joint and several.
@@ -612,6 +641,8 @@ H: Cy-près
 P: If a charitable purpose fails, the court or Charity Commission may apply the property cy-près under Charities Act 2011, ss 61–62, provided there was a general charitable intention where the failure is initial.
 K: A charity needs a s 3 purpose and public benefit; cy-près preserves gifts when purposes fail.
 !: Assuming a trust to benefit a company's employees' children is charitable as education: the personal nexus defeats it.
+CASE: Oppenheim v Tobacco Securities Trust Co Ltd [1951] AC 297 | A trust educated the children of employees of a group of companies, over 110,000 people. | Not charitable: there was no public benefit, because of the personal nexus with the employer. | A class defined by a personal nexus (such as employment) isn't a section of the public.
+LAW: Charities Act 2011, s 3 | Lists the charitable purposes, such as the prevention or relief of poverty and the advancement of education, religion, health, and others; under s 4 a charitable purpose must also be for the public benefit.
 SUM: The Charities Act 2011 lists 13 charitable purposes.
 SUM: Public benefit must be shown, with no personal nexus except for poverty.
 SUM: Cy-près saves failed charitable gifts.
@@ -643,6 +674,7 @@ H: Unincorporated associations
 - On dissolution, surplus funds usually go to the existing members equally (Re Bucks Constabulary Widows' and Orphans' Fund Friendly Society (No 2) [1979] 1 WLR 936).
 K: Non-charitable purpose trusts are generally void; check for anomalous exceptions, Re Denley, or a contract-holding gift to an association.
 !: Treating a gift to a members' club as a void purpose trust without considering the contract-holding theory.
+CASE: Re Astor's Settlement Trusts [1952] Ch 534 | Shares were settled for purposes including maintaining good understanding between nations and preserving newspapers' independence. | Void: a non-charitable purpose trust has no beneficiary to enforce it, and the purposes were uncertain. | The beneficiary principle: a private trust must have ascertainable beneficiaries (with narrow anomalous exceptions).
 SUM: The beneficiary principle invalidates most private purpose trusts.
 SUM: Anomalous exceptions and Re Denley trusts are valid.
 SUM: Gifts to associations are usually gifts to members under contract.
@@ -675,6 +707,8 @@ H: Formalities
 P: Secret trusts of land may require writing under s 53(1)(b) LPA 1925, though the better view is that, being based on fraud or operating outside the will, they may be enforced as constructive trusts.
 K: Fully secret: communication and acceptance before death. Half-secret: communication before or at the time of the will.
 !: Applying the fully secret trust timing rule to half-secret trusts.
+CASE: Ottaway v Norman [1972] Ch 698 | A testator left his bungalow to his housekeeper on her agreement to leave it to his son on her death; she left it elsewhere. | A fully secret trust was enforced against her estate. | A fully secret trust needs intention, communication to the legatee in the testator's lifetime and acceptance.
+CASE: Blackwell v Blackwell [1929] AC 318 | A codicil left money to trustees for purposes communicated to them, but not stated in the will. | A valid half-secret trust. | Half-secret trusts are valid if communicated before or at the time of the will and the will's terms are consistent.
 SUM: Secret trusts keep beneficiaries off the public will.
 SUM: Fully secret trusts need communication before death.
 SUM: Half-secret trusts need communication before or at the will.
@@ -734,6 +768,7 @@ H: Investment properties
 P: Where property is bought as an investment, even by a couple, the resulting trust analysis may still apply (Marr v Collie [2017] UKPC 17 shows context decides).
 K: First establish a common intention to share, then quantify by the whole course of dealing, imputing fairness only where intention can't be inferred.
 !: Imputing an intention to share at the first stage where the claimant is not on the legal title.
+CASE: Marr v Collie [2017] UKPC 17 | Two partners bought investment properties in joint names, one contributing more of the price. | The Stack v Dowden approach can apply outside the domestic context. | In joint-name purchases, the parties' common intention, from all the circumstances, decides shares, not only the presumption of a resulting trust.
 SUM: Sole-name cases need common intention plus detriment (Rosset).
 SUM: Jones v Kernott allows imputation to quantify shares.
 SUM: Context decides whether resulting or constructive trust applies (Marr v Collie).
@@ -766,6 +801,7 @@ H: Challenges and claims
 P: Wills can be challenged for lack of capacity (Banks v Goodfellow (1870) LR 5 QB 549), want of knowledge and approval, undue influence or lack of formality. Family members and dependants may claim reasonable financial provision under the Inheritance (Provision for Family and Dependants) Act 1975.
 K: A will must satisfy s 9 Wills Act 1837; testamentary trusts then operate with the usual trustee powers and duties.
 !: Letting a beneficiary or their spouse witness the will: their gift fails under s 15.
+CASE: Banks v Goodfellow (1870) LR 5 QB 549 | A testator with delusions about being persecuted made a will leaving his estate to his niece. | The will was valid: the delusions didn't affect the dispositions. | Testamentary capacity: the testator must understand the nature of making a will, the extent of the property, and the claims to which they should give effect, free of disorder of the mind that perverts their judgment.
 SUM: Section 9 sets the formalities for wills.
 SUM: Testamentary trusts include life interests and trusts for minors.
 SUM: Wills can be challenged, and 1975 Act claims are possible.

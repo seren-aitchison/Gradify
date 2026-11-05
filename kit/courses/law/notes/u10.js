@@ -57,6 +57,7 @@ H: Ilott v The Blue Cross
 P: In Ilott v The Blue Cross [2017] UKSC 17, the Supreme Court emphasised the importance of testamentary freedom: an adult child's claim succeeded only modestly, and the testator's wishes carried weight.
 K: Testators can leave property as they choose, subject to the 1975 Act, estoppel, mutual wills and contracts.
 !: Telling a client they can't disinherit a child: they can, though a 1975 Act claim may follow.
+CASE: Thorner v Major [2009] UKHL 18 | A farmer, by hints over years such as handing over a life policy 'for my death duties', led his cousin's son to believe he'd inherit the farm, for which David worked unpaid for decades. | Proprietary estoppel was established. | An assurance needn't be express; it must be clear enough in context, and reasonably relied on to the claimant's detriment.
 SUM: English law recognises broad testamentary freedom.
 SUM: The 1975 Act, estoppel and mutual wills limit it.
 SUM: Ilott stresses respect for the testator's wishes.
@@ -89,6 +90,8 @@ H: The golden rule
 P: Kenward v Adams (1975) and Re Simpson (1977) recommend that the will of an aged or seriously ill testator be witnessed or approved by a medical practitioner who records their assessment. Failing to follow it isn't fatal, but makes challenges more likely. Where a person lacks capacity, the Court of Protection can make a statutory will (Mental Capacity Act 2005, s 18).
 K: Apply Banks v Goodfellow at the time of the will, check knowledge and approval, and follow the golden rule for vulnerable testators.
 !: Applying the Mental Capacity Act test instead of Banks v Goodfellow to testamentary capacity.
+CASE: Banks v Goodfellow (1870) LR 5 QB 549 | A testator with delusions made a will in favour of his niece. | The will was valid, as the delusions didn't affect it. | The test for testamentary capacity (understanding the act, the property, and the claims on the testator, without disorder poisoning the dispositions); Clitheroe v Bond confirmed it survives the Mental Capacity Act 2005.
+CASE: Wintle v Nye [1959] 1 WLR 284 | A solicitor drafted a will for an elderly client under which he took most of the estate. | The will was set aside for want of knowledge and approval. | Where the drafter benefits substantially, suspicion is aroused and the propounder must prove the testator knew and approved of the contents.
 SUM: Banks v Goodfellow sets the test for capacity.
 SUM: Knowledge and approval must be proved in suspicious circumstances.
 SUM: The golden rule protects wills of elderly or ill testators.
@@ -122,6 +125,8 @@ H: Practice
 P: Supervise execution where possible; if a client signs at home, give clear written instructions and check the will when returned.
 K: Check writing, signature, intention, two witnesses present together, and that no witness is a beneficiary.
 !: Letting a beneficiary's spouse act as a witness.
+CASE: Marley v Rawlings [2014] UKSC 2 | A husband and wife each signed the other's will by mistake; the husband's will left everything to Mr Marley. | The will was rectified under s 20 of the Administration of Justice Act 1982 and was valid. | A clerical error includes a mistake in preparing or executing a will, and a mirror will signed in error can be rectified.
+LAW: Wills Act 1837, s 9 | A will is valid only if in writing and signed by the testator (or by someone in their presence and by their direction), intended to give effect to the will, signed or acknowledged in the presence of two witnesses present at the same time, each of whom signs or acknowledges in the testator's presence.
 SUM: Section 9 requires writing, signature and two witnesses.
 SUM: Beneficiary witnesses lose their gifts (s 15).
 SUM: Marley v Rawlings allowed rectification of a mistaken signing.
@@ -154,6 +159,8 @@ H: Conditional revocation
 P: Revocation may be conditional, for example on a new will being valid; if the condition fails, the old will may survive (dependent relative revocation).
 K: Revocation needs a later will, executed writing or destruction with intention; marriage revokes, divorce removes the former spouse.
 !: Forgetting that marriage revokes an existing will unless made in contemplation of it.
+CASE: Cheese v Lovejoy (1877) 2 PD 251 | A testator drew lines through parts of his will, wrote 'This is revoked' on the back, and threw it among waste paper; a servant kept it. | Not revoked: there was no sufficient act of destruction. | Revocation by destruction needs an actual destruction (burning, tearing or otherwise destroying) with intention to revoke.
+LAW: Wills Act 1837, ss 18 and 20 | A will is revoked by a later will or writing executed as a will, by destruction with intent to revoke (s 20), or by the testator's marriage or civil partnership (s 18), unless made in contemplation of it.
 SUM: Section 20 sets out methods of revocation.
 SUM: Marriage revokes a will (s 18); divorce affects gifts to the former spouse (s 18A).
 SUM: Destruction needs intention to revoke.
@@ -183,6 +190,7 @@ H: Codicils
 P: To make changes, it is safer to prepare a codicil or a new will rather than altering the original. A codicil must be executed with the same formalities and republishes the will as at its date.
 K: Post-execution alterations need proper execution; mistakes may be corrected by rectification within six months of the grant.
 !: Allowing a client to handwrite changes on their original will without execution formalities.
+LAW: Administration of Justice Act 1982, s 20 | The court may rectify a will that fails to carry out the testator's intentions because of a clerical error or a failure to understand their instructions; the claim must normally be brought within six months of the grant.
 SUM: Alterations after execution must be executed like a will.
 SUM: Rectification corrects clerical errors and misunderstood instructions.
 SUM: Apply within six months of the grant.
@@ -214,6 +222,7 @@ H: Practice
 P: Clear drafting avoids disputes. Use precise descriptions, define classes, include survivorship and substitution clauses, and avoid ambiguous phrases.
 K: Read the words in context, use s 21 evidence where ambiguity arises, and apply default statutory rules unless the will excludes them.
 !: Assuming a gift to a child who predeceased automatically fails: s 33 may pass it to their children.
+LAW: Administration of Justice Act 1982, s 21 | Extrinsic evidence, including evidence of the testator's intention, is admissible to interpret a will that is meaningless or ambiguous on its face or in light of surrounding circumstances.
 SUM: Courts read wills in context (Marley v Rawlings).
 SUM: Section 21 AJA 1982 admits extrinsic evidence of ambiguity.
 SUM: Section 33 saves gifts to issue who predecease.
@@ -247,6 +256,8 @@ H: Abatement
 P: If assets are insufficient, residue is used first to pay debts, then general legacies abate rateably, and specific gifts abate last (Administration of Estates Act 1925, s 34(3) and Sch 1, Part II), unless the will provides otherwise.
 K: Classify each gift, then apply ademption, lapse, survivorship and abatement rules.
 !: Assuming a lapsed specific gift goes to the beneficiary's family: unless s 33 applies, it falls into residue.
+LAW: Wills Act 1837, s 15 | A gift to an attesting witness, or to their spouse or civil partner, is void, though the will itself remains valid.
+LAW: Wills Act 1837, s 33 | A gift to a child or remoter descendant of the testator who dies before the testator, leaving issue living at the testator's death, takes effect as a gift to that issue, unless a contrary intention appears.
 SUM: Gifts may be specific, general, demonstrative or residuary.
 SUM: Ademption and lapse cause gifts to fail.
 SUM: Gifts abate in a statutory order when assets are short.
@@ -277,6 +288,7 @@ H: Gaps in the rules
 P: Cohabitants, stepchildren who weren't adopted, and friends receive nothing on intestacy. Cohabitants may claim under the 1975 Act. Making a will avoids these outcomes.
 K: Apply s 46: spouse first (chattels, statutory legacy and half residue if there are issue), then issue and other relatives in order; cohabitants take nothing.
 !: Telling a long-term cohabitant they will inherit on intestacy.
+LAW: Administration of Estates Act 1925, s 46 | The intestacy rules: a surviving spouse or civil partner takes the personal chattels, a statutory legacy and half the rest absolutely (if there are issue) or everything (if not); otherwise issue, then parents, siblings and remoter relatives in order. The statutory legacy changes: check the current figure.
 SUM: Spouses take priority under s 46 AEA 1925.
 SUM: Without a spouse, relatives take in a fixed order.
 SUM: Cohabitants must rely on the 1975 Act.
@@ -313,6 +325,8 @@ H: Liability
 P: PRs who distribute too early or mismanage assets are personally liable (devastavit). They should take advice, keep records and obtain receipts.
 K: PRs collect, administer and distribute the estate, and protect themselves with s 27 notices, the executor's year and court orders.
 !: Distributing the estate before the s 27 advertisement period has expired.
+CASE: Re Benjamin [1902] 1 Ch 723 | A beneficiary disappeared before the testator died and couldn't be traced. | The court allowed the estate to be distributed on the footing that he had died before the testator. | A Benjamin order protects personal representatives who distribute where a beneficiary can't be traced.
+LAW: Administration of Estates Act 1925, s 25 | A personal representative must collect and get in the estate and administer it according to law, and when required by the court exhibit an inventory and account and deliver up the grant.
 SUM: PRs must collect assets, pay debts and distribute.
 SUM: They have wide powers and are limited to four for land.
 SUM: Section 27 notices and Benjamin orders protect them.
@@ -572,6 +586,8 @@ H: Anti-avoidance
 P: The court can claw back certain lifetime dispositions made to defeat a claim (ss 10–11) and can treat the deceased's share of joint property as part of the estate (s 9).
 K: Check the applicant category and the six-month limit, then apply the right standard and the s 3 factors.
 !: Applying the generous spouse standard to an adult child's claim.
+CASE: Ilott v The Blue Cross [2017] UKSC 17 | A mother left her estate to animal charities, excluding her estranged adult daughter, who lived on state benefits. | The district judge's award of £50,000 was restored. | Courts must respect testamentary freedom; an adult child's maintenance claim needs more than need, and the award must be maintenance only.
+LAW: Inheritance (Provision for Family and Dependants) Act 1975, s 1 | Specified people (such as a spouse, cohabitant of two years, child, or someone maintained by the deceased) may claim that the will or intestacy doesn't make reasonable financial provision for them; claims are normally brought within six months of the grant (s 4).
 SUM: Defined classes can claim reasonable financial provision.
 SUM: Claims must normally be made within six months of the grant.
 SUM: Spouses get a higher standard; others get maintenance.
@@ -637,6 +653,7 @@ H: Other duties
 P: Keep the will safe, maintain confidentiality after death (sharing with PRs as appropriate), carry out AML checks in estate work, and ensure professional executors' charging clauses are clear (Trustee Act 2000, ss 28–29).
 K: Take instructions from the testator alone, guard against undue influence and conflicts, and act promptly to protect intended beneficiaries.
 !: Taking will instructions from a child who will benefit, rather than the testator.
+CASE: White v Jones [1995] 2 AC 207 | A solicitor delayed preparing a new will for weeks; the client died before it was made, so his daughters lost intended legacies. | The solicitor was liable to the disappointed beneficiaries. | A solicitor instructed to prepare a will owes a duty of care to intended beneficiaries who lose out through negligence.
 SUM: The testator is the client in will-making; PRs in probate.
 SUM: Gifts to the drafter need independent advice.
 SUM: Solicitors can owe duties to disappointed beneficiaries.

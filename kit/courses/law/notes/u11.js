@@ -156,6 +156,8 @@ H: Capacity
 P: A company's capacity is unlimited unless its articles restrict its objects (s 31), and a third party dealing in good faith is protected against limits on the directors' powers (s 40).
 K: Companies are created by registration and governed by their articles and the Act; the constitution is a statutory contract among the company and members.
 !: Assuming an outsider named in the articles can enforce them: s 33 binds only members as members.
+CASE: Salomon v A Salomon and Co Ltd [1897] AC 22 | Salomon sold his boot business to a company in which he held almost all the shares and a secured debenture; it became insolvent. | The company was a separate legal person; he wasn't liable for its debts and his security was valid. | Separate legal personality: a properly incorporated company is distinct from its members.
+LAW: Companies Act 2006, s 33 | The company's constitution binds the company and its members as if there were covenants on the part of the company and each member to observe it.
 SUM: Companies may be private or public, limited by shares or guarantee.
 SUM: The articles form the constitution; model articles may apply.
 SUM: Section 33 makes the constitution a contract between company and members.
@@ -191,6 +193,7 @@ H: Shelf companies and pre-incorporation contracts
 P: A ready-made shelf company can be bought and adapted. Contracts made on behalf of a company before incorporation bind the person who made them personally, unless otherwise agreed (s 51; Phonogram Ltd v Lane [1982] QB 938).
 K: Register with the right documents, then complete the post-incorporation steps; beware personal liability for pre-incorporation contracts.
 !: Signing contracts for a company that hasn't yet been registered, assuming the company will be liable.
+CASE: Phonogram Ltd v Lane [1982] QB 938 | Lane contracted on behalf of a company that hadn't yet been formed. | He was personally liable on the contract. | A person contracting for a company before it exists is personally liable, unless otherwise agreed (now Companies Act 2006, s 51).
 SUM: Registration requires the s 9 documents and statements.
 SUM: The certificate of incorporation creates the company.
 SUM: Pre-incorporation contracts bind the promoter (s 51).
@@ -221,6 +224,7 @@ H: Other ways round
 P: Statute can impose personal liability (for example, wrongful and fraudulent trading under the Insolvency Act 1986, ss 213–214), and a parent company may owe a duty of care in negligence to people affected by a subsidiary's operations (Vedanta Resources plc v Lungowe [2019] UKSC 20).
 K: The company is a separate person; the veil is pierced only to stop deliberate evasion of an existing obligation.
 !: Arguing that a company should be ignored simply because one person owns and controls it.
+CASE: Prest v Petrodel Resources Ltd [2013] UKSC 34 | In divorce proceedings a wife sought properties held by companies the husband controlled. | The veil wasn't pierced, but the companies held the properties on resulting trust for him. | The veil can be pierced only where a person deliberately evades or frustrates an existing legal obligation through a company they control.
 SUM: Salomon established separate legal personality.
 SUM: Prest limits piercing to the evasion principle.
 SUM: Statute and tort can impose liability on people behind a company.
@@ -255,6 +259,8 @@ H: Disqualification
 P: The Company Directors Disqualification Act 1986 allows courts to disqualify unfit directors for up to 15 years, for example after insolvency.
 K: Directors are appointed under the articles, manage the business, and can always be removed by ordinary resolution with special notice.
 !: Using a written resolution to remove a director: s 288(2) requires a meeting.
+CASE: Bushell v Faith [1970] AC 1099 | A company's articles gave a director three votes per share on a resolution to remove him. | The weighted voting clause was valid. | Weighted voting rights can protect a director against removal by ordinary resolution under the statutory power.
+LAW: Companies Act 2006, s 168 | A company may remove a director before the end of their term by ordinary resolution at a meeting, on special notice, whatever the articles say.
 SUM: Private companies need one director; public companies two.
 SUM: Removal is by ordinary resolution with special notice (s 168).
 SUM: De facto and shadow directors can bear directors' duties and liabilities.
@@ -290,6 +296,8 @@ H: Enforcement and the creditor duty
 - When a company is insolvent or bankruptcy is probable, directors must consider creditors' interests (BTI 2014 LLC v Sequana SA [2022] UKSC 25).
 K: Apply ss 171–177 to the facts; check whether shareholder approval or authorisation is needed; consider enforcement and the creditor duty.
 !: Treating directors' duties as owed to individual shareholders.
+CASE: Bhullar v Bhullar [2003] EWCA Civ 424 | Two directors bought, for themselves, property next to the company's premises that the company might have wanted. | They were in breach: it was an opportunity the company could have been interested in. | Directors must not exploit opportunities in a way that conflicts, or may possibly conflict, with the company's interests.
+LAW: Companies Act 2006, s 172 | A director must act in the way they consider, in good faith, would be most likely to promote the success of the company for the benefit of its members as a whole, having regard to factors including employees, suppliers, the community and the environment.
 SUM: Seven general duties are codified in ss 171–177.
 SUM: Some transactions need shareholder approval.
 SUM: Sequana requires regard to creditors near insolvency.
@@ -326,6 +334,8 @@ H: Shareholders' agreements
 P: Shareholders often sign a private agreement covering issues such as vetoes, transfers and dispute resolution. Unlike the articles, it isn't public, but binds only its parties.
 K: Know the voting thresholds, and use s 994 for unfair prejudice, with a buy-out as the usual remedy.
 !: Advising a minority shareholder they can force a dividend: declaring dividends is for the company.
+CASE: Ebrahimi v Westbourne Galleries Ltd [1973] AC 360 | Two partners formed a company and were later joined by one's son; they removed Ebrahimi as a director, excluding him from management. | The company was wound up on the just and equitable ground. | Equitable considerations can override legal rights in quasi-partnership companies.
+LAW: Companies Act 2006, s 994 | A member may petition the court on the ground that the company's affairs are being conducted in a manner unfairly prejudicial to the interests of members generally or some part of them.
 SUM: Shareholders vote and receive dividends but don't manage.
 SUM: Ordinary resolutions need over 50%; special resolutions 75%.
 SUM: Section 994 is the main minority remedy.
@@ -484,6 +494,7 @@ H: Tax
 P: Dividends are paid from post-tax profits and taxed in shareholders' hands at dividend rates above an annual allowance. Owner-managers often take a mix of salary and dividends; rates change frequently, so check current HMRC guidance.
 K: Pay dividends only from distributable profits shown in relevant accounts, following the right procedure.
 !: Paying a dividend from a cash balance without checking distributable profits.
+CASE: It's a Wrap (UK) Ltd v Gula [2006] EWCA Civ 544 | Directors-shareholders took 'dividends' that were unlawful as there were no distributable profits, on tax advice. | They had to repay: ignorance of the law was no defence. | A member is liable to repay an unlawful distribution if they knew or had reasonable grounds to believe the facts making it unlawful.
 SUM: Dividends come from distributable profits (s 830).
 SUM: Directors declare interim dividends; shareholders declare final dividends.
 SUM: Recipients who know the facts must repay unlawful dividends (s 847).
@@ -550,6 +561,7 @@ H: Priority
 P: Generally, fixed charges take priority over floating charges, and earlier registered charges over later ones. Floating charge holders rank behind preferential creditors and the prescribed part in insolvency.
 K: Debt finance is usually secured by fixed and floating charges, which must be registered within 21 days.
 !: Labelling a charge "fixed" when the company is free to use the charged assets: the court looks at substance.
+CASE: Re Spectrum Plus Ltd [2005] UKHL 41 | A bank had a charge described as fixed over a company's book debts, but the company could use the proceeds freely. | The charge was floating. | A charge is floating where the chargor can deal with the charged assets in the ordinary course of business without the chargee's consent.
 SUM: Companies raise equity or debt finance.
 SUM: Fixed and floating charges differ in the company's freedom to deal.
 SUM: Charges must be registered within 21 days.
@@ -580,6 +592,7 @@ H: Late payment
 P: Under the Late Payment of Commercial Debts (Interest) Act 1998, businesses can claim statutory interest at 8% over base rate on late B2B payments, plus fixed compensation, unless the contract provides a substantial remedy.
 K: Draft commercial contracts to allocate risk clearly, ensuring exclusions are reasonable and boilerplate is effective.
 !: Assuming a force majeure clause applies to any unexpected difficulty: it covers only the events it defines.
+CASE: MWB Business Exchange Centres Ltd v Rock Advertising Ltd [2018] UKSC 24 | A licence agreement said variations had to be in writing and signed; the parties allegedly agreed a variation orally. | The 'no oral modification' clause was effective. | Courts give effect to no oral modification clauses, subject to estoppel.
 SUM: Commercial contracts allocate risk through key terms.
 SUM: Boilerplate clauses have legal effect, including no oral modification clauses.
 SUM: Statutory interest applies to late B2B payments.
@@ -610,6 +623,7 @@ H: Risks and controls
 - **International sales**: Incoterms, governing law and currency risk.
 K: Choose the arrangement that fits the client's need for control, risk and revenue, and check competition law and agent protection.
 !: Treating a distributor as an agent: a distributor buys and resells on its own account.
+CASE: Aluminium Industrie Vaassen BV v Romalpa Aluminium Ltd [1976] 1 WLR 676 | A Dutch supplier sold aluminium foil on terms that ownership stayed with it until payment; the buyer became insolvent. | The supplier could recover unsold foil and the proceeds of sales. | Retention of title (Romalpa) clauses can protect sellers on the buyer's insolvency.
 SUM: Agency, distribution, franchising and licensing differ in control and risk.
 SUM: Commercial agents have statutory termination rights.
 SUM: Retention of title protects sellers until payment.
@@ -641,6 +655,7 @@ H: Duties and liability
 - The principal owes the agent remuneration and indemnity as agreed or implied.
 K: A principal is bound by actual or apparent authority, or by ratification; an agent without authority is liable for breach of warranty.
 !: Assuming apparent authority can arise from the agent's own representations alone.
+CASE: Freeman and Lockyer v Buckhurst Park Properties (Mangal) Ltd [1964] 2 QB 480 | A director, never appointed managing director, acted as one with the board's acquiescence and engaged architects. | The company was bound by apparent authority. | Apparent authority arises from the principal's representation to a third party who relies on it.
 SUM: Agents bind principals with actual or apparent authority.
 SUM: Ratification requires an existing principal.
 SUM: Unauthorised agents are liable for breach of warranty of authority.
@@ -802,6 +817,8 @@ H: Avoiding transactions
 P: Liquidators and administrators can challenge transactions at an undervalue (s 238), preferences (s 239) and certain floating charges (s 245) made before insolvency.
 K: Apply the cash flow and balance sheet tests, then advise on procedures and directors' exposure.
 !: Telling directors they can keep trading while insolvent as long as they hope things will improve.
+CASE: BNY Corporate Trustee Services Ltd v Eurosail-UK 2007-3BL plc [2013] UKSC 28 | Noteholders argued that the issuer was balance-sheet insolvent, triggering default. | Not shown: the test is whether the company can reasonably be expected to meet future and contingent liabilities. | The balance sheet test under s 123(2) of the Insolvency Act 1986 is a question of fact, not a strict accounting exercise.
+LAW: Insolvency Act 1986, s 214 | Wrongful trading: a director of an insolvent company may be ordered to contribute to its assets if they knew or ought to have concluded there was no reasonable prospect of avoiding insolvent liquidation or administration and didn't take every step to minimise loss to creditors.
 SUM: Insolvency is tested on cash flow or balance sheet.
 SUM: Procedures range from rescue to liquidation.
 SUM: Directors face wrongful trading and other liabilities.
@@ -898,6 +915,7 @@ H: Choosing a tool
 P: CVAs are cheaper but can't bind secured creditors; schemes and restructuring plans can bind secured creditors but need court involvement and cost more.
 K: Choose between a moratorium, CVA, scheme or restructuring plan based on which creditors must be bound and the cost.
 !: Assuming a CVA can bind a secured creditor without its consent.
+CASE: Re AGPS Bondco plc [2024] EWCA Civ 24 | The Adler group's restructuring plan was sanctioned using cross-class cram-down, despite dissenting creditors whose debt fell due earlier. | The Court of Appeal set aside the sanction. | Departures from the 'pari passu' principle in a cram-down plan must be justified; the court's discretion isn't just a 'no worse off' test.
 SUM: The Part A1 moratorium gives breathing space.
 SUM: CVAs bind unsecured creditors; schemes and plans can bind secured creditors.
 SUM: Restructuring plans allow cross-class cram down.

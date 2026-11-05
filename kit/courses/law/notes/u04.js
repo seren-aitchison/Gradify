@@ -40,6 +40,7 @@ O: State the elements of negligence
 O: Apply the elements in a structured way to a problem
 T: Negligence | Breach of a legal duty of care causing damage that is not too remote
 T: Damage | The harm the claimant must prove in negligence
+CASE: Donoghue v Stevenson [1932] AC 562 | Mrs Donoghue drank ginger beer, bought for her by a friend, from an opaque bottle said to contain a decomposed snail, and became ill. | The manufacturer owed her a duty of care despite there being no contract. | Lord Atkin's neighbour principle: take reasonable care to avoid acts or omissions you can reasonably foresee would be likely to injure your neighbour.
 SUM: Negligence requires duty, breach, causation and non-remote damage.
 SUM: Defences may defeat or reduce a claim.
 SRC: Donoghue v Stevenson [1932] AC 562 | case | 1932
@@ -67,6 +68,8 @@ O: Explain how courts decide whether a duty exists
 O: Apply the incremental approach from Robinson and Caparo
 T: Duty of care | A legal obligation to take reasonable care not to cause certain harm
 T: Incremental approach | Developing duties by analogy with established categories
+CASE: Caparo Industries plc v Dickman [1990] 2 AC 605 | Caparo bought shares in reliance on audited accounts that overstated profits, and sued the auditors. | The auditors owed no duty to investors deciding to buy shares: the accounts were prepared for shareholders to exercise their governance rights. | In novel situations a duty needs foreseeability, proximity and that imposing it is fair, just and reasonable.
+CASE: Robinson v Chief Constable of West Yorkshire Police [2018] UKSC 4 | Mrs Robinson, an elderly bystander, was knocked over when police officers arrested a drug dealer in the street. | The officers owed her a duty: it was a positive act creating a foreseeable risk of injury. | Caparo is not a universal three-stage test; established categories apply, and the police owe the ordinary duty for positive acts.
 SUM: Established categories decide most cases.
 SUM: Novel cases use analogy and the Caparo factors.
 SRC: Caparo Industries plc v Dickman [1990] 2 AC 605 | case | 1990
@@ -117,6 +120,7 @@ O: Explain the role of reasonable foreseeability in negligence
 O: Apply foreseeability to duty, breach and remoteness
 T: Reasonable foreseeability | Whether a reasonable person would have foreseen the risk
 T: Foreseeable claimant | A claimant within the class of people at risk
+CASE: Bourhill v Young [1943] AC 92 | A pregnant fishwife heard a motorcycle crash out of sight and later saw the blood; she suffered shock and a stillbirth. | The motorcyclist owed her no duty: she was outside the area of foreseeable danger. | A duty is owed only to those it is reasonably foreseeable could be harmed.
 SUM: Foreseeability appears at several stages of negligence.
 SUM: An unforeseeable claimant may be owed no duty.
 SRC: Bourhill v Young [1943] AC 92 | case | 1942
@@ -141,6 +145,7 @@ O: Apply the reasonable person standard
 O: Weigh the factors courts use to decide breach
 T: Reasonable person | The objective standard against which conduct is judged
 T: Res ipsa loquitur | The thing speaks for itself: an inference of negligence from the facts
+CASE: Bolton v Stone [1951] AC 850 | A cricket ball was hit out of the ground and injured a passer-by; balls had left the ground only about six times in 30 years. | No breach: the risk was so small a reasonable person would have taken no further precautions. | In deciding breach, the court weighs the likelihood of harm against the cost and practicality of precautions.
 SUM: Breach means falling below the reasonable person standard.
 SUM: Probability, seriousness, cost of precautions and social utility are weighed.
 SRC: Bolton v Stone [1951] AC 850 | case | 1951
@@ -169,6 +174,8 @@ O: Apply the standard of care to professionals, learners and children
 O: Apply the Bolam and Bolitho tests
 T: Bolam test | Acting in accordance with a responsible body of professional opinion
 T: Objective standard | A standard that doesn't vary with the defendant's personal ability
+CASE: Nettleship v Weston [1971] 2 QB 691 | A learner driver hit a lamp post, injuring her instructor. | She was judged by the standard of a reasonably competent qualified driver. | The standard of care is objective; inexperience doesn't lower it.
+CASE: Bolam v Friern Hospital Management Committee [1957] 1 WLR 582 | A patient was given electroconvulsive therapy without relaxants or restraints and suffered fractures. | No negligence: the doctors acted in accordance with a practice accepted by a responsible body of medical opinion. | The Bolam test for professionals, subject to Bolitho's requirement that the opinion withstands logical analysis.
 SUM: Learners are judged as competent practitioners; children as reasonable children of that age.
 SUM: Professional opinion must withstand logical analysis.
 SRC: Bolam v Friern Hospital Management Committee [1957] 1 WLR 582 | case | 1957
@@ -197,6 +204,8 @@ O: Apply the but-for test
 O: Apply exceptions for multiple causes and material contribution
 T: But-for test | Would the damage have occurred but for the breach?
 T: Material contribution | A test where the breach materially contributed to the harm
+CASE: Barnett v Chelsea and Kensington Hospital Management Committee [1969] 1 QB 428 | A casualty doctor sent home a night watchman who had drunk arsenic-laced tea without examining him; he died. | The hospital wasn't liable: he would have died even with proper treatment. | The 'but for' test: the claimant must show the harm wouldn't have happened but for the breach.
+CASE: Fairchild v Glenhaven Funeral Services Ltd [2002] UKHL 22 | Workers exposed to asbestos by several employers developed mesothelioma; science couldn't show which exposure caused it. | Each employer was liable because its breach materially increased the risk. | In mesothelioma cases, a material increase in risk is enough for causation (with liability now joint and several under the Compensation Act 2006, s 3).
 SUM: The but-for test is the starting point.
 SUM: Fairchild created an exception for mesothelioma.
 SRC: Barnett v Chelsea and Kensington Hospital Management Committee [1969] 1 QB 428 | case | 1968
@@ -252,6 +261,8 @@ O: Apply the Wagon Mound test
 O: Apply the egg-shell skull rule
 T: Remoteness | The limit on liability to damage of a reasonably foreseeable kind
 T: Egg-shell skull rule | The defendant takes the claimant as they find them
+CASE: Overseas Tankship (UK) Ltd v Morts Dock and Engineering Co Ltd (The Wagon Mound (No 1)) [1961] AC 388 | Oil negligently spilled in Sydney Harbour was ignited by welding sparks, burning a wharf; fire wasn't a foreseeable risk of the spill. | No liability for the fire damage. | Only damage of a reasonably foreseeable kind is recoverable in negligence.
+CASE: Hughes v Lord Advocate [1963] AC 837 | Boys took a paraffin lamp into an unattended manhole tent; it fell in and caused an unexpected explosion, burning a boy. | Liable: burns were foreseeable, even if the exact way they happened wasn't. | The kind of damage must be foreseeable, not its precise manner or extent.
 SUM: Only damage of a foreseeable kind is recoverable.
 SUM: The extent and manner need not be foreseeable.
 SRC: Overseas Tankship (UK) Ltd v Morts Dock and Engineering Co Ltd (The Wagon Mound (No 1)) [1961] AC 388 | case | 1961
@@ -279,6 +290,7 @@ O: Identify intervening acts that break the chain of causation
 O: Apply the rules to acts of the claimant, third parties and nature
 T: Novus actus interveniens | A new intervening act breaking the chain of causation
 T: Chain of causation | The link between breach and damage
+CASE: McKew v Holland and Hannen and Cubitts (Scotland) Ltd [1969] 3 All ER 1621 | After a work injury left his leg prone to giving way, the claimant went down steep stairs without a handrail or help, fell and broke his ankle. | His own unreasonable conduct broke the chain of causation. | A claimant's own unreasonable act can be a new intervening act.
 SUM: Intervening acts must be free, deliberate and informed, or unreasonable, to break the chain.
 SUM: Negligent medical treatment rarely breaks the chain.
 SRC: McKew v Holland and Hannen and Cubitts (Scotland) Ltd [1969] 3 All ER 1621 | case | 1969
@@ -304,6 +316,8 @@ O: Distinguish primary and secondary victims
 O: Apply the Alcock control mechanisms and the Paul limits
 T: Primary victim | A claimant in the zone of physical danger
 T: Secondary victim | A claimant who witnesses injury to another
+CASE: Alcock v Chief Constable of South Yorkshire Police [1992] 1 AC 310 | Relatives of fans at the Hillsborough disaster suffered psychiatric injury after watching on TV or identifying bodies. | The claims failed for want of proximity in time, space or relationship. | Secondary victims need close ties of love and affection, presence at the event or its immediate aftermath, and perception with their own unaided senses.
+CASE: Paul v Royal Wolverhampton NHS Trust [2024] UKSC 1 | Daughters witnessed their father collapse and die of a heart attack that earlier negligent treatment had allegedly failed to prevent. | No duty: doctors don't owe a duty to protect patients' relatives from the shock of witnessing the patient's death or injury. | Secondary victim claims don't extend to witnessing the medical consequences of earlier clinical negligence.
 SUM: Claimants need a recognised psychiatric illness.
 SUM: Secondary victims face strict control mechanisms.
 SRC: Alcock v Chief Constable of South Yorkshire Police [1992] 1 AC 310 | case | 1991
@@ -334,6 +348,8 @@ O: Distinguish pure and consequential economic loss
 O: Apply Hedley Byrne and assumption of responsibility
 T: Pure economic loss | Financial loss not consequent on physical damage to the claimant
 T: Assumption of responsibility | A basis for a duty to avoid economic loss
+CASE: Spartan Steel and Alloys Ltd v Martin and Co (Contractors) Ltd [1973] QB 27 | Contractors negligently cut a power cable, stopping a steel factory. | The factory recovered for damaged metal and the profit on it, but not for lost profit on future melts. | Pure economic loss, not consequential on physical damage, is generally not recoverable in negligence.
+CASE: Hedley Byrne and Co Ltd v Heller and Partners Ltd [1964] AC 465 | A bank gave a favourable reference about a customer's creditworthiness, 'without responsibility'; the recipient relied on it and lost money. | A duty can arise for negligent statements on an assumption of responsibility, though the disclaimer defeated this claim. | Economic loss is recoverable where the defendant assumes responsibility and the claimant reasonably relies.
 SUM: The general rule is no recovery for pure economic loss.
 SUM: Negligent misstatement under Hedley Byrne is the main exception.
 SRC: Spartan Steel and Alloys Ltd v Martin and Co (Contractors) Ltd [1973] QB 27 | case | 1972
@@ -361,6 +377,7 @@ O: Apply the standard of care to professionals
 O: Apply the scope of duty principle to advice cases
 T: Scope of duty | The principle limiting liability to losses within the purpose of the duty
 T: Informed consent | A doctor's duty to advise of material risks
+CASE: Montgomery v Lanarkshire Health Board [2015] UKSC 11 | A diabetic mother of small stature wasn't told of the risk of shoulder dystocia in vaginal birth; her baby was injured. | The doctor was liable for failing to disclose a material risk. | Doctors must take reasonable care to ensure patients know of material risks and reasonable alternatives; Bolam doesn't govern advice on risk.
 SUM: Professionals are judged against competent members of their profession.
 SUM: Montgomery governs advice on risks; scope of duty limits recovery.
 SRC: Montgomery v Lanarkshire Health Board [2015] UKSC 11 | case | 2015
@@ -389,6 +406,8 @@ O: Apply the Occupiers' Liability Act 1957 to visitors
 O: Apply the Occupiers' Liability Act 1984 to non-visitors
 T: Occupier | A person with sufficient control over premises
 T: Visitor | A person with express or implied permission to be on premises
+LAW: Occupiers' Liability Act 1957, s 2 | An occupier owes all lawful visitors the common duty of care: to take reasonable care to see that the visitor is reasonably safe in using the premises for the purposes for which they are invited or permitted to be there.
+LAW: Occupiers' Liability Act 1984, s 1 | An occupier owes a duty to non-visitors (such as trespassers) if aware of a danger, knows or has reason to believe someone may come near it, and the risk is one they may reasonably be expected to offer some protection against.
 SUM: Visitors are owed the common duty of care.
 SUM: Trespassers are owed a more limited duty under the 1984 Act.
 SRC: Occupiers' Liability Act 1957 | legislation | 1957 | https://www.legislation.gov.uk/ukpga/Eliz2/5-6/31
@@ -448,6 +467,8 @@ O: Apply the two-stage test for vicarious liability
 O: Apply the close connection test
 T: Vicarious liability | Liability for another's tort without personal fault
 T: Close connection test | Whether the tort was closely connected to what the employee was authorised to do
+CASE: Various Claimants v Barclays Bank plc [2020] UKSC 13 | A doctor engaged by Barclays to examine job applicants allegedly sexually assaulted them. | Barclays wasn't vicariously liable: the doctor was an independent contractor in business on his own account. | Vicarious liability needs a relationship of employment or one akin to it; true independent contractors fall outside it.
+CASE: WM Morrison Supermarkets plc v Various Claimants [2020] UKSC 12 | An employee with a grudge leaked colleagues' payroll data online. | Morrisons wasn't vicariously liable: he was pursuing a personal vendetta, not furthering its business. | The close connection test asks whether the wrongful conduct was so closely connected with authorised acts that it can fairly be regarded as done in the course of employment.
 SUM: Stage one asks about the relationship; stage two about the connection.
 SUM: Recent cases have narrowed liability for akin-to-employment relationships.
 SRC: Various Claimants v Barclays Bank plc [2020] UKSC 13 | case | 2020
@@ -476,6 +497,7 @@ O: Apply strict liability under the Consumer Protection Act 1987
 O: Identify defences, including the development risks defence
 T: Defect | Safety not such as persons generally are entitled to expect
 T: Development risks defence | A defence where the defect couldn't be discovered given the state of knowledge
+LAW: Consumer Protection Act 1987, s 2 | The producer (and others such as an own-brander or importer into the UK) is liable without proof of fault for damage caused wholly or partly by a defect in a product.
 SUM: Producers are strictly liable for damage caused by defective products.
 SUM: Negligence remains an alternative claim.
 SRC: Consumer Protection Act 1987, Part 1 | legislation | 1987 | https://www.legislation.gov.uk/ukpga/1987/43
@@ -500,6 +522,8 @@ O: State the elements of defamation, including serious harm
 O: Apply the defences under the Defamation Act 2013
 T: Libel | Defamation in permanent form
 T: Serious harm | The threshold under section 1 of the Defamation Act 2013
+CASE: Lachaux v Independent Print Ltd [2019] UKSC 27 | Newspapers published articles alleging that Mr Lachaux had abused his ex-wife. | Serious harm under s 1 must be shown as a fact, by actual or likely impact, not merely the words' tendency, but it was proved here. | A statement is defamatory only if its publication has caused or is likely to cause serious harm to reputation.
+LAW: Defamation Act 2013, s 1 | A statement isn't defamatory unless its publication has caused or is likely to cause serious harm to the claimant's reputation; for a body trading for profit, that means serious financial loss.
 SUM: A statement must refer to the claimant, be published and cause serious harm.
 SUM: Defences include truth, honest opinion and public interest.
 SRC: Defamation Act 2013 | legislation | 2013 | https://www.legislation.gov.uk/ukpga/2013/26
@@ -532,6 +556,8 @@ O: State the elements of private nuisance
 O: Apply the factors and defences, including planning permission
 T: Private nuisance | Unlawful interference with use or enjoyment of land
 T: Locality | The character of the neighbourhood, relevant to amenity nuisance
+CASE: Hunter v Canary Wharf Ltd [1997] AC 655 | Residents complained that the Canary Wharf tower interfered with TV reception and that building works caused dust. | Only those with a proprietary interest in land can sue in private nuisance, and blocking TV signals isn't actionable. | Private nuisance protects interests in land, so the claimant needs a right to the land.
+CASE: Fearn v Board of Trustees of the Tate Gallery [2023] UKSC 4 | Visitors on the Tate Modern viewing platform looked directly into neighbouring glass-walled flats. | Liable in nuisance: the constant visual intrusion substantially interfered with ordinary use of the flats. | Overlooking can be a nuisance; the test is ordinary use of land, not whether the use is reasonable.
 SUM: The claimant must have an interest in the land.
 SUM: Reasonableness is judged by factors such as locality and duration.
 SRC: Hunter v Canary Wharf Ltd [1997] AC 655 | case | 1997
@@ -566,6 +592,7 @@ O: Define public nuisance
 O: Explain when individuals can claim for special damage
 T: Public nuisance | Conduct endangering or obstructing the public
 T: Special damage | Damage beyond that suffered by the public generally
+CASE: Attorney General v PYA Quarries Ltd [1957] 2 QB 169 | Quarrying threw out stones and caused dust and vibration affecting local residents. | A public nuisance: it affected a class of the public. | Public nuisance affects the reasonable comfort and convenience of a class of Her Majesty's subjects; an individual sues only for special damage.
 SUM: Public nuisance is a crime and a tort.
 SUM: Individuals need special damage to sue.
 SRC: Attorney General v PYA Quarries Ltd [1957] 2 QB 169 | case | 1957
@@ -620,6 +647,7 @@ O: State the elements of the tort of assault
 O: Apply the rules on immediacy and words
 T: Assault | Causing reasonable apprehension of immediate unlawful force
 T: Apprehension | Expectation, not fear, of imminent force
+CASE: Thomas v National Union of Mineworkers (South Wales Area) [1986] Ch 20 | Striking miners shouted threats at working miners being driven through picket lines in vehicles under police protection. | Not an assault: the pickets couldn't carry out the threats immediately. | Assault requires reasonable apprehension of immediate unlawful force.
 SUM: Assault needs no contact.
 SUM: Words can create or negate an assault.
 SRC: Stephens v Myers (1830) 4 C and P 349 | case | 1830
@@ -649,6 +677,7 @@ O: State the elements of battery
 O: Apply consent and the limits of everyday touching
 T: Battery | Intentional, direct application of unlawful force
 T: Hostility | A requirement rejected for battery in modern law
+CASE: Collins v Wilcock [1984] 1 WLR 1172 | A police officer took hold of a woman's arm to stop her walking away, without arresting her. | A battery: the touching went beyond generally acceptable everyday contact. | Any intentional touching without consent is a battery unless it falls within the ordinary contact of daily life.
 SUM: Any touching can be a battery; no injury is needed.
 SUM: Everyday contact is generally accepted.
 SRC: Collins v Wilcock [1984] 1 WLR 1172 | case | 1984
@@ -677,6 +706,7 @@ O: State the elements of false imprisonment
 O: Apply the rules on total restraint and lawful justification
 T: False imprisonment | Unlawful total restraint of freedom of movement
 T: Lawful authority | A legal justification for detention
+CASE: Bird v Jones (1845) 7 QB 742 | Part of a bridge was fenced off for spectators; the claimant was stopped from going through but was free to go back. | Not false imprisonment: he could leave another way. | False imprisonment needs complete restraint; a reasonable means of escape defeats it.
 SUM: The restraint must be total; awareness isn't required.
 SUM: Lawful authority is a defence.
 SRC: Bird v Jones (1845) 7 QB 742 | case | 1845
@@ -707,6 +737,7 @@ O: State the elements of trespass to land
 O: Apply defences and remedies
 T: Trespass to land | Unjustified direct interference with land in another's possession
 T: Trespass ab initio | A rule making an entrant a trespasser from the start if they abuse their authority
+CASE: Bernstein v Skyviews and General Ltd [1978] QB 479 | An aerial photography company flew over Lord Bernstein's house to photograph it. | No trespass: rights in airspace extend only to the height needed for ordinary use and enjoyment of the land. | A landowner's airspace rights are limited to what's needed for ordinary use of the land.
 SUM: Trespass to land is actionable per se.
 SUM: Licence and lawful authority are defences.
 SRC: Entick v Carrington (1765) 19 St Tr 1029 | case | 1765
@@ -764,6 +795,8 @@ O: Explain contributory negligence as a partial defence
 O: Apply apportionment under the 1945 Act
 T: Contributory negligence | The claimant's failure to take reasonable care for their own safety
 T: Apportionment | Reducing damages according to the claimant's share of responsibility
+CASE: Froom v Butcher [1976] QB 286 | A car passenger not wearing a seat belt was injured in a crash caused by the defendant. | Damages were reduced for contributory negligence. | Failing to wear a seat belt is contributory negligence: 25% if wearing it would have prevented the injury, 15% if it would have made it less severe.
+LAW: Law Reform (Contributory Negligence) Act 1945, s 1(1) | Where a person suffers damage partly through their own fault and partly through another's, damages are reduced to the extent the court thinks just and equitable having regard to the claimant's share of responsibility.
 SUM: Damages are reduced, not defeated.
 SUM: Courts apportion based on fault and causative potency.
 SRC: Law Reform (Contributory Negligence) Act 1945 | legislation | 1945 | https://www.legislation.gov.uk/ukpga/Geo6/8-9/28
@@ -792,6 +825,7 @@ O: State the requirements of volenti non fit injuria
 O: Apply the limits on volenti, including statutory restrictions
 T: Volenti non fit injuria | To a willing person no injury is done
 T: Full knowledge | Awareness of the nature and extent of the risk
+CASE: Morris v Murray [1991] 2 QB 6 | After a drinking session the claimant went up in a light aircraft piloted by his drunk friend, which crashed. | Volenti applied: he had voluntarily accepted the obvious risk. | Volenti requires full knowledge of the risk and a free, voluntary acceptance of it.
 SUM: Volenti is a complete defence requiring full knowledge and free consent.
 SUM: It rarely succeeds against employees and is excluded for road traffic passengers.
 SRC: Morris v Murray [1991] 2 QB 6 | case | 1990

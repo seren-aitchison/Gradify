@@ -115,6 +115,8 @@ H: Practice
 P: Diarise limitation at the first meeting. If limitation is close, issue protectively and seek a stay to complete pre-action steps. Missing a limitation date is a common source of professional negligence claims.
 K: Identify the cause of action, find the period, then consider date of knowledge, longstops and extensions.
 !: Applying the six-year tort period to a personal injury claim.
+CASE: Cartledge v E Jopling and Sons Ltd [1963] AC 758 | Workers' lungs were damaged by dust before they could know of it; they sued after six years. | Time-barred: the cause of action accrued on damage, even though undiscoverable. | The injustice prompted the date of knowledge rules now in the Limitation Act 1980, ss 11 and 14.
+LAW: Limitation Act 1980, ss 2, 5 and 11 | Six years from accrual for tort (s 2) and simple contract (s 5); three years for personal injury from the date of the cause of action or of knowledge, if later (ss 11 and 14), with a discretion to extend (s 33).
 SUM: Contract and tort claims generally have 6 years.
 SUM: Personal injury has 3 years from the cause or date of knowledge.
 SUM: Disability, concealment and s 33 can extend time.
@@ -143,6 +145,7 @@ H: Within the UK
 P: The Civil Jurisdiction and Judgments Act 1982, Schedule 4, allocates jurisdiction between England and Wales, Scotland and Northern Ireland.
 K: Choose the right domestic court by value and complexity; for foreign defendants, check service as of right, gateways and Hague Conventions.
 !: Applying the Brussels Recast Regulation to new cases after Brexit.
+CASE: Spiliada Maritime Corp v Cansulex Ltd [1987] AC 460 | A shipowner sued a Canadian sulphur shipper in England over damage to a ship's cargo hold. | England was the appropriate forum: very similar proceedings involving the same experts were already there. | Forum non conveniens: is there another available forum clearly more appropriate, and does justice require a stay anyway?
 SUM: Lower-value claims start in the County Court.
 SUM: Service out needs a gateway and forum conveniens.
 SUM: Hague Conventions now matter for international cases.
@@ -267,6 +270,7 @@ H: Challenges
 P: A weak statement of case can be struck out (CPR 3.4) or met by a summary judgment application (Part 24).
 K: Statements of case define the issues; amend them with consent or permission, and use Part 18 to clarify the other side's case.
 !: Trying to run an unpleaded argument at trial without amending.
+LAW: CPR Part 16 | The claim form must contain a concise statement of the nature of the claim and the remedy; the particulars of claim a concise statement of the facts relied on; and the defence must say which allegations are denied (with reasons), admitted, or which the claimant must prove.
 SUM: Statements of case set out each party's case.
 SUM: Amendments after service need consent or permission.
 SUM: Part 18 requests clarify the other side's case.
@@ -297,6 +301,8 @@ H: Sanctions and relief
 - Mitchell v News Group Newspapers Ltd [2013] EWCA Civ 1537 had taken a stricter line, clarified by Denton.
 K: The court manages cases actively; relief from sanctions turns on Denton's three stages.
 !: Assuming relief will be granted because the breach caused no harm, without addressing the reason for default.
+CASE: Denton v TH White Ltd [2014] EWCA Civ 906 | Three appeals concerned relief from sanctions for failures to comply with rules and court orders. | The court clarified Mitchell with a three-stage approach. | Relief from sanctions: assess the seriousness of the breach, why it happened, then all the circumstances, including the need for efficient litigation and compliance.
+LAW: CPR 1.1 | The overriding objective: enabling the court to deal with cases justly and at proportionate cost, including enforcing compliance with rules, practice directions and orders.
 SUM: Courts allocate tracks and give directions.
 SUM: Costs budgets control spending in multi-track cases.
 SUM: Denton governs relief from sanctions.
@@ -365,6 +371,7 @@ H: Admissions
 P: A party may serve a notice to admit facts (CPR 32.18); unreasonable refusal can carry costs consequences.
 K: Prove facts on the balance of probabilities; hearsay is admissible but weighed; privileged material is protected.
 !: Excluding hearsay in civil trials as if criminal rules applied.
+CASE: Rush and Tompkins Ltd v Greater London Council [1989] AC 1280 | A contractor settled with the council; another party sought disclosure of the without prejudice correspondence. | The correspondence was protected even after settlement. | 'Without prejudice' privilege protects genuine attempts to settle, and generally extends to later litigation on the same subject.
 SUM: The civil standard is the balance of probabilities.
 SUM: Hearsay is admissible, with notice and weight.
 SUM: Privilege protects advice, litigation material and settlement talks.
@@ -427,6 +434,8 @@ H: Liability
 P: Experts have no immunity from suit by their own client for negligence in preparing evidence (Jones v Kaney [2011] UKSC 13), but must still give independent opinions.
 K: Experts serve the court first; permission is needed, and the court prefers proportionate, often joint, expert evidence.
 !: Instructing an expert to write a report that simply supports the client's case.
+CASE: Jones v Kaney [2011] UKSC 13 | A psychologist expert signed a joint statement damaging her own client's case without proper consideration. | Experts no longer have immunity from suit for negligence by their own client. | Expert witnesses can be sued in negligence by the party that retained them.
+LAW: CPR 35.3 | An expert's overriding duty is to help the court on matters within their expertise; it overrides any obligation to the person instructing or paying them.
 SUM: Experts owe an overriding duty to the court.
 SUM: Expert evidence needs permission and must be proportionate.
 SUM: Questions and joint statements narrow the issues.
@@ -458,6 +467,7 @@ H: Costs
 P: The court usually makes a costs order at the end of each interim hearing, often assessed summarily, so interim battles carry immediate cost risks.
 K: Apply under Part 23 with evidence on proper notice; know the tests for each interim remedy.
 !: Failing to give full and frank disclosure on a without-notice application.
+CASE: American Cyanamid Co v Ethicon Ltd [1975] AC 396 | A patent owner sought an interim injunction to stop a competitor marketing surgical sutures. | The injunction was granted. | Interim injunction test: a serious question to be tried, whether damages are adequate, and the balance of convenience.
 SUM: Interim applications use form N244 and CPR 23.
 SUM: Notice is at least three clear days.
 SUM: Remedies include injunctions, interim payments and security for costs.
@@ -487,6 +497,8 @@ H: Orders
 P: The court may give judgment, dismiss the application, or make a conditional order (for example, requiring a payment into court) where a claim or defence may succeed but improbably. Costs usually follow the event.
 K: Summary judgment requires no real prospect of success and no compelling reason for trial; it isn't a mini-trial.
 !: Using summary judgment where the case turns on disputed facts requiring cross-examination.
+CASE: Easyair Ltd v Opal Telecom Ltd [2009] EWHC 339 (Ch) | Summary judgment was sought in a commercial dispute. | Lewison J summarised the principles. | A 'realistic' prospect of success is more than merely arguable, and the court shouldn't conduct a mini-trial.
+LAW: CPR 24.3 | The court may give summary judgment if the claimant has no real prospect of succeeding on the claim (or the defendant of defending it) and there is no other compelling reason for a trial.
 SUM: Part 24 allows judgment without trial.
 SUM: The test is no real prospect and no compelling reason for trial.
 SUM: Conditional orders deal with improbable but possible cases.
@@ -517,6 +529,7 @@ H: Non-compliance
 P: Repeated or serious breaches may lead to unless orders and then automatic strike-out. Relief from sanctions under CPR 3.9 applies the Denton approach.
 K: Strike out where the pleading discloses no reasonable grounds, is an abuse, or follows non-compliance; consider summary judgment alongside.
 !: Applying to strike out a claim that is well pleaded but factually weak: summary judgment is the better route.
+CASE: Henderson v Henderson (1843) 3 Hare 100 | After litigation in Newfoundland, a party brought fresh proceedings in England raising matters that could have been raised before. | Barred. | Parties must bring their whole case at once; raising points that could and should have been raised earlier may be an abuse of process (refined in Johnson v Gore Wood).
 SUM: CPR 3.4(2) sets three grounds for strike-out.
 SUM: Abuse includes relitigating decided matters.
 SUM: Strike-out tests the pleading; summary judgment tests prospects.
@@ -546,6 +559,8 @@ H: Recording settlement
 P: Settlements can be recorded in a contract, a consent order (judgment) or a Tomlin order, which stays proceedings on terms set out in a confidential schedule, with liberty to apply to enforce.
 K: Part 36 offers must meet formal requirements and carry significant costs consequences for parties who fail to beat them.
 !: Making a "Part 36 offer" without a relevant period of at least 21 days.
+CASE: Calderbank v Calderbank [1976] Fam 93 | In matrimonial proceedings an offer was made without prejudice except as to costs. | Such an offer can be shown to the court on costs. | A 'Calderbank offer' is without prejudice save as to costs and can affect costs orders.
+LAW: CPR 36.17 | Where a claimant obtains a judgment at least as advantageous as their own Part 36 offer, the court will usually order enhanced interest, indemnity costs, interest on costs and an additional amount, unless unjust.
 SUM: Part 36 offers have strict formal requirements.
 SUM: Failing to beat an offer has serious costs consequences.
 SUM: Tomlin orders record confidential settlements.
@@ -577,6 +592,7 @@ H: The courts' approach
 - For most small claims, a free one-hour mediation appointment is now compulsory (from 2024).
 K: Mediation is confidential and flexible; refusing it unreasonably risks costs, and courts may order it.
 !: Advising a client that refusing mediation has no consequences if they win.
+CASE: Halsey v Milton Keynes General NHS Trust [2004] EWCA Civ 576 | Successful defendants had refused the claimants' invitations to mediate. | No costs penalty here, but unreasonable refusal can be penalised. | Unreasonably refusing ADR can lead to costs consequences; the burden is on the party alleging unreasonableness.
 SUM: Mediation is a confidential, facilitated negotiation.
 SUM: Halsey allows costs sanctions for unreasonable refusal.
 SUM: Churchill allows courts to order ADR.
@@ -672,6 +688,8 @@ H: Funding
 - Clients must receive the best possible information about costs (SRA Code, para 8.7).
 K: The loser usually pays, subject to discretion; the basis of assessment and fixed costs regimes shape recovery.
 !: Telling a client they will recover all their costs if they win.
+CASE: R (PACCAR Inc) v Competition Appeal Tribunal [2023] UKSC 28 | Truck makers argued litigation funding agreements giving funders a percentage of damages were unenforceable damages-based agreements. | They were damages-based agreements, so unenforceable unless they complied with the regulations. | Litigation funding paid as a share of damages is a damages-based agreement (legislation to reverse this has been proposed).
+LAW: CPR 44.2 | The court has discretion as to costs; the general rule is that the unsuccessful party pays the successful party's costs, considering conduct, partial success and admissible offers.
 SUM: Costs follow the event, subject to discretion.
 SUM: Standard and indemnity bases differ on proportionality.
 SUM: Fixed costs, QOCS and funding arrangements affect recovery.

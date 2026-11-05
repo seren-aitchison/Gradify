@@ -305,6 +305,17 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(255, 255, 2
 .co-terms dt { font-weight: 600; color: var(--fg); }
 .co-terms dd { margin: 0; color: var(--mute); }
 @media (max-width: 560px) { .co-terms { grid-template-columns: 1fr; } .co-terms dd { margin-bottom: 6px; } }
+/* case and statute cards (CASE: / LAW: lines) */
+.co-auths { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.co-auth { padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255, 255, 255, .03); min-width: 0; }
+.co-auth h4 { margin: 2px 0 8px; font-size: 14px; color: var(--fg); overflow-wrap: anywhere; }
+.co-auth-k { font: 600 10px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
+.co-auth dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 10px; margin: 0; font-size: 13px; }
+.co-auth dt { font-weight: 600; color: var(--fg); }
+.co-auth dd, .co-auth p { margin: 0; color: var(--mute); font-size: 13px; }
+.co-auths-tools input { flex: 1 1 220px; min-width: 0; padding: 9px 12px; border-radius: 11px; background: #141417; color: var(--fg); border: 1px solid var(--line-strong); font: 14px var(--sans); }
+.co-auths-tools select { flex: 1 1 200px; min-width: 0; }
+.co-auth-from { display: block; margin-top: 8px; font-size: 12px; }
 .co-sources small { color: var(--faint, var(--mute)); font-family: var(--mono); font-size: 11px; }
 .co-safe { margin: 14px 0; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255, 192, 2, .45); background: rgba(255, 192, 2, .07); }
 .co-safe b { display: block; margin-bottom: 4px; color: #ffd75e; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
@@ -468,3 +479,9 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(255, 255, 2
 .co-ev-contested { color: #fbbf24; border-color: rgba(251, 191, 36, .45); }
 .co-ev-hypothetical { color: #a78bfa; border-color: rgba(167, 139, 250, .45); }
 .co-reviewed { margin: 0 0 14px; color: var(--mute); font: 12px/1.5 var(--mono); }
+
+/* link from an anatomy lesson to the 3D model quizzes (cfg.anatomy3d) */
+.co-3d { margin: 22px 0 0; padding: 16px 18px; border: 1px solid var(--line); border-radius: 16px; background: rgba(94, 240, 255, .04); }
+.co-3d h3 { margin: 0 0 6px; font-size: 15px; display: flex; align-items: center; gap: 8px; }
+.co-3d p { margin: 0 0 12px; color: var(--mute); }
+.co-3d-actions { display: flex; flex-wrap: wrap; gap: 8px; }

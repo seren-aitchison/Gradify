@@ -54,6 +54,9 @@ H: Airspace and subsoil
 - Some minerals belong to the Crown or the Coal Authority, and treasure belongs to the Crown (Treasure Act 1996).
 K: Fixtures pass with the land; chattels don't. Purpose of annexation matters more than degree.
 !: Assuming everything attached to a house is a fixture: the purpose of the attachment decides.
+CASE: Holland v Hodgson (1872) LR 7 CP 328 | Looms in a mill were attached to the floor by nails; the question was whether they passed with the land to a mortgagee. | They were fixtures and passed with the land. | Whether an object is a fixture depends on the degree and purpose of annexation.
+CASE: Bocardo SA v Star Energy UK Onshore Ltd [2010] UKSC 35 | An oil company drilled diagonal wells under Bocardo's land, 800 to 2,800 feet down, to reach an oil field. | Trespass: the landowner owns the subsoil down to depths at which ownership is practicably meaningful. | Ownership of land extends to the strata beneath, so underground drilling can be trespass.
+LAW: Law of Property Act 1925, s 205(1)(ix) | 'Land' includes land of any tenure, mines and minerals, buildings or parts of buildings, and other corporeal and incorporeal hereditaments such as easements.
 SUM: Land includes buildings, fixtures, and some rights.
 SUM: Fixtures are decided by degree and, above all, purpose of annexation.
 SUM: Airspace and subsoil rights are limited by statute and case law.
@@ -180,6 +183,8 @@ H: Why it matters
 - Today, registration and land charges rules mostly decide priority, but the distinction still affects which rules apply.
 K: Check whether the interest is in s 1(2) and was created by deed; if not, it can only be equitable.
 !: Assuming a restrictive covenant can be a legal interest: it is always equitable.
+CASE: Walsh v Lonsdale (1882) 21 Ch D 9 | A seven-year lease was agreed in writing but no deed was executed; the tenant went into possession. | The tenant held on the terms of the agreement in equity, including rent payable in advance. | 'Equity regards as done that which ought to be done': a specifically enforceable agreement for a lease creates an equitable lease.
+LAW: Law of Property Act 1925, s 1 | Only two estates (fee simple absolute in possession, term of years absolute) and certain interests (such as easements for an equivalent term, charges by way of legal mortgage) can exist at law; all others take effect in equity.
 SUM: Section 1(2) lists the interests capable of being legal.
 SUM: Other interests, or listed interests without a deed, are equitable.
 SUM: The distinction affects formalities and protection against buyers.
@@ -244,6 +249,7 @@ H: First registration
 P: Since 1990, most dispositions of unregistered land, such as a sale or first legal mortgage, trigger compulsory first registration (LRA 2002, s 4).
 K: In unregistered land, check the deeds, search the land charges register against each owner's name, and consider notice and overreaching.
 !: Arguing that a buyer who knew of an unregistered estate contract is bound: Midland Bank v Green says no.
+CASE: Kingsnorth Finance Co Ltd v Tizard [1986] 1 WLR 783 | A husband mortgaged the house, held in his name, while his estranged wife had a beneficial interest and visited daily; the lender's surveyor inspected by appointment. | The lender had constructive notice of her interest and was bound by it. | In unregistered land, a purchaser is bound by equitable interests of which they have actual, constructive or imputed notice.
 SUM: Title is proved by deeds from a 15-year root.
 SUM: Land charges must be registered or are void against purchasers.
 SUM: The doctrine of notice survives in limited cases.
@@ -278,6 +284,7 @@ H: Protecting third-party interests
 - Beneficial interests under trusts can't be protected by notice (s 33).
 K: Register the title within two months of a trigger event; protect interests by notice or restriction as appropriate.
 !: Trying to protect a beneficial interest under a trust by notice: s 33 forbids it; use a restriction.
+LAW: Land Registration Act 2002, s 29 | A registrable disposition of a registered estate for valuable consideration, once registered, takes priority over interests not protected on the register, except overriding interests (Schedule 3).
 SUM: First registration is triggered by sales, gifts, mortgages and long leases.
 SUM: There are four classes of title, with absolute the most common.
 SUM: Interests are protected by notices; dispositions are controlled by restrictions.
@@ -374,6 +381,7 @@ H: The legal title
 P: The legal title is always held as a joint tenancy, so on a trustee's death the legal title passes automatically to the surviving trustees, keeping conveyancing simple.
 K: A joint tenancy needs all four unities and carries the right of survivorship, which overrides any will.
 !: Thinking a joint tenant can leave their interest by will: survivorship defeats it.
+CASE: AG Securities v Vaughan [1990] 1 AC 417 | Four people occupied a flat under separate agreements signed at different times for different rents. | They had licences, not a joint tenancy: the four unities of interest, title and time were absent. | A joint tenancy needs the four unities of possession, interest, title and time.
 SUM: Joint tenants together own the whole, with no separate shares.
 SUM: The four unities are possession, interest, title and time.
 SUM: Survivorship passes the whole to the survivors.
@@ -403,6 +411,7 @@ H: Effect
 P: Each tenant in common's share passes under their will or intestacy. Co-owners who want certainty should sign an express declaration of trust.
 K: In domestic joint-name cases, equity follows the law (joint tenancy) unless a different common intention is shown; commercial cases favour a tenancy in common.
 !: Applying the commercial presumptions to a cohabiting couple: Stack v Dowden sets a different starting point.
+CASE: Jones v Kernott [2011] UKSC 53 | An unmarried couple bought a house in joint names; after they separated he stopped contributing for about 14 years. | Their intentions changed after separation; shares of 90% and 10% were the fair result. | Where intention about shares can't be inferred, the court may impute the intention it considers fair in light of the whole course of dealing.
 SUM: Tenants in common have distinct shares without survivorship.
 SUM: Express declarations are conclusive.
 SUM: Stack v Dowden and Jones v Kernott govern domestic cases.
@@ -435,6 +444,8 @@ H: Other routes and limits
 - On severance, the shares are usually equal, whatever the contributions, unless otherwise agreed (Goodman v Gallant).
 K: Sever by written notice (effective when properly served) or by Williams v Hensman methods; never by will.
 !: Thinking a will can sever a joint tenancy.
+CASE: Burgess v Rawnsley [1975] Ch 429 | Joint tenants orally agreed that one would buy the other's share; she later withdrew. | The joint tenancy was severed by mutual agreement, even though the agreement wasn't enforceable. | A joint tenancy can be severed by mutual agreement or a course of dealing showing a common intention to sever.
+LAW: Law of Property Act 1925, s 36(2) | A joint tenant of a legal estate may sever the equitable joint tenancy by giving the other joint tenants a notice in writing of the desire to do so.
 SUM: Severance stops survivorship for the severed share.
 SUM: Written notice works once delivered (Kinch v Bullard).
 SUM: Williams v Hensman lists act, agreement and course of dealing.
@@ -465,6 +476,8 @@ H: Bankruptcy
 - Applications by a trustee in bankruptcy fall under Insolvency Act 1986, s 335A. After one year, the creditors' interests outweigh all others unless the circumstances are exceptional (Re Citro [1991] Ch 142).
 K: Under TOLATA, trustees consult and beneficiaries may occupy; disputes go to court under s 14, weighed with the s 15 factors, except in bankruptcy, where s 335A applies.
 !: Applying s 15 to a bankruptcy trustee's application: s 335A Insolvency Act 1986 governs instead.
+CASE: Mortgage Corp v Shaire [2001] Ch 743 | A lender with a charge over a co-owner's beneficial share applied for an order for sale of the family home. | The 1996 Act changed the law: the court weighs the s 15 factors, and the lender's interest is only one of them. | Under TOLATA ss 14 and 15 the court has a discretion; the creditor's interest isn't automatically paramount.
+LAW: Trusts of Land and Appointment of Trustees Act 1996, ss 14 and 15 | Any trustee or person with an interest in property subject to a trust of land can apply for an order (for example for sale); the court considers the settlors' intentions, the purposes for which the land is held, the welfare of any minor in occupation and the interests of secured creditors.
 SUM: TOLATA gives trustees full powers, subject to consultation.
 SUM: Section 15 factors guide court orders, including sale.
 SUM: In bankruptcy, sale usually follows after a year.
@@ -495,6 +508,8 @@ H: Protection
 - Beneficiaries left without the land may claim against the trustees for breach of trust.
 K: Pay two trustees and the beneficial interests are overreached, whether or not the beneficiaries are in occupation.
 !: Arguing that occupation by a beneficiary defeats overreaching: Flegg shows it doesn't if two trustees are paid.
+CASE: Williams and Glyn's Bank Ltd v Boland [1981] AC 487 | A husband, sole registered owner, mortgaged the home; his wife had a beneficial interest and lived there. | The wife's interest, coupled with actual occupation, bound the bank. | A beneficial interest plus actual occupation can be an overriding interest binding a purchaser where there's no overreaching.
+CASE: City of London Building Society v Flegg [1988] AC 54 | Parents who had contributed to a house held by their daughter and son-in-law lived there; the two trustees mortgaged it. | The parents' interests were overreached because money was paid to two trustees. | Payment of capital money to two trustees (or a trust corporation) overreaches beneficial interests, even of those in occupation.
 SUM: Overreaching shifts beneficial interests into the purchase money.
 SUM: Payment to two trustees is required (Flegg; Boland).
 SUM: A Form A restriction protects beneficiaries.
@@ -529,6 +544,9 @@ H: Registration
 P: Express legal easements over registered land must be completed by registration (LRA 2002, s 27). Implied and prescriptive legal easements can be overriding interests under Sch 3, para 3.
 K: Check the four Ellenborough characteristics, then how the easement was created and whether it binds the current servient owner.
 !: Treating a right that excludes the servient owner from the land as an easement: that amounts to possession.
+CASE: Re Ellenborough Park [1956] Ch 131 | Houses around a park were sold with the right to use the pleasure garden. | The right was a valid easement. | An easement needs a dominant and servient tenement, accommodation of the dominant land, different owners, and capability of forming the subject matter of a grant.
+CASE: Regency Villas Title Ltd v Diamond Resorts (Europe) Ltd [2018] UKSC 57 | Timeshare owners claimed rights to use a resort's swimming pool, golf course and other sports facilities. | The rights were valid easements. | Purely recreational and sporting rights can be easements if they accommodate the dominant land.
+CASE: Wheeldon v Burrows (1879) 12 Ch D 31 | A landowner sold part of his land; the question was whether easements passed implicitly on the sale. | On a sale of part, the buyer gets quasi-easements that were continuous and apparent, necessary for reasonable enjoyment and in use at the time. | The rule in Wheeldon v Burrows implies easements on a sale of part of land.
 SUM: Easements need the four Ellenborough characteristics.
 SUM: They may be created expressly, impliedly or by prescription.
 SUM: Recreational and parking rights can be easements within limits.
@@ -559,6 +577,7 @@ H: Why it matters
 P: Developers and buyers need to know whether obligations such as maintaining a road, paying service charges or not building on land will bind later owners. The answer shapes how estates and flats are structured.
 K: Leasehold covenants run under privity of estate and the 1995 Act; for freeholds, only restrictive burdens run, in equity.
 !: Assuming a positive freehold covenant (such as to repair a fence) binds a buyer of the burdened land.
+CASE: Rhone v Stephens [1994] 2 AC 310 | A covenant required the owner of a house to maintain a roof that protected a neighbouring cottage. | The burden of the positive covenant didn't bind successors to the covenantor. | The burden of a positive covenant doesn't run with freehold land at law or in equity.
 SUM: Covenants are promises in deeds.
 SUM: Leasehold covenants generally run with the lease and reversion.
 SUM: Only restrictive freehold burdens run, in equity.
@@ -592,6 +611,7 @@ H: Lender's remedies
 - Lenders must follow the Pre-Action Protocol for possession claims based on mortgage arrears.
 K: A modern legal mortgage is a charge by deed; equity prevents clogs on redemption, and statute lets courts give residential borrowers time.
 !: Assuming a lender can only take possession after default: the right arises at once unless the mortgage restricts it.
+CASE: Cuckmere Brick Co Ltd v Mutual Finance Ltd [1971] Ch 949 | A mortgagee sold land advertising planning permission for houses but not for flats, which would have raised the price. | The mortgagee was liable for the shortfall. | A selling mortgagee owes a duty to take reasonable care to obtain the true market value at the time of sale.
 SUM: Legal mortgages are charges by deed, registered in registered land.
 SUM: Equity strikes down clogs and controls collateral advantages.
 SUM: Lenders can take possession or sell, subject to statutory protections.
@@ -624,6 +644,8 @@ H: Third parties
 P: In registered land, an equity by estoppel is capable of binding successors from the time it arises (LRA 2002, s 116), for example as an overriding interest where the claimant is in actual occupation.
 K: Look for assurance, reliance and detriment making it unconscionable to resile; then decide the remedy, starting from the expectation.
 !: Assuming estoppel works like a contract where commercial parties knew there was no binding deal.
+CASE: Gillett v Holt [2001] Ch 210 | A farm worker relied for decades on repeated assurances that he'd inherit the farm; the farmer then changed his will. | Estoppel established: the assurances were relied on to his detriment. | Proprietary estoppel needs an assurance, reliance and detriment, judged in the round; promises about a future will can suffice.
+CASE: Guest v Guest [2022] UKSC 27 | A son worked on the family farm for low pay for decades, on assurances he would inherit a substantial share; the parents later disinherited him after a dispute. | Estoppel established; the remedy aims to undo the detriment, often by fulfilling the promise, with a discount for accelerated receipt. | The starting point for remedy is fulfilling the expectation, subject to proportionality.
 SUM: Estoppel needs assurance, reliance, detriment and unconscionability.
 SUM: Guest v Guest starts the remedy with the expectation, adjusted as needed.
 SUM: The equity can bind successors (s 116 LRA 2002).
@@ -657,6 +679,8 @@ H: Residential squatting
 P: Squatting in a residential building is a crime (LASPO 2012, s 144). But criminality doesn't prevent an adverse possession claim (Best v Chief Land Registrar [2015] EWCA Civ 17).
 K: Possession plus intention to possess for the required period; in registered land, the owner usually gets a chance to object.
 !: Applying the 12-year extinction rule to registered land: Sch 6 LRA 2002 applies instead.
+CASE: JA Pye (Oxford) Ltd v Graham [2002] UKHL 30 | Farmers kept using land after their grazing licence expired, despite the owner refusing a new one. | They acquired title: they had factual possession and intention to possess. | Adverse possession needs factual possession and an intention to possess, not an intention to own.
+LAW: Land Registration Act 2002, Schedule 6 | After 10 years' adverse possession of registered land, the squatter can apply to be registered; the owner is notified and the application normally fails unless one of three conditions (estoppel, some other entitlement, or a reasonable boundary mistake) applies.
 SUM: Adverse possession needs factual possession and intention to possess (Pye).
 SUM: Unregistered: title extinguished after 12 years.
 SUM: Registered: apply after 10 years; the owner may object.
@@ -688,6 +712,8 @@ H: Non-proprietary leases
 P: Bruton v London and Quadrant Housing Trust [2000] 1 AC 406: a contractual tenancy can exist between the parties even where the landlord has no estate, though it doesn't bind third parties.
 K: Exclusive possession for a term certain makes a lease, whatever the label; sham terms are ignored.
 !: Relying on an agreement being called a "licence" when it grants exclusive possession.
+CASE: Street v Mountford [1985] AC 809 | Mrs Mountford occupied rooms under an agreement calling itself a licence, at a weekly rent, with exclusive possession. | It was a tenancy: the label isn't decisive. | Exclusive possession for a term at a rent creates a tenancy, whatever the parties call it (save in exceptional circumstances).
+CASE: Prudential Assurance Co Ltd v London Residuary Body [1992] 2 AC 386 | A strip of land was let 'until the land is required for road widening'. | The term was uncertain, so not a valid lease for that term; a yearly periodic tenancy arose from rent payment. | A lease must be for a term of certain maximum duration.
 SUM: A lease needs exclusive possession for a term certain.
 SUM: Substance, not labels, decides (Street v Mountford).
 SUM: Uncertain terms may be saved by s 149(6) (Berrisford).
@@ -718,6 +744,7 @@ H: Why the distinction matters
 P: Lodgers, hotel guests, people at events and many family members occupying homes have licences. They have far less protection than tenants: no estate, no statutory security of tenure in most cases, and no protection against a buyer.
 K: Licences are personal: they don't bind buyers unless a constructive trust or estoppel intervenes.
 !: Assuming a contractual licence binds a new owner of the land.
+CASE: King v David Allen and Sons Billposting Ltd [1916] 2 AC 54 | A landowner gave a firm a licence to post bills on a cinema wall, then leased the site to a company that refused to allow it. | The licence didn't bind the new tenant. | A contractual licence is a personal right and doesn't bind successors in title.
 SUM: Licences are permissions, not estates.
 SUM: Contractual licences may be protected against the licensor, not third parties.
 SUM: Estoppel or constructive trust may sometimes bind a successor.
@@ -786,6 +813,8 @@ H: Actual occupation
 - Williams and Glyn's Bank v Boland [1981] AC 487: a wife's beneficial interest bound the bank because she was in actual occupation and there was no overreaching.
 K: For a buyer for value: check notices and restrictions, and inspect for overriding interests, especially people in actual occupation.
 !: Forgetting that occupation must be "obvious on a reasonably careful inspection" if the buyer didn't know of the interest.
+CASE: Link Lending Ltd v Bustard [2010] EWCA Civ 424 | The registered owner, detained in a psychiatric unit, had been tricked into transferring her home, which was then mortgaged. | She was still in actual occupation, so her right to set aside the transfer bound the lender. | Actual occupation can continue during involuntary absence where there is continued intention to return and a physical link to the property.
+LAW: Land Registration Act 2002, Schedule 3, para 2 | The interest of a person in actual occupation overrides a registered disposition, unless they failed to disclose it on reasonable inquiry or the occupation wasn't obvious on a reasonably careful inspection and the buyer didn't know of it.
 SUM: Section 29 protects registered dispositions for value against unprotected interests.
 SUM: Overriding interests bind regardless of registration.
 SUM: Actual occupation protects interests such as Boland's.
@@ -819,6 +848,8 @@ H: Remedies and release
 - The Upper Tribunal can discharge or modify covenants under LPA 1925, s 84 (Alexander Devine Children's Cancer Trust v Housing Solutions Ltd [2020] UKSC 45).
 K: The burden runs in equity if the covenant is negative, benefits land, is intended to run and is registered; the claimant must show the benefit has passed.
 !: Overlooking whether the claimant has the benefit: the burden running isn't enough by itself.
+CASE: Tulk v Moxhay (1848) 2 Ph 774 | Leicester Square was sold with a covenant to keep it as a garden; a later buyer, with notice, planned to build. | The later buyer was bound in equity. | The burden of a restrictive covenant runs in equity to a successor with notice.
+CASE: Federated Homes Ltd v Mill Lodge Properties Ltd [1980] 1 WLR 594 | A developer bought land with the benefit of a covenant limiting the number of houses on neighbouring land. | Section 78 LPA 1925 annexed the benefit to every part of the land. | Section 78 annexes the benefit of a restrictive covenant that touches and concerns the land, unless excluded.
 SUM: Tulk v Moxhay lets restrictive burdens run in equity.
 SUM: The benefit passes by annexation, assignment or building scheme.
 SUM: Section 84 allows discharge or modification.
@@ -850,6 +881,7 @@ H: The benefit of freehold covenants
 - At common law, the benefit can run if the covenant touches and concerns the land, the original covenantee had a legal estate, the successor holds a legal estate, and it was intended to run (P and A Swift Investments [1989]; Smith and Snipes Hall Farm Ltd v River Douglas Catchment Board [1949] 2 KB 500, using LPA 1925, s 78).
 K: Positive freehold burdens don't run; rely on benefit and burden, indemnity chains, rentcharges, leases or commonhold instead.
 !: Advising that a buyer is directly bound to maintain a shared driveway under a positive covenant in an old conveyance.
+CASE: Halsall v Brizell [1957] Ch 169 | Purchasers of plots used estate roads and drains, the original covenant obliging them to contribute to upkeep. | A successor who takes the benefit of the roads must bear the burden of contributing. | The benefit and burden principle: someone taking a benefit must accept a burden that is conditional on or reciprocal to it.
 SUM: Positive freehold burdens don't run (Rhone v Stephens).
 SUM: The benefit and burden principle can make successors contribute.
 SUM: The benefit can run at law under conditions.

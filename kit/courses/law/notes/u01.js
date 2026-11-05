@@ -157,6 +157,7 @@ O: Distinguish public law from private law
 O: Explain why the distinction matters procedurally
 T: Public law | Law governing the state and its relationship with individuals
 T: Judicial review | The court's supervision of the lawfulness of public decisions
+CASE: O'Reilly v Mackman [1983] 2 AC 237 | Prisoners challenged disciplinary decisions of a prison board of visitors by ordinary private law actions rather than judicial review. | The claims were an abuse of process: public law challenges should normally be brought by judicial review. | The procedural exclusivity principle: public law decisions are generally challenged by judicial review (now applied flexibly).
 SUM: Public law covers constitutional, administrative and criminal law.
 SUM: Private law covers contract, tort, property and family law.
 SRC: O'Reilly v Mackman [1983] 2 AC 237 | case | 1982
@@ -245,6 +246,7 @@ O: Describe the hierarchy of courts for the purposes of precedent
 O: Determine which decisions bind which courts
 T: Binding precedent | A decision a lower court must follow
 T: Practice Statement 1966 | The statement allowing the House of Lords to depart from its own decisions
+CASE: Young v Bristol Aeroplane Co Ltd [1944] KB 718 | The Court of Appeal was asked to depart from one of its own earlier decisions on workers' compensation. | The Court of Appeal is bound by its own decisions, subject to three exceptions. | The Court of Appeal (Civil Division) may depart from its own precedent where earlier decisions conflict, one is inconsistent with a House of Lords or Supreme Court decision, or it was made per incuriam.
 SUM: Courts are bound by courts above them and sometimes by their own decisions.
 SUM: The Supreme Court can depart from its own decisions.
 SRC: Practice Statement (Judicial Precedent) [1966] 1 WLR 1234 | case | 1966
@@ -271,6 +273,7 @@ O: Explain stare decisis and the kinds of precedent
 O: Apply techniques for avoiding a precedent
 T: Stare decisis | Standing by things decided: following earlier decisions
 T: Distinguishing | Avoiding a precedent because the material facts differ
+CASE: R v Shivpuri [1987] AC 1 | Within a year of deciding Anderton v Ryan, the House of Lords considered the same question on attempting the impossible. | It used the 1966 Practice Statement to overrule Anderton v Ryan. | The House of Lords (now the Supreme Court) may depart from its own decisions when it appears right to do so.
 SUM: Precedent brings consistency and predictability.
 SUM: Courts may distinguish, overrule or reverse precedents.
 SRC: Donoghue v Stevenson [1932] AC 562 | case | 1932
@@ -300,6 +303,7 @@ O: Identify the ratio decidendi of a case
 O: Distinguish obiter dicta and explain their persuasive weight
 T: Ratio decidendi | The legal principle necessary for the decision on the material facts
 T: Obiter dictum | A statement in a judgment that isn't necessary for the decision
+CASE: R v Howe [1987] AC 417 | The House of Lords held duress no defence to murder and said, in passing, that it should not be available for attempted murder either. | The remark on attempted murder was obiter, later adopted in R v Gotts [1992]. | Statements not necessary to the decision are obiter dicta, persuasive but not binding.
 SUM: The ratio binds; obiter dicta can persuade.
 SUM: Finding the ratio means identifying the material facts and the reasoning.
 SRC: Hedley Byrne and Co Ltd v Heller and Partners Ltd [1964] AC 465 | case | 1963
@@ -329,6 +333,7 @@ O: Describe the traditional rules and the modern purposive approach
 O: Apply aids, presumptions and section 3 of the Human Rights Act 1998
 T: Purposive approach | Interpreting legislation to give effect to its purpose
 T: Pepper v Hart | The case allowing reference to Hansard in limited circumstances
+CASE: Pepper v Hart [1993] AC 593 | Teachers at a fee-paying school challenged the tax charged on concessionary places for their children; the statute was ambiguous. | The court could refer to Hansard, where the minister's statement resolved the point in the teachers' favour. | Courts may refer to clear ministerial statements in Hansard where legislation is ambiguous, obscure or leads to absurdity.
 SUM: Courts use literal, golden and mischief rules within a contextual, purposive approach.
 SUM: Section 3 HRA requires Convention-compatible interpretation where possible.
 SRC: Pepper v Hart [1993] AC 593 | case | 1992
@@ -361,6 +366,7 @@ O: Explain Dicey's account of parliamentary sovereignty
 O: Evaluate challenges and qualifications to sovereignty
 T: Parliamentary sovereignty | The principle that Parliament can make or unmake any law
 T: Implied repeal | A later Act overriding an earlier inconsistent Act
+CASE: Thoburn v Sunderland City Council [2002] EWHC 195 (Admin) | Market traders ('metric martyrs') were convicted for using only imperial measures, against regulations made under the European Communities Act 1972. | The 1972 Act was a constitutional statute not impliedly repealed by a later Act. | Constitutional statutes can't be impliedly repealed; only express words or necessary implication will do.
 SUM: No court can set aside an Act of Parliament.
 SUM: EU membership, devolution and the HRA raised qualifications.
 SRC: Dicey AV, Introduction to the Study of the Law of the Constitution | secondary | 1885
@@ -392,6 +398,8 @@ O: Compare classic accounts of the rule of law
 O: Explain how the courts uphold the rule of law
 T: Rule of law | The principle that everyone, including government, is subject to the law
 T: Legality | The principle that state action must have legal authority
+CASE: Entick v Carrington (1765) 19 St Tr 1029 | King's messengers broke into Entick's house under a general warrant from the Secretary of State and seized his papers. | Trespass: there was no legal authority for the warrant. | State officials need legal authority for what they do; public interest alone isn't authority.
+CASE: R (UNISON) v Lord Chancellor [2017] UKSC 51 | Fees of up to £1,200 were introduced to bring employment tribunal claims; claims fell sharply. | The fees order was unlawful because it prevented access to justice. | The constitutional right of access to the courts is inherent in the rule of law.
 SUM: Dicey and Bingham gave influential accounts of the rule of law.
 SUM: Courts uphold it through judicial review and access to justice.
 SRC: Bingham T, The Rule of Law, Allen Lane | secondary | 2010
@@ -446,6 +454,7 @@ O: Explain how judicial independence is protected
 O: Apply the test for apparent bias
 T: Judicial independence | Judges deciding cases free from outside pressure
 T: Apparent bias | Where a fair-minded and informed observer would conclude there was a real possibility of bias
+CASE: R v Bow Street Metropolitan Stipendiary Magistrate, ex p Pinochet Ugarte (No 2) [2000] 1 AC 119 | Lord Hoffmann sat on the appeal about General Pinochet's immunity while a director of a charity linked to Amnesty International, an intervener. | The decision was set aside. | A judge is automatically disqualified where they have an interest in the outcome, including promoting the same cause as a party.
 SUM: Security of tenure, salary protection and statutory duties protect independence.
 SUM: Impartiality requires the absence of actual and apparent bias.
 SRC: Constitutional Reform Act 2005, section 3 | legislation | 2005 | https://www.legislation.gov.uk/ukpga/2005/4/section/3
@@ -472,6 +481,8 @@ O: Describe the kinds of bill and the stages of the legislative process
 O: Explain the limits on the House of Lords
 T: Royal Assent | The monarch's formal agreement that turns a bill into an Act
 T: Parliament Acts | The 1911 and 1949 Acts limiting the Lords' power to block bills
+CASE: R (Jackson) v Attorney General [2005] UKHL 56 | The Countryside Alliance argued that the Hunting Act 2004, passed under the Parliament Acts without Lords consent, was invalid because the 1949 Act was. | The 1949 Act, and so the Hunting Act, were valid. | Acts passed under the Parliament Acts 1911 and 1949 are primary legislation; obiter dicta questioned absolute sovereignty.
+LAW: Parliament Act 1911, s 2 (as amended by the Parliament Act 1949) | A public Bill (other than one extending Parliament's life) passed by the Commons in two successive sessions, with one year between second reading and final passage, and rejected by the Lords, can receive Royal Assent without Lords consent.
 SUM: Bills pass through readings, committee, report and Royal Assent.
 SUM: The Parliament Acts limit the Lords to delaying most bills.
 SRC: Parliament Act 1911 | legislation | 1911 | https://www.legislation.gov.uk/ukpga/Geo5/1-2/13
@@ -564,6 +575,7 @@ O: Describe the structure of the tribunal system
 O: Evaluate the advantages and drawbacks of tribunals
 T: First-tier Tribunal | The tribunal that hears most first-instance tribunal cases
 T: Upper Tribunal | The tribunal that hears appeals from the First-tier Tribunal
+LAW: Tribunals, Courts and Enforcement Act 2007, s 3 | Creates the First-tier Tribunal and the Upper Tribunal; the Upper Tribunal is a superior court of record.
 SUM: Tribunals decide specialist disputes, mostly between individuals and the state.
 SUM: They are cheaper and more expert but can be hard to navigate without help.
 SRC: Tribunals, Courts and Enforcement Act 2007 | legislation | 2007 | https://www.legislation.gov.uk/ukpga/2007/15
@@ -592,6 +604,7 @@ O: Describe the main forms of ADR
 O: Explain the courts' approach to encouraging ADR
 T: Mediation | A neutral third party helping parties reach their own settlement
 T: Arbitration | A binding decision by a private tribunal chosen by the parties
+CASE: Churchill v Merthyr Tydfil County Borough Council [2023] EWCA Civ 1416 | Mr Churchill sued in nuisance over Japanese knotweed without using the council's internal complaints procedure. | The court can lawfully order parties to engage in non-court dispute resolution, or stay proceedings for it. | A court may order ADR if it doesn't impair the very essence of the right to a fair trial and is proportionate.
 SUM: ADR includes negotiation, mediation, conciliation and arbitration.
 SUM: Courts can order parties to engage in ADR.
 SRC: Churchill v Merthyr Tydfil County Borough Council [2023] EWCA Civ 1416 | case | 2023
@@ -764,6 +777,7 @@ O: Read a law report and identify its parts
 O: Apply a method for analysing a judgment
 T: Law report | A published account of a judgment with headnote and citation
 T: Material facts | The facts that the court treated as legally significant
+CASE: Donoghue v Stevenson [1932] AC 562 | Mrs Donoghue drank ginger beer, bought for her by a friend, said to contain a decomposed snail. | The manufacturer owed her a duty of care. | A model for case analysis: the narrow ratio (manufacturer to consumer) and the wider neighbour principle.
 SUM: Extract material facts, issues, decision and ratio.
 SUM: Place the case in the line of authority.
 SRC: Donoghue v Stevenson [1932] AC 562 | case | 1932

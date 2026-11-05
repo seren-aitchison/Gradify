@@ -182,6 +182,8 @@ H: The solicitor's role
 P: The solicitor's role is to protect and advance the client's legal rights (Code C, Note 6D), and may intervene to challenge improper questions.
 K: Weigh the strength of the disclosed evidence against the risk of s 34 inferences when advising on silence, a prepared statement or answering questions.
 !: Advising silence without recording the reasons, leaving the client unable to show genuine and reasonable reliance.
+CASE: R v Beckles [2004] EWCA Crim 2766 | Beckles made no comment in interview on his solicitor's advice; the jury was invited to draw an adverse inference. | Conviction quashed for misdirection: the jury must consider whether the silence was genuinely on advice or because he had no answer. | Silence on legal advice: the question is whether D genuinely and reasonably relied on the advice, or was merely using it as cover.
+LAW: Criminal Justice and Public Order Act 1994, s 34 | A court or jury may draw such inferences as appear proper from the accused's failure, when questioned under caution or charged, to mention a fact later relied on in their defence which they could reasonably have been expected to mention.
 SUM: Sections 34–37 CJPOA allow inferences from silence.
 SUM: Silence on legal advice is judged by genuine and reasonable reliance.
 SUM: Prepared statements can limit the risk.
@@ -213,6 +215,8 @@ H: Other remedies
 P: Breaches can also support complaints to the IOPC or civil claims for false imprisonment or trespass. The trial judge can stay proceedings as an abuse of process in extreme cases.
 K: PACE regulates police powers; ss 76 and 78 let courts exclude evidence where breaches make admitting it unfair.
 !: Assuming s 78 requires the defence to prove police bad faith: fairness is the test.
+CASE: R v Samuel [1988] QB 615 | Police refused a suspect access to a solicitor; he later confessed. | The confession should have been excluded under s 78: the refusal wasn't justified. | The right of access to legal advice under PACE, s 58 is fundamental and can be delayed only on strict grounds.
+LAW: Police and Criminal Evidence Act 1984, s 78 | The court may refuse to allow prosecution evidence if, having regard to all the circumstances including how it was obtained, admitting it would have such an adverse effect on the fairness of the proceedings that it ought not to be admitted.
 SUM: PACE governs powers and safeguards across investigation.
 SUM: Code breaches are relevant evidence.
 SUM: Sections 76 and 78 allow exclusion of unfairly obtained evidence.
@@ -245,6 +249,8 @@ H: Guidance
 P: The Attorney General's Guidelines on Disclosure (revised 2024) and the CPIA Code of Practice guide investigators and prosecutors. Disclosure failures have caused miscarriages of justice, so diligence is essential.
 K: The prosecution must disclose material that undermines its case or assists the defence; in the Crown Court, the defence must serve a defence statement.
 !: Failing to serve a defence statement in the Crown Court, risking adverse inferences and losing the right to apply for specific disclosure.
+CASE: R v H and C [2004] UKHL 3 | The defence sought disclosure of material the prosecution claimed public interest immunity for. | Special counsel isn't routinely needed; the court applies a structured series of questions. | Material that weakens the prosecution or assists the defence must be disclosed unless public interest immunity properly applies, with derogation limited to the minimum necessary.
+LAW: Criminal Procedure and Investigations Act 1996, s 3 | The prosecutor must disclose any material not previously disclosed which might reasonably be considered capable of undermining the prosecution case or assisting the accused's case.
 SUM: The prosecution must disclose under the s 3 test and keep it under review.
 SUM: Defence statements are compulsory in the Crown Court.
 SUM: Disclosure failures can cause miscarriages of justice.
@@ -466,6 +472,7 @@ H: Preparation
 P: Case management under CrimPR Part 3 requires the parties to identify the real issues early. The defence should review evidence, advise on plea, serve the defence statement, and prepare witnesses.
 K: Early guilty pleas earn up to one-third reduction; disputed facts after a plea may require a Newton hearing.
 !: Telling a client they'll get one-third off whenever they plead guilty.
+CASE: R v Newton (1982) 77 Cr App R 13 | Newton pleaded guilty to buggery of his wife but said she had consented; the prosecution said she hadn't. | Where the factual basis of a plea differs materially, the judge must resolve the dispute, if necessary by hearing evidence. | A 'Newton hearing' decides disputed facts after a guilty plea, where it matters to sentence.
 SUM: Credit for a guilty plea depends on timing.
 SUM: Goodyear indications reveal the likely maximum sentence.
 SUM: Newton hearings resolve disputed facts after a plea.
@@ -529,6 +536,8 @@ H: Safeguards
 - Article 6 ECHR is respected where there are adequate counterbalancing safeguards (R v Horncastle [2009] UKSC 14; R v Riat [2012] EWCA Crim 1509).
 K: Identify hearsay, then find a gateway in s 114, and consider the safeguards in ss 78, 125 and 126.
 !: Assuming hearsay is always inadmissible in criminal trials.
+CASE: R v Riat [2012] EWCA Crim 1509 | Several appeals concerned the admission of hearsay statements of absent witnesses. | The court set out a structured approach to the statutory hearsay provisions. | Hearsay admission needs a statutory gateway, then consideration of reliability, safeguards and the court's power to exclude or stop the case.
+LAW: Criminal Justice Act 2003, s 114 | A statement not made in oral evidence is admissible as evidence of a matter stated only if a statute provides, a preserved common law rule applies, all parties agree, or the court is satisfied it is in the interests of justice.
 SUM: Hearsay is admissible only through CJA 2003 gateways.
 SUM: Key gateways include unavailable witnesses and business documents.
 SUM: Safeguards protect the fairness of the trial.
@@ -560,6 +569,8 @@ H: Procedure
 P: In the Crown Court, admissibility is decided in a voir dire in the jury's absence. Even if admitted, the defence can challenge the weight of the confession before the jury.
 K: Section 76 requires the prosecution to disprove oppression and unreliability beyond reasonable doubt; s 78 adds a fairness discretion.
 !: Treating a confession as automatically admissible because the defendant signed it.
+CASE: R v Paris (1993) 97 Cr App R 99 | One of the 'Cardiff Three', of limited intelligence, confessed after hours of hectoring and bullying questioning. | The confession should have been excluded as obtained by oppression. | Oppressive questioning makes a confession inadmissible under PACE, s 76(2)(a), however reliable it seems.
+LAW: Police and Criminal Evidence Act 1984, s 76(2) | If it is represented that a confession was obtained by oppression, or in consequence of anything likely to make it unreliable, the court must exclude it unless the prosecution proves beyond reasonable doubt that it wasn't so obtained.
 SUM: Confessions must be excluded if obtained by oppression or likely unreliable (s 76).
 SUM: Section 78 allows exclusion for unfairness.
 SUM: Facts discovered through excluded confessions can still be used.
@@ -590,6 +601,7 @@ H: Recognition
 P: Recognition of someone known to the witness can be more reliable, but mistakes in recognising close relatives and friends still happen, so a warning is still needed.
 K: Hold a Code D procedure where identification is disputed, and give a Turnbull warning where the case depends on it.
 !: Skipping an identification procedure because the witness "is sure".
+CASE: R v Turnbull [1977] QB 224 | Several appeals involving disputed identification evidence. | The court laid down guidance for directing juries on identification. | The Turnbull warning: special need for caution, and the jury considers the circumstances of the observation (ADVOKATE); weak identification should be withdrawn.
 SUM: Code D requires procedures where identification is disputed.
 SUM: Turnbull requires a warning to the jury.
 SUM: Poor, unsupported identification should be withdrawn from the jury.
@@ -620,6 +632,8 @@ H: Non-defendants (s 100)
 P: A witness's bad character needs the court's leave, unless agreed, and must be important explanatory evidence or have substantial probative value on a matter of substantial importance. Notice must be given under CrimPR Part 21.
 K: Admit a defendant's bad character only through a s 101 gateway, and apply the fairness safeguard to gateways (d) and (g).
 !: Assuming any previous conviction is automatically admissible.
+CASE: R v Hanson [2005] EWCA Crim 824 | Appeals on the use of previous convictions to show propensity under the Criminal Justice Act 2003. | Guidance on propensity: the number, similarity and age of convictions matter; a single conviction may show propensity if distinctive. | The court asks whether the history shows propensity, makes guilt more likely, and whether admitting it is just.
+LAW: Criminal Justice Act 2003, s 101(1) | Evidence of the defendant's bad character is admissible only through one of seven gateways (a) to (g), such as an important matter in issue between defendant and prosecution (d) or an attack on another person's character (g).
 SUM: Bad character is defined in s 98.
 SUM: Section 101 has seven gateways for defendants.
 SUM: Hanson guides propensity; s 100 governs non-defendants.
@@ -652,6 +666,7 @@ H: Cross-examination
 P: Cross-examination tests reliability and credibility and must put the defence case. Advocates must not mislead or ask questions merely to humiliate.
 K: Check whether the witness is competent and compellable, use special measures for vulnerable witnesses, and respect s 41 limits.
 !: Assuming a wife can always be compelled to give evidence against her husband.
+CASE: R v A (No 2) [2001] UKHL 25 | A defendant charged with rape sought to cross-examine the complainant on an alleged previous sexual relationship with him, barred by s 41 YJCEA 1999. | Section 41 was read under the HRA so that evidence needed for a fair trial could be admitted. | Section 41 restrictions on sexual history evidence must yield where exclusion would endanger a fair trial.
 SUM: Most witnesses are competent and compellable; spouses only for specified offences.
 SUM: Special measures and anonymity protect witnesses.
 SUM: Section 41 restricts sexual history evidence.
@@ -682,6 +697,7 @@ H: Practice
 P: Challenge unreliable or speculative science. Miscarriages of justice, such as those involving flawed statistics in infant death cases, show the importance of scrutinising expert evidence.
 K: Admit expert evidence only on matters beyond the jury's knowledge, from a qualified, independent expert, with reliable methods.
 !: Accepting an expert's opinion without examining the reliability of the method.
+CASE: R v Turner [1975] QB 834 | The defence wanted a psychiatrist to say a man without mental illness was likely provoked by his girlfriend's confession of infidelity. | Inadmissible: it was within the jury's own knowledge and experience. | Expert evidence is admissible only on matters outside the ordinary experience of the tribunal of fact.
 SUM: Expert evidence must be beyond ordinary knowledge (Turner).
 SUM: Experts owe a duty to the court under CrimPR Part 19.
 SUM: Reliability must be tested.
@@ -714,6 +730,7 @@ H: Magistrates' trials
 P: In the magistrates' court, the order is similar but there is no jury; the magistrates decide fact and law with their legal adviser, and give reasons.
 K: Know the trial sequence, and apply Galbraith on a submission of no case to answer.
 !: Making a submission of no case to answer just because the defence disputes the witnesses' credibility.
+CASE: R v Galbraith [1981] 1 WLR 1039 | The question was when a judge should stop a case at the close of the prosecution case. | The judge should stop the case only where there is no evidence, or the evidence taken at its highest couldn't properly lead a jury to convict. | The test for a submission of no case to answer.
 SUM: Trials run from prosecution case to defence case to speeches.
 SUM: Galbraith governs no case to answer.
 SUM: The judge sums up before the jury retires.

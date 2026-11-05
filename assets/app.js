@@ -18,7 +18,12 @@ const siteHref = (s) => (s.built ? pathOf(s) : href(s.u));
 const newTab = (s) => (s.built ? "" : ' target="_blank" rel="noopener"');
 // the site's name with its first word in its accent colour ("Med" in MedGradify's blue)
 const nameOf = (s) => `<span class="nm">${nameHtml(s)}${s.tm === false ? "" : "™"}</span>`;
-const isLive = (s) => !!s.built || (!!s.u && !s.soon);
+// release status (kit/core/sites.js): what a learner can actually do there, not how finished it looks
+const statusOf = (s) => s.status || (s.built || (s.u && !s.soon) ? "live" : "soon");
+const STATUS_LABEL = { live: "Live", beta: "Beta", soon: "Coming soon", development: "In development", archived: "Archived", external: "Live" };
+const isLive = (s) => ["live", "external"].includes(statusOf(s));
+// whether there's a page to go to: shells exist (with the shared notes tools) even while "coming soon"
+const canVisit = (s) => !!s.built || (!!s.u && !s.soon);
 const groupLabel = (g) => g.title.replace(/^By /, "").replace(/^./, (c) => c.toUpperCase());
 
 const ICON = {
@@ -38,7 +43,7 @@ function colour(el, s) {
 const ALL = GROUPS.flatMap((g) => g.items.map((s) => ({ ...s, group: g })));
 const byName = new Map(ALL.map((s) => [s.n, s]));
 const total = ALL.length;
-const liveTotal = ALL.filter(isLive).length;
+const liveTotal = ALL.filter((s) => statusOf(s) === "live").length, betaTotal = ALL.filter((s) => statusOf(s) === "beta").length;
 document.querySelectorAll(".js-count").forEach((el) => { el.textContent = total; });
 
 // ---------- Site cards ----------
@@ -54,10 +59,10 @@ for (const g of GROUPS) {
   const grid = $(".grid", sec);
 
   for (const s of g.items) {
-    const live = isLive(s);
+    const live = canVisit(s), st = statusOf(s);
     const featured = s.n.includes("ForgeLab");
     const card = document.createElement("article");
-    card.className = `card glass ${live ? "live" : "soon"}${featured ? " featured" : ""}`;
+    card.className = `card glass ${isLive(s) || st === "beta" ? "live" : "soon"}${featured ? " featured" : ""}`;
     card.id = slug(s.n);
     colour(card, s);
     card.dataset.search = `${s.n} ${s.d} ${s.who || ""} ${g.title} ${KEYWORDS[s.n] || ""}`.toLowerCase();
@@ -68,13 +73,13 @@ for (const g of GROUPS) {
     card.innerHTML = `
       <span class="icon" aria-hidden="true">${mark(s)}</span>
       <span class="body">
-        <span class="status ${live ? "is-live" : "is-soon"}">${live ? "Live" : "Coming soon"}</span>
+        <span class="status is-${st === "external" ? "live" : st}">${STATUS_LABEL[st]}</span>
         <h3>${nameOf(s)}${badge}</h3>
         ${s.who ? `<p class="card-who"><b>For:</b> ${esc(s.who)}</p>` : ""}
         <p>${esc(what)}</p>
         <span class="actions-row">
           ${live
-            ? `<a class="btn btn-light lg btn-sm visit" href="${siteHref(s)}"${newTab(s)} title="${s.built ? `Go to ${esc(s.n)}` : `Opens ${domainOf(s)} in a new tab`}"><span>Visit site</span> <span aria-hidden="true">${s.built ? "→" : "↗"}</span></a>${s.built ? "" : `<span class="domain soon-domain">${domainOf(s)}</span>`}`
+            ? `<a class="btn ${st === "soon" ? "btn-ghost" : "btn-light"} lg btn-sm visit" href="${siteHref(s)}"${newTab(s)} title="${s.built ? `Go to ${esc(s.n)}` : `Opens ${domainOf(s)} in a new tab`}"><span>${st === "soon" ? "Preview" : "Visit site"}</span> <span aria-hidden="true">${s.built ? "→" : "↗"}</span></a>${s.built ? "" : `<span class="domain soon-domain">${domainOf(s)}</span>`}`
             : `<button type="button" class="btn btn-ghost lg btn-sm notify" data-site="${esc(s.n)}"><span>Notify me</span></button>${s.u ? `<span class="domain soon-domain">${domainOf(s)}</span>` : ""}`}
           ${study}
         </span>
@@ -161,13 +166,15 @@ document.addEventListener("click", (e) => {
 // ---------- At a glance: ring + bars ----------
 // One segment per site: live sites in their own colour, the rest in grey
 $("#live-count").textContent = liveTotal;
+$("#beta-count").textContent = betaTotal;
 const segs = $("#ring-segs");
 const C = 2 * Math.PI * 60, seg = C / total, gap = 2.2;
 ALL.forEach((s, i) => {
   const el = document.createElementNS("http://www.w3.org/2000/svg", "circle");
   el.setAttribute("cx", 80); el.setAttribute("cy", 80); el.setAttribute("r", 60);
-  el.setAttribute("class", "seg" + (isLive(s) ? " live" : ""));
-  el.style.stroke = isLive(s) ? "#" + s.c : "rgba(255,255,255,.14)";
+  const lit = statusOf(s) === "live" || statusOf(s) === "beta";
+  el.setAttribute("class", "seg" + (lit ? " live" : ""));
+  el.style.stroke = lit ? (statusOf(s) === "beta" ? `color-mix(in srgb, #${s.c} 55%, transparent)` : "#" + s.c) : "rgba(255,255,255,.14)";
   el.style.setProperty("--c", "#" + s.c);
   el.style.strokeDasharray = `${seg - gap} ${C}`;
   el.style.strokeDashoffset = `${-i * seg}`;
@@ -193,7 +200,7 @@ const rows = $("#start-rows");
 for (const name of START_HERE) {
   const s = byName.get(name);
   if (!s) continue;
-  const live = isLive(s);
+  const live = canVisit(s);
   const r = document.createElement("a");
   r.className = "row inset";
   r.href = live ? siteHref(s) : "#" + slug(s.n);
@@ -201,7 +208,7 @@ for (const name of START_HERE) {
   colour(r, s);
   r.innerHTML = `
     <span class="icon" aria-hidden="true">${mark(s)}</span>
-    <span class="row-txt"><b>${nameOf(s)}</b><span>${esc(s.d.replace(/\.$/, ""))} · <em>${live ? domainOf(s) : "coming soon"}</em></span></span>
+    <span class="row-txt"><b>${nameOf(s)}</b><span>${esc(s.d.replace(/\.$/, ""))} · <em>${statusOf(s) === "live" || statusOf(s) === "external" ? domainOf(s) : STATUS_LABEL[statusOf(s)].toLowerCase()}</em></span></span>
     <span class="go">${ICON.chev}</span>`;
   rows.appendChild(r);
 }
@@ -231,7 +238,7 @@ function showSpot(i) {
   $("#spot-group").textContent = groupLabel(s.group);
   $("#spot-name").innerHTML = nameOf(s);
   $("#spot-desc").textContent = s.d;
-  $("#spot-actions").innerHTML = isLive(s)
+  $("#spot-actions").innerHTML = canVisit(s) && statusOf(s) !== "soon"
     ? `<a class="btn btn-light lg" href="${siteHref(s)}"${newTab(s)}><span>Visit ${esc(s.n)}</span> <span aria-hidden="true">${s.built ? "→" : "↗"}</span></a><span class="spot-domain">${domainOf(s)}</span>`
     : `<a class="btn btn-light lg" href="#${slug(s.n)}"><span>Coming soon</span></a><span class="spot-domain">${s.u ? domainOf(s) : ""}</span>`;
   [...dots.children].forEach((d, j) => d.setAttribute("aria-current", String(j === spotIndex)));
@@ -316,7 +323,7 @@ function suggest() {
     <li role="option" id="sg-${i}" aria-selected="false" data-i="${i}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}">
       <span class="icon" aria-hidden="true">${mark(s)}</span>
       <span class="sg-txt"><b>${nameOf(s)}</b><span>${esc(s.d.replace(/\.$/, ""))} · ${esc(groupLabel(s.group))}</span></span>
-      <em>${isLive(s) ? domainOf(s) : "Coming soon"}</em>
+      <em>${isLive(s) ? domainOf(s) : STATUS_LABEL[statusOf(s)]}</em>
     </li>`).join("");
   sugg.hidden = false;
   q.setAttribute("aria-expanded", "true");

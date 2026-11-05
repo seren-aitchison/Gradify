@@ -35,6 +35,9 @@ O: Distinguish offers from invitations to treat
 O: Apply the rules on when an offer ends
 T: Offer | An expression of willingness to contract on specified terms, intended to bind on acceptance
 T: Invitation to treat | An invitation to others to make offers
+CASE: Carlill v Carbolic Smoke Ball Co [1893] 1 QB 256 | The company advertised £100 to anyone who caught flu after using its smoke ball as directed, and deposited £1,000 to show sincerity. Mrs Carlill used it and caught flu. | The advert was a unilateral offer to the world, accepted by performing the conditions; no notice of acceptance was needed. | An advert can be an offer where it is clear and shows an intention to be bound, and a unilateral offer is accepted by performance.
+CASE: Pharmaceutical Society of Great Britain v Boots Cash Chemists (Southern) Ltd [1953] 1 QB 401 | Boots ran a self-service shop; certain medicines had to be sold under a pharmacist's supervision, who stood at the till. | Goods on display are an invitation to treat; the customer offers at the till and the shop accepts there, so the sale was supervised. | Goods displayed in a shop are an invitation to treat, not an offer.
+CASE: Hyde v Wrench (1840) 3 Beav 334 | Wrench offered to sell a farm for £1,000. Hyde replied offering £950, which was refused, then tried to accept the £1,000 offer. | No contract: the counter-offer rejected and destroyed the original offer. | A counter-offer is a rejection that ends the original offer.
 SUM: Advertisements and displays are usually invitations to treat.
 SUM: Offers end by revocation, rejection, lapse or death.
 SRC: Carlill v Carbolic Smoke Ball Co [1893] 1 QB 256 | case | 1892
@@ -69,6 +72,7 @@ O: State the requirements of a valid acceptance
 O: Resolve battle of the forms problems
 T: Acceptance | Unqualified agreement to all the terms of an offer
 T: Counter-offer | A response that varies the terms, rejecting the original offer
+CASE: Butler Machine Tool Co Ltd v Ex-Cell-O Corp (England) Ltd [1979] 1 WLR 401 | The sellers quoted on terms with a price variation clause; the buyers ordered on their own terms without it, with a tear-off slip the sellers signed and returned. | The contract was on the buyers' terms: the order was a counter-offer, accepted when the sellers returned the slip. | In a battle of the forms, the traditional offer and counter-offer analysis usually applies, often giving the last shot.
 SUM: Acceptance must mirror the offer.
 SUM: In the battle of the forms, the last shot often wins.
 SRC: Butler Machine Tool Co Ltd v Ex-Cell-O Corp (England) Ltd [1979] 1 WLR 401 | case | 1977
@@ -97,6 +101,8 @@ O: Apply the general rule and the postal rule
 O: Apply the rules to instantaneous and electronic communication
 T: Postal rule | Acceptance by post takes effect when posted
 T: Instantaneous communication | Communication where the parties are in effect in each other's presence
+CASE: Adams v Lindsell (1818) 1 B and Ald 681 | The defendants offered wool by letter, misdirected so it arrived late. The claimants posted an acceptance the day they received it; the defendants had already sold the wool. | A contract was made when the acceptance was posted. | The postal rule: where post is a reasonable means of acceptance, acceptance takes effect on posting.
+CASE: Entores Ltd v Miles Far East Corp [1955] 2 QB 327 | An offer was accepted by telex sent from London to Amsterdam. The question was where the contract was made. | Acceptance by instantaneous communication takes effect when and where it is received, so the contract was made in London. | The postal rule doesn't apply to instantaneous communication; acceptance takes effect on receipt.
 SUM: Acceptance usually takes effect when communicated.
 SUM: The postal rule is an exception; instantaneous methods follow the general rule.
 SRC: Adams v Lindsell (1818) 1 B and Ald 681 | case | 1818
@@ -126,6 +132,8 @@ O: Define consideration and state its rules
 O: Apply the rules on part payment of debts and practical benefit
 T: Consideration | Something of value given or promised in return for a promise
 T: Promissory estoppel | An equitable doctrine preventing a promisor from going back on a promise relied on
+CASE: Williams v Roffey Bros and Nicholls (Contractors) Ltd [1991] 1 QB 1 | Main contractors promised a subcontractor extra money to finish carpentry on time, avoiding a penalty clause under the main contract. | The promise was enforceable: the contractors received a practical benefit and there was no duress or fraud. | A practical benefit to the promisor can be consideration for a promise to pay more for an existing contractual duty.
+CASE: Foakes v Beer (1884) 9 App Cas 605 | Mrs Beer agreed to accept payment of a judgment debt by instalments; she then claimed the interest that accrued. | She could recover the interest: part payment of a debt is no consideration for a promise to forgo the rest. | Part payment of a debt doesn't discharge the whole (subject to promissory estoppel and a different performance).
 SUM: Consideration must be sufficient but need not be adequate, and must not be past.
 SUM: Part payment of a debt is not usually good consideration.
 SRC: Williams v Roffey Bros and Nicholls (Contractors) Ltd [1991] 1 QB 1 | case | 1989
@@ -155,6 +163,8 @@ O: State the presumptions about intention
 O: Apply the rules on rebutting each presumption
 T: Domestic presumption | The presumption that family and social agreements aren't intended to be binding
 T: Commercial presumption | The presumption that business agreements are intended to be binding
+CASE: Balfour v Balfour [1919] 2 KB 571 | A husband working abroad promised his wife £30 a month while they lived apart; he stopped paying. | No enforceable contract: arrangements between spouses living together are presumed not to be intended as binding. | Domestic agreements are presumed not to create legal relations.
+CASE: Merritt v Merritt [1970] 1 WLR 1211 | A husband who had left his wife signed an agreement to transfer the house to her once she paid off the mortgage. | The agreement was binding: spouses who have separated are presumed to intend legal relations. | The domestic presumption is rebutted where the parties are separated.
 SUM: Domestic agreements are presumed not binding; commercial ones are presumed binding.
 SUM: Clear evidence can rebut either presumption.
 SRC: Balfour v Balfour [1919] 2 KB 571 | case | 1919
@@ -184,6 +194,7 @@ O: Explain when vague or incomplete agreements fail
 O: Apply the courts' techniques for saving agreements
 T: Agreement to agree | An agreement to make a future agreement, usually unenforceable
 T: Certainty | The requirement that contract terms are clear enough to enforce
+CASE: Walford v Miles [1992] 2 AC 128 | The parties agreed a lock-out, the sellers to deal only with the buyers, and the claimants argued for an implied duty to negotiate in good faith. | An agreement to negotiate in good faith is unenforceable for uncertainty. | Agreements to negotiate are too uncertain to enforce, though a lock-out for a fixed period can be.
 SUM: Courts won't enforce agreements too vague or incomplete to apply.
 SUM: Previous dealings, custom and mechanisms can fill gaps.
 SRC: Scammell and Nephew Ltd v Ouston [1941] AC 251 | case | 1941
@@ -210,6 +221,7 @@ O: Identify the sources and classification of terms
 O: Distinguish terms from representations and apply the principles of interpretation
 T: Term | A promise or obligation forming part of the contract
 T: Contextual interpretation | Reading a contract in light of its background and commercial purpose
+CASE: Arnold v Britton [2015] UKSC 36 | Lease service charge clauses provided for a fixed sum rising by 10% compound each year, which became very large. | The clear words were applied despite the commercially poor result. | Interpretation focuses on the natural meaning of the words in context; commercial common sense can't rewrite clear language.
 SUM: Terms are express or implied and classified by importance.
 SUM: Courts interpret contracts objectively in context.
 SRC: Arnold v Britton [2015] UKSC 36 | case | 2015
@@ -240,6 +252,9 @@ O: Apply the rules on incorporation by signature, notice and course of dealing
 O: Explain the parol evidence rule
 T: Incorporation | Making a term part of the contract
 T: Parol evidence rule | The presumption that a written contract contains all the terms
+CASE: L'Estrange v F Graucob Ltd [1934] 2 KB 394 | A café owner signed an order form for a vending machine without reading the small-print exclusion clause. | She was bound by the clause because she signed the document. | A party who signs a contractual document is bound by its terms, read or not (absent fraud or misrepresentation).
+CASE: Olley v Marlborough Court Ltd [1949] 1 KB 532 | Guests booked a hotel room at reception; a notice excluding liability for lost property was in the bedroom. | The notice wasn't part of the contract: it was seen only after the contract was made. | Terms must be brought to a party's notice before or at the time the contract is made.
+CASE: Interfoto Picture Library Ltd v Stiletto Visual Programmes Ltd [1989] QB 433 | Photographs were lent with a delivery note containing an unusually heavy charge for late return. | The charge wasn't incorporated because it wasn't fairly brought to the hirer's attention. | The more onerous or unusual a term, the more must be done to bring it to the other party's notice.
 SUM: A signature usually binds; notice must be reasonable and given before contracting.
 SUM: Onerous terms need greater notice.
 SRC: L'Estrange v F Graucob Ltd [1934] 2 KB 394 | case | 1934
@@ -267,6 +282,7 @@ O: Identify terms implied by statute, in law and in fact
 O: Apply the test for implying a term in fact
 T: Implied term | A term read into a contract without express agreement
 T: Business efficacy | The test asking whether a term is needed to make the contract work
+CASE: Marks and Spencer plc v BNP Paribas Securities Services Trust Co (Jersey) Ltd [2015] UKSC 72 | A tenant exercised a break clause and sought a refund of rent paid in advance for the period after the break date. | No term was implied for a refund. | A term is implied in fact only if necessary for business efficacy or so obvious it goes without saying, not because it would be reasonable.
 SUM: Terms are implied by statute, in law, in fact, or by custom.
 SUM: Terms implied in fact must be necessary, not merely reasonable.
 SRC: Marks and Spencer plc v BNP Paribas Securities Services Trust Co (Jersey) Ltd [2015] UKSC 72 | case | 2015
@@ -296,6 +312,8 @@ O: Distinguish conditions, warranties and innominate terms
 O: Apply the consequences of breach for each
 T: Condition | An essential term whose breach allows termination
 T: Innominate term | A term whose breach allows termination only if it deprives the party of substantially the whole benefit
+CASE: Hongkong Fir Shipping Co Ltd v Kawasaki Kisen Kaisha Ltd [1962] 2 QB 26 | A chartered ship was unseaworthy because of an incompetent engine crew, losing about 20 weeks of a 24-month charter. | The charterers couldn't terminate: the seaworthiness term was innominate and the breach didn't deprive them of substantially the whole benefit. | For an innominate term, the right to terminate depends on the seriousness of the breach's consequences.
+CASE: Poussard v Spiers (1876) 1 QBD 410 | A singer engaged for an opera fell ill and missed the opening nights. | The producers could treat the contract as ended: her absence went to the root of it. | Breach of a term going to the root of the contract (a condition) allows termination.
 SUM: Breach of condition allows termination; breach of warranty gives damages only.
 SUM: For innominate terms, consequences of the breach decide.
 SRC: Hongkong Fir Shipping Co Ltd v Kawasaki Kisen Kaisha Ltd [1962] 2 QB 26 | case | 1961
@@ -325,6 +343,8 @@ O: Apply the factors courts use to decide whether a statement is a term
 O: Explain the consequences of the classification
 T: Representation | A pre-contract statement that induced the contract but isn't a term
 T: Special knowledge | Expertise that makes a statement more likely to be a term
+CASE: Dick Bentley Productions Ltd v Harold Smith (Motors) Ltd [1965] 1 WLR 623 | A car dealer said a Bentley had done 20,000 miles since a new engine; it had done nearly 100,000. | The statement was a term: the dealer had special knowledge and the buyer relied on it. | A statement by a party with special knowledge is more likely to be a term.
+CASE: Oscar Chess Ltd v Williams [1957] 1 WLR 370 | A private seller, relying on the logbook, told a car dealer the car was a 1948 model; it was a 1939 model. | The statement was a representation, not a term: the dealer had the greater expertise. | Where the maker of a statement has no special knowledge, it is less likely to be a term.
 SUM: Importance, timing, writing and expertise help decide.
 SUM: Breach of a term gives contract remedies; a false representation gives misrepresentation remedies.
 SRC: Bannerman v White (1861) 10 CBNS 844 | case | 1861
@@ -352,6 +372,8 @@ O: State the elements of actionable misrepresentation
 O: Distinguish the types of misrepresentation and their remedies
 T: Misrepresentation | A false statement of fact or law that induces a contract
 T: Rescission | Setting a contract aside and restoring the parties to their former positions
+CASE: Bisset v Wilkinson [1927] AC 177 | A seller of land never used for sheep farming said it would carry 2,000 sheep. | This was an honest opinion, not a statement of fact, so not a misrepresentation. | A genuinely held opinion isn't a false statement of fact, unless the maker had special knowledge implying facts.
+CASE: With v O'Flanagan [1936] Ch 575 | A doctor selling his practice accurately stated its income, but it fell sharply before the contract and he didn't say so. | Failing to correct a statement that had become false was a misrepresentation. | A statement true when made but false by the time of contracting must be corrected.
 SUM: Misrepresentation needs a false statement of fact or law that induces the contract.
 SUM: Silence is not usually misrepresentation, subject to exceptions.
 SRC: Misrepresentation Act 1967 | legislation | 1967 | https://www.legislation.gov.uk/ukpga/1967/7
@@ -381,6 +403,7 @@ O: Apply the Derry v Peek test for fraud
 O: Identify the remedies for fraudulent misrepresentation
 T: Deceit | The tort of fraudulent misrepresentation
 T: Reckless | Careless whether a statement is true or false
+CASE: Derry v Peek (1889) 14 App Cas 337 | Directors stated in a prospectus that the company had the right to use steam trams; consent was needed and was later refused. They honestly believed it. | Not fraud: they honestly believed the statement. | Fraud is a false statement made knowingly, without belief in its truth, or recklessly, careless whether it is true or false.
 SUM: Fraud is a false statement made knowingly, without belief or recklessly.
 SUM: Damages in deceit cover all direct loss.
 SRC: Derry v Peek (1889) 14 App Cas 337 | case | 1889
@@ -406,6 +429,8 @@ O: Apply section 2(1) of the Misrepresentation Act 1967
 O: Compare it with common law negligent misstatement
 T: Section 2(1) | The statutory claim for damages for negligent misrepresentation
 T: Fiction of fraud | Damages under s 2(1) measured as if the misrepresentation were fraudulent
+CASE: Royscot Trust Ltd v Rogerson [1991] 2 QB 297 | A car dealer misstated the price and deposit to a finance company; the buyer later sold the car and defaulted. | Damages under s 2(1) Misrepresentation Act 1967 were assessed as if for fraud, covering all direct loss. | The 'fiction of fraud': s 2(1) damages are measured as for the tort of deceit.
+LAW: Misrepresentation Act 1967, s 2(1) | A party misled into a contract can claim damages for a non-fraudulent misrepresentation unless the maker proves they had reasonable grounds to believe, and did believe up to the contract, that the facts were true.
 SUM: Under s 2(1), the representor must prove reasonable grounds for belief.
 SUM: Hedley Byrne needs a special relationship and assumption of responsibility.
 SRC: Misrepresentation Act 1967, section 2(1) | legislation | 1967 | https://www.legislation.gov.uk/ukpga/1967/7/section/2
@@ -434,6 +459,7 @@ O: Identify remedies for innocent misrepresentation
 O: Apply the bars to rescission and controls on excluding liability
 T: Damages in lieu | Damages awarded instead of rescission under s 2(2)
 T: Bar to rescission | A factor such as affirmation or lapse of time that prevents rescission
+CASE: Leaf v International Galleries [1950] 2 KB 86 | A buyer bought a painting said to be a Constable; five years later he found it wasn't and sought rescission. | Too late: rescission for innocent misrepresentation was barred by lapse of time. | The right to rescind is lost if the claimant delays unreasonably.
 SUM: The main remedy is rescission; damages in lieu are discretionary.
 SUM: Exclusion of liability for misrepresentation must be reasonable.
 SRC: Misrepresentation Act 1967, sections 2(2) and 3 | legislation | 1967 | https://www.legislation.gov.uk/ukpga/1967/7
@@ -461,6 +487,8 @@ O: Describe duress to the person, goods and economic duress
 O: Apply the test for illegitimate pressure
 T: Economic duress | Illegitimate commercial pressure that coerces a contract
 T: Illegitimate pressure | Pressure the law regards as unacceptable
+CASE: Atlas Express Ltd v Kafco (Importers and Distributors) Ltd [1989] QB 833 | A carrier, knowing a small importer depended on its deliveries, demanded a higher minimum charge mid-contract; Kafco agreed under protest. | The new agreement was voidable for economic duress, and also lacked consideration. | Illegitimate commercial pressure leaving no practical alternative can be economic duress.
+CASE: Pakistan International Airline Corp v Times Travel (UK) Ltd [2021] UKSC 40 | PIA cut a travel agent's ticket allocation and threatened termination unless it waived claims for unpaid commission; it agreed. | No lawful act duress: PIA genuinely believed it owed nothing and used no reprehensible means. | Lawful act duress exists but is very narrow, needing morally reprehensible conduct such as manufacturing the other's vulnerability or a bad-faith demand.
 SUM: Duress makes a contract voidable.
 SUM: Lawful act duress is narrowly confined.
 SRC: Times Travel (UK) Ltd v Pakistan International Airline Corp [2021] UKSC 40 | case | 2021
@@ -488,6 +516,7 @@ O: Distinguish actual and presumed undue influence
 O: Apply the Etridge guidance on guarantees
 T: Undue influence | Abuse of a relationship of trust to procure a transaction
 T: Etridge steps | Steps a bank should take to be protected from a surety's undue influence claim
+CASE: Royal Bank of Scotland plc v Etridge (No 2) [2001] UKHL 44 | Eight appeals where wives charged the family home to secure husbands' business debts and alleged undue influence. | Lenders are put on inquiry whenever a wife stands surety for her husband's debts and must take reasonable steps, usually independent legal advice confirmed by a solicitor. | Sets the steps a lender must take where it is put on inquiry in a non-commercial surety case.
 SUM: Undue influence may be actual or presumed.
 SUM: Banks are put on inquiry in non-commercial guarantees.
 SRC: Royal Bank of Scotland plc v Etridge (No 2) [2001] UKHL 44 | case | 2001
@@ -516,6 +545,8 @@ O: Distinguish common, mutual and unilateral mistake
 O: Apply the narrow rules on when mistake makes a contract void
 T: Common mistake | Both parties share the same fundamental mistake
 T: Non est factum | A plea that a signed document is fundamentally different from what was believed
+CASE: Great Peace Shipping Ltd v Tsavliris Salvage (International) Ltd [2002] EWCA Civ 1407 | A ship was chartered to stand by a stricken vessel, both parties believing they were close; they were 410 miles apart. | The contract wasn't void: performance remained possible and the mistake didn't make it essentially different. | Common mistake makes a contract void only where it renders performance impossible or essentially different; there is no equitable jurisdiction to rescind for it.
+CASE: Shogun Finance Ltd v Hudson [2003] UKHL 62 | A rogue used a stolen driving licence to take a car on hire purchase in another man's name, then sold it to Mr Hudson. | The written agreement was with the named man, so void; no title passed to Hudson. | In a written contract, the parties are those identified in it; a mistake about identity there can make the contract void.
 SUM: Mistake rarely makes a contract void.
 SUM: Mistakes about identity are judged differently face to face and at a distance.
 SRC: Great Peace Shipping Ltd v Tsavliris Salvage (International) Ltd [2002] EWCA Civ 1407 | case | 2002
@@ -547,6 +578,7 @@ O: Apply the Patel v Mirza approach to illegality
 O: Assess restraint of trade clauses
 T: Restraint of trade | A clause restricting a party's freedom to work or trade
 T: Range of factors | The Patel v Mirza approach weighing purpose, policy and proportionality
+CASE: Patel v Mirza [2016] UKSC 42 | Patel paid Mirza £620,000 to bet on bank shares using insider information; it didn't happen, and Patel sued to recover the money. | He could recover: denying restitution wouldn't serve the policies behind the illegality rule. | The illegality defence turns on the purpose of the rule broken, other relevant policies and proportionality (the 'range of factors' approach).
 SUM: Courts ask whether enforcement would harm the integrity of the legal system.
 SUM: Restraints must protect a legitimate interest and be reasonable.
 SRC: Patel v Mirza [2016] UKSC 42 | case | 2016
@@ -575,6 +607,8 @@ O: State the privity rule
 O: Identify exceptions and ways round it
 T: Privity | Only parties to a contract can enforce it or be bound by it
 T: Collateral contract | A separate contract that sits alongside the main one
+CASE: Tweddle v Atkinson (1861) 1 B and S 393 | Two fathers agreed to pay the groom on his marriage; one died without paying, and the groom sued his estate. | He couldn't sue: he was not a party and gave no consideration. | Only a party to a contract can enforce it (subject now to the Contracts (Rights of Third Parties) Act 1999).
+CASE: Beswick v Beswick [1968] AC 58 | A nephew promised his uncle to pay the uncle's widow a weekly annuity in return for the uncle's business, then stopped paying. | The widow couldn't sue in her own right, but as administratrix of the estate she obtained specific performance. | Privity bars a third party's claim, but the promisee (or estate) may get specific performance for the third party.
 SUM: Third parties traditionally can't enforce a contract.
 SUM: The 1999 Act, agency, trusts and collateral contracts provide exceptions.
 SRC: Tweddle v Atkinson (1861) 1 B and S 393 | case | 1861
@@ -607,6 +641,7 @@ O: Apply the three-step approach to exclusion clauses
 O: Apply the contra proferentem and negligence construction rules
 T: Exclusion clause | A clause excluding or limiting liability
 T: Contra proferentem | Ambiguity is construed against the party relying on the clause
+CASE: Photo Production Ltd v Securicor Transport Ltd [1980] AC 827 | A Securicor patrolman deliberately started a fire that destroyed the factory he was guarding; the contract had a broad exclusion clause. | The clause protected Securicor: there is no rule that a fundamental breach defeats an exclusion clause. | Whether an exclusion clause covers a breach is a question of construction, not a rule of law.
 SUM: Check incorporation, construction, then statute.
 SUM: Clear words are needed to exclude negligence.
 SRC: Canada Steamship Lines Ltd v The King [1952] AC 192 | case | 1952
@@ -634,6 +669,8 @@ O: Identify UCTA's key sections and scope
 O: Apply the reasonableness test
 T: Reasonableness test | The UCTA test of whether a term was fair and reasonable
 T: Business liability | Liability arising in the course of a business
+LAW: Unfair Contract Terms Act 1977, s 2 | Business liability for death or personal injury caused by negligence can't be excluded or restricted; liability for other loss caused by negligence can be only so far as the term is reasonable.
+LAW: Unfair Contract Terms Act 1977, s 11 | The reasonableness test: the term must be fair and reasonable having regard to the circumstances known to, or in the contemplation of, the parties when the contract was made.
 SUM: Some exclusions are void; others must be reasonable.
 SUM: UCTA mainly covers business-to-business contracts.
 SRC: Unfair Contract Terms Act 1977 | legislation | 1977 | https://www.legislation.gov.uk/ukpga/1977/50
@@ -665,6 +702,8 @@ O: Describe statutory rights for goods, digital content and services
 O: Apply the fairness test for unfair terms
 T: Trader | A person acting for purposes relating to their business
 T: Short-term right to reject | A consumer's right to reject faulty goods within 30 days
+CASE: ParkingEye Ltd v Beavis [2015] UKSC 67 | A shopping car park allowed two hours free, then charged £85; Mr Beavis overstayed. | The charge was not a penalty (nor unfair under the consumer regulations): it protected a legitimate interest in managing the car park. | A clause is penal if it imposes a detriment out of all proportion to any legitimate interest of the innocent party in performance.
+LAW: Consumer Rights Act 2015, s 9 | Goods supplied under a trader-to-consumer contract must be of satisfactory quality: meeting the standard a reasonable person would consider satisfactory, taking account of description, price and other circumstances.
 SUM: The CRA sets statutory rights and remedies for consumers.
 SUM: Unfair terms aren't binding on consumers.
 SRC: Consumer Rights Act 2015 | legislation | 2015 | https://www.legislation.gov.uk/ukpga/2015/15
@@ -698,6 +737,8 @@ O: State the strict rule of exact performance
 O: Apply the exceptions, including substantial performance
 T: Entire obligation | An obligation that must be completely performed before payment is due
 T: Substantial performance | Performance with minor defects allowing payment less a deduction
+CASE: Cutter v Powell (1795) 6 Term Rep 320 | A second mate was promised a lump sum on completing a voyage; he died before it ended. | His widow recovered nothing: the contract was entire and wasn't completed. | Under the strict performance rule, an entire obligation must be completely performed before payment is due.
+CASE: Hoenig v Isaacs [1952] 2 All ER 176 | A decorator furnished a flat for £750; there were minor defects costing about £56 to fix. | Substantial performance: he could recover the price less the cost of remedying the defects. | Where a contract is substantially performed, the price is payable less a deduction for defects.
 SUM: Performance must generally be exact.
 SUM: Divisible contracts, substantial performance and acceptance of partial performance soften the rule.
 SRC: Cutter v Powell (1795) 6 Term Rep 320 | case | 1795
@@ -751,6 +792,8 @@ O: Identify anticipatory breach
 O: Apply the innocent party's options and their effect on damages
 T: Anticipatory breach | A clear indication before performance is due that a party won't perform
 T: Mitigation | The innocent party's duty to take reasonable steps to reduce loss
+CASE: Hochster v De La Tour (1853) 2 E and B 678 | A courier was engaged to start in June; in May the employer said he wouldn't be needed. | The courier could sue at once, without waiting for June. | On an anticipatory repudiation, the innocent party may accept it and sue immediately.
+CASE: White and Carter (Councils) Ltd v McGregor [1962] AC 413 | A garage cancelled an advertising contract the day it was made; the advertisers displayed the adverts anyway and sued for the price. | They could affirm, perform and claim the full price. | An innocent party may affirm and perform if it can do so without the other's cooperation and has a legitimate interest.
 SUM: The innocent party may accept the repudiation or affirm.
 SUM: Affirming carries risks, as White and Carter shows.
 SRC: Hochster v De La Tour (1853) 2 E and B 678 | case | 1853
@@ -776,6 +819,9 @@ O: Identify categories of frustrating event and limits on the doctrine
 O: Apply the Law Reform (Frustrated Contracts) Act 1943
 T: Frustration | Discharge of a contract by a supervening event making performance impossible or radically different
 T: Self-induced frustration | Frustration caused by a party's own choice, which doesn't discharge the contract
+CASE: Taylor v Caldwell (1863) 3 B and S 826 | A music hall hired for concerts burned down before the concert dates, without either party's fault. | The contract was discharged: performance had become impossible. | A contract is frustrated where the subject matter is destroyed without fault, making performance impossible.
+CASE: Krell v Henry [1903] 2 KB 740 | Rooms were hired for days to watch Edward VII's coronation procession, which was cancelled. | The contract was frustrated: the procession was the foundation of the contract. | Frustration can occur when the common purpose at the root of the contract fails.
+LAW: Law Reform (Frustrated Contracts) Act 1943, s 1 | After frustration, money paid before it is recoverable and money payable ceases to be payable, subject to the court allowing expenses; a party who obtained a valuable benefit may have to pay a just sum.
 SUM: Frustration is narrow and requires no fault.
 SUM: The 1943 Act adjusts the parties' positions after frustration.
 SRC: Taylor v Caldwell (1863) 3 B and S 826 | case | 1863
@@ -807,6 +853,7 @@ O: Identify the range of remedies for breach
 O: Choose the appropriate remedy for a situation
 T: Expectation interest | Putting the claimant where they'd be if the contract had been performed
 T: Equitable remedy | A discretionary remedy such as specific performance or an injunction
+CASE: Robinson v Harman (1848) 1 Ex 850 | The defendant granted a lease he had no power to grant. | Damages put the claimant in the position as if the contract had been performed. | Contract damages protect the expectation interest.
 SUM: Damages are the primary remedy, available as of right.
 SUM: Equitable remedies are discretionary.
 SRC: Robinson v Harman (1848) 1 Ex 850 | case | 1848
@@ -834,6 +881,8 @@ O: Apply the measures of contract damages
 O: Apply remoteness, mitigation and other limits
 T: Remoteness | The limit on recoverable loss to what was within reasonable contemplation
 T: Reliance loss | Wasted expenditure incurred in reliance on the contract
+CASE: Hadley v Baxendale (1854) 9 Exch 341 | A carrier delayed delivering a broken mill shaft; the mill stood idle because there was no spare, which the carrier didn't know. | Lost profits weren't recoverable: they didn't arise naturally and weren't in the parties' contemplation. | Remoteness: recoverable loss is that arising naturally from the breach, or in both parties' reasonable contemplation when contracting.
+CASE: Ruxley Electronics and Construction Ltd v Forsyth [1996] AC 344 | A swimming pool was built shallower than specified, though still safe and not reduced in value. Rebuilding would cost £21,560. | The cost of cure was unreasonable; £2,500 was awarded for loss of amenity. | Cost of cure isn't awarded where it is out of all proportion to the benefit; loss of amenity may be compensated.
 SUM: Damages usually protect the expectation interest.
 SUM: Recovery is limited by remoteness, causation and mitigation.
 SRC: Hadley v Baxendale (1854) 9 Exch 341 | case | 1854
@@ -864,6 +913,7 @@ O: Explain when specific performance is available
 O: Apply the bars to specific performance
 T: Specific performance | An order compelling a party to perform the contract
 T: Constant supervision | A ground for refusing orders requiring ongoing court oversight
+CASE: Co-operative Insurance Society Ltd v Argyll Stores (Holdings) Ltd [1998] AC 1 | A supermarket tenant breached a covenant to keep the store open in a shopping centre. | No specific performance: the court won't order a business to be carried on, needing constant supervision. | Specific performance is generally refused where performance would need ongoing court supervision.
 SUM: Specific performance is granted where damages are inadequate.
 SUM: It is discretionary and subject to bars.
 SRC: Co-operative Insurance Society Ltd v Argyll Stores (Holdings) Ltd [1998] AC 1 | case | 1997
@@ -891,6 +941,7 @@ O: Distinguish types of injunction
 O: Apply the rules on negative promises in personal service contracts
 T: Prohibitory injunction | An order to refrain from doing something
 T: Damages in lieu | Damages awarded instead of an injunction
+CASE: Warner Bros Pictures Inc v Nelson [1937] 1 KB 209 | Bette Davis agreed to act only for Warner Bros for a period, then contracted to act for another company. | An injunction restrained her from acting for others; it didn't compel her to work for Warner Bros. | A negative covenant in a personal services contract can be enforced by injunction if it doesn't in effect compel performance.
 SUM: Injunctions can enforce negative promises.
 SUM: Courts won't indirectly compel personal service.
 SRC: Lumley v Wagner (1852) 1 De GM and G 604 | case | 1852
@@ -916,6 +967,7 @@ O: Apply the unjust enrichment framework
 O: Identify unjust factors, remedies and defences
 T: Unjust enrichment | Enrichment at the claimant's expense in circumstances the law regards as unjust
 T: Change of position | A defence where the defendant has changed position in good faith
+CASE: Lipkin Gorman v Karpnale Ltd [1991] 2 AC 548 | A solicitor partner gambled away client money at a casino; the firm sued the casino. | The casino had to repay the money, less its winnings paid out, as it gave no valid consideration (gaming contracts were then void). | Unjust enrichment is recognised in English law, and change of position is a defence.
 SUM: Restitution reverses unjust enrichment.
 SUM: Failure of basis and mistake are key unjust factors.
 SRC: Lipkin Gorman v Karpnale Ltd [1991] 2 AC 548 | case | 1991

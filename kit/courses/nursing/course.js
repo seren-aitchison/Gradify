@@ -37,6 +37,14 @@ export default {
   // the schools whose notes are written so far (tests/courses.test.mjs checks this matches notes/)
   written: ["u01", "u02", "u03", "u04", "u05", "u06", "u07", "u08", "u09", "u10", "u11", "u12", "u13", "u14", "u15", "u16", "u17"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
+  // School 2 lessons linked to the 3D body (kit/models/viewer.js): open the model on one system with a
+  // find-the-structure or name-the-structure quiz. "" opens every system.
+  anatomy3d: { href: "../3d.html", lessons: {
+    "u02-01": "", "u02-05": "skeletal", "u02-06": "muscular", "u02-07": "nervous", "u02-08": "nervous", "u02-09": "nervous",
+    "u02-10": "cardiovascular", "u02-11": "cardiovascular", "u02-12": "respiratory", "u02-13": "respiratory",
+    "u02-14": "digestive", "u02-15": "digestive", "u02-16": "urinary", "u02-17": "urinary", "u02-18": "endocrine",
+    "u02-20": "lymphatic", "u02-21": "lymphatic",
+  } },
   extras: [
     ["The body in 3D", "Every body system you'll care for, in 3D.", "../3d.html"],
     ["Learning map", "Every NurseGradify subject on one map.", "../map.html"],

@@ -146,3 +146,13 @@ Expert review flags for this batch:
 - The course-wide notice stays, and the "How the content is made" section shows review progress.
 - What still needs checking is bookmarked in `docs/qa/nursing-review-queue.md`, which `npm run qa` regenerates: the stages each school is missing (content review, source check, expert sign-off), plus lesson-by-lesson priority flags.
 - Record completed checks in `kit/courses/nursing/qa.js`.
+
+## Status: interactive anatomy (2026-11-05)
+
+- The 3D body (`nursegradify/3d.html`, `kit/models/viewer.js`) now has two quizzes:
+  - **find the structure** (click the named part);
+  - **name the structure** (the part is highlighted; choose its name from four, preferring others from the same system).
+- Deep links (`3d.html?system=cardiovascular&quiz=name`) open the model showing one system with a quiz running.
+- 17 School 2 lessons have a "Practise in 3D" panel linking to their system (`anatomy3d` in `kit/courses/nursing/course.js`).
+- Labels are hidden while a quiz runs.
+- Quiz results are logged to the account's activity with the mode and the system.

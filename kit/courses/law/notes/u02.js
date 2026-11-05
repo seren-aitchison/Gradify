@@ -57,6 +57,7 @@ H: Breaches
 P: Breach of a convention may cause political consequences, such as a minister's resignation, but no legal remedy. Some argue important conventions should be codified.
 K: Conventions bind politically, not legally; courts recognise but don't enforce them.
 !: Arguing that the Sewel convention is legally enforceable because it appears in the Scotland Act.
+CASE: R (Miller) v Secretary of State for Exiting the European Union [2017] UKSC 5 | The government planned to give notice under Article 50 to leave the EU using prerogative powers. | An Act of Parliament was needed, because withdrawal would change domestic law and remove rights; the Sewel Convention wasn't legally enforceable. | The prerogative can't be used to change domestic law or rights, and conventions are not enforced by courts.
 SUM: Conventions are non-legal but politically binding rules.
 SUM: Jennings' test identifies them.
 SUM: Courts recognise but don't enforce them (Miller).
@@ -84,6 +85,7 @@ H: Significance
 P: The doctrine qualifies the traditional rule of implied repeal and points to an emerging hierarchy within the UK's flexible constitution, while preserving Parliament's power to change the law expressly.
 K: Constitutional statutes resist implied repeal; Parliament must amend them expressly.
 !: Assuming constitutional statutes can never be changed: they can, but only by clear words.
+CASE: R (HS2 Action Alliance Ltd) v Secretary of State for Transport [2014] UKSC 3 | Objectors argued that EU directives required greater scrutiny of the HS2 hybrid Bill than Parliament's procedures gave. | The challenge failed; the court mustn't question Parliament's internal procedures. | There may be fundamental constitutional principles (such as article 9 of the Bill of Rights) that EU law can't be taken to abrogate.
 SUM: Constitutional statutes deal with fundamental relationships and rights.
 SUM: Thoburn says they aren't impliedly repealed.
 SUM: HS2 confirms a hierarchy of constitutional instruments.
@@ -112,6 +114,7 @@ H: Ouster clauses
 P: R (Privacy International) v Investigatory Powers Tribunal [2019] UKSC 22 read down an ouster clause, with Lord Carnwath suggesting the rule of law may limit Parliament's ability to exclude judicial review entirely. Parliament has since drafted more explicit ousters (for example, in the Judicial Review and Courts Act 2022).
 K: Sovereignty survived EU membership through statute, and courts read ouster clauses narrowly; obiter limits remain untested.
 !: Treating the Jackson obiter as settled law that courts can strike down Acts.
+CASE: R (Privacy International) v Investigatory Powers Tribunal [2019] UKSC 22 | A statute said the Investigatory Powers Tribunal's decisions 'shall not be subject to appeal or be liable to be questioned in any court'. | The ouster clause didn't protect decisions vitiated by errors of law. | Ouster clauses are read narrowly, and courts presume Parliament doesn't intend to exclude review for errors of law.
 SUM: Factortame disapplied an Act under EU law.
 SUM: Brexit ended EU supremacy for new law.
 SUM: Courts read ousters narrowly (Privacy International).
@@ -141,6 +144,7 @@ H: Bingham's principles
 P: Lord Bingham's The Rule of Law (2010) set out eight principles, including accessible law, equality, protection of human rights, fair trials and compliance with international law; courts and commentators often use them.
 K: Courts enforce the rule of law through the principle of legality and by protecting access to courts.
 !: Assuming general statutory words can override fundamental rights without clear language.
+CASE: R (Evans) v Attorney General [2015] UKSC 21 | The Attorney General vetoed a tribunal's decision that Prince Charles's letters to ministers should be disclosed under FOI. | The veto was unlawful: a minister can't override a judicial decision merely because he disagrees with it. | The rule of law limits the use of an executive power to override judicial decisions.
 SUM: The principle of legality protects fundamental rights (Simms).
 SUM: Access to justice is a constitutional right (UNISON).
 SUM: Executive overrides of courts need clear authority (Evans).
@@ -170,6 +174,8 @@ H: Evaluation
 P: Critics argue Miller II brought the courts into politics; supporters say it protected parliamentary sovereignty and accountability. Either way, the cases show the separation of powers working through judicial review.
 K: Courts police the boundaries: ministers are subject to the law, the prerogative can't frustrate statute, and prorogation can't stop Parliament without justification.
 !: Assuming ministers are immune from court orders because they act for the Crown.
+CASE: R v Secretary of State for the Home Department, ex p Fire Brigades Union [1995] 2 AC 513 | The Home Secretary introduced a new tariff scheme for criminal injuries compensation using the prerogative instead of bringing statutory provisions into force. | Unlawful: he couldn't use the prerogative to frustrate a scheme Parliament had enacted. | The executive can't use the prerogative to undermine Parliament's legislative intention.
+CASE: R (Miller) v The Prime Minister [2019] UKSC 41 | The Prime Minister advised the Queen to prorogue Parliament for five weeks in the run-up to the Brexit deadline. | The prorogation was unlawful and of no effect. | A prorogation is unlawful if it frustrates Parliament's constitutional functions without reasonable justification.
 SUM: M v Home Office: ministers are subject to contempt jurisdiction.
 SUM: Fire Brigades Union: prerogative can't frustrate statute.
 SUM: Miller II: prorogation is reviewable.
@@ -202,6 +208,7 @@ H: Controls
 P: Executive power is controlled by Parliament (questions, committees, votes), the courts (judicial review), and codes such as the Ministerial Code and Civil Service Code.
 K: Executive power comes from statute, prerogative and the third source; Carltona lets officials act for ministers.
 !: Assuming every decision must be taken personally by the minister named in a statute.
+CASE: Carltona Ltd v Commissioners of Works [1943] 2 All ER 560 | A factory was requisitioned in wartime by an official acting in the minister's name. | Valid: the official's decision was the minister's. | The Carltona principle: officials may exercise a minister's powers on the minister's behalf.
 SUM: The executive comprises Crown, PM, Cabinet, ministers and civil servants.
 SUM: Powers come from statute, prerogative and the third source.
 SUM: Carltona allows officials to act for ministers.
@@ -232,6 +239,8 @@ H: Judicial review
 - Prorogation was held justiciable in Miller II [2019] UKSC 41; the prerogative of mercy has been reviewed (R v Secretary of State for the Home Department, ex p Bentley [1994] QB 349).
 K: The prerogative is a residual power, displaced by statute, unable to change domestic law, and reviewable depending on subject matter.
 !: Assuming prerogative powers are immune from judicial review.
+CASE: Attorney-General v De Keyser's Royal Hotel Ltd [1920] AC 508 | The Crown took possession of a hotel in wartime and claimed it needn't pay compensation under the prerogative. | Compensation was payable under the statute covering the same ground. | Where statute covers the same ground as a prerogative power, the prerogative is placed in abeyance.
+CASE: Council of Civil Service Unions v Minister for the Civil Service [1985] AC 374 | Staff at GCHQ were banned from trade union membership by an order under the prerogative, without consultation. | Prerogative powers are reviewable, but national security outweighed the expectation of consultation. | Exercises of the prerogative can be judicially reviewed, depending on their subject matter.
 SUM: Prerogatives include foreign affairs, defence and mercy.
 SUM: Statute displaces prerogative (De Keyser).
 SUM: GCHQ made many prerogative powers reviewable.
@@ -264,6 +273,8 @@ H: Effectiveness
 P: Scrutiny is limited by government majorities, time and resources, but select committees have grown in influence since the 2010 reforms that elected their chairs.
 K: Parliament scrutinises through questions, debates and committees; privilege protects its proceedings, but not crimes.
 !: Assuming parliamentary privilege protects MPs from prosecution for false expenses claims.
+CASE: R v Chaytor [2010] UKSC 52 | MPs charged with false accounting over expenses claimed parliamentary privilege. | Privilege didn't apply: submitting expenses claims isn't part of proceedings in Parliament. | Article 9 of the Bill of Rights protects core parliamentary business, not MPs' ordinary administrative actions.
+LAW: Bill of Rights 1689, article 9 | The freedom of speech and debates or proceedings in Parliament ought not to be impeached or questioned in any court or place out of Parliament.
 SUM: Questions, debates and committees scrutinise the government.
 SUM: Specialist committees examine human rights and delegated powers.
 SUM: Privilege protects proceedings but not crimes (Chaytor).
@@ -294,6 +305,8 @@ H: Current tensions
 P: The UK Internal Market Act 2020 and the use of s 35 of the Scotland Act to block the Gender Recognition Reform (Scotland) Bill in 2023 have increased friction between Westminster and the devolved governments.
 K: Each devolution statute sets competence; acts outside it are not law, and Westminster remains sovereign.
 !: Assuming Westminster can't legislate on devolved matters: it legally can, though convention restrains it.
+CASE: Reference by the Lord Advocate of devolution issues [2022] UKSC 31 | The Scottish Government proposed a Bill for an advisory referendum on Scottish independence. | The Bill would relate to the reserved matters of the Union and the UK Parliament, so was outside the Scottish Parliament's competence. | A provision 'relates to' a reserved matter if it has more than a loose or consequential connection, including its practical effects.
+LAW: Scotland Act 1998, s 29 | An Act of the Scottish Parliament is not law so far as any provision is outside its legislative competence, for example relating to reserved matters or incompatible with Convention rights.
 SUM: Scotland, Wales and Northern Ireland each have devolution statutes.
 SUM: Acts outside competence are not law.
 SUM: Westminster retains legal power, restrained by Sewel.
@@ -420,6 +433,8 @@ H: Evaluation
 P: The HRA creates a "dialogue" between courts and Parliament. Governments have usually responded to declarations, but the UK has resisted some Strasbourg rulings (for example, prisoner voting).
 K: Courts interpret compatibly (s 3), declare incompatibility if they can't (s 4), and public authorities must act compatibly (s 6), while Parliament keeps the final word.
 !: Saying the courts can strike down Acts incompatible with Convention rights.
+CASE: A v Secretary of State for the Home Department [2004] UKHL 56 | Foreign nationals suspected of terrorism were detained indefinitely without trial under emergency legislation. | A declaration of incompatibility: detention was disproportionate and discriminated on nationality. | Courts scrutinise even national security measures for proportionality and discrimination under the HRA.
+LAW: Human Rights Act 1998, ss 3 and 4 | Legislation must be read and given effect compatibly with Convention rights so far as it is possible (s 3); if it can't be, higher courts may make a declaration of incompatibility, which doesn't affect its validity (s 4).
 SUM: Sections 3 and 4 balance interpretation and sovereignty.
 SUM: Section 6 binds public authorities.
 SUM: Declarations leave Parliament the final say.
@@ -485,6 +500,7 @@ H: Recent reform
 P: The Judicial Review and Courts Act 2022 introduced suspended and prospective-only quashing orders and ousted judicial review of Upper Tribunal permission decisions (reversing Cart).
 K: Judicial review challenges the lawfulness of public decisions, using CPR Part 54, promptly and within three months, with permission.
 !: Bringing judicial review to argue that a lawful decision was simply wrong on the merits.
+CASE: R v Panel on Take-overs and Mergers, ex p Datafin plc [1987] QB 815 | A company sought judicial review of the Takeover Panel, a non-statutory self-regulating body. | The Panel's decisions were reviewable: it performed public functions. | Judicial review depends on the nature of the function, not only the source of the power.
 SUM: Judicial review supervises public decision-making.
 SUM: Time limit: promptly and within three months.
 SUM: Permission and standing filter claims.
@@ -515,6 +531,7 @@ H: Using the grounds
 P: Claims often plead several grounds. Identify the decision, the power used, and each alleged error, then match each to a ground with authority.
 K: Classify errors as illegality, irrationality or procedural impropriety (plus proportionality and HRA grounds where relevant).
 !: Pleading irrationality where the real complaint is that the decision-maker misread the statute (illegality).
+CASE: Associated Provincial Picture Houses Ltd v Wednesbury Corporation [1948] 1 KB 223 | A council licensed Sunday cinema opening on the condition that no children under 15 were admitted. | The condition was lawful. | Wednesbury unreasonableness: a decision so unreasonable that no reasonable authority could have made it.
 SUM: GCHQ set out three grounds.
 SUM: Proportionality applies in HRA cases.
 SUM: Claims often combine grounds.
@@ -543,6 +560,7 @@ H: Applying the forms
 P: In a problem, identify the statutory power and its purpose first, then test each step of the decision: did the body understand the law, use the power for its proper purpose, consider what it had to and ignore what it shouldn't, keep an open mind, and make the decision itself?
 K: Ask whether the decision-maker understood its powers and used them for the right purpose, with the right considerations and without fettering or improper delegation.
 !: Assuming a lawful policy can be applied rigidly without considering exceptions.
+CASE: Anisminic Ltd v Foreign Compensation Commission [1969] 2 AC 147 | A statute said that the Commission's determinations shall not be called in question in any court. | The courts could review the determination, which was a nullity for error of law. | Errors of law make a decision a nullity, so an ouster clause protecting 'determinations' doesn't protect it.
 SUM: Illegality includes error of law and improper purpose.
 SUM: Relevant and irrelevant considerations matter (Pergau Dam).
 SUM: Fettering and unlawful delegation are illegality.
@@ -602,6 +620,8 @@ H: Consultation
 - Gunning principles (R v Brent LBC, ex p Gunning (1985) 84 LGR 168): consult at a formative stage; give sufficient reasons; allow adequate time; and conscientiously consider responses. Approved in R (Moseley) v Haringey LBC [2014] UKSC 56.
 K: Decisions must follow required procedures, be free of actual or apparent bias, and give a fair hearing appropriate to the context.
 !: Assuming fairness always requires an oral hearing: it depends on context.
+CASE: R v Secretary of State for the Home Department, ex p Doody [1994] 1 AC 531 | Mandatory life prisoners weren't told the judges' recommendations or the Home Secretary's reasons for their minimum terms. | They were entitled to know and make representations, and to be given reasons. | Fairness depends on context; here it required disclosure, representations and reasons.
+CASE: R (Moseley) v Haringey LBC [2014] UKSC 56 | A council consulted on a council tax reduction scheme without mentioning alternatives. | The consultation was unfair. | Consultation must be at a formative stage, give sufficient reasons, allow adequate time, and be conscientiously considered (the Gunning principles).
 SUM: Statutory procedures must be followed as Parliament intended.
 SUM: Bias may be automatic or apparent (Porter v Magill).
 SUM: Fair hearings and proper consultation are required.
@@ -633,6 +653,7 @@ H: Remedies
 P: The court may require the promised procedure, require the body to honour the promise, or require it to reconsider taking the expectation into account.
 K: A clear, unqualified promise or practice can create a legitimate expectation; frustrating a substantive one must not be an abuse of power.
 !: Relying on a vague or qualified statement as creating a legitimate expectation.
+CASE: R v North and East Devon Health Authority, ex p Coughlan [2001] QB 213 | A severely disabled woman was promised a 'home for life' at a care home; the authority later decided to close it. | Breaking the promise was so unfair as to be an abuse of power. | A clear and unambiguous promise can create a substantive legitimate expectation that the court will enforce.
 SUM: Expectations can be procedural or substantive.
 SUM: The promise must be clear and unqualified.
 SUM: Coughlan protects substantive expectations against abuse of power.
@@ -663,6 +684,8 @@ H: Deference
 P: Courts give appropriate weight to the decision-maker's expertise and democratic accountability, especially on social and economic policy, while still applying the structured test.
 K: In rights cases, apply the four Bank Mellat questions; proportionality is more intense than Wednesbury.
 !: Applying only Wednesbury where a qualified Convention right is engaged.
+CASE: R (Daly) v Secretary of State for the Home Department [2001] UKHL 26 | Prisoners' cells were searched with legal correspondence examined in their absence. | The blanket policy was unlawful: it infringed the right to legal privilege more than necessary. | Proportionality, where Convention rights are engaged, is more intensive than Wednesbury review.
+CASE: Bank Mellat v HM Treasury (No 2) [2013] UKSC 39 | The Treasury directed UK financial institutions to stop dealing with an Iranian bank because of nuclear proliferation concerns. | The direction was disproportionate (and unfair for lack of notice). | Lord Reed's four-stage proportionality test: legitimate aim, rational connection, less intrusive means, and fair balance.
 SUM: Bank Mellat sets a four-stage test.
 SUM: Proportionality is more intense than Wednesbury (Daly).
 SUM: It isn't yet a general common law ground (Keyu).
@@ -692,6 +715,8 @@ H: Busybodies
 P: Courts won't hear claims from people with no real interest who are simply meddling, but the threshold is generous for serious public issues.
 K: Judicial review needs sufficient interest, generously applied; HRA claims need a victim.
 !: Assuming a pressure group can never bring judicial review.
+CASE: Walton v Scottish Ministers [2012] UKSC 44 | A local objector challenged a road scheme on environmental grounds. | He had standing, though the challenge failed. | 'Sufficient interest' can include a person with a genuine concern in an environmental matter, even without being personally affected.
+LAW: Senior Courts Act 1981, s 31(3) | Leave (permission) to apply for judicial review is granted only if the court considers the applicant has a sufficient interest in the matter.
 SUM: Standing is a sufficient interest (s 31(3)).
 SUM: Pressure groups often have standing.
 SUM: HRA claims require a victim (s 7).
@@ -720,6 +745,7 @@ H: Deference and statutory ousters
 P: Even where reviewable, courts defer heavily on national security and foreign policy. Statute can also limit review, as in the Dissolution and Calling of Parliament Act 2022, s 3, though courts read ousters strictly.
 K: Justiciability now depends on the issue in each case; courts review legal limits but defer on high policy.
 !: Assuming any prerogative decision is automatically non-justiciable.
+CASE: R (Abbasi) v Secretary of State for Foreign and Commonwealth Affairs [2002] EWCA Civ 1598 | A British national held at Guantánamo Bay sought to compel the government to make representations for him. | No order: foreign relations are for the executive, though the decision whether to consider his request was reviewable. | Matters of foreign policy are largely non-justiciable, but the process of decision can be reviewed.
 SUM: GCHQ listed non-justiciable areas.
 SUM: Courts now decide case by case (Bentley; Miller II).
 SUM: Deference remains strong on security and foreign affairs.
@@ -810,6 +836,8 @@ H: Judicial review amenability
 P: A similar functional approach applies to judicial review (Datafin), but the tests aren't identical. Parliament isn't a public authority under the HRA.
 K: Core authorities are always bound; hybrid bodies only for public functions, judged by the Aston Cantlow factors.
 !: Assuming a private company is never bound by the HRA.
+CASE: YL v Birmingham City Council [2007] UKHL 27 | An elderly woman's care home place, funded by the council, was provided by a private company that sought to move her. | The company wasn't exercising functions of a public nature under s 6. | Private care providers weren't public authorities (later reversed for regulated care by the Care Act 2014, s 73).
+LAW: Human Rights Act 1998, s 6 | It is unlawful for a public authority to act incompatibly with a Convention right; public authorities include courts and any person certain of whose functions are of a public nature.
 SUM: Core public authorities are bound in all acts.
 SUM: Hybrid bodies are bound only for public functions.
 SUM: YL was reversed for regulated care by the Care Act 2014.
@@ -906,6 +934,7 @@ H: Emergency and executive power
 P: The COVID-19 pandemic saw extensive use of secondary legislation with limited scrutiny (R (Dolan) v Secretary of State for Health and Social Care [2020] EWCA Civ 1605). Critics warn of executive dominance and skeleton bills; supporters stress democratic accountability through elections.
 K: Current challenges centre on the Union, relations between government and courts, human rights, and executive power.
 !: Treating a political controversy as settled law without checking the latest legislation and cases.
+CASE: R (AAA) v Secretary of State for the Home Department [2023] UKSC 42 | The government planned to remove asylum seekers to Rwanda for their claims to be decided there. | Unlawful: there was a real risk of refoulement to the countries they had fled. | Removal is unlawful where there are substantial grounds for believing a person faces a real risk of ill-treatment through refoulement.
 SUM: Brexit and devolution create Union tensions.
 SUM: Government-court clashes test the rule of law.
 SUM: Executive power and the ECHR are live debates.

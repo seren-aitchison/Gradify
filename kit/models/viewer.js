@@ -233,7 +233,8 @@ export async function mountModel(root, siteName, model) {
             <label class="switch"><input type="checkbox" data-ctl="labels" role="switch"><span class="sw-track lg" aria-hidden="true"><span class="sw-knob"></span></span><span>Labels</span></label>
             <label class="switch"><input type="checkbox" data-ctl="spin" role="switch"><span class="sw-track lg" aria-hidden="true"><span class="sw-knob"></span></span><span>Turn slowly</span></label>
           </div>
-          <button type="button" class="btn btn-light lg btn-sm mv-quiz"><span>Quiz me: ${esc(model.quiz || "find the part")}</span></button>
+          <div class="mv-quizzes"><button type="button" class="btn btn-light lg btn-sm mv-quiz" data-mode="find"><span>Quiz me: ${esc(model.quiz || "find the part")}</span></button>
+          <button type="button" class="btn btn-ghost lg btn-sm mv-quiz" data-mode="name"><span>Quiz me: name it</span></button></div>
         </div>
         <div class="mv-info" aria-live="polite"></div>
       </aside>
@@ -537,11 +538,14 @@ export async function mountModel(root, siteName, model) {
   // ---------- controls ----------
   $(".mv-groups").addEventListener("click", (e) => {
     const b = e.target.closest("[data-grp]"); if (!b) return;
-    const g = b.dataset.grp, on = !state.visible.has(g);
+    setGroup(b.dataset.grp, !state.visible.has(b.dataset.grp));
+  });
+  function setGroup(g, on) {
+    const b = root.querySelector(`[data-grp="${g}"]`); if (!b || !groups[g]) return;
     on ? state.visible.add(g) : state.visible.delete(g);
     b.classList.toggle("on", on); b.setAttribute("aria-pressed", String(on)); groups[g].visible = on;
     attached.forEach((m) => { if (m.userData.group === g) m.visible = on; });
-  });
+  }
   root.addEventListener("input", (e) => {
     const s = e.target.dataset.slider; if (!s) return;
     const v = e.target.value / 100;
@@ -552,31 +556,49 @@ export async function mountModel(root, siteName, model) {
 
   // ---------- quiz: find the part ----------
   const quizbar = $(".mv-quizbar");
+  // two modes: "find" (click the named part) and "name" (the part is highlighted; choose its name)
+  const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
   function nextQuestion() {
     const pool = Object.keys(parts).filter((id) => state.visible.has(S[id].group) && id !== state.quiz.last);
     const id = pool[Math.floor(Math.random() * pool.length)];
     state.quiz.target = id; state.quiz.last = id; state.quiz.tries = 0;
-    quizbar.querySelector(".mv-q").innerHTML = `Find the <b>${esc(S[id].name.toLowerCase())}</b>`;
     quizbar.querySelector(".mv-score").textContent = `${state.quiz.score} / ${state.quiz.n}`;
+    if (state.quiz.mode !== "name") { quizbar.querySelector(".mv-q").innerHTML = `Find the <b>${esc(S[id].name.toLowerCase())}</b>`; return; }
+    // name it: highlight the part, offer four names, preferring others from the same system
+    const same = Object.keys(parts).filter((x) => x !== id && S[x].group === S[id].group), other = Object.keys(parts).filter((x) => x !== id && S[x].group !== S[id].group);
+    const opts = shuffle([id, ...shuffle(same).slice(0, 3), ...shuffle(other)].slice(0, 4));
+    state.selected = id; paint(); focus(id);
+    quizbar.querySelector(".mv-q").innerHTML = `What is the highlighted structure?<span class="mv-opts">${opts.map((x) => `<button type="button" data-name="${x}">${esc(S[x].name)}</button>`).join("")}</span>`;
   }
+  quizbar.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-name]"), q = state.quiz; if (!b || !q || q.mode !== "name" || q.done) return;
+    const right = b.dataset.name === q.target;
+    b.classList.add(right ? "is-right" : "is-wrong");
+    stage.classList.remove("mv-right", "mv-wrong"); void stage.offsetWidth; stage.classList.add(right ? "mv-right" : "mv-wrong");
+    if (!right && q.tries === 0) { q.tries++; return; }
+    q.done = true; quizbar.querySelector(`[data-name="${q.target}"]`)?.classList.add("is-right");
+    q.score += right && q.tries === 0 ? 1 : 0; q.n++; showInfo(q.target);
+    setTimeout(() => { q.done = false; q.n >= 10 ? endQuiz() : nextQuestion(); }, right ? 1100 : 1700);
+  });
   function answer(id) {
-    const q = state.quiz; if (!id) return;
+    const q = state.quiz; if (!id || q.mode === "name") return;
     const right = id === q.target;
     state.selected = id; paint();
     stage.classList.remove("mv-right", "mv-wrong"); void stage.offsetWidth; stage.classList.add(right ? "mv-right" : "mv-wrong");
     if (right) { q.score += q.tries === 0 ? 1 : 0; q.n++; showInfo(id); setTimeout(() => (q.n >= 10 ? endQuiz() : nextQuestion()), 900); }
     else { q.tries++; quizbar.querySelector(".mv-q").innerHTML = `That's the ${esc(S[id].name.toLowerCase())}. Find the <b>${esc(S[q.target].name.toLowerCase())}</b>`; if (q.tries >= 2) { q.n++; select(q.target, true); setTimeout(() => (q.n >= 10 ? endQuiz() : nextQuestion()), 1600); } }
   }
+  function startQuiz(mode) { state.quiz = { score: 0, n: 0, mode }; quizbar.hidden = false; root.classList.add("quizzing"); if (mode !== "name") home(); nextQuestion(); }
   async function endQuiz() {
     const q = state.quiz; state.quiz = null; quizbar.hidden = true; root.classList.remove("quizzing");
     info.style.setProperty("--c", "#4fe0a6");
     info.innerHTML = `<span class="kicker">Quiz finished</span><h3>${q.score} out of ${q.n}</h3><p>${q.score >= 8 ? "Excellent. You know your way around this model." : q.score >= 5 ? "Good going. Click the ones you missed to learn more." : "Keep exploring: click any part to learn about it."}</p>
-      <div class="mv-actions"><button type="button" class="btn btn-light lg btn-sm mv-quiz"><span>Play again</span></button></div>`;
+      <div class="mv-actions"><button type="button" class="btn btn-light lg btn-sm mv-quiz" data-mode="${q.mode}"><span>Play again</span></button></div>`;
     const { store } = await myCards();
-    try { await store?.logActivity({ site: siteName, kind: "quiz", xp: q.score * 2, detail: { quiz: model.title, score: q.score, of: q.n } }); } catch { /* storage blocked */ }
+    try { await store?.logActivity({ site: siteName, kind: "quiz", xp: q.score * 2, detail: { quiz: model.title, mode: q.mode, system: state.only || null, score: q.score, of: q.n } }); } catch { /* storage blocked */ }
   }
   root.addEventListener("click", (e) => {
-    if (e.target.closest(".mv-quiz")) { state.quiz = { score: 0, n: 0 }; quizbar.hidden = false; root.classList.add("quizzing"); nextQuestion(); home(); }
+    const qb = e.target.closest(".mv-quiz"); if (qb) startQuiz(qb.dataset.mode || "find");
     if (e.target.closest(".mv-quit")) { state.quiz = null; quizbar.hidden = true; root.classList.remove("quizzing"); showIntro(); }
   });
 
@@ -633,6 +655,12 @@ export async function mountModel(root, siteName, model) {
     }
   });
   showIntro(); openTab(state.tab);
+  // deep links from course lessons: ?system=cardiovascular shows that system alone; &quiz=find or &quiz=name starts a quiz
+  try {
+    const qs = new URLSearchParams(location.search), only = qs.get("system"), mode = qs.get("quiz");
+    if (only && G[only]) { for (const g of Object.keys(G)) setGroup(g, g === only); state.only = only; openTab(only); }
+    if (mode === "find" || mode === "name") startQuiz(mode);
+  } catch { /* no URL to read */ }
   canvas.mv = { select, focus, zoomBy, state, parts, camera, controls };
   return canvas.mv;
 }
