@@ -29,6 +29,8 @@
 //   CASE: a case card, "case name and citation | facts | held | principle": shown under "Case and statute
 //        cards" and turned into two flashcards (the case → facts, held and principle; the principle → the case)
 //   LAW: a statute card, "provision | what it provides (elements)": shown with the case cards, one flashcard
+//   DRUG: a drug card, "drug or class | class and mechanism | main uses | key adverse effects and cautions |
+//        monitoring, interactions and counselling": shown with the cards and turned into two flashcards
 // Inline: **bold**, *italic*, `code`, x^{2} and v_{0}.
 export { esc, inline, norm } from "../core/text.js";
 import { esc, inline } from "../core/text.js";
@@ -44,7 +46,7 @@ export function parseNotes(text) {
     if (!L) continue;
     if (line.startsWith("> ") && ex) { ex.steps.push(line.slice(2)); continue; }
     ex = null;
-    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|EV|LV|CASE|LAW|(?:M|TF|MS|SEQ|MATCH|SA|NUM)[123]?(?:#[a-z0-9-]+)?(?:@[\d,]+)?):\s*(.*)$/);
+    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|EV|LV|CASE|LAW|DRUG|(?:M|TF|MS|SEQ|MATCH|SA|NUM)[123]?(?:#[a-z0-9-]+)?(?:@[\d,]+)?):\s*(.*)$/);
     const [tag, body] = m ? [m[1], m[2]] : line.startsWith("- ") ? ["-", line.slice(2)] : ["P", line];
     const last = L.blocks.at(-1);
     if (tag === "S") L.lead += (L.lead ? " " : "") + body;
@@ -72,6 +74,14 @@ export function parseNotes(text) {
         L.authorities.push({ kind: "case", name, facts, held, principle });
         L.cards.push([`Case card: ${name}. Facts, decision and principle?`, `**Facts:** ${facts} **Held:** ${held} **Principle:** ${principle}`]);
         L.cards.push([`Which case is authority for this? ${principle}`, name]);
+      }
+    }
+    else if (tag === "DRUG") {
+      const [name, mechanism, uses, adverse, monitoring] = body.split(" | ").map((x) => x.trim());
+      if (name && mechanism && uses && adverse && monitoring) {
+        L.authorities.push({ kind: "drug", name, mechanism, uses, adverse, monitoring });
+        L.cards.push([`Drug card: ${name}. Class, mechanism and main uses?`, `**Class and mechanism:** ${mechanism} **Uses:** ${uses}`]);
+        L.cards.push([`Drug card: ${name}. Key adverse effects, cautions and monitoring?`, `**Adverse effects and cautions:** ${adverse} **Monitoring and counselling:** ${monitoring}`]);
       }
     }
     else if (tag === "LAW") {
@@ -130,7 +140,9 @@ export function lessonText(L) {
 // sources with their kind and date, further reading), drawn around the notes
 // case and statute cards (CASE: and LAW: lines), in a lesson and in the course's authorities view
 export function authorityCards(list) {
-  return `<div class="co-auths">${list.map((a) => a.kind === "case"
+  return `<div class="co-auths">${list.map((a) => a.kind === "drug"
+    ? `<article class="co-auth"><span class="co-auth-k">Drug</span><h4>${inline(a.name)}</h4><dl><dt>Class</dt><dd>${inline(a.mechanism)}</dd><dt>Uses</dt><dd>${inline(a.uses)}</dd><dt>Cautions</dt><dd>${inline(a.adverse)}</dd><dt>Monitor</dt><dd>${inline(a.monitoring)}</dd></dl></article>`
+    : a.kind === "case"
     ? `<article class="co-auth"><span class="co-auth-k">Case</span><h4>${inline(a.name)}</h4><dl><dt>Facts</dt><dd>${inline(a.facts)}</dd><dt>Held</dt><dd>${inline(a.held)}</dd><dt>Principle</dt><dd>${inline(a.principle)}</dd></dl></article>`
     : `<article class="co-auth"><span class="co-auth-k">Statute</span><h4>${inline(a.name)}</h4><p>${inline(a.provides)}</p></article>`).join("")}</div>`;
 }
@@ -143,7 +155,7 @@ export function lessonFrame(L) {
     L.summary.length ? `<section><h3>Summary</h3><ul>${L.summary.map((x) => `<li>${inline(x)}</li>`).join("")}</ul></section>` : "",
     L.terms.length ? `<section><h3>Key terms</h3><dl class="co-terms">${L.terms.map(([t, d]) => `<dt>${inline(t)}</dt><dd>${inline(d)}</dd>`).join("")}</dl></section>` : "",
     L.sources.length ? `<section><h3>Sources</h3><ul class="co-sources">${L.sources.map((x) => `<li>${x.url && /^https:\/\//.test(x.url) ? `<a href="${esc(x.url)}" rel="noopener" target="_blank">${inline(x.cite)}</a>` : inline(x.cite)}${x.kind ? ` <small>${esc(KIND[x.kind] || x.kind)}${x.date ? ` · ${esc(x.date)}` : ""}</small>` : ""}</li>`).join("")}</ul></section>` : "",
-    L.authorities?.length ? `<section><h3>Case and statute cards</h3>${authorityCards(L.authorities)}</section>` : "",
+    L.authorities?.length ? `<section><h3>${L.authorities.every((a) => a.kind === "drug") ? "Drug cards" : L.authorities.some((a) => a.kind === "drug") ? "Drug, case and statute cards" : "Case and statute cards"}</h3>${authorityCards(L.authorities)}</section>` : "",
     L.evidence?.length ? `<section><h3>How strong is the evidence?</h3><ul class="co-evidence">${L.evidence.map((e) => `<li><span class="co-ev co-ev-${esc(e.status)}">${esc(EVN[e.status] || e.status)}</span> ${inline(e.claim)}</li>`).join("")}</ul></section>` : "",
     L.reading.length ? `<section><h3>Further reading</h3><ul>${L.reading.map((x) => `<li>${inline(x)}</li>`).join("")}</ul></section>` : "",
   ].join("");

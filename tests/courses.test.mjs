@@ -7,9 +7,10 @@ import { readdir } from "node:fs/promises";
 import { parseNotes, norm } from "../kit/course/notes.js";
 import law from "../kit/courses/law/course.js";
 import nursing from "../kit/courses/nursing/course.js";
+import pharmacy from "../kit/courses/pharmacy/course.js";
 import { parseSyllabus } from "../kit/course/syllabus.js";
 
-for (const [name, course, dir] of [["law", law, "law"], ["nursing", nursing, "nursing"]]) {
+for (const [name, course, dir] of [["law", law, "law"], ["nursing", nursing, "nursing"], ["pharmacy", pharmacy, "pharmacy"]]) {
   test(`${name}: every permanent lesson id still exists with its recorded title, and every lesson has one`, async () => {
     const { IDS, RETIRED } = await import(`../kit/courses/${dir}/ids.js`);
     const byId = new Map(course.units.flatMap((u) => u.lessons.map((l) => [l.id, l])));

@@ -233,7 +233,7 @@ export function mountCourse(root, cfg) {
 
   // ---------- layout ----------
   const VIEWS = [...(cfg.overview ? [["overview", "Overview"]] : []), ["learn", "Learn"], ["review", "Review"], ["paths", "Paths"], ["tracks", `${TW}s`], ["problems", "Problems"],
-    ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing ? [["write", "Write"]] : []), ...(cfg.revalidation ? [["revalidation", "Revalidation"]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []),
+    ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing?.length ? [["write", "Write"]] : []), ...(cfg.revalidation ? [["revalidation", "Revalidation"]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []),
     ["leaderboard", "Leaderboard"], ["me", "My progress"], ["features", "Features"]];
   roadDefs();
   root.classList.add("co");
@@ -525,8 +525,8 @@ export function mountCourse(root, cfg) {
   // a link from an anatomy lesson to the 3D model, opened on one system with a quiz (cfg.anatomy3d)
   function anatomyPanel(system) {
     const href = (mode) => `${cfg.anatomy3d.href}?${system ? `system=${encodeURIComponent(system)}&` : ""}quiz=${mode}`;
-    const name = system ? `the ${system} system` : "every body system";
-    return `<section class="co-3d"><h3>${ic("cube")} Practise in 3D</h3><p>Open the 3D body showing ${esc(name)} and test yourself on the real anatomy.</p>
+    const A = cfg.anatomy3d, name = system ? (A.names?.[system] || `the ${system} system`) : (A.all || "every body system");
+    return `<section class="co-3d"><h3>${ic("cube")} Practise in 3D</h3><p>Open ${esc(A.model || "the 3D body")} showing ${esc(name)} and ${esc(A.test || "test yourself on the real anatomy")}.</p>
       <div class="co-3d-actions"><a class="btn btn-light lg btn-sm" href="${href("find")}"><span>Find the structure</span></a><a class="btn btn-ghost lg btn-sm" href="${href("name")}"><span>Name the structure</span></a></div></section>`;
   }
   async function saveLesson(l, N, btn) {
@@ -677,10 +677,12 @@ export function mountCourse(root, cfg) {
     const sortKey = (x) => x.a.name.replace(/^(R|Re|In re)\s+(\(|v\s)?/i, "").toLowerCase();
     items.sort((x, y) => sortKey(x).localeCompare(sortKey(y)));
     const f = { unit: "", kind: "", q: "" };
-    main.innerHTML = `<div class="co-intro"><span class="co-kicker">${esc(cfg.authorities)}</span><h2>Case and statute cards</h2><p>${items.filter((x) => x.a.kind === "case").length} cases and ${items.filter((x) => x.a.kind === "law").length} statutory provisions from the lessons: facts, decision and principle for each case; what each provision does. Each card is also a flashcard in its lesson.</p></div>
-      <div class="co-filters co-auths-tools"><input type="search" class="co-auth-q" placeholder="Search cases and statutes" aria-label="Search cases and statutes">
+    const nK = (k) => items.filter((x) => x.a.kind === k).length, drugs = nK("drug");
+    const kinds = [["case", "Cases"], ["law", "Statutes"], ["drug", "Drugs"]].filter(([k]) => nK(k));
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">${esc(cfg.authorities)}</span><h2>${drugs && kinds.length === 1 ? "Drug cards" : "Case and statute cards"}</h2><p>${drugs && kinds.length === 1 ? `${drugs} drug cards from the lessons: class and mechanism, uses, key adverse effects and cautions, and monitoring and counselling. They're study summaries, not prescribing information: check the current BNF and SPC.` : `${nK("case")} cases and ${nK("law")} statutory provisions from the lessons: facts, decision and principle for each case; what each provision does.`} Each card is also a flashcard in its lesson.</p></div>
+      <div class="co-filters co-auths-tools"><input type="search" class="co-auth-q" placeholder="Search the cards" aria-label="Search the cards">
         <select class="co-auth-u" aria-label="${U}"><option value="">Every ${u1}</option>${units.filter((u) => items.some((x) => x.l.unit === u)).map((u) => `<option value="${u.id}">${U} ${u.n}: ${esc(u.title)}</option>`).join("")}</select>
-        <select class="co-auth-kind" aria-label="Kind"><option value="">Cases and statutes</option><option value="case">Cases</option><option value="law">Statutes</option></select></div>
+        ${kinds.length > 1 ? `<select class="co-auth-kind" aria-label="Kind"><option value="">All cards</option>${kinds.map(([k, l]) => `<option value="${k}">${l}</option>`).join("")}</select>` : ""}</div>
       <p class="co-pcount co-auth-n"></p><div class="co-auth-list"></div>`;
     const paint = () => {
       const q = norm(f.q), list = items.filter((x) => (!f.unit || x.l.unit.id === f.unit) && (!f.kind || x.a.kind === f.kind) && (!q || norm(Object.values(x.a).join(" ")).includes(q)));
@@ -689,7 +691,7 @@ export function mountCourse(root, cfg) {
     };
     main.querySelector(".co-auth-q").addEventListener("input", (e) => { f.q = e.target.value; paint(); });
     main.querySelector(".co-auth-u").addEventListener("change", (e) => { f.unit = e.target.value; paint(); });
-    main.querySelector(".co-auth-kind").addEventListener("change", (e) => { f.kind = e.target.value; paint(); });
+    main.querySelector(".co-auth-kind")?.addEventListener("change", (e) => { f.kind = e.target.value; paint(); });
     paint();
   }
 

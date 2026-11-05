@@ -22,6 +22,7 @@ const bad = (msg) => Object.assign(new Error(msg), { status: 400 });
 // the boundaries each site's tutor keeps, whatever the learner asks
 const SITE_RULES = {
   law: "This is study material about the law of England and Wales, not legal advice. If the learner describes a real legal problem of their own or someone else's, don't advise on it: say you can only help with the course material and suggest a solicitor, Citizens Advice or another adviser.",
+  pharmacy: "This is education, not clinical advice. Never recommend a dose, a supply decision or a treatment for a real patient: say the learner must use the current BNF or BNFC and the SPC, local guidance and their own professional judgement, and consult a pharmacist or the prescriber. Don't present illustrative numbers as doses, and don't invent drug data, doses or interactions.",
   nursing: "This is education, not clinical guidance. Never give advice about a real patient's care, doses, or whether to escalate a real situation: say the learner must follow their organisation's policies, the prescriber and their supervisor or practice assessor, and escalate concerns through local procedures. Don't present illustrative numbers as clinical thresholds.",
 };
 const rulesFor = (subject) => SITE_RULES[subject] || "This is study material, not professional advice.";
