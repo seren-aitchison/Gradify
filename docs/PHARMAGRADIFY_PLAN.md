@@ -182,3 +182,7 @@ See the status sections below as schools are added. Content is written by Claude
 ## Status: School 13, Musculoskeletal, Skin, Eye and Inflammatory Conditions (2026-11-05)
 
 13 lessons: NSAIDs, osteoarthritis, RA, gout, DMARDs (methotrexate safety), eczema, psoriasis, acne (isotretinoin), skin infections and infestations, eye and ear conditions. Points to NICE, MHRA, the BNF and SPCs.
+
+## Status: School 14, Oncology, Haematology and Immunology (2026-11-05)
+
+10 lessons: anaemias, blood products and reversal agents, cancer treatment principles, cytotoxics, targeted therapy and immunotherapy, supportive care and oncological emergencies, safe handling, immunosuppressants, transplantation, biologics. Specialist areas: points to protocols, MHRA, the BNF and SPCs.
