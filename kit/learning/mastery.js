@@ -139,7 +139,10 @@ function profileOf(g, byCard, now, examDays) {
     + Math.min(0.5, Math.max(0, due) * 0.05) + (level === "new" ? 0.2 : 0)
     + urgency * (1 - mastery) - (level === "mastered" ? 1 : 0);
 
+  // the same topic on the six-dimension model, from this topic's reviews
+  const six = sixProfile(evidenceFromReviews(g.cards, g.cards.flatMap((c) => byCard.get(c.id) || [])), { now });
   return {
+    six,
     key: g.key, documentId: g.documentId, topic: g.topic, cards: g.cards.length, seen: seen.length, fresh, due: Math.max(0, due),
     coverage, depth, mastery, level, dims, weakest, misconceptions: misconceptions.map((c) => ({ id: c.id, front: c.front })),
     underconfident, lastSeen: lastSeen || null, next, priority,
@@ -182,4 +185,143 @@ export function practiceOrder(topicCards, profile, now = Date.now()) {
   const wrong = new Set(profile.misconceptions.map((m) => m.id));
   const p = (c) => (wrong.has(c.id) ? -1 : c.reps ? recallProbability(c, now) : 2);
   return [...topicCards].filter((c) => !c.suspended).sort((a, b) => p(a) - p(b));
+}
+
+// =====================================================================================
+// Six-dimension mastery from every kind of evidence (course answers and flashcard reviews)
+// =====================================================================================
+// One evidence item per answer, whatever produced it:
+//   { dim, score 0..1, at (ms), w (weight), independent, delayed, difficulty, confidence, source, topic, unit, subject, question }
+// Mastery is computed from these items only. Nothing is stored: the attempt records and reviews
+// stay the source of truth, so the model can change without migrating anyone's data.
+export const SIX = [
+  { key: "recognition", label: "Recognition", what: "Picking the right answer when it's in front of you" },
+  { key: "recall", label: "Recall", what: "Bringing facts and terms to mind unprompted" },
+  { key: "explain", label: "Explanation", what: "Explaining why and how, in your own words" },
+  { key: "apply", label: "Application", what: "Using it to work out a problem" },
+  { key: "transfer", label: "Transfer", what: "Using it cold, mixed with other topics, in a new context" },
+  { key: "retention", label: "Retention", what: "Still knowing it days or weeks later" },
+];
+const DIFFICULTY_WEIGHT = { 1: 0.8, 2: 1, 3: 1.25 };
+const CHOICE = new Set(["sba", "mcq", "tf", "multi", "match", "order"]);
+// how much evidence (in weighted answers) a dimension needs before it's reported as a measurement
+export const ENOUGH = 3;
+const DELAY = 864e5;          // a retrieval counts as delayed after a day without seeing the question
+
+// which dimension a course answer is evidence of. A course's own level names decide for choice
+// questions ("Foundation", "Application", "Clinical reasoning"): a level that names application,
+// reasoning, analysis or evaluation is application evidence. Without names, only the hardest is.
+const APPLIED = /appl|reason|analys|evaluat/i;
+export function dimensionOf(a, levels = null) {
+  const t = a.question?.type, d = a.question?.d;
+  if (t === "card") return "recall";
+  if (t === "num") return "apply";
+  if (t === "short") return "explain";
+  if (CHOICE.has(t)) return (levels?.[d - 1] ? APPLIED.test(levels[d - 1]) : d === 3) ? "apply" : "recognition";
+  return "recall";
+}
+
+// course attempt records (kit/assess/attempts.js) → evidence. Provisional marks (self-marked short
+// answers awaiting review) count at a third of the weight; second tries after feedback are assisted.
+export function evidenceFromAttempts(attempts = [], { levels = null } = {}) {
+  const out = [], lastSeen = new Map();
+  for (const a of [...attempts].filter((x) => x?.question).sort((x, y) => String(x.at).localeCompare(String(y.at)))) {
+    const at = Date.parse(a.at), qid = a.question.id, prev = lastSeen.get(qid);
+    lastSeen.set(qid, at);
+    const independent = (a.attempt || 1) === 1;
+    const provisional = a.marking?.status === "provisional";
+    const w = (DIFFICULTY_WEIGHT[a.question.d] || 1) * (independent ? 1 : 0.3) * (provisional ? 0.33 : 1);
+    const base = { score: Number(a.score) || 0, at, w, independent, difficulty: a.question.d ?? null, confidence: a.confidence ?? null, source: a.context, topic: a.lesson || a.unit || a.subject, unit: a.unit, subject: a.subject, question: qid, misconception: a.misconception || null };
+    const dim = dimensionOf(a, levels);
+    out.push({ ...base, dim, delayed: false });
+    // retrieval a day or more after last seeing the question, without help, is retention evidence
+    if (independent && prev != null && at - prev >= DELAY) out.push({ ...base, dim: "retention", delayed: true, gap: (at - prev) / DELAY });
+    // a first, unaided answer in a mixed exam or review, away from the lesson, at medium or high
+    // difficulty: the closest thing to using it in a new context. (An approximation; say so.)
+    if (independent && ["exam", "review"].includes(a.context) && (a.question.d ?? 2) >= 2 && a.question.type !== "card") out.push({ ...base, dim: "transfer", delayed: false });
+  }
+  return out;
+}
+
+// flashcard reviews → evidence, using the card kinds from the original engine
+export function evidenceFromReviews(cards = [], reviews = []) {
+  const byId = new Map(cards.map((c) => [c.id, c])), last = new Map(), out = [];
+  for (const r of [...reviews].sort((x, y) => String(x.reviewed_at).localeCompare(String(y.reviewed_at)))) {
+    const c = byId.get(r.card_id); if (!c || c.suspended) continue;
+    const at = Date.parse(r.reviewed_at), prev = last.get(r.card_id); last.set(r.card_id, at);
+    const conf = { sure: 3, unsure: 2, guess: 1 }[r.confidence] ?? null;
+    const base = { score: SCORE[r.rating] ?? 0, at, w: r.mode === "practice" ? 0.8 : 1, independent: true, difficulty: null, confidence: conf, source: "card", topic: `${c.document_id}|${c.topic || "Cards"}`, question: c.id, misconception: null };
+    out.push({ ...base, dim: DIMENSION_OF_KIND[c.kind] || "recall", delayed: false });
+    if (prev != null && at - prev >= DELAY) out.push({ ...base, dim: "retention", delayed: true, gap: (at - prev) / DELAY });
+  }
+  return out;
+}
+
+// how sure we can be of a value from this much evidence
+function certainty(n) { return n >= 12 ? "high" : n >= 6 ? "medium" : n >= ENOUGH ? "low" : "insufficient"; }
+
+/**
+ * The six dimensions for one set of evidence (a lesson, a school, a course or everything).
+ * A dimension with less than ENOUGH weighted answers reports status "insufficient": its value is
+ * shown as a provisional estimate, never as a measurement, and it doesn't count toward mastery.
+ */
+export function sixProfile(evidence, { now = Date.now() } = {}) {
+  const dims = {};
+  for (const { key } of SIX) {
+    const items = evidence.filter((e) => e.dim === key);
+    let sw = 0, sv = 0, n = 0, last = 0, ind = 0;
+    for (const e of items) {
+      const w = e.w * Math.pow(0.5, Math.max(0, now - e.at) / DAY / HALF_LIFE_DAYS);
+      sw += w; sv += e.score * w; n += e.w; last = Math.max(last, e.at); if (e.independent) ind++;
+    }
+    const value = items.length ? (sv + 0.5 * 0.5) / (sw + 0.5) : null;     // pulled to 50% while thin
+    dims[key] = { value, n: items.length, weight: n, certainty: items.length ? certainty(n) : "none", independent: ind, assisted: items.length - ind, lastAt: last || null };
+  }
+  // confidence calibration: confident answers should be right, and guesses shouldn't be
+  const rated = evidence.filter((e) => e.confidence && e.dim !== "retention" && e.dim !== "transfer");
+  const sure = rated.filter((e) => e.confidence === 3), sureWrong = sure.filter((e) => e.score < 0.5).length;
+  const calibration = rated.length >= ENOUGH ? { rated: rated.length, sure: sure.length, sureWrong, guessRight: rated.filter((e) => e.confidence === 1 && e.score >= 0.7).length, accuracyWhenSure: sure.length ? 1 - sureWrong / sure.length : null } : null;
+  // overall mastery only from dimensions with enough evidence; null until there are at least two
+  const W = { recognition: 0.1, recall: 0.2, explain: 0.15, apply: 0.2, transfer: 0.15, retention: 0.2 };
+  const measured = SIX.filter(({ key }) => dims[key].certainty !== "none" && dims[key].certainty !== "insufficient");
+  const ws = measured.reduce((a, { key }) => a + W[key], 0);
+  const mastery = measured.length >= 2 ? measured.reduce((a, { key }) => a + dims[key].value * W[key], 0) / ws : null;
+  const missing = SIX.filter((d) => !measured.includes(d)).map((d) => d.key);
+  const weakest = measured.slice().sort((a, b) => dims[a.key].value - dims[b.key].value)[0]?.key || null;
+  return { dims, mastery, measured: measured.map((d) => d.key), missing, weakest, calibration, answers: evidence.filter((e) => e.dim !== "retention" && e.dim !== "transfer").length, misconceptionRisk: calibration ? sureWrong / Math.max(1, sure.length) : null };
+}
+
+// profiles for every group (lesson by default) plus the whole set
+export function sixProfiles(evidence, { by = (e) => e.topic, now = Date.now() } = {}) {
+  const groups = new Map();
+  for (const e of evidence) { const k = by(e); if (k == null) continue; (groups.get(k) || groups.set(k, []).get(k)).push(e); }
+  return { all: sixProfile(evidence, { now }), groups: [...groups].map(([key, ev]) => ({ key, ...sixProfile(ev, { now }) })) };
+}
+
+// Spaced retrieval for course questions: which questions to bring back now, and why. A question
+// comes back when its latest unaided answer was wrong (after a short gap), or when its last success
+// is older than an interval that grows with each consecutive delayed success (1, 3, 7, 21, 60 days).
+const STEPS = [1, 3, 7, 21, 60];
+export function revisionQueue(attempts = [], { now = Date.now(), limit = 20 } = {}) {
+  const byQ = new Map();
+  for (const a of [...attempts].filter((x) => x?.question && x.question.type !== "card" && x.marking?.status !== "provisional").sort((x, y) => String(x.at).localeCompare(String(y.at)))) {
+    const q = byQ.get(a.question.id) || { id: a.question.id, lesson: a.lesson, unit: a.unit, streak: 0, lastAt: 0, lastScore: 0, n: 0 };
+    const at = Date.parse(a.at);
+    if ((a.attempt || 1) === 1) {
+      const right = a.score >= 0.7;
+      // a success only climbs the ladder when it came after a real gap
+      q.streak = right ? (at - q.lastAt >= DELAY * 0.9 || q.n === 0 ? q.streak + 1 : Math.max(q.streak, 1)) : 0;
+      q.lastScore = a.score; q.lastAt = at; q.n++;
+    }
+    byQ.set(a.question.id, q);
+  }
+  const out = [];
+  for (const q of byQ.values()) {
+    if (!q.n) continue;
+    const wait = q.streak === 0 ? 0.25 : STEPS[Math.min(q.streak - 1, STEPS.length - 1)];
+    const dueAt = q.lastAt + wait * DAY, overdue = (now - dueAt) / DAY;
+    if (overdue < 0) continue;
+    out.push({ ...q, dueAt, overdue, reason: q.streak === 0 ? "wrong" : "spaced", why: q.streak === 0 ? "You got this wrong last time. Try it again now that it's had time to settle." : `You last got this right ${Math.round((now - q.lastAt) / DAY)} days ago. Recalling it now, just as it starts to fade, is what makes it stick.` });
+  }
+  return out.sort((a, b) => (a.reason === b.reason ? b.overdue - a.overdue : a.reason === "wrong" ? -1 : 1)).slice(0, limit);
 }

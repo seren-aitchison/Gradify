@@ -15,6 +15,8 @@ import { roadDefs, car } from "./road.js";
 import { parseNotes, lessonHtml, lessonText, lessonFrame, authorityCards, esc, inline, norm } from "./notes.js";
 import { renderQuestion, wireQuestions, normalize, TYPES as QTYPES } from "../assess/questions.js";
 import { makeAttempt, analyse } from "../assess/attempts.js";
+import { evidenceFromAttempts, sixProfiles, revisionQueue, SIX } from "../learning/mastery.js";
+import { sixHtml, calibrationHtml } from "../learning/mastery-view.js";
 import { mergeProgress, cloudCopy } from "./progress.js";
 import { mountRevalidation } from "./revalidation.js";
 import { scoreFeedback } from "../assess/tutor.js";
@@ -603,17 +605,32 @@ export function mountCourse(root, cfg) {
     return cardPool;
   }
   const dueCards = () => (cardPool || []).filter((c) => { const st = S.cards[c.id]; return !st || isDue(st); });
+  // spaced retrieval of course questions (kit/learning/mastery.js revisionQueue): wrong answers come
+  // back soon, right ones at growing gaps. Answers here are recorded in the "review" context.
+  async function viewRetrieval() {
+    const due = revisionQueue(S.attempts || [], { limit: 10 });
+    if (!due.length) { main.innerHTML = `<div class="co-panel"><span class="co-kicker">Revisit</span><h2>No questions due</h2><p>Questions you got wrong come back after a few hours, and ones you got right return after 1, 3, 7, 21 and 60 days, so that what you know lasts.</p><a class="btn btn-light lg btn-sm" href="#/review"><span>Flashcard review</span></a></div>`; return; }
+    main.innerHTML = `<div class="co-panel"><p>Loading your questions…</p></div>`;
+    const need = new Set(due.map((q) => q.unit));
+    const notes = Object.assign({}, ...(await Promise.all(units.filter((u) => need.has(u.id)).map(unitNotes))));
+    const items = due.map((q) => ({ q, it: notes[q.lesson]?.items?.find((i) => i.key === q.id) })).filter((x) => x.it);
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Revisit</span><h2>${items.length} ${items.length === 1 ? "question" : "questions"} to bring back</h2><p>Answer without looking at the notes first. Recalling something just as it starts to fade is what makes it last. These answers count as retention evidence in My progress.</p></div>
+      <div class="co-plist">${items.map(({ q, it }) => `<div class="co-prob"><div class="co-pmeta"><a href="#/lesson/${it.l.id}">${U} ${it.l.unit.n} · ${esc(it.l.title)}</a><span>${q.reason === "wrong" ? "Wrong last time" : `Last right ${Math.round((Date.now() - q.lastAt) / DAY)}d ago`}</span></div>${qHtml(it)}</div>`).join("")}</div>`;
+    wirePractice(main.querySelector(".co-plist"), "review", "retrieval");
+  }
+  const revisitLink = () => { const n = revisionQueue(S.attempts || [], { limit: 200 }).length; return n ? `<a class="btn btn-ghost btn-sm" href="#/review/questions"><span>Revisit ${n} ${n === 1 ? "question" : "questions"}</span></a>` : ""; };
+
   async function viewReview() {
     await reviewPool(); paintHud();
     const due = shuffle(dueCards()).slice(0, 30);
     const learned = Object.keys(S.cards).length, total = cardPool.length;
     if (!due.length) {
-      main.innerHTML = `<div class="co-panel"><span class="co-kicker">Review</span><h2>${total ? "All caught up" : "Nothing to review yet"}</h2><p>${total ? `You've seen ${learned} of ${total} cards. The next ones come due as their intervals pass, so come back tomorrow.` : "Complete lessons and their flashcards join your review queue. Spaced repetition brings each card back just before you'd forget it."}</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Go to the path</span></a></div>`;
+      main.innerHTML = `<div class="co-panel"><span class="co-kicker">Review</span><h2>${total ? "All caught up" : "Nothing to review yet"}</h2><p>${total ? `You've seen ${learned} of ${total} cards. The next ones come due as their intervals pass, so come back tomorrow.` : "Complete lessons and their flashcards join your review queue. Spaced repetition brings each card back just before you'd forget it."}</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Go to the path</span></a> ${revisitLink()}</div>`;
       return;
     }
     let k = 0, done = 0;
     const step = () => {
-      if (k >= due.length) { main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic("cards")}</div><h2>${done} cards reviewed</h2><p>+${done * XP.review} XP. Come back tomorrow for the next batch.</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Back to the path</span></a></div>`; return; }
+      if (k >= due.length) { main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic("cards")}</div><h2>${done} cards reviewed</h2><p>+${done * XP.review} XP. Come back tomorrow for the next batch.</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Back to the path</span></a> ${revisitLink()}</div>`; save(); return; }
       const c = due[k], st = S.cards[c.id] || {}, pv = preview(st);
       main.innerHTML = `<div class="co-review"><div class="co-crumbs"><span>Review · ${k + 1} of ${due.length}</span><a href="#/lesson/${c.lesson}">${esc(byId[c.lesson].title)}</a></div><div class="co-qbar"><i style="width:${(k / due.length) * 100}%"></i></div>
         <button class="co-card3d big"><span class="f"><div>${inline(c.front)}</div><small>Tap or press space to reveal</small></span><span class="b"><div>${inline(c.back)}</div></span></button>
@@ -621,7 +638,10 @@ export function mountCourse(root, cfg) {
       const card = main.querySelector(".co-card3d"), rate = main.querySelector(".co-rate");
       card.onclick = () => { card.classList.add("flip"); rate.hidden = false; };
       rate.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
-        S.cards[c.id] = { ...st, ...schedule(st, b.dataset.r) }; save(); done++; k++;
+        S.cards[c.id] = { ...st, ...schedule(st, b.dataset.r) }; done++; k++;
+        // the rating is evidence too: recall, and retention once the card comes back after a gap
+        const score = { again: 0, hard: 0.6, good: 1, easy: 1 }[b.dataset.r];
+        record({ Q: { type: "card" }, key: `card:${c.id}`, l: byId[c.lesson] }, "review", "cards", { score, correct: score >= 0.6, method: "self" }, { response: b.dataset.r });
         award(XP.review, "review", c.id); step();
       }));
     };
@@ -723,6 +743,18 @@ export function mountCourse(root, cfg) {
       <p class="co-acct">Self-assessed short answers are provisional and aren't counted here.</p></section>`;
   }
 
+  // six-dimension mastery from every answer in this course (kit/learning/mastery.js)
+  function masteryHtml() {
+    const ev = evidenceFromAttempts(S.attempts || [], { levels: cfg.levels || null }), { all, groups } = sixProfiles(ev, { by: (e) => e.unit });
+    const pc = (x) => `${Math.round(x * 100)}%`, label = (k) => SIX.find((d) => d.key === k)?.label.toLowerCase();
+    const schools = groups.map((g) => ({ g, u: units.find((x) => x.id === g.key) })).filter((x) => x.u).sort((a, b) => a.u.n - b.u.n);
+    return `<section class="co-panel co-mx"><h3>Mastery</h3>
+      <p class="co-empty">${all.mastery == null ? `Gradify gives an overall mastery figure once at least two kinds of evidence have ${3}+ answers each. It won't guess from less.` : `<b>${pc(all.mastery)}</b> overall, measured from ${all.measured.length} of the 6 kinds of evidence.${all.missing.length ? ` Not yet measured: ${all.missing.map(label).join(", ")}.` : ""}`}</p>
+      ${sixHtml(all)}${calibrationHtml(all)}
+      ${schools.length ? `<h4>By ${u1}</h4><ul class="co-weak">${schools.map(({ g, u }) => `<li><a href="#/learn/${u.id}">${U} ${u.n}: ${esc(u.title)}</a> <small>${g.mastery == null ? `${g.answers} answers: not enough evidence yet` : `${pc(g.mastery)}${g.weakest ? ` · weakest: ${label(g.weakest)}` : ""}`}</small></li>`).join("")}</ul>` : ""}
+      <p>${revisitLink()}</p></section>`;
+  }
+
   async function viewMe() {
     const st = stats(), xp = st.xp, L = levelOf(xp), sk = streak();
     const byDay = {}; for (const r of S.log) byDay[day(r.t)] = (byDay[day(r.t)] || 0) + r.xp;
@@ -731,6 +763,7 @@ export function mountCourse(root, cfg) {
     const last14 = Array.from({ length: 14 }, (_, i) => { const d = day(Date.now() - (13 - i) * DAY); return [d, byDay[d] || 0]; }), mx = Math.max(S.goal, ...last14.map((x) => x[1]));
     main.innerHTML = `<div class="co-intro"><span class="co-kicker">My progress</span><h2>Your ${esc(cfg.name)}</h2><p>Everything you've done here, and what's saved to your Gradify account.</p></div>
       <div class="co-tiles">${[["Level", L.n], ["Total XP", xp.toLocaleString()], ["Day streak", sk.n], ["Best streak", sk.best], ["Lessons", `${st.lessons} / ${lessons.length}`], ["Units cleared", st.units], ["Quizzes passed", st.quizzes], ["Problems solved", st.solved]].map(([k, v]) => `<div><small>${k}</small><b>${v}</b></div>`).join("")}</div>
+      ${masteryHtml()}
       ${insightHtml()}
       <section class="co-panel"><h3>Activity</h3><div class="co-heat">${cells}</div><p class="co-dayinfo">Pick a day to see what you did.</p></section>
       <section class="co-panel"><h3>XP, last 14 days</h3><div class="co-bars">${last14.map(([d, v]) => `<div title="${d}: ${v} XP"><i style="height:${(v / mx) * 100}%" class="${v >= S.goal ? "hit" : ""}"></i><small>${d.slice(8)}</small></div>`).join("")}<span class="co-goalline" style="bottom:${(S.goal / mx) * 100}%">goal ${S.goal}</span></div></section>
@@ -907,7 +940,7 @@ export function mountCourse(root, cfg) {
     if (view === "learn") { if (arg) openUnit(arg); viewLearn(arg); }
     else if (view === "lesson") await viewLesson(arg);
     else if (view === "quiz") await viewQuiz(arg);
-    else if (view === "review") await viewReview();
+    else if (view === "review") await (arg === "questions" ? viewRetrieval() : viewReview());
     else if (view === "paths") viewPaths();
     else if (view === "tracks") viewTracks();
     else if (view === "problems") await viewProblems();

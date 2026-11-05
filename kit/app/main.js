@@ -10,7 +10,8 @@ import { currentSite, nameHtml } from "../core/site.js";
 const SITE = currentSite();
 import { generate, regenerateCard, generateQuestions } from "../notes/engine.js";
 import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "../learning/srs.js";
-import { topicProfiles, practiceOrder, DIMENSIONS, LEVELS } from "../learning/mastery.js";
+import { topicProfiles, practiceOrder, LEVELS } from "../learning/mastery.js";
+import { sixHtml, calibrationHtml, HOW } from "../learning/mastery-view.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -572,12 +573,15 @@ const topicHref = (key) => `#/topic/${encodeURIComponent(key)}`;
 const studyHref = (key) => `#/study/t:${encodeURIComponent(key)}`;
 // where a topic's next step happens: adding questions is on the deck page, everything else is a session
 const stepHref = (t) => (t.next.kind === "deepen" ? `#/deck/${t.documentId}` : studyHref(t.key));
-const NO_EVIDENCE = {
+// where each dimension's evidence comes from, for a deck of flashcards
+const SIX_HOW = {
+  ...HOW,
+  recognition: "Flashcards don't test this: it comes from multiple-choice questions in Gradify courses.",
   recall: "Answer some of this topic's cards to measure it.",
   explain: "Comes from Explain questions. Add them from this topic's deck, then answer a few.",
   apply: "Comes from Apply questions. Add them from this topic's deck, then answer a few. Gradify won't guess.",
-  confidence: "Choose how sure you are before seeing each answer.",
-  retention: "Measured once you've reviewed a card at least once.",
+  transfer: "Comes from mixed exams in Gradify courses. Flashcards on their own can't show it.",
+  retention: "Measured when you answer a card again a day or more after last seeing it.",
 };
 async function renderTopic(arg) {
   const key = decodeURIComponent(arg || "");
@@ -600,10 +604,7 @@ async function renderTopic(arg) {
     </article>
     <div class="prog-grid">
       <article class="panel glass"><div class="panel-head"><h3>Mastery profile</h3><span class="pill-dark">from your answers</span></div>
-        <ul class="dims">${DIMENSIONS.map((d) => { const v = t.dims[d.key]; return `<li class="${v.value == null ? "none" : ""}">
-          <div class="dim-top"><b>${d.label}</b><em>${v.value == null ? "No evidence yet" : pctOf(v.value)}</em></div>
-          <span class="goal-bar"><i style="width:${v.value == null ? 0 : Math.round(v.value * 100)}%" class="${v.value != null && v.value >= 0.7 ? "ok" : ""}"></i></span>
-          <span class="dim-note">${v.value == null ? NO_EVIDENCE[d.key] : `${d.what} · ${v.n} ${d.key === "retention" ? (v.n === 1 ? "card" : "cards") : v.n === 1 ? "answer" : "answers"}`}</span></li>`; }).join("")}</ul>
+        ${sixHtml(t.six, { how: SIX_HOW })}${calibrationHtml(t.six)}
       </article>
       <div class="topic-side">
         ${t.misconceptions.length ? `<article class="panel glass warn-card"><div class="panel-head"><h3>Possible misconceptions</h3></div>

@@ -83,3 +83,45 @@ For law, every check question is written as a **single best answer** (one right 
 - **Clinical reasoning** (NurseGradify): "The quiet patient in bay 3", a deteriorating post-operative patient worked through ABCDE with live observations and NEWS2, sepsis recognition and SBAR escalation; NEWS2 scoring practice; and medicines calculations with invented medicines and worked methods. Every simulation states that it doesn't assess or authorise competence.
 - **Legal reasoning** (LawGradify): "Okoye v Harbour Cameras", a case file worked through IRAC (identify issues, apply authorities, advise), with the documents and the learner's growing analysis in the panel; and the court hierarchy and precedent explorer.
 - Adding one: write a module exporting `mount(el, { onComplete })` (or a scenario object for the engine) and list it in the course's `interactives`.
+
+## Six-dimension mastery
+
+`kit/learning/mastery.js` measures six kinds of evidence: **Recognition, Recall, Explanation, Application, Transfer and Retention**. Confidence isn't a seventh dimension. It is recorded with each answer and reported as calibration ("when you said you were sure, you were right 72% of the time").
+
+Nothing new is stored. Evidence is worked out each time from the records that already exist:
+- course answers (`assessment_attempts`, kit/assess/attempts.js)
+- flashcard reviews (`reviews`)
+- the course's own flashcard ratings, now recorded as `review`-context attempts
+
+So the model can change without migrating anyone's data.
+
+| Evidence | Dimension |
+|---|---|
+| Single best answer, multiple choice, true/false, matching, ordering | Recognition. Application when the course names that level "Application", "…reasoning", "Analysis" or "Evaluation" (every course except Physics does for levels 2 and 3; Physics, without names, only for level 3) |
+| Calculations (`NUM`) | Application |
+| Short written answers | Explanation |
+| Flashcards | Recall (definition, cloze, reverse), Explanation (`why`), Application (`apply`) |
+| A first, unaided try at a medium or hard question in a mixed exam or review, away from the lesson | Transfer, as well (an approximation, and labelled as one) |
+| Answering a question again, unaided, a day or more after last seeing it | Retention, as well |
+
+How each answer is weighted:
+- **By difficulty:** ×0.8, ×1 or ×1.25.
+- **By age:** a 30-day half-life.
+- **Assisted answers:** a second try after feedback counts ×0.3.
+- **Provisional marks:** self-marked short answers count ×0.33.
+
+A dimension with fewer than 3 weighted answers is **insufficient evidence**. It's shown as an estimate (`~60%`, with a dashed bar) and never counts toward mastery. Overall mastery appears only once at least two dimensions are measured. Each measured dimension shows its certainty (low, medium or high) and how many of its answers came after feedback.
+
+`revisionQueue(attempts)` schedules course questions for spaced retrieval:
+- A wrong answer comes back after 6 hours.
+- A right answer comes back after 1, 3, 7, 21 and 60 days, climbing the ladder only when the success came after a real gap.
+- Provisional marks and flashcards aren't scheduled here; flashcards have their own scheduler.
+
+Where it shows:
+- Every course's **My progress** has a Mastery panel: six dimensions, calibration, mastery by school, and a "Revisit N questions" session at `#/review/questions`.
+- The **Review** screen links to the same session.
+- The app's topic pages show the six dimensions for flashcard decks.
+
+Both views use one renderer, `kit/learning/mastery-view.js`. The original five-dimension card profile (`topicProfiles`) is unchanged, still drives levels, next steps and Earth, and now also carries `six`.
+
+**Not connected yet:** XP rewards for retrieval, LifeOS goals and recommendations, Earth/Tree, and the AI tutor. Each can now read `sixProfile` rather than inventing its own measure.

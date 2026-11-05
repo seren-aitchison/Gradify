@@ -952,3 +952,16 @@ code { font: 12px var(--mono); color: var(--mute); }
 @media (max-width: 640px) {
   .seg { max-width: 100%; overflow-x: auto; scrollbar-width: none; }
 }
+
+/* six-dimension mastery (kit/learning/mastery-view.js) */
+.mx-six { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px 22px; }
+.mx-six li { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.mx-top { display: flex; justify-content: space-between; gap: 8px; }
+.mx-top em { font-style: normal; font-weight: 600; }
+.mx-six li.none .mx-top em, .mx-six li.thin .mx-top em { color: var(--faint); font-weight: 500; font-size: 13px; }
+.mx-bar { display: block; height: 6px; border-radius: 99px; background: rgba(255, 255, 255, .08); overflow: hidden; }
+.mx-bar i { display: block; height: 100%; border-radius: inherit; background: #8fbaff; }
+.mx-bar i.ok { background: #4fe0a6; }
+.mx-six li.thin .mx-bar i { background: repeating-linear-gradient(90deg, rgba(143, 186, 255, .55) 0 6px, transparent 6px 10px); }
+.mx-six small { font-size: 12px; line-height: 1.4; color: var(--faint); }
+.mx-cal { font-size: 13px; color: var(--mute); margin: 14px 0 0; line-height: 1.5; }
