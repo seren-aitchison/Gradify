@@ -140,3 +140,9 @@ See the status sections below as schools are added. Content is written by Claude
 
 - 21 lessons, written to content standard 2: ADME, routes, bioavailability, first-pass metabolism, volume of distribution, protein binding, phase I and II, CYP enzymes (including the smoking and clozapine interaction), renal and biliary excretion, clearance, half-life, steady state, loading and maintenance doses, saturable kinetics (phenytoin), compartment models (digoxin sampling), TDM, renal and hepatic impairment, dissolution and the BCS, and bioequivalence (MHRA antiepileptic categories, brand-only drugs). QA reports 0 warnings.
 - **Expert review:** check the TDM sampling times and target ranges, the bioequivalence limits and the MHRA antiepileptic categories against current guidance.
+
+## Status: School 7, Cardiovascular Therapeutics (2026-11-05)
+
+- 18 lessons, written to content standard 2, following NICE NG136, NG238, CG126, NG185, NG106, NG196, NG158, NG89, NG128 and CG147. Covers: hypertension diagnosis and NICE steps, lipids and QRISK3, angina and GTN counselling, ACS and DAPT, secondary prevention, HFrEF's four pillars, AF (CHA₂DS₂-VASc and ORBIT), antiarrhythmics (amiodarone monitoring), VTE, anticoagulants and reversal, warfarin, DOACs (where they're unsuitable), antiplatelets, stroke and TIA, PAD, and cardiovascular ADRs.
+- **Drug cards:** ramipril, amlodipine, atorvastatin, bisoprolol, amiodarone, warfarin, apixaban and clopidogrel. QA reports 0 warnings.
+- **Expert review:** check the NICE thresholds, targets and treatment steps (NG136 and NG238 are updated often), the DOAC criteria and the warfarin INR targets.
