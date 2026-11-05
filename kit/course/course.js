@@ -261,7 +261,7 @@ export function mountCourse(root, cfg) {
 
   // ---------- layout ----------
   const VIEWS = [...(cfg.overview ? [["overview", "Overview"]] : []), ["learn", "Learn"], ["review", "Review"], ["paths", "Paths"], ["tracks", `${TW}s`], ["problems", "Problems"],
-    ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing?.length ? [["write", "Write"]] : []), ...(cfg.revalidation ? [["revalidation", "Revalidation"]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []),
+    ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing?.length ? [["write", "Write"]] : []), ...(cfg.revalidation ? [["revalidation", "Revalidation"]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []), ...(cfg.workspace ? [[cfg.workspace.route, cfg.workspace.label]] : []),
     ["leaderboard", "Leaderboard"], ["me", "My progress"], ["features", "Features"]];
   roadDefs();
   root.classList.add("co");
@@ -958,6 +958,45 @@ export function mountCourse(root, cfg) {
   }
   const ixDone = (x) => Object.keys(S.solved).filter((k) => k.startsWith(`ix:${x.id}:`)).length;
   const ixTile = (x) => `<a class="co-labtile" href="#/practice/${x.id}"><span class="co-kicker">${esc(x.kind)}</span><b>${esc(x.title)}</b><p>${esc(x.sub)}</p><small>${x.tasks ? `${ixDone(x)} / ${x.tasks} challenges` : x.schools ? `${U} ${x.schools.join(", ")}` : ""}</small></a>`;
+  // ---------- workspace: a site's own reasoning environment (law: legal reasoning; nursing: clinical
+  // simulation). cfg.workspace = { route, label, kicker, title, intro, banner, engine: () => import(…),
+  // cases: [{ id, title, sub, kind, lessons, load: () => import(…) }] }. The engine mounts a case with
+  // ctx.record (attempt records → mastery), ctx.finish (best score, XP once), ctx.ask (the AI tutor).
+  const WS = cfg.workspace;
+  const wsBest = (id) => S.ws?.[id]?.best;
+  async function viewWorkspace(id) {
+    S.ws ||= {};
+    const list = WS.cases, base = `#/${WS.route}`;
+    if (!id) {
+      main.innerHTML = `<div class="co-intro"><span class="co-kicker">${esc(WS.kicker || WS.label)}</span><h2>${esc(WS.title)}</h2><p>${inline(WS.intro || "")}</p></div>
+        ${WS.banner ? `<p class="sx-banner" role="note">${inline(WS.banner)}</p>` : ""}
+        <div class="co-grid">${list.map((c) => { const b = wsBest(c.id); return `<a class="co-pcard" href="${base}/${c.id}"><span class="co-kicker">${esc(c.kind || "")}</span><h3>${esc(c.title)}</h3><p>${esc(c.sub)}</p><small>${b != null ? `Best ${Math.round(b * 100)}% · ${S.ws[c.id].runs} ${S.ws[c.id].runs === 1 ? "attempt" : "attempts"}` : "Not attempted yet"}</small></a>`; }).join("")}</div>`;
+      return;
+    }
+    const c = list.find((x) => x.id === id);
+    if (!c) { main.innerHTML = `<p class="co-empty">That case isn't here. <a href="${base}">Back to ${esc(WS.label)}</a></p>`; return; }
+    main.innerHTML = `<div class="co-crumbs"><a href="${base}">← ${esc(WS.label)}</a><span>${esc(c.kind || "")}</span></div><div class="co-ws"><p class="co-empty">Loading…</p></div>`;
+    const el = main.querySelector(".co-ws");
+    try {
+      const [engine, data] = await Promise.all([WS.engine(), c.load()]);
+      unmountIx();
+      const stop = engine.mount(el, data.default || data, wsCtx(c));
+      if (typeof stop === "function") mounted.add(stop);
+    } catch (e) { el.innerHTML = `<p class="co-empty">This case couldn't load (${esc(e.message)}).</p>`; }
+  }
+  const wsCtx = (c) => ({
+    site: cfg.site, subject: cfg.slug,
+    lessonHref: (lid) => `#/lesson/${lid}`, lessonTitle: (lid) => byId[lid]?.title || "",
+    // one attempt record per marked part of the case, so the work counts in mastery and analytics
+    record: (task, { type = "reasoning", d = 3, score = 0, response = null, lesson = null, method = "auto", status = "final" } = {}) =>
+      record({ Q: { type, d, objectives: [] }, key: `ws:${c.id}:${task}`, v: null, l: lesson ? byId[lesson] : undefined }, "practice", c.id, { score, correct: score >= 0.7, method, status }, { response }),
+    finish: (score) => {
+      const w = (S.ws[c.id] ||= { best: 0, runs: 0 }); w.runs++; w.last = score; w.best = Math.max(w.best || 0, score); w.at = Date.now(); save();
+      const k = `ws:${c.id}`; if (!S.solved[k] && score >= 0.7) { S.solved[k] = Date.now(); save(); award(XP.quiz, "practice", c.id, `${cfg.name}: ${c.title}`); }
+    },
+    draft: (k, v) => { S.drafts ||= {}; const key = `ws:${c.id}:${k}`; if (v === undefined) return S.drafts[key] || ""; S.drafts[key] = v; save(); },
+    ask: askTutor, signinLine,
+  });
   async function viewPractice(id) {
     const list = ixs;
     if (!id) {
@@ -1023,7 +1062,7 @@ export function mountCourse(root, cfg) {
     const [v0, arg] = location.hash.replace(/^#\/?/, "").split("/"), v = v0 || home;
     const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam"].includes(v) ? v : home;
     root.querySelectorAll(".co-tabs a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === (view === "lesson" || view === "quiz" ? "learn" : view === "exam" ? "exams" : view)));
-    const wide = ["me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview"].includes(view);
+    const wide = ["me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview", cfg.workspace?.route].includes(view);
     side.hidden = wide; root.querySelector(".co-body").classList.toggle("wide", wide);
     if (view !== "learn") scrollTo(0, 0);
     if (view === "learn") { if (arg) openUnit(arg); viewLearn(arg); }
@@ -1039,6 +1078,7 @@ export function mountCourse(root, cfg) {
     else if (view === "exams") await viewExams();
     else if (view === "exam") await viewExam(arg);
     else if (view === "practice") await viewPractice(arg);
+    else if (cfg.workspace && view === cfg.workspace.route) await viewWorkspace(arg);
     else if (view === "overview") viewOverview();
     else if (view === "leaderboard") viewLeaderboard();
     else if (view === "me") await viewMe();

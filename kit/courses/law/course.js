@@ -30,6 +30,17 @@ export default {
     { id: "okoye", kind: "Legal reasoning case file", title: "Okoye v Harbour Cameras: was there a contract?", sub: "Identify the issues, apply offer, acceptance and the postal rule to a sequence of messages, and advise the client, building an IRAC analysis as you go.", schools: [3], load: () => import("./interactives/offer-acceptance.js") },
     { id: "courts", kind: "Precedent explorer", title: "Court hierarchy and precedent", sub: "Explore the courts of England and Wales and decide whether earlier decisions bind, persuade or must be taken into account.", schools: [1], load: () => import("../../interactive/trainers.js").then((m) => ({ mount: m.mountCourts })) },
   ],
+  // the Reasoning section (kit/interactive/reasoning.js): problem questions worked stage by stage with
+  // structured feedback on each part of the reasoning; feeds the shared mastery engine
+  workspace: { route: "reasoning", label: "Reasoning", kicker: "Legal reasoning", title: "Work a problem like a lawyer",
+    intro: "Read the client's facts, mark what matters, identify the issues, choose the authorities, apply the law to the facts in your own words, and advise. You get feedback on each part of your reasoning, not just the final answer, and it counts towards your mastery profile.",
+    banner: "Fictional facts; the law of England and Wales as at 2026. Feedback on written application is automatic and provisional: it looks for the key points a strong answer makes. These cases are awaiting review by a qualified lawyer.",
+    engine: () => import("../../interactive/reasoning.js"),
+    cases: [
+      { id: "learner-driver", kind: "Tort: negligence", title: "Leo's crash: a learner driver and a passenger without a seatbelt", sub: "Duty, breach, causation and contributory negligence, with Nettleship v Weston and Froom v Butcher.", load: () => import("./reasoning/negligence.js") },
+      { id: "dropped-note", kind: "Criminal law: theft", title: "Dan, a dropped £20 note and a borrowed console", sub: "Appropriation, property belonging to another, dishonesty after Ivey, and intention to permanently deprive.", load: () => import("./reasoning/theft.js") },
+      { id: "cafe-sale", kind: "Contract: misrepresentation", title: "Owen's café: a turnover figure that was no longer true", sub: "Statements of fact and opinion, a change of circumstances, reliance, rescission and damages under s 2(1).", load: () => import("./reasoning/misrepresentation.js") },
+    ] },
   // mock exams (kit/assess/exam.js): drawn from written schools only; pass marks are practice thresholds,
   // not the SRA's (which are set for each sitting)
   exams: [

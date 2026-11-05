@@ -186,3 +186,19 @@ Expert review flags for this batch:
 - Records are kept in the owner-only `revalidation_entries` table when signed in (migration `20261105140000_revalidation.sql`), and on the device otherwise. They move into the account on first sign-in and are included in the account export and deletion.
 - The page tells users not to record identifiable information, and that NMC Online is the official record.
 - **Expert review:** check the requirements against the NMC's current revalidation guidance. They are coded in `REQUIREMENTS` and tested.
+
+## Simulation section: clinical simulation (added November 2026)
+
+The **Simulation** tab (`#/simulation`) puts the student in charge of one simulated patient in simulated time. Engine: `kit/interactive/clinsim.js` (NEWS2 from `kit/interactive/news2.js`); cases: `kit/courses/nursing/simulation/`; wired through the course engine's generic `workspace` section.
+
+The patient's physiology changes minute by minute and responds to what the student does: every action takes time, delay lets the patient deteriorate (to collapse), and good care changes the trajectory. The student assesses (ABCDE, observations, charts, drug chart, talking to the patient), scores NEWS2 themselves, chooses interventions (unsafe ones are available and flagged, as on a ward), escalates by choosing who and how urgently and writing an SBAR, receives the reviewer's plan when they arrive, carries it out, and writes a timed record entry. The debrief shows the patient's actual NEWS2 over time with the student's actions marked, scores seven dimensions (assessment, recognising deterioration, prioritising and acting, escalation, SBAR, documentation, safe practice), lists unsafe actions, and offers AI feedback on the SBAR and record (course tutor, `mark` mode). Results are attempt records feeding the shared mastery engine.
+
+| Case | Focus |
+| --- | --- |
+| Mr Reid (`post-op-sepsis`) | Post-operative sepsis: NEWS2 6 rising; oxygen, escalation, cultures, antibiotics within the hour, fluids, urine output |
+| Mrs Hartley (`opioid-toxicity`) | Opioid-induced respiratory depression: airway, help, naloxone as prescribed, withholding opioids, re-sedation as naloxone wears off |
+| Mr Owusu (`hypoglycaemia`) | Hypoglycaemia: glucose check, swallow check, protocol treatment, recheck, longer-acting carbohydrate, insulin review |
+
+**Status.** Tested: `tests/clinsim.test.mjs` (every patient deteriorates to collapse if nothing is done; treatment measurably changes the patient; NEWS2 entry, escalation level and unsafe actions are marked) and a full run in a browser, desktop and phone width. Deployed: with the site (static). The AI feedback needs the course-tutor function deployed and a signed-in learner. **Awaiting clinical validation:** all three scenarios (`review.verified: null`): the physiology, timings, expected actions, escalation thresholds and the hypoglycaemia and naloxone pathways need checking by a registered nurse educator. It remains an educational simulation: not a substitute for clinical supervision, simulation-suite training or local policy.
+
+Next: more scenarios (paediatric, mental health and learning disability fields, a deteriorating patient with sepsis in the community, a medicines administration error); a multi-patient prioritisation scenario; educator-set scenarios for institutions.

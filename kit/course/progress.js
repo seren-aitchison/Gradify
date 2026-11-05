@@ -12,6 +12,8 @@ const union = (a = {}, b = {}, pick = (x, y) => x ?? y) => {
 // spaced-review state: keep the card that has been reviewed more, then the one due later
 const card = (x, y) => ((y.reps || 0) > (x.reps || 0) || ((y.reps || 0) === (x.reps || 0) && (y.due_at || "") > (x.due_at || "")) ? y : x);
 const quiz = (x, y) => ({ best: Math.max(x.best || 0, y.best || 0), pass: !!(x.pass || y.pass), t: Math.max(x.t || 0, y.t || 0) });
+// workspace cases (legal reasoning, clinical simulation): best score wins; the higher attempt count and the latest result are kept
+const ws = (x, y) => ({ best: Math.max(x.best || 0, y.best || 0), runs: Math.max(x.runs || 0, y.runs || 0), last: (y.at || 0) > (x.at || 0) ? y.last : x.last, at: Math.max(x.at || 0, y.at || 0) });
 const dedupe = (list, key) => { const seen = new Set(); return list.filter((x) => { const k = key(x); if (seen.has(k)) return false; seen.add(k); return true; }); };
 
 // the part of the course state that goes to the account
@@ -35,6 +37,7 @@ export function mergeProgress(local = {}, cloud = {}) {
     saved: union(local.saved, cloud.saved),
     drafts: union(local.drafts, cloud.drafts),
     quiz: union(local.quiz, cloud.quiz, quiz),
+    ws: union(local.ws, cloud.ws, ws),
     cards: union(local.cards, cloud.cards, card),
     mocks,
     log: dedupe([...(local.log || []), ...(cloud.log || [])], (e) => `${e.t}|${e.k}|${e.id}`).sort((a, b) => a.t - b.t),
