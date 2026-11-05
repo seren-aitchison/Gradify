@@ -140,7 +140,7 @@ export const TYPES = {
     restore(box, Q, v) { box.querySelector(".aq-num input").value = v || ""; },
     mark(Q, v) {
       const x = numberOf(v); if (x == null) return { score: 0, correct: false, detail: "Not a number" };
-      const tol = Q.tol.rel != null ? Math.abs(Q.answer) * Q.tol.rel : Q.tol.abs, ok = Math.abs(x - Q.answer) <= tol + 1e-12 * Math.max(1, Math.abs(Q.answer));
+      const tol = Q.tol.rel != null ? Math.abs(Q.answer) * Q.tol.rel : Q.tol.abs, ok = Math.abs(x - Q.answer) <= tol + (1e-9 * Math.abs(Q.answer) || 1e-12);   // slack for floating-point rounding only, scaled to the answer so tiny answers keep their tolerance
       return { score: ok ? 1 : 0, correct: ok, detail: ok ? "Within tolerance" : `You gave ${v}` };
     },
     feedback(Q, v, res) { return res.correct ? "" : `<p><b>Answer:</b> ${esc(fmtNum(Q.answer))}${Q.unit ? ` ${inline(Q.unit)}` : ""}${Q.tol.rel ? ` (within ${+(Q.tol.rel * 100).toFixed(2)}%)` : Q.tol.abs ? ` (± ${Q.tol.abs})` : ""}</p>`; },

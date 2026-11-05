@@ -78,8 +78,8 @@ Each one states its kind (simulation, illustrative model, exercise, explorer or 
 
 | Subject | Schools written | Lessons written | Status |
 |---|---|---|---|
-| Biology | School 1 (Foundations, 20 lessons) | 20 of 391 | Written and passing the automated checks; **not yet reviewed, source-checked or expert signed-off** |
-| Chemistry | School 1 (Foundations, 25 lessons) | 25 of 460 | The same |
+| Biology | School 1 (Foundations, 20 lessons) and School 2 (Cell Biology, 30 lessons) | 50 of 391 | Written and passing the automated checks; **not yet reviewed, source-checked or expert signed-off** |
+| Chemistry | School 1 (Foundations, 25 lessons) and School 2 (Atomic Structure and Quantum Chemistry, 20 lessons) | 45 of 460 | The same |
 
 The other schools are fully registered, with modules, ids, exams and interactives. Their lessons show "notes still being written" until their batches are done.
 
@@ -99,15 +99,15 @@ Sources in each lesson are typed and dated. They include OpenStax Biology 2e and
 ## Next batches
 
 **Biology:**
-1. School 2 Cell Biology
-2. School 3 Biochemistry
-3. School 4 Genetics
-4. Schools 13 and 12, given the brief's emphasis on computational biology
+1. School 3 Biochemistry
+2. School 4 Genetics
+3. Schools 13 and 12, given the brief's emphasis on computational biology
 
 **Chemistry:**
-1. School 2 Atomic Structure
-2. School 3 Periodic Table
-3. School 4 Bonding
-4. Schools 18 and 20, given the emphasis on medicinal and computational chemistry
+1. School 3 Periodic Table
+2. School 4 Bonding
+3. Schools 18 and 20, given the emphasis on medicinal and computational chemistry
+
+School 2 of each was written to standard 2. Every lesson has objectives, key terms, worked examples where there is a calculation, typed and dated sources, and questions at three levels. The calculation questions were checked against the marker in both normal and scientific notation. Writing them turned up a marking bug: a fixed allowance of 10⁻¹² was added to every tolerance, so very small answers, such as photon energies of about 10⁻¹⁸ J, were accepted at almost any value. The allowance now scales with the answer, and `tests/assess.test.mjs` checks this at every scale.
 
 Each batch is written to standard 2, passes `npm test`, and is recorded in `qa.js`.

@@ -21,7 +21,7 @@ export default {
     { id: "whole", title: "Whole course", sub: "Forty mixed questions from every written school.", units: UNITS.map((u) => u.n), format: "science", count: 40, minutes: 60, pass: 0.7 },
   ],
   // the schools whose notes are written (tests/sciences.test.mjs checks this matches notes/)
-  written: ["u01"],
+  written: ["u01", "u02"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
   overview: {
     headline: "Atoms, molecules and the reactions between them",
