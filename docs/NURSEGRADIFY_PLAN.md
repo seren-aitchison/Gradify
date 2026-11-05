@@ -156,3 +156,18 @@ Expert review flags for this batch:
 - 17 School 2 lessons have a "Practise in 3D" panel linking to their system (`anatomy3d` in `kit/courses/nursing/course.js`).
 - Labels are hidden while a quiz runs.
 - Quiz results are logged to the account's activity with the mode and the system.
+
+## Status: written practice and the AI tutor (2026-11-05)
+
+- **Written practice** (`#/write`): tasks with a rubric and a model answer each (`writing.js` in the course folder).
+  - Learners can always self-assess against the rubric.
+  - Signed-in learners can also ask the **Gradify AI tutor** for feedback, rated "met", "partly" or "not yet" for each criterion, with strengths and improvements. It is recorded as a provisional, AI-assisted attempt.
+- Nursing has 6 tasks: a Gibbs reflection, a care plan, an SBAR escalation, a fall record, explaining a procedure and gaining consent, and a discharge plan.
+- **Ask about this lesson**, in every lesson: answers come from the lesson's own notes, and the reply says when a question goes beyond them.
+- **Server side:**
+  - The `course-tutor` Edge Function, with the prompts, schemas and input caps in `kit/assess/tutor.js` (copied to the function by `npm run sync`).
+  - Learners must be signed in.
+  - Daily limits per learner use the `tutor_usage` table (migration `20261105130000_tutor_usage.sql`).
+  - The API key stays server-side. Learners' answers aren't stored by the function.
+- **Safety:** every tutor prompt carries the course's boundary. For law: no advice on real legal problems. For nursing: no advice about real patients, doses or escalation, which go through local policy, the prescriber and the supervisor.
+- **To go live:** run the migration and deploy the function (`docs/SETUP.md`). Until then, the AI buttons explain that sign-in is needed, and self-assessment works for everyone.

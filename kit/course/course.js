@@ -16,6 +16,9 @@ import { parseNotes, lessonHtml, lessonText, lessonFrame, authorityCards, esc, i
 import { renderQuestion, wireQuestions, normalize, TYPES as QTYPES } from "../assess/questions.js";
 import { makeAttempt, analyse } from "../assess/attempts.js";
 import { mergeProgress, cloudCopy } from "./progress.js";
+import { scoreFeedback } from "../assess/tutor.js";
+import { feedbackHtml, paras } from "../assess/tutor-view.js";
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
 import { buildExam, runExam, FORMATS } from "../assess/exam.js";
 
 const DAY = 864e5;
@@ -227,7 +230,7 @@ export function mountCourse(root, cfg) {
 
   // ---------- layout ----------
   const VIEWS = [...(cfg.overview ? [["overview", "Overview"]] : []), ["learn", "Learn"], ["review", "Review"], ["paths", "Paths"], ["tracks", `${TW}s`], ["problems", "Problems"],
-    ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []),
+    ...(cfg.authorities ? [["cases", cfg.authorities]] : []), ...(cfg.writing ? [["write", "Write"]] : []), ...(cfg.exams ? [["exams", "Exams"]] : []), ...(cfg.interactives ? [["practice", PL]] : []),
     ["leaderboard", "Leaderboard"], ["me", "My progress"], ["features", "Features"]];
   roadDefs();
   root.classList.add("co");
@@ -389,6 +392,7 @@ export function mountCourse(root, cfg) {
         ${N ? lessonFrame(N).top : ""}
         ${N ? `<div class="mv-cols">${lessonHtml(N)}</div>${lessonFrame(N).end}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
+        ${N && cfg.tutor ? `<section class="co-ask"><h3>${ic("search")} Ask about this lesson</h3><form class="co-askform"><label class="sr-only" for="co-askq">Your question about this lesson</label><input id="co-askq" type="text" maxlength="1000" autocomplete="off" placeholder="For example: why does this rule exist?"><button class="btn btn-ghost lg btn-sm" type="submit"><span>Ask</span></button></form><div class="co-askout" aria-live="polite"></div><p class="aq-note">${esc(cfg.tutor)}</p></section>` : ""}
         ${N?.items?.length ? `<section class="co-check"><h3>${ic("target")} Check yourself</h3>${N.items.map((it) => qHtml(it, { confidence: true })).join("")}</section>` : ""}
         <footer>
           <button class="btn btn-light lg co-complete" ${S.done[id] ? "disabled" : ""}><span>${S.done[id] ? "Completed ✓" : `Complete lesson · +${XP.lesson} XP`}</span></button>
@@ -403,6 +407,16 @@ export function mountCourse(root, cfg) {
     mountIxSlots(main);
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", () => flashcards(N.cards, l)));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
+    main.querySelector(".co-askform")?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const input = e.currentTarget.querySelector("input"), out = main.querySelector(".co-askout"), q = input.value.trim(); if (q.length < 5) return;
+      out.innerHTML = `<p class="co-empty">Thinking…</p>`;
+      try {
+        const r = await askTutor({ mode: "explain", lesson: { title: l.title, text: lessonText(N) }, question: q });
+        out.innerHTML = `<div class="co-askans"><p class="co-askq">${esc(q)}</p>${paras(r.answer)}${r.fromLesson ? "" : `<p class="aq-note">This goes beyond what the lesson covers, so check it against your course materials.</p>`}</div>`;
+        input.value = "";
+      } catch (err) { out.innerHTML = err.signin ? signinLine("Asking the tutor", "") : `<p class="co-empty">${esc(err.message)}</p>`; }
+    });
     main.querySelector(".co-complete").addEventListener("click", async (e) => {
       if (S.done[id]) return;
       S.done[id] = Date.now(); save(); e.currentTarget.disabled = true; e.currentTarget.querySelector("span").textContent = "Completed ✓";
@@ -411,6 +425,100 @@ export function mountCourse(root, cfg) {
       else if (next) setTimeout(() => go(`lesson/${next.id}`), 650);
     });
   }
+// ---------- the AI tutor (kit/assess/tutor.js → supabase/functions/course-tutor) and written practice ----------
+  async function askTutor(body) {
+    const s = await store();
+    const session = s.mode === "cloud" ? await s.session?.() : null;
+    if (!session) throw Object.assign(new Error("Sign in to use the tutor."), { signin: true });
+    const res = await fetch(`${SUPABASE_URL}/functions/v1/course-tutor`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${session.access_token}`, apikey: SUPABASE_ANON_KEY },
+      body: JSON.stringify({ subject: cfg.slug, ...body }),
+    }).catch(() => null);
+    const out = res ? await res.json().catch(() => ({})) : {};
+    if (!res?.ok) throw new Error(out.error || "The tutor isn't available right now. You can still self-assess with the rubric.");
+    return out;
+  }
+  const signinLine = (what, or = "self-assess with the rubric") => `<p class="co-empty">${esc(what)} uses Gradify AI, which needs a free account. <a href="${cfg.app || "app.html"}#/account">Sign in</a>${or ? `, or ${esc(or)}` : ""}.</p>`;
+  // a finished written task is recorded like any other answer (provisional), and earns XP the first time
+  function recordTask(t, score, method, response) {
+    const u = units.find((x) => x.id === t.unit);
+    record({ Q: { type: "short", d: 3, objectives: [] }, key: t.id, v: null, l: u ? { id: null, module: null, unit: u } : null }, "practice", `write:${t.id}`,
+      { score, correct: score >= 0.7, method, status: "provisional" }, { response });
+    if (!S.solved[t.id]) { S.solved[t.id] = Date.now(); save(); award(XP.problem * 4, "write", t.id); }
+  }
+  const modelBlock = (t) => `<details class="co-model"><summary>Model answer</summary>${paras(t.model)}<p class="aq-note">A guide to what a strong answer covers, not the only acceptable wording.</p></details>`;
+  async function viewWrite(arg) {
+    const tasks = cfg.writing || [];
+    if (!arg) {
+      main.innerHTML = `<div class="co-intro"><span class="co-kicker">Written practice</span><h2>${esc(cfg.writingTitle || "Write it, then get feedback")}</h2><p>${esc(cfg.writingNote || "")} Check your answer against a rubric and a model answer, or sign in for provisional feedback from the Gradify AI tutor.</p></div>
+        <div class="co-wlist">${tasks.map((t) => { const u = units.find((x) => x.id === t.unit); return `<a class="co-wtask${S.solved[t.id] ? " is-solved" : ""}" href="#/write/${t.id}"><span class="co-kicker">${esc(t.kind)}${u ? ` · ${U} ${u.n}` : ""} · ${t.minutes} min</span><h3>${esc(t.title)}</h3><p>${esc(t.brief)}</p>${S.solved[t.id] ? `<small>${ic("check")} Done</small>` : ""}</a>`; }).join("")}</div>`;
+      return;
+    }
+    const t = tasks.find((x) => x.id === arg); if (!t) { location.hash = "#/write"; return; }
+    const head = `<div class="co-crumbs"><a href="#/write">← Written practice</a></div>
+      <div class="co-intro"><span class="co-kicker">${esc(t.kind)} · about ${t.minutes} minutes</span><h2>${esc(t.title)}</h2><p>${esc(t.brief)}</p></div>`;
+    const rubric = `<section class="co-panel co-rubric"><h3>What a good answer covers</h3><ol>${t.rubric.map((r) => `<li>${esc(r)}</li>`).join("")}</ol></section>`;
+    if (t.interview) return viewInterview(t, head, rubric);
+    S.drafts ||= {};
+    main.innerHTML = `${head}<section class="co-panel co-wprompt"><h3>The task</h3><p>${inline(t.prompt)}</p></section>
+      <label class="sr-only" for="co-wtext">Your answer</label><textarea id="co-wtext" class="aq-text co-wtext" rows="14" placeholder="Write your answer here. It's saved as you type.">${esc(S.drafts[t.id] || "")}</textarea>
+      <p class="co-wcount"></p>
+      <div class="co-wactions"><button type="button" class="btn btn-light lg btn-sm" data-ai><span>Get AI feedback</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-self><span>Self-assess with the rubric</span></button></div>
+      <div class="co-wout" aria-live="polite"></div>${rubric}`;
+    const ta = main.querySelector(".co-wtext"), out = main.querySelector(".co-wout"), count = () => { main.querySelector(".co-wcount").textContent = `${(ta.value.match(/\S+/g) || []).length} words`; };
+    let dt = null; count();
+    ta.addEventListener("input", () => { count(); clearTimeout(dt); dt = setTimeout(() => { S.drafts[t.id] = ta.value; save(); }, 800); });
+    main.querySelector("[data-self]").addEventListener("click", () => {
+      out.innerHTML = `<section class="co-panel"><h3>Self-assessment</h3><p>Tick each point your answer covers well, then record it.</p>${t.rubric.map((r, i) => `<label class="co-tick"><input type="checkbox" data-r="${i}"><span>${esc(r)}</span></label>`).join("")}
+        <button type="button" class="btn btn-light lg btn-sm" data-rec><span>Record my self-assessment</span></button></section>${modelBlock(t)}`;
+      out.querySelector("[data-rec]").addEventListener("click", (e) => {
+        const n = out.querySelectorAll("[data-r]:checked").length, score = Math.round((n / t.rubric.length) * 1000) / 1000;
+        recordTask(t, score, "self", { text: ta.value, ticked: [...out.querySelectorAll("[data-r]:checked")].map((x) => Number(x.dataset.r)) });
+        e.currentTarget.outerHTML = `<p class="co-empty">${ic("check")} Recorded: ${n} of ${t.rubric.length} points (self-assessed, provisional).</p>`;
+      });
+    });
+    main.querySelector("[data-ai]").addEventListener("click", async (e) => {
+      const btn = e.currentTarget; S.drafts[t.id] = ta.value; save();
+      btn.disabled = true; out.innerHTML = `<p class="co-empty">The tutor is reading your answer…</p>`;
+      try {
+        const { feedback } = await askTutor({ mode: "mark", task: { title: t.title, brief: t.brief, prompt: t.prompt, rubric: t.rubric, model: t.model }, answer: ta.value });
+        out.innerHTML = feedbackHtml(feedback) + modelBlock(t);
+        recordTask(t, scoreFeedback(feedback), "ai-assisted", { text: ta.value, ratings: feedback.criteria.map((c) => c.rating) });
+      } catch (err) { out.innerHTML = err.signin ? signinLine("AI feedback") : `<p class="co-empty">${esc(err.message)}</p>`; }
+      btn.disabled = false;
+    });
+  }
+  // a practice client interview: the tutor plays the client, then gives feedback on the whole interview
+  function viewInterview(t, head, rubric) {
+    const turns = [], kase = { client: t.client, persona: t.persona, facts: t.facts };
+    main.innerHTML = `${head}<section class="co-panel co-client"><h3>Your client</h3><p>${esc(t.client)}</p></section>
+      <div class="co-chat" aria-live="polite"><p class="co-empty">The client is waiting. Introduce yourself to begin.</p></div>
+      <form class="co-chatform"><label class="sr-only" for="co-say">What you say to the client</label><textarea id="co-say" rows="2" maxlength="1500" placeholder="What do you say?"></textarea><button type="submit" class="btn btn-light lg btn-sm"><span>Say</span></button></form>
+      <div class="co-wactions"><button type="button" class="btn btn-ghost lg btn-sm" data-end><span>End the interview and get feedback</span></button></div>
+      <div class="co-wout" aria-live="polite"></div>${rubric}
+      <details class="co-casefile"><summary>No account? Practise with a friend playing the client (spoiler: the case file)</summary><p>Give your friend this case file. They answer only what you ask.</p><p><b>Client:</b> ${esc(t.client)}</p><p><b>How they come across:</b> ${esc(t.persona)}</p><p><b>What they know:</b> ${esc(t.facts)}</p>${modelBlock(t)}</details>`;
+    const chat = main.querySelector(".co-chat"), form = main.querySelector(".co-chatform"), say = form.querySelector("textarea"), out = main.querySelector(".co-wout");
+    const paint = (busy) => { chat.innerHTML = turns.map((m) => `<p class="co-say ${m.role}"><b>${m.role === "learner" ? "You" : "Client"}</b>${esc(m.text)}</p>`).join("") + (busy ? `<p class="co-say client co-typing"><b>Client</b>…</p>` : ""); chat.scrollTop = chat.scrollHeight; };
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault(); const text = say.value.trim(); if (!text) return;
+      turns.push({ role: "learner", text }); say.value = ""; paint(true); form.querySelector("button").disabled = true;
+      try { const { reply } = await askTutor({ mode: "roleplay", case: kase, turns }); turns.push({ role: "client", text: reply }); paint(); }
+      catch (err) { paint(); out.innerHTML = err.signin ? signinLine("The practice client", "practise with a friend using the case file below") : `<p class="co-empty">${esc(err.message)}</p>`; }
+      form.querySelector("button").disabled = false; say.focus();
+    });
+    say.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); form.requestSubmit(); } });
+    main.querySelector("[data-end]").addEventListener("click", async (e) => {
+      const btn = e.currentTarget; btn.disabled = true; out.innerHTML = `<p class="co-empty">The tutor is reviewing your interview…</p>`;
+      try {
+        const { feedback } = await askTutor({ mode: "debrief", case: kase, rubric: t.rubric, turns });
+        out.innerHTML = feedbackHtml(feedback) + modelBlock(t);
+        recordTask(t, scoreFeedback(feedback), "ai-assisted", { turns: turns.length });
+      } catch (err) { out.innerHTML = err.signin ? signinLine("Interview feedback") : `<p class="co-empty">${esc(err.message)}</p>`; }
+      btn.disabled = false;
+    });
+  }
+
   // a link from an anatomy lesson to the 3D model, opened on one system with a quiz (cfg.anatomy3d)
   function anatomyPanel(system) {
     const href = (mode) => `${cfg.anatomy3d.href}?${system ? `system=${encodeURIComponent(system)}&` : ""}quiz=${mode}`;
@@ -803,6 +911,7 @@ export function mountCourse(root, cfg) {
     else if (view === "tracks") viewTracks();
     else if (view === "problems") await viewProblems();
     else if (view === "cases") await viewAuthorities();
+    else if (view === "write") await viewWrite(arg);
     else if (view === "exams") await viewExams();
     else if (view === "exam") await viewExam(arg);
     else if (view === "practice") await viewPractice(arg);

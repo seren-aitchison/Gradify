@@ -41,6 +41,14 @@ supabase secrets set ANTHROPIC_API_KEY=sk-ant-...
 supabase functions deploy study-pack
 ```
 
+The course tutor (AI feedback on written practice, practice client interviews and "Ask about this lesson" on LawGradify and NurseGradify) is a second function using the same key. Run `supabase/migrations/20261105130000_tutor_usage.sql` first: the function counts each learner's daily use there and won't answer until the table exists.
+
+```bash
+supabase functions deploy course-tutor
+```
+
+Its daily limits per learner are in `DAILY` in `kit/assess/tutor.js`. After editing that file, run `npm run sync` so the function gets the same copy, then deploy again.
+
 Optional settings (with their defaults):
 
 ```bash
