@@ -1,5 +1,6 @@
-// Gradify LifeOS preview. Everything here is example data for one made-up learner,
-// generated in the browser. In the real LifeOS this comes from each site's progress API.
+// Gradify LifeOS tour. Everything in this file is example data for one made-up learner, generated in the
+// browser. The learner's own LifeOS (real progress, heatmap, Tree and next steps) is kit/lifeos/mine.js,
+// shown above the tour whenever they have real data.
 import { GROUPS } from "../core/sites.js";
 import { icon } from "../core/icons.js";
 import { ink, tile, triple } from "../core/colour.js";
@@ -15,6 +16,7 @@ import { trackView } from "../core/analytics.js";
 applyPrefs();
 trackView("Gradify LifeOS");
 import { drawTree, drawForest, drawDonut } from "./tree.js";
+import { mountMine } from "./mine.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]);
@@ -618,6 +620,8 @@ renderAreas();
 renderTabs();
 renderPath();
 renderCreds();
+// the learner's own LifeOS, above the tour, when they have real progress
+mountMine();
 // phones: start the heatmap at the most recent weeks whenever Progress opens
 document.addEventListener("lifeos:view", (e) => {
   if (e.detail === "progress") requestAnimationFrame(() => { const sc = $("#heat-scroll"); sc.scrollLeft = sc.scrollWidth; });

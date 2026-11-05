@@ -155,3 +155,32 @@ Changes to how it works:
 - Each course's daily XP goal follows the learner's daily study time until they pick a goal there.
 
 Time estimates (12 minutes a lesson, about 25 seconds a card, 90 seconds a question) are shown as estimates.
+
+## LifeOS, Earth and the Tree on real data
+
+`kit/learning/learner-data.js` gathers one learner's real data across every Gradify site:
+- each course's progress (on the device, or from the account for courses not opened on this device)
+- the shared activity log that every site writes to
+- the app's flashcard decks
+- the shared profile
+
+It produces a summary for each course:
+- lessons done
+- six-dimension mastery overall and by school
+- questions due for spaced retrieval, and flashcards due
+- exam pace
+- the next lesson
+
+It also produces a year of activity by site, the current streak, and one ranked "do next" list:
+1. confident mistakes
+2. due questions
+3. due flashcards
+4. fading or shaky decks
+5. the next lesson, raised when exam pace is tight or behind
+
+Nothing new is stored. Where it shows:
+- **Your Gradify** (`kit/lifeos/mine.js`) sits at the top of LifeOS on getgradify.com and on every site's LifeOS page. It shows level, XP, streak, the "do next" list, each course with its mastery and pace, a 26-week heatmap, and the Gradify Tree drawn from real activity. It appears only when there's real data. The tour below it keeps its example learner, Alex, labelled as an example.
+- **Subject Earth maps** (`kit/earth/subject-map.js`) now show the schools you've started in that site's courses as real pins next to your flashcard decks, with six-dimension evidence and a link back to the school.
+- **No evidence is shown as "no evidence yet", never as 0%.** A topic isn't told it has passed every check while parts of it are unmeasured.
+
+Still example data, and labelled as such: the LifeOS tour's own globe, community, credentials, calendar and the scripted assistant. Credentials need a real issuing and verification service before they can be shown for a learner.
