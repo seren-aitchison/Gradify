@@ -123,7 +123,7 @@
             <circle cx="80" cy="80" r="60" class="track"/>
             <g id="ring-segs"></g>
           </svg>
-          <div class="ring-label"><b id="live-count">0</b><span>live of <span class="js-count">30</span></span></div>
+          <div class="ring-label"><b id="live-count">0</b><span>live · <span id="beta-count">0</span> in beta<br>of <span class="js-count">31</span> sites</span></div>
         </div>
         <div class="bars" id="bars" aria-label="Sites in each group"></div>
       </div>
@@ -605,7 +605,7 @@
       </div>
     </footer>
   </div>
-  <button type="button" class="ai-fab lg" id="ai-fab" aria-label="Ask Gradify AI"><span class="ai-av" aria-hidden="true"></span><span class="fab-txt">Ask Gradify AI</span></button>
+  <button type="button" class="ai-fab lg" id="ai-fab" aria-label="Gradify AI preview (scripted demo)"><span class="ai-av" aria-hidden="true"></span><span class="fab-txt">Gradify AI preview</span></button>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
     if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));

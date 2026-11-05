@@ -1,6 +1,6 @@
 // Draws the rest of a sub-site's homepage, below its opening section, from site-content.js.
 //   import { renderHome } from "../kit/core/subsite-home.js"; renderHome(el, "MedGradify");
-import { SITES, nameHtml, accentOf } from "./site.js";
+import { SITES, nameHtml, accentOf, pathOf } from "./site.js";
 import { KINDS, SITES_CONTENT } from "./site-content.js";
 import { icon } from "./icons.js";
 import { ink } from "./colour.js";
@@ -24,6 +24,7 @@ export function renderHome(el, siteName) {
   const dims = DIMS[c.kind === "kids" ? "kids" : "default"], values = [88, 72, 61, 80, 54];
   const section = (id, title, sub, body) => `<section class="sm-sec" id="${id}"><div class="sm-head"><h2>${title}</h2>${sub ? `<p>${sub}</p>` : ""}</div>${body}</section>`;
   document.body.classList.add(`kind-${c.kind}`);
+  statusNotice(site);
 
   el.innerHTML = [
     section("how", fill(k.stepsTitle), "", `<ol class="sm-steps">${k.steps.map(([t, d], i) => `<li class="glass"><em>${i + 1}</em><b>${fill(t)}</b><p>${fill(d)}</p></li>`).join("")}</ol>`),
@@ -52,4 +53,19 @@ export function renderHome(el, siteName) {
   ].join("");
   el.style.setProperty("--accent", accent);
   el.style.setProperty("--accent-ink", ink(site.c));
+}
+
+// Say plainly what works here today. A "coming soon" site has a branded page and the shared notes tools,
+// but no course of its own yet, so its main button mustn't promise subject learning it can't give.
+const LIVE_COURSES = () => SITES.filter((x) => x.status === "live");
+export function statusNotice(site) {
+  if (!site || !["soon", "beta"].includes(site.status)) return;
+  const hero = document.querySelector(".sub-hero > div"); if (!hero || hero.querySelector(".sub-status")) return;
+  const note = document.createElement("p"); note.className = `sub-status is-${site.status}`; note.setAttribute("role", "note");
+  if (site.status === "soon") {
+    const others = LIVE_COURSES().map((x) => `<a href="${pathOf(x)}">${esc(x.n)}</a>`).join(", ");
+    note.innerHTML = `<b>Coming soon.</b> ${esc(site.n)}'s own course isn't built yet. What works here today is the Gradify notes tools: add your own notes and turn them into flashcards and practice questions. Courses you can take now: ${others}.`;
+    const cta = document.querySelector(".sub-ctas .btn-light span"); if (cta) cta.textContent = "Try the notes tools";
+  } else note.innerHTML = `<b>Beta.</b> ${esc(site.n)} is usable but still being written: some lessons and features aren't finished yet.`;
+  hero.prepend(note);
 }
