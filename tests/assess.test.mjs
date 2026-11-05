@@ -73,3 +73,23 @@ MS2: Q | a ; b | c ; d | why`);
   assert.deepEqual(L.sources[0], { cite: "Act 2000, s 1", kind: "legislation", date: "2026-01", url: "https://www.legislation.gov.uk/" });
   assert.equal(L.blocks.find((b) => b.t === "safe").x, "Education only.");
 });
+
+test("calculation answers keep their tolerance at every scale, including very small and very large values", async () => {
+  const { TYPES } = await import("../kit/assess/types.js");
+  const num = (body) => TYPES.num.parse(body);
+  const small = num("Energy? | 1.635e-18 | 1% | J | why it is so");
+  assert.equal(TYPES.num.mark(small, "1.64e-18").correct, true);
+  assert.equal(TYPES.num.mark(small, "1.635 × 10^-18").correct, true);
+  assert.equal(TYPES.num.mark(small, "1.64e-17").correct, false, "ten times too big is wrong, however small the numbers");
+  assert.equal(TYPES.num.mark(small, "1.70e-18").correct, false);
+  const absTiny = num("Charge? | 1.602e-19 | 0.001e-19 | C | why");
+  assert.equal(TYPES.num.mark(absTiny, "1.6e-19").correct, false);
+  assert.equal(TYPES.num.mark(absTiny, "1.6022e-19").correct, true);
+  const big = num("Frequency? | 6.0e14 | 1% | Hz | why");
+  assert.equal(TYPES.num.mark(big, "6 × 10^14").correct, true);
+  assert.equal(TYPES.num.mark(big, "6e13").correct, false);
+  const exact = num("Neutrons? | 146 | 0 |  | why");
+  assert.equal(TYPES.num.mark(exact, "146").correct, true);
+  assert.equal(TYPES.num.mark(exact, "146.1").correct, false);
+  assert.equal(TYPES.num.mark(num("Zero? | 0 | 0 |  | why"), "0").correct, true);
+});

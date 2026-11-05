@@ -23,7 +23,7 @@ These scores are evidence-based proxies, not judgements:
 
 | Site | Status | Total | Functionality | Content | Learning experience | Engineering | Backend | Academic quality | Accessibility | Biggest gaps |
 |---|---|---|---|---|---|---|---|---|---|---|
-| SciGradify | live | **76** | 20/20 | 17/20 | 13/15 | 14/15 | 2/10 | 0/10 | 10/10 | academic quality −10, backend −8, content −3 |
+| SciGradify | live | **76.2** | 20/20 | 17.2/20 | 13/15 | 14/15 | 2/10 | 0/10 | 10/10 | academic quality −10, backend −8, content −2.8 |
 | PsychGradify | beta | **75.1** | 20/20 | 16.4/20 | 13/15 | 13.7/15 | 2/10 | 0/10 | 10/10 | academic quality −10, backend −8, content −3.6 |
 | NurseGradify | live | **74.9** | 20/20 | 20/20 | 9/15 | 13.7/15 | 2/10 | 0.2/10 | 10/10 | academic quality −9.8, backend −8, learning experience −6 |
 | LawGradify | live | **74.3** | 20/20 | 20/20 | 8.7/15 | 13.4/15 | 2/10 | 0.2/10 | 10/10 | academic quality −9.8, backend −8, learning experience −6.3 |

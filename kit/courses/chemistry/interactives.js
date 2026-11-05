@@ -118,7 +118,7 @@ export const INTERACTIVES = [
   { id: "mass-spec", file: "spectra.js", mode: "ms", kind: "Explorer", title: "Mass spectrometry and fragmentation",
     sub: "Molecular ions, exact isotope patterns for chlorine and bromine, and the fragment ions behind the base peaks.",
     note: "Isotope patterns calculated from natural abundances; fragment heights approximate.",
-    schools: [15], lessons: ["u15-15","u15-16"], load: () => import("../../labs/chemistry/spectra.js") },
+    schools: [15], lessons: ["u15-15","u15-16","u02-03"], load: () => import("../../labs/chemistry/spectra.js") },
   { id: "docking", file: "docking.js", kind: "Simulation", title: "Molecular docking and binding",
     sub: "Fit ligands into a binding pocket by hand or by auto-docking, scoring hydrogen bonds, hydrophobic contacts, a salt bridge and clashes.",
     note: "Invented pocket and ligands; a teaching scoring function, not a prediction.",

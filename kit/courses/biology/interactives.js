@@ -46,7 +46,7 @@ export const INTERACTIVES = [
   { id: "organ-systems", file: "organs.js", kind: "Explorer", title: "Human organ-system explorer",
     sub: "Switch body systems on and off on a real 3D anatomy model and tap organs to learn what they do.",
     note: "BodyParts3D adult male model (CC BY 4.0); female organs and fine structures aren't included.",
-    schools: [7], lessons: ["u07-01"], load: () => import("../../labs/biology/organs.js") },
+    schools: [7], lessons: ["u07-01","u02-30"], load: () => import("../../labs/biology/organs.js") },
   { id: "heart", file: "heart.js", kind: "Simulation", title: "The cardiac cycle",
     sub: "A model left heart: pressures, volumes, valves and the pressure–volume loop, responding to heart rate, contractility and resistance.",
     note: "Time-varying elastance ventricle with a two-element Windkessel; left heart only, no reflexes.",
