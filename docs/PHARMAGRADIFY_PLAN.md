@@ -146,3 +146,9 @@ See the status sections below as schools are added. Content is written by Claude
 - 18 lessons, written to content standard 2, following NICE NG136, NG238, CG126, NG185, NG106, NG196, NG158, NG89, NG128 and CG147. Covers: hypertension diagnosis and NICE steps, lipids and QRISK3, angina and GTN counselling, ACS and DAPT, secondary prevention, HFrEF's four pillars, AF (CHA₂DS₂-VASc and ORBIT), antiarrhythmics (amiodarone monitoring), VTE, anticoagulants and reversal, warfarin, DOACs (where they're unsuitable), antiplatelets, stroke and TIA, PAD, and cardiovascular ADRs.
 - **Drug cards:** ramipril, amlodipine, atorvastatin, bisoprolol, amiodarone, warfarin, apixaban and clopidogrel. QA reports 0 warnings.
 - **Expert review:** check the NICE thresholds, targets and treatment steps (NG136 and NG238 are updated often), the DOAC criteria and the warfarin INR targets.
+
+## Status: School 8, Respiratory Therapeutics (2026-11-05)
+
+- 11 lessons, written to content standard 2: adult and childhood asthma under BTS/NICE/SIGN NG245 (2024: AIR and MART), COPD (NG115), inhaler technique and carbon footprint, bronchodilators, inhaled corticosteroids (beclometasone by brand, steroid cards), acute asthma and COPD exacerbations, allergic rhinitis, anaphylaxis (Resuscitation Council UK; two auto-injectors), cough and self-care (NG120), and smoking cessation (NG209, CYP1A2).
+- **Drug cards:** beclometasone (inhaled) and varenicline. QA reports 0 warnings.
+- **Expert review:** check NG245's step details for children and the codeine cough medicine classification against current guidance.
