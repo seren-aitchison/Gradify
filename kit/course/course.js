@@ -15,6 +15,7 @@ import { roadDefs, car } from "./road.js";
 import { parseNotes, lessonHtml, lessonText, lessonFrame, esc, inline, norm } from "./notes.js";
 import { renderQuestion, wireQuestions, normalize, TYPES as QTYPES } from "../assess/questions.js";
 import { makeAttempt, analyse } from "../assess/attempts.js";
+import { mergeProgress, cloudCopy } from "./progress.js";
 import { buildExam, runExam, FORMATS } from "../assess/exam.js";
 
 const DAY = 864e5;
@@ -86,7 +87,29 @@ export function mountCourse(root, cfg) {
   const trackOf = (u) => cfg.tracks.find((t) => t.units.includes(u.n)) || cfg.tracks[0];
   let S = (() => { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { return null; } })() || {};
   S = { done: {}, chests: {}, quiz: {}, solved: {}, cards: {}, log: [], goal: 30, path: null, open: [], closed: [], weekly: {}, saved: {}, mocks: {}, attempts: [], ...S };
-  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch { /* private mode: progress lasts this visit */ } };
+  // saved on this device at once and, when signed in, to the account a few seconds later (kit/course/progress.js)
+  let syncT = null;
+  const save = () => {
+    S.updated = Date.now();
+    try { localStorage.setItem(KEY, JSON.stringify(S)); } catch { /* private mode: progress lasts this visit */ }
+    clearTimeout(syncT); syncT = setTimeout(pushProgress, 3000);
+  };
+  async function pushProgress() {
+    try { const s = await store(); if (s.mode === "cloud" && s.saveCourseProgress) await s.saveCourseProgress(cfg.slug, cfg.site, cloudCopy(S)); }
+    catch { /* offline, or the course_progress table isn't set up yet: the device copy is kept */ }
+  }
+  // on load: merge the account's copy into this device's, then show the result
+  async function pullProgress() {
+    try {
+      const s = await store(); if (s.mode !== "cloud" || !s.getCourseProgress) return;
+      const cloud = await s.getCourseProgress(cfg.slug);
+      const before = JSON.stringify(cloudCopy(S));
+      if (cloud) S = mergeProgress(S, cloud);
+      try { localStorage.setItem(KEY, JSON.stringify(S)); } catch { /* private mode */ }
+      if (!cloud || JSON.stringify(cloudCopy(S)) !== JSON.stringify(cloud)) pushProgress();
+      if (JSON.stringify(cloudCopy(S)) !== before) route();
+    } catch { /* offline or not set up: carry on with the device copy */ }
+  }
 
   // the learner's Gradify account (this device, or their cloud account when signed in)
   let storeP = null;
@@ -756,6 +779,7 @@ export function mountCourse(root, cfg) {
     paintSide();
   }
   addEventListener("hashchange", route);
+  pullProgress();
   route();
   reviewPool().then(paintHud);
   return { state: () => S, lessons, units };

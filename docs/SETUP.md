@@ -13,7 +13,7 @@ You need: a free Supabase account, an Anthropic API key, and about 30 minutes.
 
 1. In the project, open **SQL Editor**, then **New query**.
 2. Paste the whole of `supabase/migrations/20261028120000_gradify_core.sql` and click **Run**.
-3. Do the same with `supabase/migrations/20261029120000_mastery_evidence.sql` (it adds the Mastery Engine's evidence to `reviews`), then `supabase/migrations/20261031120000_sport_body_intelligence.sql` (SportGradify Body Intelligence: `workouts`, `body_checkins`, `fitness_tests`). Run the files in date order.
+3. Do the same with `supabase/migrations/20261029120000_mastery_evidence.sql` (it adds the Mastery Engine's evidence to `reviews`), then `supabase/migrations/20261031120000_sport_body_intelligence.sql` (SportGradify Body Intelligence: `workouts`, `body_checkins`, `fitness_tests`), `supabase/migrations/20261101120000_assessment_attempts.sql` (every answer in every course) and `supabase/migrations/20261105120000_course_progress.sql` (course progress that follows a learner across devices). Run the files in date order. Until the last two are run, courses keep progress and answers on the device only.
 4. Open **Table Editor**. You should see `profiles`, `documents`, `packs`, `cards`, `reviews`, `activity`, `plan_blocks` and `waitlist`, each marked "RLS enabled".
 
 ## 3. Turn on sign-in
