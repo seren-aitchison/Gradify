@@ -20,8 +20,17 @@
 .co-tabs > a[aria-current] { color: var(--fg); background: linear-gradient(180deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .05)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2); }
 .co-due { position: absolute; top: 2px; right: 2px; min-width: 17px; height: 17px; padding: 0 4px; border-radius: 9px; font: 700 10.5px/17px var(--sans); font-style: normal; text-align: center; color: #fff; background: #ff3d6e; }
 .co-search { position: relative; margin-left: auto; flex: none; display: flex; align-items: center; gap: 6px; padding: 0 10px; border-radius: 11px; background: rgba(255, 255, 255, .05); border: 1px solid var(--line); color: var(--mute); }
-.co-search input { width: 190px; padding: 8px 0; border: 0; background: none; color: var(--fg); font: 14px var(--sans); outline: none; }
+.co-search input { width: 190px; padding: 8px 0; border: 0; background: none; color: var(--fg); font: 14px var(--sans); outline: none; transition: width .2s; }
+/* when the tabs don't fit, the search is an icon until it's used, and the bar's edges fade to show it scrolls */
+.co-tabs.tight .co-search { cursor: pointer; }
+.co-tabs.tight > a { padding: 8px 11px; }
+.co-tabs.tight .co-search input { width: 0; }
+.co-tabs.tight .co-search:focus-within input, .co-tabs.tight .co-search input:not(:placeholder-shown) { width: min(190px, 46vw); }
+.co-tabs.more-r { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 44px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 44px), transparent); }
+.co-tabs.more-l { -webkit-mask-image: linear-gradient(90deg, transparent, #000 44px); mask-image: linear-gradient(90deg, transparent, #000 44px); }
+.co-tabs.more-l.more-r { -webkit-mask-image: linear-gradient(90deg, transparent, #000 44px, #000 calc(100% - 44px), transparent); mask-image: linear-gradient(90deg, transparent, #000 44px, #000 calc(100% - 44px), transparent); }
 .co-results { position: fixed; z-index: 30; margin-top: 8px; width: min(420px, 90vw); max-height: 60vh; overflow: auto; padding: 6px; border-radius: 14px; background: #121214; border: 1px solid var(--line-strong); box-shadow: 0 20px 50px -10px #000; transform: translate(-60%, 24px); }
+.co-results.co-float { margin-top: 0; transform: none; z-index: 60; }
 .co-results a { display: block; padding: 8px 10px; border-radius: 9px; color: var(--fg); text-decoration: none; font-size: 14px; }
 .co-results a:hover { background: rgba(255, 255, 255, .06); }
 .co-results small { display: block; font-size: 11.5px; color: var(--mute); }
@@ -276,7 +285,6 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(255, 255, 2
   .co-side { position: static; max-height: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 }
 @media (max-width: 640px) {
-  .co-search input { width: 120px; }
   .co-banner { flex-direction: column; align-items: flex-start; }
   .co-bbtns { flex-direction: row; }
   .co-road { max-width: 340px; }
