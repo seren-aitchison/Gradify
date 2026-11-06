@@ -19,6 +19,8 @@
     "check:live": "node scripts/check-live.cjs"
   },
   "devDependencies": {
-    "@anthropic-ai/sdk": "0.133.0"
+    "@anthropic-ai/sdk": "0.133.0",
+    "@electric-sql/pglite": "0.5.15",
+    "bcryptjs": "2.4.3"
   }
 }

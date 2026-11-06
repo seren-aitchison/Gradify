@@ -30,6 +30,9 @@ jobs:
         with:
           node-version: 22
 
+      - name: Install pinned dev dependencies (PGlite for the database rehearsals, bcryptjs)
+        run: npm ci --no-audit --no-fund
+
       - name: Tests
         run: npm test
 
