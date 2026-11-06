@@ -62,6 +62,7 @@ Every topic in the brief is a lesson, in brief order. Lessons that aren't writte
 | Psychology | 12 Evolutionary Psychology and Behavioural Ecology | 17 | 86 | Written, passing all automated checks; **draft** |
 | Psychology | 13 Motivation, Emotion and Wellbeing | 20 | 106 | Written, passing all automated checks; **draft** |
 | Psychology | 14 Applied Psychology | 24 | 124 | Written, passing all automated checks; **draft** |
+| Psychology | 15 Cultural and Cross-Cultural Psychology | 16 | 80 | Written, passing all automated checks; **draft** |
 | Sociology | 1 Foundations of Sociology | 19 | 95 | Written, passing all automated checks; **draft** |
 | Sociology | 2 Classical Sociological Theory | 23 | 115 | Written, passing all automated checks; **draft** |
 | Sociology | 3 Contemporary Sociological Theory | 24 | 120 | Written, passing all automated checks; **draft** |
@@ -81,7 +82,7 @@ Every topic in the brief is a lesson, in brief order. Lessons that aren't writte
 | Sociology | 17 Research Methods | 38 | 190 | Written, passing all automated checks; **draft** |
 | Sociology | 18 Social Statistics and Data Science | 25 | 125 | Written, passing all automated checks; **draft** |
 
-That is **734 of 831 lessons** (296 of 393 psychology, 438 of 438 sociology: every sociology school), with 3,802 questions and 1,468 flashcards. The other 4 schools (Psychology 8, 9, 15 and 16) are registered but unwritten.
+That is **750 of 831 lessons** (312 of 393 psychology, 438 of 438 sociology: every sociology school), with 3,882 questions and 1,500 flashcards. The other 3 schools (Psychology 8, 9 and 16) are registered but unwritten.
 
 **Every written lesson has:**
 
@@ -158,7 +159,7 @@ Every lab says what kind it is and what it simplifies. Data is labelled either *
 
 ## Next batches (suggested order)
 
-1. **Psychology:** 15 and 16; 8 and 9 (clinical) need an education-not-diagnosis statement in every lesson and should be reviewed by a clinical psychologist.
+1. **Psychology:** 16; 8 and 9 (clinical) need an education-not-diagnosis statement in every lesson and should be reviewed by a clinical psychologist.
 2. **Sociology:** all 18 schools written; next is human review.
 3. **Clinical schools** (Psychology 8 and 9) should be written with a clinical psychologist's review planned from the start.
 4. **Human review:** give each written school a structured review, a full source check and expert sign-off, recorded in `qa.js`.
