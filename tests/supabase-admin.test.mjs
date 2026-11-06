@@ -4,19 +4,22 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { expectations, verifyQuery, migrate, judgeRls, listMigrations, client } from "../scripts/supabase-admin.mjs";
+import { expectations, verifyQuery, migrate, judgeRls, listMigrations, client, destructive } from "../scripts/supabase-admin.mjs";
 
-function fakeDb({ applied = [], failOn = null, missing = [], atomic = true } = {}) {
-  const ledger = new Set(applied), ran = [];
+function fakeDb({ applied = [], failOn = null, missing = [], atomic = true, users = 0, rows = {}, loseRowsOn = null } = {}) {
+  const ledger = new Set(applied), ran = [], counts = { ...rows };
   let probe = false;
   const sql = async (q) => {
+    if (q.includes("from auth.users")) return [{ n: users }];
+    if (q.startsWith("select tablename from pg_tables")) return Object.keys(counts).map((tablename) => ({ tablename }));
+    if (q.startsWith("select (select count(*)")) { const row = {}; Object.values(counts).forEach((n, i) => { row[`c${i}`] = n; }); return [row]; }
     if (q.includes("_gradify_atomic_probe (x int)")) { probe = !atomic; throw new Error("division by zero"); }
     if (q.includes("to_regclass('public._gradify_atomic_probe')")) return [{ left: probe }];
     if (q.startsWith("drop table if exists public._gradify_atomic_probe")) { probe = false; return []; }
     if (q.includes("create schema if not exists supabase_migrations")) return [];
     if (q.startsWith("select version from supabase_migrations")) return [...ledger].map((version) => ({ version }));
     const m = q.match(/values \('(\d{14})'/);
-    if (m) { if (failOn && q.includes(failOn)) throw new Error(`syntax error near "${failOn}"`); ledger.add(m[1]); ran.push(m[1]); return []; }
+    if (m) { if (failOn && q.includes(failOn)) throw new Error(`syntax error near "${failOn}"`); ledger.add(m[1]); ran.push(m[1]); if (loseRowsOn === m[1]) counts.cards = 0; return []; }
     if (q.startsWith("select ")) { const n = (q.match(/ as c\d+/g) || []).length, row = {}; for (let i = 0; i < n; i++) row[`c${i}`] = true; for (const i of missing) row[`c${i}`] = false; return [row]; }
     return [];
   };
@@ -80,3 +83,35 @@ test("the tool refuses a malformed project ref and never needs a token in the re
   assert.throws(() => client("not-a-ref"), /project ref/);
   assert.ok(client("abcdefghijklmnopqrst"));
 });
+
+test("destructive statements are refused; widening a constraint and function bodies are allowed", async () => {
+  assert.deepEqual(destructive("alter table public.t drop constraint k; alter table public.t add constraint k check (x > 0);"), []);
+  assert.deepEqual(destructive("create function public.f() returns trigger language plpgsql as $$ begin update public.profiles set xp = 1; return new; end $$;"), []);
+  for (const bad of ["drop table public.cards;", "delete from public.cards;", "truncate public.cards;", "update public.profiles set xp = 0;", "alter table public.cards drop column front;", "alter table public.cards rename to old_cards;", "alter table public.t drop constraint k;"])
+    assert.equal(destructive(bad).length, 1, bad);
+  const f = fakeDb();
+  const r = await migrate(f.db, { list: [{ file: "20260105000000_x.sql", version: "20260105000000", name: "x", sql: "delete from public.cards;" }] });
+  assert.equal(r.ok, false); assert.equal(r.report.at(-1).result, "REFUSED"); assert.deepEqual(f.ran, []);
+});
+
+test("existing learner data stops the run until the owner has taken a full backup", async () => {
+  const f = fakeDb({ users: 3, rows: { cards: 12 } });
+  const r = await migrate(f.db, { list: list.slice(0, 2) });
+  assert.equal(r.ok, false); assert.match(r.report[0].error, /3 accounts and 12 rows/); assert.deepEqual(f.ran, []);
+  const ok = await migrate(fakeDb({ users: 3, rows: { cards: 12 } }).db, { list: list.slice(0, 2), backedUp: true });
+  assert.equal(ok.ok, true);
+});
+
+test("a migration after which any table has fewer rows stops the run", async () => {
+  const f = fakeDb({ users: 1, rows: { cards: 5 }, loseRowsOn: "20260101000000" });
+  const r = await migrate(f.db, { list: list.slice(0, 2), backedUp: true });
+  assert.equal(r.ok, false); assert.equal(r.report[0].result, "ROWS LOST"); assert.deepEqual(r.report[0].gone, ["cards: 5 → 0"]);
+  assert.deepEqual(f.ran, ["20260101000000"], "nothing after it runs");
+});
+
+test("--next applies exactly one migration and pauses for review", async () => {
+  const f = fakeDb();
+  const r = await migrate(f.db, { list: list.slice(0, 2), next: true });
+  assert.equal(r.ok, true); assert.equal(r.paused, "20260101000000_a.sql"); assert.deepEqual(f.ran, ["20260101000000"]);
+});
+

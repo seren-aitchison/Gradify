@@ -2,9 +2,12 @@
 // Uses the Supabase Management API (api.supabase.com) with a personal access token. The token is never read
 // from this repository or printed: give it as SUPABASE_ACCESS_TOKEN, or let a credential-injecting proxy add it.
 //
+//   node scripts/supabase-admin.mjs preflight    <ref>   read-only: health, secrets by name, existing data and schema
 //   node scripts/supabase-admin.mjs status       <ref>   project health, functions, names of secrets set
 //   node scripts/supabase-admin.mjs backup       <ref>   schema, row counts and public-table rows → a file OUTSIDE the repo
-//   node scripts/supabase-admin.mjs migrate      <ref>   apply pending migrations in order, each in a transaction, verified
+//   node scripts/supabase-admin.mjs migrate      <ref>   apply pending migrations in order, each in a transaction, verified;
+//                                                        --next applies one and stops; refuses destructive SQL, stops if
+//                                                        any table loses rows or learner data exists without a backup
 //   node scripts/supabase-admin.mjs rls-audit    <ref>   every public table: RLS on, policies present, nothing readable by anon
 //   node scripts/supabase-admin.mjs auth-config  <ref>   site URL and sign-in redirect URLs for getgradify.com
 // Each command prints a markdown report and, with --write, appends it to docs/BACKEND-LOG.md.
@@ -60,6 +63,26 @@ export function verifyQuery(e) {
   return { checks: checks.map(([label]) => label), query: checks.length ? `select ${checks.map(([, q], i) => `${q} as c${i}`).join(", ")};` : "select 1 as c0;" };
 }
 
+// ---------- safety checks ----------
+// statements that could remove or rewrite existing data. A constraint may be dropped only when the same
+// migration adds it back under the same name (widening an allowed list); everything else is refused.
+export function destructive(sql) {
+  // function bodies ($$ … $$) run later, when the function is called, not while the migration runs
+  const s = sql.replace(/--.*$/gm, "").replace(/\$\$[\s\S]*?\$\$/g, "$$$$");
+  const found = [];
+  for (const m of s.matchAll(/\b(drop\s+(?:table|column|schema|view|function|trigger|policy|index|type)\b[^;]*|truncate\b[^;]*|delete\s+from\b[^;]*|update\s+(?:public\.)?\w+\s+set\b[^;]*|alter\s+table\s+[^;]*?\b(?:rename|alter\s+column)\b[^;]*)/gi)) found.push(m[1].trim().slice(0, 120));
+  for (const m of s.matchAll(/drop\s+constraint\s+(?:if\s+exists\s+)?(\w+)/gi)) if (!new RegExp(`add\\s+constraint\\s+${m[1]}\\b`, "i").test(s)) found.push(`drop constraint ${m[1]} (not re-added)`);
+  return found;
+}
+// rows in every public table, to prove a migration removed none
+export async function rowCounts(c) {
+  const tables = (await c.sql("select tablename from pg_tables where schemaname = 'public' and tablename not like '\\_gradify%' order by 1")).map((r) => r.tablename);
+  if (!tables.length) return {};
+  const row = (await c.sql(`select ${tables.map((t, i) => `(select count(*) from public.${t})::bigint as c${i}`).join(", ")}`))[0] || {};
+  return Object.fromEntries(tables.map((t, i) => [t, Number(row[`c${i}`])]));
+}
+export const lost = (before, after) => Object.entries(before).filter(([t, n]) => (after[t] ?? 0) < n).map(([t, n]) => `${t}: ${n} → ${after[t] ?? 0}`);
+
 // the Supabase CLI's own migration ledger, so `supabase db push` later agrees with what was applied here
 const LEDGER = `create schema if not exists supabase_migrations;
 create table if not exists supabase_migrations.schema_migrations (version text primary key, statements text[], name text);`;
@@ -70,8 +93,12 @@ export async function listMigrations() {
 }
 
 /** Apply pending migrations in order. Stops at the first failure and reports it; never skips one. */
-export async function migrate(c, { list, log = () => {} } = {}) {
+export async function migrate(c, { list, log = () => {}, next = false, backedUp = false } = {}) {
   list ||= await listMigrations();
+  // existing learner data needs a full backup taken by the owner (dashboard or supabase db dump) first
+  const users = Number((await c.sql("select count(*)::int as n from auth.users"))[0]?.n || 0);
+  const before0 = await rowCounts(c), rows0 = Object.values(before0).reduce((a, b) => a + b, 0);
+  if ((users || rows0) && !backedUp) return { ok: false, stoppedAt: "(before any migration)", report: [{ file: "existing data", result: "STOPPED", error: `The project already has ${users} accounts and ${rows0} rows. Take a full backup yourself (Database → Backups, or supabase db dump), check it, then rerun with --existing-data-backed-up.` }] };
   // prove that a multi-statement query is all-or-nothing on this project before relying on it
   await c.sql("drop table if exists public._gradify_atomic_probe;");
   await c.sql("create table public._gradify_atomic_probe (x int); select 1 / 0;").catch(() => {});
@@ -85,6 +112,9 @@ export async function migrate(c, { list, log = () => {} } = {}) {
     const sql = m.sql ?? (await readFile(m.url, "utf8"));
     const sha = createHash("sha256").update(sql).digest("hex").slice(0, 12);
     if (done.has(m.version)) { report.push({ ...m, result: "already applied", sha }); log(`= ${m.file} (already applied)`); continue; }
+    const danger = destructive(sql);
+    if (danger.length) { report.push({ ...m, result: "REFUSED", sha, error: `could change or remove existing data: ${danger.join("; ")}` }); log(`✗ ${m.file}: refused (${danger.join("; ")})`); return { ok: false, report, stoppedAt: m.file }; }
+    const before = await rowCounts(c);
     const t0 = Date.now();
     try {
       // one query: the migration and its ledger entry commit together or not at all (checked by the probe above)
@@ -97,9 +127,12 @@ export async function migrate(c, { list, log = () => {} } = {}) {
     const v = verifyQuery(expectations(sql));
     const row = (await c.sql(v.query))[0] || {};
     const missing = v.checks.filter((_, i) => row[`c${i}`] !== true);
-    report.push({ ...m, result: missing.length ? "APPLIED BUT INCOMPLETE" : "applied and verified", sha, ms: Date.now() - t0, checked: v.checks.length, missing });
-    log(`${missing.length ? "✗" : "✓"} ${m.file}: ${v.checks.length} objects checked${missing.length ? `; missing: ${missing.join(", ")}` : ""}`);
-    if (missing.length) return { ok: false, report, stoppedAt: m.file };
+    const gone = lost(before, await rowCounts(c));
+    const result = gone.length ? "ROWS LOST" : missing.length ? "APPLIED BUT INCOMPLETE" : "applied and verified";
+    report.push({ ...m, result, sha, ms: Date.now() - t0, checked: v.checks.length, missing, gone });
+    log(`${missing.length || gone.length ? "✗" : "✓"} ${m.file}: ${v.checks.length} objects checked, row counts kept${missing.length ? `; missing: ${missing.join(", ")}` : ""}${gone.length ? `; ROWS LOST: ${gone.join(", ")}` : ""}`);
+    if (missing.length || gone.length) return { ok: false, report, stoppedAt: m.file };
+    if (next) return { ok: true, report, paused: m.file };
   }
   return { ok: true, report };
 }
@@ -165,14 +198,38 @@ async function backup(c, out) {
     snap.counts[t] = (await q(`select count(*)::int as n from public.${t}`))[0].n;
     snap.rows[t] = (await q(`select coalesce(json_agg(t), '[]'::json) as rows from public.${t} t`))[0].rows;
   }
-  const file = `${dir}/gradify-${c.ref}-${at}.json`;
-  await writeFile(file, JSON.stringify(snap), { mode: 0o600 });
-  const sha = createHash("sha256").update(JSON.stringify(snap)).digest("hex").slice(0, 16);
-  return `Backup written to ${file} (sha256 ${sha}…, readable only by you). ${tables.length} public tables, ${Object.values(snap.counts).reduce((a, b) => a + b, 0)} rows, ${snap.auth_users} accounts (counted, not copied). ${snap.schema.migrations.length} migrations already recorded.
+  const file = `${dir}/gradify-${c.ref}-${at}.json`, text = JSON.stringify(snap);
+  await writeFile(file, text, { mode: 0o600 });
+  const sha = createHash("sha256").update(text).digest("hex");
+  // independent check: read the file back from disk, recompute its hash, check every table's rows against its
+  // count, and recount the live database to show nothing changed while the backup ran
+  const back = await readFile(file, "utf8"), parsed = JSON.parse(back);
+  const problems = [];
+  if (createHash("sha256").update(back).digest("hex") !== sha) problems.push("the file on disk doesn't match what was written");
+  for (const t of tables) if ((parsed.rows[t] || []).length !== parsed.counts[t]) problems.push(`${t}: ${parsed.rows[t]?.length} rows saved but ${parsed.counts[t]} counted`);
+  const now = await rowCounts(c);
+  for (const t of tables) if (now[t] !== snap.counts[t]) problems.push(`${t} changed during the backup (${snap.counts[t]} → ${now[t]})`);
+  if (problems.length) throw new Error(`Backup NOT verified: ${problems.join("; ")}. Nothing has been changed; don't migrate.`);
+  return `Backup written to ${file} (sha256 ${sha.slice(0, 16)}…, readable only by you) and **verified**: re-read from disk with a matching hash, every table's saved rows equal its count, and a fresh count of the live database matches. ${tables.length} public tables, ${Object.values(snap.counts).reduce((a, b) => a + b, 0)} rows, ${snap.auth_users} accounts (counted, not copied). ${snap.schema.migrations.length} migrations already recorded.
 
 Note: this is a logical snapshot through the API. Auth accounts and storage files aren't included; Supabase's own daily backups (and point-in-time recovery on paid plans) cover those.
 
 ${md(tables.map((t) => ({ table: t, rows: snap.counts[t] })), ["table", "rows"])}`;
+}
+
+// read-only: everything that must be true before anything is changed
+async function preflight(c) {
+  const st = await status(c);
+  const users = Number((await c.sql("select count(*)::int as n from auth.users"))[0]?.n || 0);
+  const counts = await rowCounts(c), rows = Object.values(counts).reduce((a, b) => a + b, 0);
+  const planned = new Set(); for (const m of await listMigrations()) for (const t of expectations(await readFile(m.url, "utf8")).tables) planned.add(t);
+  const clash = Object.keys(counts).filter((t) => planned.has(t));
+  const recorded = await c.sql("select version from supabase_migrations.schema_migrations order by 1").catch(() => []);
+  return `${st}
+
+Existing data: ${users} accounts, ${rows} rows in ${Object.keys(counts).length} public tables. ${users || rows ? "**Learner data exists: a full owner-taken backup is required before migrating.**" : "The project is empty."}
+Tables the migrations create that already exist: ${clash.join(", ") || "none"}. Migrations already recorded: ${recorded.length}.${clash.length && !recorded.length ? " **These tables exist but no migration is recorded: the project was set up by hand. Stop and compare the schema before applying anything.**" : ""}
+Changes made by this check: none.`;
 }
 
 async function rlsAudit(c) {
@@ -193,18 +250,19 @@ async function authConfig(c) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   const [cmd, ref, ...rest] = process.argv.slice(2), write = rest.includes("--write");
   const c = client(ref);
-  const titles = { status: "Project status", backup: "Backup", migrate: "Migrations", "rls-audit": "Row-level security audit", "auth-config": "Sign-in configuration" };
+  const titles = { preflight: "Preflight (read-only)", status: "Project status", backup: "Backup", migrate: "Migrations", "rls-audit": "Row-level security audit", "auth-config": "Sign-in configuration" };
   let body, failed = false;
   try {
     if (cmd === "status") body = await status(c);
+    else if (cmd === "preflight") { body = await preflight(c); failed = /\*\*(Learner data exists|These tables exist)/.test(body); }
     else if (cmd === "backup") body = await backup(c, rest.find((x) => !x.startsWith("--")));
     else if (cmd === "migrate") {
-      const r = await migrate(c, { log: (l) => console.error(l) });
+      const r = await migrate(c, { log: (l) => console.error(l), next: rest.includes("--next"), backedUp: rest.includes("--existing-data-backed-up") });
       failed = !r.ok;
-      body = `${r.ok ? "All migrations applied and verified." : `**Stopped at ${r.stoppedAt}.** Nothing after it was applied; the failed migration was rolled back.`}\n\n${md(r.report.map((m) => ({ migration: m.file, result: m.result, "objects checked": m.checked ?? "", sha256: m.sha, detail: m.error || (m.missing?.length ? `missing: ${m.missing.join(", ")}` : "") })), ["migration", "result", "objects checked", "sha256", "detail"])}`;
+      body = `${r.paused ? `Applied and verified ${r.paused}; paused there (--next).` : r.ok ? "All migrations applied and verified." : `**Stopped at ${r.stoppedAt}.** Nothing after it was applied; the failed migration was rolled back.`}\n\n${md(r.report.map((m) => ({ migration: m.file, result: m.result, "objects checked": m.checked ?? "", sha256: m.sha, detail: m.error || (m.missing?.length ? `missing: ${m.missing.join(", ")}` : "") })), ["migration", "result", "objects checked", "sha256", "detail"])}`;
     } else if (cmd === "rls-audit") { body = await rlsAudit(c); failed = /need attention/.test(body); }
     else if (cmd === "auth-config") body = await authConfig(c);
-    else { console.error("Commands: status, backup, migrate, rls-audit, auth-config"); process.exit(2); }
+    else { console.error("Commands: preflight, status, backup, migrate [--next] [--existing-data-backed-up], rls-audit, auth-config"); process.exit(2); }
   } catch (e) { body = `**Failed:** ${e.message}`; failed = true; }
   const entry = `\n## ${new Date().toISOString().slice(0, 16).replace("T", " ")} UTC · ${titles[cmd]} · ${ref}\n\n${body}\n`;
   console.log(entry);
