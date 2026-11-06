@@ -334,6 +334,7 @@ X: Find the x-coordinates of the stationary points of y = x^{2}e^{−x}.
 - Check by expanding when possible: (x^{2})(x^{3}) has derivative 2x × x^{3} + x^{2} × 3x^{2} = 5x^{4}, the same as d/dx x^{5}.
 - The product rule is symmetric: u′v + uv′ = uv′ + u′v.
 - Quotients can be done as products: x/(x + 1) = x(x + 1)^{−1}.
+- It extends to dot and cross products of vectors.
 K: (uv)′ = u′v + uv′; use the chain rule inside; factorise the answer.
 !: Writing (uv)′ = u′v′.
 Q: Differentiate x e^{2x}. | e^{2x} + 2xe^{2x} = e^{2x}(1 + 2x).

@@ -40,7 +40,7 @@ export default {
       { id: "integration", kind: "A level · calculus", title: "Integration", sub: "Powers, reverse chain rule, by parts, logarithms and trigonometric functions.", load: () => import("./steps/integration.js") },
     ] },
   // the schools whose notes are written so far (tests/courses.test.mjs checks this matches notes/)
-  written: ["u01", "u03", "u07"],
+  written: ["u01", "u03", "u05", "u07"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
   extras: [
     ["Maths in 3D", "MathGradify's interactive 3D models.", "../3d.html"],
