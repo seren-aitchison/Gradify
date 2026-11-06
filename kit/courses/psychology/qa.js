@@ -16,6 +16,7 @@ export const QA = {
   u05: { standard: 2, reviewed: null, sources: null, signoff: null },
   u06: { standard: 2, reviewed: null, sources: null, signoff: null },
   u07: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u08: { standard: 2, reviewed: null, sources: null, signoff: null },
   u10: { standard: 2, reviewed: null, sources: null, signoff: null },
   u11: { standard: 2, reviewed: null, sources: null, signoff: null },
   u12: { standard: 2, reviewed: null, sources: null, signoff: null },
@@ -25,4 +26,4 @@ export const QA = {
   u16: { standard: 2, reviewed: null, sources: null, signoff: null },
 };
 // the date each school's notes were first written (shown on every lesson with the review state)
-export const WRITTEN_ON = { u01: "2026-11-01", u02: "2026-11-03", u03: "2026-11-03", u04: "2026-11-02", u05: "2026-11-03", u06: "2026-11-03", u07: "2026-11-05", u10: "2026-11-02", u11: "2026-11-02", u12: "2026-11-05", u13: "2026-11-05", u14: "2026-11-05", u15: "2026-11-06", u16: "2026-11-06" };
+export const WRITTEN_ON = { u01: "2026-11-01", u02: "2026-11-03", u03: "2026-11-03", u04: "2026-11-02", u05: "2026-11-03", u06: "2026-11-03", u07: "2026-11-05", u08: "2026-11-06", u10: "2026-11-02", u11: "2026-11-02", u12: "2026-11-05", u13: "2026-11-05", u14: "2026-11-05", u15: "2026-11-06", u16: "2026-11-06" };
