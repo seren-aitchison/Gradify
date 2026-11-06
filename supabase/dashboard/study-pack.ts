@@ -236,7 +236,8 @@ function packStats(pack, cards) {
 //      questions for a deck made before they existed)
 // The learner must be signed in. The Claude API key stays here as a server secret.
 
-const DAILY_PACKS = Number(Deno.env.get("GRADIFY_DAILY_PACKS") ?? 10);    // per learner per day
+const DAILY_PACKS = Number(Deno.env.get("GRADIFY_DAILY_PACKS") ?? 10);    // packs + question sets, per learner per day
+const DAILY_CARDS = Number(Deno.env.get("GRADIFY_DAILY_CARDS") ?? 60);    // single-card rewrites, per learner per day
 const MAX_CHARS = Number(Deno.env.get("GRADIFY_MAX_CHARS") ?? 120_000);    // about 30k tokens of notes
 const ALLOWED = (Deno.env.get("GRADIFY_ALLOWED_ORIGINS") ?? "https://getgradify.com,http://localhost:8080").split(",");
 
@@ -291,20 +292,27 @@ Deno.serve(async (req) => {
   let body: any;
   try { body = await req.json(); } catch { return json(req, { error: "Bad request." }, 400); }
 
+  // Daily limits are counted in tutor_usage, which a learner can add to but never edit or delete
+  // (supabase/migrations/20261105130000_tutor_usage.sql), so deleting packs can't reset the count.
+  const mode = body.mode === "card" ? "card" : body.mode === "questions" ? "questions" : "pack";
+  const counted = mode === "card" ? ["card"] : ["pack", "questions"], limit = mode === "card" ? DAILY_CARDS : DAILY_PACKS;
+  const since = new Date(Date.now() - 864e5).toISOString();
+  const { count, error: countErr } = await db.from("tutor_usage").select("id", { count: "exact", head: true }).in("mode", counted).gte("created_at", since);
+  if (countErr) return json(req, { error: "Gradify AI isn't set up yet." }, 503);
+  if ((count ?? 0) >= limit) return json(req, { error: mode === "card" ? `You've rewritten ${limit} cards today, the daily limit. Try again tomorrow.` : `You've made ${limit} study packs today, the daily limit. Try again tomorrow.` }, 429);
+  const used = (usage: { input_tokens: number; output_tokens: number }) =>
+    db.from("tutor_usage").insert({ mode, site: String(body.site ?? "").slice(0, 40) || null, input_tokens: usage.input_tokens, output_tokens: usage.output_tokens });
+
   try {
     if (body.mode === "card") {
       const prompt = `Write one new flashcard for this fact from a learner's notes. Make it different from these existing versions: ${JSON.stringify(body.avoid ?? [])}.
 Fact: ${String(body.fact ?? "").slice(0, 2000)}
 Supporting notes: ${String(body.notes ?? "").slice(0, 4000)}
 Use only what the fact and notes say. Front under 25 words, back under 40. Never put the answer in the question.${["why", "apply"].includes(body.kind) ? ` Keep it a "${body.kind}" question: ${body.kind === "why" ? "the learner must explain a cause, mechanism or difference" : "the learner must use the idea on a situation or problem"}. Backs for these can run to 60 words.` : ""}`;
-      const { data } = await ask(SYSTEM_PROMPT, [{ type: "text", text: prompt }], CARD_SCHEMA, "medium");
+      const { data, usage } = await ask(SYSTEM_PROMPT, [{ type: "text", text: prompt }], CARD_SCHEMA, "medium");
+      await used(usage);
       return json(req, { card: data });
     }
-
-    // modes "pack" and "questions": daily limit per learner, counted from their saved packs
-    const since = new Date(Date.now() - 864e5).toISOString();
-    const { count } = await db.from("packs").select("id", { count: "exact", head: true }).in("engine", ["claude", "claude-questions"]).gte("created_at", since);
-    if ((count ?? 0) >= DAILY_PACKS) return json(req, { error: `You've made ${DAILY_PACKS} study packs today, the daily limit. Try again tomorrow.` }, 429);
 
     const text = String(body.text ?? "");
     const hasPdf = typeof body.pdfBase64 === "string" && body.pdfBase64.length > 0;
@@ -320,6 +328,7 @@ The learner already has recall flashcards for these notes. Write only the deeper
       const { data, usage, model } = await ask(SYSTEM_PROMPT, [{ type: "text", text: ask_ }], QUESTIONS_SCHEMA, "high");
       const seen = new Set<string>();
       const cards = (data.topics ?? []).flatMap((t: { name: string; questions: unknown[] }) => questionCards(t, text, seen));
+      await used(usage);
       // recorded (without a document, so it never replaces the deck's pack) to count towards the daily limit
       await db.from("packs").insert({ user_id: user.id, document_id: null, engine: "claude-questions", model, pack: data, stats: { why: cards.filter((c: { kind: string }) => c.kind === "why").length, apply: cards.filter((c: { kind: string }) => c.kind === "apply").length }, input_tokens: usage.input_tokens, output_tokens: usage.output_tokens });
       return json(req, { cards });
@@ -334,6 +343,7 @@ The learner already has recall flashcards for these notes. Write only the deeper
     content.push({ type: "text", text: userPrompt({ title: String(body.title ?? "My notes").slice(0, 200), site: String(body.site ?? "Gradify"), level: String(body.level ?? "undergraduate"), text, today: new Date().toISOString().slice(0, 10) }) });
 
     const { data: pack, usage, model } = await ask(SYSTEM_PROMPT, content, PACK_SCHEMA, "high");
+    await used(usage);
     const cards = cardsFromPack(pack, text);
     const stats = packStats(pack, cards);
 
@@ -343,7 +353,7 @@ The learner already has recall flashcards for these notes. Write only the deeper
       input_tokens: usage.input_tokens, output_tokens: usage.output_tokens,
     }).select("id").single();
     if (error) throw error;
-    return json(req, { packId: saved.id, pack, cards, stats });
+    return json(req, { packId: saved.id, pack, cards, stats, model });
   } catch (e) {
     console.error(e);
     const status = (e as { status?: number }).status;
