@@ -4,6 +4,8 @@
 details decision D1 in [COMMERCIAL-PLATFORM-PLAN.md](COMMERCIAL-PLATFORM-PLAN.md) and replaces §1A's options
 where they differ.
 
+**Status: deferred by the owner on 6 November 2026, to be revisited in about two weeks.** For now: no GitHub restructuring, no security spending and no corporate administration. The student journey comes first ([PRODUCTION-READINESS.md](PRODUCTION-READINESS.md)). Nothing below is in progress.
+
 This is a strategy and a runbook. **Nothing in it has been done.** Creating an organisation, transferring the
 repository, changing its visibility and changing billing are the owner's actions, taken in GitHub's own
 settings. This session's GitHub access is limited to the repository's contents, so it can't change any of
