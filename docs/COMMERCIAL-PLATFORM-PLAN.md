@@ -1,6 +1,14 @@
 # Gradify commercial platform plan
 
-**Version 2.1, 6 November 2026.** This replaces version 2 of the same date.
+**Version 2.2, 6 November 2026.** This replaces version 2.1 of the same date.
+
+**Changes in 2.2:** decision D1 is worked out in [REPOSITORY-STRATEGY.md](REPOSITORY-STRATEGY.md), checked against GitHub's documentation. It corrects §1A:
+- The custom domain isn't guaranteed to move with the repository. A domain verified on the personal account blocks an organisation from publishing to it, and the `www` record must be repointed.
+- The main recurring cost of going private is Actions minutes, not the plan fee: about $36 a month above Team's included amount as CI runs today, or about $7 with the deploy job on the single-CPU runner.
+- Secret scanning and push protection stop on a private repository unless Secret Protection is bought. CI's own credential checks remain.
+- The Claude GitHub App must be installed on the organisation.
+
+The recommendation is unchanged (Option 3), done in stages. Nothing has been changed on GitHub.
 
 **Changes in 2.1:** risk R2 is resolved and verified live. The site is now deployed from an allowlist (workstream 14, approved by the owner on its own). An audit of everything that had been published, and of the full git history, found no credential, key or personal data, so nothing needed rotating. Nothing else in the plan has changed.
 
@@ -64,7 +72,7 @@ This is a plan, not an implementation. Apart from workstream 14 (the allowlist d
 **Recommendation: Option 3, together with Option 1's changes, which are needed in every option.**
 - The deploy publishes an explicit allowlist of site files, never `docs/`, `scripts/`, `supabase/` or `tests/`.
 - Premium lessons are never part of the published site.
-- GitHub Pages can stay, deploying through Actions as it does now. The custom domain moves with the repository. Check DNS and the Pages settings at transfer time.
+- GitHub Pages can stay, deploying through Actions as it does now. **Corrected in 2.2:** the custom domain isn't guaranteed to move with the repository. The domain verification has to move to the organisation, the `www` record has to be repointed, and CI costs money once the repository is private. The staged runbook is in [REPOSITORY-STRATEGY.md](REPOSITORY-STRATEGY.md).
 
 **Content separation for the future:**
 
@@ -388,7 +396,7 @@ A simulation is "complete" only when every field passes. The priority is educati
 
 | ID | Decision | Urgency | Consequence of each choice |
 |---|---|---|---|
-| D1 | Repository visibility and where content lives | **Blocking now** | Private under a Gradify Ltd organisation (recommended): about $4 per user per month (unverified); company ownership; Pages kept. Staying public: free, but the code and history stay copyable. Either way, the allowlist-based deploy and Supabase-held premium content are needed |
+| D1 | Repository visibility and where content lives | **Blocking now** | Private under a Gradify Ltd organisation (recommended), in stages: transfer while public, then Team, then private. GitHub Team is about $4 per user per month (unverified), plus Actions minutes (about $7 a month over the included amount with the cheaper deploy runner). Company ownership; Pages kept. Sub-decisions O1–O6 and the runbook are in [REPOSITORY-STRATEGY.md](REPOSITORY-STRATEGY.md). The allowlist deploy is done (R2) |
 | D2 | Payment provider | **Blocking for M4** (account set-up takes time) | Paddle (recommended): merchant of record, about 5% + $0.50 (unverified). Stripe: lower fees, but Gradify handles tax |
 | D3 | Test-account method | **Blocking for M1** | The temporary Admin API function (recommended): the token needs function and secret permissions for this project. Or the owner runs the checks locally |
 | D4 | Token scope, plan and region | **Blocking for M1** | London; a paid plan for no pausing and platform backups (unverified); allowing documentation access lets the token matrix be finished against Supabase's current scope names |
