@@ -15,7 +15,8 @@
     "verify:backend": "node scripts/verify-backend.mjs",
     "audit": "node scripts/audit-sites.mjs",
     "check:sync": "node scripts/check-sync.cjs",
-    "supabase:admin": "node scripts/supabase-admin.mjs"
+    "supabase:admin": "node scripts/supabase-admin.mjs",
+    "check:live": "node scripts/check-live.cjs"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "0.133.0"

@@ -82,7 +82,18 @@ export class CloudStore {
     store.db.auth.onAuthStateChange((_e, s) => { store.current = s; });
     return store;
   }
-  async user() { const { data } = await this.db.auth.getUser(); return data.user; }
+  // The signed-in user, confirmed by the server. If the server rejects the stored access token before the
+  // browser thinks it has expired (a wrong device clock, a revoked token), refresh once before treating the
+  // learner as signed out, so a valid sign-in isn't lost.
+  async user() {
+    const first = await this.db.auth.getUser().catch(() => ({ data: {} }));
+    if (first.data?.user) return first.data.user;
+    const { data } = await this.db.auth.getSession().catch(() => ({ data: {} }));
+    if (!data?.session?.refresh_token) return null;
+    const refreshed = await this.db.auth.refreshSession().catch(() => ({ data: {} }));
+    if (!refreshed.data?.session) return null;
+    return (await this.db.auth.getUser().catch(() => ({ data: {} }))).data?.user || null;
+  }
   async session() { const { data } = await this.db.auth.getSession(); return data.session; }
   // a new access token from the refresh token, when the old one has expired; null if the sign-in has ended
   async refreshSession() { const { data, error } = await this.db.auth.refreshSession(); return error ? null : data.session; }

@@ -21,6 +21,7 @@ export const OWNED = (today) => [
   ["fitness_tests", { date: today, test: "_verify", value: 1 }, { value: 999 }],
   ["revalidation_entries", { kind: "hours", occurred_on: today, entry: { verify: true } }, { entry: { tampered: true } }],
   ["tutor_usage", { mode: "explain", site: "_verify", input_tokens: 0, output_tokens: 0 }, { input_tokens: 999 }],
+  ["assessment_attempts", { id: `_verify-${Date.now().toString(36)}-m`, site: "Gradify", subject: "_verify", context: "lesson", question_id: "_verify", question_type: "mcq", score: 1, correct: true }, { score: 0 }],
 ];
 
 export const TABLES = {
@@ -140,11 +141,15 @@ export async function checkBackend({ url, anonKey, siteConfig = null, accounts =
       const edit = await call(q, { method: "PATCH", token: B.access_token, prefer: "return=representation", body: change });
       const del = await call(q, { method: "DELETE", token: B.access_token, prefer: "return=representation" });
       const anon = await call(q);
+      // forging: B creates a row stamped with A's identity (must be refused by the policy's check)
+      const forged = await call(`/rest/v1/${table}`, { method: "POST", token: B.access_token, prefer: "return=representation", body: { ...row, ...(row.id ? { id: `${row.id}-forged` } : {}), user_id: uid } });
+      const forgedOk = forged.ok && Array.isArray(forged.data) && forged.data.length > 0;
+      if (forgedOk && table !== "tutor_usage") await call(`/rest/v1/${table}?id=eq.${forged.data[0].id}`, { method: "DELETE", token: A.access_token });
       const still = await call(q, { token: A.access_token });
       const leaked = (r) => r.ok && Array.isArray(r.data) && r.data.length > 0;
       const intact = still.ok && still.data?.length === 1 && Object.entries(change).every(([k, v]) => JSON.stringify(still.data[0][k]) !== JSON.stringify(v));
-      const problems = [leaked(read) && "B could read it", leaked(edit) && "B could change it", leaked(del) && "B could delete it", leaked(anon) && "signed-out visitors could read it", !intact && "A's row was changed or removed"].filter(Boolean);
-      step(4, `rls-${table}`, `${table}: only its owner can use a row`, problems.length === 0, problems.join("; "));
+      const problems = [leaked(read) && "B could read it", leaked(edit) && "B could change it", leaked(del) && "B could delete it", leaked(anon) && "signed-out visitors could read it", forgedOk && "B could create a row in A's name", !intact && "A's row was changed or removed"].filter(Boolean);
+      step(4, `rls-${table}`, `${table}: only its owner can read, change, delete or create a row`, problems.length === 0, problems.join("; ") || "read, change, delete and forged create by another learner all refused; unreadable signed out");
       if (table !== "tutor_usage") await call(q, { method: "DELETE", token: A.access_token });   // tutor_usage can't be deleted by anyone, by design
     }
     // profiles are created by the sign-up trigger, so test the other direction: B against A's existing profile
@@ -170,22 +175,29 @@ export async function checkBackend({ url, anonKey, siteConfig = null, accounts =
 
   // ---- 5. ai ----
   async function finishAi() {
-    const fn = "/functions/v1/study-pack";
-    // In a browser the request itself is the CORS test (a refused one never returns), and the
-    // response headers can't be read; from Node, read the preflight's Allow-Origin instead.
-    const browser = typeof window !== "undefined";
-    const pre = browser ? null : await call(fn, { method: "OPTIONS", headers: { Origin: origin, "Access-Control-Request-Method": "POST" } });
-    const probe = await call(fn, { method: "POST", body: { mode: "card", fact: "" } });
-    const deployed = probe.status !== 404 && probe.status !== 0;
-    step(5, "deployed", "The study-pack function is deployed", deployed, deployed ? `refuses signed-out callers (HTTP ${probe.status})` : probe.status ? "Not found: run supabase functions deploy study-pack"
-      : browser ? `This page couldn't reach it: it isn't deployed, or GRADIFY_ALLOWED_ORIGINS doesn't include ${origin}` : msg(probe.data));
-    if (deployed && pre?.headers) { const allow = pre.headers.get("access-control-allow-origin"); step(5, "cors", `It accepts requests from ${origin}`, allow === origin || allow === "*", allow ? `allows ${allow}` : "No CORS headers"); }
-    else if (deployed && browser) step(5, "cors", `It accepts requests from ${origin}`, true, "");
-    const token = A?.access_token;
-    if (deployed && ai && token) {
-      const r = await call(fn, { method: "POST", token, body: { mode: "card", fact: "Water boils at 100 °C at sea level (1 atm).", notes: "At standard atmospheric pressure, pure water boils at 100 °C.", avoid: [] } });
-      step(5, "claude", "Claude answers through the function", r.ok && Boolean(r.data?.card?.front), r.ok ? `card: ${String(r.data?.card?.front || "").slice(0, 80)}` : `HTTP ${r.status}: ${msg(r.data)}`);
-    } else if (deployed) step(5, "claude", "Claude answers through the function", null, token ? "Skipped: run with AI checks on (one card, about a cent)." : "Skipped: needs a signed-in learner.");
+    // both AI functions: deployed (refusing signed-out callers), reachable from the site's origin, and, with
+    // AI checks on, answering one small real request each as the signed-in test learner
+    const browser = typeof window !== "undefined", token = A?.access_token;
+    const FNS = [
+      { name: "study-pack", id: "", probe: { mode: "card", fact: "" }, real: { mode: "card", fact: "Water boils at 100 °C at sea level (1 atm).", notes: "At standard atmospheric pressure, pure water boils at 100 °C.", avoid: [] }, good: (d) => Boolean(d?.card?.front), show: (d) => `card: ${String(d?.card?.front || "").slice(0, 80)}` },
+      { name: "course-tutor", id: "-tutor", probe: { mode: "explain" }, real: { mode: "explain", subject: "law", lesson: { title: "What is law?", text: "Law is a system of rules made and enforced by the state through courts. Moral rules are not legally enforceable on their own." }, question: "In one sentence, what makes a rule a law?" }, good: (d) => Boolean(d?.answer), show: (d) => `answer: ${String(d?.answer || "").slice(0, 80)}` },
+    ];
+    for (const f of FNS) {
+      const fn = `/functions/v1/${f.name}`;
+      // In a browser the request itself is the CORS test (a refused one never returns), and the
+      // response headers can't be read; from Node, read the preflight's Allow-Origin instead.
+      const pre = browser ? null : await call(fn, { method: "OPTIONS", headers: { Origin: origin, "Access-Control-Request-Method": "POST" } });
+      const probe = await call(fn, { method: "POST", body: f.probe });
+      const deployed = probe.status !== 404 && probe.status !== 0;
+      step(5, `deployed${f.id}`, `The ${f.name} function is deployed`, deployed, deployed ? `refuses signed-out callers (HTTP ${probe.status})` : probe.status ? `Not found: run supabase functions deploy ${f.name}`
+        : browser ? `This page couldn't reach it: it isn't deployed, or GRADIFY_ALLOWED_ORIGINS doesn't include ${origin}` : msg(probe.data));
+      if (deployed && pre?.headers) { const allow = pre.headers.get("access-control-allow-origin"); step(5, `cors${f.id}`, `${f.name} accepts requests from ${origin}`, allow === origin || allow === "*", allow ? `allows ${allow}` : "No CORS headers"); }
+      else if (deployed && browser) step(5, `cors${f.id}`, `${f.name} accepts requests from ${origin}`, true, "");
+      if (deployed && ai && token) {
+        const r = await call(fn, { method: "POST", token, body: f.real });
+        step(5, `claude${f.id}`, `Claude answers through ${f.name}`, r.ok && f.good(r.data), r.ok ? f.show(r.data) : `HTTP ${r.status}: ${msg(r.data)}`);
+      } else if (deployed) step(5, `claude${f.id}`, `Claude answers through ${f.name}`, null, token ? "Skipped: run with AI checks on (one small request, about a cent)." : "Skipped: needs a signed-in learner.");
+    }
     return done();
   }
 }

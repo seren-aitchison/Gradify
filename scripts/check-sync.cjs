@@ -36,6 +36,8 @@ async function backend(route) {
   const token = (h.authorization || "").replace(/^Bearer /, ""), who = tokens.get(token) || null;
   const body = req.postData() ? JSON.parse(req.postData()) : null;
   if (url.pathname === "/auth/v1/user") return who ? send(200, USER) : send(401, { msg: "invalid JWT" });
+  if (url.pathname === "/auth/v1/token" && url.searchParams.get("grant_type") === "password")
+    return body?.email === USER.email && body?.password === "stand-in-password" ? send(200, session()) : send(400, { error: "invalid_grant", error_description: "Invalid login credentials" });
   if (url.pathname === "/auth/v1/token") {
     fake.refreshes++;
     if (fake.refreshFails || !tokens.get(body?.refresh_token)) return send(400, { error: "invalid_grant", error_description: "Invalid Refresh Token" });
@@ -116,6 +118,8 @@ async function answer(p, right) {
   }
 }
 
+// SERVE_ONLY=1: just run the stand-in backend, e.g. to rehearse scripts/check-live.cjs against it
+if (process.env.SERVE_ONLY) { serve().then(() => console.log(`stand-in Supabase on ${HOST}; test learner ${USER.email} / stand-in-password`)); return; }
 (async () => {
   const server = await serve();
   const b = await chromium.launch();

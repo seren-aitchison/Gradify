@@ -24,10 +24,11 @@ function fakeSupabase({ rls = true, tables = ["profiles", "documents", "packs", 
     }
     if (path === "/auth/v1/token") return refresh[data.refresh_token] ? res(200, {}) : res(400, { error_description: "Invalid Refresh Token" });
     if (path === "/auth/v1/logout") { for (const [r, id] of Object.entries(refresh)) if (id === who) delete refresh[r]; return res(204); }
-    if (path === "/functions/v1/study-pack") {
+    if (path === "/functions/v1/study-pack" || path === "/functions/v1/course-tutor") {
       if (!fn) return res(404, { message: "Requested function was not found" });
       if (method === "OPTIONS") return new Response("ok", { headers: { "access-control-allow-origin": headers.Origin } });
-      return who ? res(200, { card: { type: "definition", front: "At what temperature does water boil at 1 atm?", back: "100 °C" } }) : res(401, { error: "Please sign in to use Gradify AI." });
+      if (!who) return res(401, { error: "Please sign in to use Gradify AI." });
+      return path.endsWith("course-tutor") ? res(200, { answer: "A rule is law when the state's courts enforce it.", fromLesson: true }) : res(200, { card: { type: "definition", front: "At what temperature does water boil at 1 atm?", back: "100 °C" } });
     }
     const t = path.replace("/rest/v1/", "");
     if (!tables.includes(t)) return res(404, { code: "PGRST205", message: `Could not find the table 'public.${t}'` });
@@ -40,6 +41,7 @@ function fakeSupabase({ rls = true, tables = ["profiles", "documents", "packs", 
     if (!who && rls) return res(401, { message: "new row violates row-level security policy" });
     if (method === "POST") {
       const row = { id: data.id ?? `${t}-${++n}`, user_id: who, ...data };
+      if (rls && row.user_id !== who) return res(403, { message: "new row violates row-level security policy" });
       const i = rows.findIndex((r) => r.user_id === row.user_id && r.subject === row.subject && t === "course_progress");
       if (i >= 0) rows[i] = row; else rows.push(row);
       return /return=representation/.test(headers.Prefer || "") ? res(201, [row]) : res(201);
@@ -70,6 +72,9 @@ test("every learner-owned table is checked for isolation, and a leak in any one 
   assert.ok(broken.includes("rls-documents") && broken.includes("rls-workouts"), `leaks reported: ${broken}`);
   const leak = (await run({}, { rls: false })).steps.find((s) => s.id === "rls-cards");
   assert.match(leak.detail, /B could read it/);
+  const forging = (await run({}, { rls: false })).steps.find((x) => x.id === "rls-documents");
+  assert.match(forging.detail, /B could create a row in A's name/);
+  assert.ok(rls.some((x) => x.id === "rls-assessment_attempts" && x.ok), "answers table covered");
 });
 
 test("the isolation matrix only runs with two test accounts, never against a real learner's session", async () => {
