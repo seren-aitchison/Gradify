@@ -73,10 +73,11 @@ Every topic in the brief is a lesson, in brief order. Lessons that aren't writte
 | Sociology | 9 Education | 21 | 112 | Written, passing all automated checks; **draft** |
 | Sociology | 10 Crime and Deviance | 34 | 177 | Written, passing all automated checks; **draft** |
 | Sociology | 11 Politics and Power | 21 | 108 | Written, passing all automated checks; **draft** |
+| Sociology | 12 Religion | 19 | 101 | Written, passing all automated checks; **draft** |
 | Sociology | 17 Research Methods | 38 | 190 | Written, passing all automated checks; **draft** |
 | Sociology | 18 Social Statistics and Data Science | 25 | 125 | Written, passing all automated checks; **draft** |
 
-That is **623 of 831 lessons** (296 of 393 psychology, 327 of 438 sociology), with 3,213 questions and 1,246 flashcards. The other 9 schools (Psychology 8, 9, 15 and 16; Sociology 12–16) are registered but unwritten.
+That is **642 of 831 lessons** (296 of 393 psychology, 346 of 438 sociology), with 3,314 questions and 1,284 flashcards. The other 8 schools (Psychology 8, 9, 15 and 16; Sociology 13–16) are registered but unwritten.
 
 **Every written lesson has:**
 
@@ -154,7 +155,7 @@ Every lab says what kind it is and what it simplifies. Data is labelled either *
 ## Next batches (suggested order)
 
 1. **Psychology:** 15 and 16; 8 and 9 (clinical) need an education-not-diagnosis statement in every lesson and should be reviewed by a clinical psychologist.
-2. **Sociology:** 12–16.
+2. **Sociology:** 13–16.
 3. **Clinical schools** (Psychology 8 and 9) should be written with a clinical psychologist's review planned from the start.
 4. **Human review:** give each written school a structured review, a full source check and expert sign-off, recorded in `qa.js`.
 5. **UK data:** add official UK data (ONS, DfE, Home Office) to the sociology labs.
