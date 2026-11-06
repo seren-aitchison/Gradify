@@ -25,7 +25,9 @@ for (const [url, s] of seen) {
         const tw = [...words(title)], need = Math.min(2, tw.length), overlap = tw.filter((w) => words(s.cite).has(w)).length, yearOk = String(year) === s.date.slice(0, 4);
         // older articles are often registered with the year they were digitised; accept them if volume and first page match
         const vp = s.cite.match(/(\d+)(?:\([^)]*\))?:([A-Za-z]?\d+)/), volPageOk = vp && String(m.volume) === vp[1] && String(m.page || "").split(/[-–]/)[0] === vp[2];
-        status = (yearOk || volPageOk) && overlap >= need ? "✓" : "⚠"; note = `${title} (${year})${yearOk ? "" : volPageOk ? ` · Crossref dates the digitised record ${year}; volume and pages match the citation` : ` · year differs from ${s.date}`}${overlap >= need ? "" : " · title words don't match the citation"}`;
+        // articles published online first are often dated a year before their print volume; accept them if the volume matches
+        const onlineFirst = !yearOk && !volPageOk && vp && String(m.volume) === vp[1] && Number(s.date.slice(0, 4)) - Number(year) === 1;
+        status = (yearOk || volPageOk || onlineFirst) && overlap >= need ? "✓" : "⚠"; note = `${title} (${year})${yearOk ? "" : volPageOk ? ` · Crossref dates the digitised record ${year}; volume and pages match the citation` : onlineFirst ? ` · published online in ${year}; the volume matches the cited ${s.date.slice(0, 4)} issue` : ` · year differs from ${s.date}`}${overlap >= need ? "" : " · title words don't match the citation"}`;
       }
     } else {
       // rate-limited sites (HTTP 429, e.g. ons.gov.uk) get two slower retries before counting as a failure

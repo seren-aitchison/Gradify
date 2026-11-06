@@ -21,7 +21,7 @@ export default {
     { id: "methods", title: "Research methods and statistics", sub: "Design, ethics, measurement and statistics, including calculations.", units: [10, 11], format: "science", count: 25, minutes: 40, pass: 0.7 },
     { id: "whole", title: "Whole course", sub: "Forty mixed questions from every written school.", units: UNITS.map((u) => u.n), format: "science", count: 40, minutes: 60, pass: 0.7 },
   ],
-  written: ["u01", "u02", "u03", "u04", "u05", "u06", "u07", "u10", "u11", "u12", "u13", "u14", "u15"],
+  written: ["u01", "u02", "u03", "u04", "u05", "u06", "u07", "u10", "u11", "u12", "u13", "u14", "u15", "u16"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
   overview: {
     headline: "The science of mind and behaviour",
