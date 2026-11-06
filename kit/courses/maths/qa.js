@@ -6,6 +6,7 @@
 //   signoff   — a qualified subject expert (a mathematics teacher or lecturer) has approved it
 // Record facts, never aspirations: leave a stage null until it has actually happened.
 export const QA = {
+  u06: { standard: 2, reviewed: null, sources: null, signoff: null },
   u05: { standard: 2, reviewed: null, sources: null, signoff: null },
   u07: { standard: 2, reviewed: null, sources: null, signoff: null },
   u03: { standard: 2, reviewed: null, sources: null, signoff: null },
