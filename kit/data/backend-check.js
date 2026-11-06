@@ -9,6 +9,20 @@
 // It never needs, and refuses to run with, a secret (service_role) key. Everything it writes is
 // tagged "_verify" and deleted again before it finishes.
 
+// learner-owned tables tested by the isolation matrix: [table, a valid test row, a change B will attempt]
+export const OWNED = (today) => [
+  ["documents", { title: "_verify", site: "Gradify" }, { title: "_tampered" }],
+  ["packs", { engine: "browser", pack: { verify: true } }, { engine: "claude" }],
+  ["cards", { front: "_verify", back: "_verify" }, { front: "_tampered" }],
+  ["activity", { kind: "_verify", xp: 0, site: "Gradify" }, { xp: 500 }],
+  ["plan_blocks", { day: today, start_min: 0, end_min: 10, title: "_verify" }, { title: "_tampered" }],
+  ["workouts", { date: today, name: "_verify" }, { name: "_tampered" }],
+  ["body_checkins", { note: "_verify" }, { note: "_tampered" }],
+  ["fitness_tests", { date: today, test: "_verify", value: 1 }, { value: 999 }],
+  ["revalidation_entries", { kind: "hours", occurred_on: today, entry: { verify: true } }, { entry: { tampered: true } }],
+  ["tutor_usage", { mode: "explain", site: "_verify", input_tokens: 0, output_tokens: 0 }, { input_tokens: 999 }],
+];
+
 export const TABLES = {
   "20261028120000_gradify_core": ["profiles", "documents", "packs", "cards", "reviews", "activity", "plan_blocks", "waitlist"],
   "20261029120000_mastery_evidence": ["reviews?select=confidence,mode"],
@@ -109,8 +123,39 @@ export async function checkBackend({ url, anonKey, siteConfig = null, accounts =
       const peek = await call("/rest/v1/course_progress?subject=eq._verify&select=user_id", { token: B.access_token });
       const tamper = await call(`/rest/v1/course_progress?subject=eq._verify&user_id=eq.${uid}`, { method: "PATCH", token: B.access_token, prefer: "return=representation", body: { state: { verify: "tampered" } } });
       step(4, "isolation", "Learner B can't see or change learner A's progress", peek.ok && peek.data.length === 0 && (!tamper.ok || tamper.data.length === 0), peek.data?.length ? "B could read A's row: check row-level security now." : tamper.data?.length ? "B could change A's row." : "");
+      await isolationMatrix(B);
     }
   } else step(4, "isolation", "One learner can't see another's progress", null, "Skipped: give a second test account to check this.");
+
+  // Every learner-owned table: A saves a row; B tries to read, change and delete it; a signed-out visitor
+  // tries to read it; A checks it is still there, unchanged, then removes it. Only run with two test accounts.
+  async function isolationMatrix(B) {
+    const today = new Date().toISOString().slice(0, 10);
+    for (const [table, row, change] of OWNED(today)) {
+      const made = await call(`/rest/v1/${table}`, { method: "POST", token: A.access_token, prefer: "return=representation", body: row });
+      const id = made.ok && Array.isArray(made.data) ? made.data[0]?.id : null;
+      if (id == null) { step(4, `rls-${table}`, `${table}: only its owner can use a row`, false, `Learner A couldn't save a test row: ${msg(made.data) || `HTTP ${made.status}`}`); continue; }
+      const q = `/rest/v1/${table}?id=eq.${id}`;
+      const read = await call(q, { token: B.access_token });
+      const edit = await call(q, { method: "PATCH", token: B.access_token, prefer: "return=representation", body: change });
+      const del = await call(q, { method: "DELETE", token: B.access_token, prefer: "return=representation" });
+      const anon = await call(q);
+      const still = await call(q, { token: A.access_token });
+      const leaked = (r) => r.ok && Array.isArray(r.data) && r.data.length > 0;
+      const intact = still.ok && still.data?.length === 1 && Object.entries(change).every(([k, v]) => JSON.stringify(still.data[0][k]) !== JSON.stringify(v));
+      const problems = [leaked(read) && "B could read it", leaked(edit) && "B could change it", leaked(del) && "B could delete it", leaked(anon) && "signed-out visitors could read it", !intact && "A's row was changed or removed"].filter(Boolean);
+      step(4, `rls-${table}`, `${table}: only its owner can use a row`, problems.length === 0, problems.join("; "));
+      if (table !== "tutor_usage") await call(q, { method: "DELETE", token: A.access_token });   // tutor_usage can't be deleted by anyone, by design
+    }
+    // profiles are created by the sign-up trigger, so test the other direction: B against A's existing profile
+    const pr = await call(`/rest/v1/profiles?id=eq.${uid}&select=id`, { token: B.access_token });
+    const pe = await call(`/rest/v1/profiles?id=eq.${uid}`, { method: "PATCH", token: B.access_token, prefer: "return=representation", body: { daily_minutes: 5 } });
+    step(4, "rls-profiles", "profiles: only its owner can read or change it", !(pr.ok && pr.data?.length) && !(pe.ok && pe.data?.length), pr.data?.length ? "B could read A's profile" : pe.data?.length ? "B could change A's profile" : "");
+    // usage counts: anyone may add one, nobody can read them back through the API
+    const ev = await call("/rest/v1/page_events", { method: "POST", prefer: "return=minimal", body: { site: "Gradify", path: "/_verify", event: "view" } });
+    const evRead = await call("/rest/v1/page_events?select=path&limit=5");
+    step(4, "rls-page_events", "page_events: visitors can add a count but not read them", ev.ok && !(evRead.ok && evRead.data?.length), ev.ok ? (evRead.data?.length ? "Counts are readable through the API" : "") : `Adding a count failed: ${msg(ev.data) || `HTTP ${ev.status}`}`);
+  }
 
   // clean up, then sign out
   await call("/rest/v1/course_progress?subject=eq._verify", { method: "DELETE", token: A.access_token });

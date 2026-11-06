@@ -76,7 +76,11 @@ export class CloudStore {
   constructor(client) { this.db = client; }
   static async create() {
     if (!cloudConfigured() || !window.supabase) return null;
-    return new CloudStore(window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
+    const store = new CloudStore(window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
+    // keep the current sign-in at hand, so a save can be sent while the page is closing (beaconCourseProgress)
+    store.db.auth.getSession().then(({ data }) => { store.current = data.session; }).catch(() => {});
+    store.db.auth.onAuthStateChange((_e, s) => { store.current = s; });
+    return store;
   }
   async user() { const { data } = await this.db.auth.getUser(); return data.user; }
   async session() { const { data } = await this.db.auth.getSession(); return data.session; }
@@ -110,6 +114,19 @@ export class CloudStore {
   // course progress (kit/course/progress.js): one row per learner per course
   async getCourseProgress(subject) { const rows = await this.q(this.db.from("course_progress").select("state,updated_at").eq("subject", subject).limit(1)); return rows[0]?.state || null; }
   async saveCourseProgress(subject, site, state) { const u = await this.user(); await this.q(this.db.from("course_progress").upsert({ user_id: u.id, subject, site, state, updated_at: now() })); }
+  // The same save, sent so that it survives the page closing (fetch keepalive). Synchronous on purpose: it is
+  // called from pagehide, when awaiting anything may be too late. Returns false if it couldn't be sent this way
+  // (not signed in yet, or over the browser's 64 KB keepalive limit); the device copy still syncs next visit.
+  beaconCourseProgress(subject, site, state) {
+    const s = this.current; if (!s?.access_token || !s.user?.id) return false;
+    const body = JSON.stringify({ user_id: s.user.id, subject, site, state, updated_at: now() });
+    if (body.length > 60000) return false;
+    try {
+      fetch(`${SUPABASE_URL}/rest/v1/course_progress`, { method: "POST", keepalive: true, body,
+        headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${s.access_token}`, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" } }).catch(() => {});
+      return true;
+    } catch { return false; }
+  }
   // Uploads are idempotent: each attempt has a unique id, and a row that already exists is skipped, so a failed
   // or interrupted upload can simply be sent again (kit/course/progress.js keeps the outbox).
   async logAttempt(a) { return this.logAttempts([a]); }

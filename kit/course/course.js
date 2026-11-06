@@ -134,7 +134,14 @@ export function mountCourse(root, cfg) {
     finally { flushing = false; }
   }
   // leaving the page or losing the tab: send what's waiting now rather than after the usual delay
-  const flushNow = () => { if (syncT) pushProgress(); flushOutbox(); };
+  // the store is known by now (it resolves at mount), so this stays synchronous, as the browser requires
+  const flushNow = () => {
+    if (syncT) {
+      const sent = storeNow?.mode === "cloud" && storeNow.beaconCourseProgress?.(cfg.slug, cfg.site, cloudCopy(S));
+      if (sent) { clearTimeout(syncT); syncT = null; } else pushProgress();
+    }
+    flushOutbox();
+  };
   addEventListener("pagehide", flushNow);
   document.addEventListener("visibilitychange", () => { if (document.visibilityState === "hidden") flushNow(); });
   addEventListener("online", () => { pushProgress(); flushOutbox(); });
@@ -167,12 +174,12 @@ export function mountCourse(root, cfg) {
   }
 
   // the learner's Gradify account (this device, or their cloud account when signed in)
-  let storeP = null, storeMode = null;
+  let storeP = null, storeMode = null, storeNow = null;   // storeNow: for the synchronous save when the page closes
   const store = () => (storeP ||= (async () => {
     let st;
     try { const cloud = await CloudStore.create(), user = cloud ? await cloud.user() : null; st = scopeToSite(user ? cloud : new LocalStore(), cfg.site); }
     catch { st = scopeToSite(new LocalStore(), cfg.site); }
-    storeMode = st.mode; return st;
+    storeMode = st.mode; storeNow = st; return st;
   })());
 
   // the shared learner profile (kit/data/profile.js): exam date, daily time, prior knowledge, display

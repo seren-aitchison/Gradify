@@ -34,16 +34,18 @@ function fakeSupabase({ rls = true, tables = ["profiles", "documents", "packs", 
     const rows = db[t] ||= [];
     const filters = [...u.searchParams].filter(([k]) => !["select", "limit"].includes(k)).map(([k, v]) => [k, v.replace(/^eq\./, "")]);
     const visible = rows.filter((r) => (!rls || (r.user_id ?? r.id) === who) && filters.every(([k, v]) => String(r[k]) === v));
+    // usage counts: anyone may add, nobody may read
+    if (t === "page_events") return method === "POST" ? (rows.push(data), res(201)) : res(200, []);
     if (method === "GET") return res(200, visible);
     if (!who && rls) return res(401, { message: "new row violates row-level security policy" });
     if (method === "POST") {
-      const row = { user_id: who, ...data };
+      const row = { id: data.id ?? `${t}-${++n}`, user_id: who, ...data };
       const i = rows.findIndex((r) => r.user_id === row.user_id && r.subject === row.subject && t === "course_progress");
       if (i >= 0) rows[i] = row; else rows.push(row);
-      return res(201);
+      return /return=representation/.test(headers.Prefer || "") ? res(201, [row]) : res(201);
     }
     if (method === "PATCH") { for (const r of visible) { const old = r.xp; Object.assign(r, data); if (xpGuard && "xp" in r) r.xp = old; } return res(200, visible); }
-    if (method === "DELETE") { db[t] = rows.filter((r) => !visible.includes(r)); return res(204); }
+    if (method === "DELETE") { db[t] = rows.filter((r) => !visible.includes(r)); return /return=representation/.test(headers.Prefer || "") ? res(200, visible) : res(204); }
   };
 }
 const run = (opts, fetchOpts) => checkBackend({ url: "https://p.supabase.co", anonKey: ANON, accounts: [{ email: "a@x", password: "pa" }, { email: "b@x", password: "pb" }], ai: true, fetch: fakeSupabase(fetchOpts), ...opts });
@@ -57,6 +59,22 @@ test("a working project passes every stage", async () => {
 test("broken row-level security is caught", async () => {
   const { steps } = await run({}, { rls: false });
   assert.equal(steps.find((s) => s.id === "isolation").ok, false);
+});
+
+test("every learner-owned table is checked for isolation, and a leak in any one is named", async () => {
+  const { steps } = await run({});
+  const rls = steps.filter((s) => s.id.startsWith("rls-"));
+  for (const t of ["documents", "packs", "cards", "activity", "plan_blocks", "workouts", "body_checkins", "fitness_tests", "revalidation_entries", "tutor_usage", "profiles", "page_events"])
+    assert.ok(rls.some((s) => s.id === `rls-${t}` && s.ok === true), `${t} checked and passing`);
+  const broken = (await run({}, { rls: false })).steps.filter((s) => s.id.startsWith("rls-") && s.ok === false).map((s) => s.id);
+  assert.ok(broken.includes("rls-documents") && broken.includes("rls-workouts"), `leaks reported: ${broken}`);
+  const leak = (await run({}, { rls: false })).steps.find((s) => s.id === "rls-cards");
+  assert.match(leak.detail, /B could read it/);
+});
+
+test("the isolation matrix only runs with two test accounts, never against a real learner's session", async () => {
+  const { steps } = await run({ accounts: [{ email: "a@x", password: "pa" }] });
+  assert.equal(steps.filter((s) => s.id.startsWith("rls-")).length, 0);
 });
 
 test("a missing migration is named", async () => {
