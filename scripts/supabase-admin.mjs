@@ -16,6 +16,7 @@ import { readFile, writeFile, appendFile, readdir, mkdir } from "node:fs/promise
 import { createHash } from "node:crypto";
 import { homedir } from "node:os";
 import { resolve, relative, isAbsolute } from "node:path";
+import { snapshot, restoreRehearsal, rehearseMigration, columnsNow, checksums, changed } from "./pg-rehearsal.mjs";
 
 const API = "https://api.supabase.com/v1";
 const root = new URL("../", import.meta.url);
@@ -64,14 +65,59 @@ export function verifyQuery(e) {
 }
 
 // ---------- safety checks ----------
-// statements that could remove or rewrite existing data. A constraint may be dropped only when the same
-// migration adds it back under the same name (widening an allowed list); everything else is refused.
+// Split SQL into top-level statements, respecting 'strings', "identifiers", $tag$ bodies $tag$ and comments.
+export function statements(sql) {
+  const out = []; let cur = "", i = 0;
+  while (i < sql.length) {
+    const c = sql[i], two = sql.slice(i, i + 2);
+    if (two === "--") { const e = sql.indexOf("\n", i); i = e < 0 ? sql.length : e; continue; }
+    if (two === "/*") { const e = sql.indexOf("*/", i + 2); i = e < 0 ? sql.length : e + 2; continue; }
+    if (c === "'" || c === '"') { let j = i + 1; while (j < sql.length && !(sql[j] === c && sql[j + 1] !== c)) j += sql[j] === c ? 2 : 1; cur += sql.slice(i, j + 1); i = j + 1; continue; }
+    const tag = sql.slice(i).match(/^\$[A-Za-z_]*\$/);
+    if (tag) { const e = sql.indexOf(tag[0], i + tag[0].length); const end = e < 0 ? sql.length : e + tag[0].length; cur += "$$BODY$$"; i = end; continue; }
+    if (c === ";") { if (cur.trim()) out.push(cur.trim()); cur = ""; i++; continue; }
+    cur += c; i++;
+  }
+  if (cur.trim()) out.push(cur.trim());
+  return out.map((x) => x.replace(/\s+/g, " "));
+}
+// What a migration may contain: an allowlist, so anything unrecognised (DO blocks, EXECUTE, CALL, COPY, data
+// changes, grants, disabling RLS, ownership changes…) is refused rather than guessed about. Code inside a
+// function body only runs when the function is called later (triggers fire on future writes, not on existing
+// rows), so bodies are skipped; but clauses evaluated against EXISTING rows (column defaults, check
+// constraints, generated columns, index expressions) may not call functions defined in the project.
+const SAFE = [
+  /^create table (if not exists )?public\.\w+ \(/i,
+  /^create (unique )?index (if not exists )?\w+ on public\.\w+ /i,
+  /^create policy "[^"]+" on public\.\w+ /i,
+  /^create (or replace )?function public\.\w+\(.*\) returns [\w ]+ language (plpgsql|sql)( (stable|immutable|volatile))?( security definer set search_path = [\w, ]+)? as \$\$BODY\$\$$/i,
+  /^create trigger \w+ (before|after) (insert|update|delete)( or (insert|update|delete))* on (public|auth)\.\w+ for each row execute function public\.\w+\(\)$/i,
+  /^create (or replace )?view public\.\w+ with \(security_invoker = true\) as select /i,
+  /^create schema if not exists \w+$/i,
+  /^alter table public\.\w+ enable row level security$/i,
+  /^revoke [\w, ]+ on (table )?public\.\w+ from [\w, ]+$/i,
+  /^comment on /i,
+];
+const ROW_EVALUATED = /\b(default|check|generated always as)\b[^,]*\bpublic\.\w+\s*\(/i;
 export function destructive(sql) {
-  // function bodies ($$ … $$) run later, when the function is called, not while the migration runs
-  const s = sql.replace(/--.*$/gm, "").replace(/\$\$[\s\S]*?\$\$/g, "$$$$");
-  const found = [];
-  for (const m of s.matchAll(/\b(drop\s+(?:table|column|schema|view|function|trigger|policy|index|type)\b[^;]*|truncate\b[^;]*|delete\s+from\b[^;]*|update\s+(?:public\.)?\w+\s+set\b[^;]*|alter\s+table\s+[^;]*?\b(?:rename|alter\s+column)\b[^;]*)/gi)) found.push(m[1].trim().slice(0, 120));
-  for (const m of s.matchAll(/drop\s+constraint\s+(?:if\s+exists\s+)?(\w+)/gi)) if (!new RegExp(`add\\s+constraint\\s+${m[1]}\\b`, "i").test(s)) found.push(`drop constraint ${m[1]} (not re-added)`);
+  const found = [], stmts = statements(sql);
+  for (const st of stmts) {
+    const lower = st.toLowerCase();
+    if (/^alter table public\.\w+ /i.test(st) && !/ enable row level security$/i.test(st)) {
+      // ALTER TABLE: each comma-separated action must be add column / add constraint / drop constraint (re-added)
+      const actions = st.replace(/^alter table public\.\w+ /i, "").split(/,(?![^(]*\))/).map((x) => x.trim());
+      for (const act of actions) {
+        if (/^add column (if not exists )?\w+ /i.test(act) || /^add constraint \w+ (check|unique|foreign key|primary key)/i.test(act)) { if (ROW_EVALUATED.test(act) || /\bpublic\.\w+\s*\(/.test(act.replace(/references public\.\w+/gi, ""))) found.push(`calls a project function on existing rows: ${act.slice(0, 100)}`); continue; }
+        const d = act.match(/^drop constraint (if exists )?(\w+)$/i);
+        if (d) { if (!new RegExp(`add constraint ${d[2]}\\b`, "i").test(sql)) found.push(`drop constraint ${d[2]} (not re-added)`); continue; }
+        found.push(`ALTER TABLE action not allowed: ${act.slice(0, 100)}`);
+      }
+      continue;
+    }
+    if (!SAFE.some((re) => re.test(st))) { found.push(`statement not allowed: ${st.slice(0, 100)}`); continue; }
+    if (/^create (unique )?index /i.test(st) && /\bpublic\.\w+\s*\(/.test(st.replace(/ on public\.\w+/i, ""))) found.push(`index expression calls a project function: ${st.slice(0, 100)}`);
+    if (/^create table /i.test(st) && ROW_EVALUATED.test(lower.replace(/references public\.\w+/g, ""))) found.push(`calls a project function in a column default or check: ${st.slice(0, 100)}`);
+  }
   return found;
 }
 // rows in every public table, to prove a migration removed none
@@ -93,7 +139,7 @@ export async function listMigrations() {
 }
 
 /** Apply pending migrations in order. Stops at the first failure and reports it; never skips one. */
-export async function migrate(c, { list, log = () => {}, next = false, backedUp = false } = {}) {
+export async function migrate(c, { list, log = () => {}, next = false, backedUp = false, rehearse = false } = {}) {
   list ||= await listMigrations();
   // existing learner data needs a full backup taken by the owner (dashboard or supabase db dump) first
   const users = Number((await c.sql("select count(*)::int as n from auth.users"))[0]?.n || 0);
@@ -114,7 +160,13 @@ export async function migrate(c, { list, log = () => {}, next = false, backedUp 
     if (done.has(m.version)) { report.push({ ...m, result: "already applied", sha }); log(`= ${m.file} (already applied)`); continue; }
     const danger = destructive(sql);
     if (danger.length) { report.push({ ...m, result: "REFUSED", sha, error: `could change or remove existing data: ${danger.join("; ")}` }); log(`✗ ${m.file}: refused (${danger.join("; ")})`); return { ok: false, report, stoppedAt: m.file }; }
-    const before = await rowCounts(c);
+    // rehearse it first on a temporary copy of the current data (real PostgreSQL, never production)
+    if (rehearse) {
+      const r = await rehearseMigration(JSON.parse(JSON.stringify(await snapshot(c))), list, m);
+      if (!r.ok) { report.push({ ...m, result: "FAILED REHEARSAL", sha, error: r.problems.join("; ") }); log(`✗ ${m.file}: rehearsal on a copy failed (${r.problems.join("; ")})`); return { ok: false, report, stoppedAt: m.file }; }
+      log(`✓ ${m.file}: rehearsed on a copy, every existing value unchanged`);
+    }
+    const before = await rowCounts(c), cols = await columnsNow(c), sums = await checksums(c, cols);
     const t0 = Date.now();
     try {
       // one query: the migration and its ledger entry commit together or not at all (checked by the probe above)
@@ -127,14 +179,42 @@ export async function migrate(c, { list, log = () => {}, next = false, backedUp 
     const v = verifyQuery(expectations(sql));
     const row = (await c.sql(v.query))[0] || {};
     const missing = v.checks.filter((_, i) => row[`c${i}`] !== true);
-    const gone = lost(before, await rowCounts(c));
-    const result = gone.length ? "ROWS LOST" : missing.length ? "APPLIED BUT INCOMPLETE" : "applied and verified";
+    const gone = [...lost(before, await rowCounts(c)), ...changed(sums, await checksums(c, cols)).map((t) => `${t}: existing values changed`)];
+    const result = gone.length ? "EXISTING DATA CHANGED" : missing.length ? "APPLIED BUT INCOMPLETE" : "applied and verified";
     report.push({ ...m, result, sha, ms: Date.now() - t0, checked: v.checks.length, missing, gone });
-    log(`${missing.length || gone.length ? "✗" : "✓"} ${m.file}: ${v.checks.length} objects checked, row counts kept${missing.length ? `; missing: ${missing.join(", ")}` : ""}${gone.length ? `; ROWS LOST: ${gone.join(", ")}` : ""}`);
+    log(`${missing.length || gone.length ? "✗" : "✓"} ${m.file}: ${v.checks.length} objects checked, row counts kept${missing.length ? `; missing: ${missing.join(", ")}` : ""}${gone.length ? `; EXISTING DATA CHANGED: ${gone.join(", ")}` : ""}`);
     if (missing.length || gone.length) return { ok: false, report, stoppedAt: m.file };
     if (next) return { ok: true, report, paused: m.file };
   }
   return { ok: true, report };
+}
+
+// ---------- throwaway test accounts (created after the migrations, deleted at the end) ----------
+// No person ever sees these passwords: each is generated here, kept in memory, and only its bcrypt hash (made
+// locally) is sent to the database, so the plain password isn't in any query log. Creating users by SQL isn't an
+// official Supabase API, so each account is proved by signing in with it; if that fails it is removed and the run
+// stops. Emails are on example.com (reserved, never delivered to).
+export async function createTestAccounts(c, n = 2) {
+  const { default: bcrypt } = await import("bcryptjs");
+  const { randomBytes, randomUUID } = await import("node:crypto");
+  const tag = randomBytes(4).toString("hex"), out = [];
+  for (let i = 0; i < n; i++) {
+    const id = randomUUID(), email = `gradify-test-${tag}-${i + 1}@example.com`, password = randomBytes(24).toString("base64url");
+    const hash = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
+    await c.sql(`insert into auth.users (instance_id, id, aud, role, email, encrypted_password, email_confirmed_at, raw_app_meta_data, raw_user_meta_data, created_at, updated_at, confirmation_token, recovery_token, email_change_token_new, email_change)
+      values ('00000000-0000-0000-0000-000000000000', ${lit(id)}, 'authenticated', 'authenticated', ${lit(email)}, ${lit(hash)}, now(), '{"provider":"email","providers":["email"],"gradify_test":true}', '{}', now(), now(), '', '', '', '');
+      insert into auth.identities (id, user_id, provider_id, identity_data, provider, last_sign_in_at, created_at, updated_at)
+      values (gen_random_uuid(), ${lit(id)}, ${lit(id)}, ${lit(JSON.stringify({ sub: id, email, email_verified: true }))}::jsonb, 'email', now(), now(), now());`);
+    out.push({ id, email, password });
+  }
+  return out;
+}
+// only ever deletes accounts this run created: matched by id AND the test marker AND the example.com address
+export async function deleteTestAccounts(c, accounts) {
+  if (!accounts.length) return 0;
+  const ids = accounts.map((a) => lit(a.id)).join(", ");
+  await c.sql(`delete from auth.users where id in (${ids}) and email like 'gradify-test-%@example.com' and raw_app_meta_data->>'gradify_test' = 'true';`);
+  return Number((await c.sql(`select count(*)::int as n from auth.users where id in (${ids})`))[0]?.n ?? 0);
 }
 
 // ---------- row-level security audit over the whole public schema ----------
@@ -174,30 +254,19 @@ Functions: ${Array.isArray(fns) ? fns.map((f) => `${f.slug} (v${f.version}, ${f.
 Secrets set (names only): ${names.join(", ") || "none"}. ANTHROPIC_API_KEY ${names.includes("ANTHROPIC_API_KEY") ? "is set" : "is NOT set"}.`;
 }
 
-async function backup(c, out) {
+export async function backup(c, out) {
   const at = new Date().toISOString().replace(/[:.]/g, "-");
   const dir = resolve(out || `${homedir()}/.gradify-backups`);
   const rel = relative(resolve(new URL(".", root).pathname), dir);
   if (!rel.startsWith("..") && !isAbsolute(rel)) throw new Error("Backups contain learner data: write them outside the repository.");
   await mkdir(dir, { recursive: true });
   const q = (s) => c.sql(s);
-  const tables = (await q("select tablename from pg_tables where schemaname = 'public' order by 1")).map((r) => r.tablename);
-  const snap = {
-    project: c.ref, at,
-    schema: {
-      columns: await q("select table_name, column_name, data_type, is_nullable, column_default from information_schema.columns where table_schema = 'public' order by 1, ordinal_position"),
-      policies: await q("select tablename, policyname, cmd, roles, qual, with_check from pg_policies where schemaname = 'public' order by 1, 2"),
-      triggers: await q("select event_object_table as table, trigger_name, action_timing, event_manipulation from information_schema.triggers where trigger_schema in ('public', 'auth') order by 1, 2"),
-      functions: await q("select p.proname, pg_get_functiondef(p.oid) as def from pg_proc p join pg_namespace n on n.oid = p.pronamespace where n.nspname = 'public' order by 1"),
-      migrations: await q("select version, name from supabase_migrations.schema_migrations order by 1").catch(() => []),
-    },
-    counts: {}, rows: {},
-    auth_users: (await q("select count(*)::int as n from auth.users"))[0]?.n ?? null,
-  };
-  for (const t of tables) {
-    snap.counts[t] = (await q(`select count(*)::int as n from public.${t}`))[0].n;
-    snap.rows[t] = (await q(`select coalesce(json_agg(t), '[]'::json) as rows from public.${t} t`))[0].rows;
-  }
+  // the same snapshot the rehearsals use (rows, counts, columns, policies, the applied migrations' SQL), plus
+  // triggers and function definitions for the record
+  const snap = { project: c.ref, at, ...(await snapshot(c)) };
+  snap.schema.triggers = await q("select event_object_table as table, trigger_name, action_timing, event_manipulation from information_schema.triggers where trigger_schema in ('public', 'auth') order by 1, 2");
+  snap.schema.functions = await q("select p.proname, pg_get_functiondef(p.oid) as def from pg_proc p join pg_namespace n on n.oid = p.pronamespace where n.nspname = 'public' order by 1");
+  const tables = Object.keys(snap.counts);
   const file = `${dir}/gradify-${c.ref}-${at}.json`, text = JSON.stringify(snap);
   await writeFile(file, text, { mode: 0o600 });
   const sha = createHash("sha256").update(text).digest("hex");
@@ -209,16 +278,39 @@ async function backup(c, out) {
   for (const t of tables) if ((parsed.rows[t] || []).length !== parsed.counts[t]) problems.push(`${t}: ${parsed.rows[t]?.length} rows saved but ${parsed.counts[t]} counted`);
   const now = await rowCounts(c);
   for (const t of tables) if (now[t] !== snap.counts[t]) problems.push(`${t} changed during the backup (${snap.counts[t]} → ${now[t]})`);
+  // and the real test: restore it into a separate temporary database and compare every row and value
+  const rr = problems.length ? null : await restoreRehearsal(parsed, await listMigrations());
+  if (rr && !rr.ok) problems.push(...rr.problems.map((x) => `restore rehearsal: ${x}`));
   if (problems.length) throw new Error(`Backup NOT verified: ${problems.join("; ")}. Nothing has been changed; don't migrate.`);
-  return `Backup written to ${file} (sha256 ${sha.slice(0, 16)}…, readable only by you) and **verified**: re-read from disk with a matching hash, every table's saved rows equal its count, and a fresh count of the live database matches. ${tables.length} public tables, ${Object.values(snap.counts).reduce((a, b) => a + b, 0)} rows, ${snap.auth_users} accounts (counted, not copied). ${snap.schema.migrations.length} migrations already recorded.
+  return `Backup written to ${file} (sha256 ${sha.slice(0, 16)}…, readable only by you) and **verified**: re-read from disk with a matching hash, every table's saved rows equal its count, a fresh count of the live database matches, and it was **restored into a separate temporary PostgreSQL database** (built from the ${parsed.schema.migrations.length} recorded migrations) with every row and value identical (${rr.tables} tables, ${rr.rows} rows). ${tables.length} public tables, ${Object.values(snap.counts).reduce((a, b) => a + b, 0)} rows, ${snap.auth_users} accounts (counted, not copied). ${snap.schema.migrations.length} migrations already recorded.
 
 Note: this is a logical snapshot through the API. Auth accounts and storage files aren't included; Supabase's own daily backups (and point-in-time recovery on paid plans) cover those.
 
 ${md(tables.map((t) => ({ table: t, rows: snap.counts[t] })), ["table", "rows"])}`;
 }
 
+// What the token can reach, judged only by HTTP status codes: every response body is discarded unread, so a
+// token that turns out too broad never causes anything sensitive to be printed. Needed: this project, SQL,
+// functions and secret names. Must be refused: other projects, organisation-level data and the API keys.
+export async function tokenScope(c, f = globalThis.fetch.bind(globalThis), token = process.env.SUPABASE_ACCESS_TOKEN || `sbp_${"0".repeat(40)}`) {
+  const code = async (method, path, body) => { const r = await f(`${API}${path}`, { method, headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" }, body: body ? JSON.stringify(body) : undefined }); await r.arrayBuffer().catch(() => {}); return r.status; };
+  const need = [["read this project", "GET", `/projects/${c.ref}`], ["run SQL on this project", "POST", `/projects/${c.ref}/database/query`, { query: "select 1 as ok" }], ["list this project's Edge Functions", "GET", `/projects/${c.ref}/functions`], ["read this project's secret names", "GET", `/projects/${c.ref}/secrets`]];
+  const deny = [["list projects across the account", "GET", "/projects"], ["read organisations", "GET", "/organizations"], ["read this project's API keys (not needed)", "GET", `/projects/${c.ref}/api-keys`]];
+  const rows = [];
+  for (const [what, m, p, b] of need) { const s = await code(m, p, b); rows.push({ check: `Can ${what}`, status: s, ok: s >= 200 && s < 300 }); }
+  for (const [what, m, p] of deny) {
+    let s = await code(m, p), ok = s === 401 || s === 403 || s === 404;
+    // a project-scoped token may still "list projects" but see only this one: that's acceptable, checked by ref
+    if (!ok && p === "/projects" && s === 200) { const r = await f(`${API}/projects`, { headers: { Authorization: `Bearer ${token}` } }); const list = await r.json().catch(() => []); ok = Array.isArray(list) && list.every((x) => x.id === c.ref || x.ref === c.ref); s = ok ? "200 (this project only)" : "200 (other projects visible)"; }
+    rows.push({ check: `Cannot ${what}`, status: s, ok });
+  }
+  return { ok: rows.every((r) => r.ok), rows };
+}
+
 // read-only: everything that must be true before anything is changed
 async function preflight(c) {
+  const scope = await tokenScope(c);
+  if (!scope.ok) return `**Token scope check failed: nothing else was run.**\n\n${md(scope.rows.map((r) => ({ ...r, result: r.ok ? "ok" : "FAIL" })), ["check", "status", "result"])}\n\nCreate a token restricted to the Gradify project with only: database (read and write), Edge Functions (read and deploy), secrets (read names).`;
   const st = await status(c);
   const users = Number((await c.sql("select count(*)::int as n from auth.users"))[0]?.n || 0);
   const counts = await rowCounts(c), rows = Object.values(counts).reduce((a, b) => a + b, 0);
@@ -227,8 +319,12 @@ async function preflight(c) {
   const recorded = await c.sql("select version from supabase_migrations.schema_migrations order by 1").catch(() => []);
   return `${st}
 
-Existing data: ${users} accounts, ${rows} rows in ${Object.keys(counts).length} public tables. ${users || rows ? "**Learner data exists: a full owner-taken backup is required before migrating.**" : "The project is empty."}
+Existing data: ${users} accounts, ${rows} rows in ${Object.keys(counts).length} public tables. ${users || rows ? "**Learner data exists: this run expects a new, empty project. Stop, and take a full owner backup first if this data matters.**" : "The project is empty, as expected."}
 Tables the migrations create that already exist: ${clash.join(", ") || "none"}. Migrations already recorded: ${recorded.length}.${clash.length && !recorded.length ? " **These tables exist but no migration is recorded: the project was set up by hand. Stop and compare the schema before applying anything.**" : ""}
+Token scope:
+
+${md(scope.rows.map((r) => ({ ...r, result: r.ok ? "ok" : "FAIL" })), ["check", "status", "result"])}
+
 Changes made by this check: none.`;
 }
 
@@ -254,10 +350,10 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   let body, failed = false;
   try {
     if (cmd === "status") body = await status(c);
-    else if (cmd === "preflight") { body = await preflight(c); failed = /\*\*(Learner data exists|These tables exist)/.test(body); }
+    else if (cmd === "preflight") { body = await preflight(c); failed = /\*\*(Learner data exists|These tables exist|Token scope check failed)/.test(body); }
     else if (cmd === "backup") body = await backup(c, rest.find((x) => !x.startsWith("--")));
     else if (cmd === "migrate") {
-      const r = await migrate(c, { log: (l) => console.error(l), next: rest.includes("--next"), backedUp: rest.includes("--existing-data-backed-up") });
+      const r = await migrate(c, { log: (l) => console.error(l), next: rest.includes("--next"), backedUp: rest.includes("--existing-data-backed-up"), rehearse: true });
       failed = !r.ok;
       body = `${r.paused ? `Applied and verified ${r.paused}; paused there (--next).` : r.ok ? "All migrations applied and verified." : `**Stopped at ${r.stoppedAt}.** Nothing after it was applied; the failed migration was rolled back.`}\n\n${md(r.report.map((m) => ({ migration: m.file, result: m.result, "objects checked": m.checked ?? "", sha256: m.sha, detail: m.error || (m.missing?.length ? `missing: ${m.missing.join(", ")}` : "") })), ["migration", "result", "objects checked", "sha256", "detail"])}`;
     } else if (cmd === "rls-audit") { body = await rlsAudit(c); failed = /need attention/.test(body); }

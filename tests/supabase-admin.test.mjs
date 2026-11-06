@@ -28,7 +28,7 @@ function fakeDb({ applied = [], failOn = null, missing = [], atomic = true, user
 const list = [
   { file: "20260101000000_a.sql", version: "20260101000000", name: "a", sql: "create table public.a (id int, user_id uuid);\nalter table public.a enable row level security;\ncreate policy \"own a\" on public.a for all to authenticated using (user_id = auth.uid());" },
   { file: "20260102000000_b.sql", version: "20260102000000", name: "b", sql: "alter table public.a\n  add column note text;" },
-  { file: "20260103000000_c.sql", version: "20260103000000", name: "c", sql: "create table public.c (id int); BROKEN" },
+  { file: "20260103000000_c.sql", version: "20260103000000", name: "c", sql: "create table public.c (id int BROKEN);" },
   { file: "20260104000000_d.sql", version: "20260104000000", name: "d", sql: "create table public.d (id int);" },
 ];
 
@@ -105,7 +105,7 @@ test("existing learner data stops the run until the owner has taken a full backu
 test("a migration after which any table has fewer rows stops the run", async () => {
   const f = fakeDb({ users: 1, rows: { cards: 5 }, loseRowsOn: "20260101000000" });
   const r = await migrate(f.db, { list: list.slice(0, 2), backedUp: true });
-  assert.equal(r.ok, false); assert.equal(r.report[0].result, "ROWS LOST"); assert.deepEqual(r.report[0].gone, ["cards: 5 → 0"]);
+  assert.equal(r.ok, false); assert.equal(r.report[0].result, "EXISTING DATA CHANGED"); assert.ok(r.report[0].gone.includes("cards: 5 → 0"), JSON.stringify(r.report[0].gone));
   assert.deepEqual(f.ran, ["20260101000000"], "nothing after it runs");
 });
 
@@ -115,3 +115,18 @@ test("--next applies exactly one migration and pauses for review", async () => {
   assert.equal(r.ok, true); assert.equal(r.paused, "20260101000000_a.sql"); assert.deepEqual(f.ran, ["20260101000000"]);
 });
 
+
+test("the token scope check passes a project-only token and fails a broader one, without reading any response body", async () => {
+  const { tokenScope } = await import("../scripts/supabase-admin.mjs");
+  const ref = "abcdefghijklmnopqrst", c = { ref };
+  const fake = (broad) => async (u) => {
+    const p = new URL(u).pathname.replace("/v1", "");
+    const allowed = p.startsWith(`/projects/${ref}`) && !p.endsWith("/api-keys");
+    const status = allowed ? 200 : broad ? 200 : 403;
+    return { status, arrayBuffer: async () => new ArrayBuffer(0), json: async () => (p === "/projects" ? [{ id: ref }, { id: "otherprojectother000" }] : {}) };
+  };
+  assert.equal((await tokenScope(c, fake(false), "t")).ok, true);
+  const broad = await tokenScope(c, fake(true), "t");
+  assert.equal(broad.ok, false);
+  assert.deepEqual(broad.rows.filter((r) => !r.ok).map((r) => r.check), ["Cannot list projects across the account", "Cannot read organisations", "Cannot read this project's API keys (not needed)"]);
+});
