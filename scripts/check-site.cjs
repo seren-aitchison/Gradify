@@ -5,6 +5,7 @@
 //   options: --report <file.json>   write the full results     --compare <file.json>   only report problems not in that run
 // For every page: the page itself loads, no request to the site fails (4xx/5xx or no answer), no script error.
 // Every file the allowlist leaves out (docs/, scripts/, supabase/, tests/, package files …) must answer 404.
+// Phones: the sub-site menu, no sideways scrolling, course search results on top.
 // Offline: the service worker installs, caches its offline list, and the homepage and app open with no network.
 const http = require("node:http");
 const fs = require("node:fs");
@@ -74,6 +75,46 @@ function serve(dir) {
   await pp.close();
   results.probed = probes.length;
 
+  // phones: every page with a sub-site header has a working menu holding its header's links, no page scrolls
+  // sideways, and on course pages the lesson search shows its results on top of the page
+  const { devices } = require("playwright");
+  const phone = await browser.newContext({ ...devices["iPhone 13"], serviceWorkers: "block" });
+  const withHeader = publish.filter((f) => f.endsWith(".html") && fs.readFileSync(path.join(__dirname, "..", f), "utf8").includes('class="sub-links"'));
+  const courses = publish.filter((f) => /\/(course|biology|chemistry|physics)\/index\.html$/.test(f));
+  results.phone = {};
+  const phoneQueue = [...new Set([...withHeader, ...courses])];
+  async function phoneWorker() {
+    while (phoneQueue.length) {
+      const f = phoneQueue.shift(), url = `${base}/${f.replace(/(^|\/)index\.html$/, "$1")}`, pg = await phone.newPage(), r = {};
+      try {
+        await pg.goto(url, { waitUntil: "load", timeout: 45000 });
+        await pg.waitForTimeout(800);
+        r.sideways = await pg.evaluate(() => document.documentElement.scrollWidth - innerWidth);
+        if (await pg.$(".sub-links")) {
+          const want = await pg.$$eval(".sub-links a", (as) => as.map((a) => a.textContent.trim()));
+          await pg.evaluate(() => scrollTo(0, 0));
+          // pressed from the page rather than by Playwright: on the 3D pages a busy WebGL loop starves its click checks
+          const btnShown = await pg.evaluate(() => { const b = document.querySelector(".sub-menu-btn"); if (!b || !b.offsetParent) return false; b.click(); return true; });
+          if (!btnShown) throw new Error("no visible menu button");
+          const got = await pg.$$eval(".sub-menu a", (as) => as.filter((a) => a.offsetParent && !a.classList.contains("sub-menu-signin")).map((a) => a.textContent.trim()));
+          const onTop = await pg.evaluate(() => { const m = document.querySelector(".sub-menu"), b = m.getBoundingClientRect(); return Boolean(document.elementFromPoint(b.left + b.width / 2, b.bottom - 12)?.closest(".sub-menu")); });
+          r.menu = JSON.stringify(got) === JSON.stringify(want) && onTop ? "ok" : `links ${JSON.stringify(got)} instead of ${JSON.stringify(want)}${onTop ? "" : ", covered by the page"}`;
+        }
+        if (courses.includes(f)) {
+          await pg.evaluate(() => scrollTo(0, 0));
+          await pg.focus(".co-search input", { timeout: 10000 });
+          await pg.keyboard.type("the");
+          await pg.waitForTimeout(400);
+          r.search = await pg.evaluate(() => { const el = document.querySelector(".co-results.co-float"); if (!el || el.hidden) return "no results shown"; const b = el.getBoundingClientRect(); return document.elementFromPoint(b.left + b.width / 2, b.top + 16)?.closest(".co-float") ? "ok" : "results hidden behind the page"; });
+        }
+      } catch (e) { r.error = String(e.message).split("\n")[0]; }
+      results.phone[`/${f}`] = r;
+      await pg.close();
+    }
+  }
+  await Promise.all([phoneWorker(), phoneWorker(), phoneWorker(), phoneWorker()]);
+  await phone.close();
+
   // offline: a fresh context with the service worker allowed
   const off = await browser.newContext();
   const op = await off.newPage();
@@ -112,10 +153,16 @@ function serve(dir) {
     for (const e of r.errors) if (!known(p, "errors", e)) bad.push(`${p}: script error: ${e}`);
   }
   for (const e of results.exposed) bad.push(`reachable but should not be: ${e}`);
+  for (const [p, r] of Object.entries(results.phone || {})) {
+    if (r.error) bad.push(`${p} (phone): ${r.error}`);
+    if (r.sideways > 0) bad.push(`${p} (phone): scrolls sideways by ${r.sideways}px`);
+    if (r.menu && r.menu !== "ok") bad.push(`${p} (phone): menu ${r.menu}`);
+    if (r.search && r.search !== "ok") bad.push(`${p} (phone): search ${r.search}`);
+  }
   const o = results.offline;
   if (o.error || !(o.cached >= o.expected) || !o["/"] || !o["/app.html"]) bad.push(`offline: ${JSON.stringify(o)}`);
   const preexisting = before ? Object.entries(results.pages).reduce((n, [p, r]) => n + r.failed.filter((f) => known(p, "failed", f)).length + r.errors.filter((e) => known(p, "errors", e)).length, 0) : 0;
-  console.log(`${base}: ${pages.length} pages loaded, ${probes.length} excluded paths probed, offline ${o.cached ?? 0}/${o.expected ?? "?"} cached.`);
+  console.log(`${base}: ${pages.length} pages loaded, ${Object.keys(results.phone || {}).length} checked on a phone, ${probes.length} excluded paths probed, offline ${o.cached ?? 0}/${o.expected ?? "?"} cached.`);
   if (before) console.log(`${preexisting} problem(s) already present in ${args.compare} are not counted.`);
   console.log(bad.length ? `${bad.length} problem(s):\n- ${bad.join("\n- ")}` : "No problems.");
   process.exitCode = bad.length ? 1 : 0;

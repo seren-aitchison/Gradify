@@ -227,8 +227,13 @@ export function initFeatures() {
     document.dispatchEvent(new CustomEvent("lifeos:goto", { detail: "ai" }));
     setTimeout(() => $("#ai-input")?.focus({ preventScroll: true }), 500);
   });
-  const os = $("#os");
-  new IntersectionObserver(([en]) => fab.classList.toggle("tucked", en.isIntersecting && !$("#view-ai").hidden), { threshold: 0.2 }).observe(os);
+  // tucked away while the AI view is on screen, and on phones while the hero's buttons are, so it never covers them
+  const os = $("#os"), heroCtas = $(".hero .actions") || $(".actions"), phone = matchMedia("(max-width: 640px)");
+  let inAi = false, overCtas = false;
+  const tuck = () => fab.classList.toggle("tucked", inAi || (phone.matches && overCtas));
+  new IntersectionObserver(([en]) => { inAi = en.isIntersecting && !$("#view-ai").hidden; tuck(); }, { threshold: 0.2 }).observe(os);
+  if (heroCtas) new IntersectionObserver(([en]) => { overCtas = en.isIntersecting; tuck(); }).observe(heroCtas);
+  phone.addEventListener?.("change", tuck);
 }
 
 initFeatures();

@@ -327,12 +327,48 @@ export function mountCourse(root, cfg) {
     </div>
     ${cfg.notice ? `<p class="co-notice" role="note">${cfg.notice}</p>` : ""}
     <nav class="co-tabs" aria-label="${esc(cfg.name)}">${VIEWS.map(([id, t]) => `<a href="#/${id}" data-v="${id}">${t}${id === "review" ? '<i class="co-due" hidden></i>' : ""}</a>`).join("")}
-      <label class="co-search">${ic("search")}<input type="search" placeholder="Search ${lessons.length.toLocaleString()} lessons" aria-label="Search lessons"><div class="co-results" hidden></div></label></nav>
+      <label class="co-search">${ic("search")}<input type="search" placeholder="Search ${lessons.length.toLocaleString()} lessons" aria-label="Search lessons"></label></nav>
     <div class="co-body"><main class="co-main"></main><aside class="co-side"></aside></div>`;
   const main = root.querySelector(".co-main"), side = root.querySelector(".co-side"), hud = root.querySelector(".co-hud");
 
   // search
-  const q = root.querySelector(".co-search input"), res = root.querySelector(".co-results");
+  // the tab bar scrolls sideways when the tabs don't fit: the search shrinks to an icon, the edges fade where
+  // there's more, and the current tab is kept in view
+  const tabs = root.querySelector(".co-tabs");
+  const tabEdges = () => {
+    tabs.classList.toggle("more-l", tabs.scrollLeft > 2);
+    tabs.classList.toggle("more-r", tabs.scrollLeft + tabs.clientWidth < tabs.scrollWidth - 2);
+  };
+  const fitTabs = () => {
+    tabs.classList.remove("tight");
+    tabs.classList.toggle("tight", tabs.scrollWidth > tabs.clientWidth + 2);
+    tabEdges();
+  };
+  tabs.addEventListener("scroll", tabEdges, { passive: true });
+  addEventListener("resize", fitTabs);
+  const showTab = () => {
+    const a = tabs.querySelector("a[aria-current]"); if (!a) return;
+    const l = a.offsetLeft, r = l + a.offsetWidth;
+    if (l < tabs.scrollLeft + 24) tabs.scrollLeft = Math.max(0, l - 24);
+    else if (r > tabs.scrollLeft + tabs.clientWidth - 24) tabs.scrollLeft = r - tabs.clientWidth + 24;
+    tabEdges();
+  };
+  requestAnimationFrame(fitTabs);
+  document.fonts?.ready.then(fitTabs);   // tab widths change once the web fonts load
+  const q = root.querySelector(".co-search input");
+  // the results float above the page: inside the tab bar, which scrolls sideways, they were clipped out of sight
+  const res = Object.assign(document.createElement("div"), { className: "co-results co-float", hidden: true });
+  document.body.append(res);
+  const placeResults = () => {
+    if (res.hidden) return;
+    const r = q.closest(".co-search").getBoundingClientRect(), w = Math.min(420, innerWidth - 16);
+    res.style.width = `${w}px`;
+    res.style.top = `${Math.round(r.bottom + 8)}px`;
+    res.style.left = `${Math.round(Math.min(Math.max(8, r.right - w), innerWidth - w - 8))}px`;
+  };
+  addEventListener("resize", placeResults); addEventListener("scroll", placeResults, { passive: true });
+  // opening the search in a crowded bar scrolls it into view (after its width transition)
+  q.addEventListener("focus", () => setTimeout(() => { if (tabs.classList.contains("tight")) { tabs.scrollLeft = tabs.scrollWidth; tabEdges(); } placeResults(); }, 220));
   const searchHtml = (raw) => {
     const t = norm(raw);
     const hits = [...units.filter((u) => norm(u.title).includes(t)).map((u) => ({ href: `#/learn/${u.id}`, k: `${U} ${u.n}`, t: u.title })),
@@ -344,9 +380,11 @@ export function mountCourse(root, cfg) {
     if (norm(q.value).length < 2) { res.hidden = true; return; }
     res.innerHTML = searchHtml(q.value);
     res.hidden = false;
+    placeResults();
   });
   res.addEventListener("click", () => { res.hidden = true; q.value = ""; });
-  document.addEventListener("click", (e) => { if (!e.target.closest(".co-search")) res.hidden = true; });
+  document.addEventListener("click", (e) => { if (!e.target.closest(".co-search, .co-float")) res.hidden = true; });
+  q.addEventListener("keydown", (e) => { if (e.key === "Escape") { res.hidden = true; q.blur(); } });
 
   function paintHud() {
     const xp = totalXp(), L = levelOf(xp), st = streak(), due = dueCards().length;
@@ -429,11 +467,13 @@ export function mountCourse(root, cfg) {
     return out;
   }
   function road(u, current) {
-    const items = pathItems(u), W = 440, gap = 96, top = 56;
+    const items = pathItems(u), W = 440, gap = 96;
+    const ci = items.findIndex((it) => it.kind === "lesson" && it.l.id === current?.id);
+    // parked before the first lesson, the car needs road above it: without this it sits on the school card
+    const lead = ci === 0, top = lead ? 56 + gap : 56;
     const pts = items.map((_, i) => [W / 2 + Math.sin(i * 0.9) * 120, top + i * gap]);
     const H = top + (items.length - 1) * gap + 70;
     const curve = (p) => p.map(([x, y], i) => { if (!i) return `M${x} ${y}`; const [px, py] = p[i - 1]; return `C${px} ${py + gap / 2} ${x} ${y - gap / 2} ${x} ${y}`; }).join(" ");
-    const ci = items.findIndex((it) => it.kind === "lesson" && it.l.id === current?.id);
     const lastDone = items.reduce((a, it, i) => (it.kind === "lesson" && S.done[it.l.id] ? i : a), -1);
     let carSvg = "";
     if (ci >= 0) {
@@ -458,9 +498,10 @@ export function mountCourse(root, cfg) {
       return `<a class="co-node quiz ${qz?.pass ? "done" : ""}" style="${style}" href="#/quiz/${u.id}" aria-label="${U} ${u.n} quiz">${ic("trophy")}<span class="co-tip">Unit quiz${qz ? ` · best ${Math.round(qz.best * 100)}%` : ` · +${XP.quiz} XP`}</span></a>`;
     }).join("");
     const doneTo = lastDone >= 0 ? pts.slice(0, lastDone + 1) : [];
+    const roadPts = lead ? [[pts[0][0], top - gap], ...pts] : pts;   // the stretch the car waits on
     return `<div class="co-road" style="height:${H}px">
       <svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">
-        <path d="${curve(pts)}" class="co-r-edge"/><path d="${curve(pts)}" class="co-r-top"/><path d="${curve(pts)}" class="co-r-dash"/>
+        <path d="${curve(roadPts)}" class="co-r-edge"/><path d="${curve(roadPts)}" class="co-r-top"/><path d="${curve(roadPts)}" class="co-r-dash"/>
         ${doneTo.length > 1 ? `<path d="${curve(doneTo)}" class="co-r-done"/>` : ""}
       </svg>
       ${carSvg}${nodes}</div>`;
@@ -1110,6 +1151,7 @@ export function mountCourse(root, cfg) {
     const [v0, arg] = location.hash.replace(/^#\/?/, "").split("/"), v = v0 || home;
     const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam"].includes(v) ? v : home;
     root.querySelectorAll(".co-tabs a").forEach((a) => a.toggleAttribute("aria-current", a.dataset.v === (view === "lesson" || view === "quiz" ? "learn" : view === "exam" ? "exams" : view)));
+    showTab();
     const wide = ["me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview", cfg.workspace?.route].includes(view);
     side.hidden = wide; root.querySelector(".co-body").classList.toggle("wide", wide);
     if (view !== "learn") scrollTo(0, 0);

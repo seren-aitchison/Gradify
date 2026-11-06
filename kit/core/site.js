@@ -5,6 +5,7 @@
 import { GROUPS } from "./sites.js";
 import { SITE as CONFIG_SITE } from "../../gradify.config.js";
 import { lum, mix } from "./colour.js";
+import { mountSubNav } from "./subnav.js";
 
 export const SITES = GROUPS.flatMap((g) => g.items);
 // "MedGradify" → "medgradify", "TechGradify · ForgeLab" → "techgradify"
@@ -32,3 +33,6 @@ export function nameHtml(s) {
   // one wrapper, so a flex container (like the top bar) doesn't put a gap inside the name
   return `<span class="site-name"><span class="site-accent" style="color:${accentOf(s)}">${esc(first)}</span>${esc(rest)}</span>`;
 }
+
+// every page with a sub-site header imports this module, so its phone and tablet menu is mounted here
+if (typeof document !== "undefined" && document.querySelector) mountSubNav(document);
