@@ -1,8 +1,10 @@
 # Gradify commercial platform plan
 
-**Version 2, 6 November 2026.** This replaces version 1 of the same date.
+**Version 2.1, 6 November 2026.** This replaces version 2 of the same date.
 
-This is a plan, not an implementation. Nothing in it has been built, migrated, deployed or requested, and every milestone starts only on the owner's explicit approval.
+**Changes in 2.1:** risk R2 is resolved and verified live. The site is now deployed from an allowlist (workstream 14, approved by the owner on its own). An audit of everything that had been published, and of the full git history, found no credential, key or personal data, so nothing needed rotating. Nothing else in the plan has changed.
+
+This is a plan, not an implementation. Apart from workstream 14 (the allowlist deploy, approved separately and now live), nothing in it has been built, migrated, deployed or requested, and every milestone starts only on the owner's explicit approval.
 
 **Evidence labels**
 - **Working, live:** verified on getgradify.com.
@@ -16,7 +18,7 @@ This is a plan, not an implementation. Nothing in it has been built, migrated, d
 ### Changes since version 1
 
 1. **Corrected: privacy of the repository doesn't protect anything deployed.** GitHub Pages serves the published files to everyone, whatever the repository's visibility. Premium content must be kept out of the published site altogether, not just out of a public repository (§1A).
-2. **New finding: internal documents are published.** The deploy publishes `docs/`, `scripts/` and `supabase/` to getgradify.com: business plans, security posture, audits, the backend log. They need to be excluded from the site (risk R2).
+2. **New finding: internal documents are published.** The deploy publishes `docs/`, `scripts/` and `supabase/` to getgradify.com: business plans, security posture, audits, the backend log. They need to be excluded from the site (risk R2). **Resolved in 2.1:** the allowlist deploy went live on 6 November 2026, and none of these files is reachable any more (see R2 in §11).
 3. **Corrected: 131 registered interactives, not 132.** There are also ten shared practice tools outside the registries (NEWS2, drug calculations, clinical scenarios, legal reasoning, maths grapher and others) that the simulation strategy must include.
 4. **Corrected: some Pro benefits work today without accounts.** Adaptive revision, mastery and Revisit already work on a single device (§5).
 5. **New risk: selling unreviewed professional content.** Law, nursing and pharmacy content has no expert sign-off yet. Charging for it is a legal and reputational risk, so review becomes a launch gate for those subjects (§5, R14).
@@ -182,7 +184,7 @@ Effort is in focused engineering days, including tests and review rounds. Owner 
 - Workstream 10: the simulation and interactive audit, including adding outcome and QA fields to the registries.
 - Workstream 8: the curriculum coverage matrix (country × level × qualification × year × subject).
 - Workstream 13: the shared-architecture audit and the guard tests (§8).
-- Workstream 14: the **allowlist-based deploy**, which stops publishing internal documents. Small, and closes risk R2 at once. Needs the owner's go-ahead because it changes what's published.
+- Workstream 14: the **allowlist-based deploy**, which stops publishing internal documents. **Done and verified live, 6 November 2026** (R2 resolved).
 - Workstream 6: the plans page design and copy, unpublished.
 - Workstream 7: researching education systems (England, Wales, Scotland, Northern Ireland first) from official sources.
 - Workstream 1 (Part A tooling): the extended preflight inventory, the schema diff, data-change manifests, the Admin API helper code. Tested locally and on real PostgreSQL; not run live.
@@ -410,7 +412,7 @@ A simulation is "complete" only when every field passes. The priority is educati
 | ID | Risk | Area | Likelihood | Impact | Mitigation |
 |---|---|---|---|---|---|
 | R1 | Premium content leaks through the published site, caches or history | IP, commercial | High without M3 and the allowlist | High | Allowlist deploy; Supabase-held premium content; service worker exclusions; keep past content free |
-| R2 | Internal documents published on getgradify.com | Security, IP | **Happening now** | Medium | The allowlist deploy (Category 1, small) |
+| R2 | Internal documents published on getgradify.com | Security, IP | **Resolved 6 Nov 2026, verified live** | — | The deploy publishes only allowlisted files (`scripts/build-site.mjs`), and CI fails if anything else would be published. Live: every excluded path answers 404, and all 150 pages, 131 interactives, 18 workspace cases and offline mode still work. The audit found no credential or personal data; nothing to rotate. The files were public for some time, and the repository itself is still public (§1A), so treat their contents as already seen |
 | R3 | Token broader than needed | Security | Medium | High | Scope check in preflight; shortest expiry; revoke after |
 | R4 | A migration damages data | Data | Low (allowlist, rehearsal, checksums) | High | Verified backups; restore rehearsal; one migration at a time |
 | R5 | Entitlement bypass on the client | Commercial, security | Medium if rushed | High | Server-side `has_entitlement()`; RLS; denial tests in the isolation matrix |
@@ -434,7 +436,7 @@ A simulation is "complete" only when every field passes. The priority is educati
 
 Each is local and tested in CI, and needs only the owner's go-ahead.
 
-1. **The allowlist-based deploy**, which stops publishing `docs/`, `scripts/` and `supabase/`. Closes R2; small.
+1. ~~**The allowlist-based deploy**, which stops publishing `docs/`, `scripts/` and `supabase/`.~~ **Done, 6 November 2026; R2 closed.**
 2. Guard tests: migrations, prices, theme, entitlements, premium content, shared components.
 3. The theme architecture and light-mode refactor.
 4. The IP and third-party licence register, plus the legal document checklist.

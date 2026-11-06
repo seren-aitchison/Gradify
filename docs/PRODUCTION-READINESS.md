@@ -42,6 +42,7 @@ Last updated 6 November 2026. No Supabase project is connected yet, so **nothing
 | Safeguard | State |
 |---|---|
 | The site is published only after tests pass | **Live.** Pages deploys from GitHub Actions; on the 5 Nov push, only the tested workflow published |
+| Only the website's own files are published | **Live, 6 Nov.** The deploy builds from an allowlist (`scripts/build-site.mjs`; `tests/deploy.test.mjs`) and fails if anything else would be published or a needed file is missing. On getgradify.com, `docs/`, `scripts/`, `supabase/`, tests and package files all answer 404, and `scripts/check-site.cjs` found all 150 pages and offline mode working. Before this, those files were public; an audit found no credential or personal data in them |
 | No privileged credential in the repository | **Unit-tested on every push** (`tests/secrets.test.mjs`, checked against a planted key). The repository and its history were scanned clean on 6 Nov |
 | Server functions act as the learner, never with the service role | Unit-tested |
 | AI daily limits can't be reset by the learner | **Fixed 6 Nov.** study-pack counted its limit from packs, which learners can delete, and card rewrites had no limit at all. Both now count in the usage table, which learners can add to but never edit or delete |
