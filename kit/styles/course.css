@@ -694,3 +694,40 @@ button.rx-s { cursor: pointer; border-bottom: 1px dashed var(--line-strong); } b
 .co-syncwarn { border-color: rgba(255, 180, 77, .45); background: rgba(255, 180, 77, .06); }
 .co-syncwarn p { margin: 0; font-size: 13px; line-height: 1.45; color: var(--fg); }
 .co-acct.co-warn { color: #ffcf8a; }
+
+/* ---------- MathGradify: step by step (kit/interactive/stepcheck.js) ---------- */
+.mx-head h2 { margin: 4px 0 4px; font-size: clamp(22px, 3vw, 30px); } .mx-head p { margin: 0 0 14px; color: var(--mute); }
+.mx-problem { padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255, 255, 255, .03); margin-bottom: 14px; }
+.mx-prompt { margin: 0 0 6px; color: var(--mute); } .mx-start { margin: 0; font-size: 22px; }
+.mx code, .mx-lines code { font: 500 18px var(--mono); background: none; padding: 0; color: var(--fg); }
+.mx-lines { list-style: none; margin: 0 0 14px; padding: 0; counter-reset: line; }
+.mx-lines li { counter-increment: line; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; padding: 10px 12px 10px 44px; position: relative; border-left: 3px solid var(--line); margin-bottom: 6px; border-radius: 0 10px 10px 0; background: rgba(255, 255, 255, .02); }
+.mx-lines li::before { content: counter(line); position: absolute; left: 12px; font: 600 12px var(--mono); color: var(--mute); }
+.mx-lines li.ok { border-color: rgba(46, 204, 113, .55); } .mx-lines li.final { border-color: rgba(46, 204, 113, .9); background: rgba(46, 204, 113, .06); } .mx-lines li.no { border-color: rgba(255, 138, 122, .8); background: rgba(255, 90, 77, .06); }
+.mx-mark { font: 600 13px var(--mono); } .mx-lines li.no .mx-mark { color: #ff8a7a; } .mx-lines li.ok .mx-mark, .mx-lines li.final .mx-mark { color: #4fe08a; }
+.mx-lines small { flex-basis: 100%; color: var(--mute); font-size: 13.5px; line-height: 1.45; }
+.mx-undo { margin-left: auto; font-size: 12px; color: var(--mute); background: none; border: 1px solid var(--line); border-radius: 8px; padding: 2px 8px; cursor: pointer; }
+.mx-input label { display: block; font-weight: 600; margin-bottom: 6px; }
+.mx-row { display: flex; gap: 8px; } .mx-row input { flex: 1; min-width: 0; font: 500 18px var(--mono); padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line-strong); background: rgba(0, 0, 0, .25); color: var(--fg); }
+.mx-help { font-size: 13px; color: var(--mute); margin: 6px 0 12px; } .mx-err { color: #ff8a7a; font-weight: 600; }
+.mx-tools { display: flex; gap: 8px; flex-wrap: wrap; } .mx-hints { margin: 10px 0; padding-left: 20px; color: var(--mute); } .mx-hints li { margin: 4px 0; }
+.mx-solution { margin: 8px 0; padding-left: 22px; } .mx-solution li { margin: 4px 0; }
+.mx-progress { display: flex; gap: 6px; margin-top: 18px; } .mx-progress span { width: 22px; height: 6px; border-radius: 9px; background: rgba(255, 255, 255, .1); }
+.mx-progress span.ok { background: #4fe08a; } .mx-progress span.part { background: #ffc002; } .mx-progress span.no { background: #ff8a7a; }
+.mx-gen-pick { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 10px; } .mx-gen-pick select { margin-left: 6px; }
+@media (max-width: 600px) { .mx-row { flex-direction: column; } .mx code, .mx-lines code { font-size: 16px; } }
+
+/* ---------- MathGradify: graph explorer (kit/interactive/grapher.js) ---------- */
+.gx-modes { display: inline-flex; gap: 4px; padding: 4px; border-radius: 12px; border: 1px solid var(--line); margin-bottom: 12px; }
+.gx-modes button { border: 0; background: none; color: var(--mute); font: inherit; padding: 6px 14px; border-radius: 9px; cursor: pointer; } .gx-modes button[aria-selected="true"] { background: rgba(255, 255, 255, .1); color: var(--fg); }
+.gx-input { display: flex; align-items: center; gap: 8px; font: 600 18px var(--mono); } .gx-input input { flex: 1; min-width: 0; font: 500 18px var(--mono); padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line-strong); background: rgba(0, 0, 0, .25); color: var(--fg); }
+.gx-presets, .gx-ch { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; }
+.gx-presets button, .gx-ch button { font: 13px var(--mono); padding: 5px 10px; border-radius: 9px; border: 1px solid var(--line); background: rgba(255, 255, 255, .03); color: var(--fg); cursor: pointer; }
+.gx-ch button { font-family: inherit; } .gx-ch button.on { border-color: var(--line-strong); background: rgba(255, 255, 255, .1); } .gx-ch button.done { border-color: rgba(46, 204, 113, .6); }
+.gx-wrap { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 16px; align-items: start; }
+.gx-wrap svg { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); background: rgba(0, 0, 0, .2); }
+.gx-grid line { stroke: rgba(255, 255, 255, .07); stroke-width: 1; } .gx-grid line.ax { stroke: rgba(255, 255, 255, .45); } .gx-grid text { fill: var(--mute); font: 10px var(--mono); }
+.gx-curve { fill: none; stroke: #7ee0ff; stroke-width: 2.5; stroke-linejoin: round; } .gx-target { fill: none; stroke: #ffc002; stroke-width: 2.5; stroke-dasharray: 7 6; }
+.gx-sliders label { display: grid; gap: 4px; margin-bottom: 12px; font: 14px var(--mono); } .gx-sliders input { width: 100%; }
+.gx-done { padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(46, 204, 113, .6); }
+@media (max-width: 760px) { .gx-wrap { grid-template-columns: 1fr; } }

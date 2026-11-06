@@ -8,8 +8,9 @@ import { updateRegistry, scanQuestions } from "../scripts/curriculum-registry.mj
 import law from "../kit/courses/law/course.js";
 import nursing from "../kit/courses/nursing/course.js";
 import pharmacy from "../kit/courses/pharmacy/course.js";
+import maths from "../kit/courses/maths/course.js";
 
-for (const [slug, course] of [["law", law], ["nursing", nursing], ["pharmacy", pharmacy]]) {
+for (const [slug, course] of [["law", law], ["nursing", nursing], ["pharmacy", pharmacy], ["maths", maths]]) {
   test(`${slug}: every question in written notes has a permanent id, unique across the course`, async () => {
     const ids = [];
     for (const id of course.written) {

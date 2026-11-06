@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 
-for (const slug of ["law", "nursing", "pharmacy"]) {
+for (const slug of ["law", "nursing", "pharmacy", "maths"]) {
   test(`${slug}: every written school has a QA record, and only written schools do`, async () => {
     const course = (await import(`../kit/courses/${slug}/course.js`)).default;
     const { QA } = await import(`../kit/courses/${slug}/qa.js`);
