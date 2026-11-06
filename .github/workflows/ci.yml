@@ -5,6 +5,7 @@
 #   pull request      test only, never deploys
 # For this to be the only way the site is published, GitHub Pages must use "GitHub Actions" as its source
 # (Settings → Pages → Build and deployment → Source). Until then the old branch deploy also runs.
+# Only the allowlisted website files are published (scripts/build-site.mjs, tested in tests/deploy.test.mjs).
 # Nothing here needs a secret.
 name: Test and deploy
 
@@ -42,6 +43,9 @@ jobs:
       - name: No broken internal links
         run: node scripts/qa-audit.mjs
 
+      - name: The public site builds from the allowlist and passes its checks
+        run: node scripts/build-site.mjs --check
+
       - name: Generated files are up to date
         run: |
           node scripts/build-sitemap.mjs
@@ -69,12 +73,14 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      # the site is the repository as committed (.nojekyll: no build step), without the tooling folders
-      - name: Assemble the site
-        run: |
-          mkdir -p "$RUNNER_TEMP/site"
-          rsync -a --exclude '.git' --exclude '.github' --exclude 'node_modules' --exclude 'tests' ./ "$RUNNER_TEMP/site/"
-          test -f "$RUNNER_TEMP/site/index.html" && test -f "$RUNNER_TEMP/site/CNAME"
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      # only the allowlisted files the website needs (scripts/build-site.mjs); docs, scripts, migrations, server
+      # functions, tests and package files stay in the repository. The build re-runs its checks and fails if any fails.
+      - name: Assemble the site from the allowlist
+        run: node scripts/build-site.mjs "$RUNNER_TEMP/site"
 
       - uses: actions/configure-pages@v5
 

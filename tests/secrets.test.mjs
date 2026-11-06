@@ -6,19 +6,14 @@ import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 import { keyKind } from "../kit/data/backend-check.js";
+import { SECRET_PATTERNS } from "../scripts/build-site.mjs";
 
 const root = new URL("../", import.meta.url);
 const files = execFileSync("git", ["ls-files", "-z"], { cwd: root, encoding: "utf8" }).split("\0").filter(Boolean)
   .filter((f) => !/\.(png|jpe?g|gif|webp|glb|gltf|bin|ico|woff2?|ttf|pdf|mp4|wasm)$/i.test(f));
 
-const PATTERNS = [
-  ["Anthropic API key", /sk-ant-[A-Za-z0-9_-]{16,}/],
-  ["Supabase secret key", /sb_secret_[A-Za-z0-9_-]{16,}/],
-  ["Supabase personal access token", /\bsbp_[a-f0-9]{30,}\b/],
-  ["private key", /-----BEGIN [A-Z ]*PRIVATE KEY-----/],
-  ["GitHub token", /\b(ghp|gho|ghs|ghu|github_pat)_[A-Za-z0-9_]{20,}/],
-  ["service-role key assignment", /SERVICE_ROLE_KEY\s*[=:]\s*["'`]?[A-Za-z0-9_.-]{20,}/],
-];
+// the same patterns the site build refuses to publish (scripts/build-site.mjs)
+const PATTERNS = SECRET_PATTERNS;
 const JWT = /eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}/g;
 
 test("no privileged credential is committed anywhere in the repository", async () => {
