@@ -33,3 +33,18 @@ export const EVIDENCE = {
   "mass-spec": { "hal": "u15-15", "six": "u15-15" },
   "docking": { "man": "u18-12", "auto": "u18-20", "sar": "u18-04" },
 };
+
+// Exploration challenges: met by doing what they say (run, open, view, step through, "halve X and see"), not by
+// reasoning towards a target. They earn XP and stay in the activity history but never count towards mastery
+// (kit/learning/evidence-class.js). Every other challenge in the map above is practice evidence.
+export const EXPLORATION = {
+  "docking": ["auto"],
+  "imf": ["all"],
+  "ir": ["six"],
+  "mass-spec": ["six"],
+  "molecule-viewer": ["lib"],
+  "nmr": ["six"],
+  "orbitals": ["all3"],
+  "periodic-table": ["modes"],
+  "vsepr": ["ten"],
+};

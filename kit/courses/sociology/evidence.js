@@ -32,3 +32,27 @@ export const EVIDENCE = {
   "correlation": { "quartet": "u18-12", "out": "u18-12", "neg": "u18-12" },
   "hypothesis-test": { "t1": "u18-11", "pow": "u18-08", "curse": "u18-11" },
 };
+
+// Exploration challenges: met by doing what they say (run, open, view, step through, "halve X and see"), not by
+// reasoning towards a target. They earn XP and stay in the activity history but never count towards mastery
+// (kit/learning/evidence-class.js). Every other challenge in the map above is practice evidence.
+export const EXPLORATION = {
+  "content-analysis": ["run"],
+  "correlation": ["quartet"],
+  "data-climate": ["scatter", "caveat"],
+  "data-crime": ["scatter", "caveat"],
+  "data-education": ["scatter", "caveat"],
+  "data-gender": ["scatter", "caveat"],
+  "data-inequality": ["scatter", "caveat"],
+  "data-urban": ["scatter", "caveat"],
+  "data-work": ["scatter", "caveat"],
+  "hypothesis-test": ["curse"],
+  "marx-durkheim-weber": ["all"],
+  "method-chooser": ["four", "one"],
+  "mobility": ["gens"],
+  "movements": ["all"],
+  "poverty": ["rec", "all"],
+  "pyramids": ["aged"],
+  "sampling": ["all"],
+  "theorists": ["groups"],
+};

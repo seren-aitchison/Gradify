@@ -9,3 +9,14 @@ export const EVIDENCE = {
   "clt": { "n1": "u12-20" },
   "regression": { "curve": "u13-36" },
 };
+
+// Exploration challenges: met by doing what they say (run, open, view, step through, "halve X and see"), not by
+// reasoning towards a target. They earn XP and stay in the activity history but never count towards mastery
+// (kit/learning/evidence-class.js). Every other challenge in the map above is practice evidence.
+export const EXPLORATION = {
+  "clt": ["n1"],
+  "lln": ["k1", "k10", "six"],
+  "regression": ["curve"],
+  "sieve": ["full"],
+  "tangent": ["negh", "three"],
+};

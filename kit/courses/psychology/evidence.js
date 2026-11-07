@@ -37,3 +37,28 @@ export const EVIDENCE = {
   "crosstab": { "sig": "u11-20", "none": "u11-20" },
   "hypothesis-test": { "t1": "u11-13", "pow": "u11-12", "curse": "u11-12" },
 };
+
+// Exploration challenges: met by doing what they say (run, open, view, step through, "halve X and see"), not by
+// reasoning towards a target. They earn XP and stay in the activity history but never count towards mastery
+// (kit/learning/evidence-class.js). Every other challenge in the map above is practice evidence.
+export const EXPLORATION = {
+  "biases": ["info"],
+  "big-five": ["all"],
+  "brain-explorer": ["lobes", "limbic", "all"],
+  "classical": ["acq", "ext"],
+  "conformity": ["done"],
+  "correlation": ["quartet"],
+  "dev-timeline": ["all"],
+  "hypothesis-test": ["curse"],
+  "memory-models": ["msm", "wmm"],
+  "muller-lyer": ["both", "done"],
+  "neurotransmitters": ["browse"],
+  "reaction-time": ["all"],
+  "schedules": ["all", "pree"],
+  "serial-position": ["one", "three", "delay"],
+  "sleep": ["lag"],
+  "stress": ["sam", "hpa"],
+  "stroop": ["run", "both"],
+  "thought-record": ["done"],
+  "visual-search": ["slope", "feature", "conj"],
+};
