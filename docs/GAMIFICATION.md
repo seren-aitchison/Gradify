@@ -65,16 +65,15 @@ A safe friends leaderboard needs:
 
 That's a backend change for the owner to approve. It isn't in this release.
 
-## Integration to coordinate (prepared, not applied)
+## Integration with the course pages (applied 8 November 2026)
 
-`kit/course/course.js` belongs to the session implementing Target my weaknesses, so it isn't edited here. When that work lands, these small changes connect the course pages to the engine:
+Target my weaknesses had landed on `main`, and no open branch touched `kit/course/course.js`, so the integration was applied. `kit/learning/targets.js` and the weakness code in `course.js` are unchanged.
 
-1. **One level curve:** in `course.js`, replace the local `levelOf` with `import { levelOf } from "../game/engine.js"`. The formula is identical (tested), so nothing changes for learners.
-2. **A link to the Journey:** in `paintSide()`, add a card under the daily goal:
-   ```js
-   `<a class="co-card" href="/journey.html"><span class="co-kicker">${ic("trophy")} Your journey</span><h3>Quests, achievements and every subject</h3></a>`
-   ```
-3. **Rest days in the course streak:** replace `streak()` with `habits(S.log.map((e) => ({ ...e })), { goal: S.goal })` from `kit/game/engine.js`, so a course page and the Journey always show the same streak.
-4. **Account sync:** when signed in, log paid game rewards with `store.logActivity({ site: "Gradify", kind: "game-<reward key>", xp, detail: title })`, so they reach LifeOS like course XP. The ledger key keeps it idempotent.
-
-Until then, the Journey page is complete on its own. It reads course progress from the same device.
+1. **One level curve.** `course.js`, the study app (`kit/app/main.js`) and LifeOS (`kit/lifeos/mine.js`) all take `levelOf` from `kit/game/engine.js`. The study app and LifeOS previously used a different curve, √(xp/50), so the same learner saw three level numbers. LifeOS now shows the engine's rank names. A test fails if any page defines its own curve again.
+2. **Rest days in course streaks.** The course streak is `habits()` from the engine. A missed day is covered by a banked rest day, and the sidebar says how many are banked. Existing XP records are read as they are; nothing is rewritten.
+3. **Journey links.** A "Your journey" card sits in every course sidebar, and every My progress page links to it.
+4. **Account sync.** When signed in, the Journey logs each paid game reward to the account as an activity row of kind `game-<reward key>`.
+   - It skips rewards already synced from this device, and rewards the account already holds (from another device).
+   - Migration `20261107120000_game_rewards.sql` adds a unique index on `(user_id, kind)` for game rewards, so the database refuses a second payment even when two tabs sync at once.
+   - The migration applies and verifies on real PostgreSQL in `tests/pg-rehearsal.test.mjs`.
+   - It reaches the live database only when the owner runs the migrations (docs/BACKEND-STATUS.md).

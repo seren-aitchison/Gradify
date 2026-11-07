@@ -46,6 +46,7 @@ export function expectations(sql) {
     functions: all(/create (?:or replace )?function public\.(\w+)/gi).map(([f]) => f),
     views: all(/create (?:or replace )?view public\.(\w+)/gi).map(([v]) => v),
     constraints: all(/add constraint (\w+)/gi).map(([c]) => c),
+    indexes: all(/create (?:unique )?index (?:if not exists )?(\w+)/gi).map(([i]) => i),
   };
 }
 const lit = (x) => `'${String(x).replace(/'/g, "''")}'`;
@@ -60,6 +61,7 @@ export function verifyQuery(e) {
     ...e.functions.map((f) => [`function ${f}`, `exists (select 1 from pg_proc p join pg_namespace n on n.oid = p.pronamespace where n.nspname = 'public' and p.proname = ${lit(f)})`]),
     ...e.views.map((v) => [`view ${v}`, `exists (select 1 from pg_views where schemaname = 'public' and viewname = ${lit(v)})`]),
     ...e.constraints.map((c) => [`constraint ${c}`, `exists (select 1 from pg_constraint where conname = ${lit(c)})`]),
+    ...(e.indexes || []).map((x) => [`index ${x}`, `exists (select 1 from pg_indexes where schemaname = 'public' and indexname = ${lit(x)})`]),
   ];
   return { checks: checks.map(([label]) => label), query: checks.length ? `select ${checks.map(([, q], i) => `${q} as c${i}`).join(", ")};` : "select 1 as c0;" };
 }

@@ -18,7 +18,7 @@ const attempt = (lesson, score, daysAgo, h = 12) => ({ lesson, score, correct: s
 
 test("levels follow the course engine's curve exactly, and ranks have subject titles", async () => {
   const src = await readFile(new URL("../kit/course/course.js", import.meta.url), "utf8");
-  const courseLevelOf = Function(`return ${src.match(/export const levelOf = (\(xp\) => \{[^\n]*\});/)[1]}`)();
+  const { levelOf: courseLevelOf } = await import("../kit/course/course.js");
   for (const xp of [0, 99, 100, 299, 300, 1234, 5000, 99999]) assert.equal(levelOf(xp).n, courseLevelOf(xp).n, `xp ${xp}`);
   assert.deepEqual([levelOf(0).n, levelOf(100).n, levelOf(300).n], [1, 2, 3]);
   assert.equal(levelOf(250).need, 50);
@@ -127,4 +127,21 @@ test("daily challenge: built from real content, stable for the day, history gets
   assert.ok(["speed", "mixed"].includes(sp.kind)); assert.equal(sp.items.length, 5);
   assert.equal(challengeReward({ correct: 4 }, sp).xp, 40); assert.equal(challengeReward({ correct: 9 }, sp).xp, 50);
   assert.throws(() => registerChallenge("speed", {}), /already registered/);
+});
+
+test("account sync sends each paid reward once: not if synced from here, not if the account already holds it", async () => {
+  const { unsynced, rewardKind } = await import("../kit/game/engine.js");
+  const g = { paid: { "ach:scholar": { t: 1, xp: 50 }, "quest:2026-11-07:lessons": { t: 2, xp: 30 }, "challenge:2026-11-07": { t: 3, xp: 40 } }, synced: { "ach:scholar": 5 } };
+  assert.deepEqual(unsynced(g, new Set([rewardKind("challenge:2026-11-07")])).map(([k]) => k), ["quest:2026-11-07:lessons"]);
+  assert.deepEqual(unsynced({}, new Set()), []);
+  const sql = await readFile(new URL("../supabase/migrations/20261107120000_game_rewards.sql", import.meta.url), "utf8");
+  assert.match(sql, /unique index[^;]*\(user_id, kind\) where kind like 'game-%'/, "the database refuses a second row for a reward");
+});
+
+test("one level curve everywhere: course pages, the Journey, the study app and LifeOS", async () => {
+  for (const f of ["../kit/app/main.js", "../kit/lifeos/mine.js", "../kit/course/course.js"]) {
+    const src = await readFile(new URL(f, import.meta.url), "utf8");
+    assert.ok(!/Math\.sqrt\(xp \/ 50\)/.test(src), `${f} has its own level curve`);
+    assert.match(src, /from "\.\.\/game\/engine\.js"/, `${f} uses the shared engine`);
+  }
 });

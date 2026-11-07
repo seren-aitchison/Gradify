@@ -122,3 +122,10 @@ export function claim(game, reward, now = Date.now()) {
   return { ...game, paid: { ...(game.paid || {}), [reward.key]: { t: now, xp: Math.max(0, Math.round(reward.xp || 0)), title: reward.title || reward.key } } };
 }
 export const isPaid = (game, key) => !!game.paid?.[key];
+
+// Rewards still to log to the account: paid on this device, not yet synced from here, and not already held by the
+// account (kinds the account's activity already has, "game-<key>"). Used by the Journey page's account sync.
+export const rewardKind = (key) => `game-${key}`;
+export function unsynced(game, accountKinds = new Set()) {
+  return Object.entries(game.paid || {}).filter(([key]) => !game.synced?.[key] && !accountKinds.has(rewardKind(key)));
+}

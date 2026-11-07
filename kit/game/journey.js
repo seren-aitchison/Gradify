@@ -1,7 +1,7 @@
 // The Journey page (journey.html): the learner's whole Gradify progress in one place, and what to do next.
 // Reads each course's own progress from this device (kit/course/course.js keeps it under "gradify.course.<slug>"),
 // computes everything with the game engine, and keeps only its own reward ledger ("gradify.game").
-import { gameState, claim, levelOf, dayKey, weekStart, DAY } from "./engine.js";
+import { gameState, claim, dayKey, weekStart, DAY, unsynced, rewardKind } from "./engine.js";
 import { quests, nextSteps } from "./quests.js";
 import { achievements, nextAchievement } from "./achievements.js";
 import { dailyChallenge, challengeReward } from "./challenges.js";
@@ -12,6 +12,7 @@ import { parseNotes } from "../course/notes.js";
 import { renderQuestion, wireQuestions } from "../assess/questions.js";
 import { icon } from "../core/icons.js";
 import { esc } from "../core/text.js";
+import { CloudStore } from "../data/store.js";
 
 const GAME_KEY = "gradify.game";
 const read = (k) => { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch { return null; } };
@@ -43,7 +44,7 @@ export async function mountJourney(root) {
   const state = () => gameState(courses, game, { now: Date.now() });
 
   // pay a finished reward once, then celebrate it
-  function pay(reward, label) {
+  let pay = function (reward, label) {
     const before = state(), next = claim(game, reward, Date.now());
     if (next === game) return;
     game = next; write(GAME_KEY, game);
@@ -51,7 +52,7 @@ export async function mountJourney(root) {
     toast(`${ic("bolt")} +${reward.xp} XP · ${esc(label || reward.title)}`);
     if (after.level.n > before.level.n) celebrate(`Level ${after.level.n}`, `You reached level ${after.level.n}: ${esc(after.rank.name)}.`);
     paint();
-  }
+  };
 
   function paint() {
     const s = state(), H = s.habits, Q = quests(s, { graphs }), A = achievements(s), got = A.filter((a) => a.done);
@@ -59,7 +60,7 @@ export async function mountJourney(root) {
     const fresh = A.filter((a) => a.done && !a.paid);
     if (fresh.length) {
       for (const a of fresh) game = claim(game, a, Date.now());
-      write(GAME_KEY, game);
+      write(GAME_KEY, game); syncRewards();
       fresh.slice(0, 2).forEach(unlock);
       if (fresh.length > 2) toast(`${ic("award")} ${fresh.length - 2} more achievement${fresh.length > 3 ? "s" : ""} unlocked: see your collection`);
       return paint();
@@ -166,7 +167,7 @@ export async function mountJourney(root) {
       const r = Object.values(challengeState.first), result = { correct: r.filter((x) => x.correct && x.inTime).length, score: r.reduce((a, x) => a + x.score, 0) / r.length };
       const reward = challengeReward(result, challenge);
       box.querySelector("[data-result]").innerHTML = `<b>${r.filter((x) => x.correct).length} of ${r.length} right first time.</b> ${game.paid?.[challenge.key] ? "Today's reward is already yours." : reward.xp ? `+${reward.xp} XP.` : "No XP this time, but every attempt counts as practice."}`;
-      if (!game.paid?.[challenge.key]) { game = claim(game, reward, Date.now()); write(GAME_KEY, game); toast(`${ic("target")} Daily challenge done${reward.xp ? ` · +${reward.xp} XP` : ""}`); setTimeout(() => { challengeState = null; paint(); }, 2500); }
+      if (!game.paid?.[challenge.key]) { game = claim(game, reward, Date.now()); write(GAME_KEY, game); syncRewards(); toast(`${ic("target")} Daily challenge done${reward.xp ? ` · +${reward.xp} XP` : ""}`); setTimeout(() => { challengeState = null; paint(); }, 2500); }
     });
   }
 
@@ -186,7 +187,33 @@ export async function mountJourney(root) {
   }
   function unlock(a) { toast(`<span class="gj-badge ${a.tier} on pop">${ic(a.icon)}</span> <span><b>Achievement unlocked: ${esc(a.name)}</b><br>${esc(a.d)}${a.xp ? ` +${a.xp} XP` : ""}</span>`); }
 
+  // ---------- account sync ----------
+  // When signed in, every paid game reward is logged to the account once (activity kind "game-<key>"), so it counts in
+  // the account's XP, LifeOS and on other devices. A reward the account already holds is never sent again, and the
+  // database refuses a second row for the same key (migration 20261107120000_game_rewards.sql).
+  let syncing = false;
+  async function syncRewards() {
+    if (syncing) return; syncing = true;
+    try {
+      const cloud = await CloudStore.create(), user = cloud ? await cloud.user() : null; if (!user) return;
+      const have = new Set(((await cloud.listActivity(400)) || []).map((a) => a.kind).filter((k) => k?.startsWith("game-")));
+      for (const [key, r] of Object.entries(game.paid || {})) {
+        if (game.synced?.[key]) continue;
+        if (unsynced({ paid: { [key]: r } }, have).length) {
+          try { await cloud.logActivity({ site: "Gradify", kind: rewardKind(key), xp: r.xp, detail: r.title }); }
+          catch (e) { if (e?.code !== "23505") throw e; }        // already recorded by another tab or device
+          have.add(rewardKind(key));
+        }
+        game = { ...game, synced: { ...(game.synced || {}), [key]: Date.now() } }; write(GAME_KEY, game);
+      }
+    } catch { /* offline or signed out: rewards stay on this device and sync next time */ }
+    finally { syncing = false; }
+  }
+  const _pay = pay;
+  pay = (reward, label) => { _pay(reward, label); syncRewards(); };
+
   paint();
+  syncRewards();
   // progress made in a course tab shows here when the learner comes back
   addEventListener("storage", (e) => { if (e.key?.startsWith("gradify.course.") || e.key === GAME_KEY) location.reload(); });
 }

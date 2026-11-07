@@ -489,6 +489,9 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(255, 255, 2
 .co-ev-established { color: #34d399; border-color: rgba(52, 211, 153, .45); }
 .co-ev-contested { color: #fbbf24; border-color: rgba(251, 191, 36, .45); }
 .co-ev-hypothetical { color: #a78bfa; border-color: rgba(167, 139, 250, .45); }
+.co-journey { display: block; color: inherit; text-decoration: none; border-color: rgba(245, 184, 75, .35); }
+.co-journey:hover, .co-journey:focus-visible { border-color: #f5b84b; }
+.co-journey p { margin: 4px 0 0; color: var(--mute); font-size: 13px; }
 .co-builds { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 16px; font-size: 13px; }
 .co-builds > span { color: var(--mute); font: 12px/1.5 var(--mono); margin-right: 2px; }
 .co-builds a { padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--fg); text-decoration: none; }
