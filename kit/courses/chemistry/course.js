@@ -4,8 +4,12 @@ import { UNITS, TRACKS, PATHS, BLURBS } from "./syllabus.js";
 import { QA } from "./qa.js";
 import { INTERACTIVES } from "./interactives.js";
 import { EVIDENCE, EXPLORATION } from "./evidence.js";
-export default {
-  site: "SciGradify", slug: "chemistry", name: "Chemistry", app: "../app.html", unitWord: "School", trackWord: "Stage",
+import { defineCourse } from "../../subjects/define.js";
+import science, { scienceExams } from "../../subjects/science.js";
+// the science adapter (kit/subjects/science.js) gives the site, unit and stage words, the Lab label and note, and
+// the mock exam structure shared with the other sciences
+export default defineCourse(science, {
+  slug: "chemistry", name: "Chemistry",
   units: UNITS, tracks: TRACKS, paths: PATHS, blurbs: BLURBS,
   // quality record per school (docs/CURRICULUM_QA.md); unready schools are labelled as drafts
   qa: QA,
@@ -14,13 +18,9 @@ export default {
   // the subject's colours for the course chrome (Physics keeps the original spectrum)
   theme: { accent: "#f59e0b", spectrum: "linear-gradient(90deg, #facc15, #fbbf24 25%, #f59e0b 50%, #f97316 75%, #ea580c)" },
   // interactives (kit/labs/chemistry/): listed in the Lab tab and embedded in lessons with IX: lines
-  interactives: INTERACTIVES, evidence: EVIDENCE, exploration: EXPLORATION,   // evidence: each challenge → its lesson (mastery) practiceLabel: "Lab",
-  practiceNote: "Simulations run a real model, with its simplifications stated; illustrative models show a structure or process without simulating it; exercises check your answers. Challenges inside them earn XP.",
+  interactives: INTERACTIVES, evidence: EVIDENCE, exploration: EXPLORATION,   // evidence: each challenge → its lesson (mastery)
   // cumulative exams (kit/assess/exam.js): one per stage and one over the whole course, drawn from written schools only
-  exams: [
-    ...TRACKS.map((t, i) => ({ id: `stage-${i + 1}`, title: `${t.name}`, sub: `Mixed questions from every written school in this stage.`, units: t.units, format: "science", count: 20, minutes: 30, pass: 0.7 })),
-    { id: "whole", title: "Whole course", sub: "Forty mixed questions from every written school.", units: UNITS.map((u) => u.n), format: "science", count: 40, minutes: 60, pass: 0.7 },
-  ],
+  exams: scienceExams(UNITS, TRACKS),
   // the schools whose notes are written (tests/sciences.test.mjs checks this matches notes/)
   written: ["u01", "u02"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
@@ -43,4 +43,4 @@ export default {
     ["Learning map", "Every SciGradify subject on one map.", "../map.html"],
     ["Notes Studio", "Turn your own chemistry notes and PDFs into flashcards and questions.", "../app.html#/notes"],
   ],
-};
+});

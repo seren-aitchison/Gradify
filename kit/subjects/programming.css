@@ -1,0 +1,6 @@
+/* The programming adapter's question type (kit/subjects/programming.js): code to read, and the learner's output. */
+.aq-code { margin: 8px 0; padding: 10px 12px; border-radius: 10px; background: rgba(255, 255, 255, .06); border: 1px solid var(--line); font: 13px/1.5 var(--mono); white-space: pre; overflow-x: auto; }
+.aq-out label { display: block; margin: 10px 0 6px; }
+.aq-out textarea { width: 100%; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: transparent; color: var(--fg); font: 13px/1.5 var(--mono); }
+.aq-out textarea.right { border-color: #22c55e; }
+.aq-out textarea.wrong { border-color: #ef4444; }

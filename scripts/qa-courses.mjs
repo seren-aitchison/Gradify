@@ -1,4 +1,4 @@
-// Curriculum quality checks for the LawGradify and NurseGradify courses.
+// Curriculum quality checks for the courses in COURSES (law, nursing, pharmacy, maths, psychology, sociology).
 //   npm run qa            check every written school, write docs/CURRICULUM_PROGRESS.md and the
 //                         citation registers in docs/qa/, exit 1 if any hard check fails
 // Hard checks (a school can't count as "technically tested" while any fail): every planned lesson has
@@ -9,6 +9,7 @@
 import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
 import { parseNotes, norm } from "../kit/course/notes.js";
 import { updateRegistry } from "./curriculum-registry.mjs";
+import { ADAPTERS } from "../kit/subjects/index.js";
 
 const COURSES = [
   { slug: "law", name: "LawGradify", expert: "a practising solicitor or barrister",
@@ -17,7 +18,8 @@ const COURSES = [
   { slug: "nursing", name: "NurseGradify", expert: "a registered nurse educator", minWrong: 3, rules: nursingRules, flags: nursingFlags },
   { slug: "pharmacy", name: "PharmaGradify", expert: "a registered pharmacist educator", minWrong: 4, rules: pharmacyRules, flags: pharmacyFlags, srcRegister: true,
     registerNote: "taken from the lessons' SRC: lines, for checking against the original (BNF, SPC, NICE, MHRA, GPhC, RPS, legislation.gov.uk, textbooks)." },
-  { slug: "maths", name: "MathGradify", expert: "a mathematics teacher or lecturer", minWrong: 3, rules: mathsRules, flags: mathsFlags, srcRegister: true,
+  // maths takes its expert, rules and review flags from its subject adapter (kit/subjects/maths.js)
+  { slug: "maths", name: "MathGradify", minWrong: 3, srcRegister: true,
     registerNote: "taken from the lessons' SRC: lines, for checking against the original (DfE subject content, exam board specifications, textbooks, papers)." },
   // the social sciences: the citation register lists each lesson's SRC: references, checked against the originals
   { slug: "psychology", name: "PsychGradify", expert: "a university psychology lecturer or chartered psychologist", minWrong: 3, rules: psychRules, srcRegister: true,
@@ -99,19 +101,6 @@ function pharmacyFlags(L, text) {
 
 // maths: a worked example in every lesson (except the software and research-methods schools), and a
 // numerical check question somewhere in each calculation school
-function mathsRules(unit, L) {
-  const w = [];
-  if (![26, 27].includes(unit.n) && !L.blocks.some((b) => b.t === "ex")) w.push("no worked example (X: with > steps)");
-  return w;
-}
-function mathsFlags(L, text) {
-  const f = [];
-  if (L.blocks.some((b) => b.t === "ex")) f.push("worked examples: check every step of the arithmetic");
-  if (/\b(aqa|edexcel|ocr|wjec|eduqas|ccea|sqa|ib)\b/i.test(text)) f.push("exam board details: check against the current specification");
-  if (srcYear(L) >= 2024) f.push("recent source");
-  return f;
-}
-
 function lawRules(unit, L, text) {
   const w = [];
   // single best answer: every check question should have five options
@@ -164,8 +153,11 @@ const today = new Date().toISOString().slice(0, 10);
 const report = [], failures = [];
 await mkdir(new URL("../docs/qa/", import.meta.url), { recursive: true });
 
-for (const C of COURSES) {
-  const course = (await import(`../kit/courses/${C.slug}/course.js`)).default;
+for (const C0 of COURSES) {
+  const course = (await import(`../kit/courses/${C0.slug}/course.js`)).default;
+  // a course defined with a subject adapter (kit/subjects/) gets the adapter's QA rules unless it sets its own
+  const A = ADAPTERS[course.adapter]?.qa || {};
+  const C = { rules: A.rules || (() => []), flags: A.flags, expert: A.expert, ...Object.fromEntries(Object.entries(C0).filter(([, v]) => v !== undefined)) };
   const { QA } = await import(`../kit/courses/${C.slug}/qa.js`);
   // permanent question ids and lesson/question versions (scripts/curriculum-registry.mjs)
   const { log: regLog } = await updateRegistry(C.slug, course);
