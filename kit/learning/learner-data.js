@@ -84,7 +84,7 @@ export function schoolTopic(course, s, now = Date.now()) {
   const coverage = s.total ? s.done / s.total : 0;
   const recentDays = s.lastAt ? (now - s.lastAt) / DAY : null;
   const retention = d("retention").value;
-  const level = s.sureWrong >= 2 ? "shaky" : retention != null && retention < 0.6 ? "fading" : p?.mastery != null && p.mastery >= 0.85 && coverage >= 0.9 ? "mastered" : coverage || p ? "learning" : "new";
+  const level = s.sureWrong >= 2 ? "shaky" : (retention != null && retention < 0.6) || p?.trend?.declining ? "fading" : p?.mastery != null && p.mastery >= 0.85 && coverage >= 0.9 ? "mastered" : coverage || p ? "learning" : "new";
   return {
     key: `course:${course.slug}:${s.id}`, topic: `${s.title}`, course: true, href: `${course.href || ""}#/learn/${s.id}`,
     level, mastery: p?.mastery ?? coverage * 0.5, coverage, lastSeen: s.lastAt, dims: { recall: d("recall"), explain: d("explain"), apply: d("apply"), retention: d("retention") },

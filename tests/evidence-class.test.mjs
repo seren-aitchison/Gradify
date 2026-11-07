@@ -101,3 +101,53 @@ test("every course's exploration list names real challenges, and its config pass
   for (const id of ["ix:lln:k1", "ix:tangent:three", "ix:clt:n1"]) assert.ok(EX.has(id), id);
   assert.ok(!EX.has("ix:roots:sqrt2") && !EX.has("ix:descent:rosen"));
 });
+
+// Challenges the evidence-map generator had sent to an interactive's first lesson for want of shared words, corrected by
+// hand (8 November 2026): each must stay on the lesson that teaches it.
+test("evidence maps: challenges are evidence for the lesson that teaches them", async () => {
+  const expect = {
+    physics: { pendulum: { chaos: /initial conditions/i, big: /anharmonic/i }, photoelectric: { thr: /photoelectric/i, planck: /photoelectric/i }, transients: { rl: /RL circuits/ }, projectile: { angle: /resistive/i } },
+    biology: { punnett: { 9331: /dihybrid/i, test: /monohybrid/i }, "natural-selection": { drift: /drift/i }, "enzyme-kinetics": { mystery: /inhibition/i } },
+    psychology: { "experiment-builder": { iv: /independent and dependent/i, confound: /confounding/i }, "study-critique": { weird: /generalisab/i, phack: /open science/i } },
+    sociology: { "survey-design": { leading: /questionnaire design/i }, sampling: { bias: /^bias$/i } },
+    maths: { grapher: { sine: /trigonometric graphs/i, flip: /transformations/i, cubic: /roots of polynomials/i } },
+    chemistry: { bonding: { n2: /covalent/i }, "energy-profile": { temp: /activation energy/i } },
+  };
+  for (const [slug, ixs] of Object.entries(expect)) {
+    const cfg = (await import(`../kit/courses/${slug}/course.js`)).default, { EVIDENCE } = await import(`../kit/courses/${slug}/evidence.js`);
+    const title = Object.fromEntries(cfg.units.flatMap((u) => u.lessons.map((l) => [l.id, l.title])));
+    for (const [ix, tasks] of Object.entries(ixs)) for (const [t, re] of Object.entries(tasks)) assert.match(title[EVIDENCE[ix][t]] || "", re, `${slug}/${ix}/${t} → ${title[EVIDENCE[ix][t]]}`);
+  }
+});
+
+test("drilling one easy question can't inflate mastery or its certainty", () => {
+  const base = Date.UTC(2026, 10, 1, 9);
+  const same = (k, mins = 1) => Array.from({ length: k }, (_, i) => rec({ at: new Date(base + i * mins * 6e4).toISOString(), question: { id: "easy-1", type: "num", d: 1, objectives: [] } }));
+  const ev = evidenceFromAttempts(same(10));
+  const total = ev.reduce((a, e) => a + e.w, 0), single = evidenceFromAttempts(same(1))[0].w;
+  assert.ok(total < single * 3.1, `ten repeats weigh ${total / single}× one answer`);          // ½, ⅓, … : the harmonic sum
+  // ten different questions count in full
+  const varied = Array.from({ length: 10 }, (_, i) => rec({ at: new Date(base + i * 6e4).toISOString(), question: { id: `easy-${i}`, type: "num", d: 1, objectives: [] } }));
+  assert.ok(Math.abs(evidenceFromAttempts(varied).reduce((a, e) => a + e.w, 0) - single * 10) < 1e-9);
+  // and the repeated drill doesn't make the measurement more certain than three real answers
+  const p = (xs) => sixProfiles(evidenceFromAttempts(xs), { now: base + 864e5 }).all.dims.apply;
+  assert.ok(p(same(10)).weight < p(varied.slice(0, 4)).weight);
+  // the same question a day or more later counts in full again (and is retention evidence)
+  const later = [same(1)[0], rec({ at: new Date(base + 2 * 864e5).toISOString(), question: { id: "easy-1", type: "num", d: 1, objectives: [] } })];
+  const ev2 = evidenceFromAttempts(later);
+  assert.equal(ev2.filter((e) => e.dim === "apply").length, 2); assert.ok(ev2.every((e) => Math.abs(e.w - single) < 1e-9));
+  assert.ok(ev2.some((e) => e.dim === "retention"));
+});
+
+test("a clear drop in recent answers is reported as declining; a stable record isn't", () => {
+  const day = (d, score, i) => rec({ at: new Date(Date.UTC(2026, 9, 1) + d * 864e5).toISOString(), score, correct: score >= 0.7, question: { id: `t-${d}-${i}`, type: "num", d: 2, objectives: [] } });
+  const early = [0, 1, 2, 3].flatMap((d) => [day(d, 1, 0), day(d, 1, 1)]);
+  const late = [40, 41, 42].flatMap((d) => [day(d, 0, 0), day(d, 1, 1), day(d, 0, 2)]);
+  const now = Date.UTC(2026, 10, 15);
+  const down = sixProfiles(evidenceFromAttempts([...early, ...late]), { now }).all.trend;
+  assert.ok(down.declining && down.earlier > down.recent + 0.2, JSON.stringify(down));
+  const steady = sixProfiles(evidenceFromAttempts([...early, ...[40, 41].flatMap((d) => [day(d, 1, 0), day(d, 1, 1)])]), { now }).all.trend;
+  assert.equal(steady.declining, false);
+  // too little evidence on either side: no verdict
+  assert.equal(sixProfiles(evidenceFromAttempts([day(0, 1, 0), day(40, 0, 0)]), { now }).all.trend, null);
+});

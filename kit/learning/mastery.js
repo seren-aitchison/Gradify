@@ -208,6 +208,7 @@ export const LAB_WEIGHT = 0.5;
 const CHOICE = new Set(["sba", "mcq", "tf", "multi", "match", "order"]);
 // how much evidence (in weighted answers) a dimension needs before it's reported as a measurement
 export const ENOUGH = 3;
+const TREND_DAYS = 14;        // "recent" for the trend: the last two weeks of the learner's answers
 const DELAY = 864e5;          // a retrieval counts as delayed after a day without seeing the question
 
 // which dimension a course answer is evidence of. A course's own level names decide for choice
@@ -226,7 +227,7 @@ export function dimensionOf(a, levels = null) {
 // course attempt records (kit/assess/attempts.js) → evidence. Provisional marks (self-marked short
 // answers awaiting review) count at a third of the weight; second tries after feedback are assisted.
 export function evidenceFromAttempts(attempts = [], { levels = null, exploration = null } = {}) {
-  const out = [], lastSeen = new Map(), ex = exploration ? explorationIds(exploration) : null;
+  const out = [], lastSeen = new Map(), recent = new Map(), ex = exploration ? explorationIds(exploration) : null;
   for (const a of [...attempts].filter((x) => x?.question).sort((x, y) => String(x.at).localeCompare(String(y.at)))) {
     // exploration (kit/learning/evidence-class.js) earns XP but is never mastery evidence, for or against
     const cls = evidenceClass(a, { exploration: ex });
@@ -243,7 +244,11 @@ export function evidenceFromAttempts(attempts = [], { levels = null, exploration
     const independent = (a.attempt || 1) === 1 && outcome !== "assisted_success";   // (unsuccessful answers stay independent: no help was given)
     const provisional = a.marking?.status === "provisional";
     // a lab challenge is recorded only when it's met (a lab can't see a failed try), so it counts at half weight
-    const w = (DIFFICULTY_WEIGHT[a.question.d] || 1) * (independent ? 1 : 0.3) * (provisional ? 0.33 : 1) * (a.question.type === "lab" ? LAB_WEIGHT : 1) * EVIDENCE_CLASSES[cls].weight;
+    // the same question answered again within a day counts for less each time (½, ⅓, …), so drilling one easy
+    // question can't inflate a score or its certainty; answering it again after a gap is retention evidence below
+    const times = (recent.get(qid) || []).filter((t) => at - t < DELAY); times.push(at); recent.set(qid, times);
+    const repeat = 1 / times.length;
+    const w = (DIFFICULTY_WEIGHT[a.question.d] || 1) * (independent ? 1 : 0.3) * (provisional ? 0.33 : 1) * (a.question.type === "lab" ? LAB_WEIGHT : 1) * EVIDENCE_CLASSES[cls].weight * repeat;
     const base = { score: Number(a.score) || 0, at, w, independent, evidence: cls, difficulty: a.question.d ?? null, confidence: a.confidence ?? null, source: a.context, topic: a.lesson || a.unit || a.subject, unit: a.unit, subject: a.subject, question: qid, misconception: a.misconception || null };
     const dim = dimensionOf(a, levels);
     out.push({ ...base, dim, delayed: false });
@@ -301,7 +306,14 @@ export function sixProfile(evidence, { now = Date.now() } = {}) {
   const mastery = measured.length >= 2 ? measured.reduce((a, { key }) => a + dims[key].value * W[key], 0) / ws : null;
   const missing = SIX.filter((d) => !measured.includes(d)).map((d) => d.key);
   const weakest = measured.slice().sort((a, b) => dims[a.key].value - dims[b.key].value)[0]?.key || null;
-  return { dims, mastery, measured: measured.map((d) => d.key), missing, weakest, calibration, answers: evidence.filter((e) => e.dim !== "retention" && e.dim !== "transfer").length, misconceptionRisk: calibration ? sureWrong / Math.max(1, sure.length) : null };
+  // Is understanding slipping? Unaided answers in the last two weeks against those before, weighted as above.
+  // Only reported with at least three of each, and only a clear drop (20 points or more) counts as declining.
+  const own = evidence.filter((e) => e.independent && !e.delayed && e.dim !== "transfer");
+  const latest = own.reduce((m, e) => Math.max(m, e.at), 0), cut = latest - TREND_DAYS * DAY;
+  const mean = (xs) => xs.reduce((a, e) => a + e.score * e.w, 0) / xs.reduce((a, e) => a + e.w, 0);
+  const late = own.filter((e) => e.at > cut), early = own.filter((e) => e.at <= cut);
+  const trend = late.length >= ENOUGH && early.length >= ENOUGH ? { recent: mean(late), earlier: mean(early), declining: mean(early) - mean(late) >= 0.2 } : null;
+  return { dims, mastery, measured: measured.map((d) => d.key), missing, weakest, trend, calibration, answers: evidence.filter((e) => e.dim !== "retention" && e.dim !== "transfer").length, misconceptionRisk: calibration ? sureWrong / Math.max(1, sure.length) : null };
 }
 
 // profiles for every group (lesson by default) plus the whole set
