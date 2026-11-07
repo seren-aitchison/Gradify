@@ -563,6 +563,12 @@ export function mountCourse(root, cfg) {
     </article>`;
     scrollTo(0, 0);
     wirePractice(main, "lesson", id);
+    // labs that name this lesson but aren't placed in its notes go at the end, before the tutor (up to two)
+    if (N) {
+      const placed = new Set([...main.querySelectorAll(".co-ixslot")].map((s) => s.dataset.ix));
+      const linked = ixs.filter((x) => x.lessons?.includes(id) && !placed.has(x.id)).slice(0, 2);
+      if (linked.length) main.querySelector(".co-tutor")?.insertAdjacentHTML("beforebegin", `<section class="co-trylab"><h3>Try it yourself</h3>${linked.map((x) => `<div class="co-ixslot" data-ix="${esc(x.id)}"></div>`).join("")}</section>`);
+    }
     mountIxSlots(main);
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", () => flashcards(N.cards, l)));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));

@@ -741,3 +741,8 @@ button.rx-s { cursor: pointer; border-bottom: 1px dashed var(--line-strong); } b
 .gx-sliders label { display: grid; gap: 4px; margin-bottom: 12px; font: 14px var(--mono); } .gx-sliders input { width: 100%; }
 .gx-done { padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(46, 204, 113, .6); }
 @media (max-width: 760px) { .gx-wrap { grid-template-columns: 1fr; } }
+
+/* labs linked to a lesson, shown after its notes (kit/course/course.js viewLesson) */
+.co-trylab { margin: 28px 0 8px; }
+.co-trylab h3 { margin: 0 0 12px; font-size: 18px; letter-spacing: -.01em; }
+.co-trylab .co-lab + .co-lab { margin-top: 16px; }
