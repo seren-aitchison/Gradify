@@ -11,6 +11,7 @@ A Gradify course is a config object handed to the shared course engine (`mountCo
 | `site` | string | yes | The site's brand name ("MathGradify"). Progress and activity are logged under it. |
 | `slug` | string | yes | Short id for the subject ("maths"): storage keys, the tutor's subject rules, attempt records. |
 | `name` | string | yes | The subject's display name ("Mathematics"). |
+| `page` | string |  | The course page's path ("/historygradify/course/"), set by scripts/new-course.mjs; registered in kit/learning/learner-data.js. |
 | `app` | string |  | Link to the site's study app (flashcards, Notes Studio). |
 | `theme` | object |  | { accent, spectrum }: the course's colours, overriding the site's. |
 | `notice` | string |  | A short HTML notice shown above the course (scope, status, which exam boards). |
@@ -23,6 +24,15 @@ A Gradify course is a config object handed to the shared course engine (`mountCo
 | `overview` | object |  | { headline, intro, sources, learn: [[title, text]…] }: the course's overview page. |
 | `extras` | array |  | [[title, text, href]…]: links to the site's other tools. |
 | `adapter` | string |  | The subject adapter the course was defined with ("maths", "science", "programming"). |
+
+## review
+
+| Field | Type | Required | What it does |
+|---|---|---|---|
+| `expert` | string |  | Who must sign a school off before it counts as published (scaffolded courses). |
+| `qa` | object |  | Review record per unit (kit/courses/<slug>/qa.js): reviewed, sources, signoff. Never set by scripts. |
+| `publish` | boolean |  | Publish units while review continues, each with its draft status shown. |
+| `reviewLine` | boolean |  | Show a line under each lesson saying when it was written and its review status. |
 
 ## notes
 
@@ -53,14 +63,6 @@ A Gradify course is a config object handed to the shared course engine (`mountCo
 | `writing` | array |  | Written tasks marked against a rubric by the learner or the AI tutor. |
 | `writingTitle` | string |  | Heading for the written-practice page. |
 | `writingNote` | string |  | Introduction to the written-practice page. |
-
-## review
-
-| Field | Type | Required | What it does |
-|---|---|---|---|
-| `qa` | object |  | Review record per unit (kit/courses/<slug>/qa.js): reviewed, sources, signoff. Never set by scripts. |
-| `publish` | boolean |  | Publish units while review continues, each with its draft status shown. |
-| `reviewLine` | boolean |  | Show a line under each lesson saying when it was written and its review status. |
 
 ## frameworks
 

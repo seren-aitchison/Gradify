@@ -2,6 +2,7 @@
 // To give a site an icon, set `i` in sites.js to one of these names.
 export const ICONS = {
   cap: '<path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/><path d="M22 10v6"/>',
+  landmark: '<path d="M3 21h18"/><path d="M5 21V10"/><path d="M9.67 21V10"/><path d="M14.33 21V10"/><path d="M19 21V10"/><path d="M2 10 12 3l10 7Z"/>',
   book: '<path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2Z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7Z"/>',
   briefcase: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><path d="M2 13h20"/>',
   board: '<path d="M2 3h20"/><path d="M3 3v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3"/><path d="m7 21 5-5 5 5"/><path d="m8 11 3-3 2 2 3-3"/>',

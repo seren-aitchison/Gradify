@@ -6,7 +6,7 @@ import { inventory, statusProblems } from "../scripts/audit-sites.mjs";
 
 test("every site has a release status consistent with its content", async () => {
   const { rows } = await inventory();
-  assert.equal(rows.length, 31);
+  assert.equal(rows.length, 32);
   assert.deepEqual(statusProblems(rows), []);
 });
 test("a site with no written course can't be live", () => {

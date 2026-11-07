@@ -14,6 +14,8 @@ export const FIELDS = [
   ["site", str, true, "core", "The site's brand name (\"MathGradify\"). Progress and activity are logged under it."],
   ["slug", str, true, "core", "Short id for the subject (\"maths\"): storage keys, the tutor's subject rules, attempt records."],
   ["name", str, true, "core", "The subject's display name (\"Mathematics\")."],
+  ["page", str, false, "core", "The course page's path (\"/historygradify/course/\"), set by scripts/new-course.mjs; registered in kit/learning/learner-data.js."],
+  ["expert", str, false, "review", "Who must sign a school off before it counts as published (scaffolded courses)."],
   ["app", str, false, "core", "Link to the site's study app (flashcards, Notes Studio)."],
   ["theme", obj, false, "core", "{ accent, spectrum }: the course's colours, overriding the site's."],
   ["notice", str, false, "core", "A short HTML notice shown above the course (scope, status, which exam boards)."],
