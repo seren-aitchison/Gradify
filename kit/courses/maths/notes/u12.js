@@ -24,6 +24,8 @@ X: Two fair dice are rolled. Find the probability that the total is 7, and that 
 > There are 6 × 6 = 36 equally likely outcomes
 > Totals of 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1), six outcomes, so P = 6/36 = 1/6
 > P(not 7) = 1 − 1/6 = 5/6
+P: **Investigate with the lab.** Compare long-run proportions for a coin and a die. The proportions approach the probabilities, which is why probability can be read as long-run frequency.
+IX: lln
 K: Probabilities run from 0 to 1 and sum to 1 over the sample space; for equally likely outcomes, count; use complements.
 !: Treating outcomes as equally likely when they aren't, such as the totals 2 to 12 on two dice.
 Q: What is P(A′) if P(A) = 0.35? | 0.65.
@@ -35,6 +37,7 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u12-01-q1@1: A card is drawn from a standard 52-card pack. What is the probability it's a heart or a king, as a decimal to 4 decimal places? | 0.3077 | 0.0001 |  | 13 hearts + 4 kings − 1 king of hearts = 16 cards, and 16/52 ≈ 0.3077.
 M1#maths-u12-01-q2@1: Which value can't be a probability? | 1.2 | 0 | 1 | 0.999 | 1/3 | Probabilities lie between 0 and 1 inclusive, so 1.2 is impossible.
 M2#maths-u12-01-q3@2: Two dice are rolled. Why isn't P(total = 12) equal to 1/11? | The 11 totals aren't equally likely | There are 12 possible totals | Dice are biased | Totals can't be 12 | It is equal to 1/11 | Only (6,6) gives 12, so P = 1/36; middle totals have more combinations.
+NUM1#maths-u12-01-q4@1: In 6,000 die rolls, about how many sixes would you expect? | 1000 | 0 | sixes | 6000 × 1/6 = 1000; the actual count will vary around this.
 
 ## Foundations of Probability
 S: Modern probability rests on three axioms set out by Andrey Kolmogorov in 1933. From them follow the addition rule, inclusion–exclusion and every other rule, whichever interpretation of probability you prefer.
@@ -58,6 +61,8 @@ X: P(A) = 0.5, P(B) = 0.4 and P(A ∩ B) = 0.2. Find P(A ∪ B) and the probabil
 > P(A ∪ B) = 0.5 + 0.4 − 0.2 = 0.7
 > Neither is the complement of A ∪ B
 > P(neither) = 1 − 0.7 = 0.3
+P: **Investigate with the lab.** Run small and large numbers of trials. Small runs can be far from the probability, which is why probabilities are long-run statements, not guarantees.
+IX: lln
 K: Three axioms imply every rule; P(A ∪ B) = P(A) + P(B) − P(A ∩ B); draw Venn diagrams from the centre out.
 !: Adding P(A) and P(B) for events that overlap.
 Q: What is P(A ∪ B) for mutually exclusive A and B? | P(A) + P(B).
@@ -69,6 +74,7 @@ SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford 
 NUM1#maths-u12-02-q1@1: P(A) = 0.6, P(B) = 0.5 and P(A ∪ B) = 0.8. Find P(A ∩ B). | 0.3 | 0.001 |  | Rearrange the addition rule: 0.6 + 0.5 − 0.8 = 0.3.
 M1#maths-u12-02-q2@1: Which follows directly from Kolmogorov's axioms? | P(∅) = 0 | P(A ∩ B) = P(A)P(B) | P(A | B) = P(A) | All outcomes are equally likely | P(A) = 0.5 | Ω and ∅ are mutually exclusive and Ω ∪ ∅ = Ω, so P(∅) must be 0.
 M3#maths-u12-02-q3@2: Can P(A) = 0.7 and P(B) = 0.6 for mutually exclusive events A and B? | No: their probabilities would add to 1.3 | Yes, always | Yes, if they're independent | Only if Ω is infinite | Only if P(A ∩ B) = 0.3 | Mutually exclusive means P(A ∪ B) = P(A) + P(B), which can't exceed 1.
+M2#maths-u12-02-q4@2: After 5 heads in a row with a fair coin, what is the probability the next flip is heads? | 0.5, since flips are independent | Less than 0.5, since tails is due | More than 0.5, since heads is on a streak | 0, since six heads is impossible | It depends on earlier flips | Independence means past results don't change the next probability (the gambler's fallacy).
 
 ## Independent Events
 S: Two events are independent when knowing that one has happened doesn't change the probability of the other. Independence lets us multiply probabilities, and wrongly assuming it is one of the most common errors in risk assessment.
@@ -92,6 +98,8 @@ X: A fair die is rolled four times. Find the probability of at least one six.
 > P(no six in one roll) = 5/6, and rolls are independent
 > P(no sixes in four rolls) = (5/6)^{4} = 625/1296
 > P(at least one six) = 1 − 625/1296 = 671/1296 ≈ 0.518
+P: **Investigate with the lab.** Choose the Probability topic and work through 10 problems. Some take two counters with the first replaced, so the draws are independent and you multiply the same probability twice; others don't replace it, so the second probability changes. Decide which before you answer.
+IX: practice
 K: Independence means P(A ∩ B) = P(A)P(B); it's different from mutual exclusivity; use 1 − P(none) for "at least one".
 !: Confusing independent with mutually exclusive.
 Q: If A and B are independent with P(A) = 0.3 and P(B) = 0.5, what is P(A ∩ B)? | 0.15.
@@ -230,6 +238,8 @@ X: Two dice are rolled and X is the larger score. Find P(X = 6).
 > P(X ≤ 5) means both dice are at most 5: (5/6)^{2} = 25/36
 > P(X ≤ 6) = 1
 > P(X = 6) = 1 − 25/36 = 11/36
+P: **Investigate with the lab.** Treat each sample mean as a random variable: run the simulation twice with the same settings and compare the two histograms.
+IX: clt
 K: A random variable turns outcomes into numbers; list values and probabilities; indicators have expectation equal to the probability.
 !: Confusing the random variable X with a particular value x.
 Q: Is the time until a bus arrives discrete or continuous? | Continuous.
@@ -240,6 +250,7 @@ SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford 
 SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
 M1#maths-u12-07-q1@1: Which is a discrete random variable? | The number of emails received in an hour | A person's height | The time to run 100 m | The temperature at noon | The mass of an apple | Counts take separate, countable values, unlike measurements.
 M2#maths-u12-07-q2@2: Three coins are tossed and X counts heads. What is P(X ≥ 2)? | 1/2 | 3/8 | 1/8 | 7/8 | 3/4 | Add the probabilities of 2 and 3 heads: P(X = 2) + P(X = 3) = 3/8 + 1/8 = 1/2.
+M2#maths-u12-07-q3@2: Why is a sample mean a random variable? | It depends on which values happen to be sampled, so it varies from sample to sample | It is always equal to the population mean | It has no distribution | It is a fixed number | It only varies for normal populations | Each new random sample gives a different mean, with its own distribution.
 
 ## Discrete Random Variables
 S: A discrete random variable takes a countable set of values, each with a positive probability. Its distribution is a list or formula of probabilities, from which its mean, spread and other probabilities follow.
@@ -640,6 +651,8 @@ X: Using Chebyshev, how many tosses of a fair coin ensure P(|p̂ − 0.5| ≥ 0.
 > Var(p̂) = 0.25/n
 > Chebyshev: P(|p̂ − 0.5| ≥ 0.05) ≤ (0.25/n)/0.05^{2} = 100/n
 > 100/n ≤ 0.05 needs n ≥ 2,000 (a conservative bound)
+P: **Investigate with the lab.** Run 10,000 coin flips and get within 0.01 of the true probability (the lab's challenge). Watch the raw count of heads minus n/2 keep wandering even as the proportion settles.
+IX: lln
 K: Averages converge to the mean; variance σ^{2}/n shrinks; the law dilutes streaks rather than correcting them.
 !: Believing the law of large numbers means a run of losses must be followed by wins.
 Q: What does the sample proportion of heads converge to? | The probability of heads.
@@ -651,6 +664,7 @@ SRC: Bernoulli J, Ars Conjectandi (Basel 1713), trans. Sylla ED, The Art of Conj
 NUM1#maths-u12-19-q1@1: Each simulation result has variance 4. What is the variance of the mean of 400 results? | 0.01 | 0.0001 |  | Var(X̄) = σ^{2}/n = 4/400 = 0.01.
 M1#maths-u12-19-q2@1: What does the law of large numbers guarantee? | The sample mean approaches the population mean as n grows | Each outcome becomes more predictable | Streaks are followed by opposite streaks | The sample mean equals μ after 30 trials | The distribution becomes normal | It's about averages, not about individual outcomes or the shape of the distribution.
 M2#maths-u12-19-q3@2: After 100 tosses, a fair coin shows 60 heads. What is the expected number of heads after 1,000 tosses in total? | 510 | 500 | 490 | 600 | 550 | The next 900 tosses are expected to give 450 heads; the earlier excess is diluted, not reversed.
+M2#maths-u12-19-q4@2: As the number of fair coin flips grows, what settles down? | The proportion of heads, towards 0.5 | The difference between heads and tails, towards 0 | The number of heads, towards a fixed value | Nothing settles | The next flip becomes predictable | The law of large numbers concerns averages; the raw difference typically grows like √n.
 
 ## Central Limit Theorem
 S: The central limit theorem says that sums and averages of many independent random variables are approximately normally distributed, whatever the original distribution. It explains why the normal curve is everywhere and justifies most of classical statistics.
@@ -674,6 +688,8 @@ X: A fair die is rolled 100 times. Estimate the probability that the total excee
 > Each roll has μ = 3.5 and σ^{2} = 35/12; the total has mean 350 and variance 291.7, SD ≈ 17.08
 > With continuity correction: z = (370.5 − 350)/17.08 ≈ 1.20
 > P(Z > 1.20) ≈ 0.115
+P: **Investigate with the lab.** With n = 30 from the skewed population, plot 1,000 sample means and see a bell curve (the lab's challenge). Then check the spread is close to σ/√n.
+IX: clt
 K: Sums and means are approximately normal for large n; the standard error is σ/√n; use continuity corrections for discrete sums.
 !: Thinking the CLT makes the individual observations normal: it's about sums and means.
 Q: What is the standard error of the mean of 64 values with σ = 16? | 2.
@@ -685,6 +701,7 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u12-20-q1@1: Bags of flour have mean mass 1,000 g and SD 20 g. What is the SD of the mean mass of 16 bags, in grams? | 5 | 0 | g | σ/√n = 20/√16 = 5 g.
 M1#maths-u12-20-q2@1: What does the central limit theorem describe? | The approximate normality of sums and means | The convergence of probabilities to 0.5 | The exact distribution of every variable | Why variances add | How to calculate medians | It concerns the distribution of sums and averages of many independent variables.
 M3#maths-u12-20-q3@2: The waiting times in a queue are strongly right-skewed. What is the distribution of the mean of 200 waiting times? | Approximately normal | Strongly right-skewed | Uniform | Exponential | Impossible to approximate | With n = 200 and finite variance, the CLT makes the sample mean approximately normal.
+NUM1#maths-u12-20-q4@1: A population has σ = 12. What is the standard deviation of means of samples of size 36? | 2 | 0 |  | σ/√n = 12/6 = 2.
 
 ## Bernoulli Distribution
 S: The Bernoulli distribution describes a single trial with two outcomes: success with probability p, failure with probability 1 − p. It's the simplest random variable and the building block of the binomial, geometric and many other distributions.
@@ -1017,6 +1034,8 @@ X: Adult heights are N(170, 8^{2}) cm. Find P(height > 180) and the 90th percent
 > z = (180 − 170)/8 = 1.25, so P(X > 180) = 1 − Φ(1.25) ≈ 1 − 0.8944 = 0.1056
 > The 90th percentile of Z is 1.2816
 > x = 170 + 1.2816 × 8 ≈ 180.3 cm
+P: **Investigate with the lab.** Increase n and watch the histogram of sample means become symmetric and bell-shaped, even though the population is skewed.
+IX: clt
 K: Standardise with z = (x − μ)/σ; reverse with x = μ + zσ; independent normals combine with means and variances adding.
 !: Dividing by the variance instead of the standard deviation when standardising.
 Q: What fraction of a normal distribution lies within 1.96σ of the mean? | 95%.
@@ -1028,6 +1047,7 @@ SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, section 1.3.6.6.1: Normal
 NUM1#maths-u12-30-q1@1: X ~ N(170, 8^{2}). Find P(X < 186), to 4 decimal places. | 0.9772 | 0.0005 |  | z = 16/8 = 2, and Φ(2) ≈ 0.9772.
 M1#maths-u12-30-q2@1: For a normal distribution, which statement is true? | Mean, median and mode are equal | The mean exceeds the median | It's skewed to the right | It has a maximum value | Its variance is always 1 | The bell curve is symmetric about μ, so its mean, median and mode coincide.
 M3#maths-u12-30-q3@2: Bags have mass X ~ N(500, 4^{2}) g and boxes hold 10 independent bags. What is the SD of a box's total mass? | 12.6 g | 40 g | 4 g | 160 g | 1.26 g | The variance is 10 × 16 = 160, so the SD is √160 ≈ 12.6 g.
+M2#maths-u12-30-q4@2: About what proportion of a normal distribution lies within one standard deviation of the mean? | About 68% | About 50% | About 95% | About 99.7% | About 34% | The 68–95–99.7 rule gives about 68% within ±1σ.
 
 ## Standard Normal Distribution
 S: The standard normal distribution Z ~ N(0, 1) is the normal with mean 0 and standard deviation 1. Every normal calculation reduces to it, and its tables and critical values are used throughout statistics.

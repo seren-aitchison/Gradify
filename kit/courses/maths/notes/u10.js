@@ -23,6 +23,8 @@ X: Check that y = Ce^{2x} solves y′ = 2y, and find the solution with y(0) = 3.
 > y′ = 2Ce^{2x} = 2y ✓
 > y(0) = C = 3
 > The particular solution is y = 3e^{2x}
+P: **Investigate with the lab.** Draw the slope field and click to set initial values. Each click traces the unique solution through that point.
+IX: ode
 K: Classify by order and linearity; verify by substitution; n constants for order n, fixed by conditions; existence and uniqueness need f Lipschitz in y.
 !: Forgetting that the general solution of an nth-order equation needs n constants.
 Q: What is the order of y‴ + xy′ = 0? | 3.
@@ -34,6 +36,7 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u10-01-q1@1: How many arbitrary constants does the general solution of a fourth-order linear ODE contain? | 4 | 0 |  | An nth-order equation needs n constants, one per integration.
 M1#maths-u10-01-q2@1: Which equation is linear? | y″ + x^{2}y′ + y = e^{x} | y′ = y^{2} + 1 | yy″ = 1 | y′ + sin y = 0 | (y′)^{2} = x | y and its derivatives appear only to the first power, multiplied by functions of x.
 M2#maths-u10-01-q3@2: Why does a direction field help even without solving the ODE? | It shows the slope at each point, so solution curves can be sketched | It gives the exact solution formula | It only works for linear equations | It replaces initial conditions | Each arrow points to where the equation has an equilibrium | Each arrow has slope f(x, y); solutions follow the arrows.
+M2#maths-u10-01-q4@2: What does a slope field show for dy/dx = f(x, y)? | The gradient a solution must have at each point | The exact solution formula | Only the equilibrium points | The area under each solution | The second derivative | Each short segment has gradient f(x, y), and solutions follow them.
 
 ## First-Order Differential Equations
 S: First-order ODEs y′ = f(x, y) model rates of change: cooling, decay, growth, mixing tanks and simple circuits. Several standard types have reliable solution methods, and recognising the type is the first skill.
@@ -58,6 +61,8 @@ X: Coffee at 90°C cools in a 20°C room to 60°C in 10 minutes. Find T(t).
 > T = 20 + 70e^{−kt}, from the cooling law with T(0) = 90
 > 60 = 20 + 70e^{−10k}, so e^{−10k} = 4/7 and k = ln(7/4)/10 ≈ 0.056 per minute
 > T(t) = 20 + 70(4/7)^{t/10}
+P: **Investigate with the lab.** Use dy/dx = y and compare the numerical solutions with the exact curve y = y₀eˣ.
+IX: ode
 K: Identify the type (separable, linear, exact, homogeneous, Bernoulli) and apply its method; model with rates in minus out; use direction fields for insight.
 !: Using the actual temperature T instead of the difference T − T_{s} in Newton's law.
 Q: What type is y′ + 3y = e^{x}? | Linear first-order.
@@ -69,6 +74,7 @@ SRC: Zill DG, A First Course in Differential Equations with Modeling Application
 NUM1#maths-u10-02-q1@1: Using T(t) = 20 + 70(4/7)^{t/10}, find T(20) to 2 decimal places. | 42.86 | 0.01 | °C | 20 + 70 × (4/7)^{2} = 20 + 70 × 16/49 ≈ 42.86°C.
 M1#maths-u10-02-q2@1: Which method suits y′ = x^{2}y^{3}? | Separation of variables | An integrating factor for a linear ODE | The exact equation test | Undetermined coefficients | Laplace transforms only | The right side factorises into a function of x times a function of y.
 M2#maths-u10-02-q3@2: A tank holds 100 L of water with 5 kg of salt. Brine at 0.2 kg/L flows in at 3 L/min, and the mixture flows out at 3 L/min. Which ODE models the salt S(t)? | S′ = 0.6 − 3S/100 | S′ = 0.6 + 3S/100 | S′ = 3 − 0.2S | S′ = 0.2S − 0.6 | S′ = −3S | In: 3 × 0.2 = 0.6 kg/min; out: 3 L/min at concentration S/100.
+NUM1#maths-u10-02-q4@1: For dy/dx = y with y(0) = 1, what is the exact value of y(1), to 3 decimal places? | 2.718 | 0.001 |  | The solution is y = eˣ, so y(1) = e ≈ 2.718.
 
 ## Separable Differential Equations
 S: A separable equation can be rearranged so that all the y terms are on one side and all the x terms on the other, then each side is integrated. It's the simplest solution method and covers exponential growth, logistic growth and many physical models.
@@ -370,6 +376,8 @@ X: Classify the equilibria of y′ = y(3 − y).
 > Equilibria where y(3 − y) = 0: y = 0 and y = 3
 > f′(y) = 3 − 2y: f′(0) = 3 > 0 (unstable), f′(3) = −3 < 0 (stable)
 > Any positive starting value tends to 3
+P: **Investigate with the lab.** Start the logistic equation at an equilibrium (y₀ = 0 or 3) and see the solution stay flat (the lab's challenge). Then start just above and just below.
+IX: ode
 K: Equilibria solve f(y) = 0; f′ < 0 means stable; read the phase line; harvesting beyond rK/4 causes collapse.
 !: Concluding stability from f′(y*) = 0, which needs further analysis.
 Q: Is y = 2 stable for y′ = 2 − y? | Yes: f′ = −1 < 0.
@@ -381,6 +389,7 @@ SRC: Murray JD, Mathematical Biology I: An Introduction (3rd edn, Springer 2002)
 NUM1#maths-u10-11-q1@1: A fish population grows logistically with r = 0.4 per year and K = 1,000. What is the maximum sustainable constant harvest per year? | 100 | 0 | fish | rK/4 = 0.4 × 1,000/4 = 100.
 M1#maths-u10-11-q2@1: For y′ = y^{2} − 4, which equilibrium is stable? | y = −2 | y = 2 | Both | Neither | y = 0 | f′(y) = 2y: f′(−2) = −4 < 0 (stable), f′(2) = 4 > 0 (unstable).
 M2#maths-u10-11-q3@2: Why can't two different solutions of an autonomous ODE cross? | Uniqueness forbids two solutions through the same point | Autonomous equations have only one solution | Solutions are always parallel lines | Crossing would make f negative | They can cross | With f Lipschitz, the solution through any point is unique.
+M2#maths-u10-11-q4@2: For the logistic equation in the lab, what happens to solutions starting between 0 and 3? | They rise towards the stable equilibrium 3 | They fall to 0 | They stay constant | They grow without bound | They oscillate | Between the equilibria dy/dx > 0, and 3 attracts nearby solutions.
 
 ## Systems of Differential Equations
 S: Systems of ODEs track several interacting quantities: predators and prey, coupled springs, chemical species. Linear systems x′ = Ax are solved with eigenvalues and eigenvectors, and their phase portraits show every possible behaviour at a glance.
@@ -438,6 +447,8 @@ X: Solve y″ + y = 0 with y(0) = 1, y′(0) = 0.
 > General solution: y = A cos x + B sin x
 > y(0) = A = 1; y′(0) = B = 0
 > y = cos x, unique since the equation is linear with constant coefficients
+P: **Investigate with the lab.** Click different starting points on the same slope field and see that each initial value gives a different solution curve.
+IX: ode
 K: IVPs specify values at one point; Picard–Lindelöf gives uniqueness for Lipschitz f; non-Lipschitz cases like y′ = 3y^{2/3} can have many solutions.
 !: Assuming every IVP has a unique solution.
 Q: How many initial conditions does a second-order IVP need? | Two.
@@ -449,6 +460,7 @@ SRC: Boyce WE, DiPrima RC, Meade DB, Elementary Differential Equations and Bound
 NUM1#maths-u10-13-q1@1: Solve y′ = −2y with y(0) = 5 and find y(1), to 4 decimal places. | 0.6767 | 0.0001 |  | y = 5e^{−2x}, so y(1) = 5e^{−2} ≈ 0.6767.
 M1#maths-u10-13-q2@1: Which IVP is guaranteed a unique solution near x = 0? | y′ = x^{2} + y, y(0) = 1 | y′ = 3y^{2/3}, y(0) = 0 | y′ = √|y|, y(0) = 0 | y′ = y^{1/3}, y(0) = 0 | None of them | x^{2} + y is smooth, so Lipschitz in y; the others fail at y = 0.
 M2#maths-u10-13-q3@2: Why does determinism in physics need uniqueness theorems? | Uniqueness means the present state determines one future | It guarantees all solutions are periodic | It makes equations linear | It removes the need for initial conditions | It doesn't need them | Without uniqueness, the same initial state could evolve in different ways.
+M2#maths-u10-13-q4@2: Why does an initial value problem need a starting value? | A first-order ODE has a family of solutions, and the initial value selects one | It doesn't need one | The ODE has no solutions otherwise | It fixes the step size | It makes the solution linear | The general solution has an arbitrary constant fixed by y(x₀).
 
 ## Boundary Value Problems
 S: A boundary value problem specifies conditions at two or more points, such as both ends of a beam or a string. Unlike initial value problems, they may have no solution, exactly one, or infinitely many, and they lead naturally to eigenvalue problems.
@@ -1124,6 +1136,8 @@ X: Use Euler's method with h = 0.5 to estimate y(1) for y′ = y, y(0) = 1.
 > y₁ = 1 + 0.5 × 1 = 1.5
 > y₂ = 1.5 + 0.5 × 1.5 = 2.25
 > Estimate 2.25 against the true value e ≈ 2.718: first-order methods need small steps
+P: **Investigate with the lab.** See Euler's method drift for dy/dx = y, then get RK4 within 0.001 of the exact answer with h ≥ 0.25 (the lab's challenges).
+IX: ode
 K: Euler steps along tangents with O(h) error; RK4 gives O(h^{4}); stiff problems need implicit methods; verify by refining the step.
 !: Trusting one numerical run without checking how the answer changes as h shrinks.
 Q: What is the order of RK4? | Fourth order.
@@ -1135,6 +1149,7 @@ SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016
 NUM1#maths-u10-33-q1@1: One Euler step of size 0.1 for y′ = 2y from y(0) = 1 gives what value? | 1.2 | 0.0001 |  | y₁ = 1 + 0.1 × 2 × 1 = 1.2.
 M1#maths-u10-33-q2@1: Halving the step size in RK4 reduces the global error by roughly what factor? | 16 | 2 | 4 | 8 | 32 | RK4 is fourth order, so halving h multiplies the error by (½)^{4} = 1/16.
 M2#maths-u10-33-q3@2: Why does an explicit method struggle with a stiff equation? | Stability forces tiny steps set by the fastest decaying component | Stiff equations have no solutions | Explicit methods can't handle systems | The solution oscillates wildly | It doesn't struggle | Fast-decaying modes impose a step limit long after they've vanished.
+M2#maths-u10-33-q4@2: Why does RK4 beat Euler's method at the same step size? | It samples the slope four times per step, giving fourth-order rather than first-order accuracy | It uses a smaller step automatically | Euler's method is exact | RK4 ignores the slope field | They're equally accurate | RK4's global error is O(h^{4}) compared with Euler's O(h).
 
 ## Numerical Solutions of PDEs
 S: Numerical methods for PDEs replace continuous space and time with grids, meshes or basis functions, turning the equation into a large system of algebraic equations. Stability, consistency and convergence decide whether the computed answer can be trusted.

@@ -16,7 +16,8 @@
     "audit": "node scripts/audit-sites.mjs",
     "check:sync": "node scripts/check-sync.cjs",
     "supabase:admin": "node scripts/supabase-admin.mjs",
-    "check:live": "node scripts/check-live.cjs"
+    "check:live": "node scripts/check-live.cjs",
+    "labs": "node scripts/lab-coverage.mjs"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "0.133.0",

@@ -53,6 +53,8 @@ X: A ramp rises 1.2 m over a horizontal distance of 8 m. Find the angle of the r
 > Slope length = √(8^{2} + 1.2^{2}) = √65.44
 > ≈ 8.09 m
 - Rounding too early spoils later steps: keep the full calculator value until the final answer.
+P: **Investigate with the lab.** Choose Right-angled trigonometry. Label opposite, adjacent and hypotenuse before choosing sin, cos or tan.
+IX: practice
 K: SOHCAHTOA: choose the ratio with the known and unknown sides; inverse functions give angles; learn the exact values.
 !: Using degree values in a calculator set to radians.
 Q: What is cos 60°? | 1/2.
@@ -64,6 +66,7 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u06-02-q1@1: A ladder 5 m long makes an angle of 70° with the ground. How high up the wall does it reach, to 2 decimal places? | 4.7 | 0.01 | m | Height = 5 sin 70° ≈ 5 × 0.9397 = 4.70 m.
 M1#maths-u06-02-q2@1: What is tan 45°? | 1 | 0 | √2/2 | √3 | 1/2 | In an isosceles right-angled triangle the opposite and adjacent sides are equal, so their ratio is 1.
 M2#maths-u06-02-q3@2: In a right-angled triangle, the adjacent side is 9 and the hypotenuse is 15. What is the angle? | About 53.1° | About 36.9° | About 31.0° | About 59.0° | About 0.6° | cos θ = 9/15 = 0.6, so θ = cos^{−1}(0.6) ≈ 53.1°.
+NUM1#maths-u06-02-q4@1: In a right-angled triangle the side opposite 30° is 4 cm. How long is the hypotenuse in cm? | 8 | 0 | cm | sin 30° = 4/h, so h = 4/0.5 = 8 cm.
 
 ## Sine
 S: The sine of an angle starts as a ratio in a right-angled triangle and becomes a function defined for every angle, using the unit circle. Its smooth repeating graph describes waves, oscillations and anything periodic.
@@ -413,6 +416,8 @@ X: Describe y = 2 cos(x − 30°) − 1 and state its maximum and minimum.
 - Read graphs from key points: zeros, maxima and minima every quarter period.
 - Graphing software and the graph explorer let you change a, b, c and d and watch each effect separately.
 - Apply horizontal changes in the right order: for sin(2x + 60°), factorise to sin 2(x + 30°), a shift of 30°, not 60°.
+P: **Investigate with the lab.** Do the sine-wave challenge: change a, b and c one at a time and note what happens to the amplitude, period and midline.
+IX: grapher
 K: Amplitude |a|, period 360°/b, phase shift −c, vertical shift d for y = a sin(bx + c) + d.
 !: Thinking sin 2x has period 720° (it's 180°: the 2 speeds the cycle up).
 Q: What is the period of y = cos 3x? | 120°.
@@ -424,6 +429,7 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u06-13-q1@1: What is the period, in degrees, of y = sin(x/2)? | 720 | 0 | ° | Period = 360°/b with b = 1/2, giving 720°.
 M1#maths-u06-13-q2@1: What is the amplitude of y = −5 sin x? | 5 | −5 | 1 | 10 | 0 | Amplitude is |a|: the negative sign reflects the graph but doesn't change its height.
 M2#maths-u06-13-q3@2: Which describes y = sin(x + 90°)? | It's the same as y = cos x | It's y = sin x shifted right 90° | It has period 90° | It has amplitude 90 | It's y = −sin x | Adding 90° inside the bracket shifts sine left by 90°, which gives the cosine graph.
+NUM1#maths-u06-13-q4@1: What is the period of y = 3 sin(2x) + 1, in radians, to 3 decimal places? | 3.142 | 0.001 |  | The period is 2π/b = 2π/2 = π ≈ 3.142.
 
 ## Periodic Functions
 S: A periodic function repeats its values at regular intervals. Tides, seasons, heartbeats, sound and alternating current are all periodic, and trigonometric functions are the building blocks for modelling them.

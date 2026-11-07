@@ -675,6 +675,8 @@ X: In a class of 30, 18 play football, 12 play tennis and 5 play both. A student
 > 5 of them play football
 > P = 5/12
 - Relative frequency (successes ÷ trials) estimates a probability from experiments; more trials give a better estimate.
+P: **Investigate with the lab.** Run 1,000 trials of rolling a six and compare the relative frequency with 1/6. Then run 10,000 and see it get closer.
+IX: lln
 K: Pick the right diagram; multiply along branches, add across; use 1 − P(none); restrict the group for conditional probability.
 !: Using the whole class (30) as the denominator in a conditional question.
 Q: What do the probabilities on all branches from one point add to? | 1.
@@ -686,6 +688,7 @@ SRC: Department for Education, Mathematics AS and A level subject content | stan
 NUM1#maths-u28-20-q1@1: A bag has 4 red and 6 blue sweets. Two are eaten without replacement. Find P(both blue), to 4 decimal places. | 0.3333 | 0.0005 |  | 6/10 × 5/9 = 30/90 = 1/3.
 M1#maths-u28-20-q2@1: In the class above (18 football, 12 tennis, 5 both, 30 students), how many play neither? | 5 | 0 | 7 | 10 | 12 | 18 + 12 − 5 = 25 play at least one, so 30 − 25 = 5 play neither.
 M2#maths-u28-20-q3@2: What's the probability of at least one head in three fair coin tosses? | 7/8 | 3/8 | 1/2 | 3/4 | 1/8 | P(no heads) = (1/2)^{3} = 1/8, so P(at least one head) = 1 − 1/8 = 7/8.
+NUM1#maths-u28-20-q4@1: A dice experiment gives 168 sixes in 1,000 rolls. What is the relative frequency of a six? | 0.168 | 0.0001 |  | Relative frequency = 168/1000 = 0.168, close to 1/6 ≈ 0.167.
 
 ## Mathematical Problem Solving
 S: Problem solving is what you do when you don't immediately know a method. Pólya's four stages (understand, plan, carry out, look back) and a toolkit of strategies turn a blank page into progress.

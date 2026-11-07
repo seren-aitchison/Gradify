@@ -82,6 +82,8 @@ X: Find lim_{x→4} (√x − 2)/(x − 4).
 > (√x − 2)/((√x − 2)(√x + 2)) = 1/(√x + 2)
 > As x → 4, this approaches 1/(2 + 2) = 1/4
 - Limits needn't equal the function's value: f could even be undefined at a.
+P: **Investigate with the lab.** Shrink h towards 0 from both sides and watch the secant gradient approach a single value. Then try |x| at x = 0, where the two sides disagree.
+IX: tangent
 K: Substitute if possible; for 0/0 factorise, rationalise or use standard limits; compare left and right limits.
 !: Concluding that a 0/0 limit is 0, 1 or undefined without further work.
 Q: What is lim_{x→1} (x^{2} − 1)/(x − 1)? | 2.
@@ -93,6 +95,7 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-03-q1@1: Find lim_{x→2} (x^{3} − 8)/(x − 2). | 12 | 0 |  | x^{3} − 8 = (x − 2)(x^{2} + 2x + 4), so the limit is 4 + 4 + 4 = 12.
 M1#maths-u07-03-q2@1: What is lim_{x→∞} (5x + 2)/(2x − 1)? | 5/2 | 0 | ∞ | −2 | 5 | Divide top and bottom by x: (5 + 2/x)/(2 − 1/x) → 5/2.
 M3#maths-u07-03-q3@2: What is lim_{x→0} (sin 3x)/x? | 3 | 1 | 0 | 1/3 | It doesn't exist | (sin 3x)/x = 3 × (sin 3x)/(3x), and (sin u)/u → 1 as u → 0.
+M2#maths-u07-03-q4@2: For f(x) = |x| at x = 0, what do the secant gradients from the right and left approach? | +1 from the right and −1 from the left, so the limit doesn't exist | 0 from both sides, since the graph touches the axis there | +1 from both sides, since |x| = x near 0 | Both grow without bound, since the corner is infinitely steep | −1 from the right and +1 from the left, so the limit is 0 | The one-sided limits differ, so the difference quotient has no limit at 0.
 
 ## Continuity
 S: A function is continuous at a point if its graph has no break there: you could draw it without lifting your pen. Continuity is what lets us find roots by sign changes and guarantees that many calculus theorems apply.
@@ -143,6 +146,8 @@ X: f(x) = x^{2} for x ≤ 1 and ax + b for x > 1. Find a and b so that f is diff
 > Continuity: 1 = a + b
 > Slopes must match: 2x = 2 at x = 1, so a = 2
 > Then b = −1: f(x) = 2x − 1 for x > 1
+P: **Investigate with the lab.** Choose |x| and set the point to 0. Shrink h with positive and negative values and see the secant gradients refuse to agree.
+IX: tangent
 K: Differentiable means a unique tangent slope; corners, jumps and vertical tangents fail; differentiable implies continuous, not conversely.
 !: Assuming that a continuous function must be differentiable.
 Q: Is |x − 3| differentiable at x = 3? | No: it has a corner there.
@@ -153,6 +158,7 @@ SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | ht
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-05-q1@1: Where is f(x) = |x + 2| not differentiable? | At x = −2 | At x = 0 | At x = 2 | Nowhere | Everywhere | The graph has a corner where x + 2 = 0, so the slope jumps from −1 to 1.
 M2#maths-u07-05-q2@2: Which statement about continuity and differentiability is true? | Every differentiable function is continuous | Every continuous function is differentiable | |x| is differentiable at 0 | A jump discontinuity can still be differentiable | ∛x has derivative 0 at x = 0 | Differentiability at a point forces continuity there; the converse fails, as |x| shows.
+M2#maths-u07-05-q3@2: Why is |x| continuous but not differentiable at 0? | Its graph has no gap, but the gradient jumps from −1 to +1 at a corner | Its graph has a gap at 0, so neither property holds | Its gradient is infinite at 0, like a vertical tangent | It isn't defined at 0, so it can't be differentiated | It is differentiable at 0, with derivative 0 there | Continuity needs no break; differentiability needs a single tangent, which a corner lacks.
 
 ## Differential Calculus
 S: Differential calculus studies how quantities change. The derivative measures the instantaneous rate of change of a function, which is the gradient of its graph at a point.
@@ -173,6 +179,8 @@ X: Estimate the gradient of y = x^{2} at x = 3 using chords with h = 0.1 and h =
 > h = 0.1: (3.1^{2} − 9)/0.1 = (9.61 − 9)/0.1 = 6.1
 > h = 0.01: (3.01^{2} − 9)/0.01 = 0.0601/0.01 = 6.01
 > The estimates approach 6, the derivative 2x at x = 3
+P: **Investigate with the lab.** Try three different functions and, for each, find where the secant and tangent gradients agree to two decimal places.
+IX: tangent
 K: The derivative is the limit of chord gradients: the tangent's slope and the instantaneous rate of change.
 !: Confusing the value of a function with its rate of change: y can be large while dy/dx is small.
 Q: What does dy/dx = 0 mean graphically? | The tangent is horizontal: a stationary point.
@@ -184,6 +192,7 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-06-q1@1: Find the gradient of the chord of y = x^{3} from x = 1 to x = 2. | 7 | 0 |  | (8 − 1)/(2 − 1) = 7. (The tangent gradients at the ends are 3 and 12.)
 M1#maths-u07-06-q2@1: What does a negative derivative tell you about a function? | It's decreasing at that point | It's negative at that point | It has a maximum | It's increasing | It's zero | The derivative is the gradient: negative gradient means the function is going down.
 M2#maths-u07-06-q3@2: A chord of y = f(x) from x = 2 to x = 2 + h has gradient 5 + 3h. What is f′(2)? | 5 | 8 | 3 | 5 + 3h | 0 | The derivative is the limit as h → 0: 5 + 3h → 5.
+M2#maths-u07-06-q4@2: What does the derivative measure at a point? | The instantaneous rate of change: the limit of secant gradients as h → 0 | The area under the curve up to that point | The average value of the function over an interval | The value of the function itself at the point | The distance from the point to the x-axis | The derivative is defined as the limit of the difference quotient.
 
 ## Derivatives
 S: A derivative is defined as the limit of the gradient of a chord, and computed in practice with rules. Differentiating from first principles shows where the rules come from.
@@ -206,6 +215,10 @@ X: Differentiate x^{2} − 3x from first principles.
 > As h → 0: f′(x) = 2x − 3
 - A derivative is itself a function: f′(x) gives the gradient at every x.
 - Differentiation is linear: the derivative of a sum is the sum of the derivatives, which is why polynomials are differentiated term by term.
+P: **Investigate with the lab.** Choose Differentiation (A level) and differentiate each expression term by term. Compare with the tangent lab: the derivative is the gradient you watched the secant approach.
+IX: practice
+P: **Investigate with the lab.** Shrink h below 0.01 and record the secant gradient. Compare it with the derivative formula's value at the same point.
+IX: tangent
 K: f′(x) = lim (f(x + h) − f(x))/h; in practice use the power rule and the standard derivatives.
 !: Differentiating x^{n} as x^{n−1} (forgetting to multiply by n).
 Q: Differentiate 4x^{5}. | 20x^{4}.
@@ -216,6 +229,8 @@ SRC: Department for Education, Mathematics AS and A level subject content: diffe
 SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | https://www.publishorperish.com/
 M1#maths-u07-07-q1@1: What is d/dx (6x^{3} − 2x + 9)? | 18x^{2} − 2 | 18x^{2} − 2x | 6x^{2} − 2 | 18x^{3} − 2 | 2x^{2} − 2 + 9 | Multiply by the power and reduce it by one; the constant 9 differentiates to 0.
 M2#maths-u07-07-q2@2: What is d/dx (4/x)? | −4/x^{2} | 4 | 4/x^{2} | −4x | 4 ln x | 4/x = 4x^{−1}, which differentiates to −4x^{−2}.
+NUM1#maths-u07-07-q3@1: Differentiate 4x^{3} − 2x and evaluate at x = 1. | 10 | 0 |  | The derivative is 12x^{2} − 2, which is 10 at x = 1.
+NUM1#maths-u07-07-q4@1: For f(x) = x^{2} at x = 3 with h = 0.01, what is the secant gradient (f(3 + h) − f(3))/h? | 6.01 | 0.0001 |  | (9.0601 − 9)/0.01 = 6.01, approaching the derivative 6.
 
 ## First Derivatives
 S: The first derivative f′(x) tells you the gradient of a curve everywhere: where it rises, falls and levels off. It finds tangents and normals, and stationary points where the gradient is zero.
@@ -236,6 +251,8 @@ X: Find the equation of the normal to y = 2x^{2} − 5x + 1 at x = 2.
 > Normal gradient = −1/3
 > y + 1 = −1/3(x − 2), so y = −x/3 − 1/3 (or x + 3y + 1 = 0)
 - Finding where a curve has a given gradient: y = x^{2} − 4x has gradient 2 where 2x − 4 = 2, at x = 3.
+P: **Investigate with the lab.** Find a point where the tangent is horizontal (the lab's challenge) and check it's where the first derivative is zero.
+IX: tangent
 K: Tangent: gradient f′(a) through (a, f(a)); normal: gradient −1/f′(a); the sign of f′ shows increasing or decreasing.
 !: Using the y-value instead of the gradient in the tangent equation.
 Q: What is the gradient of the normal if the tangent's gradient is 4? | −1/4.
@@ -247,6 +264,7 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-08-q1@1: Find the gradient of y = x^{3} − 4x^{2} + 2 at x = 3. | 3 | 0 |  | dy/dx = 3x^{2} − 8x = 27 − 24 = 3.
 M1#maths-u07-08-q2@1: What is the tangent to y = x^{2} at (3, 9)? | y = 6x − 9 | y = 6x + 9 | y = 2x + 3 | y = 9x − 18 | y = 3x | The gradient is 2x = 6, so y − 9 = 6(x − 3), giving y = 6x − 9.
 M2#maths-u07-08-q3@2: For which x is f(x) = 2x^{3} − 6x decreasing? | −1 < x < 1 | x > 1 | x < −1 | x > 0 | All x | f′(x) = 6x^{2} − 6 = 6(x − 1)(x + 1) is negative between −1 and 1.
+NUM1#maths-u07-08-q4@1: Where is the tangent to y = x^{2} − 6x horizontal (give x)? | 3 | 0 |  | dy/dx = 2x − 6 = 0 at x = 3.
 
 ## Higher-Order Derivatives
 S: Differentiating a derivative gives the second derivative, and so on. The second derivative measures how the gradient changes: acceleration for motion, and concavity for graphs.
@@ -767,6 +785,8 @@ X: Sketch y = (x + 1)/(x − 2), stating its asymptotes and intercepts.
 > Vertical asymptote x = 2; as x → ±∞, y → 1, so horizontal asymptote y = 1
 > Intercepts: (−1, 0) and (0, −1/2)
 > y′ = −3/(x − 2)^{2} < 0: decreasing on each branch, a hyperbola in the regions above-right and below-left of the asymptotes' crossing
+P: **Investigate with the lab.** Do the cubic-roots and shifted-reciprocal challenges. Sketch each curve on paper first, then check your roots and asymptotes against the plot.
+IX: grapher
 K: Work through domain, symmetry, intercepts, asymptotes, stationary points and end behaviour; label key points.
 !: Drawing a curve crossing a vertical asymptote, or ignoring end behaviour.
 Q: Where are the vertical asymptotes of y = 1/(x^{2} − 9)? | x = 3 and x = −3.
@@ -777,6 +797,7 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-25-q1@1: What is the vertical asymptote of y = 3/(x + 4)? | x = −4 | x = 4 | y = 0 | x = 3 | y = 3 | The denominator is zero at x = −4, where y grows without bound.
 M2#maths-u07-25-q2@2: What is the horizontal asymptote of y = (6x^{2} + 1)/(3x^{2} − 2)? | y = 2 | y = 6 | y = 0 | y = 1/2 | None | As x → ∞, the leading terms dominate: 6x^{2}/3x^{2} = 2.
+M2#maths-u07-25-q3@2: Where are the asymptotes of y = 2/(x − 1) + 1? | x = 1 and y = 1 | x = −1 and y = 1 | x = 2 and y = 1 | x = 1 and y = 2 | There are none | The denominator is zero at x = 1, and the curve approaches y = 1 as x grows.
 
 ## Integral Calculus
 S: Integral calculus is the mathematics of accumulation: adding up infinitely many small pieces to find areas, volumes, distances and totals. It's also the reverse of differentiation.
@@ -798,6 +819,8 @@ X: A car's velocity is v = 3t^{2} m s^{−1}. How far does it travel from t = 0 
 > An antiderivative is t^{3}
 > 4^{3} − 0^{3} = 64 m
 - Not every function has an elementary antiderivative: e^{−x^{2}} doesn't, though its definite integrals can still be computed.
+P: **Investigate with the lab.** Switch between left, right, midpoint and trapezium rules for the same n and rank them by error.
+IX: riemann
 K: Integration reverses differentiation and accumulates quantities; the definite integral is a signed area.
 !: Forgetting that areas below the axis count as negative in a definite integral.
 Q: What is the integrand in ∫ (x^{2} + 1) dx? | x^{2} + 1.
@@ -809,6 +832,7 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-26-q1@1: A tap's flow rate is r(t) = 2t litres per minute. How many litres flow in the first 5 minutes? | 25 | 0 | litres | ∫_{0}^{5} 2t dt = [t^{2}]_{0}^{5} = 25 litres.
 M1#maths-u07-26-q2@1: Which quantity is found by integrating acceleration with respect to time? | Velocity | Displacement | Force | Jerk | Mass | Acceleration is the derivative of velocity, so integrating it gives velocity.
 M2#maths-u07-26-q3@2: What does ∫_{a}^{b} f(x) dx represent if f is positive? | The area between the curve and the x-axis from a to b | The gradient at b | The average of f(a) and f(b) | The length of the curve | f(b) − f(a) | For a positive function, the definite integral is the area under the curve.
+M2#maths-u07-26-q4@2: Which rule usually gives the smallest error for a smooth function with the same number of strips? | The midpoint rule (with the trapezium close behind) | The left rectangle rule, using each strip's start | The right rectangle rule, using each strip's end | All four rules give exactly the same error | Whichever rule uses the fewest strips | Midpoint and trapezium rules have O(h^{2}) error, while left and right rules are O(h).
 
 ## Indefinite Integrals
 S: An indefinite integral is the family of all antiderivatives of a function. Because constants differentiate to zero, every indefinite integral includes "+ c".
@@ -866,6 +890,8 @@ X: Estimate ∫_{0}^{2} x^{2} dx with four strips and right endpoints.
 > Estimate = 7.5 × 0.5 = 3.75 (the exact value is 8/3 ≈ 2.67: an overestimate, since x^{2} is increasing)
 - Midpoint sums are usually much more accurate than left or right sums.
 - Riemann sums are how computers estimate integrals (School 19).
+P: **Investigate with the lab.** Approximate the area with left rectangles and increase n until you're within 1% (the lab's challenge). Compare how fast left and midpoint sums improve.
+IX: riemann
 K: Rectangles of width Δx approximate the area; the integral is the limit as Δx → 0.
 !: Forgetting to multiply the sum of heights by the strip width.
 Q: Does a left Riemann sum over- or underestimate for an increasing function? | Underestimate.
@@ -877,6 +903,7 @@ SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | ht
 NUM1#maths-u07-28-q1@1: Estimate ∫_{0}^{3} x dx with three strips and left endpoints. | 3 | 0 |  | Δx = 1; heights 0, 1 and 2 sum to 3; 3 × 1 = 3 (exact value 4.5).
 M1#maths-u07-28-q2@1: With n strips on [a, b], what is the width of each? | (b − a)/n | n/(b − a) | b − a | (a + b)/n | 1/n | The interval's length divided equally into n parts.
 M2#maths-u07-28-q3@2: For a decreasing function, how does a right Riemann sum compare with the integral? | It underestimates | It overestimates | It's exact | It's always zero | It depends on n only | Right endpoints of a decreasing function are the lowest points in each strip.
+M2#maths-u07-28-q4@2: For an increasing function, how does the left Riemann sum compare with the exact integral? | It underestimates, since each rectangle uses the lowest value on its strip | It overestimates, since each strip uses its highest value | It is always exact for increasing functions | It depends only on n, not on the function | It always gives zero for increasing functions | On an increasing function the left endpoint is the minimum of each strip.
 
 ## Definite Integrals
 S: A definite integral ∫_{a}^{b} f(x) dx gives a number: the net signed area between the curve and the x-axis from a to b. It's evaluated by finding an antiderivative and subtracting its values at the limits.
@@ -899,6 +926,10 @@ X: Find the area enclosed by y = x^{2} and y = 2x.
 > = 4 − 8/3 = 4/3
 - Even functions: ∫_{−a}^{a} f = 2∫_{0}^{a} f; odd functions: ∫_{−a}^{a} f = 0.
 - The average value of f on [a, b] is (1/(b − a)) ∫_{a}^{b} f(x) dx.
+P: **Investigate with the lab.** Integrate over a region where f is negative and see the sum come out negative: definite integrals measure signed area.
+IX: riemann
+P: **Investigate with the lab.** Choose the Definite integrals topic and work through 10 problems: find an antiderivative, substitute the upper limit, subtract the value at the lower limit. Read the worked method on any you get wrong.
+IX: practice
 K: F(b) − F(a); split at x-intercepts for total area; area between curves is ∫ (top − bottom).
 !: Reporting a negative area, or letting parts above and below the axis cancel.
 Q: What is ∫_{0}^{1} 3x^{2} dx? | 1.
@@ -910,6 +941,7 @@ SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cen
 NUM1#maths-u07-29-q1@1: Evaluate ∫_{1}^{4} 3√x dx. | 14 | 0 |  | [2x^{3/2}]_{1}^{4} = 2 × 8 − 2 × 1 = 14.
 M1#maths-u07-29-q2@1: What is ∫_{0}^{2} (x^{3} + 1) dx? | 6 | 4 | 5 | 8 | 2 | An antiderivative is x^{4}/4 + x; evaluating from 0 to 2 gives 4 + 2 − 0 = 6.
 M2#maths-u07-29-q3@2: What is the total area between y = x − 1 and the x-axis from x = 0 to x = 2? | 1 | 0 | 2 | 1/2 | −1 | Each triangle has area 1/2, one below and one above the axis; the total area is 1, though the integral is 0.
+M2#maths-u07-29-q4@2: What is ∫ x dx from −1 to 1? | 0, since the negative and positive areas cancel | 1, the total area between the line and the axis | 2, the length of the interval of integration | −1, since the left half dominates the right | It is undefined, since the line crosses the axis | The area below the axis on [−1, 0] is −½ and the area above on [0, 1] is +½, so the signed areas cancel to 0.
 
 ## Fundamental Theorem of Calculus
 S: The fundamental theorem of calculus links the two halves of calculus: differentiation and integration are inverse processes. It's why we can evaluate areas using antiderivatives instead of limits of sums.
@@ -929,6 +961,8 @@ X: Find d/dx ∫_{1}^{3x} ln t dt.
 > By part 1 with the chain rule, the derivative is ln(3x) × d/dx (3x)
 > = 3 ln(3x)
 > (Check: ∫ ln t dt = t ln t − t, and differentiating 3x ln(3x) − 3x gives 3 ln(3x) + 3 − 3)
+P: **Investigate with the lab.** Compare the strip sums with the exact value the lab computes from an antiderivative. As n grows, the sums converge to F(b) − F(a).
+IX: riemann
 K: Differentiating an accumulated integral returns the integrand; evaluating a definite integral uses any antiderivative.
 !: Forgetting the chain rule when the upper limit is a function of x.
 Q: What is d/dx ∫_{2}^{x} t^{3} dt? | x^{3}.
@@ -939,6 +973,7 @@ SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | ht
 SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-30-q1@1: What is d/dx ∫_{0}^{x} √(1 + t^{2}) dt? | √(1 + x^{2}) | √(1 + x^{2}) − 1 | x√(1 + x^{2}) | 0 | 1/(2√(1 + x^{2})) | Part 1 of the theorem: the derivative of the accumulation function is the integrand at x.
 M2#maths-u07-30-q2@2: What is d/dx ∫_{0}^{x^{3}} sin t dt? | 3x^{2} sin(x^{3}) | sin(x^{3}) | −cos(x^{3}) | 3x^{2} cos(x^{3}) | sin x | The integrand at the upper limit, sin(x^{3}), times the derivative of x^{3}, which is 3x^{2}.
+NUM1#maths-u07-30-q3@1: Using F(x) = x^{3}/3, what is ∫₀^{3} x^{2} dx? | 9 | 0 |  | F(3) − F(0) = 27/3 = 9, the value the Riemann sums approach.
 
 ## Integration by Substitution
 S: Integration by substitution reverses the chain rule. Replacing an awkward part of the integrand with a new variable u often turns a hard integral into a standard one.
@@ -1121,6 +1156,8 @@ X: Use the trapezium rule with 4 strips to estimate ∫_{0}^{2} e^{x} dx.
 > h = 0.5; y-values at 0, 0.5, 1, 1.5, 2: 1, 1.6487, 2.7183, 4.4817, 7.3891
 > Estimate = 0.25 × [1 + 2(1.6487 + 2.7183 + 4.4817) + 7.3891] = 0.25 × 26.0865
 > ≈ 6.52 (exact: e^{2} − 1 ≈ 6.39; an overestimate, since e^{x} is convex)
+P: **Investigate with the lab.** Beat 0.1% error with midpoints and at most 10 strips (the lab's challenge). Then double n and check the error falls by about four.
+IX: riemann
 K: Trapezium: (h/2)[ends + 2 × middles]; overestimates convex curves; Simpson's rule is more accurate.
 !: Using the number of ordinates instead of the number of strips to find h.
 Q: Does the trapezium rule over- or underestimate ∫ x^{2} dx? | Overestimate: x^{2} is convex.
@@ -1132,6 +1169,7 @@ SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016
 NUM1#maths-u07-36-q1@1: Use the trapezium rule with 2 strips to estimate ∫_{0}^{2} x^{2} dx. | 3 | 0 |  | h = 1; (1/2)[0 + 2(1) + 4] = 3 (exact value 8/3).
 M1#maths-u07-36-q2@1: In the trapezium rule with n strips on [a, b], what is h? | (b − a)/n | n/(b − a) | (b − a)/(n + 1) | b − a | 1/n | h is the strip width: the interval's length divided by the number of strips.
 M2#maths-u07-36-q3@2: Which rule is usually more accurate for a smooth function with the same points? | Simpson's rule | The trapezium rule | They're always equal | A left Riemann sum | A right Riemann sum | Simpson's rule fits parabolas, giving errors of order h^{4} instead of h^{2}.
+M2#maths-u07-36-q4@2: Doubling the number of strips in the midpoint rule changes the error by roughly what factor? | It divides it by about 4, since the error is O(h^{2}) | It halves it, since the error is O(h) | It doubles it, since more strips add rounding | It leaves it unchanged for smooth functions | It divides it by 16, since the error is O(h^{4}) | Halving h in a second-order rule quarters the error.
 
 ## Arc Length and Surface Area
 S: Integration measures more than areas: the length of a curve and the surface area of a solid of revolution come from adding up tiny straight pieces. These are Further Maths and first-year university results.
@@ -1217,6 +1255,8 @@ X: Find Σ_{r=1}^{10} (2r^{2} − 3).
 > 770 − 30 = 740
 - Geometric series grow or decay quickly: compound interest and loan repayments are geometric series.
 - The sum of a series can be found from its partial sums S_{n} by u_{n} = S_{n} − S_{n−1}.
+P: **Investigate with the lab.** Choose the Geometric series topic and work through 10 problems. Check that |r| < 1 before using S∞ = a ÷ (1 − r), and read the worked method on any you get wrong.
+IX: practice
 K: Use S_{n} formulas for arithmetic and geometric series, standard sums for Σ r, Σ r^{2}, Σ r^{3}, and telescoping where terms cancel.
 !: Forgetting that Σ_{r=1}^{n} c = nc, not c.
 Q: What is 1 + 2 + … + 50? | 1,275.

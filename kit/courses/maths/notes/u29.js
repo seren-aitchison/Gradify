@@ -922,6 +922,8 @@ X: A £600 phone has a 5% chance a year of a claim. Insurance costs £60 a year 
 > Expected payout = 0.05 × (600 − 50) = £27.50
 > The premium is £60, more than double the expected payout
 > It's only worth it if losing £600 would be a serious hardship
+P: **Investigate with the lab.** Run short experiments several times and see how much results vary. Small samples can make risks look bigger or smaller than they are.
+IX: lln
 K: Use natural frequencies; compare expected cost with premiums; insure large, unaffordable losses; remember that independent events don't balance out.
 !: Buying insurance for small, affordable losses where premiums far exceed expected payouts.
 Q: Express a 0.4% risk as a natural frequency. | 4 in 1,000.
@@ -933,6 +935,7 @@ SRC: Winton Centre for Risk and Evidence Communication, Communicating risk | gui
 NUM1#maths-u29-27-q1@1: A £1,200 bike has a 10% chance of theft each year. Insurance has a £100 excess. Find the expected yearly payout, in pounds. | 110 | 0 | £ | 0.1 × (1,200 − 100) = £110.
 M1#maths-u29-27-q2@1: Which is the clearest way to present a 0.2% risk to the public? | 2 in 1,000 people | 0.002 | 0.2% | One-fifth of a per cent | A relative risk of 1.2 | Natural frequencies are easiest to picture.
 M3#maths-u29-27-q3@2: An extended warranty on a £300 washing machine costs £90 for 3 years. The chance of a repair in that time is 15%, and a repair costs £150. Is it good value on average? | No: the expected cost is £22.50, well below £90 | Yes: £90 is less than £300 | Yes: repairs are certain | No: repairs cost nothing | It's exactly fair | 0.15 × £150 = £22.50 expected; the warranty costs four times that.
+M2#maths-u29-27-q4@2: Why can a risk estimated from a small sample be misleading? | Small samples vary a lot by chance, so the observed frequency can be far from the true probability | Small samples are always biased upwards | Probability doesn't apply to small samples | Large samples are always wrong | It can't be misleading | The law of large numbers only guarantees convergence as the sample grows.
 
 ## Estimation and Mental Maths
 S: In everyday life, quick estimates check bills, budgets, tips and quantities on the spot. Rounding sensibly and a few mental strategies are enough to spot errors and make good decisions without a calculator.
