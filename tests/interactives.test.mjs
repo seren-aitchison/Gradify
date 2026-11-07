@@ -33,7 +33,7 @@ test("every course's interactives: unique ids, a title, description, kind and mo
       for (const l of x.lessons) assert.ok(lessons.has(l), `${at}: lesson ${l} doesn't exist`);
     }
   }
-  assert.equal(n, 165, "the number of registered interactives (update when adding some)");
+  assert.equal(n, 167, "the number of registered interactives (update when adding some)");
 });
 
 test("every interactive has a mastery evidence map, and every mapped lesson is one it links to", () => {

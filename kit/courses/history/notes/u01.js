@@ -135,6 +135,8 @@ X: Analyse the provenance of a 1915 British recruitment poster showing a father 
 > Origin: produced in Britain in 1915, when the army still relied on volunteers (conscription began in 1916).
 > Purpose: to shame men into enlisting by appealing to family and duty.
 > So it is weak evidence of what soldiers experienced, but strong evidence of how recruiters tried to persuade men, and of the pressure to volunteer.
+P: **Investigate with the lab.** In the source investigation, work through the Bayeux Tapestry and the 1915 poster: for each, name its nature, origin and purpose before you choose what it is most useful for.
+IX: source-investigation
 K: Provenance (nature, origin and purpose) explains why a source says what it says, and tells the historian what it can reliably be used for.
 !: Writing "the source is biased" and stopping. Provenance analysis should explain how the author's position shapes the content and what the source is still useful for.
 EV: established | Conscription was introduced in Britain by the Military Service Act of January 1916, after voluntary recruiting.
@@ -393,6 +395,8 @@ X: Is 1485 a good date to end the Middle Ages in England?
 > For: Henry VII's victory at Bosworth began the Tudor dynasty, a clear political break.
 > Against: religion, society and the economy changed little in 1485; the Reformation came in the 1530s.
 > Judgement: 1485 is a convenient political boundary, but any date is a choice, and different questions suggest different boundaries.
+P: **Investigate with the lab.** In the chronology challenge, order the medieval round, then the Tudors and Stuarts. Look at the gaps between events as well as the order: which periods are crowded, and which are empty?
+IX: chronology
 K: Chronology orders events; periodisation is a historian's construction, useful but never neutral, and different questions suggest different periods.
 !: Treating period labels as natural divisions people at the time recognised. Nobody in 1400 thought they lived in the Middle Ages.
 EV: established | The term "Middle Ages" originated with Renaissance and later scholars rather than with people of the period.

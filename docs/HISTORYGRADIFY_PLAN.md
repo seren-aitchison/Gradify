@@ -26,7 +26,16 @@ Every written lesson has objectives, sections, a worked example of historical an
 **Tested:** `tests/new-courses.test.mjs` (structure, ids, lesson standard, registration), the cross-site suite, and `npm run qa` content checks. Checked in a browser at desktop and phone width.
 **Awaiting expert review:** every school (a history teacher or university historian). Dates, names and figures need checking against the cited sources.
 
+## Interactives
+
+| Lab | What it teaches | Placed in |
+|---|---|---|
+| Source investigation (`kit/labs/history/sources.js`) | Six real sources (the Bayeux Tapestry, Domesday Book, a 1915 recruitment poster, two Peterloo accounts, the Sadler Committee, the Anglo-Saxon Chronicle): judge what each can and can't show | Source provenance; linked from five more School 1 lessons |
+| Chronology challenge (`kit/labs/history/chronology.js`) | Order dated events in four rounds, from Hastings to 1991, with keyboard controls | Chronology and periodisation; linked from Continuity and change |
+
+Each challenge counts as mastery evidence for its lesson (`evidence.js`). The Journey page's daily challenge also builds a history chronology round from dated evidence lines in the notes (docs/GAMIFICATION.md).
+
 ## Next
 
 1. Schools 2, 7, 9 and 10 (the GCSE core), then the rest in pathway order.
-2. History labs: a chronology sorting challenge and a source-reliability comparison, built on the shared lab runtime, then timelines and campaign maps.
+2. More labs, in priority order: an interactive timeline, cause-and-consequence mapping, interpretation comparison, and maps of changing borders and campaigns.
