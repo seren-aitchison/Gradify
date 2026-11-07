@@ -28,6 +28,8 @@ Gradify is a **static site with no build step**: plain HTML pages, ES modules an
 
 ## The Gradify Kit (`kit/`)
 
+How subjects share the engine (adapters, the config spec, versioning, adding a subject): [GRADIFY_PLATFORM.md](GRADIFY_PLATFORM.md).
+
 | Folder | Contents | Status in code |
 |---|---|---|
 | `core/` | `sites.js` (every site: name, audience, icon, colour, domain, `built`), `site.js` (which site a page is: `<meta name="gradify-site">` or folder name; `nameHtml`, `accentOf`), `site-pages.js` (each homepage's hero copy), `site-content.js` (the rest of each homepage, by audience "kind"), `site-maps.js` (learning-map subtopics), `subsite-home.js` (draws the homepage sections), `icons.js`, `colour.js` | Real |
@@ -35,8 +37,9 @@ Gradify is a **static site with no build step**: plain HTML pages, ES modules an
 | `app/` | The study app (`main.js`): setup, add notes, deck, study session, Today, Topic, Progress, Plan, Account. Hash routes `#/start`, `#/new`, `#/notes`, `#/deck/:id`, `#/study`, `#/today`, `#/topic/:key`, `#/progress`, `#/plan`, `#/account` | Real |
 | `data/store.js` | `LocalStore` (browser `localStorage`) and `CloudStore` (Supabase) with the same async API; `scopeToSite` limits a store to one site's rows | Real |
 | `notes/` | `engine.js` (calls the Edge Function when signed in, else the browser extractor), `pack.js` (schema, system prompt, card building; shared with the function via `npm run sync`), `studio.js` (Notes Studio: clean notes, mind map, poster, chant, audio quiz), `video3d.js` | Real |
-| `learning/` | `srs.js` (spaced repetition), `mastery.js` (the Mastery Engine: recall, explanation, application, confidence, retention per topic), `topic-match.js` | Real, unit-tested |
+| `learning/` | `concepts.js` (the concept graph: prerequisites, weakness detection, learning paths), `srs.js` (spaced repetition), `mastery.js` (the Mastery Engine: recall, explanation, application, confidence, retention per topic), `topic-match.js` | Real, unit-tested |
 | `course/` | **The course engine** (`course.js`), the notes format (`notes.js`) and the road graphics (`road.js`). See `docs/LEARNING_ENGINE.md` | Real |
+| `subjects/` | Subject adapters (`maths.js`, `science.js`, `programming.js`) and `defineCourse`: what one subject adds to the shared engine. The config spec is `course/spec.js`. See `docs/GRADIFY_PLATFORM.md` | Real, tested across subjects (`tests/cross-site.test.mjs`) |
 | `courses/` | Course content: `physics/` (54 units, 1,308 lessons, all written), `law/` and `nursing/` (this work) | Content |
 | `models/` | The 3D viewer and one model per site (`index.js` maps site → model). NurseGradify uses `body.js` (BodyParts3D anatomy) | Real |
 | `earth/` | The 3D globe and `subject-map.js` (each site's `map.html`) | Real |

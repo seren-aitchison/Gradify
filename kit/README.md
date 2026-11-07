@@ -62,7 +62,9 @@ A site's domain (for example gradifymed.com) can forward to its folder later; se
 
 ## Changing the kit
 
-Edit it here. Everything in `kit/` is shared, so check a change on getgradify.com and on a sub-site before pushing, and bump `VERSION`.
+Edit it here. Everything in `kit/` is shared, so check a change on getgradify.com and on a sub-site before pushing, and bump `VERSION`. `npm test` includes `tests/cross-site.test.mjs`, which runs every course (and three subjects through their adapters) on the engine.
+
+A new subject is a course config plus, if it needs one, a subject adapter in `subjects/`: see [docs/GRADIFY_PLATFORM.md](../docs/GRADIFY_PLATFORM.md) and the generated [docs/SUBJECT_CONFIG_SPEC.md](../docs/SUBJECT_CONFIG_SPEC.md).
 
 The backend isn't in the kit: the database and the Gradify AI function are in `supabase/`. After editing `notes/pack.js`, run `npm run sync` to copy it into the function, then redeploy the function.
 
