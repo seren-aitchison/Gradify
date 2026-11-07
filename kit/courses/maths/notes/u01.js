@@ -428,6 +428,8 @@ X: Find the HCF of 252 and 198 using prime factors, then check with Euclid's alg
 > 252 = 2^{2} × 3^{2} × 7 and 198 = 2 × 3^{2} × 11
 > Common primes to the lowest powers: 2 × 3^{2} = 18
 > Euclid: 252 = 1 × 198 + 54; 198 = 3 × 54 + 36; 54 = 1 × 36 + 18; 36 = 2 × 18 + 0, so HCF = 18
+P: **Investigate with the lab.** Choose the HCF and LCM topic and work through 10 problems. For each pair, find the HCF from the prime factors they share; when the question asks for the LCM, check that HCF × LCM equals the product of the two numbers.
+IX: practice
 K: The HCF takes common primes to their lowest powers; Euclid's algorithm finds it by repeated remainders.
 !: Taking the highest powers for the HCF (that gives the LCM).
 Q: How do you find the HCF from prime factorisations? | Multiply the common primes, each to the lowest power it appears.
@@ -704,6 +706,8 @@ X: The Earth's mass is about 5.97 × 10^{24} kg and the Moon's is about 7.35 × 
 > ≈ 81 times heavier
 - On a calculator, standard form may appear as 4.7E6 or 4.7 × 10^{06}: always write it properly in your answer.
 - To compare numbers in standard form, compare the powers first, then the A values.
+P: **Investigate with the lab.** Choose the Standard form topic and work through 10 problems. Multiply the number parts and add the powers of ten, then adjust so the number part is between 1 and 10. Read the worked method on any you get wrong.
+IX: practice
 K: Write A × 10^{n} with 1 ≤ A < 10; multiply by adding powers, divide by subtracting, and adjust A at the end.
 !: Leaving answers like 15 × 10^{10}, where A isn't between 1 and 10.
 Q: What is 0.00052 in standard form? | 5.2 × 10^{−4}.

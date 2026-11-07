@@ -928,6 +928,8 @@ X: Find the area enclosed by y = x^{2} and y = 2x.
 - The average value of f on [a, b] is (1/(b − a)) ∫_{a}^{b} f(x) dx.
 P: **Investigate with the lab.** Integrate over a region where f is negative and see the sum come out negative: definite integrals measure signed area.
 IX: riemann
+P: **Investigate with the lab.** Choose the Definite integrals topic and work through 10 problems: find an antiderivative, substitute the upper limit, subtract the value at the lower limit. Read the worked method on any you get wrong.
+IX: practice
 K: F(b) − F(a); split at x-intercepts for total area; area between curves is ∫ (top − bottom).
 !: Reporting a negative area, or letting parts above and below the axis cancel.
 Q: What is ∫_{0}^{1} 3x^{2} dx? | 1.
@@ -1253,6 +1255,8 @@ X: Find Σ_{r=1}^{10} (2r^{2} − 3).
 > 770 − 30 = 740
 - Geometric series grow or decay quickly: compound interest and loan repayments are geometric series.
 - The sum of a series can be found from its partial sums S_{n} by u_{n} = S_{n} − S_{n−1}.
+P: **Investigate with the lab.** Choose the Geometric series topic and work through 10 problems. Check that |r| < 1 before using S∞ = a ÷ (1 − r), and read the worked method on any you get wrong.
+IX: practice
 K: Use S_{n} formulas for arithmetic and geometric series, standard sums for Σ r, Σ r^{2}, Σ r^{3}, and telescoping where terms cancel.
 !: Forgetting that Σ_{r=1}^{n} c = nc, not c.
 Q: What is 1 + 2 + … + 50? | 1,275.

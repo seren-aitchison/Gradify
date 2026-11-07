@@ -4,6 +4,9 @@
 import { shell, canvas, slider, panel, challenges, clear, fmt, C } from "../lab.js";
 import { plane, curve, dot, seg, fnPicker, deriv } from "./plot.js";
 
+// the secant gradient through (a, f(a)) and (a + h, f(a + h)): the difference quotient
+export const secant = (f, a, h) => (f(a + h) - f(a)) / h;
+
 export function mount(el, ctx = {}) {
   const $ = shell(el, `<div class="lab-cols"><div><div class="lab-stage"></div></div><div class="lab-ctrl"></div></div><div class="lab-out"></div>`);
   const cv = canvas($(".lab-stage"), { aspect: 0.7, max: 460 }), ctrl = $(".lab-ctrl"), out = panel($(".lab-out"));
@@ -22,7 +25,7 @@ export function mount(el, ctx = {}) {
   flip.addEventListener("click", () => { sign = -sign; s.h = -s.h; run(); });
   function run() {
     const { f, a, h } = s, g = cv.g, W = cv.W, H = cv.H; clear(g, W, H);
-    const fa = f(a), fb = f(a + h), m = deriv(f, a), sec = (fb - fa) / h;
+    const fa = f(a), fb = f(a + h), m = deriv(f, a), sec = secant(f, a, h);
     const ys = [fa, fb].filter(Number.isFinite), mid = ys.length ? ys[0] : 0;
     const P = plane(g, W, H, { x0: a - 4, x1: a + 4, y0: mid - 3.5, y1: mid + 3.5 }); P.draw();
     curve(g, P, f, C.blue);

@@ -98,6 +98,8 @@ X: A fair die is rolled four times. Find the probability of at least one six.
 > P(no six in one roll) = 5/6, and rolls are independent
 > P(no sixes in four rolls) = (5/6)^{4} = 625/1296
 > P(at least one six) = 1 − 625/1296 = 671/1296 ≈ 0.518
+P: **Investigate with the lab.** Choose the Probability topic and work through 10 problems. Some take two counters with the first replaced, so the draws are independent and you multiply the same probability twice; others don't replace it, so the second probability changes. Decide which before you answer.
+IX: practice
 K: Independence means P(A ∩ B) = P(A)P(B); it's different from mutual exclusivity; use 1 − P(none) for "at least one".
 !: Confusing independent with mutually exclusive.
 Q: If A and B are independent with P(A) = 0.3 and P(B) = 0.5, what is P(A ∩ B)? | 0.15.

@@ -187,3 +187,62 @@ test("lab state marks the challenge the learner is working on", () => {
   const s = labState({ challenges: [{ text: "Find √2", done: false, focus: true }, { text: "No bracket", done: true }] });
   assert.match(s, /\[working on it now\] Find √2; \[done\] No bracket/);
 });
+
+// ---------- the two labs tested last: secant to tangent, and probability by simulation ----------
+import { secant as diffQuotient } from "../kit/labs/maths/tangent.js";
+import { EVENTS, draw, POPS, sampleMeans, meanSd, normalPdf } from "../kit/labs/maths/probability.js";
+// run fn with Math.random replaced by a fixed sequence (or generator), then put it back
+const withRandom = (gen, fn) => { const real = Math.random; Math.random = gen; try { return fn(); } finally { Math.random = real; } };
+const seeded = (seed) => () => { seed = (seed * 16807) % 2147483647; return (seed - 0.5) / 2147483647; };
+
+test("secant to tangent: the difference quotient tends to the derivative, and |x| has no derivative at 0", () => {
+  const sq = (x) => x * x;
+  for (const h of [1, 0.5, 0.1, -0.1, 0.001]) near(diffQuotient(sq, 1, h), 2 + h, 1e-9);     // (1 + h)² − 1 over h is exactly 2 + h
+  near(diffQuotient(Math.sin, 0.7, 1e-6), Math.cos(0.7), 1e-5);
+  // first order: halving h halves the error for a function with a non-zero second derivative
+  const e = (h) => Math.abs(diffQuotient(Math.exp, 0, h) - 1); near(e(0.01) / e(0.005), 2, 0.02);
+  near(diffQuotient(Math.abs, 0, 1e-4), 1); near(diffQuotient(Math.abs, 0, -1e-4), -1);           // one-sided limits disagree
+});
+
+test("probability lab: each event's stated probability matches the outcomes it counts", () => {
+  // every face of a die is a value of Math.random in [k/6, (k+1)/6); try each one (and each pair for two dice)
+  const faces = [0, 1, 2, 3, 4, 5].map((k) => (k + 0.5) / 6);
+  const p1 = (ev) => faces.filter((u) => withRandom(() => u, draw[ev])).length / 6;
+  near(p1("six"), EVENTS.six.p); near(p1("even"), EVENTS.even.p);
+  let hits = 0; for (const a of faces) for (const b of faces) { const seq = [a, b]; let i = 0; hits += withRandom(() => seq[i++], draw.two) ? 1 : 0; }
+  near(hits / 36, EVENTS.two.p);
+  near([0.25, 0.75].filter((u) => withRandom(() => u, draw.coin)).length / 2, EVENTS.coin.p);
+});
+
+test("probability lab: each population's stated mean and SD match its sampler", () => {
+  // integrate over u in (0, 1), the sampler's input, by the midpoint rule
+  const N = 200000, moments = (r) => { let s = 0, s2 = 0; for (let i = 0; i < N; i++) { const x = withRandom(() => (i + 0.5) / N, r); s += x; s2 += x * x; } const mu = s / N; return { mu, sd: Math.sqrt(s2 / N - mu * mu) }; };
+  for (const [k, tol] of [["uniform", 1e-6], ["die", 1e-4], ["exp", 2e-3]]) {
+    const { mu, sd } = moments(POPS[k].r); near(mu, POPS[k].mean, tol); near(sd, POPS[k].sd, tol * 5);
+  }
+});
+
+test("central limit theorem: sample means centre on μ with spread σ/√n, and the normal curve is a density", () => {
+  withRandom(seeded(20261107), () => {
+    for (const [k, n] of [["exp", 30], ["die", 10], ["uniform", 4]]) {
+      const Q = POPS[k], { mu, sd } = meanSd(sampleMeans(Q.r, n, 4000)), se = Q.sd / Math.sqrt(n);
+      near(mu, Q.mean, 4 * se / Math.sqrt(4000) + 1e-3); near(sd / se, 1, 0.06);
+    }
+  });
+  // the density integrates to 1 and peaks at 1/(σ√2π)
+  let area = 0; for (let x = -8; x < 8; x += 0.001) area += normalPdf(x + 0.0005, 0.3, 1.2) * 0.001;
+  near(area, 1, 1e-6); near(normalPdf(0.3, 0.3, 1.2), 1 / (1.2 * Math.sqrt(2 * Math.PI)), 1e-12);
+  near(meanSd([2, 4, 4, 4, 5, 5, 7, 9]).sd, Math.sqrt(32 / 7), 1e-12);
+});
+
+test("generated practice: each problem type is evidence for the lesson that teaches it", async () => {
+  const { EVIDENCE } = await import("../kit/courses/maths/evidence.js");
+  const want = { fractions: /fraction/i, percentChange: /percentage change/i, reversePercent: /reverse percent/i, standardForm: /scientific notation|standard form/i, indices: /exponent|power|indices/i,
+    hcfLcm: /common divisor|common multiple|hcf|lcm/i, linear: /linear equation/i, quadratic: /quadratic equation/i, simultaneous: /simultaneous equation/i, nthTerm: /sequence/i,
+    pythagoras: /pythag/i, trigSide: /trigonometr/i, compound: /compound interest/i, probability: /independent|conditional|probability/i, gradient: /derivative|differentiation/i,
+    definite: /definite integral/i, logs: /logarithm/i, geometric: /series/i };
+  for (const [kind, re] of Object.entries(want)) {
+    const id = EVIDENCE.practice[kind]; assert.ok(id in IDS, `${kind}: ${id}`);
+    assert.match(IDS[id], re, `practice "${kind}" is evidence for "${IDS[id]}"`);
+  }
+});
