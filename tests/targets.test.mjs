@@ -58,3 +58,14 @@ test("practice set: wrong and unseen questions first, easier ones where the lear
   assert.equal(practiceSet([{ lesson: "none", value: 0.1 }], items, []).length, 0);
   assert.equal(practiceSet([{ lesson: "L1", value: 0.1 }, { lesson: "L2", value: 0.1 }], items, [], { per: 5, max: 6 }).length, 6);
 });
+
+test("the cross-course summary and Do next include measured weak spots, foundations first", async () => {
+  const { courseSummary, recommend } = await import("../kit/learning/learner-data.js");
+  const key = graph.lessonNode.get("u07-29"), base = graph.nodes.get(ancestors(graph, key, { maxDepth: 1 })[0].key).lessons[0];
+  const S = { attempts: [ans("u07-29", 0), ans("u07-29", 0), ans("u07-29", 1), ans(base, 0), ans(base, 0), ans(base, 1)] };
+  const c = courseSummary(maths, S, { now });
+  assert.equal(c.weak[0].lesson, base); assert.equal(c.weak[0].for, "Definite Integrals");
+  const r = recommend([c]).find((x) => /weak spot/.test(x.label));
+  assert.ok(r && r.href.endsWith("#/review/weak") && /underpins Definite Integrals/.test(r.why), JSON.stringify(r));
+  assert.deepEqual(courseSummary(maths, {}, { now }).weak, []);
+});

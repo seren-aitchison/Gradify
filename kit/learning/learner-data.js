@@ -7,6 +7,8 @@
 //   profile   the shared learner profile (kit/data/profile.js)
 // The pure functions take that data as arguments, so Node tests them; loadLearner() gathers it in a browser.
 import { evidenceFromAttempts, sixProfiles, revisionQueue, topicProfiles } from "./mastery.js";
+import { weaknessTargets } from "./targets.js";
+import { conceptGraph } from "./concepts.js";
 import { isDue } from "./srs.js";
 import { paceFor } from "./pace.js";
 
@@ -59,6 +61,9 @@ export function courseSummary(cfg, S = {}, { now = Date.now(), profile = null } 
   const ev = evidenceFromAttempts(attempts, { levels: cfg.levels || null, exploration: cfg.exploration || null });
   const { all, groups } = sixProfiles(ev, { by: (e) => e.unit, now });
   const revisit = revisionQueue(attempts, { now, limit: 1000 });
+  // measured weak spots (kit/learning/targets.js), foundations first where the course has a concept graph
+  const weak = attempts.length ? weaknessTargets(attempts, { exploration: cfg.exploration || null, levels: cfg.levels || null, graph: cfg.concepts ? conceptGraph(cfg.units, cfg.concepts) : null, now, limit: 5 }) : [];
+  const titleOf = (id) => lessons.find((l) => l.id === id)?.title || id;
   const dueCards = Object.values(S.cards || {}).filter((st) => st?.due_at && isDue(st, now)).length;
   const times = [...(S.log || []).map((r) => r.t), ...attempts.map((a) => Date.parse(a.at)), ...Object.values(S.done || {}).map(Number)].filter(Number.isFinite);
   const lastAt = times.length ? Math.max(...times) : null;
@@ -75,6 +80,7 @@ export function courseSummary(cfg, S = {}, { now = Date.now(), profile = null } 
   }).filter((s) => s.done || s.profile);
   return { slug: cfg.slug, site: cfg.site, name: cfg.name, href: COURSES[cfg.slug] || null, total: lessons.length, written: lessons.filter((l) => written(l.unit)).length,
     done, remaining, lastAt, six: all, schools, revisit: revisit.length, dueCards, pace, examDate, next: next && { id: next.id, title: next.title },
+    weak: weak.map((t) => ({ lesson: t.lesson, title: titleOf(t.lesson), kind: t.kind, why: t.why, for: t.for ? titleOf(t.for) : null })),
     started: Boolean(done || attempts.length || Object.keys(S.cards || {}).length) };
 }
 
@@ -103,6 +109,7 @@ export function recommend(courses = [], decks = [], { limit = 6 } = {}) {
     const sureWrong = c.six.calibration?.sureWrong || 0;
     if (sureWrong) out.push({ p: 0.95, site: c.site, label: `Check ${sureWrong} confident ${sureWrong === 1 ? "mistake" : "mistakes"} in ${c.name}`, why: "You were sure about these and got them wrong. Fixing a misunderstanding early stops it spreading.", href: at("#/me") });
     if (c.revisit) out.push({ p: 0.8 + Math.min(0.1, c.revisit / 200), site: c.site, label: `Revisit ${c.revisit} ${c.name} ${c.revisit === 1 ? "question" : "questions"}`, why: "Due for spaced retrieval: answering them now, as they start to fade, is what makes them last.", href: at("#/review/questions") });
+    if (c.weak?.length) { const t = c.weak[0]; out.push({ p: t.kind === "foundation" ? 0.78 : 0.74, site: c.site, label: `Target ${c.weak.length} weak ${c.weak.length === 1 ? "spot" : "spots"} in ${c.name}`, why: t.kind === "foundation" && t.for ? `Start with ${t.title}: it underpins ${t.for}, and your answers show both are weak.` : `${t.title}: ${t.why}`, href: at("#/review/weak") }); }
     if (c.dueCards) out.push({ p: 0.7 + Math.min(0.1, c.dueCards / 300), site: c.site, label: `Review ${c.dueCards} ${c.name} ${c.dueCards === 1 ? "flashcard" : "flashcards"}`, why: "These cards are due today.", href: at("#/review") });
     if (c.next) out.push({ p: 0.5 + ({ behind: 0.3, tight: 0.15 }[c.pace.status] || 0), site: c.site, label: `Continue ${c.name}: ${c.next.title}`, why: c.pace.status === "behind" || c.pace.status === "tight" ? `Your exam pace is ${c.pace.status}: about ${Math.round(c.pace.needPerDay * 10) / 10} lessons a day are needed.` : `${c.done} of ${c.total} lessons done.`, href: at(`#/lesson/${c.next.id}`) });
   }
