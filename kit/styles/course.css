@@ -586,6 +586,8 @@ a.co-feat:hover { border-color: var(--line-strong); background: rgba(255, 255, 2
 .co-tmodes button { font: 500 13px var(--sans); color: var(--mute); background: transparent; border: 1px solid var(--line); border-radius: 99px; padding: 6px 12px; cursor: pointer; }
 .co-tmodes button[aria-selected="true"] { color: var(--fg); background: rgba(255, 255, 255, .08); border-color: var(--line-strong); }
 .co-tintro { color: var(--mute); font-size: 14px; margin: 0 0 10px; }
+.co-tlab { margin: 0 0 10px; padding: 6px 10px; border-radius: 8px; font-size: 13px; color: var(--fg); background: rgba(16, 185, 129, .12); border: 1px solid rgba(16, 185, 129, .3); }
+.co-tlab[hidden] { display: none; }
 .co-tin { width: 100%; padding: 9px 12px; border-radius: 11px; background: #141417; color: var(--fg); border: 1px solid var(--line-strong); font: 14px var(--sans); margin-bottom: 10px; box-sizing: border-box; }
 .co-chat { display: flex; flex-direction: column; gap: 8px; margin: 0 0 10px; }
 .co-msg { padding: 10px 12px; border-radius: 12px; background: rgba(255, 255, 255, .04); font-size: 14px; }
