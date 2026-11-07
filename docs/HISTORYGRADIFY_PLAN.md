@@ -22,7 +22,8 @@ It was checked before starting: HistoryGradify wasn't in the production tracker 
 | 2. Medieval Britain | 18 | ✅ standard 2 | 90 |
 | 7. The First World War | 21 | ✅ standard 2 | 105 |
 | 9. The Rise of Fascism and Nazism | 20 | ✅ standard 2 | 100 |
-| 3–6, 8, 10–18 | 226 | not yet ("notes still being written" on the path) | |
+| 10. The Second World War | 19 | ✅ standard 2 | 95 |
+| 3–6, 8, 11–18 | 207 | not yet ("notes still being written" on the path) | |
 
 Every written lesson has objectives, sections, a worked example of historical analysis, evidence-status lines (established or contested), key terms, a summary, two real sources, two flashcards and at least five questions across Foundation, Application and Evaluation, including a rubric-marked extended answer.
 
@@ -40,5 +41,5 @@ Each challenge counts as mastery evidence for its lesson (`evidence.js`). The Jo
 
 ## Next
 
-1. Schools 7, 9 and 10 (the rest of the GCSE core), then the rest in pathway order.
+1. The GCSE core (Schools 1, 2, 7, 9 and 10) is written. Next, in pathway order: Schools 11 (Cold War) and 12 (Britain since 1945) complete the GCSE pathway; then 3, 4 and 8 for the A level pathway.
 2. More labs, in priority order: an interactive timeline, cause-and-consequence mapping, interpretation comparison, and maps of changing borders and campaigns.
