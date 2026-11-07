@@ -19,6 +19,7 @@ import { evidenceFromAttempts, sixProfiles, revisionQueue, labPractice, SIX } fr
 import { explorationIds, evidenceClass } from "../learning/evidence-class.js";
 import { sixHtml, calibrationHtml } from "../learning/mastery-view.js";
 import { conceptGraph, prerequisitesOfLesson, weakPrerequisites } from "../learning/concepts.js";
+import { checkCourse } from "./spec.js";
 import { learnerOf, needsSetup, applyPrefs } from "../data/profile.js";
 import { paceFor } from "../learning/pace.js";
 import { trackView, track } from "../core/analytics.js";
@@ -108,6 +109,8 @@ export function mountCourse(root, cfg) {
   const byId = Object.fromEntries(lessons.map((l) => [l.id, l]));
   // the concept graph (kit/learning/concepts.js): what each module builds on, when the course provides cfg.concepts
   const graph = cfg.concepts ? conceptGraph(units, cfg.concepts) : null;
+  // the subject config spec (kit/course/spec.js): a config that doesn't fit is reported, and the course still runs
+  { const problems = checkCourse(cfg); if (problems.length) console.warn(`${cfg.site} course config:`, problems); }
   const trackOf = (u) => cfg.tracks.find((t) => t.units.includes(u.n)) || cfg.tracks[0];
   let S = (() => { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { return null; } })() || {};
   S = { done: {}, chests: {}, quiz: {}, solved: {}, cards: {}, log: [], goal: 30, path: null, open: [], closed: [], weekly: {}, saved: {}, mocks: {}, attempts: [], ...S };

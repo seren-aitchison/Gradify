@@ -11,10 +11,28 @@
 //   firstTry, box, meta) with meta = { response, confidence, ms, attempt }.
 import { esc, inline } from "../core/text.js";
 import { parseQuestion, normalize } from "./model.js";
-import { handlerFor, LABELS } from "./types.js";
+import { handlerFor, LABELS, TYPES as HANDLERS } from "./types.js";
+import { TAGS, rebuildTags } from "./model.js";
 
 export { parseQuestion, normalize };
 export const TYPES = Object.fromEntries(Object.entries(LABELS).map(([k, label]) => [k, { label, auto: k !== "short" }]));
+
+/**
+ * Add a question type from a subject adapter (kit/subjects/). The type then works everywhere questions do: notes
+ * lines with its tag are parsed into lessons, and quizzes, exams, the problem bank and attempts render and mark it.
+ *   registerQuestionType({ tag: "OUT", type: "output", label: "Predict the output", handler: { parse, render, wire, mark, feedback, paint, answer, restore } })
+ * Registering the same type again with the same handler is a no-op; a clash with another type is an error.
+ */
+const REGISTERED = new Map();
+export function registerQuestionType({ tag, type, label, handler, auto = true }) {
+  if (!/^[A-Z]{2,8}$/.test(tag || "")) throw new Error(`question tag "${tag}" should be 2–8 capital letters`);
+  if (!/^[a-z][a-z0-9-]*$/.test(type || "") || !label) throw new Error("a question type needs a lower-case type name and a label");
+  for (const f of ["parse", "render", "wire", "mark", "feedback", "paint", "answer", "restore"]) if (typeof handler?.[f] !== "function") throw new Error(`question type ${type} needs handler.${f}()`);
+  if (REGISTERED.get(type) === handler && TAGS[tag] === type) return;
+  if (TYPES[type] || HANDLERS[type] || TAGS[tag]) throw new Error(`question type ${type} or tag ${tag} is already registered`);
+  REGISTERED.set(type, handler); HANDLERS[type] = { label, auto, ...handler }; LABELS[type] = label; TYPES[type] = { label, auto };
+  TAGS[tag] = type; rebuildTags();
+}
 const DEFAULT_LEVELS = ["Easy", "Medium", "Hard"];
 
 export function renderQuestion(Q, key, { mode = "practice", levels = DEFAULT_LEVELS, confidence = false } = {}) {

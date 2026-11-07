@@ -35,6 +35,7 @@
 export { esc, inline, norm } from "../core/text.js";
 import { esc, inline } from "../core/text.js";
 import { parseQuestion } from "../assess/questions.js";
+import { TAG_LINE } from "../assess/model.js";
 
 export function parseNotes(text) {
   const lessons = [];
@@ -46,7 +47,8 @@ export function parseNotes(text) {
     if (!L) continue;
     if (line.startsWith("> ") && ex) { ex.steps.push(line.slice(2)); continue; }
     ex = null;
-    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|EV|LV|CASE|LAW|DRUG|(?:M|TF|MS|SEQ|MATCH|SA|NUM)[123]?(?:#[a-z0-9-]+)?(?:@[\d,]+)?):\s*(.*)$/);
+    // block tags, then question tags (TAG_LINE, which includes any type a subject adapter has registered)
+    const m = line.match(/^(S|H|P|E|X|K|!|Q|O|PRE|T|SUM|SAFE|SRC|READ|IX|EV|LV|CASE|LAW|DRUG):\s*(.*)$/) || line.match(TAG_LINE);
     const [tag, body] = m ? [m[1], m[2]] : line.startsWith("- ") ? ["-", line.slice(2)] : ["P", line];
     const last = L.blocks.at(-1);
     if (tag === "S") L.lead += (L.lead ? " " : "") + body;

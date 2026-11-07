@@ -16,8 +16,16 @@
 // SEQ (ordering), MATCH (matching), SA (short answer), NUM (numerical answer). See types.js for each body.
 import { TYPES } from "./types.js";
 
-export const TAG_RE = /^(M|TF|MS|SEQ|MATCH|SA|NUM)([123]?)(?:#([a-z0-9-]+))?(?:@([\d,]+))?$/;
-export const TAG_LINE = /^((?:M|TF|MS|SEQ|MATCH|SA|NUM)[123]?(?:#[a-z0-9-]+)?(?:@[\d,]+)?):\s*(.*)$/;
+// notes tag → question type. Subject adapters add their own with registerQuestionType (questions.js), and the two
+// patterns below are rebuilt to recognise the new tag.
+export const TAGS = { M: "choice", TF: "tf", MS: "multi", SEQ: "order", MATCH: "match", SA: "short", NUM: "num" };
+export let TAG_RE, TAG_LINE;
+export function rebuildTags() {
+  const alt = Object.keys(TAGS).sort((a, b) => b.length - a.length).join("|");
+  TAG_RE = new RegExp(`^(${alt})([123]?)(?:#([a-z0-9-]+))?(?:@([\\d,]+))?$`);
+  TAG_LINE = new RegExp(`^((?:${alt})[123]?(?:#[a-z0-9-]+)?(?:@[\\d,]+)?):\\s*(.*)$`);
+}
+rebuildTags();
 
 // split "text :: why" into an option
 export const option = (raw, correct) => { const [text, why = ""] = raw.split(" :: ").map((x) => x.trim()); return { text, correct, why }; };
@@ -26,7 +34,7 @@ export const splitList = (s) => s.split(";").map((x) => x.trim()).filter(Boolean
 
 export function parseQuestion(tag, body) {
   const m = tag.match(TAG_RE); if (!m) return null;
-  const kind = { M: "choice", TF: "tf", MS: "multi", SEQ: "order", MATCH: "match", SA: "short", NUM: "num" }[m[1]];
+  const kind = TAGS[m[1]];
   const base = { d: Number(m[2] || 2), id: m[3] || null, objectives: m[4] ? m[4].split(",").map(Number) : [] };
   const parsed = TYPES[kind]?.parse(body);
   return parsed ? { ...parsed, ...base } : null;

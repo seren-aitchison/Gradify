@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Programming example course</title>
+  <!-- The example TechGradify course (course.js here) mounted by the shared engine, exactly as a live site mounts its
+       course. Serve the repository root and open /tests/fixtures/programming/. Not published. -->
+  <meta name="gradify-site" content="TechGradify">
+  <link rel="stylesheet" href="../../../kit/styles/base.css">
+  <link rel="stylesheet" href="../../../kit/styles/components.css">
+  <link rel="stylesheet" href="../../../kit/styles/subsite.css">
+  <link rel="stylesheet" href="../../../kit/styles/course.css">
+  <link rel="stylesheet" href="../../../kit/subjects/programming.css">
+  <script type="module">
+    import { mountCourse } from "../../../kit/course/course.js";
+    import course from "./course.js";
+    mountCourse(document.getElementById("course"), course);
+  </script>
+</head>
+<body class="sub-page"><div class="wrap"><main id="course"></main></div></body>
+</html>
