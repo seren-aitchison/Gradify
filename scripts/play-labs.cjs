@@ -14,6 +14,8 @@ const { chromium } = require("playwright");
 
 const args = Object.fromEntries(process.argv.slice(2).reduce((a, x, i, all) => (x.startsWith("--") ? [...a, [x.slice(2), all[i + 1] && !all[i + 1].startsWith("--") ? all[i + 1] : true]] : a), []));
 const PAGES = { maths: "mathgradify/course/", physics: "scigradify/physics/", biology: "scigradify/biology/", chemistry: "scigradify/chemistry/", law: "lawgradify/course/", nursing: "nursegradify/course/", pharmacy: "pharmagradify/course/", psychology: "psychgradify/course/", sociology: "socgradify/course/" };
+// every other course: its page as listed in kit/learning/learner-data.js COURSES
+for (const [, k, v] of fs.readFileSync(path.resolve(__dirname, "..", "kit/learning/learner-data.js"), "utf8").matchAll(/\b([a-z]+): "\/([a-z]+\/[a-z]+\/)"/g)) PAGES[k] ??= v;
 const TYPES = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png", ".webp": "image/webp", ".webmanifest": "application/manifest+json" };
 function serve(dir) {
   const server = http.createServer((req, res) => {

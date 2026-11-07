@@ -6,7 +6,7 @@
 // question explained and with enough options; no duplicate questions; no answer leaked into its question.
 // Warnings are reported for review (they need a human or AI reviewer's judgement, not a rule).
 // The stages after "tested" come from kit/courses/<slug>/qa.js and are never set by this script.
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
 import { parseNotes, norm } from "../kit/course/notes.js";
 import { updateRegistry } from "./curriculum-registry.mjs";
 
@@ -25,6 +25,15 @@ const COURSES = [
   { slug: "sociology", name: "SocGradify", expert: "a university sociology lecturer", minWrong: 3, rules: socRules, srcRegister: true,
     registerNote: "taken from the lessons' SRC: lines, for checking against the original publication or data release (publisher, journal, ONS, UK Data Service, World Bank, OECD, UN)." },
 ];
+
+// courses made with scripts/new-course.mjs (any course.js that names its `page`), checked to the social-science
+// standard: evidence status on every lesson and questions at all three levels
+for (const slug of (await readdir(new URL("../kit/courses/", import.meta.url))).sort()) {
+  if (COURSES.some((c) => c.slug === slug)) continue;
+  const c = (await import(`../kit/courses/${slug}/course.js`)).default;
+  if (c.page) COURSES.push({ slug, name: c.site, expert: c.expert, minWrong: 3, rules: (unit, L) => socialRules(unit, L), srcRegister: true,
+    registerNote: "taken from the lessons' SRC: lines, for checking against the original publication." });
+}
 
 // ---------- subject rules: warnings, not hard failures ----------
 const CONDITION_HEADINGS = ["definition", "epidemiology", "aetiology", "pathophysiology", "signs", "investigations", "treatment", "nursing assessment", "nursing management", "monitoring", "complications", "education", "escalation"];
