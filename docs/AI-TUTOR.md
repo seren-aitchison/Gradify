@@ -30,6 +30,10 @@ Each subject's safety rules come first in every prompt:
 - **Nursing and Pharmacy:** education, not clinical advice.
 - **Every other subject:** study material.
 
+### Labs
+
+`explain` and `socratic` can carry `lab: { title, state }`: what an interactive lab on the page shows right now. `kit/course/lab-state.js` reads it from the lab's controls, readout, tables and challenges, capped at 2,000 characters. The prompt marks it as data, not instructions, and asks the tutor to explain what the learner sees using those values. The panel says when the tutor can see a lab. On a lab page, the panel offers only Ask and Talk it through, grounded in the first of the lab's lessons that has notes. On a lesson page, the tutor is told about the lab the learner last touched.
+
 ## What's checked on the server
 
 `checkReply`, in the function, runs before anything is returned:

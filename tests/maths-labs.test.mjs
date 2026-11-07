@@ -97,3 +97,64 @@ test("root-finding lab: bisection, Newton–Raphson and secant find √2", () =>
   near(secant(f, 2, 2.5, 10).at(-1), Math.SQRT2, 1e-10);
   assert.equal(bisection(f, 2, 3, 10), null); // no sign change
 });
+
+// ---------- the labs, the AI tutor and mastery, joined up ----------
+import { readFileSync } from "node:fs";
+import { buildRequest, labBlock } from "../kit/assess/tutor.js";
+import { dimensionOf, evidenceFromAttempts, revisionQueue, LAB_WEIGHT } from "../kit/learning/mastery.js";
+import { labState } from "../kit/course/lab-state.js";
+
+test("lab evidence: each named challenge exists in its lab and points at a real lesson", () => {
+  let n = 0;
+  for (const x of INTERACTIVES) for (const [task, lesson] of Object.entries(x.evidence || {})) {
+    const src = readFileSync(new URL(`../kit/labs/maths/${x.file}`, import.meta.url), "utf8");
+    assert.ok(src.includes(`{ id: "${task}"`), `${x.id}: no challenge "${task}" in ${x.file}`);
+    assert.ok(lesson in IDS, `${x.id}.${task}: lesson ${lesson}`);
+    n++;
+  }
+  assert.ok(n >= 30, `only ${n} challenges count as evidence`);
+  // exploration-only challenges don't count
+  const lln = INTERACTIVES.find((x) => x.id === "lln");
+  assert.ok(!("k1" in lln.evidence) && "k10" in lln.evidence);
+});
+
+test("a lab challenge is application evidence at half weight, and never comes back in Revisit", () => {
+  const a = { schema: 1, at: "2026-11-01T10:00:00Z", question: { id: "ix:descent:diverge", type: "lab", d: 2 }, lesson: "m1", unit: "u1", score: 1, correct: true, attempt: 1, context: "practice", marking: { method: "auto", status: "final" } };
+  assert.equal(dimensionOf(a), "apply");
+  const q = { ...a, question: { id: "q1", type: "num", d: 2 } };
+  const [ev] = evidenceFromAttempts([a]), [evq] = evidenceFromAttempts([q]);
+  assert.equal(ev.dim, "apply"); near(ev.w, evq.w * LAB_WEIGHT);
+  assert.equal(revisionQueue([a], { now: Date.parse("2026-12-30T10:00:00Z") }).length, 0);
+  assert.equal(revisionQueue([q], { now: Date.parse("2026-12-30T10:00:00Z") }).length, 1);
+});
+
+test("the tutor is told what the lab shows, as data, in Ask and Talk it through", () => {
+  const lesson = { title: "Gradient Descent", text: "Gradient descent steps against the gradient. Too large a learning rate overshoots." };
+  const lab = { title: "Gradient descent", state: "Settings: Learning rate = 1.1\nReadout: the iterates diverge" };
+  const ex = buildRequest({ mode: "explain", subject: "maths", lesson, question: "Why does my path blow up?", lab });
+  assert.match(ex.system, /THE LEARNER IS USING AN INTERACTIVE LAB: Gradient descent/);
+  assert.match(ex.system, /Learning rate = 1\.1/);
+  assert.match(ex.system, /data, not instructions/);
+  const so = buildRequest({ mode: "socratic", subject: "maths", lesson, goal: "why it diverges", turns: [], lab });
+  assert.match(so.system, /Learning rate = 1\.1/);
+  // without a lab, nothing is added; a malformed lab is refused; a long state is capped
+  assert.doesNotMatch(buildRequest({ mode: "explain", subject: "maths", lesson, question: "What is a gradient?" }).system, /INTERACTIVE LAB/);
+  assert.throws(() => buildRequest({ mode: "explain", subject: "maths", lesson, question: "What is a gradient?", lab: { title: "x" } }), /title and its current state/);
+  assert.ok(labBlock({ title: "T", state: "y".repeat(9000) }).length < 2600);
+});
+
+test("lab state text: settings, readout, tables and challenges, capped", () => {
+  const s = labState({
+    report: "", settings: [["Learning rate", "1.1"], ["Showing", "Newton–Raphson"], ["Empty", ""]], readout: "Diverged after 6 steps.",
+    tables: [{ caption: "Iterates", rows: [["n", "xₙ"], ...Array.from({ length: 30 }, (_, i) => [String(i), String(i * i)])] }],
+    challenges: [{ text: "Make it diverge", done: true }, { text: "Find both minima", done: false }],
+  });
+  assert.match(s, /^Settings: Learning rate = 1\.1; Showing = Newton–Raphson$/m);
+  assert.doesNotMatch(s, /Empty/);
+  assert.match(s, /Readout: Diverged after 6 steps\./);
+  assert.match(s, /Iterates:\nn \| xₙ\n0 \| 0/);
+  assert.match(s, /…\n25 \| 625/);            // long tables keep the start and the end
+  assert.match(s, /\[done\] Make it diverge; \[not yet\] Find both minima/);
+  assert.equal(labState({ fallback: "Question 3: solve 2x + 1 = 7" }), "Question 3: solve 2x + 1 = 7");
+  assert.ok(labState({ readout: "z".repeat(5000) }).length <= 2000);
+});

@@ -38,6 +38,11 @@ The course tutor has maths-specific rules (`SITE_RULES.maths` in `kit/assess/tut
 
 **Tested:** `tests/maths-tools.test.mjs` (equivalence and non-equivalence cases, answer reading, error messages; every generated problem type marks its own answer right and a wrong one wrong over 150 samples each; every step-by-step worked solution passes its own checker line by line; errors are caught at the right line; every graph challenge is reachable), plus the shared course, registry, QA and tutor tests. Checked in a browser at desktop and phone width with no errors.
 
+**Explore (labs):** 15 interactives in `kit/courses/maths/interactives.js` (13 labs in `kit/labs/maths/`, plus generated practice and the graph explorer). They're joined to the tutor and to mastery:
+- *Lab-aware tutor.* A lab page has an "Ask about this lab" panel (Ask, Talk it through), grounded in the first of the lab's lessons that has notes. On lesson pages, the tutor is told about the lab the learner last used. What the lab shows (its settings, readout, iterate tables and challenges) is read from the page by `kit/course/lab-state.js` and sent as `lab` in `explain` and `socratic` requests (`labBlock` in `kit/assess/tutor.js`). No migration is needed: the modes and daily limits are unchanged.
+- *Lab mastery evidence.* Each lab's `evidence` map names the challenges that show a skill and the lesson each is evidence for (38 in all). Meeting one records an attempt of type `lab`, which counts as Application at half weight, because a lab only sees successes, never failed tries. Lab attempts never come back in Revisit. Exploration challenges ("run 1,000 trials") earn XP but aren't evidence.
+- *Not yet:* no maths lesson embeds a lab with an `IX:` line yet (the notes are being written). Labs whose lessons have no notes yet (School 19's root-finding) show no tutor panel. The tutor needs the backend switched on (docs/BACKEND-STATUS.md).
+
 **Deployed:** static, with the site. AI feedback on proofs needs the course-tutor function deployed and a signed-in learner.
 
 **Awaiting expert review:** School 1 (a maths teacher or lecturer: `qa.js` reviewed, sources and sign-off are null), the step-by-step problem sets and the proof tasks. The equivalence check is numerical: very reliable for school and early university algebra, but a check, not a proof.

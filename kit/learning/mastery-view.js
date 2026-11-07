@@ -10,7 +10,7 @@ export const HOW = {
   recognition: "Comes from multiple-choice, true-or-false, matching and ordering questions.",
   recall: "Comes from flashcards and typed answers.",
   explain: "Comes from short written answers and Explain cards.",
-  apply: "Comes from calculations, hard case questions and Apply cards.",
+  apply: "Comes from calculations, hard case questions, Apply cards and lab challenges (which count at half weight).",
   transfer: "Comes from first tries at medium or hard questions in mixed exams and reviews, away from the lesson.",
   retention: "Comes from answering a question again a day or more after you last saw it.",
 };

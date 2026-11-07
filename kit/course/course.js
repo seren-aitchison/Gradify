@@ -26,6 +26,7 @@ import { mountRevalidation } from "./revalidation.js";
 import { scoreFeedback } from "../assess/tutor.js";
 import { feedbackHtml, paras } from "../assess/tutor-view.js";
 import { mountTutorPanel, directorHtml } from "./tutor-panel.js";
+import { readLab, labState } from "./lab-state.js";
 import { SUPABASE_URL } from "../../gradify.config.js";
 import { buildExam, runExam, FORMATS } from "../assess/exam.js";
 
@@ -570,7 +571,7 @@ export function mountCourse(root, cfg) {
       ask: askTutor, lesson: { id, title: l.title, text: lessonText(N) }, note: cfg.tutor || TUTOR_NOTE,
       focus: sixProfiles(evidenceFromAttempts((S.attempts || []).filter((a) => a.lesson === id), { levels: cfg.levels || null })).all.weakest || "apply",
       candidates: () => connectCandidates(l), unavailable: (what) => signinLine(what, ""),
-      link: (lid) => `#/lesson/${lid}`, titleOf: (lid) => byId[lid]?.title || lid,
+      link: (lid) => `#/lesson/${lid}`, titleOf: (lid) => byId[lid]?.title || lid, lab: () => labFor(labLast),
     });
     main.querySelector(".co-complete").addEventListener("click", async (e) => {
       if (S.done[id]) return;
@@ -1025,15 +1026,36 @@ export function mountCourse(root, cfg) {
   // ---------- practice: subject interactives (kit/interactive/) ----------
   // ---------- practice / lab: subject interactives (kit/interactive/, kit/labs/) ----------
   // ctx for a mounted interactive: onComplete({ score }) passes the whole interactive (+quiz XP, once);
-  // complete(task, label) records one challenge inside it (+problem XP, once); solved(task) reads that back
+  // complete(task, label) records one challenge inside it (+problem XP, once); solved(task) reads that back.
+  // A challenge named in x.evidence ({ task: lesson id }) is also an attempt record for that lesson, so it counts in
+  // mastery as application (kit/learning/mastery.js, question type "lab"). Exploration tasks aren't named, so they don't.
+  // The AI tutor on the page is told what the lab last used shows now (kit/course/lab-state.js reads it from the lab's
+  // controls and readout); report(text) lets a lab add details its page doesn't show.
+  const labNow = new Map(); let labLast = null;
   const ixCtx = (x) => ({ ...x,
     onComplete: (r) => { const k = `ix:${x.id}`; if (!S.solved[k] && r?.score >= 0.7) { S.solved[k] = Date.now(); save(); award(XP.quiz, "practice", x.id, `${cfg.name}: ${x.title}`); } },
-    complete: (task, label) => { const k = `ix:${x.id}:${task}`; if (!S.solved[k]) { S.solved[k] = Date.now(); save(); award(XP.problem, "practice", k, `${cfg.name}: ${x.title}${label ? ` (${label})` : ""}`); } },
-    solved: (task) => Boolean(S.solved[`ix:${x.id}:${task}`]) });
+    complete: (task, label) => {
+      const k = `ix:${x.id}:${task}`; if (S.solved[k]) return;
+      S.solved[k] = Date.now(); save(); award(XP.problem, "practice", k, `${cfg.name}: ${x.title}${label ? ` (${label})` : ""}`);
+      const l = byId[x.evidence?.[task]];
+      if (l) record({ Q: { type: "lab", d: 2, objectives: [] }, key: k, v: null, l }, "practice", x.id, { score: 1, correct: true, method: "auto", status: "final" }, { response: label || task });
+    },
+    solved: (task) => Boolean(S.solved[`ix:${x.id}:${task}`]),
+    report: (text) => { labNow.set(x.id, String(text || "").slice(0, 800)); } });
+  const labFor = (id) => {
+    const el = id && main.querySelector(`.co-lab[data-ix="${id}"] .co-labstage`);
+    if (!el || !ixById[id]) return null;
+    const state = labState({ report: labNow.get(id), ...readLab(el) });
+    return state ? { title: ixById[id].title, state } : null;
+  };
   const mounted = new Set();
-  const unmountIx = () => { for (const stop of mounted) { try { stop(); } catch { /* already gone */ } } mounted.clear(); };
+  const unmountIx = () => { for (const stop of mounted) { try { stop(); } catch { /* already gone */ } } mounted.clear(); labNow.clear(); labLast = null; };
   async function mountIx(x, el) {
-    try { const mod = await x.load(); el.innerHTML = ""; const stop = mod.mount(el, ixCtx(x)); if (typeof stop === "function") mounted.add(stop); }
+    try {
+      const mod = await x.load(); el.innerHTML = ""; const stop = mod.mount(el, ixCtx(x)); if (typeof stop === "function") mounted.add(stop);
+      // the lab the learner touched last is the one the tutor on the page is told about
+      if (!el.dataset.watch) { el.dataset.watch = "1"; for (const ev of ["pointerdown", "input", "change"]) el.addEventListener(ev, () => { labLast = x.id; }, { passive: true }); }
+    }
     catch (e) { el.innerHTML = `<p class="co-empty">This interactive couldn't load (${esc(e.message)}).</p>`; }
   }
   const ixCard = (x, open) => `<div class="co-lab" data-ix="${esc(x.id)}"><div class="co-labhead"><span class="co-kicker">${esc(PL === "Lab" ? `Interactive · ${x.kind}` : x.kind)}</span><h3>${esc(x.title)}</h3><p>${esc(x.sub)}</p></div><div class="co-labstage co-ix"><p class="co-empty">Loading the interactive…</p></div>${x.note ? `<p class="co-labnote"><b>Model:</b> ${inline(x.note)}</p>` : ""}</div>`;
@@ -1100,8 +1122,19 @@ export function mountCourse(root, cfg) {
     if (x.lessons?.length) {
       const used = x.lessons.map((l) => byId[l]).filter(Boolean);
       main.innerHTML = `<div class="co-crumbs"><a href="#/practice">← ${esc(PL)}</a><span>${esc(x.kind)}</span></div>${ixCard(x, true)}
-        ${used.length ? `<section class="co-panel"><h3>Learn the ideas behind it</h3><ul class="co-used">${used.map((l) => `<li><a href="#/lesson/${l.id}"><small>${U} ${l.unit.n}${l.module ? ` · ${esc(l.module)}` : ""}</small>${esc(l.title)}</a></li>`).join("")}</ul></section>` : ""}`;
-      return mountIx(x, main.querySelector(".co-labstage"));
+        ${used.length ? `<section class="co-panel co-ask co-tutor"></section><section class="co-panel"><h3>Learn the ideas behind it</h3><ul class="co-used">${used.map((l) => `<li><a href="#/lesson/${l.id}"><small>${U} ${l.unit.n}${l.module ? ` · ${esc(l.module)}` : ""}</small>${esc(l.title)}</a></li>`).join("")}</ul></section>` : ""}`;
+      await mountIx(x, main.querySelector(".co-labstage"));
+      // the tutor on a lab page: grounded in the first of the lab's lessons that has notes, and told what the lab shows
+      const tp = main.querySelector(".co-tutor"); if (!tp) return;
+      let l0 = null, N = null;
+      for (const l of used) { N = await notesFor(l).catch(() => null); if (N) { l0 = l; break; } }
+      if (!N || !tp.isConnected) { tp.remove(); return; }
+      mountTutorPanel(tp, {
+        ask: askTutor, lesson: { id: l0.id, title: l0.title, text: lessonText(N) }, modes: ["explain", "socratic"], heading: "Ask about this lab",
+        note: `${cfg.tutor || TUTOR_NOTE} On this page it uses the notes for "${l0.title}".`, focus: null, candidates: () => [], unavailable: (what) => signinLine(what, ""),
+        link: (lid) => `#/lesson/${lid}`, titleOf: (lid) => byId[lid]?.title || lid, lab: () => labFor(x.id),
+      });
+      return;
     }
     main.innerHTML = `<div class="co-crumbs"><a href="#/practice">← ${esc(PL)}</a><span>${esc(x.kind)}</span></div><div class="co-panel co-ix"></div>`;
     const mod = await x.load();

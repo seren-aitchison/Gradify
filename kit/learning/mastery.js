@@ -203,6 +203,7 @@ export const SIX = [
   { key: "retention", label: "Retention", what: "Still knowing it days or weeks later" },
 ];
 const DIFFICULTY_WEIGHT = { 1: 0.8, 2: 1, 3: 1.25 };
+export const LAB_WEIGHT = 0.5;
 const CHOICE = new Set(["sba", "mcq", "tf", "multi", "match", "order"]);
 // how much evidence (in weighted answers) a dimension needs before it's reported as a measurement
 export const ENOUGH = 3;
@@ -215,7 +216,7 @@ const APPLIED = /appl|reason|analys|evaluat/i;
 export function dimensionOf(a, levels = null) {
   const t = a.question?.type, d = a.question?.d;
   if (t === "card") return "recall";
-  if (t === "num" || t === "reasoning" || t === "sim") return "apply";   // worked problems, legal reasoning, clinical simulation
+  if (t === "num" || t === "reasoning" || t === "sim" || t === "lab") return "apply";   // worked problems, legal reasoning, clinical simulation, lab challenges
   if (t === "short") return "explain";
   if (CHOICE.has(t)) return (levels?.[d - 1] ? APPLIED.test(levels[d - 1]) : d === 3) ? "apply" : "recognition";
   return "recall";
@@ -230,7 +231,8 @@ export function evidenceFromAttempts(attempts = [], { levels = null } = {}) {
     lastSeen.set(qid, at);
     const independent = (a.attempt || 1) === 1;
     const provisional = a.marking?.status === "provisional";
-    const w = (DIFFICULTY_WEIGHT[a.question.d] || 1) * (independent ? 1 : 0.3) * (provisional ? 0.33 : 1);
+    // a lab challenge is recorded only when it's met (a lab can't see a failed try), so it counts at half weight
+    const w = (DIFFICULTY_WEIGHT[a.question.d] || 1) * (independent ? 1 : 0.3) * (provisional ? 0.33 : 1) * (a.question.type === "lab" ? LAB_WEIGHT : 1);
     const base = { score: Number(a.score) || 0, at, w, independent, difficulty: a.question.d ?? null, confidence: a.confidence ?? null, source: a.context, topic: a.lesson || a.unit || a.subject, unit: a.unit, subject: a.subject, question: qid, misconception: a.misconception || null };
     const dim = dimensionOf(a, levels);
     out.push({ ...base, dim, delayed: false });
@@ -302,9 +304,10 @@ export function sixProfiles(evidence, { by = (e) => e.topic, now = Date.now() } 
 // comes back when its latest unaided answer was wrong (after a short gap), or when its last success
 // is older than an interval that grows with each consecutive delayed success (1, 3, 7, 21, 60 days).
 const STEPS = [1, 3, 7, 21, 60];
+// (flashcards have their own scheduler, and a lab challenge can't be asked again as a question, so neither is here)
 export function revisionQueue(attempts = [], { now = Date.now(), limit = 20 } = {}) {
   const byQ = new Map();
-  for (const a of [...attempts].filter((x) => x?.question && x.question.type !== "card" && x.marking?.status !== "provisional").sort((x, y) => String(x.at).localeCompare(String(y.at)))) {
+  for (const a of [...attempts].filter((x) => x?.question && x.question.type !== "card" && x.question.type !== "lab" && x.marking?.status !== "provisional").sort((x, y) => String(x.at).localeCompare(String(y.at)))) {
     const q = byQ.get(a.question.id) || { id: a.question.id, lesson: a.lesson, unit: a.unit, streak: 0, lastAt: 0, lastScore: 0, n: 0 };
     const at = Date.parse(a.at);
     if ((a.attempt || 1) === 1) {

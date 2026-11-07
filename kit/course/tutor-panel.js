@@ -1,4 +1,4 @@
-// The Gradify AI tutor on a lesson page: one panel, five ways to use it, all grounded in this lesson's notes
+// The Gradify AI tutor on a lesson or lab page: one panel, five ways to use it, all grounded in a lesson's notes
 // (kit/assess/tutor.js builds the requests; supabase/functions/course-tutor answers them).
 //   Ask             a question about the lesson (explain)
 //   Talk it through Socratic questioning towards an idea, without being told the answer (socratic)
@@ -18,18 +18,26 @@ const FOCUS_NAME = { recognition: "telling similar ideas apart", recall: "precis
 /**
  * @param {HTMLElement} el
  * @param {{ ask: (body: object) => Promise<any>, lesson: { id, title, text }, candidates: () => {id,title}[], focus: string|null,
- *           note: string, unavailable: (what: string) => string, link: (id: string) => string, titleOf: (id: string) => string }} o
+ *           note: string, unavailable: (what: string) => string, link: (id: string) => string, titleOf: (id: string) => string,
+ *           lab?: () => ({ title: string, state: string } | null), modes?: string[], heading?: string }} o
+ * lab: the interactive lab the learner last used on this page and what it shows now; Ask and Talk it through send it,
+ * so the tutor explains what the learner is looking at. modes: which of MODES to offer (all by default).
  */
 export function mountTutorPanel(el, o) {
-  let mode = "explain", turns = [];
-  el.innerHTML = `<h3>Gradify AI tutor</h3>
-    <div class="co-tmodes" role="tablist">${MODES.map(([m, l]) => `<button type="button" role="tab" data-m="${m}" aria-selected="${m === mode}">${l}</button>`).join("")}</div>
-    <div class="co-tbody"></div><p class="aq-note">${esc(o.note)}</p>`;
-  const body = el.querySelector(".co-tbody");
+  const modes = MODES.filter(([m]) => !o.modes || o.modes.includes(m));
+  let mode = modes[0][0], turns = [];
+  el.innerHTML = `<h3>${esc(o.heading || "Gradify AI tutor")}</h3>
+    <div class="co-tmodes" role="tablist">${modes.map(([m, l]) => `<button type="button" role="tab" data-m="${m}" aria-selected="${m === mode}">${l}</button>`).join("")}</div>
+    <p class="co-tlab" hidden></p><div class="co-tbody"></div><p class="aq-note">${esc(o.note)}</p>`;
+  const body = el.querySelector(".co-tbody"), labLine = el.querySelector(".co-tlab");
+  // what the tutor will be told about the lab, shown so the learner knows it can see it
+  const lab = () => { const x = (mode === "explain" || mode === "socratic") ? o.lab?.() : null; labLine.hidden = !x; if (x) labLine.textContent = `The tutor can see what the “${x.title}” lab shows right now.`; return x || undefined; };
+  if (o.lab) el.addEventListener("pointerenter", lab), el.addEventListener("focusin", lab);
   const fail = (err, what) => { body.querySelector(".co-tout").innerHTML = err.signin ? o.unavailable(what) : `<p class="co-empty">${esc(err.message)}</p>`; };
   const busy = (t) => `<p class="co-empty">${esc(t)}</p>`;
 
   function paint() {
+    lab();
     el.querySelectorAll("[data-m]").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.m === mode)));
     turns = [];
     if (mode === "explain") {
@@ -39,7 +47,7 @@ export function mountTutorPanel(el, o) {
         const input = e.currentTarget.querySelector("input"), q = input.value.trim(), out = body.querySelector(".co-tout"); if (q.length < 5) return;
         out.innerHTML = busy("Thinking…");
         try {
-          const r = await o.ask({ mode: "explain", lesson: o.lesson, question: q });
+          const r = await o.ask({ mode: "explain", lesson: o.lesson, question: q, lab: lab() });
           out.innerHTML = `<div class="co-askans"><p class="co-askq">${esc(q)}</p>${paras(r.answer)}${r.fromLesson ? "" : `<p class="aq-note">This goes beyond what the lesson covers, so check it against your course materials.</p>`}</div>`;
           input.value = "";
         } catch (err) { fail(err, "Asking the tutor"); }
@@ -56,7 +64,7 @@ export function mountTutorPanel(el, o) {
       const next = async () => {
         out.innerHTML = busy(soc ? "Thinking…" : "The examiner is reading your answer…"); form.querySelector("button").disabled = true;
         try {
-          const r = await o.ask({ mode, lesson: o.lesson, goal: soc ? body.querySelector("#co-goal").value.trim() : undefined, turns });
+          const r = await o.ask({ mode, lesson: o.lesson, goal: soc ? body.querySelector("#co-goal").value.trim() : undefined, turns, lab: soc ? lab() : undefined });
           turns.push({ role: "tutor", text: r.reply }); show(); out.innerHTML = "";
           const over = !soc && /End of viva\.?\s*$/i.test(r.reply);
           form.hidden = over; start.hidden = true;
