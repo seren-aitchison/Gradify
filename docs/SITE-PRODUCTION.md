@@ -21,36 +21,40 @@ by the shared course engine, with new subject content.
    rules, `sw.js`, the browser checks' page lists, sitemap, `npm run qa`, ecosystem status.
 6. **Deploy and verify.** Push to `main` (the Test and deploy workflow), then load each course live.
 
+## Coordination (8 November 2026)
+
+The previous coordinator (branch `claude/lawgradify-nursegradify`) is paused. A temporary coordinator (session "Build PsychGradify and SocGradify subject sites", branch `feat/psych-soc-gradify`) took over: it found no builder output on any branch and no course folder for any of the 23 subjects, so nothing was resumed or overwritten. It owns the shared integration files until the previous coordinator returns, and integrates each course as its builder reports. Wave 1 (8 builders) started 8 November; Wave 2 starts as Wave 1 finishes.
+
 ## Tracker
 
 "Generated" means the files exist and pass the tests. "Live verified" means the course was loaded on
 getgradify.com after deployment and a lesson opened without errors. A site is never reported live until then.
 
-| # | Site | Course (slug) | Template used | Curriculum | Lessons written | Resources | Tests | Registered | Deployed | Live verified |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | EcoGradify | Ecology (`ecology`) | Psychology course + Biology labs | – | – | – | – | – | – | – |
-| 2 | BusinessGradify | Business and Management (`business`) | Psychology course | – | – | – | – | – | – | – |
-| 3 | FinanceGradify | Accounting and Finance (`finance`) | Psychology course | – | – | – | – | – | – | – |
-| 4 | MedGradify | Medicine (`medicine`) | Psychology course + Nursing/Biology labs | – | – | – | – | – | – | – |
-| 5 | LitGradify | English Literature (`literature`) | Psychology course | – | – | – | – | – | – | – |
-| 6 | MusicGradify | Music (`music`) | Psychology course | – | – | – | – | – | – | – |
-| 7 | HealthGradify | Health and Wellbeing (`health`) | Psychology course + Biology labs | – | – | – | – | – | – | – |
-| 8 | EngineerGradify | Engineering (`engineering`) | Psychology course + Physics/Maths labs | – | – | – | – | – | – | – |
-| 9 | InvestorGradify | Investing (`investing`) | Psychology course | – | – | – | – | – | – | – |
-| 10 | VetGradify | Veterinary Science (`veterinary`) | Psychology course + Biology labs | – | – | – | – | – | – | – |
-| 11 | DentalGradify | Dentistry (`dentistry`) | Psychology course | – | – | – | – | – | – | – |
-| 12 | ArtGradify | Art and Design (`art`) | Psychology course | – | – | – | – | – | – | – |
-| 13 | SportGradify | Sport and Exercise Science (`sport`) | Psychology course + body tools | – | – | – | – | – | – | – |
-| 14 | EduGradify | Teaching (`teaching`) | Psychology course | – | – | – | – | – | – | – |
-| 15 | UnderGradify | University Study Skills (`university`) | Psychology course | – | – | – | – | – | – | – |
-| 16 | PostGradify | Research and the Dissertation (`research`) | Psychology course + research methods | – | – | – | – | – | – | – |
-| 17 | ProGradify | Professional Skills (`professional`) | Psychology course | – | – | – | – | – | – | – |
-| 18 | InternshipGradify | Careers and Employability (`careers`) | Psychology course | – | – | – | – | – | – | – |
-| 19 | CreateGradify | Design Thinking and Creativity (`design`) | Psychology course | – | – | – | – | – | – | – |
-| 20 | LanguageGradify | Spanish (`spanish`) | Psychology course | – | – | – | – | – | – | – |
-| 21 | YouthGradify | GCSE Core (`gcse`) | Psychology course + Maths/Science | – | – | – | – | – | – | – |
-| 22 | JuniorGradify | Primary (`primary`) | Psychology course | – | – | – | – | – | – | – |
-| 23 | TechGradify | Computer Science (`computing`) | needs its site folder first (`npm run new-site`) | – | – | – | – | – | – | – |
+| # | Site | Course (slug) | Template used | Builder (branch, worktree) | Curriculum | Lessons written | Resources | Tests | Registered | Deployed | Live verified |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | EcoGradify | Ecology (`ecology`) | Psychology course + Biology labs | build-ecology: `feat/ecogradify-ecology` in `../Gradify-wt-ecology`, building | – | – | – | – | – | – | – |
+| 2 | BusinessGradify | Business and Management (`business`) | Psychology course | build-business: `course/business` in `../Gradify-wt/business`, building | – | – | – | – | – | – | – |
+| 3 | FinanceGradify | Accounting and Finance (`finance`) | Psychology course | build-finance: `course/finance` in `../Gradify-wt/finance`, building | – | – | – | – | – | – | – |
+| 4 | MedGradify | Medicine (`medicine`) | Psychology course + Nursing/Biology labs | build-medicine: `course/medicine` in `../Gradify-wt/medicine`, building | – | – | – | – | – | – | – |
+| 5 | LitGradify | English Literature (`literature`) | Psychology course | build-literature: `course/literature` in `../Gradify-wt/literature`, building | – | – | – | – | – | – | – |
+| 6 | MusicGradify | Music (`music`) | Psychology course | build-music: `course/music` in `../Gradify-wt/music`, building | – | – | – | – | – | – | – |
+| 7 | HealthGradify | Health and Wellbeing (`health`) | Psychology course + Biology labs | build-health: `course/health` in `../Gradify-wt/health`, building | – | – | – | – | – | – | – |
+| 8 | EngineerGradify | Engineering (`engineering`) | Psychology course + Physics/Maths labs | build-engineering: `course/engineering` in `../Gradify-wt/engineering`, building | – | – | – | – | – | – | – |
+| 9 | InvestorGradify | Investing (`investing`) | Psychology course | – | – | – | – | – | – | – | – |
+| 10 | VetGradify | Veterinary Science (`veterinary`) | Psychology course + Biology labs | – | – | – | – | – | – | – | – |
+| 11 | DentalGradify | Dentistry (`dentistry`) | Psychology course | – | – | – | – | – | – | – | – |
+| 12 | ArtGradify | Art and Design (`art`) | Psychology course | – | – | – | – | – | – | – | – |
+| 13 | SportGradify | Sport and Exercise Science (`sport`) | Psychology course + body tools | – | – | – | – | – | – | – | – |
+| 14 | EduGradify | Teaching (`teaching`) | Psychology course | – | – | – | – | – | – | – | – |
+| 15 | UnderGradify | University Study Skills (`university`) | Psychology course | – | – | – | – | – | – | – | – |
+| 16 | PostGradify | Research and the Dissertation (`research`) | Psychology course + research methods | – | – | – | – | – | – | – | – |
+| 17 | ProGradify | Professional Skills (`professional`) | Psychology course | – | – | – | – | – | – | – | – |
+| 18 | InternshipGradify | Careers and Employability (`careers`) | Psychology course | – | – | – | – | – | – | – | – |
+| 19 | CreateGradify | Design Thinking and Creativity (`design`) | Psychology course | – | – | – | – | – | – | – | – |
+| 20 | LanguageGradify | Spanish (`spanish`) | Psychology course | – | – | – | – | – | – | – | – |
+| 21 | YouthGradify | GCSE Core (`gcse`) | Psychology course + Maths/Science | – | – | – | – | – | – | – | – |
+| 22 | JuniorGradify | Primary (`primary`) | Psychology course | – | – | – | – | – | – | – | – |
+| 23 | TechGradify | Computer Science (`computing`) | needs its site folder first (`npm run new-site`) | – | – | – | – | – | – | – | – |
 
 Priority: subjects with a clear published curriculum and the closest structure to an existing course first
 (1–8), then the professional and specialist courses (9–13), then the stage-of-life sites (14–22), whose
