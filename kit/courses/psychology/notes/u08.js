@@ -448,7 +448,7 @@ T: Metacognitive beliefs | Beliefs about one's own thinking, such as about worry
 T: Stepped care | Starting with less intensive interventions and stepping up as needed
 SUM: GAD: persistent, uncontrollable worry with physical symptoms.
 SUM: Avoidance, intolerance of uncertainty and metacognition; stepped care in guidance.
-SRC: National Institute for Health and Care Excellence, Generalised anxiety disorder and panic disorder in adults: management (CG113) | guidance | 2011 | https://www.nice.org.uk/guidance/cg113
+SRC: National Institute for Health and Care Excellence, Generalised anxiety disorder and panic disorder in adults: management (CG113) | guidance | 2011
 SRC: Borkovec T. D., Alcaine O. M. and Behar E., "Avoidance theory of worry and generalized anxiety disorder", in Heimberg R. G. et al. (eds), Generalized Anxiety Disorder: Advances in Research and Practice, Guilford | primary | 2004
 SRC: Wells A., Metacognitive Therapy for Anxiety and Depression, Guilford | primary | 2009
 Q: What is intolerance of uncertainty? | Finding uncertainty very hard to bear, which can drive persistent worry.
@@ -487,7 +487,7 @@ T: Safety behaviour | An action taken to prevent a feared outcome that maintains
 SUM: Panic attacks involve sudden fear and physical symptoms.
 SUM: Clark: catastrophic misinterpretation and a vicious cycle; safety behaviours maintain it.
 SRC: Clark D. M., "A cognitive approach to panic", Behaviour Research and Therapy 24(4):461–470 | primary | 1986 | https://doi.org/10.1016/0005-7967(86)90011-2
-SRC: National Institute for Health and Care Excellence, Generalised anxiety disorder and panic disorder in adults: management (CG113) | guidance | 2011 | https://www.nice.org.uk/guidance/cg113
+SRC: National Institute for Health and Care Excellence, Generalised anxiety disorder and panic disorder in adults: management (CG113) | guidance | 2011
 Q: What is catastrophic misinterpretation? | Interpreting normal bodily sensations as signs of immediate danger.
 Q: What is a safety behaviour? | An action taken to prevent a feared outcome that stops people learning it won't happen.
 M1#psychology-u08-13-q1@1: Avoiding places where escape might be hard is called… | Agoraphobia | Social anxiety | Specific phobia | Panic attack only | Agoraphobia can develop alongside panic disorder.
@@ -561,7 +561,7 @@ T: Post-event processing | Going over social events afterwards in a negative way
 SUM: Fear of scrutiny, avoidance and impairment.
 SUM: Self-focus, safety behaviours and post-event processing maintain anxiety.
 SRC: Rapee R. M. and Heimberg R. G., "A cognitive-behavioral model of anxiety in social phobia", Behaviour Research and Therapy 35(8):741–756 | primary | 1997 | https://doi.org/10.1016/S0005-7967(97)00022-3
-SRC: National Institute for Health and Care Excellence, Social anxiety disorder: recognition, assessment and treatment (CG159) | guidance | 2013 | https://www.nice.org.uk/guidance/cg159
+SRC: National Institute for Health and Care Excellence, Social anxiety disorder: recognition, assessment and treatment (CG159) | guidance | 2013
 SRC: Clark D. M. and Wells A., "A cognitive model of social phobia", in Heimberg R. G. et al. (eds), Social Phobia: Diagnosis, Assessment, and Treatment, Guilford | primary | 1995
 Q: What is post-event processing? | Going over social interactions afterwards in a negative way.
 Q: What role do safety behaviours play in social anxiety? | They prevent people learning feared outcomes won't happen and can make them seem less friendly.
@@ -599,7 +599,7 @@ T: Inflated responsibility | Believing one is responsible for preventing harm
 SUM: OCD involves obsessions and compulsions that cause distress.
 SUM: Salkovskis: inflated responsibility and neutralising; ERP is recommended.
 SRC: Salkovskis P. M., "Obsessional-compulsive problems: a cognitive-behavioural analysis", Behaviour Research and Therapy 23(5):571–583 | primary | 1985 | https://doi.org/10.1016/0005-7967(85)90105-6
-SRC: National Institute for Health and Care Excellence, Obsessive-compulsive disorder and body dysmorphic disorder: treatment (CG31) | guidance | 2005 | https://www.nice.org.uk/guidance/cg31
+SRC: National Institute for Health and Care Excellence, Obsessive-compulsive disorder and body dysmorphic disorder: treatment (CG31) | guidance | 2005
 Q: What is the difference between an obsession and a compulsion? | An obsession is an intrusive, distressing thought; a compulsion is a repetitive act done to reduce distress.
 Q: What is exposure and response prevention? | Facing feared situations gradually without performing compulsions.
 M1#psychology-u08-16-q1@1: A repetitive act performed to reduce distress from an obsession is a… | Compulsion | Obsession | Safety signal | Delusion | Compulsions are acts that neutralise distress.
@@ -637,7 +637,7 @@ SUM: PTSD involves re-experiencing, avoidance, mood changes and hyperarousal.
 SUM: Social support matters; Ehlers and Clark's model; trauma-focused therapies recommended.
 SRC: Ehlers A. and Clark D. M., "A cognitive model of posttraumatic stress disorder", Behaviour Research and Therapy 38(4):319–345 | primary | 2000 | https://doi.org/10.1016/S0005-7967(99)00123-0
 SRC: Brewin C. R., Andrews B. and Valentine J. D., "Meta-analysis of risk factors for posttraumatic stress disorder in trauma-exposed adults", Journal of Consulting and Clinical Psychology 68(5):748–766 | primary | 2000 | https://doi.org/10.1037/0022-006X.68.5.748
-SRC: National Institute for Health and Care Excellence, Post-traumatic stress disorder (NG116) | guidance | 2018 | https://www.nice.org.uk/guidance/ng116
+SRC: National Institute for Health and Care Excellence, Post-traumatic stress disorder (NG116) | guidance | 2018
 Q: Name the four main groups of PTSD symptoms. | Re-experiencing, avoidance, negative changes in thoughts and mood, and hyperarousal.
 Q: What did Brewin et al. (2000) find about risk factors for PTSD? | Lack of social support and later life stress had stronger effects than pre-trauma factors.
 M1#psychology-u08-17-q1@1: Flashbacks and nightmares about a trauma are examples of… | Re-experiencing | Avoidance | Hyperarousal | Dissociation only | Reliving the trauma through flashbacks and nightmares is called re-experiencing.
@@ -674,7 +674,7 @@ T: Vulnerability factor | A circumstance that increases the risk of depression a
 SUM: Low mood or anhedonia with other symptoms for at least two weeks.
 SUM: Cognitive, social and biological factors; NICE offers a choice of treatments.
 SRC: Brown G. W. and Harris T., Social Origins of Depression, Tavistock | primary | 1978
-SRC: National Institute for Health and Care Excellence, Depression in adults: treatment and management (NG222) | guidance | 2022 | https://www.nice.org.uk/guidance/ng222
+SRC: National Institute for Health and Care Excellence, Depression in adults: treatment and management (NG222) | guidance | 2022
 SRC: Beck A. T., Depression: Clinical, Experimental, and Theoretical Aspects, Harper and Row | primary | 1967
 Q: What is anhedonia? | Loss of interest or pleasure in activities.
 Q: What did Brown and Harris (1978) find? | Severe life events combined with vulnerability factors, such as no confiding relationship, predicted depression.
@@ -712,7 +712,7 @@ T: Psychoeducation | Teaching people about a condition to support self-managemen
 SUM: Bipolar disorder involves mania or hypomania and depression.
 SUM: Strongly heritable; sleep and stress matter; medication plus psychological support.
 SRC: NHS England, Adult Psychiatric Morbidity Survey: Survey of Mental Health and Wellbeing, England, 2023/4 | data | 2025 | https://digital.nhs.uk/data-and-information/publications/statistical/adult-psychiatric-morbidity-survey/survey-of-mental-health-and-wellbeing-england-2023-24
-SRC: National Institute for Health and Care Excellence, Bipolar disorder: assessment and management (CG185) | guidance | 2014 | https://www.nice.org.uk/guidance/cg185
+SRC: National Institute for Health and Care Excellence, Bipolar disorder: assessment and management (CG185) | guidance | 2014
 Q: What is the difference between bipolar I and bipolar II? | Bipolar I involves at least one manic episode; bipolar II involves hypomanic and depressive episodes.
 Q: What is psychoeducation? | Teaching people about a condition to help them manage it.
 M1#psychology-u08-19-q1@1: A period of elevated mood, high energy and reduced need for sleep is… | Mania | Anhedonia | Rumination | Catastrophising | Elevated mood, high energy and reduced need for sleep together define a manic episode.
@@ -750,7 +750,7 @@ SUM: Positive and negative symptoms; psychotic disorder in 0.5% of adults (2023/
 SUM: Dopamine, genes and social adversity interact; the concept of schizophrenia is debated.
 SRC: Howes O. D. and Kapur S., "The dopamine hypothesis of schizophrenia: version III—the final common pathway", Schizophrenia Bulletin 35(3):549–562 | primary | 2009 | https://doi.org/10.1093/schbul/sbp006
 SRC: van Os J. and Kapur S., "Schizophrenia", The Lancet 374(9690):635–645 | secondary | 2009 | https://doi.org/10.1016/S0140-6736(09)60995-8
-SRC: National Institute for Health and Care Excellence, Psychosis and schizophrenia in adults: prevention and management (CG178) | guidance | 2014 | https://www.nice.org.uk/guidance/cg178
+SRC: National Institute for Health and Care Excellence, Psychosis and schizophrenia in adults: prevention and management (CG178) | guidance | 2014
 Q: What is the difference between positive and negative symptoms? | Positive symptoms add to experience, such as hallucinations; negative symptoms reduce motivation, emotion or speech.
 Q: What did Howes and Kapur (2009) propose about dopamine? | Increased dopamine activity leads people to attach unusual significance to experiences.
 M1#psychology-u08-20-q1@1: Hearing a voice that others can't hear is a… | Hallucination | Delusion | Negative symptom | Compulsion | Perceiving without a stimulus is a hallucination.
@@ -789,7 +789,7 @@ SUM: ICD-11 rates severity and trait domains; DSM-5-TR keeps categories.
 SUM: Adversity and biosocial theory; DBT helps; stigma and trauma framing debated.
 SRC: World Health Organization, International Classification of Diseases, Eleventh Revision (ICD-11) | standard | 2022 | https://icd.who.int/
 SRC: Linehan M. M., Cognitive-Behavioral Treatment of Borderline Personality Disorder, Guilford | primary | 1993
-SRC: National Institute for Health and Care Excellence, Borderline personality disorder: recognition and management (CG78) | guidance | 2009 | https://www.nice.org.uk/guidance/cg78
+SRC: National Institute for Health and Care Excellence, Borderline personality disorder: recognition and management (CG78) | guidance | 2009
 Q: How does ICD-11 classify personality disorders? | By severity, with optional trait domains, rather than many separate categories.
 Q: What is Linehan's biosocial theory? | Emotional sensitivity combined with an invalidating environment leads to difficulties regulating emotion.
 M1#psychology-u08-21-q1@1: Surroundings that dismiss or punish a child's emotions are called… | An invalidating environment | A trait domain | A safety behaviour | A vulnerability factor | Linehan described invalidating environments.
@@ -827,7 +827,7 @@ SUM: Anorexia, bulimia and binge eating disorder differ in features.
 SUM: Biological, psychological and sociocultural factors interact; stereotypes delay recognition.
 SRC: Treasure J., Duarte T. A. and Schmidt U., "Eating disorders", The Lancet 395(10227):899–911 | secondary | 2020 | https://doi.org/10.1016/S0140-6736(20)30059-3
 SRC: Arcelus J., Mitchell A. J., Wales J. and Nielsen S., "Mortality rates in patients with anorexia nervosa and other eating disorders: a meta-analysis of 36 studies", Archives of General Psychiatry 68(7):724–731 | primary | 2011 | https://doi.org/10.1001/archgenpsychiatry.2011.74
-SRC: National Institute for Health and Care Excellence, Eating disorders: recognition and treatment (NG69) | guidance | 2017 | https://www.nice.org.uk/guidance/ng69
+SRC: National Institute for Health and Care Excellence, Eating disorders: recognition and treatment (NG69) | guidance | 2017
 Q: What distinguishes bulimia nervosa from binge eating disorder? | Bulimia involves regular compensatory behaviours after binges; binge eating disorder doesn't.
 Q: What is Fairburn's transdiagnostic model? | A model proposing over-evaluation of weight and shape is central across eating disorders.
 M1#psychology-u08-22-q1@1: Restriction of food intake leading to significantly low weight, with fear of weight gain, describes… | Anorexia nervosa | Bulimia nervosa | Binge eating disorder | Body dysmorphia | Restriction, low weight and fear of weight gain together define anorexia nervosa.
@@ -865,7 +865,7 @@ SUM: Impaired control, harm, cravings, tolerance and withdrawal.
 SUM: Disease, learning and social models; context strongly affects recovery.
 SRC: Robins L. N., Helzer J. E. and Davis D. H., "Narcotic use in Southeast Asia and afterward", Archives of General Psychiatry 32(8):955–961 | primary | 1975 | https://doi.org/10.1001/archpsyc.1975.01760260019001
 SRC: NHS England, Adult Psychiatric Morbidity Survey: Survey of Mental Health and Wellbeing, England, 2023/4 | data | 2025 | https://digital.nhs.uk/data-and-information/publications/statistical/adult-psychiatric-morbidity-survey/survey-of-mental-health-and-wellbeing-england-2023-24
-SRC: National Institute for Health and Care Excellence, Alcohol-use disorders: diagnosis, assessment and management of harmful drinking (high-risk drinking) and alcohol dependence (CG115) | guidance | 2011 | https://www.nice.org.uk/guidance/cg115
+SRC: National Institute for Health and Care Excellence, Alcohol-use disorders: diagnosis, assessment and management of harmful drinking (high-risk drinking) and alcohol dependence (CG115) | guidance | 2011
 Q: What is tolerance? | Needing more of a substance to get the same effect.
 Q: What did Robins et al. (1975) find about soldiers who used heroin in Vietnam? | Most stopped after returning home, showing the importance of context.
 M1#psychology-u08-23-q1@1: Unpleasant symptoms when a substance is stopped are called… | Withdrawal | Tolerance | Craving | Relapse | Withdrawal is the set of unpleasant symptoms that follows stopping a substance.
@@ -903,7 +903,7 @@ T: Theory of mind | Understanding others' mental states
 SUM: Autism involves social communication, repetitive and sensory differences.
 SUM: Cognitive theories; double empathy and neurodiversity challenge deficit views.
 SRC: Milton D. E. M., "On the ontological status of autism: the 'double empathy problem'", Disability and Society 27(6):883–887 | primary | 2012 | https://doi.org/10.1080/09687599.2012.710008
-SRC: National Institute for Health and Care Excellence, Autism spectrum disorder in adults: diagnosis and management (CG142) | guidance | 2012 | https://www.nice.org.uk/guidance/cg142
+SRC: National Institute for Health and Care Excellence, Autism spectrum disorder in adults: diagnosis and management (CG142) | guidance | 2012
 SRC: Lord C. et al., "Autism spectrum disorder", Nature Reviews Disease Primers 6:5 | secondary | 2020 | https://doi.org/10.1038/s41572-019-0138-4
 Q: What is the double empathy problem? | Mutual communication difficulties between autistic and non-autistic people, not a one-sided deficit.
 Q: What is neurodiversity? | The view that neurological differences such as autism are natural human variation.
@@ -942,7 +942,7 @@ SUM: ADHD involves inattention and/or hyperactivity-impulsivity from childhood.
 SUM: Highly heritable; screening differs from diagnosis; diagnosis rates are debated.
 SRC: Faraone S. V. et al., "The World Federation of ADHD International Consensus Statement: 208 evidence-based conclusions about the disorder", Neuroscience and Biobehavioral Reviews 128:789–818 | primary | 2021 | https://doi.org/10.1016/j.neubiorev.2021.01.022
 SRC: NHS England, Adult Psychiatric Morbidity Survey: Survey of Mental Health and Wellbeing, England, 2023/4 | data | 2025 | https://digital.nhs.uk/data-and-information/publications/statistical/adult-psychiatric-morbidity-survey/survey-of-mental-health-and-wellbeing-england-2023-24
-SRC: National Institute for Health and Care Excellence, Attention deficit hyperactivity disorder: diagnosis and management (NG87) | guidance | 2018 | https://www.nice.org.uk/guidance/ng87
+SRC: National Institute for Health and Care Excellence, Attention deficit hyperactivity disorder: diagnosis and management (NG87) | guidance | 2018
 Q: What are the two main groups of ADHD features? | Inattention and hyperactivity-impulsivity.
 Q: What percentage of adults in England screened positive for ADHD in 2023/4? | 13.9%, though a positive screen isn't a diagnosis.
 M1#psychology-u08-25-q1@1: A quick check to identify who may need a full assessment is… | Screening | Diagnosis | Formulation | Psychoeducation | Screening flags people whose symptoms may need a full specialist assessment.
@@ -983,7 +983,7 @@ T: Sleep restriction | Limiting time in bed to build sleep pressure
 SUM: Insomnia, sleep apnoea, narcolepsy and parasomnias.
 SUM: Worry and conditioning maintain insomnia; CBT-I is first-line.
 SRC: Riemann D. et al., "European guideline for the diagnosis and treatment of insomnia", Journal of Sleep Research 26(6):675–700 | primary | 2017 | https://doi.org/10.1111/jsr.12594
-SRC: National Institute for Health and Care Excellence, Sleepio to treat insomnia and insomnia symptoms (MTG70) | guidance | 2022 | https://www.nice.org.uk/guidance/mtg70
+SRC: National Institute for Health and Care Excellence, Sleepio to treat insomnia and insomnia symptoms (MTG70) | guidance | 2022
 Q: What is stimulus control in CBT-I? | Using the bed only for sleep so it becomes linked with sleeping.
 Q: What is obstructive sleep apnoea? | A condition where breathing repeatedly stops during sleep, disrupting it.
 M1#psychology-u08-26-q1@1: Limiting time in bed to build sleep pressure is… | Sleep restriction | Stimulus control | Sleep hygiene only | Exposure therapy | Sleep restriction increases drive to sleep.

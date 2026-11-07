@@ -58,6 +58,7 @@ Every topic in the brief is a lesson, in brief order. Lessons that aren't writte
 | Psychology | 6 Social Psychology | 26 | 132 | Written, passing all automated checks; **draft** |
 | Psychology | 7 Personality and Individual Differences | 23 | 118 | Written, passing all automated checks; **draft** |
 | Psychology | 8 Psychopathology | 32 | 165 | Written, passing all automated checks; **draft**; every lesson has an education-not-diagnosis statement; needs clinical psychologist review |
+| Psychology | 9 Clinical Psychology and Interventions | 28 | 142 | Written, passing all automated checks; **draft**; every lesson has an education-not-diagnosis statement; needs clinical psychologist review |
 | Psychology | 10 Research Methods | 34 | 170 | Written, passing all automated checks; **draft** |
 | Psychology | 11 Statistics | 25 | 125 | Written, passing all automated checks; **draft** |
 | Psychology | 12 Evolutionary Psychology and Behavioural Ecology | 17 | 86 | Written, passing all automated checks; **draft** |
@@ -84,7 +85,7 @@ Every topic in the brief is a lesson, in brief order. Lessons that aren't writte
 | Sociology | 17 Research Methods | 38 | 190 | Written, passing all automated checks; **draft** |
 | Sociology | 18 Social Statistics and Data Science | 25 | 125 | Written, passing all automated checks; **draft** |
 
-That is **803 of 831 lessons** (365 of 393 psychology, 438 of 438 sociology: every sociology school), with 4,156 questions and 1,606 flashcards. The one remaining school (Psychology 9, Clinical Psychology and Interventions) is registered but unwritten.
+That is **all 831 lessons** (393 of 393 psychology, 438 of 438 sociology: every school on both sites), with 4,298 questions and 1,662 flashcards. Every lesson is still a draft until it has been reviewed, its sources checked by hand and signed off (see `qa.js`).
 
 **Every written lesson has:**
 
@@ -161,7 +162,7 @@ Every lab says what kind it is and what it simplifies. Data is labelled either *
 
 ## Next batches (suggested order)
 
-1. **Psychology:** 9 (clinical) needs an education-not-diagnosis statement in every lesson and should be reviewed by a clinical psychologist.
+1. **Psychology:** all 16 schools written; Schools 8 and 9 (clinical) carry an education-not-diagnosis statement in every lesson and should be reviewed by a clinical psychologist first.
 2. **Sociology:** all 18 schools written; next is human review.
 3. **Clinical schools** (Psychology 8 and 9) should be written with a clinical psychologist's review planned from the start.
 4. **Human review:** give each written school a structured review, a full source check and expert sign-off, recorded in `qa.js`.

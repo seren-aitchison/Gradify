@@ -381,7 +381,7 @@ T: Positive behaviour support | An approach that understands the function of beh
 SUM: Behaviour modification uses functional assessment and reinforcement to change behaviour.
 SUM: Token economies work while in place; ethical practice favours positive behaviour support.
 SRC: Ayllon T. and Azrin N. H., The Token Economy: A Motivational System for Therapy and Rehabilitation, Appleton-Century-Crofts | primary | 1968
-SRC: National Institute for Health and Care Excellence, Challenging behaviour and learning disabilities: prevention and interventions (NG11) | guidance | 2015 | https://www.nice.org.uk/guidance/ng11
+SRC: National Institute for Health and Care Excellence, Challenging behaviour and learning disabilities: prevention and interventions (NG11) | guidance | 2015
 Q: What does the ABC model stand for? | Antecedents, Behaviour and Consequences.
 Q: What is a token economy? | A system where tokens earned for target behaviours are exchanged for backup rewards.
 M1#psychology-u04-10-q1@1: In a token economy, tokens are… | Secondary reinforcers | Unconditioned stimuli | Punishers | Primary reinforcers | Tokens have value because they can be exchanged for rewards, making them secondary reinforcers.
