@@ -20,7 +20,8 @@ It was checked before starting: HistoryGradify wasn't in the production tracker 
 |---|---|---|---|
 | 1. Historical Thinking and Methods | 16 | ✅ standard 2 | 82 |
 | 2. Medieval Britain | 18 | ✅ standard 2 | 90 |
-| 3–18 | 267 | not yet ("notes still being written" on the path) | |
+| 7. The First World War | 21 | ✅ standard 2 | 105 |
+| 3–6, 8–18 | 246 | not yet ("notes still being written" on the path) | |
 
 Every written lesson has objectives, sections, a worked example of historical analysis, evidence-status lines (established or contested), key terms, a summary, two real sources, two flashcards and at least five questions across Foundation, Application and Evaluation, including a rubric-marked extended answer.
 
