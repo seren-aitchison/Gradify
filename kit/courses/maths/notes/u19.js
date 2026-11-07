@@ -1323,7 +1323,7 @@ H: Good practice for users
 - Solve Ax = b with a solver rather than computing A^{−1}.
 - Check condition estimates and error flags.
 - Cite the software and versions used.
-X: Why compute x = A \ b (a solver) rather than x = inv(A) × b?
+X: Why compute x = A \\ b (a solver) rather than x = inv(A) × b?
 > Forming A^{−1} costs about 2n^{3} flops versus about (2/3)n^{3} for an LU solve
 > Multiplying by an explicit inverse is also less accurate
 > The solver is faster, more stable and reports conditioning

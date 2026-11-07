@@ -75,10 +75,10 @@ M3#maths-u16-02-q3@2: Why is the Kuratowski definition (a, b) = {{a}, {a, b}} us
 S: Set operations combine sets into new ones: union, intersection, difference, complement and symmetric difference. They obey algebraic laws much like arithmetic, and the same laws reappear in logic, probability and Boolean circuits.
 O: Compute unions, intersections, differences and symmetric differences
 O: Use the algebraic laws of set operations
-T: Set difference | A \ B = {x : x ∈ A and x ∉ B}
-T: Symmetric difference | A Δ B = (A \ B) ∪ (B \ A): elements in exactly one of the sets
+T: Set difference | A \\ B = {x : x ∈ A and x ∉ B}
+T: Symmetric difference | A Δ B = (A \\ B) ∪ (B \\ A): elements in exactly one of the sets
 H: Operations
-- Union A ∪ B, intersection A ∩ B, difference A \ B.
+- Union A ∪ B, intersection A ∩ B, difference A \\ B.
 - Symmetric difference A Δ B, like exclusive or.
 - Complement Aᶜ relative to a universal set U.
 H: Laws
@@ -90,14 +90,14 @@ H: Counting
 - Inclusion–exclusion: |A ∪ B| = |A| + |B| − |A ∩ B|.
 - For three sets add back |A ∩ B ∩ C| after subtracting pairwise intersections.
 - Δ is associative, and A Δ A = ∅.
-X: With A = {1, 2, 3, 4} and B = {3, 4, 5}, find A \ B, B \ A and A Δ B.
-> A \ B = {1, 2}
-> B \ A = {5}
+X: With A = {1, 2, 3, 4} and B = {3, 4, 5}, find A \\ B, B \\ A and A Δ B.
+> A \\ B = {1, 2}
+> B \\ A = {5}
 > A Δ B = {1, 2, 5}
-- Venn diagrams: draw A \ B as A with the overlap shaded out, and A Δ B as both sets minus the overlap.
+- Venn diagrams: draw A \\ B as A with the overlap shaded out, and A Δ B as both sets minus the overlap.
 - Set operations correspond to bitwise operations on characteristic vectors (AND, OR, XOR).
 K: Union, intersection, difference, complement and symmetric difference obey commutative, associative, distributive and absorption laws; inclusion–exclusion counts unions.
-!: Treating A \ B and B \ A as equal.
+!: Treating A \\ B and B \\ A as equal.
 Q: What is A Δ A? | ∅.
 Q: What is A ∪ (A ∩ B)? | A.
 SUM: Set operations form an algebra.
@@ -105,8 +105,8 @@ SUM: Inclusion–exclusion counts unions.
 SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
 SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
 NUM1#maths-u16-03-q1@1: If |A| = 12, |B| = 9 and |A ∩ B| = 4, find |A Δ B|. | 13 | 0 |  | |A Δ B| = |A| + |B| − 2|A ∩ B| = 12 + 9 − 8 = 13, since the overlap is removed from both sets.
-M1#maths-u16-03-q2@1: Which expression equals A ∩ (B ∪ C)? | (A ∩ B) ∪ (A ∩ C) | (A ∪ B) ∩ (A ∪ C) | (A ∩ B) ∩ C | A ∪ (B ∩ C) | (A \ B) ∪ C | Intersection distributes over union, just as multiplication distributes over addition.
-M2#maths-u16-03-q3@2: Which description fits the symmetric difference A Δ B? | Elements in exactly one of A and B | Elements in both A and B | Elements in neither A nor B | Elements in A but not in B | All elements of A and B | A Δ B = (A \ B) ∪ (B \ A), so it keeps elements belonging to one set only.
+M1#maths-u16-03-q2@1: Which expression equals A ∩ (B ∪ C)? | (A ∩ B) ∪ (A ∩ C) | (A ∪ B) ∩ (A ∪ C) | (A ∩ B) ∩ C | A ∪ (B ∩ C) | (A \\ B) ∪ C | Intersection distributes over union, just as multiplication distributes over addition.
+M2#maths-u16-03-q3@2: Which description fits the symmetric difference A Δ B? | Elements in exactly one of A and B | Elements in both A and B | Elements in neither A nor B | Elements in A but not in B | All elements of A and B | A Δ B = (A \\ B) ∪ (B \\ A), so it keeps elements belonging to one set only.
 
 ## Union and Intersection
 S: Union collects everything in either set; intersection keeps only what's common. These two operations extend from pairs to whole families of sets, and they correspond to "or" and "and" in logic.
@@ -149,13 +149,13 @@ M2#maths-u16-04-q3@2: If A ∪ B = B, what must be true? | A ⊆ B | B ⊆ A | A
 S: The complement of a set is everything not in it, relative to a chosen universal set. De Morgan's laws show how complements turn unions into intersections and back, which is the set version of negating "or" and "and".
 O: Find complements relative to a universal set
 O: Apply De Morgan's laws for sets
-T: Complement | Aᶜ = U \ A = {x ∈ U : x ∉ A}
+T: Complement | Aᶜ = U \\ A = {x ∈ U : x ∉ A}
 T: De Morgan's laws | (A ∪ B)ᶜ = Aᶜ ∩ Bᶜ and (A ∩ B)ᶜ = Aᶜ ∪ Bᶜ
 H: Basics
 - The universal set U must be fixed: the complement of the evens is the odds in ℤ but not in ℝ.
 - (Aᶜ)ᶜ = A; ∅ᶜ = U; Uᶜ = ∅.
 - A ∪ Aᶜ = U and A ∩ Aᶜ = ∅.
-- A \ B = A ∩ Bᶜ.
+- A \\ B = A ∩ Bᶜ.
 H: De Morgan
 - "Not in A or B" means "not in A and not in B".
 - Extends to families: (⋃ Aᵢ)ᶜ = ⋂ Aᵢᶜ.
@@ -168,12 +168,12 @@ X: In U = {1, …, 10}, let A = evens and B = multiples of 3. Find (A ∪ B)ᶜ.
 > A ∪ B = {2, 3, 4, 6, 8, 9, 10}
 > Its complement is {1, 5, 7}
 > Check by De Morgan: Aᶜ ∩ Bᶜ = {1, 3, 5, 7, 9} ∩ {1, 2, 4, 5, 7, 8, 10} = {1, 5, 7} ✓
-- Relative complements: B \ A is the complement of A inside B, with no universal set needed.
+- Relative complements: B \\ A is the complement of A inside B, with no universal set needed.
 - In a truth table, complement corresponds to negating the membership column.
-K: Complements depend on the universal set; De Morgan's laws swap ∪ and ∩ under complement; A \ B = A ∩ Bᶜ; complementary counting simplifies problems.
+K: Complements depend on the universal set; De Morgan's laws swap ∪ and ∩ under complement; A \\ B = A ∩ Bᶜ; complementary counting simplifies problems.
 !: Writing (A ∪ B)ᶜ = Aᶜ ∪ Bᶜ, forgetting to switch union to intersection.
 Q: What is (Aᶜ)ᶜ? | A.
-Q: Express A \ B using intersection and complement. | A ∩ Bᶜ.
+Q: Express A \\ B using intersection and complement. | A ∩ Bᶜ.
 SUM: Complements are relative to U.
 SUM: De Morgan swaps union and intersection.
 SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
