@@ -1136,11 +1136,13 @@ export function mountCourse(root, cfg) {
       el.gradifyIx = { id: x.id, ctx, evidence: x.evidence || {}, declared: () => [...labDeclared(x)].map(([id, text]) => ({ id, text })), attempts: () => (S.attempts || []).filter((a) => a.contextId === x.id), metOnOpen: () => [...(labOnOpen.get(x.id) || [])], touch: () => labTouched.add(x.id) };
       // the lab the learner touched last is the one the tutor on the page is told about
       // a "move" on a chosen challenge is an interaction at least a second after the last (a slider drag is one move)
+      // capture phase: the learner's touch is noted before the lab handles the event, so a challenge met by their very
+      // first interaction still counts (it isn't mistaken for one met on opening)
       if (!el.dataset.watch) { el.dataset.watch = "1"; for (const ev of ["pointerdown", "input", "change", "keydown"]) el.addEventListener(ev, (e) => {
         labLast = x.id; labTouched.add(x.id);
         const t = labTry.get(x.id), now = Date.now();
         if (t && !e.target.closest?.("[data-try]") && now - t.last >= 1000) { t.moves++; t.last = now; }
-      }, { passive: true }); }
+      }, { passive: true, capture: true }); }
     }
     catch (e) { el.innerHTML = `<p class="co-empty">This interactive couldn't load (${esc(e.message)}).</p>`; }
   }

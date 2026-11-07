@@ -172,3 +172,46 @@ export function gammaP(a, x) {
   return 1 - Math.exp(-x + a * Math.log(x) - gammaln(a)) * h;
 }
 export const chiSquareP = (x2, df) => 1 - gammaP(df / 2, x2 / 2);
+
+// ---------- accessibility (docs/INTERACTIVE-ROADMAP.md §5.7) ----------
+// describe(cv, label): the canvas becomes an image with a name, and a live text describes what it shows now, for
+// screen readers (and the AI tutor reads it too). Returns update(text); call it whenever the drawing changes.
+export function describe(cv, label) {
+  const c = cv.cv || cv; c.setAttribute("role", "img"); c.setAttribute("aria-label", label);
+  const p = document.createElement("p"); p.className = "sr-only lab-desc"; p.setAttribute("aria-live", "polite"); c.after(p);
+  let last = "";
+  return (text) => { if (text !== last) { last = text; p.textContent = text; c.setAttribute("aria-label", `${label}. ${text}`); } };
+}
+// handles(cv, points, opts): draggable points over a canvas that also work from the keyboard. Each point is a focusable
+// button placed over the canvas: drag it with a pointer, or focus it and use the arrow keys (Shift for bigger steps).
+//   points: [{ id, name, x, y }] in maths coordinates; opts: { toPx(x, y) → [px, py], toWorld(px, py) → [x, y],
+//   step (keyboard step in maths units), onMove(point) }. Returns { place() } to call after every redraw.
+//   nudge(point, dx, dy, size) → [x, y], optional: how the arrow keys move a point (for example round a circle).
+export function handles(cv, points, { toPx, toWorld, step = 0.1, onMove, nudge }) {
+  const host = cv.cv.parentElement; if (getComputedStyle(host).position === "static") host.style.position = "relative";
+  const btns = points.map((pt) => {
+    const b = document.createElement("button"); b.type = "button"; b.className = "lab-handle"; b.dataset.handle = pt.id; host.append(b);
+    const moveTo = (x, y) => { pt.x = x; pt.y = y; onMove?.(pt); place(); };
+    b.addEventListener("keydown", (e) => {
+      const k = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, 1], ArrowDown: [0, -1] }[e.key]; if (!k) return;
+      e.preventDefault(); const s = step * (e.shiftKey ? 5 : 1);
+      if (nudge) { const [x, y] = nudge(pt, k[0], k[1], s); moveTo(x, y); } else moveTo(+(pt.x + k[0] * s).toFixed(6), +(pt.y + k[1] * s).toFixed(6));
+    });
+    b.addEventListener("pointerdown", (e) => {
+      b.setPointerCapture(e.pointerId); b.focus();
+      const mv = (ev) => { const r = cv.cv.getBoundingClientRect(); const [x, y] = toWorld(ev.clientX - r.left, ev.clientY - r.top); moveTo(x, y); };
+      const up = () => { b.removeEventListener("pointermove", mv); b.removeEventListener("pointerup", up); };
+      b.addEventListener("pointermove", mv); b.addEventListener("pointerup", up);
+    });
+    return b;
+  });
+  function place() {
+    points.forEach((pt, i) => {
+      const [px, py] = toPx(pt.x, pt.y), b = btns[i];
+      b.style.left = `${cv.cv.offsetLeft + px}px`; b.style.top = `${cv.cv.offsetTop + py}px`;
+      b.setAttribute("aria-label", `${pt.name} at (${fmt(pt.x, 2)}, ${fmt(pt.y, 2)}): drag, or use the arrow keys`);
+    });
+  }
+  place();
+  return { place, buttons: btns };
+}
