@@ -112,3 +112,12 @@ test("docs/SUBJECT_CONFIG_SPEC.md is generated from the current spec", async () 
   const { specDoc } = await import("../scripts/subject-spec-doc.mjs");
   assert.equal(await readFile(new URL("../docs/SUBJECT_CONFIG_SPEC.md", import.meta.url), "utf8"), specDoc(), "run node scripts/subject-spec-doc.mjs");
 });
+
+test("every live course is defined through a subject adapter that carries its QA rules", () => {
+  for (const c of courses) {
+    if (c.page) continue;                                   // courses scaffolded by new-course.mjs use the standard-2 rules
+    assert.ok(c.adapter && ADAPTERS[c.adapter], `${c.slug} has no adapter`);
+    assert.equal(typeof ADAPTERS[c.adapter].qa.rules, "function", c.slug);
+    assert.ok(ADAPTERS[c.adapter].qa.expert, c.slug);
+  }
+});

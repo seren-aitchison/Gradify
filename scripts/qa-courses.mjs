@@ -10,21 +10,22 @@ import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
 import { parseNotes, norm } from "../kit/course/notes.js";
 import { updateRegistry } from "./curriculum-registry.mjs";
 import { ADAPTERS } from "../kit/subjects/index.js";
+import { standard2Rules } from "../kit/subjects/social.js";
 
+// each course takes its expert, QA rules and review flags from its subject adapter (kit/subjects/<id>.js)
 const COURSES = [
-  { slug: "law", name: "LawGradify", expert: "a practising solicitor or barrister",
+  { slug: "law", name: "LawGradify",
     // SQE1 questions are single best answer from five options
-    minWrong: 4, rules: lawRules, flags: lawFlags },
-  { slug: "nursing", name: "NurseGradify", expert: "a registered nurse educator", minWrong: 3, rules: nursingRules, flags: nursingFlags },
-  { slug: "pharmacy", name: "PharmaGradify", expert: "a registered pharmacist educator", minWrong: 4, rules: pharmacyRules, flags: pharmacyFlags, srcRegister: true,
+    minWrong: 4 },
+  { slug: "nursing", name: "NurseGradify", minWrong: 3 },
+  { slug: "pharmacy", name: "PharmaGradify", minWrong: 4, srcRegister: true,
     registerNote: "taken from the lessons' SRC: lines, for checking against the original (BNF, SPC, NICE, MHRA, GPhC, RPS, legislation.gov.uk, textbooks)." },
-  // maths takes its expert, rules and review flags from its subject adapter (kit/subjects/maths.js)
   { slug: "maths", name: "MathGradify", minWrong: 3, srcRegister: true,
     registerNote: "taken from the lessons' SRC: lines, for checking against the original (DfE subject content, exam board specifications, textbooks, papers)." },
   // the social sciences: the citation register lists each lesson's SRC: references, checked against the originals
-  { slug: "psychology", name: "PsychGradify", expert: "a university psychology lecturer or chartered psychologist", minWrong: 3, rules: psychRules, srcRegister: true,
+  { slug: "psychology", name: "PsychGradify", minWrong: 3, srcRegister: true,
     registerNote: "taken from the lessons' SRC: lines, for checking against the original publication (journal, publisher, APA, BPS, NICE, NHS, Cochrane, PubMed)." },
-  { slug: "sociology", name: "SocGradify", expert: "a university sociology lecturer", minWrong: 3, rules: socRules, srcRegister: true,
+  { slug: "sociology", name: "SocGradify", minWrong: 3, srcRegister: true,
     registerNote: "taken from the lessons' SRC: lines, for checking against the original publication or data release (publisher, journal, ONS, UK Data Service, World Bank, OECD, UN)." },
 ];
 
@@ -33,108 +34,11 @@ const COURSES = [
 for (const slug of (await readdir(new URL("../kit/courses/", import.meta.url))).sort()) {
   if (COURSES.some((c) => c.slug === slug)) continue;
   const c = (await import(`../kit/courses/${slug}/course.js`)).default;
-  if (c.page) COURSES.push({ slug, name: c.site, expert: c.expert, minWrong: 3, rules: (unit, L) => socialRules(unit, L), srcRegister: true,
+  if (c.page) COURSES.push({ slug, name: c.site, expert: c.expert, minWrong: 3, rules: (unit, L) => standard2Rules(unit, L), srcRegister: true,
     registerNote: "taken from the lessons' SRC: lines, for checking against the original publication." });
 }
 
 // ---------- subject rules: warnings, not hard failures ----------
-const CONDITION_HEADINGS = ["definition", "epidemiology", "aetiology", "pathophysiology", "signs", "investigations", "treatment", "nursing assessment", "nursing management", "monitoring", "complications", "education", "escalation"];
-const OVERVIEW_LESSONS = new Set(["introduction to disease processes", "inflammation", "infection", "immune dysfunction", "respiratory disease", "renal disease", "gastrointestinal disorders", "neurological disorders", "haematological disorders", "musculoskeletal disease", "rheumatological conditions", "skin conditions", "multimorbidity", "frailty", "palliative and end of life conditions", "cardiovascular disease"]);
-function nursingRules(unit, L, text) {
-  const w = [];
-  const lower = text.toLowerCase();
-  // School 5: each named condition covers the brief's thirteen headings
-  if (unit.n === 5 && !OVERVIEW_LESSONS.has(norm(L.title))) {
-    const heads = L.blocks.filter((b) => b.t === "h").map((b) => b.x.toLowerCase()).join(" | ");
-    // a heading counts if its words appear in a heading ("Nursing assessment, management and monitoring" covers "nursing management")
-    const missing = CONDITION_HEADINGS.filter((h) => !h.split(" ").every((w) => heads.includes(w)) && !lower.includes(h));
-    if (missing.length) w.push(`condition lesson missing heading(s): ${missing.join(", ")}`);
-  }
-  // clinical schools: an escalation or safety line in every lesson
-  if ([3, 4, 5].includes(unit.n) && !/escalat|call for (urgent |emergency )?help|emergency|local polic|supervision|query|prescriber|pharmacist|report|inform the|withhold|\bbnf\b|refer/.test(lower)) w.push("no escalation, safety or local-policy statement");
-  // medicines: any worked calculation must say it's illustrative
-  if (unit.n === 4 && L.blocks.some((b) => b.t === "ex") && !/illustrative/.test(lower)) w.push("worked calculation not labelled illustrative");
-  return w;
-}
-// ---------- review queue: what to check first in a published course (docs/qa/<slug>-review-queue.md) ----------
-// Flags are prompts for the reviewer, not findings: a lesson with no flag still needs every stage.
-const srcYear = (L) => Math.max(0, ...L.sources.map((x) => Number(String(x.date).slice(0, 4)) || 0));
-function lawFlags(L, text) {
-  const f = [];
-  if (/£\s?\d/.test(text)) f.push("money figures (fees, limits, thresholds) that change");
-  if (srcYear(L) >= 2024 || /\b(Bill|not yet in force|expected to|when in force|commencement|consultation)\b/i.test(text)) f.push("recent or changing law");
-  if (/\bCPR\b|\bCrimPR\b|\bPD\s?\d|\br(ule)?\s\d+\.\d+/.test(text)) f.push("procedure rule numbers (not yet checked)");
-  if (L.sources.some((x) => x.kind === "guidance" || x.kind === "rule")) f.push("regulator guidance or rules (not yet checked)");
-  if (/Shayler|Nicklinson/.test(text)) f.push("citation corrected 2026-11-03: confirm");
-  if (L.authorities?.length) f.push(`${L.authorities.length} case or statute card${L.authorities.length > 1 ? "s" : ""}: check facts and holdings`);
-  return f;
-}
-function nursingFlags(L, text) {
-  const f = [];
-  if (/\b\d+(\.\d+)?\s?(mg|micrograms?|mcg|mmol|mL|ml|units|nanograms?)\b/i.test(text)) f.push("doses or drug quantities");
-  if (/NEWS2|PEWS|MEOWS|mmHg|mmol\/L|SpO2|\bGCS\b|\bAVPU\b|\bscore of \d/i.test(text)) f.push("clinical thresholds or scores");
-  if (/\b(escalat|sepsis|anaphyla|resuscitat|deteriorat)/i.test(text)) f.push("escalation or emergency response");
-  // the NMC Code and NMC standards are current at their own dates, so only clinical guidance counts here
-  if (L.sources.some((x) => x.kind === "guidance" && !/\bNMC\b/.test(x.cite) && Number(String(x.date).slice(0, 4)) < 2020)) f.push("clinical guidance dated before 2020: check for updates");
-  return f;
-}
-
-// pharmacy: clinical lessons point to the BNF, SPC or guidance and say what to do when unsure; any dose is
-// marked illustrative or sent to the BNF; law lessons cite the legislation or the GPhC
-function pharmacyRules(unit, L, text) {
-  const w = [], lower = text.toLowerCase();
-  const clinical = [7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18].includes(unit.n);
-  if (clinical && !/\bbnf\b|\bspc\b|nice|local guid|local polic|refer|prescriber|monitor|counsel/.test(lower)) w.push("clinical lesson without a pointer to the BNF, SPC, guidance, referral or monitoring");
-  if (clinical && /\b\d+(\.\d+)?\s?(mg|micrograms?|mcg|units)\b/i.test(text) && !/illustrative|check the (current )?bnf|see the (current )?bnf|bnf(c)? for (the )?dose|spc/i.test(text)) w.push("a dose is stated without marking it illustrative or pointing to the BNF or SPC");
-  if (unit.n === 16 && !/regulations \d{4}|act \d{4}|gphc|misuse of drugs|human medicines/i.test(text)) w.push("law lesson without the legislation or GPhC standard it rests on");
-  return w;
-}
-function pharmacyFlags(L, text) {
-  const f = [];
-  if (/\b\d+(\.\d+)?\s?(mg|micrograms?|mcg|mmol|units)\b/i.test(text)) f.push("doses or quantities: check against the current BNF and SPC");
-  if (/schedule [1-5]|controlled drug|\bcd\b/i.test(text)) f.push("controlled drugs law");
-  if (srcYear(L) >= 2024 || /\bmhra\b|drug safety update|from (april|october) 202[5-7]|being reformed|consultation/i.test(text)) f.push("recent or changing guidance");
-  if (/cockcroft|creatinine clearance|egfr|mg\/kg|body surface area|mg\/m/i.test(text)) f.push("calculations or renal dosing");
-  if (L.authorities?.length) f.push(`${L.authorities.length} drug card${L.authorities.length > 1 ? "s" : ""}: check against the BNF and SPC`);
-  return f;
-}
-
-// maths: a worked example in every lesson (except the software and research-methods schools), and a
-// numerical check question somewhere in each calculation school
-function lawRules(unit, L, text) {
-  const w = [];
-  // single best answer: every check question should have five options
-  for (const m of L.mcq) if (m.wrong.length < 4) w.push(`not five-option SBA: "${m.q.slice(0, 60)}…"`);
-  // core legal content should be anchored in authority
-  if (![18, 19].includes(unit.n) && !/\[\d{4}\]|\(\d{4}\)|Act \d{4}|Regulations \d{4}|\bCPR\b|\bSRA\b|Code/.test(text)) w.push("no case, statute or rule cited");
-  return w;
-}
-
-// psychology and sociology: every lesson says how strong its evidence is (EV: lines) and teaches all three levels
-const EV_STATUS = new Set(["established", "contested", "hypothetical"]);
-function socialRules(unit, L) {
-  const w = [];
-  if (!L.evidence?.length) w.push("no evidence-status (EV:) lines");
-  for (const e of L.evidence || []) if (!EV_STATUS.has(e.status)) w.push(`evidence status "${e.status}" isn't established, contested or hypothetical`);
-  const levels = new Set([...L.mcq.map((m) => m.d), ...L.tasks.map((t) => t.d)]);
-  if (levels.size < 3) w.push("questions don't cover all three levels (Foundation, Application, Evaluation)");
-  return w;
-}
-function psychRules(unit, L, text) {
-  const w = socialRules(unit, L);
-  // psychopathology and clinical schools: say what the lesson is not
-  if ([8, 9].includes(unit.n) && !/not (a )?(diagnos|therapy|treatment|clinical advice)|qualified (professional|clinician)|educational/i.test(text + L.blocks.filter((b) => b.t === "safe").map((b) => b.x).join(" "))) w.push("clinical lesson without an education-not-diagnosis statement");
-  return w;
-}
-function socRules(unit, L, text) {
-  const w = socialRules(unit, L);
-  // a percentage or rate should carry the year or period it describes
-  // (worked examples with invented numbers must say so: "illustrative")
-  if (/\d+(\.\d+)?\s?(%|per cent)/.test(text) && !/(19|20)\d\d/.test(text) && !/illustrative|invented/i.test(text)) w.push("a statistic without a year");
-  return w;
-}
-
-// ---------- helpers ----------
 const lessonText = (L) => [L.title, L.lead, ...L.blocks.flatMap((b) => b.x ? [b.x] : b.items || (b.rows || []).flat() || []), ...L.blocks.flatMap((b) => b.steps || [])].join("\n");
 const CITE = [
   ["case", /\b(?:R \(([^)]+)\) v [A-Z][\w'&.\- ]{1,60}?|[A-Z][\w'&.\-]*(?: [A-Z][\w'&.\-]*){0,5} v [A-Z][\w'&.\-]*(?: (?:of |and |[A-Z][\w'&.\-]*)){0,6})(?=\s*[\[(]\d{4}[\])])\s*[\[(]\d{4}[\])](?:\s*\d*\s*(?:UKSC|UKHL|EWCA (?:Civ|Crim)|EWHC|AC|QB|KB|Ch|WLR|All ER)\s*\d*(?:\s*\([A-Za-z]+\))?)?/g],

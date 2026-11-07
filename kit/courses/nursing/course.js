@@ -4,7 +4,10 @@ import { MAP, FRAMEWORKS } from "./map.js";
 import { QA } from "./qa.js";
 import { WRITING } from "./writing.js";
 import { QUESTIONS, LESSONS } from "./registry.js";
-export default {
+import { defineCourse } from "../../subjects/define.js";
+import nursing from "../../subjects/nursing.js";
+// the nursing adapter (kit/subjects/) holds this subject's QA rules and reviewer flags
+export default defineCourse(nursing, {
   site: "NurseGradify", slug: "nursing", name: "Nursing", app: "../app.html", unitWord: "School",
   units: UNITS, tracks: TRACKS, paths: PATHS, core: CORE,
   // curriculum mapping to the NMC standards and the fields, with framework provenance (map.js)
@@ -76,4 +79,4 @@ export default {
     ["Learning map", "Every NurseGradify subject on one map.", "../map.html"],
     ["Notes Studio", "Turn your own lecture notes and placement learning into flashcards and questions.", "../app.html#/notes"],
   ],
-};
+});

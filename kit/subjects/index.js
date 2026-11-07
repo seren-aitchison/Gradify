@@ -3,4 +3,8 @@
 import maths from "./maths.js";
 import science from "./science.js";
 import programming from "./programming.js";
-export const ADAPTERS = { maths, science, programming };
+import law from "./law.js";
+import nursing from "./nursing.js";
+import pharmacy from "./pharmacy.js";
+import { psychology, sociology } from "./social.js";
+export const ADAPTERS = { maths, science, programming, law, nursing, pharmacy, psychology, sociology };

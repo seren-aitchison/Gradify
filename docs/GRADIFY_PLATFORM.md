@@ -145,7 +145,7 @@ Done:
   - Cross-site tests.
 
 Next, each a small, separately testable change:
-- **Phase 2, the remaining courses.**
+- **Phase 2, the remaining courses (done 7 November 2026).** Law, nursing, pharmacy, psychology and sociology now have adapters (`kit/subjects/law.js`, `nursing.js`, `pharmacy.js`, `social.js`), and their QA rules live there. The original plan:
   - Give law, nursing, pharmacy, psychology and sociology adapters.
   - Move `lawRules`/`lawFlags`, `nursingRules`/`nursingFlags`, `pharmacyRules`/`pharmacyFlags`, `psychRules` and `socRules` from `scripts/qa-courses.mjs` into them, as was done for maths.
   - Law needs no new question types. Its five-option SBA rule and case and statute cards already run on the shared engine (the `authorities` capability).

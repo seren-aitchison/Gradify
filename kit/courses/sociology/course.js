@@ -5,7 +5,10 @@ import { QA, WRITTEN_ON } from "./qa.js";
 import { INTERACTIVES } from "./interactives.js";
 import { QUESTIONS, LESSONS } from "./registry.js";
 import { EVIDENCE, EXPLORATION } from "./evidence.js";
-export default {
+import { defineCourse } from "../../subjects/define.js";
+import { sociology } from "../../subjects/social.js";
+// the sociology adapter (kit/subjects/) holds this subject's QA rules and reviewer flags
+export default defineCourse(sociology, {
   site: "SocGradify", slug: "sociology", name: "Sociology", app: "../app.html", unitWord: "School", trackWord: "Stage",
   units: UNITS, tracks: TRACKS, paths: PATHS, blurbs: BLURBS,
   qa: QA, reviewLine: true, writtenOn: WRITTEN_ON,
@@ -44,4 +47,4 @@ export default {
     ["Notes Studio", "Turn your own sociology notes and readings into flashcards and questions.", "../app.html#/notes"],
     ["PsychGradify", "The companion course: psychology.", "/psychgradify/course/"],
   ],
-};
+});
