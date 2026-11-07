@@ -1,0 +1,23 @@
+/* MathGradify's labs (kit/labs/maths/*), on top of the shared lab styles in labs.css */
+.mg-fn { display: flex; flex-direction: column; gap: 6px; }
+.mg-fnin { display: flex; align-items: center; gap: 8px; font: 500 13.5px var(--sans); color: var(--mute); }
+.mg-fnin input { flex: 1; min-width: 0; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line-strong); background: rgba(255, 255, 255, .05); color: var(--fg); font: 500 14px var(--mono); }
+.mg-err { margin: 0; font-size: 13px; color: #ff8fa3; }
+.mg-pre { display: flex; flex-wrap: wrap; gap: 6px; }
+.mg-pre .lab-btn { padding: 5px 10px; font: 500 12.5px var(--mono); }
+.mg-tip { margin: 6px 0 0; font-size: 12.5px; color: var(--mute); }
+.mg-fact { margin: 0; font: 500 15px var(--mono); color: var(--fg); }
+.mg-sieve { display: grid; grid-template-columns: repeat(auto-fill, minmax(34px, 1fr)); gap: 3px; }
+.mg-sieve span { display: grid; place-items: center; min-height: 30px; border-radius: 6px; font: 500 12.5px var(--mono); color: var(--fg); background: rgba(255, 255, 255, .05); }
+.mg-sieve span.one { color: var(--mute); }
+.mg-sieve span.x { color: rgba(255, 255, 255, .35); background: color-mix(in srgb, var(--c) 18%, transparent); text-decoration: line-through; }
+.mg-sieve span.pr { color: #000; background: #10b981; font-weight: 700; }
+.mg-sieve span.cur { outline: 2px solid #fbbf24; }
+.mg-clock { width: 100%; max-width: 340px; display: block; margin: 0 auto; }
+.mg-table, .mg-iter { overflow-x: auto; margin-top: 12px; }
+.mg-mod { border-collapse: collapse; font: 500 12.5px var(--mono); color: var(--fg); }
+.mg-mod caption { text-align: left; padding-bottom: 6px; font: 600 13px var(--sans); color: var(--mute); }
+.mg-mod th, .mg-mod td { padding: 4px 8px; border: 1px solid var(--line); text-align: right; }
+.mg-mod th { color: var(--mute); background: rgba(255, 255, 255, .04); }
+.mg-mod td.hit { background: rgba(16, 185, 129, .35); }
+.mg-mod td.one { background: rgba(90, 160, 255, .2); }
