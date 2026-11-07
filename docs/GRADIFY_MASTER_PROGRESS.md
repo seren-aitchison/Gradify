@@ -3,7 +3,7 @@
 The one place to see where the whole ecosystem stands. Every line here was checked against the repository or the
 live site on the date given; where a more detailed tracker exists, this page links to it rather than copying it.
 
-**Last updated:** 8 November 2026, at commit `eb7dcea` plus this document. **Tests:** 368 of 368 pass (`npm test`).
+**Last updated:** 8 November 2026, at commit `fcb114d` (live). **Tests:** 381 of 381 pass (`npm test`).
 
 ## Detailed trackers
 
@@ -50,6 +50,10 @@ SciGradify as a whole: 1,403 of 2,159 lessons written. 165 interactives in all, 
 - **Missing:** payments and plans (deliberately: nothing is paywalled, and nothing should be until accounts work), teacher and institution tools, curriculum mapping to qualifications (GCSE, A level, IB, AP), AI marking of photographed working.
 - **Flaky:** `tests/sites-status.test.mjs` failed once in a full run and passed alone and in two further full runs. Probably reads files another test writes; worth isolating.
 
+## Subject production line
+
+The site-production workstream (branch `claude/lawgradify-nursegradify`, a separate session) runs the subject builders and owns the shared integration files: `kit/core/sites.js`, the offline list's course entries, `scripts/qa-courses.mjs`, `scripts/new-course.mjs` and [SITE-PRODUCTION.md](SITE-PRODUCTION.md). As of this update no builder branch has been pushed and the tracker lists all 23 new courses as not yet generated; this workstream doesn't start a second set of builders, to avoid duplicate courses and conflicts in those files.
+
 ## Owner actions (blocking)
 
 1. **Create the Supabase project** and send the project URL and the public anon key; nothing else is needed from it here. Run the migrations and deploy the two functions as in [SETUP.md](SETUP.md).
@@ -62,6 +66,9 @@ SciGradify as a whole: 1,403 of 2,159 lessons written. 165 interactives in all, 
 
 | Change | Affects | Commit | Tests |
 |---|---|---|---|
+| Target my weaknesses: practice from the learner's weakest measured lessons, weak foundations first (concept graph), easier questions where weakest; in every course at `#/review/weak` | every course | `605398b` | `tests/targets.test.mjs`; browser: Definite Integrals → Differential Calculus first |
+| LifeOS Do next names weak spots and the foundation to start with | LifeOS, every course | `98b3dc4` | test; browser |
+| Service worker revalidates same-origin files and installs fresh, so a deploy can't leave a mix of old and new modules (which stops a course loading) | every site | `fcb114d` | suite; v60 verified live |
 | Evidence classes: exploration earns XP but never mastery; assessment counts ×1.5; XP never feeds mastery; 108 exploration challenges classified | all 6 courses with labs, LifeOS | `9a1aa2c`, `5453a3c` | `tests/evidence-class.test.mjs` |
 | 58 lab challenges re-pointed to the lesson that teaches them (the generator had sent them to each interactive's first lesson) | Physics, Chemistry, Biology, Psychology, Sociology, Maths | `4bc16c6` | pinned by test |
 | Repeated answers to one question within a day count ½, ⅓, …, so drilling can't inflate mastery or certainty | every course | `eb7dcea` | yes |
@@ -78,7 +85,6 @@ SciGradify as a whole: 1,403 of 2,159 lessons written. 165 interactives in all, 
 | P1 | Set PsychGradify, SocGradify and MathGradify live, as the audit rule says | site-production session (owns `sites.js`) |
 | P1 | Biology and Chemistry notes (about 850 lessons in their syllabi) | content sessions |
 | P1 | Concept graphs for the other eight courses, so prerequisite weaknesses work everywhere | – |
-| P2 | "Target my weaknesses": practice chosen from the learner's weakest measured lessons and prerequisites | – |
 | P2 | Mark my working (AI), photographed working | backend |
 | P2 | Curriculum mapping layer: qualification → specification → learning outcome → lesson | – |
 | P3 | Teacher and institution tools; plans and payments | backend, owner |
