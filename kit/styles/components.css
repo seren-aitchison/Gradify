@@ -501,22 +501,35 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .tree-head h3 { display: flex; align-items: center; gap: 10px; }
 .tree-head .sub { max-width: 46em; }
 .grow-body { display: grid; grid-template-columns: 1fr 250px; gap: 16px; align-items: center; }
-.tree-wrap { border-radius: 18px; overflow: hidden; background: radial-gradient(90% 80% at 50% 30%, #12161a, #050607); }
-.tree-wrap svg { display: block; width: 100%; height: auto; max-height: 460px; }
-.bar-day { fill: url(#barg); }
-.bar-now { fill: #fff; opacity: .85; }
-.wave { stroke: none; }
-.wave.w1 { fill: rgba(255, 255, 255, .035); }
-.wave.w2 { fill: rgba(255, 255, 255, .05); }
-.wave.w3 { fill: #07090a; }
-.bark { fill: none; stroke: #b39a7c; stroke-linecap: round; }
-.trunk { fill: url(#trunkg); }
-.puff { transform-box: fill-box; transform-origin: center; animation: grow .7s cubic-bezier(.2, .8, .2, 1) both; filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .45)); }
-.glint { fill: #fff; opacity: .16; pointer-events: none; }
-.fruit { fill: #ffc002; stroke: #fff6c8; stroke-width: 1.5; filter: drop-shadow(0 0 7px #ffc002); }
-.sway { transform-origin: 380px 372px; animation: sway 9s ease-in-out infinite alternate; }
-@keyframes sway { from { transform: rotate(-.6deg); } to { transform: rotate(.6deg); } }
+.tree-wrap { border-radius: 18px; overflow: hidden; background: radial-gradient(90% 80% at 50% 35%, #142224, #070a0b); }
+.tree-wrap svg { display: block; width: 100%; height: auto; max-height: 520px; }
+.mote { fill: #e8fff4; opacity: .12; animation: mote 5s ease-in-out infinite alternate; }
+@keyframes mote { to { opacity: .45; } }
+.isle-line { fill: none; stroke: rgba(40, 22, 10, .28); stroke-width: 3; stroke-linecap: round; }
+.isle-stone { fill: #6b4a33; opacity: .7; }
+.isle-rim { fill: none; stroke: rgba(255, 255, 255, .22); stroke-width: 2; }
+.isle-sheen { fill: #d6f5be; opacity: .22; }
+.isle-shade { fill: #2f6a35; opacity: .45; }
+.blade { fill: #4e9d4b; }
+.blade.now { fill: #8fd877; }
+.tuft .stem { fill: none; stroke: #4f9a4c; stroke-width: 1.6; stroke-linecap: round; }
+.tuft .petal { fill: #fff7fb; }
+.tuft .pistil { fill: #ffc94a; }
+.tuft { animation: bob 3.2s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: bottom center; }
+@keyframes bob { from { rotate: -4deg; } to { rotate: 4deg; } }
+.wood { stroke: rgba(60, 36, 20, .35); stroke-width: 1; stroke-linejoin: round; }
+.blob { transform-box: fill-box; transform-origin: center; animation: grow .8s cubic-bezier(.2, .9, .25, 1.15) both; }
+.blob-shine { fill: #fff; opacity: .32; pointer-events: none; }
+.loose-leaf { opacity: .9; }
+.fruit { animation: grow .6s .9s cubic-bezier(.2, .9, .25, 1.3) both; transform-box: fill-box; transform-origin: center top; }
+.fruit-body { fill: #ffc23d; stroke: #d48a12; stroke-width: 1.2; }
+.fruit-shine { fill: #fff6d2; opacity: .85; }
+.fruit-stem { fill: none; stroke: #7a5232; stroke-width: 1.6; stroke-linecap: round; }
+.fruit-leaf { fill: #79c96a; }
+.sway { transform-origin: 380px 372px; animation: sway 7s ease-in-out infinite alternate; }
+@keyframes sway { from { transform: rotate(-.7deg); } to { transform: rotate(.7deg); } }
 @keyframes grow { from { transform: scale(0); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .tree-wrap svg *, .mine-tree svg * { animation: none !important; } }
 .grow-side { display: flex; flex-direction: column; gap: 14px; }
 .grow-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .grow-stats div { display: flex; flex-direction: column; padding: 12px; border-radius: 14px; background: var(--inset); }
