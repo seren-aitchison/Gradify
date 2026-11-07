@@ -158,3 +158,32 @@ test("lab state text: settings, readout, tables and challenges, capped", () => {
   assert.equal(labState({ fallback: "Question 3: solve 2x + 1 = 7" }), "Question 3: solve 2x + 1 = 7");
   assert.ok(labState({ readout: "z".repeat(5000) }).length <= 2000);
 });
+
+import { labOutcome, labPractice } from "../kit/learning/mastery.js";
+const labA = (id, outcome, at, lesson = "u19-10") => ({ schema: 1, at, question: { id: `ix:roots:${id}`, type: "lab", d: 2 }, lesson, unit: "u19", contextId: "roots", score: outcome === "attempt" ? 0 : 1, correct: outcome !== "attempt", attempt: 1, context: "practice", response: { challenge: id, outcome }, marking: { method: "auto", status: "final" } });
+
+test("lab outcomes: success counts in full, assisted success as assisted, an unmet try not at all", () => {
+  const [s] = evidenceFromAttempts([labA("nobr", "success", "2026-11-01T10:00:00Z")]);
+  const [as] = evidenceFromAttempts([labA("nobr", "assisted_success", "2026-11-01T10:00:00Z")]);
+  assert.equal(s.dim, "apply"); assert.equal(s.independent, true);
+  assert.equal(as.dim, "apply"); assert.equal(as.independent, false); near(as.w, s.w * 0.3);
+  assert.deepEqual(evidenceFromAttempts([labA("sqrt2", "attempt", "2026-11-01T10:00:00Z")]), []);
+  // older records: a plain string response, or none, was a success
+  assert.equal(labOutcome({ question: { type: "lab" }, correct: true, response: "Make it diverge" }), "success");
+  assert.equal(labOutcome({ question: { type: "num" } }), null);
+});
+
+test("unmet tries never lower mastery, but repeated ones are flagged for practice until a success", () => {
+  const ok = [labA("nobr", "success", "2026-11-01T10:00:00Z")];
+  const tries = [labA("sqrt2", "attempt", "2026-11-02T10:00:00Z"), labA("sqrt2", "attempt", "2026-11-03T10:00:00Z"), labA("sqrt2", "attempt", "2026-11-04T10:00:00Z")];
+  assert.deepEqual(evidenceFromAttempts([...ok, ...tries]), evidenceFromAttempts(ok));
+  const [p] = labPractice([...ok, ...tries]);
+  assert.equal(p.lesson, "u19-10"); assert.equal(p.tries, 3); assert.deepEqual(p.labs, ["roots"]); assert.deepEqual(p.challenges, ["sqrt2"]);
+  assert.equal(labPractice(tries.slice(0, 1)).length, 0);                         // one try isn't a pattern
+  assert.equal(labPractice([...tries, labA("sqrt2", "success", "2026-11-05T10:00:00Z")]).length, 0);   // met: cleared
+});
+
+test("lab state marks the challenge the learner is working on", () => {
+  const s = labState({ challenges: [{ text: "Find √2", done: false, focus: true }, { text: "No bracket", done: true }] });
+  assert.match(s, /\[working on it now\] Find √2; \[done\] No bracket/);
+});

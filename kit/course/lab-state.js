@@ -26,7 +26,7 @@ export function readLab(root) {
     caption: line(t.caption?.textContent),
     rows: [...t.rows].map((r) => [...r.cells].map((c) => line(c.textContent))),
   }));
-  const challenges = [...root.querySelectorAll(".lab-ch li")].map((li) => ({ text: line(li.textContent).replace(/^[✓○]\s*/, ""), done: li.classList.contains("ok") }));
+  const challenges = [...root.querySelectorAll(".lab-ch li")].map((li) => ({ text: line(li.querySelector(".lab-cht")?.textContent ?? li.textContent).replace(/^[✓○]\s*/, ""), done: li.classList.contains("ok"), focus: li.querySelector('[aria-pressed="true"]') != null }));
   // anything else (an interactive not built with the lab toolkit): its visible text
   const fallback = (readout || tables.length) ? "" : line(root.textContent);
   return { settings, readout, tables, challenges, fallback };
@@ -34,7 +34,7 @@ export function readLab(root) {
 
 /**
  * @param {{ report?: string, settings?: [string, string][], readout?: string, tables?: { caption: string, rows: string[][] }[],
- *           challenges?: { text: string, done: boolean }[], fallback?: string }} p
+ *           challenges?: { text: string, done: boolean, focus?: boolean }[], fallback?: string }} p
  * @param {number} [max] characters
  */
 export function labState(p, max = 2000) {
@@ -48,7 +48,7 @@ export function labState(p, max = 2000) {
     const rows = t.rows.length > 14 ? [...t.rows.slice(0, 8), ["…"], ...t.rows.slice(-5)] : t.rows;
     out.push(`${t.caption || "Table"}:\n${rows.map((r) => r.join(" | ")).join("\n")}`);
   }
-  if (p.challenges?.length) out.push(`Challenges: ${p.challenges.map((c) => `${c.done ? "[done]" : "[not yet]"} ${c.text}`).join("; ")}`);
+  if (p.challenges?.length) out.push(`Challenges: ${p.challenges.map((c) => `${c.done ? "[done]" : c.focus ? "[working on it now]" : "[not yet]"} ${c.text}`).join("; ")}`);
   if (!out.length && p.fallback) out.push(p.fallback);
   const s = out.join("\n");
   return s.length > max ? `${s.slice(0, max - 1)}…` : s;

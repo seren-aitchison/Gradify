@@ -78,15 +78,20 @@ export function seg(host, options, value, fn) {
 }
 
 // challenges: a checklist the learner completes by doing things in the lab
+// When the course counts a lab's challenges as mastery evidence, it passes api.focus: each open challenge then has a
+// "Try this" button, so the learner can say which one they're working on, and a try that doesn't get there can be
+// recorded too (kit/course/course.js). Without api.focus, challenges are a plain checklist.
 export function challenges(host, api, list) {
   const box = document.createElement("div"); box.className = "lab-ch"; host.append(box);
   const done = new Set(list.filter((c) => api?.solved?.(c.id)).map((c) => c.id));
-  const paint = () => { box.innerHTML = `<b>Challenges</b><ul>${list.map((c) => `<li class="${done.has(c.id) ? "ok" : ""}">${done.has(c.id) ? "✓" : "○"} ${c.text}</li>`).join("")}</ul>`; };
+  const can = typeof api?.focus === "function"; let cur = null;
+  const paint = () => { box.innerHTML = `<b>Challenges</b><ul>${list.map((c) => `<li class="${done.has(c.id) ? "ok" : ""}">${done.has(c.id) ? "✓" : "○"} <span class="lab-cht">${c.text}</span>${can && !done.has(c.id) ? ` <button type="button" class="lab-try" data-try="${esc(c.id)}" aria-pressed="${cur === c.id}">${cur === c.id ? "Working on it" : "Try this"}</button>` : ""}</li>`).join("")}</ul>`; };
+  if (can) box.addEventListener("click", (e) => { const b = e.target.closest("[data-try]"); if (!b) return; cur = cur === b.dataset.try ? null : b.dataset.try; api.focus(cur, list.find((c) => c.id === cur)?.text.replace(/<[^>]+>/g, "")); paint(); });
   paint();
   return {
     check(state) {
       let changed = false;
-      for (const c of list) if (!done.has(c.id) && c.test(state)) { done.add(c.id); changed = true; api?.complete?.(c.id, c.text.replace(/<[^>]+>/g, "")); }
+      for (const c of list) if (!done.has(c.id) && c.test(state)) { done.add(c.id); changed = true; if (cur === c.id) cur = null; api?.complete?.(c.id, c.text.replace(/<[^>]+>/g, "")); }
       if (changed) { paint(); if (done.size === list.length) api?.onComplete?.({ score: 1 }); }
     },
     done: (id) => done.has(id),

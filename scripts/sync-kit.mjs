@@ -7,4 +7,6 @@ await copyFile("kit/notes/pack.js", "supabase/functions/_shared/pack.js");
 console.log("Copied kit/notes/pack.js to supabase/functions/_shared/pack.js");
 await copyFile("kit/assess/tutor.js", "supabase/functions/_shared/tutor.js");
 console.log("Copied kit/assess/tutor.js to supabase/functions/_shared/tutor.js");
+await copyFile("kit/assess/canon.js", "supabase/functions/_shared/canon.js");
+console.log("Copied kit/assess/canon.js to supabase/functions/_shared/canon.js");
 await import("./build-dashboard-function.mjs");

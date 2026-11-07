@@ -52,8 +52,10 @@ Its daily limits per learner are in `DAILY` in `kit/assess/tutor.js`. After edit
 Optional settings (with their defaults):
 
 ```bash
-supabase secrets set GRADIFY_DAILY_PACKS=10 GRADIFY_MAX_CHARS=120000 GRADIFY_ALLOWED_ORIGINS=https://getgradify.com
+supabase secrets set GRADIFY_DAILY_PACKS=10 GRADIFY_MAX_CHARS=120000 GRADIFY_ALLOWED_ORIGINS=https://getgradify.com GRADIFY_SITE_URL=https://getgradify.com
 ```
+
+`GRADIFY_SITE_URL` is where the `course-tutor` function reads each lesson's notes from: the published site's `kit/courses/<course>/notes/` and `ids.js`. The tutor is grounded only in the notes published there, never in text the browser sends.
 
 Your API key only ever lives in Supabase's secrets. It is never sent to the browser.
 

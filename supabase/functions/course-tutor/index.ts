@@ -2,7 +2,7 @@
 // POST { mode: "mark", subject, task: { title, brief, prompt, rubric, model }, answer }  → { feedback }
 // POST { mode: "roleplay", subject, case: { client, persona, facts }, turns }            → { reply }
 // POST { mode: "debrief", subject, case, rubric, turns }                                 → { feedback }
-// POST { mode: "explain", subject, lesson: { title, text }, question }                   → { answer, fromLesson }
+// POST { mode: "explain", subject, lesson: { id, title }, question, lab? }               → { answer, fromLesson }
 // POST { mode: "diagnose", subject, lesson, question: { q, options, chosen, why } }        → { misconception, explanation, check }
 // POST { mode: "socratic" | "examiner", subject, lesson, goal?, turns }                 → { reply }
 // POST { mode: "challenge", subject, lesson, focus }                                     → { questions }
@@ -11,9 +11,25 @@
 // The learner must be signed in; each mode has a daily limit per learner (DAILY in _shared/tutor.js),
 // counted from the tutor_usage table. The Claude API key stays here as a server secret.
 // The prompts, schemas and input checks are in _shared/tutor.js (a copy of kit/assess/tutor.js).
+// Lesson-grounded modes are given the lesson's canonical notes, fetched here from the published site by lesson id
+// (_shared/canon.js, a copy of kit/assess/canon.js). Any notes text the browser sends is ignored.
 import Anthropic from "npm:@anthropic-ai/sdk@0.133.0";
 import { createClient } from "npm:@supabase/supabase-js@2.117.0";
 import { MODEL, DAILY, FEEDBACK_MODES, buildRequest, checkReply } from "../_shared/tutor.js";
+import { canonicalLesson } from "../_shared/canon.js";
+
+// modes that are grounded in a lesson's notes
+const LESSON_MODES = ["explain", "diagnose", "socratic", "examiner", "challenge", "connect"];
+// the published site the notes are read from, cached for ten minutes per file
+const SITE = (Deno.env.get("GRADIFY_SITE_URL") ?? "https://getgradify.com").replace(/\/+$/, "");
+const files = new Map<string, { at: number; text: string | null }>();
+async function siteText(path: string): Promise<string | null> {
+  const hit = files.get(path); if (hit && Date.now() - hit.at < 6e5) return hit.text;
+  const res = await fetch(`${SITE}/${path}`, { redirect: "error" });
+  if (!res.ok && res.status !== 404) throw new Error(`site ${res.status}`);
+  const text = res.ok ? await res.text() : null;
+  files.set(path, { at: Date.now(), text }); return text;
+}
 
 const ALLOWED = (Deno.env.get("GRADIFY_ALLOWED_ORIGINS") ?? "https://getgradify.com,http://localhost:8080").split(",");
 const anthropic = new Anthropic(); // reads ANTHROPIC_API_KEY
@@ -42,6 +58,12 @@ Deno.serve(async (req) => {
 
   let body: any;
   try { body = await req.json(); } catch { return json(req, { error: "Bad request." }, 400); }
+
+  // the lesson's canonical notes replace whatever the browser sent
+  if (LESSON_MODES.includes(body?.mode)) {
+    try { body.lesson = await canonicalLesson(body, siteText); }
+    catch (e) { const st = (e as { status?: number }).status; return json(req, { error: st ? (e as Error).message : "The lesson notes couldn't be loaded. Please try again in a minute." }, st ?? 502); }
+  }
 
   let r: ReturnType<typeof buildRequest>;
   try { r = buildRequest(body); } catch (e) { return json(req, { error: (e as Error).message }, (e as { status?: number }).status ?? 400); }
