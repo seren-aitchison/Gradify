@@ -61,6 +61,15 @@ function serve(dir) {
       if (!info) { fail("didn't mount"); continue; }
       declaredOut[slug][x.id] = info.declared;
       if (errs.length > e0) fail(`script error: ${errs.at(-1).slice(0, 120)}`); else if (!info.drawn) fail("drew nothing"); else results[slug].loads++;
+      // interactives that declare the accessibility standard (access: true): every drawing named and described,
+      // every draggable point labelled, every control with an accessible name
+      if (x.access) {
+        const a11y = await p.evaluate(() => { const el = [...document.querySelectorAll(".co-labstage, .co-ix")].find((e) => e.gradifyIx); const bad = [];
+          el.querySelectorAll("canvas").forEach((c, i) => { if (!(c.getAttribute("role") === "img" && c.getAttribute("aria-label")) && c.getAttribute("aria-hidden") !== "true") bad.push(`canvas ${i + 1} has no name`); if (!c.parentElement.querySelector(".lab-desc")) bad.push(`canvas ${i + 1} has no live description`); });
+          el.querySelectorAll("button, input, select, textarea").forEach((c) => { const name = c.getAttribute("aria-label") || c.textContent.trim() || c.closest("label")?.textContent.trim() || (c.id && document.querySelector(`label[for="${c.id}"]`)?.textContent.trim()); if (!name) bad.push(`${c.tagName.toLowerCase()} without a name`); });
+          return bad; });
+        if (a11y.length) fail(`accessibility: ${[...new Set(a11y)].join("; ")}`); else results[slug].access = (results[slug].access || 0) + 1;
+      }
       // nothing may be met just by opening it (the engine ignores such completions; the lab's start state should be fixed)
       if (info.onOpen.length) fail(`challenge met on opening, before any interaction: ${info.onOpen.join(", ")}`);
       const unmapped = info.declared.filter((c) => !info.evidence[c.id]);
@@ -105,7 +114,7 @@ function serve(dir) {
     } catch (e) { results[slug].offline = "failed"; problems.push(`${slug}: offline check: ${String(e.message).split("\n")[0]}`); }
     await off.close();
     const r = results[slug];
-    console.log(`${slug}: ${r.interactives} interactives · loads ${r.loads} · mapped ${r.mapped} · outcomes ${r.outcomes} · lesson ${r.lesson} · phone ${r.phone} · offline ${r.offline}`);
+    console.log(`${slug}: ${r.interactives} interactives · loads ${r.loads} · mapped ${r.mapped} · outcomes ${r.outcomes} · lesson ${r.lesson} · phone ${r.phone} · offline ${r.offline}${r.access ? ` · accessibility standard ${r.access}` : ""}`);
   }
   // three courses at a time
   const queue = [...courses]; await Promise.all([0, 1, 2].map(async () => { while (queue.length) await checkCourse(queue.shift()); }));

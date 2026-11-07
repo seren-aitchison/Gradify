@@ -33,3 +33,22 @@ export const EVIDENCE = {
   "seq-align": { "own": "u13-05", "gap": "u13-05", "loc": "u13-05" },
   "protein-viewer": { "lv": "u03-17", "hyd": "u03-17" },
 };
+
+// Exploration challenges: met by doing what they say (run, open, view, step through, "halve X and see"), not by
+// reasoning towards a target. They earn XP and stay in the activity history but never count towards mastery
+// (kit/learning/evidence-class.js). Every other challenge in the map above is practice evidence.
+export const EXPLORATION = {
+  "antibody": ["mat"],
+  "bacterial-growth": ["log", "res"],
+  "cell-explorer": ["both", "ten"],
+  "division": ["mit", "mei", "two"],
+  "dna-helix": ["groove"],
+  "gel": ["run"],
+  "immune-response": ["sec"],
+  "natural-selection": ["drift"],
+  "organ-systems": ["sys", "org"],
+  "phylo-build": ["done"],
+  "protein-viewer": ["lv"],
+  "respiration": ["all", "poi"],
+  "ribosome": ["stop"],
+};

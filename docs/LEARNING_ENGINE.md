@@ -109,6 +109,16 @@ How each answer is weighted:
 - **By age:** a 30-day half-life.
 - **Assisted answers:** a second try after feedback counts ×0.3.
 - **Provisional marks:** self-marked short answers count ×0.33.
+- **Lab challenges:** ×0.5, because a lab mostly sees successes.
+- **By kind of evidence** (`kit/learning/evidence-class.js`):
+
+| Kind | What it is | Counts towards mastery |
+|---|---|---|
+| Exploration | Doing what an interactive's challenge says: run 1,000 trials, open ten organelles, step through mitosis, "halve X and see Y". Each course lists these in `EXPLORATION` in its `evidence.js` (108 in all) | Never, for or against. They earn XP, stay in the activity history and are named in the Mastery panel |
+| Practice | Answers and challenges checked by Gradify: check questions, generated problems, lab challenges that need reasoning towards a target | ×1 |
+| Assessment | Unit quizzes and exams, worked solutions and cases checked step by step in a workspace, and anything a person marked. Provisional marks never count as assessment | ×1.5 |
+
+Mastery is built only from these answer records, never from XP. Every new lab record carries its kind in its saved response (`evidence`). The course's list also classifies records made before that, so the same classifier can serve a profile across lessons, labs, practice and exams.
 
 A dimension with fewer than 3 weighted answers is **insufficient evidence**. It's shown as an estimate (`~60%`, with a dashed bar) and never counts toward mastery. Overall mastery appears only once at least two dimensions are measured. Each measured dimension shows its certainty (low, medium or high) and how many of its answers came after feedback.
 

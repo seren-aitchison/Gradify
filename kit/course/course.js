@@ -16,6 +16,7 @@ import { parseNotes, lessonHtml, lessonText, lessonFrame, authorityCards, esc, i
 import { renderQuestion, wireQuestions, normalize, TYPES as QTYPES } from "../assess/questions.js";
 import { makeAttempt, analyse } from "../assess/attempts.js";
 import { evidenceFromAttempts, sixProfiles, revisionQueue, labPractice, SIX } from "../learning/mastery.js";
+import { explorationIds, evidenceClass } from "../learning/evidence-class.js";
 import { sixHtml, calibrationHtml } from "../learning/mastery-view.js";
 import { conceptGraph, prerequisitesOfLesson, weakPrerequisites } from "../learning/concepts.js";
 import { learnerOf, needsSetup, applyPrefs } from "../data/profile.js";
@@ -94,6 +95,8 @@ export function mountCourse(root, cfg) {
   // an interactive's evidence map (challenge → lesson): the course's (kit/courses/*/evidence.js), with any the
   // interactive carries itself taking precedence
   const PL = cfg.practiceLabel || "Practice", ixs = (cfg.interactives || []).map((x) => (cfg.evidence?.[x.id] ? { ...x, evidence: { ...cfg.evidence[x.id], ...(x.evidence || {}) } } : x)), ixById = Object.fromEntries(ixs.map((x) => [x.id, x]));
+  // challenges that are exploration, not evidence of skill (cfg.exploration; kit/learning/evidence-class.js)
+  const EXPLORE = explorationIds(cfg.exploration);
   // courses with a QA record (cfg.qa) label any unit that hasn't passed every quality stage as a draft
   // courses that set reviewLine show each written lesson's review state and date from cfg.qa
   const reviewLine = (u) => { const r = cfg.qa?.[u.id] || {}; const d = r.reviewed?.date; return `${d ? `Last reviewed ${esc(d)}${r.reviewed.by ? ` (${esc(r.reviewed.by)})` : ""}` : "Not yet reviewed"} · sources ${r.sources?.date ? `checked ${esc(r.sources.date)}` : "pending verification"}${cfg.writtenOn?.[u.id] ? ` · written ${esc(cfg.writtenOn[u.id])}` : ""}`; };
@@ -602,7 +605,7 @@ export function mountCourse(root, cfg) {
     const tp = main.querySelector(".co-tutor");
     if (tp) mountTutorPanel(tp, {
       ask: askTutor, lesson: { id, title: l.title }, note: cfg.tutor || TUTOR_NOTE,
-      focus: sixProfiles(evidenceFromAttempts((S.attempts || []).filter((a) => a.lesson === id), { levels: cfg.levels || null })).all.weakest || "apply",
+      focus: sixProfiles(evidenceFromAttempts((S.attempts || []).filter((a) => a.lesson === id), { levels: cfg.levels || null, exploration: EXPLORE })).all.weakest || "apply",
       candidates: () => connectCandidates(l), unavailable: (what) => signinLine(what, ""),
       link: (lid) => `#/lesson/${lid}`, titleOf: (lid) => byId[lid]?.title || lid, lab: () => labFor(labLast),
     });
@@ -938,30 +941,38 @@ export function mountCourse(root, cfg) {
 
   // six-dimension mastery from every answer in this course (kit/learning/mastery.js)
   function masteryHtml() {
-    const ev = evidenceFromAttempts(S.attempts || [], { levels: cfg.levels || null }), { all, groups } = sixProfiles(ev, { by: (e) => e.unit });
+    const ev = evidenceFromAttempts(S.attempts || [], { levels: cfg.levels || null, exploration: EXPLORE }), { all, groups } = sixProfiles(ev, { by: (e) => e.unit });
     const pc = (x) => `${Math.round(x * 100)}%`, label = (k) => SIX.find((d) => d.key === k)?.label.toLowerCase();
     const schools = groups.map((g) => ({ g, u: units.find((x) => x.id === g.key) })).filter((x) => x.u).sort((a, b) => a.u.n - b.u.n);
     return `<section class="co-panel co-mx"><h3>Mastery</h3>
       <p class="co-empty">${all.mastery == null ? `Gradify gives an overall mastery figure once at least two kinds of evidence have ${3}+ answers each. It won't guess from less.` : `<b>${pc(all.mastery)}</b> overall, measured from ${all.measured.length} of the 6 kinds of evidence.${all.missing.length ? ` Not yet measured: ${all.missing.map(label).join(", ")}.` : ""}`}</p>
-      ${sixHtml(all)}${calibrationHtml(all)}
+      ${evidenceLine(ev)}${sixHtml(all)}${calibrationHtml(all)}
       ${schools.length ? `<h4>By ${u1}</h4><ul class="co-weak">${schools.map(({ g, u }) => `<li><a href="#/learn/${u.id}">${U} ${u.n}: ${esc(u.title)}</a> <small>${g.mastery == null ? `${g.answers} answers: not enough evidence yet` : `${pc(g.mastery)}${g.weakest ? ` · weakest: ${label(g.weakest)}` : ""}`}</small></li>`).join("")}</ul>` : ""}
       ${labPracticeHtml()}
       <p>${revisitLink()}</p>
       <div class="co-dirbox"><h4>Your next session</h4><p class="co-empty">The Gradify AI study director turns this evidence into a plan for your next session.</p><button type="button" class="btn btn-ghost btn-sm" data-director><span>Plan my next session</span></button><div class="co-dirout" aria-live="polite"></div></div></section>`;
   }
+  // what the mastery figures are built from, and the exploration that isn't counted (kit/learning/evidence-class.js)
+  function evidenceLine(ev) {
+    // one entry per answer that counted (retention and transfer entries are extra readings of the same answer)
+    const n = { practice: 0, assessment: 0 }; for (const e of ev) if (!e.delayed && e.dim !== "transfer") n[e.evidence]++;
+    const ex = (S.attempts || []).filter((a) => a.question?.type === "lab" && a.score >= 1 && evidenceClass(a, { exploration: EXPLORE }) === "exploration").length;
+    if (!n.practice && !n.assessment && !ex) return "";
+    return `<p class="co-acct">Built from ${n.practice} practice ${n.practice === 1 ? "answer" : "answers"} and ${n.assessment} from quizzes, exams and checked working, which count more.${ex ? ` ${ex} exploration ${ex === 1 ? "challenge" : "challenges"} met in the labs earned XP but ${ex === 1 ? "isn't" : "aren't"} counted: trying something out isn't the same as showing you understand it.` : ""}</p>`;
+  }
   // lab challenges tried and not yet met (kit/learning/mastery.js labPractice): a pointer to practise, not a mark
   function labPracticeHtml() {
-    const list = labPractice(S.attempts || []).filter((g) => byId[g.lesson]).slice(0, 6); if (!list.length) return "";
+    const list = labPractice(S.attempts || [], { exploration: EXPLORE }).filter((g) => byId[g.lesson]).slice(0, 6); if (!list.length) return "";
     return `<h4>Lab challenges to practise</h4><ul class="co-weak">${list.map((g) => { const lab = ixById[g.labs[0]]; return `<li><a href="${lab ? `#/practice/${lab.id}` : `#/lesson/${g.lesson}`}">${esc(byId[g.lesson].title)}</a> <small>${g.tries} tries without meeting ${g.challenges.length === 1 ? `"${esc(g.challenges[0])}"` : "the challenge"} yet${lab ? ` · ${esc(lab.title)}` : ""}</small></li>`; }).join("")}</ul>
       <p class="co-acct">Unmet tries don't lower your mastery. They show where a little more practice would help.</p>`;
   }
   // what the study director sees: this summary and the lessons it may name, nothing else
   function directorRequest() {
-    const ev = evidenceFromAttempts(S.attempts || [], { levels: cfg.levels || null });
+    const ev = evidenceFromAttempts(S.attempts || [], { levels: cfg.levels || null, exploration: EXPLORE });
     const all = sixProfiles(ev).all, byLesson = sixProfiles(ev).groups.filter((g) => byId[g.key]);
     const weak = byLesson.filter((g) => g.answers >= 2).sort((a, b) => (a.mastery ?? a.dims.recognition.value ?? 1) - (b.mastery ?? b.dims.recognition.value ?? 1)).slice(0, 6)
       .map((g) => ({ id: g.key, title: byId[g.key].title, note: `${g.mastery == null ? "not enough evidence" : `${Math.round(g.mastery * 100)}% mastery`}${g.weakest ? `, weakest ${g.weakest}` : ""}${g.calibration?.sureWrong ? `, ${g.calibration.sureWrong} confident mistakes` : ""}` }));
-    for (const g of labPractice(S.attempts || []).filter((p) => byId[p.lesson]).slice(0, 4)) {
+    for (const g of labPractice(S.attempts || [], { exploration: EXPLORE }).filter((p) => byId[p.lesson]).slice(0, 4)) {
       const note = `${g.tries} unsuccessful lab tries since the last success`, w = weak.find((x) => x.id === g.lesson);
       if (w) w.note += `, ${note}`; else weak.push({ id: g.lesson, title: byId[g.lesson].title, note });
     }
@@ -1095,7 +1106,7 @@ export function mountCourse(root, cfg) {
     const l = byId[x.evidence?.[task]]; if (!l) return null;
     const ok = outcome === "success" || outcome === "assisted_success";
     record({ Q: { type: "lab", d: 2, objectives: [] }, key: `ix:${x.id}:${task}`, v: null, l }, "practice", x.id,
-      { score: ok ? 1 : 0, correct: ok, method: "auto", status: "final" }, { response: { challenge: label || task, outcome, ...extra } });
+      { score: ok ? 1 : 0, correct: ok, method: "auto", status: "final" }, { response: { challenge: label || task, outcome, evidence: EXPLORE.has(`ix:${x.id}:${task}`) ? "exploration" : "practice", ...extra } });
   };
   const endTry = (x) => {
     const t = labTry.get(x.id); labTry.delete(x.id);
@@ -1145,11 +1156,13 @@ export function mountCourse(root, cfg) {
       el.gradifyIx = { id: x.id, ctx, evidence: x.evidence || {}, declared: () => [...labDeclared(x)].map(([id, text]) => ({ id, text })), attempts: () => (S.attempts || []).filter((a) => a.contextId === x.id), metOnOpen: () => [...(labOnOpen.get(x.id) || [])], touch: () => labTouched.add(x.id) };
       // the lab the learner touched last is the one the tutor on the page is told about
       // a "move" on a chosen challenge is an interaction at least a second after the last (a slider drag is one move)
+      // capture phase: the learner's touch is noted before the lab handles the event, so a challenge met by their very
+      // first interaction still counts (it isn't mistaken for one met on opening)
       if (!el.dataset.watch) { el.dataset.watch = "1"; for (const ev of ["pointerdown", "input", "change", "keydown"]) el.addEventListener(ev, (e) => {
         labLast = x.id; labTouched.add(x.id);
         const t = labTry.get(x.id), now = Date.now();
         if (t && !e.target.closest?.("[data-try]") && now - t.last >= 1000) { t.moves++; t.last = now; }
-      }, { passive: true }); }
+      }, { passive: true, capture: true }); }
     }
     catch (e) { el.innerHTML = `<p class="co-empty">This interactive couldn't load (${esc(e.message)}).</p>`; }
   }

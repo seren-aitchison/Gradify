@@ -20,3 +20,17 @@ export const EVIDENCE = {
   "relativity": { "g2": "u25-05", "len": "u25-04", "sim": "u25-11", "add": "u25-04" },
   "optics": { "tir": "u19-04", "real": "u19-05", "virt": "u19-01", "mag": "u19-05" },
 };
+
+// Exploration challenges: met by doing what they say (run, open, view, step through, "halve X and see"), not by
+// reasoning towards a target. They earn XP and stay in the activity history but never count towards mastery
+// (kit/learning/evidence-class.js). Every other challenge in the map above is practice evidence.
+export const EXPLORATION = {
+  "decay": ["few", "random"],
+  "gas": ["mb"],
+  "interference": ["spacing"],
+  "pendulum": ["small", "chaos"],
+  "photoelectric": ["int"],
+  "quantum": ["box"],
+  "relativity": ["add"],
+  "transients": ["dis"],
+};

@@ -3,7 +3,7 @@
 import { UNITS, TRACKS, PATHS, BLURBS } from "./syllabus.js";
 import { QA } from "./qa.js";
 import { INTERACTIVES } from "./interactives.js";
-import { EVIDENCE } from "./evidence.js";
+import { EVIDENCE, EXPLORATION } from "./evidence.js";
 export default {
   site: "SciGradify", slug: "biology", name: "Biology", app: "../app.html", unitWord: "School", trackWord: "Stage",
   units: UNITS, tracks: TRACKS, paths: PATHS, blurbs: BLURBS,
@@ -14,7 +14,7 @@ export default {
   // the subject's colours for the course chrome (Physics keeps the original spectrum)
   theme: { accent: "#10b981", spectrum: "linear-gradient(90deg, #84cc16, #22c55e 30%, #10b981 55%, #14d4c4 80%, #06b6d4)" },
   // interactives (kit/labs/biology/): listed in the Lab tab and embedded in lessons with IX: lines
-  interactives: INTERACTIVES, evidence: EVIDENCE,   // evidence: each challenge → its lesson (mastery) practiceLabel: "Lab",
+  interactives: INTERACTIVES, evidence: EVIDENCE, exploration: EXPLORATION,   // evidence: each challenge → its lesson (mastery) practiceLabel: "Lab",
   practiceNote: "Simulations run a real model, with its simplifications stated; illustrative models show a structure or process without simulating it; exercises check your answers. Challenges inside them earn XP.",
   // cumulative exams (kit/assess/exam.js): one per stage and one over the whole course, drawn from written schools only
   exams: [

@@ -1,6 +1,7 @@
 // The Mastery Engine: a living profile for every topic, built only from evidence the learner
 // has produced (their answers, how sure they were, and when they last saw each card), and a
 // ranked answer to "what should I practise next, and why?". No browser APIs, so Node can test it.
+import { evidenceClass, explorationIds, EVIDENCE_CLASSES } from "./evidence-class.js";
 const DAY = 864e5;
 
 // What each card type is evidence of. Recall-style cards test remembering; "why" cards test
@@ -224,9 +225,12 @@ export function dimensionOf(a, levels = null) {
 
 // course attempt records (kit/assess/attempts.js) → evidence. Provisional marks (self-marked short
 // answers awaiting review) count at a third of the weight; second tries after feedback are assisted.
-export function evidenceFromAttempts(attempts = [], { levels = null } = {}) {
-  const out = [], lastSeen = new Map();
+export function evidenceFromAttempts(attempts = [], { levels = null, exploration = null } = {}) {
+  const out = [], lastSeen = new Map(), ex = exploration ? explorationIds(exploration) : null;
   for (const a of [...attempts].filter((x) => x?.question).sort((x, y) => String(x.at).localeCompare(String(y.at)))) {
+    // exploration (kit/learning/evidence-class.js) earns XP but is never mastery evidence, for or against
+    const cls = evidenceClass(a, { exploration: ex });
+    if (cls === "exploration") continue;
     // Lab challenges (LAB_OUTCOMES): "attempted" is engagement, never evidence. "unsuccessful" from working at a
     // simulation without meeting the goal is a sign to practise (labPractice), not evidence against mastery; an
     // unsuccessful *answer* (a wrong check-question option, decision or calculation: response.via "answer") counts
@@ -239,8 +243,8 @@ export function evidenceFromAttempts(attempts = [], { levels = null } = {}) {
     const independent = (a.attempt || 1) === 1 && outcome !== "assisted_success";   // (unsuccessful answers stay independent: no help was given)
     const provisional = a.marking?.status === "provisional";
     // a lab challenge is recorded only when it's met (a lab can't see a failed try), so it counts at half weight
-    const w = (DIFFICULTY_WEIGHT[a.question.d] || 1) * (independent ? 1 : 0.3) * (provisional ? 0.33 : 1) * (a.question.type === "lab" ? LAB_WEIGHT : 1);
-    const base = { score: Number(a.score) || 0, at, w, independent, difficulty: a.question.d ?? null, confidence: a.confidence ?? null, source: a.context, topic: a.lesson || a.unit || a.subject, unit: a.unit, subject: a.subject, question: qid, misconception: a.misconception || null };
+    const w = (DIFFICULTY_WEIGHT[a.question.d] || 1) * (independent ? 1 : 0.3) * (provisional ? 0.33 : 1) * (a.question.type === "lab" ? LAB_WEIGHT : 1) * EVIDENCE_CLASSES[cls].weight;
+    const base = { score: Number(a.score) || 0, at, w, independent, evidence: cls, difficulty: a.question.d ?? null, confidence: a.confidence ?? null, source: a.context, topic: a.lesson || a.unit || a.subject, unit: a.unit, subject: a.subject, question: qid, misconception: a.misconception || null };
     const dim = dimensionOf(a, levels);
     out.push({ ...base, dim, delayed: false });
     // retrieval a day or more after last seeing the question, without help, is retention evidence
@@ -325,9 +329,10 @@ export function labOutcome(a) {
 }
 // Lessons whose lab challenges the learner has tried and not yet met: at least `min` unsuccessful tries since that
 // lesson's last lab success. This never lowers mastery; it says where more practice would help.
-export function labPractice(attempts = [], { min = 2 } = {}) {
-  const by = new Map();
-  for (const a of [...attempts].filter((x) => labOutcome(x)).sort((x, y) => String(x.at).localeCompare(String(y.at)))) {
+export function labPractice(attempts = [], { min = 2, exploration = null } = {}) {
+  const by = new Map(), ex = exploration ? explorationIds(exploration) : null;
+  // exploration challenges aren't skills, so not meeting one isn't a sign to practise
+  for (const a of [...attempts].filter((x) => labOutcome(x) && evidenceClass(x, { exploration: ex }) !== "exploration").sort((x, y) => String(x.at).localeCompare(String(y.at)))) {
     if (!a.lesson) continue;
     const g = by.get(a.lesson) || { lesson: a.lesson, tries: 0, lastAt: 0, labs: new Set(), challenges: new Set() };
     const o = labOutcome(a);

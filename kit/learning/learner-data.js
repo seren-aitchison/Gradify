@@ -46,7 +46,8 @@ export function courseSummary(cfg, S = {}, { now = Date.now(), profile = null } 
   const lessons = cfg.units.flatMap((u) => u.lessons.map((l) => ({ ...l, unit: u })));
   const done = lessons.filter((l) => S.done?.[l.id]).length;
   const attempts = S.attempts || [];
-  const ev = evidenceFromAttempts(attempts, { levels: cfg.levels || null });
+  // exploration challenges (cfg.exploration) earn XP but are never mastery evidence (kit/learning/evidence-class.js)
+  const ev = evidenceFromAttempts(attempts, { levels: cfg.levels || null, exploration: cfg.exploration || null });
   const { all, groups } = sixProfiles(ev, { by: (e) => e.unit, now });
   const revisit = revisionQueue(attempts, { now, limit: 1000 });
   const dueCards = Object.values(S.cards || {}).filter((st) => st?.due_at && isDue(st, now)).length;

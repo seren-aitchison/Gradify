@@ -57,3 +57,8 @@
 .ob:hover { background: rgba(255, 255, 255, .12); }
 /* a wide table on a phone scrolls inside its own box rather than pushing the page sideways */
 .lab-scroll { max-width: 100%; overflow-x: auto; }
+/* keyboard- and pointer-draggable points over a canvas (kit/labs/lab.js handles) */
+.lab-handle { position: absolute; width: 26px; height: 26px; margin: -13px 0 0 -13px; padding: 0; border-radius: 50%; border: 2px solid transparent; background: transparent; cursor: grab; touch-action: none; z-index: 2; }
+.lab-handle:hover { border-color: rgba(255, 255, 255, .35); }
+.lab-handle:focus-visible { outline: none; border-color: #fff; box-shadow: 0 0 0 3px rgba(90, 160, 255, .6); }
+.lab-handle:active { cursor: grabbing; }

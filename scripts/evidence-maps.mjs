@@ -32,7 +32,7 @@ export function buildMaps(course, declared, existing = {}) {
 }
 
 const file = (slug) => new URL(`../kit/courses/${slug}/evidence.js`, import.meta.url);
-function write(slug, maps) {
+function write(slug, maps, exploration = null) {
   const body = Object.entries(maps).map(([id, m]) => `  ${JSON.stringify(id)}: { ${Object.entries(m).map(([k, v]) => `${JSON.stringify(k)}: ${JSON.stringify(v)}`).join(", ")} },`).join("\n");
   writeFileSync(file(slug), `// Mastery evidence maps for this course's interactives: interactive → { challenge → the lesson it is evidence for }.
 // Built by scripts/evidence-maps.mjs from the challenges each interactive declares; correct any mapping by hand here
@@ -40,16 +40,23 @@ function write(slug, maps) {
 export const EVIDENCE = {
 ${body}
 };
-`);
+${exploration && Object.keys(exploration).length ? `
+// Exploration challenges: met by doing what they say (run, open, view, step through, "halve X and see"), not by
+// reasoning towards a target. They earn XP and stay in the activity history but never count towards mastery
+// (kit/learning/evidence-class.js). Every other challenge in the map above is practice evidence.
+export const EXPLORATION = {
+${Object.entries(exploration).map(([id, ts]) => `  ${JSON.stringify(id)}: ${JSON.stringify(ts)},`).join("\n")}
+};
+` : ""}`);
 }
 
 if (process.argv[1] && pathToFileURL(process.argv[1]).href === import.meta.url) {
   const declared = JSON.parse(readFileSync(process.argv[2], "utf8"));
   for (const [slug, ixs] of Object.entries(declared)) {
     const course = (await import(new URL(`../kit/courses/${slug}/course.js`, import.meta.url))).default;
-    const existing = existsSync(file(slug)) ? (await import(file(slug))).EVIDENCE : {};
+    const mod = existsSync(file(slug)) ? await import(file(slug)) : {}, existing = mod.EVIDENCE || {};
     const lists = Object.fromEntries(Object.entries(ixs).map(([id, l]) => [id, (l || []).map((c) => (typeof c === "string" ? { id: c, text: c } : c))]));
     const maps = buildMaps(course, lists, existing);
-    if (Object.keys(maps).length) { write(slug, maps); console.log(`${slug}: ${Object.keys(maps).length} interactives, ${Object.values(maps).reduce((a, m) => a + Object.keys(m).length, 0)} challenges mapped`); }
+    if (Object.keys(maps).length) { write(slug, maps, mod.EXPLORATION); console.log(`${slug}: ${Object.keys(maps).length} interactives, ${Object.values(maps).reduce((a, m) => a + Object.keys(m).length, 0)} challenges mapped`); }
   }
 }

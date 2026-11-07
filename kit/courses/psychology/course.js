@@ -4,7 +4,7 @@ import { UNITS, TRACKS, PATHS, BLURBS } from "./syllabus.js";
 import { QA, WRITTEN_ON } from "./qa.js";
 import { INTERACTIVES } from "./interactives.js";
 import { QUESTIONS, LESSONS } from "./registry.js";
-import { EVIDENCE } from "./evidence.js";
+import { EVIDENCE, EXPLORATION } from "./evidence.js";
 export default {
   site: "PsychGradify", slug: "psychology", name: "Psychology", app: "../app.html", unitWord: "School", trackWord: "Stage",
   units: UNITS, tracks: TRACKS, paths: PATHS, blurbs: BLURBS,
@@ -15,7 +15,7 @@ export default {
   levels: ["Foundation", "Application", "Evaluation"],
   theme: { accent: "#a78bfa", spectrum: "linear-gradient(90deg, #bbabbe, #c084fc 25%, #a78bfa 50%, #818cf8 75%, #22d3ee)" },
   notice: "<b>Education, not diagnosis or therapy.</b> PsychGradify teaches psychology. The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors; check important points against your course materials. Its demonstrations of personality, cognition and mood are learning tools, not validated tests, and nothing here can diagnose a condition, offer treatment or replace a qualified professional. If you are worried about your mental health, speak to your GP or NHS 111; in an emergency call 999 or Samaritans on 116 123 (UK).",
-  interactives: INTERACTIVES, evidence: EVIDENCE,   // evidence: each challenge → its lesson (mastery) practiceLabel: "Lab",
+  interactives: INTERACTIVES, evidence: EVIDENCE, exploration: EXPLORATION,   // evidence: each challenge → its lesson (mastery) practiceLabel: "Lab",
   practiceNote: "Experiments use your own responses, which stay on this device; simulations run a stated model; exercises check your reasoning. Data sets are labelled as real (with their source) or simulated. Challenges inside them earn XP.",
   exams: [
     ...TRACKS.map((t, i) => ({ id: `stage-${i + 1}`, title: t.name, sub: "Mixed questions from every written school in this stage.", units: t.units, format: "science", count: 20, minutes: 30, pass: 0.7 })),

@@ -182,6 +182,8 @@ X: Factorise fully 3x^{3} − 12x.
 > Common factor 3x: 3x(x^{2} − 4)
 > x^{2} − 4 is a difference of two squares: (x − 2)(x + 2)
 > 3x(x − 2)(x + 2)
+P: **Investigate with the lab.** Build a quadratic with roots −1 and 3 and compare the factorised form shown with the expanded one. Then try to factorise one with no real roots.
+IX: quadratics
 K: Common factor first; then two numbers for quadratics; spot differences of two squares; check by expanding.
 !: Stopping before fully factorising, as in 2(x^{2} − 9).
 Q: Factorise x^{2} + 9x + 20. | (x + 4)(x + 5).
@@ -340,6 +342,8 @@ X: A rectangle has length 3 cm more than its width and area 40 cm^{2}. Find its 
 > A width can't be negative, so the rectangle is 5 cm by 8 cm
 P: **Investigate with the lab.** Choose Quadratic equations. Try factorising first, and use the formula when it won't factorise.
 IX: practice
+P: **Investigate with the lab.** Set b and c so the roots are −1 and 3, then change a: the roots stay put while the parabola stretches. What does a change, and what doesn't it?
+IX: quadratics
 K: Rearrange to = 0, factorise, set each factor to zero; never divide by the unknown; check solutions fit the context.
 !: Solving x^{2} = 6x by dividing by x and losing the solution x = 0.
 Q: Solve (x − 3)(2x + 1) = 0. | x = 3 or x = −1/2.
@@ -372,6 +376,8 @@ X: Solve x^{2} − 8x + 5 = 0 by completing the square, leaving your answer in s
 > (x − 4)^{2} − 16 + 5 = 0, so (x − 4)^{2} = 11
 > x − 4 = ±√11, so x = 4 ± √11
 - For a negative leading coefficient, −x^{2} + 4x + 1 = −(x − 2)^{2} + 5 has a maximum at (2, 5).
+P: **Investigate with the lab.** Move the vertex to (2, −3) and read the completed-square form beneath the graph. Check that the numbers in a(x − p)² + q are the vertex coordinates.
+IX: quadratics
 K: Halve the x coefficient, square and subtract; the turning point of a(x + p)^{2} + q is (−p, q).
 !: Forgetting to subtract (b/2)^{2}, or forgetting the ± when square-rooting.
 Q: Write x^{2} + 10x in completed-square form. | (x + 5)^{2} − 25.
@@ -403,6 +409,8 @@ X: Solve 3x^{2} + 5x − 1 = 0, giving answers to 3 significant figures.
 > a = 3, b = 5, c = −1; discriminant = 25 + 12 = 37
 > x = (−5 ± √37)/6
 > x ≈ 0.180 or x ≈ −1.85
+P: **Investigate with the lab.** Watch the discriminant as you change c. Find the value where the graph just touches the x-axis, then go past it and see the roots become complex.
+IX: quadratics
 K: Read off a, b, c with signs; b^{2} − 4ac decides the number of roots.
 !: Using b instead of −b, or dividing only part of the top by 2a.
 Q: How many real roots does x^{2} + 2x + 5 = 0 have? | None: b^{2} − 4ac = 4 − 20 < 0.
@@ -657,6 +665,8 @@ X: Write 2 log 5 + log 4 − log 2 as a single logarithm and evaluate it (base 1
 - On a calculator, log usually means base 10 and ln means base e.
 P: **Investigate with the lab.** Choose Logarithms and rewrite each equation in exponential form before solving.
 IX: practice
+P: **Investigate with the lab.** Set the base to 10 and type 1000 into the solver: the inverse graph turns "10 to what power is 1000?" into a point you can read. Try other bases.
+IX: explog
 K: A log is a power; add logs to multiply, subtract to divide, and bring powers to the front.
 !: Writing log(x + y) = log x + log y.
 Q: What is log_{2} 32? | 5.
@@ -688,6 +698,8 @@ X: £1,000 is invested at 4% compound interest. After how many whole years does 
 > 1000 × 1.04^{n} > 1500, so 1.04^{n} > 1.5
 > n > ln 1.5/ln 1.04 = 10.34
 > It first exceeds £1,500 after 11 years
+P: **Investigate with the lab.** Find the base that doubles every 2 units, then the base that halves every unit. Compare your bases with √2 and 0.5.
+IX: explog
 K: Match bases where possible, otherwise take logs; substitute u = a^{x} for hidden quadratics and reject u ≤ 0.
 !: Accepting a solution of a^{x} = a negative number: exponentials are always positive.
 Q: Solve 5^{x} = 125. | x = 3.
@@ -721,6 +733,8 @@ X: Solve log_{3} (x + 6) − log_{3} x = 2.
 - Equations with logs on one side only: log_{3}(2x + 1) = 4 gives 2x + 1 = 81, so x = 40.
 - Different bases: log_{4} x = log_{2} 3 → log_{2} x/2 = log_{2} 3 → x = 9.
 - Natural logs work the same way: ln(x + 1) = 2 gives x = e^{2} − 1 ≈ 6.39.
+P: **Investigate with the lab.** Solve bˣ = 8 for three different bases and check each answer is log 8 ÷ log b. Then switch to the log scale and see why.
+IX: explog
 K: Combine into one log, convert to exponential form, solve, and reject values that make any argument non-positive.
 !: Keeping a solution that makes the argument of a logarithm zero or negative.
 Q: Solve ln x = 3. | x = e^{3} ≈ 20.1.
@@ -1131,6 +1145,8 @@ X: f(x) = √(x − 2) for x ≥ 2. Find f^{−1}(x) and its domain.
 > f^{−1}(x) = x^{2} + 2
 > The range of f is f(x) ≥ 0, so the domain of f^{−1} is x ≥ 0
 - Self-inverse functions are symmetric in y = x: their graphs are unchanged by the reflection.
+P: **Investigate with the lab.** Compare bˣ and log_b x with the line y = x: each point on one graph has a mirror image on the other. Change the base and see the pair move together.
+IX: explog
 K: Swap x and y and rearrange; the domain of f^{−1} is the range of f; reflect in y = x.
 !: Writing f^{−1}(x) = 1/f(x): the inverse isn't the reciprocal.
 Q: Find the inverse of f(x) = 4x − 7. | f^{−1}(x) = (x + 7)/4.
