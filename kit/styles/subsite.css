@@ -19,6 +19,14 @@
 .sub-right { margin-left: auto; display: flex; align-items: center; gap: 14px; }
 .sub-right .signin { font-size: 15px; color: var(--mute); text-decoration: none; }
 .sub-right .signin:hover { color: var(--fg); }
+/* the phone and tablet menu (kit/core/subnav.js): the same links, opened from a button */
+.sub-nav { position: relative; z-index: 30; }   /* above the page, so the open menu is never covered */
+.sub-menu-btn .sm-close, .sub-menu-btn[aria-expanded="true"] .sm-open { display: none; }
+.sub-menu-btn[aria-expanded="true"] .sm-close { display: block; }
+.sub-menu { max-height: calc(100vh - 110px); overflow-y: auto; }
+.sub-menu .sub-menu-signin { margin-top: 6px; padding: 10px 14px; border-top: 1px solid var(--line); border-radius: 0 0 12px 12px; text-decoration: none; font-size: 15px; color: var(--mute); }
+@media (min-width: 641px) { .sub-menu .sub-menu-signin { display: none; } }
+@media (min-width: 961px) { .sub-menu { display: none !important; } }
 
 /* hero */
 .sub-hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 44px; align-items: center; padding: 72px 0 64px; }

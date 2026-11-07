@@ -17,6 +17,8 @@ const COURSES = [
   { slug: "nursing", name: "NurseGradify", expert: "a registered nurse educator", minWrong: 3, rules: nursingRules, flags: nursingFlags },
   { slug: "pharmacy", name: "PharmaGradify", expert: "a registered pharmacist educator", minWrong: 4, rules: pharmacyRules, flags: pharmacyFlags, srcRegister: true,
     registerNote: "taken from the lessons' SRC: lines, for checking against the original (BNF, SPC, NICE, MHRA, GPhC, RPS, legislation.gov.uk, textbooks)." },
+  { slug: "maths", name: "MathGradify", expert: "a mathematics teacher or lecturer", minWrong: 3, rules: mathsRules, flags: mathsFlags, srcRegister: true,
+    registerNote: "taken from the lessons' SRC: lines, for checking against the original (DfE subject content, exam board specifications, textbooks, papers)." },
   // the social sciences: the citation register lists each lesson's SRC: references, checked against the originals
   { slug: "psychology", name: "PsychGradify", expert: "a university psychology lecturer or chartered psychologist", minWrong: 3, rules: psychRules, srcRegister: true,
     registerNote: "taken from the lessons' SRC: lines, for checking against the original publication (journal, publisher, APA, BPS, NICE, NHS, Cochrane, PubMed)." },
@@ -83,6 +85,21 @@ function pharmacyFlags(L, text) {
   if (srcYear(L) >= 2024 || /\bmhra\b|drug safety update|from (april|october) 202[5-7]|being reformed|consultation/i.test(text)) f.push("recent or changing guidance");
   if (/cockcroft|creatinine clearance|egfr|mg\/kg|body surface area|mg\/m/i.test(text)) f.push("calculations or renal dosing");
   if (L.authorities?.length) f.push(`${L.authorities.length} drug card${L.authorities.length > 1 ? "s" : ""}: check against the BNF and SPC`);
+  return f;
+}
+
+// maths: a worked example in every lesson (except the software and research-methods schools), and a
+// numerical check question somewhere in each calculation school
+function mathsRules(unit, L) {
+  const w = [];
+  if (![26, 27].includes(unit.n) && !L.blocks.some((b) => b.t === "ex")) w.push("no worked example (X: with > steps)");
+  return w;
+}
+function mathsFlags(L, text) {
+  const f = [];
+  if (L.blocks.some((b) => b.t === "ex")) f.push("worked examples: check every step of the arithmetic");
+  if (/\b(aqa|edexcel|ocr|wjec|eduqas|ccea|sqa|ib)\b/i.test(text)) f.push("exam board details: check against the current specification");
+  if (srcYear(L) >= 2024) f.push("recent source");
   return f;
 }
 

@@ -13,9 +13,14 @@
     "add-3d": "node scripts/add-3d.mjs",
     "qa": "node scripts/qa-courses.mjs",
     "verify:backend": "node scripts/verify-backend.mjs",
-    "audit": "node scripts/audit-sites.mjs"
+    "audit": "node scripts/audit-sites.mjs",
+    "check:sync": "node scripts/check-sync.cjs",
+    "supabase:admin": "node scripts/supabase-admin.mjs",
+    "check:live": "node scripts/check-live.cjs"
   },
   "devDependencies": {
-    "@anthropic-ai/sdk": "0.133.0"
+    "@anthropic-ai/sdk": "0.133.0",
+    "@electric-sql/pglite": "0.5.15",
+    "bcryptjs": "2.4.3"
   }
 }

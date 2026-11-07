@@ -23,6 +23,10 @@ A feature existing in the repository is not the same as a feature working for a 
 
 The verification code was itself tested against an imitation Supabase (`tests/backend-check.test.mjs`). It has not yet been run against a real project, because Supabase isn't reachable from the network these changes were made on.
 
+## Readiness
+
+The full plan, the evidence levels for each step of the student journey, and the activation runbook are in [PRODUCTION-READINESS.md](PRODUCTION-READINESS.md). Live results go in [BACKEND-LOG.md](BACKEND-LOG.md).
+
 ## How to verify (and switch on)
 
 Follow `docs/SETUP.md` to create the project, run the migrations and deploy the function. Then:

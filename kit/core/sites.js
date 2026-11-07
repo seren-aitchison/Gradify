@@ -53,7 +53,7 @@ export const GROUPS = [
     title: "By subject",
     blurb: "Study a subject in its own space.",
     items: [
-      { n: "MathGradify", who: "Maths students at any level", i: "sigma", c: "70a7dc", d: "Algebra, calculus, statistics and probability, with worked examples and adaptive practice.", u: "gradifymath.com", built: true, status: "soon" },
+      { n: "MathGradify", who: "Maths students at any level", i: "sigma", c: "70a7dc", d: "Maths from everyday numeracy and GCSE to A level, university and data science, with worked examples, generated practice and line-by-line checking.", u: "gradifymath.com", built: true, status: "beta" },
       { n: "SciGradify", who: "Science students", i: "atom", c: "6aa84f", d: "Biology, chemistry, physics and the scientific method, plus interdisciplinary science.", built: true, status: "live" },
       { n: "EcoGradify", who: "Ecology and environment students", i: "leaf", c: "6aa84f", d: "Ecology, environmental science, biodiversity and sustainability.", u: "ecogradify.com", built: true, status: "soon" },
       { n: "SocGradify", who: "Social science students", i: "people", c: "a44a99", d: "Sociology, social structures, research methods and social policy.", built: true, status: "beta" },

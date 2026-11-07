@@ -9,6 +9,21 @@
 // It never needs, and refuses to run with, a secret (service_role) key. Everything it writes is
 // tagged "_verify" and deleted again before it finishes.
 
+// learner-owned tables tested by the isolation matrix: [table, a valid test row, a change B will attempt]
+export const OWNED = (today) => [
+  ["documents", { title: "_verify", site: "Gradify" }, { title: "_tampered" }],
+  ["packs", { engine: "browser", pack: { verify: true } }, { engine: "claude" }],
+  ["cards", { front: "_verify", back: "_verify" }, { front: "_tampered" }],
+  ["activity", { kind: "_verify", xp: 0, site: "Gradify" }, { xp: 500 }],
+  ["plan_blocks", { day: today, start_min: 0, end_min: 10, title: "_verify" }, { title: "_tampered" }],
+  ["workouts", { date: today, name: "_verify" }, { name: "_tampered" }],
+  ["body_checkins", { note: "_verify" }, { note: "_tampered" }],
+  ["fitness_tests", { date: today, test: "_verify", value: 1 }, { value: 999 }],
+  ["revalidation_entries", { kind: "hours", occurred_on: today, entry: { verify: true } }, { entry: { tampered: true } }],
+  ["tutor_usage", { mode: "explain", site: "_verify", input_tokens: 0, output_tokens: 0 }, { input_tokens: 999 }],
+  ["assessment_attempts", { id: `_verify-${Date.now().toString(36)}-m`, site: "Gradify", subject: "_verify", context: "lesson", question_id: "_verify", question_type: "mcq", score: 1, correct: true }, { score: 0 }],
+];
+
 export const TABLES = {
   "20261028120000_gradify_core": ["profiles", "documents", "packs", "cards", "reviews", "activity", "plan_blocks", "waitlist"],
   "20261029120000_mastery_evidence": ["reviews?select=confidence,mode"],
@@ -109,8 +124,43 @@ export async function checkBackend({ url, anonKey, siteConfig = null, accounts =
       const peek = await call("/rest/v1/course_progress?subject=eq._verify&select=user_id", { token: B.access_token });
       const tamper = await call(`/rest/v1/course_progress?subject=eq._verify&user_id=eq.${uid}`, { method: "PATCH", token: B.access_token, prefer: "return=representation", body: { state: { verify: "tampered" } } });
       step(4, "isolation", "Learner B can't see or change learner A's progress", peek.ok && peek.data.length === 0 && (!tamper.ok || tamper.data.length === 0), peek.data?.length ? "B could read A's row: check row-level security now." : tamper.data?.length ? "B could change A's row." : "");
+      await isolationMatrix(B);
     }
   } else step(4, "isolation", "One learner can't see another's progress", null, "Skipped: give a second test account to check this.");
+
+  // Every learner-owned table: A saves a row; B tries to read, change and delete it; a signed-out visitor
+  // tries to read it; A checks it is still there, unchanged, then removes it. Only run with two test accounts.
+  async function isolationMatrix(B) {
+    const today = new Date().toISOString().slice(0, 10);
+    for (const [table, row, change] of OWNED(today)) {
+      const made = await call(`/rest/v1/${table}`, { method: "POST", token: A.access_token, prefer: "return=representation", body: row });
+      const id = made.ok && Array.isArray(made.data) ? made.data[0]?.id : null;
+      if (id == null) { step(4, `rls-${table}`, `${table}: only its owner can use a row`, false, `Learner A couldn't save a test row: ${msg(made.data) || `HTTP ${made.status}`}`); continue; }
+      const q = `/rest/v1/${table}?id=eq.${id}`;
+      const read = await call(q, { token: B.access_token });
+      const edit = await call(q, { method: "PATCH", token: B.access_token, prefer: "return=representation", body: change });
+      const del = await call(q, { method: "DELETE", token: B.access_token, prefer: "return=representation" });
+      const anon = await call(q);
+      // forging: B creates a row stamped with A's identity (must be refused by the policy's check)
+      const forged = await call(`/rest/v1/${table}`, { method: "POST", token: B.access_token, prefer: "return=representation", body: { ...row, ...(row.id ? { id: `${row.id}-forged` } : {}), user_id: uid } });
+      const forgedOk = forged.ok && Array.isArray(forged.data) && forged.data.length > 0;
+      if (forgedOk && table !== "tutor_usage") await call(`/rest/v1/${table}?id=eq.${forged.data[0].id}`, { method: "DELETE", token: A.access_token });
+      const still = await call(q, { token: A.access_token });
+      const leaked = (r) => r.ok && Array.isArray(r.data) && r.data.length > 0;
+      const intact = still.ok && still.data?.length === 1 && Object.entries(change).every(([k, v]) => JSON.stringify(still.data[0][k]) !== JSON.stringify(v));
+      const problems = [leaked(read) && "B could read it", leaked(edit) && "B could change it", leaked(del) && "B could delete it", leaked(anon) && "signed-out visitors could read it", forgedOk && "B could create a row in A's name", !intact && "A's row was changed or removed"].filter(Boolean);
+      step(4, `rls-${table}`, `${table}: only its owner can read, change, delete or create a row`, problems.length === 0, problems.join("; ") || "read, change, delete and forged create by another learner all refused; unreadable signed out");
+      if (table !== "tutor_usage") await call(q, { method: "DELETE", token: A.access_token });   // tutor_usage can't be deleted by anyone, by design
+    }
+    // profiles are created by the sign-up trigger, so test the other direction: B against A's existing profile
+    const pr = await call(`/rest/v1/profiles?id=eq.${uid}&select=id`, { token: B.access_token });
+    const pe = await call(`/rest/v1/profiles?id=eq.${uid}`, { method: "PATCH", token: B.access_token, prefer: "return=representation", body: { daily_minutes: 5 } });
+    step(4, "rls-profiles", "profiles: only its owner can read or change it", !(pr.ok && pr.data?.length) && !(pe.ok && pe.data?.length), pr.data?.length ? "B could read A's profile" : pe.data?.length ? "B could change A's profile" : "");
+    // usage counts: anyone may add one, nobody can read them back through the API
+    const ev = await call("/rest/v1/page_events", { method: "POST", prefer: "return=minimal", body: { site: "Gradify", path: "/_verify", event: "view" } });
+    const evRead = await call("/rest/v1/page_events?select=path&limit=5");
+    step(4, "rls-page_events", "page_events: visitors can add a count but not read them", ev.ok && !(evRead.ok && evRead.data?.length), ev.ok ? (evRead.data?.length ? "Counts are readable through the API" : "") : `Adding a count failed: ${msg(ev.data) || `HTTP ${ev.status}`}`);
+  }
 
   // clean up, then sign out
   await call("/rest/v1/course_progress?subject=eq._verify", { method: "DELETE", token: A.access_token });
@@ -125,22 +175,29 @@ export async function checkBackend({ url, anonKey, siteConfig = null, accounts =
 
   // ---- 5. ai ----
   async function finishAi() {
-    const fn = "/functions/v1/study-pack";
-    // In a browser the request itself is the CORS test (a refused one never returns), and the
-    // response headers can't be read; from Node, read the preflight's Allow-Origin instead.
-    const browser = typeof window !== "undefined";
-    const pre = browser ? null : await call(fn, { method: "OPTIONS", headers: { Origin: origin, "Access-Control-Request-Method": "POST" } });
-    const probe = await call(fn, { method: "POST", body: { mode: "card", fact: "" } });
-    const deployed = probe.status !== 404 && probe.status !== 0;
-    step(5, "deployed", "The study-pack function is deployed", deployed, deployed ? `refuses signed-out callers (HTTP ${probe.status})` : probe.status ? "Not found: run supabase functions deploy study-pack"
-      : browser ? `This page couldn't reach it: it isn't deployed, or GRADIFY_ALLOWED_ORIGINS doesn't include ${origin}` : msg(probe.data));
-    if (deployed && pre?.headers) { const allow = pre.headers.get("access-control-allow-origin"); step(5, "cors", `It accepts requests from ${origin}`, allow === origin || allow === "*", allow ? `allows ${allow}` : "No CORS headers"); }
-    else if (deployed && browser) step(5, "cors", `It accepts requests from ${origin}`, true, "");
-    const token = A?.access_token;
-    if (deployed && ai && token) {
-      const r = await call(fn, { method: "POST", token, body: { mode: "card", fact: "Water boils at 100 °C at sea level (1 atm).", notes: "At standard atmospheric pressure, pure water boils at 100 °C.", avoid: [] } });
-      step(5, "claude", "Claude answers through the function", r.ok && Boolean(r.data?.card?.front), r.ok ? `card: ${String(r.data?.card?.front || "").slice(0, 80)}` : `HTTP ${r.status}: ${msg(r.data)}`);
-    } else if (deployed) step(5, "claude", "Claude answers through the function", null, token ? "Skipped: run with AI checks on (one card, about a cent)." : "Skipped: needs a signed-in learner.");
+    // both AI functions: deployed (refusing signed-out callers), reachable from the site's origin, and, with
+    // AI checks on, answering one small real request each as the signed-in test learner
+    const browser = typeof window !== "undefined", token = A?.access_token;
+    const FNS = [
+      { name: "study-pack", id: "", probe: { mode: "card", fact: "" }, real: { mode: "card", fact: "Water boils at 100 °C at sea level (1 atm).", notes: "At standard atmospheric pressure, pure water boils at 100 °C.", avoid: [] }, good: (d) => Boolean(d?.card?.front), show: (d) => `card: ${String(d?.card?.front || "").slice(0, 80)}` },
+      { name: "course-tutor", id: "-tutor", probe: { mode: "explain" }, real: { mode: "explain", subject: "law", lesson: { title: "What is law?", text: "Law is a system of rules made and enforced by the state through courts. Moral rules are not legally enforceable on their own." }, question: "In one sentence, what makes a rule a law?" }, good: (d) => Boolean(d?.answer), show: (d) => `answer: ${String(d?.answer || "").slice(0, 80)}` },
+    ];
+    for (const f of FNS) {
+      const fn = `/functions/v1/${f.name}`;
+      // In a browser the request itself is the CORS test (a refused one never returns), and the
+      // response headers can't be read; from Node, read the preflight's Allow-Origin instead.
+      const pre = browser ? null : await call(fn, { method: "OPTIONS", headers: { Origin: origin, "Access-Control-Request-Method": "POST" } });
+      const probe = await call(fn, { method: "POST", body: f.probe });
+      const deployed = probe.status !== 404 && probe.status !== 0;
+      step(5, `deployed${f.id}`, `The ${f.name} function is deployed`, deployed, deployed ? `refuses signed-out callers (HTTP ${probe.status})` : probe.status ? `Not found: run supabase functions deploy ${f.name}`
+        : browser ? `This page couldn't reach it: it isn't deployed, or GRADIFY_ALLOWED_ORIGINS doesn't include ${origin}` : msg(probe.data));
+      if (deployed && pre?.headers) { const allow = pre.headers.get("access-control-allow-origin"); step(5, `cors${f.id}`, `${f.name} accepts requests from ${origin}`, allow === origin || allow === "*", allow ? `allows ${allow}` : "No CORS headers"); }
+      else if (deployed && browser) step(5, `cors${f.id}`, `${f.name} accepts requests from ${origin}`, true, "");
+      if (deployed && ai && token) {
+        const r = await call(fn, { method: "POST", token, body: f.real });
+        step(5, `claude${f.id}`, `Claude answers through ${f.name}`, r.ok && f.good(r.data), r.ok ? f.show(r.data) : `HTTP ${r.status}: ${msg(r.data)}`);
+      } else if (deployed) step(5, `claude${f.id}`, `Claude answers through ${f.name}`, null, token ? "Skipped: run with AI checks on (one small request, about a cent)." : "Skipped: needs a signed-in learner.");
+    }
     return done();
   }
 }

@@ -54,7 +54,7 @@ test("tutor: feedback scores from rubric ratings", () => {
   assert.equal(scoreFeedback({}), 0);
 });
 
-for (const slug of ["law", "nursing", "pharmacy"]) {
+for (const slug of ["law", "nursing", "pharmacy", "maths"]) {
   test(`${slug}: written practice tasks are complete`, async () => {
     const { WRITING } = await import(`../kit/courses/${slug}/writing.js`);
     const { UNITS } = await import(`../kit/courses/${slug}/syllabus.js`);
