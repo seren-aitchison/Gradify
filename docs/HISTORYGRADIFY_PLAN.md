@@ -35,6 +35,8 @@ Every written lesson has objectives, sections, a worked example of historical an
 | Lab | What it teaches | Placed in |
 |---|---|---|
 | Source investigation (`kit/labs/history/sources.js`) | Six real sources (the Bayeux Tapestry, Domesday Book, a 1915 recruitment poster, two Peterloo accounts, the Sadler Committee, the Anglo-Saxon Chronicle): judge what each can and can't show | Source provenance; linked from five more School 1 lessons |
+| Timeline, 1066–1991 (`kit/labs/history/timeline.js`) | Reigns, wars and events on one scale; challenges on duration, overlap and gaps | Continuity and change; linked from Chronology and periodisation, The Wars of the Roses, The rise of the Tudor dynasty |
+| Cause and consequence (`kit/labs/history/causes.js`) | Sort the factors behind 1914, 1381 and 1933 into long-term causes, short-term causes and triggers | Cause and consequence; linked from The Peasants' Revolt, The July Crisis, The outbreak of war, Hitler's rise to power |
 | Chronology challenge (`kit/labs/history/chronology.js`) | Order dated events in four rounds, from Hastings to 1991, with keyboard controls | Chronology and periodisation; linked from Continuity and change |
 
 Each challenge counts as mastery evidence for its lesson (`evidence.js`). The Journey page's daily challenge also builds a history chronology round from dated evidence lines in the notes (docs/GAMIFICATION.md).

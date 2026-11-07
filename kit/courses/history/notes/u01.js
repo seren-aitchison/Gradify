@@ -285,6 +285,8 @@ X: Judge the most important cause of the outbreak of war in August 1914.
 > Link them: the assassination led to the Austrian ultimatum to Serbia; Russian mobilisation and the Schlieffen Plan turned a Balkan crisis into a European war.
 > Weigh them: the alliance system and war plans explain why the war spread; decisions in July explain why it began then.
 > Judge: a supported answer might argue that military planning made escalation hard to stop, while acknowledging that leaders still chose war.
+P: **Investigate with the lab.** In the cause and consequence lab, sort the factors behind the outbreak of war in 1914, then try the Peasants' Revolt and Hitler's appointment. Where would you place Russian mobilisation, and why?
+IX: cause-and-consequence
 K: Causes can be long-term, short-term or triggers; they interact, and a good explanation shows how they combined and argues which mattered most.
 !: Listing causes without linking or weighing them. Explanation means showing how causes connected and judging their relative importance.
 H: Consequences
@@ -326,6 +328,8 @@ X: Was the break with Rome in 1534 a turning point in English religion?
 > Change: the Pope's authority ended and the monarch headed the Church, which opened the way to the Dissolution and later Protestant reform.
 > Continuity: Henry VIII kept much Catholic doctrine (the Act of Six Articles, 1539, upheld the Mass and clerical celibacy), and most people's worship changed little before 1547.
 > Judgement: a political and institutional turning point, but not yet a doctrinal one; the decisive changes in belief came later and gradually.
+P: **Investigate with the lab.** On the timeline, compare the length of the Tudor and Stuart periods with the two world wars. How does seeing them on one scale change your sense of what was rapid and what was gradual?
+IX: timeline
 K: Analysing change means asking how much changed, how fast, for whom, and what stayed the same; a turning point is where the direction of change shifts decisively.
 !: Assuming that a law changed what people believed or did at once. Change on paper and change in practice often moved at different speeds.
 EV: established | The Act of Supremacy of 1534 recognised Henry VIII as supreme head of the Church of England.
