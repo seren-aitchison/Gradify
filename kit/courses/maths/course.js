@@ -4,6 +4,7 @@ import { MAP, FRAMEWORKS } from "./map.js";
 import { QA } from "./qa.js";
 import { QUESTIONS, LESSONS } from "./registry.js";
 import { WRITING } from "./writing.js";
+import { INTERACTIVES } from "./interactives.js";
 export default {
   site: "MathGradify", slug: "maths", name: "Mathematics", app: "../app.html", unitWord: "School",
   units: UNITS, tracks: TRACKS, paths: PATHS,
@@ -20,12 +21,10 @@ export default {
   // names for difficulty levels 1–3 in questions, quizzes and the problem bank
   levels: ["Fluency", "Application", "Problem solving"],
   notice: "<b>Study material.</b> MathGradify covers maths from everyday numeracy to research-level topics. Exam boards (AQA, Edexcel, OCR, WJEC Eduqas, CCEA, SQA, IB) differ in detail: check your own specification for exactly what you need to know.",
-  // interactive practice (kit/interactive/)
-  practiceNote: "Generated practice with worked methods, and a graph explorer with transformation challenges.",
-  interactives: [
-    { id: "practice", kind: "Generated practice", title: "Practice problems", sub: "Endless GCSE and A level problems, from fractions and percentages to differentiation, integration and series, each with a worked method. Type fractions, roots and lists as you would on paper.", schools: [1, 3, 7], load: () => import("../../interactive/mathgen.js").then((m) => ({ mount: m.mountMathGen })) },
-    { id: "grapher", kind: "Graph explorer", title: "Graphs and transformations", sub: "Plot any function, move sliders to see how each parameter changes it, and match target graphs in seven transformation challenges.", schools: [3, 6], tasks: 7, load: () => import("../../interactive/grapher.js").then((m) => ({ mount: m.mountGrapher })) },
-  ],
+  // the Explore section: interactive laboratories (kit/labs/maths/), generated practice and the graph explorer
+  practiceLabel: "Explore",
+  practiceNote: "Experiment with mathematics: change a parameter, drag a point or run thousands of random trials, and see what happens. Every lab links to the lessons behind it and has challenges that earn XP. Numerical results (derivatives, integrals, roots, ODE solutions) are approximations computed in your browser, and each lab says how.",
+  interactives: INTERACTIVES,
   // the Step by step section (kit/interactive/stepcheck.js): solve line by line, with every line checked
   workspace: { route: "steps", label: "Step by step", kicker: "Step by step", title: "Work it through, line by line",
     intro: "Solve each problem one line at a time, as you would on paper. Every line is checked as you write it, so you see exactly where an error crept in, not just that the final answer was wrong. Hints are there if you're stuck, and you can always see a worked solution.",
