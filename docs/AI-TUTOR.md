@@ -30,6 +30,18 @@ Each subject's safety rules come first in every prompt:
 - **Nursing and Pharmacy:** education, not clinical advice.
 - **Every other subject:** study material.
 
+### Grounding: the server reads the notes
+
+For every lesson-grounded mode (`explain`, `diagnose`, `socratic`, `examiner`, `challenge` and `connect`), the browser sends only the lesson's id (and its title, which is used only for physics, the one course without an `ids.js`). The function then:
+1. checks the learner is signed in;
+2. fetches that course's `ids.js` and the school's notes file from the published site (`GRADIFY_SITE_URL`, cached for ten minutes);
+3. reads them as text, never running them (`kit/assess/canon.js`, copied to `supabase/functions/_shared/canon.js` by `npm run sync`);
+4. gives the model only the lesson's teaching (check questions, flashcards, sources and reading lists are left out).
+
+Any notes text the browser sends is ignored. A test decodes every notes file in the repository this way and checks the result matches what JavaScript itself produces. A lesson whose notes aren't published yet is refused with a clear message.
+
+`mark`, `roleplay` and `debrief` still take the task or case from the browser (the written tasks and interview cases are in each course's config). Moving those server-side works the same way, and is a follow-up.
+
 ### Labs
 
 `explain` and `socratic` can carry `lab: { title, state }`: what an interactive lab on the page shows right now. `kit/course/lab-state.js` reads it from the lab's controls, readout, tables and challenges, capped at 2,000 characters. The prompt marks it as data, not instructions, and asks the tutor to explain what the learner sees using those values. The panel says when the tutor can see a lab. On a lab page, the panel offers only Ask and Talk it through, grounded in the first of the lab's lessons that has notes. On a lesson page, the tutor is told about the lab the learner last touched.
@@ -48,6 +60,7 @@ Challenge questions are shown as practice and **not recorded as mastery evidence
 ## Not built
 
 - **Research mode.** It needs live sources that the tutor can cite and that Gradify can check. Until then, the tutor points to authoritative sources and doesn't name specifics it can't see.
+- **Saved conversations.** Decided (November 2026): tutor sessions are temporary. Each request carries what it needs: the lesson id, the conversation so far within the session, or the mastery summary. Nothing the learner writes to the tutor is stored. `tutor_usage` keeps only the mode, the site and token counts. If saving is added later, it will be opt-in per conversation ("Save this conversation"), listed under Account with delete, included in the data download, and described on the privacy page before it ships.
 - **Tutor memory across sessions.** Each request carries what it needs: the notes, the conversation so far, or the mastery summary. Nothing the learner writes is stored. `tutor_usage` keeps only the mode, the site and token counts.
 
 ## Switching it on

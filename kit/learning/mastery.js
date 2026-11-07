@@ -227,9 +227,13 @@ export function dimensionOf(a, levels = null) {
 export function evidenceFromAttempts(attempts = [], { levels = null } = {}) {
   const out = [], lastSeen = new Map();
   for (const a of [...attempts].filter((x) => x?.question).sort((x, y) => String(x.at).localeCompare(String(y.at)))) {
+    // a lab try that didn't meet its challenge is a sign to practise, not evidence against mastery (labPractice)
+    const outcome = labOutcome(a);
+    if (outcome === "attempt") continue;
     const at = Date.parse(a.at), qid = a.question.id, prev = lastSeen.get(qid);
     lastSeen.set(qid, at);
-    const independent = (a.attempt || 1) === 1;
+    // a challenge met after asking the AI tutor about the lab counts as assisted, like a second try after feedback
+    const independent = (a.attempt || 1) === 1 && outcome !== "assisted_success";
     const provisional = a.marking?.status === "provisional";
     // a lab challenge is recorded only when it's met (a lab can't see a failed try), so it counts at half weight
     const w = (DIFFICULTY_WEIGHT[a.question.d] || 1) * (independent ? 1 : 0.3) * (provisional ? 0.33 : 1) * (a.question.type === "lab" ? LAB_WEIGHT : 1);
@@ -304,6 +308,30 @@ export function sixProfiles(evidence, { by = (e) => e.topic, now = Date.now() } 
 // comes back when its latest unaided answer was wrong (after a short gap), or when its last success
 // is older than an interval that grows with each consecutive delayed success (1, 3, 7, 21, 60 days).
 const STEPS = [1, 3, 7, 21, 60];
+// Lab challenges have three outcomes (kit/course/course.js records them; older records with no outcome were successes):
+//   success           met without help
+//   assisted_success  met after the AI tutor was asked about the lab: Application evidence, weighted as assisted
+//   attempt           the learner chose the challenge ("Try this"), worked at it, and left without meeting it
+export const LAB_OUTCOMES = ["success", "assisted_success", "attempt"];
+export function labOutcome(a) {
+  if (a?.question?.type !== "lab") return null;
+  const o = a.response && typeof a.response === "object" ? a.response.outcome : null;
+  return LAB_OUTCOMES.includes(o) ? o : a.correct === false ? "attempt" : "success";
+}
+// Lessons whose lab challenges the learner has tried and not yet met: at least `min` unsuccessful tries since that
+// lesson's last lab success. This never lowers mastery; it says where more practice would help.
+export function labPractice(attempts = [], { min = 2 } = {}) {
+  const by = new Map();
+  for (const a of [...attempts].filter((x) => labOutcome(x)).sort((x, y) => String(x.at).localeCompare(String(y.at)))) {
+    if (!a.lesson) continue;
+    const g = by.get(a.lesson) || { lesson: a.lesson, tries: 0, lastAt: 0, labs: new Set(), challenges: new Set() };
+    if (labOutcome(a) === "attempt") { g.tries++; g.lastAt = Date.parse(a.at); if (a.contextId) g.labs.add(a.contextId); if (a.response?.challenge) g.challenges.add(a.response.challenge); }
+    else { g.tries = 0; g.labs.clear(); g.challenges.clear(); }
+    by.set(a.lesson, g);
+  }
+  return [...by.values()].filter((g) => g.tries >= min).map((g) => ({ ...g, labs: [...g.labs], challenges: [...g.challenges] })).sort((a, b) => b.tries - a.tries || b.lastAt - a.lastAt);
+}
+
 // (flashcards have their own scheduler, and a lab challenge can't be asked again as a question, so neither is here)
 export function revisionQueue(attempts = [], { now = Date.now(), limit = 20 } = {}) {
   const byQ = new Map();

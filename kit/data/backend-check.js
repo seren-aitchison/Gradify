@@ -180,7 +180,7 @@ export async function checkBackend({ url, anonKey, siteConfig = null, accounts =
     const browser = typeof window !== "undefined", token = A?.access_token;
     const FNS = [
       { name: "study-pack", id: "", probe: { mode: "card", fact: "" }, real: { mode: "card", fact: "Water boils at 100 °C at sea level (1 atm).", notes: "At standard atmospheric pressure, pure water boils at 100 °C.", avoid: [] }, good: (d) => Boolean(d?.card?.front), show: (d) => `card: ${String(d?.card?.front || "").slice(0, 80)}` },
-      { name: "course-tutor", id: "-tutor", probe: { mode: "explain" }, real: { mode: "explain", subject: "law", lesson: { title: "What is law?", text: "Law is a system of rules made and enforced by the state through courts. Moral rules are not legally enforceable on their own." }, question: "In one sentence, what makes a rule a law?" }, good: (d) => Boolean(d?.answer), show: (d) => `answer: ${String(d?.answer || "").slice(0, 80)}` },
+      { name: "course-tutor", id: "-tutor", probe: { mode: "explain" }, real: { mode: "explain", subject: "law", lesson: { id: "u01-01", title: "What is law?" }, question: "In one sentence, what makes a rule a law?" }, good: (d) => Boolean(d?.answer), show: (d) => `answer: ${String(d?.answer || "").slice(0, 80)}` },
     ];
     for (const f of FNS) {
       const fn = `/functions/v1/${f.name}`;

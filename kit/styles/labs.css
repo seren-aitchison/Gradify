@@ -27,6 +27,8 @@
 .lab-ch { padding: 10px 14px; border-radius: 12px; background: color-mix(in srgb, var(--co-accent, #10b981) 8%, transparent); border: 1px dashed color-mix(in srgb, var(--co-accent, #10b981) 45%, transparent); font-size: 13.5px; }
 .lab-ch > b { font: 600 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
 .lab-ch ul { margin: 6px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 3px; } .lab-ch li.ok { color: #40d4b1; }
+.lab-try { margin-left: 4px; padding: 2px 9px; border-radius: 999px; font: 500 12px var(--sans); color: var(--fg); background: rgba(255, 255, 255, .05); border: 1px solid var(--line-strong); cursor: pointer; vertical-align: 1px; }
+.lab-try[aria-pressed="true"] { color: #000; background: var(--co-accent, #10b981); border-color: transparent; }
 .lab-msg { min-height: 1.4em; font-size: 13.5px; color: var(--mute); } .lab-msg.ok { color: #40d4b1; } .lab-msg.no { color: #ff8aa5; }
 .lab-3d { position: relative; width: 100%; border-radius: 14px; overflow: hidden; background: #0b0c0e; border: 1px solid var(--line); touch-action: none; }
 .lab-3d canvas { display: block; width: 100% !important; }

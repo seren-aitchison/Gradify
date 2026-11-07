@@ -15,7 +15,7 @@ import { roadDefs, car } from "./road.js";
 import { parseNotes, lessonHtml, lessonText, lessonFrame, authorityCards, esc, inline, norm } from "./notes.js";
 import { renderQuestion, wireQuestions, normalize, TYPES as QTYPES } from "../assess/questions.js";
 import { makeAttempt, analyse } from "../assess/attempts.js";
-import { evidenceFromAttempts, sixProfiles, revisionQueue, SIX } from "../learning/mastery.js";
+import { evidenceFromAttempts, sixProfiles, revisionQueue, labPractice, SIX } from "../learning/mastery.js";
 import { sixHtml, calibrationHtml } from "../learning/mastery-view.js";
 import { learnerOf, needsSetup, applyPrefs } from "../data/profile.js";
 import { paceFor } from "../learning/pace.js";
@@ -239,8 +239,8 @@ export function mountCourse(root, cfg) {
     wrap.querySelector("button").addEventListener("click", async (e) => {
       const out = wrap.querySelector(".co-whyout"); e.currentTarget.disabled = true; out.innerHTML = `<p class="co-empty">Looking at your answer…</p>`;
       try {
-        const N = await notesFor(it.l);
-        const r = await askTutor({ mode: "diagnose", lesson: { title: it.l.title, text: lessonText(N) }, question: { q: Q.q, options: Q.options.map((o) => ({ text: o.text, correct: o.correct })), chosen, why: Q.why } });
+        // the server reads the lesson's own notes by id (kit/assess/canon.js), so only the id and title are sent
+        const r = await askTutor({ mode: "diagnose", lesson: { id: it.l.id, title: it.l.title }, question: { q: Q.q, options: Q.options.map((o) => ({ text: o.text, correct: o.correct })), chosen, why: Q.why } });
         out.innerHTML = `<div class="co-diag"><p><b>${esc(r.misconception)}</b></p>${paras(r.explanation)}<details><summary>Check: ${esc(r.check.question)}</summary><p>${esc(r.check.answer)}</p></details><p class="aq-note">From Gradify AI${r.fromLesson === false ? ", going beyond this lesson's notes" : ", using this lesson's notes"}. It can be wrong.</p></div>`;
       } catch (err) { out.innerHTML = err.signin ? signinLine("This", "") : `<p class="co-empty">${esc(err.message)}</p>`; e.currentTarget.disabled = false; }
     });
@@ -568,7 +568,7 @@ export function mountCourse(root, cfg) {
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
     const tp = main.querySelector(".co-tutor");
     if (tp) mountTutorPanel(tp, {
-      ask: askTutor, lesson: { id, title: l.title, text: lessonText(N) }, note: cfg.tutor || TUTOR_NOTE,
+      ask: askTutor, lesson: { id, title: l.title }, note: cfg.tutor || TUTOR_NOTE,
       focus: sixProfiles(evidenceFromAttempts((S.attempts || []).filter((a) => a.lesson === id), { levels: cfg.levels || null })).all.weakest || "apply",
       candidates: () => connectCandidates(l), unavailable: (what) => signinLine(what, ""),
       link: (lid) => `#/lesson/${lid}`, titleOf: (lid) => byId[lid]?.title || lid, lab: () => labFor(labLast),
@@ -585,6 +585,8 @@ export function mountCourse(root, cfg) {
   // One request to the course-tutor function (kit/data/functions.js turns every failure into a clear message)
   async function askTutor(body) {
     const out = await callFunction(await store(), "course-tutor", { subject: cfg.slug, ...body }, { fallback: "The tutor isn't available right now. You can still self-assess with the rubric." });
+    // the tutor answered about a lab: challenges met in it from now on count as assisted
+    if (body.lab && labLast) labHelped.add(labLast);
     track("tutor", cfg.site);
     return out;
   }
@@ -886,7 +888,8 @@ export function mountCourse(root, cfg) {
   // ---------- my progress: the course and the account together ----------
   // assessment insight from attempt records (kit/assess/attempts.js): final marks only
   function insightHtml() {
-    const r = analyse(S.attempts || []);
+    // answers to questions only: lab challenges show in Mastery and "Lab challenges to practise"
+    const r = analyse((S.attempts || []).filter((a) => a.question?.type !== "lab"));
     if (r.total < 5) return `<section class="co-panel co-insight"><h3>How you're answering</h3><p class="co-empty">Answer a few more questions (${r.total} so far) to see your weak areas, common mistakes and how well your confidence matches your answers.</p></section>`;
     const pct = (x) => `${Math.round(x * 100)}%`;
     const weak = r.byLesson.filter((g) => g.n >= 2 && g.latest < 0.7).slice(0, 5);
@@ -909,8 +912,15 @@ export function mountCourse(root, cfg) {
       <p class="co-empty">${all.mastery == null ? `Gradify gives an overall mastery figure once at least two kinds of evidence have ${3}+ answers each. It won't guess from less.` : `<b>${pc(all.mastery)}</b> overall, measured from ${all.measured.length} of the 6 kinds of evidence.${all.missing.length ? ` Not yet measured: ${all.missing.map(label).join(", ")}.` : ""}`}</p>
       ${sixHtml(all)}${calibrationHtml(all)}
       ${schools.length ? `<h4>By ${u1}</h4><ul class="co-weak">${schools.map(({ g, u }) => `<li><a href="#/learn/${u.id}">${U} ${u.n}: ${esc(u.title)}</a> <small>${g.mastery == null ? `${g.answers} answers: not enough evidence yet` : `${pc(g.mastery)}${g.weakest ? ` · weakest: ${label(g.weakest)}` : ""}`}</small></li>`).join("")}</ul>` : ""}
+      ${labPracticeHtml()}
       <p>${revisitLink()}</p>
       <div class="co-dirbox"><h4>Your next session</h4><p class="co-empty">The Gradify AI study director turns this evidence into a plan for your next session.</p><button type="button" class="btn btn-ghost btn-sm" data-director><span>Plan my next session</span></button><div class="co-dirout" aria-live="polite"></div></div></section>`;
+  }
+  // lab challenges tried and not yet met (kit/learning/mastery.js labPractice): a pointer to practise, not a mark
+  function labPracticeHtml() {
+    const list = labPractice(S.attempts || []).filter((g) => byId[g.lesson]).slice(0, 6); if (!list.length) return "";
+    return `<h4>Lab challenges to practise</h4><ul class="co-weak">${list.map((g) => { const lab = ixById[g.labs[0]]; return `<li><a href="${lab ? `#/practice/${lab.id}` : `#/lesson/${g.lesson}`}">${esc(byId[g.lesson].title)}</a> <small>${g.tries} tries without meeting ${g.challenges.length === 1 ? `"${esc(g.challenges[0])}"` : "the challenge"} yet${lab ? ` · ${esc(lab.title)}` : ""}</small></li>`; }).join("")}</ul>
+      <p class="co-acct">Unmet tries don't lower your mastery. They show where a little more practice would help.</p>`;
   }
   // what the study director sees: this summary and the lessons it may name, nothing else
   function directorRequest() {
@@ -918,6 +928,10 @@ export function mountCourse(root, cfg) {
     const all = sixProfiles(ev).all, byLesson = sixProfiles(ev).groups.filter((g) => byId[g.key]);
     const weak = byLesson.filter((g) => g.answers >= 2).sort((a, b) => (a.mastery ?? a.dims.recognition.value ?? 1) - (b.mastery ?? b.dims.recognition.value ?? 1)).slice(0, 6)
       .map((g) => ({ id: g.key, title: byId[g.key].title, note: `${g.mastery == null ? "not enough evidence" : `${Math.round(g.mastery * 100)}% mastery`}${g.weakest ? `, weakest ${g.weakest}` : ""}${g.calibration?.sureWrong ? `, ${g.calibration.sureWrong} confident mistakes` : ""}` }));
+    for (const g of labPractice(S.attempts || []).filter((p) => byId[p.lesson]).slice(0, 4)) {
+      const note = `${g.tries} unsuccessful lab tries since the last success`, w = weak.find((x) => x.id === g.lesson);
+      if (w) w.note += `, ${note}`; else weak.push({ id: g.lesson, title: byId[g.lesson].title, note });
+    }
     const due = revisionQueue(S.attempts || [], { limit: 500 });
     const upcoming = []; for (const x of lessons) { if (upcoming.length >= 6) break; if (!S.done[x.id] && (!cfg.written || cfg.written.includes(x.unit.id))) upcoming.push(x); }
     const ids = [...new Set([...weak.map((w) => w.id), ...due.map((q) => q.lesson).filter(Boolean), ...upcoming.map((x) => x.id)])].slice(0, 40);
@@ -1032,15 +1046,34 @@ export function mountCourse(root, cfg) {
   // The AI tutor on the page is told what the lab last used shows now (kit/course/lab-state.js reads it from the lab's
   // controls and readout); report(text) lets a lab add details its page doesn't show.
   const labNow = new Map(); let labLast = null;
+  // Lab challenge outcomes (kit/learning/mastery.js labOutcome): "success"; "assisted_success" when the AI tutor
+  // answered a question about this lab before it was met; "attempt" when the learner chose the challenge (focus),
+  // interacted for at least TRY_MOVES separate moments, and moved on without meeting it. Without a chosen challenge
+  // nothing is recorded as a failure: the lab can't tell what the learner was aiming at.
+  const labTry = new Map(), labHelped = new Set(), TRY_MOVES = 5;
+  const labRecord = (x, task, label, outcome, extra = {}) => {
+    const l = byId[x.evidence?.[task]]; if (!l) return;
+    const ok = outcome !== "attempt";
+    record({ Q: { type: "lab", d: 2, objectives: [] }, key: `ix:${x.id}:${task}`, v: null, l }, "practice", x.id,
+      { score: ok ? 1 : 0, correct: ok, method: "auto", status: "final" }, { response: { challenge: label || task, outcome, ...extra } });
+  };
+  const endTry = (x) => {
+    const t = labTry.get(x.id); labTry.delete(x.id);
+    if (t && t.moves >= TRY_MOVES && !S.solved[`ix:${x.id}:${t.task}`]) labRecord(x, t.task, t.label, "attempt", { moves: t.moves, seconds: Math.round((Date.now() - t.at) / 1000) });
+  };
+  const endTries = () => { for (const id of [...labTry.keys()]) if (ixById[id]) endTry(ixById[id]); };
+  addEventListener("pagehide", endTries);
   const ixCtx = (x) => ({ ...x,
     onComplete: (r) => { const k = `ix:${x.id}`; if (!S.solved[k] && r?.score >= 0.7) { S.solved[k] = Date.now(); save(); award(XP.quiz, "practice", x.id, `${cfg.name}: ${x.title}`); } },
     complete: (task, label) => {
       const k = `ix:${x.id}:${task}`; if (S.solved[k]) return;
+      if (labTry.get(x.id)?.task === task) labTry.delete(x.id);
       S.solved[k] = Date.now(); save(); award(XP.problem, "practice", k, `${cfg.name}: ${x.title}${label ? ` (${label})` : ""}`);
-      const l = byId[x.evidence?.[task]];
-      if (l) record({ Q: { type: "lab", d: 2, objectives: [] }, key: k, v: null, l }, "practice", x.id, { score: 1, correct: true, method: "auto", status: "final" }, { response: label || task });
+      labRecord(x, task, label, labHelped.has(x.id) ? "assisted_success" : "success");
     },
     solved: (task) => Boolean(S.solved[`ix:${x.id}:${task}`]),
+    // which challenge the learner says they're working on (only for labs whose challenges count as evidence)
+    focus: x.evidence ? (task, label) => { endTry(x); if (task && x.evidence[task]) labTry.set(x.id, { task, label, moves: 0, last: 0, at: Date.now() }); } : undefined,
     report: (text) => { labNow.set(x.id, String(text || "").slice(0, 800)); } });
   const labFor = (id) => {
     const el = id && main.querySelector(`.co-lab[data-ix="${id}"] .co-labstage`);
@@ -1049,12 +1082,17 @@ export function mountCourse(root, cfg) {
     return state ? { title: ixById[id].title, state } : null;
   };
   const mounted = new Set();
-  const unmountIx = () => { for (const stop of mounted) { try { stop(); } catch { /* already gone */ } } mounted.clear(); labNow.clear(); labLast = null; };
+  const unmountIx = () => { endTries(); for (const stop of mounted) { try { stop(); } catch { /* already gone */ } } mounted.clear(); labNow.clear(); labHelped.clear(); labLast = null; };
   async function mountIx(x, el) {
     try {
       const mod = await x.load(); el.innerHTML = ""; const stop = mod.mount(el, ixCtx(x)); if (typeof stop === "function") mounted.add(stop);
       // the lab the learner touched last is the one the tutor on the page is told about
-      if (!el.dataset.watch) { el.dataset.watch = "1"; for (const ev of ["pointerdown", "input", "change"]) el.addEventListener(ev, () => { labLast = x.id; }, { passive: true }); }
+      // a "move" on a chosen challenge is an interaction at least a second after the last (a slider drag is one move)
+      if (!el.dataset.watch) { el.dataset.watch = "1"; for (const ev of ["pointerdown", "input", "change"]) el.addEventListener(ev, (e) => {
+        labLast = x.id;
+        const t = labTry.get(x.id), now = Date.now();
+        if (t && !e.target.closest?.("[data-try]") && now - t.last >= 1000) { t.moves++; t.last = now; }
+      }, { passive: true }); }
     }
     catch (e) { el.innerHTML = `<p class="co-empty">This interactive couldn't load (${esc(e.message)}).</p>`; }
   }
@@ -1123,14 +1161,14 @@ export function mountCourse(root, cfg) {
       const used = x.lessons.map((l) => byId[l]).filter(Boolean);
       main.innerHTML = `<div class="co-crumbs"><a href="#/practice">← ${esc(PL)}</a><span>${esc(x.kind)}</span></div>${ixCard(x, true)}
         ${used.length ? `<section class="co-panel co-ask co-tutor"></section><section class="co-panel"><h3>Learn the ideas behind it</h3><ul class="co-used">${used.map((l) => `<li><a href="#/lesson/${l.id}"><small>${U} ${l.unit.n}${l.module ? ` · ${esc(l.module)}` : ""}</small>${esc(l.title)}</a></li>`).join("")}</ul></section>` : ""}`;
-      await mountIx(x, main.querySelector(".co-labstage"));
+      await mountIx(x, main.querySelector(".co-labstage")); labLast = x.id;
       // the tutor on a lab page: grounded in the first of the lab's lessons that has notes, and told what the lab shows
       const tp = main.querySelector(".co-tutor"); if (!tp) return;
       let l0 = null, N = null;
       for (const l of used) { N = await notesFor(l).catch(() => null); if (N) { l0 = l; break; } }
       if (!N || !tp.isConnected) { tp.remove(); return; }
       mountTutorPanel(tp, {
-        ask: askTutor, lesson: { id: l0.id, title: l0.title, text: lessonText(N) }, modes: ["explain", "socratic"], heading: "Ask about this lab",
+        ask: askTutor, lesson: { id: l0.id, title: l0.title }, modes: ["explain", "socratic"], heading: "Ask about this lab",
         note: `${cfg.tutor || TUTOR_NOTE} On this page it uses the notes for "${l0.title}".`, focus: null, candidates: () => [], unavailable: (what) => signinLine(what, ""),
         link: (lid) => `#/lesson/${lid}`, titleOf: (lid) => byId[lid]?.title || lid, lab: () => labFor(x.id),
       });
