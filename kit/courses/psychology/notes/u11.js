@@ -212,7 +212,7 @@ P: A probability is a number from 0 (impossible) to 1 (certain). For equally lik
 - **Multiplication rule** (independent events): p(A and B) = p(A) × p(B).
 - **Complement**: p(not A) = 1 − p(A).
 H: Conditional probability and base rates
-P: **Conditional probability** is the probability of A given that B has happened, written p(A | B). People often confuse p(A | B) with p(B | A), and neglect **base rates**, how common something is to begin with. Bayes' theorem combines base rates with new evidence.
+P: **Conditional probability** is the probability of A given that B has happened, written p(A ∣ B). People often confuse p(A ∣ B) with p(B ∣ A), and neglect **base rates**, how common something is to begin with. Bayes' theorem combines base rates with new evidence.
 X: A screening test result
 > A condition affects 1% of people. A test detects 90% of true cases and gives a false positive for 9% of people without the condition.
 > In 1,000 people: 10 have the condition, and 9 test positive. Of the 990 without it, about 89 test positive.

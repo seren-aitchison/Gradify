@@ -203,7 +203,7 @@ PRE: Central tendency
 H: Probability basics
 P: A probability (from 0 to 1) expresses how likely an event is. In social research, a proportion in a population can be read as a probability: if 20% of households rent privately, a randomly chosen household has a 0.2 probability of renting privately. Random sampling relies on known probabilities of selection.
 H: Conditional probability
-P: **Conditional probability** is the probability of one event given another: the probability of being unemployed given that someone has no qualifications. Comparing conditional probabilities across groups is how sociologists describe **life chances**. Confusing p(A | B) with p(B | A) is a common error.
+P: **Conditional probability** is the probability of one event given another: the probability of being unemployed given that someone has no qualifications. Comparing conditional probabilities across groups is how sociologists describe **life chances**. Confusing p(A ∣ B) with p(B ∣ A) is a common error.
 X: Base rates and risk profiling (illustrative figures)
 > Suppose 1% of young people in an area are involved in serious youth violence.
 > A screening tool flags 80% of those involved, but also 10% of those not involved.

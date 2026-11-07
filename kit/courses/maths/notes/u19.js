@@ -684,7 +684,7 @@ H: Variants and comparisons
 - Clenshaw–Curtis is competitive in practice.
 X: Use two-point Gauss–Legendre to integrate x^{3} + x^{2} over [−1, 1].
 > Nodes t = ±1/√3 ≈ ±0.57735, weights 1
-> f(0.57735) + f(−0.57735) = (0.19245 + 0.33333) + (−0.19245 + 0.33333) = 0.66667
+> f(0.57735) + f(−0.57735) = (0.19245 + 0.33333) + (−0.19245 + 0.33333) ≈ 0.66667
 > Exact: ∫ x^{2} = 2/3 (the cubic integrates to 0), so the rule is exact
 K: Gauss rules pick optimal nodes and weights; n points give degree 2n − 1 exactness; nodes are roots of orthogonal polynomials; weights are positive; Gauss–Kronrod estimates errors adaptively.
 !: Forgetting to rescale nodes and weights when the interval isn't [−1, 1].

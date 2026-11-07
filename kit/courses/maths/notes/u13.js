@@ -497,7 +497,7 @@ M2#maths-u13-14-q2@2: Why can a tiny effect be statistically significant? | With
 S: A p-value is the probability, assuming the null hypothesis is true, of getting data at least as extreme as those observed. It measures how surprising the data are under H₀, and it's frequently misinterpreted.
 O: Calculate p-values for one- and two-tailed tests
 O: Interpret p-values correctly, following the ASA principles
-T: p-value | P(data at least as extreme as observed | H₀ true)
+T: p-value | P(data at least as extreme as observed ∣ H₀ true)
 T: One- and two-tailed p-values | One tail for a directional H₁; both tails (often doubled) for a two-sided H₁
 H: Calculating
 - z-test: one-tailed p = P(Z ≥ z); two-tailed p = 2P(Z ≥ |z|).
@@ -517,7 +517,7 @@ X: A two-sided z-test gives z = 2.3. Find the p-value.
 > P(Z ≥ 2.3) = 1 − Φ(2.3) ≈ 1 − 0.9893 = 0.0107
 > Two-sided: double it
 > p ≈ 0.0214: significant at 5% but not at 1%
-K: A p-value is P(this extreme or more | H₀); double one tail for two-sided tests; it isn't P(H₀ true) or an effect size.
+K: A p-value is P(this extreme or more ∣ H₀); double one tail for two-sided tests; it isn't P(H₀ true) or an effect size.
 !: Reading p = 0.03 as "a 3% chance the null hypothesis is true".
 Q: Which is larger for the same z, the one- or two-tailed p-value? | The two-tailed (double the one-tailed).
 Q: Does p = 0.4 show that H₀ is true? | No: it shows only that the data aren't surprising under H₀.
@@ -559,7 +559,7 @@ SUM: Tests can make false alarms or misses.
 SUM: Their balance depends on costs and sample size.
 SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | textbook | 2002 | https://www.cengage.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-NUM1#maths-u13-16-q1@1: A test rejects H₀: p = 0.5 if X ≥ 9 in 10 trials. What is the actual probability of a Type I error, to 4 decimal places? | 0.0107 | 0.0001 |  | P(X ≥ 9 | p = 0.5) = 11/1024 ≈ 0.0107.
+NUM1#maths-u13-16-q1@1: A test rejects H₀: p = 0.5 if X ≥ 9 in 10 trials. What is the actual probability of a Type I error, to 4 decimal places? | 0.0107 | 0.0001 |  | P(X ≥ 9 ∣ p = 0.5) = 11/1024 ≈ 0.0107.
 M1#maths-u13-16-q2@1: A screening test misses a patient who has the disease. Which error is that, if H₀ is "no disease"? | Type II | Type I | Both | Neither | A sampling error | Failing to reject a false H₀ (missing the disease) is a Type II error.
 M2#maths-u13-16-q3@2: What happens to β if α is reduced from 5% to 1% with the same sample? | β increases | β decreases | β stays the same | β becomes 0 | β becomes 1% | A stricter rejection rule makes it harder to detect real effects.
 
@@ -2088,7 +2088,7 @@ M2#maths-u13-60-q3@2: What does importance sampling do? | Samples more from the 
 S: Markov chain Monte Carlo draws samples from complicated distributions, especially Bayesian posteriors, by running a random walk designed to spend time in each region in proportion to its probability. It made realistic Bayesian models practical.
 O: Explain how a Metropolis–Hastings sampler works
 O: Diagnose convergence and mixing
-T: Metropolis–Hastings | Propose a move from x to y; accept with probability min(1, π(y)q(x | y)/(π(x)q(y | x))), else stay
+T: Metropolis–Hastings | Propose a move from x to y; accept with probability min(1, π(y)q(x ∣ y)/(π(x)q(y ∣ x))), else stay
 T: Effective sample size | The number of independent draws that the autocorrelated chain is worth
 H: Algorithms
 - Metropolis (symmetric proposals): accept with probability min(1, π(y)/π(x)).

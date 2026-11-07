@@ -77,8 +77,8 @@ M2#maths-u23-02-q3@2: Why is the entropy of English text far below log₂ 27 bit
 S: Conditional entropy measures how much uncertainty remains about one variable once another is known. It obeys a chain rule linking joint and individual entropies, and it never increases when you condition on more information.
 O: Calculate conditional and joint entropies
 O: Apply the chain rule and the "conditioning reduces entropy" inequality
-T: Conditional entropy | H(Y | X) = Σₓ p(x) H(Y | X = x) = −Σ p(x, y) log₂ p(y | x)
-T: Chain rule for entropy | H(X, Y) = H(X) + H(Y | X)
+T: Conditional entropy | H(Y ∣ X) = Σₓ p(x) H(Y ∣ X = x) = −Σ p(x, y) log₂ p(y ∣ x)
+T: Chain rule for entropy | H(X, Y) = H(X) + H(Y ∣ X)
 H: Definitions
 - Joint entropy H(X, Y) = −Σ p(x, y) log₂ p(x, y).
 - H(Y | X) averages the entropy of Y over values of X.
@@ -93,27 +93,27 @@ H: Uses
 - Fano's inequality links H(X | Y) to error probability.
 - Decision-tree splitting (information gain).
 - Data processing arguments.
-X: X is a fair coin. Y = X with probability 0.9 and flipped with probability 0.1. Find H(Y | X).
+X: X is a fair coin. Y = X with probability 0.9 and flipped with probability 0.1. Find H(Y ∣ X).
 > Given either value of X, Y has a 0.9/0.1 split
 > H(Y | X = x) = h(0.1) ≈ 0.469 bits for each x
 > H(Y | X) ≈ 0.469 bits
-K: Conditional entropy is remaining uncertainty given another variable; H(X, Y) = H(X) + H(Y | X); conditioning reduces entropy on average; functions of X have zero conditional entropy.
+K: Conditional entropy is remaining uncertainty given another variable; H(X, Y) = H(X) + H(Y ∣ X); conditioning reduces entropy on average; functions of X have zero conditional entropy.
 !: Thinking that observing any particular value of X must reduce uncertainty about Y.
-Q: What is H(Y | X) if Y is a function of X? | 0.
-Q: State the chain rule for two variables. | H(X, Y) = H(X) + H(Y | X).
+Q: What is H(Y ∣ X) if Y is a function of X? | 0.
+Q: State the chain rule for two variables. | H(X, Y) = H(X) + H(Y ∣ X).
 SUM: Uncertainty left after observing.
 SUM: Conditioning helps on average.
 SRC: Cover TM, Thomas JA, Elements of Information Theory (2nd edn, Wiley 2006) | textbook | 2006 | https://www.wiley.com/
 SRC: MacKay DJC, Information Theory, Inference, and Learning Algorithms (Cambridge University Press 2003) | textbook | 2003 | https://www.inference.org.uk/itila/
-NUM1#maths-u23-03-q1@1: H(X) = 1.5 bits and H(X, Y) = 2.3 bits. What is H(Y | X)? | 0.8 | 0.001 | bits | By the chain rule, H(Y | X) = 2.3 − 1.5 = 0.8 bits.
-M1#maths-u23-03-q2@1: X and Y are independent with H(Y) = 2 bits. What is H(Y | X)? | 2 bits | 0 bits | 1 bit | 4 bits | It depends on H(X) | Knowing an independent variable tells you nothing about Y.
-M3#maths-u23-03-q3@2: Why can observing a particular value of X increase uncertainty about Y, though H(Y | X) ≤ H(Y)? | The inequality holds on average over x; some rare values can leave Y more uncertain than before | It never increases uncertainty | Entropy can be negative | Conditioning always gives zero entropy | The inequality is false | Averaging over all x gives the decrease; individual x can go either way.
+NUM1#maths-u23-03-q1@1: H(X) = 1.5 bits and H(X, Y) = 2.3 bits. What is H(Y ∣ X)? | 0.8 | 0.001 | bits | By the chain rule, H(Y ∣ X) = 2.3 − 1.5 = 0.8 bits.
+M1#maths-u23-03-q2@1: X and Y are independent with H(Y) = 2 bits. What is H(Y ∣ X)? | 2 bits | 0 bits | 1 bit | 4 bits | It depends on H(X) | Knowing an independent variable tells you nothing about Y.
+M3#maths-u23-03-q3@2: Why can observing a particular value of X increase uncertainty about Y, though H(Y ∣ X) ≤ H(Y)? | The inequality holds on average over x; some rare values can leave Y more uncertain than before | It never increases uncertainty | Entropy can be negative | Conditioning always gives zero entropy | The inequality is false | Averaging over all x gives the decrease; individual x can go either way.
 
 ## Mutual Information
 S: Mutual information measures how much knowing one variable tells you about another. It's zero exactly when they're independent, captures nonlinear relationships that correlation misses, and is central to channel capacity, feature selection and neuroscience.
 O: Calculate mutual information from entropies
 O: Interpret mutual information and the data processing inequality
-T: Mutual information | I(X; Y) = H(X) − H(X | Y) = H(X) + H(Y) − H(X, Y)
+T: Mutual information | I(X; Y) = H(X) − H(X ∣ Y) = H(X) + H(Y) − H(X, Y)
 T: Data processing inequality | If X → Y → Z is a Markov chain, then I(X; Z) ≤ I(X; Y)
 H: Properties
 - Symmetric: I(X; Y) = I(Y; X).
@@ -255,7 +255,7 @@ M2#maths-u23-07-q3@2: Why does a sharply peaked log-likelihood indicate high Fis
 S: The minimum description length principle chooses the model that gives the shortest total description of the model plus the data encoded with it. It formalises Occam's razor: a model must earn its complexity by compressing the data enough.
 O: Explain two-part codes and the MDL trade-off
 O: Relate MDL to BIC, overfitting and Kolmogorov complexity
-T: Two-part code | Description length L(M) + L(D | M): bits to describe the model plus bits to describe the data given the model
+T: Two-part code | Description length L(M) + L(D ∣ M): bits to describe the model plus bits to describe the data given the model
 T: Kolmogorov complexity | The length of the shortest computer program that outputs a given string (uncomputable in general)
 H: The principle
 - Simple models: short L(M) but poor fit, so long L(D | M).
@@ -284,7 +284,7 @@ SUM: Complexity must pay its way.
 SRC: Rissanen J, Modeling by shortest data description, Automatica 14(5), 465 | journal | 1978 | https://doi.org/10.1016/0005-1098(78)90005-5
 SRC: Grünwald PD, The Minimum Description Length Principle (MIT Press 2007) | textbook | 2007 | https://mitpress.mit.edu/
 NUM1#maths-u23-08-q1@1: A model has 4 parameters fitted to n = 1024 data points. Using the BIC-like penalty (k/2) log₂ n, how many bits does describing the parameters cost? | 20 | 0 | bits | (4/2) × log₂ 1024 = 2 × 10 = 20 bits.
-M1#maths-u23-08-q2@1: Under MDL, when is a more complex model preferred? | When the reduction in data description length exceeds the extra model description length | Always, because a more complex model always fits the data better | Never, because MDL always chooses the simplest available model | Only when the complex model has fewer parameters than the simple one | When its parameter values are larger, giving it more expressive power | MDL compares total description length L(M) + L(D | M), so a complex model wins only if its better fit saves more data bits than its extra model bits cost.
+M1#maths-u23-08-q2@1: Under MDL, when is a more complex model preferred? | When the reduction in data description length exceeds the extra model description length | Always, because a more complex model always fits the data better | Never, because MDL always chooses the simplest available model | Only when the complex model has fewer parameters than the simple one | When its parameter values are larger, giving it more expressive power | MDL compares total description length L(M) + L(D ∣ M), so a complex model wins only if its better fit saves more data bits than its extra model bits cost.
 M2#maths-u23-08-q3@2: Why can't Kolmogorov complexity be used directly for model selection? | It is uncomputable: no algorithm can find the shortest program for every string | It is always zero for any string, so it can't distinguish models | It ignores the data and depends only on the programming language | It always favours the most complex model, defeating Occam's razor | It can be used directly; it's computed routinely by compressors | By a halting-problem argument, the shortest description can't be computed in general.
 
 ## Shannon's Theorems

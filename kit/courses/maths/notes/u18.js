@@ -1493,7 +1493,7 @@ S: A Markov decision process models sequential decisions under uncertainty: in e
 O: Define states, actions, transitions, rewards and discounting
 O: Solve small MDPs with the Bellman equation and value iteration
 T: Policy | A rule π(s) giving the action to take in each state s
-T: Bellman optimality equation | V*(s) = maxₐ [R(s, a) + γ Σₛ′ P(s′ | s, a) V*(s′)]
+T: Bellman optimality equation | V*(s) = maxₐ [R(s, a) + γ Σₛ′ P(s′ ∣ s, a) V*(s′)]
 H: The model
 - States S, actions A, transition probabilities P(s′ | s, a), rewards R(s, a).
 - Markov property: the future depends only on the current state and action.

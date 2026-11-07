@@ -721,7 +721,7 @@ M3#maths-u22-20-q3@2: Why does a steady-state Kalman filter for the local level 
 S: A hidden Markov model assumes the system switches between unobserved discrete states, each producing observations with its own distribution. HMMs model regime changes in economies and markets, speech sounds, gene sequences and animal behaviour.
 O: Describe the components of an HMM
 O: Explain the forward algorithm, Viterbi decoding and Baum–Welch estimation
-T: Transition matrix | P with Pᵢⱼ = P(state j at t + 1 | state i at t)
+T: Transition matrix | P with Pᵢⱼ = P(state j at t + 1 ∣ state i at t)
 T: Viterbi algorithm | Dynamic programming that finds the most probable sequence of hidden states given the observations
 H: Components
 - Hidden states following a Markov chain.

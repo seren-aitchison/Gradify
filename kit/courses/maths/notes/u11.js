@@ -562,7 +562,7 @@ IX: matrix
 K: Rank = number of pivots = dimension of the column (and row) space; rank + nullity = number of columns; full rank square matrices are invertible.
 !: Counting non-zero rows before reducing to echelon form.
 Q: What is the largest possible rank of a 4 × 6 matrix? | 4.
-Q: What does rank A < rank [A | b] mean? | The system Ax = b has no solution.
+Q: What does rank A < rank [A ∣ b] mean? | The system Ax = b has no solution.
 SUM: Rank counts independent rows and columns.
 SUM: Rank and nullity add to the number of columns.
 SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
@@ -678,7 +678,7 @@ M3#maths-u11-19-q3@2: Ax = b has a solution x_{p}, and null(A) is a line. How ma
 S: Systems of linear equations appear everywhere: balancing chemical reactions, network flows, economics, circuits and fitting curves. Gaussian elimination solves them systematically and shows whether there are no, one or infinitely many solutions.
 O: Solve systems by Gaussian elimination on the augmented matrix
 O: Classify systems as inconsistent, uniquely solvable or underdetermined
-T: Augmented matrix | [A | b], the coefficients with the right-hand side attached
+T: Augmented matrix | [A ∣ b], the coefficients with the right-hand side attached
 T: Consistent system | A system with at least one solution
 H: Elimination
 - Use row operations to reach echelon form, then back-substitute.
@@ -697,9 +697,9 @@ X: Solve x + y + z = 6, 2x − y + z = 3, x + 2y − z = 2.
 > Eliminate x: R₂ − 2R₁ gives −3y − z = −9; R₃ − R₁ gives y − 2z = −4
 > From these: y = 2z − 4, then −3(2z − 4) − z = −9, so −7z = −21 and z = 3
 > y = 2, x = 6 − 2 − 3 = 1: the unique solution is (1, 2, 3)
-K: Row reduce [A | b]; a [0 … 0 | c ≠ 0] row means inconsistent; free variables mean infinitely many; otherwise unique; use pivoting for stability.
+K: Row reduce [A ∣ b]; a [0 … 0 ∣ c ≠ 0] row means inconsistent; free variables mean infinitely many; otherwise unique; use pivoting for stability.
 !: Stopping at echelon form and misreading a zero row as "no solution" when the right-hand side is also zero.
-Q: What does a row [0 0 0 | 5] in the reduced augmented matrix mean? | The system has no solution.
+Q: What does a row [0 0 0 ∣ 5] in the reduced augmented matrix mean? | The system has no solution.
 Q: Can 2 equations in 3 unknowns have a unique solution? | No.
 SUM: Elimination solves linear systems.
 SUM: Echelon form reveals how many solutions there are.

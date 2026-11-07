@@ -1166,7 +1166,7 @@ M2#maths-u21-32-q3@2: Why can VaR discourage diversification? | It isn't always 
 S: Expected shortfall, also called conditional VaR, is the average loss in the worst (1 − α) of cases. It looks beyond the VaR threshold into the tail and is a coherent risk measure, which is why Basel trading-book rules adopted it.
 O: Calculate expected shortfall for normal and discrete loss distributions
 O: Explain coherence and why ES improves on VaR
-T: Expected shortfall | ES_{α} = E[loss | loss ≥ VaR_{α}], the average of losses in the worst (1 − α) tail
+T: Expected shortfall | ES_{α} = E[loss ∣ loss ≥ VaR_{α}], the average of losses in the worst (1 − α) tail
 T: Coherent risk measure | A measure satisfying monotonicity, subadditivity, positive homogeneity and translation invariance (Artzner et al.)
 H: Calculation
 - Normal losses with mean 0: ES_{α} = σ φ(z_{α})/(1 − α).
@@ -1412,7 +1412,7 @@ SUM: Causality needs careful design.
 SRC: Wooldridge JM, Introductory Econometrics: A Modern Approach (7th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.com/
 SRC: Angrist JD, Pischke JS, Mostly Harmless Econometrics (Princeton University Press 2009) | textbook | 2009 | https://press.princeton.edu/
 NUM1#maths-u21-39-q1@1: A log–log regression of quantity on price gives a coefficient −1.5. By roughly what percentage does quantity fall when price rises 10%? | 15 | 0 | % | The coefficient is an elasticity: −1.5 × 10% = −15%.
-M1#maths-u21-39-q2@1: Which problem arises when a regressor is correlated with the error term? | Endogeneity, which biases OLS estimates | Multicollinearity only | A perfect fit to the data | Heteroscedasticity only | No problem for OLS | Exogeneity E[ε | X] = 0 fails, so OLS no longer estimates the causal effect.
+M1#maths-u21-39-q2@1: Which problem arises when a regressor is correlated with the error term? | Endogeneity, which biases OLS estimates | Multicollinearity only | A perfect fit to the data | Heteroscedasticity only | No problem for OLS | Exogeneity E[ε ∣ X] = 0 fails, so OLS no longer estimates the causal effect.
 M2#maths-u21-39-q3@2: Why might regressing crime on police numbers suggest police increase crime? | Reverse causality: areas with more crime hire more police | Police always increase crime wherever they are deployed | The data must be wrong if this result appears | OLS is always biased upwards for any public policy data | It wouldn't suggest this; the coefficient is always negative | Simultaneity makes police numbers endogenous, so instruments are needed.
 
 ## Microeconomic Modelling

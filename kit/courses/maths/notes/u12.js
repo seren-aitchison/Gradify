@@ -72,7 +72,7 @@ SUM: Subtract the overlap when adding.
 SRC: Kolmogorov AN, Foundations of the Theory of Probability (2nd English edn, Chelsea 1956) | textbook | 1956 | https://archive.org/
 SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | textbook | 2020 | https://global.oup.com/
 NUM1#maths-u12-02-q1@1: P(A) = 0.6, P(B) = 0.5 and P(A ∪ B) = 0.8. Find P(A ∩ B). | 0.3 | 0.001 |  | Rearrange the addition rule: 0.6 + 0.5 − 0.8 = 0.3.
-M1#maths-u12-02-q2@1: Which follows directly from Kolmogorov's axioms? | P(∅) = 0 | P(A ∩ B) = P(A)P(B) | P(A | B) = P(A) | All outcomes are equally likely | P(A) = 0.5 | Ω and ∅ are mutually exclusive and Ω ∪ ∅ = Ω, so P(∅) must be 0.
+M1#maths-u12-02-q2@1: Which follows directly from Kolmogorov's axioms? | P(∅) = 0 | P(A ∩ B) = P(A)P(B) | P(A ∣ B) = P(A) | All outcomes are equally likely | P(A) = 0.5 | Ω and ∅ are mutually exclusive and Ω ∪ ∅ = Ω, so P(∅) must be 0.
 M3#maths-u12-02-q3@2: Can P(A) = 0.7 and P(B) = 0.6 for mutually exclusive events A and B? | No: their probabilities would add to 1.3 | Yes, always | Yes, if they're independent | Only if Ω is infinite | Only if P(A ∩ B) = 0.3 | Mutually exclusive means P(A ∪ B) = P(A) + P(B), which can't exceed 1.
 M2#maths-u12-02-q4@2: After 5 heads in a row with a fair coin, what is the probability the next flip is heads? | 0.5, since flips are independent | Less than 0.5, since tails is due | More than 0.5, since heads is on a streak | 0, since six heads is impossible | It depends on earlier flips | Independence means past results don't change the next probability (the gambler's fallacy).
 
@@ -80,7 +80,7 @@ M2#maths-u12-02-q4@2: After 5 heads in a row with a fair coin, what is the proba
 S: Two events are independent when knowing that one has happened doesn't change the probability of the other. Independence lets us multiply probabilities, and wrongly assuming it is one of the most common errors in risk assessment.
 O: Test whether events are independent
 O: Use the multiplication rule for independent events
-T: Independent events | Events with P(A ∩ B) = P(A)P(B), equivalently P(A | B) = P(A)
+T: Independent events | Events with P(A ∩ B) = P(A)P(B), equivalently P(A ∣ B) = P(A)
 T: Mutual independence | Every subcollection of the events satisfies the product rule, not just each pair
 H: The definition
 - A and B are independent if P(A ∩ B) = P(A) × P(B).
@@ -108,13 +108,13 @@ SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook 
 SRC: Royal Statistical Society, Statement regarding statistical issues in the Sally Clark case | guidance | 2001 | https://rss.org.uk/
 NUM1#maths-u12-03-q1@1: A system has three independent components, each working with probability 0.9. It works only if all three work. Find the probability it works. | 0.729 | 0.0001 |  | Multiply the independent probabilities: 0.9^{3} = 0.729.
 M1#maths-u12-03-q2@1: Events A and B satisfy P(A) = 0.4, P(B) = 0.5 and P(A ∩ B) = 0.2. Are they independent? | Yes, because 0.4 × 0.5 = 0.2 | No, because they overlap | No, because 0.4 + 0.5 ≠ 1 | Yes, because P(A) < P(B) | It can't be determined | The product rule holds exactly, which is the definition of independence.
-M3#maths-u12-03-q3@2: Mutually exclusive events A and B each have positive probability. What can you say? | They're dependent | They're independent | P(A ∩ B) = P(A)P(B) | P(A ∪ B) = 1 | P(A | B) = P(A) | P(A ∩ B) = 0 but P(A)P(B) > 0, so the product rule fails: B happening rules A out.
+M3#maths-u12-03-q3@2: Mutually exclusive events A and B each have positive probability. What can you say? | They're dependent | They're independent | P(A ∩ B) = P(A)P(B) | P(A ∪ B) = 1 | P(A ∣ B) = P(A) | P(A ∩ B) = 0 but P(A)P(B) > 0, so the product rule fails: B happening rules A out.
 
 ## Conditional Probability
-S: Conditional probability is the probability of an event given that another has happened. It's how probabilities update when information arrives, and confusing P(A | B) with P(B | A) causes serious errors in medicine and law.
+S: Conditional probability is the probability of an event given that another has happened. It's how probabilities update when information arrives, and confusing P(A ∣ B) with P(B ∣ A) causes serious errors in medicine and law.
 O: Calculate conditional probabilities from definitions, tables and trees
 O: Use the multiplication rule for dependent events
-T: Conditional probability | P(A | B) = P(A ∩ B)/P(B), defined when P(B) > 0
+T: Conditional probability | P(A ∣ B) = P(A ∩ B)/P(B), defined when P(B) > 0
 T: Tree diagram | A diagram whose branches carry conditional probabilities, multiplied along paths
 H: The definition
 - Given B, the sample space shrinks to B: P(A | B) is the fraction of B's probability that lies in A.
@@ -128,21 +128,21 @@ H: Common confusions
 - P(A | B) ≠ P(B | A): most professional footballers are men, but few men are professional footballers.
 - The prosecutor's fallacy: confusing P(evidence | innocent) with P(innocent | evidence).
 - Simpson's paradox: a trend in every group can reverse when the groups are combined.
-X: A bag has 5 red and 3 blue counters. Two are taken without replacement. Find P(both red) and P(second is red | first is blue).
+X: A bag has 5 red and 3 blue counters. Two are taken without replacement. Find P(both red) and P(second is red ∣ first is blue).
 > P(first red) = 5/8, then P(second red | first red) = 4/7
 > P(both red) = 5/8 × 4/7 = 20/56 = 5/14 ≈ 0.357
 > After a blue is taken, 5 red of 7 remain: P(second red | first blue) = 5/7
-K: P(A | B) = P(A ∩ B)/P(B); multiply along tree branches; don't swap the order of conditioning.
+K: P(A ∣ B) = P(A ∩ B)/P(B); multiply along tree branches; don't swap the order of conditioning.
 !: Using the same probabilities for the second draw when sampling without replacement.
-Q: What is P(A | B) if P(A ∩ B) = 0.12 and P(B) = 0.4? | 0.3.
-Q: Is P(A | B) generally equal to P(B | A)? | No: they're equal only if P(A) = P(B) (or both are zero).
+Q: What is P(A ∣ B) if P(A ∩ B) = 0.12 and P(B) = 0.4? | 0.3.
+Q: Is P(A ∣ B) generally equal to P(B ∣ A)? | No: they're equal only if P(A) = P(B) (or both are zero).
 SUM: Conditioning shrinks the sample space.
 SUM: Multiply along trees, add across paths.
 SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
 SRC: Department for Education, Mathematics AS and A level subject content: statistics | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-NUM1#maths-u12-04-q1@1: In a class, 60% study French, and 25% study both French and Spanish. What is P(Spanish | French), to 4 decimal places? | 0.4167 | 0.0001 |  | P(S | F) = 0.25/0.6 ≈ 0.4167.
+NUM1#maths-u12-04-q1@1: In a class, 60% study French, and 25% study both French and Spanish. What is P(Spanish ∣ French), to 4 decimal places? | 0.4167 | 0.0001 |  | P(S ∣ F) = 0.25/0.6 ≈ 0.4167.
 M1#maths-u12-04-q2@1: Two cards are drawn without replacement from a 52-card pack. What is P(both aces)? | 1/221 | 1/169 | 1/26 | 4/52 | 2/13 | Multiply along the tree, with one fewer ace for the second draw: (4/52) × (3/51) = 1/221.
-M2#maths-u12-04-q3@2: What does the law of total probability calculate? | An overall probability by splitting into cases | A conditional probability only | The probability of independence | The number of outcomes | A variance | P(A) = Σ P(A | Bᵢ)P(Bᵢ) over a partition B₁, B₂, … of the sample space.
+M2#maths-u12-04-q3@2: What does the law of total probability calculate? | An overall probability by splitting into cases | A conditional probability only | The probability of independence | The number of outcomes | A variance | P(A) = Σ P(A ∣ Bᵢ)P(Bᵢ) over a partition B₁, B₂, … of the sample space.
 
 ## Joint Probability
 S: A joint probability is the probability that two or more events, or random variables, take particular values together. Joint distributions show how variables relate, and summing them out gives each variable's own (marginal) distribution.
@@ -174,18 +174,18 @@ SUM: Joint distributions describe variables together.
 SUM: Marginals sum out; conditionals divide.
 SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | textbook | 2020 | https://global.oup.com/
 SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
-NUM1#maths-u12-05-q1@1: Using the joint table P(0,0) = 0.3, P(0,1) = 0.2, P(1,0) = 0.1, P(1,1) = 0.4, find P(Y = 1 | X = 1). | 0.8 | 0.001 |  | P(X = 1) = 0.5, so P(Y = 1 | X = 1) = 0.4/0.5 = 0.8.
+NUM1#maths-u12-05-q1@1: Using the joint table P(0,0) = 0.3, P(0,1) = 0.2, P(1,0) = 0.1, P(1,1) = 0.4, find P(Y = 1 ∣ X = 1). | 0.8 | 0.001 |  | P(X = 1) = 0.5, so P(Y = 1 ∣ X = 1) = 0.4/0.5 = 0.8.
 M1#maths-u12-05-q2@1: What is a marginal distribution? | The distribution of one variable, summed over the others | The edge of a probability table that's always zero | The most likely value | A conditional distribution | The joint distribution itself | Summing the joint probabilities over the other variable leaves one variable's distribution.
 M2#maths-u12-05-q3@2: A joint density factorises as f(x, y) = g(x)h(y) on a rectangle. What does that show? | X and Y are independent | X and Y are equal | X and Y are perfectly correlated | The density is invalid | Nothing about dependence | A product form on a rectangular support means the joint density is the product of the marginals.
 
 ## Bayes' Theorem
-S: Bayes' theorem reverses conditional probabilities: from P(evidence | cause) it gives P(cause | evidence). It's the logic of diagnosis, spam filters and learning from data, and it explains why a positive test for a rare disease is often a false alarm.
+S: Bayes' theorem reverses conditional probabilities: from P(evidence ∣ cause) it gives P(cause ∣ evidence). It's the logic of diagnosis, spam filters and learning from data, and it explains why a positive test for a rare disease is often a false alarm.
 O: Apply Bayes' theorem with the law of total probability
 O: Explain base-rate neglect and Bayesian updating
-T: Bayes' theorem | P(A | B) = P(B | A)P(A)/P(B)
+T: Bayes' theorem | P(A ∣ B) = P(B ∣ A)P(A)/P(B)
 T: Prior and posterior | The probability before seeing evidence, and the updated probability afterwards
 H: The theorem
-E: P(A | B) = P(B | A)P(A)/[P(B | A)P(A) + P(B | A′)P(A′)]
+E: P(A ∣ B) = P(B ∣ A)P(A)/[P(B ∣ A)P(A) + P(B ∣ A′)P(A′)]
 - The denominator is P(B) from the law of total probability.
 - It follows in one line from P(A ∩ B) = P(A | B)P(B) = P(B | A)P(A).
 - Named after Thomas Bayes (published 1763); Laplace developed it into a general method.
@@ -198,20 +198,20 @@ H: Updating
 - Posterior ∝ likelihood × prior.
 - Today's posterior becomes tomorrow's prior as more evidence arrives.
 - Spam filters, medical decision tools and Bayesian statistics (School 13) all work this way.
-X: A disease affects 1% of people. A test detects 90% of cases but also gives positives for 5% of healthy people. Find P(disease | positive).
+X: A disease affects 1% of people. A test detects 90% of cases but also gives positives for 5% of healthy people. Find P(disease ∣ positive).
 > P(positive) = 0.9 × 0.01 + 0.05 × 0.99 = 0.009 + 0.0495 = 0.0585
 > P(disease | positive) = 0.009/0.0585
 > ≈ 0.154: only about 15% of positives have the disease
 K: Bayes' theorem reverses conditioning; always include the base rate; posterior ∝ likelihood × prior.
 !: Assuming a 90%-accurate test means a positive result is 90% likely to be right.
 Q: What is the prior in a diagnostic test problem? | The prevalence: P(disease) before testing.
-Q: What is specificity? | P(negative test | no disease).
-SUM: Bayes' theorem turns P(B | A) into P(A | B).
+Q: What is specificity? | P(negative test ∣ no disease).
+SUM: Bayes' theorem turns P(B ∣ A) into P(A ∣ B).
 SUM: Base rates matter.
 SRC: Gigerenzer G, Reckoning with Risk: Learning to Live with Uncertainty (Penguin 2003) | textbook | 2003 | https://www.penguin.co.uk/
 SRC: Bayes T, An essay towards solving a problem in the doctrine of chances, Philosophical Transactions of the Royal Society 53, 370 | journal | 1763 | https://doi.org/10.1098/rstl.1763.0053
-NUM1#maths-u12-06-q1@1: A factory's machine A makes 60% of items with 2% faulty; machine B makes 40% with 5% faulty. An item is faulty. Find P(it came from A), to 4 decimal places. | 0.375 | 0.001 |  | P(faulty) = 0.012 + 0.02 = 0.032, so P(A | faulty) = 0.012/0.032 = 0.375.
-M1#maths-u12-06-q2@1: What does Bayes' theorem calculate from P(B | A), P(A) and P(B)? | P(A | B) | P(A ∩ B) only | P(A ∪ B) | P(A′) | P(B′) | It reverses the direction of conditioning.
+NUM1#maths-u12-06-q1@1: A factory's machine A makes 60% of items with 2% faulty; machine B makes 40% with 5% faulty. An item is faulty. Find P(it came from A), to 4 decimal places. | 0.375 | 0.001 |  | P(faulty) = 0.012 + 0.02 = 0.032, so P(A ∣ faulty) = 0.012/0.032 = 0.375.
+M1#maths-u12-06-q2@1: What does Bayes' theorem calculate from P(B ∣ A), P(A) and P(B)? | P(A ∣ B) | P(A ∩ B) only | P(A ∪ B) | P(A′) | P(B′) | It reverses the direction of conditioning.
 M3#maths-u12-06-q3@2: A rare condition (1 in 10,000) has a test with 99% sensitivity and 99% specificity. Roughly what fraction of positives are true positives? | About 1% | About 99% | About 50% | About 90% | About 10% | Per million: 99 true positives against about 10,000 false positives, so roughly 1%.
 
 ## Random Variables
@@ -775,7 +775,7 @@ S: The geometric distribution models the number of trials until the first succes
 O: Calculate geometric probabilities and the mean
 O: Explain the memoryless property
 T: Geometric distribution | X ~ Geo(p): P(X = k) = (1 − p)^{k−1}p for k = 1, 2, 3, …
-T: Memoryless property | P(X > m + n | X > m) = P(X > n)
+T: Memoryless property | P(X > m + n ∣ X > m) = P(X > n)
 H: Formulas
 - Mean 1/p; variance (1 − p)/p^{2}.
 - P(X > k) = (1 − p)^{k}: the first k trials all fail.
@@ -1456,12 +1456,12 @@ X: Fathers' and sons' heights are bivariate normal with both means 175 cm, both 
 K: N(μ, Σ) has normal marginals and linear combinations; conditionals are linear in x with reduced variance; uncorrelated jointly normal variables are independent.
 !: Assuming uncorrelated variables are independent when they aren't jointly normal.
 Q: What shape are the density contours of a bivariate normal? | Ellipses.
-Q: What is Var(Y | X = x) in a bivariate normal? | σ_{Y}^{2}(1 − ρ^{2}).
+Q: What is Var(Y ∣ X = x) in a bivariate normal? | σ_{Y}^{2}(1 − ρ^{2}).
 SUM: The multivariate normal is defined by μ and Σ.
 SUM: Its conditionals give linear regression.
 SRC: Anderson TW, An Introduction to Multivariate Statistical Analysis (3rd edn, Wiley 2003) | textbook | 2003 | https://www.wiley.com/
 SRC: Galton F, Regression towards mediocrity in hereditary stature, Journal of the Anthropological Institute 15, 246 | journal | 1886 | https://doi.org/10.2307/2841583
-NUM1#maths-u12-42-q1@1: In the heights example (SDs 7, ρ = 0.5), find Var(son's height | father's height). | 36.75 | 0.01 | cm² | σ^{2}(1 − ρ^{2}) = 49 × 0.75 = 36.75 cm^{2}.
+NUM1#maths-u12-42-q1@1: In the heights example (SDs 7, ρ = 0.5), find Var(son's height ∣ father's height). | 36.75 | 0.01 | cm² | σ^{2}(1 − ρ^{2}) = 49 × 0.75 = 36.75 cm^{2}.
 M1#maths-u12-42-q2@1: X ~ N₂(μ, Σ). What is the distribution of X₁ + X₂? | Normal | Chi-squared | Uniform | Bivariate normal | Unknown without more information | Any linear combination of a multivariate normal vector is normal.
 M3#maths-u12-42-q3@2: Two variables each have a normal marginal and zero correlation. Must they be independent? | No, unless they're jointly normal | Yes, always | Yes, because both are normal | Only if their means are 0 | Only if their variances are equal | Normal marginals don't make the pair jointly normal; only joint normality turns zero correlation into independence.
 

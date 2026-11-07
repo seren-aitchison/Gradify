@@ -13,8 +13,8 @@ H: Calibration
 - Recalibrate at intervals and after damage; record the date and standard used.
 - Traceability: your thermometer → lab reference → national lab (NPL, NIST) → SI definition.
 X: A thermometer reads 1.5 °C in melting ice and 98.0 °C in boiling water at 1 atm. What is the true temperature when it reads 50.0 °C?
-> Scale factor = 100/(98.0 − 1.5) = 1.036
-> T = (50.0 − 1.5) × 1.036 = 50.3 °C
+> Scale factor = 100/(98.0 − 1.5) = 1.0363
+> T = (50.0 − 1.5) × 1.0363 = 50.26 ≈ 50.3 °C
 !: A high-resolution digital display doesn't make an instrument accurate; an uncalibrated 6-digit meter can be wrong in the second digit.
 Q: What is traceability? | An unbroken chain of calibrations linking a measurement back to national standards and the SI.
 Q: What is a zero error? | A non-zero reading when the true value is zero; it offsets every reading.
