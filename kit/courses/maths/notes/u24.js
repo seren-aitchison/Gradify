@@ -97,6 +97,8 @@ X: A logistic model has w = 2 and b = −4. Find P(y = 1) at x = 3.
 > z = 2 × 3 − 4 = 2
 > σ(2) = 1/(1 + e^{−2}) = 1/(1 + 0.135)
 > ≈ 0.881
+P: **Investigate with the lab.** Add points and watch the least-squares line, which minimises the sum of squared residuals, update with each point.
+IX: regression
 K: Linear regression minimises squared error via the normal equations; ridge and lasso regularise; logistic regression models probabilities through the sigmoid; coefficients are interpretable.
 !: Using linear regression for a binary outcome, which can predict probabilities outside [0, 1].
 Q: Which penalty produces sparse coefficients? | The L1 (lasso) penalty.
@@ -108,6 +110,7 @@ SRC: James G, Witten D, Hastie T, Tibshirani R, An Introduction to Statistical L
 NUM1#maths-u24-03-q1@1: What is σ(0) for the sigmoid function? | 0.5 | 0 |  | 1/(1 + e^{0}) = 1/2.
 M1#maths-u24-03-q2@1: A logistic coefficient is w = ln 3. What happens to the odds when x rises by 1? | They triple | They rise by 3 percentage points | They halve | They stay the same | They rise by ln 3 | In logistic regression the odds ratio for a one-unit rise in x is e^{w} = e^{ln 3} = 3, so the odds triple.
 M2#maths-u24-03-q3@2: Why does ridge regression help when features are highly correlated? | Adding λI makes XᵀX + λI well conditioned, stabilising coefficient estimates | It removes the correlated features from the model before fitting | It increases the variance of the coefficients to explore more values | It ignores the data and shrinks every coefficient exactly to zero | It doesn't help; ridge only matters when features are independent | Near-singular XᵀX makes ordinary least squares unstable.
+M2#maths-u24-03-q4@2: What does ordinary least squares minimise? | The sum of squared vertical residuals | The sum of absolute x-values | The number of points off the line | The correlation coefficient | The largest residual only | OLS chooses coefficients minimising Σ(yᵢ − ŷᵢ)^{2}.
 
 ## Optimisation Algorithms
 S: Training a machine learning model means minimising a loss function, often with millions of parameters. First-order methods such as gradient descent with momentum and Adam dominate because they scale, while second-order and coordinate methods suit smaller or structured problems.
@@ -133,6 +136,8 @@ X: With momentum β = 0.9 and η = 0.1, a constant gradient of 1 is applied for 
 > v₁ = 0.9 × 0 + 1 = 1
 > v₂ = 0.9 × 1 + 1 = 1.9
 > v₃ = 0.9 × 1.9 + 1 = 2.71: momentum builds up, approaching 1/(1 − 0.9) = 10
+P: **Investigate with the lab.** Compare several learning rates on the narrow valley: too small is slow, too large zigzags or diverges, and a well-chosen rate converges smoothly.
+IX: descent
 K: ML training uses gradient-based optimisers; momentum accelerates; Adam adapts step sizes; learning-rate schedules matter greatly; second-order methods help in some settings.
 !: Keeping a fixed large learning rate throughout training, which prevents fine convergence.
 Q: What does Adam combine? | Momentum and adaptive per-parameter step sizes.
@@ -144,6 +149,7 @@ SRC: Bottou L, Curtis FE, Nocedal J, Optimization methods for large-scale machin
 NUM1#maths-u24-04-q1@1: With momentum β = 0.9 and a constant gradient g, what multiple of g does the velocity approach? | 10 | 0 |  | The steady state v = βv + g gives v = g/(1 − β) = 10g.
 M1#maths-u24-04-q2@1: Which optimiser adapts a separate step size for each parameter? | Adam | Plain gradient descent | Newton's method with fixed steps | Bisection | Simulated annealing | Adam scales steps by running estimates of squared gradients.
 M2#maths-u24-04-q3@2: Why is cosine annealing of the learning rate helpful near the end of training? | Smaller steps let the optimiser settle into a minimum instead of bouncing around it | Larger steps near the end always help the optimiser escape bad regions | It removes the need to compute gradients in the final epochs of training | It increases the training loss deliberately to prevent overfitting | It isn't helpful; a constant learning rate always converges faster | Decaying η reduces noise-driven oscillation as training converges.
+M2#maths-u24-04-q4@2: What does the narrow valley in the lab show about choosing a learning rate? | One fixed rate must suit both the steep and the shallow directions, which forces a compromise | Any rate works equally well | Larger rates are always better | The learning rate doesn't matter | Only negative rates converge | Ill-conditioning is why adaptive methods like Adam rescale each direction.
 
 ## Stochastic Gradient Descent
 S: Stochastic gradient descent updates a model using the gradient on a small random batch of data rather than the whole dataset. Each step is noisy but cheap, so SGD scales to billions of examples, and its noise can even help find solutions that generalise well.
@@ -169,6 +175,8 @@ X: A dataset has 50,000 examples and batch size 100. How many SGD steps are in o
 > Steps per epoch = 50,000/100 = 500
 > Noise variance scales like 1/B
 > Batch 100 has a quarter of the gradient variance of batch 25
+P: **Investigate with the lab.** Use different learning rates and compare runs. SGD adds noise to each step, but the same learning-rate trade-off between speed and stability applies.
+IX: descent
 K: SGD uses unbiased mini-batch gradients; noise falls with batch size; batch size and learning rate interact; SGD scales to huge datasets and its noise can aid generalisation.
 !: Forgetting to shuffle data between epochs, which can bias the gradient sequence.
 Q: Is the mini-batch gradient an unbiased estimate of the full gradient? | Yes, for uniformly sampled batches.
@@ -180,6 +188,7 @@ SRC: Goyal P et al., Accurate, large minibatch SGD: training ImageNet in 1 hour,
 NUM1#maths-u24-05-q1@1: Training uses 1,200,000 images with batch size 256 for 90 epochs. How many steps is that, to the nearest whole number? | 421875 | 1 | steps | 1,200,000/256 = 4687.5 steps per epoch; × 90 = 421,875.
 M1#maths-u24-05-q2@1: How does gradient noise variance change if the batch size quadruples? | It falls to a quarter | It quadruples | It doubles | It halves | It stays the same | Averaging B independent gradients divides variance by B.
 M3#maths-u24-05-q3@2: Why can SGD's gradient noise help training of neural networks? | It perturbs the parameters out of saddle points and sharp minima, favouring flatter solutions | Noise always makes training fail unless the batch is the full dataset | It makes the loss landscape convex, so any minimum found is global | It removes the need for a learning rate, since noise sets the step size | It never helps; exact full-batch gradients always generalise better | Exact gradients can stall at saddles that stochastic steps escape.
+M2#maths-u24-05-q4@2: In SGD, what does a smaller learning rate usually trade for stability? | Slower progress per step | Larger gradient noise | Divergence | Lower accuracy at convergence | Nothing | Smaller steps are more stable but need more iterations.
 
 ## Backpropagation Mathematics
 S: Backpropagation computes the gradient of a neural network's loss with respect to every weight by applying the chain rule backwards through the network. It's reverse-mode automatic differentiation, costing about as much as one forward pass.

@@ -100,6 +100,8 @@ X: £1000 is invested at 5% compounded annually for 10 years. Find the amount an
 > The rule of 72 gives doubling in about 72/5 = 14.4 years
 > Exact doubling time ln 2/ln 1.05 ≈ 14.2 years
 - Logarithms solve for time: n = ln(A/P)/ln(1 + r).
+P: **Investigate with the lab.** Choose Compound interest and write each answer as P × multiplierⁿ before calculating.
+IX: practice
 K: Compound interest grows exponentially; frequency raises the effective rate; continuous compounding gives Pe^{rt}; the rule of 72 estimates doubling time.
 !: Comparing nominal rates with different compounding frequencies without converting to AER.
 Q: What is the AER of 6% compounded quarterly? | About 6.14%.
@@ -111,6 +113,7 @@ SRC: Financial Conduct Authority, Consumer Credit sourcebook (CONC) App 1: Total
 NUM1#maths-u21-03-q1@1: What is £500 worth after 3 years at 4% compounded annually, to the nearest penny? | 562.43 | 0.01 | £ | 500 × 1.04^{3} = 500 × 1.124864 = £562.43.
 M1#maths-u21-03-q2@1: What is the effective annual rate of 12% compounded monthly? | About 12.68% | Exactly 12% | About 1% | About 144% | About 12.36% | (1 + 0.12/12)^{12} − 1 = 1.01^{12} − 1 ≈ 0.1268.
 M2#maths-u21-03-q3@2: Why does continuous compounding give the largest amount for a given nominal rate? | (1 + r/m)^{m} increases with m and tends to e^{r} as m → ∞ | Continuous compounding uses a higher rate | It adds interest only once | It removes the principal | It gives the smallest amount | More frequent compounding means interest starts earning interest sooner.
+NUM1#maths-u21-03-q4@1: £2000 earns 3% compound interest a year. What is it worth after 2 years, in £? | 2121.8 | 0.01 | £ | 2000 × 1.03^{2} = 2000 × 1.0609 = £2121.80.
 
 ## Time Value of Money
 S: The time value of money says a pound today is worth more than a pound in the future, because it can be invested. Moving cash flows forwards (accumulating) and backwards (discounting) in time is the basic operation of all valuation.

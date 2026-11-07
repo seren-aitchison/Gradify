@@ -301,6 +301,8 @@ X: A cuboid measures 3 cm by 4 cm by 12 cm. Find the length of its longest diago
 > The base diagonal is √(3^{2} + 4^{2}) = 5 cm
 > The space diagonal is √(5^{2} + 12^{2})
 > = √169 = 13 cm (or directly √(9 + 16 + 144))
+P: **Investigate with the lab.** Choose Pythagoras' theorem. Decide first whether you're finding the hypotenuse (add squares) or a shorter side (subtract).
+IX: practice
 K: a^{2} + b^{2} = c^{2} with c the hypotenuse; subtract to find a shorter side; extends to distances and 3D.
 !: Adding squares when finding a shorter side (you should subtract).
 Q: Is a triangle with sides 7, 24 and 25 right-angled? | Yes: 49 + 576 = 625.
@@ -312,6 +314,7 @@ SRC: Maor E, The Pythagorean Theorem: A 4,000-Year History (Princeton University
 NUM1#maths-u05-10-q1@1: A ladder 6.5 m long reaches 6 m up a wall. How far is its foot from the wall? | 2.5 | 0.01 | m | √(6.5^{2} − 6^{2}) = √(42.25 − 36) = √6.25 = 2.5 m.
 M1#maths-u05-10-q2@1: Which is a Pythagorean triple? | 8, 15, 17 | 6, 8, 12 | 5, 6, 7 | 2, 3, 4 | 9, 12, 16 | Check a^{2} + b^{2} = c^{2}: 8^{2} + 15^{2} = 64 + 225 = 289 = 17^{2}.
 M3#maths-u05-10-q3@2: What is the distance between (−2, 3) and (4, −5)? | 10 | 14 | 8 | √20 | 6 | The differences are 6 and 8, so the distance is √(6^{2} + 8^{2}) = √100 = 10.
+NUM1#maths-u05-10-q4@1: A right-angled triangle has hypotenuse 13 and one side 5. How long is the other side? | 12 | 0 |  | √(13^{2} − 5^{2}) = √144 = 12.
 
 ## Circles
 S: A circle is the set of points at a fixed distance from a centre. Its circumference and area involve π, the ratio of circumference to diameter, one of mathematics' most famous constants.
@@ -744,6 +747,8 @@ X: Triangle A has vertices (1, 1), (3, 1), (1, 2). Enlarge it by scale factor �
 > Multiply each coordinate by −2
 > (1, 1) → (−2, −2); (3, 1) → (−6, −2); (1, 2) → (−2, −4)
 > The image is twice the size, on the opposite side of the origin and turned through 180°
+P: **Investigate with the lab.** Build matrices for a rotation, a reflection and an enlargement, and note each one's determinant.
+IX: matrix
 K: Describe every transformation fully (vector; mirror line; angle, direction and centre; scale factor and centre).
 !: Describing a rotation without its centre or direction.
 Q: Which transformations produce congruent images? | Translations, reflections and rotations.
@@ -754,6 +759,7 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
 M1#maths-u05-24-q1@1: Where does (4, 1) go after reflection in the line y = x? | (1, 4) | (−4, 1) | (4, −1) | (−1, −4) | (1, −4) | Reflection in y = x swaps the coordinates.
 M2#maths-u05-24-q2@2: Where does (2, 5) go after a 90° clockwise rotation about the origin? | (5, −2) | (−5, 2) | (−2, 5) | (2, −5) | (−5, −2) | A 90° clockwise rotation maps (x, y) to (y, −x).
+M2#maths-u05-24-q3@2: What does the matrix [[3, 0], [0, 3]] do to shapes? | Enlarges them by scale factor 3 about the origin, multiplying areas by 9 | Rotates them by 3° | Reflects them in y = x | Translates them by 3 | Enlarges by 9 and areas by 3 | Both coordinates triple, so lengths ×3 and areas ×9 = det.
 
 ## Transformations and Symmetry
 S: A shape has symmetry if a transformation maps it onto itself. Line (reflection) and rotational symmetry describe the shapes of letters, logos, crystals and molecules, and lead to group theory.

@@ -57,6 +57,8 @@ X: Find the last digit of 3^{2025}.
 > Last digits of powers of 3 cycle with length 4: 3, 9, 7, 1
 > 2025 = 4 × 506 + 1, so 3^{2025} ≡ 3^{1} (mod 10)
 > The last digit is 3
+P: **Investigate with the lab.** Set the modulus to 7 and multiply on the clock. Find the inverse of 3, then switch to modulus 8 and find two non-zero numbers whose product is 0.
+IX: modular
 K: Congruence means equal remainders; reduce before multiplying; powers cycle, so reduce exponents by the cycle length.
 !: Dividing both sides of a congruence by a number that isn't coprime to the modulus.
 Q: What is 17 mod 5? | 2.
@@ -68,6 +70,7 @@ SRC: Gauss CF, Disquisitiones Arithmeticae (1801), trans. Clarke AA (Springer 19
 NUM1#maths-u02-02-q1@1: Find 7^{4} mod 9. | 7 | 0 |  | 7^{2} = 49 ≡ 4, so 7^{4} ≡ 4^{2} = 16 ≡ 7 (mod 9).
 M1#maths-u02-02-q2@1: What is 245 × 378 mod 10? | 0 | 5 | 8 | 4 | 2 | Only last digits matter mod 10: 5 × 8 = 40 ≡ 0.
 M2#maths-u02-02-q3@2: Why can't you always cancel a factor in a congruence like 2x ≡ 2y (mod 4)? | 2 shares a factor with 4, so x and y may differ by 2 | Congruences can't be multiplied | Cancelling is always allowed | Because 2 is prime, so it can never be cancelled | The congruence is false | x = 1 and y = 3 satisfy 2x ≡ 2y (mod 4) though x ≢ y (mod 4).
+M2#maths-u02-02-q4@2: Working mod 8 on the clock, what is 4 × 6? | 0, since 24 is a multiple of 8 | 24, since clock arithmetic doesn't reduce | 2, since 4 + 6 = 10 ≡ 2 | 4, since 6 ≡ −2 | 10, since 4 × 6 needs no reduction | 24 = 3 × 8, so 4 × 6 ≡ 0 mod 8: two non-zero numbers multiplying to zero, which can't happen with a prime modulus.
 
 ## Congruences
 S: A congruence equation such as 3x ≡ 4 (mod 7) asks which integers satisfy a relationship modulo n. Solving them uses inverses and the gcd, and they explain the divisibility tests learnt at school.
@@ -91,6 +94,8 @@ X: Solve 3x ≡ 4 (mod 7).
 > x ≡ 5 × 4 = 20 ≡ 6 (mod 7)
 > Check: 3 × 6 = 18 ≡ 4 (mod 7) ✓
 - Check every solution by substituting it back into the original congruence.
+P: **Investigate with the lab.** Pick a modulus and check that numbers in the same position on the clock behave the same way: replace 17 by 3 mod 7 before multiplying.
+IX: modular
 K: ax ≡ b (mod n) is solvable iff gcd(a, n) | b; multiply by the inverse when it exists; congruences prove divisibility tests.
 !: Assuming every linear congruence has exactly one solution.
 Q: Does 4x ≡ 6 (mod 10) have solutions? | Yes: gcd(4, 10) = 2 divides 6, giving two solutions mod 10 (x ≡ 4 or 9).
@@ -102,6 +107,7 @@ SRC: Burton DM, Elementary Number Theory (7th edn, McGraw-Hill 2011) | textbook 
 NUM1#maths-u02-03-q1@1: Find the inverse of 7 modulo 26 (between 0 and 25). | 15 | 0 |  | 7 × 15 = 105 = 4 × 26 + 1, so 7 × 15 ≡ 1 (mod 26).
 M1#maths-u02-03-q2@1: Is 918,082 divisible by 11? | Yes: the alternating digit sum is 0 | No: the digit sum is 28 | Yes: it ends in 2 | No: it's even | It can't be decided | 2 − 8 + 0 − 8 + 1 − 9 = −22, a multiple of 11 (918,082 = 11 × 83,462).
 M3#maths-u02-03-q3@2: How many solutions does 6x ≡ 9 (mod 15) have modulo 15? | 3 | 1 | 0 | 6 | 15 | gcd(6, 15) = 3 divides 9, so there are 3 solutions: x ≡ 4, 9, 14.
+NUM1#maths-u02-03-q4@1: Using congruences mod 7, what is 17 × 20 reduced mod 7? | 4 | 0 |  | 17 ≡ 3 and 20 ≡ 6, so the product ≡ 18 ≡ 4 (mod 7), the same as 340 mod 7.
 
 ## Euclidean Algorithm
 S: The Euclidean algorithm finds the greatest common divisor of two integers by repeated division. Over 2,300 years old, it's still one of the fastest and most used algorithms in mathematics and computing.
@@ -364,6 +370,8 @@ X: Estimate π(1,000) with x/ln x and compare with the true value.
 > ln 1,000 ≈ 6.908
 > 1,000/6.908 ≈ 144.8
 > The true value is 168: the estimate is about 14% low, though the ratio tends to 1 as x grows
+P: **Investigate with the lab.** Run the sieve to 200 and compare your count of primes with the prime number theorem's estimate x/ln x.
+IX: sieve
 K: Euclid proved infinitely many primes; π(x) ~ x/ln x; about 1 in ln x numbers near x is prime; twin primes and Goldbach remain open.
 !: Thinking Euclid's number p₁…p_{k} + 1 must itself be prime (2 × 3 × 5 × 7 × 11 × 13 + 1 = 30,031 = 59 × 509).
 Q: How many primes are less than 100? | 25.
@@ -375,6 +383,7 @@ SRC: Zhang Y, Bounded gaps between primes, Annals of Mathematics 179(3), 1121 | 
 NUM1#maths-u02-11-q1@1: Estimate π(10^{6}) using x/ln x, to the nearest thousand. | 72000 | 500 |  | 10^{6}/13.8155 ≈ 72,382, about 72,000 (the true value is 78,498).
 M1#maths-u02-11-q2@1: Which statement is Dirichlet's theorem? | Every arithmetic progression a + nd with gcd(a, d) = 1 contains infinitely many primes | Every even number is a sum of two primes | There are infinitely many twin primes | π(x) = x/ln x exactly | All Mersenne numbers are prime | Dirichlet proved it in 1837 using L-functions.
 M2#maths-u02-11-q3@2: Why are the numbers 7! + 2, 7! + 3, …, 7! + 7 all composite? | 7! + k is divisible by k for 2 ≤ k ≤ 7 | They're all even | 7! is prime | They're all perfect squares | They aren't all composite | k divides both 7! and itself, giving a run of 6 composites.
+NUM1#maths-u02-11-q4@1: The prime number theorem estimates π(200) ≈ 200/ln 200. To 1 decimal place, what is that estimate? | 37.7 | 0.1 |  | 200/ln 200 ≈ 200/5.298 ≈ 37.7, below the true count of 46: the estimate is asymptotic, not exact for small x.
 
 ## Fermat's Little Theorem
 S: Fermat's little theorem says that for a prime p and any a not divisible by p, a^{p−1} ≡ 1 (mod p). It makes huge powers easy to reduce, underlies fast primality tests and is a cornerstone of RSA.
@@ -398,6 +407,8 @@ X: Find 2^{100} mod 13.
 > 100 = 8 × 12 + 4, so 2^{100} ≡ 2^{4} = 16
 > 16 ≡ 3 (mod 13)
 - Example: since 7 is prime, 10^{6} ≡ 1 (mod 7), which is why 1/7 = 0.142857… repeats every 6 digits.
+P: **Investigate with the lab.** Choose a prime modulus p and raise several numbers to the power p − 1. Then try a composite modulus and see the pattern break.
+IX: modular
 K: a^{p−1} ≡ 1 (mod p) for p ∤ a; reduce exponents mod p − 1; failing the test proves compositeness, passing doesn't prove primality.
 !: Applying the theorem with a composite modulus or when p divides a.
 Q: What is 5^{6} mod 7? | 1.
@@ -409,6 +420,7 @@ SRC: Crandall R, Pomerance C, Prime Numbers: A Computational Perspective (2nd ed
 NUM1#maths-u02-12-q1@1: Find 3^{50} mod 7. | 2 | 0 |  | 3^{6} ≡ 1, and 50 = 8 × 6 + 2, so 3^{50} ≡ 3^{2} = 9 ≡ 2 (mod 7).
 M1#maths-u02-12-q2@1: Using Fermat's little theorem, what is the inverse of 4 modulo 7? | 2 | 4 | 3 | 6 | 1 | a^{−1} ≡ a^{p−2} = 4^{5} = 1024 ≡ 2, and 4 × 2 = 8 ≡ 1.
 M3#maths-u02-12-q3@2: A number n passes the Fermat test for base 2. What can you conclude? | n is probably prime, but could be composite | n is definitely prime | n is definitely composite | n is a Carmichael number | n is prime, because base 2 is the strongest base | Some composites (pseudoprimes such as 341) pass for base 2.
+NUM1#maths-u02-12-q4@1: Using Fermat's little theorem, what is 3^{12} mod 13? | 1 | 0 |  | 13 is prime and doesn't divide 3, so 3^{13 − 1} ≡ 1 (mod 13).
 
 ## Euler's Totient Function
 S: Euler's totient function φ(n) counts the numbers from 1 to n that are coprime to n. It measures the size of the group of units mod n, appears in Euler's theorem and is central to RSA.
@@ -435,6 +447,8 @@ X: Find φ(360).
 - Small values: φ(1) = 1, φ(6) = 2, φ(8) = 4, φ(9) = 6, φ(10) = 4, φ(12) = 4.
 - φ(n) for n = 2^{k} is 2^{k−1}: half of the numbers up to 2^{k} are odd.
 - Computing φ(n) is easy given n's prime factors and believed hard without them, which is why it stays secret in RSA.
+P: **Investigate with the lab.** With the multiplication table for modulus 12, count the numbers that have an inverse. They are exactly the ones coprime to 12.
+IX: modular
 K: φ(p) = p − 1; φ(p^{k}) = p^{k−1}(p − 1); φ is multiplicative; φ(n) = nΠ(1 − 1/p).
 !: Using φ(mn) = φ(m)φ(n) when m and n share a factor (φ(4) = 2, but φ(2)φ(2) = 1).
 Q: What is φ(13)? | 12.
@@ -446,6 +460,7 @@ SRC: Ireland K, Rosen M, A Classical Introduction to Modern Number Theory (2nd e
 NUM1#maths-u02-13-q1@1: Find φ(77). | 60 | 0 |  | 77 = 7 × 11, so φ = 6 × 10 = 60.
 M1#maths-u02-13-q2@1: What is φ(27)? | 18 | 26 | 9 | 24 | 3 | For a prime power, φ(p^{k}) = p^{k−1}(p − 1), so φ(3^{3}) = 9 × 2 = 18.
 M2#maths-u02-13-q3@2: For which n is φ(n) = n − 1? | When n is prime | When n is even | When n is a square | For all n | When n is a power of 2 | Every number below a prime is coprime to it, and only primes have that property.
+NUM1#maths-u02-13-q4@1: How many numbers in the multiplication table mod 12 have an inverse (that is, what is φ(12))? | 4 | 0 |  | Only 1, 5, 7 and 11 are coprime to 12, so φ(12) = 4.
 
 ## Euler's Theorem
 S: Euler's theorem generalises Fermat's little theorem to any modulus: if gcd(a, n) = 1, then a^{φ(n)} ≡ 1 (mod n). It explains why powers cycle and why RSA decryption works.
@@ -571,6 +586,8 @@ X: Show that 3 is a primitive root mod 7 but 2 isn't.
 > Powers of 3: 3, 2, 6, 4, 5, 1: all six non-zero residues appear, so the order is 6
 > Powers of 2: 2, 4, 1: order 3, so 2 isn't primitive
 > There are φ(6) = 2 primitive roots mod 7: 3 and 5
+P: **Investigate with the lab.** Set the modulus to 7 and list the powers of 3, then of 2. One of them reaches every non-zero residue; the other doesn't.
+IX: modular
 K: A primitive root has order p − 1; there are φ(p − 1) of them; test with g^{(p−1)/q} ≢ 1; they define discrete logarithms.
 !: Checking only that g^{p−1} ≡ 1, which every non-zero g satisfies.
 Q: How many primitive roots are there mod 11? | φ(10) = 4.
@@ -582,6 +599,7 @@ SRC: Burton DM, Elementary Number Theory (7th edn, McGraw-Hill 2011) | textbook 
 NUM1#maths-u02-17-q1@1: How many primitive roots are there modulo 13? | 4 | 0 |  | φ(12) = 12 × 1/2 × 2/3 = 4 (they are 2, 6, 7 and 11).
 M1#maths-u02-17-q2@1: To test whether g is a primitive root mod 13, which powers must not be 1? | g^{6} and g^{4} | g^{12} only | g^{1} and g^{2} | g^{13} | All powers up to g^{12} | 12 = 2^{2} × 3, so check g^{12/2} and g^{12/3}.
 M2#maths-u02-17-q3@2: Which modulus has no primitive root? | 8 | 7 | 9 | 10 | 4 | Every unit mod 8 (1, 3, 5, 7) squares to 1, so none has order 4.
+M2#maths-u02-17-q4@2: Mod 7, which of 2 and 3 is a primitive root? | 3, because its powers 3, 2, 6, 4, 5, 1 hit every non-zero residue | 2, because its powers 2, 4, 1 cover everything | Both, since every number is a primitive root mod a prime | Neither, since 7 has no primitive roots | 2 and 3 are only primitive roots mod 5 | 2 has order 3 mod 7 (2, 4, 1), while 3 has order 6 = 7 − 1, so 3 is a primitive root.
 
 ## Pell's Equation
 S: Pell's equation x^{2} − Dy^{2} = 1, for a non-square D, always has infinitely many integer solutions, all generated from the smallest one. Ancient Indian mathematicians (Brahmagupta, Bhāskara II) solved it centuries before Europe, and continued fractions explain why.
@@ -912,6 +930,8 @@ X: Compute 3^{13} mod 7 by square-and-multiply.
 > 13 = 8 + 4 + 1; 3^{1} = 3, 3^{2} = 9 ≡ 2, 3^{4} ≡ 4, 3^{8} ≡ 16 ≡ 2
 > 3^{13} ≡ 3^{8} × 3^{4} × 3^{1} = 2 × 4 × 3 = 24
 > 24 ≡ 3 (mod 7) (check: by Fermat, 3^{12} ≡ 1, so 3^{13} ≡ 3 ✓)
+P: **Investigate with the lab.** Raise 2 to successive powers mod 11 and watch the values cycle. Use the cycle to predict a large power before computing it.
+IX: modular
 K: Square for each bit, multiply for each 1 bit, reduce mod n throughout; the cost grows with the number of bits; implementations must resist side channels.
 !: Computing a^{e} in full before reducing, which creates impossibly large numbers.
 Q: Write 22 in binary. | 10110.
@@ -923,6 +943,7 @@ SRC: Kocher PC, Timing attacks on implementations of Diffie-Hellman, RSA, DSS, a
 NUM1#maths-u02-27-q1@1: Compute 5^{6} mod 13. | 12 | 0 |  | 5^{2} = 25 ≡ 12 ≡ −1, so 5^{4} ≡ 1 and 5^{6} = 5^{4} × 5^{2} ≡ 12.
 M1#maths-u02-27-q2@1: How many squarings does square-and-multiply need for an exponent of 1,000 (10 bits)? | About 9 or 10 | 1,000 | 500 | About 500, half the exponent | 100 | One squaring per bit after the first: the cost is logarithmic in e.
 M2#maths-u02-27-q3@2: What is a timing side-channel attack on modular exponentiation? | Measuring how long operations take to infer the secret exponent's bits | Guessing the modulus | Factorising n directly | Changing the public key | Breaking AES | Extra multiplications for 1 bits take extra time, leaking information.
+NUM1#maths-u02-27-q4@1: Powers of 2 mod 11 repeat every 10 steps. What is 2^{23} mod 11? | 8 | 0 |  | 2^{23} = 2^{20} × 2^{3} ≡ 1 × 8 = 8 (mod 11), since 2^{10} ≡ 1.
 
 ## RSA Cryptography
 S: RSA, published by Rivest, Shamir and Adleman in 1977, was the first practical public-key system for encryption and signatures. Its security rests on the difficulty of factorising the product of two large primes.
@@ -1116,6 +1137,8 @@ X: Factorise 5,959 by Fermat's method.
 > √5,959 ≈ 77.2: try a = 78 (6,084 − 5,959 = 125, not square), a = 79 (282, not square)
 > a = 80: 6,400 − 5,959 = 441 = 21^{2}
 > 5,959 = (80 − 21)(80 + 21) = 59 × 101
+P: **Investigate with the lab.** Factorise a few large numbers below 200 and notice you never need to test a divisor above √n, the same reason the sieve can stop at 13.
+IX: sieve
 K: Trial division for small n; Fermat's method when factors are close; the number field sieve is the best classical method; Shor's algorithm threatens RSA.
 !: Choosing RSA primes that are very close together, which Fermat's method exploits.
 Q: When does Fermat's method work quickly? | When the two factors are close to √n.
@@ -1127,6 +1150,7 @@ SRC: Shor PW, Polynomial-time algorithms for prime factorization and discrete lo
 NUM1#maths-u02-33-q1@1: Factorise 899 using 899 = 30^{2} − 1^{2}. Give the larger factor. | 31 | 0 |  | 899 = (30 − 1)(30 + 1) = 29 × 31.
 M1#maths-u02-33-q2@1: Why must RSA's primes p and q not be too close together? | Fermat's method would factorise n quickly | They must be equal | n would turn out to be prime, so it couldn't be used | Encryption would fail | It makes no difference | If p ≈ q, then n is close to a square and a − b is small.
 M2#maths-u02-33-q3@2: What would a large quantum computer running Shor's algorithm do to RSA? | Factorise n efficiently, breaking it | Make it twice as secure | Nothing | Only slow it down | Replace primes with squares | Shor's algorithm factorises in polynomial time.
+M2#maths-u02-33-q4@2: Why does trial division only need to test primes up to √n? | If n = ab with both factors above √n, then ab > n, so some factor is at most √n | Primes above √n don't exist | Larger primes always divide n | The sieve can't reach beyond √n | Testing beyond √n gives wrong answers | A composite n always has a prime factor no bigger than √n, so finding none up to √n proves n prime.
 
 ## Prime Factorisation Algorithms
 S: Beyond trial division, mathematicians have built clever factorisation algorithms that exploit hidden structure: Pollard's rho and p − 1 methods, Lenstra's elliptic curve method, and the quadratic and number field sieves. Each suits different sizes of number and factor.

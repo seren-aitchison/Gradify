@@ -313,6 +313,8 @@ X: f(x) = x^{3} − 2x − 5 has f(2) = −1 and f(3) = 16. Which methods can st
 > The sign change brackets a root in [2, 3], so bisection, false position and Brent can start
 > Newton can start from x₀ = 2 using f′(x) = 3x^{2} − 2
 > Newton converges rapidly to the root ≈ 2.0946 (Wallis's classic example)
+P: **Investigate with the lab.** Solve the same equation with bisection, Newton and secant, and count the iterations each needs for 10 correct decimals.
+IX: roots
 K: Bracketing methods are safe and slow; open methods are fast but can fail; Brent's hybrid gives both; multiplicity, stopping rules and systems need care.
 !: Using Newton far from a root without safeguards.
 Q: What order of convergence does the secant method have? | About 1.618.
@@ -324,6 +326,7 @@ SRC: Press WH, Teukolsky SA, Vetterling WT, Flannery BP, Numerical Recipes (3rd 
 NUM1#maths-u19-09-q1@1: One Newton step for x^{3} − 2x − 5 from x₀ = 2: what is x₁? | 2.1 | 0.0001 |  | f(2) = −1 and f′(2) = 10, so x₁ = 2 + 1/10 = 2.1.
 M1#maths-u19-09-q2@1: Which method is guaranteed to converge for a continuous function with a sign change? | Bisection | Newton's method | The secant method | Fixed-point iteration | Steffensen's method | Bisection always keeps a root inside a halving bracket.
 M2#maths-u19-09-q3@2: Why does Newton's method slow down at a double root? | f′ also vanishes at the root, so convergence drops from quadratic to linear | Double roots don't exist for smooth functions, so it never happens | Newton's method never converges to any root, whatever its multiplicity | The derivative becomes infinite at a double root, so steps vanish | It speeds up at double roots, since the function is flatter there | With f′(x*) = 0, the error is only roughly halved each step.
+M2#maths-u19-09-q4@2: Which method in the lab is guaranteed to converge once it has a valid bracket? | Bisection | Newton–Raphson | The secant method | All three always converge | None of them | Bisection keeps a sign change inside a shrinking interval.
 
 ## Bisection Method
 S: The bisection method halves an interval containing a sign change, keeping the half where the sign still changes. It's slow but completely reliable, and you can predict in advance exactly how many steps are needed for any accuracy.
@@ -350,6 +353,8 @@ X: Use bisection on f(x) = x^{2} − 2 in [1, 2] for three steps.
 > m = 1.5: f = 0.25 > 0, so the root is in [1, 1.5]
 > m = 1.25: f = −0.4375 < 0, so [1.25, 1.5]
 > m = 1.375: f = −0.109 < 0, so [1.375, 1.5]: √2 ≈ 1.414 lies inside
+P: **Investigate with the lab.** Select Bisection, then choose a bracket where f(a) and f(b) have the same sign (the lab's challenge) and see bisection refuse to start. Then fix the bracket.
+IX: roots
 K: Bisection halves a sign-change bracket each step; it's guaranteed and predictable but linear; it can't find roots without a sign change and may be fooled by discontinuities.
 !: Applying bisection to a discontinuous function and trusting the "root" it finds.
 Q: By what factor does the bracket shrink per bisection step? | 2.
@@ -361,6 +366,7 @@ SRC: Süli E, Mayers DF, An Introduction to Numerical Analysis (Cambridge Univer
 NUM1#maths-u19-10-q1@1: How many bisection steps reduce a bracket of width 1 to width at most 10^{−3}? | 10 | 0 | steps | 2^{10} = 1024 ≥ 1000, while 2^{9} = 512 isn't enough, so 10 steps are needed.
 M1#maths-u19-10-q2@1: On f(x) = x^{3} − x − 1 with bracket [1, 2], what is the next bracket? | [1, 1.5], since f(1.5) = 0.875 > 0 and f(1) < 0 | [1.5, 2], since f(1.5) > 0 and f(2) > 0 as well | [1, 2], unchanged, since the midpoint has no sign change | [0, 1], since the root must lie below the old bracket | [1.25, 1.5], since one bisection step always quarters it | f(1) = −1 and f(1.5) = 0.875, so the sign change is in [1, 1.5].
 M2#maths-u19-10-q3@2: Why can bisection report a "root" of 1/x on [−1, 1]? | The function changes sign across its discontinuity at 0, though it has no root | 1/x really has a root at 0, so bisection reports it correctly | Bisection never stops on 1/x, so it reports the last midpoint | The bracket [−1, 1] is invalid, since 1/x has no sign change | It can't: bisection always checks continuity before it starts | The intermediate value theorem needs continuity, which 1/x lacks at 0.
+NUM1#maths-u19-10-q4@1: Bisection starts on an interval of width 1. How wide is the bracket after 10 steps, to 4 decimal places? | 0.001 | 0.0001 |  | Each step halves it: 1/2^{10} = 1/1024 ≈ 0.0010.
 
 ## Newton–Raphson Method
 S: The Newton–Raphson method finds roots by following the tangent line to where it crosses the axis. Near a simple root it converges quadratically, so it's the method of choice when derivatives are available and a good starting guess is known.
@@ -385,6 +391,8 @@ X: Compute √2 with Newton from x₀ = 1.
 > x₁ = ½(1 + 2/1) = 1.5
 > x₂ = ½(1.5 + 2/1.5) = 1.41667
 > x₃ = ½(1.41667 + 1.41176) = 1.414216 (√2 = 1.414214): correct digits roughly double each step
+P: **Investigate with the lab.** Find √2 to 10 decimal places in at most 5 steps, then make Newton's method fail from a start where the tangent is flat (the lab's challenges).
+IX: roots
 K: Newton–Raphson follows tangents; it's quadratically convergent at simple roots, linear at multiple roots; it can cycle or diverge from poor starts, so safeguards are used.
 !: Forgetting to check that f′(xₙ) isn't zero or tiny.
 Q: What is the Newton iteration for √a? | x_{n+1} = ½(xₙ + a/xₙ).
@@ -396,6 +404,7 @@ SRC: Ypma TJ, Historical development of the Newton–Raphson method, SIAM Review
 NUM1#maths-u19-11-q1@1: Apply one Newton step for √10 (f(x) = x^{2} − 10) from x₀ = 3. | 3.1667 | 0.0001 |  | x₁ = ½(3 + 10/3) = ½(6.3333) = 3.1667, against √10 ≈ 3.1623.
 M1#maths-u19-11-q2@1: Newton's method on x^{3} − 2x + 2 from x₀ = 0 gives what behaviour? | It cycles between 0 and 1 forever | It converges quadratically to a root | It diverges to infinity | It stops because f′ = 0 at the start | It converges in one step | x₁ = 0 − 2/(−2) = 1 and x₂ = 1 − 1/1 = 0, so it repeats.
 M3#maths-u19-11-q3@2: Why does Newton converge quadratically near a simple root? | The tangent matches f to first order, so the remaining error comes from the second-order term, proportional to eₙ^{2} | It halves the error each step because the tangent bisects the interval | It uses two starting points, so it gains two digits per iteration | Every function is exactly linear near a root, so one step suffices | It converges only linearly near simple roots, and quadratically at double roots | Taylor expansion gives e_{n+1} ≈ (f″(x*)/2f′(x*)) eₙ^{2}.
+M2#maths-u19-11-q4@2: Why does Newton's method fail from a point where f′(x) = 0? | The tangent is horizontal and never meets the x-axis, so the next iterate is undefined | It converges instantly | It needs two starting points | The function has no root | It doesn't fail | The update x − f(x)/f′(x) divides by zero.
 
 ## Secant Method
 S: The secant method replaces Newton's derivative with the slope through the last two points. It needs no derivatives and converges superlinearly with order about 1.618, so it's often faster than Newton per unit of work.
@@ -420,6 +429,8 @@ X: Apply one secant step to f(x) = x^{2} − 2 with x₀ = 1 and x₁ = 2.
 > f(1) = −1 and f(2) = 2; the slope = (2 − (−1))/(2 − 1) = 3
 > x₂ = 2 − 2/3 = 1.3333
 > Next steps approach √2 ≈ 1.4142 superlinearly
+P: **Investigate with the lab.** Run the secant method beside Newton's on the same equation and compare how many steps each needs, remembering secant needs no derivative.
+IX: roots
 K: The secant method approximates f′ by a difference quotient; order ≈ 1.618 with one evaluation per step; often more efficient than Newton; regula falsi and Broyden are relatives.
 !: Using nearly equal xₙ and xₙ₋₁, so the slope suffers cancellation.
 Q: How many function evaluations does each secant step need? | One new evaluation.
@@ -431,6 +442,7 @@ SRC: Dennis JE, Schnabel RB, Numerical Methods for Unconstrained Optimization an
 NUM1#maths-u19-12-q1@1: Apply one secant step to f(x) = x^{2} − 4 with x₀ = 1 and x₁ = 3. | 1.75 | 0.0001 |  | f(1) = −3 and f(3) = 5, slope 8/2 = 4, so x₂ = 3 − 5/4 = 1.75.
 M1#maths-u19-12-q2@1: What does the secant method use in place of f′(xₙ)? | The slope of the line through the last two iterates | The second derivative estimated at xₙ | The function value f(xₙ) divided by xₙ | A random estimate of the local slope | The midpoint of the current bracket | (f(xₙ) − f(xₙ₋₁))/(xₙ − xₙ₋₁) approximates the derivative.
 M2#maths-u19-12-q3@2: Why can false position (regula falsi) converge slowly? | One endpoint can stay fixed for many steps, so the bracket shrinks from one side only | It never keeps a bracket, so it can wander away from the root | It uses exact derivatives, which are expensive to compute | It always diverges unless the function is linear | It is always fast, since it combines bisection and secant | When f is convex in the bracket, one end barely moves; Illinois-type modifications fix this.
+M2#maths-u19-12-q4@2: What does the secant method use instead of f′(x)? | The gradient of the line through the last two iterates | The second derivative | A fixed slope of 1 | The midpoint of a bracket | Nothing at all | (f(xₙ) − f(xₙ₋₁))/(xₙ − xₙ₋₁) approximates the derivative.
 
 ## Fixed-Point Iteration
 S: Fixed-point iteration rewrites f(x) = 0 as x = g(x) and repeats xₙ₊₁ = g(xₙ). It converges when g is a contraction near the fixed point, and the same idea underlies Newton's method, iterative linear solvers and many algorithms in analysis.
@@ -635,6 +647,8 @@ X: Estimate the derivative of eˣ at x = 0 with h = 0.1 using forward and centra
 > Forward: (e^{0.1} − 1)/0.1 = (1.10517 − 1)/0.1 = 1.0517 (error 0.052)
 > Central: (e^{0.1} − e^{−0.1})/0.2 = (1.10517 − 0.90484)/0.2 = 1.00167 (error 0.0017)
 > Central is far more accurate, as O(h^{2}) predicts
+P: **Investigate with the lab.** Use the secant gradient as a forward difference: watch the error fall as h shrinks, and note it's roughly proportional to h.
+IX: tangent
 K: Finite differences approximate derivatives; central differences are second order; truncation and rounding errors trade off, giving optimal h; automatic and complex-step differentiation avoid the trade-off.
 !: Taking h as small as possible, such as 10^{−15}, and getting rounding noise.
 Q: What is the error order of the central difference? | O(h^{2}).
@@ -646,6 +660,7 @@ SRC: Griewank A, Walther A, Evaluating Derivatives: Principles and Techniques of
 NUM1#maths-u19-18-q1@1: Use the central difference with h = 0.1 to estimate the derivative of x^{3} at x = 1. | 3.01 | 0.0001 |  | (1.1^{3} − 0.9^{3})/0.2 = (1.331 − 0.729)/0.2 = 3.01; the exact value is 3, with error h^{2} = 0.01.
 M1#maths-u19-18-q2@1: Which finite-difference formula has error O(h^{2})? | (f(x + h) − f(x − h))/(2h) | (f(x + h) − f(x))/h | (f(x) − f(x − h))/h | f(x + h)/h | (f(x + 2h) − f(x))/h | Odd error terms cancel in the symmetric central difference.
 M2#maths-u19-18-q3@2: Why does a forward difference with h = 10^{−15} give a poor derivative? | Rounding error of size ε/h dominates when h is tiny | Truncation error grows as h shrinks | Derivatives don't exist at that scale | The formula needs h = 1 | It gives an excellent derivative | f(x + h) and f(x) agree in nearly all digits, so their difference is mostly rounding noise.
+M2#maths-u19-18-q4@2: As the forward-difference step h is halved, roughly what happens to its truncation error? | It roughly halves, since the error is O(h) | It quarters, since the error is O(h^{2}) | It doubles | It stays the same | It becomes exactly zero | The forward difference has leading error (h/2)f″(x), proportional to h.
 
 ## Gaussian Quadrature
 S: Gaussian quadrature chooses both the nodes and the weights of an integration rule to be as accurate as possible. With n points it integrates every polynomial up to degree 2n − 1 exactly, roughly twice the degree of rules with fixed equally spaced points.
@@ -780,6 +795,8 @@ X: For f(x, y) = xy + sin x, compute ∇f at (π, 2) by reverse-mode thinking.
 > Forward pass: a = xy = 2π, b = sin π = 0, f = 2π
 > Backward: ∂f/∂a = 1 and ∂f/∂b = 1; ∂f/∂x = y × 1 + cos x × 1 = 2 − 1 = 1; ∂f/∂y = x = π
 > ∇f(π, 2) = (1, π)
+P: **Investigate with the lab.** Get within 0.05 of the Rosenbrock minimum (1, 1) (the lab's challenge). Notice how slowly plain gradient descent travels along the curved valley.
+IX: descent
 K: Gradients come from analytic formulas, finite differences, forward or reverse AD, or adjoints; reverse mode gives all partials for a constant multiple of the function cost; this powers optimisation and ML.
 !: Using finite differences for gradients with millions of parameters.
 Q: What is backpropagation? | Reverse-mode automatic differentiation applied to neural networks.
@@ -791,6 +808,7 @@ SRC: Baydin AG, Pearlmutter BA, Radul AA, Siskind JM, Automatic differentiation 
 NUM1#maths-u19-22-q1@1: A model has 1000 parameters. How many function evaluations does a forward-difference gradient need? | 1001 | 0 |  | One base evaluation plus one perturbed evaluation for each of the 1000 parameters.
 M1#maths-u19-22-q2@1: Which method gives the full gradient of a scalar function for roughly the cost of a few function evaluations? | Reverse-mode automatic differentiation | Forward-mode automatic differentiation | Forward finite differences | Central finite differences | Symbolic expansion by hand | One backward sweep yields every partial derivative of a scalar output.
 M2#maths-u19-22-q3@2: What is the main cost of reverse-mode differentiation? | Memory to store the intermediate values of the forward pass | Many more arithmetic operations than the function | Truncation error in the derivatives | Needing a second derivative | It has no costs | The backward pass needs values from the forward pass, which checkpointing trades for recomputation.
+M2#maths-u19-22-q4@2: Why is the Rosenbrock function hard for plain gradient descent? | Its minimum lies in a long, narrow, curved valley where the gradient points mostly across the valley | It has no minimum | Its gradient is always zero | It is linear | It isn't hard | Ill-conditioning makes steps zigzag rather than move along the valley floor.
 
 ## Numerical Optimisation
 S: Numerical optimisation turns the theory of minimisation into working algorithms: line searches, trust regions, and methods from gradient descent to Newton. Robust software combines them with convergence tests and careful scaling.
@@ -816,6 +834,8 @@ X: Check Armijo's sufficient decrease condition for f(x) = x^{2} at x = 1, direc
 > New point x = 1 − 0.5 × 2 = 0, f = 0
 > Requirement: f(0) ≤ f(1) + cα∇f·p = 1 + 10^{−4} × 0.5 × (2)(−2) = 0.9998
 > 0 ≤ 0.9998, so the step is accepted
+P: **Investigate with the lab.** Run descent to convergence and note how many steps it takes. Then start nearer the minimum and compare.
+IX: descent
 K: Line searches and trust regions globalise local methods; algorithm choice depends on derivatives and size; scaling, gradient checks and honest stopping tests make optimisation reliable.
 !: Trusting an optimiser's output without checking its convergence flag.
 Q: What does the Armijo condition require? | Sufficient decrease in f relative to the step and slope.
@@ -827,6 +847,7 @@ SRC: Conn AR, Gould NIM, Toint PL, Trust-Region Methods (SIAM 2000) | textbook |
 NUM1#maths-u19-23-q1@1: A trust-region step predicted a decrease of 4 but the actual decrease was 3. What is the ratio ρ used to adjust the radius? | 0.75 | 0.001 |  | ρ = actual/predicted = 3/4 = 0.75, a good agreement that typically keeps or enlarges the radius.
 M1#maths-u19-23-q2@1: What happens to the trust-region radius when the model predicts the decrease poorly? | It is reduced, so the next step stays closer to the current point | It is doubled, so the model can be tested further out | It stays the same regardless of how the step performed | The method stops, since the model has failed | The model is discarded and replaced by bisection | A small ratio of actual to predicted decrease means the model isn't trustworthy that far out.
 M2#maths-u19-23-q3@2: Which method suits optimising a function whose derivatives are unavailable and noisy? | A derivative-free method such as Nelder–Mead or model-based trust regions | Newton's method with exact Hessians from the formula | Conjugate gradients applied to the normal equations | Reverse-mode automatic differentiation of the function | Steepest descent using exact analytic gradients | Derivative-free methods use only function values.
+M2#maths-u19-23-q4@2: What is a sensible stopping rule for an iterative optimiser? | Stop when the gradient (or step) is small enough, or after a maximum number of iterations | Stop after exactly one step | Never stop | Stop when the function is negative | Stop when the learning rate is zero | Gradient and step tolerances detect convergence; iteration caps guard against non-convergence.
 
 ## Numerical Solutions of Differential Equations
 S: Most differential equations can't be solved exactly, so we approximate them on a grid of time steps or spatial points. Methods range from Euler's simple step to high-order Runge–Kutta and implicit schemes, chosen by accuracy, stability and stiffness.
@@ -852,6 +873,8 @@ X: Apply one Euler step and one RK2 (midpoint) step to y′ = y, y(0) = 1, h = 0
 > Euler: y₁ = 1 + 0.1 × 1 = 1.1
 > Midpoint: k₁ = 1, y_{mid} = 1.05, k₂ = 1.05, y₁ = 1 + 0.1 × 1.05 = 1.105
 > Exact e^{0.1} = 1.10517: RK2 is much closer
+P: **Investigate with the lab.** Halve the step size h for Euler's method and for RK4, and compare how much each error falls.
+IX: ode
 K: Euler and Runge–Kutta methods step through time; global error is one order below local; stiff problems need implicit methods; PDEs use finite differences, volumes, elements or spectral methods.
 !: Using an explicit method on a stiff problem and taking needlessly tiny steps.
 Q: What is the global order of RK4? | 4.
@@ -863,6 +886,7 @@ SRC: LeVeque RJ, Finite Difference Methods for Ordinary and Partial Differential
 NUM1#maths-u19-24-q1@1: Apply two Euler steps of h = 0.5 to y′ = −2y with y(0) = 1. What is y(1)? | 0 | 0 |  | Each step multiplies by 1 − 2 × 0.5 = 0, so y₁ = 0 and y₂ = 0 (exact e^{−2} ≈ 0.135): a step at the stability edge.
 M1#maths-u19-24-q2@1: Which method is fourth-order accurate? | Classical Runge–Kutta (RK4) | Forward Euler | Backward Euler | The midpoint method | The trapezium rule | RK4 combines four slope evaluations to cancel error terms up to h^{4}.
 M3#maths-u19-24-q3@2: Why are implicit methods preferred for stiff ODEs? | Their large stability regions allow steps set by accuracy, not by the fastest decaying mode | They are cheaper per step than explicit methods | They are always more accurate for every step size | Explicit methods can't solve ODEs with more than one variable | They aren't preferred; explicit methods handle stiffness best | Explicit methods need h below 2/λ_{max}, which is tiny when fast modes exist.
+NUM1#maths-u19-24-q4@1: If halving h cuts RK4's error from 1.6 × 10^{−4} to about what value, since RK4 is fourth order? Give the value × 10^{5}. | 1 | 0 |  | Fourth order means the error falls by 2^{4} = 16: 1.6 × 10^{−4}/16 = 1 × 10^{−5}.
 
 ## Finite Element Analysis
 S: The finite element method breaks a complex region into small simple elements, such as triangles, and approximates the solution by simple functions on each. It's the standard tool for structural, thermal and electromagnetic analysis of real engineering designs.

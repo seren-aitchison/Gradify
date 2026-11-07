@@ -304,6 +304,8 @@ X: Write the system 2x + 3y − z = 4, x − y + 2z = 0 as a matrix equation, an
 > Coefficients: [[2, 3, −1], [1, −1, 2]]
 > Ax = b with x = (x, y, z) and b = (4, 0)
 > A is 2 × 3: 2 equations, 3 unknowns
+P: **Investigate with the lab.** Change one entry at a time and watch where the unit vectors i and j go: the columns of the matrix are their images.
+IX: matrix
 K: An m × n matrix has m rows and n columns; know the special types; matrices represent systems, maps, data and networks.
 !: Writing the size as columns × rows.
 Q: What size is a matrix with 3 rows and 5 columns? | 3 × 5.
@@ -315,6 +317,7 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u11-09-q1@1: How many entries does a 4 × 5 matrix have? | 20 | 0 |  | 4 rows × 5 columns = 20.
 M1#maths-u11-09-q2@1: Which matrix is upper triangular? | [[1, 2], [0, 3]] | [[1, 0], [2, 3]] | [[0, 1], [1, 0]] | [[1, 2], [3, 4]] | [[0, 0], [1, 0]] | Upper triangular means every entry below the main diagonal is zero, as in [[1, 2], [0, 3]].
 M2#maths-u11-09-q3@2: In [[5, 2, 7], [1, 9, 4]], what is a₂₃? | 4 | 7 | 9 | 2 | 1 | a₂₃ is the entry in row 2, column 3, which is 4.
+M2#maths-u11-09-q4@2: For the matrix [[2, 1], [0, 3]], where does the unit vector j = (0, 1) go? | To (1, 3), the second column | To (2, 0), the first column | To (0, 1), unchanged | To (3, 1) | To (2, 3) | A matrix sends each basis vector to the corresponding column.
 
 ## Matrix Algebra
 S: Matrix algebra has its own rules. Addition behaves like ordinary addition, but multiplication isn't commutative, products can be zero without either factor being zero, and cancellation can fail.
@@ -477,6 +480,8 @@ X: Find the inverse of [[2, 1], [5, 3]].
 > Swap the diagonal, negate the off-diagonal: [[3, −1], [−5, 2]]
 > Divide by det 1: inverse [[3, −1], [−5, 2]] (check: product is I)
 - Check an inverse by multiplying: AA^{−1} should be I.
+P: **Investigate with the lab.** Make the determinant 0 and notice that different points land on the same image: the transformation can't be undone, so no inverse exists.
+IX: matrix
 K: Inverses exist iff det ≠ 0; use the 2 × 2 formula or Gauss–Jordan; (AB)^{−1} = B^{−1}A^{−1}; solve systems by elimination, not inversion.
 !: Writing (AB)^{−1} = A^{−1}B^{−1}.
 Q: When does a square matrix have no inverse? | When its determinant is 0.
@@ -488,6 +493,7 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u11-14-q1@1: A has determinant 4. Find det(A^{−1}). | 0.25 | 0.0001 |  | det(A^{−1}) = 1/det A = ¼.
 M1#maths-u11-14-q2@1: Which matrix is singular? | [[2, 4], [1, 2]] | [[1, 2], [3, 4]] | [[1, 0], [0, 1]] | [[0, 1], [1, 0]] | [[3, 1], [1, 3]] | det [[2, 4], [1, 2]] = 2 × 2 − 4 × 1 = 0, so it has no inverse.
 M3#maths-u11-14-q3@2: Why is solving Ax = b by computing A^{−1}b usually avoided numerically? | Elimination is cheaper and less sensitive to rounding | Inverses never exist | It gives the wrong answer exactly | It needs complex numbers | It isn't avoided | Forming A^{−1} costs more and amplifies rounding errors.
+M2#maths-u11-14-q4@2: Why does a matrix with determinant 0 have no inverse? | Different inputs land on the same output, so the map can't be undone | All of its entries must be zero, so there is nothing to invert | Determinants have no bearing on whether a matrix is invertible | Every square matrix has an inverse, including singular ones | Its inverse is the zero matrix, which undoes nothing useful | Area collapses to zero, so the map isn't one-to-one.
 
 ## Determinants
 S: The determinant of a square matrix is a single number that tells you whether the matrix is invertible and how it scales area or volume. It appears in inverses, eigenvalues, changes of variables and Cramer's rule.
@@ -513,6 +519,8 @@ X: Find det [[2, 0, 1], [1, 3, 2], [0, 1, 1]].
 > = 2(3 − 2) + 1(1 − 0)
 > = 3
 - Example: a triangular matrix with diagonal 2, 3, 4 has determinant 24.
+P: **Investigate with the lab.** Make the determinant 0 and watch the square collapse to a line. Then make the image of the unit square have area 3, and find a matrix with negative determinant.
+IX: matrix
 K: det = ad − bc for 2 × 2; expand by cofactors or reduce to triangular form; det(AB) = det A det B; |det| scales volume; det ≠ 0 means invertible.
 !: Forgetting the alternating signs in cofactor expansion.
 Q: What is det(kA) for a 3 × 3 matrix? | k^{3} det A.
@@ -524,6 +532,7 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u11-15-q1@1: A is 3 × 3 with det A = 5. Find det(2A). | 40 | 0 |  | det(2A) = 2^{3} × 5 = 40.
 M1#maths-u11-15-q2@1: What is det [[4, 7], [2, 3]]? | −2 | 2 | 26 | −26 | 12 | For a 2 × 2 matrix det = ad − bc = 4 × 3 − 7 × 2 = 12 − 14 = −2.
 M2#maths-u11-15-q3@2: A linear map of the plane has determinant −3. What does it do to areas and orientation? | Triples areas and reverses orientation | Triples areas and keeps orientation | Divides areas by 3 | Leaves areas unchanged | Collapses the plane | |det| = 3 scales area; the negative sign flips orientation.
+NUM1#maths-u11-15-q4@1: What area does [[3, 1], [1, 2]] give the image of the unit square? | 5 | 0 |  | The determinant is 3 × 2 − 1 × 1 = 5, which is the area scale factor.
 
 ## Rank of a Matrix
 S: The rank of a matrix is the number of independent rows (or columns), equal to the number of pivots after row reduction. It measures how much information a matrix carries and decides whether systems have solutions.
@@ -548,6 +557,8 @@ X: Find the rank of [[1, 2, 3], [2, 4, 6], [1, 0, 1]].
 > Rows 1 and 3 are independent (not multiples)
 > Rank 2; nullity = 3 − 2 = 1
 - A rank-1 matrix is an outer product uvᵀ of two vectors.
+P: **Investigate with the lab.** Make the determinant 0 with a non-zero matrix and see the image become a line. That line's dimension, 1, is the rank.
+IX: matrix
 K: Rank = number of pivots = dimension of the column (and row) space; rank + nullity = number of columns; full rank square matrices are invertible.
 !: Counting non-zero rows before reducing to echelon form.
 Q: What is the largest possible rank of a 4 × 6 matrix? | 4.
@@ -559,6 +570,7 @@ SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, 
 NUM1#maths-u11-16-q1@1: A 3 × 5 matrix has rank 3. What is its nullity? | 2 | 0 |  | Nullity = 5 − 3 = 2.
 M1#maths-u11-16-q2@1: What is the rank of [[1, 1], [1, 1]]? | 1 | 2 | 0 | 4 | 3 | The rows are equal, so only one is independent.
 M3#maths-u11-16-q3@2: A 5 × 5 matrix has rank 4. Which statement is true? | Ax = 0 has non-zero solutions | A is invertible | det A ≠ 0 | Ax = b always has a unique solution | The columns are independent | Nullity 1 means a one-dimensional space of solutions to Ax = 0.
+NUM1#maths-u11-16-q4@1: What is the rank of [[1, 2], [2, 4]]? | 1 | 0 |  | The second column is twice the first, so the image is a line: rank 1.
 
 ## Column Space
 S: The column space of a matrix is the span of its columns: every vector Ax can produce. It answers the question "for which b does Ax = b have a solution?", and its dimension is the rank.
@@ -719,6 +731,8 @@ X: Find the matrix of the anticlockwise rotation by 90° in ℝ^{2}.
 > e₁ = (1, 0) goes to (0, 1)
 > e₂ = (0, 1) goes to (−1, 0)
 > Matrix [[0, −1], [1, 0]]
+P: **Investigate with the lab.** Build a rotation by 90° anticlockwise (the lab's challenge), then a reflection, and compare their determinants.
+IX: matrix
 K: Linear maps preserve + and scaling; their matrices have T(e_{i}) as columns; kernel and image satisfy rank–nullity; translations aren't linear.
 !: Thinking every map that draws a straight line is linear (translations aren't).
 Q: What does a linear map always do to the zero vector? | Sends it to zero.
@@ -730,6 +744,7 @@ SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Pres
 NUM1#maths-u11-21-q1@1: The shear [[1, 2], [0, 1]] maps (3, 1) to (x, y). Find x. | 5 | 0 |  | x = 3 + 2 × 1 = 5 (and y = 1).
 M1#maths-u11-21-q2@1: Which map from ℝ^{2} to ℝ^{2} is linear? | (x, y) ↦ (2x, x − y) | (x, y) ↦ (x + 1, y) | (x, y) ↦ (x^{2}, y) | (x, y) ↦ (xy, y) | (x, y) ↦ (|x|, y) | Each component is a linear combination of x and y with no constant.
 M2#maths-u11-21-q3@2: What is the kernel of the projection onto the x-axis? | The y-axis | The x-axis | Only the origin | All of ℝ^{2} | The line y = x | Projection onto the x-axis sends (0, y) to the origin, so the kernel is the y-axis.
+M2#maths-u11-21-q4@2: Which matrix rotates the plane 90° anticlockwise? | [[0, −1], [1, 0]] | [[0, 1], [−1, 0]] | [[1, 0], [0, −1]] | [[−1, 0], [0, −1]] | [[1, 1], [0, 1]] | It sends i = (1, 0) to (0, 1) and j = (0, 1) to (−1, 0).
 
 ## Change of Basis
 S: The same vector has different coordinates in different bases, and the same linear map has different matrices. Change of basis converts between them, and choosing a clever basis can make a problem much simpler.
@@ -824,6 +839,8 @@ X: Find the eigenvalues of A = [[4, 1], [2, 3]].
 > λ^{2} − 7λ + 10 = 0, so (λ − 2)(λ − 5) = 0
 > λ = 2 and λ = 5 (check: sum 7 = trace, product 10 = det)
 - Example: the identity matrix has every non-zero vector as an eigenvector, with eigenvalue 1.
+P: **Investigate with the lab.** Find a matrix with no real eigenvectors (the lab's challenge): a rotation turns every direction, so no line stays fixed.
+IX: matrix
 K: Solve det(A − λI) = 0; for 2 × 2 use trace and determinant; eigenvalues sum to the trace and multiply to the determinant; 0 is an eigenvalue iff A is singular.
 !: Forgetting to subtract λ from every diagonal entry.
 Q: What are the eigenvalues of [[3, 7], [0, −2]]? | 3 and −2.
@@ -835,6 +852,7 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u11-24-q1@1: Find the product of the eigenvalues of [[4, 1], [2, 3]]. | 10 | 0 |  | The product of eigenvalues equals the determinant, 10.
 M1#maths-u11-24-q2@1: A has eigenvalue 3. What is an eigenvalue of A^{2} + I? | 10 | 9 | 4 | 3 | 7 | If Av = 3v, then (A^{2} + I)v = (9 + 1)v.
 M2#maths-u11-24-q3@2: Why does a singular matrix have 0 as an eigenvalue? | Some non-zero v has Av = 0 = 0v | Its trace is zero | Its entries are zero | It has no eigenvalues | It doesn't | Singular means a non-trivial null space, which is the eigenspace for 0.
+M2#maths-u11-24-q4@2: Why does the rotation matrix [[0, −1], [1, 0]] have no real eigenvalues? | It turns every vector 90°, so none is just stretched (λ = ±i) | Its determinant is zero | It has one repeated eigenvalue 1 | All matrices have real eigenvalues | Its eigenvalues are 0 | The characteristic equation λ^{2} + 1 = 0 has no real roots.
 
 ## Eigenvectors
 S: An eigenvector is a direction a linear map doesn't turn: it's only stretched by its eigenvalue. Eigenvectors give the natural axes of a transformation, the modes of a vibrating system and the long-run state of a Markov chain.
@@ -858,6 +876,8 @@ X: Find eigenvectors of A = [[4, 1], [2, 3]] for λ = 5 and λ = 2.
 > λ = 5: A − 5I = [[−1, 1], [2, −2]], so −x + y = 0 and v = (1, 1)
 > λ = 2: A − 2I = [[2, 1], [2, 1]], so 2x + y = 0 and v = (1, −2)
 > Check: A(1, 1) = (5, 5) ✓ and A(1, −2) = (2, −4) ✓
+P: **Investigate with the lab.** Set a diagonal matrix such as [[2, 0], [0, 3]] and find the directions that are only stretched. Then add a non-zero off-diagonal entry and track how they move.
+IX: matrix
 K: Solve (A − λI)v = 0 for each λ; eigenvectors are defined up to scaling; distinct eigenvalues give independent eigenvectors; dominant eigenvectors describe long-run behaviour.
 !: Giving the zero vector as an eigenvector.
 Q: Can the zero vector be an eigenvector? | No, by definition.
@@ -869,6 +889,7 @@ SRC: Brin S, Page L, The anatomy of a large-scale hypertextual Web search engine
 NUM1#maths-u11-25-q1@1: The transition matrix [[0.9, 0.2], [0.1, 0.8]] has steady state (p, 1 − p). Find p to 4 decimal places. | 0.6667 | 0.0001 |  | Solve 0.9p + 0.2(1 − p) = p: 0.2 = 0.3p, so p = 2/3.
 M1#maths-u11-25-q2@1: Which is an eigenvector of [[2, 0], [0, 5]]? | (0, 1) | (1, 1) | (1, 2) | (2, 5) | (1, −1) | A diagonal matrix scales each axis: A(0, 1) = (0, 5) = 5(0, 1), an eigenvector for 5.
 M2#maths-u11-25-q3@2: What does the power method compute? | The dominant eigenvector, by repeatedly multiplying by A | All eigenvalues at once | The determinant | The inverse matrix | The smallest eigenvalue directly | Aⁿx aligns with the eigenvector of largest |λ|.
+M2#maths-u11-25-q4@2: What are the eigenvectors of [[2, 0], [0, 3]]? | Multiples of (1, 0) (λ = 2) and of (0, 1) (λ = 3) | Only multiples of (1, 1), with eigenvalue 5 | Every vector in the plane, with eigenvalue 2 | None at all, since the matrix is diagonal already | Only (2, 3), the vector of diagonal entries | A diagonal matrix stretches each axis by its diagonal entry.
 
 ## Eigenspaces
 S: The eigenspace for an eigenvalue λ is the set of all its eigenvectors together with zero. Its dimension, the geometric multiplicity, decides whether a matrix can be diagonalised.

@@ -418,6 +418,8 @@ X: A Leslie matrix [[0, 4], [0.5, 0]] describes juveniles and adults. Find the l
 > Characteristic equation λ^{2} − 4 × 0.5 = 0
 > λ^{2} = 2
 > λ = √2 ≈ 1.41: the population grows about 41% per time step
+P: **Investigate with the lab.** Use the logistic equation: start populations at different sizes and watch them approach the carrying capacity. Start exactly at it and see nothing change.
+IX: ode
 K: Exponential and logistic models describe unlimited and limited growth; harvesting gives MSY rK/4; discrete models can be chaotic; Leslie matrices give growth rates and stable age structure.
 !: Assuming a population that is growing now will keep the same age structure.
 Q: What is the maximum sustainable yield for logistic growth? | rK/4.
@@ -429,6 +431,7 @@ SRC: Caswell H, Matrix Population Models (2nd edn, Sinauer 2001) | textbook | 20
 NUM1#maths-u20-12-q1@1: A fishery follows logistic growth with r = 0.3 per year and K = 20,000 tonnes. What is its maximum sustainable yield in tonnes per year? | 1500 | 0 | tonnes | MSY = rK/4 = 0.3 × 20,000/4 = 1500.
 M1#maths-u20-12-q2@1: For the Leslie matrix [[0, 2], [0.5, 0]], what happens to the population in the long run? | It stays constant, since λ = 1 | It grows by 41% per step | It declines to zero | It grows by 100% per step | It oscillates chaotically | The characteristic equation is λ^{2} = 2 × 0.5 = 1, so the dominant eigenvalue is λ = 1 and the population neither grows nor declines in the long run.
 M2#maths-u20-12-q3@2: Why can the discrete logistic map be chaotic when the continuous logistic equation isn't? | Discrete steps can overshoot the equilibrium, creating oscillations that become chaotic as r increases | Continuous logistic models are always chaotic, so the map just inherits it | The discrete map has no equilibrium, so it can never settle down | Chaos needs at least three variables in discrete time, so it can't happen | It can't be chaotic; the discrete logistic map always converges to K | A one-dimensional autonomous ODE can't oscillate, but a map can jump past K.
+M2#maths-u20-12-q4@2: In logistic growth, what happens to a population that starts above the carrying capacity? | It declines towards the carrying capacity | It keeps growing | It falls to zero | It stays constant | It oscillates forever | Above K the growth rate rN(1 − N/K) is negative, so N decreases towards K.
 
 ## Ecological Modelling
 S: Ecological modelling describes interactions among species and their environment: predation, competition, mutualism and the flow of energy and nutrients. Models help manage fisheries, predict invasions and assess biodiversity under climate change.

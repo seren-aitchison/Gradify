@@ -271,6 +271,8 @@ X: Solve (2x + 1)/3 − (x − 2)/4 = 2.
 > Multiply every term by 12: 4(2x + 1) − 3(x − 2) = 24
 > Expand: 8x + 4 − 3x + 6 = 24, so 5x + 10 = 24
 > 5x = 14, so x = 14/5 = 2.8
+P: **Investigate with the lab.** Choose Linear equations and solve each problem by doing the same operation to both sides, line by line.
+IX: practice
 K: Expand, clear fractions with the LCM, collect, divide, and check by substitution.
 !: Forgetting to multiply every term (including whole-number terms) when clearing fractions.
 Q: Solve 4x − 7 = x + 8. | x = 5.
@@ -282,6 +284,7 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u03-09-q1@1: Solve 3(2x − 4) = 2(x + 6). | 6 | 0 |  | 6x − 12 = 2x + 12, so 4x = 24 and x = 6.
 M1#maths-u03-09-q2@1: Solve 7 − 2x = 15. | x = −4 | x = 4 | x = 11 | x = −11 | x = 8 | Subtract 7 from both sides: −2x = 8. Divide by −2: x = −4.
 M2#maths-u03-09-q3@2: Three consecutive integers add up to 141. What is the largest? | 48 | 47 | 46 | 49 | 45 | n + (n + 1) + (n + 2) = 141 gives 3n + 3 = 141, n = 46, so the largest is 48.
+NUM1#maths-u03-09-q4@1: Solve 5x − 7 = 2x + 8. | 5 | 0 |  | 3x = 15, so x = 5.
 
 ## Simultaneous Equations
 S: Simultaneous equations are two or more equations that must be true at the same time. With two unknowns you need two equations, and the solution is where their graphs meet.
@@ -302,6 +305,8 @@ X: Two adult tickets and three child tickets cost £36; one adult and four child
 > 2a + 3c = 36 and a + 4c = 33
 > Double the second: 2a + 8c = 66; subtract the first: 5c = 30, so c = 6
 > a + 24 = 33, so a = 9: adults £9, children £6 (check: 18 + 18 = 36 ✓)
+P: **Investigate with the lab.** Choose Simultaneous equations and solve each pair by elimination, then check both equations with your answer.
+IX: practice
 K: Match coefficients and add or subtract to eliminate, or substitute; the solution is the intersection of the graphs.
 !: Subtracting when the signs are opposite (you should add), or forgetting to multiply every term.
 Q: When should you add the equations in elimination? | When the coefficients of the unknown have opposite signs.
@@ -312,6 +317,7 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary mastery professional development materials: simultaneous equations | guidance | 2019 | https://www.ncetm.org.uk/
 M1#maths-u03-10-q1@1: Solve x + y = 10 and x − y = 4. | x = 7, y = 3 | x = 3, y = 7 | x = 6, y = 4 | x = 5, y = 5 | x = 14, y = −4 | Adding gives 2x = 14, so x = 7 and y = 3.
 M2#maths-u03-10-q2@2: Solve 2x + 3y = 12 and 4x − y = 10. | x = 3, y = 2 | x = 2, y = 3 | x = 4, y = 6 | x = 1.5, y = 3 | x = 3, y = −2 | From the second, y = 4x − 10; then 2x + 12x − 30 = 12 gives x = 3 and y = 2.
+NUM1#maths-u03-10-q3@1: Solve x + y = 7 and x − y = 3. What is x? | 5 | 0 |  | Adding the equations gives 2x = 10, so x = 5 (and y = 2).
 
 ## Quadratic Equations
 S: A quadratic equation has the unknown squared, like x^{2} − 5x + 6 = 0. It can have two, one or no real solutions, found by factorising, completing the square or the quadratic formula.
@@ -332,6 +338,8 @@ X: A rectangle has length 3 cm more than its width and area 40 cm^{2}. Find its 
 > w(w + 3) = 40, so w^{2} + 3w − 40 = 0
 > (w + 8)(w − 5) = 0, so w = −8 or w = 5
 > A width can't be negative, so the rectangle is 5 cm by 8 cm
+P: **Investigate with the lab.** Choose Quadratic equations. Try factorising first, and use the formula when it won't factorise.
+IX: practice
 K: Rearrange to = 0, factorise, set each factor to zero; never divide by the unknown; check solutions fit the context.
 !: Solving x^{2} = 6x by dividing by x and losing the solution x = 0.
 Q: Solve (x − 3)(2x + 1) = 0. | x = 3 or x = −1/2.
@@ -343,6 +351,7 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 M1#maths-u03-11-q1@1: Solve x^{2} + 2x − 15 = 0. | x = 3 or x = −5 | x = −3 or x = 5 | x = 15 or x = −1 | x = 3 only | x = −2 or x = 15 | It factorises as (x + 5)(x − 3) = 0, so x = −5 or x = 3.
 M2#maths-u03-11-q2@2: Solve 2x^{2} = 18. | x = 3 or x = −3 | x = 3 | x = 9 | x = ±9 | x = 4.5 | Divide by 2 to get x^{2} = 9, so x = ±3: both the positive and negative roots count.
 M3#maths-u03-11-q3@2: Why is it wrong to solve x^{2} = 5x by dividing both sides by x? | It loses the solution x = 0 | It gives the wrong positive root | Division isn't allowed in equations | It makes the equation linear | It doubles the solutions | Dividing by x assumes x ≠ 0, but x = 0 is a solution.
+NUM1#maths-u03-11-q4@1: What is the larger root of x^{2} − x − 12 = 0? | 4 | 0 |  | (x − 4)(x + 3) = 0 gives x = 4 or x = −3.
 
 ## Completing the Square
 S: Completing the square rewrites x^{2} + bx + c as (x + p)^{2} + q. It solves any quadratic, gives the turning point of a parabola, and is how the quadratic formula is derived.
@@ -646,6 +655,8 @@ X: Write 2 log 5 + log 4 − log 2 as a single logarithm and evaluate it (base 1
 > log_{10} 50 ≈ 1.70
 - log_{a} a^{x} = x and a^{log_{a} x} = x: the two operations undo each other.
 - On a calculator, log usually means base 10 and ln means base e.
+P: **Investigate with the lab.** Choose Logarithms and rewrite each equation in exponential form before solving.
+IX: practice
 K: A log is a power; add logs to multiply, subtract to divide, and bring powers to the front.
 !: Writing log(x + y) = log x + log y.
 Q: What is log_{2} 32? | 5.
@@ -657,6 +668,7 @@ SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Pres
 NUM1#maths-u03-21-q1@1: Evaluate log_{3} 81 + log_{2} (1/4). | 2 | 0 |  | log_{3} 81 = 4 and log_{2} (1/4) = −2, so the total is 2.
 M1#maths-u03-21-q2@1: Which statement is equivalent to log_{5} 125 = 3? | 5^{3} = 125 | 3^{5} = 125 | 125^{3} = 5 | 5 × 3 = 125 | 125^{5} = 3 | The logarithm is the power: 5 raised to 3 gives 125.
 M2#maths-u03-21-q3@2: Which equals log 12? | log 3 + log 4 | log 3 × log 4 | log 6 + log 6 | 12 log 1 | log 24 − log 12 | The log of a product is the sum of the logs: log(3 × 4) = log 3 + log 4.
+NUM1#maths-u03-21-q4@1: Solve log₂ x = 5. | 32 | 0 |  | log₂ x = 5 means x = 2^{5} = 32.
 
 ## Exponential Equations
 S: In an exponential equation the unknown is in a power, like 3^{x} = 20. Taking logarithms brings the unknown down, and equations in disguise (like 4^{x} − 2^{x+1} = 8) become quadratics.
@@ -894,6 +906,8 @@ X: Find the cubic with roots −1, 2 and 3 that passes through (0, 12).
 > f(x) = k(x + 1)(x − 2)(x − 3)
 > f(0) = k(1)(−2)(−3) = 6k = 12, so k = 2
 > f(x) = 2(x + 1)(x − 2)(x − 3) = 2x^{3} − 8x^{2} + 2x + 12
+P: **Investigate with the lab.** Do the cubic-roots challenge. Move b and c and watch the x-intercepts follow them: each factor (x − r) puts a root at r.
+IX: grapher
 K: Roots give factors; multiplicity shapes the graph; complex roots of real polynomials come in conjugate pairs.
 !: Forgetting the constant k when building a polynomial from its roots.
 Q: How many complex roots does a degree 5 polynomial have? | Exactly 5, counted with multiplicity.
@@ -904,6 +918,7 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | textbook | 2022 | https://www.routledge.com/
 M1#maths-u03-29-q1@1: What happens to the graph of y = (x − 3)^{2}(x + 1) at x = 3? | It touches the x-axis and turns | It crosses the x-axis | It has an asymptote | It has a gap | It crosses with a flat point | A double root means the graph touches the axis there.
 M2#maths-u03-29-q2@2: A real quartic has roots 2i and 1 (single). How many real roots does it have in total? | 2 | 1 | 3 | 4 | 0 | 2i and −2i account for two roots, leaving two real ones: 1 and one more.
+M2#maths-u03-29-q3@2: Where does y = (x − 2)(x + 3)(x + 1) cross the x-axis? | At x = 2, −3 and −1 | At x = −2, 3 and 1 | At x = 2, 3 and 1 | Only at x = 2 | At x = 6 | Each linear factor (x − r) is zero at x = r.
 
 ## Vieta's Formulas
 S: Vieta's formulas link the roots of a polynomial to its coefficients: for example, the roots of x^{2} + bx + c add to −b and multiply to c. They let you work with roots without finding them.
@@ -1019,6 +1034,8 @@ X: f(x) = x^{2} − 4x. Find f(−1), solve f(x) = 5, and find f(2a).
 > f(2a) = 4a^{2} − 8a
 - Functions can have many inputs: the area of a rectangle is a function of its length and width, A(l, w) = lw.
 - A function's graph is the set of points (x, f(x)).
+P: **Investigate with the lab.** Plot y = x^{2} − 4 and read off its domain, range and roots. Then complete the straight-line challenge by matching a target line.
+IX: grapher
 K: A function gives one output per input; use f(x) notation; many-to-one is allowed, one-to-many isn't.
 !: Reading f(x) as "f times x".
 Q: If g(x) = 5 − 2x, what is g(−3)? | 11.
@@ -1030,6 +1047,7 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u03-33-q1@1: If f(x) = 2x^{2} − 3x + 1, find f(−2). | 15 | 0 |  | 2 × 4 + 6 + 1 = 15.
 M1#maths-u03-33-q2@1: Which describes f(x) = x^{2}? | Many-to-one | One-to-one | One-to-many | Not a function | Many-to-many | f(2) = f(−2) = 4: two inputs share an output.
 M2#maths-u03-33-q3@2: For f(x) = 4x + 1, solve f(x) = f(2x − 3). | x = 3 | x = −3 | x = 1 | x = 0 | No solution | f(2x − 3) = 4(2x − 3) + 1 = 8x − 11, and 4x + 1 = 8x − 11 gives x = 3.
+M2#maths-u03-33-q4@2: Plotting y = x^{2} − 4, what is the range of the function? | y ≥ −4, since the minimum value is −4 at x = 0 | All real numbers, since parabolas go on forever | y ≥ 0, since squares are never negative | y ≤ −4, since the graph opens downwards | −2 ≤ y ≤ 2, the roots | x^{2} ≥ 0, so x^{2} − 4 ≥ −4, and every value above −4 is reached.
 
 ## Domain and Range
 S: The domain of a function is the set of inputs it accepts; the range is the set of outputs it actually produces. Getting these right avoids dividing by zero, square-rooting negatives, and makes inverse functions possible.
@@ -1145,6 +1163,8 @@ X: The curve y = f(x) has a maximum at (4, 6). Find the maximum of y = 3f(x − 
 > y = 3f(x − 1): move 1 right, stretch vertically by 3: maximum at (5, 18)
 > y = f(2x) − 5: halve the x-coordinate, then move down 5
 > Maximum at (2, 1)
+P: **Investigate with the lab.** Work through the completed-square and reflected-parabola challenges. For each slider, predict the effect before you move it.
+IX: grapher
 K: Outside the bracket affects y as written; inside affects x in reverse; track key points through each step.
 !: Moving y = f(x + 3) to the right instead of to the left.
 Q: Describe y = f(x) − 4 compared with y = f(x). | Translation down 4 (vector (0, −4)).
@@ -1156,6 +1176,7 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 M1#maths-u03-37-q1@1: Which transformation maps y = x^{2} to y = (x + 5)^{2}? | Translation 5 to the left | Translation 5 to the right | Translation 5 up | Stretch by 5 | Reflection | f(x + 5) moves the graph 5 units in the negative x direction.
 M2#maths-u03-37-q2@2: (3, −2) lies on y = f(x). Which point lies on y = −f(x) + 4? | (3, 6) | (3, 2) | (−3, 6) | (3, −6) | (7, 2) | Reflecting gives (3, 2), then up 4 gives (3, 6).
 M3#maths-u03-37-q3@2: Which describes y = f(2x + 6) compared with y = f(x)? | Translate 6 left, then stretch by 1/2 parallel to the x-axis | Stretch by 1/2, then translate 6 left | Translate 3 right | Stretch by 2, then translate 6 right | Translate 6 right, then stretch by 1/2 | f(2x + 6) = f(2(x + 3)): it's also "stretch by ½, then translate 3 left"; translating 6 left first, then stretching, gives the same graph.
+M2#maths-u03-37-q4@2: Compared with y = x^{2}, how is y = −2(x + 1)^{2} + 4 transformed? | Shifted 1 left and 4 up, stretched by 2 vertically and reflected in the x-axis | Shifted 1 right and 4 up, then reflected | Shifted 1 left and 4 down, stretched horizontally by 2 | Only reflected in the y-axis | Shifted 2 left and 4 up | The vertex moves to (−1, 4), and the factor −2 stretches by 2 and flips the curve.
 
 ## Piecewise Functions
 S: A piecewise function uses different rules on different parts of its domain, like a tax system with bands or a phone tariff. They model real situations and test careful reading of where each rule applies.
@@ -1355,6 +1376,10 @@ X: Solve z^{2} − 6z + 34 = 0 and find the modulus of each root.
 > z = (6 ± √(36 − 136))/2 = (6 ± √−100)/2
 > z = (6 ± 10i)/2 = 3 ± 5i
 > |3 ± 5i| = √(9 + 25) = √34
+P: **Investigate with the lab.** Multiply z by i and watch it turn 90°, then multiply z by its conjugate and see the product land on the real axis.
+IX: complex
+P: **Investigate with the lab.** Show the 6th roots of unity, then solve z⁴ = −16. Notice the roots always form a regular polygon centred on the origin.
+IX: unity
 K: Treat i as a variable with i^{2} = −1; divide using the conjugate; real quadratics have conjugate complex roots.
 !: Writing i^{2} = 1, or forgetting to multiply the denominator by the conjugate too.
 Q: What is i^{3}? | −i.
@@ -1367,6 +1392,8 @@ NUM1#maths-u03-44-q1@1: Find |6 − 8i|. | 10 | 0 |  | √(36 + 64) = √100 = 1
 M1#maths-u03-44-q2@1: What is (4 + i) − (1 − 3i)? | 3 + 4i | 3 − 2i | 5 − 2i | 3 + 2i | 5 + 4i | Real parts: 4 − 1 = 3; imaginary parts: 1 − (−3) = 4.
 M2#maths-u03-44-q3@2: What are the roots of z^{2} + 9 = 0? | 3i and −3i | 3 and −3 | 9i and −9i | 3 + i and 3 − i | There are none | z^{2} = −9, and √−9 = 3i, so the roots are the conjugate pair z = ±3i.
 M3#maths-u03-44-q4@2: Simplify (5 + 5i)/(2 + i). | 3 + i | 5 + 5i/2 | 2.5 + 5i | 1 + 3i | 3 − i | Multiply by (2 − i)/(2 − i): (10 − 5i + 10i + 5)/5 = (15 + 5i)/5 = 3 + i.
+M2#maths-u03-44-q5@2: On the Argand diagram, what does multiplying a complex number by i do? | Rotates it 90° anticlockwise about the origin, keeping its modulus | Reflects it in the real axis | Doubles its modulus | Rotates it 90° clockwise | Moves it one unit up | i has modulus 1 and argument 90°, so multiplication adds 90° to the argument and leaves the modulus unchanged.
+NUM1#maths-u03-44-q6@1: What is the modulus of each solution of z^{4} = −16? | 2 | 0 |  | Each root has modulus 16^{1/4} = 2; the four roots sit at arguments 45°, 135°, 225° and 315°.
 
 ## Boolean Algebra
 S: Boolean algebra is the algebra of true and false (1 and 0), with operations AND, OR and NOT. It's the mathematics of logic circuits, search queries and computer programs.

@@ -265,6 +265,8 @@ X: List the factors of 60 in pairs.
 > Factors: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60 (12 factors)
 - A number with exactly two factors is prime; 1 has only one factor.
 - Factors are always less than or equal to the number; multiples are always greater than or equal to it.
+P: **Investigate with the lab.** Pick a prime and watch its multiples being crossed out. Then factorise two numbers and list the factors they share.
+IX: sieve
 K: List factors in pairs up to the square root; multiples go on for ever, factors don't.
 !: Confusing factors and multiples: 3 is a factor of 12; 12 is a multiple of 3.
 Q: Why can you stop searching for factor pairs at √n? | Beyond √n, the pairs repeat in reverse.
@@ -276,6 +278,7 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u01-09-q1@1: How many factors does 48 have? | 10 | 0 |  | 1×48, 2×24, 3×16, 4×12, 6×8: five pairs, so 10 factors.
 M1#maths-u01-09-q2@1: Which number is a multiple of 8? | 72 | 4 | 20 | 36 | 50 | 72 = 8 × 9, so 72 is in the 8 times table; the others aren't.
 M2#maths-u01-09-q3@2: Which number has an odd number of factors? | 49 | 50 | 30 | 12 | 18 | 49 is a square number (7 × 7), so one factor pair repeats.
+M2#maths-u01-09-q4@2: When the sieve crosses out the multiples of 5, which number is crossed out first? | 25, since 10, 15 and 20 were already crossed out by 2 or 3 | 5, since every prime crosses itself out | 10, the first multiple after 5 | 15, the first odd multiple | 35, the first multiple not divisible by 2 or 3 | Smaller multiples of 5 have a smaller prime factor, so 5 × 5 = 25 is the first new number it removes.
 
 ## Divisibility
 S: Divisibility tests tell you whether one number divides another without doing the division. They speed up factorising, simplifying fractions and spotting primes.
@@ -326,6 +329,8 @@ X: Is 221 prime?
 > 221 ÷ 13 = 17, so 221 = 13 × 17 isn't prime
 - Primes become rarer among larger numbers: around n, roughly 1 in every ln(n) numbers is prime (the prime number theorem, School 2).
 - Large primes, hundreds of digits long, are the basis of RSA encryption, which secures online payments.
+P: **Investigate with the lab.** Run the sieve to 200 one prime at a time. Count the primes you find, and note the last prime whose multiples cross anything new out.
+IX: sieve
 K: Primes have exactly two factors; test by dividing by primes up to √n; there are infinitely many.
 !: Calling 1 a prime, or 9, 15 or 21 primes because they're odd.
 Q: Why isn't 1 a prime number? | It has only one factor, and excluding it keeps prime factorisation unique.
@@ -337,6 +342,7 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 M1#maths-u01-11-q1@1: Which number is prime? | 37 | 39 | 51 | 57 | 91 | 37 has no factors other than 1 and 37; 39 = 3 × 13, 51 = 3 × 17, 57 = 3 × 19, 91 = 7 × 13.
 M2#maths-u01-11-q2@2: To test whether 199 is prime, which primes must you try? | 2, 3, 5, 7, 11 and 13 | All primes up to 199 | Only 2 and 3 | All odd numbers up to 100 | 2, 3 and 5 only | √199 ≈ 14.1, so primes up to 13 are enough.
 NUM1#maths-u01-11-q3@2: What is the sum of the prime numbers between 20 and 40? | 120 | 0 |  | The primes are 23, 29, 31 and 37, which add to 120.
+NUM1#maths-u01-11-q4@1: Using the sieve, how many primes are there below 200? | 46 | 0 |  | The sieve leaves 46 numbers uncrossed below 200, from 2 up to 199.
 
 ## Composite Numbers
 S: A composite number is a natural number greater than 1 that isn't prime: it has at least one factor other than 1 and itself. Every composite number breaks down into primes.
@@ -357,6 +363,8 @@ X: Find five consecutive composite numbers.
 > (There are smaller examples, such as 24, 25, 26, 27, 28.)
 - Every composite number n has a prime factor no bigger than √n, which is why trial division only needs to go up to √n.
 - Composite numbers can be co-prime with each other: 8 and 9 share no factors.
+P: **Investigate with the lab.** Watch which numbers are crossed out and by which prime first. Every crossed-out number is composite, and the prime that crosses it first is its smallest prime factor.
+IX: sieve
 K: Composites have proper factors; one factor pair is enough to prove a number composite.
 !: Thinking an odd number must be prime: 91 = 7 × 13 is composite.
 Q: Is 1 prime, composite or neither? | Neither.
@@ -367,6 +375,7 @@ SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxf
 SRC: Department for Education, Mathematics programmes of study: key stage 3 | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study
 M1#maths-u01-12-q1@1: Which number is composite? | 119 | 113 | 109 | 107 | 103 | 119 = 7 × 17, so it has factors other than 1 and itself; the others are prime.
 M2#maths-u01-12-q2@2: Why is 6! + 4 composite? | It's divisible by 4 | It's even and greater than 2 only by coincidence | It's a square number | It's divisible by 7 | 6! is prime | 6! = 720 is divisible by 4, so 720 + 4 is too.
+M2#maths-u01-12-q3@2: In the sieve, which prime first crosses out 91? | 7, since 91 = 7 × 13 and 7 is its smallest prime factor | 13, since 91 = 7 × 13 and 13 is larger | 3, since 9 + 1 = 10 isn't prime | 91 is never crossed out because it's prime | 2, since every composite is even | A composite number is first crossed out by its smallest prime factor, which for 91 = 7 × 13 is 7.
 
 ## Prime Factorisation
 S: Every whole number greater than 1 can be written as a product of primes in exactly one way, apart from order. This "fundamental theorem of arithmetic" makes prime factorisation a powerful tool for HCFs, LCMs, roots and fractions.
@@ -387,6 +396,8 @@ X: Write 1,764 as a product of prime factors, and decide whether it's a square n
 > 441 ÷ 3 = 147, ÷ 3 = 49, and 49 = 7 × 7
 > 1,764 = 2^{2} × 3^{2} × 7^{2}: every power is even, so it's a square: √1,764 = 2 × 3 × 7 = 42
 - Factorising large numbers is very hard for computers, which is what keeps RSA encryption secure.
+P: **Investigate with the lab.** Use the factoriser to break down 360, then find a number below 200 with at least five prime factors counted with repeats (the lab's challenge). Check each answer multiplies back to the original.
+IX: sieve
 K: Every whole number above 1 has one prime factorisation; even powers mean a square, multiples of 3 mean a cube.
 !: Leaving a composite number (such as 9) in the "product of primes".
 Q: What is 72 as a product of prime factors? | 2^{3} × 3^{2}.
@@ -398,6 +409,7 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 M1#maths-u01-13-q1@1: What is 84 as a product of prime factors? | 2^{2} × 3 × 7 | 2 × 42 | 4 × 21 | 2^{2} × 21 | 2 × 3 × 14 | 84 = 2 × 2 × 3 × 7; the other answers include composite factors.
 M2#maths-u01-13-q2@2: What is the smallest number you can multiply 2^{3} × 3 × 5^{2} by to make a square? | 6 | 2 | 3 | 5 | 30 | Multiplying by 2 × 3 makes the powers 2^{4} × 3^{2} × 5^{2}, all even.
 NUM1#maths-u01-13-q3@2: 2^{a} × 3^{b} = 648. What is a + b? | 7 | 0 |  | 648 = 8 × 81 = 2^{3} × 3^{4}, so a + b = 3 + 4 = 7.
+NUM1#maths-u01-13-q4@1: How many prime factors, counted with repeats, does 192 have? | 7 | 0 |  | 192 = 2^{6} × 3, so it has six 2s and one 3: seven prime factors in all.
 
 ## Greatest Common Divisor (GCD)
 S: The greatest common divisor (GCD), called the highest common factor (HCF) at GCSE, is the largest number that divides two numbers exactly. It simplifies fractions and solves sharing and tiling problems.
@@ -447,6 +459,8 @@ X: Two lighthouses flash every 20 seconds and every 45 seconds. They flash toget
 > They next flash together after 3 minutes, at 21:03:00.
 - The LCM of co-prime numbers is their product: LCM(8, 9) = 72.
 - The LCM of three numbers: take each prime to its highest power across all three.
+P: **Investigate with the lab.** Factorise 12 and 18 with the factoriser, then build their LCM by taking each prime to its highest power in either number.
+IX: sieve
 K: The LCM takes every prime to its highest power; for two numbers, HCF × LCM equals their product.
 !: Multiplying the two numbers and calling it the LCM: 6 × 8 = 48, but the LCM is 24.
 Q: What is the LCM of 4 and 10? | 20.
@@ -458,6 +472,7 @@ SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxf
 NUM1#maths-u01-15-q1@1: Find the LCM of 18 and 30. | 90 | 0 |  | 18 = 2 × 3^{2} and 30 = 2 × 3 × 5, so the LCM is 2 × 3^{2} × 5 = 90.
 M1#maths-u01-15-q2@1: What is the LCM of 9 and 12? | 36 | 108 | 3 | 72 | 21 | 9 = 3^{2}, 12 = 2^{2} × 3, so the LCM is 2^{2} × 3^{2} = 36.
 M3#maths-u01-15-q3@2: Two numbers have HCF 6 and LCM 72. One is 18. What is the other? | 24 | 12 | 36 | 4 | 54 | For two numbers, HCF × LCM = their product: 6 × 72 = 432, and 432 ÷ 18 = 24.
+NUM1#maths-u01-15-q4@1: Using prime factorisations, what is the LCM of 12 and 18? | 36 | 0 |  | 12 = 2^{2} × 3 and 18 = 2 × 3^{2}, so the LCM is 2^{2} × 3^{2} = 36.
 
 ## Fractions
 S: A fraction represents part of a whole, or a division: 3/4 means 3 ÷ 4. Understanding equivalent fractions and simplifying is the key to calculating with them.
@@ -479,6 +494,8 @@ X: Put 3/4, 5/7 and 7/10 in order, smallest first.
 > Order: 7/10, 5/7, 3/4
 - A unit fraction has numerator 1, such as 1/5; every fraction is a multiple of a unit fraction: 3/5 = 3 × 1/5.
 - A fraction with denominator 0 is undefined: you can't share into zero parts.
+P: **Investigate with the lab.** Choose the Fractions topic and work through 10 problems, typing answers as fractions. Read the worked method on any you get wrong.
+IX: practice
 K: Equivalent fractions come from multiplying top and bottom by the same number; compare with a common denominator.
 !: Adding to the top and bottom to make equivalent fractions: 2/3 isn't equal to 3/4.
 Q: What is 45/60 in its simplest form? | 3/4 (dividing by the HCF, 15).
@@ -490,6 +507,7 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 M1#maths-u01-16-q1@1: Which fraction is equivalent to 3/8? | 15/40 | 6/24 | 5/10 | 9/16 | 4/9 | Multiply top and bottom by 5: 3/8 = 15/40.
 M2#maths-u01-16-q2@2: Which fraction is largest? | 4/5 | 7/9 | 11/15 | 3/4 | 5/7 | As decimals: 0.8, 0.778, 0.733, 0.75, 0.714.
 NUM1#maths-u01-16-q3@1: What is 3/8 of 96? | 36 | 0 |  | 96 ÷ 8 = 12, and 12 × 3 = 36.
+NUM1#maths-u01-16-q4@1: As in the practice set, give 2/3 + 3/4 as a decimal to 3 decimal places. | 1.417 | 0.001 |  | 2/3 + 3/4 = 8/12 + 9/12 = 17/12 ≈ 1.417.
 
 ## Decimals
 S: Decimals extend place value to the right of the units: tenths, hundredths, thousandths. They're how measurements and money are written, and calculators show results as decimals.
@@ -545,6 +563,8 @@ X: Without a calculator, find 17.5% of £360.
 - A percentage point is a difference between percentages: a rate rising from 4% to 5% is 1 percentage point, but a 25% increase.
 - Percentages of percentages multiply: 50% of 20% is 10%.
 - To find a percentage of an amount mentally, find 1% (divide by 100) or 10% (divide by 10) and scale up.
+P: **Investigate with the lab.** Choose Percentage change and Reverse percentages in turn. For each, write the multiplier before calculating.
+IX: practice
 K: Percent means per hundred: multiply by the decimal multiplier, or divide and multiply by 100 to compare.
 !: Comparing quantities in different units without converting first.
 Q: What is 3/8 as a percentage? | 37.5%.
@@ -556,6 +576,7 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u01-18-q1@1: What is 35% of 260? | 91 | 0 |  | 0.35 × 260 = 91.
 M1#maths-u01-18-q2@1: Which is 0.06 as a percentage? | 6% | 0.6% | 60% | 0.06% | 600% | To turn a decimal into a percentage, multiply by 100: 0.06 = 6/100 = 6%.
 M2#maths-u01-18-q3@2: In a test, Ali scores 42 out of 56. What percentage is this? | 75% | 42% | 56% | 70% | 80% | Divide the score by the total and multiply by 100: 42 ÷ 56 = 0.75 = 75%.
+NUM1#maths-u01-18-q4@1: A price rises by 15% to £69. What was the original price in £? | 60 | 0 | £ | Divide by the multiplier 1.15: 69/1.15 = £60.
 
 ## Percentage Change and Reverse Percentages
 S: Percentage change measures an increase or decrease relative to the original amount. Reverse percentages work backwards from a changed amount to the original, a common exam question and a common source of everyday mistakes.
@@ -576,6 +597,8 @@ X: A coat costs £68 in a sale with 15% off. What was the original price?
 > Original = 68 ÷ 0.85 = £80
 - Compound changes over n periods use the multiplier to the power n: 5% growth for 3 years is × 1.05^{3}.
 - Depreciation (a car losing 15% a year) uses multipliers less than 1: × 0.85^{n}.
+P: **Investigate with the lab.** Alternate between the Percentage change and Reverse percentages topics. In reverse problems, always divide by the multiplier.
+IX: practice
 K: Use multipliers (1 + r and 1 − r); divide by the original for percentage change; reverse by dividing by the multiplier.
 !: Finding the original by adding the percentage back on to the new amount.
 Q: What multiplier decreases an amount by 8%? | 0.92.
@@ -588,6 +611,7 @@ NUM1#maths-u01-29-q1@1: A laptop's price rises from £640 to £720. What is the 
 NUM1#maths-u01-29-q2@2: After a 25% increase, a value is 150. What was the original value? | 120 | 0 |  | 150 is 125% of the original, so the original is 150 ÷ 1.25 = 120.
 M3#maths-u01-29-q3@2: A shop increases prices by 20%, then reduces them by 20%. Compared with the start, prices are: | 4% lower | the same | 4% higher | 2% lower | 20% lower | The multipliers combine: × 1.2 × 0.8 = × 0.96, which is a 4% decrease overall.
 M1#maths-u01-29-q4@1: Which multiplier increases an amount by 7%? | 1.07 | 0.07 | 1.7 | 0.93 | 7 | An increase of 7% keeps 100% and adds 7%, so multiply by 107% = 1.07.
+NUM1#maths-u01-29-q5@1: After a 20% discount a coat costs £48. What was the original price in £? | 60 | 0 | £ | The multiplier is 0.8, so the original price is 48/0.8 = £60.
 
 ## Exponents and Powers
 S: A power (exponent, index) tells you how many times to multiply a number by itself. The laws of indices make calculations with powers fast, and extend naturally to zero, negative and fractional powers.
@@ -611,6 +635,8 @@ X: Evaluate 27^{−2/3}.
 - (ab)^{n} = a^{n}b^{n}, but (a + b)^{n} isn't a^{n} + b^{n}: (2 + 3)^{2} = 25, not 13.
 - Powers grow fast: 2^{10} = 1,024, and 2^{20} is just over a million.
 - A negative base with an even power is positive, (−2)^{4} = 16, and with an odd power is negative, (−2)^{3} = −8.
+P: **Investigate with the lab.** Choose Laws of indices. Before simplifying, say which law each step uses.
+IX: practice
 K: Multiply: add powers; divide: subtract; power of a power: multiply. Negative means reciprocal; fractional means root.
 !: Multiplying the bases as well: 2^{3} × 2^{4} = 2^{7}, not 4^{7}.
 Q: What is 5^{0}? | 1.
@@ -622,6 +648,7 @@ SRC: Department for Education, Mathematics AS and A level subject content: algeb
 NUM1#maths-u01-20-q1@1: Evaluate 32^{3/5}. | 8 | 0 |  | The fifth root of 32 is 2, and 2^{3} = 8.
 M1#maths-u01-20-q2@1: Simplify x^{5} × x^{3}. | x^{8} | x^{15} | x^{2} | 2x^{8} | x^{53} | Multiplying powers of the same base adds the indices: 5 + 3 = 8, so x^{8}.
 M2#maths-u01-20-q3@2: What is 2^{−3}? | 1/8 | −8 | −6 | 8 | 1/6 | A negative power is a reciprocal: 1/2^{3} = 1/8.
+NUM1#maths-u01-20-q4@1: Simplify 2^{5} × 2^{−2} ÷ 2^{1} and give its value. | 4 | 0 |  | Add and subtract indices: 2^{5 − 2 − 1} = 2^{2} = 4.
 
 ## Roots and Radicals
 S: A root undoes a power: the square root of 49 is 7 because 7^{2} = 49. Roots that aren't whole numbers are left exactly as surds (School 3) or estimated as decimals.
@@ -770,6 +797,8 @@ X: Find the nth term of 17, 13, 9, 5, … and its 30th term.
 > When n = 1: −4 + c = 17, so c = 21
 > nth term = 21 − 4n; the 30th term is 21 − 120 = −99
 - Geometric sequences multiply by a constant ratio: 3, 6, 12, 24, … has nth term 3 × 2^{n−1}.
+P: **Investigate with the lab.** Choose nth term. Find the common difference first, then the number to add or subtract.
+IX: practice
 K: The difference gives the coefficient of n; adjust the constant to match the first term.
 !: Writing the nth term of 5, 8, 11, … as n + 3 (the term-to-term rule) instead of 3n + 2.
 Q: What is the nth term of 7, 12, 17, 22, …? | 5n + 2.
@@ -781,6 +810,7 @@ SRC: National Centre for Excellence in the Teaching of Mathematics, Secondary ma
 NUM1#maths-u01-25-q1@1: What is the 40th term of the sequence with nth term 6n − 11? | 229 | 0 |  | 6 × 40 − 11 = 229.
 M1#maths-u01-25-q2@1: What is the nth term of 4, 10, 16, 22, …? | 6n − 2 | n + 6 | 6n + 4 | 4n + 6 | 6n | The common difference is 6, so start with 6n; then 6 × 1 = 6 needs − 2 to give the first term 4.
 M2#maths-u01-25-q3@2: Is 200 a term of the sequence 3n + 5? | Yes, the 65th term | No | Yes, the 66th term | Yes, the 200th term | Only if n can be a fraction | Solve 3n + 5 = 200: 3n = 195, so n = 65, a whole number, so it's the 65th term.
+NUM1#maths-u01-25-q4@1: What is the 20th term of 5, 8, 11, 14, …? | 62 | 0 |  | The nth term is 3n + 2, so the 20th term is 62.
 
 ## Number Patterns
 S: Number patterns (square, triangular, cube and Fibonacci numbers, and patterns in tables) reveal structure in mathematics. Explaining why a pattern holds, not just noticing it, is the first step towards proof.

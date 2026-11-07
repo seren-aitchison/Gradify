@@ -58,6 +58,8 @@ X: Use residues to evaluate ∫_{−∞}^{∞} dx/(1 + x^{2}).
 > Close the contour with a large upper semicircle; 1/(1 + z^{2}) has a simple pole at i inside
 > Res at i = lim (z − i)/((z − i)(z + i)) = 1/(2i)
 > Integral = 2πi × 1/(2i) = π (the arc contributes 0 as its radius grows)
+P: **Investigate with the lab.** Multiply by several w with modulus 1. Each product rotates z without stretching it: the local behaviour of multiplication that makes holomorphic maps angle-preserving.
+IX: complex
 K: Holomorphic ⇔ Cauchy–Riemann; holomorphic functions are analytic; ∮ f dz = 2πi Σ residues; Liouville and contour methods give powerful results.
 !: Including poles outside the contour in the sum of residues.
 Q: What is ∮ dz/z around the unit circle? | 2πi.
@@ -69,6 +71,7 @@ SRC: Ahlfors LV, Complex Analysis (3rd edn, McGraw-Hill 1979) | textbook | 1979 
 NUM1#maths-u09-02-q1@1: What is the residue of e^{z}/z at z = 0? | 1 | 0 |  | A simple pole: lim z × e^{z}/z = e^{0} = 1.
 M1#maths-u09-02-q2@1: Which function is entire (holomorphic everywhere)? | e^{z} | 1/z | |z|^{2} | conj(z) | 1/(1 − z) | e^{z} has a convergent power series everywhere; the others have poles or fail Cauchy–Riemann.
 M2#maths-u09-02-q3@2: How does Liouville's theorem prove the fundamental theorem of algebra? | If p had no roots, 1/p would be bounded and entire, hence constant | It shows all polynomials are linear | It computes roots explicitly | It applies only to real polynomials | It bounds every polynomial on ℂ, forcing all of them to be constant | A non-constant polynomial p makes 1/p non-constant, so p must have a root.
+M2#maths-u09-02-q4@2: Why does multiplying by a fixed non-zero complex number w preserve angles between directions? | It rotates every direction by arg w and scales every length by |w|, so angles between directions are unchanged | It reflects directions, which preserves angles | It only works when w is real | It changes angles by arg w | It doesn't preserve angles | A holomorphic map with non-zero derivative acts locally like multiplication by f′(z), which is why it's conformal.
 
 ## Harmonic Analysis
 S: Harmonic analysis decomposes functions into basic waves and studies how well the pieces reconstruct the whole. Beginning with Fourier series, it now spans Fourier transforms on groups, wavelets and deep convergence theorems.

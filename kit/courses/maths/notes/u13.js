@@ -59,6 +59,8 @@ X: Find r for x = 1, 2, 3, 4, 5 and y = 2, 4, 5, 4, 5.
 > x̄ = 3, ȳ = 4; deviations: x: −2, −1, 0, 1, 2 and y: −2, 0, 1, 0, 1
 > S_{xy} = 4 + 0 + 0 + 0 + 2 = 6; S_{xx} = 10; S_{yy} = 6
 > r = 6/√60 ≈ 0.775: a fairly strong positive correlation
+P: **Investigate with the lab.** Make r above 0.95, then below −0.9. Then load the curved data where r ≈ 0 although the relationship is strong.
+IX: regression
 K: r = S_{xy}/√(S_{xx}S_{yy}) measures linear association; r^{2} is variance explained; correlation isn't causation; plot the data.
 !: Concluding that one variable causes the other from a correlation alone.
 Q: What does r = −0.9 indicate? | A strong negative linear relationship.
@@ -70,6 +72,7 @@ SRC: Anscombe FJ, Graphs in statistical analysis, The American Statistician 27(1
 NUM1#maths-u13-02-q1@1: S_{xy} = 12, S_{xx} = 16 and S_{yy} = 25. Find r. | 0.6 | 0.001 |  | r = 12/√(16 × 25) = 12/20 = 0.6.
 M1#maths-u13-02-q2@1: A correlation of r = 0.8 means a straight line explains what share of the variation in y? | 64% | 80% | 8% | 40% | 89% | The proportion explained is r^{2} = 0.64.
 M3#maths-u13-02-q3@2: The points lie exactly on y = x^{2} for x = −2, −1, 0, 1, 2. What is Pearson's r? | 0 | 1 | −1 | 0.5 | It's undefined | The pattern is a perfect symmetric curve with no linear trend, so r = 0.
+M2#maths-u13-02-q4@2: Data lie exactly on y = x^{2} for x from −3 to 3. What is the Pearson correlation r, and why? | 0, because r measures only linear association and the pattern is symmetric | 1, because the relationship is perfect | −1, because half the points fall | 0.5 | It can't be computed | Pearson's r detects straight-line trends; a symmetric parabola has none.
 
 ## Data Interpretation
 S: Data interpretation is reading charts, tables and statistics critically: what they show, what they hide and how they might mislead. It's an essential skill for citizens, journalists, managers and scientists.
@@ -269,6 +272,8 @@ X: A population has μ = 50 and σ = 12. For samples of 36, find P(X̄ > 53).
 > SE = 12/√36 = 2
 > z = (53 − 50)/2 = 1.5
 > P(X̄ > 53) ≈ P(Z > 1.5) ≈ 0.0668
+P: **Investigate with the lab.** Plot sample means for n = 1, 4 and 30 and compare their spread with σ/√n each time.
+IX: clt
 K: X̄ has mean μ and SE σ/√n; p̂ has SE √(p(1 − p)/n); sampling distributions underpin all inference.
 !: Using σ instead of σ/√n when finding probabilities for a sample mean.
 Q: What is the standard error of x̄ for σ = 10 and n = 25? | 2.
@@ -280,6 +285,7 @@ SRC: Department for Education, AS and A level further mathematics subject conten
 NUM1#maths-u13-08-q1@1: For p = 0.3 and n = 84, find the standard error of p̂, to 3 decimal places. | 0.05 | 0.001 |  | √(0.3 × 0.7/84) = √0.0025 = 0.05.
 M1#maths-u13-08-q2@1: How does the standard error of the mean change if n increases from 25 to 100? | It halves | It quarters | It doubles | It stays the same | It falls by 75 | The standard error is proportional to 1/√n; quadrupling n divides it by √4 = 2.
 M2#maths-u13-08-q3@2: When is the sampling distribution of X̄ exactly normal for any n? | When the population itself is normal | Never | Only when n > 30 | When the population is uniform | When σ is unknown | Linear combinations of normal variables are normal at every sample size.
+NUM1#maths-u13-08-q4@1: Quadrupling the sample size changes the standard error of the mean by what factor? | 0.5 | 0 |  | The standard error is σ/√n, so 4n gives σ/(2√n): half as large.
 
 ## Sampling Bias
 S: Sampling bias happens when the way a sample is chosen makes it unrepresentative. Unlike random error, bias doesn't shrink with a larger sample, and a huge biased sample can be confidently wrong.
@@ -1197,6 +1203,8 @@ X: A model for children aged 2 to 10 gives height = 80 + 6 × age (cm). What doe
 > 80 + 6 × 40 = 320 cm
 > No one is 3.2 m tall: growth stops in adolescence
 > The model was fitted only for ages 2 to 10; extrapolating far outside that range is invalid
+P: **Investigate with the lab.** Fit a line, then look at the residual pattern. A curve in the residuals means a straight line is the wrong model.
+IX: regression
 K: Regression models y from predictors for prediction, explanation and adjustment; choose the model by response type; beware extrapolation, overfitting and confounding.
 !: Using a regression to predict far outside the range of the data.
 Q: Which regression model suits a yes/no response? | Logistic regression.
@@ -1207,6 +1215,7 @@ SRC: Gelman A, Hill J, Vehtari A, Regression and Other Stories (Cambridge Univer
 SRC: Barnett AG, van der Pols JC, Dobson AJ, Regression to the mean: what it is and how to deal with it, International Journal of Epidemiology 34(1), 215 | journal | 2005 | https://doi.org/10.1093/ije/dyh299
 M1#maths-u13-35-q1@1: Patients with the highest blood pressure readings are retested and their average falls, with no treatment. What explains it? | Regression to the mean | A placebo effect only | Measurement fraud | Extrapolation | Overfitting | Extreme readings partly reflect random variation, which tends not to repeat.
 M2#maths-u13-35-q2@2: Which model suits the number of hospital admissions per day? | Poisson (or negative binomial) regression | Linear regression on raw counts only | Logistic regression | Survival analysis | Fisher's exact test | Counts are non-negative integers, suited to count models with a log link.
+M2#maths-u13-35-q3@2: What does a curved pattern in the residuals suggest? | The straight-line model is missing a non-linear relationship | The model fits perfectly | The data have no errors | r must be 1 | Nothing | Residuals should look like random scatter if the model form is right.
 
 ## Linear Regression
 S: Simple linear regression fits the straight line ŷ = a + bx that minimises the sum of squared residuals. It's the most widely used statistical model, giving an interpretable slope, predictions and a measure of fit.
@@ -1231,6 +1240,8 @@ X: For x = 1, 2, 3, 4, 5 and y = 2, 4, 5, 4, 5, find the least squares line and 
 > S_{xy} = 6, S_{xx} = 10, S_{yy} = 6; b = 0.6
 > a = 4 − 0.6 × 3 = 2.2, so ŷ = 2.2 + 0.6x
 > R^{2} = S_{xy}^{2}/(S_{xx}S_{yy}) = 36/60 = 0.6
+P: **Investigate with the lab.** Add points along a trend, then add one outlier that changes the gradient by more than 50% (the lab's challenge). Watch the residuals change too.
+IX: regression
 K: b = S_{xy}/S_{xx}, a = ȳ − b x̄; interpret b as change per unit x; R^{2} measures fit; always check residual plots.
 !: Interpreting the intercept when x = 0 is far outside the data.
 Q: Through which point does every least squares line pass? | (x̄, ȳ).
@@ -1242,6 +1253,7 @@ SRC: Weisberg S, Applied Linear Regression (4th edn, Wiley 2014) | textbook | 20
 NUM1#maths-u13-36-q1@1: Using ŷ = 2.2 + 0.6x, predict y at x = 3.5. | 4.3 | 0.001 |  | 2.2 + 0.6 × 3.5 = 2.2 + 2.1 = 4.3.
 M1#maths-u13-36-q2@1: A regression of exam mark on hours studied has slope 3.2. What does that mean? | Each extra hour is associated with 3.2 more marks on average | Each mark needs 3.2 hours | The intercept is 3.2 | The correlation between hours and marks | Studying causes exactly 3.2% more marks per hour | The slope is the average change in y per unit of x (an association, not proof of cause).
 M3#maths-u13-36-q3@2: Why is a prediction interval wider than a confidence interval for the mean response at the same x? | It includes the scatter of individual points as well as uncertainty in the line | It uses a larger significance level than the confidence interval | It ignores the slope | It uses fewer data | They're the same width | A new observation varies about the true line, adding σ^{2} to the uncertainty.
+M2#maths-u13-36-q4@2: Why can one outlier change a least-squares line a lot? | Squaring residuals gives a far-away point a very large weight in the sum being minimised | Least squares ignores outliers | Outliers are removed automatically | The gradient never changes | Outliers only affect r | Minimising squared residuals pulls the line strongly towards extreme points.
 
 ## Multiple Linear Regression
 S: Multiple linear regression models a response using several predictors at once. Each coefficient estimates the effect of one predictor with the others held fixed, which is how regression adjusts for confounders.
@@ -1400,6 +1412,8 @@ X: Points (1, 1), (2, 2), (3, 3), (4, 4), (5, 20). Compare the least squares slo
 > Least squares: S_{xy} = 40 and S_{xx} = 10, so b = 4
 > Theil–Sen: the six pairs among the first four points have slope 1; pairs with (5, 20) give 4.75, 6, 8.5 and 16
 > Median of the ten slopes = 1: the robust line follows the main pattern
+P: **Investigate with the lab.** Add a single outlier and measure how far the least-squares line moves. This sensitivity is what robust methods are designed to reduce.
+IX: regression
 K: Least squares has zero breakdown; LAD, M-estimators and Theil–Sen resist outliers; compare robust and ordinary fits as a diagnostic.
 !: Deleting outliers without investigating them.
 Q: What is the breakdown point of ordinary least squares? | 0%: one bad point can move it arbitrarily.
@@ -1411,6 +1425,7 @@ SRC: Rousseeuw PJ, Leroy AM, Robust Regression and Outlier Detection (Wiley 1987
 NUM1#maths-u13-41-q1@1: Pairwise slopes between points are 0.8, 1.1, 0.9, 1.0 and 12. Find the Theil–Sen slope. | 1 | 0 |  | The median of 0.8, 0.9, 1.0, 1.1, 12 is 1.0.
 M1#maths-u13-41-q2@1: Why is least squares sensitive to outliers? | Squaring residuals gives large errors huge weight | It ignores large residuals and fits small ones only | It uses medians | It only fits horizontal lines | It isn't sensitive | A residual of 10 contributes 100 to the sum, dominating smaller ones.
 M2#maths-u13-41-q3@2: Which estimator minimises the sum of absolute residuals? | Least absolute deviations (median regression) | Ridge regression | Ordinary least squares with weights | Logistic regression | The method of moments | LAD replaces squares with absolute values, limiting outliers' pull.
+M2#maths-u13-41-q4@2: What problem do robust regression methods address? | Least-squares fits being dragged by a few outliers | Too few data points | Perfect multicollinearity only | Non-numeric data | Negative correlations | Methods like Huber or least absolute deviations down-weight extreme residuals.
 
 ## Quantile Regression
 S: Quantile regression models how a chosen quantile of the response, such as the median or the 90th percentile, depends on predictors. It reveals effects that differ across the distribution, which mean-based regression averages away.

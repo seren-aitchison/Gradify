@@ -63,6 +63,8 @@ X: Find and classify the stationary points of f(x, y) = x^{2} + xy + y^{2} − 3
 > ∇f = (2x + y − 3, x + 2y) = 0 gives x = 2, y = −1
 > Hessian [[2, 1], [1, 2]] has D = 4 − 1 = 3 > 0 and f_{xx} = 2 > 0
 > So (2, −1) is a minimum, with f = 4 − 2 + 1 − 6 = −3
+P: **Investigate with the lab.** Start descent from several points on the bowl-shaped function and confirm every run ends at the same stationary point.
+IX: descent
 K: Minima have zero gradient and positive semidefinite Hessian; positive definite Hessian is sufficient; the discriminant classifies 2D points; convexity makes stationary points global.
 !: Concluding a point is a minimum from ∇f = 0 alone.
 Q: What does a negative-definite Hessian at a stationary point indicate? | A local maximum.
@@ -74,6 +76,7 @@ SRC: Luenberger DG, Ye Y, Linear and Nonlinear Programming (4th edn, Springer 20
 NUM1#maths-u18-02-q1@1: Find the minimum value of f(x) = x^{2} − 6x + 11. | 2 | 0 |  | f′(x) = 2x − 6 = 0 at x = 3, and f(3) = 9 − 18 + 11 = 2; f″ = 2 > 0 confirms a minimum.
 M1#maths-u18-02-q2@1: For f(x, y) = x^{2} − y^{2}, what kind of point is the origin? | A saddle point, with D = −4 < 0 | A strict local minimum of f | A strict local maximum of f | A global minimum of the function | Not a stationary point at all | The Hessian diag(2, −2) has eigenvalues of both signs, so f rises one way and falls the other.
 M2#maths-u18-02-q3@2: Why is a stationary point of a convex function a global minimum? | Convexity puts the graph above every tangent plane, so the flat tangent at that point lies below all values | Convex functions have no stationary points, so the question never arises in practice | Convex functions are always linear, so every point has the same objective value | Every stationary point of a convex function is a maximum, never a minimum | It is only a local minimum; convexity says nothing about other regions | f(y) ≥ f(x) + ∇f(x)ᵀ(y − x) = f(x) when ∇f(x) = 0.
+M2#maths-u18-02-q4@2: At a minimum found by gradient descent on a smooth function, what is the gradient? | Zero (approximately, within the stopping tolerance) | Equal to the learning rate | Always positive | Undefined | Equal to the function value | The first-order condition ∇f = 0 holds at any interior minimum.
 
 ## Constrained Optimisation
 S: Most real problems have constraints: budgets, capacities, physical laws. Constrained optimisation finds the best point inside a feasible region, where the optimum often sits on the boundary and the gradient need not vanish.
@@ -245,6 +248,8 @@ X: Find the local minima of f(x) = x^{4} − 4x^{2} + x and say which is global.
 > f′(x) = 4x^{3} − 8x + 1 = 0 has roots near x ≈ −1.47, 0.13 and 1.35
 > f″ > 0 at −1.47 and 1.35 (minima); f″ < 0 at 0.13 (maximum)
 > f(−1.47) ≈ −5.44 and f(1.35) ≈ −2.62, so x ≈ −1.47 is the global minimum
+P: **Investigate with the lab.** On the two-valley function, reach both minima from different starting points (the lab's challenge).
+IX: descent
 K: Nonconvex problems have multiple local minima and saddles and are often NP-hard; multi-start, branch and bound, relaxations and metaheuristics help; deep learning is nonconvex yet trainable.
 !: Assuming a local optimiser's answer is the global optimum.
 Q: Are general nonconvex quadratic programs easy? | No: they are NP-hard.
@@ -256,6 +261,7 @@ SRC: Goodfellow I, Bengio Y, Courville A, Deep Learning (MIT Press 2016) | textb
 NUM1#maths-u18-07-q1@1: How many local minima does f(x) = x^{4} − 4x^{2} + x have? | 2 | 0 |  | f′ has three real roots: two are minima (near −1.47 and 1.35) and the middle one is a maximum.
 M1#maths-u18-07-q2@1: Why might gradient descent on a nonconvex function return a poor answer? | It converges to whichever local minimum is nearest its starting point | It always diverges on nonconvex functions, whatever the step | It can only find maxima, never minima, of nonconvex functions | It needs the function to be linear before it can take a step | It never stops moving, since the gradient is never zero | Local methods follow the slope downhill and stop at the first minimum reached.
 M2#maths-u18-07-q3@2: Which technique gives a certified global optimum for small nonconvex problems? | Spatial branch and bound with convex relaxations | A single run of gradient descent | Random sampling of one point | Simulated annealing with fast cooling | Newton's method from the origin | Relaxations give lower bounds that prune regions until the gap closes.
+M2#maths-u18-07-q4@2: Why can gradient descent find different minima from different starts on a nonconvex function? | It follows the local slope downhill, so it ends in whichever basin it starts in | It always finds the global minimum | It ignores the starting point | Nonconvex functions have one minimum | It moves randomly | Each local minimum has its own basin of attraction.
 
 ## Nonlinear Programming
 S: Nonlinear programming (NLP) covers problems where the objective or constraints are nonlinear functions. It sits between linear programming and general global optimisation, and methods such as sequential quadratic programming and interior-point solvers handle thousands of variables.
@@ -784,6 +790,8 @@ X: Apply two steps of gradient descent to f(x) = x^{2} from x₀ = 4 with α = 0
 > f′(x) = 2x, so x₁ = 4 − 0.25 × 8 = 2
 > x₂ = 2 − 0.25 × 4 = 1
 > Each step halves x, converging geometrically to 0
+P: **Investigate with the lab.** Make it diverge with a learning rate that's too large, then see zigzagging in the narrow valley and fix it with a smaller rate (the lab's challenges).
+IX: descent
 K: Gradient descent steps against the gradient; the step size must suit the curvature; convergence depends on convexity and conditioning; stochastic, momentum and adaptive variants dominate ML.
 !: Using a step size above 2/L, which makes gradient descent diverge on quadratics.
 Q: What happens if the learning rate is too large? | The iterates can oscillate or diverge.
@@ -795,6 +803,7 @@ SRC: Kingma DP, Ba J, Adam: A method for stochastic optimization, arXiv:1412.698
 NUM1#maths-u18-22-q1@1: Gradient descent on f(x) = x^{2} with α = 0.1 starts at x₀ = 10. What is x₂? | 6.4 | 0.01 |  | Each step multiplies x by 1 − 2α = 0.8, so x₂ = 10 × 0.8^{2} = 6.4.
 M1#maths-u18-22-q2@1: For f(x) = x^{2}, which step size makes gradient descent diverge? | α = 1.5 | α = 0.1 | α = 0.5 | α = 0.25 | α = 0.9 | x is multiplied by 1 − 2α each step; for α = 1.5 that's −2, so |x| doubles.
 M2#maths-u18-22-q3@2: Why does gradient descent zigzag on ill-conditioned problems? | The gradient points across the narrow valley rather than along it, so steps bounce between the walls | The function has no minimum, so the iterates wander without settling down | Ill-conditioned functions are linear, so the gradient never changes direction | The step size is always zero on ill-conditioned problems, causing oscillation | It doesn't zigzag: ill-conditioning only slows each step, not its direction | A large condition number makes contours long ellipses, and the steepest direction is nearly perpendicular to the valley.
+M2#maths-u18-22-q4@2: What happens to gradient descent if the learning rate is far too large? | The iterates overshoot further each step and diverge | It converges faster to the exact minimum | It stops immediately | It always finds the global minimum | Nothing changes | Steps larger than the curvature allows overshoot and grow.
 
 ## Newton's Method
 S: Newton's method for optimisation uses both gradient and curvature, stepping to the minimum of a local quadratic model. Near a minimum it converges quadratically, roughly doubling the correct digits each step, but each step needs the Hessian and may misbehave far from the solution.
