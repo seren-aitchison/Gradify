@@ -18,7 +18,7 @@ const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 // what the website needs
 export const PUBLISH = {
   files: [
-    ".nojekyll", "CNAME", "404.html", "index.html", "app.html", "privacy.html", "status.html",
+    ".nojekyll", "CNAME", "404.html", "index.html", "app.html", "journey.html", "privacy.html", "status.html",
     "robots.txt", "sitemap.xml", "manifest.webmanifest", "sw.js", "gradify.config.js",
   ],
   // folders published whole, apart from EXCLUDE.inside. Sub-site folders (lawgradify/, medgradify/ …) are matched by

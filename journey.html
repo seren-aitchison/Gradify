@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Your learning journey · Gradify</title>
+  <!-- The Journey page: level, XP, streak, goals, quests, the daily challenge, achievements and every subject's
+       progress, across all Gradify courses on this device (kit/game/, docs/GAMIFICATION.md). -->
+  <meta name="description" content="Your Gradify level, streak, daily goal, quests, achievements and progress in every subject, in one place.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="kit/styles/base.css">
+  <link rel="stylesheet" href="kit/styles/components.css">
+  <link rel="stylesheet" href="kit/styles/course.css">
+  <link rel="stylesheet" href="kit/styles/game.css">
+  <script type="module">
+    import { mountJourney } from "./kit/game/journey.js";
+    mountJourney(document.getElementById("journey"));
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#journey">Skip to your journey</a>
+  <div class="wrap gj-wrap">
+    <header class="bar glass">
+      <a class="brand" href="./">Gradify</a>
+      <nav class="sections" aria-label="Gradify"><a href="./">All sites</a><a href="app.html">Study app</a><a href="journey.html" aria-current="page">Journey</a></nav>
+    </header>
+    <main id="journey" class="gj"><p class="gj-sub">Loading your journey…</p></main>
+  </div>
+</body>
+</html>
