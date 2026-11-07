@@ -17,6 +17,7 @@ import { renderQuestion, wireQuestions, normalize, TYPES as QTYPES } from "../as
 import { makeAttempt, analyse } from "../assess/attempts.js";
 import { evidenceFromAttempts, sixProfiles, revisionQueue, labPractice, SIX } from "../learning/mastery.js";
 import { sixHtml, calibrationHtml } from "../learning/mastery-view.js";
+import { conceptGraph, prerequisitesOfLesson, weakPrerequisites } from "../learning/concepts.js";
 import { learnerOf, needsSetup, applyPrefs } from "../data/profile.js";
 import { paceFor } from "../learning/pace.js";
 import { trackView, track } from "../core/analytics.js";
@@ -102,6 +103,8 @@ export function mountCourse(root, cfg) {
   const isDraft = (u) => !cfg.publish && !isReady(u);
   const units = cfg.units, lessons = units.flatMap((u) => u.lessons.map((l, i) => ({ ...l, unit: u, i })));
   const byId = Object.fromEntries(lessons.map((l) => [l.id, l]));
+  // the concept graph (kit/learning/concepts.js): what each module builds on, when the course provides cfg.concepts
+  const graph = cfg.concepts ? conceptGraph(units, cfg.concepts) : null;
   const trackOf = (u) => cfg.tracks.find((t) => t.units.includes(u.n)) || cfg.tracks[0];
   let S = (() => { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { return null; } })() || {};
   S = { done: {}, chests: {}, quiz: {}, solved: {}, cards: {}, log: [], goal: 30, path: null, open: [], closed: [], weekly: {}, saved: {}, mocks: {}, attempts: [], ...S };
@@ -542,6 +545,22 @@ export function mountCourse(root, cfg) {
   const openUnit = (id) => { S.closed = S.closed.filter((x) => x !== id); save(); };
 
   // ---------- a lesson ----------
+  // "Builds on": the modules this lesson's module needs, linked to their first lesson, with any the learner's own
+  // answers show to be weak marked (only measured weaknesses; no evidence means no mark)
+  function masteryOfLessons(ids) {
+    const set = new Set(ids), ev = evidenceFromAttempts((S.attempts || []).filter((a) => set.has(a.lesson)), { levels: cfg.levels || null });
+    return ev.length ? sixProfiles(ev).all.mastery : null;
+  }
+  function buildsOnHtml(id) {
+    if (!graph) return "";
+    const { modules } = prerequisitesOfLesson(graph, id); if (!modules.length) return "";
+    const weak = new Map(weakPrerequisites(graph, id, masteryOfLessons, { maxDepth: 1 }).map((w) => [w.key, w.mastery]));
+    const items = modules.map((k) => graph.nodes.get(k)).sort((a, b) => a.order - b.order).map((n) => {
+      const unit = units.find((x) => x.id === n.unit), m = weak.get(n.key), here = byId[id].unit.id === n.unit;
+      return `<a href="#/lesson/${n.lessons[0]}" class="${m != null ? "weak" : ""}" title="${esc(`${U} ${unit.n}: ${unit.title}`)}">${esc(n.module || unit.title)}${here ? "" : ` <i>${U} ${unit.n}</i>`}${m != null ? ` <b>${Math.round(100 * m)}% · review first</b>` : ""}</a>`;
+    });
+    return `<p class="co-builds"><span>Builds on</span> ${items.join("")}</p>`;
+  }
   async function viewLesson(id) {
     const l = byId[id]; if (!l) return go("learn");
     const u = l.unit, t = trackOf(u), N = await notesFor(l), prev = u.lessons[l.i - 1], next = u.lessons[l.i + 1] || units[u.n]?.lessons[0];
@@ -553,6 +572,7 @@ export function mountCourse(root, cfg) {
           <div class="mv-chips">${S.done[id] ? `<span class="co-chip lit">${ic("check")} Completed</span>` : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${N?.items?.length ? `<span class="co-chip">${N.items.length} check question${N.items.length > 1 ? "s" : ""}</span>` : ""}${N?.cards.length ? `<button data-cards>${ic("cards")} Flashcards (${N.cards.length})</button>` : ""}${N?.level ? `<span class="co-chip">${esc(N.level)}</span>` : ""}</div></header>
         ${N && isDraft(u) ? `<p class="co-draft" role="note"><b>Draft.</b> This ${u1} is written but hasn't yet completed content review, source checking and expert sign-off. Use it alongside your course materials and official sources.</p>` : ""}
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
+        ${buildsOnHtml(id)}
         ${N ? lessonFrame(N).top : ""}
         ${N ? `<div class="mv-cols">${lessonHtml(N)}</div>${lessonFrame(N).end}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}

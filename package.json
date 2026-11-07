@@ -11,7 +11,7 @@
     "sync": "node scripts/sync-kit.mjs",
     "new-site": "node scripts/new-site.mjs",
     "add-3d": "node scripts/add-3d.mjs",
-    "qa": "node scripts/qa-courses.mjs && node scripts/qa-content-run.mjs && node scripts/lab-coverage.mjs",
+    "qa": "node scripts/qa-courses.mjs && node scripts/qa-content-run.mjs && node scripts/lab-coverage.mjs && node scripts/concept-map.mjs",
     "verify:backend": "node scripts/verify-backend.mjs",
     "audit": "node scripts/audit-sites.mjs",
     "check:sync": "node scripts/check-sync.cjs",

@@ -6,6 +6,7 @@ import { QUESTIONS, LESSONS } from "./registry.js";
 import { WRITING } from "./writing.js";
 import { INTERACTIVES } from "./interactives.js";
 import { EVIDENCE } from "./evidence.js";
+import { CONCEPTS } from "./concepts.js";
 export default {
   site: "MathGradify", slug: "maths", name: "Mathematics", app: "../app.html", unitWord: "School",
   units: UNITS, tracks: TRACKS, paths: PATHS,
@@ -25,6 +26,8 @@ export default {
   // the Explore section: interactive laboratories (kit/labs/maths/), generated practice and the graph explorer
   practiceLabel: "Explore",
   practiceNote: "Experiment with mathematics: change a parameter, drag a point or run thousands of random trials, and see what happens. Every lab links to the lessons behind it and has challenges that earn XP. Numerical results (derivatives, integrals, roots, ODE solutions) are approximations computed in your browser, and each lab says how.",
+  // what each module builds on (kit/learning/concepts.js): "Builds on" in every lesson, and weak foundations flagged
+  concepts: CONCEPTS,
   interactives: INTERACTIVES, evidence: EVIDENCE,   // evidence: each challenge → its lesson (mastery)
   // the Step by step section (kit/interactive/stepcheck.js): solve line by line, with every line checked
   workspace: { route: "steps", label: "Step by step", kicker: "Step by step", title: "Work it through, line by line",
