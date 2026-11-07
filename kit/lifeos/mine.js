@@ -45,7 +45,7 @@ export async function mountMine({ after = document.querySelector("#lifeos .life-
       <article><h4>Your year</h4><div class="mine-heat" role="img" aria-label="Days you studied in the last 26 weeks">${days.slice(-26 * 7 - ((days.length - 1) % 7) - 1).map((d) => { const top = Object.entries(d.counts).sort((a, b) => b[1] - a[1])[0], n = Object.values(d.counts).reduce((a, b) => a + b, 0);
         return `<i title="${d.key}: ${n} ${n === 1 ? "activity" : "activities"}"${top ? ` style="background:color-mix(in srgb, #${colour(top[0])} ${Math.min(100, 35 + n * 13)}%, #151515)"` : ""}></i>`; }).join("")}</div>
         <p class="mine-empty">${days.filter((d) => Object.keys(d.counts).length).length} days with study in the last year · best streak ${L.streak.best} days</p></article>
-      <article><h4>Your tree</h4>${used.length ? `<div class="mine-tree" id="mine-tree"></div><p class="mine-empty">One limb for each site you've studied on. Each canopy fills out with that site's activity over the last 30 days.</p>` : `<p class="mine-empty">Your tree grows as you study.</p>`}</article>
+      <article><h4>Your tree</h4>${used.length ? `<div class="mine-tree" id="mine-tree"></div><p class="mine-empty">A tree for each site you've studied on, growing with that site's activity over the last 30 days.</p>` : `<p class="mine-empty">Your tree grows as you study.</p>`}</article>
     </div>`;
   after.after(sec);
   if (used.length) {

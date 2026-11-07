@@ -220,10 +220,10 @@ function renderTree() {
     const leaves = data.reduce((a, x) => a + 4 + Math.round(x.k * 10), 0);
     const week = days.slice(-7).reduce((a, d) => a + Object.entries(d.counts).filter(([n]) => !off.has(n)).reduce((t, [, c]) => t + c, 0), 0);
     const top = [...data].sort((p, q) => q.act - p.act)[0];
-    $("#tree-sub").textContent = "Each limb is a connected site. Its canopy fills out with activity over the last 30 days, and gold fruit are credentials. Behind it: every day's study for the last 60 days.";
+    $("#tree-sub").textContent = "Each connected site grows its own tree, filling out with that site's activity over the last 30 days. Gold fruit are credentials, and the days you've studied recently grow the greenery around them.";
     $("#grow-side").innerHTML = `
       <div class="grow-stats">
-        <div><b>${leaves}</b><span>leaf clusters</span></div>
+        <div><b>${leaves}</b><span>leaves grown</span></div>
         <div><b>${data.reduce((a, x) => a + x.creds.length, 0)}</b><span>fruit</span></div>
         <div><b>${week}</b><span>activities this week</span></div>
         <div><b>${top ? esc(short(top.n).replace("Gradify", "")) : "–"}</b><span>strongest limb</span></div>
