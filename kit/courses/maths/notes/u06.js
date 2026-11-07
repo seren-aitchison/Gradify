@@ -89,6 +89,8 @@ X: Solve sin x = −0.6 for 0° ≤ x < 360°.
 > x ≈ 216.9° or x ≈ 323.1°
 - On the graph, a horizontal line y = k (with −1 < k < 1) crosses each cycle twice: that's why there are two solutions per period.
 - Sound waves, alternating current and pendulum swings are all described by sine curves.
+P: **Investigate with the lab.** Turn P round the circle and watch its height trace the sine graph. Find every angle between 0° and 360° where sin θ = 1/2.
+IX: trig
 K: sin θ is the unit circle's y-coordinate; it repeats every 360°; sin(180° − θ) = sin θ gives a second solution.
 !: Giving only the calculator's principal value when an equation has several solutions in the range.
 Q: What is sin 210°? | −1/2.
@@ -122,6 +124,8 @@ X: Solve 2 cos x + 1 = 0 for 0° ≤ x < 360°.
 - On the graph, cos x = k crosses each 360° cycle twice, symmetrically about 0° and 360°.
 - In a right-angled triangle cos θ = adjacent/hypotenuse, which matches the unit circle definition for acute angles.
 - Engineers use the cosine to find the horizontal component of a force: F cos θ.
+P: **Investigate with the lab.** Turn P round the circle and watch its horizontal position trace the cosine graph. Find an angle between 90° and 180° where cos θ = −1/2.
+IX: trig
 K: cos θ is the unit circle's x-coordinate; cosine is even; cos(360° − θ) = cos θ gives the second solution.
 !: Assuming cos x = −0.5 means x = −60°, which isn't in the usual range.
 Q: What is cos 180°? | −1.
@@ -190,6 +194,8 @@ X: Convert 150° to radians and 2.5 radians to degrees.
 - A full circle is 2π ≈ 6.28 radians: just over six radius-lengths of arc fit round the circumference.
 - Calculators have a DEG/RAD mode: check it every time you start a calculation.
 - In radians, the angle swept by a wheel turning through arc s is s/r, which links rolling distance and rotation directly.
+P: **Investigate with the lab.** Switch between degrees and radians and turn P to 90°, 180° and 360°. Read each angle as a fraction of π.
+IX: trig
 K: π radians = 180°; multiply by π/180 or 180/π; calculus needs radians.
 !: Leaving a calculator in degree mode for calculus or radian questions.
 Q: What is π/3 in degrees? | 60°.
@@ -221,6 +227,8 @@ X: Find the exact values of sin, cos and tan of 240°.
 > 240° is in the third quadrant, with reference angle 60°
 > sin 240° = −sin 60° = −√3/2; cos 240° = −cos 60° = −½
 > tan 240° = sin/cos = √3 (positive in the third quadrant)
+P: **Investigate with the lab.** Visit all four quadrants and note the signs of sin θ and cos θ in each. Check that the exact values repeat with sign changes.
+IX: trig
 K: The point at angle θ is (cos θ, sin θ); use reference angles and quadrant signs (CAST) for exact values.
 !: Forgetting the sign when using a reference angle.
 Q: What are the coordinates on the unit circle at 90°? | (0, 1).
@@ -418,6 +426,8 @@ X: Describe y = 2 cos(x − 30°) − 1 and state its maximum and minimum.
 - Apply horizontal changes in the right order: for sin(2x + 60°), factorise to sin 2(x + 30°), a shift of 30°, not 60°.
 P: **Investigate with the lab.** Do the sine-wave challenge: change a, b and c one at a time and note what happens to the amplitude, period and midline.
 IX: grapher
+P: **Investigate with the lab.** Make y = 3 sin(2x) + 1 one transformation at a time: amplitude, then period, then the vertical shift. Predict each change before you make it.
+IX: trig
 K: Amplitude |a|, period 360°/b, phase shift −c, vertical shift d for y = a sin(bx + c) + d.
 !: Thinking sin 2x has period 720° (it's 180°: the 2 speeds the cycle up).
 Q: What is the period of y = cos 3x? | 120°.
@@ -451,6 +461,8 @@ X: Water depth in a harbour is d = 5 + 3 sin(πt/6) metres, with t in hours. Fin
 > Maximum when sin = 1: d = 5 + 3
 > = 8 m
 - Non-trigonometric examples: the fractional part of x has period 1; a square wave alternates between two values.
+P: **Investigate with the lab.** Change the frequency B and read the period as 360°/B. Find the B that gives a period of 180°.
+IX: trig
 K: Periodic means f(x + T) = f(x); period 2π/ω for sin ωt; frequency is 1/period.
 !: Confusing frequency with period: one is the reciprocal of the other.
 Q: What is the period of a 50 Hz signal? | 0.02 s.

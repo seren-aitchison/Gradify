@@ -112,6 +112,8 @@ X: Two straight lines cross. One of the angles is 3x + 10 and the angle next to 
 > Adjacent angles on a straight line: 3x + 10 + 5x − 6 = 180, so 8x = 176 and x = 22
 > The angles are 76° and 104°
 > Vertically opposite angles are equal, so the four angles are 76°, 104°, 76°, 104°
+P: **Investigate with the lab.** In the cyclic quadrilateral, drag one vertex and watch the angle at A and the opposite angle change together, always adding to 180°.
+IX: circles
 K: Straight line 180°, around a point 360°, vertically opposite angles equal; name angles by three letters with the vertex in the middle.
 !: Reading the wrong scale on a protractor.
 Q: What do angles around a point add up to? | 360°.
@@ -335,6 +337,8 @@ X: Find the perimeter and area of a semicircle with diameter 12 cm, in terms of 
 > Curved edge = ½ × π × 12 = 6π cm; plus the diameter 12 cm
 > Perimeter = 6π + 12 cm (≈ 30.8 cm)
 > Area = ½ × π × 6^{2} = 18π cm^{2}
+P: **Investigate with the lab.** Drag A, B and C round the circle and watch the angle at the circumference and the angle at the centre stay in the ratio 1 : 2.
+IX: circles
 K: C = 2πr and A = πr^{2}; include straight edges in perimeters of parts of circles; give exact answers in π when asked.
 !: Using the diameter in A = πr^{2}.
 Q: What is the circumference of a circle with radius 7 cm, in terms of π? | 14π cm.
@@ -366,6 +370,8 @@ X: A chord of length 16 cm is 6 cm from the centre of a circle. Find the radius.
 > The perpendicular from the centre bisects the chord into 8 cm halves
 > The radius is the hypotenuse of a right-angled triangle with legs 6 and 8
 > r = √(36 + 64) = 10 cm
+P: **Investigate with the lab.** Make AB a diameter in the semicircle view and move C anywhere on the arc: the chords AC and BC always meet at 90°.
+IX: circles
 K: Tangent ⟂ radius; tangents from a point are equal; the centre's perpendicular bisects a chord.
 !: Assuming a line touching a diagram's circle is a tangent without the perpendicular property.
 Q: What angle does a tangent make with the radius at the point of contact? | 90°.
@@ -398,6 +404,8 @@ X: A, B and C lie on a circle with centre O, and angle AOC = 140°. B is on the 
 > The angle at the centre is twice the angle at the circumference
 > Angle ABC = 140 ÷ 2
 > = 70°
+P: **Investigate with the lab.** Work through all four views. For each theorem, try to break it by moving the points, then explain from the readouts why you can't.
+IX: circles
 K: Centre angle = 2 × circumference angle; semicircle 90°; same segment equal; cyclic opposite angles 180°; alternate segment.
 !: Applying the cyclic quadrilateral rule when one vertex isn't on the circle.
 Q: What is the angle in a semicircle? | 90°.
