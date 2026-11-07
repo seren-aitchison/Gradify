@@ -5,7 +5,8 @@ import { standard2Rules } from "./social.js";
 
 function historyRules(unit, L, text) {
   const w = standard2Rules(unit, L);
-  if (!/\b(1[0-9]|20)\d\d\b|\b\d{2,3} (BCE|CE|BC|AD)\b/.test(text)) w.push("no date anywhere in the lesson");
+  // a year (from 500), a BCE or CE date, or a named century ("the thirteenth century")
+  if (!/\b([5-9]\d\d|1\d{3}|20\d\d)\b|\b\d{1,4} (BCE|CE|BC|AD)\b|\b(fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|eighteenth|nineteenth|twentieth|twenty-first)[- ](century|centuries)\b/i.test(text)) w.push("no date anywhere in the lesson");
   return w;
 }
 function historyFlags(L, text) {

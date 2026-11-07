@@ -19,7 +19,8 @@ It was checked before starting: HistoryGradify wasn't in the production tracker 
 | School | Lessons | Written | Questions |
 |---|---|---|---|
 | 1. Historical Thinking and Methods | 16 | ✅ standard 2 | 82 |
-| 2–18 | 285 | not yet ("notes still being written" on the path) | |
+| 2. Medieval Britain | 18 | ✅ standard 2 | 90 |
+| 3–18 | 267 | not yet ("notes still being written" on the path) | |
 
 Every written lesson has objectives, sections, a worked example of historical analysis, evidence-status lines (established or contested), key terms, a summary, two real sources, two flashcards and at least five questions across Foundation, Application and Evaluation, including a rubric-marked extended answer.
 
@@ -37,5 +38,5 @@ Each challenge counts as mastery evidence for its lesson (`evidence.js`). The Jo
 
 ## Next
 
-1. Schools 2, 7, 9 and 10 (the GCSE core), then the rest in pathway order.
+1. Schools 7, 9 and 10 (the rest of the GCSE core), then the rest in pathway order.
 2. More labs, in priority order: an interactive timeline, cause-and-consequence mapping, interpretation comparison, and maps of changing borders and campaigns.
