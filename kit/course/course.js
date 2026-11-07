@@ -17,6 +17,7 @@ import { renderQuestion, wireQuestions, normalize, TYPES as QTYPES } from "../as
 import { makeAttempt, analyse } from "../assess/attempts.js";
 import { evidenceFromAttempts, sixProfiles, revisionQueue, labPractice, SIX } from "../learning/mastery.js";
 import { explorationIds, evidenceClass } from "../learning/evidence-class.js";
+import { weaknessTargets, practiceSet } from "../learning/targets.js";
 import { sixHtml, calibrationHtml } from "../learning/mastery-view.js";
 import { conceptGraph, prerequisitesOfLesson, weakPrerequisites } from "../learning/concepts.js";
 import { learnerOf, needsSetup, applyPrefs } from "../data/profile.js";
@@ -811,6 +812,24 @@ export function mountCourse(root, cfg) {
       <div class="co-plist">${items.map(({ q, it }) => `<div class="co-prob"><div class="co-pmeta"><a href="#/lesson/${it.l.id}">${U} ${it.l.unit.n} · ${esc(it.l.title)}</a><span>${q.reason === "wrong" ? "Wrong last time" : `Last right ${Math.round((Date.now() - q.lastAt) / DAY)}d ago`}</span></div>${qHtml(it)}</div>`).join("")}</div>`;
     wirePractice(main.querySelector(".co-plist"), "review", "retrieval");
   }
+  // Target my weaknesses (kit/learning/targets.js): questions from the lessons where the learner's own answers show
+  // them weakest, foundations first where the course has a concept graph. Answers count as ordinary practice.
+  const weakTargets = () => weaknessTargets(S.attempts || [], { exploration: EXPLORE, levels: cfg.levels || null, graph, limit: 5 });
+  async function viewWeak() {
+    const targets = weakTargets();
+    if (!targets.length) { main.innerHTML = `<div class="co-panel"><span class="co-kicker">Target my weaknesses</span><h2>No weak spots measured yet</h2><p>Gradify only calls something weak when your own answers show it: a lesson where you've got most questions wrong, one whose recent answers are worse than before, or a lab challenge you've tried and not met. Answer a few more check questions and come back.</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Continue learning</span></a></div>`; return; }
+    main.innerHTML = `<div class="co-panel"><p>Building your practice set…</p></div>`;
+    const need = new Set(targets.map((t) => byId[t.lesson]?.unit.id).filter(Boolean));
+    const notes = Object.assign({}, ...(await Promise.all(units.filter((u) => need.has(u.id)).map(unitNotes))));
+    const items = Object.fromEntries(targets.map((t) => [t.lesson, notes[t.lesson]?.items || []]));
+    const set = practiceSet(targets, items, S.attempts || []), why = Object.fromEntries(targets.map((t) => [t.lesson, t]));
+    const KIND = { foundation: "Foundation first", weak: "Weak", wrong: "Mostly wrong so far", slipping: "Slipping", lab: "Lab challenge not met" };
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Target my weaknesses</span><h2>${set.length} ${set.length === 1 ? "question" : "questions"} on your weakest ${targets.length === 1 ? "lesson" : `${targets.length} lessons`}</h2><p>Chosen from your own answers. Where a weak lesson rests on something you're also finding hard, that foundation comes first. Easier questions come first where you're weakest. These count as practice in your mastery.</p></div>
+      <ul class="co-weak">${targets.map((t) => `<li><a href="#/lesson/${t.lesson}">${esc(byId[t.lesson]?.title || t.lesson)}</a> <small>${KIND[t.kind]}: ${esc(t.why)}${t.for && byId[t.for] ? ` It underpins ${esc(byId[t.for].title)}.` : ""}</small></li>`).join("")}</ul>
+      ${set.length ? `<div class="co-plist">${set.map(({ lesson, item }) => `<div class="co-prob"><div class="co-pmeta"><a href="#/lesson/${lesson}">${U} ${byId[lesson].unit.n} · ${esc(byId[lesson].title)}</a><span>${KIND[why[lesson].kind]}</span></div>${qHtml(item)}</div>`).join("")}</div>` : `<p class="co-empty">These lessons have no check questions yet. Reread them, or try their labs.</p>`}`;
+    if (set.length) wirePractice(main.querySelector(".co-plist"), "problems", "weak");
+  }
+  const weakLink = () => { const n = weakTargets().length; return n ? `<a class="btn btn-ghost btn-sm" href="#/review/weak"><span>Target my weaknesses (${n})</span></a>` : ""; };
   const revisitLink = () => { const n = revisionQueue(S.attempts || [], { limit: 200 }).length; return n ? `<a class="btn btn-ghost btn-sm" href="#/review/questions"><span>Revisit ${n} ${n === 1 ? "question" : "questions"}</span></a>` : ""; };
 
   async function viewReview() {
@@ -949,7 +968,7 @@ export function mountCourse(root, cfg) {
       ${evidenceLine(ev)}${sixHtml(all)}${calibrationHtml(all)}
       ${schools.length ? `<h4>By ${u1}</h4><ul class="co-weak">${schools.map(({ g, u }) => `<li><a href="#/learn/${u.id}">${U} ${u.n}: ${esc(u.title)}</a> <small>${g.mastery == null ? `${g.answers} answers: not enough evidence yet` : `${pc(g.mastery)}${g.weakest ? ` · weakest: ${label(g.weakest)}` : ""}`}${g.trend?.declining ? " · slipping: recent answers are weaker than before" : ""}</small></li>`).join("")}</ul>` : ""}
       ${labPracticeHtml()}
-      <p>${revisitLink()}</p>
+      <p>${revisitLink()} ${weakLink()}</p>
       <div class="co-dirbox"><h4>Your next session</h4><p class="co-empty">The Gradify AI study director turns this evidence into a plan for your next session.</p><button type="button" class="btn btn-ghost btn-sm" data-director><span>Plan my next session</span></button><div class="co-dirout" aria-live="polite"></div></div></section>`;
   }
   // what the mastery figures are built from, and the exploration that isn't counted (kit/learning/evidence-class.js)
@@ -1300,7 +1319,7 @@ export function mountCourse(root, cfg) {
     if (view === "learn") { if (arg) openUnit(arg); viewLearn(arg); }
     else if (view === "lesson") await viewLesson(arg);
     else if (view === "quiz") await viewQuiz(arg);
-    else if (view === "review") await (arg === "questions" ? viewRetrieval() : viewReview());
+    else if (view === "review") await (arg === "questions" ? viewRetrieval() : arg === "weak" ? viewWeak() : viewReview());
     else if (view === "paths") viewPaths();
     else if (view === "tracks") viewTracks();
     else if (view === "problems") await viewProblems();
