@@ -17,6 +17,7 @@ export function mount(el, ctx = {}) {
   const host = $(".sx-cases"), ctrl = $(".lab-ctrl");
   caveat(ctrl, "<b>Educational simulation, not therapy.</b> Jordan is invented. CBT is delivered by trained therapists after an assessment. If you're struggling, speak to your GP or NHS 111, or in the UK refer yourself to NHS Talking Therapies.");
   const ch = challenges(ctrl, ctx, [{ id: "done", text: "Complete Jordan's thought record", test: (x) => x.done }]);
+  ctx.declare?.(STEPS.map((s) => ({ id: s.k, text: s.h })));   // each step of the record is a challenge too
   let i = 0; const got = [];
   const paint = (msg = "") => {
     const s = STEPS[i];
@@ -26,7 +27,7 @@ export function mount(el, ctx = {}) {
   };
   host.addEventListener("click", (e) => {
     const b = e.target.closest("button[data-j]"); if (!b) return; const [t, ok, why] = STEPS[i].opts[Number(b.dataset.j)];
-    if (!ok) { b.classList.add("no"); host.querySelector(".sx-fb").innerHTML = `<b>Not quite.</b> ${esc(why)}`; return; }
+    if (!ok) { b.classList.add("no"); host.querySelector(".sx-fb").innerHTML = `<b>Not quite.</b> ${esc(why)}`; ctx?.fail?.(STEPS[i].k, STEPS[i].h, { revealed: true }); return; }
     got.push(t); ctx?.complete?.(STEPS[i].k, STEPS[i].h);
     if (i < STEPS.length - 1) { i++; paint(`<b>Yes.</b> ${esc(why)}`); } else { ch.check({ done: true }); ctx?.onComplete?.({ score: 1 }); paint(`<b>Complete.</b> ${esc(why)}`); host.querySelector(".sx-opts").innerHTML = ""; }
   });

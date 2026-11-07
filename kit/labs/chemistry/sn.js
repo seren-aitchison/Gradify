@@ -17,7 +17,7 @@ export function rates({ sub, nu, solv, RX = 0.1, Nu = 0.1 }) {
 export function mount(el, ctx = {}) {
   const $ = shell(el, `<div class="lab-row r1"></div><div class="lab-row r2"></div><div class="lab-row r3"></div><div class="lab-cols"><div class="lab-stage"></div><div class="lab-ctrl"></div></div><div class="lab-out"></div>`);
   const cv = canvas($(".lab-stage"), { aspect: 0.6, max: 340 }), ctrl = $(".lab-ctrl"), out = panel($(".lab-out"));
-  const s = { sub: "primary", nu: "strong", solv: "aprotic", Nu: 0.1 };
+  const s = { sub: "secondary", nu: "strong", solv: "protic", Nu: 0.1 };   // a mixed start (29% SN1): finding either extreme is the challenge
   const st = { sn1: false, nuIndep: false, inv: false };
   const ch = challenges(ctrl, ctx, [
     { id: "inv", text: "Find conditions where SN2 dominates: expect inversion of configuration", test: (x) => x.inv },

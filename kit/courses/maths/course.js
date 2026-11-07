@@ -5,6 +5,7 @@ import { QA } from "./qa.js";
 import { QUESTIONS, LESSONS } from "./registry.js";
 import { WRITING } from "./writing.js";
 import { INTERACTIVES } from "./interactives.js";
+import { EVIDENCE } from "./evidence.js";
 export default {
   site: "MathGradify", slug: "maths", name: "Mathematics", app: "../app.html", unitWord: "School",
   units: UNITS, tracks: TRACKS, paths: PATHS,
@@ -24,7 +25,7 @@ export default {
   // the Explore section: interactive laboratories (kit/labs/maths/), generated practice and the graph explorer
   practiceLabel: "Explore",
   practiceNote: "Experiment with mathematics: change a parameter, drag a point or run thousands of random trials, and see what happens. Every lab links to the lessons behind it and has challenges that earn XP. Numerical results (derivatives, integrals, roots, ODE solutions) are approximations computed in your browser, and each lab says how.",
-  interactives: INTERACTIVES,
+  interactives: INTERACTIVES, evidence: EVIDENCE,   // evidence: each challenge → its lesson (mastery)
   // the Step by step section (kit/interactive/stepcheck.js): solve line by line, with every line checked
   workspace: { route: "steps", label: "Step by step", kicker: "Step by step", title: "Work it through, line by line",
     intro: "Solve each problem one line at a time, as you would on paper. Every line is checked as you write it, so you see exactly where an error crept in, not just that the final answer was wrong. Hints are there if you're stuck, and you can always see a worked solution.",

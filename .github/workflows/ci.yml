@@ -50,8 +50,9 @@ jobs:
         run: |
           node scripts/build-sitemap.mjs
           npm run sync
-          git diff --exit-code -- sitemap.xml supabase/functions/_shared/ supabase/dashboard/ || {
-            echo "::error::Generated files are out of date. Run node scripts/build-sitemap.mjs and npm run sync, then commit."
+          node scripts/ix-manifest.mjs
+          git diff --exit-code -- sitemap.xml supabase/functions/_shared/ supabase/dashboard/ kit/course/ix-manifest.js || {
+            echo "::error::Generated files are out of date. Run node scripts/build-sitemap.mjs, npm run sync and node scripts/ix-manifest.mjs, then commit."
             exit 1
           }
 

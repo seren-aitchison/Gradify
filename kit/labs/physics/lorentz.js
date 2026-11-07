@@ -22,7 +22,7 @@ export function mount(el, ctx = {}) {
   const $ = shell(el, `<div class="lab-row top"></div><div class="lab-cols"><div class="lab-stage"></div><div class="lab-ctrl"></div></div><div class="lab-out"></div>`);
   const cv = canvas($(".lab-stage"), { aspect: 0.72, max: 440 }), ctrl = $(".lab-ctrl"), out = panel($(".lab-out"));
   let kind = "proton";
-  const P = { v: 4, B: 1, E: 0 };   // speed in units of 10⁵ m/s; B in units of 0.01 T; E in units of 1 kV/m
+  const P = { v: 4, B: 1, E: 10 };   // starts with crossed fields (a drift), so the circle and the selector both need a change   // speed in units of 10⁵ m/s; B in units of 0.01 T; E in units of 1 kV/m
   let s, trail, t, st = { circle: false, double: false, period: false, select: false }, last = null;
   const ch = challenges(ctrl, ctx, [
     { id: "circ", text: "With no electric field, see the particle move in a circle at constant speed", test: (x) => x.circle },

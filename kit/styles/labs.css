@@ -55,3 +55,5 @@
 .pt-el.sel, .pt-el:hover { outline: 2px solid #fff; outline-offset: 1px; z-index: 1; }
 .ob { width: 34px; height: 34px; border-radius: 6px; font: 600 15px var(--mono); color: var(--fg); background: rgba(255, 255, 255, .05); border: 1px solid var(--line-strong); cursor: pointer; letter-spacing: -2px; }
 .ob:hover { background: rgba(255, 255, 255, .12); }
+/* a wide table on a phone scrolls inside its own box rather than pushing the page sideways */
+.lab-scroll { max-width: 100%; overflow-x: auto; }

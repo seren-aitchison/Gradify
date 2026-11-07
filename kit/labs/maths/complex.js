@@ -44,7 +44,7 @@ function rootsLab(cv, ctrl, out, ctx) {
     { id: "sum", text: "Check that the roots always sum to 0 (for n ≥ 2)", test: (x) => x.n >= 2 && x.seen },
     { id: "minus", text: "Solve z⁴ = −16: modulus 16, argument 180°", test: (x) => x.n === 4 && x.r === 16 && x.th === 180 },
   ]);
-  slider(ctrl, { label: "n (number of roots)", min: 1, max: 12, step: 1, value: s.n, fmt: (v) => v.toFixed(0), onInput: (v) => { s.n = v; run(); } });
+  slider(ctrl, { label: "n (number of roots)", min: 1, max: 12, step: 1, value: s.n, fmt: (v) => v.toFixed(0), onInput: (v) => { s.n = v; s.tried = (s.tried || 0) + 1; run(); } });
   slider(ctrl, { label: "Modulus r of the right-hand side", min: 1, max: 32, step: 1, value: s.r, fmt: (v) => v.toFixed(0), onInput: (v) => { s.r = v; run(); } });
   slider(ctrl, { label: "Argument θ of the right-hand side (degrees)", min: 0, max: 360, step: 15, value: s.th, fmt: (v) => `${v}°`, onInput: (v) => { s.th = v; run(); } });
   function run() {
@@ -55,7 +55,7 @@ function rootsLab(cv, ctrl, out, ctx) {
     if (s.n > 2) { g.save(); g.strokeStyle = "rgba(16,185,129,.6)"; g.beginPath(); R.forEach(([x, y], i) => (i ? g.lineTo(P.X(x), P.Y(y)) : g.moveTo(P.X(x), P.Y(y)))); g.closePath(); g.stroke(); g.restore(); }
     R.forEach(([x, y], k) => { dot(g, P.X(x), P.Y(y), k ? C.green : C.amber, 5); });
     const sum = R.reduce((a, [x, y]) => [a[0] + x, a[1] + y], [0, 0]);
-    ch.check({ ...s, seen: true });
+    ch.check({ ...s, seen: (s.tried || 0) >= 1 });   // "always": seen once the learner has tried another n
     out(`<p>zⁿ = ${s.r} e^{i·${s.th}°} has <b>${s.n}</b> root${s.n > 1 ? "s" : ""} on the circle of radius ${s.r}^(1/${s.n}) = ${fmt(m, 4)}, spaced ${fmt(360 / s.n, 2)}° apart. <span style="color:${C.amber}">First root</span>: ${cstr(...R[0])}.</p><p>Sum of the roots: ${cstr(Math.abs(sum[0]) < 1e-9 ? 0 : sum[0], Math.abs(sum[1]) < 1e-9 ? 0 : sum[1])}${s.n >= 2 ? ", zero by symmetry (it is minus the coefficient of zⁿ⁻¹, which is 0)." : "."}</p>`);
   }
   run(); cv.onresize = run;

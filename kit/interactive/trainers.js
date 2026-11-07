@@ -24,8 +24,12 @@ export function genObs(r) {
 }
 const obsRows = (o) => [["rr", `${o.rr} breaths/min`], ["spo2", `${o.spo2}% (scale 1)`], ["air", o.oxygen ? "On oxygen" : "Air"], ["sbp", `${o.sbp} mmHg`], ["hr", `${o.hr} bpm`], ["avpu", { A: "Alert", C: "New confusion", V: "Responds to voice" }[o.avpu]], ["temp", `${o.temp.toFixed(1)}°C`]];
 
-export function mountNews2(el, { onComplete } = {}) {
+export function mountNews2(el, ctx = {}) {
+  const { onComplete } = ctx;
   let r = rng(Date.now() >>> 0), n = 0, right = 0;
+  // two challenges, each round: scoring every parameter right, and choosing the right clinical response
+  ctx.declare?.([{ id: "scores", text: "Score all seven NEWS2 parameters correctly" }, { id: "response", text: "Choose the right clinical response for the total" }]);
+  const out = (id, ok, label) => (ok ? ctx.complete?.(id, label) : ctx.fail?.(id, label, { revealed: true }));
   const round = () => {
     const o = genObs(r), res = news2(o);
     el.innerHTML = `<div class="tx"><p class="sx-banner" role="note">Practice with the RCP NEWS2 chart (2017). Educational only: in practice use your organisation's chart and escalation policy.</p>
@@ -39,6 +43,7 @@ export function mountNews2(el, { onComplete } = {}) {
       el.querySelectorAll("select[data-k]").forEach((s) => { const good = Number(s.value) === res.parts[s.dataset.k] && s.value !== ""; ok += good; s.closest("tr").className = good ? "ok" : "no"; s.closest("tr").lastElementChild.insertAdjacentHTML("beforeend", good ? "" : ` <small>→ ${res.parts[s.dataset.k]}</small>`); });
       const respOk = el.querySelector("[data-resp]").value === res.response.level;
       const all = ok === 7 && respOk; right += all; n++;
+      out("scores", ok === 7, "Score all seven NEWS2 parameters correctly"); out("response", respOk, "Choose the right clinical response");
       el.querySelector(".tx-out").innerHTML = `<p><b>Total NEWS2: ${res.total}${res.red ? " (with a single parameter scoring 3)" : ""}.</b> ${ok} of 7 parameters right; response ${respOk ? "right" : "not right"}.</p><p><b>${esc(res.response.label)}:</b> ${esc(res.response.text)}</p><p class="tx-note">Whatever the score, escalate if you are worried about the patient.</p>${n < 5 ? `<button type="button" class="btn btn-ghost lg btn-sm" data-next><span>Next patient →</span></button>` : `<p><b>${right} of 5 fully correct.</b></p><button type="button" class="btn btn-ghost lg btn-sm" data-again><span>Five more</span></button>`}`;
       el.querySelector("[data-check]").disabled = true;
       el.querySelector("[data-next]")?.addEventListener("click", round);
@@ -63,8 +68,12 @@ export function genCalc(r) {
   const perKg = pick(r, [2, 5, 10, 15]); const kg = pick(r, [12, 20, 35, 60, 72]); const ans = perKg * kg; return { kind, q: `A prescription for ${med} is ${perKg} mg per kg. The person weighs ${kg} kg. What dose is that, in mg? (Illustrative only: real weight-based doses are checked against the prescription, references and limits.)`, unit: "mg", answer: ans, method: `Dose = dose per kg × weight = ${perKg} × ${kg} = ${ans} mg. In practice also check the maximum dose and use the current weight.` };
 }
 
-export function mountCalc(el, { onComplete } = {}) {
+export const CALC_KINDS = { tablets: "Tablets for a prescribed dose", liquid: "Volume of a liquid medicine", rate: "Infusion rate in mL/h", drops: "Drip rate in drops per minute", convert: "Unit conversions", weight: "Weight-based doses" };
+export function mountCalc(el, ctx = {}) {
+  const { onComplete } = ctx;
   let r = rng(Date.now() >>> 0), n = 0, right = 0;
+  // each kind of calculation is a challenge; a wrong answer shows the method, so a later success that visit is assisted
+  ctx.declare?.(Object.entries(CALC_KINDS).map(([id, text]) => ({ id, text })));
   const round = () => {
     const c = genCalc(r);
     el.innerHTML = `<div class="tx"><p class="sx-banner" role="note">Numeracy practice with illustrative numbers and invented medicines. It doesn't authorise you to calculate or give real doses: in practice, follow the prescription, independent checks and local policy.</p>
@@ -75,6 +84,7 @@ export function mountCalc(el, { onComplete } = {}) {
     const check = () => {
       const v = Number(input.value), ok = input.value !== "" && Math.abs(v - c.answer) < 0.011;
       right += ok; n++;
+      if (ok) ctx.complete?.(c.kind, CALC_KINDS[c.kind]); else ctx.fail?.(c.kind, CALC_KINDS[c.kind], { revealed: true });
       el.querySelector(".tx-out").innerHTML = `<p class="${ok ? "ok" : "no"}"><b>${ok ? "Correct" : `Not quite: the answer is ${c.answer} ${esc(c.unit)}`}.</b></p><p>${esc(c.method)}</p>${n < 10 ? `<button type="button" class="btn btn-ghost lg btn-sm" data-next><span>Next →</span></button>` : `<p><b>${right} of 10 correct.</b></p><button type="button" class="btn btn-ghost lg btn-sm" data-again><span>Ten more</span></button>`}`;
       el.querySelector("[data-check]").disabled = true; input.disabled = true;
       el.querySelector("[data-next]")?.addEventListener("click", round);
@@ -117,7 +127,12 @@ export function precedentEffect(from, to) {
   return { effect: "persuasive", why: `A court isn't bound by courts below it: a ${a.name} decision can only persuade the ${b.name}.` };
 }
 
-export function mountCourts(el, { onComplete } = {}) {
+// the kinds of precedent question asked: what binds, what persuades, and courts outside the hierarchy
+const courtKind = (from, to) => (C[from].outside ? "outside" : from === to ? "same" : C[from].level > C[to].level ? "higher" : "lower");
+export const COURT_KINDS = { higher: "A decision of a higher court", same: "A court's own earlier decisions", lower: "A decision of a lower or equal court", outside: "Courts outside the hierarchy (Privy Council, Strasbourg)" };
+export function mountCourts(el, ctx = {}) {
+  const { onComplete } = ctx;
+  ctx.declare?.(Object.entries(COURT_KINDS).map(([id, text]) => ({ id, text })));
   const pairs = []; let r = rng(Date.now() >>> 0);
   const ids = COURTS.map((c) => c.id), within = ids.filter((x) => !C[x].outside);
   // pairs with a clear, settled answer (a single judge and a Divisional Court are left out: the
@@ -133,6 +148,7 @@ export function mountCourts(el, { onComplete } = {}) {
     el.querySelectorAll("[data-court]").forEach((b) => b.addEventListener("click", () => { el.querySelector(".tx-courtinfo").innerHTML = `<p><b>${esc(C[b.dataset.court].name)}</b></p><p>${inline(C[b.dataset.court].note)}</p>`; }));
     el.querySelectorAll("[data-a]").forEach((b) => b.addEventListener("click", () => {
       const res = precedentEffect(from, to), ok = b.dataset.a === res.effect; right += ok; k++;
+      const kind = courtKind(from, to); if (ok) ctx.complete?.(kind, COURT_KINDS[kind]); else ctx.fail?.(kind, COURT_KINDS[kind], { revealed: true });
       el.querySelectorAll("[data-a]").forEach((x) => { x.disabled = true; x.classList.toggle("right", x.dataset.a === res.effect); });
       if (!ok) b.classList.add("wrong");
       el.querySelector(".tx-out").innerHTML = `<p><b>${ok ? "Correct." : "Not quite."}</b> ${inline(res.why)}</p>${k < pairs.length ? `<button type="button" class="btn btn-ghost lg btn-sm" data-next><span>Next →</span></button>` : `<p><b>${right} of ${pairs.length} correct.</b></p>`}`;

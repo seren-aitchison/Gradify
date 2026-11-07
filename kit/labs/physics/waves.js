@@ -11,7 +11,7 @@ export function mount(el, ctx = {}) {
   const $ = shell(el, `<div class="lab-row top"></div><div class="lab-cols"><div class="lab-stage"></div><div class="lab-ctrl"></div></div><div class="lab-out"></div>`);
   const cv = canvas($(".lab-stage"), { aspect: 0.62, max: 400 }), ctrl = $(".lab-ctrl"), out = panel($(".lab-out"));
   let mode = ["standing", "beats"].includes(ctx.mode) ? ctx.mode : "super";
-  const P = { a1: 1, a2: 1, f1: 1, f2: 1, dir2: -1, phase: 0, n: 1, T: 80, mu: 0.01, L: 1, fb1: 440, fb2: 444 };
+  const P = { a1: 1, a2: 0.6, f1: 1, f2: 1, dir2: 1, phase: 0, n: 1, T: 80, mu: 0.01, L: 1, fb1: 440, fb2: 444 };   // starts meeting no challenge
   let t = 0, st = { cancel: false, standing: false, h3: false, beats: false };
   const ch = challenges(ctrl, ctx, [
     { id: "cancel", text: "Superposition: make two waves cancel completely (destructive interference)", test: (s) => s.cancel },

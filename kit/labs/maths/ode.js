@@ -20,7 +20,7 @@ export function rk(f, x0, y0, x1, h) { const pts = [[x0, y0]]; let x = x0, y = y
 export function mount(el, ctx = {}) {
   const $ = shell(el, `<div class="lab-cols"><div><div class="lab-stage"></div><p class="mg-tip">Click or tap the plane to choose the initial value (x₀, y₀).</p></div><div class="lab-ctrl"></div></div><div class="lab-out"></div>`);
   const cv = canvas($(".lab-stage"), { aspect: 0.75, max: 460 }), ctrl = $(".lab-ctrl"), out = panel($(".lab-out"));
-  const s = { key: "logistic", x0: -3, y0: 0.4, h: 0.5 }, P0 = { x0: -4, x1: 6, y0: -3, y1: 5 };
+  const s = { key: "logistic", x0: -3, y0: 0.4, h: 0.1 }, P0 = { x0: -4, x1: 6, y0: -3, y1: 5 };
   const ch = challenges(ctrl, ctx, [
     { id: "euler", text: "See Euler's method drift: an end-point error above 0.5 for dy/dx = y", test: (x) => x.key === "exp" && x.eErr > 0.5 },
     { id: "rk", text: "Get RK4 within 0.001 of the exact answer with h ≥ 0.25", test: (x) => x.rErr != null && x.rErr < 1e-3 && x.h >= 0.25 },

@@ -59,8 +59,12 @@ export function genPharmCalc(r, kind = pick(r, KINDS)) {
 
 export const isRight = (c, v) => Number.isFinite(v) && Math.abs(v - c.answer) <= c.tol + 1e-9;
 
-export function mountPharmCalc(el, { onComplete } = {}) {
+export const KIND_LABELS = { percent: "Percentage strength (w/v)", ratio: "Ratio strengths", dilution: "Dilutions", mmol: "Millimoles", weightLiquid: "Weight-based doses of liquids", crcl: "Creatinine clearance", mgPerHour: "Infusion rates in mg per hour", displacement: "Displacement values", bsa: "Body surface area doses", supply: "Quantities to supply" };
+export function mountPharmCalc(el, ctx = {}) {
+  const { onComplete } = ctx;
   let r = rng(Date.now() >>> 0), n = 0, right = 0;
+  // each kind of calculation is a challenge; a wrong answer shows the method, so a later success that visit is assisted
+  ctx.declare?.(KINDS.map((id) => ({ id, text: KIND_LABELS[id] || id })));
   const go = () => {
     const c = genPharmCalc(r);
     el.innerHTML = `<div class="tx"><p class="sx-banner" role="note">Calculations practice with illustrative numbers and invented medicines. It doesn't authorise you to calculate or supply real doses: in practice, follow the prescription, the current BNF or BNFC, the SPC, independent checks and local policy.</p>
@@ -71,6 +75,7 @@ export function mountPharmCalc(el, { onComplete } = {}) {
     const check = () => {
       const ok = input.value !== "" && isRight(c, Number(input.value));
       right += ok; n++;
+      if (ok) ctx.complete?.(c.kind, KIND_LABELS[c.kind]); else ctx.fail?.(c.kind, KIND_LABELS[c.kind], { revealed: true });
       el.querySelector(".tx-out").innerHTML = `<p class="${ok ? "ok" : "no"}"><b>${ok ? "Correct" : `Not quite: the answer is ${c.answer} ${esc(c.unit)}`}.</b></p><p>${esc(c.method)}</p>${n < 10 ? `<button type="button" class="btn btn-ghost lg btn-sm" data-next><span>Next</span></button>` : `<p><b>${right} out of 10.</b></p><button type="button" class="btn btn-ghost lg btn-sm" data-again><span>Another 10</span></button>`}`;
       el.querySelector("[data-check]").disabled = true; input.disabled = true;
       el.querySelector("[data-next]")?.addEventListener("click", go);

@@ -17,6 +17,7 @@ export function caveat(host, html) { const p = document.createElement("p"); p.cl
 // items: [{ id, title, text, q, options: [{ t, ok, why }] }]; each correct case is a challenge (+XP once)
 export function cases(host, ctx, items, { title = "Cases", intro = "" } = {}) {
   const box = document.createElement("div"); box.className = "sx-cases"; host.append(box);
+  ctx?.declare?.(items.map((x) => ({ id: x.id, text: (x.title || x.q).replace(/<[^>]+>/g, "") })));
   let i = 0; const done = new Set(items.filter((x) => ctx?.solved?.(x.id)).map((x) => x.id));
   const paint = (msg = "") => {
     const x = items[i];
@@ -34,6 +35,7 @@ export function cases(host, ctx, items, { title = "Cases", intro = "" } = {}) {
     box.querySelectorAll(".sx-opts button").forEach((q) => q.classList.remove("ok", "no")); b.classList.add(o.ok ? "ok" : "no");
     box.querySelector(".sx-fb").innerHTML = `<b>${o.ok ? "Yes." : "Not quite."}</b> ${o.why}`;
     box.querySelector(".sx-fb").className = `sx-fb ${o.ok ? "ok" : "no"}`;
+    if (!o.ok && !done.has(x.id)) ctx?.fail?.(x.id, (x.title || x.q).replace(/<[^>]+>/g, "").slice(0, 60));
     if (o.ok && !done.has(x.id)) { done.add(x.id); ctx?.complete?.(x.id, (x.title || x.q).replace(/<[^>]+>/g, "").slice(0, 60)); box.querySelector(".sx-head span").textContent = `${i + 1} of ${items.length} · ${done.size} solved`; if (done.size === items.length) ctx?.onComplete?.({ score: 1 }); }
   });
   paint();
@@ -43,6 +45,7 @@ export function cases(host, ctx, items, { title = "Cases", intro = "" } = {}) {
 // sorter: put each item into a category with a select, then check. { id, prompt, cats: [..], items: [{ t, cat, why? }] }
 export function sorter(host, ctx, { id, prompt, cats, items, why = "" }) {
   const box = document.createElement("div"); box.className = "sx-sort"; host.append(box);
+  ctx?.declare?.([{ id, text: prompt.replace(/<[^>]+>/g, "") }]);
   box.innerHTML = `<p class="sx-q">${prompt}</p><ol>${items.map((x, i) => `<li><span>${x.t}</span><label class="sr-only" for="${id}-${i}">Category</label><select id="${id}-${i}"><option value="">Choose…</option>${cats.map((c) => `<option>${esc(c)}</option>`).join("")}</select><small class="sx-why"></small></li>`).join("")}</ol>
     <button type="button" class="lab-btn pri">Check</button><p class="sx-fb" aria-live="polite"></p>`;
   box.querySelector("button").addEventListener("click", () => {
@@ -53,7 +56,8 @@ export function sorter(host, ctx, { id, prompt, cats, items, why = "" }) {
     });
     const all = right === items.length, fb = box.querySelector(".sx-fb");
     fb.className = `sx-fb ${all ? "ok" : ""}`; fb.innerHTML = all ? `<b>All ${items.length} right.</b> ${why}` : `${right} of ${items.length} right. The corrections are shown under each one you missed.`;
-    if (all) ctx?.complete?.(id, prompt.replace(/<[^>]+>/g, "").slice(0, 60));
+    // a full set right is a success; a checked set with mistakes shows the corrections, so a later success is assisted
+    if (all) ctx?.complete?.(id, prompt.replace(/<[^>]+>/g, "").slice(0, 60)); else ctx?.fail?.(id, prompt.replace(/<[^>]+>/g, "").slice(0, 60), { revealed: true });
   });
   return box;
 }

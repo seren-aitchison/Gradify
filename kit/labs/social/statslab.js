@@ -30,15 +30,16 @@ function crosstab(el, ctx) {
   const ch = challenges(ctrl, ctx, [{ id: "sig", text: "Read the result for the example table", test: (x) => x.run }, { id: "none", text: "Enter counts with no association (equal row percentages)", test: (x) => x.V < 0.02 }]);
   const read = () => [0, 1].map((i) => [0, 1].map((j) => Math.max(0, Number($(`#ct${i}${j}`).value) || 0)));
   el.addEventListener("input", run);
-  function run() {
+  function run(initial) {
     const T = read(); if (T.flat().some((v) => v === 0) && T.flat().reduce((a, b) => a + b, 0) === 0) return;
-    const R = S.chiSquare(T); st.run = true; st.V = R.V; ch.check(st);
+    // the example table's result is shown on opening; it counts as read once the learner changes a count
+    const R = S.chiSquare(T); if (initial !== true) st.run = true; st.V = R.V; ch.check(st);
     const pct = T.map((r) => r.map((v) => (100 * v) / (r[0] + r[1] || 1)));
     out(`${table(["", ...E.cols.map((c) => `${c} (row %)`), "Expected counts"], T.map((r, i) => [E.rows[i], ...pct[i].map((p) => `${p.toFixed(1)}%`), R.expected[i].map((v) => v.toFixed(1)).join(" · ")]))}
       <p><b>χ²(${R.df}) = ${f2(R.x2)}, p ${pf(R.p).startsWith("<") ? pf(R.p) : `= ${pf(R.p)}`}, Cramér's V = ${f2(R.V)}.</b> ${R.p < 0.05 ? "The difference in percentages is unlikely if there were no association in the population." : "Differences this size could easily arise by chance."}</p>
       <p class="sx-fb">Compare row percentages to describe the association; χ² says whether it is statistically significant, and Cramér's V how strong it is (0 to 1). χ² needs expected counts of at least 5 in each cell. An association isn't causation: education and voting are both linked to age and class.</p>`);
   }
-  run();
+  run(true);
 }
 
 function describe(el, ctx) {

@@ -35,15 +35,15 @@ export function mount(el, ctx = {}) {
     { id: "block", text: "Compare X in the blocking design with X in its control", test: (x) => x.seen.has("blocking") && x.seen.has("control") },
     { id: "sal", text: "Make the light (X) more salient than the tone and see it learn faster in the control design", test: (x) => x.salient },
   ]);
-  seg($(".lab-row.sx-mode"), Object.entries(DESIGNS).map(([k, d]) => [k, d.name]), s.d, (v) => { s.d = v; run(); });
-  slider(ctrl, { label: "Salience of tone A (α)", min: 0.05, max: 1, step: 0.05, value: s.aA, fmt: (v) => v.toFixed(2), onInput: (v) => { s.aA = v; run(); } });
-  slider(ctrl, { label: "Salience of light X (α)", min: 0.05, max: 1, step: 0.05, value: s.aX, fmt: (v) => v.toFixed(2), onInput: (v) => { s.aX = v; run(); } });
-  slider(ctrl, { label: "Learning rate (β)", min: 0.05, max: 1, step: 0.05, value: s.beta, fmt: (v) => v.toFixed(2), onInput: (v) => { s.beta = v; run(); } });
-  slider(ctrl, { label: "Size of the US (λ)", min: 0.2, max: 1, step: 0.1, value: s.lambda, fmt: (v) => v.toFixed(1), onInput: (v) => { s.lambda = v; run(); } });
+  seg($(".lab-row.sx-mode"), Object.entries(DESIGNS).map(([k, d]) => [k, d.name]), s.d, (v) => { s.d = v; st.chose = true; run(); });
+  slider(ctrl, { label: "Salience of tone A (α)", min: 0.05, max: 1, step: 0.05, value: s.aA, fmt: (v) => v.toFixed(2), onInput: (v) => { s.aA = v; st.chose = true; run(); } });
+  slider(ctrl, { label: "Salience of light X (α)", min: 0.05, max: 1, step: 0.05, value: s.aX, fmt: (v) => v.toFixed(2), onInput: (v) => { s.aX = v; st.chose = true; run(); } });
+  slider(ctrl, { label: "Learning rate (β)", min: 0.05, max: 1, step: 0.05, value: s.beta, fmt: (v) => v.toFixed(2), onInput: (v) => { s.beta = v; st.chose = true; run(); } });
+  slider(ctrl, { label: "Size of the US (λ)", min: 0.2, max: 1, step: 0.1, value: s.lambda, fmt: (v) => v.toFixed(1), onInput: (v) => { s.lambda = v; st.chose = true; run(); } });
   caveat(ctrl, "A formal model with stated assumptions. Real animals also show spontaneous recovery after extinction, which this model cannot produce: extinction is new learning layered over the old, not erasure (Bouton, 2004).");
   function run() {
     const D = DESIGNS[s.d], trials = D.phases.flatMap((p) => p[1]), h = rw(trials, { alpha: { A: s.aA, X: s.aX }, beta: s.beta, lambda: s.lambda });
-    st.seen.add(s.d); if (s.d === "control" && s.aX > s.aA + 0.2) st.salient = true; ch.check(st);
+    if (st.chose) st.seen.add(s.d); if (s.d === "control" && s.aX > s.aA + 0.2) st.salient = true; ch.check(st);
     const g = cv.g, W = cv.W, H = cv.H; clear(g, W, H);
     const A = axes(g, { l: 46, t: 14, w: W - 62, h: H - 50 }, { x0: 0, x1: trials.length, y0: -0.1, y1: 1.05, xl: "trial", yl: "associative strength V", xt: 5, yt: 4, xf: (v) => v.toFixed(0), yf: (v) => v.toFixed(1) });
     let at = 0; for (const [name, ts] of D.phases) { line(g, [[A.X(at), A.Y(-0.1)], [A.X(at), A.Y(1.05)]], "rgba(255,255,255,.18)", 1, [3, 3]); text(g, name, A.X(at) + 4, A.Y(1.0), { size: 11, color: C.mute }); at += ts.length; }

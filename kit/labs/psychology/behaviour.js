@@ -12,7 +12,7 @@ export function series({ effect = 30, noise = 8, seed = 5, n = 8 } = {}) {
 }
 export function mount(el, ctx = {}) {
   const $ = shell(el, `<div class="lab-cols"><div><div class="lab-stage"></div></div><div class="lab-ctrl"></div></div><div class="lab-out"></div>`);
-  const cv = canvas($(".lab-stage"), { aspect: 0.5, max: 320 }), ctrl = $(".lab-ctrl"), out = panel($(".lab-out")), s = { effect: 30, noise: 8, seed: 5 }, st = {};
+  const cv = canvas($(".lab-stage"), { aspect: 0.5, max: 320 }), ctrl = $(".lab-ctrl"), out = panel($(".lab-out")), s = { effect: 12, noise: 12, seed: 5 }, st = {};
   dataLabel(ctrl, { real: false, how: "Invented observations of one pupil's percentage of intervals on task, generated in your browser." });
   const ch = challenges(ctrl, ctx, [{ id: "clear", text: "Make an effect so clear that every B point is above every A point", test: (x) => x.clear }, { id: "noise", text: "Make the noise so large that the effect is hard to see by eye", test: (x) => x.noisy }]);
   slider(ctrl, { label: "Intervention effect (percentage points)", min: 0, max: 50, step: 1, value: s.effect, fmt: (v) => v, onInput: (v) => { s.effect = v; run(); } });

@@ -27,8 +27,12 @@ export default {
   // interactive practice (kit/interactive/): legal reasoning
   practiceNote: "Legal reasoning practice: case files worked issue by issue, and the court hierarchy. Fictional facts; the law of England and Wales as at 2026.",
   interactives: [
-    { id: "okoye", kind: "Legal reasoning case file", title: "Okoye v Harbour Cameras: was there a contract?", sub: "Identify the issues, apply offer, acceptance and the postal rule to a sequence of messages, and advise the client, building an IRAC analysis as you go.", schools: [3], load: () => import("./interactives/offer-acceptance.js") },
-    { id: "courts", kind: "Precedent explorer", title: "Court hierarchy and precedent", sub: "Explore the courts of England and Wales and decide whether earlier decisions bind, persuade or must be taken into account.", schools: [1], load: () => import("../../interactive/trainers.js").then((m) => ({ mount: m.mountCourts })) },
+    { id: "okoye", kind: "Legal reasoning case file", title: "Okoye v Harbour Cameras: was there a contract?", sub: "Identify the issues, apply offer, acceptance and the postal rule to a sequence of messages, and advise the client, building an IRAC analysis as you go.", schools: [3], note: "A fictional case file on offer and acceptance in the law of England and Wales, with simplified facts and scored decisions; study material, not legal advice.",
+      // shown in these lessons; each challenge is mastery evidence for its lesson (kit/course/course.js)
+      lessons: ["u03-02", "u03-03", "u03-04"], evidence: { issues: "u03-02", listing: "u03-02", reply: "u03-02", method: "u03-04", revocation: "u03-03", advice: "u03-03" }, load: () => import("./interactives/offer-acceptance.js") },
+    { id: "courts", kind: "Precedent explorer", title: "Court hierarchy and precedent", sub: "Explore the courts of England and Wales and decide whether earlier decisions bind, persuade or must be taken into account.", schools: [1], note: "The court hierarchy of England and Wales and the general rules of precedent; exceptions are summarised, not exhaustive.",
+      // shown in these lessons; each challenge is mastery evidence for its lesson (kit/course/course.js)
+      lessons: ["u01-09", "u01-10", "u01-08"], evidence: { higher: "u01-09", same: "u01-10", lower: "u01-10", outside: "u01-10" }, load: () => import("../../interactive/trainers.js").then((m) => ({ mount: m.mountCourts })) },
   ],
   // the Reasoning section (kit/interactive/reasoning.js): problem questions worked stage by stage with
   // structured feedback on each part of the reasoning; feeds the shared mastery engine

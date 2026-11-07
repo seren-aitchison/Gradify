@@ -3,6 +3,7 @@
 import { UNITS, TRACKS, PATHS, BLURBS } from "./syllabus.js";
 import { QA } from "./qa.js";
 import { INTERACTIVES } from "./interactives.js";
+import { EVIDENCE } from "./evidence.js";
 export default {
   site: "SciGradify", slug: "chemistry", name: "Chemistry", app: "../app.html", unitWord: "School", trackWord: "Stage",
   units: UNITS, tracks: TRACKS, paths: PATHS, blurbs: BLURBS,
@@ -13,7 +14,7 @@ export default {
   // the subject's colours for the course chrome (Physics keeps the original spectrum)
   theme: { accent: "#f59e0b", spectrum: "linear-gradient(90deg, #facc15, #fbbf24 25%, #f59e0b 50%, #f97316 75%, #ea580c)" },
   // interactives (kit/labs/chemistry/): listed in the Lab tab and embedded in lessons with IX: lines
-  interactives: INTERACTIVES, practiceLabel: "Lab",
+  interactives: INTERACTIVES, evidence: EVIDENCE,   // evidence: each challenge → its lesson (mastery) practiceLabel: "Lab",
   practiceNote: "Simulations run a real model, with its simplifications stated; illustrative models show a structure or process without simulating it; exercises check your answers. Challenges inside them earn XP.",
   // cumulative exams (kit/assess/exam.js): one per stage and one over the whole course, drawn from written schools only
   exams: [
