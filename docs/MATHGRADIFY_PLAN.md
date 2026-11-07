@@ -34,7 +34,7 @@ The course tutor has maths-specific rules (`SITE_RULES.maths` in `kit/assess/tut
 
 ## Status
 
-**Written:** School 1, Number and Arithmetic (29 lessons), to content standard 2: worked examples in every lesson, 70+ check questions including numerical ones, two sources per lesson. 0 QA warnings. The other 28 schools are planned, not written.
+**Written:** all 29 schools, 1,077 lessons, to content standard 2. Every lesson has a lead, objectives, key terms, sections, two flashcards, check questions (2,168 in all, including numerical ones and at least 10% hard questions in each school) and two sources. Every lesson outside Schools 26 and 27 has a worked example. QA reports 29 of 29 schools passing hard checks with 0 warnings (`npm run qa`). School 27 (software) describes products as documented by their vendors: features change between versions, so check current documentation.
 
 **Tested:** `tests/maths-tools.test.mjs` (equivalence and non-equivalence cases, answer reading, error messages; every generated problem type marks its own answer right and a wrong one wrong over 150 samples each; every step-by-step worked solution passes its own checker line by line; errors are caught at the right line; every graph challenge is reachable), plus the shared course, registry, QA and tutor tests. Checked in a browser at desktop and phone width with no errors.
 
@@ -45,15 +45,16 @@ The course tutor has maths-specific rules (`SITE_RULES.maths` in `kit/assess/tut
   - **assisted_success**: met after the AI tutor answered a question about the lab. Counts as Application, weighted as assisted (0.3 of that).
   - **attempt**: the learner pressed "Try this" on a challenge, worked at it (at least five separate interactions), then moved on or left without meeting it. It never lowers mastery. Two or more unmet tries since the lesson's last lab success list it under "Lab challenges to practise" in My progress, and tell the study director. Without "Try this" no failure is recorded, because the lab can't tell what the learner was aiming at.
   - Lab records never come back in Revisit, and they're kept out of "How you're answering", which is about questions.
-- *Not yet:* no maths lesson embeds a lab with an `IX:` line yet (the notes are being written). Labs whose lessons have no notes yet (School 19's root-finding) show no tutor panel. The tutor needs the backend switched on (docs/BACKEND-STATUS.md).
+- *Not yet:* no maths lesson embeds a lab with an `IX:` line yet. Now that every school has notes, labs can be placed in their lessons. The tutor needs the backend switched on (docs/BACKEND-STATUS.md).
 
 **Deployed:** static, with the site. AI feedback on proofs needs the course-tutor function deployed and a signed-in learner.
 
-**Awaiting expert review:** School 1 (a maths teacher or lecturer: `qa.js` reviewed, sources and sign-off are null), the step-by-step problem sets and the proof tasks. The equivalence check is numerical: very reliable for school and early university algebra, but a check, not a proof.
+**Awaiting expert review:** all 29 schools (a maths teacher or lecturer for the school and A level content; subject specialists for the university, finance, statistics and software schools). In every school's `qa.js` entry, reviewed, sources and sign-off are null, and no lesson is marked verified. Worked examples, numerical answers and cited sources need checking. The step-by-step problem sets and proof tasks also await review. The equivalence check is numerical: very reliable for school and early university algebra, but a check, not a proof.
 
 ## Next
 
-1. Write School 3 (Algebra) and School 7 (Calculus), the core of GCSE and A level, then Schools 5, 6, 12 and 13.
-2. More step-by-step sets: simultaneous equations, inequalities, surds, logarithms, trigonometric equations, integration by substitution.
-3. Proof-step checking for induction, and a written-proof workspace that checks each claimed equality.
-4. Mock exams once the GCSE and A level schools are written.
+1. Expert review, school by school, starting with the GCSE and A level core (Schools 1, 3, 5, 6, 7, 12, 13 and 28).
+2. Place labs in their lessons with `IX:` lines.
+3. More step-by-step sets: simultaneous equations, inequalities, surds, logarithms, trigonometric equations, integration by substitution.
+4. Proof-step checking for induction, and a written-proof workspace that checks each claimed equality.
+5. Mock exams for GCSE and A level.
