@@ -83,6 +83,8 @@ export function seg(host, options, value, fn) {
 // recorded too (kit/course/course.js). Without api.focus, challenges are a plain checklist.
 export function challenges(host, api, list) {
   const box = document.createElement("div"); box.className = "lab-ch"; host.append(box);
+  // the course engine learns every challenge this lab offers (each must be mapped to a lesson for mastery evidence)
+  api?.declare?.(list.map((c) => ({ id: c.id, text: c.text.replace(/<[^>]+>/g, "") })));
   const done = new Set(list.filter((c) => api?.solved?.(c.id)).map((c) => c.id));
   const can = typeof api?.focus === "function"; let cur = null;
   const paint = () => { box.innerHTML = `<b>Challenges</b><ul>${list.map((c) => `<li class="${done.has(c.id) ? "ok" : ""}">${done.has(c.id) ? "✓" : "○"} <span class="lab-cht">${c.text}</span>${can && !done.has(c.id) ? ` <button type="button" class="lab-try" data-try="${esc(c.id)}" aria-pressed="${cur === c.id}">${cur === c.id ? "Working on it" : "Try this"}</button>` : ""}</li>`).join("")}</ul>`; };
@@ -145,6 +147,7 @@ export function panel(host, cls = "lab-info") { const d = document.createElement
 // a few questions inside a lab, each a challenge: { id, q, options: [...], answer (index), why }
 export function quiz(host, ctx, items, title = "Check your understanding") {
   const box = document.createElement("div"); box.className = "lab-ch lab-quiz"; host.append(box);
+  ctx?.declare?.(items.map((x) => ({ id: x.id, text: x.q.replace(/<[^>]+>/g, "") })));
   const done = new Set(items.filter((x) => ctx?.solved?.(x.id)).map((x) => x.id));
   const paint = () => {
     box.innerHTML = `<b>${title}</b>${items.map((x, i) => `<div class="lab-qz" data-i="${i}"><p>${x.q}</p><div class="lab-chips">${x.options.map((o, j) => `<button type="button" data-j="${j}" class="${done.has(x.id) && j === x.answer ? "ok" : ""}">${o}</button>`).join("")}</div><p class="lab-msg ${done.has(x.id) ? "ok" : ""}">${done.has(x.id) ? x.why : ""}</p></div>`).join("")}`;
@@ -154,7 +157,7 @@ export function quiz(host, ctx, items, title = "Check your understanding") {
     const b = e.target.closest("button[data-j]"); if (!b) return;
     const wrap = b.closest(".lab-qz"), x = items[Number(wrap.dataset.i)], j = Number(b.dataset.j), msg = wrap.querySelector(".lab-msg");
     if (j === x.answer) { b.classList.add("ok"); msg.className = "lab-msg ok"; msg.innerHTML = x.why; if (!done.has(x.id)) { done.add(x.id); ctx?.complete?.(x.id, x.q.replace(/<[^>]+>/g, "").slice(0, 60)); if (done.size === items.length) ctx?.onComplete?.({ score: 1 }); } }
-    else { b.classList.add("no"); msg.className = "lab-msg no"; msg.textContent = "Not quite: look again at the model and try another answer."; }
+    else { b.classList.add("no"); msg.className = "lab-msg no"; msg.textContent = "Not quite: look again at the model and try another answer."; if (!done.has(x.id)) ctx?.fail?.(x.id, x.q.replace(/<[^>]+>/g, "").slice(0, 60)); }
   });
   return { done: (id) => done.has(id) };
 }

@@ -122,8 +122,11 @@ export function isRight(p, text) {
 }
 export const answerText = (p) => (p.answers ? (p.ordered ? p.answers.join(", ") : p.answers.map((x) => `x = ${x}`).join(" or ")) : p.show || `${+p.answer.toFixed(6)}${p.unit && p.unit !== "£" ? ` ${p.unit}` : ""}`);
 
-export function mountMathGen(el, { onComplete } = {}) {
+export function mountMathGen(el, ctx = {}) {
+  const { onComplete } = ctx;
   let r = rng(Date.now() >>> 0), n = 0, right = 0, topic = "mixed", level = "all";
+  // each kind of problem is a challenge; a wrong answer shows the method, so a later success that visit is assisted
+  ctx.declare?.(Object.entries(KINDS).map(([id, k]) => ({ id, text: k.topic })));
   const kinds = () => Object.keys(KINDS).filter((k) => (topic === "mixed" || k === topic) && (level === "all" || KINDS[k].level === level));
   const go = () => {
     const c = gen(r, pick(r, kinds()));
@@ -140,6 +143,7 @@ export function mountMathGen(el, { onComplete } = {}) {
     const check = () => {
       if (!input.value.trim()) return;
       const ok = isRight(c, input.value); right += ok; n++;
+      if (ok) ctx.complete?.(c.kind, KINDS[c.kind].topic); else ctx.fail?.(c.kind, KINDS[c.kind].topic, { revealed: true });
       el.querySelector(".tx-out").innerHTML = `<p class="${ok ? "ok" : "no"}"><b>${ok ? "Correct" : `Not quite: the answer is ${esc(answerText(c))}`}.</b></p><p>${esc(pretty(c.method))}</p>${n < 10 ? `<button type="button" class="btn btn-ghost lg btn-sm" data-next><span>Next</span></button>` : `<p><b>${right} out of 10.</b></p><button type="button" class="btn btn-ghost lg btn-sm" data-again><span>Another 10</span></button>`}`;
       el.querySelector("[data-check]").disabled = true; input.disabled = true;
       el.querySelector("[data-next]")?.addEventListener("click", go);

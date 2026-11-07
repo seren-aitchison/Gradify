@@ -1,8 +1,59 @@
 # Interactive learning roadmap
 
-**Version 1, 7 November 2026.** An audit of every interactive across Gradify, a standard every one must meet, and a prioritised plan for what to build next. **Nothing in this document has been built yet.** The next development batch starts only on the owner's approval. Supabase configuration, authentication and secrets aren't part of this plan.
+**Version 1.1, 7 November 2026.** Stage A is complete (below). An audit of every interactive across Gradify, a standard every one must meet, and a prioritised plan for what to build next. **Nothing in this document has been built yet.** The next development batch starts only on the owner's approval. Supabase configuration, authentication and secrets aren't part of this plan.
 
 How it was produced is in §11. The counts were measured from the repository and a browser run on 7 November 2026, not taken from earlier updates.
+
+## Stage A: done (7 November 2026)
+
+Approved by the owner on 7 November and completed the same day. No new interactives were built, and Supabase wasn't touched.
+
+**Measured by `scripts/check-interactives.cjs`** on a built copy of the site:
+
+| Measure | Result |
+|---|---|
+| Interactives registered | **161** across 9 courses |
+| Every challenge mapped to a specific lesson | **161 of 161** (546 challenges) |
+| All four outcomes recorded correctly, each stored against the challenge's lesson | **161 of 161** |
+| Reachable from their associated lessons | **161 of 161** |
+| Load on desktop with no script error | **161 of 161** |
+| Phone: no error, no sideways scrolling | **161 of 161** (the Biology tree builder's overflow is fixed) |
+| Offline after first use | **9 of 9** courses (one interactive per course opened online, then reopened with the network off) |
+| Challenges met on opening, before any interaction | **0** (16 labs started in a state that met a challenge; each start was changed, and the engine now ignores any completion before the learner touches the lab) |
+
+**The four outcomes** (`kit/course/course.js`; `kit/learning/mastery.js`):
+
+| Outcome | When | Counts towards mastery? |
+|---|---|---|
+| **Successful** | Met with no help this visit | Yes, as independent evidence |
+| **Assisted** | Met after the AI tutor answered a question about the lab, or after the interactive showed the worked answer | Yes, at the weight of a second try |
+| **Unsuccessful** | A wrong answer, decision or calculation | Yes, as a wrong answer, like any wrong answer in a lesson |
+| **Unsuccessful** | Chose a challenge ("Try this"), worked at it for at least five separate moments, and moved on without meeting it | No: it suggests practice instead (exploring a simulation isn't penalised) |
+| **Attempted** | Chose a challenge and touched it, but fewer than five moments | Never: engagement only |
+
+- **XP** is unchanged, and separate: it's awarded only for a first success.
+- **Opening** an interactive is never recorded as evidence.
+
+**What else changed:**
+- **Law, Nursing and Pharmacy:** their 6 interactives are linked to lessons, with model notes and challenge-level outcomes (every decision, NEWS2 round and calculation kind).
+- **Lessons:** every linked interactive is shown in its lessons, two in full and the rest as links, including lessons whose notes aren't written yet.
+- **Review status:** every interactive shows "Not yet expert-reviewed", "Expert-reviewed" or "Updated since last review". The records live in `kit/course/reviews.js` (none yet), and code fingerprints in `kit/course/ix-manifest.js`, which CI keeps up to date.
+- **Offline:** every interactive is labelled "Available offline after first use", with a note that the AI tutor needs a connection. The shared engine, each course's lab list and evidence maps are cached at install, and every sub-site page now registers the offline service worker. Before, only the homepage did, so a learner arriving straight at a course had no offline support.
+- **Datasets:** a register of every real dataset (`kit/labs/datasets.js`): 4 World Bank datasets and 1 published teaching example, each with source, licence, attribution, coverage, years and retrieval date. The approved sources are ONS, World Bank, OECD, Eurostat and UNData.
+- **Checks:**
+  - `tests/interactives.test.mjs` checks the registration and evidence maps, fingerprints and reviews, the outcome rules, offline caching and the dataset register. It runs on every push.
+  - `scripts/check-interactives.cjs` is the browser check above, run before deploying interactive changes.
+  - `scripts/evidence-maps.mjs` maps the challenges of future interactives.
+
+**Known limitations:**
+- **Outcome check:** the browser check drives each interactive's outcomes through the course engine's context. It confirms each one is stored correctly against the right lesson, but it doesn't play each lab's own controls to reach every challenge.
+- **Wrong answers:** they are recorded where the interactive has explicit answers (quiz questions, scenario decisions, calculations, case checks and sorting). Simulations record unsuccessful through the "Try this" route.
+- **Challenge mappings** were made by matching challenge wording to lesson titles within each interactive's linked lessons. They are sensible on inspection, but not individually expert-checked.
+- **World Bank licence:** recorded as CC BY 4.0 per the World Bank's terms, but not yet confirmed on its site, which isn't reachable from the working environment.
+- **Not covered yet:**
+  - accessibility for keyboard and screen readers on canvas labs (F8, Stage G)
+  - tests for the 48 untested lab modules (F9)
+  - subject-expert review (none yet)
 
 ## 1. Summary
 

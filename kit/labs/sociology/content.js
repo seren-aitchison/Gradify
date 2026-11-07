@@ -25,10 +25,11 @@ export function mount(el, ctx = {}) {
   const ch = challenges(ctrl, ctx, [{ id: "run", text: "Analyse the example headlines", test: (x) => x.run }, { id: "cat", text: "Add a category of your own", test: (x) => x.cats > 3 }, { id: "own", text: "Analyse a text of your own", test: (x) => x.own }]);
   button($(".sx-btns"), "Use the example", () => { t.value = EXAMPLE; c.value = DEFAULT_CATS; run(); });
   t.addEventListener("input", () => { st.own = t.value.trim() && t.value !== EXAMPLE; run(); }); c.addEventListener("input", run);
-  function run() {
-    const A = analyse(t.value, c.value); st.run = A.words > 0; st.cats = A.rows.length; ch.check(st);
+  function run(initial) {
+    // the example is shown on opening, but it counts as analysed only once the learner runs or changes it
+    const A = analyse(t.value, c.value); if (initial !== true) st.run = st.run || A.words > 0; st.cats = A.rows.length; ch.check(st);
     lab.className = `sx-data ${st.own ? "real" : "sim"}`; lab.innerHTML = st.own ? "<b>Your text</b>, analysed in your browser; nothing is uploaded." : "<b>Invented example</b> headlines written for practice.";
     out(A.words ? `${table(["Category", "Matches", "Per 1,000 words", "Keywords"], A.rows.map((r) => [r.name, r.n, r.per1000.toFixed(1), r.list.join(", ")]))}<p>${A.words} words analysed. <b>Next steps a researcher would take:</b> define each category in a coding manual, check inter-coder reliability (two people coding the same sample), and sample texts systematically (e.g. every story on welfare in two papers over a year).</p>` : "<p>Paste a text or use the example.</p>");
   }
-  t.value = EXAMPLE; c.value = DEFAULT_CATS; run();
+  t.value = EXAMPLE; c.value = DEFAULT_CATS; run(true);
 }

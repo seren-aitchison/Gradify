@@ -45,21 +45,21 @@ export function mount(el, ctx = {}) {
   const s = { view: "trend", code: T.codes[0], x: T.codes.length > 1 ? T.codes[1] : "NY.GDP.PCAP.PP.KD", y: T.codes[0], sel: new Set(T.countries.filter((c) => COUNTRIES[c])) }, st = { views: new Set() };
   const ch = challenges(ctrl, ctx, [{ id: "three", text: "Compare at least three countries on one indicator", test: (x) => x.sel >= 3 }, { id: "scatter", text: "Plot two indicators against each other", test: (x) => x.views.has("scatter") }, { id: "caveat", text: "Read the caveat for every indicator in this topic", test: (x) => T.codes.every((c) => x.read?.has(c)) }]);
   st.read = new Set();
-  seg($(".lab-row.sx-mode"), [["trend", "Trend over time"], ["scatter", "Two indicators"]], s.view, (v) => { s.view = v; controls(); run(); });
+  seg($(".lab-row.sx-mode"), [["trend", "Trend over time"], ["scatter", "Two indicators"]], s.view, (v) => { s.view = v; st.acted = true; controls(); run(); });
   const opts = Object.entries(DATA).map(([k, d]) => [k, d.short]);
   function controls() {
     pick.innerHTML = "";
-    if (s.view === "trend") select(pick, { label: "Indicator", options: [...T.codes.map((k) => [k, DATA[k].short]), ...opts.filter(([k]) => !T.codes.includes(k))], value: s.code, onChange: (v) => { s.code = v; run(); } });
-    else { select(pick, { label: "Horizontal (x)", options: opts, value: s.x, onChange: (v) => { s.x = v; run(); } }); select(pick, { label: "Vertical (y)", options: opts, value: s.y, onChange: (v) => { s.y = v; run(); } }); }
+    if (s.view === "trend") select(pick, { label: "Indicator", options: [...T.codes.map((k) => [k, DATA[k].short]), ...opts.filter(([k]) => !T.codes.includes(k))], value: s.code, onChange: (v) => { s.code = v; st.acted = true; run(); } });
+    else { select(pick, { label: "Horizontal (x)", options: opts, value: s.x, onChange: (v) => { s.x = v; st.acted = true; run(); } }); select(pick, { label: "Vertical (y)", options: opts, value: s.y, onChange: (v) => { s.y = v; st.acted = true; run(); } }); }
     btns.innerHTML = Object.entries(COUNTRIES).sort((a, b) => a[1].localeCompare(b[1])).map(([c, n]) => `<button type="button" data-c="${c}" aria-pressed="${s.sel.has(c)}">${esc(n)}</button>`).join("");
     btns.hidden = s.view !== "trend";
   }
-  btns.addEventListener("click", (e) => { const b = e.target.closest("[data-c]"); if (!b) return; const c = b.dataset.c; if (s.sel.has(c)) s.sel.delete(c); else if (s.sel.size < 6) s.sel.add(c); b.setAttribute("aria-pressed", s.sel.has(c)); st.touched = true; run(); });
+  btns.addEventListener("click", (e) => { const b = e.target.closest("[data-c]"); if (!b) return; st.acted = true; const c = b.dataset.c; if (s.sel.has(c)) s.sel.delete(c); else if (s.sel.size < 6) s.sel.add(c); b.setAttribute("aria-pressed", s.sel.has(c)); st.touched = true; run(); });
   function run() {
     st.views.add(s.view); st.sel = st.touched ? s.sel.size : 0; const g = cv.g, W = cv.W, H = cv.H; clear(g, W, H);
     if (s.view === "trend") {
       const D = DATA[s.code], series = [...s.sel].map((c) => [c, Object.entries(D.values[c] || {}).map(([y, v]) => [+y, v]).sort((a, b) => a[0] - b[0])]).filter(([, p]) => p.length);
-      st.read.add(s.code); ch.check(st);
+      if (st.acted) st.read.add(s.code); ch.check(st);   // a caveat counts as read once the learner is using the explorer
       const all = series.flatMap(([, p]) => p); if (!all.length) { out("<p>No data for these countries on this indicator.</p>"); return; }
       const y1 = Math.max(...all.map((p) => p[1])) * 1.1, y0 = Math.min(0, Math.min(...all.map((p) => p[1])));
       const A = axes(g, { l: 56, t: 12, w: W - 70, h: H - 48 }, { x0: 1990, x1: 2024, y0, y1, xl: "year", yl: D.short, xt: 6, yt: 4, xf: (v) => v.toFixed(0), yf: (v) => fmtv(v) });
@@ -67,7 +67,7 @@ export function mount(el, ctx = {}) {
       out(`<p><b>${esc(D.name)}</b></p><ul class="sx-list" style="list-style:none;padding:0">${series.map(([c, p], i) => `<li style="color:${COL[i]}">● ${esc(COUNTRIES[c])}: ${fmtv(p.at(-1)[1])} (${p.at(-1)[0]})</li>`).join("")}</ul><p class="sx-fb"><b>Caveat:</b> ${esc(CAVEATS[s.code] || "")}</p>`);
       src.innerHTML = `<b>Real data</b> <a href="${esc(D.url)}" target="_blank" rel="noopener">${esc(D.source)}, ${esc(D.code)}</a>, retrieved ${esc(D.retrieved)}.`;
     } else {
-      st.read.add(s.x); st.read.add(s.y); ch.check(st);
+      if (st.acted) { st.read.add(s.x); st.read.add(s.y); } ch.check(st);
       const pts = Object.keys(COUNTRIES).map((c) => [c, latest(s.x, c), latest(s.y, c)]).filter(([, a, b]) => a && b);
       if (pts.length < 3) { out("<p>Too few countries have both indicators.</p>"); return; }
       const xs = pts.map((p) => p[1][1]), ys = pts.map((p) => p[2][1]), r = pearson(xs, ys);

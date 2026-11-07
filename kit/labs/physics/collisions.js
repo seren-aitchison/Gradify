@@ -13,7 +13,7 @@ export function mount(el, ctx = {}) {
   const $ = shell(el, `<div class="lab-row top"></div><div class="lab-stage"></div><div class="lab-cols"><div class="lab-stage2"></div><div class="lab-ctrl"></div></div><div class="lab-out"></div>`);
   const cv = canvas($(".lab-stage"), { aspect: 0.22, max: 180 }), bars = canvas($(".lab-stage2"), { aspect: 0.42, max: 240 });
   const ctrl = $(".lab-ctrl"), out = panel($(".lab-out"));
-  const P = { m1: 1, u1: 2, m2: 1, u2: 0, e: 1 };
+  const P = { m1: 1, u1: 2, m2: 1.5, u2: -0.5, e: 0.8 };   // a start that meets no challenge: each needs a setting changed
   let sim, st = { swap: false, stick: false, bounce: false, explode: false };
   const ch = challenges(ctrl, ctx, [
     { id: "swap", text: "Elastic, equal masses, one at rest: watch the velocities swap", test: (s) => s.swap },

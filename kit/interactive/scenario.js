@@ -21,9 +21,14 @@ import { esc, inline } from "../core/text.js";
 // stable shuffle per step, so the best choice isn't always in the same place
 const order = (n, seed) => { let s = [...seed].reduce((a, c) => (a * 31 + c.charCodeAt(0)) >>> 0, 11); const idx = [...Array(n).keys()]; for (let i = n - 1; i > 0; i--) { s = (s * 1664525 + 1013904223) >>> 0; const j = s % (i + 1); [idx[i], idx[j]] = [idx[j], idx[i]]; } return idx; };
 
-export function mountScenario(el, sc, { onComplete } = {}) {
+export function mountScenario(el, sc, ctx = {}) {
+  const { onComplete } = ctx;
   let state = structuredClone(sc.state || {}), at = sc.start;
   const log = [];
+  // every decision step is a challenge: a fully right decision is a success; anything less is unsuccessful, and the
+  // feedback shown then counts as help if the step is met later in the same visit (course engine: ctx.fail revealed)
+  ctx.declare?.(Object.entries(sc.steps).filter(([, st]) => !st.end).map(([id, st]) => ({ id, text: st.title || id })));
+  const outcome = (id, st, score) => { if (score >= 0.99) ctx.complete?.(id, st.title || id); else ctx.fail?.(id, st.title || id, { revealed: true }); };
   const paint = (feedback) => {
     const st = sc.steps[at];
     if (st.set && !feedback) Object.assign(state, typeof st.set === "function" ? st.set(state) : st.set);
@@ -45,6 +50,7 @@ export function mountScenario(el, sc, { onComplete } = {}) {
   };
   const choose = (st, c) => {
     log.push({ step: st.title, choice: c.label, score: c.score ?? 0, critical: !!c.critical, feedback: c.feedback });
+    outcome(at, st, c.critical ? 0 : c.score ?? 0);
     if (c.set) Object.assign(state, typeof c.set === "function" ? c.set(state) : c.set);
     at = c.next;
     paint({ cls: c.critical ? "no crit" : (c.score ?? 0) >= 0.99 ? "ok" : (c.score ?? 0) > 0 ? "part" : "no", head: c.critical ? "Unsafe choice" : (c.score ?? 0) >= 0.99 ? "Good decision" : (c.score ?? 0) > 0 ? "Partly right" : "Not the best choice", html: `<p>${inline(c.feedback || "")}</p>` });
@@ -54,6 +60,7 @@ export function mountScenario(el, sc, { onComplete } = {}) {
     const hits = picked.filter((i) => o[i].correct).length, wrong = picked.filter((i) => !o[i].correct).length;
     const score = Math.max(0, (hits - wrong) / right);
     log.push({ step: st.title, choice: picked.map((i) => o[i].label).join("; ") || "(none)", score, critical: false, feedback: "" });
+    outcome(at, st, score);
     at = st.multi.next;
     paint({ cls: score >= 0.99 ? "ok" : score > 0 ? "part" : "no", head: `${hits} of ${right} found${wrong ? `, ${wrong} not relevant` : ""}`, html: `<ul>${o.map((x, i) => `<li class="${x.correct ? "ok" : ""}">${x.correct ? "✓" : "✗"} ${inline(x.label)}${x.why ? `: ${inline(x.why)}` : ""}${picked.includes(i) ? " <small>(you chose this)</small>" : ""}</li>`).join("")}</ul>` });
   };

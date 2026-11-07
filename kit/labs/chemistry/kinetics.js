@@ -21,7 +21,7 @@ export function mount(el, ctx = {}) { return ctx.mode === "profile" ? profile(el
 function kinetics(el, ctx) {
   const $ = shell(el, `<div class="lab-row top"></div><div class="lab-cols"><div class="lab-stage"></div><div class="lab-ctrl"></div></div><div class="lab-out"></div>`);
   const cv = canvas($(".lab-stage"), { aspect: 0.62, max: 360 }), ctrl = $(".lab-ctrl"), out = panel($(".lab-out"));
-  let order = 1, plot = "A", k = 0.1, A0 = 1, Ea = 50, Tk = 298, mystery = null, data = null;
+  let order = 1, plot = "A", k = 0.1, A0 = 1, Ea = 80, Tk = 298, mystery = null, data = null;   // 80 kJ/mol: a 10 K rise nearly triples the rate, so finding the doubling Ea is the challenge
   const st = { half: false, mystery: false, arr: false };
   const ch = challenges(ctrl, ctx, [
     { id: "half", text: "Show that only a first-order half-life doesn't depend on the starting concentration", test: (x) => x.half },

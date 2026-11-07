@@ -227,13 +227,16 @@ export function dimensionOf(a, levels = null) {
 export function evidenceFromAttempts(attempts = [], { levels = null } = {}) {
   const out = [], lastSeen = new Map();
   for (const a of [...attempts].filter((x) => x?.question).sort((x, y) => String(x.at).localeCompare(String(y.at)))) {
-    // a lab try that didn't meet its challenge is a sign to practise, not evidence against mastery (labPractice)
+    // Lab challenges (LAB_OUTCOMES): "attempted" is engagement, never evidence. "unsuccessful" from working at a
+    // simulation without meeting the goal is a sign to practise (labPractice), not evidence against mastery; an
+    // unsuccessful *answer* (a wrong check-question option, decision or calculation: response.via "answer") counts
+    // like any wrong answer. Successes count; assisted ones as second tries.
     const outcome = labOutcome(a);
-    if (outcome === "attempt") continue;
+    if (outcome === "attempted" || (outcome === "unsuccessful" && a.response?.via !== "answer")) continue;
     const at = Date.parse(a.at), qid = a.question.id, prev = lastSeen.get(qid);
     lastSeen.set(qid, at);
     // a challenge met after asking the AI tutor about the lab counts as assisted, like a second try after feedback
-    const independent = (a.attempt || 1) === 1 && outcome !== "assisted_success";
+    const independent = (a.attempt || 1) === 1 && outcome !== "assisted_success";   // (unsuccessful answers stay independent: no help was given)
     const provisional = a.marking?.status === "provisional";
     // a lab challenge is recorded only when it's met (a lab can't see a failed try), so it counts at half weight
     const w = (DIFFICULTY_WEIGHT[a.question.d] || 1) * (independent ? 1 : 0.3) * (provisional ? 0.33 : 1) * (a.question.type === "lab" ? LAB_WEIGHT : 1);
@@ -312,11 +315,13 @@ const STEPS = [1, 3, 7, 21, 60];
 //   success           met without help
 //   assisted_success  met after the AI tutor was asked about the lab: Application evidence, weighted as assisted
 //   attempt           the learner chose the challenge ("Try this"), worked at it, and left without meeting it
-export const LAB_OUTCOMES = ["success", "assisted_success", "attempt"];
+// the four recorded outcomes of a lab challenge; "attempt" is the older name for "unsuccessful", read as it
+export const LAB_OUTCOMES = ["success", "assisted_success", "unsuccessful", "attempted"];
 export function labOutcome(a) {
   if (a?.question?.type !== "lab") return null;
   const o = a.response && typeof a.response === "object" ? a.response.outcome : null;
-  return LAB_OUTCOMES.includes(o) ? o : a.correct === false ? "attempt" : "success";
+  if (o === "attempt") return "unsuccessful";
+  return LAB_OUTCOMES.includes(o) ? o : a.correct === false ? "unsuccessful" : "success";
 }
 // Lessons whose lab challenges the learner has tried and not yet met: at least `min` unsuccessful tries since that
 // lesson's last lab success. This never lowers mastery; it says where more practice would help.
@@ -325,7 +330,9 @@ export function labPractice(attempts = [], { min = 2 } = {}) {
   for (const a of [...attempts].filter((x) => labOutcome(x)).sort((x, y) => String(x.at).localeCompare(String(y.at)))) {
     if (!a.lesson) continue;
     const g = by.get(a.lesson) || { lesson: a.lesson, tries: 0, lastAt: 0, labs: new Set(), challenges: new Set() };
-    if (labOutcome(a) === "attempt") { g.tries++; g.lastAt = Date.parse(a.at); if (a.contextId) g.labs.add(a.contextId); if (a.response?.challenge) g.challenges.add(a.response.challenge); }
+    const o = labOutcome(a);
+    if (o === "attempted") continue;   // touched, not tried: neither a try nor a reset
+    if (o === "unsuccessful") { g.tries++; g.lastAt = Date.parse(a.at); if (a.contextId) g.labs.add(a.contextId); if (a.response?.challenge) g.challenges.add(a.response.challenge); }
     else { g.tries = 0; g.labs.clear(); g.challenges.clear(); }
     by.set(a.lesson, g);
   }

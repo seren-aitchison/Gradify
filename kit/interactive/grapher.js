@@ -33,6 +33,7 @@ export const matches = (ch, vals) => Object.entries(ch.target).every(([k, v]) =>
 
 export function mountGrapher(el, ctx = {}) {
   const W = 560, H = 420, view = { W, H, ...RANGE };
+  ctx.declare?.(CHALLENGES.map((c) => ({ id: c.id, text: c.title })));
   let mode = "free", ch = null, expr = "a x^2 + b x + c", vals = { a: 1, b: 0, c: 0 }, err = "";
   const fn = () => { try { const t = parse(expr); const bad = [...variables(t)].filter((v) => !"xabc".includes(v)); err = bad.length ? `Use x for the variable and a, b, c for sliders (not ${bad.join(", ")}).` : ""; const f = compile(t); return (x) => f({ x, ...vals }); } catch (e) { err = e.message; return () => NaN; } };
   const grid = () => { let g = ""; for (let i = RANGE.x[0]; i <= RANGE.x[1]; i++) { const X = ((i - RANGE.x[0]) / 16) * W, Y = H - ((i - RANGE.y[0]) / 16) * H; g += `<line class="${i === 0 ? "ax" : ""}" x1="${X}" x2="${X}" y1="0" y2="${H}"/><line class="${i === 0 ? "ax" : ""}" x1="0" x2="${W}" y1="${Y}" y2="${Y}"/>${i && i % 2 === 0 ? `<text x="${X + 3}" y="${H / 2 + 13}">${i}</text><text x="${W / 2 + 4}" y="${Y - 3}">${i}</text>` : ""}`; } return g; };

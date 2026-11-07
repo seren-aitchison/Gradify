@@ -21,7 +21,7 @@ export function mount(el, ctx = {}) {
   const $ = shell(el, `<div class="lab-cols"><div><div class="lab-stage"></div><p class="mg-tip">Click or tap to add a point. Click a point again to remove it.</p></div><div class="lab-ctrl"></div></div><div class="lab-out"></div>`);
   const cv = canvas($(".lab-stage"), { aspect: 0.75, max: 440 }), ctrl = $(".lab-ctrl"), out = panel($(".lab-out"));
   const box = { x0: 0, x1: 10, y0: 0, y1: 16 };
-  let pts = SETS.strong.map((p) => [...p]), showRes = true;
+  let pts = SETS.weak.map((p) => [...p]), showRes = true;   // starts weak: making r exceed 0.95 is a challenge, not the starting state
   const ch = challenges(ctrl, ctx, [
     { id: "pos", text: "Make r greater than 0.95", test: (x) => x.r > 0.95 },
     { id: "negr", text: "Make a strong negative correlation: r below −0.9", test: (x) => x.r < -0.9 },

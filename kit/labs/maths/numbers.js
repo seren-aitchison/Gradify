@@ -18,7 +18,7 @@ export function mount(el, ctx = {}) { return ctx.mode === "modular" ? modular(el
 function sieve(el, ctx) {
   const N = 200, $ = shell(el, `<div class="lab-cols"><div><div class="mg-sieve" role="grid" aria-label="Numbers 1 to ${N}"></div></div><div class="lab-ctrl"></div></div><div class="lab-out"></div>`);
   const grid = $(".mg-sieve"), ctrl = $(".lab-ctrl"), out = panel($(".lab-out"));
-  let crossed = new Map(), p = 1, done = false, num = 360;
+  let crossed = new Map(), p = 1, done = false, num = 84;   // 2² × 3 × 7: four prime factors, so the five-factor challenge needs a choice
   const ch = challenges(ctrl, ctx, [
     { id: "full", text: "Run the sieve to the end and find all 46 primes below 200", test: (x) => x.done },
     { id: "sqrt", text: "Notice when you can stop: no new numbers are crossed out after 13", test: (x) => x.p > 13 },

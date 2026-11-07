@@ -36,3 +36,5 @@ export function nameHtml(s) {
 
 // every page with a sub-site header imports this module, so its phone and tablet menu is mounted here
 if (typeof document !== "undefined" && document.querySelector) mountSubNav(document);
+// offline support from any page a learner arrives at, not only the homepage (the worker at the site root covers every page)
+if (typeof navigator !== "undefined" && "serviceWorker" in navigator && typeof addEventListener === "function") addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {}));

@@ -29,6 +29,9 @@ import { mountTutorPanel, directorHtml } from "./tutor-panel.js";
 import { readLab, labState } from "./lab-state.js";
 import { SUPABASE_URL } from "../../gradify.config.js";
 import { buildExam, runExam, FORMATS } from "../assess/exam.js";
+import { reviewLabel } from "./review.js";
+import { REVIEWS } from "./reviews.js";
+import { FINGERPRINTS } from "./ix-manifest.js";
 
 const DAY = 864e5;
 const XP = { lesson: 10, check: 5, chest: 15, quiz: 50, perfect: 20, review: 2, problem: 5, weekly: 100 };
@@ -87,7 +90,9 @@ export function mountCourse(root, cfg) {
   // what a course calls its tracks ("Track" by default, "Stage" for the SciGradify sciences)
   const TW = cfg.trackWord || "Track", tw1 = TW.toLowerCase();
   // the interactives tab: "Practice" (law, nursing) or "Lab" (sciences); interactives can also sit inside lessons (IX: lines)
-  const PL = cfg.practiceLabel || "Practice", ixs = cfg.interactives || [], ixById = Object.fromEntries(ixs.map((x) => [x.id, x]));
+  // an interactive's evidence map (challenge → lesson): the course's (kit/courses/*/evidence.js), with any the
+  // interactive carries itself taking precedence
+  const PL = cfg.practiceLabel || "Practice", ixs = (cfg.interactives || []).map((x) => (cfg.evidence?.[x.id] ? { ...x, evidence: { ...cfg.evidence[x.id], ...(x.evidence || {}) } } : x)), ixById = Object.fromEntries(ixs.map((x) => [x.id, x]));
   // courses with a QA record (cfg.qa) label any unit that hasn't passed every quality stage as a draft
   // courses that set reviewLine show each written lesson's review state and date from cfg.qa
   const reviewLine = (u) => { const r = cfg.qa?.[u.id] || {}; const d = r.reviewed?.date; return `${d ? `Last reviewed ${esc(d)}${r.reviewed.by ? ` (${esc(r.reviewed.by)})` : ""}` : "Not yet reviewed"} · sources ${r.sources?.date ? `checked ${esc(r.sources.date)}` : "pending verification"}${cfg.writtenOn?.[u.id] ? ` · written ${esc(cfg.writtenOn[u.id])}` : ""}`; };
@@ -563,11 +568,13 @@ export function mountCourse(root, cfg) {
     </article>`;
     scrollTo(0, 0);
     wirePractice(main, "lesson", id);
-    // labs that name this lesson but aren't placed in its notes go at the end, before the tutor (up to two)
-    if (N) {
+    // every interactive that names this lesson is reachable from it: those not placed in its notes go at the end
+    // (before the tutor, or the footer when the notes aren't written yet), two in full and the rest as links
+    {
       const placed = new Set([...main.querySelectorAll(".co-ixslot")].map((s) => s.dataset.ix));
-      const linked = ixs.filter((x) => x.lessons?.includes(id) && !placed.has(x.id)).slice(0, 2);
-      if (linked.length) main.querySelector(".co-tutor")?.insertAdjacentHTML("beforebegin", `<section class="co-trylab"><h3>Try it yourself</h3>${linked.map((x) => `<div class="co-ixslot" data-ix="${esc(x.id)}"></div>`).join("")}</section>`);
+      const linked = ixs.filter((x) => x.lessons?.includes(id) && !placed.has(x.id)), shown = linked.slice(0, 2), more = linked.slice(2);
+      const at = main.querySelector(".co-tutor") || main.querySelector(".co-notes > footer");
+      if (linked.length && at) at.insertAdjacentHTML("beforebegin", `<section class="co-trylab"><h3>Try it yourself</h3>${shown.map((x) => `<div class="co-ixslot" data-ix="${esc(x.id)}"></div>`).join("")}${more.length ? `<p class="co-morelabs">More for this lesson: ${more.map((x) => `<a href="#/practice/${esc(x.id)}">${esc(x.title)}</a>`).join(" · ")}</p>` : ""}</section>`);
     }
     mountIxSlots(main);
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", () => flashcards(N.cards, l)));
@@ -1052,31 +1059,53 @@ export function mountCourse(root, cfg) {
   // The AI tutor on the page is told what the lab last used shows now (kit/course/lab-state.js reads it from the lab's
   // controls and readout); report(text) lets a lab add details its page doesn't show.
   const labNow = new Map(); let labLast = null;
-  // Lab challenge outcomes (kit/learning/mastery.js labOutcome): "success"; "assisted_success" when the AI tutor
-  // answered a question about this lab before it was met; "attempt" when the learner chose the challenge (focus),
-  // interacted for at least TRY_MOVES separate moments, and moved on without meeting it. Without a chosen challenge
-  // nothing is recorded as a failure: the lab can't tell what the learner was aiming at.
-  const labTry = new Map(), labHelped = new Set(), TRY_MOVES = 5;
+  // Lab challenge outcomes (kit/learning/mastery.js LAB_OUTCOMES), each recorded against the challenge's lesson:
+  //   "success"           met, with no help on this lab this visit
+  //   "assisted_success"  met after the AI tutor answered a question about the lab, or after the interactive showed
+  //                       the worked answer to this challenge this visit (ctx.fail with revealed)
+  //   "unsuccessful"      a wrong answer to the challenge (ctx.fail), or the learner chose it ("Try this"), worked at it
+  //                       for at least TRY_MOVES separate moments and moved on without meeting it
+  //   "attempted"         chosen and touched, but fewer than TRY_MOVES moments: engagement, never mastery evidence
+  // XP is awarded separately and only for a first success; mastery evidence never comes from opening a lab.
+  const labTry = new Map(), labHelped = new Set(), labShown = new Map(), labFailed = new Map(), TRY_MOVES = 5;
+  const labDecl = new Map(), labMetNow = new Map(), labTouched = new Set(), labOnOpen = new Map();
+  const labDeclared = (x) => labDecl.get(x.id) || labDecl.set(x.id, new Map()).get(x.id);   // kept for the page's life
+  const labMet = (x) => labMetNow.get(x.id) || labMetNow.set(x.id, new Set()).get(x.id);     // met this visit
   const labRecord = (x, task, label, outcome, extra = {}) => {
-    const l = byId[x.evidence?.[task]]; if (!l) return;
-    const ok = outcome !== "attempt";
+    const l = byId[x.evidence?.[task]]; if (!l) return null;
+    const ok = outcome === "success" || outcome === "assisted_success";
     record({ Q: { type: "lab", d: 2, objectives: [] }, key: `ix:${x.id}:${task}`, v: null, l }, "practice", x.id,
       { score: ok ? 1 : 0, correct: ok, method: "auto", status: "final" }, { response: { challenge: label || task, outcome, ...extra } });
   };
   const endTry = (x) => {
     const t = labTry.get(x.id); labTry.delete(x.id);
-    if (t && t.moves >= TRY_MOVES && !S.solved[`ix:${x.id}:${t.task}`]) labRecord(x, t.task, t.label, "attempt", { moves: t.moves, seconds: Math.round((Date.now() - t.at) / 1000) });
+    if (t && t.moves >= 1 && !S.solved[`ix:${x.id}:${t.task}`]) labRecord(x, t.task, t.label, t.moves >= TRY_MOVES ? "unsuccessful" : "attempted", { via: "try", moves: t.moves, seconds: Math.round((Date.now() - t.at) / 1000) });
   };
   const endTries = () => { for (const id of [...labTry.keys()]) if (ixById[id]) endTry(ixById[id]); };
   addEventListener("pagehide", endTries);
   const ixCtx = (x) => ({ ...x,
     onComplete: (r) => { const k = `ix:${x.id}`; if (!S.solved[k] && r?.score >= 0.7) { S.solved[k] = Date.now(); save(); award(XP.quiz, "practice", x.id, `${cfg.name}: ${x.title}`); } },
     complete: (task, label) => {
-      const k = `ix:${x.id}:${task}`; if (S.solved[k]) return;
-      if (labTry.get(x.id)?.task === task) labTry.delete(x.id);
+      // met before the learner has touched the interactive (its starting state happens to meet it): no XP, no
+      // evidence. Opening something is never proof of understanding. scripts/check-interactives.cjs reports these.
+      if (!labTouched.has(x.id)) { (labOnOpen.get(x.id) || labOnOpen.set(x.id, new Set()).get(x.id)).add(task); return; }
+      const k = `ix:${x.id}:${task}`; if (labTry.get(x.id)?.task === task) labTry.delete(x.id);
+      const helped = labHelped.has(x.id) || labShown.get(x.id)?.has(task);
+      // a challenge is evidence each visit it's met (a practice item can be met again); XP only the first time ever
+      if (!labMet(x).has(task)) { labMet(x).add(task); labRecord(x, task, label, helped ? "assisted_success" : "success"); }
+      if (S.solved[k]) return;
       S.solved[k] = Date.now(); save(); award(XP.problem, "practice", k, `${cfg.name}: ${x.title}${label ? ` (${label})` : ""}`);
-      labRecord(x, task, label, labHelped.has(x.id) ? "assisted_success" : "success");
     },
+    // a wrong answer to a challenge (once per challenge per visit); revealed: the interactive then showed the answer
+    fail: (task, label, { revealed = false } = {}) => {
+      if (revealed) { if (!labShown.has(x.id)) labShown.set(x.id, new Set()); labShown.get(x.id).add(task); }
+      if (labTry.get(x.id)?.task === task) labTry.delete(x.id);
+      const f = labFailed.get(x.id) || labFailed.set(x.id, new Set()).get(x.id);
+      if (f.has(task) || labMet(x).has(task)) return; f.add(task);
+      labRecord(x, task, label, "unsuccessful", { via: "answer" });
+    },
+    // the challenges this interactive offers (each needs a lesson in its evidence map; checked by scripts/check-interactives.cjs)
+    declare: (list) => { for (const c of list || []) if (c?.id) labDeclared(x).set(c.id, c.text || c.id); },
     solved: (task) => Boolean(S.solved[`ix:${x.id}:${task}`]),
     // which challenge the learner says they're working on (only for labs whose challenges count as evidence)
     focus: x.evidence ? (task, label) => { endTry(x); if (task && x.evidence[task]) labTry.set(x.id, { task, label, moves: 0, last: 0, at: Date.now() }); } : undefined,
@@ -1088,21 +1117,25 @@ export function mountCourse(root, cfg) {
     return state ? { title: ixById[id].title, state } : null;
   };
   const mounted = new Set();
-  const unmountIx = () => { endTries(); for (const stop of mounted) { try { stop(); } catch { /* already gone */ } } mounted.clear(); labNow.clear(); labHelped.clear(); labLast = null; };
+  const unmountIx = () => { endTries(); for (const stop of mounted) { try { stop(); } catch { /* already gone */ } } mounted.clear(); labNow.clear(); labHelped.clear(); labShown.clear(); labFailed.clear(); labMetNow.clear(); labTouched.clear(); labLast = null; };
   async function mountIx(x, el) {
     try {
-      const mod = await x.load(); el.innerHTML = ""; const stop = mod.mount(el, ixCtx(x)); if (typeof stop === "function") mounted.add(stop);
+      const ctx = ixCtx(x), mod = await x.load(); el.innerHTML = ""; const stop = mod.mount(el, ctx); if (typeof stop === "function") mounted.add(stop);
+      // for scripts/check-interactives.cjs: the interactive's context, its declared challenges and its records
+      el.gradifyIx = { id: x.id, ctx, evidence: x.evidence || {}, declared: () => [...labDeclared(x)].map(([id, text]) => ({ id, text })), attempts: () => (S.attempts || []).filter((a) => a.contextId === x.id), metOnOpen: () => [...(labOnOpen.get(x.id) || [])], touch: () => labTouched.add(x.id) };
       // the lab the learner touched last is the one the tutor on the page is told about
       // a "move" on a chosen challenge is an interaction at least a second after the last (a slider drag is one move)
-      if (!el.dataset.watch) { el.dataset.watch = "1"; for (const ev of ["pointerdown", "input", "change"]) el.addEventListener(ev, (e) => {
-        labLast = x.id;
+      if (!el.dataset.watch) { el.dataset.watch = "1"; for (const ev of ["pointerdown", "input", "change", "keydown"]) el.addEventListener(ev, (e) => {
+        labLast = x.id; labTouched.add(x.id);
         const t = labTry.get(x.id), now = Date.now();
         if (t && !e.target.closest?.("[data-try]") && now - t.last >= 1000) { t.moves++; t.last = now; }
       }, { passive: true }); }
     }
     catch (e) { el.innerHTML = `<p class="co-empty">This interactive couldn't load (${esc(e.message)}).</p>`; }
   }
-  const ixCard = (x, open) => `<div class="co-lab" data-ix="${esc(x.id)}"><div class="co-labhead"><span class="co-kicker">${esc(PL === "Lab" ? `Interactive · ${x.kind}` : x.kind)}</span><h3>${esc(x.title)}</h3><p>${esc(x.sub)}</p></div><div class="co-labstage co-ix"><p class="co-empty">Loading the interactive…</p></div>${x.note ? `<p class="co-labnote"><b>Model:</b> ${inline(x.note)}</p>` : ""}</div>`;
+  // under every interactive: its expert review status, and that it works offline once opened (the tutor needs a connection)
+  const ixStatus = (x) => { const r = reviewLabel(REVIEWS[`${cfg.slug}/${x.id}`], FINGERPRINTS[`${cfg.slug}/${x.id}`]); return `<p class="co-labstatus"><span class="co-review ${r.status}">${esc(r.text)}</span><span>Available offline after first use · the AI tutor needs an internet connection</span></p>`; };
+  const ixCard = (x, open) => `<div class="co-lab" data-ix="${esc(x.id)}"><div class="co-labhead"><span class="co-kicker">${esc(PL === "Lab" ? `Interactive · ${x.kind}` : x.kind)}</span><h3>${esc(x.title)}</h3><p>${esc(x.sub)}</p></div><div class="co-labstage co-ix"><p class="co-empty">Loading the interactive…</p></div>${x.note ? `<p class="co-labnote"><b>Model:</b> ${inline(x.note)}</p>` : ""}${ixStatus(x)}</div>`;
   let ixObserver = null;
   function mountIxSlots(el) {
     el.querySelectorAll(".co-ixslot").forEach((slot) => { const x = ixById[slot.dataset.ix]; slot.outerHTML = x ? ixCard(x) : ""; });
@@ -1181,8 +1214,7 @@ export function mountCourse(root, cfg) {
       return;
     }
     main.innerHTML = `<div class="co-crumbs"><a href="#/practice">← ${esc(PL)}</a><span>${esc(x.kind)}</span></div><div class="co-panel co-ix"></div>`;
-    const mod = await x.load();
-    mod.mount(main.querySelector(".co-ix"), ixCtx(x));
+    await mountIx(x, main.querySelector(".co-ix"));
   }
 
 
