@@ -7,13 +7,19 @@
 import { shell, canvas, slider, select, button, panel, challenges, clear, fmt, C } from "../lab.js";
 import { plane, curve } from "./plot.js";
 
-const EVENTS = { coin: { label: "Coin lands heads", p: 1 / 2 }, six: { label: "Die shows a six", p: 1 / 6 }, even: { label: "Die shows an even number", p: 1 / 2 }, two: { label: "Two dice total 7", p: 6 / 36 } };
-const draw = { coin: () => Math.random() < 0.5, six: () => Math.random() * 6 < 1, even: () => Math.floor(Math.random() * 6) % 2 === 1, two: () => Math.floor(Math.random() * 6) + Math.floor(Math.random() * 6) + 2 === 7 };
-const POPS = {
+export const EVENTS = { coin: { label: "Coin lands heads", p: 1 / 2 }, six: { label: "Die shows a six", p: 1 / 6 }, even: { label: "Die shows an even number", p: 1 / 2 }, two: { label: "Two dice total 7", p: 6 / 36 } };
+export const draw = { coin: () => Math.random() < 0.5, six: () => Math.random() * 6 < 1, even: () => Math.floor(Math.random() * 6) % 2 === 1, two: () => Math.floor(Math.random() * 6) + Math.floor(Math.random() * 6) + 2 === 7 };
+export const POPS = {
   uniform: { label: "Uniform on [0, 1]", mean: 0.5, sd: Math.sqrt(1 / 12), r: () => Math.random() },
   exp: { label: "Exponential (skewed), mean 1", mean: 1, sd: 1, r: () => -Math.log(1 - Math.random()) },
   die: { label: "One die roll", mean: 3.5, sd: Math.sqrt(35 / 12), r: () => Math.floor(Math.random() * 6) + 1 },
 };
+// k sample means, each of n draws from r (a population's sampler)
+export function sampleMeans(r, n, k) { const out = []; for (let i = 0; i < k; i++) { let s = 0; for (let j = 0; j < n; j++) s += r(); out.push(s / n); } return out; }
+// mean and sample standard deviation
+export function meanSd(xs) { const m = xs.length, mu = m ? xs.reduce((a, b) => a + b, 0) / m : NaN; return { mu, sd: m > 1 ? Math.sqrt(xs.reduce((a, b) => a + (b - mu) ** 2, 0) / (m - 1)) : NaN }; }
+// the normal density the central limit theorem predicts
+export const normalPdf = (x, mu, sd) => Math.exp(-((x - mu) ** 2) / (2 * sd * sd)) / (sd * Math.sqrt(2 * Math.PI));
 export function mount(el, ctx = {}) { return ctx.mode === "clt" ? clt(el, ctx) : lln(el, ctx); }
 
 function lln(el, ctx) {
@@ -55,7 +61,7 @@ function clt(el, ctx) {
   ]);
   select(ctrl, { label: "Population", options: Object.entries(POPS).map(([k, v]) => [k, v.label]), value: pop, onChange: (v) => { pop = v; means = []; run(); } });
   slider(ctrl, { label: "Sample size n", min: 1, max: 50, step: 1, value: n, fmt: (v) => v.toFixed(0), onInput: (v) => { n = v; means = []; run(); } });
-  for (const k of [100, 1000]) button(ctrl, `Take ${k.toLocaleString()} samples`, () => { for (let i = 0; i < k; i++) { let s = 0; for (let j = 0; j < n; j++) s += POPS[pop].r(); means.push(s / n); } run(); });
+  for (const k of [100, 1000]) button(ctrl, `Take ${k.toLocaleString()} samples`, () => { means.push(...sampleMeans(POPS[pop].r, n, k)); run(); });
   button(ctrl, "Clear", () => { means = []; run(); });
   function run() {
     const Q = POPS[pop], se = Q.sd / Math.sqrt(n), g = cv.g, W = cv.W, H = cv.H; clear(g, W, H);
@@ -64,8 +70,8 @@ function clt(el, ctx) {
     const dens = counts.map((c) => c / Math.max(1, means.length) / w), peak = Math.max(1 / (se * Math.sqrt(2 * Math.PI)), ...dens, 0.1);
     const P = plane(g, W, H, { x0, x1, y0: 0, y1: peak * 1.15, pad: 24 }); P.draw();
     g.save(); g.fillStyle = "rgba(90,160,255,.45)"; dens.forEach((d, i) => g.fillRect(P.X(x0 + i * w) + 0.5, P.Y(d), P.X(x0 + (i + 1) * w) - P.X(x0 + i * w) - 1, P.Y(0) - P.Y(d))); g.restore();
-    if (n > 1) curve(g, P, (x) => Math.exp(-((x - Q.mean) ** 2) / (2 * se * se)) / (se * Math.sqrt(2 * Math.PI)), C.amber, 2, [6, 4]);
-    const m = means.length, mu = m ? means.reduce((a, b) => a + b, 0) / m : NaN, sd = m > 1 ? Math.sqrt(means.reduce((a, b) => a + (b - mu) ** 2, 0) / (m - 1)) : NaN;
+    if (n > 1) curve(g, P, (x) => normalPdf(x, Q.mean, se), C.amber, 2, [6, 4]);
+    const m = means.length, { mu, sd } = meanSd(means);
     if (m) ch.check({ n, m, pop, ratio: sd / se });
     out(m ? `<p>${m.toLocaleString()} sample means of size ${n} · their mean <b>${fmt(mu, 4)}</b> (population μ = ${fmt(Q.mean, 4)}) · their SD <b>${fmt(sd, 4)}</b> (σ/√n = ${fmt(se, 4)})</p><p>${n === 1 ? "With n = 1 you just see the population itself." : "The dashed curve is the normal distribution the central limit theorem predicts: N(μ, σ²/n). It fits better as n grows, even for a skewed population."}</p>` : `<p>Take some samples to start.</p>`);
   }
