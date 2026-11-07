@@ -32,6 +32,7 @@ export const EXCLUDE = {
   top: {
     ".github": "CI configuration",
     ".gitignore": "repository settings",
+    ".mcp.json": "Claude Code MCP server settings",
     "README.md": "repository documentation",
     "docs": "internal documentation, plans and audit records",
     "scripts": "operational and deployment scripts",
