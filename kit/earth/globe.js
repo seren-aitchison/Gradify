@@ -1,15 +1,14 @@
-// Gradify Earth as a 3D globe on a canvas: land drawn as glowing dots, each module lighting
-// up its own continent, topics as pins, prerequisites as arcs over the surface, and portals
+// Gradify Earth as a 3D globe on a canvas: a lit planet with land, oceans, clouds, a night side with
+// city lights and an atmosphere (kit/earth/surface.js), each module tinting its own continent, topics as pins, prerequisites as arcs over the surface, and portals
 // to other Gradify sites arcing up into space. Drag to turn it; it keeps spinning a little
 // when you let go, and drifts slowly when left alone.
-import { LAND } from "./earth-land.js";
+import { createSurface } from "./surface.js";
 
 const RAD = Math.PI / 180;
 const reduce = globalThis.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
 // lat/lon (degrees) → unit vector
 const vec = (lat, lon) => { const a = lat * RAD, b = lon * RAD; return [Math.cos(a) * Math.sin(b), Math.sin(a), Math.cos(a) * Math.cos(b)]; };
-const LAND_V = []; for (let i = 0; i < LAND.length; i += 2) LAND_V.push(vec(LAND[i] / 10, LAND[i + 1] / 10));
 const angle = (p, q) => Math.acos(Math.max(-1, Math.min(1, p[0] * q[0] + p[1] * q[1] + p[2] * q[2])));
 // deterministic "random" per dot, so city lights don't flicker between frames
 const hash = (i) => { let x = Math.sin(i * 12.9898) * 43758.5453; return x - Math.floor(x); };
@@ -24,8 +23,9 @@ export function createGlobe(canvas, { onPick, onHover }) {
   let target = null;                                      // animate to face a topic
   let scene = { regions: [], pins: [], roads: [], portals: [], selected: null, rings: true };
   let pinsOnScreen = [], hubsOnScreen = [], visible = true, raf = 0, t0 = performance.now();
-  // dots tinted by the nearest module region, worked out once per scene
-  let dotTint = [];
+  // the planet itself, and a field of stars behind it
+  const surface = createSurface();
+  const stars = Array.from({ length: 220 }, (_, i) => [hash(i + 0.5), hash(i + 101.3), 0.25 + hash(i + 57.7) * 0.75, hash(i + 9.1) > 0.92]);
 
   function resize() {
     const r = canvas.getBoundingClientRect();
@@ -49,11 +49,7 @@ export function createGlobe(canvas, { onPick, onHover }) {
 
   function setScene(s) {
     scene = s;
-    dotTint = LAND_V.map((v) => {
-      let best = null, d = 1e9;
-      for (const r of scene.regions) { const a = angle(v, r.v); if (a < r.radius && a < d) { d = a; best = r; } }
-      return best ? { rgb: best.rgb, k: (1 - d / best.radius) * best.light, locked: best.locked } : null;
-    });
+    surface.setRegions(scene.regions);
     kick();
   }
 
@@ -61,40 +57,21 @@ export function createGlobe(canvas, { onPick, onHover }) {
     const t = (now - t0) / 1000;
     ctx.clearRect(0, 0, W, H);
     const r = R * zoom;
-    // atmosphere glow
-    let g = ctx.createRadialGradient(cx, cy, r * 0.9, cx, cy, r * 1.35);
-    g.addColorStop(0, "rgba(70,140,255,.32)"); g.addColorStop(0.35, "rgba(70,140,255,.10)"); g.addColorStop(1, "rgba(70,140,255,0)");
-    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, r * 1.35, 0, 7); ctx.fill();
-    // ocean sphere
-    g = ctx.createRadialGradient(cx - r * 0.35, cy - r * 0.4, r * 0.1, cx, cy, r);
-    g.addColorStop(0, "#0b1d33"); g.addColorStop(0.6, "#050e1c"); g.addColorStop(1, "#02060d");
-    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.fill();
-    // rim light
-    g = ctx.createRadialGradient(cx, cy, r * 0.9, cx, cy, r);
-    g.addColorStop(0, "rgba(120,180,255,0)"); g.addColorStop(1, "rgba(140,200,255,.38)");
-    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.fill();
-
-    // land dots: bright blue-white, warm "city lights", and module regions in their colour,
-    // added together so dense land glows like the reference
-    const size = Math.max(1.3, r / 150);
-    ctx.globalCompositeOperation = "lighter";
-    for (let i = 0; i < LAND_V.length; i++) {
-      const p = project(LAND_V[i]);
-      if (p.z < 0.02) continue;
-      const shade = 0.4 + 0.6 * p.z, h = hash(i), tint = dotTint[i];
-      let col, a, s = size * (0.75 + p.z * 0.45);
-      if (tint && !tint.locked && h <= 0.88) {
-        // fade from the module's colour at the centre of its region to blue at the edge
-        const m = Math.min(1, tint.k * 1.8), blue = [120, 175, 255];
-        col = blue.map((c, j) => Math.round(c + (tint.rgb[j] - c) * m));
-        a = shade * (0.95 - 0.1 * m + 0.1 * m * Math.sin(t * 1.6 + h * 20));
-        s *= 1 + m * 0.3;
-      } else if (h > 0.88) { col = [255, 150, 90]; a = shade * (0.7 + 0.3 * Math.sin(t * 2 + h * 40)); s *= 1.25; }
-      else { col = tint?.locked ? [150, 150, 165] : [120, 175, 255]; a = shade * (tint?.locked ? 0.45 : 0.95); }
-      ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${Math.min(1, a).toFixed(3)})`;
-      ctx.fillRect(p.x - s / 2, p.y - s / 2, s, s);
+    // stars, then the atmosphere's glow into space, then the planet
+    for (const [sx, sy, b, big] of stars) {
+      const x = sx * W, y = sy * H; if (Math.hypot(x - cx, y - cy) < r * 1.02) continue;
+      ctx.fillStyle = `rgba(220,232,255,${(b * (0.55 + 0.45 * Math.sin(t * 0.7 + sx * 40))).toFixed(3)})`;
+      ctx.fillRect(x, y, big ? 1.6 : 1, big ? 1.6 : 1);
     }
-    ctx.globalCompositeOperation = "source-over";
+    let g = ctx.createRadialGradient(cx, cy, r * 0.96, cx, cy, r * 1.22);
+    g.addColorStop(0, "rgba(110,175,255,.42)"); g.addColorStop(0.25, "rgba(80,150,255,.16)"); g.addColorStop(1, "rgba(70,140,255,0)");
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, r * 1.22, 0, 7); ctx.fill();
+    surface.render(ctx, cx, cy, r, yaw, pitch, t, dpr);
+    // a thin bright rim where sunlight scatters through the atmosphere
+    ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, r + 0.6, 0, 7);
+    const rim = ctx.createLinearGradient(cx - r, cy - r, cx + r * 0.6, cy + r * 0.8);
+    rim.addColorStop(0, "rgba(200,230,255,.85)"); rim.addColorStop(0.55, "rgba(140,190,255,.25)"); rim.addColorStop(1, "rgba(140,190,255,.05)");
+    ctx.strokeStyle = rim; ctx.lineWidth = 1.4; ctx.stroke(); ctx.restore();
 
     // contour rings floating around the planet, like orbits
     if (scene.rings) {
@@ -213,11 +190,18 @@ export function createGlobe(canvas, { onPick, onHover }) {
     }
   }
 
+  // labels sit in small dark boxes, like a mission-control display
   function label(text, x, y, color, size, bold) {
+    ctx.save();
+    ctx.globalCompositeOperation = "source-over";
     ctx.font = `${bold ? 700 : 500} ${size}px Geist, Inter, system-ui, sans-serif`;
-    ctx.textAlign = "center";
-    ctx.lineWidth = 3.5; ctx.strokeStyle = "rgba(0,0,0,.85)"; ctx.strokeText(text, x, y);
-    ctx.fillStyle = color; ctx.fillText(text, x, y);
+    ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
+    const w = ctx.measureText(text).width + 10, h = size + 7, bx = x - w / 2, by = y - size - 1;
+    ctx.beginPath(); ctx.roundRect ? ctx.roundRect(bx, by, w, h, 4) : ctx.rect(bx, by, w, h);
+    ctx.fillStyle = "rgba(8,12,18,.74)"; ctx.fill();
+    ctx.strokeStyle = "rgba(255,255,255,.16)"; ctx.lineWidth = 1; ctx.stroke();
+    ctx.fillStyle = color; ctx.fillText(text, x, y + 1);
+    ctx.restore();
   }
   const clampPitch = (p) => Math.max(-1.25, Math.min(1.25, p));
 

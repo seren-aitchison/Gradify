@@ -27,7 +27,19 @@ function taper(x0, y0, cx, cy, x1, y1, w0, w1, N = 14) {
   return `M${pts.map(([x, y]) => `${f1(x)} ${f1(y)}`).join(" L")} Z`;
 }
 
-export function drawTree(el, { sites, bars, rand }) {
+// The Gradify Tree: the low-poly 3D island (kit/lifeos/island3d.js) where WebGL works, loaded on first use; the
+// flat drawing below everywhere else, and for the moment before the 3D module arrives.
+let island = null, islandP = null;
+const loadIsland = () => (islandP ||= import("./island3d.js").then((m) => (m.webglOK() ? (island = m) : null)).catch(() => null));
+export function drawTree(el, data) {
+  if (island) { el.__drawn = null; island.drawIsland(el, data); return; }
+  drawTreeFlat(el, data);
+  // swap in the island once it's loaded, unless something else has been drawn here since
+  const mine = (el.__drawn = {});
+  loadIsland().then((m) => { if (m && el.isConnected && el.__drawn === mine) m.drawIsland(el, data); });
+}
+
+export function drawTreeFlat(el, { sites, bars, rand }) {
   const W = 760, G = 372, X = 380;
   // ids are per drawing, so two trees on one page don't share gradients or clips
   const U = `t${Math.random().toString(36).slice(2, 8)}`;
@@ -134,6 +146,7 @@ export function drawTree(el, { sites, bars, rand }) {
 
 // Isometric garden of the last 12 weeks
 export function drawForest(el, { days, colourOf, off }) {
+  el.__drawn = null; island?.disposeIsland(el);
   const TW = 46, TH = 23, D = 8;
   const cols = Math.ceil(days.length / 7);
   const ox = 7 * (TW / 2) + 20, oy = 30;

@@ -503,6 +503,9 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .grow-body { display: grid; grid-template-columns: 1fr 250px; gap: 16px; align-items: center; }
 .tree-wrap { border-radius: 18px; overflow: hidden; background: radial-gradient(90% 80% at 50% 35%, #142224, #070a0b); }
 .tree-wrap svg { display: block; width: 100%; height: auto; max-height: 520px; }
+.isle3d { width: 100%; touch-action: pan-y; }
+.isle3d canvas { display: block; width: 100%; height: auto; cursor: grab; }
+.isle3d canvas:active { cursor: grabbing; }
 .mote { fill: #e8fff4; opacity: .12; animation: mote 5s ease-in-out infinite alternate; }
 @keyframes mote { to { opacity: .45; } }
 .isle-line { fill: none; stroke: rgba(40, 22, 10, .28); stroke-width: 3; stroke-linecap: round; }
