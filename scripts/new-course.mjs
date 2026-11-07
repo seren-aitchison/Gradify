@@ -7,11 +7,18 @@
 //     creates kit/courses/<slug>/ (course.js, syllabus.js, ids.js, qa.js, interactives.js, evidence.js, registry.js,
 //     notes/) and <folder>/course/index.html, and links the course from the site's homepage and nav. Never
 //     overwrites an existing file.
+//   node scripts/new-course.mjs check <slug> [--unit uNN] [draft.txt …]
+//     lists every lesson-standard problem and the predicted length-bias warning, for written schools or a draft
+//   node scripts/new-course.mjs add-notes <slug> <uNN> part.txt … [--replace]
+//     wraps plain notes text as notes/<uNN>.js (refusing text that would break the module) and registers the school
+//   node scripts/new-course.mjs doctor <slug>
+//     reports what still stands between the course and registration across Gradify
 //   node scripts/new-course.mjs lock <slug>
 //     records every lesson id in ids.js and gives every question a permanent id (registry.js). Run after any
 //     change to the syllabus or notes; tests/new-courses.test.mjs fails until it has been run.
 import { readFile, writeFile, mkdir, access } from "node:fs/promises";
 import { updateRegistry } from "./curriculum-registry.mjs";
+import { schoolProblems, unsafeForTemplate } from "./lesson-standard.mjs";
 
 const root = new URL("../", import.meta.url);
 const exists = (p) => access(new URL(p, root)).then(() => true, () => false);
@@ -160,6 +167,84 @@ async function lock() {
   console.log(`${slug}: ${Object.keys(sorted).length} lesson ids locked; ${log.length} registry change(s).`);
 }
 
-if (cmd === "scaffold") await scaffold();
-else if (cmd === "lock") await lock();
-else console.log("usage: node scripts/new-course.mjs scaffold|lock <slug> …");
+// ---------- check: every lesson-standard problem at once, before or after a school is added ----------
+//   node scripts/new-course.mjs check <slug>                      every written school
+//   node scripts/new-course.mjs check <slug> --unit u03           one school
+//   node scripts/new-course.mjs check <slug> --unit u03 draft.txt  a draft, before add-notes
+async function check() {
+  if (!slug) throw new Error("check <slug> [--unit uNN] [draft files…]");
+  const course = (await import(new URL(`kit/courses/${slug}/course.js`, root).href)).default;
+  const drafts = rest.filter((x, i) => !x.startsWith("--") && !rest[i - 1]?.startsWith("--"));
+  const units = opt.unit ? course.units.filter((u) => u.id === opt.unit) : course.units.filter((u) => course.written.includes(u.id));
+  if (!units.length) throw new Error(opt.unit ? `no unit ${opt.unit} in ${slug}` : `${slug} has no written schools: name one with --unit`);
+  const ixIds = new Set((course.interactives || []).map((x) => x.id)), seen = new Map();
+  let bad = 0;
+  for (const u of units) {
+    const text = drafts.length ? (await Promise.all(drafts.map((f) => readFile(f, "utf8")))).join("\n\n") : await course.notes(u.id);
+    const unsafe = drafts.length ? unsafeForTemplate(text) : [];
+    const { problems, warnings, stats } = schoolProblems(text, u, { ixIds, seen });
+    const all = [...unsafe.map((x) => `draft: ${x}`), ...problems];
+    console.log(`${u.id} ${u.title}: ${stats.lessons} of ${u.lessons.length} lessons, ${stats.questions} questions, ${all.length} problem(s), ${warnings.length ? "length bias over the limit" : "length bias OK"}`);
+    for (const x of [...all, ...warnings]) console.log(`  ${x}`);
+    bad += all.length;
+  }
+  if (bad) process.exit(1);
+}
+
+// ---------- add-notes: wrap written lesson text as a school's notes module and register it ----------
+//   node scripts/new-course.mjs add-notes <slug> <uNN> part1.txt [part2.txt …] [--replace]
+// The text is plain notes format (## Title, S:, O:, …) with no question ids. It is checked for anything that would
+// break a JavaScript module, written to kit/courses/<slug>/notes/<uNN>.js, added to `written`, given a QA record and a
+// written date, then the ids are locked and the school is checked against the standard.
+async function addNotes() {
+  const unit = rest[0], files = rest.slice(1).filter((x) => !x.startsWith("--"));
+  if (!slug || !/^u\d\d$/.test(unit || "") || !files.length) throw new Error("add-notes <slug> <uNN> <file…> [--replace]");
+  const dir = `kit/courses/${slug}/`, target = `${dir}notes/${unit}.js`;
+  if (await exists(target) && !rest.includes("--replace")) throw new Error(`${target} exists: pass --replace to overwrite it`);
+  const course = (await import(new URL(`${dir}course.js`, root).href)).default, u = course.units.find((x) => x.id === unit);
+  if (!u) throw new Error(`no unit ${unit} in ${slug}`);
+  const text = (await Promise.all(files.map((f) => readFile(f, "utf8")))).map((t) => t.trim()).join("\n\n") + "\n";
+  const unsafe = unsafeForTemplate(text); if (unsafe.length) throw new Error(`can't wrap the notes:\n  ${unsafe.join("\n  ")}`);
+  await mkdir(new URL(`${dir}notes/`, root), { recursive: true });
+  await writeFile(new URL(target, root), `// ${course.site} ${u.title} (content standard 2). Added by scripts/new-course.mjs add-notes.\nexport default \`\n${text}\`;\n`);
+  // register: written list, QA record, written date
+  let c = await readFile(new URL(`${dir}course.js`, root), "utf8");
+  c = c.replace(/written: \[([^\]]*)\]/, (m, list) => { const ids = [...new Set([...list.split(",").map((x) => x.trim().replace(/"/g, "")).filter(Boolean), unit])].sort(); return `written: [${ids.map((x) => `"${x}"`).join(", ")}]`; });
+  await writeFile(new URL(`${dir}course.js`, root), c);
+  let q = await readFile(new URL(`${dir}qa.js`, root), "utf8");
+  if (!new RegExp(`\\b${unit}: \\{ standard`).test(q)) q = q.replace(/export const QA = \{\s*/, (m) => `export const QA = {\n  ${unit}: { standard: 2, reviewed: null, sources: null, signoff: null },\n  `).replace(/,\n  \};/, ",\n};").replace(/\{\n  \n\};/, "{\n};");
+  if (!new RegExp(`WRITTEN_ON = \\{[^}]*\\b${unit}:`).test(q)) q = q.replace(/WRITTEN_ON = \{\s*([^}]*?)\s*\};/, (m, body) => `WRITTEN_ON = { ${[body.replace(/,\s*$/, ""), `${unit}: "${today}"`].filter(Boolean).join(", ")} };`);
+  await writeFile(new URL(`${dir}qa.js`, root), q);
+  console.log(`  wrote ${target} and registered ${unit} as written`);
+  console.log(`  next: node scripts/new-course.mjs lock ${slug}, then node scripts/new-course.mjs check ${slug} --unit ${unit}`);
+}
+
+// ---------- doctor: what still stands between a course and being registered across Gradify ----------
+async function doctor() {
+  if (!slug) throw new Error("doctor <slug>");
+  const course = (await import(new URL(`kit/courses/${slug}/course.js`, root).href)).default, out = [];
+  const say = (ok, what, fix) => out.push(`${ok ? "✓" : "✗"} ${what}${ok ? "" : `: ${fix}`}`);
+  const { checkCourse } = await import(new URL("kit/course/spec.js", root).href);
+  const { COURSES } = await import(new URL("kit/learning/learner-data.js", root).href);
+  const { SITES } = await import(new URL("kit/core/site.js", root).href);
+  const { ADAPTERS } = await import(new URL("kit/subjects/index.js", root).href);
+  const read = (p) => readFile(new URL(p, root), "utf8").catch(() => "");
+  const [sw, sitemap, tutor] = await Promise.all([read("sw.js"), read("sitemap.xml"), read("kit/assess/tutor.js")]);
+  const spec = checkCourse(course);
+  say(!spec.length, "fits the subject config spec (kit/course/spec.js)", spec.join("; "));
+  say(course.page && await exists(`${course.page.slice(1)}index.html`), `course page ${course.page}`, "run scaffold");
+  say(COURSES[slug] === course.page, "listed in kit/learning/learner-data.js COURSES", `add ${slug}: "${course.page}"`);
+  say(SITES.some((s) => s.n === course.site && s.built), `${course.site} is a built site in kit/core/sites.js`, "add it and run npm run new-site");
+  say(!!ADAPTERS[course.adapter], "defined through a subject adapter (kit/subjects/)", "use defineCourse(adapter, …) or keep the standard-2 defaults");
+  say(new RegExp(`\\n  ${slug}: "`).test(tutor), "has a tutor rules line (SITE_RULES in kit/assess/tutor.js)", "add one, npm run sync, redeploy course-tutor");
+  say(sitemap.includes(course.page), "in sitemap.xml", "node scripts/build-sitemap.mjs");
+  if (course.interactives?.length) say(sw.includes(`kit/courses/${slug}/evidence.js`) && sw.includes(`kit/courses/${slug}/interactives.js`), "labs cached for offline use (sw.js)", `add kit/courses/${slug}/evidence.js and interactives.js to sw.js`);
+  const lessons = course.units.reduce((a, u) => a + u.lessons.length, 0), written = course.units.filter((u) => course.written.includes(u.id));
+  out.push(`  ${course.units.length} schools, ${lessons} lessons mapped; ${written.length} schools (${written.reduce((a, u) => a + u.lessons.length, 0)} lessons) written; ${(course.interactives || []).length} interactives`);
+  console.log(`${course.site} (${slug})\n  ${out.join("\n  ")}`);
+  if (out.some((x) => x.startsWith("✗"))) process.exit(1);
+}
+
+const COMMANDS = { scaffold, lock, check, "add-notes": addNotes, doctor };
+if (!COMMANDS[cmd]) console.log("usage: node scripts/new-course.mjs scaffold|lock|check|add-notes|doctor <slug> …");
+else await COMMANDS[cmd]().catch((e) => { console.error(`new-course ${cmd}: ${e.message}`); process.exit(1); });
