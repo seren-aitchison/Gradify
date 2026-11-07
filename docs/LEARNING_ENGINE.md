@@ -30,7 +30,7 @@ The bridge between them: **Save notes and cards** on any course lesson writes th
 | `#/me` | XP, level, streaks, an 18-week heatmap, the last 14 days, badges and lessons saved to the account |
 | `#/features` | What the course includes, plus `config.extras` links |
 
-**Gamification:** XP per action (lesson 10, first-try check 5, chest 15, quiz 50, perfect +20, review 2, problem 5, weekly challenge 100); levels at 50·n·(n+1) XP; daily goal; streaks; 14 badges; a rotating weekly challenge. Every award is also logged with `store.logActivity({ site, kind: "<slug>-<kind>", xp })`, so it counts in the shared XP total and LifeOS.
+**Gamification:** XP per action (lesson 10, first-try check 5, chest 15, quiz 50, perfect +20, review 2, problem 5, weekly challenge 100); levels at 50·n·(n+1) XP; daily goal; streaks; 14 activity badges and 6 understanding badges (`kit/learning/achievements.js`: mastery, retention, calibration, a comeback, a mock exam passed; earned only from measured evidence, never XP or exploration); a rotating weekly challenge. Every award is also logged with `store.logActivity({ site, kind: "<slug>-<kind>", xp })`, so it counts in the shared XP total and LifeOS.
 
 **Config options** (`kit/courses/<slug>/course.js`): `site`, `slug`, `name`, `app` (link to the site's study app), `units`, `tracks`, `paths`, `written`, `notes(unitId)`, `extras`, and two optional fields added for law and nursing, which default to the original behaviour:
 - `unitWord`: what to call a unit in the interface (`"School"`); default `"Unit"`.

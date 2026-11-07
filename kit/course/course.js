@@ -18,6 +18,7 @@ import { makeAttempt, analyse } from "../assess/attempts.js";
 import { evidenceFromAttempts, sixProfiles, revisionQueue, labPractice, SIX } from "../learning/mastery.js";
 import { explorationIds, evidenceClass } from "../learning/evidence-class.js";
 import { weaknessTargets, practiceSet } from "../learning/targets.js";
+import { UNDERSTANDING, understandingStats } from "../learning/achievements.js";
 import { sixHtml, calibrationHtml } from "../learning/mastery-view.js";
 import { conceptGraph, prerequisitesOfLesson, weakPrerequisites } from "../learning/concepts.js";
 import { checkCourse } from "./spec.js";
@@ -79,6 +80,8 @@ const BADGES = [
   { id: "xp1k", name: "1,000 XP", d: "Earn 1,000 XP", ok: (s) => s.xp >= 1000 },
   { id: "track", name: "Track complete", d: "Finish a whole track", ok: (s) => s.tracks >= 1 },
 ];
+// understanding achievements (kit/learning/achievements.js): earned only from measured evidence, never from XP
+BADGES.push(...UNDERSTANDING.map((b) => ({ ...b, understanding: true })));
 const CHALLENGES = [
   { name: "Lesson sprint", d: "Complete 15 lessons this week", n: 15, of: (w) => w.lesson },
   { name: "XP hunter", d: "Earn 300 XP this week", n: 300, of: (w) => w.xp },
@@ -285,7 +288,8 @@ export function mountCourse(root, cfg) {
     return { xp: totalXp(), lessons: Object.keys(S.done).length, units: units.filter((u) => unitDone(u) === u.lessons.length).length,
       quizzes: Object.values(S.quiz).filter((q) => q.pass).length, perfect: Object.values(S.quiz).filter((q) => q.best === 1).length,
       best: st.best, reviews: S.log.filter((r) => r.k === "review").length, solved: Object.keys(S.solved).length,
-      tracks: cfg.tracks.filter((t) => t.units.every((n) => { const u = units.find((x) => x.n === n); return u && unitDone(u) === u.lessons.length; })).length };
+      tracks: cfg.tracks.filter((t) => t.units.every((n) => { const u = units.find((x) => x.n === n); return u && unitDone(u) === u.lessons.length; })).length,
+      ...understandingStats(S.attempts || [], { exploration: EXPLORE, levels: cfg.levels || null, mocks: S.mocks }) };
   }
   const earned = () => BADGES.filter((b) => b.ok(stats()));
 
@@ -1021,7 +1025,7 @@ export function mountCourse(root, cfg) {
       <section class="co-panel"><h3>Activity</h3><div class="co-heat">${cells}</div><p class="co-dayinfo">Pick a day to see what you did.</p></section>
       <section class="co-panel"><h3>XP, last 14 days</h3><div class="co-bars">${last14.map(([d, v]) => `<div title="${d}: ${v} XP"><i style="height:${(v / mx) * 100}%" class="${v >= S.goal ? "hit" : ""}"></i><small>${d.slice(8)}</small></div>`).join("")}<span class="co-goalline" style="bottom:${(S.goal / mx) * 100}%">goal ${S.goal}</span></div></section>
       <section class="co-panel"><h3>${TW}s</h3><div class="co-mastery">${cfg.tracks.map((t) => { const us = t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean), tot = us.reduce((a, u) => a + u.lessons.length, 0), dn = us.reduce((a, u) => a + unitDone(u), 0); return `<div style="--a:${t.from};--b:${t.to}"><span>${esc(t.name)}</span><div class="co-bar"><i style="width:${(dn / tot) * 100}%"></i></div><small>${dn}/${tot}</small></div>`; }).join("")}</div></section>
-      <section class="co-panel"><h3>Badges</h3><div class="co-badgelist">${BADGES.map((b) => `<div class="${b.ok(st) ? "on" : ""}">${ic(b.ok(st) ? "star" : "lock")}<b>${b.name}</b><small>${b.d}</small></div>`).join("")}</div></section>
+      <section class="co-panel"><h3>Badges</h3>${[["Understanding", "Earned only from what your answers show you understand and remember. XP can't buy these.", true], ["Activity", "For keeping going: lessons, streaks, reviews and XP.", false]].map(([h, sub, u]) => `<h4>${h}</h4><p class="co-acct">${sub}</p><div class="co-badgelist">${BADGES.filter((b) => !!b.understanding === u).map((b) => `<div class="${b.ok(st) ? "on" : ""}">${ic(b.ok(st) ? "star" : "lock")}<b>${b.name}</b><small>${b.d}</small></div>`).join("")}</div>`).join("")}</section>
       <section class="co-panel co-saved"><h3>Saved to your account</h3><p class="co-empty">Loading…</p></section>`;
     main.querySelector("[data-director]")?.addEventListener("click", async (e) => {
       const out = main.querySelector(".co-dirout"); e.currentTarget.disabled = true; out.innerHTML = `<p class="co-empty">Planning from your progress…</p>`;
