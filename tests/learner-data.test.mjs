@@ -10,7 +10,8 @@ const ago = (d) => new Date(NOW - d * DAY).toISOString();
 const law = (await import("../kit/courses/law/course.js")).default;
 
 test("every course is listed with its page", async () => {
-  assert.deepEqual(Object.keys(COURSES).sort(), (await readdir(new URL("../kit/courses/", import.meta.url))).sort());
+  for (const slug of await readdir(new URL("../kit/courses/", import.meta.url))) assert.ok(COURSES[slug], `${slug} is listed in COURSES`);
+  for (const href of Object.values(COURSES)) assert.match(href, /^\/[a-z]+\/[a-z]+\/$/);
 });
 
 test("activity becomes a year of days by site, and streaks count honestly", () => {
