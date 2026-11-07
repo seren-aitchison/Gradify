@@ -101,3 +101,21 @@ test("every course's exploration list names real challenges, and its config pass
   for (const id of ["ix:lln:k1", "ix:tangent:three", "ix:clt:n1"]) assert.ok(EX.has(id), id);
   assert.ok(!EX.has("ix:roots:sqrt2") && !EX.has("ix:descent:rosen"));
 });
+
+// Challenges the evidence-map generator had sent to an interactive's first lesson for want of shared words, corrected by
+// hand (8 November 2026): each must stay on the lesson that teaches it.
+test("evidence maps: challenges are evidence for the lesson that teaches them", async () => {
+  const expect = {
+    physics: { pendulum: { chaos: /initial conditions/i, big: /anharmonic/i }, photoelectric: { thr: /photoelectric/i, planck: /photoelectric/i }, transients: { rl: /RL circuits/ }, projectile: { angle: /resistive/i } },
+    biology: { punnett: { 9331: /dihybrid/i, test: /monohybrid/i }, "natural-selection": { drift: /drift/i }, "enzyme-kinetics": { mystery: /inhibition/i } },
+    psychology: { "experiment-builder": { iv: /independent and dependent/i, confound: /confounding/i }, "study-critique": { weird: /generalisab/i, phack: /open science/i } },
+    sociology: { "survey-design": { leading: /questionnaire design/i }, sampling: { bias: /^bias$/i } },
+    maths: { grapher: { sine: /trigonometric graphs/i, flip: /transformations/i, cubic: /roots of polynomials/i } },
+    chemistry: { bonding: { n2: /covalent/i }, "energy-profile": { temp: /activation energy/i } },
+  };
+  for (const [slug, ixs] of Object.entries(expect)) {
+    const cfg = (await import(`../kit/courses/${slug}/course.js`)).default, { EVIDENCE } = await import(`../kit/courses/${slug}/evidence.js`);
+    const title = Object.fromEntries(cfg.units.flatMap((u) => u.lessons.map((l) => [l.id, l.title])));
+    for (const [ix, tasks] of Object.entries(ixs)) for (const [t, re] of Object.entries(tasks)) assert.match(title[EVIDENCE[ix][t]] || "", re, `${slug}/${ix}/${t} → ${title[EVIDENCE[ix][t]]}`);
+  }
+});

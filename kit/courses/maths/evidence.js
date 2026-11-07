@@ -3,7 +3,7 @@
 // (the script keeps existing entries). Checked by tests/interactives.test.mjs and scripts/check-interactives.cjs.
 export const EVIDENCE = {
   "practice": { "fractions": "u01-16", "percentChange": "u01-29", "reversePercent": "u01-29", "standardForm": "u01-22", "indices": "u01-20", "hcfLcm": "u01-14", "linear": "u03-09", "quadratic": "u03-11", "simultaneous": "u03-10", "nthTerm": "u01-25", "pythagoras": "u05-10", "trigSide": "u06-02", "compound": "u21-03", "probability": "u12-03", "gradient": "u07-07", "definite": "u07-29", "logs": "u03-21", "geometric": "u07-39" },
-  "grapher": { "line": "u03-33", "parabola": "u03-33", "flip": "u03-33", "sine": "u03-33", "exp": "u03-33", "recip": "u03-33", "cubic": "u03-33" },
+  "grapher": { "line": "u03-33", "parabola": "u03-37", "flip": "u03-37", "sine": "u06-13", "exp": "u03-37", "recip": "u03-37", "cubic": "u03-29" },
   "tangent": { "negh": "u07-03", "three": "u07-03" },
   "lln": { "k1": "u12-19", "six": "u12-19" },
   "clt": { "n1": "u12-20" },
