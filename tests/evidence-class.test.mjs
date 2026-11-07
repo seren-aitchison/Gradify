@@ -119,3 +119,35 @@ test("evidence maps: challenges are evidence for the lesson that teaches them", 
     for (const [ix, tasks] of Object.entries(ixs)) for (const [t, re] of Object.entries(tasks)) assert.match(title[EVIDENCE[ix][t]] || "", re, `${slug}/${ix}/${t} → ${title[EVIDENCE[ix][t]]}`);
   }
 });
+
+test("drilling one easy question can't inflate mastery or its certainty", () => {
+  const base = Date.UTC(2026, 10, 1, 9);
+  const same = (k, mins = 1) => Array.from({ length: k }, (_, i) => rec({ at: new Date(base + i * mins * 6e4).toISOString(), question: { id: "easy-1", type: "num", d: 1, objectives: [] } }));
+  const ev = evidenceFromAttempts(same(10));
+  const total = ev.reduce((a, e) => a + e.w, 0), single = evidenceFromAttempts(same(1))[0].w;
+  assert.ok(total < single * 3.1, `ten repeats weigh ${total / single}× one answer`);          // ½, ⅓, … : the harmonic sum
+  // ten different questions count in full
+  const varied = Array.from({ length: 10 }, (_, i) => rec({ at: new Date(base + i * 6e4).toISOString(), question: { id: `easy-${i}`, type: "num", d: 1, objectives: [] } }));
+  assert.ok(Math.abs(evidenceFromAttempts(varied).reduce((a, e) => a + e.w, 0) - single * 10) < 1e-9);
+  // and the repeated drill doesn't make the measurement more certain than three real answers
+  const p = (xs) => sixProfiles(evidenceFromAttempts(xs), { now: base + 864e5 }).all.dims.apply;
+  assert.ok(p(same(10)).weight < p(varied.slice(0, 4)).weight);
+  // the same question a day or more later counts in full again (and is retention evidence)
+  const later = [same(1)[0], rec({ at: new Date(base + 2 * 864e5).toISOString(), question: { id: "easy-1", type: "num", d: 1, objectives: [] } })];
+  const ev2 = evidenceFromAttempts(later);
+  assert.equal(ev2.filter((e) => e.dim === "apply").length, 2); assert.ok(ev2.every((e) => Math.abs(e.w - single) < 1e-9));
+  assert.ok(ev2.some((e) => e.dim === "retention"));
+});
+
+test("a clear drop in recent answers is reported as declining; a stable record isn't", () => {
+  const day = (d, score, i) => rec({ at: new Date(Date.UTC(2026, 9, 1) + d * 864e5).toISOString(), score, correct: score >= 0.7, question: { id: `t-${d}-${i}`, type: "num", d: 2, objectives: [] } });
+  const early = [0, 1, 2, 3].flatMap((d) => [day(d, 1, 0), day(d, 1, 1)]);
+  const late = [40, 41, 42].flatMap((d) => [day(d, 0, 0), day(d, 1, 1), day(d, 0, 2)]);
+  const now = Date.UTC(2026, 10, 15);
+  const down = sixProfiles(evidenceFromAttempts([...early, ...late]), { now }).all.trend;
+  assert.ok(down.declining && down.earlier > down.recent + 0.2, JSON.stringify(down));
+  const steady = sixProfiles(evidenceFromAttempts([...early, ...[40, 41].flatMap((d) => [day(d, 1, 0), day(d, 1, 1)])]), { now }).all.trend;
+  assert.equal(steady.declining, false);
+  // too little evidence on either side: no verdict
+  assert.equal(sixProfiles(evidenceFromAttempts([day(0, 1, 0), day(40, 0, 0)]), { now }).all.trend, null);
+});
