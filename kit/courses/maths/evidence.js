@@ -14,6 +14,9 @@ export const EVIDENCE = {
 // reasoning towards a target. They earn XP and stay in the activity history but never count towards mastery
 // (kit/learning/evidence-class.js). Every other challenge in the map above is practice evidence.
 export const EXPLORATION = {
+  "circles": ["seg", "semi"],
+  "explog": ["straight"],
+  "trig": ["quad"],
   "clt": ["n1"],
   "lln": ["k1", "k10", "six"],
   "regression": ["curve"],

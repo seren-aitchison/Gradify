@@ -114,7 +114,7 @@ How each answer is weighted:
 
 | Kind | What it is | Counts towards mastery |
 |---|---|---|
-| Exploration | Doing what an interactive's challenge says: run 1,000 trials, open ten organelles, step through mitosis, "halve X and see Y". Each course lists these in `EXPLORATION` in its `evidence.js` (104 in all) | Never, for or against. They earn XP, stay in the activity history and are named in the Mastery panel |
+| Exploration | Doing what an interactive's challenge says: run 1,000 trials, open ten organelles, step through mitosis, "halve X and see Y". Each course lists these in `EXPLORATION` in its `evidence.js` (108 in all) | Never, for or against. They earn XP, stay in the activity history and are named in the Mastery panel |
 | Practice | Answers and challenges checked by Gradify: check questions, generated problems, lab challenges that need reasoning towards a target | ×1 |
 | Assessment | Unit quizzes and exams, worked solutions and cases checked step by step in a workspace, and anything a person marked. Provisional marks never count as assessment | ×1.5 |
 
