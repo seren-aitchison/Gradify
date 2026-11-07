@@ -66,7 +66,7 @@ SciGradify as a whole: 1,403 of 2,159 lessons written. 165 interactives in all, 
 | 58 lab challenges re-pointed to the lesson that teaches them (the generator had sent them to each interactive's first lesson) | Physics, Chemistry, Biology, Psychology, Sociology, Maths | `4bc16c6` | pinned by test |
 | Repeated answers to one question within a day count ½, ⅓, …, so drilling can't inflate mastery or certainty | every course | `eb7dcea` | yes |
 | Declining understanding detected (recent unaided answers 20+ points below earlier ones), shown as "slipping", passed to the study director and LifeOS | every course | `eb7dcea` | yes |
-| MathGradify mock exams: GCSE, A level, Further Mathematics, university entrance, first-year university and whole course; each follows its path, so it draws only on that level's modules | MathGradify | this commit | suite; a GCSE paper started in the browser |
+| MathGradify mock exams: GCSE, A level, Further Mathematics, university entrance, first-year university and whole course; each follows its path, so it draws only on that level's modules | MathGradify | `7648061` | suite; a GCSE paper started in the browser |
 | Generated practice evidence on the right lessons; every maths lab's mathematics tested | MathGradify | `c5932bc` | yes |
 | Tutor reads canonical notes server-side; lab outcomes; lab-aware tutor | every course | `6c971b7`, `6cd696d` | yes |
 
