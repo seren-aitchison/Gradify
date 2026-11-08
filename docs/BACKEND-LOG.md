@@ -21,3 +21,21 @@ No entries yet: no Supabase project is connected (6 November 2026).
 
   Steps 3–6 are `node scripts/supabase-admin.mjs <command> <ref> --write`.
 
+
+## 2026-11-08 17:11 UTC · Preflight (read-only) · ezlohntrnassgsbofcfc
+
+**Token scope check failed: nothing else was run.**
+
+| check | status | result |
+|---|---|---|
+| Can read this project | 200 | ok |
+| Can run SQL on this project | 201 | ok |
+| Can list this project's Edge Functions | 200 | ok |
+| Can read this project's secret names | 200 | ok |
+| Cannot list projects across the account | 200 (this project only) | ok |
+| Cannot read organisations | 200 | FAIL |
+| Cannot read this project's API keys (not needed) | 200 | FAIL |
+
+Create a token restricted to the Gradify project with only: database (read and write), Edge Functions (read and deploy), secrets (read names).
+
+**Follow-up, same day:** the project owner saved a second token meant to be limited to the Gradify project. After the proxy pickup delay, preflight still showed it can read organisations and the project's API keys, so the gate refused it again. Nothing was read beyond the scope probe, and nothing was changed. Still to do: save a token that fails those two probes, or decide deliberately to accept a broader one. Then run `preflight`, `backup`, `migrate --next` until none remain, `rls-audit` and `auth-config` (each with `--write`, and `NODE_USE_ENV_PROXY=1` when running behind the session proxy). After that, set `SUPABASE_URL` in `gradify.config.js` and do the two-account check.
