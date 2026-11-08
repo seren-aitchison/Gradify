@@ -74,7 +74,7 @@ export const GROUPS = [
       {
         n: "TechGradify · ForgeLab", who: "Developers, data scientists and AI engineers", i: "forge", c: "666666",
         d: "Hands-on coding, data science and AI engineering, with instant feedback. Forge is the future of TechGradify.",
-        u: "techgradify.com", soon: true, spot: "ff5a4d", status: "soon",
+        u: "techgradify.com", soon: true, built: true, spot: "ff5a4d", status: "soon",
       },
       { n: "Klerio", who: "Small teams with contact lists", i: "checklist", c: "2a8c82", d: "Clean contact lists and see what changed every week.", u: "getklerio.com", tm: false, status: "external" },
     ],
