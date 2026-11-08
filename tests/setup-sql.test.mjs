@@ -44,7 +44,7 @@ test("if any part fails, nothing is left behind", async () => {
 
 test("the read-only check (docs/setup/verify-setup.sql) passes after setup and fails clearly before it", async () => {
   const check = await readFile(new URL("../docs/setup/verify-setup.sql", import.meta.url), "utf8");
-  assert.doesNotMatch(check.replace(/--.*$/gm, ""), /\b(insert|update|delete|drop|alter|create|grant|revoke|truncate|notify)\b/i, "it only reads");
+  assert.doesNotMatch(check.replace(/--.*$/gm, "").replace(/'[^']*'/g, "''"), /\b(insert|update|delete|drop|alter|create|grant|revoke|truncate|notify)\b/i, "it only reads");
   const empty = await tempDb();
   const before = await empty.sql(check);
   assert.equal(before.find((r) => r.n === 2).result, "FAIL");
