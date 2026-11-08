@@ -17,8 +17,10 @@ website doesn't expose, add it on the website side first (as an additive `/v1/` 
 
 A separate repository, **`gradify-apple`** (private), not a folder in this one. Reasons:
 
-- This repository's root is served by GitHub Pages, so any folder here is published to getgradify.com.
-- Every push to `main` here triggers the test-and-deploy workflow, and the subject builders push constantly.
+- The website and the app ship on different schedules: every push to `main` here runs test-and-deploy, and the
+  subject builders push constantly. (The site is built from an allowlist in `scripts/build-site.mjs`, so an app
+  folder wouldn't be published, but it would still have to be classified there and run through this CI.)
+- The apps then depend only on the published API, which keeps that interface honest.
 - Xcode project files and build products would churn this repository's history.
 
 This repository stays the content engine. The app repository holds Swift code only and reads content over HTTPS.
@@ -43,7 +45,9 @@ file (`kit/api/v1/app.json`, to be added) can switch supported features on and o
 - **Lesson text** is in notes files that are JavaScript modules. They must be read as text, never run; see
   `kit/assess/canon.js`. Recommended first website-side task: have `build-api.mjs` also write each unit as
   JSON (`courses/<slug>/units/<unit>.json`), so Swift decodes with `Codable` instead of re-implementing the parser.
-- **Subjects in Wave 1 / Wave 2** appear in the app only once their course is registered and in the catalogue.
+- **Catalogue registration is already automatic:** `build-api.mjs` includes every `kit/courses/<slug>/course.js`,
+  and CI fails if `kit/api/v1/` is out of date. A Wave 1 or Wave 2 subject reaches the apps once its course folder
+  is merged to `main`. A subject *site* with no course folder yet (EcoGradify today) isn't in the catalogue.
 - **Supabase: not connected yet.** `gradify.config.js` has an empty URL and anon key, so on the website today
   progress is saved per browser only (see [BACKEND-STATUS.md](BACKEND-STATUS.md)). The app should do the same:
   work in "this device" mode, then sync once the project is verified. Don't claim cross-device sync in the app
