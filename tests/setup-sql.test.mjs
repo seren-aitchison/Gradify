@@ -41,3 +41,17 @@ test("if any part fails, nothing is left behind", async () => {
   await c.sql("rollback;").catch(() => {});
   assert.equal((await c.sql("select to_regclass('public.profiles') is null as gone"))[0].gone, true);
 });
+
+test("the read-only check (docs/setup/verify-setup.sql) passes after setup and fails clearly before it", async () => {
+  const check = await readFile(new URL("../docs/setup/verify-setup.sql", import.meta.url), "utf8");
+  assert.doesNotMatch(check.replace(/--.*$/gm, ""), /\b(insert|update|delete|drop|alter|create|grant|revoke|truncate|notify)\b/i, "it only reads");
+  const empty = await tempDb();
+  const before = await empty.sql(check);
+  assert.equal(before.find((r) => r.n === 2).result, "FAIL");
+  const c = await tempDb();
+  await c.sql(await setupSql());
+  await c.sql("grant all on all tables in schema public to authenticated;");   // as Supabase does by default
+  const after = await c.sql(check);
+  // row 10 (the Data API's reload trigger) only exists on a real Supabase project
+  for (const r of after.filter((r) => r.n !== 10 && r.n !== 11)) assert.equal(r.result, "PASS", `${r.check}: ${r.detail}`);
+});
