@@ -1,0 +1,47 @@
+{
+ "about": "Merge cases for course progress (kit/course/sync.js merge). The website's tests and the Swift apps' tests both run these, so every client merges the same way. Each case: merge(a, b) must give each field in expect.",
+ "cases": [
+  {
+   "name": "lessons done on either device are kept, with the latest completion time",
+   "a": { "done": { "u01-01": 100, "u01-02": 300 } },
+   "b": { "done": { "u01-02": 200, "u01-03": 400 } },
+   "expect": { "done": { "u01-01": 100, "u01-02": 300, "u01-03": 400 } }
+  },
+  {
+   "name": "a lesson undone after it was done stays undone",
+   "a": { "done": { "u01-01": 100 }, "stamps": { "done:u01-01": 100 } },
+   "b": { "done": {}, "removed": { "done:u01-01": 150 } },
+   "expect": { "done": {} }
+  },
+  {
+   "name": "a lesson done again after being undone counts",
+   "a": { "done": { "u01-01": 200 }, "stamps": { "done:u01-01": 200 } },
+   "b": { "done": {}, "removed": { "done:u01-01": 150 } },
+   "expect": { "done": { "u01-01": 200 } }
+  },
+  {
+   "name": "the latest edit of a draft wins",
+   "a": { "drafts": { "e1": "first" }, "stamps": { "drafts:e1": 100 } },
+   "b": { "drafts": { "e1": "corrected" }, "stamps": { "drafts:e1": 200 } },
+   "expect": { "drafts": { "e1": "corrected" } }
+  },
+  {
+   "name": "the best quiz score and a pass on either device are kept",
+   "a": { "quiz": { "u01": { "best": 0.9, "pass": true, "t": 100 } } },
+   "b": { "quiz": { "u01": { "best": 0.5, "pass": false, "t": 200 } } },
+   "expect": { "quiz": { "u01": { "best": 0.9, "pass": true, "t": 200 } } }
+  },
+  {
+   "name": "a course reset drops everything from before it, keeps what came after",
+   "a": { "done": { "u01-01": 100, "u01-02": 300 }, "stamps": { "done:u01-01": 100, "done:u01-02": 300 } },
+   "b": { "resetAt": 200 },
+   "expect": { "done": { "u01-02": 300 }, "resetAt": 200 }
+  },
+  {
+   "name": "a setting changed later wins, even if the other copy has more progress",
+   "a": { "goal": 20, "stamps": { "goal": 300 }, "done": { "x": 1 } },
+   "b": { "goal": 45, "stamps": { "goal": 100 }, "done": { "y": 2, "z": 3 } },
+   "expect": { "goal": 20, "done": { "x": 1, "y": 2, "z": 3 } }
+  }
+ ]
+}

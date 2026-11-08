@@ -1,6 +1,9 @@
 # One Gradify backend: connection plan, sync fix and lesson blocks
 
-**Version 1, 8 November 2026. Status: proposed, awaiting the owner's approval. Nothing here has been implemented.**
+**Version 1, 8 November 2026. Status: approved in principle by the owner (8 November). Nothing here has been
+implemented.** Superseded in detail by: [SUPABASE-CONNECT.md](SUPABASE-CONNECT.md) (the owner's step-by-step
+guide; replaces A3 and A4), [PROGRESS-SYNC.md](PROGRESS-SYNC.md) (replaces Part B) and
+[LESSON-BLOCKS.md](LESSON-BLOCKS.md) (replaces Part C).
 No production configuration, table or migration has been changed.
 
 One Supabase project serves getgradify.com, every sub-site, and the iPhone, iPad and Mac apps: one account
