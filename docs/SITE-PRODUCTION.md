@@ -42,14 +42,14 @@ So "18 schools generated, 5 QA verified, 0 academically verified" is a complete 
 
 | # | Site | Course (slug) | Template used | Builder (branch, worktree) | Curriculum | Lessons written | Resources | Tests | Registered | Deployed | Live verified |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | EcoGradify | Ecology (`ecology`) | Psychology course + Biology labs | build-ecology: `feat/ecogradify-ecology` in `../Gradify-wt-ecology`, building | – | – | – | – | – | – | – |
+| 1 | EcoGradify | Ecology (`ecology`) | Psychology course + Biology labs | builder worktree `worktree-agent-a5a3bdff…`, writing School 2 | 11 schools, 198 lessons | 16 (School 1) | – | pass | yes (beta) | `dc00409` | yes, 8 Nov: u01-01 opened, no errors |
 | 2 | BusinessGradify | Business and Management (`business`) | Psychology course | build-business: `course/business` in `../Gradify-wt/business`, building | – | – | – | – | – | – | – |
 | 3 | FinanceGradify | Accounting and Finance (`finance`) | Psychology course | build-finance: `course/finance` in `../Gradify-wt/finance`, building | – | – | – | – | – | – | – |
 | 4 | MedGradify | Medicine (`medicine`) | Psychology course + Nursing/Biology labs | build-medicine: `course/medicine` in `../Gradify-wt/medicine`, building | – | – | – | – | – | – | – |
-| 5 | LitGradify | English Literature (`literature`) | Psychology course | build-literature: `course/literature` in `../Gradify-wt/literature`, building | – | – | – | – | – | – | – |
+| 5 | LitGradify | English Literature (`literature`) | Psychology course | builder worktree `worktree-agent-afe4247a…`, writing School 2 | 10 schools, 166 lessons | 18 (School 1) | – | pass | yes (beta) | `dc00409` | yes, 8 Nov: u01-01 opened, no errors |
 | 6 | MusicGradify | Music (`music`) | Psychology course | build-music: `course/music` in `../Gradify-wt/music`, building | – | – | – | – | – | – | – |
-| 7 | HealthGradify | Health and Wellbeing (`health`) | Psychology course + Biology labs | build-health: `course/health` in `../Gradify-wt/health`, building | – | – | – | – | – | – | – |
-| 8 | EngineerGradify | Engineering (`engineering`) | Psychology course + Physics/Maths labs | build-engineering: `course/engineering` in `../Gradify-wt/engineering`, building | – | – | – | – | – | – | – |
+| 7 | HealthGradify | Health and Wellbeing (`health`) | Psychology course + Biology labs | build-health: `course/health` in `../Gradify-wt/health`, continuing with School 3+ | 11 schools, 176 lessons | 31 (Schools 1–2) | 7 reused labs | pass | yes (beta) | `cd1c1d2` | yes, 8 Nov: u01-01 opened, no errors |
+| 8 | EngineerGradify | Engineering (`engineering`) | Psychology course + Physics/Maths labs | builder worktree `worktree-agent-a79ff2b0…`, writing School 2 | 12 schools, 191 lessons | 19 (School 1) | 17 reused labs | pass | yes (beta) | `dc00409` | yes, 8 Nov: u01-01 opened, no errors |
 | 9 | InvestorGradify | Investing (`investing`) | Psychology course | – | – | – | – | – | – | – | – |
 | 10 | VetGradify | Veterinary Science (`veterinary`) | Psychology course + Biology labs | – | – | – | – | – | – | – | – |
 | 11 | DentalGradify | Dentistry (`dentistry`) | Psychology course | – | – | – | – | – | – | – | – |
