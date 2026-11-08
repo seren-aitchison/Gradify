@@ -22,13 +22,15 @@ It was checked before starting: HistoryGradify wasn't in the production tracker 
 | 2. Medieval Britain | 18 | ✅ standard 2 | 90 |
 | 3. Tudor England | 14 | ✅ standard 2 | 70 |
 | 4. Stuart Britain and the Civil War | 18 | ✅ standard 2 | 90 |
+| 5. The Industrial Revolution | 18 | ✅ standard 2 | 90 |
+| 6. Nineteenth-Century Britain | 15 | ✅ standard 2 | 75 |
 | 7. The First World War | 21 | ✅ standard 2 | 105 |
 | 8. The Russian Revolution and the Soviet Union | 20 | ✅ standard 2 | 100 |
 | 9. The Rise of Fascism and Nazism | 20 | ✅ standard 2 | 100 |
 | 10. The Second World War | 19 | ✅ standard 2 | 95 |
 | 11. The Cold War | 19 | ✅ standard 2 | 95 |
 | 12. Britain since 1945 | 17 | ✅ standard 2 | 85 |
-| 5, 6, 13–18 | 119 | not yet ("notes still being written" on the path) | |
+| 13–18 | 86 | not yet ("notes still being written" on the path) | |
 
 Every written lesson has objectives, sections, a worked example of historical analysis, evidence-status lines (established or contested), key terms, a summary, two real sources, two flashcards and at least five questions across Foundation, Application and Evaluation, including a rubric-marked extended answer.
 
@@ -52,5 +54,5 @@ Each challenge counts as mastery evidence for its lesson (`evidence.js`). The Jo
 
 ## Next
 
-1. The GCSE pathway (Schools 1, 2, 7, 9, 10, 11 and 12) and the A level core (Schools 3, 4 and 8) are written and QA verified: 10 schools, 182 lessons. None is academically verified yet. Next: Schools 5 and 6, then 13 to 18.
+1. Schools 1 to 12, the British and European history from the medieval period to the present, are written and QA verified: 215 lessons. None is academically verified yet. Next: Schools 13 to 18.
 2. More labs, in priority order: an interactive timeline, cause-and-consequence mapping, interpretation comparison, and maps of changing borders and campaigns.
