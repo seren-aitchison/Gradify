@@ -479,7 +479,7 @@
    "id": "u03",
    "n": 3,
    "title": "Tudor England",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u03-01",
@@ -557,7 +557,7 @@
    "id": "u04",
    "n": 4,
    "title": "Stuart Britain and the Civil War",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u04-01",
