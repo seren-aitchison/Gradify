@@ -28,6 +28,18 @@
    "syllabus": "/kit/api/v1/courses/chemistry.json"
   },
   {
+   "slug": "health",
+   "name": "Health and Wellbeing",
+   "site": "HealthGradify",
+   "status": "beta",
+   "accent": "#0e98e5",
+   "page": "/healthgradify/course/",
+   "units": 11,
+   "lessons": 176,
+   "lessonsWritten": 31,
+   "syllabus": "/kit/api/v1/courses/health.json"
+  },
+  {
    "slug": "history",
    "name": "History",
    "site": "HistoryGradify",

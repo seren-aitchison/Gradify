@@ -42,7 +42,7 @@ export const GROUPS = [
       { n: "VetGradify", who: "Veterinary students", i: "paw", c: "409a6e", d: "Animal anatomy, physiology, pathology, pharmacology and veterinary exam prep.", u: "gradifyvet.com", built: true, status: "soon" },
       { n: "NurseGradify", who: "Student nurses and midwives", i: "cross", c: "6a60ff", d: "Clinical knowledge, pharmacology, patient care and nursing assessments.", built: true, status: "live" },
       { n: "PharmaGradify", who: "Pharmacy students and pharmacists", i: "pill", c: "f99246", d: "Medicinal chemistry, drug mechanisms, therapeutics and pharmacy exams.", u: "gradifypharma.com", built: true, status: "beta" },
-      { n: "HealthGradify", who: "Anyone improving their health", i: "heartbeat", c: "0e98e5", d: "Health literacy, wellbeing, and the fundamentals of anatomy and physiology.", u: "gradifyhealth.com", built: true, status: "soon" },
+      { n: "HealthGradify", who: "Anyone improving their health", i: "heartbeat", c: "0e98e5", d: "Health literacy, wellbeing, and the fundamentals of anatomy and physiology.", u: "gradifyhealth.com", built: true, status: "beta" },
       { n: "PsychGradify", who: "Psychology students", i: "brain", c: "bbabbe", d: "Cognitive science, behaviour, research methods, statistics and psychology exams.", built: true, status: "beta" },
       { n: "InternshipGradify", who: "Students looking for work experience", i: "badge", c: "0aa4c9", d: "Internships and work experience, matched to what you've learned on Gradify.", built: true, status: "soon" },
       { n: "EngineerGradify", who: "Engineering students", i: "cog", c: "ff5600", d: "Maths, mechanics, materials, systems and engineering problem-solving.", u: "gradifyeng.com", built: true, status: "soon" },

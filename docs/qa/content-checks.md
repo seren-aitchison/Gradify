@@ -8,6 +8,7 @@ These checks are mechanical. They find text that won't display as written (swall
 |---|---|---|---|---|---|---|---|
 | biology | 2 | 1,701 | 11 | 0 | 0 | 1 | 0 |
 | chemistry | 2 | 1,518 | 30 | 0 | 0 | 4 | 0 |
+| health | 2 | 1,299 | 7 | 0 | 0 | 0 | 0 |
 | history | 7 | 4,924 | 0 | 0 | 0 | 0 | 0 |
 | law | 19 | 15,086 | 0 | 0 | 0 | 0 | 0 |
 | maths | 29 | 37,481 | 1023 | 0 | 0 | 42 | 8 |
