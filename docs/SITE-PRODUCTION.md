@@ -30,6 +30,16 @@ The previous coordinator (branch `claude/lawgradify-nursegradify`) is paused. A 
 "Generated" means the files exist and pass the tests. "Live verified" means the course was loaded on
 getgradify.com after deployment and a lesson opened without errors. A site is never reported live until then.
 
+**Three levels of completion, never merged.** A course counts as finished educational content only at the third:
+
+| Level | Means | Shown in this tracker by | Who can award it |
+|---|---|---|---|
+| Generated | The content exists: syllabus mapped, lessons written | Curriculum, Lessons written | Any builder |
+| QA verified | Automated checks pass: `new-course.mjs check`, `tests/new-courses.test.mjs`, `npm run qa` with no hard failures and no warnings | Tests | Any builder, by running the checks |
+| Academically verified | A suitably qualified person has reviewed the content, checked sources and signed it off | `reviewed`, `sources` and `signoff` in the course's `qa.js` (shown in docs/CURRICULUM_PROGRESS.md) | Only a named, qualified human; never an AI session (the tests refuse an AI sign-off) |
+
+So "18 schools generated, 5 QA verified, 0 academically verified" is a complete and honest status; "100% generated" is never "100% finished".
+
 | # | Site | Course (slug) | Template used | Builder (branch, worktree) | Curriculum | Lessons written | Resources | Tests | Registered | Deployed | Live verified |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | EcoGradify | Ecology (`ecology`) | Psychology course + Biology labs | build-ecology: `feat/ecogradify-ecology` in `../Gradify-wt-ecology`, building | – | – | – | – | – | – | – |
@@ -55,6 +65,7 @@ getgradify.com after deployment and a lesson opened without errors. A site is ne
 | 21 | YouthGradify | GCSE Core (`gcse`) | Psychology course + Maths/Science | – | – | – | – | – | – | – | – |
 | 22 | JuniorGradify | Primary (`primary`) | Psychology course | – | – | – | – | – | – | – | – |
 | 23 | TechGradify | Computer Science (`computing`) | needs its site folder first (`npm run new-site`) | – | – | – | – | – | – | – | – |
+| 24 | HistoryGradify | History (`history`) | new-site + new-course scaffold (standard 2), own adapter `kit/subjects/history.js` | session `claude/lawgradify-nursegradify` (not a builder worktree) | ✅ 18 schools, 301 lessons | 5 of 18 schools, 94 lessons (Schools 1, 2, 7, 9, 10) | 4 labs | ✅ QA verified (0 warnings) | ✅ | ✅ 4c03332 | ✅ 8 November 2026 (browser check of homepage, course, a School 10 lesson, a lab, Journey link; no errors) |
 
 Priority: subjects with a clear published curriculum and the closest structure to an existing course first
 (1–8), then the professional and specialist courses (9–13), then the stage-of-life sites (14–22), whose
@@ -76,7 +87,11 @@ courses): the coordinating session registers the course.
    for health, medicine, dentistry, veterinary, finance and investing it must say it is education, not
    advice, and point to the right professional), `overview` (headline, an intro over 80 characters, the
    sources it draws on, six `learn` pairs), `extras`, and `written`.
-4. **Notes**: `notes/u01.js` (then `u02.js`, as far as you get), to content standard 2, exactly as
+4. **Notes**: write each school as plain text, check it, then add it (docs/SUBJECT_PIPELINE.md):
+   `node scripts/new-course.mjs check <slug> --unit u01 draft.txt` lists every problem with the standard at once,
+   including the predicted length-bias warning, before anything is added; `node scripts/new-course.mjs add-notes
+   <slug> u01 draft.txt` writes `notes/u01.js`, refusing text that would break it, and registers the school as
+   written with its QA record and date. Content standard 2, exactly as
    `kit/courses/psychology/notes/u01.js`: per lesson `LV:`, `S:` (over 60 characters), three `O:`, at least
    two `H:` sections and six content blocks, a `K:`, a `!:`, an `X:` worked example where it fits, at least
    one `EV:` (established, contested or hypothetical), two `T:` terms, `SUM:`, two `SRC:` lines
@@ -89,5 +104,8 @@ courses): the coordinating session registers the course.
    `WRITTEN_ON` date for each written school.
 6. **Interactives** (optional): reuse an existing Gradify lab only where it genuinely teaches a lesson
    (`kit/labs/*`), registered in `interactives.js` with `L("Lesson title")`.
-7. `node scripts/new-course.mjs lock <slug>`, then `node --test tests/new-courses.test.mjs` until it passes.
-8. Commit in your worktree. Report: schools, lessons, lessons written, interactives, test result.
+7. `node scripts/new-course.mjs lock <slug>`, then `node scripts/new-course.mjs check <slug>` and
+   `node --test tests/new-courses.test.mjs` until both pass. `node scripts/new-course.mjs doctor <slug>` lists what
+   the coordinating session still has to register (learner data, tutor rules, sitemap, offline cache).
+8. Commit in your worktree. Report at the three levels: generated (schools, lessons, lessons written,
+   interactives), QA verified (check and test results) and academically verified (always "not yet" from a builder).
