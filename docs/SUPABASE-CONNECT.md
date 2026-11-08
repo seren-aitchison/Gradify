@@ -45,27 +45,29 @@ switched on only at the end, after the checks pass and you approve.
 3. The Project URL is `https://ezlohntrnassgsbofcfc.supabase.co`. You can also see it under **Data API** in the same
    settings menu.
 
-**Send Claude both values.** Claude will use them only after step 6 passes, and only on the
-`claude/native-app-brief` branch until you approve.
+**Send Claude both values.** Claude uses them to check the project from its side, and won't put them in the website
+until step 6 passes and you approve.
 
 ## Step 3. Which tables are already there?
 
-1. In the left-hand menu, click **Table Editor**.
-2. Write down the table names you see in the list (just the names), or take a screenshot of the list.
+Claude can check this from the two public values, so you don't need to. (On 8 November 2026 the project was empty:
+none of Gradify's tables existed yet.)
 
-**Send Claude the list.** Claude will reply with exactly which setup files to run in step 4, so nothing is run
-twice. If the list is empty, that's fine. It just means you'll run all of them.
+## Step 4. Set up the tables: one paste
 
-## Step 4. Set up the tables (only the files Claude lists)
+For a new, empty project, everything is in one file that runs as a single unit: if any part fails, nothing is
+changed, and if it's run a second time it stops without changing anything.
 
-For each file Claude names, in the order given:
-
-1. Open the file on GitHub. Claude will send a link for each.
+1. Open <https://github.com/seren-aitchison/Gradify/blob/claude/native-app-brief/docs/setup/gradify-setup.sql>.
 2. Click the **Copy raw file** button (two overlapping squares, top right of the file).
 3. In Supabase, click **SQL Editor** in the left-hand menu, then **New query**.
-4. Paste, then click **Run** (or press Cmd + Return).
-5. You should see **Success. No rows returned**. If you see red text, stop and send Claude the message. It contains
-   no secrets.
+4. Paste, then click **Run** (or press Cmd + Return). If Supabase asks you to confirm, choose **Run this query**.
+5. You should see **Success. No rows returned**. If you see red text, nothing has been changed: send Claude the
+   message (it contains no secrets).
+6. Tell Claude "done". Claude re-runs the check from here to confirm every table is in place with its privacy rules.
+
+(If a project already has some of Gradify's tables, the file refuses to run, and Claude names the individual files
+in `supabase/migrations/` to run instead.)
 
 ## Step 5. Sign-in settings
 
@@ -149,7 +151,7 @@ Supabase (Edge Functions → Secrets), never into Claude or GitHub. Claude will 
 
 | You see | It means | Do |
 |---|---|---|
-| ✗ "Every migration has been run: Missing: …" | Some tables aren't set up | Send Claude the line. It names the files for step 4 |
+| ✗ "Every migration has been run: Missing: …" | Some tables aren't set up | Send Claude the line, and it will say what to run |
 | ✗ "Learner A can sign in: Invalid login credentials" | Wrong email or password, or **Auto Confirm User** wasn't ticked | Check both in Authentication → Users; delete the user and create it again if needed |
 | ✗ "Key is the public anon key: This is a secret key" | A secret key was pasted instead of the publishable one | In Supabase, replace that secret key (Project Settings → API Keys), then re-run with the publishable key |
 | "fetch failed" or "unreachable" | Your Mac can't reach Supabase, or the project is paused | Check you're online; restore the project if it's paused |
