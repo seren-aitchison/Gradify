@@ -22,6 +22,7 @@ import { UNDERSTANDING, understandingStats } from "../learning/achievements.js";
 import { sixHtml, calibrationHtml } from "../learning/mastery-view.js";
 import { conceptGraph, prerequisitesOfLesson, weakPrerequisites } from "../learning/concepts.js";
 import { checkCourse } from "./spec.js";
+import { levelOf as gameLevelOf, habits } from "../game/engine.js";
 import { learnerOf, needsSetup, applyPrefs } from "../data/profile.js";
 import { paceFor } from "../learning/pace.js";
 import { trackView, track } from "../core/analytics.js";
@@ -45,7 +46,8 @@ const weekStart = (t = Date.now()) => { const d = new Date(t); d.setHours(0, 0, 
 const shuffle = (a, seed = Math.random) => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(seed() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const rng = (s) => () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
 // levels get further apart: level n needs 50·n·(n+1) XP in total
-export const levelOf = (xp) => { let n = 1; while (50 * n * (n + 1) <= xp) n++; return { n, from: 50 * (n - 1) * n, to: 50 * n * (n + 1) }; };
+// one level curve for every course and the Journey page (kit/game/engine.js): level n needs 50·n·(n+1) XP
+export const levelOf = gameLevelOf;
 const ICON = {
   play: '<path d="M9 6.5v11l9-5.5z" fill="currentColor"/>',
   cube: '<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z M4 7.5l8 4.5 8-4.5 M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>',
@@ -267,13 +269,11 @@ export function mountCourse(root, cfg) {
   // ---------- XP, levels, streaks ----------
   const totalXp = () => S.log.reduce((a, r) => a + r.xp, 0);
   const days = () => [...new Set(S.log.map((r) => day(r.t)))].sort();
+  // the day streak, with rest days (kit/game/engine.js): every seven learning days bank one, up to three, and a banked
+  // rest day covers a missed day automatically, so a day off for illness or a break doesn't wipe the streak
   function streak() {
-    const set = new Set(days()); let n = 0, t = Date.now();
-    if (!set.has(day(t))) t -= DAY;
-    while (set.has(day(t))) { n++; t -= DAY; }
-    let best = 0, run = 0, prev = null;
-    for (const d of days()) { const ms = Date.parse(d); run = prev && ms - prev < 1.5 * DAY ? run + 1 : 1; prev = ms; best = Math.max(best, run); }
-    return { n, best: Math.max(best, n), today: set.has(day()) };
+    const h = habits(S.log || [], { goal: S.goal });
+    return { n: h.streak, best: h.best, today: h.today, rest: h.restBank };
   }
   const todayXp = () => S.log.filter((r) => day(r.t) === day()).reduce((a, r) => a + r.xp, 0);
   function week() {
@@ -437,13 +437,14 @@ export function mountCourse(root, cfg) {
       <section class="co-card co-goal">
         <svg viewBox="0 0 76 76" class="co-ring"><circle cx="38" cy="38" r="${R}" class="bg"/><circle cx="38" cy="38" r="${R}" class="fg" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - ring)}"/></svg>
         <div><span class="co-kicker">Daily goal</span><b>${tx} / ${S.goal} XP</b>
-          <small class="co-streak">${ic("flame")} ${st.n}-day streak${st.today ? "" : st.n ? " · learn today to keep it" : ""}</small>
+          <small class="co-streak">${ic("flame")} ${st.n}-day streak${st.today ? "" : st.n ? " · learn today to keep it" : ""}${st.rest ? ` · ${st.rest} rest day${st.rest > 1 ? "s" : ""} banked` : ""}</small>
           <select aria-label="Daily goal">${[20, 30, 50, 100].map((g) => `<option value="${g}" ${g === S.goal ? "selected" : ""}>${g} XP a day</option>`).join("")}</select></div>
       </section>
       ${syncWarn ? `<section class="co-card co-syncwarn" role="status"><p>${esc(syncWarn)}</p></section>` : ""}
       ${planHtml()}
       ${nl ? `<section class="co-card"><span class="co-kicker">${ic("flag")} Next milestone</span><h3>Finish ${U} ${nu.n}: ${esc(nu.title)}</h3><p>${left} lesson${left === 1 ? "" : "s"} to go, then the ${u1} quiz for +${XP.quiz} XP.</p><a class="btn btn-light lg btn-sm co-go" href="#/lesson/${nl.id}"><span>Continue: ${esc(nl.title)}</span></a></section>` : `<section class="co-card"><h3>Course complete</h3><p>Every lesson done. Keep your memory fresh in Review.</p></section>`}
       <section class="co-card"><span class="co-kicker">${ic("trophy")} Weekly challenge</span><h3>${c.name}</h3><p>${c.d}. Reward: +${XP.weekly} XP.</p><div class="co-bar warm"><i style="width:${(cw / c.n) * 100}%"></i></div><small>${cw} / ${c.n}${S.weekly[String(weekStart())] ? " · claimed" : ""} · resets Monday</small></section>
+      <a class="co-card co-journey" href="/journey.html"><span class="co-kicker">${ic("trophy")} Your journey</span><h3>Quests, achievements and every subject</h3><p>Your level, streak and rewards across all of Gradify.</p></a>
       <section class="co-card"><span class="co-kicker">Course progress</span><h3>${Object.keys(S.done).length} / ${lessons.length} lessons</h3>
         <div class="co-dots">${units.map((u) => { const t = trackOf(u), p = unitDone(u) / u.lessons.length; return `<a href="#/learn/${u.id}" title="${U} ${u.n}: ${esc(u.title)} (${Math.round(p * 100)}%)" style="--a:${t.from};--b:${t.to};--p:${p}"></a>`; }).join("")}</div></section>
       <section class="co-card"><span class="co-kicker">Badges · ${got.size} / ${BADGES.length}</span><div class="co-badges">${BADGES.map((b) => `<span class="${got.has(b.id) ? "on" : ""}" title="${b.name}: ${b.d}">${ic(got.has(b.id) ? "star" : "lock")}</span>`).join("")}</div><a class="co-more" href="#/me">See all your progress →</a></section>`;
@@ -1018,7 +1019,7 @@ export function mountCourse(root, cfg) {
     const weeks = 18, start = weekStart() - (weeks - 1) * 7 * DAY;
     const cells = Array.from({ length: weeks * 7 }, (_, i) => { const t = start + i * DAY, d = day(t), v = byDay[d] || 0; return t > Date.now() ? "<i class=future></i>" : `<button style="--v:${Math.min(1, v / Math.max(S.goal, 1))}" data-day="${d}" title="${d}: ${v} XP"></button>`; }).join("");
     const last14 = Array.from({ length: 14 }, (_, i) => { const d = day(Date.now() - (13 - i) * DAY); return [d, byDay[d] || 0]; }), mx = Math.max(S.goal, ...last14.map((x) => x[1]));
-    main.innerHTML = `<div class="co-intro"><span class="co-kicker">My progress</span><h2>Your ${esc(cfg.name)}</h2><p>Everything you've done here, and what's saved to your Gradify account.</p></div>
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">My progress</span><h2>Your ${esc(cfg.name)}</h2><p>Everything you've done here, and what's saved to your Gradify account. Your quests, achievements and progress in every subject are on <a href="/journey.html">your journey</a>.</p></div>
       <div class="co-tiles">${[["Level", L.n], ["Total XP", xp.toLocaleString()], ["Day streak", sk.n], ["Best streak", sk.best], ["Lessons", `${st.lessons} / ${lessons.length}`], ["Units cleared", st.units], ["Quizzes passed", st.quizzes], ["Problems solved", st.solved]].map(([k, v]) => `<div><small>${k}</small><b>${v}</b></div>`).join("")}</div>
       ${masteryHtml()}
       ${insightHtml()}

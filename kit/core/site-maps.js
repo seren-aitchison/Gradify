@@ -24,6 +24,7 @@ const RAW = {
   SciGradify: "Cells, Genetics, Ecosystems; Bonding, Reactions, Energetics; Forces, Fields, Waves; Hypotheses, Experiments, Evidence; Methods, Errors, Analysis; Graphs, Uncertainty, Statistics",
   EcoGradify: "Populations, Communities, Ecosystems; Species, Habitats, Extinction; Greenhouse effect, Feedbacks, Impacts; Resources, Energy, Trade-offs; Protected areas, Rewilding, Evidence; Sampling, Surveys, Analysis",
   SocGradify: "Durkheim, Marx, Weber; Class, Gender, Ethnicity; Family, Education, Work; Surveys, Interviews, Ethics; Policy making, Welfare, Evaluation; Migration, Media, Global economy",
+  HistoryGradify: "Sources, Evidence, Interpretations; Normans, Magna Carta, Black Death; Reformation, Civil War, Glorious Revolution; Industry, Empire, Reform; World Wars, Revolution, Dictatorship; Cold War, Decolonisation, Europe",
   LitGradify: "Language, Form, Structure; Key lines, Imagery, Motifs; Historical context, Biography, Ideas; Feminist, Marxist, Psychoanalytic; Arguments, Evidence, Structure; Medieval, Romantic, Modernist",
   LanguageGradify: "Everyday words, Phrases, Topics; Tenses, Agreement, Word order; Conversations, Podcasts, Accents; Pronunciation, Fluency, Conversation; Sentences, Emails, Essays; Customs, Media, Idioms",
   ArtGradify: "Line, Form, Observation; Colour wheel, Harmony, Contrast; Balance, Focal point, Movement; Renaissance, Impressionism, Modern art; Paint, Print, Digital; Studies, Projects, Reflection",

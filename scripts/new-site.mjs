@@ -22,8 +22,11 @@ const made = [];
 for (const site of targets) {
   const dir = slugOf(site);
   if (await access(dir).then(() => true, () => false)) { console.log(`${dir}/ already exists, left as it is.`); continue; }
-  const page = SITE_PAGES[site.n] || { h: [site.n, "on Gradify."], sub: site.d, go: "Start with your notes", ticks: ["Works with your own notes", "Every card checked", "Free to start"],
-    card: { file: "your-notes.pdf", level: "Start", q: "What's the first idea in your notes?", a: "Add your notes and Gradify will ask.", checks: ["Recall", "Explain", "Apply", "Remember"] } };
+  // a site's opening copy may leave out the example card; fall back to the default rather than crash half-way
+  const DEFAULT_CARD = { file: "your-notes.pdf", level: "Start", q: "What's the first idea in your notes?", a: "Add your notes and Gradify will ask.", checks: ["Recall", "Explain", "Apply", "Remember"] };
+  const page0 = SITE_PAGES[site.n] || { h: [site.n, "on Gradify."], sub: site.d, go: "Start with your notes", ticks: ["Works with your own notes", "Every card checked", "Free to start"],
+    card: DEFAULT_CARD };
+  const page = { ...page0, card: { ...DEFAULT_CARD, ...(page0.card || {}) } };
   const fill = (t) => t
     .replaceAll("{{NAME}}", site.n).replaceAll("{{WHO}}", esc(site.who || "")).replaceAll("{{DESC}}", esc(site.d))
     .replaceAll("{{H1A}}", esc(page.h[0])).replaceAll("{{H1B}}", esc(page.h[1])).replaceAll("{{SUB}}", esc(page.sub)).replaceAll("{{GO}}", esc(page.go))
@@ -31,8 +34,10 @@ for (const site of targets) {
     .replaceAll("{{CARD_FILE}}", esc(page.card.file)).replaceAll("{{CARD_LEVEL}}", esc(page.card.level))
     .replaceAll("{{CARD_Q}}", esc(page.card.q)).replaceAll("{{CARD_A}}", esc(page.card.a))
     .replaceAll("{{CHECKS}}", page.card.checks.map((x) => `<li>${esc(x)}</li>`).join(""));
+  // render every page first, so a problem in the copy can't leave a half-made folder behind
+  const pages = Object.entries(templates).map(([f, t]) => [f, fill(t)]);
   await mkdir(dir);
-  for (const [f, t] of Object.entries(templates)) await writeFile(`${dir}/${f}`, fill(t));
+  for (const [f, html] of pages) await writeFile(`${dir}/${f}`, html);
   // mark it built, so the directory links to getgradify.com/<slug>/
   const line = sitesSrc.split("\n").find((l) => l.includes(`n: "${site.n}"`));
   if (line && !/built: true/.test(line)) sitesSrc = sitesSrc.replace(line, line.replace(/ \},?\s*$/, (end) => `, built: true${end}`));

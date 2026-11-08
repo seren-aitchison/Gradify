@@ -77,6 +77,8 @@ export const SITE_PAGES = {
   SocGradify: { h: ["Understand how", "society works."], sub: "Sociology, social structures, research methods and policy, learned from your notes and applied to the world around you.", go: "Add your first notes",
     ticks: ["Theory and methods", "Real-world examples", "Free to start"],
     card: { file: "durkheim-suicide.pdf", level: "Year 1", q: "Why did Durkheim treat suicide as a social fact?", a: "Rates varied with social integration, not just individual psychology.", checks: ["Social fact", "Integration", "Evidence", "Criticism"] } },
+  HistoryGradify: { h: ["Know what happened.", "Argue why."], sub: "British, European and world history from the Normans to Brexit, with sources, interpretations and essay practice for GCSE and A level.", go: "Start the course", ticks: ["GCSE and A level pathways", "Sources and interpretations", "Free to start"],
+    card: { file: "elizabeth-i.pdf", level: "GCSE", q: "Why did Elizabeth I's religious settlement of 1559 aim for a middle way?", a: "To secure a Protestant Church of England while keeping as many Catholics loyal as possible.", checks: ["Recall", "Explain", "Analyse sources", "Judge"] } },
   LitGradify: { h: ["Read closer.", "Write sharper."], sub: "Close reading, critical interpretation and essay writing, with practice that turns quotations and context into arguments.", go: "Add your first text",
     ticks: ["Quotations that stick", "Essay practice", "Free to start"],
     card: { file: "macbeth-act-1.txt", level: "A level", q: "What does 'Fair is foul, and foul is fair' set up?", a: "A world of inversion and deceptive appearances.", checks: ["Quotation analysed", "Theme identified", "Links forward", "Context"] } },

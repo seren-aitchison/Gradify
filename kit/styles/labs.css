@@ -62,3 +62,22 @@
 .lab-handle:hover { border-color: rgba(255, 255, 255, .35); }
 .lab-handle:focus-visible { outline: none; border-color: #fff; box-shadow: 0 0 0 3px rgba(90, 160, 255, .6); }
 .lab-handle:active { cursor: grabbing; }
+/* history chronology (kit/labs/history/chronology.js) */
+.hx-list { list-style: none; margin: 8px 0; padding: 0; display: grid; gap: 6px; }
+.hx-list li { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 8px 10px; border: 1px solid rgba(255, 255, 255, .12); border-radius: 10px; }
+.hx-list li b { color: #f5b84b; font-family: var(--mono, monospace); margin-left: 6px; }
+.hx-move { display: flex; gap: 4px; flex: none; }
+/* history timeline (kit/labs/history/timeline.js) */
+.hx-axis { position: relative; height: 112px; margin: 12px 4px 8px; }
+.hx-bands { position: absolute; inset: 0 0 auto 0; height: 40px; }
+.hx-band { position: absolute; top: 0; height: 34px; border-radius: 8px; border: 1px solid rgba(245, 184, 75, .5); background: rgba(245, 184, 75, .16); color: inherit; font-size: 11px; overflow: hidden; padding: 0 4px; cursor: pointer; }
+.hx-band span { white-space: nowrap; }
+.hx-events { position: absolute; left: 0; right: 0; top: 50px; height: 24px; border-top: 2px solid rgba(255, 255, 255, .25); }
+.hx-ev { position: absolute; top: -9px; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; border: 2px solid #0b0c0e; background: #f5b84b; cursor: pointer; }
+.hx-ev:hover, .hx-ev:focus-visible, .hx-band:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.hx-ticks { position: absolute; left: 0; right: 0; top: 86px; font: 11px var(--mono, monospace); color: rgba(255, 255, 255, .6); }
+.hx-ticks span { position: absolute; transform: translateX(-50%); }
+.hx-detail { min-height: 1.5em; }
+.hx-num input { width: 7em; margin: 0 8px; }
+@media (max-width: 560px) { .hx-band span { display: none; } }
+.hx-band.tiny span { display: none; }

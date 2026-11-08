@@ -34,7 +34,7 @@ const COURSES = [
 for (const slug of (await readdir(new URL("../kit/courses/", import.meta.url))).sort()) {
   if (COURSES.some((c) => c.slug === slug)) continue;
   const c = (await import(`../kit/courses/${slug}/course.js`)).default;
-  if (c.page) COURSES.push({ slug, name: c.site, expert: c.expert, minWrong: 3, rules: (unit, L) => standard2Rules(unit, L), srcRegister: true,
+  if (c.page) COURSES.push({ slug, name: c.site, expert: c.expert, minWrong: 3, rules: ADAPTERS[c.adapter]?.qa.rules || ((unit, L) => standard2Rules(unit, L)), flags: ADAPTERS[c.adapter]?.qa.flags, srcRegister: true,
     registerNote: "taken from the lessons' SRC: lines, for checking against the original publication." });
 }
 

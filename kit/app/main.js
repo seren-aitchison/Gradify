@@ -16,6 +16,7 @@ import { generate, regenerateCard, generateQuestions } from "../notes/engine.js"
 import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "../learning/srs.js";
 import { topicProfiles, practiceOrder, LEVELS } from "../learning/mastery.js";
 import { sixHtml, calibrationHtml, HOW } from "../learning/mastery-view.js";
+import { levelOf as gameLevelOf } from "../game/engine.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -25,8 +26,9 @@ const today = () => dayKey(new Date());
 const fmtDate = (d, o = { day: "numeric", month: "short" }) => new Date(d).toLocaleDateString("en-GB", o);
 const SITES = GROUPS.flatMap((g) => g.items).filter((s) => s.n !== "Klerio");
 const siteOf = (n) => SITES.find((s) => s.n === n) || { n: "Gradify", c: "f055dd", i: "sparkles" };
-const levelOf = (xp) => Math.floor(Math.sqrt(xp / 50)) + 1;
-const xpForLevel = (l) => 50 * (l - 1) ** 2;
+// the same level curve as every course and the Journey page (kit/game/engine.js)
+const levelOf = (xp) => gameLevelOf(xp).n;
+const xpForLevel = (l) => 50 * (l - 1) * l;
 const SEC_PER_CARD = 25;
 
 let store, profile, view = $("#view");

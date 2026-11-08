@@ -17,7 +17,7 @@ const DAY = 864e5;
 export const COURSES = {
   physics: "/scigradify/physics/", biology: "/scigradify/biology/", chemistry: "/scigradify/chemistry/",
   law: "/lawgradify/course/", nursing: "/nursegradify/course/", pharmacy: "/pharmagradify/course/",
-  psychology: "/psychgradify/course/", sociology: "/socgradify/course/", maths: "/mathgradify/course/",
+  psychology: "/psychgradify/course/", sociology: "/socgradify/course/", maths: "/mathgradify/course/", history: "/historygradify/course/",
   // courses made with scripts/new-course.mjs (mass production, docs/SITE-PRODUCTION.md); listed before their files land
   ecology: "/ecogradify/course/", business: "/businessgradify/course/", finance: "/financegradify/course/",
   medicine: "/medgradify/course/", literature: "/litgradify/course/", music: "/musicgradify/course/",

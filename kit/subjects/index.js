@@ -7,4 +7,5 @@ import law from "./law.js";
 import nursing from "./nursing.js";
 import pharmacy from "./pharmacy.js";
 import { psychology, sociology } from "./social.js";
-export const ADAPTERS = { maths, science, programming, law, nursing, pharmacy, psychology, sociology };
+import history from "./history.js";
+export const ADAPTERS = { maths, science, programming, law, nursing, pharmacy, psychology, sociology, history };
