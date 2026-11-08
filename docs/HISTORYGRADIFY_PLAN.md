@@ -29,7 +29,7 @@ It was checked before starting: HistoryGradify wasn't in the production tracker 
 
 Every written lesson has objectives, sections, a worked example of historical analysis, evidence-status lines (established or contested), key terms, a summary, two real sources, two flashcards and at least five questions across Foundation, Application and Evaluation, including a rubric-marked extended answer.
 
-**Live verified (8 November 2026):** on getgradify.com, in a real browser: the homepage lists HistoryGradify; its homepage and course load; a School 10 lesson renders with its questions; the timeline lab mounts in its lesson; answering a question records progress; the sidebar links to the Journey, which shows History progress; no console errors; no horizontal overflow at phone width. Accounts can't be tested live: production has no database connected (docs/BACKEND-STATUS.md).
+**Live verified (8 November 2026):** on getgradify.com, in a real browser: the homepage lists HistoryGradify; its homepage and course load; a School 10 lesson renders with its questions; after Schools 11 and 12 were deployed, the first School 11 lesson and the first, Brexit and last School 12 lessons rendered with 5 questions each; the timeline lab mounts in its lesson; answering a question records progress; the sidebar links to the Journey, which shows History progress; no console errors; no horizontal overflow at phone width. Accounts can't be tested live: production has no database connected (docs/BACKEND-STATUS.md).
 
 **Academic review:** none yet. The review pack for a history teacher or historian is `docs/qa/history-review-pack.md` (`node scripts/review-pack.mjs history`).
 
