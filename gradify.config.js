@@ -10,5 +10,5 @@ export const SITE = null;
 // works on every site. Fill these in once the project exists (see
 // docs/SETUP.md). Both values are safe to publish: the anon key only allows what row-level
 // security permits. Leave them empty and the app runs in "this device" mode.
-export const SUPABASE_URL = "";
-export const SUPABASE_ANON_KEY = "";
+export const SUPABASE_URL = "https://ezlohntrnassgsbofcfc.supabase.co";
+export const SUPABASE_ANON_KEY = "sb_publishable_TG7ZtA0a9zQdObOW0tub7g_NedlFGj-";
