@@ -42,14 +42,14 @@ So "18 schools generated, 5 QA verified, 0 academically verified" is a complete 
 
 | # | Site | Course (slug) | Template used | Builder (branch, worktree) | Curriculum | Lessons written | Resources | Tests | Registered | Deployed | Live verified |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | EcoGradify | Ecology (`ecology`) | Psychology course + Biology labs | build-ecology: `feat/ecogradify-ecology` in `../Gradify-wt-ecology`, building | – | – | – | – | – | – | – |
+| 1 | EcoGradify | Ecology (`ecology`) | Psychology course + Biology labs | builder worktree `worktree-agent-a5a3bdff…`, writing School 2 | 11 schools, 198 lessons | 16 (School 1) | – | pass | yes (beta) | `dc00409` | yes, 8 Nov: u01-01 opened, no errors |
 | 2 | BusinessGradify | Business and Management (`business`) | Psychology course | build-business: `course/business` in `../Gradify-wt/business`, building | – | – | – | – | – | – | – |
 | 3 | FinanceGradify | Accounting and Finance (`finance`) | Psychology course | build-finance: `course/finance` in `../Gradify-wt/finance`, building | – | – | – | – | – | – | – |
 | 4 | MedGradify | Medicine (`medicine`) | Psychology course + Nursing/Biology labs | build-medicine: `course/medicine` in `../Gradify-wt/medicine`, building | – | – | – | – | – | – | – |
-| 5 | LitGradify | English Literature (`literature`) | Psychology course | build-literature: `course/literature` in `../Gradify-wt/literature`, building | – | – | – | – | – | – | – |
+| 5 | LitGradify | English Literature (`literature`) | Psychology course | builder worktree `worktree-agent-afe4247a…`, writing School 2 | 10 schools, 166 lessons | 18 (School 1) | – | pass | yes (beta) | `dc00409` | yes, 8 Nov: u01-01 opened, no errors |
 | 6 | MusicGradify | Music (`music`) | Psychology course | build-music: `course/music` in `../Gradify-wt/music`, building | – | – | – | – | – | – | – |
 | 7 | HealthGradify | Health and Wellbeing (`health`) | Psychology course + Biology labs | build-health: `course/health` in `../Gradify-wt/health`, continuing with School 3+ | 11 schools, 176 lessons | 31 (Schools 1–2) | 7 reused labs | pass | yes (beta) | `cd1c1d2` | yes, 8 Nov: u01-01 opened, no errors |
-| 8 | EngineerGradify | Engineering (`engineering`) | Psychology course + Physics/Maths labs | build-engineering: `course/engineering` in `../Gradify-wt/engineering`, building | – | – | – | – | – | – | – |
+| 8 | EngineerGradify | Engineering (`engineering`) | Psychology course + Physics/Maths labs | builder worktree `worktree-agent-a79ff2b0…`, writing School 2 | 12 schools, 191 lessons | 19 (School 1) | 17 reused labs | pass | yes (beta) | `dc00409` | yes, 8 Nov: u01-01 opened, no errors |
 | 9 | InvestorGradify | Investing (`investing`) | Psychology course | – | – | – | – | – | – | – | – |
 | 10 | VetGradify | Veterinary Science (`veterinary`) | Psychology course + Biology labs | – | – | – | – | – | – | – | – |
 | 11 | DentalGradify | Dentistry (`dentistry`) | Psychology course | – | – | – | – | – | – | – | – |
@@ -65,7 +65,7 @@ So "18 schools generated, 5 QA verified, 0 academically verified" is a complete 
 | 21 | YouthGradify | GCSE Core (`gcse`) | Psychology course + Maths/Science | – | – | – | – | – | – | – | – |
 | 22 | JuniorGradify | Primary (`primary`) | Psychology course | – | – | – | – | – | – | – | – |
 | 23 | TechGradify | Computer Science (`computing`) | needs its site folder first (`npm run new-site`) | – | – | – | – | – | – | – | – |
-| 24 | HistoryGradify | History (`history`) | new-site + new-course scaffold (standard 2), own adapter `kit/subjects/history.js` | session `claude/lawgradify-nursegradify` (not a builder worktree) | ✅ 18 schools, 301 lessons | 7 of 18 schools, 130 lessons (Schools 1, 2, 7, 9, 10, 11, 12): generated and QA verified; 0 academically verified | 4 labs | ✅ QA verified (0 warnings) | ✅ | ✅ 4c03332 | ✅ 8 November 2026 (browser check of homepage, course, a School 10 lesson, a lab, Journey link; no errors) |
+| 24 | HistoryGradify | History (`history`) | new-site + new-course scaffold (standard 2), own adapter `kit/subjects/history.js` | session `claude/lawgradify-nursegradify` (not a builder worktree) | ✅ 18 schools, 301 lessons | ✅ 18 of 18 schools, 301 lessons: generated and QA verified; 0 academically verified | 4 labs | ✅ QA verified (0 warnings) | ✅ | ✅ 4c03332 | ✅ 8 November 2026 (browser check of homepage, course, a School 10 lesson, a lab, Journey link; no errors) |
 
 Priority: subjects with a clear published curriculum and the closest structure to an existing course first
 (1–8), then the professional and specialist courses (9–13), then the stage-of-life sites (14–22), whose

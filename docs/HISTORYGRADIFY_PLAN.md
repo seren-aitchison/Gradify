@@ -20,16 +20,26 @@ It was checked before starting: HistoryGradify wasn't in the production tracker 
 |---|---|---|---|
 | 1. Historical Thinking and Methods | 16 | ✅ standard 2 | 82 |
 | 2. Medieval Britain | 18 | ✅ standard 2 | 90 |
+| 3. Tudor England | 14 | ✅ standard 2 | 70 |
+| 4. Stuart Britain and the Civil War | 18 | ✅ standard 2 | 90 |
+| 5. The Industrial Revolution | 18 | ✅ standard 2 | 90 |
+| 6. Nineteenth-Century Britain | 15 | ✅ standard 2 | 75 |
 | 7. The First World War | 21 | ✅ standard 2 | 105 |
+| 8. The Russian Revolution and the Soviet Union | 20 | ✅ standard 2 | 100 |
 | 9. The Rise of Fascism and Nazism | 20 | ✅ standard 2 | 100 |
 | 10. The Second World War | 19 | ✅ standard 2 | 95 |
 | 11. The Cold War | 19 | ✅ standard 2 | 95 |
 | 12. Britain since 1945 | 17 | ✅ standard 2 | 85 |
-| 3–6, 8, 13–18 | 171 | not yet ("notes still being written" on the path) | |
+| 13. The United States in the Twentieth Century | 15 | ✅ standard 2 | 75 |
+| 14. Global History and Empires | 17 | ✅ standard 2 | 85 |
+| 15. Revolutions and Political Change | 13 | ✅ standard 2 | 65 |
+| 16. Religion, Culture and Society | 14 | ✅ standard 2 | 70 |
+| 17. A Level Historical Investigation | 13 | ✅ standard 2 | 65 |
+| 18. Historical Examination and Revision | 14 | ✅ standard 2 | 70 |
 
 Every written lesson has objectives, sections, a worked example of historical analysis, evidence-status lines (established or contested), key terms, a summary, two real sources, two flashcards and at least five questions across Foundation, Application and Evaluation, including a rubric-marked extended answer.
 
-**Live verified (8 November 2026):** on getgradify.com, in a real browser: the homepage lists HistoryGradify; its homepage and course load; a School 10 lesson renders with its questions; after Schools 11 and 12 were deployed, the first School 11 lesson and the first, Brexit and last School 12 lessons rendered with 5 questions each; the timeline lab mounts in its lesson; answering a question records progress; the sidebar links to the Journey, which shows History progress; no console errors; no horizontal overflow at phone width. Accounts can't be tested live: production has no database connected (docs/BACKEND-STATUS.md).
+**Live verified (8 November 2026):** on getgradify.com, in a real browser: the homepage lists HistoryGradify; its homepage and course load; a School 10 lesson renders with its questions; after Schools 11 and 12 were deployed, the first School 11 lesson and the first, Brexit and last School 12 lessons rendered with 5 questions each; after Schools 3, 4 and 8 were deployed, the first and last lessons of Schools 3 and 8 and two School 4 lessons did the same; after Schools 5 and 6 were deployed, three lessons from each, including the first and last, did the same; after Schools 13 to 18 were deployed, the first and last lessons of each did the same; the timeline lab mounts in its lesson; answering a question records progress; the sidebar links to the Journey, which shows History progress; no console errors; no horizontal overflow at phone width. Accounts can't be tested live: production has no database connected (docs/BACKEND-STATUS.md).
 
 **Academic review:** none yet. The review pack for a history teacher or historian is `docs/qa/history-review-pack.md` (`node scripts/review-pack.mjs history`).
 
@@ -49,5 +59,5 @@ Each challenge counts as mastery evidence for its lesson (`evidence.js`). The Jo
 
 ## Next
 
-1. The GCSE pathway (Schools 1, 2, 7, 9, 10, 11 and 12) is written and QA verified, but not yet academically verified. Next, in pathway order: Schools 3, 4 and 8 for the A level pathway.
+1. All 18 schools (301 lessons, 1,507 questions) are written and QA verified. None is academically verified yet: the next milestone is a history teacher's review, using docs/qa/history-review-pack.md.
 2. More labs, in priority order: an interactive timeline, cause-and-consequence mapping, interpretation comparison, and maps of changing borders and campaigns.

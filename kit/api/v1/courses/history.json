@@ -479,7 +479,7 @@
    "id": "u03",
    "n": 3,
    "title": "Tudor England",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u03-01",
@@ -557,7 +557,7 @@
    "id": "u04",
    "n": 4,
    "title": "Stuart Britain and the Civil War",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u04-01",
@@ -655,7 +655,7 @@
    "id": "u05",
    "n": 5,
    "title": "The Industrial Revolution",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u05-01",
@@ -753,7 +753,7 @@
    "id": "u06",
    "n": 6,
    "title": "Nineteenth-Century Britain",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u06-01",
@@ -949,7 +949,7 @@
    "id": "u08",
    "n": 8,
    "title": "The Russian Revolution and the Soviet Union",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u08-01",
@@ -1464,7 +1464,7 @@
    "id": "u13",
    "n": 13,
    "title": "The United States in the Twentieth Century",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u13-01",
@@ -1547,7 +1547,7 @@
    "id": "u14",
    "n": 14,
    "title": "Global History and Empires",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u14-01",
@@ -1640,7 +1640,7 @@
    "id": "u15",
    "n": 15,
    "title": "Revolutions and Political Change",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u15-01",
@@ -1713,7 +1713,7 @@
    "id": "u16",
    "n": 16,
    "title": "Religion, Culture and Society",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u16-01",
@@ -1791,7 +1791,7 @@
    "id": "u17",
    "n": 17,
    "title": "A Level Historical Investigation",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u17-01",
@@ -1864,7 +1864,7 @@
    "id": "u18",
    "n": 18,
    "title": "Historical Examination and Revision",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u18-01",

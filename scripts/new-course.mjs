@@ -178,6 +178,8 @@ async function check() {
   const units = opt.unit ? course.units.filter((u) => u.id === opt.unit) : course.units.filter((u) => course.written.includes(u.id));
   if (!units.length) throw new Error(opt.unit ? `no unit ${opt.unit} in ${slug}` : `${slug} has no written schools: name one with --unit`);
   const ixIds = new Set((course.interactives || []).map((x) => x.id)), seen = new Map();
+  // one school (or a draft) is also checked for questions that duplicate the course's other written schools, as QA does
+  if (opt.unit) for (const o of course.units.filter((u) => u.id !== opt.unit && course.written.includes(u.id))) schoolProblems(await course.notes(o.id), o, { ixIds, seen });
   let bad = 0;
   for (const u of units) {
     const text = drafts.length ? (await Promise.all(drafts.map((f) => readFile(f, "utf8")))).join("\n\n") : await course.notes(u.id);
