@@ -77,3 +77,11 @@ test("CI checks the build on every push and deploys only the allowlisted build",
   assert.doesNotMatch(deployJob, /rsync|cp -r|path: \.\s*$/m, "the deploy must not copy the repository wholesale");
   assert.match(deployJob, /needs: test/);
 });
+
+test("the published homepage shows the registry's live, beta and site counts, with or without JavaScript", async () => {
+  const { withCounts, homeCountsNow } = await import("../scripts/build-site.mjs");
+  const html = '<b id="live-count">0</b> <span id="beta-count">0</span> <span class="js-count">30</span> <span class="js-count">31</span>';
+  assert.equal(await withCounts(html, { live: 3, beta: 6, total: 32 }), '<b id="live-count">3</b> <span id="beta-count">6</span> <span class="js-count">32</span> <span class="js-count">32</span>');
+  const c = await homeCountsNow();
+  assert.ok(c.total >= c.live + c.beta && c.total > 0);
+});

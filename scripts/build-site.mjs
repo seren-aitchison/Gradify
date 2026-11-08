@@ -8,7 +8,7 @@
 // Every top-level entry in the repository must be listed in PUBLISH or EXCLUDE, so a new folder is never
 // published, or silently left out, without a decision.
 import { execFileSync } from "node:child_process";
-import { mkdir, copyFile, readFile, readdir, stat, mkdtemp, rm } from "node:fs/promises";
+import { mkdir, copyFile, readFile, writeFile, readdir, stat, mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, dirname, resolve, relative, sep, posix } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -77,6 +77,19 @@ export function classify(files) {
   return { publish, excluded, unclassified: [...unclassified].sort() };
 }
 
+// The homepage's "N live · N in beta of N sites" and site counts, written in from the registry when the site is
+// built, so the published page is right without JavaScript (link previews, search engines, screen readers on a slow
+// connection) and never drifts from kit/core/sites.js. assets/app.js computes the same numbers in the browser.
+export async function homeCountsNow() {
+  const [{ GROUPS }, { homeCounts }] = await Promise.all([import(new URL("../kit/core/sites.js", import.meta.url)), import(new URL("../kit/core/site-status.js", import.meta.url))]);
+  return homeCounts(GROUPS);
+}
+export async function withCounts(html, c) {
+  c ||= await homeCountsNow();
+  return html.replace(/(<b id="live-count">)\d+(<\/b>)/, `$1${c.live}$2`).replace(/(<span id="beta-count">)\d+(<\/span>)/, `$1${c.beta}$2`)
+    .replace(/(<span class="js-count">)\d+(<\/span>)/g, `$1${c.total}$2`);
+}
+
 export async function build(out, { root = REPO, files = tracked(root) } = {}) {
   const { publish, unclassified } = classify(files);
   if (unclassified.length) throw new Error(`not in the allowlist or the exclusions: ${unclassified.join(", ")}. Add each to PUBLISH or EXCLUDE in scripts/build-site.mjs`);
@@ -84,6 +97,7 @@ export async function build(out, { root = REPO, files = tracked(root) } = {}) {
     await mkdir(dirname(join(out, f)), { recursive: true });
     await copyFile(join(root, f), join(out, f));
   }
+  if (publish.includes("index.html")) await writeFile(join(out, "index.html"), await withCounts(await readFile(join(out, "index.html"), "utf8")));
   return publish;
 }
 
@@ -168,6 +182,12 @@ export async function verify(out, { root = REPO, files = tracked(root) } = {}) {
   for (const f of built.filter((x) => !BINARY.test(x))) {
     const text = await readFile(join(out, f), "utf8");
     for (const [name, re] of SECRET_PATTERNS) if (re.test(text)) problems.push(`${f}: looks like a ${name}`);
+  }
+  // 6. the homepage's counts match the site registry
+  if (have.has("index.html")) {
+    const html = await readFile(join(out, "index.html"), "utf8"), c = await homeCountsNow();
+    const got = { live: html.match(/<b id="live-count">(\d+)</)?.[1], beta: html.match(/<span id="beta-count">(\d+)</)?.[1], totals: [...html.matchAll(/<span class="js-count">(\d+)</g)].map((m) => m[1]) };
+    if (got.live != c.live || got.beta != c.beta || got.totals.some((t) => t != c.total)) problems.push(`index.html shows ${got.live} live, ${got.beta} in beta, ${got.totals.join("/")} sites; the registry has ${c.live}, ${c.beta}, ${c.total}`);
   }
   return { problems, files: built.length };
 }

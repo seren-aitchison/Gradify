@@ -2,6 +2,7 @@ import { GROUPS, FEATURED, START_HERE, KEYWORDS } from "../kit/core/sites.js";
 import { icon } from "../kit/core/icons.js";
 import { triple, mix, ink, tile } from "../kit/core/colour.js";
 import { pathOf, nameHtml } from "../kit/core/site.js";
+import { statusOf } from "../kit/core/site-status.js";
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../gradify.config.js";
 import { applyPrefs } from "../kit/data/profile.js";
 import { trackView } from "../kit/core/analytics.js";
@@ -23,7 +24,6 @@ const newTab = (s) => (s.built ? "" : ' target="_blank" rel="noopener"');
 // the site's name with its first word in its accent colour ("Med" in MedGradify's blue)
 const nameOf = (s) => `<span class="nm">${nameHtml(s)}${s.tm === false ? "" : "™"}</span>`;
 // release status (kit/core/sites.js): what a learner can actually do there, not how finished it looks
-const statusOf = (s) => s.status || (s.built || (s.u && !s.soon) ? "live" : "soon");
 const STATUS_LABEL = { live: "Live", beta: "Beta", soon: "Coming soon", development: "In development", archived: "Archived", external: "Live" };
 const isLive = (s) => ["live", "external"].includes(statusOf(s));
 // whether there's a page to go to: shells exist (with the shared notes tools) even while "coming soon"
