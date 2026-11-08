@@ -10,6 +10,7 @@ These checks are mechanical. They find text that won't display as written (swall
 | chemistry | 2 | 1,518 | 30 | 0 | 0 | 4 | 0 |
 | ecology | 1 | 679 | 0 | 0 | 0 | 0 | 0 |
 | engineering | 1 | 731 | 19 | 0 | 0 | 0 | 0 |
+| finance | 2 | 1,309 | 31 | 0 | 0 | 0 | 0 |
 | health | 2 | 1,299 | 7 | 0 | 0 | 0 | 0 |
 | history | 18 | 11,487 | 0 | 0 | 0 | 0 | 0 |
 | law | 19 | 15,086 | 0 | 0 | 0 | 0 | 0 |

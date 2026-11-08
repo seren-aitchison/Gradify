@@ -1,0 +1,1348 @@
+{
+ "api": 1,
+ "slug": "finance",
+ "name": "Accounting and Finance",
+ "site": "FinanceGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Education, not financial, tax or investment advice.</b> FinanceGradify teaches accounting and finance for study and exams. The lessons were drafted with AI assistance and haven't yet been reviewed by a qualified accountant, so they may contain errors; check important points against your course materials, the current standards and HMRC guidance. Tax rates, allowances and standards change every year, and worked examples use simplified figures. Nothing here is a recommendation to buy, sell or hold any investment, or advice on your own tax or finances: for that, speak to a firm or adviser authorised by the Financial Conduct Authority, or a chartered accountant or chartered tax adviser.",
+ "notes": "/kit/courses/finance/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Foundations of accounting",
+   "units": [
+    1,
+    2
+   ],
+   "from": "#34d399",
+   "to": "#10b981"
+  },
+  {
+   "name": "Stage 2 · Financial reporting",
+   "units": [
+    3,
+    4
+   ],
+   "from": "#10b981",
+   "to": "#14b8a6"
+  },
+  {
+   "name": "Stage 3 · Management accounting",
+   "units": [
+    5,
+    6
+   ],
+   "from": "#2dd4bf",
+   "to": "#0d9488"
+  },
+  {
+   "name": "Stage 4 · Finance",
+   "units": [
+    7,
+    11
+   ],
+   "from": "#14b8a6",
+   "to": "#06b6d4"
+  },
+  {
+   "name": "Stage 5 · Professional practice",
+   "units": [
+    8,
+    9,
+    10,
+    12
+   ],
+   "from": "#22d3ee",
+   "to": "#0ea5e9"
+  }
+ ],
+ "paths": [
+  {
+   "id": "alevel",
+   "name": "A level Accounting",
+   "sub": "The core of A level Accounting: double entry, final accounts, partnerships, company accounts, ratio analysis, costing, budgeting and decision-making.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "select": null
+  },
+  {
+   "id": "knowledge",
+   "name": "Professional exams: knowledge level",
+   "sub": "The ground covered by the first professional accountancy papers: financial accounting, management accounting and the business and legal context.",
+   "units": [
+    1,
+    2,
+    5,
+    6,
+    10
+   ],
+   "select": null
+  },
+  {
+   "id": "year1",
+   "name": "University year 1",
+   "sub": "The first-year core of an accounting and finance degree: recording, reporting, costing, financial management and markets.",
+   "units": [
+    1,
+    2,
+    3,
+    5,
+    7,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "reporting",
+   "name": "Financial reporting",
+   "sub": "From the double-entry system to IFRS company and group accounts, their analysis and the wider corporate report.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "corporate-finance",
+   "name": "Corporate finance",
+   "sub": "Investment appraisal, working capital, the cost of capital, valuation, markets and risk. Education, not investment advice.",
+   "units": [
+    7,
+    11,
+    4
+   ],
+   "select": null
+  },
+  {
+   "id": "practice",
+   "name": "Audit, tax and law",
+   "sub": "The professional practice papers: audit and ethics, UK taxation and the law that governs companies and accountants.",
+   "units": [
+    8,
+    9,
+    10,
+    12
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Foundations of accounting",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Financial reporting",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    3,
+    4
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Management accounting",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    5,
+    6
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Finance",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    7,
+    11
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Professional practice",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    8,
+    9,
+    10,
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Accounting and the Double-Entry System",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What is accounting?",
+     "module": "Accounting and its users"
+    },
+    {
+     "id": "u01-02",
+     "title": "Users of accounting information",
+     "module": "Accounting and its users"
+    },
+    {
+     "id": "u01-03",
+     "title": "Financial and management accounting",
+     "module": "Accounting and its users"
+    },
+    {
+     "id": "u01-04",
+     "title": "Types of business organisation",
+     "module": "Accounting and its users"
+    },
+    {
+     "id": "u01-05",
+     "title": "Accounting concepts and conventions",
+     "module": "Accounting and its users"
+    },
+    {
+     "id": "u01-06",
+     "title": "The accounting equation",
+     "module": "The accounting equation"
+    },
+    {
+     "id": "u01-07",
+     "title": "Assets, liabilities and capital",
+     "module": "The accounting equation"
+    },
+    {
+     "id": "u01-08",
+     "title": "Income, expenses and drawings",
+     "module": "The accounting equation"
+    },
+    {
+     "id": "u01-09",
+     "title": "The principles of double entry",
+     "module": "Double entry"
+    },
+    {
+     "id": "u01-10",
+     "title": "Recording cash and credit transactions",
+     "module": "Double entry"
+    },
+    {
+     "id": "u01-11",
+     "title": "Balancing off accounts",
+     "module": "Double entry"
+    },
+    {
+     "id": "u01-12",
+     "title": "The trial balance",
+     "module": "Double entry"
+    },
+    {
+     "id": "u01-13",
+     "title": "Books of prime entry",
+     "module": "Books of prime entry and controls"
+    },
+    {
+     "id": "u01-14",
+     "title": "Sales tax in the accounts",
+     "module": "Books of prime entry and controls"
+    },
+    {
+     "id": "u01-15",
+     "title": "Control accounts",
+     "module": "Books of prime entry and controls"
+    },
+    {
+     "id": "u01-16",
+     "title": "Bank reconciliations",
+     "module": "Books of prime entry and controls"
+    },
+    {
+     "id": "u01-17",
+     "title": "Errors and the suspense account",
+     "module": "Books of prime entry and controls"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Preparing Financial Statements",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Capital and revenue expenditure",
+     "module": "Year-end adjustments"
+    },
+    {
+     "id": "u02-02",
+     "title": "Accruals and prepayments",
+     "module": "Year-end adjustments"
+    },
+    {
+     "id": "u02-03",
+     "title": "Depreciation",
+     "module": "Year-end adjustments"
+    },
+    {
+     "id": "u02-04",
+     "title": "Disposal of non-current assets",
+     "module": "Year-end adjustments"
+    },
+    {
+     "id": "u02-05",
+     "title": "Irrecoverable debts and allowances for receivables",
+     "module": "Year-end adjustments"
+    },
+    {
+     "id": "u02-06",
+     "title": "Inventory valuation",
+     "module": "Year-end adjustments"
+    },
+    {
+     "id": "u02-07",
+     "title": "The extended trial balance",
+     "module": "Final accounts of a sole trader"
+    },
+    {
+     "id": "u02-08",
+     "title": "The statement of profit or loss",
+     "module": "Final accounts of a sole trader"
+    },
+    {
+     "id": "u02-09",
+     "title": "The statement of financial position",
+     "module": "Final accounts of a sole trader"
+    },
+    {
+     "id": "u02-10",
+     "title": "Incomplete records",
+     "module": "Final accounts of a sole trader"
+    },
+    {
+     "id": "u02-11",
+     "title": "Profit and cash",
+     "module": "Final accounts of a sole trader"
+    },
+    {
+     "id": "u02-12",
+     "title": "Partnership agreements and the Partnership Act 1890",
+     "module": "Partnerships"
+    },
+    {
+     "id": "u02-13",
+     "title": "The appropriation account",
+     "module": "Partnerships"
+    },
+    {
+     "id": "u02-14",
+     "title": "Partners' capital and current accounts",
+     "module": "Partnerships"
+    },
+    {
+     "id": "u02-15",
+     "title": "Goodwill and changes in partners",
+     "module": "Partnerships"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Financial Reporting for Companies",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "The regulatory framework for financial reporting",
+     "module": "Regulation and the Conceptual Framework"
+    },
+    {
+     "id": "u03-02",
+     "title": "The Conceptual Framework for Financial Reporting",
+     "module": "Regulation and the Conceptual Framework"
+    },
+    {
+     "id": "u03-03",
+     "title": "Qualitative characteristics of useful information",
+     "module": "Regulation and the Conceptual Framework"
+    },
+    {
+     "id": "u03-04",
+     "title": "Recognition and measurement",
+     "module": "Regulation and the Conceptual Framework"
+    },
+    {
+     "id": "u03-05",
+     "title": "Share capital and reserves",
+     "module": "Company financial statements"
+    },
+    {
+     "id": "u03-06",
+     "title": "Issues of shares, rights issues and bonus issues",
+     "module": "Company financial statements"
+    },
+    {
+     "id": "u03-07",
+     "title": "Presenting company financial statements",
+     "module": "Company financial statements"
+    },
+    {
+     "id": "u03-08",
+     "title": "Statement of profit or loss and other comprehensive income",
+     "module": "Company financial statements"
+    },
+    {
+     "id": "u03-09",
+     "title": "Statement of changes in equity",
+     "module": "Company financial statements"
+    },
+    {
+     "id": "u03-10",
+     "title": "Statement of cash flows",
+     "module": "Company financial statements"
+    },
+    {
+     "id": "u03-11",
+     "title": "Property, plant and equipment",
+     "module": "Accounting standards"
+    },
+    {
+     "id": "u03-12",
+     "title": "Intangible assets",
+     "module": "Accounting standards"
+    },
+    {
+     "id": "u03-13",
+     "title": "Impairment of assets",
+     "module": "Accounting standards"
+    },
+    {
+     "id": "u03-14",
+     "title": "Inventories under IAS 2",
+     "module": "Accounting standards"
+    },
+    {
+     "id": "u03-15",
+     "title": "Revenue from contracts with customers",
+     "module": "Accounting standards"
+    },
+    {
+     "id": "u03-16",
+     "title": "Leases",
+     "module": "Accounting standards"
+    },
+    {
+     "id": "u03-17",
+     "title": "Provisions, contingent liabilities and contingent assets",
+     "module": "Accounting standards"
+    },
+    {
+     "id": "u03-18",
+     "title": "Events after the reporting period",
+     "module": "Accounting standards"
+    },
+    {
+     "id": "u03-19",
+     "title": "Accounting policies, estimates and errors",
+     "module": "Accounting standards"
+    },
+    {
+     "id": "u03-20",
+     "title": "Income taxes",
+     "module": "Accounting standards"
+    },
+    {
+     "id": "u03-21",
+     "title": "Financial instruments",
+     "module": "Accounting standards"
+    },
+    {
+     "id": "u03-22",
+     "title": "Earnings per share",
+     "module": "Accounting standards"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Interpreting Financial Statements and Group Accounts",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Why analyse financial statements?",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u04-02",
+     "title": "Profitability ratios",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u04-03",
+     "title": "Liquidity ratios",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u04-04",
+     "title": "Efficiency ratios and the working capital cycle",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u04-05",
+     "title": "Gearing and investor ratios",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u04-06",
+     "title": "Interpreting ratios in context",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u04-07",
+     "title": "Limitations of ratio analysis",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u04-08",
+     "title": "Analysing cash flows",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u04-09",
+     "title": "Performance in not-for-profit organisations",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u04-10",
+     "title": "Groups and control",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u04-11",
+     "title": "Goodwill on acquisition",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u04-12",
+     "title": "The consolidated statement of financial position",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u04-13",
+     "title": "Intra-group trading and unrealised profit",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u04-14",
+     "title": "The consolidated statement of profit or loss",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u04-15",
+     "title": "Associates and joint arrangements",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u04-16",
+     "title": "Creative accounting and earnings management",
+     "module": "Quality of reporting"
+    },
+    {
+     "id": "u04-17",
+     "title": "Narrative reporting and the strategic report",
+     "module": "Quality of reporting"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Management Accounting: Costing",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "The role of management accounting",
+     "module": "Costs and their behaviour"
+    },
+    {
+     "id": "u05-02",
+     "title": "Cost classification",
+     "module": "Costs and their behaviour"
+    },
+    {
+     "id": "u05-03",
+     "title": "Cost behaviour",
+     "module": "Costs and their behaviour"
+    },
+    {
+     "id": "u05-04",
+     "title": "The high-low method",
+     "module": "Costs and their behaviour"
+    },
+    {
+     "id": "u05-05",
+     "title": "Accounting for materials",
+     "module": "Recording and attributing costs"
+    },
+    {
+     "id": "u05-06",
+     "title": "Accounting for labour",
+     "module": "Recording and attributing costs"
+    },
+    {
+     "id": "u05-07",
+     "title": "Overhead allocation, apportionment and reapportionment",
+     "module": "Recording and attributing costs"
+    },
+    {
+     "id": "u05-08",
+     "title": "Absorption costing",
+     "module": "Recording and attributing costs"
+    },
+    {
+     "id": "u05-09",
+     "title": "Marginal costing",
+     "module": "Recording and attributing costs"
+    },
+    {
+     "id": "u05-10",
+     "title": "Marginal and absorption costing compared",
+     "module": "Recording and attributing costs"
+    },
+    {
+     "id": "u05-11",
+     "title": "Activity-based costing",
+     "module": "Recording and attributing costs"
+    },
+    {
+     "id": "u05-12",
+     "title": "Job and batch costing",
+     "module": "Costing systems"
+    },
+    {
+     "id": "u05-13",
+     "title": "Process costing",
+     "module": "Costing systems"
+    },
+    {
+     "id": "u05-14",
+     "title": "Process losses and equivalent units",
+     "module": "Costing systems"
+    },
+    {
+     "id": "u05-15",
+     "title": "Service costing",
+     "module": "Costing systems"
+    },
+    {
+     "id": "u05-16",
+     "title": "Target costing",
+     "module": "Modern costing techniques"
+    },
+    {
+     "id": "u05-17",
+     "title": "Life-cycle costing",
+     "module": "Modern costing techniques"
+    },
+    {
+     "id": "u05-18",
+     "title": "Throughput accounting",
+     "module": "Modern costing techniques"
+    },
+    {
+     "id": "u05-19",
+     "title": "Environmental management accounting",
+     "module": "Modern costing techniques"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Management Accounting: Planning, Control and Decisions",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Relevant costing",
+     "module": "Short-term decisions"
+    },
+    {
+     "id": "u06-02",
+     "title": "Cost–volume–profit analysis",
+     "module": "Short-term decisions"
+    },
+    {
+     "id": "u06-03",
+     "title": "Break-even charts and the margin of safety",
+     "module": "Short-term decisions"
+    },
+    {
+     "id": "u06-04",
+     "title": "Limiting factor analysis",
+     "module": "Short-term decisions"
+    },
+    {
+     "id": "u06-05",
+     "title": "Make-or-buy and other short-term decisions",
+     "module": "Short-term decisions"
+    },
+    {
+     "id": "u06-06",
+     "title": "Pricing decisions",
+     "module": "Short-term decisions"
+    },
+    {
+     "id": "u06-07",
+     "title": "Decisions under risk and uncertainty",
+     "module": "Short-term decisions"
+    },
+    {
+     "id": "u06-08",
+     "title": "Budgeting: purposes and process",
+     "module": "Budgeting"
+    },
+    {
+     "id": "u06-09",
+     "title": "Functional budgets",
+     "module": "Budgeting"
+    },
+    {
+     "id": "u06-10",
+     "title": "Cash budgets",
+     "module": "Budgeting"
+    },
+    {
+     "id": "u06-11",
+     "title": "Fixed and flexible budgets",
+     "module": "Budgeting"
+    },
+    {
+     "id": "u06-12",
+     "title": "Approaches to budgeting",
+     "module": "Budgeting"
+    },
+    {
+     "id": "u06-13",
+     "title": "Behavioural aspects of budgeting",
+     "module": "Budgeting"
+    },
+    {
+     "id": "u06-14",
+     "title": "Standard costing",
+     "module": "Control and performance"
+    },
+    {
+     "id": "u06-15",
+     "title": "Material and labour variances",
+     "module": "Control and performance"
+    },
+    {
+     "id": "u06-16",
+     "title": "Overhead and sales variances",
+     "module": "Control and performance"
+    },
+    {
+     "id": "u06-17",
+     "title": "The operating statement",
+     "module": "Control and performance"
+    },
+    {
+     "id": "u06-18",
+     "title": "Financial performance indicators",
+     "module": "Control and performance"
+    },
+    {
+     "id": "u06-19",
+     "title": "The balanced scorecard",
+     "module": "Control and performance"
+    },
+    {
+     "id": "u06-20",
+     "title": "Divisional performance and transfer pricing",
+     "module": "Control and performance"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Financial Management",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "The financial management function",
+     "module": "The finance function"
+    },
+    {
+     "id": "u07-02",
+     "title": "Financial objectives and stakeholders",
+     "module": "The finance function"
+    },
+    {
+     "id": "u07-03",
+     "title": "The financial environment",
+     "module": "The finance function"
+    },
+    {
+     "id": "u07-04",
+     "title": "The time value of money",
+     "module": "Investment appraisal"
+    },
+    {
+     "id": "u07-05",
+     "title": "Accounting rate of return and payback",
+     "module": "Investment appraisal"
+    },
+    {
+     "id": "u07-06",
+     "title": "Net present value",
+     "module": "Investment appraisal"
+    },
+    {
+     "id": "u07-07",
+     "title": "Internal rate of return",
+     "module": "Investment appraisal"
+    },
+    {
+     "id": "u07-08",
+     "title": "Inflation and taxation in investment appraisal",
+     "module": "Investment appraisal"
+    },
+    {
+     "id": "u07-09",
+     "title": "Risk and uncertainty in investment appraisal",
+     "module": "Investment appraisal"
+    },
+    {
+     "id": "u07-10",
+     "title": "Capital rationing and asset replacement",
+     "module": "Investment appraisal"
+    },
+    {
+     "id": "u07-11",
+     "title": "Working capital and its financing",
+     "module": "Working capital management"
+    },
+    {
+     "id": "u07-12",
+     "title": "Managing inventory",
+     "module": "Working capital management"
+    },
+    {
+     "id": "u07-13",
+     "title": "Managing receivables and payables",
+     "module": "Working capital management"
+    },
+    {
+     "id": "u07-14",
+     "title": "Managing cash",
+     "module": "Working capital management"
+    },
+    {
+     "id": "u07-15",
+     "title": "Sources of finance",
+     "module": "Financing and the cost of capital"
+    },
+    {
+     "id": "u07-16",
+     "title": "Islamic finance",
+     "module": "Financing and the cost of capital"
+    },
+    {
+     "id": "u07-17",
+     "title": "Dividend policy",
+     "module": "Financing and the cost of capital"
+    },
+    {
+     "id": "u07-18",
+     "title": "The cost of equity",
+     "module": "Financing and the cost of capital"
+    },
+    {
+     "id": "u07-19",
+     "title": "The cost of debt and WACC",
+     "module": "Financing and the cost of capital"
+    },
+    {
+     "id": "u07-20",
+     "title": "Capital structure",
+     "module": "Financing and the cost of capital"
+    },
+    {
+     "id": "u07-21",
+     "title": "Business valuation",
+     "module": "Valuation and risk management"
+    },
+    {
+     "id": "u07-22",
+     "title": "Foreign exchange risk",
+     "module": "Valuation and risk management"
+    },
+    {
+     "id": "u07-23",
+     "title": "Interest rate risk",
+     "module": "Valuation and risk management"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Audit, Assurance and Ethics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "What is an audit?",
+     "module": "The audit framework"
+    },
+    {
+     "id": "u08-02",
+     "title": "The regulation of audit",
+     "module": "The audit framework"
+    },
+    {
+     "id": "u08-03",
+     "title": "Corporate governance",
+     "module": "The audit framework"
+    },
+    {
+     "id": "u08-04",
+     "title": "Internal audit",
+     "module": "The audit framework"
+    },
+    {
+     "id": "u08-05",
+     "title": "Professional ethics",
+     "module": "The audit framework"
+    },
+    {
+     "id": "u08-06",
+     "title": "Accepting and planning an engagement",
+     "module": "The audit process"
+    },
+    {
+     "id": "u08-07",
+     "title": "Risk assessment and materiality",
+     "module": "The audit process"
+    },
+    {
+     "id": "u08-08",
+     "title": "Internal control",
+     "module": "The audit process"
+    },
+    {
+     "id": "u08-09",
+     "title": "Tests of controls",
+     "module": "The audit process"
+    },
+    {
+     "id": "u08-10",
+     "title": "Audit evidence and substantive procedures",
+     "module": "The audit process"
+    },
+    {
+     "id": "u08-11",
+     "title": "Audit sampling and data analytics",
+     "module": "The audit process"
+    },
+    {
+     "id": "u08-12",
+     "title": "Auditing inventory, receivables and cash",
+     "module": "The audit process"
+    },
+    {
+     "id": "u08-13",
+     "title": "Completion and review",
+     "module": "The audit process"
+    },
+    {
+     "id": "u08-14",
+     "title": "The auditor's report",
+     "module": "The audit process"
+    },
+    {
+     "id": "u08-15",
+     "title": "Fraud and error",
+     "module": "Fraud and failure"
+    },
+    {
+     "id": "u08-16",
+     "title": "The audit expectation gap",
+     "module": "Fraud and failure"
+    },
+    {
+     "id": "u08-17",
+     "title": "Audit failures and reform",
+     "module": "Fraud and failure"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Taxation",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "The UK tax system",
+     "module": "The tax system"
+    },
+    {
+     "id": "u09-02",
+     "title": "Tax administration and self-assessment",
+     "module": "The tax system"
+    },
+    {
+     "id": "u09-03",
+     "title": "Tax avoidance and tax evasion",
+     "module": "The tax system"
+    },
+    {
+     "id": "u09-04",
+     "title": "The income tax computation",
+     "module": "Taxing individuals"
+    },
+    {
+     "id": "u09-05",
+     "title": "Employment income and benefits",
+     "module": "Taxing individuals"
+    },
+    {
+     "id": "u09-06",
+     "title": "Trading income",
+     "module": "Taxing individuals"
+    },
+    {
+     "id": "u09-07",
+     "title": "Capital allowances",
+     "module": "Taxing individuals"
+    },
+    {
+     "id": "u09-08",
+     "title": "National Insurance contributions",
+     "module": "Taxing individuals"
+    },
+    {
+     "id": "u09-09",
+     "title": "Corporation tax",
+     "module": "Other taxes"
+    },
+    {
+     "id": "u09-10",
+     "title": "Capital gains tax",
+     "module": "Other taxes"
+    },
+    {
+     "id": "u09-11",
+     "title": "Inheritance tax",
+     "module": "Other taxes"
+    },
+    {
+     "id": "u09-12",
+     "title": "Value added tax",
+     "module": "Other taxes"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Business and Company Law",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "The English legal system",
+     "module": "The legal system and obligations"
+    },
+    {
+     "id": "u10-02",
+     "title": "Contract formation",
+     "module": "The legal system and obligations"
+    },
+    {
+     "id": "u10-03",
+     "title": "Contract terms and breach",
+     "module": "The legal system and obligations"
+    },
+    {
+     "id": "u10-04",
+     "title": "Contract remedies",
+     "module": "The legal system and obligations"
+    },
+    {
+     "id": "u10-05",
+     "title": "Negligence and professional liability",
+     "module": "The legal system and obligations"
+    },
+    {
+     "id": "u10-06",
+     "title": "Employment law",
+     "module": "Employment and business structures"
+    },
+    {
+     "id": "u10-07",
+     "title": "Agency and partnership law",
+     "module": "Employment and business structures"
+    },
+    {
+     "id": "u10-08",
+     "title": "Forming a company",
+     "module": "Employment and business structures"
+    },
+    {
+     "id": "u10-09",
+     "title": "Share capital and capital maintenance",
+     "module": "Employment and business structures"
+    },
+    {
+     "id": "u10-10",
+     "title": "Loan capital and charges",
+     "module": "Employment and business structures"
+    },
+    {
+     "id": "u10-11",
+     "title": "Directors' duties",
+     "module": "Running and ending a company"
+    },
+    {
+     "id": "u10-12",
+     "title": "Company meetings and resolutions",
+     "module": "Running and ending a company"
+    },
+    {
+     "id": "u10-13",
+     "title": "Insolvency",
+     "module": "Running and ending a company"
+    },
+    {
+     "id": "u10-14",
+     "title": "Fraudulent behaviour: insider dealing, money laundering and bribery",
+     "module": "Running and ending a company"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Finance and Financial Markets",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "The financial system",
+     "module": "Markets and instruments"
+    },
+    {
+     "id": "u11-02",
+     "title": "Banks and money markets",
+     "module": "Markets and instruments"
+    },
+    {
+     "id": "u11-03",
+     "title": "Bonds and bond valuation",
+     "module": "Markets and instruments"
+    },
+    {
+     "id": "u11-04",
+     "title": "Equities and stock markets",
+     "module": "Markets and instruments"
+    },
+    {
+     "id": "u11-05",
+     "title": "Derivatives",
+     "module": "Markets and instruments"
+    },
+    {
+     "id": "u11-06",
+     "title": "Risk and return",
+     "module": "Risk and return"
+    },
+    {
+     "id": "u11-07",
+     "title": "Portfolio theory and diversification",
+     "module": "Risk and return"
+    },
+    {
+     "id": "u11-08",
+     "title": "The capital asset pricing model",
+     "module": "Risk and return"
+    },
+    {
+     "id": "u11-09",
+     "title": "Market efficiency",
+     "module": "Risk and return"
+    },
+    {
+     "id": "u11-10",
+     "title": "Behavioural finance",
+     "module": "Risk and return"
+    },
+    {
+     "id": "u11-11",
+     "title": "Option pricing",
+     "module": "Risk and return"
+    },
+    {
+     "id": "u11-12",
+     "title": "Financial regulation",
+     "module": "Banking and regulation"
+    },
+    {
+     "id": "u11-13",
+     "title": "Financial crises",
+     "module": "Banking and regulation"
+    },
+    {
+     "id": "u11-14",
+     "title": "Fintech and digital finance",
+     "module": "Banking and regulation"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Accounting, Technology and Society",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Accounting information systems",
+     "module": "Technology and data"
+    },
+    {
+     "id": "u12-02",
+     "title": "Data analytics in accounting",
+     "module": "Technology and data"
+    },
+    {
+     "id": "u12-03",
+     "title": "Automation, AI and the accountant",
+     "module": "Technology and data"
+    },
+    {
+     "id": "u12-04",
+     "title": "Cyber security and data protection",
+     "module": "Technology and data"
+    },
+    {
+     "id": "u12-05",
+     "title": "The history of accounting",
+     "module": "Accounting in society"
+    },
+    {
+     "id": "u12-06",
+     "title": "Accounting theory",
+     "module": "Accounting in society"
+    },
+    {
+     "id": "u12-07",
+     "title": "Critical perspectives on accounting",
+     "module": "Accounting in society"
+    },
+    {
+     "id": "u12-08",
+     "title": "Public sector accounting",
+     "module": "Accounting in society"
+    },
+    {
+     "id": "u12-09",
+     "title": "Charity accounting",
+     "module": "Accounting in society"
+    },
+    {
+     "id": "u12-10",
+     "title": "Sustainability and integrated reporting",
+     "module": "Accounting in society"
+    },
+    {
+     "id": "u12-11",
+     "title": "Ethics and the public interest",
+     "module": "The profession"
+    },
+    {
+     "id": "u12-12",
+     "title": "The accountancy profession and its qualifications",
+     "module": "The profession"
+    }
+   ]
+  }
+ ]
+}

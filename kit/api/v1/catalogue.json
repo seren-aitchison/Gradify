@@ -52,6 +52,18 @@
    "syllabus": "/kit/api/v1/courses/engineering.json"
   },
   {
+   "slug": "finance",
+   "name": "Accounting and Finance",
+   "site": "FinanceGradify",
+   "status": "beta",
+   "accent": "#783f04",
+   "page": "/financegradify/course/",
+   "units": 12,
+   "lessons": 202,
+   "lessonsWritten": 32,
+   "syllabus": "/kit/api/v1/courses/finance.json"
+  },
+  {
    "slug": "health",
    "name": "Health and Wellbeing",
    "site": "HealthGradify",

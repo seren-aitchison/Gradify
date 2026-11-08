@@ -35,7 +35,7 @@ export const GROUPS = [
     items: [
       { n: "LawGradify", who: "Law students and trainee lawyers", i: "scales", c: "9f2f17", d: "Case law, legislation, legal terminology and exam prep for legal qualifications.", u: "gradifylaw.com", built: true, status: "live" },
       { n: "BusinessGradify", who: "Business students and managers", i: "building", c: "674ea6", d: "Management, entrepreneurship, strategy, marketing, operations and real case studies.", u: "gradifybusiness.com", built: true, status: "soon" },
-      { n: "FinanceGradify", who: "Finance and accounting students", i: "coins", c: "783f04", d: "Finance and accounting concepts, and revision for professional qualifications.", u: "gradifyfinance.com", built: true, status: "soon" },
+      { n: "FinanceGradify", who: "Finance and accounting students", i: "coins", c: "783f04", d: "Finance and accounting concepts, and revision for professional qualifications.", u: "gradifyfinance.com", built: true, status: "beta" },
       { n: "InvestorGradify", who: "New and growing investors", i: "trend", c: "808250", d: "Markets, portfolios, valuation and risk. Investing education, not financial advice.", built: true, status: "soon" },
       { n: "MedGradify", who: "Medical students and junior doctors", i: "stethoscope", c: "4641ff", d: "Anatomy, physiology, pharmacology, clinical concepts and medical exam revision.", u: "gradifymed.com", built: true, status: "soon" },
       { n: "DentalGradify", who: "Dental students and dentists", i: "tooth", c: "40d4b1", d: "Oral anatomy, dental materials, clinical knowledge and dentistry exams.", u: "gradifydental.com", built: true, status: "soon" },
