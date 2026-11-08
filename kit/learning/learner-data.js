@@ -26,7 +26,7 @@ export const COURSES = {
   sport: "/sportgradify/course/", teaching: "/edugradify/course/", university: "/undergradify/course/",
   research: "/postgradify/course/", professional: "/progradify/course/", careers: "/internshipgradify/course/",
   design: "/creategradify/course/", spanish: "/languagegradify/course/", gcse: "/youthgradify/course/",
-  primary: "/juniorgradify/course/",
+  primary: "/juniorgradify/course/", computing: "/techgradify/course/",
 };
 const dayKey = (t) => { const d = new Date(t); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
 
