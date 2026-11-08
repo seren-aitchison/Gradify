@@ -30,7 +30,12 @@ It was checked before starting: HistoryGradify wasn't in the production tracker 
 | 10. The Second World War | 19 | ✅ standard 2 | 95 |
 | 11. The Cold War | 19 | ✅ standard 2 | 95 |
 | 12. Britain since 1945 | 17 | ✅ standard 2 | 85 |
-| 13–18 | 86 | not yet ("notes still being written" on the path) | |
+| 13. The United States in the Twentieth Century | 15 | ✅ standard 2 | 75 |
+| 14. Global History and Empires | 17 | ✅ standard 2 | 85 |
+| 15. Revolutions and Political Change | 13 | ✅ standard 2 | 65 |
+| 16. Religion, Culture and Society | 14 | ✅ standard 2 | 70 |
+| 17. A Level Historical Investigation | 13 | ✅ standard 2 | 65 |
+| 18. Historical Examination and Revision | 14 | ✅ standard 2 | 70 |
 
 Every written lesson has objectives, sections, a worked example of historical analysis, evidence-status lines (established or contested), key terms, a summary, two real sources, two flashcards and at least five questions across Foundation, Application and Evaluation, including a rubric-marked extended answer.
 
@@ -54,5 +59,5 @@ Each challenge counts as mastery evidence for its lesson (`evidence.js`). The Jo
 
 ## Next
 
-1. Schools 1 to 12, the British and European history from the medieval period to the present, are written and QA verified: 215 lessons. None is academically verified yet. Next: Schools 13 to 18.
+1. All 18 schools (301 lessons, 1,507 questions) are written and QA verified. None is academically verified yet: the next milestone is a history teacher's review, using docs/qa/history-review-pack.md.
 2. More labs, in priority order: an interactive timeline, cause-and-consequence mapping, interpretation comparison, and maps of changing borders and campaigns.
