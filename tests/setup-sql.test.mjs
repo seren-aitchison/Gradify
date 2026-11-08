@@ -15,7 +15,8 @@ test("the setup script is up to date with supabase/migrations", async () => {
 
 test("on an empty project it creates every table and records every migration", async () => {
   const c = await tempDb();
-  await c.sql(await setupSql());
+  const [done1] = await c.sql(await setupSql());
+  assert.deepEqual({ ...done1 }, { result: "Gradify setup complete", migrations_recorded: (await listMigrations()).length }, "it ends by saying so");
   for (const t of new Set(Object.values(TABLES).flat().map((x) => x.split("?")[0]))) {
     const [r] = await c.sql(`select to_regclass('public.${t}') is not null as ok, (select relrowsecurity from pg_class where oid = to_regclass('public.${t}')) as rls`);
     assert.equal(r.ok, true, `${t} exists`);

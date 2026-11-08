@@ -62,8 +62,12 @@ changed, and if it's run a second time it stops without changing anything.
 2. Click the **Copy raw file** button (two overlapping squares, top right of the file).
 3. In Supabase, click **SQL Editor** in the left-hand menu, then **New query**.
 4. Paste, then click **Run** (or press Cmd + Return). If Supabase asks you to confirm, choose **Run this query**.
-5. You should see **Success. No rows returned**. If you see red text, nothing has been changed: send Claude the
-   message (it contains no secrets).
+5. You should see one row of results: **Gradify setup complete** and **11**. If you see red text instead, nothing
+   has been changed: replace everything in the query box with `rollback;` and click Run once (this closes the
+   cancelled setup cleanly), then send Claude the red message (it contains no secrets). If you see neither, the paste was probably cut
+   short: run it again from step 1 (it's safe to: a run that didn't finish changed nothing).
+   Check the project name at the top of the Supabase page before you click Run: the script can't tell which project
+   it's in.
 6. Tell Claude "done". Claude re-runs the check from here to confirm every table is in place with its privacy rules.
 
 (If a project already has some of Gradify's tables, the file refuses to run, and Claude names the individual files
