@@ -36,7 +36,7 @@ T: Bookkeeping | The accurate recording of an organisation's financial transacti
 SUM: Accounting identifies, measures, records and communicates financial information for decision-making.
 SUM: Bookkeeping is the recording stage; accounting also summarises, reports and interprets.
 SRC: IFRS Foundation, Conceptual Framework for Financial Reporting, chapter 1 "The objective of general purpose financial reporting" | standard | 2018 | https://www.ifrs.org/issued-standards/list-of-standards/conceptual-framework/
-SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson, chapter 1 | secondary | 2018
+SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson | secondary | 2018
 Q: Define accounting. | The identification, measurement, recording and communication of financial information about an entity so that users can make decisions.
 Q: How does bookkeeping differ from accounting? | Bookkeeping is recording transactions; accounting also classifies, summarises, reports and interprets them.
 M1#finance-u01-01-q1@1: Which activity is bookkeeping rather than the wider work of accounting? | Entering each day's sales invoices in the sales day book | Explaining to the owner why profit has fallen | Preparing the year's financial statements | Advising whether to lease or buy a van | Bookkeeping is the recording stage: entering transactions accurately. Interpreting, reporting and advising are the accountant's wider work.
@@ -81,7 +81,7 @@ T: Stewardship | Management's responsibility for using an entity's resources eff
 SUM: Internal users (owners and managers) and external users (investors, lenders, suppliers, employees, government, public) need different information.
 SUM: General purpose reports are aimed at investors, lenders and other creditors; user needs can conflict.
 SRC: IFRS Foundation, Conceptual Framework for Financial Reporting, paragraphs 1.2–1.10 | standard | 2018 | https://www.ifrs.org/issued-standards/list-of-standards/conceptual-framework/
-SRC: AQA, A level Accounting specification 7127, section 3.1 "The purpose of accounting" | standard | 2017
+SRC: AQA, A level Accounting specification 7127 | standard | 2017
 Q: Who are the primary users of general purpose financial reports under the Conceptual Framework? | Existing and potential investors, lenders and other creditors.
 Q: What does a supplier want to learn from a customer's accounts? | Whether the customer is likely to pay on time: its liquidity and cash position.
 M1#finance-u01-02-q1@1: Which user is an internal user of accounting information? | The managing director | The business's bank | HMRC | A trade supplier | Managers and directors work inside the organisation and can obtain any internal report; the others are external users.
@@ -122,7 +122,7 @@ T: Management accounting | Preparing information for managers to plan, control a
 SUM: Financial accounting serves outsiders with regulated, historical, whole-entity statements.
 SUM: Management accounting serves managers with detailed, frequent, forward-looking information.
 SRC: Johnson H. T. and Kaplan R. S., Relevance Lost: The Rise and Fall of Management Accounting, Harvard Business School Press | primary | 1987
-SRC: Drury C., Management and Cost Accounting, 11th edition, Cengage, chapter 1 | secondary | 2021
+SRC: Drury C., Management and Cost Accounting, 11th edition, Cengage | secondary | 2021
 Q: Name three differences between financial and management accounting. | Users (external versus managers), regulation (required versus none), time focus (historical versus forward-looking); also frequency and level of detail.
 Q: Is management accounting regulated by law? | No. Its format and content are whatever helps managers; only financial statements must follow law and standards.
 M1#finance-u01-03-q1@1: Which report is a product of management accounting? | A monthly budget-versus-actual report for each department | The annual statement of financial position filed at Companies House | The audited statement of cash flows | The company's published annual report | Departmental budget reports are internal, frequent and detailed, the hallmarks of management accounting.
@@ -247,7 +247,7 @@ T: Net assets | Total assets minus total liabilities, equal to capital
 SUM: Assets = Capital + Liabilities; every transaction has two equal effects, so it always balances.
 SUM: Closing capital = opening capital + capital introduced + profit − drawings, which lets missing figures be found.
 SRC: IFRS Foundation, Conceptual Framework for Financial Reporting, paragraphs 4.3–4.4 and 4.63 (definitions of asset, liability and equity) | standard | 2018 | https://www.ifrs.org/issued-standards/list-of-standards/conceptual-framework/
-SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson, chapter 1 | secondary | 2018
+SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson | secondary | 2018
 Q: State the accounting equation. | Assets = Capital + Liabilities (equivalently, Capital = Assets − Liabilities).
 Q: How do profit and drawings affect capital? | Profit increases capital; drawings reduce it.
 NUM1#finance-u01-06-q1@2: A business has assets of £86,000 and liabilities of £31,000. What is its capital? | 55000 | 0 | £ | Capital = assets − liabilities = 86,000 − 31,000 = £55,000.
@@ -419,7 +419,7 @@ T: Trade receivable | An amount owed to the business by a credit customer
 T: Returns outwards | Goods sent back to a supplier, also called purchases returns
 SUM: Cash transactions go through bank; credit transactions go through personal accounts until settled.
 SUM: Goods for resale go to purchases; returns inwards and outwards have their own accounts.
-SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson, chapters 3–5 | secondary | 2018
+SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson | secondary | 2018
 SRC: Late Payment of Commercial Debts (Interest) Act 1998 | legislation | 1998 | https://www.legislation.gov.uk/ukpga/1998/20/contents
 Q: What is the double entry for a credit sale? | Debit the customer's account (receivable), credit sales.
 Q: What are returns inwards? | Goods returned to the business by its customers (sales returns).
@@ -458,8 +458,8 @@ T: Balance carried down (c/d) | The difference inserted on the smaller side so a
 T: Balance brought down (b/d) | The same figure entered on the opposite side to open the next period
 SUM: Total both sides, carry down the difference on the smaller side, bring it down on the larger side.
 SUM: Assets and expenses normally have debit balances; liabilities, capital and income credit balances.
-SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson, chapter 8 "Balancing-off accounts" | secondary | 2018
-SRC: ACCA, Financial Accounting (FA) syllabus and study guide, section D "Recording transactions and events" | standard | 2025
+SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson | secondary | 2018
+SRC: ACCA, Financial Accounting (FA) syllabus and study guide | standard | 2025
 Q: Where is the balance c/d entered? | On the side with the smaller total, so that both sides agree.
 Q: What does a credit balance on the bank account mean? | The business has an overdraft: it owes the bank.
 NUM1#finance-u01-11-q1@2: An account has debits of £3,400 and £1,100 and credits of £2,750. What is the balance brought down, in £? | 1750 | 0 | £ | Debits 4,500 − credits 2,750 = £1,750, brought down on the debit side.
@@ -500,8 +500,8 @@ T: Trial balance | A list of ledger balances at a date, in debit and credit colu
 T: Error of principle | Recording an item in the wrong type of account, such as capital expenditure as an expense
 SUM: The trial balance lists all balances; equal totals show debits and credits agree.
 SUM: Six error types leave it in balance, so agreement doesn't prove accuracy.
-SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson, chapters 9 and 30 | secondary | 2018
-SRC: AQA, A level Accounting specification 7127, section 3.2 "Types of business transactions and documentation" and 3.4 "Verification of accounting records" | standard | 2017
+SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson | secondary | 2018
+SRC: AQA, A level Accounting specification 7127 | standard | 2017
 Q: What does an agreeing trial balance prove? | Only that total debit balances equal total credit balances.
 Q: Name the six errors not revealed by a trial balance. | Omission, commission, principle, original entry, complete reversal and compensating errors.
 NUM2#finance-u01-12-q1@2: A trial balance has debit balances totalling £96,400. Credit balances are capital £40,000, sales £48,600 and payables £4,800, plus a bank loan. If the trial balance agrees, what is the loan, in £? | 3000 | 0 | £ | Credits without the loan are 40,000 + 48,600 + 4,800 = £93,400, so the loan must be 96,400 − 93,400 = £3,000.
@@ -541,7 +541,7 @@ T: Book of prime entry | A book in which transactions are first recorded from so
 T: Imprest system | A petty cash system where the float is restored to a fixed amount by reimbursing what has been spent
 SUM: Source documents feed day books, the cash book, the petty cash book and the journal.
 SUM: Totals are posted to the ledger; the imprest system controls petty cash.
-SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson, chapters 11–15 | secondary | 2018
+SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson | secondary | 2018
 SRC: Companies Act 2006, section 386 "Duty to keep accounting records" | legislation | 2006 | https://www.legislation.gov.uk/ukpga/2006/46/section/386
 Q: Which book records credit notes received from suppliers? | The purchases returns day book.
 Q: What is the journal used for? | Transactions not recorded in another book of prime entry: opening entries, credit purchases of non-current assets, corrections and year-end adjustments.
@@ -625,8 +625,8 @@ T: Control account | A general ledger account recording in total the transaction
 T: Contra entry | Setting off an amount owed by a customer against an amount owed to the same business as a supplier
 SUM: Control accounts total the receivables and payables ledgers from day book and cash book totals.
 SUM: The control balance should equal the list of balances; reconciliation finds and corrects errors.
-SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson, chapter 31 "Control accounts" | secondary | 2018
-SRC: ACCA, Financial Accounting (FA) syllabus and study guide, section E "Reconciliations" | standard | 2025
+SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson | secondary | 2018
+SRC: ACCA, Financial Accounting (FA) syllabus and study guide | standard | 2025
 Q: Name three entries on the credit side of a receivables ledger control account. | Receipts from customers, returns inwards, discounts allowed (also irrecoverable debts, contras).
 Q: What is the double entry for a contra? | Debit payables ledger control, credit receivables ledger control.
 NUM2#finance-u01-15-q1@2: Payables ledger control for June: balance b/d £12,300 credit; credit purchases £28,700; payments £26,100; returns outwards £900; discounts received £400. What is the closing credit balance, in £? | 13600 | 0 | £ | Credits 12,300 + 28,700 = 41,000; debits 26,100 + 900 + 400 = 27,400; balance 41,000 − 27,400 = £13,600.
@@ -664,8 +664,8 @@ T: Unpresented cheque | A cheque paid out and recorded in the cash book but not 
 T: Outstanding lodgement | Money paid into the bank and recorded in the cash book but not yet shown on the bank statement
 SUM: Update the cash book for bank charges, direct debits, transfers and errors; the result is the reported balance.
 SUM: Statement balance + outstanding lodgements − unpresented cheques ± bank errors = updated cash book.
-SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson, chapter 29 "Bank reconciliation statements" | secondary | 2018
-SRC: ACCA, Financial Accounting (FA) syllabus and study guide, section E "Reconciliations" | standard | 2025
+SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson | secondary | 2018
+SRC: ACCA, Financial Accounting (FA) syllabus and study guide | standard | 2025
 Q: Name two items that appear on the bank statement before the cash book. | Bank charges and direct debits (also interest, standing orders, credit transfers, dishonoured cheques).
 Q: Which balance goes in the statement of financial position? | The updated (corrected) cash book balance.
 NUM2#finance-u01-16-q1@2: A bank statement shows £4,600 in credit. Unpresented cheques are £1,350 and an outstanding lodgement is £720. What is the correct cash book balance, in £? | 3970 | 0 | £ | 4,600 + 720 − 1,350 = £3,970 in the bank.
@@ -701,8 +701,8 @@ T: Suspense account | A temporary account holding the difference on a trial bala
 T: Statement of corrected profit | A statement adjusting draft profit for the effect of each error correction
 SUM: Only errors that make the trial balance disagree go through the suspense account.
 SUM: Corrections to income and expense accounts change profit; the suspense account should end at nil.
-SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson, chapter 31 "Suspense accounts and errors" | secondary | 2018
-SRC: AQA, A level Accounting specification 7127, section 3.4 "Verification of accounting records" | standard | 2017
+SRC: Wood F. and Sangster A., Frank Wood's Business Accounting 1, 14th edition, Pearson | secondary | 2018
+SRC: AQA, A level Accounting specification 7127 | standard | 2017
 Q: When is a suspense account opened? | When the trial balance totals don't agree: the difference is entered in suspense until the errors are found.
 Q: Does an error of principle go through suspense? | No: both sides were equal, so it is corrected between the two accounts involved.
 NUM2#finance-u01-17-q1@2: Draft profit is £24,600. Corrections: sales understated by £1,200; a purchase of £800 omitted; a £2,000 machine wrongly debited to repairs (ignore depreciation). What is the corrected profit, in £? | 27000 | 0 | £ | 24,600 + 1,200 − 800 + 2,000 = £27,000: moving the machine out of repairs reduces expenses.
