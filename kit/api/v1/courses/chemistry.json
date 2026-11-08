@@ -1,0 +1,2820 @@
+{
+ "api": 1,
+ "slug": "chemistry",
+ "name": "Chemistry",
+ "site": "SciGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Chemical reasoning"
+ ],
+ "notice": null,
+ "notes": "/kit/courses/chemistry/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Core chemistry",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "from": "#f59e0b",
+   "to": "#fbbf24"
+  },
+  {
+   "name": "Stage 2 · Bonding and matter",
+   "units": [
+    4,
+    5
+   ],
+   "from": "#f97316",
+   "to": "#facc15"
+  },
+  {
+   "name": "Stage 3 · Energy, rates and equilibrium",
+   "units": [
+    6,
+    7,
+    8
+   ],
+   "from": "#ea580c",
+   "to": "#f59e0b"
+  },
+  {
+   "name": "Stage 4 · Aqueous, redox and inorganic",
+   "units": [
+    9,
+    10,
+    11
+   ],
+   "from": "#d97706",
+   "to": "#fcd34d"
+  },
+  {
+   "name": "Stage 5 · Organic chemistry",
+   "units": [
+    12,
+    13,
+    14
+   ],
+   "from": "#fb923c",
+   "to": "#e11d48"
+  },
+  {
+   "name": "Stage 6 · Analysis and physical chemistry",
+   "units": [
+    15,
+    16
+   ],
+   "from": "#fbbf24",
+   "to": "#f97316"
+  },
+  {
+   "name": "Stage 7 · Applied chemistry",
+   "units": [
+    17,
+    18,
+    19
+   ],
+   "from": "#f59e0b",
+   "to": "#dc2626"
+  },
+  {
+   "name": "Stage 8 · Computational chemistry",
+   "units": [
+    20
+   ],
+   "from": "#facc15",
+   "to": "#ea580c"
+  }
+ ],
+ "paths": [
+  {
+   "id": "gcse",
+   "name": "GCSE Chemistry",
+   "sub": "The core of secondary-school chemistry: atoms, the periodic table, bonding, moles, energy and rates.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7
+   ],
+   "select": null
+  },
+  {
+   "id": "alevel",
+   "name": "A level Chemistry",
+   "sub": "Everything for A level and equivalent exams, physical, inorganic and organic.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    10,
+    12,
+    13,
+    14,
+    15
+   ],
+   "select": null
+  },
+  {
+   "id": "year1",
+   "name": "University year 1",
+   "sub": "The first-year core of a chemistry degree.",
+   "units": [
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    11,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "organic",
+   "name": "Organic chemistry",
+   "sub": "Structure, stereochemistry, mechanisms, functional groups and synthesis.",
+   "units": [
+    12,
+    13,
+    14,
+    19,
+    15
+   ],
+   "select": null
+  },
+  {
+   "id": "medchem",
+   "name": "Medicinal chemistry",
+   "sub": "From organic mechanisms to drug targets, ADME, docking and drug design.",
+   "units": [
+    12,
+    13,
+    14,
+    18,
+    20,
+    15
+   ],
+   "select": null
+  },
+  {
+   "id": "comp",
+   "name": "Computational chemistry",
+   "sub": "Quantum chemistry, molecular modelling, cheminformatics and machine learning.",
+   "units": [
+    2,
+    16,
+    20,
+    18
+   ],
+   "select": null
+  },
+  {
+   "id": "analytical",
+   "name": "Analytical chemist",
+   "sub": "Measurement, titration, spectroscopy, chromatography and laboratory practice.",
+   "units": [
+    1,
+    9,
+    15,
+    19
+   ],
+   "select": null
+  },
+  {
+   "id": "green",
+   "name": "Materials and sustainability",
+   "sub": "States of matter, inorganic materials, the environment and green chemistry.",
+   "units": [
+    5,
+    11,
+    17
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Core chemistry",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Bonding and matter",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    5
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Energy, rates and equilibrium",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    6,
+    7,
+    8
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Aqueous, redox and inorganic",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    9,
+    10,
+    11
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Organic chemistry",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    12,
+    13,
+    14
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-6",
+   "title": "Stage 6 · Analysis and physical chemistry",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    15,
+    16
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-7",
+   "title": "Stage 7 · Applied chemistry",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    17,
+    18,
+    19
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-8",
+   "title": "Stage 8 · Computational chemistry",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    20
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Foundations of Chemistry",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What is chemistry?",
+     "module": "Matter"
+    },
+    {
+     "id": "u01-02",
+     "title": "Matter and its classification",
+     "module": "Matter"
+    },
+    {
+     "id": "u01-03",
+     "title": "Elements and compounds",
+     "module": "Matter"
+    },
+    {
+     "id": "u01-04",
+     "title": "Mixtures",
+     "module": "Matter"
+    },
+    {
+     "id": "u01-05",
+     "title": "Physical and chemical changes",
+     "module": "Matter"
+    },
+    {
+     "id": "u01-06",
+     "title": "States of matter",
+     "module": "Matter"
+    },
+    {
+     "id": "u01-07",
+     "title": "Atomic theory",
+     "module": "Atoms, formulae and equations"
+    },
+    {
+     "id": "u01-08",
+     "title": "Chemical symbols",
+     "module": "Atoms, formulae and equations"
+    },
+    {
+     "id": "u01-09",
+     "title": "Chemical formulae",
+     "module": "Atoms, formulae and equations"
+    },
+    {
+     "id": "u01-10",
+     "title": "Chemical equations",
+     "module": "Atoms, formulae and equations"
+    },
+    {
+     "id": "u01-11",
+     "title": "Balancing equations",
+     "module": "Atoms, formulae and equations"
+    },
+    {
+     "id": "u01-12",
+     "title": "Relative atomic mass",
+     "module": "The mole and stoichiometry"
+    },
+    {
+     "id": "u01-13",
+     "title": "Relative molecular mass",
+     "module": "The mole and stoichiometry"
+    },
+    {
+     "id": "u01-14",
+     "title": "The mole",
+     "module": "The mole and stoichiometry"
+    },
+    {
+     "id": "u01-15",
+     "title": "Avogadro's constant",
+     "module": "The mole and stoichiometry"
+    },
+    {
+     "id": "u01-16",
+     "title": "Molar mass",
+     "module": "The mole and stoichiometry"
+    },
+    {
+     "id": "u01-17",
+     "title": "Stoichiometry",
+     "module": "The mole and stoichiometry"
+    },
+    {
+     "id": "u01-18",
+     "title": "Limiting reagents",
+     "module": "The mole and stoichiometry"
+    },
+    {
+     "id": "u01-19",
+     "title": "Percentage yield",
+     "module": "The mole and stoichiometry"
+    },
+    {
+     "id": "u01-20",
+     "title": "Atom economy",
+     "module": "The mole and stoichiometry"
+    },
+    {
+     "id": "u01-21",
+     "title": "Concentration",
+     "module": "Solutions and measurement"
+    },
+    {
+     "id": "u01-22",
+     "title": "Dilutions",
+     "module": "Solutions and measurement"
+    },
+    {
+     "id": "u01-23",
+     "title": "Significant figures",
+     "module": "Solutions and measurement"
+    },
+    {
+     "id": "u01-24",
+     "title": "Scientific notation",
+     "module": "Solutions and measurement"
+    },
+    {
+     "id": "u01-25",
+     "title": "Units and measurements",
+     "module": "Solutions and measurement"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Atomic Structure and Quantum Chemistry",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Structure of the atom",
+     "module": "The nuclear atom"
+    },
+    {
+     "id": "u02-02",
+     "title": "Protons, neutrons and electrons",
+     "module": "The nuclear atom"
+    },
+    {
+     "id": "u02-03",
+     "title": "Isotopes",
+     "module": "The nuclear atom"
+    },
+    {
+     "id": "u02-04",
+     "title": "Atomic number and mass number",
+     "module": "The nuclear atom"
+    },
+    {
+     "id": "u02-05",
+     "title": "Electron shells",
+     "module": "Electrons and orbitals"
+    },
+    {
+     "id": "u02-06",
+     "title": "Atomic orbitals",
+     "module": "Electrons and orbitals"
+    },
+    {
+     "id": "u02-07",
+     "title": "Quantum numbers",
+     "module": "Electrons and orbitals"
+    },
+    {
+     "id": "u02-08",
+     "title": "Electron configurations",
+     "module": "Electrons and orbitals"
+    },
+    {
+     "id": "u02-09",
+     "title": "Aufbau principle",
+     "module": "Electrons and orbitals"
+    },
+    {
+     "id": "u02-10",
+     "title": "Pauli exclusion principle",
+     "module": "Electrons and orbitals"
+    },
+    {
+     "id": "u02-11",
+     "title": "Hund's rule",
+     "module": "Electrons and orbitals"
+    },
+    {
+     "id": "u02-12",
+     "title": "Ionisation energy",
+     "module": "Energies and spectra"
+    },
+    {
+     "id": "u02-13",
+     "title": "Electron affinity",
+     "module": "Energies and spectra"
+    },
+    {
+     "id": "u02-14",
+     "title": "Atomic spectra",
+     "module": "Energies and spectra"
+    },
+    {
+     "id": "u02-15",
+     "title": "Emission and absorption",
+     "module": "Energies and spectra"
+    },
+    {
+     "id": "u02-16",
+     "title": "Wave-particle duality",
+     "module": "The quantum atom"
+    },
+    {
+     "id": "u02-17",
+     "title": "Quantum mechanical model",
+     "module": "The quantum atom"
+    },
+    {
+     "id": "u02-18",
+     "title": "Atomic orbitals and shapes",
+     "module": "The quantum atom"
+    },
+    {
+     "id": "u02-19",
+     "title": "Periodic trends",
+     "module": "The quantum atom"
+    },
+    {
+     "id": "u02-20",
+     "title": "Electronic structure and chemical properties",
+     "module": "The quantum atom"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Periodic Table and Periodicity",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Development of the periodic table",
+     "module": "The periodic table"
+    },
+    {
+     "id": "u03-02",
+     "title": "Modern periodic law",
+     "module": "The periodic table"
+    },
+    {
+     "id": "u03-03",
+     "title": "Periods and groups",
+     "module": "The periodic table"
+    },
+    {
+     "id": "u03-04",
+     "title": "s-block elements",
+     "module": "Blocks of the table"
+    },
+    {
+     "id": "u03-05",
+     "title": "p-block elements",
+     "module": "Blocks of the table"
+    },
+    {
+     "id": "u03-06",
+     "title": "d-block elements",
+     "module": "Blocks of the table"
+    },
+    {
+     "id": "u03-07",
+     "title": "f-block elements",
+     "module": "Blocks of the table"
+    },
+    {
+     "id": "u03-08",
+     "title": "Group 1",
+     "module": "The groups"
+    },
+    {
+     "id": "u03-09",
+     "title": "Group 2",
+     "module": "The groups"
+    },
+    {
+     "id": "u03-10",
+     "title": "Group 13",
+     "module": "The groups"
+    },
+    {
+     "id": "u03-11",
+     "title": "Group 14",
+     "module": "The groups"
+    },
+    {
+     "id": "u03-12",
+     "title": "Group 15",
+     "module": "The groups"
+    },
+    {
+     "id": "u03-13",
+     "title": "Group 16",
+     "module": "The groups"
+    },
+    {
+     "id": "u03-14",
+     "title": "Group 17",
+     "module": "The groups"
+    },
+    {
+     "id": "u03-15",
+     "title": "Group 18",
+     "module": "The groups"
+    },
+    {
+     "id": "u03-16",
+     "title": "Transition metals",
+     "module": "Transition and inner transition elements"
+    },
+    {
+     "id": "u03-17",
+     "title": "Lanthanides",
+     "module": "Transition and inner transition elements"
+    },
+    {
+     "id": "u03-18",
+     "title": "Actinides",
+     "module": "Transition and inner transition elements"
+    },
+    {
+     "id": "u03-19",
+     "title": "Atomic radius",
+     "module": "Periodic trends"
+    },
+    {
+     "id": "u03-20",
+     "title": "Ionic radius",
+     "module": "Periodic trends"
+    },
+    {
+     "id": "u03-21",
+     "title": "Ionisation energy trends",
+     "module": "Periodic trends"
+    },
+    {
+     "id": "u03-22",
+     "title": "Electronegativity",
+     "module": "Periodic trends"
+    },
+    {
+     "id": "u03-23",
+     "title": "Reactivity trends",
+     "module": "Periodic trends"
+    },
+    {
+     "id": "u03-24",
+     "title": "Oxidation states",
+     "module": "Periodic trends"
+    },
+    {
+     "id": "u03-25",
+     "title": "Periodic relationships",
+     "module": "Periodic trends"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Chemical Bonding and Molecular Structure",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Introduction to chemical bonding",
+     "module": "Types of bond"
+    },
+    {
+     "id": "u04-02",
+     "title": "Ionic bonding",
+     "module": "Types of bond"
+    },
+    {
+     "id": "u04-03",
+     "title": "Covalent bonding",
+     "module": "Types of bond"
+    },
+    {
+     "id": "u04-04",
+     "title": "Coordinate bonding",
+     "module": "Types of bond"
+    },
+    {
+     "id": "u04-05",
+     "title": "Metallic bonding",
+     "module": "Types of bond"
+    },
+    {
+     "id": "u04-06",
+     "title": "Lewis structures",
+     "module": "Drawing molecules"
+    },
+    {
+     "id": "u04-07",
+     "title": "Formal charge",
+     "module": "Drawing molecules"
+    },
+    {
+     "id": "u04-08",
+     "title": "Resonance",
+     "module": "Drawing molecules"
+    },
+    {
+     "id": "u04-09",
+     "title": "VSEPR theory",
+     "module": "Shape and polarity"
+    },
+    {
+     "id": "u04-10",
+     "title": "Molecular geometry",
+     "module": "Shape and polarity"
+    },
+    {
+     "id": "u04-11",
+     "title": "Bond polarity",
+     "module": "Shape and polarity"
+    },
+    {
+     "id": "u04-12",
+     "title": "Molecular polarity",
+     "module": "Shape and polarity"
+    },
+    {
+     "id": "u04-13",
+     "title": "Electronegativity",
+     "module": "Shape and polarity"
+    },
+    {
+     "id": "u04-14",
+     "title": "Intermolecular forces",
+     "module": "Intermolecular forces"
+    },
+    {
+     "id": "u04-15",
+     "title": "London dispersion forces",
+     "module": "Intermolecular forces"
+    },
+    {
+     "id": "u04-16",
+     "title": "Dipole-dipole interactions",
+     "module": "Intermolecular forces"
+    },
+    {
+     "id": "u04-17",
+     "title": "Hydrogen bonding",
+     "module": "Intermolecular forces"
+    },
+    {
+     "id": "u04-18",
+     "title": "Bond enthalpy",
+     "module": "Bond and lattice energies"
+    },
+    {
+     "id": "u04-19",
+     "title": "Lattice enthalpy",
+     "module": "Bond and lattice energies"
+    },
+    {
+     "id": "u04-20",
+     "title": "Born-Haber cycles",
+     "module": "Bond and lattice energies"
+    },
+    {
+     "id": "u04-21",
+     "title": "Molecular orbital theory",
+     "module": "Bonding theories"
+    },
+    {
+     "id": "u04-22",
+     "title": "Hybridisation",
+     "module": "Bonding theories"
+    },
+    {
+     "id": "u04-23",
+     "title": "Sigma and pi bonding",
+     "module": "Bonding theories"
+    },
+    {
+     "id": "u04-24",
+     "title": "Delocalisation",
+     "module": "Bonding theories"
+    },
+    {
+     "id": "u04-25",
+     "title": "Crystal structures",
+     "module": "Solids"
+    },
+    {
+     "id": "u04-26",
+     "title": "Solid-state bonding",
+     "module": "Solids"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "States of Matter and Physical Chemistry",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Gases",
+     "module": "Gases"
+    },
+    {
+     "id": "u05-02",
+     "title": "Gas laws",
+     "module": "Gases"
+    },
+    {
+     "id": "u05-03",
+     "title": "Ideal gas equation",
+     "module": "Gases"
+    },
+    {
+     "id": "u05-04",
+     "title": "Real gases",
+     "module": "Gases"
+    },
+    {
+     "id": "u05-05",
+     "title": "Kinetic molecular theory",
+     "module": "Gases"
+    },
+    {
+     "id": "u05-06",
+     "title": "Liquids",
+     "module": "Liquids and phase changes"
+    },
+    {
+     "id": "u05-07",
+     "title": "Vapour pressure",
+     "module": "Liquids and phase changes"
+    },
+    {
+     "id": "u05-08",
+     "title": "Boiling and melting",
+     "module": "Liquids and phase changes"
+    },
+    {
+     "id": "u05-09",
+     "title": "Phase diagrams",
+     "module": "Liquids and phase changes"
+    },
+    {
+     "id": "u05-10",
+     "title": "Solids",
+     "module": "Solids"
+    },
+    {
+     "id": "u05-11",
+     "title": "Crystalline solids",
+     "module": "Solids"
+    },
+    {
+     "id": "u05-12",
+     "title": "Amorphous solids",
+     "module": "Solids"
+    },
+    {
+     "id": "u05-13",
+     "title": "Solutions",
+     "module": "Solutions"
+    },
+    {
+     "id": "u05-14",
+     "title": "Solubility",
+     "module": "Solutions"
+    },
+    {
+     "id": "u05-15",
+     "title": "Concentration",
+     "module": "Solutions"
+    },
+    {
+     "id": "u05-16",
+     "title": "Colligative properties",
+     "module": "Solutions"
+    },
+    {
+     "id": "u05-17",
+     "title": "Osmosis",
+     "module": "Solutions"
+    },
+    {
+     "id": "u05-18",
+     "title": "Diffusion",
+     "module": "Transport and surface properties"
+    },
+    {
+     "id": "u05-19",
+     "title": "Surface tension",
+     "module": "Transport and surface properties"
+    },
+    {
+     "id": "u05-20",
+     "title": "Viscosity",
+     "module": "Transport and surface properties"
+    },
+    {
+     "id": "u05-21",
+     "title": "Intermolecular interactions",
+     "module": "Transport and surface properties"
+    },
+    {
+     "id": "u05-22",
+     "title": "Materials properties",
+     "module": "Transport and surface properties"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Chemical Energetics and Thermodynamics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Energy in chemical systems",
+     "module": "Energy changes"
+    },
+    {
+     "id": "u06-02",
+     "title": "Exothermic reactions",
+     "module": "Energy changes"
+    },
+    {
+     "id": "u06-03",
+     "title": "Endothermic reactions",
+     "module": "Energy changes"
+    },
+    {
+     "id": "u06-04",
+     "title": "Enthalpy",
+     "module": "Enthalpy"
+    },
+    {
+     "id": "u06-05",
+     "title": "Standard enthalpy changes",
+     "module": "Enthalpy"
+    },
+    {
+     "id": "u06-06",
+     "title": "Enthalpy of formation",
+     "module": "Enthalpy"
+    },
+    {
+     "id": "u06-07",
+     "title": "Enthalpy of combustion",
+     "module": "Enthalpy"
+    },
+    {
+     "id": "u06-08",
+     "title": "Enthalpy of neutralisation",
+     "module": "Enthalpy"
+    },
+    {
+     "id": "u06-09",
+     "title": "Hess's law",
+     "module": "Enthalpy"
+    },
+    {
+     "id": "u06-10",
+     "title": "Bond enthalpies",
+     "module": "Enthalpy"
+    },
+    {
+     "id": "u06-11",
+     "title": "Calorimetry",
+     "module": "Enthalpy"
+    },
+    {
+     "id": "u06-12",
+     "title": "Entropy",
+     "module": "Entropy and free energy"
+    },
+    {
+     "id": "u06-13",
+     "title": "Gibbs free energy",
+     "module": "Entropy and free energy"
+    },
+    {
+     "id": "u06-14",
+     "title": "Spontaneity",
+     "module": "Entropy and free energy"
+    },
+    {
+     "id": "u06-15",
+     "title": "Thermodynamic equilibrium",
+     "module": "Entropy and free energy"
+    },
+    {
+     "id": "u06-16",
+     "title": "First law of thermodynamics",
+     "module": "The laws of thermodynamics"
+    },
+    {
+     "id": "u06-17",
+     "title": "Second law of thermodynamics",
+     "module": "The laws of thermodynamics"
+    },
+    {
+     "id": "u06-18",
+     "title": "Chemical potential",
+     "module": "The laws of thermodynamics"
+    },
+    {
+     "id": "u06-19",
+     "title": "Temperature dependence",
+     "module": "The laws of thermodynamics"
+    },
+    {
+     "id": "u06-20",
+     "title": "Thermodynamic cycles",
+     "module": "The laws of thermodynamics"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Chemical Kinetics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Introduction to reaction rates",
+     "module": "Rates and collisions"
+    },
+    {
+     "id": "u07-02",
+     "title": "Collision theory",
+     "module": "Rates and collisions"
+    },
+    {
+     "id": "u07-03",
+     "title": "Activation energy",
+     "module": "Rates and collisions"
+    },
+    {
+     "id": "u07-04",
+     "title": "Reaction profiles",
+     "module": "Rates and collisions"
+    },
+    {
+     "id": "u07-05",
+     "title": "Catalysts",
+     "module": "Catalysis"
+    },
+    {
+     "id": "u07-06",
+     "title": "Homogeneous catalysis",
+     "module": "Catalysis"
+    },
+    {
+     "id": "u07-07",
+     "title": "Heterogeneous catalysis",
+     "module": "Catalysis"
+    },
+    {
+     "id": "u07-08",
+     "title": "Enzyme catalysis",
+     "module": "Catalysis"
+    },
+    {
+     "id": "u07-09",
+     "title": "Rate equations",
+     "module": "Rate laws"
+    },
+    {
+     "id": "u07-10",
+     "title": "Reaction order",
+     "module": "Rate laws"
+    },
+    {
+     "id": "u07-11",
+     "title": "Zero-order reactions",
+     "module": "Rate laws"
+    },
+    {
+     "id": "u07-12",
+     "title": "First-order reactions",
+     "module": "Rate laws"
+    },
+    {
+     "id": "u07-13",
+     "title": "Second-order reactions",
+     "module": "Rate laws"
+    },
+    {
+     "id": "u07-14",
+     "title": "Rate constants",
+     "module": "Rate laws"
+    },
+    {
+     "id": "u07-15",
+     "title": "Half-life",
+     "module": "Rate laws"
+    },
+    {
+     "id": "u07-16",
+     "title": "Integrated rate laws",
+     "module": "Rate laws"
+    },
+    {
+     "id": "u07-17",
+     "title": "Arrhenius equation",
+     "module": "Temperature and mechanism"
+    },
+    {
+     "id": "u07-18",
+     "title": "Temperature effects",
+     "module": "Temperature and mechanism"
+    },
+    {
+     "id": "u07-19",
+     "title": "Reaction mechanisms",
+     "module": "Temperature and mechanism"
+    },
+    {
+     "id": "u07-20",
+     "title": "Rate-determining steps",
+     "module": "Temperature and mechanism"
+    },
+    {
+     "id": "u07-21",
+     "title": "Catalytic cycles",
+     "module": "Temperature and mechanism"
+    },
+    {
+     "id": "u07-22",
+     "title": "Experimental kinetics",
+     "module": "Temperature and mechanism"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Chemical Equilibrium",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Reversible reactions",
+     "module": "Equilibrium"
+    },
+    {
+     "id": "u08-02",
+     "title": "Dynamic equilibrium",
+     "module": "Equilibrium"
+    },
+    {
+     "id": "u08-03",
+     "title": "Equilibrium constants",
+     "module": "Equilibrium"
+    },
+    {
+     "id": "u08-04",
+     "title": "Kc",
+     "module": "Equilibrium"
+    },
+    {
+     "id": "u08-05",
+     "title": "Kp",
+     "module": "Equilibrium"
+    },
+    {
+     "id": "u08-06",
+     "title": "Reaction quotients",
+     "module": "Equilibrium"
+    },
+    {
+     "id": "u08-07",
+     "title": "Le Chatelier's principle",
+     "module": "Shifting equilibrium"
+    },
+    {
+     "id": "u08-08",
+     "title": "Temperature and equilibrium",
+     "module": "Shifting equilibrium"
+    },
+    {
+     "id": "u08-09",
+     "title": "Pressure and equilibrium",
+     "module": "Shifting equilibrium"
+    },
+    {
+     "id": "u08-10",
+     "title": "Concentration and equilibrium",
+     "module": "Shifting equilibrium"
+    },
+    {
+     "id": "u08-11",
+     "title": "Heterogeneous equilibria",
+     "module": "Equilibrium in practice"
+    },
+    {
+     "id": "u08-12",
+     "title": "Equilibrium calculations",
+     "module": "Equilibrium in practice"
+    },
+    {
+     "id": "u08-13",
+     "title": "Industrial equilibrium",
+     "module": "Equilibrium in practice"
+    },
+    {
+     "id": "u08-14",
+     "title": "Coupled equilibria",
+     "module": "Equilibrium in practice"
+    },
+    {
+     "id": "u08-15",
+     "title": "Thermodynamic interpretation",
+     "module": "Equilibrium in practice"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Acids, Bases and Aqueous Chemistry",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Introduction to acids and bases",
+     "module": "Acid-base theories"
+    },
+    {
+     "id": "u09-02",
+     "title": "Arrhenius theory",
+     "module": "Acid-base theories"
+    },
+    {
+     "id": "u09-03",
+     "title": "Brønsted-Lowry theory",
+     "module": "Acid-base theories"
+    },
+    {
+     "id": "u09-04",
+     "title": "Lewis acid-base theory",
+     "module": "Acid-base theories"
+    },
+    {
+     "id": "u09-05",
+     "title": "Strong acids and bases",
+     "module": "Strength and pH"
+    },
+    {
+     "id": "u09-06",
+     "title": "Weak acids and bases",
+     "module": "Strength and pH"
+    },
+    {
+     "id": "u09-07",
+     "title": "pH",
+     "module": "Strength and pH"
+    },
+    {
+     "id": "u09-08",
+     "title": "pOH",
+     "module": "Strength and pH"
+    },
+    {
+     "id": "u09-09",
+     "title": "Acid dissociation constants",
+     "module": "Strength and pH"
+    },
+    {
+     "id": "u09-10",
+     "title": "Base dissociation constants",
+     "module": "Strength and pH"
+    },
+    {
+     "id": "u09-11",
+     "title": "Ka and Kb",
+     "module": "Strength and pH"
+    },
+    {
+     "id": "u09-12",
+     "title": "Buffers",
+     "module": "Buffers"
+    },
+    {
+     "id": "u09-13",
+     "title": "Henderson-Hasselbalch equation",
+     "module": "Buffers"
+    },
+    {
+     "id": "u09-14",
+     "title": "Acid-base titrations",
+     "module": "Titrations"
+    },
+    {
+     "id": "u09-15",
+     "title": "Indicators",
+     "module": "Titrations"
+    },
+    {
+     "id": "u09-16",
+     "title": "Equivalence points",
+     "module": "Titrations"
+    },
+    {
+     "id": "u09-17",
+     "title": "Solubility equilibria",
+     "module": "Solubility and complex equilibria"
+    },
+    {
+     "id": "u09-18",
+     "title": "Ksp",
+     "module": "Solubility and complex equilibria"
+    },
+    {
+     "id": "u09-19",
+     "title": "Common-ion effect",
+     "module": "Solubility and complex equilibria"
+    },
+    {
+     "id": "u09-20",
+     "title": "Complex ion equilibria",
+     "module": "Solubility and complex equilibria"
+    },
+    {
+     "id": "u09-21",
+     "title": "Amphoteric substances",
+     "module": "Solubility and complex equilibria"
+    },
+    {
+     "id": "u09-22",
+     "title": "Polyprotic acids",
+     "module": "Solubility and complex equilibria"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Redox and Electrochemistry",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Oxidation and reduction",
+     "module": "Redox"
+    },
+    {
+     "id": "u10-02",
+     "title": "Oxidation states",
+     "module": "Redox"
+    },
+    {
+     "id": "u10-03",
+     "title": "Redox equations",
+     "module": "Redox"
+    },
+    {
+     "id": "u10-04",
+     "title": "Balancing redox reactions",
+     "module": "Redox"
+    },
+    {
+     "id": "u10-05",
+     "title": "Oxidising agents",
+     "module": "Redox"
+    },
+    {
+     "id": "u10-06",
+     "title": "Reducing agents",
+     "module": "Redox"
+    },
+    {
+     "id": "u10-07",
+     "title": "Electrochemical cells",
+     "module": "Electrochemical cells"
+    },
+    {
+     "id": "u10-08",
+     "title": "Galvanic cells",
+     "module": "Electrochemical cells"
+    },
+    {
+     "id": "u10-09",
+     "title": "Electrolytic cells",
+     "module": "Electrochemical cells"
+    },
+    {
+     "id": "u10-10",
+     "title": "Standard electrode potentials",
+     "module": "Electrochemical cells"
+    },
+    {
+     "id": "u10-11",
+     "title": "Cell potentials",
+     "module": "Electrochemical cells"
+    },
+    {
+     "id": "u10-12",
+     "title": "Electrochemical series",
+     "module": "Electrochemical cells"
+    },
+    {
+     "id": "u10-13",
+     "title": "Nernst equation",
+     "module": "Electrochemical cells"
+    },
+    {
+     "id": "u10-14",
+     "title": "Electrolysis",
+     "module": "Electrolysis"
+    },
+    {
+     "id": "u10-15",
+     "title": "Faraday's laws",
+     "module": "Electrolysis"
+    },
+    {
+     "id": "u10-16",
+     "title": "Batteries",
+     "module": "Applied electrochemistry"
+    },
+    {
+     "id": "u10-17",
+     "title": "Fuel cells",
+     "module": "Applied electrochemistry"
+    },
+    {
+     "id": "u10-18",
+     "title": "Corrosion",
+     "module": "Applied electrochemistry"
+    },
+    {
+     "id": "u10-19",
+     "title": "Corrosion prevention",
+     "module": "Applied electrochemistry"
+    },
+    {
+     "id": "u10-20",
+     "title": "Industrial electrochemistry",
+     "module": "Applied electrochemistry"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Inorganic Chemistry",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Introduction to inorganic chemistry",
+     "module": "Main-group chemistry"
+    },
+    {
+     "id": "u11-02",
+     "title": "Main-group chemistry",
+     "module": "Main-group chemistry"
+    },
+    {
+     "id": "u11-03",
+     "title": "s-block chemistry",
+     "module": "Main-group chemistry"
+    },
+    {
+     "id": "u11-04",
+     "title": "p-block chemistry",
+     "module": "Main-group chemistry"
+    },
+    {
+     "id": "u11-05",
+     "title": "Transition metal chemistry",
+     "module": "Coordination chemistry"
+    },
+    {
+     "id": "u11-06",
+     "title": "Coordination compounds",
+     "module": "Coordination chemistry"
+    },
+    {
+     "id": "u11-07",
+     "title": "Ligands",
+     "module": "Coordination chemistry"
+    },
+    {
+     "id": "u11-08",
+     "title": "Coordination numbers",
+     "module": "Coordination chemistry"
+    },
+    {
+     "id": "u11-09",
+     "title": "Isomerism in complexes",
+     "module": "Coordination chemistry"
+    },
+    {
+     "id": "u11-10",
+     "title": "Crystal field theory",
+     "module": "Bonding and properties of complexes"
+    },
+    {
+     "id": "u11-11",
+     "title": "Ligand field theory",
+     "module": "Bonding and properties of complexes"
+    },
+    {
+     "id": "u11-12",
+     "title": "Magnetic properties",
+     "module": "Bonding and properties of complexes"
+    },
+    {
+     "id": "u11-13",
+     "title": "Colour in transition metal complexes",
+     "module": "Bonding and properties of complexes"
+    },
+    {
+     "id": "u11-14",
+     "title": "Oxidation states",
+     "module": "Bonding and properties of complexes"
+    },
+    {
+     "id": "u11-15",
+     "title": "Organometallic chemistry",
+     "module": "Organometallics and catalysis"
+    },
+    {
+     "id": "u11-16",
+     "title": "Catalytic complexes",
+     "module": "Organometallics and catalysis"
+    },
+    {
+     "id": "u11-17",
+     "title": "Metal extraction",
+     "module": "Applied inorganic chemistry"
+    },
+    {
+     "id": "u11-18",
+     "title": "Industrial inorganic chemistry",
+     "module": "Applied inorganic chemistry"
+    },
+    {
+     "id": "u11-19",
+     "title": "Bioinorganic chemistry",
+     "module": "Applied inorganic chemistry"
+    },
+    {
+     "id": "u11-20",
+     "title": "Solid-state inorganic chemistry",
+     "module": "Applied inorganic chemistry"
+    },
+    {
+     "id": "u11-21",
+     "title": "Lanthanide chemistry",
+     "module": "f-block chemistry"
+    },
+    {
+     "id": "u11-22",
+     "title": "Actinide chemistry",
+     "module": "f-block chemistry"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Organic Chemistry Foundations",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Introduction to organic chemistry",
+     "module": "Carbon and hydrocarbons"
+    },
+    {
+     "id": "u12-02",
+     "title": "Carbon bonding",
+     "module": "Carbon and hydrocarbons"
+    },
+    {
+     "id": "u12-03",
+     "title": "Hydrocarbons",
+     "module": "Carbon and hydrocarbons"
+    },
+    {
+     "id": "u12-04",
+     "title": "Alkanes",
+     "module": "Carbon and hydrocarbons"
+    },
+    {
+     "id": "u12-05",
+     "title": "Alkenes",
+     "module": "Carbon and hydrocarbons"
+    },
+    {
+     "id": "u12-06",
+     "title": "Alkynes",
+     "module": "Carbon and hydrocarbons"
+    },
+    {
+     "id": "u12-07",
+     "title": "Aromatic compounds",
+     "module": "Carbon and hydrocarbons"
+    },
+    {
+     "id": "u12-08",
+     "title": "Benzene structure",
+     "module": "Carbon and hydrocarbons"
+    },
+    {
+     "id": "u12-09",
+     "title": "Functional groups",
+     "module": "Naming and functional groups"
+    },
+    {
+     "id": "u12-10",
+     "title": "IUPAC nomenclature",
+     "module": "Naming and functional groups"
+    },
+    {
+     "id": "u12-11",
+     "title": "Structural isomerism",
+     "module": "Isomerism"
+    },
+    {
+     "id": "u12-12",
+     "title": "Stereoisomerism",
+     "module": "Isomerism"
+    },
+    {
+     "id": "u12-13",
+     "title": "Constitutional isomers",
+     "module": "Isomerism"
+    },
+    {
+     "id": "u12-14",
+     "title": "Conformational analysis",
+     "module": "Isomerism"
+    },
+    {
+     "id": "u12-15",
+     "title": "Chirality",
+     "module": "Chirality and stereochemistry"
+    },
+    {
+     "id": "u12-16",
+     "title": "Enantiomers",
+     "module": "Chirality and stereochemistry"
+    },
+    {
+     "id": "u12-17",
+     "title": "Diastereomers",
+     "module": "Chirality and stereochemistry"
+    },
+    {
+     "id": "u12-18",
+     "title": "Optical activity",
+     "module": "Chirality and stereochemistry"
+    },
+    {
+     "id": "u12-19",
+     "title": "R and S nomenclature",
+     "module": "Chirality and stereochemistry"
+    },
+    {
+     "id": "u12-20",
+     "title": "E and Z nomenclature",
+     "module": "Chirality and stereochemistry"
+    },
+    {
+     "id": "u12-21",
+     "title": "Functional group interconversion",
+     "module": "Organic reactions"
+    },
+    {
+     "id": "u12-22",
+     "title": "Organic reaction classification",
+     "module": "Organic reactions"
+    }
+   ]
+  },
+  {
+   "id": "u13",
+   "n": 13,
+   "title": "Organic Reaction Mechanisms",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u13-01",
+     "title": "Curly arrow notation",
+     "module": "Mechanism basics"
+    },
+    {
+     "id": "u13-02",
+     "title": "Electrophiles and nucleophiles",
+     "module": "Mechanism basics"
+    },
+    {
+     "id": "u13-03",
+     "title": "Homolytic and heterolytic cleavage",
+     "module": "Mechanism basics"
+    },
+    {
+     "id": "u13-04",
+     "title": "Carbocations",
+     "module": "Mechanism basics"
+    },
+    {
+     "id": "u13-05",
+     "title": "Carbanions",
+     "module": "Mechanism basics"
+    },
+    {
+     "id": "u13-06",
+     "title": "Radical intermediates",
+     "module": "Mechanism basics"
+    },
+    {
+     "id": "u13-07",
+     "title": "Reaction energy profiles",
+     "module": "Mechanism basics"
+    },
+    {
+     "id": "u13-08",
+     "title": "Substitution reactions",
+     "module": "Substitution and elimination"
+    },
+    {
+     "id": "u13-09",
+     "title": "SN1 mechanisms",
+     "module": "Substitution and elimination"
+    },
+    {
+     "id": "u13-10",
+     "title": "SN2 mechanisms",
+     "module": "Substitution and elimination"
+    },
+    {
+     "id": "u13-11",
+     "title": "Elimination reactions",
+     "module": "Substitution and elimination"
+    },
+    {
+     "id": "u13-12",
+     "title": "E1 mechanisms",
+     "module": "Substitution and elimination"
+    },
+    {
+     "id": "u13-13",
+     "title": "E2 mechanisms",
+     "module": "Substitution and elimination"
+    },
+    {
+     "id": "u13-14",
+     "title": "Addition reactions",
+     "module": "Addition and aromatic substitution"
+    },
+    {
+     "id": "u13-15",
+     "title": "Electrophilic addition",
+     "module": "Addition and aromatic substitution"
+    },
+    {
+     "id": "u13-16",
+     "title": "Nucleophilic addition",
+     "module": "Addition and aromatic substitution"
+    },
+    {
+     "id": "u13-17",
+     "title": "Electrophilic aromatic substitution",
+     "module": "Addition and aromatic substitution"
+    },
+    {
+     "id": "u13-18",
+     "title": "Nucleophilic aromatic substitution",
+     "module": "Addition and aromatic substitution"
+    },
+    {
+     "id": "u13-19",
+     "title": "Oxidation reactions",
+     "module": "Redox and other reaction types"
+    },
+    {
+     "id": "u13-20",
+     "title": "Reduction reactions",
+     "module": "Redox and other reaction types"
+    },
+    {
+     "id": "u13-21",
+     "title": "Condensation reactions",
+     "module": "Redox and other reaction types"
+    },
+    {
+     "id": "u13-22",
+     "title": "Hydrolysis",
+     "module": "Redox and other reaction types"
+    },
+    {
+     "id": "u13-23",
+     "title": "Rearrangements",
+     "module": "Redox and other reaction types"
+    },
+    {
+     "id": "u13-24",
+     "title": "Reaction selectivity",
+     "module": "Selectivity"
+    },
+    {
+     "id": "u13-25",
+     "title": "Chemoselectivity",
+     "module": "Selectivity"
+    },
+    {
+     "id": "u13-26",
+     "title": "Regioselectivity",
+     "module": "Selectivity"
+    },
+    {
+     "id": "u13-27",
+     "title": "Stereoselectivity",
+     "module": "Selectivity"
+    }
+   ]
+  },
+  {
+   "id": "u14",
+   "n": 14,
+   "title": "Functional Group Chemistry",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u14-01",
+     "title": "Alcohols",
+     "module": "Oxygen-containing groups"
+    },
+    {
+     "id": "u14-02",
+     "title": "Phenols",
+     "module": "Oxygen-containing groups"
+    },
+    {
+     "id": "u14-03",
+     "title": "Ethers",
+     "module": "Oxygen-containing groups"
+    },
+    {
+     "id": "u14-04",
+     "title": "Aldehydes",
+     "module": "Oxygen-containing groups"
+    },
+    {
+     "id": "u14-05",
+     "title": "Ketones",
+     "module": "Oxygen-containing groups"
+    },
+    {
+     "id": "u14-06",
+     "title": "Carboxylic acids",
+     "module": "Oxygen-containing groups"
+    },
+    {
+     "id": "u14-07",
+     "title": "Acyl chlorides",
+     "module": "Oxygen-containing groups"
+    },
+    {
+     "id": "u14-08",
+     "title": "Acid anhydrides",
+     "module": "Oxygen-containing groups"
+    },
+    {
+     "id": "u14-09",
+     "title": "Esters",
+     "module": "Oxygen-containing groups"
+    },
+    {
+     "id": "u14-10",
+     "title": "Amides",
+     "module": "Oxygen-containing groups"
+    },
+    {
+     "id": "u14-11",
+     "title": "Amines",
+     "module": "Nitrogen, halogen and sulfur compounds"
+    },
+    {
+     "id": "u14-12",
+     "title": "Nitriles",
+     "module": "Nitrogen, halogen and sulfur compounds"
+    },
+    {
+     "id": "u14-13",
+     "title": "Nitro compounds",
+     "module": "Nitrogen, halogen and sulfur compounds"
+    },
+    {
+     "id": "u14-14",
+     "title": "Halogenoalkanes",
+     "module": "Nitrogen, halogen and sulfur compounds"
+    },
+    {
+     "id": "u14-15",
+     "title": "Aromatic compounds",
+     "module": "Nitrogen, halogen and sulfur compounds"
+    },
+    {
+     "id": "u14-16",
+     "title": "Thiols and sulfides",
+     "module": "Nitrogen, halogen and sulfur compounds"
+    },
+    {
+     "id": "u14-17",
+     "title": "Organohalogen compounds",
+     "module": "Nitrogen, halogen and sulfur compounds"
+    },
+    {
+     "id": "u14-18",
+     "title": "Carbonyl chemistry",
+     "module": "Carbonyl and heterocyclic chemistry"
+    },
+    {
+     "id": "u14-19",
+     "title": "Enolates and enols",
+     "module": "Carbonyl and heterocyclic chemistry"
+    },
+    {
+     "id": "u14-20",
+     "title": "Heterocyclic compounds",
+     "module": "Carbonyl and heterocyclic chemistry"
+    },
+    {
+     "id": "u14-21",
+     "title": "Functional group synthesis",
+     "module": "Synthesis"
+    },
+    {
+     "id": "u14-22",
+     "title": "Multi-step synthesis",
+     "module": "Synthesis"
+    }
+   ]
+  },
+  {
+   "id": "u15",
+   "n": 15,
+   "title": "Analytical Chemistry and Spectroscopy",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u15-01",
+     "title": "Foundations of analytical chemistry",
+     "module": "Principles of analysis"
+    },
+    {
+     "id": "u15-02",
+     "title": "Qualitative analysis",
+     "module": "Principles of analysis"
+    },
+    {
+     "id": "u15-03",
+     "title": "Quantitative analysis",
+     "module": "Principles of analysis"
+    },
+    {
+     "id": "u15-04",
+     "title": "Accuracy and precision",
+     "module": "Principles of analysis"
+    },
+    {
+     "id": "u15-05",
+     "title": "Calibration",
+     "module": "Principles of analysis"
+    },
+    {
+     "id": "u15-06",
+     "title": "Titrimetry",
+     "module": "Principles of analysis"
+    },
+    {
+     "id": "u15-07",
+     "title": "Gravimetric analysis",
+     "module": "Principles of analysis"
+    },
+    {
+     "id": "u15-08",
+     "title": "UV-visible spectroscopy",
+     "module": "Spectroscopy"
+    },
+    {
+     "id": "u15-09",
+     "title": "Infrared spectroscopy",
+     "module": "Spectroscopy"
+    },
+    {
+     "id": "u15-10",
+     "title": "Nuclear magnetic resonance",
+     "module": "Spectroscopy"
+    },
+    {
+     "id": "u15-11",
+     "title": "Proton NMR",
+     "module": "Spectroscopy"
+    },
+    {
+     "id": "u15-12",
+     "title": "Carbon-13 NMR",
+     "module": "Spectroscopy"
+    },
+    {
+     "id": "u15-13",
+     "title": "NMR chemical shifts",
+     "module": "Spectroscopy"
+    },
+    {
+     "id": "u15-14",
+     "title": "Spin-spin coupling",
+     "module": "Spectroscopy"
+    },
+    {
+     "id": "u15-15",
+     "title": "Mass spectrometry",
+     "module": "Mass spectrometry"
+    },
+    {
+     "id": "u15-16",
+     "title": "Fragmentation patterns",
+     "module": "Mass spectrometry"
+    },
+    {
+     "id": "u15-17",
+     "title": "High-resolution mass spectrometry",
+     "module": "Mass spectrometry"
+    },
+    {
+     "id": "u15-18",
+     "title": "Raman spectroscopy",
+     "module": "Other techniques"
+    },
+    {
+     "id": "u15-19",
+     "title": "Fluorescence spectroscopy",
+     "module": "Other techniques"
+    },
+    {
+     "id": "u15-20",
+     "title": "X-ray diffraction",
+     "module": "Other techniques"
+    },
+    {
+     "id": "u15-21",
+     "title": "Chromatography",
+     "module": "Chromatography"
+    },
+    {
+     "id": "u15-22",
+     "title": "Thin-layer chromatography",
+     "module": "Chromatography"
+    },
+    {
+     "id": "u15-23",
+     "title": "Gas chromatography",
+     "module": "Chromatography"
+    },
+    {
+     "id": "u15-24",
+     "title": "High-performance liquid chromatography",
+     "module": "Chromatography"
+    },
+    {
+     "id": "u15-25",
+     "title": "GC-MS",
+     "module": "Chromatography"
+    },
+    {
+     "id": "u15-26",
+     "title": "LC-MS",
+     "module": "Chromatography"
+    },
+    {
+     "id": "u15-27",
+     "title": "Structure elucidation",
+     "module": "Structure and validation"
+    },
+    {
+     "id": "u15-28",
+     "title": "Analytical method validation",
+     "module": "Structure and validation"
+    }
+   ]
+  },
+  {
+   "id": "u16",
+   "n": 16,
+   "title": "Physical Chemistry and Molecular Science",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u16-01",
+     "title": "Molecular structure",
+     "module": "Quantum chemistry"
+    },
+    {
+     "id": "u16-02",
+     "title": "Molecular orbitals",
+     "module": "Quantum chemistry"
+    },
+    {
+     "id": "u16-03",
+     "title": "Quantum chemistry",
+     "module": "Quantum chemistry"
+    },
+    {
+     "id": "u16-04",
+     "title": "Schrödinger equation",
+     "module": "Quantum chemistry"
+    },
+    {
+     "id": "u16-05",
+     "title": "Particle in a box",
+     "module": "Quantum chemistry"
+    },
+    {
+     "id": "u16-06",
+     "title": "Harmonic oscillator",
+     "module": "Quantum chemistry"
+    },
+    {
+     "id": "u16-07",
+     "title": "Rotational spectroscopy",
+     "module": "Spectroscopy"
+    },
+    {
+     "id": "u16-08",
+     "title": "Vibrational spectroscopy",
+     "module": "Spectroscopy"
+    },
+    {
+     "id": "u16-09",
+     "title": "Electronic transitions",
+     "module": "Spectroscopy"
+    },
+    {
+     "id": "u16-10",
+     "title": "Atomic and molecular spectra",
+     "module": "Spectroscopy"
+    },
+    {
+     "id": "u16-11",
+     "title": "Statistical thermodynamics",
+     "module": "Statistical thermodynamics"
+    },
+    {
+     "id": "u16-12",
+     "title": "Partition functions",
+     "module": "Statistical thermodynamics"
+    },
+    {
+     "id": "u16-13",
+     "title": "Molecular energy distributions",
+     "module": "Statistical thermodynamics"
+    },
+    {
+     "id": "u16-14",
+     "title": "Chemical kinetics",
+     "module": "Kinetics and surfaces"
+    },
+    {
+     "id": "u16-15",
+     "title": "Surface chemistry",
+     "module": "Kinetics and surfaces"
+    },
+    {
+     "id": "u16-16",
+     "title": "Adsorption",
+     "module": "Kinetics and surfaces"
+    },
+    {
+     "id": "u16-17",
+     "title": "Colloids",
+     "module": "Kinetics and surfaces"
+    },
+    {
+     "id": "u16-18",
+     "title": "Interfaces",
+     "module": "Kinetics and surfaces"
+    },
+    {
+     "id": "u16-19",
+     "title": "Photochemistry",
+     "module": "Photochemistry and molecular interactions"
+    },
+    {
+     "id": "u16-20",
+     "title": "Molecular interactions",
+     "module": "Photochemistry and molecular interactions"
+    },
+    {
+     "id": "u16-21",
+     "title": "Solvation",
+     "module": "Photochemistry and molecular interactions"
+    },
+    {
+     "id": "u16-22",
+     "title": "Computational molecular modelling",
+     "module": "Photochemistry and molecular interactions"
+    }
+   ]
+  },
+  {
+   "id": "u17",
+   "n": 17,
+   "title": "Materials, Environmental and Industrial Chemistry",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u17-01",
+     "title": "Materials chemistry",
+     "module": "Materials"
+    },
+    {
+     "id": "u17-02",
+     "title": "Metals and alloys",
+     "module": "Materials"
+    },
+    {
+     "id": "u17-03",
+     "title": "Polymers",
+     "module": "Materials"
+    },
+    {
+     "id": "u17-04",
+     "title": "Polymerisation",
+     "module": "Materials"
+    },
+    {
+     "id": "u17-05",
+     "title": "Biopolymers",
+     "module": "Materials"
+    },
+    {
+     "id": "u17-06",
+     "title": "Ceramics",
+     "module": "Materials"
+    },
+    {
+     "id": "u17-07",
+     "title": "Semiconductors",
+     "module": "Materials"
+    },
+    {
+     "id": "u17-08",
+     "title": "Nanomaterials",
+     "module": "Materials"
+    },
+    {
+     "id": "u17-09",
+     "title": "Composite materials",
+     "module": "Materials"
+    },
+    {
+     "id": "u17-10",
+     "title": "Biomaterials",
+     "module": "Materials"
+    },
+    {
+     "id": "u17-11",
+     "title": "Environmental chemistry",
+     "module": "Environmental chemistry"
+    },
+    {
+     "id": "u17-12",
+     "title": "Atmospheric chemistry",
+     "module": "Environmental chemistry"
+    },
+    {
+     "id": "u17-13",
+     "title": "Aquatic chemistry",
+     "module": "Environmental chemistry"
+    },
+    {
+     "id": "u17-14",
+     "title": "Soil chemistry",
+     "module": "Environmental chemistry"
+    },
+    {
+     "id": "u17-15",
+     "title": "Water treatment",
+     "module": "Environmental chemistry"
+    },
+    {
+     "id": "u17-16",
+     "title": "Air pollution",
+     "module": "Environmental chemistry"
+    },
+    {
+     "id": "u17-17",
+     "title": "Greenhouse gases",
+     "module": "Environmental chemistry"
+    },
+    {
+     "id": "u17-18",
+     "title": "Climate chemistry",
+     "module": "Environmental chemistry"
+    },
+    {
+     "id": "u17-19",
+     "title": "Industrial chemical processes",
+     "module": "Industrial chemistry"
+    },
+    {
+     "id": "u17-20",
+     "title": "Chemical manufacturing",
+     "module": "Industrial chemistry"
+    },
+    {
+     "id": "u17-21",
+     "title": "Catalysis in industry",
+     "module": "Industrial chemistry"
+    },
+    {
+     "id": "u17-22",
+     "title": "Petroleum chemistry",
+     "module": "Industrial chemistry"
+    },
+    {
+     "id": "u17-23",
+     "title": "Fertilisers",
+     "module": "Industrial chemistry"
+    },
+    {
+     "id": "u17-24",
+     "title": "Sustainable chemistry",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u17-25",
+     "title": "Green chemistry",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u17-26",
+     "title": "Circular chemistry",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u17-27",
+     "title": "Chemical waste management",
+     "module": "Sustainability"
+    }
+   ]
+  },
+  {
+   "id": "u18",
+   "n": 18,
+   "title": "Medicinal and Pharmaceutical Chemistry",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u18-01",
+     "title": "Introduction to medicinal chemistry",
+     "module": "Drugs and targets"
+    },
+    {
+     "id": "u18-02",
+     "title": "Drug discovery",
+     "module": "Drugs and targets"
+    },
+    {
+     "id": "u18-03",
+     "title": "Drug targets",
+     "module": "Drugs and targets"
+    },
+    {
+     "id": "u18-04",
+     "title": "Structure-activity relationships",
+     "module": "Molecular recognition"
+    },
+    {
+     "id": "u18-05",
+     "title": "Pharmacophores",
+     "module": "Molecular recognition"
+    },
+    {
+     "id": "u18-06",
+     "title": "Molecular recognition",
+     "module": "Molecular recognition"
+    },
+    {
+     "id": "u18-07",
+     "title": "Binding interactions",
+     "module": "Molecular recognition"
+    },
+    {
+     "id": "u18-08",
+     "title": "Drug-receptor interactions",
+     "module": "Molecular recognition"
+    },
+    {
+     "id": "u18-09",
+     "title": "Enzyme inhibitors",
+     "module": "Molecular recognition"
+    },
+    {
+     "id": "u18-10",
+     "title": "Agonists and antagonists",
+     "module": "Molecular recognition"
+    },
+    {
+     "id": "u18-11",
+     "title": "Lead identification",
+     "module": "From hit to drug candidate"
+    },
+    {
+     "id": "u18-12",
+     "title": "Lead optimisation",
+     "module": "From hit to drug candidate"
+    },
+    {
+     "id": "u18-13",
+     "title": "Bioisosterism",
+     "module": "From hit to drug candidate"
+    },
+    {
+     "id": "u18-14",
+     "title": "Lipophilicity",
+     "module": "From hit to drug candidate"
+    },
+    {
+     "id": "u18-15",
+     "title": "Solubility and permeability",
+     "module": "From hit to drug candidate"
+    },
+    {
+     "id": "u18-16",
+     "title": "ADME",
+     "module": "Pharmacokinetics"
+    },
+    {
+     "id": "u18-17",
+     "title": "Drug metabolism",
+     "module": "Pharmacokinetics"
+    },
+    {
+     "id": "u18-18",
+     "title": "Structure-based drug design",
+     "module": "Drug design methods"
+    },
+    {
+     "id": "u18-19",
+     "title": "Ligand-based drug design",
+     "module": "Drug design methods"
+    },
+    {
+     "id": "u18-20",
+     "title": "Molecular docking",
+     "module": "Drug design methods"
+    },
+    {
+     "id": "u18-21",
+     "title": "Quantitative structure-activity relationships",
+     "module": "Drug design methods"
+    },
+    {
+     "id": "u18-22",
+     "title": "Prodrugs",
+     "module": "Prodrugs, formulation and computation"
+    },
+    {
+     "id": "u18-23",
+     "title": "Drug formulation chemistry",
+     "module": "Prodrugs, formulation and computation"
+    },
+    {
+     "id": "u18-24",
+     "title": "Biopharmaceuticals",
+     "module": "Prodrugs, formulation and computation"
+    },
+    {
+     "id": "u18-25",
+     "title": "Computational drug discovery",
+     "module": "Prodrugs, formulation and computation"
+    }
+   ]
+  },
+  {
+   "id": "u19",
+   "n": 19,
+   "title": "Synthetic Chemistry and Laboratory Methods",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u19-01",
+     "title": "Laboratory safety",
+     "module": "Safety and planning"
+    },
+    {
+     "id": "u19-02",
+     "title": "Experimental planning",
+     "module": "Safety and planning"
+    },
+    {
+     "id": "u19-03",
+     "title": "Reagent handling",
+     "module": "Safety and planning"
+    },
+    {
+     "id": "u19-04",
+     "title": "Reaction setup",
+     "module": "Core techniques"
+    },
+    {
+     "id": "u19-05",
+     "title": "Reflux",
+     "module": "Core techniques"
+    },
+    {
+     "id": "u19-06",
+     "title": "Distillation",
+     "module": "Core techniques"
+    },
+    {
+     "id": "u19-07",
+     "title": "Extraction",
+     "module": "Core techniques"
+    },
+    {
+     "id": "u19-08",
+     "title": "Recrystallisation",
+     "module": "Core techniques"
+    },
+    {
+     "id": "u19-09",
+     "title": "Filtration",
+     "module": "Core techniques"
+    },
+    {
+     "id": "u19-10",
+     "title": "Chromatographic purification",
+     "module": "Core techniques"
+    },
+    {
+     "id": "u19-11",
+     "title": "Thin-layer chromatography",
+     "module": "Core techniques"
+    },
+    {
+     "id": "u19-12",
+     "title": "Column chromatography",
+     "module": "Core techniques"
+    },
+    {
+     "id": "u19-13",
+     "title": "Yield calculations",
+     "module": "Yield, purity and monitoring"
+    },
+    {
+     "id": "u19-14",
+     "title": "Purity assessment",
+     "module": "Yield, purity and monitoring"
+    },
+    {
+     "id": "u19-15",
+     "title": "Reaction monitoring",
+     "module": "Yield, purity and monitoring"
+    },
+    {
+     "id": "u19-16",
+     "title": "Organic synthesis planning",
+     "module": "Synthesis planning"
+    },
+    {
+     "id": "u19-17",
+     "title": "Retrosynthetic analysis",
+     "module": "Synthesis planning"
+    },
+    {
+     "id": "u19-18",
+     "title": "Protecting groups",
+     "module": "Synthesis planning"
+    },
+    {
+     "id": "u19-19",
+     "title": "Multi-step synthesis",
+     "module": "Synthesis planning"
+    },
+    {
+     "id": "u19-20",
+     "title": "Green synthesis",
+     "module": "Good practice"
+    },
+    {
+     "id": "u19-21",
+     "title": "Laboratory documentation",
+     "module": "Good practice"
+    },
+    {
+     "id": "u19-22",
+     "title": "Experimental reproducibility",
+     "module": "Good practice"
+    },
+    {
+     "id": "u19-23",
+     "title": "Research integrity",
+     "module": "Good practice"
+    }
+   ]
+  },
+  {
+   "id": "u20",
+   "n": 20,
+   "title": "Computational Chemistry and Chemical Data Science",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u20-01",
+     "title": "Introduction to computational chemistry",
+     "module": "Representing molecules"
+    },
+    {
+     "id": "u20-02",
+     "title": "Molecular representations",
+     "module": "Representing molecules"
+    },
+    {
+     "id": "u20-03",
+     "title": "SMILES",
+     "module": "Representing molecules"
+    },
+    {
+     "id": "u20-04",
+     "title": "InChI",
+     "module": "Representing molecules"
+    },
+    {
+     "id": "u20-05",
+     "title": "Molecular descriptors",
+     "module": "Representing molecules"
+    },
+    {
+     "id": "u20-06",
+     "title": "Molecular fingerprints",
+     "module": "Representing molecules"
+    },
+    {
+     "id": "u20-07",
+     "title": "Chemical databases",
+     "module": "Databases and visualisation"
+    },
+    {
+     "id": "u20-08",
+     "title": "Molecular visualisation",
+     "module": "Databases and visualisation"
+    },
+    {
+     "id": "u20-09",
+     "title": "Conformational searching",
+     "module": "Conformations and force fields"
+    },
+    {
+     "id": "u20-10",
+     "title": "Molecular mechanics",
+     "module": "Conformations and force fields"
+    },
+    {
+     "id": "u20-11",
+     "title": "Force fields",
+     "module": "Conformations and force fields"
+    },
+    {
+     "id": "u20-12",
+     "title": "Quantum chemical methods",
+     "module": "Quantum chemical methods"
+    },
+    {
+     "id": "u20-13",
+     "title": "Hartree-Fock theory",
+     "module": "Quantum chemical methods"
+    },
+    {
+     "id": "u20-14",
+     "title": "Density functional theory",
+     "module": "Quantum chemical methods"
+    },
+    {
+     "id": "u20-15",
+     "title": "Basis sets",
+     "module": "Quantum chemical methods"
+    },
+    {
+     "id": "u20-16",
+     "title": "Molecular dynamics",
+     "module": "Simulation"
+    },
+    {
+     "id": "u20-17",
+     "title": "Monte Carlo methods",
+     "module": "Simulation"
+    },
+    {
+     "id": "u20-18",
+     "title": "Molecular docking",
+     "module": "Docking and screening"
+    },
+    {
+     "id": "u20-19",
+     "title": "Virtual screening",
+     "module": "Docking and screening"
+    },
+    {
+     "id": "u20-20",
+     "title": "Cheminformatics",
+     "module": "Cheminformatics and machine learning"
+    },
+    {
+     "id": "u20-21",
+     "title": "Quantitative structure-property relationships",
+     "module": "Cheminformatics and machine learning"
+    },
+    {
+     "id": "u20-22",
+     "title": "Chemical machine learning",
+     "module": "Cheminformatics and machine learning"
+    },
+    {
+     "id": "u20-23",
+     "title": "Chemical datasets",
+     "module": "Data and reproducibility"
+    },
+    {
+     "id": "u20-24",
+     "title": "Chemical data curation",
+     "module": "Data and reproducibility"
+    },
+    {
+     "id": "u20-25",
+     "title": "Reproducible computational chemistry",
+     "module": "Data and reproducibility"
+    }
+   ]
+  }
+ ]
+}

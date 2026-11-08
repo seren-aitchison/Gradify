@@ -1,0 +1,1942 @@
+{
+ "api": 1,
+ "slug": "history",
+ "name": "History",
+ "site": "HistoryGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Study material, not a qualification.</b> The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors; check important points against your course materials and official sources.",
+ "notes": "/kit/courses/history/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Thinking like a historian",
+   "units": [
+    1
+   ],
+   "from": "#c2833f",
+   "to": "#e0b56c"
+  },
+  {
+   "name": "Stage 2 · Medieval and early modern Britain",
+   "units": [
+    2,
+    3,
+    4
+   ],
+   "from": "#b0703a",
+   "to": "#d9a35b"
+  },
+  {
+   "name": "Stage 3 · Industry, empire and reform",
+   "units": [
+    5,
+    6
+   ],
+   "from": "#8f5f3a",
+   "to": "#c98a4b"
+  },
+  {
+   "name": "Stage 4 · The world in conflict, 1900–1991",
+   "units": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    13
+   ],
+   "from": "#7c4a2d",
+   "to": "#c2833f"
+  },
+  {
+   "name": "Stage 5 · Britain and the world since 1945",
+   "units": [
+    12,
+    14
+   ],
+   "from": "#a0603a",
+   "to": "#22d3ee"
+  },
+  {
+   "name": "Stage 6 · Themes, investigation and exams",
+   "units": [
+    15,
+    16,
+    17,
+    18
+   ],
+   "from": "#c2833f",
+   "to": "#22d3ee"
+  }
+ ],
+ "paths": [
+  {
+   "id": "core",
+   "name": "The whole course",
+   "sub": "Every school in order, from historical method to exam technique.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+   ],
+   "select": null
+  },
+  {
+   "id": "gcse",
+   "name": "GCSE pathway",
+   "sub": "Method, then the periods most GCSE specifications study: medieval, Elizabethan, the world wars, Germany, the Cold War and modern Britain, ending with exam practice. Check your own board's specification.",
+   "units": [
+    1,
+    2,
+    3,
+    7,
+    9,
+    10,
+    11,
+    12,
+    18
+   ],
+   "select": null
+  },
+  {
+   "id": "a-level",
+   "name": "A level pathway",
+   "sub": "Method, the Tudors and Stuarts, Russia, Germany, the Cold War, the USA and revolutions, with the independent investigation and exam practice. Check your own board's specification.",
+   "units": [
+    1,
+    3,
+    4,
+    8,
+    9,
+    11,
+    13,
+    15,
+    17,
+    18
+   ],
+   "select": null
+  },
+  {
+   "id": "britain",
+   "name": "Britain, 1066 to today",
+   "sub": "A continuous story of British history.",
+   "units": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "world",
+   "name": "The modern world",
+   "sub": "Twentieth-century conflict, ideology and empire beyond Britain.",
+   "units": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    13,
+    14,
+    15
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Thinking like a historian",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Medieval and early modern Britain",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    2,
+    3,
+    4
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Industry, empire and reform",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    5,
+    6
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · The world in conflict, 1900–1991",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    13
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Britain and the world since 1945",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    12,
+    14
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-6",
+   "title": "Stage 6 · Themes, investigation and exams",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    15,
+    16,
+    17,
+    18
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Historical Thinking and Methods",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What is history?",
+     "module": "The discipline of history"
+    },
+    {
+     "id": "u01-02",
+     "title": "Primary and secondary sources",
+     "module": "The discipline of history"
+    },
+    {
+     "id": "u01-03",
+     "title": "Historical evidence",
+     "module": "The discipline of history"
+    },
+    {
+     "id": "u01-04",
+     "title": "Source provenance",
+     "module": "The discipline of history"
+    },
+    {
+     "id": "u01-05",
+     "title": "Reliability and usefulness",
+     "module": "The discipline of history"
+    },
+    {
+     "id": "u01-06",
+     "title": "Bias and perspective",
+     "module": "The discipline of history"
+    },
+    {
+     "id": "u01-07",
+     "title": "Historical interpretations",
+     "module": "The discipline of history"
+    },
+    {
+     "id": "u01-08",
+     "title": "Cause and consequence",
+     "module": "Second-order concepts"
+    },
+    {
+     "id": "u01-09",
+     "title": "Continuity and change",
+     "module": "Second-order concepts"
+    },
+    {
+     "id": "u01-10",
+     "title": "Significance",
+     "module": "Second-order concepts"
+    },
+    {
+     "id": "u01-11",
+     "title": "Chronology and periodisation",
+     "module": "Second-order concepts"
+    },
+    {
+     "id": "u01-12",
+     "title": "Historical argument",
+     "module": "Argument and writing"
+    },
+    {
+     "id": "u01-13",
+     "title": "Essay construction",
+     "module": "Argument and writing"
+    },
+    {
+     "id": "u01-14",
+     "title": "Evidence selection",
+     "module": "Argument and writing"
+    },
+    {
+     "id": "u01-15",
+     "title": "Evaluating historical claims",
+     "module": "Argument and writing"
+    },
+    {
+     "id": "u01-16",
+     "title": "Comparing interpretations",
+     "module": "Argument and writing"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Medieval Britain",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Anglo-Saxon England",
+     "module": "Anglo-Saxons and Vikings"
+    },
+    {
+     "id": "u02-02",
+     "title": "The Viking invasions",
+     "module": "Anglo-Saxons and Vikings"
+    },
+    {
+     "id": "u02-03",
+     "title": "Alfred the Great",
+     "module": "Anglo-Saxons and Vikings"
+    },
+    {
+     "id": "u02-04",
+     "title": "The Norman Conquest",
+     "module": "The Norman Conquest"
+    },
+    {
+     "id": "u02-05",
+     "title": "The Battle of Hastings",
+     "module": "The Norman Conquest"
+    },
+    {
+     "id": "u02-06",
+     "title": "William I and Norman control",
+     "module": "The Norman Conquest"
+    },
+    {
+     "id": "u02-07",
+     "title": "Feudalism",
+     "module": "The Norman Conquest"
+    },
+    {
+     "id": "u02-08",
+     "title": "The Domesday Book",
+     "module": "The Norman Conquest"
+    },
+    {
+     "id": "u02-09",
+     "title": "Medieval monarchy",
+     "module": "Crown, Church and law"
+    },
+    {
+     "id": "u02-10",
+     "title": "Henry II and legal reform",
+     "module": "Crown, Church and law"
+    },
+    {
+     "id": "u02-11",
+     "title": "Thomas Becket",
+     "module": "Crown, Church and law"
+    },
+    {
+     "id": "u02-12",
+     "title": "King John and Magna Carta",
+     "module": "Crown, Church and law"
+    },
+    {
+     "id": "u02-13",
+     "title": "The development of Parliament",
+     "module": "Crown, Church and law"
+    },
+    {
+     "id": "u02-14",
+     "title": "Medieval society",
+     "module": "Society and crisis"
+    },
+    {
+     "id": "u02-15",
+     "title": "The Black Death",
+     "module": "Society and crisis"
+    },
+    {
+     "id": "u02-16",
+     "title": "The Peasants' Revolt",
+     "module": "Society and crisis"
+    },
+    {
+     "id": "u02-17",
+     "title": "The Wars of the Roses",
+     "module": "Society and crisis"
+    },
+    {
+     "id": "u02-18",
+     "title": "The rise of the Tudor dynasty",
+     "module": "Society and crisis"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Tudor England",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Henry VII and dynastic security",
+     "module": "Henry VII and Henry VIII"
+    },
+    {
+     "id": "u03-02",
+     "title": "Henry VIII's government",
+     "module": "Henry VII and Henry VIII"
+    },
+    {
+     "id": "u03-03",
+     "title": "The English Reformation",
+     "module": "Henry VII and Henry VIII"
+    },
+    {
+     "id": "u03-04",
+     "title": "The dissolution of the monasteries",
+     "module": "Henry VII and Henry VIII"
+    },
+    {
+     "id": "u03-05",
+     "title": "Edward VI and Protestant reform",
+     "module": "The mid-Tudor years"
+    },
+    {
+     "id": "u03-06",
+     "title": "Mary I and Catholic restoration",
+     "module": "The mid-Tudor years"
+    },
+    {
+     "id": "u03-07",
+     "title": "Elizabeth I and the religious settlement",
+     "module": "Elizabethan England"
+    },
+    {
+     "id": "u03-08",
+     "title": "Elizabethan government",
+     "module": "Elizabethan England"
+    },
+    {
+     "id": "u03-09",
+     "title": "The Spanish Armada",
+     "module": "Elizabethan England"
+    },
+    {
+     "id": "u03-10",
+     "title": "Elizabethan exploration",
+     "module": "Elizabethan England"
+    },
+    {
+     "id": "u03-11",
+     "title": "Poverty and social policy",
+     "module": "Elizabethan England"
+    },
+    {
+     "id": "u03-12",
+     "title": "Tudor culture and society",
+     "module": "Elizabethan England"
+    },
+    {
+     "id": "u03-13",
+     "title": "Tudor foreign policy",
+     "module": "Elizabethan England"
+    },
+    {
+     "id": "u03-14",
+     "title": "Succession and the end of the Tudor dynasty",
+     "module": "Elizabethan England"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Stuart Britain and the Civil War",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "James I and the Union of the Crowns",
+     "module": "Early Stuart monarchy"
+    },
+    {
+     "id": "u04-02",
+     "title": "The divine right of kings",
+     "module": "Early Stuart monarchy"
+    },
+    {
+     "id": "u04-03",
+     "title": "Parliament and taxation",
+     "module": "Early Stuart monarchy"
+    },
+    {
+     "id": "u04-04",
+     "title": "Religious tensions under the early Stuarts",
+     "module": "Early Stuart monarchy"
+    },
+    {
+     "id": "u04-05",
+     "title": "Charles I",
+     "module": "Early Stuart monarchy"
+    },
+    {
+     "id": "u04-06",
+     "title": "The Personal Rule",
+     "module": "Early Stuart monarchy"
+    },
+    {
+     "id": "u04-07",
+     "title": "The Bishops' Wars",
+     "module": "The road to war"
+    },
+    {
+     "id": "u04-08",
+     "title": "The Long Parliament",
+     "module": "The road to war"
+    },
+    {
+     "id": "u04-09",
+     "title": "Causes of the English Civil War",
+     "module": "The road to war"
+    },
+    {
+     "id": "u04-10",
+     "title": "Royalists and Parliamentarians",
+     "module": "War and revolution"
+    },
+    {
+     "id": "u04-11",
+     "title": "Key campaigns and battles of the Civil War",
+     "module": "War and revolution"
+    },
+    {
+     "id": "u04-12",
+     "title": "The trial and execution of Charles I",
+     "module": "War and revolution"
+    },
+    {
+     "id": "u04-13",
+     "title": "The Commonwealth",
+     "module": "War and revolution"
+    },
+    {
+     "id": "u04-14",
+     "title": "Oliver Cromwell",
+     "module": "War and revolution"
+    },
+    {
+     "id": "u04-15",
+     "title": "The Protectorate",
+     "module": "War and revolution"
+    },
+    {
+     "id": "u04-16",
+     "title": "The Restoration",
+     "module": "Restoration and revolution"
+    },
+    {
+     "id": "u04-17",
+     "title": "The Glorious Revolution",
+     "module": "Restoration and revolution"
+    },
+    {
+     "id": "u04-18",
+     "title": "The Bill of Rights",
+     "module": "Restoration and revolution"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "The Industrial Revolution",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Agricultural change",
+     "module": "Foundations of change"
+    },
+    {
+     "id": "u05-02",
+     "title": "Population growth",
+     "module": "Foundations of change"
+    },
+    {
+     "id": "u05-03",
+     "title": "The factory system",
+     "module": "Foundations of change"
+    },
+    {
+     "id": "u05-04",
+     "title": "The textile industry",
+     "module": "Foundations of change"
+    },
+    {
+     "id": "u05-05",
+     "title": "Steam power",
+     "module": "Foundations of change"
+    },
+    {
+     "id": "u05-06",
+     "title": "Coal and iron",
+     "module": "Foundations of change"
+    },
+    {
+     "id": "u05-07",
+     "title": "Railways",
+     "module": "Foundations of change"
+    },
+    {
+     "id": "u05-08",
+     "title": "Urbanisation",
+     "module": "Life and work in industrial Britain"
+    },
+    {
+     "id": "u05-09",
+     "title": "Industrial working conditions",
+     "module": "Life and work in industrial Britain"
+    },
+    {
+     "id": "u05-10",
+     "title": "Child labour",
+     "module": "Life and work in industrial Britain"
+    },
+    {
+     "id": "u05-11",
+     "title": "Public health",
+     "module": "Life and work in industrial Britain"
+    },
+    {
+     "id": "u05-12",
+     "title": "Housing and sanitation",
+     "module": "Life and work in industrial Britain"
+    },
+    {
+     "id": "u05-13",
+     "title": "Industrial capitalism",
+     "module": "Economy and politics"
+    },
+    {
+     "id": "u05-14",
+     "title": "Trade unions",
+     "module": "Economy and politics"
+    },
+    {
+     "id": "u05-15",
+     "title": "Chartism",
+     "module": "Economy and politics"
+    },
+    {
+     "id": "u05-16",
+     "title": "The Great Reform Act",
+     "module": "Economy and politics"
+    },
+    {
+     "id": "u05-17",
+     "title": "Early Victorian social reform",
+     "module": "Economy and politics"
+    },
+    {
+     "id": "u05-18",
+     "title": "The changing British economy",
+     "module": "Economy and politics"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Nineteenth-Century Britain",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "The British Empire in the nineteenth century",
+     "module": "Monarchy and democracy"
+    },
+    {
+     "id": "u06-02",
+     "title": "Victorian monarchy",
+     "module": "Monarchy and democracy"
+    },
+    {
+     "id": "u06-03",
+     "title": "Parliamentary reform, 1867–1884",
+     "module": "Monarchy and democracy"
+    },
+    {
+     "id": "u06-04",
+     "title": "The development of democracy",
+     "module": "Monarchy and democracy"
+    },
+    {
+     "id": "u06-05",
+     "title": "The growth of the Labour movement",
+     "module": "Monarchy and democracy"
+    },
+    {
+     "id": "u06-06",
+     "title": "Ireland and the Union",
+     "module": "Ireland"
+    },
+    {
+     "id": "u06-07",
+     "title": "Irish nationalism",
+     "module": "Ireland"
+    },
+    {
+     "id": "u06-08",
+     "title": "Imperial expansion",
+     "module": "Empire"
+    },
+    {
+     "id": "u06-09",
+     "title": "Colonial administration",
+     "module": "Empire"
+    },
+    {
+     "id": "u06-10",
+     "title": "The Scramble for Africa",
+     "module": "Empire"
+    },
+    {
+     "id": "u06-11",
+     "title": "Imperial resistance",
+     "module": "Empire"
+    },
+    {
+     "id": "u06-12",
+     "title": "The Boer Wars",
+     "module": "Empire"
+    },
+    {
+     "id": "u06-13",
+     "title": "Women's suffrage",
+     "module": "Society and Britain's place in the world"
+    },
+    {
+     "id": "u06-14",
+     "title": "The Liberal welfare reforms",
+     "module": "Society and Britain's place in the world"
+    },
+    {
+     "id": "u06-15",
+     "title": "Britain's changing international position",
+     "module": "Society and Britain's place in the world"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "The First World War",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "European power politics",
+     "module": "Long-term causes"
+    },
+    {
+     "id": "u07-02",
+     "title": "Militarism",
+     "module": "Long-term causes"
+    },
+    {
+     "id": "u07-03",
+     "title": "Alliances",
+     "module": "Long-term causes"
+    },
+    {
+     "id": "u07-04",
+     "title": "Imperial rivalry",
+     "module": "Long-term causes"
+    },
+    {
+     "id": "u07-05",
+     "title": "Nationalism",
+     "module": "Long-term causes"
+    },
+    {
+     "id": "u07-06",
+     "title": "The assassination of Archduke Franz Ferdinand",
+     "module": "The outbreak of war"
+    },
+    {
+     "id": "u07-07",
+     "title": "The July Crisis",
+     "module": "The outbreak of war"
+    },
+    {
+     "id": "u07-08",
+     "title": "The outbreak of war",
+     "module": "The outbreak of war"
+    },
+    {
+     "id": "u07-09",
+     "title": "Trench warfare",
+     "module": "The fighting"
+    },
+    {
+     "id": "u07-10",
+     "title": "The Western Front",
+     "module": "The fighting"
+    },
+    {
+     "id": "u07-11",
+     "title": "Gallipoli",
+     "module": "The fighting"
+    },
+    {
+     "id": "u07-12",
+     "title": "The Eastern Front, 1914–1917",
+     "module": "The fighting"
+    },
+    {
+     "id": "u07-13",
+     "title": "The British Home Front, 1914–1918",
+     "module": "War and society"
+    },
+    {
+     "id": "u07-14",
+     "title": "Total war",
+     "module": "War and society"
+    },
+    {
+     "id": "u07-15",
+     "title": "Propaganda in the First World War",
+     "module": "War and society"
+    },
+    {
+     "id": "u07-16",
+     "title": "Women's wartime roles",
+     "module": "War and society"
+    },
+    {
+     "id": "u07-17",
+     "title": "Russia leaves the war",
+     "module": "Ending the war"
+    },
+    {
+     "id": "u07-18",
+     "title": "The United States enters the war",
+     "module": "Ending the war"
+    },
+    {
+     "id": "u07-19",
+     "title": "The Armistice",
+     "module": "Ending the war"
+    },
+    {
+     "id": "u07-20",
+     "title": "The Treaty of Versailles",
+     "module": "Ending the war"
+    },
+    {
+     "id": "u07-21",
+     "title": "The consequences of the First World War",
+     "module": "Ending the war"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "The Russian Revolution and the Soviet Union",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Tsarist Russia",
+     "module": "Tsarist Russia"
+    },
+    {
+     "id": "u08-02",
+     "title": "Nicholas II",
+     "module": "Tsarist Russia"
+    },
+    {
+     "id": "u08-03",
+     "title": "Russian society and inequality",
+     "module": "Tsarist Russia"
+    },
+    {
+     "id": "u08-04",
+     "title": "The 1905 Revolution",
+     "module": "Tsarist Russia"
+    },
+    {
+     "id": "u08-05",
+     "title": "The First World War and Russia",
+     "module": "Tsarist Russia"
+    },
+    {
+     "id": "u08-06",
+     "title": "The February Revolution",
+     "module": "1917"
+    },
+    {
+     "id": "u08-07",
+     "title": "The Provisional Government",
+     "module": "1917"
+    },
+    {
+     "id": "u08-08",
+     "title": "Lenin and the Bolsheviks",
+     "module": "1917"
+    },
+    {
+     "id": "u08-09",
+     "title": "The October Revolution",
+     "module": "1917"
+    },
+    {
+     "id": "u08-10",
+     "title": "The Russian Civil War",
+     "module": "Consolidating Bolshevik power"
+    },
+    {
+     "id": "u08-11",
+     "title": "War Communism",
+     "module": "Consolidating Bolshevik power"
+    },
+    {
+     "id": "u08-12",
+     "title": "The New Economic Policy",
+     "module": "Consolidating Bolshevik power"
+    },
+    {
+     "id": "u08-13",
+     "title": "Stalin's rise to power",
+     "module": "Stalin's Russia"
+    },
+    {
+     "id": "u08-14",
+     "title": "Collectivisation",
+     "module": "Stalin's Russia"
+    },
+    {
+     "id": "u08-15",
+     "title": "Soviet industrialisation",
+     "module": "Stalin's Russia"
+    },
+    {
+     "id": "u08-16",
+     "title": "The Five-Year Plans",
+     "module": "Stalin's Russia"
+    },
+    {
+     "id": "u08-17",
+     "title": "The Great Purge",
+     "module": "Stalin's Russia"
+    },
+    {
+     "id": "u08-18",
+     "title": "Soviet propaganda",
+     "module": "Stalin's Russia"
+    },
+    {
+     "id": "u08-19",
+     "title": "Life under Stalin",
+     "module": "Stalin's Russia"
+    },
+    {
+     "id": "u08-20",
+     "title": "The Soviet Union in the Second World War",
+     "module": "Stalin's Russia"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "The Rise of Fascism and Nazism",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Post-war Italy",
+     "module": "Fascist Italy"
+    },
+    {
+     "id": "u09-02",
+     "title": "Mussolini",
+     "module": "Fascist Italy"
+    },
+    {
+     "id": "u09-03",
+     "title": "The development of Italian Fascism",
+     "module": "Fascist Italy"
+    },
+    {
+     "id": "u09-04",
+     "title": "The Weimar Republic",
+     "module": "Weimar Germany"
+    },
+    {
+     "id": "u09-05",
+     "title": "The Treaty of Versailles and Germany",
+     "module": "Weimar Germany"
+    },
+    {
+     "id": "u09-06",
+     "title": "Political instability in Weimar Germany",
+     "module": "Weimar Germany"
+    },
+    {
+     "id": "u09-07",
+     "title": "Hyperinflation",
+     "module": "Weimar Germany"
+    },
+    {
+     "id": "u09-08",
+     "title": "The Great Depression in Germany",
+     "module": "Weimar Germany"
+    },
+    {
+     "id": "u09-09",
+     "title": "Hitler's rise to power",
+     "module": "The Nazi seizure of power"
+    },
+    {
+     "id": "u09-10",
+     "title": "Nazi ideology",
+     "module": "The Nazi seizure of power"
+    },
+    {
+     "id": "u09-11",
+     "title": "Nazi consolidation of power",
+     "module": "The Nazi seizure of power"
+    },
+    {
+     "id": "u09-12",
+     "title": "The police state",
+     "module": "Life in Nazi Germany"
+    },
+    {
+     "id": "u09-13",
+     "title": "Propaganda and censorship in Nazi Germany",
+     "module": "Life in Nazi Germany"
+    },
+    {
+     "id": "u09-14",
+     "title": "Nazi economic policy",
+     "module": "Life in Nazi Germany"
+    },
+    {
+     "id": "u09-15",
+     "title": "Youth and education in Nazi Germany",
+     "module": "Life in Nazi Germany"
+    },
+    {
+     "id": "u09-16",
+     "title": "Women and family policy in Nazi Germany",
+     "module": "Life in Nazi Germany"
+    },
+    {
+     "id": "u09-17",
+     "title": "Persecution of minorities",
+     "module": "Persecution and resistance"
+    },
+    {
+     "id": "u09-18",
+     "title": "Antisemitism",
+     "module": "Persecution and resistance"
+    },
+    {
+     "id": "u09-19",
+     "title": "The Holocaust",
+     "module": "Persecution and resistance"
+    },
+    {
+     "id": "u09-20",
+     "title": "Resistance to Nazi rule",
+     "module": "Persecution and resistance"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "The Second World War",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "The causes of the Second World War",
+     "module": "The road to war"
+    },
+    {
+     "id": "u10-02",
+     "title": "Appeasement",
+     "module": "The road to war"
+    },
+    {
+     "id": "u10-03",
+     "title": "The invasion of Poland",
+     "module": "The road to war"
+    },
+    {
+     "id": "u10-04",
+     "title": "The fall of France",
+     "module": "Europe at war"
+    },
+    {
+     "id": "u10-05",
+     "title": "The Battle of Britain",
+     "module": "Europe at war"
+    },
+    {
+     "id": "u10-06",
+     "title": "The Blitz",
+     "module": "Europe at war"
+    },
+    {
+     "id": "u10-07",
+     "title": "Operation Barbarossa",
+     "module": "Europe at war"
+    },
+    {
+     "id": "u10-08",
+     "title": "The Eastern Front, 1941–1945",
+     "module": "Europe at war"
+    },
+    {
+     "id": "u10-09",
+     "title": "The Pacific War",
+     "module": "The global war"
+    },
+    {
+     "id": "u10-10",
+     "title": "Pearl Harbor",
+     "module": "The global war"
+    },
+    {
+     "id": "u10-11",
+     "title": "The Holocaust in wartime",
+     "module": "The global war"
+    },
+    {
+     "id": "u10-12",
+     "title": "The Home Front, 1939–1945",
+     "module": "War economies and home fronts"
+    },
+    {
+     "id": "u10-13",
+     "title": "Wartime economies",
+     "module": "War economies and home fronts"
+    },
+    {
+     "id": "u10-14",
+     "title": "D-Day",
+     "module": "Victory and settlement"
+    },
+    {
+     "id": "u10-15",
+     "title": "The defeat of Nazi Germany",
+     "module": "Victory and settlement"
+    },
+    {
+     "id": "u10-16",
+     "title": "The atomic bombings of Hiroshima and Nagasaki",
+     "module": "Victory and settlement"
+    },
+    {
+     "id": "u10-17",
+     "title": "The surrender of Japan",
+     "module": "Victory and settlement"
+    },
+    {
+     "id": "u10-18",
+     "title": "The post-war settlement",
+     "module": "Victory and settlement"
+    },
+    {
+     "id": "u10-19",
+     "title": "The creation of the United Nations",
+     "module": "Victory and settlement"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "The Cold War",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Origins of the Cold War",
+     "module": "Origins"
+    },
+    {
+     "id": "u11-02",
+     "title": "Capitalism and communism",
+     "module": "Origins"
+    },
+    {
+     "id": "u11-03",
+     "title": "The division of Europe",
+     "module": "Origins"
+    },
+    {
+     "id": "u11-04",
+     "title": "The Iron Curtain",
+     "module": "Origins"
+    },
+    {
+     "id": "u11-05",
+     "title": "The Berlin Blockade",
+     "module": "Origins"
+    },
+    {
+     "id": "u11-06",
+     "title": "NATO and the Warsaw Pact",
+     "module": "Origins"
+    },
+    {
+     "id": "u11-07",
+     "title": "The Korean War",
+     "module": "Global confrontation"
+    },
+    {
+     "id": "u11-08",
+     "title": "The arms race",
+     "module": "Global confrontation"
+    },
+    {
+     "id": "u11-09",
+     "title": "Nuclear deterrence",
+     "module": "Global confrontation"
+    },
+    {
+     "id": "u11-10",
+     "title": "The Hungarian Uprising",
+     "module": "Global confrontation"
+    },
+    {
+     "id": "u11-11",
+     "title": "The Berlin Wall",
+     "module": "Global confrontation"
+    },
+    {
+     "id": "u11-12",
+     "title": "The Cuban Missile Crisis",
+     "module": "Global confrontation"
+    },
+    {
+     "id": "u11-13",
+     "title": "Vietnam and containment",
+     "module": "Global confrontation"
+    },
+    {
+     "id": "u11-14",
+     "title": "Détente",
+     "module": "Détente and the end"
+    },
+    {
+     "id": "u11-15",
+     "title": "Soviet intervention in Afghanistan",
+     "module": "Détente and the end"
+    },
+    {
+     "id": "u11-16",
+     "title": "Reagan and Gorbachev",
+     "module": "Détente and the end"
+    },
+    {
+     "id": "u11-17",
+     "title": "The fall of the Berlin Wall",
+     "module": "Détente and the end"
+    },
+    {
+     "id": "u11-18",
+     "title": "The collapse of the Soviet Union",
+     "module": "Détente and the end"
+    },
+    {
+     "id": "u11-19",
+     "title": "The end of the Cold War",
+     "module": "Détente and the end"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Britain since 1945",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Post-war reconstruction",
+     "module": "Reconstruction and the welfare state"
+    },
+    {
+     "id": "u12-02",
+     "title": "The welfare state",
+     "module": "Reconstruction and the welfare state"
+    },
+    {
+     "id": "u12-03",
+     "title": "The creation of the NHS",
+     "module": "Reconstruction and the welfare state"
+    },
+    {
+     "id": "u12-04",
+     "title": "Housing and education reform",
+     "module": "Reconstruction and the welfare state"
+    },
+    {
+     "id": "u12-05",
+     "title": "Immigration and multicultural Britain",
+     "module": "Empire to Commonwealth"
+    },
+    {
+     "id": "u12-06",
+     "title": "The end of the British Empire",
+     "module": "Empire to Commonwealth"
+    },
+    {
+     "id": "u12-07",
+     "title": "Decolonisation",
+     "module": "Empire to Commonwealth"
+    },
+    {
+     "id": "u12-08",
+     "title": "The Suez Crisis",
+     "module": "Empire to Commonwealth"
+    },
+    {
+     "id": "u12-09",
+     "title": "The Swinging Sixties",
+     "module": "Society and politics"
+    },
+    {
+     "id": "u12-10",
+     "title": "Social and cultural change",
+     "module": "Society and politics"
+    },
+    {
+     "id": "u12-11",
+     "title": "The Troubles in Northern Ireland",
+     "module": "Society and politics"
+    },
+    {
+     "id": "u12-12",
+     "title": "Thatcherism",
+     "module": "Society and politics"
+    },
+    {
+     "id": "u12-13",
+     "title": "Industrial decline",
+     "module": "Society and politics"
+    },
+    {
+     "id": "u12-14",
+     "title": "New Labour",
+     "module": "Society and politics"
+    },
+    {
+     "id": "u12-15",
+     "title": "Britain and Europe",
+     "module": "Britain and Europe"
+    },
+    {
+     "id": "u12-16",
+     "title": "Brexit",
+     "module": "Britain and Europe"
+    },
+    {
+     "id": "u12-17",
+     "title": "Contemporary British society",
+     "module": "Britain and Europe"
+    }
+   ]
+  },
+  {
+   "id": "u13",
+   "n": 13,
+   "title": "The United States in the Twentieth Century",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u13-01",
+     "title": "Progressive reform",
+     "module": "Reform and depression"
+    },
+    {
+     "id": "u13-02",
+     "title": "The Great Depression",
+     "module": "Reform and depression"
+    },
+    {
+     "id": "u13-03",
+     "title": "Franklin D. Roosevelt",
+     "module": "Reform and depression"
+    },
+    {
+     "id": "u13-04",
+     "title": "The New Deal",
+     "module": "Reform and depression"
+    },
+    {
+     "id": "u13-05",
+     "title": "The Second World War and America",
+     "module": "Superpower"
+    },
+    {
+     "id": "u13-06",
+     "title": "Post-war prosperity",
+     "module": "Superpower"
+    },
+    {
+     "id": "u13-07",
+     "title": "The Civil Rights Movement",
+     "module": "Civil rights"
+    },
+    {
+     "id": "u13-08",
+     "title": "Martin Luther King Jr.",
+     "module": "Civil rights"
+    },
+    {
+     "id": "u13-09",
+     "title": "Malcolm X",
+     "module": "Civil rights"
+    },
+    {
+     "id": "u13-10",
+     "title": "The Montgomery Bus Boycott",
+     "module": "Civil rights"
+    },
+    {
+     "id": "u13-11",
+     "title": "The Vietnam War and American society",
+     "module": "Crisis and renewal"
+    },
+    {
+     "id": "u13-12",
+     "title": "The Watergate scandal",
+     "module": "Crisis and renewal"
+    },
+    {
+     "id": "u13-13",
+     "title": "Reaganomics",
+     "module": "Crisis and renewal"
+    },
+    {
+     "id": "u13-14",
+     "title": "The United States and the end of the Cold War",
+     "module": "Crisis and renewal"
+    },
+    {
+     "id": "u13-15",
+     "title": "The changing role of the United States",
+     "module": "Crisis and renewal"
+    }
+   ]
+  },
+  {
+   "id": "u14",
+   "n": 14,
+   "title": "Global History and Empires",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u14-01",
+     "title": "The Ottoman Empire",
+     "module": "Early modern empires"
+    },
+    {
+     "id": "u14-02",
+     "title": "The Mughal Empire",
+     "module": "Early modern empires"
+    },
+    {
+     "id": "u14-03",
+     "title": "The Qing dynasty",
+     "module": "Early modern empires"
+    },
+    {
+     "id": "u14-04",
+     "title": "The rise of modern Japan",
+     "module": "Early modern empires"
+    },
+    {
+     "id": "u14-05",
+     "title": "European colonialism",
+     "module": "Colonialism and slavery"
+    },
+    {
+     "id": "u14-06",
+     "title": "The Atlantic slave trade",
+     "module": "Colonialism and slavery"
+    },
+    {
+     "id": "u14-07",
+     "title": "Abolition and emancipation",
+     "module": "Colonialism and slavery"
+    },
+    {
+     "id": "u14-08",
+     "title": "The Haitian Revolution",
+     "module": "Colonialism and slavery"
+    },
+    {
+     "id": "u14-09",
+     "title": "Latin American independence",
+     "module": "Colonialism and slavery"
+    },
+    {
+     "id": "u14-10",
+     "title": "The Scramble for Africa: African experiences",
+     "module": "Empire and resistance in Africa and Asia"
+    },
+    {
+     "id": "u14-11",
+     "title": "Anti-colonial resistance",
+     "module": "Empire and resistance in Africa and Asia"
+    },
+    {
+     "id": "u14-12",
+     "title": "Indian independence",
+     "module": "Empire and resistance in Africa and Asia"
+    },
+    {
+     "id": "u14-13",
+     "title": "Partition",
+     "module": "Empire and resistance in Africa and Asia"
+    },
+    {
+     "id": "u14-14",
+     "title": "The Chinese Revolution",
+     "module": "China and the post-colonial world"
+    },
+    {
+     "id": "u14-15",
+     "title": "Mao and the People's Republic of China",
+     "module": "China and the post-colonial world"
+    },
+    {
+     "id": "u14-16",
+     "title": "Post-colonial states",
+     "module": "China and the post-colonial world"
+    },
+    {
+     "id": "u14-17",
+     "title": "Globalisation and historical change",
+     "module": "China and the post-colonial world"
+    }
+   ]
+  },
+  {
+   "id": "u15",
+   "n": 15,
+   "title": "Revolutions and Political Change",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u15-01",
+     "title": "The English Revolution",
+     "module": "The age of revolutions"
+    },
+    {
+     "id": "u15-02",
+     "title": "The American Revolution",
+     "module": "The age of revolutions"
+    },
+    {
+     "id": "u15-03",
+     "title": "The French Revolution",
+     "module": "The age of revolutions"
+    },
+    {
+     "id": "u15-04",
+     "title": "The Haitian Revolution in comparison",
+     "module": "The age of revolutions"
+    },
+    {
+     "id": "u15-05",
+     "title": "The Latin American revolutions",
+     "module": "The age of revolutions"
+    },
+    {
+     "id": "u15-06",
+     "title": "The European revolutions of 1848",
+     "module": "The age of revolutions"
+    },
+    {
+     "id": "u15-07",
+     "title": "The Russian Revolution in comparison",
+     "module": "Twentieth-century revolutions"
+    },
+    {
+     "id": "u15-08",
+     "title": "The Chinese Revolution in comparison",
+     "module": "Twentieth-century revolutions"
+    },
+    {
+     "id": "u15-09",
+     "title": "Decolonisation movements",
+     "module": "Twentieth-century revolutions"
+    },
+    {
+     "id": "u15-10",
+     "title": "The Iranian Revolution",
+     "module": "Twentieth-century revolutions"
+    },
+    {
+     "id": "u15-11",
+     "title": "Revolutionary ideologies",
+     "module": "Thinking about revolution"
+    },
+    {
+     "id": "u15-12",
+     "title": "The causes and consequences of revolution",
+     "module": "Thinking about revolution"
+    },
+    {
+     "id": "u15-13",
+     "title": "Comparative revolutionary history",
+     "module": "Thinking about revolution"
+    }
+   ]
+  },
+  {
+   "id": "u16",
+   "n": 16,
+   "title": "Religion, Culture and Society",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u16-01",
+     "title": "Medieval Christianity",
+     "module": "Belief and ideas"
+    },
+    {
+     "id": "u16-02",
+     "title": "The European Reformation",
+     "module": "Belief and ideas"
+    },
+    {
+     "id": "u16-03",
+     "title": "Religious conflict in Europe",
+     "module": "Belief and ideas"
+    },
+    {
+     "id": "u16-04",
+     "title": "The Enlightenment",
+     "module": "Belief and ideas"
+    },
+    {
+     "id": "u16-05",
+     "title": "Scientific change",
+     "module": "Belief and ideas"
+    },
+    {
+     "id": "u16-06",
+     "title": "The development of political thought",
+     "module": "Belief and ideas"
+    },
+    {
+     "id": "u16-07",
+     "title": "The growth of secularism",
+     "module": "Belief and ideas"
+    },
+    {
+     "id": "u16-08",
+     "title": "Women's changing roles",
+     "module": "Society and culture"
+    },
+    {
+     "id": "u16-09",
+     "title": "Education and literacy",
+     "module": "Society and culture"
+    },
+    {
+     "id": "u16-10",
+     "title": "The development of mass media",
+     "module": "Society and culture"
+    },
+    {
+     "id": "u16-11",
+     "title": "Art and cultural movements",
+     "module": "Society and culture"
+    },
+    {
+     "id": "u16-12",
+     "title": "Social class and identity",
+     "module": "Society and culture"
+    },
+    {
+     "id": "u16-13",
+     "title": "Historical memory",
+     "module": "Memory and heritage"
+    },
+    {
+     "id": "u16-14",
+     "title": "Commemoration and contested heritage",
+     "module": "Memory and heritage"
+    }
+   ]
+  },
+  {
+   "id": "u17",
+   "n": 17,
+   "title": "A Level Historical Investigation",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u17-01",
+     "title": "Constructing historical enquiries",
+     "module": "Designing an enquiry"
+    },
+    {
+     "id": "u17-02",
+     "title": "Developing research questions",
+     "module": "Designing an enquiry"
+    },
+    {
+     "id": "u17-03",
+     "title": "Selecting primary sources",
+     "module": "Designing an enquiry"
+    },
+    {
+     "id": "u17-04",
+     "title": "Evaluating provenance in depth",
+     "module": "Designing an enquiry"
+    },
+    {
+     "id": "u17-05",
+     "title": "Comparing interpretations at A level",
+     "module": "Historians and debate"
+    },
+    {
+     "id": "u17-06",
+     "title": "Historiographical debate",
+     "module": "Historians and debate"
+    },
+    {
+     "id": "u17-07",
+     "title": "Using academic literature",
+     "module": "Historians and debate"
+    },
+    {
+     "id": "u17-08",
+     "title": "Constructing an argument",
+     "module": "Writing the investigation"
+    },
+    {
+     "id": "u17-09",
+     "title": "Structuring an extended essay",
+     "module": "Writing the investigation"
+    },
+    {
+     "id": "u17-10",
+     "title": "Citation and referencing",
+     "module": "Writing the investigation"
+    },
+    {
+     "id": "u17-11",
+     "title": "Avoiding anachronism",
+     "module": "Writing the investigation"
+    },
+    {
+     "id": "u17-12",
+     "title": "Evaluating historical significance",
+     "module": "Writing the investigation"
+    },
+    {
+     "id": "u17-13",
+     "title": "Writing a sustained historical judgement",
+     "module": "Writing the investigation"
+    }
+   ]
+  },
+  {
+   "id": "u18",
+   "n": 18,
+   "title": "Historical Examination and Revision",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u18-01",
+     "title": "Source analysis questions",
+     "module": "Question types"
+    },
+    {
+     "id": "u18-02",
+     "title": "Interpretation analysis questions",
+     "module": "Question types"
+    },
+    {
+     "id": "u18-03",
+     "title": "Causation questions",
+     "module": "Question types"
+    },
+    {
+     "id": "u18-04",
+     "title": "Consequence questions",
+     "module": "Question types"
+    },
+    {
+     "id": "u18-05",
+     "title": "Change and continuity questions",
+     "module": "Question types"
+    },
+    {
+     "id": "u18-06",
+     "title": "Significance questions",
+     "module": "Question types"
+    },
+    {
+     "id": "u18-07",
+     "title": "Comparison questions",
+     "module": "Question types"
+    },
+    {
+     "id": "u18-08",
+     "title": "Evidence-based essays",
+     "module": "Essays"
+    },
+    {
+     "id": "u18-09",
+     "title": "Extended historical arguments",
+     "module": "Essays"
+    },
+    {
+     "id": "u18-10",
+     "title": "Planning examination answers",
+     "module": "Essays"
+    },
+    {
+     "id": "u18-11",
+     "title": "Time management",
+     "module": "Exam technique"
+    },
+    {
+     "id": "u18-12",
+     "title": "Mark-scheme interpretation",
+     "module": "Exam technique"
+    },
+    {
+     "id": "u18-13",
+     "title": "GCSE practice examinations",
+     "module": "Exam technique"
+    },
+    {
+     "id": "u18-14",
+     "title": "A level practice examinations",
+     "module": "Exam technique"
+    }
+   ]
+  }
+ ]
+}

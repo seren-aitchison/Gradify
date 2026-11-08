@@ -1,0 +1,7254 @@
+{
+ "api": 1,
+ "slug": "physics",
+ "name": "Physics",
+ "site": "SciGradify",
+ "unitWord": "Unit",
+ "levels": [
+  "Easy",
+  "Medium",
+  "Hard"
+ ],
+ "notice": null,
+ "notes": "/kit/courses/physics/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Foundations",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "from": "#ff5600",
+   "to": "#f055dd"
+  },
+  {
+   "name": "Mechanics",
+   "units": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "from": "#ff3d6e",
+   "to": "#a24bff"
+  },
+  {
+   "name": "Waves and sound",
+   "units": [
+    10,
+    11
+   ],
+   "from": "#00b3ff",
+   "to": "#4641ff"
+  },
+  {
+   "name": "Thermal physics",
+   "units": [
+    12,
+    13,
+    14
+   ],
+   "from": "#ff8a00",
+   "to": "#ff2d55"
+  },
+  {
+   "name": "Electromagnetism and light",
+   "units": [
+    15,
+    16,
+    17,
+    18,
+    19
+   ],
+   "from": "#ffc002",
+   "to": "#ff5600"
+  },
+  {
+   "name": "Modern physics",
+   "units": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+   ],
+   "from": "#8a5cff",
+   "to": "#ff3dc4"
+  },
+  {
+   "name": "Matter",
+   "units": [
+    27,
+    28,
+    29,
+    45
+   ],
+   "from": "#00c2a8",
+   "to": "#0077ff"
+  },
+  {
+   "name": "The universe",
+   "units": [
+    30,
+    31,
+    32,
+    33,
+    48
+   ],
+   "from": "#3a4bff",
+   "to": "#00d4ff"
+  },
+  {
+   "name": "Life and medicine",
+   "units": [
+    34,
+    35
+   ],
+   "from": "#ff4d6d",
+   "to": "#ff9f40"
+  },
+  {
+   "name": "Technology",
+   "units": [
+    36,
+    37,
+    43,
+    44,
+    46,
+    47
+   ],
+   "from": "#16c784",
+   "to": "#00a3ff"
+  },
+  {
+   "name": "Theory and computation",
+   "units": [
+    38,
+    39,
+    40,
+    41,
+    42
+   ],
+   "from": "#b14bff",
+   "to": "#3d5cff"
+  },
+  {
+   "name": "Thinking like a physicist",
+   "units": [
+    49,
+    50,
+    51,
+    52,
+    53,
+    54
+   ],
+   "from": "#ff7a3d",
+   "to": "#ffc002"
+  }
+ ],
+ "paths": [
+  {
+   "id": "alevel",
+   "name": "A level Physics",
+   "sub": "Everything for A level and equivalent exams, in exam order.",
+   "units": [
+    1,
+    3,
+    4,
+    6,
+    7,
+    10,
+    12,
+    15,
+    16,
+    17,
+    19,
+    20,
+    23,
+    30
+   ],
+   "select": null
+  },
+  {
+   "id": "year1",
+   "name": "University year 1",
+   "sub": "The first-year core of a physics degree.",
+   "units": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    10,
+    12,
+    15,
+    16,
+    17,
+    25
+   ],
+   "select": null
+  },
+  {
+   "id": "quantum",
+   "name": "Quantum physics",
+   "sub": "From the photoelectric effect to quantum computers.",
+   "units": [
+    20,
+    21,
+    22,
+    13,
+    37,
+    42
+   ],
+   "select": null
+  },
+  {
+   "id": "universe",
+   "name": "Astrophysics and cosmology",
+   "sub": "Stars, galaxies, black holes and the universe.",
+   "units": [
+    7,
+    25,
+    26,
+    30,
+    31,
+    48
+   ],
+   "select": null
+  },
+  {
+   "id": "medical",
+   "name": "Medical physics",
+   "sub": "The physics behind imaging, radiotherapy and the body.",
+   "units": [
+    11,
+    23,
+    34,
+    35,
+    43
+   ],
+   "select": null
+  },
+  {
+   "id": "engineering",
+   "name": "Engineering physics",
+   "sub": "Physics for engineers: materials, energy, vibration and electronics.",
+   "units": [
+    8,
+    9,
+    14,
+    28,
+    46,
+    47
+   ],
+   "select": null
+  },
+  {
+   "id": "theory",
+   "name": "Theoretical physics",
+   "sub": "The mathematics and theory behind modern physics.",
+   "units": [
+    2,
+    40,
+    41,
+    42,
+    38,
+    50
+   ],
+   "select": null
+  },
+  {
+   "id": "research",
+   "name": "Research-ready",
+   "sub": "Skills for projects, dissertations and a career in physics.",
+   "units": [
+    3,
+    39,
+    51,
+    52,
+    54
+   ],
+   "select": null
+  }
+ ],
+ "exams": [],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Foundations of Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "Scope and aims of physics",
+     "module": null
+    },
+    {
+     "id": "u01-02",
+     "title": "Physical quantities and observables",
+     "module": null
+    },
+    {
+     "id": "u01-03",
+     "title": "SI base and derived units",
+     "module": null
+    },
+    {
+     "id": "u01-04",
+     "title": "Dimensional analysis",
+     "module": null
+    },
+    {
+     "id": "u01-05",
+     "title": "Unit conversions and prefixes",
+     "module": null
+    },
+    {
+     "id": "u01-06",
+     "title": "Scalar and vector quantities",
+     "module": null
+    },
+    {
+     "id": "u01-07",
+     "title": "Significant figures and scientific notation",
+     "module": null
+    },
+    {
+     "id": "u01-08",
+     "title": "Estimation and order-of-magnitude calculations",
+     "module": null
+    },
+    {
+     "id": "u01-09",
+     "title": "Physical constants",
+     "module": null
+    },
+    {
+     "id": "u01-10",
+     "title": "Mathematical modelling",
+     "module": null
+    },
+    {
+     "id": "u01-11",
+     "title": "Idealisation and simplifying assumptions",
+     "module": null
+    },
+    {
+     "id": "u01-12",
+     "title": "Deterministic and probabilistic models",
+     "module": null
+    },
+    {
+     "id": "u01-13",
+     "title": "Conservation laws",
+     "module": null
+    },
+    {
+     "id": "u01-14",
+     "title": "Symmetry and invariance",
+     "module": null
+    },
+    {
+     "id": "u01-15",
+     "title": "Physical laws, principles and theories",
+     "module": null
+    },
+    {
+     "id": "u01-16",
+     "title": "Classical and modern physics",
+     "module": null
+    },
+    {
+     "id": "u01-17",
+     "title": "Microscopic and macroscopic descriptions",
+     "module": null
+    },
+    {
+     "id": "u01-18",
+     "title": "Uncertainty and measurement limitations",
+     "module": null
+    },
+    {
+     "id": "u01-19",
+     "title": "Scientific reasoning and falsifiability",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Mathematics for Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Algebraic manipulation",
+     "module": null
+    },
+    {
+     "id": "u02-02",
+     "title": "Equations and inequalities",
+     "module": null
+    },
+    {
+     "id": "u02-03",
+     "title": "Simultaneous equations",
+     "module": null
+    },
+    {
+     "id": "u02-04",
+     "title": "Trigonometry and circular functions",
+     "module": null
+    },
+    {
+     "id": "u02-05",
+     "title": "Exponential and logarithmic functions",
+     "module": null
+    },
+    {
+     "id": "u02-06",
+     "title": "Complex numbers",
+     "module": null
+    },
+    {
+     "id": "u02-07",
+     "title": "Vectors and vector decomposition",
+     "module": null
+    },
+    {
+     "id": "u02-08",
+     "title": "Matrices and linear algebra",
+     "module": null
+    },
+    {
+     "id": "u02-09",
+     "title": "Coordinate systems",
+     "module": null
+    },
+    {
+     "id": "u02-10",
+     "title": "Cartesian, polar, cylindrical and spherical coordinates",
+     "module": null
+    },
+    {
+     "id": "u02-11",
+     "title": "Differentiation",
+     "module": null
+    },
+    {
+     "id": "u02-12",
+     "title": "Integration",
+     "module": null
+    },
+    {
+     "id": "u02-13",
+     "title": "Partial derivatives",
+     "module": null
+    },
+    {
+     "id": "u02-14",
+     "title": "Ordinary differential equations",
+     "module": null
+    },
+    {
+     "id": "u02-15",
+     "title": "Partial differential equations",
+     "module": null
+    },
+    {
+     "id": "u02-16",
+     "title": "First- and second-order differential equations",
+     "module": null
+    },
+    {
+     "id": "u02-17",
+     "title": "Boundary and initial conditions",
+     "module": null
+    },
+    {
+     "id": "u02-18",
+     "title": "Taylor and Fourier series",
+     "module": null
+    },
+    {
+     "id": "u02-19",
+     "title": "Fourier transforms",
+     "module": null
+    },
+    {
+     "id": "u02-20",
+     "title": "Laplace transforms",
+     "module": null
+    },
+    {
+     "id": "u02-21",
+     "title": "Multivariable calculus",
+     "module": null
+    },
+    {
+     "id": "u02-22",
+     "title": "Gradient, divergence and curl",
+     "module": null
+    },
+    {
+     "id": "u02-23",
+     "title": "Line, surface and volume integrals",
+     "module": null
+    },
+    {
+     "id": "u02-24",
+     "title": "Vector calculus theorems",
+     "module": null
+    },
+    {
+     "id": "u02-25",
+     "title": "Linear algebra eigenvalues and eigenvectors",
+     "module": null
+    },
+    {
+     "id": "u02-26",
+     "title": "Tensor algebra",
+     "module": null
+    },
+    {
+     "id": "u02-27",
+     "title": "Probability distributions",
+     "module": null
+    },
+    {
+     "id": "u02-28",
+     "title": "Statistics and error propagation",
+     "module": null
+    },
+    {
+     "id": "u02-29",
+     "title": "Numerical methods",
+     "module": null
+    },
+    {
+     "id": "u02-30",
+     "title": "Optimisation",
+     "module": null
+    },
+    {
+     "id": "u02-31",
+     "title": "Dimensional analysis",
+     "module": null
+    },
+    {
+     "id": "u02-32",
+     "title": "Complex analysis",
+     "module": null
+    },
+    {
+     "id": "u02-33",
+     "title": "Group theory and mathematical symmetry",
+     "module": null
+    },
+    {
+     "id": "u02-34",
+     "title": "Variational calculus",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Measurement, Experimental Physics and Uncertainty",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Measurement instruments and calibration",
+     "module": null
+    },
+    {
+     "id": "u03-02",
+     "title": "Accuracy, precision and resolution",
+     "module": null
+    },
+    {
+     "id": "u03-03",
+     "title": "Random and systematic errors",
+     "module": null
+    },
+    {
+     "id": "u03-04",
+     "title": "Measurement uncertainty",
+     "module": null
+    },
+    {
+     "id": "u03-05",
+     "title": "Absolute and relative uncertainty",
+     "module": null
+    },
+    {
+     "id": "u03-06",
+     "title": "Significant figures in experimental results",
+     "module": null
+    },
+    {
+     "id": "u03-07",
+     "title": "Propagation of uncertainty",
+     "module": null
+    },
+    {
+     "id": "u03-08",
+     "title": "Error bars and confidence intervals",
+     "module": null
+    },
+    {
+     "id": "u03-09",
+     "title": "Repeatability and reproducibility",
+     "module": null
+    },
+    {
+     "id": "u03-10",
+     "title": "Experimental controls",
+     "module": null
+    },
+    {
+     "id": "u03-11",
+     "title": "Independent, dependent and controlled variables",
+     "module": null
+    },
+    {
+     "id": "u03-12",
+     "title": "Experimental design",
+     "module": null
+    },
+    {
+     "id": "u03-13",
+     "title": "Calibration curves",
+     "module": null
+    },
+    {
+     "id": "u03-14",
+     "title": "Linearisation of experimental relationships",
+     "module": null
+    },
+    {
+     "id": "u03-15",
+     "title": "Least-squares fitting",
+     "module": null
+    },
+    {
+     "id": "u03-16",
+     "title": "Regression analysis",
+     "module": null
+    },
+    {
+     "id": "u03-17",
+     "title": "Residual analysis",
+     "module": null
+    },
+    {
+     "id": "u03-18",
+     "title": "Hypothesis testing",
+     "module": null
+    },
+    {
+     "id": "u03-19",
+     "title": "Statistical significance",
+     "module": null
+    },
+    {
+     "id": "u03-20",
+     "title": "Instrument response and sensitivity",
+     "module": null
+    },
+    {
+     "id": "u03-21",
+     "title": "Detection limits",
+     "module": null
+    },
+    {
+     "id": "u03-22",
+     "title": "Signal-to-noise ratio",
+     "module": null
+    },
+    {
+     "id": "u03-23",
+     "title": "Data acquisition systems",
+     "module": null
+    },
+    {
+     "id": "u03-24",
+     "title": "Sensors and transducers",
+     "module": null
+    },
+    {
+     "id": "u03-25",
+     "title": "Oscilloscopes and signal generators",
+     "module": null
+    },
+    {
+     "id": "u03-26",
+     "title": "Lock-in amplifiers",
+     "module": null
+    },
+    {
+     "id": "u03-27",
+     "title": "Vacuum systems",
+     "module": null
+    },
+    {
+     "id": "u03-28",
+     "title": "Cryogenic measurement",
+     "module": null
+    },
+    {
+     "id": "u03-29",
+     "title": "High-voltage and high-current safety",
+     "module": null
+    },
+    {
+     "id": "u03-30",
+     "title": "Laboratory notebooks and reproducibility",
+     "module": null
+    },
+    {
+     "id": "u03-31",
+     "title": "Experimental validation of physical models",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Classical Mechanics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Position, displacement, distance and time",
+     "module": null
+    },
+    {
+     "id": "u04-02",
+     "title": "Speed and velocity",
+     "module": null
+    },
+    {
+     "id": "u04-03",
+     "title": "Acceleration",
+     "module": null
+    },
+    {
+     "id": "u04-04",
+     "title": "Motion in one dimension",
+     "module": null
+    },
+    {
+     "id": "u04-05",
+     "title": "Motion in two and three dimensions",
+     "module": null
+    },
+    {
+     "id": "u04-06",
+     "title": "Kinematic equations",
+     "module": null
+    },
+    {
+     "id": "u04-07",
+     "title": "Projectile motion",
+     "module": null
+    },
+    {
+     "id": "u04-08",
+     "title": "Relative motion",
+     "module": null
+    },
+    {
+     "id": "u04-09",
+     "title": "Reference frames",
+     "module": null
+    },
+    {
+     "id": "u04-10",
+     "title": "Newton's laws of motion",
+     "module": null
+    },
+    {
+     "id": "u04-11",
+     "title": "Inertial and non-inertial frames",
+     "module": null
+    },
+    {
+     "id": "u04-12",
+     "title": "Free-body diagrams",
+     "module": null
+    },
+    {
+     "id": "u04-13",
+     "title": "Normal force and tension",
+     "module": null
+    },
+    {
+     "id": "u04-14",
+     "title": "Friction and drag",
+     "module": null
+    },
+    {
+     "id": "u04-15",
+     "title": "Inclined planes",
+     "module": null
+    },
+    {
+     "id": "u04-16",
+     "title": "Circular motion",
+     "module": null
+    },
+    {
+     "id": "u04-17",
+     "title": "Centripetal acceleration and force",
+     "module": null
+    },
+    {
+     "id": "u04-18",
+     "title": "Work and energy",
+     "module": null
+    },
+    {
+     "id": "u04-19",
+     "title": "Kinetic and potential energy",
+     "module": null
+    },
+    {
+     "id": "u04-20",
+     "title": "Conservative and non-conservative forces",
+     "module": null
+    },
+    {
+     "id": "u04-21",
+     "title": "Power and efficiency",
+     "module": null
+    },
+    {
+     "id": "u04-22",
+     "title": "Momentum and impulse",
+     "module": null
+    },
+    {
+     "id": "u04-23",
+     "title": "Conservation of momentum",
+     "module": null
+    },
+    {
+     "id": "u04-24",
+     "title": "Collisions and explosions",
+     "module": null
+    },
+    {
+     "id": "u04-25",
+     "title": "Elastic and inelastic collisions",
+     "module": null
+    },
+    {
+     "id": "u04-26",
+     "title": "Centre of mass",
+     "module": null
+    },
+    {
+     "id": "u04-27",
+     "title": "Systems of particles",
+     "module": null
+    },
+    {
+     "id": "u04-28",
+     "title": "Variable-mass systems",
+     "module": null
+    },
+    {
+     "id": "u04-29",
+     "title": "Motion under resistive forces",
+     "module": null
+    },
+    {
+     "id": "u04-30",
+     "title": "Terminal velocity",
+     "module": null
+    },
+    {
+     "id": "u04-31",
+     "title": "Equilibrium and statics",
+     "module": null
+    },
+    {
+     "id": "u04-32",
+     "title": "Mechanical advantage",
+     "module": null
+    },
+    {
+     "id": "u04-33",
+     "title": "Simple machines",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Rotational Mechanics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Angular displacement, velocity and acceleration",
+     "module": null
+    },
+    {
+     "id": "u05-02",
+     "title": "Angular and linear motion relationships",
+     "module": null
+    },
+    {
+     "id": "u05-03",
+     "title": "Torque and moment of force",
+     "module": null
+    },
+    {
+     "id": "u05-04",
+     "title": "Moment of inertia",
+     "module": null
+    },
+    {
+     "id": "u05-05",
+     "title": "Rotational kinetic energy",
+     "module": null
+    },
+    {
+     "id": "u05-06",
+     "title": "Angular momentum",
+     "module": null
+    },
+    {
+     "id": "u05-07",
+     "title": "Conservation of angular momentum",
+     "module": null
+    },
+    {
+     "id": "u05-08",
+     "title": "Rotational dynamics",
+     "module": null
+    },
+    {
+     "id": "u05-09",
+     "title": "Rolling without slipping",
+     "module": null
+    },
+    {
+     "id": "u05-10",
+     "title": "Rotational equilibrium",
+     "module": null
+    },
+    {
+     "id": "u05-11",
+     "title": "Parallel-axis theorem",
+     "module": null
+    },
+    {
+     "id": "u05-12",
+     "title": "Perpendicular-axis theorem",
+     "module": null
+    },
+    {
+     "id": "u05-13",
+     "title": "Gyroscopic motion",
+     "module": null
+    },
+    {
+     "id": "u05-14",
+     "title": "Precession and nutation",
+     "module": null
+    },
+    {
+     "id": "u05-15",
+     "title": "Rigid-body dynamics",
+     "module": null
+    },
+    {
+     "id": "u05-16",
+     "title": "Euler's equations of rotation",
+     "module": null
+    },
+    {
+     "id": "u05-17",
+     "title": "Rotating reference frames",
+     "module": null
+    },
+    {
+     "id": "u05-18",
+     "title": "Centrifugal and Coriolis forces",
+     "module": null
+    },
+    {
+     "id": "u05-19",
+     "title": "Top motion and stability",
+     "module": null
+    },
+    {
+     "id": "u05-20",
+     "title": "Coupled translational and rotational motion",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Oscillations and Vibrations",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Periodic motion",
+     "module": null
+    },
+    {
+     "id": "u06-02",
+     "title": "Simple harmonic motion",
+     "module": null
+    },
+    {
+     "id": "u06-03",
+     "title": "Amplitude, frequency, period and phase",
+     "module": null
+    },
+    {
+     "id": "u06-04",
+     "title": "Mass-spring systems",
+     "module": null
+    },
+    {
+     "id": "u06-05",
+     "title": "Simple and physical pendulums",
+     "module": null
+    },
+    {
+     "id": "u06-06",
+     "title": "Energy in oscillatory systems",
+     "module": null
+    },
+    {
+     "id": "u06-07",
+     "title": "Damped oscillations",
+     "module": null
+    },
+    {
+     "id": "u06-08",
+     "title": "Underdamping, critical damping and overdamping",
+     "module": null
+    },
+    {
+     "id": "u06-09",
+     "title": "Driven oscillations",
+     "module": null
+    },
+    {
+     "id": "u06-10",
+     "title": "Resonance",
+     "module": null
+    },
+    {
+     "id": "u06-11",
+     "title": "Quality factor",
+     "module": null
+    },
+    {
+     "id": "u06-12",
+     "title": "Coupled oscillators",
+     "module": null
+    },
+    {
+     "id": "u06-13",
+     "title": "Normal modes",
+     "module": null
+    },
+    {
+     "id": "u06-14",
+     "title": "Beat frequencies",
+     "module": null
+    },
+    {
+     "id": "u06-15",
+     "title": "Anharmonic oscillations",
+     "module": null
+    },
+    {
+     "id": "u06-16",
+     "title": "Nonlinear oscillators",
+     "module": null
+    },
+    {
+     "id": "u06-17",
+     "title": "Parametric resonance",
+     "module": null
+    },
+    {
+     "id": "u06-18",
+     "title": "Mechanical vibration analysis",
+     "module": null
+    },
+    {
+     "id": "u06-19",
+     "title": "Frequency response",
+     "module": null
+    },
+    {
+     "id": "u06-20",
+     "title": "Fourier analysis of oscillations",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Gravitation and Orbital Mechanics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Newton's law of universal gravitation",
+     "module": null
+    },
+    {
+     "id": "u07-02",
+     "title": "Gravitational fields",
+     "module": null
+    },
+    {
+     "id": "u07-03",
+     "title": "Gravitational field strength",
+     "module": null
+    },
+    {
+     "id": "u07-04",
+     "title": "Gravitational potential and potential energy",
+     "module": null
+    },
+    {
+     "id": "u07-05",
+     "title": "Escape velocity",
+     "module": null
+    },
+    {
+     "id": "u07-06",
+     "title": "Orbital velocity",
+     "module": null
+    },
+    {
+     "id": "u07-07",
+     "title": "Circular and elliptical orbits",
+     "module": null
+    },
+    {
+     "id": "u07-08",
+     "title": "Kepler's laws",
+     "module": null
+    },
+    {
+     "id": "u07-09",
+     "title": "Satellite motion",
+     "module": null
+    },
+    {
+     "id": "u07-10",
+     "title": "Orbital energy and angular momentum",
+     "module": null
+    },
+    {
+     "id": "u07-11",
+     "title": "Two-body gravitational problem",
+     "module": null
+    },
+    {
+     "id": "u07-12",
+     "title": "Tidal forces",
+     "module": null
+    },
+    {
+     "id": "u07-13",
+     "title": "Roche limits",
+     "module": null
+    },
+    {
+     "id": "u07-14",
+     "title": "Lagrange points",
+     "module": null
+    },
+    {
+     "id": "u07-15",
+     "title": "Restricted three-body problem",
+     "module": null
+    },
+    {
+     "id": "u07-16",
+     "title": "Orbital transfers",
+     "module": null
+    },
+    {
+     "id": "u07-17",
+     "title": "Hohmann transfers",
+     "module": null
+    },
+    {
+     "id": "u07-18",
+     "title": "Gravitational perturbations",
+     "module": null
+    },
+    {
+     "id": "u07-19",
+     "title": "Precession of orbits",
+     "module": null
+    },
+    {
+     "id": "u07-20",
+     "title": "General relativistic corrections",
+     "module": null
+    },
+    {
+     "id": "u07-21",
+     "title": "Gravitational lensing",
+     "module": null
+    },
+    {
+     "id": "u07-22",
+     "title": "Gravitational waves",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Fluid Mechanics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Density and pressure",
+     "module": null
+    },
+    {
+     "id": "u08-02",
+     "title": "Hydrostatic equilibrium",
+     "module": null
+    },
+    {
+     "id": "u08-03",
+     "title": "Pascal's principle",
+     "module": null
+    },
+    {
+     "id": "u08-04",
+     "title": "Buoyancy and Archimedes' principle",
+     "module": null
+    },
+    {
+     "id": "u08-05",
+     "title": "Fluid statics",
+     "module": null
+    },
+    {
+     "id": "u08-06",
+     "title": "Fluid dynamics",
+     "module": null
+    },
+    {
+     "id": "u08-07",
+     "title": "Continuity equation",
+     "module": null
+    },
+    {
+     "id": "u08-08",
+     "title": "Conservation of mass in fluid flow",
+     "module": null
+    },
+    {
+     "id": "u08-09",
+     "title": "Bernoulli's equation",
+     "module": null
+    },
+    {
+     "id": "u08-10",
+     "title": "Viscosity",
+     "module": null
+    },
+    {
+     "id": "u08-11",
+     "title": "Laminar and turbulent flow",
+     "module": null
+    },
+    {
+     "id": "u08-12",
+     "title": "Reynolds number",
+     "module": null
+    },
+    {
+     "id": "u08-13",
+     "title": "Poiseuille flow",
+     "module": null
+    },
+    {
+     "id": "u08-14",
+     "title": "Drag and lift",
+     "module": null
+    },
+    {
+     "id": "u08-15",
+     "title": "Boundary layers",
+     "module": null
+    },
+    {
+     "id": "u08-16",
+     "title": "Surface tension",
+     "module": null
+    },
+    {
+     "id": "u08-17",
+     "title": "Capillary action",
+     "module": null
+    },
+    {
+     "id": "u08-18",
+     "title": "Compressible and incompressible fluids",
+     "module": null
+    },
+    {
+     "id": "u08-19",
+     "title": "Navier–Stokes equations",
+     "module": null
+    },
+    {
+     "id": "u08-20",
+     "title": "Euler equations for fluids",
+     "module": null
+    },
+    {
+     "id": "u08-21",
+     "title": "Vorticity and circulation",
+     "module": null
+    },
+    {
+     "id": "u08-22",
+     "title": "Flow instabilities",
+     "module": null
+    },
+    {
+     "id": "u08-23",
+     "title": "Shock waves",
+     "module": null
+    },
+    {
+     "id": "u08-24",
+     "title": "Turbulence modelling",
+     "module": null
+    },
+    {
+     "id": "u08-25",
+     "title": "Computational fluid dynamics",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Elasticity and Solid Mechanics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Stress and strain",
+     "module": null
+    },
+    {
+     "id": "u09-02",
+     "title": "Young's modulus",
+     "module": null
+    },
+    {
+     "id": "u09-03",
+     "title": "Shear modulus",
+     "module": null
+    },
+    {
+     "id": "u09-04",
+     "title": "Bulk modulus",
+     "module": null
+    },
+    {
+     "id": "u09-05",
+     "title": "Hooke's law",
+     "module": null
+    },
+    {
+     "id": "u09-06",
+     "title": "Elastic and plastic deformation",
+     "module": null
+    },
+    {
+     "id": "u09-07",
+     "title": "Poisson's ratio",
+     "module": null
+    },
+    {
+     "id": "u09-08",
+     "title": "Elastic energy",
+     "module": null
+    },
+    {
+     "id": "u09-09",
+     "title": "Bending and torsion",
+     "module": null
+    },
+    {
+     "id": "u09-10",
+     "title": "Beam deflection",
+     "module": null
+    },
+    {
+     "id": "u09-11",
+     "title": "Pressure and material deformation",
+     "module": null
+    },
+    {
+     "id": "u09-12",
+     "title": "Fracture and failure",
+     "module": null
+    },
+    {
+     "id": "u09-13",
+     "title": "Viscoelasticity",
+     "module": null
+    },
+    {
+     "id": "u09-14",
+     "title": "Crystal elasticity",
+     "module": null
+    },
+    {
+     "id": "u09-15",
+     "title": "Mechanical waves in solids",
+     "module": null
+    },
+    {
+     "id": "u09-16",
+     "title": "Stress tensors",
+     "module": null
+    },
+    {
+     "id": "u09-17",
+     "title": "Continuum mechanics",
+     "module": null
+    },
+    {
+     "id": "u09-18",
+     "title": "Material stability",
+     "module": null
+    },
+    {
+     "id": "u09-19",
+     "title": "Fatigue and fracture mechanics",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Waves and Wave Motion",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Wave properties",
+     "module": null
+    },
+    {
+     "id": "u10-02",
+     "title": "Transverse and longitudinal waves",
+     "module": null
+    },
+    {
+     "id": "u10-03",
+     "title": "Wavelength, frequency, period and speed",
+     "module": null
+    },
+    {
+     "id": "u10-04",
+     "title": "Wave equations",
+     "module": null
+    },
+    {
+     "id": "u10-05",
+     "title": "Wave propagation",
+     "module": null
+    },
+    {
+     "id": "u10-06",
+     "title": "Phase and group velocity",
+     "module": null
+    },
+    {
+     "id": "u10-07",
+     "title": "Superposition",
+     "module": null
+    },
+    {
+     "id": "u10-08",
+     "title": "Interference",
+     "module": null
+    },
+    {
+     "id": "u10-09",
+     "title": "Constructive and destructive interference",
+     "module": null
+    },
+    {
+     "id": "u10-10",
+     "title": "Standing waves",
+     "module": null
+    },
+    {
+     "id": "u10-11",
+     "title": "Reflection and transmission",
+     "module": null
+    },
+    {
+     "id": "u10-12",
+     "title": "Refraction",
+     "module": null
+    },
+    {
+     "id": "u10-13",
+     "title": "Diffraction",
+     "module": null
+    },
+    {
+     "id": "u10-14",
+     "title": "Dispersion",
+     "module": null
+    },
+    {
+     "id": "u10-15",
+     "title": "Polarisation",
+     "module": null
+    },
+    {
+     "id": "u10-16",
+     "title": "Wave packets",
+     "module": null
+    },
+    {
+     "id": "u10-17",
+     "title": "Beats",
+     "module": null
+    },
+    {
+     "id": "u10-18",
+     "title": "Boundary conditions",
+     "module": null
+    },
+    {
+     "id": "u10-19",
+     "title": "Resonant modes",
+     "module": null
+    },
+    {
+     "id": "u10-20",
+     "title": "Coupled waves",
+     "module": null
+    },
+    {
+     "id": "u10-21",
+     "title": "Nonlinear waves",
+     "module": null
+    },
+    {
+     "id": "u10-22",
+     "title": "Solitons",
+     "module": null
+    },
+    {
+     "id": "u10-23",
+     "title": "Wave energy and intensity",
+     "module": null
+    },
+    {
+     "id": "u10-24",
+     "title": "Huygens' principle",
+     "module": null
+    },
+    {
+     "id": "u10-25",
+     "title": "Fourier decomposition of waves",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Acoustics and Sound",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Sound wave propagation",
+     "module": null
+    },
+    {
+     "id": "u11-02",
+     "title": "Sound pressure and intensity",
+     "module": null
+    },
+    {
+     "id": "u11-03",
+     "title": "Decibel scale",
+     "module": null
+    },
+    {
+     "id": "u11-04",
+     "title": "Pitch, loudness and timbre",
+     "module": null
+    },
+    {
+     "id": "u11-05",
+     "title": "Frequency spectra",
+     "module": null
+    },
+    {
+     "id": "u11-06",
+     "title": "Harmonics and overtones",
+     "module": null
+    },
+    {
+     "id": "u11-07",
+     "title": "Resonance in air columns",
+     "module": null
+    },
+    {
+     "id": "u11-08",
+     "title": "Musical instruments and acoustics",
+     "module": null
+    },
+    {
+     "id": "u11-09",
+     "title": "Doppler effect",
+     "module": null
+    },
+    {
+     "id": "u11-10",
+     "title": "Beats and interference",
+     "module": null
+    },
+    {
+     "id": "u11-11",
+     "title": "Acoustic impedance",
+     "module": null
+    },
+    {
+     "id": "u11-12",
+     "title": "Reflection and absorption of sound",
+     "module": null
+    },
+    {
+     "id": "u11-13",
+     "title": "Reverberation",
+     "module": null
+    },
+    {
+     "id": "u11-14",
+     "title": "Architectural acoustics",
+     "module": null
+    },
+    {
+     "id": "u11-15",
+     "title": "Ultrasound",
+     "module": null
+    },
+    {
+     "id": "u11-16",
+     "title": "Infrasound",
+     "module": null
+    },
+    {
+     "id": "u11-17",
+     "title": "Sonar",
+     "module": null
+    },
+    {
+     "id": "u11-18",
+     "title": "Acoustic levitation",
+     "module": null
+    },
+    {
+     "id": "u11-19",
+     "title": "Noise pollution",
+     "module": null
+    },
+    {
+     "id": "u11-20",
+     "title": "Psychoacoustics",
+     "module": null
+    },
+    {
+     "id": "u11-21",
+     "title": "Bioacoustics",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Thermodynamics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Temperature and thermal equilibrium",
+     "module": null
+    },
+    {
+     "id": "u12-02",
+     "title": "Zeroth law of thermodynamics",
+     "module": null
+    },
+    {
+     "id": "u12-03",
+     "title": "Heat and internal energy",
+     "module": null
+    },
+    {
+     "id": "u12-04",
+     "title": "Specific heat capacity",
+     "module": null
+    },
+    {
+     "id": "u12-05",
+     "title": "Latent heat",
+     "module": null
+    },
+    {
+     "id": "u12-06",
+     "title": "Thermal expansion",
+     "module": null
+    },
+    {
+     "id": "u12-07",
+     "title": "First law of thermodynamics",
+     "module": null
+    },
+    {
+     "id": "u12-08",
+     "title": "Work done by thermodynamic systems",
+     "module": null
+    },
+    {
+     "id": "u12-09",
+     "title": "Pressure-volume diagrams",
+     "module": null
+    },
+    {
+     "id": "u12-10",
+     "title": "Isothermal processes",
+     "module": null
+    },
+    {
+     "id": "u12-11",
+     "title": "Adiabatic processes",
+     "module": null
+    },
+    {
+     "id": "u12-12",
+     "title": "Isobaric and isochoric processes",
+     "module": null
+    },
+    {
+     "id": "u12-13",
+     "title": "Heat engines",
+     "module": null
+    },
+    {
+     "id": "u12-14",
+     "title": "Refrigerators and heat pumps",
+     "module": null
+    },
+    {
+     "id": "u12-15",
+     "title": "Thermal efficiency",
+     "module": null
+    },
+    {
+     "id": "u12-16",
+     "title": "Second law of thermodynamics",
+     "module": null
+    },
+    {
+     "id": "u12-17",
+     "title": "Entropy",
+     "module": null
+    },
+    {
+     "id": "u12-18",
+     "title": "Reversible and irreversible processes",
+     "module": null
+    },
+    {
+     "id": "u12-19",
+     "title": "Carnot cycle",
+     "module": null
+    },
+    {
+     "id": "u12-20",
+     "title": "Thermodynamic potentials",
+     "module": null
+    },
+    {
+     "id": "u12-21",
+     "title": "Enthalpy",
+     "module": null
+    },
+    {
+     "id": "u12-22",
+     "title": "Helmholtz free energy",
+     "module": null
+    },
+    {
+     "id": "u12-23",
+     "title": "Gibbs free energy",
+     "module": null
+    },
+    {
+     "id": "u12-24",
+     "title": "Chemical and phase equilibrium",
+     "module": null
+    },
+    {
+     "id": "u12-25",
+     "title": "Maxwell relations",
+     "module": null
+    },
+    {
+     "id": "u12-26",
+     "title": "Third law of thermodynamics",
+     "module": null
+    },
+    {
+     "id": "u12-27",
+     "title": "Thermodynamic cycles",
+     "module": null
+    },
+    {
+     "id": "u12-28",
+     "title": "Equations of state",
+     "module": null
+    },
+    {
+     "id": "u12-29",
+     "title": "Critical points",
+     "module": null
+    },
+    {
+     "id": "u12-30",
+     "title": "Phase transitions",
+     "module": null
+    },
+    {
+     "id": "u12-31",
+     "title": "Non-equilibrium thermodynamics",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u13",
+   "n": 13,
+   "title": "Statistical Mechanics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u13-01",
+     "title": "Microstates and macrostates",
+     "module": null
+    },
+    {
+     "id": "u13-02",
+     "title": "Statistical ensembles",
+     "module": null
+    },
+    {
+     "id": "u13-03",
+     "title": "Microcanonical, canonical and grand canonical ensembles",
+     "module": null
+    },
+    {
+     "id": "u13-04",
+     "title": "Boltzmann distribution",
+     "module": null
+    },
+    {
+     "id": "u13-05",
+     "title": "Maxwell–Boltzmann distribution",
+     "module": null
+    },
+    {
+     "id": "u13-06",
+     "title": "Partition functions",
+     "module": null
+    },
+    {
+     "id": "u13-07",
+     "title": "Entropy and probability",
+     "module": null
+    },
+    {
+     "id": "u13-08",
+     "title": "Multiplicity and state counting",
+     "module": null
+    },
+    {
+     "id": "u13-09",
+     "title": "Equipartition theorem",
+     "module": null
+    },
+    {
+     "id": "u13-10",
+     "title": "Classical ideal gases",
+     "module": null
+    },
+    {
+     "id": "u13-11",
+     "title": "Mean free path",
+     "module": null
+    },
+    {
+     "id": "u13-12",
+     "title": "Molecular speed distributions",
+     "module": null
+    },
+    {
+     "id": "u13-13",
+     "title": "Chemical potential",
+     "module": null
+    },
+    {
+     "id": "u13-14",
+     "title": "Fermi–Dirac statistics",
+     "module": null
+    },
+    {
+     "id": "u13-15",
+     "title": "Bose–Einstein statistics",
+     "module": null
+    },
+    {
+     "id": "u13-16",
+     "title": "Quantum gases",
+     "module": null
+    },
+    {
+     "id": "u13-17",
+     "title": "Degenerate matter",
+     "module": null
+    },
+    {
+     "id": "u13-18",
+     "title": "Blackbody radiation",
+     "module": null
+    },
+    {
+     "id": "u13-19",
+     "title": "Fluctuations and correlations",
+     "module": null
+    },
+    {
+     "id": "u13-20",
+     "title": "Phase transitions",
+     "module": null
+    },
+    {
+     "id": "u13-21",
+     "title": "Critical phenomena",
+     "module": null
+    },
+    {
+     "id": "u13-22",
+     "title": "Ising model",
+     "module": null
+    },
+    {
+     "id": "u13-23",
+     "title": "Renormalisation group",
+     "module": null
+    },
+    {
+     "id": "u13-24",
+     "title": "Statistical field theory",
+     "module": null
+    },
+    {
+     "id": "u13-25",
+     "title": "Monte Carlo methods",
+     "module": null
+    },
+    {
+     "id": "u13-26",
+     "title": "Nonequilibrium statistical mechanics",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u14",
+   "n": 14,
+   "title": "Heat Transfer and Thermal Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u14-01",
+     "title": "Conduction",
+     "module": null
+    },
+    {
+     "id": "u14-02",
+     "title": "Convection",
+     "module": null
+    },
+    {
+     "id": "u14-03",
+     "title": "Thermal radiation",
+     "module": null
+    },
+    {
+     "id": "u14-04",
+     "title": "Fourier's law of heat conduction",
+     "module": null
+    },
+    {
+     "id": "u14-05",
+     "title": "Newton's law of cooling",
+     "module": null
+    },
+    {
+     "id": "u14-06",
+     "title": "Stefan–Boltzmann law",
+     "module": null
+    },
+    {
+     "id": "u14-07",
+     "title": "Wien's displacement law",
+     "module": null
+    },
+    {
+     "id": "u14-08",
+     "title": "Thermal diffusivity",
+     "module": null
+    },
+    {
+     "id": "u14-09",
+     "title": "Heat exchangers",
+     "module": null
+    },
+    {
+     "id": "u14-10",
+     "title": "Insulation and thermal resistance",
+     "module": null
+    },
+    {
+     "id": "u14-11",
+     "title": "Blackbody and greybody radiation",
+     "module": null
+    },
+    {
+     "id": "u14-12",
+     "title": "Emissivity and absorptivity",
+     "module": null
+    },
+    {
+     "id": "u14-13",
+     "title": "Greenhouse effect",
+     "module": null
+    },
+    {
+     "id": "u14-14",
+     "title": "Thermoelectric effects",
+     "module": null
+    },
+    {
+     "id": "u14-15",
+     "title": "Peltier and Seebeck effects",
+     "module": null
+    },
+    {
+     "id": "u14-16",
+     "title": "Thermal contact resistance",
+     "module": null
+    },
+    {
+     "id": "u14-17",
+     "title": "Cryogenics",
+     "module": null
+    },
+    {
+     "id": "u14-18",
+     "title": "Low-temperature physics",
+     "module": null
+    },
+    {
+     "id": "u14-19",
+     "title": "Heat transport in solids and fluids",
+     "module": null
+    },
+    {
+     "id": "u14-20",
+     "title": "Thermal management in engineering",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u15",
+   "n": 15,
+   "title": "Electricity and Electrostatics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u15-01",
+     "title": "Electric charge",
+     "module": null
+    },
+    {
+     "id": "u15-02",
+     "title": "Conservation and quantisation of charge",
+     "module": null
+    },
+    {
+     "id": "u15-03",
+     "title": "Conductors, insulators and dielectrics",
+     "module": null
+    },
+    {
+     "id": "u15-04",
+     "title": "Coulomb's law",
+     "module": null
+    },
+    {
+     "id": "u15-05",
+     "title": "Electric fields",
+     "module": null
+    },
+    {
+     "id": "u15-06",
+     "title": "Electric field lines",
+     "module": null
+    },
+    {
+     "id": "u15-07",
+     "title": "Electric potential",
+     "module": null
+    },
+    {
+     "id": "u15-08",
+     "title": "Electric potential energy",
+     "module": null
+    },
+    {
+     "id": "u15-09",
+     "title": "Voltage and potential difference",
+     "module": null
+    },
+    {
+     "id": "u15-10",
+     "title": "Electric dipoles",
+     "module": null
+    },
+    {
+     "id": "u15-11",
+     "title": "Electric flux",
+     "module": null
+    },
+    {
+     "id": "u15-12",
+     "title": "Gauss's law",
+     "module": null
+    },
+    {
+     "id": "u15-13",
+     "title": "Charge distributions",
+     "module": null
+    },
+    {
+     "id": "u15-14",
+     "title": "Conductors in electrostatic equilibrium",
+     "module": null
+    },
+    {
+     "id": "u15-15",
+     "title": "Capacitance",
+     "module": null
+    },
+    {
+     "id": "u15-16",
+     "title": "Parallel-plate and spherical capacitors",
+     "module": null
+    },
+    {
+     "id": "u15-17",
+     "title": "Capacitors in series and parallel",
+     "module": null
+    },
+    {
+     "id": "u15-18",
+     "title": "Energy stored in electric fields",
+     "module": null
+    },
+    {
+     "id": "u15-19",
+     "title": "Dielectric polarisation",
+     "module": null
+    },
+    {
+     "id": "u15-20",
+     "title": "Boundary conditions for electric fields",
+     "module": null
+    },
+    {
+     "id": "u15-21",
+     "title": "Electrostatic shielding",
+     "module": null
+    },
+    {
+     "id": "u15-22",
+     "title": "Method of images",
+     "module": null
+    },
+    {
+     "id": "u15-23",
+     "title": "Poisson's equation",
+     "module": null
+    },
+    {
+     "id": "u15-24",
+     "title": "Laplace's equation",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u16",
+   "n": 16,
+   "title": "Electric Circuits",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u16-01",
+     "title": "Electric current",
+     "module": null
+    },
+    {
+     "id": "u16-02",
+     "title": "Resistance and resistivity",
+     "module": null
+    },
+    {
+     "id": "u16-03",
+     "title": "Ohm's law",
+     "module": null
+    },
+    {
+     "id": "u16-04",
+     "title": "Conductivity",
+     "module": null
+    },
+    {
+     "id": "u16-05",
+     "title": "Series and parallel circuits",
+     "module": null
+    },
+    {
+     "id": "u16-06",
+     "title": "Kirchhoff's laws",
+     "module": null
+    },
+    {
+     "id": "u16-07",
+     "title": "Electromotive force",
+     "module": null
+    },
+    {
+     "id": "u16-08",
+     "title": "Internal resistance",
+     "module": null
+    },
+    {
+     "id": "u16-09",
+     "title": "Electrical power and energy",
+     "module": null
+    },
+    {
+     "id": "u16-10",
+     "title": "Resistor networks",
+     "module": null
+    },
+    {
+     "id": "u16-11",
+     "title": "Capacitor charging and discharging",
+     "module": null
+    },
+    {
+     "id": "u16-12",
+     "title": "RC circuits",
+     "module": null
+    },
+    {
+     "id": "u16-13",
+     "title": "RL circuits",
+     "module": null
+    },
+    {
+     "id": "u16-14",
+     "title": "RLC circuits",
+     "module": null
+    },
+    {
+     "id": "u16-15",
+     "title": "Transient responses",
+     "module": null
+    },
+    {
+     "id": "u16-16",
+     "title": "Alternating current",
+     "module": null
+    },
+    {
+     "id": "u16-17",
+     "title": "Root-mean-square values",
+     "module": null
+    },
+    {
+     "id": "u16-18",
+     "title": "Impedance and reactance",
+     "module": null
+    },
+    {
+     "id": "u16-19",
+     "title": "Phasor diagrams",
+     "module": null
+    },
+    {
+     "id": "u16-20",
+     "title": "Resonance in AC circuits",
+     "module": null
+    },
+    {
+     "id": "u16-21",
+     "title": "Transformers",
+     "module": null
+    },
+    {
+     "id": "u16-22",
+     "title": "Rectification",
+     "module": null
+    },
+    {
+     "id": "u16-23",
+     "title": "Filters and frequency response",
+     "module": null
+    },
+    {
+     "id": "u16-24",
+     "title": "Electrical measurement",
+     "module": null
+    },
+    {
+     "id": "u16-25",
+     "title": "Circuit analysis methods",
+     "module": null
+    },
+    {
+     "id": "u16-26",
+     "title": "Thevenin and Norton equivalents",
+     "module": null
+    },
+    {
+     "id": "u16-27",
+     "title": "Operational amplifiers",
+     "module": null
+    },
+    {
+     "id": "u16-28",
+     "title": "Semiconductor circuit fundamentals",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u17",
+   "n": 17,
+   "title": "Magnetism and Electromagnetism",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u17-01",
+     "title": "Magnetic fields",
+     "module": null
+    },
+    {
+     "id": "u17-02",
+     "title": "Magnetic forces on charges",
+     "module": null
+    },
+    {
+     "id": "u17-03",
+     "title": "Lorentz force",
+     "module": null
+    },
+    {
+     "id": "u17-04",
+     "title": "Magnetic forces on current-carrying wires",
+     "module": null
+    },
+    {
+     "id": "u17-05",
+     "title": "Motion of charged particles in magnetic fields",
+     "module": null
+    },
+    {
+     "id": "u17-06",
+     "title": "Biot–Savart law",
+     "module": null
+    },
+    {
+     "id": "u17-07",
+     "title": "Ampère's law",
+     "module": null
+    },
+    {
+     "id": "u17-08",
+     "title": "Magnetic dipoles",
+     "module": null
+    },
+    {
+     "id": "u17-09",
+     "title": "Magnetic flux",
+     "module": null
+    },
+    {
+     "id": "u17-10",
+     "title": "Electromagnetic induction",
+     "module": null
+    },
+    {
+     "id": "u17-11",
+     "title": "Faraday's law",
+     "module": null
+    },
+    {
+     "id": "u17-12",
+     "title": "Lenz's law",
+     "module": null
+    },
+    {
+     "id": "u17-13",
+     "title": "Inductance",
+     "module": null
+    },
+    {
+     "id": "u17-14",
+     "title": "Self-induction and mutual induction",
+     "module": null
+    },
+    {
+     "id": "u17-15",
+     "title": "Energy stored in magnetic fields",
+     "module": null
+    },
+    {
+     "id": "u17-16",
+     "title": "Magnetic materials",
+     "module": null
+    },
+    {
+     "id": "u17-17",
+     "title": "Diamagnetism",
+     "module": null
+    },
+    {
+     "id": "u17-18",
+     "title": "Paramagnetism",
+     "module": null
+    },
+    {
+     "id": "u17-19",
+     "title": "Ferromagnetism",
+     "module": null
+    },
+    {
+     "id": "u17-20",
+     "title": "Hysteresis",
+     "module": null
+    },
+    {
+     "id": "u17-21",
+     "title": "Electromagnets",
+     "module": null
+    },
+    {
+     "id": "u17-22",
+     "title": "Solenoids and toroids",
+     "module": null
+    },
+    {
+     "id": "u17-23",
+     "title": "Electric motors and generators",
+     "module": null
+    },
+    {
+     "id": "u17-24",
+     "title": "Maxwell's equations",
+     "module": null
+    },
+    {
+     "id": "u17-25",
+     "title": "Displacement current",
+     "module": null
+    },
+    {
+     "id": "u17-26",
+     "title": "Electromagnetic potentials",
+     "module": null
+    },
+    {
+     "id": "u17-27",
+     "title": "Gauge transformations",
+     "module": null
+    },
+    {
+     "id": "u17-28",
+     "title": "Electromagnetic boundary conditions",
+     "module": null
+    },
+    {
+     "id": "u17-29",
+     "title": "Electromagnetic momentum and energy",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u18",
+   "n": 18,
+   "title": "Electromagnetic Waves",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u18-01",
+     "title": "Electromagnetic wave propagation",
+     "module": null
+    },
+    {
+     "id": "u18-02",
+     "title": "Speed of light",
+     "module": null
+    },
+    {
+     "id": "u18-03",
+     "title": "Electric and magnetic field relationships",
+     "module": null
+    },
+    {
+     "id": "u18-04",
+     "title": "Electromagnetic wave equation",
+     "module": null
+    },
+    {
+     "id": "u18-05",
+     "title": "Electromagnetic spectrum",
+     "module": null
+    },
+    {
+     "id": "u18-06",
+     "title": "Radio waves",
+     "module": null
+    },
+    {
+     "id": "u18-07",
+     "title": "Microwaves",
+     "module": null
+    },
+    {
+     "id": "u18-08",
+     "title": "Infrared radiation",
+     "module": null
+    },
+    {
+     "id": "u18-09",
+     "title": "Visible light",
+     "module": null
+    },
+    {
+     "id": "u18-10",
+     "title": "Ultraviolet radiation",
+     "module": null
+    },
+    {
+     "id": "u18-11",
+     "title": "X-rays",
+     "module": null
+    },
+    {
+     "id": "u18-12",
+     "title": "Gamma rays",
+     "module": null
+    },
+    {
+     "id": "u18-13",
+     "title": "Polarisation",
+     "module": null
+    },
+    {
+     "id": "u18-14",
+     "title": "Reflection and transmission",
+     "module": null
+    },
+    {
+     "id": "u18-15",
+     "title": "Refraction",
+     "module": null
+    },
+    {
+     "id": "u18-16",
+     "title": "Dispersion",
+     "module": null
+    },
+    {
+     "id": "u18-17",
+     "title": "Absorption",
+     "module": null
+    },
+    {
+     "id": "u18-18",
+     "title": "Electromagnetic wave intensity",
+     "module": null
+    },
+    {
+     "id": "u18-19",
+     "title": "Poynting vector",
+     "module": null
+    },
+    {
+     "id": "u18-20",
+     "title": "Radiation pressure",
+     "module": null
+    },
+    {
+     "id": "u18-21",
+     "title": "Waveguides",
+     "module": null
+    },
+    {
+     "id": "u18-22",
+     "title": "Antennas and radiation patterns",
+     "module": null
+    },
+    {
+     "id": "u18-23",
+     "title": "Near-field and far-field behaviour",
+     "module": null
+    },
+    {
+     "id": "u18-24",
+     "title": "Electromagnetic interference",
+     "module": null
+    },
+    {
+     "id": "u18-25",
+     "title": "Electromagnetic shielding",
+     "module": null
+    },
+    {
+     "id": "u18-26",
+     "title": "Microwave engineering",
+     "module": null
+    },
+    {
+     "id": "u18-27",
+     "title": "Radio-frequency physics",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u19",
+   "n": 19,
+   "title": "Optics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u19-01",
+     "title": "Geometrical optics",
+     "module": null
+    },
+    {
+     "id": "u19-02",
+     "title": "Reflection and refraction",
+     "module": null
+    },
+    {
+     "id": "u19-03",
+     "title": "Snell's law",
+     "module": null
+    },
+    {
+     "id": "u19-04",
+     "title": "Total internal reflection",
+     "module": null
+    },
+    {
+     "id": "u19-05",
+     "title": "Mirrors and image formation",
+     "module": null
+    },
+    {
+     "id": "u19-06",
+     "title": "Thin lenses",
+     "module": null
+    },
+    {
+     "id": "u19-07",
+     "title": "Lens equations",
+     "module": null
+    },
+    {
+     "id": "u19-08",
+     "title": "Optical instruments",
+     "module": null
+    },
+    {
+     "id": "u19-09",
+     "title": "Microscopes and telescopes",
+     "module": null
+    },
+    {
+     "id": "u19-10",
+     "title": "Aberrations",
+     "module": null
+    },
+    {
+     "id": "u19-11",
+     "title": "Dispersion and prisms",
+     "module": null
+    },
+    {
+     "id": "u19-12",
+     "title": "Physical optics",
+     "module": null
+    },
+    {
+     "id": "u19-13",
+     "title": "Young's double-slit experiment",
+     "module": null
+    },
+    {
+     "id": "u19-14",
+     "title": "Interference and coherence",
+     "module": null
+    },
+    {
+     "id": "u19-15",
+     "title": "Diffraction",
+     "module": null
+    },
+    {
+     "id": "u19-16",
+     "title": "Single-slit and multiple-slit diffraction",
+     "module": null
+    },
+    {
+     "id": "u19-17",
+     "title": "Diffraction gratings",
+     "module": null
+    },
+    {
+     "id": "u19-18",
+     "title": "Michelson interferometer",
+     "module": null
+    },
+    {
+     "id": "u19-19",
+     "title": "Fabry–Pérot interferometer",
+     "module": null
+    },
+    {
+     "id": "u19-20",
+     "title": "Polarisation",
+     "module": null
+    },
+    {
+     "id": "u19-21",
+     "title": "Brewster's angle",
+     "module": null
+    },
+    {
+     "id": "u19-22",
+     "title": "Birefringence",
+     "module": null
+    },
+    {
+     "id": "u19-23",
+     "title": "Optical activity",
+     "module": null
+    },
+    {
+     "id": "u19-24",
+     "title": "Lasers",
+     "module": null
+    },
+    {
+     "id": "u19-25",
+     "title": "Optical cavities",
+     "module": null
+    },
+    {
+     "id": "u19-26",
+     "title": "Fibre optics",
+     "module": null
+    },
+    {
+     "id": "u19-27",
+     "title": "Nonlinear optics",
+     "module": null
+    },
+    {
+     "id": "u19-28",
+     "title": "Ultrafast optics",
+     "module": null
+    },
+    {
+     "id": "u19-29",
+     "title": "Integrated photonics",
+     "module": null
+    },
+    {
+     "id": "u19-30",
+     "title": "Adaptive optics",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u20",
+   "n": 20,
+   "title": "Quantum Mechanics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u20-01",
+     "title": "Origins of quantum theory",
+     "module": null
+    },
+    {
+     "id": "u20-02",
+     "title": "Blackbody radiation",
+     "module": null
+    },
+    {
+     "id": "u20-03",
+     "title": "Photoelectric effect",
+     "module": null
+    },
+    {
+     "id": "u20-04",
+     "title": "Compton scattering",
+     "module": null
+    },
+    {
+     "id": "u20-05",
+     "title": "Wave-particle duality",
+     "module": null
+    },
+    {
+     "id": "u20-06",
+     "title": "de Broglie wavelength",
+     "module": null
+    },
+    {
+     "id": "u20-07",
+     "title": "Double-slit experiments",
+     "module": null
+    },
+    {
+     "id": "u20-08",
+     "title": "Heisenberg uncertainty principle",
+     "module": null
+    },
+    {
+     "id": "u20-09",
+     "title": "Wavefunctions",
+     "module": null
+    },
+    {
+     "id": "u20-10",
+     "title": "Probability amplitudes",
+     "module": null
+    },
+    {
+     "id": "u20-11",
+     "title": "Born rule",
+     "module": null
+    },
+    {
+     "id": "u20-12",
+     "title": "Schrödinger equation",
+     "module": null
+    },
+    {
+     "id": "u20-13",
+     "title": "Time-dependent and time-independent Schrödinger equations",
+     "module": null
+    },
+    {
+     "id": "u20-14",
+     "title": "Quantum states and observables",
+     "module": null
+    },
+    {
+     "id": "u20-15",
+     "title": "Operators and eigenvalues",
+     "module": null
+    },
+    {
+     "id": "u20-16",
+     "title": "Expectation values",
+     "module": null
+    },
+    {
+     "id": "u20-17",
+     "title": "Hilbert spaces",
+     "module": null
+    },
+    {
+     "id": "u20-18",
+     "title": "Superposition",
+     "module": null
+    },
+    {
+     "id": "u20-19",
+     "title": "Quantum measurement",
+     "module": null
+    },
+    {
+     "id": "u20-20",
+     "title": "Commutators",
+     "module": null
+    },
+    {
+     "id": "u20-21",
+     "title": "Compatible and incompatible observables",
+     "module": null
+    },
+    {
+     "id": "u20-22",
+     "title": "Infinite and finite potential wells",
+     "module": null
+    },
+    {
+     "id": "u20-23",
+     "title": "Quantum tunnelling",
+     "module": null
+    },
+    {
+     "id": "u20-24",
+     "title": "Quantum harmonic oscillator",
+     "module": null
+    },
+    {
+     "id": "u20-25",
+     "title": "Quantum barriers and scattering",
+     "module": null
+    },
+    {
+     "id": "u20-26",
+     "title": "Angular momentum",
+     "module": null
+    },
+    {
+     "id": "u20-27",
+     "title": "Spin",
+     "module": null
+    },
+    {
+     "id": "u20-28",
+     "title": "Addition of angular momentum",
+     "module": null
+    },
+    {
+     "id": "u20-29",
+     "title": "Identical particles",
+     "module": null
+    },
+    {
+     "id": "u20-30",
+     "title": "Bosons and fermions",
+     "module": null
+    },
+    {
+     "id": "u20-31",
+     "title": "Pauli exclusion principle",
+     "module": null
+    },
+    {
+     "id": "u20-32",
+     "title": "Hydrogen atom",
+     "module": null
+    },
+    {
+     "id": "u20-33",
+     "title": "Orbital angular momentum",
+     "module": null
+    },
+    {
+     "id": "u20-34",
+     "title": "Approximation methods",
+     "module": null
+    },
+    {
+     "id": "u20-35",
+     "title": "Perturbation theory",
+     "module": null
+    },
+    {
+     "id": "u20-36",
+     "title": "Variational method",
+     "module": null
+    },
+    {
+     "id": "u20-37",
+     "title": "WKB approximation",
+     "module": null
+    },
+    {
+     "id": "u20-38",
+     "title": "Density matrices",
+     "module": null
+    },
+    {
+     "id": "u20-39",
+     "title": "Mixed and pure states",
+     "module": null
+    },
+    {
+     "id": "u20-40",
+     "title": "Quantum entanglement",
+     "module": null
+    },
+    {
+     "id": "u20-41",
+     "title": "Decoherence",
+     "module": null
+    },
+    {
+     "id": "u20-42",
+     "title": "Quantum information fundamentals",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u21",
+   "n": 21,
+   "title": "Atomic Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u21-01",
+     "title": "Atomic structure",
+     "module": null
+    },
+    {
+     "id": "u21-02",
+     "title": "Rutherford scattering",
+     "module": null
+    },
+    {
+     "id": "u21-03",
+     "title": "Bohr model",
+     "module": null
+    },
+    {
+     "id": "u21-04",
+     "title": "Quantum mechanical atomic models",
+     "module": null
+    },
+    {
+     "id": "u21-05",
+     "title": "Atomic orbitals",
+     "module": null
+    },
+    {
+     "id": "u21-06",
+     "title": "Electron configurations",
+     "module": null
+    },
+    {
+     "id": "u21-07",
+     "title": "Atomic energy levels",
+     "module": null
+    },
+    {
+     "id": "u21-08",
+     "title": "Hydrogen and hydrogen-like atoms",
+     "module": null
+    },
+    {
+     "id": "u21-09",
+     "title": "Multi-electron atoms",
+     "module": null
+    },
+    {
+     "id": "u21-10",
+     "title": "Electron spin",
+     "module": null
+    },
+    {
+     "id": "u21-11",
+     "title": "Fine structure",
+     "module": null
+    },
+    {
+     "id": "u21-12",
+     "title": "Hyperfine structure",
+     "module": null
+    },
+    {
+     "id": "u21-13",
+     "title": "Spin-orbit coupling",
+     "module": null
+    },
+    {
+     "id": "u21-14",
+     "title": "Zeeman effect",
+     "module": null
+    },
+    {
+     "id": "u21-15",
+     "title": "Stark effect",
+     "module": null
+    },
+    {
+     "id": "u21-16",
+     "title": "Atomic spectra",
+     "module": null
+    },
+    {
+     "id": "u21-17",
+     "title": "Selection rules",
+     "module": null
+    },
+    {
+     "id": "u21-18",
+     "title": "Spontaneous and stimulated emission",
+     "module": null
+    },
+    {
+     "id": "u21-19",
+     "title": "Atomic transitions",
+     "module": null
+    },
+    {
+     "id": "u21-20",
+     "title": "Lasers and atomic transitions",
+     "module": null
+    },
+    {
+     "id": "u21-21",
+     "title": "Atomic clocks",
+     "module": null
+    },
+    {
+     "id": "u21-22",
+     "title": "Laser cooling",
+     "module": null
+    },
+    {
+     "id": "u21-23",
+     "title": "Magneto-optical trapping",
+     "module": null
+    },
+    {
+     "id": "u21-24",
+     "title": "Bose–Einstein condensation in atomic gases",
+     "module": null
+    },
+    {
+     "id": "u21-25",
+     "title": "Precision spectroscopy",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u22",
+   "n": 22,
+   "title": "Molecular Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u22-01",
+     "title": "Molecular energy levels",
+     "module": null
+    },
+    {
+     "id": "u22-02",
+     "title": "Rotational spectra",
+     "module": null
+    },
+    {
+     "id": "u22-03",
+     "title": "Vibrational spectra",
+     "module": null
+    },
+    {
+     "id": "u22-04",
+     "title": "Electronic molecular transitions",
+     "module": null
+    },
+    {
+     "id": "u22-05",
+     "title": "Molecular bonding from a physical perspective",
+     "module": null
+    },
+    {
+     "id": "u22-06",
+     "title": "Molecular symmetry",
+     "module": null
+    },
+    {
+     "id": "u22-07",
+     "title": "Molecular orbitals",
+     "module": null
+    },
+    {
+     "id": "u22-08",
+     "title": "Raman spectroscopy",
+     "module": null
+    },
+    {
+     "id": "u22-09",
+     "title": "Infrared spectroscopy",
+     "module": null
+    },
+    {
+     "id": "u22-10",
+     "title": "Fluorescence and phosphorescence",
+     "module": null
+    },
+    {
+     "id": "u22-11",
+     "title": "Molecular collisions",
+     "module": null
+    },
+    {
+     "id": "u22-12",
+     "title": "Molecular dynamics",
+     "module": null
+    },
+    {
+     "id": "u22-13",
+     "title": "Energy transfer",
+     "module": null
+    },
+    {
+     "id": "u22-14",
+     "title": "Non-radiative transitions",
+     "module": null
+    },
+    {
+     "id": "u22-15",
+     "title": "Photodissociation",
+     "module": null
+    },
+    {
+     "id": "u22-16",
+     "title": "Molecular beams",
+     "module": null
+    },
+    {
+     "id": "u22-17",
+     "title": "Ultrafast molecular dynamics",
+     "module": null
+    },
+    {
+     "id": "u22-18",
+     "title": "Quantum molecular physics",
+     "module": null
+    },
+    {
+     "id": "u22-19",
+     "title": "Spectroscopic selection rules",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u23",
+   "n": 23,
+   "title": "Nuclear Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u23-01",
+     "title": "Nuclear structure",
+     "module": null
+    },
+    {
+     "id": "u23-02",
+     "title": "Protons, neutrons and nucleons",
+     "module": null
+    },
+    {
+     "id": "u23-03",
+     "title": "Nuclear size and density",
+     "module": null
+    },
+    {
+     "id": "u23-04",
+     "title": "Nuclear binding energy",
+     "module": null
+    },
+    {
+     "id": "u23-05",
+     "title": "Mass defect",
+     "module": null
+    },
+    {
+     "id": "u23-06",
+     "title": "Nuclear forces",
+     "module": null
+    },
+    {
+     "id": "u23-07",
+     "title": "Nuclear stability",
+     "module": null
+    },
+    {
+     "id": "u23-08",
+     "title": "Radioactive decay",
+     "module": null
+    },
+    {
+     "id": "u23-09",
+     "title": "Alpha, beta and gamma decay",
+     "module": null
+    },
+    {
+     "id": "u23-10",
+     "title": "Decay chains and half-life",
+     "module": null
+    },
+    {
+     "id": "u23-11",
+     "title": "Nuclear reaction equations",
+     "module": null
+    },
+    {
+     "id": "u23-12",
+     "title": "Nuclear cross-sections",
+     "module": null
+    },
+    {
+     "id": "u23-13",
+     "title": "Nuclear scattering",
+     "module": null
+    },
+    {
+     "id": "u23-14",
+     "title": "Nuclear fission",
+     "module": null
+    },
+    {
+     "id": "u23-15",
+     "title": "Nuclear fusion",
+     "module": null
+    },
+    {
+     "id": "u23-16",
+     "title": "Chain reactions",
+     "module": null
+    },
+    {
+     "id": "u23-17",
+     "title": "Nuclear reactors",
+     "module": null
+    },
+    {
+     "id": "u23-18",
+     "title": "Neutron moderation",
+     "module": null
+    },
+    {
+     "id": "u23-19",
+     "title": "Nuclear energy and power",
+     "module": null
+    },
+    {
+     "id": "u23-20",
+     "title": "Radiation detection",
+     "module": null
+    },
+    {
+     "id": "u23-21",
+     "title": "Radiation shielding",
+     "module": null
+    },
+    {
+     "id": "u23-22",
+     "title": "Nuclear spectroscopy",
+     "module": null
+    },
+    {
+     "id": "u23-23",
+     "title": "Nuclear magnetic resonance",
+     "module": null
+    },
+    {
+     "id": "u23-24",
+     "title": "Nuclear astrophysics",
+     "module": null
+    },
+    {
+     "id": "u23-25",
+     "title": "Nuclear waste and radiation safety",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u24",
+   "n": 24,
+   "title": "Particle Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u24-01",
+     "title": "Fundamental particles",
+     "module": null
+    },
+    {
+     "id": "u24-02",
+     "title": "Quarks and leptons",
+     "module": null
+    },
+    {
+     "id": "u24-03",
+     "title": "Fermions and bosons",
+     "module": null
+    },
+    {
+     "id": "u24-04",
+     "title": "Fundamental interactions",
+     "module": null
+    },
+    {
+     "id": "u24-05",
+     "title": "Electromagnetic interaction",
+     "module": null
+    },
+    {
+     "id": "u24-06",
+     "title": "Weak interaction",
+     "module": null
+    },
+    {
+     "id": "u24-07",
+     "title": "Strong interaction",
+     "module": null
+    },
+    {
+     "id": "u24-08",
+     "title": "Gravitational interaction",
+     "module": null
+    },
+    {
+     "id": "u24-09",
+     "title": "Standard Model",
+     "module": null
+    },
+    {
+     "id": "u24-10",
+     "title": "Particle generations",
+     "module": null
+    },
+    {
+     "id": "u24-11",
+     "title": "Quark flavours and colour charge",
+     "module": null
+    },
+    {
+     "id": "u24-12",
+     "title": "Hadrons, baryons and mesons",
+     "module": null
+    },
+    {
+     "id": "u24-13",
+     "title": "Antimatter and antiparticles",
+     "module": null
+    },
+    {
+     "id": "u24-14",
+     "title": "Particle decay",
+     "module": null
+    },
+    {
+     "id": "u24-15",
+     "title": "Conservation laws in particle reactions",
+     "module": null
+    },
+    {
+     "id": "u24-16",
+     "title": "Feynman diagrams",
+     "module": null
+    },
+    {
+     "id": "u24-17",
+     "title": "Quantum electrodynamics",
+     "module": null
+    },
+    {
+     "id": "u24-18",
+     "title": "Quantum chromodynamics",
+     "module": null
+    },
+    {
+     "id": "u24-19",
+     "title": "Electroweak theory",
+     "module": null
+    },
+    {
+     "id": "u24-20",
+     "title": "Higgs mechanism",
+     "module": null
+    },
+    {
+     "id": "u24-21",
+     "title": "Higgs boson",
+     "module": null
+    },
+    {
+     "id": "u24-22",
+     "title": "Neutrino oscillations",
+     "module": null
+    },
+    {
+     "id": "u24-23",
+     "title": "CP violation",
+     "module": null
+    },
+    {
+     "id": "u24-24",
+     "title": "Symmetry breaking",
+     "module": null
+    },
+    {
+     "id": "u24-25",
+     "title": "Particle accelerators",
+     "module": null
+    },
+    {
+     "id": "u24-26",
+     "title": "Collider experiments",
+     "module": null
+    },
+    {
+     "id": "u24-27",
+     "title": "Particle detectors",
+     "module": null
+    },
+    {
+     "id": "u24-28",
+     "title": "Scattering experiments",
+     "module": null
+    },
+    {
+     "id": "u24-29",
+     "title": "Beyond the Standard Model",
+     "module": null
+    },
+    {
+     "id": "u24-30",
+     "title": "Supersymmetry",
+     "module": null
+    },
+    {
+     "id": "u24-31",
+     "title": "Grand unified theories",
+     "module": null
+    },
+    {
+     "id": "u24-32",
+     "title": "Dark matter candidates",
+     "module": null
+    },
+    {
+     "id": "u24-33",
+     "title": "Open questions in particle physics",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u25",
+   "n": 25,
+   "title": "Special Relativity",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u25-01",
+     "title": "Historical foundations of relativity",
+     "module": null
+    },
+    {
+     "id": "u25-02",
+     "title": "Galilean transformations",
+     "module": null
+    },
+    {
+     "id": "u25-03",
+     "title": "Inertial reference frames",
+     "module": null
+    },
+    {
+     "id": "u25-04",
+     "title": "Postulates of special relativity",
+     "module": null
+    },
+    {
+     "id": "u25-05",
+     "title": "Speed of light invariance",
+     "module": null
+    },
+    {
+     "id": "u25-06",
+     "title": "Lorentz transformations",
+     "module": null
+    },
+    {
+     "id": "u25-07",
+     "title": "Relativity of simultaneity",
+     "module": null
+    },
+    {
+     "id": "u25-08",
+     "title": "Time dilation",
+     "module": null
+    },
+    {
+     "id": "u25-09",
+     "title": "Length contraction",
+     "module": null
+    },
+    {
+     "id": "u25-10",
+     "title": "Relativistic velocity addition",
+     "module": null
+    },
+    {
+     "id": "u25-11",
+     "title": "Spacetime diagrams",
+     "module": null
+    },
+    {
+     "id": "u25-12",
+     "title": "Minkowski spacetime",
+     "module": null
+    },
+    {
+     "id": "u25-13",
+     "title": "Proper time",
+     "module": null
+    },
+    {
+     "id": "u25-14",
+     "title": "Four-vectors",
+     "module": null
+    },
+    {
+     "id": "u25-15",
+     "title": "Relativistic momentum",
+     "module": null
+    },
+    {
+     "id": "u25-16",
+     "title": "Mass-energy equivalence",
+     "module": null
+    },
+    {
+     "id": "u25-17",
+     "title": "Relativistic energy",
+     "module": null
+    },
+    {
+     "id": "u25-18",
+     "title": "Energy-momentum relation",
+     "module": null
+    },
+    {
+     "id": "u25-19",
+     "title": "Relativistic collisions",
+     "module": null
+    },
+    {
+     "id": "u25-20",
+     "title": "Relativistic Doppler effect",
+     "module": null
+    },
+    {
+     "id": "u25-21",
+     "title": "Relativistic electromagnetism",
+     "module": null
+    },
+    {
+     "id": "u25-22",
+     "title": "Causality and light cones",
+     "module": null
+    },
+    {
+     "id": "u25-23",
+     "title": "Twin paradox",
+     "module": null
+    },
+    {
+     "id": "u25-24",
+     "title": "Relativistic particle dynamics",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u26",
+   "n": 26,
+   "title": "General Relativity",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u26-01",
+     "title": "Equivalence principle",
+     "module": null
+    },
+    {
+     "id": "u26-02",
+     "title": "Accelerated reference frames",
+     "module": null
+    },
+    {
+     "id": "u26-03",
+     "title": "Gravity as spacetime curvature",
+     "module": null
+    },
+    {
+     "id": "u26-04",
+     "title": "Metric tensors",
+     "module": null
+    },
+    {
+     "id": "u26-05",
+     "title": "Geodesics",
+     "module": null
+    },
+    {
+     "id": "u26-06",
+     "title": "Curvature and the Riemann tensor",
+     "module": null
+    },
+    {
+     "id": "u26-07",
+     "title": "Einstein field equations",
+     "module": null
+    },
+    {
+     "id": "u26-08",
+     "title": "Stress-energy tensor",
+     "module": null
+    },
+    {
+     "id": "u26-09",
+     "title": "Schwarzschild solution",
+     "module": null
+    },
+    {
+     "id": "u26-10",
+     "title": "Kerr black holes",
+     "module": null
+    },
+    {
+     "id": "u26-11",
+     "title": "Gravitational time dilation",
+     "module": null
+    },
+    {
+     "id": "u26-12",
+     "title": "Gravitational redshift",
+     "module": null
+    },
+    {
+     "id": "u26-13",
+     "title": "Perihelion precession",
+     "module": null
+    },
+    {
+     "id": "u26-14",
+     "title": "Light bending and gravitational lensing",
+     "module": null
+    },
+    {
+     "id": "u26-15",
+     "title": "Black holes and event horizons",
+     "module": null
+    },
+    {
+     "id": "u26-16",
+     "title": "Singularities",
+     "module": null
+    },
+    {
+     "id": "u26-17",
+     "title": "Gravitational waves",
+     "module": null
+    },
+    {
+     "id": "u26-18",
+     "title": "Binary systems and gravitational radiation",
+     "module": null
+    },
+    {
+     "id": "u26-19",
+     "title": "Cosmological solutions",
+     "module": null
+    },
+    {
+     "id": "u26-20",
+     "title": "Friedmann equations",
+     "module": null
+    },
+    {
+     "id": "u26-21",
+     "title": "Tests of general relativity",
+     "module": null
+    },
+    {
+     "id": "u26-22",
+     "title": "Numerical relativity",
+     "module": null
+    },
+    {
+     "id": "u26-23",
+     "title": "Quantum gravity challenges",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u27",
+   "n": 27,
+   "title": "Condensed Matter Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u27-01",
+     "title": "Crystalline and amorphous solids",
+     "module": null
+    },
+    {
+     "id": "u27-02",
+     "title": "Crystal lattices and unit cells",
+     "module": null
+    },
+    {
+     "id": "u27-03",
+     "title": "Bravais lattices",
+     "module": null
+    },
+    {
+     "id": "u27-04",
+     "title": "Miller indices",
+     "module": null
+    },
+    {
+     "id": "u27-05",
+     "title": "Crystal symmetry",
+     "module": null
+    },
+    {
+     "id": "u27-06",
+     "title": "Reciprocal lattices",
+     "module": null
+    },
+    {
+     "id": "u27-07",
+     "title": "X-ray diffraction",
+     "module": null
+    },
+    {
+     "id": "u27-08",
+     "title": "Phonons and lattice vibrations",
+     "module": null
+    },
+    {
+     "id": "u27-09",
+     "title": "Specific heat of solids",
+     "module": null
+    },
+    {
+     "id": "u27-10",
+     "title": "Thermal conductivity",
+     "module": null
+    },
+    {
+     "id": "u27-11",
+     "title": "Electronic band structure",
+     "module": null
+    },
+    {
+     "id": "u27-12",
+     "title": "Metals, insulators and semiconductors",
+     "module": null
+    },
+    {
+     "id": "u27-13",
+     "title": "Fermi energy and Fermi surfaces",
+     "module": null
+    },
+    {
+     "id": "u27-14",
+     "title": "Density of states",
+     "module": null
+    },
+    {
+     "id": "u27-15",
+     "title": "Electron transport",
+     "module": null
+    },
+    {
+     "id": "u27-16",
+     "title": "Electrical resistivity",
+     "module": null
+    },
+    {
+     "id": "u27-17",
+     "title": "Hall effect",
+     "module": null
+    },
+    {
+     "id": "u27-18",
+     "title": "Magnetic ordering",
+     "module": null
+    },
+    {
+     "id": "u27-19",
+     "title": "Ferromagnetic and antiferromagnetic materials",
+     "module": null
+    },
+    {
+     "id": "u27-20",
+     "title": "Dielectric properties",
+     "module": null
+    },
+    {
+     "id": "u27-21",
+     "title": "Piezoelectricity",
+     "module": null
+    },
+    {
+     "id": "u27-22",
+     "title": "Ferroelectricity",
+     "module": null
+    },
+    {
+     "id": "u27-23",
+     "title": "Superconductivity",
+     "module": null
+    },
+    {
+     "id": "u27-24",
+     "title": "Conventional and unconventional superconductors",
+     "module": null
+    },
+    {
+     "id": "u27-25",
+     "title": "Cooper pairs",
+     "module": null
+    },
+    {
+     "id": "u27-26",
+     "title": "Josephson effect",
+     "module": null
+    },
+    {
+     "id": "u27-27",
+     "title": "Semiconductor heterostructures",
+     "module": null
+    },
+    {
+     "id": "u27-28",
+     "title": "Quantum Hall effect",
+     "module": null
+    },
+    {
+     "id": "u27-29",
+     "title": "Topological insulators",
+     "module": null
+    },
+    {
+     "id": "u27-30",
+     "title": "Strongly correlated electron systems",
+     "module": null
+    },
+    {
+     "id": "u27-31",
+     "title": "Low-dimensional materials",
+     "module": null
+    },
+    {
+     "id": "u27-32",
+     "title": "Graphene and two-dimensional materials",
+     "module": null
+    },
+    {
+     "id": "u27-33",
+     "title": "Nanomaterials",
+     "module": null
+    },
+    {
+     "id": "u27-34",
+     "title": "Soft condensed matter",
+     "module": null
+    },
+    {
+     "id": "u27-35",
+     "title": "Polymers, colloids and liquid crystals",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u28",
+   "n": 28,
+   "title": "Semiconductor Physics and Electronics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u28-01",
+     "title": "Energy bands in solids",
+     "module": null
+    },
+    {
+     "id": "u28-02",
+     "title": "Intrinsic and extrinsic semiconductors",
+     "module": null
+    },
+    {
+     "id": "u28-03",
+     "title": "Doping",
+     "module": null
+    },
+    {
+     "id": "u28-04",
+     "title": "Electrons and holes",
+     "module": null
+    },
+    {
+     "id": "u28-05",
+     "title": "Carrier concentration",
+     "module": null
+    },
+    {
+     "id": "u28-06",
+     "title": "Fermi level",
+     "module": null
+    },
+    {
+     "id": "u28-07",
+     "title": "Drift and diffusion",
+     "module": null
+    },
+    {
+     "id": "u28-08",
+     "title": "Mobility and conductivity",
+     "module": null
+    },
+    {
+     "id": "u28-09",
+     "title": "p-n junctions",
+     "module": null
+    },
+    {
+     "id": "u28-10",
+     "title": "Diodes",
+     "module": null
+    },
+    {
+     "id": "u28-11",
+     "title": "Transistors",
+     "module": null
+    },
+    {
+     "id": "u28-12",
+     "title": "Bipolar junction transistors",
+     "module": null
+    },
+    {
+     "id": "u28-13",
+     "title": "Field-effect transistors",
+     "module": null
+    },
+    {
+     "id": "u28-14",
+     "title": "MOSFETs",
+     "module": null
+    },
+    {
+     "id": "u28-15",
+     "title": "Semiconductor heterojunctions",
+     "module": null
+    },
+    {
+     "id": "u28-16",
+     "title": "Photodiodes",
+     "module": null
+    },
+    {
+     "id": "u28-17",
+     "title": "Solar cells",
+     "module": null
+    },
+    {
+     "id": "u28-18",
+     "title": "LEDs",
+     "module": null
+    },
+    {
+     "id": "u28-19",
+     "title": "Semiconductor lasers",
+     "module": null
+    },
+    {
+     "id": "u28-20",
+     "title": "Integrated circuits",
+     "module": null
+    },
+    {
+     "id": "u28-21",
+     "title": "Quantum wells, wires and dots",
+     "module": null
+    },
+    {
+     "id": "u28-22",
+     "title": "Tunnel diodes",
+     "module": null
+    },
+    {
+     "id": "u28-23",
+     "title": "Spintronics",
+     "module": null
+    },
+    {
+     "id": "u28-24",
+     "title": "Semiconductor fabrication principles",
+     "module": null
+    },
+    {
+     "id": "u28-25",
+     "title": "Nanoscale electronic devices",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u29",
+   "n": 29,
+   "title": "Plasma Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u29-01",
+     "title": "Plasma as a state of matter",
+     "module": null
+    },
+    {
+     "id": "u29-02",
+     "title": "Ionisation and recombination",
+     "module": null
+    },
+    {
+     "id": "u29-03",
+     "title": "Debye shielding",
+     "module": null
+    },
+    {
+     "id": "u29-04",
+     "title": "Debye length",
+     "module": null
+    },
+    {
+     "id": "u29-05",
+     "title": "Plasma frequency",
+     "module": null
+    },
+    {
+     "id": "u29-06",
+     "title": "Charged-particle motion",
+     "module": null
+    },
+    {
+     "id": "u29-07",
+     "title": "Plasma oscillations",
+     "module": null
+    },
+    {
+     "id": "u29-08",
+     "title": "Magnetised plasmas",
+     "module": null
+    },
+    {
+     "id": "u29-09",
+     "title": "Magnetohydrodynamics",
+     "module": null
+    },
+    {
+     "id": "u29-10",
+     "title": "Plasma waves",
+     "module": null
+    },
+    {
+     "id": "u29-11",
+     "title": "Alfvén waves",
+     "module": null
+    },
+    {
+     "id": "u29-12",
+     "title": "Plasma instabilities",
+     "module": null
+    },
+    {
+     "id": "u29-13",
+     "title": "Magnetic confinement",
+     "module": null
+    },
+    {
+     "id": "u29-14",
+     "title": "Tokamaks and stellarators",
+     "module": null
+    },
+    {
+     "id": "u29-15",
+     "title": "Inertial confinement fusion",
+     "module": null
+    },
+    {
+     "id": "u29-16",
+     "title": "Fusion energy",
+     "module": null
+    },
+    {
+     "id": "u29-17",
+     "title": "Solar and astrophysical plasmas",
+     "module": null
+    },
+    {
+     "id": "u29-18",
+     "title": "Space plasma physics",
+     "module": null
+    },
+    {
+     "id": "u29-19",
+     "title": "Plasma diagnostics",
+     "module": null
+    },
+    {
+     "id": "u29-20",
+     "title": "Industrial and technological plasmas",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u30",
+   "n": 30,
+   "title": "Astrophysics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u30-01",
+     "title": "Celestial mechanics",
+     "module": null
+    },
+    {
+     "id": "u30-02",
+     "title": "Stellar structure and evolution",
+     "module": null
+    },
+    {
+     "id": "u30-03",
+     "title": "Star formation",
+     "module": null
+    },
+    {
+     "id": "u30-04",
+     "title": "Hydrostatic equilibrium in stars",
+     "module": null
+    },
+    {
+     "id": "u30-05",
+     "title": "Nuclear fusion in stars",
+     "module": null
+    },
+    {
+     "id": "u30-06",
+     "title": "Stellar spectra and classification",
+     "module": null
+    },
+    {
+     "id": "u30-07",
+     "title": "Main-sequence stars",
+     "module": null
+    },
+    {
+     "id": "u30-08",
+     "title": "Red giants and supergiants",
+     "module": null
+    },
+    {
+     "id": "u30-09",
+     "title": "White dwarfs",
+     "module": null
+    },
+    {
+     "id": "u30-10",
+     "title": "Neutron stars",
+     "module": null
+    },
+    {
+     "id": "u30-11",
+     "title": "Pulsars",
+     "module": null
+    },
+    {
+     "id": "u30-12",
+     "title": "Black holes",
+     "module": null
+    },
+    {
+     "id": "u30-13",
+     "title": "Supernovae",
+     "module": null
+    },
+    {
+     "id": "u30-14",
+     "title": "Neutron star mergers",
+     "module": null
+    },
+    {
+     "id": "u30-15",
+     "title": "Binary star systems",
+     "module": null
+    },
+    {
+     "id": "u30-16",
+     "title": "Accretion discs",
+     "module": null
+    },
+    {
+     "id": "u30-17",
+     "title": "Exoplanets",
+     "module": null
+    },
+    {
+     "id": "u30-18",
+     "title": "Planetary systems",
+     "module": null
+    },
+    {
+     "id": "u30-19",
+     "title": "Interstellar medium",
+     "module": null
+    },
+    {
+     "id": "u30-20",
+     "title": "Molecular clouds",
+     "module": null
+    },
+    {
+     "id": "u30-21",
+     "title": "Cosmic dust",
+     "module": null
+    },
+    {
+     "id": "u30-22",
+     "title": "Nebulae",
+     "module": null
+    },
+    {
+     "id": "u30-23",
+     "title": "Star clusters",
+     "module": null
+    },
+    {
+     "id": "u30-24",
+     "title": "Galaxies and galaxy formation",
+     "module": null
+    },
+    {
+     "id": "u30-25",
+     "title": "Galaxy dynamics",
+     "module": null
+    },
+    {
+     "id": "u30-26",
+     "title": "Dark matter in galaxies",
+     "module": null
+    },
+    {
+     "id": "u30-27",
+     "title": "Active galactic nuclei",
+     "module": null
+    },
+    {
+     "id": "u30-28",
+     "title": "Quasars",
+     "module": null
+    },
+    {
+     "id": "u30-29",
+     "title": "Gravitational lensing",
+     "module": null
+    },
+    {
+     "id": "u30-30",
+     "title": "High-energy astrophysics",
+     "module": null
+    },
+    {
+     "id": "u30-31",
+     "title": "Cosmic rays",
+     "module": null
+    },
+    {
+     "id": "u30-32",
+     "title": "Neutrino astronomy",
+     "module": null
+    },
+    {
+     "id": "u30-33",
+     "title": "Gravitational-wave astronomy",
+     "module": null
+    },
+    {
+     "id": "u30-34",
+     "title": "Multi-messenger astronomy",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u31",
+   "n": 31,
+   "title": "Cosmology",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u31-01",
+     "title": "The observable universe",
+     "module": null
+    },
+    {
+     "id": "u31-02",
+     "title": "Cosmological principles",
+     "module": null
+    },
+    {
+     "id": "u31-03",
+     "title": "Expansion of the universe",
+     "module": null
+    },
+    {
+     "id": "u31-04",
+     "title": "Hubble's law",
+     "module": null
+    },
+    {
+     "id": "u31-05",
+     "title": "Redshift and distance measurements",
+     "module": null
+    },
+    {
+     "id": "u31-06",
+     "title": "Friedmann–Lemaître–Robertson–Walker models",
+     "module": null
+    },
+    {
+     "id": "u31-07",
+     "title": "Big Bang cosmology",
+     "module": null
+    },
+    {
+     "id": "u31-08",
+     "title": "Cosmic microwave background",
+     "module": null
+    },
+    {
+     "id": "u31-09",
+     "title": "Primordial nucleosynthesis",
+     "module": null
+    },
+    {
+     "id": "u31-10",
+     "title": "Structure formation",
+     "module": null
+    },
+    {
+     "id": "u31-11",
+     "title": "Dark matter",
+     "module": null
+    },
+    {
+     "id": "u31-12",
+     "title": "Dark energy",
+     "module": null
+    },
+    {
+     "id": "u31-13",
+     "title": "Cosmological constant",
+     "module": null
+    },
+    {
+     "id": "u31-14",
+     "title": "Inflationary cosmology",
+     "module": null
+    },
+    {
+     "id": "u31-15",
+     "title": "Baryon acoustic oscillations",
+     "module": null
+    },
+    {
+     "id": "u31-16",
+     "title": "Large-scale structure",
+     "module": null
+    },
+    {
+     "id": "u31-17",
+     "title": "Galaxy surveys",
+     "module": null
+    },
+    {
+     "id": "u31-18",
+     "title": "Cosmic distance ladder",
+     "module": null
+    },
+    {
+     "id": "u31-19",
+     "title": "Age and geometry of the universe",
+     "module": null
+    },
+    {
+     "id": "u31-20",
+     "title": "Open, flat and closed cosmologies",
+     "module": null
+    },
+    {
+     "id": "u31-21",
+     "title": "Matter-energy density parameters",
+     "module": null
+    },
+    {
+     "id": "u31-22",
+     "title": "Modified gravity",
+     "module": null
+    },
+    {
+     "id": "u31-23",
+     "title": "Cyclic and alternative cosmological models",
+     "module": null
+    },
+    {
+     "id": "u31-24",
+     "title": "Observational constraints on cosmology",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u32",
+   "n": 32,
+   "title": "Geophysics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u32-01",
+     "title": "Earth's internal structure",
+     "module": null
+    },
+    {
+     "id": "u32-02",
+     "title": "Earth's gravitational field",
+     "module": null
+    },
+    {
+     "id": "u32-03",
+     "title": "Earth's magnetic field",
+     "module": null
+    },
+    {
+     "id": "u32-04",
+     "title": "Geothermal energy",
+     "module": null
+    },
+    {
+     "id": "u32-05",
+     "title": "Seismology",
+     "module": null
+    },
+    {
+     "id": "u32-06",
+     "title": "Earthquake waves",
+     "module": null
+    },
+    {
+     "id": "u32-07",
+     "title": "Earthquake mechanisms",
+     "module": null
+    },
+    {
+     "id": "u32-08",
+     "title": "Plate tectonics",
+     "module": null
+    },
+    {
+     "id": "u32-09",
+     "title": "Mantle convection",
+     "module": null
+    },
+    {
+     "id": "u32-10",
+     "title": "Earth's rotation",
+     "module": null
+    },
+    {
+     "id": "u32-11",
+     "title": "Paleomagnetism",
+     "module": null
+    },
+    {
+     "id": "u32-12",
+     "title": "Geophysical surveying",
+     "module": null
+    },
+    {
+     "id": "u32-13",
+     "title": "Gravity and magnetic surveys",
+     "module": null
+    },
+    {
+     "id": "u32-14",
+     "title": "Electrical resistivity methods",
+     "module": null
+    },
+    {
+     "id": "u32-15",
+     "title": "Ground-penetrating radar",
+     "module": null
+    },
+    {
+     "id": "u32-16",
+     "title": "Rock mechanics",
+     "module": null
+    },
+    {
+     "id": "u32-17",
+     "title": "Geophysical fluid dynamics",
+     "module": null
+    },
+    {
+     "id": "u32-18",
+     "title": "Earth's atmosphere and oceans",
+     "module": null
+    },
+    {
+     "id": "u32-19",
+     "title": "Planetary geophysics",
+     "module": null
+    },
+    {
+     "id": "u32-20",
+     "title": "Natural hazard monitoring",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u33",
+   "n": 33,
+   "title": "Atmospheric Physics and Climate",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u33-01",
+     "title": "Atmospheric structure",
+     "module": null
+    },
+    {
+     "id": "u33-02",
+     "title": "Atmospheric pressure and temperature",
+     "module": null
+    },
+    {
+     "id": "u33-03",
+     "title": "Gas laws in the atmosphere",
+     "module": null
+    },
+    {
+     "id": "u33-04",
+     "title": "Radiative transfer",
+     "module": null
+    },
+    {
+     "id": "u33-05",
+     "title": "Solar and terrestrial radiation",
+     "module": null
+    },
+    {
+     "id": "u33-06",
+     "title": "Greenhouse gases",
+     "module": null
+    },
+    {
+     "id": "u33-07",
+     "title": "Atmospheric energy balance",
+     "module": null
+    },
+    {
+     "id": "u33-08",
+     "title": "Convection and atmospheric stability",
+     "module": null
+    },
+    {
+     "id": "u33-09",
+     "title": "Cloud formation and microphysics",
+     "module": null
+    },
+    {
+     "id": "u33-10",
+     "title": "Precipitation physics",
+     "module": null
+    },
+    {
+     "id": "u33-11",
+     "title": "Atmospheric circulation",
+     "module": null
+    },
+    {
+     "id": "u33-12",
+     "title": "Fluid dynamics of the atmosphere",
+     "module": null
+    },
+    {
+     "id": "u33-13",
+     "title": "Weather systems",
+     "module": null
+    },
+    {
+     "id": "u33-14",
+     "title": "Atmospheric waves",
+     "module": null
+    },
+    {
+     "id": "u33-15",
+     "title": "Turbulence and boundary layers",
+     "module": null
+    },
+    {
+     "id": "u33-16",
+     "title": "Aerosols and atmospheric optics",
+     "module": null
+    },
+    {
+     "id": "u33-17",
+     "title": "Climate modelling",
+     "module": null
+    },
+    {
+     "id": "u33-18",
+     "title": "Climate feedback mechanisms",
+     "module": null
+    },
+    {
+     "id": "u33-19",
+     "title": "Ocean-atmosphere interactions",
+     "module": null
+    },
+    {
+     "id": "u33-20",
+     "title": "Climate sensitivity",
+     "module": null
+    },
+    {
+     "id": "u33-21",
+     "title": "Remote sensing of the atmosphere",
+     "module": null
+    },
+    {
+     "id": "u33-22",
+     "title": "Atmospheric electricity and lightning",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u34",
+   "n": 34,
+   "title": "Biophysics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u34-01",
+     "title": "Physical principles of living systems",
+     "module": null
+    },
+    {
+     "id": "u34-02",
+     "title": "Biomechanics",
+     "module": null
+    },
+    {
+     "id": "u34-03",
+     "title": "Biological fluid dynamics",
+     "module": null
+    },
+    {
+     "id": "u34-04",
+     "title": "Diffusion and transport",
+     "module": null
+    },
+    {
+     "id": "u34-05",
+     "title": "Osmosis and membrane transport",
+     "module": null
+    },
+    {
+     "id": "u34-06",
+     "title": "Thermodynamics of biological systems",
+     "module": null
+    },
+    {
+     "id": "u34-07",
+     "title": "Molecular motors",
+     "module": null
+    },
+    {
+     "id": "u34-08",
+     "title": "Protein dynamics",
+     "module": null
+    },
+    {
+     "id": "u34-09",
+     "title": "DNA mechanics",
+     "module": null
+    },
+    {
+     "id": "u34-10",
+     "title": "Membrane biophysics",
+     "module": null
+    },
+    {
+     "id": "u34-11",
+     "title": "Electrophysiology",
+     "module": null
+    },
+    {
+     "id": "u34-12",
+     "title": "Ion channels",
+     "module": null
+    },
+    {
+     "id": "u34-13",
+     "title": "Nerve impulses and action potentials",
+     "module": null
+    },
+    {
+     "id": "u34-14",
+     "title": "Neural signal processing",
+     "module": null
+    },
+    {
+     "id": "u34-15",
+     "title": "Muscle contraction",
+     "module": null
+    },
+    {
+     "id": "u34-16",
+     "title": "Cellular mechanics",
+     "module": null
+    },
+    {
+     "id": "u34-17",
+     "title": "Tissue mechanics",
+     "module": null
+    },
+    {
+     "id": "u34-18",
+     "title": "Medical imaging physics",
+     "module": null
+    },
+    {
+     "id": "u34-19",
+     "title": "Radiation biology",
+     "module": null
+    },
+    {
+     "id": "u34-20",
+     "title": "Optical microscopy",
+     "module": null
+    },
+    {
+     "id": "u34-21",
+     "title": "Fluorescence microscopy",
+     "module": null
+    },
+    {
+     "id": "u34-22",
+     "title": "Single-molecule methods",
+     "module": null
+    },
+    {
+     "id": "u34-23",
+     "title": "Biological networks",
+     "module": null
+    },
+    {
+     "id": "u34-24",
+     "title": "Statistical physics of living systems",
+     "module": null
+    },
+    {
+     "id": "u34-25",
+     "title": "Computational biophysics",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u35",
+   "n": 35,
+   "title": "Medical Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u35-01",
+     "title": "Physics of diagnostic imaging",
+     "module": null
+    },
+    {
+     "id": "u35-02",
+     "title": "X-ray production and imaging",
+     "module": null
+    },
+    {
+     "id": "u35-03",
+     "title": "Computed tomography",
+     "module": null
+    },
+    {
+     "id": "u35-04",
+     "title": "Magnetic resonance imaging",
+     "module": null
+    },
+    {
+     "id": "u35-05",
+     "title": "Nuclear medicine",
+     "module": null
+    },
+    {
+     "id": "u35-06",
+     "title": "Positron emission tomography",
+     "module": null
+    },
+    {
+     "id": "u35-07",
+     "title": "Single-photon emission computed tomography",
+     "module": null
+    },
+    {
+     "id": "u35-08",
+     "title": "Ultrasound imaging",
+     "module": null
+    },
+    {
+     "id": "u35-09",
+     "title": "Doppler ultrasound",
+     "module": null
+    },
+    {
+     "id": "u35-10",
+     "title": "Radiation therapy",
+     "module": null
+    },
+    {
+     "id": "u35-11",
+     "title": "Ionising radiation dosimetry",
+     "module": null
+    },
+    {
+     "id": "u35-12",
+     "title": "Radiation protection",
+     "module": null
+    },
+    {
+     "id": "u35-13",
+     "title": "Medical accelerators",
+     "module": null
+    },
+    {
+     "id": "u35-14",
+     "title": "Brachytherapy",
+     "module": null
+    },
+    {
+     "id": "u35-15",
+     "title": "Radiobiological modelling",
+     "module": null
+    },
+    {
+     "id": "u35-16",
+     "title": "Image reconstruction",
+     "module": null
+    },
+    {
+     "id": "u35-17",
+     "title": "Image registration and analysis",
+     "module": null
+    },
+    {
+     "id": "u35-18",
+     "title": "Medical detector systems",
+     "module": null
+    },
+    {
+     "id": "u35-19",
+     "title": "Optical medical imaging",
+     "module": null
+    },
+    {
+     "id": "u35-20",
+     "title": "Functional imaging",
+     "module": null
+    },
+    {
+     "id": "u35-21",
+     "title": "Quality assurance in medical physics",
+     "module": null
+    },
+    {
+     "id": "u35-22",
+     "title": "Radiation safety and clinical risk",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u36",
+   "n": 36,
+   "title": "Optoelectronics and Photonics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u36-01",
+     "title": "Light-matter interactions",
+     "module": null
+    },
+    {
+     "id": "u36-02",
+     "title": "Semiconductor light emission",
+     "module": null
+    },
+    {
+     "id": "u36-03",
+     "title": "LEDs and laser diodes",
+     "module": null
+    },
+    {
+     "id": "u36-04",
+     "title": "Photodetectors",
+     "module": null
+    },
+    {
+     "id": "u36-05",
+     "title": "Optical modulators",
+     "module": null
+    },
+    {
+     "id": "u36-06",
+     "title": "Photonic integrated circuits",
+     "module": null
+    },
+    {
+     "id": "u36-07",
+     "title": "Optical waveguides",
+     "module": null
+    },
+    {
+     "id": "u36-08",
+     "title": "Fibre-optic communications",
+     "module": null
+    },
+    {
+     "id": "u36-09",
+     "title": "Nonlinear optical processes",
+     "module": null
+    },
+    {
+     "id": "u36-10",
+     "title": "Frequency conversion",
+     "module": null
+    },
+    {
+     "id": "u36-11",
+     "title": "Ultrafast lasers",
+     "module": null
+    },
+    {
+     "id": "u36-12",
+     "title": "Femtosecond optics",
+     "module": null
+    },
+    {
+     "id": "u36-13",
+     "title": "Quantum optics",
+     "module": null
+    },
+    {
+     "id": "u36-14",
+     "title": "Single-photon sources",
+     "module": null
+    },
+    {
+     "id": "u36-15",
+     "title": "Photonic crystals",
+     "module": null
+    },
+    {
+     "id": "u36-16",
+     "title": "Plasmonics",
+     "module": null
+    },
+    {
+     "id": "u36-17",
+     "title": "Optical sensors",
+     "module": null
+    },
+    {
+     "id": "u36-18",
+     "title": "Lidar",
+     "module": null
+    },
+    {
+     "id": "u36-19",
+     "title": "Optical communications",
+     "module": null
+    },
+    {
+     "id": "u36-20",
+     "title": "Optical metrology",
+     "module": null
+    },
+    {
+     "id": "u36-21",
+     "title": "Silicon photonics",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u37",
+   "n": 37,
+   "title": "Quantum Information and Quantum Computing",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u37-01",
+     "title": "Qubits and quantum states",
+     "module": null
+    },
+    {
+     "id": "u37-02",
+     "title": "Bloch sphere",
+     "module": null
+    },
+    {
+     "id": "u37-03",
+     "title": "Quantum gates",
+     "module": null
+    },
+    {
+     "id": "u37-04",
+     "title": "Quantum circuits",
+     "module": null
+    },
+    {
+     "id": "u37-05",
+     "title": "Quantum measurement",
+     "module": null
+    },
+    {
+     "id": "u37-06",
+     "title": "Entanglement",
+     "module": null
+    },
+    {
+     "id": "u37-07",
+     "title": "Bell inequalities",
+     "module": null
+    },
+    {
+     "id": "u37-08",
+     "title": "Quantum teleportation",
+     "module": null
+    },
+    {
+     "id": "u37-09",
+     "title": "Quantum cryptography",
+     "module": null
+    },
+    {
+     "id": "u37-10",
+     "title": "Quantum key distribution",
+     "module": null
+    },
+    {
+     "id": "u37-11",
+     "title": "Quantum algorithms",
+     "module": null
+    },
+    {
+     "id": "u37-12",
+     "title": "Deutsch–Jozsa algorithm",
+     "module": null
+    },
+    {
+     "id": "u37-13",
+     "title": "Grover's algorithm",
+     "module": null
+    },
+    {
+     "id": "u37-14",
+     "title": "Shor's algorithm",
+     "module": null
+    },
+    {
+     "id": "u37-15",
+     "title": "Quantum error correction",
+     "module": null
+    },
+    {
+     "id": "u37-16",
+     "title": "Quantum noise and decoherence",
+     "module": null
+    },
+    {
+     "id": "u37-17",
+     "title": "Fault-tolerant quantum computing",
+     "module": null
+    },
+    {
+     "id": "u37-18",
+     "title": "Quantum complexity",
+     "module": null
+    },
+    {
+     "id": "u37-19",
+     "title": "Quantum simulation",
+     "module": null
+    },
+    {
+     "id": "u37-20",
+     "title": "Quantum communication",
+     "module": null
+    },
+    {
+     "id": "u37-21",
+     "title": "Quantum networks",
+     "module": null
+    },
+    {
+     "id": "u37-22",
+     "title": "Physical implementations of qubits",
+     "module": null
+    },
+    {
+     "id": "u37-23",
+     "title": "Superconducting qubits",
+     "module": null
+    },
+    {
+     "id": "u37-24",
+     "title": "Trapped-ion systems",
+     "module": null
+    },
+    {
+     "id": "u37-25",
+     "title": "Neutral-atom quantum computing",
+     "module": null
+    },
+    {
+     "id": "u37-26",
+     "title": "Photonic quantum computing",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u38",
+   "n": 38,
+   "title": "Nonlinear Dynamics and Chaos",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u38-01",
+     "title": "Linear and nonlinear systems",
+     "module": null
+    },
+    {
+     "id": "u38-02",
+     "title": "Nonlinear differential equations",
+     "module": null
+    },
+    {
+     "id": "u38-03",
+     "title": "Fixed points and stability",
+     "module": null
+    },
+    {
+     "id": "u38-04",
+     "title": "Phase-space analysis",
+     "module": null
+    },
+    {
+     "id": "u38-05",
+     "title": "Bifurcation theory",
+     "module": null
+    },
+    {
+     "id": "u38-06",
+     "title": "Period-doubling",
+     "module": null
+    },
+    {
+     "id": "u38-07",
+     "title": "Deterministic chaos",
+     "module": null
+    },
+    {
+     "id": "u38-08",
+     "title": "Sensitivity to initial conditions",
+     "module": null
+    },
+    {
+     "id": "u38-09",
+     "title": "Lyapunov exponents",
+     "module": null
+    },
+    {
+     "id": "u38-10",
+     "title": "Strange attractors",
+     "module": null
+    },
+    {
+     "id": "u38-11",
+     "title": "Logistic map",
+     "module": null
+    },
+    {
+     "id": "u38-12",
+     "title": "Lorenz system",
+     "module": null
+    },
+    {
+     "id": "u38-13",
+     "title": "Fractals",
+     "module": null
+    },
+    {
+     "id": "u38-14",
+     "title": "Self-organisation",
+     "module": null
+    },
+    {
+     "id": "u38-15",
+     "title": "Synchronisation",
+     "module": null
+    },
+    {
+     "id": "u38-16",
+     "title": "Coupled nonlinear oscillators",
+     "module": null
+    },
+    {
+     "id": "u38-17",
+     "title": "Pattern formation",
+     "module": null
+    },
+    {
+     "id": "u38-18",
+     "title": "Reaction-diffusion systems",
+     "module": null
+    },
+    {
+     "id": "u38-19",
+     "title": "Solitons and nonlinear waves",
+     "module": null
+    },
+    {
+     "id": "u38-20",
+     "title": "Chaos in mechanical and electrical systems",
+     "module": null
+    },
+    {
+     "id": "u38-21",
+     "title": "Complex systems and emergent behaviour",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u39",
+   "n": 39,
+   "title": "Computational Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u39-01",
+     "title": "Scientific programming",
+     "module": null
+    },
+    {
+     "id": "u39-02",
+     "title": "Numerical integration",
+     "module": null
+    },
+    {
+     "id": "u39-03",
+     "title": "Numerical differentiation",
+     "module": null
+    },
+    {
+     "id": "u39-04",
+     "title": "Root-finding algorithms",
+     "module": null
+    },
+    {
+     "id": "u39-05",
+     "title": "Solving ordinary differential equations",
+     "module": null
+    },
+    {
+     "id": "u39-06",
+     "title": "Solving partial differential equations",
+     "module": null
+    },
+    {
+     "id": "u39-07",
+     "title": "Finite difference methods",
+     "module": null
+    },
+    {
+     "id": "u39-08",
+     "title": "Finite element methods",
+     "module": null
+    },
+    {
+     "id": "u39-09",
+     "title": "Finite volume methods",
+     "module": null
+    },
+    {
+     "id": "u39-10",
+     "title": "Monte Carlo simulation",
+     "module": null
+    },
+    {
+     "id": "u39-11",
+     "title": "Molecular dynamics",
+     "module": null
+    },
+    {
+     "id": "u39-12",
+     "title": "N-body simulations",
+     "module": null
+    },
+    {
+     "id": "u39-13",
+     "title": "Computational fluid dynamics",
+     "module": null
+    },
+    {
+     "id": "u39-14",
+     "title": "Numerical linear algebra",
+     "module": null
+    },
+    {
+     "id": "u39-15",
+     "title": "Eigenvalue algorithms",
+     "module": null
+    },
+    {
+     "id": "u39-16",
+     "title": "Fourier transforms and spectral methods",
+     "module": null
+    },
+    {
+     "id": "u39-17",
+     "title": "Optimisation and parameter estimation",
+     "module": null
+    },
+    {
+     "id": "u39-18",
+     "title": "Random number generation",
+     "module": null
+    },
+    {
+     "id": "u39-19",
+     "title": "Error and stability analysis",
+     "module": null
+    },
+    {
+     "id": "u39-20",
+     "title": "Parallel computing",
+     "module": null
+    },
+    {
+     "id": "u39-21",
+     "title": "High-performance computing",
+     "module": null
+    },
+    {
+     "id": "u39-22",
+     "title": "GPU computing",
+     "module": null
+    },
+    {
+     "id": "u39-23",
+     "title": "Scientific visualisation",
+     "module": null
+    },
+    {
+     "id": "u39-24",
+     "title": "Data analysis and fitting",
+     "module": null
+    },
+    {
+     "id": "u39-25",
+     "title": "Reproducible computational experiments",
+     "module": null
+    },
+    {
+     "id": "u39-26",
+     "title": "Verification and validation of simulations",
+     "module": null
+    },
+    {
+     "id": "u39-27",
+     "title": "Machine learning in physics",
+     "module": null
+    },
+    {
+     "id": "u39-28",
+     "title": "Physics-informed neural networks",
+     "module": null
+    },
+    {
+     "id": "u39-29",
+     "title": "Digital twins and surrogate models",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u40",
+   "n": 40,
+   "title": "Mathematical and Theoretical Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u40-01",
+     "title": "Lagrangian mechanics",
+     "module": null
+    },
+    {
+     "id": "u40-02",
+     "title": "Hamiltonian mechanics",
+     "module": null
+    },
+    {
+     "id": "u40-03",
+     "title": "Principle of least action",
+     "module": null
+    },
+    {
+     "id": "u40-04",
+     "title": "Generalised coordinates",
+     "module": null
+    },
+    {
+     "id": "u40-05",
+     "title": "Canonical transformations",
+     "module": null
+    },
+    {
+     "id": "u40-06",
+     "title": "Hamilton–Jacobi theory",
+     "module": null
+    },
+    {
+     "id": "u40-07",
+     "title": "Symplectic geometry",
+     "module": null
+    },
+    {
+     "id": "u40-08",
+     "title": "Noether's theorem",
+     "module": null
+    },
+    {
+     "id": "u40-09",
+     "title": "Continuous and discrete symmetries",
+     "module": null
+    },
+    {
+     "id": "u40-10",
+     "title": "Lie groups and Lie algebras",
+     "module": null
+    },
+    {
+     "id": "u40-11",
+     "title": "Representation theory",
+     "module": null
+    },
+    {
+     "id": "u40-12",
+     "title": "Tensor calculus",
+     "module": null
+    },
+    {
+     "id": "u40-13",
+     "title": "Differential geometry",
+     "module": null
+    },
+    {
+     "id": "u40-14",
+     "title": "Manifolds and curvature",
+     "module": null
+    },
+    {
+     "id": "u40-15",
+     "title": "Classical field theory",
+     "module": null
+    },
+    {
+     "id": "u40-16",
+     "title": "Quantum field theory",
+     "module": null
+    },
+    {
+     "id": "u40-17",
+     "title": "Path integrals",
+     "module": null
+    },
+    {
+     "id": "u40-18",
+     "title": "Feynman diagrams",
+     "module": null
+    },
+    {
+     "id": "u40-19",
+     "title": "Renormalisation",
+     "module": null
+    },
+    {
+     "id": "u40-20",
+     "title": "Gauge theories",
+     "module": null
+    },
+    {
+     "id": "u40-21",
+     "title": "Effective field theories",
+     "module": null
+    },
+    {
+     "id": "u40-22",
+     "title": "Scattering theory",
+     "module": null
+    },
+    {
+     "id": "u40-23",
+     "title": "Green's functions",
+     "module": null
+    },
+    {
+     "id": "u40-24",
+     "title": "Perturbative and non-perturbative methods",
+     "module": null
+    },
+    {
+     "id": "u40-25",
+     "title": "Solvable models",
+     "module": null
+    },
+    {
+     "id": "u40-26",
+     "title": "Integrable systems",
+     "module": null
+    },
+    {
+     "id": "u40-27",
+     "title": "Mathematical methods for boundary-value problems",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u41",
+   "n": 41,
+   "title": "Classical Field Theory",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u41-01",
+     "title": "Scalar, vector and tensor fields",
+     "module": null
+    },
+    {
+     "id": "u41-02",
+     "title": "Field equations",
+     "module": null
+    },
+    {
+     "id": "u41-03",
+     "title": "Lagrangian field theory",
+     "module": null
+    },
+    {
+     "id": "u41-04",
+     "title": "Hamiltonian field theory",
+     "module": null
+    },
+    {
+     "id": "u41-05",
+     "title": "Field symmetries",
+     "module": null
+    },
+    {
+     "id": "u41-06",
+     "title": "Noether currents",
+     "module": null
+    },
+    {
+     "id": "u41-07",
+     "title": "Conservation laws",
+     "module": null
+    },
+    {
+     "id": "u41-08",
+     "title": "Electromagnetic field theory",
+     "module": null
+    },
+    {
+     "id": "u41-09",
+     "title": "Stress-energy tensors",
+     "module": null
+    },
+    {
+     "id": "u41-10",
+     "title": "Classical wave fields",
+     "module": null
+    },
+    {
+     "id": "u41-11",
+     "title": "Gauge invariance",
+     "module": null
+    },
+    {
+     "id": "u41-12",
+     "title": "Green's functions for field equations",
+     "module": null
+    },
+    {
+     "id": "u41-13",
+     "title": "Boundary conditions",
+     "module": null
+    },
+    {
+     "id": "u41-14",
+     "title": "Radiation from sources",
+     "module": null
+    },
+    {
+     "id": "u41-15",
+     "title": "Continuum field models",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u42",
+   "n": 42,
+   "title": "Quantum Field Theory",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u42-01",
+     "title": "Quantum fields and particles",
+     "module": null
+    },
+    {
+     "id": "u42-02",
+     "title": "Creation and annihilation operators",
+     "module": null
+    },
+    {
+     "id": "u42-03",
+     "title": "Canonical quantisation",
+     "module": null
+    },
+    {
+     "id": "u42-04",
+     "title": "Path-integral quantisation",
+     "module": null
+    },
+    {
+     "id": "u42-05",
+     "title": "Propagators",
+     "module": null
+    },
+    {
+     "id": "u42-06",
+     "title": "Feynman rules",
+     "module": null
+    },
+    {
+     "id": "u42-07",
+     "title": "Scattering amplitudes",
+     "module": null
+    },
+    {
+     "id": "u42-08",
+     "title": "Perturbation theory",
+     "module": null
+    },
+    {
+     "id": "u42-09",
+     "title": "Divergences and regularisation",
+     "module": null
+    },
+    {
+     "id": "u42-10",
+     "title": "Renormalisation",
+     "module": null
+    },
+    {
+     "id": "u42-11",
+     "title": "Gauge invariance",
+     "module": null
+    },
+    {
+     "id": "u42-12",
+     "title": "Quantum electrodynamics",
+     "module": null
+    },
+    {
+     "id": "u42-13",
+     "title": "Quantum chromodynamics",
+     "module": null
+    },
+    {
+     "id": "u42-14",
+     "title": "Electroweak theory",
+     "module": null
+    },
+    {
+     "id": "u42-15",
+     "title": "Spontaneous symmetry breaking",
+     "module": null
+    },
+    {
+     "id": "u42-16",
+     "title": "Higgs mechanism",
+     "module": null
+    },
+    {
+     "id": "u42-17",
+     "title": "Effective field theory",
+     "module": null
+    },
+    {
+     "id": "u42-18",
+     "title": "Renormalisation group",
+     "module": null
+    },
+    {
+     "id": "u42-19",
+     "title": "Anomalies",
+     "module": null
+    },
+    {
+     "id": "u42-20",
+     "title": "Non-Abelian gauge theories",
+     "module": null
+    },
+    {
+     "id": "u42-21",
+     "title": "Lattice field theory",
+     "module": null
+    },
+    {
+     "id": "u42-22",
+     "title": "Quantum field theory in curved spacetime",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u43",
+   "n": 43,
+   "title": "Nuclear and Particle Detection Methods",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u43-01",
+     "title": "Ionisation chambers",
+     "module": null
+    },
+    {
+     "id": "u43-02",
+     "title": "Geiger–Müller counters",
+     "module": null
+    },
+    {
+     "id": "u43-03",
+     "title": "Scintillation detectors",
+     "module": null
+    },
+    {
+     "id": "u43-04",
+     "title": "Semiconductor radiation detectors",
+     "module": null
+    },
+    {
+     "id": "u43-05",
+     "title": "Photomultiplier tubes",
+     "module": null
+    },
+    {
+     "id": "u43-06",
+     "title": "Silicon tracking detectors",
+     "module": null
+    },
+    {
+     "id": "u43-07",
+     "title": "Time projection chambers",
+     "module": null
+    },
+    {
+     "id": "u43-08",
+     "title": "Calorimeters",
+     "module": null
+    },
+    {
+     "id": "u43-09",
+     "title": "Cherenkov detectors",
+     "module": null
+    },
+    {
+     "id": "u43-10",
+     "title": "Time-of-flight measurements",
+     "module": null
+    },
+    {
+     "id": "u43-11",
+     "title": "Particle identification",
+     "module": null
+    },
+    {
+     "id": "u43-12",
+     "title": "Trigger systems",
+     "module": null
+    },
+    {
+     "id": "u43-13",
+     "title": "Event reconstruction",
+     "module": null
+    },
+    {
+     "id": "u43-14",
+     "title": "Background suppression",
+     "module": null
+    },
+    {
+     "id": "u43-15",
+     "title": "Detector calibration",
+     "module": null
+    },
+    {
+     "id": "u43-16",
+     "title": "Radiation spectroscopy",
+     "module": null
+    },
+    {
+     "id": "u43-17",
+     "title": "Accelerator instrumentation",
+     "module": null
+    },
+    {
+     "id": "u43-18",
+     "title": "Collider data analysis",
+     "module": null
+    },
+    {
+     "id": "u43-19",
+     "title": "Statistical significance of discoveries",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u44",
+   "n": 44,
+   "title": "Experimental and Applied Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u44-01",
+     "title": "Instrumentation and sensor design",
+     "module": null
+    },
+    {
+     "id": "u44-02",
+     "title": "Precision measurement",
+     "module": null
+    },
+    {
+     "id": "u44-03",
+     "title": "Vacuum technology",
+     "module": null
+    },
+    {
+     "id": "u44-04",
+     "title": "Cryogenic systems",
+     "module": null
+    },
+    {
+     "id": "u44-05",
+     "title": "High-field magnets",
+     "module": null
+    },
+    {
+     "id": "u44-06",
+     "title": "Laser systems",
+     "module": null
+    },
+    {
+     "id": "u44-07",
+     "title": "Optical benches and alignment",
+     "module": null
+    },
+    {
+     "id": "u44-08",
+     "title": "Spectroscopy",
+     "module": null
+    },
+    {
+     "id": "u44-09",
+     "title": "Interferometry",
+     "module": null
+    },
+    {
+     "id": "u44-10",
+     "title": "Microwave and radio-frequency measurement",
+     "module": null
+    },
+    {
+     "id": "u44-11",
+     "title": "Electronics and signal processing",
+     "module": null
+    },
+    {
+     "id": "u44-12",
+     "title": "Materials characterisation",
+     "module": null
+    },
+    {
+     "id": "u44-13",
+     "title": "Scanning probe microscopy",
+     "module": null
+    },
+    {
+     "id": "u44-14",
+     "title": "Electron microscopy",
+     "module": null
+    },
+    {
+     "id": "u44-15",
+     "title": "X-ray diffraction",
+     "module": null
+    },
+    {
+     "id": "u44-16",
+     "title": "Neutron scattering",
+     "module": null
+    },
+    {
+     "id": "u44-17",
+     "title": "Synchrotron methods",
+     "module": null
+    },
+    {
+     "id": "u44-18",
+     "title": "Particle accelerator operation",
+     "module": null
+    },
+    {
+     "id": "u44-19",
+     "title": "Radiation measurement",
+     "module": null
+    },
+    {
+     "id": "u44-20",
+     "title": "Experimental control systems",
+     "module": null
+    },
+    {
+     "id": "u44-21",
+     "title": "Automation and data acquisition",
+     "module": null
+    },
+    {
+     "id": "u44-22",
+     "title": "Laboratory safety and risk assessment",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u45",
+   "n": 45,
+   "title": "Materials Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u45-01",
+     "title": "Structure-property relationships",
+     "module": null
+    },
+    {
+     "id": "u45-02",
+     "title": "Atomic bonding and crystal structure",
+     "module": null
+    },
+    {
+     "id": "u45-03",
+     "title": "Defects and dislocations",
+     "module": null
+    },
+    {
+     "id": "u45-04",
+     "title": "Diffusion in solids",
+     "module": null
+    },
+    {
+     "id": "u45-05",
+     "title": "Phase diagrams",
+     "module": null
+    },
+    {
+     "id": "u45-06",
+     "title": "Phase transformations",
+     "module": null
+    },
+    {
+     "id": "u45-07",
+     "title": "Mechanical properties",
+     "module": null
+    },
+    {
+     "id": "u45-08",
+     "title": "Thermal properties",
+     "module": null
+    },
+    {
+     "id": "u45-09",
+     "title": "Electrical properties",
+     "module": null
+    },
+    {
+     "id": "u45-10",
+     "title": "Magnetic properties",
+     "module": null
+    },
+    {
+     "id": "u45-11",
+     "title": "Optical properties",
+     "module": null
+    },
+    {
+     "id": "u45-12",
+     "title": "Dielectric materials",
+     "module": null
+    },
+    {
+     "id": "u45-13",
+     "title": "Semiconductors",
+     "module": null
+    },
+    {
+     "id": "u45-14",
+     "title": "Superconductors",
+     "module": null
+    },
+    {
+     "id": "u45-15",
+     "title": "Magnetic materials",
+     "module": null
+    },
+    {
+     "id": "u45-16",
+     "title": "Metamaterials",
+     "module": null
+    },
+    {
+     "id": "u45-17",
+     "title": "Nanostructured materials",
+     "module": null
+    },
+    {
+     "id": "u45-18",
+     "title": "Thin films and coatings",
+     "module": null
+    },
+    {
+     "id": "u45-19",
+     "title": "Amorphous materials",
+     "module": null
+    },
+    {
+     "id": "u45-20",
+     "title": "Biomaterials",
+     "module": null
+    },
+    {
+     "id": "u45-21",
+     "title": "Smart materials",
+     "module": null
+    },
+    {
+     "id": "u45-22",
+     "title": "Shape-memory alloys",
+     "module": null
+    },
+    {
+     "id": "u45-23",
+     "title": "Materials under extreme conditions",
+     "module": null
+    },
+    {
+     "id": "u45-24",
+     "title": "Materials characterisation techniques",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u46",
+   "n": 46,
+   "title": "Renewable Energy and Energy Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u46-01",
+     "title": "Energy conversion and conservation",
+     "module": null
+    },
+    {
+     "id": "u46-02",
+     "title": "Solar photovoltaic physics",
+     "module": null
+    },
+    {
+     "id": "u46-03",
+     "title": "Solar thermal systems",
+     "module": null
+    },
+    {
+     "id": "u46-04",
+     "title": "Wind energy",
+     "module": null
+    },
+    {
+     "id": "u46-05",
+     "title": "Hydroelectric power",
+     "module": null
+    },
+    {
+     "id": "u46-06",
+     "title": "Tidal and wave energy",
+     "module": null
+    },
+    {
+     "id": "u46-07",
+     "title": "Geothermal energy",
+     "module": null
+    },
+    {
+     "id": "u46-08",
+     "title": "Nuclear fission energy",
+     "module": null
+    },
+    {
+     "id": "u46-09",
+     "title": "Nuclear fusion energy",
+     "module": null
+    },
+    {
+     "id": "u46-10",
+     "title": "Hydrogen energy systems",
+     "module": null
+    },
+    {
+     "id": "u46-11",
+     "title": "Fuel cells",
+     "module": null
+    },
+    {
+     "id": "u46-12",
+     "title": "Batteries and electrochemical energy storage",
+     "module": null
+    },
+    {
+     "id": "u46-13",
+     "title": "Supercapacitors",
+     "module": null
+    },
+    {
+     "id": "u46-14",
+     "title": "Thermoelectric energy conversion",
+     "module": null
+    },
+    {
+     "id": "u46-15",
+     "title": "Heat pumps",
+     "module": null
+    },
+    {
+     "id": "u46-16",
+     "title": "Energy efficiency",
+     "module": null
+    },
+    {
+     "id": "u46-17",
+     "title": "Grid storage",
+     "module": null
+    },
+    {
+     "id": "u46-18",
+     "title": "Energy transmission and losses",
+     "module": null
+    },
+    {
+     "id": "u46-19",
+     "title": "Energy systems modelling",
+     "module": null
+    },
+    {
+     "id": "u46-20",
+     "title": "Life-cycle energy analysis",
+     "module": null
+    },
+    {
+     "id": "u46-21",
+     "title": "Energy security and sustainability",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u47",
+   "n": 47,
+   "title": "Acoustics, Vibrations and Engineering Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u47-01",
+     "title": "Mechanical vibration analysis",
+     "module": null
+    },
+    {
+     "id": "u47-02",
+     "title": "Structural dynamics",
+     "module": null
+    },
+    {
+     "id": "u47-03",
+     "title": "Resonance and damping",
+     "module": null
+    },
+    {
+     "id": "u47-04",
+     "title": "Modal analysis",
+     "module": null
+    },
+    {
+     "id": "u47-05",
+     "title": "Noise control",
+     "module": null
+    },
+    {
+     "id": "u47-06",
+     "title": "Acoustic materials",
+     "module": null
+    },
+    {
+     "id": "u47-07",
+     "title": "Sound propagation in structures",
+     "module": null
+    },
+    {
+     "id": "u47-08",
+     "title": "Aeroacoustics",
+     "module": null
+    },
+    {
+     "id": "u47-09",
+     "title": "Underwater acoustics",
+     "module": null
+    },
+    {
+     "id": "u47-10",
+     "title": "Vibration isolation",
+     "module": null
+    },
+    {
+     "id": "u47-11",
+     "title": "Seismic engineering physics",
+     "module": null
+    },
+    {
+     "id": "u47-12",
+     "title": "Shock waves",
+     "module": null
+    },
+    {
+     "id": "u47-13",
+     "title": "Impact mechanics",
+     "module": null
+    },
+    {
+     "id": "u47-14",
+     "title": "Tribology and friction",
+     "module": null
+    },
+    {
+     "id": "u47-15",
+     "title": "Fluid-structure interaction",
+     "module": null
+    },
+    {
+     "id": "u47-16",
+     "title": "Engineering measurement systems",
+     "module": null
+    },
+    {
+     "id": "u47-17",
+     "title": "Failure analysis",
+     "module": null
+    },
+    {
+     "id": "u47-18",
+     "title": "Reliability and physical modelling",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u48",
+   "n": 48,
+   "title": "Space Physics and Planetary Science",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u48-01",
+     "title": "Solar physics",
+     "module": null
+    },
+    {
+     "id": "u48-02",
+     "title": "Solar wind",
+     "module": null
+    },
+    {
+     "id": "u48-03",
+     "title": "Heliosphere",
+     "module": null
+    },
+    {
+     "id": "u48-04",
+     "title": "Magnetospheres",
+     "module": null
+    },
+    {
+     "id": "u48-05",
+     "title": "Ionospheres",
+     "module": null
+    },
+    {
+     "id": "u48-06",
+     "title": "Space weather",
+     "module": null
+    },
+    {
+     "id": "u48-07",
+     "title": "Cosmic rays",
+     "module": null
+    },
+    {
+     "id": "u48-08",
+     "title": "Radiation belts",
+     "module": null
+    },
+    {
+     "id": "u48-09",
+     "title": "Planetary atmospheres",
+     "module": null
+    },
+    {
+     "id": "u48-10",
+     "title": "Planetary interiors",
+     "module": null
+    },
+    {
+     "id": "u48-11",
+     "title": "Planetary magnetic fields",
+     "module": null
+    },
+    {
+     "id": "u48-12",
+     "title": "Planetary rings",
+     "module": null
+    },
+    {
+     "id": "u48-13",
+     "title": "Moons and tidal heating",
+     "module": null
+    },
+    {
+     "id": "u48-14",
+     "title": "Comets and asteroids",
+     "module": null
+    },
+    {
+     "id": "u48-15",
+     "title": "Meteorites and impact physics",
+     "module": null
+    },
+    {
+     "id": "u48-16",
+     "title": "Planetary formation",
+     "module": null
+    },
+    {
+     "id": "u48-17",
+     "title": "Exoplanet detection",
+     "module": null
+    },
+    {
+     "id": "u48-18",
+     "title": "Orbital dynamics",
+     "module": null
+    },
+    {
+     "id": "u48-19",
+     "title": "Spacecraft propulsion physics",
+     "module": null
+    },
+    {
+     "id": "u48-20",
+     "title": "Remote sensing",
+     "module": null
+    },
+    {
+     "id": "u48-21",
+     "title": "Planetary exploration instrumentation",
+     "module": null
+    },
+    {
+     "id": "u48-22",
+     "title": "Habitability and astrobiology interfaces",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u49",
+   "n": 49,
+   "title": "Historical Development of Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u49-01",
+     "title": "Ancient Greek natural philosophy",
+     "module": null
+    },
+    {
+     "id": "u49-02",
+     "title": "Early astronomy and mechanics",
+     "module": null
+    },
+    {
+     "id": "u49-03",
+     "title": "Medieval scientific traditions",
+     "module": null
+    },
+    {
+     "id": "u49-04",
+     "title": "Scientific Revolution",
+     "module": null
+    },
+    {
+     "id": "u49-05",
+     "title": "Galileo and experimental mechanics",
+     "module": null
+    },
+    {
+     "id": "u49-06",
+     "title": "Newtonian mechanics",
+     "module": null
+    },
+    {
+     "id": "u49-07",
+     "title": "Development of thermodynamics",
+     "module": null
+    },
+    {
+     "id": "u49-08",
+     "title": "Electromagnetism and Maxwell",
+     "module": null
+    },
+    {
+     "id": "u49-09",
+     "title": "Discovery of radioactivity",
+     "module": null
+    },
+    {
+     "id": "u49-10",
+     "title": "Origins of quantum theory",
+     "module": null
+    },
+    {
+     "id": "u49-11",
+     "title": "Development of special and general relativity",
+     "module": null
+    },
+    {
+     "id": "u49-12",
+     "title": "Nuclear physics and the atomic age",
+     "module": null
+    },
+    {
+     "id": "u49-13",
+     "title": "Development of quantum mechanics",
+     "module": null
+    },
+    {
+     "id": "u49-14",
+     "title": "Particle physics and the Standard Model",
+     "module": null
+    },
+    {
+     "id": "u49-15",
+     "title": "Space exploration and modern astrophysics",
+     "module": null
+    },
+    {
+     "id": "u49-16",
+     "title": "History of computing in physics",
+     "module": null
+    },
+    {
+     "id": "u49-17",
+     "title": "Women and underrepresented groups in physics",
+     "module": null
+    },
+    {
+     "id": "u49-18",
+     "title": "Scientific institutions and funding",
+     "module": null
+    },
+    {
+     "id": "u49-19",
+     "title": "Physics, technology and society",
+     "module": null
+    },
+    {
+     "id": "u49-20",
+     "title": "Philosophy and history of scientific revolutions",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u50",
+   "n": 50,
+   "title": "Philosophy and Foundations of Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u50-01",
+     "title": "Scientific realism and instrumentalism",
+     "module": null
+    },
+    {
+     "id": "u50-02",
+     "title": "Explanation and prediction in physics",
+     "module": null
+    },
+    {
+     "id": "u50-03",
+     "title": "Laws of nature",
+     "module": null
+    },
+    {
+     "id": "u50-04",
+     "title": "Causality and determinism",
+     "module": null
+    },
+    {
+     "id": "u50-05",
+     "title": "Probability and chance",
+     "module": null
+    },
+    {
+     "id": "u50-06",
+     "title": "Measurement and observation",
+     "module": null
+    },
+    {
+     "id": "u50-07",
+     "title": "The problem of induction",
+     "module": null
+    },
+    {
+     "id": "u50-08",
+     "title": "Reductionism and emergence",
+     "module": null
+    },
+    {
+     "id": "u50-09",
+     "title": "Space and time",
+     "module": null
+    },
+    {
+     "id": "u50-10",
+     "title": "The nature of spacetime",
+     "module": null
+    },
+    {
+     "id": "u50-11",
+     "title": "Interpretations of quantum mechanics",
+     "module": null
+    },
+    {
+     "id": "u50-12",
+     "title": "Copenhagen interpretation",
+     "module": null
+    },
+    {
+     "id": "u50-13",
+     "title": "Many-worlds interpretation",
+     "module": null
+    },
+    {
+     "id": "u50-14",
+     "title": "Pilot-wave theory",
+     "module": null
+    },
+    {
+     "id": "u50-15",
+     "title": "Objective collapse theories",
+     "module": null
+    },
+    {
+     "id": "u50-16",
+     "title": "Quantum measurement problem",
+     "module": null
+    },
+    {
+     "id": "u50-17",
+     "title": "Locality and nonlocality",
+     "module": null
+    },
+    {
+     "id": "u50-18",
+     "title": "Bell's theorem",
+     "module": null
+    },
+    {
+     "id": "u50-19",
+     "title": "Scientific explanation and unification",
+     "module": null
+    },
+    {
+     "id": "u50-20",
+     "title": "Symmetry and physical law",
+     "module": null
+    },
+    {
+     "id": "u50-21",
+     "title": "Model dependence and idealisation",
+     "module": null
+    },
+    {
+     "id": "u50-22",
+     "title": "Underdetermination of theory by evidence",
+     "module": null
+    },
+    {
+     "id": "u50-23",
+     "title": "The limits of scientific knowledge",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u51",
+   "n": 51,
+   "title": "Physics Education and Communication",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u51-01",
+     "title": "Explaining physical concepts clearly",
+     "module": null
+    },
+    {
+     "id": "u51-02",
+     "title": "Scientific diagrams and representations",
+     "module": null
+    },
+    {
+     "id": "u51-03",
+     "title": "Deriving equations from first principles",
+     "module": null
+    },
+    {
+     "id": "u51-04",
+     "title": "Translating physical situations into mathematical models",
+     "module": null
+    },
+    {
+     "id": "u51-05",
+     "title": "Estimation and order-of-magnitude reasoning",
+     "module": null
+    },
+    {
+     "id": "u51-06",
+     "title": "Solving multi-step problems",
+     "module": null
+    },
+    {
+     "id": "u51-07",
+     "title": "Interpreting graphs and experimental data",
+     "module": null
+    },
+    {
+     "id": "u51-08",
+     "title": "Demonstrations and practical investigations",
+     "module": null
+    },
+    {
+     "id": "u51-09",
+     "title": "Laboratory report writing",
+     "module": null
+    },
+    {
+     "id": "u51-10",
+     "title": "Scientific presentations",
+     "module": null
+    },
+    {
+     "id": "u51-11",
+     "title": "Peer review and research critique",
+     "module": null
+    },
+    {
+     "id": "u51-12",
+     "title": "Communicating uncertainty",
+     "module": null
+    },
+    {
+     "id": "u51-13",
+     "title": "Public engagement with physics",
+     "module": null
+    },
+    {
+     "id": "u51-14",
+     "title": "Science communication and misinformation",
+     "module": null
+    },
+    {
+     "id": "u51-15",
+     "title": "Teaching and assessing conceptual understanding",
+     "module": null
+    },
+    {
+     "id": "u51-16",
+     "title": "Identifying misconceptions",
+     "module": null
+    },
+    {
+     "id": "u51-17",
+     "title": "Interdisciplinary communication",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u52",
+   "n": 52,
+   "title": "Advanced Problem-Solving Skills",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u52-01",
+     "title": "Identifying relevant physical principles",
+     "module": null
+    },
+    {
+     "id": "u52-02",
+     "title": "Defining systems and boundaries",
+     "module": null
+    },
+    {
+     "id": "u52-03",
+     "title": "Choosing coordinate systems",
+     "module": null
+    },
+    {
+     "id": "u52-04",
+     "title": "Drawing free-body and field diagrams",
+     "module": null
+    },
+    {
+     "id": "u52-05",
+     "title": "Applying conservation laws",
+     "module": null
+    },
+    {
+     "id": "u52-06",
+     "title": "Deriving equations from fundamental laws",
+     "module": null
+    },
+    {
+     "id": "u52-07",
+     "title": "Checking units and dimensions",
+     "module": null
+    },
+    {
+     "id": "u52-08",
+     "title": "Evaluating limiting cases",
+     "module": null
+    },
+    {
+     "id": "u52-09",
+     "title": "Estimating numerical answers",
+     "module": null
+    },
+    {
+     "id": "u52-10",
+     "title": "Analysing approximations",
+     "module": null
+    },
+    {
+     "id": "u52-11",
+     "title": "Solving coupled equations",
+     "module": null
+    },
+    {
+     "id": "u52-12",
+     "title": "Selecting appropriate mathematical techniques",
+     "module": null
+    },
+    {
+     "id": "u52-13",
+     "title": "Comparing analytical and numerical solutions",
+     "module": null
+    },
+    {
+     "id": "u52-14",
+     "title": "Sensitivity analysis",
+     "module": null
+    },
+    {
+     "id": "u52-15",
+     "title": "Physical interpretation of mathematical results",
+     "module": null
+    },
+    {
+     "id": "u52-16",
+     "title": "Error checking and independent verification",
+     "module": null
+    },
+    {
+     "id": "u52-17",
+     "title": "Communicating assumptions and limitations",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u53",
+   "n": 53,
+   "title": "Interdisciplinary Physics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u53-01",
+     "title": "Physics and chemistry",
+     "module": null
+    },
+    {
+     "id": "u53-02",
+     "title": "Physical chemistry",
+     "module": null
+    },
+    {
+     "id": "u53-03",
+     "title": "Chemical physics",
+     "module": null
+    },
+    {
+     "id": "u53-04",
+     "title": "Physics and biology",
+     "module": null
+    },
+    {
+     "id": "u53-05",
+     "title": "Biomechanics",
+     "module": null
+    },
+    {
+     "id": "u53-06",
+     "title": "Physics and medicine",
+     "module": null
+    },
+    {
+     "id": "u53-07",
+     "title": "Physics and neuroscience",
+     "module": null
+    },
+    {
+     "id": "u53-08",
+     "title": "Physics and materials science",
+     "module": null
+    },
+    {
+     "id": "u53-09",
+     "title": "Physics and computer science",
+     "module": null
+    },
+    {
+     "id": "u53-10",
+     "title": "Physics and mathematics",
+     "module": null
+    },
+    {
+     "id": "u53-11",
+     "title": "Physics and engineering",
+     "module": null
+    },
+    {
+     "id": "u53-12",
+     "title": "Physics and environmental science",
+     "module": null
+    },
+    {
+     "id": "u53-13",
+     "title": "Physics and Earth science",
+     "module": null
+    },
+    {
+     "id": "u53-14",
+     "title": "Physics and economics",
+     "module": null
+    },
+    {
+     "id": "u53-15",
+     "title": "Complex systems",
+     "module": null
+    },
+    {
+     "id": "u53-16",
+     "title": "Network science",
+     "module": null
+    },
+    {
+     "id": "u53-17",
+     "title": "Statistical modelling of social systems",
+     "module": null
+    },
+    {
+     "id": "u53-18",
+     "title": "Climate and energy systems",
+     "module": null
+    },
+    {
+     "id": "u53-19",
+     "title": "Nanotechnology",
+     "module": null
+    },
+    {
+     "id": "u53-20",
+     "title": "Quantum technologies",
+     "module": null
+    },
+    {
+     "id": "u53-21",
+     "title": "Scientific machine learning",
+     "module": null
+    },
+    {
+     "id": "u53-22",
+     "title": "Cross-disciplinary research design",
+     "module": null
+    }
+   ]
+  },
+  {
+   "id": "u54",
+   "n": 54,
+   "title": "Research and Professional Physics Skills",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u54-01",
+     "title": "Reading and evaluating scientific papers",
+     "module": null
+    },
+    {
+     "id": "u54-02",
+     "title": "Literature searches and systematic reviews",
+     "module": null
+    },
+    {
+     "id": "u54-03",
+     "title": "Formulating research questions",
+     "module": null
+    },
+    {
+     "id": "u54-04",
+     "title": "Developing theoretical models",
+     "module": null
+    },
+    {
+     "id": "u54-05",
+     "title": "Designing experiments",
+     "module": null
+    },
+    {
+     "id": "u54-06",
+     "title": "Writing research proposals",
+     "module": null
+    },
+    {
+     "id": "u54-07",
+     "title": "Grant applications and project planning",
+     "module": null
+    },
+    {
+     "id": "u54-08",
+     "title": "Laboratory management",
+     "module": null
+    },
+    {
+     "id": "u54-09",
+     "title": "Research ethics and integrity",
+     "module": null
+    },
+    {
+     "id": "u54-10",
+     "title": "Data management and documentation",
+     "module": null
+    },
+    {
+     "id": "u54-11",
+     "title": "Version control and reproducible workflows",
+     "module": null
+    },
+    {
+     "id": "u54-12",
+     "title": "Collaboration across disciplines",
+     "module": null
+    },
+    {
+     "id": "u54-13",
+     "title": "Research presentations and posters",
+     "module": null
+    },
+    {
+     "id": "u54-14",
+     "title": "Scientific writing and publishing",
+     "module": null
+    },
+    {
+     "id": "u54-15",
+     "title": "Peer review",
+     "module": null
+    },
+    {
+     "id": "u54-16",
+     "title": "Intellectual property and technology transfer",
+     "module": null
+    },
+    {
+     "id": "u54-17",
+     "title": "Project management",
+     "module": null
+    },
+    {
+     "id": "u54-18",
+     "title": "Research impact and public engagement",
+     "module": null
+    },
+    {
+     "id": "u54-19",
+     "title": "Communicating with industry and policymakers",
+     "module": null
+    },
+    {
+     "id": "u54-20",
+     "title": "Careers in academia, industry and scientific computing",
+     "module": null
+    }
+   ]
+  }
+ ]
+}
