@@ -1,6 +1,6 @@
 // Gradify service worker: lets the site open offline.
 // Network first, so a new deploy shows straight away; the cache is the fallback.
-const CACHE = "gradify-v64";
+const CACHE = "gradify-v65";
 const SHELL = [
   "./", "index.html", "app.html", "manifest.webmanifest", "gradify.config.js",
   // homepage
@@ -23,6 +23,9 @@ const SHELL = [
   "kit/vendor/pdfjs/pdf.min.js", "kit/vendor/pdfjs/pdf.worker.min.js", "kit/vendor/supabase/supabase.js",
   "kit/courses/health/course.js", "kit/courses/health/syllabus.js", "kit/courses/health/ids.js", "kit/courses/health/qa.js", "kit/courses/health/interactives.js", "kit/courses/health/evidence.js", "kit/courses/health/registry.js",
   "kit/courses/history/course.js", "kit/courses/history/syllabus.js", "kit/courses/history/ids.js", "kit/courses/history/qa.js", "kit/courses/history/interactives.js", "kit/courses/history/evidence.js", "kit/courses/history/registry.js",
+  "kit/courses/ecology/course.js", "kit/courses/ecology/syllabus.js", "kit/courses/ecology/ids.js", "kit/courses/ecology/qa.js", "kit/courses/ecology/interactives.js", "kit/courses/ecology/evidence.js", "kit/courses/ecology/registry.js",
+  "kit/courses/engineering/course.js", "kit/courses/engineering/syllabus.js", "kit/courses/engineering/ids.js", "kit/courses/engineering/qa.js", "kit/courses/engineering/interactives.js", "kit/courses/engineering/evidence.js", "kit/courses/engineering/registry.js",
+  "kit/courses/literature/course.js", "kit/courses/literature/syllabus.js", "kit/courses/literature/ids.js", "kit/courses/literature/qa.js", "kit/courses/literature/interactives.js", "kit/courses/literature/evidence.js", "kit/courses/literature/registry.js",
   // the shared interactive engine and each course's lab lists and evidence maps (each lab itself is cached when first opened)
   "kit/course/review.js", "kit/course/reviews.js", "kit/course/ix-manifest.js", "kit/courses/history/evidence.js", "kit/courses/history/interactives.js", "kit/courses/biology/evidence.js", "kit/courses/chemistry/evidence.js", "kit/courses/physics/evidence.js", "kit/courses/psychology/evidence.js", "kit/courses/sociology/evidence.js", "kit/courses/maths/evidence.js", "kit/courses/maths/interactives.js", "kit/interactive/scenario.js", "kit/interactive/trainers.js", "kit/interactive/pharmcalc.js", "kit/interactive/mathgen.js", "kit/interactive/grapher.js", "kit/interactive/mathexpr.js", "kit/interactive/stepcheck.js", "kit/interactive/reasoning.js", "kit/interactive/clinsim.js", "kit/interactive/news2.js",
 ];

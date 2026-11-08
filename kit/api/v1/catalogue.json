@@ -28,6 +28,30 @@
    "syllabus": "/kit/api/v1/courses/chemistry.json"
   },
   {
+   "slug": "ecology",
+   "name": "Ecology and Environmental Science",
+   "site": "EcoGradify",
+   "status": "beta",
+   "accent": "#6aa84f",
+   "page": "/ecogradify/course/",
+   "units": 11,
+   "lessons": 198,
+   "lessonsWritten": 16,
+   "syllabus": "/kit/api/v1/courses/ecology.json"
+  },
+  {
+   "slug": "engineering",
+   "name": "Engineering",
+   "site": "EngineerGradify",
+   "status": "beta",
+   "accent": "#ff5600",
+   "page": "/engineergradify/course/",
+   "units": 12,
+   "lessons": 191,
+   "lessonsWritten": 19,
+   "syllabus": "/kit/api/v1/courses/engineering.json"
+  },
+  {
    "slug": "health",
    "name": "Health and Wellbeing",
    "site": "HealthGradify",
@@ -62,6 +86,18 @@
    "lessons": 480,
    "lessonsWritten": 480,
    "syllabus": "/kit/api/v1/courses/law.json"
+  },
+  {
+   "slug": "literature",
+   "name": "English Literature",
+   "site": "LitGradify",
+   "status": "beta",
+   "accent": "#8c27ca",
+   "page": "/litgradify/course/",
+   "units": 10,
+   "lessons": 166,
+   "lessonsWritten": 18,
+   "syllabus": "/kit/api/v1/courses/literature.json"
   },
   {
    "slug": "maths",
