@@ -1,0 +1,127 @@
+{
+ "api": 1,
+ "origin": "https://getgradify.com",
+ "about": "Gradify's courses for apps. Each course's syllabus is at `syllabus`; lesson text is in its notes files (`notes`, one per unit, the format documented in kit/course/notes.js).",
+ "courses": [
+  {
+   "slug": "biology",
+   "name": "Biology",
+   "site": "SciGradify",
+   "status": "live",
+   "accent": "#6aa84f",
+   "page": "/scigradify/biology/",
+   "units": 14,
+   "lessons": 391,
+   "lessonsWritten": 50,
+   "syllabus": "/kit/api/v1/courses/biology.json"
+  },
+  {
+   "slug": "chemistry",
+   "name": "Chemistry",
+   "site": "SciGradify",
+   "status": "live",
+   "accent": "#6aa84f",
+   "page": "/scigradify/chemistry/",
+   "units": 20,
+   "lessons": 460,
+   "lessonsWritten": 45,
+   "syllabus": "/kit/api/v1/courses/chemistry.json"
+  },
+  {
+   "slug": "history",
+   "name": "History",
+   "site": "HistoryGradify",
+   "status": "beta",
+   "accent": "#b0703a",
+   "page": "/historygradify/course/",
+   "units": 18,
+   "lessons": 301,
+   "lessonsWritten": 94,
+   "syllabus": "/kit/api/v1/courses/history.json"
+  },
+  {
+   "slug": "law",
+   "name": "Law",
+   "site": "LawGradify",
+   "status": "live",
+   "accent": "#9f2f17",
+   "page": "/lawgradify/course/",
+   "units": 19,
+   "lessons": 480,
+   "lessonsWritten": 480,
+   "syllabus": "/kit/api/v1/courses/law.json"
+  },
+  {
+   "slug": "maths",
+   "name": "Mathematics",
+   "site": "MathGradify",
+   "status": "beta",
+   "accent": "#70a7dc",
+   "page": "/mathgradify/course/",
+   "units": 29,
+   "lessons": 1077,
+   "lessonsWritten": 1077,
+   "syllabus": "/kit/api/v1/courses/maths.json"
+  },
+  {
+   "slug": "nursing",
+   "name": "Nursing",
+   "site": "NurseGradify",
+   "status": "live",
+   "accent": "#6a60ff",
+   "page": "/nursegradify/course/",
+   "units": 17,
+   "lessons": 497,
+   "lessonsWritten": 497,
+   "syllabus": "/kit/api/v1/courses/nursing.json"
+  },
+  {
+   "slug": "pharmacy",
+   "name": "Pharmacy",
+   "site": "PharmaGradify",
+   "status": "beta",
+   "accent": "#f99246",
+   "page": "/pharmagradify/course/",
+   "units": 19,
+   "lessons": 318,
+   "lessonsWritten": 275,
+   "syllabus": "/kit/api/v1/courses/pharmacy.json"
+  },
+  {
+   "slug": "physics",
+   "name": "Physics",
+   "site": "SciGradify",
+   "status": "live",
+   "accent": "#6aa84f",
+   "page": "/scigradify/physics/",
+   "units": 54,
+   "lessons": 1308,
+   "lessonsWritten": 1308,
+   "syllabus": "/kit/api/v1/courses/physics.json"
+  },
+  {
+   "slug": "psychology",
+   "name": "Psychology",
+   "site": "PsychGradify",
+   "status": "beta",
+   "accent": "#bbabbe",
+   "page": "/psychgradify/course/",
+   "units": 16,
+   "lessons": 393,
+   "lessonsWritten": 393,
+   "syllabus": "/kit/api/v1/courses/psychology.json"
+  },
+  {
+   "slug": "sociology",
+   "name": "Sociology",
+   "site": "SocGradify",
+   "status": "beta",
+   "accent": "#a44a99",
+   "page": "/socgradify/course/",
+   "units": 18,
+   "lessons": 438,
+   "lessonsWritten": 438,
+   "syllabus": "/kit/api/v1/courses/sociology.json"
+  }
+ ]
+}

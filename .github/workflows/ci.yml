@@ -51,8 +51,9 @@ jobs:
           node scripts/build-sitemap.mjs
           npm run sync
           node scripts/ix-manifest.mjs
-          git diff --exit-code -- sitemap.xml supabase/functions/_shared/ supabase/dashboard/ kit/course/ix-manifest.js || {
-            echo "::error::Generated files are out of date. Run node scripts/build-sitemap.mjs, npm run sync and node scripts/ix-manifest.mjs, then commit."
+          node scripts/build-api.mjs
+          git diff --exit-code -- sitemap.xml supabase/functions/_shared/ supabase/dashboard/ kit/course/ix-manifest.js kit/api/ || {
+            echo "::error::Generated files are out of date. Run node scripts/build-sitemap.mjs, npm run sync, node scripts/ix-manifest.mjs and node scripts/build-api.mjs, then commit."
             exit 1
           }
 

@@ -1,0 +1,6124 @@
+{
+ "api": 1,
+ "slug": "maths",
+ "name": "Mathematics",
+ "site": "MathGradify",
+ "unitWord": "School",
+ "levels": [
+  "Fluency",
+  "Application",
+  "Problem solving"
+ ],
+ "notice": "<b>Study material.</b> MathGradify covers maths from everyday numeracy to research-level topics. Exam boards (AQA, Edexcel, OCR, WJEC Eduqas, CCEA, SQA, IB) differ in detail: check your own specification for exactly what you need to know.",
+ "notes": "/kit/courses/maths/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Foundations",
+   "units": [
+    1,
+    3,
+    5,
+    6,
+    28,
+    29
+   ],
+   "from": "#70a7dc",
+   "to": "#7ee0ff"
+  },
+  {
+   "name": "Calculus and analysis",
+   "units": [
+    7,
+    8,
+    9,
+    10
+   ],
+   "from": "#6a60ff",
+   "to": "#b38cff"
+  },
+  {
+   "name": "Algebra and structure",
+   "units": [
+    2,
+    4,
+    11,
+    16,
+    17
+   ],
+   "from": "#f055dd",
+   "to": "#ff8ac1"
+  },
+  {
+   "name": "Probability and statistics",
+   "units": [
+    12,
+    13,
+    22
+   ],
+   "from": "#16c784",
+   "to": "#7ee0ff"
+  },
+  {
+   "name": "Discrete maths and computing",
+   "units": [
+    14,
+    15,
+    19,
+    23,
+    27
+   ],
+   "from": "#ffc002",
+   "to": "#ff8a3d"
+  },
+  {
+   "name": "Applied mathematics",
+   "units": [
+    18,
+    20,
+    21,
+    24,
+    25
+   ],
+   "from": "#ff3d6e",
+   "to": "#ff9f40"
+  },
+  {
+   "name": "Reasoning and research",
+   "units": [
+    26
+   ],
+   "from": "#0aa4c9",
+   "to": "#40d4b1"
+  }
+ ],
+ "paths": [
+  {
+   "id": "everyday",
+   "name": "Everyday maths and Functional Skills",
+   "sub": "Money, measures, time, data and risk, with the number skills behind them: for adult learners, Functional Skills and anyone rebuilding confidence.",
+   "units": [
+    29,
+    1,
+    28
+   ],
+   "select": {
+    "1": [
+     "Number systems",
+     "Factors and primes",
+     "Fractions, decimals and percentages",
+     "Accuracy and estimation"
+    ],
+    "28": [
+     "Exam skills"
+    ]
+   }
+  },
+  {
+   "id": "gcse",
+   "name": "GCSE Mathematics",
+   "sub": "Number, algebra, ratio, geometry and measures, probability and statistics, with exam technique: Foundation and Higher tier.",
+   "units": [
+    1,
+    3,
+    5,
+    6,
+    12,
+    13,
+    28
+   ],
+   "select": {
+    "3": [
+     "Foundations",
+     "Equations and inequalities",
+     "Surds, exponentials and logarithms",
+     "Functions"
+    ],
+    "5": [
+     "Euclidean geometry",
+     "Measurement",
+     "Transformations and symmetry",
+     "Coordinate and vector geometry"
+    ],
+    "6": [
+     "Foundations",
+     "Triangles"
+    ],
+    "12": [
+     "Foundations of probability"
+    ],
+    "13": [
+     "Descriptive statistics"
+    ],
+    "28": [
+     "Exam skills"
+    ]
+   }
+  },
+  {
+   "id": "a-level",
+   "name": "A level Mathematics",
+   "sub": "Proof, algebra and functions, coordinate geometry, sequences, trigonometry, exponentials and logarithms, calculus, vectors, numerical methods, statistics and mechanics.",
+   "units": [
+    16,
+    3,
+    6,
+    7,
+    11,
+    19,
+    12,
+    13,
+    20,
+    28
+   ],
+   "select": {
+    "6": [
+     "Foundations",
+     "Triangles",
+     "Functions and graphs",
+     "Identities and equations"
+    ],
+    "7": [
+     "Limits and continuity",
+     "Differentiation",
+     "Applications of differentiation",
+     "Integration",
+     "Sequences and series"
+    ],
+    "11": [
+     "Vectors and vector spaces"
+    ],
+    "12": [
+     "Foundations of probability",
+     "Random variables",
+     "Discrete distributions",
+     "Continuous distributions"
+    ],
+    "13": [
+     "Sampling and estimation",
+     "Hypothesis testing",
+     "Regression and models"
+    ],
+    "16": [
+     "Proof"
+    ],
+    "19": [
+     "Roots and interpolation"
+    ],
+    "20": [
+     "Physics and engineering"
+    ],
+    "28": [
+     "Qualifications",
+     "Exam skills"
+    ]
+   }
+  },
+  {
+   "id": "further",
+   "name": "A level Further Mathematics",
+   "sub": "Complex numbers, matrices, proof by induction, further calculus and vectors, polar coordinates, hyperbolic functions, differential equations and further statistics.",
+   "units": [
+    3,
+    11,
+    16,
+    6,
+    7,
+    8,
+    10,
+    12,
+    14
+   ],
+   "select": {
+    "3": [
+     "Polynomials",
+     "Further algebra"
+    ],
+    "6": [
+     "Hyperbolic functions and Fourier series"
+    ],
+    "10": [
+     "Ordinary differential equations"
+    ],
+    "11": [
+     "Matrices",
+     "Linear maps",
+     "Eigenvalues and diagonalisation"
+    ],
+    "12": [
+     "Random variables",
+     "Discrete distributions",
+     "Continuous distributions"
+    ],
+    "14": [
+     "Counting"
+    ],
+    "16": [
+     "Proof"
+    ]
+   }
+  },
+  {
+   "id": "university-1",
+   "name": "University mathematics: first year",
+   "sub": "The bridge to degree-level maths: proof and logic, sets, calculus and analysis, linear algebra, differential equations, probability and an introduction to groups.",
+   "units": [
+    16,
+    7,
+    9,
+    11,
+    10,
+    12,
+    4
+   ],
+   "select": {
+    "4": [
+     "Groups"
+    ],
+    "9": [
+     "Real and complex analysis"
+    ],
+    "10": [
+     "Ordinary differential equations"
+    ],
+    "16": [
+     "Sets",
+     "Relations and orders",
+     "Logic",
+     "Proof"
+    ]
+   }
+  },
+  {
+   "id": "pure",
+   "name": "Pure mathematics: degree and beyond",
+   "sub": "Abstract algebra, analysis, topology, number theory, geometry, logic and foundations.",
+   "units": [
+    4,
+    9,
+    17,
+    2,
+    5,
+    16
+   ],
+   "select": null
+  },
+  {
+   "id": "applied",
+   "name": "Applied mathematics and engineering",
+   "sub": "Calculus, vector calculus, differential equations, linear algebra, numerical methods, modelling and control.",
+   "units": [
+    7,
+    8,
+    10,
+    11,
+    19,
+    20,
+    25,
+    18
+   ],
+   "select": null
+  },
+  {
+   "id": "data-science",
+   "name": "Mathematics for data science and AI",
+   "sub": "Linear algebra, probability, statistics, optimisation, time series, information theory and the mathematics of machine learning, with the software to apply it.",
+   "units": [
+    11,
+    12,
+    13,
+    18,
+    22,
+    23,
+    24,
+    27
+   ],
+   "select": {
+    "18": [
+     "Optimisation",
+     "Algorithms"
+    ],
+    "27": [
+     "Numerical and scientific programming",
+     "Statistics and data",
+     "Machine learning frameworks"
+    ]
+   }
+  },
+  {
+   "id": "finance",
+   "name": "Financial and actuarial mathematics",
+   "sub": "Interest and valuation, probability and statistics, stochastic models, risk, time series and optimisation.",
+   "units": [
+    21,
+    12,
+    13,
+    22,
+    18
+   ],
+   "select": {
+    "18": [
+     "Optimisation",
+     "Linear and integer programming"
+    ]
+   }
+  },
+  {
+   "id": "discrete",
+   "name": "Discrete mathematics and computer science",
+   "sub": "Logic, sets and proof, combinatorics, graphs and networks, number theory and cryptography, information and coding.",
+   "units": [
+    16,
+    14,
+    15,
+    2,
+    23
+   ],
+   "select": null
+  },
+  {
+   "id": "entrance",
+   "name": "University entrance tests (MAT, TMUA, STEP)",
+   "sub": "Problem solving and proof on top of A level content, for Oxford, Cambridge and other competitive courses.",
+   "units": [
+    26,
+    16,
+    3,
+    7,
+    14,
+    28
+   ],
+   "select": {
+    "7": [
+     "Differentiation",
+     "Applications of differentiation",
+     "Integration",
+     "Sequences and series"
+    ],
+    "16": [
+     "Logic",
+     "Proof"
+    ],
+    "28": [
+     "Exam skills"
+    ]
+   }
+  }
+ ],
+ "exams": [
+  {
+   "id": "gcse",
+   "title": "GCSE Mathematics practice paper",
+   "sub": "Number, algebra, ratio, geometry, probability and statistics at GCSE level.",
+   "units": null,
+   "path": "gcse",
+   "count": 30,
+   "minutes": 45,
+   "pass": 0.6,
+   "format": "science"
+  },
+  {
+   "id": "a-level",
+   "title": "A level Mathematics practice paper",
+   "sub": "Pure mathematics, statistics and mechanics-style modelling at A level.",
+   "units": null,
+   "path": "a-level",
+   "count": 30,
+   "minutes": 60,
+   "pass": 0.6,
+   "format": "science"
+  },
+  {
+   "id": "further",
+   "title": "Further Mathematics practice paper",
+   "sub": "Complex numbers, matrices, further calculus and differential equations.",
+   "units": null,
+   "path": "further",
+   "count": 25,
+   "minutes": 60,
+   "pass": 0.6,
+   "format": "science"
+  },
+  {
+   "id": "entrance",
+   "title": "University entrance test practice",
+   "sub": "Reasoning, proof and problem solving in the style of MAT, TMUA and STEP preparation.",
+   "units": null,
+   "path": "entrance",
+   "count": 20,
+   "minutes": 45,
+   "pass": 0.6,
+   "format": "science"
+  },
+  {
+   "id": "university-1",
+   "title": "First-year university mathematics",
+   "sub": "Proof, calculus, analysis, linear algebra, differential equations and probability.",
+   "units": null,
+   "path": "university-1",
+   "count": 30,
+   "minutes": 60,
+   "pass": 0.6,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every school, from everyday maths to research-level topics.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.6,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Number and Arithmetic",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "Arithmetic",
+     "module": "Number systems"
+    },
+    {
+     "id": "u01-02",
+     "title": "Order of Operations",
+     "module": "Number systems"
+    },
+    {
+     "id": "u01-03",
+     "title": "Number Systems",
+     "module": "Number systems"
+    },
+    {
+     "id": "u01-04",
+     "title": "Natural Numbers",
+     "module": "Number systems"
+    },
+    {
+     "id": "u01-05",
+     "title": "Integers",
+     "module": "Number systems"
+    },
+    {
+     "id": "u01-06",
+     "title": "Rational Numbers",
+     "module": "Number systems"
+    },
+    {
+     "id": "u01-07",
+     "title": "Irrational Numbers",
+     "module": "Number systems"
+    },
+    {
+     "id": "u01-08",
+     "title": "Real Numbers",
+     "module": "Number systems"
+    },
+    {
+     "id": "u01-09",
+     "title": "Factors and Multiples",
+     "module": "Factors and primes"
+    },
+    {
+     "id": "u01-10",
+     "title": "Divisibility",
+     "module": "Factors and primes"
+    },
+    {
+     "id": "u01-11",
+     "title": "Prime Numbers",
+     "module": "Factors and primes"
+    },
+    {
+     "id": "u01-12",
+     "title": "Composite Numbers",
+     "module": "Factors and primes"
+    },
+    {
+     "id": "u01-13",
+     "title": "Prime Factorisation",
+     "module": "Factors and primes"
+    },
+    {
+     "id": "u01-14",
+     "title": "Greatest Common Divisor (GCD)",
+     "module": "Factors and primes"
+    },
+    {
+     "id": "u01-15",
+     "title": "Least Common Multiple (LCM)",
+     "module": "Factors and primes"
+    },
+    {
+     "id": "u01-16",
+     "title": "Fractions",
+     "module": "Fractions, decimals and percentages"
+    },
+    {
+     "id": "u01-17",
+     "title": "Decimals",
+     "module": "Fractions, decimals and percentages"
+    },
+    {
+     "id": "u01-18",
+     "title": "Percentages",
+     "module": "Fractions, decimals and percentages"
+    },
+    {
+     "id": "u01-29",
+     "title": "Percentage Change and Reverse Percentages",
+     "module": "Fractions, decimals and percentages"
+    },
+    {
+     "id": "u01-19",
+     "title": "Ratios and Proportions",
+     "module": "Fractions, decimals and percentages"
+    },
+    {
+     "id": "u01-20",
+     "title": "Exponents and Powers",
+     "module": "Powers, roots and standard form"
+    },
+    {
+     "id": "u01-21",
+     "title": "Roots and Radicals",
+     "module": "Powers, roots and standard form"
+    },
+    {
+     "id": "u01-22",
+     "title": "Scientific Notation",
+     "module": "Powers, roots and standard form"
+    },
+    {
+     "id": "u01-23",
+     "title": "Rounding and Estimation",
+     "module": "Accuracy and estimation"
+    },
+    {
+     "id": "u01-24",
+     "title": "Significant Figures",
+     "module": "Accuracy and estimation"
+    },
+    {
+     "id": "u01-25",
+     "title": "Sequences of Numbers",
+     "module": "Patterns and bases"
+    },
+    {
+     "id": "u01-26",
+     "title": "Number Patterns",
+     "module": "Patterns and bases"
+    },
+    {
+     "id": "u01-27",
+     "title": "Number Bases",
+     "module": "Patterns and bases"
+    },
+    {
+     "id": "u01-28",
+     "title": "Binary Arithmetic",
+     "module": "Patterns and bases"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Number Theory and Cryptography",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Elementary Number Theory",
+     "module": "Elementary number theory"
+    },
+    {
+     "id": "u02-02",
+     "title": "Modular Arithmetic",
+     "module": "Elementary number theory"
+    },
+    {
+     "id": "u02-03",
+     "title": "Congruences",
+     "module": "Elementary number theory"
+    },
+    {
+     "id": "u02-04",
+     "title": "Euclidean Algorithm",
+     "module": "Elementary number theory"
+    },
+    {
+     "id": "u02-05",
+     "title": "Extended Euclidean Algorithm",
+     "module": "Elementary number theory"
+    },
+    {
+     "id": "u02-06",
+     "title": "Diophantine Equations",
+     "module": "Elementary number theory"
+    },
+    {
+     "id": "u02-07",
+     "title": "Divisor Functions",
+     "module": "Elementary number theory"
+    },
+    {
+     "id": "u02-08",
+     "title": "Perfect Numbers",
+     "module": "Elementary number theory"
+    },
+    {
+     "id": "u02-09",
+     "title": "Fibonacci Numbers",
+     "module": "Elementary number theory"
+    },
+    {
+     "id": "u02-10",
+     "title": "Continued Fractions",
+     "module": "Elementary number theory"
+    },
+    {
+     "id": "u02-11",
+     "title": "Prime Number Theory",
+     "module": "Elementary number theory"
+    },
+    {
+     "id": "u02-12",
+     "title": "Fermat's Little Theorem",
+     "module": "Classical theorems"
+    },
+    {
+     "id": "u02-13",
+     "title": "Euler's Totient Function",
+     "module": "Classical theorems"
+    },
+    {
+     "id": "u02-14",
+     "title": "Euler's Theorem",
+     "module": "Classical theorems"
+    },
+    {
+     "id": "u02-15",
+     "title": "Chinese Remainder Theorem",
+     "module": "Classical theorems"
+    },
+    {
+     "id": "u02-16",
+     "title": "Quadratic Residues",
+     "module": "Classical theorems"
+    },
+    {
+     "id": "u02-17",
+     "title": "Primitive Roots",
+     "module": "Classical theorems"
+    },
+    {
+     "id": "u02-18",
+     "title": "Pell's Equation",
+     "module": "Classical theorems"
+    },
+    {
+     "id": "u02-19",
+     "title": "Diophantine Approximation",
+     "module": "Classical theorems"
+    },
+    {
+     "id": "u02-20",
+     "title": "Analytic Number Theory",
+     "module": "Advanced number theory"
+    },
+    {
+     "id": "u02-21",
+     "title": "Algebraic Number Theory",
+     "module": "Advanced number theory"
+    },
+    {
+     "id": "u02-22",
+     "title": "Computational Number Theory",
+     "module": "Advanced number theory"
+    },
+    {
+     "id": "u02-23",
+     "title": "Elliptic Curves",
+     "module": "Advanced number theory"
+    },
+    {
+     "id": "u02-24",
+     "title": "Arithmetic Geometry",
+     "module": "Advanced number theory"
+    },
+    {
+     "id": "u02-25",
+     "title": "Cryptography",
+     "module": "Cryptography"
+    },
+    {
+     "id": "u02-26",
+     "title": "Public-Key Cryptography",
+     "module": "Cryptography"
+    },
+    {
+     "id": "u02-27",
+     "title": "Modular Exponentiation",
+     "module": "Cryptography"
+    },
+    {
+     "id": "u02-28",
+     "title": "RSA Cryptography",
+     "module": "Cryptography"
+    },
+    {
+     "id": "u02-29",
+     "title": "Discrete Logarithm Problem",
+     "module": "Cryptography"
+    },
+    {
+     "id": "u02-30",
+     "title": "Elliptic Curve Cryptography",
+     "module": "Cryptography"
+    },
+    {
+     "id": "u02-31",
+     "title": "Cryptographic Hash Functions",
+     "module": "Cryptography"
+    },
+    {
+     "id": "u02-32",
+     "title": "Primality Testing",
+     "module": "Cryptography"
+    },
+    {
+     "id": "u02-33",
+     "title": "Integer Factorisation",
+     "module": "Cryptography"
+    },
+    {
+     "id": "u02-34",
+     "title": "Prime Factorisation Algorithms",
+     "module": "Cryptography"
+    },
+    {
+     "id": "u02-35",
+     "title": "Lattice-Based Cryptography",
+     "module": "Cryptography"
+    },
+    {
+     "id": "u02-36",
+     "title": "Post-Quantum Cryptography",
+     "module": "Cryptography"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Algebra",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Basic Algebra",
+     "module": "Foundations"
+    },
+    {
+     "id": "u03-02",
+     "title": "Elementary Algebra",
+     "module": "Foundations"
+    },
+    {
+     "id": "u03-03",
+     "title": "Algebraic Expressions",
+     "module": "Foundations"
+    },
+    {
+     "id": "u03-04",
+     "title": "Simplifying Expressions",
+     "module": "Foundations"
+    },
+    {
+     "id": "u03-05",
+     "title": "Expanding Brackets",
+     "module": "Foundations"
+    },
+    {
+     "id": "u03-06",
+     "title": "Factorisation",
+     "module": "Foundations"
+    },
+    {
+     "id": "u03-07",
+     "title": "Algebraic Manipulation",
+     "module": "Foundations"
+    },
+    {
+     "id": "u03-08",
+     "title": "Algebraic Fractions",
+     "module": "Foundations"
+    },
+    {
+     "id": "u03-09",
+     "title": "Linear Equations",
+     "module": "Equations and inequalities"
+    },
+    {
+     "id": "u03-10",
+     "title": "Simultaneous Equations",
+     "module": "Equations and inequalities"
+    },
+    {
+     "id": "u03-11",
+     "title": "Quadratic Equations",
+     "module": "Equations and inequalities"
+    },
+    {
+     "id": "u03-12",
+     "title": "Completing the Square",
+     "module": "Equations and inequalities"
+    },
+    {
+     "id": "u03-13",
+     "title": "The Quadratic Formula",
+     "module": "Equations and inequalities"
+    },
+    {
+     "id": "u03-14",
+     "title": "Cubic Equations",
+     "module": "Equations and inequalities"
+    },
+    {
+     "id": "u03-15",
+     "title": "Polynomial Equations",
+     "module": "Equations and inequalities"
+    },
+    {
+     "id": "u03-16",
+     "title": "Inequalities",
+     "module": "Equations and inequalities"
+    },
+    {
+     "id": "u03-17",
+     "title": "Simultaneous Inequalities",
+     "module": "Equations and inequalities"
+    },
+    {
+     "id": "u03-18",
+     "title": "Absolute Value Equations",
+     "module": "Equations and inequalities"
+    },
+    {
+     "id": "u03-19",
+     "title": "Rational Equations",
+     "module": "Equations and inequalities"
+    },
+    {
+     "id": "u03-20",
+     "title": "Surds",
+     "module": "Surds, exponentials and logarithms"
+    },
+    {
+     "id": "u03-21",
+     "title": "Logarithms",
+     "module": "Surds, exponentials and logarithms"
+    },
+    {
+     "id": "u03-22",
+     "title": "Exponential Equations",
+     "module": "Surds, exponentials and logarithms"
+    },
+    {
+     "id": "u03-23",
+     "title": "Logarithmic Equations",
+     "module": "Surds, exponentials and logarithms"
+    },
+    {
+     "id": "u03-24",
+     "title": "Polynomials",
+     "module": "Polynomials"
+    },
+    {
+     "id": "u03-25",
+     "title": "Polynomial Algebra",
+     "module": "Polynomials"
+    },
+    {
+     "id": "u03-26",
+     "title": "Polynomial Division",
+     "module": "Polynomials"
+    },
+    {
+     "id": "u03-27",
+     "title": "Remainder Theorem",
+     "module": "Polynomials"
+    },
+    {
+     "id": "u03-28",
+     "title": "Factor Theorem",
+     "module": "Polynomials"
+    },
+    {
+     "id": "u03-29",
+     "title": "Roots of Polynomials",
+     "module": "Polynomials"
+    },
+    {
+     "id": "u03-30",
+     "title": "Vieta's Formulas",
+     "module": "Polynomials"
+    },
+    {
+     "id": "u03-31",
+     "title": "Symmetric Polynomials",
+     "module": "Polynomials"
+    },
+    {
+     "id": "u03-32",
+     "title": "Partial Fractions",
+     "module": "Polynomials"
+    },
+    {
+     "id": "u03-33",
+     "title": "Functions",
+     "module": "Functions"
+    },
+    {
+     "id": "u03-34",
+     "title": "Domain and Range",
+     "module": "Functions"
+    },
+    {
+     "id": "u03-35",
+     "title": "Composite Functions",
+     "module": "Functions"
+    },
+    {
+     "id": "u03-36",
+     "title": "Inverse Functions",
+     "module": "Functions"
+    },
+    {
+     "id": "u03-37",
+     "title": "Transformations of Functions",
+     "module": "Functions"
+    },
+    {
+     "id": "u03-38",
+     "title": "Piecewise Functions",
+     "module": "Functions"
+    },
+    {
+     "id": "u03-39",
+     "title": "Parametric Equations",
+     "module": "Functions"
+    },
+    {
+     "id": "u03-40",
+     "title": "Implicit Equations",
+     "module": "Functions"
+    },
+    {
+     "id": "u03-41",
+     "title": "Recurrence Relations",
+     "module": "Functions"
+    },
+    {
+     "id": "u03-42",
+     "title": "Intermediate Algebra",
+     "module": "Further algebra"
+    },
+    {
+     "id": "u03-43",
+     "title": "Advanced Algebra",
+     "module": "Further algebra"
+    },
+    {
+     "id": "u03-44",
+     "title": "Complex Numbers",
+     "module": "Further algebra"
+    },
+    {
+     "id": "u03-45",
+     "title": "Boolean Algebra",
+     "module": "Further algebra"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Abstract Algebra",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Abstract Algebra",
+     "module": "Groups"
+    },
+    {
+     "id": "u04-02",
+     "title": "Algebraic Structures",
+     "module": "Groups"
+    },
+    {
+     "id": "u04-03",
+     "title": "Group Theory",
+     "module": "Groups"
+    },
+    {
+     "id": "u04-04",
+     "title": "Homomorphisms",
+     "module": "Groups"
+    },
+    {
+     "id": "u04-05",
+     "title": "Isomorphisms",
+     "module": "Groups"
+    },
+    {
+     "id": "u04-06",
+     "title": "Automorphisms",
+     "module": "Groups"
+    },
+    {
+     "id": "u04-07",
+     "title": "Quotient Structures",
+     "module": "Groups"
+    },
+    {
+     "id": "u04-08",
+     "title": "Direct Products",
+     "module": "Groups"
+    },
+    {
+     "id": "u04-09",
+     "title": "Free Groups",
+     "module": "Groups"
+    },
+    {
+     "id": "u04-10",
+     "title": "Ring Theory",
+     "module": "Rings, fields and modules"
+    },
+    {
+     "id": "u04-11",
+     "title": "Field Theory",
+     "module": "Rings, fields and modules"
+    },
+    {
+     "id": "u04-12",
+     "title": "Modules",
+     "module": "Rings, fields and modules"
+    },
+    {
+     "id": "u04-13",
+     "title": "Algebras",
+     "module": "Rings, fields and modules"
+    },
+    {
+     "id": "u04-14",
+     "title": "Commutative Algebra",
+     "module": "Rings, fields and modules"
+    },
+    {
+     "id": "u04-15",
+     "title": "Galois Theory",
+     "module": "Rings, fields and modules"
+    },
+    {
+     "id": "u04-16",
+     "title": "Homological Algebra",
+     "module": "Rings, fields and modules"
+    },
+    {
+     "id": "u04-17",
+     "title": "Universal Algebra",
+     "module": "Rings, fields and modules"
+    },
+    {
+     "id": "u04-18",
+     "title": "Representation Theory",
+     "module": "Representations and Lie theory"
+    },
+    {
+     "id": "u04-19",
+     "title": "Group Representations",
+     "module": "Representations and Lie theory"
+    },
+    {
+     "id": "u04-20",
+     "title": "Ring Representations",
+     "module": "Representations and Lie theory"
+    },
+    {
+     "id": "u04-21",
+     "title": "Lie Groups",
+     "module": "Representations and Lie theory"
+    },
+    {
+     "id": "u04-22",
+     "title": "Lie Algebras",
+     "module": "Representations and Lie theory"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Geometry",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Euclidean Geometry",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-02",
+     "title": "Plane Geometry",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-03",
+     "title": "Points, Lines and Planes",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-04",
+     "title": "Angles",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-05",
+     "title": "Parallel and Perpendicular Lines",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-06",
+     "title": "Triangles",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-07",
+     "title": "Congruence and Similarity",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-08",
+     "title": "Quadrilaterals",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-09",
+     "title": "Polygons",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-10",
+     "title": "Pythagorean Theorem",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-11",
+     "title": "Circles",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-12",
+     "title": "Chords and Tangents",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-13",
+     "title": "Circle Theorems",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-14",
+     "title": "Constructions",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-15",
+     "title": "Loci",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-16",
+     "title": "Bearings",
+     "module": "Euclidean geometry"
+    },
+    {
+     "id": "u05-17",
+     "title": "Perimeter",
+     "module": "Measurement"
+    },
+    {
+     "id": "u05-18",
+     "title": "Area",
+     "module": "Measurement"
+    },
+    {
+     "id": "u05-19",
+     "title": "Arc Length",
+     "module": "Measurement"
+    },
+    {
+     "id": "u05-20",
+     "title": "Solid Geometry",
+     "module": "Measurement"
+    },
+    {
+     "id": "u05-21",
+     "title": "Polyhedra",
+     "module": "Measurement"
+    },
+    {
+     "id": "u05-22",
+     "title": "Surface Area",
+     "module": "Measurement"
+    },
+    {
+     "id": "u05-23",
+     "title": "Volume",
+     "module": "Measurement"
+    },
+    {
+     "id": "u05-24",
+     "title": "Geometric Transformations",
+     "module": "Transformations and symmetry"
+    },
+    {
+     "id": "u05-25",
+     "title": "Transformations and Symmetry",
+     "module": "Transformations and symmetry"
+    },
+    {
+     "id": "u05-26",
+     "title": "Tessellations",
+     "module": "Transformations and symmetry"
+    },
+    {
+     "id": "u05-27",
+     "title": "Coordinate Geometry",
+     "module": "Coordinate and vector geometry"
+    },
+    {
+     "id": "u05-28",
+     "title": "Analytic Geometry",
+     "module": "Coordinate and vector geometry"
+    },
+    {
+     "id": "u05-29",
+     "title": "Vectors in Geometry",
+     "module": "Coordinate and vector geometry"
+    },
+    {
+     "id": "u05-30",
+     "title": "3D Coordinate Geometry",
+     "module": "Coordinate and vector geometry"
+    },
+    {
+     "id": "u05-31",
+     "title": "Conic Sections",
+     "module": "Coordinate and vector geometry"
+    },
+    {
+     "id": "u05-32",
+     "title": "Parabolas",
+     "module": "Coordinate and vector geometry"
+    },
+    {
+     "id": "u05-33",
+     "title": "Ellipses",
+     "module": "Coordinate and vector geometry"
+    },
+    {
+     "id": "u05-34",
+     "title": "Hyperbolas",
+     "module": "Coordinate and vector geometry"
+    },
+    {
+     "id": "u05-35",
+     "title": "Non-Euclidean Geometry",
+     "module": "Further geometries"
+    },
+    {
+     "id": "u05-36",
+     "title": "Spherical Geometry",
+     "module": "Further geometries"
+    },
+    {
+     "id": "u05-37",
+     "title": "Hyperbolic Geometry",
+     "module": "Further geometries"
+    },
+    {
+     "id": "u05-38",
+     "title": "Affine Geometry",
+     "module": "Further geometries"
+    },
+    {
+     "id": "u05-39",
+     "title": "Projective Geometry",
+     "module": "Further geometries"
+    },
+    {
+     "id": "u05-40",
+     "title": "Fractal Geometry",
+     "module": "Further geometries"
+    },
+    {
+     "id": "u05-41",
+     "title": "Discrete Geometry",
+     "module": "Further geometries"
+    },
+    {
+     "id": "u05-42",
+     "title": "Convex Geometry",
+     "module": "Further geometries"
+    },
+    {
+     "id": "u05-43",
+     "title": "Computational Geometry",
+     "module": "Further geometries"
+    },
+    {
+     "id": "u05-44",
+     "title": "Integral Geometry",
+     "module": "Further geometries"
+    },
+    {
+     "id": "u05-45",
+     "title": "Differential Geometry",
+     "module": "Further geometries"
+    },
+    {
+     "id": "u05-46",
+     "title": "Riemannian Geometry",
+     "module": "Further geometries"
+    },
+    {
+     "id": "u05-47",
+     "title": "Symplectic Geometry",
+     "module": "Further geometries"
+    },
+    {
+     "id": "u05-48",
+     "title": "Algebraic Geometry",
+     "module": "Further geometries"
+    },
+    {
+     "id": "u05-49",
+     "title": "Topological Geometry",
+     "module": "Further geometries"
+    },
+    {
+     "id": "u05-50",
+     "title": "Knot Theory",
+     "module": "Further geometries"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Trigonometry",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Basic Trigonometry",
+     "module": "Foundations"
+    },
+    {
+     "id": "u06-02",
+     "title": "Trigonometric Ratios",
+     "module": "Foundations"
+    },
+    {
+     "id": "u06-03",
+     "title": "Sine",
+     "module": "Foundations"
+    },
+    {
+     "id": "u06-04",
+     "title": "Cosine",
+     "module": "Foundations"
+    },
+    {
+     "id": "u06-05",
+     "title": "Tangent",
+     "module": "Foundations"
+    },
+    {
+     "id": "u06-06",
+     "title": "Radians and Degrees",
+     "module": "Foundations"
+    },
+    {
+     "id": "u06-07",
+     "title": "Unit Circle",
+     "module": "Foundations"
+    },
+    {
+     "id": "u06-08",
+     "title": "Trigonometric Geometry",
+     "module": "Foundations"
+    },
+    {
+     "id": "u06-09",
+     "title": "Sine Rule",
+     "module": "Triangles"
+    },
+    {
+     "id": "u06-10",
+     "title": "Cosine Rule",
+     "module": "Triangles"
+    },
+    {
+     "id": "u06-11",
+     "title": "Area of a Triangle",
+     "module": "Triangles"
+    },
+    {
+     "id": "u06-12",
+     "title": "Spherical Trigonometry",
+     "module": "Triangles"
+    },
+    {
+     "id": "u06-13",
+     "title": "Trigonometric Graphs",
+     "module": "Functions and graphs"
+    },
+    {
+     "id": "u06-14",
+     "title": "Periodic Functions",
+     "module": "Functions and graphs"
+    },
+    {
+     "id": "u06-15",
+     "title": "Cosecant",
+     "module": "Functions and graphs"
+    },
+    {
+     "id": "u06-16",
+     "title": "Secant",
+     "module": "Functions and graphs"
+    },
+    {
+     "id": "u06-17",
+     "title": "Cotangent",
+     "module": "Functions and graphs"
+    },
+    {
+     "id": "u06-18",
+     "title": "Inverse Trigonometric Functions",
+     "module": "Functions and graphs"
+    },
+    {
+     "id": "u06-19",
+     "title": "Sinusoidal Modelling",
+     "module": "Functions and graphs"
+    },
+    {
+     "id": "u06-20",
+     "title": "Harmonic Functions",
+     "module": "Functions and graphs"
+    },
+    {
+     "id": "u06-21",
+     "title": "Trigonometric Identities",
+     "module": "Identities and equations"
+    },
+    {
+     "id": "u06-22",
+     "title": "Compound Angle Formulas",
+     "module": "Identities and equations"
+    },
+    {
+     "id": "u06-23",
+     "title": "Double Angle Formulas",
+     "module": "Identities and equations"
+    },
+    {
+     "id": "u06-24",
+     "title": "Half Angle Formulas",
+     "module": "Identities and equations"
+    },
+    {
+     "id": "u06-25",
+     "title": "Trigonometric Equations",
+     "module": "Identities and equations"
+    },
+    {
+     "id": "u06-26",
+     "title": "Trigonometric Inequalities",
+     "module": "Identities and equations"
+    },
+    {
+     "id": "u06-27",
+     "title": "Hyperbolic Functions",
+     "module": "Hyperbolic functions and Fourier series"
+    },
+    {
+     "id": "u06-28",
+     "title": "Inverse Hyperbolic Functions",
+     "module": "Hyperbolic functions and Fourier series"
+    },
+    {
+     "id": "u06-29",
+     "title": "Fourier Series",
+     "module": "Hyperbolic functions and Fourier series"
+    },
+    {
+     "id": "u06-30",
+     "title": "Fourier Analysis",
+     "module": "Hyperbolic functions and Fourier series"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Calculus",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Precalculus",
+     "module": "Limits and continuity"
+    },
+    {
+     "id": "u07-02",
+     "title": "Infinitesimal Calculus",
+     "module": "Limits and continuity"
+    },
+    {
+     "id": "u07-03",
+     "title": "Limits",
+     "module": "Limits and continuity"
+    },
+    {
+     "id": "u07-04",
+     "title": "Continuity",
+     "module": "Limits and continuity"
+    },
+    {
+     "id": "u07-05",
+     "title": "Differentiability",
+     "module": "Limits and continuity"
+    },
+    {
+     "id": "u07-06",
+     "title": "Differential Calculus",
+     "module": "Differentiation"
+    },
+    {
+     "id": "u07-07",
+     "title": "Derivatives",
+     "module": "Differentiation"
+    },
+    {
+     "id": "u07-08",
+     "title": "First Derivatives",
+     "module": "Differentiation"
+    },
+    {
+     "id": "u07-09",
+     "title": "Higher-Order Derivatives",
+     "module": "Differentiation"
+    },
+    {
+     "id": "u07-10",
+     "title": "Chain Rule",
+     "module": "Differentiation"
+    },
+    {
+     "id": "u07-11",
+     "title": "Product Rule",
+     "module": "Differentiation"
+    },
+    {
+     "id": "u07-12",
+     "title": "Quotient Rule",
+     "module": "Differentiation"
+    },
+    {
+     "id": "u07-13",
+     "title": "Implicit Differentiation",
+     "module": "Differentiation"
+    },
+    {
+     "id": "u07-14",
+     "title": "Logarithmic Differentiation",
+     "module": "Differentiation"
+    },
+    {
+     "id": "u07-15",
+     "title": "Parametric Differentiation",
+     "module": "Differentiation"
+    },
+    {
+     "id": "u07-16",
+     "title": "Rates of Change",
+     "module": "Differentiation"
+    },
+    {
+     "id": "u07-17",
+     "title": "Related Rates",
+     "module": "Differentiation"
+    },
+    {
+     "id": "u07-18",
+     "title": "L'Hôpital's Rule",
+     "module": "Differentiation"
+    },
+    {
+     "id": "u07-19",
+     "title": "Stationary Points",
+     "module": "Applications of differentiation"
+    },
+    {
+     "id": "u07-20",
+     "title": "Critical Points",
+     "module": "Applications of differentiation"
+    },
+    {
+     "id": "u07-21",
+     "title": "Local Maxima and Minima",
+     "module": "Applications of differentiation"
+    },
+    {
+     "id": "u07-22",
+     "title": "Global Optimisation",
+     "module": "Applications of differentiation"
+    },
+    {
+     "id": "u07-23",
+     "title": "Concavity and Convexity",
+     "module": "Applications of differentiation"
+    },
+    {
+     "id": "u07-24",
+     "title": "Points of Inflection",
+     "module": "Applications of differentiation"
+    },
+    {
+     "id": "u07-25",
+     "title": "Curve Sketching",
+     "module": "Applications of differentiation"
+    },
+    {
+     "id": "u07-26",
+     "title": "Integral Calculus",
+     "module": "Integration"
+    },
+    {
+     "id": "u07-27",
+     "title": "Indefinite Integrals",
+     "module": "Integration"
+    },
+    {
+     "id": "u07-28",
+     "title": "Riemann Sums",
+     "module": "Integration"
+    },
+    {
+     "id": "u07-29",
+     "title": "Definite Integrals",
+     "module": "Integration"
+    },
+    {
+     "id": "u07-30",
+     "title": "Fundamental Theorem of Calculus",
+     "module": "Integration"
+    },
+    {
+     "id": "u07-31",
+     "title": "Integration by Substitution",
+     "module": "Integration"
+    },
+    {
+     "id": "u07-32",
+     "title": "Integration by Parts",
+     "module": "Integration"
+    },
+    {
+     "id": "u07-33",
+     "title": "Partial Fraction Integration",
+     "module": "Integration"
+    },
+    {
+     "id": "u07-34",
+     "title": "Trigonometric Integration",
+     "module": "Integration"
+    },
+    {
+     "id": "u07-35",
+     "title": "Improper Integrals",
+     "module": "Integration"
+    },
+    {
+     "id": "u07-36",
+     "title": "Numerical Integration",
+     "module": "Integration"
+    },
+    {
+     "id": "u07-37",
+     "title": "Arc Length and Surface Area",
+     "module": "Integration"
+    },
+    {
+     "id": "u07-38",
+     "title": "Volumes of Revolution",
+     "module": "Integration"
+    },
+    {
+     "id": "u07-39",
+     "title": "Sequences and Series",
+     "module": "Sequences and series"
+    },
+    {
+     "id": "u07-40",
+     "title": "Infinite Series",
+     "module": "Sequences and series"
+    },
+    {
+     "id": "u07-41",
+     "title": "Convergence and Divergence",
+     "module": "Sequences and series"
+    },
+    {
+     "id": "u07-42",
+     "title": "Power Series",
+     "module": "Sequences and series"
+    },
+    {
+     "id": "u07-43",
+     "title": "Taylor Series",
+     "module": "Sequences and series"
+    },
+    {
+     "id": "u07-44",
+     "title": "Maclaurin Series",
+     "module": "Sequences and series"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Multivariable and Vector Calculus",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Multivariable Calculus",
+     "module": "Multivariable calculus"
+    },
+    {
+     "id": "u08-02",
+     "title": "Directional Derivatives",
+     "module": "Multivariable calculus"
+    },
+    {
+     "id": "u08-03",
+     "title": "Gradient",
+     "module": "Multivariable calculus"
+    },
+    {
+     "id": "u08-04",
+     "title": "Multiple Integrals",
+     "module": "Multivariable calculus"
+    },
+    {
+     "id": "u08-05",
+     "title": "Double Integrals",
+     "module": "Multivariable calculus"
+    },
+    {
+     "id": "u08-06",
+     "title": "Triple Integrals",
+     "module": "Multivariable calculus"
+    },
+    {
+     "id": "u08-07",
+     "title": "Jacobians",
+     "module": "Multivariable calculus"
+    },
+    {
+     "id": "u08-08",
+     "title": "Change of Variables",
+     "module": "Multivariable calculus"
+    },
+    {
+     "id": "u08-09",
+     "title": "Vector Calculus",
+     "module": "Vector calculus"
+    },
+    {
+     "id": "u08-10",
+     "title": "Divergence",
+     "module": "Vector calculus"
+    },
+    {
+     "id": "u08-11",
+     "title": "Curl",
+     "module": "Vector calculus"
+    },
+    {
+     "id": "u08-12",
+     "title": "Laplacian Operator",
+     "module": "Vector calculus"
+    },
+    {
+     "id": "u08-13",
+     "title": "Line Integrals",
+     "module": "Vector calculus"
+    },
+    {
+     "id": "u08-14",
+     "title": "Surface Integrals",
+     "module": "Vector calculus"
+    },
+    {
+     "id": "u08-15",
+     "title": "Volume Integrals",
+     "module": "Vector calculus"
+    },
+    {
+     "id": "u08-16",
+     "title": "Green's Theorem",
+     "module": "Vector calculus"
+    },
+    {
+     "id": "u08-17",
+     "title": "Stokes' Theorem",
+     "module": "Vector calculus"
+    },
+    {
+     "id": "u08-18",
+     "title": "Divergence Theorem",
+     "module": "Vector calculus"
+    },
+    {
+     "id": "u08-19",
+     "title": "Matrix Calculus",
+     "module": "Further calculus"
+    },
+    {
+     "id": "u08-20",
+     "title": "Tensor Calculus",
+     "module": "Further calculus"
+    },
+    {
+     "id": "u08-21",
+     "title": "Calculus of Variations",
+     "module": "Further calculus"
+    },
+    {
+     "id": "u08-22",
+     "title": "Fractional Calculus",
+     "module": "Further calculus"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Analysis",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Real Analysis",
+     "module": "Real and complex analysis"
+    },
+    {
+     "id": "u09-02",
+     "title": "Complex Analysis",
+     "module": "Real and complex analysis"
+    },
+    {
+     "id": "u09-03",
+     "title": "Harmonic Analysis",
+     "module": "Real and complex analysis"
+    },
+    {
+     "id": "u09-04",
+     "title": "Measure Theory",
+     "module": "Real and complex analysis"
+    },
+    {
+     "id": "u09-05",
+     "title": "Lebesgue Integration",
+     "module": "Real and complex analysis"
+    },
+    {
+     "id": "u09-06",
+     "title": "Distribution Theory",
+     "module": "Real and complex analysis"
+    },
+    {
+     "id": "u09-07",
+     "title": "Functional Analysis",
+     "module": "Functional analysis"
+    },
+    {
+     "id": "u09-08",
+     "title": "Banach Spaces",
+     "module": "Functional analysis"
+    },
+    {
+     "id": "u09-09",
+     "title": "Hilbert Spaces",
+     "module": "Functional analysis"
+    },
+    {
+     "id": "u09-10",
+     "title": "Operator Theory",
+     "module": "Functional analysis"
+    },
+    {
+     "id": "u09-11",
+     "title": "Spectral Theory",
+     "module": "Functional analysis"
+    },
+    {
+     "id": "u09-12",
+     "title": "Banach Algebras",
+     "module": "Functional analysis"
+    },
+    {
+     "id": "u09-13",
+     "title": "C*-Algebras",
+     "module": "Functional analysis"
+    },
+    {
+     "id": "u09-14",
+     "title": "Operator Algebras",
+     "module": "Functional analysis"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Differential Equations",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Ordinary Differential Equations (ODEs)",
+     "module": "Ordinary differential equations"
+    },
+    {
+     "id": "u10-02",
+     "title": "First-Order Differential Equations",
+     "module": "Ordinary differential equations"
+    },
+    {
+     "id": "u10-03",
+     "title": "Separable Differential Equations",
+     "module": "Ordinary differential equations"
+    },
+    {
+     "id": "u10-04",
+     "title": "Linear Differential Equations",
+     "module": "Ordinary differential equations"
+    },
+    {
+     "id": "u10-05",
+     "title": "Exact Differential Equations",
+     "module": "Ordinary differential equations"
+    },
+    {
+     "id": "u10-06",
+     "title": "Homogeneous Differential Equations",
+     "module": "Ordinary differential equations"
+    },
+    {
+     "id": "u10-07",
+     "title": "Bernoulli Equations",
+     "module": "Ordinary differential equations"
+    },
+    {
+     "id": "u10-08",
+     "title": "Second-Order Differential Equations",
+     "module": "Ordinary differential equations"
+    },
+    {
+     "id": "u10-09",
+     "title": "Higher-Order Differential Equations",
+     "module": "Ordinary differential equations"
+    },
+    {
+     "id": "u10-10",
+     "title": "Nonlinear Differential Equations",
+     "module": "Ordinary differential equations"
+    },
+    {
+     "id": "u10-11",
+     "title": "Autonomous Differential Equations",
+     "module": "Ordinary differential equations"
+    },
+    {
+     "id": "u10-12",
+     "title": "Systems of Differential Equations",
+     "module": "Ordinary differential equations"
+    },
+    {
+     "id": "u10-13",
+     "title": "Initial Value Problems",
+     "module": "Ordinary differential equations"
+    },
+    {
+     "id": "u10-14",
+     "title": "Boundary Value Problems",
+     "module": "Ordinary differential equations"
+    },
+    {
+     "id": "u10-15",
+     "title": "Laplace Transforms",
+     "module": "Transform and analytical methods"
+    },
+    {
+     "id": "u10-16",
+     "title": "Inverse Laplace Transforms",
+     "module": "Transform and analytical methods"
+    },
+    {
+     "id": "u10-17",
+     "title": "Fourier Transform Methods",
+     "module": "Transform and analytical methods"
+    },
+    {
+     "id": "u10-18",
+     "title": "Green's Functions",
+     "module": "Transform and analytical methods"
+    },
+    {
+     "id": "u10-19",
+     "title": "Sturm–Liouville Theory",
+     "module": "Transform and analytical methods"
+    },
+    {
+     "id": "u10-20",
+     "title": "Partial Differential Equations (PDEs)",
+     "module": "Partial differential equations"
+    },
+    {
+     "id": "u10-21",
+     "title": "Heat Equation",
+     "module": "Partial differential equations"
+    },
+    {
+     "id": "u10-22",
+     "title": "Wave Equation",
+     "module": "Partial differential equations"
+    },
+    {
+     "id": "u10-23",
+     "title": "Laplace Equation",
+     "module": "Partial differential equations"
+    },
+    {
+     "id": "u10-24",
+     "title": "Poisson Equation",
+     "module": "Partial differential equations"
+    },
+    {
+     "id": "u10-25",
+     "title": "Diffusion Equations",
+     "module": "Partial differential equations"
+    },
+    {
+     "id": "u10-26",
+     "title": "Reaction-Diffusion Equations",
+     "module": "Partial differential equations"
+    },
+    {
+     "id": "u10-27",
+     "title": "Transport Equations",
+     "module": "Partial differential equations"
+    },
+    {
+     "id": "u10-28",
+     "title": "Advection Equations",
+     "module": "Partial differential equations"
+    },
+    {
+     "id": "u10-29",
+     "title": "Fluid Dynamics Equations",
+     "module": "Partial differential equations"
+    },
+    {
+     "id": "u10-30",
+     "title": "Navier–Stokes Equations",
+     "module": "Partial differential equations"
+    },
+    {
+     "id": "u10-31",
+     "title": "Maxwell's Equations",
+     "module": "Partial differential equations"
+    },
+    {
+     "id": "u10-32",
+     "title": "Schrödinger Equation",
+     "module": "Partial differential equations"
+    },
+    {
+     "id": "u10-33",
+     "title": "Numerical Solutions of ODEs",
+     "module": "Numerical solutions"
+    },
+    {
+     "id": "u10-34",
+     "title": "Numerical Solutions of PDEs",
+     "module": "Numerical solutions"
+    },
+    {
+     "id": "u10-35",
+     "title": "Finite Difference Methods",
+     "module": "Numerical solutions"
+    },
+    {
+     "id": "u10-36",
+     "title": "Finite Element Methods",
+     "module": "Numerical solutions"
+    },
+    {
+     "id": "u10-37",
+     "title": "Finite Volume Methods",
+     "module": "Numerical solutions"
+    },
+    {
+     "id": "u10-38",
+     "title": "Spectral Methods",
+     "module": "Numerical solutions"
+    },
+    {
+     "id": "u10-39",
+     "title": "Dynamical Systems",
+     "module": "Dynamical systems"
+    },
+    {
+     "id": "u10-40",
+     "title": "Stability Analysis",
+     "module": "Dynamical systems"
+    },
+    {
+     "id": "u10-41",
+     "title": "Bifurcation Theory",
+     "module": "Dynamical systems"
+    },
+    {
+     "id": "u10-42",
+     "title": "Chaos Theory",
+     "module": "Dynamical systems"
+    },
+    {
+     "id": "u10-43",
+     "title": "Solitons",
+     "module": "Dynamical systems"
+    },
+    {
+     "id": "u10-44",
+     "title": "Delay Differential Equations",
+     "module": "Dynamical systems"
+    },
+    {
+     "id": "u10-45",
+     "title": "Stochastic Differential Equations",
+     "module": "Dynamical systems"
+    },
+    {
+     "id": "u10-46",
+     "title": "Fractional Differential Equations",
+     "module": "Dynamical systems"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Linear Algebra and Matrices",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Vectors",
+     "module": "Vectors and vector spaces"
+    },
+    {
+     "id": "u11-02",
+     "title": "Vector Algebra",
+     "module": "Vectors and vector spaces"
+    },
+    {
+     "id": "u11-03",
+     "title": "Vector Spaces",
+     "module": "Vectors and vector spaces"
+    },
+    {
+     "id": "u11-04",
+     "title": "Subspaces",
+     "module": "Vectors and vector spaces"
+    },
+    {
+     "id": "u11-05",
+     "title": "Linear Combinations",
+     "module": "Vectors and vector spaces"
+    },
+    {
+     "id": "u11-06",
+     "title": "Span",
+     "module": "Vectors and vector spaces"
+    },
+    {
+     "id": "u11-07",
+     "title": "Linear Independence",
+     "module": "Vectors and vector spaces"
+    },
+    {
+     "id": "u11-08",
+     "title": "Basis and Dimension",
+     "module": "Vectors and vector spaces"
+    },
+    {
+     "id": "u11-09",
+     "title": "Matrices",
+     "module": "Matrices"
+    },
+    {
+     "id": "u11-10",
+     "title": "Matrix Algebra",
+     "module": "Matrices"
+    },
+    {
+     "id": "u11-11",
+     "title": "Matrix Operations",
+     "module": "Matrices"
+    },
+    {
+     "id": "u11-12",
+     "title": "Matrix Multiplication",
+     "module": "Matrices"
+    },
+    {
+     "id": "u11-13",
+     "title": "Matrix Transposition",
+     "module": "Matrices"
+    },
+    {
+     "id": "u11-14",
+     "title": "Matrix Inversion",
+     "module": "Matrices"
+    },
+    {
+     "id": "u11-15",
+     "title": "Determinants",
+     "module": "Matrices"
+    },
+    {
+     "id": "u11-16",
+     "title": "Rank of a Matrix",
+     "module": "Matrices"
+    },
+    {
+     "id": "u11-17",
+     "title": "Column Space",
+     "module": "Matrices"
+    },
+    {
+     "id": "u11-18",
+     "title": "Row Space",
+     "module": "Matrices"
+    },
+    {
+     "id": "u11-19",
+     "title": "Null Space",
+     "module": "Matrices"
+    },
+    {
+     "id": "u11-20",
+     "title": "Systems of Linear Equations",
+     "module": "Matrices"
+    },
+    {
+     "id": "u11-21",
+     "title": "Linear Transformations",
+     "module": "Linear maps"
+    },
+    {
+     "id": "u11-22",
+     "title": "Change of Basis",
+     "module": "Linear maps"
+    },
+    {
+     "id": "u11-23",
+     "title": "Similarity Transformations",
+     "module": "Linear maps"
+    },
+    {
+     "id": "u11-24",
+     "title": "Eigenvalues",
+     "module": "Eigenvalues and diagonalisation"
+    },
+    {
+     "id": "u11-25",
+     "title": "Eigenvectors",
+     "module": "Eigenvalues and diagonalisation"
+    },
+    {
+     "id": "u11-26",
+     "title": "Eigenspaces",
+     "module": "Eigenvalues and diagonalisation"
+    },
+    {
+     "id": "u11-27",
+     "title": "Characteristic Polynomials",
+     "module": "Eigenvalues and diagonalisation"
+    },
+    {
+     "id": "u11-28",
+     "title": "Diagonalisation",
+     "module": "Eigenvalues and diagonalisation"
+    },
+    {
+     "id": "u11-29",
+     "title": "Jordan Normal Form",
+     "module": "Eigenvalues and diagonalisation"
+    },
+    {
+     "id": "u11-30",
+     "title": "Symmetric Matrices",
+     "module": "Eigenvalues and diagonalisation"
+    },
+    {
+     "id": "u11-31",
+     "title": "Hermitian Matrices",
+     "module": "Eigenvalues and diagonalisation"
+    },
+    {
+     "id": "u11-32",
+     "title": "Positive Definite Matrices",
+     "module": "Eigenvalues and diagonalisation"
+    },
+    {
+     "id": "u11-33",
+     "title": "Inner Product Spaces",
+     "module": "Orthogonality"
+    },
+    {
+     "id": "u11-34",
+     "title": "Norms",
+     "module": "Orthogonality"
+    },
+    {
+     "id": "u11-35",
+     "title": "Orthogonality",
+     "module": "Orthogonality"
+    },
+    {
+     "id": "u11-36",
+     "title": "Orthogonal Projections",
+     "module": "Orthogonality"
+    },
+    {
+     "id": "u11-37",
+     "title": "Gram–Schmidt Process",
+     "module": "Orthogonality"
+    },
+    {
+     "id": "u11-38",
+     "title": "Matrix Decomposition",
+     "module": "Decompositions and computation"
+    },
+    {
+     "id": "u11-39",
+     "title": "LU Decomposition",
+     "module": "Decompositions and computation"
+    },
+    {
+     "id": "u11-40",
+     "title": "QR Decomposition",
+     "module": "Decompositions and computation"
+    },
+    {
+     "id": "u11-41",
+     "title": "Cholesky Decomposition",
+     "module": "Decompositions and computation"
+    },
+    {
+     "id": "u11-42",
+     "title": "Singular Value Decomposition (SVD)",
+     "module": "Decompositions and computation"
+    },
+    {
+     "id": "u11-43",
+     "title": "Principal Component Analysis (PCA)",
+     "module": "Decompositions and computation"
+    },
+    {
+     "id": "u11-44",
+     "title": "Sparse Matrices",
+     "module": "Decompositions and computation"
+    },
+    {
+     "id": "u11-45",
+     "title": "Block Matrices",
+     "module": "Decompositions and computation"
+    },
+    {
+     "id": "u11-46",
+     "title": "Numerical Linear Algebra",
+     "module": "Decompositions and computation"
+    },
+    {
+     "id": "u11-47",
+     "title": "Multilinear Algebra",
+     "module": "Multilinear algebra"
+    },
+    {
+     "id": "u11-48",
+     "title": "Tensor Products",
+     "module": "Multilinear algebra"
+    },
+    {
+     "id": "u11-49",
+     "title": "Tensor Algebra",
+     "module": "Multilinear algebra"
+    },
+    {
+     "id": "u11-50",
+     "title": "Exterior Algebra",
+     "module": "Multilinear algebra"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Probability",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Probability Theory",
+     "module": "Foundations of probability"
+    },
+    {
+     "id": "u12-02",
+     "title": "Foundations of Probability",
+     "module": "Foundations of probability"
+    },
+    {
+     "id": "u12-03",
+     "title": "Independent Events",
+     "module": "Foundations of probability"
+    },
+    {
+     "id": "u12-04",
+     "title": "Conditional Probability",
+     "module": "Foundations of probability"
+    },
+    {
+     "id": "u12-05",
+     "title": "Joint Probability",
+     "module": "Foundations of probability"
+    },
+    {
+     "id": "u12-06",
+     "title": "Bayes' Theorem",
+     "module": "Foundations of probability"
+    },
+    {
+     "id": "u12-07",
+     "title": "Random Variables",
+     "module": "Random variables"
+    },
+    {
+     "id": "u12-08",
+     "title": "Discrete Random Variables",
+     "module": "Random variables"
+    },
+    {
+     "id": "u12-09",
+     "title": "Continuous Random Variables",
+     "module": "Random variables"
+    },
+    {
+     "id": "u12-10",
+     "title": "Probability Distributions",
+     "module": "Random variables"
+    },
+    {
+     "id": "u12-11",
+     "title": "Probability Mass Functions",
+     "module": "Random variables"
+    },
+    {
+     "id": "u12-12",
+     "title": "Probability Density Functions",
+     "module": "Random variables"
+    },
+    {
+     "id": "u12-13",
+     "title": "Cumulative Distribution Functions",
+     "module": "Random variables"
+    },
+    {
+     "id": "u12-14",
+     "title": "Expected Value",
+     "module": "Random variables"
+    },
+    {
+     "id": "u12-15",
+     "title": "Variance",
+     "module": "Random variables"
+    },
+    {
+     "id": "u12-16",
+     "title": "Standard Deviation",
+     "module": "Random variables"
+    },
+    {
+     "id": "u12-17",
+     "title": "Covariance",
+     "module": "Random variables"
+    },
+    {
+     "id": "u12-18",
+     "title": "Moments and Moment-Generating Functions",
+     "module": "Random variables"
+    },
+    {
+     "id": "u12-19",
+     "title": "Law of Large Numbers",
+     "module": "Random variables"
+    },
+    {
+     "id": "u12-20",
+     "title": "Central Limit Theorem",
+     "module": "Random variables"
+    },
+    {
+     "id": "u12-21",
+     "title": "Bernoulli Distribution",
+     "module": "Discrete distributions"
+    },
+    {
+     "id": "u12-22",
+     "title": "Binomial Distribution",
+     "module": "Discrete distributions"
+    },
+    {
+     "id": "u12-23",
+     "title": "Geometric Distribution",
+     "module": "Discrete distributions"
+    },
+    {
+     "id": "u12-24",
+     "title": "Negative Binomial Distribution",
+     "module": "Discrete distributions"
+    },
+    {
+     "id": "u12-25",
+     "title": "Hypergeometric Distribution",
+     "module": "Discrete distributions"
+    },
+    {
+     "id": "u12-26",
+     "title": "Poisson Distribution",
+     "module": "Discrete distributions"
+    },
+    {
+     "id": "u12-27",
+     "title": "Multinomial Distribution",
+     "module": "Discrete distributions"
+    },
+    {
+     "id": "u12-28",
+     "title": "Beta-Binomial Distribution",
+     "module": "Discrete distributions"
+    },
+    {
+     "id": "u12-29",
+     "title": "Uniform Distribution",
+     "module": "Continuous distributions"
+    },
+    {
+     "id": "u12-30",
+     "title": "Normal Distribution",
+     "module": "Continuous distributions"
+    },
+    {
+     "id": "u12-31",
+     "title": "Standard Normal Distribution",
+     "module": "Continuous distributions"
+    },
+    {
+     "id": "u12-32",
+     "title": "Exponential Distribution",
+     "module": "Continuous distributions"
+    },
+    {
+     "id": "u12-33",
+     "title": "Gamma Distribution",
+     "module": "Continuous distributions"
+    },
+    {
+     "id": "u12-34",
+     "title": "Beta Distribution",
+     "module": "Continuous distributions"
+    },
+    {
+     "id": "u12-35",
+     "title": "Chi-Squared Distribution",
+     "module": "Continuous distributions"
+    },
+    {
+     "id": "u12-36",
+     "title": "Student's T-Distribution",
+     "module": "Continuous distributions"
+    },
+    {
+     "id": "u12-37",
+     "title": "F-Distribution",
+     "module": "Continuous distributions"
+    },
+    {
+     "id": "u12-38",
+     "title": "Weibull Distribution",
+     "module": "Continuous distributions"
+    },
+    {
+     "id": "u12-39",
+     "title": "Log-Normal Distribution",
+     "module": "Continuous distributions"
+    },
+    {
+     "id": "u12-40",
+     "title": "Pareto Distribution",
+     "module": "Continuous distributions"
+    },
+    {
+     "id": "u12-41",
+     "title": "Cauchy Distribution",
+     "module": "Continuous distributions"
+    },
+    {
+     "id": "u12-42",
+     "title": "Multivariate Normal Distribution",
+     "module": "Multivariate and specialist distributions"
+    },
+    {
+     "id": "u12-43",
+     "title": "Student's T Multivariate Distribution",
+     "module": "Multivariate and specialist distributions"
+    },
+    {
+     "id": "u12-44",
+     "title": "Dirichlet Distribution",
+     "module": "Multivariate and specialist distributions"
+    },
+    {
+     "id": "u12-45",
+     "title": "Wishart Distribution",
+     "module": "Multivariate and specialist distributions"
+    },
+    {
+     "id": "u12-46",
+     "title": "Mixture Distributions",
+     "module": "Multivariate and specialist distributions"
+    },
+    {
+     "id": "u12-47",
+     "title": "Empirical Distributions",
+     "module": "Multivariate and specialist distributions"
+    },
+    {
+     "id": "u12-48",
+     "title": "Heavy-Tailed Distributions",
+     "module": "Multivariate and specialist distributions"
+    },
+    {
+     "id": "u12-49",
+     "title": "Stable Distributions",
+     "module": "Multivariate and specialist distributions"
+    },
+    {
+     "id": "u12-50",
+     "title": "Extreme Value Distributions",
+     "module": "Multivariate and specialist distributions"
+    }
+   ]
+  },
+  {
+   "id": "u13",
+   "n": 13,
+   "title": "Statistics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u13-01",
+     "title": "Descriptive Statistics",
+     "module": "Descriptive statistics"
+    },
+    {
+     "id": "u13-02",
+     "title": "Correlation",
+     "module": "Descriptive statistics"
+    },
+    {
+     "id": "u13-03",
+     "title": "Data Interpretation",
+     "module": "Descriptive statistics"
+    },
+    {
+     "id": "u13-04",
+     "title": "Statistics in Everyday Life",
+     "module": "Descriptive statistics"
+    },
+    {
+     "id": "u13-05",
+     "title": "Inferential Statistics",
+     "module": "Sampling and estimation"
+    },
+    {
+     "id": "u13-06",
+     "title": "Statistical Inference",
+     "module": "Sampling and estimation"
+    },
+    {
+     "id": "u13-07",
+     "title": "Sampling Theory",
+     "module": "Sampling and estimation"
+    },
+    {
+     "id": "u13-08",
+     "title": "Sampling Distributions",
+     "module": "Sampling and estimation"
+    },
+    {
+     "id": "u13-09",
+     "title": "Sampling Bias",
+     "module": "Sampling and estimation"
+    },
+    {
+     "id": "u13-10",
+     "title": "Confidence Intervals",
+     "module": "Sampling and estimation"
+    },
+    {
+     "id": "u13-11",
+     "title": "Maximum Likelihood Estimation",
+     "module": "Sampling and estimation"
+    },
+    {
+     "id": "u13-12",
+     "title": "Method of Moments",
+     "module": "Sampling and estimation"
+    },
+    {
+     "id": "u13-13",
+     "title": "Hypothesis Testing",
+     "module": "Hypothesis testing"
+    },
+    {
+     "id": "u13-14",
+     "title": "Null Hypothesis Significance Testing",
+     "module": "Hypothesis testing"
+    },
+    {
+     "id": "u13-15",
+     "title": "P-Values",
+     "module": "Hypothesis testing"
+    },
+    {
+     "id": "u13-16",
+     "title": "Type I and Type II Errors",
+     "module": "Hypothesis testing"
+    },
+    {
+     "id": "u13-17",
+     "title": "Statistical Power",
+     "module": "Hypothesis testing"
+    },
+    {
+     "id": "u13-18",
+     "title": "Effect Sizes",
+     "module": "Hypothesis testing"
+    },
+    {
+     "id": "u13-19",
+     "title": "Multiple Testing Correction",
+     "module": "Hypothesis testing"
+    },
+    {
+     "id": "u13-20",
+     "title": "False Discovery Rate",
+     "module": "Hypothesis testing"
+    },
+    {
+     "id": "u13-21",
+     "title": "Parametric Statistics",
+     "module": "Statistical tests"
+    },
+    {
+     "id": "u13-22",
+     "title": "Nonparametric Statistics",
+     "module": "Statistical tests"
+    },
+    {
+     "id": "u13-23",
+     "title": "Z-Tests",
+     "module": "Statistical tests"
+    },
+    {
+     "id": "u13-24",
+     "title": "T-Tests",
+     "module": "Statistical tests"
+    },
+    {
+     "id": "u13-25",
+     "title": "Chi-Squared Tests",
+     "module": "Statistical tests"
+    },
+    {
+     "id": "u13-26",
+     "title": "Fisher's Exact Test",
+     "module": "Statistical tests"
+    },
+    {
+     "id": "u13-27",
+     "title": "Mann–Whitney U Test",
+     "module": "Statistical tests"
+    },
+    {
+     "id": "u13-28",
+     "title": "Wilcoxon Signed-Rank Test",
+     "module": "Statistical tests"
+    },
+    {
+     "id": "u13-29",
+     "title": "Kruskal–Wallis Test",
+     "module": "Statistical tests"
+    },
+    {
+     "id": "u13-30",
+     "title": "Kolmogorov–Smirnov Test",
+     "module": "Statistical tests"
+    },
+    {
+     "id": "u13-31",
+     "title": "Analysis of Variance (ANOVA)",
+     "module": "Statistical tests"
+    },
+    {
+     "id": "u13-32",
+     "title": "Analysis of Covariance (ANCOVA)",
+     "module": "Statistical tests"
+    },
+    {
+     "id": "u13-33",
+     "title": "Categorical Data Analysis",
+     "module": "Statistical tests"
+    },
+    {
+     "id": "u13-34",
+     "title": "Contingency Tables",
+     "module": "Statistical tests"
+    },
+    {
+     "id": "u13-35",
+     "title": "Regression Analysis",
+     "module": "Regression and models"
+    },
+    {
+     "id": "u13-36",
+     "title": "Linear Regression",
+     "module": "Regression and models"
+    },
+    {
+     "id": "u13-37",
+     "title": "Multiple Linear Regression",
+     "module": "Regression and models"
+    },
+    {
+     "id": "u13-38",
+     "title": "Logistic Regression",
+     "module": "Regression and models"
+    },
+    {
+     "id": "u13-39",
+     "title": "Poisson Regression",
+     "module": "Regression and models"
+    },
+    {
+     "id": "u13-40",
+     "title": "Nonlinear Regression",
+     "module": "Regression and models"
+    },
+    {
+     "id": "u13-41",
+     "title": "Robust Regression",
+     "module": "Regression and models"
+    },
+    {
+     "id": "u13-42",
+     "title": "Quantile Regression",
+     "module": "Regression and models"
+    },
+    {
+     "id": "u13-43",
+     "title": "Ridge Regression",
+     "module": "Regression and models"
+    },
+    {
+     "id": "u13-44",
+     "title": "Lasso Regression",
+     "module": "Regression and models"
+    },
+    {
+     "id": "u13-45",
+     "title": "Generalised Linear Models (GLMs)",
+     "module": "Regression and models"
+    },
+    {
+     "id": "u13-46",
+     "title": "Mixed-Effects Models",
+     "module": "Regression and models"
+    },
+    {
+     "id": "u13-47",
+     "title": "Generalised Additive Models",
+     "module": "Regression and models"
+    },
+    {
+     "id": "u13-48",
+     "title": "Statistical Modelling",
+     "module": "Regression and models"
+    },
+    {
+     "id": "u13-49",
+     "title": "Multivariate Statistics",
+     "module": "Multivariate statistics"
+    },
+    {
+     "id": "u13-50",
+     "title": "Multivariate Analysis",
+     "module": "Multivariate statistics"
+    },
+    {
+     "id": "u13-51",
+     "title": "Factor Analysis",
+     "module": "Multivariate statistics"
+    },
+    {
+     "id": "u13-52",
+     "title": "Discriminant Analysis",
+     "module": "Multivariate statistics"
+    },
+    {
+     "id": "u13-53",
+     "title": "Cluster Analysis",
+     "module": "Multivariate statistics"
+    },
+    {
+     "id": "u13-54",
+     "title": "Frequentist Statistics",
+     "module": "Bayesian and computational statistics"
+    },
+    {
+     "id": "u13-55",
+     "title": "Bayesian Statistics",
+     "module": "Bayesian and computational statistics"
+    },
+    {
+     "id": "u13-56",
+     "title": "Bayesian Inference",
+     "module": "Bayesian and computational statistics"
+    },
+    {
+     "id": "u13-57",
+     "title": "Prior and Posterior Distributions",
+     "module": "Bayesian and computational statistics"
+    },
+    {
+     "id": "u13-58",
+     "title": "Bootstrap Methods",
+     "module": "Bayesian and computational statistics"
+    },
+    {
+     "id": "u13-59",
+     "title": "Permutation Tests",
+     "module": "Bayesian and computational statistics"
+    },
+    {
+     "id": "u13-60",
+     "title": "Monte Carlo Methods",
+     "module": "Bayesian and computational statistics"
+    },
+    {
+     "id": "u13-61",
+     "title": "Markov Chain Monte Carlo (MCMC)",
+     "module": "Bayesian and computational statistics"
+    },
+    {
+     "id": "u13-62",
+     "title": "Statistical Computing",
+     "module": "Bayesian and computational statistics"
+    },
+    {
+     "id": "u13-63",
+     "title": "Experimental Design",
+     "module": "Design, causation and evidence"
+    },
+    {
+     "id": "u13-64",
+     "title": "Design of Experiments",
+     "module": "Design, causation and evidence"
+    },
+    {
+     "id": "u13-65",
+     "title": "Causal Inference",
+     "module": "Design, causation and evidence"
+    },
+    {
+     "id": "u13-66",
+     "title": "Structural Equation Modelling",
+     "module": "Design, causation and evidence"
+    },
+    {
+     "id": "u13-67",
+     "title": "Meta-Analysis",
+     "module": "Design, causation and evidence"
+    },
+    {
+     "id": "u13-68",
+     "title": "Missing Data Analysis",
+     "module": "Design, causation and evidence"
+    },
+    {
+     "id": "u13-69",
+     "title": "Imputation Methods",
+     "module": "Design, causation and evidence"
+    },
+    {
+     "id": "u13-70",
+     "title": "Survival Analysis",
+     "module": "Specialist methods"
+    },
+    {
+     "id": "u13-71",
+     "title": "Spatial Statistics",
+     "module": "Specialist methods"
+    },
+    {
+     "id": "u13-72",
+     "title": "Reliability Analysis",
+     "module": "Specialist methods"
+    },
+    {
+     "id": "u13-73",
+     "title": "Extreme Value Theory",
+     "module": "Specialist methods"
+    },
+    {
+     "id": "u13-74",
+     "title": "Decision Theory",
+     "module": "Specialist methods"
+    },
+    {
+     "id": "u13-75",
+     "title": "Statistical Learning",
+     "module": "Specialist methods"
+    }
+   ]
+  },
+  {
+   "id": "u14",
+   "n": 14,
+   "title": "Discrete Mathematics and Combinatorics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u14-01",
+     "title": "Discrete Mathematics",
+     "module": "Counting"
+    },
+    {
+     "id": "u14-02",
+     "title": "Combinatorics",
+     "module": "Counting"
+    },
+    {
+     "id": "u14-03",
+     "title": "Counting Principles",
+     "module": "Counting"
+    },
+    {
+     "id": "u14-04",
+     "title": "Permutations",
+     "module": "Counting"
+    },
+    {
+     "id": "u14-05",
+     "title": "Combinations",
+     "module": "Counting"
+    },
+    {
+     "id": "u14-06",
+     "title": "Binomial Theorem",
+     "module": "Counting"
+    },
+    {
+     "id": "u14-07",
+     "title": "Pigeonhole Principle",
+     "module": "Counting"
+    },
+    {
+     "id": "u14-08",
+     "title": "Inclusion–Exclusion Principle",
+     "module": "Counting"
+    },
+    {
+     "id": "u14-09",
+     "title": "Generating Functions",
+     "module": "Counting"
+    },
+    {
+     "id": "u14-10",
+     "title": "Enumerative Combinatorics",
+     "module": "Counting"
+    },
+    {
+     "id": "u14-11",
+     "title": "Extremal Combinatorics",
+     "module": "Advanced combinatorics"
+    },
+    {
+     "id": "u14-12",
+     "title": "Ramsey Theory",
+     "module": "Advanced combinatorics"
+    },
+    {
+     "id": "u14-13",
+     "title": "Design Theory",
+     "module": "Advanced combinatorics"
+    },
+    {
+     "id": "u14-14",
+     "title": "Block Designs",
+     "module": "Advanced combinatorics"
+    },
+    {
+     "id": "u14-15",
+     "title": "Invariants",
+     "module": "Advanced combinatorics"
+    },
+    {
+     "id": "u14-16",
+     "title": "Coding Theory",
+     "module": "Codes, algorithms and computation"
+    },
+    {
+     "id": "u14-17",
+     "title": "Boolean Functions",
+     "module": "Codes, algorithms and computation"
+    },
+    {
+     "id": "u14-18",
+     "title": "Algorithms and Complexity",
+     "module": "Codes, algorithms and computation"
+    },
+    {
+     "id": "u14-19",
+     "title": "Computational Complexity Theory",
+     "module": "Codes, algorithms and computation"
+    },
+    {
+     "id": "u14-20",
+     "title": "Automata Theory",
+     "module": "Codes, algorithms and computation"
+    },
+    {
+     "id": "u14-21",
+     "title": "Formal Languages",
+     "module": "Codes, algorithms and computation"
+    },
+    {
+     "id": "u14-22",
+     "title": "Cellular Automata",
+     "module": "Codes, algorithms and computation"
+    },
+    {
+     "id": "u14-23",
+     "title": "Game Theory",
+     "module": "Codes, algorithms and computation"
+    }
+   ]
+  },
+  {
+   "id": "u15",
+   "n": 15,
+   "title": "Graph Theory and Networks",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u15-01",
+     "title": "Graph Theory",
+     "module": "Graphs"
+    },
+    {
+     "id": "u15-02",
+     "title": "Undirected Graphs",
+     "module": "Graphs"
+    },
+    {
+     "id": "u15-03",
+     "title": "Directed Graphs",
+     "module": "Graphs"
+    },
+    {
+     "id": "u15-04",
+     "title": "Weighted Graphs",
+     "module": "Graphs"
+    },
+    {
+     "id": "u15-05",
+     "title": "Degree Sequences",
+     "module": "Graphs"
+    },
+    {
+     "id": "u15-06",
+     "title": "Paths and Cycles",
+     "module": "Graphs"
+    },
+    {
+     "id": "u15-07",
+     "title": "Graph Connectivity",
+     "module": "Graphs"
+    },
+    {
+     "id": "u15-08",
+     "title": "Trees",
+     "module": "Graphs"
+    },
+    {
+     "id": "u15-09",
+     "title": "Trees and Forests",
+     "module": "Graphs"
+    },
+    {
+     "id": "u15-10",
+     "title": "Spanning Trees",
+     "module": "Graphs"
+    },
+    {
+     "id": "u15-11",
+     "title": "Directed Acyclic Graphs",
+     "module": "Graphs"
+    },
+    {
+     "id": "u15-12",
+     "title": "Bipartite Graphs",
+     "module": "Graphs"
+    },
+    {
+     "id": "u15-13",
+     "title": "Planar Graphs",
+     "module": "Graphs"
+    },
+    {
+     "id": "u15-14",
+     "title": "Planarity",
+     "module": "Graphs"
+    },
+    {
+     "id": "u15-15",
+     "title": "Eulerian Paths",
+     "module": "Classic problems"
+    },
+    {
+     "id": "u15-16",
+     "title": "Hamiltonian Paths",
+     "module": "Classic problems"
+    },
+    {
+     "id": "u15-17",
+     "title": "Graph Colouring",
+     "module": "Classic problems"
+    },
+    {
+     "id": "u15-18",
+     "title": "Chromatic Polynomials",
+     "module": "Classic problems"
+    },
+    {
+     "id": "u15-19",
+     "title": "Matching Theory",
+     "module": "Classic problems"
+    },
+    {
+     "id": "u15-20",
+     "title": "Matching and Vertex Covers",
+     "module": "Classic problems"
+    },
+    {
+     "id": "u15-21",
+     "title": "Shortest Path Algorithms",
+     "module": "Classic problems"
+    },
+    {
+     "id": "u15-22",
+     "title": "Shortest Path Problems",
+     "module": "Classic problems"
+    },
+    {
+     "id": "u15-23",
+     "title": "Minimum Spanning Trees",
+     "module": "Classic problems"
+    },
+    {
+     "id": "u15-24",
+     "title": "Network Flows",
+     "module": "Classic problems"
+    },
+    {
+     "id": "u15-25",
+     "title": "Maximum Flow",
+     "module": "Classic problems"
+    },
+    {
+     "id": "u15-26",
+     "title": "Minimum Cut",
+     "module": "Classic problems"
+    },
+    {
+     "id": "u15-27",
+     "title": "Weighted Networks",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-28",
+     "title": "Network Centrality",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-29",
+     "title": "Betweenness Centrality",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-30",
+     "title": "Closeness Centrality",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-31",
+     "title": "Eigenvector Centrality",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-32",
+     "title": "PageRank Mathematics",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-33",
+     "title": "Community Detection",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-34",
+     "title": "Network Clustering",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-35",
+     "title": "Spectral Graph Theory",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-36",
+     "title": "Random Graphs",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-37",
+     "title": "Small-World Networks",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-38",
+     "title": "Scale-Free Networks",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-39",
+     "title": "Network Science",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-40",
+     "title": "Percolation Theory",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-41",
+     "title": "Social Network Analysis",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-42",
+     "title": "Biological Network Analysis",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-43",
+     "title": "Network Epidemiology",
+     "module": "Networks"
+    },
+    {
+     "id": "u15-44",
+     "title": "Graph Neural Network Mathematics",
+     "module": "Networks"
+    }
+   ]
+  },
+  {
+   "id": "u16",
+   "n": 16,
+   "title": "Logic, Sets and Foundations",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u16-01",
+     "title": "Elementary Set Theory",
+     "module": "Sets"
+    },
+    {
+     "id": "u16-02",
+     "title": "Set Theory",
+     "module": "Sets"
+    },
+    {
+     "id": "u16-03",
+     "title": "Set Operations",
+     "module": "Sets"
+    },
+    {
+     "id": "u16-04",
+     "title": "Union and Intersection",
+     "module": "Sets"
+    },
+    {
+     "id": "u16-05",
+     "title": "Complements",
+     "module": "Sets"
+    },
+    {
+     "id": "u16-06",
+     "title": "Cartesian Products",
+     "module": "Sets"
+    },
+    {
+     "id": "u16-07",
+     "title": "Power Sets",
+     "module": "Sets"
+    },
+    {
+     "id": "u16-08",
+     "title": "Countability",
+     "module": "Sets"
+    },
+    {
+     "id": "u16-09",
+     "title": "Countable and Uncountable Sets",
+     "module": "Sets"
+    },
+    {
+     "id": "u16-10",
+     "title": "Relations",
+     "module": "Relations and orders"
+    },
+    {
+     "id": "u16-11",
+     "title": "Relations and Functions",
+     "module": "Relations and orders"
+    },
+    {
+     "id": "u16-12",
+     "title": "Functions and Mappings",
+     "module": "Relations and orders"
+    },
+    {
+     "id": "u16-13",
+     "title": "Equivalence Relations",
+     "module": "Relations and orders"
+    },
+    {
+     "id": "u16-14",
+     "title": "Equivalence Classes",
+     "module": "Relations and orders"
+    },
+    {
+     "id": "u16-15",
+     "title": "Partial Orders",
+     "module": "Relations and orders"
+    },
+    {
+     "id": "u16-16",
+     "title": "Partially Ordered Sets",
+     "module": "Relations and orders"
+    },
+    {
+     "id": "u16-17",
+     "title": "Totally Ordered Sets",
+     "module": "Relations and orders"
+    },
+    {
+     "id": "u16-18",
+     "title": "Lattices",
+     "module": "Relations and orders"
+    },
+    {
+     "id": "u16-19",
+     "title": "Boolean Lattices",
+     "module": "Relations and orders"
+    },
+    {
+     "id": "u16-20",
+     "title": "Mathematical Logic",
+     "module": "Logic"
+    },
+    {
+     "id": "u16-21",
+     "title": "Propositional Logic",
+     "module": "Logic"
+    },
+    {
+     "id": "u16-22",
+     "title": "Predicate Logic",
+     "module": "Logic"
+    },
+    {
+     "id": "u16-23",
+     "title": "First-Order Logic",
+     "module": "Logic"
+    },
+    {
+     "id": "u16-24",
+     "title": "Higher-Order Logic",
+     "module": "Logic"
+    },
+    {
+     "id": "u16-25",
+     "title": "Modal Logic",
+     "module": "Logic"
+    },
+    {
+     "id": "u16-26",
+     "title": "Intuitionistic Logic",
+     "module": "Logic"
+    },
+    {
+     "id": "u16-27",
+     "title": "Fuzzy Logic",
+     "module": "Logic"
+    },
+    {
+     "id": "u16-28",
+     "title": "Temporal Logic",
+     "module": "Logic"
+    },
+    {
+     "id": "u16-29",
+     "title": "Proof Techniques",
+     "module": "Proof"
+    },
+    {
+     "id": "u16-30",
+     "title": "Direct Proof",
+     "module": "Proof"
+    },
+    {
+     "id": "u16-31",
+     "title": "Proof by Contraposition",
+     "module": "Proof"
+    },
+    {
+     "id": "u16-32",
+     "title": "Proof by Contradiction",
+     "module": "Proof"
+    },
+    {
+     "id": "u16-33",
+     "title": "Mathematical Induction",
+     "module": "Proof"
+    },
+    {
+     "id": "u16-34",
+     "title": "Formal Proofs",
+     "module": "Proof"
+    },
+    {
+     "id": "u16-35",
+     "title": "Axiomatic Systems",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-36",
+     "title": "Axiomatic Set Theory",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-37",
+     "title": "Zermelo–Fraenkel Set Theory",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-38",
+     "title": "Axiom of Choice",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-39",
+     "title": "Set-Theoretic Mathematics",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-40",
+     "title": "Ordinal Arithmetic",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-41",
+     "title": "Cardinal Arithmetic",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-42",
+     "title": "Large Cardinal Theory",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-43",
+     "title": "Proof Theory",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-44",
+     "title": "Model Theory",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-45",
+     "title": "Gödel's Incompleteness Theorems",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-46",
+     "title": "Computability Theory",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-47",
+     "title": "Recursive Functions",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-48",
+     "title": "Lambda Calculus",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-49",
+     "title": "Type Theory",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-50",
+     "title": "Constructive Mathematics",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-51",
+     "title": "Category-Theoretic Foundations",
+     "module": "Foundations"
+    },
+    {
+     "id": "u16-52",
+     "title": "Philosophy of Mathematics",
+     "module": "Foundations"
+    }
+   ]
+  },
+  {
+   "id": "u17",
+   "n": 17,
+   "title": "Topology and Advanced Pure Mathematics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u17-01",
+     "title": "General Topology",
+     "module": "Point-set topology"
+    },
+    {
+     "id": "u17-02",
+     "title": "Point-Set Topology",
+     "module": "Point-set topology"
+    },
+    {
+     "id": "u17-03",
+     "title": "Topological Spaces",
+     "module": "Point-set topology"
+    },
+    {
+     "id": "u17-04",
+     "title": "Metric Spaces",
+     "module": "Point-set topology"
+    },
+    {
+     "id": "u17-05",
+     "title": "Continuity in Topology",
+     "module": "Point-set topology"
+    },
+    {
+     "id": "u17-06",
+     "title": "Homeomorphisms",
+     "module": "Point-set topology"
+    },
+    {
+     "id": "u17-07",
+     "title": "Compactness",
+     "module": "Point-set topology"
+    },
+    {
+     "id": "u17-08",
+     "title": "Connectedness",
+     "module": "Point-set topology"
+    },
+    {
+     "id": "u17-09",
+     "title": "Algebraic Topology",
+     "module": "Algebraic topology"
+    },
+    {
+     "id": "u17-10",
+     "title": "Fundamental Groups",
+     "module": "Algebraic topology"
+    },
+    {
+     "id": "u17-11",
+     "title": "Homotopy Theory",
+     "module": "Algebraic topology"
+    },
+    {
+     "id": "u17-12",
+     "title": "Homology",
+     "module": "Algebraic topology"
+    },
+    {
+     "id": "u17-13",
+     "title": "Cohomology",
+     "module": "Algebraic topology"
+    },
+    {
+     "id": "u17-14",
+     "title": "Differential Topology",
+     "module": "Manifolds and geometry"
+    },
+    {
+     "id": "u17-15",
+     "title": "Geometric Topology",
+     "module": "Manifolds and geometry"
+    },
+    {
+     "id": "u17-16",
+     "title": "Manifold Theory",
+     "module": "Manifolds and geometry"
+    },
+    {
+     "id": "u17-17",
+     "title": "Differential Forms",
+     "module": "Manifolds and geometry"
+    },
+    {
+     "id": "u17-18",
+     "title": "Fibre Bundles",
+     "module": "Manifolds and geometry"
+    },
+    {
+     "id": "u17-19",
+     "title": "Complex Manifolds",
+     "module": "Manifolds and geometry"
+    },
+    {
+     "id": "u17-20",
+     "title": "Riemann Surfaces",
+     "module": "Manifolds and geometry"
+    },
+    {
+     "id": "u17-21",
+     "title": "Scheme Theory",
+     "module": "Manifolds and geometry"
+    },
+    {
+     "id": "u17-22",
+     "title": "Category Theory",
+     "module": "Category theory"
+    }
+   ]
+  },
+  {
+   "id": "u18",
+   "n": 18,
+   "title": "Optimisation and Operations Research",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u18-01",
+     "title": "Mathematical Optimisation",
+     "module": "Optimisation"
+    },
+    {
+     "id": "u18-02",
+     "title": "Unconstrained Optimisation",
+     "module": "Optimisation"
+    },
+    {
+     "id": "u18-03",
+     "title": "Constrained Optimisation",
+     "module": "Optimisation"
+    },
+    {
+     "id": "u18-04",
+     "title": "Lagrange Multipliers",
+     "module": "Optimisation"
+    },
+    {
+     "id": "u18-05",
+     "title": "Karush–Kuhn–Tucker Conditions",
+     "module": "Optimisation"
+    },
+    {
+     "id": "u18-06",
+     "title": "Convex Optimisation",
+     "module": "Optimisation"
+    },
+    {
+     "id": "u18-07",
+     "title": "Nonconvex Optimisation",
+     "module": "Optimisation"
+    },
+    {
+     "id": "u18-08",
+     "title": "Nonlinear Programming",
+     "module": "Optimisation"
+    },
+    {
+     "id": "u18-09",
+     "title": "Quadratic Programming",
+     "module": "Optimisation"
+    },
+    {
+     "id": "u18-10",
+     "title": "Multiobjective Optimisation",
+     "module": "Optimisation"
+    },
+    {
+     "id": "u18-11",
+     "title": "Stochastic Optimisation",
+     "module": "Optimisation"
+    },
+    {
+     "id": "u18-12",
+     "title": "Robust Optimisation",
+     "module": "Optimisation"
+    },
+    {
+     "id": "u18-13",
+     "title": "Optimal Control",
+     "module": "Optimisation"
+    },
+    {
+     "id": "u18-14",
+     "title": "Linear Programming",
+     "module": "Linear and integer programming"
+    },
+    {
+     "id": "u18-15",
+     "title": "Simplex Algorithm",
+     "module": "Linear and integer programming"
+    },
+    {
+     "id": "u18-16",
+     "title": "Interior-Point Methods",
+     "module": "Linear and integer programming"
+    },
+    {
+     "id": "u18-17",
+     "title": "Integer Programming",
+     "module": "Linear and integer programming"
+    },
+    {
+     "id": "u18-18",
+     "title": "Mixed-Integer Programming",
+     "module": "Linear and integer programming"
+    },
+    {
+     "id": "u18-19",
+     "title": "Branch and Bound",
+     "module": "Linear and integer programming"
+    },
+    {
+     "id": "u18-20",
+     "title": "Combinatorial Optimisation",
+     "module": "Linear and integer programming"
+    },
+    {
+     "id": "u18-21",
+     "title": "Dynamic Programming",
+     "module": "Linear and integer programming"
+    },
+    {
+     "id": "u18-22",
+     "title": "Gradient Descent",
+     "module": "Algorithms"
+    },
+    {
+     "id": "u18-23",
+     "title": "Newton's Method",
+     "module": "Algorithms"
+    },
+    {
+     "id": "u18-24",
+     "title": "Quasi-Newton Methods",
+     "module": "Algorithms"
+    },
+    {
+     "id": "u18-25",
+     "title": "Heuristic Optimisation",
+     "module": "Algorithms"
+    },
+    {
+     "id": "u18-26",
+     "title": "Metaheuristic Algorithms",
+     "module": "Algorithms"
+    },
+    {
+     "id": "u18-27",
+     "title": "Genetic Algorithms",
+     "module": "Algorithms"
+    },
+    {
+     "id": "u18-28",
+     "title": "Simulated Annealing",
+     "module": "Algorithms"
+    },
+    {
+     "id": "u18-29",
+     "title": "Particle Swarm Optimisation",
+     "module": "Algorithms"
+    },
+    {
+     "id": "u18-30",
+     "title": "Bayesian Optimisation",
+     "module": "Algorithms"
+    },
+    {
+     "id": "u18-31",
+     "title": "Operations Research",
+     "module": "Operations research"
+    },
+    {
+     "id": "u18-32",
+     "title": "Decision Analysis",
+     "module": "Operations research"
+    },
+    {
+     "id": "u18-33",
+     "title": "Queueing Theory",
+     "module": "Operations research"
+    },
+    {
+     "id": "u18-34",
+     "title": "Inventory Theory",
+     "module": "Operations research"
+    },
+    {
+     "id": "u18-35",
+     "title": "Scheduling Theory",
+     "module": "Operations research"
+    },
+    {
+     "id": "u18-36",
+     "title": "Supply Chain Optimisation",
+     "module": "Operations research"
+    },
+    {
+     "id": "u18-37",
+     "title": "Network Optimisation",
+     "module": "Operations research"
+    },
+    {
+     "id": "u18-38",
+     "title": "Facility Location",
+     "module": "Operations research"
+    },
+    {
+     "id": "u18-39",
+     "title": "Transportation Problems",
+     "module": "Operations research"
+    },
+    {
+     "id": "u18-40",
+     "title": "Assignment Problems",
+     "module": "Operations research"
+    },
+    {
+     "id": "u18-41",
+     "title": "Resource Allocation",
+     "module": "Operations research"
+    },
+    {
+     "id": "u18-42",
+     "title": "Markov Decision Processes",
+     "module": "Operations research"
+    },
+    {
+     "id": "u18-43",
+     "title": "Reinforcement Learning Mathematics",
+     "module": "Operations research"
+    }
+   ]
+  },
+  {
+   "id": "u19",
+   "n": 19,
+   "title": "Numerical Analysis and Scientific Computing",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u19-01",
+     "title": "Numerical Analysis",
+     "module": "Errors and stability"
+    },
+    {
+     "id": "u19-02",
+     "title": "Numerical Methods",
+     "module": "Errors and stability"
+    },
+    {
+     "id": "u19-03",
+     "title": "Numerical Approximation",
+     "module": "Errors and stability"
+    },
+    {
+     "id": "u19-04",
+     "title": "Error Analysis",
+     "module": "Errors and stability"
+    },
+    {
+     "id": "u19-05",
+     "title": "Floating-Point Arithmetic",
+     "module": "Errors and stability"
+    },
+    {
+     "id": "u19-06",
+     "title": "Numerical Stability",
+     "module": "Errors and stability"
+    },
+    {
+     "id": "u19-07",
+     "title": "Numerical Conditioning",
+     "module": "Errors and stability"
+    },
+    {
+     "id": "u19-08",
+     "title": "Interval Arithmetic",
+     "module": "Errors and stability"
+    },
+    {
+     "id": "u19-09",
+     "title": "Root-Finding Algorithms",
+     "module": "Roots and interpolation"
+    },
+    {
+     "id": "u19-10",
+     "title": "Bisection Method",
+     "module": "Roots and interpolation"
+    },
+    {
+     "id": "u19-11",
+     "title": "Newton–Raphson Method",
+     "module": "Roots and interpolation"
+    },
+    {
+     "id": "u19-12",
+     "title": "Secant Method",
+     "module": "Roots and interpolation"
+    },
+    {
+     "id": "u19-13",
+     "title": "Fixed-Point Iteration",
+     "module": "Roots and interpolation"
+    },
+    {
+     "id": "u19-14",
+     "title": "Polynomial Interpolation",
+     "module": "Roots and interpolation"
+    },
+    {
+     "id": "u19-15",
+     "title": "Lagrange Interpolation",
+     "module": "Roots and interpolation"
+    },
+    {
+     "id": "u19-16",
+     "title": "Newton Interpolation",
+     "module": "Roots and interpolation"
+    },
+    {
+     "id": "u19-17",
+     "title": "Spline Interpolation",
+     "module": "Roots and interpolation"
+    },
+    {
+     "id": "u19-18",
+     "title": "Numerical Differentiation",
+     "module": "Numerical calculus and linear algebra"
+    },
+    {
+     "id": "u19-19",
+     "title": "Gaussian Quadrature",
+     "module": "Numerical calculus and linear algebra"
+    },
+    {
+     "id": "u19-20",
+     "title": "Iterative Solvers",
+     "module": "Numerical calculus and linear algebra"
+    },
+    {
+     "id": "u19-21",
+     "title": "Conjugate Gradient Method",
+     "module": "Numerical calculus and linear algebra"
+    },
+    {
+     "id": "u19-22",
+     "title": "Gradient-Based Methods",
+     "module": "Numerical calculus and linear algebra"
+    },
+    {
+     "id": "u19-23",
+     "title": "Numerical Optimisation",
+     "module": "Numerical calculus and linear algebra"
+    },
+    {
+     "id": "u19-24",
+     "title": "Numerical Solutions of Differential Equations",
+     "module": "Scientific computing"
+    },
+    {
+     "id": "u19-25",
+     "title": "Finite Element Analysis",
+     "module": "Scientific computing"
+    },
+    {
+     "id": "u19-26",
+     "title": "Mesh Generation",
+     "module": "Scientific computing"
+    },
+    {
+     "id": "u19-27",
+     "title": "Adaptive Mesh Refinement",
+     "module": "Scientific computing"
+    },
+    {
+     "id": "u19-28",
+     "title": "Computational Mathematics",
+     "module": "Scientific computing"
+    },
+    {
+     "id": "u19-29",
+     "title": "High-Performance Computing",
+     "module": "Scientific computing"
+    },
+    {
+     "id": "u19-30",
+     "title": "Parallel Numerical Algorithms",
+     "module": "Scientific computing"
+    },
+    {
+     "id": "u19-31",
+     "title": "Symbolic Computation",
+     "module": "Scientific computing"
+    },
+    {
+     "id": "u19-32",
+     "title": "Computer Algebra Systems",
+     "module": "Scientific computing"
+    },
+    {
+     "id": "u19-33",
+     "title": "Uncertainty Quantification",
+     "module": "Scientific computing"
+    },
+    {
+     "id": "u19-34",
+     "title": "Sensitivity Analysis",
+     "module": "Scientific computing"
+    },
+    {
+     "id": "u19-35",
+     "title": "Surrogate Modelling",
+     "module": "Scientific computing"
+    },
+    {
+     "id": "u19-36",
+     "title": "Scientific Simulation",
+     "module": "Scientific computing"
+    },
+    {
+     "id": "u19-37",
+     "title": "Mathematical Software",
+     "module": "Scientific computing"
+    }
+   ]
+  },
+  {
+   "id": "u20",
+   "n": 20,
+   "title": "Mathematical Modelling and Applied Mathematics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u20-01",
+     "title": "Applied Mathematics",
+     "module": "Modelling"
+    },
+    {
+     "id": "u20-02",
+     "title": "Mathematical Modelling",
+     "module": "Modelling"
+    },
+    {
+     "id": "u20-03",
+     "title": "Dimensional Analysis",
+     "module": "Modelling"
+    },
+    {
+     "id": "u20-04",
+     "title": "Similarity Analysis",
+     "module": "Modelling"
+    },
+    {
+     "id": "u20-05",
+     "title": "Scaling Laws",
+     "module": "Modelling"
+    },
+    {
+     "id": "u20-06",
+     "title": "Asymptotic Analysis",
+     "module": "Modelling"
+    },
+    {
+     "id": "u20-07",
+     "title": "Perturbation Theory",
+     "module": "Modelling"
+    },
+    {
+     "id": "u20-08",
+     "title": "Sensitivity and Uncertainty Analysis",
+     "module": "Modelling"
+    },
+    {
+     "id": "u20-09",
+     "title": "Biological Modelling",
+     "module": "Life sciences"
+    },
+    {
+     "id": "u20-10",
+     "title": "Mathematical Biology",
+     "module": "Life sciences"
+    },
+    {
+     "id": "u20-11",
+     "title": "Biomathematics",
+     "module": "Life sciences"
+    },
+    {
+     "id": "u20-12",
+     "title": "Population Dynamics",
+     "module": "Life sciences"
+    },
+    {
+     "id": "u20-13",
+     "title": "Ecological Modelling",
+     "module": "Life sciences"
+    },
+    {
+     "id": "u20-14",
+     "title": "Epidemiological Modelling",
+     "module": "Life sciences"
+    },
+    {
+     "id": "u20-15",
+     "title": "Mathematical Epidemiology",
+     "module": "Life sciences"
+    },
+    {
+     "id": "u20-16",
+     "title": "Compartmental Models",
+     "module": "Life sciences"
+    },
+    {
+     "id": "u20-17",
+     "title": "Compartmental Modelling",
+     "module": "Life sciences"
+    },
+    {
+     "id": "u20-18",
+     "title": "Pharmacokinetic Modelling",
+     "module": "Life sciences"
+    },
+    {
+     "id": "u20-19",
+     "title": "Pharmacodynamic Modelling",
+     "module": "Life sciences"
+    },
+    {
+     "id": "u20-20",
+     "title": "Systems Biology",
+     "module": "Life sciences"
+    },
+    {
+     "id": "u20-21",
+     "title": "Chemical Modelling",
+     "module": "Chemistry"
+    },
+    {
+     "id": "u20-22",
+     "title": "Reaction Kinetics",
+     "module": "Chemistry"
+    },
+    {
+     "id": "u20-23",
+     "title": "Chemical Kinetics",
+     "module": "Chemistry"
+    },
+    {
+     "id": "u20-24",
+     "title": "Reaction Network Theory",
+     "module": "Chemistry"
+    },
+    {
+     "id": "u20-25",
+     "title": "Reaction-Diffusion Systems",
+     "module": "Chemistry"
+    },
+    {
+     "id": "u20-26",
+     "title": "Physical Modelling",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-27",
+     "title": "Mathematical Physics",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-28",
+     "title": "Mathematical Physics Equations",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-29",
+     "title": "Classical Mechanics",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-30",
+     "title": "Continuum Mechanics",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-31",
+     "title": "Solid Mechanics",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-32",
+     "title": "Elasticity Theory",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-33",
+     "title": "Plasticity Theory",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-34",
+     "title": "Fluid Mechanics",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-35",
+     "title": "Fluid Dynamics",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-36",
+     "title": "Aerodynamics",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-37",
+     "title": "Wave Mechanics",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-38",
+     "title": "Acoustics",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-39",
+     "title": "Thermodynamics",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-40",
+     "title": "Heat Transfer",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-41",
+     "title": "Mass Transfer",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-42",
+     "title": "Transport Phenomena",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-43",
+     "title": "Diffusion Processes",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-44",
+     "title": "Electromagnetism",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-45",
+     "title": "Quantum Mechanics",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-46",
+     "title": "Statistical Mechanics",
+     "module": "Physics and engineering"
+    },
+    {
+     "id": "u20-47",
+     "title": "Nonlinear Dynamics",
+     "module": "Complex systems"
+    },
+    {
+     "id": "u20-48",
+     "title": "Chaos and Complex Systems",
+     "module": "Complex systems"
+    },
+    {
+     "id": "u20-49",
+     "title": "Agent-Based Modelling",
+     "module": "Complex systems"
+    },
+    {
+     "id": "u20-50",
+     "title": "Cellular Automata Modelling",
+     "module": "Complex systems"
+    },
+    {
+     "id": "u20-51",
+     "title": "Systems Theory",
+     "module": "Complex systems"
+    }
+   ]
+  },
+  {
+   "id": "u21",
+   "n": 21,
+   "title": "Financial Mathematics and Economics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u21-01",
+     "title": "Financial Mathematics",
+     "module": "Interest and the time value of money"
+    },
+    {
+     "id": "u21-02",
+     "title": "Simple Interest",
+     "module": "Interest and the time value of money"
+    },
+    {
+     "id": "u21-03",
+     "title": "Compound Interest",
+     "module": "Interest and the time value of money"
+    },
+    {
+     "id": "u21-04",
+     "title": "Time Value of Money",
+     "module": "Interest and the time value of money"
+    },
+    {
+     "id": "u21-05",
+     "title": "Present Value",
+     "module": "Interest and the time value of money"
+    },
+    {
+     "id": "u21-06",
+     "title": "Future Value",
+     "module": "Interest and the time value of money"
+    },
+    {
+     "id": "u21-07",
+     "title": "Annuities",
+     "module": "Interest and the time value of money"
+    },
+    {
+     "id": "u21-08",
+     "title": "Loan Amortisation",
+     "module": "Interest and the time value of money"
+    },
+    {
+     "id": "u21-09",
+     "title": "Mortgage Mathematics",
+     "module": "Interest and the time value of money"
+    },
+    {
+     "id": "u21-10",
+     "title": "Discounted Cash Flow",
+     "module": "Interest and the time value of money"
+    },
+    {
+     "id": "u21-11",
+     "title": "Net Present Value (NPV)",
+     "module": "Interest and the time value of money"
+    },
+    {
+     "id": "u21-12",
+     "title": "Internal Rate of Return (IRR)",
+     "module": "Interest and the time value of money"
+    },
+    {
+     "id": "u21-13",
+     "title": "Bond Pricing",
+     "module": "Investments and valuation"
+    },
+    {
+     "id": "u21-14",
+     "title": "Equity Valuation",
+     "module": "Investments and valuation"
+    },
+    {
+     "id": "u21-15",
+     "title": "Portfolio Theory",
+     "module": "Investments and valuation"
+    },
+    {
+     "id": "u21-16",
+     "title": "Modern Portfolio Theory",
+     "module": "Investments and valuation"
+    },
+    {
+     "id": "u21-17",
+     "title": "Capital Asset Pricing Model (CAPM)",
+     "module": "Investments and valuation"
+    },
+    {
+     "id": "u21-18",
+     "title": "Arbitrage Pricing Theory",
+     "module": "Investments and valuation"
+    },
+    {
+     "id": "u21-19",
+     "title": "Quantitative Finance",
+     "module": "Quantitative finance"
+    },
+    {
+     "id": "u21-20",
+     "title": "Mathematical Finance",
+     "module": "Quantitative finance"
+    },
+    {
+     "id": "u21-21",
+     "title": "Financial Modelling",
+     "module": "Quantitative finance"
+    },
+    {
+     "id": "u21-22",
+     "title": "Stochastic Calculus",
+     "module": "Quantitative finance"
+    },
+    {
+     "id": "u21-23",
+     "title": "Geometric Brownian Motion",
+     "module": "Quantitative finance"
+    },
+    {
+     "id": "u21-24",
+     "title": "Derivatives Pricing",
+     "module": "Quantitative finance"
+    },
+    {
+     "id": "u21-25",
+     "title": "Options Pricing",
+     "module": "Quantitative finance"
+    },
+    {
+     "id": "u21-26",
+     "title": "Binomial Options Pricing",
+     "module": "Quantitative finance"
+    },
+    {
+     "id": "u21-27",
+     "title": "Black–Scholes Model",
+     "module": "Quantitative finance"
+    },
+    {
+     "id": "u21-28",
+     "title": "Interest Rate Models",
+     "module": "Quantitative finance"
+    },
+    {
+     "id": "u21-29",
+     "title": "Risk Theory",
+     "module": "Risk and actuarial mathematics"
+    },
+    {
+     "id": "u21-30",
+     "title": "Market Risk Modelling",
+     "module": "Risk and actuarial mathematics"
+    },
+    {
+     "id": "u21-31",
+     "title": "Credit Risk Modelling",
+     "module": "Risk and actuarial mathematics"
+    },
+    {
+     "id": "u21-32",
+     "title": "Value at Risk (VaR)",
+     "module": "Risk and actuarial mathematics"
+    },
+    {
+     "id": "u21-33",
+     "title": "Expected Shortfall",
+     "module": "Risk and actuarial mathematics"
+    },
+    {
+     "id": "u21-34",
+     "title": "Actuarial Mathematics",
+     "module": "Risk and actuarial mathematics"
+    },
+    {
+     "id": "u21-35",
+     "title": "Insurance Mathematics",
+     "module": "Risk and actuarial mathematics"
+    },
+    {
+     "id": "u21-36",
+     "title": "Survival Models",
+     "module": "Risk and actuarial mathematics"
+    },
+    {
+     "id": "u21-37",
+     "title": "Pension Mathematics",
+     "module": "Risk and actuarial mathematics"
+    },
+    {
+     "id": "u21-38",
+     "title": "Mathematical Economics",
+     "module": "Economics"
+    },
+    {
+     "id": "u21-39",
+     "title": "Econometrics",
+     "module": "Economics"
+    },
+    {
+     "id": "u21-40",
+     "title": "Microeconomic Modelling",
+     "module": "Economics"
+    },
+    {
+     "id": "u21-41",
+     "title": "Macroeconomic Modelling",
+     "module": "Economics"
+    },
+    {
+     "id": "u21-42",
+     "title": "Game-Theoretic Economics",
+     "module": "Economics"
+    },
+    {
+     "id": "u21-43",
+     "title": "Cost-Benefit Analysis",
+     "module": "Economics"
+    },
+    {
+     "id": "u21-44",
+     "title": "Forecasting",
+     "module": "Economics"
+    },
+    {
+     "id": "u21-45",
+     "title": "Financial Time Series",
+     "module": "Economics"
+    }
+   ]
+  },
+  {
+   "id": "u22",
+   "n": 22,
+   "title": "Time Series and Forecasting",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u22-01",
+     "title": "Time Series Analysis",
+     "module": "Foundations"
+    },
+    {
+     "id": "u22-02",
+     "title": "Time Series Decomposition",
+     "module": "Foundations"
+    },
+    {
+     "id": "u22-03",
+     "title": "Trend Analysis",
+     "module": "Foundations"
+    },
+    {
+     "id": "u22-04",
+     "title": "Seasonality",
+     "module": "Foundations"
+    },
+    {
+     "id": "u22-05",
+     "title": "Stationarity",
+     "module": "Foundations"
+    },
+    {
+     "id": "u22-06",
+     "title": "Differencing",
+     "module": "Foundations"
+    },
+    {
+     "id": "u22-07",
+     "title": "Autocorrelation",
+     "module": "Foundations"
+    },
+    {
+     "id": "u22-08",
+     "title": "Partial Autocorrelation",
+     "module": "Foundations"
+    },
+    {
+     "id": "u22-09",
+     "title": "Moving Averages",
+     "module": "Smoothing and ARIMA models"
+    },
+    {
+     "id": "u22-10",
+     "title": "Exponential Smoothing",
+     "module": "Smoothing and ARIMA models"
+    },
+    {
+     "id": "u22-11",
+     "title": "AR Models",
+     "module": "Smoothing and ARIMA models"
+    },
+    {
+     "id": "u22-12",
+     "title": "MA Models",
+     "module": "Smoothing and ARIMA models"
+    },
+    {
+     "id": "u22-13",
+     "title": "ARMA Models",
+     "module": "Smoothing and ARIMA models"
+    },
+    {
+     "id": "u22-14",
+     "title": "ARIMA Models",
+     "module": "Smoothing and ARIMA models"
+    },
+    {
+     "id": "u22-15",
+     "title": "SARIMA Models",
+     "module": "Smoothing and ARIMA models"
+    },
+    {
+     "id": "u22-16",
+     "title": "Multivariate Time Series",
+     "module": "Multivariate and state-space models"
+    },
+    {
+     "id": "u22-17",
+     "title": "Vector Autoregression (VAR)",
+     "module": "Multivariate and state-space models"
+    },
+    {
+     "id": "u22-18",
+     "title": "Vector Error Correction Models",
+     "module": "Multivariate and state-space models"
+    },
+    {
+     "id": "u22-19",
+     "title": "State-Space Models",
+     "module": "Multivariate and state-space models"
+    },
+    {
+     "id": "u22-20",
+     "title": "Kalman Filters",
+     "module": "Multivariate and state-space models"
+    },
+    {
+     "id": "u22-21",
+     "title": "Hidden Markov Models",
+     "module": "Multivariate and state-space models"
+    },
+    {
+     "id": "u22-22",
+     "title": "Functional Time Series",
+     "module": "Multivariate and state-space models"
+    },
+    {
+     "id": "u22-23",
+     "title": "ARCH Models",
+     "module": "Volatility and change"
+    },
+    {
+     "id": "u22-24",
+     "title": "GARCH Models",
+     "module": "Volatility and change"
+    },
+    {
+     "id": "u22-25",
+     "title": "Volatility Modelling",
+     "module": "Volatility and change"
+    },
+    {
+     "id": "u22-26",
+     "title": "Change-Point Detection",
+     "module": "Volatility and change"
+    },
+    {
+     "id": "u22-27",
+     "title": "Structural Break Analysis",
+     "module": "Volatility and change"
+    },
+    {
+     "id": "u22-28",
+     "title": "Spectral Analysis",
+     "module": "Volatility and change"
+    },
+    {
+     "id": "u22-29",
+     "title": "Frequency-Domain Analysis",
+     "module": "Volatility and change"
+    },
+    {
+     "id": "u22-30",
+     "title": "Forecast Evaluation",
+     "module": "Forecasting in practice"
+    },
+    {
+     "id": "u22-31",
+     "title": "Prediction Intervals",
+     "module": "Forecasting in practice"
+    },
+    {
+     "id": "u22-32",
+     "title": "Probabilistic Forecasting",
+     "module": "Forecasting in practice"
+    },
+    {
+     "id": "u22-33",
+     "title": "Intermittent Demand Forecasting",
+     "module": "Forecasting in practice"
+    },
+    {
+     "id": "u22-34",
+     "title": "Causal Forecasting",
+     "module": "Forecasting in practice"
+    }
+   ]
+  },
+  {
+   "id": "u23",
+   "n": 23,
+   "title": "Information Theory and Signal Processing",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u23-01",
+     "title": "Information Theory",
+     "module": "Information theory"
+    },
+    {
+     "id": "u23-02",
+     "title": "Entropy",
+     "module": "Information theory"
+    },
+    {
+     "id": "u23-03",
+     "title": "Conditional Entropy",
+     "module": "Information theory"
+    },
+    {
+     "id": "u23-04",
+     "title": "Mutual Information",
+     "module": "Information theory"
+    },
+    {
+     "id": "u23-05",
+     "title": "Kullback–Leibler Divergence",
+     "module": "Information theory"
+    },
+    {
+     "id": "u23-06",
+     "title": "Cross-Entropy",
+     "module": "Information theory"
+    },
+    {
+     "id": "u23-07",
+     "title": "Fisher Information",
+     "module": "Information theory"
+    },
+    {
+     "id": "u23-08",
+     "title": "Minimum Description Length",
+     "module": "Information theory"
+    },
+    {
+     "id": "u23-09",
+     "title": "Shannon's Theorems",
+     "module": "Information theory"
+    },
+    {
+     "id": "u23-10",
+     "title": "Compression Theory",
+     "module": "Coding"
+    },
+    {
+     "id": "u23-11",
+     "title": "Source Coding",
+     "module": "Coding"
+    },
+    {
+     "id": "u23-12",
+     "title": "Channel Coding",
+     "module": "Coding"
+    },
+    {
+     "id": "u23-13",
+     "title": "Error-Correcting Codes",
+     "module": "Coding"
+    },
+    {
+     "id": "u23-14",
+     "title": "Signal Processing Mathematics",
+     "module": "Signal processing"
+    },
+    {
+     "id": "u23-15",
+     "title": "Convolution",
+     "module": "Signal processing"
+    },
+    {
+     "id": "u23-16",
+     "title": "Correlation Functions",
+     "module": "Signal processing"
+    },
+    {
+     "id": "u23-17",
+     "title": "Sampling Theory (Signals)",
+     "module": "Signal processing"
+    },
+    {
+     "id": "u23-18",
+     "title": "Nyquist–Shannon Sampling Theorem",
+     "module": "Signal processing"
+    },
+    {
+     "id": "u23-19",
+     "title": "Digital Signal Processing",
+     "module": "Signal processing"
+    },
+    {
+     "id": "u23-20",
+     "title": "Filtering Theory",
+     "module": "Signal processing"
+    },
+    {
+     "id": "u23-21",
+     "title": "Spectral Estimation",
+     "module": "Signal processing"
+    },
+    {
+     "id": "u23-22",
+     "title": "Wavelet Analysis",
+     "module": "Signal processing"
+    },
+    {
+     "id": "u23-23",
+     "title": "Image Processing Mathematics",
+     "module": "Signal processing"
+    },
+    {
+     "id": "u23-24",
+     "title": "Statistical Signal Processing",
+     "module": "Signal processing"
+    }
+   ]
+  },
+  {
+   "id": "u24",
+   "n": 24,
+   "title": "Mathematics for Machine Learning and AI",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u24-01",
+     "title": "Mathematics for Machine Learning",
+     "module": "Foundations"
+    },
+    {
+     "id": "u24-02",
+     "title": "Statistical Learning Theory",
+     "module": "Foundations"
+    },
+    {
+     "id": "u24-03",
+     "title": "Linear Models",
+     "module": "Foundations"
+    },
+    {
+     "id": "u24-04",
+     "title": "Optimisation Algorithms",
+     "module": "Foundations"
+    },
+    {
+     "id": "u24-05",
+     "title": "Stochastic Gradient Descent",
+     "module": "Foundations"
+    },
+    {
+     "id": "u24-06",
+     "title": "Backpropagation Mathematics",
+     "module": "Foundations"
+    },
+    {
+     "id": "u24-07",
+     "title": "Probability Models",
+     "module": "Probabilistic models"
+    },
+    {
+     "id": "u24-08",
+     "title": "Bayesian Learning",
+     "module": "Probabilistic models"
+    },
+    {
+     "id": "u24-09",
+     "title": "Bayesian Networks",
+     "module": "Probabilistic models"
+    },
+    {
+     "id": "u24-10",
+     "title": "Probabilistic Graphical Models",
+     "module": "Probabilistic models"
+    },
+    {
+     "id": "u24-11",
+     "title": "Markov Models",
+     "module": "Probabilistic models"
+    },
+    {
+     "id": "u24-12",
+     "title": "Gaussian Processes",
+     "module": "Probabilistic models"
+    },
+    {
+     "id": "u24-13",
+     "title": "Uncertainty Estimation",
+     "module": "Probabilistic models"
+    },
+    {
+     "id": "u24-14",
+     "title": "Conformal Prediction",
+     "module": "Probabilistic models"
+    },
+    {
+     "id": "u24-15",
+     "title": "Kernel Methods",
+     "module": "Classical methods"
+    },
+    {
+     "id": "u24-16",
+     "title": "Support Vector Machines",
+     "module": "Classical methods"
+    },
+    {
+     "id": "u24-17",
+     "title": "Decision Trees",
+     "module": "Classical methods"
+    },
+    {
+     "id": "u24-18",
+     "title": "Ensemble Learning Mathematics",
+     "module": "Classical methods"
+    },
+    {
+     "id": "u24-19",
+     "title": "Random Forest Theory",
+     "module": "Classical methods"
+    },
+    {
+     "id": "u24-20",
+     "title": "Boosting Theory",
+     "module": "Classical methods"
+    },
+    {
+     "id": "u24-21",
+     "title": "Clustering Mathematics",
+     "module": "Classical methods"
+    },
+    {
+     "id": "u24-22",
+     "title": "Dimensionality Reduction",
+     "module": "Classical methods"
+    },
+    {
+     "id": "u24-23",
+     "title": "Manifold Learning",
+     "module": "Classical methods"
+    },
+    {
+     "id": "u24-24",
+     "title": "Neural Network Theory",
+     "module": "Deep learning"
+    },
+    {
+     "id": "u24-25",
+     "title": "Deep Learning Mathematics",
+     "module": "Deep learning"
+    },
+    {
+     "id": "u24-26",
+     "title": "Representation Learning",
+     "module": "Deep learning"
+    },
+    {
+     "id": "u24-27",
+     "title": "Attention Mechanisms",
+     "module": "Deep learning"
+    },
+    {
+     "id": "u24-28",
+     "title": "Transformer Mathematics",
+     "module": "Deep learning"
+    },
+    {
+     "id": "u24-29",
+     "title": "Information-Theoretic Learning",
+     "module": "Deep learning"
+    },
+    {
+     "id": "u24-30",
+     "title": "Reinforcement Learning",
+     "module": "Learning to act, and explaining"
+    },
+    {
+     "id": "u24-31",
+     "title": "Bellman Equations",
+     "module": "Learning to act, and explaining"
+    },
+    {
+     "id": "u24-32",
+     "title": "Policy Optimisation",
+     "module": "Learning to act, and explaining"
+    },
+    {
+     "id": "u24-33",
+     "title": "Multi-Armed Bandits",
+     "module": "Learning to act, and explaining"
+    },
+    {
+     "id": "u24-34",
+     "title": "Causal Machine Learning",
+     "module": "Learning to act, and explaining"
+    },
+    {
+     "id": "u24-35",
+     "title": "Explainable AI Mathematics",
+     "module": "Learning to act, and explaining"
+    }
+   ]
+  },
+  {
+   "id": "u25",
+   "n": 25,
+   "title": "Control Theory and Systems",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u25-01",
+     "title": "Control Theory",
+     "module": "Systems"
+    },
+    {
+     "id": "u25-02",
+     "title": "Linear Systems",
+     "module": "Systems"
+    },
+    {
+     "id": "u25-03",
+     "title": "Nonlinear Systems",
+     "module": "Systems"
+    },
+    {
+     "id": "u25-04",
+     "title": "State-Space Representation",
+     "module": "Systems"
+    },
+    {
+     "id": "u25-05",
+     "title": "Transfer Functions",
+     "module": "Systems"
+    },
+    {
+     "id": "u25-06",
+     "title": "Hybrid Systems",
+     "module": "Systems"
+    },
+    {
+     "id": "u25-07",
+     "title": "Switched Systems",
+     "module": "Systems"
+    },
+    {
+     "id": "u25-08",
+     "title": "Open-Loop Control",
+     "module": "Feedback and stability"
+    },
+    {
+     "id": "u25-09",
+     "title": "Closed-Loop Control",
+     "module": "Feedback and stability"
+    },
+    {
+     "id": "u25-10",
+     "title": "Feedback Control",
+     "module": "Feedback and stability"
+    },
+    {
+     "id": "u25-11",
+     "title": "PID Control",
+     "module": "Feedback and stability"
+    },
+    {
+     "id": "u25-12",
+     "title": "Stability Theory",
+     "module": "Feedback and stability"
+    },
+    {
+     "id": "u25-13",
+     "title": "Lyapunov Stability",
+     "module": "Feedback and stability"
+    },
+    {
+     "id": "u25-14",
+     "title": "Controllability",
+     "module": "Feedback and stability"
+    },
+    {
+     "id": "u25-15",
+     "title": "Observability",
+     "module": "Feedback and stability"
+    },
+    {
+     "id": "u25-16",
+     "title": "Frequency Response",
+     "module": "Frequency methods"
+    },
+    {
+     "id": "u25-17",
+     "title": "Bode Plots",
+     "module": "Frequency methods"
+    },
+    {
+     "id": "u25-18",
+     "title": "Nyquist Stability Criterion",
+     "module": "Frequency methods"
+    },
+    {
+     "id": "u25-19",
+     "title": "Root Locus",
+     "module": "Frequency methods"
+    },
+    {
+     "id": "u25-20",
+     "title": "State Estimation",
+     "module": "Advanced control"
+    },
+    {
+     "id": "u25-21",
+     "title": "Kalman Filtering",
+     "module": "Advanced control"
+    },
+    {
+     "id": "u25-22",
+     "title": "System Identification",
+     "module": "Advanced control"
+    },
+    {
+     "id": "u25-23",
+     "title": "Linear Quadratic Regulation",
+     "module": "Advanced control"
+    },
+    {
+     "id": "u25-24",
+     "title": "Model Predictive Control",
+     "module": "Advanced control"
+    },
+    {
+     "id": "u25-25",
+     "title": "Robust Control",
+     "module": "Advanced control"
+    },
+    {
+     "id": "u25-26",
+     "title": "Adaptive Control",
+     "module": "Advanced control"
+    },
+    {
+     "id": "u25-27",
+     "title": "Stochastic Control",
+     "module": "Advanced control"
+    },
+    {
+     "id": "u25-28",
+     "title": "Nonlinear Control",
+     "module": "Advanced control"
+    },
+    {
+     "id": "u25-29",
+     "title": "Distributed Control",
+     "module": "Advanced control"
+    },
+    {
+     "id": "u25-30",
+     "title": "Networked Control Systems",
+     "module": "Advanced control"
+    }
+   ]
+  },
+  {
+   "id": "u26",
+   "n": 26,
+   "title": "Mathematical Reasoning and Research Methods",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u26-01",
+     "title": "Mathematical Reasoning",
+     "module": "Reasoning"
+    },
+    {
+     "id": "u26-02",
+     "title": "Mathematical Proofs",
+     "module": "Reasoning"
+    },
+    {
+     "id": "u26-03",
+     "title": "Deductive Reasoning",
+     "module": "Reasoning"
+    },
+    {
+     "id": "u26-04",
+     "title": "Inductive Reasoning",
+     "module": "Reasoning"
+    },
+    {
+     "id": "u26-05",
+     "title": "Abstract Reasoning",
+     "module": "Reasoning"
+    },
+    {
+     "id": "u26-06",
+     "title": "Quantitative Reasoning",
+     "module": "Reasoning"
+    },
+    {
+     "id": "u26-07",
+     "title": "Problem Solving",
+     "module": "Reasoning"
+    },
+    {
+     "id": "u26-08",
+     "title": "Estimation",
+     "module": "Approximation and uncertainty"
+    },
+    {
+     "id": "u26-09",
+     "title": "Approximation",
+     "module": "Approximation and uncertainty"
+    },
+    {
+     "id": "u26-10",
+     "title": "Error Propagation",
+     "module": "Approximation and uncertainty"
+    },
+    {
+     "id": "u26-11",
+     "title": "Research Methodology",
+     "module": "Research practice"
+    },
+    {
+     "id": "u26-12",
+     "title": "Literature Review",
+     "module": "Research practice"
+    },
+    {
+     "id": "u26-13",
+     "title": "Hypothesis Formulation",
+     "module": "Research practice"
+    },
+    {
+     "id": "u26-14",
+     "title": "Model Validation",
+     "module": "Research practice"
+    },
+    {
+     "id": "u26-15",
+     "title": "Model Verification",
+     "module": "Research practice"
+    },
+    {
+     "id": "u26-16",
+     "title": "Computational Experiments",
+     "module": "Research practice"
+    },
+    {
+     "id": "u26-17",
+     "title": "Reproducible Research",
+     "module": "Research practice"
+    },
+    {
+     "id": "u26-18",
+     "title": "Mathematical Visualisation",
+     "module": "Research practice"
+    },
+    {
+     "id": "u26-19",
+     "title": "Mathematical Communication",
+     "module": "Communication"
+    },
+    {
+     "id": "u26-20",
+     "title": "Mathematical Writing",
+     "module": "Communication"
+    },
+    {
+     "id": "u26-21",
+     "title": "Scientific Reporting",
+     "module": "Communication"
+    }
+   ]
+  },
+  {
+   "id": "u27",
+   "n": 27,
+   "title": "Mathematical Software and Tools",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u27-01",
+     "title": "Mathematica",
+     "module": "Computer algebra and notebooks"
+    },
+    {
+     "id": "u27-02",
+     "title": "Wolfram Language",
+     "module": "Computer algebra and notebooks"
+    },
+    {
+     "id": "u27-03",
+     "title": "Wolfram Alpha",
+     "module": "Computer algebra and notebooks"
+    },
+    {
+     "id": "u27-04",
+     "title": "Mathematica Notebooks",
+     "module": "Computer algebra and notebooks"
+    },
+    {
+     "id": "u27-05",
+     "title": "Maple",
+     "module": "Computer algebra and notebooks"
+    },
+    {
+     "id": "u27-06",
+     "title": "Maxima",
+     "module": "Computer algebra and notebooks"
+    },
+    {
+     "id": "u27-07",
+     "title": "SageMath",
+     "module": "Computer algebra and notebooks"
+    },
+    {
+     "id": "u27-08",
+     "title": "Jupyter Notebook",
+     "module": "Computer algebra and notebooks"
+    },
+    {
+     "id": "u27-09",
+     "title": "MATLAB",
+     "module": "Numerical and scientific programming"
+    },
+    {
+     "id": "u27-10",
+     "title": "GNU Octave",
+     "module": "Numerical and scientific programming"
+    },
+    {
+     "id": "u27-11",
+     "title": "Julia",
+     "module": "Numerical and scientific programming"
+    },
+    {
+     "id": "u27-12",
+     "title": "Python for Mathematics",
+     "module": "Numerical and scientific programming"
+    },
+    {
+     "id": "u27-13",
+     "title": "NumPy",
+     "module": "Numerical and scientific programming"
+    },
+    {
+     "id": "u27-14",
+     "title": "SciPy",
+     "module": "Numerical and scientific programming"
+    },
+    {
+     "id": "u27-15",
+     "title": "SymPy",
+     "module": "Numerical and scientific programming"
+    },
+    {
+     "id": "u27-16",
+     "title": "JAX",
+     "module": "Numerical and scientific programming"
+    },
+    {
+     "id": "u27-17",
+     "title": "R",
+     "module": "Statistics and data"
+    },
+    {
+     "id": "u27-18",
+     "title": "RStudio",
+     "module": "Statistics and data"
+    },
+    {
+     "id": "u27-19",
+     "title": "pandas",
+     "module": "Statistics and data"
+    },
+    {
+     "id": "u27-20",
+     "title": "statsmodels",
+     "module": "Statistics and data"
+    },
+    {
+     "id": "u27-21",
+     "title": "scikit-learn",
+     "module": "Statistics and data"
+    },
+    {
+     "id": "u27-22",
+     "title": "SPSS",
+     "module": "Statistics and data"
+    },
+    {
+     "id": "u27-23",
+     "title": "SAS",
+     "module": "Statistics and data"
+    },
+    {
+     "id": "u27-24",
+     "title": "Stata",
+     "module": "Statistics and data"
+    },
+    {
+     "id": "u27-25",
+     "title": "Minitab",
+     "module": "Statistics and data"
+    },
+    {
+     "id": "u27-26",
+     "title": "Stan",
+     "module": "Statistics and data"
+    },
+    {
+     "id": "u27-27",
+     "title": "PyMC",
+     "module": "Statistics and data"
+    },
+    {
+     "id": "u27-28",
+     "title": "BUGS",
+     "module": "Statistics and data"
+    },
+    {
+     "id": "u27-29",
+     "title": "PyTorch",
+     "module": "Machine learning frameworks"
+    },
+    {
+     "id": "u27-30",
+     "title": "TensorFlow",
+     "module": "Machine learning frameworks"
+    },
+    {
+     "id": "u27-31",
+     "title": "Excel",
+     "module": "Spreadsheets and visual tools"
+    },
+    {
+     "id": "u27-32",
+     "title": "Solver in Excel",
+     "module": "Spreadsheets and visual tools"
+    },
+    {
+     "id": "u27-33",
+     "title": "Spreadsheet Calculations",
+     "module": "Spreadsheets and visual tools"
+    },
+    {
+     "id": "u27-34",
+     "title": "GeoGebra",
+     "module": "Spreadsheets and visual tools"
+    },
+    {
+     "id": "u27-35",
+     "title": "Desmos",
+     "module": "Spreadsheets and visual tools"
+    },
+    {
+     "id": "u27-36",
+     "title": "LaTeX",
+     "module": "Typesetting"
+    },
+    {
+     "id": "u27-37",
+     "title": "MathJax",
+     "module": "Typesetting"
+    },
+    {
+     "id": "u27-38",
+     "title": "GAP",
+     "module": "Specialist systems"
+    },
+    {
+     "id": "u27-39",
+     "title": "Magma",
+     "module": "Specialist systems"
+    },
+    {
+     "id": "u27-40",
+     "title": "PARI/GP",
+     "module": "Specialist systems"
+    },
+    {
+     "id": "u27-41",
+     "title": "FEniCS",
+     "module": "Specialist systems"
+    },
+    {
+     "id": "u27-42",
+     "title": "COMSOL Multiphysics",
+     "module": "Specialist systems"
+    },
+    {
+     "id": "u27-43",
+     "title": "ANSYS",
+     "module": "Specialist systems"
+    },
+    {
+     "id": "u27-44",
+     "title": "OpenFOAM",
+     "module": "Specialist systems"
+    },
+    {
+     "id": "u27-45",
+     "title": "MapleSim",
+     "module": "Specialist systems"
+    },
+    {
+     "id": "u27-46",
+     "title": "Simulink",
+     "module": "Specialist systems"
+    },
+    {
+     "id": "u27-47",
+     "title": "Gurobi",
+     "module": "Optimisation solvers"
+    },
+    {
+     "id": "u27-48",
+     "title": "IBM ILOG CPLEX",
+     "module": "Optimisation solvers"
+    },
+    {
+     "id": "u27-49",
+     "title": "OR-Tools",
+     "module": "Optimisation solvers"
+    },
+    {
+     "id": "u27-50",
+     "title": "CVXPY",
+     "module": "Optimisation solvers"
+    }
+   ]
+  },
+  {
+   "id": "u28",
+   "n": 28,
+   "title": "School and Examination Mathematics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u28-01",
+     "title": "Primary Mathematics",
+     "module": "Qualifications"
+    },
+    {
+     "id": "u28-02",
+     "title": "Functional Skills Mathematics",
+     "module": "Qualifications"
+    },
+    {
+     "id": "u28-03",
+     "title": "Foundation Mathematics",
+     "module": "Qualifications"
+    },
+    {
+     "id": "u28-04",
+     "title": "GCSE Mathematics",
+     "module": "Qualifications"
+    },
+    {
+     "id": "u28-05",
+     "title": "Core Mathematics",
+     "module": "Qualifications"
+    },
+    {
+     "id": "u28-06",
+     "title": "A-Level Mathematics",
+     "module": "Qualifications"
+    },
+    {
+     "id": "u28-07",
+     "title": "Pure Mathematics",
+     "module": "Qualifications"
+    },
+    {
+     "id": "u28-08",
+     "title": "Mechanics",
+     "module": "Qualifications"
+    },
+    {
+     "id": "u28-09",
+     "title": "Statistics (A level)",
+     "module": "Qualifications"
+    },
+    {
+     "id": "u28-10",
+     "title": "Further Mathematics",
+     "module": "Qualifications"
+    },
+    {
+     "id": "u28-11",
+     "title": "International Baccalaureate Mathematics",
+     "module": "Qualifications"
+    },
+    {
+     "id": "u28-12",
+     "title": "University Entrance Mathematics",
+     "module": "Qualifications"
+    },
+    {
+     "id": "u28-13",
+     "title": "SAT Mathematics",
+     "module": "Qualifications"
+    },
+    {
+     "id": "u28-14",
+     "title": "ACT Mathematics",
+     "module": "Qualifications"
+    },
+    {
+     "id": "u28-15",
+     "title": "GRE Quantitative Reasoning",
+     "module": "Qualifications"
+    },
+    {
+     "id": "u28-16",
+     "title": "Word Problems",
+     "module": "Exam skills"
+    },
+    {
+     "id": "u28-17",
+     "title": "Graph Interpretation",
+     "module": "Exam skills"
+    },
+    {
+     "id": "u28-18",
+     "title": "Percentages and Interest",
+     "module": "Exam skills"
+    },
+    {
+     "id": "u28-19",
+     "title": "Speed, Distance and Time",
+     "module": "Exam skills"
+    },
+    {
+     "id": "u28-20",
+     "title": "Probability Problems",
+     "module": "Exam skills"
+    },
+    {
+     "id": "u28-21",
+     "title": "Mathematical Problem Solving",
+     "module": "Exam skills"
+    },
+    {
+     "id": "u28-22",
+     "title": "Exam Techniques",
+     "module": "Exam skills"
+    },
+    {
+     "id": "u28-23",
+     "title": "Mental Arithmetic",
+     "module": "Exam skills"
+    },
+    {
+     "id": "u28-24",
+     "title": "Calculator Skills",
+     "module": "Exam skills"
+    },
+    {
+     "id": "u28-25",
+     "title": "Estimation and Checking",
+     "module": "Exam skills"
+    }
+   ]
+  },
+  {
+   "id": "u29",
+   "n": 29,
+   "title": "Everyday and Practical Mathematics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u29-01",
+     "title": "Financial Literacy",
+     "module": "Money"
+    },
+    {
+     "id": "u29-02",
+     "title": "Personal Budgeting",
+     "module": "Money"
+    },
+    {
+     "id": "u29-03",
+     "title": "Household Budgeting",
+     "module": "Money"
+    },
+    {
+     "id": "u29-04",
+     "title": "Tax Calculations",
+     "module": "Money"
+    },
+    {
+     "id": "u29-05",
+     "title": "VAT Calculations",
+     "module": "Money"
+    },
+    {
+     "id": "u29-06",
+     "title": "Discounts",
+     "module": "Money"
+    },
+    {
+     "id": "u29-07",
+     "title": "Profit and Loss",
+     "module": "Money"
+    },
+    {
+     "id": "u29-08",
+     "title": "Currency Conversion",
+     "module": "Money"
+    },
+    {
+     "id": "u29-09",
+     "title": "Currency and Exchange Rates",
+     "module": "Money"
+    },
+    {
+     "id": "u29-10",
+     "title": "Percent Change",
+     "module": "Money"
+    },
+    {
+     "id": "u29-11",
+     "title": "Compound Growth",
+     "module": "Money"
+    },
+    {
+     "id": "u29-12",
+     "title": "Inflation Calculations",
+     "module": "Money"
+    },
+    {
+     "id": "u29-13",
+     "title": "Loan Repayments",
+     "module": "Money"
+    },
+    {
+     "id": "u29-14",
+     "title": "Mortgage Calculations",
+     "module": "Money"
+    },
+    {
+     "id": "u29-15",
+     "title": "Investment Returns",
+     "module": "Money"
+    },
+    {
+     "id": "u29-16",
+     "title": "Measurement",
+     "module": "Measures and time"
+    },
+    {
+     "id": "u29-17",
+     "title": "Unit Conversion",
+     "module": "Measures and time"
+    },
+    {
+     "id": "u29-18",
+     "title": "Time Calculations",
+     "module": "Measures and time"
+    },
+    {
+     "id": "u29-19",
+     "title": "Speed and Distance",
+     "module": "Measures and time"
+    },
+    {
+     "id": "u29-20",
+     "title": "Ratios in Recipes",
+     "module": "Measures and time"
+    },
+    {
+     "id": "u29-21",
+     "title": "Scaling and Proportions",
+     "module": "Measures and time"
+    },
+    {
+     "id": "u29-22",
+     "title": "Area and Volume Calculations",
+     "module": "Measures and time"
+    },
+    {
+     "id": "u29-23",
+     "title": "Construction Mathematics",
+     "module": "Measures and time"
+    },
+    {
+     "id": "u29-24",
+     "title": "Surveying Mathematics",
+     "module": "Measures and time"
+    },
+    {
+     "id": "u29-25",
+     "title": "Reading Graphs",
+     "module": "Data and risk"
+    },
+    {
+     "id": "u29-26",
+     "title": "Reading Tables",
+     "module": "Data and risk"
+    },
+    {
+     "id": "u29-27",
+     "title": "Risk and Probability",
+     "module": "Data and risk"
+    },
+    {
+     "id": "u29-28",
+     "title": "Estimation and Mental Maths",
+     "module": "Data and risk"
+    }
+   ]
+  }
+ ]
+}

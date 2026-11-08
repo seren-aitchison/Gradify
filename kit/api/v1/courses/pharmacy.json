@@ -1,0 +1,2000 @@
+{
+ "api": 1,
+ "slug": "pharmacy",
+ "name": "Pharmacy",
+ "site": "PharmaGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Clinical reasoning"
+ ],
+ "notice": "<b>Education, not clinical advice.</b> PharmaGradify doesn't register you with the GPhC, replace your MPharm, foundation training or local training, or authorise you to supply, check or prescribe medicines. Doses and examples are illustrative: in practice, use the current BNF or BNFC, the SPC, local guidance and your professional judgement. Law and services differ across the four UK nations.",
+ "notes": "/kit/courses/pharmacy/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Professional practice",
+   "units": [
+    1,
+    16,
+    17,
+    18
+   ],
+   "from": "#16c784",
+   "to": "#7ee0ff"
+  },
+  {
+   "name": "The science of medicines",
+   "units": [
+    2,
+    3,
+    4,
+    5
+   ],
+   "from": "#6a60ff",
+   "to": "#b38cff"
+  },
+  {
+   "name": "Calculations",
+   "units": [
+    6
+   ],
+   "from": "#ffc002",
+   "to": "#ff8a3d"
+  },
+  {
+   "name": "Therapeutics",
+   "units": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+   ],
+   "from": "#ff3d6e",
+   "to": "#ff9f40"
+  },
+  {
+   "name": "Special populations",
+   "units": [
+    15
+   ],
+   "from": "#0aa4c9",
+   "to": "#40d4b1"
+  },
+  {
+   "name": "Qualifying",
+   "units": [
+    19
+   ],
+   "from": "#f055dd",
+   "to": "#4641ff"
+  }
+ ],
+ "paths": [
+  {
+   "id": "mpharm-1",
+   "name": "MPharm: the sciences",
+   "sub": "The professional foundations, then how drugs act, how the body handles them, their chemistry and their formulation, with calculations throughout.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "select": null
+  },
+  {
+   "id": "mpharm-therapeutics",
+   "name": "MPharm: therapeutics",
+   "sub": "Disease, drugs and patients system by system: cardiovascular, respiratory, endocrine, mental health and neurology, infection, gastrointestinal and renal, inflammation and skin, cancer and immunology, and special populations.",
+   "units": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+   ],
+   "select": null
+  },
+  {
+   "id": "mpharm-practice",
+   "name": "MPharm: practice and prescribing",
+   "sub": "Law, ethics and governance, clinical pharmacy and medicines optimisation, and the clinical assessment and prescribing skills you'll need as an independent prescriber at registration.",
+   "units": [
+    16,
+    17,
+    18,
+    15
+   ],
+   "select": null
+  },
+  {
+   "id": "registration",
+   "name": "Registration assessment preparation",
+   "sub": "The assessment format and framework, calculations, law and the therapeutics that come up most, with single-best-answer practice. Check the GPhC's current framework before you sit.",
+   "units": [
+    19,
+    6,
+    16,
+    17,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    15
+   ],
+   "select": null
+  },
+  {
+   "id": "foundation",
+   "name": "Foundation training year",
+   "sub": "What your foundation year involves, with the clinical pharmacy, prescribing, law and medicines optimisation you'll use every day.",
+   "units": [
+    19,
+    17,
+    18,
+    16,
+    15
+   ],
+   "select": null
+  },
+  {
+   "id": "technician",
+   "name": "Pharmacy technicians",
+   "sub": "The professional foundations, medicines law, dispensing, formulation, calculations and medicines optimisation, within the GPhC's standards for pharmacy technicians and your local scope.",
+   "units": [
+    1,
+    16,
+    5,
+    6,
+    17
+   ],
+   "select": {
+    "5": [
+     "Liquid and semi-solid dosage forms",
+     "Solid dosage forms",
+     "Practice"
+    ],
+    "17": [
+     "Clinical checks",
+     "Medicines optimisation"
+    ]
+   }
+  },
+  {
+   "id": "prescriber",
+   "name": "Pharmacist prescribers",
+   "sub": "Clinical assessment, prescribing decisions and governance, with the therapeutics and special populations behind them, for pharmacists preparing to prescribe or extending their scope.",
+   "units": [
+    18,
+    17,
+    15,
+    7,
+    8,
+    9,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "cpd",
+   "name": "Practising pharmacists: CPD",
+   "sub": "Refresh law, clinical pharmacy, prescribing and the therapeutics that change most, and record it for GPhC revalidation.",
+   "units": [
+    16,
+    17,
+    18,
+    7,
+    9,
+    11
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "ra-calculations",
+   "title": "Calculations practice paper",
+   "sub": "Numerical answers in the style of the registration assessment's calculations paper.",
+   "units": [
+    6
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "ra-short",
+   "title": "Registration assessment practice: 60 questions",
+   "sub": "Single best answer questions across law, practice and therapeutics.",
+   "units": null,
+   "path": "registration",
+   "count": 60,
+   "minutes": 75,
+   "pass": 0.7,
+   "format": "sba"
+  },
+  {
+   "id": "ra-full",
+   "title": "Registration assessment practice: full length",
+   "sub": "120 single best answer questions in two and a half hours.",
+   "units": null,
+   "path": "registration",
+   "count": 120,
+   "minutes": 150,
+   "pass": 0.7,
+   "format": "sba"
+  },
+  {
+   "id": "law-ethics",
+   "title": "Law and ethics",
+   "sub": "Medicines law, controlled drugs, regulation and ethics.",
+   "units": [
+    16
+   ],
+   "path": null,
+   "count": 30,
+   "minutes": 45,
+   "pass": 0.7,
+   "format": "sba"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Foundations of Pharmacy Practice",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "Introduction to pharmacy",
+     "module": "The profession"
+    },
+    {
+     "id": "u01-02",
+     "title": "Pharmacy across sectors",
+     "module": "The profession"
+    },
+    {
+     "id": "u01-03",
+     "title": "The pharmacy team",
+     "module": "The profession"
+    },
+    {
+     "id": "u01-04",
+     "title": "The GPhC and professional regulation",
+     "module": "The profession"
+    },
+    {
+     "id": "u01-05",
+     "title": "The standards for pharmacy professionals",
+     "module": "The profession"
+    },
+    {
+     "id": "u01-06",
+     "title": "Person-centred care",
+     "module": "Person-centred care"
+    },
+    {
+     "id": "u01-07",
+     "title": "Communication and consultation skills",
+     "module": "Person-centred care"
+    },
+    {
+     "id": "u01-08",
+     "title": "Health literacy and adapting information",
+     "module": "Person-centred care"
+    },
+    {
+     "id": "u01-09",
+     "title": "Consent in pharmacy practice",
+     "module": "Person-centred care"
+    },
+    {
+     "id": "u01-10",
+     "title": "Confidentiality and information governance",
+     "module": "Person-centred care"
+    },
+    {
+     "id": "u01-11",
+     "title": "Equality, diversity and inclusion",
+     "module": "Person-centred care"
+    },
+    {
+     "id": "u01-12",
+     "title": "Professional judgement and accountability",
+     "module": "Safe and effective practice"
+    },
+    {
+     "id": "u01-13",
+     "title": "Raising concerns and speaking up",
+     "module": "Safe and effective practice"
+    },
+    {
+     "id": "u01-14",
+     "title": "Patient safety and learning from errors",
+     "module": "Safe and effective practice"
+    },
+    {
+     "id": "u01-15",
+     "title": "Evidence-based practice",
+     "module": "Safe and effective practice"
+    },
+    {
+     "id": "u01-16",
+     "title": "Reflective practice and CPD",
+     "module": "Safe and effective practice"
+    },
+    {
+     "id": "u01-17",
+     "title": "The NHS and pharmacy services across the UK",
+     "module": "The pharmacy in the health system"
+    },
+    {
+     "id": "u01-18",
+     "title": "Public health and health promotion",
+     "module": "The pharmacy in the health system"
+    },
+    {
+     "id": "u01-19",
+     "title": "Working in multidisciplinary teams",
+     "module": "The pharmacy in the health system"
+    },
+    {
+     "id": "u01-20",
+     "title": "Digital pharmacy and technology",
+     "module": "The pharmacy in the health system"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Pharmacology: How Drugs Act",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "What pharmacology is",
+     "module": "Principles"
+    },
+    {
+     "id": "u02-02",
+     "title": "Drug targets",
+     "module": "Principles"
+    },
+    {
+     "id": "u02-03",
+     "title": "Receptors and receptor families",
+     "module": "Principles"
+    },
+    {
+     "id": "u02-04",
+     "title": "Agonists and antagonists",
+     "module": "Principles"
+    },
+    {
+     "id": "u02-05",
+     "title": "Dose-response relationships",
+     "module": "Principles"
+    },
+    {
+     "id": "u02-06",
+     "title": "Affinity, efficacy and potency",
+     "module": "Principles"
+    },
+    {
+     "id": "u02-07",
+     "title": "Tolerance, desensitisation and dependence",
+     "module": "Principles"
+    },
+    {
+     "id": "u02-08",
+     "title": "G protein-coupled receptors and second messengers",
+     "module": "Signalling"
+    },
+    {
+     "id": "u02-09",
+     "title": "Ion channels as drug targets",
+     "module": "Signalling"
+    },
+    {
+     "id": "u02-10",
+     "title": "Enzymes as drug targets",
+     "module": "Signalling"
+    },
+    {
+     "id": "u02-11",
+     "title": "Transporters as drug targets",
+     "module": "Signalling"
+    },
+    {
+     "id": "u02-12",
+     "title": "Nuclear receptors",
+     "module": "Signalling"
+    },
+    {
+     "id": "u02-13",
+     "title": "The autonomic nervous system",
+     "module": "Systems pharmacology"
+    },
+    {
+     "id": "u02-14",
+     "title": "Cholinergic pharmacology",
+     "module": "Systems pharmacology"
+    },
+    {
+     "id": "u02-15",
+     "title": "Adrenergic pharmacology",
+     "module": "Systems pharmacology"
+    },
+    {
+     "id": "u02-16",
+     "title": "Histamine and its antagonists",
+     "module": "Systems pharmacology"
+    },
+    {
+     "id": "u02-17",
+     "title": "Eicosanoids and inflammation",
+     "module": "Systems pharmacology"
+    },
+    {
+     "id": "u02-18",
+     "title": "Neurotransmitters in the brain",
+     "module": "Systems pharmacology"
+    },
+    {
+     "id": "u02-19",
+     "title": "Adverse drug reactions",
+     "module": "Safety pharmacology"
+    },
+    {
+     "id": "u02-20",
+     "title": "Mechanisms of drug interactions",
+     "module": "Safety pharmacology"
+    },
+    {
+     "id": "u02-21",
+     "title": "Drug toxicity and overdose",
+     "module": "Safety pharmacology"
+    },
+    {
+     "id": "u02-22",
+     "title": "Pharmacogenomics",
+     "module": "Safety pharmacology"
+    },
+    {
+     "id": "u02-23",
+     "title": "Drug development and clinical trials",
+     "module": "Safety pharmacology"
+    },
+    {
+     "id": "u02-24",
+     "title": "Biological medicines and biosimilars",
+     "module": "Safety pharmacology"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Pharmacokinetics and Biopharmaceutics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Introduction to pharmacokinetics",
+     "module": "Absorption and distribution"
+    },
+    {
+     "id": "u03-02",
+     "title": "Routes of administration",
+     "module": "Absorption and distribution"
+    },
+    {
+     "id": "u03-03",
+     "title": "Absorption and bioavailability",
+     "module": "Absorption and distribution"
+    },
+    {
+     "id": "u03-04",
+     "title": "First-pass metabolism",
+     "module": "Absorption and distribution"
+    },
+    {
+     "id": "u03-05",
+     "title": "Distribution and volume of distribution",
+     "module": "Absorption and distribution"
+    },
+    {
+     "id": "u03-06",
+     "title": "Plasma protein binding",
+     "module": "Absorption and distribution"
+    },
+    {
+     "id": "u03-07",
+     "title": "Drug metabolism: phase I and II",
+     "module": "Metabolism and excretion"
+    },
+    {
+     "id": "u03-08",
+     "title": "Cytochrome P450 enzymes",
+     "module": "Metabolism and excretion"
+    },
+    {
+     "id": "u03-09",
+     "title": "Renal excretion",
+     "module": "Metabolism and excretion"
+    },
+    {
+     "id": "u03-10",
+     "title": "Biliary excretion and enterohepatic recycling",
+     "module": "Metabolism and excretion"
+    },
+    {
+     "id": "u03-11",
+     "title": "Clearance",
+     "module": "Quantitative pharmacokinetics"
+    },
+    {
+     "id": "u03-12",
+     "title": "Half-life and the elimination rate constant",
+     "module": "Quantitative pharmacokinetics"
+    },
+    {
+     "id": "u03-13",
+     "title": "Steady state and accumulation",
+     "module": "Quantitative pharmacokinetics"
+    },
+    {
+     "id": "u03-14",
+     "title": "Loading and maintenance doses",
+     "module": "Quantitative pharmacokinetics"
+    },
+    {
+     "id": "u03-15",
+     "title": "Linear and non-linear kinetics",
+     "module": "Quantitative pharmacokinetics"
+    },
+    {
+     "id": "u03-16",
+     "title": "Compartment models",
+     "module": "Quantitative pharmacokinetics"
+    },
+    {
+     "id": "u03-17",
+     "title": "Therapeutic drug monitoring",
+     "module": "Applied pharmacokinetics"
+    },
+    {
+     "id": "u03-18",
+     "title": "Pharmacokinetics in renal impairment",
+     "module": "Applied pharmacokinetics"
+    },
+    {
+     "id": "u03-19",
+     "title": "Pharmacokinetics in hepatic impairment",
+     "module": "Applied pharmacokinetics"
+    },
+    {
+     "id": "u03-20",
+     "title": "Biopharmaceutics and dissolution",
+     "module": "Applied pharmacokinetics"
+    },
+    {
+     "id": "u03-21",
+     "title": "Bioequivalence",
+     "module": "Applied pharmacokinetics"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Medicinal and Pharmaceutical Chemistry",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Functional groups in drugs",
+     "module": "Chemical foundations"
+    },
+    {
+     "id": "u04-02",
+     "title": "Acids, bases and pKa",
+     "module": "Chemical foundations"
+    },
+    {
+     "id": "u04-03",
+     "title": "Ionisation and the Henderson-Hasselbalch equation",
+     "module": "Chemical foundations"
+    },
+    {
+     "id": "u04-04",
+     "title": "Lipophilicity and partition coefficients",
+     "module": "Chemical foundations"
+    },
+    {
+     "id": "u04-05",
+     "title": "Stereochemistry and chirality",
+     "module": "Chemical foundations"
+    },
+    {
+     "id": "u04-06",
+     "title": "Structure-activity relationships",
+     "module": "Drug design"
+    },
+    {
+     "id": "u04-07",
+     "title": "Pharmacophores and lead optimisation",
+     "module": "Drug design"
+    },
+    {
+     "id": "u04-08",
+     "title": "Prodrugs",
+     "module": "Drug design"
+    },
+    {
+     "id": "u04-09",
+     "title": "Bioisosteres",
+     "module": "Drug design"
+    },
+    {
+     "id": "u04-10",
+     "title": "Drug-likeness and Lipinski's rule of five",
+     "module": "Drug design"
+    },
+    {
+     "id": "u04-11",
+     "title": "Beta-lactam chemistry",
+     "module": "Drug classes in chemistry"
+    },
+    {
+     "id": "u04-12",
+     "title": "Steroid chemistry",
+     "module": "Drug classes in chemistry"
+    },
+    {
+     "id": "u04-13",
+     "title": "Opioid chemistry",
+     "module": "Drug classes in chemistry"
+    },
+    {
+     "id": "u04-14",
+     "title": "Benzodiazepine chemistry",
+     "module": "Drug classes in chemistry"
+    },
+    {
+     "id": "u04-15",
+     "title": "Chemical degradation pathways",
+     "module": "Stability and analysis"
+    },
+    {
+     "id": "u04-16",
+     "title": "Drug stability and shelf life",
+     "module": "Stability and analysis"
+    },
+    {
+     "id": "u04-17",
+     "title": "Pharmaceutical analysis",
+     "module": "Stability and analysis"
+    },
+    {
+     "id": "u04-18",
+     "title": "Spectroscopy in pharmaceutical analysis",
+     "module": "Stability and analysis"
+    },
+    {
+     "id": "u04-19",
+     "title": "Chromatography",
+     "module": "Stability and analysis"
+    },
+    {
+     "id": "u04-20",
+     "title": "Quality control and pharmacopoeias",
+     "module": "Stability and analysis"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Pharmaceutics: Formulation and Dosage Forms",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Introduction to pharmaceutics",
+     "module": "Physical pharmacy"
+    },
+    {
+     "id": "u05-02",
+     "title": "Solubility and dissolution",
+     "module": "Physical pharmacy"
+    },
+    {
+     "id": "u05-03",
+     "title": "Particle size and powders",
+     "module": "Physical pharmacy"
+    },
+    {
+     "id": "u05-04",
+     "title": "Rheology",
+     "module": "Physical pharmacy"
+    },
+    {
+     "id": "u05-05",
+     "title": "Surfactants and interfacial phenomena",
+     "module": "Physical pharmacy"
+    },
+    {
+     "id": "u05-06",
+     "title": "Solutions",
+     "module": "Liquid and semi-solid dosage forms"
+    },
+    {
+     "id": "u05-07",
+     "title": "Suspensions",
+     "module": "Liquid and semi-solid dosage forms"
+    },
+    {
+     "id": "u05-08",
+     "title": "Emulsions",
+     "module": "Liquid and semi-solid dosage forms"
+    },
+    {
+     "id": "u05-09",
+     "title": "Creams, ointments and gels",
+     "module": "Liquid and semi-solid dosage forms"
+    },
+    {
+     "id": "u05-10",
+     "title": "Tablets",
+     "module": "Solid dosage forms"
+    },
+    {
+     "id": "u05-11",
+     "title": "Capsules",
+     "module": "Solid dosage forms"
+    },
+    {
+     "id": "u05-12",
+     "title": "Modified-release dosage forms",
+     "module": "Solid dosage forms"
+    },
+    {
+     "id": "u05-13",
+     "title": "Excipients",
+     "module": "Solid dosage forms"
+    },
+    {
+     "id": "u05-14",
+     "title": "Parenteral products",
+     "module": "Other routes"
+    },
+    {
+     "id": "u05-15",
+     "title": "Sterile products and aseptic manufacture",
+     "module": "Other routes"
+    },
+    {
+     "id": "u05-16",
+     "title": "Ophthalmic preparations",
+     "module": "Other routes"
+    },
+    {
+     "id": "u05-17",
+     "title": "Inhaled dosage forms",
+     "module": "Other routes"
+    },
+    {
+     "id": "u05-18",
+     "title": "Transdermal and topical delivery",
+     "module": "Other routes"
+    },
+    {
+     "id": "u05-19",
+     "title": "Rectal and vaginal dosage forms",
+     "module": "Other routes"
+    },
+    {
+     "id": "u05-20",
+     "title": "Extemporaneous preparation",
+     "module": "Practice"
+    },
+    {
+     "id": "u05-21",
+     "title": "Packaging and storage",
+     "module": "Practice"
+    },
+    {
+     "id": "u05-22",
+     "title": "Pharmaceutical microbiology and preservation",
+     "module": "Practice"
+    },
+    {
+     "id": "u05-23",
+     "title": "Manufacturing and quality assurance",
+     "module": "Practice"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Pharmaceutical Calculations",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Units and conversions",
+     "module": "Foundations"
+    },
+    {
+     "id": "u06-02",
+     "title": "Significant figures and rounding",
+     "module": "Foundations"
+    },
+    {
+     "id": "u06-03",
+     "title": "Ratio and proportion",
+     "module": "Foundations"
+    },
+    {
+     "id": "u06-04",
+     "title": "Percentage concentrations",
+     "module": "Concentrations"
+    },
+    {
+     "id": "u06-05",
+     "title": "Ratio strengths and parts per million",
+     "module": "Concentrations"
+    },
+    {
+     "id": "u06-06",
+     "title": "Molarity, millimoles and milliequivalents",
+     "module": "Concentrations"
+    },
+    {
+     "id": "u06-07",
+     "title": "Dilutions",
+     "module": "Concentrations"
+    },
+    {
+     "id": "u06-08",
+     "title": "Concentrating and mixing",
+     "module": "Concentrations"
+    },
+    {
+     "id": "u06-09",
+     "title": "Dose calculations",
+     "module": "Doses"
+    },
+    {
+     "id": "u06-10",
+     "title": "Weight-based dosing",
+     "module": "Doses"
+    },
+    {
+     "id": "u06-11",
+     "title": "Body surface area dosing",
+     "module": "Doses"
+    },
+    {
+     "id": "u06-12",
+     "title": "Doses in children",
+     "module": "Doses"
+    },
+    {
+     "id": "u06-13",
+     "title": "Quantities to supply",
+     "module": "Doses"
+    },
+    {
+     "id": "u06-14",
+     "title": "Infusion rates",
+     "module": "Infusions and clinical calculations"
+    },
+    {
+     "id": "u06-15",
+     "title": "Drug infusions in mg per hour",
+     "module": "Infusions and clinical calculations"
+    },
+    {
+     "id": "u06-16",
+     "title": "Displacement values",
+     "module": "Infusions and clinical calculations"
+    },
+    {
+     "id": "u06-17",
+     "title": "Estimating renal function",
+     "module": "Infusions and clinical calculations"
+    },
+    {
+     "id": "u06-18",
+     "title": "Dose adjustment in renal impairment",
+     "module": "Infusions and clinical calculations"
+    },
+    {
+     "id": "u06-19",
+     "title": "Pharmacokinetic calculations",
+     "module": "Infusions and clinical calculations"
+    },
+    {
+     "id": "u06-20",
+     "title": "Calculations in the registration assessment",
+     "module": "Infusions and clinical calculations"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Cardiovascular Therapeutics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Hypertension",
+     "module": "Hypertension and lipids"
+    },
+    {
+     "id": "u07-02",
+     "title": "Antihypertensive drugs",
+     "module": "Hypertension and lipids"
+    },
+    {
+     "id": "u07-03",
+     "title": "Lipid management",
+     "module": "Hypertension and lipids"
+    },
+    {
+     "id": "u07-04",
+     "title": "Cardiovascular risk assessment",
+     "module": "Hypertension and lipids"
+    },
+    {
+     "id": "u07-05",
+     "title": "Stable angina",
+     "module": "Coronary disease"
+    },
+    {
+     "id": "u07-06",
+     "title": "Acute coronary syndromes",
+     "module": "Coronary disease"
+    },
+    {
+     "id": "u07-07",
+     "title": "Secondary prevention after a heart attack",
+     "module": "Coronary disease"
+    },
+    {
+     "id": "u07-08",
+     "title": "Chronic heart failure",
+     "module": "Heart failure and rhythm"
+    },
+    {
+     "id": "u07-09",
+     "title": "Atrial fibrillation",
+     "module": "Heart failure and rhythm"
+    },
+    {
+     "id": "u07-10",
+     "title": "Antiarrhythmic drugs",
+     "module": "Heart failure and rhythm"
+    },
+    {
+     "id": "u07-11",
+     "title": "Venous thromboembolism",
+     "module": "Thrombosis"
+    },
+    {
+     "id": "u07-12",
+     "title": "Anticoagulants",
+     "module": "Thrombosis"
+    },
+    {
+     "id": "u07-13",
+     "title": "Warfarin management",
+     "module": "Thrombosis"
+    },
+    {
+     "id": "u07-14",
+     "title": "Direct oral anticoagulants",
+     "module": "Thrombosis"
+    },
+    {
+     "id": "u07-15",
+     "title": "Antiplatelet drugs",
+     "module": "Thrombosis"
+    },
+    {
+     "id": "u07-16",
+     "title": "Stroke and transient ischaemic attack",
+     "module": "Other cardiovascular conditions"
+    },
+    {
+     "id": "u07-17",
+     "title": "Peripheral arterial disease",
+     "module": "Other cardiovascular conditions"
+    },
+    {
+     "id": "u07-18",
+     "title": "Cardiovascular adverse drug reactions",
+     "module": "Other cardiovascular conditions"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Respiratory Therapeutics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Asthma in adults",
+     "module": "Airways disease"
+    },
+    {
+     "id": "u08-02",
+     "title": "Asthma in children",
+     "module": "Airways disease"
+    },
+    {
+     "id": "u08-03",
+     "title": "Chronic obstructive pulmonary disease",
+     "module": "Airways disease"
+    },
+    {
+     "id": "u08-04",
+     "title": "Inhaler devices and technique",
+     "module": "Airways disease"
+    },
+    {
+     "id": "u08-05",
+     "title": "Bronchodilators",
+     "module": "Airways disease"
+    },
+    {
+     "id": "u08-06",
+     "title": "Inhaled corticosteroids",
+     "module": "Airways disease"
+    },
+    {
+     "id": "u08-07",
+     "title": "Acute exacerbations",
+     "module": "Airways disease"
+    },
+    {
+     "id": "u08-08",
+     "title": "Allergic rhinitis and allergy",
+     "module": "Other respiratory conditions"
+    },
+    {
+     "id": "u08-09",
+     "title": "Anaphylaxis",
+     "module": "Other respiratory conditions"
+    },
+    {
+     "id": "u08-10",
+     "title": "Cough and respiratory infections",
+     "module": "Other respiratory conditions"
+    },
+    {
+     "id": "u08-11",
+     "title": "Smoking cessation",
+     "module": "Other respiratory conditions"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Endocrine and Diabetes Therapeutics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Type 1 diabetes",
+     "module": "Diabetes"
+    },
+    {
+     "id": "u09-02",
+     "title": "Insulins",
+     "module": "Diabetes"
+    },
+    {
+     "id": "u09-03",
+     "title": "Type 2 diabetes",
+     "module": "Diabetes"
+    },
+    {
+     "id": "u09-04",
+     "title": "Glucose-lowering drugs",
+     "module": "Diabetes"
+    },
+    {
+     "id": "u09-05",
+     "title": "Hypoglycaemia",
+     "module": "Diabetes"
+    },
+    {
+     "id": "u09-06",
+     "title": "Diabetes in special situations",
+     "module": "Diabetes"
+    },
+    {
+     "id": "u09-07",
+     "title": "Diabetic emergencies",
+     "module": "Diabetes"
+    },
+    {
+     "id": "u09-08",
+     "title": "Thyroid disorders",
+     "module": "Other endocrine conditions"
+    },
+    {
+     "id": "u09-09",
+     "title": "Adrenal insufficiency and corticosteroids",
+     "module": "Other endocrine conditions"
+    },
+    {
+     "id": "u09-10",
+     "title": "Osteoporosis",
+     "module": "Other endocrine conditions"
+    },
+    {
+     "id": "u09-11",
+     "title": "Contraception",
+     "module": "Other endocrine conditions"
+    },
+    {
+     "id": "u09-12",
+     "title": "Menopause and hormone replacement therapy",
+     "module": "Other endocrine conditions"
+    },
+    {
+     "id": "u09-13",
+     "title": "Obesity and weight management",
+     "module": "Other endocrine conditions"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Central Nervous System and Mental Health Therapeutics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Depression",
+     "module": "Mental health"
+    },
+    {
+     "id": "u10-02",
+     "title": "Antidepressants",
+     "module": "Mental health"
+    },
+    {
+     "id": "u10-03",
+     "title": "Anxiety disorders",
+     "module": "Mental health"
+    },
+    {
+     "id": "u10-04",
+     "title": "Bipolar disorder and lithium",
+     "module": "Mental health"
+    },
+    {
+     "id": "u10-05",
+     "title": "Schizophrenia and psychosis",
+     "module": "Mental health"
+    },
+    {
+     "id": "u10-06",
+     "title": "Antipsychotics",
+     "module": "Mental health"
+    },
+    {
+     "id": "u10-07",
+     "title": "Attention deficit hyperactivity disorder",
+     "module": "Mental health"
+    },
+    {
+     "id": "u10-08",
+     "title": "Dementia",
+     "module": "Mental health"
+    },
+    {
+     "id": "u10-09",
+     "title": "Insomnia",
+     "module": "Mental health"
+    },
+    {
+     "id": "u10-10",
+     "title": "Substance misuse and harm reduction",
+     "module": "Mental health"
+    },
+    {
+     "id": "u10-11",
+     "title": "Epilepsy",
+     "module": "Neurology"
+    },
+    {
+     "id": "u10-12",
+     "title": "Antiepileptic drugs",
+     "module": "Neurology"
+    },
+    {
+     "id": "u10-13",
+     "title": "Parkinson's disease",
+     "module": "Neurology"
+    },
+    {
+     "id": "u10-14",
+     "title": "Migraine",
+     "module": "Neurology"
+    },
+    {
+     "id": "u10-15",
+     "title": "Multiple sclerosis",
+     "module": "Neurology"
+    },
+    {
+     "id": "u10-16",
+     "title": "Pain physiology and assessment",
+     "module": "Pain"
+    },
+    {
+     "id": "u10-17",
+     "title": "Analgesic ladder and simple analgesics",
+     "module": "Pain"
+    },
+    {
+     "id": "u10-18",
+     "title": "Opioids",
+     "module": "Pain"
+    },
+    {
+     "id": "u10-19",
+     "title": "Neuropathic pain",
+     "module": "Pain"
+    },
+    {
+     "id": "u10-20",
+     "title": "Palliative care symptom control",
+     "module": "Pain"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Infection and Antimicrobial Stewardship",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Microbiology for pharmacists",
+     "module": "Principles"
+    },
+    {
+     "id": "u11-02",
+     "title": "Antibiotic classes and mechanisms",
+     "module": "Principles"
+    },
+    {
+     "id": "u11-03",
+     "title": "Antimicrobial resistance",
+     "module": "Principles"
+    },
+    {
+     "id": "u11-04",
+     "title": "Antimicrobial stewardship",
+     "module": "Principles"
+    },
+    {
+     "id": "u11-05",
+     "title": "Choosing an antibiotic",
+     "module": "Principles"
+    },
+    {
+     "id": "u11-06",
+     "title": "Urinary tract infections",
+     "module": "Infections"
+    },
+    {
+     "id": "u11-07",
+     "title": "Respiratory tract infections",
+     "module": "Infections"
+    },
+    {
+     "id": "u11-08",
+     "title": "Skin and soft tissue infections",
+     "module": "Infections"
+    },
+    {
+     "id": "u11-09",
+     "title": "Sepsis",
+     "module": "Infections"
+    },
+    {
+     "id": "u11-10",
+     "title": "Clostridioides difficile infection",
+     "module": "Infections"
+    },
+    {
+     "id": "u11-11",
+     "title": "Tuberculosis",
+     "module": "Infections"
+    },
+    {
+     "id": "u11-12",
+     "title": "Fungal infections",
+     "module": "Infections"
+    },
+    {
+     "id": "u11-13",
+     "title": "Antiviral drugs",
+     "module": "Viral infections and immunisation"
+    },
+    {
+     "id": "u11-14",
+     "title": "HIV",
+     "module": "Viral infections and immunisation"
+    },
+    {
+     "id": "u11-15",
+     "title": "Viral hepatitis",
+     "module": "Viral infections and immunisation"
+    },
+    {
+     "id": "u11-16",
+     "title": "Vaccines and immunisation",
+     "module": "Viral infections and immunisation"
+    },
+    {
+     "id": "u11-17",
+     "title": "Travel health",
+     "module": "Viral infections and immunisation"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Gastrointestinal, Renal and Hepatic Therapeutics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Dyspepsia and gastro-oesophageal reflux",
+     "module": "Gastrointestinal"
+    },
+    {
+     "id": "u12-02",
+     "title": "Peptic ulcer disease and Helicobacter pylori",
+     "module": "Gastrointestinal"
+    },
+    {
+     "id": "u12-03",
+     "title": "Nausea and vomiting",
+     "module": "Gastrointestinal"
+    },
+    {
+     "id": "u12-04",
+     "title": "Constipation",
+     "module": "Gastrointestinal"
+    },
+    {
+     "id": "u12-05",
+     "title": "Diarrhoea",
+     "module": "Gastrointestinal"
+    },
+    {
+     "id": "u12-06",
+     "title": "Inflammatory bowel disease",
+     "module": "Gastrointestinal"
+    },
+    {
+     "id": "u12-07",
+     "title": "Irritable bowel syndrome",
+     "module": "Gastrointestinal"
+    },
+    {
+     "id": "u12-08",
+     "title": "Acute kidney injury",
+     "module": "Renal"
+    },
+    {
+     "id": "u12-09",
+     "title": "Chronic kidney disease",
+     "module": "Renal"
+    },
+    {
+     "id": "u12-10",
+     "title": "Electrolyte disorders",
+     "module": "Renal"
+    },
+    {
+     "id": "u12-11",
+     "title": "Fluid therapy",
+     "module": "Renal"
+    },
+    {
+     "id": "u12-12",
+     "title": "Liver disease and drug handling",
+     "module": "Hepatic"
+    },
+    {
+     "id": "u12-13",
+     "title": "Drug-induced liver injury",
+     "module": "Hepatic"
+    },
+    {
+     "id": "u12-14",
+     "title": "Alcohol-related liver disease",
+     "module": "Hepatic"
+    }
+   ]
+  },
+  {
+   "id": "u13",
+   "n": 13,
+   "title": "Musculoskeletal, Skin, Eye and Inflammatory Conditions",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u13-01",
+     "title": "Non-steroidal anti-inflammatory drugs",
+     "module": "Musculoskeletal and inflammatory"
+    },
+    {
+     "id": "u13-02",
+     "title": "Osteoarthritis",
+     "module": "Musculoskeletal and inflammatory"
+    },
+    {
+     "id": "u13-03",
+     "title": "Rheumatoid arthritis",
+     "module": "Musculoskeletal and inflammatory"
+    },
+    {
+     "id": "u13-04",
+     "title": "Gout",
+     "module": "Musculoskeletal and inflammatory"
+    },
+    {
+     "id": "u13-05",
+     "title": "Disease-modifying antirheumatic drugs",
+     "module": "Musculoskeletal and inflammatory"
+    },
+    {
+     "id": "u13-06",
+     "title": "Eczema",
+     "module": "Skin"
+    },
+    {
+     "id": "u13-07",
+     "title": "Psoriasis",
+     "module": "Skin"
+    },
+    {
+     "id": "u13-08",
+     "title": "Acne",
+     "module": "Skin"
+    },
+    {
+     "id": "u13-09",
+     "title": "Skin infections and infestations",
+     "module": "Skin"
+    },
+    {
+     "id": "u13-10",
+     "title": "Eye conditions",
+     "module": "Eyes and ears"
+    },
+    {
+     "id": "u13-11",
+     "title": "Ear conditions",
+     "module": "Eyes and ears"
+    }
+   ]
+  },
+  {
+   "id": "u14",
+   "n": 14,
+   "title": "Oncology, Haematology and Immunology",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u14-01",
+     "title": "Anaemias",
+     "module": "Haematology"
+    },
+    {
+     "id": "u14-02",
+     "title": "Blood products and haematological support",
+     "module": "Haematology"
+    },
+    {
+     "id": "u14-03",
+     "title": "Principles of cancer treatment",
+     "module": "Oncology"
+    },
+    {
+     "id": "u14-04",
+     "title": "Cytotoxic chemotherapy",
+     "module": "Oncology"
+    },
+    {
+     "id": "u14-05",
+     "title": "Targeted therapies and immunotherapy",
+     "module": "Oncology"
+    },
+    {
+     "id": "u14-06",
+     "title": "Supportive care in cancer",
+     "module": "Oncology"
+    },
+    {
+     "id": "u14-07",
+     "title": "Safe handling of cytotoxic medicines",
+     "module": "Oncology"
+    },
+    {
+     "id": "u14-08",
+     "title": "Immunosuppressants",
+     "module": "Immunology"
+    },
+    {
+     "id": "u14-09",
+     "title": "Transplantation",
+     "module": "Immunology"
+    },
+    {
+     "id": "u14-10",
+     "title": "Biologics in inflammatory disease",
+     "module": "Immunology"
+    }
+   ]
+  },
+  {
+   "id": "u15",
+   "n": 15,
+   "title": "Special Populations",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u15-01",
+     "title": "Children and young people",
+     "module": "Life stages"
+    },
+    {
+     "id": "u15-02",
+     "title": "Neonates",
+     "module": "Life stages"
+    },
+    {
+     "id": "u15-03",
+     "title": "Pregnancy",
+     "module": "Life stages"
+    },
+    {
+     "id": "u15-04",
+     "title": "Breastfeeding",
+     "module": "Life stages"
+    },
+    {
+     "id": "u15-05",
+     "title": "Older people",
+     "module": "Life stages"
+    },
+    {
+     "id": "u15-06",
+     "title": "Prescribing in renal impairment",
+     "module": "Organ impairment"
+    },
+    {
+     "id": "u15-07",
+     "title": "Prescribing in hepatic impairment",
+     "module": "Organ impairment"
+    },
+    {
+     "id": "u15-08",
+     "title": "Polypharmacy and deprescribing",
+     "module": "Complex care"
+    },
+    {
+     "id": "u15-09",
+     "title": "Frailty",
+     "module": "Complex care"
+    },
+    {
+     "id": "u15-10",
+     "title": "People with learning disabilities",
+     "module": "Complex care"
+    },
+    {
+     "id": "u15-11",
+     "title": "Swallowing difficulties and covert administration",
+     "module": "Complex care"
+    },
+    {
+     "id": "u15-12",
+     "title": "Care homes",
+     "module": "Complex care"
+    }
+   ]
+  },
+  {
+   "id": "u16",
+   "n": 16,
+   "title": "Pharmacy Law, Ethics and Governance",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u16-01",
+     "title": "The legal framework for medicines",
+     "module": "Medicines law"
+    },
+    {
+     "id": "u16-02",
+     "title": "Classes of medicines: POM, P and GSL",
+     "module": "Medicines law"
+    },
+    {
+     "id": "u16-03",
+     "title": "Prescriptions and prescription requirements",
+     "module": "Medicines law"
+    },
+    {
+     "id": "u16-04",
+     "title": "Who can prescribe",
+     "module": "Medicines law"
+    },
+    {
+     "id": "u16-05",
+     "title": "Emergency supply",
+     "module": "Medicines law"
+    },
+    {
+     "id": "u16-06",
+     "title": "Patient group directions and patient specific directions",
+     "module": "Medicines law"
+    },
+    {
+     "id": "u16-07",
+     "title": "Wholesale dealing and supply",
+     "module": "Medicines law"
+    },
+    {
+     "id": "u16-08",
+     "title": "Labelling requirements",
+     "module": "Medicines law"
+    },
+    {
+     "id": "u16-09",
+     "title": "The Misuse of Drugs Regulations: schedules",
+     "module": "Controlled drugs"
+    },
+    {
+     "id": "u16-10",
+     "title": "Controlled drug prescriptions",
+     "module": "Controlled drugs"
+    },
+    {
+     "id": "u16-11",
+     "title": "Controlled drug registers and records",
+     "module": "Controlled drugs"
+    },
+    {
+     "id": "u16-12",
+     "title": "Safe custody and destruction",
+     "module": "Controlled drugs"
+    },
+    {
+     "id": "u16-13",
+     "title": "The responsible pharmacist",
+     "module": "Professional regulation and governance"
+    },
+    {
+     "id": "u16-14",
+     "title": "Records and record keeping",
+     "module": "Professional regulation and governance"
+    },
+    {
+     "id": "u16-15",
+     "title": "Fitness to practise",
+     "module": "Professional regulation and governance"
+    },
+    {
+     "id": "u16-16",
+     "title": "Safeguarding in pharmacy",
+     "module": "Professional regulation and governance"
+    },
+    {
+     "id": "u16-17",
+     "title": "Clinical governance",
+     "module": "Professional regulation and governance"
+    },
+    {
+     "id": "u16-18",
+     "title": "Pharmacy across the four nations",
+     "module": "Professional regulation and governance"
+    },
+    {
+     "id": "u16-19",
+     "title": "Ethics in pharmacy practice",
+     "module": "Professional regulation and governance"
+    },
+    {
+     "id": "u16-20",
+     "title": "Veterinary medicines in pharmacy",
+     "module": "Professional regulation and governance"
+    }
+   ]
+  },
+  {
+   "id": "u17",
+   "n": 17,
+   "title": "Clinical Pharmacy and Medicines Optimisation",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u17-01",
+     "title": "The clinical check",
+     "module": "Clinical checks"
+    },
+    {
+     "id": "u17-02",
+     "title": "Medicines reconciliation",
+     "module": "Clinical checks"
+    },
+    {
+     "id": "u17-03",
+     "title": "Drug interactions in practice",
+     "module": "Clinical checks"
+    },
+    {
+     "id": "u17-04",
+     "title": "Identifying and managing adverse drug reactions",
+     "module": "Clinical checks"
+    },
+    {
+     "id": "u17-05",
+     "title": "Reporting adverse reactions: the Yellow Card scheme",
+     "module": "Clinical checks"
+    },
+    {
+     "id": "u17-06",
+     "title": "Interventions and documentation",
+     "module": "Clinical checks"
+    },
+    {
+     "id": "u17-07",
+     "title": "Medicines optimisation",
+     "module": "Medicines optimisation"
+    },
+    {
+     "id": "u17-08",
+     "title": "Adherence and concordance",
+     "module": "Medicines optimisation"
+    },
+    {
+     "id": "u17-09",
+     "title": "Structured medication reviews",
+     "module": "Medicines optimisation"
+    },
+    {
+     "id": "u17-10",
+     "title": "Shared decision-making",
+     "module": "Medicines optimisation"
+    },
+    {
+     "id": "u17-11",
+     "title": "Counselling on medicines",
+     "module": "Medicines optimisation"
+    },
+    {
+     "id": "u17-12",
+     "title": "Responding to symptoms",
+     "module": "Community services"
+    },
+    {
+     "id": "u17-13",
+     "title": "Minor illness and referral",
+     "module": "Community services"
+    },
+    {
+     "id": "u17-14",
+     "title": "Pharmacy First and common clinical conditions",
+     "module": "Community services"
+    },
+    {
+     "id": "u17-15",
+     "title": "New Medicine Service and discharge services",
+     "module": "Community services"
+    },
+    {
+     "id": "u17-16",
+     "title": "Hospital clinical pharmacy",
+     "module": "Community services"
+    },
+    {
+     "id": "u17-17",
+     "title": "Transfers of care",
+     "module": "Community services"
+    }
+   ]
+  },
+  {
+   "id": "u18",
+   "n": 18,
+   "title": "Prescribing and Clinical Assessment",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u18-01",
+     "title": "The independent prescriber",
+     "module": "Becoming a prescriber"
+    },
+    {
+     "id": "u18-02",
+     "title": "The RPS competency framework for all prescribers",
+     "module": "Becoming a prescriber"
+    },
+    {
+     "id": "u18-03",
+     "title": "Prescribing governance and scope",
+     "module": "Becoming a prescriber"
+    },
+    {
+     "id": "u18-04",
+     "title": "Consultation models",
+     "module": "Clinical assessment"
+    },
+    {
+     "id": "u18-05",
+     "title": "History taking",
+     "module": "Clinical assessment"
+    },
+    {
+     "id": "u18-06",
+     "title": "Clinical examination skills",
+     "module": "Clinical assessment"
+    },
+    {
+     "id": "u18-07",
+     "title": "Vital signs and red flags",
+     "module": "Clinical assessment"
+    },
+    {
+     "id": "u18-08",
+     "title": "Interpreting blood tests",
+     "module": "Clinical assessment"
+    },
+    {
+     "id": "u18-09",
+     "title": "Diagnostic reasoning",
+     "module": "Clinical assessment"
+    },
+    {
+     "id": "u18-10",
+     "title": "Writing a prescription",
+     "module": "Prescribing decisions"
+    },
+    {
+     "id": "u18-11",
+     "title": "Prescribing safety and common errors",
+     "module": "Prescribing decisions"
+    },
+    {
+     "id": "u18-12",
+     "title": "Antimicrobial prescribing",
+     "module": "Prescribing decisions"
+    },
+    {
+     "id": "u18-13",
+     "title": "Remote prescribing",
+     "module": "Prescribing decisions"
+    },
+    {
+     "id": "u18-14",
+     "title": "Influences on prescribing",
+     "module": "Prescribing decisions"
+    },
+    {
+     "id": "u18-15",
+     "title": "Monitoring and follow-up",
+     "module": "Prescribing decisions"
+    },
+    {
+     "id": "u18-16",
+     "title": "Prescribing in practice: case reviews",
+     "module": "Prescribing decisions"
+    }
+   ]
+  },
+  {
+   "id": "u19",
+   "n": 19,
+   "title": "Registration Assessment and Foundation Training",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u19-01",
+     "title": "The GPhC registration assessment",
+     "module": "The registration assessment"
+    },
+    {
+     "id": "u19-02",
+     "title": "The assessment framework",
+     "module": "The registration assessment"
+    },
+    {
+     "id": "u19-03",
+     "title": "Single best answer questions",
+     "module": "The registration assessment"
+    },
+    {
+     "id": "u19-04",
+     "title": "Extended matching questions",
+     "module": "The registration assessment"
+    },
+    {
+     "id": "u19-05",
+     "title": "Using the BNF and resources efficiently",
+     "module": "The registration assessment"
+    },
+    {
+     "id": "u19-06",
+     "title": "Revision strategy",
+     "module": "The registration assessment"
+    },
+    {
+     "id": "u19-07",
+     "title": "The foundation training year",
+     "module": "Foundation training"
+    },
+    {
+     "id": "u19-08",
+     "title": "Learning outcomes and evidence",
+     "module": "Foundation training"
+    },
+    {
+     "id": "u19-09",
+     "title": "Working with your designated supervisor",
+     "module": "Foundation training"
+    },
+    {
+     "id": "u19-10",
+     "title": "From trainee to registered pharmacist",
+     "module": "Foundation training"
+    },
+    {
+     "id": "u19-11",
+     "title": "GPhC revalidation",
+     "module": "Foundation training"
+    }
+   ]
+  }
+ ]
+}
