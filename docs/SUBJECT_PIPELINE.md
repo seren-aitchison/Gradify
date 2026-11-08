@@ -19,6 +19,7 @@ Register → Scaffold → Syllabus → Lock → Write → Check → Add → Lock
 | Check | `node scripts/new-course.mjs check <slug> --unit uNN draft.txt …` | Lists every lesson-standard problem in the draft at once, plus the predicted length-bias warning, with the questions to fix. |
 | Add | `node scripts/new-course.mjs add-notes <slug> uNN draft.txt …` | Writes `notes/uNN.js`, adds the school to `written`, and creates its QA record and written date. It refuses text that would break the module: backticks, `${`, single backslashes or question ids. |
 | Lock, check | `lock`, then `check <slug> --unit uNN` | Assigns question ids, then confirms the school against the standard. |
+| API | `node scripts/build-api.mjs` | Regenerates the content API the native apps read (`kit/api/v1/`). `npm test` fails until it is current. |
 | Labs | `kit/labs/<area>/`, `interactives.js`, `evidence.js`, `IX:` in notes | Labs on the shared runtime, linked and placed in lessons, with every challenge mapped to a lesson. |
 | Doctor | `node scripts/new-course.mjs doctor <slug>` | Reports any gap in registration across Gradify: the config spec, course page, learner data, built site, subject adapter, tutor rules line, sitemap and offline cache. |
 | QA and tests | `npm run qa`, `npm test` | QA runs the hard checks, content checks, lab coverage and concept report; then the full test suite runs. |

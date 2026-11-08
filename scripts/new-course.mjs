@@ -216,7 +216,7 @@ async function addNotes() {
   if (!new RegExp(`WRITTEN_ON = \\{[^}]*\\b${unit}:`).test(q)) q = q.replace(/WRITTEN_ON = \{\s*([^}]*?)\s*\};/, (m, body) => `WRITTEN_ON = { ${[body.replace(/,\s*$/, ""), `${unit}: "${today}"`].filter(Boolean).join(", ")} };`);
   await writeFile(new URL(`${dir}qa.js`, root), q);
   console.log(`  wrote ${target} and registered ${unit} as written`);
-  console.log(`  next: node scripts/new-course.mjs lock ${slug}, then node scripts/new-course.mjs check ${slug} --unit ${unit}`);
+  console.log(`  next: node scripts/new-course.mjs lock ${slug}, then node scripts/new-course.mjs check ${slug} --unit ${unit}, then node scripts/build-api.mjs (the content API the apps read)`);
 }
 
 // ---------- doctor: what still stands between a course and being registered across Gradify ----------
