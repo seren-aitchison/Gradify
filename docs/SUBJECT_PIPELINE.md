@@ -16,7 +16,7 @@ Register → Scaffold → Syllabus → Lock → Write → Check → Add → Lock
 | Syllabus | `kit/courses/<slug>/syllabus.js` | Numbered schools, `> ` modules and `* ` lessons, with stages (TRACKS), paths and blurbs. |
 | Lock | `node scripts/new-course.mjs lock <slug>` | Fixes the permanent lesson ids, and later the question ids. |
 | Write | plain text files | Lessons in the notes format (`## Title`, `LV:`, `S:`, `O:` …), with no question ids. |
-| Check | `node scripts/new-course.mjs check <slug> --unit uNN draft.txt …` | Lists every lesson-standard problem in the draft at once, plus the predicted length-bias warning, with the questions to fix. |
+| Check | `node scripts/new-course.mjs check <slug> --unit uNN draft.txt …` | Lists every lesson-standard problem in the draft at once, plus the predicted length-bias warning, with the questions to fix. It also flags any question that duplicates one in the course's other written schools, the same check QA makes. |
 | Add | `node scripts/new-course.mjs add-notes <slug> uNN draft.txt …` | Writes `notes/uNN.js`, adds the school to `written`, and creates its QA record and written date. It refuses text that would break the module: backticks, `${`, single backslashes or question ids. |
 | Lock, check | `lock`, then `check <slug> --unit uNN` | Assigns question ids, then confirms the school against the standard. |
 | API | `node scripts/build-api.mjs` | Regenerates the content API the native apps read (`kit/api/v1/`). `npm test` fails until it is current. |
@@ -31,6 +31,7 @@ Register → Scaffold → Syllabus → Lock → Write → Check → Add → Lock
 - **Hand-built notes files.** Every notes file and its registration was assembled by hand. `add-notes` now does both.
 - **`new-site` crashed half-way.** It crashed on homepage copy without an example card and left an empty folder. It now falls back to a default card and renders before writing.
 - **Registration gaps found by failing tests.** Gaps across Gradify showed up one failing test at a time. `doctor` now lists them together.
+- **Duplicates across schools.** QA rejects a question whose wording matches one in another school. Schools 3 and 4 hit this after being added. `check` now compares a draft against the written schools.
 - **Length bias.** Writing distractors to roughly the length of the right answer from the start kept length bias under the limit first time for Schools 7 and 9. Schools 2 and 10 needed a rewrite pass.
 
 **Parallel production.** Builders working in their own worktrees use `scaffold`, `check`, `add-notes`, `lock` and `doctor`. All of these touch only their course's folder and site folder. The shared registration steps that `doctor` reports stay with the coordinating session, as SITE-PRODUCTION.md sets out: learner data, tutor rules, sitemap and the offline cache.
