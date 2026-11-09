@@ -1,0 +1,12 @@
+// ArtGradify interactives. Each entry: { id, title, sub, kind, note, schools, lessons: L("Lesson title", …), load }.
+// kind: Experiment, Simulation, Illustrative model, Exercise, Explorer or Tool. Reused Gradify labs, each only where it
+// teaches the lesson: PsychGradify's perception experiments (emphasis by contrast; context and perceived line) and
+// SciGradify Physics's ray optics (the lens of a camera).
+import { IDS } from "./ids.js";
+const byTitle = new Map(Object.entries(IDS).map(([id, t]) => [t.toLowerCase(), id]));
+export const L = (...titles) => titles.map((t) => { const id = byTitle.get(t.toLowerCase()); if (!id) throw new Error(`interactives: no lesson "${t}"`); return id; });
+export const INTERACTIVES = [
+  { id: "visual-search", file: "../psychology/search.js", kind: "Experiment", title: "Pop-out: why contrast makes a focal point", sub: "Find the orange X among distractors. When it differs by one feature it pops out; when only a combination identifies it, you have to search. The perceptual basis of emphasis and hierarchy.", note: "PsychGradify's experiment: your own response times, a replication of Treisman and Gelade's (1980) paradigm with simplified displays.", schools: [1, 7], lessons: L("Contrast and emphasis", "Hierarchy and layout"), load: () => import("../../labs/psychology/search.js") },
+  { id: "muller-lyer", file: "../psychology/illusion.js", kind: "Experiment", title: "The Müller-Lyer illusion: context changes a line", sub: "Adjust a plain line to match one with fins, measure how far the configuration fooled you, and weigh the competing explanations.", note: "PsychGradify's experiment: your own judgements; explanations of the illusion are contested.", schools: [1, 2], lessons: L("Gestalt principles in art and design", "Line", "One-point perspective"), load: () => import("../../labs/psychology/illusion.js") },
+  { id: "lens", file: "../physics/optics.js", kind: "Simulation", title: "Lenses and image formation", sub: "Move an object relative to a converging lens and watch where the image forms and how large it is: the optics behind focusing a camera and the camera obscura.", note: "SciGradify Physics's simulation: thin-lens ray optics (1/f = 1/u + 1/v); real camera lenses are compound and correct aberrations.", schools: [6], lessons: L("The camera and the lens", "The camera obscura and the invention of photography"), load: () => import("../../labs/physics/optics.js") },
+];
