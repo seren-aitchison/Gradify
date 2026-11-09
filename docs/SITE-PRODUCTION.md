@@ -44,7 +44,7 @@ So "18 schools generated, 5 QA verified, 0 academically verified" is a complete 
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | EcoGradify | Ecology (`ecology`) | Psychology course + Biology labs | builder worktree `worktree-agent-a5a3bdff…`, writing School 2 | 11 schools, 198 lessons | 16 (School 1) | – | pass | yes (beta) | `dc00409` | yes, 8 Nov: u01-01 opened, no errors |
 | 2 | BusinessGradify | Business and Management (`business`) | Psychology course | build-business: `course/business` in `../Gradify-wt/business`, building | – | – | – | – | – | – | – |
-| 3 | FinanceGradify | Accounting and Finance (`finance`) | Psychology course | build-finance: `course/finance` in `../Gradify-wt/finance`, building | – | – | – | – | – | – | – |
+| 3 | FinanceGradify | Accounting and Finance (`finance`) | Psychology course | build-finance: `course/finance` in `../Gradify-wt/finance`, continuing with School 3+ | 12 schools, 202 lessons | 32 (Schools 1–2) | – | pass | yes (beta) | `95f856f` | yes, 9 Nov: u01-01 opened, no errors |
 | 4 | MedGradify | Medicine (`medicine`) | Psychology course + Nursing/Biology labs | build-medicine: `course/medicine` in `../Gradify-wt/medicine`, building | – | – | – | – | – | – | – |
 | 5 | LitGradify | English Literature (`literature`) | Psychology course | builder worktree `worktree-agent-afe4247a…`, writing School 2 | 10 schools, 166 lessons | 18 (School 1) | – | pass | yes (beta) | `dc00409` | yes, 8 Nov: u01-01 opened, no errors |
 | 6 | MusicGradify | Music (`music`) | Psychology course | build-music: `course/music` in `../Gradify-wt/music`, building | – | – | – | – | – | – | – |
