@@ -437,7 +437,7 @@ M1#pharmacy-u06-13-q1@1: How much liquid for 5 mL four times a day for 7 days? |
 M2#pharmacy-u06-13-q2@1: A 200-dose inhaler is used as two puffs twice a day. How long does it last? | 50 days | 100 days | 25 days | 200 days | 40 days | Two puffs twice a day is 4 puffs a day; 200 ÷ 4 = 50 days.
 M2#pharmacy-u06-13-q3@2: Why is original pack dispensing encouraged? | People get the leaflet and an intact pack | It always costs the NHS less | It's required for every medicine | It removes the need to label | It avoids the clinical check | The manufacturer's pack keeps the leaflet and batch details together.
 NUM1#pharmacy-u06-13-q4@1: How many days will a 120-dose inhaler last if the dose is two puffs twice a day? | 30 | 0 | days | 2 × 2 = 4 puffs a day; 120 ÷ 4 = 30 days.
-M2#pharmacy-u06-13-q5@1: One tablet twice daily for 14 days. How many tablets are supplied? | 28 | 14 | 42 | 7 | 1 × 2 × 14 = 28 tablets.
+M2#pharmacy-u06-13-q5@1: One tablet twice daily for 14 days. How many tablets are supplied? | 28 | 14 | 42 | 7 | One tablet, twice a day, for 14 days is 1 × 2 × 14 = 28 tablets.
 
 ## Infusion rates
 S: Intravenous fluids and many medicines are given by infusion. You need to convert a volume and a time into a pump rate in mL per hour, or for gravity sets into drops per minute.
