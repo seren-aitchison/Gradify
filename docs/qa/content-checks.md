@@ -6,22 +6,30 @@ These checks are mechanical. They find text that won't display as written (swall
 
 | Course | Notes files | Lines | NUM questions | Hard failures | Arithmetic to check | NUM explanations to check | Source links |
 |---|---|---|---|---|---|---|---|
+| art | 1 | 712 | 1 | 0 | 0 | 0 | 0 |
 | biology | 2 | 1,701 | 11 | 0 | 0 | 1 | 0 |
+| business | 1 | 717 | 0 | 0 | 0 | 0 | 0 |
 | chemistry | 2 | 1,518 | 30 | 0 | 0 | 4 | 0 |
+| dentistry | 1 | 624 | 0 | 0 | 0 | 0 | 0 |
 | ecology | 1 | 679 | 0 | 0 | 0 | 0 | 0 |
 | engineering | 1 | 731 | 19 | 0 | 0 | 0 | 0 |
 | finance | 2 | 1,309 | 31 | 0 | 0 | 0 | 0 |
 | health | 2 | 1,299 | 7 | 0 | 0 | 0 | 0 |
 | history | 18 | 11,487 | 0 | 0 | 0 | 0 | 0 |
+| investing | 1 | 587 | 14 | 0 | 0 | 0 | 0 |
 | law | 19 | 15,086 | 0 | 0 | 0 | 0 | 0 |
 | literature | 1 | 681 | 0 | 0 | 0 | 0 | 0 |
 | maths | 29 | 37,481 | 1023 | 0 | 0 | 42 | 8 |
 | medicine | 2 | 1,431 | 10 | 0 | 0 | 0 | 0 |
+| music | 1 | 726 | 0 | 0 | 0 | 0 | 0 |
 | nursing | 17 | 19,022 | 0 | 0 | 0 | 0 | 1 |
 | pharmacy | 17 | 7,760 | 21 | 0 | 0 | 0 | 0 |
 | physics | 54 | 31,082 | 0 | 0 | 0 | 0 | 0 |
 | psychology | 16 | 14,834 | 51 | 0 | 0 | 4 | 0 |
 | sociology | 18 | 16,672 | 112 | 0 | 0 | 8 | 0 |
+| sport | 1 | 733 | 2 | 0 | 0 | 0 | 0 |
+| teaching | 1 | 770 | 0 | 0 | 0 | 0 | 0 |
+| veterinary | 1 | 767 | 0 | 0 | 0 | 0 | 0 |
 
 Allowed exceptions (correct in context):
 

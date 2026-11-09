@@ -77,3 +77,12 @@ test("CI checks the build on every push and deploys only the allowlisted build",
   assert.doesNotMatch(deployJob, /rsync|cp -r|path: \.\s*$/m, "the deploy must not copy the repository wholesale");
   assert.match(deployJob, /needs: test/);
 });
+
+test("the service worker precaches each file once and every file exists (a duplicate or a 404 stops it installing)", async () => {
+  const { readFile: rf, access: ac } = await import("node:fs/promises");
+  const src = await rf(new URL("../sw.js", import.meta.url), "utf8");
+  const files = [...src.match(/const SHELL = \[([\s\S]*?)\n\];/)[1].matchAll(/"([^"]+)"/g)].map((m) => m[1]);
+  const dupes = files.filter((f, i) => files.indexOf(f) !== i);
+  assert.deepEqual(dupes, [], "duplicate precache entries");
+  for (const f of files.filter((x) => x !== "./")) await ac(new URL(`../${f}`, import.meta.url));
+});

@@ -1,0 +1,1224 @@
+{
+ "api": 1,
+ "slug": "art",
+ "name": "Art and Design",
+ "site": "ArtGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Study material, not a qualification or an assessment.</b> ArtGradify teaches art, design and art history for study. The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors; check important points against your exam board's specification, your teacher and museum sources. Works of art are described in words rather than reproduced: look at them in person or on the holding museum's website. Nothing here is a mark or a prediction of a grade, and the copyright lessons explain general principles, not legal advice: for a real question about your rights, ask a qualified adviser.",
+ "notes": "/kit/courses/art/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · The language of art",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "from": "#f055dd",
+   "to": "#a855f7"
+  },
+  {
+   "name": "Stage 2 · Media and making",
+   "units": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "from": "#e879f9",
+   "to": "#6366f1"
+  },
+  {
+   "name": "Stage 3 · Art history",
+   "units": [
+    8,
+    9,
+    10
+   ],
+   "from": "#c084fc",
+   "to": "#38bdf8"
+  },
+  {
+   "name": "Stage 4 · Practice and the art world",
+   "units": [
+    11,
+    12
+   ],
+   "from": "#f472b6",
+   "to": "#22d3ee"
+  }
+ ],
+ "paths": [
+  {
+   "id": "gcse",
+   "name": "GCSE Art and Design",
+   "sub": "The visual elements, drawing, colour, a range of media and the creative process behind the portfolio and the externally set assignment.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "alevel",
+   "name": "A level Art and Design",
+   "sub": "Deeper practice and critical study: media, contextual art history, the personal investigation and the written related study.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    9,
+    10,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "arthistory",
+   "name": "History of art",
+   "sub": "Art from prehistory to now, and the methods art historians use to read it: formalism, iconography, social and feminist histories.",
+   "units": [
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "design",
+   "name": "Graphic and digital design",
+   "sub": "Visual language, colour, typography, photography and digital image-making for communication design.",
+   "units": [
+    1,
+    3,
+    6,
+    7,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "portfolio",
+   "name": "Portfolio and art school",
+   "sub": "From sketchbook to portfolio: drawing, process, critical writing, documentation and applying to foundation and degree courses.",
+   "units": [
+    2,
+    11,
+    12,
+    1
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · The language of art",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Media and making",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Art history",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    8,
+    9,
+    10
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Practice and the art world",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    11,
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "The Visual Language of Art and Design",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What is art and design?",
+     "module": "What art and design are"
+    },
+    {
+     "id": "u01-02",
+     "title": "How art and design are assessed: the four assessment objectives",
+     "module": "What art and design are"
+    },
+    {
+     "id": "u01-03",
+     "title": "Looking closely: an approach to visual analysis",
+     "module": "What art and design are"
+    },
+    {
+     "id": "u01-04",
+     "title": "Line",
+     "module": "The visual elements"
+    },
+    {
+     "id": "u01-05",
+     "title": "Shape and form",
+     "module": "The visual elements"
+    },
+    {
+     "id": "u01-06",
+     "title": "Tone and value",
+     "module": "The visual elements"
+    },
+    {
+     "id": "u01-07",
+     "title": "Colour as a visual element",
+     "module": "The visual elements"
+    },
+    {
+     "id": "u01-08",
+     "title": "Texture",
+     "module": "The visual elements"
+    },
+    {
+     "id": "u01-09",
+     "title": "Space",
+     "module": "The visual elements"
+    },
+    {
+     "id": "u01-10",
+     "title": "Pattern",
+     "module": "The visual elements"
+    },
+    {
+     "id": "u01-11",
+     "title": "Balance and symmetry",
+     "module": "The principles of design"
+    },
+    {
+     "id": "u01-12",
+     "title": "Contrast and emphasis",
+     "module": "The principles of design"
+    },
+    {
+     "id": "u01-13",
+     "title": "Rhythm, repetition and movement",
+     "module": "The principles of design"
+    },
+    {
+     "id": "u01-14",
+     "title": "Proportion and scale",
+     "module": "The principles of design"
+    },
+    {
+     "id": "u01-15",
+     "title": "Unity and variety",
+     "module": "The principles of design"
+    },
+    {
+     "id": "u01-16",
+     "title": "Composition and the picture plane",
+     "module": "Composition"
+    },
+    {
+     "id": "u01-17",
+     "title": "The rule of thirds and the golden ratio",
+     "module": "Composition"
+    },
+    {
+     "id": "u01-18",
+     "title": "Gestalt principles in art and design",
+     "module": "Composition"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Drawing",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Drawing as thinking and recording",
+     "module": "Why we draw"
+    },
+    {
+     "id": "u02-02",
+     "title": "Drawing materials: graphite, charcoal, ink and pastel",
+     "module": "Why we draw"
+    },
+    {
+     "id": "u02-03",
+     "title": "Mark-making",
+     "module": "Why we draw"
+    },
+    {
+     "id": "u02-04",
+     "title": "Measuring and sighting",
+     "module": "Observational drawing"
+    },
+    {
+     "id": "u02-05",
+     "title": "Contour and blind contour drawing",
+     "module": "Observational drawing"
+    },
+    {
+     "id": "u02-06",
+     "title": "Negative space",
+     "module": "Observational drawing"
+    },
+    {
+     "id": "u02-07",
+     "title": "Tonal drawing and chiaroscuro",
+     "module": "Observational drawing"
+    },
+    {
+     "id": "u02-08",
+     "title": "Hatching and cross-hatching",
+     "module": "Observational drawing"
+    },
+    {
+     "id": "u02-09",
+     "title": "One-point perspective",
+     "module": "Perspective and space"
+    },
+    {
+     "id": "u02-10",
+     "title": "Two- and three-point perspective",
+     "module": "Perspective and space"
+    },
+    {
+     "id": "u02-11",
+     "title": "Atmospheric perspective",
+     "module": "Perspective and space"
+    },
+    {
+     "id": "u02-12",
+     "title": "Foreshortening",
+     "module": "Perspective and space"
+    },
+    {
+     "id": "u02-13",
+     "title": "Drawing the figure: proportion and gesture",
+     "module": "The figure and the face"
+    },
+    {
+     "id": "u02-14",
+     "title": "Anatomy for artists",
+     "module": "The figure and the face"
+    },
+    {
+     "id": "u02-15",
+     "title": "Drawing the portrait",
+     "module": "The figure and the face"
+    },
+    {
+     "id": "u02-16",
+     "title": "Expressive and experimental drawing",
+     "module": "Drawing beyond observation"
+    },
+    {
+     "id": "u02-17",
+     "title": "Drawing from imagination and memory",
+     "module": "Drawing beyond observation"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Colour Theory",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Light and colour perception",
+     "module": "Colour science"
+    },
+    {
+     "id": "u03-02",
+     "title": "Additive and subtractive colour",
+     "module": "Colour science"
+    },
+    {
+     "id": "u03-03",
+     "title": "Hue, value and saturation",
+     "module": "Colour science"
+    },
+    {
+     "id": "u03-04",
+     "title": "The colour wheel",
+     "module": "Colour systems"
+    },
+    {
+     "id": "u03-05",
+     "title": "Munsell and other colour systems",
+     "module": "Colour systems"
+    },
+    {
+     "id": "u03-06",
+     "title": "Pigments and colour mixing",
+     "module": "Colour systems"
+    },
+    {
+     "id": "u03-07",
+     "title": "Colour harmonies",
+     "module": "Colour relationships"
+    },
+    {
+     "id": "u03-08",
+     "title": "Complementary colours and simultaneous contrast",
+     "module": "Colour relationships"
+    },
+    {
+     "id": "u03-09",
+     "title": "Itten's seven colour contrasts",
+     "module": "Colour relationships"
+    },
+    {
+     "id": "u03-10",
+     "title": "Warm and cool colour",
+     "module": "Colour relationships"
+    },
+    {
+     "id": "u03-11",
+     "title": "Colour and space",
+     "module": "Colour relationships"
+    },
+    {
+     "id": "u03-12",
+     "title": "Colour symbolism and culture",
+     "module": "Colour in use"
+    },
+    {
+     "id": "u03-13",
+     "title": "Colour in design and branding",
+     "module": "Colour in use"
+    },
+    {
+     "id": "u03-14",
+     "title": "Albers and the interaction of colour",
+     "module": "Colour in use"
+    },
+    {
+     "id": "u03-15",
+     "title": "Colour and accessibility",
+     "module": "Colour in use"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Painting Media and Techniques",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "What paint is: pigment and binder",
+     "module": "Paint and its history"
+    },
+    {
+     "id": "u04-02",
+     "title": "Egg tempera",
+     "module": "Paint and its history"
+    },
+    {
+     "id": "u04-03",
+     "title": "Fresco",
+     "module": "Paint and its history"
+    },
+    {
+     "id": "u04-04",
+     "title": "Oil paint",
+     "module": "Paint and its history"
+    },
+    {
+     "id": "u04-05",
+     "title": "Watercolour and gouache",
+     "module": "Paint and its history"
+    },
+    {
+     "id": "u04-06",
+     "title": "Acrylic paint",
+     "module": "Paint and its history"
+    },
+    {
+     "id": "u04-07",
+     "title": "Supports and grounds",
+     "module": "Surfaces and process"
+    },
+    {
+     "id": "u04-08",
+     "title": "Brushes, knives and tools",
+     "module": "Surfaces and process"
+    },
+    {
+     "id": "u04-09",
+     "title": "Underpainting and glazing",
+     "module": "Surfaces and process"
+    },
+    {
+     "id": "u04-10",
+     "title": "Alla prima",
+     "module": "Surfaces and process"
+    },
+    {
+     "id": "u04-11",
+     "title": "Impasto and texture",
+     "module": "Surfaces and process"
+    },
+    {
+     "id": "u04-12",
+     "title": "Still life",
+     "module": "Painting genres"
+    },
+    {
+     "id": "u04-13",
+     "title": "Landscape painting",
+     "module": "Painting genres"
+    },
+    {
+     "id": "u04-14",
+     "title": "Portraiture",
+     "module": "Painting genres"
+    },
+    {
+     "id": "u04-15",
+     "title": "Abstract painting",
+     "module": "Painting genres"
+    },
+    {
+     "id": "u04-16",
+     "title": "Health and safety in the studio",
+     "module": "Studio practice"
+    },
+    {
+     "id": "u04-17",
+     "title": "Conservation and the life of a painting",
+     "module": "Studio practice"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Printmaking, Sculpture and 3D",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "What a print is: editions and proofs",
+     "module": "Printmaking"
+    },
+    {
+     "id": "u05-02",
+     "title": "Relief printing: woodcut and linocut",
+     "module": "Printmaking"
+    },
+    {
+     "id": "u05-03",
+     "title": "Intaglio: etching and engraving",
+     "module": "Printmaking"
+    },
+    {
+     "id": "u05-04",
+     "title": "Lithography",
+     "module": "Printmaking"
+    },
+    {
+     "id": "u05-05",
+     "title": "Screen printing",
+     "module": "Printmaking"
+    },
+    {
+     "id": "u05-06",
+     "title": "Monoprinting",
+     "module": "Printmaking"
+    },
+    {
+     "id": "u05-07",
+     "title": "Carving",
+     "module": "Sculpture"
+    },
+    {
+     "id": "u05-08",
+     "title": "Modelling",
+     "module": "Sculpture"
+    },
+    {
+     "id": "u05-09",
+     "title": "Casting",
+     "module": "Sculpture"
+    },
+    {
+     "id": "u05-10",
+     "title": "Construction and assemblage",
+     "module": "Sculpture"
+    },
+    {
+     "id": "u05-11",
+     "title": "Installation art",
+     "module": "Sculpture"
+    },
+    {
+     "id": "u05-12",
+     "title": "Site-specific and land art",
+     "module": "Sculpture"
+    },
+    {
+     "id": "u05-13",
+     "title": "Ceramics",
+     "module": "Three-dimensional design"
+    },
+    {
+     "id": "u05-14",
+     "title": "Textiles and fibre art",
+     "module": "Three-dimensional design"
+    },
+    {
+     "id": "u05-15",
+     "title": "Product and 3D design",
+     "module": "Three-dimensional design"
+    },
+    {
+     "id": "u05-16",
+     "title": "Architecture as an art",
+     "module": "Three-dimensional design"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Photography, Moving Image and Digital Art",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "The camera obscura and the invention of photography",
+     "module": "The camera"
+    },
+    {
+     "id": "u06-02",
+     "title": "The camera and the lens",
+     "module": "The camera"
+    },
+    {
+     "id": "u06-03",
+     "title": "Exposure: aperture, shutter speed and ISO",
+     "module": "The camera"
+    },
+    {
+     "id": "u06-04",
+     "title": "Composition in photography",
+     "module": "The camera"
+    },
+    {
+     "id": "u06-05",
+     "title": "Documentary photography",
+     "module": "Photographic practice"
+    },
+    {
+     "id": "u06-06",
+     "title": "Photography as art",
+     "module": "Photographic practice"
+    },
+    {
+     "id": "u06-07",
+     "title": "The darkroom and analogue processes",
+     "module": "Photographic practice"
+    },
+    {
+     "id": "u06-08",
+     "title": "Editing and post-production",
+     "module": "Photographic practice"
+    },
+    {
+     "id": "u06-09",
+     "title": "Moving image and video art",
+     "module": "Moving image and digital"
+    },
+    {
+     "id": "u06-10",
+     "title": "Raster and vector images",
+     "module": "Moving image and digital"
+    },
+    {
+     "id": "u06-11",
+     "title": "Digital painting and illustration",
+     "module": "Moving image and digital"
+    },
+    {
+     "id": "u06-12",
+     "title": "3D modelling and animation",
+     "module": "Moving image and digital"
+    },
+    {
+     "id": "u06-13",
+     "title": "Generative art and AI",
+     "module": "Moving image and digital"
+    },
+    {
+     "id": "u06-14",
+     "title": "Digital colour and resolution",
+     "module": "Moving image and digital"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Graphic and Communication Design",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "The anatomy of type",
+     "module": "Typography"
+    },
+    {
+     "id": "u07-02",
+     "title": "Type classification",
+     "module": "Typography"
+    },
+    {
+     "id": "u07-03",
+     "title": "Hierarchy and layout",
+     "module": "Typography"
+    },
+    {
+     "id": "u07-04",
+     "title": "Grids",
+     "module": "Typography"
+    },
+    {
+     "id": "u07-05",
+     "title": "Visual communication and semiotics",
+     "module": "Communication"
+    },
+    {
+     "id": "u07-06",
+     "title": "Logos and visual identity",
+     "module": "Communication"
+    },
+    {
+     "id": "u07-07",
+     "title": "Poster design",
+     "module": "Communication"
+    },
+    {
+     "id": "u07-08",
+     "title": "Illustration",
+     "module": "Communication"
+    },
+    {
+     "id": "u07-09",
+     "title": "Information design",
+     "module": "Communication"
+    },
+    {
+     "id": "u07-10",
+     "title": "User interface design",
+     "module": "Design for screens, products and people"
+    },
+    {
+     "id": "u07-11",
+     "title": "Packaging design",
+     "module": "Design for screens, products and people"
+    },
+    {
+     "id": "u07-12",
+     "title": "Advertising and persuasion",
+     "module": "Design for screens, products and people"
+    },
+    {
+     "id": "u07-13",
+     "title": "The design process: from brief to final",
+     "module": "Design for screens, products and people"
+    },
+    {
+     "id": "u07-14",
+     "title": "Sustainable design",
+     "module": "Design for screens, products and people"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Art History: The Ancient World to the Renaissance",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Prehistoric art",
+     "module": "Prehistory and the ancient world"
+    },
+    {
+     "id": "u08-02",
+     "title": "Ancient Egyptian art",
+     "module": "Prehistory and the ancient world"
+    },
+    {
+     "id": "u08-03",
+     "title": "Ancient Greek art",
+     "module": "Prehistory and the ancient world"
+    },
+    {
+     "id": "u08-04",
+     "title": "Roman art",
+     "module": "Prehistory and the ancient world"
+    },
+    {
+     "id": "u08-05",
+     "title": "Art of ancient China",
+     "module": "Beyond Europe"
+    },
+    {
+     "id": "u08-06",
+     "title": "Art of South Asia",
+     "module": "Beyond Europe"
+    },
+    {
+     "id": "u08-07",
+     "title": "Islamic art",
+     "module": "Beyond Europe"
+    },
+    {
+     "id": "u08-08",
+     "title": "Art of Africa",
+     "module": "Beyond Europe"
+    },
+    {
+     "id": "u08-09",
+     "title": "Art of the ancient Americas",
+     "module": "Beyond Europe"
+    },
+    {
+     "id": "u08-10",
+     "title": "Early Christian and Byzantine art",
+     "module": "Medieval Europe"
+    },
+    {
+     "id": "u08-11",
+     "title": "Romanesque and Gothic",
+     "module": "Medieval Europe"
+    },
+    {
+     "id": "u08-12",
+     "title": "The Early Renaissance in Florence",
+     "module": "The Renaissance"
+    },
+    {
+     "id": "u08-13",
+     "title": "The High Renaissance",
+     "module": "The Renaissance"
+    },
+    {
+     "id": "u08-14",
+     "title": "The Northern Renaissance",
+     "module": "The Renaissance"
+    },
+    {
+     "id": "u08-15",
+     "title": "Mannerism",
+     "module": "The Renaissance"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Art History: The Baroque to Mid-Century Modernism",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "The Baroque",
+     "module": "1600 to 1850"
+    },
+    {
+     "id": "u09-02",
+     "title": "The Dutch Golden Age",
+     "module": "1600 to 1850"
+    },
+    {
+     "id": "u09-03",
+     "title": "Rococo",
+     "module": "1600 to 1850"
+    },
+    {
+     "id": "u09-04",
+     "title": "Neoclassicism",
+     "module": "1600 to 1850"
+    },
+    {
+     "id": "u09-05",
+     "title": "Romanticism",
+     "module": "1600 to 1850"
+    },
+    {
+     "id": "u09-06",
+     "title": "Japanese woodblock prints",
+     "module": "1600 to 1850"
+    },
+    {
+     "id": "u09-07",
+     "title": "Realism",
+     "module": "The nineteenth century"
+    },
+    {
+     "id": "u09-08",
+     "title": "The Pre-Raphaelites",
+     "module": "The nineteenth century"
+    },
+    {
+     "id": "u09-09",
+     "title": "Impressionism",
+     "module": "The nineteenth century"
+    },
+    {
+     "id": "u09-10",
+     "title": "Post-Impressionism",
+     "module": "The nineteenth century"
+    },
+    {
+     "id": "u09-11",
+     "title": "Arts and Crafts and Art Nouveau",
+     "module": "The nineteenth century"
+    },
+    {
+     "id": "u09-12",
+     "title": "Fauvism and Expressionism",
+     "module": "Early modernism"
+    },
+    {
+     "id": "u09-13",
+     "title": "Cubism",
+     "module": "Early modernism"
+    },
+    {
+     "id": "u09-14",
+     "title": "Futurism and Constructivism",
+     "module": "Early modernism"
+    },
+    {
+     "id": "u09-15",
+     "title": "Dada",
+     "module": "Early modernism"
+    },
+    {
+     "id": "u09-16",
+     "title": "Surrealism",
+     "module": "Early modernism"
+    },
+    {
+     "id": "u09-17",
+     "title": "The Bauhaus",
+     "module": "Early modernism"
+    },
+    {
+     "id": "u09-18",
+     "title": "Abstract Expressionism",
+     "module": "Mid-century"
+    },
+    {
+     "id": "u09-19",
+     "title": "Pop Art",
+     "module": "Mid-century"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Contemporary Art and Ways of Seeing",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Minimalism",
+     "module": "After modernism"
+    },
+    {
+     "id": "u10-02",
+     "title": "Conceptual art",
+     "module": "After modernism"
+    },
+    {
+     "id": "u10-03",
+     "title": "Performance art",
+     "module": "After modernism"
+    },
+    {
+     "id": "u10-04",
+     "title": "Feminist art",
+     "module": "After modernism"
+    },
+    {
+     "id": "u10-05",
+     "title": "Postmodernism",
+     "module": "After modernism"
+    },
+    {
+     "id": "u10-06",
+     "title": "The Young British Artists",
+     "module": "After modernism"
+    },
+    {
+     "id": "u10-07",
+     "title": "Street art",
+     "module": "After modernism"
+    },
+    {
+     "id": "u10-08",
+     "title": "Global contemporary art",
+     "module": "After modernism"
+    },
+    {
+     "id": "u10-09",
+     "title": "Formalism",
+     "module": "Ways of seeing"
+    },
+    {
+     "id": "u10-10",
+     "title": "Iconography and iconology",
+     "module": "Ways of seeing"
+    },
+    {
+     "id": "u10-11",
+     "title": "The social history of art",
+     "module": "Ways of seeing"
+    },
+    {
+     "id": "u10-12",
+     "title": "Feminist and postcolonial art history",
+     "module": "Ways of seeing"
+    },
+    {
+     "id": "u10-13",
+     "title": "John Berger and ways of seeing",
+     "module": "Ways of seeing"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "The Creative Process and Critical Writing",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Sketchbooks",
+     "module": "The creative process"
+    },
+    {
+     "id": "u11-02",
+     "title": "Developing ideas",
+     "module": "The creative process"
+    },
+    {
+     "id": "u11-03",
+     "title": "Research and contextual sources",
+     "module": "The creative process"
+    },
+    {
+     "id": "u11-04",
+     "title": "Experimenting and refining",
+     "module": "The creative process"
+    },
+    {
+     "id": "u11-05",
+     "title": "Reviewing and reflecting",
+     "module": "The creative process"
+    },
+    {
+     "id": "u11-06",
+     "title": "Presenting a final outcome",
+     "module": "The creative process"
+    },
+    {
+     "id": "u11-07",
+     "title": "Describing a work of art",
+     "module": "Writing about art"
+    },
+    {
+     "id": "u11-08",
+     "title": "Analysing a work of art",
+     "module": "Writing about art"
+    },
+    {
+     "id": "u11-09",
+     "title": "Comparing works",
+     "module": "Writing about art"
+    },
+    {
+     "id": "u11-10",
+     "title": "Writing a critical essay",
+     "module": "Writing about art"
+    },
+    {
+     "id": "u11-11",
+     "title": "Referencing and citing art",
+     "module": "Writing about art"
+    },
+    {
+     "id": "u11-12",
+     "title": "The personal investigation and related study",
+     "module": "Writing about art"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Art in Society and Professional Practice",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Museums and galleries",
+     "module": "Institutions"
+    },
+    {
+     "id": "u12-02",
+     "title": "Curating and exhibitions",
+     "module": "Institutions"
+    },
+    {
+     "id": "u12-03",
+     "title": "The art market",
+     "module": "Institutions"
+    },
+    {
+     "id": "u12-04",
+     "title": "Public art and patronage",
+     "module": "Institutions"
+    },
+    {
+     "id": "u12-05",
+     "title": "Copyright basics for artists",
+     "module": "Ethics and law"
+    },
+    {
+     "id": "u12-06",
+     "title": "Appropriation, influence and fair dealing",
+     "module": "Ethics and law"
+    },
+    {
+     "id": "u12-07",
+     "title": "Cultural property and restitution",
+     "module": "Ethics and law"
+    },
+    {
+     "id": "u12-08",
+     "title": "Forgery and authenticity",
+     "module": "Ethics and law"
+    },
+    {
+     "id": "u12-09",
+     "title": "Representation and ethics",
+     "module": "Ethics and law"
+    },
+    {
+     "id": "u12-10",
+     "title": "Building a portfolio",
+     "module": "Your practice"
+    },
+    {
+     "id": "u12-11",
+     "title": "Applying to art school",
+     "module": "Your practice"
+    },
+    {
+     "id": "u12-12",
+     "title": "Careers in art and design",
+     "module": "Your practice"
+    },
+    {
+     "id": "u12-13",
+     "title": "Documenting and presenting your work",
+     "module": "Your practice"
+    }
+   ]
+  }
+ ]
+}
