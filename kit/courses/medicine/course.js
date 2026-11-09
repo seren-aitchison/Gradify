@@ -5,7 +5,7 @@ import { UNITS, TRACKS, PATHS, BLURBS } from "./syllabus.js";
 import { QA, WRITTEN_ON } from "./qa.js";
 import { INTERACTIVES } from "./interactives.js";
 import { QUESTIONS, LESSONS } from "./registry.js";
-import { EVIDENCE } from "./evidence.js";
+import { EVIDENCE, EXPLORATION } from "./evidence.js";
 export default {
   site: "MedGradify", slug: "medicine", name: "Medicine", app: "../app.html", page: "/medgradify/course/", unitWord: "School", trackWord: "Stage",
   // who must sign a school off before it counts as published (docs/CURRICULUM_QA.md)
@@ -16,7 +16,7 @@ export default {
   levels: ["Foundation", "Application", "Evaluation"],
   theme: { accent: "#4641ff", spectrum: "linear-gradient(90deg, #4641ff, #22d3ee)" },
   notice: "<b>Education for medical students, not medical advice or clinical guidance.</b> MedGradify teaches medicine for study and exam revision. The lessons were drafted with AI assistance and haven't yet been reviewed by a doctor, so they may contain errors: check important points against your medical school's teaching, current NICE guidance and the BNF. Nothing here can diagnose, treat or advise on a real person, and it gives no doses for real patients. If you or someone else is unwell, contact a doctor, call NHS 111, or in an emergency call 999.",
-  interactives: INTERACTIVES, evidence: EVIDENCE,
+  interactives: INTERACTIVES, evidence: EVIDENCE, exploration: EXPLORATION,
   practiceNote: "Simulations run a stated physiological model and exercises check your reasoning with fictional patients and illustrative numbers. They build understanding; they don't assess clinical competence. Challenges inside them earn XP.",
   exams: [
     ...TRACKS.map((t, i) => ({ id: `stage-${i + 1}`, title: t.name, sub: "Mixed questions from every written school in this stage.", units: t.units, format: "science", count: 20, minutes: 30, pass: 0.7 })),

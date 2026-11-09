@@ -1,0 +1,1484 @@
+{
+ "api": 1,
+ "slug": "medicine",
+ "name": "Medicine",
+ "site": "MedGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Education for medical students, not medical advice or clinical guidance.</b> MedGradify teaches medicine for study and exam revision. The lessons were drafted with AI assistance and haven't yet been reviewed by a doctor, so they may contain errors: check important points against your medical school's teaching, current NICE guidance and the BNF. Nothing here can diagnose, treat or advise on a real person, and it gives no doses for real patients. If you or someone else is unwell, contact a doctor, call NHS 111, or in an emergency call 999.",
+ "notes": "/kit/courses/medicine/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Foundations of medicine",
+   "units": [
+    1,
+    2,
+    12
+   ],
+   "from": "#4641ff",
+   "to": "#6366f1"
+  },
+  {
+   "name": "Stage 2 · The body systems",
+   "units": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "from": "#6366f1",
+   "to": "#3b82f6"
+  },
+  {
+   "name": "Stage 3 · Brain, blood and defence",
+   "units": [
+    7,
+    8,
+    9
+   ],
+   "from": "#3b82f6",
+   "to": "#0ea5e9"
+  },
+  {
+   "name": "Stage 4 · Acute care and the life course",
+   "units": [
+    10,
+    11
+   ],
+   "from": "#0ea5e9",
+   "to": "#22d3ee"
+  }
+ ],
+ "paths": [
+  {
+   "id": "preclinical",
+   "name": "Preclinical years",
+   "sub": "The science that underpins clinical medicine and the core clinical skills of the consultation and examination.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "select": null
+  },
+  {
+   "id": "ukmla",
+   "name": "UKMLA preparation",
+   "sub": "Every area of the MLA content map: the clinical schools, acute care and professional knowledge. Revision, not a substitute for your school's teaching.",
+   "units": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "acute",
+   "name": "Acute and emergency medicine",
+   "sub": "Recognising and managing the acutely unwell patient: ABCDE, NEWS2, sepsis, shock, arrests and the emergencies of each system.",
+   "units": [
+    2,
+    10,
+    3,
+    4,
+    8
+   ],
+   "select": null
+  },
+  {
+   "id": "general-practice",
+   "name": "General practice and long-term conditions",
+   "sub": "The conditions managed mostly in primary care: hypertension, diabetes, asthma and COPD, mental health, children and prevention.",
+   "units": [
+    2,
+    6,
+    4,
+    7,
+    11,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "prescribing",
+   "name": "Prescribing safely",
+   "sub": "Pharmacology, therapeutics and the prescribing skills assessed in the Prescribing Safety Assessment. Education, not prescribing advice.",
+   "units": [
+    1,
+    12,
+    8,
+    10
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Foundations of medicine",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · The body systems",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Brain, blood and defence",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    7,
+    8,
+    9
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Acute care and the life course",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    10,
+    11
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Foundations of Medical Science",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "Cell structure and function in health",
+     "module": "Cells and homeostasis"
+    },
+    {
+     "id": "u01-02",
+     "title": "Membranes, transport and the resting potential",
+     "module": "Cells and homeostasis"
+    },
+    {
+     "id": "u01-03",
+     "title": "Homeostasis and negative feedback",
+     "module": "Cells and homeostasis"
+    },
+    {
+     "id": "u01-04",
+     "title": "Body fluids, osmolality and electrolytes",
+     "module": "Cells and homeostasis"
+    },
+    {
+     "id": "u01-05",
+     "title": "Acid–base physiology",
+     "module": "Cells and homeostasis"
+    },
+    {
+     "id": "u01-06",
+     "title": "Cell injury, adaptation and death",
+     "module": "Pathological processes"
+    },
+    {
+     "id": "u01-07",
+     "title": "Acute inflammation",
+     "module": "Pathological processes"
+    },
+    {
+     "id": "u01-08",
+     "title": "Chronic inflammation and repair",
+     "module": "Pathological processes"
+    },
+    {
+     "id": "u01-09",
+     "title": "Thrombosis, embolism and infarction",
+     "module": "Pathological processes"
+    },
+    {
+     "id": "u01-10",
+     "title": "Neoplasia: benign and malignant tumours",
+     "module": "Pathological processes"
+    },
+    {
+     "id": "u01-11",
+     "title": "The hallmarks and genetics of cancer",
+     "module": "Pathological processes"
+    },
+    {
+     "id": "u01-12",
+     "title": "Innate immunity",
+     "module": "Immunity and genetics"
+    },
+    {
+     "id": "u01-13",
+     "title": "Adaptive immunity",
+     "module": "Immunity and genetics"
+    },
+    {
+     "id": "u01-14",
+     "title": "Hypersensitivity and autoimmunity",
+     "module": "Immunity and genetics"
+    },
+    {
+     "id": "u01-15",
+     "title": "Patterns of inheritance in clinical genetics",
+     "module": "Immunity and genetics"
+    },
+    {
+     "id": "u01-16",
+     "title": "Pharmacodynamics: receptors and dose–response",
+     "module": "Principles of pharmacology"
+    },
+    {
+     "id": "u01-17",
+     "title": "Pharmacokinetics: absorption, distribution, metabolism and excretion",
+     "module": "Principles of pharmacology"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Clinical Method and Reasoning",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "The medical history",
+     "module": "The consultation"
+    },
+    {
+     "id": "u02-02",
+     "title": "Consultation models and patient-centred care",
+     "module": "The consultation"
+    },
+    {
+     "id": "u02-03",
+     "title": "Communicating risk and shared decision-making",
+     "module": "The consultation"
+    },
+    {
+     "id": "u02-04",
+     "title": "Breaking bad news",
+     "module": "The consultation"
+    },
+    {
+     "id": "u02-05",
+     "title": "Principles of physical examination",
+     "module": "Examination"
+    },
+    {
+     "id": "u02-06",
+     "title": "Vital signs and the early warning score (NEWS2)",
+     "module": "Examination"
+    },
+    {
+     "id": "u02-07",
+     "title": "The cardiovascular examination",
+     "module": "Examination"
+    },
+    {
+     "id": "u02-08",
+     "title": "The respiratory examination",
+     "module": "Examination"
+    },
+    {
+     "id": "u02-09",
+     "title": "The abdominal examination",
+     "module": "Examination"
+    },
+    {
+     "id": "u02-10",
+     "title": "The neurological examination",
+     "module": "Examination"
+    },
+    {
+     "id": "u02-11",
+     "title": "Clinical reasoning and diagnostic error",
+     "module": "Investigation and reasoning"
+    },
+    {
+     "id": "u02-12",
+     "title": "Interpreting tests: sensitivity, specificity and predictive values",
+     "module": "Investigation and reasoning"
+    },
+    {
+     "id": "u02-13",
+     "title": "Interpreting a full blood count and electrolytes",
+     "module": "Investigation and reasoning"
+    },
+    {
+     "id": "u02-14",
+     "title": "Arterial blood gas interpretation",
+     "module": "Investigation and reasoning"
+    },
+    {
+     "id": "u02-15",
+     "title": "The 12-lead ECG: a systematic approach",
+     "module": "Investigation and reasoning"
+    },
+    {
+     "id": "u02-16",
+     "title": "Chest X-ray interpretation",
+     "module": "Investigation and reasoning"
+    },
+    {
+     "id": "u02-17",
+     "title": "Presenting a patient and documenting care",
+     "module": "Investigation and reasoning"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Cardiovascular Medicine",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "The cardiac cycle and cardiac output",
+     "module": "Cardiovascular science"
+    },
+    {
+     "id": "u03-02",
+     "title": "Cardiac electrophysiology and conduction",
+     "module": "Cardiovascular science"
+    },
+    {
+     "id": "u03-03",
+     "title": "Blood pressure regulation",
+     "module": "Cardiovascular science"
+    },
+    {
+     "id": "u03-04",
+     "title": "Atherosclerosis and cardiovascular risk",
+     "module": "Atherosclerosis and coronary disease"
+    },
+    {
+     "id": "u03-05",
+     "title": "Stable angina",
+     "module": "Atherosclerosis and coronary disease"
+    },
+    {
+     "id": "u03-06",
+     "title": "Acute coronary syndromes",
+     "module": "Atherosclerosis and coronary disease"
+    },
+    {
+     "id": "u03-07",
+     "title": "Secondary prevention after myocardial infarction",
+     "module": "Atherosclerosis and coronary disease"
+    },
+    {
+     "id": "u03-08",
+     "title": "Heart failure: causes and classification",
+     "module": "Heart failure and structural disease"
+    },
+    {
+     "id": "u03-09",
+     "title": "Managing chronic heart failure",
+     "module": "Heart failure and structural disease"
+    },
+    {
+     "id": "u03-10",
+     "title": "Valvular heart disease",
+     "module": "Heart failure and structural disease"
+    },
+    {
+     "id": "u03-11",
+     "title": "Infective endocarditis",
+     "module": "Heart failure and structural disease"
+    },
+    {
+     "id": "u03-12",
+     "title": "Cardiomyopathies and pericardial disease",
+     "module": "Heart failure and structural disease"
+    },
+    {
+     "id": "u03-13",
+     "title": "Atrial fibrillation",
+     "module": "Rhythm and vascular disease"
+    },
+    {
+     "id": "u03-14",
+     "title": "Bradyarrhythmias and heart block",
+     "module": "Rhythm and vascular disease"
+    },
+    {
+     "id": "u03-15",
+     "title": "Tachyarrhythmias",
+     "module": "Rhythm and vascular disease"
+    },
+    {
+     "id": "u03-16",
+     "title": "Hypertension",
+     "module": "Rhythm and vascular disease"
+    },
+    {
+     "id": "u03-17",
+     "title": "Peripheral arterial disease and aortic aneurysm",
+     "module": "Rhythm and vascular disease"
+    },
+    {
+     "id": "u03-18",
+     "title": "Venous thromboembolism",
+     "module": "Rhythm and vascular disease"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Respiratory Medicine",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Ventilation, gas exchange and oxygen transport",
+     "module": "Respiratory science"
+    },
+    {
+     "id": "u04-02",
+     "title": "Lung function tests",
+     "module": "Respiratory science"
+    },
+    {
+     "id": "u04-03",
+     "title": "Respiratory failure: type 1 and type 2",
+     "module": "Respiratory science"
+    },
+    {
+     "id": "u04-04",
+     "title": "Asthma",
+     "module": "Airways disease"
+    },
+    {
+     "id": "u04-05",
+     "title": "Chronic obstructive pulmonary disease (COPD)",
+     "module": "Airways disease"
+    },
+    {
+     "id": "u04-06",
+     "title": "Bronchiectasis and cystic fibrosis",
+     "module": "Airways disease"
+    },
+    {
+     "id": "u04-07",
+     "title": "Community-acquired pneumonia",
+     "module": "Infection and the pleura"
+    },
+    {
+     "id": "u04-08",
+     "title": "Tuberculosis",
+     "module": "Infection and the pleura"
+    },
+    {
+     "id": "u04-09",
+     "title": "Pleural effusion",
+     "module": "Infection and the pleura"
+    },
+    {
+     "id": "u04-10",
+     "title": "Pneumothorax",
+     "module": "Infection and the pleura"
+    },
+    {
+     "id": "u04-11",
+     "title": "Interstitial lung disease",
+     "module": "Interstitial, vascular and malignant disease"
+    },
+    {
+     "id": "u04-12",
+     "title": "Sarcoidosis",
+     "module": "Interstitial, vascular and malignant disease"
+    },
+    {
+     "id": "u04-13",
+     "title": "Pulmonary embolism",
+     "module": "Interstitial, vascular and malignant disease"
+    },
+    {
+     "id": "u04-14",
+     "title": "Pulmonary hypertension",
+     "module": "Interstitial, vascular and malignant disease"
+    },
+    {
+     "id": "u04-15",
+     "title": "Lung cancer",
+     "module": "Interstitial, vascular and malignant disease"
+    },
+    {
+     "id": "u04-16",
+     "title": "Obstructive sleep apnoea",
+     "module": "Interstitial, vascular and malignant disease"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Gastroenterology and Hepatology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Digestion and absorption",
+     "module": "The gut and nutrition"
+    },
+    {
+     "id": "u05-02",
+     "title": "Nutrition, malnutrition and refeeding",
+     "module": "The gut and nutrition"
+    },
+    {
+     "id": "u05-03",
+     "title": "Dysphagia and oesophageal disease",
+     "module": "The gut and nutrition"
+    },
+    {
+     "id": "u05-04",
+     "title": "Gastro-oesophageal reflux disease",
+     "module": "The gut and nutrition"
+    },
+    {
+     "id": "u05-05",
+     "title": "Peptic ulcer disease and Helicobacter pylori",
+     "module": "The gut and nutrition"
+    },
+    {
+     "id": "u05-06",
+     "title": "Upper gastrointestinal bleeding",
+     "module": "The gut and nutrition"
+    },
+    {
+     "id": "u05-07",
+     "title": "Coeliac disease",
+     "module": "Small and large bowel"
+    },
+    {
+     "id": "u05-08",
+     "title": "Inflammatory bowel disease",
+     "module": "Small and large bowel"
+    },
+    {
+     "id": "u05-09",
+     "title": "Irritable bowel syndrome",
+     "module": "Small and large bowel"
+    },
+    {
+     "id": "u05-10",
+     "title": "Diarrhoea and gastroenteritis",
+     "module": "Small and large bowel"
+    },
+    {
+     "id": "u05-11",
+     "title": "Colorectal cancer and screening",
+     "module": "Small and large bowel"
+    },
+    {
+     "id": "u05-12",
+     "title": "Diverticular disease",
+     "module": "Small and large bowel"
+    },
+    {
+     "id": "u05-13",
+     "title": "Liver function tests and jaundice",
+     "module": "Liver, biliary tree and pancreas"
+    },
+    {
+     "id": "u05-14",
+     "title": "Viral hepatitis",
+     "module": "Liver, biliary tree and pancreas"
+    },
+    {
+     "id": "u05-15",
+     "title": "Alcohol-related and metabolic liver disease",
+     "module": "Liver, biliary tree and pancreas"
+    },
+    {
+     "id": "u05-16",
+     "title": "Cirrhosis and its complications",
+     "module": "Liver, biliary tree and pancreas"
+    },
+    {
+     "id": "u05-17",
+     "title": "Gallstone disease",
+     "module": "Liver, biliary tree and pancreas"
+    },
+    {
+     "id": "u05-18",
+     "title": "Acute and chronic pancreatitis",
+     "module": "Liver, biliary tree and pancreas"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Renal, Endocrine and Metabolic Medicine",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Renal physiology and glomerular filtration",
+     "module": "The kidney"
+    },
+    {
+     "id": "u06-02",
+     "title": "Acute kidney injury",
+     "module": "The kidney"
+    },
+    {
+     "id": "u06-03",
+     "title": "Chronic kidney disease",
+     "module": "The kidney"
+    },
+    {
+     "id": "u06-04",
+     "title": "Glomerulonephritis and nephrotic syndrome",
+     "module": "The kidney"
+    },
+    {
+     "id": "u06-05",
+     "title": "Urinary tract infection",
+     "module": "The kidney"
+    },
+    {
+     "id": "u06-06",
+     "title": "Hyperkalaemia and hyponatraemia",
+     "module": "The kidney"
+    },
+    {
+     "id": "u06-07",
+     "title": "Type 1 diabetes",
+     "module": "Diabetes"
+    },
+    {
+     "id": "u06-08",
+     "title": "Type 2 diabetes",
+     "module": "Diabetes"
+    },
+    {
+     "id": "u06-09",
+     "title": "Diabetic ketoacidosis and hyperosmolar hyperglycaemic state",
+     "module": "Diabetes"
+    },
+    {
+     "id": "u06-10",
+     "title": "Hypoglycaemia",
+     "module": "Diabetes"
+    },
+    {
+     "id": "u06-11",
+     "title": "Complications of diabetes",
+     "module": "Diabetes"
+    },
+    {
+     "id": "u06-12",
+     "title": "The hypothalamus and pituitary",
+     "module": "Endocrine disease"
+    },
+    {
+     "id": "u06-13",
+     "title": "Hypothyroidism",
+     "module": "Endocrine disease"
+    },
+    {
+     "id": "u06-14",
+     "title": "Hyperthyroidism",
+     "module": "Endocrine disease"
+    },
+    {
+     "id": "u06-15",
+     "title": "Adrenal insufficiency",
+     "module": "Endocrine disease"
+    },
+    {
+     "id": "u06-16",
+     "title": "Cushing's syndrome",
+     "module": "Endocrine disease"
+    },
+    {
+     "id": "u06-17",
+     "title": "Primary hyperaldosteronism and phaeochromocytoma",
+     "module": "Endocrine disease"
+    },
+    {
+     "id": "u06-18",
+     "title": "Calcium disorders and the parathyroid glands",
+     "module": "Endocrine disease"
+    },
+    {
+     "id": "u06-19",
+     "title": "Osteoporosis and metabolic bone disease",
+     "module": "Endocrine disease"
+    },
+    {
+     "id": "u06-20",
+     "title": "Lipid disorders",
+     "module": "Endocrine disease"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Neurology and Psychiatry",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Headache",
+     "module": "Neurological disease"
+    },
+    {
+     "id": "u07-02",
+     "title": "Stroke and transient ischaemic attack",
+     "module": "Neurological disease"
+    },
+    {
+     "id": "u07-03",
+     "title": "Epilepsy and seizures",
+     "module": "Neurological disease"
+    },
+    {
+     "id": "u07-04",
+     "title": "Multiple sclerosis",
+     "module": "Neurological disease"
+    },
+    {
+     "id": "u07-05",
+     "title": "Parkinson's disease and movement disorders",
+     "module": "Neurological disease"
+    },
+    {
+     "id": "u07-06",
+     "title": "Dementia",
+     "module": "Neurological disease"
+    },
+    {
+     "id": "u07-07",
+     "title": "Motor neurone disease",
+     "module": "Neurological disease"
+    },
+    {
+     "id": "u07-08",
+     "title": "Peripheral neuropathy",
+     "module": "Neurological disease"
+    },
+    {
+     "id": "u07-09",
+     "title": "Myasthenia gravis and muscle disease",
+     "module": "Neurological disease"
+    },
+    {
+     "id": "u07-10",
+     "title": "Meningitis and encephalitis",
+     "module": "Neurological disease"
+    },
+    {
+     "id": "u07-11",
+     "title": "Spinal cord compression and cauda equina syndrome",
+     "module": "Neurological disease"
+    },
+    {
+     "id": "u07-12",
+     "title": "Raised intracranial pressure and head injury",
+     "module": "Neurological disease"
+    },
+    {
+     "id": "u07-13",
+     "title": "The psychiatric assessment and mental state examination",
+     "module": "Psychiatry"
+    },
+    {
+     "id": "u07-14",
+     "title": "Depression",
+     "module": "Psychiatry"
+    },
+    {
+     "id": "u07-15",
+     "title": "Bipolar affective disorder",
+     "module": "Psychiatry"
+    },
+    {
+     "id": "u07-16",
+     "title": "Anxiety disorders and obsessive-compulsive disorder",
+     "module": "Psychiatry"
+    },
+    {
+     "id": "u07-17",
+     "title": "Schizophrenia and psychosis",
+     "module": "Psychiatry"
+    },
+    {
+     "id": "u07-18",
+     "title": "Self-harm and suicide risk assessment",
+     "module": "Psychiatry"
+    },
+    {
+     "id": "u07-19",
+     "title": "Eating disorders",
+     "module": "Psychiatry"
+    },
+    {
+     "id": "u07-20",
+     "title": "Alcohol and substance misuse",
+     "module": "Psychiatry"
+    },
+    {
+     "id": "u07-21",
+     "title": "Personality disorders",
+     "module": "Psychiatry"
+    },
+    {
+     "id": "u07-22",
+     "title": "Delirium",
+     "module": "Psychiatry"
+    },
+    {
+     "id": "u07-23",
+     "title": "Psychiatry of childhood and adolescence",
+     "module": "Psychiatry"
+    },
+    {
+     "id": "u07-24",
+     "title": "Mental health law in the UK",
+     "module": "Psychiatry"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Infection, Haematology and Oncology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Principles of microbiology",
+     "module": "Infection"
+    },
+    {
+     "id": "u08-02",
+     "title": "Antimicrobial therapy and stewardship",
+     "module": "Infection"
+    },
+    {
+     "id": "u08-03",
+     "title": "Sepsis",
+     "module": "Infection"
+    },
+    {
+     "id": "u08-04",
+     "title": "Fever in the returning traveller",
+     "module": "Infection"
+    },
+    {
+     "id": "u08-05",
+     "title": "HIV infection",
+     "module": "Infection"
+    },
+    {
+     "id": "u08-06",
+     "title": "Healthcare-associated infection and infection control",
+     "module": "Infection"
+    },
+    {
+     "id": "u08-07",
+     "title": "Vaccination and immunisation",
+     "module": "Infection"
+    },
+    {
+     "id": "u08-08",
+     "title": "Anaemia",
+     "module": "Haematology"
+    },
+    {
+     "id": "u08-09",
+     "title": "Haemoglobinopathies: sickle cell disease and thalassaemia",
+     "module": "Haematology"
+    },
+    {
+     "id": "u08-10",
+     "title": "Haemostasis and bleeding disorders",
+     "module": "Haematology"
+    },
+    {
+     "id": "u08-11",
+     "title": "Anticoagulation",
+     "module": "Haematology"
+    },
+    {
+     "id": "u08-12",
+     "title": "Blood transfusion",
+     "module": "Haematology"
+    },
+    {
+     "id": "u08-13",
+     "title": "Leukaemia",
+     "module": "Haematology"
+    },
+    {
+     "id": "u08-14",
+     "title": "Lymphoma",
+     "module": "Haematology"
+    },
+    {
+     "id": "u08-15",
+     "title": "Myeloma",
+     "module": "Haematology"
+    },
+    {
+     "id": "u08-16",
+     "title": "Myeloproliferative neoplasms",
+     "module": "Haematology"
+    },
+    {
+     "id": "u08-17",
+     "title": "Principles of cancer staging and treatment",
+     "module": "Oncology"
+    },
+    {
+     "id": "u08-18",
+     "title": "Systemic anticancer therapy and its toxicities",
+     "module": "Oncology"
+    },
+    {
+     "id": "u08-19",
+     "title": "Oncological emergencies",
+     "module": "Oncology"
+    },
+    {
+     "id": "u08-20",
+     "title": "Cancer screening programmes",
+     "module": "Oncology"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Musculoskeletal, Skin and the Special Senses",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Osteoarthritis",
+     "module": "Musculoskeletal and rheumatology"
+    },
+    {
+     "id": "u09-02",
+     "title": "Rheumatoid arthritis",
+     "module": "Musculoskeletal and rheumatology"
+    },
+    {
+     "id": "u09-03",
+     "title": "Gout and pseudogout",
+     "module": "Musculoskeletal and rheumatology"
+    },
+    {
+     "id": "u09-04",
+     "title": "Seronegative spondyloarthropathies",
+     "module": "Musculoskeletal and rheumatology"
+    },
+    {
+     "id": "u09-05",
+     "title": "Systemic lupus erythematosus and connective tissue disease",
+     "module": "Musculoskeletal and rheumatology"
+    },
+    {
+     "id": "u09-06",
+     "title": "Vasculitis and polymyalgia rheumatica",
+     "module": "Musculoskeletal and rheumatology"
+    },
+    {
+     "id": "u09-07",
+     "title": "Septic arthritis and osteomyelitis",
+     "module": "Musculoskeletal and rheumatology"
+    },
+    {
+     "id": "u09-08",
+     "title": "Back pain",
+     "module": "Musculoskeletal and rheumatology"
+    },
+    {
+     "id": "u09-09",
+     "title": "Fractures and orthopaedic trauma",
+     "module": "Musculoskeletal and rheumatology"
+    },
+    {
+     "id": "u09-10",
+     "title": "Describing skin lesions",
+     "module": "Dermatology"
+    },
+    {
+     "id": "u09-11",
+     "title": "Eczema and psoriasis",
+     "module": "Dermatology"
+    },
+    {
+     "id": "u09-12",
+     "title": "Skin cancer",
+     "module": "Dermatology"
+    },
+    {
+     "id": "u09-13",
+     "title": "Skin infections and infestations",
+     "module": "Dermatology"
+    },
+    {
+     "id": "u09-14",
+     "title": "Urticaria and drug reactions",
+     "module": "Dermatology"
+    },
+    {
+     "id": "u09-15",
+     "title": "The red eye",
+     "module": "Eyes and ENT"
+    },
+    {
+     "id": "u09-16",
+     "title": "Sudden loss of vision",
+     "module": "Eyes and ENT"
+    },
+    {
+     "id": "u09-17",
+     "title": "Glaucoma, cataract and diabetic eye disease",
+     "module": "Eyes and ENT"
+    },
+    {
+     "id": "u09-18",
+     "title": "Hearing loss and tinnitus",
+     "module": "Eyes and ENT"
+    },
+    {
+     "id": "u09-19",
+     "title": "Vertigo",
+     "module": "Eyes and ENT"
+    },
+    {
+     "id": "u09-20",
+     "title": "Ear, nose and throat infections",
+     "module": "Eyes and ENT"
+    },
+    {
+     "id": "u09-21",
+     "title": "Head and neck cancer",
+     "module": "Eyes and ENT"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Acute, Surgical and Palliative Care",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "The ABCDE assessment of the acutely ill patient",
+     "module": "Acute and emergency medicine"
+    },
+    {
+     "id": "u10-02",
+     "title": "Shock",
+     "module": "Acute and emergency medicine"
+    },
+    {
+     "id": "u10-03",
+     "title": "Anaphylaxis",
+     "module": "Acute and emergency medicine"
+    },
+    {
+     "id": "u10-04",
+     "title": "Cardiac arrest and advanced life support",
+     "module": "Acute and emergency medicine"
+    },
+    {
+     "id": "u10-05",
+     "title": "Poisoning and overdose",
+     "module": "Acute and emergency medicine"
+    },
+    {
+     "id": "u10-06",
+     "title": "Major trauma",
+     "module": "Acute and emergency medicine"
+    },
+    {
+     "id": "u10-07",
+     "title": "Burns",
+     "module": "Acute and emergency medicine"
+    },
+    {
+     "id": "u10-08",
+     "title": "The acute abdomen",
+     "module": "Surgery and perioperative care"
+    },
+    {
+     "id": "u10-09",
+     "title": "Appendicitis",
+     "module": "Surgery and perioperative care"
+    },
+    {
+     "id": "u10-10",
+     "title": "Bowel obstruction",
+     "module": "Surgery and perioperative care"
+    },
+    {
+     "id": "u10-11",
+     "title": "Hernias",
+     "module": "Surgery and perioperative care"
+    },
+    {
+     "id": "u10-12",
+     "title": "Preoperative assessment",
+     "module": "Surgery and perioperative care"
+    },
+    {
+     "id": "u10-13",
+     "title": "Anaesthesia and airway management",
+     "module": "Surgery and perioperative care"
+    },
+    {
+     "id": "u10-14",
+     "title": "Postoperative complications",
+     "module": "Surgery and perioperative care"
+    },
+    {
+     "id": "u10-15",
+     "title": "Fluid prescribing",
+     "module": "Surgery and perioperative care"
+    },
+    {
+     "id": "u10-16",
+     "title": "Urological emergencies and urinary retention",
+     "module": "Surgery and perioperative care"
+    },
+    {
+     "id": "u10-17",
+     "title": "Breast disease",
+     "module": "Surgery and perioperative care"
+    },
+    {
+     "id": "u10-18",
+     "title": "Frailty and comprehensive geriatric assessment",
+     "module": "Older people and end of life"
+    },
+    {
+     "id": "u10-19",
+     "title": "Falls",
+     "module": "Older people and end of life"
+    },
+    {
+     "id": "u10-20",
+     "title": "Palliative care and symptom control",
+     "module": "Older people and end of life"
+    },
+    {
+     "id": "u10-21",
+     "title": "Care in the last days of life",
+     "module": "Older people and end of life"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Obstetrics, Gynaecology and Paediatrics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Normal pregnancy and antenatal care",
+     "module": "Obstetrics"
+    },
+    {
+     "id": "u11-02",
+     "title": "Bleeding in early pregnancy",
+     "module": "Obstetrics"
+    },
+    {
+     "id": "u11-03",
+     "title": "Hypertensive disorders of pregnancy",
+     "module": "Obstetrics"
+    },
+    {
+     "id": "u11-04",
+     "title": "Diabetes in pregnancy",
+     "module": "Obstetrics"
+    },
+    {
+     "id": "u11-05",
+     "title": "Labour and delivery",
+     "module": "Obstetrics"
+    },
+    {
+     "id": "u11-06",
+     "title": "Obstetric emergencies",
+     "module": "Obstetrics"
+    },
+    {
+     "id": "u11-07",
+     "title": "The postnatal period and perinatal mental health",
+     "module": "Obstetrics"
+    },
+    {
+     "id": "u11-08",
+     "title": "The menstrual cycle and its disorders",
+     "module": "Gynaecology and sexual health"
+    },
+    {
+     "id": "u11-09",
+     "title": "Contraception",
+     "module": "Gynaecology and sexual health"
+    },
+    {
+     "id": "u11-10",
+     "title": "Subfertility",
+     "module": "Gynaecology and sexual health"
+    },
+    {
+     "id": "u11-11",
+     "title": "The menopause",
+     "module": "Gynaecology and sexual health"
+    },
+    {
+     "id": "u11-12",
+     "title": "Gynaecological cancers",
+     "module": "Gynaecology and sexual health"
+    },
+    {
+     "id": "u11-13",
+     "title": "Sexually transmitted infections",
+     "module": "Gynaecology and sexual health"
+    },
+    {
+     "id": "u11-14",
+     "title": "Child development and the developmental assessment",
+     "module": "Paediatrics"
+    },
+    {
+     "id": "u11-15",
+     "title": "The sick child",
+     "module": "Paediatrics"
+    },
+    {
+     "id": "u11-16",
+     "title": "The newborn",
+     "module": "Paediatrics"
+    },
+    {
+     "id": "u11-17",
+     "title": "Respiratory illness in children",
+     "module": "Paediatrics"
+    },
+    {
+     "id": "u11-18",
+     "title": "Childhood infections and immunisation",
+     "module": "Paediatrics"
+    },
+    {
+     "id": "u11-19",
+     "title": "Growth and nutrition in children",
+     "module": "Paediatrics"
+    },
+    {
+     "id": "u11-20",
+     "title": "Congenital heart disease",
+     "module": "Paediatrics"
+    },
+    {
+     "id": "u11-21",
+     "title": "Safeguarding children",
+     "module": "Paediatrics"
+    },
+    {
+     "id": "u11-22",
+     "title": "Common paediatric emergencies",
+     "module": "Paediatrics"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Professional Practice, Prescribing and Population Health",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Good medical practice and professionalism",
+     "module": "Professional values"
+    },
+    {
+     "id": "u12-02",
+     "title": "Medical ethics: principles and frameworks",
+     "module": "Professional values"
+    },
+    {
+     "id": "u12-03",
+     "title": "Consent and capacity",
+     "module": "Professional values"
+    },
+    {
+     "id": "u12-04",
+     "title": "Confidentiality and information governance",
+     "module": "Professional values"
+    },
+    {
+     "id": "u12-05",
+     "title": "Raising concerns and the duty of candour",
+     "module": "Professional values"
+    },
+    {
+     "id": "u12-06",
+     "title": "Writing a safe prescription",
+     "module": "Safe prescribing"
+    },
+    {
+     "id": "u12-07",
+     "title": "Adverse drug reactions and interactions",
+     "module": "Safe prescribing"
+    },
+    {
+     "id": "u12-08",
+     "title": "Prescribing in renal and hepatic impairment",
+     "module": "Safe prescribing"
+    },
+    {
+     "id": "u12-09",
+     "title": "Prescribing in pregnancy, children and older people",
+     "module": "Safe prescribing"
+    },
+    {
+     "id": "u12-10",
+     "title": "Therapeutic drug monitoring",
+     "module": "Safe prescribing"
+    },
+    {
+     "id": "u12-11",
+     "title": "Patient safety and human factors",
+     "module": "Safety and quality"
+    },
+    {
+     "id": "u12-12",
+     "title": "Clinical governance and audit",
+     "module": "Safety and quality"
+    },
+    {
+     "id": "u12-13",
+     "title": "Teamwork, handover and leadership",
+     "module": "Safety and quality"
+    },
+    {
+     "id": "u12-14",
+     "title": "Epidemiology: measures of disease frequency and association",
+     "module": "Population health and evidence"
+    },
+    {
+     "id": "u12-15",
+     "title": "Study design and critical appraisal",
+     "module": "Population health and evidence"
+    },
+    {
+     "id": "u12-16",
+     "title": "Evidence-based medicine",
+     "module": "Population health and evidence"
+    },
+    {
+     "id": "u12-17",
+     "title": "Screening: principles and criteria",
+     "module": "Population health and evidence"
+    },
+    {
+     "id": "u12-18",
+     "title": "Health inequalities and the social determinants of health",
+     "module": "Population health and evidence"
+    },
+    {
+     "id": "u12-19",
+     "title": "Health promotion and behaviour change",
+     "module": "Population health and evidence"
+    },
+    {
+     "id": "u12-20",
+     "title": "The NHS and the organisation of healthcare",
+     "module": "Population health and evidence"
+    }
+   ]
+  }
+ ]
+}

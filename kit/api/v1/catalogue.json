@@ -124,6 +124,18 @@
    "syllabus": "/kit/api/v1/courses/maths.json"
   },
   {
+   "slug": "medicine",
+   "name": "Medicine",
+   "site": "MedGradify",
+   "status": "beta",
+   "accent": "#4641ff",
+   "page": "/medgradify/course/",
+   "units": 12,
+   "lessons": 234,
+   "lessonsWritten": 34,
+   "syllabus": "/kit/api/v1/courses/medicine.json"
+  },
+  {
    "slug": "nursing",
    "name": "Nursing",
    "site": "NurseGradify",
