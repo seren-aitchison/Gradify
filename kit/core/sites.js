@@ -54,7 +54,7 @@ export const GROUPS = [
     blurb: "Study a subject in its own space.",
     items: [
       { n: "MathGradify", who: "Maths students at any level", i: "sigma", c: "70a7dc", d: "Maths from everyday numeracy and GCSE to A level, university and data science, with worked examples, generated practice and line-by-line checking.", u: "gradifymath.com", built: true, status: "beta" },
-      { n: "SciGradify", who: "Science students", i: "atom", c: "6aa84f", d: "Biology, chemistry, physics and the scientific method, plus interdisciplinary science.", built: true, status: "live" },
+      { n: "SciGradify", who: "Science students", i: "atom", c: "6aa84f", d: "Biology, chemistry, physics and the scientific method, plus interdisciplinary science.", built: true, status: "beta" },
       { n: "EcoGradify", who: "Ecology and environment students", i: "leaf", c: "6aa84f", d: "Ecology, environmental science, biodiversity and sustainability.", u: "ecogradify.com", built: true, status: "beta" },
       { n: "SocGradify", who: "Social science students", i: "people", c: "a44a99", d: "Sociology, social structures, research methods and social policy.", built: true, status: "beta" },
       { n: "HistoryGradify", who: "History students, GCSE to A level and beyond", i: "landmark", c: "b0703a", d: "British, European and world history, historical thinking, sources and interpretations, and essay writing.", built: true, status: "beta" },
@@ -62,7 +62,7 @@ export const GROUPS = [
       { n: "LanguageGradify", who: "Language learners", i: "languages", c: "dd7d6b", d: "Vocabulary, grammar, pronunciation, listening, speaking and writing practice.", u: "gradifylanguage.com", built: true, status: "soon" },
       { n: "ArtGradify", who: "Artists and design students", i: "palette", c: "f055dd", d: "Techniques, art history, visual composition and creative skills.", u: "gradifyart.com", built: true, status: "soon" },
       { n: "MusicGradify", who: "Musicians and music students", i: "music", c: "a4834a", d: "Theory, instruments, composition, ear training and music history.", u: "gradifymusic.com", built: true, status: "soon" },
-      { n: "SportGradify", who: "Athletes, coaches and sport students", i: "dumbbell", c: "0c26b8", d: "Exercise science, training principles, performance and coaching.", u: "gradifysport.com", built: true, status: "beta" },
+      { n: "SportGradify", who: "Athletes, coaches and sport students", i: "dumbbell", c: "0c26b8", d: "Exercise science, training principles, performance and coaching.", u: "gradifysport.com", built: true, status: "soon" },
       { n: "CreateGradify", who: "Makers and creative thinkers", i: "bulb", c: "e52153", d: "Ideation, design thinking and creative problem-solving across disciplines.", built: true, status: "soon" },
     ],
   },
@@ -118,7 +118,7 @@ export const KEYWORDS = {
 };
 
 // Sites that rotate through the big featured card at the top of the page, in order.
-export const FEATURED = ["LawGradify", "SciGradify", "NurseGradify", "TechGradify · ForgeLab"]; // live courses first
+export const FEATURED = ["LawGradify", "NurseGradify", "SciGradify", "TechGradify · ForgeLab"]; // live courses first, then beta
 
 // Sites listed in the "Start with your stage" panel.
 export const START_HERE = ["UnderGradify", "PostGradify", "ProGradify"];

@@ -1,6 +1,6 @@
 /* SportGradify Body Intelligence (sportgradify/body.html). Load after base, components, subsite. */
 .bi { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 16px; margin-top: 8px; }
-.bi-stage { position: relative; height: min(82vh, 860px); min-height: 520px; border-radius: 24px; overflow: hidden; background: #0b0b0d; border: 1px solid var(--line); }
+.bi-stage { position: relative; height: min(82vh, 860px); min-height: 520px; border-radius: 16px; overflow: hidden; background: #0b0b0d; border: 1px solid var(--line); }
 .bi-canvas { display: block; width: 100%; height: 100%; cursor: grab; touch-action: none; }
 .bi-canvas:active { cursor: grabbing; }
 .bi-loading { position: absolute; inset: 0; display: grid; place-items: center; color: var(--mute); font: 500 14px var(--sans); text-align: center; padding: 24px; }
@@ -29,7 +29,7 @@
 .bi-credit { position: absolute; left: 12px; right: 12px; bottom: 8px; margin: 0; font: 400 10.5px var(--sans); color: var(--faint); }
 .bi-credit a { color: inherit; }
 
-.bi-side { background: var(--panel); border: 1px solid var(--line); border-radius: 24px; padding: 14px; overflow: auto; max-height: min(82vh, 860px); backdrop-filter: blur(14px); }
+.bi-side { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 14px; overflow: auto; max-height: min(82vh, 860px); backdrop-filter: blur(14px); }
 .bi-tabs { display: flex; gap: 2px; margin-bottom: 12px; overflow-x: auto; scrollbar-width: none; }
 .bi-tabs button { flex: 1 0 auto; white-space: nowrap; font: 600 12px var(--sans); padding: 8px 9px; border-radius: 10px; border: 1px solid transparent; background: none; color: var(--mute); cursor: pointer; }
 .bi-tabs button[aria-selected="true"] { color: #fff; background: rgba(255, 255, 255, .08); border-color: var(--line); }
@@ -87,12 +87,12 @@
 .bi-preview h4 { margin-top: 0; }
 .bi-search { margin-bottom: 10px; }
 
-.bi-time { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; margin-top: 16px; padding: 14px 18px; border-radius: 18px; }
+.bi-time { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; margin-top: 16px; padding: 14px 18px; border-radius: 12px; }
 .bi-time label { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font: 500 14px var(--sans); color: #ddd; flex: 1 1 420px; }
 .bi-time input[type="range"] { flex: 1 1 220px; accent-color: #fff; }
 .bi-status { font: 500 13px var(--sans); color: var(--mute); }
 .bi-status a { color: #fff; }
-.bi-history { margin-top: 16px; padding: 18px; border-radius: 22px; }
+.bi-history { margin-top: 16px; padding: 18px; border-radius: 14px; }
 .bi-history h3 { margin: 0 0 10px; font: 600 18px var(--sans); }
 .bi-hist { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
 .bi-hist article { padding: 12px 14px; border-radius: 14px; background: var(--inset); border: 1px solid var(--line); }
@@ -108,7 +108,7 @@
   .bi-side { max-height: none; }
 }
 @media (max-width: 560px) {
-  .bi-stage { border-radius: 18px; height: 64vh; }
+  .bi-stage { border-radius: 12px; height: 64vh; }
   .bi-legend { bottom: 56px; }
   .bi-layers { bottom: auto; top: 160px; right: 12px; padding: 7px 10px; font-size: 12px; }
   .bi-views { top: auto; bottom: 8px; left: 12px; }

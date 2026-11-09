@@ -13,7 +13,7 @@
 .app-body h2 { margin: 6px 0 0; font-size: 26px; letter-spacing: -.02em; }
 .app-body .sub { margin: 0; }
 .app-body section { display: flex; flex-direction: column; gap: 16px; }
-.loading { height: 200px; border-radius: 22px; background: linear-gradient(90deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .07), rgba(255, 255, 255, .03)); background-size: 200% 100%; animation: shimmer 1.2s linear infinite; }
+.loading { height: 200px; border-radius: 14px; background: linear-gradient(90deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .07), rgba(255, 255, 255, .03)); background-size: 200% 100%; animation: shimmer 1.2s linear infinite; }
 @keyframes shimmer { to { background-position: -200% 0; } }
 .back { color: var(--mute); text-decoration: none; font-size: 14px; align-self: flex-start; }
 .back:hover { color: var(--fg); }
@@ -123,7 +123,7 @@
 .study-session { max-width: 720px; margin: 0 auto; }
 .sess-top { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; }
 .sess-top .goal-bar i { background: var(--spectrum); }
-.flash-card { min-height: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px; text-align: center; padding: 32px; border-radius: 28px; background: radial-gradient(120% 90% at 100% 0%, rgba(70, 65, 255, .35), transparent 60%), linear-gradient(180deg, #161616, #0b0b0b); border: 1px solid var(--line-strong); }
+.flash-card { min-height: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 16px; text-align: center; padding: 32px; border-radius: 18px; background: radial-gradient(120% 90% at 100% 0%, rgba(70, 65, 255, .35), transparent 60%), linear-gradient(180deg, #161616, #0b0b0b); border: 1px solid var(--line-strong); }
 .fc-front { margin: 0; font-size: clamp(22px, 3vw, 30px); font-weight: 600; letter-spacing: -.02em; line-height: 1.3; max-width: 22em; }
 .fc-back { margin: 0; font-size: 19px; color: var(--fg); max-width: 30em; line-height: 1.5; padding-top: 16px; border-top: 1px solid var(--line); }
 .reveal { align-self: center; gap: 12px; }

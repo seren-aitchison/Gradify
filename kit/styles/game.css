@@ -1,6 +1,6 @@
 /* The Journey page and game rewards (kit/game/journey.js). Gradify's dark glass language: quiet surfaces, one warm
    accent for rewards, motion that is short and switched off for prefers-reduced-motion. */
-.gj-wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px 64px; }
+.gj-wrap { max-width: var(--page); margin: 0 auto; padding: 0 16px 64px; }
 .gj { --gold: #f5b84b; --gold-2: #ff8a4c; --ok: #34d399; display: grid; gap: 16px; padding-top: 28px; color: var(--fg); }
 .gj h1 { font-size: clamp(30px, 5vw, 46px); letter-spacing: -.02em; margin: 4px 0 6px; }
 .gj h2 { font-size: 17px; margin: 0 0 12px; display: flex; gap: 8px; align-items: center; }
@@ -10,7 +10,7 @@
 .gj-sub { display: block; color: var(--mute); font-size: 13px; line-height: 1.5; }
 .gj-sub em { color: var(--gold); font-style: normal; }
 .gj-ic svg { width: 15px; height: 15px; vertical-align: -2px; }
-.gj-card { border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; background: linear-gradient(180deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .01)), var(--panel); }
+.gj-card { border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; background: linear-gradient(180deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .01)), var(--panel); }
 .gj-big { display: block; font-size: 30px; font-weight: 700; letter-spacing: -.02em; margin: 2px 0; }
 .gj-big small { font-size: 14px; color: var(--mute); font-weight: 500; }
 .gj-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
@@ -62,7 +62,7 @@
 .gj-toast b { color: var(--gold); }
 .gj-toast.out { opacity: 0; transition: opacity .5s; }
 .gj-celebrate { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: rgba(0, 0, 0, .6); backdrop-filter: blur(6px); padding: 16px; }
-.gj-cel-card { text-align: center; max-width: 360px; padding: 28px; border-radius: 24px; background: var(--panel-strong); border: 1px solid rgba(245, 184, 75, .5); }
+.gj-cel-card { text-align: center; max-width: 360px; padding: 28px; border-radius: 16px; background: var(--panel-strong); border: 1px solid rgba(245, 184, 75, .5); }
 .gj-burst { width: 84px; height: 84px; margin: 0 auto 10px; border-radius: 50%; display: grid; place-content: center; color: #111; background: radial-gradient(circle, var(--gold), var(--gold-2)); animation: gj-pop .6s cubic-bezier(.2, 1.6, .4, 1); box-shadow: 0 0 60px rgba(245, 184, 75, .5); }
 .gj-burst svg { width: 38px; height: 38px; } .gj-burst.still { animation: none; }
 .gj-badge.pop { animation: gj-pop .6s cubic-bezier(.2, 1.6, .4, 1); }

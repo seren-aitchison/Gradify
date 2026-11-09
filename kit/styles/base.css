@@ -16,7 +16,10 @@
   --edge: rgba(255, 255, 255, .08);
   /* a spectrum made from the Gradify brand colours, used sparingly */
   --spectrum: linear-gradient(90deg, #4641ff, #8c27ca 20%, #f055dd 38%, #e52153 54%, #ff5600 70%, #ffc002 84%, #40d4b1);
-  --radius: 22px;
+  --radius: 14px;
+  --page: 1680px;      /* page width: wide, close to the edges, like TechGradify */
+  --gutter: 32px;      /* space between the content and the window edge */
+  --bar-bleed: 20px;   /* the top bar reaches this much further than the content */
   --sans: "Geist", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
   color-scheme: dark;
@@ -36,7 +39,7 @@ body {
 a { color: inherit; }
 [hidden] { display: none !important; }
 :focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 12px; }
-.wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+.wrap { width: min(var(--page), 100% - 2 * var(--gutter)); margin-inline: auto; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 /* ---------- Background: soft white light on black ---------- */
 .aurora { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
@@ -147,7 +150,8 @@ a { color: inherit; }
   position: sticky; top: 10px; z-index: 10;
   margin-top: 10px;
   display: flex; align-items: center; gap: 16px;
-  padding: 8px 8px 8px 16px; border-radius: 999px;
+  padding: 8px 8px 8px 16px; border-radius: 16px;
+  margin-inline: calc(-1 * var(--bar-bleed));
 }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; text-decoration: none; font-size: 17px; letter-spacing: -.01em; }
 .brand svg { width: 30px; height: 30px; }
@@ -167,7 +171,7 @@ a { color: inherit; }
 .menu-btn { display: none; }
 .menu {
   position: absolute; top: calc(100% + 8px); right: 0; width: min(300px, 100%); z-index: 20;
-  display: flex; flex-direction: column; padding: 10px; border-radius: 22px;
+  display: flex; flex-direction: column; padding: 10px; border-radius: 14px;
   background: #0e0e0e; border: 1px solid var(--line-strong);
   box-shadow: inset 0 1px 0 var(--edge), 0 24px 50px -20px rgba(0, 0, 0, .9);
 }
@@ -198,6 +202,7 @@ a { color: inherit; }
   .menu-btn { display: grid; }
 }
 @media (max-width: 640px) {
+  :root { --gutter: 16px; --bar-bleed: 8px; }
   .bar .right .btn-primary { display: none; }
 }
 
