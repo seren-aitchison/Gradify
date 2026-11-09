@@ -157,10 +157,23 @@ a { color: inherit; }
 }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; text-decoration: none; font-size: 17px; letter-spacing: -.01em; }
 .brand svg { width: 30px; height: 30px; }
-.bar .sections { display: flex; gap: 2px; margin-left: 12px; padding: 3px; border-radius: 999px; background: var(--inset); box-shadow: inset 0 1px 2px rgba(0, 0, 0, .35); }
-.bar .sections a { text-decoration: none; padding: 6px 13px; border-radius: 999px; font-size: 14px; color: var(--mute); transition: color .15s, background .15s; }
-.bar .sections a:hover { color: var(--fg); }
-.bar .sections a.active { color: var(--fg); background: linear-gradient(180deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .05)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 2px 6px -2px rgba(0, 0, 0, .5); }
+/* section links: plain text on the bar (no recessed track), a soft highlight on hover, and the current section in
+   white with a small Gradify-gradient underline, like TechGradify's top bar */
+.bar .sections { display: flex; align-items: center; gap: 2px; margin-left: 18px; }
+.bar .sections a {
+  position: relative; text-decoration: none; padding: 8px 14px; border-radius: 10px;
+  font-size: 15px; font-weight: 500; letter-spacing: -.005em; color: var(--mute);
+  transition: color .15s, background .15s;
+}
+.bar .sections a:hover { color: var(--fg); background: rgba(255, 255, 255, .06); }
+.bar .sections a.active { color: var(--fg); }
+.bar .sections a::after {
+  content: ""; position: absolute; left: 14px; right: 14px; bottom: 2px; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, #4641ff, #f055dd, #ff5600, #ffc002);
+  opacity: 0; transform: scaleX(.4); transition: opacity .2s, transform .2s;
+}
+.bar .sections a.active::after { opacity: 1; transform: scaleX(1); }
+.bar .sections a:focus-visible { outline-offset: 1px; border-radius: 10px; }
 .bar .right { margin-left: auto; display: flex; align-items: center; gap: 14px; }
 .bar .right .link { font-size: 14px; color: var(--mute); text-decoration: none; }
 .bar .right .link:hover { color: var(--fg); }
