@@ -2372,5 +2372,491 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "brain-explorer",
+   "title": "Brain anatomy explorer",
+   "kind": "Explorer",
+   "sub": "Side and midline views of the brain: select any region to see what it does and the classic evidence for it.",
+   "note": "Schematic and not to scale; functions depend on networks, not single regions.",
+   "tasks": null,
+   "lessons": [
+    "u02-11",
+    "u02-12",
+    "u02-13",
+    "u02-14",
+    "u02-15"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/brain-explorer"
+  },
+  {
+   "id": "brain-identify",
+   "title": "Find the brain region",
+   "kind": "Exercise",
+   "sub": "You're given a region: find it on the side or midline view. Build a streak.",
+   "note": "Schematic and not to scale.",
+   "tasks": null,
+   "lessons": [
+    "u02-11",
+    "u02-12",
+    "u02-13"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/brain-identify"
+  },
+  {
+   "id": "action-potential",
+   "title": "Neurone and action potential",
+   "kind": "Simulation",
+   "sub": "The Hodgkin–Huxley model: find the threshold, the refractory period and repetitive firing; block channels with toxins.",
+   "note": "SciGradify Biology's simulation: the published 1952 equations for one patch of squid axon membrane, with no propagation or myelin.",
+   "tasks": null,
+   "lessons": [
+    "u02-06",
+    "u02-07",
+    "u02-05"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/action-potential"
+  },
+  {
+   "id": "synapse",
+   "title": "Synaptic transmission",
+   "kind": "Simulation",
+   "sub": "Calcium entry, vesicle release, receptors and breakdown at a cholinergic synapse, with drugs and toxins: summation, agonists and antagonists.",
+   "note": "SciGradify Biology's simulation: a small kinetic model with illustrative values; the sequence of events is accurate.",
+   "tasks": null,
+   "lessons": [
+    "u02-08",
+    "u02-10",
+    "u02-27"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/synapse"
+  },
+  {
+   "id": "neurotransmitters",
+   "title": "Neurotransmitter and receptor explorer",
+   "kind": "Explorer",
+   "sub": "Glutamate, GABA, dopamine, serotonin, noradrenaline, acetylcholine and endorphins: receptors, roles and the drugs that act on them. Then sort agonists from antagonists.",
+   "note": "Mechanisms simplified for study; most drugs act on more than one system.",
+   "tasks": null,
+   "lessons": [
+    "u02-09",
+    "u02-27",
+    "u02-28"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/neurotransmitters"
+  },
+  {
+   "id": "split-brain",
+   "title": "Lateralisation and the split brain",
+   "kind": "Exercise",
+   "sub": "Predict what split-brain patients say and do when information reaches only one hemisphere.",
+   "note": "Based on Sperry's and Gazzaniga's published findings; scenarios simplified.",
+   "tasks": null,
+   "lessons": [
+    "u02-16"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/split-brain"
+  },
+  {
+   "id": "sleep",
+   "title": "Sleep and circadian rhythms",
+   "kind": "Simulation",
+   "sub": "The two-process model: sleep pressure and the circadian clock across three days. Stay up late, cut sleep short or shift your schedule.",
+   "note": "Time constants from Daan, Beersma and Borbély (1984); circadian curve idealised; the clock doesn't re-entrain.",
+   "tasks": null,
+   "lessons": [
+    "u02-20",
+    "u02-21"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/sleep"
+  },
+  {
+   "id": "stress",
+   "title": "The physiology of stress",
+   "kind": "Illustrative model",
+   "sub": "Step through the fast SAM pathway and the slower HPA axis, cortisol's negative feedback and what changes under chronic stress.",
+   "note": "An illustrative sequence of established physiology; real responses overlap and vary.",
+   "tasks": null,
+   "lessons": [
+    "u13-11",
+    "u13-10",
+    "u02-19"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/stress"
+  },
+  {
+   "id": "stroop",
+   "title": "The Stroop task",
+   "kind": "Experiment",
+   "sub": "Name ink colours while ignoring the words, or the side a word appears on, and measure your own interference effect.",
+   "note": "Your own response times, measured in the browser; a classroom demonstration, not a research-grade measure.",
+   "tasks": null,
+   "lessons": [
+    "u03-02",
+    "u03-01"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/stroop"
+  },
+  {
+   "id": "visual-search",
+   "title": "Visual search: features and conjunctions",
+   "kind": "Experiment",
+   "sub": "Find the orange X among distractors. Does it pop out, or do you have to search item by item?",
+   "note": "Your own response times; a replication of Treisman and Gelade's (1980) paradigm with simplified displays.",
+   "tasks": null,
+   "lessons": [
+    "u03-02",
+    "u03-06",
+    "u03-09"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/visual-search"
+  },
+  {
+   "id": "serial-position",
+   "title": "Free recall and the serial position curve",
+   "kind": "Experiment",
+   "sub": "Learn a 15-word list and recall it, straight away or after a distractor task, and plot primacy and recency.",
+   "note": "Your own recall, scored by exact spelling; one person's curve is noisy until you have several runs.",
+   "tasks": null,
+   "lessons": [
+    "u03-11",
+    "u03-13",
+    "u03-15"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/serial-position"
+  },
+  {
+   "id": "digit-span",
+   "title": "Digit span",
+   "kind": "Experiment",
+   "sub": "Measure your short-term memory span, then try chunking.",
+   "note": "A standard forward digit span procedure with two attempts per length.",
+   "tasks": null,
+   "lessons": [
+    "u03-11",
+    "u03-12"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/digit-span"
+  },
+  {
+   "id": "memory-models",
+   "title": "Models of memory",
+   "kind": "Explorer",
+   "sub": "The multi-store model and the working memory model, component by component, with the evidence for and against each.",
+   "note": "Summaries of the published models.",
+   "tasks": null,
+   "lessons": [
+    "u03-12",
+    "u03-11",
+    "u03-14",
+    "u03-10"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/memory-models"
+  },
+  {
+   "id": "reaction-time",
+   "title": "Choice reaction time (Hick's law)",
+   "kind": "Experiment",
+   "sub": "Respond to one, two or four possible lights and see whether your reaction time rises with the information in the choice.",
+   "note": "Your own response times measured in the browser.",
+   "tasks": null,
+   "lessons": [
+    "u03-01",
+    "u03-25"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/reaction-time"
+  },
+  {
+   "id": "muller-lyer",
+   "title": "The Müller-Lyer illusion",
+   "kind": "Experiment",
+   "sub": "Adjust a line to match one with fins, measure your illusion, and weigh the competing explanations.",
+   "note": "Your own judgements; explanations of the illusion are contested.",
+   "tasks": null,
+   "lessons": [
+    "u03-06",
+    "u03-05",
+    "u15-02"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/muller-lyer"
+  },
+  {
+   "id": "signal-detection",
+   "title": "Signal detection",
+   "kind": "Simulation",
+   "sub": "Separate sensitivity (d′) from response bias: move the criterion, watch hits and false alarms trade off, and trace the ROC curve.",
+   "note": "The equal-variance Gaussian model; values are exact.",
+   "tasks": null,
+   "lessons": [
+    "u03-05",
+    "u03-25"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/signal-detection"
+  },
+  {
+   "id": "biases",
+   "title": "Cognitive and attribution bias explorer",
+   "kind": "Exercise",
+   "sub": "Answer the classic framing, conjunction, anchoring, base-rate and availability problems, and attribution scenarios, then compare yourself with the original participants.",
+   "note": "Published results quoted from the original papers; problems paraphrased.",
+   "tasks": null,
+   "lessons": [
+    "u03-26",
+    "u03-25",
+    "u06-04",
+    "u16-10"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/biases"
+  },
+  {
+   "id": "classical",
+   "title": "Classical conditioning",
+   "kind": "Simulation",
+   "sub": "The Rescorla–Wagner model: acquisition, extinction and blocking, and what changes with salience and the size of the reward.",
+   "note": "The published 1972 model; it cannot produce spontaneous recovery, which the notes discuss.",
+   "tasks": null,
+   "lessons": [
+    "u04-01",
+    "u04-02",
+    "u04-03",
+    "u04-04"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/classical"
+  },
+  {
+   "id": "schedules",
+   "title": "Schedules of reinforcement",
+   "kind": "Illustrative model",
+   "sub": "Cumulative records for continuous, fixed and variable ratio and interval schedules, and what happens in extinction.",
+   "note": "Response rules chosen to reproduce the patterns Ferster and Skinner (1957) described; not data from an animal.",
+   "tasks": null,
+   "lessons": [
+    "u04-08",
+    "u04-05",
+    "u04-06"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/schedules"
+  },
+  {
+   "id": "abab",
+   "title": "Behavioural data: an ABAB design",
+   "kind": "Simulation",
+   "sub": "Read a single-case reversal graph by level, trend and variability, and see how effect size and noise change what you can conclude.",
+   "note": "Simulated observations of an invented pupil.",
+   "tasks": null,
+   "lessons": [
+    "u04-10",
+    "u04-20",
+    "u14-03"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/abab"
+  },
+  {
+   "id": "dev-timeline",
+   "title": "Developmental timeline",
+   "kind": "Explorer",
+   "sub": "Piaget's stages, Erikson's psychosocial stages, attachment phases and language milestones on one lifespan.",
+   "note": "Typical ages from the theories' authors; stage theories are contested.",
+   "tasks": null,
+   "lessons": [
+    "u05-07",
+    "u05-20",
+    "u05-06",
+    "u05-10",
+    "u05-13"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/dev-timeline"
+  },
+  {
+   "id": "strange-situation",
+   "title": "Strange Situation scenarios",
+   "kind": "Exercise",
+   "sub": "Classify invented infants' attachment from their reunion behaviour, then evaluate the method across cultures.",
+   "note": "Invented scenarios for applying Ainsworth's and Main and Solomon's categories.",
+   "tasks": null,
+   "lessons": [
+    "u05-14",
+    "u05-15",
+    "u05-13"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/strange-situation"
+  },
+  {
+   "id": "conformity",
+   "title": "Line judgements: a conformity procedure",
+   "kind": "Experiment",
+   "sub": "Judge 18 sets of lines after six simulated group members answer, then compare your result with Asch's.",
+   "note": "Simulated group members, and you know it, so this demonstrates the procedure rather than the pressure of a real group.",
+   "tasks": null,
+   "lessons": [
+    "u06-08",
+    "u06-11",
+    "u06-12"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/conformity"
+  },
+  {
+   "id": "big-five",
+   "title": "The Big Five, explained",
+   "kind": "Explorer",
+   "sub": "Describe a fictional character on the five factors and read what each trait means and what research links it to.",
+   "note": "An educational demonstration, not a personality test.",
+   "tasks": null,
+   "lessons": [
+    "u07-02",
+    "u07-01",
+    "u07-13"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/big-five"
+  },
+  {
+   "id": "psychometrics",
+   "title": "Interpreting psychometric scores",
+   "kind": "Tool",
+   "sub": "Convert between z, T and standard scores and percentiles, and see how reliability sets the confidence band around a score.",
+   "note": "Exact normal-distribution values; the scores are invented for practice, not from a real test.",
+   "tasks": null,
+   "lessons": [
+    "u07-13",
+    "u09-04",
+    "u03-30",
+    "u10-23"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/psychometrics"
+  },
+  {
+   "id": "thought-record",
+   "title": "A CBT thought record",
+   "kind": "Exercise",
+   "sub": "Help an invented client complete a thought record, from the situation to a balanced thought.",
+   "note": "Educational simulation of a standard CBT technique; not therapy.",
+   "tasks": null,
+   "lessons": [
+    "u09-06",
+    "u09-18",
+    "u08-04"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/thought-record"
+  },
+  {
+   "id": "formulation",
+   "title": "Case formulation: the 5 Ps",
+   "kind": "Exercise",
+   "sub": "Sort an invented client's difficulties into presenting, predisposing, precipitating, perpetuating and protective factors.",
+   "note": "An invented vignette for learning the structure of a formulation.",
+   "tasks": null,
+   "lessons": [
+    "u09-05",
+    "u08-08",
+    "u08-09",
+    "u09-01"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/formulation"
+  },
+  {
+   "id": "experiment-builder",
+   "title": "Experiment builder",
+   "kind": "Exercise",
+   "sub": "Make the design decisions for nine studies: variables, hypotheses, designs, confounds, sampling, controls, analysis and ethics.",
+   "note": "Invented studies; standard design decisions.",
+   "tasks": null,
+   "lessons": [
+    "u10-06",
+    "u10-04",
+    "u10-02",
+    "u10-05",
+    "u10-03"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/experiment-builder"
+  },
+  {
+   "id": "study-critique",
+   "title": "Study critique",
+   "kind": "Exercise",
+   "sub": "Find the key flaw in six invented studies: causation, power, demand, p-hacking, WEIRD samples and attrition.",
+   "note": "Invented study summaries.",
+   "tasks": null,
+   "lessons": [
+    "u10-26",
+    "u10-24",
+    "u10-25",
+    "u16-19",
+    "u10-27"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/study-critique"
+  },
+  {
+   "id": "sampling",
+   "title": "Sampling simulator",
+   "kind": "Simulation",
+   "sub": "Draw hundreds of samples by random, stratified, opportunity and volunteer methods and compare their bias and standard error.",
+   "note": "SocGradify's simulation: a simulated population of 10,000 with invented response patterns.",
+   "tasks": null,
+   "lessons": [
+    "u10-20",
+    "u10-21",
+    "u10-22"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/sampling"
+  },
+  {
+   "id": "stats-describe",
+   "title": "Statistics workspace: describing data",
+   "kind": "Tool",
+   "sub": "Paste in data or generate a set: mean, median, mode, SD, skew, kurtosis, standard error, a confidence interval and a histogram.",
+   "note": "Sample statistics (n − 1); example data simulated.",
+   "tasks": null,
+   "lessons": [
+    "u11-02",
+    "u11-03",
+    "u11-04",
+    "u11-05"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/stats-describe"
+  },
+  {
+   "id": "correlation",
+   "title": "Correlation and regression visualiser",
+   "kind": "Tool",
+   "sub": "Anscombe's quartet and your own points: Pearson's r, Spearman's ρ, the regression line, R² and residuals.",
+   "note": "Anscombe's (1973) data are real; your own points are illustrative.",
+   "tasks": null,
+   "lessons": [
+    "u11-14",
+    "u11-15",
+    "u10-11"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/correlation"
+  },
+  {
+   "id": "crosstab",
+   "title": "Crosstabs and chi-square",
+   "kind": "Tool",
+   "sub": "Row percentages, expected counts, χ² and Cramér's V for a two-by-two table.",
+   "note": "Example counts invented; enter counts from a real table.",
+   "tasks": null,
+   "lessons": [
+    "u11-20",
+    "u11-01"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/crosstab"
+  },
+  {
+   "id": "hypothesis-test",
+   "title": "Hypothesis-test simulator",
+   "kind": "Simulation",
+   "sub": "Run one study or a thousand: p-values, power, Type I and II errors and the winner's curse, with an independent t-test.",
+   "note": "Simulated samples from normal populations with a true effect you choose.",
+   "tasks": null,
+   "lessons": [
+    "u11-10",
+    "u11-12",
+    "u11-13",
+    "u11-11",
+    "u11-17"
+   ],
+   "url": "https://getgradify.com/psychgradify/course/#/practice/hypothesis-test"
+  }
  ]
 }

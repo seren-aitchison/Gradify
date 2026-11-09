@@ -1307,5 +1307,21 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "action-potential",
+   "title": "Nerve conduction and sodium-channel block",
+   "kind": "Simulation",
+   "sub": "The Hodgkin–Huxley model: find the threshold and refractory period, then block the voltage-gated sodium channels, the target of every dental local anaesthetic, and watch the action potential fail.",
+   "note": "SciGradify Biology's simulation of one patch of squid axon membrane (the published 1952 equations); tetrodotoxin stands in for a local anaesthetic, which blocks the same channels from inside the axon and depends on pH and nerve-fibre size. It says nothing about doses.",
+   "tasks": null,
+   "lessons": [
+    "u11-01",
+    "u11-03",
+    "u01-09"
+   ],
+   "url": "https://getgradify.com/dentalgradify/course/#/practice/action-potential"
+  }
  ]
 }

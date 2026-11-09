@@ -45,7 +45,21 @@ export async function courseApi(slug) {
     paths: (cfg.paths || []).map((p) => ({ id: p.id, name: p.name, sub: p.sub || "", units: p.units, select: p.select || null })),
     exams: (cfg.exams || []).map((e) => ({ id: e.id, title: e.title, sub: e.sub || "", units: e.units || null, path: e.path || null, count: e.count, minutes: e.minutes, pass: e.pass ?? 0.6, format: e.format || "mixed" })),
     units: cfg.units.map((u) => ({ id: u.id, n: u.n, title: u.title, written: written.has(u.id), lessons: u.lessons.map((l) => ({ id: l.id, title: l.title, module: l.module || null })) })),
+    // the course's labs (added in v1, additive). A lesson's notes place one with an "IX: <id>" line; an app shows it by
+    // opening `url`, the lab on its own on the course page, in a web view. `lessons` are the lessons it serves.
+    interactives: await labsOf(cfg),
   };
+}
+
+async function labsOf(cfg) {
+  const ixs = cfg.interactives || [];
+  if (!ixs.length) return [];
+  const site = SITES.find((s) => s.n === cfg.site), page = site ? await pageOf(cfg.slug, site) : null;
+  return ixs.map((x) => ({
+    id: x.id, title: x.title, kind: x.kind || "Laboratory", sub: x.sub || "", note: x.note || null,
+    tasks: x.tasks ?? null, lessons: x.lessons || [],
+    url: page ? `https://getgradify.com${page}#/practice/${encodeURIComponent(x.id)}` : null,
+  }));
 }
 
 export async function catalogue() {

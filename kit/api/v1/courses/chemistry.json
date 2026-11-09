@@ -2816,5 +2816,448 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "periodic-table",
+   "title": "Interactive periodic table",
+   "kind": "Explorer",
+   "sub": "Colour all 118 elements by category, block, electronegativity, ionisation energy, radius or mass, and follow the trends.",
+   "note": "IUPAC atomic weights, Pauling electronegativities, NIST ionisation energies and Cordero covalent radii, rounded.",
+   "tasks": null,
+   "lessons": [
+    "u03-01",
+    "u03-03",
+    "u03-21",
+    "u03-22",
+    "u03-19",
+    "u03-25",
+    "u02-19"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/periodic-table"
+  },
+  {
+   "id": "atom-builder",
+   "title": "Atomic structure explorer",
+   "kind": "Explorer",
+   "sub": "Add protons, neutrons and electrons to build elements, isotopes and ions, and check nuclear stability.",
+   "note": "Shell (Bohr) picture for the first 20 elements; not to scale.",
+   "tasks": null,
+   "lessons": [
+    "u02-01",
+    "u02-02",
+    "u02-03",
+    "u02-04",
+    "u01-12"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/atom-builder"
+  },
+  {
+   "id": "electron-config",
+   "title": "Electron configuration builder",
+   "kind": "Exercise",
+   "sub": "Fill orbital boxes for any element up to krypton, checked against Aufbau, Pauli and Hund, including the Cr and Cu exceptions.",
+   "note": "Ground states of neutral atoms up to Z = 36.",
+   "tasks": null,
+   "lessons": [
+    "u02-08",
+    "u02-09",
+    "u02-10",
+    "u02-11"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/electron-config"
+  },
+  {
+   "id": "orbitals",
+   "title": "Atomic orbitals",
+   "kind": "Simulation",
+   "sub": "Hydrogen's 1s to 3d orbitals from the exact wavefunctions: density slices with phase, 3D probability clouds and radial distributions.",
+   "note": "Exact for hydrogen; many-electron atoms have similar shapes but different sizes and energies.",
+   "tasks": null,
+   "lessons": [
+    "u02-06",
+    "u02-18",
+    "u02-07",
+    "u02-17",
+    "u16-03"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/orbitals"
+  },
+  {
+   "id": "bonding",
+   "title": "Ionic and covalent bonding",
+   "kind": "Illustrative model",
+   "sub": "Dot-and-cross diagrams for ionic compounds and covalent molecules, with electronegativity differences and partial charges.",
+   "note": "Electronegativity cut-offs are a rule of thumb; bonding is a continuum.",
+   "tasks": null,
+   "lessons": [
+    "u04-02",
+    "u04-03",
+    "u04-01",
+    "u04-11"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/bonding"
+  },
+  {
+   "id": "lewis",
+   "title": "Lewis structure builder",
+   "kind": "Exercise",
+   "sub": "Set bond orders and lone pairs; the checker counts electrons, checks octets and shows formal charges and resonance.",
+   "note": "Octet rule with the usual exceptions (H, B, expanded octets in period 3).",
+   "tasks": null,
+   "lessons": [
+    "u04-06",
+    "u04-07",
+    "u04-08"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/lewis"
+  },
+  {
+   "id": "vsepr",
+   "title": "VSEPR molecular geometry",
+   "kind": "Explorer",
+   "sub": "Build any combination of bonding pairs and lone pairs in 3D and see the electron-domain geometry, shape and bond angles.",
+   "note": "Ideal VSEPR geometries; measured angles quoted for H₂O and NH₃.",
+   "tasks": null,
+   "lessons": [
+    "u04-09",
+    "u04-10"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/vsepr"
+  },
+  {
+   "id": "polarity",
+   "title": "Molecular polarity",
+   "kind": "Simulation",
+   "sub": "Bond dipoles add as vectors over the 3D shape: see why CO₂ and CCl₄ are non-polar but H₂O and CHCl₃ are polar.",
+   "note": "Qualitative dipoles from electronegativity differences; real dipole moments also depend on lone pairs and bond lengths.",
+   "tasks": null,
+   "lessons": [
+    "u04-12",
+    "u04-13"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/polarity"
+  },
+  {
+   "id": "imf",
+   "title": "Intermolecular forces",
+   "kind": "Explorer",
+   "sub": "Compare boiling points across alkanes, noble gases, hydrides, alcohols and isomers to see dispersion forces and hydrogen bonding.",
+   "note": "Measured normal boiling points, rounded from standard tables.",
+   "tasks": null,
+   "lessons": [
+    "u04-14",
+    "u04-15",
+    "u04-16",
+    "u04-17",
+    "u05-21"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/imf"
+  },
+  {
+   "id": "molecule-viewer",
+   "title": "3D molecular model viewer",
+   "kind": "Tool",
+   "sub": "Turn and zoom 25 molecules or type your own SMILES: ball-and-stick or space-filling, with formula and molar mass.",
+   "note": "Geometry from a simple in-browser force field: good shapes and stereochemistry, approximate bond lengths.",
+   "tasks": null,
+   "lessons": [
+    "u12-01",
+    "u20-08",
+    "u20-03",
+    "u20-02"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/molecule-viewer"
+  },
+  {
+   "id": "functional-groups",
+   "title": "Organic functional group explorer",
+   "kind": "Explorer",
+   "sub": "Find and highlight the functional groups in molecules from ethanol to caffeine, or in any SMILES you type.",
+   "note": "Groups found by substructure rules on the molecular graph.",
+   "tasks": null,
+   "lessons": [
+    "u12-09",
+    "u12-22"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/functional-groups"
+  },
+  {
+   "id": "chirality",
+   "title": "Stereochemistry and chirality explorer",
+   "kind": "Explorer",
+   "sub": "Put each molecule beside its mirror image and try to superimpose them; decide which are chiral.",
+   "note": "Models from the in-browser force field.",
+   "tasks": null,
+   "lessons": [
+    "u12-15",
+    "u12-16",
+    "u12-12",
+    "u12-18"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/chirality"
+  },
+  {
+   "id": "rs",
+   "title": "R/S configuration exercise",
+   "kind": "Exercise",
+   "sub": "Rank the groups at a stereocentre by CIP priority, turn the model and assign R or S.",
+   "note": "Simplified CIP rules that cover textbook cases.",
+   "tasks": null,
+   "lessons": [
+    "u12-19"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/rs"
+  },
+  {
+   "id": "ez",
+   "title": "E/Z isomerism exercise",
+   "kind": "Exercise",
+   "sub": "Rank the groups on each end of a double bond and decide whether the isomer is E or Z.",
+   "note": "Simplified CIP rules that cover textbook cases.",
+   "tasks": null,
+   "lessons": [
+    "u12-20"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/ez"
+  },
+  {
+   "id": "curly-arrows",
+   "title": "Curly-arrow mechanism builder",
+   "kind": "Exercise",
+   "sub": "Draw every arrow in SN2, electrophilic addition, nucleophilic addition and E2 mechanisms, step by step.",
+   "note": "Standard textbook mechanisms; 2D schematic structures.",
+   "tasks": null,
+   "lessons": [
+    "u13-01",
+    "u13-02",
+    "u13-15",
+    "u13-16",
+    "u13-13"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/curly-arrows"
+  },
+  {
+   "id": "sn1-sn2",
+   "title": "SN1 versus SN2",
+   "kind": "Simulation",
+   "sub": "Vary the substrate, nucleophile and solvent and compare the two mechanisms' rates and stereochemical outcomes.",
+   "note": "Qualitative model with order-of-magnitude relative rates; elimination is only described.",
+   "tasks": null,
+   "lessons": [
+    "u13-09",
+    "u13-10",
+    "u13-08",
+    "u13-04"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/sn1-sn2"
+  },
+  {
+   "id": "synthesis",
+   "title": "Organic synthesis pathway builder",
+   "kind": "Exercise",
+   "sub": "Plan multi-step routes between functional groups with real reagents and conditions, lengthening chains with cyanide.",
+   "note": "Standard A-level and first-year reactions; real syntheses have many alternatives.",
+   "tasks": null,
+   "lessons": [
+    "u14-22",
+    "u14-21",
+    "u12-21",
+    "u19-16"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/synthesis"
+  },
+  {
+   "id": "energy-profile",
+   "title": "Reaction energy profiles",
+   "kind": "Simulation",
+   "sub": "Set Ea and ΔH, add an intermediate, and see the fraction of molecules with enough energy at any temperature.",
+   "note": "Exact Maxwell–Boltzmann energy fractions; the shaded plot uses a compressed energy axis.",
+   "tasks": null,
+   "lessons": [
+    "u07-04",
+    "u07-03",
+    "u13-07",
+    "u07-02"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/energy-profile"
+  },
+  {
+   "id": "equilibrium",
+   "title": "Equilibrium and Le Chatelier",
+   "kind": "Simulation",
+   "sub": "Run reversible reactions to equilibrium, then change concentration, volume or temperature and watch Q return to K.",
+   "note": "Mass-action kinetics with illustrative K values; van 't Hoff temperature dependence.",
+   "tasks": null,
+   "lessons": [
+    "u08-07",
+    "u08-02",
+    "u08-03",
+    "u08-08",
+    "u08-09"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/equilibrium"
+  },
+  {
+   "id": "ph",
+   "title": "Acids, bases and pH",
+   "kind": "Simulation",
+   "sub": "Exact pH for strong and weak acids at any concentration, species distributions, and buffers.",
+   "note": "Exact charge-balance solution; activities taken as concentrations.",
+   "tasks": null,
+   "lessons": [
+    "u09-07",
+    "u09-06",
+    "u09-05",
+    "u09-12",
+    "u09-13"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/ph"
+  },
+  {
+   "id": "titration",
+   "title": "Titration simulator",
+   "kind": "Simulation",
+   "sub": "Titrate strong and weak acids and a weak base drop by drop, choose indicators and read equivalence points and pKa.",
+   "note": "Exact pH curves from the charge balance; ideal solutions.",
+   "tasks": null,
+   "lessons": [
+    "u09-14",
+    "u09-15",
+    "u09-16",
+    "u15-06"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/titration"
+  },
+  {
+   "id": "electrochemical-cell",
+   "title": "Electrochemical cells",
+   "kind": "Simulation",
+   "sub": "Build cells from 13 half-cells: anode and cathode, E°cell, the Nernst equation, ΔG° and K.",
+   "note": "Standard electrode potentials from standard tables; concentrations as activities.",
+   "tasks": null,
+   "lessons": [
+    "u10-07",
+    "u10-08",
+    "u10-10",
+    "u10-11",
+    "u10-13"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/electrochemical-cell"
+  },
+  {
+   "id": "thermodynamics",
+   "title": "Gibbs free energy and spontaneity",
+   "kind": "Simulation",
+   "sub": "ΔG = ΔH − TΔS for real reactions: find where they become spontaneous and what K is at any temperature.",
+   "note": "Standard ΔH° and ΔS° at 298 K, assumed constant with temperature.",
+   "tasks": null,
+   "lessons": [
+    "u06-13",
+    "u06-14",
+    "u06-12",
+    "u06-19"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/thermodynamics"
+  },
+  {
+   "id": "kinetics",
+   "title": "Reaction kinetics",
+   "kind": "Simulation",
+   "sub": "Zero-, first- and second-order rate laws, integrated plots, half-lives, a mystery order to identify, and the Arrhenius equation.",
+   "note": "Exact integrated rate laws; the mystery data include simulated noise.",
+   "tasks": null,
+   "lessons": [
+    "u07-09",
+    "u07-10",
+    "u07-15",
+    "u07-16",
+    "u07-17"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/kinetics"
+  },
+  {
+   "id": "catalysis",
+   "title": "Catalysis",
+   "kind": "Simulation",
+   "sub": "Lower the activation energy with a catalyst and see how the fraction of successful collisions, and the rate, rise.",
+   "note": "Exact Maxwell–Boltzmann fractions; the energy plot is schematic.",
+   "tasks": null,
+   "lessons": [
+    "u07-05",
+    "u07-07",
+    "u17-21"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/catalysis"
+  },
+  {
+   "id": "spectroscopy-problems",
+   "title": "Spectroscopy problems",
+   "kind": "Exercise",
+   "sub": "Identify unknowns from their molecular formula, IR spectrum, ¹H NMR spectrum and mass spectrum together.",
+   "note": "Simulated spectra from correlation data (see the IR, NMR and MS labs).",
+   "tasks": null,
+   "lessons": [
+    "u15-27"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/spectroscopy-problems"
+  },
+  {
+   "id": "ir",
+   "title": "Infrared spectrum viewer",
+   "kind": "Explorer",
+   "sub": "IR spectra of 12 compounds with their diagnostic bands labelled, including the fingerprint region.",
+   "note": "Simulated from characteristic absorption ranges, not measured spectra.",
+   "tasks": null,
+   "lessons": [
+    "u15-09"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/ir"
+  },
+  {
+   "id": "nmr",
+   "title": "¹H NMR interpretation",
+   "kind": "Explorer",
+   "sub": "Chemical shifts, integration and n + 1 splitting for 12 compounds, with every signal assigned.",
+   "note": "Typical shifts with first-order splitting at 400 MHz.",
+   "tasks": null,
+   "lessons": [
+    "u15-11",
+    "u15-13",
+    "u15-14",
+    "u15-10"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/nmr"
+  },
+  {
+   "id": "mass-spec",
+   "title": "Mass spectrometry and fragmentation",
+   "kind": "Explorer",
+   "sub": "Molecular ions, exact isotope patterns for chlorine and bromine, and the fragment ions behind the base peaks.",
+   "note": "Isotope patterns calculated from natural abundances; fragment heights approximate.",
+   "tasks": null,
+   "lessons": [
+    "u15-15",
+    "u15-16",
+    "u02-03"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/mass-spec"
+  },
+  {
+   "id": "docking",
+   "title": "Molecular docking and binding",
+   "kind": "Simulation",
+   "sub": "Fit ligands into a binding pocket by hand or by auto-docking, scoring hydrogen bonds, hydrophobic contacts, a salt bridge and clashes.",
+   "note": "Invented pocket and ligands; a teaching scoring function, not a prediction.",
+   "tasks": null,
+   "lessons": [
+    "u18-20",
+    "u18-07",
+    "u18-04",
+    "u18-12",
+    "u20-18"
+   ],
+   "url": "https://getgradify.com/scigradify/chemistry/#/practice/docking"
+  }
  ]
 }

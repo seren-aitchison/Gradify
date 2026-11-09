@@ -1158,5 +1158,20 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "forecasting",
+   "title": "Correlation and regression explorer",
+   "kind": "Tool",
+   "sub": "Anscombe's quartet and your own points: Pearson's r, Spearman's rho, the regression line, R² and residuals, the tools behind a simple sales forecast.",
+   "note": "Anscombe's (1973) data are real; your own points are illustrative. A regression line describes association in past data, not cause.",
+   "tasks": null,
+   "lessons": [
+    "u10-07",
+    "u10-05"
+   ],
+   "url": "https://getgradify.com/businessgradify/course/#/practice/forecasting"
+  }
  ]
 }

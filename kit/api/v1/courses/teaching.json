@@ -1299,5 +1299,46 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "digit-span",
+   "title": "Digit span",
+   "kind": "Experiment",
+   "sub": "Measure your own short-term memory span, then try chunking: feel the limit that cognitive load theory is built on.",
+   "note": "PsychGradify's experiment: a standard forward digit span procedure with two attempts per length; your responses stay on this device.",
+   "tasks": null,
+   "lessons": [
+    "u01-02",
+    "u01-06"
+   ],
+   "url": "https://getgradify.com/edugradify/course/#/practice/digit-span"
+  },
+  {
+   "id": "memory-models",
+   "title": "Models of memory",
+   "kind": "Explorer",
+   "sub": "The multi-store and working memory models, component by component, with the evidence for and against each.",
+   "note": "PsychGradify's explorer: summaries of the published models.",
+   "tasks": null,
+   "lessons": [
+    "u01-02",
+    "u01-01"
+   ],
+   "url": "https://getgradify.com/edugradify/course/#/practice/memory-models"
+  },
+  {
+   "id": "serial-position",
+   "title": "Free recall and the serial position curve",
+   "kind": "Experiment",
+   "sub": "Learn a 15-word list and recall it, straight away or after a distractor task, and see what is remembered and what is lost.",
+   "note": "PsychGradify's experiment: your own recall, scored by exact spelling; one person's curve is noisy until you have several runs.",
+   "tasks": null,
+   "lessons": [
+    "u01-16",
+    "u01-03"
+   ],
+   "url": "https://getgradify.com/edugradify/course/#/practice/serial-position"
+  }
  ]
 }

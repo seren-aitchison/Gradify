@@ -1283,5 +1283,230 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "explog",
+   "title": "Exponentials and logarithms",
+   "kind": "Explorer",
+   "sub": "Growth and decay, doubling time and half-life, and logarithms turning exponential data into a straight line.",
+   "note": "MathGradify's lab: exact functions; the base moves in steps of 0.01.",
+   "tasks": null,
+   "lessons": [
+    "u01-05"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/explog"
+  },
+  {
+   "id": "trig",
+   "title": "The unit circle and sinusoids",
+   "kind": "Explorer",
+   "sub": "Turn a point round the unit circle and watch it trace sine and cosine, with amplitude, period and phase shifts: the components of a force and the shape of an AC signal.",
+   "note": "MathGradify's lab: exact values at the standard angles; angles in whole degrees.",
+   "tasks": null,
+   "lessons": [
+    "u01-06",
+    "u02-01",
+    "u08-09"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/trig"
+  },
+  {
+   "id": "complex",
+   "title": "The complex plane",
+   "kind": "Explorer",
+   "sub": "Add and multiply complex numbers on an Argand diagram: multiplying multiplies moduli and adds arguments, which is how impedances and phasors combine.",
+   "note": "MathGradify's lab: exact complex arithmetic drawn to scale.",
+   "tasks": null,
+   "lessons": [
+    "u01-07",
+    "u08-10"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/complex"
+  },
+  {
+   "id": "matrix",
+   "title": "Matrices as transformations",
+   "kind": "Explorer",
+   "sub": "Set a 2×2 matrix and watch the plane transform: the determinant as area (zero means singular), and eigenvectors as the directions that only stretch.",
+   "note": "MathGradify's lab: real 2×2 matrices; complex eigenvalues are reported but have no real direction to draw.",
+   "tasks": null,
+   "lessons": [
+    "u01-09",
+    "u01-10"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/matrix"
+  },
+  {
+   "id": "tangent",
+   "title": "From secant to tangent",
+   "kind": "Explorer",
+   "sub": "Shrink the gap h and watch a secant become the tangent: the derivative as a rate of change.",
+   "note": "MathGradify's lab: difference quotients computed numerically; a very small h shows floating-point rounding.",
+   "tasks": null,
+   "lessons": [
+    "u01-11"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/tangent"
+  },
+  {
+   "id": "riemann",
+   "title": "Strip sums and numerical integration",
+   "kind": "Explorer",
+   "sub": "Approximate an integral with rectangles, midpoints or trapezia and watch the error shrink at the rate theory predicts.",
+   "note": "MathGradify's lab: numerical strip sums compared with the exact integral where it is known.",
+   "tasks": null,
+   "lessons": [
+    "u01-13",
+    "u01-17"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/riemann"
+  },
+  {
+   "id": "roots",
+   "title": "Root-finding: bisection, Newton and secant",
+   "kind": "Explorer",
+   "sub": "Solve f(x) = 0 three ways and watch the error at every iterate: bisection's steady halving, Newton–Raphson's doubling digits, and its failures.",
+   "note": "MathGradify's lab: floating-point iteration with the stopping tolerance shown.",
+   "tasks": null,
+   "lessons": [
+    "u01-17"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/roots"
+  },
+  {
+   "id": "ode",
+   "title": "Slope fields, Euler and Runge–Kutta",
+   "kind": "Simulation",
+   "sub": "Draw the slope field of dy/dx = f(x, y), set an initial value and compare Euler's method with RK4 against the exact solution.",
+   "note": "MathGradify's lab: numerical solutions with the step size shown; the slope field is sampled on a grid.",
+   "tasks": null,
+   "lessons": [
+    "u01-15",
+    "u01-17",
+    "u09-05"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/ode"
+  },
+  {
+   "id": "regression",
+   "title": "Least-squares regression",
+   "kind": "Tool",
+   "sub": "Place data points and see the line of best fit, its residuals and r; add an outlier, or find data where r ≈ 0 but the pattern is strong.",
+   "note": "MathGradify's lab: ordinary least squares on the points you place; r measures linear association only.",
+   "tasks": null,
+   "lessons": [
+    "u01-18",
+    "u12-09"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/regression"
+  },
+  {
+   "id": "clt",
+   "title": "Sample means and the central limit theorem",
+   "kind": "Simulation",
+   "sub": "Take thousands of samples from a skewed population: their means form a normal curve with spread σ/√n, the standard error.",
+   "note": "MathGradify's lab: pseudo-random samples; the normal curve shown is the theoretical limit.",
+   "tasks": null,
+   "lessons": [
+    "u01-18"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/clt"
+  },
+  {
+   "id": "lln",
+   "title": "Probability by repetition",
+   "kind": "Simulation",
+   "sub": "Repeat a random trial thousands of times and watch the observed frequency settle on the probability, the basis of failure-rate estimates.",
+   "note": "MathGradify's lab: pseudo-random numbers stand in for real trials.",
+   "tasks": null,
+   "lessons": [
+    "u01-19"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/lln"
+  },
+  {
+   "id": "projectile",
+   "title": "Projectile motion and air resistance",
+   "kind": "Simulation",
+   "sub": "Launch a ball with or without drag, hit a target and find the best angle: see where the vacuum model holds and where it fails.",
+   "note": "SciGradify Physics' lab: uniform gravity and still air; quadratic drag integrated numerically.",
+   "tasks": null,
+   "lessons": [
+    "u03-04",
+    "u03-02"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/projectile"
+  },
+  {
+   "id": "collisions",
+   "title": "Collisions on an air track",
+   "kind": "Simulation",
+   "sub": "Elastic, sticky and exploding gliders: momentum is always conserved, kinetic energy only sometimes, set by the coefficient of restitution.",
+   "note": "SciGradify Physics' lab: one dimension, frictionless track.",
+   "tasks": null,
+   "lessons": [
+    "u03-09",
+    "u03-10"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/collisions"
+  },
+  {
+   "id": "oscillator",
+   "title": "Damped and driven oscillations",
+   "kind": "Simulation",
+   "sub": "A mass on a spring: natural frequency, the damping regimes, resonance curves and the quality factor.",
+   "note": "SciGradify Physics' lab: linear spring and viscous damping; the resonance curve is the exact steady state.",
+   "tasks": null,
+   "lessons": [
+    "u01-16",
+    "u03-16",
+    "u03-17",
+    "u03-18",
+    "u09-06"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/oscillator"
+  },
+  {
+   "id": "circuits",
+   "title": "DC circuits and Kirchhoff's laws",
+   "kind": "Simulation",
+   "sub": "Series, parallel and mixed networks, internal resistance and maximum power, and a Wheatstone bridge to balance.",
+   "note": "SciGradify Physics' lab: solved exactly by nodal analysis with ideal wires and fixed resistances.",
+   "tasks": null,
+   "lessons": [
+    "u08-02",
+    "u08-03",
+    "u08-04",
+    "u08-06"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/circuits"
+  },
+  {
+   "id": "transients",
+   "title": "RC and RL transients",
+   "kind": "Simulation",
+   "sub": "Throw the switch on an RC or RL circuit, time the rise to 63% and see why τ = RC and τ = L/R.",
+   "note": "SciGradify Physics' lab: exact exponential solutions with ideal components; the clock is scaled so each time constant is watchable.",
+   "tasks": null,
+   "lessons": [
+    "u08-08",
+    "u08-07",
+    "u01-15"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/transients"
+  },
+  {
+   "id": "gas",
+   "title": "Kinetic theory of gases",
+   "kind": "Simulation",
+   "sub": "A box of colliding molecules: pressure, temperature and volume, and the ideal gas law emerging from motion.",
+   "note": "SciGradify Physics' lab: a two-dimensional gas of hard discs in units where k = m = 1.",
+   "tasks": null,
+   "lessons": [
+    "u06-04"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/gas"
+  }
  ]
 }

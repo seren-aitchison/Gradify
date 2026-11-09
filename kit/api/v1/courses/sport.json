@@ -1372,5 +1372,116 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "motor-neurone",
+   "title": "The action potential and the all-or-none law",
+   "kind": "Simulation",
+   "sub": "Stimulate a patch of nerve membrane: below threshold nothing fires, above it every action potential is the same size. Find the threshold and the refractory period that limits firing rate.",
+   "note": "SciGradify Biology's simulation: the published Hodgkin–Huxley (1952) equations for squid axon membrane; a motor neurone behaves the same way in principle, with no propagation or myelin modelled.",
+   "tasks": null,
+   "lessons": [
+    "u01-17",
+    "u01-18"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/motor-neurone"
+  },
+  {
+   "id": "nmj",
+   "title": "The neuromuscular junction",
+   "kind": "Simulation",
+   "sub": "Acetylcholine release, receptors and acetylcholinesterase at a cholinergic synapse, the same chemistry that passes every signal from motor neurone to muscle fibre; summation, blockers and toxins.",
+   "note": "SciGradify Biology's simulation of a cholinergic synapse: a small kinetic model with illustrative values; the sequence of events is accurate.",
+   "tasks": null,
+   "lessons": [
+    "u01-17",
+    "u01-12"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/nmj"
+  },
+  {
+   "id": "heart",
+   "title": "The cardiac cycle",
+   "kind": "Simulation",
+   "sub": "A model left heart: pressures, volume, valves and the pressure–volume loop. Raise heart rate and contractility as in exercise and watch stroke volume and cardiac output respond.",
+   "note": "SciGradify Biology's simulation: a time-varying elastance ventricle with a two-element Windkessel; left heart only, constant filling pressure, no reflexes.",
+   "tasks": null,
+   "lessons": [
+    "u02-03",
+    "u02-04",
+    "u02-01",
+    "u02-06"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/heart"
+  },
+  {
+   "id": "gas-exchange",
+   "title": "Gas exchange and the oxygen dissociation curve",
+   "kind": "Simulation",
+   "sub": "Oxygen loading along a lung capillary, and the haemoglobin dissociation curve shifted by carbon dioxide, acid and heat as in working muscle.",
+   "note": "SciGradify Biology's simulation: Fick diffusion along one capillary and the Hill equation (n = 2.7, P₅₀ = 26.8 mmHg) with an empirical Bohr shift; no shunt or V/Q mismatch.",
+   "tasks": null,
+   "lessons": [
+    "u02-14",
+    "u02-10",
+    "u02-09"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/gas-exchange"
+  },
+  {
+   "id": "respiration",
+   "title": "Cellular respiration",
+   "kind": "Illustrative model",
+   "sub": "Glycolysis, the link reaction, the Krebs cycle and the electron transport chain, with the ATP made at each stage and the anaerobic alternative.",
+   "note": "SciGradify Biology's model: modern P/O ratios (2.5 ATP per NADH, 1.5 per FADH₂), about 30–32 ATP per glucose; older PE textbooks quote 36–38.",
+   "tasks": null,
+   "lessons": [
+    "u03-04",
+    "u03-03",
+    "u03-01"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/respiration"
+  },
+  {
+   "id": "projectile",
+   "title": "Projectile motion and air resistance",
+   "kind": "Simulation",
+   "sub": "Launch a ball at any speed, angle and height, with or without drag: find the best release angle and see why it isn't always 45°.",
+   "note": "SciGradify Physics's simulation: uniform gravity, still air, quadratic drag on a 145 g ball (C_d = 0.47), integrated numerically; no spin or lift.",
+   "tasks": null,
+   "lessons": [
+    "u05-12",
+    "u05-13",
+    "u05-14"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/projectile"
+  },
+  {
+   "id": "collisions",
+   "title": "Collisions and momentum",
+   "kind": "Simulation",
+   "sub": "Two bodies meet head-on: momentum is always conserved, kinetic energy only sometimes. The physics behind tackles, bat on ball and impacts.",
+   "note": "SciGradify Physics's simulation: one dimension on a frictionless air track, with the coefficient of restitution set by you.",
+   "tasks": null,
+   "lessons": [
+    "u05-08",
+    "u05-05"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/collisions"
+  },
+  {
+   "id": "reaction-time",
+   "title": "Choice reaction time (Hick's law)",
+   "kind": "Experiment",
+   "sub": "Respond to one, two or four possible lights and see whether your reaction time rises with the number of choices.",
+   "note": "PsychGradify's experiment: your own response times measured in the browser, which stay on this device; a classroom demonstration, not a laboratory measure.",
+   "tasks": null,
+   "lessons": [
+    "u10-12",
+    "u10-11"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/reaction-time"
+  }
  ]
 }
