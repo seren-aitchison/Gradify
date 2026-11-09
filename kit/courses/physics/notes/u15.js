@@ -74,10 +74,13 @@ X: Force between the proton and electron in hydrogen (r = 5.3 × 10^{-11} m)?
 > F = 8.99 × 10^{9} × (1.6 × 10^{-19})^{2}/(5.3 × 10^{-11})^{2} = 8.2 × 10^{-8} N
 > Gravity: 3.6 × 10^{-47} N
 !: Coulomb's law is for point charges (or spherically symmetric ones); extended shapes need integration.
+P: **Investigate with the lab.** Place two charges and move them closer together, watching the force on the test charge grow.
+IX: efield
 Q: State Coulomb's law. | F = q_{1}q_{2}/(4πε_{0}r^{2}).
 Q: How much stronger is electric than gravitational force between two protons? | About 10^{36} times.
 M1: Two charges' separation is halved. The force: | Quadruples | Doubles | Halves | Stays the same | Inverse square.
 M2: Two 1 μC charges 1 m apart experience: | 9 mN | 9 N | 9 × 10^{9} N | 1 N | k × 10^{-12}.
+M2: The distance between two point charges is halved. What happens to the force between them? | It increases four times | It doubles | It halves | It stays the same | Coulomb's law is an inverse square law.
 
 ## Electric fields
 S: An electric field is the force per unit charge that a test charge would feel at a point. It lets us describe how charges affect the space around them, and fields carry energy and momentum in their own right.
@@ -99,10 +102,13 @@ X: An electron enters a 2 × 10^{4} V m^{-1} field, travelling 2 × 10^{7} m s^{
 > t = 0.05/2 × 10^{7} = 2.5 × 10^{-9} s; a = eE/m = 3.5 × 10^{15} m s^{-2}
 > y = ½at^{2} = 1.1 cm
 !: Field direction is the direction of force on a positive charge; electrons accelerate against the field.
+P: **Investigate with the lab.** Move the test charge around a single charge and watch the field arrow change direction and size.
+IX: efield
 Q: Define electric field strength. | Force per unit positive charge, E = F/q.
 Q: What is the field between charged parallel plates? | Uniform, E = V/d = σ/ε_{0}.
 M1: The field of a point charge falls with distance as: | 1/r^{2} | 1/r | 1/r^{3} | Constant | Coulomb.
 M2: A proton is released in a uniform field. It moves: | Along the field, accelerating | Against the field | In a circle | Not at all | Force qE along E.
+M2: Which way does the electric field point near a positive charge? | Away from the charge | Towards the charge | Around the charge in circles | It has no direction | The field shows the force on a positive test charge, which is repelled.
 
 ## Electric field lines
 S: Field lines map an electric field: their direction gives the field's direction, and their density gives its strength. They start on positive charges and end on negative ones, never crossing.
@@ -122,10 +128,13 @@ P: Equipotential surfaces are always perpendicular to field lines. No work is do
 X: Two charges +2q and −q. How many field lines end on −q if 20 leave +2q?
 > 10 end on −q; the other 10 go to infinity (the net charge +q)
 !: Field lines aren't paths of charges in general; a charge's velocity isn't always along the line.
+P: **Investigate with the lab.** Draw the field lines for two like charges and for a dipole. Compare where the lines are closest together.
+IX: efield
 Q: Why can't field lines cross? | The field has a unique direction at each point.
 Q: How do field lines meet a conductor's surface in equilibrium? | At right angles.
 M1: Closely spaced field lines indicate: | A strong field | A weak field | Zero field | High potential | Line density ∝ |E|.
 M2: Equipotentials and field lines are: | Perpendicular | Parallel | The same | Unrelated | E = −∇V.
+M2: What does the spacing of electric field lines show? | The field strength: closer lines mean a stronger field | The direction of the charge's motion | The potential at each point | Nothing about the field | Field line density indicates field strength.
 
 ## Electric potential
 S: Electric potential is the potential energy per unit charge at a point, measured relative to a reference (often infinity or earth). It's a scalar, so potentials from many charges simply add, and the field is its downhill slope.
@@ -145,10 +154,13 @@ E: 1 eV = 1.602 × 10^{-19} J :: energy gained by e through 1 V
 X: Potential midway between +4 nC and −2 nC charges 0.2 m apart?
 > V = k(4 × 10^{-9} − 2 × 10^{-9})/0.1 = 8.99 × 10^{9} × 2 × 10^{-8} = 180 V
 !: Zero potential doesn't mean zero field (midway between equal and opposite charges, V = 0 but E ≠ 0).
+P: **Investigate with the lab.** Turn on the equipotentials and check that they always cross field lines at right angles.
+IX: efield
 Q: How is field related to potential? | E = −∇V: the field points down the potential gradient.
 Q: What is an electronvolt? | The energy an electron gains moving through 1 V: 1.6 × 10^{-19} J.
 M1: The potential 0.3 m from a 3 nC charge is: | 90 V | 300 V | 30 V | 9 V | kQ/r = 8.99 × 10^{9} × 3 × 10^{-9}/0.3.
 M2: Electrons naturally move towards: | Higher potential | Lower potential | Zero potential | Equipotentials | Negative charge, lower PE at higher V.
+M2: How do equipotential lines relate to field lines? | They are always perpendicular | They are always parallel | They never meet | They are the same lines | No work is done moving along an equipotential, so it must be perpendicular to the field.
 
 ## Electric potential energy
 S: Electric potential energy is the energy stored in a configuration of charges because of their positions. It's the work needed to assemble them from far apart, and it drives chemistry, batteries and nuclear stability.
@@ -167,10 +179,13 @@ X: Energy to bring two protons from infinity to 1 fm apart?
 > U = 8.99 × 10^{9} × (1.6 × 10^{-19})^{2}/10^{-15} = 2.3 × 10^{-13} J = 1.44 MeV
 > Why fusion needs extreme temperatures (or quantum tunnelling)
 !: Potential energy belongs to the system of charges, not to one charge alone.
+P: **Investigate with the lab.** Move the test charge towards a like charge and watch the potential energy rise.
+IX: efield
 Q: What is the potential energy of two point charges? | U = q_{1}q_{2}/(4πε_{0}r).
 Q: Why do fission fragments fly apart energetically? | Their mutual Coulomb repulsion converts electric potential energy into kinetic energy.
 M1: An alpha particle (2e) accelerated through 1000 V gains: | 2000 eV | 1000 eV | 500 eV | 4000 eV | qV.
 M2: The potential energy of two unlike charges is: | Negative | Positive | Zero | Infinite | Attractive ⇒ bound.
+M2: A positive charge is pushed towards another positive charge. What happens to its potential energy? | It increases | It decreases | It stays the same | It becomes negative | Work is done against repulsion, so electric potential energy rises.
 
 ## Voltage and potential difference
 S: Voltage, or potential difference, is the energy transferred per unit charge between two points. It drives current through circuits and tells you how much energy each coulomb delivers.
@@ -186,10 +201,13 @@ P: Voltage drives current, but current through the body causes harm: I = V/R_{bo
 X: A 9 V battery drives 2 C round a circuit. Energy transferred?
 > W = QV = 18 J
 !: "Voltage through" a component is wrong; voltage is across (between two points), current flows through.
+P: **Investigate with the lab.** Check the uniform field between the plates and relate it to the voltage across them.
+IX: efield
 Q: Define potential difference. | The work done (energy transferred) per unit charge moving between two points.
 Q: Why is a van de Graaff shock usually harmless despite high voltage? | It stores little charge, so it can't sustain a dangerous current.
 M1: How much energy does 3 C gain crossing 12 V? | 36 J | 4 J | 0.25 J | 15 J | W = QV.
 M2: Voltmeters are connected: | In parallel | In series | Either | Neither | They measure across components.
+M2: Two plates 2 cm apart have 100 V across them. What is the field between them? | 5000 V/m | 50 V/m | 200 V/m | 2 V/m | E = V/d = 100/0.02 = 5000 V/m.
 
 ## Electric dipoles
 S: An electric dipole is a pair of equal and opposite charges separated by a small distance. Many molecules are dipoles; their behaviour in fields explains dielectrics, microwave heating and the structure of water.
@@ -206,10 +224,13 @@ P: Water has p = 6.2 × 10^{-30} C m. Microwave ovens' 2.45 GHz fields twist wat
 X: Torque on a water molecule in 10^{5} V m^{-1} at 90°?
 > τ = pE = 6.2 × 10^{-30} × 10^{5} = 6.2 × 10^{-25} N m
 !: A dipole in a uniform field feels torque but no net force; it's field gradients that pull.
+P: **Investigate with the lab.** Put the test charge on the line between the dipole's charges and see the field point from + to −.
+IX: efield
 Q: What is the electric dipole moment? | p = qd, pointing from the negative to the positive charge.
 Q: Why do dipole fields fall faster than point-charge fields? | The opposite charges' fields largely cancel at large distances (E ∝ 1/r^{3}).
 M1: The energy of a dipole is lowest when p is: | Parallel to E | Antiparallel | Perpendicular | Zero | U = −pE cos θ.
 M2: In a uniform field a dipole experiences: | Torque but no net force | Net force only | Neither | Both equally | Equal opposite forces.
+M2: What is an electric dipole? | Equal and opposite charges a small distance apart | Two equal positive charges | A single charge in a uniform field | A charge moving in a circle | A dipole is a pair of equal and opposite charges separated by a small distance.
 
 ## Electric flux
 S: Electric flux measures how much electric field passes through a surface: field strength times area, counting only the component perpendicular to the surface. Gauss's law relates the flux through a closed surface to the charge inside.
@@ -310,10 +331,13 @@ H: Uses
 X: A capacitor stores 60 μC at 12 V. Capacitance?
 > C = 60 × 10^{-6}/12 = 5 μF
 !: A farad is huge; isolated objects have tiny capacitance (a person ~100 pF).
+P: **Investigate with the lab.** Change the capacitance and watch how much charge the capacitor stores and how long it takes to charge.
+IX: transients
 Q: Define capacitance. | Charge stored per unit potential difference, C = Q/V.
 Q: How do touchscreens detect a finger? | The finger changes the capacitance of electrodes under the screen.
 M1: A 100 μF capacitor at 9 V holds: | 900 μC | 11 μC | 9 μC | 0.9 μC | Q = CV.
 M2: Capacitance depends on: | Geometry and dielectric | Charge stored | Voltage applied | Current | Q ∝ V.
+M2: A 470 μF capacitor is charged to 10 V. How much charge does it store? | 4.7 mC | 47 C | 4.7 C | 0.047 mC | Q = CV = 470 × 10⁻⁶ × 10 = 4.7 × 10⁻³ C.
 
 ## Parallel-plate and spherical capacitors
 S: Simple geometries give simple formulas for capacitance. Parallel plates are the standard model; spherical and cylindrical capacitors describe cables and isolated conductors.
@@ -330,10 +354,13 @@ X: Parallel plates 10 cm × 10 cm, 1 mm apart, in air. Capacitance? And with gla
 > C = 8.85 × 10^{-12} × 0.01/0.001 = 88.5 pF
 > With glass: 531 pF
 !: Moving charged, isolated plates apart (Q fixed) raises V; with a battery attached (V fixed), Q falls. Keep track of what's held constant.
+P: **Investigate with the lab.** Use the parallel plates and check the field between them is nearly uniform, except near the edges.
+IX: efield
 Q: What is the capacitance of a parallel-plate capacitor? | C = ε_{0}ε_{r}A/d.
 Q: Why does reducing the plate gap have a limit? | The breakdown voltage falls in proportion to the gap.
 M1: Doubling plate area and halving the separation multiplies C by: | 4 | 2 | 1 | 1/4 | A/d.
 M2: Coaxial cable capacitance per metre depends on: | ln(b/a) and ε_{r} | Length only | Current | Frequency only | C/L = 2πε/ln(b/a).
+M2: Why is the field between parallel plates uniform? | The field lines are parallel and evenly spaced away from the edges | The plates carry no charge | The voltage is zero between the plates | The plates are infinitely far apart | Away from the edges, the field is perpendicular to the plates and of constant strength.
 
 ## Capacitors in series and parallel
 S: Capacitors combine opposite to resistors: in parallel their capacitances add; in series their reciprocals add. Parallel capacitors share voltage; series capacitors share charge.

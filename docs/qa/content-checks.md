@@ -19,7 +19,7 @@ These checks are mechanical. They find text that won't display as written (swall
 | medicine | 2 | 1,431 | 10 | 0 | 0 | 0 | 0 |
 | nursing | 17 | 19,022 | 0 | 0 | 0 | 0 | 1 |
 | pharmacy | 17 | 7,760 | 21 | 0 | 0 | 0 | 0 |
-| physics | 54 | 30,734 | 0 | 0 | 0 | 0 | 0 |
+| physics | 54 | 31,082 | 0 | 0 | 0 | 0 | 0 |
 | psychology | 16 | 14,834 | 51 | 0 | 0 | 4 | 0 |
 | sociology | 18 | 16,672 | 112 | 0 | 0 | 8 | 0 |
 

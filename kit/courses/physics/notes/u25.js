@@ -82,10 +82,13 @@ P: The first extends Galileo's principle to electromagnetism and optics. The sec
 X: A spaceship at 0.5c fires a laser forward. Speed of the light measured on Earth?
 > c, not 1.5c (second postulate)
 !: Relativity doesn't say "everything is relative": c, the spacetime interval, proper time and physical laws are absolute.
+P: **Investigate with the lab.** Run the light clock on the moving train and see the light take a longer path for the platform observer, though both measure the same speed of light.
+IX: relativity
 Q: State the two postulates of special relativity. | The laws of physics are the same in all inertial frames, and the speed of light is the same for all inertial observers.
 Q: What does the second postulate imply about simultaneity? | Events simultaneous in one frame need not be in another.
 M1: The speed of light from a moving source is: | c in all inertial frames | c + v | c − v | Depends on frequency | Postulate.
 M2: Which quantity is the same for all observers in relativity? | The spacetime interval | Time intervals | Lengths | Simultaneity | Invariant.
+M2: Which is a postulate of special relativity? | The laws of physics are the same in all inertial frames | Time passes at the same rate for all observers | Mass is always conserved | The speed of light depends on the source | Einstein's postulates are the principle of relativity and the invariance of c.
 
 ## Speed of light invariance
 S: The speed of light in vacuum is the same for every inertial observer, whatever their motion or the source's motion. Countless experiments confirm it, and it's built into the SI definition of the metre.
@@ -104,10 +107,13 @@ P: Since 1983 the metre has been the distance light travels in 1/299 792 458 s. 
 X: How long does light take to cross a 30 cm ruler?
 > t = 0.3/3 × 10^{8} = 1 ns: "a light-nanosecond is about a foot"
 !: Light slows in materials (v = c/n), but c, the vacuum speed, is the invariant one.
+P: **Investigate with the lab.** Throw a ball forward on the train and compare with a light pulse: the ball's speed adds, but the light's doesn't.
+IX: relativity
 Q: What evidence shows light's speed is independent of the source's motion? | Pion decay photons, binary star observations and modern cavity experiments.
 Q: How is the metre defined? | The distance light travels in vacuum in 1/299 792 458 of a second.
 M1: The speed of light in vacuum is: | Exactly 299 792 458 m s^{-1} | Approximately 3 × 10^{8} only | Different for each frame | Infinite | Defined.
 M2: Light from π^{0} mesons moving at 0.99975c was measured to travel at: | c | 2c | 0.5c | 1.99975c | 1964 test.
+M2: A train moves at 0.5c and shines a light forwards. What speed does a platform observer measure for the light? | c | 1.5c | 0.5c | 2c | The speed of light is the same for all inertial observers.
 
 ## Lorentz transformations
 S: The Lorentz transformations convert space and time coordinates between inertial frames moving relative to each other, keeping the speed of light the same in both. They replace the Galilean transformations and contain all the effects of special relativity.
@@ -126,10 +132,13 @@ X: Event at x = 100 m, t = 0 in frame S. In S′ moving at 0.6c?
 > γ = 1.25
 > x′ = 125 m; t′ = 1.25 × (0 − 0.6 × 100/c) = −2.5 × 10^{-7} s: earlier in S′
 !: The vx/c^{2} term in t′ is easy to forget; it's the source of the relativity of simultaneity.
+P: **Investigate with the lab.** Change the train's speed and watch γ grow, slowly at first and steeply near c.
+IX: relativity
 Q: What is the Lorentz factor? | γ = 1/√(1 − v^{2}/c^{2}).
 Q: What quantity do Lorentz transformations preserve? | The spacetime interval.
 M1: γ at v = 0.8c is: | 1.67 | 1.25 | 0.6 | 5 | 1/√0.36.
 M2: Lorentz transformations reduce to Galilean ones when: | v ≪ c | v = c | v > c | Always | γ → 1.
+M2: What is γ at a speed of 0.6c? | 1.25 | 1.6 | 0.8 | 2.5 | γ = 1/√(1 − 0.36) = 1/0.8 = 1.25.
 
 ## Relativity of simultaneity
 S: Events that happen at the same time in one inertial frame generally happen at different times in another. There's no universal "now": simultaneity depends on the observer's motion.
@@ -145,10 +154,13 @@ H: Consequences
 X: Two clocks 600 m apart are synchronised in their rest frame. A ship passes at 0.8c. Time difference between the clocks as seen from the ship?
 > Δt′ = γvΔx/c^{2} = (5/3)(0.8)(600)/(3 × 10^{8}) = 2.7 μs
 !: Simultaneity differences aren't caused by light delays; they remain after correcting for travel times.
+P: **Investigate with the lab.** Above 0.5c, see on the spacetime diagram that the two flashes aren't simultaneous for the train.
+IX: relativity
 Q: Why isn't simultaneity absolute? | The Lorentz transformation mixes space and time: Δt′ depends on Δx.
 Q: Can the time order of causally connected events change? | No; only events with spacelike separation can appear in different orders.
 M1: Two events simultaneous in S and separated in x will, in a frame moving along x, be: | Not simultaneous | Simultaneous | Reversed in causality | At the same place | Δt′ ∝ Δx.
 M2: The relativity of simultaneity arises from the term: | vx/c^{2} | γ | c | v^{2} | In t′.
+M2: Two flashes are simultaneous on the platform. What does an observer on a fast train find? | They happen at different times | They are still simultaneous | They don't happen at all | They happen at the same place | Simultaneity is relative: observers in relative motion disagree.
 
 ## Time dilation
 S: A clock moving relative to you ticks more slowly than one at rest beside you, by the factor γ. The effect is tiny at everyday speeds but large near c, and it's confirmed by particle decays and atomic clocks in aircraft and satellites.
@@ -167,10 +179,13 @@ X: Muons (τ = 2.2 μs) created at 15 km travel at 0.999c. Do they reach the gro
 > Without dilation: range ≈ 660 m
 > γ = 22.4: mean range ≈ 14.7 km, so a good fraction survive
 !: Time dilation isn't an illusion or a clock malfunction; all processes in the moving frame, including biological ones, slow down.
+P: **Investigate with the lab.** Find the speed at which moving clocks run at half rate (γ = 2).
+IX: relativity
 Q: What is proper time? | Time measured by a clock moving with the object, in its rest frame.
 Q: Give evidence for time dilation. | Cosmic-ray muons reaching the ground; muon lifetimes in storage rings; atomic clocks on aircraft; GPS.
 M1: A clock moving at 0.6c runs slow by factor: | 1.25 | 0.8 | 1.67 | 0.6 | γ.
 M2: Time dilation affects: | All physical processes in the moving frame | Only light clocks | Only electronic clocks | Nothing real | Universal.
+M2: At what speed does a moving clock run at half rate? | About 0.87c | 0.5c | 0.25c | Exactly c | γ = 2 when v = √(3)/2 c ≈ 0.87c.
 
 ## Length contraction
 S: An object moving relative to you is shorter along its direction of motion than when measured at rest, by the factor γ. Its dimensions perpendicular to the motion are unchanged.
@@ -188,10 +203,13 @@ X: A 100 m spaceship passes at 0.8c. Its length as measured by you?
 > γ = 5/3
 > L = 60 m
 !: Length contraction isn't a physical squashing due to forces; it's a property of how spacetime coordinates relate between frames.
+P: **Investigate with the lab.** At 0.6c, check that a 1 m rod measures 0.8 m. Then try 0.9c.
+IX: relativity
 Q: In which direction does length contraction occur? | Only along the direction of relative motion.
 Q: How is the muon paradox explained in the muon's frame? | The atmosphere's thickness is length-contracted.
 M1: A rod of proper length 2 m moving at 0.6c has length: | 1.6 m | 2.5 m | 2 m | 1.2 m | L_{0}/γ = 2/1.25.
 M2: The perpendicular dimensions of a moving object are: | Unchanged | Contracted | Expanded | Doubled | Only longitudinal.
+M2: A 1 m rod moves at 0.6c along its length. How long is it in the platform frame? | 0.8 m | 1.25 m | 0.6 m | 1 m | L = L₀/γ = 1/1.25 = 0.8 m.
 
 ## Relativistic velocity addition
 S: Velocities don't simply add in relativity. Combining speeds below c always gives a speed below c, and adding anything to the speed of light still gives c.
@@ -209,10 +227,13 @@ P: Light in water moving at v travels at c/n + v(1 − 1/n^{2}), not c/n + v. Fr
 X: Two particles approach each other at 0.75c each (lab frame). Relative speed?
 > u = (0.75 + 0.75)/(1 + 0.5625) = 0.96c
 !: Closing speeds in the lab (1.5c here) can exceed c, since that's not the speed of any object; the speed of one particle relative to the other can't.
+P: **Investigate with the lab.** Add 0.9c to 0.9c: the result is still below c. Compare with simple addition.
+IX: relativity
 Q: State the relativistic velocity addition formula. | u = (u′ + v)/(1 + u′v/c^{2}).
 Q: What do you get adding v to the speed of light? | c.
 M1: 0.6c + 0.6c (relativistically) = | 0.88c | 1.2c | 0.6c | 0.36c | 1.2/1.36.
 M2: The Fizeau experiment showed light in moving water is: | Only partially dragged | Fully dragged | Not affected | Slowed to zero | Consistent with velocity addition.
+M2: What is 0.5c added to 0.5c relativistically? | 0.8c | 1.0c | 0.25c | 0.5c | u = (0.5 + 0.5)/(1 + 0.25) c = 0.8c.
 
 ## Spacetime diagrams
 S: Spacetime diagrams plot time against position, showing events as points and objects' histories as worldlines. They make relativity visual: light travels on 45° lines, and frames are skewed coordinate grids.
@@ -232,10 +253,13 @@ X: Draw the worldline of an object at rest at x = 2 m and of a light flash leavi
 > Object: vertical line at x = 2 m
 > Light: 45° line from the origin
 !: Spacetime diagrams use Minkowski geometry; the "length" of a tilted worldline segment isn't its Euclidean length on paper.
+P: **Investigate with the lab.** Use the spacetime diagram and see how the train's time axis tilts as its speed rises.
+IX: relativity
 Q: What angle do light rays make on a spacetime diagram? | 45° (with ct and x in the same units).
 Q: How do a moving frame's axes appear? | The ct′ and x′ axes tilt towards the light line, closing like scissors.
 M1: A vertical worldline represents an object: | At rest | Moving at c | Accelerating | Moving left | Δx = 0.
 M2: A worldline at less than 45° to the x-axis would represent: | Faster-than-light motion | Rest | Light | Normal motion | Spacelike.
+M2: On a spacetime diagram, what is a light ray's worldline? | A line at 45° | A vertical line | A horizontal line | A curve | With ct on one axis and x on the other, light travels one unit of x per unit of ct.
 
 ## Minkowski spacetime
 S: Minkowski spacetime is the four-dimensional geometry of special relativity, combining three dimensions of space and one of time. Its "distance", the interval, is the same for all observers, making spacetime the absolute stage of physics.
@@ -493,10 +517,13 @@ X: Doppler check: outbound at 0.8c, how many birthday signals per year (Earth's)
 > Returning factor 3: three per traveller-year
 > Over 3 + 3 years: 1 + 9 = 10 Earth birthdays ✓
 !: The acceleration itself doesn't cause the age difference; the asymmetry in worldlines (and frames) does. The effect grows with distance, not acceleration time.
+P: **Investigate with the lab.** Find the speed for γ = 2 and use it to work out how much less a travelling twin would age on a round trip.
+IX: relativity
 Q: Why isn't the twin paradox symmetric? | Only the travelling twin changes inertial frames; her worldline is bent.
 Q: Which worldline between two events has the longest proper time? | The straight, inertial one.
 M1: A twin travels at 0.6c for 8 years (Earth time) round trip. She ages: | 6.4 years | 8 years | 10 years | 4.8 years | 8/1.25.
 M2: The twin effect has been confirmed with: | Atomic clocks on aircraft | Real twins | Only thought experiments | Light only | Hafele–Keating.
+M2: A twin travels at γ = 2 for 20 years of Earth time. How much does the travelling twin age? | 10 years | 20 years | 40 years | 5 years | The travelling clock runs at half rate, so 20/2 = 10 years pass for the traveller.
 
 ## Relativistic particle dynamics
 S: Relativistic dynamics describes how forces change momentum and energy at any speed. It underlies accelerator design, cosmic-ray physics, plasma physics and astrophysical jets.

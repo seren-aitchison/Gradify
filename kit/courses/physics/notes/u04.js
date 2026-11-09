@@ -88,10 +88,13 @@ X: r(t) = (3t, 4t − 5t^{2}) m. Find v and a at t = 1 s.
 > v = (3, 4 − 10t) = (3, −6) m s^{-1}, speed 6.7 m s^{-1}
 > a = (0, −10) m s^{-2}: constant, like a projectile
 !: You can't add speeds in different directions as numbers; add velocity vectors component by component.
+P: **Investigate with the lab.** Watch the velocity arrows during a drag-free flight: the horizontal part stays constant while the vertical part changes steadily. Then compare a throw on Earth with the same throw on the Moon.
+IX: projectile
 Q: Why can perpendicular components of motion be treated separately? | They obey independent equations of motion linked only by time.
 Q: Which way does acceleration point on a curved path at constant speed? | Towards the centre of curvature, perpendicular to the velocity.
 M1: r(t) = (2t^{2}, 3t). What is the acceleration? | (4, 0) | (4t, 3) | (2, 3) | (0, 0) | Differentiate twice.
 M2: A particle moves in a circle at constant speed. Which is true? | Velocity changes, speed doesn't | Velocity is constant | Acceleration is zero | Acceleration is tangential | The direction keeps changing.
+M2: In drag-free projectile motion, which part of the velocity stays constant? | The horizontal component | The vertical component | The speed | Both components | Gravity acts only vertically, so with no air resistance nothing changes the horizontal velocity.
 
 ## Kinematic equations
 S: For constant acceleration, five quantities (s, u, v, a, t) are linked by the suvat equations. Each equation leaves out one quantity, so pick the one missing the variable you neither know nor need.
@@ -111,10 +114,13 @@ X: A car at 25 m s^{-1} brakes at 5.0 m s^{-2}. Find the stopping distance.
 H: Derivation
 P: From a = constant, integrate: v = u + at; integrate again: s = ut + ½at^{2}. Eliminate t to get v^{2} = u^{2} + 2as. The "no a" equation says the average velocity is the mean of u and v, true only when a is constant.
 !: Don't use suvat for non-constant acceleration (drag, springs): use calculus or energy instead.
+P: **Investigate with the lab.** With air resistance off, launch horizontally from a height and time the flight. Check the time against h = ½gt² for the vertical motion alone.
+IX: projectile
 Q: Which suvat equation has no time? | v^{2} = u^{2} + 2as.
 Q: When are the suvat equations valid? | Only for constant acceleration.
 M1: A stone dropped from rest falls for 3.0 s (g = 9.8). How far? | 44 m | 29 m | 88 m | 15 m | s = ½ × 9.8 × 9.
 M2: Stopping distance at speed u with fixed deceleration scales as: | u^{2} | u | √u | u^{3} | s = u^{2}/(2a): double speed, four times the distance.
+M2: A ball is thrown horizontally from a 20 m cliff (g = 9.8 m/s²). Roughly how long is it in the air? | About 2.0 s | About 4.1 s | About 1.0 s | It depends on the throwing speed | Vertical motion is independent: t = √(2h/g) = √(40/9.8) ≈ 2.0 s.
 
 ## Projectile motion
 S: A projectile moves under gravity alone: constant velocity horizontally and constant acceleration g vertically. The path is a parabola, and range, height and time of flight all follow from separating the components.
@@ -132,11 +138,14 @@ X: A ball is kicked at 20 m s^{-1} at 30° (g = 9.8). Find its range and maximum
 > R = 400 × sin 60°/9.8 = 35 m
 > H = 400 × 0.25/19.6 = 5.1 m
 !: The horizontal velocity doesn't change during flight (no drag); only the vertical component is affected by g.
+P: **Investigate with the lab.** Turn air resistance off and launch at several angles at the same speed. Find the angle that gives the greatest range, then check that 30° and 60° land in the same place.
+IX: projectile
 Q: What angle gives maximum range on level ground (no drag)? | 45°.
 Q: What is the velocity at the top of the trajectory? | Horizontal, equal to u cos θ.
 M1: A ball rolls off a 1.25 m high table at 2.0 m s^{-1} (g = 10). How far from the table does it land? | 1.0 m | 0.5 m | 2.0 m | 2.5 m | Fall time 0.5 s; 2.0 × 0.5 = 1.0 m.
 M2: Two projectiles are launched at the same speed at 20° and 70°. Which lands farther? | Same range | 20° | 70° | Depends on mass | sin 40° = sin 140°.
 M3: A monkey drops from a branch at the instant a dart is fired straight at it. The dart: | Hits the monkey (both fall the same distance in the same time) | Passes above | Passes below | Hits only if fired at 45° | Gravity deflects both equally.
+M2: Without air resistance, which pair of launch angles gives the same range at the same speed? | 30° and 60° | 30° and 45° | 20° and 40° | 45° and 90° | Range depends on sin 2θ, and sin 60° = sin 120°, so complementary angles give equal ranges.
 
 ## Relative motion
 S: Velocities are measured relative to a frame. The velocity of A relative to C equals A relative to B plus B relative to C, the Galilean addition rule, valid when speeds are much less than c.
@@ -273,10 +282,13 @@ X: A 20 kg box on a floor with μ_{s} = 0.5, μ_{k} = 0.4. What force starts it 
 > Start: μ_{s}mg = 98 N
 > Keep moving: μ_{k}mg = 78 N
 !: Static friction isn't always μ_{s}N; that's only its maximum. On a stationary box pushed with 30 N, static friction is exactly 30 N.
+P: **Investigate with the lab.** Switch air resistance on and off for the same launch and compare the paths. Then find the best angle with drag, which is below 45°.
+IX: projectile
 Q: Why does ABS braking stop cars faster? | Wheels keep rolling, using static friction (higher than kinetic) instead of skidding.
 Q: How does high-speed drag depend on speed? | It's proportional to v^{2}.
 M1: A 10 kg block is pushed with 20 N; μ_{s} = 0.5 (g = 10). The friction force is: | 20 N | 50 N | 0 | 30 N | Static friction matches the push until it exceeds 50 N.
 M2: Doubling a car's speed multiplies the power needed to overcome drag by: | 8 | 2 | 4 | 16 | P = Fv ∝ v^{3}.
+M2: With air resistance, why is the best launch angle below 45°? | Drag shortens long, high flights most, so a flatter path loses less range | Drag adds a forward force on the ball at high angles | Gravity is weaker at higher angles of launch | Drag only acts on the way down, so lower is safer | The longer and faster the flight, the more energy drag removes, favouring flatter trajectories.
 
 ## Inclined planes
 S: On a slope, resolve forces parallel and perpendicular to the surface. Gravity's component down the slope, mg sin θ, drives motion; its perpendicular component, mg cos θ, sets the normal force and therefore friction.
@@ -422,10 +434,13 @@ X: A 0.15 kg ball at 30 m s^{-1} is caught and stopped in 0.05 s. Find the avera
 > Δp = 4.5 kg m s^{-1}
 > F = 4.5/0.05 = 90 N; with 0.20 s, F = 22.5 N
 !: Bouncing back produces a larger momentum change (and force) than stopping: Δp = m(v_{f} − v_{i}) with signs.
+P: **Investigate with the lab.** Run a sticky collision and read the momentum of each glider before and after. Work out the impulse on each glider: it is the change in its momentum.
+IX: collisions
 Q: What is impulse? | The product of force and time (∫F dt), equal to the change in momentum.
 Q: How do crumple zones reduce injury? | They increase the collision time, reducing the average force for the same momentum change.
 M1: A 0.1 kg ball hits a wall at 10 m s^{-1} and rebounds at 10 m s^{-1}. Momentum change? | 2 kg m s^{-1} | 0 | 1 kg m s^{-1} | 20 kg m s^{-1} | 0.1 × (10 − (−10)).
 M2: A force–time graph is a triangle of peak 400 N and duration 0.02 s. Impulse? | 4 N s | 8 N s | 400 N s | 2 N s | Area = ½ × 0.02 × 400.
+M2: Glider A's momentum changes by −0.6 kg m/s in a collision. What is the change in glider B's momentum? | +0.6 kg m/s | −0.6 kg m/s | 0 kg m/s | It can't be known without the masses | By Newton's third law the impulses are equal and opposite, so B gains what A loses.
 
 ## Conservation of momentum
 S: If no net external force acts on a system, its total momentum is constant. This follows from Newton's third law (internal forces cancel in pairs) and, more deeply, from the uniformity of space.
@@ -440,10 +455,13 @@ X: A 50 g bullet fired at 400 m s^{-1} from a 4.0 kg rifle. Find the recoil spee
 H: Why it's conserved
 P: Internal forces come in third-law pairs, so their impulses cancel in the total. Noether's theorem gives the deeper reason: the laws of physics are the same everywhere in space.
 !: Momentum is conserved only for the whole isolated system; the momentum of one part (the bullet alone) certainly changes.
+P: **Investigate with the lab.** Try every challenge, and in each one compare the total momentum before and after. It never changes, whatever the restitution.
+IX: collisions
 Q: When is the total momentum of a system conserved? | When the net external force on it is zero.
 Q: Why does a gun recoil? | Total momentum stays zero, so the gun gains backward momentum equal to the bullet's forward momentum.
 M1: A 2 kg cart at 3 m s^{-1} couples to a stationary 4 kg cart. Final speed? | 1 m s^{-1} | 1.5 m s^{-1} | 3 m s^{-1} | 2 m s^{-1} | 6 = 6v.
 M2: An astronaut throws a tool to move back towards the ship. This uses: | Conservation of momentum | Conservation of energy only | Air resistance | Gravity | Throwing the tool away gives the astronaut opposite momentum.
+M2: In which collisions on a frictionless track is total momentum conserved? | All of them: elastic, sticky and explosions | Only elastic collisions | Only collisions where the gliders stick | Only collisions between equal masses | With no external horizontal force, total momentum is always conserved.
 
 ## Collisions and explosions
 S: In collisions and explosions, large internal forces act for a short time, so momentum is conserved. Kinetic energy may be conserved (elastic), partly lost (inelastic) or created from stored energy (explosions).
@@ -459,10 +477,13 @@ X: A 3.0 kg shell at rest explodes into 1.0 kg and 2.0 kg pieces, releasing 600 
 > 1.0v_{1} = 2.0v_{2}; ½(1.0)v_{1}^{2} + ½(2.0)v_{2}^{2} = 600
 > v_{1} = 2v_{2}: 2v_{2}^{2} + v_{2}^{2} = 600 ⇒ v_{2} = 14.1 m s^{-1}, v_{1} = 28.3 m s^{-1}
 !: Momentum is conserved in every type of collision; only kinetic energy behaves differently between types.
+P: **Investigate with the lab.** Start both gliders at rest and set off the explosion. Check that total momentum stays zero while kinetic energy appears from nowhere in the lab's bookkeeping.
+IX: collisions
 Q: In an explosion from rest, which fragment gets more kinetic energy? | The lighter one.
 Q: What is a perfectly inelastic collision? | One in which the bodies stick together, losing the maximum kinetic energy.
 M1: In which type of collision is KE conserved? | Elastic | Inelastic | Perfectly inelastic | Explosion | By definition.
 M2: A uranium-238 nucleus at rest emits an alpha particle (mass 4). The daughter's KE is roughly what fraction of the total? | 2% | 50% | 98% | 0 | KE ratio = mass ratio inverted: 4/234 of the alpha's.
+M2: Two gliders at rest push apart. Glider A (1 kg) moves at 3 m/s. How fast does glider B (2 kg) move? | 1.5 m/s the other way | 3 m/s the other way | 6 m/s the other way | 1.5 m/s the same way | Total momentum stays zero: 1 × 3 = 2 × v, so v = 1.5 m/s in the opposite direction.
 
 ## Elastic and inelastic collisions
 S: The coefficient of restitution e measures how bouncy a collision is: e = 1 for elastic, 0 for perfectly inelastic. Combined with momentum conservation it gives final velocities in 1D collisions.
@@ -480,10 +501,13 @@ P: Two equal masses in an elastic glancing collision (one at rest) move off at 9
 X: A tennis ball dropped from 2.0 m rebounds to 1.3 m. Find e.
 > e = √(1.3/2.0) = 0.81
 !: The kinetic energy that can be lost in a collision is only the part relative to the centre of mass, ½μ(u_{1} − u_{2})^{2} with μ = m_{1}m_{2}/(m_{1} + m_{2}); the centre-of-mass motion must carry on.
+P: **Investigate with the lab.** Set restitution to 1, then to 0, with the same starting velocities. Compare the kinetic energy after each collision with the energy before.
+IX: collisions
 Q: What is the coefficient of restitution? | The ratio of relative speed of separation to relative speed of approach.
 Q: What happens when equal masses collide elastically, one at rest? | They exchange velocities.
 M1: A ball with e = 0.5 is dropped from 4 m. It rebounds to: | 1 m | 2 m | 0.5 m | 3 m | h = e^{2} × 4.
 M2: A neutron collides elastically head-on with a stationary carbon-12 nucleus. What fraction of its speed does it keep? | 11/13 | 1/12 | 1/2 | 0 | v_{1} = (1 − 12)/(1 + 12) u: magnitude 11/13. This is why moderators use light nuclei.
+M2: What is conserved in a perfectly inelastic collision? | Momentum, but not kinetic energy | Kinetic energy, but not momentum | Both momentum and kinetic energy | Neither momentum nor kinetic energy | Momentum is always conserved; when objects stick, the most kinetic energy possible is lost.
 
 ## Centre of mass
 S: The centre of mass is the mass-weighted average position of a system. It moves as if all the mass were concentrated there and all external forces acted on it, whatever happens internally.
@@ -498,10 +522,13 @@ P: An object resting on a base is stable if a vertical line through its CM falls
 X: Find the CM of a 2 kg mass at x = 0 and a 3 kg mass at x = 5 m.
 > X = (0 + 15)/5 = 3 m
 !: The centre of mass of a fragmenting projectile keeps following the original parabola, until a fragment hits the ground.
+P: **Investigate with the lab.** Watch the centre-of-mass marker during an explosion and a sticky collision. However the gliders move, the centre of mass carries on at constant velocity.
+IX: collisions
 Q: How does the centre of mass of a system move? | As if all the mass were there and all external forces acted there.
 Q: When is an object resting on a base stable? | When the vertical line through its centre of mass passes within its base.
 M1: A uniform 4 m plank has a 20 kg child at one end; the plank is 10 kg. CM from that end? | 0.67 m | 2 m | 1 m | 1.33 m | (20 × 0 + 10 × 2)/30.
 M2: A firework explodes mid-air. The CM of the fragments: | Continues on the original trajectory | Stops | Moves straight down | Moves upward | Only external forces (gravity) affect CM motion.
+M2: Two gliders collide on a frictionless track. What happens to the velocity of their centre of mass? | It stays the same throughout | It drops to zero at the moment of impact | It reverses direction after the collision | It doubles during the collision | With no external force, the centre of mass moves at constant velocity.
 
 ## Systems of particles
 S: Treating many particles as a system, internal forces cancel in pairs, so the system's total momentum responds only to external forces. Energy and angular momentum can be split into motion of the centre of mass plus motion relative to it.
@@ -554,10 +581,13 @@ X: A 10 μm water droplet falls in air (η = 1.8 × 10^{-5} Pa s). Find its term
 > v_{t} = mg/b = 1.2 cm s^{-1}; τ = m/b = 1.2 ms
 > Check: Re = ρ_{air}v(2r)/η ≈ 0.016 ≪ 1, so linear drag is right. That's why clouds float.
 !: Assuming linear drag outside its regime can be wildly wrong; check the Reynolds number.
+P: **Investigate with the lab.** Launch with drag on and watch the horizontal velocity fall during the flight. Compare the shape of the path: it is no longer a symmetric parabola.
+IX: projectile
 Q: What is the time constant for linear drag? | τ = m/b.
 Q: Does a body coasting under quadratic drag ever stop? | Not in finite time in the ideal model; its speed falls as 1/t.
 M1: With linear drag, after one time constant a falling object reaches: | 63% of terminal velocity | 37% | 100% | 50% | 1 − 1/e.
 M2: Terminal velocity under quadratic drag scales with mass as: | √m | m | m^{2} | 1/m | v_{t} = √(mg/c).
+M2: With quadratic drag, how does the descending half of a trajectory compare with the rising half? | It is steeper, because the ball has lost horizontal speed | It is a mirror image, as in drag-free motion | It is flatter, because drag pushes the ball forward | It is identical, since drag cancels out over a flight | Drag steadily removes horizontal speed, so the ball falls more steeply than it rose.
 
 ## Terminal velocity
 S: A falling object accelerates until drag equals its weight; then the net force is zero and it falls at constant terminal velocity. Size, shape, mass and the fluid's density and viscosity set its value.
@@ -571,10 +601,13 @@ P: Millikan measured oil drops' terminal speeds to find their radii (Stokes' law
 X: A steel ball (r = 1.0 mm, ρ = 7800 kg m^{-3}) falls in glycerol (ρ = 1260, η = 1.4 Pa s). Find v_{t}.
 > v_{t} = 2 × 10^{-6} × 6540 × 9.8/(9 × 1.4) = 0.010 m s^{-1}
 !: At terminal velocity the object still moves; it's the acceleration that's zero.
+P: **Investigate with the lab.** Launch straight down from a height with drag on and watch the vertical speed level off. Compare the terminal speed on Earth and on Jupiter.
+IX: projectile
 Q: What is the condition for terminal velocity? | Drag (plus buoyancy) balances weight, so the net force is zero.
 Q: How did Millikan use terminal velocity? | Stokes' law gave each drop's radius and hence mass from its terminal speed.
 M1: At terminal velocity, a skydiver's acceleration is: | Zero | g | g/2 | Increasing | Forces balance.
 M2: Under Stokes' law, doubling a sphere's radius changes v_{t} by: | ×4 | ×2 | ×8 | ×√2 | v_{t} ∝ r^{2}.
+M2: What happens at terminal velocity? | Drag equals weight, so the acceleration is zero | The ball stops accelerating because gravity switches off | The speed keeps rising at a constant rate | Drag becomes larger than weight forever | When drag balances weight, the resultant force and so the acceleration are zero.
 
 ## Equilibrium and statics
 S: A body is in static equilibrium when it neither translates nor rotates: the net force and net torque on it are both zero. Statics underpins the design of bridges, buildings, cranes and the human skeleton.

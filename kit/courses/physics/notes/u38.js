@@ -177,12 +177,15 @@ P: If an initial error δ_{0} must stay below a tolerance Δ, the prediction tim
 X: λ = 0.5 per day, δ_{0} = 0.01, Δ = 1. Prediction horizon?
 > T = (1/0.5) × ln(100) ≈ 2 × 4.6 ≈ 9.2 days
 > With δ_{0} = 0.0001, T ≈ 2 × 9.2 = 18.4 days: 100× precision only doubles T
+P: **Investigate with the lab.** Run the double pendulums and watch two almost identical starts drift completely apart. Note that the motion follows exact equations with no randomness.
+IX: pendulum
 K: Chaos is deterministic yet unpredictable long-term, because errors grow exponentially.
 !: Chaotic does not mean random or structureless; chaotic motion lives on structured attractors with clear statistics.
 Q: What two geometric operations produce chaos? | Stretching and folding of phase space.
 Q: Who first found chaos in the three-body problem? | Henri Poincaré.
 M1: Chaotic systems are: | Deterministic but unpredictable long-term | Random | Always periodic | Linear | No noise needed.
 M2: Improving initial precision by 1000× extends prediction by: | About 7/λ | 1000× | 3× | Nothing | Logarithmic gain.
+M2: What makes the double pendulum's motion chaotic rather than random? | It follows deterministic laws but is extremely sensitive to starting conditions | It is driven by random forces in the lab | Its equations of motion are unknown | It obeys quantum uncertainty at large scale | Chaos is deterministic: tiny differences in starting conditions grow exponentially.
 
 ## Sensitivity to initial conditions
 S: Sensitivity to initial conditions, the butterfly effect, means that two almost identical starting states end up completely different. It is the hallmark of chaos and sets fundamental limits on forecasting weather, orbits and many complex systems.
@@ -204,12 +207,15 @@ H: Not all sensitivity is chaos
 P: Unstable fixed points also show exponential divergence, but only temporarily and not in a bounded, recurring way. True chaos combines sensitivity with boundedness and aperiodicity, so trajectories keep separating and approaching across a bounded attractor.
 X: A double pendulum has λ ≈ 2 s^{-1}. An error of 10^{-6} rad grows to 1 rad in about how long?
 > t = ln(10^{6})/2 ≈ 13.8/2 ≈ 7 s
+P: **Investigate with the lab.** Set the difference between the twins to a millionth of a radian and time how long they stay together. Make the difference smaller and see how much longer they last.
+IX: pendulum
 K: In chaotic systems, tiny initial differences grow exponentially; forecasts need ensembles and probabilities.
 !: Sensitivity limits detailed prediction, not statistical prediction; climate averages remain forecastable even if weather is not.
 Q: What did Lorenz's rounding experiment show? | Tiny differences in initial data led to completely different forecasts.
 Q: What is ensemble forecasting? | Running many forecasts from slightly perturbed starting states to estimate uncertainty.
 M1: Error growth in chaotic systems is: | Exponential until it saturates | Linear forever | Zero | Quadratic only | e^{λt}, bounded by attractor size.
 M2: OGY control uses: | Small perturbations to stabilise orbits | Large forces | Random noise | Feedback disconnection | Chaos is easily nudged.
+M2: Two double pendulums start a millionth of a radian apart. What happens? | They agree at first, then diverge completely | They stay together for ever | They diverge immediately and randomly | They always end up in the same place | Sensitivity to initial conditions means small differences grow until the motions are unrelated.
 
 ## Lyapunov exponents
 S: Lyapunov exponents measure the average exponential rate at which nearby trajectories separate or converge. A positive largest exponent signals chaos, and the full spectrum reveals how phase-space volumes stretch, shrink and fold.
@@ -532,12 +538,15 @@ P: Chaotic synchronisation (Pecora and Carroll 1990) lets a receiver lock to a c
 X: Why does a pendulum need a drive to be chaotic?
 > An undriven pendulum is a 2D autonomous system (θ, θ̇), which cannot be chaotic
 > The drive adds time (phase) as a third dimension
+P: **Investigate with the lab.** Watch the double pendulums diverge, then compare with a single pendulum at small angles, which stays predictable. Think about which mechanical systems behave like each.
+IX: pendulum
 K: Real mechanical and electronic systems become chaotic when nonlinearity, driving and enough dimensions combine.
 !: Chaotic vibration can resemble random noise; misdiagnosing it can lead to wrong fixes in engineering.
 Q: What makes Chua's circuit chaotic? | A piecewise-linear nonlinear resistor with three energy-storage elements (two capacitors and an inductor).
 Q: Why is Hyperion's rotation chaotic? | Its irregular shape and eccentric orbit couple rotation to orbital motion chaotically.
 M1: Fractal basin boundaries occur in the: | Magnetic pendulum | Simple harmonic oscillator | RC circuit | Free fall | The final magnet depends sensitively on the start.
 M2: Pecora–Carroll synchronisation allows: | Receivers to lock to chaotic signals | Linear amplification | Faster CPUs | Superconductivity | Chaotic communication.
+M2: Why is long-range weather forecasting limited even with perfect equations? | The atmosphere is chaotic, so small measurement errors grow | The equations of fluid flow are random | Weather obeys no physical laws | Computers can't solve differential equations | Like the double pendulum, the atmosphere amplifies tiny uncertainties in the starting state.
 
 ## Complex systems and emergent behaviour
 S: Complex systems consist of many interacting parts whose collective behaviour is not obvious from the parts alone. Emergence, networks, feedback and adaptation describe phenomena from ecosystems and economies to the brain and the internet.

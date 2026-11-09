@@ -56,10 +56,13 @@ X: A resistor has 4.5 V across it and 0.30 A through it. R? What current at 9.0 
 > R = 15 Ω
 > I = 9.0/15 = 0.60 A
 !: V = IR defines resistance for any component at a point; Ohm's law is the claim that R stays constant.
+P: **Investigate with the lab.** Set up a single resistor and change the voltage, recording the current each time. Check that V/I stays constant.
+IX: circuits
 Q: State Ohm's law. | For a conductor at constant temperature, current is proportional to potential difference.
 Q: Why is a filament lamp non-ohmic? | Its temperature, and so resistance, increases with current.
 M1: Which component is ohmic? | A metal resistor at constant temperature | A diode | A filament lamp | An LED | Linear I–V.
 M2: The microscopic form of Ohm's law is: | J = σE | V = IR only | P = IV | Q = CV | Current density ∝ field.
+M2: A 12 Ω resistor has 6 V across it. What current flows? | 0.5 A | 2 A | 72 A | 18 A | I = V/R = 6/12 = 0.5 A.
 
 ## Conductivity
 S: Conductivity σ is the reciprocal of resistivity: how readily a material carries current. It spans more orders of magnitude than almost any other physical property, from superconductors to the best insulators.
@@ -99,10 +102,13 @@ X: 6 Ω and 3 Ω in parallel, in series with 4 Ω, across 12 V. Total current?
 > Parallel: 2 Ω; total 6 Ω
 > I = 2 A; parallel pair gets 4 V: 0.67 A through 6 Ω, 1.33 A through 3 Ω
 !: Adding resistors in parallel decreases total resistance and increases total current drawn.
+P: **Investigate with the lab.** Wire the same three resistors in series, then in parallel. Which arrangement draws more current from the battery?
+IX: circuits
 Q: How do resistors combine in parallel? | Reciprocals add: 1/R = Σ1/R_{i}.
 Q: Why are house circuits wired in parallel? | Each appliance gets the full voltage and can be switched independently.
 M1: Two 10 Ω resistors in parallel: | 5 Ω | 20 Ω | 10 Ω | 100 Ω | Halved.
 M2: A potential divider of 2 kΩ and 8 kΩ across 10 V. V across 8 kΩ: | 8 V | 2 V | 5 V | 10 V | Proportional to R.
+M2: Three equal resistors are connected first in series, then in parallel. Which draws more current? | Parallel | Series | They draw the same current | It depends on the battery | Parallel resistance is lower than any single resistor, so more current flows.
 
 ## Kirchhoff's laws
 S: Kirchhoff's laws express conservation of charge and energy in circuits. With them you can analyse any network of resistors and sources, however complicated.
@@ -121,10 +127,13 @@ X: A 6 V cell and a 2 V cell are connected in a single loop so that they oppose 
 > Net EMF = 6 − 2 = 4 V
 > I = 4/4 = 1 A, driven by the 6 V cell
 !: Watch signs: going through a resistor along the current is a drop (−IR); through a cell from − to + is a rise (+ε).
+P: **Investigate with the lab.** In a mixed network, read the currents into and out of each junction and the voltages round each loop. Check both of Kirchhoff's laws.
+IX: circuits
 Q: What does Kirchhoff's junction law express? | Conservation of charge.
 Q: What does Kirchhoff's loop law express? | Conservation of energy: the sum of EMFs equals the sum of potential drops around a loop.
 M1: Currents of 3 A and 2 A enter a junction; 4 A leaves on one wire. The other wire carries: | 1 A out | 1 A in | 9 A | 5 A | Charge conservation.
 M2: Kirchhoff's loop law fails when: | Changing magnetic flux threads the loop | Resistors are in parallel | Current is large | Never | Induced EMF makes the line integral non-zero.
+M2: What does Kirchhoff's first law express? | Conservation of charge at a junction | Conservation of energy round a loop | Ohm's law for each resistor | The power in a circuit | The current into a junction equals the current out of it.
 
 ## Electromotive force
 S: Electromotive force (EMF) is the energy a source gives each coulomb of charge passing through it. Despite the name it's not a force: it's measured in volts, like potential difference, but describes energy supplied rather than used.
@@ -140,10 +149,13 @@ X: A 12 V battery delivers 0.5 A for 1 hour. Charge and energy supplied?
 > Q = 0.5 × 3600 = 1800 C
 > W = 12 × 1800 = 21.6 kJ
 !: EMF is measured across a source when no current flows; with current, terminal p.d. is lower because of internal resistance.
+P: **Investigate with the lab.** Change the load resistance and watch the terminal voltage change while the emf stays fixed.
+IX: circuits
 Q: Define EMF. | The energy converted into electrical energy per unit charge by a source.
 Q: How is a cell's EMF related to its chemistry? | ε = −ΔG/(nF), from the free energy change of the cell reaction.
 M1: EMF is measured in: | Volts | Newtons | Amperes | Joules | J C^{-1}.
 M2: A 3000 mA h battery at 3.7 V stores about: | 40 kJ | 11 J | 3 kJ | 400 kJ | 3 A × 3600 s × 3.7 V.
+M2: What is the emf of a cell? | The energy it supplies per coulomb of charge | The voltage across the external resistor | The current it can deliver | Its internal resistance | Emf is energy transferred to each unit of charge by the source.
 
 ## Internal resistance
 S: Every real source has internal resistance, so its terminal voltage drops when it supplies current. This "lost volts" sets how much current and power a battery can deliver.
@@ -161,10 +173,13 @@ X: A cell (ε = 1.5 V, r = 0.5 Ω) drives a 2.5 Ω lamp. Current and terminal vo
 > I = 1.5/3.0 = 0.5 A
 > V = 1.5 − 0.25 = 1.25 V
 !: A battery's internal resistance rises as it ages and as it gets cold, which is why old batteries fail under load though they read the full voltage unloaded.
+P: **Investigate with the lab.** Increase the internal resistance and see the terminal voltage drop as the current rises. Then find the load that takes the most power: it matches r.
+IX: circuits
 Q: Why does terminal voltage fall when more current is drawn? | More voltage is dropped across the internal resistance.
 Q: When is maximum power delivered to a load? | When the load resistance equals the source's internal resistance.
 M1: A V–I graph for a cell has intercept 9 V and gradient −2 Ω. The internal resistance is: | 2 Ω | 9 Ω | 4.5 Ω | 18 Ω | Gradient = −r.
 M2: At maximum power transfer, efficiency is: | 50% | 100% | 25% | 0% | Half the power heats the source.
+M2: A cell has emf 6 V and internal resistance 1 Ω. What load resistance takes the most power? | 1 Ω | 6 Ω | 0 Ω | As large as possible | Maximum power transfer happens when the load equals the internal resistance.
 
 ## Electrical power and energy
 S: Electrical power is the rate at which energy is transferred by a current. It's what you pay for (in kilowatt-hours) and what heats wires, lights lamps and turns motors.
@@ -182,10 +197,13 @@ X: A 3 kW heater runs 4 h a day for 30 days at 30p per kWh. Cost?
 > Energy = 3 × 4 × 30 = 360 kWh
 > Cost = £108
 !: P = V^{2}/R shows that for fixed voltage, lower resistance means more power: a 2 kW heater has a smaller resistance than a 1 kW one.
+P: **Investigate with the lab.** Change the load and watch the power in it rise and fall. Calculate P = IV for two settings and compare with the lab.
+IX: circuits
 Q: Give three formulas for electrical power. | P = IV = I^{2}R = V^{2}/R.
 Q: Why is electricity transmitted at high voltage? | Lower current for the same power reduces I^{2}R losses.
 M1: A 60 W lamp at 230 V draws: | 0.26 A | 3.8 A | 13.8 A | 0.026 A | I = P/V.
 M2: Doubling transmission voltage (same power) changes line losses by: | ×1/4 | ×1/2 | ×2 | ×4 | ∝ 1/V^{2}.
+M2: A device draws 2 A at 12 V. What is its power? | 24 W | 6 W | 14 W | 0.17 W | P = IV = 2 × 12 = 24 W.
 
 ## Resistor networks
 S: Complex resistor networks can often be simplified by combining series and parallel parts, using symmetry, or converting between star and delta shapes. When they can't, Kirchhoff's laws always work.
@@ -202,10 +220,13 @@ X: A cube of twelve 1 Ω resistors. Resistance between opposite corners?
 > By symmetry, currents split 3 ways, then 6 ways, then 3 ways
 > R = 1/3 + 1/6 + 1/3 = 5/6 Ω
 !: Don't combine resistors as "parallel" unless both ends of each are joined to the same two nodes.
+P: **Investigate with the lab.** Make the two parallel branches share the current equally, then build a mixed network and calculate its total resistance before checking.
+IX: circuits
 Q: When is a Wheatstone bridge balanced? | When R_{1}/R_{2} = R_{3}/R_{4}, so no current flows through the detector.
 Q: How does symmetry simplify networks? | Points at equal potential can be connected or separated without changing any currents.
 M1: In a balanced bridge, the current through the galvanometer is: | Zero | Maximum | Equal to the supply current | Negative | Equal potentials.
 M2: Three 3 Ω resistors in delta are equivalent to a star of: | Three 1 Ω | Three 3 Ω | Three 9 Ω | One 1 Ω | R_{Y} = R_{Δ}/3 for equal resistors.
+M2: What is the total resistance of 6 Ω and 3 Ω in parallel? | 2 Ω | 9 Ω | 4.5 Ω | 18 Ω | 1/R = 1/6 + 1/3 = 1/2, so R = 2 Ω.
 
 ## Capacitor charging and discharging
 S: When a capacitor charges or discharges through a resistor, the current doesn't change instantly: voltage and charge follow exponential curves with time constant RC. This sets the timing of countless circuits.
@@ -222,10 +243,13 @@ X: A 470 μF capacitor discharges through 10 kΩ from 9 V. Voltage after 10 s?
 > τ = 4.7 s
 > V = 9e^{−10/4.7} = 1.07 V
 !: The current during charging is largest at the start, not the end, and it falls to zero as the capacitor fills.
+P: **Investigate with the lab.** Charge the capacitor and stop the clock at one time constant (63%). Then discharge it and find the half-life: τ ln 2.
+IX: transients
 Q: What is the time constant of an RC circuit? | τ = RC: the time to fall to 1/e (37%) of the initial value when discharging.
 Q: How long does a capacitor take to charge nearly fully? | About 5RC.
 M1: After one time constant of charging, V reaches: | 63% of ε | 37% | 50% | 100% | 1 − 1/e.
 M2: The half-life of a discharge with RC = 10 s is: | 6.9 s | 10 s | 5 s | 14.4 s | RC ln 2.
+M2: After one time constant, a charging capacitor reaches what fraction of its final voltage? | About 63% | 50% | About 37% | 100% | V = V₀(1 − e^{−t/RC}); at t = RC this is 1 − 1/e ≈ 0.63.
 
 ## RC circuits
 S: RC circuits combine resistors and capacitors to shape signals: they set delays, smooth ripple, block DC, and filter frequencies. Their behaviour in time (exponentials) and frequency (filters) are two views of one system.
@@ -247,10 +271,13 @@ H: Uses
 X: Design an RC low-pass filter with f_{c} = 1 kHz using C = 100 nF.
 > R = 1/(2πf_{c}C) = 1/(2π × 1000 × 10^{-7}) = 1.6 kΩ
 !: A high-pass RC filter blocks DC completely; an RC low-pass passes it.
+P: **Investigate with the lab.** Double R and see the charging take twice as long. Then double C instead and compare.
+IX: transients
 Q: What is the cut-off frequency of an RC filter? | f_{c} = 1/(2πRC).
 Q: What's the capacitive reactance? | X_{C} = 1/(ωC).
 M1: A capacitor's reactance at high frequency is: | Small | Large | Zero at DC | Independent of frequency | X_{C} ∝ 1/f.
 M2: Output across the capacitor in an RC circuit makes: | A low-pass filter | A high-pass filter | A band-stop | An amplifier | Capacitor shorts high frequencies.
+M2: An RC circuit has R = 10 kΩ and C = 100 μF. What is its time constant? | 1 s | 0.1 s | 10 s | 1000 s | τ = RC = 10,000 × 0.0001 = 1 s.
 
 ## RL circuits
 S: An inductor opposes changes in current by generating a back EMF. In an RL circuit, current rises and falls exponentially with time constant L/R, and switching off can produce dangerous voltage spikes.
@@ -271,10 +298,13 @@ X: L = 0.5 H, R = 10 Ω, ε = 12 V. Time constant and final current? Current aft
 > τ = 0.05 s; I_{max} = 1.2 A
 > I = 1.2(1 − e^{−1}) = 0.76 A
 !: Inductors resist changes in current, not current itself; a steady DC current flows through an ideal inductor with no voltage across it.
+P: **Investigate with the lab.** Switch to the inductor and watch the current rise to E/R while the inductor's voltage dies away.
+IX: transients
 Q: What is the time constant of an RL circuit? | τ = L/R.
 Q: Why are flyback diodes placed across relay coils? | To give the coil's current a safe path when switched off, preventing a large voltage spike.
 M1: The energy stored in a 2 H inductor carrying 3 A is: | 9 J | 6 J | 18 J | 3 J | ½LI^{2}.
 M2: An inductor's reactance: | Increases with frequency | Decreases with frequency | Is constant | Is zero at high f | X_{L} = ωL.
+M2: When an RL circuit is switched on, how does the current change? | It rises gradually towards E/R | It jumps instantly to E/R | It rises without limit | It stays at zero | The inductor's back emf opposes the change, so the current grows exponentially towards E/R.
 
 ## RLC circuits
 S: An RLC circuit combines resistance, inductance and capacitance. Energy sloshes between the capacitor's electric field and the inductor's magnetic field, so the circuit oscillates like a mass on a spring, damped by the resistance.
@@ -317,10 +347,13 @@ X: A switch connects 10 V to an uncharged 1 μF capacitor through 1 kΩ. Current
 > Just after: V_{C} = 0, so I = 10/1000 = 10 mA
 > Long after: I = 0, V_{C} = 10 V
 !: Capacitor voltage and inductor current are continuous; capacitor current and inductor voltage can jump.
+P: **Investigate with the lab.** Compare the RC charging curve and the RL current curve: both approach their final values exponentially with a time constant.
+IX: transients
 Q: Which quantities can't change instantaneously in circuits? | Capacitor voltage and inductor current.
 Q: What makes up the full response after a change? | The decaying transient plus the steady-state response.
 M1: At DC steady state, a capacitor behaves like: | An open circuit | A short circuit | A resistor | An inductor | No current flows.
 M2: At DC steady state, an ideal inductor behaves like: | A short circuit | An open circuit | A capacitor | A battery | No voltage across it.
+M2: What do RC charging and RL current growth have in common? | Both approach their final value exponentially | Both change at a constant rate | Both oscillate before settling | Both reach their final value instantly | Both are first-order transients with a single time constant.
 
 ## Alternating current
 S: Alternating current (AC) reverses direction periodically, usually sinusoidally. It's used for mains power because transformers can easily change its voltage for efficient transmission.
@@ -534,10 +567,13 @@ X: Superposition: 10 V source with 2 Ω, and a 2 A current source, both feeding 
 > Current source alone (voltage source shorted): 2 × 2/(2 + 3) = 0.8 A
 > Total 2.8 A
 !: Superposition works for currents and voltages in linear circuits but not for power (power is quadratic).
+P: **Investigate with the lab.** Balance the Wheatstone bridge so the meter reads zero (below 1 mA). Use the balance condition to find the unknown resistor.
+IX: circuits
 Q: What is the principle of superposition in circuits? | In a linear circuit, the response to several sources equals the sum of responses to each source acting alone.
 Q: When is nodal analysis preferable? | When the circuit has fewer nodes than meshes, often with many parallel branches.
 M1: In superposition, an inactive voltage source is replaced by: | A short circuit | An open circuit | A resistor of 1 Ω | A capacitor | Ideal source has zero internal resistance.
 M2: Can superposition be applied directly to power? | No, power isn't linear in current | Yes, always | Only in AC | Only for resistors | P ∝ I^{2}.
+M2: When a Wheatstone bridge is balanced, what is true? | No current flows through the meter | The current through every resistor is equal | All four resistors are equal | The battery supplies no current | At balance, the two midpoints are at the same potential, so the meter reads zero.
 
 ## Thevenin and Norton equivalents
 S: Any linear network seen from two terminals behaves like a single voltage source with a series resistance (Thevenin) or a current source with a parallel resistance (Norton). This simplifies analysing how a network drives different loads.

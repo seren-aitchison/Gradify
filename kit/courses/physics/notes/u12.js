@@ -203,10 +203,13 @@ X: 1 mol of gas at 300 K is compressed isothermally to half its volume. Heat rel
 > W = RT ln(1/2) = 8.31 × 300 × (−0.693) = −1.73 kJ (work done on the gas)
 > Q = −1.73 kJ: 1.73 kJ released to the reservoir
 !: Isothermal doesn't mean no heat flows; heat must flow to keep the temperature constant. It means ΔT = 0.
+P: **Investigate with the lab.** Halve the volume at fixed temperature and watch the pressure double: an isothermal change.
+IX: gas
 Q: For an isothermal ideal-gas process, how are Q and W related? | Q = W, since ΔU = 0.
 Q: What law describes an isothermal ideal gas? | Boyle's law, pV = constant.
 M1: A gas is compressed isothermally. Its pressure: | Increases inversely with volume | Stays constant | Decreases | Doubles regardless | pV = constant.
 M2: Isothermal processes require: | Slow change with good thermal contact | No heat flow | Rapid change | Insulation | Heat must flow to maintain T.
+M2: In an isothermal compression of an ideal gas, what stays constant? | The temperature and the product pV | The pressure | The volume | The internal energy only rises | Isothermal means constant temperature, so pV is constant.
 
 ## Adiabatic processes
 S: In an adiabatic process no heat enters or leaves. Compressing a gas adiabatically heats it; expanding cools it. This explains diesel ignition, cloud formation and why air cools as it rises.
@@ -593,10 +596,13 @@ X: 1 mol of CO_{2} in 1 L at 300 K: compare ideal and van der Waals pressures (a
 > Ideal: 8.31 × 300/10^{-3} = 24.9 bar
 > VdW: 2493/(0.957 × 10^{-3}) − 0.364/10^{-6} = 26.0 − 3.6 = 22.4 bar
 !: The ideal gas law fails near condensation and at high pressures; check Z before trusting it.
+P: **Investigate with the lab.** Change volume and temperature in turn and check that pV/T stays constant for the gas in the box.
+IX: gas
 Q: What do the van der Waals constants a and b represent? | a: intermolecular attraction; b: the volume occupied by molecules.
 Q: What is the compressibility factor? | Z = pV/(nRT), equal to 1 for an ideal gas.
 M1: An ideal gas obeys: | pV = nRT | pV^{γ} = constant always | p = ρg | pV = 0 | Definition.
 M2: Real gases deviate most from ideal behaviour at: | High pressure and low temperature | Low pressure and high temperature | Room conditions | Vacuum | Molecules close together and slow.
+M2: A fixed mass of ideal gas is heated from 300 K to 600 K at constant volume. What happens to its pressure? | It doubles | It halves | It stays the same | It rises by 300 Pa | p/T is constant at fixed volume, so doubling T doubles p.
 
 ## Critical points
 S: A critical point is where the distinction between two phases disappears: above the critical temperature, liquid and gas merge into one supercritical fluid. Near critical points, matter shows universal behaviour with huge fluctuations.

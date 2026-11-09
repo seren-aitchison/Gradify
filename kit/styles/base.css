@@ -93,10 +93,12 @@ a { color: inherit; }
   -webkit-backdrop-filter: blur(18px) saturate(180%);
   backdrop-filter: blur(18px) saturate(180%);
 }
+/* the shine: the same shape as the element (border-radius: inherit), brightest along the top edge and fading out
+   before the middle, so it follows a pill's rounded ends instead of floating inside as a separate lozenge */
 .lg::before {
-  content: ""; position: absolute; left: 9%; right: 9%; top: 2px; height: 46%;
-  border-radius: 999px; pointer-events: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0));
+  content: ""; position: absolute; inset: 1px; z-index: -1;
+  border-radius: inherit; pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .2) 0%, rgba(255, 255, 255, .07) 38%, rgba(255, 255, 255, 0) 56%);
 }
 .lg::after {
   content: ""; position: absolute; left: 14%; right: 14%; bottom: -9px; height: 14px; z-index: -1;
