@@ -97,6 +97,8 @@ X: Calculating an income share ratio
 > South Africa, 2022 (World Bank): richest fifth's share 59.5%, poorest fifth's share 3.7%.
 > Ratio = 59.5 ÷ 3.7 ≈ 16.
 > Sweden, 2023: 37.2 ÷ 7.9 ≈ 4.7. The comparison shows very different degrees of inequality.
+P: **Investigate with the lab.** Generate a data set and compare the range, variance and standard deviation.
+IX: stats-describe
 K: Measures of dispersion describe spread; ratio measures such as the 90/10 or 20/20 ratio describe inequality between parts of a distribution.
 P: Different measures emphasise different parts of the distribution: the 90/10 ratio ignores the very top, while the share of the top 1% focuses on it. Using several gives a fuller picture.
 !: Using the standard deviation alone to describe highly skewed income. Percentile-based measures are more informative.
@@ -116,6 +118,7 @@ NUM2#sociology-u18-03-q2@2: In one country the richest fifth receives 48% of inc
 M2#sociology-u18-03-q3@2: Two countries have the same median income, but one has a much larger 90/10 ratio. What does this show? | Greater income inequality in that country | Higher average incomes there | Fewer people in poverty there | Identical distributions | A larger ratio means a bigger gap between high and low incomes.
 M3#sociology-u18-03-q4@3: Why might researchers report both the 90/10 ratio and the top 1% share? | They capture different parts of the distribution | They always give the same result | The 90/10 ratio includes the top 1% only | The top 1% share ignores the rich | The 90/10 ignores the very top; the top 1% share focuses on it.
 SA2#sociology-u18-03-q5@2,3: Using World Bank data, compare income inequality in the UK (2021: top fifth 40%, bottom fifth 7.6%) and South Africa (2022: top fifth 59.5%, bottom fifth 3.7%). | UK ratio ≈ 40 ÷ 7.6 ≈ 5.3; South Africa ≈ 59.5 ÷ 3.7 ≈ 16. South Africa's richest fifth receives about 16 times the share of the poorest fifth, three times the UK's ratio, showing far greater inequality. Survey and measurement differences mean comparisons should be cautious. | UK ratio ; South Africa ratio ; Comparison ; Interpretation ; Caution
+M2#sociology-u18-03-q6@1: What does a large standard deviation show? | The data are widely spread around the mean | The mean is very large | The data contain no outliers | The sample is very small | Standard deviation measures typical distance from the mean.
 
 ## Frequency distributions
 LV: Introductory · Foundation
@@ -133,6 +136,8 @@ X: Highest qualification in a sample of 200 (illustrative figures)
 H: Grouping continuous data
 P: Continuous variables such as income or age are grouped into **class intervals** (for example age bands 16–24, 25–34). Intervals should be mutually exclusive, cover all values and usually be equal in width; very unequal bands can mislead. Population pyramids, for example, use five-year age bands.
 IX: pyramids
+P: **Investigate with the lab.** Look at the histogram of your data and describe its shape.
+IX: stats-describe
 K: Frequency distributions summarise how cases are spread across categories, using counts, percentages and cumulative percentages.
 P: Reporting the number of missing cases matters: if many people didn't answer an income question, the distribution of those who did may be biased.
 !: Comparing raw counts between groups of different sizes. Use percentages.
@@ -152,6 +157,7 @@ NUM2#sociology-u18-04-q2@2: In a sample of 250, 75 people rent privately. What p
 M2#sociology-u18-04-q3@2: In a survey, 40% of respondents didn't answer the income question. What is the main concern? | Those who answered may not be representative | The percentages will add to more than 100 | Income can't be grouped | Cumulative percentages are impossible | Item non-response can bias the distribution.
 M3#sociology-u18-04-q4@3: Why might unequal class intervals mislead in a histogram? | Wide bands look fuller | Equal bands are illegal | Unequal bands remove all data | They change the mean | Bar areas must reflect frequencies; unequal widths distort impressions.
 SA2#sociology-u18-04-q5@1,2: Construct a frequency table with percentages and cumulative percentages for 100 people: 15 aged 16–24, 30 aged 25–44, 35 aged 45–64, 20 aged 65+. | Percentages: 15%, 30%, 35%, 20%. Cumulative: 15%, 45%, 80%, 100%. So 45% are under 45, and 80% are under 65. | Percentages ; Cumulative percentages ; Correct ordering ; Interpretation
+M2#sociology-u18-04-q6@1: What does a frequency distribution show? | How often each value or range of values occurs | The mean of the data only | The correlation between two variables | The sample size only | Frequency distributions show the shape of the data.
 
 ## Visualising social data
 LV: Introductory · Application
@@ -173,6 +179,8 @@ X: Reading a population pyramid
 > Japan, 2023: a narrow base and wide top, with about 29% aged 65 and over, compared with under 6% in 1960.
 > The shapes summarise fertility, mortality and population ageing at a glance.
 P: Every chart should state its source, the date of the data and any definitions, so readers can check and compare it.
+P: **Investigate with the lab.** Paste in data and look at the histogram, then think about how a different chart might mislead.
+IX: stats-describe
 K: Good visualisations match chart type to data and question, and show patterns honestly with clear axes, labels and sources.
 H: Misleading charts
 P: Truncated axes exaggerate differences; inconsistent scales mislead comparisons; maps can overemphasise large, sparsely populated areas; and selective time periods create false trends. Charts should label units, give sources and dates, and show uncertainty where relevant.
@@ -192,6 +200,7 @@ M2#sociology-u18-05-q2@2: A chart of crime shows only the two years when crime r
 TF2#sociology-u18-05-q3@1,2: A wide-based population pyramid usually indicates high fertility. | true | Many children relative to adults shows high birth rates.
 M3#sociology-u18-05-q4@3: Why can choropleth maps of deprivation by local authority mislead? | Big rural areas dominate visually | Maps can't show any data | They always use truncated axes | They show only individuals | Area size, not population, drives visual impression.
 SA2#sociology-u18-05-q5@2,3: Describe how you would visualise change in UK life expectancy since 1960 and compare it with other countries, and one way to avoid misleading readers. | A line chart with years on the x-axis and life expectancy on the y-axis, one line per country, labelled, with source and dates (World Bank). Avoid truncating the y-axis without marking it, use consistent scales, and note that period life expectancy summarises current mortality. | Chart type ; Axes and labels ; Comparison ; Source ; Avoiding distortion
+M2#sociology-u18-05-q6@1: How can a graph's axis mislead? | A truncated axis can exaggerate small differences | Labelling the axes always misleads | Using colour makes graphs wrong | Gridlines distort data | Starting an axis above zero magnifies differences.
 
 ## Probability for social research
 LV: Introductory · Foundation
@@ -209,6 +218,8 @@ X: Base rates and risk profiling (illustrative figures)
 > A screening tool flags 80% of those involved, but also 10% of those not involved.
 > Of 1,000 young people: 8 true flags and about 99 false flags. Only about 7% of flagged young people are actually involved.
 > Using the tool to target individuals would mostly affect uninvolved young people, raising fairness concerns.
+P: **Investigate with the lab.** Run a thousand simulated studies and see how p-values are distributed when there is no effect.
+IX: hypothesis-test
 K: Probabilities and conditional probabilities describe life chances, but interpreting them requires attention to base rates.
 P: These issues matter in predictive policing, welfare fraud algorithms and child protection risk tools, where rare outcomes mean many false positives fall on particular groups.
 !: Concluding that because a group has a higher rate of an outcome, most of its members experience it. A higher rate can still be a small proportion.
@@ -228,6 +239,7 @@ NUM2#sociology-u18-06-q2@2: In a town, 30 of 600 adults are unemployed. What is 
 M2#sociology-u18-06-q3@2: A group has a higher rate of school exclusion than average (5% versus 2%). Which statement is correct? | Most of the group are not excluded | Most of the group are excluded | The group causes exclusion | Exclusion is random | A higher rate can still be a small minority.
 M3#sociology-u18-06-q4@3: Why might a risk algorithm for rare outcomes raise fairness concerns? | Most people it flags won't have the outcome | It never makes errors | It ignores base rates entirely | It only flags true cases | Rare outcomes mean false positives dominate, often concentrated in some groups.
 SA3#sociology-u18-06-q5@2,3: Use natural frequencies to explain why a welfare fraud algorithm might mostly flag innocent claimants. | Suppose 1% of 10,000 claims are fraudulent (100). The algorithm detects 90% (90) but also flags 5% of honest claims (495). Of 585 flags, only about 15% are fraud. Rare outcomes plus false positives mean most flagged claimants are innocent, with fairness implications. | Base rate ; True positives ; False positives ; Proportion ; Fairness
+M2#sociology-u18-06-q6@1: If there is no real effect, about how often will p fall below 0.05? | About 5% of the time | Never | About 50% of the time | Every time | That is the meaning of a 5% significance level.
 
 ## Sampling distributions
 LV: Intermediate · Application
@@ -284,6 +296,8 @@ X: Graduate status and voting
 > H0: there is no association between having a degree and voting in the last election.
 > A survey of 600 adults gives χ²(1) = 12.4, p < .001.
 > Reject H0: graduates and non-graduates differ in turnout in the population, on this evidence. The test doesn't show that a degree causes voting.
+P: **Investigate with the lab.** Run studies with and without a real effect and see how often each reaches significance.
+IX: hypothesis-test
 K: Hypothesis tests ask whether sample patterns are larger than chance would produce if the null were true; they don't establish cause or importance.
 H: Limits in sociology
 P: With very large samples (such as national surveys), tiny differences become significant, so effect sizes matter more than p-values. With whole-population data (such as a census), sampling-based tests are less meaningful because there is no sampling error. Many sociologists emphasise estimation (effect sizes and confidence intervals) over yes-or-no testing.
@@ -303,6 +317,7 @@ M2#sociology-u18-08-q2@2: A national survey of 40,000 finds a statistically sign
 SEQ2#sociology-u18-08-q3@2: Put the steps of a hypothesis test in order. | State H0 and H1 ; Choose α and a test ; Calculate the statistic and p-value ; Decide and interpret | Testing moves from hypotheses to decision and interpretation.
 M3#sociology-u18-08-q4@3: A significant association is found between living in social housing and poor health. What can't the test show? | That social housing causes poor health | That the association is unlikely by chance | That H0 is rejected | That the samples differ | Significance doesn't establish causation; poverty may explain both.
 SA3#sociology-u18-08-q5@2,3: State hypotheses and explain how you would test whether men and women differ in hours of unpaid housework, and the limits of the test. | H0: no difference in mean weekly housework hours between men and women; H1: a difference. Use an independent t-test (or Mann–Whitney if skewed), α = .05; report means, t, p, effect size and CI. Limits: significance isn't importance; correlational (no causal claim about gender roles); sample representativeness; self-report bias. | Hypotheses ; Test choice ; Reporting ; Effect size ; Limits
+M2#sociology-u18-08-q6@1: What is the null hypothesis? | That there is no effect or no difference | That the experimental hypothesis is true | That the sample is biased | That the data are normally distributed | Tests ask how likely the data are if the null hypothesis were true.
 ## Statistical significance
 LV: Intermediate · Evaluation
 S: Statistical significance tells us whether a result would be surprising if there were no real effect, not whether it matters. This lesson explains p-values, significance levels and the difference between statistical and substantive significance in social research.
@@ -317,6 +332,9 @@ P: **Substantive significance** asks whether a difference matters sociologically
 X: Two findings, two kinds of significance
 > A survey of 30,000 finds that people in one region report life satisfaction 0.05 points higher on a 0–10 scale, p = .01: statistically significant, substantively trivial.
 > A study of 60 people finds a 15-point difference in the percentage who feel safe at night between two estates, p = .20: not significant, but potentially important and worth a larger study.
+P: **Investigate with the lab.** Enter a two-by-two table and read the chi-square result, then run the hypothesis-test simulator.
+IX: crosstab
+IX: hypothesis-test
 K: Statistical significance concerns chance, not importance; always report and interpret the size of effects.
 P: Multiple testing is another trap: if a report tests 40 associations at α = .05, about two will be "significant" by chance even if no real associations exist.
 !: Interpreting "not significant" as "no difference". It may mean the study was too small to detect one.
@@ -335,6 +353,7 @@ M2#sociology-u18-09-q2@2: A report tests 60 associations and finds 3 significant
 TF2#sociology-u18-09-q3@3: A non-significant result shows there is no difference in the population. | false | It may reflect a small sample or small effect; absence of evidence isn't evidence of absence.
 M3#sociology-u18-09-q4@3: Why should a sociologist report percentage-point differences, not just p-values? | They show how large and important differences are | They remove the need for samples | They are always significant | p-values show effect sizes already | Effect sizes convey substantive importance, which p-values don't.
 SA3#sociology-u18-09-q5@3: Evaluate the use of statistical significance in sociological research. | Useful for judging whether patterns exceed sampling chance. Limits: says nothing about importance; large samples make trivial effects significant; small samples miss real effects; multiple testing; misread as proof or causation; less meaningful for population data. Report effect sizes and CIs. | Purpose ; Large-sample problem ; Small-sample problem ; Multiple testing or misreading ; Remedy
+M2#sociology-u18-09-q6@1: What does a statistically significant result mean? | The result is unlikely if the null hypothesis were true | The result is important in practice | The effect is very large | The study was well designed | Significance concerns probability, not importance.
 
 ## Confidence intervals
 LV: Intermediate · Application
@@ -351,6 +370,8 @@ X: Interval for a survey estimate (illustrative figures)
 > 95% CI ≈ 36% ± 3.1 points, about 32.9% to 39.1%.
 H: Comparing groups
 P: For a difference between two groups (say, trust among young and old adults), calculate the confidence interval for the **difference**. If it excludes zero, the difference is significant at the 5% level. Two separate intervals that overlap slightly can still correspond to a significant difference, so comparing overlap is only a rough guide.
+P: **Investigate with the lab.** Generate data and read the confidence interval for the mean, then increase the sample size.
+IX: stats-describe
 K: Confidence intervals show how precise an estimate is, combining the size of a figure with its uncertainty.
 P: Official statistics increasingly publish confidence intervals: the ONS, for example, reports them for many survey-based estimates such as the Labour Force Survey, so changes can be judged against uncertainty.
 !: Treating overlapping intervals as proof of no difference. Calculate the interval for the difference itself.
@@ -369,6 +390,7 @@ NUM2#sociology-u18-10-q2@2: A survey estimate is 50% with a standard error of 2 
 M2#sociology-u18-10-q3@2: The 95% CI for the difference in support between two age groups is −2 to +8 points. What does this suggest? | The difference isn't clearly different from zero | One group definitely supports more | The groups are identical | The survey was invalid | An interval including zero is compatible with no difference.
 M3#sociology-u18-10-q4@3: Why are confidence intervals more informative than "significant or not"? | They show size and uncertainty | They are always narrower | They remove sampling error | They prove causation | Intervals convey magnitude and precision together.
 SA2#sociology-u18-10-q5@2,3: A sample of 400 finds 20% have used a payday loan. Calculate and interpret an approximate 95% CI. | SE = √(0.2 × 0.8 ÷ 400) = √0.0004 = 0.02; CI ≈ 20% ± 3.9 points, about 16.1% to 23.9%. The population figure plausibly lies in this range, assuming random sampling; non-response and question wording could add bias not captured here. | SE ; Interval ; Interpretation ; Bias caveat
+M2#sociology-u18-10-q6@1: What happens to a confidence interval as the sample size increases? | It becomes narrower | It becomes wider | It stays the same | It disappears | Larger samples give more precise estimates.
 
 ## Effect sizes
 LV: Intermediate · Application
@@ -387,6 +409,8 @@ X: Percentage points or per cent? (illustrative figures)
 > That is a fall of 3 percentage points, or a 10% relative fall (3 ÷ 30).
 > Reporting both avoids confusion; headlines often mix them up.
 P: Effect sizes are also needed for comparing studies and for meta-analysis, where results from different surveys are combined.
+P: **Investigate with the lab.** Compare studies with small and large effects and see how sample size affects significance.
+IX: hypothesis-test
 K: Effect sizes describe how large differences and associations are; percentage points, ratios and odds ratios each answer slightly different questions.
 H: Interpreting effects
 P: Whether an effect is large depends on context: a 1-point fall in unemployment affects hundreds of thousands of people nationally. Relative measures can make small absolute changes sound dramatic ("doubling" from 1% to 2%), so absolute and relative figures should be reported together.
@@ -407,6 +431,7 @@ NUM2#sociology-u18-11-q2@2: A probability of 0.8 gives what odds? | 4 | 0.01 | t
 M2#sociology-u18-11-q3@2: A headline says "risk doubles" when a rate rises from 0.5% to 1%. What should be added? | The absolute change is 0.5 percentage points | The risk is now 50% | The study proves causation | Nothing, the headline is complete | Absolute figures show the small size of the change.
 M3#sociology-u18-11-q4@3: Why do mobility researchers use odds ratios rather than simple percentages? | They capture relative chances | They are always larger | They avoid the need for data | They measure absolute mobility only | Odds ratios capture relative fluidity even as the size of classes changes.
 SA2#sociology-u18-11-q5@1,2: 60% of children from professional families and 20% from routine-occupation families go to university. Calculate the percentage-point difference, the ratio and the odds ratio, and interpret them. | Difference 40 points; ratio 3; odds 1.5 versus 0.25, odds ratio 6. Children from professional families are three times as likely, and have six times the odds, of going to university: a large inequality in relative chances. | Difference ; Ratio ; Odds ratio ; Interpretation
+M2#sociology-u18-11-q6@1: Why can a tiny effect be statistically significant? | With a very large sample, even small differences can reach significance | Tiny effects are always significant | Significance measures effect size directly | Small effects remove all error | Effect sizes show whether a significant difference matters.
 
 ## Correlation
 LV: Intermediate · Application
@@ -424,6 +449,8 @@ X: A country-level correlation
 > Across 22 countries in the World Bank data, GDP per head and life expectancy are strongly positively correlated.
 > This doesn't show that richer individuals within a country live longer by the same amount, nor that income alone causes longer lives.
 > Health systems, education and public health differ between countries too.
+P: **Investigate with the lab.** Explore Anscombe's quartet and see that four very different patterns share the same r.
+IX: correlation
 K: Correlation measures association; causal claims need more evidence, and group-level correlations don't describe individuals.
 H: The ecological fallacy
 P: Robinson (1950) showed that correlations between percentages across US states (such as being foreign-born and literacy) could differ in size and even sign from correlations between the same characteristics among individuals. Inferring individual relationships from aggregate data is the **ecological fallacy**.
@@ -443,6 +470,7 @@ M2#sociology-u18-12-q2@2: Across local authorities, areas with more food banks h
 TF2#sociology-u18-12-q3@3: A country-level correlation between inequality and crime shows that unequal individuals commit more crime. | false | Group-level patterns don't describe individuals: that is the ecological fallacy.
 M3#sociology-u18-12-q4@3: Which design would best test whether area deprivation affects individuals' health? | Individual data with area measures | A correlation of area averages only | A single case study of one person | A content analysis of newspapers | Multilevel individual data can separate area and individual effects.
 SA3#sociology-u18-12-q5@3: Evaluate the use of country-level correlations to support claims about inequality and social problems. | Useful for identifying patterns (Wilkinson and Pickett). Limits: correlation not causation; confounders (welfare, culture, history); choice of countries and measures; ecological fallacy for individual claims; few cases. Need individual-level and longitudinal evidence. | Pattern value ; Causation ; Confounders ; Ecological fallacy ; Better evidence
+M2#sociology-u18-12-q6@1: What does Anscombe's quartet show? | Very different data sets can have the same correlation, so plot the data | Correlation always proves causation | All data sets with the same mean are identical | Outliers never affect correlation | Summary statistics can hide very different patterns.
 
 ## Regression
 LV: Intermediate · Application
@@ -459,6 +487,8 @@ X: Estimating the gender pay gap
 > Interpretation: part of the raw gap reflects differences in occupation and hours; the rest isn't explained by these variables. Whether occupational differences are themselves the result of discrimination is a sociological question the model can't answer.
 H: Logistic regression
 P: When the outcome is categorical (voted or not, employed or not), **logistic regression** models the odds of the outcome. Coefficients are often reported as **odds ratios**: an odds ratio of 2 for graduates means graduates' odds of voting are twice non-graduates', holding other variables constant.
+P: **Investigate with the lab.** Add your own points and watch the regression line and R² respond.
+IX: correlation
 K: Regression estimates how outcomes vary with predictors, holding others constant; logistic regression does this for categorical outcomes using odds ratios.
 H: Cautions
 P: "Controlling for" a variable is statistical, not experimental: unmeasured confounders remain. Controlling for variables that are themselves outcomes of the main predictor (such as occupation in the pay gap) can hide part of the effect of interest. Models should be guided by theory.
@@ -479,6 +509,7 @@ NUM2#sociology-u18-13-q2@2: Using ŷ = 8 + 1.5x, predict hourly pay in pounds fo
 M2#sociology-u18-13-q3@2: A logistic regression gives an odds ratio of 0.5 for renters owning a car compared with owners. What does this mean? | Renters' odds are half owners' | Renters are half as many | Renters never own cars | The model is invalid | An odds ratio below 1 means lower odds in that group.
 M3#sociology-u18-13-q4@3: Why might controlling for occupation underestimate the effect of gender on pay? | Occupation may itself be shaped by gender | Occupation has no effect on pay | It always overestimates the effect | Controls remove all confounding | Controlling for a variable on the causal path hides part of the effect.
 SA3#sociology-u18-13-q5@2,3: Explain how regression can be used to study the ethnicity pay gap, and the limits of the analysis. | Regress hourly pay on ethnicity, then add controls (age, qualifications, region, hours, occupation) to see how much of the raw gap remains. Limits: unmeasured factors; controls may be outcomes of discrimination (occupational segregation); measurement of ethnicity; correlational; interpretation needs theory. | Model ; Controls ; Interpretation of change ; Mediator problem ; Other limits
+M2#sociology-u18-13-q6@1: What does a regression line allow you to do? | Predict one variable from another | Prove that one variable causes another | Measure the spread of one variable | Count categories in a table | The line models the relationship for prediction.
 
 ## Categorical data
 LV: Intermediate · Application
@@ -683,6 +714,8 @@ X: Using World Bank data for 2023
 > United Kingdom: about 10 births and 9.5 deaths per 1,000, natural increase under 0.1% a year.
 > Japan: about 6 births and 13 deaths per 1,000: natural decrease.
 P: Demographers project future populations by applying assumptions about fertility, mortality and migration to the current age structure; projections are scenarios, not forecasts.
+P: **Investigate with the lab.** Compare the age–sex pyramids for 1960, 1990 and 2023, and name each shape.
+IX: pyramids
 K: Demographic rates describe how populations grow and age; crude rates must be interpreted alongside age structure.
 H: Why age structure matters
 P: Crude rates depend on age structure as well as behaviour. Japan's crude death rate is higher than Nigeria's not because health is worse, but because a much larger share of its population is old. **Age-standardised** rates and life expectancy remove this effect. Population change also depends on **migration**: the UK's population has grown mainly through net migration in recent decades.
@@ -703,6 +736,7 @@ NUM2#sociology-u18-19-q2@2: A country has a crude birth rate of 18 and a crude d
 M2#sociology-u18-19-q3@2: Japan's crude death rate is higher than Nigeria's. What is the best explanation? | Japan has a much older population | Japan's healthcare is worse | Nigeria has no deaths | Crude rates measure health directly | Age structure, not health, drives the difference.
 M3#sociology-u18-19-q4@3: The UK's natural increase is near zero, yet its population has grown. Why? | Net migration has added to the population | Death rates are negative | The census is wrong | Fertility is above replacement | Population change depends on migration as well as natural change.
 SA2#sociology-u18-19-q5@2,3: Using the 2023 figures for Nigeria and Japan, explain what their birth and death rates suggest about population structure and change. | Nigeria: high births (about 33) and lower deaths (about 12), natural increase about 2.1% a year, a young population (about 41% under 15) and rapid growth. Japan: low births (about 6) and higher deaths (about 13), natural decrease, an old population (about 29% aged 65+). Crude rates reflect age structure as well as behaviour. | Nigeria ; Japan ; Natural increase ; Age structure ; Interpretation
+M2#sociology-u18-19-q6@1: What does a population pyramid with a narrow base and wide top show? | An ageing population with low birth rates | A rapidly growing young population | Equal numbers at every age | A population after a baby boom | Few births and longer lives create a top-heavy pyramid.
 
 ## Census data
 LV: Introductory · Application

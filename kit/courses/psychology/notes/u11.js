@@ -22,6 +22,8 @@ X: Classifying a questionnaire study
 > Agreement rated 1 (strongly disagree) to 5 (strongly agree): ordinal for a single item.
 > Total anxiety score summed across 20 items: often treated as interval.
 > Minutes spent on social media: ratio.
+P: **Investigate with the lab.** Enter counts into a two-by-two table and see that chi-square works with nominal data.
+IX: crosstab
 K: Nominal, ordinal, interval and ratio data carry increasing information, and the level determines which averages and tests are appropriate.
 H: Grey areas
 P: Whether summed rating scales can be treated as interval data is debated. Many researchers analyse them with parametric tests, arguing the results are robust; others insist on non-parametric methods for anything built from ordinal items.
@@ -42,6 +44,7 @@ M2#psychology-u11-01-q2@2: A researcher records which of four therapy types each
 MATCH1#psychology-u11-01-q3@1: Match each variable to its level of measurement. | Blood type = Nominal ; Position in a race = Ordinal ; Temperature in Celsius = Interval ; Number of words recalled = Ratio | NOIR orders the levels by the information they carry.
 M3#psychology-u11-01-q4@3: Why is the level of measurement relevant to choosing between a t-test and a Mann–Whitney test? | Parametric tests assume at least interval data | Non-parametric tests need ratio data | The t-test is only for nominal data | The level makes no difference to test choice | Ordinal data suit non-parametric tests; interval or ratio data allow parametric tests if other assumptions hold.
 SA2#psychology-u11-01-q5@2,3: Classify four variables from a study of exam stress by level of measurement and say which average suits each. | Year group (nominal or ordinal), mode or median; stress rating on a single 1–5 item (ordinal), median; total score on a 20-item stress scale (treated as interval), mean; hours of sleep (ratio), mean. Note the debate over summed scales. | Four variables classified ; Correct levels ; Matching averages ; Grey area noted
+M2#psychology-u11-01-q6@1: Which level of measurement is data on whether people did or didn't help? | Nominal | Ordinal | Interval | Ratio | Categories with no order are nominal, which suits chi-square.
 
 ## Measures of central tendency
 LV: Introductory · Foundation
@@ -98,6 +101,8 @@ X: Calculating a sample SD
 > Deviations: −4, −2, 0, 2, 4. Squared: 16, 4, 0, 4, 16. Sum = 40.
 > Sample variance = 40 ÷ (5 − 1) = 10. SD = √10 ≈ 3.16.
 > A typical score lies about 3 points from the mean.
+P: **Investigate with the lab.** Generate a data set and compare its range and standard deviation; then add an outlier.
+IX: stats-describe
 K: The standard deviation is the typical distance of scores from the mean; the IQR is a robust alternative for skewed data.
 H: Interpreting spread
 P: Two groups can have the same mean but very different spreads. If therapy group A has a mean anxiety score of 20 (SD 2) and group B 20 (SD 8), group A responded consistently while group B varied widely. In roughly normal data, about 68% of scores fall within 1 SD of the mean and about 95% within 2 SDs.
@@ -119,6 +124,7 @@ NUM2#psychology-u11-03-q2@2: Calculate the sample variance of 1, 3, 5. | 4 | 0.0
 M2#psychology-u11-03-q3@2: Two classes have the same mean test score, but class A has SD 3 and class B has SD 12. What does this show? | Class B's scores are much more spread out | Class B scored higher on average | Class A has more students | The tests were different | Same mean, larger SD means more variable scores.
 M3#psychology-u11-03-q4@3: Why divide by n − 1 when calculating sample variance? | A sample tends to underestimate population spread | It makes calculations quicker | It removes outliers automatically | It converts the units back to the original scale | n − 1 corrects the bias of using the sample mean.
 SA2#psychology-u11-03-q5@1,2: Calculate the mean and sample SD of 5, 7, 9, 11, 13, and interpret the SD. | Mean = 45 ÷ 5 = 9; deviations −4, −2, 0, 2, 4; squares sum to 40; variance = 40 ÷ 4 = 10; SD ≈ 3.16. A typical score lies about 3 points from the mean. | Mean ; Squared deviations ; Variance with n − 1 ; SD ; Interpretation
+M2#psychology-u11-03-q6@1: Which measure of dispersion is most affected by one extreme score? | The range | The standard deviation | The interquartile range | The median | The range uses only the highest and lowest values.
 
 ## Distributions: normal, skew and kurtosis
 LV: Intermediate · Application
@@ -140,6 +146,8 @@ X: Comparing two test results
 > She scores 70 in English (mean 60, SD 20): z = 0.5.
 > Relative to classmates, her maths result is better, though the raw English score is higher.
 IX: psychometrics
+P: **Investigate with the lab.** Generate skewed data and see where the mean, median and mode fall.
+IX: stats-describe
 K: The normal distribution is symmetrical with known proportions within each SD; skew pulls the mean towards the tail; z-scores standardise values.
 !: Assuming all psychological data are normal. Reaction times, counts and many clinical measures are skewed.
 EV: established | About 95% of values in a normal distribution lie within 1.96 standard deviations of the mean.
@@ -158,6 +166,7 @@ NUM2#psychology-u11-04-q2@2: A score of 130 on a test with mean 100 and SD 15 ha
 M2#psychology-u11-04-q3@2: Most students score highly on an easy test, with a few low scores. The distribution is… | Negatively skewed | Positively skewed | Normal | Bimodal | A tail of low scores to the left is negative skew.
 M3#psychology-u11-04-q4@3: Why are reaction times usually positively skewed? | A floor on speed, but no ceiling on slow lapses | They are nominal data | Participants respond at random | The mean is always zero | There is a floor on how fast people can respond but no ceiling on lapses.
 SA2#psychology-u11-04-q5@2,3: A student scores 72 in psychology (mean 60, SD 8) and 81 in biology (mean 75, SD 12). Which is the better relative performance? | Psychology z = (72 − 60) ÷ 8 = 1.5; biology z = (81 − 75) ÷ 12 = 0.5. The psychology result is better relative to the class, despite the lower raw score. | Psychology z ; Biology z ; Comparison ; Interpretation
+M2#psychology-u11-04-q6@1: In a positively skewed distribution, which is usually largest? | The mean | The median | The mode | They are all equal | The long tail of high scores pulls the mean upwards.
 
 ## Data visualisation
 LV: Introductory · Application
@@ -179,6 +188,8 @@ X: Two bar charts, one story
 > Group A: all participants score 50. Group B: half score 20, half score 80.
 > Both have a mean of 50, so the bar chart looks identical.
 > A dot plot reveals that Group B is split into two clusters, which may matter more than the mean.
+P: **Investigate with the lab.** Paste in a data set and look at its histogram; then think about which graph suits each kind of data.
+IX: stats-describe
 K: Choose graphs that match the data and show distributions, not just means; always check scales and axes.
 H: How graphs mislead
 P: Truncated y-axes exaggerate small differences; missing error bars hide uncertainty; 3D effects distort size; and cherry-picked time ranges create false trends. Readers should check axis labels, scales and what the bars or error bars represent.
@@ -199,6 +210,7 @@ M2#psychology-u11-05-q2@2: A bar chart's y-axis runs from 48 to 52, making a dif
 TF2#psychology-u11-05-q3@3: Two data sets with the same mean, SD and correlation must look the same on a scatterplot. | false | Anscombe's quartet shows identical statistics with very different patterns.
 M3#psychology-u11-05-q4@3: Why do critics argue against bar charts of means for continuous data? | They hide distributions, outliers and sample size | They are hard to draw | They can't show more than two groups | They always use a truncated axis | Plotting points or distributions reveals what bars conceal.
 SA2#psychology-u11-05-q5@2,3: Describe how you would visualise reaction times in two conditions and explain your choice. | Use box plots or violin plots with individual points for each condition: they show medians, spread, skew (reaction times are usually positively skewed) and outliers, unlike a bar chart of means. Label axes with units, start at a sensible value and show sample sizes. | Graph choice ; Shows distribution ; Skew or outliers ; Labelling and scales
+M2#psychology-u11-05-q6@1: Which graph suits continuous data such as reaction times? | A histogram | A bar chart of categories | A pie chart | A scattergram of one variable | Histograms show the distribution of continuous data.
 
 ## Probability
 LV: Introductory · Foundation
@@ -400,6 +412,8 @@ X: Calculating Cohen's d
 > Therapy group mean wellbeing = 60; control = 54; pooled SD = 12.
 > d = (60 − 54) ÷ 12 = 0.5: a medium effect by Cohen's benchmarks.
 > The average person in the therapy group scores higher than about 69% of the control group.
+P: **Investigate with the lab.** Run studies with small and large effects and compare their p-values and effect sizes.
+IX: hypothesis-test
 K: Effect sizes measure how large an effect is, independent of sample size, and should be interpreted in context rather than only by benchmarks.
 H: Context matters
 P: Cohen intended his benchmarks as a last resort. A "small" effect of a cheap intervention delivered to millions may matter a lot; a "large" effect in a tiny, uncontrolled study may be inflated. Many real effects in psychology are smaller than the benchmarks suggest.
@@ -420,6 +434,7 @@ NUM2#psychology-u11-11-q2@2: Group means are 25 and 19, with a pooled SD of 4. C
 M2#psychology-u11-11-q3@2: A cheap reading intervention used nationally has d = 0.15. How should this be judged? | Small but valuable at scale | Useless because it is below 0.2 | Large because it is significant | Impossible to interpret | Small effects can matter at scale; context determines importance.
 M3#psychology-u11-11-q4@3: Why might effect sizes from small published studies be overestimates? | Only inflated effects reach significance | Small studies always measure badly | Effect sizes increase with sample size | Large studies are never published | Publication bias and the winner's curse inflate published effects from small studies.
 SA2#psychology-u11-11-q5@2,3: Calculate and interpret Cohen's d for a study where mindfulness participants score 32 on stress and controls 38, with pooled SD 10. | d = (38 − 32) ÷ 10 = 0.6 (stress lower in the mindfulness group): a medium-to-large effect by Cohen's benchmarks. Interpretation depends on context: cost, durability, sample size and whether the study was well controlled; small studies may overestimate. | Calculation ; Direction ; Benchmark ; Context ; Caution
+M2#psychology-u11-11-q6@1: Why report an effect size as well as a p-value? | It shows how large the effect is, not just whether it is significant | It replaces the need for a sample | It proves the effect is causal | It makes the result significant | With large samples, tiny effects can be significant; effect size shows their importance.
 
 ## Statistical power
 LV: Intermediate · Application
@@ -477,6 +492,8 @@ X: Which error matters more?
 > Claiming a new therapy works: a Type I error could lead to an ineffective therapy being adopted.
 > The acceptable balance depends on the costs of each mistake.
 P: Preregistering a primary outcome, and treating other outcomes as secondary, is a simple way to stop false positives from accumulating across many measures.
+P: **Investigate with the lab.** Run a thousand studies with no real effect and count how often p falls below 0.05.
+IX: hypothesis-test
 K: Type I errors are false positives (controlled by α); Type II errors are false negatives (controlled by power); there is a trade-off for a fixed sample.
 !: Thinking a significant result means a Type I error is impossible. At α = .05, about 1 in 20 tests of true nulls will be significant by chance.
 EV: established | Testing many hypotheses at α = .05 raises the chance of at least one false positive.
@@ -495,6 +512,7 @@ NUM2#psychology-u11-13-q2@2: Five tests are run with a Bonferroni correction for
 M2#psychology-u11-13-q3@2: A study concludes a new teaching method works, but the effect isn't real. This is… | A Type I error | A Type II error | Correct rejection | Low ecological validity | Concluding there is an effect when there isn't is a false positive: a Type I error.
 M3#psychology-u11-13-q4@3: In a study of whether a medicine causes a serious side effect, which error is most worrying? | A Type II error, missing real harm | A Type I error, a false alarm | Neither type of error | Errors in the literature review | Missing real harm could put patients at risk, so high power matters.
 SA2#psychology-u11-13-q5@2,3: Explain the trade-off between Type I and Type II errors and how researchers can reduce both. | Lowering α reduces false positives but, for a fixed sample, raises the chance of missing real effects. Increasing sample size (or reducing measurement noise) increases power, reducing Type II errors without raising α. Preregistration and multiple-comparison corrections control Type I errors across many tests. | Trade-off explained ; Sample size ; Noise or design ; Multiple comparisons ; Context of costs
+M2#psychology-u11-13-q6@1: What is a Type I error? | Rejecting the null hypothesis when it is true | Accepting the null hypothesis when it is false | Using the wrong statistical test | Choosing too small a sample | A false positive; at α = 0.05 it happens about 5% of the time when there is no effect.
 ## Correlation: Pearson and Spearman
 LV: Intermediate · Application
 S: Correlation coefficients measure the strength and direction of a relationship between two variables. This lesson explains Pearson's r and Spearman's rho, when to use each and how to test them for significance.
@@ -546,6 +564,8 @@ X: Predicting test scores from revision
 > Each extra hour predicts 0.6 more marks; the intercept 2.2 is the predicted score with no revision.
 > For 3.5 hours: ŷ = 2.2 + 0.6 × 3.5 = 4.3. R² = .60: the line accounts for 60% of the variance.
 P: R² in simple regression equals r² from the correlation of the same two variables, so the two analyses tell the same story about strength.
+P: **Investigate with the lab.** Add your own points and watch the regression line and R² change.
+IX: correlation
 K: Regression predicts an outcome from a predictor with ŷ = a + bx; the slope gives the change per unit, and R² the proportion of variance explained.
 H: Cautions
 P: Predictions are reliable only within the range of the data: **extrapolating** (predicting a score for 40 hours of revision) can be absurd. A regression slope doesn't show causation unless the predictor was manipulated. Residual plots should be checked for curves, outliers and uneven spread. The term "regression" comes from Galton's (1886) observation that children of very tall parents tend to be less extreme: regression towards the mean.
@@ -566,6 +586,7 @@ NUM2#psychology-u11-15-q2@2: Using ŷ = 2.2 + 0.6x, predict the score for 4 hour
 M2#psychology-u11-15-q3@2: A regression of happiness on income is based on incomes from £15,000 to £60,000. Why shouldn't it be used to predict happiness at £2 million? | That is extrapolation beyond the data | The slope would be negative | Regression can't use money | The intercept would be zero | Predictions outside the observed range may not follow the same line.
 M3#psychology-u11-15-q4@3: Pupils with the lowest test scores improve most on retest, with no intervention. What explains this? | Regression towards the mean | A strong treatment effect | Restricted range | A Type II error | Extreme scores partly reflect chance and tend to be less extreme next time.
 SA2#psychology-u11-15-q5@2,3: Interpret the regression equation ŷ = 50 − 2x, where ŷ is wellbeing score and x is hours of daily social media use. | Intercept 50: predicted wellbeing with zero hours. Slope −2: each additional hour predicts wellbeing 2 points lower. Use only within the observed range; correlational data can't show social media causes lower wellbeing; check R² for how much variance is explained. | Intercept ; Slope ; Range limitation ; Causation caution ; R² or fit
+M2#psychology-u11-15-q6@1: What does R² tell you in simple linear regression? | The proportion of variance in one variable explained by the other | The slope of the regression line | The number of data points | Whether the relationship is causal | R² of 0.64 means 64% of the variance is explained.
 
 ## Multiple regression
 LV: Advanced · Application
@@ -624,6 +645,8 @@ X: A worked example
 > Student's t(8) = 2.00, p = .081 two-tailed; Cohen's d ≈ 1.26.
 > Report: "Condition A (M = 7.0, SD = 1.58) scored higher than condition B (M = 5.0, SD = 1.58), but the difference was not significant, t(8) = 2.00, p = .081, d = 1.26." The large d with a non-significant p shows how little information five per group provides.
 P: Reporting the confidence interval for the difference between means shows the range of plausible effects, which is especially useful when p is close to .05.
+P: **Investigate with the lab.** Run an independent t-test simulation and see how sample size changes the power to detect a real difference.
+IX: hypothesis-test
 K: The independent t-test compares two group means; report t, degrees of freedom, p and an effect size, and prefer Welch's version when variances may differ.
 !: Using an independent t-test on repeated measures data. The same people in both conditions need a paired t-test.
 EV: established | Welch's t-test controls Type I errors better than Student's when group variances and sizes differ.
@@ -642,6 +665,7 @@ NUM2#psychology-u11-17-q2@2: An independent t-test compares groups of 20 and 22 
 M2#psychology-u11-17-q3@2: Which test fits comparing anxiety scores of 30 therapy clients with 30 waiting-list controls? | Independent t-test | Paired t-test | Chi-square test | Pearson's r | Two separate groups compared on an interval DV call for an independent t-test.
 M3#psychology-u11-17-q4@3: Group A has 10 participants with SD 2; group B has 40 with SD 9. Which test is most appropriate? | Welch's t-test | Student's t-test | Paired t-test | Spearman's rho | Unequal variances and group sizes make Welch's test safer.
 SA2#psychology-u11-17-q5@2,3: Report and interpret: caffeine group M = 310 ms (SD = 30), placebo M = 335 ms (SD = 32), t(58) = 3.12, p = .003, d = 0.81. | "Participants who had caffeine responded faster (M = 310 ms, SD = 30) than placebo participants (M = 335 ms, SD = 32), t(58) = 3.12, p = .003, d = 0.81." The difference is significant and large; with random allocation it suggests caffeine speeds responses; check replication and generalisation. | Report format ; Direction ; Significance ; Effect size ; Interpretation
+M2#psychology-u11-17-q6@1: When is an independent t-test appropriate? | Comparing two separate groups on interval data | Comparing the same group twice | Testing an association between categories | Comparing more than two groups at once | It compares the means of two independent groups.
 
 ## Paired t-tests
 LV: Intermediate · Application

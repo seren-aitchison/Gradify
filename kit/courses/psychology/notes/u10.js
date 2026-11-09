@@ -60,6 +60,8 @@ X: Writing hypotheses for a caffeine study
 > Directional: participants who drink 200 mg of caffeine will have faster mean reaction times than those who drink a placebo.
 > Non-directional: there will be a difference in mean reaction times between the caffeine and placebo conditions.
 > Null: there will be no difference in mean reaction times between the two conditions.
+P: **Investigate with the lab.** Write a directional and a non-directional hypothesis for one study in the builder.
+IX: experiment-builder
 K: A hypothesis is a precise, testable prediction naming the variables and, if justified by previous research, the direction of the effect.
 !: Writing vague hypotheses such as "caffeine affects people". A hypothesis must name the operationalised variables and the predicted relationship.
 EV: established | Hypotheses must be specific and testable to be evaluated with data.
@@ -77,6 +79,7 @@ M2#psychology-u10-02-q2@2: Several studies show exercise improves mood. Which hy
 MATCH1#psychology-u10-02-q3@1: Match each statement to its type. | There will be no relationship between age and reaction time = Null hypothesis ; Older people will react more slowly = Directional hypothesis ; Age will be related to reaction time = Non-directional hypothesis ; To investigate age and reaction time = Aim | Aims are general; hypotheses are testable predictions.
 M3#psychology-u10-02-q4@3: Why is a non-directional hypothesis sometimes preferred? | It can detect an effect in either direction | It always gives more significant results | It is easier to write than a directional one | It avoids the need for a null hypothesis | With no clear previous direction, a two-tailed test can detect effects either way.
 SA2#psychology-u10-02-q5@2,3: Write a directional, a non-directional and a null hypothesis for a study of music and concentration, and justify which you would use. | Directional: students revising in silence will score higher on a comprehension test than students revising with lyrical music. Non-directional: there will be a difference in comprehension scores between the conditions. Null: there will be no difference. Justification depends on previous research; if evidence consistently shows lyrical music impairs comprehension, use the directional hypothesis. | Directional ; Non-directional ; Null ; Operationalised variables ; Justification
+M2#psychology-u10-02-q6@1: What does a directional hypothesis do? | Predicts the direction of the effect | Predicts that there will be no effect | Predicts any difference without saying which way | Describes the sample | A directional, one-tailed hypothesis states which way the difference will go.
 
 ## Operationalisation
 LV: Introductory · Application
@@ -97,6 +100,8 @@ X: Operationalising aggression in children
 > Option 2: teacher ratings on a standard aggression scale. Covers everyday behaviour, but depends on teachers' judgement.
 > Using both and comparing them gives a better picture than either alone.
 P: Manipulated variables need operationalising too: "sleep deprivation" might mean staying awake for 24 hours under supervision, and "positive mood" might mean watching a five-minute comedy clip.
+P: **Investigate with the lab.** Turn each study's vague variables into measurable ones.
+IX: experiment-builder
 K: Operationalisation makes concepts measurable; every operational definition captures only part of the concept, so the choice shapes the conclusions.
 !: Treating the measure as if it were the concept. A memory test score measures performance on that test, not "memory" in every sense.
 EV: established | Different operational definitions of the same concept can produce different results.
@@ -114,6 +119,7 @@ M2#psychology-u10-03-q2@2: Which is the most precise operationalisation of "help
 TF2#psychology-u10-03-q3@3: Every operational definition captures the whole of the concept it measures. | false | Each captures part of a construct, which is why using several measures can help.
 M3#psychology-u10-03-q4@3: Why might two studies of "anxiety" reach different conclusions? | They may have operationalised anxiety differently | Anxiety can't be studied scientifically | Both studies must have made errors | Anxiety is the same as stress | Different measures capture different aspects of a construct.
 SA3#psychology-u10-03-q5@2,3: Operationalise "social media use" for a study of sleep and evaluate your choice. | Example: minutes of screen time on social apps between 9 pm and midnight, recorded by phone usage logs for one week. Strengths: objective, precise, replicable. Limitations: misses what is done (passive versus active use), one week may not be typical, privacy concerns. | Precise operational definition ; Measurement method ; Strength ; Limitation ; Alternative or improvement
+M2#psychology-u10-03-q6@1: What does operationalising a variable mean? | Defining it in a measurable way | Changing it during the study | Removing it from the study | Testing it on animals | For example, aggression might be operationalised as the number of hits on a doll.
 
 ## Independent and dependent variables
 LV: Introductory · Foundation
@@ -130,6 +136,8 @@ X: Identifying variables
 > DV: number of words recalled.
 > Control condition: quiet.
 P: Studies can have more than two levels of an IV (0, 1 or 2 cups of coffee) or more than one IV (caffeine and time of day), which lets researchers test interactions between variables.
+P: **Investigate with the lab.** Identify the independent and dependent variables in each study in the builder.
+IX: experiment-builder
 K: The IV is manipulated by the researcher; the DV is measured. Changing only the IV, while controlling everything else, is what lets experiments show cause and effect.
 H: Why manipulation matters
 P: If the researcher changes the IV and holds other variables constant, then any difference in the DV can be attributed to the IV. In correlational studies, nothing is manipulated, so causal conclusions aren't possible. Some variables, such as age or sex, can't be manipulated; studies comparing such groups are **quasi-experiments**.
@@ -150,6 +158,7 @@ M2#psychology-u10-04-q2@2: Researchers give participants 0, 1 or 2 cups of coffe
 MATCH1#psychology-u10-04-q3@2: Match each part of a study on exercise and mood to its role. | Exercise or rest = Independent variable ; Mood score after 30 minutes = Dependent variable ; Rest group = Control condition ; Room temperature kept the same = Controlled variable | Only the IV is changed; the DV is measured; other variables are held constant.
 M3#psychology-u10-04-q4@3: Why can't a study comparing men's and women's memory be a true experiment? | Sex can't be randomly assigned, so the IV isn't manipulated | Memory can't be measured | Men and women can't be tested together | It has no dependent variable | Without manipulation and random allocation, group differences could reflect other factors.
 SA2#psychology-u10-04-q5@1,2: Identify the IV, its levels and the DV in a study of your own design, and explain how you would control one extraneous variable. | Example: IV: revision method (self-testing or rereading); DV: score on a 20-item quiz a week later. Control: same material and study time for both groups; random allocation of participants. | IV ; Levels ; DV ; Controlled variable
+M2#psychology-u10-04-q6@1: In an experiment on whether caffeine affects reaction time, what is the dependent variable? | Reaction time | Caffeine dose | The number of participants | The time of day | The DV is what is measured; the IV is what is changed.
 
 ## Confounding variables
 LV: Intermediate · Application
@@ -168,6 +177,8 @@ X: Spotting a confound
 > A teacher compares a new reading scheme (used in the morning class) with the old one (afternoon class).
 > The morning class reads better.
 > Time of day varies with the scheme, so alertness, not the scheme, might explain the result: a confound.
+P: **Investigate with the lab.** Spot the confounding variables in each study design and choose a control for each.
+IX: experiment-builder
 K: A confound varies systematically with the IV and provides an alternative explanation; control techniques aim to remove or balance such variables.
 H: Control techniques
 - **Random allocation** spreads participant variables evenly across conditions.
@@ -191,6 +202,7 @@ M2#psychology-u10-05-q2@2: Volunteers who chose a mindfulness course score lower
 TF2#psychology-u10-05-q3@2: Demand characteristics are cues that may reveal a study's aim to participants. | true | Orne (1962) argued participants try to work out and fulfil (or resist) the study's purpose.
 M3#psychology-u10-05-q4@3: Rosenthal and Fode told students their rats were "bright" or "dull" (they were the same). The "bright" rats learned faster. What does this show? | Experimenter expectations can bias results, so blinding matters | Rats differ greatly in intelligence | Students are better trainers than professors | Random allocation is unnecessary | Expectations changed handling and scoring; double-blind procedures guard against this.
 SA3#psychology-u10-05-q5@2,3: Identify the confound in a study of your choice and explain how to redesign it to remove it. | Example: comparing a new reading scheme in a morning class with an old one in an afternoon class confounds scheme with time of day. Redesign: randomly allocate pupils to schemes within the same sessions, standardise teaching and timing, and keep assessors blind to condition. | Identifies confound ; Explains why it is a confound ; Random allocation ; Standardisation or blinding ; Effect on conclusions
+M2#psychology-u10-05-q6@1: What is a confounding variable? | A variable other than the IV that varies with it and affects the DV | The variable the researcher deliberately changes | The variable that is measured | A variable that has no effect at all | Confounds make it unclear whether the IV caused the change.
 
 ## Experimental design
 LV: Intermediate · Application
@@ -210,6 +222,8 @@ X: Choosing a design
 > Repeated measures would control big individual differences in reading speed, with counterbalanced order and different passages of equal difficulty.
 > Independent groups would avoid participants guessing the aim but need more people.
 P: Whichever design is used, random allocation (for independent groups) or random ordering (for repeated measures) should still be used where possible.
+P: **Investigate with the lab.** Choose a design for each study and justify it: independent groups, repeated measures or matched pairs.
+IX: experiment-builder
 K: The choice of design trades off participant variables against order effects and practicality.
 !: Saying repeated measures has "no participant variables". It controls differences between conditions, but participants still differ from one another.
 EV: established | Counterbalancing distributes order effects equally across conditions.
@@ -228,6 +242,7 @@ M2#psychology-u10-06-q2@2: Participants recall more words in the second conditio
 MATCH2#psychology-u10-06-q3@1,2: Match each design to a strength. | Independent groups = No order effects ; Repeated measures = Controls participant variables ; Matched pairs = Reduces participant variables without order effects ; Counterbalanced repeated measures = Balances practice and fatigue | Each design addresses different threats.
 M3#psychology-u10-06-q4@3: When is a matched pairs design most worth the effort? | When a key participant variable must be balanced | When participants are easy to find in large numbers | When there are no participant variables at all | When the IV can't be manipulated | Matching targets a key variable without the order effects of repeated measures.
 SA3#psychology-u10-06-q5@3: Choose and justify a design for testing whether music impairs revision. | Repeated measures with counterbalancing and two equivalent sets of material controls large individual differences in memory; order effects handled by ABBA or half-and-half orders. Alternatively independent groups with random allocation avoids practice and demand effects but needs more participants. Justify by weighing participant variables against order effects and practicality. | Names design ; Justification ; Control of order effects ; Limitation ; Alternative considered
+M2#psychology-u10-06-q6@1: What is a weakness of a repeated measures design? | Order effects such as practice or fatigue | Participant variables between groups | It needs twice as many participants | It can't use a control condition | The same participants do every condition, so order can affect results.
 
 ## Laboratory experiments
 LV: Intermediate · Evaluation
@@ -751,6 +766,8 @@ X: Recruiting for a study on sleep problems
 > Opportunity sample: students in the library at 10 am, who may sleep differently from those still in bed.
 > Volunteer sample: people answering an advert about sleep, who may have more sleep problems than average.
 > Both samples could give misleading estimates of how common sleep problems are.
+P: **Investigate with the lab.** Draw repeated opportunity and volunteer samples and compare their bias with random sampling.
+IX: sampling
 K: Opportunity and volunteer samples are convenient but likely to be unrepresentative, so generalisation must be cautious.
 H: Convenience in practice
 P: Much psychological research uses university students, a convenient sample that is often WEIRD. For studying basic processes thought to be universal, this may matter less; for estimating how common something is, or for traits that vary with culture and age, it matters a great deal. Online panels widen access but bring their own biases.
@@ -770,6 +787,7 @@ M2#psychology-u10-21-q2@2: An online advert recruits people for a study of anxie
 TF2#psychology-u10-21-q3@3: Recruiting a very large volunteer sample removes self-selection bias. | false | Size reduces random error but not systematic bias.
 M3#psychology-u10-21-q4@3: When is a convenience sample of students least problematic? | When studying basic processes thought to work similarly across people | When estimating national rates of a disorder | When comparing cultures | When studying older adults' health | For universal processes it may matter less; for prevalence and cultural questions it matters a lot.
 SA3#psychology-u10-21-q5@3: Evaluate the use of opportunity and volunteer samples in psychology. | Strengths: quick, cheap, accessible, willing participants. Weaknesses: unrepresentative; researcher bias in opportunity sampling; volunteer bias; WEIRD student samples; cautious generalisation, especially for prevalence. Acceptable for some basic-process research; replication with diverse samples needed. | Strengths ; Opportunity bias ; Volunteer bias ; WEIRD ; When acceptable
+M2#psychology-u10-21-q6@1: Why are volunteer samples often biased? | Volunteers may differ systematically from non-volunteers | Volunteers are always too young | Volunteer samples are always too small | Volunteers never complete studies | Self-selection can over-represent certain kinds of people.
 
 ## Sample size
 LV: Intermediate · Application
@@ -788,6 +806,8 @@ X: Why small studies mislead
 > When such a study does find a significant result, the estimated effect is likely to be exaggerated (the winner's curse).
 > Many small studies with exaggerated effects contributed to the replication crisis (Button et al., 2013).
 P: Effect sizes for the power analysis should come from previous research or from the smallest effect that would matter in practice, rather than optimistic guesses.
+P: **Investigate with the lab.** Draw hundreds of samples of different sizes and watch the standard error shrink.
+IX: sampling
 K: Sample size should be set by power analysis; underpowered studies often miss real effects and exaggerate the ones they find.
 !: Thinking a significant result from a small sample is "even more impressive". Small significant studies are more likely to overestimate effects or be false positives.
 EV: established | About 64 participants per group are needed to detect a medium effect with 80% power (Cohen, 1992).
@@ -806,6 +826,7 @@ NUM2#psychology-u10-22-q2@2: If quadrupling the sample halves the standard error
 TF2#psychology-u10-22-q3@3: Significant results from small studies tend to overestimate the true effect size. | true | Only large chance overestimates reach significance in small studies: the winner's curse.
 M3#psychology-u10-22-q4@3: Why did low power contribute to the replication crisis? | Small studies inflated or invented effects | Large studies always find false effects | Power analysis was used too often | Replications used smaller samples | Underpowered studies inflated published effect sizes, so replications found smaller or no effects.
 SA3#psychology-u10-22-q5@3: Explain how researchers should decide on sample size and the consequences of getting it wrong. | Conduct a power analysis using the expected effect size (from previous research or the smallest effect of interest), α (.05) and desired power (80% or more). Too small: low power, missed effects, exaggerated significant effects (winner's curse), contributing to replication failures. Too large: wastes resources and exposes more participants than needed. | Power analysis inputs ; Effect size source ; Underpowered consequences ; Winner's curse ; Overpowered or ethical consideration
+M2#psychology-u10-22-q6@1: What happens to the standard error as sample size increases? | It decreases | It increases | It stays the same | It becomes negative | Standard error is proportional to 1 over the square root of the sample size.
 ## Reliability
 LV: Intermediate · Application
 S: Reliability is the consistency of a measure: whether it gives the same results under the same conditions. This lesson explains test–retest, inter-rater and internal reliability, and how each is assessed and improved.
@@ -822,6 +843,8 @@ X: Checking a new anxiety questionnaire
 > Test–retest: 50 people complete it twice, two weeks apart; scores correlate at .85.
 > Internal consistency: items correlate well with each other (alpha above .80).
 > Inter-rater: not relevant for a self-report questionnaire, but essential if clinicians rate anxiety in interviews.
+P: **Investigate with the lab.** See how a test's reliability sets the confidence band around a score.
+IX: psychometrics
 K: Reliability is consistency: across time (test–retest), across raters (inter-rater) and across items (internal consistency).
 H: Improving reliability
 P: Clearer instructions and items, standardised procedures, training raters, clearer behavioural categories and adding more good items all improve reliability. Note that a measure can be reliable but not valid: a bathroom scale that always reads 2 kg too heavy is consistent but wrong.
@@ -842,6 +865,7 @@ M2#psychology-u10-23-q2@2: Two psychologists diagnose the same 30 patients from 
 TF2#psychology-u10-23-q3@3: A measure can be reliable without being valid. | true | It can consistently measure the wrong thing.
 M3#psychology-u10-23-q4@3: Why is a very short interval a problem for test–retest reliability? | People may remember their answers, inflating consistency | The construct will have changed completely | It reduces the number of items | It makes the test less valid by definition | Memory for previous answers makes scores look more stable than the measure really is.
 SA2#psychology-u10-23-q5@2,3: Explain how you would assess and improve the reliability of a structured observation of classroom behaviour. | Assess inter-observer reliability: two observers code the same lessons independently and compare (correlation or kappa). Improve: clearer operational categories, observer training, piloting, standardised sampling (time or event). Retest agreement after changes. | Inter-observer method ; Statistic used ; Clearer categories ; Training or piloting ; Recheck
+M2#psychology-u10-23-q6@1: What does a test's reliability tell you? | How consistent its scores are | Whether it measures what it claims to | How long the test takes | How difficult the questions are | Reliability is consistency; validity is whether the test measures the right thing.
 
 ## Validity
 LV: Intermediate · Evaluation
@@ -864,6 +888,8 @@ X: Validating a new depression questionnaire
 > Predictive: high scores predict later contact with mental health services.
 > Construct: scores relate more strongly to depression measures than to anxiety measures.
 P: Validity and reliability are linked: an unreliable measure can't be valid, but a reliable one may still measure the wrong thing.
+P: **Investigate with the lab.** Judge each invented study's internal and external validity.
+IX: study-critique
 K: Valid studies show real causes (internal validity) that generalise (external validity); valid measures capture the intended construct.
 !: Treating face validity as enough. A measure that looks right can still fail to predict or relate to anything as it should.
 EV: established | Construct validity requires a pattern of evidence, not a single correlation.
@@ -882,6 +908,7 @@ M2#psychology-u10-24-q2@2: A new aptitude test correlates highly with an establi
 MATCH2#psychology-u10-24-q3@1,2: Match each threat or check to its type of validity. | A confound varies with the IV = Internal validity ; A study only used male students = Population validity ; Scores predict later job performance = Predictive validity ; A task is unlike real life = Ecological validity | Different validities concern causation, generalisation and measurement.
 M3#psychology-u10-24-q4@3: Which would most improve the ecological validity of a laboratory memory study? | Meaningful material in an everyday setting | Using more nonsense syllables | Adding a stricter time limit | Recruiting only psychology students | Realistic materials and settings increase ecological validity, possibly at some cost to control.
 SA3#psychology-u10-24-q5@3: Evaluate the validity of a laboratory study of eyewitness memory. | Internal validity: high control of verbs, random allocation. External: low ecological validity (film, no emotional stakes); population validity limited (students); temporal validity probably fine. Improvements: field studies of real witnesses, varied samples. | Internal validity ; Ecological validity ; Population validity ; Improvement ; Judgement
+M2#psychology-u10-24-q6@1: What does ecological validity concern? | Whether findings generalise to real-life settings | Whether a test is consistent over time | Whether the sample is large enough | Whether the hypothesis is directional | Highly artificial tasks may not reflect everyday behaviour.
 
 ## Generalisability
 LV: Intermediate · Evaluation
@@ -898,6 +925,8 @@ X: Testing whether a finding generalises
 > A finding: children in a US lab share more stickers with friends than strangers.
 > Generalisation test: repeat the procedure in communities in several countries with different family structures.
 > Result types: the effect may hold everywhere, vary in size, or reverse, and each tells us something.
+P: **Investigate with the lab.** Look for the study with a WEIRD sample and consider who its findings apply to.
+IX: study-critique
 K: Findings generalise only as far as the sample, setting and process allow; cross-cultural and multi-site replication tests this directly.
 H: Increasing generalisability
 P: Strategies include diverse and representative sampling, multi-site collaborations across countries (such as the Many Labs projects), field studies, and stating clearly the limits of a sample ("constraints on generality"). Not every study must be universal, but claims should match the evidence.
@@ -917,6 +946,7 @@ M2#psychology-u10-25-q2@2: A study of 40 undergraduates in one UK university fin
 TF2#psychology-u10-25-q3@3: Multi-site replications can show whether an effect varies across samples and settings. | true | Running the same procedure in many places tests how far it generalises.
 M3#psychology-u10-25-q4@3: Why does the WEIRD problem matter most for some topics more than others? | Culturally shaped processes vary more | WEIRD samples can't be tested in labs | Non-WEIRD participants can't take part in experiments | It only affects animal research | Generalisation is an empirical question that depends on whether the process varies across contexts.
 SA3#psychology-u10-25-q5@3: Evaluate the claim that psychology's findings apply to all humans. | Many findings come from WEIRD samples; some differ across cultures (illusions, fairness, self-concept); others replicate widely. Multi-site replication (Many Labs) shows variation for some effects. Conclusion: generality must be tested, not assumed; claims should state constraints. | WEIRD evidence ; Examples of variation ; Examples of robustness ; Replication evidence ; Judgement
+M2#psychology-u10-25-q6@1: What does WEIRD stand for in psychology? | Western, Educated, Industrialised, Rich, Democratic | Widely Examined, Independent, Reliable Data | Well Established In Research Designs | Western Experimental Investigations of Real Data | Many studies use samples unrepresentative of most people.
 
 ## Bias in research
 LV: Intermediate · Evaluation
@@ -938,6 +968,8 @@ X: How publication bias distorts a literature
 > Twenty small labs test an ineffective intervention; by chance one finds p < .05.
 > That one study is published; nineteen null results aren't.
 > Readers see "evidence" for the intervention that is entirely a product of selective publication.
+P: **Investigate with the lab.** Find the key flaw in each invented study and name the type of bias.
+IX: study-critique
 K: Bias is systematic error; it can enter at sampling, measurement, analysis and publication, and good design, blinding and transparency are the safeguards.
 H: Safeguards
 P: Random sampling and allocation, standardised and validated measures, single- and double-blind procedures, preregistration of hypotheses and analyses, and **registered reports**, in which journals accept studies before the results are known, all reduce bias.
@@ -958,6 +990,7 @@ M2#psychology-u10-26-q2@2: A meta-analysis includes only published studies of a 
 TF2#psychology-u10-26-q3@3: Bias, unlike random error, isn't reduced by increasing sample size. | true | Systematic error stays the same however many participants are added.
 M3#psychology-u10-26-q4@3: Which safeguard directly addresses publication bias? | Registered reports | Larger font on questionnaires | Opportunity sampling | Testing participants in groups | Accepting studies on design means null results are published too.
 SA3#psychology-u10-26-q5@3: Evaluate the main sources of bias in psychological research and how to reduce them. | Sources: sampling, measurement (social desirability), researcher expectations, participant demand, analysis (p-hacking), publication bias. Safeguards: random sampling and allocation, validated measures, blinding, preregistration, registered reports, data sharing. Some bias remains; transparency lets readers judge. | At least three sources ; Publication bias explained ; At least two safeguards ; Link between source and safeguard ; Judgement
+M2#psychology-u10-26-q6@1: What are demand characteristics? | Cues that lead participants to guess the aim and change their behaviour | Requirements for ethical approval | The demands of the experimenter's schedule | Features of the statistical test used | Participants who work out the aim may behave unnaturally.
 
 ## Replication
 LV: Intermediate · Evaluation
@@ -974,6 +1007,8 @@ X: Why might a published effect fail to replicate?
 > The original was a false positive, helped by small samples and flexible analysis.
 > The original effect was real but smaller than reported (the winner's curse).
 > Differences in sample, setting or procedure (hidden moderators) changed the effect.
+P: **Investigate with the lab.** Find the underpowered and p-hacked studies, and consider why they might not replicate.
+IX: study-critique
 K: Replication tests whether findings are reliable; large projects found many published effects were weaker than reported, prompting reforms.
 H: Responses
 P: Reforms include larger samples and power analysis, preregistration, registered reports, open data and materials, and valuing replication studies. Some researchers argue the crisis was overstated, because replications can differ in important ways from originals; others see it as science correcting itself.
@@ -994,6 +1029,7 @@ M2#psychology-u10-27-q2@2: A famous priming effect fails to replicate in a large
 TF2#psychology-u10-27-q3@1: In the Open Science Collaboration project, replication effect sizes were on average about half the original effect sizes. | true | Replications found effects roughly half as large on average.
 M3#psychology-u10-27-q4@3: Which reform most directly reduces false positives in original studies? | Preregistration with adequate power | Publishing only significant results | Using smaller samples | Avoiding replication studies | Preregistration limits analytic flexibility and power reduces chance findings.
 SA3#psychology-u10-27-q5@3: Evaluate what the replication crisis shows about psychology as a science. | Showed many effects weaker than published (OSC 2015: about 36% replicated); causes include small samples, p-hacking, publication bias, hidden moderators. Responses: preregistration, registered reports, open data, larger samples. Can be read as weakness or as self-correction; some effects robust (Many Labs). | Evidence ; Causes ; Reforms ; Robust findings ; Judgement
+M2#psychology-u10-27-q6@1: Why might a study with a small sample fail to replicate? | Low power makes significant results more likely to be chance | Small samples always give exact results | Replications always use smaller samples | Small samples remove all bias | Underpowered studies that find effects often overestimate them.
 
 ## Preregistration
 LV: Intermediate · Application

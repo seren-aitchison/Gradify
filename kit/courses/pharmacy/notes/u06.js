@@ -115,6 +115,8 @@ H: Products you'll meet
 - Glucose 5% w/v contains 50 g per litre; glucose 10% contains 100 g per litre.
 - Sodium chloride 0.9% w/v contains 9 g per litre.
 - Hydrocortisone 1% w/w cream contains 1 g in 100 g, so 30 g contains 0.3 g (300 mg).
+P: **Investigate with the lab.** Practise percentage strength calculations, converting between % w/v and mg per mL.
+IX: pharmcalc
 K: For w/v, percentage × 10 = mg/mL. Always check whether a percentage is w/v, w/w or v/v before using it.
 !: Treating a w/w cream strength as if it were w/v, or forgetting that the percentage refers to the final product, not the solvent.
 Q: What is 1% w/v in mg/mL? | 10 mg/mL
@@ -127,6 +129,7 @@ M1#pharmacy-u06-04-q1@2: What is the concentration of a 0.1% w/v solution? | 1 m
 M2#pharmacy-u06-04-q2@2: How much hydrocortisone is in 30 g of a 1% w/w cream? | 300 mg | 30 mg | 3 g | 3 mg | 1 g | 1 g per 100 g, so 30 g contains 0.3 g, which is 300 mg.
 M2#pharmacy-u06-04-q3@1: Which concentration describes grams of ingredient per 100 g? | % w/w | % w/v | % v/v | mg/mL | mmol/L | w/w (weight in weight) is used for creams, ointments and powders.
 NUM1#pharmacy-u06-04-q4@2: How many milligrams of Medicine B are in 5 mL of a 2% w/v solution? | 100 | 0 | mg | 2% w/v = 20 mg/mL; 20 × 5 = 100 mg.
+M2#pharmacy-u06-04-q5@1: How many milligrams of drug are in 1 mL of a 1% w/v solution? | 10 mg | 1 mg | 100 mg | 0.1 mg | 1% w/v means 1 g per 100 mL, which is 10 mg per mL.
 
 ## Ratio strengths and parts per million
 S: Some products describe very dilute concentrations as ratios (1 in 1,000) or parts per million. They are easy to misread, which is why adrenaline is now labelled in mg/mL in the UK, but they still appear in exams and older texts.
@@ -149,6 +152,8 @@ H: Converting between the forms
 - Ratio to percentage: divide 100 by the ratio number. 1 in 5,000 gives 0.02%.
 - ppm to percentage: divide by 10,000. 10 ppm is 0.001%.
 - Write the conversion out each time: these small numbers are where decimal-point errors happen.
+P: **Investigate with the lab.** Convert ratio strengths such as 1 in 1,000 into mg per mL and percentages.
+IX: pharmcalc
 K: For w/v ratios, 1 in 1,000 is 1 mg/mL. Each extra zero in the ratio divides the concentration by 10.
 !: Confusing 1 in 1,000 with 1 in 10,000 adrenaline: a tenfold error. Read the mg/mL strength on the label.
 Q: What is 1 in 1,000 w/v in mg/mL? | 1 mg/mL
@@ -161,6 +166,7 @@ M2#pharmacy-u06-05-q1@1: How many micrograms per mL are in a 1 in 10,000 w/v sol
 M2#pharmacy-u06-05-q2@1: What is 1 in 5,000 w/v as a percentage? | 0.02% | 0.2% | 0.002% | 2% | 0.5% | 1 g in 5,000 mL is 0.02 g in 100 mL, so 0.02%.
 M2#pharmacy-u06-05-q3@2: Why is adrenaline injection labelled in mg/mL in the UK? | Ratio strengths caused tenfold errors | Ratio strengths are illegal now | mg/mL products are more stable | It makes the injection cheaper | Ratios only apply to oral liquids | 1 in 1,000 and 1 in 10,000 were confused; mg/mL labelling reduces this.
 NUM1#pharmacy-u06-05-q4@1: How many milligrams of fluoride are in 2 litres of water containing 1 ppm fluoride? | 2 | 0 | mg | 1 ppm ≈ 1 mg per litre, so 2 litres contain 2 mg.
+M2#pharmacy-u06-05-q5@1: What is adrenaline 1 in 1,000 expressed in mg per mL? | 1 mg per mL | 0.1 mg per mL | 10 mg per mL | 1,000 mg per mL | 1 in 1,000 means 1 g in 1,000 mL, which is 1 mg per mL.
 
 ## Molarity, millimoles and milliequivalents
 S: Electrolytes and many infusions are prescribed in millimoles, not milligrams. Converting between mass and millimoles needs the molecular mass, and the valency when milliequivalents are used.
@@ -179,6 +185,8 @@ H: Milliequivalents
 - mEq = mmol × valency. Sodium and potassium are monovalent (1 mmol = 1 mEq); calcium and magnesium are divalent (1 mmol = 2 mEq).
 - UK products are labelled in mmol; mEq appears in older and international sources.
 - Concentrated potassium solutions are high-risk medicines: they are restricted, and infusions use ready-made products where possible under local policy.
+P: **Investigate with the lab.** Work through millimole calculations, converting between mass and millimoles using molecular weight.
+IX: pharmcalc
 K: mmol = mg ÷ Mr. Know which ions each formula unit releases, and multiply by the valency for mEq.
 !: Forgetting that one unit of calcium chloride releases two chloride ions, or treating mEq and mmol as the same for divalent ions.
 Q: How do you convert mg to mmol? | Divide by the relative molecular mass (Mr).
@@ -191,6 +199,7 @@ M2#pharmacy-u06-06-q1@2: About how many mmol/L of sodium are in sodium chloride 
 M3#pharmacy-u06-06-q2@2: How many mEq of calcium are in 2 mmol of calcium ions? | 4 mEq | 2 mEq | 1 mEq | 8 mEq | 0.5 mEq | Calcium is divalent: mEq = mmol × 2 = 4 mEq.
 M2#pharmacy-u06-06-q3@1: Potassium chloride has an Mr of 74.5. How many mmol of potassium are in 1 g? | About 13.4 mmol | About 74.5 mmol | About 1.34 mmol | About 7.45 mmol | About 134 mmol | 1,000 mg ÷ 74.5 = 13.4 mmol, and each unit gives one potassium ion.
 NUM2#pharmacy-u06-06-q4@2: How many millimoles of potassium are in 1.5 g of potassium chloride (Mr 74.5)? Give your answer to one decimal place. | 20.1 | 0.05 | mmol | 1,500 mg ÷ 74.5 = 20.13, so 20.1 mmol.
+M2#pharmacy-u06-06-q5@1: How many millimoles are in 5.85 g of sodium chloride (Mr 58.5)? | 100 mmol | 10 mmol | 1,000 mmol | 58.5 mmol | 5.85 g ÷ 58.5 g/mol = 0.1 mol = 100 mmol.
 
 ## Dilutions
 S: Diluting a stock solution is routine in pharmacy, from making up preparations to preparing injections. The rule is simple: the amount of drug stays the same while the volume changes.
@@ -214,6 +223,8 @@ H: In practice
 - Check the diluent is compatible (for injections, the SPC or the Injectable Medicines Guide says which diluents are suitable).
 - Label the diluted product with its final strength, not the stock strength.
 - Example: 25 mL of a 4% solution made up to 200 mL is 4 × 25 ÷ 200 = 0.5%.
+P: **Investigate with the lab.** Practise dilution calculations with C₁V₁ = C₂V₂ and check each against the worked method.
+IX: pharmcalc
 K: The amount of drug is constant in a dilution; only the volume changes. C1V1 = C2V2.
 !: Adding the diluent volume to the stock instead of making up to the final volume, or mixing percentage and mg/mL units in one equation.
 Q: What does C1V1 = C2V2 express? | The amount of drug is the same before and after dilution.
@@ -225,6 +236,7 @@ M1#pharmacy-u06-07-q1@1: You dilute 20 mL of a 5% w/v solution to 100 mL. What i
 M3#pharmacy-u06-07-q2@2: A 1 in 50 stock is diluted 1 in 10. What is the final strength? | 1 in 500 | 1 in 60 | 1 in 5 | 1 in 40 | 1 in 5,000 | Serial dilutions multiply: 50 × 10 = 500.
 M2#pharmacy-u06-07-q3@1: How much 20% w/v stock do you need for 250 mL of a 4% w/v solution? | 50 mL | 25 mL | 80 mL | 62.5 mL | 125 mL | V1 = C2 × V2 ÷ C1 = 4 × 250 ÷ 20 = 50 mL of stock, made up to 250 mL.
 NUM1#pharmacy-u06-07-q4@1: What volume of a 10% w/v stock solution is needed to make 500 mL of a 2% w/v solution? | 100 | 0 | mL | V1 = C2 × V2 ÷ C1 = 2 × 500 ÷ 10 = 100 mL.
+M2#pharmacy-u06-07-q5@1: What volume of 10% solution is diluted to make 500 mL of 2%? | 100 mL | 50 mL | 250 mL | 10 mL | C₁V₁ = C₂V₂: 10 × V₁ = 2 × 500, so V₁ = 100 mL.
 
 ## Concentrating and mixing
 S: Sometimes you need a strength between two that you have, or you mix products of different strengths. Working out the drug content of each part, or using alligation, gives the answer reliably.
@@ -308,6 +320,8 @@ X: A 70 kg adult is prescribed Medicine D 5 mg/kg. The injection contains 40 mg/
 H: Which weight?
 - Some drugs (for example certain aminoglycosides and some anaesthetic and antimicrobial drugs) are dosed on ideal or adjusted body weight in obesity: follow the BNF, SPC or local guideline for each drug.
 - The Devine formula estimates IBW: men 50 kg, women 45.5 kg, plus 2.3 kg for each inch over 5 feet.
+P: **Investigate with the lab.** Calculate weight-based doses, checking each against any maximum dose given.
+IX: pharmcalc
 K: Dose = mg/kg × the right weight, then check against the maximum. Confirm which weight the drug's guidance uses.
 !: Using an estimated or out-of-date weight, or forgetting a maximum dose for a heavy patient.
 Q: What's the Devine IBW for a man? | 50 kg plus 2.3 kg for each inch over 5 feet.
@@ -320,6 +334,7 @@ M2#pharmacy-u06-10-q1@1: Medicine D 5 mg/kg for a 70 kg adult; the injection is 
 M3#pharmacy-u06-10-q2@2: Using the Devine formula, what is the ideal body weight of a man who is 5 ft 10 in? | 73 kg | 70 kg | 61.5 kg | 66 kg | 75.5 kg | He is 10 inches over 5 feet, so IBW = 50 + (2.3 × 10) = 73 kg.
 M2#pharmacy-u06-10-q3@2: Why might a calculated mg/kg dose need capping in a heavy adult? | It can exceed the maximum dose | Heavy patients absorb less | The weight is always estimated | mg/kg doses are only for children | Body weight doesn't matter | A weight-based calculation can exceed the maximum recommended dose, which then applies.
 NUM2#pharmacy-u06-10-q4@2: Estimate the ideal body weight of a woman who is 5 ft 6 in, using the Devine formula. | 59.3 | 0.05 | kg | 45.5 + (2.3 × 6) = 59.3 kg.
+M2#pharmacy-u06-10-q5@1: A child of 20 kg needs 15 mg/kg. What is the dose? | 300 mg | 35 mg | 150 mg | 1.3 mg | Dose = weight × dose per kg = 20 × 15 = 300 mg.
 
 ## Body surface area dosing
 S: Cytotoxic chemotherapy and a few other medicines are dosed by body surface area (BSA), which tracks metabolic rate more closely than weight. BSA is calculated from height and weight, usually with the Mosteller formula.
@@ -341,6 +356,8 @@ H: Why BSA, and its limits
 - BSA tracks blood volume, metabolic rate and kidney function better than weight alone, so it's used for drugs with narrow therapeutic ranges such as cytotoxics.
 - Other formulas exist (Du Bois, Haycock for children); results differ slightly, so a unit should use one formula consistently.
 - In very obese patients, some protocols cap the BSA (for example at 2.0 m²) or use adjusted weight. Follow the local protocol and the oncology pharmacist's advice.
+P: **Investigate with the lab.** Calculate doses from body surface area and compare them with weight-based doses.
+IX: pharmcalc
 K: BSA = √(height × weight ÷ 3,600); dose = mg/m² × BSA, then apply protocol rules on banding and capping.
 !: Using height in metres or inches in the Mosteller formula, which gives a wrong BSA.
 Q: State the Mosteller formula. | BSA = √(height in cm × weight in kg ÷ 3,600)
@@ -353,6 +370,7 @@ M1#pharmacy-u06-11-q1@2: Medicine E is 75 mg/m²; the BSA is 1.6 m². What dose 
 M2#pharmacy-u06-11-q2@1: In the Mosteller formula, which units are used? | Centimetres and kilograms | Metres and kilograms | Inches and pounds | Centimetres and grams | Metres and pounds | BSA = √(height in cm × weight in kg ÷ 3,600).
 M3#pharmacy-u06-11-q3@1: What is the BSA of a person 160 cm tall weighing 90 kg? | 2.0 m² | 1.6 m² | 1.8 m² | 2.4 m² | 4.0 m² | 160 × 90 = 14,400; ÷ 3,600 = 4; √4 = 2.0 m².
 NUM2#pharmacy-u06-11-q4@1: Calculate the body surface area of a person 170 cm tall weighing 70 kg, using the Mosteller formula. Give your answer to two decimal places. | 1.82 | 0.01 | m² | √(170 × 70 ÷ 3,600) = √3.306 = 1.82 m².
+M2#pharmacy-u06-11-q5@1: A drug's dose is 100 mg/m²; the patient's BSA is 1.8 m². What is the dose? | 180 mg | 55.6 mg | 100 mg | 1.8 mg | Dose = BSA × dose per m² = 1.8 × 100 = 180 mg.
 
 ## Doses in children
 S: Children's doses come from the BNF for Children (BNFC), by age band, weight or BSA. Old rules that scale adult doses by age are unsafe, and the product and the measuring device matter as much as the number.
@@ -405,6 +423,8 @@ H: Courses that change
 - For a reducing course, add each stage: 4 tablets daily for 3 days, then 3 daily for 3 days, then 2, then 1, totals (4 + 3 + 2 + 1) × 3 = 30 tablets.
 - For "when required" medicines, supply a sensible quantity and state the maximum daily dose on the label.
 - For liquids, round up to a whole bottle where appropriate, and check the product's in-use shelf life after opening.
+P: **Investigate with the lab.** Work out quantities to supply for courses of treatment, rounding to whole packs where needed.
+IX: pharmcalc
 K: Quantity = dose × frequency × duration; for inhalers, divide the doses in the device by the doses used each day.
 !: Forgetting that "two puffs twice a day" is four doses a day.
 Q: How long does a 200-dose inhaler last at 2 puffs twice a day? | 50 days
@@ -417,6 +437,7 @@ M1#pharmacy-u06-13-q1@1: How much liquid for 5 mL four times a day for 7 days? |
 M2#pharmacy-u06-13-q2@1: A 200-dose inhaler is used as two puffs twice a day. How long does it last? | 50 days | 100 days | 25 days | 200 days | 40 days | Two puffs twice a day is 4 puffs a day; 200 ÷ 4 = 50 days.
 M2#pharmacy-u06-13-q3@2: Why is original pack dispensing encouraged? | People get the leaflet and an intact pack | It always costs the NHS less | It's required for every medicine | It removes the need to label | It avoids the clinical check | The manufacturer's pack keeps the leaflet and batch details together.
 NUM1#pharmacy-u06-13-q4@1: How many days will a 120-dose inhaler last if the dose is two puffs twice a day? | 30 | 0 | days | 2 × 2 = 4 puffs a day; 120 ÷ 4 = 30 days.
+M2#pharmacy-u06-13-q5@1: One tablet twice daily for 14 days. How many tablets are supplied? | 28 | 14 | 42 | 7 | 1 × 2 × 14 = 28 tablets.
 
 ## Infusion rates
 S: Intravenous fluids and many medicines are given by infusion. You need to convert a volume and a time into a pump rate in mL per hour, or for gravity sets into drops per minute.
@@ -470,6 +491,8 @@ H: Checking an infusion
 - Work backwards: from the pump rate and concentration, calculate the dose actually being given and compare it with the prescription.
 - Example: 13.1 mL/hour × 1,600 micrograms/mL = 20,960 micrograms/hour; ÷ 60 ÷ 70 = 4.99 micrograms/kg/minute, which matches 5.
 - Standard concentrations (agreed locally) reduce calculation errors; use them where they exist, and the Injectable Medicines Guide for preparation and compatibility.
+P: **Investigate with the lab.** Convert doses in mg per hour into pump rates in mL per hour, then back again.
+IX: pharmcalc
 K: Convert everything to the same units (usually micrograms and hours) before dividing.
 !: Forgetting to multiply by 60 when converting a per-minute dose to per hour, a sixtyfold error.
 Q: What's the dose rate of 50 mg in 50 mL at 4 mL/hour? | 4 mg/hour
@@ -482,6 +505,7 @@ M1#pharmacy-u06-15-q1@1: 50 mg in 50 mL runs at 4 mL/hour. What dose per hour? |
 M3#pharmacy-u06-15-q2@2: 5 micrograms/kg/minute for 70 kg; infusion 400 mg in 250 mL. What rate? | 13.1 mL/hour | 0.22 mL/hour | 21 mL/hour | 787.5 mL/hour | 1.6 mL/hour | 21,000 micrograms/hour ÷ 1,600 micrograms/mL = 13.1 mL/hour.
 M2#pharmacy-u06-15-q3@1: 250 mg in 500 mL runs at 20 mL/hour. What dose per hour? | 10 mg/hour | 5 mg/hour | 20 mg/hour | 40 mg/hour | 2.5 mg/hour | Concentration = 250 ÷ 500 = 0.5 mg/mL; dose rate = 0.5 × 20 = 10 mg/hour.
 NUM2#pharmacy-u06-15-q4@2: Medicine X is prescribed at 5 micrograms/kg/minute for a 70 kg patient. The infusion contains 400 mg in 250 mL. What rate is needed, in mL per hour, to one decimal place? | 13.1 | 0.05 | mL/hour | 5 × 70 × 60 = 21,000 micrograms/hour; 400 mg in 250 mL = 1,600 micrograms/mL; 21,000 ÷ 1,600 = 13.1 mL/hour.
+M2#pharmacy-u06-15-q5@1: An infusion of 50 mg in 50 mL runs at 5 mg/hour. What is the pump rate? | 5 mL/hour | 10 mL/hour | 1 mL/hour | 50 mL/hour | The concentration is 1 mg/mL, so 5 mg/hour is 5 mL/hour.
 
 ## Displacement values
 S: When a powder is dissolved or a drug is incorporated into a suppository base, the drug itself takes up space. Displacement values let you account for it, so the final concentration or suppository weight is right.
@@ -504,6 +528,8 @@ H: Where the values come from
 - Injection displacement volumes are in the SPC or the product's reconstitution table, and differ between brands of the same drug: always use the value for the product in your hand.
 - Some products give a table of diluent volumes for common concentrations instead of a displacement value.
 - For suppositories, displacement values are published for common drugs in specific bases (such as hard fat), and the calculation assumes a mould calibrated with that base.
+P: **Investigate with the lab.** Use displacement values to work out how much diluent to add for a required concentration.
+IX: pharmcalc
 K: Account for the volume the drug occupies: diluent = final volume − displacement.
 !: Adding the whole final volume as diluent, which makes the solution weaker than intended.
 Q: How do you find the diluent volume for a powder injection? | Final volume (drug ÷ concentration) minus the displacement volume.
@@ -516,6 +542,7 @@ M2#pharmacy-u06-16-q1@1: A 1 g vial displaces 0.8 mL. What diluent gives 100 mg/
 M3#pharmacy-u06-16-q2@2: Ten 1 g suppositories each contain 200 mg of drug (displacement value 1.5). How much base? | 8.67 g | 10 g | 8 g | 7 g | 11.33 g | 2 g of drug displaces 2 ÷ 1.5 = 1.33 g of base; 10 − 1.33 = 8.67 g.
 M2#pharmacy-u06-16-q3@2: What happens if displacement is ignored when reconstituting? | The concentration is lower than intended | The concentration is higher than intended | The volume is smaller | Nothing changes | The powder won't dissolve | The drug adds volume, so total volume is larger and the solution weaker.
 NUM2#pharmacy-u06-16-q4@1: A vial of Medicine Y contains 1 g of powder with a displacement value of 0.8 mL. What volume of diluent must be added to give 100 mg/mL? | 9.2 | 0.01 | mL | Final volume = 1,000 ÷ 100 = 10 mL; 10 − 0.8 = 9.2 mL.
+M2#pharmacy-u06-16-q5@1: Why do displacement values matter when reconstituting powders? | The powder takes up volume, changing the final concentration | They show how fast the powder dissolves | They give the drug's expiry date | They measure the powder's weight in grams | Without allowing for displacement, the solution would be weaker than intended.
 
 ## Estimating renal function
 S: Many drugs are cleared by the kidneys, so doses depend on renal function. Labs report eGFR, but drug dosing information often uses creatinine clearance from the Cockcroft-Gault equation, and the two can differ markedly.
@@ -534,6 +561,8 @@ H: eGFR or CrCl?
 - The MHRA advises using CrCl (Cockcroft-Gault) for direct oral anticoagulants, and for older people, people at extremes of body weight and drugs with a narrow therapeutic index that are mainly renally cleared.
 - eGFR is normalised to 1.73 m², which can overestimate function in small, older people.
 - Check the drug's SPC: dosing thresholds are usually given as CrCl.
+P: **Investigate with the lab.** Estimate creatinine clearance with the Cockcroft–Gault equation and see how age and weight change it.
+IX: pharmcalc
 K: Use Cockcroft-Gault CrCl for DOACs and for narrow-margin renally cleared drugs, especially in older people and at extremes of weight.
 !: Using eGFR for a DOAC dose in a frail older person, which may overestimate renal function and lead to overdose.
 Q: State the Cockcroft-Gault equation. | CrCl = (140 − age) × weight × constant (1.23 men, 1.04 women) ÷ serum creatinine (micromol/L).
@@ -546,6 +575,7 @@ M2#pharmacy-u06-17-q1@1: What is the CrCl of a woman aged 80, 60 kg, creatinine 
 M2#pharmacy-u06-17-q2@2: For a DOAC dose in a frail 85-year-old, which estimate should you use? | Creatinine clearance (Cockcroft-Gault) | The lab's eGFR | Serum creatinine alone | Urine output | The patient's age alone | The MHRA advises CrCl for DOACs; eGFR can overestimate renal function in older, smaller people.
 M3#pharmacy-u06-17-q3@1: A man aged 70, 80 kg, creatinine 140 micromol/L. What is his CrCl? | About 49 mL/min | About 40 mL/min | About 57 mL/min | About 70 mL/min | About 35 mL/min | (140 − 70) × 80 × 1.23 ÷ 140 = 6,888 ÷ 140 = 49.2 mL/min.
 NUM2#pharmacy-u06-17-q4@1: Estimate the creatinine clearance of a woman aged 80, weighing 60 kg, with a serum creatinine of 100 micromol/L, using Cockcroft-Gault. Give your answer to the nearest whole number. | 37 | 1 | mL/min | (140 − 80) × 60 × 1.04 ÷ 100 = 37.4, so 37 mL/min.
+M2#pharmacy-u06-17-q5@1: How does age affect estimated creatinine clearance in Cockcroft–Gault? | Clearance falls as age rises | Clearance rises with age | Age has no effect | Clearance is fixed after 40 | The equation uses (140 − age), so older patients have lower estimates.
 
 ## Dose adjustment in renal impairment
 S: When kidney function falls, drugs cleared by the kidneys accumulate. Doses are adjusted by lowering each dose, lengthening the interval, or both, following the drug's specific guidance.

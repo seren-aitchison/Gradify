@@ -15,9 +15,9 @@ export const LESSONS = {
   "u01-12":{"v":1,"hash":"5e124772e362","updated":"2026-11-08"},
   "u01-13":{"v":1,"hash":"c84800a82bbe","updated":"2026-11-08"},
   "u01-14":{"v":1,"hash":"f93cd288431a","updated":"2026-11-08"},
-  "u01-15":{"v":1,"hash":"fc9dd2d5ef88","updated":"2026-11-08"},
+  "u01-15":{"v":2,"hash":"d3528b683ffd","updated":"2026-11-09"},
   "u01-16":{"v":1,"hash":"12f2d00b6c9a","updated":"2026-11-08"},
-  "u01-17":{"v":1,"hash":"86a3c93c7001","updated":"2026-11-08"},
+  "u01-17":{"v":2,"hash":"545d324f2e49","updated":"2026-11-09"},
   "u01-18":{"v":2,"hash":"8c3307d5e79d","updated":"2026-11-08"},
   "u01-19":{"v":1,"hash":"553b572de044","updated":"2026-11-08"}
 };
@@ -97,6 +97,7 @@ export const QUESTIONS = {
   "engineering-u01-15-q3":{"lesson":"u01-15","type":"NUM","v":1,"hash":"afc116aa2672","updated":"2026-11-08"},
   "engineering-u01-15-q4":{"lesson":"u01-15","type":"M","v":1,"hash":"244165f77d9f","updated":"2026-11-08"},
   "engineering-u01-15-q5":{"lesson":"u01-15","type":"SA","v":1,"hash":"1c66b057cad6","updated":"2026-11-08"},
+  "engineering-u01-15-q6":{"lesson":"u01-15","type":"M","v":1,"hash":"0b7f2923238f","updated":"2026-11-09"},
   "engineering-u01-16-q1":{"lesson":"u01-16","type":"M","v":1,"hash":"7e43393c6dae","updated":"2026-11-08"},
   "engineering-u01-16-q2":{"lesson":"u01-16","type":"M","v":1,"hash":"1ff8993421d8","updated":"2026-11-08"},
   "engineering-u01-16-q3":{"lesson":"u01-16","type":"NUM","v":1,"hash":"098675aea2f2","updated":"2026-11-08"},
@@ -107,6 +108,7 @@ export const QUESTIONS = {
   "engineering-u01-17-q3":{"lesson":"u01-17","type":"NUM","v":1,"hash":"7d28c31c6948","updated":"2026-11-08"},
   "engineering-u01-17-q4":{"lesson":"u01-17","type":"M","v":1,"hash":"a059c92471c1","updated":"2026-11-08"},
   "engineering-u01-17-q5":{"lesson":"u01-17","type":"SA","v":1,"hash":"6cd24c873586","updated":"2026-11-08"},
+  "engineering-u01-17-q6":{"lesson":"u01-17","type":"M","v":1,"hash":"8391453c96aa","updated":"2026-11-09"},
   "engineering-u01-18-q1":{"lesson":"u01-18","type":"M","v":2,"hash":"9709a075c72f","updated":"2026-11-08"},
   "engineering-u01-18-q2":{"lesson":"u01-18","type":"M","v":1,"hash":"f90cdfa67204","updated":"2026-11-08"},
   "engineering-u01-18-q3":{"lesson":"u01-18","type":"NUM","v":1,"hash":"65e91a76d746","updated":"2026-11-08"},

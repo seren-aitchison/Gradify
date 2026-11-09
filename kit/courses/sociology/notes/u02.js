@@ -17,6 +17,8 @@ H: The founders' questions
 - **Durkheim**: what holds a modern society together when people no longer share the same traditions?
 - **Weber**: what is distinctive about Western modernity, and what is the cost of its rationality?
 - **Martineau and Du Bois** asked how morals, gender and race shaped social life, questions the canon long overlooked.
+P: **Investigate with the lab.** Start the theorist timeline at Comte and follow how sociology developed in response to industrialisation and revolution.
+IX: theorists
 K: Sociology arose to explain the transition from traditional to modern society: revolution, industrial capitalism, cities and secularisation.
 X: One change, several founders: the factory
 > Marx saw factory work as exploitation and alienation under capitalism.
@@ -40,6 +42,7 @@ M2#sociology-u02-01-q2@2: A thinker in 1860 studies why people moving from villa
 TF1#sociology-u02-01-q3@1: Comte, Marx, Durkheim and Weber all focused on exactly the same feature of modern society. | false | Each emphasised different features: scientific reorganisation, capitalism, solidarity and rationalisation.
 M3#sociology-u02-01-q4@3: Which is the strongest criticism of the standard story of sociology's origins? | It treats European development as universal and ignores colonialism and non-European thinkers | It gives too much attention to the role of industrialisation in Europe | It claims sociology was invented in the 20th century by Americans | It focuses on cities rather than on rural life in every case | Postcolonial critics argue the canon misrepresents how modernity was made and who contributed to social thought.
 SA3#sociology-u02-01-q5@2,3: Explain why sociology emerged in 19th-century Europe and evaluate this account. | Revolution, industrialisation, urbanisation and secularisation broke down traditional society; founders asked how modern society worked (Comte's order, Marx's capitalism, Durkheim's solidarity, Weber's rationalisation). But the account centres Europe, overlooks colonialism's role in modernity and earlier thinkers such as Ibn Khaldun, and long excluded Martineau and Du Bois. | Social changes ; Founders' questions ; Link between change and theory ; Postcolonial critique ; Overlooked thinkers
+M2#sociology-u02-01-q6@1: Who coined the term sociology? | Auguste Comte | Karl Marx | Max Weber | Émile Durkheim | Auguste Comte coined the term sociology in the 1830s.
 
 ## The Enlightenment and social thought
 LV: Introductory · Foundation
@@ -218,6 +221,8 @@ X: Ideology in practice
 > A belief that anyone can get rich through hard work presents capitalism as fair.
 > If workers accept it, they blame themselves for low pay rather than the system.
 > Marxists argue this belief serves the ruling class by discouraging collective action.
+P: **Investigate with the lab.** Compare Marx with Durkheim and Weber on the eight questions, then sort ideas to the right theorist.
+IX: marx-durkheim-weber
 K: Marx defined class by ownership of the means of production; class conflict is built into capitalism, but ideology can prevent workers from recognising their shared interests.
 H: Prediction and reality
 P: Marx expected **polarisation** (intermediate classes would sink into the proletariat), increasing **immiseration** of workers and eventual revolution. In advanced capitalist societies, a large middle class of professionals and managers grew instead, living standards rose, and revolutions occurred mainly in largely agrarian societies such as Russia (1917). Neo-Marxists respond that class relations persist in new forms: Wright (1985) analysed "contradictory class locations" such as managers, and widening wealth inequality in some countries since the 1980s has revived interest in Marx.
@@ -238,6 +243,7 @@ M2#sociology-u02-06-q2@2: Low-paid workers believe their situation is their own 
 TF2#sociology-u02-06-q3@3: For Marx, a highly paid footballer who owns no business is part of the bourgeoisie. | false | Class depends on ownership of the means of production, not income; a salaried player sells labour, though such cases blur Marx's model.
 M3#sociology-u02-06-q4@3: Which development most challenges Marx's prediction of class polarisation? | The growth of a large middle class of professionals and managers | The continued existence of factory work in some countries | The persistence of private ownership of companies | The existence of trade unions | Polarisation predicted intermediate groups would shrink; instead the middle class expanded in advanced capitalist societies.
 SA3#sociology-u02-06-q5@2,3: Evaluate Marx's theory of class conflict. | Strengths: explains inequality as rooted in ownership; class conflict and ideology explain stability and change; renewed relevance with wealth inequality. Weaknesses: middle-class growth contradicts polarisation; rising living standards; revolutions in agrarian, not advanced, societies; neglects status and other inequalities (Weber, feminism). Neo-Marxists (Wright) adapt the model. | Key concepts ; Ideology ; Middle-class growth ; Revolutions and living standards ; Weber or feminist critique ; Neo-Marxist adaptation
+M2#sociology-u02-06-q6@1: According to Marx, what defines social class? | Relationship to the means of production | Income alone | Status and lifestyle | Educational qualifications | The bourgeoisie own the means of production; the proletariat sell their labour.
 
 ## Marx: capitalism
 LV: Intermediate · Application
@@ -375,6 +381,8 @@ H: Rules of method
 - **Explain social facts by other social facts**: a social fact's cause must be sought in other social facts, not in individual psychology.
 - **Distinguish normal from pathological**: a social fact is normal if it is general in a society of that type; crime, for example, exists in all societies and is normal, though very high rates may be pathological.
 - **Distinguish cause from function**: why something arose is a different question from what need it serves.
+P: **Investigate with the lab.** Compare Durkheim's answers with Marx's and Weber's, and sort his ideas from theirs.
+IX: marx-durkheim-weber
 K: Durkheim defined social facts as external and constraining, and argued they should be studied objectively and explained by other social facts.
 X: Why is crime "normal"?
 > Every known society has some crime, so its existence is general, and by Durkheim's rule normal.
@@ -399,6 +407,7 @@ M2#sociology-u02-10-q2@2: A sociologist explains rising divorce rates by changes
 TF2#sociology-u02-10-q3@1,2: Durkheim argued that crime is normal because it is found in every society. | true | A social fact that is general in a type of society is normal by his definition; crime also has functions.
 M3#sociology-u02-10-q4@3: Which is the strongest interpretivist criticism of treating social facts as things? | Statistics and other social facts are products of human interpretation | Social facts are always private and individual | Durkheim refused to use any statistics in his work | Social facts change too slowly to be studied | Interpretivists argue that what counts as a suicide, crime or illness depends on human judgement, so facts aren't simply "out there".
 SA3#sociology-u02-10-q5@3: Evaluate Durkheim's view that sociology should treat social facts as things. | Strengths: gives sociology a distinct object and scientific method; enables comparison and statistics (Suicide). Weaknesses: interpretivists say facts are constructed through meaning (coroners and suicide statistics); neglects agency; normal and pathological can involve value judgements. | Definition ; Scientific strengths ; Interpretivist critique with example ; Agency ; Judgement
+M2#sociology-u02-10-q6@1: What did Durkheim mean by social facts? | Ways of acting and thinking external to individuals that constrain them | Personal opinions about society | Statistical errors in research | Facts about individual psychology | Social facts, such as norms and laws, exist outside individuals and shape them.
 
 ## Durkheim: social solidarity
 LV: Intermediate · Foundation
@@ -569,6 +578,8 @@ H: Four types of action
 - **Affectual**: action driven by emotion, such as hugging a friend in joy.
 - **Traditional**: action done because it has always been done, such as following family customs.
 P: These are **ideal types**: analytical models that highlight characteristic features, against which real cases can be compared. Real actions usually mix them.
+P: **Investigate with the lab.** Compare Weber with Marx and Durkheim, and sort his ideas on social action.
+IX: marx-durkheim-weber
 K: Weber's sociology studies meaningful social action, classified into four ideal types: instrumentally rational, value-rational, affectual and traditional.
 X: One action, different meanings
 > Two people attend a religious service.
@@ -593,6 +604,7 @@ M2#sociology-u02-15-q2@2: A family always eats a particular meal on Sunday becau
 MATCH1#sociology-u02-15-q3@2: Match each example to Weber's type of action. | Choosing the cheapest route to work = Instrumentally rational ; Refusing to lie whatever the cost = Value-rational ; Shouting in anger = Affectual ; Following a family custom = Traditional | Each type rests on a different basis: efficiency, values, emotion or custom.
 M3#sociology-u02-15-q4@3: Which is the strongest structuralist criticism of Weber's action approach? | It can underplay how social structures constrain the choices people make | It ignores the meanings people give to action | It relies entirely on official statistics | It claims all action is irrational | Structuralists argue focusing on meaning risks neglecting constraint, though Weber also analysed institutions.
 SA3#sociology-u02-15-q5@2,3: Explain Weber's four types of social action and evaluate his approach. | Types: instrumentally rational (efficient means to goal), value-rational (belief), affectual (emotion), traditional (custom); ideal types. Strengths: explains meaning and historical change (rationalisation); avoids economic determinism. Weaknesses: underplays structure; inferring meaning is hard; ideal types can be arbitrary. | Four types with examples ; Ideal types ; Strength ; Structuralist critique ; Problem of inferring meaning
+M2#sociology-u02-15-q6@1: What did Weber call action guided by efficient means to an end? | Instrumentally rational action | Traditional action | Affectual action | Value-rational action | Weber identified four types of social action, including instrumentally rational action.
 
 ## Weber: Verstehen
 LV: Intermediate · Application
@@ -731,6 +743,8 @@ X: Comparing three people
 > A tech entrepreneur: high class position (wealth), moderate status, modest party power.
 > A senior judge: high status, high class position, considerable influence.
 > A care worker who leads a union: low class position, modest status, growing party power.
+P: **Investigate with the lab.** Compare Weber's view of stratification with Marx's, then sort the ideas.
+IX: marx-durkheim-weber
 K: Weber's three dimensions, class, status and party, can vary independently, giving a multidimensional account of inequality.
 H: Weber versus Marx
 P: Marx defined class by ownership of the means of production and saw class conflict as the driver of history. Weber agreed that property is a basic division but stressed **market situation** (skills and qualifications), saw the middle classes growing rather than disappearing, and argued that status and party can be sources of power and action in their own right, not just reflections of class. Weber's influence is visible in modern occupational class schemes, such as the UK's National Statistics Socio-economic Classification (NS-SEC).
@@ -752,6 +766,7 @@ M2#sociology-u02-19-q2@2: A lottery winner has great wealth but is looked down o
 MATCH2#sociology-u02-19-q3@1,2: Match each example to Weber's dimension. | Income from skilled professional work = Class ; A respected religious leader's prestige = Status ; A trade union lobbying government = Party ; Ownership of rental property = Class | Class is economic, status is honour, party is organised power.
 M3#sociology-u02-19-q4@3: Which is the main Marxist criticism of Weber's theory of stratification? | It describes inequality without explaining its source in exploitation | It focuses only on ownership of the means of production | It ignores the existence of the middle classes | It claims inequality has only one dimension | Marxists argue Weber's description of market situation and status misses the underlying relation of exploitation.
 SA3#sociology-u02-19-q5@3: Compare and evaluate Marx's and Weber's theories of class. | Marx: class by ownership; two classes; polarisation; conflict drives change. Weber: market situation including skills; several classes; status and party as independent; middle classes grow. Evaluation: Weber better describes modern occupational structure (NS-SEC); Marx explains inequality's source in exploitation and ownership; both remain useful. | Marx's view ; Weber's three dimensions ; Middle class ; Example ; Evaluation of both
+M2#sociology-u02-19-q6@1: How did Weber's view of stratification differ from Marx's? | He saw class, status and party as separate dimensions | He saw only economic class as important | He denied that inequality existed | He thought stratification was functional | Weber added status and political power to economic class.
 
 ## Simmel
 LV: Introductory · Application
@@ -883,6 +898,8 @@ X: One issue, three analyses: rising inequality in a modern society
 > Marx: a sign of capital's power over labour; it will intensify class conflict.
 > Durkheim: a risk to solidarity if the division of labour becomes "forced", allocating roles by inherited advantage.
 > Weber: inequality of market situation, status and power, with competing groups organising through parties.
+P: **Investigate with the lab.** Compare the founders on the timeline by tradition, and note how each answered the question of social order.
+IX: theorists
 K: Marx, Durkheim and Weber disagreed on order, change and method, and these debates still organise sociology.
 H: Continuing relevance
 P: Later theories developed each strand: functionalism from Durkheim; conflict theory and critical theory from Marx; interpretive sociology and organisational sociology from Weber. Contemporary critics argue the classical trio neglected gender, race and empire (hence the recovery of Martineau and Du Bois), but their questions about inequality, solidarity and rationalisation remain central to analyses of globalisation, digital capitalism and social cohesion.
@@ -902,4 +919,5 @@ M2#sociology-u02-23-q2@2: A sociologist explains a strike by workers' shared eco
 MATCH2#sociology-u02-23-q3@1: Match each founder to their method. | Durkheim = Social facts studied as things ; Weber = Interpretive understanding with causal explanation ; Marx = Historical analysis linked to political practice ; Comte = Positive science discovering social laws | The founders differ in how they think society should be studied.
 M3#sociology-u02-23-q4@3: Which statement best evaluates the classical theorists' relevance today? | Their questions remain central, though they neglected gender, race and empire | Their work is now entirely irrelevant to contemporary societies | They answered every sociological question completely | Only Comte's work is still used by sociologists | A balanced view recognises both their lasting questions and the gaps that feminist and postcolonial scholars have identified.
 SA3#sociology-u02-23-q5@3: Compare and evaluate Marx, Durkheim and Weber's views of modern society. | Marx: capitalism exploitative and alienating, class conflict will transform it. Durkheim: organic solidarity can integrate, but anomie threatens; consensus. Weber: rationalisation and bureaucracy, iron cage; multiple dimensions of inequality; ideas matter. Evaluation: each captures something real; their debates (consensus and conflict, structure and action) persist; critics note neglect of gender, race and empire. | Marx ; Durkheim ; Weber ; Comparison on at least one debate ; Contemporary relevance ; Critique of the canon
+M2#sociology-u02-23-q6@1: Which pair of classical sociologists disagreed most about the role of class conflict? | Marx and Durkheim | Weber and Simmel | Comte and Spencer | Mead and Blumer | Marx put conflict at the centre; Durkheim stressed shared values and social order.
 `;

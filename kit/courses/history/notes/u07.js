@@ -240,6 +240,8 @@ X: How much did Russian mobilisation matter?
 > Russian leaders saw mobilisation as a precaution, not an act of war.
 > So the order of 30 July turned a war in the Balkans into a war across Europe within days.
 > Responsibility is shared: Germany's plans made mobilisation decisive, and Russia knew the risk.
+P: **Investigate with the lab.** Sort the factors behind the outbreak of war in 1914 into long-term causes, short-term causes and the trigger.
+IX: cause-and-consequence
 K: Between Germany's blank cheque (5–6 July) and Britain's declaration (4 August), decisions by every power turned a Balkan crisis into European war; historians still debate where most responsibility lies.
 !: Dating the start of the war to the assassination. The war came from decisions taken over the following five weeks.
 EV: established | Austria-Hungary declared war on Serbia on 28 July 1914 and Britain declared war on Germany on 4 August 1914.
@@ -257,6 +259,7 @@ M2#history-u07-07-q2@2: Why did Russian general mobilisation matter so much? | G
 TF1#history-u07-07-q3@1: Serbia rejected every demand in the Austro-Hungarian ultimatum. | false | Serbia accepted most demands but not all; Austria-Hungary broke off relations anyway.
 M3#history-u07-07-q4@3: Which judgement about responsibility is best supported by the July Crisis? | Several powers' decisions mattered, and historians debate where most responsibility lies | Serbia alone was responsible because the assassin was a Serb | Britain was mainly responsible for the war breaking out | No power took any decision that affected the outcome | The sequence shows shared but contested responsibility.
 SA3#history-u07-07-q5@2,3: Which country was most responsible for the outbreak of war in 1914? | Germany's blank cheque encouraged Austria-Hungary, whose ultimatum of 23 July was meant to be rejected and which declared war on Serbia on 28 July. Russia's general mobilisation on 30 July triggered German war plans, which invaded Belgium and brought Britain in on 4 August. Fischer stressed German responsibility; Clark spread it more widely. A strong answer weighs these decisions and reaches a supported judgement. | Explains the sequence of decisions ; Assesses Germany ; Assesses at least one other power ; Uses historians' interpretations ; Reaches a judgement
+M2#history-u07-07-q6@1: Which was the trigger of the July Crisis of 1914? | The assassination of Franz Ferdinand | The alliance system | The naval race | Imperial rivalry in Africa | The assassination on 28 June 1914 set off the crisis.
 
 ## The outbreak of war
 LV: GCSE · Foundation
@@ -277,6 +280,8 @@ X: Did Europe greet the war with enthusiasm in August 1914?
 > Against: historians such as Adrian Gregory found much anxiety, resignation and reluctance, especially in rural areas.
 > Volunteering had many motives: duty, local pressure, unemployment and adventure.
 > Judgement: the image of universal enthusiasm is exaggerated; reactions were mixed.
+P: **Investigate with the lab.** Sort the causes of the war, then rank them and explain how the trigger turned a local crisis into a general war.
+IX: cause-and-consequence
 K: The German advance was stopped at the Marne in September 1914, and after the race to the sea a continuous trench line ran from the Channel to Switzerland; the Schlieffen Plan had failed.
 !: Believing everyone thought the war would be "over by Christmas" and cheered its start. Some leaders, including Kitchener, expected a long war, and public reactions were mixed.
 EV: established | The First Battle of the Marne in September 1914 halted the German advance on Paris.
@@ -294,6 +299,7 @@ M2#history-u07-08-q2@2: Which factor helped stop the German advance in 1914? | G
 TF1#history-u07-08-q3@1: Every European responded to the outbreak of war with enthusiasm. | false | Historians such as Adrian Gregory found anxiety and reluctance as well as enthusiasm.
 M3#history-u07-08-q4@3: Which judgement about public reactions to war in 1914 is best supported? | Reactions were mixed, and the image of universal enthusiasm is exaggerated | Everyone opposed the war from the first day | Enthusiasm was universal in every country and class | Public opinion had no link to volunteering | The evidence shows enthusiasm alongside anxiety and reluctance.
 SA3#history-u07-08-q5@2,3: Why did the Schlieffen Plan fail in 1914? | Belgian resistance and destroyed railways slowed the advance; the BEF arrived sooner than expected and fought at Mons; Russia mobilised faster, so troops went east; and exhausted German armies turned east of Paris, opening a gap exploited at the Marne in September 1914. A strong answer links these and judges which mattered most. | Explains Belgian resistance ; Explains the role of the BEF or France ; Explains Russian mobilisation ; Explains the Marne ; Reaches a judgement
+M2#history-u07-08-q6@1: Why did the assassination of Franz Ferdinand lead to a general European war? | Alliances and war plans drew in the great powers one after another | Serbia declared war on every European power at once | Britain invaded Austria-Hungary immediately | The assassination happened in Berlin | The trigger worked through the alliance system and mobilisation plans.
 
 ## Trench warfare
 LV: GCSE · Foundation

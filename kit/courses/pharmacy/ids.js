@@ -2,6 +2,7 @@
 // progress, notes, flashcards and bookmarks depend on them. To rename a lesson, change its title here and
 // in the syllabus. New lessons are added by npm run qa. To remove a lesson, move its id to RETIRED:
 // retired ids are reserved forever and never given to another lesson.
+// retired ids: { "u07-31": { title, retired: "YYYY-MM-DD", reason } }
 export const IDS = {
   "u01-01": "Introduction to pharmacy",
   "u01-02": "Pharmacy across sectors",
@@ -320,7 +321,6 @@ export const IDS = {
   "u19-08": "Learning outcomes and evidence",
   "u19-09": "Working with your designated supervisor",
   "u19-10": "From trainee to registered pharmacist",
-  "u19-11": "GPhC revalidation"
+  "u19-11": "GPhC revalidation",
 };
-// retired ids: { "u07-31": { title, retired: "YYYY-MM-DD", reason } }
 export const RETIRED = {};

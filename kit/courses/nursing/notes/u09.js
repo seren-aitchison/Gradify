@@ -73,6 +73,8 @@ H: Responding to concern
 - Use **Martha's Rule** routes in England, and equivalent family escalation routes, which allow patients and families to request an urgent review.
 - Escalate using SBAR, document and reassess.
 - Consider whether the patient has a treatment escalation plan, and whether goals of care need discussing.
+P: **Investigate with the lab.** Recognise each warning sign in the scenario as it appears, before the NEWS2 score climbs high.
+IX: deteriorating
 K: Look for rising respiratory rate, new confusion and soft signs, avoid normalising abnormal values, look at trends, and act on concerns from patients, families and colleagues.
 !: Dismissing a high respiratory rate because the patient "always breathes fast". Changes from baseline matter; never normalise without review.
 T: Deterioration | A worsening of a patient's clinical condition that may lead to serious harm
@@ -90,6 +92,7 @@ M1#nursing-u09-02-q1@1: Which observation is often the most sensitive early sign
 M2#nursing-u09-02-q2@2: A patient's heart rate has risen steadily from 82 to 108 over 12 hours, each value scoring low. What should the nurse do? | Recognise the trend as possible deterioration and review or escalate | Ignore it because each value is low-scoring | Take observations less often | Record it without action | Trends reveal deterioration that single values may hide.
 M2#nursing-u09-02-q3@3: Why is deterioration sometimes missed? | Abnormal values are normalised and trends are overlooked | Patients always deteriorate too quickly to notice | Observations are always perfectly accurate | Families never notice changes | Normalisation and missed trends are common factors.
 MS2#nursing-u09-02-q4@1: Which are soft signs of deterioration? | New reluctance to eat ; Increased sleepiness ; Being "not themselves" | Asking for a newspaper ; Walking normally | Subtle changes often precede physiological deterioration.
+M2#nursing-u09-02-q5@1: Why is recognising deterioration early important? | Early intervention improves outcomes | It avoids the need for documentation | It reduces the need for observations | It means doctors need not be told | Acting early on warning signs can prevent serious harm.
 
 ## ABCDE assessment
 S: The ABCDE approach is a systematic way to assess and treat an acutely unwell patient, dealing with the most life-threatening problems first. It is used by all healthcare professionals and is the backbone of acute care.
@@ -118,6 +121,8 @@ H: E: Exposure
 - Keep the patient warm and preserve dignity.
 H: Throughout
 P: Reassess after every intervention and regularly. Communicate findings using SBAR, document, and agree a plan. If more than one person is present, the team can do several parts at once under a leader.
+P: **Investigate with the lab.** Assess the patient in strict ABCDE order and act on each problem before moving on.
+IX: deteriorating
 K: Assess A to E in order, treat problems as you find them, reassess often, check glucose in D, and call for help early.
 !: Moving on to breathing while an airway problem is untreated. Treat each problem before moving to the next.
 T: ABCDE | Airway, breathing, circulation, disability, exposure: a systematic assessment of an acutely ill patient
@@ -133,6 +138,7 @@ Q: What does a patient talking normally suggest during the initial look? | That 
 M1#nursing-u09-03-q1@1: What is the first priority in an ABCDE assessment? | Airway | Exposure | Disability | Circulation | The airway is assessed first because obstruction kills fastest.
 M2#nursing-u09-03-q2@2: During the D assessment, a patient is drowsy with a blood glucose of 2.6 mmol/L. What should happen? | Treat the hypoglycaemia per protocol and reassess | Move on to exposure and treat later | Record it and wait for the doctor | Give the next insulin dose | In ABCDE, each problem is treated as soon as it is found, then the patient is reassessed before moving on.
 M3#nursing-u09-03-q3@3: A patient has a snoring noise when breathing and is drowsy. What should the nurse do first? | Open the airway and call for help | Measure the blood pressure | Check the wound dressing | Take a full drug history | Snoring suggests partial airway obstruction, the most urgent problem.
+M2#nursing-u09-03-q5@1: In the ABCDE approach, what does B stand for? | Breathing | Blood pressure | Bleeding | Bowels | Airway, Breathing, Circulation, Disability, Exposure.
 SEQ1#nursing-u09-03-q4@1: Put the ABCDE assessment in order. | Airway ; Breathing ; Circulation ; Disability ; Exposure | The order reflects which problems kill fastest.
 
 ## Early warning scores
@@ -159,6 +165,8 @@ H: Limitations
 - Some patients have chronically abnormal values; changes to baseline thresholds must be authorised and documented by senior clinicians.
 - Scores are less helpful in end-of-life care, where goals differ.
 - **Clinical concern overrides the score**: escalate if worried, whatever the number.
+P: **Investigate with the lab.** Score several sets of observations and see how each parameter contributes to the total.
+IX: news2
 K: Early warning scores track and trigger responses using population-specific tools; they need accurate observations and reliable responses, and clinical concern always overrides the score.
 !: Using NEWS2 for a pregnant woman. Use the maternity early warning score, which accounts for the physiological changes of pregnancy.
 T: Track and trigger | A system that tracks observations and triggers set responses at defined thresholds
@@ -175,6 +183,7 @@ Q: Which early warning tool is used for newborns? | NEWTT2 (newborn early warnin
 M1#nursing-u09-04-q1@1: Which early warning tool is designed for children? | PEWS | NEWS2 | MEWS | MUST | PEWS uses age-specific charts for children.
 M2#nursing-u09-04-q2@2: A patient with COPD always has saturations of 88–92%. How should this be handled in NEWS2? | A senior clinician documents a decision to use the SpO2 scale 2 | Ignore saturation scores for this patient | Record higher values than measured | Stop recording saturations | Scale 2 is used only when prescribed and documented for confirmed hypercapnic respiratory failure.
 M2#nursing-u09-04-q3@3: A nurse is worried about a patient whose early warning score is 1. What should she do? | Escalate her concern; clinical concern overrides the score | Wait until the score rises | Record the score and take no action | Ask the patient whether they are worried | Clinical concern is a valid reason to escalate at any score.
+M2#nursing-u09-04-q5@1: Which of these is a NEWS2 parameter? | Respiration rate | Blood glucose | Weight | Urine output | NEWS2 scores respiration rate, oxygen saturation, temperature, blood pressure, pulse, consciousness and supplemental oxygen.
 MATCH1#nursing-u09-04-q4@1: Match each tool to its population. | NEWS2 = Adults ; PEWS = Children ; MEWS = Pregnant women ; NEWTT2 = Newborns | Each population has a tool suited to its physiology.
 
 ## NEWS2
@@ -200,6 +209,9 @@ H: Using it well
 - In people with **treatment limits** or at the end of life, the response should match agreed goals of care.
 H: NEWS2 and sepsis
 P: A NEWS2 of 5 or more in a patient with possible infection should prompt consideration of sepsis. NICE's updated sepsis guidance uses NEWS2 to stratify risk in adults in acute hospital settings.
+P: **Investigate with the lab.** Score generated sets of observations parameter by parameter, then choose the clinical response for each total.
+IX: news2
+IX: deteriorating
 K: NEWS2 scores seven parameters; a red single score of 3 or a total of 5–6 needs urgent review and hourly observations, and 7 or more needs an emergency response and continuous monitoring.
 !: Forgetting that supplemental oxygen adds 2 points. A patient on oxygen with otherwise normal observations still scores.
 T: Red score | A score of 3 in a single NEWS2 parameter
@@ -216,6 +228,7 @@ M1#nursing-u09-05-q1@1: What does the "C" in ACVPU stand for? | New confusion | 
 M2#nursing-u09-05-q2@2: What is the minimum observation frequency for a NEWS2 total of 5? | Hourly | 12-hourly | Once a day | Every 4–6 hours | A total of 5–6 needs at least hourly observations and urgent review.
 M3#nursing-u09-05-q3@3: A patient on 2 L/min oxygen has a respiratory rate of 22, SpO2 95%, pulse 105, BP 118/70, alert and temperature 37.9°C. What is the likely response level? | Medium: urgent review, hourly obs | Low: 12-hourly observations | High: emergency response | No response needed | Oxygen scores 2, RR 22 scores 2, SpO2 95% scores 1 and pulse 105 scores 1 (BP, consciousness and a temperature of 37.9°C score 0): a total of 6.
 TF2#nursing-u09-05-q4@3: SpO2 scale 2 should be used for every patient with COPD. | False | It is only for confirmed hypercapnic respiratory failure when prescribed and documented.
+M2#nursing-u09-05-q5@1: A patient's aggregate NEWS2 score is 5. What response is usually required? | An urgent response, with review by a clinician | Routine monitoring only | No action until the score reaches 10 | Discharge planning | A score of 5 or more triggers an urgent clinical review.
 
 ## Sepsis
 S: Sepsis is a life-threatening response to infection and a leading cause of avoidable death. This lesson focuses on the acute management of sepsis and septic shock: risk stratification, time-critical treatment and the nurse's role in the first hours.
@@ -240,6 +253,8 @@ H: Septic shock
 - Needs critical care: arterial line, central access, vasopressors (such as noradrenaline), and organ support.
 H: The nurse's role
 P: Nurses often first recognise sepsis, start the sepsis screen, take observations and samples, give antibiotics and fluids on time, monitor response and escalate if the patient doesn't improve. Communicating with the patient and family and recording times accurately are part of good sepsis care.
+P: **Investigate with the lab.** In the scenario, look for signs of sepsis: rising heart and breathing rates, falling blood pressure and a change in consciousness.
+IX: deteriorating
 K: Stratify sepsis risk using NEWS2, give time-critical treatment (antibiotics within one hour for the highest risk), achieve source control and recognise septic shock early.
 !: Delaying antibiotics in a high-risk patient while waiting for blood culture results. Take cultures quickly, but don't delay antibiotics.
 T: Septic shock | Sepsis with circulatory failure requiring vasopressors and a raised lactate
@@ -257,6 +272,7 @@ M1#nursing-u09-06-q1@1: Within what time should the highest-risk adults with sus
 M2#nursing-u09-06-q2@2: A patient with suspected sepsis from an infected central line is being treated. What else is essential? | Source control: removing the infected line as directed | Leaving the line in place to give antibiotics | Waiting for cultures before any treatment | Stopping all fluids | Removing the infected line (source control) is essential, because antibiotics alone may not clear an infected device.
 M3#nursing-u09-06-q3@3: Despite 2 litres of IV fluid, a septic patient's mean arterial pressure stays at 58 mmHg and lactate is 5. What does this indicate? | Septic shock: escalate urgently | Successful resuscitation | Dehydration needing oral fluids | A measurement error to ignore | Persistent hypotension with high lactate despite fluids indicates septic shock.
 MS2#nursing-u09-06-q4@2: Which are time-critical actions in suspected high-risk sepsis? | Antibiotics within one hour ; Blood cultures without delaying antibiotics ; Lactate measurement | Waiting for all results before treatment ; Routine observations 12-hourly | These actions reduce mortality.
+M2#nursing-u09-06-q5@1: What is sepsis? | A life-threatening organ dysfunction caused by the body's response to infection | Any infection of the skin | A rash caused by an allergy | A high temperature with no infection | Sepsis is a dysregulated response to infection that damages organs.
 
 ## Shock
 S: Shock is a life-threatening failure of the circulation to deliver enough oxygen to the tissues. Recognising the type of shock guides treatment, and early recognition saves lives.
@@ -1031,6 +1047,8 @@ H: Communicating and reflecting
 - Use closed-loop communication within the team.
 - After the event, debrief: what went well, what could improve, and how everyone is feeling.
 - Consider human factors: workload, distractions, assumptions and speaking up.
+P: **Investigate with the lab.** Work through the case of the quiet patient in bay 3: assess with ABCDE, score NEWS2 as the observations change, and escalate with SBAR.
+IX: deteriorating
 K: In every deteriorating patient, use ABCDE, act on NEWS2 and concern, treat as you go, escalate with SBAR and reflect afterwards.
 !: Focusing on one obvious problem and missing others. Complete the ABCDE assessment and reassess.
 T: Scenario-based learning | Learning through realistic clinical cases that apply knowledge and judgement
@@ -1048,4 +1066,5 @@ M1#nursing-u09-25-q1@1: Which finding suggests opioid toxicity? | Pinpoint pupil
 M2#nursing-u09-25-q2@2: A confused patient with slurred speech has diabetes. What should be checked first in D? | Blood glucose | Cholesterol | Thyroid function | Vitamin D | Hypoglycaemia can mimic stroke and is quickly treatable.
 M3#nursing-u09-25-q3@3: Two days after bowel surgery, a patient has a NEWS2 of 9 with new confusion and fever. What is the priority? | ABCDE, urgent help, and time-critical sepsis treatment | Routine observations in four hours | Encouraging oral fluids only | Waiting for the surgical ward round | High NEWS2 with infection signs needs an emergency response.
 MS2#nursing-u09-25-q4@2: Which actions suit a patient with acute pulmonary oedema? | Sitting upright ; Oxygen to target ; Calling for help | Lying flat ; Giving large fluid boluses | Upright positioning, oxygen and escalation are first steps.
+M2#nursing-u09-25-q5@1: What should a nurse do first on finding a patient who has become quiet and drowsy? | Assess them systematically with ABCDE | Wait for the next routine observations | Document the change and move on | Give them a drink and let them sleep | Changes in consciousness can signal deterioration and need immediate assessment.
 `;

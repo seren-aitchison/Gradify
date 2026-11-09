@@ -488,6 +488,8 @@ X: Personality tests at work
 > Applicants can **fake good**, presenting themselves favourably; forced-choice formats and validity scales help reduce this.
 H: The popular type tests
 P: The **Myers–Briggs Type Indicator** (MBTI) sorts people into 16 types. It is popular, but researchers criticise its forcing of continuous traits into types and its poor test–retest reliability for type assignments: many people get a different type on retesting (Pittenger, 1993).
+P: **Investigate with the lab.** Describe a fictional character on the five factors and read what each trait predicts.
+IX: big-five
 K: Psychometric tests are standardised questionnaires judged by reliability and validity; trait measures predict some outcomes, while type tests such as the MBTI have weaker evidence.
 !: Trusting a test because it is popular. Reliability and validity evidence matters more than popularity.
 EV: established | Big Five questionnaires show good reliability and predictive validity for some outcomes.
@@ -507,6 +509,7 @@ M2#psychology-u07-13-q2@2: A new anxiety scale correlates strongly with an estab
 TF2#psychology-u07-13-q3@2: Many people receive a different MBTI type when retested. | true | Type assignments have poor test–retest reliability.
 M3#psychology-u07-13-q4@3: Why do forced-choice formats reduce faking? | Desirable options are paired | They hide the questions | They use no items | They remove all traits | Choosing between equally desirable statements limits impression management.
 SA2#psychology-u07-13-q5@2,3: Evaluate the use of personality tests in job selection. | Construction and norms; reliability (alpha, test–retest); validity (construct, predictive: conscientiousness and performance); faking and countermeasures; MBTI concerns; fairness and ethics. | Construction ; Reliability ; Validity ; Faking ; Judgement
+M2#psychology-u07-13-q6@1: Which of these is one of the Big Five personality factors? | Conscientiousness | Intelligence | Optimism | Creativity | The Big Five are openness, conscientiousness, extraversion, agreeableness and neuroticism.
 
 ## Projective tests
 LV: Intermediate · Evaluation

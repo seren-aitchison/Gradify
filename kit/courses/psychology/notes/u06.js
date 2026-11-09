@@ -132,6 +132,8 @@ H: Actor–observer and self-serving biases
 P: In the **actor–observer bias**, we explain our own behaviour situationally ("I was late because of traffic") but others' dispositionally ("he's late because he's disorganised"). The **self-serving bias** is attributing our successes to internal causes (ability, effort) and our failures to external ones (bad luck, unfair tests), which may protect self-esteem.
 H: Culture
 P: The FAE appears weaker in some collectivist cultures. Miller (1984) found that American adults explained others' behaviour more dispositionally than Hindu Indian adults, who gave more situational explanations, while children in both cultures were similar, suggesting the difference is learned. Morris and Peng (1994) found Chinese-language newspapers explained murders more situationally than English-language US newspapers. A meta-analysis found the self-serving bias was smaller in East Asian samples (Mezulis et al., 2004).
+P: **Investigate with the lab.** Work through the attribution scenarios and notice when you explain others' behaviour by their personality.
+IX: biases
 K: People overweight dispositions when explaining others, favour themselves in explaining outcomes, and these biases vary across cultures.
 !: Calling the FAE universal. It is weaker in some cultures and situations, which is one reason "fundamental" has been questioned.
 EV: established | People tend to underweight situational constraints when judging others' behaviour.
@@ -151,6 +153,7 @@ M2#psychology-u06-04-q2@2: A student says "I passed because I'm clever" and "I f
 TF2#psychology-u06-04-q3@2: In Jones and Harris's study, participants ignored the fact that essay positions were assigned. | true | They inferred attitudes despite knowing writers had no choice.
 M3#psychology-u06-04-q4@3: Why does Miller's study suggest the FAE is partly learned? | Children in both cultures were similar | Adults in both cultures were identical | Indian adults made more dispositional attributions | Children made no attributions | Cultural differences appeared in adults, not children.
 SA3#psychology-u06-04-q5@3: Evaluate the claim that the fundamental attribution error is "fundamental". | Evidence: Jones and Harris, wide replication in Western samples. Cultural variation: Miller, Morris and Peng; Mezulis on self-serving bias. Situational moderators (motivation, information). Conclusion: robust tendency in some cultures, not universal. | Evidence for ; Cultural evidence ; Moderators ; Related biases ; Judgement
+M2#psychology-u06-04-q6@1: What is the fundamental attribution error? | Overestimating personality and underestimating the situation in explaining others' behaviour | Blaming the situation for our own successes | Forgetting the cause of an event | Attributing behaviour to luck alone | Observers tend to underweight situational influences on others.
 
 ## Attitude formation
 LV: Introductory · Foundation
@@ -401,6 +404,8 @@ X: Hotel towels
 > The most effective message said most previous guests *in that same room* reused towels (49%).
 H: The boomerang effect
 P: Norm messages can backfire. Schultz et al. (2007) told households how their energy use compared with neighbours. Below-average users increased their use towards the average (a **boomerang effect**) unless the message also included an approving smiley face, an injunctive norm. Messages that stress how common a bad behaviour is ("many people drink-drive") can also make it seem normal.
+P: **Investigate with the lab.** Judge the 18 sets of lines after the simulated group answers, and compare your conformity rate with Asch's.
+IX: conformity
 K: Descriptive norms say what people do and injunctive norms what they should do; combining them can change behaviour without boomerang effects.
 !: Publicising how common a problem is. Emphasising widespread bad behaviour can increase it.
 EV: established | Descriptive norm messages can shift behaviour, as in towel reuse and energy use.
@@ -420,6 +425,7 @@ M2#psychology-u06-11-q2@2: A household using less energy than neighbours increas
 TF2#psychology-u06-11-q3@2: In the hotel study, the most effective message referred to guests in the same room. | true | The most specific descriptive norm produced the most reuse.
 M3#psychology-u06-11-q4@3: Why should an anti-drink-driving campaign avoid saying "thousands of people drink-drive"? | It may make drink-driving seem normal | It is always untrue | It reduces drink-driving too much | It uses an injunctive norm | Emphasising prevalence creates a descriptive norm for the bad behaviour.
 SA2#psychology-u06-11-q5@2,3: Apply social norms research to reduce student binge drinking. | Correct misperceptions (pluralistic ignorance; Prentice and Miller); descriptive norms (most drink moderately); injunctive norms (approval of moderation); avoid boomerang; target specific groups; evaluate with follow-up. | Misperceptions ; Descriptive message ; Injunctive message ; Boomerang ; Evaluation
+M2#psychology-u06-11-q6@1: In Asch's study, roughly how often did participants conform to a clearly wrong majority? | About a third of the time | Almost never | About 90% of the time | Every time | Participants conformed on about 37% of critical trials.
 
 ## Group dynamics
 LV: Introductory · Foundation
@@ -438,6 +444,8 @@ X: Pool players
 > An audience helped well-practised players and hurt less skilled ones.
 H: Social loafing
 P: **Social loafing** is putting in less effort when working in a group where individual contributions aren't identifiable. Latané, Williams and Harkins (1979) found people clapped and shouted less loudly per person in larger groups. Loafing is reduced when contributions are identifiable, the task is meaningful, the group is cohesive and members believe their effort matters. A meta-analysis found it was smaller in collectivist cultures and among women (Karau and Williams, 1993).
+P: **Investigate with the lab.** Repeat the line judgements and think about how group size and unanimity might change your answers.
+IX: conformity
 K: Others' presence facilitates simple tasks and impairs complex ones; groups can lead to loafing unless contributions are identifiable and valued.
 !: Assuming an audience always helps performance. It helps only for simple or well-learned tasks.
 EV: established | The presence of others improves simple and impairs complex task performance (social facilitation).
@@ -457,6 +465,7 @@ M2#psychology-u06-12-q2@2: A beginner pianist makes more mistakes playing for an
 TF2#psychology-u06-12-q3@2: Social loafing is usually smaller when individual contributions are identifiable. | true | Identifiability increases accountability and effort.
 M3#psychology-u06-12-q4@3: Why might social loafing be smaller in collectivist cultures? | Group goals are valued more | Groups are always smaller | People work alone | Effort is never measured | Commitment to group outcomes reduces loafing.
 SA2#psychology-u06-12-q5@2,3: Apply group dynamics research to advise a teacher setting a group project. | Assign identifiable roles and individual assessment (reduce loafing); meaningful task; small cohesive groups; anticipate storming; practise before presenting (facilitation for well-learned tasks); evaluate with peer review. | Loafing ; Roles ; Facilitation ; Development ; Evaluation
+M2#psychology-u06-12-q6@1: What happened in Asch's studies when one confederate gave the right answer? | Conformity fell sharply | Conformity rose sharply | It made no difference | Participants refused to answer | Breaking the majority's unanimity gave participants support to dissent.
 
 ## Group decision-making
 LV: Intermediate · Evaluation

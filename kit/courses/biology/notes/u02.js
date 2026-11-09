@@ -128,6 +128,8 @@ P: Support comes instead from the **extracellular matrix**, a network of protein
 P: Without a rigid wall, animal cells can change shape, crawl (white blood cells), contract (muscle) and engulf particles by phagocytosis. The cost is vulnerability to osmosis: in pure water an animal cell swells and bursts, so animals regulate the water and salt content of the fluid around their cells.
 H: Structure fits function
 P: A pancreatic acinar cell, which secretes digestive enzymes, is packed with rough ER and a large Golgi apparatus. A muscle cell is full of mitochondria and contractile protein filaments. The same basic plan is adjusted to each job.
+P: **Investigate with the lab.** Tap every organelle in the animal cell and note its job. Then find the three structures a plant cell has that an animal cell lacks.
+IX: cell-explorer
 K: Animal cells have no wall or chloroplasts; their flexible membranes allow movement and engulfing, but make them vulnerable to bursting in dilute solutions.
 !: Drawing a large central vacuole in an animal cell. Animal cells have small vesicles and vacuoles, not one large permanent vacuole.
 T: Centriole | A small cylinder of microtubules, found in pairs in the animal centrosome
@@ -143,6 +145,7 @@ M1: Which organelle carries out aerobic respiration in an animal cell? | Mitocho
 M2: A cell secretes large amounts of protein hormone. Which pair of organelles would you expect to be especially extensive? | Rough endoplasmic reticulum and Golgi apparatus | Lysosomes and centrioles | Smooth ER and peroxisomes | Chloroplasts and vacuoles | Secreted proteins are made on rough ER and processed and packaged by the Golgi before exocytosis.
 M3: White blood cells can engulf bacteria but plant cells cannot. What best explains the difference? | Animal cells lack a rigid cell wall, so their membrane can extend around particles | Plant cells have no membrane | Plant cells have no lysosomes or vesicles at all | White blood cells contain chloroplasts | Phagocytosis needs a flexible membrane that can wrap around a particle; a plant's cellulose wall prevents this.
 TF2: Animal cells have centrioles in their centrosome, while most plant cells do not. | true | Most flowering plant cells organise their spindle without centrioles.
+M2: Which structure is found in animal cells but not in plant cells? | Centrioles in a centrosome | A nucleus enclosed in an envelope | Mitochondria for respiration | Ribosomes for protein synthesis | Animal cells have centrioles; plant cells also have nuclei, mitochondria and ribosomes.
 
 ## Plant cells
 S: Plant cells share the eukaryotic plan with animal cells but add three features: a cellulose wall, chloroplasts and a large permanent vacuole. Together these let plants make their own food and stand upright without a skeleton.
@@ -159,6 +162,8 @@ H: Turgor: standing up with water
 P: Water enters the vacuole by osmosis and pushes the cytoplasm against the wall. The wall pushes back, creating **turgor pressure** that makes the cell firm. Turgid cells pressing against each other hold up soft stems and leaves; when they lose water, the plant wilts.
 H: Connected cells
 P: Neighbouring plant cells are joined by **plasmodesmata**, channels through the walls lined by plasma membrane, through which water, sugars, signals and even some proteins pass directly from cell to cell.
+P: **Investigate with the lab.** Switch to the plant cell and tap the cell wall, the large vacuole and a chloroplast. Compare each with the animal cell.
+IX: cell-explorer
 K: The cell wall, chloroplasts and large vacuole let plant cells photosynthesise and stay rigid through turgor pressure.
 !: Thinking the cell wall controls what enters the cell. The wall is fully permeable; it is the plasma membrane that is selective.
 T: Cell wall | A rigid layer outside the plasma membrane; made of cellulose in plants
@@ -173,6 +178,7 @@ Q: Why does a plant wilt when short of water? | Its cells lose water, turgor pre
 M1: Which structure is found in plant cells but not in animal cells? | Cellulose cell wall | Mitochondria | Ribosomes | Nucleus | Plant and animal cells both have mitochondria, ribosomes and a nucleus; only plants have a cellulose wall.
 M2: A cell from a carrot root has a cell wall and a large vacuole but no chloroplasts. What does this show? | It is a plant cell from a non-photosynthetic tissue | It is an animal cell | It is a bacterial cell | It must be dead | Chloroplasts are absent from plant tissues that are not exposed to light, such as roots.
 M3: Why can a cell with a wall withstand being placed in pure water, when an animal cell cannot? | The wall resists expansion, so turgor pressure builds up until water stops entering | The wall is impermeable to water | Plant cells actively pump water out | The vacuole stores all the incoming water without swelling | As the cell swells, the wall pushes back; the rising pressure balances the tendency of water to enter, so the cell becomes turgid instead of bursting.
+M2: Which three structures do plant cells have that animal cells lack? | Cell wall, large permanent vacuole and chloroplasts | Nucleus, cell membrane and ribosomes | Mitochondria, cytoplasm and lysosomes | Centrioles, cilia and a nucleolus | The cellulose wall, permanent vacuole and chloroplasts are features of plant cells.
 MATCH2: Match each plant cell structure to its function. | Cell wall = support and resistance to bursting ; Chloroplast = photosynthesis ; Vacuole = stores cell sap and maintains turgor ; Plasmodesma = connects neighbouring cells | Each feature supports a different aspect of plant life: structure, nutrition, water balance and communication.
 
 ## Fungal cells
@@ -255,6 +261,8 @@ H: Organelles working together
 P: To make a secreted protein such as insulin, the nucleus provides the mRNA, ribosomes on the rough ER make the chain and thread it into the ER, the Golgi modifies and packages it, a vesicle carries it to the plasma membrane, and mitochondria supply the ATP for every step.
 H: How organelles are studied
 P: Much of what we know comes from **cell fractionation**. Cells are broken open in a cold, buffered solution of the same water potential as the cells, then spun in a centrifuge at increasing speeds. Large, dense parts settle first: nuclei at low speed, then mitochondria and chloroplasts, then fragments of ER and other membranes, and ribosomes only at very high speed. Each fraction can then be tested to find which reactions it carries out.
+P: **Investigate with the lab.** Go through every organelle in both cells and sort them into those that make proteins, those that release energy and those that store or transport materials.
+IX: cell-explorer
 K: Organelles divide the cell's work, but they function as a connected system, especially the endomembrane system.
 !: Learning organelles as an unrelated list. Each depends on others: no organelle works alone.
 T: Endomembrane system | The connected membranes of the nuclear envelope, ER, Golgi, lysosomes, vesicles and plasma membrane
@@ -269,6 +277,7 @@ M1: Which organelle packages proteins into vesicles for secretion? | Golgi appar
 SEQ2: Put the stages of making and secreting a protein in order. | Transcription in the nucleus ; Translation on rough ER ; Modification in the Golgi ; Transport in a vesicle ; Exocytosis at the plasma membrane | The information leaves the nucleus as mRNA, the protein is made into the ER, finished in the Golgi and carried out in a vesicle.
 M2: A drug stops vesicles from budding off the ER. What happens to a protein destined for secretion? | It builds up in the ER and is not secreted | It is secreted faster | It is made in the nucleus instead | It is digested by chloroplasts | Without vesicle transport, proteins can't move from the ER to the Golgi and on to the surface.
 M3: Cells lining the stomach secrete a lot of enzyme and also divide often. Which combination of organelles would you expect to be prominent? | Extensive rough ER and Golgi, many mitochondria, and active nuclei with large nucleoli | Large vacuoles and chloroplasts | Few ribosomes and many peroxisomes | Only lysosomes | Heavy protein secretion needs ribosome production (nucleoli), rough ER, Golgi and ATP from mitochondria.
+M2: Which organelle is the site of aerobic respiration? | The mitochondrion | The ribosome | The Golgi apparatus | The nucleolus | Aerobic respiration releases energy as ATP in the mitochondria.
 
 ## Nucleus and nucleolus
 S: The nucleus holds almost all of a eukaryotic cell's DNA and controls which genes are used. Inside it, the nucleolus builds the ribosomes the cell needs to make proteins.
@@ -283,6 +292,8 @@ P: Each human cell nucleus contains about 2 m of DNA packed into a space about 6
 H: The nucleolus
 P: The **nucleolus** is a dense region, not surrounded by a membrane, where genes for ribosomal RNA are transcribed and combined with imported proteins to make the large and small ribosomal subunits. These leave through the pores and assemble into working ribosomes in the cytoplasm. Cells that make a lot of protein have large nucleoli.
 P: A few cell types lose their nucleus as they mature: mammalian red blood cells, for example, which can then carry more haemoglobin but cannot make new proteins or divide.
+P: **Investigate with the lab.** Play the identification game until you can find the nucleus and nucleolus in both cells without hesitating.
+IX: organelle-id
 K: The nucleus stores and controls access to DNA, and its pores regulate traffic in and out; the nucleolus makes ribosomal subunits.
 !: Thinking the nucleolus is a smaller nucleus with its own membrane. It is a region inside the nucleus, defined by the work done there, with no membrane.
 T: Nuclear pore | A protein complex in the nuclear envelope that controls movement of molecules in and out
@@ -299,6 +310,7 @@ M1: What are histones? | Proteins around which DNA is wound in chromatin | Enzym
 M2: A cell is treated with a chemical that blocks nuclear pores. Which process stops first? | Export of mRNA to the ribosomes in the cytoplasm | DNA replication | Transcription of genes already being read | Respiration in mitochondria | Transcription happens inside the nucleus, but mRNA must leave through the pores to be translated.
 M3: Why does a mature mammalian red blood cell have a limited lifespan of about 120 days? | It has no nucleus, so it can't make new proteins to repair itself or divide | It has too many mitochondria | Its nucleolus makes too many ribosomes | Its DNA is too tightly packed | Losing the nucleus makes room for haemoglobin but removes the genes needed for repair and renewal.
 TF1: The outer membrane of the nuclear envelope is continuous with the rough endoplasmic reticulum. | true | The two membranes are joined, and the outer nuclear membrane also carries ribosomes.
+M2: What is made in the nucleolus? | Ribosomal RNA and ribosome subunits | Lipids for the cell membrane | ATP for the cell's energy needs | Glucose by photosynthesis | The nucleolus assembles ribosome subunits from rRNA and proteins.
 
 ## Mitochondria
 S: Mitochondria are the organelles where aerobic respiration releases most of the energy in food, storing it as ATP. Their folded inner membrane, their own DNA and their bacterial ancestry make them one of the cell's most distinctive organelles.
@@ -316,6 +328,8 @@ P: Glycolysis happens in the cytosol. Pyruvate then enters the matrix, where the
 H: Form follows demand
 P: The cristae greatly increase the area of inner membrane, and so the number of ATP synthase complexes. Cells with high energy demands, such as heart muscle, sperm tails and kidney tubule cells, are packed with mitochondria with dense cristae. Mitochondria also divide and fuse, so their number adjusts to the cell's needs.
 P: Mitochondrial DNA is inherited almost entirely from the mother, because the egg contributes the cytoplasm of the zygote.
+P: **Investigate with the lab.** Find the mitochondria in both cell types. Notice they appear in plant cells too, not only animal cells.
+IX: organelle-id
 K: Mitochondria make most of a cell's ATP by oxidative phosphorylation on their folded inner membrane; their number reflects the cell's energy demand.
 !: Saying mitochondria "make energy". Energy can't be made: mitochondria transfer energy from food molecules into ATP.
 T: Cristae | The folds of the inner mitochondrial membrane, where ATP is made
@@ -332,6 +346,7 @@ M1: Which part of a mitochondrion contains ATP synthase? | The inner membrane | 
 M2: Sperm cells have many mitochondria packed around the base of the tail. What does this suggest? | Swimming uses a lot of ATP, supplied close to where it is needed | Sperm cells photosynthesise | Mitochondria make the tail longer | The mitochondria store genetic information for the embryo | Mitochondria are concentrated where energy demand is high; the tail's beating is powered by ATP.
 M3: A poison blocks the electron transport chain. Why does ATP production fall sharply even though glycolysis can continue? | Most ATP comes from oxidative phosphorylation, which depends on the electron transport chain building the proton gradient | Glycolysis happens in the mitochondria | The Krebs cycle makes most of the ATP directly | ATP synthase is in the cytosol | Glycolysis yields only 2 ATP per glucose; the bulk comes from proton flow through ATP synthase, which stops when electron transport stops.
 TF2: Mitochondrial DNA is usually inherited from the father. | false | It is inherited almost entirely from the mother, through the egg's cytoplasm.
+M2: Why do muscle cells contain many mitochondria? | They need a lot of ATP from aerobic respiration | They need to make a lot of protein for export | They store large amounts of starch | They carry out photosynthesis in daylight | Active cells such as muscle need plenty of ATP, which mitochondria provide.
 
 ## Chloroplasts
 S: Chloroplasts are the organelles of photosynthesis in plants and algae. They capture light energy and use it to make sugars from carbon dioxide and water, releasing oxygen as a by-product.
@@ -348,6 +363,8 @@ P: In the **light-dependent reactions** on the thylakoid membranes, chlorophyll 
 H: Chloroplasts in the leaf
 P: Palisade mesophyll cells, just under the upper surface of a leaf, are packed with chloroplasts, which can move within the cell to make the best use of the light. Like mitochondria, chloroplasts have their own circular DNA and divide by fission, evidence that they descend from cyanobacteria.
 P: Chloroplasts belong to a family of organelles called plastids, which also includes amyloplasts that store starch in roots and tubers, and chromoplasts that colour fruits and petals.
+P: **Investigate with the lab.** Find a chloroplast in the plant cell and confirm the animal cell has none.
+IX: organelle-id
 K: Chloroplasts capture light on their thylakoid membranes and fix carbon dioxide into sugar in their stroma.
 !: Thinking plant cells have chloroplasts instead of mitochondria. Plant cells have both: chloroplasts make sugar, and mitochondria release its energy by respiration.
 T: Thylakoid | A flattened membrane sac in a chloroplast where the light-dependent reactions occur
@@ -363,6 +380,7 @@ M1: Where do the light-dependent reactions of photosynthesis take place? | On th
 M2: Palisade cells have far more chloroplasts than spongy mesophyll cells. Why? | They are nearest the upper surface and receive the most light | They have no mitochondria | They store starch for the whole plant | They carry out gas exchange only | More chloroplasts where the light is brightest lets the leaf capture more energy.
 M3: A plant is kept in light but with no carbon dioxide. Which process stops, and why? | The Calvin cycle, because it needs carbon dioxide to fix into sugar | The light-dependent reactions, because they need carbon dioxide to split water | Respiration, because it uses carbon dioxide | Nothing stops, because carbon dioxide is not used | Carbon dioxide is the substrate of carbon fixation; without it the Calvin cycle halts (and ATP and NADPH soon build up).
 MS2: Which features do chloroplasts share with bacteria? | Circular DNA ; 70S ribosomes ; Division by fission | A nucleus ; Golgi apparatus ; Linear chromosomes with histones | These shared features support the endosymbiotic origin of chloroplasts from cyanobacteria.
+M2: In which part of a chloroplast are the light-dependent reactions? | The thylakoid membranes | The stroma | The outer envelope | The starch grains | Chlorophyll in the thylakoid membranes absorbs light for the light-dependent stage.
 
 ## Ribosomes
 S: Ribosomes are the cell's protein factories: they read the code in messenger RNA and join amino acids in the order it specifies. Every cell has them, and differences between bacterial and human ribosomes are the target of many antibiotics.
@@ -379,6 +397,8 @@ P: The same ribosome can be either: a signal sequence at the start of a protein 
 H: 70S and 80S
 P: Ribosomes are described by how fast they sediment in a centrifuge, in Svedberg units (S). Prokaryotic ribosomes are **70S** (50S and 30S subunits); eukaryotic cytoplasmic ribosomes are **80S** (60S and 40S). The values don't add up because sedimentation depends on shape as well as mass. Mitochondria and chloroplasts have 70S-type ribosomes.
 P: Antibiotics such as streptomycin and tetracyclines bind the 30S subunit, and erythromycin the 50S subunit, blocking bacterial protein synthesis with much less effect on our 80S ribosomes.
+P: **Investigate with the lab.** Watch tRNAs move through the A, P and E sites as the chain grows, until a stop codon releases it.
+IX: ribosome
 K: Ribosomes, made of rRNA and protein, translate mRNA into protein; bacterial 70S and eukaryotic 80S ribosomes differ enough for antibiotics to tell them apart.
 !: Calling ribosomes membrane-bound organelles. They have no membrane; "bound" ribosomes are simply attached to the ER.
 T: Ribosome | A structure of rRNA and protein that translates mRNA into a polypeptide
@@ -395,6 +415,7 @@ M1: What are ribosomes made of? | Ribosomal RNA and proteins | DNA and lipids | 
 M2: Tetracycline binds to the 30S ribosomal subunit. Why does it harm bacteria more than human cells? | Human cytoplasmic ribosomes are 80S, with a 40S small subunit that it binds poorly | Human cells have no ribosomes | Bacteria have no 30S subunit | Tetracycline only enters the nucleus | The drug targets the bacterial small subunit, which differs from the eukaryotic one.
 M3: Some antibiotics that act on bacterial ribosomes cause side effects in tissues with high energy demand. What is a likely explanation? | Mitochondria have bacterial-type ribosomes, so the drug can reduce mitochondrial protein synthesis | The drugs block glycolysis directly | Human 80S ribosomes are identical to 70S ribosomes | The drugs dissolve cell membranes | Mitochondria descend from bacteria and keep 70S-type ribosomes, so drugs aimed at bacteria can partly affect them.
 TF1: Ribosomes are surrounded by a single membrane. | false | Ribosomes have no membrane; they are complexes of RNA and protein.
+M2: What does a tRNA molecule carry to the ribosome? | A specific amino acid, matched by its anticodon | A copy of the gene from the nucleus | The ribosome's two subunits | An enzyme that copies DNA | Each tRNA's anticodon pairs with an mRNA codon and delivers the matching amino acid.
 
 ## Endoplasmic reticulum
 S: The endoplasmic reticulum is a network of membranes spreading through the cytoplasm from the nuclear envelope. Its rough parts make and fold proteins for export and membranes; its smooth parts make lipids, detoxify drugs and store calcium.
@@ -442,6 +463,8 @@ H: Sorting and dispatch
 - **Membrane proteins** are delivered to the plasma membrane.
 - **Lysosomal enzymes** are tagged with **mannose-6-phosphate**, recognised by receptors in the trans Golgi that send them to lysosomes.
 P: In the genetic disorder I-cell disease, the tagging enzyme is missing, so lysosomal enzymes are secreted instead of delivered, and undigested material builds up in the lysosomes.
+P: **Investigate with the lab.** Find the Golgi apparatus, then the rough endoplasmic reticulum, and trace the route a protein takes between them.
+IX: organelle-id
 K: The Golgi modifies proteins and lipids as they pass from its cis to its trans face, and sorts them into vesicles by destination.
 !: Thinking the Golgi makes proteins. It receives proteins made on the rough ER and finishes, sorts and ships them.
 T: Golgi apparatus | A stack of membrane sacs that modifies, sorts and packages proteins and lipids
@@ -458,6 +481,7 @@ M1: What is the main function of the Golgi apparatus? | Modifying, sorting and p
 M2: Radioactive amino acids are given to a pancreatic cell. In which order would the label appear? | Rough ER, then Golgi, then secretory vesicles | Golgi, then nucleus, then ER | Mitochondria, then Golgi, then nucleus | Lysosomes, then ER, then Golgi | This classic pulse-chase experiment by Palade traced proteins from the ER through the Golgi to secretion.
 M3: In I-cell disease, lysosomal enzymes are found in the blood, while patients' lysosomes fill with undigested material. What is the underlying fault? | The enzymes are not tagged with mannose-6-phosphate, so they are secreted instead of sent to lysosomes | The lysosomes have no membrane | The ER makes no proteins | The cells have no Golgi apparatus | Without the sorting tag, the default route out of the Golgi is secretion.
 TF1: Proteins move through the Golgi from the cis face to the trans face. | true | They arrive from the ER at the cis face and leave from the trans face.
+M2: What does the Golgi apparatus do? | Modifies, packages and sends proteins to their destinations | Makes proteins by joining amino acids together | Releases energy from glucose by respiration | Stores the cell's genetic information safely | Proteins from the rough ER are modified and packaged in the Golgi apparatus.
 
 ## Lysosomes and peroxisomes
 S: Lysosomes and peroxisomes are small membrane-bound organelles that break things down. Lysosomes digest worn-out organelles and engulfed material with acid enzymes; peroxisomes oxidise fatty acids and destroy the hydrogen peroxide this produces.

@@ -212,6 +212,8 @@ H: Debates
 - **Continuity or stages**: is development gradual or does it move in qualitatively distinct stages?
 - **Critical or sensitive periods**: are some abilities acquired only in fixed windows, or more easily during flexible sensitive periods?
 - **Nature and nurture**: modern research stresses gene–environment **interaction** and **correlation**.
+P: **Investigate with the lab.** Look at Piaget, Erikson, attachment and language milestones together on one lifespan.
+IX: dev-timeline
 K: Lifespan perspectives see development as lifelong, multidirectional and embedded in nested contexts that interact over time.
 !: Treating development as finished by adulthood. Gains and losses continue throughout life.
 EV: established | Development is shaped by interacting biological, social and historical influences across the lifespan.
@@ -232,6 +234,7 @@ MATCH2#psychology-u05-06-q3@1: Match each influence to its type. | Starting scho
 TF2#psychology-u05-06-q4@3: Lifespan perspectives see development as complete by early adulthood. | false | Development continues throughout life.
 M3#psychology-u05-06-q5@3: How does the chronosystem add to Bronfenbrenner's model? | Timing and change over time matter | It removes culture | It focuses only on genes | It ignores family | The same event may affect a child differently at different ages or eras.
 SA3#psychology-u05-06-q6@3: Evaluate the lifespan perspective on development. | Baltes's principles; Bronfenbrenner's systems; strengths: holistic, explains context and history, informs policy. Limitations: broad and hard to test, less specific predictions than stage theories. Debates: continuity vs stages, sensitive periods, nature–nurture interaction. | Baltes ; Bronfenbrenner ; Strengths ; Limitations ; Debates
+M2#psychology-u05-06-q7@1: What does a lifespan perspective emphasise? | Development continues from birth to old age | Development stops at the end of childhood | Only infancy matters for development | Development follows one universal path | Change and growth continue throughout life.
 
 ## Piaget's theory of cognitive development
 LV: Intermediate · Evaluation
@@ -253,6 +256,8 @@ X: Policeman doll
 > When a task makes sense to children, they show less egocentrism than Piaget reported.
 H: Evaluation
 P: Strengths: Piaget transformed the study of children's thinking, and his tasks are widely replicated in their original forms. Criticisms: infants show signs of object understanding earlier when tested with looking-time methods (Baillargeon, 1987); child-friendly tasks reveal earlier competence; many adults don't reach formal operations consistently; and Piaget underplayed social and cultural influences. His theory influenced **discovery learning** in education.
+P: **Investigate with the lab.** Place Piaget's four stages on the timeline and note the key ability that marks each.
+IX: dev-timeline
 K: Piaget described children constructing knowledge through stages; later research shows earlier competence and a greater role for social context.
 !: Assuming children fail tasks because they lack the concept. Task demands, language and context can hide what they know.
 EV: established | Children's reasoning on Piagetian tasks changes systematically with age.
@@ -272,6 +277,7 @@ M2#psychology-u05-07-q2@2: A child calls every four-legged animal "doggy", then 
 TF2#psychology-u05-07-q3@2: Baillargeon's looking-time studies suggested object knowledge earlier than Piaget claimed. | true | Infants of 3½–4½ months seemed surprised by impossible events.
 M3#psychology-u05-07-q4@3: What is the strongest criticism of Piaget's methods? | Tasks may underestimate children | They used too many children | Tasks were too easy | He studied only adults | Confusing language and context can mask competence.
 SA3#psychology-u05-07-q5@3: Evaluate Piaget's theory of cognitive development. | Concepts (schemas, assimilation, accommodation, equilibration); stages and tasks; supporting replications; criticisms: earlier competence (Hughes, McGarrigle and Donaldson, Baillargeon), formal operations not universal, culture and social interaction underplayed; educational impact. | Concepts ; Stages ; Support ; Criticisms ; Impact
+M2#psychology-u05-07-q6@1: In which Piagetian stage does object permanence develop? | Sensorimotor | Preoperational | Concrete operational | Formal operational | Object permanence develops in the sensorimotor stage, from birth to about two years.
 
 ## Vygotsky and sociocultural development
 LV: Intermediate · Evaluation
@@ -370,6 +376,8 @@ X: Words heard
 > A larger replication found much smaller differences, partly because overheard speech was counted (Sperry, Sperry and Miller, 2019).
 > Later studies suggest the quality of interaction, such as back-and-forth **conversational turns**, predicts language growth more than the raw number of words (Romeo et al., 2018).
 P: **Bilingual** children learn two languages along broadly similar timelines; their vocabulary in each language may be smaller, but combined vocabulary is typical. There is no good evidence that bilingualism causes language delay.
+P: **Investigate with the lab.** Find the language milestones on the timeline, from babbling to two-word sentences.
+IX: dev-timeline
 K: Infants tune into their language through perception and statistical learning; vocabulary and grammar grow rapidly; conversational interaction supports development.
 !: Repeating the "30 million word gap" as settled fact. Replications found smaller differences, and interaction quality matters more.
 EV: established | Infants lose sensitivity to non-native speech contrasts by about 10–12 months (Werker and Tees, 1984).
@@ -389,6 +397,7 @@ M2#psychology-u05-10-q2@2: A 12-month-old English learner no longer distinguishe
 TF2#psychology-u05-10-q3@2: Romeo et al. found conversational turns were linked to language-related brain function. | true | Back-and-forth talk predicted brain responses to language.
 M3#psychology-u05-10-q4@3: Why is the "30 million word gap" contested? | Replications found smaller differences | It was never measured | Words don't matter | It studied only bilinguals | Larger samples and broader counting reduced the gap.
 SA2#psychology-u05-10-q5@2,3: Apply language development research to advise parents of a toddler. | Talk with the child in back-and-forth turns; respond to babbling; label objects (fast mapping); read together; bilingualism doesn't cause delay; avoid worry about word counts alone; note milestone variation. | Conversational turns ; Vocabulary ; Reading ; Bilingualism ; Variation
+M2#psychology-u05-10-q6@1: At about what age do children typically produce two-word sentences? | Around 18 to 24 months | Around 3 months | Around 5 years | Around 10 years | The two-word stage typically begins around 18 to 24 months.
 
 ## Emotional development
 LV: Introductory · Foundation
@@ -489,6 +498,9 @@ H: Maternal deprivation
 P: Bowlby's (1944) study of 44 juvenile thieves found 14 were "affectionless psychopaths", of whom 12 had experienced prolonged early separation from their mothers, compared with 2 of 44 non-offending controls. His **maternal deprivation hypothesis** proposed that prolonged early separation causes lasting harm. Rutter (1972) argued much harm came from **privation** (never forming an attachment) and family discord rather than separation itself.
 H: Evaluation
 P: Strengths: the theory is supported by animal studies, has wide influence on childcare (for example, parents staying with children in hospital) and inspired Ainsworth's research. Limitations: monotropy is challenged by evidence of multiple attachments (Schaffer and Emerson, 1964); Bowlby's 1944 study was retrospective, correlational and conducted by Bowlby himself; generalising from geese and monkeys is limited; and the theory has been criticised for placing responsibility on mothers.
+P: **Investigate with the lab.** Classify invented infants' attachment types from their reunion behaviour, then compare with Bowlby's phases on the timeline.
+IX: strange-situation
+IX: dev-timeline
 K: Bowlby proposed an evolved, monotropic attachment formed in a sensitive period, creating an internal working model; evidence supports much of it, but monotropy and maternal deprivation are contested.
 !: Concluding that any separation from the mother causes lasting harm. Quality of care and lack of attachment matter more than brief separations.
 EV: established | Infant monkeys prefer comforting contact over food alone when choosing a surrogate (Harlow, 1958).
@@ -508,6 +520,7 @@ M2#psychology-u05-13-q2@2: Infant monkeys cling to a cloth mother and visit a wi
 TF2#psychology-u05-13-q3@2: In Bowlby's 44 thieves study, 12 of the 14 "affectionless" thieves had experienced prolonged early separation. | true | Bowlby linked early separation to affectionless psychopathy.
 M3#psychology-u05-13-q4@3: Why is the 44 thieves study weak evidence for maternal deprivation? | It was retrospective and correlational | It was a randomised trial | It used monkeys | It studied only adults | Recall of early separation and other family factors confound the link.
 SA3#psychology-u05-13-q5@3: Evaluate Bowlby's theory of attachment. | Key concepts (social releasers, monotropy, sensitive period, internal working model); animal evidence (Lorenz, Harlow); maternal deprivation (44 thieves, Rutter's privation critique); strengths (influence, Ainsworth); limitations (multiple attachments, cultural bias, maternal blame). | Concepts ; Animal evidence ; Deprivation ; Strengths ; Limitations
+M2#psychology-u05-13-q6@1: What did Bowlby call the special attachment to one main caregiver? | Monotropy | Imprinting | Object permanence | Reciprocity | Bowlby argued infants form one primary attachment, which he called monotropy.
 
 ## Ainsworth and the Strange Situation
 LV: Intermediate · Evaluation
@@ -567,6 +580,8 @@ X: Two measures, different results
 > The AAI and romantic self-report questionnaires correlate only weakly (Roisman et al., 2007).
 > The AAI captures unconscious organisation of thoughts about parents; questionnaires capture conscious feelings about partners.
 > Researchers need to be clear which aspect of attachment a measure assesses.
+P: **Investigate with the lab.** Classify each infant from the Strange Situation, then evaluate the method across cultures.
+IX: strange-situation
 K: Attachment is measured by observation in childhood and by interview or self-report in adulthood; different measures capture different aspects.
 !: Assuming all attachment measures measure the same thing. Interviews and questionnaires correlate only weakly.
 EV: established | Parents' AAI classifications predict their infants' attachment classifications above chance.
@@ -586,6 +601,7 @@ M2#psychology-u05-15-q2@2: An adult describes a difficult childhood clearly and 
 TF2#psychology-u05-15-q3@2: The AAI and romantic attachment questionnaires correlate strongly. | false | They correlate only weakly, measuring different aspects.
 M3#psychology-u05-15-q4@3: What is an advantage of the Q-sort over the Strange Situation? | Natural settings, wider ages | It takes only 20 minutes | It needs no trained observer | It is designed for adults | Home observation across ages increases ecological validity.
 SA2#psychology-u05-15-q5@2,3: Compare two ways of measuring attachment and explain what each can tell us. | Strange Situation (lab, infants, reunion behaviour, types) vs Q-sort (home, wider ages, continuous score); or AAI (coherence, intergenerational prediction) vs self-report (anxiety, avoidance, conscious feelings); reliability and validity; weak correlations. | Measure one ; Measure two ; Comparison ; Evaluation
+M2#psychology-u05-15-q6@1: Which attachment type shows distress at separation and is easily comforted on reunion? | Secure | Insecure-avoidant | Insecure-resistant | Disorganised | Securely attached infants seek and accept comfort from the caregiver.
 
 ## Caregivers and parenting styles
 LV: Intermediate · Application
@@ -766,6 +782,8 @@ X: Generativity in midlife
 > Research finds generativity is associated with higher well-being in midlife (McAdams and de St. Aubin, 1992).
 H: Evaluation
 P: Strengths: Erikson was one of the first to describe development across the whole lifespan, stressed social and cultural influences, and inspired research on identity (Marcia) and generativity. Limitations: the stages are broad and hard to test, age ranges are loose, and the theory reflects mid-20th-century Western life courses. Longitudinal research tends to show gradual change in these themes rather than neat stage-by-stage resolution.
+P: **Investigate with the lab.** Follow Erikson's eight stages along the lifespan and note the crisis of each.
+IX: dev-timeline
 K: Erikson described eight psychosocial crises across the lifespan; the theory is influential but hard to test.
 !: Thinking each stage is either passed or failed. Erikson saw outcomes as a balance, and earlier issues can be revisited.
 EV: established | Erikson's theory has generated testable research on identity and generativity.
@@ -785,6 +803,7 @@ SEQ2#psychology-u05-20-q3@1: Put these stages in Erikson's order. | Trust vs mis
 TF2#psychology-u05-20-q4@3: Erikson saw each stage as simply passed or failed, with no later revisiting. | false | He saw outcomes as a balance that can be revisited.
 M3#psychology-u05-20-q5@3: What is the strongest criticism of Erikson's theory? | Broad stages are hard to test | It ignores adulthood | It has no social factors | It was never applied | Loose definitions and ages make clear predictions difficult.
 SA3#psychology-u05-20-q6@3: Evaluate Erikson's psychosocial theory of development. | Eight stages and virtues; strengths (lifespan, social and cultural, influence on Marcia and generativity research); limitations (hard to test, loose ages, Western bias, stage sequence); evidence of gradual change. | Stages ; Strengths ; Evidence ; Limitations ; Judgement
+M2#psychology-u05-20-q7@1: Which crisis did Erikson link to adolescence? | Identity versus role confusion | Trust versus mistrust | Integrity versus despair | Intimacy versus isolation | Adolescents work out who they are and what they value.
 
 ## Moral development: Kohlberg
 LV: Intermediate · Evaluation

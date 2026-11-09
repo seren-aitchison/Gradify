@@ -561,6 +561,8 @@ X: A steel part at 400 °C cools in air at 20 °C with τ = 600 s. How long unti
 > t = 600 ln(380/80) = 600 × 1.558 = 935 s, about 15.6 minutes
 X: An RC circuit has R = 4.7 kΩ and C = 220 µF and is switched onto 9 V. Find the voltage after 2 s.
 > τ = 4700 × 220 × 10^{-6} = 1.03 s; v = 9(1 − e^{−2/1.03}) = 9(1 − 0.145) = 7.7 V
+P: **Investigate with the lab.** Charge the capacitor and time the rise to 63%. Then double R and see the time constant double.
+IX: transients
 K: Every first-order system responds to a step the same way: exponentially to its final value with one time constant, 63% of the way after τ and settled after about 5τ.
 !: Using a lumped (single-temperature) cooling model for a thick part. It assumes the temperature is uniform inside, which needs the Biot number hL/k below about 0.1; otherwise the surface cools much faster than the core.
 EV: established | First-order linear models accurately describe ideal RC circuits; lumped thermal models are accurate when the Biot number is small (commonly taken as below 0.1).
@@ -576,6 +578,7 @@ M2#engineering-u01-15-q2@2: A thermometer with τ = 10 s is plunged from 20 °C 
 NUM2#engineering-u01-15-q3@2: A 220 µF capacitor charges through 4.7 kΩ from a 9.0 V supply, starting uncharged. What is its voltage after 2.0 s? | 7.70 | 1% | V | τ = 1.034 s; v = 9(1 − e^{−2/1.034}) = 9(1 − 0.1445) = 7.70 V.
 M3#engineering-u01-15-q4@3: A 50 mm thick steel block is modelled as cooling with a single temperature and τ = mc/(hA). Measured core temperatures fall more slowly than predicted. Why? | Its Biot number is too large for a lumped model, so the core lags the surface | The time constant should be hA/(mc) | Newton's law of cooling does not apply to metals | The model predicts the core temperature too high | A lumped model assumes uniform temperature. If conduction inside is slow compared with surface convection (a larger Biot number), the core cools more slowly than the average; a transient conduction model is needed.
 SA3#engineering-u01-15-q5@1,3: Derive the voltage on a capacitor charging through a resistor from a constant supply V_{s}, and state the assumptions. | Kirchhoff's voltage law gives V_{s} = iR + v with i = C dv/dt, so RC dv/dt + v = V_{s}. Separating: dv/(V_{s} − v) = dt/RC; integrating, −ln(V_{s} − v) = t/RC + constant. With v = 0 at t = 0, v = V_{s}(1 − e^{−t/RC}). Assumptions: ideal linear R and C, an ideal source with no internal resistance (or include it in R), no leakage and a switch that closes instantly. | Applies KVL ; Uses i = C dv/dt ; Separates and integrates ; Applies the initial condition ; States ideal-component assumptions
+M2#engineering-u01-15-q6@1: An RC circuit has R = 2 kΩ and C = 500 μF. What is its time constant? | 1 s | 0.5 s | 2 s | 4 s | The time constant is τ = RC = 2,000 Ω × 0.0005 F = 1 s.
 
 ## Second-order differential equations
 LV: Year 1 · Advanced
@@ -639,6 +642,8 @@ X: Use Euler's method with h = 0.1 for dy/dt = −2y, y(0) = 1, up to t = 0.2.
 IX: ode
 H: Can you trust it?
 P: **Truncation error** comes from the method's approximation and falls as the step shrinks; **round-off error** comes from finite precision and grows as steps multiply. Check convergence by repeating with half the step: if the answer barely changes, it has converged. Check it against a hand estimate or a known special case.
+P: **Investigate with the lab.** Approximate an integral with rectangles, midpoints and trapezia, and watch the error shrink as you add strips.
+IX: riemann
 K: A numerical answer is not trustworthy until you have shown it converges as the step is refined and agrees with an independent check.
 !: Taking a step so large that an explicit method goes unstable. For dy/dt = −ky, Euler's method oscillates and blows up if h > 2/k, even though the true solution decays smoothly.
 EV: established | Newton–Raphson converges quadratically to a simple root from a close enough start; the error orders of the trapezium, Simpson and Euler methods are standard results.
@@ -654,6 +659,7 @@ M2#engineering-u01-17-q2@2: Use one Newton–Raphson step from x_{0} = 1 to esti
 NUM2#engineering-u01-17-q3@2: Estimate ∫ from 0 to 2 of x^{2} dx using the trapezium rule with h = 1. | 3 | 0 |  | (1/2)[0 + 2 × 1 + 4] = 3. The exact value is 8/3; the trapezium rule overestimates a curve that bends upwards.
 M3#engineering-u01-17-q4@3: Euler's method for dy/dt = −50y with step h = 0.05 s gives values that oscillate and grow. What is the best explanation? | The step exceeds the stability limit 2/k = 0.04 s for an explicit method | Euler's method cannot solve exponential decay | Round-off error dominates at that step size | The exact solution also oscillates | With h k = 2.5 > 2, each step multiplies y by (1 − hk) = −1.5, so the result alternates and grows. Reducing h below 0.04 s, or using an implicit method, fixes it.
 SA3#engineering-u01-17-q5@2,3: A colleague runs a simulation once with a large time step and reports the result to four significant figures. What would you ask them to do before you used it, and why? | Ask for a convergence study: rerun with the step halved (and halved again) and show the result changes by much less than the precision quoted, which tests truncation error. Ask whether the method is stable at that step for the fastest dynamics in the model. Ask for an independent check, such as a hand calculation, a limiting case with a known answer or a comparison with test data, which tests the model as well as the numerics. Four significant figures mean nothing until the numerical error is shown to be smaller than that. | Convergence with smaller step ; Stability limit ; Independent check or validation ; Distinguishes numerical from modelling error ; Precision quoted must match demonstrated error
+M2#engineering-u01-17-q6@1: When the number of strips is doubled, roughly how does the trapezium rule's error change? | It falls to about a quarter | It halves | It stays about the same | It doubles | The trapezium rule's error is proportional to h², so halving h quarters it.
 
 ## Engineering statistics
 LV: Year 1 · Intermediate

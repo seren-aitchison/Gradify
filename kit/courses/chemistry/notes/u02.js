@@ -17,6 +17,8 @@ P: In 1909 Hans Geiger and Ernest Marsden, working with Ernest Rutherford, fired
 H: Holding the nucleus together
 P: Protons repel each other electrically, very strongly at nuclear distances. The nucleus holds together because of the **strong nuclear force**, which attracts protons and neutrons to each other but acts only over about 10⁻¹⁵ m. Neutrons add attraction without adding repulsion, which is why heavier nuclei need more neutrons than protons to be stable.
 P: Electrons are held in the atom by their electrical attraction to the nucleus. Chemistry, the making and breaking of bonds, involves only the electrons, which is why an element's chemistry is set by its electron arrangement while its nucleus stays unchanged in reactions.
+P: **Investigate with the lab.** Build carbon by adding six protons, six neutrons and six electrons. Then add a neutron and see what changes and what doesn't.
+IX: atom-builder
 K: An atom has a tiny, dense, positive nucleus holding nearly all its mass, surrounded by electrons in a space about 100 000 times wider; chemistry happens in the electrons.
 !: Picturing electrons as tiny planets in fixed orbits close to the nucleus. Electrons occupy a large region around it, described by probabilities, as later lessons explain.
 T: Nucleus | The tiny, dense, positively charged centre of an atom, containing protons and neutrons
@@ -34,6 +36,7 @@ M1: What did the large-angle deflection of a few alpha particles show? | Positiv
 M2: Why do heavy stable nuclei such as lead-208 have more neutrons (126) than protons (82)? | Extra neutrons add strong-force attraction without adding electrical repulsion | Neutrons are needed to attract electrons | Protons are heavier than neutrons | Neutrons repel protons | As nuclei get bigger, proton–proton repulsion grows; additional neutrons provide binding without charge.
 M3: If Thomson's plum pudding model had been correct, what would Geiger and Marsden have seen? | Almost all alpha particles passing through with only small deflections | Many particles bouncing straight back | No particles passing through | Particles absorbed by electrons | Spread-out positive charge produces only weak forces, so no large deflections; the backscattering was the surprise.
 TF1: Atoms are mostly empty space. | true | The nucleus has a radius about 100 000 times smaller than the atom.
+M2: What determines which element an atom is? | The number of protons | The number of neutrons | The number of electrons | The total of protons and neutrons | The atomic number, the proton count, defines the element.
 
 ## Protons, neutrons and electrons
 S: Atoms are built from three particles with very different masses and charges. Knowing their properties lets you work out the make-up of any atom or ion from its symbol.
@@ -90,6 +93,8 @@ X: Chlorine is 75.8% chlorine-35 and 24.2% chlorine-37. Calculate Ar (use 35.0 a
 > = (2653 + 895.4) ÷ 100 = 35.5.
 IX: mass-spec
 P: Some isotopes have unstable nuclei and are **radioactive**. Carbon-14, made in the atmosphere, decays with a half-life of about 5730 years, which allows radiocarbon dating; technetium-99m is used in medical imaging.
+P: **Investigate with the lab.** Build carbon-12, then carbon-13 and carbon-14 by adding neutrons, and check whether the element changes.
+IX: atom-builder
 K: Isotopes have the same number of protons and electrons but different numbers of neutrons, so they react alike but differ in mass.
 !: Saying isotopes are different elements. They are the same element, because the number of protons is the same.
 T: Isotope | An atom of an element with a different number of neutrons from other atoms of that element
@@ -107,6 +112,7 @@ M1: What do isotopes of the same element have in common? | The same number of pr
 M2: A sample of copper's relative atomic mass is 63.5, and its isotopes are copper-63 and copper-65. Which is more abundant? | Copper-63, because 63.5 is closer to 63 than to 65 | Copper-65 | They are equally abundant | It can't be told without more data | A weighted mean lies nearer the more abundant isotope; 63.5 implies about 75% copper-63.
 M3: Heavy water (D₂O) can be separated from ordinary water by repeated electrolysis, but no ordinary chemical reaction separates them cleanly. Why? | Their chemistry is the same, but the small mass difference slightly changes rates, which repeated processing exploits | D₂O is a different compound with different bonds | Deuterium has a different number of protons | D₂O doesn't react at all | Isotopes react the same way, but mass affects reaction rates a little (the kinetic isotope effect), enough for gradual enrichment.
 TF1: Chlorine-35 and chlorine-37 have different numbers of electrons. | false | Both have 17 electrons; they differ only in neutrons (18 and 20).
+M2: How do isotopes of an element differ? | In their number of neutrons | In their number of protons | In their number of electrons | In their chemical reactions | Isotopes have the same proton number but different neutron numbers.
 
 ## Atomic number and mass number
 S: Two numbers identify any nucleus: the atomic number, which fixes the element, and the mass number, which identifies the isotope. Together they appear in nuclide notation and in nuclear equations.
@@ -125,6 +131,8 @@ P: In nuclear reactions the nucleus changes, so the element can change, but both
 X: Radium-226 (Z = 88) undergoes alpha decay. What is the product?
 > Mass number: 226 − 4 = 222. Atomic number: 88 − 2 = 86, which is radon.
 > The product is radon-222: ²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He.
+P: **Investigate with the lab.** Build an atom and read off its atomic number and mass number. Then build the same element with more neutrons and compare.
+IX: atom-builder
 K: The atomic number defines the element and orders the periodic table; the mass number identifies the isotope; both are conserved in nuclear equations.
 !: Using relative atomic mass as the mass number. Mass number is always a whole number for one nucleus.
 T: Nuclide | An atom with a specific number of protons and neutrons, written with its mass and atomic numbers
@@ -141,6 +149,7 @@ M1: Which number is conserved in a chemical reaction but can change in a nuclear
 M2: Thorium-234 (Z = 90) undergoes beta-minus decay. What is formed? | Protactinium-234 (Z = 91) | Thorium-230 | Radium-230 | Uranium-238 | Beta-minus decay keeps A = 234 and raises Z to 91, which is protactinium.
 M3: Why did Moseley's work resolve the puzzle of argon (Ar 39.9) being placed before potassium (Ar 39.1) in the periodic table? | It showed the order depends on atomic number (Ar 18, K 19), not on mass | It showed argon is heavier than potassium | It showed potassium is a noble gas | It showed atomic masses were measured wrongly | Ordering by Z puts argon before potassium, matching their chemistry, even though argon's average mass is greater.
 NUM2: Uranium-238 (Z = 92) emits an alpha particle. What is the mass number of the product? | 234 | 0 |  | Alpha decay removes 4 from the mass number: 238 − 4 = 234 (the product is thorium-234).
+M2: An atom has 11 protons and 12 neutrons. What is its mass number? | 23 | 11 | 12 | 1 | Mass number is protons plus neutrons: 11 + 12 = 23.
 
 ## Electron shells
 S: Electrons in atoms occupy shells at increasing distances and energies from the nucleus. The shell model explains the patterns of the periodic table and why atoms of some elements react in similar ways.
@@ -188,6 +197,8 @@ P: Shell 1 has only 1s; shell 2 has 2s and 2p; shell 3 has 3s, 3p and 3d; shell 
 H: Orbitals and the periodic table
 P: The periodic table's blocks match the subshell being filled: the s-block (groups 1 and 2) fills s orbitals, the p-block (groups 13 to 18) p orbitals, the d-block (transition metals) d orbitals, and the f-block (lanthanides and actinides) f orbitals. The width of each block, 2, 6, 10 and 14 columns, is the capacity of its subshell.
 P: Within a subshell, orbitals of the same type in an isolated atom have the same energy (they are **degenerate**): the three 2p orbitals are equal in energy, differing only in orientation.
+P: **Investigate with the lab.** Compare the shapes of the 1s, 2p and 3d orbitals, and look at the phase shown on each.
+IX: orbitals
 K: An orbital is a region where an electron is likely to be found and holds up to two electrons; s, p, d and f subshells have 1, 3, 5 and 7 orbitals.
 !: Using "orbit" and "orbital" interchangeably. An orbit is a definite path, which electrons don't follow; an orbital is a probability region.
 T: Atomic orbital | A region around the nucleus where there is a high probability of finding an electron of a particular energy
@@ -203,6 +214,7 @@ MATCH1: Match each subshell to the number of electrons it can hold. | s = 2 ; p 
 M1: What is the maximum number of electrons in any one orbital? | 2 | 1 | 6 | 8 | Each orbital holds at most two electrons, which must have opposite spins.
 M2: Why is the d-block of the periodic table ten columns wide? | A d subshell has five orbitals, holding ten electrons | There are ten d-block elements in total | d orbitals hold one electron each | Transition metals have ten outer electrons | The block width equals the subshell capacity: 5 orbitals × 2 electrons.
 M3: Why doesn't the second shell contain a d subshell? | For n = 2, the allowed orbital types are only s and p | d orbitals are too high in energy to exist | The second shell is already full with 2 electrons | d subshells only exist in transition metals | Quantum theory allows subshell types up to l = n − 1, so shell 2 has only s (l = 0) and p (l = 1).
+M2: What shape is a p orbital? | Dumbbell-shaped, with two lobes | Spherical, centred on the nucleus | A flat ring around the nucleus | A cube with a node at each corner | A p orbital has two lobes on opposite sides of the nucleus.
 
 ## Quantum numbers
 S: Four quantum numbers describe each electron in an atom: which shell, which type of orbital, which orientation and which spin. They explain why shells and subshells hold the numbers of electrons they do.
@@ -224,6 +236,8 @@ X: How many orbitals and electrons are in the n = 3 shell?
 H: Labelling an electron
 P: The outer electron of a sodium atom is in a 3s orbital: n = 3, l = 0, mₗ = 0, mₛ = +½ (or −½). A 2p electron has n = 2, l = 1 and mₗ = −1, 0 or +1. No two electrons in an atom can share all four values, the Pauli exclusion principle.
 P: For hydrogen, the energy depends only on n. In atoms with more electrons it also depends on l, because electrons in different subshells are shielded differently, which is why 4s fills before 3d.
+P: **Investigate with the lab.** Step from 1s to 3d and read the quantum numbers n, l and mₗ for each orbital shown.
+IX: orbitals
 K: n gives the shell, l the subshell shape, mₗ the orientation and mₛ the spin; their allowed values give n² orbitals and 2n² electrons per shell.
 !: Thinking l can equal n. The largest value of l in shell n is n − 1, so there is no 1p or 2d orbital.
 T: Principal quantum number | n, the quantum number for an orbital's shell, size and main energy
@@ -241,6 +255,7 @@ M1: Which set of quantum numbers is not allowed? | n = 2, l = 2, mₗ = 0 | n = 
 M2: An electron has n = 3 and l = 1. Which orbital is it in? | A 3p orbital | A 3s orbital | A 3d orbital | A 1p orbital | l = 1 is a p orbital, and n = 3 places it in the third shell.
 M3: Why does each orbital hold at most two electrons? | Electrons in the same orbital share n, l and mₗ, so they can differ only in spin, which has two values | Orbitals are too small for three electrons | Three electrons would have no charge | The nucleus attracts only two electrons per orbital | With three quantum numbers fixed by the orbital, the Pauli principle allows only the two spin states.
 TF1: A 2d orbital exists. | false | In the second shell l can only be 0 or 1, so there are 2s and 2p orbitals but no 2d.
+M2: What does the quantum number l describe? | The shape of the orbital | The orbital's energy level only | The electron's spin direction | The number of electrons in the atom | l = 0, 1 and 2 correspond to s, p and d orbitals.
 
 ## Electron configurations
 S: An electron configuration lists the subshells an atom's electrons occupy and how many are in each, such as 1s² 2s² 2p⁶ 3s¹ for sodium. Configurations explain the periodic table and the charges of common ions.
@@ -291,6 +306,8 @@ X: Use the n + l rule to decide whether 4s or 3d fills first.
 H: Why 4s before 3d
 P: A 4s electron spends part of its time very close to the nucleus (it **penetrates** the inner shells), so it is less shielded and feels a higher effective nuclear charge than a 3d electron, whose orbital lies mostly outside the 3s and 3p electrons' region but doesn't penetrate to the nucleus as much. For potassium and calcium this puts 4s below 3d in energy. Once electrons occupy 3d, the energies shift, which is why transition metal atoms lose their 4s electrons first.
 P: The rule is a guide, not a law: there are about twenty exceptions among the transition metals, lanthanides and actinides, such as chromium, copper, silver and gold.
+P: **Investigate with the lab.** Fill the orbital boxes for elements from hydrogen to argon in order, and check each against the Aufbau principle.
+IX: electron-config
 K: Electrons occupy the lowest-energy available orbitals; subshells fill in order of n + l, which puts 4s before 3d.
 !: Thinking 4s is always lower in energy than 3d. It is lower in potassium and calcium, but once 3d orbitals are occupied, 4s electrons are the first to be removed.
 T: Aufbau principle | Electrons fill the lowest-energy orbitals available first
@@ -307,6 +324,7 @@ M1: Which subshell fills immediately after 3p? | 4s | 3d | 4p | 4d | By the n + 
 M2: Using the n + l rule, which fills first, 4f or 5d? | 4f, because both have n + l = 7 and 4f has the lower n | 5d, because d always fills before f | They fill at the same time | 5d, because it has the higher n | For equal n + l, the subshell with lower n fills first.
 M3: Why does a 4s electron in potassium have lower energy than a 3d electron would? | The 4s orbital penetrates closer to the nucleus, so the electron is less shielded and more strongly attracted | 4s orbitals are smaller than 3d orbitals overall | 3d orbitals don't exist in potassium | 4s has a lower principal quantum number | Penetration gives the 4s electron a higher effective nuclear charge despite its higher n.
 TF2: The aufbau principle predicts the configuration of every element correctly. | false | There are exceptions, such as chromium, copper, silver and gold.
+M2: Which subshell fills after 4s? | 3d | 4p | 3p | 5s | By the Aufbau principle, 3d fills after 4s and before 4p.
 
 ## Pauli exclusion principle
 S: The Pauli exclusion principle says no two electrons in an atom can have the same four quantum numbers. It is the reason orbitals hold only two electrons, and ultimately why atoms have structure and matter takes up space.
@@ -321,6 +339,8 @@ P: In box diagrams each orbital is a box and each electron an arrow: up for +½,
 H: Why it matters
 P: Without the Pauli principle, every electron would fall into the 1s orbital and all atoms would have similar, tiny sizes and no shell structure, so there would be no periodic table and no chemistry as we know it. The principle applies to all particles of its kind (fermions), and the resistance of electrons to being squeezed into the same state is a large part of why solid matter can't be compressed.
 P: Electrons with opposite spins in an orbital are called paired. Atoms or ions with unpaired electrons are attracted into a magnetic field (paramagnetic), which is how unpaired electrons are detected; oxygen gas, with two unpaired electrons, is drawn into the gap of a strong magnet.
+P: **Investigate with the lab.** Try putting two electrons with the same spin into one orbital box and see the checker reject it.
+IX: electron-config
 K: No two electrons in an atom share all four quantum numbers, so each orbital holds at most two electrons with opposite spins.
 !: Drawing two electrons in the same orbital with the same spin. That would give them identical quantum numbers, which the principle forbids.
 T: Pauli exclusion principle | No two electrons in an atom can have the same four quantum numbers
@@ -337,6 +357,7 @@ M1: Why can an orbital hold only two electrons? | Electrons in one orbital can d
 M2: Which orbital box diagram for the 2p electrons of oxygen breaks the Pauli principle? | Three electrons in one 2p box | One box with a pair and two boxes with one electron each | Arrows in opposite directions in a paired box | Four electrons spread over three boxes, two paired | Three electrons in one orbital would force two of them to share all four quantum numbers.
 M3: Liquid oxygen is attracted to a magnet but liquid nitrogen isn't. What does this suggest about their electrons? | Oxygen molecules have unpaired electrons, while all electrons in nitrogen molecules are paired | Nitrogen has no electrons | Oxygen is a metal | Oxygen atoms break the Pauli principle | Unpaired electrons make a substance paramagnetic; O₂ has two unpaired electrons.
 TF1: Two electrons in the same orbital must have opposite spins. | true | Otherwise they would have identical quantum numbers, breaking the Pauli principle.
+M2: What does the Pauli exclusion principle state? | No two electrons in an atom have the same four quantum numbers | Electrons fill the lowest energy level first | Electrons fill orbitals singly before pairing | Electrons orbit the nucleus in fixed circles | So an orbital holds at most two electrons, with opposite spins.
 
 ## Hund's rule
 S: Hund's rule says that when electrons fill a set of orbitals of equal energy, they occupy them singly first, with parallel spins, before pairing up. It explains the box diagrams of the p and d blocks and some patterns in ionisation energy.
@@ -353,6 +374,8 @@ P: Hund's rule explains a dip in first ionisation energies: oxygen's (1314 kJ mo
 X: Draw the orbital diagram for the 3d electrons of Mn²⁺ ([Ar] 3d⁵).
 > Five 3d boxes, five electrons: one in each box, all with parallel spin.
 > Mn²⁺ therefore has five unpaired electrons and is strongly paramagnetic.
+P: **Investigate with the lab.** Fill the 2p boxes for nitrogen and oxygen, and see how Hund's rule spreads the electrons out before pairing.
+IX: electron-config
 K: Electrons fill degenerate orbitals singly with parallel spins before pairing, which minimises repulsion.
 !: Pairing electrons in the first p orbital before the others are filled. In the ground state, each of the three p orbitals receives one electron first.
 T: Hund's rule | Electrons occupy degenerate orbitals singly with parallel spins before pairing
@@ -369,6 +392,7 @@ NUM2: How many unpaired electrons does an Fe³⁺ ion ([Ar] 3d⁵) have? | 5 | 0
 M1: How many unpaired electrons are in a ground-state carbon atom? | 2 | 0 | 1 | 4 | Carbon's two 2p electrons occupy two different 2p orbitals with parallel spins.
 M2: Which correctly shows the 2p electrons of nitrogen in the ground state? | One electron in each 2p orbital, all with parallel spins | Two in the first orbital and one in the second | All three in one orbital | One spin-up and two spin-down in separate orbitals | Hund's rule: singly occupied, parallel spins.
 M3: Why is the first ionisation energy of oxygen lower than that of nitrogen? | Oxygen's outermost electron is paired in a 2p orbital, and the extra repulsion makes it easier to remove | Oxygen has fewer protons | Oxygen's electron is in a higher shell | Nitrogen's electrons are all paired | The pairing in oxygen's 2p⁴ raises the energy of that electron, outweighing the slightly higher nuclear charge.
+M2: How many unpaired electrons does a nitrogen atom have? | Three | One | Two | Five | Nitrogen's three 2p electrons occupy separate orbitals with parallel spins.
 
 ## Ionisation energy
 S: Ionisation energy is the energy needed to remove electrons from atoms. Its values, and the jumps between successive ionisation energies, are some of the strongest evidence for shells and subshells.
@@ -560,6 +584,8 @@ P: In 1926 Erwin Schrödinger wrote an equation for the electron's wave. Its sol
 H: Uncertainty
 P: Werner Heisenberg's **uncertainty principle** (1927) states that the position and momentum of a particle can't both be known exactly at once: Δx · Δp ≥ h/4π. For an electron confined to an atom, the uncertainty in momentum is so large that a definite path is meaningless. That is why the model gives probabilities, not orbits.
 P: For hydrogen, the solutions give energies Eₙ = −2.18 × 10⁻¹⁸ J ÷ n², exactly matching the spectrum, and for other atoms, approximate methods based on the same equation predict energies and shapes that agree with experiment.
+P: **Investigate with the lab.** Look at the 3D probability clouds and the radial distributions: they show where an electron is likely to be, not a fixed path.
+IX: orbitals
 K: In the quantum mechanical model the electron is a wave; the Schrödinger equation gives its allowed energies and orbitals, and ψ² gives the probability of finding it.
 !: Thinking an orbital's boundary is where the electron stays. It is only a surface enclosing most (often 90%) of the probability; there is a small chance of finding the electron further out.
 T: Wavefunction | A mathematical function (ψ) describing an electron's wave in an atom; ψ² gives its probability density
@@ -577,6 +603,7 @@ M1: What does an orbital represent in the quantum mechanical model? | A region w
 M2: Why can't we say exactly where an electron in an atom is and how it is moving? | The uncertainty principle forbids knowing position and momentum precisely at the same time | Electrons move too fast for cameras | Electrons have no mass | Microscopes aren't good enough yet | This is a fundamental limit, not a limit of technology.
 M3: How does the quantum mechanical model explain why electron energies are quantised? | Only certain wave patterns satisfy the Schrödinger equation for an electron bound to a nucleus, as only certain notes fit on a string | Electrons are stopped by walls in the atom | The nucleus emits energy in packets | Electrons are particles that can't move | Boundary conditions on a confined wave allow only particular solutions, each with its own energy.
 TF2: In the quantum mechanical model, electrons travel in fixed circular orbits around the nucleus. | false | Fixed orbits belong to the Bohr model; the quantum model gives probability distributions.
+M2: How does the quantum mechanical model describe an electron's location? | As a probability distribution around the nucleus | As a fixed circular orbit at set distances | As a point at the centre of the nucleus | As moving in a straight line through the atom | Orbitals are regions where an electron is likely to be found.
 
 ## Atomic orbitals and shapes
 S: Each type of orbital has a characteristic shape: s orbitals are spherical, p orbitals have two lobes, and d orbitals mostly have four. These shapes, and the nodes within them, decide how atoms bond and the shapes of molecules.

@@ -213,11 +213,14 @@ H: Good practice
 - Compare with the person's baseline and trend.
 - Act on the result: escalate according to the score and your concern.
 - Frequency follows the score and the plan (for example, at least 12-hourly when NEWS2 is 0, more often as scores rise).
+P: **Investigate with the lab.** Score each vital sign in a generated set and see which ones push the total up.
+IX: news2
 K: An observation that isn't acted on is no better than one that isn't taken. Scores trigger responses: know your local escalation policy.
 Q: List the six physiological parameters in NEWS2. | Respiratory rate, oxygen saturation, systolic blood pressure, pulse rate, level of consciousness or new confusion, and temperature (plus a score for supplemental oxygen).
 Q: Is NEWS2 used for children? | No. Children use paediatric early warning scores with age-appropriate ranges.
 M1#nursing-u03-07-q1@1: Which vital sign is most often recorded inaccurately and is an early sign of deterioration? | Respiratory rate | Temperature | Weight | Height | Blood glucose | Respiratory rate is often estimated rather than counted, yet it changes early.
 M2#nursing-u03-07-q2@2: A nurse records a NEWS2 score of 6 but doesn't tell anyone because the patient "looks OK". What is the main problem? | NEWS2 of 5 or more needs an urgent response | There's no problem if the patient looks well | The score should be rounded down to 4 | NEWS2 is advisory, so it can be ignored | Only doctors are allowed to act on NEWS2 | Scores should trigger the agreed clinical response.
+M2#nursing-u03-07-q3@1: What is a normal adult resting respiratory rate? | About 12 to 20 breaths per minute | About 4 to 8 breaths per minute | About 30 to 40 breaths per minute | About 60 breaths per minute | NEWS2 scores 12 to 20 breaths per minute as zero.
 
 ## Temperature
 S: Body temperature reflects the balance between heat production and heat loss. Fever, hypothermia and changes from baseline can signal infection, inflammation, environmental exposure or other illness.
@@ -809,11 +812,14 @@ H: Sepsis
 - Use your local sepsis screening tool and pathway (based on NICE guidance and NEWS2 in adult acute settings); escalate urgently, as treatment within the first hour saves lives.
 H: Families' concerns
 P: Families often notice subtle changes first. Systems such as Martha's Rule (being introduced in England) let patients and families request an urgent review if they are worried.
+P: **Investigate with the lab.** Follow the patient's observations as they change and identify the earliest sign of deterioration.
+IX: deteriorating
 K: Call for help early. It is always better to escalate a concern that turns out to be minor than to miss deterioration.
 Q: What does ABCDE stand for? | Airway, Breathing, Circulation, Disability, Exposure.
 Q: Why should problems be treated as they are found in ABCDE? | Because problems earlier in the sequence (airway, breathing) are the most immediately life-threatening.
 M1#nursing-u03-27-q1@1: In the ABCDE approach, where is blood glucose checked? | Disability | Airway | Breathing | Circulation | Exposure | Blood glucose is checked under Disability, with consciousness and pupils.
 M3#nursing-u03-27-q2@2: A daughter tells the nurse her father "isn't himself" and is unusually sleepy. His observations were normal 3 hours ago. What should the nurse do? | Take it seriously: reassess with ABCDE and escalate | Reassure her that the observations were normal | Wait for the next set of scheduled observations | Ask her politely to stop worrying about him | Tell her he is probably just tired today | Family concerns can be the earliest sign of deterioration.
+M2#nursing-u03-27-q3@1: Which change is often an early sign of deterioration? | A rising respiratory rate | A stable blood pressure | A normal temperature | A good appetite | Respiratory rate is a sensitive early indicator of deterioration.
 
 ## Escalation of concerns
 S: Escalation is communicating concerns about a person's condition to someone who can provide the right level of help, in time. Delayed escalation is a common factor in avoidable harm.
@@ -840,11 +846,15 @@ H: Document
 - What you found, who you told, when, what was agreed, and the outcome.
 H: Barriers
 P: Hierarchy, fear of being wrong, workload and unclear pathways. Psychological safety, structured tools and supportive cultures help. The NMC Code (Preserve safety) requires registrants to act without delay if a person is at risk and to escalate concerns.
+P: **Investigate with the lab.** Escalate the patient's care using SBAR, then practise scoring the observations in the NEWS2 lab.
+IX: deteriorating
+IX: news2
 K: Escalation isn't complete until the right person has responded. If they haven't, escalate again.
 Q: What does SBAR stand for? | Situation, Background, Assessment, Recommendation.
 Q: What is the usual internal emergency number in UK hospitals? | 2222 (check your local number).
 M1#nursing-u03-28-q1@1: In SBAR, where would you state "I think he may have sepsis"? | Assessment | Situation | Background | Recommendation | None: nurses shouldn't say this | Assessment is your interpretation of the problem.
 M3#nursing-u03-28-q2@2: A nurse escalates a patient with NEWS2 of 7 to the ward doctor, who says they'll come "when they can". Thirty minutes later no one has arrived and the patient is worse. What should the nurse do? | Escalate further, such as to critical care outreach | Wait for the ward doctor to come back | Recheck the observations in four hours | Ask the family to call the doctor themselves | Give extra fluids without a prescription | A score of 7 or more needs an emergency response; escalate up the chain if the response is inadequate.
+M2#nursing-u03-28-q3@1: What does SBAR stand for? | Situation, Background, Assessment, Recommendation | Signs, Blood pressure, Airway, Response | Symptoms, Breathing, Alertness, Rate | Safety, Briefing, Action, Review | SBAR structures a clear handover or escalation.
 
 ## Structured handover
 S: Handover transfers responsibility and information about a person's care from one professional or team to another. Structured handover reduces omissions and misunderstandings.

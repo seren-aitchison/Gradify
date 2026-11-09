@@ -55,6 +55,8 @@ X: Classify a 1918 soldier's letter from the Western Front and a 2014 centenary 
 > The letter was written at the time by a participant: a primary source for the war.
 > The documentary was made a century later and interprets the war: a secondary source for the war.
 > For an enquiry into how Britain commemorated the war in 2014, the documentary becomes a primary source.
+P: **Investigate with the lab.** Work through the six sources and decide for each whether it is primary or secondary for a given question.
+IX: source-investigation
 K: Primary sources come from the period studied; secondary sources interpret it later. Which one a source is depends on the question being asked.
 !: Assuming primary sources are always more reliable than secondary ones. A primary source can be mistaken, partial or propaganda; a good secondary source may weigh hundreds of primary sources.
 H: Using both well
@@ -76,6 +78,7 @@ M2#history-u01-02-q2@1,2: A historian studies how the Second World War was remem
 TF1#history-u01-02-q3@2: Primary sources are always more reliable than secondary sources. | false | Primary sources can be mistaken or biased; reliability depends on the source and the question.
 M3#history-u01-02-q4@3: Why is the Bayeux Tapestry valuable but problematic evidence for the Norman Conquest? | It is near-contemporary and detailed, but made after the events from the Norman side with a purpose | It was made long after 1066 by craftsmen who knew nothing of the battle | It shows the English view of events, made for Harold's supporters | It is detailed but contains no images of the battle itself | Its closeness to events gives value; its later making and Norman perspective mean it must be read critically.
 SA3#history-u01-02-q5@2,3: Explain why the distinction between primary and secondary sources depends on the historian's question. | A primary source comes from the time being studied and a secondary source interprets it later, so a source's category changes with the period under study. A 1965 history of the Second World War is secondary for the war but primary for 1960s memory of it. Historians therefore classify sources by their relationship to the enquiry, and judge their value by what they can show about that question. | Defines primary and secondary ; Explains that the time studied determines the category ; Gives an example of a source that changes category ; Links classification to judging value
+M2#history-u01-02-q6@1: When is a historian's book a primary source? | When the question is about how history was written at that time | When it is very old and rare | When it contains many footnotes | Never: books are always secondary | Whether a source is primary depends on the question being asked.
 
 ## Historical evidence
 LV: GCSE and A level · Foundation
@@ -93,6 +96,8 @@ X: What can be inferred from a Domesday entry showing a manor worth £10 before 
 > The source states a fall in value.
 > Inference: something damaged the manor's economy between the two dates, possibly conquest, rebellion or the Harrying of the North.
 > The inference must be tested: is the area one where fighting is known to have happened, and do neighbouring entries show the same pattern?
+P: **Investigate with the lab.** For each source, write one thing it can show and one thing it can't.
+IX: source-investigation
 K: Sources become evidence when used to answer a question; historians make inferences from them and strengthen claims by corroborating them with other evidence.
 !: Treating a single source as proof. One source supports an inference; a claim becomes secure when several independent sources point the same way.
 H: Corroboration and silence
@@ -115,6 +120,7 @@ M2#history-u01-03-q2@2: A source states that a village's value fell after 1066. 
 TF1#history-u01-03-q3@1: A source can reveal things its maker never intended to record. | true | Accounts kept to manage money, for example, reveal diet, prices and harvests.
 M3#history-u01-03-q4@2,3: Why is the absence of London from Domesday Book not evidence that London was unimportant? | Its absence reflects how the survey was compiled, not London's significance | London was too small in 1086 to be worth recording in the survey | London belonged to the Church, which the survey ignored entirely | The Normans had not yet taken control of London by 1086 | Silence in a source must be explained; other evidence shows London was England's largest town.
 SA3#history-u01-03-q5@2,3: How do historians turn a source into reliable evidence for a claim? | A source becomes evidence when used to answer a question. Historians infer from what it says or shows, including unintended information, then test the inference: they examine provenance, corroborate it with independent sources and explain contradictions or silences. The Domesday Book supports inferences about Norman landholding because it is systematic and corroborated by charters and chronicles, but it is weak for towns it omits. | Distinguishes source from evidence ; Explains inference ; Explains corroboration ; Treats silences or contradictions with care ; Uses a concrete example
+M2#history-u01-03-q6@1: What turns a source into evidence? | Using it to support or test a claim about the past | Finding it in a museum or archive | Dating it to before 1900 | Copying its words into an essay | A source becomes evidence when it is used to answer a historical question.
 
 ## Source provenance
 LV: GCSE and A level · Application
@@ -176,6 +182,8 @@ X: How useful is a 1936 Nazi poster showing a happy, healthy Hitler Youth for st
 > Provenance: made by the regime to recruit and persuade, so not a neutral picture of real experience.
 > Own knowledge: membership became compulsory in 1939, and some young people resisted, such as the Edelweiss Pirates.
 > Judgement: very useful for Nazi aims and propaganda methods; limited for what young people actually felt.
+P: **Investigate with the lab.** Judge the reliability of the Bayeux Tapestry and the Sadler Committee evidence, and say how useful each is for a specific question.
+IX: source-investigation
 K: Reliability asks whether a source is accurate; usefulness asks what it can show for a particular question. Even an unreliable source can be highly useful.
 !: Concluding that a biased source is useless. Bias is often what makes a source useful, because it reveals attitudes and intentions.
 EV: established | Membership of the Hitler Youth was made compulsory by law in 1939, after earlier pressure to join.
@@ -193,6 +201,7 @@ M2#history-u01-05-q2@2: A government report understates unemployment to reassure
 TF1#history-u01-05-q3@1: A biased source is always useless to a historian. | false | Bias can reveal attitudes and intentions; usefulness depends on the question.
 M3#history-u01-05-q4@3: Which judgement about a Nazi propaganda poster's usefulness is best? | Very useful for Nazi aims, limited for ordinary people's real attitudes, which need other evidence | Useless, because propaganda never tells the truth about anything | Fully reliable, because it is a primary source from the period itself | Useful only for the history of graphic design and art | A good judgement states what the source can and cannot show and why.
 SA3#history-u01-05-q5@2,3: How useful is a Nazi propaganda poster of the Hitler Youth for studying young people in Nazi Germany? | Its content shows the ideal the regime promoted: fitness, discipline and loyalty. Its provenance, regime propaganda designed to recruit, makes it unreliable as a picture of real experience. Own knowledge adds that membership became compulsory in 1939 and that groups such as the Edelweiss Pirates resisted. So it is highly useful for Nazi aims and methods but limited on young people's actual attitudes, which need diaries, police reports and oral history. | Uses the content ; Uses provenance ; Uses relevant own knowledge ; Distinguishes reliability from usefulness ; Reaches a judgement with limits
+M2#history-u01-05-q6@1: Can an unreliable source still be useful? | Yes: it can show its maker's views and aims | No: unreliable sources must be discarded | Only if it is a government document | Only if it was written very recently | Usefulness depends on the question; even biased sources reveal attitudes.
 
 ## Bias and perspective
 LV: GCSE and A level · Application
@@ -211,6 +220,8 @@ X: Two accounts of Peterloo disagree about whether the crowd was violent. How sh
 > Look for loaded language and selection: "massacre" and "peaceful" against "riot" and "mob".
 > Corroborate: casualty lists, independent witnesses and the composition of the crowd (many women and families) test each account.
 > Conclude: the weight of independent evidence supports a largely peaceful crowd, while the magistrates' account reflects their fear of revolution.
+P: **Investigate with the lab.** Identify the perspective behind each source and explain how it shapes what the source says.
+IX: source-investigation
 K: All sources have a perspective; bias is when that perspective distorts. Historians detect both through language, selection and provenance, and test them by corroboration.
 !: Treating "bias" as a reason to dismiss a source. Instead, explain the perspective and ask what it reveals about the author and their world.
 EV: established | The Peterloo Massacre took place in Manchester on 16 August 1819 and was followed by the Six Acts.
@@ -230,6 +241,7 @@ TF1#history-u01-06-q3@1: An author trying hard to be fair still writes from a pe
 M2#history-u01-06-q4@2: Which piece of evidence would best test whether the Peterloo crowd was peaceful? | Independent witness accounts and the make-up of the crowd | The magistrates' own report | A radical poem about the event | A modern painting of the scene | Independent evidence lets the historian check both partisan accounts.
 M3#history-u01-06-q5@3: What is the best way to use a biased source in an essay? | Explain how its perspective shapes it and what it reveals, then corroborate its claims | Ignore it, because biased sources can't be trusted for anything | Quote it as fact, since it was written by an eyewitness | Replace it with a modern textbook account of the same events | Bias is evidence about the author; claims about events need corroboration.
 SA3#history-u01-06-q6@2,3: Explain why accounts of the Peterloo Massacre differ, and how a historian could decide between them. | Accounts differ because of perspective and purpose: radical writers, some in the crowd, stressed a peaceful meeting attacked by soldiers; magistrates and the government, fearing revolution, described a threatening mob to justify the charge and the Six Acts. A historian identifies each perspective, examines loaded language and selection, and corroborates with independent witnesses, casualty records and the crowd's composition, which largely support the view of a peaceful crowd. | Identifies the perspectives involved ; Explains how purpose shaped each account ; Refers to loaded language or selection ; Explains corroboration ; Reaches a supported conclusion
+M2#history-u01-06-q7@1: Why was the Sadler Committee's evidence of 1832 one-sided? | Reformers chose witnesses to support factory reform | Mill owners wrote all of its reports | It was written a century after the events | It recorded only statistics, not testimony | Its purpose shaped which witnesses were called.
 
 ## Historical interpretations
 LV: GCSE and A level · Application
@@ -330,6 +342,8 @@ X: Was the break with Rome in 1534 a turning point in English religion?
 > Judgement: a political and institutional turning point, but not yet a doctrinal one; the decisive changes in belief came later and gradually.
 P: **Investigate with the lab.** On the timeline, compare the length of the Tudor and Stuart periods with the two world wars. How does seeing them on one scale change your sense of what was rapid and what was gradual?
 IX: timeline
+P: **Investigate with the lab.** Put the events in order in each round, then identify which changes were sudden and which gradual.
+IX: chronology
 K: Analysing change means asking how much changed, how fast, for whom, and what stayed the same; a turning point is where the direction of change shifts decisively.
 !: Assuming that a law changed what people believed or did at once. Change on paper and change in practice often moved at different speeds.
 EV: established | The Act of Supremacy of 1534 recognised Henry VIII as supreme head of the Church of England.
@@ -347,6 +361,7 @@ M2#history-u01-09-q2@2: Which piece of evidence best shows continuity during Hen
 TF1#history-u01-09-q3@1: Change in law always produces immediate change in what people believe. | false | Belief and practice often changed more slowly and unevenly than the law.
 M3#history-u01-09-q4@3: Which judgement about the English Reformation is best supported? | Institutional change was rapid, while change in popular belief was slower and uneven | Nothing changed in English religion between 1529 and 1559 | England became fully Protestant in 1534 | Change was equally fast everywhere | The evidence shows fast change at the top and gradual change in parishes.
 SA3#history-u01-09-q5@2,3: How far was the break with Rome a turning point in English religion? | It was a decisive institutional change: royal supremacy replaced papal authority and made the Dissolution and later Protestant reforms possible. But doctrine changed little under Henry, whose Six Articles of 1539 upheld the Mass, and popular belief shifted slowly; historians such as Duffy and Haigh stress continuity in parish religion. A balanced answer sees 1534 as a political turning point, with religious change coming gradually afterwards. | Explains what changed in 1534 ; Explains elements of continuity ; Uses accurate detail ; Distinguishes types or pace of change ; Reaches a judgement
+M2#history-u01-09-q6@1: What is continuity in history? | Aspects of life that stayed the same over a period | Events happening in strict date order | Sudden revolutions in society | The study of a single year | Continuity means what persisted while other things changed.
 
 ## Significance
 LV: GCSE and A level · Application
@@ -401,6 +416,8 @@ X: Is 1485 a good date to end the Middle Ages in England?
 > Judgement: 1485 is a convenient political boundary, but any date is a choice, and different questions suggest different boundaries.
 P: **Investigate with the lab.** In the chronology challenge, order the medieval round, then the Tudors and Stuarts. Look at the gaps between events as well as the order: which periods are crowded, and which are empty?
 IX: chronology
+P: **Investigate with the lab.** Scroll the timeline from 1066 to 1991 and compare the length of reigns, wars and periods.
+IX: timeline
 K: Chronology orders events; periodisation is a historian's construction, useful but never neutral, and different questions suggest different periods.
 !: Treating period labels as natural divisions people at the time recognised. Nobody in 1400 thought they lived in the Middle Ages.
 EV: established | The term "Middle Ages" originated with Renaissance and later scholars rather than with people of the period.
@@ -419,6 +436,7 @@ M2#history-u01-11-q2@2: Why is "the Middle Ages" a constructed period? | Later s
 TF1#history-u01-11-q3@1: BCE and BC dates use the same numbers. | true | Only the labels differ; 44 BC and 44 BCE are the same year.
 M3#history-u01-11-q4@3: Which is the best criticism of ending the Middle Ages in England in 1485? | It suits political history, but religion and society changed little that year | Nothing happened in 1485 | Bosworth was fought in 1066 | The Tudors never ruled England | A periodisation fits some questions better than others.
 SA3#history-u01-11-q5@2,3: Assess the usefulness of dividing history into periods such as "the Middle Ages". | Periods help historians organise the past and compare similar features, and some boundaries mark real breaks, such as 1485 politically. But periods are later constructions: "Middle Ages" was coined by Renaissance scholars, boundaries suit some themes and not others, and labels can hide continuity across them. Hobsbawm's long nineteenth century shows that historians choose periods to fit their arguments. Periodisation is useful if used critically. | Explains why periods are useful ; Explains that periods are constructed ; Uses an example such as 1485 or Hobsbawm ; Recognises that boundaries suit some questions more than others ; Reaches a judgement
+M2#history-u01-11-q6@1: Why is periodisation useful but risky? | It organises the past, but its boundaries are choices that can mislead | It is useful and has no risks at all | It is risky and has no uses at all | It fixes exact dates that everyone agrees on | Periods help organise history, but their start and end dates are interpretations.
 
 ## Historical argument
 LV: GCSE and A level · Application
@@ -524,6 +542,8 @@ X: A student writes: "Children were treated brutally in all factories, as the Sa
 > Problem: one report, assembled by a campaigner, cannot prove what happened in all factories.
 > Better claim: many child workers in textile mills faced long hours and harsh discipline.
 > Better evidence: the Sadler testimony, corroborated by later inspectors' reports and the provisions of the 1833 Act, while acknowledging that conditions varied between mills.
+P: **Investigate with the lab.** Choose the two sources that best answer one question, and justify why you left the others out.
+IX: source-investigation
 K: Select evidence that is relevant, precise, accurate and representative, and match the strength of the claim to the strength of the evidence.
 !: Using one vivid example to prove a sweeping generalisation. Vivid evidence is memorable, but may not be typical.
 EV: established | The Factory Act of 1833 restricted children's hours in textile mills and created a factory inspectorate.
@@ -541,6 +561,7 @@ M2#history-u01-14-q2@2: Which piece of evidence is most precise? | The 1833 Act 
 TF1#history-u01-14-q3@1: One vivid source is enough to prove a claim about all factories. | false | A sweeping claim needs representative evidence, not a single example.
 M3#history-u01-14-q4@3: How should a historian use the Sadler Committee's evidence? | As vivid testimony to corroborate with inspectors' reports, noting how witnesses were chosen | As proof of the conditions in every factory in Britain at the time | Not at all, because a campaigner's report is too biased to use | Only as evidence for the history of Parliament, not of factories | Good practice uses the source while testing how representative it is.
 SA3#history-u01-14-q5@2,3: Explain how historians should select evidence when writing about child labour in early factories. | Evidence should be relevant to the question, precise, accurate and representative. The Sadler Report of 1832 is vivid and relevant, but its campaigning chairman chose supportive witnesses who were not cross-examined, so it should be corroborated with factory inspectors' reports and other sources and used to support proportionate claims, such as that many child workers faced long hours, rather than claims about all factories. | States the criteria for good evidence ; Explains the problem of representativeness ; Uses the Sadler Report accurately ; Explains corroboration ; Matches claims to evidence
+M2#history-u01-14-q6@1: What makes evidence well selected? | It is relevant to the question and from varied perspectives | It is the oldest evidence available | It all supports the same conclusion | It comes from one type of source only | Selection should be relevant and test the argument from different viewpoints.
 
 ## Evaluating historical claims
 LV: GCSE and A level · Evaluation

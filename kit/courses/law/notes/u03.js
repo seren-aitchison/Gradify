@@ -59,12 +59,15 @@ H: Ending an offer
 - **Lapse of time**: after any stated time, or a reasonable time (Ramsgate Victoria Hotel v Montefiore (1866)).
 - **Death**: probably ends the offer if the offeree knows, or if personal performance is required.
 - **Failure of a condition**.
+P: **Investigate with the lab.** Work through the messages in Okoye v Harbour Cameras and decide which is an offer and which is only an invitation to treat.
+IX: okoye
 K: Ask: was the statement a definite promise to be bound on acceptance, or an invitation to negotiate?
 Q: Is a shop window display an offer? | No: it is an invitation to treat (Fisher v Bell; Pharmaceutical Society v Boots).
 Q: What is the effect of a counter-offer? | It rejects and destroys the original offer, which cannot then be accepted (Hyde v Wrench).
 M1#law-u03-02-q1@1: In a self-service shop, when is the contract made? | When the cashier accepts the customer's offer at the till | When the customer picks up the goods | When the goods are put on the shelf | When the customer enters the shop | When the customer leaves the shop | Boots: display is an invitation to treat, the customer offers at the till, and the cashier accepts.
 M2#law-u03-02-q2@2: A offers to sell B a car for £5,000. B replies, "I'll pay £4,500." A refuses. B then says, "Fine, I accept £5,000." Is there a contract? | No: B's counter-offer destroyed the original offer, so B is now making a new offer | Yes: B accepted the original offer | Yes: A is bound by the original offer for a reasonable time | No: car sales must be in writing | Yes: a counter-offer only suspends an offer | Hyde v Wrench: a counter-offer rejects the original offer.
 M3#law-u03-02-q3@2: A promises £500 to anyone who completes a marathon in a set week. B has run 20 miles when A announces the offer is withdrawn. What is the likely position? | A cannot revoke once B has started performance of a unilateral offer | A can revoke at any time before completion | There was never an offer because it was made to the world | B can claim £500 immediately | B must have written to A to accept | In unilateral contracts, the offeror cannot revoke once the offeree has begun performance (Errington; Daulia v Four Millbank).
+M2#law-u03-02-q4@1: Is a price-marked item on a shop shelf normally an offer? | No: it is an invitation to treat | Yes: it is always an offer | Only if the price is low | Only if the shop is a large chain | Following Pharmaceutical Society v Boots (1953), displays are invitations to treat.
 
 ## Acceptance
 S: Acceptance is an unqualified, final agreement to all the terms of the offer, communicated to the offeror. Its timing usually marks the moment the contract is formed.
@@ -88,12 +91,15 @@ P: Where businesses exchange standard terms, each new form is usually a counter-
 H: Prescribed methods
 - If the offeror requires a method, an equally effective method may suffice unless the offeror insisted on that method only (Manchester Diocesan Council v Commercial and General Investments [1970]).
 - In a unilateral contract, performance is acceptance, with no need for prior notice (Carlill).
+P: **Investigate with the lab.** Find the point at which acceptance took place in the scenario, and test whether each reply was a true acceptance or a counter-offer.
+IX: okoye
 K: First check whether the "acceptance" introduced anything new. If it did, it is a counter-offer.
 Q: What is the mirror image rule? | An acceptance must match the terms of the offer exactly; otherwise it is a counter-offer.
 Q: Can silence amount to acceptance? | Generally no: the offeror cannot impose silence as acceptance (Felthouse v Bindley).
 M1#law-u03-03-q1@1: Which case concerns the "battle of the forms"? | Butler Machine Tool v Ex-Cell-O | Felthouse v Bindley | Carlill v Carbolic | Hyde v Wrench | Adams v Lindsell | Butler applied the last-shot approach to exchanged standard terms.
 M2#law-u03-03-q2@2: An uncle writes, "If I hear no more, I'll consider the horse mine at £30." The nephew says nothing. Is there a contract? | No: silence cannot be imposed as acceptance | Yes: silence is acceptance once a deadline passes | Yes: family arrangements are always binding | No: horse sales need writing | Yes: the nephew must reject in writing | Felthouse v Bindley: the offeror cannot impose silence as acceptance, so there was no contract even though the nephew privately meant to sell.
 M3#law-u03-03-q3@2: A sends standard terms with an order; B replies with its own terms and a delivery note; A takes delivery without objection. Whose terms probably govern? | B's, as the last shot accepted by A's conduct | A's, as the first to send terms | Neither: there's no contract | Terms implied by statute only | A blend chosen by the court | Under the traditional analysis, B's form was a counter-offer accepted by A's conduct.
+M2#law-u03-03-q4@1: What is the effect of a counter-offer? | It rejects the original offer | It accepts the original offer | It has no legal effect | It makes the offer irrevocable | Hyde v Wrench (1840): a counter-offer destroys the original offer.
 
 ## Communication of acceptance
 S: The general rule is that acceptance takes effect when it is communicated to the offeror. The postal rule is a major exception, and instantaneous communications have their own rules.
@@ -119,12 +125,15 @@ H: The postal rule
 H: Email and electronic communications
 - The postal rule almost certainly does not apply to email; acceptance is likely effective when it reaches the offeror's system during business hours (by analogy with Brinkibon v Stahag Stahl [1983] and The Brimnes [1975]).
 - For online contracts with consumers, the Electronic Commerce (EC Directive) Regulations 2002 require order acknowledgments but don't settle the moment of acceptance.
+P: **Investigate with the lab.** Apply the postal rule to the letter in the scenario and decide when the contract was formed.
+IX: okoye
 K: Postal acceptance: posting. Postal revocation: receipt. That asymmetry decides most exam problems.
 Q: When is a postal acceptance effective? | When properly posted, if post is a reasonable means of acceptance (Adams v Lindsell).
 Q: When is a revocation by post effective? | Only when received by the offeree (Byrne v Van Tienhoven).
 M1#law-u03-04-q1@1: Which case established the postal rule? | Adams v Lindsell | Entores v Miles Far East | Hyde v Wrench | Felthouse v Bindley | Dickinson v Dodds | Adams v Lindsell (1818) made a posted acceptance effective on posting, where post is a reasonable means of acceptance.
 M2#law-u03-04-q2@2: On Monday A posts an offer. On Wednesday B posts an acceptance. On Thursday A's letter of revocation arrives. Is there a contract? | Yes: acceptance took effect on posting | No: A revoked before acceptance arrived | No: revocation takes effect on posting | Yes, but only if B's letter arrives first | No: postal offers can't be accepted by post | Acceptance is effective on posting; revocation only on receipt.
 M3#law-u03-04-q3@2: An offer says acceptance must be by "notice in writing to me". B posts an acceptance that is lost. What is the best view? | No contract: the offer required actual notice, which excludes the postal rule | A contract was made when B posted | A contract was made when the letter should have arrived | The offer lapsed when B posted | B can rely on the postal rule because writing was used | Holwell Securities v Hughes: by requiring actual "notice in writing", the offeror excluded the postal rule, so acceptance had to be received.
+M2#law-u03-04-q4@1: Under the postal rule, when is acceptance complete? | When the letter is properly posted | When the letter is opened | When the offeror reads it | When the letter is delivered | Adams v Lindsell (1818): acceptance takes effect on posting.
 
 ## Consideration
 S: Consideration is the price of a promise: something of value given or promised in return. A promise without consideration is not enforceable unless made by deed.
