@@ -1,6 +1,6 @@
 // Gradify service worker: lets the site open offline.
 // Network first, so a new deploy shows straight away; the cache is the fallback.
-const CACHE = "gradify-v67";
+const CACHE = "gradify-v69";
 const SHELL = [
   "./", "index.html", "app.html", "manifest.webmanifest", "gradify.config.js",
   // homepage
@@ -28,8 +28,16 @@ const SHELL = [
   "kit/courses/literature/course.js", "kit/courses/literature/syllabus.js", "kit/courses/literature/ids.js", "kit/courses/literature/qa.js", "kit/courses/literature/interactives.js", "kit/courses/literature/evidence.js", "kit/courses/literature/registry.js",
   "kit/courses/finance/course.js", "kit/courses/finance/syllabus.js", "kit/courses/finance/ids.js", "kit/courses/finance/qa.js", "kit/courses/finance/interactives.js", "kit/courses/finance/evidence.js", "kit/courses/finance/registry.js",
   "kit/courses/medicine/course.js", "kit/courses/medicine/syllabus.js", "kit/courses/medicine/ids.js", "kit/courses/medicine/qa.js", "kit/courses/medicine/interactives.js", "kit/courses/medicine/evidence.js", "kit/courses/medicine/registry.js",
+  "kit/courses/art/course.js", "kit/courses/art/syllabus.js", "kit/courses/art/ids.js", "kit/courses/art/qa.js", "kit/courses/art/interactives.js", "kit/courses/art/evidence.js", "kit/courses/art/registry.js",
+  "kit/courses/business/course.js", "kit/courses/business/syllabus.js", "kit/courses/business/ids.js", "kit/courses/business/qa.js", "kit/courses/business/interactives.js", "kit/courses/business/evidence.js", "kit/courses/business/registry.js",
+  "kit/courses/dentistry/course.js", "kit/courses/dentistry/syllabus.js", "kit/courses/dentistry/ids.js", "kit/courses/dentistry/qa.js", "kit/courses/dentistry/interactives.js", "kit/courses/dentistry/evidence.js", "kit/courses/dentistry/registry.js",
+  "kit/courses/investing/course.js", "kit/courses/investing/syllabus.js", "kit/courses/investing/ids.js", "kit/courses/investing/qa.js", "kit/courses/investing/interactives.js", "kit/courses/investing/evidence.js", "kit/courses/investing/registry.js",
+  "kit/courses/music/course.js", "kit/courses/music/syllabus.js", "kit/courses/music/ids.js", "kit/courses/music/qa.js", "kit/courses/music/interactives.js", "kit/courses/music/evidence.js", "kit/courses/music/registry.js",
+  "kit/courses/sport/course.js", "kit/courses/sport/syllabus.js", "kit/courses/sport/ids.js", "kit/courses/sport/qa.js", "kit/courses/sport/interactives.js", "kit/courses/sport/evidence.js", "kit/courses/sport/registry.js",
+  "kit/courses/teaching/course.js", "kit/courses/teaching/syllabus.js", "kit/courses/teaching/ids.js", "kit/courses/teaching/qa.js", "kit/courses/teaching/interactives.js", "kit/courses/teaching/evidence.js", "kit/courses/teaching/registry.js",
+  "kit/courses/veterinary/course.js", "kit/courses/veterinary/syllabus.js", "kit/courses/veterinary/ids.js", "kit/courses/veterinary/qa.js", "kit/courses/veterinary/interactives.js", "kit/courses/veterinary/evidence.js", "kit/courses/veterinary/registry.js",
   // the shared interactive engine and each course's lab lists and evidence maps (each lab itself is cached when first opened)
-  "kit/course/review.js", "kit/course/reviews.js", "kit/course/ix-manifest.js", "kit/courses/history/evidence.js", "kit/courses/history/interactives.js", "kit/courses/biology/evidence.js", "kit/courses/chemistry/evidence.js", "kit/courses/physics/evidence.js", "kit/courses/psychology/evidence.js", "kit/courses/sociology/evidence.js", "kit/courses/maths/evidence.js", "kit/courses/maths/interactives.js", "kit/interactive/scenario.js", "kit/interactive/trainers.js", "kit/interactive/pharmcalc.js", "kit/interactive/mathgen.js", "kit/interactive/grapher.js", "kit/interactive/mathexpr.js", "kit/interactive/stepcheck.js", "kit/interactive/reasoning.js", "kit/interactive/clinsim.js", "kit/interactive/news2.js",
+  "kit/course/review.js", "kit/course/reviews.js", "kit/course/ix-manifest.js", "kit/courses/biology/evidence.js", "kit/courses/chemistry/evidence.js", "kit/courses/physics/evidence.js", "kit/courses/psychology/evidence.js", "kit/courses/sociology/evidence.js", "kit/courses/maths/evidence.js", "kit/courses/maths/interactives.js", "kit/interactive/scenario.js", "kit/interactive/trainers.js", "kit/interactive/pharmcalc.js", "kit/interactive/mathgen.js", "kit/interactive/grapher.js", "kit/interactive/mathexpr.js", "kit/interactive/stepcheck.js", "kit/interactive/reasoning.js", "kit/interactive/clinsim.js", "kit/interactive/news2.js",
 ];
 
 self.addEventListener("install", (e) => {

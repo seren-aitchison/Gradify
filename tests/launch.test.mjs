@@ -13,7 +13,7 @@ test("sitemap.xml is up to date and lists only public pages", async () => {
   const urls = await sitemapUrls();
   assert.ok(urls.includes("https://getgradify.com/") && urls.includes("https://getgradify.com/privacy.html"));
   assert.ok(urls.some((u) => u.endsWith("/lawgradify/course/")));
-  assert.ok(!urls.some((u) => /status\.html|harness\.html|404\.html|musicgradify/.test(u)), "no internal pages or coming-soon sites");
+  assert.ok(!urls.some((u) => /status\.html|harness\.html|404\.html|languagegradify/.test(u)), "no internal pages or coming-soon sites");
 });
 
 test("robots.txt points to the sitemap and keeps internal pages out", async () => {

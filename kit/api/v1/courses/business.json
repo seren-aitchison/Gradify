@@ -1,0 +1,1162 @@
+{
+ "api": 1,
+ "slug": "business",
+ "name": "Business and Management",
+ "site": "BusinessGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Education, not business, legal, tax or financial advice.</b> BusinessGradify teaches business and management for study. The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors; check important points against your course materials. Laws, tax rules, thresholds and economic figures change: for a decision about a real business, check GOV.UK, Companies House and HMRC, and speak to a qualified accountant, solicitor or business adviser (in England, your local Growth Hub can point you to free support).",
+ "notes": "/kit/courses/business/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Foundations",
+   "units": [
+    1,
+    2,
+    8
+   ],
+   "from": "#9b7fd4",
+   "to": "#818cf8"
+  },
+  {
+   "name": "Stage 2 · Business functions",
+   "units": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "from": "#818cf8",
+   "to": "#38bdf8"
+  },
+  {
+   "name": "Stage 3 · Strategy and the wider world",
+   "units": [
+    3,
+    9,
+    10,
+    11
+   ],
+   "from": "#38bdf8",
+   "to": "#22d3ee"
+  }
+ ],
+ "paths": [
+  {
+   "id": "a-level",
+   "name": "A level Business",
+   "sub": "The A level content: the environment, management, the four functions and strategy.",
+   "units": [
+    1,
+    2,
+    4,
+    5,
+    6,
+    7,
+    3
+   ],
+   "select": null
+  },
+  {
+   "id": "manager",
+   "name": "New manager",
+   "sub": "Leading people, managing money, making strategy and governing well.",
+   "units": [
+    2,
+    6,
+    7,
+    3,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "founder",
+   "name": "Starting a business",
+   "sub": "From an idea to a funded, legal, growing venture.",
+   "units": [
+    1,
+    9,
+    4,
+    7,
+    10
+   ],
+   "select": null
+  },
+  {
+   "id": "degree",
+   "name": "Business degree, first year",
+   "sub": "Every school, in the order a business school teaches them.",
+   "units": [
+    1,
+    2,
+    8,
+    4,
+    5,
+    6,
+    7,
+    3,
+    9,
+    10,
+    11
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Foundations",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    8
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Business functions",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Strategy and the wider world",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    3,
+    9,
+    10,
+    11
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "The Business Environment",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What is a business?",
+     "module": "What business is"
+    },
+    {
+     "id": "u01-02",
+     "title": "Business purpose and objectives",
+     "module": "What business is"
+    },
+    {
+     "id": "u01-03",
+     "title": "Stakeholders",
+     "module": "What business is"
+    },
+    {
+     "id": "u01-04",
+     "title": "The private, public and third sectors",
+     "module": "What business is"
+    },
+    {
+     "id": "u01-05",
+     "title": "Sole traders and partnerships",
+     "module": "Legal forms and ownership"
+    },
+    {
+     "id": "u01-06",
+     "title": "Private and public limited companies",
+     "module": "Legal forms and ownership"
+    },
+    {
+     "id": "u01-07",
+     "title": "Social enterprises and co-operatives",
+     "module": "Legal forms and ownership"
+    },
+    {
+     "id": "u01-08",
+     "title": "Franchising",
+     "module": "Legal forms and ownership"
+    },
+    {
+     "id": "u01-09",
+     "title": "PESTLE analysis",
+     "module": "The external environment"
+    },
+    {
+     "id": "u01-10",
+     "title": "Markets and competition",
+     "module": "The external environment"
+    },
+    {
+     "id": "u01-11",
+     "title": "The economic environment",
+     "module": "The external environment"
+    },
+    {
+     "id": "u01-12",
+     "title": "The legal and regulatory environment",
+     "module": "The external environment"
+    },
+    {
+     "id": "u01-13",
+     "title": "Technology and social change",
+     "module": "The external environment"
+    },
+    {
+     "id": "u01-14",
+     "title": "Globalisation and international business",
+     "module": "The external environment"
+    },
+    {
+     "id": "u01-15",
+     "title": "Business size and growth",
+     "module": "Size, growth and failure"
+    },
+    {
+     "id": "u01-16",
+     "title": "Why businesses fail",
+     "module": "Size, growth and failure"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Management and Organisational Behaviour",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "What is management?",
+     "module": "What managers do"
+    },
+    {
+     "id": "u02-02",
+     "title": "Classical management theory: Taylor and Fayol",
+     "module": "What managers do"
+    },
+    {
+     "id": "u02-03",
+     "title": "Mintzberg's managerial roles",
+     "module": "What managers do"
+    },
+    {
+     "id": "u02-04",
+     "title": "The human relations movement",
+     "module": "What managers do"
+    },
+    {
+     "id": "u02-05",
+     "title": "Organisational structure",
+     "module": "Organisational structure"
+    },
+    {
+     "id": "u02-06",
+     "title": "Centralisation and decentralisation",
+     "module": "Organisational structure"
+    },
+    {
+     "id": "u02-07",
+     "title": "Bureaucracy and Weber",
+     "module": "Organisational structure"
+    },
+    {
+     "id": "u02-08",
+     "title": "Contingency theory and organisational design",
+     "module": "Organisational structure"
+    },
+    {
+     "id": "u02-09",
+     "title": "Motivation: content theories",
+     "module": "People at work"
+    },
+    {
+     "id": "u02-10",
+     "title": "Motivation: process theories",
+     "module": "People at work"
+    },
+    {
+     "id": "u02-11",
+     "title": "Leadership theories",
+     "module": "People at work"
+    },
+    {
+     "id": "u02-12",
+     "title": "Leadership styles",
+     "module": "People at work"
+    },
+    {
+     "id": "u02-13",
+     "title": "Teams and group working",
+     "module": "People at work"
+    },
+    {
+     "id": "u02-14",
+     "title": "Communication in organisations",
+     "module": "People at work"
+    },
+    {
+     "id": "u02-15",
+     "title": "Organisational culture",
+     "module": "Culture, power and change"
+    },
+    {
+     "id": "u02-16",
+     "title": "Power and politics in organisations",
+     "module": "Culture, power and change"
+    },
+    {
+     "id": "u02-17",
+     "title": "Managing change",
+     "module": "Culture, power and change"
+    },
+    {
+     "id": "u02-18",
+     "title": "Decision-making in organisations",
+     "module": "Culture, power and change"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Strategy",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "What is strategy?",
+     "module": "Strategic thinking"
+    },
+    {
+     "id": "u03-02",
+     "title": "Mission, vision and objectives",
+     "module": "Strategic thinking"
+    },
+    {
+     "id": "u03-03",
+     "title": "Planned and emergent strategy",
+     "module": "Strategic thinking"
+    },
+    {
+     "id": "u03-04",
+     "title": "Porter's five forces",
+     "module": "Analysing the environment"
+    },
+    {
+     "id": "u03-05",
+     "title": "The industry life cycle",
+     "module": "Analysing the environment"
+    },
+    {
+     "id": "u03-06",
+     "title": "SWOT analysis",
+     "module": "Analysing the environment"
+    },
+    {
+     "id": "u03-07",
+     "title": "Resources and capabilities",
+     "module": "Internal analysis"
+    },
+    {
+     "id": "u03-08",
+     "title": "The value chain",
+     "module": "Internal analysis"
+    },
+    {
+     "id": "u03-09",
+     "title": "Core competences and the VRIO framework",
+     "module": "Internal analysis"
+    },
+    {
+     "id": "u03-10",
+     "title": "Porter's generic strategies",
+     "module": "Strategic choice"
+    },
+    {
+     "id": "u03-11",
+     "title": "The Ansoff matrix",
+     "module": "Strategic choice"
+    },
+    {
+     "id": "u03-12",
+     "title": "The Boston Matrix and portfolio analysis",
+     "module": "Strategic choice"
+    },
+    {
+     "id": "u03-13",
+     "title": "Mergers, acquisitions and alliances",
+     "module": "Strategic choice"
+    },
+    {
+     "id": "u03-14",
+     "title": "Blue ocean strategy",
+     "module": "Strategic choice"
+    },
+    {
+     "id": "u03-15",
+     "title": "Strategy implementation",
+     "module": "Implementing strategy"
+    },
+    {
+     "id": "u03-16",
+     "title": "The balanced scorecard",
+     "module": "Implementing strategy"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Marketing",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "What is marketing?",
+     "module": "Marketing foundations"
+    },
+    {
+     "id": "u04-02",
+     "title": "Market research",
+     "module": "Marketing foundations"
+    },
+    {
+     "id": "u04-03",
+     "title": "Segmentation, targeting and positioning",
+     "module": "Marketing foundations"
+    },
+    {
+     "id": "u04-04",
+     "title": "Consumer behaviour",
+     "module": "Marketing foundations"
+    },
+    {
+     "id": "u04-05",
+     "title": "Business-to-business marketing",
+     "module": "Marketing foundations"
+    },
+    {
+     "id": "u04-06",
+     "title": "Product and the product life cycle",
+     "module": "The marketing mix"
+    },
+    {
+     "id": "u04-07",
+     "title": "Pricing strategies",
+     "module": "The marketing mix"
+    },
+    {
+     "id": "u04-08",
+     "title": "Promotion and marketing communications",
+     "module": "The marketing mix"
+    },
+    {
+     "id": "u04-09",
+     "title": "Place and distribution channels",
+     "module": "The marketing mix"
+    },
+    {
+     "id": "u04-10",
+     "title": "The extended marketing mix",
+     "module": "The marketing mix"
+    },
+    {
+     "id": "u04-11",
+     "title": "Branding and brand equity",
+     "module": "Brands and customers"
+    },
+    {
+     "id": "u04-12",
+     "title": "Customer relationship management",
+     "module": "Brands and customers"
+    },
+    {
+     "id": "u04-13",
+     "title": "Services marketing",
+     "module": "Brands and customers"
+    },
+    {
+     "id": "u04-14",
+     "title": "Digital and social media marketing",
+     "module": "Modern marketing"
+    },
+    {
+     "id": "u04-15",
+     "title": "Marketing metrics",
+     "module": "Modern marketing"
+    },
+    {
+     "id": "u04-16",
+     "title": "Sustainable and ethical marketing",
+     "module": "Modern marketing"
+    },
+    {
+     "id": "u04-17",
+     "title": "International marketing",
+     "module": "Modern marketing"
+    },
+    {
+     "id": "u04-18",
+     "title": "The marketing plan",
+     "module": "Modern marketing"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Operations and Supply Chain Management",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "What is operations management?",
+     "module": "Operations fundamentals"
+    },
+    {
+     "id": "u05-02",
+     "title": "The transformation model and the four Vs",
+     "module": "Operations fundamentals"
+    },
+    {
+     "id": "u05-03",
+     "title": "Process types and layouts",
+     "module": "Operations fundamentals"
+    },
+    {
+     "id": "u05-04",
+     "title": "Capacity management",
+     "module": "Operations fundamentals"
+    },
+    {
+     "id": "u05-05",
+     "title": "Quality management",
+     "module": "Quality"
+    },
+    {
+     "id": "u05-06",
+     "title": "Total quality management",
+     "module": "Quality"
+    },
+    {
+     "id": "u05-07",
+     "title": "Six Sigma",
+     "module": "Quality"
+    },
+    {
+     "id": "u05-08",
+     "title": "Lean production",
+     "module": "Quality"
+    },
+    {
+     "id": "u05-09",
+     "title": "Supply chain management",
+     "module": "Supply chains"
+    },
+    {
+     "id": "u05-10",
+     "title": "Inventory management",
+     "module": "Supply chains"
+    },
+    {
+     "id": "u05-11",
+     "title": "Just-in-time",
+     "module": "Supply chains"
+    },
+    {
+     "id": "u05-12",
+     "title": "Procurement and supplier relationships",
+     "module": "Supply chains"
+    },
+    {
+     "id": "u05-13",
+     "title": "Logistics",
+     "module": "Supply chains"
+    },
+    {
+     "id": "u05-14",
+     "title": "Supply chain risk and resilience",
+     "module": "Supply chains"
+    },
+    {
+     "id": "u05-15",
+     "title": "Productivity and efficiency",
+     "module": "Improving operations"
+    },
+    {
+     "id": "u05-16",
+     "title": "Project management",
+     "module": "Improving operations"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "People Management",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "What is human resource management?",
+     "module": "HRM foundations"
+    },
+    {
+     "id": "u06-02",
+     "title": "Workforce planning",
+     "module": "HRM foundations"
+    },
+    {
+     "id": "u06-03",
+     "title": "Recruitment and selection",
+     "module": "HRM foundations"
+    },
+    {
+     "id": "u06-04",
+     "title": "Employment law essentials",
+     "module": "HRM foundations"
+    },
+    {
+     "id": "u06-05",
+     "title": "Learning and development",
+     "module": "Developing people"
+    },
+    {
+     "id": "u06-06",
+     "title": "Performance management",
+     "module": "Developing people"
+    },
+    {
+     "id": "u06-07",
+     "title": "Reward and pay",
+     "module": "Developing people"
+    },
+    {
+     "id": "u06-08",
+     "title": "Talent management",
+     "module": "Developing people"
+    },
+    {
+     "id": "u06-09",
+     "title": "Employee engagement and wellbeing",
+     "module": "Employment relations"
+    },
+    {
+     "id": "u06-10",
+     "title": "Employment relations and trade unions",
+     "module": "Employment relations"
+    },
+    {
+     "id": "u06-11",
+     "title": "Equality, diversity and inclusion",
+     "module": "Employment relations"
+    },
+    {
+     "id": "u06-12",
+     "title": "Flexible working and the future of work",
+     "module": "Employment relations"
+    },
+    {
+     "id": "u06-13",
+     "title": "Discipline, grievance and conflict",
+     "module": "Employment relations"
+    },
+    {
+     "id": "u06-14",
+     "title": "Strategic HRM",
+     "module": "HR strategy"
+    },
+    {
+     "id": "u06-15",
+     "title": "HR analytics",
+     "module": "HR strategy"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Finance for Managers",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Why managers need finance",
+     "module": "Financial statements"
+    },
+    {
+     "id": "u07-02",
+     "title": "The income statement",
+     "module": "Financial statements"
+    },
+    {
+     "id": "u07-03",
+     "title": "The statement of financial position",
+     "module": "Financial statements"
+    },
+    {
+     "id": "u07-04",
+     "title": "The statement of cash flows",
+     "module": "Financial statements"
+    },
+    {
+     "id": "u07-05",
+     "title": "Profitability ratios",
+     "module": "Analysing performance"
+    },
+    {
+     "id": "u07-06",
+     "title": "Liquidity and efficiency ratios",
+     "module": "Analysing performance"
+    },
+    {
+     "id": "u07-07",
+     "title": "Gearing and investor ratios",
+     "module": "Analysing performance"
+    },
+    {
+     "id": "u07-08",
+     "title": "Costs and break-even analysis",
+     "module": "Costs and budgets"
+    },
+    {
+     "id": "u07-09",
+     "title": "Contribution and short-term decisions",
+     "module": "Costs and budgets"
+    },
+    {
+     "id": "u07-10",
+     "title": "Budgeting",
+     "module": "Costs and budgets"
+    },
+    {
+     "id": "u07-11",
+     "title": "Variance analysis",
+     "module": "Costs and budgets"
+    },
+    {
+     "id": "u07-12",
+     "title": "Cash flow forecasting",
+     "module": "Costs and budgets"
+    },
+    {
+     "id": "u07-13",
+     "title": "Sources of finance",
+     "module": "Investment and funding"
+    },
+    {
+     "id": "u07-14",
+     "title": "Investment appraisal: payback and ARR",
+     "module": "Investment and funding"
+    },
+    {
+     "id": "u07-15",
+     "title": "Net present value",
+     "module": "Investment and funding"
+    },
+    {
+     "id": "u07-16",
+     "title": "Working capital management",
+     "module": "Investment and funding"
+    },
+    {
+     "id": "u07-17",
+     "title": "The cost of capital",
+     "module": "Investment and funding"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Economics for Business",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Demand",
+     "module": "Markets"
+    },
+    {
+     "id": "u08-02",
+     "title": "Supply and market equilibrium",
+     "module": "Markets"
+    },
+    {
+     "id": "u08-03",
+     "title": "Price elasticity of demand",
+     "module": "Markets"
+    },
+    {
+     "id": "u08-04",
+     "title": "Market failure",
+     "module": "Markets"
+    },
+    {
+     "id": "u08-05",
+     "title": "Perfect competition and monopoly",
+     "module": "Market structures"
+    },
+    {
+     "id": "u08-06",
+     "title": "Oligopoly and game theory",
+     "module": "Market structures"
+    },
+    {
+     "id": "u08-07",
+     "title": "Competition policy",
+     "module": "Market structures"
+    },
+    {
+     "id": "u08-08",
+     "title": "Economic growth and the business cycle",
+     "module": "The macroeconomy"
+    },
+    {
+     "id": "u08-09",
+     "title": "Inflation",
+     "module": "The macroeconomy"
+    },
+    {
+     "id": "u08-10",
+     "title": "Unemployment and the labour market",
+     "module": "The macroeconomy"
+    },
+    {
+     "id": "u08-11",
+     "title": "Interest rates and monetary policy",
+     "module": "The macroeconomy"
+    },
+    {
+     "id": "u08-12",
+     "title": "Fiscal policy and taxation",
+     "module": "The macroeconomy"
+    },
+    {
+     "id": "u08-13",
+     "title": "Exchange rates",
+     "module": "The macroeconomy"
+    },
+    {
+     "id": "u08-14",
+     "title": "International trade and protectionism",
+     "module": "The macroeconomy"
+    },
+    {
+     "id": "u08-15",
+     "title": "Behavioural economics for business",
+     "module": "Behaviour and decisions"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Entrepreneurship and Innovation",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "What is entrepreneurship?",
+     "module": "The entrepreneur"
+    },
+    {
+     "id": "u09-02",
+     "title": "Opportunity recognition and the entrepreneurial mindset",
+     "module": "The entrepreneur"
+    },
+    {
+     "id": "u09-03",
+     "title": "Effectuation and the lean start-up",
+     "module": "The entrepreneur"
+    },
+    {
+     "id": "u09-04",
+     "title": "The business model canvas",
+     "module": "Starting a business"
+    },
+    {
+     "id": "u09-05",
+     "title": "The business plan",
+     "module": "Starting a business"
+    },
+    {
+     "id": "u09-06",
+     "title": "Funding a start-up",
+     "module": "Starting a business"
+    },
+    {
+     "id": "u09-07",
+     "title": "Protecting ideas: intellectual property",
+     "module": "Starting a business"
+    },
+    {
+     "id": "u09-08",
+     "title": "Small business support in the UK",
+     "module": "Starting a business"
+    },
+    {
+     "id": "u09-09",
+     "title": "Types of innovation",
+     "module": "Innovation"
+    },
+    {
+     "id": "u09-10",
+     "title": "Disruptive innovation",
+     "module": "Innovation"
+    },
+    {
+     "id": "u09-11",
+     "title": "Diffusion of innovations",
+     "module": "Innovation"
+    },
+    {
+     "id": "u09-12",
+     "title": "Open innovation",
+     "module": "Innovation"
+    },
+    {
+     "id": "u09-13",
+     "title": "Design thinking",
+     "module": "Innovation"
+    },
+    {
+     "id": "u09-14",
+     "title": "Scaling a business",
+     "module": "Growth"
+    },
+    {
+     "id": "u09-15",
+     "title": "Social entrepreneurship",
+     "module": "Growth"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Digital Business and Information Systems",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Information systems in organisations",
+     "module": "Digital foundations"
+    },
+    {
+     "id": "u10-02",
+     "title": "Digital transformation",
+     "module": "Digital foundations"
+    },
+    {
+     "id": "u10-03",
+     "title": "E-commerce business models",
+     "module": "Digital foundations"
+    },
+    {
+     "id": "u10-04",
+     "title": "Platforms and network effects",
+     "module": "Digital foundations"
+    },
+    {
+     "id": "u10-05",
+     "title": "Data-driven decision-making",
+     "module": "Data and analytics"
+    },
+    {
+     "id": "u10-06",
+     "title": "Business intelligence and dashboards",
+     "module": "Data and analytics"
+    },
+    {
+     "id": "u10-07",
+     "title": "Correlation and regression for forecasting",
+     "module": "Data and analytics"
+    },
+    {
+     "id": "u10-08",
+     "title": "Artificial intelligence in business",
+     "module": "Data and analytics"
+    },
+    {
+     "id": "u10-09",
+     "title": "Cybersecurity for business",
+     "module": "Risk and regulation"
+    },
+    {
+     "id": "u10-10",
+     "title": "Data protection and UK GDPR",
+     "module": "Risk and regulation"
+    },
+    {
+     "id": "u10-11",
+     "title": "Digital ethics",
+     "module": "Risk and regulation"
+    },
+    {
+     "id": "u10-12",
+     "title": "Enterprise systems: ERP and CRM",
+     "module": "Digital operations"
+    },
+    {
+     "id": "u10-13",
+     "title": "Cloud computing",
+     "module": "Digital operations"
+    },
+    {
+     "id": "u10-14",
+     "title": "Fintech and digital payments",
+     "module": "Digital operations"
+    },
+    {
+     "id": "u10-15",
+     "title": "Agile project management",
+     "module": "Digital operations"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Ethics, ESG and Corporate Governance",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Ethical theories in business",
+     "module": "Business ethics"
+    },
+    {
+     "id": "u11-02",
+     "title": "Ethical decision-making",
+     "module": "Business ethics"
+    },
+    {
+     "id": "u11-03",
+     "title": "Corporate social responsibility",
+     "module": "Business ethics"
+    },
+    {
+     "id": "u11-04",
+     "title": "Shareholder and stakeholder theories of the firm",
+     "module": "Business ethics"
+    },
+    {
+     "id": "u11-05",
+     "title": "Principles of corporate governance",
+     "module": "Corporate governance"
+    },
+    {
+     "id": "u11-06",
+     "title": "The UK Corporate Governance Code",
+     "module": "Corporate governance"
+    },
+    {
+     "id": "u11-07",
+     "title": "Directors' duties",
+     "module": "Corporate governance"
+    },
+    {
+     "id": "u11-08",
+     "title": "Agency theory",
+     "module": "Corporate governance"
+    },
+    {
+     "id": "u11-09",
+     "title": "Executive pay",
+     "module": "Corporate governance"
+    },
+    {
+     "id": "u11-10",
+     "title": "ESG: environmental, social and governance",
+     "module": "ESG and sustainability"
+    },
+    {
+     "id": "u11-11",
+     "title": "Sustainability and the triple bottom line",
+     "module": "ESG and sustainability"
+    },
+    {
+     "id": "u11-12",
+     "title": "Climate change and business",
+     "module": "ESG and sustainability"
+    },
+    {
+     "id": "u11-13",
+     "title": "Sustainability reporting",
+     "module": "ESG and sustainability"
+    },
+    {
+     "id": "u11-14",
+     "title": "Modern slavery and supply chain ethics",
+     "module": "ESG and sustainability"
+    },
+    {
+     "id": "u11-15",
+     "title": "Bribery and corruption",
+     "module": "Integrity and risk"
+    },
+    {
+     "id": "u11-16",
+     "title": "Whistleblowing",
+     "module": "Integrity and risk"
+    },
+    {
+     "id": "u11-17",
+     "title": "Corporate failures: lessons from case studies",
+     "module": "Integrity and risk"
+    }
+   ]
+  }
+ ]
+}

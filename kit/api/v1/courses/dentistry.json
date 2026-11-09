@@ -1,0 +1,1311 @@
+{
+ "api": 1,
+ "slug": "dentistry",
+ "name": "Dentistry",
+ "site": "DentalGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Education, not dental advice.</b> DentalGradify teaches dentistry for study. The lessons were drafted with AI assistance and haven't yet been reviewed by a registered dentist, so they may contain errors; check important points against your course materials, the GDC and current guidance (SDCEP, NICE, Delivering Better Oral Health). Nothing here diagnoses a condition, recommends treatment or a dose for a real patient, or authorises anyone to practise. If you have a dental problem, see your dentist; for urgent dental problems call NHS 111; call 999 for swelling that affects breathing or swallowing.",
+ "notes": "/kit/courses/dentistry/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Biomedical foundations",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "from": "#40d4b1",
+   "to": "#22d3ee"
+  },
+  {
+   "name": "Stage 2 · Oral disease and prevention",
+   "units": [
+    4,
+    5,
+    6
+   ],
+   "from": "#34d399",
+   "to": "#40d4b1"
+  },
+  {
+   "name": "Stage 3 · Clinical sciences",
+   "units": [
+    7,
+    8
+   ],
+   "from": "#2dd4bf",
+   "to": "#38bdf8"
+  },
+  {
+   "name": "Stage 4 · Clinical dentistry and practice",
+   "units": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "from": "#40d4b1",
+   "to": "#818cf8"
+  }
+ ],
+ "paths": [
+  {
+   "id": "bds",
+   "name": "The BDS core",
+   "sub": "Every school in order, from anatomy to professional practice, following the GDC's Preparing for Practice outcomes.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "year1",
+   "name": "BDS year 1",
+   "sub": "The biomedical foundations: anatomy, teeth and their tissues, oral physiology, microbiology and infection control.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "select": null
+  },
+  {
+   "id": "dcp",
+   "name": "Hygiene and therapy",
+   "sub": "The core for dental hygienists and therapists: tissues, prevention, caries, periodontology, radiography and professionalism.",
+   "units": [
+    2,
+    3,
+    4,
+    5,
+    8,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "clinic",
+   "name": "Before your first clinic",
+   "sub": "Infection control, radiation protection, pain control, the medically complex patient and the GDC Standards.",
+   "units": [
+    3,
+    8,
+    11,
+    6,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "restorative",
+   "name": "Restorative and materials",
+   "sub": "Caries, materials, operative dentistry, endodontics and prosthodontics.",
+   "units": [
+    4,
+    7,
+    9
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Biomedical foundations",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Oral disease and prevention",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    5,
+    6
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Clinical sciences",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    7,
+    8
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Clinical dentistry and practice",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Oral and Head and Neck Anatomy",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "The skull and facial skeleton",
+     "module": "The skull and jaws"
+    },
+    {
+     "id": "u01-02",
+     "title": "The maxilla and palate",
+     "module": "The skull and jaws"
+    },
+    {
+     "id": "u01-03",
+     "title": "The mandible",
+     "module": "The skull and jaws"
+    },
+    {
+     "id": "u01-04",
+     "title": "The temporomandibular joint",
+     "module": "The skull and jaws"
+    },
+    {
+     "id": "u01-05",
+     "title": "Muscles of mastication",
+     "module": "Muscles and movement"
+    },
+    {
+     "id": "u01-06",
+     "title": "Mandibular movements",
+     "module": "Muscles and movement"
+    },
+    {
+     "id": "u01-07",
+     "title": "Muscles of facial expression",
+     "module": "Muscles and movement"
+    },
+    {
+     "id": "u01-08",
+     "title": "The tongue and floor of the mouth",
+     "module": "Muscles and movement"
+    },
+    {
+     "id": "u01-09",
+     "title": "The trigeminal nerve",
+     "module": "Nerves and vessels"
+    },
+    {
+     "id": "u01-10",
+     "title": "Nerve supply of the teeth and gingivae",
+     "module": "Nerves and vessels"
+    },
+    {
+     "id": "u01-11",
+     "title": "The facial nerve and other cranial nerves in dentistry",
+     "module": "Nerves and vessels"
+    },
+    {
+     "id": "u01-12",
+     "title": "Blood supply and lymphatic drainage of the head and neck",
+     "module": "Nerves and vessels"
+    },
+    {
+     "id": "u01-13",
+     "title": "The oral cavity: anatomy and landmarks",
+     "module": "The oral cavity and its spaces"
+    },
+    {
+     "id": "u01-14",
+     "title": "The salivary glands",
+     "module": "The oral cavity and its spaces"
+    },
+    {
+     "id": "u01-15",
+     "title": "The pharynx and larynx",
+     "module": "The oral cavity and its spaces"
+    },
+    {
+     "id": "u01-16",
+     "title": "Fascial spaces of the head and neck",
+     "module": "The oral cavity and its spaces"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Teeth: Morphology, Development and Oral Histology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Dental notation systems",
+     "module": "Naming and describing teeth"
+    },
+    {
+     "id": "u02-02",
+     "title": "The primary and permanent dentitions",
+     "module": "Naming and describing teeth"
+    },
+    {
+     "id": "u02-03",
+     "title": "Permanent incisors and canines",
+     "module": "Naming and describing teeth"
+    },
+    {
+     "id": "u02-04",
+     "title": "Permanent premolars",
+     "module": "Naming and describing teeth"
+    },
+    {
+     "id": "u02-05",
+     "title": "Permanent molars",
+     "module": "Naming and describing teeth"
+    },
+    {
+     "id": "u02-06",
+     "title": "Primary teeth",
+     "module": "Naming and describing teeth"
+    },
+    {
+     "id": "u02-07",
+     "title": "Odontogenesis: from bud to bell",
+     "module": "Tooth development"
+    },
+    {
+     "id": "u02-08",
+     "title": "Amelogenesis and enamel structure",
+     "module": "Tooth development"
+    },
+    {
+     "id": "u02-09",
+     "title": "Dentinogenesis and dentine",
+     "module": "Tooth development"
+    },
+    {
+     "id": "u02-10",
+     "title": "The dental pulp",
+     "module": "Tooth development"
+    },
+    {
+     "id": "u02-11",
+     "title": "Dentine sensitivity and the hydrodynamic theory",
+     "module": "Tooth development"
+    },
+    {
+     "id": "u02-12",
+     "title": "Root formation and cementum",
+     "module": "Tooth development"
+    },
+    {
+     "id": "u02-13",
+     "title": "Eruption and the chronology of the dentition",
+     "module": "Tooth development"
+    },
+    {
+     "id": "u02-14",
+     "title": "The periodontal ligament and alveolar bone",
+     "module": "Supporting tissues and anomalies"
+    },
+    {
+     "id": "u02-15",
+     "title": "The oral mucosa",
+     "module": "Supporting tissues and anomalies"
+    },
+    {
+     "id": "u02-16",
+     "title": "Developmental anomalies of the teeth",
+     "module": "Supporting tissues and anomalies"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Oral Physiology, Microbiology and Infection Control",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Saliva: secretion and control",
+     "module": "Oral physiology"
+    },
+    {
+     "id": "u03-02",
+     "title": "The functions and composition of saliva",
+     "module": "Oral physiology"
+    },
+    {
+     "id": "u03-03",
+     "title": "Dry mouth and salivary flow",
+     "module": "Oral physiology"
+    },
+    {
+     "id": "u03-04",
+     "title": "Taste and oral sensation",
+     "module": "Oral physiology"
+    },
+    {
+     "id": "u03-05",
+     "title": "Mastication and swallowing",
+     "module": "Oral physiology"
+    },
+    {
+     "id": "u03-06",
+     "title": "The oral microbiome",
+     "module": "Oral microbiology"
+    },
+    {
+     "id": "u03-07",
+     "title": "Dental plaque as a biofilm",
+     "module": "Oral microbiology"
+    },
+    {
+     "id": "u03-08",
+     "title": "Microbiology of caries and periodontal disease",
+     "module": "Oral microbiology"
+    },
+    {
+     "id": "u03-09",
+     "title": "Oral fungal and viral infections",
+     "module": "Oral microbiology"
+    },
+    {
+     "id": "u03-10",
+     "title": "Antimicrobials and antimicrobial stewardship in dentistry",
+     "module": "Oral microbiology"
+    },
+    {
+     "id": "u03-11",
+     "title": "Standard infection control precautions in dentistry",
+     "module": "Infection prevention and control"
+    },
+    {
+     "id": "u03-12",
+     "title": "Hand hygiene and personal protective equipment",
+     "module": "Infection prevention and control"
+    },
+    {
+     "id": "u03-13",
+     "title": "Decontamination of dental instruments (HTM 01-05)",
+     "module": "Infection prevention and control"
+    },
+    {
+     "id": "u03-14",
+     "title": "Dental unit waterlines",
+     "module": "Infection prevention and control"
+    },
+    {
+     "id": "u03-15",
+     "title": "Sharps injuries and blood-borne viruses",
+     "module": "Infection prevention and control"
+    },
+    {
+     "id": "u03-16",
+     "title": "Healthcare waste in dental practice",
+     "module": "Infection prevention and control"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Dental Caries, Prevention and Dental Public Health",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "What dental caries is",
+     "module": "The caries process"
+    },
+    {
+     "id": "u04-02",
+     "title": "The ecological plaque hypothesis",
+     "module": "The caries process"
+    },
+    {
+     "id": "u04-03",
+     "title": "Demineralisation and remineralisation",
+     "module": "The caries process"
+    },
+    {
+     "id": "u04-04",
+     "title": "Diet, sugars and caries",
+     "module": "The caries process"
+    },
+    {
+     "id": "u04-05",
+     "title": "Caries detection and diagnosis",
+     "module": "The caries process"
+    },
+    {
+     "id": "u04-06",
+     "title": "Caries risk assessment",
+     "module": "The caries process"
+    },
+    {
+     "id": "u04-07",
+     "title": "Root caries",
+     "module": "The caries process"
+    },
+    {
+     "id": "u04-08",
+     "title": "How fluoride works",
+     "module": "Fluoride and prevention"
+    },
+    {
+     "id": "u04-09",
+     "title": "Fluoride toothpaste, varnish and other vehicles",
+     "module": "Fluoride and prevention"
+    },
+    {
+     "id": "u04-10",
+     "title": "Fissure sealants",
+     "module": "Fluoride and prevention"
+    },
+    {
+     "id": "u04-11",
+     "title": "Delivering Better Oral Health",
+     "module": "Fluoride and prevention"
+    },
+    {
+     "id": "u04-12",
+     "title": "Minimal intervention dentistry",
+     "module": "Fluoride and prevention"
+    },
+    {
+     "id": "u04-13",
+     "title": "Epidemiology of oral disease",
+     "module": "Dental public health"
+    },
+    {
+     "id": "u04-14",
+     "title": "Measuring oral disease: indices",
+     "module": "Dental public health"
+    },
+    {
+     "id": "u04-15",
+     "title": "Oral health inequalities",
+     "module": "Dental public health"
+    },
+    {
+     "id": "u04-16",
+     "title": "Community water fluoridation",
+     "module": "Dental public health"
+    },
+    {
+     "id": "u04-17",
+     "title": "Oral health promotion",
+     "module": "Dental public health"
+    },
+    {
+     "id": "u04-18",
+     "title": "NHS dental services",
+     "module": "Dental public health"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Periodontology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "The periodontium in health",
+     "module": "Periodontal health and disease"
+    },
+    {
+     "id": "u05-02",
+     "title": "Gingivitis",
+     "module": "Periodontal health and disease"
+    },
+    {
+     "id": "u05-03",
+     "title": "Pathogenesis of periodontitis",
+     "module": "Periodontal health and disease"
+    },
+    {
+     "id": "u05-04",
+     "title": "Risk factors for periodontitis",
+     "module": "Periodontal health and disease"
+    },
+    {
+     "id": "u05-05",
+     "title": "Periodontitis and systemic health",
+     "module": "Periodontal health and disease"
+    },
+    {
+     "id": "u05-06",
+     "title": "Periodontal examination: BPE and charting",
+     "module": "Diagnosis and classification"
+    },
+    {
+     "id": "u05-07",
+     "title": "The 2017 classification of periodontal diseases",
+     "module": "Diagnosis and classification"
+    },
+    {
+     "id": "u05-08",
+     "title": "Staging and grading periodontitis",
+     "module": "Diagnosis and classification"
+    },
+    {
+     "id": "u05-09",
+     "title": "Necrotising periodontal diseases and periodontal abscess",
+     "module": "Diagnosis and classification"
+    },
+    {
+     "id": "u05-10",
+     "title": "Oral hygiene instruction and behaviour change",
+     "module": "Treatment"
+    },
+    {
+     "id": "u05-11",
+     "title": "Professional mechanical plaque removal",
+     "module": "Treatment"
+    },
+    {
+     "id": "u05-12",
+     "title": "Non-surgical periodontal therapy",
+     "module": "Treatment"
+    },
+    {
+     "id": "u05-13",
+     "title": "Adjuncts to periodontal therapy",
+     "module": "Treatment"
+    },
+    {
+     "id": "u05-14",
+     "title": "Periodontal surgery: an overview",
+     "module": "Treatment"
+    },
+    {
+     "id": "u05-15",
+     "title": "Supportive periodontal care",
+     "module": "Treatment"
+    },
+    {
+     "id": "u05-16",
+     "title": "Peri-implant health and disease",
+     "module": "Treatment"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Oral Pathology and Oral Medicine",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Pulpitis and periapical disease",
+     "module": "Pathology of teeth and jaws"
+    },
+    {
+     "id": "u06-02",
+     "title": "Odontogenic cysts",
+     "module": "Pathology of teeth and jaws"
+    },
+    {
+     "id": "u06-03",
+     "title": "Odontogenic tumours",
+     "module": "Pathology of teeth and jaws"
+    },
+    {
+     "id": "u06-04",
+     "title": "Bone diseases of the jaws",
+     "module": "Pathology of teeth and jaws"
+    },
+    {
+     "id": "u06-05",
+     "title": "Tooth wear: erosion, attrition and abrasion",
+     "module": "Pathology of teeth and jaws"
+    },
+    {
+     "id": "u06-06",
+     "title": "Oral ulceration",
+     "module": "Oral mucosal disease"
+    },
+    {
+     "id": "u06-07",
+     "title": "Recurrent aphthous stomatitis",
+     "module": "Oral mucosal disease"
+    },
+    {
+     "id": "u06-08",
+     "title": "Oral lichen planus",
+     "module": "Oral mucosal disease"
+    },
+    {
+     "id": "u06-09",
+     "title": "White and red patches",
+     "module": "Oral mucosal disease"
+    },
+    {
+     "id": "u06-10",
+     "title": "Oral potentially malignant disorders",
+     "module": "Oral mucosal disease"
+    },
+    {
+     "id": "u06-11",
+     "title": "Oral cancer",
+     "module": "Oral mucosal disease"
+    },
+    {
+     "id": "u06-12",
+     "title": "Salivary gland disease",
+     "module": "Oral mucosal disease"
+    },
+    {
+     "id": "u06-13",
+     "title": "Orofacial pain and temporomandibular disorders",
+     "module": "Oral medicine and the medically complex patient"
+    },
+    {
+     "id": "u06-14",
+     "title": "Oral manifestations of systemic disease",
+     "module": "Oral medicine and the medically complex patient"
+    },
+    {
+     "id": "u06-15",
+     "title": "Medical history and the medically complex patient",
+     "module": "Oral medicine and the medically complex patient"
+    },
+    {
+     "id": "u06-16",
+     "title": "Anticoagulants and bleeding risk",
+     "module": "Oral medicine and the medically complex patient"
+    },
+    {
+     "id": "u06-17",
+     "title": "Medication-related osteonecrosis of the jaw",
+     "module": "Oral medicine and the medically complex patient"
+    },
+    {
+     "id": "u06-18",
+     "title": "Medical emergencies in the dental practice",
+     "module": "Oral medicine and the medically complex patient"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Dental Materials",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Properties of dental materials",
+     "module": "Materials science basics"
+    },
+    {
+     "id": "u07-02",
+     "title": "Biocompatibility of dental materials",
+     "module": "Materials science basics"
+    },
+    {
+     "id": "u07-03",
+     "title": "Adhesion to enamel and dentine",
+     "module": "Materials science basics"
+    },
+    {
+     "id": "u07-04",
+     "title": "Dental amalgam",
+     "module": "Direct restorative materials"
+    },
+    {
+     "id": "u07-05",
+     "title": "Resin composites",
+     "module": "Direct restorative materials"
+    },
+    {
+     "id": "u07-06",
+     "title": "Glass ionomer cements",
+     "module": "Direct restorative materials"
+    },
+    {
+     "id": "u07-07",
+     "title": "Resin-modified glass ionomers and compomers",
+     "module": "Direct restorative materials"
+    },
+    {
+     "id": "u07-08",
+     "title": "Dental cements and liners",
+     "module": "Direct restorative materials"
+    },
+    {
+     "id": "u07-09",
+     "title": "Impression materials",
+     "module": "Indirect and impression materials"
+    },
+    {
+     "id": "u07-10",
+     "title": "Gypsum products",
+     "module": "Indirect and impression materials"
+    },
+    {
+     "id": "u07-11",
+     "title": "Dental ceramics",
+     "module": "Indirect and impression materials"
+    },
+    {
+     "id": "u07-12",
+     "title": "Dental alloys",
+     "module": "Indirect and impression materials"
+    },
+    {
+     "id": "u07-13",
+     "title": "Denture base polymers",
+     "module": "Indirect and impression materials"
+    },
+    {
+     "id": "u07-14",
+     "title": "Endodontic materials",
+     "module": "Indirect and impression materials"
+    },
+    {
+     "id": "u07-15",
+     "title": "Dental implant materials",
+     "module": "Indirect and impression materials"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Dental Radiography and Radiation Protection",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Production of X-rays",
+     "module": "Radiation physics and biology"
+    },
+    {
+     "id": "u08-02",
+     "title": "Interaction of X-rays with matter",
+     "module": "Radiation physics and biology"
+    },
+    {
+     "id": "u08-03",
+     "title": "Biological effects of ionising radiation",
+     "module": "Radiation physics and biology"
+    },
+    {
+     "id": "u08-04",
+     "title": "Radiation doses in dentistry",
+     "module": "Radiation physics and biology"
+    },
+    {
+     "id": "u08-05",
+     "title": "IRR17 and IR(ME)R in dentistry",
+     "module": "Law and protection"
+    },
+    {
+     "id": "u08-06",
+     "title": "Justification and optimisation",
+     "module": "Law and protection"
+    },
+    {
+     "id": "u08-07",
+     "title": "Radiation protection in the dental surgery",
+     "module": "Law and protection"
+    },
+    {
+     "id": "u08-08",
+     "title": "Quality assurance in dental radiography",
+     "module": "Law and protection"
+    },
+    {
+     "id": "u08-09",
+     "title": "Image receptors: film and digital",
+     "module": "Techniques and interpretation"
+    },
+    {
+     "id": "u08-10",
+     "title": "Intraoral techniques: bitewing and periapical",
+     "module": "Techniques and interpretation"
+    },
+    {
+     "id": "u08-11",
+     "title": "Occlusal radiographs",
+     "module": "Techniques and interpretation"
+    },
+    {
+     "id": "u08-12",
+     "title": "Panoramic radiography",
+     "module": "Techniques and interpretation"
+    },
+    {
+     "id": "u08-13",
+     "title": "Cone beam CT",
+     "module": "Techniques and interpretation"
+    },
+    {
+     "id": "u08-14",
+     "title": "Selection criteria for dental radiographs",
+     "module": "Techniques and interpretation"
+    },
+    {
+     "id": "u08-15",
+     "title": "Radiographic interpretation: caries and periodontal bone",
+     "module": "Techniques and interpretation"
+    },
+    {
+     "id": "u08-16",
+     "title": "Radiographic interpretation: periapical and jaw lesions",
+     "module": "Techniques and interpretation"
+    },
+    {
+     "id": "u08-17",
+     "title": "Radiographic faults and artefacts",
+     "module": "Techniques and interpretation"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Restorative Dentistry: Operative, Endodontics and Prosthodontics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "History, examination and treatment planning",
+     "module": "Assessment and planning"
+    },
+    {
+     "id": "u09-02",
+     "title": "Consent and shared decision-making in treatment",
+     "module": "Assessment and planning"
+    },
+    {
+     "id": "u09-03",
+     "title": "Occlusion in restorative dentistry",
+     "module": "Assessment and planning"
+    },
+    {
+     "id": "u09-04",
+     "title": "Principles of cavity preparation",
+     "module": "Operative dentistry"
+    },
+    {
+     "id": "u09-05",
+     "title": "Moisture control and rubber dam",
+     "module": "Operative dentistry"
+    },
+    {
+     "id": "u09-06",
+     "title": "Direct posterior restorations",
+     "module": "Operative dentistry"
+    },
+    {
+     "id": "u09-07",
+     "title": "Direct anterior restorations",
+     "module": "Operative dentistry"
+    },
+    {
+     "id": "u09-08",
+     "title": "Managing deep caries and the pulp",
+     "module": "Operative dentistry"
+    },
+    {
+     "id": "u09-09",
+     "title": "Managing tooth wear",
+     "module": "Operative dentistry"
+    },
+    {
+     "id": "u09-10",
+     "title": "Pulp and periapical diagnosis",
+     "module": "Endodontics"
+    },
+    {
+     "id": "u09-11",
+     "title": "Access and canal preparation",
+     "module": "Endodontics"
+    },
+    {
+     "id": "u09-12",
+     "title": "Irrigation and disinfection",
+     "module": "Endodontics"
+    },
+    {
+     "id": "u09-13",
+     "title": "Root canal obturation",
+     "module": "Endodontics"
+    },
+    {
+     "id": "u09-14",
+     "title": "Endodontic outcomes and retreatment",
+     "module": "Endodontics"
+    },
+    {
+     "id": "u09-15",
+     "title": "Dental trauma in adults",
+     "module": "Endodontics"
+    },
+    {
+     "id": "u09-16",
+     "title": "Crowns and onlays",
+     "module": "Prosthodontics"
+    },
+    {
+     "id": "u09-17",
+     "title": "Fixed bridges",
+     "module": "Prosthodontics"
+    },
+    {
+     "id": "u09-18",
+     "title": "Complete dentures",
+     "module": "Prosthodontics"
+    },
+    {
+     "id": "u09-19",
+     "title": "Removable partial dentures",
+     "module": "Prosthodontics"
+    },
+    {
+     "id": "u09-20",
+     "title": "Dental implants",
+     "module": "Prosthodontics"
+    },
+    {
+     "id": "u09-21",
+     "title": "Restoring the endodontically treated tooth",
+     "module": "Prosthodontics"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Paediatric Dentistry and Orthodontics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Child development and behaviour management",
+     "module": "Children's oral health"
+    },
+    {
+     "id": "u10-02",
+     "title": "Caries in children",
+     "module": "Children's oral health"
+    },
+    {
+     "id": "u10-03",
+     "title": "Pulp therapy in primary teeth",
+     "module": "Children's oral health"
+    },
+    {
+     "id": "u10-04",
+     "title": "Dental trauma in children",
+     "module": "Children's oral health"
+    },
+    {
+     "id": "u10-05",
+     "title": "Molar–incisor hypomineralisation",
+     "module": "Children's oral health"
+    },
+    {
+     "id": "u10-06",
+     "title": "Safeguarding children in dentistry",
+     "module": "Children's oral health"
+    },
+    {
+     "id": "u10-07",
+     "title": "Children with additional needs",
+     "module": "Children's oral health"
+    },
+    {
+     "id": "u10-08",
+     "title": "Growth of the face and jaws",
+     "module": "Orthodontics"
+    },
+    {
+     "id": "u10-09",
+     "title": "Development of occlusion",
+     "module": "Orthodontics"
+    },
+    {
+     "id": "u10-10",
+     "title": "Classification of malocclusion",
+     "module": "Orthodontics"
+    },
+    {
+     "id": "u10-11",
+     "title": "The Index of Orthodontic Treatment Need",
+     "module": "Orthodontics"
+    },
+    {
+     "id": "u10-12",
+     "title": "Orthodontic assessment",
+     "module": "Orthodontics"
+    },
+    {
+     "id": "u10-13",
+     "title": "Removable and functional appliances",
+     "module": "Orthodontics"
+    },
+    {
+     "id": "u10-14",
+     "title": "Fixed appliances and tooth movement",
+     "module": "Orthodontics"
+    },
+    {
+     "id": "u10-15",
+     "title": "Retention and stability",
+     "module": "Orthodontics"
+    },
+    {
+     "id": "u10-16",
+     "title": "Interceptive orthodontics",
+     "module": "Orthodontics"
+    },
+    {
+     "id": "u10-17",
+     "title": "Cleft lip and palate",
+     "module": "Orthodontics"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Oral Surgery, Pain and Anxiety Control",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Local anaesthetics: pharmacology",
+     "module": "Pain and anxiety control"
+    },
+    {
+     "id": "u11-02",
+     "title": "Local anaesthetic techniques",
+     "module": "Pain and anxiety control"
+    },
+    {
+     "id": "u11-03",
+     "title": "Complications of local anaesthesia",
+     "module": "Pain and anxiety control"
+    },
+    {
+     "id": "u11-04",
+     "title": "Dental anxiety",
+     "module": "Pain and anxiety control"
+    },
+    {
+     "id": "u11-05",
+     "title": "Conscious sedation",
+     "module": "Pain and anxiety control"
+    },
+    {
+     "id": "u11-06",
+     "title": "General anaesthesia in dentistry",
+     "module": "Pain and anxiety control"
+    },
+    {
+     "id": "u11-07",
+     "title": "Principles of exodontia",
+     "module": "Oral surgery"
+    },
+    {
+     "id": "u11-08",
+     "title": "Surgical removal of teeth",
+     "module": "Oral surgery"
+    },
+    {
+     "id": "u11-09",
+     "title": "Third molar surgery",
+     "module": "Oral surgery"
+    },
+    {
+     "id": "u11-10",
+     "title": "Complications of extractions",
+     "module": "Oral surgery"
+    },
+    {
+     "id": "u11-11",
+     "title": "Odontogenic infections and their management",
+     "module": "Oral surgery"
+    },
+    {
+     "id": "u11-12",
+     "title": "Antibiotic prescribing in dentistry",
+     "module": "Oral surgery"
+    },
+    {
+     "id": "u11-13",
+     "title": "Analgesia for dental pain",
+     "module": "Oral surgery"
+    },
+    {
+     "id": "u11-14",
+     "title": "Maxillofacial trauma: an introduction",
+     "module": "Oral surgery"
+    },
+    {
+     "id": "u11-15",
+     "title": "Referral pathways and urgent dental care",
+     "module": "Oral surgery"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Professionalism, Ethics and Law",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "The GDC and its Standards for the Dental Team",
+     "module": "Professionalism"
+    },
+    {
+     "id": "u12-02",
+     "title": "The dental team and scope of practice",
+     "module": "Professionalism"
+    },
+    {
+     "id": "u12-03",
+     "title": "Communication and consent",
+     "module": "Professionalism"
+    },
+    {
+     "id": "u12-04",
+     "title": "Mental capacity and consent",
+     "module": "Professionalism"
+    },
+    {
+     "id": "u12-05",
+     "title": "Raising concerns and the duty of candour",
+     "module": "Professionalism"
+    },
+    {
+     "id": "u12-06",
+     "title": "Fitness to practise",
+     "module": "Professionalism"
+    },
+    {
+     "id": "u12-07",
+     "title": "Record keeping and data protection",
+     "module": "Practice, law and governance"
+    },
+    {
+     "id": "u12-08",
+     "title": "Complaints",
+     "module": "Practice, law and governance"
+    },
+    {
+     "id": "u12-09",
+     "title": "Clinical governance and audit",
+     "module": "Practice, law and governance"
+    },
+    {
+     "id": "u12-10",
+     "title": "Evidence-based dentistry",
+     "module": "Practice, law and governance"
+    },
+    {
+     "id": "u12-11",
+     "title": "Safeguarding adults",
+     "module": "Practice, law and governance"
+    },
+    {
+     "id": "u12-12",
+     "title": "Equality, diversity and inclusion",
+     "module": "Practice, law and governance"
+    },
+    {
+     "id": "u12-13",
+     "title": "Health and safety in dental practice",
+     "module": "Practice, law and governance"
+    },
+    {
+     "id": "u12-14",
+     "title": "Continuing professional development",
+     "module": "Practice, law and governance"
+    },
+    {
+     "id": "u12-15",
+     "title": "Ethics in dental practice",
+     "module": "Practice, law and governance"
+    }
+   ]
+  }
+ ]
+}

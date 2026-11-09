@@ -20,6 +20,8 @@ for (const slug of (await readdir(new URL("kit/courses/", root))).sort()) {
     changes.push(`sw.js: precache ${slug}`);
   }
 }
+// a duplicate URL makes cache.addAll reject, so the worker never installs: keep each entry once
+{ const seen = new Set(); sw = sw.replace(/const SHELL = \[([\s\S]*?)\n\];/, (all) => all.replace(/"([^"]+)",\s?/g, (m, f) => { if (seen.has(f)) { changes.push(`sw.js: drop duplicate ${f}`); return ""; } seen.add(f); return m; })); }
 if (changes.some((x) => x.startsWith("sw.js"))) sw = sw.replace(/const CACHE = "gradify-v(\d+)";/, (_, n) => `const CACHE = "gradify-v${Number(n) + 1}";`);
 console.log(changes.length ? changes.join("\n") : "Nothing to register.");
 if (!check && changes.length) { await writeFile(new URL("kit/core/sites.js", root), sites); await writeFile(new URL("sw.js", root), sw); }
