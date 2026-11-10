@@ -95,3 +95,24 @@ port 465, user `resend`, password the API key, sender e.g. `Gradify <hello@getgr
 
 Two learner accounts on the project, `gradify-check-a@getgradify.com` and `gradify-check-b@getgradify.com`, are used by
 the live checks. Their passwords are not in this repository. Learner A has a Stripe customer (no subscription, no card).
+
+## Launch lists (notify me)
+
+The "Notify me" forms (homepage Pro section, pricing page, coming-soon site cards) add one row to `public.waitlist`:
+email (lower case), the list (`site`: "Gradify Pro" or a site's name) and the time. Visitors can only add rows; nobody
+can read them through the API. privacy.html#launch-lists promises one email per list and deletion after it, or within
+12 months. To keep that promise:
+
+```sql
+-- who to email when Gradify Pro opens (export, send one email, then delete)
+select email from public.waitlist where site = 'Gradify Pro' order by created_at;
+delete from public.waitlist where site = 'Gradify Pro';
+-- monthly housekeeping: entries older than 12 months
+delete from public.waitlist where created_at < now() - interval '12 months';
+-- a removal request
+delete from public.waitlist where email = lower('<address>');
+```
+
+Contact addresses (privacy.html): privacy@getgradify.com for data requests and removals, hello@getgradify.com for
+everything else. Both are Cloudflare Email Routing addresses (getgradify.com DNS is on Cloudflare) forwarding to the
+owner's inbox; they receive only. Removal requests: delete the row (SQL above) and reply from the owner's inbox.

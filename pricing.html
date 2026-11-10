@@ -53,6 +53,13 @@
     .plan .cta .btn { width: 100%; }
     .plan .cta .btn[aria-disabled="true"] { opacity: .55; cursor: not-allowed; transform: none; }
     .plan .cta p { margin: 0; color: var(--mute); font-size: 13px; text-align: center; line-height: 1.45; }
+    .notify label { display: block; font-size: 14px; color: var(--mute); margin-bottom: 8px; text-align: center; }
+    .notify-row { display: flex; gap: 8px; }
+    .notify-row input { flex: 1; min-width: 0; padding: 12px 16px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--inset); color: var(--fg); font: 15px var(--sans); }
+    .notify-row .btn { width: auto !important; }
+    .notify p { margin: 8px 0 0; color: var(--mute); font-size: 13px; text-align: center; }
+    .notify p a { color: inherit; }
+    @media (max-width: 760px) { .notify-row { flex-direction: column; } .notify-row .btn { width: 100% !important; } }
     .current { font: 600 11px var(--sans); text-transform: uppercase; letter-spacing: .08em; padding: 3px 9px; border-radius: 99px; border: 1px solid var(--line-strong); color: var(--fg); }
 
     section.more { max-width: 980px; margin: 56px auto 0; }
@@ -161,6 +168,7 @@
   <script src="/kit/vendor/supabase/supabase.js"></script>
   <script type="module">
     import { SUPABASE_URL, SUPABASE_ANON_KEY } from "/gradify.config.js";
+    import { joinWaitlist, PRO_LIST } from "/kit/data/waitlist.js";
     import { PRO_PRICES, PRO_ON_SALE, AI_ALLOWANCES, uses, money, annualSaving, planOf, describePlan, clientStore, mySubscription, startCheckout, openPortal } from "/kit/data/billing.js";
 
     const $ = (s) => document.querySelector(s);
@@ -227,10 +235,18 @@
       const label = period === "year" ? `Get Pro yearly · ${money(PRO_PRICES.year)}` : `Get Pro monthly · ${money(PRO_PRICES.month)}`;
       let html;
       if (plan === "pro" || (sub && describePlan(sub).manage)) html = `<button class="btn btn-primary lg" id="manage" type="button">Manage billing</button><p>Change plan, update your card, see invoices or cancel.</p>`;
-      else if (!canBuy) html = `<a class="btn btn-primary lg" aria-disabled="true" role="link" tabindex="0">Opens when Gradify AI launches</a><p>Gradify Pro goes on sale the day Gradify AI switches on, so nobody pays for something they can't use yet.</p>`;
+      else if (!canBuy) html = `<form class="notify" id="notify" novalidate><label for="notify-email">Not on sale yet. Get one email when it opens:</label><div class="notify-row"><input id="notify-email" type="email" autocomplete="email" placeholder="you@example.com" required><button class="btn btn-primary lg" type="submit">Notify me</button></div><p id="notify-msg" role="status" aria-live="polite">No payment, no account needed. <a href="/privacy.html#launch-lists">What we keep</a>.</p></form>`;
       else if (!signedIn) html = `<a class="btn btn-primary lg" href="/app.html#/account">Sign in to get Pro</a><p>Sign in first so Pro is added to your account.</p>`;
       else html = `<button class="btn btn-primary lg" id="buy" type="button">${label}</button><p>Secure checkout by Stripe. Cancel any time.</p>`;
       $("#pro-cta").innerHTML = html;
+      $("#notify")?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const f = e.currentTarget, msg = $("#notify-msg"), input = f.querySelector("input"), btn = f.querySelector("button");
+        btn.disabled = true;
+        try { msg.textContent = await joinWaitlist(input.value, PRO_LIST); f.querySelector(".notify-row").hidden = true; }
+        catch (err) { msg.textContent = err.invalid ? err.message : "Sorry, that didn't work. Please try again in a moment."; input.focus(); }
+        finally { btn.disabled = false; }
+      });
       $("#buy")?.addEventListener("click", (e) => go(e.currentTarget, () => startCheckout(store, period, "/pricing.html")));
       $("#manage")?.addEventListener("click", (e) => go(e.currentTarget, () => openPortal(store, "/pricing.html")));
     }
@@ -270,7 +286,7 @@
       else notice("warn", "Your payment went through, but Pro isn't showing yet.", "This can take a minute. Refresh this page shortly; if it still says Free, your receipt from Stripe is your proof of payment.");
     }
 
-    if (!canBuy) notice("info", "Gradify AI is launching soon.", "Everything else on Gradify is free and open now. Gradify Pro goes on sale when Gradify AI switches on.");
+    if (!canBuy) notice("info", "Gradify Pro is coming soon.", "Everything on Gradify is free and open now. Gradify Pro opens when Gradify AI launches; the prices shown are the planned launch prices.");
     renderPrice();
     await loadLearner();
     renderCta();
