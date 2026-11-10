@@ -53,7 +53,8 @@ test("server functions act as the signed-in learner, never with the service role
     const src = await readFile(new URL(f, root), "utf8");
     // even these identify the learner from their own token, never from the request body
     if (f.includes("checkout")) assert.match(src, /auth\.getUser\(\)/, `${f} must identify the learner from their token`);
-    if (f.includes("webhook")) assert.match(src, /verifyStripeEvent/, `${f} must verify Stripe's signature before writing`);
+    // handleStripeEvent verifies the signature before anything else (tests/billing-lifecycle.test.mjs)
+    if (f.includes("webhook")) assert.match(src, /handleStripeEvent|verifyStripeEvent/, `${f} must verify Stripe's signature before writing`);
   }
 });
 
