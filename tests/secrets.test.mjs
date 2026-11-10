@@ -38,10 +38,22 @@ test("the site config holds only the public project URL and anon key", async () 
   assert.doesNotMatch(src, /service_role|ANTHROPIC|sk-ant/i);
 });
 
-test("server functions act as the signed-in learner, never with the service role", async () => {
+// The only functions allowed the service role, and why. Subscriptions have no learner write policy on purpose:
+// Stripe's webhook has no signed-in learner, and checkout links a learner to their Stripe customer, which a learner
+// must never be able to set themselves. Adding to this list needs the same justification.
+const SERVICE_ROLE_ALLOWED = new Set(["supabase/functions/billing-webhook/index.ts", "supabase/functions/billing-checkout/index.ts"]);
+
+test("server functions act as the signed-in learner, never with the service role (billing writes excepted)", async () => {
   for (const f of files.filter((x) => x.startsWith("supabase/functions/") && /\.(ts|js)$/.test(x))) {
+    if (SERVICE_ROLE_ALLOWED.has(f)) continue;
     const src = await readFile(new URL(f, root), "utf8");
     assert.doesNotMatch(src, /SERVICE_ROLE/, `${f} must not use the service-role key: row-level security has to apply to every query`);
+  }
+  for (const f of SERVICE_ROLE_ALLOWED) {
+    const src = await readFile(new URL(f, root), "utf8");
+    // even these identify the learner from their own token, never from the request body
+    if (f.includes("checkout")) assert.match(src, /auth\.getUser\(\)/, `${f} must identify the learner from their token`);
+    if (f.includes("webhook")) assert.match(src, /verifyStripeEvent/, `${f} must verify Stripe's signature before writing`);
   }
 });
 
