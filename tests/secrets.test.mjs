@@ -41,7 +41,10 @@ test("the site config holds only the public project URL and anon key", async () 
 // The only functions allowed the service role, and why. Subscriptions have no learner write policy on purpose:
 // Stripe's webhook has no signed-in learner, and checkout links a learner to their Stripe customer, which a learner
 // must never be able to set themselves. Adding to this list needs the same justification.
-const SERVICE_ROLE_ALLOWED = new Set(["supabase/functions/billing-webhook/index.ts", "supabase/functions/billing-checkout/index.ts"]);
+// The AI functions use it only for the Gradify AI usage ledger (ai_claim_for / ai_settle_for / the response cache), which
+// learners must not be able to write: everything else they do (sign-in, saved packs) uses the learner's own token.
+const SERVICE_ROLE_ALLOWED = new Set(["supabase/functions/billing-webhook/index.ts", "supabase/functions/billing-checkout/index.ts",
+  "supabase/functions/course-tutor/index.ts", "supabase/functions/study-pack/index.ts"]);
 
 test("server functions act as the signed-in learner, never with the service role (billing writes excepted)", async () => {
   for (const f of files.filter((x) => x.startsWith("supabase/functions/") && /\.(ts|js)$/.test(x))) {
@@ -55,6 +58,12 @@ test("server functions act as the signed-in learner, never with the service role
     if (f.includes("checkout")) assert.match(src, /auth\.getUser\(\)/, `${f} must identify the learner from their token`);
     // handleStripeEvent verifies the signature before anything else (tests/billing-lifecycle.test.mjs)
     if (f.includes("webhook")) assert.match(src, /handleStripeEvent|verifyStripeEvent/, `${f} must verify Stripe's signature before writing`);
+    if (f.includes("tutor") || f.includes("study-pack")) {
+      assert.match(src, /auth\.getUser\(\)/, `${f} must identify the learner from their token`);
+      // the service-role client is handed to the ledger and used for nothing else
+      const uses = [...src.matchAll(/\badmin\b/g)].length, allowed = [...src.matchAll(/const admin = createClient|ledger\(admin, user\.id\)/g)].length;
+      assert.equal(uses, allowed, `${f} may use the service role only through ledger(admin, user.id)`);
+    }
   }
 });
 

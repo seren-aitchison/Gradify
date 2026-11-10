@@ -42,7 +42,11 @@ export async function callFunction(store, name, payload, o = {}) {
   }
   const body = await res.json().catch(() => ({}));
   if (res.status === 401) throw Object.assign(new Error(MSG.expired), { expired: true });
-  if (!res.ok) throw Object.assign(new Error(body.error || fallback), { status: res.status });
+  // Gradify AI refusals say why ({ reason, feature, plan, used, allowance, resetsAt, upgrade }: docs/APP-API.md)
+  if (!res.ok) throw Object.assign(new Error(body.error || fallback), { status: res.status, reason: body.reason ?? null, upgrade: Boolean(body.upgrade), usage: body.usage ?? null, allowance: body.reason === "allowance" ? { feature: body.feature, plan: body.plan, used: body.used, allowance: body.allowance, resetsAt: body.resetsAt } : null });
   return body;
 }
+
+/** A link to the plans after an "allowance used up" message, for learners on Free. */
+export const upgradeLink = (err, href = "/pricing.html") => (err?.upgrade ? ` <a href="${href}">See Gradify Pro</a>` : "");
 export { MSG as FUNCTION_MESSAGES };

@@ -18,27 +18,32 @@ async function db() {
     insert into auth.users (id, email) values ('${A}', 'a@x'), ('${B}', 'b@x') on conflict do nothing;`);
   const as = async (uid, q) => d.sql(`set role authenticated; set request.jwt.claim.sub = '${uid}'; ${q}; `).finally(() => d.sql("reset role; reset request.jwt.claim.sub;"));
   const owner = (q) => d.sql(q);
-  return { as, owner, close: d.close };
+  // the Edge Functions' role: only it may claim and settle Gradify AI uses
+  const svc = async (q) => d.sql(`set role service_role; ${q}; `).finally(() => d.sql("reset role;"));
+  return { as, owner, svc, close: d.close };
 }
-const claim = async (x, uid, mode = "socratic") => (await x.as(uid, `select * from public.ai_claim('${mode}', 'test')`))[0];
+const claim = async (x, uid, mode = "socratic") => (await x.svc(`select * from public.ai_claim_for('${uid}', '${mode}', 'test', null, 1000, 1000)`))[0];
+const settle = (x, uid, id, { input = 1000, output = 500, outcome = "ok" } = {}) => x.svc(`select public.ai_settle_for(${id}, '${uid}', 'claude-opus-5-5', ${input}, ${output}, 0, 0, '${outcome}')`);
+// AI on, with rate limits out of the way (tests/ai-controls.test.mjs tests those)
+const ENABLE = "update public.ai_settings set enabled = true, per_minute = 1000, per_hour = 1000, global_per_minute = 1000";
 
 test("Gradify AI is off until the owner switches it on", async () => {
   const x = await db();
   assert.equal((await claim(x, A)).reason, "ai_off");
-  await x.owner("update public.ai_settings set enabled = true");
+  await x.owner(ENABLE);
   assert.ok((await claim(x, A)).usage_id);
   await x.close();
 });
 
 test("free learners get the free monthly allowance per feature, and a failed request doesn't count", async () => {
   const x = await db();
-  await x.owner("update public.ai_settings set enabled = true");
+  await x.owner(ENABLE);
   const ids = [];
   for (let i = 0; i < 5; i++) { const r = await claim(x, A, "socratic"); assert.ok(r.usage_id, `tutor ${i + 1}`); ids.push(r.usage_id); }
   const sixth = await claim(x, A, "socratic");
   assert.equal(sixth.reason, "allowance"); assert.equal(sixth.plan, "free"); assert.equal(sixth.allowance, 5);
   // a failed call gives the use back
-  await x.as(A, `select public.ai_settle(${ids[0]}, null, null, true)`);
+  await settle(x, A, ids[0], { outcome: "failed" });
   assert.ok((await claim(x, A, "socratic")).usage_id);
   // other features have their own allowances: 1 pack, 2 quizzes
   assert.ok((await claim(x, A, "pack")).usage_id);
@@ -52,7 +57,7 @@ test("free learners get the free monthly allowance per feature, and a failed req
 
 test("Pro learners get the Pro allowance for their billing period", async () => {
   const x = await db();
-  await x.owner(`update public.ai_settings set enabled = true;
+  await x.owner(`${ENABLE};
     insert into public.subscriptions (user_id, stripe_customer_id, stripe_subscription_id, status, billing_interval, current_period_start, current_period_end)
     values ('${A}', 'cus_a', 'sub_a', 'active', 'month', now() - interval '1 day', now() + interval '29 days')`);
   for (let i = 0; i < 20; i++) assert.ok((await claim(x, A, "pack")).usage_id, `pack ${i + 1}`);
@@ -68,10 +73,10 @@ test("Pro learners get the Pro allowance for their billing period", async () => 
 
 test("the monthly budget stops Gradify AI for everyone once it's spent", async () => {
   const x = await db();
-  await x.owner("update public.ai_settings set enabled = true, monthly_budget_pence = 100");
+  await x.owner(`${ENABLE}, monthly_budget_pence = 100, daily_budget_pence = 100000`);
   const r = await claim(x, A);
-  // a request costing over £1 at the stored prices
-  await x.as(A, `select public.ai_settle(${r.usage_id}, 200000, 100000)`);
+  // a request costing over £1 at Opus prices
+  await settle(x, A, r.usage_id, { input: 200000, output: 100000 });
   assert.equal((await claim(x, B)).reason, "budget");
   await x.close();
 });
@@ -91,7 +96,7 @@ test("learners can't grant themselves Pro, change the switch, read others' plans
 
 test("allowances are monthly on yearly Pro too: a yearly subscriber's window is the current month of their year", async () => {
   const x = await db();
-  await x.owner(`update public.ai_settings set enabled = true;
+  await x.owner(`${ENABLE};
     insert into public.subscriptions (user_id, stripe_customer_id, stripe_subscription_id, status, billing_interval, current_period_start, current_period_end)
     values ('${A}', 'cus_a', 'sub_a', 'active', 'year', now() - interval '100 days', now() + interval '265 days')`);
   const [p] = await x.owner(`select * from public.ai_period('${A}')`);

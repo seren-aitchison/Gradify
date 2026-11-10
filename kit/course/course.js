@@ -31,7 +31,7 @@ import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, 
 import { mountRevalidation } from "./revalidation.js";
 import { scoreFeedback } from "../assess/tutor.js";
 import { feedbackHtml, paras } from "../assess/tutor-view.js";
-import { mountTutorPanel, directorHtml } from "./tutor-panel.js";
+import { mountTutorPanel, directorHtml, newConversation } from "./tutor-panel.js";
 import { readLab, labState } from "./lab-state.js";
 import { SUPABASE_URL } from "../../gradify.config.js";
 import { buildExam, runExam, FORMATS } from "../assess/exam.js";
@@ -696,7 +696,7 @@ export function mountCourse(root, cfg) {
   }
   // a practice interview: the tutor plays the client or patient (t.who), then gives feedback on the whole interview
   function viewInterview(t, head, rubric) {
-    const turns = [], kase = { client: t.client, persona: t.persona, facts: t.facts }, who = t.who || "client", Who = who[0].toUpperCase() + who.slice(1);
+    const turns = [], conv = newConversation(), kase = { client: t.client, persona: t.persona, facts: t.facts }, who = t.who || "client", Who = who[0].toUpperCase() + who.slice(1);
     main.innerHTML = `${head}<section class="co-panel co-client"><h3>Your ${who}</h3><p>${esc(t.client)}</p></section>
       <div class="co-chat" aria-live="polite"><p class="co-empty">The ${who} is waiting. Introduce yourself to begin.</p></div>
       <form class="co-chatform"><label class="sr-only" for="co-say">What you say to the ${who}</label><textarea id="co-say" rows="2" maxlength="1500" placeholder="What do you say?"></textarea><button type="submit" class="btn btn-light lg btn-sm"><span>Say</span></button></form>
@@ -708,7 +708,7 @@ export function mountCourse(root, cfg) {
     form.addEventListener("submit", async (e) => {
       e.preventDefault(); const text = say.value.trim(); if (!text) return;
       turns.push({ role: "learner", text }); say.value = ""; paint(true); form.querySelector("button").disabled = true;
-      try { const { reply } = await askTutor({ mode: "roleplay", case: kase, turns }); turns.push({ role: "client", text: reply }); paint(); }
+      try { const { reply } = await askTutor({ mode: "roleplay", case: kase, turns, conversationId: conv }); turns.push({ role: "client", text: reply }); paint(); }
       catch (err) { paint(); out.innerHTML = err.signin ? signinLine(`The practice ${who}`, "practise with a friend using the case file below") : `<p class="co-empty">${esc(err.message)}</p>`; }
       form.querySelector("button").disabled = false; say.focus();
     });

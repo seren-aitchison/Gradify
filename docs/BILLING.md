@@ -82,10 +82,8 @@ Only once Gradify AI is switched on (below), because Pro sells nothing else:
 
 ## Gradify AI: still off
 
-`ai_settings.enabled` is `false` and the AI functions (`course-tutor`, `study-pack`) are not deployed. Before switching
-on: the functions must claim and settle every request through `ai_claim()` / `ai_settle()` (allowances, the monthly
-spending cap in `ai_settings.monthly_budget_pence`, cost tracking), with tests; then set `ANTHROPIC_API_KEY` as a
-Supabase secret, deploy, and set `enabled = true` in `ai_settings` from the SQL editor.
+The AI functions have every control in place and will refuse every request until the owner switches Gradify AI on
+(or adds testers); the controls' migration and the deploy are waiting for the owner's go-ahead. Controls, monitoring and the switch-on checklist: `docs/AI.md`. Costs per learner: `docs/AI-COSTS.md`.
 
 ## Sign-in emails (Resend)
 

@@ -194,3 +194,32 @@ Everything matches what the site sells.
 | Existing subscriptions | ok | 0 |
 
 Changes made by this check: none.
+
+## 2026-11-10 01:51 UTC · Backup · ezlohntrnassgsbofcfc
+
+Backup written to /tmp/claude-0/-home-user/e12758f2-df7b-5438-89fd-958e31037ed2/scratchpad/backup-2026-11-10c/gradify-ezlohntrnassgsbofcfc-2026-11-10T01-50-13-438Z.json (sha256 0c8517f0e6fd7671…, readable only by you) and **verified**: re-read from disk with a matching hash, every table's saved rows equal its count, a fresh count of the live database matches, and it was **restored into a separate temporary PostgreSQL database** (built from the 13 recorded migrations) with every row and value identical (20 tables, 572 rows). 20 public tables, 572 rows, 7 accounts (counted, not copied). 13 migrations already recorded.
+
+Note: this is a logical snapshot through the API. Auth accounts and storage files aren't included; Supabase's own daily backups (and point-in-time recovery on paid plans) cover those.
+
+| table | rows |
+|---|---|
+| activity | 0 |
+| ai_limits | 8 |
+| ai_settings | 1 |
+| assessment_attempts | 0 |
+| billing_events | 0 |
+| body_checkins | 0 |
+| cards | 0 |
+| course_progress | 0 |
+| documents | 0 |
+| fitness_tests | 0 |
+| packs | 0 |
+| page_events | 552 |
+| plan_blocks | 0 |
+| profiles | 7 |
+| revalidation_entries | 0 |
+| reviews | 0 |
+| subscriptions | 1 |
+| tutor_usage | 3 |
+| waitlist | 0 |
+| workouts | 0 |
