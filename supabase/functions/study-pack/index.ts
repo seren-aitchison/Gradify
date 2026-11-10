@@ -37,9 +37,10 @@ const json = (req: Request, body: unknown, status = 200) =>
 
 // One Claude call with structured output. Streams so long packs don't hit HTTP timeouts,
 // and opts into server-side fallback so a rare false-positive safety decline is retried.
-const ask = (system: string, content: Anthropic.Beta.BetaContentBlockParam[], schema: Record<string, unknown>, effort: "low" | "medium" | "high", maxTokens: number) =>
+// The model comes from the claim (public.ai_feature_models): Sonnet for packs and quizzes, Opus for card rewrites.
+const ask = (model: string, system: string, content: Anthropic.Beta.BetaContentBlockParam[], schema: Record<string, unknown>, effort: "low" | "medium" | "high", maxTokens: number) =>
   anthropic().beta.messages.stream({
-    model: MODEL,
+    model,
     max_tokens: maxTokens,
     betas: ["server-side-fallback-2026-07-01"],
     fallbacks: "default",
@@ -79,7 +80,7 @@ Supporting notes: ${String(body.notes ?? "").slice(0, 4000)}
 Use only what the fact and notes say. Front under 25 words, back under 40. Never put the answer in the question.${["why", "apply"].includes(body.kind) ? ` Keep it a "${body.kind}" question: ${body.kind === "why" ? "the learner must explain a cause, mechanism or difference" : "the learner must use the idea on a situation or problem"}. Backs for these can run to 60 words.` : ""}`;
       return send(await runAi(deps, {
         mode, site, estInput: estimateTokens(SYSTEM_PROMPT, prompt), maxOutput: MAX_OUTPUT.card,
-        call: () => ask(SYSTEM_PROMPT, [{ type: "text", text: prompt }], CARD_SCHEMA, "medium", MAX_OUTPUT.card),
+        model: MODEL, call: (model: string) => ask(model, SYSTEM_PROMPT, [{ type: "text", text: prompt }], CARD_SCHEMA, "medium", MAX_OUTPUT.card),
         parse: (msg: Anthropic.Beta.BetaMessage) => ({ card: JSON.parse(textOf(msg)) }),
       }));
     }
@@ -119,7 +120,7 @@ Use only what the fact and notes say. Front under 25 words, back under 40. Never
 The learner already has recall flashcards for these notes. Write only the deeper questions ("why" and "apply"), following the rules for deeper questions. Use exactly these topic names: ${JSON.stringify(topics)}.`;
       return send(await runAi(deps, {
         mode, site, estInput: estimateTokens(SYSTEM_PROMPT, ask_), maxOutput: MAX_OUTPUT.questions, check,
-        call: () => ask(SYSTEM_PROMPT, [{ type: "text", text: ask_ }], QUESTIONS_SCHEMA, "high", MAX_OUTPUT.questions),
+        model: MODEL, call: (model: string) => ask(model, SYSTEM_PROMPT, [{ type: "text", text: ask_ }], QUESTIONS_SCHEMA, "high", MAX_OUTPUT.questions),
         parse: async (msg: Anthropic.Beta.BetaMessage) => {
           const data = JSON.parse(textOf(msg));
           const seen = new Set<string>();
@@ -140,7 +141,7 @@ The learner already has recall flashcards for these notes. Write only the deeper
       mode, site, check, maxOutput: MAX_OUTPUT.pack,
       // a scanned page costs roughly 1,500 to 3,000 tokens; reserve generously
       estInput: estimateTokens(SYSTEM_PROMPT, prompt) + (sendPdf ? Math.ceil(body.pdfBase64.length / 40) : 0),
-      call: () => ask(SYSTEM_PROMPT, content, PACK_SCHEMA, "high", MAX_OUTPUT.pack),
+      model: MODEL, call: (model: string) => ask(model, SYSTEM_PROMPT, content, PACK_SCHEMA, "high", MAX_OUTPUT.pack),
       parse: async (msg: Anthropic.Beta.BetaMessage) => {
         const pack = JSON.parse(textOf(msg));
         const cards = cardsFromPack(pack, text);

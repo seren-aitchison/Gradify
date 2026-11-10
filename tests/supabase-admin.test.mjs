@@ -140,3 +140,19 @@ test("the migration checker allows seed rows only in new tables, and function pe
   assert.equal(destructive("update public.profiles set xp = 0;").length, 1, "updates stay refused");
   assert.equal(destructive("drop policy \"p\" on public.profiles;").length, 1, "dropping a policy stays refused");
 });
+
+test("owner settings may be changed one keyed row at a time; learner tables and broad updates are still refused", async () => {
+  const { configUpdates } = await import("../scripts/supabase-admin.mjs");
+  const ok = "update public.ai_limits set per_period = 40 where feature = 'tutor' and plan = 'pro';\nupdate public.ai_plan_caps set monthly_pence = 500, conversation_turns = 30 where plan = 'pro';\nupdate public.ai_settings set gbp_per_usd = 0.79 where id = true;";
+  assert.deepEqual(destructive(ok), []);
+  assert.deepEqual(configUpdates(ok).sort(), ["ai_limits", "ai_plan_caps", "ai_settings"]);
+  for (const bad of [
+    "update public.ai_limits set per_period = 40;",                                         // no key: every row
+    "update public.ai_limits set per_period = per_period * 2 where plan = 'pro';",          // not a literal
+    "update public.profiles set xp = 0 where user_id = 'x';",                                // learner data
+    "update public.subscriptions set status = 'active' where user_id = 'x';",
+    "update public.ai_limits set per_period = (select 1) where plan = 'pro';",
+    "update public.ai_limits set per_period = 1 where plan = 'pro' or true;",
+  ]) assert.ok(destructive(bad).length, bad);
+  assert.deepEqual(configUpdates("update public.profiles set xp = 0 where user_id = 'x';"), []);
+});

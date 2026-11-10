@@ -121,7 +121,7 @@ test("allowances reset: Free at the start of each calendar month, Pro when its b
   await x.owner(`insert into public.tutor_usage (user_id, mode, status, created_at) select '${B}', 'pack', 'ok', now() - interval '3 days' from generate_series(1, 20);
     insert into public.tutor_usage (user_id, mode, status, created_at) select '${B}', 'pack', 'ok', now() - interval '1 day' from generate_series(1, 3)`);
   assert.equal((await x.allowance(B, "pack")).used, 3);
-  assert.equal((await x.allowance(B, "pack")).allowance, 20);
+  assert.equal((await x.allowance(B, "pack")).allowance, 5);
   // the period renews (Stripe moves it on): back to zero
   await x.owner("update public.subscriptions set current_period_start = now() - interval '1 minute', current_period_end = now() + interval '30 days'");
   assert.equal((await x.allowance(B, "pack")).used, 0);
@@ -137,7 +137,7 @@ test("subscription changes: upgrading gives the Pro allowance at once, downgradi
   await x.owner(`update public.tutor_usage set created_at = now() - interval '1 minute'`);
   await x.pro(A, "now() - interval '1 second'", "now() + interval '30 days'");
   let a = await x.allowance(A, "tutor");
-  assert.equal(a.plan, "pro"); assert.equal(a.allowance, 150); assert.equal(a.used, 0);
+  assert.equal(a.plan, "pro"); assert.equal(a.allowance, 40); assert.equal(a.used, 0);
   for (let i = 0; i < 10; i++) await x.settle(A, (await x.claim(A)).usage_id);
   // a payment fails: still Pro during the grace period
   await x.owner("update public.subscriptions set status = 'past_due'");
@@ -199,10 +199,11 @@ test("spending caps: each learner's monthly fair-use cap, the daily budget and t
   assert.equal((await x.claim(A, "explain")).reason, "fair_use");
   assert.ok((await x.claim(B, "explain")).usage_id, "only that learner is paused");
   // in-flight reservations count at their worst case, so a burst can't overshoot the budget
-  // today so far: A's 47.4p. A 60p reservation fits under 110p; a second doesn't
-  await x.owner("update public.ai_plan_caps set monthly_pence = 100000; update public.ai_settings set daily_budget_pence = 110");
+  // today so far: A's 47.4p. Packs and quizzes run on Sonnet, so 30k in / 32k out reserves about 30p:
+  // one fits under 80p, a second doesn't
+  await x.owner("update public.ai_plan_caps set monthly_pence = 100000; update public.ai_settings set daily_budget_pence = 80");
   const big = await x.claim(B, "pack", { input: 30000, output: 32000 });
-  assert.ok(big.usage_id, "about 60p reserved");
+  assert.ok(big.usage_id, "about 30p reserved"); assert.equal(big.model, "claude-sonnet-5-5");
   assert.equal((await x.claim(B, "questions", { input: 30000, output: 32000 })).reason, "budget");
   await x.owner("update public.ai_settings set daily_budget_pence = 100000, monthly_budget_pence = 1");
   assert.equal((await x.claim(B, "explain")).reason, "budget");
@@ -265,5 +266,26 @@ test("the owner-only overview can't be called by learners or the service role", 
   await assert.rejects(x.svc("select public.ai_usage_overview()"));
   const [{ o }] = await x.owner("select public.ai_usage_overview() as o");
   assert.equal(o.settings.enabled, false); assert.equal(o.month.requests, 0);
+  await x.close();
+});
+
+test("each feature names its model: Opus for tutoring and explanations, Sonnet for packs and quizzes; the owner can switch", async () => {
+  const x = await db();
+  await x.owner(OPEN);
+  const want = { socratic: "claude-opus-5-5", mark: "claude-opus-5-5", explain: "claude-opus-5-5", card: "claude-opus-5-5", pack: "claude-sonnet-5-5", questions: "claude-sonnet-5-5" };
+  for (const [mode, model] of Object.entries(want)) assert.equal((await x.claim(A, mode)).model, model, mode);
+  // the reservation is priced at the feature's model
+  const est = async (uid, mode) => Number((await x.owner(`select est_pence from public.tutor_usage where user_id = '${uid}' and mode = '${mode}' order by id desc limit 1`))[0].est_pence);
+  await x.claim(B, "pack", { input: 10000, output: 10000 });
+  assert.equal(await est(B, "pack"), 9.48, "(10k × $2 + 10k × $10) / 1M × 79p");
+  await x.owner("update public.ai_feature_models set model = 'claude-opus-5-5' where feature = 'quiz'");
+  assert.equal((await x.claim(B, "questions")).model, "claude-opus-5-5");
+  // learners can't see or change the choice
+  assert.equal((await x.as(A, "select * from public.ai_feature_models")).length, 0);
+  // the starting allowances
+  const lim = await x.owner("select feature, plan, per_period from public.ai_limits order by plan, feature");
+  assert.deepEqual(lim.map((r) => `${r.plan} ${r.feature} ${r.per_period}`), ["free explain 5", "free pack 1", "free quiz 2", "free tutor 5", "pro explain 25", "pro pack 5", "pro quiz 8", "pro tutor 40"]);
+  const caps = await x.owner("select plan, monthly_pence from public.ai_plan_caps order by plan");
+  assert.deepEqual(caps.map((r) => [r.plan, Number(r.monthly_pence)]), [["free", 100], ["pro", 500]]);
   await x.close();
 });

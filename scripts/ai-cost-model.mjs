@@ -18,12 +18,17 @@ const tok = (s) => Math.ceil((typeof s === "string" ? s : JSON.stringify(s)).len
 
 // ---------- assumptions (edit these) ----------
 export const ASSUME = {
-  model: MODEL,
-  // US dollars per million tokens: Anthropic's published Claude Opus 5.5 prices (also seeded in public.ai_prices)
-  price: { input: 4, output: 20, cacheRead: 0.2, cacheWrite: 5 },
+  // which model answers each feature (public.ai_feature_models), and Anthropic's published prices per million tokens
+  featureModel: { tutor: "claude-opus-5-5", explain: "claude-opus-5-5", pack: "claude-sonnet-5-5", quiz: "claude-sonnet-5-5" },
+  prices: {
+    "claude-opus-5-5": { input: 4, output: 20, cacheRead: 0.2, cacheWrite: 5 },
+    "claude-sonnet-5-5": { input: 2, output: 10, cacheRead: 0.1, cacheWrite: 2.5 },
+  },
+  price: { input: 4, output: 20, cacheRead: 0.2, cacheWrite: 5 },   // the model being costed (set per feature below)
   gbpPerUsd: 0.79,                     // exchange rate: an assumption, check before deciding (public.ai_settings.gbp_per_usd)
   cacheMinTokens: 4096,                // prompts shorter than this are assumed not to be cached (the minimum varies by model)
-  // output tokens per request (visible reply + adaptive thinking at the mode's effort), typical and high; never above max_tokens
+  // output tokens per request (visible reply + adaptive thinking at the mode's effort), typical and high; never above
+  // max_tokens. Assumed the same on Sonnet as on Opus: measure both (scripts/eval-notes.mjs --compare) before relying on it.
   output: {
     explain: [600, 1500], diagnose: [700, 1500], socratic: [300, 500], examiner: [350, 500], roleplay: [180, 400],
     challenge: [1600, 3000], connect: [500, 1500], mark: [2000, 4000], debrief: [2000, 4000], director: [1200, 2000],
@@ -36,13 +41,18 @@ export const ASSUME = {
   explainMix: { explain: 0.85, card: 0.15 }, explainCacheHit: 0.10,
   // a learner's own notes for a study pack, in characters (about 3, 7 and 12 pages of typed notes)
   packChars: { short: 10000, typical: 25000, long: 40000 },
-  // uses a month: [tutor, explanations, packs, quizzes]
+  // allowances a month [tutor, explanations, packs, quizzes] (public.ai_limits) and fair-use caps in pence (public.ai_plan_caps)
+  allowance: { free: [5, 5, 1, 2], pro: [40, 25, 5, 8] },
+  caps: { free: 100, pro: 500 },
+  // uses a month: [tutor, explanations, packs, quizzes], within the allowances
   usage: {
     "Free, light": [2, 2, 0, 0], "Free, active": [4, 4, 1, 1], "Free, uses everything": [5, 5, 1, 2],
-    "Pro, light": [15, 10, 2, 3], "Pro, typical": [40, 25, 5, 8], "Pro, heavy": [90, 60, 12, 18], "Pro, every use": [150, 100, 20, 30],
+    "Pro, light": [10, 6, 1, 2], "Pro, typical": [25, 15, 3, 5], "Pro, every use": [40, 25, 5, 8],
   },
-  // revenue: prices include 20% VAT; Stripe's standard UK card fee (1.5% + 20p) and Stripe Billing (0.7%): check your own rates
-  revenue: { month: 7.99, year: 63.99, vat: 0.2, cardPct: 0.015, cardFixed: 0.20, billingPct: 0.007 },
+  // Gradify Pro prices (VAT included): today's live prices and the proposal. Stripe's standard UK card fee
+  // (1.5% + 20p) and Stripe Billing (0.7%) are assumptions: check your own rates in the Stripe dashboard.
+  pricePoints: { "Today: £7.99 / £63.99": { month: 7.99, year: 63.99 }, "Proposed: £14.99 / £119.99": { month: 14.99, year: 119.99 } },
+  revenue: { vat: 0.2, cardPct: 0.015, cardFixed: 0.20, billingPct: 0.007 },
 };
 
 const usd = (inp, out, cr = 0, cw = 0) => (inp * ASSUME.price.input + out * ASSUME.price.output + cr * ASSUME.price.cacheRead + cw * ASSUME.price.cacheWrite) / 1e6;
@@ -121,97 +131,92 @@ export function perUse(m, level = 0) {
   return { modes, tutor, explain, explainOne, cardOne, pack, packShort: usd(m.pack.short, out("pack")), packLong: usd(m.pack.long, out("pack")), quiz };
 }
 
-// the per-learner monthly fair-use caps seeded in supabase/migrations/20261111120000_ai_controls.sql (pence)
-export const CAPS = { free: 100, pro: 400 };
-const PRICES = { "claude-opus-5-5": { input: 4, output: 20, cacheRead: 0.2, cacheWrite: 5 }, "claude-sonnet-5-5": { input: 2, output: 10, cacheRead: 0.1, cacheWrite: 2.5 } };
-let MEASURED = null;
-// re-run the model with some assumptions changed, then put them back
-function withAssume(patch, fn) {
-  const saved = JSON.parse(JSON.stringify(ASSUME));
-  Object.assign(ASSUME, patch);
-  try { return fn(); } finally { Object.assign(ASSUME, saved); }
+// ---------- costs by model, and the hybrid ----------
+// perUse() prices every feature at ASSUME.price; run it once per model and pick each feature's row from its model
+function withPrice(model, fn) { const saved = ASSUME.price; ASSUME.price = ASSUME.prices[model]; try { return fn(); } finally { ASSUME.price = saved; } }
+export function costs(m, level = 0) {
+  const by = Object.fromEntries(Object.keys(ASSUME.prices).map((model) => [model, withPrice(model, () => perUse(m, level))]));
+  const pick = (f, key) => by[ASSUME.featureModel[f]][key];
+  return { by, hybrid: { tutor: pick("tutor", "tutor"), explain: pick("explain", "explain"), pack: pick("pack", "pack"), quiz: pick("quiz", "quiz") } };
 }
-function levers() {
-  const m = MEASURED, use = ASSUME.usage;
-  const cost = (u, mix = (x) => x) => { const t = perUse(m, 0); const tt = mix(t); return gbp(u[0] * tt.tutor + u[1] * tt.explain + u[2] * tt.pack + u[3] * tt.quiz); };
-  const both = (fn) => ({ typical: fn(use["Pro, typical"]), max: fn(use["Pro, every use"]) });
-  const sonnetPacks = (u) => { const opus = perUse(m, 0); const son = withAssume({ price: PRICES["claude-sonnet-5-5"] }, () => perUse(m, 0)); return gbp(u[0] * opus.tutor + u[1] * opus.explain + u[2] * son.pack + u[3] * son.quiz); };
-  return [
-    { name: `As built: ${ASSUME.model}, Pro allowance 150 / 100 / 20 / 30`, ...both((u) => cost(u)) },
-    { name: "Packs and quizzes at medium effort (assumed 40% less output)", ...both((u) => withAssume({ output: { ...ASSUME.output, pack: ASSUME.output.pack.map((x) => x * 0.6), questions: ASSUME.output.questions.map((x) => x * 0.6) } }, () => cost(u))) },
-    { name: "Packs and quizzes on claude-sonnet-5-5, the rest on Opus", ...both(sonnetPacks) },
-    { name: "Everything on claude-sonnet-5-5", ...both((u) => withAssume({ price: PRICES["claude-sonnet-5-5"] }, () => cost(u))) },
-    { name: "Pro allowance 150 / 100 / 8 / 12 (fewer packs and quizzes)", typical: cost(use["Pro, typical"]), max: cost([150, 100, 8, 12]) },
-  ];
-}
+const monthOf = (u, c) => gbp(u[0] * c.tutor + u[1] * c.explain + u[2] * c.pack + u[3] * c.quiz);
 
-export function revenue() {
+export function revenue(point) {
   const R = ASSUME.revenue, net = (gross) => gross / (1 + R.vat) - (gross * (R.cardPct + R.billingPct) + R.cardFixed);
-  return { month: net(R.month), year: net(R.year) / 12 };
+  return { month: net(point.month), year: net(point.year) / 12 };
 }
 
-const money = (x) => `£${x.toFixed(2)}`;
+const money = (x) => `${x < 0 ? "–" : ""}£${Math.abs(x).toFixed(2)}`;
 const p = (x) => `${(x * 100).toFixed(1)}p`;
+const pct = (a, b) => `${Math.round((a / b) * 100)}%`;
+const short = (model) => model.replace("claude-", "").replace(/-(\d)-(\d)$/, " $1.$2").replace(/^./, (c) => c.toUpperCase());
 
 export async function report() {
-  const m = await measure(), t = perUse(m, 0), h = perUse(m, 1), rev = revenue();
-  MEASURED = m;
-  const monthly = (use, u) => gbp(use[0] * u.tutor + use[1] * u.explain + use[2] * u.pack + use[3] * u.quiz);
-  const rows = Object.entries(ASSUME.usage).map(([name, use]) => ({ name, use, typical: monthly(use, t), high: monthly(use, h) }));
-  const proRows = rows.filter((r) => r.name.startsWith("Pro"));
-  const lines = [];
-  lines.push(`# Gradify AI: estimated Anthropic cost per learner
+  const m = await measure(), T = costs(m, 0), H = costs(m, 1);
+  const opus = "claude-opus-5-5", son = "claude-sonnet-5-5";
+  const allOpus = (c) => ({ tutor: c.by[opus].tutor, explain: c.by[opus].explain, pack: c.by[opus].pack, quiz: c.by[opus].quiz });
+  const cap = (name) => (name.startsWith("Pro") ? ASSUME.caps.pro : ASSUME.caps.free) / 100;
+  const rows = Object.entries(ASSUME.usage).map(([name, use]) => {
+    const typical = monthOf(use, T.hybrid), high = monthOf(use, H.hybrid);
+    return { name, use, typical, high, opusTypical: monthOf(use, allOpus(T)), capped: Math.min(high, cap(name)) };
+  });
+  const pro = rows.filter((r) => r.name.startsWith("Pro")), free = rows.filter((r) => r.name.startsWith("Free"));
+  const freeActive = rows.find((r) => r.name === "Free, active").typical;
+  const out = [];
+  out.push(`# Gradify AI: estimated Anthropic cost per learner
 
-Generated by \`scripts/ai-cost-model.mjs\` on ${new Date().toISOString().slice(0, 10)}. **Estimates, not measurements of real use.** Input sizes are measured from Gradify's real prompts and lesson notes; reply lengths, usage levels, the exchange rate and fees are assumptions (listed at the end). Once Gradify AI is in use, \`scripts/ai-usage.mjs\` and the owner's page (\`ai-usage.html\`) show the real cost per request, and these assumptions should be replaced with those figures.
+Generated by \`scripts/ai-cost-model.mjs\` on ${new Date().toISOString().slice(0, 10)}. **Estimates, not measurements of real use.** Input sizes are measured from Gradify's real prompts and lesson notes; reply lengths, usage, the exchange rate and fees are assumptions (listed at the end). Once Gradify AI is in use, \`ai-usage.html\` and \`scripts/ai-usage.mjs\` show the real cost per request: replace these assumptions with those figures.
 
-Model: **${ASSUME.model}** for every feature, at $${ASSUME.price.input} / $${ASSUME.price.output} per million input / output tokens ($${ASSUME.price.cacheRead} cached reads, $${ASSUME.price.cacheWrite} cache writes), £${ASSUME.gbpPerUsd} per $.
+**Modelled:** ${Object.entries(ASSUME.featureModel).map(([f, mo]) => `${f} on ${short(mo)}`).join(", ")}. Allowances a month: Free ${ASSUME.allowance.free.join(" / ")}, Pro ${ASSUME.allowance.pro.join(" / ")} (tutor / explanations / packs / quizzes). Fair-use caps: Free ${money(ASSUME.caps.free / 100)}, Pro ${money(ASSUME.caps.pro / 100)} a month. £${ASSUME.gbpPerUsd} per $.
 
-## What each use costs
+## Cost of one use: Opus 5.5 against Sonnet 5.5
 
-| Use | Typical | High | What drives it |
+Same prompts, same assumed reply lengths; Sonnet 5.5 costs half as much per token ($2 / $10 against $4 / $20 per million). Bold is the model each feature now uses.
+
+| Use | Opus 5.5 typical | Sonnet 5.5 typical | Opus 5.5 high | Sonnet 5.5 high |
+|---|---|---|---|---|
+${[["AI tutor conversation", "tutor", "tutor"], ["Explanation", "explain", "explain"], [`Study pack (${ASSUME.packChars.typical / 1000}k characters of notes)`, "pack", "pack"], ["AI-written quiz", "quiz", "quiz"]].map(([label, f, key]) => {
+  const b = (model, v) => (ASSUME.featureModel[f] === model ? `**${p(gbp(v))}**` : p(gbp(v)));
+  return `| ${label} | ${b(opus, T.by[opus][key])} | ${b(son, T.by[son][key])} | ${b(opus, H.by[opus][key])} | ${b(son, H.by[son][key])} |`;
+}).join("\n")}
+
+Moving packs and quizzes to Sonnet saves about ${p(gbp(T.by[opus].pack - T.by[son].pack))} a pack and ${p(gbp(T.by[opus].quiz - T.by[son].quiz))} a quiz. Keeping tutoring and explanations on Opus costs about ${p(gbp(T.by[opus].tutor - T.by[son].tutor))} more a conversation and ${p(gbp(T.by[opus].explain - T.by[son].explain))} more an explanation than Sonnet would.
+
+## Cost per learner per month (hybrid)
+
+| Learner | Tutor / explanations / packs / quizzes | Typical | High | High, after the fair-use cap | All on Opus (typical) |
+|---|---|---|---|---|---|
+${rows.map((r) => `| ${r.name} | ${r.use.join(" / ")} | ${money(r.typical)} | ${money(r.high)} | ${money(r.capped)} | ${money(r.opusTypical)} |`).join("\n")}
+
+With these allowances the worst case for one Pro learner is the high column for "every use"; the fair-use cap (${money(ASSUME.caps.pro / 100)}) ${pro.at(-1).high > ASSUME.caps.pro / 100 ? "takes effect only there" : "is never reached at these allowances, even with long replies: it is a backstop against abuse and estimate errors"}. A Free learner who uses everything costs at most ${money(free.at(-1).high)}, ${free.at(-1).high > ASSUME.caps.free / 100 ? "so Free's £1 cap can apply in the worst case" : "under Free's £1 cap"}.
+
+## Margin per Pro subscriber
+
+What a subscriber brings in a month after VAT (20%) and Stripe's fees, less their AI cost. The worst case uses the high cost of a learner who uses every Pro allowance, after the cap.
+`);
+  for (const [label, point] of Object.entries(ASSUME.pricePoints)) {
+    const rev = revenue(point);
+    out.push(`### ${label}
+
+Net income a month: ${money(rev.month)} on monthly billing, ${money(rev.year)} on yearly (${money(point.year)} ÷ 12; ${pct(point.month * 12 - point.year, point.month * 12)} off twelve monthly payments).
+
+| Pro learner | AI cost | Left from monthly | Left from yearly |
 |---|---|---|---|
-| AI tutor conversation (the mix below) | ${p(gbp(t.tutor))} | ${p(gbp(h.tutor))} | output tokens: thinking plus the reply, over several turns |
-| Explanation | ${p(gbp(t.explain))} | ${p(gbp(h.explain))} | the lesson's notes (${m.notesTokens.median.toLocaleString()} tokens median) and the answer |
-| Study pack (${(ASSUME.packChars.typical / 1000)}k characters of notes) | ${p(gbp(t.pack))} | ${p(gbp(h.pack))} | a long structured pack at high effort: output is ${Math.round((usd(0, ASSUME.output.pack[0]) / usd(m.pack.typical, ASSUME.output.pack[0])) * 100)}% of the cost |
-| AI-written quiz | ${p(gbp(t.quiz))} | ${p(gbp(h.quiz))} | re-reading the notes, then the questions |
+${pro.map((r) => `| ${r.name.replace("Pro, ", "")} (typical replies) | ${money(r.typical)} | ${money(rev.month - r.typical)} (${pct(rev.month - r.typical, rev.month)}) | ${money(rev.year - r.typical)} (${pct(rev.year - r.typical, rev.year)}) |`).join("\n")}
+| Worst case (every use, long replies, capped) | ${money(pro.at(-1).capped)} | ${money(rev.month - pro.at(-1).capped)} (${pct(rev.month - pro.at(-1).capped, rev.month)}) | ${money(rev.year - pro.at(-1).capped)} (${pct(rev.year - pro.at(-1).capped, rev.year)}) |
 
-A pack from short notes (${ASSUME.packChars.short / 1000}k characters) is about ${p(gbp(t.packShort))}; from the Pro maximum (${ASSUME.packChars.long / 1000}k characters on Free's limit, 120k on Pro's) ${p(gbp(t.packLong))} or more.
+A typical Pro subscriber's margin on yearly billing covers about ${Math.floor((rev.year - pro.find((r) => r.name === "Pro, typical").typical) / freeActive)} active Free learners (${money(freeActive)} each).
+`);
+  }
+  out.push(`Not included: Supabase, hosting and email costs, refunds, chargebacks, and tax on profits.
 
-Tutor conversation by mode (typical): ${Object.entries(t.modes).map(([k, v]) => `${k} ${p(gbp(v))}`).join(", ")}.
+## Quality: what is and isn't known
 
-## Cost per learner per month
+The cost side is estimated from real prompts; the quality side can't be estimated from prompts and **has not been measured yet** (Gradify has no Anthropic key set, so no comparison could be run). What is known:
 
-| Learner | Tutor / explanations / packs / quizzes | AI cost, typical | AI cost, high |
-|---|---|---|---|
-${rows.map((r) => `| ${r.name} | ${r.use.join(" / ")} | ${money(r.typical)} | ${money(r.high)} |`).join("\n")}
-
-## Against Gradify Pro's income
-
-What one Pro subscriber brings in a month after VAT (20%) and Stripe's fees: **${money(rev.month)}** on monthly billing (£${ASSUME.revenue.month}), **${money(rev.year)}** on yearly billing (£${ASSUME.revenue.year} ÷ 12).
-
-| Pro learner | AI cost (typical) | Left from monthly | Left from yearly |
-|---|---|---|---|
-${proRows.map((r) => `| ${r.name.replace("Pro, ", "")} | ${money(r.typical)} | ${money(rev.month - r.typical)} (${Math.round(((rev.month - r.typical) / rev.month) * 100)}%) | ${money(rev.year - r.typical)} (${Math.round(((rev.year - r.typical) / rev.year) * 100)}%) |`).join("\n")}
-
-The same, if replies run long (the "high" column above):
-
-| Pro learner | AI cost (high) | Left from monthly | Left from yearly |
-|---|---|---|---|
-${proRows.map((r) => `| ${r.name.replace("Pro, ", "")} | ${money(r.high)} | ${money(rev.month - r.high)} | ${money(rev.year - r.high)} |`).join("\n")}
-
-Free learners bring in nothing: an active Free learner costs about ${money(rows.find((r) => r.name === "Free, active").typical)} a month, so each typical Pro subscriber's margin on monthly billing covers about ${Math.floor((rev.month - proRows.find((r) => r.name === "Pro, typical").typical) / rows.find((r) => r.name === "Free, active").typical)} active Free learners.
-
-Not included: Supabase, hosting and email costs, refunds, chargebacks, and income tax.
-
-## What changes the picture
-
-Cost a month for a typical and an every-use Pro learner (typical reply lengths) under different choices. These are options for the owner, not changes made: Gradify AI currently uses ${ASSUME.model} everywhere.
-
-| Option | Pro, typical | Pro, every use | Left from yearly (typical) |
-|---|---|---|---|
-${levers().map((l) => `| ${l.name} | ${money(l.typical)} | ${money(l.max)} | ${money(rev.year - l.typical)} |`).join("\n")}
-
-The per-learner fair-use cap (public.ai_plan_caps, now ${"£"}${(CAPS.pro / 100).toFixed(2)} Pro and ${"£"}${(CAPS.free / 100).toFixed(2)} Free a month) stops any one learner costing more than that, whatever the allowance says. At today's model and allowances, a Pro learner who uses most of their allowance reaches the cap first.
+- **Study packs are checked mechanically whichever model writes them.** Every card carries a quote from the learner's notes and is scored against them (\`groundingScore\`), structured output fixes the shape, and the deck shows how much of each card was found in the notes. A weaker pack shows up as fewer grounded cards, which can be measured.
+- **Tutoring and explanations are judged by people**, so they stay on Opus 5.5 until real conversations say otherwise.
+- **Before relying on Sonnet for packs and quizzes,** run \`node scripts/eval-notes.mjs --compare --long\` (with \`ANTHROPIC_API_KEY\` set): the same notes through both models, comparing valid output, grounded cards, cards and topics per pack, why/apply questions, real tokens and real cost. A run (three short sample notes and one lecture-length sample, through both models) costs about ${money(2 * gbp(T.by[opus].pack + T.by[son].pack))} at the typical estimates. If Sonnet's packs are clearly worse, switch back without a deploy: \`update public.ai_feature_models set model = 'claude-opus-5-5' where feature in ('pack', 'quiz');\`
 
 ## The measured inputs
 
@@ -223,13 +228,15 @@ ${Object.entries(m.sizes).map(([k, v]) => `| ${k} | ${median(v.map((x) => x.syst
 
 Study pack prompt (instructions + notes): ${Object.entries(m.pack).map(([k, v]) => `${k} ${v.toLocaleString()} tokens`).join(", ")}; max_tokens 32,000.
 
+Tutor conversation by mode on Opus 5.5 (typical): ${Object.entries(T.by[opus].modes).map(([k, v]) => `${k} ${p(gbp(v))}`).join(", ")}.
+
 ## Assumptions
 
 \`\`\`json
-${JSON.stringify(ASSUME, null, 2)}
+${JSON.stringify({ ...ASSUME, price: undefined }, null, 2)}
 \`\`\`
 `);
-  return { md: lines.join("\n"), m, t, h, rev, rows };
+  return { md: out.join("\n"), m, T, H, rows };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

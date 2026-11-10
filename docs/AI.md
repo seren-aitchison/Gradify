@@ -16,7 +16,7 @@ Every request goes through one locked step in the database, `ai_claim_for`, befo
    turns, up to the plan's turn limit (`conversation_long`).
 5. **Fair use.** What the learner's requests have cost this month must be below their plan's cap (`fair_use`).
 
-Then the function calls Claude and `ai_settle_for` records the model, input, output and cache tokens, and the cost in
+Then the function calls Claude, with the model the claim names for that feature (`ai_feature_models`), and `ai_settle_for` records the model, input, output and cache tokens, and the cost in
 pence. A failed request (Claude unavailable, a refusal, an unusable answer, notes too long) gives the use back but its
 cost still counts towards the budgets. An answer from the response cache costs nothing and gives the use back. A
 request still marked in flight after 10 minutes (the function died) stops counting against the learner.
@@ -35,10 +35,14 @@ select * from public.ai_settings;  select * from public.ai_plan_caps;  select * 
 update public.ai_settings set monthly_budget_pence = 5000, daily_budget_pence = 500, per_minute = 6, per_hour = 60, global_per_minute = 120, gbp_per_usd = 0.79;
 
 -- per-learner monthly fair-use caps (pence), conversation length, notes size for a pack (characters)
-update public.ai_plan_caps set monthly_pence = 400, conversation_turns = 30, pack_chars = 120000 where plan = 'pro';
+update public.ai_plan_caps set monthly_pence = 500, conversation_turns = 30, pack_chars = 120000 where plan = 'pro';
 
 -- allowances (also shown on pricing.html: change kit/data/billing.js AI_ALLOWANCES in the same go; a test compares them)
-update public.ai_limits set per_period = 20 where feature = 'pack' and plan = 'pro';
+update public.ai_limits set per_period = 5 where feature = 'pack' and plan = 'pro';
+
+-- which model answers each feature (no deploy needed): tutor and explanations on Opus, packs and quizzes on Sonnet
+select * from public.ai_feature_models;
+update public.ai_feature_models set model = 'claude-opus-5-5' where feature in ('pack', 'quiz');
 
 -- prices, US dollars per million tokens, when Anthropic's change
 update public.ai_prices set input_usd = 4, output_usd = 20, cache_read_usd = 0.20, cache_write_usd = 5 where model = 'claude-opus-5-5';

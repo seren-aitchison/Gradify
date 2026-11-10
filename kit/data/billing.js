@@ -16,10 +16,10 @@ export const PRO_ON_SALE = false;
 
 /** Gradify AI uses a month, by plan (monthly on yearly billing too: public.ai_period). Must match public.ai_limits (tests check the migration's seed). */
 export const AI_ALLOWANCES = [
-  { feature: "tutor", label: "AI tutor conversations", one: "AI tutor conversation", many: "AI tutor conversations", free: 5, pro: 150 },
-  { feature: "explain", label: "Explanations", one: "explanation", many: "explanations", free: 5, pro: 100 },
-  { feature: "pack", label: "Study packs from your notes", one: "study pack from your notes", many: "study packs from your notes", free: 1, pro: 20 },
-  { feature: "quiz", label: "AI-written quizzes", one: "AI-written quiz", many: "AI-written quizzes", free: 2, pro: 30 },
+  { feature: "tutor", label: "AI tutor conversations", one: "AI tutor conversation", many: "AI tutor conversations", free: 5, pro: 40 },
+  { feature: "explain", label: "Explanations", one: "explanation", many: "explanations", free: 5, pro: 25 },
+  { feature: "pack", label: "Study packs from your notes", one: "study pack from your notes", many: "study packs from your notes", free: 1, pro: 5 },
+  { feature: "quiz", label: "AI-written quizzes", one: "AI-written quiz", many: "AI-written quizzes", free: 2, pro: 8 },
 ];
 /** "1 study pack from your notes", "20 study packs from your notes" */
 export const uses = (a, n) => `${n} ${n === 1 ? a.one : a.many}`;

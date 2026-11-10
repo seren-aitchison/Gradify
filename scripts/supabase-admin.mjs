@@ -104,12 +104,22 @@ const SAFE = [
   /^comment on /i,
 ];
 const ROW_EVALUATED = /\b(default|check|generated always as)\b[^,]*\bpublic\.\w+\s*\(/i;
+// Owner settings tables hold no learner data: a migration may change their values, but only one keyed row at a time,
+// to plain literals, e.g. update public.ai_limits set per_period = 40 where feature = 'tutor' and plan = 'pro'.
+// Rows in these tables that a migration updates are left out of the "existing values unchanged" comparison;
+// every other table, and every other row count, is still checked.
+export const CONFIG_TABLES = ["ai_limits", "ai_plan_caps", "ai_settings", "ai_prices", "ai_feature_models"];
+const LITERAL = String.raw`(?:'[^']*'|-?\d+(?:\.\d+)?|true|false)`;
+const CONFIG_UPDATE = new RegExp(String.raw`^update public\.(${CONFIG_TABLES.join("|")}) set \w+ = ${LITERAL}(?:, \w+ = ${LITERAL})* where \w+ = ${LITERAL}(?: and \w+ = ${LITERAL})*$`, "i");
+/** The owner settings tables a migration updates (their changed values are intended). */
+export const configUpdates = (sql) => [...new Set(statements(sql).map((st) => st.match(CONFIG_UPDATE)?.[1]?.toLowerCase()).filter(Boolean))];
 export function destructive(sql) {
   const found = [], stmts = statements(sql);
   // seed rows may go only into tables this same migration creates (which have no existing rows to change)
   const created = new Set(stmts.map((s) => s.match(/^create table (?:if not exists )?public\.(\w+) \(/i)?.[1]?.toLowerCase()).filter(Boolean));
   for (const st of stmts) {
     const lower = st.toLowerCase();
+    if (CONFIG_UPDATE.test(st)) continue;
     const ins = st.match(/^insert into public\.(\w+) \(/i);
     if (ins) { if (!created.has(ins[1].toLowerCase())) found.push(`insert into an existing table: ${st.slice(0, 100)}`); continue; }
     if (/^alter table public\.\w+ /i.test(st) && !/ enable row level security$/i.test(st)) {
@@ -194,7 +204,8 @@ export async function migrate(c, { list, log = () => {}, next = false, backedUp 
     const v = verifyQuery(expectations(sql));
     const row = (await c.sql(v.query))[0] || {};
     const missing = v.checks.filter((_, i) => row[`c${i}`] !== true);
-    const gone = [...lost(before, await rowCounts(c)), ...changed(sums, await checksums(c, cols)).map((t) => `${t}: existing values changed`)];
+    const intended = configUpdates(sql);
+    const gone = [...lost(before, await rowCounts(c)), ...changed(sums, await checksums(c, cols)).filter((t) => !intended.includes(t)).map((t) => `${t}: existing values changed`)];
     const result = gone.length ? "EXISTING DATA CHANGED" : missing.length ? "APPLIED BUT INCOMPLETE" : "applied and verified";
     report.push({ ...m, result, sha, ms: Date.now() - t0, checked: v.checks.length, missing, gone });
     log(`${missing.length || gone.length ? "✗" : "✓"} ${m.file}: ${v.checks.length} objects checked, row counts kept${missing.length ? `; missing: ${missing.join(", ")}` : ""}${gone.length ? `; EXISTING DATA CHANGED: ${gone.join(", ")}` : ""}`);

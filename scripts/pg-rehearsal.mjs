@@ -141,7 +141,10 @@ export async function rehearseMigration(snap, list, migration) {
     const cols = await columnsNow(c), before = await checksums(c, cols);
     const text = migration.sql ?? (await readFile(migration.url, "utf8"));
     try { await c.sql(text); } catch (e) { return { ok: false, problems: [`the migration fails on a copy of the data: ${e.message}`] }; }
-    const after = await checksums(c, cols), diff = changed(before, after);
+    // owner settings rows the migration deliberately updates (scripts/supabase-admin.mjs configUpdates) aren't a loss
+    const { configUpdates } = await import("./supabase-admin.mjs");
+    const intended = configUpdates(text);
+    const after = await checksums(c, cols), diff = changed(before, after).filter((t) => !intended.includes(t));
     return { ok: diff.length === 0, problems: diff.map((t) => `${t}: existing values changed`), tables: Object.keys(cols).length };
   } finally { await c.close(); }
 }

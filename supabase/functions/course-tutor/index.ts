@@ -85,8 +85,10 @@ Deno.serve(async (req) => {
     estInput: estimateTokens(r.system, r.messages),
     maxOutput: r.maxTokens,
     cacheKey: cacheable(r.mode, body) ? await cacheKey(MODEL, r) : null,
-    call: () => anthropic().beta.messages.stream({
-      model: MODEL,
+    model: MODEL,
+    // the model for this feature comes from the claim (public.ai_feature_models): Opus for tutoring and explanations
+    call: (model: string) => anthropic().beta.messages.stream({
+      model,
       max_tokens: r.maxTokens,
       betas: ["server-side-fallback-2026-07-01"],
       fallbacks: "default",

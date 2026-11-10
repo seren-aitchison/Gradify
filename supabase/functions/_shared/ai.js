@@ -76,7 +76,8 @@ export const fail = (status, message, why = message) => { throw new Failure(stat
  * deps: claim({ mode, site, conversationId, estInput, maxOutput }) → claim row
  *       settle(id, { model, input, output, cacheRead, cacheWrite, outcome, error }) → cost
  *       cacheGet(key) → reply | null,  cachePut(key, mode, reply, model)
- * job:  { mode, site, conversationId, estInput, maxOutput, check?(claim), cacheKey?, call() → message, parse(message, claim) → body }
+ * job:  { mode, site, conversationId, estInput, maxOutput, check?(claim), cacheKey?, call(model, claim) → message, parse(message, claim) → body }
+ * The claim names the model for the feature (public.ai_feature_models); job.model is the fallback if it doesn't.
  * Returns { status, body }.
  */
 export async function runAi(deps, job) {
@@ -92,7 +93,7 @@ export async function runAi(deps, job) {
       const hit = await deps.cacheGet(job.cacheKey).catch(() => null);
       if (hit) { await settle("cached"); return { status: 200, body: { ...hit, cached: true, usage: giveBack } }; }
     }
-    const msg = await job.call();
+    const msg = await job.call(claim.model ?? job.model, claim);
     tokens = tokensOf(msg);
     if (msg.stop_reason === "refusal") fail(422, "Gradify AI couldn't help with that. Try rephrasing, and keep to the course material.", "refusal");
     if (msg.stop_reason === "max_tokens") fail(413, "That was too long for Gradify AI to finish in one go. Try a shorter piece.", "max_tokens");

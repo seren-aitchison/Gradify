@@ -45,7 +45,25 @@ alter table public.ai_plan_caps enable row level security;
 create policy "plan caps: anyone can read" on public.ai_plan_caps for select to anon, authenticated using (true);
 insert into public.ai_plan_caps (plan, monthly_pence, conversation_turns, pack_chars) values
   ('free', 100, 12, 40000),
-  ('pro', 400, 30, 120000);
+  ('pro', 500, 30, 120000);
+
+-- which Claude model answers each feature (the owner can switch one without a deploy). Tutor conversations and
+-- explanations on Opus; study packs and AI quizzes on Sonnet, which costs half as much per token (docs/AI-COSTS.md).
+create table public.ai_feature_models (
+  feature text primary key check (feature in ('tutor', 'explain', 'pack', 'quiz')),
+  model text not null,
+  updated_at timestamptz not null default now()
+);
+alter table public.ai_feature_models enable row level security;
+-- no policies: owner-only
+insert into public.ai_feature_models (feature, model) values
+  ('tutor', 'claude-opus-5-5'), ('explain', 'claude-opus-5-5'), ('pack', 'claude-sonnet-5-5'), ('quiz', 'claude-sonnet-5-5');
+
+-- the starting Pro allowances a month (Free stays 5 / 5 / 1 / 2): owner settings, changed row by row
+update public.ai_limits set per_period = 40 where feature = 'tutor' and plan = 'pro';
+update public.ai_limits set per_period = 25 where feature = 'explain' and plan = 'pro';
+update public.ai_limits set per_period = 5 where feature = 'pack' and plan = 'pro';
+update public.ai_limits set per_period = 8 where feature = 'quiz' and plan = 'pro';
 
 -- learners who may use Gradify AI while it is off for everyone else (the owner's own testing), and the owners
 create table public.ai_testers (
@@ -146,8 +164,9 @@ $$;
 -- p_conversation: tutor turns in the same conversation (same mode, within a day) share the first turn's use.
 -- p_est_input / p_max_output: the request's size, to reserve its worst-case cost against the spending caps.
 -- Reasons: signed_out, unknown_mode, ai_off, budget, rate, busy, fair_use, conversation_long, allowance.
+-- On success it also says which model to call (ai_feature_models), and reserves that model's worst-case cost.
 create or replace function public.ai_claim_for(p_uid uuid, p_mode text, p_site text default null, p_conversation uuid default null, p_est_input integer default 0, p_max_output integer default 0)
-returns table (usage_id bigint, reason text, plan text, used integer, allowance integer, period_end timestamptz, counted boolean)
+returns table (usage_id bigint, reason text, plan text, used integer, allowance integer, period_end timestamptz, counted boolean, model text)
 language plpgsql volatile security definer set search_path = public as $$
 declare
   f text := public.ai_feature(p_mode);
@@ -160,11 +179,12 @@ declare
   turns integer;
   is_counted boolean := true;
   new_id bigint;
+  m text;
 begin
-  if p_uid is null then return query select null::bigint, 'signed_out', null::text, 0, 0, null::timestamptz, false; return; end if;
-  if f is null then return query select null::bigint, 'unknown_mode', null::text, 0, 0, null::timestamptz, false; return; end if;
+  if p_uid is null then return query select null::bigint, 'signed_out', null::text, 0, 0, null::timestamptz, false, null::text; return; end if;
+  if f is null then return query select null::bigint, 'unknown_mode', null::text, 0, 0, null::timestamptz, false, null::text; return; end if;
   select * into st from public.ai_settings;
-  if not public.ai_on_for(p_uid) then return query select null::bigint, 'ai_off', null::text, 0, 0, null::timestamptz, false; return; end if;
+  if not public.ai_on_for(p_uid) then return query select null::bigint, 'ai_off', null::text, 0, 0, null::timestamptz, false, null::text; return; end if;
   select * into per from public.ai_period(p_uid);
   select * into caps from public.ai_plan_caps c where c.plan = per.plan;
   select l.per_period into lim from public.ai_limits l where l.feature = f and l.plan = per.plan;
@@ -172,16 +192,17 @@ begin
   -- and a global lock for the spending check, so a burst from many learners can't overshoot the budget
   perform pg_advisory_xact_lock(hashtextextended(p_uid::text, 0));
   perform pg_advisory_xact_lock(hashtextextended('gradify.ai.budget', 0));
-  est := public.ai_cost_pence('claude-opus-5-5', p_est_input, p_max_output);
+  m := coalesce((select fm.model from public.ai_feature_models fm where fm.feature = f), 'claude-opus-5-5');
+  est := public.ai_cost_pence(m, p_est_input, p_max_output);
   if public.ai_month_spend_pence() + est > st.monthly_budget_pence or public.ai_day_spend_pence() + est > st.daily_budget_pence then
-    return query select null::bigint, 'budget', per.plan, 0, coalesce(lim, 0), per.period_end, false; return;
+    return query select null::bigint, 'budget', per.plan, 0, coalesce(lim, 0), per.period_end, false, null::text; return;
   end if;
   if (select count(*) from public.tutor_usage u where u.user_id = p_uid and u.created_at > now() - interval '1 minute') >= st.per_minute
      or (select count(*) from public.tutor_usage u where u.user_id = p_uid and u.created_at > now() - interval '1 hour') >= st.per_hour then
-    return query select null::bigint, 'rate', per.plan, 0, coalesce(lim, 0), per.period_end, false; return;
+    return query select null::bigint, 'rate', per.plan, 0, coalesce(lim, 0), per.period_end, false, null::text; return;
   end if;
   if (select count(*) from public.tutor_usage u where u.created_at > now() - interval '1 minute') >= st.global_per_minute then
-    return query select null::bigint, 'busy', per.plan, 0, coalesce(lim, 0), per.period_end, false; return;
+    return query select null::bigint, 'busy', per.plan, 0, coalesce(lim, 0), per.period_end, false, null::text; return;
   end if;
   n := public.ai_used(p_uid, f, per.period_start);
   -- a later turn of a conversation whose first turn was counted (and didn't fail) uses no further allowance
@@ -191,21 +212,21 @@ begin
     select count(*)::int into turns from public.tutor_usage u
       where u.user_id = p_uid and u.conversation_id = p_conversation and u.status <> 'failed' and u.created_at > now() - interval '1 day';
     if turns >= caps.conversation_turns then
-      return query select null::bigint, 'conversation_long', per.plan, n, coalesce(lim, 0), per.period_end, false; return;
+      return query select null::bigint, 'conversation_long', per.plan, n, coalesce(lim, 0), per.period_end, false, null::text; return;
     end if;
     is_counted := false;
   elsif n >= coalesce(lim, 0) then
-    return query select null::bigint, 'allowance', per.plan, n, coalesce(lim, 0), per.period_end, false; return;
+    return query select null::bigint, 'allowance', per.plan, n, coalesce(lim, 0), per.period_end, false, null::text; return;
   end if;
   -- the learner's fair-use cap: what their requests have cost this month (in-flight ones at their worst case)
   if public.ai_user_month_spend_pence(p_uid) >= caps.monthly_pence then
-    return query select null::bigint, 'fair_use', per.plan, n, coalesce(lim, 0), per.period_end, false; return;
+    return query select null::bigint, 'fair_use', per.plan, n, coalesce(lim, 0), per.period_end, false, null::text; return;
   end if;
   perform set_config('gradify.ai_claim', 'on', true);
   insert into public.tutor_usage (user_id, mode, site, status, counted, conversation_id, est_pence)
     values (p_uid, p_mode, left(p_site, 40), 'reserved', is_counted, p_conversation, est) returning id into new_id;
   perform set_config('gradify.ai_claim', 'off', true);
-  return query select new_id, null::text, per.plan, n + (case when is_counted then 1 else 0 end), coalesce(lim, 0), per.period_end, is_counted;
+  return query select new_id, null::text, per.plan, n + (case when is_counted then 1 else 0 end), coalesce(lim, 0), per.period_end, is_counted, m;
 end;
 $$;
 
@@ -274,6 +295,7 @@ begin
       'monthly_budget_pence', st.monthly_budget_pence, 'daily_budget_pence', st.daily_budget_pence,
       'per_minute', st.per_minute, 'per_hour', st.per_hour, 'global_per_minute', st.global_per_minute, 'gbp_per_usd', st.gbp_per_usd),
     'plan_caps', (select jsonb_agg(to_jsonb(c) order by c.plan) from public.ai_plan_caps c),
+    'models', (select jsonb_object_agg(fm.feature, fm.model) from public.ai_feature_models fm),
     'month', jsonb_build_object('spend_pence', public.ai_month_spend_pence(), 'today_pence', public.ai_day_spend_pence(),
       'requests', (select count(*) from public.tutor_usage u where u.created_at >= month_start),
       'learners', (select count(distinct u.user_id) from public.tutor_usage u where u.created_at >= month_start),

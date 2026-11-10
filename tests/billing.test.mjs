@@ -60,11 +60,11 @@ test("Pro learners get the Pro allowance for their billing period", async () => 
   await x.owner(`${ENABLE};
     insert into public.subscriptions (user_id, stripe_customer_id, stripe_subscription_id, status, billing_interval, current_period_start, current_period_end)
     values ('${A}', 'cus_a', 'sub_a', 'active', 'month', now() - interval '1 day', now() + interval '29 days')`);
-  for (let i = 0; i < 20; i++) assert.ok((await claim(x, A, "pack")).usage_id, `pack ${i + 1}`);
+  for (let i = 0; i < 5; i++) assert.ok((await claim(x, A, "pack")).usage_id, `pack ${i + 1}`);
   const r = await claim(x, A, "pack");
-  assert.equal(r.reason, "allowance"); assert.equal(r.plan, "pro"); assert.equal(r.allowance, 20);
+  assert.equal(r.reason, "allowance"); assert.equal(r.plan, "pro"); assert.equal(r.allowance, 5);
   const mine = await x.as(A, "select * from public.my_ai_allowance()");
-  assert.deepEqual(mine.map((m) => [m.feature, m.allowance]).sort(), [["explain", 100], ["pack", 20], ["quiz", 30], ["tutor", 150]]);
+  assert.deepEqual(mine.map((m) => [m.feature, m.allowance]).sort(), [["explain", 25], ["pack", 5], ["quiz", 8], ["tutor", 40]]);
   // a cancelled subscription whose period has ended falls back to free
   await x.owner(`update public.subscriptions set status = 'canceled', current_period_end = now() - interval '10 days'`);
   assert.equal((await x.as(A, "select * from public.my_ai_allowance()")).find((m) => m.feature === "tutor").allowance, 5);
@@ -105,8 +105,8 @@ test("allowances are monthly on yearly Pro too: a yearly subscriber's window is 
   assert.ok(days >= 28 && days <= 31, `window is a month, not a year (${days} days)`);
   assert.ok(new Date(p.period_start) <= new Date() && new Date(p.period_end) > new Date(), "the window contains now");
   // usage from earlier months of the year doesn't count against this month (the owner may seed usage; learners can't)
-  await x.owner(`insert into public.tutor_usage (user_id, mode, status, created_at) select '${A}', 'pack', 'ok', now() - interval '60 days' from generate_series(1, 20)`);
-  assert.ok((await claim(x, A, "pack")).usage_id, "last month's 20 packs don't use up this month's");
+  await x.owner(`insert into public.tutor_usage (user_id, mode, status, created_at) select '${A}', 'pack', 'ok', now() - interval '60 days' from generate_series(1, 5)`);
+  assert.ok((await claim(x, A, "pack")).usage_id, "last month's 5 packs don't use up this month's");
   await x.close();
 });
 

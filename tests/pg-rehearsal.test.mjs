@@ -3,8 +3,9 @@
 // by value, and migrations rehearsed against real data with content checksums.
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import { tempDb, snapshot, restoreRehearsal, rehearseMigration, compareSnapshots, columnsNow, checksums, changed, loadRows, applyMigrations } from "../scripts/pg-rehearsal.mjs";
-import { migrate, listMigrations, destructive } from "../scripts/supabase-admin.mjs";
+import { migrate, listMigrations, destructive, configUpdates } from "../scripts/supabase-admin.mjs";
 
 const A = "11111111-1111-4111-8111-111111111111", B = "22222222-2222-4222-8222-222222222222";
 async function seeded(upTo = null) {
@@ -74,7 +75,9 @@ test("each later migration, rehearsed against real data, leaves every existing v
     const cols = await columnsNow(c), before = await checksums(c, cols);
     const applied = await migrate(c, { list: list.filter((x) => x.version <= m.version), backedUp: true });
     assert.equal(applied.ok, true);
-    assert.deepEqual(changed(before, await checksums(c, cols)), [], `${m.file} changed existing values`);
+    // only owner settings rows the migration deliberately updates may change (scripts/supabase-admin.mjs configUpdates)
+    const intended = configUpdates(await readFile(m.url, "utf8"));
+    assert.deepEqual(changed(before, await checksums(c, cols)).filter((t) => !intended.includes(t)), [], `${m.file} changed existing values`);
     snap = JSON.parse(JSON.stringify(await snapshot(c)));
   }
   await c.close();
