@@ -80,6 +80,9 @@ export async function loadRows(c, snap) {
   for (const [t, rows] of Object.entries(snap.rows)) for (const r of rows) { if (r.user_id) users.add(r.user_id); if (t === "profiles" && r.id) users.add(r.id); }
   let q = "set session_replication_role = replica;\n";
   if (users.size) q += `insert into auth.users (id) values ${[...users].map((u) => `(${lit(u)})`).join(", ")} on conflict do nothing;\n`;
+  // this runs only in a fresh temporary database: clear any rows the migrations seeded (settings, limits) so the
+  // backup's own values are what's restored, exactly
+  for (const [t, rows] of Object.entries(snap.rows)) if (rows.length) q += `delete from public.${t};\n`;
   for (const [t, rows] of Object.entries(snap.rows)) if (rows.length) q += `insert into public.${t} overriding system value select * from json_populate_recordset(null::public.${t}, ${lit(JSON.stringify(rows))}::json);\n`;
   q += "set session_replication_role = origin;";
   await c.sql(q);
@@ -94,7 +97,8 @@ export async function restoreRehearsal(snap, list) {
     const m = list.find((x) => x.version === r.version);
     if (!m) { report.problems.push(`migration ${r.version} is recorded in the backup but not in the repository`); continue; }
     const text = m.sql ?? (await readFile(m.url, "utf8"));
-    if (sha(text) !== sha((r.statements || [])[0] || "")) report.problems.push(`migration ${r.version} differs from the version that was applied`);
+    // compared ignoring only trailing whitespace: the applied copy may be stored without the file's final newline
+    if (sha(text.trimEnd()) !== sha(((r.statements || [])[0] || "").trimEnd())) report.problems.push(`migration ${r.version} differs from the version that was applied`);
   }
   if (report.problems.length) return report;
   const c = await tempDb();

@@ -92,19 +92,26 @@ const SAFE = [
   /^create table (if not exists )?public\.\w+ \(/i,
   /^create (unique )?index (if not exists )?\w+ on public\.\w+ /i,
   /^create policy "[^"]+" on public\.\w+ /i,
-  /^create (or replace )?function public\.\w+\(.*\) returns [\w ]+ language (plpgsql|sql)( (stable|immutable|volatile))?( security definer set search_path = [\w, ]+)? as \$\$BODY\$\$$/i,
+  /^create (or replace )?function public\.\w+\(.*\) returns ([\w ]+|table \([\w, ]+\)) language (plpgsql|sql)( (stable|immutable|volatile))?( security definer set search_path = [\w, ]+)? as \$\$BODY\$\$$/i,
   /^create trigger \w+ (before|after) (insert|update|delete)( or (insert|update|delete))* on (public|auth)\.\w+ for each row execute function public\.\w+\(\)$/i,
   /^create (or replace )?view public\.\w+ with \(security_invoker = true\) as select /i,
   /^create schema if not exists \w+$/i,
   /^alter table public\.\w+ enable row level security$/i,
   /^revoke [\w, ]+ on (table )?public\.\w+ from [\w, ]+$/i,
+  // who may call a function: permissions only, never data
+  /^revoke (all|execute) on function public\.\w+\([\w, ]*\) from [\w, ]+$/i,
+  /^grant execute on function public\.\w+\([\w, ]*\) to [\w, ]+$/i,
   /^comment on /i,
 ];
 const ROW_EVALUATED = /\b(default|check|generated always as)\b[^,]*\bpublic\.\w+\s*\(/i;
 export function destructive(sql) {
   const found = [], stmts = statements(sql);
+  // seed rows may go only into tables this same migration creates (which have no existing rows to change)
+  const created = new Set(stmts.map((s) => s.match(/^create table (?:if not exists )?public\.(\w+) \(/i)?.[1]?.toLowerCase()).filter(Boolean));
   for (const st of stmts) {
     const lower = st.toLowerCase();
+    const ins = st.match(/^insert into public\.(\w+) \(/i);
+    if (ins) { if (!created.has(ins[1].toLowerCase())) found.push(`insert into an existing table: ${st.slice(0, 100)}`); continue; }
     if (/^alter table public\.\w+ /i.test(st) && !/ enable row level security$/i.test(st)) {
       // ALTER TABLE: each comma-separated action must be add column / add constraint / drop constraint (re-added)
       const actions = st.replace(/^alter table public\.\w+ /i, "").split(/,(?![^(]*\))/).map((x) => x.trim());
@@ -143,6 +150,12 @@ export async function listMigrations() {
 /** Apply pending migrations in order. Stops at the first failure and reports it; never skips one. */
 export async function migrate(c, { list, log = () => {}, next = false, backedUp = false, rehearse = false } = {}) {
   list ||= await listMigrations();
+  // nothing pending: nothing to back up or apply (checked before the backup gate, which only matters for changes)
+  const recordedAlready = await c.sql("select version from supabase_migrations.schema_migrations").catch(() => []);
+  if (recordedAlready.length && list.every((m) => recordedAlready.some((r) => r.version === m.version))) {
+    for (const m of list) log(`= ${m.file} (already applied)`);
+    return { ok: true, report: list.map((m) => ({ ...m, result: "already applied" })) };
+  }
   // existing learner data needs a full backup taken by the owner (dashboard or supabase db dump) first
   const users = Number((await c.sql("select count(*)::int as n from auth.users"))[0]?.n || 0);
   const before0 = await rowCounts(c), rows0 = Object.values(before0).reduce((a, b) => a + b, 0);
@@ -310,9 +323,12 @@ export async function tokenScope(c, f = globalThis.fetch.bind(globalThis), token
 }
 
 // read-only: everything that must be true before anything is changed
-async function preflight(c) {
+async function preflight(c, { acceptBroad = false } = {}) {
   const scope = await tokenScope(c);
-  if (!scope.ok) return `**Token scope check failed: nothing else was run.**\n\n${md(scope.rows.map((r) => ({ ...r, result: r.ok ? "ok" : "FAIL" })), ["check", "status", "result"])}\n\nCreate a token restricted to the Gradify project with only: database (read and write), Edge Functions (read and deploy), secrets (read names).`;
+  // --accept-broad-token: the project owner's explicit, logged decision to proceed with a token that reaches more
+  // than this needs (Supabase personal tokens can't currently be narrowed). Nothing extra is read or printed.
+  const override = !scope.ok && acceptBroad ? "\n\n**Token broader than needed: accepted by the project owner for this run (--accept-broad-token).** The script still reads nothing beyond this project and prints no key." : "";
+  if (!scope.ok && !acceptBroad) return `**Token scope check failed: nothing else was run.**\n\n${md(scope.rows.map((r) => ({ ...r, result: r.ok ? "ok" : "FAIL" })), ["check", "status", "result"])}\n\nCreate a token restricted to the Gradify project with only: database (read and write), Edge Functions (read and deploy), secrets (read names).`;
   const st = await status(c);
   const users = Number((await c.sql("select count(*)::int as n from auth.users"))[0]?.n || 0);
   const counts = await rowCounts(c), rows = Object.values(counts).reduce((a, b) => a + b, 0);
@@ -327,7 +343,7 @@ Token scope:
 
 ${md(scope.rows.map((r) => ({ ...r, result: r.ok ? "ok" : "FAIL" })), ["check", "status", "result"])}
 
-Changes made by this check: none.`;
+Changes made by this check: none.${override}`;
 }
 
 async function rlsAudit(c) {
@@ -352,7 +368,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   let body, failed = false;
   try {
     if (cmd === "status") body = await status(c);
-    else if (cmd === "preflight") { body = await preflight(c); failed = /\*\*(Learner data exists|These tables exist|Token scope check failed)/.test(body); }
+    else if (cmd === "preflight") { body = await preflight(c, { acceptBroad: rest.includes("--accept-broad-token") }); failed = /\*\*(Learner data exists|These tables exist|Token scope check failed)/.test(body); }
     else if (cmd === "backup") body = await backup(c, rest.find((x) => !x.startsWith("--")));
     else if (cmd === "migrate") {
       const r = await migrate(c, { log: (l) => console.error(l), next: rest.includes("--next"), backedUp: rest.includes("--existing-data-backed-up"), rehearse: true });

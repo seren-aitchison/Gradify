@@ -23,11 +23,11 @@ async function seeded(upTo = null) {
   return { c, list };
 }
 
-test("all eleven migrations apply and verify on real PostgreSQL, through the production migrate code", async () => {
+test("every migration applies and verifies on real PostgreSQL, through the production migrate code", async () => {
   const list = await listMigrations(), c = await tempDb();
   const r = await migrate(c, { list });
   assert.equal(r.ok, true, JSON.stringify(r.report));
-  assert.equal(r.report.length, 11);
+  assert.equal(r.report.length, (await (await import("node:fs/promises")).readdir(new URL("../supabase/migrations/", import.meta.url))).filter((f) => f.endsWith(".sql")).length);
   assert.ok(r.report.every((m) => m.result === "applied and verified" && m.checked > 0));
   const again = await migrate(c, { list });
   assert.ok(again.report.every((m) => m.result === "already applied"), "re-running applies nothing twice");

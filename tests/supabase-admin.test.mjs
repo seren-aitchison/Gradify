@@ -130,3 +130,13 @@ test("the token scope check passes a project-only token and fails a broader one,
   assert.equal(broad.ok, false);
   assert.deepEqual(broad.rows.filter((r) => !r.ok).map((r) => r.check), ["Cannot list projects across the account", "Cannot read organisations", "Cannot read this project's API keys (not needed)"]);
 });
+
+test("the migration checker allows seed rows only in new tables, and function permissions", async () => {
+  const { destructive } = await import("../scripts/supabase-admin.mjs");
+  assert.deepEqual(destructive("create table public.t (a int);\ninsert into public.t (a) values (1);"), []);
+  assert.equal(destructive("insert into public.profiles (id) values (gen_random_uuid());").length, 1, "insert into an existing table is refused");
+  assert.deepEqual(destructive("revoke all on function public.f(uuid) from public, anon;\ngrant execute on function public.f(uuid) to authenticated;"), []);
+  assert.deepEqual(destructive("create or replace function public.f() returns table (a int, b text) language sql stable as $$ select 1, 'x' $$;"), []);
+  assert.equal(destructive("update public.profiles set xp = 0;").length, 1, "updates stay refused");
+  assert.equal(destructive("drop policy \"p\" on public.profiles;").length, 1, "dropping a policy stays refused");
+});
