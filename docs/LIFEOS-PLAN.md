@@ -82,3 +82,23 @@ a month calendar with events, the persistent life-wide Earth, and the Academic D
 2. **Brand colour.** The brief mentions an existing blue palette; the live identity is black with the multicolour
    Gradify spectrum (blue to violet, pink, orange, gold). Stage 1 keeps the existing identity.
 3. **Approval for each production change:** commits, pushes (pushing `main` publishes the site) and migrations.
+
+## 5. Progress (10 November 2026)
+
+- **Pro (released separately, once privacy@getgradify.com is verified):** presented as the forthcoming premium experience (Gradify AI at launch, more LifeOS tools planned and not
+  listed until real), with a notify-me form on the homepage and pricing page using the existing insert-only
+  `waitlist` table (list "Gradify Pro"). Privacy page: new "Launch lists" section.
+- **One LifeOS app:** one navigation for all 33 app pages (Command Centre, My Learning, Calendar, My Progress,
+  Library), drawn by `kit/app/main.js`.
+- **Command Centre:** the most important next step across every course and deck; then the rest across Gradify,
+  courses with progress, exam pace, today's plan, heatmap and a Pro card.
+- **My Learning:** every started course with progress, pace and continue; flashcards from notes; more courses.
+- **Calendar:** five-week view and "Coming up" (exam date, deadlines from notes, course pace).
+- **My Progress:** activity year and topic mastery, with the Journey (level, quests, challenge, achievements) inside.
+- **Library:** course flashcards and questions to revisit alongside decks from notes.
+- **One level and streak:** the Journey now counts learning outside courses (flashcard sessions, packs, workouts) from
+  the activity log, without counting course awards or synced rewards twice (`outsideCourses`, tested); the Command
+  Centre reads its level and streak from the same engine.
+
+Next: goals (needs the first new table; schema to be proposed before building), notifications and reminders,
+the remaining Stage 1 pages (subject landing pages, pricing polish).

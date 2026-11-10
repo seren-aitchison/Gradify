@@ -39,11 +39,21 @@ export function rankOf(level, subject = null) {
 // ---------- the event stream ----------
 // Every award from every course, oldest first, each tagged with its course. Entries the engine paid itself are added
 // from the game ledger, so XP totals include them without double counting.
-export function eventsOf(courses, game = {}) {
+// `extra`: learning outside courses (flashcard sessions, study packs, workouts...) from the account's activity log, so
+// the level, streak and calendar here match the account's (outsideCourses() picks those rows).
+export function eventsOf(courses, game = {}, extra = []) {
   const ev = [];
   for (const c of courses) for (const e of c.S?.log || []) if (e && Number.isFinite(e.xp) && Number.isFinite(e.t)) ev.push({ ...e, course: c.slug });
   for (const [key, r] of Object.entries(game.paid || {})) ev.push({ t: r.t, xp: r.xp, k: "game", id: key, course: null });
+  for (const a of extra) { const t = Date.parse(a.at); if (Number.isFinite(t) && Number.isFinite(a.xp)) ev.push({ t, xp: a.xp, k: "life", id: a.kind, course: null, site: a.site || null }); }
   return ev.sort((a, b) => a.t - b.t);
+}
+
+// The activity rows that courses and the game ledger don't already account for. Every course award is logged twice,
+// in the course's own progress (kind "<course>-<what>") and in the activity log, and every paid game reward is synced
+// as "game-<key>": those are left out so nothing counts twice.
+export function outsideCourses(activity = [], courseSlugs = []) {
+  return activity.filter((a) => a && a.xp && typeof a.kind === "string" && !a.kind.startsWith("game-") && !courseSlugs.some((s) => a.kind.startsWith(`${s}-`)));
 }
 
 // local calendar day as "YYYY-MM-DD" (the learner's own midnight, not UTC)
@@ -96,8 +106,8 @@ export function habits(events, { now = Date.now(), goal = 30 } = {}) {
 function groupWeeks(events) { const m = new Map(); for (const e of events) { const w = weekStart(e.t); m.set(w, (m.get(w) || 0) + e.xp); } return m; }
 
 // ---------- the learner's overall state ----------
-export function gameState(courses, game = {}, { now = Date.now(), goal = null } = {}) {
-  const events = eventsOf(courses, game);
+export function gameState(courses, game = {}, { now = Date.now(), goal = null, extra = [] } = {}) {
+  const events = eventsOf(courses, game, extra);
   const xp = events.reduce((a, e) => a + e.xp, 0);
   const L = levelOf(xp);
   const dailyGoal = goal ?? game.goal ?? Math.max(20, ...courses.map((c) => c.S?.goal || 0));

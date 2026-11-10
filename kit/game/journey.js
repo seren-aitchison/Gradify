@@ -1,7 +1,7 @@
 // The Journey page (journey.html): the learner's whole Gradify progress in one place, and what to do next.
 // Reads each course's own progress from this device (kit/course/course.js keeps it under "gradify.course.<slug>"),
 // computes everything with the game engine, and keeps only its own reward ledger ("gradify.game").
-import { gameState, claim, dayKey, weekStart, DAY, unsynced, rewardKind } from "./engine.js";
+import { gameState, claim, dayKey, weekStart, DAY, unsynced, rewardKind, outsideCourses } from "./engine.js";
 import { quests, nextSteps } from "./quests.js";
 import { achievements, nextAchievement } from "./achievements.js";
 import { dailyChallenge, challengeReward } from "./challenges.js";
@@ -12,7 +12,7 @@ import { parseNotes } from "../course/notes.js";
 import { renderQuestion, wireQuestions } from "../assess/questions.js";
 import { icon } from "../core/icons.js";
 import { esc } from "../core/text.js";
-import { CloudStore } from "../data/store.js";
+import { CloudStore, LocalStore } from "../data/store.js";
 
 const GAME_KEY = "gradify.game";
 const read = (k) => { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch { return null; } };
@@ -35,13 +35,35 @@ async function loadCourses() {
   return out;
 }
 
-export async function mountJourney(root) {
+// embedded: inside the LifeOS app (My Progress), with an h2 heading instead of the page's h1
+// learning outside courses (flashcards, packs, workouts), so the level and streak here match the account's
+async function outsideActivity(store) {
+  try {
+    let st = store;
+    if (!st) { st = new LocalStore(); const cloud = await CloudStore.create().catch(() => null); if (cloud && (await cloud.user())) st = cloud; }
+    return outsideCourses(await st.listActivity(400), Object.keys(COURSES));
+  } catch { return []; }
+}
+
+/** The learner's level, XP, rank and streak, worked out exactly as the Journey does (for the LifeOS Command Centre). */
+export async function journeySummary({ store = null, now = Date.now() } = {}) {
+  const [courses, extra] = await Promise.all([loadCourses(), outsideActivity(store)]);
+  const s = gameState(courses, read(GAME_KEY) || {}, { now, extra });
+  const graphs = Object.fromEntries(courses.filter((c) => c.cfg.concepts).map((c) => [c.slug, conceptGraph(c.units, c.cfg.concepts)]));
+  const Q = courses.length ? quests(s, { graphs }) : [];
+  return { xp: s.xp, level: s.level, rank: s.rank, streak: s.habits.streak, restBank: s.habits.restBank, todayXp: s.habits.todayXp, goal: s.habits.goal, today: s.habits.today,
+    goalMet: s.habits.goalMet, quests: Q.filter((q) => q.kind === "daily").map(({ key, title, why, n, of, xp, done, paid }) => ({ key, title, why, n, of, xp, done, paid })),
+    readyToClaim: Q.filter((q) => q.done && !q.paid).length, nextAchievement: (() => { const a = nextAchievement(achievements(s)); return a && { name: a.name, d: a.d, n: a.n, of: a.of }; })() };
+}
+
+// store: the learner's store, when the page already has one (the LifeOS app); otherwise this device's, or the account's
+export async function mountJourney(root, { embedded = false, store = null } = {}) {
   let game = read(GAME_KEY) || {};
-  const courses = await loadCourses();
+  const [courses, extra] = await Promise.all([loadCourses(), outsideActivity(store)]);
   const graphs = Object.fromEntries(courses.filter((c) => c.cfg.concepts).map((c) => [c.slug, conceptGraph(c.units, c.cfg.concepts)]));
   let challenge = null, challengeState = null;
   const href = (slug, lesson) => `${COURSES[slug]}#/lesson/${lesson}`;
-  const state = () => gameState(courses, game, { now: Date.now() });
+  const state = () => gameState(courses, game, { now: Date.now(), extra });
 
   // pay a finished reward once, then celebrate it
   let pay = function (reward, label) {
@@ -69,7 +91,7 @@ export async function mountJourney(root) {
     const goalPct = Math.min(1, H.todayXp / H.goal), R = 34, C = 2 * Math.PI * R;
     const dayOfWeek = Math.floor((Date.now() - weekStart(Date.now())) / DAY) + 1;
     root.innerHTML = `
-      <header class="gj-head"><span class="gj-kicker">Gradify</span><h1>Your learning journey</h1>
+      <header class="gj-head"><span class="gj-kicker">Gradify</span>${embedded ? "<h2>Level, quests and achievements</h2>" : "<h1>Your learning journey</h1>"}
         <p>${courses.length ? `Across ${courses.length} subject${courses.length > 1 ? "s" : ""} on this device. Everything here comes from what you've actually done.` : "Start any Gradify course and your progress, quests and achievements appear here."}</p></header>
       <section class="gj-stats" aria-label="Your progress at a glance">
         <article class="gj-card gj-level"><div class="gj-ring" style="--p:${(s.level.into / (s.level.to - s.level.from)) * 100}%"><b>${s.level.n}</b><small>level</small></div>
@@ -109,7 +131,8 @@ export async function mountJourney(root) {
     paintChallenge(s);
   }
 
-  const label = (e) => e.k === "game" ? (game.paid?.[e.id]?.title || "Reward") : `${courses.find((c) => c.slug === e.course)?.name || ""}: ${{ lesson: "lesson", check: "question", quiz: "quiz", chest: "chest", review: "review", practice: "lab or practice", mock: "mock exam", write: "written task", weekly: "weekly challenge" }[e.k] || e.k}`;
+  const LIFE = { session: "Flashcard session", pack: "Study pack", quiz: "Quiz", block: "Planned study block", workout: "Workout", body_checkin: "Body check-in", fitness_test: "Fitness test" };
+  const label = (e) => e.k === "life" ? `${e.site && e.site !== "Gradify" ? `${e.site}: ` : ""}${LIFE[e.id] || "Activity"}` : e.k === "game" ? (game.paid?.[e.id]?.title || "Reward") : `${courses.find((c) => c.slug === e.course)?.name || ""}: ${{ lesson: "lesson", check: "question", quiz: "quiz", chest: "chest", review: "review", practice: "lab or practice", mock: "mock exam", write: "written task", weekly: "weekly challenge" }[e.k] || e.k}`;
   function questsHtml(title, list) {
     if (!list.length) return "";
     return `<section class="gj-card"><h2>${title}</h2><ul class="gj-quests">${list.map((q) => `<li class="${q.paid ? "paid" : q.done ? "ready" : ""}">

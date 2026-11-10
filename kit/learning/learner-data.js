@@ -79,7 +79,7 @@ export function courseSummary(cfg, S = {}, { now = Date.now(), profile = null } 
       text: [u.title, ...(u.modules || []).map((m) => m.title || m), ...u.lessons.map((l) => l.title)].join(" ") };
   }).filter((s) => s.done || s.profile);
   return { slug: cfg.slug, site: cfg.site, name: cfg.name, href: COURSES[cfg.slug] || null, total: lessons.length, written: lessons.filter((l) => written(l.unit)).length,
-    done, remaining, lastAt, six: all, schools, revisit: revisit.length, dueCards, pace, examDate, next: next && { id: next.id, title: next.title },
+    done, remaining, lastAt, six: all, schools, revisit: revisit.length, dueCards, cards: Object.keys(S.cards || {}).length, pace, examDate, next: next && { id: next.id, title: next.title },
     weak: weak.map((t) => ({ lesson: t.lesson, title: titleOf(t.lesson), kind: t.kind, why: t.why, for: t.for ? titleOf(t.for) : null })),
     started: Boolean(done || attempts.length || Object.keys(S.cards || {}).length) };
 }
@@ -121,17 +121,20 @@ export function recommend(courses = [], decks = [], { limit = 6 } = {}) {
 }
 
 // ---------- gather it in a browser ----------
-export async function loadLearner({ now = Date.now() } = {}) {
-  const { LocalStore, CloudStore } = await import("../data/store.js");
+// `store`: a page that already has the learner's store (the app) passes it, so no second connection is opened
+export async function loadLearner({ now = Date.now(), store = null } = {}) {
   const { learnerOf } = await import("../data/profile.js");
-  let store = new LocalStore();
-  try { const cloud = await CloudStore.create(); if (cloud && (await cloud.user())) store = cloud; } catch { /* this device */ }
+  if (!store) {
+    const { LocalStore, CloudStore } = await import("../data/store.js");
+    store = new LocalStore();
+    try { const cloud = await CloudStore.create(); if (cloud && (await cloud.user())) store = cloud; } catch { /* this device */ }
+  }
   const [p, activity, cards, reviews] = await Promise.all([store.getProfile().catch(() => ({})), store.listActivity(400).catch(() => []), store.listCards().catch(() => []), store.listReviews(400).catch(() => [])]);
   const profile = { ...p, learner: learnerOf(p) };
   // course progress: this device's copy, and the account's for courses not opened on this device yet
   const states = {};
   for (const slug of Object.keys(COURSES)) { try { const s = JSON.parse(localStorage.getItem(`gradify.course.${slug}`) || "null"); if (s) states[slug] = s; } catch { /* storage blocked */ } }
-  if (store.mode === "cloud") for (const slug of Object.keys(COURSES)) if (!states[slug]) { try { const s = await store.getCourseProgress(slug); if (s) states[slug] = s; } catch { /* not set up */ } }
+  if (store.mode === "cloud") await Promise.all(Object.keys(COURSES).filter((slug) => !states[slug]).map(async (slug) => { try { const s = await store.getCourseProgress(slug); if (s) states[slug] = s; } catch { /* not set up */ } }));
   const courses = [];
   for (const [slug, S] of Object.entries(states)) {
     try { courses.push(courseSummary((await import(`../courses/${slug}/course.js`)).default, S, { now, profile })); } catch (e) { console.warn(`Couldn't read ${slug} progress`, e); }

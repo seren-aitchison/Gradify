@@ -18,6 +18,9 @@ import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "../le
 import { topicProfiles, practiceOrder, LEVELS } from "../learning/mastery.js";
 import { sixHtml, calibrationHtml, HOW } from "../learning/mastery-view.js";
 import { levelOf as gameLevelOf } from "../game/engine.js";
+import { loadLearner, COURSES } from "../learning/learner-data.js";
+import { mountJourney, journeySummary } from "../game/journey.js";
+import { PRO_ON_SALE } from "../data/billing.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -74,12 +77,33 @@ async function stats() {
   };
 }
 
+// ---------- LifeOS sections ----------
+// One navigation for every Gradify site's app, drawn here so the 33 app pages share it: the signed-in LifeOS.
+// [route, label, short label for the phone tab bar, icon]
+const NAV = [
+  ["today", "Command Centre", "Today", "home"],
+  ["learning", "My Learning", "Learning", "book"],
+  ["plan", "Calendar", "Calendar", "calendar"],
+  ["progress", "My Progress", "Progress", "trend"],
+  ["notes", "Library", "Library", "layers"],
+];
+// screens that belong to a section without being one
+const SECTION_OF = { deck: "notes", new: "notes", topic: "progress", study: "learning", account: null, start: null };
+function drawNav() {
+  for (const nav of document.querySelectorAll(".app-nav")) nav.innerHTML = NAV.map(([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`).join("");
+  for (const nav of document.querySelectorAll(".tabbar")) nav.innerHTML = NAV.map(([r, , short, ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${short}</span></a>`).join("");
+}
+drawNav();
+// the pricing page lives on getgradify.com; sub-sites served elsewhere link to it there
+const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/pricing.html" : "https://getgradify.com/pricing.html";
+
 // ---------- Router ----------
 const routes = { today: renderToday, start: renderStart, new: renderNew, deck: renderDeck, study: renderStudy, topic: renderTopic, progress: renderProgress, plan: renderPlan, account: renderAccount };
 async function route() {
   const [name, arg] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
   if (needsSetup(profile) && !["start", "account"].includes(name)) { location.replace("#/start"); return; }
-  document.querySelectorAll(".app-nav a, .tabbar a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === name || ((name === "deck" || name === "topic") && a.dataset.route === (name === "topic" ? "progress" : "notes")) || (name === "new" && a.dataset.route === "notes"))));
+  const section = name in SECTION_OF ? SECTION_OF[name] : name;
+  document.querySelectorAll(".app-nav a, .tabbar a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === section)));
   view.innerHTML = '<div class="loading" aria-busy="true"></div>';
   try { await (routes[name] || renderToday)(arg); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
   view.focus({ preventScroll: true });
@@ -363,12 +387,17 @@ function cardRow(c) {
 
 // ---------- All notes ----------
 async function renderNotes() {
-  const [docs, cards, reviews] = await Promise.all([store.listDocuments(), store.listCards(), store.listReviews(400)]);
+  const [docs, cards, reviews, L] = await Promise.all([store.listDocuments(), store.listCards(), store.listReviews(400), learnerAcross()]);
+  const courseCards = (L?.courses || []).filter((c) => c.cards || c.revisit);
   // each deck's bar is its topics' mastery, weighted by how many cards each topic has
   const topics = topicProfiles(cards, reviews);
   const masteryOf = (docId) => { const ts = topics.filter((t) => t.documentId === docId), n = ts.reduce((a, t) => a + t.cards, 0); return n ? ts.reduce((a, t) => a + t.mastery * t.cards, 0) / n : 0; };
   view.innerHTML = `<section class="notes">
-    <div class="deck-head"><div><h1>Your notes</h1><p class="sub">Every set of notes you've added, with its cards.</p></div><a class="btn btn-primary lg" href="#/new"><span>+ Add notes</span></a></div>
+    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("layers")}Library</span><h1>Your library</h1><p class="sub">Your own notes and their flashcards, and the flashcards and questions you're revising in each Gradify course.</p></div><a class="btn btn-primary lg" href="#/new"><span>+ Add notes</span></a></div>
+    ${courseCards.length ? `<h2 class="lo-h">From your courses</h2><div class="lo-grid">${courseCards.map((c) => `<article class="panel glass course-card"><div class="cc-top"><span class="cc-site">${esc(c.site)}</span></div><h3>${esc(c.name)}</h3>
+      <p class="sub">${c.cards} flashcard${c.cards === 1 ? "" : "s"}${c.dueCards ? ` · ${c.dueCards} due` : " · nothing due"}${c.revisit ? ` · ${c.revisit} question${c.revisit === 1 ? "" : "s"} to revisit` : ""}</p>
+      <div class="row-actions">${c.href && (c.dueCards || c.revisit) ? `<a class="btn btn-light lg btn-sm" href="${c.href}#/review"><span>Review now</span></a>` : ""}${c.href ? `<a class="btn btn-ghost lg btn-sm" href="${c.href}"><span>Open course</span></a>` : ""}</div></article>`).join("")}</div>
+      <h2 class="lo-h">From your notes</h2>` : ""}
     ${docs.length ? `<div class="doc-grid">${docs.map((d) => {
       const cs = cards.filter((c) => c.document_id === d.id);
       const due = cs.filter((c) => isDue(c)).length;
@@ -522,10 +551,12 @@ function heatmap(byDay, weeks = 16) {
   return `<div class="hm" style="--weeks:${Math.ceil(((+end - +start) / DAY + 1) / 7)}">${cells}</div>`;
 }
 async function renderToday() {
-  const s = await stats();
+  const [s, L, sub, G] = await Promise.all([stats(), learnerAcross(), store.mode === "cloud" ? mySubscription(store).catch(() => null) : null, journeySummary({ store }).catch(() => null)]);
   const blocks = (await ensureReviewBlock(s)).sort((a, b) => a.start_min - b.start_min);
   const site = siteOf(profile.site);
-  const lv = levelOf(s.xp), into = s.xp - xpForLevel(lv), need = xpForLevel(lv + 1) - xpForLevel(lv);
+  // level and streak as the Journey works them out (rest days included), so every screen agrees
+  const gxp = G ? G.xp : s.xp, streakDays = G ? G.streak : s.streak;
+  const lv = levelOf(gxp), into = gxp - xpForLevel(lv), need = xpForLevel(lv + 1) - xpForLevel(lv);
   const examIn = profile.exam_date ? Math.ceil((new Date(profile.exam_date) - new Date(today())) / DAY) : null;
   const mins = Math.ceil((s.due.length * SEC_PER_CARD) / 60);
   // One answer to "what should I do next?": a misconception first (it spreads), then due reviews
@@ -533,7 +564,11 @@ async function renderToday() {
   const shaky = s.topics.find((t) => t.level === "shaky");
   const top = s.topics.find((t) => t.next.kind !== "done");
   const dueTopics = new Set(s.due.map((c) => `${c.document_id}|${c.topic || "Cards"}`)).size;
-  const next = !s.cards.length
+  // with no flashcards yet, the most important step across the learner's courses comes first
+  const top0 = L?.next?.[0];
+  const next = !s.cards.length && top0
+    ? { t: esc(top0.label), d: esc(top0.why), href: esc(top0.href), cta: "Start" }
+    : !s.cards.length
     ? { t: "Add your first notes", d: "Upload a PDF or paste your notes. Gradify turns them into flashcards you can trust.", href: "#/new", cta: "Add notes" }
     : shaky ? { t: `${shaky.next.label}: ${esc(shaky.topic)}`, d: esc(shaky.next.why), href: studyHref(shaky.key), cta: `Start · ${shaky.next.mins} min` }
     : s.due.length
@@ -550,25 +585,40 @@ async function renderToday() {
   if (fading.length) briefing.push({ ico: "alert", c: "warn", t: `${fading.length} ${fading.length === 1 ? "topic is" : "topics are"} fading`, d: `${fading.slice(0, 3).map((t) => esc(t.topic)).join(", ")}. You knew ${fading.length === 1 ? "it" : "them"}, but haven't practised recently.`, href: studyHref(fading[0].key), cta: "Review" });
   if (needPerDay != null && s.cards.length) briefing.push({ ico: "calendar", c: needPerDay > capMins ? "risk" : "", t: needPerDay > capMins ? `Exam risk: you need about ${needPerDay} min a day` : `On track for your exam`, d: needPerDay > capMins ? `At ${capMins} min a day you won't reach mastery on everything in ${examIn} days. Add time in Plan, or focus on the topics below.` : `${needPerDay < 5 ? "A few minutes a day" : `About ${needPerDay} min a day`} keeps every topic on course for mastery in ${examIn} days.`, href: needPerDay > capMins ? "#/plan" : null, cta: "Open Plan" });
   const hour = new Date().getHours();
+  const courses = L?.courses || [];
+  const examCourse = courses.find((c) => c.examDate) || null;
   view.innerHTML = `<section class="today">
+    <span class="kicker lo-kicker">${icon("home")}Command Centre · ${fmtDate(Date.now(), { weekday: "long", day: "numeric", month: "long" })}</span>
     <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""}</h1>
-    <div class="today-grid">
-      <article class="panel glass next-up" style="--c:#${site.c}">
+    <article class="panel glass next-up" style="--c:#${site.c}">
         <span class="kicker">${icon("flame")}Do this next</span><h2>${next.t}</h2><p class="sub">${next.d}</p>
         <a class="btn btn-light lg" href="${next.href}"><span>${next.cta}</span></a>
       </article>
+    ${L?.next?.length || courses.length ? `<div class="lo-across">
+      ${L?.next?.length > (s.cards.length ? 0 : 1) ? `<article class="panel glass"><div class="panel-head"><h3>${s.cards.length ? "Across" : "Then, across"} ${SITE ? esc(SITE) : "Gradify"}</h3><a class="see" href="#/learning">My Learning</a></div>${nextList(L.next.slice(s.cards.length ? 0 : 1, s.cards.length ? 3 : 4))}</article>` : ""}
+      ${courses.length ? `<article class="panel glass"><div class="panel-head"><h3>Your courses</h3><span class="pill-dark">${courses.length}</span></div><ul class="lo-courses">${courses.slice(0, 4).map((c) => { const pct = c.written ? Math.round((100 * c.done) / c.written) : 0; return `<li><a href="${c.href && c.next ? `${c.href}#/lesson/${encodeURIComponent(c.next.id)}` : c.href || "#/learning"}"><span><b>${esc(c.name)}</b><em>${c.next ? `Next: ${esc(c.next.title)}` : "Finished"}</em></span><span class="goal-bar" role="img" aria-label="${pct}%"><i style="width:${pct}%"></i></span><em>${pct}%</em></a></li>`; }).join("")}</ul></article>` : ""}
+    </div>` : ""}
+    <div class="today-grid">
+      <article class="panel glass lo-day" aria-live="polite"></article>
+      ${dueHtml(s, courses)}
+
       ${briefing.length || s.topics.length ? `<article class="panel glass briefing">
         <div class="panel-head"><h3>Your briefing</h3><span class="pill-dark">${fmtDate(Date.now(), { weekday: "long", day: "numeric", month: "short" })}</span></div>
         ${briefing.length ? `<ul class="brief-list">${briefing.map((b) => `<li class="${b.c}">${icon(b.ico)}<span><b>${b.t}</b><em>${b.d}</em></span>${b.href ? `<a class="btn btn-ghost lg btn-sm" href="${b.href}"><span>${b.cta}</span></a>` : ""}</li>`).join("")}</ul>` : ""}
         ${s.topics.filter((t) => t.next.kind !== "done").length > 1 ? `<h4 class="brief-h">Then, in order</h4><ol class="focus-list">${s.topics.filter((t) => t.next.kind !== "done").slice(0, 3).map((t) => `<li><a href="${topicHref(t.key)}"><span><b>${esc(t.topic)}</b><em>${esc(t.next.label)} · ${t.next.mins} min</em></span>${levelPill(t.level)}</a></li>`).join("")}</ol>` : ""}
       </article>` : ""}
       <article class="panel glass stat-tiles">
-        <div><b>${s.streak}</b><span>day streak</span></div>
-        <div><b>${s.learned.length}<small>/${s.cards.length}</small></b><span>cards learned</span></div>
-        <div><b>${s.accuracy == null ? "–" : Math.round(s.accuracy * 100) + "%"}</b><span>right, last 30 days</span></div>
+        <div><b>${streakDays}</b><span>day streak${G?.restBank ? ` · ${G.restBank} rest day${G.restBank > 1 ? "s" : ""}` : ""}</span></div>
+        ${s.cards.length ? `<div><b>${s.learned.length}<small>/${s.cards.length}</small></b><span>cards learned</span></div>
+        <div><b>${s.accuracy == null ? "–" : Math.round(s.accuracy * 100) + "%"}</b><span>right, last 30 days</span></div>` : `<div><b>${G?.rank?.name ? esc(G.rank.name) : "–"}</b><span>rank</span></div>`}
         <div class="lvl"><b>Level ${lv}</b><span class="goal-bar"><i style="width:${(into / need) * 100}%"></i></span><span>${into}/${need} XP to level ${lv + 1}</span></div>
       </article>
-      ${examIn != null ? `<article class="panel glass exam">
+      ${examIn != null && !s.topics.length && examCourse ? `<article class="panel glass exam">
+        <span class="kicker">${icon("calendar")}${examIn >= 0 ? `Exam in ${examIn} ${examIn === 1 ? "day" : "days"}` : "Exam date has passed"}</span>
+        <h3>${esc(examCourse.name)}: ${esc((PACE[examCourse.pace?.status] || ["", "pace unknown"])[1].toLowerCase())}</h3>
+        <p class="sub">${examCourse.done} of ${examCourse.written} lessons done${examCourse.pace?.needPerDay ? `; about ${Math.round(examCourse.pace.needPerDay * 10) / 10} lessons a day finish the course before your exam` : ""}. ${examCourse.pace?.status === "behind" ? "Add study time in Calendar, or focus on the schools that count most." : ""}</p>
+        <a class="see" href="#/plan">Open Calendar</a>
+      </article>` : examIn != null ? `<article class="panel glass exam">
         <span class="kicker">${icon("calendar")}${examIn >= 0 ? `Exam in ${examIn} ${examIn === 1 ? "day" : "days"}` : "Exam date has passed"}</span>
         <div class="ring-sm"><svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="34" class="track"/><circle cx="40" cy="40" r="34" class="fill" style="stroke-dasharray:${2 * Math.PI * 34};stroke-dashoffset:${2 * Math.PI * 34 * (1 - s.readiness)}"/></svg><b>${Math.round(s.readiness * 100)}%</b></div>
         <p class="sub">ready: your average mastery across every topic, from the evidence in your answers.</p>
@@ -581,9 +631,93 @@ async function renderToday() {
         <div class="panel-head"><h3>Last 16 weeks</h3><a class="see" href="#/progress">Progress</a></div>
         ${heatmap(s.byDay)}
       </article>
+      ${proCard(sub)}
     </div>
   </section>`;
+  // the daily goal and today's quests, from the same engine as My Progress
+  if (G) {
+    const pct = Math.min(1, G.todayXp / (G.goal || 1)), R = 30, C = 2 * Math.PI * R;
+    view.querySelector(".lo-day").innerHTML = `<div class="panel-head"><h3>Today's goal</h3><a class="see" href="#/progress">${G.readyToClaim ? `${G.readyToClaim} to claim` : "All quests"}</a></div>
+      <div class="lo-goal"><svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="${R}" class="bg"/><circle cx="36" cy="36" r="${R}" class="fg" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - pct)}"/></svg>
+        <div><b>${G.todayXp}<small> / ${G.goal} XP</small></b><span class="sub">${G.goalMet ? "Daily goal met. Anything more is a bonus." : G.todayXp ? `${G.goal - G.todayXp} XP to go today.` : "Any lesson, review or quest counts."}</span></div></div>
+      ${G.quests.length ? `<ul class="lo-quests">${G.quests.map((q) => `<li class="${q.paid ? "paid" : q.done ? "ready" : ""}"><span><b>${esc(q.title)}</b><em>${q.paid ? "Claimed" : q.done ? "Ready to claim in My Progress" : esc(q.why || "")}</em></span><span class="goal-bar" role="img" aria-label="${q.n} of ${q.of}"><i style="width:${(100 * Math.min(q.n, q.of)) / q.of}%"></i></span><em>${Math.min(q.n, q.of)}/${q.of} · +${q.xp}</em></li>`).join("")}</ul>` : `<p class="sub">Start a course and daily quests appear here.</p>`}
+      ${G.nextAchievement ? `<p class="sub lo-ach">${icon("award")} Next achievement: <b>${esc(G.nextAchievement.name)}</b> (${G.nextAchievement.n} / ${G.nextAchievement.of})</p>` : ""}`;
+  } else view.querySelector(".lo-day")?.remove();
 }
+
+// ---------- LifeOS: across every Gradify site ----------
+// The learner's courses, flashcard decks and ranked next steps from every site (kit/learning/learner-data.js), read
+// through this app's own store. On a sub-site, only that site's courses and steps.
+async function learnerAcross() {
+  const L = await loadLearner({ store }).catch((e) => { console.warn("LifeOS: couldn't gather courses", e); return null; });
+  if (!L) return null;
+  if (!SITE) return L;
+  const mine = (x) => !x.site || x.site === SITE;
+  return { ...L, courses: L.courses.filter(mine), next: L.next.filter(mine) };
+}
+const PACE = { behind: ["risk", "Behind your exam pace"], tight: ["warn", "Tight for your exam"], "on-track": ["ok", "On track"], ahead: ["ok", "Ahead of pace"], "no-date": ["", "No exam date set"], done: ["ok", "Finished"], past: ["", "Exam date passed"] };
+function courseCard(c) {
+  const pct = c.written ? Math.round((100 * c.done) / c.written) : 0, [tone, paceLabel] = PACE[c.pace?.status] || ["", ""];
+  return `<article class="panel glass course-card">
+    <div class="cc-top"><span class="cc-site">${esc(c.site)}</span>${paceLabel ? `<span class="cc-pace ${tone}">${esc(paceLabel)}</span>` : ""}</div>
+    <h3>${esc(c.name)}</h3>
+    <div class="goal-bar" role="img" aria-label="${c.done} of ${c.written} lessons"><i style="width:${pct}%"></i></div>
+    <p class="sub">${c.done} of ${c.written} lessons · ${pct}%${c.dueCards ? ` · ${c.dueCards} flashcards due` : ""}${c.revisit ? ` · ${c.revisit} questions to revisit` : ""}</p>
+    <div class="row-actions">${c.next && c.href ? `<a class="btn btn-light lg btn-sm" href="${c.href}#/lesson/${encodeURIComponent(c.next.id)}"><span>Continue: ${esc(c.next.title)}</span></a>` : ""}${c.href ? `<a class="btn btn-ghost lg btn-sm" href="${c.href}"><span>Open course</span></a>` : ""}</div>
+  </article>`;
+}
+function nextList(items) {
+  return `<ol class="lo-next">${items.map((x) => `<li><a href="${esc(x.href)}"><span class="lo-site">${esc(x.site || "Your notes")}</span><b>${esc(x.label)}</b><em>${esc(x.why)}</em></a></li>`).join("")}</ol>`;
+}
+// sites to start with when a learner has no course yet: the built course sites, this learner's own first
+function startCourses(L, n = 6) {
+  const started = new Set((L?.courses || []).map((c) => c.slug));
+  const all = Object.entries(COURSES).filter(([slug]) => !started.has(slug));
+  return all.slice(0, n).map(([slug, href]) => `<a class="lo-chip" href="${href}">${esc(slug[0].toUpperCase() + slug.slice(1))}</a>`).join("");
+}
+function proCard(sub) {
+  const plan = sub ? describePlan(sub) : null;
+  if (plan?.plan === "pro") return `<article class="panel glass lo-pro on"><span class="lo-pro-badge"><span class="pro-gem" aria-hidden="true"></span>Gradify Pro</span><p class="sub">${esc(plan.line)}</p><a class="see" href="#/account">Manage</a></article>`;
+  return `<article class="panel glass lo-pro"><span class="lo-pro-badge"><span class="pro-gem" aria-hidden="true"></span>Gradify Pro</span>
+    <h3>${PRO_ON_SALE ? "Go further with Gradify AI" : "Coming soon"}</h3>
+    <p class="sub">${PRO_ON_SALE ? "Generous monthly Gradify AI allowances on every site." : "The premium Gradify experience, starting with Gradify AI. Everything you use today stays free."}</p>
+    <a class="btn btn-ghost lg btn-sm" href="${PRICING}"><span>${PRO_ON_SALE ? "See plans" : "See what's coming"}</span></a></article>`;
+}
+
+// everything waiting for review today, wherever it lives: course flashcards and questions, and decks from notes
+function dueHtml(s, courses) {
+  const rows = [
+    ...courses.filter((c) => c.dueCards || c.revisit).map((c) => ({ label: c.name, site: c.site, n: (c.dueCards || 0) + (c.revisit || 0), what: [c.dueCards ? `${c.dueCards} flashcard${c.dueCards === 1 ? "" : "s"}` : "", c.revisit ? `${c.revisit} question${c.revisit === 1 ? "" : "s"}` : ""].filter(Boolean).join(" · "), href: c.href ? `${c.href}#/review` : "#/learning" })),
+    ...(s.due.length ? [{ label: "Your notes", site: "Library", n: s.due.length, what: `${s.due.length} flashcard${s.due.length === 1 ? "" : "s"}`, href: "#/study" }] : []),
+  ].sort((a, b) => b.n - a.n);
+  const total = rows.reduce((a, r) => a + r.n, 0);
+  return `<article class="panel glass lo-due"><div class="panel-head"><h3>Due for review</h3><span class="pill-dark">${total ? `${total} today` : "all clear"}</span></div>
+    ${rows.length ? `<ul class="lo-courses">${rows.slice(0, 5).map((r) => `<li><a href="${esc(r.href)}"><span><b>${esc(r.label)}</b><em>${esc(r.what)}</em></span><span></span><em>Review</em></a></li>`).join("")}</ul><p class="sub">Reviewing just before you'd forget is what makes learning last.</p>`
+      : `<p class="sub">Nothing is due anywhere. Reviews appear here as flashcards and questions come back round.</p>`}
+  </article>`;
+}
+
+// ---------- My Learning ----------
+async function renderLearning() {
+  const [L, s] = await Promise.all([learnerAcross(), stats()]);
+  const courses = L?.courses || [];
+  view.innerHTML = `<section class="lifeos-page">
+    <header class="lo-head"><span class="kicker">${icon("book")}My Learning</span><h1>Everything you're learning</h1>
+      <p class="sub">Your courses on ${SITE ? esc(SITE) : "every Gradify site"} and the flashcards from your own notes, with what to do next in each.</p></header>
+    ${L?.next?.length ? `<article class="panel glass"><div class="panel-head"><h3>Do next, across your learning</h3><span class="pill-dark">ranked by what matters most</span></div>${nextList(L.next.slice(0, 5))}</article>` : ""}
+    <h2 class="lo-h">Courses</h2>
+    ${courses.length ? `<div class="lo-grid">${courses.map(courseCard).join("")}</div>`
+      : `<article class="panel glass lo-empty"><h3>No courses started yet</h3><p class="sub">Open any Gradify course and finish a lesson: it appears here with your progress and pace.</p><div class="lo-chips">${startCourses(L)}</div></article>`}
+    <h2 class="lo-h">Flashcards from your notes</h2>
+    ${s.cards.length ? `<article class="panel glass"><div class="deck-stats">
+        <div><b>${s.docs.length}</b><span>${s.docs.length === 1 ? "deck" : "decks"}</span></div><div><b>${s.cards.length}</b><span>cards</span></div>
+        <div><b>${s.due.length}</b><span>due now</span></div><div><b>${s.learned.length}</b><span>learned</span></div></div>
+        <div class="row-actions">${s.due.length ? `<a class="btn btn-light lg btn-sm" href="#/study"><span>Review ${s.due.length} due</span></a>` : ""}<a class="btn btn-ghost lg btn-sm" href="#/notes"><span>Open your library</span></a><a class="btn btn-ghost lg btn-sm" href="#/new"><span>Add notes</span></a></div></article>`
+      : `<article class="panel glass lo-empty"><h3>Turn your own notes into flashcards</h3><p class="sub">Paste or upload notes and Gradify makes flashcards, each checked against what you wrote, then schedules your reviews.</p><a class="btn btn-light lg btn-sm" href="#/new"><span>Add notes</span></a></article>`}
+    ${courses.length ? `<h2 class="lo-h">More Gradify courses</h2><div class="lo-chips">${startCourses(L, 12)}</div>` : ""}
+  </section>`;
+}
+routes.learning = renderLearning;
 
 // ---------- Topic: its mastery profile ----------
 const pctOf = (v) => `${Math.round(v * 100)}%`;
@@ -652,11 +786,9 @@ async function renderProgress() {
   });
   const fmax = Math.max(1, ...forecast);
   view.innerHTML = `<section class="progress">
-    <h1>Progress</h1>
-    <div class="deck-stats">
-      <div><b>${s.streak}</b><span>day streak</span></div><div><b>${s.longest}</b><span>longest streak</span></div>
-      <div><b>${s.reviews30}</b><span>reviews, 30 days</span></div><div><b>${s.xp}</b><span>XP · level ${levelOf(s.xp)}</span></div>
-    </div>
+    <span class="kicker lo-kicker">${icon("trend")}My Progress</span>
+    <h1>Your progress</h1>
+    <p class="sub lo-intro">Your activity on every Gradify site, mastery of the topics in your own notes, and below it your level, quests and achievements.</p>
     <article class="panel glass"><div class="panel-head"><h3>Your year</h3><span class="pill-dark">${Object.keys(s.byDay).length} active days</span></div><div class="hm-scroll">${heatmap(s.byDay, 52)}</div></article>
     <div class="prog-grid">
       <article class="panel glass"><div class="panel-head"><h3>Mastery by topic</h3><span class="pill-dark">most urgent first</span></div>
@@ -669,18 +801,53 @@ async function renderProgress() {
         <div class="forecast">${forecast.map((n, k) => `<div><span>${n}</span><i style="height:${(n / fmax) * 100}%"></i><em>${k === 0 ? "Today" : fmtDate(Date.now() + k * DAY, { weekday: "short" })}</em></div>`).join("")}</div>
       </article>
     </div>
+    <section class="gj lo-journey" id="lo-journey" aria-label="Level, quests and achievements"><p class="sub">Loading your level, quests and achievements…</p></section>
   </section>`;
+  // the Journey (kit/game/journey.js) lives here too, with its own styles, loaded once
+  if (!document.querySelector("link[data-game-css]")) document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" data-game-css href="${new URL("../styles/game.css", import.meta.url)}">`);
+  mountJourney(document.getElementById("lo-journey"), { embedded: true, store }).catch((e) => { console.warn("Journey", e); });
 }
 
 // ---------- Plan ----------
 const hhmm = (m) => `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
+// The next five weeks at a glance: study blocks, exam and deadline days (from the profile and from dates found in
+// notes), and today. Everything comes from plan_blocks and the profile; nothing new is stored.
+function monthGrid(blocksAhead, examDate) {
+  const start = new Date(); start.setHours(0, 0, 0, 0); start.setDate(start.getDate() - ((start.getDay() + 6) % 7));
+  const cells = [];
+  for (let i = 0; i < 35; i++) {
+    const d = dayKey(+start + i * DAY), list = blocksAhead.filter((b) => b.day === d);
+    const marks = [d === examDate || list.some((b) => b.cal === "exam") ? "exam" : "", list.some((b) => b.cal === "deadline") ? "deadline" : "", list.some((b) => b.cal === "study") ? "study" : ""].filter(Boolean);
+    const past = d < today(), label = `${fmtDate(d, { weekday: "long", day: "numeric", month: "long" })}${marks.includes("exam") ? ", exam" : ""}${marks.includes("deadline") ? ", deadline" : ""}${list.length ? `, ${list.length} planned` : ""}`;
+    cells.push(`<li class="${past ? "past" : ""} ${d === today() ? "today" : ""}" title="${esc(label)}" aria-label="${esc(label)}"><span>${new Date(d).getDate()}</span>${marks.map((m) => `<i class="mk ${m}"></i>`).join("")}</li>`);
+  }
+  return `<ol class="month" role="list">${["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((w) => `<li class="wd" aria-hidden="true">${w}</li>`).join("")}${cells.join("")}</ol>
+    <p class="sub month-key"><i class="mk exam"></i> Exam <i class="mk deadline"></i> Deadline <i class="mk study"></i> Study planned</p>`;
+}
+
 async function renderPlan() {
   const s = await stats();
   await ensureReviewBlock(s);
   const days = Array.from({ length: 7 }, (_, k) => dayKey(Date.now() + k * DAY));
-  const blocks = await store.listBlocks(days[0], days[6]);
+  const [blocks, ahead, L] = await Promise.all([store.listBlocks(days[0], days[6]), store.listBlocks(days[0], dayKey(Date.now() + 120 * DAY)).catch(() => []), learnerAcross()]);
+  // coming up: the exam date, dated items from notes (exam and deadline blocks), and each course's pace towards it
+  const examIn = profile.exam_date ? Math.ceil((new Date(profile.exam_date) - new Date(today())) / DAY) : null;
+  const upcoming = [
+    ...(examIn != null && examIn >= 0 ? [{ day: profile.exam_date, title: `Exam${profile.site ? ` (${profile.site})` : ""}`, kind: "exam" }] : []),
+    ...ahead.filter((b) => b.cal === "exam" || b.cal === "deadline").map((b) => ({ day: b.day, title: b.title, kind: b.cal })),
+  ].sort((a, b) => a.day.localeCompare(b.day)).slice(0, 8);
+  const paced = (L?.courses || []).filter((c) => c.examDate && c.pace && !["done", "no-date"].includes(c.pace.status));
   view.innerHTML = `<section class="planner">
-    <div class="deck-head"><div><h1>Plan</h1><p class="sub">Your next 7 days. Review blocks are added and ticked off automatically.</p></div><button type="button" class="btn btn-primary lg" id="autoplan"><span>Auto-plan my week</span></button></div>
+    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("calendar")}Calendar</span><h1>Your calendar</h1><p class="sub">Exams, deadlines and study across Gradify. Review blocks are added and ticked off automatically.</p></div><button type="button" class="btn btn-primary lg" id="autoplan"><span>Auto-plan my week</span></button></div>
+    <div class="cal-top">
+      <article class="panel glass"><div class="panel-head"><h3>Next five weeks</h3><span class="pill-dark">${fmtDate(Date.now(), { month: "long", year: "numeric" })}</span></div>${monthGrid(ahead, profile.exam_date)}</article>
+      <article class="panel glass"><div class="panel-head"><h3>Coming up</h3></div>
+        ${upcoming.length ? `<ul class="upcoming">${upcoming.map((u) => { const n = Math.ceil((new Date(u.day) - new Date(today())) / DAY); return `<li class="${u.kind}"><time><b>${new Date(u.day).getDate()}</b>${fmtDate(u.day, { month: "short" })}</time><span><b>${esc(u.title)}</b><em>${u.kind === "exam" ? "Exam" : "Deadline"} · ${n === 0 ? "today" : n === 1 ? "tomorrow" : `in ${n} days`}</em></span></li>`; }).join("")}</ul>`
+          : `<p class="sub">No exams or deadlines yet. Set your exam date in <a href="#/account">Account</a>; dates in notes you add (exams, deadlines) appear here too.</p>`}
+        ${paced.length ? `<h4 class="brief-h">Course pace</h4><ul class="upcoming pace">${paced.map((c) => { const [tone, label] = PACE[c.pace.status] || ["", c.pace.status]; return `<li><span><b>${esc(c.name)}</b><em class="${tone}">${esc(label)}${c.pace.needPerDay ? ` · about ${Math.round(c.pace.needPerDay * 10) / 10} lessons a day` : ""}</em></span></li>`; }).join("")}</ul>` : ""}
+      </article>
+    </div>
+    <h2 class="lo-h">This week</h2>
     <form class="panel glass add-block" id="add-block">
       <label><span>Day</span><select name="day">${days.map((d, k) => `<option value="${d}">${k === 0 ? "Today" : fmtDate(d, { weekday: "long", day: "numeric" })}</option>`).join("")}</select></label>
       <label><span>From</span><input type="time" name="from" value="18:00" step="900" required></label>
