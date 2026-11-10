@@ -133,7 +133,7 @@ export async function checksums(c, cols) {
 export const changed = (a, b) => Object.keys(a).filter((t) => a[t] !== b[t]);
 
 /** Migration rehearsal: apply one migration to a copy of `snap` and check every pre-existing value survives. */
-export async function rehearseMigration(snap, list, migration) {
+export async function rehearseMigration(snap, list, migration, intended = []) {
   const c = await tempDb();
   try {
     await applyMigrations(c, list, (snap.schema.migrations || []).map((r) => r.version));
@@ -141,9 +141,7 @@ export async function rehearseMigration(snap, list, migration) {
     const cols = await columnsNow(c), before = await checksums(c, cols);
     const text = migration.sql ?? (await readFile(migration.url, "utf8"));
     try { await c.sql(text); } catch (e) { return { ok: false, problems: [`the migration fails on a copy of the data: ${e.message}`] }; }
-    // owner settings rows the migration deliberately updates (scripts/supabase-admin.mjs configUpdates) aren't a loss
-    const { configUpdates } = await import("./supabase-admin.mjs");
-    const intended = configUpdates(text);
+    // owner settings tables the migration deliberately updates (the caller passes scripts/supabase-admin.mjs configUpdates)
     const after = await checksums(c, cols), diff = changed(before, after).filter((t) => !intended.includes(t));
     return { ok: diff.length === 0, problems: diff.map((t) => `${t}: existing values changed`), tables: Object.keys(cols).length };
   } finally { await c.close(); }

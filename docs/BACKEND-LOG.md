@@ -223,3 +223,131 @@ Note: this is a logical snapshot through the API. Auth accounts and storage file
 | tutor_usage | 3 |
 | waitlist | 0 |
 | workouts | 0 |
+
+## 2026-11-10 02:19 UTC · Backup · ezlohntrnassgsbofcfc
+
+Backup written to /tmp/claude-0/-home-user/e12758f2-df7b-5438-89fd-958e31037ed2/scratchpad/backup-2026-11-10d/gradify-ezlohntrnassgsbofcfc-2026-11-10T02-18-57-563Z.json (sha256 c96b9b990ced9bbb…, readable only by you) and **verified**: re-read from disk with a matching hash, every table's saved rows equal its count, a fresh count of the live database matches, and it was **restored into a separate temporary PostgreSQL database** (built from the 13 recorded migrations) with every row and value identical (20 tables, 574 rows). 20 public tables, 574 rows, 7 accounts (counted, not copied). 13 migrations already recorded.
+
+Note: this is a logical snapshot through the API. Auth accounts and storage files aren't included; Supabase's own daily backups (and point-in-time recovery on paid plans) cover those.
+
+| table | rows |
+|---|---|
+| activity | 0 |
+| ai_limits | 8 |
+| ai_settings | 1 |
+| assessment_attempts | 0 |
+| billing_events | 0 |
+| body_checkins | 0 |
+| cards | 0 |
+| course_progress | 0 |
+| documents | 0 |
+| fitness_tests | 0 |
+| packs | 0 |
+| page_events | 554 |
+| plan_blocks | 0 |
+| profiles | 7 |
+| revalidation_entries | 0 |
+| reviews | 0 |
+| subscriptions | 1 |
+| tutor_usage | 3 |
+| waitlist | 0 |
+| workouts | 0 |
+
+## 2026-11-10 02:27 UTC · Migrations · ezlohntrnassgsbofcfc
+
+All migrations applied and verified.
+
+| migration | result | objects checked | sha256 | detail |
+|---|---|---|---|---|
+| 20261028120000_gradify_core.sql | already applied |  | 669c6c071f0a |  |
+| 20261029120000_mastery_evidence.sql | already applied |  | 1fa8fc1287fa |  |
+| 20261031120000_sport_body_intelligence.sql | already applied |  | f57af713cf3d |  |
+| 20261101120000_assessment_attempts.sql | already applied |  | 9a4dc8f0f92c |  |
+| 20261105120000_course_progress.sql | already applied |  | 8e91fc50a9f0 |  |
+| 20261105130000_tutor_usage.sql | already applied |  | e28f425f9254 |  |
+| 20261105140000_revalidation.sql | already applied |  | ea912e3a20e6 |  |
+| 20261106120000_learner_profile.sql | already applied |  | 94038916a0d5 |  |
+| 20261106130000_tutor_modes.sql | already applied |  | 07067e243f59 |  |
+| 20261106140000_page_events.sql | already applied |  | 0a42ad23bb52 |  |
+| 20261107120000_game_rewards.sql | already applied |  | 40f556898d25 |  |
+| 20261110120000_billing_and_ai_allowances.sql | already applied |  | aeafef577d4e |  |
+| 20261110180000_monthly_ai_windows.sql | already applied |  | c565a2ddcac0 |  |
+| 20261111120000_ai_controls.sql | applied and verified | 41 | 5bbcecd24be9 |  |
+
+## 2026-11-10 02:27 UTC · Row-level security audit · ezlohntrnassgsbofcfc
+
+Every public table has row-level security, with policies limited to the row's owner where learners own the rows.
+
+| table | rls | learner-owned | policies | result |
+|---|---|---|---|---|
+| activity | on | yes | 1 | ok |
+| ai_admins | on | yes | 1 | ok |
+| ai_cache | on | no | 0 | ok |
+| ai_feature_models | on | no | 0 | ok |
+| ai_limits | on | no | 1 | ok |
+| ai_plan_caps | on | no | 1 | ok |
+| ai_prices | on | no | 0 | ok |
+| ai_settings | on | no | 0 | ok |
+| ai_testers | on | yes | 1 | ok |
+| assessment_attempts | on | yes | 3 | ok |
+| billing_events | on | no | 0 | ok |
+| body_checkins | on | yes | 1 | ok |
+| cards | on | yes | 1 | ok |
+| course_progress | on | yes | 4 | ok |
+| documents | on | yes | 1 | ok |
+| fitness_tests | on | yes | 1 | ok |
+| packs | on | yes | 1 | ok |
+| page_events | on | no | 1 | ok |
+| plan_blocks | on | yes | 1 | ok |
+| profiles | on | yes | 1 | ok |
+| revalidation_entries | on | yes | 4 | ok |
+| reviews | on | yes | 1 | ok |
+| subscriptions | on | yes | 1 | ok |
+| tutor_usage | on | yes | 2 | ok |
+| waitlist | on | no | 1 | ok |
+| workouts | on | yes | 1 | ok |
+
+## 2026-11-10 02:28 UTC · Gradify AI usage (read-only) · ezlohntrnassgsbofcfc
+
+**Gradify AI is OFF.**
+This month: £0.00 of the £50.00 budget (0%). Today: £0.00 of £5.00.
+3 requests from 1 learner; 0 in flight, 0 abandoned. Response cache: 0 answers, 0 reuses.
+Limits: 6 a minute and 60 an hour per learner, 120 a minute overall. Fair-use caps: free £1.00, pro £5.00 a month. £0.79 per $.
+
+### By feature and plan
+
+| feature | plan | requests | counted | failed | cached | input tokens | output tokens | cache reads | cost | per request |
+|---|---|---|---|---|---|---|---|---|---|---|
+| explain | free | 3 | 3 | 0 | 0 | 0 | 0 | 0 | £0.00 | 0.00p |
+
+### Top learners this month
+
+| learner | plan | requests | cost | fair-use cap |
+|---|---|---|---|---|
+| 0f6123cc | free | 3 | £0.00 | £1.00 |
+
+### Last 30 days
+
+| day | requests | cost |
+|---|---|---|
+| 2026-11-09 | 3 | £0.00 |
+
+### Failures in the last 7 days
+
+None yet.
+
+Changes made by this check: none.
+
+## 2026-11-10 02:35 UTC · Gradify AI functions deployed and verified (AI off) · ezlohntrnassgsbofcfc
+
+Deployed `course-tutor` and `study-pack` (v1, verify_jwt on) after the migration above. `ANTHROPIC_API_KEY` is not set.
+Checked live with a test learner: explain, Socratic turn, marking, study pack, AI quiz and card rewrite each answered
+503 `ai_off` with no usage row written (still 3 rows, none in flight); signed out 401. A learner calling `ai_claim`,
+`ai_settle`, `ai_claim_for`, `ai_settle_for`, `ai_cache_get`, `ai_usage_overview`, `ai_admin_overview` or `is_pro` gets
+403; reading `ai_settings`, `ai_prices`, `ai_feature_models`, `ai_cache`, `ai_testers` or `ai_admins` returns no rows;
+`my_ai_allowance` shows Free 5 / 5 / 1 / 2 with `enabled` false. `ai-usage.html`: signed out and non-owner messages
+correct; the owner view was checked with sample data only (adding a test account as an owner was not done).
+Settings after deploy: AI off, 0 testers, 0 owners; Pro allowances 40 / 25 / 5 / 8; caps Free £1, Pro £5; models:
+tutor and explain claude-opus-5-5, pack and quiz claude-sonnet-5-5.
+
+Changes made by this check: none.

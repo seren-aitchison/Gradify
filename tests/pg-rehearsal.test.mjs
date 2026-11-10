@@ -70,7 +70,7 @@ test("each later migration, rehearsed against real data, leaves every existing v
   const { c, list } = await seeded("20261101120000");
   let snap = JSON.parse(JSON.stringify(await snapshot(c)));
   for (const m of list.filter((x) => x.version > "20261101120000")) {
-    const r = await rehearseMigration(snap, list, m);
+    const r = await rehearseMigration(snap, list, m, configUpdates(await readFile(m.url, "utf8")));
     assert.equal(r.ok, true, `${m.file}: ${r.problems.join("; ")}`);
     const cols = await columnsNow(c), before = await checksums(c, cols);
     const applied = await migrate(c, { list: list.filter((x) => x.version <= m.version), backedUp: true });
@@ -165,5 +165,13 @@ test("test accounts: created with only a locally made bcrypt hash, and deletion 
   assert.equal(left, 1, "only the real learner remains among the ids named");
   assert.equal((await c.sql("select count(*)::int as n from auth.users"))[0].n, 1);
   assert.equal((await c.sql("select count(*)::int as n from auth.identities"))[0].n, 0, "identities go with their accounts");
+  await c.close();
+});
+
+test("a rehearsal still catches changes to settings tables the migration doesn't name", async () => {
+  const { c, list } = await seeded();
+  const snap = JSON.parse(JSON.stringify(await snapshot(c)));
+  const r = await rehearseMigration(snap, list, { sql: "update public.cards set back = 'x';" }, ["ai_limits"]);
+  assert.equal(r.ok, false);
   await c.close();
 });

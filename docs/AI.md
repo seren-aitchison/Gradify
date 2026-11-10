@@ -1,7 +1,7 @@
 # Gradify AI: owner runbook
 
 Gradify AI is the AI tutor (`course-tutor`) and AI study packs (`study-pack`), both Supabase Edge Functions that call
-Claude with a server-side Anthropic key. **It is off, and the functions aren't deployed yet.** This page is how it's controlled, watched and switched on.
+Claude with a server-side Anthropic key. **It is off for every account.** The controls and both functions have been live since 10 November 2026 and refuse every request (`ai_off`) until it's switched on. This page is how it's controlled, watched and switched on.
 Costs: `docs/AI-COSTS.md`. The app contract: `docs/APP-API.md` (Gradify AI).
 
 ## How a request is controlled
@@ -61,9 +61,8 @@ failures with their reasons.
 
 ## Switching on: the checklist
 
-1. Apply the migration and deploy (needs the owner's go-ahead; rehearsed against a backup of the live data):
-   `node scripts/supabase-admin.mjs backup <ref> <dir> --write`, then `node scripts/supabase-admin.mjs migrate <ref> --existing-data-backed-up --write`,
-   then deploy `course-tutor` and `study-pack`. While AI is off they refuse every request before any Claude call.
+1. Migration applied and both functions deployed (10 November 2026, after a verified backup and a rehearsal on a copy of
+   the live data; `docs/BACKEND-LOG.md`). While AI is off they refuse every request before any Claude call.
 2. Set the key: Supabase → Edge Functions → Secrets → `ANTHROPIC_API_KEY`. Set a spend limit on the Anthropic side
    too (Anthropic Console → Limits) as a second safety net.
 3. Make yourself an owner and a tester:

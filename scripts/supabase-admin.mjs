@@ -187,7 +187,7 @@ export async function migrate(c, { list, log = () => {}, next = false, backedUp 
     if (danger.length) { report.push({ ...m, result: "REFUSED", sha, error: `could change or remove existing data: ${danger.join("; ")}` }); log(`✗ ${m.file}: refused (${danger.join("; ")})`); return { ok: false, report, stoppedAt: m.file }; }
     // rehearse it first on a temporary copy of the current data (real PostgreSQL, never production)
     if (rehearse) {
-      const r = await rehearseMigration(JSON.parse(JSON.stringify(await snapshot(c))), list, m);
+      const r = await rehearseMigration(JSON.parse(JSON.stringify(await snapshot(c))), list, m, configUpdates(sql));
       if (!r.ok) { report.push({ ...m, result: "FAILED REHEARSAL", sha, error: r.problems.join("; ") }); log(`✗ ${m.file}: rehearsal on a copy failed (${r.problems.join("; ")})`); return { ok: false, report, stoppedAt: m.file }; }
       log(`✓ ${m.file}: rehearsed on a copy, every existing value unchanged`);
     }

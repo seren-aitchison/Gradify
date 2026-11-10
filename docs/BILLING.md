@@ -82,8 +82,8 @@ Only once Gradify AI is switched on (below), because Pro sells nothing else:
 
 ## Gradify AI: still off
 
-The AI functions have every control in place and will refuse every request until the owner switches Gradify AI on
-(or adds testers); the controls' migration and the deploy are waiting for the owner's go-ahead. Controls, monitoring and the switch-on checklist: `docs/AI.md`. Costs per learner: `docs/AI-COSTS.md`.
+The AI functions are deployed with every control in place and refuse every request until the owner switches Gradify AI
+on (or adds testers). Controls, monitoring and the switch-on checklist: `docs/AI.md`. Costs per learner: `docs/AI-COSTS.md`.
 
 ## Sign-in emails (Resend)
 
