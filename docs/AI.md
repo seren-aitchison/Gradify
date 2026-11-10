@@ -4,6 +4,30 @@ Gradify AI is the AI tutor (`course-tutor`) and AI study packs (`study-pack`), b
 Claude with a server-side Anthropic key. **It is off for every account.** The controls and both functions have been live since 10 November 2026 and refuse every request (`ai_off`) until it's switched on. This page is how it's controlled, watched and switched on.
 Costs: `docs/AI-COSTS.md`. The app contract: `docs/APP-API.md` (Gradify AI).
 
+## Status: paused by the owner (10 November 2026)
+
+Gradify AI is on hold while the core app is finished. Everything stays as deployed: the controls, the allowances and
+caps, and both functions, which refuse every request (`ai_off`). There is no Anthropic key, no API credit and no
+testers or owners yet, so nothing can cost money. Pro checkout stays closed.
+
+The model choice (`ai_feature_models`: Opus 5.5 for tutoring and explanations, Sonnet 5.5 for packs and quizzes) is a
+starting proposal, not a decision. Before launch, compare both models on identical notes (`node scripts/eval-notes.mjs
+--compare --long`) for accuracy and invented content, explanation quality, coverage of the important material,
+speed and real cost per request, then pick the combination.
+
+Two separate layers of spending control:
+
+| Where | Control | Recommended |
+|---|---|---|
+| Anthropic Console | Auto-reload of prepaid credits | **Off** |
+| Anthropic Console | Organisation / workspace spend limit | a strict monthly cap, in a separate "Gradify production" workspace |
+| Gradify (`ai_settings`) | Budgets for everyone together | £50 a month, £5 a day (set now) |
+| Gradify (`ai_limits`) | Allowance per learner | Free 5 / 5 / 1 / 2, Pro 40 / 25 / 5 / 8 a month (set now) |
+| Gradify (`ai_plan_caps`) | Fair-use cap per learner | Free £1, Pro £5 a month (set now) |
+
+The Gradify caps are per learner (1,000 Pro learners each have their own £5), so the overall budget and the Anthropic
+workspace cap are what bound the total.
+
 ## How a request is controlled
 
 Every request goes through one locked step in the database, `ai_claim_for`, before Claude is called:
