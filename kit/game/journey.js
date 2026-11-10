@@ -6,6 +6,7 @@ import { quests, nextSteps } from "./quests.js";
 import { achievements, nextAchievement } from "./achievements.js";
 import { dailyChallenge, challengeReward } from "./challenges.js";
 import { COURSES } from "../learning/learner-data.js";
+import { startedCourses } from "../learning/course-states.js";
 import { conceptGraph } from "../learning/concepts.js";
 import { weaknessTargets } from "../learning/targets.js";
 import { parseNotes } from "../course/notes.js";
@@ -21,33 +22,27 @@ const ic = (n) => `<span class="gj-ic" aria-hidden="true">${icon(n) || icon("sta
 const fmt = (n) => Number(n).toLocaleString("en-GB");
 const reduced = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// the courses this learner has started on this device, with their configs
-async function loadCourses() {
-  const out = [];
-  for (const [slug, page] of Object.entries(COURSES)) {
-    const S = read(`gradify.course.${slug}`);
-    if (!S || !((S.log || []).length || Object.keys(S.done || {}).length || (S.attempts || []).length)) continue;
-    try {
-      const cfg = (await import(`../courses/${slug}/course.js`)).default;
-      out.push({ slug, page, site: cfg.site, name: cfg.name, units: cfg.units, levels: cfg.levels, interactives: cfg.interactives, exams: cfg.exams, exploration: cfg.exploration, notes: cfg.notes, written: cfg.written || [], cfg, S });
-    } catch { /* a course that fails to load is left out, not shown broken */ }
-  }
-  return out;
-}
+// the courses this learner has started, with their configs: this device's progress, then the account's
+// (kit/learning/course-states.js, the same source goals use, so goal XP and the level always agree)
+const loadCourses = (store) => startedCourses(store);
 
 // embedded: inside the LifeOS app (My Progress), with an h2 heading instead of the page's h1
+// the learner's store, when the page doesn't pass one: the account when signed in, otherwise this device
+async function resolveStore(store) {
+  if (store) return store;
+  const local = new LocalStore();
+  try { const cloud = await CloudStore.create(); if (cloud && (await cloud.user())) return cloud; } catch { /* this device */ }
+  return local;
+}
 // learning outside courses (flashcards, packs, workouts), so the level and streak here match the account's
 async function outsideActivity(store) {
-  try {
-    let st = store;
-    if (!st) { st = new LocalStore(); const cloud = await CloudStore.create().catch(() => null); if (cloud && (await cloud.user())) st = cloud; }
-    return outsideCourses(await st.listActivity(400), Object.keys(COURSES));
-  } catch { return []; }
+  try { return outsideCourses(await store.listActivity(400), Object.keys(COURSES)); } catch { return []; }
 }
 
 /** The learner's level, XP, rank and streak, worked out exactly as the Journey does (for the LifeOS Command Centre). */
 export async function journeySummary({ store = null, now = Date.now() } = {}) {
-  const [courses, extra] = await Promise.all([loadCourses(), outsideActivity(store)]);
+  store = await resolveStore(store);
+  const [courses, extra] = await Promise.all([loadCourses(store), outsideActivity(store)]);
   const s = gameState(courses, read(GAME_KEY) || {}, { now, extra });
   const graphs = Object.fromEntries(courses.filter((c) => c.cfg.concepts).map((c) => [c.slug, conceptGraph(c.units, c.cfg.concepts)]));
   const Q = courses.length ? quests(s, { graphs }) : [];
@@ -59,7 +54,8 @@ export async function journeySummary({ store = null, now = Date.now() } = {}) {
 // store: the learner's store, when the page already has one (the LifeOS app); otherwise this device's, or the account's
 export async function mountJourney(root, { embedded = false, store = null } = {}) {
   let game = read(GAME_KEY) || {};
-  const [courses, extra] = await Promise.all([loadCourses(), outsideActivity(store)]);
+  store = await resolveStore(store);
+  const [courses, extra] = await Promise.all([loadCourses(store), outsideActivity(store)]);
   const graphs = Object.fromEntries(courses.filter((c) => c.cfg.concepts).map((c) => [c.slug, conceptGraph(c.units, c.cfg.concepts)]));
   let challenge = null, challengeState = null;
   const href = (slug, lesson) => `${COURSES[slug]}#/lesson/${lesson}`;

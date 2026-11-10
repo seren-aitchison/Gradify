@@ -3,7 +3,8 @@
 //  - CloudStore: their Gradify account in Supabase, protected by row-level security
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
 
-const uid = () => (crypto.randomUUID ? crypto.randomUUID() : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`);
+// a random UUID (the goals table needs one; older browsers without crypto.randomUUID get the same v4 format)
+const uid = () => (crypto.randomUUID ? crypto.randomUUID() : "10000000-1000-4000-8000-100000000000".replace(/[018]/g, (c) => (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)));
 const now = () => new Date().toISOString();
 export const cloudConfigured = () => Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
 
@@ -65,6 +66,19 @@ export class LocalStore {
     this.save(); return row;
   }
   async deleteRevalidation(id) { this.mem.revalidation = (this.mem.revalidation || []).filter((x) => x.id !== id); this.save(); }
+  // goals (kit/learning/goals.js). `expect`: the updated_at the edit started from; a newer copy refuses the edit
+  // another tab may have saved since this page loaded: goals always start from what's stored now
+  fresh() { try { const m = JSON.parse(localStorage.getItem(KEY) || "null"); if (m) this.mem = m; } catch { /* storage blocked: keep this page's copy */ } }
+  async listGoals() { this.fresh(); return (this.mem.goals || []).map((g) => ({ ...g })); }
+  async saveGoal(g, { expect = null } = {}) {
+    this.fresh();
+    const list = (this.mem.goals ||= []), i = list.findIndex((x) => x.id === g.id);
+    if (i >= 0 && expect && list[i].updated_at !== expect) throw Object.assign(new Error("This goal was changed somewhere else. Reload to see the latest version."), { conflict: true });
+    const row = { ...(i >= 0 ? list[i] : { created_at: now(), user_id: null }), ...g, id: g.id || uid(), updated_at: now() };
+    if (i >= 0) list[i] = row; else list.push(row);
+    this.save(); return { ...row };
+  }
+  async deleteGoal(id) { this.fresh(); this.mem.goals = (this.mem.goals || []).filter((g) => g.id !== id); this.save(); }
   async exportAll() { return JSON.parse(JSON.stringify(this.mem)); }
   async wipe() { this.mem = EMPTY(); this.save(); }
   hasData() { return this.mem.documents.length > 0 || this.mem.cards.length > 0; }
@@ -73,7 +87,17 @@ export class LocalStore {
 // ---------- Gradify account (Supabase) ----------
 export class CloudStore {
   mode = "cloud";
-  constructor(client) { this.db = client; }
+  constructor(client) { this.db = client; this._shared = new Map(); }
+  // Reads that several summaries make at once (the Command Centre gathers five) share one request for a few seconds;
+  // any change to that data forgets them. Not a cache across pages.
+  shared(key, fn) {
+    const copy = (r) => (Array.isArray(r) ? [...r] : r);   // each caller its own list, so one sort can't affect another
+    const hit = this._shared.get(key);
+    if (hit && Date.now() - hit.at < 5000) return hit.p.then(copy);
+    const p = fn(); this._shared.set(key, { at: Date.now(), p }); p.catch(() => this._shared.delete(key));
+    return p.then(copy);
+  }
+  fresh() { this._shared.clear(); this._cp = null; }
   static async create() {
     if (!cloudConfigured() || !window.supabase) return null;
     const store = new CloudStore(window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
@@ -110,21 +134,28 @@ export class CloudStore {
   async addDocument(d) { return this.q(this.db.from("documents").insert({ title: d.title, site: d.site, file_name: d.file_name, pages: d.pages, text: d.text }).select().single()); }
   async listDocuments() { return this.q(this.db.from("documents").select("id,title,site,file_name,pages,created_at").order("created_at", { ascending: false })); }
   async getDocument(id) { return this.q(this.db.from("documents").select("*").eq("id", id).single()); }
-  async deleteDocument(id) { await this.q(this.db.from("documents").delete().eq("id", id)); }
+  async deleteDocument(id) { this.fresh(); await this.q(this.db.from("documents").delete().eq("id", id)); }
   async addPack(p) { return this.q(this.db.from("packs").insert({ document_id: p.document_id, engine: p.engine, model: p.model, pack: p.pack, stats: p.stats }).select().single()); }
   async linkPack(packId, documentId) { await this.q(this.db.from("packs").update({ document_id: documentId }).eq("id", packId)); }
   async getPack(documentId) { const rows = await this.q(this.db.from("packs").select("*").eq("document_id", documentId).order("created_at", { ascending: false }).limit(1)); return rows[0] || null; }
-  async addCards(list) { return this.q(this.db.from("cards").insert(list.map(({ id, ...c }) => c)).select()); }
-  async listCards(filter = {}) { let q = this.db.from("cards").select("*").order("created_at"); if (filter.documentId) q = q.eq("document_id", filter.documentId); return this.q(q); }
-  async updateCard(id, patch) { return this.q(this.db.from("cards").update({ ...patch, updated_at: now() }).eq("id", id).select().single()); }
-  async deleteCard(id) { await this.q(this.db.from("cards").delete().eq("id", id)); }
-  async addReview(r) { await this.q(this.db.from("reviews").insert(r)); }
-  async listReviews(sinceDays = 400) { return this.q(this.db.from("reviews").select("*").gte("reviewed_at", new Date(Date.now() - sinceDays * 864e5).toISOString())); }
-  async logActivity(a) { return this.q(this.db.from("activity").insert({ site: a.site || "Gradify", kind: a.kind, xp: a.xp || 0, detail: a.detail || null }).select().single()); }
+  async addCards(list) { this.fresh(); return this.q(this.db.from("cards").insert(list.map(({ id, ...c }) => c)).select()); }
+  async listCards(filter = {}) { if (!filter.documentId) return this.shared("cards", () => this.q(this.db.from("cards").select("*").order("created_at"))); let q = this.db.from("cards").select("*").order("created_at").eq("document_id", filter.documentId); return this.q(q); }
+  async updateCard(id, patch) { this.fresh(); return this.q(this.db.from("cards").update({ ...patch, updated_at: now() }).eq("id", id).select().single()); }
+  async deleteCard(id) { this.fresh(); await this.q(this.db.from("cards").delete().eq("id", id)); }
+  async addReview(r) { this.fresh(); await this.q(this.db.from("reviews").insert(r)); }
+  async listReviews(sinceDays = 400) { return this.shared(`reviews:${sinceDays}`, () => this.q(this.db.from("reviews").select("*").gte("reviewed_at", new Date(Date.now() - sinceDays * 864e5).toISOString()))); }
+  async logActivity(a) { this.fresh(); return this.q(this.db.from("activity").insert({ site: a.site || "Gradify", kind: a.kind, xp: a.xp || 0, detail: a.detail || null }).select().single()); }
   // assessment attempts: one row per answer (supabase/migrations/20261101120000_assessment_attempts.sql)
   // course progress (kit/course/progress.js): one row per learner per course
   async getCourseProgress(subject) { const rows = await this.q(this.db.from("course_progress").select("state,updated_at").eq("subject", subject).limit(1)); return rows[0]?.state || null; }
-  async saveCourseProgress(subject, site, state) { const u = await this.user(); await this.q(this.db.from("course_progress").upsert({ user_id: u.id, subject, site, state, updated_at: now() })); }
+  // every course's progress in one request; screens that gather several summaries at once share it for a few seconds
+  async listCourseProgress() {
+    if (this._cp && Date.now() - this._cp.at < 5000) return this._cp.p;
+    const p = this.q(this.db.from("course_progress").select("subject,state,updated_at"));
+    this._cp = { at: Date.now(), p }; p.catch(() => { this._cp = null; });
+    return p;
+  }
+  async saveCourseProgress(subject, site, state) { const u = await this.user(); this._cp = null; await this.q(this.db.from("course_progress").upsert({ user_id: u.id, subject, site, state, updated_at: now() })); }
   // The same save, sent so that it survives the page closing (fetch keepalive). Synchronous on purpose: it is
   // called from pagehide, when awaiting anything may be too late. Returns false if it couldn't be sent this way
   // (not signed in yet, or over the browser's 64 KB keepalive limit); the device copy still syncs next visit.
@@ -150,7 +181,7 @@ export class CloudStore {
     const rows = await this.q(this.db.from("assessment_attempts").select("*").gte("created_at", new Date(Date.now() - sinceDays * 864e5).toISOString()).order("created_at"));
     return rows.map((r) => ({ schema: r.schema, id: r.id, at: r.created_at, site: r.site, subject: r.subject, context: r.context, contextId: r.context_id, question: { id: r.question_id, v: r.question_version, type: r.question_type, d: r.difficulty, objectives: r.objectives || [] }, lesson: r.lesson_id, module: r.module, unit: r.unit_id, response: r.response, score: Number(r.score), correct: r.correct, attempt: r.attempt, confidence: r.confidence, ms: r.ms, misconception: r.misconception, marking: { method: r.marking_method, status: r.marking_status } }));
   }
-  async listActivity(sinceDays = 400) { return this.q(this.db.from("activity").select("*").gte("at", new Date(Date.now() - sinceDays * 864e5).toISOString())); }
+  async listActivity(sinceDays = 400) { return this.shared(`activity:${sinceDays}`, () => this.q(this.db.from("activity").select("*").gte("at", new Date(Date.now() - sinceDays * 864e5).toISOString()))); }
   async listBlocks(fromDay, toDay) { return this.q(this.db.from("plan_blocks").select("*").gte("day", fromDay).lte("day", toDay)); }
   async saveBlock(b) { return b.id ? this.q(this.db.from("plan_blocks").update(b).eq("id", b.id).select().single()) : this.q(this.db.from("plan_blocks").insert(b).select().single()); }
   async deleteBlock(id) { await this.q(this.db.from("plan_blocks").delete().eq("id", id)); }
@@ -163,22 +194,52 @@ export class CloudStore {
     return { ...saved.entry, id: saved.id, kind: saved.kind, date: saved.occurred_on };
   }
   async deleteRevalidation(id) { await this.q(this.db.from("revalidation_entries").delete().eq("id", id)); }
+  // goals: one row each (supabase/migrations/20261112120000_goals.sql); row-level security keeps them the learner's own
+  async listGoals() { return this.q(this.db.from("goals").select("*").order("created_at")); }
+  async saveGoal(g, { expect = null } = {}) {
+    // updated_at is the database's (a trigger moves it forward on every change); the client only names the one it saw
+    const { user_id, created_at, updated_at, ...fields } = g;
+    const row = { ...fields, id: g.id || uid() };
+    if (expect) {
+      // an edit: applied only if nobody else has saved since it started (two devices, two tabs)
+      const rows = await this.q(this.db.from("goals").update(row).eq("id", row.id).eq("updated_at", expect).select());
+      if (!rows.length) throw Object.assign(new Error("This goal was changed somewhere else. Reload to see the latest version."), { conflict: true });
+      return rows[0];
+    }
+    return this.q(this.db.from("goals").insert(row).select().single());
+  }
+  async deleteGoal(id) { await this.q(this.db.from("goals").delete().eq("id", id)); }
+  // Move this device's goals into the account, on every signed-in visit until it succeeds. Safe to repeat or interrupt:
+  // goals keep their ids, so one the account already has (an earlier move, another device) is never added twice or
+  // overwritten; the device copies are removed only after the account has them all. Offline, nothing changes.
+  async moveGoals(local) {
+    const mine = await local.listGoals();
+    if (!mine.length) return { moved: 0, already: 0 };
+    const have = new Set((await this.listGoals()).map((g) => g.id));
+    const rows = mine.filter((g) => g.id && !have.has(g.id)).map(({ user_id, ...g }) => g);
+    if (rows.length) await this.q(this.db.from("goals").upsert(rows, { onConflict: "id", ignoreDuplicates: true }));
+    for (const g of mine) await local.deleteGoal(g.id);
+    return { moved: rows.length, already: mine.length - rows.length };
+  }
   async exportAll() {
     const t = ["profiles", "documents", "packs", "cards", "reviews", "activity", "plan_blocks"];
     const out = {};
     for (const name of t) out[name] = await this.q(this.db.from(name).select("*"));
     // tables added by later migrations: included when the migration has been run
-    for (const name of ["assessment_attempts", "course_progress", "revalidation_entries"]) { try { out[name] = await this.q(this.db.from(name).select("*")); } catch { /* not set up yet */ } }
+    for (const name of ["assessment_attempts", "course_progress", "revalidation_entries", "goals"]) { try { out[name] = await this.q(this.db.from(name).select("*")); } catch { /* not set up yet */ } }
     return out;
   }
   async wipe() {
+    this.fresh();
     for (const t of ["documents", "activity", "plan_blocks"]) await this.q(this.db.from(t).delete().not("id", "is", null));
     try { await this.q(this.db.from("course_progress").delete().not("subject", "is", null)); } catch { /* not set up yet */ }
     try { await this.q(this.db.from("revalidation_entries").delete().not("id", "is", null)); } catch { /* not set up yet */ }
+    try { await this.q(this.db.from("goals").delete().not("id", "is", null)); } catch { /* not set up yet */ }
   }
 
   // Move everything from this device into the account (after first sign-in)
   async importLocal(local) {
+    this.fresh();
     const m = await local.exportAll();
     const docIds = {}, cardIds = {};
     for (const d of m.documents) { const row = await this.addDocument(d); docIds[d.id] = row.id; }

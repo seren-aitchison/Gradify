@@ -132,9 +132,8 @@ export async function loadLearner({ now = Date.now(), store = null } = {}) {
   const [p, activity, cards, reviews] = await Promise.all([store.getProfile().catch(() => ({})), store.listActivity(400).catch(() => []), store.listCards().catch(() => []), store.listReviews(400).catch(() => [])]);
   const profile = { ...p, learner: learnerOf(p) };
   // course progress: this device's copy, and the account's for courses not opened on this device yet
-  const states = {};
-  for (const slug of Object.keys(COURSES)) { try { const s = JSON.parse(localStorage.getItem(`gradify.course.${slug}`) || "null"); if (s) states[slug] = s; } catch { /* storage blocked */ } }
-  if (store.mode === "cloud") await Promise.all(Object.keys(COURSES).filter((slug) => !states[slug]).map(async (slug) => { try { const s = await store.getCourseProgress(slug); if (s) states[slug] = s; } catch { /* not set up */ } }));
+  const { courseStates } = await import("./course-states.js");
+  const states = await courseStates(store);
   const courses = [];
   for (const [slug, S] of Object.entries(states)) {
     try { courses.push(courseSummary((await import(`../courses/${slug}/course.js`)).default, S, { now, profile })); } catch (e) { console.warn(`Couldn't read ${slug} progress`, e); }

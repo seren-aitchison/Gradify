@@ -20,6 +20,8 @@ import { sixHtml, calibrationHtml, HOW } from "../learning/mastery-view.js";
 import { levelOf as gameLevelOf } from "../game/engine.js";
 import { loadLearner, COURSES } from "../learning/learner-data.js";
 import { mountJourney, journeySummary } from "../game/journey.js";
+import { AREAS, METRICS, PERIODS, HABIT_MODES, validateGoal, goalProgress, focusGoals } from "../learning/goals.js";
+import { goalData } from "../learning/goal-data.js";
 import { PRO_ON_SALE } from "../data/billing.js";
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -84,11 +86,12 @@ const NAV = [
   ["today", "Command Centre", "Today", "home"],
   ["learning", "My Learning", "Learning", "book"],
   ["plan", "Calendar", "Calendar", "calendar"],
+  ["goals", "My Goals", "Goals", "trophy"],
   ["progress", "My Progress", "Progress", "trend"],
   ["notes", "Library", "Library", "layers"],
 ];
 // screens that belong to a section without being one
-const SECTION_OF = { deck: "notes", new: "notes", topic: "progress", study: "learning", account: null, start: null };
+const SECTION_OF = { deck: "notes", new: "notes", topic: "progress", study: "learning", account: null, start: null, goal: "goals" };
 function drawNav() {
   for (const nav of document.querySelectorAll(".app-nav")) nav.innerHTML = NAV.map(([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`).join("");
   for (const nav of document.querySelectorAll(".tabbar")) nav.innerHTML = NAV.map(([r, , short, ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${short}</span></a>`).join("");
@@ -551,7 +554,7 @@ function heatmap(byDay, weeks = 16) {
   return `<div class="hm" style="--weeks:${Math.ceil(((+end - +start) / DAY + 1) / 7)}">${cells}</div>`;
 }
 async function renderToday() {
-  const [s, L, sub, G] = await Promise.all([stats(), learnerAcross(), store.mode === "cloud" ? mySubscription(store).catch(() => null) : null, journeySummary({ store }).catch(() => null)]);
+  const [s, L, sub, G, GO] = await Promise.all([stats(), learnerAcross(), store.mode === "cloud" ? mySubscription(store).catch(() => null) : null, journeySummary({ store }).catch(() => null), loadGoals().catch(() => ({ goals: [], progress: {}, unavailable: "x" }))]);
   const blocks = (await ensureReviewBlock(s)).sort((a, b) => a.start_min - b.start_min);
   const site = siteOf(profile.site);
   // level and streak as the Journey works them out (rest days included), so every screen agrees
@@ -598,6 +601,7 @@ async function renderToday() {
       ${L?.next?.length > (s.cards.length ? 0 : 1) ? `<article class="panel glass"><div class="panel-head"><h3>${s.cards.length ? "Across" : "Then, across"} ${SITE ? esc(SITE) : "Gradify"}</h3><a class="see" href="#/learning">My Learning</a></div>${nextList(L.next.slice(s.cards.length ? 0 : 1, s.cards.length ? 3 : 4))}</article>` : ""}
       ${courses.length ? `<article class="panel glass"><div class="panel-head"><h3>Your courses</h3><span class="pill-dark">${courses.length}</span></div><ul class="lo-courses">${courses.slice(0, 4).map((c) => { const pct = c.written ? Math.round((100 * c.done) / c.written) : 0; return `<li><a href="${c.href && c.next ? `${c.href}#/lesson/${encodeURIComponent(c.next.id)}` : c.href || "#/learning"}"><span><b>${esc(c.name)}</b><em>${c.next ? `Next: ${esc(c.next.title)}` : "Finished"}</em></span><span class="goal-bar" role="img" aria-label="${pct}%"><i style="width:${pct}%"></i></span><em>${pct}%</em></a></li>`; }).join("")}</ul></article>` : ""}
     </div>` : ""}
+    ${goalsPanel(GO)}
     <div class="today-grid">
       <article class="panel glass lo-day" aria-live="polite"></article>
       ${dueHtml(s, courses)}
@@ -694,6 +698,188 @@ function dueHtml(s, courses) {
   return `<article class="panel glass lo-due"><div class="panel-head"><h3>Due for review</h3><span class="pill-dark">${total ? `${total} today` : "all clear"}</span></div>
     ${rows.length ? `<ul class="lo-courses">${rows.slice(0, 5).map((r) => `<li><a href="${esc(r.href)}"><span><b>${esc(r.label)}</b><em>${esc(r.what)}</em></span><span></span><em>Review</em></a></li>`).join("")}</ul><p class="sub">Reviewing just before you'd forget is what makes learning last.</p>`
       : `<p class="sub">Nothing is due anywhere. Reviews appear here as flashcards and questions come back round.</p>`}
+  </article>`;
+}
+
+// ---------- Goals ----------
+// Goals live in the learner's store (public.goals); their progress is worked out each time from existing records
+// (kit/learning/goals.js, kit/learning/goal-data.js), never stored.
+const TZ = (() => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || "Europe/London"; } catch { return "Europe/London"; } })();
+const DAY_LETTERS = ["M", "T", "W", "T", "F", "S", "S"];
+async function loadGoals() {
+  let goals = [];
+  try { goals = await store.listGoals(); } catch (e) { console.warn("Goals", e?.message); return { goals: [], progress: {}, unavailable: "Goals aren't switched on for Gradify accounts yet, or couldn't be reached. Nothing you've set is lost; try again shortly." }; }
+  const data = await goalData(store, goals);
+  return { goals, data, progress: Object.fromEntries(goals.map((g) => [g.id, goalProgress(g, data)])) };
+}
+const areaLabel = (a) => AREAS.find(([k]) => k === a)?.[1] || "Learning";
+const courseName = (slug) => (slug ? slug[0].toUpperCase() + slug.slice(1) : "");
+function goalSummaryLine(g, p) {
+  if (!p.available) return p.note;
+  const bits = [];
+  if (p.value != null && p.target) bits.push(`${Math.round(p.value * 10) / 10} of ${p.target} ${p.unit || ""}`.trim());
+  if (g.metric) bits.push(`${METRICS[`${g.metric.source}:${g.metric.metric}`]?.label.replace(/ \(any site, or one\)/, "")}${g.metric.course ? `: ${courseName(g.metric.course)}` : ""}${g.metric.site ? ` (${g.metric.site})` : ""}, ${{ since_start: "since you set it", week: "this week", month: "this month", all_time: "in total" }[g.metric.period] || ""}`);
+  if (p.milestones.total) bits.push(`${p.milestones.done} of ${p.milestones.total} steps`);
+  if (p.habit) bits.push(`${p.habit.label}: ${p.habit.hit} of ${p.habit.required} this week`);
+  return bits.join(" · ");
+}
+function habitDots(h) {
+  if (!h) return "";
+  return `<span class="hb-week" role="img" aria-label="This week: ${h.hit} of ${h.required} days">${h.keys.map((k, i) => `<i class="${h.done.includes(k) ? "on" : ""} ${k === h.today ? "today" : ""}" title="${k}">${DAY_LETTERS[i]}</i>`).join("")}</span>`;
+}
+function goalCard(g, p, { compact = false } = {}) {
+  const pct = p.pct == null ? null : Math.round(p.pct * 100);
+  const due = p.daysLeft == null ? "" : p.overdue ? `<span class="gl-due late">${-p.daysLeft} day${p.daysLeft === -1 ? "" : "s"} overdue</span>` : `<span class="gl-due">${p.daysLeft === 0 ? "Due today" : `${p.daysLeft} day${p.daysLeft === 1 ? "" : "s"} left`}</span>`;
+  return `<article class="panel glass goal ${g.status} ${p.available ? "" : "unavailable"}" data-goal="${esc(g.id)}">
+    <div class="gl-top"><span class="gl-area">${esc(areaLabel(g.area))}${g.site ? ` · ${esc(g.site)}` : ""}</span>${g.pinned ? `<span class="gl-pin">${icon("star")} Pinned</span>` : ""}${g.status === "paused" ? `<span class="gl-pin">Paused</span>` : ""}${due}</div>
+    <h3>${esc(g.title)}</h3>
+    ${pct != null ? `<div class="goal-bar" role="img" aria-label="${pct}% done"><i style="width:${pct}%"></i></div>` : ""}
+    <p class="sub">${esc(goalSummaryLine(g, p))}${pct != null ? ` · ${pct}%` : ""}</p>
+    ${habitDots(p.habit)}
+    ${compact ? "" : `<div class="row-actions gl-actions">
+      ${g.status === "active" && g.target && !g.metric ? `<button type="button" class="btn btn-light lg btn-sm" data-act="plus"><span>+1 ${esc(g.unit || "")}</span></button>` : ""}
+      <a class="btn btn-ghost lg btn-sm" href="#/goal/edit/${encodeURIComponent(g.id)}"><span>Edit</span></a>
+      ${g.status === "active" ? `<button type="button" class="btn btn-ghost lg btn-sm" data-act="pin"><span>${g.pinned ? "Unpin" : "Pin to Command Centre"}</span></button>
+        <button type="button" class="btn btn-ghost lg btn-sm" data-act="pause"><span>Pause</span></button>
+        <button type="button" class="btn btn-ghost lg btn-sm" data-act="done"><span>Mark done</span></button>` : ""}
+      ${g.status === "paused" ? `<button type="button" class="btn btn-ghost lg btn-sm" data-act="resume"><span>Resume</span></button>` : ""}
+      ${g.status === "done" || g.status === "archived" ? `<button type="button" class="btn btn-ghost lg btn-sm" data-act="resume"><span>Make active again</span></button>` : ""}
+      ${g.status !== "archived" ? `<button type="button" class="btn btn-ghost lg btn-sm" data-act="archive"><span>Archive</span></button>` : `<button type="button" class="btn btn-ghost lg btn-sm danger" data-act="delete"><span>Delete</span></button>`}
+    </div>`}
+  </article>`;
+}
+// one change to a goal, refused if another device saved it first
+async function changeGoal(g, patch, done) {
+  try { await store.saveGoal({ ...g, ...patch }, { expect: g.updated_at }); if (done) toast(done); }
+  catch (e) { toast(esc(e.conflict ? e.message : `Couldn't save: ${e.message}`)); }
+  route();
+}
+function wireGoalActions(goals) {
+  view.querySelectorAll("[data-goal] [data-act]").forEach((b) => b.addEventListener("click", async () => {
+    const g = goals.find((x) => x.id === b.closest("[data-goal]").dataset.goal); if (!g) return;
+    const act = b.dataset.act;
+    if (act === "plus") return changeGoal(g, { manual_value: Number(g.manual_value || 0) + 1 });
+    if (act === "pin") return changeGoal(g, { pinned: !g.pinned });
+    if (act === "pause") return changeGoal(g, { status: "paused" }, "Paused. It won't show in the Command Centre.");
+    if (act === "resume") return changeGoal(g, { status: "active", done_at: null });
+    if (act === "done") return changeGoal(g, { status: "done", done_at: new Date().toISOString(), pinned: false }, "Goal complete. Well done.");
+    if (act === "archive") return changeGoal(g, { status: "archived", pinned: false }, "Archived.");
+    if (act === "delete") { if (!confirm(`Delete "${g.title}"? This can't be undone.`)) return; await store.deleteGoal(g.id); toast("Deleted."); route(); }
+  }));
+}
+
+async function renderGoals() {
+  const { goals, progress, unavailable } = await loadGoals();
+  const by = (st) => goals.filter((g) => g.status === st);
+  const active = [...by("active")].sort((a, b) => (b.pinned - a.pinned) || ((progress[a.id].daysLeft ?? 9999) - (progress[b.id].daysLeft ?? 9999)));
+  const recent = by("done").sort((a, b) => String(b.done_at).localeCompare(String(a.done_at)));
+  view.innerHTML = `<section class="lifeos-page goals-page">
+    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("trophy")}My Goals</span><h1>Your goals</h1><p class="sub">Learning, career, skills, health and personal goals. Progress on courses, XP, study days and flashcards updates by itself from what you do on Gradify.</p></div><a class="btn btn-primary lg" href="#/goal/new"><span>+ New goal</span></a></div>
+    ${unavailable ? `<article class="panel glass"><h3>Goals aren't available right now</h3><p class="sub">${esc(unavailable)}</p></article>` : ""}
+    ${active.length ? `<div class="lo-grid">${active.map((g) => goalCard(g, progress[g.id])).join("")}</div>`
+      : `<article class="panel glass lo-empty"><h3>No active goals</h3><p class="sub">Set a goal and link it to what Gradify already tracks, such as lessons in a course, XP each week or days you study, or count something yourself.</p><a class="btn btn-light lg btn-sm" href="#/goal/new"><span>Set a goal</span></a></article>`}
+    ${by("paused").length ? `<h2 class="lo-h">Paused</h2><div class="lo-grid">${by("paused").map((g) => goalCard(g, progress[g.id])).join("")}</div>` : ""}
+    ${recent.length ? `<h2 class="lo-h">Completed</h2><div class="lo-grid">${recent.map((g) => goalCard(g, progress[g.id])).join("")}</div>` : ""}
+    ${by("archived").length ? `<details class="gl-archived"><summary>Archived (${by("archived").length})</summary><div class="lo-grid">${by("archived").map((g) => goalCard(g, progress[g.id])).join("")}</div></details>` : ""}
+  </section>`;
+  wireGoalActions(goals);
+}
+routes.goals = renderGoals;
+
+// create or edit one goal
+async function renderGoalForm(arg) {
+  const [mode, id] = String(arg || "new").split("/").length > 1 ? String(arg).split("/") : [arg || "new"];
+  const goals = await store.listGoals().catch(() => []);
+  const g = mode === "edit" ? goals.find((x) => x.id === decodeURIComponent(id)) : null;
+  if (mode === "edit" && !g) { view.innerHTML = `<article class="panel glass"><h3>That goal isn't here any more</h3><a class="see" href="#/goals">Back to your goals</a></article>`; return; }
+  const kind = g ? (g.metric ? "tracked" : g.habit ? "habit" : g.target ? "counted" : "checklist") : "tracked";
+  const m = g?.metric || {}, h = g?.habit || {};
+  const sites = SITES.filter((x) => x.built);
+  view.innerHTML = `<section class="lifeos-page goal-form-page">
+    <a class="see" href="#/goals">← Your goals</a>
+    <h1>${g ? "Edit goal" : "New goal"}</h1>
+    <form class="panel glass setup-form goal-form" id="goal-form" novalidate>
+      <label class="wide"><span>Goal</span><input name="title" maxlength="120" required value="${esc(g?.title || "")}" placeholder="e.g. Finish Contract Law, or Run three times a week"></label>
+      <label><span>Area</span><select name="area">${AREAS.map(([k, l]) => `<option value="${k}" ${(g?.area || "learning") === k ? "selected" : ""}>${l}</option>`).join("")}</select></label>
+      <label><span>Target date (optional)</span><input type="date" name="target_date" value="${esc(g?.target_date || "")}"></label>
+      <fieldset class="wide gf-kind"><legend>How is progress measured?</legend>
+        ${[["tracked", "Gradify tracks it", "Lessons, schools or XP in a course, XP across Gradify, study days, or flashcard reviews"], ["counted", "I count it", "Something Gradify can't see, like applications sent or books read"], ["habit", "A habit", "Every day, chosen days, or a number of days a week, from your activity"], ["checklist", "A checklist", "Steps you tick off"]].map(([k, t, d]) => `<label class="gf-opt"><input type="radio" name="kind" value="${k}" ${kind === k ? "checked" : ""}><span><b>${t}</b><em>${d}</em></span></label>`).join("")}
+      </fieldset>
+      <div class="wide gf-part" data-part="tracked">
+        <label><span>What it measures</span><select name="metric">${Object.entries(METRICS).map(([k, d]) => `<option value="${k}" ${`${m.source}:${m.metric}` === k ? "selected" : ""}>${d.label}</option>`).join("")}</select></label>
+        <label data-needs="course"><span>Course</span><select name="course">${Object.keys(COURSES).map((c) => `<option value="${c}" ${m.course === c ? "selected" : ""}>${esc(courseName(c))}</option>`).join("")}</select></label>
+        <label data-needs="site"><span>Site (optional)</span><select name="msite"><option value="">Any Gradify site</option>${sites.map((x) => `<option ${m.site === x.n ? "selected" : ""}>${esc(x.n)}</option>`).join("")}</select></label>
+        <label><span>Counted</span><select name="period">${PERIODS.map(([k, l]) => `<option value="${k}" ${(m.period || "since_start") === k ? "selected" : ""}>${l}</option>`).join("")}</select></label>
+        <label><span>Target</span><input type="number" name="ttarget" min="1" step="1" value="${g?.metric ? esc(g.target) : ""}" placeholder="e.g. 20"></label>
+      </div>
+      <div class="wide gf-part" data-part="counted">
+        <label><span>Target</span><input type="number" name="ctarget" min="1" step="1" value="${!g?.metric && g?.target ? esc(g.target) : ""}" placeholder="e.g. 3"></label>
+        <label><span>Unit</span><input name="unit" maxlength="24" value="${!g?.metric ? esc(g?.unit || "") : ""}" placeholder="e.g. applications"></label>
+        <label><span>So far</span><input type="number" name="manual_value" min="0" step="1" value="${esc(g?.manual_value ?? 0)}"></label>
+      </div>
+      <div class="wide gf-part" data-part="habit">
+        <label><span>How often</span><select name="hmode">${HABIT_MODES.map(([k, l]) => `<option value="${k}" ${(h.mode || "per_week") === k ? "selected" : ""}>${l}</option>`).join("")}</select></label>
+        <fieldset data-needs="weekdays" class="gf-days"><legend>Days</legend>${["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((d, i) => `<label><input type="checkbox" name="hday" value="${i + 1}" ${(h.days || []).includes(i + 1) ? "checked" : ""}> ${d}</label>`).join("")}</fieldset>
+        <label data-needs="per_week"><span>Days a week</span><input type="number" name="per_week" min="1" max="7" value="${esc(h.per_week || 3)}"></label>
+        <label><span>What counts</span><select name="hwhat"><option value="">Any learning on Gradify</option><option value="kind:workout" ${h.kind === "workout" ? "selected" : ""}>A logged workout (SportGradify)</option>${sites.map((x) => `<option value="site:${esc(x.n)}" ${h.site === x.n ? "selected" : ""}>Activity on ${esc(x.n)}</option>`).join("")}</select></label>
+      </div>
+      <div class="wide gf-steps"><span class="gf-label">Steps (optional for every kind of goal)</span>
+        <ul id="gf-steps">${(g?.milestones || []).map((x) => `<li data-id="${esc(x.id)}" data-done="${esc(x.done_at || "")}"><label><input type="checkbox" ${x.done_at ? "checked" : ""}> <input class="gf-step" value="${esc(x.title)}" maxlength="120" aria-label="Step"></label><button type="button" class="icon-btn" data-del aria-label="Remove step">${icon("x")}</button></li>`).join("")}</ul>
+        <button type="button" class="btn btn-ghost lg btn-sm" id="gf-add"><span>+ Add a step</span></button></div>
+      <p class="sub gf-errors" id="gf-errors" role="alert"></p>
+      <div class="wide row-actions"><button class="btn btn-primary lg" type="submit"><span>${g ? "Save goal" : "Create goal"}</span></button><a class="btn btn-ghost lg" href="#/goals"><span>Cancel</span></a></div>
+    </form>
+  </section>`;
+  const form = view.querySelector("#goal-form");
+  const show = () => {
+    const k = form.kind.value, metric = METRICS[form.metric.value], hm = form.hmode.value;
+    form.querySelectorAll(".gf-part").forEach((el) => { el.hidden = el.dataset.part !== k; });
+    form.querySelector('[data-needs="course"]').hidden = !metric?.needsCourse;
+    form.querySelector('[data-needs="site"]').hidden = form.metric.value !== "activity:days";
+    form.querySelector('[data-needs="weekdays"]').hidden = hm !== "weekdays";
+    form.querySelector('[data-needs="per_week"]').hidden = hm !== "per_week";
+  };
+  form.addEventListener("change", show); show();
+  const stepRow = (t = "") => `<li data-id="" data-done=""><label><input type="checkbox"> <input class="gf-step" value="${esc(t)}" maxlength="120" aria-label="Step"></label><button type="button" class="icon-btn" data-del aria-label="Remove step">${icon("x")}</button></li>`;
+  view.querySelector("#gf-add").addEventListener("click", () => { view.querySelector("#gf-steps").insertAdjacentHTML("beforeend", stepRow()); view.querySelector("#gf-steps li:last-child .gf-step").focus(); });
+  view.querySelector("#gf-steps").addEventListener("click", (e) => { if (e.target.closest("[data-del]")) e.target.closest("li").remove(); });
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const k = form.kind.value, [source, metric] = form.metric.value.split(":");
+    const milestones = [...view.querySelectorAll("#gf-steps li")].map((li) => ({ id: li.dataset.id || undefined, title: li.querySelector(".gf-step").value, done_at: li.querySelector("input[type=checkbox]").checked ? (li.dataset.done || new Date().toISOString()) : null }));
+    const what = form.hwhat.value;
+    const draft = {
+      ...(g || {}), id: g?.id, title: form.title.value, area: form.area.value, target_date: form.target_date.value || null, tz: g?.tz || TZ,
+      site: k === "tracked" && METRICS[form.metric.value]?.needsCourse ? null : (g?.site ?? null), status: g?.status || "active", pinned: g?.pinned ?? false, milestones,
+      metric: k === "tracked" ? { source, metric, course: form.course.value, site: form.msite.value || undefined, period: form.period.value } : null,
+      target: k === "tracked" ? form.ttarget.value : k === "counted" ? form.ctarget.value : null,
+      unit: k === "counted" ? (form.unit.value.trim() || null) : null,
+      manual_value: k === "counted" ? Number(form.manual_value.value || 0) : null,
+      habit: k === "habit" ? { mode: form.hmode.value, days: [...form.querySelectorAll("[name=hday]:checked")].map((x) => Number(x.value)), per_week: Number(form.per_week.value), ...(what.startsWith("kind:") ? { kind: what.slice(5) } : what.startsWith("site:") ? { site: what.slice(5) } : {}) } : null,
+    };
+    const { goal, errors } = validateGoal(draft);
+    if (k === "checklist" && !goal.milestones.length) errors.push("Add at least one step.");
+    if (errors.length) { view.querySelector("#gf-errors").textContent = errors.join(" "); return; }
+    if (goal.metric?.course) goal.site = SITES.find((x) => COURSES[goal.metric.course]?.startsWith(`/${x.n.toLowerCase()}`))?.n || goal.site || null;
+    try {
+      await store.saveGoal(goal, { expect: g ? g.updated_at : null });
+      toast(g ? "Goal saved." : "Goal created."); location.hash = "#/goals";
+    } catch (err) { view.querySelector("#gf-errors").textContent = err.conflict ? err.message : `Couldn't save: ${err.message}`; }
+  });
+}
+routes.goal = renderGoalForm;
+
+// the Command Centre's goals: a few in focus, today's habits, and what was finished recently
+function goalsPanel({ goals, progress, unavailable }) {
+  if (unavailable) return "";
+  const focus = focusGoals(goals, progress, 3), done = goals.filter((g) => g.status === "done" && g.done_at && Date.now() - Date.parse(g.done_at) < 14 * DAY);
+  const habitsToday = goals.filter((g) => g.status === "active" && progress[g.id]?.habit?.todayRequired && !progress[g.id]?.habit?.todayDone);
+  const more = goals.filter((g) => g.status === "active").length - focus.length;
+  return `<article class="panel glass lo-goals"><div class="panel-head"><h3>Goals</h3><a class="see" href="#/goals">${more > 0 ? `All goals (${more} more)` : "All goals"}</a></div>
+    ${focus.length ? `<div class="lo-goal-list">${focus.map((g) => goalCard(g, progress[g.id], { compact: true })).join("")}</div>`
+      : `<p class="sub">No active goals. <a href="#/goal/new">Set one</a>, such as finishing a course by a date or studying four days a week.</p>`}
+    ${habitsToday.length ? `<p class="sub lo-hb-today">${icon("flame")} Today: ${habitsToday.map((g) => esc(g.title)).join(", ")}</p>` : ""}
+    ${done.length ? `<p class="sub">${icon("check")} Recently completed: ${done.map((g) => esc(g.title)).join(", ")}</p>` : ""}
   </article>`;
 }
 
@@ -817,32 +1003,34 @@ function monthGrid(blocksAhead, examDate) {
   const cells = [];
   for (let i = 0; i < 35; i++) {
     const d = dayKey(+start + i * DAY), list = blocksAhead.filter((b) => b.day === d);
-    const marks = [d === examDate || list.some((b) => b.cal === "exam") ? "exam" : "", list.some((b) => b.cal === "deadline") ? "deadline" : "", list.some((b) => b.cal === "study") ? "study" : ""].filter(Boolean);
-    const past = d < today(), label = `${fmtDate(d, { weekday: "long", day: "numeric", month: "long" })}${marks.includes("exam") ? ", exam" : ""}${marks.includes("deadline") ? ", deadline" : ""}${list.length ? `, ${list.length} planned` : ""}`;
+    const marks = [d === examDate || list.some((b) => b.cal === "exam") ? "exam" : "", list.some((b) => b.cal === "deadline") ? "deadline" : "", list.some((b) => b.cal === "goal") ? "goal" : "", list.some((b) => b.cal === "study") ? "study" : ""].filter(Boolean);
+    const past = d < today(), label = `${fmtDate(d, { weekday: "long", day: "numeric", month: "long" })}${marks.includes("exam") ? ", exam" : ""}${marks.includes("deadline") ? ", deadline" : ""}${marks.includes("goal") ? ", goal due" : ""}${list.filter((b) => b.cal !== "goal").length ? `, ${list.filter((b) => b.cal !== "goal").length} planned` : ""}`;
     cells.push(`<li class="${past ? "past" : ""} ${d === today() ? "today" : ""}" title="${esc(label)}" aria-label="${esc(label)}"><span>${new Date(d).getDate()}</span>${marks.map((m) => `<i class="mk ${m}"></i>`).join("")}</li>`);
   }
   return `<ol class="month" role="list">${["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((w) => `<li class="wd" aria-hidden="true">${w}</li>`).join("")}${cells.join("")}</ol>
-    <p class="sub month-key"><i class="mk exam"></i> Exam <i class="mk deadline"></i> Deadline <i class="mk study"></i> Study planned</p>`;
+    <p class="sub month-key"><i class="mk exam"></i> Exam <i class="mk deadline"></i> Deadline <i class="mk goal"></i> Goal due <i class="mk study"></i> Study planned</p>`;
 }
 
 async function renderPlan() {
   const s = await stats();
   await ensureReviewBlock(s);
   const days = Array.from({ length: 7 }, (_, k) => dayKey(Date.now() + k * DAY));
-  const [blocks, ahead, L] = await Promise.all([store.listBlocks(days[0], days[6]), store.listBlocks(days[0], dayKey(Date.now() + 120 * DAY)).catch(() => []), learnerAcross()]);
+  const [blocks, ahead, L, goalsAll] = await Promise.all([store.listBlocks(days[0], days[6]), store.listBlocks(days[0], dayKey(Date.now() + 120 * DAY)).catch(() => []), learnerAcross(), store.listGoals().catch(() => [])]);
+  const goalDates = goalsAll.filter((g) => g.status === "active" && g.target_date && g.target_date >= days[0]);
   // coming up: the exam date, dated items from notes (exam and deadline blocks), and each course's pace towards it
   const examIn = profile.exam_date ? Math.ceil((new Date(profile.exam_date) - new Date(today())) / DAY) : null;
   const upcoming = [
     ...(examIn != null && examIn >= 0 ? [{ day: profile.exam_date, title: `Exam${profile.site ? ` (${profile.site})` : ""}`, kind: "exam" }] : []),
     ...ahead.filter((b) => b.cal === "exam" || b.cal === "deadline").map((b) => ({ day: b.day, title: b.title, kind: b.cal })),
+    ...goalDates.map((g) => ({ day: g.target_date, title: g.title, kind: "goal" })),
   ].sort((a, b) => a.day.localeCompare(b.day)).slice(0, 8);
   const paced = (L?.courses || []).filter((c) => c.examDate && c.pace && !["done", "no-date"].includes(c.pace.status));
   view.innerHTML = `<section class="planner">
     <div class="deck-head"><div><span class="kicker lo-kicker">${icon("calendar")}Calendar</span><h1>Your calendar</h1><p class="sub">Exams, deadlines and study across Gradify. Review blocks are added and ticked off automatically.</p></div><button type="button" class="btn btn-primary lg" id="autoplan"><span>Auto-plan my week</span></button></div>
     <div class="cal-top">
-      <article class="panel glass"><div class="panel-head"><h3>Next five weeks</h3><span class="pill-dark">${fmtDate(Date.now(), { month: "long", year: "numeric" })}</span></div>${monthGrid(ahead, profile.exam_date)}</article>
+      <article class="panel glass"><div class="panel-head"><h3>Next five weeks</h3><span class="pill-dark">${fmtDate(Date.now(), { month: "long", year: "numeric" })}</span></div>${monthGrid([...ahead, ...goalDates.map((g) => ({ day: g.target_date, cal: "goal" }))], profile.exam_date)}</article>
       <article class="panel glass"><div class="panel-head"><h3>Coming up</h3></div>
-        ${upcoming.length ? `<ul class="upcoming">${upcoming.map((u) => { const n = Math.ceil((new Date(u.day) - new Date(today())) / DAY); return `<li class="${u.kind}"><time><b>${new Date(u.day).getDate()}</b>${fmtDate(u.day, { month: "short" })}</time><span><b>${esc(u.title)}</b><em>${u.kind === "exam" ? "Exam" : "Deadline"} · ${n === 0 ? "today" : n === 1 ? "tomorrow" : `in ${n} days`}</em></span></li>`; }).join("")}</ul>`
+        ${upcoming.length ? `<ul class="upcoming">${upcoming.map((u) => { const n = Math.ceil((new Date(u.day) - new Date(today())) / DAY); return `<li class="${u.kind}"><time><b>${new Date(u.day).getDate()}</b>${fmtDate(u.day, { month: "short" })}</time><span><b>${esc(u.title)}</b><em>${u.kind === "exam" ? "Exam" : u.kind === "goal" ? "Goal" : "Deadline"} · ${n === 0 ? "today" : n === 1 ? "tomorrow" : `in ${n} days`}</em></span></li>`; }).join("")}</ul>`
           : `<p class="sub">No exams or deadlines yet. Set your exam date in <a href="#/account">Account</a>; dates in notes you add (exams, deadlines) appear here too.</p>`}
         ${paced.length ? `<h4 class="brief-h">Course pace</h4><ul class="upcoming pace">${paced.map((c) => { const [tone, label] = PACE[c.pace.status] || ["", c.pace.status]; return `<li><span><b>${esc(c.name)}</b><em class="${tone}">${esc(label)}${c.pace.needPerDay ? ` · about ${Math.round(c.pace.needPerDay * 10) / 10} lessons a day` : ""}</em></span></li>`; }).join("")}</ul>` : ""}
       </article>
@@ -997,9 +1185,17 @@ async function boot() {
   const user = cloud ? await cloud.user() : null;
   store = user ? cloud : (cloud && cloudConfigured() ? Object.assign(local, { signInWithEmail: (e) => cloud.signInWithEmail(e), signInWithGoogle: () => cloud.signInWithGoogle() }) : local);
   if (user && local.hasData() && !localStorage.getItem(`gradify.moved.${user.id}`)) {
-    try { await cloud.importLocal(local); localStorage.setItem(`gradify.moved.${user.id}`, "1"); await local.wipe(); toast("Moved your notes and progress from this device into your account."); }
+    try {
+      // goals move on their own (below); any not moved yet must survive this wipe
+      const keep = await local.listGoals();
+      await cloud.importLocal(local); localStorage.setItem(`gradify.moved.${user.id}`, "1"); await local.wipe();
+      for (const g of keep) await local.saveGoal(g);
+      toast("Moved your notes and progress from this device into your account.");
+    }
     catch (e) { console.error(e); toast("Couldn't move this device's data into your account. It's still saved here."); }
   }
+  // goals made on this device move into the account; retried on every signed-in visit until they're all there
+  if (user) { try { const r = await cloud.moveGoals(local); if (r.moved) toast(`Moved ${r.moved} goal${r.moved === 1 ? "" : "s"} from this device into your account.`); } catch (e) { console.warn("Goals stay on this device for now", e?.message); } }
   cloud?.onAuth((u) => { if (Boolean(u) !== Boolean(user)) location.reload(); });
   // on a sub-site, the app only sees that site's notes and progress
   if (SITE) { store = scopeToSite(store, SITE); picks.site = SITE; }
