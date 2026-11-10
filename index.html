@@ -24,6 +24,7 @@
   <script type="module" src="assets/nav.js"></script>
   <script type="module" src="kit/lifeos/os.js"></script>
   <script type="module" src="assets/features.js"></script>
+  <script type="module" src="assets/pro.js"></script>
 </head>
 <body>
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
@@ -41,17 +42,21 @@
         <a href="#profession">Profession</a>
         <a href="#subject">Subject</a>
         <a href="#tech">Technology</a>
+        <a href="pricing.html">Pricing</a>
       </nav>
       <div class="right">
         <a class="icon-btn" href="#find" id="nav-search" aria-label="Search all sites" title="Search (/)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         </a>
+        <a class="pro-chip" href="#pro"><span class="pro-gem" aria-hidden="true"></span><span>Gradify Pro</span></a>
         <a class="btn btn-primary btn-sm lg" href="app.html">Open Gradify</a>
         <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
       <nav class="menu" id="menu" aria-label="Menu" hidden>
+        <a href="#pro">Gradify Pro</a>
+        <a href="pricing.html">Pricing</a>
         <a href="#features">All features</a>
         <a href="#journey">The Gradify road</a>
         <span class="menu-label">LifeOS</span>
@@ -77,17 +82,73 @@
       </nav>
     </header>
 
-    <section class="hero" id="top">
-      <div>
-        <a class="badge" href="app.html"><span class="spark" aria-hidden="true"></span><span>Gradify LifeOS · free to try, no sign-up</span></a>
-        <h1>Bring your notes. <span class="grad">Know what to do next.</span></h1>
-        <p class="lede">Upload your notes and Gradify turns them into flashcards checked against what you wrote. Revise a little each day, track your progress, and always know what to study next. One family of learning sites, from school to medicine, law and AI engineering.</p>
+    <section class="hero hero-v2" id="top">
+      <div class="hero-copy">
+        <a class="badge" href="app.html"><span class="spark" aria-hidden="true"></span><span>Gradify LifeOS · free to start, no card</span></a>
+        <h1>Everything you need to <span class="grad">learn, grow and get more out of life.</span></h1>
+        <p class="lede">Specialist learning sites for every stage of life, from school to medicine, law and engineering, and one LifeOS that brings your courses, revision, plans and progress together under one account.</p>
         <div class="actions">
-          <a class="btn btn-primary lg" href="app.html"><span>Start with your notes</span> <span aria-hidden="true">→</span></a>
-          <a class="btn btn-ghost lg" href="#find"><span>Find your site</span></a>
+          <a class="btn btn-primary lg" href="app.html"><span>Explore Gradify</span> <span aria-hidden="true">→</span></a>
+          <a class="btn btn-pro lg" href="#pro"><span class="pro-gem" aria-hidden="true"></span><span>Unlock Gradify Pro</span></a>
+          <a class="text-link" href="#find">Find your site</a>
         </div>
+        <ul class="hero-proof" aria-label="What's included">
+          <li><span aria-hidden="true">✓</span> Every course, lesson and lab is free</li>
+          <li><span aria-hidden="true">✓</span> One account across every Gradify site</li>
+          <li><span aria-hidden="true">✓</span> Progress saved on every device</li>
+        </ul>
       </div>
+      <figure class="hero-shot">
+        <div class="shot-frame">
+          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>getgradify.com · LifeOS</span></div>
+          <img src="assets/screens/lifeos-today.jpg" width="1376" height="840" alt="The Gradify LifeOS Today screen: a learner's level and XP, a recommended review, goals linked to activity, the week's deadlines and activity across Gradify sites." fetchpriority="high">
+        </div>
+        <figcaption>The real LifeOS Today screen, shown with an example learner.</figcaption>
+      </figure>
+    </section>
 
+    <!-- How Gradify works -->
+    <section class="how" id="how" aria-labelledby="how-title">
+      <div class="sec-head">
+        <span class="eyebrow">How Gradify works</span>
+        <h2 id="how-title">Pick your site. Learn by doing. <span class="grad">See it all in LifeOS.</span></h2>
+      </div>
+      <ol class="how-steps">
+        <li class="how-step glass">
+          <span class="how-n">1</span>
+          <h3>Pick your site</h3>
+          <p>Each Gradify site is built for one kind of learner, with its own courses, labs and exam practice. Start with as many as you need.</p>
+          <img src="assets/screens/course-home.jpg" width="1440" height="900" loading="lazy" alt="A LawGradify course: the first school's learning path, the daily XP goal, the learner's plan and next milestone.">
+        </li>
+        <li class="how-step glass">
+          <span class="how-n">2</span>
+          <h3>Learn by doing</h3>
+          <p>Short lessons with worked examples, interactive labs, quizzes and flashcards from your own notes, scheduled so you revise just before you forget.</p>
+          <img src="assets/screens/lifeos-study.jpg" width="1376" height="729" loading="lazy" alt="The Study view: a flashcard feed drawn from several Gradify sites, with mastery for each topic.">
+        </li>
+        <li class="how-step glass">
+          <span class="how-n">3</span>
+          <h3>See it all in LifeOS</h3>
+          <p>Every lesson, review and workout lands in one place: your level, streak, plan, heatmap and what to do next.</p>
+          <img src="assets/screens/lifeos-progress.jpg" width="1376" height="860" loading="lazy" alt="The Progress view: a year-long activity heatmap and progress in each Gradify site.">
+        </li>
+      </ol>
+      <p class="example-note">Screens from the real product. LifeOS views show an example learner.</p>
+    </section>
+
+    <!-- One account, every site -->
+    <section class="ecosystem" id="ecosystem" aria-labelledby="eco-title">
+      <div class="eco-copy">
+        <span class="eyebrow">One Gradify</span>
+        <h2 id="eco-title">Specialist sites. <span class="grad">One account.</span></h2>
+        <p class="lede">Every Gradify site keeps its own subject, courses and tools, and they all share one sign-in and one record of you.</p>
+        <ul class="eco-list">
+          <li><b>One level and streak.</b> XP from any site counts towards the same level, streak and achievements.</li>
+          <li><b>One progress record.</b> Course progress, answers and flashcard reviews are saved to your account and follow you to every device.</li>
+          <li><b>One plan.</b> Your exam date and daily study time pace every course, and study blocks go into one weekly plan.</li>
+          <li><b>One subscription.</b> Gradify Pro, when it opens, covers every site.</li>
+        </ul>
+      </div>
       <!-- Featured site carousel -->
       <article class="spotlight" id="spotlight" aria-roledescription="carousel" aria-label="Featured sites">
         <div class="spot-art" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="sphere" id="spot-mark"></span></div>
@@ -152,6 +213,7 @@
         <aside class="panel glass bubble-detail" id="bubble-detail" aria-live="polite"></aside>
       </div>
     </section>
+
 
     <!-- The Gradify road -->
     <section class="journey" id="journey" aria-labelledby="journey-title">
@@ -466,6 +528,35 @@
 
 
     <!-- For organisations -->
+    <!-- Gradify Pro -->
+    <section class="pro" id="pro" aria-labelledby="pro-title">
+      <div class="pro-hero">
+        <span class="pro-badge"><span class="pro-gem" aria-hidden="true"></span>Gradify Pro</span>
+        <h2 id="pro-title">Everything in Free, <span class="grad">plus Gradify AI at your side.</span></h2>
+        <p class="lede">Gradify is free to learn with: every course, lesson, lab, quiz and progress tool. Gradify Pro adds generous monthly allowances of Gradify AI, the tutor that works from your own lessons and notes.</p>
+        <p class="pro-status" id="pro-status" role="status"></p>
+      </div>
+      <div class="pro-features">
+        <article class="pro-card glass"><span class="pro-ico" data-icon="sparkles" aria-hidden="true"></span><h3>An AI tutor for every lesson</h3><p>Talk a topic through, get questioned like a viva, or practise a client or patient conversation, grounded in the lesson's own notes.</p><b class="pro-n" data-allow="tutor"></b></article>
+        <article class="pro-card glass"><span class="pro-ico" data-icon="book" aria-hidden="true"></span><h3>Explanations on demand</h3><p>Ask why something works and get an answer drawn from the lesson you're on, including what an interactive lab is showing you.</p><b class="pro-n" data-allow="explain"></b></article>
+        <article class="pro-card glass"><span class="pro-ico" data-icon="layers" aria-hidden="true"></span><h3>Study packs from your notes</h3><p>Upload messy notes, slides or scans and get flashcards, each checked against what you wrote. Packs you've made reopen free.</p><b class="pro-n" data-allow="pack"></b></article>
+        <article class="pro-card glass"><span class="pro-ico" data-icon="trend" aria-hidden="true"></span><h3>Quizzes that make you think</h3><p>"Why" and "apply" questions written from your notes, so you practise using ideas, not only recalling them.</p><b class="pro-n" data-allow="quiz"></b></article>
+      </div>
+      <div class="compare glass" aria-labelledby="compare-title">
+        <h3 id="compare-title">Free and Pro, side by side</h3>
+        <div class="table-wrap">
+          <table class="compare-table">
+            <thead><tr><th scope="col">What you get</th><th scope="col">Free</th><th scope="col" class="pro-col">Gradify Pro</th></tr></thead>
+            <tbody id="compare-rows"></tbody>
+          </table>
+        </div>
+        <div class="compare-foot">
+          <p id="compare-price"></p>
+          <div class="row-actions"><a class="btn btn-pro lg" href="pricing.html"><span class="pro-gem" aria-hidden="true"></span><span>See Gradify Pro plans</span></a><a class="btn btn-ghost lg" href="app.html"><span>Start free</span></a></div>
+        </div>
+      </div>
+    </section>
+
     <section class="orgs" id="organisations" aria-labelledby="orgs-title">
       <div class="section-head">
         <span class="badge"><span class="spark" aria-hidden="true"></span>Coming in phase 3</span>
@@ -580,6 +671,16 @@
       </div>
     </section>
 
+    <!-- Closing call to action -->
+    <section class="closing glass" aria-labelledby="closing-title">
+      <h2 id="closing-title">Start learning today. <span class="grad">It's free.</span></h2>
+      <p class="lede">Open Gradify, pick your site and finish your first lesson in a few minutes. Your progress is saved from the start.</p>
+      <div class="actions">
+        <a class="btn btn-primary lg" href="app.html"><span>Explore Gradify</span> <span aria-hidden="true">→</span></a>
+        <a class="btn btn-pro lg" href="#pro"><span class="pro-gem" aria-hidden="true"></span><span>See Gradify Pro</span></a>
+      </div>
+    </section>
+
     <footer class="glass">
       <div class="foot-cols">
         <div class="foot-brand">
@@ -596,7 +697,7 @@
         </nav>
         <nav aria-label="Gradify">
           <b>Gradify</b>
-          <a href="#organisations">For organisations</a><a href="#everywhere">Apps and devices</a><a href="#roadmap">Roadmap</a><a href="#faq">Questions</a><a href="privacy.html">Privacy</a>
+          <a href="#organisations">For organisations</a><a href="#everywhere">Apps and devices</a><a href="#roadmap">Roadmap</a><a href="#faq">Questions</a><a href="pricing.html">Pricing</a><a href="privacy.html">Privacy</a>
         </nav>
       </div>
       <div class="foot-base">
