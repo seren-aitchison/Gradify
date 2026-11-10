@@ -27,7 +27,7 @@ import { learnerOf, needsSetup, applyPrefs } from "../data/profile.js";
 import { paceFor } from "../learning/pace.js";
 import { trackView, track } from "../core/analytics.js";
 import { callFunction } from "../data/functions.js";
-import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, confirmAttempts } from "./progress.js";
+import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, confirmAttempts, syncProgress } from "./progress.js";
 import { mountRevalidation } from "./revalidation.js";
 import { scoreFeedback } from "../assess/tutor.js";
 import { feedbackHtml, paras } from "../assess/tutor-view.js";
@@ -140,8 +140,23 @@ export function mountCourse(root, cfg) {
     clearTimeout(syncT); syncT = null;
     let s; try { s = await store(); } catch { return; }
     if (s.mode !== "cloud" || !s.saveCourseProgress) return;
-    try { await s.saveCourseProgress(cfg.slug, cfg.site, cloudCopy(S)); const was = S.sync?.failedAt; S.sync = { ok: Date.now() }; keep(); if (was) paintSide(); }
+    try {
+      const was = S.sync?.failedAt;
+      await saveSafely(s);
+      if (was) paintSide();
+    }
     catch (e) { failed(e); }   // the device copy is kept, and nothing completed is lost: the next sync merges it
+  }
+  // read the account's copy, merge it in and write only if no other device (another tab, the iPhone app) saved in
+  // between (kit/course/progress.js syncProgress); returns whether the merge brought in anything new to show
+  async function saveSafely(s) {
+    if (!s.getCourseProgressRow || !s.saveCourseProgressIf) {   // an older store: the unconditional save
+      await s.saveCourseProgress(cfg.slug, cfg.site, cloudCopy(S)); S.sync = { ok: Date.now() }; keep(); return false;
+    }
+    const before = JSON.stringify(cloudCopy(S));
+    const r = await syncProgress(S, { fetch: () => s.getCourseProgressRow(cfg.slug), save: (state, version) => s.saveCourseProgressIf(cfg.slug, cfg.site, state, version) });
+    S = r.S; S.sync = { ok: Date.now(), version: r.version }; keep();
+    return JSON.stringify(cloudCopy(S)) !== before;
   }
   // answers waiting for the account (kit/course/progress.js outbox): sent in batches, removed only once confirmed
   let flushing = false;
@@ -158,7 +173,7 @@ export function mountCourse(root, cfg) {
   // the store is known by now (it resolves at mount), so this stays synchronous, as the browser requires
   const flushNow = () => {
     if (syncT) {
-      const sent = storeNow?.mode === "cloud" && storeNow.beaconCourseProgress?.(cfg.slug, cfg.site, cloudCopy(S));
+      const sent = storeNow?.mode === "cloud" && storeNow.beaconCourseProgress?.(cfg.slug, cfg.site, cloudCopy(S), S.sync?.version || null);
       if (sent) { clearTimeout(syncT); syncT = null; } else pushProgress();
     }
     flushOutbox();
@@ -181,16 +196,23 @@ export function mountCourse(root, cfg) {
   async function pullProgress() {
     try {
       const s = await store(); if (s.mode !== "cloud" || !s.getCourseProgress) return;
-      const cloud = await s.getCourseProgress(cfg.slug);
       const before = JSON.stringify(cloudCopy(S));
-      if (cloud) S = mergeProgress(S, cloud);
+      let changed = false;
+      if (s.getCourseProgressRow && s.saveCourseProgressIf) {
+        // merge the account's copy in and send anything this device adds, without overwriting another device
+        try { changed = await saveSafely(s); } catch (e) { failed(e); }
+      } else {
+        const cloud = await s.getCourseProgress(cfg.slug);
+        if (cloud) S = mergeProgress(S, cloud);
+        keep();
+        if (!cloud || JSON.stringify(cloudCopy(S)) !== JSON.stringify(cloud)) pushProgress(); else { S.sync = { ok: Date.now() }; keep(); }
+      }
       // answers made on other devices, so mastery, Revisit and Your plan see every one
       let added = 0;
       try { const mine = (await s.listAttempts(400)).filter((a) => a.subject === cfg.slug), n = S.attempts.length; S.attempts = mergeAttempts(S.attempts, mine); added = S.attempts.length - n; } catch { /* attempts table not set up yet */ }
       keep();
-      if (!cloud || JSON.stringify(cloudCopy(S)) !== JSON.stringify(cloud)) pushProgress(); else { S.sync = { ok: Date.now() }; keep(); }
       flushOutbox();
-      if (JSON.stringify(cloudCopy(S)) !== before || added) route();
+      if (changed || JSON.stringify(cloudCopy(S)) !== before || added) route();
     } catch { /* offline or not set up: carry on with the device copy */ }
   }
 

@@ -82,3 +82,31 @@ export function confirmAttempts(S, ids) {
   S.outbox = (S.outbox || []).filter((id) => !done.has(id) && have.has(id));
   return S;
 }
+
+// ---------- saving without overwriting another device ----------
+// JSON with object keys sorted, so two copies of the same state compare equal however their keys were ordered
+// (the account's jsonb copy comes back in its own key order)
+export const stableJSON = (v) => JSON.stringify(v, (_k, x) => (x && typeof x === "object" && !Array.isArray(x) ? Object.fromEntries(Object.keys(x).sort().map((k) => [k, x[k]])) : x));
+
+/**
+ * Bring this device's course state and the account's together without overwriting another device: read the account's
+ * copy, merge it in, and write the result only if it adds something, and only if the account's copy is still the one
+ * read. If another device (another tab, the iPhone app) saved in between, nothing is written: read, merge and try again.
+ * The same rules as the native apps (gradify-apple, ProgressSync.swift), so every client can save at any moment.
+ *   remote.fetch() → { state, version } | null        the account's copy and its version (updated_at)
+ *   remote.save(state, version | null) → version | null  write only if still at `version` (or still absent); null if not
+ * Returns { S: the merged device state, pushed, version }. Throws "busy" if the copy kept changing.
+ */
+export async function syncProgress(S, remote, { tries = 5 } = {}) {
+  for (let i = 0; i < tries; i++) {
+    const cloud = await remote.fetch();
+    // merged even with nothing, so the state is in its settled form and the next sync finds nothing to change
+    const merged = mergeProgress(S, cloud ? cloud.state : {});
+    const copy = cloudCopy(merged);
+    if (cloud && stableJSON(copy) === stableJSON(cloud.state)) return { S: merged, pushed: false, version: cloud.version };
+    const version = await remote.save(copy, cloud?.version ?? null);
+    if (version) return { S: merged, pushed: true, version };
+    S = merged;
+  }
+  throw new Error("busy");
+}

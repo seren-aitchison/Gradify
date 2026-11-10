@@ -124,17 +124,35 @@ export class CloudStore {
   // assessment attempts: one row per answer (supabase/migrations/20261101120000_assessment_attempts.sql)
   // course progress (kit/course/progress.js): one row per learner per course
   async getCourseProgress(subject) { const rows = await this.q(this.db.from("course_progress").select("state,updated_at").eq("subject", subject).limit(1)); return rows[0]?.state || null; }
+  // the account's copy with its version (updated_at), for saving without overwriting another device (syncProgress)
+  async getCourseProgressRow(subject) { const rows = await this.q(this.db.from("course_progress").select("state,updated_at").eq("subject", subject).limit(1)); return rows[0] ? { state: rows[0].state, version: rows[0].updated_at } : null; }
+  // write only if the account's copy is still at `version` (or, with no version, still absent); the new version, or
+  // null if another device saved first. Uses the existing row-level security policies: no database change.
+  async saveCourseProgressIf(subject, site, state, version) {
+    const updated_at = now();
+    if (version) {
+      const rows = await this.q(this.db.from("course_progress").update({ site, state, updated_at }).eq("subject", subject).eq("updated_at", version).select("updated_at"));
+      return rows[0]?.updated_at || null;
+    }
+    const u = await this.user();
+    const rows = await this.q(this.db.from("course_progress").upsert({ user_id: u.id, subject, site, state, updated_at }, { onConflict: "user_id,subject", ignoreDuplicates: true }).select("updated_at"));
+    return rows[0]?.updated_at || null;
+  }
   async saveCourseProgress(subject, site, state) { const u = await this.user(); await this.q(this.db.from("course_progress").upsert({ user_id: u.id, subject, site, state, updated_at: now() })); }
   // The same save, sent so that it survives the page closing (fetch keepalive). Synchronous on purpose: it is
   // called from pagehide, when awaiting anything may be too late. Returns false if it couldn't be sent this way
   // (not signed in yet, or over the browser's 64 KB keepalive limit); the device copy still syncs next visit.
-  beaconCourseProgress(subject, site, state) {
+  // With `version` (the copy this page last read or wrote) it only writes if the account is still at that version, and
+  // without one only if the account has no copy yet, so a closing page never overwrites another device's newer save;
+  // if it can't write, the device copy is merged and sent on the next visit.
+  beaconCourseProgress(subject, site, state, version = null) {
     const s = this.current; if (!s?.access_token || !s.user?.id) return false;
-    const body = JSON.stringify({ user_id: s.user.id, subject, site, state, updated_at: now() });
+    const body = JSON.stringify(version ? { site, state, updated_at: now() } : { user_id: s.user.id, subject, site, state, updated_at: now() });
     if (body.length > 60000) return false;
+    const headers = { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${s.access_token}`, "Content-Type": "application/json" };
     try {
-      fetch(`${SUPABASE_URL}/rest/v1/course_progress`, { method: "POST", keepalive: true, body,
-        headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${s.access_token}`, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" } }).catch(() => {});
+      if (version) fetch(`${SUPABASE_URL}/rest/v1/course_progress?subject=eq.${encodeURIComponent(subject)}&updated_at=eq.${encodeURIComponent(version)}`, { method: "PATCH", keepalive: true, body, headers: { ...headers, Prefer: "return=minimal" } }).catch(() => {});
+      else fetch(`${SUPABASE_URL}/rest/v1/course_progress`, { method: "POST", keepalive: true, body, headers: { ...headers, Prefer: "resolution=ignore-duplicates,return=minimal" } }).catch(() => {});
       return true;
     } catch { return false; }
   }
