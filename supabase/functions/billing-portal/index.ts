@@ -2,7 +2,7 @@
 // POST { from? }  (signed in)  → { url }  Stripe's customer portal: change plan, update the card, see invoices, cancel.
 // Secret: STRIPE_SECRET_KEY.
 import { createClient } from "npm:@supabase/supabase-js@2.117.0";
-import { stripe } from "../_shared/billing.js";
+import { stripe, safeBack, returnUrl } from "../_shared/billing.js";
 
 const SITE = (Deno.env.get("GRADIFY_SITE_URL") ?? "https://getgradify.com").replace(/\/+$/, "");
 const ALLOWED = (Deno.env.get("GRADIFY_ALLOWED_ORIGINS") ?? "https://getgradify.com,http://localhost:8080").split(",");
@@ -22,12 +22,12 @@ Deno.serve(async (req) => {
   if (!user) return json(req, { error: "Please sign in." }, 401);
   let body: { from?: string } = {};
   try { body = await req.json(); } catch { /* no body is fine */ }
-  const back = typeof body.from === "string" && body.from.startsWith("/") && !body.from.startsWith("//") ? body.from : "/pricing.html";
+  const back = safeBack(body.from);
   // the learner's own row, read with their token (row-level security)
   const { data: sub } = await asUser.from("subscriptions").select("stripe_customer_id").maybeSingle();
   if (!sub?.stripe_customer_id) return json(req, { error: "You don't have a Gradify Pro subscription yet." }, 404);
   try {
-    const portal = await stripe(secret, "POST", "/billing_portal/sessions", { customer: sub.stripe_customer_id, return_url: `${SITE}${back}` });
+    const portal = await stripe(secret, "POST", "/billing_portal/sessions", { customer: sub.stripe_customer_id, return_url: returnUrl(SITE, back) });
     return json(req, { url: portal.url });
   } catch (e) {
     console.error("billing-portal", (e as Error).message);

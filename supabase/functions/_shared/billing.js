@@ -83,3 +83,63 @@ export function priceFor(interval, env) {
   if (!id) throw Object.assign(new Error(interval === "year" || interval === "month" ? "Gradify Pro isn't on sale yet." : "Choose monthly or yearly."), { status: interval === "year" || interval === "month" ? 503 : 400 });
   return id;
 }
+
+const LIVE = new Set(["active", "trialing", "past_due", "incomplete", "unpaid", "paused"]);
+/**
+ * Whether an incoming subscription may replace the learner's stored row. A learner has one row, so a late event
+ * about an old, finished subscription must never overwrite a newer live one (subscribe, cancel, expire, resubscribe).
+ */
+export function shouldApply(stored, row) {
+  if (!stored?.stripe_subscription_id || stored.stripe_subscription_id === row.stripe_subscription_id) return true;
+  return LIVE.has(row.status) || !LIVE.has(stored.status);
+}
+
+const SUB_EVENTS = new Set(["customer.subscription.created", "customer.subscription.updated", "customer.subscription.deleted", "customer.subscription.paused", "customer.subscription.resumed"]);
+
+/**
+ * The billing webhook's whole decision, with Stripe and the database passed in, so tests can run every path.
+ * deps: { whsec, getSubscription(id), claimEvent(id, type) → "new" | "duplicate", releaseEvent(id),
+ *         storedFor(user) → row | null, userForCustomer(customerId) → user | null, save(user, row) }
+ * Returns { status, body }.
+ */
+export async function handleStripeEvent(payload, header, deps, opts = {}) {
+  let event;
+  try { event = await verifyStripeEvent(payload, header, deps.whsec, opts); }
+  catch (e) { return { status: 400, body: "Bad signature.", reason: e.message }; }
+  const relevant = (event.type === "checkout.session.completed" && event.data?.object?.mode === "subscription") || SUB_EVENTS.has(event.type);
+  if (!relevant) return { status: 200, body: "Ignored." };
+  if ((await deps.claimEvent(event.id, event.type)) === "duplicate") return { status: 200, body: "Already processed." };
+  try {
+    const obj = event.data.object;
+    // always read the subscription fresh from Stripe rather than trusting the event's copy (also makes order irrelevant)
+    const sub = await deps.getSubscription(event.type === "checkout.session.completed" ? obj.subscription : obj.id);
+    const row = subscriptionRow(sub);
+    const user = (event.type === "checkout.session.completed" ? userOf(obj) : null) || userOf(sub) || (await deps.userForCustomer(row.stripe_customer_id));
+    if (!user) throw new Error(`no Gradify user for customer ${row.stripe_customer_id}`);
+    if (!shouldApply(await deps.storedFor(user), row)) return { status: 200, body: "Older subscription; kept the current one." };
+    await deps.save(user, row);
+    return { status: 200, body: "OK" };
+  } catch (e) {
+    // let Stripe retry: forget the event id so the retry is processed
+    await deps.releaseEvent(event.id).catch(() => {});
+    return { status: 500, body: "Try again.", reason: e.message };
+  }
+}
+
+/** A return path on the Gradify site only ("/x.html#/y"), or the default; never another host. */
+export function safeBack(from, fallback = "/pricing.html") {
+  return typeof from === "string" && /^\/(?![\/\\])[^\s\\]*$/.test(from) && from.length < 300 ? from : fallback;
+}
+/** SITE + path with ?checkout=… placed before any #fragment, so the page can read it. */
+export function returnUrl(site, back, params = {}) {
+  const u = new URL(back, site);
+  for (const [k, v] of Object.entries(params)) u.searchParams.set(k, v);
+  return u.toString();
+}
+
+/** Whether this learner may buy Pro now: on sale to all, or listed as a billing tester (for the deliberate first test). */
+export function mayBuy(email, env) {
+  if (env.GRADIFY_PRO_ON_SALE === "on") return true;
+  const testers = (env.GRADIFY_BILLING_TESTERS || "").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
+  return Boolean(email) && testers.includes(String(email).toLowerCase());
+}

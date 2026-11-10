@@ -114,3 +114,83 @@ Every public table has row-level security, with policies limited to the row's ow
 | tutor_usage | on | yes | 2 | ok |
 | waitlist | on | no | 1 | ok |
 | workouts | on | yes | 1 | ok |
+
+## 2026-11-10 01:13 UTC · Backup · ezlohntrnassgsbofcfc
+
+**Failed:** Backup NOT verified: page_events changed during the backup (549 → 550). Nothing has been changed; don't migrate.
+
+## 2026-11-10 01:14 UTC · Backup · ezlohntrnassgsbofcfc
+
+Backup written to /tmp/claude-0/-home-user/e12758f2-df7b-5438-89fd-958e31037ed2/scratchpad/backup-2026-11-10b/gradify-ezlohntrnassgsbofcfc-2026-11-10T01-13-33-731Z.json (sha256 add186d226e9e86a…, readable only by you) and **verified**: re-read from disk with a matching hash, every table's saved rows equal its count, a fresh count of the live database matches, and it was **restored into a separate temporary PostgreSQL database** (built from the 12 recorded migrations) with every row and value identical (20 tables, 570 rows). 20 public tables, 570 rows, 7 accounts (counted, not copied). 12 migrations already recorded.
+
+Note: this is a logical snapshot through the API. Auth accounts and storage files aren't included; Supabase's own daily backups (and point-in-time recovery on paid plans) cover those.
+
+| table | rows |
+|---|---|
+| activity | 0 |
+| ai_limits | 8 |
+| ai_settings | 1 |
+| assessment_attempts | 0 |
+| billing_events | 0 |
+| body_checkins | 0 |
+| cards | 0 |
+| course_progress | 0 |
+| documents | 0 |
+| fitness_tests | 0 |
+| packs | 0 |
+| page_events | 550 |
+| plan_blocks | 0 |
+| profiles | 7 |
+| revalidation_entries | 0 |
+| reviews | 0 |
+| subscriptions | 1 |
+| tutor_usage | 3 |
+| waitlist | 0 |
+| workouts | 0 |
+
+## 2026-11-10 01:15 UTC · Migrations · ezlohntrnassgsbofcfc
+
+All migrations applied and verified.
+
+| migration | result | objects checked | sha256 | detail |
+|---|---|---|---|---|
+| 20261028120000_gradify_core.sql | already applied |  | 669c6c071f0a |  |
+| 20261029120000_mastery_evidence.sql | already applied |  | 1fa8fc1287fa |  |
+| 20261031120000_sport_body_intelligence.sql | already applied |  | f57af713cf3d |  |
+| 20261101120000_assessment_attempts.sql | already applied |  | 9a4dc8f0f92c |  |
+| 20261105120000_course_progress.sql | already applied |  | 8e91fc50a9f0 |  |
+| 20261105130000_tutor_usage.sql | already applied |  | e28f425f9254 |  |
+| 20261105140000_revalidation.sql | already applied |  | ea912e3a20e6 |  |
+| 20261106120000_learner_profile.sql | already applied |  | 94038916a0d5 |  |
+| 20261106130000_tutor_modes.sql | already applied |  | 07067e243f59 |  |
+| 20261106140000_page_events.sql | already applied |  | 0a42ad23bb52 |  |
+| 20261107120000_game_rewards.sql | already applied |  | 40f556898d25 |  |
+| 20261110120000_billing_and_ai_allowances.sql | already applied |  | aeafef577d4e |  |
+| 20261110180000_monthly_ai_windows.sql | applied and verified | 1 | c565a2ddcac0 |  |
+
+## 2026-11-10 01:18 UTC · Stripe check (read-only) · ezlohntrnassgsbofcfc
+
+Everything matches what the site sells.
+
+| check | result | detail |
+|---|---|---|
+| Stripe account | ok | GB, default currency gbp, charges enabled |
+| Mode | ok | LIVE: real payments |
+| Gradify Pro monthly price | ok | price_1Ua3NEEOmpIuKzUMXI11yUK4: GBP 7.99 every 1 month, inclusive of tax, active; product "Gradify Pro" active; site sells 7.99 |
+| Gradify Pro yearly price | ok | price_1Ua3NEEOmpIuKzUM8q1nDCab: GBP 63.99 every 1 year, inclusive of tax, active; product "Gradify Pro" active; site sells 63.99 |
+| Both prices on the same product | ok | prod_VbFtYIrZfgHAtD |
+| No duplicate Gradify products | ok | prod_VbFtYIrZfgHAtD "Gradify Pro" |
+| Webhook endpoint | ok | we_1Ua3NFEOmpIuKzUM5WTc9Qwp enabled, API 2025-08-27.basil, 1 endpoint(s) for this URL |
+| Webhook events | ok | checkout.session.completed, customer.subscription.created, customer.subscription.updated, customer.subscription.deleted, customer.subscription.paused, customer.subscription.resumed |
+| Billing portal | ok | bpc_1Ua3NFEOmpIuKzUMj2Ai3lNL (default): cancel at_period_end, card updates on, invoices on |
+| Portal plan switching | ok | monthly ↔ yearly |
+| Supabase secret STRIPE_SECRET_KEY | ok | set |
+| Supabase secret STRIPE_WEBHOOK_SECRET | ok | set |
+| Supabase secret STRIPE_PRICE_MONTH | ok | set |
+| Supabase secret STRIPE_PRICE_YEAR | ok | set |
+| STRIPE_PRICE_MONTH is the live monthly price | ok | compared by SHA-256 |
+| STRIPE_PRICE_YEAR is the live yearly price | ok | compared by SHA-256 |
+| Gradify Pro on sale | ok | GRADIFY_PRO_ON_SALE not set: only GRADIFY_BILLING_TESTERS can check out; testers not set |
+| Existing subscriptions | ok | 0 |
+
+Changes made by this check: none.

@@ -5,6 +5,7 @@ import { icon } from "../core/icons.js";
 import { tile, ink } from "../core/colour.js";
 import { SAMPLE, readFile } from "../notes/studio.js";
 import { LocalStore, CloudStore, cloudConfigured, scopeToSite } from "../data/store.js";
+import { describePlan, mySubscription, myAllowance, openPortal, AI_ALLOWANCES } from "../data/billing.js";
 import { learnerOf, saveLearner, syncMirror, needsSetup, applyPrefs, PRIOR } from "../data/profile.js";
 import { trackView } from "../core/analytics.js";
 applyPrefs();
@@ -749,6 +750,7 @@ async function renderAccount() {
           <button type="button" class="btn btn-ghost lg btn-sm" id="google"><span>Continue with Google</span></button>`
         : `<h3>Saved on this device</h3><p class="sub">Gradify accounts aren't switched on yet, so your notes and progress are saved in this browser${store.persistent ? "" : " for this visit only (this browser is blocking storage)"}. Export a copy below to keep it safe.</p>`}
     </article>
+    ${user ? `<article class="panel glass plan-panel" id="plan-panel" aria-live="polite"><h3>Your plan</h3><p class="sub">Checking your plan…</p></article>` : ""}
     <form class="panel glass setup-form" id="prefs">
       <h3>Your learning</h3>
       <label><span>Goal</span><select name="goal">${GOALS.map((g) => `<option value="${g.id}" ${profile.goal === g.id ? "selected" : ""}>${g.t}</option>`).join("")}</select></label>
@@ -764,6 +766,7 @@ async function renderAccount() {
     <article class="panel glass"><h3>Your data</h3><p class="sub">${SITE ? `It's yours. Download or delete everything you've added on ${esc(SITE)}. Your notes on other Gradify sites stay as they are.` : "It's yours. Download everything, or delete it."}</p>
       <div class="row-actions"><button type="button" class="btn btn-light lg btn-sm" id="export"><span>Download my data</span></button><button type="button" class="btn btn-ghost lg btn-sm danger" id="wipe"><span>Delete all my data</span></button></div></article>
   </section>`;
+  if (user) renderBillingPlan();
   $("#prefs").addEventListener("submit", async (e) => {
     e.preventDefault();
     const f = new FormData(e.target);
@@ -793,6 +796,31 @@ async function renderAccount() {
   });
   $("#google")?.addEventListener("click", () => store.signInWithGoogle().catch((err) => toast(esc(err.message))));
   $("#signout")?.addEventListener("click", async () => { await store.signOut(); location.reload(); });
+}
+
+// The learner's Gradify plan on the Account page: Free or Pro, what needs doing, Manage billing, and Gradify AI used
+// this month. The subscription row is the learner's own (row-level security); only the billing webhook writes it.
+async function renderBillingPlan() {
+  const box = $("#plan-panel");
+  if (!box) return;
+  const pricing = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/pricing.html" : "https://getgradify.com/pricing.html";
+  let sub, uses = [];
+  try { [sub, uses] = await Promise.all([mySubscription(store), myAllowance(store).catch(() => [])]); }
+  catch { box.innerHTML = `<h3>Your plan</h3><p class="sub">Your plan couldn't be loaded just now. Your notes and progress aren't affected. <a href="${pricing}">See plans</a></p>`; return; }
+  const p = describePlan(sub);
+  const tone = { ok: "✓", warn: "!", info: "i" }[p.tone];
+  const on = uses.some((u) => u.enabled);
+  const usage = uses.length && on
+    ? `<ul class="plan-uses">${uses.map((u) => `<li><span>${esc(AI_ALLOWANCES.find((a) => a.feature === u.feature)?.label || u.feature)}</span><b>${u.used} of ${u.allowance}</b></li>`).join("")}</ul><p class="sub">Gradify AI used this month${uses[0]?.period_end ? `, resetting on ${new Date(uses[0].period_end).toLocaleDateString("en-GB", { day: "numeric", month: "long" })}` : ""}.</p>`
+    : `<p class="sub">Gradify AI isn't switched on yet. Your allowance will show here when it is.</p>`;
+  box.innerHTML = `<div class="panel-head"><div><h3>Your plan: ${esc(p.title)}</h3><p class="sub plan-line ${p.tone}"><span aria-hidden="true">${tone}</span> ${esc(p.line)}</p></div>
+      <div class="row-actions">${p.manage ? `<button type="button" class="btn btn-light lg btn-sm" id="manage-billing"><span>Manage billing</span></button>` : ""}<a class="btn btn-ghost lg btn-sm" href="${pricing}"><span>${p.plan === "pro" ? "See plans" : "See Gradify Pro"}</span></a></div></div>
+    ${usage}`;
+  $("#manage-billing")?.addEventListener("click", async (e) => {
+    const b = e.currentTarget; b.disabled = true; b.querySelector("span").textContent = "Opening Stripe…";
+    try { await openPortal(store, `${location.pathname}#/account`); }
+    catch (err) { b.disabled = false; b.querySelector("span").textContent = "Manage billing"; toast(esc(err.message)); }
+  });
 }
 
 // ---------- Start ----------

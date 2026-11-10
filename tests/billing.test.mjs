@@ -88,3 +88,31 @@ test("learners can't grant themselves Pro, change the switch, read others' plans
   await assert.rejects(x.as(A, "insert into public.tutor_usage (user_id, mode) values (auth.uid(), 'socratic')"), "no direct usage inserts");
   await x.close();
 });
+
+test("allowances are monthly on yearly Pro too: a yearly subscriber's window is the current month of their year", async () => {
+  const x = await db();
+  await x.owner(`update public.ai_settings set enabled = true;
+    insert into public.subscriptions (user_id, stripe_customer_id, stripe_subscription_id, status, billing_interval, current_period_start, current_period_end)
+    values ('${A}', 'cus_a', 'sub_a', 'active', 'year', now() - interval '100 days', now() + interval '265 days')`);
+  const [p] = await x.owner(`select * from public.ai_period('${A}')`);
+  assert.equal(p.plan, "pro");
+  const days = (new Date(p.period_end) - new Date(p.period_start)) / 86400_000;
+  assert.ok(days >= 28 && days <= 31, `window is a month, not a year (${days} days)`);
+  assert.ok(new Date(p.period_start) <= new Date() && new Date(p.period_end) > new Date(), "the window contains now");
+  // usage from earlier months of the year doesn't count against this month (the owner may seed usage; learners can't)
+  await x.owner(`insert into public.tutor_usage (user_id, mode, status, created_at) select '${A}', 'pack', 'ok', now() - interval '60 days' from generate_series(1, 20)`);
+  assert.ok((await claim(x, A, "pack")).usage_id, "last month's 20 packs don't use up this month's");
+  await x.close();
+});
+
+test("monthly Pro keeps its billing period as the window; a past_due grace period doesn't reset it early", async () => {
+  const x = await db();
+  await x.owner(`insert into public.subscriptions (user_id, stripe_customer_id, stripe_subscription_id, status, billing_interval, current_period_start, current_period_end)
+    values ('${A}', 'cus_a', 'sub_a', 'active', 'month', date_trunc('second', now()) - interval '10 days', date_trunc('second', now()) + interval '20 days')`);
+  let [p] = await x.owner(`select p.*, s.current_period_start as ps, s.current_period_end as pe from public.ai_period('${A}') p, public.subscriptions s`);
+  assert.equal(+new Date(p.period_start), +new Date(p.ps)); assert.equal(+new Date(p.period_end), +new Date(p.pe));
+  await x.owner(`update public.subscriptions set status = 'past_due', current_period_start = now() - interval '31 days', current_period_end = now() - interval '1 day'`);
+  [p] = await x.owner(`select p.*, s.current_period_start as ps from public.ai_period('${A}') p, public.subscriptions s`);
+  assert.equal(p.plan, "pro"); assert.equal(+new Date(p.period_start), +new Date(p.ps), "grace period: same window as the period that just ended");
+  await x.close();
+});

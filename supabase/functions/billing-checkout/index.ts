@@ -2,9 +2,10 @@
 // POST { interval: "month" | "year" }  (signed in)  → { url }  a Stripe Checkout page for Gradify Pro
 // Learners who are already Pro get the billing portal instead, so nobody can subscribe twice.
 // Secrets: STRIPE_SECRET_KEY, STRIPE_PRICE_MONTH, STRIPE_PRICE_YEAR (optional: STRIPE_AUTOMATIC_TAX=on).
+// Not on sale until GRADIFY_PRO_ON_SALE=on; before that only GRADIFY_BILLING_TESTERS (comma-separated emails) may buy.
 // The learner is identified from their own Supabase token; their Stripe customer id is stored with the service role.
 import { createClient } from "npm:@supabase/supabase-js@2.117.0";
-import { stripe, priceFor } from "../_shared/billing.js";
+import { stripe, priceFor, safeBack, returnUrl, mayBuy } from "../_shared/billing.js";
 
 const SITE = (Deno.env.get("GRADIFY_SITE_URL") ?? "https://getgradify.com").replace(/\/+$/, "");
 const ALLOWED = (Deno.env.get("GRADIFY_ALLOWED_ORIGINS") ?? "https://getgradify.com,http://localhost:8080").split(",");
@@ -28,16 +29,18 @@ Deno.serve(async (req) => {
   let body: { interval?: string; from?: string };
   try { body = await req.json(); } catch { return json(req, { error: "Bad request." }, 400); }
   // where to come back to: a page on the Gradify site only
-  const back = typeof body.from === "string" && body.from.startsWith("/") && !body.from.startsWith("//") ? body.from : "/pricing.html";
+  const back = safeBack(body.from);
+  const env = Deno.env.toObject();
 
   try {
     const { data: sub } = await admin.from("subscriptions").select("*").eq("user_id", user.id).maybeSingle();
     const { data: pro } = await admin.rpc("is_pro", { uid: user.id });
     if (pro && sub?.stripe_customer_id) {
-      const portal = await stripe(secret, "POST", "/billing_portal/sessions", { customer: sub.stripe_customer_id, return_url: `${SITE}${back}` });
+      const portal = await stripe(secret, "POST", "/billing_portal/sessions", { customer: sub.stripe_customer_id, return_url: returnUrl(SITE, back) });
       return json(req, { url: portal.url, alreadyPro: true });
     }
-    const price = priceFor(body.interval ?? "", Deno.env.toObject());
+    if (!mayBuy(user.email, env)) return json(req, { error: "Gradify Pro opens when Gradify AI launches. Everything else on Gradify is free in the meantime.", notOnSale: true }, 403);
+    const price = priceFor(body.interval ?? "", env);
     let customer = sub?.stripe_customer_id as string | undefined;
     if (!customer) {
       const c = await stripe(secret, "POST", "/customers", { email: user.email, metadata: { gradify_user_id: user.id } });
@@ -55,8 +58,8 @@ Deno.serve(async (req) => {
       allow_promotion_codes: "true",
       automatic_tax: Deno.env.get("STRIPE_AUTOMATIC_TAX") === "on" ? { enabled: "true" } : undefined,
       customer_update: Deno.env.get("STRIPE_AUTOMATIC_TAX") === "on" ? { address: "auto" } : undefined,
-      success_url: `${SITE}${back}${back.includes("?") ? "&" : "?"}checkout=success`,
-      cancel_url: `${SITE}${back}${back.includes("?") ? "&" : "?"}checkout=cancelled`,
+      success_url: returnUrl(SITE, back, { checkout: "success" }),
+      cancel_url: returnUrl(SITE, back, { checkout: "cancelled" }),
     });
     return json(req, { url: session.url });
   } catch (e) {

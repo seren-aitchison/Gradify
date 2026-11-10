@@ -326,3 +326,12 @@ kbd { font: 11px var(--mono); padding: 1px 6px; border-radius: 5px; border: 1px 
 .setup-form label.check { flex-direction: row; align-items: center; gap: 10px; color: var(--fg); }
 .setup-form label.check input { width: 18px; height: 18px; padding: 0; margin: 0; accent-color: #4fe0a6; flex: none; }
 .setup-form .hint { display: block; font-style: normal; color: var(--faint); font-size: 12px; margin-top: 2px; }
+
+/* Account: your plan */
+.plan-panel .plan-line { display: flex; gap: 8px; align-items: baseline; margin-top: 4px; max-width: 62ch; line-height: 1.5; }
+.plan-panel .plan-line > span { flex: none; width: 18px; height: 18px; border-radius: 50%; display: inline-grid; place-items: center; font: 700 11px var(--sans); background: rgba(255, 255, 255, .12); transform: translateY(2px); }
+.plan-panel .plan-line.ok > span { background: #5fe3a1; color: #000; }
+.plan-panel .plan-line.warn > span { background: #ffc002; color: #000; }
+.plan-uses { list-style: none; margin: 14px 0 8px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; }
+.plan-uses li { display: flex; justify-content: space-between; gap: 10px; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--inset); font-size: 14px; }
+.plan-uses b { font-variant-numeric: tabular-nums; white-space: nowrap; }
