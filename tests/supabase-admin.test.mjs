@@ -156,3 +156,17 @@ test("owner settings may be changed one keyed row at a time; learner tables and 
   ]) assert.ok(destructive(bad).length, bad);
   assert.deepEqual(configUpdates("update public.profiles set xp = 0 where user_id = 'x';"), []);
 });
+
+test("auth-config keeps redirect addresses already allowed (the apps add their own)", async () => {
+  const { allowList, authConfig } = await import("../scripts/supabase-admin.mjs");
+  assert.equal(allowList(""), "https://getgradify.com/**");
+  assert.equal(allowList("https://getgradify.com/**, com.getgradify.app://auth"), "https://getgradify.com/**,com.getgradify.app://auth");
+  let cfg = { site_url: "x", uri_allow_list: "com.getgradify.app://auth" };
+  const calls = [];
+  const c = { ref: "test", call: async (method, path, body) => { calls.push(method); if (method === "PATCH") cfg = { ...cfg, ...body }; return cfg; } };
+  await authConfig(c);
+  assert.deepEqual(calls, ["GET", "PATCH", "GET"], "reads before writing");
+  assert.equal(cfg.uri_allow_list, "https://getgradify.com/**,com.getgradify.app://auth");
+  await authConfig(c);
+  assert.equal(cfg.uri_allow_list, "https://getgradify.com/**,com.getgradify.app://auth", "running it again changes nothing");
+});

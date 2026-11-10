@@ -15,6 +15,19 @@ const quiz = (x, y) => ({ best: Math.max(x.best || 0, y.best || 0), pass: !!(x.p
 // workspace cases (legal reasoning, clinical simulation): best score wins; the higher attempt count and the latest result are kept
 const ws = (x, y) => ({ best: Math.max(x.best || 0, y.best || 0), runs: Math.max(x.runs || 0, y.runs || 0), last: (y.at || 0) > (x.at || 0) ? y.last : x.last, at: Math.max(x.at || 0, y.at || 0) });
 const dedupe = (list, key) => { const seen = new Set(); return list.filter((x) => { const k = key(x); if (seen.has(k)) return false; seen.add(k); return true; }); };
+// a finished mock exam is identified by its exam id and finish time, never by its JSON text: the account's copy
+// (Postgres jsonb) comes back with its keys in a different order, which made one sitting look like two
+const mockKey = (m) => (m && m.t != null ? `${m.id}|${m.t}` : JSON.stringify(m));
+// XP that can only be earned once per item (a lesson, a check question, a chest, a week's challenge, a written task,
+// a lab or workspace challenge): if two devices both earned it before syncing, only the earliest award is kept.
+// A unit quiz pays once for passing (50 XP, or 70 with a perfect score) and once for a first 100% (20 XP).
+// Everything else (flashcard reviews, mock exams passed) can rightly be earned again and is kept.
+export const ONCE = new Set(["lesson", "check", "chest", "weekly", "write", "practice"]);
+const awardKey = (e) => (ONCE.has(e.k) ? `${e.k}|${e.id}` : e.k === "quiz" ? `quiz|${e.id}|${(e.xp || 0) >= 50 ? "pass" : "perfect"}` : null);
+export function onceOnly(log) {
+  const seen = new Set();
+  return log.filter((e) => { const k = awardKey(e); if (k == null) return true; if (seen.has(k)) return false; seen.add(k); return true; });
+}
 
 // the part of the course state that goes to the account
 export function cloudCopy(S) {
@@ -27,7 +40,7 @@ export function cloudCopy(S) {
 export function mergeProgress(local = {}, cloud = {}) {
   const newer = (cloud.updated || 0) > (local.updated || 0) ? cloud : local;
   const first = (x, y) => Math.min(x, y); // timestamps: keep when it first happened
-  const mocks = union(local.mocks, cloud.mocks, (x, y) => dedupe([...x, ...y], (m) => JSON.stringify(m)));
+  const mocks = union(local.mocks, cloud.mocks, (x, y) => dedupe([...x, ...y], mockKey));
   return {
     ...local,
     done: union(local.done, cloud.done, first),
@@ -40,7 +53,7 @@ export function mergeProgress(local = {}, cloud = {}) {
     ws: union(local.ws, cloud.ws, ws),
     cards: union(local.cards, cloud.cards, card),
     mocks,
-    log: dedupe([...(local.log || []), ...(cloud.log || [])], (e) => `${e.t}|${e.k}|${e.id}`).sort((a, b) => a.t - b.t),
+    log: onceOnly(dedupe([...(local.log || []), ...(cloud.log || [])], (e) => `${e.t}|${e.k}|${e.id}`).sort((a, b) => a.t - b.t)),
     goal: newer.goal ?? local.goal, path: newer.path ?? null,
     open: newer.open || [], closed: newer.closed || [],
     attempts: local.attempts || [],

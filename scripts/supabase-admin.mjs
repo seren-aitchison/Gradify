@@ -365,9 +365,18 @@ async function rlsAudit(c) {
 ${md(rows.map((r) => ({ table: r.table, rls: r.rls ? "on" : "OFF", "learner-owned": r.learner_owned ? "yes" : "no", policies: r.policies, result: r.ok ? "ok" : r.problems.join("; ") })), ["table", "rls", "learner-owned", "policies", "result"])}`;
 }
 
-async function authConfig(c) {
+// The redirect addresses sign-in may return to: getgradify.com's, plus every one already allowed (the native apps add
+// their own). Pure, so it is tested without a project.
+export function allowList(current, site = "https://getgradify.com") {
+  const have = String(current || "").split(",").map((x) => x.trim()).filter(Boolean);
+  return [...new Set([`${site}/**`, ...have])].join(",");
+}
+
+export async function authConfig(c) {
   const site = "https://getgradify.com";
-  await c.call("PATCH", `/projects/${c.ref}/config/auth`, { site_url: `${site}/app.html`, uri_allow_list: `${site}/**` });
+  // read first, so redirect addresses added for the apps (or by hand) are kept rather than replaced
+  const before = await c.call("GET", `/projects/${c.ref}/config/auth`);
+  await c.call("PATCH", `/projects/${c.ref}/config/auth`, { site_url: `${site}/app.html`, uri_allow_list: allowList(before?.uri_allow_list, site) });
   const cfg = await c.call("GET", `/projects/${c.ref}/config/auth`);
   return `Site URL: ${cfg.site_url}. Redirect URLs: ${cfg.uri_allow_list}. Email confirmation required: ${cfg.mailer_autoconfirm ? "NO (auto-confirm is on)" : "yes"}. Email sign-in: ${cfg.external_email_enabled ? "on" : "off"}.`;
 }
