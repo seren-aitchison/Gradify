@@ -4,7 +4,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { expectations, verifyQuery, migrate, judgeRls, listMigrations, client, destructive } from "../scripts/supabase-admin.mjs";
+import { UnverifiableRevoke, expectations, verifyQuery, migrate, judgeRls, listMigrations, client, destructive } from "../scripts/supabase-admin.mjs";
 
 function fakeDb({ applied = [], failOn = null, missing = [], atomic = true, users = 0, rows = {}, loseRowsOn = null } = {}) {
   const ledger = new Set(applied), ran = [], counts = { ...rows };
@@ -38,6 +38,28 @@ test("expectations are read from the migration itself", () => {
   assert.deepEqual(e.policies, [{ name: "own a", table: "a" }]);
   assert.deepEqual(e.columns, [{ table: "a", column: "note" }]);
   assert.equal(verifyQuery(e).checks.length, 4);
+});
+
+test("revoked table privileges are verified: each role must hold none of them afterwards", () => {
+  const e = expectations("revoke truncate, maintain on table public.goals from anon, authenticated;\nrevoke all on public.ai_cache from anon;");
+  assert.deepEqual(e.revoked, [
+    { table: "goals", role: "anon", privileges: ["TRUNCATE", "MAINTAIN"] },
+    { table: "goals", role: "authenticated", privileges: ["TRUNCATE", "MAINTAIN"] },
+    { table: "ai_cache", role: "anon", privileges: ["SELECT", "INSERT", "UPDATE", "DELETE", "TRUNCATE", "REFERENCES", "TRIGGER", "MAINTAIN"] },
+  ]);
+  const q = verifyQuery(e);
+  assert.equal(q.checks.length, 3);
+  assert.match(q.query, /not \(has_table_privilege\('anon', 'public\.goals', 'TRUNCATE'\) or has_table_privilege\('anon', 'public\.goals', 'MAINTAIN'\)\)/);
+});
+
+test("a revoke the tool can't verify is refused, never silently skipped", () => {
+  for (const sql of [
+    "revoke select on table public.x from public;",                       // PUBLIC: has_table_privilege can't check it
+    "revoke select on table public.x from anon, PUBLIC;",                 // PUBLIC alongside a checkable role
+    "revoke grant option for select on table public.x from anon;",        // not a privilege it can check
+    "revoke select on table public.x from anon cascade;",                 // not a single role name
+    "revoke usage on table public.x from anon;",                          // not a table privilege
+  ]) assert.throws(() => expectations(sql), (e) => e instanceof UnverifiableRevoke && /Refused rather than skipped/.test(e.message), sql);
 });
 
 test("every real migration has something to verify", async () => {

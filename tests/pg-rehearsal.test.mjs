@@ -35,6 +35,36 @@ test("every migration applies and verifies on real PostgreSQL, through the produ
   await c.close();
 });
 
+test("a migration whose own checks fail is rolled back completely, ledger entry included", async () => {
+  const c = await tempDb();
+  // anon can still read t through a grant to everyone (PUBLIC), so revoking anon's own SELECT leaves it able to read:
+  // the SQL succeeds, but the check (effective privilege, PUBLIC included) does not hold
+  await c.sql("create table public.t (x int); grant select on public.t to public, anon;");
+  const list = [{ file: "20990101000000_revoke.sql", version: "20990101000000", name: "revoke", sql: "revoke select on table public.t from anon;" }];
+  const r = await migrate(c, { list });
+  assert.equal(r.ok, false);
+  assert.equal(r.report[0].result, "FAILED");
+  assert.match(r.report[0].error, /migration check failed: anon holds no SELECT on t/);
+  assert.equal((await c.sql("select count(*)::int n from supabase_migrations.schema_migrations where version = '20990101000000'"))[0].n, 0, "not recorded as applied");
+  const own = await c.sql("select exists (select 1 from aclexplode((select relacl from pg_class where oid = 'public.t'::regclass)) a where pg_get_userbyid(a.grantee) = 'anon' and a.privilege_type = 'SELECT') as kept");
+  assert.equal(own[0].kept, true, "anon's own grant is back: the revoke was rolled back with the failed check");
+  await c.close();
+});
+
+test("migrate refuses a PUBLIC revoke before touching the database: nothing applied, nothing recorded", async () => {
+  const c = await tempDb();
+  await c.sql("create table public.t2 (x int); grant select on public.t2 to public;");
+  const list = [{ file: "20990102000000_public.sql", version: "20990102000000", name: "public", sql: "revoke select on table public.t2 from public;" }];
+  const r = await migrate(c, { list });
+  assert.equal(r.ok, false);
+  assert.equal(r.report[0].result, "REFUSED");
+  assert.match(r.report[0].error, /revokes from PUBLIC aren't verifiable yet/);
+  const rec = await c.sql("select count(*)::int n from supabase_migrations.schema_migrations where version = '20990102000000'").catch(() => [{ n: 0 }]);
+  assert.equal(rec[0].n, 0, "not recorded");
+  assert.equal((await c.sql("select has_table_privilege('anon', 'public.t2', 'SELECT') as still"))[0].still, true, "PUBLIC's grant untouched: nothing was applied");
+  await c.close();
+});
+
 test("a backup restores into a separate database with every row and value identical", async () => {
   const { c, list } = await seeded();
   const snap = JSON.parse(JSON.stringify(await snapshot(c)));   // as written to and read from disk

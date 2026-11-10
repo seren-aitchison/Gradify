@@ -34,6 +34,25 @@ export function client(ref, { token = process.env.SUPABASE_ACCESS_TOKEN || `sbp_
 
 // ---------- what each migration must leave behind ----------
 // Parsed from the SQL itself, so the check can't drift from the migration.
+// what "all" means for a table or view (PostgreSQL 17+, which production runs)
+const TABLE_PRIVILEGES = ["SELECT", "INSERT", "UPDATE", "DELETE", "TRUNCATE", "REFERENCES", "TRIGGER", "MAINTAIN"];
+/** Thrown for a revoke the tool can't verify. migrate refuses the migration before rehearsing or applying it. */
+export class UnverifiableRevoke extends Error {}
+// Fails closed: every privilege must be one PostgreSQL names for tables, and every grantee a plain role that
+// has_table_privilege can check. PUBLIC can't be passed to has_table_privilege, so a revoke from PUBLIC is refused until
+// the tool can verify it; so are GRANT OPTION FOR, CASCADE/RESTRICT and anything else it doesn't understand.
+function revokedPrivileges(privs, table, roles) {
+  const refuse = (why) => { throw new UnverifiableRevoke(`can't verify "revoke ${privs.trim()} on public.${table} from ${roles.trim()}": ${why}. Refused rather than skipped.`); };
+  const named = privs.trim().toLowerCase();
+  const p = named === "all" || named === "all privileges" ? TABLE_PRIVILEGES : privs.split(",").map((x) => x.trim().toUpperCase());
+  for (const x of p) if (!TABLE_PRIVILEGES.includes(x)) refuse(`"${x}" isn't a table privilege it can check`);
+  const rs = roles.split(",").map((r) => r.trim());
+  for (const r of rs) {
+    if (!/^[a-z_][a-z0-9_]*$/i.test(r)) refuse(`"${r}" isn't a single role name`);
+    if (r.toLowerCase() === "public") refuse("revokes from PUBLIC aren't verifiable yet");
+  }
+  return rs.map((role) => ({ table, role, privileges: p }));
+}
 export function expectations(sql) {
   const s = sql.replace(/--.*$/gm, "");
   const all = (re) => [...s.matchAll(re)].map((m) => m.slice(1));
@@ -47,9 +66,18 @@ export function expectations(sql) {
     views: all(/create (?:or replace )?view public\.(\w+)/gi).map(([v]) => v),
     constraints: all(/add constraint (\w+)/gi).map(([c]) => c),
     indexes: all(/create (?:unique )?index (?:if not exists )?(\w+)/gi).map(([i]) => i),
+    // table privileges a migration takes away: each (table, role) must afterwards hold none of them. A revoke this
+    // can't verify is refused, never skipped (see revokedPrivileges)
+    revoked: all(/revoke ([\w, ]+?) on (?:table )?public\.(\w+) from ([\w, ]+)/gi).flatMap(([privs, table, roles]) => revokedPrivileges(privs, table, roles)),
   };
 }
 const lit = (x) => `'${String(x).replace(/'/g, "''")}'`;
+/** The checks as statements that raise an error (and so roll back the query they're part of) when one doesn't hold.
+ *  Each is a DO block: if the check is false, RAISE EXCEPTION names it. These are added by this tool at apply time;
+ *  migration files themselves still may not contain DO blocks (see destructive()). */
+export function guards(v) {
+  return v.exprs.map((q, i) => `do $gradify_check$ begin if not (${q}) then raise exception '%', ${lit(`migration check failed: ${v.checks[i]}`)}; end if; end $gradify_check$;`).join("\n");
+}
 // one query that returns, for each expected object, whether it exists
 export function verifyQuery(e) {
   const checks = [
@@ -62,8 +90,9 @@ export function verifyQuery(e) {
     ...e.views.map((v) => [`view ${v}`, `exists (select 1 from pg_views where schemaname = 'public' and viewname = ${lit(v)})`]),
     ...e.constraints.map((c) => [`constraint ${c}`, `exists (select 1 from pg_constraint where conname = ${lit(c)})`]),
     ...(e.indexes || []).map((x) => [`index ${x}`, `exists (select 1 from pg_indexes where schemaname = 'public' and indexname = ${lit(x)})`]),
+    ...(e.revoked || []).map((r) => [`${r.role} holds no ${r.privileges.join("/")} on ${r.table}`, `not (${r.privileges.map((p) => `has_table_privilege(${lit(r.role)}, ${lit(`public.${r.table}`)}, ${lit(p)})`).join(" or ")})`]),
   ];
-  return { checks: checks.map(([label]) => label), query: checks.length ? `select ${checks.map(([, q], i) => `${q} as c${i}`).join(", ")};` : "select 1 as c0;" };
+  return { checks: checks.map(([label]) => label), exprs: checks.map(([, q]) => q), query: checks.length ? `select ${checks.map(([, q], i) => `${q} as c${i}`).join(", ")};` : "select 1 as c0;" };
 }
 
 // ---------- safety checks ----------
@@ -185,6 +214,11 @@ export async function migrate(c, { list, log = () => {}, next = false, backedUp 
     if (done.has(m.version)) { report.push({ ...m, result: "already applied", sha }); log(`= ${m.file} (already applied)`); continue; }
     const danger = destructive(sql);
     if (danger.length) { report.push({ ...m, result: "REFUSED", sha, error: `could change or remove existing data: ${danger.join("; ")}` }); log(`✗ ${m.file}: refused (${danger.join("; ")})`); return { ok: false, report, stoppedAt: m.file }; }
+    // the checks this migration must pass, worked out before anything is rehearsed or applied: a revoke the tool
+    // can't verify stops here, with nothing changed
+    let v;
+    try { v = verifyQuery(expectations(sql)); }
+    catch (e) { if (!(e instanceof UnverifiableRevoke)) throw e; report.push({ ...m, result: "REFUSED", sha, error: e.message }); log(`✗ ${m.file}: refused (${e.message})`); return { ok: false, report, stoppedAt: m.file }; }
     // rehearse it first on a temporary copy of the current data (real PostgreSQL, never production)
     if (rehearse) {
       const r = await rehearseMigration(JSON.parse(JSON.stringify(await snapshot(c))), list, m, configUpdates(sql));
@@ -194,14 +228,16 @@ export async function migrate(c, { list, log = () => {}, next = false, backedUp 
     const before = await rowCounts(c), cols = await columnsNow(c), sums = await checksums(c, cols);
     const t0 = Date.now();
     try {
-      // one query: the migration and its ledger entry commit together or not at all (checked by the probe above)
-      await c.sql(`${sql}\ninsert into supabase_migrations.schema_migrations (version, name, statements) values (${lit(m.version)}, ${lit(m.name)}, array[${lit(sql)}]);`);
+      // one query: the migration, its ledger entry and its checks commit together or not at all (all-or-nothing is
+      // proved by the probe above). Each check that doesn't hold raises an error naming it, so the whole query is
+      // rolled back and production is left exactly as it was.
+      await c.sql(`${sql}\ninsert into supabase_migrations.schema_migrations (version, name, statements) values (${lit(m.version)}, ${lit(m.name)}, array[${lit(sql)}]);\n${guards(v)}`);
     } catch (e) {
       report.push({ ...m, result: "FAILED", sha, error: e.message });
       log(`✗ ${m.file}: ${e.message}`);
       return { ok: false, report, stoppedAt: m.file };
     }
-    const v = verifyQuery(expectations(sql));
+    // and confirmed again after the commit, from a fresh query
     const row = (await c.sql(v.query))[0] || {};
     const missing = v.checks.filter((_, i) => row[`c${i}`] !== true);
     const intended = configUpdates(sql);
