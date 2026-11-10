@@ -351,3 +351,78 @@ Settings after deploy: AI off, 0 testers, 0 owners; Pro allowances 40 / 25 / 5 /
 tutor and explain claude-opus-5-5, pack and quiz claude-sonnet-5-5.
 
 Changes made by this check: none.
+
+## 2026-11-10 · Goals release · production
+
+**Dates.** Everything below happened on 10 November 2026 (UTC). The migration's file name, `20261112120000_goals.sql`, is an ordering label that keeps it after the earlier migrations, not the day it ran. Earlier labels work the same way: `20261111120000_ai_controls.sql` was also applied on 10 November. The database records which migrations have been applied but not when, so the times below come from the tools' own output and GitHub Actions.
+
+| step | time (UTC) | result |
+|---|---|---|
+| Backup | 12:27 | verified |
+| Rehearsal on that backup | 12:28 | ok |
+| Migration applied | 12:29 | applied and verified |
+| Row-level security audit | 12:29 | every table as intended (see below) |
+| Code deployed | 12:31–12:34 | commit `1050d93`, GitHub Actions "Test and deploy" run 42816544933: success |
+
+### Backup
+
+A logical backup of the production database was taken through the API and **verified**:
+- it was re-read from disk with a matching hash;
+- every table's saved rows equal its count, and a fresh count of the live database matched;
+- it was **restored into a separate temporary PostgreSQL database**, built from the 14 recorded migrations, with every row and value identical.
+
+Totals: 26 tables, 604 rows, 7 accounts (counted, not copied). SHA-256 starts `37e38608ebc044e1`. The backup contains learner data and is intended for encrypted private storage outside this repository. It was handed to the owner on 10 November. **Durable encrypted storage, with a second copy, is not yet confirmed** (see outstanding actions below). See `docs/RECOVERY.md`.
+
+Sign-in accounts and stored files are not part of this logical backup. Supabase's own backups cover those.
+
+### Rehearsal
+
+`20261112120000_goals.sql`, the only pending migration, was applied to a temporary copy restored from the verified backup. Every existing value in all 26 tables was unchanged. Production was not touched.
+
+### Migration
+
+| migration | result | objects checked | sha256 |
+|---|---|---|---|
+| 14 earlier migrations (20261028120000 to 20261111120000) | already applied, unchanged | | |
+| 20261112120000_goals.sql | applied and verified | 6 (table, index, policy, function, trigger, RLS) | 9b5de1ebf0fa |
+
+It is additive: one new table (`goals`), its index, its row-level security policy and an `updated_at` trigger. No existing table was changed.
+
+Rolling it back would mean dropping the `goals` table, which **permanently deletes every goal learners have created since launch**. That is not the same as restoring a backup: this backup was taken before the table existed, so it holds no goals. Roll back only with the owner's explicit approval, after exporting the table's rows. See `docs/RECOVERY.md`, section 5.
+
+### Row-level security audit
+
+All 27 public tables (the 26 above plus `goals`) have row-level security switched on. That alone isn't the whole picture, so here is what each group of tables allows a client with the website's public key to do:
+
+| access from the website and apps | tables |
+|---|---|
+| **Owner only, read and write.** A signed-in learner can read, add, change and delete only their own rows | activity, body_checkins, cards, course_progress, documents, fitness_tests, **goals**, packs, plan_blocks, profiles, revalidation_entries, reviews, workouts |
+| **Owner only, limited.** Own rows only, and only some operations | assessment_attempts (read, add, delete; no edits), tutor_usage (read; additions are also refused by a trigger unless the server's allowance check made them), subscriptions (read; written only by the billing server), ai_admins and ai_testers (read: lets a user see their own role) |
+| **Public read-only settings.** Anyone can read; no client can change them (the owner changes them only through reviewed migrations) | ai_limits, ai_plan_caps |
+| **Add only, never read.** Visitors can add a row but can't read any | page_events (today's date only), waitlist |
+| **No client access.** Row-level security on, with no policy for any client role, so the website and apps can't read or write them at all | ai_cache, ai_feature_models, ai_prices, ai_settings, billing_events |
+
+**How this was checked.** From the live database itself: each table's policies (`pg_policies`: the operations, roles and conditions, not just the names), the table privileges, and which functions each client role can execute.
+
+- **Table privileges.** Supabase grants `anon` and `authenticated` every table privilege on every public table by default, so row-level security, not privileges, is what limits clients. Row-level security doesn't cover `TRUNCATE`. Today clients can't use it, because the database API the website and apps use only offers reading, adding, changing and deleting, but the privilege itself still exists in the database. Revoking the privileges clients never need is tracked as a separate security-hardening task (see outstanding actions). Nothing was changed here.
+- **Functions clients can run.**
+  - Signed-out and signed-in: `ai_feature` and `ai_row_pence`, plain calculations that run with the caller's own rights.
+  - Signed-in only: `my_ai_allowance` (the caller's own allowance), `ai_is_admin`, and `ai_admin_overview`, which refuses anyone who isn't a Gradify owner.
+
+  Every other privileged function can be run only by the server. `rls_auto_enable` is Supabase's own hook that switches row-level security on for new tables. Clients appear able to execute it, but it can't be called directly.
+- **Views.** `daily_activity` runs with the caller's rights (`security_invoker`), so the policies above apply. `daily_usage` isn't granted to clients.
+- **Keys.** The website and apps hold only the publishable key (`sb_publishable_…`). No secret or service-role key is in client code, and `tests/secrets.test.mjs` fails the build if one is committed.
+
+Administrative and server access (billing webhooks, AI functions, migrations) uses the server's service role. It bypasses row-level security by design and is never available to the website or apps.
+
+A signed-out check against production after the migration confirmed `goals` from a client's side: reading returned nothing, adding a goal was refused by row-level security, and changing goals affected nothing. The table had 0 rows.
+
+### Outstanding actions
+
+- **Owner:** confirm the backup's SHA-256 matches, then store it encrypted, with a second copy. Not yet confirmed.
+- **Signed-in check on production:** create, add to, edit, refresh, then archive and delete a disposable goal while
+  signed in. Not yet done. The account path is so far tested only against the same migration locally.
+- **Security hardening (separate, reviewed change):** revoke the table privileges `anon` and `authenticated` never need
+  (such as `TRUNCATE`, `REFERENCES`, `TRIGGER`, and writes on tables they can only read), after checking Supabase
+  compatibility. No production permissions were changed in this release.
+- **Recovery:** a tested single-table restore procedure (`docs/RECOVERY.md`, section 4) doesn't exist yet.
