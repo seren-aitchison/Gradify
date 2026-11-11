@@ -3,8 +3,9 @@
 // "reviewed" only if `by` says so; it can never complete "sources" or "signoff". Sign-off needs a chartered
 // engineer (CEng) who is also a university lecturer.
 export const QA = {
+  u02: { standard: 2, reviewed: null, sources: null, signoff: null },
   // written to standard 2; review, source check and sign-off pending
   u01: { standard: 2, reviewed: null, sources: null, signoff: null },
 };
 // the date each school's notes were first written
-export const WRITTEN_ON = { u01: "2026-11-08" };
+export const WRITTEN_ON = { u01: "2026-11-08", u02: "2026-11-10" };
