@@ -36,7 +36,7 @@
    "page": "/businessgradify/course/",
    "units": 11,
    "lessons": 178,
-   "lessonsWritten": 34,
+   "lessonsWritten": 50,
    "syllabus": "/kit/api/v1/courses/business.json"
   },
   {
@@ -72,7 +72,7 @@
    "page": "/ecogradify/course/",
    "units": 11,
    "lessons": 198,
-   "lessonsWritten": 34,
+   "lessonsWritten": 52,
    "syllabus": "/kit/api/v1/courses/ecology.json"
   },
   {
@@ -84,7 +84,7 @@
    "page": "/engineergradify/course/",
    "units": 12,
    "lessons": 191,
-   "lessonsWritten": 35,
+   "lessonsWritten": 53,
    "syllabus": "/kit/api/v1/courses/engineering.json"
   },
   {
@@ -96,7 +96,7 @@
    "page": "/financegradify/course/",
    "units": 12,
    "lessons": 202,
-   "lessonsWritten": 54,
+   "lessonsWritten": 71,
    "syllabus": "/kit/api/v1/courses/finance.json"
   },
   {
@@ -108,7 +108,7 @@
    "page": "/healthgradify/course/",
    "units": 11,
    "lessons": 176,
-   "lessonsWritten": 50,
+   "lessonsWritten": 64,
    "syllabus": "/kit/api/v1/courses/health.json"
   },
   {
@@ -156,7 +156,7 @@
    "page": "/litgradify/course/",
    "units": 10,
    "lessons": 166,
-   "lessonsWritten": 38,
+   "lessonsWritten": 56,
    "syllabus": "/kit/api/v1/courses/literature.json"
   },
   {
@@ -180,7 +180,7 @@
    "page": "/medgradify/course/",
    "units": 12,
    "lessons": 234,
-   "lessonsWritten": 52,
+   "lessonsWritten": 68,
    "syllabus": "/kit/api/v1/courses/medicine.json"
   },
   {
@@ -192,7 +192,7 @@
    "page": "/musicgradify/course/",
    "units": 12,
    "lessons": 201,
-   "lessonsWritten": 36,
+   "lessonsWritten": 55,
    "syllabus": "/kit/api/v1/courses/music.json"
   },
   {

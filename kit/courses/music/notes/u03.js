@@ -292,7 +292,7 @@ SRC: Kostka S., Payne D. and Almén B., Tonal Harmony, 8th edition, McGraw-Hill 
 SRC: Levine M., The Jazz Theory Book, Sher Music | secondary | 1995
 Q: What is a half-diminished seventh chord? | A diminished triad with a minor seventh above the root.
 Q: What notes make up Gmaj7? | G, B, D and F♯.
-M1#music-u03-07-q1@1: Which chord has a minor triad and a minor seventh? | Minor seventh | Major seventh | Dominant seventh | Half-diminished seventh | Minor triad plus minor seventh gives a minor seventh chord.
+M1#music-u03-07-q1@1: Built on C, a chord has a minor triad with a minor seventh added. Which chord symbol names it? | Cm7 | Cmaj7 | C7 | Cø7 | A minor triad (C–E♭–G) plus a minor seventh (B♭) is written Cm7; C7 has a major triad and Cø7 a diminished one.
 M2#music-u03-07-q2@2: What type of chord is E–G♯–B–D? | Dominant seventh | Major seventh | Minor seventh | Diminished seventh | A major triad (E–G♯–B) with a minor seventh (D) is a dominant seventh.
 M3#music-u03-07-q3@3: A student spells the diminished seventh on G♯ as G♯–B–D–F. Is this correct, and why? | Yes: G♯–B, B–D and D–F are all minor thirds, using alternate letters | No: it should be G♯–C–D♯–F♯ | No: diminished sevenths have only three notes | No: it should be G–B♭–D♭–F♭ | Stacked minor thirds on alternate letters give G♯–B–D–F, the vii°7 of A minor.
 MATCH1#music-u03-07-q4@1: Match each chord to its type. | C–E–G–B = Major seventh ; C–E–G–B♭ = Dominant seventh ; C–E♭–G♭–B♭ = Half-diminished ; C–E♭–G♭–B𝄫 = Diminished seventh | The triad and seventh together name each chord.
