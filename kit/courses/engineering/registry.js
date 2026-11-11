@@ -53,7 +53,7 @@ export const LESSONS = {
   "u03-15":{"v":1,"hash":"ab1946c403a4","updated":"2026-11-11"},
   "u03-16":{"v":1,"hash":"3fe856b38e80","updated":"2026-11-11"},
   "u03-17":{"v":1,"hash":"86906114f48e","updated":"2026-11-11"},
-  "u03-18":{"v":1,"hash":"5f0db85bf095","updated":"2026-11-11"}
+  "u03-18":{"v":2,"hash":"ca8eea37fdc5","updated":"2026-11-11"}
 };
 export const QUESTIONS = {
   "engineering-u01-01-q1":{"lesson":"u01-01","type":"M","v":1,"hash":"8e0b1db74e09","updated":"2026-11-08"},
@@ -319,7 +319,7 @@ export const QUESTIONS = {
   "engineering-u03-17-q4":{"lesson":"u03-17","type":"NUM","v":1,"hash":"739429193f35","updated":"2026-11-11"},
   "engineering-u03-17-q5":{"lesson":"u03-17","type":"SA","v":1,"hash":"d6a26c2a3fbc","updated":"2026-11-11"},
   "engineering-u03-18-q1":{"lesson":"u03-18","type":"M","v":1,"hash":"f4723ca6a419","updated":"2026-11-11"},
-  "engineering-u03-18-q2":{"lesson":"u03-18","type":"M","v":1,"hash":"eafe36a80017","updated":"2026-11-11"},
+  "engineering-u03-18-q2":{"lesson":"u03-18","type":"M","v":2,"hash":"ef0ed6596c53","updated":"2026-11-11"},
   "engineering-u03-18-q3":{"lesson":"u03-18","type":"M","v":1,"hash":"8f52634bc9c4","updated":"2026-11-11"},
   "engineering-u03-18-q4":{"lesson":"u03-18","type":"NUM","v":1,"hash":"d16ca1f6ecaa","updated":"2026-11-11"},
   "engineering-u03-18-q5":{"lesson":"u03-18","type":"SA","v":1,"hash":"36c8b4d66b0b","updated":"2026-11-11"}
