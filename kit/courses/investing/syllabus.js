@@ -123,24 +123,27 @@ export const SYLLABUS = `
 * Valuing the whole market: CAPE
 * Growth and value investing
 * The limits of valuation
-7. Reading Company Accounts
-> The annual report
-* The annual report and accounts
-* The income statement
-* The balance sheet
-* The cash flow statement
-* Notes to the accounts and the auditor's report
-> Ratios
+7. Interpreting Financial Statements and Group Accounts
+> Ratio analysis
+* Why analyse financial statements?
 * Profitability ratios
-* Return on capital employed and return on equity
 * Liquidity ratios
-* Gearing and interest cover
-* Efficiency ratios
-* Cash conversion and the quality of earnings
-> Judging a business
-* Competitive advantage
-* Corporate governance and the UK Corporate Governance Code
-* Warning signs in company accounts
+* Efficiency ratios and the working capital cycle
+* Gearing and investor ratios
+* Interpreting ratios in context
+* Limitations of ratio analysis
+* Analysing cash flows
+* Performance in not-for-profit organisations
+> Group accounts
+* Groups and control
+* Goodwill on acquisition
+* The consolidated statement of financial position
+* Intra-group trading and unrealised profit
+* The consolidated statement of profit or loss
+* Associates and joint arrangements
+> Quality of reporting
+* Creative accounting and earnings management
+* Narrative reporting and the strategic report
 8. Funds, Index Investing and Costs
 > Pooled investments
 * Why pool investments?
@@ -262,7 +265,7 @@ export const BLURBS = {
   4: "Measuring return and risk, the equity risk premium, the long-run evidence and how to read performance honestly.",
   5: "Why diversification works, correlation, modern portfolio theory, CAPM, beta, factors and asset allocation.",
   6: "Price and value: discounted cash flow, the dividend discount model, P/E, yields, EV/EBITDA and CAPE.",
-  7: "The income statement, balance sheet and cash flow statement, the key ratios and the warning signs.",
+  7: "Ratio and cash flow analysis, consolidated group accounts and the quality of what companies report.",
   8: "Unit trusts, OEICs, investment trusts and ETFs, active against passive, and how charges compound.",
   9: "Loss aversion, overconfidence, herding and other biases, and habits that protect investors from themselves.",
   10: "ISAs, pensions, SIPPs, the State Pension, tax on savings, dividends and gains, and passing wealth on.",

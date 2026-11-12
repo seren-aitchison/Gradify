@@ -1,0 +1,995 @@
+{
+ "api": 1,
+ "slug": "careers",
+ "name": "Careers and Employability",
+ "site": "InternshipGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>General careers guidance, not personal advice.</b> InternshipGradify teaches careers and employability for UK students and graduates. The lessons were drafted with AI assistance and haven't yet been reviewed by a qualified careers professional, so they may contain errors, and pay figures, dates and employer practices change; check them against Prospects, the National Careers Service, gov.uk and ACAS. Nothing here is legal, financial or immigration advice. For guidance on your own situation, book a session with your university or college careers service or the National Careers Service (0800 100 900, England).",
+ "notes": "/kit/courses/careers/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Know yourself and the market",
+   "units": [
+    1,
+    2
+   ],
+   "from": "#0aa4c9",
+   "to": "#22d3ee"
+  },
+  {
+   "name": "Stage 2 · Experience and connections",
+   "units": [
+    3,
+    4
+   ],
+   "from": "#0891b2",
+   "to": "#2dd4bf"
+  },
+  {
+   "name": "Stage 3 · Applying and being selected",
+   "units": [
+    5,
+    6,
+    7
+   ],
+   "from": "#0e7490",
+   "to": "#38bdf8"
+  },
+  {
+   "name": "Stage 4 · Routes and starting work",
+   "units": [
+    8,
+    9,
+    10
+   ],
+   "from": "#0aa4c9",
+   "to": "#34d399"
+  },
+  {
+   "name": "Stage 5 · A career over a lifetime",
+   "units": [
+    11
+   ],
+   "from": "#06b6d4",
+   "to": "#818cf8"
+  }
+ ],
+ "paths": [
+  {
+   "id": "first-job",
+   "name": "Landing a graduate job",
+   "sub": "From self-assessment and research to CVs, applications, tests, interviews and assessment centres.",
+   "units": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    8
+   ],
+   "select": null
+  },
+  {
+   "id": "placement",
+   "name": "Winning an internship or placement",
+   "sub": "Finding experience, building a network and getting through selection for a summer internship or placement year.",
+   "units": [
+    1,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "select": null
+  },
+  {
+   "id": "starting-work",
+   "name": "Starting work well",
+   "sub": "Contracts, pay, rights, probation and the first months in a job, with resilience for the long run.",
+   "units": [
+    9,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "own-path",
+   "name": "Working for yourself",
+   "sub": "Self-knowledge, freelancing, enterprise and planning a career that you build yourself.",
+   "units": [
+    1,
+    10,
+    11
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Know yourself and the market",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Experience and connections",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    3,
+    4
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Applying and being selected",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    5,
+    6,
+    7
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Routes and starting work",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    8,
+    9,
+    10
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · A career over a lifetime",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    11
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Knowing Yourself",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What career development is",
+     "module": "Career development foundations"
+    },
+    {
+     "id": "u01-02",
+     "title": "Career theories: matching, development and chance",
+     "module": "Career development foundations"
+    },
+    {
+     "id": "u01-03",
+     "title": "The Gatsby Benchmarks and careers support",
+     "module": "Career development foundations"
+    },
+    {
+     "id": "u01-04",
+     "title": "Identifying your skills",
+     "module": "Self-assessment"
+    },
+    {
+     "id": "u01-05",
+     "title": "Transferable skills and graduate attributes",
+     "module": "Self-assessment"
+    },
+    {
+     "id": "u01-06",
+     "title": "Values and what matters to you at work",
+     "module": "Self-assessment"
+    },
+    {
+     "id": "u01-07",
+     "title": "Strengths and how to use them",
+     "module": "Self-assessment"
+    },
+    {
+     "id": "u01-08",
+     "title": "Interests and personality tools: uses and limits",
+     "module": "Self-assessment"
+    },
+    {
+     "id": "u01-09",
+     "title": "Reflective practice and the skills audit",
+     "module": "Self-assessment"
+    },
+    {
+     "id": "u01-10",
+     "title": "Motivations and work-life priorities",
+     "module": "From self-knowledge to direction"
+    },
+    {
+     "id": "u01-11",
+     "title": "Your career story and personal brand",
+     "module": "From self-knowledge to direction"
+    },
+    {
+     "id": "u01-12",
+     "title": "Setting career goals",
+     "module": "From self-knowledge to direction"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Exploring Sectors and Roles",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "What labour market information is",
+     "module": "Labour market information"
+    },
+    {
+     "id": "u02-02",
+     "title": "Using ONS and official labour market data",
+     "module": "Labour market information"
+    },
+    {
+     "id": "u02-03",
+     "title": "Reading job profiles: Prospects and the National Careers Service",
+     "module": "Labour market information"
+    },
+    {
+     "id": "u02-04",
+     "title": "Skills shortages and growth areas",
+     "module": "Labour market information"
+    },
+    {
+     "id": "u02-05",
+     "title": "How sectors and industries are organised",
+     "module": "Sectors and employers"
+    },
+    {
+     "id": "u02-06",
+     "title": "Public, private and third sector employers",
+     "module": "Sectors and employers"
+    },
+    {
+     "id": "u02-07",
+     "title": "Large employers, SMEs and start-ups",
+     "module": "Sectors and employers"
+    },
+    {
+     "id": "u02-08",
+     "title": "Graduate destinations: what degrees lead to",
+     "module": "Sectors and employers"
+    },
+    {
+     "id": "u02-09",
+     "title": "Job titles, job families and role descriptions",
+     "module": "Matching roles to you"
+    },
+    {
+     "id": "u02-10",
+     "title": "Researching an employer",
+     "module": "Matching roles to you"
+    },
+    {
+     "id": "u02-11",
+     "title": "Informational interviews",
+     "module": "Matching roles to you"
+    },
+    {
+     "id": "u02-12",
+     "title": "Weighing options and making a career decision",
+     "module": "Matching roles to you"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Work Experience, Internships and Placements",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Work experience and work shadowing",
+     "module": "Kinds of experience"
+    },
+    {
+     "id": "u03-02",
+     "title": "Internships",
+     "module": "Kinds of experience"
+    },
+    {
+     "id": "u03-03",
+     "title": "Placement years and sandwich degrees",
+     "module": "Kinds of experience"
+    },
+    {
+     "id": "u03-04",
+     "title": "Insight days and spring weeks",
+     "module": "Kinds of experience"
+    },
+    {
+     "id": "u03-05",
+     "title": "Volunteering",
+     "module": "Kinds of experience"
+    },
+    {
+     "id": "u03-06",
+     "title": "Part-time work and its value",
+     "module": "Kinds of experience"
+    },
+    {
+     "id": "u03-07",
+     "title": "Finding opportunities: advertised and speculative",
+     "module": "Getting and using experience"
+    },
+    {
+     "id": "u03-08",
+     "title": "Unpaid internships and the National Minimum Wage",
+     "module": "Getting and using experience"
+    },
+    {
+     "id": "u03-09",
+     "title": "Making the most of a placement",
+     "module": "Getting and using experience"
+    },
+    {
+     "id": "u03-10",
+     "title": "Virtual and remote experience",
+     "module": "Getting and using experience"
+    },
+    {
+     "id": "u03-11",
+     "title": "Reflecting on and recording experience",
+     "module": "Getting and using experience"
+    },
+    {
+     "id": "u03-12",
+     "title": "Turning experience into evidence",
+     "module": "Getting and using experience"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Networking and Your Professional Presence",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "What networking is and why it works",
+     "module": "Networking"
+    },
+    {
+     "id": "u04-02",
+     "title": "Building a network from where you are",
+     "module": "Networking"
+    },
+    {
+     "id": "u04-03",
+     "title": "Careers fairs and networking events",
+     "module": "Networking"
+    },
+    {
+     "id": "u04-04",
+     "title": "Speculative approaches and follow-up",
+     "module": "Networking"
+    },
+    {
+     "id": "u04-05",
+     "title": "Mentors and sponsors",
+     "module": "Networking"
+    },
+    {
+     "id": "u04-06",
+     "title": "Alumni networks",
+     "module": "Networking"
+    },
+    {
+     "id": "u04-07",
+     "title": "Building a LinkedIn profile",
+     "module": "Online presence"
+    },
+    {
+     "id": "u04-08",
+     "title": "Using LinkedIn to research and connect",
+     "module": "Online presence"
+    },
+    {
+     "id": "u04-09",
+     "title": "Content, engagement and visibility",
+     "module": "Online presence"
+    },
+    {
+     "id": "u04-10",
+     "title": "Managing your digital footprint",
+     "module": "Online presence"
+    },
+    {
+     "id": "u04-11",
+     "title": "Professional email communication",
+     "module": "Online presence"
+    },
+    {
+     "id": "u04-12",
+     "title": "Job scams and staying safe online",
+     "module": "Online presence"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "CVs and Cover Letters",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "What a CV is for",
+     "module": "The CV"
+    },
+    {
+     "id": "u05-02",
+     "title": "CV structure and sections",
+     "module": "The CV"
+    },
+    {
+     "id": "u05-03",
+     "title": "Writing achievement statements",
+     "module": "The CV"
+    },
+    {
+     "id": "u05-04",
+     "title": "Tailoring a CV to a role",
+     "module": "The CV"
+    },
+    {
+     "id": "u05-05",
+     "title": "CV formats: chronological and skills-based",
+     "module": "The CV"
+    },
+    {
+     "id": "u05-06",
+     "title": "Applicant tracking systems and keywords",
+     "module": "The CV"
+    },
+    {
+     "id": "u05-07",
+     "title": "Common CV mistakes",
+     "module": "The CV"
+    },
+    {
+     "id": "u05-08",
+     "title": "Academic and international CVs",
+     "module": "The CV"
+    },
+    {
+     "id": "u05-09",
+     "title": "The purpose of a cover letter",
+     "module": "Cover letters"
+    },
+    {
+     "id": "u05-10",
+     "title": "Structuring a cover letter",
+     "module": "Cover letters"
+    },
+    {
+     "id": "u05-11",
+     "title": "Showing motivation and fit",
+     "module": "Cover letters"
+    },
+    {
+     "id": "u05-12",
+     "title": "Speculative letters",
+     "module": "Cover letters"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Applications and Psychometric Tests",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "How application forms work",
+     "module": "Application forms"
+    },
+    {
+     "id": "u06-02",
+     "title": "Competency-based questions",
+     "module": "Application forms"
+    },
+    {
+     "id": "u06-03",
+     "title": "The STAR method",
+     "module": "Application forms"
+    },
+    {
+     "id": "u06-04",
+     "title": "Strengths-based questions",
+     "module": "Application forms"
+    },
+    {
+     "id": "u06-05",
+     "title": "Motivational questions",
+     "module": "Application forms"
+    },
+    {
+     "id": "u06-06",
+     "title": "Supporting and personal statements",
+     "module": "Application forms"
+    },
+    {
+     "id": "u06-07",
+     "title": "Civil Service Success Profiles",
+     "module": "Application forms"
+    },
+    {
+     "id": "u06-08",
+     "title": "What psychometric tests measure",
+     "module": "Psychometric and online assessments"
+    },
+    {
+     "id": "u06-09",
+     "title": "Numerical reasoning tests",
+     "module": "Psychometric and online assessments"
+    },
+    {
+     "id": "u06-10",
+     "title": "Verbal reasoning tests",
+     "module": "Psychometric and online assessments"
+    },
+    {
+     "id": "u06-11",
+     "title": "Logical and inductive reasoning tests",
+     "module": "Psychometric and online assessments"
+    },
+    {
+     "id": "u06-12",
+     "title": "Situational judgement tests",
+     "module": "Psychometric and online assessments"
+    },
+    {
+     "id": "u06-13",
+     "title": "Personality questionnaires",
+     "module": "Psychometric and online assessments"
+    },
+    {
+     "id": "u06-14",
+     "title": "Game-based assessments",
+     "module": "Psychometric and online assessments"
+    },
+    {
+     "id": "u06-15",
+     "title": "Reasonable adjustments in assessment",
+     "module": "Psychometric and online assessments"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Interviews and Assessment Centres",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Interview formats",
+     "module": "Interviews"
+    },
+    {
+     "id": "u07-02",
+     "title": "Preparing for an interview",
+     "module": "Interviews"
+    },
+    {
+     "id": "u07-03",
+     "title": "Answering competency and strengths questions",
+     "module": "Interviews"
+    },
+    {
+     "id": "u07-04",
+     "title": "Telephone and live video interviews",
+     "module": "Interviews"
+    },
+    {
+     "id": "u07-05",
+     "title": "Pre-recorded video interviews",
+     "module": "Interviews"
+    },
+    {
+     "id": "u07-06",
+     "title": "Case interviews",
+     "module": "Interviews"
+    },
+    {
+     "id": "u07-07",
+     "title": "Technical interviews",
+     "module": "Interviews"
+    },
+    {
+     "id": "u07-08",
+     "title": "Questions to ask the interviewer",
+     "module": "Interviews"
+    },
+    {
+     "id": "u07-09",
+     "title": "Handling nerves and difficult questions",
+     "module": "Interviews"
+    },
+    {
+     "id": "u07-10",
+     "title": "What happens at an assessment centre",
+     "module": "Assessment centres"
+    },
+    {
+     "id": "u07-11",
+     "title": "Group exercises",
+     "module": "Assessment centres"
+    },
+    {
+     "id": "u07-12",
+     "title": "Presentations",
+     "module": "Assessment centres"
+    },
+    {
+     "id": "u07-13",
+     "title": "In-tray and e-tray exercises",
+     "module": "Assessment centres"
+    },
+    {
+     "id": "u07-14",
+     "title": "Role-plays",
+     "module": "Assessment centres"
+    },
+    {
+     "id": "u07-15",
+     "title": "Feedback and learning from rejection",
+     "module": "Assessment centres"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Graduate Schemes, Apprenticeships and Other Routes",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "The graduate recruitment market",
+     "module": "Graduate recruitment"
+    },
+    {
+     "id": "u08-02",
+     "title": "Graduate schemes",
+     "module": "Graduate recruitment"
+    },
+    {
+     "id": "u08-03",
+     "title": "Graduate jobs outside schemes",
+     "module": "Graduate recruitment"
+    },
+    {
+     "id": "u08-04",
+     "title": "The recruitment calendar",
+     "module": "Graduate recruitment"
+    },
+    {
+     "id": "u08-05",
+     "title": "Offers, negotiation and accepting a job",
+     "module": "Graduate recruitment"
+    },
+    {
+     "id": "u08-06",
+     "title": "Degree and higher apprenticeships",
+     "module": "Other routes"
+    },
+    {
+     "id": "u08-07",
+     "title": "School leaver programmes",
+     "module": "Other routes"
+    },
+    {
+     "id": "u08-08",
+     "title": "Postgraduate study as a career step",
+     "module": "Other routes"
+    },
+    {
+     "id": "u08-09",
+     "title": "Working abroad and visas",
+     "module": "Other routes"
+    },
+    {
+     "id": "u08-10",
+     "title": "Gap years and career breaks",
+     "module": "Other routes"
+    },
+    {
+     "id": "u08-11",
+     "title": "Creative and portfolio careers",
+     "module": "Other routes"
+    },
+    {
+     "id": "u08-12",
+     "title": "Public service and fast-track routes",
+     "module": "Other routes"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Starting Work: Contracts and Rights",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Employment status: employee, worker and self-employed",
+     "module": "Contracts and pay"
+    },
+    {
+     "id": "u09-02",
+     "title": "The written statement of employment particulars",
+     "module": "Contracts and pay"
+    },
+    {
+     "id": "u09-03",
+     "title": "Pay, the minimum wage and payslips",
+     "module": "Contracts and pay"
+    },
+    {
+     "id": "u09-04",
+     "title": "Tax, National Insurance and student loan repayments",
+     "module": "Contracts and pay"
+    },
+    {
+     "id": "u09-05",
+     "title": "Pensions and auto-enrolment",
+     "module": "Contracts and pay"
+    },
+    {
+     "id": "u09-06",
+     "title": "Working hours and holiday",
+     "module": "Contracts and pay"
+    },
+    {
+     "id": "u09-07",
+     "title": "Probation periods",
+     "module": "Rights and the first months"
+    },
+    {
+     "id": "u09-08",
+     "title": "Equality and discrimination at work",
+     "module": "Rights and the first months"
+    },
+    {
+     "id": "u09-09",
+     "title": "Disability, disclosure and reasonable adjustments",
+     "module": "Rights and the first months"
+    },
+    {
+     "id": "u09-10",
+     "title": "Flexible working",
+     "module": "Rights and the first months"
+    },
+    {
+     "id": "u09-11",
+     "title": "Raising a grievance",
+     "module": "Rights and the first months"
+    },
+    {
+     "id": "u09-12",
+     "title": "Your first 90 days",
+     "module": "Rights and the first months"
+    },
+    {
+     "id": "u09-13",
+     "title": "Workplace wellbeing",
+     "module": "Rights and the first months"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Freelancing and Entrepreneurship",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Freelancing and self-employment",
+     "module": "Freelancing"
+    },
+    {
+     "id": "u10-02",
+     "title": "Registering as self-employed",
+     "module": "Freelancing"
+    },
+    {
+     "id": "u10-03",
+     "title": "Finding clients and pricing your work",
+     "module": "Freelancing"
+    },
+    {
+     "id": "u10-04",
+     "title": "Contracts, invoices and getting paid",
+     "module": "Freelancing"
+    },
+    {
+     "id": "u10-05",
+     "title": "IR35 and contracting",
+     "module": "Freelancing"
+    },
+    {
+     "id": "u10-06",
+     "title": "Entrepreneurial skills",
+     "module": "Enterprise"
+    },
+    {
+     "id": "u10-07",
+     "title": "Testing a business idea",
+     "module": "Enterprise"
+    },
+    {
+     "id": "u10-08",
+     "title": "Business structures",
+     "module": "Enterprise"
+    },
+    {
+     "id": "u10-09",
+     "title": "Funding a start-up",
+     "module": "Enterprise"
+    },
+    {
+     "id": "u10-10",
+     "title": "Social enterprise",
+     "module": "Enterprise"
+    },
+    {
+     "id": "u10-11",
+     "title": "Intrapreneurship and side projects",
+     "module": "Enterprise"
+    },
+    {
+     "id": "u10-12",
+     "title": "Support for student and graduate start-ups",
+     "module": "Enterprise"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Career Planning and Resilience",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Career planning models",
+     "module": "Planning a career"
+    },
+    {
+     "id": "u11-02",
+     "title": "Career management skills",
+     "module": "Planning a career"
+    },
+    {
+     "id": "u11-03",
+     "title": "Action planning",
+     "module": "Planning a career"
+    },
+    {
+     "id": "u11-04",
+     "title": "Lifelong learning and CPD",
+     "module": "Planning a career"
+    },
+    {
+     "id": "u11-05",
+     "title": "Changing career",
+     "module": "Planning a career"
+    },
+    {
+     "id": "u11-06",
+     "title": "The future of work and automation",
+     "module": "Planning a career"
+    },
+    {
+     "id": "u11-07",
+     "title": "Career resilience",
+     "module": "Resilience"
+    },
+    {
+     "id": "u11-08",
+     "title": "Dealing with rejection",
+     "module": "Resilience"
+    },
+    {
+     "id": "u11-09",
+     "title": "Imposter feelings",
+     "module": "Resilience"
+    },
+    {
+     "id": "u11-10",
+     "title": "Uncertainty and planned happenstance",
+     "module": "Resilience"
+    },
+    {
+     "id": "u11-11",
+     "title": "Career wellbeing and burnout",
+     "module": "Resilience"
+    },
+    {
+     "id": "u11-12",
+     "title": "Getting careers guidance",
+     "module": "Resilience"
+    }
+   ]
+  }
+ ],
+ "interactives": []
+}

@@ -24,23 +24,28 @@ export const SYLLABUS = `
 * Timing and exam technique
 * Exam stress and wellbeing
 * Making a revision plan
-2. English Language: Reading
-> Reading for meaning
-* Explicit and implicit information
-* Retrieving and summarising
-* Inference and selecting evidence
-> Language analysis
-* Analysing language: words and phrases
-* Language techniques and their effects
-* Sentence forms and their effects
-> Structure
-* Analysing structure: openings, shifts and endings
-* Narrative perspective and focus
-> Evaluation and comparison
-* Evaluating a text critically
-* Non-fiction and viewpoint texts
-* Nineteenth-century non-fiction
-* Comparing writers' viewpoints and methods
+2. Foundations of Literary Study
+> What literature is
+* What is literature?
+* Genre and form
+* Author, narrator and reader
+* Text and context
+* The literary canon
+> Close reading
+* Close reading: a method
+* Diction and register
+* Imagery
+* Metaphor, simile and personification
+* Symbol and motif
+* Tone and mood
+* Syntax and sentence structure
+* The sound of language
+> Interpretation
+* Ambiguity and multiple meanings
+* Irony
+* Intertextuality and allusion
+* Using quotations as evidence
+* From annotation to argument
 3. English Language: Writing
 > Writing to describe and narrate
 * Descriptive writing
@@ -180,26 +185,25 @@ export const SYLLABUS = `
 * Graphs, statistics and data presentation
 * Fieldwork enquiry
 * Issue evaluation and decision making
-9. Life Skills
-> Money
-* Budgeting and needs versus wants
-* Bank accounts, cards and payments
-* Saving, borrowing and interest
-* Payslips, tax and National Insurance
-* Scams and financial fraud
-> Digital life
-* Online safety and privacy
-* Social media, wellbeing and misinformation
-* Your digital footprint
-> Health and relationships
-* Mental health and getting help
-* Healthy relationships and consent
-* Sleep, diet and exercise
-> Careers and next steps
-* Options after GCSEs
-* Exploring careers and the labour market
-* CVs, applications and interviews
-* Work experience and employability skills
+9. Foundations of Health and Wellbeing
+> Defining health
+* What is health?
+* Models of health: biomedical and biopsychosocial
+* Wellbeing and how it is measured
+* Holistic health: physical, mental and social
+> What shapes health
+* The determinants of health
+* Health inequalities
+* Lifestyle factors and health
+* The wider determinants: housing, work and environment
+> Evidence about health
+* Judging health information
+* Levels of evidence
+* Understanding risk: absolute and relative
+* Screening: benefits and harms
+> Health in the UK
+* Measuring the nation's health
+* Leading causes of death and ill health in the UK
 `;
 
 export const TRACKS = [
@@ -221,14 +225,14 @@ export const PATHS = [
 // one line per school for the overview page
 export const BLURBS = {
   1: "How memory works and the revision methods that use it: retrieval, spacing, flashcards, past papers, command words and calm exams.",
-  2: "Reading fiction and non-fiction like an examiner: inference, language, structure, evaluation and comparing viewpoints.",
+  2: "What literature is and how to read it closely: diction, imagery, tone, syntax, sound, irony, allusion and argument.",
   3: "Descriptive, narrative and viewpoint writing, and the spelling, punctuation and grammar that earn the technical accuracy marks.",
   4: "Cells, organisation, infection, bioenergetics, homeostasis, inheritance, evolution and ecology, with the required practicals.",
   5: "Atoms, bonding, moles, reactions, electrolysis, rates, organic chemistry, analysis and the atmosphere.",
   6: "Energy, electricity, particles, radioactivity, forces, waves and magnetism, with every equation and required practical.",
   7: "Natural hazards, climate change, ecosystems, and the UK's coasts, rivers and glacial landscapes.",
   8: "Urbanisation, development, the changing economy, resources, map and data skills, fieldwork and decision making.",
-  9: "Money, online safety, wellbeing, relationships, and choosing and applying for your next step after GCSEs.",
+  9: "What health and wellbeing mean, what shapes them, how inequalities arise and how to judge health evidence and risk.",
 };
 
 export const UNITS = parseSyllabus(SYLLABUS, IDS, RETIRED);

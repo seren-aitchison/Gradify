@@ -110,26 +110,29 @@ export const SYLLABUS = `
 * Iterating on feedback
 * Minimum viable product
 * Design sprints
-7. Visual and Interaction Design
-> Visual design
-* Gestalt principles in design
-* Visual hierarchy
-* Typography
-* Colour theory
-* Layout and grids
-* Imagery and iconography
-> Interaction design
-* Affordances and signifiers
-* Mapping, feedback and constraints
-* Mental models and conceptual models
-* Nielsen's usability heuristics
-* Information architecture
-* Navigation design
-* Designing for errors
-* Microinteractions
-> Laws of UX
-* Fitts's law and Hick's law
-* Cognitive load in interfaces
+7. The Visual Language of Art and Design
+> What art and design are
+* What is art and design?
+* How art and design are assessed: the four assessment objectives
+* Looking closely: an approach to visual analysis
+> The visual elements
+* Line
+* Shape and form
+* Tone and value
+* Colour as a visual element
+* Texture
+* Space
+* Pattern
+> The principles of design
+* Balance and symmetry
+* Contrast and emphasis
+* Rhythm, repetition and movement
+* Proportion and scale
+* Unity and variety
+> Composition
+* Composition and the picture plane
+* The rule of thirds and the golden ratio
+* Gestalt principles in art and design
 8. Accessibility and Inclusive Design
 > Principles
 * Why accessibility matters
@@ -247,7 +250,7 @@ export const BLURBS = {
   4: "Planning ethical research, interviews, observation, surveys and diaries, and turning findings into personas, journeys and insight.",
   5: "Framing and reframing problems, briefs and specifications, stakeholders, root causes, assumptions and success measures.",
   6: "Prototypes from paper to code, usability testing, heuristic evaluation, A/B tests, MVPs, sprints and iteration.",
-  7: "Gestalt, hierarchy, type, colour and grids, then affordances, feedback, mental models, heuristics and the laws of UX.",
+  7: "The visual elements and principles of design, composition and how to look closely: the vocabulary of every later school.",
   8: "Models of disability, inclusive and universal design, WCAG 2.2 in practice, assistive technology and UK accessibility law.",
   9: "Material properties, woods, metals, polymers, textiles and smart materials, manufacturing, ergonomics and product life cycles.",
   10: "Service blueprints, touchpoints, co-design and public services, then systems thinking, feedback loops and behaviour change.",

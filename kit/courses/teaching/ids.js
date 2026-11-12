@@ -75,23 +75,26 @@ export const IDS = {
   "u04-14": "Statutory assessment in England",
   "u04-15": "GCSEs, grading and examinations",
   "u04-16": "Reporting to parents and carers",
-  "u05-01": "Behaviour and learning",
-  "u05-02": "Routines and high expectations",
-  "u05-03": "A positive classroom climate",
-  "u05-04": "Relationships with pupils",
-  "u05-05": "The whole-school behaviour policy",
-  "u05-06": "Starting and ending lessons",
-  "u05-07": "Giving clear instructions",
-  "u05-08": "Praise and positive reinforcement",
-  "u05-09": "Low-level disruption and the least intrusive response",
-  "u05-10": "Consequences and sanctions",
-  "u05-11": "De-escalation and scripted responses",
-  "u05-12": "Restorative approaches",
-  "u05-13": "Attendance and punctuality",
-  "u05-14": "Suspension and permanent exclusion",
-  "u05-15": "Behaviour and SEND",
-  "u05-16": "Searching, screening and reasonable force",
-  "u05-17": "Bullying, including online",
+  "u05-18": "Classical conditioning",
+  "u05-19": "Acquisition and extinction",
+  "u05-20": "Spontaneous recovery",
+  "u05-21": "Generalisation and discrimination",
+  "u05-22": "Operant conditioning",
+  "u05-23": "Positive and negative reinforcement",
+  "u05-24": "Punishment",
+  "u05-25": "Schedules of reinforcement",
+  "u05-26": "Shaping",
+  "u05-27": "Behaviour modification",
+  "u05-28": "Observational learning",
+  "u05-29": "Social learning theory",
+  "u05-30": "Modelling and imitation",
+  "u05-31": "Vicarious reinforcement",
+  "u05-32": "Latent learning",
+  "u05-33": "Insight learning",
+  "u05-34": "Biological constraints on learning",
+  "u05-35": "Habituation and sensitisation",
+  "u05-36": "Habit formation",
+  "u05-37": "Applications of learning theory",
   "u06-01": "What a curriculum is",
   "u06-02": "Intent, implementation and impact",
   "u06-03": "The National Curriculum in England",
@@ -172,29 +175,266 @@ export const IDS = {
   "u10-12": "Teacher wellbeing",
   "u10-13": "Managing time and priorities",
   "u10-14": "Pay, conditions and contracts",
-  "u11-01": "Why evidence matters in teaching",
-  "u11-02": "The EEF Teaching and Learning Toolkit",
-  "u11-03": "Reading an EEF guidance report",
-  "u11-04": "Effect sizes and months' progress",
-  "u11-05": "Randomised controlled trials in education",
-  "u11-06": "Meta-analysis and its limits",
-  "u11-07": "Implementation: putting evidence to work",
-  "u11-08": "Practitioner enquiry and action research",
-  "u11-09": "Evaluating an intervention",
-  "u11-10": "Research ethics in school",
-  "u11-11": "Reading educational claims critically",
-  "u11-12": "Cognitive science in the classroom: uses and limits",
-  "u12-01": "The structure of education in England",
-  "u12-02": "Maintained schools, academies and free schools",
-  "u12-03": "Phases and key stages",
-  "u12-04": "Governance and accountability",
-  "u12-05": "Ofsted and school inspection",
-  "u12-06": "School funding",
-  "u12-07": "The Department for Education and policy-making",
-  "u12-08": "Disadvantage and the attainment gap",
-  "u12-09": "Curriculum and assessment reform",
-  "u12-10": "Post-16 education and training",
-  "u12-11": "Education across the four UK nations",
-  "u12-12": "A short history of state education in England",
+  "u11-13": "Scientific reasoning in psychology",
+  "u11-14": "Research questions and hypotheses",
+  "u11-15": "Operationalisation",
+  "u11-16": "Independent and dependent variables",
+  "u11-17": "Confounding variables",
+  "u11-18": "Experimental design",
+  "u11-19": "Laboratory experiments",
+  "u11-20": "Field experiments",
+  "u11-21": "Natural experiments",
+  "u11-22": "Quasi-experiments",
+  "u11-23": "Correlational research",
+  "u11-24": "Cross-sectional and longitudinal research",
+  "u11-25": "Case studies",
+  "u11-26": "Naturalistic observation",
+  "u11-27": "Structured observation",
+  "u11-28": "Surveys and questionnaires",
+  "u11-29": "Interviews",
+  "u11-30": "Focus groups",
+  "u11-31": "Quantitative, qualitative and mixed methods",
+  "u11-32": "Random and stratified sampling",
+  "u11-33": "Opportunity and volunteer sampling",
+  "u11-34": "Sample size",
+  "u11-35": "Reliability",
+  "u11-36": "Validity",
+  "u11-37": "Generalisability",
+  "u11-38": "Bias in research",
+  "u11-39": "Replication",
+  "u11-40": "Preregistration",
+  "u11-41": "Open science",
+  "u11-42": "Informed consent",
+  "u11-43": "Confidentiality",
+  "u11-44": "Deception and debriefing",
+  "u11-45": "Vulnerable participants",
+  "u11-46": "Research governance and ethics committees",
+  "u12-13": "Functionalist perspectives on education",
+  "u12-14": "Marxist perspectives on education",
+  "u12-15": "Feminist perspectives on education",
+  "u12-16": "Education, socialisation and social control",
+  "u12-17": "The hidden curriculum",
+  "u12-18": "Educational achievement and social class",
+  "u12-19": "Educational achievement and gender",
+  "u12-20": "Educational achievement and ethnicity",
+  "u12-21": "Cultural capital and education",
+  "u12-22": "Linguistic codes",
+  "u12-23": "Labelling in education",
+  "u12-24": "Teacher expectations",
+  "u12-25": "The self-fulfilling prophecy",
+  "u12-26": "Selection",
+  "u12-27": "Educational inequality",
+  "u12-28": "Private education",
+  "u12-29": "Higher education",
+  "u12-30": "Education policy",
+  "u12-31": "Global education",
+  "u12-32": "Digital learning",
+  "u12-33": "Educational reform",
 };
-export const RETIRED = {};
+export const RETIRED = {
+  "u12-01": {
+    "title": "The structure of education in England",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by sociology school 9 before it was written"
+  },
+  "u12-02": {
+    "title": "Maintained schools, academies and free schools",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by sociology school 9 before it was written"
+  },
+  "u12-03": {
+    "title": "Phases and key stages",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by sociology school 9 before it was written"
+  },
+  "u12-04": {
+    "title": "Governance and accountability",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by sociology school 9 before it was written"
+  },
+  "u12-05": {
+    "title": "Ofsted and school inspection",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by sociology school 9 before it was written"
+  },
+  "u12-06": {
+    "title": "School funding",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by sociology school 9 before it was written"
+  },
+  "u12-07": {
+    "title": "The Department for Education and policy-making",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by sociology school 9 before it was written"
+  },
+  "u12-08": {
+    "title": "Disadvantage and the attainment gap",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by sociology school 9 before it was written"
+  },
+  "u12-09": {
+    "title": "Curriculum and assessment reform",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by sociology school 9 before it was written"
+  },
+  "u12-10": {
+    "title": "Post-16 education and training",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by sociology school 9 before it was written"
+  },
+  "u12-11": {
+    "title": "Education across the four UK nations",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by sociology school 9 before it was written"
+  },
+  "u12-12": {
+    "title": "A short history of state education in England",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by sociology school 9 before it was written"
+  },
+  "u11-01": {
+    "title": "Why evidence matters in teaching",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by psychology school 10 before it was written"
+  },
+  "u11-02": {
+    "title": "The EEF Teaching and Learning Toolkit",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by psychology school 10 before it was written"
+  },
+  "u11-03": {
+    "title": "Reading an EEF guidance report",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by psychology school 10 before it was written"
+  },
+  "u11-04": {
+    "title": "Effect sizes and months' progress",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by psychology school 10 before it was written"
+  },
+  "u11-05": {
+    "title": "Randomised controlled trials in education",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by psychology school 10 before it was written"
+  },
+  "u11-06": {
+    "title": "Meta-analysis and its limits",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by psychology school 10 before it was written"
+  },
+  "u11-07": {
+    "title": "Implementation: putting evidence to work",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by psychology school 10 before it was written"
+  },
+  "u11-08": {
+    "title": "Practitioner enquiry and action research",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by psychology school 10 before it was written"
+  },
+  "u11-09": {
+    "title": "Evaluating an intervention",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by psychology school 10 before it was written"
+  },
+  "u11-10": {
+    "title": "Research ethics in school",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by psychology school 10 before it was written"
+  },
+  "u11-11": {
+    "title": "Reading educational claims critically",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by psychology school 10 before it was written"
+  },
+  "u11-12": {
+    "title": "Cognitive science in the classroom: uses and limits",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by psychology school 10 before it was written"
+  },
+  "u05-01": {
+    "title": "Behaviour and learning",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-02": {
+    "title": "Routines and high expectations",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-03": {
+    "title": "A positive classroom climate",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-04": {
+    "title": "Relationships with pupils",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-05": {
+    "title": "The whole-school behaviour policy",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-06": {
+    "title": "Starting and ending lessons",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-07": {
+    "title": "Giving clear instructions",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-08": {
+    "title": "Praise and positive reinforcement",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-09": {
+    "title": "Low-level disruption and the least intrusive response",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-10": {
+    "title": "Consequences and sanctions",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-11": {
+    "title": "De-escalation and scripted responses",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-12": {
+    "title": "Restorative approaches",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-13": {
+    "title": "Attendance and punctuality",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-14": {
+    "title": "Suspension and permanent exclusion",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-15": {
+    "title": "Behaviour and SEND",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-16": {
+    "title": "Searching, screening and reasonable force",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u05-17": {
+    "title": "Bullying, including online",
+    "retired": "2026-11-12",
+    "reason": "school 5 replaced by psychology school 4 before it was written"
+  }
+};

@@ -327,103 +327,103 @@
   {
    "id": "u02",
    "n": 2,
-   "title": "The Science of Learning",
-   "written": false,
+   "title": "How Pupils Learn",
+   "written": true,
    "lessons": [
     {
-     "id": "u02-01",
-     "title": "What learning is: memory and understanding",
-     "module": "How memory works"
+     "id": "u02-20",
+     "title": "Learning as a change in long-term memory",
+     "module": "Memory and the architecture of learning"
     },
     {
-     "id": "u02-02",
-     "title": "Working memory and cognitive load",
-     "module": "How memory works"
+     "id": "u02-21",
+     "title": "Working memory and its limits",
+     "module": "Memory and the architecture of learning"
     },
     {
-     "id": "u02-03",
-     "title": "Encoding and levels of processing",
-     "module": "How memory works"
+     "id": "u02-22",
+     "title": "Long-term memory and schemas",
+     "module": "Memory and the architecture of learning"
     },
     {
-     "id": "u02-04",
-     "title": "Forgetting and the forgetting curve",
-     "module": "How memory works"
+     "id": "u02-23",
+     "title": "Prior knowledge and how it shapes learning",
+     "module": "Memory and the architecture of learning"
     },
     {
-     "id": "u02-05",
-     "title": "Desirable difficulties",
-     "module": "How memory works"
+     "id": "u02-24",
+     "title": "Misconceptions and conceptual change",
+     "module": "Memory and the architecture of learning"
     },
     {
-     "id": "u02-06",
-     "title": "Rating study techniques: the evidence",
-     "module": "Evidence-based study techniques"
+     "id": "u02-25",
+     "title": "Cognitive load theory: Sweller 1988",
+     "module": "Cognitive load theory"
     },
     {
-     "id": "u02-07",
+     "id": "u02-26",
+     "title": "Intrinsic and extraneous load",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u02-27",
+     "title": "The worked example effect",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u02-28",
+     "title": "The expertise reversal effect",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u02-29",
+     "title": "Split attention and redundancy",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u02-30",
+     "title": "Dual coding",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u02-31",
      "title": "Retrieval practice",
-     "module": "Evidence-based study techniques"
+     "module": "Making learning stick"
     },
     {
-     "id": "u02-08",
+     "id": "u02-32",
      "title": "Spaced practice",
-     "module": "Evidence-based study techniques"
+     "module": "Making learning stick"
     },
     {
-     "id": "u02-09",
+     "id": "u02-33",
      "title": "Interleaving",
-     "module": "Evidence-based study techniques"
+     "module": "Making learning stick"
     },
     {
-     "id": "u02-10",
-     "title": "Elaboration and self-explanation",
-     "module": "Evidence-based study techniques"
+     "id": "u02-34",
+     "title": "Elaboration and generative learning",
+     "module": "Making learning stick"
     },
     {
-     "id": "u02-11",
-     "title": "Concrete examples and dual coding",
-     "module": "Evidence-based study techniques"
+     "id": "u02-35",
+     "title": "Forgetting and desirable difficulties",
+     "module": "Making learning stick"
     },
     {
-     "id": "u02-12",
-     "title": "Flashcards and spaced repetition systems",
-     "module": "Evidence-based study techniques"
+     "id": "u02-36",
+     "title": "Motivation and self-efficacy in learning",
+     "module": "The learner"
     },
     {
-     "id": "u02-13",
-     "title": "Rereading, highlighting and summarising",
-     "module": "Evidence-based study techniques"
+     "id": "u02-37",
+     "title": "Metacognition and self-regulated learning",
+     "module": "The learner"
     },
     {
-     "id": "u02-14",
-     "title": "Metacognition: thinking about your thinking",
-     "module": "Metacognition"
-    },
-    {
-     "id": "u02-15",
-     "title": "Judgements of learning and the illusion of competence",
-     "module": "Metacognition"
-    },
-    {
-     "id": "u02-16",
-     "title": "Planning, monitoring and evaluating your learning",
-     "module": "Metacognition"
-    },
-    {
-     "id": "u02-17",
-     "title": "Learning styles and other myths",
-     "module": "Metacognition"
-    },
-    {
-     "id": "u02-18",
-     "title": "Sleep, attention and learning",
-     "module": "Metacognition"
-    },
-    {
-     "id": "u02-19",
-     "title": "Putting it together: a study system",
-     "module": "Metacognition"
+     "id": "u02-38",
+     "title": "Learning styles and other neuromyths",
+     "module": "The learner"
     }
    ]
   },
@@ -963,78 +963,78 @@
   {
    "id": "u09",
    "n": 9,
-   "title": "Presentations and Group Work",
-   "written": false,
+   "title": "Professional Communication",
+   "written": true,
    "lessons": [
     {
-     "id": "u09-01",
+     "id": "u09-15",
+     "title": "Communication at work: purpose and audience",
+     "module": "Foundations of communication"
+    },
+    {
+     "id": "u09-16",
+     "title": "Active listening",
+     "module": "Foundations of communication"
+    },
+    {
+     "id": "u09-17",
+     "title": "Questioning skills",
+     "module": "Foundations of communication"
+    },
+    {
+     "id": "u09-18",
+     "title": "Non-verbal communication",
+     "module": "Foundations of communication"
+    },
+    {
+     "id": "u09-19",
+     "title": "Plain English and clear writing",
+     "module": "Writing at work"
+    },
+    {
+     "id": "u09-20",
+     "title": "Structuring reports and briefings",
+     "module": "Writing at work"
+    },
+    {
+     "id": "u09-21",
+     "title": "Writing effective emails",
+     "module": "Writing at work"
+    },
+    {
+     "id": "u09-22",
+     "title": "Tone, etiquette and choosing the channel",
+     "module": "Writing at work"
+    },
+    {
+     "id": "u09-23",
+     "title": "Running effective meetings",
+     "module": "Meetings and presenting"
+    },
+    {
+     "id": "u09-24",
+     "title": "Minutes, decisions and action points",
+     "module": "Meetings and presenting"
+    },
+    {
+     "id": "u09-25",
      "title": "Planning a presentation",
-     "module": "Presentations"
+     "module": "Meetings and presenting"
     },
     {
-     "id": "u09-02",
-     "title": "Designing slides",
-     "module": "Presentations"
-    },
-    {
-     "id": "u09-03",
+     "id": "u09-26",
      "title": "Delivering a presentation",
-     "module": "Presentations"
+     "module": "Meetings and presenting"
     },
     {
-     "id": "u09-04",
-     "title": "Managing presentation nerves",
-     "module": "Presentations"
+     "id": "u09-27",
+     "title": "Communicating in virtual and hybrid teams",
+     "module": "Meetings and presenting"
     },
     {
-     "id": "u09-05",
-     "title": "Posters",
-     "module": "Presentations"
-    },
-    {
-     "id": "u09-06",
-     "title": "Answering questions",
-     "module": "Presentations"
-    },
-    {
-     "id": "u09-07",
-     "title": "Online presentations",
-     "module": "Presentations"
-    },
-    {
-     "id": "u09-08",
-     "title": "Why universities set group work",
-     "module": "Group work"
-    },
-    {
-     "id": "u09-09",
-     "title": "Forming a team and agreeing ways of working",
-     "module": "Group work"
-    },
-    {
-     "id": "u09-10",
-     "title": "Team roles",
-     "module": "Group work"
-    },
-    {
-     "id": "u09-11",
-     "title": "Communication and online collaboration",
-     "module": "Group work"
-    },
-    {
-     "id": "u09-12",
-     "title": "Managing conflict",
-     "module": "Group work"
-    },
-    {
-     "id": "u09-13",
-     "title": "Contributing fairly and peer assessment",
-     "module": "Group work"
-    },
-    {
-     "id": "u09-14",
-     "title": "Inclusive group work",
-     "module": "Group work"
+     "id": "u09-28",
+     "title": "Giving and receiving feedback",
+     "module": "Meetings and presenting"
     }
    ]
   },
@@ -1207,78 +1207,68 @@
   {
    "id": "u12",
    "n": 12,
-   "title": "Employability and Placements",
-   "written": false,
+   "title": "Knowing Yourself",
+   "written": true,
    "lessons": [
     {
-     "id": "u12-01",
-     "title": "What employability means",
-     "module": "Employability"
+     "id": "u12-15",
+     "title": "What career development is",
+     "module": "Career development foundations"
     },
     {
-     "id": "u12-02",
-     "title": "Graduate attributes and transferable skills",
-     "module": "Employability"
+     "id": "u12-16",
+     "title": "Career theories: matching, development and chance",
+     "module": "Career development foundations"
     },
     {
-     "id": "u12-03",
-     "title": "Recognising and recording your skills",
-     "module": "Employability"
+     "id": "u12-17",
+     "title": "The Gatsby Benchmarks and careers support",
+     "module": "Career development foundations"
     },
     {
-     "id": "u12-04",
-     "title": "Careers services and planning",
-     "module": "Employability"
+     "id": "u12-18",
+     "title": "Identifying your skills",
+     "module": "Self-assessment"
     },
     {
-     "id": "u12-05",
-     "title": "Part-time work and volunteering",
-     "module": "Employability"
+     "id": "u12-19",
+     "title": "Transferable skills and graduate attributes",
+     "module": "Self-assessment"
     },
     {
-     "id": "u12-06",
-     "title": "CVs and cover letters",
-     "module": "Applications and placements"
+     "id": "u12-20",
+     "title": "Values and what matters to you at work",
+     "module": "Self-assessment"
     },
     {
-     "id": "u12-07",
-     "title": "Applications and personal statements",
-     "module": "Applications and placements"
+     "id": "u12-21",
+     "title": "Strengths and how to use them",
+     "module": "Self-assessment"
     },
     {
-     "id": "u12-08",
-     "title": "Interviews and assessment centres",
-     "module": "Applications and placements"
+     "id": "u12-22",
+     "title": "Interests and personality tools: uses and limits",
+     "module": "Self-assessment"
     },
     {
-     "id": "u12-09",
-     "title": "Placements and internships",
-     "module": "Applications and placements"
+     "id": "u12-23",
+     "title": "Reflective practice and the skills audit",
+     "module": "Self-assessment"
     },
     {
-     "id": "u12-10",
-     "title": "Learning on placement",
-     "module": "Applications and placements"
+     "id": "u12-24",
+     "title": "Motivations and work-life priorities",
+     "module": "From self-knowledge to direction"
     },
     {
-     "id": "u12-11",
-     "title": "Professional behaviour and online presence",
-     "module": "Applications and placements"
+     "id": "u12-25",
+     "title": "Your career story and personal brand",
+     "module": "From self-knowledge to direction"
     },
     {
-     "id": "u12-12",
-     "title": "Further study and postgraduate options",
-     "module": "Beyond the degree"
-    },
-    {
-     "id": "u12-13",
-     "title": "Your degree outcome and the HEAR",
-     "module": "Beyond the degree"
-    },
-    {
-     "id": "u12-14",
-     "title": "Lifelong learning",
-     "module": "Beyond the degree"
+     "id": "u12-26",
+     "title": "Setting career goals",
+     "module": "From self-knowledge to direction"
     }
    ]
   }

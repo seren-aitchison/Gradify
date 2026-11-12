@@ -289,68 +289,98 @@
   {
    "id": "u02",
    "n": 2,
-   "title": "English Language: Reading",
-   "written": false,
+   "title": "Foundations of Literary Study",
+   "written": true,
    "lessons": [
     {
-     "id": "u02-01",
-     "title": "Explicit and implicit information",
-     "module": "Reading for meaning"
+     "id": "u02-13",
+     "title": "What is literature?",
+     "module": "What literature is"
     },
     {
-     "id": "u02-02",
-     "title": "Retrieving and summarising",
-     "module": "Reading for meaning"
+     "id": "u02-14",
+     "title": "Genre and form",
+     "module": "What literature is"
     },
     {
-     "id": "u02-03",
-     "title": "Inference and selecting evidence",
-     "module": "Reading for meaning"
+     "id": "u02-15",
+     "title": "Author, narrator and reader",
+     "module": "What literature is"
     },
     {
-     "id": "u02-04",
-     "title": "Analysing language: words and phrases",
-     "module": "Language analysis"
+     "id": "u02-16",
+     "title": "Text and context",
+     "module": "What literature is"
     },
     {
-     "id": "u02-05",
-     "title": "Language techniques and their effects",
-     "module": "Language analysis"
+     "id": "u02-17",
+     "title": "The literary canon",
+     "module": "What literature is"
     },
     {
-     "id": "u02-06",
-     "title": "Sentence forms and their effects",
-     "module": "Language analysis"
+     "id": "u02-18",
+     "title": "Close reading: a method",
+     "module": "Close reading"
     },
     {
-     "id": "u02-07",
-     "title": "Analysing structure: openings, shifts and endings",
-     "module": "Structure"
+     "id": "u02-19",
+     "title": "Diction and register",
+     "module": "Close reading"
     },
     {
-     "id": "u02-08",
-     "title": "Narrative perspective and focus",
-     "module": "Structure"
+     "id": "u02-20",
+     "title": "Imagery",
+     "module": "Close reading"
     },
     {
-     "id": "u02-09",
-     "title": "Evaluating a text critically",
-     "module": "Evaluation and comparison"
+     "id": "u02-21",
+     "title": "Metaphor, simile and personification",
+     "module": "Close reading"
     },
     {
-     "id": "u02-10",
-     "title": "Non-fiction and viewpoint texts",
-     "module": "Evaluation and comparison"
+     "id": "u02-22",
+     "title": "Symbol and motif",
+     "module": "Close reading"
     },
     {
-     "id": "u02-11",
-     "title": "Nineteenth-century non-fiction",
-     "module": "Evaluation and comparison"
+     "id": "u02-23",
+     "title": "Tone and mood",
+     "module": "Close reading"
     },
     {
-     "id": "u02-12",
-     "title": "Comparing writers' viewpoints and methods",
-     "module": "Evaluation and comparison"
+     "id": "u02-24",
+     "title": "Syntax and sentence structure",
+     "module": "Close reading"
+    },
+    {
+     "id": "u02-25",
+     "title": "The sound of language",
+     "module": "Close reading"
+    },
+    {
+     "id": "u02-26",
+     "title": "Ambiguity and multiple meanings",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u02-27",
+     "title": "Irony",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u02-28",
+     "title": "Intertextuality and allusion",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u02-29",
+     "title": "Using quotations as evidence",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u02-30",
+     "title": "From annotation to argument",
+     "module": "Interpretation"
     }
    ]
   },
@@ -925,83 +955,78 @@
   {
    "id": "u09",
    "n": 9,
-   "title": "Life Skills",
-   "written": false,
+   "title": "Foundations of Health and Wellbeing",
+   "written": true,
    "lessons": [
     {
-     "id": "u09-01",
-     "title": "Budgeting and needs versus wants",
-     "module": "Money"
+     "id": "u09-16",
+     "title": "What is health?",
+     "module": "Defining health"
     },
     {
-     "id": "u09-02",
-     "title": "Bank accounts, cards and payments",
-     "module": "Money"
+     "id": "u09-17",
+     "title": "Models of health: biomedical and biopsychosocial",
+     "module": "Defining health"
     },
     {
-     "id": "u09-03",
-     "title": "Saving, borrowing and interest",
-     "module": "Money"
+     "id": "u09-18",
+     "title": "Wellbeing and how it is measured",
+     "module": "Defining health"
     },
     {
-     "id": "u09-04",
-     "title": "Payslips, tax and National Insurance",
-     "module": "Money"
+     "id": "u09-19",
+     "title": "Holistic health: physical, mental and social",
+     "module": "Defining health"
     },
     {
-     "id": "u09-05",
-     "title": "Scams and financial fraud",
-     "module": "Money"
+     "id": "u09-20",
+     "title": "The determinants of health",
+     "module": "What shapes health"
     },
     {
-     "id": "u09-06",
-     "title": "Online safety and privacy",
-     "module": "Digital life"
+     "id": "u09-21",
+     "title": "Health inequalities",
+     "module": "What shapes health"
     },
     {
-     "id": "u09-07",
-     "title": "Social media, wellbeing and misinformation",
-     "module": "Digital life"
+     "id": "u09-22",
+     "title": "Lifestyle factors and health",
+     "module": "What shapes health"
     },
     {
-     "id": "u09-08",
-     "title": "Your digital footprint",
-     "module": "Digital life"
+     "id": "u09-23",
+     "title": "The wider determinants: housing, work and environment",
+     "module": "What shapes health"
     },
     {
-     "id": "u09-09",
-     "title": "Mental health and getting help",
-     "module": "Health and relationships"
+     "id": "u09-24",
+     "title": "Judging health information",
+     "module": "Evidence about health"
     },
     {
-     "id": "u09-10",
-     "title": "Healthy relationships and consent",
-     "module": "Health and relationships"
+     "id": "u09-25",
+     "title": "Levels of evidence",
+     "module": "Evidence about health"
     },
     {
-     "id": "u09-11",
-     "title": "Sleep, diet and exercise",
-     "module": "Health and relationships"
+     "id": "u09-26",
+     "title": "Understanding risk: absolute and relative",
+     "module": "Evidence about health"
     },
     {
-     "id": "u09-12",
-     "title": "Options after GCSEs",
-     "module": "Careers and next steps"
+     "id": "u09-27",
+     "title": "Screening: benefits and harms",
+     "module": "Evidence about health"
     },
     {
-     "id": "u09-13",
-     "title": "Exploring careers and the labour market",
-     "module": "Careers and next steps"
+     "id": "u09-28",
+     "title": "Measuring the nation's health",
+     "module": "Health in the UK"
     },
     {
-     "id": "u09-14",
-     "title": "CVs, applications and interviews",
-     "module": "Careers and next steps"
-    },
-    {
-     "id": "u09-15",
-     "title": "Work experience and employability skills",
-     "module": "Careers and next steps"
+     "id": "u09-29",
+     "title": "Leading causes of death and ill health in the UK",
+     "module": "Health in the UK"
     }
    ]
   }

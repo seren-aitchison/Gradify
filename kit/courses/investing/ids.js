@@ -94,20 +94,23 @@ export const IDS = {
   "u06-12": "Valuing the whole market: CAPE",
   "u06-13": "Growth and value investing",
   "u06-14": "The limits of valuation",
-  "u07-01": "The annual report and accounts",
-  "u07-02": "The income statement",
-  "u07-03": "The balance sheet",
-  "u07-04": "The cash flow statement",
-  "u07-05": "Notes to the accounts and the auditor's report",
-  "u07-06": "Profitability ratios",
-  "u07-07": "Return on capital employed and return on equity",
-  "u07-08": "Liquidity ratios",
-  "u07-09": "Gearing and interest cover",
-  "u07-10": "Efficiency ratios",
-  "u07-11": "Cash conversion and the quality of earnings",
-  "u07-12": "Competitive advantage",
-  "u07-13": "Corporate governance and the UK Corporate Governance Code",
-  "u07-14": "Warning signs in company accounts",
+  "u07-15": "Why analyse financial statements?",
+  "u07-16": "Profitability ratios",
+  "u07-17": "Liquidity ratios",
+  "u07-18": "Efficiency ratios and the working capital cycle",
+  "u07-19": "Gearing and investor ratios",
+  "u07-20": "Interpreting ratios in context",
+  "u07-21": "Limitations of ratio analysis",
+  "u07-22": "Analysing cash flows",
+  "u07-23": "Performance in not-for-profit organisations",
+  "u07-24": "Groups and control",
+  "u07-25": "Goodwill on acquisition",
+  "u07-26": "The consolidated statement of financial position",
+  "u07-27": "Intra-group trading and unrealised profit",
+  "u07-28": "The consolidated statement of profit or loss",
+  "u07-29": "Associates and joint arrangements",
+  "u07-30": "Creative accounting and earnings management",
+  "u07-31": "Narrative reporting and the strategic report",
   "u08-01": "Why pool investments?",
   "u08-02": "Unit trusts and OEICs",
   "u08-03": "Investment trusts",
@@ -183,4 +186,75 @@ export const IDS = {
   "u12-12": "When to get regulated financial advice",
   "u12-13": "Record keeping and paperwork",
 };
-export const RETIRED = {};
+export const RETIRED = {
+  "u07-01": {
+    "title": "The annual report and accounts",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by finance school 4 before it was written"
+  },
+  "u07-02": {
+    "title": "The income statement",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by finance school 4 before it was written"
+  },
+  "u07-03": {
+    "title": "The balance sheet",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by finance school 4 before it was written"
+  },
+  "u07-04": {
+    "title": "The cash flow statement",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by finance school 4 before it was written"
+  },
+  "u07-05": {
+    "title": "Notes to the accounts and the auditor's report",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by finance school 4 before it was written"
+  },
+  "u07-06": {
+    "title": "Profitability ratios",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by finance school 4 before it was written"
+  },
+  "u07-07": {
+    "title": "Return on capital employed and return on equity",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by finance school 4 before it was written"
+  },
+  "u07-08": {
+    "title": "Liquidity ratios",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by finance school 4 before it was written"
+  },
+  "u07-09": {
+    "title": "Gearing and interest cover",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by finance school 4 before it was written"
+  },
+  "u07-10": {
+    "title": "Efficiency ratios",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by finance school 4 before it was written"
+  },
+  "u07-11": {
+    "title": "Cash conversion and the quality of earnings",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by finance school 4 before it was written"
+  },
+  "u07-12": {
+    "title": "Competitive advantage",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by finance school 4 before it was written"
+  },
+  "u07-13": {
+    "title": "Corporate governance and the UK Corporate Governance Code",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by finance school 4 before it was written"
+  },
+  "u07-14": {
+    "title": "Warning signs in company accounts",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by finance school 4 before it was written"
+  }
+};

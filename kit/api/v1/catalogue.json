@@ -12,7 +12,7 @@
    "page": "/artgradify/course/",
    "units": 12,
    "lessons": 183,
-   "lessonsWritten": 18,
+   "lessonsWritten": 47,
    "syllabus": "/kit/api/v1/courses/art.json"
   },
   {
@@ -40,6 +40,18 @@
    "syllabus": "/kit/api/v1/courses/business.json"
   },
   {
+   "slug": "careers",
+   "name": "Careers and Employability",
+   "site": "InternshipGradify",
+   "status": "beta",
+   "accent": "#0aa4c9",
+   "page": "/internshipgradify/course/",
+   "units": 11,
+   "lessons": 139,
+   "lessonsWritten": 24,
+   "syllabus": "/kit/api/v1/courses/careers.json"
+  },
+  {
    "slug": "chemistry",
    "name": "Chemistry",
    "site": "SciGradify",
@@ -52,6 +64,18 @@
    "syllabus": "/kit/api/v1/courses/chemistry.json"
   },
   {
+   "slug": "computing",
+   "name": "Computer Science",
+   "site": "TechGradify · ForgeLab",
+   "status": "beta",
+   "accent": "#666666",
+   "page": "/techgradify/course/",
+   "units": 12,
+   "lessons": 179,
+   "lessonsWritten": 29,
+   "syllabus": "/kit/api/v1/courses/computing.json"
+  },
+  {
    "slug": "dentistry",
    "name": "Dentistry",
    "site": "DentalGradify",
@@ -59,8 +83,8 @@
    "accent": "#40d4b1",
    "page": "/dentalgradify/course/",
    "units": 12,
-   "lessons": 200,
-   "lessonsWritten": 16,
+   "lessons": 201,
+   "lessonsWritten": 49,
    "syllabus": "/kit/api/v1/courses/dentistry.json"
   },
   {
@@ -71,8 +95,8 @@
    "accent": "#e52153",
    "page": "/creategradify/course/",
    "units": 12,
-   "lessons": 170,
-   "lessonsWritten": 12,
+   "lessons": 172,
+   "lessonsWritten": 56,
    "syllabus": "/kit/api/v1/courses/design.json"
   },
   {
@@ -119,8 +143,8 @@
    "accent": "#ffea05",
    "page": "/youthgradify/course/",
    "units": 9,
-   "lessons": 143,
-   "lessonsWritten": 12,
+   "lessons": 148,
+   "lessonsWritten": 44,
    "syllabus": "/kit/api/v1/courses/gcse.json"
   },
   {
@@ -155,8 +179,8 @@
    "accent": "#808250",
    "page": "/investorgradify/course/",
    "units": 12,
-   "lessons": 180,
-   "lessonsWritten": 16,
+   "lessons": 183,
+   "lessonsWritten": 49,
    "syllabus": "/kit/api/v1/courses/investing.json"
   },
   {
@@ -275,8 +299,8 @@
    "accent": "#e69138",
    "page": "/progradify/course/",
    "units": 10,
-   "lessons": 149,
-   "lessonsWritten": 14,
+   "lessons": 167,
+   "lessonsWritten": 94,
    "syllabus": "/kit/api/v1/courses/professional.json"
   },
   {
@@ -316,6 +340,18 @@
    "syllabus": "/kit/api/v1/courses/sociology.json"
   },
   {
+   "slug": "spanish",
+   "name": "Spanish",
+   "site": "LanguageGradify",
+   "status": "beta",
+   "accent": "#dd7d6b",
+   "page": "/languagegradify/course/",
+   "units": 10,
+   "lessons": 145,
+   "lessonsWritten": 31,
+   "syllabus": "/kit/api/v1/courses/spanish.json"
+  },
+  {
    "slug": "sport",
    "name": "Sport and Exercise Science",
    "site": "SportGradify",
@@ -323,8 +359,8 @@
    "accent": "#0c26b8",
    "page": "/sportgradify/course/",
    "units": 12,
-   "lessons": 206,
-   "lessonsWritten": 19,
+   "lessons": 205,
+   "lessonsWritten": 104,
    "syllabus": "/kit/api/v1/courses/sport.json"
   },
   {
@@ -335,8 +371,8 @@
    "accent": "#ffc002",
    "page": "/edugradify/course/",
    "units": 12,
-   "lessons": 194,
-   "lessonsWritten": 19,
+   "lessons": 228,
+   "lessonsWritten": 112,
    "syllabus": "/kit/api/v1/courses/teaching.json"
   },
   {
@@ -347,8 +383,8 @@
    "accent": "#3c78d8",
    "page": "/undergradify/course/",
    "units": 12,
-   "lessons": 193,
-   "lessonsWritten": 19,
+   "lessons": 191,
+   "lessonsWritten": 64,
    "syllabus": "/kit/api/v1/courses/university.json"
   },
   {
@@ -360,7 +396,7 @@
    "page": "/vetgradify/course/",
    "units": 12,
    "lessons": 210,
-   "lessonsWritten": 18,
+   "lessonsWritten": 36,
    "syllabus": "/kit/api/v1/courses/veterinary.json"
   }
  ]

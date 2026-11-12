@@ -14,18 +14,24 @@ export const IDS = {
   "u01-10": "Timing and exam technique",
   "u01-11": "Exam stress and wellbeing",
   "u01-12": "Making a revision plan",
-  "u02-01": "Explicit and implicit information",
-  "u02-02": "Retrieving and summarising",
-  "u02-03": "Inference and selecting evidence",
-  "u02-04": "Analysing language: words and phrases",
-  "u02-05": "Language techniques and their effects",
-  "u02-06": "Sentence forms and their effects",
-  "u02-07": "Analysing structure: openings, shifts and endings",
-  "u02-08": "Narrative perspective and focus",
-  "u02-09": "Evaluating a text critically",
-  "u02-10": "Non-fiction and viewpoint texts",
-  "u02-11": "Nineteenth-century non-fiction",
-  "u02-12": "Comparing writers' viewpoints and methods",
+  "u02-13": "What is literature?",
+  "u02-14": "Genre and form",
+  "u02-15": "Author, narrator and reader",
+  "u02-16": "Text and context",
+  "u02-17": "The literary canon",
+  "u02-18": "Close reading: a method",
+  "u02-19": "Diction and register",
+  "u02-20": "Imagery",
+  "u02-21": "Metaphor, simile and personification",
+  "u02-22": "Symbol and motif",
+  "u02-23": "Tone and mood",
+  "u02-24": "Syntax and sentence structure",
+  "u02-25": "The sound of language",
+  "u02-26": "Ambiguity and multiple meanings",
+  "u02-27": "Irony",
+  "u02-28": "Intertextuality and allusion",
+  "u02-29": "Using quotations as evidence",
+  "u02-30": "From annotation to argument",
   "u03-01": "Descriptive writing",
   "u03-02": "Narrative writing: openings and structure",
   "u03-03": "Character, setting and voice",
@@ -130,20 +136,155 @@ export const IDS = {
   "u08-12": "Graphs, statistics and data presentation",
   "u08-13": "Fieldwork enquiry",
   "u08-14": "Issue evaluation and decision making",
-  "u09-01": "Budgeting and needs versus wants",
-  "u09-02": "Bank accounts, cards and payments",
-  "u09-03": "Saving, borrowing and interest",
-  "u09-04": "Payslips, tax and National Insurance",
-  "u09-05": "Scams and financial fraud",
-  "u09-06": "Online safety and privacy",
-  "u09-07": "Social media, wellbeing and misinformation",
-  "u09-08": "Your digital footprint",
-  "u09-09": "Mental health and getting help",
-  "u09-10": "Healthy relationships and consent",
-  "u09-11": "Sleep, diet and exercise",
-  "u09-12": "Options after GCSEs",
-  "u09-13": "Exploring careers and the labour market",
-  "u09-14": "CVs, applications and interviews",
-  "u09-15": "Work experience and employability skills",
+  "u09-16": "What is health?",
+  "u09-17": "Models of health: biomedical and biopsychosocial",
+  "u09-18": "Wellbeing and how it is measured",
+  "u09-19": "Holistic health: physical, mental and social",
+  "u09-20": "The determinants of health",
+  "u09-21": "Health inequalities",
+  "u09-22": "Lifestyle factors and health",
+  "u09-23": "The wider determinants: housing, work and environment",
+  "u09-24": "Judging health information",
+  "u09-25": "Levels of evidence",
+  "u09-26": "Understanding risk: absolute and relative",
+  "u09-27": "Screening: benefits and harms",
+  "u09-28": "Measuring the nation's health",
+  "u09-29": "Leading causes of death and ill health in the UK",
 };
-export const RETIRED = {};
+export const RETIRED = {
+  "u02-01": {
+    "title": "Explicit and implicit information",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-02": {
+    "title": "Retrieving and summarising",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-03": {
+    "title": "Inference and selecting evidence",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-04": {
+    "title": "Analysing language: words and phrases",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-05": {
+    "title": "Language techniques and their effects",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-06": {
+    "title": "Sentence forms and their effects",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-07": {
+    "title": "Analysing structure: openings, shifts and endings",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-08": {
+    "title": "Narrative perspective and focus",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-09": {
+    "title": "Evaluating a text critically",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-10": {
+    "title": "Non-fiction and viewpoint texts",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-11": {
+    "title": "Nineteenth-century non-fiction",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-12": {
+    "title": "Comparing writers' viewpoints and methods",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u09-01": {
+    "title": "Budgeting and needs versus wants",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-02": {
+    "title": "Bank accounts, cards and payments",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-03": {
+    "title": "Saving, borrowing and interest",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-04": {
+    "title": "Payslips, tax and National Insurance",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-05": {
+    "title": "Scams and financial fraud",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-06": {
+    "title": "Online safety and privacy",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-07": {
+    "title": "Social media, wellbeing and misinformation",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-08": {
+    "title": "Your digital footprint",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-09": {
+    "title": "Mental health and getting help",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-10": {
+    "title": "Healthy relationships and consent",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-11": {
+    "title": "Sleep, diet and exercise",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-12": {
+    "title": "Options after GCSEs",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-13": {
+    "title": "Exploring careers and the labour market",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-14": {
+    "title": "CVs, applications and interviews",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-15": {
+    "title": "Work experience and employability skills",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  }
+};

@@ -16,39 +16,50 @@ export const IDS = {
   "u01-12": "Delivering a presentation",
   "u01-13": "Communicating in virtual and hybrid teams",
   "u01-14": "Giving and receiving feedback",
-  "u02-01": "What makes an effective team",
-  "u02-02": "Team development: Tuckman's stages",
-  "u02-03": "Team roles: Belbin",
-  "u02-04": "Psychological safety",
-  "u02-05": "Collaboration across boundaries",
-  "u02-06": "Building professional relationships",
-  "u02-07": "Power and influence",
-  "u02-08": "Influencing without authority",
-  "u02-09": "Stakeholder mapping",
-  "u02-10": "Emotional intelligence at work",
-  "u02-11": "Principled negotiation",
-  "u02-12": "Preparing to negotiate: BATNA and the bargaining zone",
-  "u02-13": "Sources of workplace conflict",
-  "u02-14": "Conflict-handling styles",
-  "u02-15": "Difficult conversations",
-  "u02-16": "Resolving conflict: mediation and escalation",
-  "u03-01": "Management and leadership",
-  "u03-02": "The functions of management",
-  "u03-03": "Mintzberg's managerial roles",
-  "u03-04": "Trait and behavioural theories of leadership",
-  "u03-05": "Situational and contingency leadership",
-  "u03-06": "Transformational and transactional leadership",
-  "u03-07": "Authentic and servant leadership",
-  "u03-08": "Content theories of motivation",
-  "u03-09": "Process theories of motivation",
-  "u03-10": "Delegation",
-  "u03-11": "Coaching and mentoring",
-  "u03-12": "Performance management and objectives",
-  "u03-13": "Managing underperformance",
-  "u03-14": "Recruiting and inducting new staff",
-  "u03-15": "Lewin's change model",
-  "u03-16": "Kotter's eight steps",
-  "u03-17": "How people respond to change",
+  "u02-17": "Social cognition",
+  "u02-18": "Social perception and impressions",
+  "u02-19": "Attribution",
+  "u02-20": "The fundamental attribution error and self-serving bias",
+  "u02-21": "Attitude formation",
+  "u02-22": "Attitude change and persuasion",
+  "u02-23": "Cognitive dissonance",
+  "u02-24": "Conformity",
+  "u02-25": "Obedience",
+  "u02-26": "Compliance",
+  "u02-27": "Social norms",
+  "u02-28": "Group dynamics",
+  "u02-29": "Group decision-making",
+  "u02-30": "Leadership",
+  "u02-31": "Power",
+  "u02-32": "Social identity theory",
+  "u02-33": "Self-categorisation",
+  "u02-34": "In-groups and out-groups",
+  "u02-35": "Prejudice, stereotyping and discrimination",
+  "u02-36": "Intergroup relations and conflict",
+  "u02-37": "Bystander behaviour",
+  "u02-38": "Prosocial behaviour and altruism",
+  "u02-39": "Aggression",
+  "u02-40": "Attraction",
+  "u02-41": "Close relationships",
+  "u02-42": "Culture and social behaviour",
+  "u03-18": "What is management?",
+  "u03-19": "Classical management theory: Taylor and Fayol",
+  "u03-20": "Mintzberg's managerial roles",
+  "u03-21": "The human relations movement",
+  "u03-22": "Organisational structure",
+  "u03-23": "Centralisation and decentralisation",
+  "u03-24": "Bureaucracy and Weber",
+  "u03-25": "Contingency theory and organisational design",
+  "u03-26": "Motivation: content theories",
+  "u03-27": "Motivation: process theories",
+  "u03-28": "Leadership theories",
+  "u03-29": "Leadership styles",
+  "u03-30": "Teams and group working",
+  "u03-31": "Communication in organisations",
+  "u03-32": "Organisational culture",
+  "u03-33": "Power and politics in organisations",
+  "u03-34": "Managing change",
+  "u03-35": "Decision-making in organisations",
   "u04-01": "What a project is",
   "u04-02": "Project life cycles",
   "u04-03": "Project roles and governance",
@@ -106,20 +117,22 @@ export const IDS = {
   "u07-12": "Digital accessibility",
   "u07-13": "Your online professional presence",
   "u07-14": "Digital wellbeing",
-  "u08-01": "Types of organisation",
-  "u08-02": "Organisational structures",
-  "u08-03": "Business models",
-  "u08-04": "Strategy basics",
-  "u08-05": "The profit and loss account",
-  "u08-06": "The balance sheet and cash flow",
-  "u08-07": "Budgets and forecasts",
-  "u08-08": "Key performance indicators",
-  "u08-09": "PESTLE analysis",
-  "u08-10": "SWOT analysis",
-  "u08-11": "Porter's five forces",
-  "u08-12": "Customers and value",
-  "u08-13": "Sustainability and ESG",
-  "u08-14": "Showing commercial awareness",
+  "u08-15": "What is a business?",
+  "u08-16": "Business purpose and objectives",
+  "u08-17": "Stakeholders",
+  "u08-18": "The private, public and third sectors",
+  "u08-19": "Sole traders and partnerships",
+  "u08-20": "Private and public limited companies",
+  "u08-21": "Social enterprises and co-operatives",
+  "u08-22": "Franchising",
+  "u08-23": "PESTLE analysis",
+  "u08-24": "Markets and competition",
+  "u08-25": "The economic environment",
+  "u08-26": "The legal and regulatory environment",
+  "u08-27": "Technology and social change",
+  "u08-28": "Globalisation and international business",
+  "u08-29": "Business size and growth",
+  "u08-30": "Why businesses fail",
   "u09-01": "What professionalism means",
   "u09-02": "Professional codes of conduct",
   "u09-03": "Ethical decision making",
@@ -136,20 +149,336 @@ export const IDS = {
   "u09-14": "Discipline and grievance: the ACAS Code",
   "u09-15": "Dismissal and redundancy basics",
   "u09-16": "Getting help: ACAS and advice services",
-  "u10-01": "Wellbeing at work",
-  "u10-02": "Work-related stress and the HSE Management Standards",
-  "u10-03": "Burnout",
-  "u10-04": "Resilience",
-  "u10-05": "Mental health at work",
-  "u10-06": "Boundaries and work-life balance",
-  "u10-07": "What CPD is",
-  "u10-08": "Planning and recording CPD",
-  "u10-09": "Professional bodies and chartered status",
-  "u10-10": "Career planning",
-  "u10-11": "Knowing your strengths and values",
-  "u10-12": "CVs and applications",
-  "u10-13": "Interviews and assessment centres",
-  "u10-14": "Networking",
-  "u10-15": "Managing career transitions",
+  "u10-16": "Intrinsic and extrinsic motivation",
+  "u10-17": "Drive theories",
+  "u10-18": "Incentive theories",
+  "u10-19": "Self-determination theory",
+  "u10-20": "Goal-setting theory",
+  "u10-21": "Achievement motivation in context",
+  "u10-22": "Theories of emotion: James–Lange and Cannon–Bard",
+  "u10-23": "The two-factor theory: Schachter–Singer",
+  "u10-24": "Emotion regulation",
+  "u10-25": "Stress",
+  "u10-26": "The physiology of stress",
+  "u10-27": "Coping",
+  "u10-28": "Resilience",
+  "u10-29": "Subjective wellbeing",
+  "u10-30": "Happiness",
+  "u10-31": "Positive psychology in practice",
+  "u10-32": "Flow",
+  "u10-33": "Gratitude",
+  "u10-34": "Mindfulness research",
+  "u10-35": "Flourishing",
 };
-export const RETIRED = {};
+export const RETIRED = {
+  "u03-01": {
+    "title": "Management and leadership",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-02": {
+    "title": "The functions of management",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-03": {
+    "title": "Mintzberg's managerial roles",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-04": {
+    "title": "Trait and behavioural theories of leadership",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-05": {
+    "title": "Situational and contingency leadership",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-06": {
+    "title": "Transformational and transactional leadership",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-07": {
+    "title": "Authentic and servant leadership",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-08": {
+    "title": "Content theories of motivation",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-09": {
+    "title": "Process theories of motivation",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-10": {
+    "title": "Delegation",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-11": {
+    "title": "Coaching and mentoring",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-12": {
+    "title": "Performance management and objectives",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-13": {
+    "title": "Managing underperformance",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-14": {
+    "title": "Recruiting and inducting new staff",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-15": {
+    "title": "Lewin's change model",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-16": {
+    "title": "Kotter's eight steps",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u03-17": {
+    "title": "How people respond to change",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by business school 2 before it was written"
+  },
+  "u08-01": {
+    "title": "Types of organisation",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by business school 1 before it was written"
+  },
+  "u08-02": {
+    "title": "Organisational structures",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by business school 1 before it was written"
+  },
+  "u08-03": {
+    "title": "Business models",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by business school 1 before it was written"
+  },
+  "u08-04": {
+    "title": "Strategy basics",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by business school 1 before it was written"
+  },
+  "u08-05": {
+    "title": "The profit and loss account",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by business school 1 before it was written"
+  },
+  "u08-06": {
+    "title": "The balance sheet and cash flow",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by business school 1 before it was written"
+  },
+  "u08-07": {
+    "title": "Budgets and forecasts",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by business school 1 before it was written"
+  },
+  "u08-08": {
+    "title": "Key performance indicators",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by business school 1 before it was written"
+  },
+  "u08-09": {
+    "title": "PESTLE analysis",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by business school 1 before it was written"
+  },
+  "u08-10": {
+    "title": "SWOT analysis",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by business school 1 before it was written"
+  },
+  "u08-11": {
+    "title": "Porter's five forces",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by business school 1 before it was written"
+  },
+  "u08-12": {
+    "title": "Customers and value",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by business school 1 before it was written"
+  },
+  "u08-13": {
+    "title": "Sustainability and ESG",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by business school 1 before it was written"
+  },
+  "u08-14": {
+    "title": "Showing commercial awareness",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by business school 1 before it was written"
+  },
+  "u10-01": {
+    "title": "Wellbeing at work",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u10-02": {
+    "title": "Work-related stress and the HSE Management Standards",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u10-03": {
+    "title": "Burnout",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u10-04": {
+    "title": "Resilience",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u10-05": {
+    "title": "Mental health at work",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u10-06": {
+    "title": "Boundaries and work-life balance",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u10-07": {
+    "title": "What CPD is",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u10-08": {
+    "title": "Planning and recording CPD",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u10-09": {
+    "title": "Professional bodies and chartered status",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u10-10": {
+    "title": "Career planning",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u10-11": {
+    "title": "Knowing your strengths and values",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u10-12": {
+    "title": "CVs and applications",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u10-13": {
+    "title": "Interviews and assessment centres",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u10-14": {
+    "title": "Networking",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u10-15": {
+    "title": "Managing career transitions",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u02-01": {
+    "title": "What makes an effective team",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-02": {
+    "title": "Team development: Tuckman's stages",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-03": {
+    "title": "Team roles: Belbin",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-04": {
+    "title": "Psychological safety",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-05": {
+    "title": "Collaboration across boundaries",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-06": {
+    "title": "Building professional relationships",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-07": {
+    "title": "Power and influence",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-08": {
+    "title": "Influencing without authority",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-09": {
+    "title": "Stakeholder mapping",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-10": {
+    "title": "Emotional intelligence at work",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-11": {
+    "title": "Principled negotiation",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-12": {
+    "title": "Preparing to negotiate: BATNA and the bargaining zone",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-13": {
+    "title": "Sources of workplace conflict",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-14": {
+    "title": "Conflict-handling styles",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-15": {
+    "title": "Difficult conversations",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-16": {
+    "title": "Resolving conflict: mediation and escalation",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  }
+};

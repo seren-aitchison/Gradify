@@ -306,7 +306,7 @@
    "id": "u02",
    "n": 2,
    "title": "How Financial Markets Work",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u02-01",
@@ -725,78 +725,93 @@
   {
    "id": "u07",
    "n": 7,
-   "title": "Reading Company Accounts",
-   "written": false,
+   "title": "Interpreting Financial Statements and Group Accounts",
+   "written": true,
    "lessons": [
     {
-     "id": "u07-01",
-     "title": "The annual report and accounts",
-     "module": "The annual report"
+     "id": "u07-15",
+     "title": "Why analyse financial statements?",
+     "module": "Ratio analysis"
     },
     {
-     "id": "u07-02",
-     "title": "The income statement",
-     "module": "The annual report"
-    },
-    {
-     "id": "u07-03",
-     "title": "The balance sheet",
-     "module": "The annual report"
-    },
-    {
-     "id": "u07-04",
-     "title": "The cash flow statement",
-     "module": "The annual report"
-    },
-    {
-     "id": "u07-05",
-     "title": "Notes to the accounts and the auditor's report",
-     "module": "The annual report"
-    },
-    {
-     "id": "u07-06",
+     "id": "u07-16",
      "title": "Profitability ratios",
-     "module": "Ratios"
+     "module": "Ratio analysis"
     },
     {
-     "id": "u07-07",
-     "title": "Return on capital employed and return on equity",
-     "module": "Ratios"
-    },
-    {
-     "id": "u07-08",
+     "id": "u07-17",
      "title": "Liquidity ratios",
-     "module": "Ratios"
+     "module": "Ratio analysis"
     },
     {
-     "id": "u07-09",
-     "title": "Gearing and interest cover",
-     "module": "Ratios"
+     "id": "u07-18",
+     "title": "Efficiency ratios and the working capital cycle",
+     "module": "Ratio analysis"
     },
     {
-     "id": "u07-10",
-     "title": "Efficiency ratios",
-     "module": "Ratios"
+     "id": "u07-19",
+     "title": "Gearing and investor ratios",
+     "module": "Ratio analysis"
     },
     {
-     "id": "u07-11",
-     "title": "Cash conversion and the quality of earnings",
-     "module": "Ratios"
+     "id": "u07-20",
+     "title": "Interpreting ratios in context",
+     "module": "Ratio analysis"
     },
     {
-     "id": "u07-12",
-     "title": "Competitive advantage",
-     "module": "Judging a business"
+     "id": "u07-21",
+     "title": "Limitations of ratio analysis",
+     "module": "Ratio analysis"
     },
     {
-     "id": "u07-13",
-     "title": "Corporate governance and the UK Corporate Governance Code",
-     "module": "Judging a business"
+     "id": "u07-22",
+     "title": "Analysing cash flows",
+     "module": "Ratio analysis"
     },
     {
-     "id": "u07-14",
-     "title": "Warning signs in company accounts",
-     "module": "Judging a business"
+     "id": "u07-23",
+     "title": "Performance in not-for-profit organisations",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u07-24",
+     "title": "Groups and control",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u07-25",
+     "title": "Goodwill on acquisition",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u07-26",
+     "title": "The consolidated statement of financial position",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u07-27",
+     "title": "Intra-group trading and unrealised profit",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u07-28",
+     "title": "The consolidated statement of profit or loss",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u07-29",
+     "title": "Associates and joint arrangements",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u07-30",
+     "title": "Creative accounting and earnings management",
+     "module": "Quality of reporting"
+    },
+    {
+     "id": "u07-31",
+     "title": "Narrative reporting and the strategic report",
+     "module": "Quality of reporting"
     }
    ]
   },

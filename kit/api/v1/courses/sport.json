@@ -353,7 +353,7 @@
    "id": "u02",
    "n": 2,
    "title": "The Cardiorespiratory System in Exercise",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u02-01",
@@ -451,7 +451,7 @@
    "id": "u03",
    "n": 3,
    "title": "Energy Systems and Exercise Metabolism",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u03-01",
@@ -896,205 +896,210 @@
    "id": "u08",
    "n": 8,
    "title": "Sport and Exercise Nutrition",
-   "written": false,
+   "written": true,
    "lessons": [
     {
-     "id": "u08-01",
-     "title": "Macronutrients: carbohydrate, fat and protein",
-     "module": "Nutrients and energy"
+     "id": "u08-18",
+     "title": "Carbohydrates and dietary fibre",
+     "module": "Nutrients"
     },
     {
-     "id": "u08-02",
-     "title": "Micronutrients",
-     "module": "Nutrients and energy"
+     "id": "u08-19",
+     "title": "Protein",
+     "module": "Nutrients"
     },
     {
-     "id": "u08-03",
+     "id": "u08-20",
+     "title": "Fats",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u08-21",
+     "title": "Vitamins",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u08-22",
+     "title": "Minerals",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u08-23",
+     "title": "Water and hydration",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u08-24",
+     "title": "The Eatwell Guide",
+     "module": "Healthy eating"
+    },
+    {
+     "id": "u08-25",
      "title": "Energy balance",
-     "module": "Nutrients and energy"
+     "module": "Healthy eating"
     },
     {
-     "id": "u08-04",
-     "title": "Body weight and composition goals",
-     "module": "Nutrients and energy"
+     "id": "u08-26",
+     "title": "Reading food labels",
+     "module": "Healthy eating"
     },
     {
-     "id": "u08-05",
-     "title": "Carbohydrate before, during and after exercise",
-     "module": "Fuelling performance"
+     "id": "u08-27",
+     "title": "Salt, sugar and saturated fat",
+     "module": "Healthy eating"
     },
     {
-     "id": "u08-06",
-     "title": "Carbohydrate loading",
-     "module": "Fuelling performance"
+     "id": "u08-28",
+     "title": "Ultra-processed food",
+     "module": "Healthy eating"
     },
     {
-     "id": "u08-07",
-     "title": "Protein for training adaptation",
-     "module": "Fuelling performance"
+     "id": "u08-29",
+     "title": "Nutrition in pregnancy and infancy",
+     "module": "Nutrition across life"
     },
     {
-     "id": "u08-08",
-     "title": "Hydration and fluid balance",
-     "module": "Fuelling performance"
+     "id": "u08-30",
+     "title": "Nutrition in childhood and adolescence",
+     "module": "Nutrition across life"
     },
     {
-     "id": "u08-09",
-     "title": "Electrolytes and hyponatraemia",
-     "module": "Fuelling performance"
+     "id": "u08-31",
+     "title": "Nutrition in older age",
+     "module": "Nutrition across life"
     },
     {
-     "id": "u08-10",
-     "title": "Nutrient timing",
-     "module": "Fuelling performance"
+     "id": "u08-32",
+     "title": "Vegetarian and vegan diets",
+     "module": "Nutrition across life"
     },
     {
-     "id": "u08-11",
-     "title": "Evidence-based supplements",
-     "module": "Supplements and special issues"
+     "id": "u08-33",
+     "title": "Malnutrition",
+     "module": "Diet, disease and access"
     },
     {
-     "id": "u08-12",
-     "title": "Caffeine",
-     "module": "Supplements and special issues"
+     "id": "u08-34",
+     "title": "Diet and chronic disease",
+     "module": "Diet, disease and access"
     },
     {
-     "id": "u08-13",
-     "title": "Creatine",
-     "module": "Supplements and special issues"
+     "id": "u08-35",
+     "title": "Food insecurity",
+     "module": "Diet, disease and access"
     },
     {
-     "id": "u08-14",
-     "title": "Nitrate and buffering agents",
-     "module": "Supplements and special issues"
-    },
-    {
-     "id": "u08-15",
-     "title": "Supplement risks and contamination",
-     "module": "Supplements and special issues"
-    },
-    {
-     "id": "u08-16",
-     "title": "Vegetarian and vegan athletes",
-     "module": "Supplements and special issues"
-    },
-    {
-     "id": "u08-17",
-     "title": "Disordered eating in sport",
-     "module": "Supplements and special issues"
+     "id": "u08-36",
+     "title": "Eating disorders",
+     "module": "Diet, disease and access"
     }
    ]
   },
   {
    "id": "u09",
    "n": 9,
-   "title": "Sport and Exercise Psychology",
-   "written": false,
+   "title": "Motivation, Emotion and Wellbeing",
+   "written": true,
    "lessons": [
     {
-     "id": "u09-01",
-     "title": "Personality in sport",
-     "module": "Individual differences and motivation"
+     "id": "u09-22",
+     "title": "Intrinsic and extrinsic motivation",
+     "module": "Motivation"
     },
     {
-     "id": "u09-02",
-     "title": "Attitudes",
-     "module": "Individual differences and motivation"
+     "id": "u09-23",
+     "title": "Drive theories",
+     "module": "Motivation"
     },
     {
-     "id": "u09-03",
-     "title": "Motivation",
-     "module": "Individual differences and motivation"
+     "id": "u09-24",
+     "title": "Incentive theories",
+     "module": "Motivation"
     },
     {
-     "id": "u09-04",
-     "title": "Achievement motivation",
-     "module": "Individual differences and motivation"
-    },
-    {
-     "id": "u09-05",
+     "id": "u09-25",
      "title": "Self-determination theory",
-     "module": "Individual differences and motivation"
+     "module": "Motivation"
     },
     {
-     "id": "u09-06",
-     "title": "Attribution theory",
-     "module": "Individual differences and motivation"
+     "id": "u09-26",
+     "title": "Goal-setting theory",
+     "module": "Motivation"
     },
     {
-     "id": "u09-07",
-     "title": "Self-efficacy and confidence",
-     "module": "Individual differences and motivation"
+     "id": "u09-27",
+     "title": "Achievement motivation in context",
+     "module": "Motivation"
     },
     {
-     "id": "u09-08",
-     "title": "Learned helplessness",
-     "module": "Individual differences and motivation"
+     "id": "u09-28",
+     "title": "Theories of emotion: James–Lange and Cannon–Bard",
+     "module": "Emotion"
     },
     {
-     "id": "u09-09",
-     "title": "Arousal theories: drive and inverted-U",
-     "module": "Arousal, anxiety and performance"
+     "id": "u09-29",
+     "title": "The two-factor theory: Schachter–Singer",
+     "module": "Emotion"
     },
     {
-     "id": "u09-10",
-     "title": "Catastrophe theory and the zone of optimal functioning",
-     "module": "Arousal, anxiety and performance"
+     "id": "u09-30",
+     "title": "Emotion regulation",
+     "module": "Emotion"
     },
     {
-     "id": "u09-11",
-     "title": "Anxiety: cognitive and somatic",
-     "module": "Arousal, anxiety and performance"
+     "id": "u09-31",
+     "title": "Stress",
+     "module": "Stress and coping"
     },
     {
-     "id": "u09-12",
-     "title": "Stress management techniques",
-     "module": "Arousal, anxiety and performance"
+     "id": "u09-32",
+     "title": "The physiology of stress",
+     "module": "Stress and coping"
     },
     {
-     "id": "u09-13",
-     "title": "Attentional control",
-     "module": "Arousal, anxiety and performance"
+     "id": "u09-33",
+     "title": "Coping",
+     "module": "Stress and coping"
     },
     {
-     "id": "u09-14",
-     "title": "Group dynamics and cohesion",
-     "module": "Groups and leadership"
+     "id": "u09-34",
+     "title": "Resilience",
+     "module": "Stress and coping"
     },
     {
-     "id": "u09-15",
-     "title": "Social loafing and the Ringelmann effect",
-     "module": "Groups and leadership"
+     "id": "u09-35",
+     "title": "Subjective wellbeing",
+     "module": "Wellbeing"
     },
     {
-     "id": "u09-16",
-     "title": "Leadership in sport",
-     "module": "Groups and leadership"
+     "id": "u09-36",
+     "title": "Happiness",
+     "module": "Wellbeing"
     },
     {
-     "id": "u09-17",
-     "title": "Social facilitation and inhibition",
-     "module": "Groups and leadership"
+     "id": "u09-37",
+     "title": "Positive psychology in practice",
+     "module": "Wellbeing"
     },
     {
-     "id": "u09-18",
-     "title": "Aggression in sport",
-     "module": "Groups and leadership"
+     "id": "u09-38",
+     "title": "Flow",
+     "module": "Wellbeing"
     },
     {
-     "id": "u09-19",
-     "title": "Goal setting",
-     "module": "Applied sport psychology"
+     "id": "u09-39",
+     "title": "Gratitude",
+     "module": "Wellbeing"
     },
     {
-     "id": "u09-20",
-     "title": "Imagery and mental rehearsal",
-     "module": "Applied sport psychology"
+     "id": "u09-40",
+     "title": "Mindfulness research",
+     "module": "Wellbeing"
     },
     {
-     "id": "u09-21",
-     "title": "Exercise psychology and adherence",
-     "module": "Applied sport psychology"
+     "id": "u09-41",
+     "title": "Flourishing",
+     "module": "Wellbeing"
     }
    ]
   },
@@ -1287,88 +1292,78 @@
   {
    "id": "u12",
    "n": 12,
-   "title": "Physical Activity, Health and Sport in Society",
-   "written": false,
+   "title": "Physical Activity",
+   "written": true,
    "lessons": [
     {
-     "id": "u12-01",
-     "title": "The UK Chief Medical Officers' physical activity guidelines",
-     "module": "Physical activity and health"
+     "id": "u12-17",
+     "title": "Physical activity, exercise and fitness",
+     "module": "Activity and health"
     },
     {
-     "id": "u12-02",
-     "title": "Physical activity and chronic disease",
-     "module": "Physical activity and health"
+     "id": "u12-18",
+     "title": "The UK physical activity guidelines",
+     "module": "Activity and health"
     },
     {
-     "id": "u12-03",
+     "id": "u12-19",
      "title": "Sedentary behaviour",
-     "module": "Physical activity and health"
+     "module": "Activity and health"
     },
     {
-     "id": "u12-04",
-     "title": "Physical activity and mental health",
-     "module": "Physical activity and health"
+     "id": "u12-20",
+     "title": "The benefits of physical activity",
+     "module": "Activity and health"
     },
     {
-     "id": "u12-05",
-     "title": "Exercise referral and prescription",
-     "module": "Physical activity and health"
+     "id": "u12-21",
+     "title": "Short-term responses to exercise",
+     "module": "How the body responds"
     },
     {
-     "id": "u12-06",
-     "title": "The development of modern sport",
-     "module": "Sport in society"
+     "id": "u12-22",
+     "title": "Long-term adaptations to training",
+     "module": "How the body responds"
     },
     {
-     "id": "u12-07",
-     "title": "Sport and social class",
-     "module": "Sport in society"
+     "id": "u12-23",
+     "title": "Energy systems",
+     "module": "How the body responds"
     },
     {
-     "id": "u12-08",
-     "title": "Participation and barriers",
-     "module": "Sport in society"
+     "id": "u12-24",
+     "title": "Components of fitness",
+     "module": "How the body responds"
     },
     {
-     "id": "u12-09",
-     "title": "Gender in sport",
-     "module": "Sport in society"
+     "id": "u12-25",
+     "title": "Measuring fitness",
+     "module": "How the body responds"
     },
     {
-     "id": "u12-10",
-     "title": "Ethnicity and sport",
-     "module": "Sport in society"
+     "id": "u12-26",
+     "title": "Physical activity in children and young people",
+     "module": "Promoting activity"
     },
     {
-     "id": "u12-11",
-     "title": "Disability sport and the Paralympic movement",
-     "module": "Sport in society"
+     "id": "u12-27",
+     "title": "Physical activity in older adults",
+     "module": "Promoting activity"
     },
     {
-     "id": "u12-12",
-     "title": "Commercialisation and the media",
-     "module": "Sport in society"
+     "id": "u12-28",
+     "title": "Activity with long-term conditions",
+     "module": "Promoting activity"
     },
     {
-     "id": "u12-13",
-     "title": "Deviance in sport",
-     "module": "Sport in society"
+     "id": "u12-29",
+     "title": "Barriers to physical activity",
+     "module": "Promoting activity"
     },
     {
-     "id": "u12-14",
-     "title": "Doping and anti-doping",
-     "module": "Sport in society"
-    },
-    {
-     "id": "u12-15",
-     "title": "Sport policy and UK sports organisations",
-     "module": "Sport in society"
-    },
-    {
-     "id": "u12-16",
-     "title": "Olympism and mega-events",
-     "module": "Sport in society"
+     "id": "u12-30",
+     "title": "Active environments and active travel",
+     "module": "Promoting activity"
     }
    ]
   }

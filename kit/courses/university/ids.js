@@ -21,25 +21,25 @@ export const IDS = {
   "u01-17": "Building study habits",
   "u01-18": "Peer learning and study groups",
   "u01-19": "Belonging and the transition to university",
-  "u02-01": "What learning is: memory and understanding",
-  "u02-02": "Working memory and cognitive load",
-  "u02-03": "Encoding and levels of processing",
-  "u02-04": "Forgetting and the forgetting curve",
-  "u02-05": "Desirable difficulties",
-  "u02-06": "Rating study techniques: the evidence",
-  "u02-07": "Retrieval practice",
-  "u02-08": "Spaced practice",
-  "u02-09": "Interleaving",
-  "u02-10": "Elaboration and self-explanation",
-  "u02-11": "Concrete examples and dual coding",
-  "u02-12": "Flashcards and spaced repetition systems",
-  "u02-13": "Rereading, highlighting and summarising",
-  "u02-14": "Metacognition: thinking about your thinking",
-  "u02-15": "Judgements of learning and the illusion of competence",
-  "u02-16": "Planning, monitoring and evaluating your learning",
-  "u02-17": "Learning styles and other myths",
-  "u02-18": "Sleep, attention and learning",
-  "u02-19": "Putting it together: a study system",
+  "u02-20": "Learning as a change in long-term memory",
+  "u02-21": "Working memory and its limits",
+  "u02-22": "Long-term memory and schemas",
+  "u02-23": "Prior knowledge and how it shapes learning",
+  "u02-24": "Misconceptions and conceptual change",
+  "u02-25": "Cognitive load theory: Sweller 1988",
+  "u02-26": "Intrinsic and extraneous load",
+  "u02-27": "The worked example effect",
+  "u02-28": "The expertise reversal effect",
+  "u02-29": "Split attention and redundancy",
+  "u02-30": "Dual coding",
+  "u02-31": "Retrieval practice",
+  "u02-32": "Spaced practice",
+  "u02-33": "Interleaving",
+  "u02-34": "Elaboration and generative learning",
+  "u02-35": "Forgetting and desirable difficulties",
+  "u02-36": "Motivation and self-efficacy in learning",
+  "u02-37": "Metacognition and self-regulated learning",
+  "u02-38": "Learning styles and other neuromyths",
   "u03-01": "How students use their time",
   "u03-02": "Semester and weekly planning",
   "u03-03": "Prioritising tasks",
@@ -137,20 +137,20 @@ export const IDS = {
   "u08-12": "Statistical significance in plain terms",
   "u08-13": "Spreadsheets for students",
   "u08-14": "Presenting numbers in writing",
-  "u09-01": "Planning a presentation",
-  "u09-02": "Designing slides",
-  "u09-03": "Delivering a presentation",
-  "u09-04": "Managing presentation nerves",
-  "u09-05": "Posters",
-  "u09-06": "Answering questions",
-  "u09-07": "Online presentations",
-  "u09-08": "Why universities set group work",
-  "u09-09": "Forming a team and agreeing ways of working",
-  "u09-10": "Team roles",
-  "u09-11": "Communication and online collaboration",
-  "u09-12": "Managing conflict",
-  "u09-13": "Contributing fairly and peer assessment",
-  "u09-14": "Inclusive group work",
+  "u09-15": "Communication at work: purpose and audience",
+  "u09-16": "Active listening",
+  "u09-17": "Questioning skills",
+  "u09-18": "Non-verbal communication",
+  "u09-19": "Plain English and clear writing",
+  "u09-20": "Structuring reports and briefings",
+  "u09-21": "Writing effective emails",
+  "u09-22": "Tone, etiquette and choosing the channel",
+  "u09-23": "Running effective meetings",
+  "u09-24": "Minutes, decisions and action points",
+  "u09-25": "Planning a presentation",
+  "u09-26": "Delivering a presentation",
+  "u09-27": "Communicating in virtual and hybrid teams",
+  "u09-28": "Giving and receiving feedback",
   "u10-01": "Types of exam",
   "u10-02": "Planning revision",
   "u10-03": "Revision techniques that work",
@@ -181,19 +181,253 @@ export const IDS = {
   "u11-14": "Money and student life",
   "u11-15": "Disability, neurodivergence and study",
   "u11-16": "Getting help: university and NHS support",
-  "u12-01": "What employability means",
-  "u12-02": "Graduate attributes and transferable skills",
-  "u12-03": "Recognising and recording your skills",
-  "u12-04": "Careers services and planning",
-  "u12-05": "Part-time work and volunteering",
-  "u12-06": "CVs and cover letters",
-  "u12-07": "Applications and personal statements",
-  "u12-08": "Interviews and assessment centres",
-  "u12-09": "Placements and internships",
-  "u12-10": "Learning on placement",
-  "u12-11": "Professional behaviour and online presence",
-  "u12-12": "Further study and postgraduate options",
-  "u12-13": "Your degree outcome and the HEAR",
-  "u12-14": "Lifelong learning",
+  "u12-15": "What career development is",
+  "u12-16": "Career theories: matching, development and chance",
+  "u12-17": "The Gatsby Benchmarks and careers support",
+  "u12-18": "Identifying your skills",
+  "u12-19": "Transferable skills and graduate attributes",
+  "u12-20": "Values and what matters to you at work",
+  "u12-21": "Strengths and how to use them",
+  "u12-22": "Interests and personality tools: uses and limits",
+  "u12-23": "Reflective practice and the skills audit",
+  "u12-24": "Motivations and work-life priorities",
+  "u12-25": "Your career story and personal brand",
+  "u12-26": "Setting career goals",
 };
-export const RETIRED = {};
+export const RETIRED = {
+  "u02-01": {
+    "title": "What learning is: memory and understanding",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-02": {
+    "title": "Working memory and cognitive load",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-03": {
+    "title": "Encoding and levels of processing",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-04": {
+    "title": "Forgetting and the forgetting curve",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-05": {
+    "title": "Desirable difficulties",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-06": {
+    "title": "Rating study techniques: the evidence",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-07": {
+    "title": "Retrieval practice",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-08": {
+    "title": "Spaced practice",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-09": {
+    "title": "Interleaving",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-10": {
+    "title": "Elaboration and self-explanation",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-11": {
+    "title": "Concrete examples and dual coding",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-12": {
+    "title": "Flashcards and spaced repetition systems",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-13": {
+    "title": "Rereading, highlighting and summarising",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-14": {
+    "title": "Metacognition: thinking about your thinking",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-15": {
+    "title": "Judgements of learning and the illusion of competence",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-16": {
+    "title": "Planning, monitoring and evaluating your learning",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-17": {
+    "title": "Learning styles and other myths",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-18": {
+    "title": "Sleep, attention and learning",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-19": {
+    "title": "Putting it together: a study system",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u09-01": {
+    "title": "Planning a presentation",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-02": {
+    "title": "Designing slides",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-03": {
+    "title": "Delivering a presentation",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-04": {
+    "title": "Managing presentation nerves",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-05": {
+    "title": "Posters",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-06": {
+    "title": "Answering questions",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-07": {
+    "title": "Online presentations",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-08": {
+    "title": "Why universities set group work",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-09": {
+    "title": "Forming a team and agreeing ways of working",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-10": {
+    "title": "Team roles",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-11": {
+    "title": "Communication and online collaboration",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-12": {
+    "title": "Managing conflict",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-13": {
+    "title": "Contributing fairly and peer assessment",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-14": {
+    "title": "Inclusive group work",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u12-01": {
+    "title": "What employability means",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-02": {
+    "title": "Graduate attributes and transferable skills",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-03": {
+    "title": "Recognising and recording your skills",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-04": {
+    "title": "Careers services and planning",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-05": {
+    "title": "Part-time work and volunteering",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-06": {
+    "title": "CVs and cover letters",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-07": {
+    "title": "Applications and personal statements",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-08": {
+    "title": "Interviews and assessment centres",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-09": {
+    "title": "Placements and internships",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-10": {
+    "title": "Learning on placement",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-11": {
+    "title": "Professional behaviour and online presence",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-12": {
+    "title": "Further study and postgraduate options",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-13": {
+    "title": "Your degree outcome and the HEAR",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-14": {
+    "title": "Lifelong learning",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  }
+};

@@ -96,27 +96,31 @@ export const SYLLABUS = `
 * Statutory assessment in England
 * GCSEs, grading and examinations
 * Reporting to parents and carers
-5. Managing Behaviour
-> A positive culture
-* Behaviour and learning
-* Routines and high expectations
-* A positive classroom climate
-* Relationships with pupils
-* The whole-school behaviour policy
-> In the classroom
-* Starting and ending lessons
-* Giving clear instructions
-* Praise and positive reinforcement
-* Low-level disruption and the least intrusive response
-* Consequences and sanctions
-* De-escalation and scripted responses
-* Restorative approaches
-> The wider picture
-* Attendance and punctuality
-* Suspension and permanent exclusion
-* Behaviour and SEND
-* Searching, screening and reasonable force
-* Bullying, including online
+5. Learning and Behaviour
+> Classical conditioning
+* Classical conditioning
+* Acquisition and extinction
+* Spontaneous recovery
+* Generalisation and discrimination
+> Operant conditioning
+* Operant conditioning
+* Positive and negative reinforcement
+* Punishment
+* Schedules of reinforcement
+* Shaping
+* Behaviour modification
+> Social and cognitive learning
+* Observational learning
+* Social learning theory
+* Modelling and imitation
+* Vicarious reinforcement
+* Latent learning
+* Insight learning
+> Limits and applications
+* Biological constraints on learning
+* Habituation and sensitisation
+* Habit formation
+* Applications of learning theory
 6. Curriculum and Subject Knowledge
 > What a curriculum is
 * What a curriculum is
@@ -217,36 +221,73 @@ export const SYLLABUS = `
 * Teacher wellbeing
 * Managing time and priorities
 * Pay, conditions and contracts
-11. Educational Research and Evidence
-> Using evidence
-* Why evidence matters in teaching
-* The EEF Teaching and Learning Toolkit
-* Reading an EEF guidance report
-* Effect sizes and months' progress
-* Randomised controlled trials in education
-* Meta-analysis and its limits
-> Research in school
-* Implementation: putting evidence to work
-* Practitioner enquiry and action research
-* Evaluating an intervention
-* Research ethics in school
-* Reading educational claims critically
-* Cognitive science in the classroom: uses and limits
-12. Education Policy and the School System
-> The school system
-* The structure of education in England
-* Maintained schools, academies and free schools
-* Phases and key stages
-* Governance and accountability
-* Ofsted and school inspection
-* School funding
-> Policy and context
-* The Department for Education and policy-making
-* Disadvantage and the attainment gap
-* Curriculum and assessment reform
-* Post-16 education and training
-* Education across the four UK nations
-* A short history of state education in England
+11. Research Methods
+> Scientific reasoning
+* Scientific reasoning in psychology
+* Research questions and hypotheses
+* Operationalisation
+* Independent and dependent variables
+* Confounding variables
+> Experiments
+* Experimental design
+* Laboratory experiments
+* Field experiments
+* Natural experiments
+* Quasi-experiments
+> Non-experimental methods
+* Correlational research
+* Cross-sectional and longitudinal research
+* Case studies
+* Naturalistic observation
+* Structured observation
+* Surveys and questionnaires
+* Interviews
+* Focus groups
+> Approaches and sampling
+* Quantitative, qualitative and mixed methods
+* Random and stratified sampling
+* Opportunity and volunteer sampling
+* Sample size
+> Quality of research
+* Reliability
+* Validity
+* Generalisability
+* Bias in research
+* Replication
+* Preregistration
+* Open science
+> Research ethics
+* Informed consent
+* Confidentiality
+* Deception and debriefing
+* Vulnerable participants
+* Research governance and ethics committees
+12. Education
+> Theories of education
+* Functionalist perspectives on education
+* Marxist perspectives on education
+* Feminist perspectives on education
+* Education, socialisation and social control
+* The hidden curriculum
+> Differential achievement
+* Educational achievement and social class
+* Educational achievement and gender
+* Educational achievement and ethnicity
+* Cultural capital and education
+* Linguistic codes
+> Processes inside schools
+* Labelling in education
+* Teacher expectations
+* The self-fulfilling prophecy
+* Selection
+> Education systems
+* Educational inequality
+* Private education
+* Higher education
+* Education policy
+* Global education
+* Digital learning
+* Educational reform
 `;
 
 export const TRACKS = [
@@ -271,14 +312,14 @@ export const BLURBS = {
   2: "Rosenshine's principles, explicit instruction, modelling, questioning, scaffolding, practice, explanation and classroom talk.",
   3: "Adapting teaching so every pupil succeeds, the SEND Code of Practice, the graduated approach and the needs teachers meet most often.",
   4: "Why and how we assess, validity and reliability, formative assessment, feedback that moves learning on, and the national assessment system.",
-  5: "Routines, relationships, clear expectations, responses to disruption, sanctions, exclusion and the law on behaviour in schools.",
+  5: "Classical and operant conditioning, social and cognitive learning, and their limits and uses.",
   6: "What a curriculum is, the National Curriculum, knowledge and its kinds, sequencing, subject knowledge for teaching and curriculum review.",
   7: "Planning backwards from what pupils should learn: sequences, lesson structure, tasks, explanations, questions, homework and evaluation.",
   8: "Reading, vocabulary, writing and talk in every subject: disciplinary literacy, fluency, comprehension, phonics and oracy.",
   9: "Keeping Children Safe in Education: recognising, responding to and reporting concerns, and the duties every member of staff has.",
   10: "The Teachers' Standards Part Two, boundaries, working with families and colleagues, induction, professional development and wellbeing.",
-  11: "Using research well: the EEF Toolkit and guidance reports, effect sizes, trials, implementation and critical reading of claims.",
-  12: "How schools in England are organised, governed, funded and inspected, and the policies that shape them.",
+  11: "Designing research well: hypotheses, experiments, observation, surveys, sampling, validity, open science and ethics.",
+  12: "Theories of education, differential achievement, labelling, selection and education policy.",
 };
 
 export const UNITS = parseSyllabus(SYLLABUS, IDS, RETIRED);

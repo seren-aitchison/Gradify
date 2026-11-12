@@ -316,181 +316,236 @@
   {
    "id": "u02",
    "n": 2,
-   "title": "Working with People",
-   "written": false,
+   "title": "Social Psychology",
+   "written": true,
    "lessons": [
     {
-     "id": "u02-01",
-     "title": "What makes an effective team",
-     "module": "Teams"
+     "id": "u02-17",
+     "title": "Social cognition",
+     "module": "Social cognition"
     },
     {
-     "id": "u02-02",
-     "title": "Team development: Tuckman's stages",
-     "module": "Teams"
+     "id": "u02-18",
+     "title": "Social perception and impressions",
+     "module": "Social cognition"
     },
     {
-     "id": "u02-03",
-     "title": "Team roles: Belbin",
-     "module": "Teams"
+     "id": "u02-19",
+     "title": "Attribution",
+     "module": "Social cognition"
     },
     {
-     "id": "u02-04",
-     "title": "Psychological safety",
-     "module": "Teams"
+     "id": "u02-20",
+     "title": "The fundamental attribution error and self-serving bias",
+     "module": "Social cognition"
     },
     {
-     "id": "u02-05",
-     "title": "Collaboration across boundaries",
-     "module": "Teams"
+     "id": "u02-21",
+     "title": "Attitude formation",
+     "module": "Attitudes"
     },
     {
-     "id": "u02-06",
-     "title": "Building professional relationships",
-     "module": "Influence and relationships"
+     "id": "u02-22",
+     "title": "Attitude change and persuasion",
+     "module": "Attitudes"
     },
     {
-     "id": "u02-07",
-     "title": "Power and influence",
-     "module": "Influence and relationships"
+     "id": "u02-23",
+     "title": "Cognitive dissonance",
+     "module": "Attitudes"
     },
     {
-     "id": "u02-08",
-     "title": "Influencing without authority",
-     "module": "Influence and relationships"
+     "id": "u02-24",
+     "title": "Conformity",
+     "module": "Social influence"
     },
     {
-     "id": "u02-09",
-     "title": "Stakeholder mapping",
-     "module": "Influence and relationships"
+     "id": "u02-25",
+     "title": "Obedience",
+     "module": "Social influence"
     },
     {
-     "id": "u02-10",
-     "title": "Emotional intelligence at work",
-     "module": "Influence and relationships"
+     "id": "u02-26",
+     "title": "Compliance",
+     "module": "Social influence"
     },
     {
-     "id": "u02-11",
-     "title": "Principled negotiation",
-     "module": "Negotiation and conflict"
+     "id": "u02-27",
+     "title": "Social norms",
+     "module": "Social influence"
     },
     {
-     "id": "u02-12",
-     "title": "Preparing to negotiate: BATNA and the bargaining zone",
-     "module": "Negotiation and conflict"
+     "id": "u02-28",
+     "title": "Group dynamics",
+     "module": "Groups"
     },
     {
-     "id": "u02-13",
-     "title": "Sources of workplace conflict",
-     "module": "Negotiation and conflict"
+     "id": "u02-29",
+     "title": "Group decision-making",
+     "module": "Groups"
     },
     {
-     "id": "u02-14",
-     "title": "Conflict-handling styles",
-     "module": "Negotiation and conflict"
+     "id": "u02-30",
+     "title": "Leadership",
+     "module": "Groups"
     },
     {
-     "id": "u02-15",
-     "title": "Difficult conversations",
-     "module": "Negotiation and conflict"
+     "id": "u02-31",
+     "title": "Power",
+     "module": "Groups"
     },
     {
-     "id": "u02-16",
-     "title": "Resolving conflict: mediation and escalation",
-     "module": "Negotiation and conflict"
+     "id": "u02-32",
+     "title": "Social identity theory",
+     "module": "Identity and intergroup relations"
+    },
+    {
+     "id": "u02-33",
+     "title": "Self-categorisation",
+     "module": "Identity and intergroup relations"
+    },
+    {
+     "id": "u02-34",
+     "title": "In-groups and out-groups",
+     "module": "Identity and intergroup relations"
+    },
+    {
+     "id": "u02-35",
+     "title": "Prejudice, stereotyping and discrimination",
+     "module": "Identity and intergroup relations"
+    },
+    {
+     "id": "u02-36",
+     "title": "Intergroup relations and conflict",
+     "module": "Identity and intergroup relations"
+    },
+    {
+     "id": "u02-37",
+     "title": "Bystander behaviour",
+     "module": "Helping, harming and relating"
+    },
+    {
+     "id": "u02-38",
+     "title": "Prosocial behaviour and altruism",
+     "module": "Helping, harming and relating"
+    },
+    {
+     "id": "u02-39",
+     "title": "Aggression",
+     "module": "Helping, harming and relating"
+    },
+    {
+     "id": "u02-40",
+     "title": "Attraction",
+     "module": "Helping, harming and relating"
+    },
+    {
+     "id": "u02-41",
+     "title": "Close relationships",
+     "module": "Helping, harming and relating"
+    },
+    {
+     "id": "u02-42",
+     "title": "Culture and social behaviour",
+     "module": "Culture"
     }
    ]
   },
   {
    "id": "u03",
    "n": 3,
-   "title": "Leadership and Management",
-   "written": false,
+   "title": "Management and Organisational Behaviour",
+   "written": true,
    "lessons": [
     {
-     "id": "u03-01",
-     "title": "Management and leadership",
-     "module": "Understanding management"
+     "id": "u03-18",
+     "title": "What is management?",
+     "module": "What managers do"
     },
     {
-     "id": "u03-02",
-     "title": "The functions of management",
-     "module": "Understanding management"
+     "id": "u03-19",
+     "title": "Classical management theory: Taylor and Fayol",
+     "module": "What managers do"
     },
     {
-     "id": "u03-03",
+     "id": "u03-20",
      "title": "Mintzberg's managerial roles",
-     "module": "Understanding management"
+     "module": "What managers do"
     },
     {
-     "id": "u03-04",
-     "title": "Trait and behavioural theories of leadership",
-     "module": "Leadership theories"
+     "id": "u03-21",
+     "title": "The human relations movement",
+     "module": "What managers do"
     },
     {
-     "id": "u03-05",
-     "title": "Situational and contingency leadership",
-     "module": "Leadership theories"
+     "id": "u03-22",
+     "title": "Organisational structure",
+     "module": "Organisational structure"
     },
     {
-     "id": "u03-06",
-     "title": "Transformational and transactional leadership",
-     "module": "Leadership theories"
+     "id": "u03-23",
+     "title": "Centralisation and decentralisation",
+     "module": "Organisational structure"
     },
     {
-     "id": "u03-07",
-     "title": "Authentic and servant leadership",
-     "module": "Leadership theories"
+     "id": "u03-24",
+     "title": "Bureaucracy and Weber",
+     "module": "Organisational structure"
     },
     {
-     "id": "u03-08",
-     "title": "Content theories of motivation",
-     "module": "Leading people"
+     "id": "u03-25",
+     "title": "Contingency theory and organisational design",
+     "module": "Organisational structure"
     },
     {
-     "id": "u03-09",
-     "title": "Process theories of motivation",
-     "module": "Leading people"
+     "id": "u03-26",
+     "title": "Motivation: content theories",
+     "module": "People at work"
     },
     {
-     "id": "u03-10",
-     "title": "Delegation",
-     "module": "Leading people"
+     "id": "u03-27",
+     "title": "Motivation: process theories",
+     "module": "People at work"
     },
     {
-     "id": "u03-11",
-     "title": "Coaching and mentoring",
-     "module": "Leading people"
+     "id": "u03-28",
+     "title": "Leadership theories",
+     "module": "People at work"
     },
     {
-     "id": "u03-12",
-     "title": "Performance management and objectives",
-     "module": "Leading people"
+     "id": "u03-29",
+     "title": "Leadership styles",
+     "module": "People at work"
     },
     {
-     "id": "u03-13",
-     "title": "Managing underperformance",
-     "module": "Leading people"
+     "id": "u03-30",
+     "title": "Teams and group working",
+     "module": "People at work"
     },
     {
-     "id": "u03-14",
-     "title": "Recruiting and inducting new staff",
-     "module": "Leading people"
+     "id": "u03-31",
+     "title": "Communication in organisations",
+     "module": "People at work"
     },
     {
-     "id": "u03-15",
-     "title": "Lewin's change model",
-     "module": "Leading change"
+     "id": "u03-32",
+     "title": "Organisational culture",
+     "module": "Culture, power and change"
     },
     {
-     "id": "u03-16",
-     "title": "Kotter's eight steps",
-     "module": "Leading change"
+     "id": "u03-33",
+     "title": "Power and politics in organisations",
+     "module": "Culture, power and change"
     },
     {
-     "id": "u03-17",
-     "title": "How people respond to change",
-     "module": "Leading change"
+     "id": "u03-34",
+     "title": "Managing change",
+     "module": "Culture, power and change"
+    },
+    {
+     "id": "u03-35",
+     "title": "Decision-making in organisations",
+     "module": "Culture, power and change"
     }
    ]
   },
@@ -814,78 +869,88 @@
   {
    "id": "u08",
    "n": 8,
-   "title": "Commercial Awareness",
-   "written": false,
+   "title": "The Business Environment",
+   "written": true,
    "lessons": [
     {
-     "id": "u08-01",
-     "title": "Types of organisation",
-     "module": "How organisations work"
+     "id": "u08-15",
+     "title": "What is a business?",
+     "module": "What business is"
     },
     {
-     "id": "u08-02",
-     "title": "Organisational structures",
-     "module": "How organisations work"
+     "id": "u08-16",
+     "title": "Business purpose and objectives",
+     "module": "What business is"
     },
     {
-     "id": "u08-03",
-     "title": "Business models",
-     "module": "How organisations work"
+     "id": "u08-17",
+     "title": "Stakeholders",
+     "module": "What business is"
     },
     {
-     "id": "u08-04",
-     "title": "Strategy basics",
-     "module": "How organisations work"
+     "id": "u08-18",
+     "title": "The private, public and third sectors",
+     "module": "What business is"
     },
     {
-     "id": "u08-05",
-     "title": "The profit and loss account",
-     "module": "Money"
+     "id": "u08-19",
+     "title": "Sole traders and partnerships",
+     "module": "Legal forms and ownership"
     },
     {
-     "id": "u08-06",
-     "title": "The balance sheet and cash flow",
-     "module": "Money"
+     "id": "u08-20",
+     "title": "Private and public limited companies",
+     "module": "Legal forms and ownership"
     },
     {
-     "id": "u08-07",
-     "title": "Budgets and forecasts",
-     "module": "Money"
+     "id": "u08-21",
+     "title": "Social enterprises and co-operatives",
+     "module": "Legal forms and ownership"
     },
     {
-     "id": "u08-08",
-     "title": "Key performance indicators",
-     "module": "Money"
+     "id": "u08-22",
+     "title": "Franchising",
+     "module": "Legal forms and ownership"
     },
     {
-     "id": "u08-09",
+     "id": "u08-23",
      "title": "PESTLE analysis",
      "module": "The external environment"
     },
     {
-     "id": "u08-10",
-     "title": "SWOT analysis",
+     "id": "u08-24",
+     "title": "Markets and competition",
      "module": "The external environment"
     },
     {
-     "id": "u08-11",
-     "title": "Porter's five forces",
+     "id": "u08-25",
+     "title": "The economic environment",
      "module": "The external environment"
     },
     {
-     "id": "u08-12",
-     "title": "Customers and value",
+     "id": "u08-26",
+     "title": "The legal and regulatory environment",
      "module": "The external environment"
     },
     {
-     "id": "u08-13",
-     "title": "Sustainability and ESG",
+     "id": "u08-27",
+     "title": "Technology and social change",
      "module": "The external environment"
     },
     {
-     "id": "u08-14",
-     "title": "Showing commercial awareness",
+     "id": "u08-28",
+     "title": "Globalisation and international business",
      "module": "The external environment"
+    },
+    {
+     "id": "u08-29",
+     "title": "Business size and growth",
+     "module": "Size, growth and failure"
+    },
+    {
+     "id": "u08-30",
+     "title": "Why businesses fail",
+     "module": "Size, growth and failure"
     }
    ]
   },
@@ -980,83 +1045,108 @@
   {
    "id": "u10",
    "n": 10,
-   "title": "Wellbeing, Resilience and Career Development",
-   "written": false,
+   "title": "Motivation, Emotion and Wellbeing",
+   "written": true,
    "lessons": [
     {
-     "id": "u10-01",
-     "title": "Wellbeing at work",
-     "module": "Wellbeing at work"
+     "id": "u10-16",
+     "title": "Intrinsic and extrinsic motivation",
+     "module": "Motivation"
     },
     {
-     "id": "u10-02",
-     "title": "Work-related stress and the HSE Management Standards",
-     "module": "Wellbeing at work"
+     "id": "u10-17",
+     "title": "Drive theories",
+     "module": "Motivation"
     },
     {
-     "id": "u10-03",
-     "title": "Burnout",
-     "module": "Wellbeing at work"
+     "id": "u10-18",
+     "title": "Incentive theories",
+     "module": "Motivation"
     },
     {
-     "id": "u10-04",
+     "id": "u10-19",
+     "title": "Self-determination theory",
+     "module": "Motivation"
+    },
+    {
+     "id": "u10-20",
+     "title": "Goal-setting theory",
+     "module": "Motivation"
+    },
+    {
+     "id": "u10-21",
+     "title": "Achievement motivation in context",
+     "module": "Motivation"
+    },
+    {
+     "id": "u10-22",
+     "title": "Theories of emotion: James–Lange and Cannon–Bard",
+     "module": "Emotion"
+    },
+    {
+     "id": "u10-23",
+     "title": "The two-factor theory: Schachter–Singer",
+     "module": "Emotion"
+    },
+    {
+     "id": "u10-24",
+     "title": "Emotion regulation",
+     "module": "Emotion"
+    },
+    {
+     "id": "u10-25",
+     "title": "Stress",
+     "module": "Stress and coping"
+    },
+    {
+     "id": "u10-26",
+     "title": "The physiology of stress",
+     "module": "Stress and coping"
+    },
+    {
+     "id": "u10-27",
+     "title": "Coping",
+     "module": "Stress and coping"
+    },
+    {
+     "id": "u10-28",
      "title": "Resilience",
-     "module": "Wellbeing at work"
+     "module": "Stress and coping"
     },
     {
-     "id": "u10-05",
-     "title": "Mental health at work",
-     "module": "Wellbeing at work"
+     "id": "u10-29",
+     "title": "Subjective wellbeing",
+     "module": "Wellbeing"
     },
     {
-     "id": "u10-06",
-     "title": "Boundaries and work-life balance",
-     "module": "Wellbeing at work"
+     "id": "u10-30",
+     "title": "Happiness",
+     "module": "Wellbeing"
     },
     {
-     "id": "u10-07",
-     "title": "What CPD is",
-     "module": "Continuing professional development"
+     "id": "u10-31",
+     "title": "Positive psychology in practice",
+     "module": "Wellbeing"
     },
     {
-     "id": "u10-08",
-     "title": "Planning and recording CPD",
-     "module": "Continuing professional development"
+     "id": "u10-32",
+     "title": "Flow",
+     "module": "Wellbeing"
     },
     {
-     "id": "u10-09",
-     "title": "Professional bodies and chartered status",
-     "module": "Continuing professional development"
+     "id": "u10-33",
+     "title": "Gratitude",
+     "module": "Wellbeing"
     },
     {
-     "id": "u10-10",
-     "title": "Career planning",
-     "module": "Career progression"
+     "id": "u10-34",
+     "title": "Mindfulness research",
+     "module": "Wellbeing"
     },
     {
-     "id": "u10-11",
-     "title": "Knowing your strengths and values",
-     "module": "Career progression"
-    },
-    {
-     "id": "u10-12",
-     "title": "CVs and applications",
-     "module": "Career progression"
-    },
-    {
-     "id": "u10-13",
-     "title": "Interviews and assessment centres",
-     "module": "Career progression"
-    },
-    {
-     "id": "u10-14",
-     "title": "Networking",
-     "module": "Career progression"
-    },
-    {
-     "id": "u10-15",
-     "title": "Managing career transitions",
-     "module": "Career progression"
+     "id": "u10-35",
+     "title": "Flourishing",
+     "module": "Wellbeing"
     }
    ]
   }

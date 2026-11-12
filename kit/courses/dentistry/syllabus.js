@@ -46,26 +46,28 @@ export const SYLLABUS = `
 * The periodontal ligament and alveolar bone
 * The oral mucosa
 * Developmental anomalies of the teeth
-3. Oral Physiology, Microbiology and Infection Control
-> Oral physiology
-* Saliva: secretion and control
-* The functions and composition of saliva
-* Dry mouth and salivary flow
-* Taste and oral sensation
-* Mastication and swallowing
-> Oral microbiology
-* The oral microbiome
-* Dental plaque as a biofilm
-* Microbiology of caries and periodontal disease
-* Oral fungal and viral infections
-* Antimicrobials and antimicrobial stewardship in dentistry
-> Infection prevention and control
-* Standard infection control precautions in dentistry
-* Hand hygiene and personal protective equipment
-* Decontamination of dental instruments (HTM 01-05)
-* Dental unit waterlines
-* Sharps injuries and blood-borne viruses
-* Healthcare waste in dental practice
+3. Foundations of Medical Science
+> Cells and homeostasis
+* Cell structure and function in health
+* Membranes, transport and the resting potential
+* Homeostasis and negative feedback
+* Body fluids, osmolality and electrolytes
+* Acid–base physiology
+> Pathological processes
+* Cell injury, adaptation and death
+* Acute inflammation
+* Chronic inflammation and repair
+* Thrombosis, embolism and infarction
+* Neoplasia: benign and malignant tumours
+* The hallmarks and genetics of cancer
+> Immunity and genetics
+* Innate immunity
+* Adaptive immunity
+* Hypersensitivity and autoimmunity
+* Patterns of inheritance in clinical genetics
+> Principles of pharmacology
+* Pharmacodynamics: receptors and dose–response
+* Pharmacokinetics: absorption, distribution, metabolism and excretion
 4. Dental Caries, Prevention and Dental Public Health
 > The caries process
 * What dental caries is
@@ -273,7 +275,7 @@ export const PATHS = [
 export const BLURBS = {
   1: "The skull, jaws, TMJ, muscles, nerves, vessels and spaces of the head and neck that every dental procedure depends on.",
   2: "Naming and describing every tooth, how teeth and their tissues develop, and the histology of enamel, dentine, pulp, periodontium and mucosa.",
-  3: "Saliva, taste and swallowing, the oral microbiome and biofilm, and infection prevention and control under HTM 01-05.",
+  3: "The cell biology, physiology, pathology, immunology, genetics and pharmacology that clinical medicine is built on.",
   4: "How caries starts and stops, fluoride and Delivering Better Oral Health, and the epidemiology and inequalities of oral disease.",
   5: "The periodontium in health and disease, the 2017 classification, BPE, staging and grading, and periodontal therapy.",
   6: "Pulpal and jaw pathology, mucosal disease and oral cancer, orofacial pain and caring for the medically complex patient.",

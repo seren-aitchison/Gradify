@@ -317,7 +317,7 @@
    "id": "u02",
    "n": 2,
    "title": "Veterinary Physiology",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u02-01",
