@@ -1,0 +1,1512 @@
+{
+ "api": 1,
+ "slug": "engineering",
+ "name": "Engineering",
+ "site": "EngineerGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Education, not engineering advice or design approval.</b> EngineerGradify teaches engineering for study. The lessons were drafted with AI assistance and haven't yet been reviewed by a chartered engineer, so they may contain errors; check important points against your course materials, textbooks and the relevant standards. Worked examples use simplified, illustrative numbers: never use them to size, certify or build anything real. Real designs must follow current codes and standards and be checked by a competent, appropriately qualified engineer, and work must follow health and safety law and the HSE's guidance. This course is not an accredited degree and does not lead to professional registration.",
+ "notes": "/kit/courses/engineering/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Mathematics and mechanics",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "from": "#ff7a2a",
+   "to": "#f59e0b"
+  },
+  {
+   "name": "Stage 2 · Solids and materials",
+   "units": [
+    4,
+    5
+   ],
+   "from": "#f97316",
+   "to": "#ef4444"
+  },
+  {
+   "name": "Stage 3 · Thermofluids",
+   "units": [
+    6,
+    7
+   ],
+   "from": "#fb923c",
+   "to": "#22d3ee"
+  },
+  {
+   "name": "Stage 4 · Electrical and control",
+   "units": [
+    8,
+    9
+   ],
+   "from": "#fbbf24",
+   "to": "#6366f1"
+  },
+  {
+   "name": "Stage 5 · Design, society and practice",
+   "units": [
+    10,
+    11,
+    12
+   ],
+   "from": "#ff7a2a",
+   "to": "#10b981"
+  }
+ ],
+ "paths": [
+  {
+   "id": "year1",
+   "name": "University year 1",
+   "sub": "The common first year of most engineering degrees: maths, statics, dynamics, materials, circuits and an introduction to design and professional practice.",
+   "units": [
+    1,
+    2,
+    3,
+    5,
+    8,
+    10,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "mechanical",
+   "name": "Mechanical engineering",
+   "sub": "Mechanics, materials, thermofluids, control and machine design: the core of a mechanical degree.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    9,
+    10
+   ],
+   "select": null
+  },
+  {
+   "id": "civil",
+   "name": "Civil and structural engineering",
+   "sub": "Statics, mechanics of materials, materials, fluids and the safety, sustainability and project skills infrastructure depends on.",
+   "units": [
+    1,
+    2,
+    4,
+    5,
+    7,
+    11,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "electrical",
+   "name": "Electrical and electronic engineering",
+   "sub": "Circuits, electronics, machines, signals and control, built on the mathematics they need.",
+   "units": [
+    1,
+    8,
+    9,
+    3,
+    10
+   ],
+   "select": null
+  },
+  {
+   "id": "professional",
+   "name": "The professional engineer",
+   "sub": "Ethics, safety, sustainability, projects and the road to registration as EngTech, IEng or CEng.",
+   "units": [
+    11,
+    12,
+    10
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Mathematics and mechanics",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Solids and materials",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    5
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Thermofluids",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    6,
+    7
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Electrical and control",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    8,
+    9
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Design, society and practice",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Engineering Mathematics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "SI units and dimensional analysis",
+     "module": "Quantities and models"
+    },
+    {
+     "id": "u01-02",
+     "title": "Uncertainty, significant figures and estimation",
+     "module": "Quantities and models"
+    },
+    {
+     "id": "u01-03",
+     "title": "Engineering models and assumptions",
+     "module": "Quantities and models"
+    },
+    {
+     "id": "u01-04",
+     "title": "Functions and graphs in engineering",
+     "module": "Algebra and functions"
+    },
+    {
+     "id": "u01-05",
+     "title": "Exponentials and logarithms in engineering",
+     "module": "Algebra and functions"
+    },
+    {
+     "id": "u01-06",
+     "title": "Trigonometry and sinusoids",
+     "module": "Algebra and functions"
+    },
+    {
+     "id": "u01-07",
+     "title": "Complex numbers and phasors",
+     "module": "Algebra and functions"
+    },
+    {
+     "id": "u01-08",
+     "title": "Vectors and their products",
+     "module": "Vectors and matrices"
+    },
+    {
+     "id": "u01-09",
+     "title": "Matrices and simultaneous equations",
+     "module": "Vectors and matrices"
+    },
+    {
+     "id": "u01-10",
+     "title": "Eigenvalues and eigenvectors",
+     "module": "Vectors and matrices"
+    },
+    {
+     "id": "u01-11",
+     "title": "Differentiation and rates of change",
+     "module": "Calculus"
+    },
+    {
+     "id": "u01-12",
+     "title": "Partial differentiation and error propagation",
+     "module": "Calculus"
+    },
+    {
+     "id": "u01-13",
+     "title": "Integration in engineering",
+     "module": "Calculus"
+    },
+    {
+     "id": "u01-14",
+     "title": "Taylor series and linearisation",
+     "module": "Calculus"
+    },
+    {
+     "id": "u01-15",
+     "title": "First-order differential equations",
+     "module": "Differential equations and numerical methods"
+    },
+    {
+     "id": "u01-16",
+     "title": "Second-order differential equations",
+     "module": "Differential equations and numerical methods"
+    },
+    {
+     "id": "u01-17",
+     "title": "Numerical methods",
+     "module": "Differential equations and numerical methods"
+    },
+    {
+     "id": "u01-18",
+     "title": "Engineering statistics",
+     "module": "Statistics and reliability"
+    },
+    {
+     "id": "u01-19",
+     "title": "Probability and reliability",
+     "module": "Statistics and reliability"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Statics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Forces as vectors",
+     "module": "Forces and moments"
+    },
+    {
+     "id": "u02-02",
+     "title": "Moments and couples",
+     "module": "Forces and moments"
+    },
+    {
+     "id": "u02-03",
+     "title": "Equivalent force systems",
+     "module": "Forces and moments"
+    },
+    {
+     "id": "u02-04",
+     "title": "Free-body diagrams",
+     "module": "Forces and moments"
+    },
+    {
+     "id": "u02-05",
+     "title": "Equilibrium of a particle",
+     "module": "Equilibrium"
+    },
+    {
+     "id": "u02-06",
+     "title": "Equilibrium of a rigid body in two dimensions",
+     "module": "Equilibrium"
+    },
+    {
+     "id": "u02-07",
+     "title": "Equilibrium in three dimensions",
+     "module": "Equilibrium"
+    },
+    {
+     "id": "u02-08",
+     "title": "Statical determinacy and stability",
+     "module": "Equilibrium"
+    },
+    {
+     "id": "u02-09",
+     "title": "Plane trusses: the method of joints",
+     "module": "Structures"
+    },
+    {
+     "id": "u02-10",
+     "title": "Plane trusses: the method of sections",
+     "module": "Structures"
+    },
+    {
+     "id": "u02-11",
+     "title": "Frames and machines",
+     "module": "Structures"
+    },
+    {
+     "id": "u02-12",
+     "title": "Distributed loads",
+     "module": "Distributed loads and section properties"
+    },
+    {
+     "id": "u02-13",
+     "title": "Centroids and centres of gravity",
+     "module": "Distributed loads and section properties"
+    },
+    {
+     "id": "u02-14",
+     "title": "Second moment of area",
+     "module": "Distributed loads and section properties"
+    },
+    {
+     "id": "u02-15",
+     "title": "Dry friction",
+     "module": "Friction and internal forces"
+    },
+    {
+     "id": "u02-16",
+     "title": "Shear force and bending moment diagrams",
+     "module": "Friction and internal forces"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Dynamics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Rectilinear motion",
+     "module": "Kinematics of particles"
+    },
+    {
+     "id": "u03-02",
+     "title": "Curvilinear motion: rectangular components",
+     "module": "Kinematics of particles"
+    },
+    {
+     "id": "u03-03",
+     "title": "Normal and tangential components",
+     "module": "Kinematics of particles"
+    },
+    {
+     "id": "u03-04",
+     "title": "Projectile motion",
+     "module": "Kinematics of particles"
+    },
+    {
+     "id": "u03-05",
+     "title": "Relative motion",
+     "module": "Kinematics of particles"
+    },
+    {
+     "id": "u03-06",
+     "title": "Newton's second law for particles",
+     "module": "Kinetics of particles"
+    },
+    {
+     "id": "u03-07",
+     "title": "Work and energy",
+     "module": "Kinetics of particles"
+    },
+    {
+     "id": "u03-08",
+     "title": "Power and efficiency",
+     "module": "Kinetics of particles"
+    },
+    {
+     "id": "u03-09",
+     "title": "Impulse and momentum",
+     "module": "Kinetics of particles"
+    },
+    {
+     "id": "u03-10",
+     "title": "Impacts",
+     "module": "Kinetics of particles"
+    },
+    {
+     "id": "u03-11",
+     "title": "Rotation about a fixed axis",
+     "module": "Rigid-body dynamics"
+    },
+    {
+     "id": "u03-12",
+     "title": "General plane motion and the instantaneous centre",
+     "module": "Rigid-body dynamics"
+    },
+    {
+     "id": "u03-13",
+     "title": "Mass moment of inertia",
+     "module": "Rigid-body dynamics"
+    },
+    {
+     "id": "u03-14",
+     "title": "Kinetics of rigid bodies in plane motion",
+     "module": "Rigid-body dynamics"
+    },
+    {
+     "id": "u03-15",
+     "title": "Energy methods for rigid bodies",
+     "module": "Rigid-body dynamics"
+    },
+    {
+     "id": "u03-16",
+     "title": "Free undamped vibration",
+     "module": "Vibrations"
+    },
+    {
+     "id": "u03-17",
+     "title": "Damped vibration",
+     "module": "Vibrations"
+    },
+    {
+     "id": "u03-18",
+     "title": "Forced vibration and resonance",
+     "module": "Vibrations"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Mechanics of Materials",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Normal stress and strain",
+     "module": "Stress and strain"
+    },
+    {
+     "id": "u04-02",
+     "title": "Shear stress and strain",
+     "module": "Stress and strain"
+    },
+    {
+     "id": "u04-03",
+     "title": "Hooke's law and elastic constants",
+     "module": "Stress and strain"
+    },
+    {
+     "id": "u04-04",
+     "title": "Axially loaded members",
+     "module": "Stress and strain"
+    },
+    {
+     "id": "u04-05",
+     "title": "Thermal stress",
+     "module": "Stress and strain"
+    },
+    {
+     "id": "u04-06",
+     "title": "Torsion of circular shafts",
+     "module": "Torsion and bending"
+    },
+    {
+     "id": "u04-07",
+     "title": "Bending stress in beams",
+     "module": "Torsion and bending"
+    },
+    {
+     "id": "u04-08",
+     "title": "Shear stress in beams",
+     "module": "Torsion and bending"
+    },
+    {
+     "id": "u04-09",
+     "title": "Beam deflection",
+     "module": "Torsion and bending"
+    },
+    {
+     "id": "u04-10",
+     "title": "Combined loading",
+     "module": "Combined loading and stability"
+    },
+    {
+     "id": "u04-11",
+     "title": "Stress transformation and Mohr's circle",
+     "module": "Combined loading and stability"
+    },
+    {
+     "id": "u04-12",
+     "title": "Failure theories",
+     "module": "Combined loading and stability"
+    },
+    {
+     "id": "u04-13",
+     "title": "Buckling of columns",
+     "module": "Combined loading and stability"
+    },
+    {
+     "id": "u04-14",
+     "title": "Thin-walled pressure vessels",
+     "module": "Combined loading and stability"
+    },
+    {
+     "id": "u04-15",
+     "title": "Strain energy",
+     "module": "Combined loading and stability"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Materials Science",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Atomic bonding in materials",
+     "module": "Structure of materials"
+    },
+    {
+     "id": "u05-02",
+     "title": "Crystal structures",
+     "module": "Structure of materials"
+    },
+    {
+     "id": "u05-03",
+     "title": "Defects and dislocations",
+     "module": "Structure of materials"
+    },
+    {
+     "id": "u05-04",
+     "title": "Phase diagrams",
+     "module": "Structure of materials"
+    },
+    {
+     "id": "u05-05",
+     "title": "The iron–carbon system",
+     "module": "Structure of materials"
+    },
+    {
+     "id": "u05-06",
+     "title": "The tensile test",
+     "module": "Properties and failure"
+    },
+    {
+     "id": "u05-07",
+     "title": "Hardness and impact testing",
+     "module": "Properties and failure"
+    },
+    {
+     "id": "u05-08",
+     "title": "Fracture and fracture toughness",
+     "module": "Properties and failure"
+    },
+    {
+     "id": "u05-09",
+     "title": "Fatigue",
+     "module": "Properties and failure"
+    },
+    {
+     "id": "u05-10",
+     "title": "Creep",
+     "module": "Properties and failure"
+    },
+    {
+     "id": "u05-11",
+     "title": "Corrosion and degradation",
+     "module": "Properties and failure"
+    },
+    {
+     "id": "u05-12",
+     "title": "Metals and alloys",
+     "module": "Material classes and selection"
+    },
+    {
+     "id": "u05-13",
+     "title": "Polymers",
+     "module": "Material classes and selection"
+    },
+    {
+     "id": "u05-14",
+     "title": "Ceramics and glasses",
+     "module": "Material classes and selection"
+    },
+    {
+     "id": "u05-15",
+     "title": "Composites",
+     "module": "Material classes and selection"
+    },
+    {
+     "id": "u05-16",
+     "title": "Heat treatment of steels",
+     "module": "Material classes and selection"
+    },
+    {
+     "id": "u05-17",
+     "title": "Materials selection and Ashby charts",
+     "module": "Material classes and selection"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Thermodynamics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Systems, properties and states",
+     "module": "Concepts and properties"
+    },
+    {
+     "id": "u06-02",
+     "title": "Energy, work and heat",
+     "module": "Concepts and properties"
+    },
+    {
+     "id": "u06-03",
+     "title": "Properties of pure substances and steam tables",
+     "module": "Concepts and properties"
+    },
+    {
+     "id": "u06-04",
+     "title": "Ideal gases",
+     "module": "Concepts and properties"
+    },
+    {
+     "id": "u06-05",
+     "title": "The first law for closed systems",
+     "module": "The first law"
+    },
+    {
+     "id": "u06-06",
+     "title": "The first law for steady-flow systems",
+     "module": "The first law"
+    },
+    {
+     "id": "u06-07",
+     "title": "Nozzles, turbines, compressors and heat exchangers",
+     "module": "The first law"
+    },
+    {
+     "id": "u06-08",
+     "title": "The second law and heat engines",
+     "module": "The second law"
+    },
+    {
+     "id": "u06-09",
+     "title": "The Carnot cycle",
+     "module": "The second law"
+    },
+    {
+     "id": "u06-10",
+     "title": "Entropy",
+     "module": "The second law"
+    },
+    {
+     "id": "u06-11",
+     "title": "Isentropic efficiency",
+     "module": "The second law"
+    },
+    {
+     "id": "u06-12",
+     "title": "The Rankine cycle",
+     "module": "Cycles and heat transfer"
+    },
+    {
+     "id": "u06-13",
+     "title": "Gas power cycles: Otto, Diesel and Brayton",
+     "module": "Cycles and heat transfer"
+    },
+    {
+     "id": "u06-14",
+     "title": "Refrigeration and heat pumps",
+     "module": "Cycles and heat transfer"
+    },
+    {
+     "id": "u06-15",
+     "title": "Heat transfer by conduction",
+     "module": "Cycles and heat transfer"
+    },
+    {
+     "id": "u06-16",
+     "title": "Convection and radiation",
+     "module": "Cycles and heat transfer"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Fluid Mechanics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Fluid properties",
+     "module": "Fluid statics"
+    },
+    {
+     "id": "u07-02",
+     "title": "Pressure and manometry",
+     "module": "Fluid statics"
+    },
+    {
+     "id": "u07-03",
+     "title": "Hydrostatic forces on surfaces",
+     "module": "Fluid statics"
+    },
+    {
+     "id": "u07-04",
+     "title": "Buoyancy and stability",
+     "module": "Fluid statics"
+    },
+    {
+     "id": "u07-05",
+     "title": "Conservation of mass and continuity",
+     "module": "Fluid dynamics"
+    },
+    {
+     "id": "u07-06",
+     "title": "The Bernoulli equation",
+     "module": "Fluid dynamics"
+    },
+    {
+     "id": "u07-07",
+     "title": "The momentum equation and jet forces",
+     "module": "Fluid dynamics"
+    },
+    {
+     "id": "u07-08",
+     "title": "Flow measurement",
+     "module": "Fluid dynamics"
+    },
+    {
+     "id": "u07-09",
+     "title": "Viscous flow and the Reynolds number",
+     "module": "Real flows"
+    },
+    {
+     "id": "u07-10",
+     "title": "Pipe flow and friction losses",
+     "module": "Real flows"
+    },
+    {
+     "id": "u07-11",
+     "title": "Minor losses and pipe systems",
+     "module": "Real flows"
+    },
+    {
+     "id": "u07-12",
+     "title": "Pumps and system curves",
+     "module": "Real flows"
+    },
+    {
+     "id": "u07-13",
+     "title": "Boundary layers, drag and lift",
+     "module": "Real flows"
+    },
+    {
+     "id": "u07-14",
+     "title": "Dimensional analysis and similitude",
+     "module": "Real flows"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Electrical Circuits and Electronics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Charge, current, voltage and power",
+     "module": "DC circuits"
+    },
+    {
+     "id": "u08-02",
+     "title": "Ohm's law and resistor networks",
+     "module": "DC circuits"
+    },
+    {
+     "id": "u08-03",
+     "title": "Kirchhoff's laws",
+     "module": "DC circuits"
+    },
+    {
+     "id": "u08-04",
+     "title": "Nodal and mesh analysis",
+     "module": "DC circuits"
+    },
+    {
+     "id": "u08-05",
+     "title": "Thévenin and Norton equivalents",
+     "module": "DC circuits"
+    },
+    {
+     "id": "u08-06",
+     "title": "Maximum power transfer",
+     "module": "DC circuits"
+    },
+    {
+     "id": "u08-07",
+     "title": "Capacitors and inductors",
+     "module": "Transients and AC"
+    },
+    {
+     "id": "u08-08",
+     "title": "RC and RL transients",
+     "module": "Transients and AC"
+    },
+    {
+     "id": "u08-09",
+     "title": "AC fundamentals",
+     "module": "Transients and AC"
+    },
+    {
+     "id": "u08-10",
+     "title": "Impedance and AC circuit analysis",
+     "module": "Transients and AC"
+    },
+    {
+     "id": "u08-11",
+     "title": "AC power and power factor",
+     "module": "Transients and AC"
+    },
+    {
+     "id": "u08-12",
+     "title": "Three-phase systems",
+     "module": "Transients and AC"
+    },
+    {
+     "id": "u08-13",
+     "title": "Diodes and rectifiers",
+     "module": "Electronics and machines"
+    },
+    {
+     "id": "u08-14",
+     "title": "Transistors as switches and amplifiers",
+     "module": "Electronics and machines"
+    },
+    {
+     "id": "u08-15",
+     "title": "Operational amplifiers",
+     "module": "Electronics and machines"
+    },
+    {
+     "id": "u08-16",
+     "title": "Digital logic",
+     "module": "Electronics and machines"
+    },
+    {
+     "id": "u08-17",
+     "title": "Transformers",
+     "module": "Electronics and machines"
+    },
+    {
+     "id": "u08-18",
+     "title": "Electric motors and generators",
+     "module": "Electronics and machines"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Control Systems and Signals",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Introduction to control systems",
+     "module": "Modelling dynamic systems"
+    },
+    {
+     "id": "u09-02",
+     "title": "Laplace transforms",
+     "module": "Modelling dynamic systems"
+    },
+    {
+     "id": "u09-03",
+     "title": "Transfer functions and block diagrams",
+     "module": "Modelling dynamic systems"
+    },
+    {
+     "id": "u09-04",
+     "title": "Modelling physical systems",
+     "module": "Modelling dynamic systems"
+    },
+    {
+     "id": "u09-05",
+     "title": "First-order system response",
+     "module": "System response"
+    },
+    {
+     "id": "u09-06",
+     "title": "Second-order system response",
+     "module": "System response"
+    },
+    {
+     "id": "u09-07",
+     "title": "Steady-state error",
+     "module": "System response"
+    },
+    {
+     "id": "u09-08",
+     "title": "Stability and the Routh–Hurwitz criterion",
+     "module": "System response"
+    },
+    {
+     "id": "u09-09",
+     "title": "Feedback and PID control",
+     "module": "Controller design"
+    },
+    {
+     "id": "u09-10",
+     "title": "Root locus",
+     "module": "Controller design"
+    },
+    {
+     "id": "u09-11",
+     "title": "Frequency response and Bode plots",
+     "module": "Controller design"
+    },
+    {
+     "id": "u09-12",
+     "title": "Sensors and actuators",
+     "module": "Controller design"
+    },
+    {
+     "id": "u09-13",
+     "title": "Digital control and sampling",
+     "module": "Controller design"
+    },
+    {
+     "id": "u09-14",
+     "title": "Signals and the Fourier series",
+     "module": "Controller design"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Design and Manufacturing",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "The engineering design process",
+     "module": "The design process"
+    },
+    {
+     "id": "u10-02",
+     "title": "Requirements and specifications",
+     "module": "The design process"
+    },
+    {
+     "id": "u10-03",
+     "title": "Concept generation and selection",
+     "module": "The design process"
+    },
+    {
+     "id": "u10-04",
+     "title": "Engineering drawing and CAD",
+     "module": "The design process"
+    },
+    {
+     "id": "u10-05",
+     "title": "Tolerances and fits",
+     "module": "The design process"
+    },
+    {
+     "id": "u10-06",
+     "title": "Design for manufacture and assembly",
+     "module": "The design process"
+    },
+    {
+     "id": "u10-07",
+     "title": "Factors of safety and design codes",
+     "module": "Machine elements"
+    },
+    {
+     "id": "u10-08",
+     "title": "Bolted and welded joints",
+     "module": "Machine elements"
+    },
+    {
+     "id": "u10-09",
+     "title": "Shafts and bearings",
+     "module": "Machine elements"
+    },
+    {
+     "id": "u10-10",
+     "title": "Gears and power transmission",
+     "module": "Machine elements"
+    },
+    {
+     "id": "u10-11",
+     "title": "Casting and forming",
+     "module": "Manufacturing processes"
+    },
+    {
+     "id": "u10-12",
+     "title": "Machining processes",
+     "module": "Manufacturing processes"
+    },
+    {
+     "id": "u10-13",
+     "title": "Additive manufacturing",
+     "module": "Manufacturing processes"
+    },
+    {
+     "id": "u10-14",
+     "title": "Quality, metrology and inspection",
+     "module": "Manufacturing processes"
+    },
+    {
+     "id": "u10-15",
+     "title": "Lean manufacturing and production systems",
+     "module": "Manufacturing processes"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Engineering in Society",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "The statement of ethical principles",
+     "module": "Ethics and the profession"
+    },
+    {
+     "id": "u11-02",
+     "title": "Professional responsibility and whistleblowing",
+     "module": "Ethics and the profession"
+    },
+    {
+     "id": "u11-03",
+     "title": "Learning from engineering failures",
+     "module": "Ethics and the profession"
+    },
+    {
+     "id": "u11-04",
+     "title": "Codes, standards and regulation",
+     "module": "Ethics and the profession"
+    },
+    {
+     "id": "u11-05",
+     "title": "Health and safety law and the HSE",
+     "module": "Health and safety"
+    },
+    {
+     "id": "u11-06",
+     "title": "Risk assessment",
+     "module": "Health and safety"
+    },
+    {
+     "id": "u11-07",
+     "title": "Hazard analysis: FMEA and HAZOP",
+     "module": "Health and safety"
+    },
+    {
+     "id": "u11-08",
+     "title": "Human factors and safety culture",
+     "module": "Health and safety"
+    },
+    {
+     "id": "u11-09",
+     "title": "Sustainable development and engineering",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-10",
+     "title": "Life-cycle assessment",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-11",
+     "title": "Energy systems and net zero",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-12",
+     "title": "The circular economy and materials efficiency",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-13",
+     "title": "Embodied carbon in infrastructure",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-14",
+     "title": "Engineering for global development",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-15",
+     "title": "Diversity and inclusion in engineering",
+     "module": "Sustainability"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Projects and Professional Practice",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "The project lifecycle and planning",
+     "module": "Managing projects"
+    },
+    {
+     "id": "u12-02",
+     "title": "Scheduling: Gantt charts and the critical path",
+     "module": "Managing projects"
+    },
+    {
+     "id": "u12-03",
+     "title": "Engineering economics",
+     "module": "Managing projects"
+    },
+    {
+     "id": "u12-04",
+     "title": "Risk management in projects",
+     "module": "Managing projects"
+    },
+    {
+     "id": "u12-05",
+     "title": "Teamwork and roles",
+     "module": "Managing projects"
+    },
+    {
+     "id": "u12-06",
+     "title": "Technical report writing",
+     "module": "Communicating engineering"
+    },
+    {
+     "id": "u12-07",
+     "title": "Presentations and technical communication",
+     "module": "Communicating engineering"
+    },
+    {
+     "id": "u12-08",
+     "title": "Searching literature and standards",
+     "module": "Communicating engineering"
+    },
+    {
+     "id": "u12-09",
+     "title": "Laboratory practice and experimental design",
+     "module": "Communicating engineering"
+    },
+    {
+     "id": "u12-10",
+     "title": "Professional registration: EngTech, IEng and CEng",
+     "module": "The professional engineer"
+    },
+    {
+     "id": "u12-11",
+     "title": "The UK-SPEC competences",
+     "module": "The professional engineer"
+    },
+    {
+     "id": "u12-12",
+     "title": "Continuing professional development",
+     "module": "The professional engineer"
+    },
+    {
+     "id": "u12-13",
+     "title": "Intellectual property and contracts",
+     "module": "The professional engineer"
+    },
+    {
+     "id": "u12-14",
+     "title": "The individual project",
+     "module": "The professional engineer"
+    }
+   ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "explog",
+   "title": "Exponentials and logarithms",
+   "kind": "Explorer",
+   "sub": "Growth and decay, doubling time and half-life, and logarithms turning exponential data into a straight line.",
+   "note": "MathGradify's lab: exact functions; the base moves in steps of 0.01.",
+   "tasks": null,
+   "lessons": [
+    "u01-05"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/explog"
+  },
+  {
+   "id": "trig",
+   "title": "The unit circle and sinusoids",
+   "kind": "Explorer",
+   "sub": "Turn a point round the unit circle and watch it trace sine and cosine, with amplitude, period and phase shifts: the components of a force and the shape of an AC signal.",
+   "note": "MathGradify's lab: exact values at the standard angles; angles in whole degrees.",
+   "tasks": null,
+   "lessons": [
+    "u01-06",
+    "u02-01",
+    "u08-09"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/trig"
+  },
+  {
+   "id": "complex",
+   "title": "The complex plane",
+   "kind": "Explorer",
+   "sub": "Add and multiply complex numbers on an Argand diagram: multiplying multiplies moduli and adds arguments, which is how impedances and phasors combine.",
+   "note": "MathGradify's lab: exact complex arithmetic drawn to scale.",
+   "tasks": null,
+   "lessons": [
+    "u01-07",
+    "u08-10"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/complex"
+  },
+  {
+   "id": "matrix",
+   "title": "Matrices as transformations",
+   "kind": "Explorer",
+   "sub": "Set a 2×2 matrix and watch the plane transform: the determinant as area (zero means singular), and eigenvectors as the directions that only stretch.",
+   "note": "MathGradify's lab: real 2×2 matrices; complex eigenvalues are reported but have no real direction to draw.",
+   "tasks": null,
+   "lessons": [
+    "u01-09",
+    "u01-10"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/matrix"
+  },
+  {
+   "id": "tangent",
+   "title": "From secant to tangent",
+   "kind": "Explorer",
+   "sub": "Shrink the gap h and watch a secant become the tangent: the derivative as a rate of change.",
+   "note": "MathGradify's lab: difference quotients computed numerically; a very small h shows floating-point rounding.",
+   "tasks": null,
+   "lessons": [
+    "u01-11"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/tangent"
+  },
+  {
+   "id": "riemann",
+   "title": "Strip sums and numerical integration",
+   "kind": "Explorer",
+   "sub": "Approximate an integral with rectangles, midpoints or trapezia and watch the error shrink at the rate theory predicts.",
+   "note": "MathGradify's lab: numerical strip sums compared with the exact integral where it is known.",
+   "tasks": null,
+   "lessons": [
+    "u01-13",
+    "u01-17"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/riemann"
+  },
+  {
+   "id": "roots",
+   "title": "Root-finding: bisection, Newton and secant",
+   "kind": "Explorer",
+   "sub": "Solve f(x) = 0 three ways and watch the error at every iterate: bisection's steady halving, Newton–Raphson's doubling digits, and its failures.",
+   "note": "MathGradify's lab: floating-point iteration with the stopping tolerance shown.",
+   "tasks": null,
+   "lessons": [
+    "u01-17"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/roots"
+  },
+  {
+   "id": "ode",
+   "title": "Slope fields, Euler and Runge–Kutta",
+   "kind": "Simulation",
+   "sub": "Draw the slope field of dy/dx = f(x, y), set an initial value and compare Euler's method with RK4 against the exact solution.",
+   "note": "MathGradify's lab: numerical solutions with the step size shown; the slope field is sampled on a grid.",
+   "tasks": null,
+   "lessons": [
+    "u01-15",
+    "u01-17",
+    "u09-05"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/ode"
+  },
+  {
+   "id": "regression",
+   "title": "Least-squares regression",
+   "kind": "Tool",
+   "sub": "Place data points and see the line of best fit, its residuals and r; add an outlier, or find data where r ≈ 0 but the pattern is strong.",
+   "note": "MathGradify's lab: ordinary least squares on the points you place; r measures linear association only.",
+   "tasks": null,
+   "lessons": [
+    "u01-18",
+    "u12-09"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/regression"
+  },
+  {
+   "id": "clt",
+   "title": "Sample means and the central limit theorem",
+   "kind": "Simulation",
+   "sub": "Take thousands of samples from a skewed population: their means form a normal curve with spread σ/√n, the standard error.",
+   "note": "MathGradify's lab: pseudo-random samples; the normal curve shown is the theoretical limit.",
+   "tasks": null,
+   "lessons": [
+    "u01-18"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/clt"
+  },
+  {
+   "id": "lln",
+   "title": "Probability by repetition",
+   "kind": "Simulation",
+   "sub": "Repeat a random trial thousands of times and watch the observed frequency settle on the probability, the basis of failure-rate estimates.",
+   "note": "MathGradify's lab: pseudo-random numbers stand in for real trials.",
+   "tasks": null,
+   "lessons": [
+    "u01-19"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/lln"
+  },
+  {
+   "id": "projectile",
+   "title": "Projectile motion and air resistance",
+   "kind": "Simulation",
+   "sub": "Launch a ball with or without drag, hit a target and find the best angle: see where the vacuum model holds and where it fails.",
+   "note": "SciGradify Physics' lab: uniform gravity and still air; quadratic drag integrated numerically.",
+   "tasks": null,
+   "lessons": [
+    "u03-04",
+    "u03-02"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/projectile"
+  },
+  {
+   "id": "collisions",
+   "title": "Collisions on an air track",
+   "kind": "Simulation",
+   "sub": "Elastic, sticky and exploding gliders: momentum is always conserved, kinetic energy only sometimes, set by the coefficient of restitution.",
+   "note": "SciGradify Physics' lab: one dimension, frictionless track.",
+   "tasks": null,
+   "lessons": [
+    "u03-09",
+    "u03-10"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/collisions"
+  },
+  {
+   "id": "oscillator",
+   "title": "Damped and driven oscillations",
+   "kind": "Simulation",
+   "sub": "A mass on a spring: natural frequency, the damping regimes, resonance curves and the quality factor.",
+   "note": "SciGradify Physics' lab: linear spring and viscous damping; the resonance curve is the exact steady state.",
+   "tasks": null,
+   "lessons": [
+    "u01-16",
+    "u03-16",
+    "u03-17",
+    "u03-18",
+    "u09-06"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/oscillator"
+  },
+  {
+   "id": "circuits",
+   "title": "DC circuits and Kirchhoff's laws",
+   "kind": "Simulation",
+   "sub": "Series, parallel and mixed networks, internal resistance and maximum power, and a Wheatstone bridge to balance.",
+   "note": "SciGradify Physics' lab: solved exactly by nodal analysis with ideal wires and fixed resistances.",
+   "tasks": null,
+   "lessons": [
+    "u08-02",
+    "u08-03",
+    "u08-04",
+    "u08-06"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/circuits"
+  },
+  {
+   "id": "transients",
+   "title": "RC and RL transients",
+   "kind": "Simulation",
+   "sub": "Throw the switch on an RC or RL circuit, time the rise to 63% and see why τ = RC and τ = L/R.",
+   "note": "SciGradify Physics' lab: exact exponential solutions with ideal components; the clock is scaled so each time constant is watchable.",
+   "tasks": null,
+   "lessons": [
+    "u08-08",
+    "u08-07",
+    "u01-15"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/transients"
+  },
+  {
+   "id": "gas",
+   "title": "Kinetic theory of gases",
+   "kind": "Simulation",
+   "sub": "A box of colliding molecules: pressure, temperature and volume, and the ideal gas law emerging from motion.",
+   "note": "SciGradify Physics' lab: a two-dimensional gas of hard discs in units where k = m = 1.",
+   "tasks": null,
+   "lessons": [
+    "u06-04"
+   ],
+   "url": "https://getgradify.com/engineergradify/course/#/practice/gas"
+  }
+ ]
+}

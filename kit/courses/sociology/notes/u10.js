@@ -19,6 +19,8 @@ X: Latest trends
 > Police recorded 512 homicides in the year ending June 2026, down 1% from 519 the year before.
 H: Why measurement matters
 P: Trends in police recorded crime can reflect changes in recording rules and reporting rather than actual crime; the ONS treats the CSEW as the better guide to long-term trends for the crimes it covers. Sociologists ask whose crimes are counted and whose are hidden, such as white-collar and corporate crime.
+P: **Investigate with the lab.** Compare homicide rates since 1990 across countries.
+IX: data-crime
 K: Crime breaks the law and deviance breaks norms; police data and the CSEW measure crime differently; the CSEW estimated 9.7 million incidents in the year ending June 2026.
 !: Treating police recorded crime as an exact measure of crime. Much crime is never reported or recorded.
 EV: established | The CSEW captures many crimes not reported to the police.
@@ -38,6 +40,7 @@ M2#sociology-u10-01-q3@2: Police recorded crime rises after new recording rules 
 TF2#sociology-u10-01-q4@2: Queue-jumping is deviant but not usually criminal. | true | It breaks social norms but not the criminal law.
 M3#sociology-u10-01-q5@3: Why do sociologists ask whose crimes are counted? | Some crimes are under-recorded | All crimes are counted equally | Statistics are always complete | Only street crime exists | Official data can hide crimes of the powerful.
 SA2#sociology-u10-01-q6@2,3: Compare police recorded crime and the CSEW as measures of crime. | Definitions; police data (reporting, recording practices); CSEW (dark figure, coverage limits); latest trends (2026: 9.7 million, fraud, homicide); hidden crimes. | Definitions ; Police data ; CSEW ; Trends
+M2#sociology-u10-01-q7@1: Why is homicide used to compare crime between countries? | It is defined and recorded more consistently than most crimes | It is the most common crime | It is never under-reported anywhere | It is the only crime recorded | Most crimes are defined and recorded differently, but homicide is usually recorded.
 
 ## The social construction of crime
 LV: Intermediate · Application
@@ -56,6 +59,8 @@ X: Who makes the rules?
 > Enforcement is also selective: police time and priorities shape which crimes are pursued.
 H: Evaluation
 P: The approach explains variation and change and draws attention to power. Critics argue some acts, such as murder of innocent people, are condemned almost universally, suggesting limits to relativism. Realists argue focusing on construction can ignore the real harm crime causes victims.
+P: **Investigate with the lab.** Read why homicide compares well, and think about why other crime statistics are socially constructed.
+IX: data-crime
 K: Crime is constructed through laws, enforcement and reactions that vary across time and place; moral entrepreneurs and power shape definitions.
 !: Assuming "socially constructed" means crime causes no real harm. Constructed categories still describe harmful acts with real victims.
 EV: established | Laws defining crime change over time and differ between countries.
@@ -74,6 +79,7 @@ M2#sociology-u10-02-q2@2: A campaign group successfully lobbies for a new law ba
 TF2#sociology-u10-02-q3@2: Controlling or coercive behaviour became a criminal offence in England and Wales in 2015. | true | The Serious Crime Act 2015 created the offence.
 M3#sociology-u10-02-q4@3: Which is the main criticism of the social construction approach? | Some harms are near-universal | Laws never change at all | Crime has no definitions | Power is irrelevant | Near-universal condemnation suggests limits to relativism.
 SA2#sociology-u10-02-q5@2,3: Evaluate the view that crime is socially constructed. | Becker's argument; changes over time (1967, 1991, 2015); variation between countries; moral entrepreneurs and power; selective enforcement; criticisms (universal harms, realism). | Concept ; Examples ; Power ; Criticisms
+M2#sociology-u10-02-q6@1: Why are official crime statistics described as socially constructed? | They depend on reporting, recording and policing decisions | They are invented by sociologists | They count every crime that happens | They are fixed by law each year | The dark figure of crime lies outside official records.
 
 ## Functionalist theories of crime
 LV: Introductory · Foundation
@@ -1232,6 +1238,8 @@ X: Fear of crime
 > Fear of crime can lead people to restrict their activities, affecting quality of life.
 H: New media and crime
 P: Social media enable new forms of crime, such as online harassment and fraud, and allow offenders to share content. They also change policing: footage helps investigations but can spread misinformation and cause **trial by social media**. Cultural criminologists study how crime is represented, consumed and performed as **spectacle** (Ferrell).
+P: **Investigate with the lab.** Count how often crime categories appear in a news text and compare with what the statistics show.
+IX: content-analysis
 K: News values distort crime coverage towards violence; evidence that media cause crime is mixed; media can increase fear of crime; social media create new crimes and challenges.
 !: Assuming media simply cause crime. Audiences interpret content actively, and effects research is mixed.
 EV: established | News coverage over-represents violent and sexual crime relative to its frequency.
@@ -1251,6 +1259,7 @@ M2#sociology-u10-33-q2@2: A newspaper gives front-page coverage to a rare strang
 TF2#sociology-u10-33-q3@2: Media coverage over-represents property crime compared with violent crime. | false | Media over-represent violent and sexual crime.
 M3#sociology-u10-33-q4@3: Why are laboratory studies of media effects criticised? | They may not reflect real-life viewing | They always use real crimes | They only ever study adults | They never show any effects | Artificial laboratory settings limit how far findings apply to everyday viewing.
 SA2#sociology-u10-33-q5@2,3: Evaluate the view that the media distort public understanding of crime. | News values (Galtung and Ruge, Jewkes); over-representation; causes of crime (imitation, arousal, relative deprivation) and mixed evidence; fear of crime and cultivation; social media and cultural criminology. | Representation ; Effects ; Fear ; New media
+M2#sociology-u10-33-q6@1: What is a moral panic? | An exaggerated public reaction to a group seen as a threat | A rise in crime caused by poverty | A police campaign against fraud | A sudden fall in crime | Stanley Cohen used the term for media-amplified reactions to folk devils.
 
 ## Crime prevention
 LV: Intermediate · Evaluation

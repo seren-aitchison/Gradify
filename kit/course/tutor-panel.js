@@ -23,9 +23,15 @@ const FOCUS_NAME = { recognition: "telling similar ideas apart", recall: "precis
  * lab: the interactive lab the learner last used on this page and what it shows now; Ask and Talk it through send it,
  * so the tutor explains what the learner is looking at. modes: which of MODES to offer (all by default).
  */
+// a random id for one tutor conversation (crypto.randomUUID where available)
+import { upgradeLink } from "../data/functions.js";
+
+export const newConversation = () => globalThis.crypto?.randomUUID?.() ?? "10000000-1000-4000-8000-100000000000".replace(/[018]/g, (c) => (c ^ (Math.random() * 16) >> (c / 4)).toString(16));
+
 export function mountTutorPanel(el, o) {
   const modes = MODES.filter(([m]) => !o.modes || o.modes.includes(m));
-  let mode = modes[0][0], turns = [];
+  // conv: one id per conversation, so its turns share a single use of the learner's allowance (_shared/ai.js)
+  let mode = modes[0][0], turns = [], conv = null;
   el.innerHTML = `<h3>${esc(o.heading || "Gradify AI tutor")}</h3>
     <div class="co-tmodes" role="tablist">${modes.map(([m, l]) => `<button type="button" role="tab" data-m="${m}" aria-selected="${m === mode}">${l}</button>`).join("")}</div>
     <p class="co-tlab" hidden></p><div class="co-tbody"></div><p class="aq-note">${esc(o.note)}</p>`;
@@ -33,13 +39,13 @@ export function mountTutorPanel(el, o) {
   // what the tutor will be told about the lab, shown so the learner knows it can see it
   const lab = () => { const x = (mode === "explain" || mode === "socratic") ? o.lab?.() : null; labLine.hidden = !x; if (x) labLine.textContent = `The tutor can see what the “${x.title}” lab shows right now.`; return x || undefined; };
   if (o.lab) el.addEventListener("pointerenter", lab), el.addEventListener("focusin", lab);
-  const fail = (err, what) => { body.querySelector(".co-tout").innerHTML = err.signin ? o.unavailable(what) : `<p class="co-empty">${esc(err.message)}</p>`; };
+  const fail = (err, what) => { body.querySelector(".co-tout").innerHTML = err.signin ? o.unavailable(what) : `<p class="co-empty">${esc(err.message)}${upgradeLink(err, o.pricing)}</p>`; };
   const busy = (t) => `<p class="co-empty">${esc(t)}</p>`;
 
   function paint() {
     lab();
     el.querySelectorAll("[data-m]").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.m === mode)));
-    turns = [];
+    turns = []; conv = newConversation();
     if (mode === "explain") {
       body.innerHTML = `<form class="co-askform"><label class="sr-only" for="co-askq">Your question about this lesson</label><input id="co-askq" type="text" maxlength="1000" autocomplete="off" placeholder="For example: why does this work?"><button class="btn btn-ghost lg btn-sm" type="submit"><span>Ask</span></button></form><div class="co-tout co-askout" aria-live="polite"></div>`;
       body.querySelector("form").addEventListener("submit", async (e) => {
@@ -64,7 +70,7 @@ export function mountTutorPanel(el, o) {
       const next = async () => {
         out.innerHTML = busy(soc ? "Thinking…" : "The examiner is reading your answer…"); form.querySelector("button").disabled = true;
         try {
-          const r = await o.ask({ mode, lesson: o.lesson, goal: soc ? body.querySelector("#co-goal").value.trim() : undefined, turns, lab: soc ? lab() : undefined });
+          const r = await o.ask({ mode, lesson: o.lesson, goal: soc ? body.querySelector("#co-goal").value.trim() : undefined, turns, lab: soc ? lab() : undefined, conversationId: conv });
           turns.push({ role: "tutor", text: r.reply }); show(); out.innerHTML = "";
           const over = !soc && /End of viva\.?\s*$/i.test(r.reply);
           form.hidden = over; start.hidden = true;

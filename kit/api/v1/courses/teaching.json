@@ -1,0 +1,1514 @@
+{
+ "api": 1,
+ "slug": "teaching",
+ "name": "Teaching",
+ "site": "EduGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Study material, not a teaching qualification.</b> EduGradify is for trainee and early-career teachers. It does not award or count towards Qualified Teacher Status (QTS), and it doesn't replace your training provider, mentor or induction programme. The lessons were drafted with AI assistance and haven't yet been reviewed by teacher educators, so they may contain errors; check important points against the DfE's current guidance. Always follow your own school's policies, especially on safeguarding: if you are worried about a child, speak to your designated safeguarding lead straight away, and if a child is in immediate danger call 999.",
+ "notes": "/kit/courses/teaching/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Learning and teaching",
+   "units": [
+    1,
+    2
+   ],
+   "from": "#ffc002",
+   "to": "#f59e0b"
+  },
+  {
+   "name": "Stage 2 · Every pupil",
+   "units": [
+    3,
+    4,
+    5
+   ],
+   "from": "#fbbf24",
+   "to": "#f97316"
+  },
+  {
+   "name": "Stage 3 · Curriculum and planning",
+   "units": [
+    6,
+    7,
+    8
+   ],
+   "from": "#facc15",
+   "to": "#84cc16"
+  },
+  {
+   "name": "Stage 4 · Safeguarding and the profession",
+   "units": [
+    9,
+    10
+   ],
+   "from": "#fde047",
+   "to": "#22d3ee"
+  },
+  {
+   "name": "Stage 5 · Evidence and the system",
+   "units": [
+    11,
+    12
+   ],
+   "from": "#ffc002",
+   "to": "#22d3ee"
+  }
+ ],
+ "paths": [
+  {
+   "id": "ittecf",
+   "name": "The ITTECF core",
+   "sub": "The Teachers' Standards in the order the Initial Teacher Training and Early Career Framework sets them out: learning, curriculum, classroom practice, adaptive teaching, assessment, behaviour and professional behaviours.",
+   "units": [
+    1,
+    6,
+    2,
+    3,
+    4,
+    5,
+    10
+   ],
+   "select": null
+  },
+  {
+   "id": "pgce",
+   "name": "A PGCE year",
+   "sub": "The ground a postgraduate teacher-training year covers, from how pupils learn to safeguarding, planning and the school system.",
+   "units": [
+    1,
+    2,
+    5,
+    7,
+    9,
+    3,
+    4,
+    6,
+    8,
+    10,
+    11,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "ect",
+   "name": "Early career teacher",
+   "sub": "For the first two years in post: behaviour, assessment, adaptive teaching, workload and using evidence well.",
+   "units": [
+    5,
+    4,
+    3,
+    10,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "safeguarding",
+   "name": "Safeguarding and welfare",
+   "sub": "Keeping children safe, SEND, behaviour and professional conduct. Always follow your own school's policies.",
+   "units": [
+    9,
+    3,
+    5,
+    10
+   ],
+   "select": null
+  },
+  {
+   "id": "evidence",
+   "name": "Evidence-informed practice",
+   "sub": "The science of learning, what the research does and doesn't show, and how schools put evidence to work.",
+   "units": [
+    1,
+    11,
+    2,
+    12
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Learning and teaching",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Every pupil",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    3,
+    4,
+    5
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Curriculum and planning",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    6,
+    7,
+    8
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Safeguarding and the profession",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    9,
+    10
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Evidence and the system",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    11,
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "How Pupils Learn",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "Learning as a change in long-term memory",
+     "module": "Memory and the architecture of learning"
+    },
+    {
+     "id": "u01-02",
+     "title": "Working memory and its limits",
+     "module": "Memory and the architecture of learning"
+    },
+    {
+     "id": "u01-03",
+     "title": "Long-term memory and schemas",
+     "module": "Memory and the architecture of learning"
+    },
+    {
+     "id": "u01-04",
+     "title": "Prior knowledge and how it shapes learning",
+     "module": "Memory and the architecture of learning"
+    },
+    {
+     "id": "u01-05",
+     "title": "Misconceptions and conceptual change",
+     "module": "Memory and the architecture of learning"
+    },
+    {
+     "id": "u01-06",
+     "title": "Cognitive load theory: Sweller 1988",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u01-07",
+     "title": "Intrinsic and extraneous load",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u01-08",
+     "title": "The worked example effect",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u01-09",
+     "title": "The expertise reversal effect",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u01-10",
+     "title": "Split attention and redundancy",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u01-11",
+     "title": "Dual coding",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u01-12",
+     "title": "Retrieval practice",
+     "module": "Making learning stick"
+    },
+    {
+     "id": "u01-13",
+     "title": "Spaced practice",
+     "module": "Making learning stick"
+    },
+    {
+     "id": "u01-14",
+     "title": "Interleaving",
+     "module": "Making learning stick"
+    },
+    {
+     "id": "u01-15",
+     "title": "Elaboration and generative learning",
+     "module": "Making learning stick"
+    },
+    {
+     "id": "u01-16",
+     "title": "Forgetting and desirable difficulties",
+     "module": "Making learning stick"
+    },
+    {
+     "id": "u01-17",
+     "title": "Motivation and self-efficacy",
+     "module": "The learner"
+    },
+    {
+     "id": "u01-18",
+     "title": "Metacognition and self-regulated learning",
+     "module": "The learner"
+    },
+    {
+     "id": "u01-19",
+     "title": "Learning styles and other neuromyths",
+     "module": "The learner"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Classroom Practice",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Rosenshine's Principles of Instruction",
+     "module": "Explicit instruction"
+    },
+    {
+     "id": "u02-02",
+     "title": "Explicit instruction and its critics",
+     "module": "Explicit instruction"
+    },
+    {
+     "id": "u02-03",
+     "title": "Daily, weekly and monthly review",
+     "module": "Explicit instruction"
+    },
+    {
+     "id": "u02-04",
+     "title": "Presenting new material in small steps",
+     "module": "Explicit instruction"
+    },
+    {
+     "id": "u02-05",
+     "title": "Modelling and thinking aloud",
+     "module": "Explicit instruction"
+    },
+    {
+     "id": "u02-06",
+     "title": "Worked examples and faded guidance",
+     "module": "Explicit instruction"
+    },
+    {
+     "id": "u02-07",
+     "title": "Questioning to check understanding",
+     "module": "Questioning and checking understanding"
+    },
+    {
+     "id": "u02-08",
+     "title": "Cold calling and no opt out",
+     "module": "Questioning and checking understanding"
+    },
+    {
+     "id": "u02-09",
+     "title": "Hinge questions and mini-whiteboards",
+     "module": "Questioning and checking understanding"
+    },
+    {
+     "id": "u02-10",
+     "title": "Wait time and think-pair-share",
+     "module": "Questioning and checking understanding"
+    },
+    {
+     "id": "u02-11",
+     "title": "Probing questions and extending answers",
+     "module": "Questioning and checking understanding"
+    },
+    {
+     "id": "u02-12",
+     "title": "Scaffolding",
+     "module": "Scaffolding and practice"
+    },
+    {
+     "id": "u02-13",
+     "title": "Guided practice",
+     "module": "Scaffolding and practice"
+    },
+    {
+     "id": "u02-14",
+     "title": "Independent practice and a high success rate",
+     "module": "Scaffolding and practice"
+    },
+    {
+     "id": "u02-15",
+     "title": "Removing scaffolds",
+     "module": "Scaffolding and practice"
+    },
+    {
+     "id": "u02-16",
+     "title": "Teacher explanations and analogies",
+     "module": "Talk, explanation and groupwork"
+    },
+    {
+     "id": "u02-17",
+     "title": "Classroom discussion and dialogic teaching",
+     "module": "Talk, explanation and groupwork"
+    },
+    {
+     "id": "u02-18",
+     "title": "Collaborative learning and groupwork",
+     "module": "Talk, explanation and groupwork"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Adaptive Teaching and SEND",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "What adaptive teaching is",
+     "module": "Adaptive teaching"
+    },
+    {
+     "id": "u03-02",
+     "title": "Adaptive teaching versus differentiation by task",
+     "module": "Adaptive teaching"
+    },
+    {
+     "id": "u03-03",
+     "title": "Responding to pupils within the lesson",
+     "module": "Adaptive teaching"
+    },
+    {
+     "id": "u03-04",
+     "title": "Attainment grouping and its evidence",
+     "module": "Adaptive teaching"
+    },
+    {
+     "id": "u03-05",
+     "title": "Disadvantaged pupils and the Pupil Premium",
+     "module": "Adaptive teaching"
+    },
+    {
+     "id": "u03-06",
+     "title": "Pupils with English as an additional language",
+     "module": "Adaptive teaching"
+    },
+    {
+     "id": "u03-07",
+     "title": "Challenging high-attaining pupils",
+     "module": "Adaptive teaching"
+    },
+    {
+     "id": "u03-08",
+     "title": "The SEND Code of Practice 2015",
+     "module": "SEND and the Code of Practice"
+    },
+    {
+     "id": "u03-09",
+     "title": "The four broad areas of need",
+     "module": "SEND and the Code of Practice"
+    },
+    {
+     "id": "u03-10",
+     "title": "The graduated approach: assess, plan, do, review",
+     "module": "SEND and the Code of Practice"
+    },
+    {
+     "id": "u03-11",
+     "title": "The role of the SENCO",
+     "module": "SEND and the Code of Practice"
+    },
+    {
+     "id": "u03-12",
+     "title": "Education, health and care plans",
+     "module": "SEND and the Code of Practice"
+    },
+    {
+     "id": "u03-13",
+     "title": "Working with teaching assistants",
+     "module": "SEND and the Code of Practice"
+    },
+    {
+     "id": "u03-14",
+     "title": "The Equality Act 2010 and reasonable adjustments",
+     "module": "SEND and the Code of Practice"
+    },
+    {
+     "id": "u03-15",
+     "title": "Communication and interaction needs",
+     "module": "Needs in the classroom"
+    },
+    {
+     "id": "u03-16",
+     "title": "Dyslexia and specific learning difficulties",
+     "module": "Needs in the classroom"
+    },
+    {
+     "id": "u03-17",
+     "title": "Autism in the classroom",
+     "module": "Needs in the classroom"
+    },
+    {
+     "id": "u03-18",
+     "title": "ADHD in the classroom",
+     "module": "Needs in the classroom"
+    },
+    {
+     "id": "u03-19",
+     "title": "Social, emotional and mental health needs",
+     "module": "Needs in the classroom"
+    },
+    {
+     "id": "u03-20",
+     "title": "Sensory and physical needs",
+     "module": "Needs in the classroom"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Assessment and Feedback",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "The purposes of assessment",
+     "module": "Principles of assessment"
+    },
+    {
+     "id": "u04-02",
+     "title": "Formative and summative assessment",
+     "module": "Principles of assessment"
+    },
+    {
+     "id": "u04-03",
+     "title": "Validity and reliability",
+     "module": "Principles of assessment"
+    },
+    {
+     "id": "u04-04",
+     "title": "Assessment for learning",
+     "module": "Principles of assessment"
+    },
+    {
+     "id": "u04-05",
+     "title": "Designing assessment questions",
+     "module": "Principles of assessment"
+    },
+    {
+     "id": "u04-06",
+     "title": "Multiple-choice questions and diagnostic distractors",
+     "module": "Principles of assessment"
+    },
+    {
+     "id": "u04-07",
+     "title": "Effective feedback: the EEF guidance",
+     "module": "Feedback"
+    },
+    {
+     "id": "u04-08",
+     "title": "Written and verbal feedback",
+     "module": "Feedback"
+    },
+    {
+     "id": "u04-09",
+     "title": "Marking, purpose and workload",
+     "module": "Feedback"
+    },
+    {
+     "id": "u04-10",
+     "title": "Peer and self-assessment",
+     "module": "Feedback"
+    },
+    {
+     "id": "u04-11",
+     "title": "Whole-class feedback",
+     "module": "Feedback"
+    },
+    {
+     "id": "u04-12",
+     "title": "Using assessment data",
+     "module": "Data and reporting"
+    },
+    {
+     "id": "u04-13",
+     "title": "Standardised tests and scaled scores",
+     "module": "Data and reporting"
+    },
+    {
+     "id": "u04-14",
+     "title": "Statutory assessment in England",
+     "module": "Data and reporting"
+    },
+    {
+     "id": "u04-15",
+     "title": "GCSEs, grading and examinations",
+     "module": "Data and reporting"
+    },
+    {
+     "id": "u04-16",
+     "title": "Reporting to parents and carers",
+     "module": "Data and reporting"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Learning and Behaviour",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u05-18",
+     "title": "Classical conditioning",
+     "module": "Classical conditioning"
+    },
+    {
+     "id": "u05-19",
+     "title": "Acquisition and extinction",
+     "module": "Classical conditioning"
+    },
+    {
+     "id": "u05-20",
+     "title": "Spontaneous recovery",
+     "module": "Classical conditioning"
+    },
+    {
+     "id": "u05-21",
+     "title": "Generalisation and discrimination",
+     "module": "Classical conditioning"
+    },
+    {
+     "id": "u05-22",
+     "title": "Operant conditioning",
+     "module": "Operant conditioning"
+    },
+    {
+     "id": "u05-23",
+     "title": "Positive and negative reinforcement",
+     "module": "Operant conditioning"
+    },
+    {
+     "id": "u05-24",
+     "title": "Punishment",
+     "module": "Operant conditioning"
+    },
+    {
+     "id": "u05-25",
+     "title": "Schedules of reinforcement",
+     "module": "Operant conditioning"
+    },
+    {
+     "id": "u05-26",
+     "title": "Shaping",
+     "module": "Operant conditioning"
+    },
+    {
+     "id": "u05-27",
+     "title": "Behaviour modification",
+     "module": "Operant conditioning"
+    },
+    {
+     "id": "u05-28",
+     "title": "Observational learning",
+     "module": "Social and cognitive learning"
+    },
+    {
+     "id": "u05-29",
+     "title": "Social learning theory",
+     "module": "Social and cognitive learning"
+    },
+    {
+     "id": "u05-30",
+     "title": "Modelling and imitation",
+     "module": "Social and cognitive learning"
+    },
+    {
+     "id": "u05-31",
+     "title": "Vicarious reinforcement",
+     "module": "Social and cognitive learning"
+    },
+    {
+     "id": "u05-32",
+     "title": "Latent learning",
+     "module": "Social and cognitive learning"
+    },
+    {
+     "id": "u05-33",
+     "title": "Insight learning",
+     "module": "Social and cognitive learning"
+    },
+    {
+     "id": "u05-34",
+     "title": "Biological constraints on learning",
+     "module": "Limits and applications"
+    },
+    {
+     "id": "u05-35",
+     "title": "Habituation and sensitisation",
+     "module": "Limits and applications"
+    },
+    {
+     "id": "u05-36",
+     "title": "Habit formation",
+     "module": "Limits and applications"
+    },
+    {
+     "id": "u05-37",
+     "title": "Applications of learning theory",
+     "module": "Limits and applications"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Curriculum and Subject Knowledge",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "What a curriculum is",
+     "module": "What a curriculum is"
+    },
+    {
+     "id": "u06-02",
+     "title": "Intent, implementation and impact",
+     "module": "What a curriculum is"
+    },
+    {
+     "id": "u06-03",
+     "title": "The National Curriculum in England",
+     "module": "What a curriculum is"
+    },
+    {
+     "id": "u06-04",
+     "title": "Powerful knowledge and knowledge-rich curricula",
+     "module": "What a curriculum is"
+    },
+    {
+     "id": "u06-05",
+     "title": "Substantive and disciplinary knowledge",
+     "module": "What a curriculum is"
+    },
+    {
+     "id": "u06-06",
+     "title": "Sequencing and the curriculum as progression model",
+     "module": "What a curriculum is"
+    },
+    {
+     "id": "u06-07",
+     "title": "Subject knowledge and pedagogical content knowledge",
+     "module": "Subject knowledge for teaching"
+    },
+    {
+     "id": "u06-08",
+     "title": "Threshold concepts",
+     "module": "Subject knowledge for teaching"
+    },
+    {
+     "id": "u06-09",
+     "title": "Anticipating misconceptions in your subject",
+     "module": "Subject knowledge for teaching"
+    },
+    {
+     "id": "u06-10",
+     "title": "Core knowledge and hinterland",
+     "module": "Subject knowledge for teaching"
+    },
+    {
+     "id": "u06-11",
+     "title": "Cultural capital and a diverse curriculum",
+     "module": "Subject knowledge for teaching"
+    },
+    {
+     "id": "u06-12",
+     "title": "Curriculum mapping and coherence",
+     "module": "The curriculum in practice"
+    },
+    {
+     "id": "u06-13",
+     "title": "Schemes of work",
+     "module": "The curriculum in practice"
+    },
+    {
+     "id": "u06-14",
+     "title": "Textbooks and curriculum resources",
+     "module": "The curriculum in practice"
+    },
+    {
+     "id": "u06-15",
+     "title": "Spiral and mastery curricula",
+     "module": "The curriculum in practice"
+    },
+    {
+     "id": "u06-16",
+     "title": "Cross-curricular links",
+     "module": "The curriculum in practice"
+    },
+    {
+     "id": "u06-17",
+     "title": "Reviewing a curriculum",
+     "module": "The curriculum in practice"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Planning Lessons and Sequences",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Planning backwards from outcomes",
+     "module": "Planning sequences"
+    },
+    {
+     "id": "u07-02",
+     "title": "Planning a sequence of lessons",
+     "module": "Planning sequences"
+    },
+    {
+     "id": "u07-03",
+     "title": "Learning intentions and success criteria",
+     "module": "Planning sequences"
+    },
+    {
+     "id": "u07-04",
+     "title": "Activating prior knowledge",
+     "module": "Planning sequences"
+    },
+    {
+     "id": "u07-05",
+     "title": "The structure of a lesson",
+     "module": "Planning a lesson"
+    },
+    {
+     "id": "u07-06",
+     "title": "Choosing tasks and activities",
+     "module": "Planning a lesson"
+    },
+    {
+     "id": "u07-07",
+     "title": "Planning explanations and models",
+     "module": "Planning a lesson"
+    },
+    {
+     "id": "u07-08",
+     "title": "Planning questions in advance",
+     "module": "Planning a lesson"
+    },
+    {
+     "id": "u07-09",
+     "title": "Homework and independent study",
+     "module": "Planning a lesson"
+    },
+    {
+     "id": "u07-10",
+     "title": "Planning for adaptive teaching",
+     "module": "Planning a lesson"
+    },
+    {
+     "id": "u07-11",
+     "title": "Planning practical work and trips",
+     "module": "Planning a lesson"
+    },
+    {
+     "id": "u07-12",
+     "title": "Evaluating a lesson",
+     "module": "Evaluating and sustaining planning"
+    },
+    {
+     "id": "u07-13",
+     "title": "Lesson observation and feedback",
+     "module": "Evaluating and sustaining planning"
+    },
+    {
+     "id": "u07-14",
+     "title": "Planning and workload",
+     "module": "Evaluating and sustaining planning"
+    },
+    {
+     "id": "u07-15",
+     "title": "Digital technology in the classroom",
+     "module": "Evaluating and sustaining planning"
+    },
+    {
+     "id": "u07-16",
+     "title": "Artificial intelligence and teaching",
+     "module": "Evaluating and sustaining planning"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Literacy and Oracy Across the Curriculum",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Literacy in every subject",
+     "module": "Reading"
+    },
+    {
+     "id": "u08-02",
+     "title": "Disciplinary literacy",
+     "module": "Reading"
+    },
+    {
+     "id": "u08-03",
+     "title": "Reading fluency",
+     "module": "Reading"
+    },
+    {
+     "id": "u08-04",
+     "title": "Reading comprehension strategies",
+     "module": "Reading"
+    },
+    {
+     "id": "u08-05",
+     "title": "Vocabulary: tiers and explicit teaching",
+     "module": "Reading"
+    },
+    {
+     "id": "u08-06",
+     "title": "Systematic synthetic phonics and early reading",
+     "module": "Reading"
+    },
+    {
+     "id": "u08-07",
+     "title": "Teaching writing in subjects",
+     "module": "Writing"
+    },
+    {
+     "id": "u08-08",
+     "title": "Modelling academic writing",
+     "module": "Writing"
+    },
+    {
+     "id": "u08-09",
+     "title": "Spelling, punctuation and grammar",
+     "module": "Writing"
+    },
+    {
+     "id": "u08-10",
+     "title": "What oracy is",
+     "module": "Oracy"
+    },
+    {
+     "id": "u08-11",
+     "title": "Learning to talk and learning through talk",
+     "module": "Oracy"
+    },
+    {
+     "id": "u08-12",
+     "title": "Structuring classroom talk",
+     "module": "Oracy"
+    },
+    {
+     "id": "u08-13",
+     "title": "Sentence stems and speaking frames",
+     "module": "Oracy"
+    },
+    {
+     "id": "u08-14",
+     "title": "Assessing oracy",
+     "module": "Oracy"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Safeguarding and Pupil Welfare",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "What safeguarding means",
+     "module": "The framework"
+    },
+    {
+     "id": "u09-02",
+     "title": "Keeping Children Safe in Education",
+     "module": "The framework"
+    },
+    {
+     "id": "u09-03",
+     "title": "The designated safeguarding lead",
+     "module": "The framework"
+    },
+    {
+     "id": "u09-04",
+     "title": "Working Together to Safeguard Children",
+     "module": "The framework"
+    },
+    {
+     "id": "u09-05",
+     "title": "The four categories of abuse",
+     "module": "Recognising and responding"
+    },
+    {
+     "id": "u09-06",
+     "title": "Signs of abuse and neglect",
+     "module": "Recognising and responding"
+    },
+    {
+     "id": "u09-07",
+     "title": "Responding to a disclosure",
+     "module": "Recognising and responding"
+    },
+    {
+     "id": "u09-08",
+     "title": "Recording and reporting concerns",
+     "module": "Recognising and responding"
+    },
+    {
+     "id": "u09-09",
+     "title": "Child-on-child abuse",
+     "module": "Recognising and responding"
+    },
+    {
+     "id": "u09-10",
+     "title": "Online safety",
+     "module": "Recognising and responding"
+    },
+    {
+     "id": "u09-11",
+     "title": "Child criminal and sexual exploitation",
+     "module": "Recognising and responding"
+    },
+    {
+     "id": "u09-12",
+     "title": "Radicalisation and the Prevent duty",
+     "module": "Recognising and responding"
+    },
+    {
+     "id": "u09-13",
+     "title": "Female genital mutilation: the mandatory reporting duty",
+     "module": "Recognising and responding"
+    },
+    {
+     "id": "u09-14",
+     "title": "Children missing education",
+     "module": "Recognising and responding"
+    },
+    {
+     "id": "u09-15",
+     "title": "Pupil mental health",
+     "module": "Welfare and conduct"
+    },
+    {
+     "id": "u09-16",
+     "title": "Allegations against staff and low-level concerns",
+     "module": "Welfare and conduct"
+    },
+    {
+     "id": "u09-17",
+     "title": "Safer working practice",
+     "module": "Welfare and conduct"
+    },
+    {
+     "id": "u09-18",
+     "title": "Safeguarding children with SEND",
+     "module": "Welfare and conduct"
+    },
+    {
+     "id": "u09-19",
+     "title": "Attendance as a safeguarding issue",
+     "module": "Welfare and conduct"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Professional Behaviours and Wellbeing",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "The Teachers' Standards Part Two",
+     "module": "Professional conduct"
+    },
+    {
+     "id": "u10-02",
+     "title": "Professional boundaries",
+     "module": "Professional conduct"
+    },
+    {
+     "id": "u10-03",
+     "title": "Teacher misconduct and the Teaching Regulation Agency",
+     "module": "Professional conduct"
+    },
+    {
+     "id": "u10-04",
+     "title": "Working with parents and carers",
+     "module": "Professional conduct"
+    },
+    {
+     "id": "u10-05",
+     "title": "Working with colleagues and support staff",
+     "module": "Professional conduct"
+    },
+    {
+     "id": "u10-06",
+     "title": "The Initial Teacher Training and Early Career Framework",
+     "module": "Professional development"
+    },
+    {
+     "id": "u10-07",
+     "title": "QTS and statutory induction",
+     "module": "Professional development"
+    },
+    {
+     "id": "u10-08",
+     "title": "Mentoring and instructional coaching",
+     "module": "Professional development"
+    },
+    {
+     "id": "u10-09",
+     "title": "Effective professional development",
+     "module": "Professional development"
+    },
+    {
+     "id": "u10-10",
+     "title": "Reflective practice",
+     "module": "Professional development"
+    },
+    {
+     "id": "u10-11",
+     "title": "Teacher workload",
+     "module": "Sustaining a career"
+    },
+    {
+     "id": "u10-12",
+     "title": "Teacher wellbeing",
+     "module": "Sustaining a career"
+    },
+    {
+     "id": "u10-13",
+     "title": "Managing time and priorities",
+     "module": "Sustaining a career"
+    },
+    {
+     "id": "u10-14",
+     "title": "Pay, conditions and contracts",
+     "module": "Sustaining a career"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Research Methods",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u11-13",
+     "title": "Scientific reasoning in psychology",
+     "module": "Scientific reasoning"
+    },
+    {
+     "id": "u11-14",
+     "title": "Research questions and hypotheses",
+     "module": "Scientific reasoning"
+    },
+    {
+     "id": "u11-15",
+     "title": "Operationalisation",
+     "module": "Scientific reasoning"
+    },
+    {
+     "id": "u11-16",
+     "title": "Independent and dependent variables",
+     "module": "Scientific reasoning"
+    },
+    {
+     "id": "u11-17",
+     "title": "Confounding variables",
+     "module": "Scientific reasoning"
+    },
+    {
+     "id": "u11-18",
+     "title": "Experimental design",
+     "module": "Experiments"
+    },
+    {
+     "id": "u11-19",
+     "title": "Laboratory experiments",
+     "module": "Experiments"
+    },
+    {
+     "id": "u11-20",
+     "title": "Field experiments",
+     "module": "Experiments"
+    },
+    {
+     "id": "u11-21",
+     "title": "Natural experiments",
+     "module": "Experiments"
+    },
+    {
+     "id": "u11-22",
+     "title": "Quasi-experiments",
+     "module": "Experiments"
+    },
+    {
+     "id": "u11-23",
+     "title": "Correlational research",
+     "module": "Non-experimental methods"
+    },
+    {
+     "id": "u11-24",
+     "title": "Cross-sectional and longitudinal research",
+     "module": "Non-experimental methods"
+    },
+    {
+     "id": "u11-25",
+     "title": "Case studies",
+     "module": "Non-experimental methods"
+    },
+    {
+     "id": "u11-26",
+     "title": "Naturalistic observation",
+     "module": "Non-experimental methods"
+    },
+    {
+     "id": "u11-27",
+     "title": "Structured observation",
+     "module": "Non-experimental methods"
+    },
+    {
+     "id": "u11-28",
+     "title": "Surveys and questionnaires",
+     "module": "Non-experimental methods"
+    },
+    {
+     "id": "u11-29",
+     "title": "Interviews",
+     "module": "Non-experimental methods"
+    },
+    {
+     "id": "u11-30",
+     "title": "Focus groups",
+     "module": "Non-experimental methods"
+    },
+    {
+     "id": "u11-31",
+     "title": "Quantitative, qualitative and mixed methods",
+     "module": "Approaches and sampling"
+    },
+    {
+     "id": "u11-32",
+     "title": "Random and stratified sampling",
+     "module": "Approaches and sampling"
+    },
+    {
+     "id": "u11-33",
+     "title": "Opportunity and volunteer sampling",
+     "module": "Approaches and sampling"
+    },
+    {
+     "id": "u11-34",
+     "title": "Sample size",
+     "module": "Approaches and sampling"
+    },
+    {
+     "id": "u11-35",
+     "title": "Reliability",
+     "module": "Quality of research"
+    },
+    {
+     "id": "u11-36",
+     "title": "Validity",
+     "module": "Quality of research"
+    },
+    {
+     "id": "u11-37",
+     "title": "Generalisability",
+     "module": "Quality of research"
+    },
+    {
+     "id": "u11-38",
+     "title": "Bias in research",
+     "module": "Quality of research"
+    },
+    {
+     "id": "u11-39",
+     "title": "Replication",
+     "module": "Quality of research"
+    },
+    {
+     "id": "u11-40",
+     "title": "Preregistration",
+     "module": "Quality of research"
+    },
+    {
+     "id": "u11-41",
+     "title": "Open science",
+     "module": "Quality of research"
+    },
+    {
+     "id": "u11-42",
+     "title": "Informed consent",
+     "module": "Research ethics"
+    },
+    {
+     "id": "u11-43",
+     "title": "Confidentiality",
+     "module": "Research ethics"
+    },
+    {
+     "id": "u11-44",
+     "title": "Deception and debriefing",
+     "module": "Research ethics"
+    },
+    {
+     "id": "u11-45",
+     "title": "Vulnerable participants",
+     "module": "Research ethics"
+    },
+    {
+     "id": "u11-46",
+     "title": "Research governance and ethics committees",
+     "module": "Research ethics"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Education",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u12-13",
+     "title": "Functionalist perspectives on education",
+     "module": "Theories of education"
+    },
+    {
+     "id": "u12-14",
+     "title": "Marxist perspectives on education",
+     "module": "Theories of education"
+    },
+    {
+     "id": "u12-15",
+     "title": "Feminist perspectives on education",
+     "module": "Theories of education"
+    },
+    {
+     "id": "u12-16",
+     "title": "Education, socialisation and social control",
+     "module": "Theories of education"
+    },
+    {
+     "id": "u12-17",
+     "title": "The hidden curriculum",
+     "module": "Theories of education"
+    },
+    {
+     "id": "u12-18",
+     "title": "Educational achievement and social class",
+     "module": "Differential achievement"
+    },
+    {
+     "id": "u12-19",
+     "title": "Educational achievement and gender",
+     "module": "Differential achievement"
+    },
+    {
+     "id": "u12-20",
+     "title": "Educational achievement and ethnicity",
+     "module": "Differential achievement"
+    },
+    {
+     "id": "u12-21",
+     "title": "Cultural capital and education",
+     "module": "Differential achievement"
+    },
+    {
+     "id": "u12-22",
+     "title": "Linguistic codes",
+     "module": "Differential achievement"
+    },
+    {
+     "id": "u12-23",
+     "title": "Labelling in education",
+     "module": "Processes inside schools"
+    },
+    {
+     "id": "u12-24",
+     "title": "Teacher expectations",
+     "module": "Processes inside schools"
+    },
+    {
+     "id": "u12-25",
+     "title": "The self-fulfilling prophecy",
+     "module": "Processes inside schools"
+    },
+    {
+     "id": "u12-26",
+     "title": "Selection",
+     "module": "Processes inside schools"
+    },
+    {
+     "id": "u12-27",
+     "title": "Educational inequality",
+     "module": "Education systems"
+    },
+    {
+     "id": "u12-28",
+     "title": "Private education",
+     "module": "Education systems"
+    },
+    {
+     "id": "u12-29",
+     "title": "Higher education",
+     "module": "Education systems"
+    },
+    {
+     "id": "u12-30",
+     "title": "Education policy",
+     "module": "Education systems"
+    },
+    {
+     "id": "u12-31",
+     "title": "Global education",
+     "module": "Education systems"
+    },
+    {
+     "id": "u12-32",
+     "title": "Digital learning",
+     "module": "Education systems"
+    },
+    {
+     "id": "u12-33",
+     "title": "Educational reform",
+     "module": "Education systems"
+    }
+   ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "digit-span",
+   "title": "Digit span",
+   "kind": "Experiment",
+   "sub": "Measure your own short-term memory span, then try chunking: feel the limit that cognitive load theory is built on.",
+   "note": "PsychGradify's experiment: a standard forward digit span procedure with two attempts per length; your responses stay on this device.",
+   "tasks": null,
+   "lessons": [
+    "u01-02",
+    "u01-06"
+   ],
+   "url": "https://getgradify.com/edugradify/course/#/practice/digit-span"
+  },
+  {
+   "id": "memory-models",
+   "title": "Models of memory",
+   "kind": "Explorer",
+   "sub": "The multi-store and working memory models, component by component, with the evidence for and against each.",
+   "note": "PsychGradify's explorer: summaries of the published models.",
+   "tasks": null,
+   "lessons": [
+    "u01-02",
+    "u01-01"
+   ],
+   "url": "https://getgradify.com/edugradify/course/#/practice/memory-models"
+  },
+  {
+   "id": "serial-position",
+   "title": "Free recall and the serial position curve",
+   "kind": "Experiment",
+   "sub": "Learn a 15-word list and recall it, straight away or after a distractor task, and see what is remembered and what is lost.",
+   "note": "PsychGradify's experiment: your own recall, scored by exact spelling; one person's curve is noisy until you have several runs.",
+   "tasks": null,
+   "lessons": [
+    "u01-16",
+    "u01-03"
+   ],
+   "url": "https://getgradify.com/edugradify/course/#/practice/serial-position"
+  }
+ ]
+}

@@ -50,11 +50,12 @@ export function drawIsland(el, { sites, bars, rand }) {
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(32, 1.3, 0.1, 100);
-  camera.position.set(0, 4.4, 17.5); camera.lookAt(0, -0.4, 0);
+  // framed for the tall lead tree: its crown rises far above the island, so the camera sits back and looks higher
+  camera.position.set(0, 6.6, 27); camera.lookAt(0, 2.3, 0);
   scene.add(new THREE.HemisphereLight(0xe6f4ff, 0x36452f, 1.25));
   const sun = new THREE.DirectionalLight(0xfff0d8, 2.4);
   sun.position.set(-5, 9, 6); sun.castShadow = true;
-  sun.shadow.mapSize.set(1024, 1024); Object.assign(sun.shadow.camera, { left: -5, right: 5, top: 5, bottom: -5, near: 1, far: 30 });
+  sun.shadow.mapSize.set(1024, 1024); Object.assign(sun.shadow.camera, { left: -8, right: 8, top: 12, bottom: -6, near: 1, far: 40 });
   sun.shadow.bias = -0.0015; sun.shadow.radius = 4;
   scene.add(sun);
   const rim = new THREE.DirectionalLight(0x8fd4ff, 0.9); rim.position.set(6, 2, -6); scene.add(rim);
@@ -111,11 +112,13 @@ export function drawIsland(el, { sites, bars, rand }) {
   // one tree per site
   const order = [...sites].sort((a, b) => b.k - a.k);
   order.forEach((q, idx) => {
-    const p = idx === 0 && order.length > 1 ? (taken.push([0.2, -0.2, 0.9]), [0.2, -0.2]) : spot(0.55 + q.k * 0.25);
+    // the lead tree (your most active site) stands in the middle and towers over the island; the rest stay small around it
+    const lead = idx === 0;
+    const p = lead ? (taken.push([0.2, -0.2, 0.9]), [0.2, -0.2]) : spot(0.55 + q.k * 0.25);
     if (!p) return;
-    const s = 0.7 + q.k * 0.72, leaf = C(0x5fae47).lerp(C(`#${q.c}`), 0.24), tree = new THREE.Group();
+    const s = (0.7 + q.k * 0.72) * (lead ? 2.6 : 1), leaf = C(0x5fae47).lerp(C(`#${q.c}`), 0.24), tree = new THREE.Group();
     tree.position.set(p[0], GROUND, p[1]); tree.rotation.y = rand() * 6;
-    if (q.k >= 0.45) {
+    if (lead || q.k >= 0.45) {
       // a broad tree: a trunk that forks, with clumps of leaves
       const trunk = paint(new THREE.CylinderGeometry(0.09 * s, 0.17 * s, 1.5 * s, 6), () => bark);
       const t = mesh(trunk); t.position.y = 0.75 * s; tree.add(t);
@@ -134,7 +137,7 @@ export function drawIsland(el, { sites, bars, rand }) {
     // credentials hang as gold fruit
     q.creds.forEach((_, f) => {
       const g = mesh(paint(new THREE.IcosahedronGeometry(0.11, 0), (m, n) => vary(gold, n.y * 0.5 + 0.5, 0.2)));
-      const a = f * 2.1 + 0.6; g.position.set(Math.cos(a) * 0.55 * s, (q.k >= 0.45 ? 1.35 : 0.8) * s, Math.sin(a) * 0.55 * s); tree.add(g);
+      const a = f * 2.1 + 0.6; g.position.set(Math.cos(a) * 0.55 * s, (lead || q.k >= 0.45 ? 1.35 : 0.8) * s, Math.sin(a) * 0.55 * s); tree.add(g);
     });
     isle.add(tree);
   });

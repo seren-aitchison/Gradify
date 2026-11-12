@@ -19,10 +19,13 @@ P: h sets the scale where quantum effects matter: when actions (energy × time, 
 X: Energy of one quantum of 1 GHz radiation?
 > E = hf = 6.6 × 10^{-34} × 10^{9} = 6.6 × 10^{-25} J ≈ 4 μeV
 !: Quantum mechanics doesn't stop applying to large objects; its effects are just too small to notice, unless carefully isolated.
+P: **Investigate with the lab.** Shine red light of rising brightness on zinc: no electrons are freed. Then try ultraviolet at low brightness.
+IX: photoelectric
 Q: What did Planck assume to explain blackbody radiation? | That energy is exchanged in discrete quanta E = hf.
 Q: What sets the scale at which quantum effects become important? | Planck's constant: when actions are comparable to h.
 M1: Who proposed that matter has wave properties? | de Broglie | Bohr | Planck | Einstein | 1924.
 M2: Quantum mechanics was formulated as matrix mechanics and wave mechanics by: | Heisenberg and Schrödinger | Newton and Leibniz | Bohr and Rutherford | Maxwell and Faraday | 1925–26.
+M2: Which observation could classical wave theory not explain? | Low-intensity UV frees electrons while bright red light frees none | Brighter light makes more electrons flow | Light travels at a fixed speed | Light can be refracted | Wave theory predicted that enough intensity at any frequency would free electrons.
 
 ## Blackbody radiation
 S: Classical physics predicted a hot cavity would radiate infinite energy at short wavelengths. Planck's assumption that oscillators exchange energy only in units of hf gave a formula matching experiment perfectly, launching quantum physics.
@@ -63,10 +66,13 @@ X: UV of 250 nm hits zinc (φ = 4.3 eV). Maximum KE of electrons?
 > hf = 1240/250 = 4.96 eV
 > KE_{max} = 0.66 eV
 !: Brighter light below threshold still ejects no electrons; a classical wave picture can't explain this.
+P: **Investigate with the lab.** Find the threshold wavelength for sodium, then raise the reverse voltage until the current just stops.
+IX: photoelectric
 Q: State Einstein's photoelectric equation. | hf = φ + KE_{max}.
 Q: What does the intensity of light affect in the photoelectric effect? | The number of emitted electrons, not their maximum energy.
 M1: Increasing frequency above threshold increases: | Maximum KE of electrons | Number of electrons only | Work function | Nothing | KE = hf − φ.
 M2: A V_{s}–f graph has gradient: | h/e | e/h | h | φ | eV_{s} = hf − φ.
+M2: What does the stopping voltage measure? | The maximum kinetic energy of the photoelectrons | The number of electrons emitted | The intensity of the light | The work function directly | eV_s equals the maximum kinetic energy of the emitted electrons.
 
 ## Compton scattering
 S: When X-rays scatter off electrons, their wavelength increases by an amount depending on the scattering angle. Compton (1923) explained it as a collision between a photon carrying momentum h/λ and an electron: strong evidence that light quanta are particles.
@@ -104,10 +110,13 @@ E: E = hf; p = h/λ = ħk
 X: Does a 1 kg ball at 1 m s^{-1} show wave behaviour?
 > λ = h/p = 6.6 × 10^{-34} m: far below any measurable scale
 !: "Duality" doesn't mean a quantum object switches between being a wave and a particle; it's a single quantum entity whose behaviour shows both features.
+P: **Investigate with the lab.** Measure stopping voltages at three wavelengths and read Planck's constant from the slope of your graph.
+IX: photoelectric
 Q: Give evidence that electrons behave as waves. | Electron diffraction from crystals and interference in double slits.
 Q: What is complementarity? | Bohr's idea that wave and particle aspects are both needed but can't be observed simultaneously in one experiment.
 M1: The photoelectric effect is evidence of light's: | Particle nature | Wave nature | Polarisation | Speed | Photons.
 M2: The largest objects shown to interfere include: | Molecules of ~2000 atoms | Bacteria | Dust grains | Footballs | Matter-wave interferometry.
+M2: What does the photoelectric effect show about light? | It arrives in quanta (photons) with energy hf | It is purely a wave | Its energy depends only on intensity | It cannot interact with metals | Each photon's energy depends on frequency, which explains the threshold.
 
 ## de Broglie wavelength
 S: De Broglie proposed that every particle has a wavelength inversely proportional to its momentum. For electrons it's comparable to atomic spacings, making electron microscopes and diffraction possible.
@@ -144,10 +153,13 @@ P: Wheeler's delayed-choice experiments decide whether to measure path or interf
 X: Electrons at 50 keV (λ ≈ 5.4 pm) through slits 1 μm apart, screen 1 m away. Fringe spacing?
 > x = λD/d = 5.4 × 10^{-12}/10^{-6} = 5.4 μm (needs magnification to see)
 !: The pattern isn't due to particles interfering with each other; one particle at a time still builds it.
+P: **Investigate with the lab.** Make a double-slit pattern and change the separation and screen distance. The fringes show light behaving as a wave.
+IX: interference
 Q: What happens to the interference pattern if which-path information is available? | It disappears.
 Q: How is probability computed for two indistinguishable paths? | Add the amplitudes first, then square: |ψ_{1} + ψ_{2}|^{2}.
 M1: With single electrons sent one at a time, the screen shows: | An interference pattern building up dot by dot | Two bands only | A uniform blur | Nothing | Each electron interferes with itself.
 M2: A quantum eraser shows that: | Removing which-path information can restore interference | Particles go backwards in time | Measurement is impossible | Light has mass | Coherence depends on available information.
+M2: What does the double-slit experiment with light show? | Light behaves as a wave and interferes | Light travels only in straight lines | Light is made only of particles | Light has no wavelength | Interference fringes are evidence of wave behaviour.
 
 ## Heisenberg uncertainty principle
 S: The uncertainty principle states that certain pairs of quantities, like position and momentum, can't both have precisely defined values. It's a property of waves and of quantum states, not just a limitation of measurement equipment.
@@ -187,10 +199,13 @@ P: Whether ψ is physically real or just knowledge is debated (Copenhagen, many-
 X: Normalise ψ = A for 0 < x < L (zero elsewhere).
 > ∫_{0}^{L}|A|^{2}dx = |A|^{2}L = 1 ⇒ A = 1/√L
 !: ψ itself isn't a probability; probabilities come from |ψ|^{2}, and ψ can be negative or complex.
+P: **Investigate with the lab.** Look at the wavefunctions in the infinite well and count their nodes for each energy level.
+IX: quantum
 Q: What does |ψ|^{2} represent? | Probability density of finding the particle at a position.
 Q: Why must wavefunctions be normalised? | Total probability of finding the particle somewhere must be 1.
 M1: Multiplying ψ by e^{iθ} (a global phase): | Changes nothing observable | Changes probabilities | Flips the spin | Doubles energy | Global phase is unobservable.
 M2: An acceptable wavefunction must be: | Normalisable, single-valued and continuous | Real | Positive | Constant | Physical requirements.
+M2: How many nodes inside the well does the third energy level's wavefunction have? | Two | Three | One | None | The nth level has n − 1 nodes inside the well.
 
 ## Probability amplitudes
 S: In quantum mechanics, each way an event can happen has a complex probability amplitude. Amplitudes for indistinguishable alternatives add before squaring; this is the source of interference and all quantum weirdness.
@@ -229,10 +244,13 @@ P: The Born rule is the one place probabilities enter quantum mechanics. Many-wo
 X: A state (|0⟩ + 2|1⟩)/√5 is measured. Probabilities?
 > P(0) = 1/5 = 0.2; P(1) = 4/5 = 0.8
 !: The Born rule gives probabilities for outcomes of measurements, not for what the system "was" before measurement.
+P: **Investigate with the lab.** Compare the wavefunction with its square: the square shows where the particle is most likely to be found.
+IX: quantum
 Q: State the Born rule. | The probability of an outcome is the squared magnitude of its amplitude.
 Q: What does Gleason's theorem show? | The Born rule is the only consistent way to assign probabilities to quantum measurements (in dimension ≥ 3).
 M1: ψ = (3|a⟩ + 4i|b⟩)/5. P(b) = | 0.64 | 0.8 | 0.36 | 0.16 | |4i/5|^{2}.
 M2: Who proposed the probabilistic interpretation of ψ? | Max Born | Schrödinger | Heisenberg | Bohr | 1926.
+M2: What does the square of a wavefunction give? | The probability density of finding the particle | The particle's energy | The particle's exact position | The particle's momentum | The Born rule: the squared modulus of ψ is a probability density.
 
 ## Schrödinger equation
 S: The Schrödinger equation governs how quantum states evolve in time. It's the quantum analogue of Newton's second law: given the potential and the initial wavefunction, it determines the wavefunction at all later times.
@@ -251,10 +269,13 @@ X: Check that ψ = e^{i(kx − ωt)} solves the free Schrödinger equation.
 > iħ∂ψ/∂t = ħωψ; −(ħ^{2}/2m)∂^{2}ψ/∂x^{2} = (ħ^{2}k^{2}/2m)ψ
 > Solution if ħω = ħ^{2}k^{2}/2m: E = p^{2}/2m
 !: The Schrödinger equation is first order in time, unlike the classical wave equation, so you need only ψ at t = 0 (not ∂ψ/∂t).
+P: **Investigate with the lab.** Switch between the four potentials and see how each gives a different set of energy levels from the same Schrödinger equation.
+IX: quantum
 Q: What is the Hamiltonian? | The operator for total energy, kinetic plus potential.
 Q: Why is the Schrödinger equation called linear? | Any superposition of solutions is also a solution.
 M1: The momentum operator in position representation is: | −iħ∇ | iħ∂/∂t | ħk | mv | Canonical quantisation.
 M2: Schrödinger's equation fails for: | Particles near the speed of light | Electrons in atoms | Tunnelling | Molecules | Non-relativistic.
+M2: What does solving the time-independent Schrödinger equation give for a bound particle? | Its allowed energy levels and wavefunctions | Its exact trajectory | Its speed at every moment | Only its mass | Bound states exist only at particular energies, each with its wavefunction.
 
 ## Time-dependent and time-independent Schrödinger equations
 S: For potentials that don't change in time, the Schrödinger equation separates. The time-independent equation finds the allowed energies and stationary states; the time dependence is then just a rotating phase for each.
@@ -273,10 +294,13 @@ H: Solving in practice
 X: A particle in a box in the superposition (φ_{1} + φ_{2})/√2. At what frequency does |ψ|^{2} oscillate?
 > f = (E_{2} − E_{1})/h = 3E_{1}/h
 !: A single energy eigenstate doesn't "move"; motion arises only from superpositions of different energies.
+P: **Investigate with the lab.** Note that each energy level shown is a stationary state, found from the time-independent equation.
+IX: quantum
 Q: What is a stationary state? | An energy eigenstate whose probability density doesn't change in time.
 Q: Why do superpositions of energy eigenstates evolve? | Each component has a different phase rotation rate, so their interference changes in time.
 M1: The time dependence of an energy eigenstate is: | e^{−iEt/ħ} | e^{−Et/ħ} | cos(Et) only | None at all | Phase factor.
 M2: For a bound particle, discrete energies come from: | Boundary conditions on φ | The time-dependent part | Measurement | Relativity | Normalisable solutions only for certain E.
+M2: When is the time-independent Schrödinger equation enough? | For stationary states of definite energy | For every possible quantum situation | Only for free particles | Only for particles moving at light speed | Stationary states have probability densities that don't change with time.
 
 ## Quantum states and observables
 S: A quantum state contains everything that can be predicted about a system. Observables, the measurable quantities, are represented by operators; their eigenvalues are the possible results, and the state gives each result's probability.
@@ -463,10 +487,13 @@ X: Ground-state energy of an electron in a 1 nm infinite well?
 > E_{1} = h^{2}/(8mL^{2}) = (6.63 × 10^{-34})^{2}/(8 × 9.11 × 10^{-31} × 10^{-18})
 > = 6.0 × 10^{-20} J ≈ 0.38 eV
 !: The particle can't have zero energy in a well; zero would violate the uncertainty principle.
+P: **Investigate with the lab.** In the infinite well, halve the width and see every energy level go up four times. Then make a finite well so shallow that only one bound state is left.
+IX: quantum
 Q: How do infinite-well energies depend on n and L? | E ∝ n^{2}/L^{2}.
 Q: Why do smaller quantum dots emit bluer light? | Stronger confinement raises the energy levels and gap.
 M1: The ratio E_{3}/E_{1} in an infinite well is: | 9 | 3 | 6 | 27 | n^{2}.
 M2: Compared with an infinite well, a finite well's energies are: | Lower | Higher | The same | Zero | Wavefunction spreads out.
+M2: An infinite well's width is halved. What happens to the ground-state energy? | It increases four times | It doubles | It halves | It stays the same | E ∝ 1/L², so halving L multiplies every level by four.
 
 ## Quantum tunnelling
 S: A quantum particle can pass through a barrier higher than its energy, because its wavefunction decays inside the barrier but doesn't vanish. Tunnelling powers the Sun, alpha decay, flash memory and the scanning tunnelling microscope.
@@ -484,10 +511,13 @@ X: An electron (E = 1 eV) meets a 5 eV, 0.5 nm barrier. Estimate T.
 > κ = √(2 × 9.11 × 10^{-31} × 4 × 1.6 × 10^{-19})/1.055 × 10^{-34} = 1.02 × 10^{10} m^{-1}
 > T ≈ e^{−10.2} ≈ 4 × 10^{-5}
 !: Tunnelling doesn't violate energy conservation; the particle is never found inside the barrier with negative kinetic energy in any measurement.
+P: **Investigate with the lab.** Get more than 10% of electrons through a barrier higher than their energy. Then make the barrier wider and watch the fraction fall.
+IX: quantum
 Q: Why does the STM have atomic resolution? | Tunnelling current depends exponentially on gap width, changing about 10 times per ångström.
 Q: How does tunnelling explain alpha decay? | Alpha particles tunnel through the Coulomb barrier; tiny changes in energy change the rate enormously.
 M1: Tunnelling probability increases if the barrier is: | Thinner or lower | Thicker | Higher | Heavier particle | e^{−2κd}.
 M2: Which technology relies on tunnelling? | Flash memory | Incandescent lamps | Transformers | Solar thermal panels | Floating gate.
+M2: How does tunnelling probability depend on barrier width? | It falls roughly exponentially as the barrier widens | It rises as the barrier widens | It doesn't depend on width | It is zero for any finite barrier | The wavefunction decays exponentially inside the barrier.
 
 ## Quantum harmonic oscillator
 S: The quantum harmonic oscillator has evenly spaced energy levels and a nonzero ground-state energy. Because small vibrations are harmonic, it describes molecular vibrations, phonons, photons in a cavity and quantum fields.
@@ -509,10 +539,13 @@ X: CO vibrates at 6.4 × 10^{13} Hz. Zero-point energy and level spacing?
 > ħω = hf = 0.265 eV
 > Zero-point 0.13 eV; spacing 0.265 eV (absorbs at 4.7 μm)
 !: The quantum oscillator's ground state isn't at rest at the bottom of the potential; it's spread out with zero-point motion.
+P: **Investigate with the lab.** Choose the harmonic potential and see the levels evenly spaced by ħω, starting at ½ħω.
+IX: quantum
 Q: What are the energy levels of the quantum harmonic oscillator? | E_{n} = (n + ½)ħω.
 Q: What do ladder operators do? | Raise or lower the oscillator's state by one quantum ħω.
 M1: The energy spacing in the quantum harmonic oscillator is: | ħω, constant | Increasing with n | Decreasing with n | Zero | Evenly spaced.
 M2: The ground state wavefunction is: | A Gaussian | A sine wave | A step | Zero | e^{−αx^{2}}.
+M2: What is the ground-state energy of a quantum harmonic oscillator? | ½ħω | 0 | ħω | 2ħω | The zero-point energy is ½ħω, and levels are spaced by ħω.
 
 ## Quantum barriers and scattering
 S: Quantum scattering describes how particles bounce off or pass through potentials. Unlike classical particles, quantum ones can reflect from drops as well as steps, tunnel through barriers, and show resonances.
@@ -532,10 +565,13 @@ X: Electrons (E = 5 eV) meet a step of 3 eV. Reflection probability?
 > k ∝ √E: k_{1}/k_{2} = √(5/2) = 1.58
 > R = ((1.58 − 1)/2.58)^{2} = 0.05
 !: Quantum particles can reflect off a step even when they have more than enough energy to climb it.
+P: **Investigate with the lab.** Change the barrier height and electron energy and watch the transmitted and reflected fractions change.
+IX: quantum
 Q: What is the Ramsauer–Townsend effect? | Low-energy electrons pass almost unscattered through noble gas atoms because of resonant transmission.
 Q: What does a scattering cross-section measure? | The effective target area for a scattering process.
 M1: A particle with E > V_{0} at a step: | Can still partly reflect | Always transmits | Always reflects | Stops | Wave mismatch.
 M2: At low energies, scattering is dominated by: | s-waves (l = 0) | High-l partial waves | Magnetic forces | Gravity | Centrifugal barrier suppresses higher l.
+M2: An electron has more energy than a barrier's height. Is it certain to pass? | No: some of the wave can still be reflected | Yes: it always passes | No: it is always reflected | Only if the barrier is wide | Quantum particles can reflect even from barriers lower than their energy.
 
 ## Angular momentum
 S: In quantum mechanics angular momentum is quantised in both magnitude and direction. Only one component can be known at a time, and allowed values come in steps of ħ.

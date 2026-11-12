@@ -160,18 +160,18 @@ export const IDS = {
   "u10-11": "The social history of art",
   "u10-12": "Feminist and postcolonial art history",
   "u10-13": "John Berger and ways of seeing",
-  "u11-01": "Sketchbooks",
-  "u11-02": "Developing ideas",
-  "u11-03": "Research and contextual sources",
-  "u11-04": "Experimenting and refining",
-  "u11-05": "Reviewing and reflecting",
-  "u11-06": "Presenting a final outcome",
-  "u11-07": "Describing a work of art",
-  "u11-08": "Analysing a work of art",
-  "u11-09": "Comparing works",
-  "u11-10": "Writing a critical essay",
-  "u11-11": "Referencing and citing art",
-  "u11-12": "The personal investigation and related study",
+  "u11-13": "What is creativity?",
+  "u11-14": "The four Ps of creativity",
+  "u11-15": "Divergent thinking and its measurement",
+  "u11-16": "Stages of the creative process",
+  "u11-17": "Insight and incubation",
+  "u11-18": "Knowledge, expertise and creativity",
+  "u11-19": "Motivation and creativity",
+  "u11-20": "Design fixation and how to break it",
+  "u11-21": "Creative confidence",
+  "u11-22": "Constraints and creativity",
+  "u11-23": "Creative climate in teams",
+  "u11-24": "Myths about creativity",
   "u12-01": "Museums and galleries",
   "u12-02": "Curating and exhibitions",
   "u12-03": "The art market",
@@ -186,4 +186,65 @@ export const IDS = {
   "u12-12": "Careers in art and design",
   "u12-13": "Documenting and presenting your work",
 };
-export const RETIRED = {};
+export const RETIRED = {
+  "u11-01": {
+    "title": "Sketchbooks",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by design school 2 before it was written"
+  },
+  "u11-02": {
+    "title": "Developing ideas",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by design school 2 before it was written"
+  },
+  "u11-03": {
+    "title": "Research and contextual sources",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by design school 2 before it was written"
+  },
+  "u11-04": {
+    "title": "Experimenting and refining",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by design school 2 before it was written"
+  },
+  "u11-05": {
+    "title": "Reviewing and reflecting",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by design school 2 before it was written"
+  },
+  "u11-06": {
+    "title": "Presenting a final outcome",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by design school 2 before it was written"
+  },
+  "u11-07": {
+    "title": "Describing a work of art",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by design school 2 before it was written"
+  },
+  "u11-08": {
+    "title": "Analysing a work of art",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by design school 2 before it was written"
+  },
+  "u11-09": {
+    "title": "Comparing works",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by design school 2 before it was written"
+  },
+  "u11-10": {
+    "title": "Writing a critical essay",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by design school 2 before it was written"
+  },
+  "u11-11": {
+    "title": "Referencing and citing art",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by design school 2 before it was written"
+  },
+  "u11-12": {
+    "title": "The personal investigation and related study",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by design school 2 before it was written"
+  }
+};

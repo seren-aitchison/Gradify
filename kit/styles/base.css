@@ -16,7 +16,10 @@
   --edge: rgba(255, 255, 255, .08);
   /* a spectrum made from the Gradify brand colours, used sparingly */
   --spectrum: linear-gradient(90deg, #4641ff, #8c27ca 20%, #f055dd 38%, #e52153 54%, #ff5600 70%, #ffc002 84%, #40d4b1);
-  --radius: 22px;
+  --radius: 14px;
+  --page: 1680px;      /* page width: wide, close to the edges, like TechGradify */
+  --gutter: 32px;      /* space between the content and the window edge */
+  --bar-bleed: 20px;   /* the top bar reaches this much further than the content */
   --sans: "Geist", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
   color-scheme: dark;
@@ -36,7 +39,7 @@ body {
 a { color: inherit; }
 [hidden] { display: none !important; }
 :focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 12px; }
-.wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+.wrap { width: min(var(--page), 100% - 2 * var(--gutter)); margin-inline: auto; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 /* ---------- Background: soft white light on black ---------- */
 .aurora { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
@@ -90,10 +93,12 @@ a { color: inherit; }
   -webkit-backdrop-filter: blur(18px) saturate(180%);
   backdrop-filter: blur(18px) saturate(180%);
 }
+/* the shine: the same shape as the element (border-radius: inherit), brightest along the top edge and fading out
+   before the middle, so it follows a pill's rounded ends instead of floating inside as a separate lozenge */
 .lg::before {
-  content: ""; position: absolute; left: 9%; right: 9%; top: 2px; height: 46%;
-  border-radius: 999px; pointer-events: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0));
+  content: ""; position: absolute; inset: 1px; z-index: -1;
+  border-radius: inherit; pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .2) 0%, rgba(255, 255, 255, .07) 38%, rgba(255, 255, 255, 0) 56%);
 }
 .lg::after {
   content: ""; position: absolute; left: 14%; right: 14%; bottom: -9px; height: 14px; z-index: -1;
@@ -147,14 +152,28 @@ a { color: inherit; }
   position: sticky; top: 10px; z-index: 10;
   margin-top: 10px;
   display: flex; align-items: center; gap: 16px;
-  padding: 8px 8px 8px 16px; border-radius: 999px;
+  padding: 8px 8px 8px 16px; border-radius: 16px;
+  margin-inline: calc(-1 * var(--bar-bleed));
 }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; text-decoration: none; font-size: 17px; letter-spacing: -.01em; }
 .brand svg { width: 30px; height: 30px; }
-.bar .sections { display: flex; gap: 2px; margin-left: 12px; padding: 3px; border-radius: 999px; background: var(--inset); box-shadow: inset 0 1px 2px rgba(0, 0, 0, .35); }
-.bar .sections a { text-decoration: none; padding: 6px 13px; border-radius: 999px; font-size: 14px; color: var(--mute); transition: color .15s, background .15s; }
-.bar .sections a:hover { color: var(--fg); }
-.bar .sections a.active { color: var(--fg); background: linear-gradient(180deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .05)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 2px 6px -2px rgba(0, 0, 0, .5); }
+/* section links: plain text on the bar (no recessed track), a soft highlight on hover, and the current section in
+   white with a small Gradify-gradient underline, like TechGradify's top bar */
+.bar .sections { display: flex; align-items: center; gap: 2px; margin-left: 18px; }
+.bar .sections a {
+  position: relative; text-decoration: none; padding: 8px 14px; border-radius: 10px;
+  font-size: 15px; font-weight: 500; letter-spacing: -.005em; color: var(--mute);
+  transition: color .15s, background .15s;
+}
+.bar .sections a:hover { color: var(--fg); background: rgba(255, 255, 255, .06); }
+.bar .sections a.active { color: var(--fg); }
+.bar .sections a::after {
+  content: ""; position: absolute; left: 14px; right: 14px; bottom: 2px; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, #4641ff, #f055dd, #ff5600, #ffc002);
+  opacity: 0; transform: scaleX(.4); transition: opacity .2s, transform .2s;
+}
+.bar .sections a.active::after { opacity: 1; transform: scaleX(1); }
+.bar .sections a:focus-visible { outline-offset: 1px; border-radius: 10px; }
 .bar .right { margin-left: auto; display: flex; align-items: center; gap: 14px; }
 .bar .right .link { font-size: 14px; color: var(--mute); text-decoration: none; }
 .bar .right .link:hover { color: var(--fg); }
@@ -167,7 +186,7 @@ a { color: inherit; }
 .menu-btn { display: none; }
 .menu {
   position: absolute; top: calc(100% + 8px); right: 0; width: min(300px, 100%); z-index: 20;
-  display: flex; flex-direction: column; padding: 10px; border-radius: 22px;
+  display: flex; flex-direction: column; padding: 10px; border-radius: 14px;
   background: #0e0e0e; border: 1px solid var(--line-strong);
   box-shadow: inset 0 1px 0 var(--edge), 0 24px 50px -20px rgba(0, 0, 0, .9);
 }
@@ -198,6 +217,7 @@ a { color: inherit; }
   .menu-btn { display: grid; }
 }
 @media (max-width: 640px) {
+  :root { --gutter: 16px; --bar-bleed: 8px; }
   .bar .right .btn-primary { display: none; }
 }
 

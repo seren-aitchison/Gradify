@@ -2,9 +2,9 @@ import { GROUPS, FEATURED, START_HERE, KEYWORDS } from "../kit/core/sites.js";
 import { icon } from "../kit/core/icons.js";
 import { triple, mix, ink, tile } from "../kit/core/colour.js";
 import { pathOf, nameHtml } from "../kit/core/site.js";
-import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../gradify.config.js";
 import { applyPrefs } from "../kit/data/profile.js";
 import { trackView } from "../kit/core/analytics.js";
+import { joinWaitlist } from "../kit/data/waitlist.js";
 applyPrefs();
 trackView("Gradify");
 
@@ -123,20 +123,6 @@ groupsEl.addEventListener("submit", async (e) => {
   } catch { msg = "Sorry, that didn't work. Please try again."; }
   form.outerHTML = `<p class="notify-done">${esc(msg)}</p>`;
 });
-async function joinWaitlist(email, site) {
-  if (SUPABASE_URL && SUPABASE_ANON_KEY) {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
-      method: "POST",
-      headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}`, "Content-Type": "application/json", Prefer: "return=minimal,resolution=ignore-duplicates" },
-      body: JSON.stringify({ email, site }),
-    });
-    if (!res.ok && res.status !== 409) throw new Error(String(res.status));
-    return `Thanks. We'll email you when ${site} launches.`;
-  }
-  try { const list = JSON.parse(localStorage.getItem("gradify.waitlist") || "[]"); list.push({ email, site, at: Date.now() }); localStorage.setItem("gradify.waitlist", JSON.stringify(list)); } catch { /* storage blocked */ }
-  return `Noted on this device. Launch emails start when Gradify accounts open.`;
-}
-
 // ---------- Colour tiles ----------
 const tiles = $("#tiles");
 const tip = $("#tile-tip span:last-child");

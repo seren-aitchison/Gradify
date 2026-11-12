@@ -13,7 +13,9 @@ test("sitemap.xml is up to date and lists only public pages", async () => {
   const urls = await sitemapUrls();
   assert.ok(urls.includes("https://getgradify.com/") && urls.includes("https://getgradify.com/privacy.html"));
   assert.ok(urls.some((u) => u.endsWith("/lawgradify/course/")));
-  assert.ok(!urls.some((u) => /status\.html|harness\.html|404\.html|musicgradify/.test(u)), "no internal pages or coming-soon sites");
+  assert.ok(!urls.some((u) => /status\.html|harness\.html|404\.html/.test(u)), "no internal pages");
+  const { SITES, slugOf } = await import("../kit/core/site.js");
+  for (const s of SITES.filter((x) => x.status === "soon")) assert.ok(!urls.some((u) => u.includes(`/${slugOf(s)}/`)), `${s.n} is coming soon, so it isn't listed`);
 });
 
 test("robots.txt points to the sitemap and keeps internal pages out", async () => {

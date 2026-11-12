@@ -1,0 +1,1230 @@
+{
+ "api": 1,
+ "slug": "investing",
+ "name": "Investing",
+ "site": "InvestorGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Education, not financial advice.</b> InvestorGradify teaches how investing works. It never tells you what to buy or sell, and nothing here is a personal recommendation. The value of investments can fall as well as rise and you may get back less than you put in: your capital is at risk. Tax rules, allowances and limits change and depend on your circumstances; figures are labelled with their tax year or marked illustrative. The lessons were drafted with AI assistance and haven't yet been reviewed by an expert, so check important points against official sources. For a decision about your own money, use a financial adviser authorised by the FCA (check the FCA Register) or free, impartial guidance from MoneyHelper.",
+ "notes": "/kit/courses/investing/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Foundations",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "from": "#b8ba6e",
+   "to": "#8fae5d"
+  },
+  {
+   "name": "Stage 2 · Theory and analysis",
+   "units": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "from": "#c9c27a",
+   "to": "#6aa8a0"
+  },
+  {
+   "name": "Stage 3 · Investing in practice",
+   "units": [
+    8,
+    9,
+    10
+   ],
+   "from": "#b8ba6e",
+   "to": "#5fa3c4"
+  },
+  {
+   "name": "Stage 4 · Protection and planning",
+   "units": [
+    11,
+    12
+   ],
+   "from": "#d6c98a",
+   "to": "#22d3ee"
+  }
+ ],
+ "paths": [
+  {
+   "id": "core",
+   "name": "The whole course",
+   "sub": "Every school in order, from money basics to a written plan.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "beginner",
+   "name": "First-time investor",
+   "sub": "Saving first, how markets work, the main assets, funds and costs, UK wrappers, protection and a plan.",
+   "units": [
+    1,
+    2,
+    3,
+    8,
+    10,
+    11,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "analyst",
+   "name": "Investment analysis",
+   "sub": "The theory behind portfolios and prices: risk and return, portfolio theory, valuation and company accounts.",
+   "units": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "select": null
+  },
+  {
+   "id": "cisi",
+   "name": "Industry foundations",
+   "sub": "The topics of the CISI Fundamentals of Financial Services and CFA Investment Foundations: markets, assets, risk, regulation and ethics.",
+   "units": [
+    2,
+    3,
+    4,
+    8,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "uk-saver",
+   "name": "UK saver and pensions",
+   "sub": "Cash, ISAs, pensions, tax, consumer protection and planning through life.",
+   "units": [
+    1,
+    10,
+    11,
+    12
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Foundations",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Theory and analysis",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Investing in practice",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    8,
+    9,
+    10
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Protection and planning",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    11,
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Money Foundations",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "Saving and investing: what is the difference?",
+     "module": "Your financial base"
+    },
+    {
+     "id": "u01-02",
+     "title": "Budgeting and cash flow",
+     "module": "Your financial base"
+    },
+    {
+     "id": "u01-03",
+     "title": "The emergency fund",
+     "module": "Your financial base"
+    },
+    {
+     "id": "u01-04",
+     "title": "Debt before investing",
+     "module": "Your financial base"
+    },
+    {
+     "id": "u01-05",
+     "title": "Protecting your finances: insurance and resilience",
+     "module": "Your financial base"
+    },
+    {
+     "id": "u01-06",
+     "title": "Interest rates: AER, APR and the base rate",
+     "module": "The maths of money"
+    },
+    {
+     "id": "u01-07",
+     "title": "Simple and compound interest",
+     "module": "The maths of money"
+    },
+    {
+     "id": "u01-08",
+     "title": "Doubling time and the rule of 72",
+     "module": "The maths of money"
+    },
+    {
+     "id": "u01-09",
+     "title": "Inflation and real returns",
+     "module": "The maths of money"
+    },
+    {
+     "id": "u01-10",
+     "title": "The time value of money",
+     "module": "The maths of money"
+    },
+    {
+     "id": "u01-11",
+     "title": "Present value and discounting",
+     "module": "The maths of money"
+    },
+    {
+     "id": "u01-12",
+     "title": "Setting financial goals",
+     "module": "Goals, time and risk"
+    },
+    {
+     "id": "u01-13",
+     "title": "Time horizon and liquidity",
+     "module": "Goals, time and risk"
+    },
+    {
+     "id": "u01-14",
+     "title": "Attitude to risk and capacity for loss",
+     "module": "Goals, time and risk"
+    },
+    {
+     "id": "u01-15",
+     "title": "Cash savings accounts",
+     "module": "Goals, time and risk"
+    },
+    {
+     "id": "u01-16",
+     "title": "Investing, speculation and gambling",
+     "module": "Goals, time and risk"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "How Financial Markets Work",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "The role of the financial system",
+     "module": "The financial system"
+    },
+    {
+     "id": "u02-02",
+     "title": "Savers, borrowers and financial intermediaries",
+     "module": "The financial system"
+    },
+    {
+     "id": "u02-03",
+     "title": "Banks and the Bank of England",
+     "module": "The financial system"
+    },
+    {
+     "id": "u02-04",
+     "title": "Interest rates and monetary policy",
+     "module": "The financial system"
+    },
+    {
+     "id": "u02-05",
+     "title": "Primary and secondary markets",
+     "module": "Markets and trading"
+    },
+    {
+     "id": "u02-06",
+     "title": "Stock exchanges: the LSE, AIM and global markets",
+     "module": "Markets and trading"
+    },
+    {
+     "id": "u02-07",
+     "title": "How a trade works: orders, bid and offer",
+     "module": "Markets and trading"
+    },
+    {
+     "id": "u02-08",
+     "title": "Brokers, market makers and investment platforms",
+     "module": "Markets and trading"
+    },
+    {
+     "id": "u02-09",
+     "title": "Clearing, settlement and custody",
+     "module": "Markets and trading"
+    },
+    {
+     "id": "u02-10",
+     "title": "Liquidity and price discovery",
+     "module": "Markets and trading"
+    },
+    {
+     "id": "u02-11",
+     "title": "Stock market indices",
+     "module": "Indices and the economy"
+    },
+    {
+     "id": "u02-12",
+     "title": "The economic cycle and markets",
+     "module": "Indices and the economy"
+    },
+    {
+     "id": "u02-13",
+     "title": "Inflation, growth and asset prices",
+     "module": "Indices and the economy"
+    },
+    {
+     "id": "u02-14",
+     "title": "Currencies and exchange rates",
+     "module": "Indices and the economy"
+    },
+    {
+     "id": "u02-15",
+     "title": "Bull and bear markets",
+     "module": "Market history"
+    },
+    {
+     "id": "u02-16",
+     "title": "Bubbles and crashes",
+     "module": "Market history"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Asset Classes",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Cash as an asset class",
+     "module": "Cash and bonds"
+    },
+    {
+     "id": "u03-02",
+     "title": "What a bond is",
+     "module": "Cash and bonds"
+    },
+    {
+     "id": "u03-03",
+     "title": "Gilts",
+     "module": "Cash and bonds"
+    },
+    {
+     "id": "u03-04",
+     "title": "Corporate bonds and credit ratings",
+     "module": "Cash and bonds"
+    },
+    {
+     "id": "u03-05",
+     "title": "Bond prices and yields",
+     "module": "Cash and bonds"
+    },
+    {
+     "id": "u03-06",
+     "title": "Duration and interest-rate risk",
+     "module": "Cash and bonds"
+    },
+    {
+     "id": "u03-07",
+     "title": "Index-linked bonds",
+     "module": "Cash and bonds"
+    },
+    {
+     "id": "u03-08",
+     "title": "What a share is",
+     "module": "Shares"
+    },
+    {
+     "id": "u03-09",
+     "title": "Ordinary and preference shares",
+     "module": "Shares"
+    },
+    {
+     "id": "u03-10",
+     "title": "Dividends and capital growth",
+     "module": "Shares"
+    },
+    {
+     "id": "u03-11",
+     "title": "Shareholder rights and corporate actions",
+     "module": "Shares"
+    },
+    {
+     "id": "u03-12",
+     "title": "Property as an investment",
+     "module": "Property and alternatives"
+    },
+    {
+     "id": "u03-13",
+     "title": "Real estate investment trusts (REITs)",
+     "module": "Property and alternatives"
+    },
+    {
+     "id": "u03-14",
+     "title": "Commodities and gold",
+     "module": "Property and alternatives"
+    },
+    {
+     "id": "u03-15",
+     "title": "Alternative investments: private equity and hedge funds",
+     "module": "Property and alternatives"
+    },
+    {
+     "id": "u03-16",
+     "title": "Crypto-assets",
+     "module": "Property and alternatives"
+    },
+    {
+     "id": "u03-17",
+     "title": "Derivatives: an introduction",
+     "module": "Property and alternatives"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Risk and Return",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Holding period return",
+     "module": "Measuring return"
+    },
+    {
+     "id": "u04-02",
+     "title": "Arithmetic and geometric average returns",
+     "module": "Measuring return"
+    },
+    {
+     "id": "u04-03",
+     "title": "Total return and reinvested income",
+     "module": "Measuring return"
+    },
+    {
+     "id": "u04-04",
+     "title": "Nominal and real returns in practice",
+     "module": "Measuring return"
+    },
+    {
+     "id": "u04-05",
+     "title": "Volatility and standard deviation",
+     "module": "Measuring risk"
+    },
+    {
+     "id": "u04-06",
+     "title": "Drawdowns and recovery",
+     "module": "Measuring risk"
+    },
+    {
+     "id": "u04-07",
+     "title": "Sequence of returns risk",
+     "module": "Measuring risk"
+    },
+    {
+     "id": "u04-08",
+     "title": "Types of investment risk",
+     "module": "Measuring risk"
+    },
+    {
+     "id": "u04-09",
+     "title": "The risk–return trade-off",
+     "module": "The trade-off"
+    },
+    {
+     "id": "u04-10",
+     "title": "The equity risk premium",
+     "module": "The trade-off"
+    },
+    {
+     "id": "u04-11",
+     "title": "The long-run evidence: shares, bonds and cash",
+     "module": "The trade-off"
+    },
+    {
+     "id": "u04-12",
+     "title": "Risk-adjusted return: the Sharpe ratio",
+     "module": "The trade-off"
+    },
+    {
+     "id": "u04-13",
+     "title": "The range of outcomes and probability",
+     "module": "The trade-off"
+    },
+    {
+     "id": "u04-14",
+     "title": "Survivorship bias in performance data",
+     "module": "The trade-off"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Diversification and Portfolio Theory",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Why diversification works",
+     "module": "Diversification"
+    },
+    {
+     "id": "u05-02",
+     "title": "Correlation between assets",
+     "module": "Diversification"
+    },
+    {
+     "id": "u05-03",
+     "title": "Specific and systematic risk",
+     "module": "Diversification"
+    },
+    {
+     "id": "u05-04",
+     "title": "How many holdings are enough?",
+     "module": "Diversification"
+    },
+    {
+     "id": "u05-05",
+     "title": "Home bias and global diversification",
+     "module": "Diversification"
+    },
+    {
+     "id": "u05-06",
+     "title": "Modern portfolio theory",
+     "module": "Portfolio theory"
+    },
+    {
+     "id": "u05-07",
+     "title": "The efficient frontier",
+     "module": "Portfolio theory"
+    },
+    {
+     "id": "u05-08",
+     "title": "The capital asset pricing model (CAPM)",
+     "module": "Portfolio theory"
+    },
+    {
+     "id": "u05-09",
+     "title": "Beta",
+     "module": "Portfolio theory"
+    },
+    {
+     "id": "u05-10",
+     "title": "Factor investing",
+     "module": "Portfolio theory"
+    },
+    {
+     "id": "u05-11",
+     "title": "Strategic asset allocation",
+     "module": "Asset allocation"
+    },
+    {
+     "id": "u05-12",
+     "title": "Tactical asset allocation",
+     "module": "Asset allocation"
+    },
+    {
+     "id": "u05-13",
+     "title": "Rebalancing",
+     "module": "Asset allocation"
+    },
+    {
+     "id": "u05-14",
+     "title": "Lifestyling and glide paths",
+     "module": "Asset allocation"
+    },
+    {
+     "id": "u05-15",
+     "title": "Multi-asset funds and model portfolios",
+     "module": "Asset allocation"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Valuation",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Price and value",
+     "module": "Principles"
+    },
+    {
+     "id": "u06-02",
+     "title": "Discounted cash flow valuation",
+     "module": "Principles"
+    },
+    {
+     "id": "u06-03",
+     "title": "The dividend discount model",
+     "module": "Principles"
+    },
+    {
+     "id": "u06-04",
+     "title": "The Gordon growth model",
+     "module": "Principles"
+    },
+    {
+     "id": "u06-05",
+     "title": "The required return and the cost of equity",
+     "module": "Principles"
+    },
+    {
+     "id": "u06-06",
+     "title": "Earnings per share",
+     "module": "Multiples"
+    },
+    {
+     "id": "u06-07",
+     "title": "The price-to-earnings ratio",
+     "module": "Multiples"
+    },
+    {
+     "id": "u06-08",
+     "title": "Dividend yield and dividend cover",
+     "module": "Multiples"
+    },
+    {
+     "id": "u06-09",
+     "title": "Price-to-book",
+     "module": "Multiples"
+    },
+    {
+     "id": "u06-10",
+     "title": "Enterprise value and EV/EBITDA",
+     "module": "Multiples"
+    },
+    {
+     "id": "u06-11",
+     "title": "Valuing a bond",
+     "module": "Markets and styles"
+    },
+    {
+     "id": "u06-12",
+     "title": "Valuing the whole market: CAPE",
+     "module": "Markets and styles"
+    },
+    {
+     "id": "u06-13",
+     "title": "Growth and value investing",
+     "module": "Markets and styles"
+    },
+    {
+     "id": "u06-14",
+     "title": "The limits of valuation",
+     "module": "Markets and styles"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Interpreting Financial Statements and Group Accounts",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u07-15",
+     "title": "Why analyse financial statements?",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u07-16",
+     "title": "Profitability ratios",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u07-17",
+     "title": "Liquidity ratios",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u07-18",
+     "title": "Efficiency ratios and the working capital cycle",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u07-19",
+     "title": "Gearing and investor ratios",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u07-20",
+     "title": "Interpreting ratios in context",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u07-21",
+     "title": "Limitations of ratio analysis",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u07-22",
+     "title": "Analysing cash flows",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u07-23",
+     "title": "Performance in not-for-profit organisations",
+     "module": "Ratio analysis"
+    },
+    {
+     "id": "u07-24",
+     "title": "Groups and control",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u07-25",
+     "title": "Goodwill on acquisition",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u07-26",
+     "title": "The consolidated statement of financial position",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u07-27",
+     "title": "Intra-group trading and unrealised profit",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u07-28",
+     "title": "The consolidated statement of profit or loss",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u07-29",
+     "title": "Associates and joint arrangements",
+     "module": "Group accounts"
+    },
+    {
+     "id": "u07-30",
+     "title": "Creative accounting and earnings management",
+     "module": "Quality of reporting"
+    },
+    {
+     "id": "u07-31",
+     "title": "Narrative reporting and the strategic report",
+     "module": "Quality of reporting"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Funds, Index Investing and Costs",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Why pool investments?",
+     "module": "Pooled investments"
+    },
+    {
+     "id": "u08-02",
+     "title": "Unit trusts and OEICs",
+     "module": "Pooled investments"
+    },
+    {
+     "id": "u08-03",
+     "title": "Investment trusts",
+     "module": "Pooled investments"
+    },
+    {
+     "id": "u08-04",
+     "title": "Exchange-traded funds",
+     "module": "Pooled investments"
+    },
+    {
+     "id": "u08-05",
+     "title": "Fund factsheets and key information documents",
+     "module": "Pooled investments"
+    },
+    {
+     "id": "u08-06",
+     "title": "Active fund management",
+     "module": "Active and passive"
+    },
+    {
+     "id": "u08-07",
+     "title": "Index tracking funds",
+     "module": "Active and passive"
+    },
+    {
+     "id": "u08-08",
+     "title": "The efficient market hypothesis",
+     "module": "Active and passive"
+    },
+    {
+     "id": "u08-09",
+     "title": "Tracking error and replication methods",
+     "module": "Active and passive"
+    },
+    {
+     "id": "u08-10",
+     "title": "The evidence on active and passive funds",
+     "module": "Active and passive"
+    },
+    {
+     "id": "u08-11",
+     "title": "Ongoing charges and platform fees",
+     "module": "Costs"
+    },
+    {
+     "id": "u08-12",
+     "title": "How fees compound",
+     "module": "Costs"
+    },
+    {
+     "id": "u08-13",
+     "title": "Dealing costs, spreads and stamp duty",
+     "module": "Costs"
+    },
+    {
+     "id": "u08-14",
+     "title": "Accumulation and income units",
+     "module": "Costs"
+    },
+    {
+     "id": "u08-15",
+     "title": "Choosing a platform",
+     "module": "Costs"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Behavioural Finance",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Rational investors and their limits",
+     "module": "Biases"
+    },
+    {
+     "id": "u09-02",
+     "title": "Loss aversion and prospect theory",
+     "module": "Biases"
+    },
+    {
+     "id": "u09-03",
+     "title": "Overconfidence",
+     "module": "Biases"
+    },
+    {
+     "id": "u09-04",
+     "title": "Anchoring and investment decisions",
+     "module": "Biases"
+    },
+    {
+     "id": "u09-05",
+     "title": "Herding",
+     "module": "Biases"
+    },
+    {
+     "id": "u09-06",
+     "title": "Recency and availability in markets",
+     "module": "Biases"
+    },
+    {
+     "id": "u09-07",
+     "title": "The disposition effect",
+     "module": "Biases"
+    },
+    {
+     "id": "u09-08",
+     "title": "Mental accounting",
+     "module": "Biases"
+    },
+    {
+     "id": "u09-09",
+     "title": "Confirmation bias",
+     "module": "Biases"
+    },
+    {
+     "id": "u09-10",
+     "title": "Investor psychology in bubbles",
+     "module": "Markets and behaviour"
+    },
+    {
+     "id": "u09-11",
+     "title": "Market timing",
+     "module": "Markets and behaviour"
+    },
+    {
+     "id": "u09-12",
+     "title": "News, noise and social media",
+     "module": "Markets and behaviour"
+    },
+    {
+     "id": "u09-13",
+     "title": "Pound-cost averaging and automatic investing",
+     "module": "Better habits"
+    },
+    {
+     "id": "u09-14",
+     "title": "Rules, checklists and investment journals",
+     "module": "Better habits"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "UK Wrappers, Pensions and Tax",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "How investments are taxed in the UK",
+     "module": "Tax on investments"
+    },
+    {
+     "id": "u10-02",
+     "title": "Income tax on savings and dividends",
+     "module": "Tax on investments"
+    },
+    {
+     "id": "u10-03",
+     "title": "Capital gains tax",
+     "module": "Tax on investments"
+    },
+    {
+     "id": "u10-04",
+     "title": "General investment accounts",
+     "module": "Tax on investments"
+    },
+    {
+     "id": "u10-05",
+     "title": "Individual Savings Accounts",
+     "module": "ISAs"
+    },
+    {
+     "id": "u10-06",
+     "title": "Stocks and shares ISAs",
+     "module": "ISAs"
+    },
+    {
+     "id": "u10-07",
+     "title": "Lifetime ISAs and Junior ISAs",
+     "module": "ISAs"
+    },
+    {
+     "id": "u10-08",
+     "title": "Why save in a pension?",
+     "module": "Pensions"
+    },
+    {
+     "id": "u10-09",
+     "title": "Pension tax relief",
+     "module": "Pensions"
+    },
+    {
+     "id": "u10-10",
+     "title": "Workplace pensions and auto-enrolment",
+     "module": "Pensions"
+    },
+    {
+     "id": "u10-11",
+     "title": "Defined benefit and defined contribution pensions",
+     "module": "Pensions"
+    },
+    {
+     "id": "u10-12",
+     "title": "Self-invested personal pensions (SIPPs)",
+     "module": "Pensions"
+    },
+    {
+     "id": "u10-13",
+     "title": "The State Pension",
+     "module": "Pensions"
+    },
+    {
+     "id": "u10-14",
+     "title": "Accessing your pension",
+     "module": "Pensions"
+    },
+    {
+     "id": "u10-15",
+     "title": "Inheritance tax basics",
+     "module": "Passing wealth on"
+    },
+    {
+     "id": "u10-16",
+     "title": "Wills, nominations and estate planning",
+     "module": "Passing wealth on"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Regulation, Protection and Ethics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Why financial services are regulated",
+     "module": "Regulation"
+    },
+    {
+     "id": "u11-02",
+     "title": "The FCA and the PRA",
+     "module": "Regulation"
+    },
+    {
+     "id": "u11-03",
+     "title": "The Consumer Duty",
+     "module": "Regulation"
+    },
+    {
+     "id": "u11-04",
+     "title": "Advice, guidance and execution-only",
+     "module": "Regulation"
+    },
+    {
+     "id": "u11-05",
+     "title": "Financial promotions and finfluencers",
+     "module": "Regulation"
+    },
+    {
+     "id": "u11-06",
+     "title": "The Financial Services Compensation Scheme",
+     "module": "Protection"
+    },
+    {
+     "id": "u11-07",
+     "title": "The Financial Ombudsman Service",
+     "module": "Protection"
+    },
+    {
+     "id": "u11-08",
+     "title": "Client money and asset protection",
+     "module": "Protection"
+    },
+    {
+     "id": "u11-09",
+     "title": "Investment scams",
+     "module": "Scams"
+    },
+    {
+     "id": "u11-10",
+     "title": "Red flags and the FCA Warning List",
+     "module": "Scams"
+    },
+    {
+     "id": "u11-11",
+     "title": "Pension scams",
+     "module": "Scams"
+    },
+    {
+     "id": "u11-12",
+     "title": "Ethics in investment",
+     "module": "Ethics and ESG"
+    },
+    {
+     "id": "u11-13",
+     "title": "The CFA Institute Code of Ethics",
+     "module": "Ethics and ESG"
+    },
+    {
+     "id": "u11-14",
+     "title": "ESG and responsible investing",
+     "module": "Ethics and ESG"
+    },
+    {
+     "id": "u11-15",
+     "title": "Stewardship and engagement",
+     "module": "Ethics and ESG"
+    },
+    {
+     "id": "u11-16",
+     "title": "Greenwashing and sustainability labels",
+     "module": "Ethics and ESG"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Building Your Plan",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "The personal financial plan",
+     "module": "Making the plan"
+    },
+    {
+     "id": "u12-02",
+     "title": "An investment policy statement",
+     "module": "Making the plan"
+    },
+    {
+     "id": "u12-03",
+     "title": "Choosing an asset allocation",
+     "module": "Making the plan"
+    },
+    {
+     "id": "u12-04",
+     "title": "Choosing funds for a portfolio",
+     "module": "Making the plan"
+    },
+    {
+     "id": "u12-05",
+     "title": "Lump sums and regular investing",
+     "module": "Making the plan"
+    },
+    {
+     "id": "u12-06",
+     "title": "Investing early in adult life",
+     "module": "Through life"
+    },
+    {
+     "id": "u12-07",
+     "title": "Mid-life: competing goals",
+     "module": "Through life"
+    },
+    {
+     "id": "u12-08",
+     "title": "Approaching retirement",
+     "module": "Through life"
+    },
+    {
+     "id": "u12-09",
+     "title": "Drawdown and sustainable withdrawals",
+     "module": "Through life"
+    },
+    {
+     "id": "u12-10",
+     "title": "Annuities",
+     "module": "Through life"
+    },
+    {
+     "id": "u12-11",
+     "title": "Reviewing and monitoring a portfolio",
+     "module": "Staying on track"
+    },
+    {
+     "id": "u12-12",
+     "title": "When to get regulated financial advice",
+     "module": "Staying on track"
+    },
+    {
+     "id": "u12-13",
+     "title": "Record keeping and paperwork",
+     "module": "Staying on track"
+    }
+   ]
+  }
+ ],
+ "interactives": []
+}

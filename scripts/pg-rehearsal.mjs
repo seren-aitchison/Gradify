@@ -80,6 +80,9 @@ export async function loadRows(c, snap) {
   for (const [t, rows] of Object.entries(snap.rows)) for (const r of rows) { if (r.user_id) users.add(r.user_id); if (t === "profiles" && r.id) users.add(r.id); }
   let q = "set session_replication_role = replica;\n";
   if (users.size) q += `insert into auth.users (id) values ${[...users].map((u) => `(${lit(u)})`).join(", ")} on conflict do nothing;\n`;
+  // this runs only in a fresh temporary database: clear any rows the migrations seeded (settings, limits) so the
+  // backup's own values are what's restored, exactly
+  for (const [t, rows] of Object.entries(snap.rows)) if (rows.length) q += `delete from public.${t};\n`;
   for (const [t, rows] of Object.entries(snap.rows)) if (rows.length) q += `insert into public.${t} overriding system value select * from json_populate_recordset(null::public.${t}, ${lit(JSON.stringify(rows))}::json);\n`;
   q += "set session_replication_role = origin;";
   await c.sql(q);
@@ -94,7 +97,8 @@ export async function restoreRehearsal(snap, list) {
     const m = list.find((x) => x.version === r.version);
     if (!m) { report.problems.push(`migration ${r.version} is recorded in the backup but not in the repository`); continue; }
     const text = m.sql ?? (await readFile(m.url, "utf8"));
-    if (sha(text) !== sha((r.statements || [])[0] || "")) report.problems.push(`migration ${r.version} differs from the version that was applied`);
+    // compared ignoring only trailing whitespace: the applied copy may be stored without the file's final newline
+    if (sha(text.trimEnd()) !== sha(((r.statements || [])[0] || "").trimEnd())) report.problems.push(`migration ${r.version} differs from the version that was applied`);
   }
   if (report.problems.length) return report;
   const c = await tempDb();
@@ -129,7 +133,7 @@ export async function checksums(c, cols) {
 export const changed = (a, b) => Object.keys(a).filter((t) => a[t] !== b[t]);
 
 /** Migration rehearsal: apply one migration to a copy of `snap` and check every pre-existing value survives. */
-export async function rehearseMigration(snap, list, migration) {
+export async function rehearseMigration(snap, list, migration, intended = []) {
   const c = await tempDb();
   try {
     await applyMigrations(c, list, (snap.schema.migrations || []).map((r) => r.version));
@@ -137,7 +141,8 @@ export async function rehearseMigration(snap, list, migration) {
     const cols = await columnsNow(c), before = await checksums(c, cols);
     const text = migration.sql ?? (await readFile(migration.url, "utf8"));
     try { await c.sql(text); } catch (e) { return { ok: false, problems: [`the migration fails on a copy of the data: ${e.message}`] }; }
-    const after = await checksums(c, cols), diff = changed(before, after);
+    // owner settings tables the migration deliberately updates (the caller passes scripts/supabase-admin.mjs configUpdates)
+    const after = await checksums(c, cols), diff = changed(before, after).filter((t) => !intended.includes(t));
     return { ok: diff.length === 0, problems: diff.map((t) => `${t}: existing values changed`), tables: Object.keys(cols).length };
   } finally { await c.close(); }
 }

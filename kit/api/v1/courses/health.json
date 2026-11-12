@@ -1,0 +1,1272 @@
+{
+ "api": 1,
+ "slug": "health",
+ "name": "Health and Wellbeing",
+ "site": "HealthGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Education, not medical advice.</b> HealthGradify teaches health and wellbeing as an academic subject. The lessons were drafted with AI assistance and haven't yet been reviewed by health professionals, so they may contain errors; check important points against your course materials and official guidance (NHS, NICE, UKHSA). Nothing here can diagnose a condition, recommend a treatment or replace advice from someone who knows your health. For advice about your own health speak to your GP or a pharmacist, or call NHS 111; in an emergency call 999. If you are struggling with your mental health, Samaritans are on 116 123 (UK).",
+ "notes": "/kit/courses/health/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Foundations and the body",
+   "units": [
+    1,
+    2
+   ],
+   "from": "#34d399",
+   "to": "#22d3ee"
+  },
+  {
+   "name": "Stage 2 · Living well",
+   "units": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "from": "#4ade80",
+   "to": "#2dd4bf"
+  },
+  {
+   "name": "Stage 3 · Behaviour and illness",
+   "units": [
+    7,
+    8
+   ],
+   "from": "#a3e635",
+   "to": "#34d399"
+  },
+  {
+   "name": "Stage 4 · Populations, services and the life course",
+   "units": [
+    9,
+    10,
+    11
+   ],
+   "from": "#2dd4bf",
+   "to": "#38bdf8"
+  }
+ ],
+ "paths": [
+  {
+   "id": "btec",
+   "name": "BTEC and T Level Health and Social Care",
+   "sub": "The core of BTEC Nationals and the T Level: human body systems, health and wellbeing, illness, public health, services and the life course.",
+   "units": [
+    1,
+    2,
+    8,
+    10,
+    11,
+    9
+   ],
+   "select": null
+  },
+  {
+   "id": "public-health",
+   "name": "Public health",
+   "sub": "Determinants, inequalities, epidemiology, prevention and behaviour change: the public health core of a health studies degree.",
+   "units": [
+    1,
+    9,
+    7,
+    8,
+    10
+   ],
+   "select": null
+  },
+  {
+   "id": "healthy-living",
+   "name": "Healthy living",
+   "sub": "The evidence behind eating well, moving more, sleeping well and looking after your mental health. Educational, not personal advice.",
+   "units": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "select": null
+  },
+  {
+   "id": "degree-year1",
+   "name": "Health studies: university year 1",
+   "sub": "The first-year core of a health studies or public health degree, aligned with the QAA Health Studies benchmark.",
+   "units": [
+    1,
+    2,
+    9,
+    7,
+    6,
+    10
+   ],
+   "select": null
+  },
+  {
+   "id": "body",
+   "name": "Body and disease",
+   "sub": "How the body works and what happens when it goes wrong: systems, infection and long-term conditions.",
+   "units": [
+    2,
+    8,
+    3,
+    4
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Foundations and the body",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Living well",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Behaviour and illness",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    7,
+    8
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Populations, services and the life course",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    9,
+    10,
+    11
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Foundations of Health and Wellbeing",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What is health?",
+     "module": "Defining health"
+    },
+    {
+     "id": "u01-02",
+     "title": "Models of health: biomedical and biopsychosocial",
+     "module": "Defining health"
+    },
+    {
+     "id": "u01-03",
+     "title": "Wellbeing and how it is measured",
+     "module": "Defining health"
+    },
+    {
+     "id": "u01-04",
+     "title": "Holistic health: physical, mental and social",
+     "module": "Defining health"
+    },
+    {
+     "id": "u01-05",
+     "title": "The determinants of health",
+     "module": "What shapes health"
+    },
+    {
+     "id": "u01-06",
+     "title": "Health inequalities",
+     "module": "What shapes health"
+    },
+    {
+     "id": "u01-07",
+     "title": "Lifestyle factors and health",
+     "module": "What shapes health"
+    },
+    {
+     "id": "u01-08",
+     "title": "The wider determinants: housing, work and environment",
+     "module": "What shapes health"
+    },
+    {
+     "id": "u01-09",
+     "title": "Judging health information",
+     "module": "Evidence about health"
+    },
+    {
+     "id": "u01-10",
+     "title": "Levels of evidence",
+     "module": "Evidence about health"
+    },
+    {
+     "id": "u01-11",
+     "title": "Understanding risk: absolute and relative",
+     "module": "Evidence about health"
+    },
+    {
+     "id": "u01-12",
+     "title": "Screening: benefits and harms",
+     "module": "Evidence about health"
+    },
+    {
+     "id": "u01-13",
+     "title": "Measuring the nation's health",
+     "module": "Health in the UK"
+    },
+    {
+     "id": "u01-14",
+     "title": "Leading causes of death and ill health in the UK",
+     "module": "Health in the UK"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "The Human Body",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Cells, tissues and organs",
+     "module": "Organisation and control"
+    },
+    {
+     "id": "u02-02",
+     "title": "Homeostasis",
+     "module": "Organisation and control"
+    },
+    {
+     "id": "u02-03",
+     "title": "Body temperature regulation",
+     "module": "Organisation and control"
+    },
+    {
+     "id": "u02-04",
+     "title": "Blood glucose regulation",
+     "module": "Organisation and control"
+    },
+    {
+     "id": "u02-05",
+     "title": "The nervous system",
+     "module": "Organisation and control"
+    },
+    {
+     "id": "u02-06",
+     "title": "The endocrine system",
+     "module": "Organisation and control"
+    },
+    {
+     "id": "u02-07",
+     "title": "The heart",
+     "module": "Transport and exchange"
+    },
+    {
+     "id": "u02-08",
+     "title": "Blood vessels and blood pressure",
+     "module": "Transport and exchange"
+    },
+    {
+     "id": "u02-09",
+     "title": "Blood",
+     "module": "Transport and exchange"
+    },
+    {
+     "id": "u02-10",
+     "title": "The respiratory system",
+     "module": "Transport and exchange"
+    },
+    {
+     "id": "u02-11",
+     "title": "Gas exchange and breathing",
+     "module": "Transport and exchange"
+    },
+    {
+     "id": "u02-12",
+     "title": "The digestive system",
+     "module": "Processing, defence and movement"
+    },
+    {
+     "id": "u02-13",
+     "title": "The liver",
+     "module": "Processing, defence and movement"
+    },
+    {
+     "id": "u02-14",
+     "title": "The kidneys and fluid balance",
+     "module": "Processing, defence and movement"
+    },
+    {
+     "id": "u02-15",
+     "title": "The immune system",
+     "module": "Processing, defence and movement"
+    },
+    {
+     "id": "u02-16",
+     "title": "The musculoskeletal system",
+     "module": "Processing, defence and movement"
+    },
+    {
+     "id": "u02-17",
+     "title": "The skin",
+     "module": "Processing, defence and movement"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Nutrition",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Carbohydrates and dietary fibre",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u03-02",
+     "title": "Protein",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u03-03",
+     "title": "Fats",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u03-04",
+     "title": "Vitamins",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u03-05",
+     "title": "Minerals",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u03-06",
+     "title": "Water and hydration",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u03-07",
+     "title": "The Eatwell Guide",
+     "module": "Healthy eating"
+    },
+    {
+     "id": "u03-08",
+     "title": "Energy balance",
+     "module": "Healthy eating"
+    },
+    {
+     "id": "u03-09",
+     "title": "Reading food labels",
+     "module": "Healthy eating"
+    },
+    {
+     "id": "u03-10",
+     "title": "Salt, sugar and saturated fat",
+     "module": "Healthy eating"
+    },
+    {
+     "id": "u03-11",
+     "title": "Ultra-processed food",
+     "module": "Healthy eating"
+    },
+    {
+     "id": "u03-12",
+     "title": "Nutrition in pregnancy and infancy",
+     "module": "Nutrition across life"
+    },
+    {
+     "id": "u03-13",
+     "title": "Nutrition in childhood and adolescence",
+     "module": "Nutrition across life"
+    },
+    {
+     "id": "u03-14",
+     "title": "Nutrition in older age",
+     "module": "Nutrition across life"
+    },
+    {
+     "id": "u03-15",
+     "title": "Vegetarian and vegan diets",
+     "module": "Nutrition across life"
+    },
+    {
+     "id": "u03-16",
+     "title": "Malnutrition",
+     "module": "Diet, disease and access"
+    },
+    {
+     "id": "u03-17",
+     "title": "Diet and chronic disease",
+     "module": "Diet, disease and access"
+    },
+    {
+     "id": "u03-18",
+     "title": "Food insecurity",
+     "module": "Diet, disease and access"
+    },
+    {
+     "id": "u03-19",
+     "title": "Eating disorders",
+     "module": "Diet, disease and access"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Physical Activity",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Physical activity, exercise and fitness",
+     "module": "Activity and health"
+    },
+    {
+     "id": "u04-02",
+     "title": "The UK physical activity guidelines",
+     "module": "Activity and health"
+    },
+    {
+     "id": "u04-03",
+     "title": "Sedentary behaviour",
+     "module": "Activity and health"
+    },
+    {
+     "id": "u04-04",
+     "title": "The benefits of physical activity",
+     "module": "Activity and health"
+    },
+    {
+     "id": "u04-05",
+     "title": "Short-term responses to exercise",
+     "module": "How the body responds"
+    },
+    {
+     "id": "u04-06",
+     "title": "Long-term adaptations to training",
+     "module": "How the body responds"
+    },
+    {
+     "id": "u04-07",
+     "title": "Energy systems",
+     "module": "How the body responds"
+    },
+    {
+     "id": "u04-08",
+     "title": "Components of fitness",
+     "module": "How the body responds"
+    },
+    {
+     "id": "u04-09",
+     "title": "Measuring fitness",
+     "module": "How the body responds"
+    },
+    {
+     "id": "u04-10",
+     "title": "Physical activity in children and young people",
+     "module": "Promoting activity"
+    },
+    {
+     "id": "u04-11",
+     "title": "Physical activity in older adults",
+     "module": "Promoting activity"
+    },
+    {
+     "id": "u04-12",
+     "title": "Activity with long-term conditions",
+     "module": "Promoting activity"
+    },
+    {
+     "id": "u04-13",
+     "title": "Barriers to physical activity",
+     "module": "Promoting activity"
+    },
+    {
+     "id": "u04-14",
+     "title": "Active environments and active travel",
+     "module": "Promoting activity"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Sleep, Stress and Rest",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Why we sleep",
+     "module": "Sleep"
+    },
+    {
+     "id": "u05-02",
+     "title": "Sleep stages and cycles",
+     "module": "Sleep"
+    },
+    {
+     "id": "u05-03",
+     "title": "Circadian rhythms",
+     "module": "Sleep"
+    },
+    {
+     "id": "u05-04",
+     "title": "How much sleep we need",
+     "module": "Sleep"
+    },
+    {
+     "id": "u05-05",
+     "title": "Sleep across the lifespan",
+     "module": "Sleep"
+    },
+    {
+     "id": "u05-06",
+     "title": "Insomnia",
+     "module": "Sleep"
+    },
+    {
+     "id": "u05-07",
+     "title": "Improving sleep",
+     "module": "Sleep"
+    },
+    {
+     "id": "u05-08",
+     "title": "Shift work and sleep",
+     "module": "Sleep"
+    },
+    {
+     "id": "u05-09",
+     "title": "Sleep disorders beyond insomnia",
+     "module": "Sleep"
+    },
+    {
+     "id": "u05-10",
+     "title": "What stress is",
+     "module": "Stress"
+    },
+    {
+     "id": "u05-11",
+     "title": "The stress response",
+     "module": "Stress"
+    },
+    {
+     "id": "u05-12",
+     "title": "Stress and health",
+     "module": "Stress"
+    },
+    {
+     "id": "u05-13",
+     "title": "Coping and stress management",
+     "module": "Stress"
+    },
+    {
+     "id": "u05-14",
+     "title": "Work-related stress and burnout",
+     "module": "Stress"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Mental Health and Wellbeing",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Mental health and mental illness",
+     "module": "Understanding mental health"
+    },
+    {
+     "id": "u06-02",
+     "title": "Mental health in the UK",
+     "module": "Understanding mental health"
+    },
+    {
+     "id": "u06-03",
+     "title": "Risk and protective factors for mental health",
+     "module": "Understanding mental health"
+    },
+    {
+     "id": "u06-04",
+     "title": "Stigma and discrimination",
+     "module": "Understanding mental health"
+    },
+    {
+     "id": "u06-05",
+     "title": "Anxiety",
+     "module": "Common mental health problems"
+    },
+    {
+     "id": "u06-06",
+     "title": "Depression",
+     "module": "Common mental health problems"
+    },
+    {
+     "id": "u06-07",
+     "title": "Self-harm and suicide prevention",
+     "module": "Common mental health problems"
+    },
+    {
+     "id": "u06-08",
+     "title": "Severe mental illness",
+     "module": "Common mental health problems"
+    },
+    {
+     "id": "u06-09",
+     "title": "Mental health in children and young people",
+     "module": "Common mental health problems"
+    },
+    {
+     "id": "u06-10",
+     "title": "Perinatal mental health",
+     "module": "Common mental health problems"
+    },
+    {
+     "id": "u06-11",
+     "title": "The Five Ways to Wellbeing",
+     "module": "Promoting wellbeing"
+    },
+    {
+     "id": "u06-12",
+     "title": "Resilience",
+     "module": "Promoting wellbeing"
+    },
+    {
+     "id": "u06-13",
+     "title": "Loneliness and social connection",
+     "module": "Promoting wellbeing"
+    },
+    {
+     "id": "u06-14",
+     "title": "Digital life and wellbeing",
+     "module": "Promoting wellbeing"
+    },
+    {
+     "id": "u06-15",
+     "title": "Getting help: NHS talking therapies and other support",
+     "module": "Promoting wellbeing"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Health Behaviour and Behaviour Change",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Why health behaviours matter",
+     "module": "Explaining health behaviour"
+    },
+    {
+     "id": "u07-02",
+     "title": "The health belief model",
+     "module": "Explaining health behaviour"
+    },
+    {
+     "id": "u07-03",
+     "title": "The theory of planned behaviour",
+     "module": "Explaining health behaviour"
+    },
+    {
+     "id": "u07-04",
+     "title": "The transtheoretical model",
+     "module": "Explaining health behaviour"
+    },
+    {
+     "id": "u07-05",
+     "title": "The COM-B model and the behaviour change wheel",
+     "module": "Explaining health behaviour"
+    },
+    {
+     "id": "u07-06",
+     "title": "Habits",
+     "module": "Explaining health behaviour"
+    },
+    {
+     "id": "u07-07",
+     "title": "Behaviour change techniques",
+     "module": "Changing behaviour"
+    },
+    {
+     "id": "u07-08",
+     "title": "Motivational interviewing",
+     "module": "Changing behaviour"
+    },
+    {
+     "id": "u07-09",
+     "title": "Nudges and choice architecture",
+     "module": "Changing behaviour"
+    },
+    {
+     "id": "u07-10",
+     "title": "Health literacy",
+     "module": "Changing behaviour"
+    },
+    {
+     "id": "u07-11",
+     "title": "Making Every Contact Count",
+     "module": "Changing behaviour"
+    },
+    {
+     "id": "u07-12",
+     "title": "Alcohol",
+     "module": "Risky behaviours"
+    },
+    {
+     "id": "u07-13",
+     "title": "Smoking",
+     "module": "Risky behaviours"
+    },
+    {
+     "id": "u07-14",
+     "title": "Vaping",
+     "module": "Risky behaviours"
+    },
+    {
+     "id": "u07-15",
+     "title": "Drugs and harm reduction",
+     "module": "Risky behaviours"
+    },
+    {
+     "id": "u07-16",
+     "title": "Sexual health",
+     "module": "Risky behaviours"
+    },
+    {
+     "id": "u07-17",
+     "title": "Gambling harms",
+     "module": "Risky behaviours"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Disease and Long-term Conditions",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Pathogens and how infections spread",
+     "module": "Infection"
+    },
+    {
+     "id": "u08-02",
+     "title": "Breaking the chain of infection",
+     "module": "Infection"
+    },
+    {
+     "id": "u08-03",
+     "title": "Vaccination and herd immunity",
+     "module": "Infection"
+    },
+    {
+     "id": "u08-04",
+     "title": "Antimicrobial resistance",
+     "module": "Infection"
+    },
+    {
+     "id": "u08-05",
+     "title": "Cardiovascular disease",
+     "module": "Non-communicable disease"
+    },
+    {
+     "id": "u08-06",
+     "title": "Hypertension",
+     "module": "Non-communicable disease"
+    },
+    {
+     "id": "u08-07",
+     "title": "Stroke",
+     "module": "Non-communicable disease"
+    },
+    {
+     "id": "u08-08",
+     "title": "Type 2 diabetes",
+     "module": "Non-communicable disease"
+    },
+    {
+     "id": "u08-09",
+     "title": "Type 1 diabetes",
+     "module": "Non-communicable disease"
+    },
+    {
+     "id": "u08-10",
+     "title": "Cancer: causes and prevention",
+     "module": "Non-communicable disease"
+    },
+    {
+     "id": "u08-11",
+     "title": "Chronic respiratory disease: asthma and COPD",
+     "module": "Non-communicable disease"
+    },
+    {
+     "id": "u08-12",
+     "title": "Obesity",
+     "module": "Non-communicable disease"
+    },
+    {
+     "id": "u08-13",
+     "title": "Dementia",
+     "module": "Non-communicable disease"
+    },
+    {
+     "id": "u08-14",
+     "title": "What a long-term condition is",
+     "module": "Living with long-term conditions"
+    },
+    {
+     "id": "u08-15",
+     "title": "Multimorbidity",
+     "module": "Living with long-term conditions"
+    },
+    {
+     "id": "u08-16",
+     "title": "Self-management and supported self-care",
+     "module": "Living with long-term conditions"
+    },
+    {
+     "id": "u08-17",
+     "title": "Disability and health",
+     "module": "Living with long-term conditions"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Public Health and Epidemiology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "What public health is",
+     "module": "Public health"
+    },
+    {
+     "id": "u09-02",
+     "title": "A short history of public health",
+     "module": "Public health"
+    },
+    {
+     "id": "u09-03",
+     "title": "The three domains of public health",
+     "module": "Public health"
+    },
+    {
+     "id": "u09-04",
+     "title": "Levels of prevention",
+     "module": "Public health"
+    },
+    {
+     "id": "u09-05",
+     "title": "Health promotion and the Ottawa Charter",
+     "module": "Public health"
+    },
+    {
+     "id": "u09-06",
+     "title": "The prevention paradox",
+     "module": "Public health"
+    },
+    {
+     "id": "u09-07",
+     "title": "Incidence and prevalence",
+     "module": "Epidemiology"
+    },
+    {
+     "id": "u09-08",
+     "title": "Rates and standardisation",
+     "module": "Epidemiology"
+    },
+    {
+     "id": "u09-09",
+     "title": "Relative risk and odds ratios",
+     "module": "Epidemiology"
+    },
+    {
+     "id": "u09-10",
+     "title": "Epidemiological study designs",
+     "module": "Epidemiology"
+    },
+    {
+     "id": "u09-11",
+     "title": "Bias, confounding and chance",
+     "module": "Epidemiology"
+    },
+    {
+     "id": "u09-12",
+     "title": "Causation and the Bradford Hill viewpoints",
+     "module": "Epidemiology"
+    },
+    {
+     "id": "u09-13",
+     "title": "Outbreak investigation",
+     "module": "Epidemiology"
+    },
+    {
+     "id": "u09-14",
+     "title": "Health surveillance",
+     "module": "Epidemiology"
+    },
+    {
+     "id": "u09-15",
+     "title": "The global burden of disease",
+     "module": "Global and planetary health"
+    },
+    {
+     "id": "u09-16",
+     "title": "Global health goals and organisations",
+     "module": "Global and planetary health"
+    },
+    {
+     "id": "u09-17",
+     "title": "Climate change and health",
+     "module": "Global and planetary health"
+    },
+    {
+     "id": "u09-18",
+     "title": "Pandemic preparedness",
+     "module": "Global and planetary health"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Health and Social Care Systems",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "The founding of the NHS",
+     "module": "The NHS"
+    },
+    {
+     "id": "u10-02",
+     "title": "How the NHS in England is organised",
+     "module": "The NHS"
+    },
+    {
+     "id": "u10-03",
+     "title": "Health care across the four UK nations",
+     "module": "The NHS"
+    },
+    {
+     "id": "u10-04",
+     "title": "Primary care",
+     "module": "The NHS"
+    },
+    {
+     "id": "u10-05",
+     "title": "Secondary and tertiary care",
+     "module": "The NHS"
+    },
+    {
+     "id": "u10-06",
+     "title": "Funding health care",
+     "module": "The NHS"
+    },
+    {
+     "id": "u10-07",
+     "title": "Social care",
+     "module": "Care and services"
+    },
+    {
+     "id": "u10-08",
+     "title": "Integrated care",
+     "module": "Care and services"
+    },
+    {
+     "id": "u10-09",
+     "title": "Urgent and emergency care",
+     "module": "Care and services"
+    },
+    {
+     "id": "u10-10",
+     "title": "Choosing the right NHS service",
+     "module": "Care and services"
+    },
+    {
+     "id": "u10-11",
+     "title": "Mental health services",
+     "module": "Care and services"
+    },
+    {
+     "id": "u10-12",
+     "title": "Quality and safety in health care",
+     "module": "Quality, rights and ethics"
+    },
+    {
+     "id": "u10-13",
+     "title": "Regulation of health and social care",
+     "module": "Quality, rights and ethics"
+    },
+    {
+     "id": "u10-14",
+     "title": "Consent and mental capacity",
+     "module": "Quality, rights and ethics"
+    },
+    {
+     "id": "u10-15",
+     "title": "Confidentiality and health data",
+     "module": "Quality, rights and ethics"
+    },
+    {
+     "id": "u10-16",
+     "title": "Ethical principles in health care",
+     "module": "Quality, rights and ethics"
+    },
+    {
+     "id": "u10-17",
+     "title": "NICE and priority setting",
+     "module": "Quality, rights and ethics"
+    },
+    {
+     "id": "u10-18",
+     "title": "Comparing health systems",
+     "module": "Quality, rights and ethics"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Health Across the Life Course",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Preconception and pregnancy",
+     "module": "Beginning life"
+    },
+    {
+     "id": "u11-02",
+     "title": "Birth and the newborn",
+     "module": "Beginning life"
+    },
+    {
+     "id": "u11-03",
+     "title": "Infant health and development",
+     "module": "Beginning life"
+    },
+    {
+     "id": "u11-04",
+     "title": "Child health and the Healthy Child Programme",
+     "module": "Beginning life"
+    },
+    {
+     "id": "u11-05",
+     "title": "Adolescent health",
+     "module": "Growing up"
+    },
+    {
+     "id": "u11-06",
+     "title": "Sexual and reproductive health",
+     "module": "Growing up"
+    },
+    {
+     "id": "u11-07",
+     "title": "Young adults and health",
+     "module": "Growing up"
+    },
+    {
+     "id": "u11-08",
+     "title": "Adult health checks",
+     "module": "Adulthood and later life"
+    },
+    {
+     "id": "u11-09",
+     "title": "Menopause",
+     "module": "Adulthood and later life"
+    },
+    {
+     "id": "u11-10",
+     "title": "Healthy ageing",
+     "module": "Adulthood and later life"
+    },
+    {
+     "id": "u11-11",
+     "title": "Frailty and falls",
+     "module": "Adulthood and later life"
+    },
+    {
+     "id": "u11-12",
+     "title": "Carers and caring",
+     "module": "Adulthood and later life"
+    },
+    {
+     "id": "u11-13",
+     "title": "End of life care",
+     "module": "Adulthood and later life"
+    }
+   ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "organ-systems",
+   "title": "Human organ-system explorer",
+   "kind": "Explorer",
+   "sub": "Switch body systems on and off on a real 3D anatomy model and tap organs to see what they do and which systems they belong to.",
+   "note": "SciGradify Biology's explorer on the BodyParts3D adult male model (CC BY 4.0); female organs and fine structures aren't included.",
+   "tasks": null,
+   "lessons": [
+    "u02-01",
+    "u02-12",
+    "u02-16"
+   ],
+   "url": "https://getgradify.com/healthgradify/course/#/practice/organ-systems"
+  },
+  {
+   "id": "heart",
+   "title": "The cardiac cycle",
+   "kind": "Simulation",
+   "sub": "A model left heart: pressures, volumes and valves through each beat, and how heart rate, contractility and resistance change cardiac output and blood pressure.",
+   "note": "SciGradify Biology's simulation: a time-varying elastance ventricle with a two-element Windkessel; left heart only, no reflexes.",
+   "tasks": null,
+   "lessons": [
+    "u02-07",
+    "u02-08"
+   ],
+   "url": "https://getgradify.com/healthgradify/course/#/practice/heart"
+  },
+  {
+   "id": "gas-exchange",
+   "title": "Gas exchange and oxygen transport",
+   "kind": "Simulation",
+   "sub": "Oxygen loading along a lung capillary and the haemoglobin dissociation curve, at altitude, with a thickened membrane and in exercise.",
+   "note": "SciGradify Biology's simulation: Fick diffusion with the Hill equation (n = 2.7, P₅₀ 26.8 mmHg); one capillary, no shunt or V/Q mismatch.",
+   "tasks": null,
+   "lessons": [
+    "u02-11",
+    "u02-10"
+   ],
+   "url": "https://getgradify.com/healthgradify/course/#/practice/gas-exchange"
+  },
+  {
+   "id": "kidney",
+   "title": "Kidney filtration and reabsorption",
+   "kind": "Simulation",
+   "sub": "Starling forces set the filtration rate; glucose reabsorption saturates, which is why uncontrolled diabetes puts glucose in the urine; ADH controls urine concentration.",
+   "note": "SciGradify Biology's simulation with textbook values (GFR 125 mL/min, glucose Tm 375 mg/min); no autoregulation.",
+   "tasks": null,
+   "lessons": [
+    "u02-14",
+    "u02-04"
+   ],
+   "url": "https://getgradify.com/healthgradify/course/#/practice/kidney"
+  },
+  {
+   "id": "immune-response",
+   "title": "Primary and secondary immune responses",
+   "kind": "Illustrative model",
+   "sub": "Infect and vaccinate on any day and compare a first response with a faster, larger memory response.",
+   "note": "SciGradify Biology's descriptive model of measured antibody responses, in arbitrary units; not a mechanistic simulation.",
+   "tasks": null,
+   "lessons": [
+    "u02-15",
+    "u08-03"
+   ],
+   "url": "https://getgradify.com/healthgradify/course/#/practice/immune-response"
+  },
+  {
+   "id": "sleep",
+   "title": "Sleep pressure and the body clock",
+   "kind": "Simulation",
+   "sub": "The two-process model: sleep pressure and the circadian clock across three days. Stay up late, cut sleep short or shift your schedule.",
+   "note": "PsychGradify's simulation; time constants from Daan, Beersma and Borbély (1984); circadian curve idealised; the clock doesn't re-entrain.",
+   "tasks": null,
+   "lessons": [
+    "u05-01",
+    "u05-03",
+    "u05-08"
+   ],
+   "url": "https://getgradify.com/healthgradify/course/#/practice/sleep"
+  },
+  {
+   "id": "stress",
+   "title": "The physiology of stress",
+   "kind": "Illustrative model",
+   "sub": "Step through the fast sympathetic (SAM) pathway and the slower HPA axis, cortisol's negative feedback and what changes under chronic stress.",
+   "note": "PsychGradify's illustrative sequence of established physiology; real responses overlap and vary.",
+   "tasks": null,
+   "lessons": [
+    "u05-11",
+    "u05-12",
+    "u02-06"
+   ],
+   "url": "https://getgradify.com/healthgradify/course/#/practice/stress"
+  }
+ ]
+}

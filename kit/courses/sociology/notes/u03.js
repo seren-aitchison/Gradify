@@ -22,6 +22,8 @@ X: Functionalist analysis of education
 > Education passes on shared values, creating social solidarity (Durkheim).
 > It teaches specialist skills for a complex division of labour.
 > It sorts people into roles according to ability (role allocation), supporting meritocracy (Davis and Moore, 1945).
+P: **Investigate with the lab.** Find the functionalists on the timeline, from Durkheim to Parsons, and note their key ideas.
+IX: theorists
 K: Functionalism explains institutions by the functions they serve for society as a whole, assuming value consensus and a tendency towards stability.
 H: Decline and critique
 P: From the 1960s functionalism lost ground. Critics argued it couldn't explain conflict and rapid change, overstated consensus, treated inequality as functional, and used **teleological** explanations (explaining an institution's existence by its effects). Interactionists said it treated people as passive "cultural dopes". Neofunctionalists such as Jeffrey Alexander later tried to revive parts of it.
@@ -42,6 +44,7 @@ M2#sociology-u03-01-q2@2: A sociologist argues that religion persists because it
 TF2#sociology-u03-01-q3@3: Functionalists argue that every institution is beneficial to every individual. | false | Functions concern the system; Merton also identified dysfunctions.
 M3#sociology-u03-01-q4@3: What is the teleological criticism of functionalism? | It explains an institution's existence by its effects | It ignores the functions of institutions | It relies only on interviews | It focuses on individual meanings | Saying something exists because it is useful confuses consequences with causes.
 SA3#sociology-u03-01-q5@3: Evaluate functionalism as an explanation of social order. | Strengths: explains integration and how institutions interrelate; influential (Durkheim, Parsons). Weaknesses: overstates consensus, can't explain conflict or rapid change, justifies inequality (Davis and Moore critiqued by Tumin), teleology, neglects agency. Neofunctionalism revises it. | Core assumptions ; Strength ; Conflict critique ; Teleology or agency ; Judgement
+M2#sociology-u03-01-q6@1: What analogy did functionalists use for society? | A living organism with interdependent parts | A battlefield between classes | A stage on which roles are performed | A market of buyers and sellers | Each institution was seen as an organ with a function for the whole.
 
 ## Parsons
 LV: Intermediate · Application
@@ -252,6 +255,8 @@ X: The meaning of a school uniform
 > To a head teacher it means discipline and belonging; to a pupil it may mean conformity, or a canvas for small acts of rebellion.
 > Meanings are negotiated in everyday interaction: how ties are worn, which rules are enforced.
 > Behaviour around the uniform follows these meanings, not the fabric itself.
+P: **Investigate with the lab.** Find Mead and Blumer on the timeline and note how interactionism differs from structural theories.
+IX: theorists
 K: Symbolic interactionism explains social life through the meanings people create and interpret in interaction, and the self as a social product.
 H: Evaluation
 P: Strengths: gives agency and meaning a central place; underpins labelling theory (Becker, 1963) and qualitative research; explains variation and change at the micro level. Weaknesses: neglects structure and power (why some definitions prevail); struggles to explain large-scale patterns; and concepts can be vague and hard to test.
@@ -271,6 +276,7 @@ M2#sociology-u03-07-q2@2: A child playing football learns to anticipate what all
 TF1#sociology-u03-07-q3@1: For Mead, the self is present at birth and unaffected by interaction. | false | Mead argued the self develops through social interaction.
 M3#sociology-u03-07-q4@3: What is the main structural criticism of symbolic interactionism? | It neglects power over meanings | It ignores people's meanings | It relies only on statistics | It denies the self exists | Power and structure shape which meanings dominate, which interactionism tends to underplay.
 SA3#sociology-u03-07-q5@3: Evaluate symbolic interactionism as a perspective on society. | Strengths: agency, meaning, the social self (Mead), interpretive process (Blumer), labelling theory, qualitative methods. Weaknesses: neglects structure, power and inequality; micro focus; vague concepts. Useful combined with structural perspectives. | Mead ; Blumer ; Strength ; Structural critique ; Judgement
+M2#sociology-u03-07-q6@1: What do symbolic interactionists focus on? | How people create meaning in everyday interaction | How institutions keep society stable | How class conflict drives change | How the economy determines culture | Interactionists study meanings, the self and interaction at the micro level.
 
 ## Goffman and dramaturgy
 LV: Intermediate · Application
@@ -880,6 +886,8 @@ X: Analysing educational inequality with several theories
 > Interactionist: teachers' labels shape pupils' identities in classrooms.
 > Feminist and intersectional: patterns differ by gender, ethnicity and class combined.
 > Together they explain structures, mechanisms and meanings that one theory alone would miss.
+P: **Investigate with the lab.** Use the timeline to see how later theorists, such as Giddens, tried to combine structure and action.
+IX: theorists
 K: Theoretical synthesis combines perspectives to explain both structure and agency, and macro patterns and micro meanings.
 H: Benefits and dangers
 P: Synthesis can give fuller explanations and avoid one-sided accounts. But combining theories with incompatible assumptions (consensus versus conflict, positivist versus interpretivist) can produce incoherent eclecticism. Good synthesis is explicit about which concepts it uses, why, and how they fit together, and tests them against evidence.
@@ -899,4 +907,5 @@ M2#sociology-u03-24-q2@2: An essay on crime lists functionalist, Marxist and int
 TF2#sociology-u03-24-q3@3: Combining theories always produces a better explanation. | false | Combining incompatible assumptions can produce incoherence.
 M3#sociology-u03-24-q4@3: Why might a sociologist combine Bourdieu with interactionism to study schooling? | To link structure and meaning | To avoid using any evidence | To reject both theories | To focus only on statistics | Combining them connects macro reproduction with micro processes.
 SA3#sociology-u03-24-q5@3: Using a social issue of your choice, show how combining theories improves explanation, and identify one risk. | Example: health inequalities. Marxist and Bourdieusian accounts explain material and cultural resources; interactionist accounts explain stigma and doctor–patient encounters; feminist and intersectional accounts explain differences by gender and ethnicity. Together they explain structure and experience. Risk: incoherent eclecticism if assumptions clash; must justify integration and test with evidence. | Issue ; At least three theories ; Integration ; Added value ; Risk
+M2#sociology-u03-24-q6@1: What did Giddens's structuration theory try to combine? | Structure and agency | Marxism and feminism | Positivism and interpretivism | Biology and sociology | Giddens argued structures shape action, and action reproduces structures.
 `;

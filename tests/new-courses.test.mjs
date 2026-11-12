@@ -5,14 +5,13 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readdir, readFile, access } from "node:fs/promises";
 import { parseNotes, norm } from "../kit/course/notes.js";
+import { schoolProblems } from "../scripts/lesson-standard.mjs";
 import { updateRegistry, scanQuestions } from "../scripts/curriculum-registry.mjs";
 import { COURSES } from "../kit/learning/learner-data.js";
 import { SITES } from "../kit/core/site.js";
 
 const root = new URL("../", import.meta.url);
-const SRC_KINDS = ["legislation", "case", "rule", "guidance", "standard", "primary", "secondary", "data"];
 const KINDS = ["Experiment", "Simulation", "Illustrative model", "Exercise", "Explorer", "Tool"];
-const EV = ["established", "contested", "hypothetical"];
 const found = [];
 for (const dir of (await readdir(new URL("kit/courses/", root))).sort()) {
   const c = (await import(new URL(`kit/courses/${dir}/course.js`, root))).default;
@@ -85,44 +84,10 @@ for (const { c, dir } of found) {
   });
 
   test(`${c.name}: every written lesson meets the lesson standard`, async () => {
-    const ixIds = new Set(c.interactives.map((x) => x.id)), seen = new Map();
-    for (const id of c.written) {
-      const u = units.find((x) => x.id === id), parsed = parseNotes(await c.notes(id));
-      for (const p of parsed) assert.ok(u.lessons.some((l) => norm(l.title) === norm(p.title)), `${id}: "${p.title}" isn't in the syllabus`);
-      for (const l of u.lessons) {
-        const L = parsed.find((p) => norm(p.title) === norm(l.title)), at = `${l.id} ${l.title}`;
-        assert.ok(L, `${id}: no notes for "${l.title}"`);
-        assert.ok(L.lead.length > 60, `${at}: lead`);
-        assert.ok(L.level, `${at}: level (LV:)`);
-        assert.ok(L.blocks.filter((b) => b.t === "h").length >= 2, `${at}: two sections`);
-        assert.ok(L.blocks.filter((b) => ["p", "ul", "eq", "ex", "key", "pit"].includes(b.t)).length >= 6, `${at}: too thin`);
-        assert.ok(L.blocks.some((b) => b.t === "key"), `${at}: key point`);
-        assert.ok(L.objectives.length >= 2, `${at}: objectives`);
-        assert.ok(L.terms.length >= 2, `${at}: key terms`);
-        assert.ok(L.summary.length >= 1, `${at}: summary`);
-        assert.ok(L.sources.length >= 2, `${at}: at least two sources`);
-        assert.ok(L.evidence.length >= 1, `${at}: evidence status (EV:)`);
-        for (const e of L.evidence) assert.ok(EV.includes(e.status), `${at}: evidence status "${e.status}"`);
-        for (const s of L.sources) {
-          assert.ok(SRC_KINDS.includes(s.kind), `${at}: source kind "${s.kind}"`);
-          assert.match(s.date, /^\d{4}(-\d\d){0,2}$/, `${at}: source date`);
-          if (s.url) assert.match(s.url, /^https:\/\//, `${at}: source link`);
-        }
-        for (const b of L.blocks.filter((x) => x.t === "ix")) assert.ok(ixIds.has(b.id), `${at}: interactive ${b.id}`);
-        assert.ok(L.cards.length >= 2, `${at}: flashcards`);
-        assert.ok(L.mcq.length >= 2, `${at}: check questions`);
-        for (const m of L.mcq) {
-          assert.ok(m.wrong.length >= 3 && !m.wrong.includes(m.right) && m.why.length > 40, `${at}: "${m.q}" needs three distractors and an explanation`);
-          const k = norm(m.q); assert.ok(!seen.has(k), `${at}: duplicate question (also in ${seen.get(k)})`); seen.set(k, at);
-        }
-        const all = [...L.mcq.map((m) => m.Q), ...L.tasks];
-        assert.ok(all.length >= 5, `${at}: at least five questions`);
-        assert.deepEqual([...new Set(all.map((q) => q.d))].sort(), [1, 2, 3], `${at}: questions at all three levels`);
-        for (const q of all) { assert.ok(q.objectives.length, `${at}: "${q.q.slice(0, 40)}" is linked to an objective`); for (const o of q.objectives) assert.ok(o >= 1 && o <= L.objectives.length, `${at}: objective ${o}`); }
-        for (const q of L.tasks) if (q.type !== "short") assert.ok(q.why?.length > 20, `${at}: "${q.q}" explains its answer`);
-        assert.ok(L.tasks.some((q) => q.type === "short"), `${at}: an extended or short written answer`);
-      }
-    }
+    // the standard is scripts/lesson-standard.mjs, shared with `node scripts/new-course.mjs check`; every problem is listed
+    const ixIds = new Set(c.interactives.map((x) => x.id)), seen = new Map(), problems = [];
+    for (const id of c.written) problems.push(...schoolProblems(await c.notes(id), units.find((x) => x.id === id), { ixIds, seen }).problems);
+    assert.deepEqual(problems, [], `run node scripts/new-course.mjs check ${dir}`);
   });
 
   test(`${c.name}: questions have permanent ids, and the registry is up to date`, async () => {

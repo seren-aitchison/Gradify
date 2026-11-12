@@ -12,10 +12,13 @@ P: The Moon is 60 Earth radii away, so gravity there should be g/3600 = 2.7 × 1
 X: Find the force between two 1000 kg cars 2 m apart.
 > F = 6.67 × 10^{-11} × 10^{6}/4 = 1.7 × 10^{-5} N: utterly negligible
 !: r is measured between centres, not between surfaces.
+P: **Investigate with the lab.** Launch the planet from different distances and watch its acceleration change. Check that doubling the distance makes the pull four times weaker.
+IX: orbits
 Q: State Newton's law of gravitation. | F = Gm_{1}m_{2}/r^{2}, attractive, along the line between centres.
 Q: What does the shell theorem say? | A spherically symmetric mass attracts outside bodies as if all its mass were at its centre (and exerts no net force inside a hollow shell).
 M1: If the distance between two masses triples, the force: | Falls to 1/9 | Falls to 1/3 | Triples | Is unchanged | Inverse square.
 M2: Who first measured G in the laboratory? | Cavendish (1798) | Newton | Kepler | Einstein | Using a torsion balance.
+M2: The distance between two masses is doubled. What happens to the gravitational force? | It falls to a quarter | It halves | It doubles | It stays the same | Newton's law is an inverse square law: F ∝ 1/r².
 
 ## Gravitational fields
 S: A gravitational field is the region around a mass where other masses feel a force. Field lines show its direction; their density shows its strength. It replaces "action at a distance" with a local property of space.
@@ -88,10 +91,13 @@ E: R_{s} = 2GM/c^{2} :: radius where v_{esc} would equal c (exact result in gene
 X: Find the escape velocity from the Moon (M = 7.35 × 10^{22} kg, R = 1.74 × 10^{6} m).
 > v = √(2 × 6.67 × 10^{-11} × 7.35 × 10^{22}/1.74 × 10^{6}) = 2.4 km s^{-1}
 !: Rockets don't need to reach escape velocity at launch; with continuous thrust they can climb slowly. v_{esc} applies to an unpowered launch.
+P: **Investigate with the lab.** Increase the launch speed until the planet never comes back. Compare that speed with the circular orbital speed at the same distance: it is √2 times larger.
+IX: orbits
 Q: What is the escape velocity from Earth's surface? | About 11.2 km s^{-1}.
 Q: What is the Schwarzschild radius? | R_{s} = 2GM/c^{2}, the radius at which escape speed equals c.
 M1: Escape velocity depends on the projectile's: | Nothing about the projectile | Mass | Shape | Charge | v_{esc} = √(2GM/R).
 M2: A planet has the same density as Earth but twice its radius. Its escape velocity: | Doubles | Is the same | Halves | Quadruples | M ∝ R^{3}, so √(M/R) ∝ R.
+M2: How does escape velocity compare with circular orbital speed at the same distance? | It is √2 times larger | It is the same | It is twice as large | It is half as large | v_esc = √(2GM/r) and v_orb = √(GM/r), so v_esc = √2 × v_orb.
 
 ## Orbital velocity
 S: A satellite in a circular orbit falls continuously around the planet: gravity supplies exactly the centripetal force needed at its speed. Orbital speed falls with distance, and is 1/√2 of the escape speed at the same radius.
@@ -107,10 +113,13 @@ X: Find the altitude of a geostationary satellite.
 > r^{3} = GMT^{2}/4π^{2} = 3.99 × 10^{14} × (86 164)^{2}/39.5 = 7.5 × 10^{22} m^{3}
 > r = 4.22 × 10^{7} m; altitude ≈ 35 800 km
 !: Higher orbits are slower, though they have more total energy. To catch up with a spacecraft ahead of you in orbit, you first slow down to drop lower.
+P: **Investigate with the lab.** Put the planet in a circular orbit (eccentricity below 0.02). Then start it further out and find the circular speed again: it is lower.
+IX: orbits
 Q: What is the orbital speed of a circular orbit of radius r? | v = √(GM/r).
 Q: How do orbital and escape speeds at the same radius compare? | v_{esc} = √2 v_{orb}.
 M1: A satellite moves to an orbit 4 times larger in radius. Its speed: | Halves | Doubles | Quarters | Stays the same | v ∝ 1/√r.
 M2: The period of a geostationary orbit is: | One sidereal day (23 h 56 min) | 24 h exactly | 12 h | 90 min | It matches Earth's rotation relative to the stars.
+M2: How does circular orbital speed change with distance from the star? | It decreases as 1/√r | It increases as √r | It is the same at every distance | It increases as r² | v = √(GM/r), so more distant orbits are slower.
 
 ## Circular and elliptical orbits
 S: Bound orbits under an inverse-square force are ellipses with the central body at one focus; a circle is the special case of zero eccentricity. Unbound orbits are parabolas or hyperbolas.
@@ -129,10 +138,13 @@ X: A comet has perihelion 0.6 AU and aphelion 35 AU. Find a and e.
 > a = (0.6 + 35)/2 = 17.8 AU
 > e = (35 − 0.6)/(35 + 0.6) = 0.97
 !: The Sun is at a focus of the ellipse, not at its centre.
+P: **Investigate with the lab.** Make an ellipse with eccentricity above 0.6 and watch the planet speed up near the star and slow down far away.
+IX: orbits
 Q: What is the vis-viva equation? | v^{2} = GM(2/r − 1/a).
 Q: What decides whether an orbit is bound? | Its total energy: negative energy means a bound ellipse.
 M1: An orbit with e = 0 is: | A circle | A parabola | A hyperbola | A straight line | Zero eccentricity.
 M2: Where is an orbiting body fastest? | At periapsis | At apoapsis | Everywhere the same | At the end of the minor axis | Angular momentum conservation.
+M2: Where is a planet on an elliptical orbit moving fastest? | At closest approach to the star | At its furthest point from the star | Halfway along the orbit | It moves at constant speed | Angular momentum is conserved, so the planet moves fastest where it is closest.
 
 ## Kepler's laws
 S: Kepler found three laws in Tycho Brahe's planetary data; Newton showed they follow from an inverse-square gravitational force. They still describe moons, exoplanets and binary stars.
@@ -147,10 +159,13 @@ X: Jupiter is 5.2 AU from the Sun. Find its period.
 > T^{2} = a^{3} (years, AU) = 140.6
 > T = 11.9 years
 !: The third law in its simple form T^{2} ∝ a^{3} compares bodies orbiting the same central mass; Earth's satellites and the planets have different constants.
+P: **Investigate with the lab.** Try orbits of two sizes and compare T² with a³. Then check equal areas in equal times on an eccentric orbit.
+IX: orbits
 Q: What does Kepler's second law express physically? | Conservation of angular momentum.
 Q: How can Kepler's third law measure a star's mass? | From a planet's period and orbit size: M = 4π^{2}a^{3}/(GT^{2}).
 M1: A planet at 4 AU has a period of: | 8 years | 4 years | 16 years | 2 years | T = a^{3/2}.
 M2: Kepler's laws were derived from observations by: | Tycho Brahe | Galileo | Copernicus | Ptolemy | Kepler analysed Tycho's precise data.
+M2: One planet's orbit has four times the semi-major axis of another's. How do their periods compare? | Eight times longer | Four times longer | Sixteen times longer | Twice as long | Kepler's third law: T² ∝ a³, so T ∝ a^{1.5} = 4^{1.5} = 8.
 
 ## Satellite motion
 S: Satellites are placed in orbits chosen for their purpose: low orbits for imaging and the ISS, sun-synchronous polar orbits for Earth observation, medium orbits for navigation, and geostationary orbits for communications and weather.
@@ -168,10 +183,13 @@ X: Why does GPS need relativity?
 > Satellite clocks run fast by ~45 μs per day (weaker gravity) and slow by ~7 μs per day (speed): net +38 μs per day
 > Uncorrected, position errors would grow by ~10 km per day
 !: Drag on a satellite makes it speed up, not slow down: it drops to a lower orbit where the orbital speed is higher.
+P: **Investigate with the lab.** Find the circular orbit for a satellite close in, then one further out, and compare their periods.
+IX: orbits
 Q: Why are Earth observation satellites often sun-synchronous? | So they pass over each place at the same local solar time, giving consistent lighting.
 Q: What happens to a LEO satellite's speed as drag lowers its orbit? | It increases.
 M1: GPS satellites orbit in: | Medium Earth orbit (~20 000 km) | Geostationary orbit | LEO | Polar LEO only | About 12-hour orbits.
 M2: The net relativistic clock offset for GPS satellites is about: | +38 μs per day | −7 μs per day | 0 | +1 s per day | Gravitational blueshift exceeds velocity time dilation.
+M2: Why must a geostationary satellite orbit at one particular height? | Its period must be exactly one day, which fixes its orbital radius | It must be beyond the reach of Earth's gravity | It must avoid the Moon's orbit | Its speed must be zero relative to the stars | T² ∝ r³ means only one radius gives a 24-hour period.
 
 ## Orbital energy and angular momentum
 S: An orbit's total energy fixes its size (semi-major axis); its angular momentum fixes its shape. In circular orbits, kinetic energy is half the magnitude of potential energy and total energy is negative.
@@ -188,10 +206,13 @@ X: A 500 kg satellite moves from r = 7000 km to 8000 km (circular). Find ΔE, Δ
 > GMm = 3.99 × 10^{14} × 500 = 2.0 × 10^{17}
 > E: −14.25 GJ → −12.47 GJ, ΔE = +1.78 GJ; ΔKE = −1.78 GJ; ΔU = +3.56 GJ
 !: Total orbital energy is negative for bound orbits; "more energy" means less negative.
+P: **Investigate with the lab.** On an eccentric orbit, watch the kinetic and potential energy exchange while the total stays constant. Then give the planet escape velocity and note the total energy reaches zero.
+IX: orbits
 Q: State the virial theorem for circular gravitational orbits. | 2KE = −U, so E = −KE = U/2.
 Q: What sets the shape of an orbit at fixed energy? | Its angular momentum (larger L means less eccentric).
 M1: For a circular orbit, if KE = 5 GJ, the total energy is: | −5 GJ | 5 GJ | −10 GJ | 10 GJ | E = −KE.
 M2: The L^{2}/(2mr^{2}) term in the effective potential: | Prevents the orbit reaching r = 0 | Represents drag | Is the gravitational PE | Is always zero | It's a centrifugal barrier.
+M2: What is the sign of the total energy of a bound orbit? | Negative | Positive | Zero | It changes sign each orbit | A bound orbit has total energy below zero; at escape velocity it reaches zero.
 
 ## Two-body gravitational problem
 S: Two bodies orbiting under mutual gravity both circle their common centre of mass. Their relative motion is equivalent to one body of reduced mass orbiting a fixed centre, so Kepler's results apply exactly.

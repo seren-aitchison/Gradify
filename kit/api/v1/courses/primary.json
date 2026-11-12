@@ -1,0 +1,1139 @@
+{
+ "api": 1,
+ "slug": "primary",
+ "name": "Primary",
+ "site": "JuniorGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>For children learning with a grown-up.</b> JuniorGradify Primary is for children aged 5 to 11, working alongside a parent, carer or teacher. It follows the national curriculum in England but is not a school, doesn't replace your child's teacher and isn't official SATs material. The lessons were drafted with AI assistance and haven't yet been checked by a qualified primary school teacher, so they may contain mistakes: check anything important with your child's school. No personal data is collected: the only thing kept is progress, saved on this device.",
+ "notes": "/kit/courses/primary/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Maths",
+   "units": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "from": "#7fe05a",
+   "to": "#22d3ee"
+  },
+  {
+   "name": "Stage 2 · English",
+   "units": [
+    5,
+    6,
+    7
+   ],
+   "from": "#fbbf24",
+   "to": "#7fe05a"
+  },
+  {
+   "name": "Stage 3 · Science",
+   "units": [
+    8,
+    9,
+    10
+   ],
+   "from": "#34d399",
+   "to": "#38bdf8"
+  },
+  {
+   "name": "Stage 4 · History and geography",
+   "units": [
+    11,
+    12
+   ],
+   "from": "#f472b6",
+   "to": "#a78bfa"
+  }
+ ],
+ "paths": [
+  {
+   "id": "ks1",
+   "name": "Key Stage 1 (ages 5 to 7)",
+   "sub": "The first steps: counting, place value, adding and taking away, phonics, early reading, and plants and animals.",
+   "units": [
+    1,
+    2,
+    5,
+    6,
+    8
+   ],
+   "select": null
+  },
+  {
+   "id": "sats",
+   "name": "Getting ready for Year 6 SATs",
+   "sub": "The maths and English that the Key Stage 2 tests cover: number, calculation, fractions, measures, reading, grammar, punctuation and spelling.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    5
+   ],
+   "select": null
+  },
+  {
+   "id": "maths",
+   "name": "Maths from Year 1 to Year 6",
+   "sub": "Every maths school in order, from counting to 20 to fractions, ratio, geometry and statistics.",
+   "units": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "select": null
+  },
+  {
+   "id": "science",
+   "name": "Primary science",
+   "sub": "Living things, materials, forces, light, sound, electricity, and the Earth in space.",
+   "units": [
+    8,
+    9,
+    10
+   ],
+   "select": null
+  },
+  {
+   "id": "world",
+   "name": "Our world: history and geography",
+   "sub": "Britain from the Stone Age to the Vikings, ancient civilisations, and the places, maps and landscapes of the world.",
+   "units": [
+    11,
+    12
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Maths",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · English",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    5,
+    6,
+    7
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Science",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    8,
+    9,
+    10
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · History and geography",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    11,
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Number and Place Value",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "Counting objects to 20",
+     "module": "Counting and numbers"
+    },
+    {
+     "id": "u01-02",
+     "title": "Counting forwards and backwards",
+     "module": "Counting and numbers"
+    },
+    {
+     "id": "u01-03",
+     "title": "Reading and writing numbers to 100",
+     "module": "Counting and numbers"
+    },
+    {
+     "id": "u01-04",
+     "title": "Odd and even numbers",
+     "module": "Counting and numbers"
+    },
+    {
+     "id": "u01-05",
+     "title": "Tens and ones",
+     "module": "Place value"
+    },
+    {
+     "id": "u01-06",
+     "title": "Hundreds, tens and ones",
+     "module": "Place value"
+    },
+    {
+     "id": "u01-07",
+     "title": "Thousands and beyond",
+     "module": "Place value"
+    },
+    {
+     "id": "u01-08",
+     "title": "Comparing and ordering numbers",
+     "module": "Place value"
+    },
+    {
+     "id": "u01-09",
+     "title": "Rounding numbers",
+     "module": "Place value"
+    },
+    {
+     "id": "u01-10",
+     "title": "Counting in steps",
+     "module": "Number patterns"
+    },
+    {
+     "id": "u01-11",
+     "title": "Negative numbers",
+     "module": "Number patterns"
+    },
+    {
+     "id": "u01-12",
+     "title": "Roman numerals",
+     "module": "Number patterns"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "The Four Operations and Times Tables",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Number bonds",
+     "module": "Adding and subtracting"
+    },
+    {
+     "id": "u02-02",
+     "title": "Adding in your head",
+     "module": "Adding and subtracting"
+    },
+    {
+     "id": "u02-03",
+     "title": "Subtracting in your head",
+     "module": "Adding and subtracting"
+    },
+    {
+     "id": "u02-04",
+     "title": "Column addition",
+     "module": "Adding and subtracting"
+    },
+    {
+     "id": "u02-05",
+     "title": "Column subtraction",
+     "module": "Adding and subtracting"
+    },
+    {
+     "id": "u02-06",
+     "title": "Checking with the inverse",
+     "module": "Adding and subtracting"
+    },
+    {
+     "id": "u02-07",
+     "title": "What multiplication means",
+     "module": "Multiplying and dividing"
+    },
+    {
+     "id": "u02-08",
+     "title": "Times tables",
+     "module": "Multiplying and dividing"
+    },
+    {
+     "id": "u02-09",
+     "title": "Factors and multiples",
+     "module": "Multiplying and dividing"
+    },
+    {
+     "id": "u02-10",
+     "title": "What division means",
+     "module": "Multiplying and dividing"
+    },
+    {
+     "id": "u02-11",
+     "title": "Written multiplication",
+     "module": "Multiplying and dividing"
+    },
+    {
+     "id": "u02-12",
+     "title": "Short division and remainders",
+     "module": "Multiplying and dividing"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Fractions, Decimals and Percentages",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Halves and quarters",
+     "module": "Fractions"
+    },
+    {
+     "id": "u03-02",
+     "title": "Unit and non-unit fractions",
+     "module": "Fractions"
+    },
+    {
+     "id": "u03-03",
+     "title": "Equivalent fractions",
+     "module": "Fractions"
+    },
+    {
+     "id": "u03-04",
+     "title": "Comparing fractions",
+     "module": "Fractions"
+    },
+    {
+     "id": "u03-05",
+     "title": "Adding and subtracting fractions",
+     "module": "Fractions"
+    },
+    {
+     "id": "u03-06",
+     "title": "Fractions of amounts",
+     "module": "Fractions"
+    },
+    {
+     "id": "u03-07",
+     "title": "Mixed numbers and improper fractions",
+     "module": "Fractions"
+    },
+    {
+     "id": "u03-08",
+     "title": "Multiplying and dividing fractions",
+     "module": "Fractions"
+    },
+    {
+     "id": "u03-09",
+     "title": "Tenths and hundredths",
+     "module": "Decimals and percentages"
+    },
+    {
+     "id": "u03-10",
+     "title": "Decimal place value",
+     "module": "Decimals and percentages"
+    },
+    {
+     "id": "u03-11",
+     "title": "Rounding decimals",
+     "module": "Decimals and percentages"
+    },
+    {
+     "id": "u03-12",
+     "title": "Percentages",
+     "module": "Decimals and percentages"
+    },
+    {
+     "id": "u03-13",
+     "title": "Fractions, decimals and percentages together",
+     "module": "Decimals and percentages"
+    },
+    {
+     "id": "u03-14",
+     "title": "Ratio and proportion",
+     "module": "Decimals and percentages"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Measurement, Geometry and Statistics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Length and height",
+     "module": "Measurement"
+    },
+    {
+     "id": "u04-02",
+     "title": "Mass and capacity",
+     "module": "Measurement"
+    },
+    {
+     "id": "u04-03",
+     "title": "Money",
+     "module": "Measurement"
+    },
+    {
+     "id": "u04-04",
+     "title": "Telling the time",
+     "module": "Measurement"
+    },
+    {
+     "id": "u04-05",
+     "title": "Perimeter",
+     "module": "Measurement"
+    },
+    {
+     "id": "u04-06",
+     "title": "Area",
+     "module": "Measurement"
+    },
+    {
+     "id": "u04-07",
+     "title": "Volume",
+     "module": "Measurement"
+    },
+    {
+     "id": "u04-08",
+     "title": "Converting units",
+     "module": "Measurement"
+    },
+    {
+     "id": "u04-09",
+     "title": "2-D shapes",
+     "module": "Geometry"
+    },
+    {
+     "id": "u04-10",
+     "title": "3-D shapes",
+     "module": "Geometry"
+    },
+    {
+     "id": "u04-11",
+     "title": "Angles",
+     "module": "Geometry"
+    },
+    {
+     "id": "u04-12",
+     "title": "Lines of symmetry",
+     "module": "Geometry"
+    },
+    {
+     "id": "u04-13",
+     "title": "Position and direction",
+     "module": "Geometry"
+    },
+    {
+     "id": "u04-14",
+     "title": "Coordinates",
+     "module": "Geometry"
+    },
+    {
+     "id": "u04-15",
+     "title": "Tally charts and pictograms",
+     "module": "Statistics"
+    },
+    {
+     "id": "u04-16",
+     "title": "Bar charts and tables",
+     "module": "Statistics"
+    },
+    {
+     "id": "u04-17",
+     "title": "Line graphs",
+     "module": "Statistics"
+    },
+    {
+     "id": "u04-18",
+     "title": "The mean",
+     "module": "Statistics"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Phonics and Spelling",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Letters and sounds",
+     "module": "Phonics"
+    },
+    {
+     "id": "u05-02",
+     "title": "Blending to read",
+     "module": "Phonics"
+    },
+    {
+     "id": "u05-03",
+     "title": "Segmenting to spell",
+     "module": "Phonics"
+    },
+    {
+     "id": "u05-04",
+     "title": "Digraphs and trigraphs",
+     "module": "Phonics"
+    },
+    {
+     "id": "u05-05",
+     "title": "Tricky words",
+     "module": "Phonics"
+    },
+    {
+     "id": "u05-06",
+     "title": "Alternative spellings of sounds",
+     "module": "Phonics"
+    },
+    {
+     "id": "u05-07",
+     "title": "Adding suffixes",
+     "module": "Spelling"
+    },
+    {
+     "id": "u05-08",
+     "title": "Prefixes",
+     "module": "Spelling"
+    },
+    {
+     "id": "u05-09",
+     "title": "Plurals",
+     "module": "Spelling"
+    },
+    {
+     "id": "u05-10",
+     "title": "Homophones",
+     "module": "Spelling"
+    },
+    {
+     "id": "u05-11",
+     "title": "Silent letters",
+     "module": "Spelling"
+    },
+    {
+     "id": "u05-12",
+     "title": "Spelling rules and exceptions",
+     "module": "Spelling"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Reading and Comprehension",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Reading for pleasure",
+     "module": "Becoming a reader"
+    },
+    {
+     "id": "u06-02",
+     "title": "Reading fluently",
+     "module": "Becoming a reader"
+    },
+    {
+     "id": "u06-03",
+     "title": "Understanding new words",
+     "module": "Becoming a reader"
+    },
+    {
+     "id": "u06-04",
+     "title": "Retrieving information",
+     "module": "Comprehension skills"
+    },
+    {
+     "id": "u06-05",
+     "title": "Making inferences",
+     "module": "Comprehension skills"
+    },
+    {
+     "id": "u06-06",
+     "title": "Predicting",
+     "module": "Comprehension skills"
+    },
+    {
+     "id": "u06-07",
+     "title": "Summarising",
+     "module": "Comprehension skills"
+    },
+    {
+     "id": "u06-08",
+     "title": "The author's choice of language",
+     "module": "Comprehension skills"
+    },
+    {
+     "id": "u06-09",
+     "title": "Fiction and non-fiction",
+     "module": "Comprehension skills"
+    },
+    {
+     "id": "u06-10",
+     "title": "Poetry",
+     "module": "Comprehension skills"
+    },
+    {
+     "id": "u06-11",
+     "title": "Reading a play",
+     "module": "Comprehension skills"
+    },
+    {
+     "id": "u06-12",
+     "title": "Answering comprehension questions",
+     "module": "Comprehension skills"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Grammar, Punctuation and Writing",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Nouns and noun phrases",
+     "module": "Grammar"
+    },
+    {
+     "id": "u07-02",
+     "title": "Verbs and tenses",
+     "module": "Grammar"
+    },
+    {
+     "id": "u07-03",
+     "title": "Adjectives and adverbs",
+     "module": "Grammar"
+    },
+    {
+     "id": "u07-04",
+     "title": "Pronouns",
+     "module": "Grammar"
+    },
+    {
+     "id": "u07-05",
+     "title": "Conjunctions",
+     "module": "Grammar"
+    },
+    {
+     "id": "u07-06",
+     "title": "Prepositions",
+     "module": "Grammar"
+    },
+    {
+     "id": "u07-07",
+     "title": "Clauses and sentences",
+     "module": "Grammar"
+    },
+    {
+     "id": "u07-08",
+     "title": "Active and passive voice",
+     "module": "Grammar"
+    },
+    {
+     "id": "u07-09",
+     "title": "Capital letters and full stops",
+     "module": "Punctuation"
+    },
+    {
+     "id": "u07-10",
+     "title": "Question marks and exclamation marks",
+     "module": "Punctuation"
+    },
+    {
+     "id": "u07-11",
+     "title": "Commas",
+     "module": "Punctuation"
+    },
+    {
+     "id": "u07-12",
+     "title": "Apostrophes",
+     "module": "Punctuation"
+    },
+    {
+     "id": "u07-13",
+     "title": "Inverted commas",
+     "module": "Punctuation"
+    },
+    {
+     "id": "u07-14",
+     "title": "Brackets, dashes, colons and semicolons",
+     "module": "Punctuation"
+    },
+    {
+     "id": "u07-15",
+     "title": "Planning your writing",
+     "module": "Writing"
+    },
+    {
+     "id": "u07-16",
+     "title": "Writing a story",
+     "module": "Writing"
+    },
+    {
+     "id": "u07-17",
+     "title": "Non-fiction writing",
+     "module": "Writing"
+    },
+    {
+     "id": "u07-18",
+     "title": "Editing and improving",
+     "module": "Writing"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Plants, Animals and Habitats",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Parts of a plant",
+     "module": "Plants"
+    },
+    {
+     "id": "u08-02",
+     "title": "What plants need to grow",
+     "module": "Plants"
+    },
+    {
+     "id": "u08-03",
+     "title": "How seeds and bulbs grow",
+     "module": "Plants"
+    },
+    {
+     "id": "u08-04",
+     "title": "Pollination and seed dispersal",
+     "module": "Plants"
+    },
+    {
+     "id": "u08-05",
+     "title": "Animal groups",
+     "module": "Animals including humans"
+    },
+    {
+     "id": "u08-06",
+     "title": "The human body and senses",
+     "module": "Animals including humans"
+    },
+    {
+     "id": "u08-07",
+     "title": "Teeth and eating",
+     "module": "Animals including humans"
+    },
+    {
+     "id": "u08-08",
+     "title": "Skeletons and muscles",
+     "module": "Animals including humans"
+    },
+    {
+     "id": "u08-09",
+     "title": "The digestive system",
+     "module": "Animals including humans"
+    },
+    {
+     "id": "u08-10",
+     "title": "The heart and circulation",
+     "module": "Animals including humans"
+    },
+    {
+     "id": "u08-11",
+     "title": "Healthy living",
+     "module": "Animals including humans"
+    },
+    {
+     "id": "u08-12",
+     "title": "Habitats",
+     "module": "Living things and their habitats"
+    },
+    {
+     "id": "u08-13",
+     "title": "Food chains",
+     "module": "Living things and their habitats"
+    },
+    {
+     "id": "u08-14",
+     "title": "Classifying living things",
+     "module": "Living things and their habitats"
+    },
+    {
+     "id": "u08-15",
+     "title": "Life cycles",
+     "module": "Living things and their habitats"
+    },
+    {
+     "id": "u08-16",
+     "title": "Evolution and inheritance",
+     "module": "Living things and their habitats"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Materials, Forces and Magnets",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Everyday materials",
+     "module": "Materials"
+    },
+    {
+     "id": "u09-02",
+     "title": "Properties of materials",
+     "module": "Materials"
+    },
+    {
+     "id": "u09-03",
+     "title": "Solids, liquids and gases",
+     "module": "Materials"
+    },
+    {
+     "id": "u09-04",
+     "title": "The water cycle",
+     "module": "Materials"
+    },
+    {
+     "id": "u09-05",
+     "title": "Rocks and soils",
+     "module": "Materials"
+    },
+    {
+     "id": "u09-06",
+     "title": "Changes of materials",
+     "module": "Materials"
+    },
+    {
+     "id": "u09-07",
+     "title": "Pushes and pulls",
+     "module": "Forces"
+    },
+    {
+     "id": "u09-08",
+     "title": "Friction",
+     "module": "Forces"
+    },
+    {
+     "id": "u09-09",
+     "title": "Gravity",
+     "module": "Forces"
+    },
+    {
+     "id": "u09-10",
+     "title": "Air and water resistance",
+     "module": "Forces"
+    },
+    {
+     "id": "u09-11",
+     "title": "Magnets",
+     "module": "Forces"
+    },
+    {
+     "id": "u09-12",
+     "title": "Levers, pulleys and gears",
+     "module": "Forces"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Light, Sound, Electricity, Earth and Space",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Light and dark",
+     "module": "Light and sound"
+    },
+    {
+     "id": "u10-02",
+     "title": "Shadows",
+     "module": "Light and sound"
+    },
+    {
+     "id": "u10-03",
+     "title": "How we see",
+     "module": "Light and sound"
+    },
+    {
+     "id": "u10-04",
+     "title": "How sounds are made",
+     "module": "Light and sound"
+    },
+    {
+     "id": "u10-05",
+     "title": "Pitch and volume",
+     "module": "Light and sound"
+    },
+    {
+     "id": "u10-06",
+     "title": "Electrical safety",
+     "module": "Electricity"
+    },
+    {
+     "id": "u10-07",
+     "title": "Simple circuits",
+     "module": "Electricity"
+    },
+    {
+     "id": "u10-08",
+     "title": "Conductors and insulators",
+     "module": "Electricity"
+    },
+    {
+     "id": "u10-09",
+     "title": "Circuit symbols",
+     "module": "Electricity"
+    },
+    {
+     "id": "u10-10",
+     "title": "Seasons and weather",
+     "module": "Earth and space"
+    },
+    {
+     "id": "u10-11",
+     "title": "Day and night",
+     "module": "Earth and space"
+    },
+    {
+     "id": "u10-12",
+     "title": "The Sun, Earth and Moon",
+     "module": "Earth and space"
+    },
+    {
+     "id": "u10-13",
+     "title": "The solar system",
+     "module": "Earth and space"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "History",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Changes within living memory",
+     "module": "British history"
+    },
+    {
+     "id": "u11-02",
+     "title": "The Stone Age to the Iron Age",
+     "module": "British history"
+    },
+    {
+     "id": "u11-03",
+     "title": "Roman Britain",
+     "module": "British history"
+    },
+    {
+     "id": "u11-04",
+     "title": "Anglo-Saxons and Scots",
+     "module": "British history"
+    },
+    {
+     "id": "u11-05",
+     "title": "Vikings",
+     "module": "British history"
+    },
+    {
+     "id": "u11-06",
+     "title": "A local history study",
+     "module": "British history"
+    },
+    {
+     "id": "u11-07",
+     "title": "A theme beyond 1066",
+     "module": "British history"
+    },
+    {
+     "id": "u11-08",
+     "title": "Ancient Egypt",
+     "module": "The wider world"
+    },
+    {
+     "id": "u11-09",
+     "title": "Ancient Greece",
+     "module": "The wider world"
+    },
+    {
+     "id": "u11-10",
+     "title": "The Maya",
+     "module": "The wider world"
+    },
+    {
+     "id": "u11-11",
+     "title": "Events beyond living memory",
+     "module": "The wider world"
+    },
+    {
+     "id": "u11-12",
+     "title": "Significant people",
+     "module": "The wider world"
+    },
+    {
+     "id": "u11-13",
+     "title": "Sources and evidence",
+     "module": "Thinking like a historian"
+    },
+    {
+     "id": "u11-14",
+     "title": "Timelines and chronology",
+     "module": "Thinking like a historian"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Geography",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "The United Kingdom",
+     "module": "Locational knowledge"
+    },
+    {
+     "id": "u12-02",
+     "title": "Continents and oceans",
+     "module": "Locational knowledge"
+    },
+    {
+     "id": "u12-03",
+     "title": "Countries and capitals",
+     "module": "Locational knowledge"
+    },
+    {
+     "id": "u12-04",
+     "title": "Latitude, longitude and time zones",
+     "module": "Locational knowledge"
+    },
+    {
+     "id": "u12-05",
+     "title": "Comparing places",
+     "module": "Place and human geography"
+    },
+    {
+     "id": "u12-06",
+     "title": "Settlements",
+     "module": "Place and human geography"
+    },
+    {
+     "id": "u12-07",
+     "title": "Land use and trade",
+     "module": "Place and human geography"
+    },
+    {
+     "id": "u12-08",
+     "title": "Rivers",
+     "module": "Physical geography"
+    },
+    {
+     "id": "u12-09",
+     "title": "Mountains",
+     "module": "Physical geography"
+    },
+    {
+     "id": "u12-10",
+     "title": "Volcanoes and earthquakes",
+     "module": "Physical geography"
+    },
+    {
+     "id": "u12-11",
+     "title": "Climate zones and biomes",
+     "module": "Physical geography"
+    },
+    {
+     "id": "u12-12",
+     "title": "Maps and compasses",
+     "module": "Geographical skills"
+    },
+    {
+     "id": "u12-13",
+     "title": "Grid references",
+     "module": "Geographical skills"
+    },
+    {
+     "id": "u12-14",
+     "title": "Fieldwork",
+     "module": "Geographical skills"
+    }
+   ]
+  }
+ ],
+ "interactives": []
+}

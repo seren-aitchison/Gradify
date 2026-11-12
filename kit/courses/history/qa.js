@@ -1,0 +1,25 @@
+// Quality assurance record, one entry per written school (docs/CURRICULUM_QA.md): written and tested are derived;
+// reviewed, sources and signoff are recorded facts, null until they have actually happened. AI review may complete
+// "reviewed" only if `by` says so; it can never complete "sources" or "signoff".
+export const QA = {
+  u18: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u17: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u16: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u15: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u14: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u13: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u06: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u05: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u08: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u04: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u03: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u12: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u11: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u01: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u02: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u07: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u09: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u10: { standard: 2, reviewed: null, sources: null, signoff: null },
+};
+// the date each school's notes were first written
+export const WRITTEN_ON = { u01: "2026-11-07", u02: "2026-11-07", u07: "2026-11-08", u09: "2026-11-08", u10: "2026-11-08", u11: "2026-11-08", u12: "2026-11-08", u03: "2026-11-08", u04: "2026-11-08", u08: "2026-11-08", u05: "2026-11-08", u06: "2026-11-08", u13: "2026-11-08", u14: "2026-11-08", u15: "2026-11-08", u16: "2026-11-08", u17: "2026-11-08", u18: "2026-11-08" };

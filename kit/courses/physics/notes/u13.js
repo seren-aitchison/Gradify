@@ -97,10 +97,13 @@ X: Compare v_{rms} of O_{2} and H_{2} at the same temperature.
 > v_{rms} ∝ 1/√m: ratio √(32/2) = 4
 > Hydrogen molecules are 4 times faster
 !: The average speed isn't the speed of the average kinetic energy; v_{rms} relates to ⟨KE⟩.
+P: **Investigate with the lab.** Start every particle at the same speed and watch the speeds spread into the Maxwell–Boltzmann curve.
+IX: gas
 Q: What is the rms speed of gas molecules? | v_{rms} = √(3k_{B}T/m).
 Q: Why does the distribution start at zero for v = 0? | The number of velocity states grows as v^{2} (shells in velocity space).
 M1: Doubling the absolute temperature multiplies v_{rms} by: | √2 | 2 | 4 | 1/√2 | ∝ √T.
 M2: Which is largest? | v_{rms} | v_{p} | ⟨v⟩ | All equal | 1.22 vs 1 and 1.13.
+M2: What does the Maxwell–Boltzmann distribution describe? | The spread of molecular speeds in a gas at one temperature | The pressure of a gas at different volumes | The speed of sound in a gas | The number of molecules in a mole | Collisions spread molecular speeds into a characteristic distribution.
 
 ## Partition functions
 S: The partition function Z is a weighted sum over all states. Once you have it, every thermodynamic quantity follows by differentiation: it encodes everything about a system in equilibrium.
@@ -180,10 +183,13 @@ P: Diatomic gases at room temperature have C_{V} = (5/2)R, not (7/2)R: vibration
 X: Mean speed fluctuation of a 1 μm, 10^{-15} kg particle in water at 300 K (one direction)?
 > ½m⟨v_{x}^{2}⟩ = ½k_{B}T ⇒ v_{rms,x} = √(k_{B}T/m) = √(4.1 × 10^{-21}/10^{-15}) = 2 mm s^{-1}
 !: Equipartition is classical; it fails for modes where the quantum spacing exceeds k_{B}T.
+P: **Investigate with the lab.** Double the temperature and see the mean kinetic energy of the molecules double too.
+IX: gas
 Q: State the equipartition theorem. | Each quadratic degree of freedom has average energy ½k_{B}T in classical equilibrium.
 Q: Why don't diatomic molecules' vibrations contribute to C_{V} at room temperature? | The vibrational quantum ħω is much larger than k_{B}T, so the mode is frozen out.
 M1: C_{V} of a monatomic ideal gas per mole: | (3/2)R | (5/2)R | 3R | R | Three translational terms.
 M2: The ultraviolet catastrophe came from applying equipartition to: | Cavity radiation modes | Gas molecules | Solids | Electrons in metals | Infinitely many modes each with k_{B}T.
+M2: How is the mean kinetic energy of ideal gas molecules related to temperature? | It is proportional to the absolute temperature | It is proportional to the square of temperature | It is independent of temperature | It is proportional to the temperature in °C | Mean translational kinetic energy = (3/2)kT.
 
 ## Classical ideal gases
 S: An ideal gas is a collection of non-interacting point particles. Statistical mechanics derives its equation of state, its internal energy and its absolute entropy from first principles.
@@ -201,10 +207,13 @@ X: Thermal de Broglie wavelength of helium at 300 K?
 > λ = 6.63 × 10^{-34}/√(2π × 6.6 × 10^{-27} × 1.38 × 10^{-23} × 300) = 5 × 10^{-11} m
 > Much smaller than spacing (~3 nm): classical
 !: The ideal gas is classical only when nλ^{3} ≪ 1; at high density or low temperature, quantum statistics take over.
+P: **Investigate with the lab.** Halve the volume at fixed temperature and see the pressure double. Then double the temperature at fixed volume.
+IX: gas
 Q: What is the Sackur–Tetrode equation? | The absolute entropy of a classical monatomic ideal gas.
 Q: What is the criterion for a gas to be treated classically? | nλ^{3} ≪ 1.
 M1: The ideal gas internal energy depends on: | Temperature only | Volume only | Pressure only | Both V and T | U = (3/2)Nk_{B}T.
 M2: The thermal de Broglie wavelength grows when: | Temperature falls | Temperature rises | Mass increases | Density rises | λ ∝ 1/√(mT).
+M2: A gas is compressed to half its volume at constant temperature. What happens to its pressure? | It doubles | It halves | It stays the same | It quadruples | Boyle's law: pV is constant at fixed temperature.
 
 ## Mean free path
 S: The mean free path is the average distance a molecule travels between collisions. It controls diffusion, viscosity and thermal conduction in gases, and decides when continuum fluid mechanics breaks down.
@@ -241,10 +250,13 @@ X: Ratio of effusion rates of ^{235}UF_{6} and ^{238}UF_{6}.
 > √(352/349) = 1.0043
 > Tiny: thousands of stages were needed
 !: The distribution of speeds you measure depends on the sampling method; a beam isn't the same as the gas inside the oven.
+P: **Investigate with the lab.** Heat the gas and see the peak of the speed distribution move right and flatten.
+IX: gas
 Q: What is the molecular flux on a wall? | Φ = ¼n⟨v⟩.
 Q: Why are escaping molecules on average more energetic than those in the gas? | Faster molecules reach the hole more often (flux weighting).
 M1: Graham's law says effusion rate is proportional to: | 1/√m | m | √m | 1/m | Lighter effuse faster.
 M2: Doppler broadening of a spectral line increases with: | Temperature | Mass | Density only | Magnetic field | Width ∝ √(T/m).
+M2: As a gas is heated, what happens to the peak of its speed distribution? | It moves to higher speed and gets lower | It moves to lower speed and gets higher | It stays in the same place | It splits into two peaks | Higher temperature means faster molecules spread over a wider range of speeds.
 
 ## Chemical potential
 S: The chemical potential is the energy cost of adding one particle to a system. Particles flow from high to low chemical potential, so it governs diffusion, phase equilibrium, chemical reactions and the occupation of quantum states.

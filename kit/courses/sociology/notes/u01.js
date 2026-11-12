@@ -560,6 +560,8 @@ P: Sumner (1906) described **in-groups**, which people belong to and feel loyal 
 X: Size matters
 > Simmel showed that moving from a dyad (two people) to a triad (three) changes relationships: a third person can mediate, take sides or form a coalition.
 > Larger groups need more formal structure, leaders and rules.
+P: **Investigate with the lab.** Explore the four networks, find the broker and cut a bridge to see the network split.
+IX: network
 K: Groups involve interaction and shared identity; in-groups, out-groups and reference groups shape loyalty, comparison and prejudice.
 H: Community
 P: "Community" can mean people sharing a place (a neighbourhood), an identity or interest (the deaf community, a religious community) or a sense of belonging and mutual support. Sociologists debate whether community is in decline (Putnam, 2000) or changing form, including online communities that share interests across distance. Communities can include and support, but also exclude.
@@ -581,6 +583,7 @@ M2#sociology-u01-15-q2@2: A new employee copies the dress and habits of senior m
 SEQ2#sociology-u01-15-q3@2: Order these from most to least intimate. | A family ; A close friendship group ; A university seminar group ; A large company's workforce | Intimacy and permanence decrease from primary to secondary groups.
 M3#sociology-u01-15-q4@3: Which statement best evaluates online communities? | They can offer belonging and support across distance, though ties may be weaker and access unequal | They can never provide any genuine support or belonging | They are identical to face-to-face communities in every respect | They only exist among teenagers | Evidence is mixed: online ties can be meaningful, but differ from local communities and depend on access.
 SA3#sociology-u01-15-q5@2,3: Explain how in-groups and out-groups can both build solidarity and cause conflict. | In-group loyalty strengthens belonging, cooperation and identity (team spirit, community solidarity). But favouring the in-group can lead to stereotyping and discrimination against out-groups, as in rivalry between fans or between ethnic or national groups. Which effect dominates depends on competition, norms and contact between groups. | In-group solidarity ; Example ; Out-group prejudice ; Example ; Conditions
+M2#sociology-u01-15-q6@1: In a social network, what is a broker? | Someone who connects otherwise separate groups | The person with the most connections | Someone with no connections | The leader of a group | Brokers sit on bridges between groups and control the flow between them.
 
 ## Social interaction
 LV: Introductory · Foundation

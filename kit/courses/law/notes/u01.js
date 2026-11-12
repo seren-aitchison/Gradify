@@ -233,12 +233,15 @@ H: The top
 - **The UK Supreme Court**: final appeal court for civil cases throughout the UK and criminal cases from England and Wales and Northern Ireland; hears points of law of general public importance.
 - **Judicial Committee of the Privy Council**: final court for some Commonwealth countries and Crown Dependencies.
 P: The modern structure owes much to statute: the Courts Act 1971 created the Crown Court, and the Constitutional Reform Act 2005 created the Supreme Court, which replaced the Appellate Committee of the House of Lords in 2009.
+P: **Investigate with the lab.** Explore which courts hear which cases at first instance, civil and criminal.
+IX: courts
 K: Trial courts decide facts and law; appeal courts mainly review law and procedure and rarely rehear evidence.
 !: The "Queen's Bench Division" became the **King's Bench Division** in September 2022. Use the current name.
 Q: Which High Court division hears trusts and insolvency cases? | The Chancery Division (within the Business and Property Courts).
 Q: Where is an indictable-only offence tried? | In the Crown Court, before a judge and jury.
 M1#law-u01-08-q1@1: Which court is the final court of appeal for civil cases from England and Wales? | The UK Supreme Court | The Court of Appeal | The Privy Council | The High Court | The European Court of Human Rights | The Supreme Court is the UK's final domestic appeal court; Strasbourg is not an appeal court.
 M2#law-u01-08-q2@2: A client wants to sue for £8,000 over defective building work. Where will the claim normally be started and heard? | The County Court | The High Court, King's Bench Division | The Crown Court | The magistrates' court | The Court of Appeal | Claims of this value start in the County Court; the High Court is for higher-value or specialist claims.
+M2#law-u01-08-q3@1: Where are most criminal cases first heard in England and Wales? | Magistrates' courts | The Crown Court | The High Court | The Court of Appeal | The great majority of criminal cases start and finish in the magistrates' courts.
 
 ## The hierarchy of courts
 S: Courts are arranged in a hierarchy that decides which decisions bind which courts. Under precedent, a court is bound by courts above it and, sometimes, by its own earlier decisions.
@@ -260,12 +263,15 @@ H: Outside the hierarchy
 - **Privy Council** decisions are persuasive, not binding, but may be followed instead of a Court of Appeal decision where the Board directs that domestic courts should do so (Willers v Joyce [2016] UKSC 44).
 - **European Court of Human Rights**: courts must "take into account" its judgments (Human Rights Act 1998, s 2), not follow them.
 - **Court of Justice of the EU**: since 1 January 2021 its new decisions do not bind; the Supreme Court and Court of Appeal (and some other courts) may depart from retained EU case law.
+P: **Investigate with the lab.** Explore the court hierarchy from the magistrates' courts to the Supreme Court, and identify the routes of appeal.
+IX: courts
 K: Ask two questions: which court made the earlier decision, and which court is deciding now? That tells you whether it binds.
 Q: Is the Supreme Court bound by its own previous decisions? | No. Under the 1966 Practice Statement it may depart from them when it appears right to do so, though it does so sparingly.
 Q: What must English courts do with Strasbourg case law? | Take it into account (Human Rights Act 1998, s 2); it is not binding.
 M1#law-u01-09-q1@1: Which court's decisions bind the High Court? | The Court of Appeal and the Supreme Court | The Supreme Court only, never the Court of Appeal | Other High Court judges sitting alone | The Court of Appeal only, never the Supreme Court | The Privy Council and the Supreme Court | Courts are bound by courts above them in the hierarchy.
 M2#law-u01-09-q2@2: A County Court judge is referred to a High Court decision on the same point and a contrary Privy Council decision. What should the judge normally do? | Follow the High Court decision, which binds the County Court | Follow the Privy Council decision, which binds all courts | Choose whichever is more recent | Refer the question to the Supreme Court | Ignore both | High Court decisions bind lower courts; Privy Council decisions are persuasive unless the Board directs otherwise in the Willers v Joyce way.
 M3#law-u01-09-q3@2: The Court of Appeal is asked to follow its own earlier decision, which conflicts with a later House of Lords decision that didn't mention it. What should it do? | Decline to follow its own decision, under the Young v Bristol Aeroplane exceptions | Follow its own decision, as it is always bound by itself | Follow whichever decision is more recent in time | Refer the conflict to the Supreme Court before deciding | Treat both as persuasive and choose the better reasoning | Young v Bristol Aeroplane allows the Court of Appeal to depart from its own decision where it can't stand with a later House of Lords or Supreme Court decision.
+M2#law-u01-09-q4@1: Which is the highest court in the United Kingdom? | The Supreme Court | The Court of Appeal | The High Court | The Crown Court | The Supreme Court replaced the Appellate Committee of the House of Lords in 2009.
 
 ## The doctrine of precedent
 S: Under the doctrine of precedent (stare decisis, "to stand by things decided"), courts follow the legal principles in earlier decisions of higher courts so that like cases are treated alike. It gives the common law its consistency and its capacity to develop.
@@ -290,12 +296,15 @@ H: How courts avoid a precedent
 H: Strengths and weaknesses
 - Strengths: certainty, consistency, fairness, efficiency, flexibility through distinguishing.
 - Weaknesses: rigidity, complexity and volume of case law, slow development, and fine distinctions that can look arbitrary.
+P: **Investigate with the lab.** Decide whether each earlier decision binds, persuades or must be taken into account, given the courts involved.
+IX: courts
 K: Precedent binds the ratio, not the result. You follow the principle the earlier court used to decide its material facts.
 !: Don't confuse overruling (a different, later case) with reversing (the same case on appeal).
 Q: What does stare decisis mean? | "To stand by things decided": courts follow the principles of earlier decisions.
 Q: What is distinguishing? | Declining to follow an earlier decision because its material facts differ significantly from the present case.
 M1#law-u01-10-q1@1: The Court of Appeal decides a case; the Supreme Court later hears a different case on the same point and says the Court of Appeal was wrong. What has the Supreme Court done? | Overruled the earlier decision | Reversed the earlier decision | Distinguished the earlier decision | Followed the earlier decision | Departed from its own decision | Overruling happens in a later, different case; reversing happens on appeal in the same case.
 M2#law-u01-10-q2@2: Counsel argues that a binding precedent should not apply because, in that case, the parties were living together amicably, whereas here they had separated. What technique is counsel using? | Distinguishing | Overruling | Reversing | Applying the Practice Statement | Relying on obiter dicta | Showing a materially different fact to avoid an otherwise binding ratio is distinguishing (compare Balfour v Balfour with Merritt v Merritt).
+M2#law-u01-10-q3@1: Is the Court of Appeal bound by Supreme Court decisions? | Yes: lower courts are bound by higher courts' decisions | No: it can ignore them freely | Only in criminal cases | Only if the decision is recent | Under stare decisis, decisions of higher courts bind lower courts.
 
 ## Ratio decidendi and obiter dicta
 S: The ratio decidendi ("reason for deciding") is the legal principle necessary for the decision on the material facts, and it is the binding part of a judgment. Obiter dicta ("things said by the way") are everything else, and they persuade but don't bind.

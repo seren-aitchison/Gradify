@@ -397,6 +397,8 @@ X: Policy responses
 > The Employment Rights Act 2025 included measures on flexible working and family-related leave.
 H: Evaluation
 P: Human capital and preference theories explain some differences but are criticised for treating constraints as choices. The pay gap has narrowed for full-time workers but remains larger overall. Intersectional analysis shows gaps vary by ethnicity, age and occupation.
+P: **Investigate with the lab.** Compare unemployment and participation by sex, and note what these measures leave out.
+IX: data-work
 K: The full-time gender pay gap was 6.8% in April 2026 and 12.3% among all employees; segregation and care responsibilities shape inequality; theories differ on choice versus constraint.
 !: Confusing the gender pay gap with unequal pay for the same job. The gap compares average earnings across all jobs.
 EV: established | The UK gender pay gap for full-time employees was 6.8% in April 2026 (ONS).
@@ -417,6 +419,7 @@ M2#sociology-u13-11-q3@2: A woman's pay falls behind her male colleagues after s
 TF2#sociology-u13-11-q4@2: The gender pay gap measures unequal pay for the same job. | false | It compares average hourly earnings across all jobs.
 M3#sociology-u13-11-q5@3: Why is preference theory criticised? | It treats constrained decisions as free choices | It ignores women's choices entirely | It focuses only on men's careers | It denies that a pay gap exists | Childcare costs and norms constrain so-called choices.
 SA3#sociology-u13-11-q6@3: Evaluate explanations of gender inequality in paid work. | 2026 pay gap data; horizontal and vertical segregation; human capital; preference theory; feminist structural explanations; policies (reporting, parental leave, 2025 Act); intersectionality; judgement. | Patterns ; Theories ; Policy ; Judgement
+M2#sociology-u13-11-q7@1: What does the labour force participation rate leave out? | Unpaid work such as caring and housework | People in paid employment | People looking for work | Part-time paid workers | Official labour statistics don't count unpaid domestic work.
 
 ## Work and class
 LV: Intermediate · Evaluation

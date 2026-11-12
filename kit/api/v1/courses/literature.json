@@ -1,0 +1,1152 @@
+{
+ "api": 1,
+ "slug": "literature",
+ "name": "English Literature",
+ "site": "LitGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Study material, not a qualification or an exam board resource.</b> LitGradify teaches English literature for study. The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors; check important points against your set texts, your course materials and your exam board's current specification. It is not endorsed by AQA, OCR or Pearson Edexcel, it does not replace reading the texts themselves, and its model answers are illustrations, not mark schemes. Quotations are short and taken only from public-domain texts; modern works are described rather than quoted.",
+ "notes": "/kit/courses/literature/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Reading and writing about literature",
+   "units": [
+    1,
+    10
+   ],
+   "from": "#b06ce0",
+   "to": "#8b5cf6"
+  },
+  {
+   "name": "Stage 2 · Poetry, drama and prose",
+   "units": [
+    2,
+    3,
+    4
+   ],
+   "from": "#c084fc",
+   "to": "#818cf8"
+  },
+  {
+   "name": "Stage 3 · Literary history",
+   "units": [
+    5,
+    6
+   ],
+   "from": "#a855f7",
+   "to": "#6366f1"
+  },
+  {
+   "name": "Stage 4 · Theory and criticism",
+   "units": [
+    7
+   ],
+   "from": "#d8b4fe",
+   "to": "#a78bfa"
+  },
+  {
+   "name": "Stage 5 · Set texts",
+   "units": [
+    8,
+    9
+   ],
+   "from": "#e879f9",
+   "to": "#22d3ee"
+  }
+ ],
+ "paths": [
+  {
+   "id": "gcse",
+   "name": "GCSE English Literature",
+   "sub": "Close reading, poetry, Shakespeare, the nineteenth-century novel, war and Romantic poetry, unseen poetry and exam essays.",
+   "units": [
+    1,
+    2,
+    8,
+    9,
+    10,
+    3,
+    4
+   ],
+   "select": null
+  },
+  {
+   "id": "alevel",
+   "name": "A level English Literature",
+   "sub": "The A level core: forms, literary history, critical views and theory, comparison, unseen analysis and the coursework essay.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    10
+   ],
+   "select": null
+  },
+  {
+   "id": "degree",
+   "name": "University year 1",
+   "sub": "The first-year core of an English degree: close reading, poetics, literary history from Chaucer to now, and theory.",
+   "units": [
+    1,
+    2,
+    5,
+    6,
+    7,
+    4,
+    3
+   ],
+   "select": null
+  },
+  {
+   "id": "poetry",
+   "name": "Poetry",
+   "sub": "How poems work, from metre and form to the Romantics, the Victorians and the poets of the First World War.",
+   "units": [
+    2,
+    9,
+    1,
+    10
+   ],
+   "select": null
+  },
+  {
+   "id": "essays",
+   "name": "Writing about literature",
+   "sub": "From annotation to a finished argument: close reading, critical views and the essay itself.",
+   "units": [
+    1,
+    10,
+    7
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Reading and writing about literature",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    10
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Poetry, drama and prose",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    2,
+    3,
+    4
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Literary history",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    5,
+    6
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Theory and criticism",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    7
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Set texts",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    8,
+    9
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "close-reading",
+   "title": "Close reading and poetry",
+   "sub": "Language, form, metre and interpretation, applied to short passages.",
+   "units": [
+    1,
+    2
+   ],
+   "path": null,
+   "count": 25,
+   "minutes": 40,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Foundations of Literary Study",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What is literature?",
+     "module": "What literature is"
+    },
+    {
+     "id": "u01-02",
+     "title": "Genre and form",
+     "module": "What literature is"
+    },
+    {
+     "id": "u01-03",
+     "title": "Author, narrator and reader",
+     "module": "What literature is"
+    },
+    {
+     "id": "u01-04",
+     "title": "Text and context",
+     "module": "What literature is"
+    },
+    {
+     "id": "u01-05",
+     "title": "The literary canon",
+     "module": "What literature is"
+    },
+    {
+     "id": "u01-06",
+     "title": "Close reading: a method",
+     "module": "Close reading"
+    },
+    {
+     "id": "u01-07",
+     "title": "Diction and register",
+     "module": "Close reading"
+    },
+    {
+     "id": "u01-08",
+     "title": "Imagery",
+     "module": "Close reading"
+    },
+    {
+     "id": "u01-09",
+     "title": "Metaphor, simile and personification",
+     "module": "Close reading"
+    },
+    {
+     "id": "u01-10",
+     "title": "Symbol and motif",
+     "module": "Close reading"
+    },
+    {
+     "id": "u01-11",
+     "title": "Tone and mood",
+     "module": "Close reading"
+    },
+    {
+     "id": "u01-12",
+     "title": "Syntax and sentence structure",
+     "module": "Close reading"
+    },
+    {
+     "id": "u01-13",
+     "title": "The sound of language",
+     "module": "Close reading"
+    },
+    {
+     "id": "u01-14",
+     "title": "Ambiguity and multiple meanings",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u01-15",
+     "title": "Irony",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u01-16",
+     "title": "Intertextuality and allusion",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u01-17",
+     "title": "Using quotations as evidence",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u01-18",
+     "title": "From annotation to argument",
+     "module": "Interpretation"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Poetry and Poetics",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "What makes a poem?",
+     "module": "The language of poetry"
+    },
+    {
+     "id": "u02-02",
+     "title": "The speaker and the poetic voice",
+     "module": "The language of poetry"
+    },
+    {
+     "id": "u02-03",
+     "title": "Imagery in poetry",
+     "module": "The language of poetry"
+    },
+    {
+     "id": "u02-04",
+     "title": "Rhyme and sound patterning",
+     "module": "The language of poetry"
+    },
+    {
+     "id": "u02-05",
+     "title": "Stress and the metrical foot",
+     "module": "Metre and rhythm"
+    },
+    {
+     "id": "u02-06",
+     "title": "Iambic pentameter",
+     "module": "Metre and rhythm"
+    },
+    {
+     "id": "u02-07",
+     "title": "Other metres and metrical variation",
+     "module": "Metre and rhythm"
+    },
+    {
+     "id": "u02-08",
+     "title": "Free verse",
+     "module": "Metre and rhythm"
+    },
+    {
+     "id": "u02-09",
+     "title": "The sonnet",
+     "module": "Poetic forms"
+    },
+    {
+     "id": "u02-10",
+     "title": "The ballad",
+     "module": "Poetic forms"
+    },
+    {
+     "id": "u02-11",
+     "title": "The ode",
+     "module": "Poetic forms"
+    },
+    {
+     "id": "u02-12",
+     "title": "The elegy",
+     "module": "Poetic forms"
+    },
+    {
+     "id": "u02-13",
+     "title": "The dramatic monologue",
+     "module": "Poetic forms"
+    },
+    {
+     "id": "u02-14",
+     "title": "The lyric",
+     "module": "Poetic forms"
+    },
+    {
+     "id": "u02-15",
+     "title": "Blank verse",
+     "module": "Poetic forms"
+    },
+    {
+     "id": "u02-16",
+     "title": "Narrative and epic poetry",
+     "module": "Poetic forms"
+    },
+    {
+     "id": "u02-17",
+     "title": "Stanza forms",
+     "module": "Poetic forms"
+    },
+    {
+     "id": "u02-18",
+     "title": "Enjambment, caesura and the line",
+     "module": "Reading poems"
+    },
+    {
+     "id": "u02-19",
+     "title": "Analysing a poem: a method",
+     "module": "Reading poems"
+    },
+    {
+     "id": "u02-20",
+     "title": "Comparing poems",
+     "module": "Reading poems"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Drama and Shakespeare",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Drama as performance",
+     "module": "The nature of drama"
+    },
+    {
+     "id": "u03-02",
+     "title": "Tragedy",
+     "module": "The nature of drama"
+    },
+    {
+     "id": "u03-03",
+     "title": "Comedy",
+     "module": "The nature of drama"
+    },
+    {
+     "id": "u03-04",
+     "title": "Dramatic structure",
+     "module": "The nature of drama"
+    },
+    {
+     "id": "u03-05",
+     "title": "Character and dialogue in drama",
+     "module": "The nature of drama"
+    },
+    {
+     "id": "u03-06",
+     "title": "Stagecraft and stage directions",
+     "module": "The nature of drama"
+    },
+    {
+     "id": "u03-07",
+     "title": "Shakespeare's theatre",
+     "module": "Shakespeare"
+    },
+    {
+     "id": "u03-08",
+     "title": "Shakespeare's language",
+     "module": "Shakespeare"
+    },
+    {
+     "id": "u03-09",
+     "title": "Soliloquy and aside",
+     "module": "Shakespeare"
+    },
+    {
+     "id": "u03-10",
+     "title": "Shakespearean tragedy",
+     "module": "Shakespeare"
+    },
+    {
+     "id": "u03-11",
+     "title": "Shakespearean comedy",
+     "module": "Shakespeare"
+    },
+    {
+     "id": "u03-12",
+     "title": "The history plays and the late romances",
+     "module": "Shakespeare"
+    },
+    {
+     "id": "u03-13",
+     "title": "Marlowe and Shakespeare's contemporaries",
+     "module": "Shakespeare"
+    },
+    {
+     "id": "u03-14",
+     "title": "Restoration and eighteenth-century drama",
+     "module": "Drama after Shakespeare"
+    },
+    {
+     "id": "u03-15",
+     "title": "Wilde, Shaw and the Victorian stage",
+     "module": "Drama after Shakespeare"
+    },
+    {
+     "id": "u03-16",
+     "title": "Ibsen, Chekhov and modern realism",
+     "module": "Drama after Shakespeare"
+    },
+    {
+     "id": "u03-17",
+     "title": "Modernist and absurdist drama",
+     "module": "Drama after Shakespeare"
+    },
+    {
+     "id": "u03-18",
+     "title": "Post-war and contemporary British drama",
+     "module": "Drama after Shakespeare"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Prose Fiction and the Novel",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Story, plot and narrative",
+     "module": "Elements of fiction"
+    },
+    {
+     "id": "u04-02",
+     "title": "Narrators and point of view",
+     "module": "Elements of fiction"
+    },
+    {
+     "id": "u04-03",
+     "title": "Free indirect discourse",
+     "module": "Elements of fiction"
+    },
+    {
+     "id": "u04-04",
+     "title": "Characterisation",
+     "module": "Elements of fiction"
+    },
+    {
+     "id": "u04-05",
+     "title": "Setting and atmosphere",
+     "module": "Elements of fiction"
+    },
+    {
+     "id": "u04-06",
+     "title": "Time and structure in narrative",
+     "module": "Elements of fiction"
+    },
+    {
+     "id": "u04-07",
+     "title": "Dialogue in fiction",
+     "module": "Elements of fiction"
+    },
+    {
+     "id": "u04-08",
+     "title": "The rise of the novel",
+     "module": "The novel's history"
+    },
+    {
+     "id": "u04-09",
+     "title": "The realist novel",
+     "module": "The novel's history"
+    },
+    {
+     "id": "u04-10",
+     "title": "The Gothic novel",
+     "module": "The novel's history"
+    },
+    {
+     "id": "u04-11",
+     "title": "The Bildungsroman",
+     "module": "The novel's history"
+    },
+    {
+     "id": "u04-12",
+     "title": "The modernist novel",
+     "module": "The novel's history"
+    },
+    {
+     "id": "u04-13",
+     "title": "The postmodern novel",
+     "module": "The novel's history"
+    },
+    {
+     "id": "u04-14",
+     "title": "The short story",
+     "module": "Short forms and genres"
+    },
+    {
+     "id": "u04-15",
+     "title": "The novella",
+     "module": "Short forms and genres"
+    },
+    {
+     "id": "u04-16",
+     "title": "Genre fiction",
+     "module": "Short forms and genres"
+    },
+    {
+     "id": "u04-17",
+     "title": "Reading a novel: a method",
+     "module": "Short forms and genres"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Medieval to Eighteenth-Century Literature",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Old English literature",
+     "module": "Medieval literature"
+    },
+    {
+     "id": "u05-02",
+     "title": "Chaucer and Middle English",
+     "module": "Medieval literature"
+    },
+    {
+     "id": "u05-03",
+     "title": "Medieval romance and drama",
+     "module": "Medieval literature"
+    },
+    {
+     "id": "u05-04",
+     "title": "The English Renaissance",
+     "module": "The Renaissance"
+    },
+    {
+     "id": "u05-05",
+     "title": "Renaissance poetry: Wyatt, Sidney and Spenser",
+     "module": "The Renaissance"
+    },
+    {
+     "id": "u05-06",
+     "title": "Metaphysical poetry",
+     "module": "The Renaissance"
+    },
+    {
+     "id": "u05-07",
+     "title": "Milton and Paradise Lost",
+     "module": "The Renaissance"
+    },
+    {
+     "id": "u05-08",
+     "title": "The English Bible and Renaissance prose",
+     "module": "The Renaissance"
+    },
+    {
+     "id": "u05-09",
+     "title": "Restoration literature",
+     "module": "Restoration and the eighteenth century"
+    },
+    {
+     "id": "u05-10",
+     "title": "Augustan satire: Dryden, Pope and Swift",
+     "module": "Restoration and the eighteenth century"
+    },
+    {
+     "id": "u05-11",
+     "title": "The eighteenth-century novel",
+     "module": "Restoration and the eighteenth century"
+    },
+    {
+     "id": "u05-12",
+     "title": "Sensibility and the Gothic beginnings",
+     "module": "Restoration and the eighteenth century"
+    },
+    {
+     "id": "u05-13",
+     "title": "Women writers of the long eighteenth century",
+     "module": "Restoration and the eighteenth century"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Romantic to Contemporary Literature",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Romanticism: an overview",
+     "module": "Romanticism"
+    },
+    {
+     "id": "u06-02",
+     "title": "Wordsworth, Coleridge and Lyrical Ballads",
+     "module": "Romanticism"
+    },
+    {
+     "id": "u06-03",
+     "title": "The second-generation Romantics",
+     "module": "Romanticism"
+    },
+    {
+     "id": "u06-04",
+     "title": "Women writers of the Romantic period",
+     "module": "Romanticism"
+    },
+    {
+     "id": "u06-05",
+     "title": "The Victorian age",
+     "module": "The Victorians"
+    },
+    {
+     "id": "u06-06",
+     "title": "Victorian poetry",
+     "module": "The Victorians"
+    },
+    {
+     "id": "u06-07",
+     "title": "The Victorian novel",
+     "module": "The Victorians"
+    },
+    {
+     "id": "u06-08",
+     "title": "Late Victorian literature and the fin de siècle",
+     "module": "The Victorians"
+    },
+    {
+     "id": "u06-09",
+     "title": "Modernism",
+     "module": "The twentieth century and after"
+    },
+    {
+     "id": "u06-10",
+     "title": "Literature of the First World War",
+     "module": "The twentieth century and after"
+    },
+    {
+     "id": "u06-11",
+     "title": "Literature between the wars",
+     "module": "The twentieth century and after"
+    },
+    {
+     "id": "u06-12",
+     "title": "Post-war literature",
+     "module": "The twentieth century and after"
+    },
+    {
+     "id": "u06-13",
+     "title": "Postcolonial literature",
+     "module": "The twentieth century and after"
+    },
+    {
+     "id": "u06-14",
+     "title": "Contemporary literature",
+     "module": "The twentieth century and after"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Literary Theory and Criticism",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "What is literary theory?",
+     "module": "Foundations of criticism"
+    },
+    {
+     "id": "u07-02",
+     "title": "Liberal humanism and practical criticism",
+     "module": "Foundations of criticism"
+    },
+    {
+     "id": "u07-03",
+     "title": "New Criticism",
+     "module": "Foundations of criticism"
+    },
+    {
+     "id": "u07-04",
+     "title": "Formalism and structuralism",
+     "module": "Foundations of criticism"
+    },
+    {
+     "id": "u07-05",
+     "title": "Poststructuralism and deconstruction",
+     "module": "Text, language and reader"
+    },
+    {
+     "id": "u07-06",
+     "title": "Reader-response theory",
+     "module": "Text, language and reader"
+    },
+    {
+     "id": "u07-07",
+     "title": "Psychoanalytic criticism",
+     "module": "Text, language and reader"
+    },
+    {
+     "id": "u07-08",
+     "title": "Narratology",
+     "module": "Text, language and reader"
+    },
+    {
+     "id": "u07-09",
+     "title": "Marxist criticism",
+     "module": "Identity, history and power"
+    },
+    {
+     "id": "u07-10",
+     "title": "Feminist criticism",
+     "module": "Identity, history and power"
+    },
+    {
+     "id": "u07-11",
+     "title": "Gender and queer theory",
+     "module": "Identity, history and power"
+    },
+    {
+     "id": "u07-12",
+     "title": "Postcolonial criticism",
+     "module": "Identity, history and power"
+    },
+    {
+     "id": "u07-13",
+     "title": "New historicism and cultural materialism",
+     "module": "Identity, history and power"
+    },
+    {
+     "id": "u07-14",
+     "title": "Ecocriticism",
+     "module": "Identity, history and power"
+    },
+    {
+     "id": "u07-15",
+     "title": "Critical views and debate",
+     "module": "Using criticism"
+    },
+    {
+     "id": "u07-16",
+     "title": "Literary value and evaluation",
+     "module": "Using criticism"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Set Texts: Drama and Nineteenth-Century Prose",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Macbeth: context",
+     "module": "Macbeth"
+    },
+    {
+     "id": "u08-02",
+     "title": "Macbeth: ambition and power",
+     "module": "Macbeth"
+    },
+    {
+     "id": "u08-03",
+     "title": "Macbeth: the supernatural",
+     "module": "Macbeth"
+    },
+    {
+     "id": "u08-04",
+     "title": "Macbeth: gender and Lady Macbeth",
+     "module": "Macbeth"
+    },
+    {
+     "id": "u08-05",
+     "title": "Macbeth: language and imagery",
+     "module": "Macbeth"
+    },
+    {
+     "id": "u08-06",
+     "title": "Frankenstein: context and form",
+     "module": "Frankenstein"
+    },
+    {
+     "id": "u08-07",
+     "title": "Frankenstein: creation and responsibility",
+     "module": "Frankenstein"
+    },
+    {
+     "id": "u08-08",
+     "title": "Frankenstein: the creature and sympathy",
+     "module": "Frankenstein"
+    },
+    {
+     "id": "u08-09",
+     "title": "Frankenstein: nature, science and the sublime",
+     "module": "Frankenstein"
+    },
+    {
+     "id": "u08-10",
+     "title": "A Christmas Carol: context",
+     "module": "A Christmas Carol"
+    },
+    {
+     "id": "u08-11",
+     "title": "A Christmas Carol: Scrooge's transformation",
+     "module": "A Christmas Carol"
+    },
+    {
+     "id": "u08-12",
+     "title": "A Christmas Carol: social responsibility",
+     "module": "A Christmas Carol"
+    },
+    {
+     "id": "u08-13",
+     "title": "Jane Eyre: context",
+     "module": "Jane Eyre"
+    },
+    {
+     "id": "u08-14",
+     "title": "Jane Eyre: independence and identity",
+     "module": "Jane Eyre"
+    },
+    {
+     "id": "u08-15",
+     "title": "Jane Eyre: Bertha Mason and critical readings",
+     "module": "Jane Eyre"
+    },
+    {
+     "id": "u08-16",
+     "title": "Jekyll and Hyde: context",
+     "module": "Strange Case of Dr Jekyll and Mr Hyde"
+    },
+    {
+     "id": "u08-17",
+     "title": "Jekyll and Hyde: duality",
+     "module": "Strange Case of Dr Jekyll and Mr Hyde"
+    },
+    {
+     "id": "u08-18",
+     "title": "Jekyll and Hyde: narrative and setting",
+     "module": "Strange Case of Dr Jekyll and Mr Hyde"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Set Texts: Romantic, Victorian and War Poetry",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Blake: Songs of Innocence and of Experience",
+     "module": "Romantic poetry"
+    },
+    {
+     "id": "u09-02",
+     "title": "Wordsworth: nature and memory",
+     "module": "Romantic poetry"
+    },
+    {
+     "id": "u09-03",
+     "title": "Coleridge: The Rime of the Ancient Mariner",
+     "module": "Romantic poetry"
+    },
+    {
+     "id": "u09-04",
+     "title": "Shelley: Ozymandias and the political poems",
+     "module": "Romantic poetry"
+    },
+    {
+     "id": "u09-05",
+     "title": "Keats: the odes",
+     "module": "Romantic poetry"
+    },
+    {
+     "id": "u09-06",
+     "title": "Tennyson: The Charge of the Light Brigade and In Memoriam",
+     "module": "Victorian poetry"
+    },
+    {
+     "id": "u09-07",
+     "title": "Browning: My Last Duchess",
+     "module": "Victorian poetry"
+    },
+    {
+     "id": "u09-08",
+     "title": "Christina Rossetti",
+     "module": "Victorian poetry"
+    },
+    {
+     "id": "u09-09",
+     "title": "Thomas Hardy's poetry",
+     "module": "Victorian poetry"
+    },
+    {
+     "id": "u09-10",
+     "title": "First World War poetry: an overview",
+     "module": "War poetry"
+    },
+    {
+     "id": "u09-11",
+     "title": "Wilfred Owen",
+     "module": "War poetry"
+    },
+    {
+     "id": "u09-12",
+     "title": "Siegfried Sassoon",
+     "module": "War poetry"
+    },
+    {
+     "id": "u09-13",
+     "title": "Isaac Rosenberg and Edward Thomas",
+     "module": "War poetry"
+    },
+    {
+     "id": "u09-14",
+     "title": "Women's poetry of the First World War",
+     "module": "War poetry"
+    },
+    {
+     "id": "u09-15",
+     "title": "War poetry after 1918",
+     "module": "War poetry"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Unseen, Comparative and Essay Writing",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Approaching an unseen poem",
+     "module": "Unseen analysis"
+    },
+    {
+     "id": "u10-02",
+     "title": "Approaching unseen prose",
+     "module": "Unseen analysis"
+    },
+    {
+     "id": "u10-03",
+     "title": "Approaching unseen drama",
+     "module": "Unseen analysis"
+    },
+    {
+     "id": "u10-04",
+     "title": "Comparative analysis: principles",
+     "module": "Comparison"
+    },
+    {
+     "id": "u10-05",
+     "title": "Structuring a comparison",
+     "module": "Comparison"
+    },
+    {
+     "id": "u10-06",
+     "title": "Comparing across periods",
+     "module": "Comparison"
+    },
+    {
+     "id": "u10-07",
+     "title": "Reading the question",
+     "module": "Essay writing"
+    },
+    {
+     "id": "u10-08",
+     "title": "Building an argument",
+     "module": "Essay writing"
+    },
+    {
+     "id": "u10-09",
+     "title": "Paragraphing: point, evidence, analysis",
+     "module": "Essay writing"
+    },
+    {
+     "id": "u10-10",
+     "title": "Embedding quotations",
+     "module": "Essay writing"
+    },
+    {
+     "id": "u10-11",
+     "title": "Writing about context",
+     "module": "Essay writing"
+    },
+    {
+     "id": "u10-12",
+     "title": "Writing about writers' methods",
+     "module": "Essay writing"
+    },
+    {
+     "id": "u10-13",
+     "title": "Introductions and conclusions",
+     "module": "Essay writing"
+    },
+    {
+     "id": "u10-14",
+     "title": "Academic style and register",
+     "module": "Essay writing"
+    },
+    {
+     "id": "u10-15",
+     "title": "Referencing and academic integrity",
+     "module": "Essay writing"
+    },
+    {
+     "id": "u10-16",
+     "title": "The coursework essay",
+     "module": "Essay writing"
+    },
+    {
+     "id": "u10-17",
+     "title": "Revising for literature exams",
+     "module": "Essay writing"
+    }
+   ]
+  }
+ ],
+ "interactives": []
+}

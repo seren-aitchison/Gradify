@@ -17,10 +17,13 @@ H: Field lines
 X: Earth's magnetic field at the surface is ~50 μT. How does that compare with a 1.5 T MRI?
 > Ratio = 1.5/5 × 10^{-5} = 30 000
 !: Earth's geographic North Pole is near a magnetic south pole (it attracts compass north poles).
+P: **Investigate with the lab.** With no electric field, increase B and watch the circle get tighter.
+IX: lorentz
 Q: What are the sources of magnetic fields? | Moving charges (currents), intrinsic magnetic moments (spin) and changing electric fields.
 Q: Why do magnetic field lines form closed loops? | There are no magnetic monopoles (∇·B = 0).
 M1: The SI unit of magnetic flux density is: | Tesla | Weber | Henry | Gauss | T = N A^{-1} m^{-1}.
 M2: Earth's magnetic field strength at the surface is about: | 50 μT | 1 T | 5 mT | 50 nT | Tens of microtesla.
+M2: A charged particle moves at right angles to a magnetic field. What is its path? | A circle | A straight line | A parabola | A spiral outwards | The magnetic force is always perpendicular to the velocity, giving circular motion.
 
 ## Magnetic forces on charges
 S: A magnetic field exerts a force on a moving charge, perpendicular to both its velocity and the field. Because the force is always sideways, it changes the direction of motion but never the speed.
@@ -36,10 +39,13 @@ H: Consequences
 X: A proton at 3 × 10^{6} m s^{-1} moves perpendicular to 0.5 T. Force?
 > F = 1.6 × 10^{-19} × 3 × 10^{6} × 0.5 = 2.4 × 10^{-13} N
 !: A magnetic force can't speed up or slow down a charge; it only changes direction. Accelerators use electric fields to add energy.
+P: **Investigate with the lab.** Watch the particle move in a circle at constant speed: the magnetic force changes its direction but not its speed.
+IX: lorentz
 Q: Why does the magnetic force do no work? | It's always perpendicular to the velocity.
 Q: When is the magnetic force on a moving charge zero? | When the charge moves parallel (or antiparallel) to B, or is at rest.
 M1: An electron moving east in a field pointing north is pushed: | Up (out of the ground) | Down | West | North | F = −e(v × B): v × B is down, so force is up.
 M2: The magnetic force on a charge depends on: | Its charge, speed and angle to B | Its mass | Only B | Its position only | qvB sin θ.
+M2: Why does a magnetic field do no work on a moving charge? | The force is always perpendicular to the velocity | The force is always zero | The charge stops moving | Magnetic fields store no energy | Work needs a force component along the motion; the magnetic force has none.
 
 ## Lorentz force
 S: The Lorentz force is the total electromagnetic force on a charged particle: the electric force plus the magnetic force. With Maxwell's equations it completes classical electromagnetism.
@@ -56,10 +62,13 @@ P: Electric and magnetic forces are two aspects of one field. A charge at rest b
 X: A velocity selector has E = 2 × 10^{4} V m^{-1}, B = 0.1 T. Which speed passes?
 > v = E/B = 2 × 10^{5} m s^{-1}
 !: Whether a force is "electric" or "magnetic" depends on the observer's frame; the total Lorentz force transforms consistently.
+P: **Investigate with the lab.** Turn on an electric field as well as B and watch the particle drift. Then set E so the particle goes straight through.
+IX: lorentz
 Q: State the Lorentz force law. | F = q(E + v × B).
 Q: How does a velocity selector work? | Crossed E and B fields balance for particles with v = E/B, which pass undeflected.
 M1: Thomson measured the electron's: | Charge-to-mass ratio | Charge alone | Mass alone | Spin | e/m using crossed fields.
 M2: In a frame moving with a charge, its magnetic force appears as: | An electric force | No force | A gravitational force | A stronger magnetic force | Fields transform.
+M2: In a velocity selector, which particles pass straight through? | Those with v = E/B | Those with v = B/E | All particles at any speed | Only uncharged particles | The electric and magnetic forces balance when qE = qvB.
 
 ## Magnetic forces on current-carrying wires
 S: A current-carrying wire in a magnetic field feels a force because the moving charges in it do. This force drives electric motors, loudspeakers and electromagnetic rail guns.
@@ -98,10 +107,13 @@ X: Radius of a 1 keV electron in 1 mT?
 > v = √(2 × 1.6 × 10^{-16}/9.11 × 10^{-31}) = 1.9 × 10^{7} m s^{-1}
 > r = 9.11 × 10^{-31} × 1.9 × 10^{7}/(1.6 × 10^{-19} × 10^{-3}) = 0.11 m
 !: For relativistic particles use r = p/(qB) with the relativistic momentum γmv.
+P: **Investigate with the lab.** Double the speed and check the radius doubles. Then change the speed and see the time for one circle stay the same.
+IX: lorentz
 Q: What is the radius of a charged particle's path in a magnetic field? | r = mv/(qB).
 Q: Why does the cyclotron frequency not depend on speed (non-relativistically)? | Faster particles move on proportionally larger circles, taking the same time per orbit.
 M1: Doubling a particle's speed in a fixed field changes its orbit radius by: | ×2 | ×4 | ×1/2 | No change | r ∝ v.
 M2: In a bubble chamber, an electron and positron with equal speeds curve: | Equally, in opposite directions | The same way | Only the electron curves | Not at all | Opposite charges.
+M2: A proton circling in a magnetic field has its speed doubled. What happens to its period? | It stays the same | It doubles | It halves | It quadruples | r = mv/qB grows with v, but T = 2πm/qB doesn't depend on speed.
 
 ## Biot–Savart law
 S: The Biot–Savart law gives the magnetic field produced by a small element of current. Adding up (integrating) the contributions from all elements gives the field of any current distribution.
@@ -266,10 +278,13 @@ H: Uses
 X: A coil of 500 turns, length 0.25 m, area 4 cm^{2}, air core. Inductance?
 > L = 4π × 10^{-7} × 250 000 × 4 × 10^{-4}/0.25 = 0.50 mH
 !: Inductance grows as N^{2}: doubling turns quadruples it.
+P: **Investigate with the lab.** Increase the inductance and see the current take longer to reach its final value.
+IX: transients
 Q: Define inductance. | Flux linkage per unit current, L = NΦ/I; the back EMF per rate of change of current.
 Q: How does an iron core change inductance? | It multiplies it by the relative permeability.
 M1: The unit of inductance is: | Henry | Farad | Tesla | Weber | V s A^{-1}.
 M2: Current changes at 200 A s^{-1} in a 50 mH coil. Back EMF: | 10 V | 4 V | 250 V | 0.25 V | L dI/dt.
+M2: What does an inductor oppose? | Changes in current | Steady current | Voltage across a resistor | Charge stored on a plate | Self-inductance produces a back emf whenever the current changes.
 
 ## Self-induction and mutual induction
 S: Self-induction is a changing current inducing an EMF in its own circuit; mutual induction is a changing current in one circuit inducing an EMF in another nearby. Transformers, wireless chargers and many sensors depend on mutual induction.
@@ -286,10 +301,13 @@ P: Mutual inductance causes crosstalk between nearby wires and circuits. Twisted
 X: Two coils have M = 20 mH. Current in coil 1 rises at 50 A s^{-1}. EMF in coil 2?
 > ε = 20 × 10^{-3} × 50 = 1.0 V
 !: Mutual inductance is symmetric: coil 1's effect on coil 2 equals coil 2's on coil 1.
+P: **Investigate with the lab.** Switch the RL circuit on and watch the inductor's voltage: it is largest when the current is changing fastest.
+IX: transients
 Q: What is mutual inductance? | The EMF induced in one circuit per unit rate of change of current in another.
 Q: Why do twisted-pair cables reduce interference? | Each twist reverses the loop's orientation, cancelling induced EMFs.
 M1: Coupling coefficient k = 1 means: | All flux from one coil links the other | No coupling | Half the flux links | Infinite inductance | Perfect coupling.
 M2: NFC payment uses: | Mutual induction between coils | Radio broadcast only | Light | Sound | Near-field magnetic coupling.
+M2: When is the back emf across an inductor largest? | When the current is changing fastest | When the current is largest | When the current is zero and steady | It is constant at all times | Back emf = L × dI/dt, so it is largest when the current changes fastest.
 
 ## Energy stored in magnetic fields
 S: Building up a current in an inductor stores energy in its magnetic field. Every magnetic field holds energy, with density proportional to B squared, and releasing it can be violent.

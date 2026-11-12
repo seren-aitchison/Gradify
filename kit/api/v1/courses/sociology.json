@@ -1,0 +1,3053 @@
+{
+ "api": 1,
+ "slug": "sociology",
+ "name": "Sociology",
+ "site": "SocGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Study material, not professional advice.</b> SocGradify explains sociological theories, evidence and debates. The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors. Lessons separate empirical findings from theoretical interpretations and from normative arguments, and statistics carry their source and year: check the latest release before relying on a figure.",
+ "notes": "/kit/courses/sociology/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Foundations and theory",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "from": "#a44a99",
+   "to": "#ec4899"
+  },
+  {
+   "name": "Stage 2 · Culture and inequality",
+   "units": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "from": "#db2777",
+   "to": "#f97316"
+  },
+  {
+   "name": "Stage 3 · Institutions",
+   "units": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "from": "#c026d3",
+   "to": "#f43f5e"
+  },
+  {
+   "name": "Stage 4 · A changing world",
+   "units": [
+    14,
+    15,
+    16
+   ],
+   "from": "#e11d48",
+   "to": "#f59e0b"
+  },
+  {
+   "name": "Stage 5 · Research and data",
+   "units": [
+    17,
+    18
+   ],
+   "from": "#9333ea",
+   "to": "#ec4899"
+  }
+ ],
+ "paths": [
+  {
+   "id": "alevel",
+   "name": "A level Sociology",
+   "sub": "The core of A level and equivalent courses: theory, culture and identity, families, education, crime, beliefs and methods.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    8,
+    9,
+    10,
+    12,
+    17
+   ],
+   "select": null
+  },
+  {
+   "id": "year1",
+   "name": "University year 1",
+   "sub": "The first-year core of a sociology degree: the discipline, classical and contemporary theory, inequality and methods.",
+   "units": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    17
+   ],
+   "select": null
+  },
+  {
+   "id": "theory",
+   "name": "Social theory",
+   "sub": "From Comte, Marx, Durkheim and Weber to feminism, Foucault, Bourdieu, Giddens and Beck.",
+   "units": [
+    2,
+    3,
+    1,
+    14
+   ],
+   "select": null
+  },
+  {
+   "id": "inequality",
+   "name": "Inequality and social justice",
+   "sub": "Class, poverty, gender, race and migration, and how they shape education, health and life chances.",
+   "units": [
+    5,
+    6,
+    7,
+    16,
+    9,
+    18
+   ],
+   "select": null
+  },
+  {
+   "id": "research",
+   "name": "Research skills",
+   "sub": "Research design, interviews, ethnography, content and discourse analysis, official data, reflexivity, statistics and reporting.",
+   "units": [
+    17,
+    18,
+    1
+   ],
+   "select": null
+  },
+  {
+   "id": "policy",
+   "name": "Society and policy",
+   "sub": "The state, power, welfare, crime, health and the economy: sociology for policy and public life.",
+   "units": [
+    11,
+    5,
+    10,
+    13,
+    16,
+    8
+   ],
+   "select": null
+  },
+  {
+   "id": "global",
+   "name": "Global and urban",
+   "sub": "Globalisation, cities, population, migration and the environment.",
+   "units": [
+    14,
+    15,
+    7,
+    13
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Foundations and theory",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Culture and inequality",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Institutions",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · A changing world",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    14,
+    15,
+    16
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Research and data",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    17,
+    18
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "theory",
+   "title": "Social theory",
+   "sub": "Classical and contemporary theory, compared and evaluated.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "path": null,
+   "count": 25,
+   "minutes": 40,
+   "pass": 0.7,
+   "format": "mixed"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Foundations of Sociology",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What is sociology?",
+     "module": "The discipline"
+    },
+    {
+     "id": "u01-02",
+     "title": "Sociology as a discipline",
+     "module": "The discipline"
+    },
+    {
+     "id": "u01-03",
+     "title": "The sociological imagination",
+     "module": "The discipline"
+    },
+    {
+     "id": "u01-04",
+     "title": "Micro and macro sociology",
+     "module": "The discipline"
+    },
+    {
+     "id": "u01-05",
+     "title": "The individual and society",
+     "module": "Individual and society"
+    },
+    {
+     "id": "u01-06",
+     "title": "Structure and agency",
+     "module": "Individual and society"
+    },
+    {
+     "id": "u01-07",
+     "title": "Social institutions",
+     "module": "Individual and society"
+    },
+    {
+     "id": "u01-08",
+     "title": "Social relationships",
+     "module": "Individual and society"
+    },
+    {
+     "id": "u01-09",
+     "title": "Norms and values",
+     "module": "Culture and socialisation"
+    },
+    {
+     "id": "u01-10",
+     "title": "Culture",
+     "module": "Culture and socialisation"
+    },
+    {
+     "id": "u01-11",
+     "title": "Primary socialisation",
+     "module": "Culture and socialisation"
+    },
+    {
+     "id": "u01-12",
+     "title": "Secondary socialisation",
+     "module": "Culture and socialisation"
+    },
+    {
+     "id": "u01-13",
+     "title": "Roles and status",
+     "module": "Social life"
+    },
+    {
+     "id": "u01-14",
+     "title": "Identity",
+     "module": "Social life"
+    },
+    {
+     "id": "u01-15",
+     "title": "Groups and communities",
+     "module": "Social life"
+    },
+    {
+     "id": "u01-16",
+     "title": "Social interaction",
+     "module": "Social life"
+    },
+    {
+     "id": "u01-17",
+     "title": "Sociological research: an introduction",
+     "module": "Doing sociology"
+    },
+    {
+     "id": "u01-18",
+     "title": "Contemporary sociology",
+     "module": "Doing sociology"
+    },
+    {
+     "id": "u01-19",
+     "title": "Applying sociology",
+     "module": "Doing sociology"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Classical Sociological Theory",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "The origins of sociology",
+     "module": "Origins"
+    },
+    {
+     "id": "u02-02",
+     "title": "The Enlightenment and social thought",
+     "module": "Origins"
+    },
+    {
+     "id": "u02-03",
+     "title": "Industrialisation and social change",
+     "module": "Origins"
+    },
+    {
+     "id": "u02-04",
+     "title": "Comte and positivism",
+     "module": "Origins"
+    },
+    {
+     "id": "u02-05",
+     "title": "Marx: historical materialism",
+     "module": "Marx and Engels"
+    },
+    {
+     "id": "u02-06",
+     "title": "Marx: class conflict",
+     "module": "Marx and Engels"
+    },
+    {
+     "id": "u02-07",
+     "title": "Marx: capitalism",
+     "module": "Marx and Engels"
+    },
+    {
+     "id": "u02-08",
+     "title": "Marx: alienation",
+     "module": "Marx and Engels"
+    },
+    {
+     "id": "u02-09",
+     "title": "Engels",
+     "module": "Marx and Engels"
+    },
+    {
+     "id": "u02-10",
+     "title": "Durkheim: social facts",
+     "module": "Durkheim"
+    },
+    {
+     "id": "u02-11",
+     "title": "Durkheim: social solidarity",
+     "module": "Durkheim"
+    },
+    {
+     "id": "u02-12",
+     "title": "Mechanical and organic solidarity",
+     "module": "Durkheim"
+    },
+    {
+     "id": "u02-13",
+     "title": "Durkheim: anomie",
+     "module": "Durkheim"
+    },
+    {
+     "id": "u02-14",
+     "title": "Durkheim's Suicide",
+     "module": "Durkheim"
+    },
+    {
+     "id": "u02-15",
+     "title": "Weber: social action",
+     "module": "Weber"
+    },
+    {
+     "id": "u02-16",
+     "title": "Weber: Verstehen",
+     "module": "Weber"
+    },
+    {
+     "id": "u02-17",
+     "title": "Weber: rationalisation",
+     "module": "Weber"
+    },
+    {
+     "id": "u02-18",
+     "title": "Weber: bureaucracy",
+     "module": "Weber"
+    },
+    {
+     "id": "u02-19",
+     "title": "Weber: class, status and party",
+     "module": "Weber"
+    },
+    {
+     "id": "u02-20",
+     "title": "Simmel",
+     "module": "Other founders and debates"
+    },
+    {
+     "id": "u02-21",
+     "title": "W. E. B. Du Bois",
+     "module": "Other founders and debates"
+    },
+    {
+     "id": "u02-22",
+     "title": "Harriet Martineau",
+     "module": "Other founders and debates"
+    },
+    {
+     "id": "u02-23",
+     "title": "Classical debates compared",
+     "module": "Other founders and debates"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Contemporary Sociological Theory",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Functionalism",
+     "module": "Consensus and conflict"
+    },
+    {
+     "id": "u03-02",
+     "title": "Parsons",
+     "module": "Consensus and conflict"
+    },
+    {
+     "id": "u03-03",
+     "title": "Merton: manifest and latent functions",
+     "module": "Consensus and conflict"
+    },
+    {
+     "id": "u03-04",
+     "title": "Conflict theory",
+     "module": "Consensus and conflict"
+    },
+    {
+     "id": "u03-05",
+     "title": "Neo-Marxism",
+     "module": "Consensus and conflict"
+    },
+    {
+     "id": "u03-06",
+     "title": "Critical theory and the Frankfurt School",
+     "module": "Consensus and conflict"
+    },
+    {
+     "id": "u03-07",
+     "title": "Symbolic interactionism: Mead and Blumer",
+     "module": "Interpretive sociology"
+    },
+    {
+     "id": "u03-08",
+     "title": "Goffman and dramaturgy",
+     "module": "Interpretive sociology"
+    },
+    {
+     "id": "u03-09",
+     "title": "Ethnomethodology",
+     "module": "Interpretive sociology"
+    },
+    {
+     "id": "u03-10",
+     "title": "Phenomenology",
+     "module": "Interpretive sociology"
+    },
+    {
+     "id": "u03-11",
+     "title": "Social constructionism",
+     "module": "Interpretive sociology"
+    },
+    {
+     "id": "u03-12",
+     "title": "Liberal feminism",
+     "module": "Feminist and critical theories"
+    },
+    {
+     "id": "u03-13",
+     "title": "Radical feminism",
+     "module": "Feminist and critical theories"
+    },
+    {
+     "id": "u03-14",
+     "title": "Marxist feminism",
+     "module": "Feminist and critical theories"
+    },
+    {
+     "id": "u03-15",
+     "title": "Black feminism",
+     "module": "Feminist and critical theories"
+    },
+    {
+     "id": "u03-16",
+     "title": "Intersectionality",
+     "module": "Feminist and critical theories"
+    },
+    {
+     "id": "u03-17",
+     "title": "Postmodernism",
+     "module": "Late modern theory"
+    },
+    {
+     "id": "u03-18",
+     "title": "Poststructuralism",
+     "module": "Late modern theory"
+    },
+    {
+     "id": "u03-19",
+     "title": "Foucault",
+     "module": "Late modern theory"
+    },
+    {
+     "id": "u03-20",
+     "title": "Bourdieu: habitus, capital and field",
+     "module": "Late modern theory"
+    },
+    {
+     "id": "u03-21",
+     "title": "Giddens and structuration theory",
+     "module": "Late modern theory"
+    },
+    {
+     "id": "u03-22",
+     "title": "Bauman",
+     "module": "Late modern theory"
+    },
+    {
+     "id": "u03-23",
+     "title": "Beck",
+     "module": "Late modern theory"
+    },
+    {
+     "id": "u03-24",
+     "title": "Theoretical synthesis",
+     "module": "Late modern theory"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Culture, Identity and Socialisation",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Material and non-material culture",
+     "module": "Culture"
+    },
+    {
+     "id": "u04-02",
+     "title": "Values",
+     "module": "Culture"
+    },
+    {
+     "id": "u04-03",
+     "title": "Norms and sanctions",
+     "module": "Culture"
+    },
+    {
+     "id": "u04-04",
+     "title": "Subcultures",
+     "module": "Culture"
+    },
+    {
+     "id": "u04-05",
+     "title": "Countercultures",
+     "module": "Culture"
+    },
+    {
+     "id": "u04-06",
+     "title": "Cultural transmission",
+     "module": "Culture"
+    },
+    {
+     "id": "u04-07",
+     "title": "The family as an agent of socialisation",
+     "module": "Agents of socialisation"
+    },
+    {
+     "id": "u04-08",
+     "title": "Education as an agent of socialisation",
+     "module": "Agents of socialisation"
+    },
+    {
+     "id": "u04-09",
+     "title": "Peer groups",
+     "module": "Agents of socialisation"
+    },
+    {
+     "id": "u04-10",
+     "title": "The media",
+     "module": "Agents of socialisation"
+    },
+    {
+     "id": "u04-11",
+     "title": "Religion as an agent of socialisation",
+     "module": "Agents of socialisation"
+    },
+    {
+     "id": "u04-12",
+     "title": "Personal and social identity",
+     "module": "Identity"
+    },
+    {
+     "id": "u04-13",
+     "title": "National identity",
+     "module": "Identity"
+    },
+    {
+     "id": "u04-14",
+     "title": "Ethnic identity",
+     "module": "Identity"
+    },
+    {
+     "id": "u04-15",
+     "title": "Gender identity",
+     "module": "Identity"
+    },
+    {
+     "id": "u04-16",
+     "title": "Class identity",
+     "module": "Identity"
+    },
+    {
+     "id": "u04-17",
+     "title": "Cultural identity",
+     "module": "Identity"
+    },
+    {
+     "id": "u04-18",
+     "title": "Hybrid identities",
+     "module": "Identity"
+    },
+    {
+     "id": "u04-19",
+     "title": "Globalised identities",
+     "module": "Identity"
+    },
+    {
+     "id": "u04-20",
+     "title": "Consumer culture",
+     "module": "Culture in change"
+    },
+    {
+     "id": "u04-21",
+     "title": "Popular culture",
+     "module": "Culture in change"
+    },
+    {
+     "id": "u04-22",
+     "title": "Cultural change",
+     "module": "Culture in change"
+    },
+    {
+     "id": "u04-23",
+     "title": "Cultural diversity",
+     "module": "Culture in change"
+    },
+    {
+     "id": "u04-24",
+     "title": "Multiculturalism",
+     "module": "Culture in change"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Social Stratification and Inequality",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Social stratification",
+     "module": "Stratification and class"
+    },
+    {
+     "id": "u05-02",
+     "title": "Social hierarchy",
+     "module": "Stratification and class"
+    },
+    {
+     "id": "u05-03",
+     "title": "Marxist theories of class",
+     "module": "Stratification and class"
+    },
+    {
+     "id": "u05-04",
+     "title": "Weberian theories of class",
+     "module": "Stratification and class"
+    },
+    {
+     "id": "u05-05",
+     "title": "Contemporary class analysis",
+     "module": "Stratification and class"
+    },
+    {
+     "id": "u05-06",
+     "title": "Social mobility",
+     "module": "Social mobility"
+    },
+    {
+     "id": "u05-07",
+     "title": "Absolute and relative mobility",
+     "module": "Social mobility"
+    },
+    {
+     "id": "u05-08",
+     "title": "Intergenerational and intragenerational mobility",
+     "module": "Social mobility"
+    },
+    {
+     "id": "u05-09",
+     "title": "Meritocracy",
+     "module": "Social mobility"
+    },
+    {
+     "id": "u05-10",
+     "title": "Life chances",
+     "module": "Social mobility"
+    },
+    {
+     "id": "u05-11",
+     "title": "Wealth inequality",
+     "module": "Wealth and poverty"
+    },
+    {
+     "id": "u05-12",
+     "title": "Income inequality",
+     "module": "Wealth and poverty"
+    },
+    {
+     "id": "u05-13",
+     "title": "Absolute poverty",
+     "module": "Wealth and poverty"
+    },
+    {
+     "id": "u05-14",
+     "title": "Relative poverty",
+     "module": "Wealth and poverty"
+    },
+    {
+     "id": "u05-15",
+     "title": "Social exclusion",
+     "module": "Wealth and poverty"
+    },
+    {
+     "id": "u05-16",
+     "title": "Deprivation",
+     "module": "Wealth and poverty"
+    },
+    {
+     "id": "u05-17",
+     "title": "Status",
+     "module": "Dimensions of inequality"
+    },
+    {
+     "id": "u05-18",
+     "title": "Occupational inequality",
+     "module": "Dimensions of inequality"
+    },
+    {
+     "id": "u05-19",
+     "title": "Housing inequality",
+     "module": "Dimensions of inequality"
+    },
+    {
+     "id": "u05-20",
+     "title": "Health inequality",
+     "module": "Dimensions of inequality"
+    },
+    {
+     "id": "u05-21",
+     "title": "Educational inequality",
+     "module": "Dimensions of inequality"
+    },
+    {
+     "id": "u05-22",
+     "title": "Digital inequality",
+     "module": "Dimensions of inequality"
+    },
+    {
+     "id": "u05-23",
+     "title": "Regional inequality",
+     "module": "Dimensions of inequality"
+    },
+    {
+     "id": "u05-24",
+     "title": "Global inequality",
+     "module": "Dimensions of inequality"
+    },
+    {
+     "id": "u05-25",
+     "title": "Social reproduction",
+     "module": "Reproduction and response"
+    },
+    {
+     "id": "u05-26",
+     "title": "Welfare and inequality",
+     "module": "Reproduction and response"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Gender and Sexuality",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Sex and gender",
+     "module": "Sex and gender"
+    },
+    {
+     "id": "u06-02",
+     "title": "The social construction of gender",
+     "module": "Sex and gender"
+    },
+    {
+     "id": "u06-03",
+     "title": "Gender socialisation",
+     "module": "Sex and gender"
+    },
+    {
+     "id": "u06-04",
+     "title": "Gender roles",
+     "module": "Sex and gender"
+    },
+    {
+     "id": "u06-05",
+     "title": "Gender stereotypes",
+     "module": "Sex and gender"
+    },
+    {
+     "id": "u06-06",
+     "title": "Gender identity in society",
+     "module": "Sex and gender"
+    },
+    {
+     "id": "u06-07",
+     "title": "Gender performativity: Butler",
+     "module": "Sex and gender"
+    },
+    {
+     "id": "u06-08",
+     "title": "Masculinities",
+     "module": "Sex and gender"
+    },
+    {
+     "id": "u06-09",
+     "title": "Hegemonic masculinity",
+     "module": "Sex and gender"
+    },
+    {
+     "id": "u06-10",
+     "title": "Feminist theory",
+     "module": "Feminist analysis"
+    },
+    {
+     "id": "u06-11",
+     "title": "Patriarchy",
+     "module": "Feminist analysis"
+    },
+    {
+     "id": "u06-12",
+     "title": "Gender inequality",
+     "module": "Feminist analysis"
+    },
+    {
+     "id": "u06-13",
+     "title": "Gender and work",
+     "module": "Gender in institutions"
+    },
+    {
+     "id": "u06-14",
+     "title": "Gender and education",
+     "module": "Gender in institutions"
+    },
+    {
+     "id": "u06-15",
+     "title": "Gender and the family",
+     "module": "Gender in institutions"
+    },
+    {
+     "id": "u06-16",
+     "title": "Gender and politics",
+     "module": "Gender in institutions"
+    },
+    {
+     "id": "u06-17",
+     "title": "Gender and the media",
+     "module": "Gender in institutions"
+    },
+    {
+     "id": "u06-18",
+     "title": "Sexuality as a social phenomenon",
+     "module": "Sexuality"
+    },
+    {
+     "id": "u06-19",
+     "title": "Sexual identities",
+     "module": "Sexuality"
+    },
+    {
+     "id": "u06-20",
+     "title": "Heteronormativity",
+     "module": "Sexuality"
+    },
+    {
+     "id": "u06-21",
+     "title": "LGBTQ+ sociology",
+     "module": "Sexuality"
+    },
+    {
+     "id": "u06-22",
+     "title": "Gender and intersectionality",
+     "module": "Contemporary issues"
+    },
+    {
+     "id": "u06-23",
+     "title": "Gender-based violence",
+     "module": "Contemporary issues"
+    },
+    {
+     "id": "u06-24",
+     "title": "Current debates in gender and sexuality",
+     "module": "Contemporary issues"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Race, Ethnicity and Migration",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Race as a social construct",
+     "module": "Race and ethnicity"
+    },
+    {
+     "id": "u07-02",
+     "title": "Ethnicity",
+     "module": "Race and ethnicity"
+    },
+    {
+     "id": "u07-03",
+     "title": "Racialisation",
+     "module": "Race and ethnicity"
+    },
+    {
+     "id": "u07-04",
+     "title": "Racism",
+     "module": "Race and ethnicity"
+    },
+    {
+     "id": "u07-05",
+     "title": "Institutional racism",
+     "module": "Race and ethnicity"
+    },
+    {
+     "id": "u07-06",
+     "title": "Structural racism",
+     "module": "Race and ethnicity"
+    },
+    {
+     "id": "u07-07",
+     "title": "Prejudice and discrimination",
+     "module": "Race and ethnicity"
+    },
+    {
+     "id": "u07-08",
+     "title": "Ethnic identity and belonging",
+     "module": "Race and ethnicity"
+    },
+    {
+     "id": "u07-09",
+     "title": "Minority groups",
+     "module": "Race and ethnicity"
+    },
+    {
+     "id": "u07-10",
+     "title": "Colonialism",
+     "module": "Colonialism and its legacies"
+    },
+    {
+     "id": "u07-11",
+     "title": "Postcolonial theory",
+     "module": "Colonialism and its legacies"
+    },
+    {
+     "id": "u07-12",
+     "title": "Decolonisation",
+     "module": "Colonialism and its legacies"
+    },
+    {
+     "id": "u07-13",
+     "title": "International migration",
+     "module": "Migration"
+    },
+    {
+     "id": "u07-14",
+     "title": "Forced migration",
+     "module": "Migration"
+    },
+    {
+     "id": "u07-15",
+     "title": "Refugees and asylum",
+     "module": "Migration"
+    },
+    {
+     "id": "u07-16",
+     "title": "Integration and assimilation",
+     "module": "Migration"
+    },
+    {
+     "id": "u07-17",
+     "title": "Multiculturalism and migration",
+     "module": "Migration"
+    },
+    {
+     "id": "u07-18",
+     "title": "Diaspora",
+     "module": "Migration"
+    },
+    {
+     "id": "u07-19",
+     "title": "Transnationalism",
+     "module": "Migration"
+    },
+    {
+     "id": "u07-20",
+     "title": "Borders",
+     "module": "Migration"
+    },
+    {
+     "id": "u07-21",
+     "title": "Citizenship",
+     "module": "Migration"
+    },
+    {
+     "id": "u07-22",
+     "title": "Race and inequality",
+     "module": "Race and inequality"
+    },
+    {
+     "id": "u07-23",
+     "title": "Race and education",
+     "module": "Race and inequality"
+    },
+    {
+     "id": "u07-24",
+     "title": "Race and employment",
+     "module": "Race and inequality"
+    },
+    {
+     "id": "u07-25",
+     "title": "Race and criminal justice",
+     "module": "Race and inequality"
+    },
+    {
+     "id": "u07-26",
+     "title": "Race and health",
+     "module": "Race and inequality"
+    },
+    {
+     "id": "u07-27",
+     "title": "Debates about migration",
+     "module": "Race and inequality"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Family and Relationships",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "What is a family?",
+     "module": "Defining the family"
+    },
+    {
+     "id": "u08-02",
+     "title": "Family structures",
+     "module": "Defining the family"
+    },
+    {
+     "id": "u08-03",
+     "title": "Nuclear and extended families",
+     "module": "Defining the family"
+    },
+    {
+     "id": "u08-04",
+     "title": "Lone-parent families",
+     "module": "Defining the family"
+    },
+    {
+     "id": "u08-05",
+     "title": "Blended families",
+     "module": "Defining the family"
+    },
+    {
+     "id": "u08-06",
+     "title": "Same-sex families",
+     "module": "Defining the family"
+    },
+    {
+     "id": "u08-07",
+     "title": "Marriage",
+     "module": "Partnerships"
+    },
+    {
+     "id": "u08-08",
+     "title": "Cohabitation",
+     "module": "Partnerships"
+    },
+    {
+     "id": "u08-09",
+     "title": "Divorce",
+     "module": "Partnerships"
+    },
+    {
+     "id": "u08-10",
+     "title": "Fertility and family size",
+     "module": "Children and parenting"
+    },
+    {
+     "id": "u08-11",
+     "title": "Parenting",
+     "module": "Children and parenting"
+    },
+    {
+     "id": "u08-12",
+     "title": "Childhood as a social construction",
+     "module": "Children and parenting"
+    },
+    {
+     "id": "u08-13",
+     "title": "Domestic labour",
+     "module": "Power in families"
+    },
+    {
+     "id": "u08-14",
+     "title": "Power in the family",
+     "module": "Power in families"
+    },
+    {
+     "id": "u08-15",
+     "title": "Domestic violence",
+     "module": "Power in families"
+    },
+    {
+     "id": "u08-16",
+     "title": "Family diversity",
+     "module": "Families in context"
+    },
+    {
+     "id": "u08-17",
+     "title": "Intergenerational relationships",
+     "module": "Families in context"
+    },
+    {
+     "id": "u08-18",
+     "title": "Ageing and care",
+     "module": "Families in context"
+    },
+    {
+     "id": "u08-19",
+     "title": "Family policy",
+     "module": "Families in context"
+    },
+    {
+     "id": "u08-20",
+     "title": "Global families",
+     "module": "Families in context"
+    },
+    {
+     "id": "u08-21",
+     "title": "Family change",
+     "module": "Families in context"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Education",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Functionalist perspectives on education",
+     "module": "Theories of education"
+    },
+    {
+     "id": "u09-02",
+     "title": "Marxist perspectives on education",
+     "module": "Theories of education"
+    },
+    {
+     "id": "u09-03",
+     "title": "Feminist perspectives on education",
+     "module": "Theories of education"
+    },
+    {
+     "id": "u09-04",
+     "title": "Education, socialisation and social control",
+     "module": "Theories of education"
+    },
+    {
+     "id": "u09-05",
+     "title": "The hidden curriculum",
+     "module": "Theories of education"
+    },
+    {
+     "id": "u09-06",
+     "title": "Educational achievement and social class",
+     "module": "Differential achievement"
+    },
+    {
+     "id": "u09-07",
+     "title": "Educational achievement and gender",
+     "module": "Differential achievement"
+    },
+    {
+     "id": "u09-08",
+     "title": "Educational achievement and ethnicity",
+     "module": "Differential achievement"
+    },
+    {
+     "id": "u09-09",
+     "title": "Cultural capital and education",
+     "module": "Differential achievement"
+    },
+    {
+     "id": "u09-10",
+     "title": "Linguistic codes",
+     "module": "Differential achievement"
+    },
+    {
+     "id": "u09-11",
+     "title": "Labelling in education",
+     "module": "Processes inside schools"
+    },
+    {
+     "id": "u09-12",
+     "title": "Teacher expectations",
+     "module": "Processes inside schools"
+    },
+    {
+     "id": "u09-13",
+     "title": "The self-fulfilling prophecy",
+     "module": "Processes inside schools"
+    },
+    {
+     "id": "u09-14",
+     "title": "Selection",
+     "module": "Processes inside schools"
+    },
+    {
+     "id": "u09-15",
+     "title": "Educational inequality",
+     "module": "Education systems"
+    },
+    {
+     "id": "u09-16",
+     "title": "Private education",
+     "module": "Education systems"
+    },
+    {
+     "id": "u09-17",
+     "title": "Higher education",
+     "module": "Education systems"
+    },
+    {
+     "id": "u09-18",
+     "title": "Education policy",
+     "module": "Education systems"
+    },
+    {
+     "id": "u09-19",
+     "title": "Global education",
+     "module": "Education systems"
+    },
+    {
+     "id": "u09-20",
+     "title": "Digital learning",
+     "module": "Education systems"
+    },
+    {
+     "id": "u09-21",
+     "title": "Educational reform",
+     "module": "Education systems"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Crime and Deviance",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Crime and deviance",
+     "module": "Defining crime and deviance"
+    },
+    {
+     "id": "u10-02",
+     "title": "The social construction of crime",
+     "module": "Defining crime and deviance"
+    },
+    {
+     "id": "u10-03",
+     "title": "Functionalist theories of crime",
+     "module": "Theories of crime"
+    },
+    {
+     "id": "u10-04",
+     "title": "Marxist theories of crime",
+     "module": "Theories of crime"
+    },
+    {
+     "id": "u10-05",
+     "title": "Interactionist theories of crime",
+     "module": "Theories of crime"
+    },
+    {
+     "id": "u10-06",
+     "title": "Labelling theory",
+     "module": "Theories of crime"
+    },
+    {
+     "id": "u10-07",
+     "title": "Strain theory",
+     "module": "Theories of crime"
+    },
+    {
+     "id": "u10-08",
+     "title": "Subcultural theories",
+     "module": "Theories of crime"
+    },
+    {
+     "id": "u10-09",
+     "title": "Differential association",
+     "module": "Theories of crime"
+    },
+    {
+     "id": "u10-10",
+     "title": "Social learning and crime",
+     "module": "Theories of crime"
+    },
+    {
+     "id": "u10-11",
+     "title": "Control theory",
+     "module": "Theories of crime"
+    },
+    {
+     "id": "u10-12",
+     "title": "Feminist criminology",
+     "module": "Theories of crime"
+    },
+    {
+     "id": "u10-13",
+     "title": "Critical criminology",
+     "module": "Theories of crime"
+    },
+    {
+     "id": "u10-14",
+     "title": "Realist criminology",
+     "module": "Theories of crime"
+    },
+    {
+     "id": "u10-15",
+     "title": "Postmodern criminology",
+     "module": "Theories of crime"
+    },
+    {
+     "id": "u10-16",
+     "title": "Crime and social class",
+     "module": "Patterns of crime"
+    },
+    {
+     "id": "u10-17",
+     "title": "Crime and gender",
+     "module": "Patterns of crime"
+    },
+    {
+     "id": "u10-18",
+     "title": "Crime and ethnicity",
+     "module": "Patterns of crime"
+    },
+    {
+     "id": "u10-19",
+     "title": "Youth crime",
+     "module": "Patterns of crime"
+    },
+    {
+     "id": "u10-20",
+     "title": "White-collar crime",
+     "module": "Patterns of crime"
+    },
+    {
+     "id": "u10-21",
+     "title": "Corporate crime",
+     "module": "Patterns of crime"
+    },
+    {
+     "id": "u10-22",
+     "title": "Organised crime",
+     "module": "Patterns of crime"
+    },
+    {
+     "id": "u10-23",
+     "title": "Cybercrime",
+     "module": "Patterns of crime"
+    },
+    {
+     "id": "u10-24",
+     "title": "Victimology",
+     "module": "Patterns of crime"
+    },
+    {
+     "id": "u10-25",
+     "title": "Policing",
+     "module": "Responses to crime"
+    },
+    {
+     "id": "u10-26",
+     "title": "The criminal justice system",
+     "module": "Responses to crime"
+    },
+    {
+     "id": "u10-27",
+     "title": "Prisons",
+     "module": "Responses to crime"
+    },
+    {
+     "id": "u10-28",
+     "title": "Punishment",
+     "module": "Responses to crime"
+    },
+    {
+     "id": "u10-29",
+     "title": "Rehabilitation",
+     "module": "Responses to crime"
+    },
+    {
+     "id": "u10-30",
+     "title": "Social control",
+     "module": "Responses to crime"
+    },
+    {
+     "id": "u10-31",
+     "title": "Surveillance",
+     "module": "Responses to crime"
+    },
+    {
+     "id": "u10-32",
+     "title": "Moral panics",
+     "module": "Responses to crime"
+    },
+    {
+     "id": "u10-33",
+     "title": "Crime and the media",
+     "module": "Responses to crime"
+    },
+    {
+     "id": "u10-34",
+     "title": "Crime prevention",
+     "module": "Responses to crime"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Politics and Power",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Power",
+     "module": "Power and authority"
+    },
+    {
+     "id": "u11-02",
+     "title": "Authority: traditional, charismatic and legal-rational",
+     "module": "Power and authority"
+    },
+    {
+     "id": "u11-03",
+     "title": "Legitimacy",
+     "module": "Power and authority"
+    },
+    {
+     "id": "u11-04",
+     "title": "The state",
+     "module": "The state"
+    },
+    {
+     "id": "u11-05",
+     "title": "Nation states",
+     "module": "The state"
+    },
+    {
+     "id": "u11-06",
+     "title": "Citizenship and rights",
+     "module": "The state"
+    },
+    {
+     "id": "u11-07",
+     "title": "Democracy",
+     "module": "The state"
+    },
+    {
+     "id": "u11-08",
+     "title": "Political participation",
+     "module": "The state"
+    },
+    {
+     "id": "u11-09",
+     "title": "Political inequality",
+     "module": "The state"
+    },
+    {
+     "id": "u11-10",
+     "title": "Political ideologies",
+     "module": "The state"
+    },
+    {
+     "id": "u11-11",
+     "title": "Social movements",
+     "module": "Collective action"
+    },
+    {
+     "id": "u11-12",
+     "title": "Collective action",
+     "module": "Collective action"
+    },
+    {
+     "id": "u11-13",
+     "title": "Civil society",
+     "module": "Collective action"
+    },
+    {
+     "id": "u11-14",
+     "title": "Protest",
+     "module": "Collective action"
+    },
+    {
+     "id": "u11-15",
+     "title": "Political institutions",
+     "module": "Institutions and governance"
+    },
+    {
+     "id": "u11-16",
+     "title": "Bureaucracy and the state",
+     "module": "Institutions and governance"
+    },
+    {
+     "id": "u11-17",
+     "title": "Global governance",
+     "module": "Institutions and governance"
+    },
+    {
+     "id": "u11-18",
+     "title": "Power and knowledge",
+     "module": "Institutions and governance"
+    },
+    {
+     "id": "u11-19",
+     "title": "Political surveillance",
+     "module": "Institutions and governance"
+    },
+    {
+     "id": "u11-20",
+     "title": "Political sociology",
+     "module": "Institutions and governance"
+    },
+    {
+     "id": "u11-21",
+     "title": "Political change",
+     "module": "Institutions and governance"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Religion",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Defining religion",
+     "module": "Understanding religion"
+    },
+    {
+     "id": "u12-02",
+     "title": "Functionalist approaches to religion",
+     "module": "Understanding religion"
+    },
+    {
+     "id": "u12-03",
+     "title": "Marxist approaches to religion",
+     "module": "Understanding religion"
+    },
+    {
+     "id": "u12-04",
+     "title": "Weberian approaches to religion",
+     "module": "Understanding religion"
+    },
+    {
+     "id": "u12-05",
+     "title": "Secularisation",
+     "module": "Religion in modern society"
+    },
+    {
+     "id": "u12-06",
+     "title": "Belief and practice",
+     "module": "Religion in modern society"
+    },
+    {
+     "id": "u12-07",
+     "title": "Religious institutions",
+     "module": "Religion in modern society"
+    },
+    {
+     "id": "u12-08",
+     "title": "Religious authority",
+     "module": "Religion in modern society"
+    },
+    {
+     "id": "u12-09",
+     "title": "Religious identity",
+     "module": "Religion in modern society"
+    },
+    {
+     "id": "u12-10",
+     "title": "Religious pluralism",
+     "module": "Religion in modern society"
+    },
+    {
+     "id": "u12-11",
+     "title": "Fundamentalism",
+     "module": "Religion in modern society"
+    },
+    {
+     "id": "u12-12",
+     "title": "Civil religion",
+     "module": "Religion in modern society"
+    },
+    {
+     "id": "u12-13",
+     "title": "Religion and social change",
+     "module": "Religion and society"
+    },
+    {
+     "id": "u12-14",
+     "title": "Religion and politics",
+     "module": "Religion and society"
+    },
+    {
+     "id": "u12-15",
+     "title": "Religion and gender",
+     "module": "Religion and society"
+    },
+    {
+     "id": "u12-16",
+     "title": "Religion and inequality",
+     "module": "Religion and society"
+    },
+    {
+     "id": "u12-17",
+     "title": "Religion and globalisation",
+     "module": "Religion and society"
+    },
+    {
+     "id": "u12-18",
+     "title": "New religious movements",
+     "module": "Religion and society"
+    },
+    {
+     "id": "u12-19",
+     "title": "Contemporary religious change",
+     "module": "Religion and society"
+    }
+   ]
+  },
+  {
+   "id": "u13",
+   "n": 13,
+   "title": "Work and Economy",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u13-01",
+     "title": "Industrial society",
+     "module": "Economy and society"
+    },
+    {
+     "id": "u13-02",
+     "title": "Post-industrial society",
+     "module": "Economy and society"
+    },
+    {
+     "id": "u13-03",
+     "title": "Capitalism",
+     "module": "Economy and society"
+    },
+    {
+     "id": "u13-04",
+     "title": "Labour markets",
+     "module": "Economy and society"
+    },
+    {
+     "id": "u13-05",
+     "title": "The division of labour",
+     "module": "Economy and society"
+    },
+    {
+     "id": "u13-06",
+     "title": "Alienation at work",
+     "module": "Economy and society"
+    },
+    {
+     "id": "u13-07",
+     "title": "Workplace hierarchy",
+     "module": "Organisations"
+    },
+    {
+     "id": "u13-08",
+     "title": "Bureaucracy and organisations",
+     "module": "Organisations"
+    },
+    {
+     "id": "u13-09",
+     "title": "Professionalisation",
+     "module": "Organisations"
+    },
+    {
+     "id": "u13-10",
+     "title": "Occupational identity",
+     "module": "Organisations"
+    },
+    {
+     "id": "u13-11",
+     "title": "Work and gender",
+     "module": "Inequality at work"
+    },
+    {
+     "id": "u13-12",
+     "title": "Work and class",
+     "module": "Inequality at work"
+    },
+    {
+     "id": "u13-13",
+     "title": "Work and ethnicity",
+     "module": "Inequality at work"
+    },
+    {
+     "id": "u13-14",
+     "title": "Unemployment",
+     "module": "Inequality at work"
+    },
+    {
+     "id": "u13-15",
+     "title": "Precarity",
+     "module": "Inequality at work"
+    },
+    {
+     "id": "u13-16",
+     "title": "The gig economy",
+     "module": "Changing work"
+    },
+    {
+     "id": "u13-17",
+     "title": "Automation and artificial intelligence",
+     "module": "Changing work"
+    },
+    {
+     "id": "u13-18",
+     "title": "Workplace surveillance",
+     "module": "Changing work"
+    },
+    {
+     "id": "u13-19",
+     "title": "Trade unions and industrial relations",
+     "module": "Changing work"
+    },
+    {
+     "id": "u13-20",
+     "title": "Global production",
+     "module": "Changing work"
+    },
+    {
+     "id": "u13-21",
+     "title": "Consumer society",
+     "module": "Economy and consumption"
+    },
+    {
+     "id": "u13-22",
+     "title": "Economic inequality",
+     "module": "Economy and consumption"
+    },
+    {
+     "id": "u13-23",
+     "title": "Welfare capitalism",
+     "module": "Economy and consumption"
+    },
+    {
+     "id": "u13-24",
+     "title": "The future of work",
+     "module": "Economy and consumption"
+    }
+   ]
+  },
+  {
+   "id": "u14",
+   "n": 14,
+   "title": "Globalisation and Social Change",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u14-01",
+     "title": "What is globalisation?",
+     "module": "Dimensions of globalisation"
+    },
+    {
+     "id": "u14-02",
+     "title": "Economic globalisation",
+     "module": "Dimensions of globalisation"
+    },
+    {
+     "id": "u14-03",
+     "title": "Political globalisation",
+     "module": "Dimensions of globalisation"
+    },
+    {
+     "id": "u14-04",
+     "title": "Cultural globalisation",
+     "module": "Dimensions of globalisation"
+    },
+    {
+     "id": "u14-05",
+     "title": "Technological globalisation",
+     "module": "Dimensions of globalisation"
+    },
+    {
+     "id": "u14-06",
+     "title": "Global migration",
+     "module": "Global economy"
+    },
+    {
+     "id": "u14-07",
+     "title": "Global inequality and development",
+     "module": "Global economy"
+    },
+    {
+     "id": "u14-08",
+     "title": "Global capitalism",
+     "module": "Global economy"
+    },
+    {
+     "id": "u14-09",
+     "title": "Transnational corporations",
+     "module": "Global economy"
+    },
+    {
+     "id": "u14-10",
+     "title": "Global supply chains",
+     "module": "Global economy"
+    },
+    {
+     "id": "u14-11",
+     "title": "Cultural homogenisation",
+     "module": "Culture and networks"
+    },
+    {
+     "id": "u14-12",
+     "title": "Cultural hybridisation",
+     "module": "Culture and networks"
+    },
+    {
+     "id": "u14-13",
+     "title": "Glocalisation",
+     "module": "Culture and networks"
+    },
+    {
+     "id": "u14-14",
+     "title": "Digital society",
+     "module": "Culture and networks"
+    },
+    {
+     "id": "u14-15",
+     "title": "The network society",
+     "module": "Culture and networks"
+    },
+    {
+     "id": "u14-16",
+     "title": "Social media and society",
+     "module": "Culture and networks"
+    },
+    {
+     "id": "u14-17",
+     "title": "Global social movements",
+     "module": "Culture and networks"
+    },
+    {
+     "id": "u14-18",
+     "title": "Climate change and society",
+     "module": "Environment"
+    },
+    {
+     "id": "u14-19",
+     "title": "Environmental sociology",
+     "module": "Environment"
+    },
+    {
+     "id": "u14-20",
+     "title": "Sustainable development",
+     "module": "Environment"
+    },
+    {
+     "id": "u14-21",
+     "title": "Consumerism and the environment",
+     "module": "Environment"
+    },
+    {
+     "id": "u14-22",
+     "title": "Risk society",
+     "module": "Theories of change"
+    },
+    {
+     "id": "u14-23",
+     "title": "Modernity",
+     "module": "Theories of change"
+    },
+    {
+     "id": "u14-24",
+     "title": "Postmodernity",
+     "module": "Theories of change"
+    },
+    {
+     "id": "u14-25",
+     "title": "Social transformation",
+     "module": "Theories of change"
+    },
+    {
+     "id": "u14-26",
+     "title": "Future societies",
+     "module": "Theories of change"
+    }
+   ]
+  },
+  {
+   "id": "u15",
+   "n": 15,
+   "title": "Urban Sociology and Population",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u15-01",
+     "title": "Urbanisation",
+     "module": "Cities"
+    },
+    {
+     "id": "u15-02",
+     "title": "Cities and modernity",
+     "module": "Cities"
+    },
+    {
+     "id": "u15-03",
+     "title": "Urban ecology and the Chicago School",
+     "module": "Cities"
+    },
+    {
+     "id": "u15-04",
+     "title": "Urban inequality",
+     "module": "Cities"
+    },
+    {
+     "id": "u15-05",
+     "title": "Segregation",
+     "module": "Cities"
+    },
+    {
+     "id": "u15-06",
+     "title": "Gentrification",
+     "module": "Cities"
+    },
+    {
+     "id": "u15-07",
+     "title": "Housing",
+     "module": "Cities"
+    },
+    {
+     "id": "u15-08",
+     "title": "Homelessness",
+     "module": "Cities"
+    },
+    {
+     "id": "u15-09",
+     "title": "Suburbanisation",
+     "module": "Cities"
+    },
+    {
+     "id": "u15-10",
+     "title": "Rural sociology",
+     "module": "Rural and community"
+    },
+    {
+     "id": "u15-11",
+     "title": "Community",
+     "module": "Rural and community"
+    },
+    {
+     "id": "u15-12",
+     "title": "Social networks in places",
+     "module": "Rural and community"
+    },
+    {
+     "id": "u15-13",
+     "title": "Population change",
+     "module": "Population"
+    },
+    {
+     "id": "u15-14",
+     "title": "The demographic transition",
+     "module": "Population"
+    },
+    {
+     "id": "u15-15",
+     "title": "Fertility",
+     "module": "Population"
+    },
+    {
+     "id": "u15-16",
+     "title": "Mortality",
+     "module": "Population"
+    },
+    {
+     "id": "u15-17",
+     "title": "Population ageing",
+     "module": "Population"
+    },
+    {
+     "id": "u15-18",
+     "title": "Migration and population",
+     "module": "Population"
+    },
+    {
+     "id": "u15-19",
+     "title": "Urban planning",
+     "module": "Planning and futures"
+    },
+    {
+     "id": "u15-20",
+     "title": "Sustainable cities",
+     "module": "Planning and futures"
+    },
+    {
+     "id": "u15-21",
+     "title": "Global cities",
+     "module": "Planning and futures"
+    },
+    {
+     "id": "u15-22",
+     "title": "Urban futures",
+     "module": "Planning and futures"
+    }
+   ]
+  },
+  {
+   "id": "u16",
+   "n": 16,
+   "title": "Health and Medicine",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u16-01",
+     "title": "Social determinants of health",
+     "module": "Health and society"
+    },
+    {
+     "id": "u16-02",
+     "title": "Health inequalities",
+     "module": "Health and society"
+    },
+    {
+     "id": "u16-03",
+     "title": "Medical sociology",
+     "module": "Health and society"
+    },
+    {
+     "id": "u16-04",
+     "title": "Medical and social models of health",
+     "module": "Health and society"
+    },
+    {
+     "id": "u16-05",
+     "title": "The experience of illness",
+     "module": "Health and society"
+    },
+    {
+     "id": "u16-06",
+     "title": "Medicalisation",
+     "module": "Health and society"
+    },
+    {
+     "id": "u16-07",
+     "title": "The medical profession",
+     "module": "Medicine as an institution"
+    },
+    {
+     "id": "u16-08",
+     "title": "Healthcare institutions",
+     "module": "Medicine as an institution"
+    },
+    {
+     "id": "u16-09",
+     "title": "Patients and power",
+     "module": "Medicine as an institution"
+    },
+    {
+     "id": "u16-10",
+     "title": "Disability and the social model",
+     "module": "Disability and mental health"
+    },
+    {
+     "id": "u16-11",
+     "title": "Stigma and health",
+     "module": "Disability and mental health"
+    },
+    {
+     "id": "u16-12",
+     "title": "Mental health and social control",
+     "module": "Disability and mental health"
+    },
+    {
+     "id": "u16-13",
+     "title": "Health behaviours",
+     "module": "Health in society"
+    },
+    {
+     "id": "u16-14",
+     "title": "Public health",
+     "module": "Health in society"
+    },
+    {
+     "id": "u16-15",
+     "title": "Health policy",
+     "module": "Health in society"
+    },
+    {
+     "id": "u16-16",
+     "title": "Global health",
+     "module": "Health in society"
+    },
+    {
+     "id": "u16-17",
+     "title": "Ageing and health",
+     "module": "Health in society"
+    },
+    {
+     "id": "u16-18",
+     "title": "Gender and health",
+     "module": "Health in society"
+    },
+    {
+     "id": "u16-19",
+     "title": "Race and health inequalities",
+     "module": "Health in society"
+    },
+    {
+     "id": "u16-20",
+     "title": "Digital healthcare",
+     "module": "Health in society"
+    }
+   ]
+  },
+  {
+   "id": "u17",
+   "n": 17,
+   "title": "Research Methods",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u17-01",
+     "title": "Research design",
+     "module": "Designing research"
+    },
+    {
+     "id": "u17-02",
+     "title": "Research questions and hypotheses",
+     "module": "Designing research"
+    },
+    {
+     "id": "u17-03",
+     "title": "Positivism",
+     "module": "Designing research"
+    },
+    {
+     "id": "u17-04",
+     "title": "Interpretivism",
+     "module": "Designing research"
+    },
+    {
+     "id": "u17-05",
+     "title": "Realism",
+     "module": "Designing research"
+    },
+    {
+     "id": "u17-06",
+     "title": "Quantitative research",
+     "module": "Designing research"
+    },
+    {
+     "id": "u17-07",
+     "title": "Qualitative research",
+     "module": "Designing research"
+    },
+    {
+     "id": "u17-08",
+     "title": "Mixed methods",
+     "module": "Designing research"
+    },
+    {
+     "id": "u17-09",
+     "title": "Surveys",
+     "module": "Asking questions"
+    },
+    {
+     "id": "u17-10",
+     "title": "Questionnaire design",
+     "module": "Asking questions"
+    },
+    {
+     "id": "u17-11",
+     "title": "Structured interviews",
+     "module": "Asking questions"
+    },
+    {
+     "id": "u17-12",
+     "title": "Semi-structured interviews",
+     "module": "Asking questions"
+    },
+    {
+     "id": "u17-13",
+     "title": "Unstructured interviews",
+     "module": "Asking questions"
+    },
+    {
+     "id": "u17-14",
+     "title": "Focus groups",
+     "module": "Asking questions"
+    },
+    {
+     "id": "u17-15",
+     "title": "Participant observation",
+     "module": "Observing and immersion"
+    },
+    {
+     "id": "u17-16",
+     "title": "Ethnography",
+     "module": "Observing and immersion"
+    },
+    {
+     "id": "u17-17",
+     "title": "Case studies",
+     "module": "Observing and immersion"
+    },
+    {
+     "id": "u17-18",
+     "title": "Experiments in sociology",
+     "module": "Observing and immersion"
+    },
+    {
+     "id": "u17-19",
+     "title": "Social network analysis",
+     "module": "Analysing texts and networks"
+    },
+    {
+     "id": "u17-20",
+     "title": "Content analysis",
+     "module": "Analysing texts and networks"
+    },
+    {
+     "id": "u17-21",
+     "title": "Discourse analysis",
+     "module": "Analysing texts and networks"
+    },
+    {
+     "id": "u17-22",
+     "title": "Secondary data",
+     "module": "Existing data"
+    },
+    {
+     "id": "u17-23",
+     "title": "Official statistics",
+     "module": "Existing data"
+    },
+    {
+     "id": "u17-24",
+     "title": "Longitudinal research",
+     "module": "Existing data"
+    },
+    {
+     "id": "u17-25",
+     "title": "Comparative research",
+     "module": "Existing data"
+    },
+    {
+     "id": "u17-26",
+     "title": "Probability sampling",
+     "module": "Sampling and quality"
+    },
+    {
+     "id": "u17-27",
+     "title": "Non-probability sampling",
+     "module": "Sampling and quality"
+    },
+    {
+     "id": "u17-28",
+     "title": "Reliability",
+     "module": "Sampling and quality"
+    },
+    {
+     "id": "u17-29",
+     "title": "Validity",
+     "module": "Sampling and quality"
+    },
+    {
+     "id": "u17-30",
+     "title": "Generalisability",
+     "module": "Sampling and quality"
+    },
+    {
+     "id": "u17-31",
+     "title": "Bias",
+     "module": "Sampling and quality"
+    },
+    {
+     "id": "u17-32",
+     "title": "Positionality",
+     "module": "Ethics and reflexivity"
+    },
+    {
+     "id": "u17-33",
+     "title": "Reflexivity",
+     "module": "Ethics and reflexivity"
+    },
+    {
+     "id": "u17-34",
+     "title": "Informed consent",
+     "module": "Ethics and reflexivity"
+    },
+    {
+     "id": "u17-35",
+     "title": "Anonymity and confidentiality",
+     "module": "Ethics and reflexivity"
+    },
+    {
+     "id": "u17-36",
+     "title": "Researching vulnerable groups",
+     "module": "Ethics and reflexivity"
+    },
+    {
+     "id": "u17-37",
+     "title": "Interpreting findings",
+     "module": "From data to findings"
+    },
+    {
+     "id": "u17-38",
+     "title": "Disseminating research",
+     "module": "From data to findings"
+    }
+   ]
+  },
+  {
+   "id": "u18",
+   "n": 18,
+   "title": "Social Statistics and Data Science",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u18-01",
+     "title": "Types of social data",
+     "module": "Describing social data"
+    },
+    {
+     "id": "u18-02",
+     "title": "Central tendency",
+     "module": "Describing social data"
+    },
+    {
+     "id": "u18-03",
+     "title": "Dispersion",
+     "module": "Describing social data"
+    },
+    {
+     "id": "u18-04",
+     "title": "Frequency distributions",
+     "module": "Describing social data"
+    },
+    {
+     "id": "u18-05",
+     "title": "Visualising social data",
+     "module": "Describing social data"
+    },
+    {
+     "id": "u18-06",
+     "title": "Probability for social research",
+     "module": "Inference"
+    },
+    {
+     "id": "u18-07",
+     "title": "Sampling distributions",
+     "module": "Inference"
+    },
+    {
+     "id": "u18-08",
+     "title": "Hypothesis testing",
+     "module": "Inference"
+    },
+    {
+     "id": "u18-09",
+     "title": "Statistical significance",
+     "module": "Inference"
+    },
+    {
+     "id": "u18-10",
+     "title": "Confidence intervals",
+     "module": "Inference"
+    },
+    {
+     "id": "u18-11",
+     "title": "Effect sizes",
+     "module": "Inference"
+    },
+    {
+     "id": "u18-12",
+     "title": "Correlation",
+     "module": "Relationships in data"
+    },
+    {
+     "id": "u18-13",
+     "title": "Regression",
+     "module": "Relationships in data"
+    },
+    {
+     "id": "u18-14",
+     "title": "Categorical data",
+     "module": "Relationships in data"
+    },
+    {
+     "id": "u18-15",
+     "title": "Chi-square tests",
+     "module": "Relationships in data"
+    },
+    {
+     "id": "u18-16",
+     "title": "Social indicators",
+     "module": "Measuring society"
+    },
+    {
+     "id": "u18-17",
+     "title": "Measuring inequality: the Gini coefficient",
+     "module": "Measuring society"
+    },
+    {
+     "id": "u18-18",
+     "title": "Measuring poverty",
+     "module": "Measuring society"
+    },
+    {
+     "id": "u18-19",
+     "title": "Demographic analysis",
+     "module": "Measuring society"
+    },
+    {
+     "id": "u18-20",
+     "title": "Census data",
+     "module": "Measuring society"
+    },
+    {
+     "id": "u18-21",
+     "title": "Survey data",
+     "module": "Measuring society"
+    },
+    {
+     "id": "u18-22",
+     "title": "Social network analysis in practice",
+     "module": "Computational sociology"
+    },
+    {
+     "id": "u18-23",
+     "title": "Computational sociology",
+     "module": "Computational sociology"
+    },
+    {
+     "id": "u18-24",
+     "title": "Digital trace data",
+     "module": "Computational sociology"
+    },
+    {
+     "id": "u18-25",
+     "title": "Reproducible research",
+     "module": "Computational sociology"
+    }
+   ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "theorists",
+   "title": "Theorist timeline",
+   "kind": "Explorer",
+   "sub": "Thirty sociologists from Comte to Crenshaw on one timeline, by tradition, with a key work and idea for each.",
+   "note": "Dates of birth, death and first publication; ideas paraphrased.",
+   "tasks": null,
+   "lessons": [
+    "u02-01",
+    "u02-23",
+    "u03-24",
+    "u03-01",
+    "u03-07"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/theorists"
+  },
+  {
+   "id": "marx-durkheim-weber",
+   "title": "Marx, Durkheim and Weber compared",
+   "kind": "Exercise",
+   "sub": "The three founders side by side on eight big questions, then sort their ideas to the right theorist.",
+   "note": "Summaries and paraphrases in our own words.",
+   "tasks": null,
+   "lessons": [
+    "u02-23",
+    "u02-06",
+    "u02-10",
+    "u02-15",
+    "u02-19"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/marx-durkheim-weber"
+  },
+  {
+   "id": "movements",
+   "title": "Social movements timeline",
+   "kind": "Explorer",
+   "sub": "From Chartism to school climate strikes: what happened, and which concepts each movement illustrates.",
+   "note": "A selection of reference dates and events to illustrate concepts.",
+   "tasks": null,
+   "lessons": [
+    "u11-11",
+    "u11-12",
+    "u11-14",
+    "u14-17"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/movements"
+  },
+  {
+   "id": "lorenz",
+   "title": "Income inequality: Lorenz curves",
+   "kind": "Explorer",
+   "sub": "Real income shares by fifth of the population for ten countries, drawn as Lorenz curves with their Gini coefficients.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u05-12",
+    "u05-24",
+    "u18-17"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/lorenz"
+  },
+  {
+   "id": "gini",
+   "title": "Gini calculator",
+   "kind": "Tool",
+   "sub": "Type in incomes or reshape an imaginary society, transfer from rich to poor, and watch the Lorenz curve and Gini change.",
+   "note": "Exact Gini from individual values; example incomes invented.",
+   "tasks": null,
+   "lessons": [
+    "u18-17",
+    "u05-12",
+    "u05-11"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/gini"
+  },
+  {
+   "id": "poverty",
+   "title": "Measuring poverty: absolute and relative",
+   "kind": "Simulation",
+   "sub": "Apply growth, recession and changes at the top or middle to an income distribution and see the two measures move apart.",
+   "note": "Simulated incomes; the UK relative line convention (60% of median) explained.",
+   "tasks": null,
+   "lessons": [
+    "u05-13",
+    "u05-14",
+    "u18-18",
+    "u05-16"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/poverty"
+  },
+  {
+   "id": "mobility",
+   "title": "Social mobility simulator",
+   "kind": "Simulation",
+   "sub": "Set how open a society is and how fast professional jobs grow; follow classes over generations; compare absolute and relative mobility.",
+   "note": "Illustrative three-class transition matrices, not estimates from a real study.",
+   "tasks": null,
+   "lessons": [
+    "u05-06",
+    "u05-07",
+    "u05-08",
+    "u05-09"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/mobility"
+  },
+  {
+   "id": "data-inequality",
+   "title": "Data explorer: inequality and development",
+   "kind": "Explorer",
+   "sub": "Gini, extreme poverty, GDP per head and life expectancy for 22 countries since 1990, as trends or scatter plots.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u05-24",
+    "u14-07",
+    "u18-16",
+    "u05-10"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/data-inequality"
+  },
+  {
+   "id": "data-gender",
+   "title": "Data explorer: gender",
+   "kind": "Explorer",
+   "sub": "Women's and men's labour force participation, women in parliament and the gender gap in university enrolment.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u06-12",
+    "u06-13",
+    "u06-16",
+    "u06-14",
+    "u13-11"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/data-gender"
+  },
+  {
+   "id": "data-education",
+   "title": "Data explorer: education",
+   "kind": "Explorer",
+   "sub": "University enrolment, primary completion and gender parity across 22 countries.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u09-19",
+    "u09-17",
+    "u09-15"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/data-education"
+  },
+  {
+   "id": "data-crime",
+   "title": "Data explorer: crime statistics",
+   "kind": "Explorer",
+   "sub": "Homicide rates since 1990, and why homicide is the one crime that compares well between countries.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown. Homicide data originate with UNODC.",
+   "tasks": null,
+   "lessons": [
+    "u10-01",
+    "u10-02",
+    "u17-23"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/data-crime"
+  },
+  {
+   "id": "data-work",
+   "title": "Data explorer: work",
+   "kind": "Explorer",
+   "sub": "Unemployment and labour force participation by sex, with what these measures leave out.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u13-04",
+    "u13-14",
+    "u13-11"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/data-work"
+  },
+  {
+   "id": "data-climate",
+   "title": "Data explorer: climate and inequality",
+   "kind": "Explorer",
+   "sub": "CO₂ emissions per person against income: who emits, and who bears the risk?",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u14-18",
+    "u14-19",
+    "u14-21",
+    "u14-20"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/data-climate"
+  },
+  {
+   "id": "data-urban",
+   "title": "Data explorer: urbanisation",
+   "kind": "Explorer",
+   "sub": "The share of people living in towns and cities since 1990.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u15-01",
+    "u15-21"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/data-urban"
+  },
+  {
+   "id": "transition",
+   "title": "The demographic transition in real data",
+   "kind": "Explorer",
+   "sub": "Birth and death rates since 1960 for ten countries, read against the stages of the demographic transition model.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u15-14",
+    "u15-13",
+    "u15-15",
+    "u15-16"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/transition"
+  },
+  {
+   "id": "pyramids",
+   "title": "Population pyramids",
+   "kind": "Explorer",
+   "sub": "Real age–sex pyramids for 1960, 1990 and 2023: expansive, stationary and ageing populations.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown. (originally UN World Population Prospects).",
+   "tasks": null,
+   "lessons": [
+    "u15-17",
+    "u18-19",
+    "u16-17"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/pyramids"
+  },
+  {
+   "id": "transition-model",
+   "title": "Demographic transition simulator",
+   "kind": "Illustrative model",
+   "sub": "Set how long a population spends in each stage and see how the birth–death gap drives growth.",
+   "note": "Illustrative rates per stage, not data for any country.",
+   "tasks": null,
+   "lessons": [
+    "u15-14",
+    "u15-13"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/transition-model"
+  },
+  {
+   "id": "network",
+   "title": "Social network visualiser",
+   "kind": "Tool",
+   "sub": "Explore four networks: degree, density, betweenness and components; find the broker; cut a bridge.",
+   "note": "Invented networks; Brandes' algorithm for betweenness.",
+   "tasks": null,
+   "lessons": [
+    "u17-19",
+    "u18-22",
+    "u01-15"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/network"
+  },
+  {
+   "id": "method-chooser",
+   "title": "Methodology decision tool",
+   "kind": "Tool",
+   "sub": "Answer five questions about your project for suggested methods, with their strengths and trade-offs.",
+   "note": "Guidance following standard methods texts; a prompt for thinking, not a rule.",
+   "tasks": null,
+   "lessons": [
+    "u17-01",
+    "u17-06",
+    "u17-07",
+    "u17-08",
+    "u17-03",
+    "u17-04"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/method-chooser"
+  },
+  {
+   "id": "sampling",
+   "title": "Sampling simulator",
+   "kind": "Simulation",
+   "sub": "Draw hundreds of samples by random, stratified, opportunity and volunteer methods and compare their bias and standard error.",
+   "note": "A simulated population of 10,000 with invented response patterns.",
+   "tasks": null,
+   "lessons": [
+    "u17-26",
+    "u17-27",
+    "u18-07",
+    "u17-31"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/sampling"
+  },
+  {
+   "id": "survey-design",
+   "title": "Survey design builder",
+   "kind": "Exercise",
+   "sub": "Diagnose eight flawed draft questions: double-barrelled, leading, vague, jargon, double negatives, bad categories, sensitivity and order effects.",
+   "note": "Invented draft questions; standard design principles.",
+   "tasks": null,
+   "lessons": [
+    "u17-09",
+    "u17-10",
+    "u17-11"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/survey-design"
+  },
+  {
+   "id": "coding",
+   "title": "Qualitative coding",
+   "kind": "Exercise",
+   "sub": "Code invented interviews with delivery riders, then build themes, as in thematic analysis.",
+   "note": "Invented excerpts; one defensible coding offered as feedback.",
+   "tasks": null,
+   "lessons": [
+    "u17-07",
+    "u17-12",
+    "u17-37",
+    "u13-16"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/coding"
+  },
+  {
+   "id": "content-analysis",
+   "title": "Content analysis tool",
+   "kind": "Tool",
+   "sub": "Define coding categories by keyword and count them in any text, per 1,000 words.",
+   "note": "Keyword counts on your text; example headlines invented.",
+   "tasks": null,
+   "lessons": [
+    "u17-20",
+    "u17-21",
+    "u10-33"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/content-analysis"
+  },
+  {
+   "id": "ethnography",
+   "title": "Ethnographic fieldnotes",
+   "kind": "Exercise",
+   "sub": "Sort jottings from a café observation into description, interpretation and reflexive notes.",
+   "note": "An invented field setting.",
+   "tasks": null,
+   "lessons": [
+    "u17-15",
+    "u17-16",
+    "u17-33",
+    "u17-32"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/ethnography"
+  },
+  {
+   "id": "ethics",
+   "title": "Research ethics scenarios",
+   "kind": "Exercise",
+   "sub": "Six dilemmas, from covert observation and Tearoom Trade to consent, anonymity, disclosure and data storage.",
+   "note": "Judged against the BSA Statement of Ethical Practice (2017).",
+   "tasks": null,
+   "lessons": [
+    "u17-34",
+    "u17-35",
+    "u17-36"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/ethics"
+  },
+  {
+   "id": "stats-describe",
+   "title": "Statistics workspace: describing data",
+   "kind": "Tool",
+   "sub": "Descriptive statistics, a confidence interval and a histogram for any set of numbers.",
+   "note": "Sample statistics (n − 1); example data simulated.",
+   "tasks": null,
+   "lessons": [
+    "u18-02",
+    "u18-03",
+    "u18-04",
+    "u18-05",
+    "u18-10"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/stats-describe"
+  },
+  {
+   "id": "crosstab",
+   "title": "Crosstabs and chi-square",
+   "kind": "Tool",
+   "sub": "Row percentages, expected counts, χ² and Cramér's V for a two-by-two table.",
+   "note": "Example counts invented; enter counts from a real table.",
+   "tasks": null,
+   "lessons": [
+    "u18-14",
+    "u18-15",
+    "u18-09"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/crosstab"
+  },
+  {
+   "id": "correlation",
+   "title": "Correlation and regression explorer",
+   "kind": "Tool",
+   "sub": "Anscombe's quartet and your own points: r, ρ, the regression line, R² and residuals.",
+   "note": "Anscombe's (1973) data are real; your own points are illustrative.",
+   "tasks": null,
+   "lessons": [
+    "u18-12",
+    "u18-13"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/correlation"
+  },
+  {
+   "id": "hypothesis-test",
+   "title": "Hypothesis-test simulator",
+   "kind": "Simulation",
+   "sub": "Simulate studies to see p-values, power, Type I and II errors and effect sizes.",
+   "note": "Simulated samples from normal populations.",
+   "tasks": null,
+   "lessons": [
+    "u18-08",
+    "u18-09",
+    "u18-11",
+    "u18-06"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/hypothesis-test"
+  }
+ ]
+}

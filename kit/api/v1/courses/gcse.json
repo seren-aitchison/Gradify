@@ -1,0 +1,1035 @@
+{
+ "api": 1,
+ "slug": "gcse",
+ "name": "GCSE Core",
+ "site": "YouthGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Study material, not a qualification or an exam board resource.</b> YouthGradify helps 13 to 16 year olds in England learn and revise for GCSEs. The lessons were drafted with AI assistance and haven't yet been reviewed by teachers or examiners, so they may contain errors: check important points with your teacher, your class notes and your exam board's current specification. It is not endorsed by AQA, Pearson Edexcel, OCR or Ofqual, and its model answers are illustrations, not mark schemes. The life skills school is general education, not financial, medical or legal advice: talk to a trusted adult, your school, your GP or a service such as Childline (0800 1111) if you need help.",
+ "notes": "/kit/courses/gcse/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Learning to learn",
+   "units": [
+    1
+   ],
+   "from": "#ffd84a",
+   "to": "#f59e0b"
+  },
+  {
+   "name": "Stage 2 · English Language",
+   "units": [
+    2,
+    3
+   ],
+   "from": "#fde047",
+   "to": "#fb923c"
+  },
+  {
+   "name": "Stage 3 · Combined Science",
+   "units": [
+    4,
+    5,
+    6
+   ],
+   "from": "#facc15",
+   "to": "#22d3ee"
+  },
+  {
+   "name": "Stage 4 · Geography",
+   "units": [
+    7,
+    8
+   ],
+   "from": "#fbbf24",
+   "to": "#34d399"
+  },
+  {
+   "name": "Stage 5 · Life beyond the exam",
+   "units": [
+    9
+   ],
+   "from": "#fcd34d",
+   "to": "#a78bfa"
+  }
+ ],
+ "paths": [
+  {
+   "id": "core",
+   "name": "The GCSE core",
+   "sub": "Every school in order, from how to revise to life after Year 11.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "select": null
+  },
+  {
+   "id": "english",
+   "name": "English Language",
+   "sub": "Revision skills, then both papers: reading fiction and non-fiction, and writing to describe, narrate and argue.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "select": null
+  },
+  {
+   "id": "science",
+   "name": "Combined Science",
+   "sub": "Revision skills, then biology, chemistry and physics with every required practical and equation.",
+   "units": [
+    1,
+    4,
+    5,
+    6
+   ],
+   "select": null
+  },
+  {
+   "id": "geography",
+   "name": "Geography",
+   "sub": "Revision skills, physical and human geography, map skills, fieldwork and issue evaluation.",
+   "units": [
+    1,
+    7,
+    8
+   ],
+   "select": null
+  },
+  {
+   "id": "year11",
+   "name": "Year 11 exam year",
+   "sub": "Revision and exam technique first, then the subjects, then next steps after GCSEs.",
+   "units": [
+    1,
+    2,
+    3,
+    6,
+    4,
+    5,
+    9
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Learning to learn",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · English Language",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    2,
+    3
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Combined Science",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    5,
+    6
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Geography",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    7,
+    8
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Life beyond the exam",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    9
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Revision and Exam Skills",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "How memory works",
+     "module": "How learning works"
+    },
+    {
+     "id": "u01-02",
+     "title": "Retrieval practice",
+     "module": "How learning works"
+    },
+    {
+     "id": "u01-03",
+     "title": "Spaced practice and revision timetables",
+     "module": "How learning works"
+    },
+    {
+     "id": "u01-04",
+     "title": "Interleaving and worked examples",
+     "module": "How learning works"
+    },
+    {
+     "id": "u01-05",
+     "title": "Flashcards and the Leitner system",
+     "module": "Revision methods"
+    },
+    {
+     "id": "u01-06",
+     "title": "Mind maps, dual coding and summaries",
+     "module": "Revision methods"
+    },
+    {
+     "id": "u01-07",
+     "title": "Past papers and mark schemes",
+     "module": "Revision methods"
+    },
+    {
+     "id": "u01-08",
+     "title": "Command words",
+     "module": "The exam itself"
+    },
+    {
+     "id": "u01-09",
+     "title": "Planning extended answers",
+     "module": "The exam itself"
+    },
+    {
+     "id": "u01-10",
+     "title": "Timing and exam technique",
+     "module": "The exam itself"
+    },
+    {
+     "id": "u01-11",
+     "title": "Exam stress and wellbeing",
+     "module": "The exam itself"
+    },
+    {
+     "id": "u01-12",
+     "title": "Making a revision plan",
+     "module": "The exam itself"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Foundations of Literary Study",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-13",
+     "title": "What is literature?",
+     "module": "What literature is"
+    },
+    {
+     "id": "u02-14",
+     "title": "Genre and form",
+     "module": "What literature is"
+    },
+    {
+     "id": "u02-15",
+     "title": "Author, narrator and reader",
+     "module": "What literature is"
+    },
+    {
+     "id": "u02-16",
+     "title": "Text and context",
+     "module": "What literature is"
+    },
+    {
+     "id": "u02-17",
+     "title": "The literary canon",
+     "module": "What literature is"
+    },
+    {
+     "id": "u02-18",
+     "title": "Close reading: a method",
+     "module": "Close reading"
+    },
+    {
+     "id": "u02-19",
+     "title": "Diction and register",
+     "module": "Close reading"
+    },
+    {
+     "id": "u02-20",
+     "title": "Imagery",
+     "module": "Close reading"
+    },
+    {
+     "id": "u02-21",
+     "title": "Metaphor, simile and personification",
+     "module": "Close reading"
+    },
+    {
+     "id": "u02-22",
+     "title": "Symbol and motif",
+     "module": "Close reading"
+    },
+    {
+     "id": "u02-23",
+     "title": "Tone and mood",
+     "module": "Close reading"
+    },
+    {
+     "id": "u02-24",
+     "title": "Syntax and sentence structure",
+     "module": "Close reading"
+    },
+    {
+     "id": "u02-25",
+     "title": "The sound of language",
+     "module": "Close reading"
+    },
+    {
+     "id": "u02-26",
+     "title": "Ambiguity and multiple meanings",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u02-27",
+     "title": "Irony",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u02-28",
+     "title": "Intertextuality and allusion",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u02-29",
+     "title": "Using quotations as evidence",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u02-30",
+     "title": "From annotation to argument",
+     "module": "Interpretation"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "English Language: Writing",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Descriptive writing",
+     "module": "Writing to describe and narrate"
+    },
+    {
+     "id": "u03-02",
+     "title": "Narrative writing: openings and structure",
+     "module": "Writing to describe and narrate"
+    },
+    {
+     "id": "u03-03",
+     "title": "Character, setting and voice",
+     "module": "Writing to describe and narrate"
+    },
+    {
+     "id": "u03-04",
+     "title": "Crafting sentences for effect",
+     "module": "Writing to describe and narrate"
+    },
+    {
+     "id": "u03-05",
+     "title": "Viewpoint writing: forms and audiences",
+     "module": "Writing to present a viewpoint"
+    },
+    {
+     "id": "u03-06",
+     "title": "Planning an argument",
+     "module": "Writing to present a viewpoint"
+    },
+    {
+     "id": "u03-07",
+     "title": "Rhetorical and persuasive techniques",
+     "module": "Writing to present a viewpoint"
+    },
+    {
+     "id": "u03-08",
+     "title": "Letters, articles and speeches",
+     "module": "Writing to present a viewpoint"
+    },
+    {
+     "id": "u03-09",
+     "title": "Sentence demarcation and punctuation",
+     "module": "Technical accuracy"
+    },
+    {
+     "id": "u03-10",
+     "title": "Spelling strategies",
+     "module": "Technical accuracy"
+    },
+    {
+     "id": "u03-11",
+     "title": "Grammar and Standard English",
+     "module": "Technical accuracy"
+    },
+    {
+     "id": "u03-12",
+     "title": "Vocabulary for effect",
+     "module": "Technical accuracy"
+    },
+    {
+     "id": "u03-13",
+     "title": "Spoken language endorsement",
+     "module": "Technical accuracy"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Biology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Cell structure: animal, plant and bacterial cells",
+     "module": "Cells and organisation"
+    },
+    {
+     "id": "u04-02",
+     "title": "Microscopy and magnification",
+     "module": "Cells and organisation"
+    },
+    {
+     "id": "u04-03",
+     "title": "Cell division: mitosis and stem cells",
+     "module": "Cells and organisation"
+    },
+    {
+     "id": "u04-04",
+     "title": "Diffusion, osmosis and active transport",
+     "module": "Cells and organisation"
+    },
+    {
+     "id": "u04-05",
+     "title": "Enzymes and digestion",
+     "module": "Cells and organisation"
+    },
+    {
+     "id": "u04-06",
+     "title": "The heart, blood and circulation",
+     "module": "Cells and organisation"
+    },
+    {
+     "id": "u04-07",
+     "title": "Non-communicable disease",
+     "module": "Cells and organisation"
+    },
+    {
+     "id": "u04-08",
+     "title": "Pathogens and communicable disease",
+     "module": "Infection and response"
+    },
+    {
+     "id": "u04-09",
+     "title": "The immune system and vaccination",
+     "module": "Infection and response"
+    },
+    {
+     "id": "u04-10",
+     "title": "Antibiotics and drug development",
+     "module": "Infection and response"
+    },
+    {
+     "id": "u04-11",
+     "title": "Photosynthesis",
+     "module": "Bioenergetics"
+    },
+    {
+     "id": "u04-12",
+     "title": "Respiration: aerobic and anaerobic",
+     "module": "Bioenergetics"
+    },
+    {
+     "id": "u04-13",
+     "title": "The nervous system and reflexes",
+     "module": "Homeostasis and response"
+    },
+    {
+     "id": "u04-14",
+     "title": "Hormones, blood glucose and diabetes",
+     "module": "Homeostasis and response"
+    },
+    {
+     "id": "u04-15",
+     "title": "Reproductive hormones and contraception",
+     "module": "Homeostasis and response"
+    },
+    {
+     "id": "u04-16",
+     "title": "DNA, genes and the genome",
+     "module": "Inheritance, variation and evolution"
+    },
+    {
+     "id": "u04-17",
+     "title": "Meiosis and genetic inheritance",
+     "module": "Inheritance, variation and evolution"
+    },
+    {
+     "id": "u04-18",
+     "title": "Variation and evolution",
+     "module": "Inheritance, variation and evolution"
+    },
+    {
+     "id": "u04-19",
+     "title": "Selective breeding and genetic engineering",
+     "module": "Inheritance, variation and evolution"
+    },
+    {
+     "id": "u04-20",
+     "title": "Ecosystems and interdependence",
+     "module": "Ecology"
+    },
+    {
+     "id": "u04-21",
+     "title": "Cycles and decomposition",
+     "module": "Ecology"
+    },
+    {
+     "id": "u04-22",
+     "title": "Biodiversity and human impact",
+     "module": "Ecology"
+    },
+    {
+     "id": "u04-23",
+     "title": "Biology required practicals",
+     "module": "Ecology"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Chemistry",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Atomic structure and isotopes",
+     "module": "Atoms and the periodic table"
+    },
+    {
+     "id": "u05-02",
+     "title": "The development of the atomic model",
+     "module": "Atoms and the periodic table"
+    },
+    {
+     "id": "u05-03",
+     "title": "The periodic table and groups",
+     "module": "Atoms and the periodic table"
+    },
+    {
+     "id": "u05-04",
+     "title": "Ionic, covalent and metallic bonding",
+     "module": "Bonding and structure"
+    },
+    {
+     "id": "u05-05",
+     "title": "Structure and properties of substances",
+     "module": "Bonding and structure"
+    },
+    {
+     "id": "u05-06",
+     "title": "Conservation of mass and relative formula mass",
+     "module": "Quantitative chemistry"
+    },
+    {
+     "id": "u05-07",
+     "title": "Moles and concentration",
+     "module": "Quantitative chemistry"
+    },
+    {
+     "id": "u05-08",
+     "title": "Reactivity series and extraction of metals",
+     "module": "Chemical changes"
+    },
+    {
+     "id": "u05-09",
+     "title": "Acids, alkalis and salts",
+     "module": "Chemical changes"
+    },
+    {
+     "id": "u05-10",
+     "title": "Electrolysis",
+     "module": "Chemical changes"
+    },
+    {
+     "id": "u05-11",
+     "title": "Exothermic and endothermic reactions",
+     "module": "Energy, rates and equilibrium"
+    },
+    {
+     "id": "u05-12",
+     "title": "Rates of reaction",
+     "module": "Energy, rates and equilibrium"
+    },
+    {
+     "id": "u05-13",
+     "title": "Reversible reactions and equilibrium",
+     "module": "Energy, rates and equilibrium"
+    },
+    {
+     "id": "u05-14",
+     "title": "Crude oil and hydrocarbons",
+     "module": "Organic and analysis"
+    },
+    {
+     "id": "u05-15",
+     "title": "Chemical analysis and chromatography",
+     "module": "Organic and analysis"
+    },
+    {
+     "id": "u05-16",
+     "title": "Tests for gases",
+     "module": "Organic and analysis"
+    },
+    {
+     "id": "u05-17",
+     "title": "The Earth's atmosphere and climate change",
+     "module": "The atmosphere and resources"
+    },
+    {
+     "id": "u05-18",
+     "title": "Using resources: water and life cycle assessment",
+     "module": "The atmosphere and resources"
+    },
+    {
+     "id": "u05-19",
+     "title": "Chemistry required practicals",
+     "module": "The atmosphere and resources"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Physics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Energy stores and transfers",
+     "module": "Energy"
+    },
+    {
+     "id": "u06-02",
+     "title": "Work, power and efficiency",
+     "module": "Energy"
+    },
+    {
+     "id": "u06-03",
+     "title": "Energy resources",
+     "module": "Energy"
+    },
+    {
+     "id": "u06-04",
+     "title": "Circuits, current and potential difference",
+     "module": "Electricity"
+    },
+    {
+     "id": "u06-05",
+     "title": "Resistance and I–V characteristics",
+     "module": "Electricity"
+    },
+    {
+     "id": "u06-06",
+     "title": "Series and parallel circuits",
+     "module": "Electricity"
+    },
+    {
+     "id": "u06-07",
+     "title": "Mains electricity and the National Grid",
+     "module": "Electricity"
+    },
+    {
+     "id": "u06-08",
+     "title": "Density and states of matter",
+     "module": "Particle model and atomic structure"
+    },
+    {
+     "id": "u06-09",
+     "title": "Specific heat capacity and latent heat",
+     "module": "Particle model and atomic structure"
+    },
+    {
+     "id": "u06-10",
+     "title": "Atomic structure and radioactive decay",
+     "module": "Particle model and atomic structure"
+    },
+    {
+     "id": "u06-11",
+     "title": "Half-life and the uses and dangers of radiation",
+     "module": "Particle model and atomic structure"
+    },
+    {
+     "id": "u06-12",
+     "title": "Scalars, vectors and resultant forces",
+     "module": "Forces and motion"
+    },
+    {
+     "id": "u06-13",
+     "title": "Speed, velocity and acceleration",
+     "module": "Forces and motion"
+    },
+    {
+     "id": "u06-14",
+     "title": "Newton's laws of motion",
+     "module": "Forces and motion"
+    },
+    {
+     "id": "u06-15",
+     "title": "Stopping distances and momentum",
+     "module": "Forces and motion"
+    },
+    {
+     "id": "u06-16",
+     "title": "Forces, springs and Hooke's law",
+     "module": "Forces and motion"
+    },
+    {
+     "id": "u06-17",
+     "title": "Properties of waves",
+     "module": "Waves and magnetism"
+    },
+    {
+     "id": "u06-18",
+     "title": "The electromagnetic spectrum",
+     "module": "Waves and magnetism"
+    },
+    {
+     "id": "u06-19",
+     "title": "Magnetism and electromagnetism",
+     "module": "Waves and magnetism"
+    },
+    {
+     "id": "u06-20",
+     "title": "Physics equations: recall and use",
+     "module": "Equations and practicals"
+    },
+    {
+     "id": "u06-21",
+     "title": "Physics required practicals",
+     "module": "Equations and practicals"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Geography: Physical Environments",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Natural hazards and risk",
+     "module": "Natural hazards"
+    },
+    {
+     "id": "u07-02",
+     "title": "Plate tectonics",
+     "module": "Natural hazards"
+    },
+    {
+     "id": "u07-03",
+     "title": "Earthquakes and volcanoes: causes, effects and responses",
+     "module": "Natural hazards"
+    },
+    {
+     "id": "u07-04",
+     "title": "Tropical storms",
+     "module": "Natural hazards"
+    },
+    {
+     "id": "u07-05",
+     "title": "Extreme weather in the UK",
+     "module": "Natural hazards"
+    },
+    {
+     "id": "u07-06",
+     "title": "Climate change: evidence, causes and responses",
+     "module": "Natural hazards"
+    },
+    {
+     "id": "u07-07",
+     "title": "Ecosystems and their components",
+     "module": "Ecosystems"
+    },
+    {
+     "id": "u07-08",
+     "title": "Tropical rainforests",
+     "module": "Ecosystems"
+    },
+    {
+     "id": "u07-09",
+     "title": "Hot deserts and cold environments",
+     "module": "Ecosystems"
+    },
+    {
+     "id": "u07-10",
+     "title": "Coastal processes and landforms",
+     "module": "UK physical landscapes"
+    },
+    {
+     "id": "u07-11",
+     "title": "Coastal management",
+     "module": "UK physical landscapes"
+    },
+    {
+     "id": "u07-12",
+     "title": "River processes and landforms",
+     "module": "UK physical landscapes"
+    },
+    {
+     "id": "u07-13",
+     "title": "Flooding and river management",
+     "module": "UK physical landscapes"
+    },
+    {
+     "id": "u07-14",
+     "title": "Glacial landscapes",
+     "module": "UK physical landscapes"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Geography: Human Environments and Skills",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Global urbanisation",
+     "module": "Urban issues"
+    },
+    {
+     "id": "u08-02",
+     "title": "Cities in lower-income countries",
+     "module": "Urban issues"
+    },
+    {
+     "id": "u08-03",
+     "title": "UK cities: change and regeneration",
+     "module": "Urban issues"
+    },
+    {
+     "id": "u08-04",
+     "title": "Sustainable urban living",
+     "module": "Urban issues"
+    },
+    {
+     "id": "u08-05",
+     "title": "Measuring development",
+     "module": "The changing economic world"
+    },
+    {
+     "id": "u08-06",
+     "title": "Reducing the development gap",
+     "module": "The changing economic world"
+    },
+    {
+     "id": "u08-07",
+     "title": "Economic change in an emerging economy",
+     "module": "The changing economic world"
+    },
+    {
+     "id": "u08-08",
+     "title": "The changing UK economy",
+     "module": "The changing economic world"
+    },
+    {
+     "id": "u08-09",
+     "title": "Food, water and energy: global patterns",
+     "module": "Resource management"
+    },
+    {
+     "id": "u08-10",
+     "title": "Resource management strategies",
+     "module": "Resource management"
+    },
+    {
+     "id": "u08-11",
+     "title": "Map skills and grid references",
+     "module": "Geographical skills"
+    },
+    {
+     "id": "u08-12",
+     "title": "Graphs, statistics and data presentation",
+     "module": "Geographical skills"
+    },
+    {
+     "id": "u08-13",
+     "title": "Fieldwork enquiry",
+     "module": "Geographical skills"
+    },
+    {
+     "id": "u08-14",
+     "title": "Issue evaluation and decision making",
+     "module": "Geographical skills"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Foundations of Health and Wellbeing",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u09-16",
+     "title": "What is health?",
+     "module": "Defining health"
+    },
+    {
+     "id": "u09-17",
+     "title": "Models of health: biomedical and biopsychosocial",
+     "module": "Defining health"
+    },
+    {
+     "id": "u09-18",
+     "title": "Wellbeing and how it is measured",
+     "module": "Defining health"
+    },
+    {
+     "id": "u09-19",
+     "title": "Holistic health: physical, mental and social",
+     "module": "Defining health"
+    },
+    {
+     "id": "u09-20",
+     "title": "The determinants of health",
+     "module": "What shapes health"
+    },
+    {
+     "id": "u09-21",
+     "title": "Health inequalities",
+     "module": "What shapes health"
+    },
+    {
+     "id": "u09-22",
+     "title": "Lifestyle factors and health",
+     "module": "What shapes health"
+    },
+    {
+     "id": "u09-23",
+     "title": "The wider determinants: housing, work and environment",
+     "module": "What shapes health"
+    },
+    {
+     "id": "u09-24",
+     "title": "Judging health information",
+     "module": "Evidence about health"
+    },
+    {
+     "id": "u09-25",
+     "title": "Levels of evidence",
+     "module": "Evidence about health"
+    },
+    {
+     "id": "u09-26",
+     "title": "Understanding risk: absolute and relative",
+     "module": "Evidence about health"
+    },
+    {
+     "id": "u09-27",
+     "title": "Screening: benefits and harms",
+     "module": "Evidence about health"
+    },
+    {
+     "id": "u09-28",
+     "title": "Measuring the nation's health",
+     "module": "Health in the UK"
+    },
+    {
+     "id": "u09-29",
+     "title": "Leading causes of death and ill health in the UK",
+     "module": "Health in the UK"
+    }
+   ]
+  }
+ ],
+ "interactives": []
+}

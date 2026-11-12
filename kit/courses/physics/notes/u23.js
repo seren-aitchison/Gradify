@@ -161,10 +161,13 @@ X: A sample has 8 × 10^{12} atoms of iodine-131 (t_{1/2} = 8.0 days). Activity?
 > λ = 0.693/(8 × 86 400) = 1.0 × 10^{-6} s^{-1}
 > A = 8 × 10^{6} Bq
 !: After two half-lives, a quarter remains, not none: decay never reaches exactly zero for large samples.
+P: **Investigate with the lab.** Run the same settings twice: the curves differ, but the half-life doesn't. Then run it with only 20 nuclei.
+IX: decay
 Q: State the radioactive decay law. | N = N_{0}e^{−λt}.
 Q: How is half-life related to the decay constant? | t_{1/2} = ln 2/λ.
 M1: After 3 half-lives, the fraction remaining is: | 1/8 | 1/3 | 1/6 | 1/9 | (1/2)^{3}.
 M2: Heating a radioactive sample changes its half-life: | Essentially not at all | By doubling | By halving | Dramatically | Nuclear processes are insensitive.
+M2: Why is radioactive decay described as random? | We can't predict when a particular nucleus will decay | Every nucleus decays at the same moment | The half-life changes from one run to the next | Decay depends on temperature | Only the probability per unit time is fixed; individual decays are unpredictable.
 
 ## Alpha, beta and gamma decay
 S: The three classic types of radioactive decay emit helium nuclei (alpha), electrons or positrons (beta) or high-energy photons (gamma). They differ in what changes in the nucleus, in their energies and in how penetrating they are.
@@ -185,10 +188,13 @@ H: Gamma decay
 X: Radium-226 alpha decays. Product?
 > ^{226}_{88}Ra → ^{222}_{86}Rn + ^{4}_{2}He: radon-222, a radioactive gas
 !: Gamma rays carry no charge and no mass number change; they don't change the element.
+P: **Investigate with the lab.** Watch the nuclei change as they decay and note that each decay emits radiation from the nucleus.
+IX: decay
 Q: Why does beta decay need a neutrino? | Electron energies are continuous; a third particle must carry the missing energy and momentum.
 Q: What stops alpha particles? | Paper, skin or a few centimetres of air.
 M1: In β^{−} decay, Z: | Increases by 1 | Decreases by 1 | Stays the same | Decreases by 2 | n → p.
 M2: Technetium-99m is useful in medicine because it: | Emits gamma rays with a short half-life | Emits alphas | Is stable | Emits neutrons | 140 keV gamma, 6 h.
+M2: Which type of decay doesn't change the proton number? | Gamma decay | Alpha decay | Beta-minus decay | Beta-plus decay | Gamma emission releases energy without changing the nucleus's composition.
 
 ## Decay chains and half-life
 S: Many radioactive nuclei decay into products that are themselves radioactive, forming decay chains that end at a stable isotope. Their behaviour depends on the relative half-lives and enables radiometric dating of rocks, bones and the Earth itself.
@@ -209,10 +215,13 @@ E: t = (1/λ) ln(1 + D/P) :: daughter D, parent P
 X: A rock has equal numbers of ²³⁸U and its final daughter ²⁰⁶Pb (none initially). Age?
 > D/P = 1 ⇒ t = t_{1/2} = 4.5 × 10^{9} years
 !: Carbon dating assumes a known initial ¹⁴C level; calibration curves (tree rings, corals) correct for its variations.
+P: **Investigate with the lab.** Mark the moment half the nuclei are left, then run the decay chain and watch the daughter build up, peak and decay away.
+IX: decay
 Q: What is secular equilibrium? | When a long-lived parent and short-lived daughter have equal activities.
 Q: Why is uranium–lead dating so reliable? | Two independent decay chains (U-238 and U-235) cross-check ages, and zircons exclude initial lead.
 M1: Carbon-14 dating works up to about: | 50 000 years | 5 billion years | 100 years | 1 million years | ~10 half-lives.
 M2: A Tc-99m generator relies on: | The decay of Mo-99 parent | Fission | Neutron capture in the hospital | Alpha decay | Transient equilibrium.
+M2: A sample has a half-life of 2 hours. What fraction remains after 6 hours? | One eighth | One sixth | One third | One quarter | Six hours is three half-lives: ½ × ½ × ½ = ⅛.
 
 ## Nuclear reaction equations
 S: Nuclear reactions are written like chemical equations, but must conserve mass number, charge, energy and momentum. Balancing them predicts products, and mass differences give the energy released.

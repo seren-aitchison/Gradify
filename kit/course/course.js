@@ -17,8 +17,12 @@ import { renderQuestion, wireQuestions, normalize, TYPES as QTYPES } from "../as
 import { makeAttempt, analyse } from "../assess/attempts.js";
 import { evidenceFromAttempts, sixProfiles, revisionQueue, labPractice, SIX } from "../learning/mastery.js";
 import { explorationIds, evidenceClass } from "../learning/evidence-class.js";
+import { weaknessTargets, practiceSet } from "../learning/targets.js";
+import { UNDERSTANDING, understandingStats } from "../learning/achievements.js";
 import { sixHtml, calibrationHtml } from "../learning/mastery-view.js";
 import { conceptGraph, prerequisitesOfLesson, weakPrerequisites } from "../learning/concepts.js";
+import { checkCourse } from "./spec.js";
+import { levelOf as gameLevelOf, habits } from "../game/engine.js";
 import { learnerOf, needsSetup, applyPrefs } from "../data/profile.js";
 import { paceFor } from "../learning/pace.js";
 import { trackView, track } from "../core/analytics.js";
@@ -27,7 +31,7 @@ import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, 
 import { mountRevalidation } from "./revalidation.js";
 import { scoreFeedback } from "../assess/tutor.js";
 import { feedbackHtml, paras } from "../assess/tutor-view.js";
-import { mountTutorPanel, directorHtml } from "./tutor-panel.js";
+import { mountTutorPanel, directorHtml, newConversation } from "./tutor-panel.js";
 import { readLab, labState } from "./lab-state.js";
 import { SUPABASE_URL } from "../../gradify.config.js";
 import { buildExam, runExam, FORMATS } from "../assess/exam.js";
@@ -42,7 +46,8 @@ const weekStart = (t = Date.now()) => { const d = new Date(t); d.setHours(0, 0, 
 const shuffle = (a, seed = Math.random) => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(seed() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 const rng = (s) => () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296);
 // levels get further apart: level n needs 50·n·(n+1) XP in total
-export const levelOf = (xp) => { let n = 1; while (50 * n * (n + 1) <= xp) n++; return { n, from: 50 * (n - 1) * n, to: 50 * n * (n + 1) }; };
+// one level curve for every course and the Journey page (kit/game/engine.js): level n needs 50·n·(n+1) XP
+export const levelOf = gameLevelOf;
 const ICON = {
   play: '<path d="M9 6.5v11l9-5.5z" fill="currentColor"/>',
   cube: '<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z M4 7.5l8 4.5 8-4.5 M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>',
@@ -77,6 +82,8 @@ const BADGES = [
   { id: "xp1k", name: "1,000 XP", d: "Earn 1,000 XP", ok: (s) => s.xp >= 1000 },
   { id: "track", name: "Track complete", d: "Finish a whole track", ok: (s) => s.tracks >= 1 },
 ];
+// understanding achievements (kit/learning/achievements.js): earned only from measured evidence, never from XP
+BADGES.push(...UNDERSTANDING.map((b) => ({ ...b, understanding: true })));
 const CHALLENGES = [
   { name: "Lesson sprint", d: "Complete 15 lessons this week", n: 15, of: (w) => w.lesson },
   { name: "XP hunter", d: "Earn 300 XP this week", n: 300, of: (w) => w.xp },
@@ -108,6 +115,8 @@ export function mountCourse(root, cfg) {
   const byId = Object.fromEntries(lessons.map((l) => [l.id, l]));
   // the concept graph (kit/learning/concepts.js): what each module builds on, when the course provides cfg.concepts
   const graph = cfg.concepts ? conceptGraph(units, cfg.concepts) : null;
+  // the subject config spec (kit/course/spec.js): a config that doesn't fit is reported, and the course still runs
+  { const problems = checkCourse(cfg); if (problems.length) console.warn(`${cfg.site} course config:`, problems); }
   const trackOf = (u) => cfg.tracks.find((t) => t.units.includes(u.n)) || cfg.tracks[0];
   let S = (() => { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { return null; } })() || {};
   S = { done: {}, chests: {}, quiz: {}, solved: {}, cards: {}, log: [], goal: 30, path: null, open: [], closed: [], weekly: {}, saved: {}, mocks: {}, attempts: [], ...S };
@@ -260,13 +269,11 @@ export function mountCourse(root, cfg) {
   // ---------- XP, levels, streaks ----------
   const totalXp = () => S.log.reduce((a, r) => a + r.xp, 0);
   const days = () => [...new Set(S.log.map((r) => day(r.t)))].sort();
+  // the day streak, with rest days (kit/game/engine.js): every seven learning days bank one, up to three, and a banked
+  // rest day covers a missed day automatically, so a day off for illness or a break doesn't wipe the streak
   function streak() {
-    const set = new Set(days()); let n = 0, t = Date.now();
-    if (!set.has(day(t))) t -= DAY;
-    while (set.has(day(t))) { n++; t -= DAY; }
-    let best = 0, run = 0, prev = null;
-    for (const d of days()) { const ms = Date.parse(d); run = prev && ms - prev < 1.5 * DAY ? run + 1 : 1; prev = ms; best = Math.max(best, run); }
-    return { n, best: Math.max(best, n), today: set.has(day()) };
+    const h = habits(S.log || [], { goal: S.goal });
+    return { n: h.streak, best: h.best, today: h.today, rest: h.restBank };
   }
   const todayXp = () => S.log.filter((r) => day(r.t) === day()).reduce((a, r) => a + r.xp, 0);
   function week() {
@@ -281,7 +288,8 @@ export function mountCourse(root, cfg) {
     return { xp: totalXp(), lessons: Object.keys(S.done).length, units: units.filter((u) => unitDone(u) === u.lessons.length).length,
       quizzes: Object.values(S.quiz).filter((q) => q.pass).length, perfect: Object.values(S.quiz).filter((q) => q.best === 1).length,
       best: st.best, reviews: S.log.filter((r) => r.k === "review").length, solved: Object.keys(S.solved).length,
-      tracks: cfg.tracks.filter((t) => t.units.every((n) => { const u = units.find((x) => x.n === n); return u && unitDone(u) === u.lessons.length; })).length };
+      tracks: cfg.tracks.filter((t) => t.units.every((n) => { const u = units.find((x) => x.n === n); return u && unitDone(u) === u.lessons.length; })).length,
+      ...understandingStats(S.attempts || [], { exploration: EXPLORE, levels: cfg.levels || null, mocks: S.mocks }) };
   }
   const earned = () => BADGES.filter((b) => b.ok(stats()));
 
@@ -429,13 +437,14 @@ export function mountCourse(root, cfg) {
       <section class="co-card co-goal">
         <svg viewBox="0 0 76 76" class="co-ring"><circle cx="38" cy="38" r="${R}" class="bg"/><circle cx="38" cy="38" r="${R}" class="fg" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - ring)}"/></svg>
         <div><span class="co-kicker">Daily goal</span><b>${tx} / ${S.goal} XP</b>
-          <small class="co-streak">${ic("flame")} ${st.n}-day streak${st.today ? "" : st.n ? " · learn today to keep it" : ""}</small>
+          <small class="co-streak">${ic("flame")} ${st.n}-day streak${st.today ? "" : st.n ? " · learn today to keep it" : ""}${st.rest ? ` · ${st.rest} rest day${st.rest > 1 ? "s" : ""} banked` : ""}</small>
           <select aria-label="Daily goal">${[20, 30, 50, 100].map((g) => `<option value="${g}" ${g === S.goal ? "selected" : ""}>${g} XP a day</option>`).join("")}</select></div>
       </section>
       ${syncWarn ? `<section class="co-card co-syncwarn" role="status"><p>${esc(syncWarn)}</p></section>` : ""}
       ${planHtml()}
       ${nl ? `<section class="co-card"><span class="co-kicker">${ic("flag")} Next milestone</span><h3>Finish ${U} ${nu.n}: ${esc(nu.title)}</h3><p>${left} lesson${left === 1 ? "" : "s"} to go, then the ${u1} quiz for +${XP.quiz} XP.</p><a class="btn btn-light lg btn-sm co-go" href="#/lesson/${nl.id}"><span>Continue: ${esc(nl.title)}</span></a></section>` : `<section class="co-card"><h3>Course complete</h3><p>Every lesson done. Keep your memory fresh in Review.</p></section>`}
       <section class="co-card"><span class="co-kicker">${ic("trophy")} Weekly challenge</span><h3>${c.name}</h3><p>${c.d}. Reward: +${XP.weekly} XP.</p><div class="co-bar warm"><i style="width:${(cw / c.n) * 100}%"></i></div><small>${cw} / ${c.n}${S.weekly[String(weekStart())] ? " · claimed" : ""} · resets Monday</small></section>
+      <a class="co-card co-journey" href="/journey.html"><span class="co-kicker">${ic("trophy")} Your journey</span><h3>Quests, achievements and every subject</h3><p>Your level, streak and rewards across all of Gradify.</p></a>
       <section class="co-card"><span class="co-kicker">Course progress</span><h3>${Object.keys(S.done).length} / ${lessons.length} lessons</h3>
         <div class="co-dots">${units.map((u) => { const t = trackOf(u), p = unitDone(u) / u.lessons.length; return `<a href="#/learn/${u.id}" title="${U} ${u.n}: ${esc(u.title)} (${Math.round(p * 100)}%)" style="--a:${t.from};--b:${t.to};--p:${p}"></a>`; }).join("")}</div></section>
       <section class="co-card"><span class="co-kicker">Badges · ${got.size} / ${BADGES.length}</span><div class="co-badges">${BADGES.map((b) => `<span class="${got.has(b.id) ? "on" : ""}" title="${b.name}: ${b.d}">${ic(got.has(b.id) ? "star" : "lock")}</span>`).join("")}</div><a class="co-more" href="#/me">See all your progress →</a></section>`;
@@ -687,7 +696,7 @@ export function mountCourse(root, cfg) {
   }
   // a practice interview: the tutor plays the client or patient (t.who), then gives feedback on the whole interview
   function viewInterview(t, head, rubric) {
-    const turns = [], kase = { client: t.client, persona: t.persona, facts: t.facts }, who = t.who || "client", Who = who[0].toUpperCase() + who.slice(1);
+    const turns = [], conv = newConversation(), kase = { client: t.client, persona: t.persona, facts: t.facts }, who = t.who || "client", Who = who[0].toUpperCase() + who.slice(1);
     main.innerHTML = `${head}<section class="co-panel co-client"><h3>Your ${who}</h3><p>${esc(t.client)}</p></section>
       <div class="co-chat" aria-live="polite"><p class="co-empty">The ${who} is waiting. Introduce yourself to begin.</p></div>
       <form class="co-chatform"><label class="sr-only" for="co-say">What you say to the ${who}</label><textarea id="co-say" rows="2" maxlength="1500" placeholder="What do you say?"></textarea><button type="submit" class="btn btn-light lg btn-sm"><span>Say</span></button></form>
@@ -699,7 +708,7 @@ export function mountCourse(root, cfg) {
     form.addEventListener("submit", async (e) => {
       e.preventDefault(); const text = say.value.trim(); if (!text) return;
       turns.push({ role: "learner", text }); say.value = ""; paint(true); form.querySelector("button").disabled = true;
-      try { const { reply } = await askTutor({ mode: "roleplay", case: kase, turns }); turns.push({ role: "client", text: reply }); paint(); }
+      try { const { reply } = await askTutor({ mode: "roleplay", case: kase, turns, conversationId: conv }); turns.push({ role: "client", text: reply }); paint(); }
       catch (err) { paint(); out.innerHTML = err.signin ? signinLine(`The practice ${who}`, "practise with a friend using the case file below") : `<p class="co-empty">${esc(err.message)}</p>`; }
       form.querySelector("button").disabled = false; say.focus();
     });
@@ -811,6 +820,24 @@ export function mountCourse(root, cfg) {
       <div class="co-plist">${items.map(({ q, it }) => `<div class="co-prob"><div class="co-pmeta"><a href="#/lesson/${it.l.id}">${U} ${it.l.unit.n} · ${esc(it.l.title)}</a><span>${q.reason === "wrong" ? "Wrong last time" : `Last right ${Math.round((Date.now() - q.lastAt) / DAY)}d ago`}</span></div>${qHtml(it)}</div>`).join("")}</div>`;
     wirePractice(main.querySelector(".co-plist"), "review", "retrieval");
   }
+  // Target my weaknesses (kit/learning/targets.js): questions from the lessons where the learner's own answers show
+  // them weakest, foundations first where the course has a concept graph. Answers count as ordinary practice.
+  const weakTargets = () => weaknessTargets(S.attempts || [], { exploration: EXPLORE, levels: cfg.levels || null, graph, limit: 5 });
+  async function viewWeak() {
+    const targets = weakTargets();
+    if (!targets.length) { main.innerHTML = `<div class="co-panel"><span class="co-kicker">Target my weaknesses</span><h2>No weak spots measured yet</h2><p>Gradify only calls something weak when your own answers show it: a lesson where you've got most questions wrong, one whose recent answers are worse than before, or a lab challenge you've tried and not met. Answer a few more check questions and come back.</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Continue learning</span></a></div>`; return; }
+    main.innerHTML = `<div class="co-panel"><p>Building your practice set…</p></div>`;
+    const need = new Set(targets.map((t) => byId[t.lesson]?.unit.id).filter(Boolean));
+    const notes = Object.assign({}, ...(await Promise.all(units.filter((u) => need.has(u.id)).map(unitNotes))));
+    const items = Object.fromEntries(targets.map((t) => [t.lesson, notes[t.lesson]?.items || []]));
+    const set = practiceSet(targets, items, S.attempts || []), why = Object.fromEntries(targets.map((t) => [t.lesson, t]));
+    const KIND = { foundation: "Foundation first", weak: "Weak", wrong: "Mostly wrong so far", slipping: "Slipping", lab: "Lab challenge not met" };
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">Target my weaknesses</span><h2>${set.length} ${set.length === 1 ? "question" : "questions"} on your weakest ${targets.length === 1 ? "lesson" : `${targets.length} lessons`}</h2><p>Chosen from your own answers. Where a weak lesson rests on something you're also finding hard, that foundation comes first. Easier questions come first where you're weakest. These count as practice in your mastery.</p></div>
+      <ul class="co-weak">${targets.map((t) => `<li><a href="#/lesson/${t.lesson}">${esc(byId[t.lesson]?.title || t.lesson)}</a> <small>${KIND[t.kind]}: ${esc(t.why)}${t.for && byId[t.for] ? ` It underpins ${esc(byId[t.for].title)}.` : ""}</small></li>`).join("")}</ul>
+      ${set.length ? `<div class="co-plist">${set.map(({ lesson, item }) => `<div class="co-prob"><div class="co-pmeta"><a href="#/lesson/${lesson}">${U} ${byId[lesson].unit.n} · ${esc(byId[lesson].title)}</a><span>${KIND[why[lesson].kind]}</span></div>${qHtml(item)}</div>`).join("")}</div>` : `<p class="co-empty">These lessons have no check questions yet. Reread them, or try their labs.</p>`}`;
+    if (set.length) wirePractice(main.querySelector(".co-plist"), "problems", "weak");
+  }
+  const weakLink = () => { const n = weakTargets().length; return n ? `<a class="btn btn-ghost btn-sm" href="#/review/weak"><span>Target my weaknesses (${n})</span></a>` : ""; };
   const revisitLink = () => { const n = revisionQueue(S.attempts || [], { limit: 200 }).length; return n ? `<a class="btn btn-ghost btn-sm" href="#/review/questions"><span>Revisit ${n} ${n === 1 ? "question" : "questions"}</span></a>` : ""; };
 
   async function viewReview() {
@@ -947,9 +974,9 @@ export function mountCourse(root, cfg) {
     return `<section class="co-panel co-mx"><h3>Mastery</h3>
       <p class="co-empty">${all.mastery == null ? `Gradify gives an overall mastery figure once at least two kinds of evidence have ${3}+ answers each. It won't guess from less.` : `<b>${pc(all.mastery)}</b> overall, measured from ${all.measured.length} of the 6 kinds of evidence.${all.missing.length ? ` Not yet measured: ${all.missing.map(label).join(", ")}.` : ""}`}</p>
       ${evidenceLine(ev)}${sixHtml(all)}${calibrationHtml(all)}
-      ${schools.length ? `<h4>By ${u1}</h4><ul class="co-weak">${schools.map(({ g, u }) => `<li><a href="#/learn/${u.id}">${U} ${u.n}: ${esc(u.title)}</a> <small>${g.mastery == null ? `${g.answers} answers: not enough evidence yet` : `${pc(g.mastery)}${g.weakest ? ` · weakest: ${label(g.weakest)}` : ""}`}</small></li>`).join("")}</ul>` : ""}
+      ${schools.length ? `<h4>By ${u1}</h4><ul class="co-weak">${schools.map(({ g, u }) => `<li><a href="#/learn/${u.id}">${U} ${u.n}: ${esc(u.title)}</a> <small>${g.mastery == null ? `${g.answers} answers: not enough evidence yet` : `${pc(g.mastery)}${g.weakest ? ` · weakest: ${label(g.weakest)}` : ""}`}${g.trend?.declining ? " · slipping: recent answers are weaker than before" : ""}</small></li>`).join("")}</ul>` : ""}
       ${labPracticeHtml()}
-      <p>${revisitLink()}</p>
+      <p>${revisitLink()} ${weakLink()}</p>
       <div class="co-dirbox"><h4>Your next session</h4><p class="co-empty">The Gradify AI study director turns this evidence into a plan for your next session.</p><button type="button" class="btn btn-ghost btn-sm" data-director><span>Plan my next session</span></button><div class="co-dirout" aria-live="polite"></div></div></section>`;
   }
   // what the mastery figures are built from, and the exploration that isn't counted (kit/learning/evidence-class.js)
@@ -971,7 +998,7 @@ export function mountCourse(root, cfg) {
     const ev = evidenceFromAttempts(S.attempts || [], { levels: cfg.levels || null, exploration: EXPLORE });
     const all = sixProfiles(ev).all, byLesson = sixProfiles(ev).groups.filter((g) => byId[g.key]);
     const weak = byLesson.filter((g) => g.answers >= 2).sort((a, b) => (a.mastery ?? a.dims.recognition.value ?? 1) - (b.mastery ?? b.dims.recognition.value ?? 1)).slice(0, 6)
-      .map((g) => ({ id: g.key, title: byId[g.key].title, note: `${g.mastery == null ? "not enough evidence" : `${Math.round(g.mastery * 100)}% mastery`}${g.weakest ? `, weakest ${g.weakest}` : ""}${g.calibration?.sureWrong ? `, ${g.calibration.sureWrong} confident mistakes` : ""}` }));
+      .map((g) => ({ id: g.key, title: byId[g.key].title, note: `${g.mastery == null ? "not enough evidence" : `${Math.round(g.mastery * 100)}% mastery`}${g.weakest ? `, weakest ${g.weakest}` : ""}${g.calibration?.sureWrong ? `, ${g.calibration.sureWrong} confident mistakes` : ""}${g.trend?.declining ? ", recent answers weaker than earlier ones" : ""}` }));
     for (const g of labPractice(S.attempts || [], { exploration: EXPLORE }).filter((p) => byId[p.lesson]).slice(0, 4)) {
       const note = `${g.tries} unsuccessful lab tries since the last success`, w = weak.find((x) => x.id === g.lesson);
       if (w) w.note += `, ${note}`; else weak.push({ id: g.lesson, title: byId[g.lesson].title, note });
@@ -992,14 +1019,14 @@ export function mountCourse(root, cfg) {
     const weeks = 18, start = weekStart() - (weeks - 1) * 7 * DAY;
     const cells = Array.from({ length: weeks * 7 }, (_, i) => { const t = start + i * DAY, d = day(t), v = byDay[d] || 0; return t > Date.now() ? "<i class=future></i>" : `<button style="--v:${Math.min(1, v / Math.max(S.goal, 1))}" data-day="${d}" title="${d}: ${v} XP"></button>`; }).join("");
     const last14 = Array.from({ length: 14 }, (_, i) => { const d = day(Date.now() - (13 - i) * DAY); return [d, byDay[d] || 0]; }), mx = Math.max(S.goal, ...last14.map((x) => x[1]));
-    main.innerHTML = `<div class="co-intro"><span class="co-kicker">My progress</span><h2>Your ${esc(cfg.name)}</h2><p>Everything you've done here, and what's saved to your Gradify account.</p></div>
+    main.innerHTML = `<div class="co-intro"><span class="co-kicker">My progress</span><h2>Your ${esc(cfg.name)}</h2><p>Everything you've done here, and what's saved to your Gradify account. Your quests, achievements and progress in every subject are on <a href="/journey.html">your journey</a>.</p></div>
       <div class="co-tiles">${[["Level", L.n], ["Total XP", xp.toLocaleString()], ["Day streak", sk.n], ["Best streak", sk.best], ["Lessons", `${st.lessons} / ${lessons.length}`], ["Units cleared", st.units], ["Quizzes passed", st.quizzes], ["Problems solved", st.solved]].map(([k, v]) => `<div><small>${k}</small><b>${v}</b></div>`).join("")}</div>
       ${masteryHtml()}
       ${insightHtml()}
       <section class="co-panel"><h3>Activity</h3><div class="co-heat">${cells}</div><p class="co-dayinfo">Pick a day to see what you did.</p></section>
       <section class="co-panel"><h3>XP, last 14 days</h3><div class="co-bars">${last14.map(([d, v]) => `<div title="${d}: ${v} XP"><i style="height:${(v / mx) * 100}%" class="${v >= S.goal ? "hit" : ""}"></i><small>${d.slice(8)}</small></div>`).join("")}<span class="co-goalline" style="bottom:${(S.goal / mx) * 100}%">goal ${S.goal}</span></div></section>
       <section class="co-panel"><h3>${TW}s</h3><div class="co-mastery">${cfg.tracks.map((t) => { const us = t.units.map((n) => units.find((u) => u.n === n)).filter(Boolean), tot = us.reduce((a, u) => a + u.lessons.length, 0), dn = us.reduce((a, u) => a + unitDone(u), 0); return `<div style="--a:${t.from};--b:${t.to}"><span>${esc(t.name)}</span><div class="co-bar"><i style="width:${(dn / tot) * 100}%"></i></div><small>${dn}/${tot}</small></div>`; }).join("")}</div></section>
-      <section class="co-panel"><h3>Badges</h3><div class="co-badgelist">${BADGES.map((b) => `<div class="${b.ok(st) ? "on" : ""}">${ic(b.ok(st) ? "star" : "lock")}<b>${b.name}</b><small>${b.d}</small></div>`).join("")}</div></section>
+      <section class="co-panel"><h3>Badges</h3>${[["Understanding", "Earned only from what your answers show you understand and remember. XP can't buy these.", true], ["Activity", "For keeping going: lessons, streaks, reviews and XP.", false]].map(([h, sub, u]) => `<h4>${h}</h4><p class="co-acct">${sub}</p><div class="co-badgelist">${BADGES.filter((b) => !!b.understanding === u).map((b) => `<div class="${b.ok(st) ? "on" : ""}">${ic(b.ok(st) ? "star" : "lock")}<b>${b.name}</b><small>${b.d}</small></div>`).join("")}</div>`).join("")}</section>
       <section class="co-panel co-saved"><h3>Saved to your account</h3><p class="co-empty">Loading…</p></section>`;
     main.querySelector("[data-director]")?.addEventListener("click", async (e) => {
       const out = main.querySelector(".co-dirout"); e.currentTarget.disabled = true; out.innerHTML = `<p class="co-empty">Planning from your progress…</p>`;
@@ -1300,7 +1327,7 @@ export function mountCourse(root, cfg) {
     if (view === "learn") { if (arg) openUnit(arg); viewLearn(arg); }
     else if (view === "lesson") await viewLesson(arg);
     else if (view === "quiz") await viewQuiz(arg);
-    else if (view === "review") await (arg === "questions" ? viewRetrieval() : viewReview());
+    else if (view === "review") await (arg === "questions" ? viewRetrieval() : arg === "weak" ? viewWeak() : viewReview());
     else if (view === "paths") viewPaths();
     else if (view === "tracks") viewTracks();
     else if (view === "problems") await viewProblems();

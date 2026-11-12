@@ -17,10 +17,13 @@ X: Why does a pencil look bent in water?
 > Light from the submerged part refracts away from the normal leaving the water
 > The eye traces rays back in straight lines, placing the image higher: apparent depth ≈ real depth/n
 !: Rays are a model; light isn't really made of infinitely thin lines, and the model fails at small scales.
+P: **Investigate with the lab.** Trace rays through the lens and mirror and check they travel in straight lines between surfaces.
+IX: optics
 Q: State Fermat's principle. | Light travels between two points along the path of stationary optical path length.
 Q: When does geometrical optics fail? | When apertures or features are comparable to the wavelength, so diffraction matters.
 M1: A pool 2 m deep (n = 1.33) appears about: | 1.5 m deep | 2.7 m | 2 m | 1 m | Real/n.
 M2: The paraxial approximation assumes: | Small angles to the axis | Large apertures | Short wavelengths only | No refraction | sin θ ≈ θ.
+M2: What does geometrical optics assume about light? | It travels in straight-line rays | It always diffracts | It is made only of particles | It has no speed | Ray optics works when objects are much larger than the wavelength.
 
 ## Reflection and refraction
 S: At a boundary, light partly reflects and partly refracts. Reflection follows equal angles; refraction follows Snell's law; the proportions depend on the refractive indices, angle and polarisation.
@@ -38,10 +41,13 @@ H: How much reflects
 X: Light enters glass (n = 1.52) at 40°. Refraction angle?
 > sin θ_{2} = sin 40°/1.52 = 0.423 ⇒ θ_{2} = 25°
 !: We see most objects by diffuse reflection; a perfect mirror is itself almost invisible.
+P: **Investigate with the lab.** Change the angle of incidence and compare the reflected and refracted rays.
+IX: optics
 Q: What is the difference between specular and diffuse reflection? | Specular: smooth surface, ordered reflection forming images. Diffuse: rough surface scattering light in all directions.
 Q: What happens to wavelength when light enters glass? | It shortens by a factor of n; frequency is unchanged.
 M1: Reflection angle when incidence is 30°: | 30° | 60° | 15° | 90° | Equal angles.
 M2: Why does a still lake reflect strongly at low viewing angles? | Reflectance rises sharply towards grazing incidence | Water is a metal | Lakes are coated | Refraction stops | Fresnel equations.
+M2: When light enters glass from air at an angle, which way does it bend? | Towards the normal | Away from the normal | It doesn't bend | Along the surface | Light slows in glass and bends towards the normal.
 
 ## Snell's law
 S: Snell's law gives the angle of a refracted ray: the product of refractive index and the sine of the angle is the same on both sides of an interface. It follows from the change in wave speed, via Huygens' or Fermat's principle.
@@ -57,10 +63,13 @@ P: Trace rays through a glass block at several angles; plot sin i against sin r;
 X: A gradient graph of sin i against sin r has gradient 1.48. What is the block likely made of?
 > n = 1.48: Perspex/acrylic (crown glass ~1.52)
 !: Use sines of angles, not the angles themselves; θ_{1}/θ_{2} ≠ n_{2}/n_{1} except at small angles.
+P: **Investigate with the lab.** Measure the angles of incidence and refraction at three settings and check that sin i / sin r stays constant.
+IX: optics
 Q: State Snell's law. | n_{1} sin θ_{1} = n_{2} sin θ_{2}.
 Q: How does Fermat's principle explain Snell's law? | The refracted path minimises the travel time when speeds differ in the two media.
 M1: Light goes from water (1.33) to glass (1.5) at 30°. Refraction angle: | 26° | 30° | 34° | 45° | sin θ_{2} = 1.33 × 0.5/1.5.
 M2: A graph of sin i against sin r for light entering a block has gradient: | n of the block | 1/n | Critical angle | Zero | sin i = n sin r.
+M2: Light enters glass (n = 1.5) at 30°. What is sin r? | About 0.33 | 0.75 | 0.5 | 1.5 | sin r = sin 30°/1.5 = 0.5/1.5 ≈ 0.33.
 
 ## Total internal reflection
 S: When light travelling in a dense medium meets a less dense one at an angle above the critical angle, none refracts out: it's totally reflected. This traps light in optical fibres and makes diamonds sparkle.
@@ -80,10 +89,13 @@ X: Critical angle for light leaving a fibre core (1.48) into cladding (1.46)?
 > sin θ_{c} = 1.46/1.48 ⇒ θ_{c} = 80.6°
 > Rays must strike the core boundary at more than 80.6° to the normal (nearly parallel to the axis)
 !: TIR only happens going from higher to lower index; light entering a denser medium always refracts in.
+P: **Investigate with the lab.** With light leaving glass, increase the angle until you find the critical angle and get total internal reflection.
+IX: optics
 Q: What is the critical angle? | The angle of incidence (in the denser medium) beyond which there's no refracted ray.
 Q: Why do diamonds sparkle? | Their small critical angle traps light by total internal reflection until it exits through the top facets, and dispersion splits colours.
 M1: Total internal reflection requires light to travel: | From higher to lower n above θ_{c} | From lower to higher n | At normal incidence | In a vacuum | Condition.
 M2: Binoculars use prisms rather than mirrors because: | TIR gives near-100% reflection without coatings | Prisms magnify | Mirrors absorb light | It's cheaper | Better reflection.
+M2: What is the critical angle for glass with n = 1.5? | About 42° | About 30° | About 60° | 90° | sin c = 1/n = 0.67, so c ≈ 42°.
 
 ## Mirrors and image formation
 S: Mirrors form images by reflection. Plane mirrors give upright, same-size virtual images; curved mirrors can magnify, focus light and form real images, used in telescopes, headlamps and solar furnaces.
@@ -101,10 +113,13 @@ X: An object 30 cm from a concave mirror (f = 10 cm). Image position and magnifi
 > 1/v = 1/10 − 1/30 = 2/30 ⇒ v = 15 cm (real)
 > m = −15/30 = −0.5: inverted, half size
 !: Sign conventions differ between textbooks (real-is-positive vs Cartesian); be consistent.
+P: **Investigate with the lab.** Switch to a curved mirror and move the object to find a real image and a virtual one.
+IX: optics
 Q: Where is the image in a plane mirror? | As far behind the mirror as the object is in front.
 Q: Why are convex mirrors used on cars? | They give a wide field of view with upright images.
 M1: A concave mirror's focal length is: | Half its radius of curvature | Equal to its radius | Twice its radius | Zero | f = R/2.
 M2: An object inside the focal point of a concave mirror gives: | A virtual, upright, magnified image | A real inverted image | No image | A smaller real image | Shaving mirror.
+M2: When does a concave mirror form a virtual image? | When the object is closer than the focal point | When the object is beyond the centre of curvature | When the object is at infinity | Never | Inside the focal length, reflected rays diverge and appear to come from behind the mirror.
 
 ## Thin lenses
 S: A thin lens refracts light at two curved surfaces to bring rays to a focus (converging) or spread them (diverging). Lenses form images in eyes, cameras, projectors and glasses.
@@ -123,10 +138,13 @@ H: Ray rules
 X: A biconvex lens (n = 1.5) with radii 20 cm and −20 cm. Focal length?
 > 1/f = 0.5(1/20 + 1/20) = 0.05 ⇒ f = 20 cm
 !: Thin lenses combine by adding powers: P = P_{1} + P_{2} when in contact.
+P: **Investigate with the lab.** Make a real, inverted image the same size as the object with a converging lens. Then try a diverging lens.
+IX: optics
 Q: What is lens power? | P = 1/f, in dioptres (m^{-1}).
 Q: Why does vision blur underwater? | The cornea's refractive power drops because water's index is close to the eye's.
 M1: A −4 D lens has focal length: | −25 cm | 4 m | −4 cm | 25 cm | f = 1/P.
 M2: Two lenses of +3 D and +2 D in contact have power: | +5 D | +6 D | +1 D | +1.2 D | Powers add.
+M2: Where must the object be for a converging lens to form a real image the same size? | At twice the focal length | At the focal point | Inside the focal length | At infinity | At u = 2f, the image forms at v = 2f with magnification 1.
 
 ## Lens equations
 S: The thin lens equation relates object distance, image distance and focal length; magnification gives image size. With them you can predict where and how large any lens forms an image.
@@ -147,10 +165,13 @@ X: A projector lens (f = 10 cm) forms a sharp image on a screen 5 m away. Where'
 > 1/u = 1/10 − 1/500 = 0.098 ⇒ u = 10.2 cm
 > m = 500/10.2 = 49
 !: A virtual image can't be projected on a screen, but it can be seen or photographed through the lens.
+P: **Investigate with the lab.** Set the focal length and object distance, predict the image distance with the lens equation, then check.
+IX: optics
 Q: State the thin lens equation. | 1/f = 1/u + 1/v.
 Q: What image does a magnifying glass form? | Virtual, upright and magnified, with the object inside the focal length.
 M1: An object at 2f from a converging lens gives an image at: | 2f, same size | f | Infinity | Between f and 2f | Symmetric.
 M2: A lens (f = 5 cm) with object 4 cm away forms an image at: | 20 cm, virtual | 20 cm, real | 2.2 cm | 9 cm | 1/v = 1/5 − 1/4 = −1/20.
+M2: A lens has f = 10 cm and the object is 30 cm away. Where is the image? | 15 cm from the lens | 20 cm from the lens | 30 cm from the lens | 7.5 cm from the lens | 1/v = 1/10 − 1/30 = 2/30, so v = 15 cm.
 
 ## Optical instruments
 S: Optical instruments combine lenses and mirrors to see things too small, too far or too faint for the eye. Understanding the eye itself is the starting point: cameras, glasses, magnifiers and projectors all extend it.
@@ -168,10 +189,13 @@ X: A myopic person's far point is 2 m. Lens power needed?
 > Lens must image infinity at 2 m: f = −2 m
 > P = −0.5 D
 !: Magnification isn't the same as resolution: magnifying a blurred image only shows a bigger blur.
+P: **Investigate with the lab.** Move the object inside the focal length to make a magnifying glass: the image is virtual and upright.
+IX: optics
 Q: How does the eye focus on near objects? | Ciliary muscles let the lens become more curved (accommodation), increasing its power.
 Q: What corrects short sight? | A diverging lens.
 M1: A camera at f/8 compared with f/4 lets in: | 1/4 the light | 1/2 | Twice | The same | ∝ 1/N^{2}.
 M2: A magnifying glass of f = 5 cm gives angular magnification (image at infinity) of: | 5 | 25 | 0.2 | 125 | 25/5.
+M2: How does a simple magnifying glass work? | The object is inside the focal length, giving a virtual, magnified, upright image | The object is beyond 2f, giving a real image | It uses total internal reflection | It uses a diverging lens | Inside f, a converging lens forms a magnified virtual image.
 
 ## Microscopes and telescopes
 S: Microscopes magnify small, near objects; telescopes magnify the angular size of distant ones and collect their faint light. Both use an objective to form an image and an eyepiece (or sensor) to view it.
@@ -278,10 +302,13 @@ P: Fire photons, electrons, neutrons, atoms or even molecules of ~2000 atoms one
 X: Laser light (633 nm), slits 0.25 mm apart, screen 2.0 m away. Fringe spacing?
 > x = 633 × 10^{-9} × 2.0/2.5 × 10^{-4} = 5.1 mm
 !: The fringes come from path difference to each point on the screen, not from light "bouncing" between the slits.
+P: **Investigate with the lab.** In double-slit mode, halve the slit separation and see the fringes spread twice as far apart. Then move the screen further away.
+IX: interference
 Q: What's the fringe spacing in Young's experiment? | x = λD/d.
 Q: What happens to the pattern if you detect which slit each electron passes through? | The interference fringes disappear.
 M1: Using blue light instead of red makes fringes: | Closer together | Farther apart | Disappear | Brighter only | x ∝ λ.
 M2: Young's experiment with single electrons shows: | Interference builds up from single detections | Electrons are classical | No pattern | Only two bands | Wave–particle duality.
+M2: In Young's experiment, what happens to the fringe spacing if the slit separation is halved? | It doubles | It halves | It stays the same | It quadruples | Fringe spacing w = λD/s, so halving s doubles w.
 
 ## Interference and coherence
 S: Interference needs coherence: a stable phase relationship between waves. Temporal coherence describes how long a wave stays in phase with itself; spatial coherence describes how phase is correlated across a beam.
@@ -299,10 +326,13 @@ E: V = (I_{max} − I_{min})/(I_{max} + I_{min})
 X: Coherence length of an LED with λ = 630 nm, Δλ = 20 nm?
 > l_{c} = (630 × 10^{-9})^{2}/(20 × 10^{-9}) ≈ 20 μm
 !: Two independent lasers can interfere briefly (beats), but their relative phase drifts; for stable fringes, use beams from one source.
+P: **Investigate with the lab.** Compare the fringes for different slit separations and screen distances, and note that clear fringes need a steady phase relationship between the slits.
+IX: interference
 Q: What is coherence length? | The path difference over which a wave stays correlated with itself, l_{c} ≈ λ^{2}/Δλ.
 Q: Why can thin films show colours in white light? | Their path differences are shorter than white light's tiny coherence length.
 M1: A narrower spectral linewidth gives: | Longer coherence length | Shorter coherence length | No change | Lower intensity | l_{c} ∝ 1/Δλ.
 M2: Fringe visibility of 0 means: | No interference fringes | Perfect fringes | Maximum intensity | Monochromatic light | Incoherent.
+M2: Why must the two sources in an interference experiment be coherent? | They need a constant phase difference for a stable pattern | They must have different frequencies | They must be very bright | They must be at different distances from the screen | Without a constant phase difference, the fringes move too fast to see.
 
 ## Diffraction
 S: Diffraction is the spreading and bending of light around obstacles and through apertures, producing patterns of light and dark. It's why light can't be focused to an arbitrarily small spot and why fine detail has a limit.
@@ -321,10 +351,13 @@ X: The pupil (3 mm) viewing at 550 nm. Smallest resolvable angle?
 > θ = 1.22 × 5.5 × 10^{-7}/0.003 = 2.2 × 10^{-4} rad ≈ 0.8′
 > About the eye's actual acuity (~1′)
 !: Diffraction happens at every edge and aperture; it's not a defect but a fundamental property of waves.
+P: **Investigate with the lab.** Switch to single-slit mode and narrow the slit: the central maximum gets wider. Widen it and the light spreads less.
+IX: interference
 Q: What is the Airy disc? | The central bright spot of the diffraction pattern from a circular aperture.
 Q: Why does chip lithography use ever-shorter wavelengths? | Diffraction limits feature size to roughly the wavelength.
 M1: Halving an aperture's diameter makes the Airy disc: | Twice as wide | Half as wide | The same | Four times wider | ∝ λ/D.
 M2: Fraunhofer diffraction applies when: | Source and screen are effectively at infinity | The screen is very close | Light is incoherent | The aperture is large | Far field.
+M2: What happens to the diffraction pattern when the slit is made narrower? | The central maximum gets wider | The central maximum gets narrower | The pattern disappears | The colours separate | The spread of the central maximum is roughly λ/a, so a narrower slit spreads the light more.
 
 ## Single-slit and multiple-slit diffraction
 S: A single slit produces a broad central maximum with weaker side fringes. Adding more slits keeps that envelope but sharpens the bright fringes inside it, until many slits give the narrow lines of a diffraction grating.
@@ -341,10 +374,13 @@ E: I = I_{0}(sin β/β)^{2}(sin Nγ/sin γ)^{2}, γ = (πd sin θ)/λ
 X: Double slit with d = 0.3 mm and a = 0.1 mm. Which interference orders are missing?
 > d/a = 3: orders 3, 6, 9… coincide with single-slit minima
 !: The single-slit envelope multiplies the interference pattern; the two effects aren't separate patterns side by side.
+P: **Investigate with the lab.** Set the slit separation to three times the slit width and find the missing bright fringe where it meets a diffraction minimum.
+IX: interference
 Q: Why does adding slits sharpen the fringes? | More slits must all be in phase for a maximum; small angle changes destroy the agreement, narrowing peaks.
 Q: What causes missing orders? | A principal maximum coinciding with a single-slit diffraction minimum.
 M1: The central maximum of a single slit is: | Twice as wide as the others | The same width | Half as wide | Absent | Between the ±1 minima.
 M2: Principal maxima intensity for N slits scales as: | N^{2} | N | √N | 1/N | Amplitudes add.
+M2: In a double-slit pattern with d = 3a, which interference order is missing? | The third order | The first order | The second order | No order is missing | The third bright fringe falls exactly on the first diffraction minimum, so it vanishes.
 
 ## Diffraction gratings
 S: A diffraction grating has thousands of closely spaced slits or grooves. It produces very sharp, bright maxima at angles depending on wavelength, so it's the heart of most spectrometers.
@@ -365,10 +401,13 @@ X: A grating with 600 lines per mm: angle of the first-order sodium line (589 nm
 > d = 1.67 μm; sin θ = 0.353 ⇒ θ = 20.7°
 > N = 12 000; R = 12 000 in first order; needed: 589/0.6 ≈ 1000 ✓
 !: Gratings send red farther than violet (opposite to prisms) and produce several overlapping orders that can confuse spectra.
+P: **Investigate with the lab.** Use a grating with 600 lines per mm and find how many orders red light at 700 nm can show. Then try shorter wavelengths.
+IX: interference
 Q: State the grating equation. | d sin θ = nλ.
 Q: What is a grating's resolving power? | R = λ/Δλ = nN, order times number of illuminated lines.
 M1: A grating with 500 lines per mm can show orders up to (λ = 500 nm): | 3 | 4 | 2 | 10 | d/λ = 4, so n < 4.
 M2: CD rainbow colours come from: | Diffraction from closely spaced tracks | Thin-film interference | Dispersion | Fluorescence | A natural reflection grating.
+M2: A grating has 600 lines per mm. What is the highest order visible for 700 nm light? | The second order | The first order | The third order | The fifth order | d = 1/600 mm ≈ 1.67 μm; n_max = d/λ ≈ 2.4, so the second order is the highest.
 
 ## Michelson interferometer
 S: A Michelson interferometer splits a beam, sends the halves along two arms, and recombines them. Tiny changes in arm length shift the fringes, measuring distances to a fraction of a wavelength.
@@ -565,10 +604,13 @@ H: Other uses
 X: A 100 km link at 0.2 dB km^{-1}. Fraction of power received?
 > Loss = 20 dB ⇒ 1% received
 !: Bending a fibre too tightly lets light escape: TIR fails when the angle drops below critical.
+P: **Investigate with the lab.** Find the critical angle for light leaving glass and push beyond it to trap the light by total internal reflection.
+IX: optics
 Q: What limits the distance of multimode fibres? | Modal dispersion: different modes travel different path lengths.
 Q: Why is 1550 nm used for long-haul fibre? | It's the lowest-loss window, where erbium amplifiers work.
 M1: Optical fibres guide light by: | Total internal reflection | Mirrors | Diffraction | Absorption | Core n > cladding n.
 M2: A 30 dB loss means the power received is: | 0.1% | 1% | 3% | 30% | 10^{-3}.
+M2: Why does light stay inside an optical fibre? | Total internal reflection at the core's boundary | Refraction out of the fibre at each bend | Absorption by the cladding | The fibre is a mirror | Light hits the boundary above the critical angle, so it is totally reflected.
 
 ## Nonlinear optics
 S: At high intensities, a material's response to light is no longer proportional to the field. New frequencies appear and light can control light: the field of nonlinear optics, made possible by lasers.

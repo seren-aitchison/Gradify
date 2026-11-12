@@ -7,6 +7,8 @@
 //   profile   the shared learner profile (kit/data/profile.js)
 // The pure functions take that data as arguments, so Node tests them; loadLearner() gathers it in a browser.
 import { evidenceFromAttempts, sixProfiles, revisionQueue, topicProfiles } from "./mastery.js";
+import { weaknessTargets } from "./targets.js";
+import { conceptGraph } from "./concepts.js";
 import { isDue } from "./srs.js";
 import { paceFor } from "./pace.js";
 
@@ -15,7 +17,7 @@ const DAY = 864e5;
 export const COURSES = {
   physics: "/scigradify/physics/", biology: "/scigradify/biology/", chemistry: "/scigradify/chemistry/",
   law: "/lawgradify/course/", nursing: "/nursegradify/course/", pharmacy: "/pharmagradify/course/",
-  psychology: "/psychgradify/course/", sociology: "/socgradify/course/", maths: "/mathgradify/course/",
+  psychology: "/psychgradify/course/", sociology: "/socgradify/course/", maths: "/mathgradify/course/", history: "/historygradify/course/",
   // courses made with scripts/new-course.mjs (mass production, docs/SITE-PRODUCTION.md); listed before their files land
   ecology: "/ecogradify/course/", business: "/businessgradify/course/", finance: "/financegradify/course/",
   medicine: "/medgradify/course/", literature: "/litgradify/course/", music: "/musicgradify/course/",
@@ -24,7 +26,7 @@ export const COURSES = {
   sport: "/sportgradify/course/", teaching: "/edugradify/course/", university: "/undergradify/course/",
   research: "/postgradify/course/", professional: "/progradify/course/", careers: "/internshipgradify/course/",
   design: "/creategradify/course/", spanish: "/languagegradify/course/", gcse: "/youthgradify/course/",
-  primary: "/juniorgradify/course/",
+  primary: "/juniorgradify/course/", computing: "/techgradify/course/",
 };
 const dayKey = (t) => { const d = new Date(t); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
 
@@ -59,6 +61,9 @@ export function courseSummary(cfg, S = {}, { now = Date.now(), profile = null } 
   const ev = evidenceFromAttempts(attempts, { levels: cfg.levels || null, exploration: cfg.exploration || null });
   const { all, groups } = sixProfiles(ev, { by: (e) => e.unit, now });
   const revisit = revisionQueue(attempts, { now, limit: 1000 });
+  // measured weak spots (kit/learning/targets.js), foundations first where the course has a concept graph
+  const weak = attempts.length ? weaknessTargets(attempts, { exploration: cfg.exploration || null, levels: cfg.levels || null, graph: cfg.concepts ? conceptGraph(cfg.units, cfg.concepts) : null, now, limit: 5 }) : [];
+  const titleOf = (id) => lessons.find((l) => l.id === id)?.title || id;
   const dueCards = Object.values(S.cards || {}).filter((st) => st?.due_at && isDue(st, now)).length;
   const times = [...(S.log || []).map((r) => r.t), ...attempts.map((a) => Date.parse(a.at)), ...Object.values(S.done || {}).map(Number)].filter(Number.isFinite);
   const lastAt = times.length ? Math.max(...times) : null;
@@ -74,7 +79,8 @@ export function courseSummary(cfg, S = {}, { now = Date.now(), profile = null } 
       text: [u.title, ...(u.modules || []).map((m) => m.title || m), ...u.lessons.map((l) => l.title)].join(" ") };
   }).filter((s) => s.done || s.profile);
   return { slug: cfg.slug, site: cfg.site, name: cfg.name, href: COURSES[cfg.slug] || null, total: lessons.length, written: lessons.filter((l) => written(l.unit)).length,
-    done, remaining, lastAt, six: all, schools, revisit: revisit.length, dueCards, pace, examDate, next: next && { id: next.id, title: next.title },
+    done, remaining, lastAt, six: all, schools, revisit: revisit.length, dueCards, cards: Object.keys(S.cards || {}).length, pace, examDate, next: next && { id: next.id, title: next.title },
+    weak: weak.map((t) => ({ lesson: t.lesson, title: titleOf(t.lesson), kind: t.kind, why: t.why, for: t.for ? titleOf(t.for) : null })),
     started: Boolean(done || attempts.length || Object.keys(S.cards || {}).length) };
 }
 
@@ -84,7 +90,7 @@ export function schoolTopic(course, s, now = Date.now()) {
   const coverage = s.total ? s.done / s.total : 0;
   const recentDays = s.lastAt ? (now - s.lastAt) / DAY : null;
   const retention = d("retention").value;
-  const level = s.sureWrong >= 2 ? "shaky" : retention != null && retention < 0.6 ? "fading" : p?.mastery != null && p.mastery >= 0.85 && coverage >= 0.9 ? "mastered" : coverage || p ? "learning" : "new";
+  const level = s.sureWrong >= 2 ? "shaky" : (retention != null && retention < 0.6) || p?.trend?.declining ? "fading" : p?.mastery != null && p.mastery >= 0.85 && coverage >= 0.9 ? "mastered" : coverage || p ? "learning" : "new";
   return {
     key: `course:${course.slug}:${s.id}`, topic: `${s.title}`, course: true, href: `${course.href || ""}#/learn/${s.id}`,
     level, mastery: p?.mastery ?? coverage * 0.5, coverage, lastSeen: s.lastAt, dims: { recall: d("recall"), explain: d("explain"), apply: d("apply"), retention: d("retention") },
@@ -103,6 +109,7 @@ export function recommend(courses = [], decks = [], { limit = 6 } = {}) {
     const sureWrong = c.six.calibration?.sureWrong || 0;
     if (sureWrong) out.push({ p: 0.95, site: c.site, label: `Check ${sureWrong} confident ${sureWrong === 1 ? "mistake" : "mistakes"} in ${c.name}`, why: "You were sure about these and got them wrong. Fixing a misunderstanding early stops it spreading.", href: at("#/me") });
     if (c.revisit) out.push({ p: 0.8 + Math.min(0.1, c.revisit / 200), site: c.site, label: `Revisit ${c.revisit} ${c.name} ${c.revisit === 1 ? "question" : "questions"}`, why: "Due for spaced retrieval: answering them now, as they start to fade, is what makes them last.", href: at("#/review/questions") });
+    if (c.weak?.length) { const t = c.weak[0]; out.push({ p: t.kind === "foundation" ? 0.78 : 0.74, site: c.site, label: `Target ${c.weak.length} weak ${c.weak.length === 1 ? "spot" : "spots"} in ${c.name}`, why: t.kind === "foundation" && t.for ? `Start with ${t.title}: it underpins ${t.for}, and your answers show both are weak.` : `${t.title}: ${t.why}`, href: at("#/review/weak") }); }
     if (c.dueCards) out.push({ p: 0.7 + Math.min(0.1, c.dueCards / 300), site: c.site, label: `Review ${c.dueCards} ${c.name} ${c.dueCards === 1 ? "flashcard" : "flashcards"}`, why: "These cards are due today.", href: at("#/review") });
     if (c.next) out.push({ p: 0.5 + ({ behind: 0.3, tight: 0.15 }[c.pace.status] || 0), site: c.site, label: `Continue ${c.name}: ${c.next.title}`, why: c.pace.status === "behind" || c.pace.status === "tight" ? `Your exam pace is ${c.pace.status}: about ${Math.round(c.pace.needPerDay * 10) / 10} lessons a day are needed.` : `${c.done} of ${c.total} lessons done.`, href: at(`#/lesson/${c.next.id}`) });
   }
@@ -114,17 +121,19 @@ export function recommend(courses = [], decks = [], { limit = 6 } = {}) {
 }
 
 // ---------- gather it in a browser ----------
-export async function loadLearner({ now = Date.now() } = {}) {
-  const { LocalStore, CloudStore } = await import("../data/store.js");
+// `store`: a page that already has the learner's store (the app) passes it, so no second connection is opened
+export async function loadLearner({ now = Date.now(), store = null } = {}) {
   const { learnerOf } = await import("../data/profile.js");
-  let store = new LocalStore();
-  try { const cloud = await CloudStore.create(); if (cloud && (await cloud.user())) store = cloud; } catch { /* this device */ }
+  if (!store) {
+    const { LocalStore, CloudStore } = await import("../data/store.js");
+    store = new LocalStore();
+    try { const cloud = await CloudStore.create(); if (cloud && (await cloud.user())) store = cloud; } catch { /* this device */ }
+  }
   const [p, activity, cards, reviews] = await Promise.all([store.getProfile().catch(() => ({})), store.listActivity(400).catch(() => []), store.listCards().catch(() => []), store.listReviews(400).catch(() => [])]);
   const profile = { ...p, learner: learnerOf(p) };
   // course progress: this device's copy, and the account's for courses not opened on this device yet
-  const states = {};
-  for (const slug of Object.keys(COURSES)) { try { const s = JSON.parse(localStorage.getItem(`gradify.course.${slug}`) || "null"); if (s) states[slug] = s; } catch { /* storage blocked */ } }
-  if (store.mode === "cloud") for (const slug of Object.keys(COURSES)) if (!states[slug]) { try { const s = await store.getCourseProgress(slug); if (s) states[slug] = s; } catch { /* not set up */ } }
+  const { courseStates } = await import("./course-states.js");
+  const states = await courseStates(store);
   const courses = [];
   for (const [slug, S] of Object.entries(states)) {
     try { courses.push(courseSummary((await import(`../courses/${slug}/course.js`)).default, S, { now, profile })); } catch (e) { console.warn(`Couldn't read ${slug} progress`, e); }

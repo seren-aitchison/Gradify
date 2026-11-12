@@ -18,6 +18,8 @@ X: Choice reaction time and information
 > Participants respond to one, two or four possible lights.
 > Reaction time rises roughly linearly with log2 of the number of choices (Hick, 1952).
 > The finding suggests decision time grows with the amount of information to be processed.
+P: **Investigate with the lab.** Try the Stroop task and think of it as information flowing through stages: input, processing and response.
+IX: stroop
 K: The information-processing approach models cognition as staged processing of information, inferred from reaction times and errors.
 P: Later models added **parallel processing**, in which several operations occur at once, and **connectionist** networks, in which knowledge is stored in patterns of connections between simple units, closer to how neurones work.
 !: Thinking box-and-arrow models describe where things happen in the brain. They describe functions, not anatomy.
@@ -36,6 +38,7 @@ M2#psychology-u03-01-q2@2: Responding takes 50 ms longer when participants must 
 TF2#psychology-u03-01-q3@3: Box-and-arrow models show exactly where processes occur in the brain. | false | They describe functions, not anatomical locations.
 M3#psychology-u03-01-q4@3: Which is the strongest criticism of the computer analogy in information processing? | It neglects emotion, context and the body | It uses too many reaction times | It denies mental processes exist | It is too biological | Embodied and emotional factors shape cognition in ways the analogy misses.
 SA3#psychology-u03-01-q5@2,3: Evaluate the information-processing approach in cognitive psychology. | Strengths: testable stage models; precise measures (reaction time, errors); findings such as Hick's law; practical applications (interface design). Weaknesses: serial stages oversimplify parallel processing; computer analogy neglects emotion and embodiment; laboratory tasks may lack ecological validity. Connectionist models address some limits. | Stage models ; Methods ; Strength ; Limitation ; Development
+M2#psychology-u03-01-q6@1: What does the information-processing approach compare the mind to? | A computer that takes in, processes and outputs information | A hydraulic pump releasing pressure | A blank slate written on by experience | An iceberg with a hidden unconscious | The approach models cognition as stages of processing.
 
 ## Selective attention
 LV: Intermediate · Application
@@ -57,6 +60,8 @@ X: Inattentional blindness
 > A person in a gorilla suit walked through the scene; about half the participants didn't notice.
 > Without attention, even a salient, unexpected object can go unseen.
 P: Attention can also be studied visually. In **visual search**, finding a target defined by one feature (a red item among green) is fast regardless of how many distractors there are, while finding a target defined by a combination of features takes longer as distractors are added. Treisman and Gelade (1980) argued that combining features needs focused attention.
+P: **Investigate with the lab.** Do the Stroop task and measure your interference effect: name the ink colour, not the word.
+IX: stroop
 K: Selective attention filters information; theories differ on how early and how completely unattended information is filtered, and load theory reconciles them.
 !: Assuming unattended information is never processed. Breakthrough of personally relevant words shows some processing occurs.
 EV: established | People often fail to notice unexpected objects when attention is engaged elsewhere (inattentional blindness).
@@ -75,6 +80,7 @@ M2#psychology-u03-02-q2@2: While shadowing one ear, a participant hears their na
 TF1#psychology-u03-02-q3@2: In the "gorilla" study, almost every participant noticed the gorilla. | false | About half didn't notice it while counting passes.
 M3#psychology-u03-02-q4@3: How does load theory reconcile early and late selection? | Selection depends on how demanding the main task is | It rejects all evidence on attention | It says attention never filters | It applies only to hearing | High load produces early selection; low load allows late processing.
 SA3#psychology-u03-02-q5@3: Evaluate theories of selective attention using research evidence. | Broadbent's early filter explains poor recall of unattended messages (Cherry) but not breakthrough of names; Treisman's attenuation explains breakthrough; late selection explains meaning effects but seems inefficient; inattentional blindness shows limits; load theory reconciles positions. | Early selection ; Attenuation ; Late selection ; Evidence ; Load theory
+M2#psychology-u03-02-q6@1: Why are people slower to name the ink colour in the Stroop task when it spells a different colour? | Reading the word is automatic and interferes | The colours are hard to see | People read more slowly under time pressure | The words are printed too small | Automatic reading competes with the slower colour-naming task.
 
 ## Divided attention
 LV: Intermediate · Application
@@ -165,6 +171,8 @@ X: Top-down and bottom-up
 > Evidence: the same ambiguous shape is read as "B" among letters and "13" among numbers, showing context shapes perception.
 IX: muller-lyer
 P: **Sensory adaptation** means that constant stimulation produces a weaker response over time: you stop noticing the feel of your clothes or a steady background hum. Adaptation frees attention for change, which usually carries more information than a constant signal.
+P: **Investigate with the lab.** Move the criterion and watch hits and false alarms trade off, then trace the ROC curve.
+IX: signal-detection
 K: Sensation detects energy; perception interprets it, combining bottom-up information with top-down knowledge and expectation.
 !: Assuming perception is a passive recording of the world. It actively constructs an interpretation.
 EV: established | The just noticeable difference is roughly a constant proportion of the stimulus over much of the range (Weber's law).
@@ -183,6 +191,7 @@ NUM2#psychology-u03-05-q2@2: If the just noticeable difference for weight is 2% 
 M2#psychology-u03-05-q3@2: A blurry word is read as "cat" in a sentence about pets but "act" in a sentence about theatre. This shows… | Top-down processing | Bottom-up processing only | Transduction | Sensory adaptation | Context and expectation shape what is perceived.
 M3#psychology-u03-05-q4@3: What is the main difference between Gibson's and Gregory's theories? | Direct pickup versus inference | Gibson studied hearing only | Gregory denied sensation exists | They agree completely | They differ on how much perception relies on interpretation.
 SA3#psychology-u03-05-q5@3: Evaluate top-down and bottom-up theories of perception. | Bottom-up (Gibson): rich direct information, explains fast perception and action in natural environments. Top-down (Gregory): explains illusions, context effects and ambiguity. Each fits some evidence; most researchers see perception as combining both (interactive models). | Gibson ; Gregory ; Evidence for each ; Combined view ; Judgement
+M2#psychology-u03-05-q6@1: In signal detection theory, what does d′ measure? | Sensitivity to the signal, separate from response bias | The observer's willingness to say yes | The number of false alarms | The loudness of the signal | d′ measures how well signal and noise can be told apart.
 
 ## Visual perception
 LV: Intermediate · Application
@@ -201,6 +210,9 @@ X: Two visual streams
 > Goodale and Milner (1992) described patient DF, who couldn't recognise the orientation of a slot (ventral "what" stream damage).
 > Yet she could post a card through it accurately (intact dorsal "how" stream).
 > This suggests partly separate pathways for recognising objects and guiding action.
+P: **Investigate with the lab.** Find the orange X: does it pop out among one kind of distractor, but need a slow search among mixed ones? Then try the Müller-Lyer illusion.
+IX: visual-search
+IX: muller-lyer
 K: Vision builds a stable 3D world from retinal images using depth cues and constancies, processed in partly separate streams for recognition and action.
 !: Assuming we see with our eyes alone. The eyes transduce light; seeing depends on the brain's interpretation.
 EV: established | Neurones in primary visual cortex respond selectively to edge orientation (Hubel and Wiesel).
@@ -219,6 +231,7 @@ M2#psychology-u03-06-q2@2: Railway lines appear to meet in the distance. Which d
 TF2#psychology-u03-06-q3@2: Patient DF could post a card through a slot accurately despite being unable to report its orientation. | true | This dissociation supports separate streams for perception and action.
 M3#psychology-u03-06-q4@3: Why does a door still look rectangular as it swings open? | Shape constancy uses knowledge and depth cues | The retinal image stays rectangular | Doors have no shape | Rods correct the image | The brain compensates for the changing retinal image.
 SA2#psychology-u03-06-q5@2,3: Explain how depth is perceived, using binocular and monocular cues, and give one piece of neuropsychological evidence about visual processing. | Binocular: retinal disparity, convergence. Monocular: linear perspective, texture gradient, relative size, occlusion, motion parallax. Neuropsychology: DF's dissociation (Goodale and Milner) supports separate ventral and dorsal streams. | Binocular cues ; Monocular cues ; Example ; Neuropsychological evidence
+M2#psychology-u03-06-q6@1: In visual search, which kind of target usually pops out? | One that differs by a single feature, such as colour | One that combines two features shared with distractors | One that is always in the centre | One that appears last | Single-feature targets are found in parallel; conjunction targets need serial search.
 
 ## Auditory perception
 LV: Intermediate · Application
@@ -390,6 +403,8 @@ X: The serial position curve
 > Recall is best for the first words (primacy effect) and the last words (recency effect).
 > A 30-second distraction task before recall removes the recency effect but leaves primacy, suggesting recency reflects short-term memory and primacy long-term memory (Glanzer and Cunitz, 1966).
 IX: serial-position
+P: **Investigate with the lab.** Step through the multi-store model, then the working memory model, and compare what each says about short-term memory.
+IX: memory-models
 K: Short-term memory has limited capacity (a few chunks), brief duration without rehearsal, and mainly acoustic coding.
 !: Treating "seven items" as fixed. Chunking, item type and rehearsal all change the apparent capacity.
 EV: established | Without rehearsal, recall of short items declines steeply over about 20 seconds.
@@ -410,6 +425,7 @@ NUM2#psychology-u03-11-q3@2: Peterson and Peterson found recall of about 10% aft
 TF2#psychology-u03-11-q4@3: A distraction task before recall removes the primacy effect but leaves recency. | false | Distraction removes recency (short-term) and leaves primacy (long-term).
 M3#psychology-u03-11-q5@3: Which is a limitation of the Peterson and Peterson study? | Consonant trigrams are unlike everyday material | It used too many participants | It measured long-term memory | It had no control of rehearsal | Artificial stimuli limit ecological validity.
 SA3#psychology-u03-11-q6@3: Evaluate research into the capacity, duration and coding of short-term memory. | Capacity: Miller's 7±2 and chunking; Cowan suggests about 4. Duration: Peterson and Peterson; decay versus interference debate. Coding: Baddeley's acoustic/semantic findings. Strengths: controlled experiments. Limitations: artificial material, small samples, lab setting. | Capacity ; Duration ; Coding ; Strength ; Limitation
+M2#psychology-u03-11-q7@1: How long does information last in short-term memory without rehearsal? | About 18 to 30 seconds | About 1 second | About 1 hour | Indefinitely | Peterson and Peterson found recall dropped sharply after about 18 seconds.
 
 ## Working memory
 LV: Intermediate · Application
@@ -431,6 +447,8 @@ X: Neuropsychological evidence
 > His visual short-term memory and long-term memory were relatively intact.
 > This suggests separate short-term components, which the single store in the multi-store model can't explain.
 IX: memory-models
+P: **Investigate with the lab.** Measure your digit span, then try chunking the digits into groups and measure it again.
+IX: digit-span
 K: Working memory is a multi-component system for holding and manipulating information, supported by dual-task and neuropsychological evidence.
 !: Thinking the central executive is well understood. It is the least specified component of the model.
 EV: established | Similar tasks interfere more than dissimilar ones, consistent with separate verbal and visuospatial stores.
@@ -450,6 +468,7 @@ M2#psychology-u03-12-q2@2: A participant can track a moving dot while repeating 
 TF2#psychology-u03-12-q3@2: Articulatory suppression removes the word length effect. | true | Blocking rehearsal stops the advantage for short words.
 M3#psychology-u03-12-q4@3: How does patient KF challenge the multi-store model? | Short-term memory looks fractionated | He had no long-term memory | He had perfect recall | He recalled only long words | Selective verbal impairment implies separate components.
 SA3#psychology-u03-12-q5@3: Evaluate the working memory model. | Strengths: explains dual-task results, word length effect, KF; useful for education (e.g. dyslexia, ADHD research). Weaknesses: central executive is vague; case studies of brain damage have limits; episodic buffer added later; compare with multi-store's single store. | Components ; Dual-task evidence ; Neuropsychology ; Executive criticism ; Comparison
+M2#psychology-u03-12-q6@1: How does chunking increase memory span? | It groups items into meaningful units, so more items fit | It makes each digit shorter to say | It moves items straight to long-term memory | It doubles the capacity of the phonological loop | Short-term memory holds a limited number of chunks, not individual items.
 
 ## Long-term memory: episodic, semantic and procedural
 LV: Intermediate · Application
@@ -467,6 +486,8 @@ X: Patient HM
 > Afterwards he couldn't form new episodic or semantic memories, though his short-term memory was intact.
 > Yet he improved at mirror drawing over several days without remembering having practised, showing intact procedural learning.
 P: Clive Wearing, a musician whose hippocampus was damaged by a viral infection in 1985, lost much episodic memory but could still play the piano and conduct, again suggesting procedural memory depends on different brain systems. Brain imaging links episodic memory to the hippocampus and prefrontal cortex, semantic memory to the temporal lobes, and procedural memory to the cerebellum and basal ganglia.
+P: **Investigate with the lab.** Learn the 15-word list, recall it immediately, and plot your serial position curve.
+IX: serial-position
 K: Long-term memory includes explicit episodic and semantic memory and implicit procedural memory, supported by amnesia and brain-imaging evidence.
 !: Assuming amnesia wipes out all memory. Patients typically keep skills and much older knowledge.
 EV: established | Amnesic patients can learn new motor skills despite being unable to recall the learning episodes.
@@ -486,6 +507,7 @@ MATCH1#psychology-u03-13-q3@1: Match each memory to its type. | Your tenth birth
 TF2#psychology-u03-13-q4@3: Clive Wearing lost the ability to play the piano. | false | His musical skill (procedural) was largely preserved.
 M3#psychology-u03-13-q5@3: What is a limitation of using case studies like HM to argue for separate memory systems? | Damage is rarely confined to one area | They used too many participants | HM had no memory problems | The research was unethical | Brain damage is often widespread, so mapping functions is uncertain.
 SA3#psychology-u03-13-q6@2,3: Evaluate the view that there are different types of long-term memory. | Episodic, semantic, procedural; HM and Clive Wearing dissociations; imaging links types to areas; strengths: practical uses (rehabilitation). Limitations: case studies, unclear damage, episodic and semantic interact; alternative continuum views. | Types ; Case evidence ; Imaging ; Limitations ; Judgement
+M2#psychology-u03-13-q7@1: Which part of the serial position curve reflects long-term memory? | The primacy effect for early words | The recency effect for the last words | The dip in the middle of the list | None of it | Early words get more rehearsal and reach long-term memory.
 
 ## Encoding, storage and retrieval
 LV: Intermediate · Application
@@ -503,6 +525,8 @@ X: Evidence-based study techniques
 > Dunlosky et al. (2013) reviewed ten study techniques.
 > **Practice testing** (retrieving information, for example with flashcards) and **distributed practice** (spacing study over time) had high utility.
 > Highlighting and rereading had low utility, though they are among the most popular.
+P: **Investigate with the lab.** Follow information through encoding, storage and retrieval in the multi-store model.
+IX: memory-models
 K: Memory depends on how information is encoded and retrieved; deep processing, testing and spacing produce durable learning.
 !: Treating familiarity from rereading as learning. Feeling fluent isn't the same as being able to recall.
 EV: established | Retrieval practice and spaced study improve long-term retention across many materials and ages.
@@ -523,6 +547,7 @@ SEQ1#psychology-u03-14-q3@1: Put the stages of memory in order. | Encoding ; Sto
 TF2#psychology-u03-14-q4@3: Highlighting was rated a high-utility study technique by Dunlosky et al. | false | Highlighting and rereading were rated low utility.
 M3#psychology-u03-14-q5@3: What is the main criticism of levels-of-processing theory? | Depth is hard to measure independently | It ignores meaning entirely | It denies long-term memory | It was never tested | Defining depth by memory risks circular reasoning.
 SA2#psychology-u03-14-q6@2,3: Apply memory research to design a revision plan for a psychology exam. | Spaced sessions over weeks (distributed practice); flashcards and past questions (testing effect); elaborate and self-reference (deep processing); sleep for consolidation; interleave topics; avoid relying on rereading and highlighting. | Spacing ; Testing ; Deep processing ; Sleep ; Avoid low-utility
+M2#psychology-u03-14-q7@1: In the multi-store model, how does information move from short-term to long-term memory? | Through rehearsal | Through forgetting | Through sensory input alone | Through displacement | Maintenance rehearsal transfers information to long-term memory.
 
 ## Forgetting
 LV: Introductory · Foundation
@@ -543,6 +568,8 @@ H: Theories of forgetting
 - **Retrieval failure**: the memory is stored but can't be accessed without the right cues.
 - **Motivated forgetting**: distressing memories are pushed out of awareness, as Freud proposed with repression; evidence for repression is disputed.
 P: Jenkins and Dallenbach (1924) found participants who slept after learning remembered more than those who stayed awake, suggesting events in waking time, not time itself, cause forgetting, which challenges pure decay theory.
+P: **Investigate with the lab.** Recall the list after a distractor task and see which part of your curve disappears.
+IX: serial-position
 K: Forgetting is rapid at first and then slows; decay, interference, retrieval failure and motivated forgetting are its main explanations.
 !: Assuming forgotten means gone. Savings and cued recall show much forgotten information is still stored.
 EV: established | Forgetting follows a curve that is steep at first and then levels off (Ebbinghaus; Murre and Dros, 2015).
@@ -561,6 +588,7 @@ M2#psychology-u03-15-q2@2: Participants who sleep after learning remember more t
 TF1#psychology-u03-15-q3@1: According to the forgetting curve, most forgetting happens long after learning. | false | Most forgetting occurs soon after learning.
 M3#psychology-u03-15-q4@3: What is a limitation of Ebbinghaus's research? | One participant and meaningless material | It used too many participants | It ignored time | Its results were never replicated | Single-participant data with nonsense syllables limits generalisation.
 SA2#psychology-u03-15-q5@2,3: Explain the forgetting curve and evaluate one theory of forgetting. | Ebbinghaus: rapid then slower loss; savings; replication by Murre and Dros. Theory: e.g. trace decay is intuitive but hard to test; Jenkins and Dallenbach favour interference. Or retrieval failure supported by cue studies. | Curve ; Savings ; Theory ; Evidence ; Evaluation
+M2#psychology-u03-15-q6@1: What happens to the recency effect after a distractor task? | It disappears | It gets stronger | It moves to the start of the list | It is unaffected | The distractor displaces the last items from short-term memory.
 
 ## Interference
 LV: Intermediate · Application
@@ -906,6 +934,10 @@ X: The Asian disease problem
 > The options were identical; only the framing changed.
 H: Nudges
 P: Thaler and Sunstein (2008) argued that "choice architecture" can **nudge** people toward better decisions without removing choice: for example, automatic enrolment in pension schemes greatly increases saving (Madrian and Shea, 2001). Critics question whether nudging is manipulative, and replications show many nudges have smaller effects than first reported.
+P: **Investigate with the lab.** Answer the framing, anchoring and base-rate problems before reading the original findings, then try the reaction-time and signal-detection labs.
+IX: biases
+IX: reaction-time
+IX: signal-detection
 K: People decide with bounded rationality, are loss-averse and sensitive to framing; these findings inform policy nudges.
 !: Assuming that a framing effect means people are irrational in every case. Reference points and loss aversion can be sensible in context.
 EV: established | Equivalent options framed as gains or losses lead to different choices (framing effect).
@@ -926,6 +958,7 @@ NUM2#psychology-u03-25-q3@2: In the gain frame of the Asian disease problem, wha
 TF2#psychology-u03-25-q4@3: Automatic enrolment in pensions reduced saving because people resisted being nudged. | false | Automatic enrolment substantially increased participation.
 M3#psychology-u03-25-q5@3: Which is the strongest ethical criticism of nudging? | It may steer people without awareness | It removes all choices | It has no effects | It uses expected utility | Critics argue nudges can be manipulative even if choice remains.
 SA3#psychology-u03-25-q6@3: Evaluate prospect theory as an explanation of human decision-making. | Strengths: explains framing, loss aversion, lottery and insurance behaviour, many replications, Nobel-recognised. Limitations: descriptive rather than explanatory, lab scenarios are hypothetical, effect sizes vary, individual and cultural differences. Applications: nudges, debates over their size and ethics. | Key ideas ; Evidence ; Strength ; Limitation ; Application
+M2#psychology-u03-25-q7@1: What is the framing effect? | Choices change depending on whether options are described as gains or losses | People always choose the safest option | People ignore all numbers in decisions | Decisions depend only on the final outcome | Tversky and Kahneman showed choices reverse when the same outcome is framed differently.
 
 ## Biases and heuristics
 LV: Intermediate · Application

@@ -3,14 +3,15 @@
 // keeps its example learner, labelled as such. Styles: .mine in kit/styles/components.css.
 import { loadLearner } from "../learning/learner-data.js";
 import { drawTree } from "./tree.js";
+import { levelOf as gameLevelOf, rankOf } from "../game/engine.js";
 import { SITES, slugOf } from "../core/site.js";
 
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const site = (n) => SITES.find((s) => s.n === n);
 const colour = (n) => { const s = site(n); return s ? s.spot || s.c : "f055dd"; };
 const pct = (x) => `${Math.round(x * 100)}%`;
-const LEVELS = ["Explorer", "Apprentice", "Scholar", "Specialist", "Expert"];
-const levelOf = (xp) => Math.floor(Math.sqrt(xp / 50)) + 1;
+// the same level curve and rank names as every course and the Journey page (kit/game/engine.js)
+const levelOf = (xp) => gameLevelOf(xp).n;
 const PACE = { "on-track": "On track for your exam", tight: "Tight for your exam", behind: "Behind for your exam", past: "Exam date has passed", done: "All written lessons done", "no-date": "" };
 function rng(seed) { return () => { seed |= 0; seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
 
@@ -30,7 +31,7 @@ export async function mountMine({ after = document.querySelector("#lifeos .life-
   sec.className = "mine glass"; sec.id = "mine"; sec.setAttribute("aria-labelledby", "mine-title");
   sec.innerHTML = `
     <div class="mine-top"><div><span class="kicker">Your Gradify · ${L.mode === "cloud" ? "from your account" : "saved in this browser"}</span><h3 id="mine-title">Welcome back${name}</h3></div>
-      <div class="mine-tiles">${[["Level", `${lvl} · ${LEVELS[Math.min(4, Math.floor((lvl - 1) / 3))]}`], ["XP", L.xp.toLocaleString()], ["Day streak", `${L.streak.n}${L.streak.today ? "" : L.streak.n ? " · study today to keep it" : ""}`], ["Lessons done", lessons.toLocaleString()]].map(([k, v]) => `<div><small>${k}</small><b>${esc(v)}</b></div>`).join("")}</div></div>
+      <div class="mine-tiles">${[["Level", `${lvl} · ${rankOf(lvl).name}`], ["XP", L.xp.toLocaleString()], ["Day streak", `${L.streak.n}${L.streak.today ? "" : L.streak.n ? " · study today to keep it" : ""}`], ["Lessons done", lessons.toLocaleString()]].map(([k, v]) => `<div><small>${k}</small><b>${esc(v)}</b></div>`).join("")}</div></div>
     <div class="mine-grid">
       <article><h4>Do next</h4>${L.next.length ? `<ol class="mine-next">${L.next.map((x) => `<li${x.site ? ` style="--c:#${colour(x.site)}"` : ""}><a href="${esc(x.href)}">${esc(x.label)}</a><small>${esc(x.why)}</small></li>`).join("")}</ol>` : `<p class="mine-empty">Nothing due. Start a lesson or add notes, and Gradify will suggest what to do next.</p>`}</article>
       <article><h4>Your courses</h4>${L.courses.length ? `<ul class="mine-courses">${L.courses.map((c) => {

@@ -1,0 +1,2863 @@
+{
+ "api": 1,
+ "slug": "law",
+ "name": "Law",
+ "site": "LawGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Legal reasoning"
+ ],
+ "notice": "<b>Study material, not legal advice.</b> The law is stated for England and Wales unless a lesson says otherwise; Scotland and Northern Ireland differ (School 17). Completing a LawGradify course is not a legal qualification and does not authorise you to practise. Law changes: check current sources before you rely on anything here.",
+ "notes": "/kit/courses/law/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Foundations and skills",
+   "units": [
+    1,
+    16
+   ],
+   "from": "#9f2f17",
+   "to": "#ff8a3d"
+  },
+  {
+   "name": "Public law",
+   "units": [
+    2,
+    13,
+    14
+   ],
+   "from": "#4641ff",
+   "to": "#00b3ff"
+  },
+  {
+   "name": "Obligations",
+   "units": [
+    3,
+    4
+   ],
+   "from": "#ff3d6e",
+   "to": "#ffb02e"
+  },
+  {
+   "name": "Criminal law",
+   "units": [
+    5,
+    6
+   ],
+   "from": "#a24bff",
+   "to": "#ff3dc4"
+  },
+  {
+   "name": "Property and succession",
+   "units": [
+    7,
+    8,
+    9,
+    10
+   ],
+   "from": "#16c784",
+   "to": "#00a3ff"
+  },
+  {
+   "name": "Business and disputes",
+   "units": [
+    11,
+    12
+   ],
+   "from": "#ff5600",
+   "to": "#ffc002"
+  },
+  {
+   "name": "Professional practice",
+   "units": [
+    15,
+    18,
+    19
+   ],
+   "from": "#0aa4c9",
+   "to": "#7ee0ff"
+  },
+  {
+   "name": "Across the UK",
+   "units": [
+    17
+   ],
+   "from": "#2e5e18",
+   "to": "#6aa84f"
+  }
+ ],
+ "paths": [
+  {
+   "id": "llb",
+   "name": "LLB: the foundations of legal knowledge",
+   "sub": "The core of a qualifying law degree in England and Wales, in the order most universities teach it.",
+   "units": [
+    1,
+    16,
+    2,
+    3,
+    4,
+    5,
+    7,
+    9,
+    14,
+    13
+   ],
+   "select": null
+  },
+  {
+   "id": "gdl",
+   "name": "Graduate Diploma in Law (conversion)",
+   "sub": "The seven foundation subjects for non-law graduates, compressed into one year, with the skills to study them.",
+   "units": [
+    1,
+    16,
+    3,
+    4,
+    5,
+    2,
+    14,
+    7,
+    9
+   ],
+   "select": null
+  },
+  {
+   "id": "sqe1-flk1",
+   "name": "SQE1 · FLK1",
+   "sub": "Business Law and Practice, Dispute Resolution, Contract, Tort, the Legal System, Constitutional and Administrative Law, EU Law and Legal Services, with ethics throughout. 180 single-best-answer questions.",
+   "units": [
+    18,
+    1,
+    3,
+    4,
+    2,
+    14,
+    11,
+    12,
+    15
+   ],
+   "select": null
+  },
+  {
+   "id": "sqe1-flk2",
+   "name": "SQE1 · FLK2",
+   "sub": "Property Practice, Wills and the Administration of Estates, Solicitors' Accounts, Land Law, Trusts, and Criminal Law and Practice, with ethics throughout. 180 single-best-answer questions.",
+   "units": [
+    18,
+    7,
+    8,
+    9,
+    10,
+    5,
+    6,
+    15
+   ],
+   "select": null
+  },
+  {
+   "id": "sqe2",
+   "name": "SQE2: practical legal skills",
+   "sub": "Interviewing and attendance notes, advocacy, case and matter analysis, research, writing and drafting, in the five practice contexts, with realistic case files.",
+   "units": [
+    19,
+    16,
+    15,
+    12,
+    6,
+    8,
+    10,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "bar",
+   "name": "Preparing for the Bar",
+   "sub": "Academic preparation for barristers: legal foundations, criminal and civil advocacy, evidence, procedure, opinion writing, drafting, conference skills and ethics. This is study, not Bar training.",
+   "units": [
+    18,
+    1,
+    5,
+    6,
+    12,
+    16,
+    19,
+    15,
+    13
+   ],
+   "select": null
+  },
+  {
+   "id": "uk",
+   "name": "Law across the UK",
+   "sub": "What changes in Scotland and Northern Ireland: courts, legislatures, contract, delict, crime, property, succession and qualification.",
+   "units": [
+    17,
+    1,
+    2
+   ],
+   "select": null
+  },
+  {
+   "id": "postgrad",
+   "name": "Postgraduate and advanced study",
+   "sub": "The public, international and theoretical subjects LLM and research students build on.",
+   "units": [
+    13,
+    14,
+    2,
+    9,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "public",
+   "name": "Understanding the law",
+   "sub": "For anyone curious about how law works: what it is, who makes it, how courts decide and what rights you have.",
+   "units": [
+    1,
+    13,
+    2,
+    17
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "flk1-short",
+   "title": "SQE1 FLK1 practice: 45 questions",
+   "sub": "Single best answer questions from the FLK1 schools, timed at the SQE1 pace of about 1.7 minutes a question.",
+   "units": null,
+   "path": "sqe1-flk1",
+   "count": 45,
+   "minutes": 77,
+   "pass": 0.6,
+   "format": "sba"
+  },
+  {
+   "id": "flk1-full",
+   "title": "SQE1 FLK1 practice: full paper length",
+   "sub": "90 questions in 153 minutes, the length of one SQE1 session.",
+   "units": null,
+   "path": "sqe1-flk1",
+   "count": 90,
+   "minutes": 153,
+   "pass": 0.6,
+   "format": "sba"
+  },
+  {
+   "id": "flk2-short",
+   "title": "SQE1 FLK2 practice: 45 questions",
+   "sub": "Single best answer questions from the FLK2 schools.",
+   "units": null,
+   "path": "sqe1-flk2",
+   "count": 45,
+   "minutes": 77,
+   "pass": 0.6,
+   "format": "sba"
+  },
+  {
+   "id": "obligations",
+   "title": "Contract and tort",
+   "sub": "Mixed questions on the law of obligations, for LLB and GDL revision.",
+   "units": [
+    3,
+    4
+   ],
+   "path": null,
+   "count": 30,
+   "minutes": 50,
+   "pass": 0.6,
+   "format": "mixed"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Legal Foundations and the English Legal System",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What is law?",
+     "module": "Nature and sources of law"
+    },
+    {
+     "id": "u01-02",
+     "title": "The nature and purposes of law",
+     "module": "Nature and sources of law"
+    },
+    {
+     "id": "u01-03",
+     "title": "Sources of law",
+     "module": "Nature and sources of law"
+    },
+    {
+     "id": "u01-04",
+     "title": "Common law and equity",
+     "module": "Nature and sources of law"
+    },
+    {
+     "id": "u01-05",
+     "title": "Civil and criminal law",
+     "module": "Nature and sources of law"
+    },
+    {
+     "id": "u01-06",
+     "title": "Public and private law",
+     "module": "Nature and sources of law"
+    },
+    {
+     "id": "u01-07",
+     "title": "The English legal system",
+     "module": "The courts and precedent"
+    },
+    {
+     "id": "u01-08",
+     "title": "Court structures and jurisdiction",
+     "module": "The courts and precedent"
+    },
+    {
+     "id": "u01-09",
+     "title": "The hierarchy of courts",
+     "module": "The courts and precedent"
+    },
+    {
+     "id": "u01-10",
+     "title": "The doctrine of precedent",
+     "module": "The courts and precedent"
+    },
+    {
+     "id": "u01-11",
+     "title": "Ratio decidendi and obiter dicta",
+     "module": "The courts and precedent"
+    },
+    {
+     "id": "u01-12",
+     "title": "Statutory interpretation",
+     "module": "Interpretation and the constitution"
+    },
+    {
+     "id": "u01-13",
+     "title": "Parliamentary sovereignty",
+     "module": "Interpretation and the constitution"
+    },
+    {
+     "id": "u01-14",
+     "title": "The rule of law",
+     "module": "Interpretation and the constitution"
+    },
+    {
+     "id": "u01-15",
+     "title": "Separation of powers",
+     "module": "Interpretation and the constitution"
+    },
+    {
+     "id": "u01-16",
+     "title": "Judicial independence",
+     "module": "Interpretation and the constitution"
+    },
+    {
+     "id": "u01-17",
+     "title": "Parliament and the legislative process",
+     "module": "Making law"
+    },
+    {
+     "id": "u01-18",
+     "title": "Delegated legislation",
+     "module": "Making law"
+    },
+    {
+     "id": "u01-19",
+     "title": "The judiciary",
+     "module": "The judiciary and dispute resolution"
+    },
+    {
+     "id": "u01-20",
+     "title": "Tribunals",
+     "module": "The judiciary and dispute resolution"
+    },
+    {
+     "id": "u01-21",
+     "title": "Alternative dispute resolution",
+     "module": "The judiciary and dispute resolution"
+    },
+    {
+     "id": "u01-22",
+     "title": "Legal institutions and regulators",
+     "module": "Legal services and access to justice"
+    },
+    {
+     "id": "u01-23",
+     "title": "The legal profession",
+     "module": "Legal services and access to justice"
+    },
+    {
+     "id": "u01-24",
+     "title": "Access to justice",
+     "module": "Legal services and access to justice"
+    },
+    {
+     "id": "u01-25",
+     "title": "Legal aid",
+     "module": "Legal services and access to justice"
+    },
+    {
+     "id": "u01-26",
+     "title": "Legal research and authority",
+     "module": "Legal skills"
+    },
+    {
+     "id": "u01-27",
+     "title": "Case law analysis",
+     "module": "Legal skills"
+    },
+    {
+     "id": "u01-28",
+     "title": "Legal citation and referencing",
+     "module": "Legal skills"
+    },
+    {
+     "id": "u01-29",
+     "title": "Legal writing",
+     "module": "Legal skills"
+    },
+    {
+     "id": "u01-30",
+     "title": "Introduction to legal argument",
+     "module": "Legal skills"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Constitutional and Administrative Law",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "The UK constitution",
+     "module": "Constitutional foundations"
+    },
+    {
+     "id": "u02-02",
+     "title": "Constitutional conventions",
+     "module": "Constitutional foundations"
+    },
+    {
+     "id": "u02-03",
+     "title": "Constitutional statutes",
+     "module": "Constitutional foundations"
+    },
+    {
+     "id": "u02-04",
+     "title": "Parliamentary sovereignty",
+     "module": "Constitutional foundations"
+    },
+    {
+     "id": "u02-05",
+     "title": "The rule of law",
+     "module": "Constitutional foundations"
+    },
+    {
+     "id": "u02-06",
+     "title": "Separation of powers",
+     "module": "Constitutional foundations"
+    },
+    {
+     "id": "u02-07",
+     "title": "Executive power",
+     "module": "The executive and Parliament"
+    },
+    {
+     "id": "u02-08",
+     "title": "Royal prerogative",
+     "module": "The executive and Parliament"
+    },
+    {
+     "id": "u02-09",
+     "title": "Parliament and legislative scrutiny",
+     "module": "The executive and Parliament"
+    },
+    {
+     "id": "u02-10",
+     "title": "Devolution",
+     "module": "Devolution and the courts"
+    },
+    {
+     "id": "u02-11",
+     "title": "The UK Supreme Court",
+     "module": "Devolution and the courts"
+    },
+    {
+     "id": "u02-12",
+     "title": "Judicial independence",
+     "module": "Devolution and the courts"
+    },
+    {
+     "id": "u02-13",
+     "title": "Human rights and constitutional protection",
+     "module": "Human rights in the constitution"
+    },
+    {
+     "id": "u02-14",
+     "title": "The Human Rights Act 1998",
+     "module": "Human rights in the constitution"
+    },
+    {
+     "id": "u02-15",
+     "title": "The European Convention on Human Rights",
+     "module": "Human rights in the constitution"
+    },
+    {
+     "id": "u02-16",
+     "title": "Judicial review",
+     "module": "Judicial review"
+    },
+    {
+     "id": "u02-17",
+     "title": "Grounds of judicial review",
+     "module": "Judicial review"
+    },
+    {
+     "id": "u02-18",
+     "title": "Illegality",
+     "module": "Judicial review"
+    },
+    {
+     "id": "u02-19",
+     "title": "Irrationality",
+     "module": "Judicial review"
+    },
+    {
+     "id": "u02-20",
+     "title": "Procedural impropriety",
+     "module": "Judicial review"
+    },
+    {
+     "id": "u02-21",
+     "title": "Legitimate expectations",
+     "module": "Judicial review"
+    },
+    {
+     "id": "u02-22",
+     "title": "Proportionality",
+     "module": "Judicial review"
+    },
+    {
+     "id": "u02-23",
+     "title": "Standing",
+     "module": "Judicial review"
+    },
+    {
+     "id": "u02-24",
+     "title": "Justiciability",
+     "module": "Judicial review"
+    },
+    {
+     "id": "u02-25",
+     "title": "Remedies",
+     "module": "Judicial review"
+    },
+    {
+     "id": "u02-26",
+     "title": "Administrative tribunals",
+     "module": "Accountability and reform"
+    },
+    {
+     "id": "u02-27",
+     "title": "Public authorities",
+     "module": "Accountability and reform"
+    },
+    {
+     "id": "u02-28",
+     "title": "Government accountability",
+     "module": "Accountability and reform"
+    },
+    {
+     "id": "u02-29",
+     "title": "Constitutional reform",
+     "module": "Accountability and reform"
+    },
+    {
+     "id": "u02-30",
+     "title": "Contemporary constitutional challenges",
+     "module": "Accountability and reform"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Contract Law",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Introduction to contract law",
+     "module": "Formation"
+    },
+    {
+     "id": "u03-02",
+     "title": "Agreement and offer",
+     "module": "Formation"
+    },
+    {
+     "id": "u03-03",
+     "title": "Acceptance",
+     "module": "Formation"
+    },
+    {
+     "id": "u03-04",
+     "title": "Communication of acceptance",
+     "module": "Formation"
+    },
+    {
+     "id": "u03-05",
+     "title": "Consideration",
+     "module": "Formation"
+    },
+    {
+     "id": "u03-06",
+     "title": "Intention to create legal relations",
+     "module": "Formation"
+    },
+    {
+     "id": "u03-07",
+     "title": "Certainty and completeness",
+     "module": "Formation"
+    },
+    {
+     "id": "u03-08",
+     "title": "Contractual terms",
+     "module": "Terms"
+    },
+    {
+     "id": "u03-09",
+     "title": "Express terms",
+     "module": "Terms"
+    },
+    {
+     "id": "u03-10",
+     "title": "Implied terms",
+     "module": "Terms"
+    },
+    {
+     "id": "u03-11",
+     "title": "Conditions, warranties and innominate terms",
+     "module": "Terms"
+    },
+    {
+     "id": "u03-12",
+     "title": "Representations and terms",
+     "module": "Terms"
+    },
+    {
+     "id": "u03-13",
+     "title": "Misrepresentation",
+     "module": "Vitiating factors"
+    },
+    {
+     "id": "u03-14",
+     "title": "Fraudulent misrepresentation",
+     "module": "Vitiating factors"
+    },
+    {
+     "id": "u03-15",
+     "title": "Negligent misrepresentation",
+     "module": "Vitiating factors"
+    },
+    {
+     "id": "u03-16",
+     "title": "Innocent misrepresentation",
+     "module": "Vitiating factors"
+    },
+    {
+     "id": "u03-17",
+     "title": "Duress",
+     "module": "Vitiating factors"
+    },
+    {
+     "id": "u03-18",
+     "title": "Undue influence",
+     "module": "Vitiating factors"
+    },
+    {
+     "id": "u03-19",
+     "title": "Mistake",
+     "module": "Vitiating factors"
+    },
+    {
+     "id": "u03-20",
+     "title": "Illegality",
+     "module": "Vitiating factors"
+    },
+    {
+     "id": "u03-21",
+     "title": "Privity of contract",
+     "module": "Third parties and exclusion clauses"
+    },
+    {
+     "id": "u03-22",
+     "title": "Exclusion clauses",
+     "module": "Third parties and exclusion clauses"
+    },
+    {
+     "id": "u03-23",
+     "title": "Unfair Contract Terms Act 1977",
+     "module": "Third parties and exclusion clauses"
+    },
+    {
+     "id": "u03-24",
+     "title": "Consumer Rights Act 2015",
+     "module": "Third parties and exclusion clauses"
+    },
+    {
+     "id": "u03-25",
+     "title": "Discharge by performance",
+     "module": "Discharge"
+    },
+    {
+     "id": "u03-26",
+     "title": "Breach of contract",
+     "module": "Discharge"
+    },
+    {
+     "id": "u03-27",
+     "title": "Anticipatory breach",
+     "module": "Discharge"
+    },
+    {
+     "id": "u03-28",
+     "title": "Frustration",
+     "module": "Discharge"
+    },
+    {
+     "id": "u03-29",
+     "title": "Contractual remedies",
+     "module": "Remedies"
+    },
+    {
+     "id": "u03-30",
+     "title": "Damages",
+     "module": "Remedies"
+    },
+    {
+     "id": "u03-31",
+     "title": "Specific performance",
+     "module": "Remedies"
+    },
+    {
+     "id": "u03-32",
+     "title": "Injunctions",
+     "module": "Remedies"
+    },
+    {
+     "id": "u03-33",
+     "title": "Restitution",
+     "module": "Remedies"
+    },
+    {
+     "id": "u03-34",
+     "title": "Third-party rights",
+     "module": "Modern contracts"
+    },
+    {
+     "id": "u03-35",
+     "title": "Consumer contracts",
+     "module": "Modern contracts"
+    },
+    {
+     "id": "u03-36",
+     "title": "Digital and electronic contracts",
+     "module": "Modern contracts"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Tort Law",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Introduction to tort",
+     "module": "Negligence: duty"
+    },
+    {
+     "id": "u04-02",
+     "title": "Negligence",
+     "module": "Negligence: duty"
+    },
+    {
+     "id": "u04-03",
+     "title": "Duty of care",
+     "module": "Negligence: duty"
+    },
+    {
+     "id": "u04-04",
+     "title": "Neighbour principle",
+     "module": "Negligence: duty"
+    },
+    {
+     "id": "u04-05",
+     "title": "Foreseeability",
+     "module": "Negligence: duty"
+    },
+    {
+     "id": "u04-06",
+     "title": "Breach of duty",
+     "module": "Negligence: breach and causation"
+    },
+    {
+     "id": "u04-07",
+     "title": "Standard of care",
+     "module": "Negligence: breach and causation"
+    },
+    {
+     "id": "u04-08",
+     "title": "Causation in fact",
+     "module": "Negligence: breach and causation"
+    },
+    {
+     "id": "u04-09",
+     "title": "Legal causation",
+     "module": "Negligence: breach and causation"
+    },
+    {
+     "id": "u04-10",
+     "title": "Remoteness of damage",
+     "module": "Negligence: breach and causation"
+    },
+    {
+     "id": "u04-11",
+     "title": "Novus actus interveniens",
+     "module": "Negligence: breach and causation"
+    },
+    {
+     "id": "u04-12",
+     "title": "Psychiatric injury",
+     "module": "Special duty situations"
+    },
+    {
+     "id": "u04-13",
+     "title": "Pure economic loss",
+     "module": "Special duty situations"
+    },
+    {
+     "id": "u04-14",
+     "title": "Professional negligence",
+     "module": "Special duty situations"
+    },
+    {
+     "id": "u04-15",
+     "title": "Occupiers' liability",
+     "module": "Statutory and employment liability"
+    },
+    {
+     "id": "u04-16",
+     "title": "Employers' liability",
+     "module": "Statutory and employment liability"
+    },
+    {
+     "id": "u04-17",
+     "title": "Vicarious liability",
+     "module": "Statutory and employment liability"
+    },
+    {
+     "id": "u04-18",
+     "title": "Product liability",
+     "module": "Statutory and employment liability"
+    },
+    {
+     "id": "u04-19",
+     "title": "Defamation",
+     "module": "Defamation and nuisance"
+    },
+    {
+     "id": "u04-20",
+     "title": "Private nuisance",
+     "module": "Defamation and nuisance"
+    },
+    {
+     "id": "u04-21",
+     "title": "Public nuisance",
+     "module": "Defamation and nuisance"
+    },
+    {
+     "id": "u04-22",
+     "title": "Trespass to the person",
+     "module": "Trespass"
+    },
+    {
+     "id": "u04-23",
+     "title": "Assault",
+     "module": "Trespass"
+    },
+    {
+     "id": "u04-24",
+     "title": "Battery",
+     "module": "Trespass"
+    },
+    {
+     "id": "u04-25",
+     "title": "False imprisonment",
+     "module": "Trespass"
+    },
+    {
+     "id": "u04-26",
+     "title": "Trespass to land",
+     "module": "Trespass"
+    },
+    {
+     "id": "u04-27",
+     "title": "Defences",
+     "module": "Defences and remedies"
+    },
+    {
+     "id": "u04-28",
+     "title": "Contributory negligence",
+     "module": "Defences and remedies"
+    },
+    {
+     "id": "u04-29",
+     "title": "Voluntary assumption of risk",
+     "module": "Defences and remedies"
+    },
+    {
+     "id": "u04-30",
+     "title": "Remedies and damages",
+     "module": "Defences and remedies"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Criminal Law",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Introduction to criminal liability",
+     "module": "Principles of liability"
+    },
+    {
+     "id": "u05-02",
+     "title": "Actus reus",
+     "module": "Principles of liability"
+    },
+    {
+     "id": "u05-03",
+     "title": "Mens rea",
+     "module": "Principles of liability"
+    },
+    {
+     "id": "u05-04",
+     "title": "Coincidence of actus reus and mens rea",
+     "module": "Principles of liability"
+    },
+    {
+     "id": "u05-05",
+     "title": "Causation",
+     "module": "Principles of liability"
+    },
+    {
+     "id": "u05-06",
+     "title": "Strict liability",
+     "module": "Principles of liability"
+    },
+    {
+     "id": "u05-07",
+     "title": "Attempts",
+     "module": "Principles of liability"
+    },
+    {
+     "id": "u05-08",
+     "title": "Secondary liability",
+     "module": "Principles of liability"
+    },
+    {
+     "id": "u05-09",
+     "title": "Joint enterprise",
+     "module": "Principles of liability"
+    },
+    {
+     "id": "u05-10",
+     "title": "Corporate criminal liability",
+     "module": "Principles of liability"
+    },
+    {
+     "id": "u05-11",
+     "title": "Homicide",
+     "module": "Homicide"
+    },
+    {
+     "id": "u05-12",
+     "title": "Murder",
+     "module": "Homicide"
+    },
+    {
+     "id": "u05-13",
+     "title": "Voluntary manslaughter",
+     "module": "Homicide"
+    },
+    {
+     "id": "u05-14",
+     "title": "Diminished responsibility",
+     "module": "Homicide"
+    },
+    {
+     "id": "u05-15",
+     "title": "Loss of control",
+     "module": "Homicide"
+    },
+    {
+     "id": "u05-16",
+     "title": "Involuntary manslaughter",
+     "module": "Homicide"
+    },
+    {
+     "id": "u05-17",
+     "title": "Gross negligence manslaughter",
+     "module": "Homicide"
+    },
+    {
+     "id": "u05-18",
+     "title": "Unlawful act manslaughter",
+     "module": "Homicide"
+    },
+    {
+     "id": "u05-19",
+     "title": "Non-fatal offences",
+     "module": "Non-fatal and sexual offences"
+    },
+    {
+     "id": "u05-20",
+     "title": "Assault and battery",
+     "module": "Non-fatal and sexual offences"
+    },
+    {
+     "id": "u05-21",
+     "title": "Actual bodily harm",
+     "module": "Non-fatal and sexual offences"
+    },
+    {
+     "id": "u05-22",
+     "title": "Grievous bodily harm",
+     "module": "Non-fatal and sexual offences"
+    },
+    {
+     "id": "u05-23",
+     "title": "Sexual offences",
+     "module": "Non-fatal and sexual offences"
+    },
+    {
+     "id": "u05-24",
+     "title": "Theft",
+     "module": "Property offences"
+    },
+    {
+     "id": "u05-25",
+     "title": "Robbery",
+     "module": "Property offences"
+    },
+    {
+     "id": "u05-26",
+     "title": "Burglary",
+     "module": "Property offences"
+    },
+    {
+     "id": "u05-27",
+     "title": "Fraud",
+     "module": "Property offences"
+    },
+    {
+     "id": "u05-28",
+     "title": "Criminal damage",
+     "module": "Property offences"
+    },
+    {
+     "id": "u05-29",
+     "title": "Defences",
+     "module": "Defences and inchoate offences"
+    },
+    {
+     "id": "u05-30",
+     "title": "Self-defence",
+     "module": "Defences and inchoate offences"
+    },
+    {
+     "id": "u05-31",
+     "title": "Insanity",
+     "module": "Defences and inchoate offences"
+    },
+    {
+     "id": "u05-32",
+     "title": "Automatism",
+     "module": "Defences and inchoate offences"
+    },
+    {
+     "id": "u05-33",
+     "title": "Intoxication",
+     "module": "Defences and inchoate offences"
+    },
+    {
+     "id": "u05-34",
+     "title": "Duress",
+     "module": "Defences and inchoate offences"
+    },
+    {
+     "id": "u05-35",
+     "title": "Necessity",
+     "module": "Defences and inchoate offences"
+    },
+    {
+     "id": "u05-36",
+     "title": "Consent",
+     "module": "Defences and inchoate offences"
+    },
+    {
+     "id": "u05-37",
+     "title": "Criminal attempts and inchoate offences",
+     "module": "Defences and inchoate offences"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Criminal Law and Practice",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "The criminal justice system",
+     "module": "Investigation and police powers"
+    },
+    {
+     "id": "u06-02",
+     "title": "Police powers",
+     "module": "Investigation and police powers"
+    },
+    {
+     "id": "u06-03",
+     "title": "Stop and search",
+     "module": "Investigation and police powers"
+    },
+    {
+     "id": "u06-04",
+     "title": "Arrest",
+     "module": "Investigation and police powers"
+    },
+    {
+     "id": "u06-05",
+     "title": "Detention and questioning",
+     "module": "Investigation and police powers"
+    },
+    {
+     "id": "u06-06",
+     "title": "Police interviews",
+     "module": "Investigation and police powers"
+    },
+    {
+     "id": "u06-07",
+     "title": "PACE",
+     "module": "Investigation and police powers"
+    },
+    {
+     "id": "u06-08",
+     "title": "Disclosure",
+     "module": "Before trial"
+    },
+    {
+     "id": "u06-09",
+     "title": "Bail",
+     "module": "Before trial"
+    },
+    {
+     "id": "u06-10",
+     "title": "Charging decisions",
+     "module": "Before trial"
+    },
+    {
+     "id": "u06-11",
+     "title": "Prosecution",
+     "module": "Before trial"
+    },
+    {
+     "id": "u06-12",
+     "title": "Magistrates' Court",
+     "module": "Courts and allocation"
+    },
+    {
+     "id": "u06-13",
+     "title": "Crown Court",
+     "module": "Courts and allocation"
+    },
+    {
+     "id": "u06-14",
+     "title": "Allocation of offences",
+     "module": "Courts and allocation"
+    },
+    {
+     "id": "u06-15",
+     "title": "Plea and trial preparation",
+     "module": "Courts and allocation"
+    },
+    {
+     "id": "u06-16",
+     "title": "Evidence",
+     "module": "Evidence"
+    },
+    {
+     "id": "u06-17",
+     "title": "Hearsay",
+     "module": "Evidence"
+    },
+    {
+     "id": "u06-18",
+     "title": "Confessions",
+     "module": "Evidence"
+    },
+    {
+     "id": "u06-19",
+     "title": "Identification evidence",
+     "module": "Evidence"
+    },
+    {
+     "id": "u06-20",
+     "title": "Bad character evidence",
+     "module": "Evidence"
+    },
+    {
+     "id": "u06-21",
+     "title": "Witnesses",
+     "module": "Evidence"
+    },
+    {
+     "id": "u06-22",
+     "title": "Expert evidence",
+     "module": "Evidence"
+    },
+    {
+     "id": "u06-23",
+     "title": "Trial procedure",
+     "module": "Trial, sentence and appeal"
+    },
+    {
+     "id": "u06-24",
+     "title": "Sentencing",
+     "module": "Trial, sentence and appeal"
+    },
+    {
+     "id": "u06-25",
+     "title": "Appeals",
+     "module": "Trial, sentence and appeal"
+    },
+    {
+     "id": "u06-26",
+     "title": "Criminal legal aid",
+     "module": "Funding and conduct"
+    },
+    {
+     "id": "u06-27",
+     "title": "Professional conduct in criminal practice",
+     "module": "Funding and conduct"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Land Law",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Introduction to land law",
+     "module": "Foundations of land law"
+    },
+    {
+     "id": "u07-02",
+     "title": "Nature of land",
+     "module": "Foundations of land law"
+    },
+    {
+     "id": "u07-03",
+     "title": "Estates in land",
+     "module": "Foundations of land law"
+    },
+    {
+     "id": "u07-04",
+     "title": "Freehold estates",
+     "module": "Foundations of land law"
+    },
+    {
+     "id": "u07-05",
+     "title": "Leasehold estates",
+     "module": "Foundations of land law"
+    },
+    {
+     "id": "u07-06",
+     "title": "Legal and equitable interests",
+     "module": "Foundations of land law"
+    },
+    {
+     "id": "u07-07",
+     "title": "Registered land",
+     "module": "Registration"
+    },
+    {
+     "id": "u07-08",
+     "title": "Unregistered land",
+     "module": "Registration"
+    },
+    {
+     "id": "u07-09",
+     "title": "Land registration",
+     "module": "Registration"
+    },
+    {
+     "id": "u07-10",
+     "title": "Title investigation",
+     "module": "Registration"
+    },
+    {
+     "id": "u07-11",
+     "title": "Co-ownership",
+     "module": "Co-ownership and trusts of land"
+    },
+    {
+     "id": "u07-12",
+     "title": "Joint tenancy",
+     "module": "Co-ownership and trusts of land"
+    },
+    {
+     "id": "u07-13",
+     "title": "Tenancy in common",
+     "module": "Co-ownership and trusts of land"
+    },
+    {
+     "id": "u07-14",
+     "title": "Severance",
+     "module": "Co-ownership and trusts of land"
+    },
+    {
+     "id": "u07-15",
+     "title": "Trusts of land",
+     "module": "Co-ownership and trusts of land"
+    },
+    {
+     "id": "u07-16",
+     "title": "Overreaching",
+     "module": "Co-ownership and trusts of land"
+    },
+    {
+     "id": "u07-17",
+     "title": "Easements",
+     "module": "Third-party rights"
+    },
+    {
+     "id": "u07-18",
+     "title": "Covenants",
+     "module": "Third-party rights"
+    },
+    {
+     "id": "u07-19",
+     "title": "Mortgages",
+     "module": "Third-party rights"
+    },
+    {
+     "id": "u07-20",
+     "title": "Proprietary estoppel",
+     "module": "Third-party rights"
+    },
+    {
+     "id": "u07-21",
+     "title": "Adverse possession",
+     "module": "Third-party rights"
+    },
+    {
+     "id": "u07-22",
+     "title": "Leases",
+     "module": "Leases and licences"
+    },
+    {
+     "id": "u07-23",
+     "title": "Licences",
+     "module": "Leases and licences"
+    },
+    {
+     "id": "u07-24",
+     "title": "Landlord and tenant relationships",
+     "module": "Leases and licences"
+    },
+    {
+     "id": "u07-25",
+     "title": "Priorities and third-party rights",
+     "module": "Priorities and covenants"
+    },
+    {
+     "id": "u07-26",
+     "title": "Restrictive covenants",
+     "module": "Priorities and covenants"
+    },
+    {
+     "id": "u07-27",
+     "title": "Freehold covenants",
+     "module": "Priorities and covenants"
+    },
+    {
+     "id": "u07-28",
+     "title": "Land disputes",
+     "module": "Disputes and transactions"
+    },
+    {
+     "id": "u07-29",
+     "title": "Property transactions",
+     "module": "Disputes and transactions"
+    },
+    {
+     "id": "u07-30",
+     "title": "Conveyancing fundamentals",
+     "module": "Disputes and transactions"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Property Law and Practice",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Residential conveyancing",
+     "module": "Transactions and clients"
+    },
+    {
+     "id": "u08-02",
+     "title": "Commercial conveyancing",
+     "module": "Transactions and clients"
+    },
+    {
+     "id": "u08-03",
+     "title": "Client onboarding",
+     "module": "Transactions and clients"
+    },
+    {
+     "id": "u08-04",
+     "title": "Identity verification",
+     "module": "Transactions and clients"
+    },
+    {
+     "id": "u08-05",
+     "title": "Source of funds and source of wealth",
+     "module": "Transactions and clients"
+    },
+    {
+     "id": "u08-06",
+     "title": "Anti-money laundering",
+     "module": "Transactions and clients"
+    },
+    {
+     "id": "u08-07",
+     "title": "Instructions and client care",
+     "module": "Transactions and clients"
+    },
+    {
+     "id": "u08-08",
+     "title": "Searches and enquiries",
+     "module": "Before contract"
+    },
+    {
+     "id": "u08-09",
+     "title": "Official copies and title documents",
+     "module": "Before contract"
+    },
+    {
+     "id": "u08-10",
+     "title": "Contract packages",
+     "module": "Before contract"
+    },
+    {
+     "id": "u08-11",
+     "title": "Raising enquiries",
+     "module": "Before contract"
+    },
+    {
+     "id": "u08-12",
+     "title": "Mortgage finance",
+     "module": "Before contract"
+    },
+    {
+     "id": "u08-13",
+     "title": "Exchange of contracts",
+     "module": "Exchange to registration"
+    },
+    {
+     "id": "u08-14",
+     "title": "Completion",
+     "module": "Exchange to registration"
+    },
+    {
+     "id": "u08-15",
+     "title": "Post-completion formalities",
+     "module": "Exchange to registration"
+    },
+    {
+     "id": "u08-16",
+     "title": "Stamp Duty Land Tax",
+     "module": "Exchange to registration"
+    },
+    {
+     "id": "u08-17",
+     "title": "Land Registry applications",
+     "module": "Exchange to registration"
+    },
+    {
+     "id": "u08-18",
+     "title": "Leasehold transactions",
+     "module": "Leasehold and specialist transactions"
+    },
+    {
+     "id": "u08-19",
+     "title": "New-build property",
+     "module": "Leasehold and specialist transactions"
+    },
+    {
+     "id": "u08-20",
+     "title": "Remortgaging",
+     "module": "Leasehold and specialist transactions"
+    },
+    {
+     "id": "u08-21",
+     "title": "Transfers of equity",
+     "module": "Leasehold and specialist transactions"
+    },
+    {
+     "id": "u08-22",
+     "title": "Commercial leases",
+     "module": "Leasehold and specialist transactions"
+    },
+    {
+     "id": "u08-23",
+     "title": "Property taxation",
+     "module": "Tax, conduct and accounts"
+    },
+    {
+     "id": "u08-24",
+     "title": "Professional conduct",
+     "module": "Tax, conduct and accounts"
+    },
+    {
+     "id": "u08-25",
+     "title": "Solicitors' accounts in property transactions",
+     "module": "Tax, conduct and accounts"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Equity and Trusts",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Historical development of equity",
+     "module": "Equity and the trust"
+    },
+    {
+     "id": "u09-02",
+     "title": "Equitable principles",
+     "module": "Equity and the trust"
+    },
+    {
+     "id": "u09-03",
+     "title": "Trusts",
+     "module": "Equity and the trust"
+    },
+    {
+     "id": "u09-04",
+     "title": "Express trusts",
+     "module": "Equity and the trust"
+    },
+    {
+     "id": "u09-05",
+     "title": "Implied trusts",
+     "module": "Equity and the trust"
+    },
+    {
+     "id": "u09-06",
+     "title": "Resulting trusts",
+     "module": "Implied trusts"
+    },
+    {
+     "id": "u09-07",
+     "title": "Constructive trusts",
+     "module": "Implied trusts"
+    },
+    {
+     "id": "u09-08",
+     "title": "Certainty of intention",
+     "module": "Creating express trusts"
+    },
+    {
+     "id": "u09-09",
+     "title": "Certainty of subject matter",
+     "module": "Creating express trusts"
+    },
+    {
+     "id": "u09-10",
+     "title": "Certainty of objects",
+     "module": "Creating express trusts"
+    },
+    {
+     "id": "u09-11",
+     "title": "Constitution of trusts",
+     "module": "Creating express trusts"
+    },
+    {
+     "id": "u09-12",
+     "title": "Trustees' duties",
+     "module": "Trusteeship"
+    },
+    {
+     "id": "u09-13",
+     "title": "Trustees' powers",
+     "module": "Trusteeship"
+    },
+    {
+     "id": "u09-14",
+     "title": "Fiduciary duties",
+     "module": "Trusteeship"
+    },
+    {
+     "id": "u09-15",
+     "title": "Breach of trust",
+     "module": "Breach and remedies"
+    },
+    {
+     "id": "u09-16",
+     "title": "Equitable remedies",
+     "module": "Breach and remedies"
+    },
+    {
+     "id": "u09-17",
+     "title": "Tracing",
+     "module": "Breach and remedies"
+    },
+    {
+     "id": "u09-18",
+     "title": "Knowing receipt",
+     "module": "Breach and remedies"
+    },
+    {
+     "id": "u09-19",
+     "title": "Dishonest assistance",
+     "module": "Breach and remedies"
+    },
+    {
+     "id": "u09-20",
+     "title": "Charitable trusts",
+     "module": "Special trusts"
+    },
+    {
+     "id": "u09-21",
+     "title": "Purpose trusts",
+     "module": "Special trusts"
+    },
+    {
+     "id": "u09-22",
+     "title": "Secret trusts",
+     "module": "Special trusts"
+    },
+    {
+     "id": "u09-23",
+     "title": "Trusts of land",
+     "module": "Trusts in context"
+    },
+    {
+     "id": "u09-24",
+     "title": "Co-ownership",
+     "module": "Trusts in context"
+    },
+    {
+     "id": "u09-25",
+     "title": "Wills and testamentary trusts",
+     "module": "Trusts in context"
+    },
+    {
+     "id": "u09-26",
+     "title": "Equitable interests",
+     "module": "Trusts in context"
+    },
+    {
+     "id": "u09-27",
+     "title": "Remedies and defences",
+     "module": "Trusts in context"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Wills, Probate and Administration of Estates",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Introduction to succession law",
+     "module": "Wills and intestacy"
+    },
+    {
+     "id": "u10-02",
+     "title": "Testamentary freedom",
+     "module": "Wills and intestacy"
+    },
+    {
+     "id": "u10-03",
+     "title": "Capacity to make a will",
+     "module": "Wills and intestacy"
+    },
+    {
+     "id": "u10-04",
+     "title": "Formalities of wills",
+     "module": "Wills and intestacy"
+    },
+    {
+     "id": "u10-05",
+     "title": "Revocation",
+     "module": "Wills and intestacy"
+    },
+    {
+     "id": "u10-06",
+     "title": "Alteration and rectification",
+     "module": "Wills and intestacy"
+    },
+    {
+     "id": "u10-07",
+     "title": "Interpretation of wills",
+     "module": "Wills and intestacy"
+    },
+    {
+     "id": "u10-08",
+     "title": "Gifts and legacies",
+     "module": "Wills and intestacy"
+    },
+    {
+     "id": "u10-09",
+     "title": "Intestacy",
+     "module": "Wills and intestacy"
+    },
+    {
+     "id": "u10-10",
+     "title": "Personal representatives",
+     "module": "Personal representatives and grants"
+    },
+    {
+     "id": "u10-11",
+     "title": "Executors and administrators",
+     "module": "Personal representatives and grants"
+    },
+    {
+     "id": "u10-12",
+     "title": "Grants of representation",
+     "module": "Personal representatives and grants"
+    },
+    {
+     "id": "u10-13",
+     "title": "Probate procedure",
+     "module": "Personal representatives and grants"
+    },
+    {
+     "id": "u10-14",
+     "title": "Estate administration",
+     "module": "Administration"
+    },
+    {
+     "id": "u10-15",
+     "title": "Inheritance tax",
+     "module": "Administration"
+    },
+    {
+     "id": "u10-16",
+     "title": "Estate liabilities",
+     "module": "Administration"
+    },
+    {
+     "id": "u10-17",
+     "title": "Distribution of estates",
+     "module": "Administration"
+    },
+    {
+     "id": "u10-18",
+     "title": "Family provision claims",
+     "module": "Claims and conduct"
+    },
+    {
+     "id": "u10-19",
+     "title": "Proprietary estoppel in succession",
+     "module": "Claims and conduct"
+    },
+    {
+     "id": "u10-20",
+     "title": "Professional responsibilities",
+     "module": "Claims and conduct"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Business Law and Practice",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Business organisations",
+     "module": "Business structures"
+    },
+    {
+     "id": "u11-02",
+     "title": "Sole traders",
+     "module": "Business structures"
+    },
+    {
+     "id": "u11-03",
+     "title": "Partnerships",
+     "module": "Business structures"
+    },
+    {
+     "id": "u11-04",
+     "title": "Limited liability partnerships",
+     "module": "Business structures"
+    },
+    {
+     "id": "u11-05",
+     "title": "Companies",
+     "module": "Business structures"
+    },
+    {
+     "id": "u11-06",
+     "title": "Company formation",
+     "module": "Companies"
+    },
+    {
+     "id": "u11-07",
+     "title": "Corporate personality",
+     "module": "Companies"
+    },
+    {
+     "id": "u11-08",
+     "title": "Directors",
+     "module": "Companies"
+    },
+    {
+     "id": "u11-09",
+     "title": "Directors' duties",
+     "module": "Companies"
+    },
+    {
+     "id": "u11-10",
+     "title": "Shareholders",
+     "module": "Companies"
+    },
+    {
+     "id": "u11-11",
+     "title": "Share capital",
+     "module": "Companies"
+    },
+    {
+     "id": "u11-12",
+     "title": "Corporate governance",
+     "module": "Companies"
+    },
+    {
+     "id": "u11-13",
+     "title": "Company decision-making",
+     "module": "Companies"
+    },
+    {
+     "id": "u11-14",
+     "title": "Company meetings",
+     "module": "Companies"
+    },
+    {
+     "id": "u11-15",
+     "title": "Dividends",
+     "module": "Companies"
+    },
+    {
+     "id": "u11-16",
+     "title": "Company accounts",
+     "module": "Companies"
+    },
+    {
+     "id": "u11-17",
+     "title": "Corporate finance",
+     "module": "Finance and commercial contracts"
+    },
+    {
+     "id": "u11-18",
+     "title": "Business contracts",
+     "module": "Finance and commercial contracts"
+    },
+    {
+     "id": "u11-19",
+     "title": "Commercial transactions",
+     "module": "Finance and commercial contracts"
+    },
+    {
+     "id": "u11-20",
+     "title": "Agency",
+     "module": "Finance and commercial contracts"
+    },
+    {
+     "id": "u11-21",
+     "title": "Sale of goods",
+     "module": "Finance and commercial contracts"
+    },
+    {
+     "id": "u11-22",
+     "title": "Supply of goods and services",
+     "module": "Finance and commercial contracts"
+    },
+    {
+     "id": "u11-23",
+     "title": "Consumer protection",
+     "module": "Finance and commercial contracts"
+    },
+    {
+     "id": "u11-24",
+     "title": "Business taxation",
+     "module": "Tax and insolvency"
+    },
+    {
+     "id": "u11-25",
+     "title": "Insolvency",
+     "module": "Tax and insolvency"
+    },
+    {
+     "id": "u11-26",
+     "title": "Liquidation",
+     "module": "Tax and insolvency"
+    },
+    {
+     "id": "u11-27",
+     "title": "Administration",
+     "module": "Tax and insolvency"
+    },
+    {
+     "id": "u11-28",
+     "title": "Restructuring",
+     "module": "Tax and insolvency"
+    },
+    {
+     "id": "u11-29",
+     "title": "Corporate transactions",
+     "module": "Transactions and conduct"
+    },
+    {
+     "id": "u11-30",
+     "title": "Professional responsibilities",
+     "module": "Transactions and conduct"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Dispute Resolution and Civil Litigation",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Civil justice system",
+     "module": "Before proceedings"
+    },
+    {
+     "id": "u12-02",
+     "title": "Pre-action protocols",
+     "module": "Before proceedings"
+    },
+    {
+     "id": "u12-03",
+     "title": "Letter before claim",
+     "module": "Before proceedings"
+    },
+    {
+     "id": "u12-04",
+     "title": "Limitation",
+     "module": "Before proceedings"
+    },
+    {
+     "id": "u12-05",
+     "title": "Jurisdiction",
+     "module": "Before proceedings"
+    },
+    {
+     "id": "u12-06",
+     "title": "Commencing proceedings",
+     "module": "Starting and defending a claim"
+    },
+    {
+     "id": "u12-07",
+     "title": "Particulars of claim",
+     "module": "Starting and defending a claim"
+    },
+    {
+     "id": "u12-08",
+     "title": "Defence and counterclaims",
+     "module": "Starting and defending a claim"
+    },
+    {
+     "id": "u12-09",
+     "title": "Statements of case",
+     "module": "Starting and defending a claim"
+    },
+    {
+     "id": "u12-10",
+     "title": "Case management",
+     "module": "Case management and evidence"
+    },
+    {
+     "id": "u12-11",
+     "title": "Disclosure",
+     "module": "Case management and evidence"
+    },
+    {
+     "id": "u12-12",
+     "title": "Evidence",
+     "module": "Case management and evidence"
+    },
+    {
+     "id": "u12-13",
+     "title": "Witness statements",
+     "module": "Case management and evidence"
+    },
+    {
+     "id": "u12-14",
+     "title": "Expert witnesses",
+     "module": "Case management and evidence"
+    },
+    {
+     "id": "u12-15",
+     "title": "Interim applications",
+     "module": "Interim matters and settlement"
+    },
+    {
+     "id": "u12-16",
+     "title": "Summary judgment",
+     "module": "Interim matters and settlement"
+    },
+    {
+     "id": "u12-17",
+     "title": "Strike-out",
+     "module": "Interim matters and settlement"
+    },
+    {
+     "id": "u12-18",
+     "title": "Settlement",
+     "module": "Interim matters and settlement"
+    },
+    {
+     "id": "u12-19",
+     "title": "Mediation",
+     "module": "Interim matters and settlement"
+    },
+    {
+     "id": "u12-20",
+     "title": "Trial preparation",
+     "module": "Trial and after"
+    },
+    {
+     "id": "u12-21",
+     "title": "Trial procedure",
+     "module": "Trial and after"
+    },
+    {
+     "id": "u12-22",
+     "title": "Costs",
+     "module": "Trial and after"
+    },
+    {
+     "id": "u12-23",
+     "title": "Enforcement",
+     "module": "Trial and after"
+    },
+    {
+     "id": "u12-24",
+     "title": "Appeals",
+     "module": "Trial and after"
+    },
+    {
+     "id": "u12-25",
+     "title": "Alternative dispute resolution",
+     "module": "ADR and conduct"
+    },
+    {
+     "id": "u12-26",
+     "title": "Professional conduct in litigation",
+     "module": "ADR and conduct"
+    }
+   ]
+  },
+  {
+   "id": "u13",
+   "n": 13,
+   "title": "Human Rights Law",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u13-01",
+     "title": "Human rights theory",
+     "module": "Foundations of human rights"
+    },
+    {
+     "id": "u13-02",
+     "title": "Universal human rights",
+     "module": "Foundations of human rights"
+    },
+    {
+     "id": "u13-03",
+     "title": "European Convention on Human Rights",
+     "module": "Foundations of human rights"
+    },
+    {
+     "id": "u13-04",
+     "title": "Human Rights Act 1998",
+     "module": "Foundations of human rights"
+    },
+    {
+     "id": "u13-05",
+     "title": "Convention rights",
+     "module": "Foundations of human rights"
+    },
+    {
+     "id": "u13-06",
+     "title": "Article 2: the right to life",
+     "module": "The Convention rights"
+    },
+    {
+     "id": "u13-07",
+     "title": "Article 3: prohibition of torture",
+     "module": "The Convention rights"
+    },
+    {
+     "id": "u13-08",
+     "title": "Article 4: slavery and forced labour",
+     "module": "The Convention rights"
+    },
+    {
+     "id": "u13-09",
+     "title": "Article 5: liberty and security",
+     "module": "The Convention rights"
+    },
+    {
+     "id": "u13-10",
+     "title": "Article 6: fair trial",
+     "module": "The Convention rights"
+    },
+    {
+     "id": "u13-11",
+     "title": "Article 8: private and family life",
+     "module": "The Convention rights"
+    },
+    {
+     "id": "u13-12",
+     "title": "Article 9: thought, conscience and religion",
+     "module": "The Convention rights"
+    },
+    {
+     "id": "u13-13",
+     "title": "Article 10: freedom of expression",
+     "module": "The Convention rights"
+    },
+    {
+     "id": "u13-14",
+     "title": "Article 11: assembly and association",
+     "module": "The Convention rights"
+    },
+    {
+     "id": "u13-15",
+     "title": "Article 14: discrimination",
+     "module": "The Convention rights"
+    },
+    {
+     "id": "u13-16",
+     "title": "Protocol 1 Article 1: property",
+     "module": "The Convention rights"
+    },
+    {
+     "id": "u13-17",
+     "title": "Positive obligations",
+     "module": "Principles and remedies"
+    },
+    {
+     "id": "u13-18",
+     "title": "Proportionality",
+     "module": "Principles and remedies"
+    },
+    {
+     "id": "u13-19",
+     "title": "Derogations",
+     "module": "Principles and remedies"
+    },
+    {
+     "id": "u13-20",
+     "title": "Remedies",
+     "module": "Principles and remedies"
+    },
+    {
+     "id": "u13-21",
+     "title": "Public authorities",
+     "module": "Principles and remedies"
+    },
+    {
+     "id": "u13-22",
+     "title": "Human rights litigation",
+     "module": "Principles and remedies"
+    },
+    {
+     "id": "u13-23",
+     "title": "International human rights frameworks",
+     "module": "Principles and remedies"
+    }
+   ]
+  },
+  {
+   "id": "u14",
+   "n": 14,
+   "title": "European Union and International Law",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u14-01",
+     "title": "Foundations of EU law",
+     "module": "European Union law"
+    },
+    {
+     "id": "u14-02",
+     "title": "EU institutions",
+     "module": "European Union law"
+    },
+    {
+     "id": "u14-03",
+     "title": "Sources of EU law",
+     "module": "European Union law"
+    },
+    {
+     "id": "u14-04",
+     "title": "EU legislation",
+     "module": "European Union law"
+    },
+    {
+     "id": "u14-05",
+     "title": "Direct effect",
+     "module": "European Union law"
+    },
+    {
+     "id": "u14-06",
+     "title": "Supremacy",
+     "module": "European Union law"
+    },
+    {
+     "id": "u14-07",
+     "title": "State liability",
+     "module": "European Union law"
+    },
+    {
+     "id": "u14-08",
+     "title": "Free movement",
+     "module": "European Union law"
+    },
+    {
+     "id": "u14-09",
+     "title": "EU citizenship",
+     "module": "European Union law"
+    },
+    {
+     "id": "u14-10",
+     "title": "Competition law",
+     "module": "European Union law"
+    },
+    {
+     "id": "u14-11",
+     "title": "UK-EU relationship",
+     "module": "European Union law"
+    },
+    {
+     "id": "u14-12",
+     "title": "Retained and assimilated law",
+     "module": "European Union law"
+    },
+    {
+     "id": "u14-13",
+     "title": "International law sources",
+     "module": "International law"
+    },
+    {
+     "id": "u14-14",
+     "title": "Treaties",
+     "module": "International law"
+    },
+    {
+     "id": "u14-15",
+     "title": "Customary international law",
+     "module": "International law"
+    },
+    {
+     "id": "u14-16",
+     "title": "State responsibility",
+     "module": "International law"
+    },
+    {
+     "id": "u14-17",
+     "title": "International courts",
+     "module": "International law"
+    },
+    {
+     "id": "u14-18",
+     "title": "Jurisdiction in international law",
+     "module": "International law"
+    },
+    {
+     "id": "u14-19",
+     "title": "International human rights",
+     "module": "International law"
+    },
+    {
+     "id": "u14-20",
+     "title": "International dispute resolution",
+     "module": "International law"
+    }
+   ]
+  },
+  {
+   "id": "u15",
+   "n": 15,
+   "title": "Legal Ethics and Professional Conduct",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u15-01",
+     "title": "Professional ethics",
+     "module": "The regulatory framework"
+    },
+    {
+     "id": "u15-02",
+     "title": "SRA Principles",
+     "module": "The regulatory framework"
+    },
+    {
+     "id": "u15-03",
+     "title": "SRA Codes of Conduct",
+     "module": "The regulatory framework"
+    },
+    {
+     "id": "u15-04",
+     "title": "Client confidentiality",
+     "module": "Confidentiality and conflicts"
+    },
+    {
+     "id": "u15-05",
+     "title": "Legal professional privilege",
+     "module": "Confidentiality and conflicts"
+    },
+    {
+     "id": "u15-06",
+     "title": "Conflicts of interest",
+     "module": "Confidentiality and conflicts"
+    },
+    {
+     "id": "u15-07",
+     "title": "Client money",
+     "module": "Client money and accounts"
+    },
+    {
+     "id": "u15-08",
+     "title": "Solicitors' accounts",
+     "module": "Client money and accounts"
+    },
+    {
+     "id": "u15-09",
+     "title": "Client care",
+     "module": "Service and standards"
+    },
+    {
+     "id": "u15-10",
+     "title": "Competence",
+     "module": "Service and standards"
+    },
+    {
+     "id": "u15-11",
+     "title": "Honesty and integrity",
+     "module": "Service and standards"
+    },
+    {
+     "id": "u15-12",
+     "title": "Independence",
+     "module": "Service and standards"
+    },
+    {
+     "id": "u15-13",
+     "title": "Professional duties to the court",
+     "module": "The court and undertakings"
+    },
+    {
+     "id": "u15-14",
+     "title": "Undertakings",
+     "module": "The court and undertakings"
+    },
+    {
+     "id": "u15-15",
+     "title": "Anti-money laundering",
+     "module": "Financial crime"
+    },
+    {
+     "id": "u15-16",
+     "title": "Financial crime",
+     "module": "Financial crime"
+    },
+    {
+     "id": "u15-17",
+     "title": "Equality and diversity",
+     "module": "Equality, complaints and compliance"
+    },
+    {
+     "id": "u15-18",
+     "title": "Complaints",
+     "module": "Equality, complaints and compliance"
+    },
+    {
+     "id": "u15-19",
+     "title": "Professional negligence",
+     "module": "Equality, complaints and compliance"
+    },
+    {
+     "id": "u15-20",
+     "title": "Regulatory compliance",
+     "module": "Equality, complaints and compliance"
+    },
+    {
+     "id": "u15-21",
+     "title": "Duties to clients",
+     "module": "Duties and decisions"
+    },
+    {
+     "id": "u15-22",
+     "title": "Duties to third parties",
+     "module": "Duties and decisions"
+    },
+    {
+     "id": "u15-23",
+     "title": "Duties to the public",
+     "module": "Duties and decisions"
+    },
+    {
+     "id": "u15-24",
+     "title": "Professional boundaries",
+     "module": "Duties and decisions"
+    },
+    {
+     "id": "u15-25",
+     "title": "Ethical decision-making",
+     "module": "Duties and decisions"
+    }
+   ]
+  },
+  {
+   "id": "u16",
+   "n": 16,
+   "title": "Legal Research, Writing and Practical Skills",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u16-01",
+     "title": "Finding primary legal sources",
+     "module": "Legal research"
+    },
+    {
+     "id": "u16-02",
+     "title": "Finding secondary legal sources",
+     "module": "Legal research"
+    },
+    {
+     "id": "u16-03",
+     "title": "Legislation research",
+     "module": "Legal research"
+    },
+    {
+     "id": "u16-04",
+     "title": "Case law research",
+     "module": "Legal research"
+    },
+    {
+     "id": "u16-05",
+     "title": "Legal databases",
+     "module": "Legal research"
+    },
+    {
+     "id": "u16-06",
+     "title": "Westlaw and LexisNexis concepts",
+     "module": "Legal research"
+    },
+    {
+     "id": "u16-07",
+     "title": "Research methodology",
+     "module": "Legal research"
+    },
+    {
+     "id": "u16-08",
+     "title": "Case analysis",
+     "module": "Analysis and writing"
+    },
+    {
+     "id": "u16-09",
+     "title": "Legal memoranda",
+     "module": "Analysis and writing"
+    },
+    {
+     "id": "u16-10",
+     "title": "Opinion writing",
+     "module": "Analysis and writing"
+    },
+    {
+     "id": "u16-11",
+     "title": "Client letters",
+     "module": "Analysis and writing"
+    },
+    {
+     "id": "u16-12",
+     "title": "Legal drafting",
+     "module": "Analysis and writing"
+    },
+    {
+     "id": "u16-13",
+     "title": "Negotiation",
+     "module": "Practice skills"
+    },
+    {
+     "id": "u16-14",
+     "title": "Advocacy",
+     "module": "Practice skills"
+    },
+    {
+     "id": "u16-15",
+     "title": "Interviewing clients",
+     "module": "Practice skills"
+    },
+    {
+     "id": "u16-16",
+     "title": "Taking instructions",
+     "module": "Practice skills"
+    },
+    {
+     "id": "u16-17",
+     "title": "Legal problem solving",
+     "module": "Practice skills"
+    },
+    {
+     "id": "u16-18",
+     "title": "Applying IRAC",
+     "module": "Reasoning and communication"
+    },
+    {
+     "id": "u16-19",
+     "title": "Legal argumentation",
+     "module": "Reasoning and communication"
+    },
+    {
+     "id": "u16-20",
+     "title": "Professional communication",
+     "module": "Reasoning and communication"
+    }
+   ]
+  },
+  {
+   "id": "u17",
+   "n": 17,
+   "title": "Scotland and Northern Ireland",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u17-01",
+     "title": "Three legal systems in one UK",
+     "module": "Scotland"
+    },
+    {
+     "id": "u17-02",
+     "title": "Scots law: a mixed legal system",
+     "module": "Scotland"
+    },
+    {
+     "id": "u17-03",
+     "title": "The Scottish courts",
+     "module": "Scotland"
+    },
+    {
+     "id": "u17-04",
+     "title": "The Scottish Parliament and devolved law",
+     "module": "Scotland"
+    },
+    {
+     "id": "u17-05",
+     "title": "Scots contract law and promise",
+     "module": "Scotland"
+    },
+    {
+     "id": "u17-06",
+     "title": "Delict: the Scots law of wrongs",
+     "module": "Scotland"
+    },
+    {
+     "id": "u17-07",
+     "title": "Scots criminal law and procedure",
+     "module": "Scotland"
+    },
+    {
+     "id": "u17-08",
+     "title": "Scots property law and land registration",
+     "module": "Scotland"
+    },
+    {
+     "id": "u17-09",
+     "title": "Succession in Scotland",
+     "module": "Scotland"
+    },
+    {
+     "id": "u17-10",
+     "title": "Northern Ireland's legal system",
+     "module": "Northern Ireland"
+    },
+    {
+     "id": "u17-11",
+     "title": "The Northern Ireland courts",
+     "module": "Northern Ireland"
+    },
+    {
+     "id": "u17-12",
+     "title": "The Northern Ireland Assembly and devolved law",
+     "module": "Northern Ireland"
+    },
+    {
+     "id": "u17-13",
+     "title": "Northern Ireland criminal law and procedure",
+     "module": "Northern Ireland"
+    },
+    {
+     "id": "u17-14",
+     "title": "Northern Ireland land law and conveyancing",
+     "module": "Northern Ireland"
+    },
+    {
+     "id": "u17-15",
+     "title": "Cross-border issues within the UK",
+     "module": "Across the UK"
+    },
+    {
+     "id": "u17-16",
+     "title": "Qualifying and practising in Scotland and Northern Ireland",
+     "module": "Across the UK"
+    }
+   ]
+  },
+  {
+   "id": "u18",
+   "n": 18,
+   "title": "Routes to Qualification",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u18-01",
+     "title": "Academic study and professional qualification",
+     "module": "Study and qualification"
+    },
+    {
+     "id": "u18-02",
+     "title": "Becoming a solicitor in England and Wales",
+     "module": "Becoming a solicitor"
+    },
+    {
+     "id": "u18-03",
+     "title": "The Solicitors Qualifying Examination",
+     "module": "Becoming a solicitor"
+    },
+    {
+     "id": "u18-04",
+     "title": "SQE1: structure and approach",
+     "module": "Becoming a solicitor"
+    },
+    {
+     "id": "u18-05",
+     "title": "SQE2: structure and approach",
+     "module": "Becoming a solicitor"
+    },
+    {
+     "id": "u18-06",
+     "title": "Qualifying work experience",
+     "module": "Becoming a solicitor"
+    },
+    {
+     "id": "u18-07",
+     "title": "Character and suitability",
+     "module": "Becoming a solicitor"
+    },
+    {
+     "id": "u18-08",
+     "title": "Becoming a barrister in England and Wales",
+     "module": "Becoming a barrister"
+    },
+    {
+     "id": "u18-09",
+     "title": "The academic component for the Bar",
+     "module": "Becoming a barrister"
+    },
+    {
+     "id": "u18-10",
+     "title": "The vocational component for the Bar",
+     "module": "Becoming a barrister"
+    },
+    {
+     "id": "u18-11",
+     "title": "Pupillage",
+     "module": "Becoming a barrister"
+    },
+    {
+     "id": "u18-12",
+     "title": "Other legal careers",
+     "module": "Other careers and exam technique"
+    },
+    {
+     "id": "u18-13",
+     "title": "Answering single-best-answer questions",
+     "module": "Other careers and exam technique"
+    }
+   ]
+  },
+  {
+   "id": "u19",
+   "n": 19,
+   "title": "SQE2 Skills Practice",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u19-01",
+     "title": "How the SQE2 stations work",
+     "module": "How SQE2 works"
+    },
+    {
+     "id": "u19-02",
+     "title": "Client interview: a residential purchase",
+     "module": "Oral skills"
+    },
+    {
+     "id": "u19-03",
+     "title": "Attendance note: recording the interview",
+     "module": "Oral skills"
+    },
+    {
+     "id": "u19-04",
+     "title": "Client interview: a contract dispute",
+     "module": "Oral skills"
+    },
+    {
+     "id": "u19-05",
+     "title": "Advocacy: an interim application",
+     "module": "Oral skills"
+    },
+    {
+     "id": "u19-06",
+     "title": "Advocacy: a bail application",
+     "module": "Oral skills"
+    },
+    {
+     "id": "u19-07",
+     "title": "Case and matter analysis: a business dispute",
+     "module": "Written skills"
+    },
+    {
+     "id": "u19-08",
+     "title": "Case and matter analysis: an estate",
+     "module": "Written skills"
+    },
+    {
+     "id": "u19-09",
+     "title": "Legal research: a limitation question",
+     "module": "Written skills"
+    },
+    {
+     "id": "u19-10",
+     "title": "Legal research: a property question",
+     "module": "Written skills"
+    },
+    {
+     "id": "u19-11",
+     "title": "Legal writing: a letter of advice",
+     "module": "Written skills"
+    },
+    {
+     "id": "u19-12",
+     "title": "Legal writing: a letter to the other side",
+     "module": "Written skills"
+    },
+    {
+     "id": "u19-13",
+     "title": "Legal drafting: a clause in a commercial agreement",
+     "module": "Written skills"
+    },
+    {
+     "id": "u19-14",
+     "title": "Legal drafting: a witness statement",
+     "module": "Written skills"
+    },
+    {
+     "id": "u19-15",
+     "title": "Ethics in the skills assessments",
+     "module": "Ethics in practice"
+    }
+   ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "okoye",
+   "title": "Okoye v Harbour Cameras: was there a contract?",
+   "kind": "Legal reasoning case file",
+   "sub": "Identify the issues, apply offer, acceptance and the postal rule to a sequence of messages, and advise the client, building an IRAC analysis as you go.",
+   "note": "A fictional case file on offer and acceptance in the law of England and Wales, with simplified facts and scored decisions; study material, not legal advice.",
+   "tasks": null,
+   "lessons": [
+    "u03-02",
+    "u03-03",
+    "u03-04"
+   ],
+   "url": "https://getgradify.com/lawgradify/course/#/practice/okoye"
+  },
+  {
+   "id": "courts",
+   "title": "Court hierarchy and precedent",
+   "kind": "Precedent explorer",
+   "sub": "Explore the courts of England and Wales and decide whether earlier decisions bind, persuade or must be taken into account.",
+   "note": "The court hierarchy of England and Wales and the general rules of precedent; exceptions are summarised, not exhaustive.",
+   "tasks": null,
+   "lessons": [
+    "u01-09",
+    "u01-10",
+    "u01-08"
+   ],
+   "url": "https://getgradify.com/lawgradify/course/#/practice/courts"
+  }
+ ]
+}

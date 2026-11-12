@@ -4,7 +4,10 @@ import { MAP, FRAMEWORKS } from "./map.js";
 import { QA } from "./qa.js";
 import { WRITING } from "./writing.js";
 import { QUESTIONS, LESSONS } from "./registry.js";
-export default {
+import { defineCourse } from "../../subjects/define.js";
+import pharmacy from "../../subjects/pharmacy.js";
+// the pharmacy adapter (kit/subjects/) holds this subject's QA rules and reviewer flags
+export default defineCourse(pharmacy, {
   site: "PharmaGradify", slug: "pharmacy", name: "Pharmacy", app: "../app.html", unitWord: "School",
   units: UNITS, tracks: TRACKS, paths: PATHS,
   // curriculum mapping to the GPhC's education standards and the registration assessment (map.js)
@@ -47,4 +50,4 @@ export default {
     ["Learning map", "Every PharmaGradify subject on one map.", "../map.html"],
     ["Notes Studio", "Turn your own lecture notes into flashcards and questions.", "../app.html#/notes"],
   ],
-};
+});

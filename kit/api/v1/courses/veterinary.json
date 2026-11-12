@@ -1,0 +1,1468 @@
+{
+ "api": 1,
+ "slug": "veterinary",
+ "name": "Veterinary Science",
+ "site": "VetGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Education, not veterinary advice.</b> VetGradify teaches veterinary science for study. It isn't a veterinary qualification, doesn't replace your degree's teaching or extra-mural studies, and doesn't authorise anyone to treat animals. Only a veterinary surgeon can diagnose, prescribe and treat (Veterinary Surgeons Act 1966). Doses and figures in worked examples are illustrative, never for a real animal. If you are worried about an animal, contact your vet; out of hours, contact an emergency vet. The lessons were drafted with AI assistance and haven't yet been reviewed by a veterinary surgeon, so they may contain errors: check important points against your course materials, the BSAVA formulary and official RCVS, VMD and APHA guidance.",
+ "notes": "/kit/courses/veterinary/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Preclinical foundations",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "from": "#4fb884",
+   "to": "#22d3ee"
+  },
+  {
+   "name": "Stage 2 · Animals, welfare and disease",
+   "units": [
+    4,
+    5,
+    6
+   ],
+   "from": "#22d3ee",
+   "to": "#60a5fa"
+  },
+  {
+   "name": "Stage 3 · Clinical foundations",
+   "units": [
+    7,
+    8
+   ],
+   "from": "#60a5fa",
+   "to": "#a78bfa"
+  },
+  {
+   "name": "Stage 4 · Clinical practice and the profession",
+   "units": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "from": "#a78bfa",
+   "to": "#4fb884"
+  }
+ ],
+ "paths": [
+  {
+   "id": "core",
+   "name": "The whole degree",
+   "sub": "Every school in order, preclinical to clinical, as a UK veterinary degree runs.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "preclinical",
+   "name": "Preclinical sciences",
+   "sub": "Anatomy, physiology, biochemistry, pathology and infection: the science behind the clinic.",
+   "units": [
+    1,
+    2,
+    3,
+    5,
+    6
+   ],
+   "select": null
+  },
+  {
+   "id": "small-animal",
+   "name": "Companion animal practice",
+   "sub": "From the dog and cat's anatomy to small-animal medicine, surgery and the profession.",
+   "units": [
+    1,
+    2,
+    7,
+    8,
+    9,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "farm-equine",
+   "name": "Farm and equine practice",
+   "sub": "Husbandry, welfare, herd health, the horse and public health.",
+   "units": [
+    4,
+    6,
+    10,
+    11,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "vet-nursing",
+   "name": "For veterinary nurses and support staff",
+   "sub": "Welfare, anatomy, physiology, pharmacology principles, clinical examination and the team.",
+   "units": [
+    1,
+    2,
+    4,
+    7,
+    8
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Preclinical foundations",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Animals, welfare and disease",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    5,
+    6
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Clinical foundations",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    7,
+    8
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Clinical practice and the profession",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Comparative Anatomy",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "Anatomical terms of position and direction",
+     "module": "Principles of anatomy"
+    },
+    {
+     "id": "u01-02",
+     "title": "The skeleton and joints compared",
+     "module": "Principles of anatomy"
+    },
+    {
+     "id": "u01-03",
+     "title": "Muscles, tendons and fascia",
+     "module": "Principles of anatomy"
+    },
+    {
+     "id": "u01-04",
+     "title": "The thoracic limb of the dog and cat",
+     "module": "The locomotor system"
+    },
+    {
+     "id": "u01-05",
+     "title": "The equine distal limb and hoof",
+     "module": "The locomotor system"
+    },
+    {
+     "id": "u01-06",
+     "title": "The pelvic limb and the equine stay apparatus",
+     "module": "The locomotor system"
+    },
+    {
+     "id": "u01-07",
+     "title": "The bovine foot and claw",
+     "module": "The locomotor system"
+    },
+    {
+     "id": "u01-08",
+     "title": "The vertebral column and spinal cord",
+     "module": "The locomotor system"
+    },
+    {
+     "id": "u01-09",
+     "title": "The skull, teeth and dental formulae",
+     "module": "Head and nervous system"
+    },
+    {
+     "id": "u01-10",
+     "title": "The brain and cranial nerves",
+     "module": "Head and nervous system"
+    },
+    {
+     "id": "u01-11",
+     "title": "The thorax, heart and lungs",
+     "module": "Thorax, abdomen and pelvis"
+    },
+    {
+     "id": "u01-12",
+     "title": "The carnivore digestive tract",
+     "module": "Thorax, abdomen and pelvis"
+    },
+    {
+     "id": "u01-13",
+     "title": "The equine digestive tract",
+     "module": "Thorax, abdomen and pelvis"
+    },
+    {
+     "id": "u01-14",
+     "title": "The ruminant stomach",
+     "module": "Thorax, abdomen and pelvis"
+    },
+    {
+     "id": "u01-15",
+     "title": "The urinary system",
+     "module": "Thorax, abdomen and pelvis"
+    },
+    {
+     "id": "u01-16",
+     "title": "Male and female reproductive anatomy",
+     "module": "Thorax, abdomen and pelvis"
+    },
+    {
+     "id": "u01-17",
+     "title": "Avian anatomy",
+     "module": "Birds and the integument"
+    },
+    {
+     "id": "u01-18",
+     "title": "Skin, hoof, horn and the mammary gland",
+     "module": "Birds and the integument"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Veterinary Physiology",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Homeostasis and body fluids",
+     "module": "Cells, nerves and muscle"
+    },
+    {
+     "id": "u02-02",
+     "title": "Membrane potentials and nerve conduction",
+     "module": "Cells, nerves and muscle"
+    },
+    {
+     "id": "u02-03",
+     "title": "The neuromuscular junction and muscle contraction",
+     "module": "Cells, nerves and muscle"
+    },
+    {
+     "id": "u02-04",
+     "title": "The autonomic nervous system",
+     "module": "Cells, nerves and muscle"
+    },
+    {
+     "id": "u02-05",
+     "title": "The cardiac cycle",
+     "module": "Cardiovascular and respiratory physiology"
+    },
+    {
+     "id": "u02-06",
+     "title": "Blood pressure and its control",
+     "module": "Cardiovascular and respiratory physiology"
+    },
+    {
+     "id": "u02-07",
+     "title": "Blood: cells, clotting and blood groups in animals",
+     "module": "Cardiovascular and respiratory physiology"
+    },
+    {
+     "id": "u02-08",
+     "title": "Respiration and gas exchange",
+     "module": "Cardiovascular and respiratory physiology"
+    },
+    {
+     "id": "u02-09",
+     "title": "Avian respiration",
+     "module": "Cardiovascular and respiratory physiology"
+    },
+    {
+     "id": "u02-10",
+     "title": "Rumen fermentation and volatile fatty acids",
+     "module": "Digestion and energy"
+    },
+    {
+     "id": "u02-11",
+     "title": "Monogastric and hindgut digestion",
+     "module": "Digestion and energy"
+    },
+    {
+     "id": "u02-12",
+     "title": "Thermoregulation",
+     "module": "Digestion and energy"
+    },
+    {
+     "id": "u02-13",
+     "title": "Renal function and urine concentration",
+     "module": "Kidney, endocrine and reproduction"
+    },
+    {
+     "id": "u02-14",
+     "title": "Acid–base balance",
+     "module": "Kidney, endocrine and reproduction"
+    },
+    {
+     "id": "u02-15",
+     "title": "The hypothalamus and pituitary",
+     "module": "Kidney, endocrine and reproduction"
+    },
+    {
+     "id": "u02-16",
+     "title": "Thyroid, adrenal and endocrine pancreas",
+     "module": "Kidney, endocrine and reproduction"
+    },
+    {
+     "id": "u02-17",
+     "title": "Reproductive cycles in domestic species",
+     "module": "Kidney, endocrine and reproduction"
+    },
+    {
+     "id": "u02-18",
+     "title": "Pregnancy, parturition and lactation",
+     "module": "Kidney, endocrine and reproduction"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Biochemistry, Cell Biology and Genetics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "The animal cell and its organelles",
+     "module": "Cells and molecules"
+    },
+    {
+     "id": "u03-02",
+     "title": "Proteins and enzymes",
+     "module": "Cells and molecules"
+    },
+    {
+     "id": "u03-03",
+     "title": "Carbohydrate metabolism",
+     "module": "Cells and molecules"
+    },
+    {
+     "id": "u03-04",
+     "title": "Lipid metabolism and ketogenesis",
+     "module": "Cells and molecules"
+    },
+    {
+     "id": "u03-05",
+     "title": "Protein and nitrogen metabolism",
+     "module": "Cells and molecules"
+    },
+    {
+     "id": "u03-06",
+     "title": "Energy metabolism in the ruminant",
+     "module": "Cells and molecules"
+    },
+    {
+     "id": "u03-07",
+     "title": "Minerals, trace elements and vitamins",
+     "module": "Cells and molecules"
+    },
+    {
+     "id": "u03-08",
+     "title": "DNA, genes and gene expression",
+     "module": "Genetics"
+    },
+    {
+     "id": "u03-09",
+     "title": "Mendelian inheritance in domestic animals",
+     "module": "Genetics"
+    },
+    {
+     "id": "u03-10",
+     "title": "Sex-linked and polygenic traits",
+     "module": "Genetics"
+    },
+    {
+     "id": "u03-11",
+     "title": "Inherited diseases and breed health schemes",
+     "module": "Genetics"
+    },
+    {
+     "id": "u03-12",
+     "title": "Genetic testing in animals",
+     "module": "Genetics"
+    },
+    {
+     "id": "u03-13",
+     "title": "Population genetics and inbreeding",
+     "module": "Genetics"
+    },
+    {
+     "id": "u03-14",
+     "title": "Animal breeding and selection",
+     "module": "Genetics"
+    },
+    {
+     "id": "u03-15",
+     "title": "Embryology and organogenesis",
+     "module": "Development"
+    },
+    {
+     "id": "u03-16",
+     "title": "Congenital abnormalities",
+     "module": "Development"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Animal Husbandry, Nutrition and Welfare",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "What animal welfare means",
+     "module": "Animal welfare"
+    },
+    {
+     "id": "u04-02",
+     "title": "The Five Freedoms and the Five Domains",
+     "module": "Animal welfare"
+    },
+    {
+     "id": "u04-03",
+     "title": "The Animal Welfare Act 2006",
+     "module": "Animal welfare"
+    },
+    {
+     "id": "u04-04",
+     "title": "Assessing welfare in practice",
+     "module": "Animal welfare"
+    },
+    {
+     "id": "u04-05",
+     "title": "Behaviour and its role in welfare",
+     "module": "Animal welfare"
+    },
+    {
+     "id": "u04-06",
+     "title": "Pain recognition and scoring",
+     "module": "Animal welfare"
+    },
+    {
+     "id": "u04-07",
+     "title": "Husbandry of dogs and cats",
+     "module": "Husbandry"
+    },
+    {
+     "id": "u04-08",
+     "title": "Husbandry of horses",
+     "module": "Husbandry"
+    },
+    {
+     "id": "u04-09",
+     "title": "Dairy and beef cattle systems",
+     "module": "Husbandry"
+    },
+    {
+     "id": "u04-10",
+     "title": "Sheep and pig systems",
+     "module": "Husbandry"
+    },
+    {
+     "id": "u04-11",
+     "title": "Poultry systems",
+     "module": "Husbandry"
+    },
+    {
+     "id": "u04-12",
+     "title": "Rabbits, small mammals and exotic pets",
+     "module": "Husbandry"
+    },
+    {
+     "id": "u04-13",
+     "title": "Biosecurity on farm",
+     "module": "Husbandry"
+    },
+    {
+     "id": "u04-14",
+     "title": "Principles of animal nutrition",
+     "module": "Nutrition"
+    },
+    {
+     "id": "u04-15",
+     "title": "Feeding dogs and cats",
+     "module": "Nutrition"
+    },
+    {
+     "id": "u04-16",
+     "title": "Feeding horses",
+     "module": "Nutrition"
+    },
+    {
+     "id": "u04-17",
+     "title": "Ruminant nutrition and rationing",
+     "module": "Nutrition"
+    },
+    {
+     "id": "u04-18",
+     "title": "Body condition scoring",
+     "module": "Nutrition"
+    },
+    {
+     "id": "u04-19",
+     "title": "Welfare at transport and slaughter",
+     "module": "Nutrition"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Veterinary Pathology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Cell injury and cell death",
+     "module": "General pathology"
+    },
+    {
+     "id": "u05-02",
+     "title": "Acute inflammation",
+     "module": "General pathology"
+    },
+    {
+     "id": "u05-03",
+     "title": "Chronic inflammation and repair",
+     "module": "General pathology"
+    },
+    {
+     "id": "u05-04",
+     "title": "Disturbances of circulation",
+     "module": "General pathology"
+    },
+    {
+     "id": "u05-05",
+     "title": "Disorders of growth",
+     "module": "General pathology"
+    },
+    {
+     "id": "u05-06",
+     "title": "Neoplasia: principles",
+     "module": "General pathology"
+    },
+    {
+     "id": "u05-07",
+     "title": "Tumour classification and grading",
+     "module": "General pathology"
+    },
+    {
+     "id": "u05-08",
+     "title": "Pathology of the cardiovascular system",
+     "module": "Systemic pathology"
+    },
+    {
+     "id": "u05-09",
+     "title": "Pathology of the respiratory system",
+     "module": "Systemic pathology"
+    },
+    {
+     "id": "u05-10",
+     "title": "Pathology of the alimentary system",
+     "module": "Systemic pathology"
+    },
+    {
+     "id": "u05-11",
+     "title": "Pathology of the liver and pancreas",
+     "module": "Systemic pathology"
+    },
+    {
+     "id": "u05-12",
+     "title": "Pathology of the urinary system",
+     "module": "Systemic pathology"
+    },
+    {
+     "id": "u05-13",
+     "title": "Pathology of the skin",
+     "module": "Systemic pathology"
+    },
+    {
+     "id": "u05-14",
+     "title": "Pathology of the nervous system",
+     "module": "Systemic pathology"
+    },
+    {
+     "id": "u05-15",
+     "title": "The post-mortem examination",
+     "module": "Diagnostic pathology"
+    },
+    {
+     "id": "u05-16",
+     "title": "Cytology and histopathology",
+     "module": "Diagnostic pathology"
+    },
+    {
+     "id": "u05-17",
+     "title": "Clinical pathology: haematology",
+     "module": "Diagnostic pathology"
+    },
+    {
+     "id": "u05-18",
+     "title": "Clinical pathology: biochemistry",
+     "module": "Diagnostic pathology"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Microbiology, Parasitology and Immunology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Bacteria of veterinary importance",
+     "module": "Microbiology"
+    },
+    {
+     "id": "u06-02",
+     "title": "Viruses of veterinary importance",
+     "module": "Microbiology"
+    },
+    {
+     "id": "u06-03",
+     "title": "Fungi and prions",
+     "module": "Microbiology"
+    },
+    {
+     "id": "u06-04",
+     "title": "Antimicrobial resistance",
+     "module": "Microbiology"
+    },
+    {
+     "id": "u06-05",
+     "title": "Disinfection and sterilisation",
+     "module": "Microbiology"
+    },
+    {
+     "id": "u06-06",
+     "title": "Nematodes of domestic animals",
+     "module": "Parasitology"
+    },
+    {
+     "id": "u06-07",
+     "title": "Cestodes and trematodes",
+     "module": "Parasitology"
+    },
+    {
+     "id": "u06-08",
+     "title": "Ectoparasites: fleas, lice, mites and ticks",
+     "module": "Parasitology"
+    },
+    {
+     "id": "u06-09",
+     "title": "Protozoa",
+     "module": "Parasitology"
+    },
+    {
+     "id": "u06-10",
+     "title": "Parasite control and anthelmintic resistance",
+     "module": "Parasitology"
+    },
+    {
+     "id": "u06-11",
+     "title": "Innate immunity",
+     "module": "Immunology"
+    },
+    {
+     "id": "u06-12",
+     "title": "Adaptive immunity",
+     "module": "Immunology"
+    },
+    {
+     "id": "u06-13",
+     "title": "Antibodies and the humoral response",
+     "module": "Immunology"
+    },
+    {
+     "id": "u06-14",
+     "title": "Hypersensitivity and autoimmunity",
+     "module": "Immunology"
+    },
+    {
+     "id": "u06-15",
+     "title": "Maternally derived immunity and colostrum",
+     "module": "Immunology"
+    },
+    {
+     "id": "u06-16",
+     "title": "Principles of vaccination",
+     "module": "Immunology"
+    },
+    {
+     "id": "u06-17",
+     "title": "Vaccination of companion animals",
+     "module": "Immunology"
+    },
+    {
+     "id": "u06-18",
+     "title": "Vaccination of farm animals and horses",
+     "module": "Immunology"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Veterinary Pharmacology and Therapeutics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Pharmacokinetics",
+     "module": "Principles"
+    },
+    {
+     "id": "u07-02",
+     "title": "Pharmacodynamics",
+     "module": "Principles"
+    },
+    {
+     "id": "u07-03",
+     "title": "Species differences in drug handling",
+     "module": "Principles"
+    },
+    {
+     "id": "u07-04",
+     "title": "Adverse drug reactions and pharmacovigilance",
+     "module": "Principles"
+    },
+    {
+     "id": "u07-05",
+     "title": "The Veterinary Medicines Regulations",
+     "module": "Regulation and prescribing"
+    },
+    {
+     "id": "u07-06",
+     "title": "The prescribing cascade",
+     "module": "Regulation and prescribing"
+    },
+    {
+     "id": "u07-07",
+     "title": "Prescription categories and controlled drugs",
+     "module": "Regulation and prescribing"
+    },
+    {
+     "id": "u07-08",
+     "title": "Withdrawal periods and food-producing animals",
+     "module": "Regulation and prescribing"
+    },
+    {
+     "id": "u07-09",
+     "title": "Responsible use of antimicrobials",
+     "module": "Regulation and prescribing"
+    },
+    {
+     "id": "u07-10",
+     "title": "Antimicrobials",
+     "module": "Drug classes"
+    },
+    {
+     "id": "u07-11",
+     "title": "Antiparasitic drugs",
+     "module": "Drug classes"
+    },
+    {
+     "id": "u07-12",
+     "title": "Non-steroidal anti-inflammatory drugs",
+     "module": "Drug classes"
+    },
+    {
+     "id": "u07-13",
+     "title": "Corticosteroids",
+     "module": "Drug classes"
+    },
+    {
+     "id": "u07-14",
+     "title": "Opioids and analgesia",
+     "module": "Drug classes"
+    },
+    {
+     "id": "u07-15",
+     "title": "Sedatives and anaesthetic agents",
+     "module": "Drug classes"
+    },
+    {
+     "id": "u07-16",
+     "title": "Cardiovascular drugs",
+     "module": "Drug classes"
+    },
+    {
+     "id": "u07-17",
+     "title": "Drugs acting on the gut",
+     "module": "Drug classes"
+    },
+    {
+     "id": "u07-18",
+     "title": "Drug calculations: principles",
+     "module": "Drug classes"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Clinical Examination, Diagnostics and Surgical Principles",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Taking a clinical history",
+     "module": "Clinical examination"
+    },
+    {
+     "id": "u08-02",
+     "title": "The general clinical examination",
+     "module": "Clinical examination"
+    },
+    {
+     "id": "u08-03",
+     "title": "Examination of the cardiovascular and respiratory systems",
+     "module": "Clinical examination"
+    },
+    {
+     "id": "u08-04",
+     "title": "Examination of the alimentary and urinary systems",
+     "module": "Clinical examination"
+    },
+    {
+     "id": "u08-05",
+     "title": "The neurological examination",
+     "module": "Clinical examination"
+    },
+    {
+     "id": "u08-06",
+     "title": "The orthopaedic and lameness examination",
+     "module": "Clinical examination"
+    },
+    {
+     "id": "u08-07",
+     "title": "Clinical reasoning and the problem-oriented approach",
+     "module": "Clinical examination"
+    },
+    {
+     "id": "u08-08",
+     "title": "Sample collection and handling",
+     "module": "Diagnostics"
+    },
+    {
+     "id": "u08-09",
+     "title": "Diagnostic imaging: radiography",
+     "module": "Diagnostics"
+    },
+    {
+     "id": "u08-10",
+     "title": "Ultrasonography and advanced imaging",
+     "module": "Diagnostics"
+    },
+    {
+     "id": "u08-11",
+     "title": "Interpreting diagnostic tests",
+     "module": "Diagnostics"
+    },
+    {
+     "id": "u08-12",
+     "title": "Principles of anaesthesia",
+     "module": "Anaesthesia and surgery"
+    },
+    {
+     "id": "u08-13",
+     "title": "Anaesthetic monitoring",
+     "module": "Anaesthesia and surgery"
+    },
+    {
+     "id": "u08-14",
+     "title": "Asepsis and surgical preparation",
+     "module": "Anaesthesia and surgery"
+    },
+    {
+     "id": "u08-15",
+     "title": "Wound management",
+     "module": "Anaesthesia and surgery"
+    },
+    {
+     "id": "u08-16",
+     "title": "Fluid therapy principles",
+     "module": "Anaesthesia and surgery"
+    },
+    {
+     "id": "u08-17",
+     "title": "Emergency triage and first aid",
+     "module": "Anaesthesia and surgery"
+    },
+    {
+     "id": "u08-18",
+     "title": "Euthanasia",
+     "module": "Anaesthesia and surgery"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Small Animal Medicine and Surgery",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Vomiting and diarrhoea in dogs and cats",
+     "module": "Medicine"
+    },
+    {
+     "id": "u09-02",
+     "title": "Cardiac disease in dogs and cats",
+     "module": "Medicine"
+    },
+    {
+     "id": "u09-03",
+     "title": "Respiratory disease in dogs and cats",
+     "module": "Medicine"
+    },
+    {
+     "id": "u09-04",
+     "title": "Chronic kidney disease",
+     "module": "Medicine"
+    },
+    {
+     "id": "u09-05",
+     "title": "Diabetes mellitus",
+     "module": "Medicine"
+    },
+    {
+     "id": "u09-06",
+     "title": "Hyperthyroidism and hypothyroidism",
+     "module": "Medicine"
+    },
+    {
+     "id": "u09-07",
+     "title": "Hyperadrenocorticism and hypoadrenocorticism",
+     "module": "Medicine"
+    },
+    {
+     "id": "u09-08",
+     "title": "Skin and ear disease",
+     "module": "Medicine"
+    },
+    {
+     "id": "u09-09",
+     "title": "Infectious diseases of dogs and cats",
+     "module": "Medicine"
+    },
+    {
+     "id": "u09-10",
+     "title": "Seizures and neurological disease",
+     "module": "Medicine"
+    },
+    {
+     "id": "u09-11",
+     "title": "Common poisonings",
+     "module": "Medicine"
+    },
+    {
+     "id": "u09-12",
+     "title": "Oncology in practice",
+     "module": "Medicine"
+    },
+    {
+     "id": "u09-13",
+     "title": "Neutering",
+     "module": "Surgery"
+    },
+    {
+     "id": "u09-14",
+     "title": "Gastric dilatation and volvulus",
+     "module": "Surgery"
+    },
+    {
+     "id": "u09-15",
+     "title": "Intestinal foreign bodies",
+     "module": "Surgery"
+    },
+    {
+     "id": "u09-16",
+     "title": "Fracture management principles",
+     "module": "Surgery"
+    },
+    {
+     "id": "u09-17",
+     "title": "Cruciate ligament disease",
+     "module": "Surgery"
+    },
+    {
+     "id": "u09-18",
+     "title": "Hip and elbow dysplasia",
+     "module": "Surgery"
+    },
+    {
+     "id": "u09-19",
+     "title": "Dental disease",
+     "module": "Surgery"
+    },
+    {
+     "id": "u09-20",
+     "title": "Rabbit medicine",
+     "module": "Exotics"
+    },
+    {
+     "id": "u09-21",
+     "title": "Reptiles and birds in practice",
+     "module": "Exotics"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Equine Practice",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Colic",
+     "module": "Medicine"
+    },
+    {
+     "id": "u10-02",
+     "title": "Equine respiratory disease",
+     "module": "Medicine"
+    },
+    {
+     "id": "u10-03",
+     "title": "Equine infectious and notifiable diseases",
+     "module": "Medicine"
+    },
+    {
+     "id": "u10-04",
+     "title": "Laminitis and equine metabolic syndrome",
+     "module": "Medicine"
+    },
+    {
+     "id": "u10-05",
+     "title": "Pituitary pars intermedia dysfunction",
+     "module": "Medicine"
+    },
+    {
+     "id": "u10-06",
+     "title": "Equine skin disease",
+     "module": "Medicine"
+    },
+    {
+     "id": "u10-07",
+     "title": "Lameness diagnosis in the horse",
+     "module": "Lameness and surgery"
+    },
+    {
+     "id": "u10-08",
+     "title": "Diagnostic analgesia",
+     "module": "Lameness and surgery"
+    },
+    {
+     "id": "u10-09",
+     "title": "Common causes of lameness",
+     "module": "Lameness and surgery"
+    },
+    {
+     "id": "u10-10",
+     "title": "Wounds and synovial sepsis",
+     "module": "Lameness and surgery"
+    },
+    {
+     "id": "u10-11",
+     "title": "Castration in the horse",
+     "module": "Lameness and surgery"
+    },
+    {
+     "id": "u10-12",
+     "title": "Equine reproduction",
+     "module": "Stud medicine and the foal"
+    },
+    {
+     "id": "u10-13",
+     "title": "The neonatal foal",
+     "module": "Stud medicine and the foal"
+    },
+    {
+     "id": "u10-14",
+     "title": "Equine dentistry",
+     "module": "Stud medicine and the foal"
+    },
+    {
+     "id": "u10-15",
+     "title": "Equine passports and medicines records",
+     "module": "Stud medicine and the foal"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Farm Animal Practice and Herd Health",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Mastitis",
+     "module": "Cattle"
+    },
+    {
+     "id": "u11-02",
+     "title": "Lameness in cattle",
+     "module": "Cattle"
+    },
+    {
+     "id": "u11-03",
+     "title": "Metabolic disease of dairy cows",
+     "module": "Cattle"
+    },
+    {
+     "id": "u11-04",
+     "title": "Calf health and the colostrum",
+     "module": "Cattle"
+    },
+    {
+     "id": "u11-05",
+     "title": "Bovine respiratory disease",
+     "module": "Cattle"
+    },
+    {
+     "id": "u11-06",
+     "title": "Bovine tuberculosis",
+     "module": "Cattle"
+    },
+    {
+     "id": "u11-07",
+     "title": "Bovine viral diarrhoea and Johne's disease",
+     "module": "Cattle"
+    },
+    {
+     "id": "u11-08",
+     "title": "Fertility and herd health planning",
+     "module": "Cattle"
+    },
+    {
+     "id": "u11-09",
+     "title": "Sheep health planning",
+     "module": "Sheep and goats"
+    },
+    {
+     "id": "u11-10",
+     "title": "Lambing and neonatal lamb losses",
+     "module": "Sheep and goats"
+    },
+    {
+     "id": "u11-11",
+     "title": "Sheep scab, fly strike and lameness",
+     "module": "Sheep and goats"
+    },
+    {
+     "id": "u11-12",
+     "title": "Goat medicine",
+     "module": "Sheep and goats"
+    },
+    {
+     "id": "u11-13",
+     "title": "Pig health and production",
+     "module": "Pigs and poultry"
+    },
+    {
+     "id": "u11-14",
+     "title": "Poultry health and avian influenza",
+     "module": "Pigs and poultry"
+    },
+    {
+     "id": "u11-15",
+     "title": "Notifiable diseases of livestock",
+     "module": "Pigs and poultry"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Veterinary Public Health and Professional Practice",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "One Health",
+     "module": "Public health"
+    },
+    {
+     "id": "u12-02",
+     "title": "Zoonoses",
+     "module": "Public health"
+    },
+    {
+     "id": "u12-03",
+     "title": "Food safety and meat inspection",
+     "module": "Public health"
+    },
+    {
+     "id": "u12-04",
+     "title": "Notifiable diseases and disease control",
+     "module": "Public health"
+    },
+    {
+     "id": "u12-05",
+     "title": "Surveillance and the role of APHA",
+     "module": "Public health"
+    },
+    {
+     "id": "u12-06",
+     "title": "Epidemiology for veterinarians",
+     "module": "Public health"
+    },
+    {
+     "id": "u12-07",
+     "title": "The RCVS and the regulation of the profession",
+     "module": "Professional practice"
+    },
+    {
+     "id": "u12-08",
+     "title": "The RCVS Code of Professional Conduct",
+     "module": "Professional practice"
+    },
+    {
+     "id": "u12-09",
+     "title": "Consent and communication with clients",
+     "module": "Professional practice"
+    },
+    {
+     "id": "u12-10",
+     "title": "Clinical records and confidentiality",
+     "module": "Professional practice"
+    },
+    {
+     "id": "u12-11",
+     "title": "Certification",
+     "module": "Professional practice"
+    },
+    {
+     "id": "u12-12",
+     "title": "Animal welfare and the law",
+     "module": "Professional practice"
+    },
+    {
+     "id": "u12-13",
+     "title": "Working with veterinary nurses and the wider team",
+     "module": "Professional practice"
+    },
+    {
+     "id": "u12-14",
+     "title": "Clinical governance and evidence-based veterinary medicine",
+     "module": "Professional practice"
+    },
+    {
+     "id": "u12-15",
+     "title": "Wellbeing and professional life",
+     "module": "Professional practice"
+    },
+    {
+     "id": "u12-16",
+     "title": "The Day One Competences",
+     "module": "Professional practice"
+    }
+   ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "action-potential",
+   "title": "Nerve membrane and action potential",
+   "kind": "Simulation",
+   "sub": "The Hodgkin–Huxley model: find the threshold and the refractory period, and block sodium channels with tetrodotoxin or potassium channels with TEA (the way local anaesthetics block nerve conduction).",
+   "note": "SciGradify Biology's simulation: the published 1952 equations for one patch of squid axon membrane, with no propagation or myelin. The ionic mechanism is the same in mammalian nerve.",
+   "tasks": null,
+   "lessons": [
+    "u02-02"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/action-potential"
+  },
+  {
+   "id": "synapse",
+   "title": "The neuromuscular junction",
+   "kind": "Simulation",
+   "sub": "Calcium entry, acetylcholine release, nicotinic receptors and acetylcholinesterase, with the drugs and toxins that act at each step.",
+   "note": "SciGradify Biology's simulation of a cholinergic synapse: a small kinetic model with illustrative values; the sequence of events is accurate for the skeletal neuromuscular junction.",
+   "tasks": null,
+   "lessons": [
+    "u02-03"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/synapse"
+  },
+  {
+   "id": "heart",
+   "title": "The cardiac cycle",
+   "kind": "Simulation",
+   "sub": "The Wiggers diagram and the pressure–volume loop of the left heart; change heart rate, contractility and peripheral resistance.",
+   "note": "SciGradify Biology's lumped-parameter model of the left heart with human resting values. The sequence of the cycle is the same in domestic mammals; rates and volumes differ by species and size.",
+   "tasks": null,
+   "lessons": [
+    "u02-05",
+    "u02-06"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/heart"
+  },
+  {
+   "id": "gas",
+   "title": "Gas exchange and the oxygen dissociation curve",
+   "kind": "Simulation",
+   "sub": "Oxygen loading along a pulmonary capillary, Fick's law, and the haemoglobin–oxygen curve shifted by CO₂, acid and heat.",
+   "note": "SciGradify Biology's model with human values (P₅₀ about 27 mmHg). Domestic species' P₅₀ values differ (the curve sits further right in smaller mammals), but the shape and the Bohr effect are shared.",
+   "tasks": null,
+   "lessons": [
+    "u02-08",
+    "u02-14"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/gas"
+  },
+  {
+   "id": "kidney",
+   "title": "Filtration, reabsorption and ADH",
+   "kind": "Simulation",
+   "sub": "Glomerular filtration from Starling forces, the glucose transport maximum, and water reabsorption under antidiuretic hormone.",
+   "note": "SciGradify Biology's model with human textbook values (GFR about 125 mL/min). The mechanisms apply to domestic mammals; the renal glucose threshold differs by species (lower in the dog than in the cat).",
+   "tasks": null,
+   "lessons": [
+    "u02-13",
+    "u02-16"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/kidney"
+  },
+  {
+   "id": "punnett",
+   "title": "Punnett squares and crosses",
+   "kind": "Simulation",
+   "sub": "Monohybrid, dihybrid, codominant and X-linked crosses with the expected ratios, then breed offspring and test them with chi-squared.",
+   "note": "SciGradify Biology's simulation: unlinked genes, every genotype equally viable. Coat-colour and inherited-disease examples in the notes apply the same rules.",
+   "tasks": null,
+   "lessons": [
+    "u03-09",
+    "u03-10"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/punnett"
+  },
+  {
+   "id": "enzyme",
+   "title": "Enzyme kinetics and inhibition",
+   "kind": "Simulation",
+   "sub": "Michaelis–Menten rates, competitive and non-competitive inhibition and the Lineweaver–Burk plot, with a mystery inhibitor to identify.",
+   "note": "SciGradify Biology's simulation: standard steady-state kinetics; temperature and pH curves are illustrative.",
+   "tasks": null,
+   "lessons": [
+    "u03-02"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/enzyme"
+  },
+  {
+   "id": "immune",
+   "title": "Primary and secondary responses",
+   "kind": "Simulation",
+   "sub": "Give an infection or a vaccine dose on any day and watch antibody and pathogen levels: why primary courses and boosters work.",
+   "note": "SciGradify Biology's descriptive model of measured antibody responses, not a mechanistic simulation and not any licensed vaccine's schedule.",
+   "tasks": null,
+   "lessons": [
+    "u06-12",
+    "u06-16"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/immune"
+  }
+ ]
+}

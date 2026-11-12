@@ -5,7 +5,10 @@ import { QA, WRITTEN_ON } from "./qa.js";
 import { INTERACTIVES } from "./interactives.js";
 import { QUESTIONS, LESSONS } from "./registry.js";
 import { EVIDENCE, EXPLORATION } from "./evidence.js";
-export default {
+import { defineCourse } from "../../subjects/define.js";
+import { sociology } from "../../subjects/social.js";
+// the sociology adapter (kit/subjects/) holds this subject's QA rules and reviewer flags
+export default defineCourse(sociology, {
   site: "SocGradify", slug: "sociology", name: "Sociology", app: "../app.html", unitWord: "School", trackWord: "Stage",
   units: UNITS, tracks: TRACKS, paths: PATHS, blurbs: BLURBS,
   qa: QA, reviewLine: true, writtenOn: WRITTEN_ON,
@@ -14,7 +17,8 @@ export default {
   levels: ["Foundation", "Application", "Evaluation"],
   theme: { accent: "#ec4899", spectrum: "linear-gradient(90deg, #a44a99, #c026d3 25%, #ec4899 50%, #f43f5e 75%, #f59e0b)" },
   notice: "<b>Study material, not professional advice.</b> SocGradify explains sociological theories, evidence and debates. The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors. Lessons separate empirical findings from theoretical interpretations and from normative arguments, and statistics carry their source and year: check the latest release before relying on a figure.",
-  interactives: INTERACTIVES, evidence: EVIDENCE, exploration: EXPLORATION,   // evidence: each challenge → its lesson (mastery) practiceLabel: "Lab",
+  interactives: INTERACTIVES, evidence: EVIDENCE, exploration: EXPLORATION,   // evidence: each challenge → its lesson (mastery)
+  practiceLabel: "Lab",
   practiceNote: "Data explorers use real published data, with the source and the date it was retrieved; simulations and models say what they simplify, and simulated data is labelled. Exercises check your reasoning. Challenges inside them earn XP.",
   exams: [
     ...TRACKS.map((t, i) => ({ id: `stage-${i + 1}`, title: t.name, sub: "Mixed questions from every written school in this stage.", units: t.units, format: "science", count: 20, minutes: 30, pass: 0.7 })),
@@ -43,4 +47,4 @@ export default {
     ["Notes Studio", "Turn your own sociology notes and readings into flashcards and questions.", "../app.html#/notes"],
     ["PsychGradify", "The companion course: psychology.", "/psychgradify/course/"],
   ],
-};
+});

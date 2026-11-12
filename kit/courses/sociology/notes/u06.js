@@ -477,6 +477,8 @@ X: Emotional labour
 > Emotional labour is common in feminised service jobs but often unrecognised and unpaid.
 H: Harassment and change
 P: Workplace sexual harassment remains widespread: a Government Equalities Office survey in 2020 found 29% of employed respondents had experienced at least one form of sexual harassment at work in the previous 12 months. Policies such as flexible working rights, shared parental leave and pay gap reporting aim to reduce inequality.
+P: **Investigate with the lab.** Compare women's and men's labour force participation across countries.
+IX: data-gender
 K: Paid work is gendered through hours, segregation, the glass ceiling and emotional labour; preference and constraint explanations are debated.
 !: Treating women's part-time work as purely a free choice. Choices are shaped by childcare, norms and employer practices.
 EV: established | Occupations in the UK are segregated by gender, both horizontally and vertically.
@@ -497,6 +499,7 @@ NUM2#sociology-u06-13-q3@2: According to the 2020 Sexual Harassment Survey, what
 TF2#sociology-u06-13-q4@3: Crompton and Harris argued women's work choices are constrained by childcare and norms. | true | They criticised preference theory for ignoring constraints.
 M3#sociology-u06-13-q5@3: Why is care work often low-paid despite its skill? | Feminised work is undervalued | It requires no skill | Men dominate it | It is always unpaid | Work associated with women has historically been undervalued.
 SA2#sociology-u06-13-q6@2,3: Evaluate explanations of gender differences in paid work. | Patterns (part-time, segregation, glass ceiling); preference theory vs constraint (Hakim vs Crompton and Harris); motherhood penalty; undervaluing; emotional labour; harassment data; policies. | Patterns ; Preference ; Constraint ; Evidence ; Judgement
+M2#sociology-u06-13-q7@1: What is the gender pay gap? | The difference between men's and women's average earnings | Paying men and women differently for the same job only | The gap in unemployment rates | The difference in working hours | It reflects occupation, hours and discrimination, not only unequal pay for equal work.
 
 ## Gender and education
 LV: Intermediate · Application
@@ -515,6 +518,8 @@ X: Boys and "laddish" culture
 > Gender, class and ethnicity interact: White British boys eligible for free school meals have among the lowest average attainment.
 H: Subject choice
 P: Explanations include **gender socialisation** and stereotypes, **gendered subject images** (physics seen as masculine), **peer pressure** and **careers advice**. Initiatives to increase girls' participation in STEM include role models and targeted programmes, with mixed results.
+P: **Investigate with the lab.** Compare the gender gap in university enrolment across countries.
+IX: data-gender
 K: Girls now outperform boys on average, but subject choices remain gendered; explanations include feminism, opportunities, laddish cultures and subject images.
 !: Treating all boys as underachievers. Class and ethnicity strongly shape who underachieves.
 EV: established | Girls outperform boys on average in GCSE results in England.
@@ -534,6 +539,7 @@ M2#sociology-u06-14-q2@2: A boy pretends he didn't revise so a poor mark won't l
 TF2#sociology-u06-14-q3@2: Sharpe found girls' priorities shifted towards careers between the 1970s and 1990s. | true | Her 1994 study found more focus on careers and independence.
 M3#sociology-u06-14-q4@3: Why is "boys' underachievement" an oversimplification? | Class and ethnicity matter | All boys underachieve | Girls always fail | Gender has no effect at all | Some groups of boys do very well; others don't.
 SA2#sociology-u06-14-q5@2,3: Explain gender differences in educational achievement and subject choice. | Patterns; girls' improvement (feminism, opportunities, policies, Sharpe); boys (laddish culture: Francis, Jackson); intersections with class and ethnicity; subject choice (socialisation, subject image, peers, advice). | Achievement ; Explanations ; Subject choice ; Intersections
+M2#sociology-u06-14-q6@1: In many countries today, which sex enrols in university in greater numbers? | Women | Men | Equal numbers everywhere | It cannot be measured | In many countries women now outnumber men in higher education.
 
 ## Gender and the family
 LV: Intermediate · Evaluation
@@ -592,6 +598,8 @@ X: All-women shortlists
 > Critics argued shortlists were unfair to men or undermined women's legitimacy; supporters argued they countered existing bias.
 H: Does representation matter?
 P: **Descriptive representation** means legislators resembling the people they represent; **substantive representation** means acting for their interests. Research suggests more women legislators can increase attention to issues such as childcare and violence against women, though women differ politically, and a "critical mass" isn't automatic.
+P: **Investigate with the lab.** Compare the share of women in parliament across countries.
+IX: data-gender
 K: Women's political representation has risen in the UK to 40.5% of MPs in 2024; supply, demand and institutional barriers persist, and quotas are effective but debated.
 !: Assuming women politicians share the same views. Women differ by party, ideology and background.
 EV: established | Party quotas such as all-women shortlists increase women's representation.
@@ -612,6 +620,7 @@ M2#sociology-u06-16-q3@2: A party only lets women apply for some winnable seats.
 TF2#sociology-u06-16-q4@2: All women legislators share the same political views. | false | Women differ by party, ideology and background.
 M3#sociology-u06-16-q5@3: Why might online abuse be an institutional barrier? | It deters women from standing | It encourages candidates | It affects only men | It is illegal everywhere | Harassment raises the cost of political participation.
 SA2#sociology-u06-16-q6@2,3: Evaluate measures to increase women's political representation. | Trends (1928, 1997, 2024); barriers (supply, demand, institutional); all-women shortlists and quotas; arguments for and against; descriptive vs substantive representation. | Trends ; Barriers ; Quotas ; Effects
+M2#sociology-u06-16-q7@1: Which factor is linked to higher numbers of women in parliament? | Electoral quotas | First-past-the-post voting | Compulsory voting for men | Lower education levels | Countries with candidate or seat quotas often have more women in parliament.
 
 ## Gender and the media
 LV: Intermediate · Application

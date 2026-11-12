@@ -1,0 +1,1390 @@
+{
+ "api": 1,
+ "slug": "music",
+ "name": "Music",
+ "site": "MusicGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Study material, not an exam board or a teacher.</b> MusicGradify teaches music theory, history and musicianship for study. The lessons were drafted with AI assistance and haven't yet been reviewed by a music lecturer or examiner, so they may contain errors; check important points against your course materials, the current ABRSM syllabus or your exam board's specification. It isn't an ABRSM, Trinity or exam board product, doesn't award grades or qualifications, and can't replace lessons with a qualified instrumental, vocal or theory teacher.",
+ "notes": "/kit/courses/music/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · The language of music",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "from": "#c9a25e",
+   "to": "#e0b86a"
+  },
+  {
+   "name": "Stage 2 · Harmony and craft",
+   "units": [
+    4,
+    5,
+    7
+   ],
+   "from": "#d4a95c",
+   "to": "#b07d3a"
+  },
+  {
+   "name": "Stage 3 · Musicianship and sound",
+   "units": [
+    6,
+    8
+   ],
+   "from": "#c9a25e",
+   "to": "#4fb3a9"
+  },
+  {
+   "name": "Stage 4 · History and cultures",
+   "units": [
+    9,
+    10,
+    11
+   ],
+   "from": "#b9895a",
+   "to": "#8f6bb0"
+  },
+  {
+   "name": "Stage 5 · Analysis and composition",
+   "units": [
+    12
+   ],
+   "from": "#c9a25e",
+   "to": "#22d3ee"
+  }
+ ],
+ "paths": [
+  {
+   "id": "abrsm-1-5",
+   "name": "ABRSM Theory Grades 1–5",
+   "sub": "Notation, rhythm, scales, keys, intervals, chords, cadences, terms and instruments: the ground the Grade 5 theory exam covers.",
+   "units": [
+    1,
+    2,
+    3,
+    5,
+    8
+   ],
+   "select": null
+  },
+  {
+   "id": "abrsm-6-8",
+   "name": "ABRSM Theory Grades 6–8",
+   "sub": "Four-part harmony, figured bass, chromatic chords, counterpoint and stylistic composition.",
+   "units": [
+    3,
+    4,
+    7,
+    5,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "gcse",
+   "name": "GCSE Music",
+   "sub": "The elements of music, set-work styles, instruments, popular and world music, with listening and appraising.",
+   "units": [
+    1,
+    2,
+    3,
+    5,
+    8,
+    11,
+    6
+   ],
+   "select": null
+  },
+  {
+   "id": "alevel",
+   "name": "A level Music",
+   "sub": "Harmony, voice leading, form, the Western classical tradition from Baroque to modern, jazz and popular music, analysis and composition.",
+   "units": [
+    3,
+    4,
+    5,
+    9,
+    10,
+    11,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "year1",
+   "name": "University year 1",
+   "sub": "First-year tonal theory, aural skills, counterpoint, music history and analysis.",
+   "units": [
+    2,
+    3,
+    4,
+    6,
+    7,
+    9,
+    10,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "ear",
+   "name": "Ear and musicianship",
+   "sub": "Train the ear: rhythm, intervals, chords, cadences and dictation, built on the theory behind them.",
+   "units": [
+    1,
+    2,
+    6,
+    3
+   ],
+   "select": null
+  },
+  {
+   "id": "history",
+   "name": "Music in history and culture",
+   "sub": "From plainchant to film music, jazz and the music of the wider world.",
+   "units": [
+    9,
+    10,
+    11
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · The language of music",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Harmony and craft",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    5,
+    7
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Musicianship and sound",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    6,
+    8
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · History and cultures",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    9,
+    10,
+    11
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Analysis and composition",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Notation and Rhythm",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "Pitch, the stave and clefs",
+     "module": "Pitch and the stave"
+    },
+    {
+     "id": "u01-02",
+     "title": "Note names, ledger lines and octave registers",
+     "module": "Pitch and the stave"
+    },
+    {
+     "id": "u01-03",
+     "title": "Accidentals: sharps, flats and naturals",
+     "module": "Pitch and the stave"
+    },
+    {
+     "id": "u01-04",
+     "title": "Tones, semitones and enharmonic equivalents",
+     "module": "Pitch and the stave"
+    },
+    {
+     "id": "u01-05",
+     "title": "The alto and tenor clefs",
+     "module": "Pitch and the stave"
+    },
+    {
+     "id": "u01-06",
+     "title": "Note values and rests",
+     "module": "Rhythm and metre"
+    },
+    {
+     "id": "u01-07",
+     "title": "Dotted notes and ties",
+     "module": "Rhythm and metre"
+    },
+    {
+     "id": "u01-08",
+     "title": "Pulse, beat and metre",
+     "module": "Rhythm and metre"
+    },
+    {
+     "id": "u01-09",
+     "title": "Simple time signatures",
+     "module": "Rhythm and metre"
+    },
+    {
+     "id": "u01-10",
+     "title": "Compound time signatures",
+     "module": "Rhythm and metre"
+    },
+    {
+     "id": "u01-11",
+     "title": "Grouping notes and rests",
+     "module": "Rhythm and metre"
+    },
+    {
+     "id": "u01-12",
+     "title": "Triplets, duplets and irregular divisions",
+     "module": "Rhythm and metre"
+    },
+    {
+     "id": "u01-13",
+     "title": "Syncopation, anacrusis and cross-rhythm",
+     "module": "Rhythm and metre"
+    },
+    {
+     "id": "u01-14",
+     "title": "Irregular and changing metres",
+     "module": "Rhythm and metre"
+    },
+    {
+     "id": "u01-15",
+     "title": "Tempo and metronome marks",
+     "module": "Reading a score"
+    },
+    {
+     "id": "u01-16",
+     "title": "Dynamics and articulation",
+     "module": "Reading a score"
+    },
+    {
+     "id": "u01-17",
+     "title": "Ornaments",
+     "module": "Reading a score"
+    },
+    {
+     "id": "u01-18",
+     "title": "Repeats, signs and score navigation",
+     "module": "Reading a score"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Scales, Keys and Intervals",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "The major scale",
+     "module": "Major scales and keys"
+    },
+    {
+     "id": "u02-02",
+     "title": "Key signatures and the circle of fifths",
+     "module": "Major scales and keys"
+    },
+    {
+     "id": "u02-03",
+     "title": "Scale degrees and their names",
+     "module": "Major scales and keys"
+    },
+    {
+     "id": "u02-04",
+     "title": "Natural, harmonic and melodic minor scales",
+     "module": "Minor scales and keys"
+    },
+    {
+     "id": "u02-05",
+     "title": "Relative and tonic minor keys",
+     "module": "Minor scales and keys"
+    },
+    {
+     "id": "u02-06",
+     "title": "Minor key signatures",
+     "module": "Minor scales and keys"
+    },
+    {
+     "id": "u02-07",
+     "title": "Finding the key of a melody",
+     "module": "Minor scales and keys"
+    },
+    {
+     "id": "u02-08",
+     "title": "The chromatic scale",
+     "module": "Other scales"
+    },
+    {
+     "id": "u02-09",
+     "title": "Pentatonic and blues scales",
+     "module": "Other scales"
+    },
+    {
+     "id": "u02-10",
+     "title": "Whole-tone and octatonic scales",
+     "module": "Other scales"
+    },
+    {
+     "id": "u02-11",
+     "title": "The modes",
+     "module": "Other scales"
+    },
+    {
+     "id": "u02-12",
+     "title": "Interval number and quality",
+     "module": "Intervals"
+    },
+    {
+     "id": "u02-13",
+     "title": "Major, minor and perfect intervals",
+     "module": "Intervals"
+    },
+    {
+     "id": "u02-14",
+     "title": "Augmented and diminished intervals",
+     "module": "Intervals"
+    },
+    {
+     "id": "u02-15",
+     "title": "Compound intervals",
+     "module": "Intervals"
+    },
+    {
+     "id": "u02-16",
+     "title": "Inverting intervals",
+     "module": "Intervals"
+    },
+    {
+     "id": "u02-17",
+     "title": "Consonance and dissonance",
+     "module": "Intervals"
+    },
+    {
+     "id": "u02-18",
+     "title": "Transposition",
+     "module": "Intervals"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Chords and Harmony",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Triads: root, third and fifth",
+     "module": "Triads"
+    },
+    {
+     "id": "u03-02",
+     "title": "Major, minor, diminished and augmented triads",
+     "module": "Triads"
+    },
+    {
+     "id": "u03-03",
+     "title": "Inversions and figured bass symbols",
+     "module": "Triads"
+    },
+    {
+     "id": "u03-04",
+     "title": "Diatonic triads and Roman numerals",
+     "module": "Triads"
+    },
+    {
+     "id": "u03-05",
+     "title": "Chord symbols in popular music",
+     "module": "Triads"
+    },
+    {
+     "id": "u03-06",
+     "title": "The dominant seventh",
+     "module": "Seventh chords"
+    },
+    {
+     "id": "u03-07",
+     "title": "Types of seventh chord",
+     "module": "Seventh chords"
+    },
+    {
+     "id": "u03-08",
+     "title": "Diatonic seventh chords",
+     "module": "Seventh chords"
+    },
+    {
+     "id": "u03-09",
+     "title": "Tonic, predominant and dominant function",
+     "module": "Harmonic function"
+    },
+    {
+     "id": "u03-10",
+     "title": "Progressions by fifth and the circle of fifths sequence",
+     "module": "Harmonic function"
+    },
+    {
+     "id": "u03-11",
+     "title": "Harmonic rhythm",
+     "module": "Harmonic function"
+    },
+    {
+     "id": "u03-12",
+     "title": "Harmonising a melody",
+     "module": "Harmonic function"
+    },
+    {
+     "id": "u03-13",
+     "title": "Secondary dominants",
+     "module": "Chromatic harmony"
+    },
+    {
+     "id": "u03-14",
+     "title": "Modulation to related keys",
+     "module": "Chromatic harmony"
+    },
+    {
+     "id": "u03-15",
+     "title": "Modal mixture",
+     "module": "Chromatic harmony"
+    },
+    {
+     "id": "u03-16",
+     "title": "The Neapolitan sixth",
+     "module": "Chromatic harmony"
+    },
+    {
+     "id": "u03-17",
+     "title": "Augmented sixth chords",
+     "module": "Chromatic harmony"
+    },
+    {
+     "id": "u03-18",
+     "title": "The diminished seventh chord",
+     "module": "Chromatic harmony"
+    },
+    {
+     "id": "u03-19",
+     "title": "Extended chords: ninths, elevenths and thirteenths",
+     "module": "Chromatic harmony"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Voice Leading and Cadences",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "SATB layout and vocal ranges",
+     "module": "Four-part writing"
+    },
+    {
+     "id": "u04-02",
+     "title": "Doubling and spacing",
+     "module": "Four-part writing"
+    },
+    {
+     "id": "u04-03",
+     "title": "Parallel fifths and octaves",
+     "module": "Four-part writing"
+    },
+    {
+     "id": "u04-04",
+     "title": "Principles of voice leading",
+     "module": "Four-part writing"
+    },
+    {
+     "id": "u04-05",
+     "title": "Connecting root-position chords",
+     "module": "Four-part writing"
+    },
+    {
+     "id": "u04-06",
+     "title": "Using first-inversion chords",
+     "module": "Four-part writing"
+    },
+    {
+     "id": "u04-07",
+     "title": "The cadential six-four",
+     "module": "Four-part writing"
+    },
+    {
+     "id": "u04-08",
+     "title": "The perfect cadence",
+     "module": "Cadences"
+    },
+    {
+     "id": "u04-09",
+     "title": "The imperfect cadence",
+     "module": "Cadences"
+    },
+    {
+     "id": "u04-10",
+     "title": "The plagal cadence",
+     "module": "Cadences"
+    },
+    {
+     "id": "u04-11",
+     "title": "The interrupted cadence",
+     "module": "Cadences"
+    },
+    {
+     "id": "u04-12",
+     "title": "Cadences in minor keys and the tierce de Picardie",
+     "module": "Cadences"
+    },
+    {
+     "id": "u04-13",
+     "title": "Passing notes and auxiliary notes",
+     "module": "Non-chord notes and figured bass"
+    },
+    {
+     "id": "u04-14",
+     "title": "Suspensions",
+     "module": "Non-chord notes and figured bass"
+    },
+    {
+     "id": "u04-15",
+     "title": "Appoggiaturas, anticipations and pedal points",
+     "module": "Non-chord notes and figured bass"
+    },
+    {
+     "id": "u04-16",
+     "title": "Realising a figured bass",
+     "module": "Non-chord notes and figured bass"
+    },
+    {
+     "id": "u04-17",
+     "title": "Harmonising a chorale melody",
+     "module": "Non-chord notes and figured bass"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Melody and Form",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Melodic contour and range",
+     "module": "Melody"
+    },
+    {
+     "id": "u05-02",
+     "title": "Phrases and periods",
+     "module": "Melody"
+    },
+    {
+     "id": "u05-03",
+     "title": "Motif and sequence",
+     "module": "Melody"
+    },
+    {
+     "id": "u05-04",
+     "title": "Melodic development",
+     "module": "Melody"
+    },
+    {
+     "id": "u05-05",
+     "title": "Writing a melody",
+     "module": "Melody"
+    },
+    {
+     "id": "u05-06",
+     "title": "Binary form",
+     "module": "Small forms"
+    },
+    {
+     "id": "u05-07",
+     "title": "Ternary form",
+     "module": "Small forms"
+    },
+    {
+     "id": "u05-08",
+     "title": "Strophic and through-composed forms",
+     "module": "Small forms"
+    },
+    {
+     "id": "u05-09",
+     "title": "Rondo form",
+     "module": "Small forms"
+    },
+    {
+     "id": "u05-10",
+     "title": "Theme and variations",
+     "module": "Small forms"
+    },
+    {
+     "id": "u05-11",
+     "title": "Minuet and trio, scherzo and trio",
+     "module": "Small forms"
+    },
+    {
+     "id": "u05-12",
+     "title": "Ground bass, ostinato and passacaglia",
+     "module": "Small forms"
+    },
+    {
+     "id": "u05-13",
+     "title": "Sonata form",
+     "module": "Large forms"
+    },
+    {
+     "id": "u05-14",
+     "title": "The concerto",
+     "module": "Large forms"
+    },
+    {
+     "id": "u05-15",
+     "title": "The symphony",
+     "module": "Large forms"
+    },
+    {
+     "id": "u05-16",
+     "title": "Cyclic form and leitmotif",
+     "module": "Large forms"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Ear Training and Musicianship",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Hearing pulse and metre",
+     "module": "Rhythm and pitch"
+    },
+    {
+     "id": "u06-02",
+     "title": "Rhythmic dictation",
+     "module": "Rhythm and pitch"
+    },
+    {
+     "id": "u06-03",
+     "title": "Sight-singing and pitch matching",
+     "module": "Rhythm and pitch"
+    },
+    {
+     "id": "u06-04",
+     "title": "Solfège and movable do",
+     "module": "Rhythm and pitch"
+    },
+    {
+     "id": "u06-05",
+     "title": "Recognising intervals by ear",
+     "module": "Rhythm and pitch"
+    },
+    {
+     "id": "u06-06",
+     "title": "Melodic dictation",
+     "module": "Rhythm and pitch"
+    },
+    {
+     "id": "u06-07",
+     "title": "Hearing chord quality",
+     "module": "Harmony by ear"
+    },
+    {
+     "id": "u06-08",
+     "title": "Hearing cadences",
+     "module": "Harmony by ear"
+    },
+    {
+     "id": "u06-09",
+     "title": "Hearing bass lines and inversions",
+     "module": "Harmony by ear"
+    },
+    {
+     "id": "u06-10",
+     "title": "Harmonic dictation",
+     "module": "Harmony by ear"
+    },
+    {
+     "id": "u06-11",
+     "title": "Hearing instruments and texture",
+     "module": "Aural analysis"
+    },
+    {
+     "id": "u06-12",
+     "title": "Recognising style and period by ear",
+     "module": "Aural analysis"
+    },
+    {
+     "id": "u06-13",
+     "title": "Hearing modulation",
+     "module": "Aural analysis"
+    },
+    {
+     "id": "u06-14",
+     "title": "Sight-reading strategies",
+     "module": "Aural analysis"
+    },
+    {
+     "id": "u06-15",
+     "title": "Aural tests in graded exams",
+     "module": "Aural analysis"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Counterpoint and Texture",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Monophony, homophony and polyphony",
+     "module": "Texture"
+    },
+    {
+     "id": "u07-02",
+     "title": "Heterophony and other textures",
+     "module": "Texture"
+    },
+    {
+     "id": "u07-03",
+     "title": "Describing texture",
+     "module": "Texture"
+    },
+    {
+     "id": "u07-04",
+     "title": "Principles of species counterpoint",
+     "module": "Species counterpoint"
+    },
+    {
+     "id": "u07-05",
+     "title": "First species",
+     "module": "Species counterpoint"
+    },
+    {
+     "id": "u07-06",
+     "title": "Second species",
+     "module": "Species counterpoint"
+    },
+    {
+     "id": "u07-07",
+     "title": "Third species",
+     "module": "Species counterpoint"
+    },
+    {
+     "id": "u07-08",
+     "title": "Fourth species",
+     "module": "Species counterpoint"
+    },
+    {
+     "id": "u07-09",
+     "title": "Fifth species",
+     "module": "Species counterpoint"
+    },
+    {
+     "id": "u07-10",
+     "title": "Imitation and canon",
+     "module": "Contrapuntal forms and devices"
+    },
+    {
+     "id": "u07-11",
+     "title": "The two-part invention",
+     "module": "Contrapuntal forms and devices"
+    },
+    {
+     "id": "u07-12",
+     "title": "Fugue",
+     "module": "Contrapuntal forms and devices"
+    },
+    {
+     "id": "u07-13",
+     "title": "Invertible counterpoint",
+     "module": "Contrapuntal forms and devices"
+    },
+    {
+     "id": "u07-14",
+     "title": "Augmentation, diminution, inversion and retrograde",
+     "module": "Contrapuntal forms and devices"
+    },
+    {
+     "id": "u07-15",
+     "title": "The chorale prelude",
+     "module": "Contrapuntal forms and devices"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Sound, Instruments and Orchestration",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Sound waves: frequency, amplitude and pitch",
+     "module": "The science of sound"
+    },
+    {
+     "id": "u08-02",
+     "title": "The harmonic series and timbre",
+     "module": "The science of sound"
+    },
+    {
+     "id": "u08-03",
+     "title": "Standing waves in strings and pipes",
+     "module": "The science of sound"
+    },
+    {
+     "id": "u08-04",
+     "title": "Beats, tuning and temperament",
+     "module": "The science of sound"
+    },
+    {
+     "id": "u08-05",
+     "title": "Loudness, decibels and hearing",
+     "module": "The science of sound"
+    },
+    {
+     "id": "u08-06",
+     "title": "Room acoustics",
+     "module": "The science of sound"
+    },
+    {
+     "id": "u08-07",
+     "title": "The string family",
+     "module": "Instrument families"
+    },
+    {
+     "id": "u08-08",
+     "title": "The woodwind family",
+     "module": "Instrument families"
+    },
+    {
+     "id": "u08-09",
+     "title": "The brass family",
+     "module": "Instrument families"
+    },
+    {
+     "id": "u08-10",
+     "title": "Percussion",
+     "module": "Instrument families"
+    },
+    {
+     "id": "u08-11",
+     "title": "Keyboard instruments",
+     "module": "Instrument families"
+    },
+    {
+     "id": "u08-12",
+     "title": "The voice",
+     "module": "Instrument families"
+    },
+    {
+     "id": "u08-13",
+     "title": "Electronic instruments and music technology",
+     "module": "Instrument families"
+    },
+    {
+     "id": "u08-14",
+     "title": "Transposing instruments",
+     "module": "Orchestration"
+    },
+    {
+     "id": "u08-15",
+     "title": "Ranges and registers",
+     "module": "Orchestration"
+    },
+    {
+     "id": "u08-16",
+     "title": "The orchestra and its layout",
+     "module": "Orchestration"
+    },
+    {
+     "id": "u08-17",
+     "title": "Doubling and balance",
+     "module": "Orchestration"
+    },
+    {
+     "id": "u08-18",
+     "title": "Writing for strings",
+     "module": "Orchestration"
+    },
+    {
+     "id": "u08-19",
+     "title": "Orchestral colour",
+     "module": "Orchestration"
+    },
+    {
+     "id": "u08-20",
+     "title": "Reading a full score",
+     "module": "Orchestration"
+    },
+    {
+     "id": "u08-21",
+     "title": "Chamber ensembles",
+     "module": "Orchestration"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Music History: Medieval to Classical",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Plainchant",
+     "module": "The medieval period"
+    },
+    {
+     "id": "u09-02",
+     "title": "Organum and early polyphony",
+     "module": "The medieval period"
+    },
+    {
+     "id": "u09-03",
+     "title": "Ars nova and medieval song",
+     "module": "The medieval period"
+    },
+    {
+     "id": "u09-04",
+     "title": "Renaissance sacred polyphony",
+     "module": "The Renaissance"
+    },
+    {
+     "id": "u09-05",
+     "title": "The madrigal",
+     "module": "The Renaissance"
+    },
+    {
+     "id": "u09-06",
+     "title": "Renaissance instrumental music",
+     "module": "The Renaissance"
+    },
+    {
+     "id": "u09-07",
+     "title": "Baroque style and the basso continuo",
+     "module": "The Baroque"
+    },
+    {
+     "id": "u09-08",
+     "title": "Baroque opera and oratorio",
+     "module": "The Baroque"
+    },
+    {
+     "id": "u09-09",
+     "title": "The concerto grosso and the suite",
+     "module": "The Baroque"
+    },
+    {
+     "id": "u09-10",
+     "title": "Bach and Handel",
+     "module": "The Baroque"
+    },
+    {
+     "id": "u09-11",
+     "title": "The Classical style",
+     "module": "The Classical period"
+    },
+    {
+     "id": "u09-12",
+     "title": "Haydn, Mozart and the Classical symphony",
+     "module": "The Classical period"
+    },
+    {
+     "id": "u09-13",
+     "title": "The string quartet",
+     "module": "The Classical period"
+    },
+    {
+     "id": "u09-14",
+     "title": "Classical opera",
+     "module": "The Classical period"
+    },
+    {
+     "id": "u09-15",
+     "title": "Beethoven",
+     "module": "The Classical period"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Music History: Romantic to the Present",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Romanticism in music",
+     "module": "The Romantic era"
+    },
+    {
+     "id": "u10-02",
+     "title": "The Lied and art song",
+     "module": "The Romantic era"
+    },
+    {
+     "id": "u10-03",
+     "title": "Programme music and the symphonic poem",
+     "module": "The Romantic era"
+    },
+    {
+     "id": "u10-04",
+     "title": "Romantic piano music",
+     "module": "The Romantic era"
+    },
+    {
+     "id": "u10-05",
+     "title": "Romantic opera: Verdi and Wagner",
+     "module": "The Romantic era"
+    },
+    {
+     "id": "u10-06",
+     "title": "Nationalism in music",
+     "module": "The Romantic era"
+    },
+    {
+     "id": "u10-07",
+     "title": "Impressionism",
+     "module": "The twentieth century and after"
+    },
+    {
+     "id": "u10-08",
+     "title": "Expressionism and atonality",
+     "module": "The twentieth century and after"
+    },
+    {
+     "id": "u10-09",
+     "title": "Serialism",
+     "module": "The twentieth century and after"
+    },
+    {
+     "id": "u10-10",
+     "title": "Neoclassicism",
+     "module": "The twentieth century and after"
+    },
+    {
+     "id": "u10-11",
+     "title": "Minimalism",
+     "module": "The twentieth century and after"
+    },
+    {
+     "id": "u10-12",
+     "title": "Electronic and experimental music",
+     "module": "The twentieth century and after"
+    },
+    {
+     "id": "u10-13",
+     "title": "Film music",
+     "module": "The twentieth century and after"
+    },
+    {
+     "id": "u10-14",
+     "title": "Music since 1975",
+     "module": "The twentieth century and after"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Popular Music, Jazz and World Music",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "The blues",
+     "module": "Blues and jazz"
+    },
+    {
+     "id": "u11-02",
+     "title": "The origins of jazz",
+     "module": "Blues and jazz"
+    },
+    {
+     "id": "u11-03",
+     "title": "Swing and the big band",
+     "module": "Blues and jazz"
+    },
+    {
+     "id": "u11-04",
+     "title": "Bebop and modern jazz",
+     "module": "Blues and jazz"
+    },
+    {
+     "id": "u11-05",
+     "title": "Jazz harmony and the ii–V–I",
+     "module": "Blues and jazz"
+    },
+    {
+     "id": "u11-06",
+     "title": "Improvisation",
+     "module": "Blues and jazz"
+    },
+    {
+     "id": "u11-07",
+     "title": "Rock and roll and the birth of pop",
+     "module": "Popular music"
+    },
+    {
+     "id": "u11-08",
+     "title": "Popular song structure",
+     "module": "Popular music"
+    },
+    {
+     "id": "u11-09",
+     "title": "Rock, soul and funk",
+     "module": "Popular music"
+    },
+    {
+     "id": "u11-10",
+     "title": "Hip hop and electronic dance music",
+     "module": "Popular music"
+    },
+    {
+     "id": "u11-11",
+     "title": "Musical theatre",
+     "module": "Popular music"
+    },
+    {
+     "id": "u11-12",
+     "title": "Indian classical music: raga and tala",
+     "module": "World music"
+    },
+    {
+     "id": "u11-13",
+     "title": "West African drumming",
+     "module": "World music"
+    },
+    {
+     "id": "u11-14",
+     "title": "Indonesian gamelan",
+     "module": "World music"
+    },
+    {
+     "id": "u11-15",
+     "title": "Latin American music",
+     "module": "World music"
+    },
+    {
+     "id": "u11-16",
+     "title": "Arabic music and maqam",
+     "module": "World music"
+    },
+    {
+     "id": "u11-17",
+     "title": "Folk music of the British Isles",
+     "module": "World music"
+    },
+    {
+     "id": "u11-18",
+     "title": "Ethnomusicology",
+     "module": "World music"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Composition and Analysis",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Approaches to analysis",
+     "module": "Analysis"
+    },
+    {
+     "id": "u12-02",
+     "title": "Harmonic analysis",
+     "module": "Analysis"
+    },
+    {
+     "id": "u12-03",
+     "title": "Analysing melody and motif",
+     "module": "Analysis"
+    },
+    {
+     "id": "u12-04",
+     "title": "Analysing form",
+     "module": "Analysis"
+    },
+    {
+     "id": "u12-05",
+     "title": "Schenkerian analysis",
+     "module": "Analysis"
+    },
+    {
+     "id": "u12-06",
+     "title": "Post-tonal analysis and pitch-class sets",
+     "module": "Analysis"
+    },
+    {
+     "id": "u12-07",
+     "title": "Writing about music",
+     "module": "Analysis"
+    },
+    {
+     "id": "u12-08",
+     "title": "Composing to a brief",
+     "module": "Composition"
+    },
+    {
+     "id": "u12-09",
+     "title": "Developing musical ideas",
+     "module": "Composition"
+    },
+    {
+     "id": "u12-10",
+     "title": "Writing for voices",
+     "module": "Composition"
+    },
+    {
+     "id": "u12-11",
+     "title": "Writing for instruments",
+     "module": "Composition"
+    },
+    {
+     "id": "u12-12",
+     "title": "Composing in a style",
+     "module": "Composition"
+    },
+    {
+     "id": "u12-13",
+     "title": "Contemporary compositional techniques",
+     "module": "Composition"
+    },
+    {
+     "id": "u12-14",
+     "title": "Composing with music technology",
+     "module": "Composition"
+    },
+    {
+     "id": "u12-15",
+     "title": "Presenting a score",
+     "module": "Composition"
+    }
+   ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "harmonics",
+   "title": "Harmonics on a string",
+   "kind": "Simulation",
+   "sub": "Standing waves on a string fixed at both ends: step through the harmonics, count nodes and antinodes, and change tension and mass to retune every harmonic at once.",
+   "note": "SciGradify Physics' simulation of an ideal, lossless string (f = nv/2L); a real string's harmonics are slightly sharp because of its stiffness.",
+   "tasks": null,
+   "lessons": [
+    "u08-03",
+    "u08-02",
+    "u08-07"
+   ],
+   "url": "https://getgradify.com/musicgradify/course/#/practice/harmonics"
+  },
+  {
+   "id": "beats",
+   "title": "Beats and tuning",
+   "kind": "Simulation",
+   "sub": "Two pure tones a few hertz apart: see the beats, and tune the second note until the beating matches a target rate or stops.",
+   "note": "SciGradify Physics' simulation of two sine waves of equal amplitude; real instruments also beat between their upper harmonics.",
+   "tasks": null,
+   "lessons": [
+    "u08-04",
+    "u08-01"
+   ],
+   "url": "https://getgradify.com/musicgradify/course/#/practice/beats"
+  }
+ ]
+}

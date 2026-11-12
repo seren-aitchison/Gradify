@@ -20,12 +20,12 @@ export const GROUPS = [
     title: "By stage of life",
     blurb: "Where you are in your education or career.",
     items: [
-      { n: "UnderGradify", who: "Undergraduates at university", i: "cap", c: "3c78d8", d: "For undergraduates: module revision, lecture notes, flashcards, exam prep, coursework planning and degree progress.", u: "undergradify.com", built: true, status: "soon" },
-      { n: "PostGradify", who: "Master's and PhD students, researchers", i: "book", c: "2e5e18", d: "For postgraduates and researchers: advanced study, literature organisation, dissertation planning and specialist exams.", u: "postgradify.com", built: true, status: "soon" },
-      { n: "ProGradify", who: "Working professionals", i: "briefcase", c: "e69138", d: "For working professionals: CPD, certification prep, workplace skills and career progression.", u: "progradify.com", built: true, status: "soon" },
-      { n: "EduGradify", who: "Teachers and educators", i: "board", c: "ffc002", d: "For teachers and educators: teaching resources, lesson preparation and professional development.", built: true, status: "soon" },
-      { n: "YouthGradify", who: "Teenagers, 13 to 18", i: "backpack", c: "ffea05", d: "For young people: school learning, new skills and early career decisions, bridging school and adult learning.", u: "youthgradify.com", built: true, status: "soon" },
-      { n: "JuniorGradify", who: "Children, 5 to 12", i: "pencil", c: "a0ff74", d: "For younger learners: strong foundations, interactive practice and age-appropriate activities.", u: "juniorgradify.com", built: true, status: "soon" },
+      { n: "UnderGradify", who: "Undergraduates at university", i: "cap", c: "3c78d8", d: "For undergraduates: module revision, lecture notes, flashcards, exam prep, coursework planning and degree progress.", u: "undergradify.com", built: true, status: "beta" },
+      { n: "PostGradify", who: "Master's and PhD students, researchers", i: "book", c: "2e5e18", d: "For postgraduates and researchers: advanced study, literature organisation, dissertation planning and specialist exams.", u: "postgradify.com", built: true, status: "beta" },
+      { n: "ProGradify", who: "Working professionals", i: "briefcase", c: "e69138", d: "For working professionals: CPD, certification prep, workplace skills and career progression.", u: "progradify.com", built: true, status: "beta" },
+      { n: "EduGradify", who: "Teachers and educators", i: "board", c: "ffc002", d: "For teachers and educators: teaching resources, lesson preparation and professional development.", built: true, status: "beta" },
+      { n: "YouthGradify", who: "Teenagers, 13 to 18", i: "backpack", c: "ffea05", d: "For young people: school learning, new skills and early career decisions, bridging school and adult learning.", u: "youthgradify.com", built: true, status: "beta" },
+      { n: "JuniorGradify", who: "Children, 5 to 12", i: "pencil", c: "a0ff74", d: "For younger learners: strong foundations, interactive practice and age-appropriate activities.", u: "juniorgradify.com", built: true, status: "beta" },
     ],
   },
   {
@@ -34,18 +34,18 @@ export const GROUPS = [
     blurb: "Training and revision for a specific career.",
     items: [
       { n: "LawGradify", who: "Law students and trainee lawyers", i: "scales", c: "9f2f17", d: "Case law, legislation, legal terminology and exam prep for legal qualifications.", u: "gradifylaw.com", built: true, status: "live" },
-      { n: "BusinessGradify", who: "Business students and managers", i: "building", c: "674ea6", d: "Management, entrepreneurship, strategy, marketing, operations and real case studies.", u: "gradifybusiness.com", built: true, status: "soon" },
-      { n: "FinanceGradify", who: "Finance and accounting students", i: "coins", c: "783f04", d: "Finance and accounting concepts, and revision for professional qualifications.", u: "gradifyfinance.com", built: true, status: "soon" },
-      { n: "InvestorGradify", who: "New and growing investors", i: "trend", c: "808250", d: "Markets, portfolios, valuation and risk. Investing education, not financial advice.", built: true, status: "soon" },
-      { n: "MedGradify", who: "Medical students and junior doctors", i: "stethoscope", c: "4641ff", d: "Anatomy, physiology, pharmacology, clinical concepts and medical exam revision.", u: "gradifymed.com", built: true, status: "soon" },
-      { n: "DentalGradify", who: "Dental students and dentists", i: "tooth", c: "40d4b1", d: "Oral anatomy, dental materials, clinical knowledge and dentistry exams.", u: "gradifydental.com", built: true, status: "soon" },
-      { n: "VetGradify", who: "Veterinary students", i: "paw", c: "409a6e", d: "Animal anatomy, physiology, pathology, pharmacology and veterinary exam prep.", u: "gradifyvet.com", built: true, status: "soon" },
+      { n: "BusinessGradify", who: "Business students and managers", i: "building", c: "674ea6", d: "Management, entrepreneurship, strategy, marketing, operations and real case studies.", u: "gradifybusiness.com", built: true, status: "beta" },
+      { n: "FinanceGradify", who: "Finance and accounting students", i: "coins", c: "783f04", d: "Finance and accounting concepts, and revision for professional qualifications.", u: "gradifyfinance.com", built: true, status: "beta" },
+      { n: "InvestorGradify", who: "New and growing investors", i: "trend", c: "808250", d: "Markets, portfolios, valuation and risk. Investing education, not financial advice.", built: true, status: "beta" },
+      { n: "MedGradify", who: "Medical students and junior doctors", i: "stethoscope", c: "4641ff", d: "Anatomy, physiology, pharmacology, clinical concepts and medical exam revision.", u: "gradifymed.com", built: true, status: "beta" },
+      { n: "DentalGradify", who: "Dental students and dentists", i: "tooth", c: "40d4b1", d: "Oral anatomy, dental materials, clinical knowledge and dentistry exams.", u: "gradifydental.com", built: true, status: "beta" },
+      { n: "VetGradify", who: "Veterinary students", i: "paw", c: "409a6e", d: "Animal anatomy, physiology, pathology, pharmacology and veterinary exam prep.", u: "gradifyvet.com", built: true, status: "beta" },
       { n: "NurseGradify", who: "Student nurses and midwives", i: "cross", c: "6a60ff", d: "Clinical knowledge, pharmacology, patient care and nursing assessments.", built: true, status: "live" },
       { n: "PharmaGradify", who: "Pharmacy students and pharmacists", i: "pill", c: "f99246", d: "Medicinal chemistry, drug mechanisms, therapeutics and pharmacy exams.", u: "gradifypharma.com", built: true, status: "beta" },
-      { n: "HealthGradify", who: "Anyone improving their health", i: "heartbeat", c: "0e98e5", d: "Health literacy, wellbeing, and the fundamentals of anatomy and physiology.", u: "gradifyhealth.com", built: true, status: "soon" },
+      { n: "HealthGradify", who: "Anyone improving their health", i: "heartbeat", c: "0e98e5", d: "Health literacy, wellbeing, and the fundamentals of anatomy and physiology.", u: "gradifyhealth.com", built: true, status: "beta" },
       { n: "PsychGradify", who: "Psychology students", i: "brain", c: "bbabbe", d: "Cognitive science, behaviour, research methods, statistics and psychology exams.", built: true, status: "beta" },
-      { n: "InternshipGradify", who: "Students looking for work experience", i: "badge", c: "0aa4c9", d: "Internships and work experience, matched to what you've learned on Gradify.", built: true, status: "soon" },
-      { n: "EngineerGradify", who: "Engineering students", i: "cog", c: "ff5600", d: "Maths, mechanics, materials, systems and engineering problem-solving.", u: "gradifyeng.com", built: true, status: "soon" },
+      { n: "InternshipGradify", who: "Students looking for work experience", i: "badge", c: "0aa4c9", d: "Internships and work experience, matched to what you've learned on Gradify.", built: true, status: "beta" },
+      { n: "EngineerGradify", who: "Engineering students", i: "cog", c: "ff5600", d: "Maths, mechanics, materials, systems and engineering problem-solving.", u: "gradifyeng.com", built: true, status: "beta" },
     ],
   },
   {
@@ -54,15 +54,16 @@ export const GROUPS = [
     blurb: "Study a subject in its own space.",
     items: [
       { n: "MathGradify", who: "Maths students at any level", i: "sigma", c: "70a7dc", d: "Maths from everyday numeracy and GCSE to A level, university and data science, with worked examples, generated practice and line-by-line checking.", u: "gradifymath.com", built: true, status: "beta" },
-      { n: "SciGradify", who: "Science students", i: "atom", c: "6aa84f", d: "Biology, chemistry, physics and the scientific method, plus interdisciplinary science.", built: true, status: "live" },
-      { n: "EcoGradify", who: "Ecology and environment students", i: "leaf", c: "6aa84f", d: "Ecology, environmental science, biodiversity and sustainability.", u: "ecogradify.com", built: true, status: "soon" },
+      { n: "SciGradify", who: "Science students", i: "atom", c: "6aa84f", d: "Biology, chemistry, physics and the scientific method, plus interdisciplinary science.", built: true, status: "beta" },
+      { n: "EcoGradify", who: "Ecology and environment students", i: "leaf", c: "6aa84f", d: "Ecology, environmental science, biodiversity and sustainability.", u: "ecogradify.com", built: true, status: "beta" },
       { n: "SocGradify", who: "Social science students", i: "people", c: "a44a99", d: "Sociology, social structures, research methods and social policy.", built: true, status: "beta" },
-      { n: "LitGradify", who: "Literature and English students", i: "feather", c: "8c27ca", d: "Literary analysis, close reading, critical interpretation, writing and literary history.", u: "litgradify.com", built: true, status: "soon" },
-      { n: "LanguageGradify", who: "Language learners", i: "languages", c: "dd7d6b", d: "Vocabulary, grammar, pronunciation, listening, speaking and writing practice.", u: "gradifylanguage.com", built: true, status: "soon" },
-      { n: "ArtGradify", who: "Artists and design students", i: "palette", c: "f055dd", d: "Techniques, art history, visual composition and creative skills.", u: "gradifyart.com", built: true, status: "soon" },
-      { n: "MusicGradify", who: "Musicians and music students", i: "music", c: "a4834a", d: "Theory, instruments, composition, ear training and music history.", u: "gradifymusic.com", built: true, status: "soon" },
+      { n: "HistoryGradify", who: "History students, GCSE to A level and beyond", i: "landmark", c: "b0703a", d: "British, European and world history, historical thinking, sources and interpretations, and essay writing.", built: true, status: "beta" },
+      { n: "LitGradify", who: "Literature and English students", i: "feather", c: "8c27ca", d: "Literary analysis, close reading, critical interpretation, writing and literary history.", u: "litgradify.com", built: true, status: "beta" },
+      { n: "LanguageGradify", who: "Language learners", i: "languages", c: "dd7d6b", d: "Vocabulary, grammar, pronunciation, listening, speaking and writing practice.", u: "gradifylanguage.com", built: true, status: "beta" },
+      { n: "ArtGradify", who: "Artists and design students", i: "palette", c: "f055dd", d: "Techniques, art history, visual composition and creative skills.", u: "gradifyart.com", built: true, status: "beta" },
+      { n: "MusicGradify", who: "Musicians and music students", i: "music", c: "a4834a", d: "Theory, instruments, composition, ear training and music history.", u: "gradifymusic.com", built: true, status: "beta" },
       { n: "SportGradify", who: "Athletes, coaches and sport students", i: "dumbbell", c: "0c26b8", d: "Exercise science, training principles, performance and coaching.", u: "gradifysport.com", built: true, status: "beta" },
-      { n: "CreateGradify", who: "Makers and creative thinkers", i: "bulb", c: "e52153", d: "Ideation, design thinking and creative problem-solving across disciplines.", built: true, status: "soon" },
+      { n: "CreateGradify", who: "Makers and creative thinkers", i: "bulb", c: "e52153", d: "Ideation, design thinking and creative problem-solving across disciplines.", built: true, status: "beta" },
     ],
   },
   {
@@ -73,7 +74,7 @@ export const GROUPS = [
       {
         n: "TechGradify · ForgeLab", who: "Developers, data scientists and AI engineers", i: "forge", c: "666666",
         d: "Hands-on coding, data science and AI engineering, with instant feedback. Forge is the future of TechGradify.",
-        u: "techgradify.com", soon: true, spot: "ff5a4d", status: "soon",
+        u: "techgradify.com", soon: true, built: true, spot: "ff5a4d", status: "beta",
       },
       { n: "Klerio", who: "Small teams with contact lists", i: "checklist", c: "2a8c82", d: "Clean contact lists and see what changed every week.", u: "getklerio.com", tm: false, status: "external" },
     ],
@@ -104,6 +105,7 @@ export const KEYWORDS = {
   SciGradify: "science physics chemistry biology bioinformatics molecular",
   EcoGradify: "environment climate ecology sustainability nature",
   SocGradify: "sociology politics economics history geography",
+  HistoryGradify: "history gcse a level medieval tudor stuart industrial revolution world war cold war empire sources essays",
   LitGradify: "english reading books poetry writing literature",
   LanguageGradify: "spanish french german languages vocabulary speaking",
   ArtGradify: "drawing painting design illustration",
@@ -116,7 +118,7 @@ export const KEYWORDS = {
 };
 
 // Sites that rotate through the big featured card at the top of the page, in order.
-export const FEATURED = ["LawGradify", "SciGradify", "NurseGradify", "TechGradify · ForgeLab"]; // live courses first
+export const FEATURED = ["LawGradify", "NurseGradify", "SciGradify", "TechGradify · ForgeLab"]; // live courses first, then beta
 
 // Sites listed in the "Start with your stage" panel.
 export const START_HERE = ["UnderGradify", "PostGradify", "ProGradify"];

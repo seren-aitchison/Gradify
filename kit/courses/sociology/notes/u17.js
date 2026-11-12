@@ -95,6 +95,8 @@ X: A positivist study of educational attainment
 > Hypothesis: children eligible for free school meals achieve lower GCSE results than others.
 > Data: official school performance data for every secondary school in England.
 > Analysis: compare attainment by eligibility, controlling for prior attainment and region; report patterns and effect sizes.
+P: **Investigate with the lab.** Choose methods for a positivist study, and note what kind of data it favours.
+IX: method-chooser
 K: Positivism treats society as an objective reality to be measured and explained, favouring large-scale, quantitative, replicable research.
 H: Criticisms
 P: **Interpretivists** argue that people act on meanings, so counting behaviour misses why it happens; and categories in questionnaires may impose the researcher's meanings. Official statistics are themselves socially constructed (Kitsuse and Cicourel, 1963). **Realists** argue that causes may be unobservable mechanisms, not just regular patterns. Feminist and critical researchers question whether value-free research is possible.
@@ -114,6 +116,7 @@ M2#sociology-u17-03-q2@2: A researcher wants to measure how voting differs by so
 TF2#sociology-u17-03-q3@3: Positivism means any research that uses numbers. | false | Positivism is a set of assumptions about knowledge; interpretivists may use numbers too.
 M3#sociology-u17-03-q4@3: What is the strongest interpretivist objection to positivism? | Measurement can miss meanings | Positivists never collect data | Statistics are always illegal to use | Positivists study only individuals | Interpretivists argue that understanding meaning, not just counting behaviour, is essential.
 SA3#sociology-u17-03-q5@3: Evaluate the positivist approach to sociological research. | Strengths: reliable, standardised, replicable data; large representative samples; patterns, comparisons and hypothesis testing (Durkheim). Weaknesses: neglects meaning and imposes researchers' categories (interpretivism); official statistics socially constructed; realists say mechanisms may be unobservable; value freedom questioned. | Assumptions ; Strengths ; Interpretivist critique ; Constructed statistics ; Realist or feminist critique
+M2#sociology-u17-03-q6@1: Which methods do positivists prefer? | Quantitative methods such as surveys and official statistics | Unstructured interviews | Participant observation | Personal documents | Positivists seek objective, measurable and replicable data.
 
 ## Interpretivism
 LV: Intermediate · Foundation
@@ -133,6 +136,8 @@ X: An interpretivist study of school exclusion
 > Question: how do excluded pupils make sense of their exclusion?
 > Method: unstructured interviews with 15 young people and observation in a pupil referral unit.
 > Finding type: themes such as feeling "labelled from day one" and seeking respect from peers, interpreted in context.
+P: **Investigate with the lab.** Choose methods for an interpretivist study, and compare them with the positivist choice.
+IX: method-chooser
 K: Interpretivism seeks to understand social action from participants' viewpoints, using qualitative methods that prioritise validity and meaning.
 H: Criticisms
 P: Positivists argue interpretivist research is **unreliable** (hard to replicate), based on **small, unrepresentative** samples, and open to researcher bias. Structuralists argue it overlooks the wider social structures that constrain meanings and actions. Some critics argue it can't explain large-scale patterns such as class differences in attainment.
@@ -152,6 +157,7 @@ M2#sociology-u17-04-q2@2: A researcher joins a group of skateboarders for six mo
 TF2#sociology-u17-04-q3@3: Interpretivists argue that people simply react to external social forces like objects responding to gravity. | false | They argue people interpret and actively create their social world.
 M3#sociology-u17-04-q4@3: What is the strongest structuralist criticism of interpretivism? | It can neglect constraining structures | It uses too many statistics | It always uses large samples | It ignores what people say | Focusing on meaning may miss constraints such as class, economy and institutions.
 SA3#sociology-u17-04-q5@3: Compare positivist and interpretivist approaches to research. | Positivism: objective social facts, causal explanation, quantitative methods, reliability, representativeness, generalisation. Interpretivism: constructed reality, meaning and Verstehen, qualitative methods, validity, depth. Each criticises the other (meaning versus reliability). Many sociologists combine them in mixed methods or adopt realism. | Positivist assumptions and methods ; Interpretivist assumptions and methods ; Reliability versus validity ; Mutual criticisms ; Combination or realism
+M2#sociology-u17-04-q6@1: What do interpretivists aim to understand? | The meanings people give to their actions | The laws that govern society | Only measurable behaviour | Statistical patterns in large data sets | Interpretivists seek verstehen: understanding from the actor's view.
 
 ## Realism
 LV: Advanced · Application
@@ -207,6 +213,8 @@ X: Measuring the gender pay gap
 > Data: earnings for a large, representative sample of employees.
 > Analysis: compare median hourly pay for men and women, then by age, occupation and full- or part-time work.
 > Value: shows how big the gap is and where it is largest, which interviews alone couldn't.
+P: **Investigate with the lab.** Answer the five questions for a study measuring patterns across a large population, and compare the suggested methods.
+IX: method-chooser
 K: Quantitative research measures patterns in large samples reliably, enabling generalisation, comparison and hypothesis testing.
 H: Limitations
 P: Numbers can hide meaning: a survey can show that many people don't vote, but not what non-voting means to them. Closed questions impose the researcher's categories. Survey answers may reflect social desirability rather than behaviour. Statistics depend on how concepts are operationalised and how data were collected, and official statistics may reflect institutional processes.
@@ -226,6 +234,7 @@ M2#sociology-u17-06-q2@2: A researcher wants to know how many people in each reg
 TF2#sociology-u17-06-q3@3: Quantitative data can't be affected by how a concept was defined and measured. | false | Every figure depends on operationalisation and data collection.
 M3#sociology-u17-06-q4@3: What is the main interpretivist criticism of quantitative research? | It shows patterns without meanings | It uses samples that are too large | It always lacks reliability | It never tests hypotheses | Counting behaviour doesn't explain the meanings behind it.
 SA3#sociology-u17-06-q5@3: Evaluate the use of quantitative research in sociology. | Strengths: large representative samples, reliability and replicability, generalisation, hypothesis testing, policy relevance (e.g. pay gap). Weaknesses: misses meaning, imposes categories, social desirability, depends on operationalisation, official statistics constructed. Often best combined with qualitative work. | Strengths ; Example ; Meaning critique ; Operationalisation or desirability ; Mixed methods
+M2#sociology-u17-06-q6@1: Which method suits measuring patterns across a large population? | A large-scale survey | A single in-depth interview | Covert participant observation | A life history of one person | Quantitative surveys collect comparable data from many people.
 
 ## Qualitative research
 LV: Introductory · Foundation
@@ -246,6 +255,9 @@ X: Studying the experience of debt
 > A survey shows how many households are in arrears.
 > In-depth interviews reveal the shame, juggling between bills and the role of family loans that the survey can't capture.
 > These findings may lead to new survey questions, showing how the two kinds of research complement each other.
+P: **Investigate with the lab.** Answer the questions for a study of how people experience a situation, then try coding interviews.
+IX: method-chooser
+IX: coding
 K: Qualitative research gives rich, valid insight into meaning, process and context, often with small samples studied in depth.
 H: Limitations
 P: Samples are usually small and not statistically representative, so findings can't be generalised in the statistical sense. Studies are hard to replicate exactly, and the researcher's presence and interpretation shape the data. Analysis is time-consuming. Qualitative researchers respond with transparency about methods, **reflexivity**, careful sampling for theoretical relevance and the idea of **transferability**: giving enough detail for readers to judge where findings might apply.
@@ -265,6 +277,7 @@ M2#sociology-u17-07-q2@2: A researcher wants to understand how refugees experien
 TF2#sociology-u17-07-q3@3: Qualitative research aims to produce findings that can be statistically generalised to whole populations. | false | It aims at depth and transferability rather than statistical generalisation.
 M3#sociology-u17-07-q4@3: How do qualitative researchers respond to the charge of researcher bias? | Through reflexivity and transparency about their methods | By using larger random samples | By refusing to interpret data | By avoiding all contact with participants | Reflecting on and reporting their own influence lets readers judge interpretations.
 SA3#sociology-u17-07-q5@3: Evaluate the use of qualitative research in sociology. | Strengths: validity, rich data in participants' words, flexibility, process and context, hidden groups, theory generation. Weaknesses: small unrepresentative samples, hard to replicate, researcher influence, time-consuming. Responses: reflexivity, transparency, transferability; complements quantitative research. | Strengths ; Example ; Generalisation ; Reliability or bias ; Responses
+M2#sociology-u17-07-q6@1: What is a strength of qualitative research? | It provides rich, detailed data about meanings | It gives highly reliable statistics | It is easy to generalise to everyone | It requires no interpretation | Qualitative data captures how people understand their experiences.
 
 ## Mixed methods
 LV: Intermediate · Evaluation
@@ -283,6 +296,8 @@ X: Researching loneliness among older people
 > A national survey measures how many older people report loneliness and how it varies by living arrangements.
 > Interviews explore what loneliness means and how people cope.
 > The survey shows scale; the interviews explain experience; together they inform policy on community services.
+P: **Investigate with the lab.** Design a study that combines a survey with interviews and see what each part adds.
+IX: method-chooser
 K: Mixed methods combine quantitative breadth with qualitative depth, and triangulation tests whether different kinds of evidence agree.
 H: Debates
 P: Some argue positivism and interpretivism rest on incompatible assumptions about knowledge, so their methods can't simply be mixed (the "paradigm wars"). Pragmatists reply that methods are tools to be chosen for the question. Practical challenges include cost, time, the need for skills in both traditions and the difficulty of integrating findings rather than reporting them side by side.
@@ -303,6 +318,7 @@ M2#sociology-u17-08-q2@2: A survey finds people say they recycle, but observatio
 TF2#sociology-u17-08-q3@3: Some sociologists argue positivist and interpretivist methods rest on incompatible assumptions. | true | The "paradigm wars" debate whether the traditions can be combined.
 M3#sociology-u17-08-q4@3: What is the most common weakness of mixed-methods studies in practice? | Strands are not truly integrated | They always use too few methods | They can't include surveys | They never involve qualitative data | Integrating strands is challenging and often incomplete.
 SA3#sociology-u17-08-q5@3: Evaluate the use of mixed methods in sociological research. | Strengths: breadth and depth, triangulation, compensates for each method's weaknesses, suits complex questions (e.g. loneliness). Weaknesses: cost, time, skills, integration difficulty; philosophical objections; pragmatist response. | Designs ; Triangulation ; Strengths ; Practical weaknesses ; Philosophical debate
+M2#sociology-u17-08-q6@1: What is the main advantage of mixed methods? | Combining breadth from numbers with depth from interviews | It halves the time research takes | It avoids the need for a sample | It removes all ethical issues | Each method can offset the other's weaknesses.
 
 ## Surveys
 LV: Introductory · Application
@@ -398,6 +414,8 @@ X: A structured interview on household work
 > The interviewer asks: "In the last 7 days, about how many hours did you spend on housework?"
 > The respondent gives a number; the interviewer doesn't rephrase or discuss it.
 > Answers from thousands of respondents can then be compared by gender, age and employment.
+P: **Investigate with the lab.** Diagnose the eight flawed questions and rewrite each.
+IX: survey-design
 K: Structured interviews standardise questions and delivery to give reliable, comparable data, at the cost of depth and flexibility.
 H: Limitations
 P: Respondents can't explain their answers or raise issues the researcher didn't anticipate, so validity can suffer. Interviewer characteristics (gender, age, ethnicity, accent) may still affect answers, an **interviewer effect**. Face-to-face structured interviews are costly, and social desirability may be stronger than in private self-completion.
@@ -418,6 +436,7 @@ M2#sociology-u17-11-q2@2: In a survey on racism, answers differ depending on the
 TF2#sociology-u17-11-q3@2: In a structured interview, interviewers rephrase questions to suit each respondent. | false | Interviewers read questions exactly as written to keep them standardised.
 M3#sociology-u17-11-q4@3: Why might a structured interview have lower validity than an unstructured one? | Respondents can't explain or qualify their answers | Answers can't be compared | Samples are always too small | Interviewers never follow the schedule | Fixed questions may miss what respondents really mean.
 SA3#sociology-u17-11-q5@3: Evaluate structured interviews for researching attitudes to welfare. | Strengths: standardised, reliable, comparable data; large samples; higher response rates; help for low literacy. Weaknesses: closed answers miss meaning and nuance; interviewer effects and social desirability on a politically charged topic; costly face to face. | Reliability and comparability ; Response advantages ; Validity limitation ; Interviewer or desirability ; Judgement
+M2#sociology-u17-11-q6@1: What is a leading question? | One that pushes the respondent towards a particular answer | One that asks two things at once | One with too many answer options | One that uses technical jargon | Leading questions bias responses towards the expected answer.
 
 ## Semi-structured interviews
 LV: Introductory · Application
@@ -434,6 +453,8 @@ X: Interviewing first-generation university students
 > Guide topics: decision to apply, first weeks, sense of belonging, money, family reactions.
 > A student mentions feeling "like a tourist" on campus; the interviewer probes what that means.
 > Across 25 interviews, analysis identifies themes such as navigating unfamiliar academic codes, linking to Bourdieu's cultural capital.
+P: **Investigate with the lab.** Code the invented interviews with delivery riders, then build themes from your codes.
+IX: coding
 K: Semi-structured interviews combine a consistent guide with flexible follow-up, giving comparable yet rich qualitative data.
 H: Limitations
 P: They take time to conduct, transcribe and analyse, so samples are small. Interviewer skill strongly affects data quality. Answers are accounts, not direct observations of behaviour, and may be shaped by social desirability or by the interviewer's reactions. Feminist researchers such as Oakley (1981) argued that a more reciprocal, less hierarchical interview could produce better data and treat participants more ethically.
@@ -454,6 +475,7 @@ M2#sociology-u17-12-q2@2: An interviewer asks, "You said you felt like an outsid
 TF2#sociology-u17-12-q3@3: Oakley argued that interviewers should remain distant and never share anything about themselves. | false | She argued for a more reciprocal, less hierarchical relationship, especially in feminist research.
 M3#sociology-u17-12-q4@3: Why are interview accounts not the same as direct evidence of behaviour? | Accounts may be rationalised or selective | Interviews are always recorded incorrectly | Accounts can't be analysed | Interviews use too many participants | Accounts are interpretations shaped by memory and self-presentation.
 SA3#sociology-u17-12-q5@2,3: Explain how you would use semi-structured interviews to study how young people decide whether to go to university, and one limitation. | Develop a guide (influences, finances, family, school, identity); recruit a purposive sample across backgrounds; build rapport; use probes; record, transcribe and analyse thematically. Limitation: small sample limits generalisation, or accounts may rationalise decisions after the fact. | Guide topics ; Sampling ; Probes and rapport ; Analysis ; Limitation
+M2#sociology-u17-12-q6@1: Why do sociologists use semi-structured interviews? | They allow set questions plus follow-ups on what matters to the interviewee | They give identical data for every person | They need no interviewer skill | They produce only numerical data | Semi-structured interviews balance comparability and flexibility.
 
 ## Unstructured interviews
 LV: Introductory · Application
@@ -766,6 +788,8 @@ X: Two discourses of poverty
 > Headline A: "Benefit cheats cost taxpayers millions." Discourse of individual failure and fraud.
 > Headline B: "Working families forced to food banks as costs soar." Discourse of structural hardship.
 > Each frames responsibility differently, making different policies (sanctions or support) seem reasonable.
+P: **Investigate with the lab.** Define coding categories and count them in a text per 1,000 words.
+IX: content-analysis
 K: Discourse analysis examines how language constructs social reality and power relations, revealing what is made to seem natural or deviant.
 P: Discourse analysis complements content analysis: content analysis counts how often frames appear; discourse analysis examines how they work and what they do.
 H: Evaluation
@@ -786,6 +810,7 @@ M2#sociology-u17-21-q2@2: A policy document repeatedly calls people "service use
 TF2#sociology-u17-21-q3@3: Discourse analysts assume language simply reflects reality as it is. | false | They argue language helps construct social reality.
 M3#sociology-u17-21-q4@3: What is the main criticism of discourse analysis? | It is interpretive and hard to replicate | It always uses large random samples | It only counts word frequencies | It ignores power entirely | Its interpretive nature makes checking findings difficult.
 SA3#sociology-u17-21-q5@3: Compare content analysis and discourse analysis for studying media coverage of migration. | Content analysis: systematic coding and counting of frames, sources and topics across large samples; reliable and comparable but misses meaning. Discourse analysis: detailed reading of how language (metaphors such as "floods", categories such as "illegal") constructs migrants and legitimises policy; reveals meaning and power but interpretive. Combining them is strong. | Content analysis approach ; Strengths and limits ; Discourse analysis approach ; Strengths and limits ; Combination
+M2#sociology-u17-21-q6@1: How does content analysis differ from discourse analysis? | Content analysis counts categories; discourse analysis interprets how language constructs meaning | They are exactly the same method | Content analysis only studies images | Discourse analysis only counts words | Content analysis is often quantitative; discourse analysis is interpretive.
 
 ## Secondary data
 LV: Introductory · Application
@@ -1138,6 +1163,8 @@ X: Bias in a poverty study
 > A study funded by a think tank with a policy position asks only about benefit dependency, not low wages.
 > The questions frame the issue and limit what findings can show.
 > Transparent funding, balanced questions and peer review help readers judge the work.
+P: **Investigate with the lab.** Compare random, stratified, opportunity and volunteer samples, and see which give biased results.
+IX: sampling
 K: Bias is systematic distortion from sampling, measurement, researchers, sponsors and publication; transparency and design are the main safeguards.
 P: Safeguards include probability sampling, piloted and neutral questions, triangulation, reflexivity, declaring funding and interests, peer review and openness about data and methods.
 !: Equating bias with dishonesty. Most bias is unintentional and arises from design choices.
@@ -1156,6 +1183,7 @@ M2#sociology-u17-31-q2@2: A study of gambling is funded by a betting company, wh
 TF2#sociology-u17-31-q3@3: Most bias in research is the result of deliberate dishonesty. | false | Most bias is unintentional and comes from design choices.
 M3#sociology-u17-31-q4@3: What is the feminist response to the ideal of value freedom? | Researchers should be transparent about position | Researchers should hide their values completely | Values never affect research | Only quantitative research is biased | Feminist epistemology argues for reflexivity rather than claimed neutrality.
 SA3#sociology-u17-31-q5@3: Evaluate whether sociological research can be free from bias. | Sources: sampling, measurement, researcher values, sponsors, publication. Weber: value-free analysis possible; Becker and feminists: neutrality impossible, be transparent. Safeguards reduce but can't eliminate bias: design, triangulation, reflexivity, peer review, openness. | Sources ; Weber ; Becker or feminist view ; Safeguards ; Judgement
+M2#sociology-u17-31-q6@1: What is sampling bias? | When a sample systematically differs from the population | When a sample is very large | When results are recorded incorrectly | When participants lie | Biased samples give results that don't represent the population.
 
 ## Positionality
 LV: Intermediate · Application
@@ -1172,6 +1200,8 @@ X: Researching young Muslim women's experiences at university
 > An insider researcher (a young Muslim woman) may be trusted and understand references and concerns.
 > But participants might assume shared views and leave things unsaid, or worry about community judgement.
 > An outsider might ask "naive" questions that reveal taken-for-granted meanings, but face suspicion.
+P: **Investigate with the lab.** Sort the café jottings into description, interpretation and reflexive notes.
+IX: ethnography
 K: Positionality shapes access, relationships and interpretation; insider and outsider positions each bring advantages and risks.
 P: Positionality also involves **power**: researchers usually control the questions, analysis and publication, which matters especially when studying marginalised groups. Participatory approaches share some of this control.
 !: Treating positionality as a box-ticking list of characteristics. It matters when it is linked to how it affected the research.
@@ -1190,6 +1220,7 @@ M2#sociology-u17-32-q2@2: Participants assume an insider researcher already know
 TF2#sociology-u17-32-q3@3: Most researchers are entirely insiders or entirely outsiders throughout a study. | false | Positions are usually mixed and shift during research.
 M3#sociology-u17-32-q4@3: Why is power part of positionality? | Researchers usually control questions, analysis and publication | Participants always control the research | Power doesn't affect research | Positionality only concerns statistics | The researcher's control over representation matters, especially for marginalised groups.
 SA2#sociology-u17-32-q5@2,3: Write a short positionality reflection for a study of food bank users by a middle-class student researcher. | Recognise class difference may affect trust and what users share; possible assumptions about poverty; outsider position may allow naive questions but risk misinterpretation; power over representation; strategies: build rapport via volunteers, respondent validation, reflexive fieldnotes. | Position stated ; Effect on access ; Effect on interpretation ; Power ; Strategies
+M2#sociology-u17-32-q6@1: Why do ethnographers write reflexive notes? | To record how their own position may shape what they see | To record only objective facts | To replace descriptive notes | To summarise statistical results | Reflexivity acknowledges the researcher's influence on the data.
 
 ## Reflexivity
 LV: Intermediate · Application
@@ -1248,6 +1279,8 @@ X: Consent in a workplace ethnography
 > The manager agrees to the study (gatekeeper permission).
 > The researcher explains the project to staff at a team meeting and gives information sheets.
 > Two staff ask not to be included; the researcher doesn't record their words or actions.
+P: **Investigate with the lab.** Work through the six dilemmas, starting with covert observation and consent.
+IX: ethics
 K: Informed consent should be freely given, informed and ongoing; gatekeeper permission doesn't replace individuals' own consent.
 H: Covert research
 P: Covert research removes consent and is generally avoided. The BSA allows it only where it can be strongly justified, for example where access would otherwise be impossible and the research has significant value, with careful protection of participants' identities and ethical review. Humphreys' *Tearoom Trade* (1970) is a classic example of covert research widely criticised for deception and the risk of exposing participants.
@@ -1267,6 +1300,7 @@ M2#sociology-u17-34-q2@2: A researcher plans to quote posts from a support forum
 TF2#sociology-u17-34-q3@1: Consent in long-term fieldwork is often an ongoing process rather than a single signature. | true | Participants' agreement may need renewing as research develops.
 M3#sociology-u17-34-q4@3: When might covert research be ethically defensible? | When it is the only way to gain access | Whenever it is more convenient | When participants would refuse | When the researcher wants to avoid paperwork | The BSA requires strong justification and protections.
 SA3#sociology-u17-34-q5@3: Evaluate the ethics of covert participant observation, with reference to an example. | Against: no informed consent, deception, risk of harm and exposure (Humphreys' Tearoom Trade), damages trust. For: access to closed or deviant groups, natural behaviour, public interest. BSA: only with strong justification, protection and review. | Against ; Example ; For ; BSA position ; Judgement
+M2#sociology-u17-34-q6@1: What does informed consent require? | Participants understand what the research involves and agree freely | Participants are paid for their time | The research is kept secret from participants | The researcher signs a form alone | Consent must be informed, voluntary and able to be withdrawn.
 
 ## Anonymity and confidentiality
 LV: Introductory · Foundation
@@ -1327,6 +1361,8 @@ X: Researching young carers
 > Recruitment through a young carers' charity, with parents' consent and children's own agreement.
 > Short, flexible interviews at times that fit caring responsibilities.
 > A safeguarding plan in case a child reveals risk, explained in advance.
+P: **Investigate with the lab.** Work through the dilemmas on disclosure and anonymity with vulnerable participants.
+IX: ethics
 K: Research with vulnerable groups needs extra safeguards for consent, capacity, pressure, distress and disclosure.
 H: Protection versus participation
 P: Excluding vulnerable groups from research protects them from research risks but can silence them and leave policy uninformed by their experiences. Many sociologists support **participatory** approaches, involving groups in shaping research, as both more ethical and more valid. The aim is safe inclusion.
@@ -1347,6 +1383,7 @@ M2#sociology-u17-36-q2@2: A prison governor encourages prisoners to take part in
 TF2#sociology-u17-36-q3@3: Excluding vulnerable groups from research is always the most ethical choice. | false | Exclusion can silence groups and leave policy uninformed.
 M3#sociology-u17-36-q4@3: Why is vulnerability described as situational? | It depends on the research context | Vulnerability never changes | Only children are vulnerable | It is fixed by diagnosis | Risk depends on the topic, setting and relationships, not just a label.
 SA2#sociology-u17-36-q5@2,3: Describe safeguards for a study of refugees' experiences of housing. | Recruit through trusted organisations; interpreters and information in participants' languages; voluntary participation independent of services; trauma-informed interviewing; distress plan and support signposting; confidentiality given immigration risks; secure data; ethical review; consider participatory input. | Recruitment ; Language and consent ; Distress plan ; Confidentiality risks ; Participation
+M2#sociology-u17-36-q6@1: Why do vulnerable groups need extra ethical protection? | They may be less able to give informed consent or more at risk of harm | They always refuse to take part | Their data is always inaccurate | The law forbids researching them | Extra safeguards protect participants who may be at greater risk.
 
 ## Interpreting findings
 LV: Intermediate · Evaluation
@@ -1365,6 +1402,8 @@ X: Interpreting a neighbourhood finding
 > Neighbourhoods with more social housing have higher recorded crime.
 > Wrong: "Social housing tenants commit more crime" (ecological fallacy and possible recording bias).
 > Better: "Recorded crime is higher in these neighbourhoods; individual-level data and other measures are needed to understand why."
+P: **Investigate with the lab.** Build themes from your codes and check each theme against the interview evidence.
+IX: coding
 K: Interpretation must match the design: avoid causal, individual-level and universal claims the data can't support.
 H: Interpreting qualitative findings
 P: Qualitative researchers interpret themes by asking how widespread a pattern was in the data, looking for **negative cases** that don't fit, considering alternative explanations, and checking interpretations with participants. Quotes should illustrate patterns, not be chosen only because they are vivid.
@@ -1387,6 +1426,7 @@ M2#sociology-u17-37-q2@2: Overall, men appear to be admitted to a university at 
 MATCH2#sociology-u17-37-q3@3: Match each statement to its type of claim. | 30% of the sample reported loneliness in 2023 = Empirical ; Loneliness reflects weakened community ties = Theoretical ; Government should fund community centres = Normative ; Lonelier people reported poorer health = Empirical | Separating claim types shows which rest on evidence and which on values.
 M3#sociology-u17-37-q4@3: Which practice best guards against cherry-picking quotes in qualitative research? | Reporting how common themes were and including negative cases | Choosing the most vivid quotes only | Using one participant's words throughout | Avoiding any quotes | Showing prevalence and exceptions makes interpretation transparent.
 SA3#sociology-u17-37-q5@3: Rewrite this conclusion appropriately: "Areas with more immigrants have higher unemployment, so immigrants are lazy." | The claim commits the ecological fallacy and confuses correlation with causation, and adds a normative stereotype. Better: "Areas with more recent migrants had higher unemployment in this data; area-level factors such as industrial decline and housing costs may explain both; individual-level data are needed, and no conclusion about individuals' attitudes follows." | Ecological fallacy ; Correlation and causation ; Alternative explanations ; Empirical versus normative ; Rewritten claim
+M2#sociology-u17-37-q6@1: What is a theme in thematic analysis? | A pattern of meaning across the data | A single quotation | A statistical average | The researcher's hypothesis | Themes are built from codes that capture shared meanings.
 
 ## Disseminating research
 LV: Introductory · Application

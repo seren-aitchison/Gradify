@@ -1,0 +1,1238 @@
+{
+ "api": 1,
+ "slug": "computing",
+ "name": "Computer Science",
+ "site": "TechGradify · ForgeLab",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Study material, not a qualification or legal advice.</b> ForgeLab teaches computer science for GCSE, A level and the first year of university, but it isn't an exam board resource or an accredited course: check the details of your own specification with your teacher or exam board. The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors. Security lessons explain attacks so that you can defend against them: trying them on systems you don't own or have permission to test can be a criminal offence under the Computer Misuse Act 1990. The law lessons describe UK law for study; for a real data protection question, see the ICO or a qualified adviser.",
+ "notes": "/kit/courses/computing/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Thinking and programming",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "from": "#ff5a4d",
+   "to": "#f59e0b"
+  },
+  {
+   "name": "Stage 2 · Algorithms and data",
+   "units": [
+    4,
+    5,
+    6
+   ],
+   "from": "#f97316",
+   "to": "#eab308"
+  },
+  {
+   "name": "Stage 3 · Systems",
+   "units": [
+    7,
+    8,
+    9
+   ],
+   "from": "#fb7185",
+   "to": "#a78bfa"
+  },
+  {
+   "name": "Stage 4 · Data, software and society",
+   "units": [
+    10,
+    11,
+    12
+   ],
+   "from": "#f472b6",
+   "to": "#22d3ee"
+  }
+ ],
+ "paths": [
+  {
+   "id": "gcse",
+   "name": "GCSE Computer Science",
+   "sub": "The core of AQA and OCR GCSE: computational thinking, Python, searching and sorting, data representation, architecture, networks, security and the law.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    9,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "alevel",
+   "name": "A level Computer Science",
+   "sub": "The whole A level: all of GCSE plus data structures, Big O, graph algorithms, operating systems, databases, OOP and the limits of computation.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "year1",
+   "name": "University year 1",
+   "sub": "The first-year core of a computer science degree, after ACM CS2023: programming, algorithms and complexity, data structures, systems, databases and software engineering.",
+   "units": [
+    2,
+    3,
+    4,
+    5,
+    8,
+    10,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "programmer",
+   "name": "Learn to program",
+   "sub": "From your first Python program to tested, object-oriented code that reads files and uses the right data structures.",
+   "units": [
+    1,
+    2,
+    3,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "systems",
+   "name": "How computers work",
+   "sub": "From bits and logic gates to processors, operating systems and the internet.",
+   "units": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "select": null
+  },
+  {
+   "id": "society",
+   "name": "Computing and society",
+   "sub": "Security, artificial intelligence, data protection and the ethics of computing.",
+   "units": [
+    12,
+    10,
+    9
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Thinking and programming",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Algorithms and data",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    5,
+    6
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Systems",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    7,
+    8,
+    9
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Data, software and society",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "programming",
+   "title": "Programming in Python",
+   "sub": "Tracing, writing and debugging Python: variables, selection, loops, functions, data structures, files and testing.",
+   "units": [
+    2,
+    3
+   ],
+   "path": null,
+   "count": 25,
+   "minutes": 40,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Computational Thinking and Problem Solving",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What is computer science?",
+     "module": "Thinking computationally"
+    },
+    {
+     "id": "u01-02",
+     "title": "Abstraction",
+     "module": "Thinking computationally"
+    },
+    {
+     "id": "u01-03",
+     "title": "Decomposition",
+     "module": "Thinking computationally"
+    },
+    {
+     "id": "u01-04",
+     "title": "Algorithmic thinking",
+     "module": "Thinking computationally"
+    },
+    {
+     "id": "u01-05",
+     "title": "Pattern recognition and generalisation",
+     "module": "Thinking computationally"
+    },
+    {
+     "id": "u01-06",
+     "title": "Thinking ahead and thinking procedurally",
+     "module": "Thinking computationally"
+    },
+    {
+     "id": "u01-07",
+     "title": "Pseudocode",
+     "module": "Representing algorithms"
+    },
+    {
+     "id": "u01-08",
+     "title": "Flowcharts",
+     "module": "Representing algorithms"
+    },
+    {
+     "id": "u01-09",
+     "title": "Trace tables",
+     "module": "Representing algorithms"
+    },
+    {
+     "id": "u01-10",
+     "title": "Boolean logic",
+     "module": "Logic"
+    },
+    {
+     "id": "u01-11",
+     "title": "Logic gates and truth tables",
+     "module": "Logic"
+    },
+    {
+     "id": "u01-12",
+     "title": "Simplifying Boolean expressions",
+     "module": "Logic"
+    },
+    {
+     "id": "u01-13",
+     "title": "Thinking concurrently",
+     "module": "Beyond the sequential"
+    },
+    {
+     "id": "u01-14",
+     "title": "The limits of computation",
+     "module": "Beyond the sequential"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Python Programming Fundamentals",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Programs and the Python interpreter",
+     "module": "Getting started"
+    },
+    {
+     "id": "u02-02",
+     "title": "Variables and assignment",
+     "module": "Getting started"
+    },
+    {
+     "id": "u02-03",
+     "title": "Data types and casting",
+     "module": "Getting started"
+    },
+    {
+     "id": "u02-04",
+     "title": "Input and output",
+     "module": "Getting started"
+    },
+    {
+     "id": "u02-05",
+     "title": "Arithmetic operators",
+     "module": "Getting started"
+    },
+    {
+     "id": "u02-06",
+     "title": "Comparison and logical operators",
+     "module": "Control flow"
+    },
+    {
+     "id": "u02-07",
+     "title": "Selection with if, elif and else",
+     "module": "Control flow"
+    },
+    {
+     "id": "u02-08",
+     "title": "Definite iteration: for loops",
+     "module": "Control flow"
+    },
+    {
+     "id": "u02-09",
+     "title": "Indefinite iteration: while loops",
+     "module": "Control flow"
+    },
+    {
+     "id": "u02-10",
+     "title": "Nested selection and iteration",
+     "module": "Control flow"
+    },
+    {
+     "id": "u02-11",
+     "title": "Strings: indexing, slicing and methods",
+     "module": "Text and functions"
+    },
+    {
+     "id": "u02-12",
+     "title": "Defining and calling functions",
+     "module": "Text and functions"
+    },
+    {
+     "id": "u02-13",
+     "title": "Parameters, arguments and return values",
+     "module": "Text and functions"
+    },
+    {
+     "id": "u02-14",
+     "title": "Scope: local and global variables",
+     "module": "Text and functions"
+    },
+    {
+     "id": "u02-15",
+     "title": "Using modules: random and math",
+     "module": "Text and functions"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Data Structures, Files and Robust Code in Python",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Lists",
+     "module": "Built-in data structures"
+    },
+    {
+     "id": "u03-02",
+     "title": "List operations and methods",
+     "module": "Built-in data structures"
+    },
+    {
+     "id": "u03-03",
+     "title": "Two-dimensional lists",
+     "module": "Built-in data structures"
+    },
+    {
+     "id": "u03-04",
+     "title": "Tuples",
+     "module": "Built-in data structures"
+    },
+    {
+     "id": "u03-05",
+     "title": "Dictionaries",
+     "module": "Built-in data structures"
+    },
+    {
+     "id": "u03-06",
+     "title": "Sets",
+     "module": "Built-in data structures"
+    },
+    {
+     "id": "u03-07",
+     "title": "Choosing a Python data structure",
+     "module": "Built-in data structures"
+    },
+    {
+     "id": "u03-08",
+     "title": "Reading text files",
+     "module": "Files"
+    },
+    {
+     "id": "u03-09",
+     "title": "Writing and appending to files",
+     "module": "Files"
+    },
+    {
+     "id": "u03-10",
+     "title": "CSV files",
+     "module": "Files"
+    },
+    {
+     "id": "u03-11",
+     "title": "Input validation and defensive design",
+     "module": "Robust programs"
+    },
+    {
+     "id": "u03-12",
+     "title": "Exception handling with try and except",
+     "module": "Robust programs"
+    },
+    {
+     "id": "u03-13",
+     "title": "Types of error: syntax, runtime and logic",
+     "module": "Robust programs"
+    },
+    {
+     "id": "u03-14",
+     "title": "Testing: normal, boundary and erroneous data",
+     "module": "Robust programs"
+    },
+    {
+     "id": "u03-15",
+     "title": "Unit testing and test plans",
+     "module": "Robust programs"
+    },
+    {
+     "id": "u03-16",
+     "title": "Debugging strategies",
+     "module": "Robust programs"
+    },
+    {
+     "id": "u03-17",
+     "title": "Code quality and maintainability",
+     "module": "Robust programs"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Algorithms",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Linear search",
+     "module": "Searching"
+    },
+    {
+     "id": "u04-02",
+     "title": "Binary search",
+     "module": "Searching"
+    },
+    {
+     "id": "u04-03",
+     "title": "Bubble sort",
+     "module": "Sorting"
+    },
+    {
+     "id": "u04-04",
+     "title": "Insertion sort",
+     "module": "Sorting"
+    },
+    {
+     "id": "u04-05",
+     "title": "Merge sort",
+     "module": "Sorting"
+    },
+    {
+     "id": "u04-06",
+     "title": "Quicksort",
+     "module": "Sorting"
+    },
+    {
+     "id": "u04-07",
+     "title": "Measuring efficiency",
+     "module": "Analysing algorithms"
+    },
+    {
+     "id": "u04-08",
+     "title": "Big O notation",
+     "module": "Analysing algorithms"
+    },
+    {
+     "id": "u04-09",
+     "title": "Comparing algorithm complexity",
+     "module": "Analysing algorithms"
+    },
+    {
+     "id": "u04-10",
+     "title": "Time and space trade-offs",
+     "module": "Analysing algorithms"
+    },
+    {
+     "id": "u04-11",
+     "title": "Recursion",
+     "module": "Recursion"
+    },
+    {
+     "id": "u04-12",
+     "title": "Recursive and iterative solutions",
+     "module": "Recursion"
+    },
+    {
+     "id": "u04-13",
+     "title": "Breadth-first and depth-first traversal",
+     "module": "Graph algorithms"
+    },
+    {
+     "id": "u04-14",
+     "title": "Dijkstra's shortest path algorithm",
+     "module": "Graph algorithms"
+    },
+    {
+     "id": "u04-15",
+     "title": "A* search",
+     "module": "Graph algorithms"
+    },
+    {
+     "id": "u04-16",
+     "title": "Divide and conquer",
+     "module": "Problem-solving strategies"
+    },
+    {
+     "id": "u04-17",
+     "title": "Greedy algorithms",
+     "module": "Problem-solving strategies"
+    },
+    {
+     "id": "u04-18",
+     "title": "Dynamic programming",
+     "module": "Problem-solving strategies"
+    },
+    {
+     "id": "u04-19",
+     "title": "Backtracking",
+     "module": "Problem-solving strategies"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Data Structures",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Abstract data types",
+     "module": "Linear structures"
+    },
+    {
+     "id": "u05-02",
+     "title": "Arrays and records",
+     "module": "Linear structures"
+    },
+    {
+     "id": "u05-03",
+     "title": "Stacks",
+     "module": "Linear structures"
+    },
+    {
+     "id": "u05-04",
+     "title": "Queues",
+     "module": "Linear structures"
+    },
+    {
+     "id": "u05-05",
+     "title": "Circular and priority queues",
+     "module": "Linear structures"
+    },
+    {
+     "id": "u05-06",
+     "title": "Linked lists",
+     "module": "Linear structures"
+    },
+    {
+     "id": "u05-07",
+     "title": "Trees",
+     "module": "Trees and graphs"
+    },
+    {
+     "id": "u05-08",
+     "title": "Binary search trees",
+     "module": "Trees and graphs"
+    },
+    {
+     "id": "u05-09",
+     "title": "Tree traversal",
+     "module": "Trees and graphs"
+    },
+    {
+     "id": "u05-10",
+     "title": "Graphs",
+     "module": "Trees and graphs"
+    },
+    {
+     "id": "u05-11",
+     "title": "Adjacency matrices and adjacency lists",
+     "module": "Trees and graphs"
+    },
+    {
+     "id": "u05-12",
+     "title": "Hash tables",
+     "module": "Hashing"
+    },
+    {
+     "id": "u05-13",
+     "title": "Collision resolution",
+     "module": "Hashing"
+    },
+    {
+     "id": "u05-14",
+     "title": "Static and dynamic data structures",
+     "module": "Design choices"
+    },
+    {
+     "id": "u05-15",
+     "title": "Comparing data structures",
+     "module": "Design choices"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Data Representation",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Binary and denary",
+     "module": "Number systems"
+    },
+    {
+     "id": "u06-02",
+     "title": "Hexadecimal",
+     "module": "Number systems"
+    },
+    {
+     "id": "u06-03",
+     "title": "Binary arithmetic and overflow",
+     "module": "Number systems"
+    },
+    {
+     "id": "u06-04",
+     "title": "Binary shifts",
+     "module": "Number systems"
+    },
+    {
+     "id": "u06-05",
+     "title": "Two's complement",
+     "module": "Number systems"
+    },
+    {
+     "id": "u06-06",
+     "title": "Fixed-point and floating-point numbers",
+     "module": "Number systems"
+    },
+    {
+     "id": "u06-07",
+     "title": "Units of data",
+     "module": "Text, images and sound"
+    },
+    {
+     "id": "u06-08",
+     "title": "Character sets: ASCII and Unicode",
+     "module": "Text, images and sound"
+    },
+    {
+     "id": "u06-09",
+     "title": "Bitmap images",
+     "module": "Text, images and sound"
+    },
+    {
+     "id": "u06-10",
+     "title": "Vector graphics",
+     "module": "Text, images and sound"
+    },
+    {
+     "id": "u06-11",
+     "title": "Sound",
+     "module": "Text, images and sound"
+    },
+    {
+     "id": "u06-12",
+     "title": "Lossy and lossless compression",
+     "module": "Compression, encryption and errors"
+    },
+    {
+     "id": "u06-13",
+     "title": "Run-length encoding",
+     "module": "Compression, encryption and errors"
+    },
+    {
+     "id": "u06-14",
+     "title": "Huffman coding",
+     "module": "Compression, encryption and errors"
+    },
+    {
+     "id": "u06-15",
+     "title": "Ciphers: Caesar and Vernam",
+     "module": "Compression, encryption and errors"
+    },
+    {
+     "id": "u06-16",
+     "title": "Error detection: parity and check digits",
+     "module": "Compression, encryption and errors"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Computer Architecture",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "The von Neumann architecture",
+     "module": "The processor"
+    },
+    {
+     "id": "u07-02",
+     "title": "The fetch-decode-execute cycle",
+     "module": "The processor"
+    },
+    {
+     "id": "u07-03",
+     "title": "Registers and buses",
+     "module": "The processor"
+    },
+    {
+     "id": "u07-04",
+     "title": "Factors affecting processor performance",
+     "module": "The processor"
+    },
+    {
+     "id": "u07-05",
+     "title": "RISC, CISC and parallel processors",
+     "module": "The processor"
+    },
+    {
+     "id": "u07-06",
+     "title": "RAM and ROM",
+     "module": "Memory and storage"
+    },
+    {
+     "id": "u07-07",
+     "title": "Cache and virtual memory",
+     "module": "Memory and storage"
+    },
+    {
+     "id": "u07-08",
+     "title": "Secondary storage",
+     "module": "Memory and storage"
+    },
+    {
+     "id": "u07-09",
+     "title": "Machine code and assembly language",
+     "module": "Low-level programming"
+    },
+    {
+     "id": "u07-10",
+     "title": "Addressing modes",
+     "module": "Low-level programming"
+    },
+    {
+     "id": "u07-11",
+     "title": "The Little Man Computer",
+     "module": "Low-level programming"
+    },
+    {
+     "id": "u07-12",
+     "title": "Embedded systems",
+     "module": "Hardware and circuits"
+    },
+    {
+     "id": "u07-13",
+     "title": "Input and output devices",
+     "module": "Hardware and circuits"
+    },
+    {
+     "id": "u07-14",
+     "title": "Adders and flip-flops",
+     "module": "Hardware and circuits"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Operating Systems and Software",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "The role of the operating system",
+     "module": "Systems software"
+    },
+    {
+     "id": "u08-02",
+     "title": "Memory management: paging and segmentation",
+     "module": "Systems software"
+    },
+    {
+     "id": "u08-03",
+     "title": "Process scheduling",
+     "module": "Systems software"
+    },
+    {
+     "id": "u08-04",
+     "title": "Interrupts",
+     "module": "Systems software"
+    },
+    {
+     "id": "u08-05",
+     "title": "File systems",
+     "module": "Systems software"
+    },
+    {
+     "id": "u08-06",
+     "title": "Utility software",
+     "module": "Systems software"
+    },
+    {
+     "id": "u08-07",
+     "title": "High-level and low-level languages",
+     "module": "Translators and languages"
+    },
+    {
+     "id": "u08-08",
+     "title": "Compilers, interpreters and assemblers",
+     "module": "Translators and languages"
+    },
+    {
+     "id": "u08-09",
+     "title": "Stages of compilation",
+     "module": "Translators and languages"
+    },
+    {
+     "id": "u08-10",
+     "title": "Linkers, loaders and libraries",
+     "module": "Translators and languages"
+    },
+    {
+     "id": "u08-11",
+     "title": "Application software",
+     "module": "Kinds of software"
+    },
+    {
+     "id": "u08-12",
+     "title": "Open source and proprietary software",
+     "module": "Kinds of software"
+    },
+    {
+     "id": "u08-13",
+     "title": "Virtual machines",
+     "module": "Kinds of software"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Networks and the Internet",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Types of network: LAN and WAN",
+     "module": "Network fundamentals"
+    },
+    {
+     "id": "u09-02",
+     "title": "Network topologies",
+     "module": "Network fundamentals"
+    },
+    {
+     "id": "u09-03",
+     "title": "Network hardware",
+     "module": "Network fundamentals"
+    },
+    {
+     "id": "u09-04",
+     "title": "Wired and wireless connections",
+     "module": "Network fundamentals"
+    },
+    {
+     "id": "u09-05",
+     "title": "Client-server and peer-to-peer",
+     "module": "Network fundamentals"
+    },
+    {
+     "id": "u09-06",
+     "title": "Protocols and standards",
+     "module": "Protocols"
+    },
+    {
+     "id": "u09-07",
+     "title": "The TCP/IP stack",
+     "module": "Protocols"
+    },
+    {
+     "id": "u09-08",
+     "title": "Packet switching",
+     "module": "Protocols"
+    },
+    {
+     "id": "u09-09",
+     "title": "IP addresses and DNS",
+     "module": "Protocols"
+    },
+    {
+     "id": "u09-10",
+     "title": "HTTP, HTTPS and other application protocols",
+     "module": "Protocols"
+    },
+    {
+     "id": "u09-11",
+     "title": "How the web works",
+     "module": "The web"
+    },
+    {
+     "id": "u09-12",
+     "title": "HTML, CSS and JavaScript",
+     "module": "The web"
+    },
+    {
+     "id": "u09-13",
+     "title": "Client-side and server-side processing",
+     "module": "The web"
+    },
+    {
+     "id": "u09-14",
+     "title": "Search engines and PageRank",
+     "module": "The web"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Databases and SQL",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Data, information and databases",
+     "module": "Relational databases"
+    },
+    {
+     "id": "u10-02",
+     "title": "Flat-file and relational databases",
+     "module": "Relational databases"
+    },
+    {
+     "id": "u10-03",
+     "title": "Primary and foreign keys",
+     "module": "Relational databases"
+    },
+    {
+     "id": "u10-04",
+     "title": "Entity relationship diagrams",
+     "module": "Relational databases"
+    },
+    {
+     "id": "u10-05",
+     "title": "Normalisation",
+     "module": "Relational databases"
+    },
+    {
+     "id": "u10-06",
+     "title": "SELECT queries",
+     "module": "SQL"
+    },
+    {
+     "id": "u10-07",
+     "title": "Filtering and sorting results",
+     "module": "SQL"
+    },
+    {
+     "id": "u10-08",
+     "title": "Joining tables",
+     "module": "SQL"
+    },
+    {
+     "id": "u10-09",
+     "title": "Aggregate functions and grouping",
+     "module": "SQL"
+    },
+    {
+     "id": "u10-10",
+     "title": "INSERT, UPDATE and DELETE",
+     "module": "SQL"
+    },
+    {
+     "id": "u10-11",
+     "title": "Creating tables",
+     "module": "SQL"
+    },
+    {
+     "id": "u10-12",
+     "title": "Transactions and ACID",
+     "module": "Managing data"
+    },
+    {
+     "id": "u10-13",
+     "title": "Referential integrity",
+     "module": "Managing data"
+    },
+    {
+     "id": "u10-14",
+     "title": "Big data",
+     "module": "Managing data"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Software Engineering and Object-Oriented Programming",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "The software development life cycle",
+     "module": "Building software"
+    },
+    {
+     "id": "u11-02",
+     "title": "Waterfall and agile methods",
+     "module": "Building software"
+    },
+    {
+     "id": "u11-03",
+     "title": "Requirements and analysis",
+     "module": "Building software"
+    },
+    {
+     "id": "u11-04",
+     "title": "Designing software",
+     "module": "Building software"
+    },
+    {
+     "id": "u11-05",
+     "title": "Version control with Git",
+     "module": "Building software"
+    },
+    {
+     "id": "u11-06",
+     "title": "Testing strategies",
+     "module": "Building software"
+    },
+    {
+     "id": "u11-07",
+     "title": "Maintenance and documentation",
+     "module": "Building software"
+    },
+    {
+     "id": "u11-08",
+     "title": "Classes and objects",
+     "module": "Object-oriented programming"
+    },
+    {
+     "id": "u11-09",
+     "title": "Attributes and methods",
+     "module": "Object-oriented programming"
+    },
+    {
+     "id": "u11-10",
+     "title": "Encapsulation",
+     "module": "Object-oriented programming"
+    },
+    {
+     "id": "u11-11",
+     "title": "Inheritance",
+     "module": "Object-oriented programming"
+    },
+    {
+     "id": "u11-12",
+     "title": "Polymorphism",
+     "module": "Object-oriented programming"
+    },
+    {
+     "id": "u11-13",
+     "title": "Composition and aggregation",
+     "module": "Object-oriented programming"
+    },
+    {
+     "id": "u11-14",
+     "title": "Programming paradigms",
+     "module": "Object-oriented programming"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Security, AI and Society",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Malware",
+     "module": "Cyber security"
+    },
+    {
+     "id": "u12-02",
+     "title": "Social engineering and phishing",
+     "module": "Cyber security"
+    },
+    {
+     "id": "u12-03",
+     "title": "Network attacks: denial of service and SQL injection",
+     "module": "Cyber security"
+    },
+    {
+     "id": "u12-04",
+     "title": "Defences: firewalls, authentication and encryption",
+     "module": "Cyber security"
+    },
+    {
+     "id": "u12-05",
+     "title": "Penetration testing and secure design",
+     "module": "Cyber security"
+    },
+    {
+     "id": "u12-06",
+     "title": "What is artificial intelligence?",
+     "module": "Artificial intelligence"
+    },
+    {
+     "id": "u12-07",
+     "title": "Machine learning",
+     "module": "Artificial intelligence"
+    },
+    {
+     "id": "u12-08",
+     "title": "Neural networks",
+     "module": "Artificial intelligence"
+    },
+    {
+     "id": "u12-09",
+     "title": "Bias and fairness in AI",
+     "module": "Artificial intelligence"
+    },
+    {
+     "id": "u12-10",
+     "title": "The Computer Misuse Act 1990",
+     "module": "Law and ethics"
+    },
+    {
+     "id": "u12-11",
+     "title": "UK GDPR and the Data Protection Act 2018",
+     "module": "Law and ethics"
+    },
+    {
+     "id": "u12-12",
+     "title": "Copyright and software licences",
+     "module": "Law and ethics"
+    },
+    {
+     "id": "u12-13",
+     "title": "The environmental impact of computing",
+     "module": "Law and ethics"
+    },
+    {
+     "id": "u12-14",
+     "title": "Ethical issues in computing",
+     "module": "Law and ethics"
+    }
+   ]
+  }
+ ],
+ "interactives": []
+}

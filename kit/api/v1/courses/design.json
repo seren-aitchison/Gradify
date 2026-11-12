@@ -1,0 +1,1187 @@
+{
+ "api": 1,
+ "slug": "design",
+ "name": "Design Thinking and Creativity",
+ "site": "CreateGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Study material, not a qualification or professional advice.</b> CreateGradify teaches design thinking, creativity and design practice for study. The lessons were drafted with AI assistance and haven't yet been reviewed by design lecturers or practitioners, so they may contain errors; check important points against your course materials and the sources cited. Accessibility lessons explain WCAG and UK law for learning, not as a compliance audit, and intellectual property lessons are not legal advice: for a real product, use the UK IPO's guidance and a registered patent or trade mark attorney.",
+ "notes": "/kit/courses/design/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Foundations of design and creativity",
+   "units": [
+    1,
+    2
+   ],
+   "from": "#f0466e",
+   "to": "#f97316"
+  },
+  {
+   "name": "Stage 2 · The design process",
+   "units": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "from": "#f43f5e",
+   "to": "#a855f7"
+  },
+  {
+   "name": "Stage 3 · Designing what people use",
+   "units": [
+    7,
+    8,
+    9
+   ],
+   "from": "#ec4899",
+   "to": "#6366f1"
+  },
+  {
+   "name": "Stage 4 · Systems, sustainability and ethics",
+   "units": [
+    10,
+    11
+   ],
+   "from": "#d946ef",
+   "to": "#14b8a6"
+  },
+  {
+   "name": "Stage 5 · Professional practice",
+   "units": [
+    12
+   ],
+   "from": "#f0466e",
+   "to": "#22d3ee"
+  }
+ ],
+ "paths": [
+  {
+   "id": "gcse-alevel",
+   "name": "GCSE and A level Design and Technology",
+   "sub": "Iterative design, briefs and specifications, prototyping, materials, manufacture, sustainability and designers, as in D&T specifications.",
+   "units": [
+    1,
+    3,
+    5,
+    6,
+    9,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "ux",
+   "name": "UX and interaction design",
+   "sub": "User research, problem definition, prototyping and usability testing, interface principles and WCAG accessibility.",
+   "units": [
+    1,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "select": null
+  },
+  {
+   "id": "design-thinking",
+   "name": "Design thinking for anyone",
+   "sub": "The creative process and the Double Diamond for any problem: creativity, ideation, empathy, framing and testing.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "select": null
+  },
+  {
+   "id": "responsible",
+   "name": "Responsible design",
+   "sub": "Designing for everyone and for the planet: inclusive design, services and systems, circular design and ethics.",
+   "units": [
+    8,
+    10,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "practice",
+   "name": "Working as a designer",
+   "sub": "Collaboration, critique, pitching, portfolios and protecting your ideas, with the visual and prototyping skills behind them.",
+   "units": [
+    12,
+    7,
+    6,
+    2
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Foundations of design and creativity",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · The design process",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    3,
+    4,
+    5,
+    6
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Designing what people use",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    7,
+    8,
+    9
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Systems, sustainability and ethics",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    10,
+    11
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Professional practice",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Foundations of Design Thinking",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What is design?",
+     "module": "What design is"
+    },
+    {
+     "id": "u01-02",
+     "title": "A short history of design",
+     "module": "What design is"
+    },
+    {
+     "id": "u01-03",
+     "title": "Design thinking defined",
+     "module": "What design is"
+    },
+    {
+     "id": "u01-04",
+     "title": "Design as a process, not a product",
+     "module": "What design is"
+    },
+    {
+     "id": "u01-05",
+     "title": "The Double Diamond",
+     "module": "Process models"
+    },
+    {
+     "id": "u01-06",
+     "title": "Divergent and convergent thinking",
+     "module": "Process models"
+    },
+    {
+     "id": "u01-07",
+     "title": "The d.school and IDEO models",
+     "module": "Process models"
+    },
+    {
+     "id": "u01-08",
+     "title": "Iterative design in Design and Technology",
+     "module": "Process models"
+    },
+    {
+     "id": "u01-09",
+     "title": "Designers and design disciplines",
+     "module": "Design in the world"
+    },
+    {
+     "id": "u01-10",
+     "title": "Human-centred design",
+     "module": "Design in the world"
+    },
+    {
+     "id": "u01-11",
+     "title": "Wicked problems",
+     "module": "Design in the world"
+    },
+    {
+     "id": "u01-12",
+     "title": "The value of design",
+     "module": "Design in the world"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "The Psychology of Creativity",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "What is creativity?",
+     "module": "Understanding creativity"
+    },
+    {
+     "id": "u02-02",
+     "title": "The four Ps of creativity",
+     "module": "Understanding creativity"
+    },
+    {
+     "id": "u02-03",
+     "title": "Divergent thinking and its measurement",
+     "module": "Understanding creativity"
+    },
+    {
+     "id": "u02-04",
+     "title": "Stages of the creative process",
+     "module": "Understanding creativity"
+    },
+    {
+     "id": "u02-05",
+     "title": "Insight and incubation",
+     "module": "Minds and conditions"
+    },
+    {
+     "id": "u02-06",
+     "title": "Knowledge, expertise and creativity",
+     "module": "Minds and conditions"
+    },
+    {
+     "id": "u02-07",
+     "title": "Motivation and creativity",
+     "module": "Minds and conditions"
+    },
+    {
+     "id": "u02-08",
+     "title": "Design fixation and how to break it",
+     "module": "Minds and conditions"
+    },
+    {
+     "id": "u02-09",
+     "title": "Creative confidence",
+     "module": "Creative environments"
+    },
+    {
+     "id": "u02-10",
+     "title": "Constraints and creativity",
+     "module": "Creative environments"
+    },
+    {
+     "id": "u02-11",
+     "title": "Creative climate in teams",
+     "module": "Creative environments"
+    },
+    {
+     "id": "u02-12",
+     "title": "Myths about creativity",
+     "module": "Creative environments"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Ideation Methods",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Brainstorming and its rules",
+     "module": "Generating ideas"
+    },
+    {
+     "id": "u03-02",
+     "title": "Brainwriting and 6-3-5",
+     "module": "Generating ideas"
+    },
+    {
+     "id": "u03-03",
+     "title": "SCAMPER",
+     "module": "Generating ideas"
+    },
+    {
+     "id": "u03-04",
+     "title": "Mind mapping",
+     "module": "Generating ideas"
+    },
+    {
+     "id": "u03-05",
+     "title": "Analogies and biomimicry",
+     "module": "Generating ideas"
+    },
+    {
+     "id": "u03-06",
+     "title": "Morphological analysis",
+     "module": "Generating ideas"
+    },
+    {
+     "id": "u03-07",
+     "title": "How might we questions",
+     "module": "Generating ideas"
+    },
+    {
+     "id": "u03-08",
+     "title": "Reversal and the worst possible idea",
+     "module": "Generating ideas"
+    },
+    {
+     "id": "u03-09",
+     "title": "Clustering and affinity diagrams",
+     "module": "Selecting and developing ideas"
+    },
+    {
+     "id": "u03-10",
+     "title": "Dot voting and its limits",
+     "module": "Selecting and developing ideas"
+    },
+    {
+     "id": "u03-11",
+     "title": "Evaluation matrices",
+     "module": "Selecting and developing ideas"
+    },
+    {
+     "id": "u03-12",
+     "title": "Concept development",
+     "module": "Selecting and developing ideas"
+    },
+    {
+     "id": "u03-13",
+     "title": "TRIZ basics",
+     "module": "Selecting and developing ideas"
+    },
+    {
+     "id": "u03-14",
+     "title": "Sketching to think",
+     "module": "Selecting and developing ideas"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "User Research and Empathy",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Why research users",
+     "module": "Planning research"
+    },
+    {
+     "id": "u04-02",
+     "title": "Research questions and plans",
+     "module": "Planning research"
+    },
+    {
+     "id": "u04-03",
+     "title": "Qualitative and quantitative research",
+     "module": "Planning research"
+    },
+    {
+     "id": "u04-04",
+     "title": "Research ethics and consent",
+     "module": "Planning research"
+    },
+    {
+     "id": "u04-05",
+     "title": "Recruiting participants",
+     "module": "Planning research"
+    },
+    {
+     "id": "u04-06",
+     "title": "User interviews",
+     "module": "Methods"
+    },
+    {
+     "id": "u04-07",
+     "title": "Contextual inquiry and observation",
+     "module": "Methods"
+    },
+    {
+     "id": "u04-08",
+     "title": "Surveys",
+     "module": "Methods"
+    },
+    {
+     "id": "u04-09",
+     "title": "Diary studies",
+     "module": "Methods"
+    },
+    {
+     "id": "u04-10",
+     "title": "Ethnography in design",
+     "module": "Methods"
+    },
+    {
+     "id": "u04-11",
+     "title": "Desk research and competitor analysis",
+     "module": "Methods"
+    },
+    {
+     "id": "u04-12",
+     "title": "Empathy maps",
+     "module": "Making sense"
+    },
+    {
+     "id": "u04-13",
+     "title": "Personas",
+     "module": "Making sense"
+    },
+    {
+     "id": "u04-14",
+     "title": "Customer journey maps",
+     "module": "Making sense"
+    },
+    {
+     "id": "u04-15",
+     "title": "Jobs to be done",
+     "module": "Making sense"
+    },
+    {
+     "id": "u04-16",
+     "title": "Synthesis and insight",
+     "module": "Making sense"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Defining Problems",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Problem framing and reframing",
+     "module": "Framing"
+    },
+    {
+     "id": "u05-02",
+     "title": "Point-of-view statements",
+     "module": "Framing"
+    },
+    {
+     "id": "u05-03",
+     "title": "Design briefs",
+     "module": "Framing"
+    },
+    {
+     "id": "u05-04",
+     "title": "Design specifications",
+     "module": "Framing"
+    },
+    {
+     "id": "u05-05",
+     "title": "Requirements and constraints",
+     "module": "Framing"
+    },
+    {
+     "id": "u05-06",
+     "title": "Stakeholder mapping",
+     "module": "Framing"
+    },
+    {
+     "id": "u05-07",
+     "title": "Root cause analysis and the five whys",
+     "module": "Focusing"
+    },
+    {
+     "id": "u05-08",
+     "title": "Prioritisation methods",
+     "module": "Focusing"
+    },
+    {
+     "id": "u05-09",
+     "title": "Assumptions and hypotheses",
+     "module": "Focusing"
+    },
+    {
+     "id": "u05-10",
+     "title": "Success criteria and metrics",
+     "module": "Focusing"
+    },
+    {
+     "id": "u05-11",
+     "title": "Scoping the problem space",
+     "module": "Focusing"
+    },
+    {
+     "id": "u05-12",
+     "title": "The ethics of problem choice",
+     "module": "Focusing"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Prototyping, Testing and Iteration",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Why prototype",
+     "module": "Prototyping"
+    },
+    {
+     "id": "u06-02",
+     "title": "Prototype fidelity",
+     "module": "Prototyping"
+    },
+    {
+     "id": "u06-03",
+     "title": "Paper prototyping",
+     "module": "Prototyping"
+    },
+    {
+     "id": "u06-04",
+     "title": "Wireframes",
+     "module": "Prototyping"
+    },
+    {
+     "id": "u06-05",
+     "title": "Physical models and mock-ups",
+     "module": "Prototyping"
+    },
+    {
+     "id": "u06-06",
+     "title": "Wizard of Oz and experience prototypes",
+     "module": "Prototyping"
+    },
+    {
+     "id": "u06-07",
+     "title": "Digital prototyping tools",
+     "module": "Prototyping"
+    },
+    {
+     "id": "u06-08",
+     "title": "Usability testing",
+     "module": "Testing"
+    },
+    {
+     "id": "u06-09",
+     "title": "Thinking aloud",
+     "module": "Testing"
+    },
+    {
+     "id": "u06-10",
+     "title": "How many users to test",
+     "module": "Testing"
+    },
+    {
+     "id": "u06-11",
+     "title": "Heuristic evaluation",
+     "module": "Testing"
+    },
+    {
+     "id": "u06-12",
+     "title": "A/B testing",
+     "module": "Testing"
+    },
+    {
+     "id": "u06-13",
+     "title": "Analysing test results",
+     "module": "Testing"
+    },
+    {
+     "id": "u06-14",
+     "title": "Iterating on feedback",
+     "module": "Iteration"
+    },
+    {
+     "id": "u06-15",
+     "title": "Minimum viable product",
+     "module": "Iteration"
+    },
+    {
+     "id": "u06-16",
+     "title": "Design sprints",
+     "module": "Iteration"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "The Visual Language of Art and Design",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u07-17",
+     "title": "What is art and design?",
+     "module": "What art and design are"
+    },
+    {
+     "id": "u07-18",
+     "title": "How art and design are assessed: the four assessment objectives",
+     "module": "What art and design are"
+    },
+    {
+     "id": "u07-19",
+     "title": "Looking closely: an approach to visual analysis",
+     "module": "What art and design are"
+    },
+    {
+     "id": "u07-20",
+     "title": "Line",
+     "module": "The visual elements"
+    },
+    {
+     "id": "u07-21",
+     "title": "Shape and form",
+     "module": "The visual elements"
+    },
+    {
+     "id": "u07-22",
+     "title": "Tone and value",
+     "module": "The visual elements"
+    },
+    {
+     "id": "u07-23",
+     "title": "Colour as a visual element",
+     "module": "The visual elements"
+    },
+    {
+     "id": "u07-24",
+     "title": "Texture",
+     "module": "The visual elements"
+    },
+    {
+     "id": "u07-25",
+     "title": "Space",
+     "module": "The visual elements"
+    },
+    {
+     "id": "u07-26",
+     "title": "Pattern",
+     "module": "The visual elements"
+    },
+    {
+     "id": "u07-27",
+     "title": "Balance and symmetry",
+     "module": "The principles of design"
+    },
+    {
+     "id": "u07-28",
+     "title": "Contrast and emphasis",
+     "module": "The principles of design"
+    },
+    {
+     "id": "u07-29",
+     "title": "Rhythm, repetition and movement",
+     "module": "The principles of design"
+    },
+    {
+     "id": "u07-30",
+     "title": "Proportion and scale",
+     "module": "The principles of design"
+    },
+    {
+     "id": "u07-31",
+     "title": "Unity and variety",
+     "module": "The principles of design"
+    },
+    {
+     "id": "u07-32",
+     "title": "Composition and the picture plane",
+     "module": "Composition"
+    },
+    {
+     "id": "u07-33",
+     "title": "The rule of thirds and the golden ratio",
+     "module": "Composition"
+    },
+    {
+     "id": "u07-34",
+     "title": "Gestalt principles in art and design",
+     "module": "Composition"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Accessibility and Inclusive Design",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Why accessibility matters",
+     "module": "Principles"
+    },
+    {
+     "id": "u08-02",
+     "title": "Models of disability",
+     "module": "Principles"
+    },
+    {
+     "id": "u08-03",
+     "title": "Inclusive design principles",
+     "module": "Principles"
+    },
+    {
+     "id": "u08-04",
+     "title": "Universal design",
+     "module": "Principles"
+    },
+    {
+     "id": "u08-05",
+     "title": "WCAG 2.2 and the POUR principles",
+     "module": "WCAG"
+    },
+    {
+     "id": "u08-06",
+     "title": "Conformance levels",
+     "module": "WCAG"
+    },
+    {
+     "id": "u08-07",
+     "title": "Colour contrast",
+     "module": "WCAG"
+    },
+    {
+     "id": "u08-08",
+     "title": "Keyboard access and focus",
+     "module": "WCAG"
+    },
+    {
+     "id": "u08-09",
+     "title": "Text alternatives",
+     "module": "WCAG"
+    },
+    {
+     "id": "u08-10",
+     "title": "Accessible forms",
+     "module": "WCAG"
+    },
+    {
+     "id": "u08-11",
+     "title": "Assistive technologies",
+     "module": "Practice"
+    },
+    {
+     "id": "u08-12",
+     "title": "Testing for accessibility",
+     "module": "Practice"
+    },
+    {
+     "id": "u08-13",
+     "title": "Cognitive accessibility",
+     "module": "Practice"
+    },
+    {
+     "id": "u08-14",
+     "title": "Accessibility and UK law",
+     "module": "Practice"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Product Design and Materials",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Material properties",
+     "module": "Materials"
+    },
+    {
+     "id": "u09-02",
+     "title": "Woods and manufactured boards",
+     "module": "Materials"
+    },
+    {
+     "id": "u09-03",
+     "title": "Metals and alloys",
+     "module": "Materials"
+    },
+    {
+     "id": "u09-04",
+     "title": "Polymers",
+     "module": "Materials"
+    },
+    {
+     "id": "u09-05",
+     "title": "Textiles and composites",
+     "module": "Materials"
+    },
+    {
+     "id": "u09-06",
+     "title": "Smart and modern materials",
+     "module": "Materials"
+    },
+    {
+     "id": "u09-07",
+     "title": "Manufacturing processes",
+     "module": "Making"
+    },
+    {
+     "id": "u09-08",
+     "title": "Scales of production",
+     "module": "Making"
+    },
+    {
+     "id": "u09-09",
+     "title": "Design for manufacture and assembly",
+     "module": "Making"
+    },
+    {
+     "id": "u09-10",
+     "title": "Ergonomics and anthropometrics",
+     "module": "Making"
+    },
+    {
+     "id": "u09-11",
+     "title": "Tolerances and quality control",
+     "module": "Making"
+    },
+    {
+     "id": "u09-12",
+     "title": "Form and function",
+     "module": "Product thinking"
+    },
+    {
+     "id": "u09-13",
+     "title": "The product life cycle",
+     "module": "Product thinking"
+    },
+    {
+     "id": "u09-14",
+     "title": "Influential designers and movements",
+     "module": "Product thinking"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Service and Systems Design",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "What is service design?",
+     "module": "Services"
+    },
+    {
+     "id": "u10-02",
+     "title": "Service blueprints",
+     "module": "Services"
+    },
+    {
+     "id": "u10-03",
+     "title": "Touchpoints and channels",
+     "module": "Services"
+    },
+    {
+     "id": "u10-04",
+     "title": "Co-design and participatory design",
+     "module": "Services"
+    },
+    {
+     "id": "u10-05",
+     "title": "Designing public services",
+     "module": "Services"
+    },
+    {
+     "id": "u10-06",
+     "title": "Systems thinking for designers",
+     "module": "Systems"
+    },
+    {
+     "id": "u10-07",
+     "title": "Feedback loops and leverage points",
+     "module": "Systems"
+    },
+    {
+     "id": "u10-08",
+     "title": "Ecosystem maps",
+     "module": "Systems"
+    },
+    {
+     "id": "u10-09",
+     "title": "Designing for behaviour change",
+     "module": "Systems"
+    },
+    {
+     "id": "u10-10",
+     "title": "Nudges and choice architecture",
+     "module": "Systems"
+    },
+    {
+     "id": "u10-11",
+     "title": "Platforms and networks",
+     "module": "Systems"
+    },
+    {
+     "id": "u10-12",
+     "title": "Measuring service outcomes",
+     "module": "Systems"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Sustainable and Ethical Design",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Design and the environment",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-02",
+     "title": "Life cycle assessment",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-03",
+     "title": "The circular economy",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-04",
+     "title": "Designing out waste",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-05",
+     "title": "Design for disassembly and repair",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-06",
+     "title": "Choosing materials sustainably",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-07",
+     "title": "Cradle to cradle",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-08",
+     "title": "The waste hierarchy",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-09",
+     "title": "Design ethics",
+     "module": "Ethics"
+    },
+    {
+     "id": "u11-10",
+     "title": "Dark patterns",
+     "module": "Ethics"
+    },
+    {
+     "id": "u11-11",
+     "title": "Persuasive technology",
+     "module": "Ethics"
+    },
+    {
+     "id": "u11-12",
+     "title": "Privacy by design",
+     "module": "Ethics"
+    },
+    {
+     "id": "u11-13",
+     "title": "Bias in design and data",
+     "module": "Ethics"
+    },
+    {
+     "id": "u11-14",
+     "title": "Designing with AI",
+     "module": "Ethics"
+    },
+    {
+     "id": "u11-15",
+     "title": "Social and cultural responsibility",
+     "module": "Ethics"
+    },
+    {
+     "id": "u11-16",
+     "title": "Professional codes of conduct",
+     "module": "Ethics"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Collaboration, Communication and Intellectual Property",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Creative collaboration",
+     "module": "Collaboration"
+    },
+    {
+     "id": "u12-02",
+     "title": "Workshops and facilitation",
+     "module": "Collaboration"
+    },
+    {
+     "id": "u12-03",
+     "title": "Giving and receiving critique",
+     "module": "Collaboration"
+    },
+    {
+     "id": "u12-04",
+     "title": "Working with stakeholders",
+     "module": "Collaboration"
+    },
+    {
+     "id": "u12-05",
+     "title": "Sketching and visual communication",
+     "module": "Communication"
+    },
+    {
+     "id": "u12-06",
+     "title": "Storytelling in design",
+     "module": "Communication"
+    },
+    {
+     "id": "u12-07",
+     "title": "Presenting and pitching",
+     "module": "Communication"
+    },
+    {
+     "id": "u12-08",
+     "title": "Design portfolios",
+     "module": "Communication"
+    },
+    {
+     "id": "u12-09",
+     "title": "Documentation and developer handoff",
+     "module": "Communication"
+    },
+    {
+     "id": "u12-10",
+     "title": "Design systems",
+     "module": "Communication"
+    },
+    {
+     "id": "u12-11",
+     "title": "Intellectual property basics",
+     "module": "Intellectual property"
+    },
+    {
+     "id": "u12-12",
+     "title": "Copyright",
+     "module": "Intellectual property"
+    },
+    {
+     "id": "u12-13",
+     "title": "Registered designs",
+     "module": "Intellectual property"
+    },
+    {
+     "id": "u12-14",
+     "title": "Patents",
+     "module": "Intellectual property"
+    },
+    {
+     "id": "u12-15",
+     "title": "Trade marks",
+     "module": "Intellectual property"
+    },
+    {
+     "id": "u12-16",
+     "title": "Protecting and licensing ideas",
+     "module": "Intellectual property"
+    }
+   ]
+  }
+ ],
+ "interactives": []
+}

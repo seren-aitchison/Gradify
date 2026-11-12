@@ -4,7 +4,10 @@ import { MAP, FRAMEWORKS } from "./map.js";
 import { QA } from "./qa.js";
 import { WRITING } from "./writing.js";
 import { QUESTIONS, LESSONS } from "./registry.js";
-export default {
+import { defineCourse } from "../../subjects/define.js";
+import law from "../../subjects/law.js";
+// the law adapter (kit/subjects/) holds this subject's QA rules and reviewer flags
+export default defineCourse(law, {
   site: "LawGradify", slug: "law", name: "Law", app: "../app.html", unitWord: "School",
   units: UNITS, tracks: TRACKS, paths: PATHS,
   // curriculum mapping to the SQE, with framework provenance (map.js)
@@ -66,4 +69,4 @@ export default {
     ["Learning map", "Every LawGradify subject on one map.", "../map.html"],
     ["Notes Studio", "Turn your own lecture notes, cases and statutes into flashcards and questions.", "../app.html#/notes"],
   ],
-};
+});

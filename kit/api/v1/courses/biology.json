@@ -1,0 +1,2792 @@
+{
+ "api": 1,
+ "slug": "biology",
+ "name": "Biology",
+ "site": "SciGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Biological reasoning"
+ ],
+ "notice": null,
+ "notes": "/kit/courses/biology/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Foundations of life",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "from": "#10b981",
+   "to": "#14d4c4"
+  },
+  {
+   "name": "Stage 2 · Genes and cells",
+   "units": [
+    4,
+    5
+   ],
+   "from": "#22c55e",
+   "to": "#0ea5a4"
+  },
+  {
+   "name": "Stage 3 · Evolution and ecology",
+   "units": [
+    6,
+    11
+   ],
+   "from": "#84cc16",
+   "to": "#10b981"
+  },
+  {
+   "name": "Stage 4 · Organisms",
+   "units": [
+    7,
+    8
+   ],
+   "from": "#2dd4bf",
+   "to": "#16a34a"
+  },
+  {
+   "name": "Stage 5 · Microbes and immunity",
+   "units": [
+    9,
+    10
+   ],
+   "from": "#34d399",
+   "to": "#06b6d4"
+  },
+  {
+   "name": "Stage 6 · Biotechnology, data and research",
+   "units": [
+    12,
+    13,
+    14
+   ],
+   "from": "#14b8a6",
+   "to": "#3b82f6"
+  }
+ ],
+ "paths": [
+  {
+   "id": "gcse",
+   "name": "GCSE Biology",
+   "sub": "The core of secondary-school biology: cells, biomolecules, genetics, the human body and ecosystems.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    7,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "alevel",
+   "name": "A level Biology",
+   "sub": "Everything for A level and equivalent exams, from cells to ecosystems.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    10,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "year1",
+   "name": "University year 1",
+   "sub": "The first-year core of a biological sciences degree.",
+   "units": [
+    2,
+    3,
+    4,
+    5,
+    9,
+    14
+   ],
+   "select": null
+  },
+  {
+   "id": "medicine",
+   "name": "Pre-medicine and human biology",
+   "sub": "The biology behind medicine: cells, physiology, microbes and immunity.",
+   "units": [
+    2,
+    3,
+    7,
+    9,
+    10,
+    5
+   ],
+   "select": null
+  },
+  {
+   "id": "genetics",
+   "name": "Genetics and genomics",
+   "sub": "From DNA and inheritance to genome sequencing and gene editing.",
+   "units": [
+    4,
+    5,
+    6,
+    12,
+    13
+   ],
+   "select": null
+  },
+  {
+   "id": "compbio",
+   "name": "Computational biology",
+   "sub": "Sequences, alignment, phylogenetics, omics and reproducible data science.",
+   "units": [
+    1,
+    4,
+    13,
+    6,
+    12,
+    14
+   ],
+   "select": null
+  },
+  {
+   "id": "ecology",
+   "name": "Ecology and conservation",
+   "sub": "Evolution, plants, ecosystems and protecting biodiversity.",
+   "units": [
+    1,
+    6,
+    8,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "research",
+   "name": "Research-ready",
+   "sub": "Experimental design, laboratory techniques, statistics and research integrity.",
+   "units": [
+    1,
+    14,
+    12,
+    13
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Foundations of life",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Genes and cells",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    5
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Evolution and ecology",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    6,
+    11
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Organisms",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    7,
+    8
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Microbes and immunity",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    9,
+    10
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-6",
+   "title": "Stage 6 · Biotechnology, data and research",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    12,
+    13,
+    14
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Foundations of Biology",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What is biology?",
+     "module": "The living world"
+    },
+    {
+     "id": "u01-02",
+     "title": "Characteristics of living organisms",
+     "module": "The living world"
+    },
+    {
+     "id": "u01-03",
+     "title": "Levels of biological organisation",
+     "module": "The living world"
+    },
+    {
+     "id": "u01-04",
+     "title": "The characteristics of life",
+     "module": "The living world"
+    },
+    {
+     "id": "u01-05",
+     "title": "Classification and taxonomy",
+     "module": "Classifying life"
+    },
+    {
+     "id": "u01-06",
+     "title": "The three domains of life",
+     "module": "Classifying life"
+    },
+    {
+     "id": "u01-07",
+     "title": "The kingdoms of life",
+     "module": "Classifying life"
+    },
+    {
+     "id": "u01-08",
+     "title": "Scientific method",
+     "module": "The scientific method"
+    },
+    {
+     "id": "u01-09",
+     "title": "Hypotheses and predictions",
+     "module": "The scientific method"
+    },
+    {
+     "id": "u01-10",
+     "title": "Variables and experimental design",
+     "module": "The scientific method"
+    },
+    {
+     "id": "u01-11",
+     "title": "Controls and reproducibility",
+     "module": "The scientific method"
+    },
+    {
+     "id": "u01-12",
+     "title": "Accuracy and precision",
+     "module": "The scientific method"
+    },
+    {
+     "id": "u01-13",
+     "title": "Reliability and validity",
+     "module": "The scientific method"
+    },
+    {
+     "id": "u01-14",
+     "title": "Biological measurements",
+     "module": "Measurement and data"
+    },
+    {
+     "id": "u01-15",
+     "title": "Units and conversions",
+     "module": "Measurement and data"
+    },
+    {
+     "id": "u01-16",
+     "title": "Scientific notation",
+     "module": "Measurement and data"
+    },
+    {
+     "id": "u01-17",
+     "title": "Graphs and data presentation",
+     "module": "Measurement and data"
+    },
+    {
+     "id": "u01-18",
+     "title": "Statistical foundations",
+     "module": "Measurement and data"
+    },
+    {
+     "id": "u01-19",
+     "title": "Sampling methods",
+     "module": "Measurement and data"
+    },
+    {
+     "id": "u01-20",
+     "title": "Ethical considerations in biological research",
+     "module": "Ethics in research"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Cell Biology",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Cell theory",
+     "module": "Cells and cell types"
+    },
+    {
+     "id": "u02-02",
+     "title": "Prokaryotic cells",
+     "module": "Cells and cell types"
+    },
+    {
+     "id": "u02-03",
+     "title": "Eukaryotic cells",
+     "module": "Cells and cell types"
+    },
+    {
+     "id": "u02-04",
+     "title": "Animal cells",
+     "module": "Cells and cell types"
+    },
+    {
+     "id": "u02-05",
+     "title": "Plant cells",
+     "module": "Cells and cell types"
+    },
+    {
+     "id": "u02-06",
+     "title": "Fungal cells",
+     "module": "Cells and cell types"
+    },
+    {
+     "id": "u02-07",
+     "title": "Bacterial cells",
+     "module": "Cells and cell types"
+    },
+    {
+     "id": "u02-08",
+     "title": "Cell organelles",
+     "module": "Organelles"
+    },
+    {
+     "id": "u02-09",
+     "title": "Nucleus and nucleolus",
+     "module": "Organelles"
+    },
+    {
+     "id": "u02-10",
+     "title": "Mitochondria",
+     "module": "Organelles"
+    },
+    {
+     "id": "u02-11",
+     "title": "Chloroplasts",
+     "module": "Organelles"
+    },
+    {
+     "id": "u02-12",
+     "title": "Ribosomes",
+     "module": "Organelles"
+    },
+    {
+     "id": "u02-13",
+     "title": "Endoplasmic reticulum",
+     "module": "Organelles"
+    },
+    {
+     "id": "u02-14",
+     "title": "Golgi apparatus",
+     "module": "Organelles"
+    },
+    {
+     "id": "u02-15",
+     "title": "Lysosomes and peroxisomes",
+     "module": "Organelles"
+    },
+    {
+     "id": "u02-16",
+     "title": "Cytoskeleton",
+     "module": "Organelles"
+    },
+    {
+     "id": "u02-17",
+     "title": "Cell membranes",
+     "module": "Membranes and transport"
+    },
+    {
+     "id": "u02-18",
+     "title": "Membrane structure",
+     "module": "Membranes and transport"
+    },
+    {
+     "id": "u02-19",
+     "title": "Membrane transport",
+     "module": "Membranes and transport"
+    },
+    {
+     "id": "u02-20",
+     "title": "Diffusion",
+     "module": "Membranes and transport"
+    },
+    {
+     "id": "u02-21",
+     "title": "Osmosis",
+     "module": "Membranes and transport"
+    },
+    {
+     "id": "u02-22",
+     "title": "Facilitated diffusion",
+     "module": "Membranes and transport"
+    },
+    {
+     "id": "u02-23",
+     "title": "Active transport",
+     "module": "Membranes and transport"
+    },
+    {
+     "id": "u02-24",
+     "title": "Endocytosis and exocytosis",
+     "module": "Membranes and transport"
+    },
+    {
+     "id": "u02-25",
+     "title": "Cell specialisation",
+     "module": "Specialisation and communication"
+    },
+    {
+     "id": "u02-26",
+     "title": "Stem cells",
+     "module": "Specialisation and communication"
+    },
+    {
+     "id": "u02-27",
+     "title": "Cell differentiation",
+     "module": "Specialisation and communication"
+    },
+    {
+     "id": "u02-28",
+     "title": "Cell signalling",
+     "module": "Specialisation and communication"
+    },
+    {
+     "id": "u02-29",
+     "title": "Cell junctions",
+     "module": "Specialisation and communication"
+    },
+    {
+     "id": "u02-30",
+     "title": "Cellular organisation",
+     "module": "Specialisation and communication"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Biochemistry and Biomolecules",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Chemistry of life",
+     "module": "Water and the chemistry of life"
+    },
+    {
+     "id": "u03-02",
+     "title": "Water and biological systems",
+     "module": "Water and the chemistry of life"
+    },
+    {
+     "id": "u03-03",
+     "title": "Hydrogen bonding",
+     "module": "Water and the chemistry of life"
+    },
+    {
+     "id": "u03-04",
+     "title": "pH and biological buffers",
+     "module": "Water and the chemistry of life"
+    },
+    {
+     "id": "u03-05",
+     "title": "Carbohydrates",
+     "module": "Carbohydrates"
+    },
+    {
+     "id": "u03-06",
+     "title": "Monosaccharides",
+     "module": "Carbohydrates"
+    },
+    {
+     "id": "u03-07",
+     "title": "Disaccharides",
+     "module": "Carbohydrates"
+    },
+    {
+     "id": "u03-08",
+     "title": "Polysaccharides",
+     "module": "Carbohydrates"
+    },
+    {
+     "id": "u03-09",
+     "title": "Lipids",
+     "module": "Lipids"
+    },
+    {
+     "id": "u03-10",
+     "title": "Fatty acids",
+     "module": "Lipids"
+    },
+    {
+     "id": "u03-11",
+     "title": "Triglycerides",
+     "module": "Lipids"
+    },
+    {
+     "id": "u03-12",
+     "title": "Phospholipids",
+     "module": "Lipids"
+    },
+    {
+     "id": "u03-13",
+     "title": "Steroids",
+     "module": "Lipids"
+    },
+    {
+     "id": "u03-14",
+     "title": "Proteins",
+     "module": "Proteins"
+    },
+    {
+     "id": "u03-15",
+     "title": "Amino acids",
+     "module": "Proteins"
+    },
+    {
+     "id": "u03-16",
+     "title": "Peptide bonds",
+     "module": "Proteins"
+    },
+    {
+     "id": "u03-17",
+     "title": "Protein primary structure",
+     "module": "Proteins"
+    },
+    {
+     "id": "u03-18",
+     "title": "Protein secondary structure",
+     "module": "Proteins"
+    },
+    {
+     "id": "u03-19",
+     "title": "Protein tertiary structure",
+     "module": "Proteins"
+    },
+    {
+     "id": "u03-20",
+     "title": "Protein quaternary structure",
+     "module": "Proteins"
+    },
+    {
+     "id": "u03-21",
+     "title": "Protein folding",
+     "module": "Proteins"
+    },
+    {
+     "id": "u03-22",
+     "title": "Protein denaturation",
+     "module": "Proteins"
+    },
+    {
+     "id": "u03-23",
+     "title": "Enzymes",
+     "module": "Enzymes"
+    },
+    {
+     "id": "u03-24",
+     "title": "Enzyme-substrate interactions",
+     "module": "Enzymes"
+    },
+    {
+     "id": "u03-25",
+     "title": "Enzyme kinetics",
+     "module": "Enzymes"
+    },
+    {
+     "id": "u03-26",
+     "title": "Enzyme inhibition",
+     "module": "Enzymes"
+    },
+    {
+     "id": "u03-27",
+     "title": "Factors affecting enzyme activity",
+     "module": "Enzymes"
+    },
+    {
+     "id": "u03-28",
+     "title": "Nucleic acids",
+     "module": "Nucleic acids and energy"
+    },
+    {
+     "id": "u03-29",
+     "title": "DNA and RNA",
+     "module": "Nucleic acids and energy"
+    },
+    {
+     "id": "u03-30",
+     "title": "ATP and biological energy",
+     "module": "Nucleic acids and energy"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Genetics and Molecular Biology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Introduction to genetics",
+     "module": "DNA and genomes"
+    },
+    {
+     "id": "u04-02",
+     "title": "DNA structure",
+     "module": "DNA and genomes"
+    },
+    {
+     "id": "u04-03",
+     "title": "DNA replication",
+     "module": "DNA and genomes"
+    },
+    {
+     "id": "u04-04",
+     "title": "DNA repair",
+     "module": "DNA and genomes"
+    },
+    {
+     "id": "u04-05",
+     "title": "Chromosomes",
+     "module": "DNA and genomes"
+    },
+    {
+     "id": "u04-06",
+     "title": "Genes and alleles",
+     "module": "DNA and genomes"
+    },
+    {
+     "id": "u04-07",
+     "title": "Genomes",
+     "module": "DNA and genomes"
+    },
+    {
+     "id": "u04-08",
+     "title": "RNA structure",
+     "module": "From gene to protein"
+    },
+    {
+     "id": "u04-09",
+     "title": "Transcription",
+     "module": "From gene to protein"
+    },
+    {
+     "id": "u04-10",
+     "title": "RNA processing",
+     "module": "From gene to protein"
+    },
+    {
+     "id": "u04-11",
+     "title": "Translation",
+     "module": "From gene to protein"
+    },
+    {
+     "id": "u04-12",
+     "title": "Genetic code",
+     "module": "From gene to protein"
+    },
+    {
+     "id": "u04-13",
+     "title": "Protein synthesis",
+     "module": "From gene to protein"
+    },
+    {
+     "id": "u04-14",
+     "title": "Gene regulation",
+     "module": "Gene regulation"
+    },
+    {
+     "id": "u04-15",
+     "title": "Operons",
+     "module": "Gene regulation"
+    },
+    {
+     "id": "u04-16",
+     "title": "Epigenetics",
+     "module": "Gene regulation"
+    },
+    {
+     "id": "u04-17",
+     "title": "Mutations",
+     "module": "Mutation and DNA damage"
+    },
+    {
+     "id": "u04-18",
+     "title": "Types of mutation",
+     "module": "Mutation and DNA damage"
+    },
+    {
+     "id": "u04-19",
+     "title": "DNA damage",
+     "module": "Mutation and DNA damage"
+    },
+    {
+     "id": "u04-20",
+     "title": "Mendelian genetics",
+     "module": "Patterns of inheritance"
+    },
+    {
+     "id": "u04-21",
+     "title": "Dominant and recessive inheritance",
+     "module": "Patterns of inheritance"
+    },
+    {
+     "id": "u04-22",
+     "title": "Genotype and phenotype",
+     "module": "Patterns of inheritance"
+    },
+    {
+     "id": "u04-23",
+     "title": "Monohybrid crosses",
+     "module": "Patterns of inheritance"
+    },
+    {
+     "id": "u04-24",
+     "title": "Dihybrid crosses",
+     "module": "Patterns of inheritance"
+    },
+    {
+     "id": "u04-25",
+     "title": "Incomplete dominance",
+     "module": "Patterns of inheritance"
+    },
+    {
+     "id": "u04-26",
+     "title": "Codominance",
+     "module": "Patterns of inheritance"
+    },
+    {
+     "id": "u04-27",
+     "title": "Sex-linked inheritance",
+     "module": "Patterns of inheritance"
+    },
+    {
+     "id": "u04-28",
+     "title": "Pedigree analysis",
+     "module": "Patterns of inheritance"
+    },
+    {
+     "id": "u04-29",
+     "title": "Population genetics",
+     "module": "Populations and genomics"
+    },
+    {
+     "id": "u04-30",
+     "title": "Genetic linkage",
+     "module": "Populations and genomics"
+    },
+    {
+     "id": "u04-31",
+     "title": "Recombination",
+     "module": "Populations and genomics"
+    },
+    {
+     "id": "u04-32",
+     "title": "Chromosomal abnormalities",
+     "module": "Populations and genomics"
+    },
+    {
+     "id": "u04-33",
+     "title": "Genomics",
+     "module": "Populations and genomics"
+    },
+    {
+     "id": "u04-34",
+     "title": "Human genetic variation",
+     "module": "Populations and genomics"
+    },
+    {
+     "id": "u04-35",
+     "title": "Genome-wide association studies",
+     "module": "Populations and genomics"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Cell Division and Development",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Cell cycle",
+     "module": "The cell cycle and division"
+    },
+    {
+     "id": "u05-02",
+     "title": "Interphase",
+     "module": "The cell cycle and division"
+    },
+    {
+     "id": "u05-03",
+     "title": "Mitosis",
+     "module": "The cell cycle and division"
+    },
+    {
+     "id": "u05-04",
+     "title": "Meiosis",
+     "module": "The cell cycle and division"
+    },
+    {
+     "id": "u05-05",
+     "title": "Comparison of mitosis and meiosis",
+     "module": "The cell cycle and division"
+    },
+    {
+     "id": "u05-06",
+     "title": "Chromosome segregation",
+     "module": "The cell cycle and division"
+    },
+    {
+     "id": "u05-07",
+     "title": "Cell-cycle regulation",
+     "module": "Control and cell death"
+    },
+    {
+     "id": "u05-08",
+     "title": "Checkpoints",
+     "module": "Control and cell death"
+    },
+    {
+     "id": "u05-09",
+     "title": "Apoptosis",
+     "module": "Control and cell death"
+    },
+    {
+     "id": "u05-10",
+     "title": "Necrosis",
+     "module": "Control and cell death"
+    },
+    {
+     "id": "u05-11",
+     "title": "Cellular senescence",
+     "module": "Control and cell death"
+    },
+    {
+     "id": "u05-12",
+     "title": "Cancer biology",
+     "module": "Cancer"
+    },
+    {
+     "id": "u05-13",
+     "title": "Tumour development",
+     "module": "Cancer"
+    },
+    {
+     "id": "u05-14",
+     "title": "Stem-cell biology",
+     "module": "Stem cells and early development"
+    },
+    {
+     "id": "u05-15",
+     "title": "Embryonic development",
+     "module": "Stem cells and early development"
+    },
+    {
+     "id": "u05-16",
+     "title": "Fertilisation",
+     "module": "Stem cells and early development"
+    },
+    {
+     "id": "u05-17",
+     "title": "Cleavage",
+     "module": "Stem cells and early development"
+    },
+    {
+     "id": "u05-18",
+     "title": "Gastrulation",
+     "module": "Stem cells and early development"
+    },
+    {
+     "id": "u05-19",
+     "title": "Organogenesis",
+     "module": "Stem cells and early development"
+    },
+    {
+     "id": "u05-20",
+     "title": "Developmental signalling",
+     "module": "Signalling, fate and regeneration"
+    },
+    {
+     "id": "u05-21",
+     "title": "Cell fate determination",
+     "module": "Signalling, fate and regeneration"
+    },
+    {
+     "id": "u05-22",
+     "title": "Tissue formation",
+     "module": "Signalling, fate and regeneration"
+    },
+    {
+     "id": "u05-23",
+     "title": "Regeneration",
+     "module": "Signalling, fate and regeneration"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Evolution and Natural Selection",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Origins of evolutionary thought",
+     "module": "Evidence and natural selection"
+    },
+    {
+     "id": "u06-02",
+     "title": "Evidence for evolution",
+     "module": "Evidence and natural selection"
+    },
+    {
+     "id": "u06-03",
+     "title": "Natural selection",
+     "module": "Evidence and natural selection"
+    },
+    {
+     "id": "u06-04",
+     "title": "Adaptation",
+     "module": "Evidence and natural selection"
+    },
+    {
+     "id": "u06-05",
+     "title": "Genetic variation",
+     "module": "Sources of evolutionary change"
+    },
+    {
+     "id": "u06-06",
+     "title": "Mutation and evolution",
+     "module": "Sources of evolutionary change"
+    },
+    {
+     "id": "u06-07",
+     "title": "Genetic drift",
+     "module": "Sources of evolutionary change"
+    },
+    {
+     "id": "u06-08",
+     "title": "Gene flow",
+     "module": "Sources of evolutionary change"
+    },
+    {
+     "id": "u06-09",
+     "title": "Sexual selection",
+     "module": "Sources of evolutionary change"
+    },
+    {
+     "id": "u06-10",
+     "title": "Selection pressures",
+     "module": "Selection and fitness"
+    },
+    {
+     "id": "u06-11",
+     "title": "Fitness",
+     "module": "Selection and fitness"
+    },
+    {
+     "id": "u06-12",
+     "title": "Speciation",
+     "module": "Speciation"
+    },
+    {
+     "id": "u06-13",
+     "title": "Reproductive isolation",
+     "module": "Speciation"
+    },
+    {
+     "id": "u06-14",
+     "title": "Allopatric speciation",
+     "module": "Speciation"
+    },
+    {
+     "id": "u06-15",
+     "title": "Sympatric speciation",
+     "module": "Speciation"
+    },
+    {
+     "id": "u06-16",
+     "title": "Phylogenetics",
+     "module": "Phylogenetics and ancestry"
+    },
+    {
+     "id": "u06-17",
+     "title": "Evolutionary trees",
+     "module": "Phylogenetics and ancestry"
+    },
+    {
+     "id": "u06-18",
+     "title": "Common ancestry",
+     "module": "Phylogenetics and ancestry"
+    },
+    {
+     "id": "u06-19",
+     "title": "Fossil evidence",
+     "module": "Phylogenetics and ancestry"
+    },
+    {
+     "id": "u06-20",
+     "title": "Molecular evolution",
+     "module": "Phylogenetics and ancestry"
+    },
+    {
+     "id": "u06-21",
+     "title": "Human evolution",
+     "module": "Evolution today"
+    },
+    {
+     "id": "u06-22",
+     "title": "Evolutionary medicine",
+     "module": "Evolution today"
+    },
+    {
+     "id": "u06-23",
+     "title": "Evolution of resistance",
+     "module": "Evolution today"
+    },
+    {
+     "id": "u06-24",
+     "title": "Population genetics",
+     "module": "Evolution today"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Human Anatomy and Physiology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Organisation of the human body",
+     "module": "Body organisation and homeostasis"
+    },
+    {
+     "id": "u07-02",
+     "title": "Homeostasis",
+     "module": "Body organisation and homeostasis"
+    },
+    {
+     "id": "u07-03",
+     "title": "Nervous system",
+     "module": "Nervous and endocrine systems"
+    },
+    {
+     "id": "u07-04",
+     "title": "Neurones",
+     "module": "Nervous and endocrine systems"
+    },
+    {
+     "id": "u07-05",
+     "title": "Action potentials",
+     "module": "Nervous and endocrine systems"
+    },
+    {
+     "id": "u07-06",
+     "title": "Synaptic transmission",
+     "module": "Nervous and endocrine systems"
+    },
+    {
+     "id": "u07-07",
+     "title": "Central nervous system",
+     "module": "Nervous and endocrine systems"
+    },
+    {
+     "id": "u07-08",
+     "title": "Peripheral nervous system",
+     "module": "Nervous and endocrine systems"
+    },
+    {
+     "id": "u07-09",
+     "title": "Endocrine system",
+     "module": "Nervous and endocrine systems"
+    },
+    {
+     "id": "u07-10",
+     "title": "Hormones and signalling",
+     "module": "Nervous and endocrine systems"
+    },
+    {
+     "id": "u07-11",
+     "title": "Cardiovascular system",
+     "module": "Cardiovascular system"
+    },
+    {
+     "id": "u07-12",
+     "title": "Heart anatomy",
+     "module": "Cardiovascular system"
+    },
+    {
+     "id": "u07-13",
+     "title": "Cardiac cycle",
+     "module": "Cardiovascular system"
+    },
+    {
+     "id": "u07-14",
+     "title": "Blood vessels",
+     "module": "Cardiovascular system"
+    },
+    {
+     "id": "u07-15",
+     "title": "Blood composition",
+     "module": "Cardiovascular system"
+    },
+    {
+     "id": "u07-16",
+     "title": "Circulation",
+     "module": "Cardiovascular system"
+    },
+    {
+     "id": "u07-17",
+     "title": "Respiratory system",
+     "module": "Respiratory system"
+    },
+    {
+     "id": "u07-18",
+     "title": "Ventilation",
+     "module": "Respiratory system"
+    },
+    {
+     "id": "u07-19",
+     "title": "Gas exchange",
+     "module": "Respiratory system"
+    },
+    {
+     "id": "u07-20",
+     "title": "Oxygen transport",
+     "module": "Respiratory system"
+    },
+    {
+     "id": "u07-21",
+     "title": "Digestive system",
+     "module": "Digestive system"
+    },
+    {
+     "id": "u07-22",
+     "title": "Digestion and absorption",
+     "module": "Digestive system"
+    },
+    {
+     "id": "u07-23",
+     "title": "Liver and pancreas",
+     "module": "Digestive system"
+    },
+    {
+     "id": "u07-24",
+     "title": "Renal system",
+     "module": "Renal system"
+    },
+    {
+     "id": "u07-25",
+     "title": "Kidney function",
+     "module": "Renal system"
+    },
+    {
+     "id": "u07-26",
+     "title": "Urine formation",
+     "module": "Renal system"
+    },
+    {
+     "id": "u07-27",
+     "title": "Musculoskeletal system",
+     "module": "Movement and support"
+    },
+    {
+     "id": "u07-28",
+     "title": "Bone physiology",
+     "module": "Movement and support"
+    },
+    {
+     "id": "u07-29",
+     "title": "Muscle contraction",
+     "module": "Movement and support"
+    },
+    {
+     "id": "u07-30",
+     "title": "Immune system",
+     "module": "Defence, reproduction and regulation"
+    },
+    {
+     "id": "u07-31",
+     "title": "Reproductive system",
+     "module": "Defence, reproduction and regulation"
+    },
+    {
+     "id": "u07-32",
+     "title": "Human development",
+     "module": "Defence, reproduction and regulation"
+    },
+    {
+     "id": "u07-33",
+     "title": "Skin and thermoregulation",
+     "module": "Defence, reproduction and regulation"
+    },
+    {
+     "id": "u07-34",
+     "title": "Fluid and electrolyte balance",
+     "module": "Defence, reproduction and regulation"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Plant Biology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Plant cell structure",
+     "module": "Plant structure"
+    },
+    {
+     "id": "u08-02",
+     "title": "Plant tissues",
+     "module": "Plant structure"
+    },
+    {
+     "id": "u08-03",
+     "title": "Roots and root systems",
+     "module": "Plant structure"
+    },
+    {
+     "id": "u08-04",
+     "title": "Stems",
+     "module": "Plant structure"
+    },
+    {
+     "id": "u08-05",
+     "title": "Leaves",
+     "module": "Plant structure"
+    },
+    {
+     "id": "u08-06",
+     "title": "Plant vascular tissue",
+     "module": "Transport in plants"
+    },
+    {
+     "id": "u08-07",
+     "title": "Xylem",
+     "module": "Transport in plants"
+    },
+    {
+     "id": "u08-08",
+     "title": "Phloem",
+     "module": "Transport in plants"
+    },
+    {
+     "id": "u08-09",
+     "title": "Water transport",
+     "module": "Transport in plants"
+    },
+    {
+     "id": "u08-10",
+     "title": "Transpiration",
+     "module": "Transport in plants"
+    },
+    {
+     "id": "u08-11",
+     "title": "Mineral nutrition",
+     "module": "Nutrition and photosynthesis"
+    },
+    {
+     "id": "u08-12",
+     "title": "Photosynthesis",
+     "module": "Nutrition and photosynthesis"
+    },
+    {
+     "id": "u08-13",
+     "title": "Light-dependent reactions",
+     "module": "Nutrition and photosynthesis"
+    },
+    {
+     "id": "u08-14",
+     "title": "Calvin cycle",
+     "module": "Nutrition and photosynthesis"
+    },
+    {
+     "id": "u08-15",
+     "title": "C3 photosynthesis",
+     "module": "Nutrition and photosynthesis"
+    },
+    {
+     "id": "u08-16",
+     "title": "C4 photosynthesis",
+     "module": "Nutrition and photosynthesis"
+    },
+    {
+     "id": "u08-17",
+     "title": "CAM photosynthesis",
+     "module": "Nutrition and photosynthesis"
+    },
+    {
+     "id": "u08-18",
+     "title": "Cellular respiration in plants",
+     "module": "Nutrition and photosynthesis"
+    },
+    {
+     "id": "u08-19",
+     "title": "Plant hormones",
+     "module": "Plant hormones and responses"
+    },
+    {
+     "id": "u08-20",
+     "title": "Auxins",
+     "module": "Plant hormones and responses"
+    },
+    {
+     "id": "u08-21",
+     "title": "Gibberellins",
+     "module": "Plant hormones and responses"
+    },
+    {
+     "id": "u08-22",
+     "title": "Cytokinins",
+     "module": "Plant hormones and responses"
+    },
+    {
+     "id": "u08-23",
+     "title": "Abscisic acid",
+     "module": "Plant hormones and responses"
+    },
+    {
+     "id": "u08-24",
+     "title": "Ethylene",
+     "module": "Plant hormones and responses"
+    },
+    {
+     "id": "u08-25",
+     "title": "Tropisms",
+     "module": "Plant hormones and responses"
+    },
+    {
+     "id": "u08-26",
+     "title": "Photoperiodism",
+     "module": "Plant hormones and responses"
+    },
+    {
+     "id": "u08-27",
+     "title": "Flowering",
+     "module": "Plant reproduction"
+    },
+    {
+     "id": "u08-28",
+     "title": "Pollination",
+     "module": "Plant reproduction"
+    },
+    {
+     "id": "u08-29",
+     "title": "Fertilisation",
+     "module": "Plant reproduction"
+    },
+    {
+     "id": "u08-30",
+     "title": "Seed formation",
+     "module": "Plant reproduction"
+    },
+    {
+     "id": "u08-31",
+     "title": "Germination",
+     "module": "Plant reproduction"
+    },
+    {
+     "id": "u08-32",
+     "title": "Plant reproduction",
+     "module": "Plant reproduction"
+    },
+    {
+     "id": "u08-33",
+     "title": "Plant responses to stress",
+     "module": "Stress and biotechnology"
+    },
+    {
+     "id": "u08-34",
+     "title": "Plant biotechnology",
+     "module": "Stress and biotechnology"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Microbiology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Introduction to microbiology",
+     "module": "Bacteria"
+    },
+    {
+     "id": "u09-02",
+     "title": "Bacterial structure",
+     "module": "Bacteria"
+    },
+    {
+     "id": "u09-03",
+     "title": "Bacterial classification",
+     "module": "Bacteria"
+    },
+    {
+     "id": "u09-04",
+     "title": "Bacterial growth",
+     "module": "Bacteria"
+    },
+    {
+     "id": "u09-05",
+     "title": "Bacterial metabolism",
+     "module": "Bacteria"
+    },
+    {
+     "id": "u09-06",
+     "title": "Bacterial genetics",
+     "module": "Bacteria"
+    },
+    {
+     "id": "u09-07",
+     "title": "Horizontal gene transfer",
+     "module": "Bacteria"
+    },
+    {
+     "id": "u09-08",
+     "title": "Viral structure",
+     "module": "Viruses"
+    },
+    {
+     "id": "u09-09",
+     "title": "Viral replication",
+     "module": "Viruses"
+    },
+    {
+     "id": "u09-10",
+     "title": "Viral evolution",
+     "module": "Viruses"
+    },
+    {
+     "id": "u09-11",
+     "title": "Fungi",
+     "module": "Fungi, protozoa and archaea"
+    },
+    {
+     "id": "u09-12",
+     "title": "Protozoa",
+     "module": "Fungi, protozoa and archaea"
+    },
+    {
+     "id": "u09-13",
+     "title": "Archaea",
+     "module": "Fungi, protozoa and archaea"
+    },
+    {
+     "id": "u09-14",
+     "title": "Microbial ecology",
+     "module": "Microbes and their hosts"
+    },
+    {
+     "id": "u09-15",
+     "title": "Microbiomes",
+     "module": "Microbes and their hosts"
+    },
+    {
+     "id": "u09-16",
+     "title": "Host-microbe interactions",
+     "module": "Microbes and their hosts"
+    },
+    {
+     "id": "u09-17",
+     "title": "Pathogenic microorganisms",
+     "module": "Infection and disease"
+    },
+    {
+     "id": "u09-18",
+     "title": "Virulence",
+     "module": "Infection and disease"
+    },
+    {
+     "id": "u09-19",
+     "title": "Transmission",
+     "module": "Infection and disease"
+    },
+    {
+     "id": "u09-20",
+     "title": "Infection",
+     "module": "Infection and disease"
+    },
+    {
+     "id": "u09-21",
+     "title": "Antibiotics",
+     "module": "Controlling microbes"
+    },
+    {
+     "id": "u09-22",
+     "title": "Antimicrobial resistance",
+     "module": "Controlling microbes"
+    },
+    {
+     "id": "u09-23",
+     "title": "Sterilisation",
+     "module": "Controlling microbes"
+    },
+    {
+     "id": "u09-24",
+     "title": "Disinfection",
+     "module": "Controlling microbes"
+    },
+    {
+     "id": "u09-25",
+     "title": "Microbial culture",
+     "module": "Microbiology in practice"
+    },
+    {
+     "id": "u09-26",
+     "title": "Microscopy",
+     "module": "Microbiology in practice"
+    },
+    {
+     "id": "u09-27",
+     "title": "Molecular identification",
+     "module": "Microbiology in practice"
+    },
+    {
+     "id": "u09-28",
+     "title": "Environmental microbiology",
+     "module": "Microbiology in practice"
+    },
+    {
+     "id": "u09-29",
+     "title": "Industrial microbiology",
+     "module": "Microbiology in practice"
+    },
+    {
+     "id": "u09-30",
+     "title": "Applied microbiology",
+     "module": "Microbiology in practice"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Immunology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Introduction to immunology",
+     "module": "Foundations of immunity"
+    },
+    {
+     "id": "u10-02",
+     "title": "Innate immunity",
+     "module": "Foundations of immunity"
+    },
+    {
+     "id": "u10-03",
+     "title": "Adaptive immunity",
+     "module": "Foundations of immunity"
+    },
+    {
+     "id": "u10-04",
+     "title": "Physical barriers",
+     "module": "Foundations of immunity"
+    },
+    {
+     "id": "u10-05",
+     "title": "Immune cells",
+     "module": "Immune cells"
+    },
+    {
+     "id": "u10-06",
+     "title": "Neutrophils",
+     "module": "Immune cells"
+    },
+    {
+     "id": "u10-07",
+     "title": "Macrophages",
+     "module": "Immune cells"
+    },
+    {
+     "id": "u10-08",
+     "title": "Dendritic cells",
+     "module": "Immune cells"
+    },
+    {
+     "id": "u10-09",
+     "title": "Natural killer cells",
+     "module": "Immune cells"
+    },
+    {
+     "id": "u10-10",
+     "title": "B lymphocytes",
+     "module": "Immune cells"
+    },
+    {
+     "id": "u10-11",
+     "title": "T lymphocytes",
+     "module": "Immune cells"
+    },
+    {
+     "id": "u10-12",
+     "title": "Antibodies",
+     "module": "Antigen recognition and signalling"
+    },
+    {
+     "id": "u10-13",
+     "title": "Antigen recognition",
+     "module": "Antigen recognition and signalling"
+    },
+    {
+     "id": "u10-14",
+     "title": "Antigen presentation",
+     "module": "Antigen recognition and signalling"
+    },
+    {
+     "id": "u10-15",
+     "title": "MHC molecules",
+     "module": "Antigen recognition and signalling"
+    },
+    {
+     "id": "u10-16",
+     "title": "Cytokines",
+     "module": "Antigen recognition and signalling"
+    },
+    {
+     "id": "u10-17",
+     "title": "Complement system",
+     "module": "Inflammation, complement and memory"
+    },
+    {
+     "id": "u10-18",
+     "title": "Inflammation",
+     "module": "Inflammation, complement and memory"
+    },
+    {
+     "id": "u10-19",
+     "title": "Immune memory",
+     "module": "Inflammation, complement and memory"
+    },
+    {
+     "id": "u10-20",
+     "title": "Vaccination",
+     "module": "Inflammation, complement and memory"
+    },
+    {
+     "id": "u10-21",
+     "title": "Hypersensitivity",
+     "module": "Immune disorders"
+    },
+    {
+     "id": "u10-22",
+     "title": "Allergy",
+     "module": "Immune disorders"
+    },
+    {
+     "id": "u10-23",
+     "title": "Autoimmunity",
+     "module": "Immune disorders"
+    },
+    {
+     "id": "u10-24",
+     "title": "Immunodeficiency",
+     "module": "Immune disorders"
+    },
+    {
+     "id": "u10-25",
+     "title": "Transplant immunology",
+     "module": "Clinical immunology"
+    },
+    {
+     "id": "u10-26",
+     "title": "Cancer immunology",
+     "module": "Clinical immunology"
+    },
+    {
+     "id": "u10-27",
+     "title": "Immunotherapy",
+     "module": "Clinical immunology"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Ecology and Environmental Biology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Introduction to ecology",
+     "module": "Organisms and ecosystems"
+    },
+    {
+     "id": "u11-02",
+     "title": "Organisms and populations",
+     "module": "Organisms and ecosystems"
+    },
+    {
+     "id": "u11-03",
+     "title": "Habitats and niches",
+     "module": "Organisms and ecosystems"
+    },
+    {
+     "id": "u11-04",
+     "title": "Ecosystems",
+     "module": "Organisms and ecosystems"
+    },
+    {
+     "id": "u11-05",
+     "title": "Biomes",
+     "module": "Organisms and ecosystems"
+    },
+    {
+     "id": "u11-06",
+     "title": "Food chains",
+     "module": "Energy flow"
+    },
+    {
+     "id": "u11-07",
+     "title": "Food webs",
+     "module": "Energy flow"
+    },
+    {
+     "id": "u11-08",
+     "title": "Energy flow",
+     "module": "Energy flow"
+    },
+    {
+     "id": "u11-09",
+     "title": "Trophic levels",
+     "module": "Energy flow"
+    },
+    {
+     "id": "u11-10",
+     "title": "Primary productivity",
+     "module": "Energy flow"
+    },
+    {
+     "id": "u11-11",
+     "title": "Nutrient cycles",
+     "module": "Nutrient cycles"
+    },
+    {
+     "id": "u11-12",
+     "title": "Carbon cycle",
+     "module": "Nutrient cycles"
+    },
+    {
+     "id": "u11-13",
+     "title": "Nitrogen cycle",
+     "module": "Nutrient cycles"
+    },
+    {
+     "id": "u11-14",
+     "title": "Water cycle",
+     "module": "Nutrient cycles"
+    },
+    {
+     "id": "u11-15",
+     "title": "Population dynamics",
+     "module": "Populations and interactions"
+    },
+    {
+     "id": "u11-16",
+     "title": "Competition",
+     "module": "Populations and interactions"
+    },
+    {
+     "id": "u11-17",
+     "title": "Predation",
+     "module": "Populations and interactions"
+    },
+    {
+     "id": "u11-18",
+     "title": "Mutualism",
+     "module": "Populations and interactions"
+    },
+    {
+     "id": "u11-19",
+     "title": "Parasitism",
+     "module": "Populations and interactions"
+    },
+    {
+     "id": "u11-20",
+     "title": "Succession",
+     "module": "Communities and biodiversity"
+    },
+    {
+     "id": "u11-21",
+     "title": "Biodiversity",
+     "module": "Communities and biodiversity"
+    },
+    {
+     "id": "u11-22",
+     "title": "Species richness",
+     "module": "Communities and biodiversity"
+    },
+    {
+     "id": "u11-23",
+     "title": "Conservation biology",
+     "module": "Conservation and environmental change"
+    },
+    {
+     "id": "u11-24",
+     "title": "Habitat fragmentation",
+     "module": "Conservation and environmental change"
+    },
+    {
+     "id": "u11-25",
+     "title": "Invasive species",
+     "module": "Conservation and environmental change"
+    },
+    {
+     "id": "u11-26",
+     "title": "Climate change and ecosystems",
+     "module": "Conservation and environmental change"
+    },
+    {
+     "id": "u11-27",
+     "title": "Pollution",
+     "module": "Conservation and environmental change"
+    },
+    {
+     "id": "u11-28",
+     "title": "Environmental monitoring",
+     "module": "Conservation and environmental change"
+    },
+    {
+     "id": "u11-29",
+     "title": "Conservation strategies",
+     "module": "Conservation and environmental change"
+    },
+    {
+     "id": "u11-30",
+     "title": "Sustainable ecosystems",
+     "module": "Conservation and environmental change"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Biotechnology and Genetic Engineering",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Foundations of biotechnology",
+     "module": "Recombinant DNA"
+    },
+    {
+     "id": "u12-02",
+     "title": "Recombinant DNA",
+     "module": "Recombinant DNA"
+    },
+    {
+     "id": "u12-03",
+     "title": "Restriction enzymes",
+     "module": "Recombinant DNA"
+    },
+    {
+     "id": "u12-04",
+     "title": "DNA ligase",
+     "module": "Recombinant DNA"
+    },
+    {
+     "id": "u12-05",
+     "title": "Plasmids",
+     "module": "Recombinant DNA"
+    },
+    {
+     "id": "u12-06",
+     "title": "Cloning vectors",
+     "module": "Recombinant DNA"
+    },
+    {
+     "id": "u12-07",
+     "title": "Polymerase chain reaction",
+     "module": "Amplifying and reading DNA"
+    },
+    {
+     "id": "u12-08",
+     "title": "Gel electrophoresis",
+     "module": "Amplifying and reading DNA"
+    },
+    {
+     "id": "u12-09",
+     "title": "DNA sequencing",
+     "module": "Amplifying and reading DNA"
+    },
+    {
+     "id": "u12-10",
+     "title": "Sanger sequencing",
+     "module": "Amplifying and reading DNA"
+    },
+    {
+     "id": "u12-11",
+     "title": "Next-generation sequencing",
+     "module": "Amplifying and reading DNA"
+    },
+    {
+     "id": "u12-12",
+     "title": "Whole-genome sequencing",
+     "module": "Amplifying and reading DNA"
+    },
+    {
+     "id": "u12-13",
+     "title": "CRISPR-Cas systems",
+     "module": "Gene editing and expression"
+    },
+    {
+     "id": "u12-14",
+     "title": "Gene editing",
+     "module": "Gene editing and expression"
+    },
+    {
+     "id": "u12-15",
+     "title": "Gene expression systems",
+     "module": "Gene editing and expression"
+    },
+    {
+     "id": "u12-16",
+     "title": "Recombinant proteins",
+     "module": "Gene editing and expression"
+    },
+    {
+     "id": "u12-17",
+     "title": "Molecular diagnostics",
+     "module": "Medical biotechnology"
+    },
+    {
+     "id": "u12-18",
+     "title": "Genetic testing",
+     "module": "Medical biotechnology"
+    },
+    {
+     "id": "u12-19",
+     "title": "Gene therapy",
+     "module": "Medical biotechnology"
+    },
+    {
+     "id": "u12-20",
+     "title": "Cell therapy",
+     "module": "Medical biotechnology"
+    },
+    {
+     "id": "u12-21",
+     "title": "Biopharmaceuticals",
+     "module": "Medical biotechnology"
+    },
+    {
+     "id": "u12-22",
+     "title": "Industrial biotechnology",
+     "module": "Industry, safety and ethics"
+    },
+    {
+     "id": "u12-23",
+     "title": "Synthetic biology",
+     "module": "Industry, safety and ethics"
+    },
+    {
+     "id": "u12-24",
+     "title": "Biosafety",
+     "module": "Industry, safety and ethics"
+    },
+    {
+     "id": "u12-25",
+     "title": "Bioethics",
+     "module": "Industry, safety and ethics"
+    }
+   ]
+  },
+  {
+   "id": "u13",
+   "n": 13,
+   "title": "Bioinformatics and Computational Biology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u13-01",
+     "title": "Introduction to bioinformatics",
+     "module": "Data and sequences"
+    },
+    {
+     "id": "u13-02",
+     "title": "Biological databases",
+     "module": "Data and sequences"
+    },
+    {
+     "id": "u13-03",
+     "title": "DNA sequence analysis",
+     "module": "Data and sequences"
+    },
+    {
+     "id": "u13-04",
+     "title": "Protein sequence analysis",
+     "module": "Data and sequences"
+    },
+    {
+     "id": "u13-05",
+     "title": "Sequence alignment",
+     "module": "Alignment and phylogenetics"
+    },
+    {
+     "id": "u13-06",
+     "title": "BLAST",
+     "module": "Alignment and phylogenetics"
+    },
+    {
+     "id": "u13-07",
+     "title": "Multiple sequence alignment",
+     "module": "Alignment and phylogenetics"
+    },
+    {
+     "id": "u13-08",
+     "title": "Phylogenetic analysis",
+     "module": "Alignment and phylogenetics"
+    },
+    {
+     "id": "u13-09",
+     "title": "Genome annotation",
+     "module": "Genomes and gene expression"
+    },
+    {
+     "id": "u13-10",
+     "title": "Gene expression analysis",
+     "module": "Genomes and gene expression"
+    },
+    {
+     "id": "u13-11",
+     "title": "RNA sequencing",
+     "module": "Genomes and gene expression"
+    },
+    {
+     "id": "u13-12",
+     "title": "Differential expression",
+     "module": "Genomes and gene expression"
+    },
+    {
+     "id": "u13-13",
+     "title": "Proteomics",
+     "module": "Omics and structure"
+    },
+    {
+     "id": "u13-14",
+     "title": "Metabolomics",
+     "module": "Omics and structure"
+    },
+    {
+     "id": "u13-15",
+     "title": "Structural bioinformatics",
+     "module": "Omics and structure"
+    },
+    {
+     "id": "u13-16",
+     "title": "Protein structure prediction",
+     "module": "Omics and structure"
+    },
+    {
+     "id": "u13-17",
+     "title": "Molecular visualisation",
+     "module": "Omics and structure"
+    },
+    {
+     "id": "u13-18",
+     "title": "Biological networks",
+     "module": "Networks and systems"
+    },
+    {
+     "id": "u13-19",
+     "title": "Systems biology",
+     "module": "Networks and systems"
+    },
+    {
+     "id": "u13-20",
+     "title": "Population genomics",
+     "module": "Genomic medicine and drug discovery"
+    },
+    {
+     "id": "u13-21",
+     "title": "Variant analysis",
+     "module": "Genomic medicine and drug discovery"
+    },
+    {
+     "id": "u13-22",
+     "title": "Precision medicine",
+     "module": "Genomic medicine and drug discovery"
+    },
+    {
+     "id": "u13-23",
+     "title": "Computational drug discovery",
+     "module": "Genomic medicine and drug discovery"
+    },
+    {
+     "id": "u13-24",
+     "title": "Biological data science",
+     "module": "Data science and reproducibility"
+    },
+    {
+     "id": "u13-25",
+     "title": "Reproducible computational research",
+     "module": "Data science and reproducibility"
+    }
+   ]
+  },
+  {
+   "id": "u14",
+   "n": 14,
+   "title": "Experimental Biology and Research Methods",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u14-01",
+     "title": "Experimental design",
+     "module": "Designing experiments"
+    },
+    {
+     "id": "u14-02",
+     "title": "Hypothesis development",
+     "module": "Designing experiments"
+    },
+    {
+     "id": "u14-03",
+     "title": "Controls",
+     "module": "Designing experiments"
+    },
+    {
+     "id": "u14-04",
+     "title": "Sampling",
+     "module": "Designing experiments"
+    },
+    {
+     "id": "u14-05",
+     "title": "Microscopy",
+     "module": "Imaging and cell culture"
+    },
+    {
+     "id": "u14-06",
+     "title": "Histology",
+     "module": "Imaging and cell culture"
+    },
+    {
+     "id": "u14-07",
+     "title": "Cell culture",
+     "module": "Imaging and cell culture"
+    },
+    {
+     "id": "u14-08",
+     "title": "Molecular biology techniques",
+     "module": "Molecular and biochemical techniques"
+    },
+    {
+     "id": "u14-09",
+     "title": "PCR",
+     "module": "Molecular and biochemical techniques"
+    },
+    {
+     "id": "u14-10",
+     "title": "Gel electrophoresis",
+     "module": "Molecular and biochemical techniques"
+    },
+    {
+     "id": "u14-11",
+     "title": "Western blotting",
+     "module": "Molecular and biochemical techniques"
+    },
+    {
+     "id": "u14-12",
+     "title": "ELISA",
+     "module": "Molecular and biochemical techniques"
+    },
+    {
+     "id": "u14-13",
+     "title": "Chromatography",
+     "module": "Molecular and biochemical techniques"
+    },
+    {
+     "id": "u14-14",
+     "title": "Spectrophotometry",
+     "module": "Molecular and biochemical techniques"
+    },
+    {
+     "id": "u14-15",
+     "title": "Sequencing",
+     "module": "Molecular and biochemical techniques"
+    },
+    {
+     "id": "u14-16",
+     "title": "Flow cytometry",
+     "module": "Molecular and biochemical techniques"
+    },
+    {
+     "id": "u14-17",
+     "title": "Statistical analysis",
+     "module": "Statistics and visualisation"
+    },
+    {
+     "id": "u14-18",
+     "title": "Data visualisation",
+     "module": "Statistics and visualisation"
+    },
+    {
+     "id": "u14-19",
+     "title": "Research ethics",
+     "module": "Research practice and integrity"
+    },
+    {
+     "id": "u14-20",
+     "title": "Scientific communication",
+     "module": "Research practice and integrity"
+    },
+    {
+     "id": "u14-21",
+     "title": "Literature reviews",
+     "module": "Research practice and integrity"
+    },
+    {
+     "id": "u14-22",
+     "title": "Reproducibility",
+     "module": "Research practice and integrity"
+    },
+    {
+     "id": "u14-23",
+     "title": "Research integrity",
+     "module": "Research practice and integrity"
+    },
+    {
+     "id": "u14-24",
+     "title": "Laboratory safety",
+     "module": "Research practice and integrity"
+    }
+   ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "cell-explorer",
+   "title": "Animal and plant cell explorer",
+   "kind": "Explorer",
+   "sub": "Tap every organelle in an animal and a plant cell to see its structure and function, and compare the two.",
+   "note": "Labelled diagram, not to scale; real cells contain far more of each organelle.",
+   "tasks": null,
+   "lessons": [
+    "u02-03",
+    "u02-04",
+    "u02-05",
+    "u02-08"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/cell-explorer"
+  },
+  {
+   "id": "organelle-id",
+   "title": "Organelle identification",
+   "kind": "Exercise",
+   "sub": "Find the organelle you're asked for in animal and plant cells, against the clock of your own streak.",
+   "note": "Labelled diagram, not to scale.",
+   "tasks": null,
+   "lessons": [
+    "u02-08",
+    "u02-09",
+    "u02-10",
+    "u02-14",
+    "u02-11"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/organelle-id"
+  },
+  {
+   "id": "dna-helix",
+   "title": "DNA double helix explorer",
+   "kind": "Explorer",
+   "sub": "A 3D B-DNA helix built from your own sequence: base pairing, antiparallel strands, grooves and GC content.",
+   "note": "Real B-DNA dimensions (10.5 bp per turn, 0.34 nm rise); bases drawn as rods and the backbone as beads, not atoms.",
+   "tasks": null,
+   "lessons": [
+    "u04-02",
+    "u03-28",
+    "u03-29"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/dna-helix"
+  },
+  {
+   "id": "replication",
+   "title": "DNA replication at the fork",
+   "kind": "Illustrative model",
+   "sub": "Helicase, primase, DNA polymerases and ligase at work: the leading strand made continuously and the lagging strand in Okazaki fragments.",
+   "note": "Bacterial enzymes named; timing is illustrative and fragments are drawn far shorter than real ones.",
+   "tasks": null,
+   "lessons": [
+    "u04-03"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/replication"
+  },
+  {
+   "id": "transcription",
+   "title": "Transcription and translation",
+   "kind": "Tool",
+   "sub": "Transcribe a gene, translate it with the real genetic code, then mutate bases to see silent, missense, nonsense and frameshift mutations.",
+   "note": "Standard genetic code (NCBI table 1); no introns or splicing, as in a bacterial gene.",
+   "tasks": null,
+   "lessons": [
+    "u04-09",
+    "u04-11",
+    "u04-12",
+    "u04-18",
+    "u04-17"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/transcription"
+  },
+  {
+   "id": "ribosome",
+   "title": "Protein synthesis at the ribosome",
+   "kind": "Illustrative model",
+   "sub": "Watch tRNAs move through the A, P and E sites as the polypeptide grows, until a stop codon releases it.",
+   "note": "Schematic ribosome; the sequence and genetic code are real.",
+   "tasks": null,
+   "lessons": [
+    "u04-13",
+    "u02-12"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/ribosome"
+  },
+  {
+   "id": "punnett",
+   "title": "Mendelian genetics and Punnett squares",
+   "kind": "Simulation",
+   "sub": "Monohybrid, dihybrid, incomplete dominance, codominance and X-linked crosses; breed offspring and test the ratio with chi-squared.",
+   "note": "Unlinked genes, all genotypes equally viable; offspring drawn at random, with an exact chi-squared p-value.",
+   "tasks": null,
+   "lessons": [
+    "u04-20",
+    "u04-23",
+    "u04-24",
+    "u04-25",
+    "u04-26",
+    "u04-27"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/punnett"
+  },
+  {
+   "id": "division",
+   "title": "Mitosis and meiosis",
+   "kind": "Illustrative model",
+   "sub": "Step through both divisions with two pairs of chromosomes, including synapsis, crossing over and random orientation.",
+   "note": "Schematic chromosomes and spindle; the stages and chromosome behaviour are accurate.",
+   "tasks": null,
+   "lessons": [
+    "u05-03",
+    "u05-04",
+    "u05-05",
+    "u05-06"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/division"
+  },
+  {
+   "id": "natural-selection",
+   "title": "Natural selection and drift",
+   "kind": "Simulation",
+   "sub": "Moths on light or sooty bark: birds pick off the conspicuous ones and allele frequencies shift. Turn selection off to see drift.",
+   "note": "One gene, random mating, fixed population size, predation proportional to contrast.",
+   "tasks": null,
+   "lessons": [
+    "u06-03",
+    "u06-04",
+    "u06-10",
+    "u06-07"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/natural-selection"
+  },
+  {
+   "id": "tree-of-life",
+   "title": "Evolutionary tree explorer",
+   "kind": "Explorer",
+   "sub": "Pick any two organisms across the three domains to find their most recent common ancestor and when it lived.",
+   "note": "Rounded molecular-clock dates of the kind compiled by TimeTree; the deepest splits are very uncertain.",
+   "tasks": null,
+   "lessons": [
+    "u06-17",
+    "u06-18",
+    "u01-06"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/tree-of-life"
+  },
+  {
+   "id": "organ-systems",
+   "title": "Human organ-system explorer",
+   "kind": "Explorer",
+   "sub": "Switch body systems on and off on a real 3D anatomy model and tap organs to learn what they do.",
+   "note": "BodyParts3D adult male model (CC BY 4.0); female organs and fine structures aren't included.",
+   "tasks": null,
+   "lessons": [
+    "u07-01",
+    "u02-30"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/organ-systems"
+  },
+  {
+   "id": "heart",
+   "title": "The cardiac cycle",
+   "kind": "Simulation",
+   "sub": "A model left heart: pressures, volumes, valves and the pressure–volume loop, responding to heart rate, contractility and resistance.",
+   "note": "Time-varying elastance ventricle with a two-element Windkessel; left heart only, no reflexes.",
+   "tasks": null,
+   "lessons": [
+    "u07-13",
+    "u07-12",
+    "u07-11"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/heart"
+  },
+  {
+   "id": "action-potential",
+   "title": "The action potential",
+   "kind": "Simulation",
+   "sub": "The Hodgkin–Huxley model: find the threshold, the refractory period and repetitive firing, and block channels with toxins.",
+   "note": "The published 1952 equations for one patch of squid axon membrane; no propagation or myelin.",
+   "tasks": null,
+   "lessons": [
+    "u07-05",
+    "u07-04"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/action-potential"
+  },
+  {
+   "id": "synapse",
+   "title": "Synaptic transmission",
+   "kind": "Simulation",
+   "sub": "Ca²⁺ entry, vesicle release, receptors and acetylcholinesterase at a cholinergic synapse, with drugs and toxins.",
+   "note": "Small kinetic model with illustrative values; the sequence of events is accurate.",
+   "tasks": null,
+   "lessons": [
+    "u07-06"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/synapse"
+  },
+  {
+   "id": "gas-exchange",
+   "title": "Gas exchange and oxygen transport",
+   "kind": "Simulation",
+   "sub": "Oxygen loading along a lung capillary and the haemoglobin dissociation curve, at altitude, in disease and in exercise.",
+   "note": "Fick diffusion with the Hill equation (n = 2.7, P₅₀ 26.8 mmHg); one capillary, no shunt or V/Q mismatch.",
+   "tasks": null,
+   "lessons": [
+    "u07-19",
+    "u07-20"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/gas-exchange"
+  },
+  {
+   "id": "kidney",
+   "title": "Kidney filtration and reabsorption",
+   "kind": "Simulation",
+   "sub": "Starling forces set the GFR; glucose reabsorption saturates at the transport maximum; ADH controls urine concentration.",
+   "note": "Textbook values (GFR 125 mL/min, glucose Tm 375 mg/min); no autoregulation.",
+   "tasks": null,
+   "lessons": [
+    "u07-25",
+    "u07-26",
+    "u07-24"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/kidney"
+  },
+  {
+   "id": "photosynthesis",
+   "title": "Photosynthesis and limiting factors",
+   "kind": "Simulation",
+   "sub": "Rate against light, CO₂ and temperature, the compensation point, and a pondweed giving off oxygen bubbles.",
+   "note": "Standard response curves with illustrative numbers for a C3 leaf.",
+   "tasks": null,
+   "lessons": [
+    "u08-12",
+    "u08-13",
+    "u08-14"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/photosynthesis"
+  },
+  {
+   "id": "respiration",
+   "title": "Cellular respiration",
+   "kind": "Illustrative model",
+   "sub": "Glycolysis, the link reaction, the Krebs cycle and oxidative phosphorylation, with ATP counts, fermentation and poisons.",
+   "note": "Modern P/O ratios (2.5 ATP per NADH, 1.5 per FADH₂), about 30–32 ATP per glucose.",
+   "tasks": null,
+   "lessons": [
+    "u08-18",
+    "u03-30"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/respiration"
+  },
+  {
+   "id": "enzyme-kinetics",
+   "title": "Enzyme kinetics",
+   "kind": "Simulation",
+   "sub": "Michaelis–Menten curves, Lineweaver–Burk plots, three kinds of inhibitor, a noisy assay to fit and a mystery inhibitor.",
+   "note": "Steady-state kinetic equations; the temperature and pH curves are illustrative.",
+   "tasks": null,
+   "lessons": [
+    "u03-25",
+    "u03-26",
+    "u03-27",
+    "u03-23"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/enzyme-kinetics"
+  },
+  {
+   "id": "antibody",
+   "title": "Antibody–antigen binding",
+   "kind": "Simulation",
+   "sub": "Specificity and affinity: match binding sites to epitopes, read the Kd off a binding curve and run affinity maturation.",
+   "note": "One-site binding model; shapes are schematic.",
+   "tasks": null,
+   "lessons": [
+    "u10-12",
+    "u10-13"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/antibody"
+  },
+  {
+   "id": "immune-response",
+   "title": "Primary and secondary immune responses",
+   "kind": "Illustrative model",
+   "sub": "Infect and vaccinate on any day and compare a first response with a memory response.",
+   "note": "Descriptive response curves that follow measured shapes; arbitrary units.",
+   "tasks": null,
+   "lessons": [
+    "u10-19",
+    "u10-20",
+    "u10-03"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/immune-response"
+  },
+  {
+   "id": "bacterial-growth",
+   "title": "Bacterial growth and antibiotics",
+   "kind": "Simulation",
+   "sub": "The four phases of a growth curve, bactericidal and bacteriostatic drugs, and a rare resistant mutant taking over.",
+   "note": "Monod growth on one nutrient with a smooth lag; resistant cells start at one in a million.",
+   "tasks": null,
+   "lessons": [
+    "u09-04",
+    "u09-22",
+    "u06-23"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/bacterial-growth"
+  },
+  {
+   "id": "population",
+   "title": "Population ecology",
+   "kind": "Simulation",
+   "sub": "Logistic growth, predator–prey cycles and competition, over time and as phase plots.",
+   "note": "Classic Lotka–Volterra and logistic models; no age structure, space or chance.",
+   "tasks": null,
+   "lessons": [
+    "u11-15",
+    "u11-17",
+    "u11-16"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/population"
+  },
+  {
+   "id": "food-web",
+   "title": "Food webs and energy flow",
+   "kind": "Simulation",
+   "sub": "Remove species from a woodland food web to see secondary extinctions, and follow energy up the trophic levels.",
+   "note": "Topological model: consumers with no food left are lost; population effects aren't modelled.",
+   "tasks": null,
+   "lessons": [
+    "u11-07",
+    "u11-06",
+    "u11-08",
+    "u11-09"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/food-web"
+  },
+  {
+   "id": "pcr",
+   "title": "PCR and real-time PCR",
+   "kind": "Simulation",
+   "sub": "The thermal cycle and exponential amplification to a plateau, Ct values, dilutions and annealing temperature.",
+   "note": "Logistic amplification; primer Tm by the Wallace rule, a rough guide for short primers.",
+   "tasks": null,
+   "lessons": [
+    "u12-07",
+    "u14-09"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/pcr"
+  },
+  {
+   "id": "gel",
+   "title": "Gel electrophoresis",
+   "kind": "Simulation",
+   "sub": "Digest a plasmid with restriction enzymes, run the gel against a ladder and size an unknown band.",
+   "note": "Log-linear mobility; uncut supercoiled plasmid shown running fast.",
+   "tasks": null,
+   "lessons": [
+    "u12-08",
+    "u14-10",
+    "u12-03"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/gel"
+  },
+  {
+   "id": "crispr",
+   "title": "CRISPR gene editing",
+   "kind": "Exercise",
+   "sub": "Find a PAM, design a 20-nucleotide guide, cut, and repair by NHEJ (knockout) or HDR (precise edit).",
+   "note": "SpCas9 rules (NGG PAM, cut 3 bp upstream); forward strand only, no off-target search.",
+   "tasks": null,
+   "lessons": [
+    "u12-13",
+    "u12-14"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/crispr"
+  },
+  {
+   "id": "phylo-build",
+   "title": "Building a phylogenetic tree",
+   "kind": "Exercise",
+   "sub": "Compute distances from an alignment and build a tree with UPGMA, one merge at a time.",
+   "note": "Exact UPGMA on p-distances from a short invented alignment; assumes a molecular clock.",
+   "tasks": null,
+   "lessons": [
+    "u13-08",
+    "u06-16"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/phylo-build"
+  },
+  {
+   "id": "seq-align",
+   "title": "Sequence alignment",
+   "kind": "Tool",
+   "sub": "Needleman–Wunsch and Smith–Waterman alignment with the full dynamic-programming matrix and traceback.",
+   "note": "The exact algorithms with linear gaps; real tools add substitution matrices and affine gaps.",
+   "tasks": null,
+   "lessons": [
+    "u13-05",
+    "u13-03",
+    "u13-06"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/seq-align"
+  },
+  {
+   "id": "protein-viewer",
+   "title": "Protein structure viewer",
+   "kind": "Explorer",
+   "sub": "The four levels of protein structure in 3D, coloured by secondary structure or by side-chain chemistry.",
+   "note": "Idealised helix and strand geometry, not an experimental structure.",
+   "tasks": null,
+   "lessons": [
+    "u03-17",
+    "u03-18",
+    "u03-19",
+    "u03-20",
+    "u13-17",
+    "u13-15"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/protein-viewer"
+  }
+ ]
+}

@@ -1,0 +1,1482 @@
+{
+ "api": 1,
+ "slug": "sport",
+ "name": "Sport and Exercise Science",
+ "site": "SportGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Education, not medical or personal training advice.</b> SportGradify teaches sport and exercise science. The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors; check important points against your course materials. Nothing here assesses your own health or fitness, prescribes a training or diet plan, or replaces a qualified professional. If you have a health condition, are pregnant, or have symptoms such as chest pain, dizziness or breathlessness with exertion, check with your GP before starting new exercise; for an injury, see a physiotherapist or sports medicine doctor. In an emergency call 999.",
+ "notes": "/kit/courses/sport/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · The body in action",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "from": "#4a6cf0",
+   "to": "#22d3ee"
+  },
+  {
+   "name": "Stage 2 · Physiology and biomechanics",
+   "units": [
+    4,
+    5
+   ],
+   "from": "#3b82f6",
+   "to": "#0ea5e9"
+  },
+  {
+   "name": "Stage 3 · Training and performance",
+   "units": [
+    6,
+    7,
+    8
+   ],
+   "from": "#6366f1",
+   "to": "#4a6cf0"
+  },
+  {
+   "name": "Stage 4 · Mind and skill",
+   "units": [
+    9,
+    10
+   ],
+   "from": "#818cf8",
+   "to": "#22d3ee"
+  },
+  {
+   "name": "Stage 5 · Health, injury and society",
+   "units": [
+    11,
+    12
+   ],
+   "from": "#4a6cf0",
+   "to": "#14b8a6"
+  }
+ ],
+ "paths": [
+  {
+   "id": "alevel",
+   "name": "A level Physical Education",
+   "sub": "The theory core of AQA and OCR A level PE: applied anatomy and physiology, energy systems, biomechanics, training, skill acquisition, sport psychology and sport and society.",
+   "units": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    9,
+    10,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "year1",
+   "name": "University year 1",
+   "sub": "The first-year core of a sport and exercise science degree: anatomy, physiology, metabolism, biomechanics, testing and psychology.",
+   "units": [
+    1,
+    2,
+    3,
+    5,
+    7,
+    9
+   ],
+   "select": null
+  },
+  {
+   "id": "sc",
+   "name": "Strength and conditioning",
+   "sub": "The science behind programming: muscle, energy systems, adaptation, training methods, testing, nutrition and injury risk.",
+   "units": [
+    1,
+    3,
+    4,
+    6,
+    7,
+    8,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "coaching",
+   "name": "Coaching",
+   "sub": "How people learn and perform skills, how to motivate and lead them, plan sessions and seasons, and keep athletes safe.",
+   "units": [
+    10,
+    9,
+    6,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "health",
+   "name": "Exercise and health",
+   "sub": "Physical activity guidelines, the physiology of health, special populations, nutrition and getting people active. Educational, not medical advice.",
+   "units": [
+    12,
+    2,
+    4,
+    8,
+    11
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · The body in action",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Physiology and biomechanics",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    5
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Training and performance",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    6,
+    7,
+    8
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Mind and skill",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    9,
+    10
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Health, injury and society",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    11,
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "alevel-paper1",
+   "title": "Applied anatomy and physiology",
+   "sub": "Musculoskeletal and cardiorespiratory systems and energy systems, including calculations.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "path": null,
+   "count": 25,
+   "minutes": 40,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Functional Anatomy and the Musculoskeletal System",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "Anatomical language: planes, axes and positions",
+     "module": "The skeleton"
+    },
+    {
+     "id": "u01-02",
+     "title": "Functions of the skeleton",
+     "module": "The skeleton"
+    },
+    {
+     "id": "u01-03",
+     "title": "Bone structure and types of bone",
+     "module": "The skeleton"
+    },
+    {
+     "id": "u01-04",
+     "title": "The axial and appendicular skeleton",
+     "module": "The skeleton"
+    },
+    {
+     "id": "u01-05",
+     "title": "Bone remodelling and the effects of exercise on bone",
+     "module": "The skeleton"
+    },
+    {
+     "id": "u01-06",
+     "title": "Classification of joints",
+     "module": "Joints and movement"
+    },
+    {
+     "id": "u01-07",
+     "title": "Synovial joints",
+     "module": "Joints and movement"
+    },
+    {
+     "id": "u01-08",
+     "title": "Movement terminology",
+     "module": "Joints and movement"
+    },
+    {
+     "id": "u01-09",
+     "title": "Joint analysis of sporting actions",
+     "module": "Joints and movement"
+    },
+    {
+     "id": "u01-10",
+     "title": "Ligaments, tendons and cartilage",
+     "module": "Joints and movement"
+    },
+    {
+     "id": "u01-11",
+     "title": "Skeletal muscle structure",
+     "module": "Skeletal muscle"
+    },
+    {
+     "id": "u01-12",
+     "title": "The sliding filament theory",
+     "module": "Skeletal muscle"
+    },
+    {
+     "id": "u01-13",
+     "title": "Muscle fibre types",
+     "module": "Skeletal muscle"
+    },
+    {
+     "id": "u01-14",
+     "title": "Agonists, antagonists, fixators and synergists",
+     "module": "Skeletal muscle"
+    },
+    {
+     "id": "u01-15",
+     "title": "Types of muscle contraction",
+     "module": "Skeletal muscle"
+    },
+    {
+     "id": "u01-16",
+     "title": "The major muscles used in sport",
+     "module": "Skeletal muscle"
+    },
+    {
+     "id": "u01-17",
+     "title": "Motor units and the all-or-none law",
+     "module": "Nerves and muscles"
+    },
+    {
+     "id": "u01-18",
+     "title": "Gradation of force: recruitment, summation and tetanus",
+     "module": "Nerves and muscles"
+    },
+    {
+     "id": "u01-19",
+     "title": "Proprioceptors and the stretch reflex",
+     "module": "Nerves and muscles"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "The Cardiorespiratory System in Exercise",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Structure of the heart",
+     "module": "The heart"
+    },
+    {
+     "id": "u02-02",
+     "title": "The cardiac conduction system",
+     "module": "The heart"
+    },
+    {
+     "id": "u02-03",
+     "title": "The cardiac cycle",
+     "module": "The heart"
+    },
+    {
+     "id": "u02-04",
+     "title": "Cardiac output, stroke volume and heart rate",
+     "module": "The heart"
+    },
+    {
+     "id": "u02-05",
+     "title": "Regulation of heart rate during exercise",
+     "module": "The heart"
+    },
+    {
+     "id": "u02-06",
+     "title": "Heart rate responses to exercise",
+     "module": "The heart"
+    },
+    {
+     "id": "u02-07",
+     "title": "Blood vessels and blood pressure",
+     "module": "Blood and circulation"
+    },
+    {
+     "id": "u02-08",
+     "title": "The vascular shunt and venous return",
+     "module": "Blood and circulation"
+    },
+    {
+     "id": "u02-09",
+     "title": "Blood composition and oxygen transport",
+     "module": "Blood and circulation"
+    },
+    {
+     "id": "u02-10",
+     "title": "The oxygen–haemoglobin dissociation curve",
+     "module": "Blood and circulation"
+    },
+    {
+     "id": "u02-11",
+     "title": "Structure of the respiratory system",
+     "module": "The respiratory system"
+    },
+    {
+     "id": "u02-12",
+     "title": "Mechanics of breathing",
+     "module": "The respiratory system"
+    },
+    {
+     "id": "u02-13",
+     "title": "Lung volumes and capacities",
+     "module": "The respiratory system"
+    },
+    {
+     "id": "u02-14",
+     "title": "Gas exchange at the lungs and muscles",
+     "module": "The respiratory system"
+    },
+    {
+     "id": "u02-15",
+     "title": "Control of breathing during exercise",
+     "module": "The respiratory system"
+    },
+    {
+     "id": "u02-16",
+     "title": "Maximal oxygen uptake (VO2max)",
+     "module": "Putting the systems together"
+    },
+    {
+     "id": "u02-17",
+     "title": "Cardiovascular drift",
+     "module": "Putting the systems together"
+    },
+    {
+     "id": "u02-18",
+     "title": "Cardiorespiratory adaptations to endurance training",
+     "module": "Putting the systems together"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Energy Systems and Exercise Metabolism",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "ATP: the energy currency",
+     "module": "Energy for movement"
+    },
+    {
+     "id": "u03-02",
+     "title": "The ATP–PC system",
+     "module": "Energy for movement"
+    },
+    {
+     "id": "u03-03",
+     "title": "The anaerobic glycolytic system",
+     "module": "Energy for movement"
+    },
+    {
+     "id": "u03-04",
+     "title": "The aerobic system",
+     "module": "Energy for movement"
+    },
+    {
+     "id": "u03-05",
+     "title": "The energy continuum",
+     "module": "Energy for movement"
+    },
+    {
+     "id": "u03-06",
+     "title": "Fuel use: carbohydrate and fat",
+     "module": "Energy for movement"
+    },
+    {
+     "id": "u03-07",
+     "title": "Oxygen deficit",
+     "module": "Oxygen and recovery"
+    },
+    {
+     "id": "u03-08",
+     "title": "Excess post-exercise oxygen consumption (EPOC)",
+     "module": "Oxygen and recovery"
+    },
+    {
+     "id": "u03-09",
+     "title": "Lactate threshold and OBLA",
+     "module": "Oxygen and recovery"
+    },
+    {
+     "id": "u03-10",
+     "title": "Restoring phosphocreatine and glycogen",
+     "module": "Oxygen and recovery"
+    },
+    {
+     "id": "u03-11",
+     "title": "Indirect calorimetry and the respiratory exchange ratio",
+     "module": "Oxygen and recovery"
+    },
+    {
+     "id": "u03-12",
+     "title": "Energy expenditure, METs and efficiency",
+     "module": "Oxygen and recovery"
+    },
+    {
+     "id": "u03-13",
+     "title": "Causes of fatigue",
+     "module": "Fatigue and adaptation"
+    },
+    {
+     "id": "u03-14",
+     "title": "Metabolic adaptations to training",
+     "module": "Fatigue and adaptation"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Exercise Physiology: Environment, Adaptation and Populations",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Thermoregulation during exercise",
+     "module": "Environmental physiology"
+    },
+    {
+     "id": "u04-02",
+     "title": "Exercise in the heat and acclimatisation",
+     "module": "Environmental physiology"
+    },
+    {
+     "id": "u04-03",
+     "title": "Exercise in the cold",
+     "module": "Environmental physiology"
+    },
+    {
+     "id": "u04-04",
+     "title": "Altitude and hypoxia",
+     "module": "Environmental physiology"
+    },
+    {
+     "id": "u04-05",
+     "title": "Altitude training",
+     "module": "Environmental physiology"
+    },
+    {
+     "id": "u04-06",
+     "title": "Neuromuscular adaptations to strength training",
+     "module": "Adaptations to training"
+    },
+    {
+     "id": "u04-07",
+     "title": "Muscle hypertrophy",
+     "module": "Adaptations to training"
+    },
+    {
+     "id": "u04-08",
+     "title": "Overtraining and underperformance",
+     "module": "Adaptations to training"
+    },
+    {
+     "id": "u04-09",
+     "title": "Detraining",
+     "module": "Adaptations to training"
+    },
+    {
+     "id": "u04-10",
+     "title": "Exercise and ageing",
+     "module": "Special populations"
+    },
+    {
+     "id": "u04-11",
+     "title": "Children and young athletes",
+     "module": "Special populations"
+    },
+    {
+     "id": "u04-12",
+     "title": "Female athletes and the menstrual cycle",
+     "module": "Special populations"
+    },
+    {
+     "id": "u04-13",
+     "title": "Relative energy deficiency in sport (RED-S)",
+     "module": "Special populations"
+    },
+    {
+     "id": "u04-14",
+     "title": "Exercise in pregnancy",
+     "module": "Special populations"
+    },
+    {
+     "id": "u04-15",
+     "title": "Exercise for long-term conditions",
+     "module": "Special populations"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Biomechanics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Linear motion: distance, displacement, speed, velocity and acceleration",
+     "module": "Describing motion"
+    },
+    {
+     "id": "u05-02",
+     "title": "Distance–time and velocity–time graphs",
+     "module": "Describing motion"
+    },
+    {
+     "id": "u05-03",
+     "title": "Angular motion",
+     "module": "Describing motion"
+    },
+    {
+     "id": "u05-04",
+     "title": "Centre of mass and stability",
+     "module": "Describing motion"
+    },
+    {
+     "id": "u05-05",
+     "title": "Newton's laws of motion",
+     "module": "Forces"
+    },
+    {
+     "id": "u05-06",
+     "title": "Types of force in sport",
+     "module": "Forces"
+    },
+    {
+     "id": "u05-07",
+     "title": "Free-body diagrams",
+     "module": "Forces"
+    },
+    {
+     "id": "u05-08",
+     "title": "Impulse and momentum",
+     "module": "Forces"
+    },
+    {
+     "id": "u05-09",
+     "title": "Friction",
+     "module": "Forces"
+    },
+    {
+     "id": "u05-10",
+     "title": "Levers",
+     "module": "Forces"
+    },
+    {
+     "id": "u05-11",
+     "title": "Mechanical advantage of lever systems",
+     "module": "Forces"
+    },
+    {
+     "id": "u05-12",
+     "title": "Projectile motion",
+     "module": "Projectiles and fluids"
+    },
+    {
+     "id": "u05-13",
+     "title": "Factors affecting projectile distance",
+     "module": "Projectiles and fluids"
+    },
+    {
+     "id": "u05-14",
+     "title": "Fluid mechanics: drag",
+     "module": "Projectiles and fluids"
+    },
+    {
+     "id": "u05-15",
+     "title": "The Bernoulli principle and lift",
+     "module": "Projectiles and fluids"
+    },
+    {
+     "id": "u05-16",
+     "title": "Spin and the Magnus effect",
+     "module": "Projectiles and fluids"
+    },
+    {
+     "id": "u05-17",
+     "title": "Moment of inertia and angular momentum",
+     "module": "Angular kinetics and analysis"
+    },
+    {
+     "id": "u05-18",
+     "title": "Conservation of angular momentum",
+     "module": "Angular kinetics and analysis"
+    },
+    {
+     "id": "u05-19",
+     "title": "Biomechanical analysis and technology",
+     "module": "Angular kinetics and analysis"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Training Principles and Programme Design",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Specificity",
+     "module": "Principles of training"
+    },
+    {
+     "id": "u06-02",
+     "title": "Progressive overload and FITT",
+     "module": "Principles of training"
+    },
+    {
+     "id": "u06-03",
+     "title": "Reversibility",
+     "module": "Principles of training"
+    },
+    {
+     "id": "u06-04",
+     "title": "Individual differences, variation and recovery",
+     "module": "Principles of training"
+    },
+    {
+     "id": "u06-05",
+     "title": "The general adaptation syndrome and supercompensation",
+     "module": "Principles of training"
+    },
+    {
+     "id": "u06-06",
+     "title": "Continuous training",
+     "module": "Methods of training"
+    },
+    {
+     "id": "u06-07",
+     "title": "Fartlek training",
+     "module": "Methods of training"
+    },
+    {
+     "id": "u06-08",
+     "title": "Interval training and HIIT",
+     "module": "Methods of training"
+    },
+    {
+     "id": "u06-09",
+     "title": "Resistance training",
+     "module": "Methods of training"
+    },
+    {
+     "id": "u06-10",
+     "title": "Plyometrics",
+     "module": "Methods of training"
+    },
+    {
+     "id": "u06-11",
+     "title": "Flexibility training",
+     "module": "Methods of training"
+    },
+    {
+     "id": "u06-12",
+     "title": "Circuit training",
+     "module": "Methods of training"
+    },
+    {
+     "id": "u06-13",
+     "title": "Speed, agility and quickness",
+     "module": "Methods of training"
+    },
+    {
+     "id": "u06-14",
+     "title": "Needs analysis",
+     "module": "Programme design"
+    },
+    {
+     "id": "u06-15",
+     "title": "Monitoring training load",
+     "module": "Programme design"
+    },
+    {
+     "id": "u06-16",
+     "title": "Periodisation",
+     "module": "Programme design"
+    },
+    {
+     "id": "u06-17",
+     "title": "Tapering",
+     "module": "Programme design"
+    },
+    {
+     "id": "u06-18",
+     "title": "Warm-up and cool-down",
+     "module": "Programme design"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Fitness Testing and Performance Analysis",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Why test?",
+     "module": "Principles of testing"
+    },
+    {
+     "id": "u07-02",
+     "title": "Validity, reliability and objectivity",
+     "module": "Principles of testing"
+    },
+    {
+     "id": "u07-03",
+     "title": "Pre-test procedures and health screening",
+     "module": "Principles of testing"
+    },
+    {
+     "id": "u07-04",
+     "title": "Ethics and informed consent in testing",
+     "module": "Principles of testing"
+    },
+    {
+     "id": "u07-05",
+     "title": "Health-related and skill-related fitness",
+     "module": "Components of fitness"
+    },
+    {
+     "id": "u07-06",
+     "title": "Testing aerobic capacity",
+     "module": "Components of fitness"
+    },
+    {
+     "id": "u07-07",
+     "title": "Testing strength and power",
+     "module": "Components of fitness"
+    },
+    {
+     "id": "u07-08",
+     "title": "Testing speed and agility",
+     "module": "Components of fitness"
+    },
+    {
+     "id": "u07-09",
+     "title": "Testing flexibility",
+     "module": "Components of fitness"
+    },
+    {
+     "id": "u07-10",
+     "title": "Body composition",
+     "module": "Components of fitness"
+    },
+    {
+     "id": "u07-11",
+     "title": "The Wingate anaerobic test",
+     "module": "Components of fitness"
+    },
+    {
+     "id": "u07-12",
+     "title": "Normative data and interpreting results",
+     "module": "Analysing performance"
+    },
+    {
+     "id": "u07-13",
+     "title": "Laboratory versus field testing",
+     "module": "Analysing performance"
+    },
+    {
+     "id": "u07-14",
+     "title": "Performance and notational analysis",
+     "module": "Analysing performance"
+    },
+    {
+     "id": "u07-15",
+     "title": "Wearable technology and GPS",
+     "module": "Analysing performance"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Sport and Exercise Nutrition",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u08-18",
+     "title": "Carbohydrates and dietary fibre",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u08-19",
+     "title": "Protein",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u08-20",
+     "title": "Fats",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u08-21",
+     "title": "Vitamins",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u08-22",
+     "title": "Minerals",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u08-23",
+     "title": "Water and hydration",
+     "module": "Nutrients"
+    },
+    {
+     "id": "u08-24",
+     "title": "The Eatwell Guide",
+     "module": "Healthy eating"
+    },
+    {
+     "id": "u08-25",
+     "title": "Energy balance",
+     "module": "Healthy eating"
+    },
+    {
+     "id": "u08-26",
+     "title": "Reading food labels",
+     "module": "Healthy eating"
+    },
+    {
+     "id": "u08-27",
+     "title": "Salt, sugar and saturated fat",
+     "module": "Healthy eating"
+    },
+    {
+     "id": "u08-28",
+     "title": "Ultra-processed food",
+     "module": "Healthy eating"
+    },
+    {
+     "id": "u08-29",
+     "title": "Nutrition in pregnancy and infancy",
+     "module": "Nutrition across life"
+    },
+    {
+     "id": "u08-30",
+     "title": "Nutrition in childhood and adolescence",
+     "module": "Nutrition across life"
+    },
+    {
+     "id": "u08-31",
+     "title": "Nutrition in older age",
+     "module": "Nutrition across life"
+    },
+    {
+     "id": "u08-32",
+     "title": "Vegetarian and vegan diets",
+     "module": "Nutrition across life"
+    },
+    {
+     "id": "u08-33",
+     "title": "Malnutrition",
+     "module": "Diet, disease and access"
+    },
+    {
+     "id": "u08-34",
+     "title": "Diet and chronic disease",
+     "module": "Diet, disease and access"
+    },
+    {
+     "id": "u08-35",
+     "title": "Food insecurity",
+     "module": "Diet, disease and access"
+    },
+    {
+     "id": "u08-36",
+     "title": "Eating disorders",
+     "module": "Diet, disease and access"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Motivation, Emotion and Wellbeing",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u09-22",
+     "title": "Intrinsic and extrinsic motivation",
+     "module": "Motivation"
+    },
+    {
+     "id": "u09-23",
+     "title": "Drive theories",
+     "module": "Motivation"
+    },
+    {
+     "id": "u09-24",
+     "title": "Incentive theories",
+     "module": "Motivation"
+    },
+    {
+     "id": "u09-25",
+     "title": "Self-determination theory",
+     "module": "Motivation"
+    },
+    {
+     "id": "u09-26",
+     "title": "Goal-setting theory",
+     "module": "Motivation"
+    },
+    {
+     "id": "u09-27",
+     "title": "Achievement motivation in context",
+     "module": "Motivation"
+    },
+    {
+     "id": "u09-28",
+     "title": "Theories of emotion: James–Lange and Cannon–Bard",
+     "module": "Emotion"
+    },
+    {
+     "id": "u09-29",
+     "title": "The two-factor theory: Schachter–Singer",
+     "module": "Emotion"
+    },
+    {
+     "id": "u09-30",
+     "title": "Emotion regulation",
+     "module": "Emotion"
+    },
+    {
+     "id": "u09-31",
+     "title": "Stress",
+     "module": "Stress and coping"
+    },
+    {
+     "id": "u09-32",
+     "title": "The physiology of stress",
+     "module": "Stress and coping"
+    },
+    {
+     "id": "u09-33",
+     "title": "Coping",
+     "module": "Stress and coping"
+    },
+    {
+     "id": "u09-34",
+     "title": "Resilience",
+     "module": "Stress and coping"
+    },
+    {
+     "id": "u09-35",
+     "title": "Subjective wellbeing",
+     "module": "Wellbeing"
+    },
+    {
+     "id": "u09-36",
+     "title": "Happiness",
+     "module": "Wellbeing"
+    },
+    {
+     "id": "u09-37",
+     "title": "Positive psychology in practice",
+     "module": "Wellbeing"
+    },
+    {
+     "id": "u09-38",
+     "title": "Flow",
+     "module": "Wellbeing"
+    },
+    {
+     "id": "u09-39",
+     "title": "Gratitude",
+     "module": "Wellbeing"
+    },
+    {
+     "id": "u09-40",
+     "title": "Mindfulness research",
+     "module": "Wellbeing"
+    },
+    {
+     "id": "u09-41",
+     "title": "Flourishing",
+     "module": "Wellbeing"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Skill Acquisition and Coaching",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "The nature of skill",
+     "module": "Skill and ability"
+    },
+    {
+     "id": "u10-02",
+     "title": "Classifying skills",
+     "module": "Skill and ability"
+    },
+    {
+     "id": "u10-03",
+     "title": "Abilities",
+     "module": "Skill and ability"
+    },
+    {
+     "id": "u10-04",
+     "title": "Types of practice",
+     "module": "Skill and ability"
+    },
+    {
+     "id": "u10-05",
+     "title": "Transfer of skill",
+     "module": "Skill and ability"
+    },
+    {
+     "id": "u10-06",
+     "title": "Stages of learning",
+     "module": "Learning skills"
+    },
+    {
+     "id": "u10-07",
+     "title": "Learning curves and plateaus",
+     "module": "Learning skills"
+    },
+    {
+     "id": "u10-08",
+     "title": "Theories of learning",
+     "module": "Learning skills"
+    },
+    {
+     "id": "u10-09",
+     "title": "Guidance",
+     "module": "Learning skills"
+    },
+    {
+     "id": "u10-10",
+     "title": "Feedback",
+     "module": "Learning skills"
+    },
+    {
+     "id": "u10-11",
+     "title": "Information-processing models",
+     "module": "Information processing"
+    },
+    {
+     "id": "u10-12",
+     "title": "Reaction time and Hick's law",
+     "module": "Information processing"
+    },
+    {
+     "id": "u10-13",
+     "title": "Memory in skill learning",
+     "module": "Information processing"
+    },
+    {
+     "id": "u10-14",
+     "title": "Schema theory",
+     "module": "Information processing"
+    },
+    {
+     "id": "u10-15",
+     "title": "Ecological and constraints-led approaches",
+     "module": "Information processing"
+    },
+    {
+     "id": "u10-16",
+     "title": "The role of the coach",
+     "module": "Coaching"
+    },
+    {
+     "id": "u10-17",
+     "title": "Coaching styles",
+     "module": "Coaching"
+    },
+    {
+     "id": "u10-18",
+     "title": "Planning a coaching session",
+     "module": "Coaching"
+    },
+    {
+     "id": "u10-19",
+     "title": "Long-term athlete development",
+     "module": "Coaching"
+    },
+    {
+     "id": "u10-20",
+     "title": "Safeguarding and ethics in coaching",
+     "module": "Coaching"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Injury Prevention and Rehabilitation",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Acute and chronic injuries",
+     "module": "Sports injuries"
+    },
+    {
+     "id": "u11-02",
+     "title": "Soft-tissue injuries",
+     "module": "Sports injuries"
+    },
+    {
+     "id": "u11-03",
+     "title": "Hard-tissue injuries",
+     "module": "Sports injuries"
+    },
+    {
+     "id": "u11-04",
+     "title": "Concussion",
+     "module": "Sports injuries"
+    },
+    {
+     "id": "u11-05",
+     "title": "Risk factors for injury",
+     "module": "Sports injuries"
+    },
+    {
+     "id": "u11-06",
+     "title": "Injury prevention strategies",
+     "module": "Prevention"
+    },
+    {
+     "id": "u11-07",
+     "title": "Screening and movement assessment",
+     "module": "Prevention"
+    },
+    {
+     "id": "u11-08",
+     "title": "Load management and injury",
+     "module": "Prevention"
+    },
+    {
+     "id": "u11-09",
+     "title": "First aid in sport",
+     "module": "Treatment and return"
+    },
+    {
+     "id": "u11-10",
+     "title": "The stages of tissue healing",
+     "module": "Treatment and return"
+    },
+    {
+     "id": "u11-11",
+     "title": "Rehabilitation",
+     "module": "Treatment and return"
+    },
+    {
+     "id": "u11-12",
+     "title": "Return to play",
+     "module": "Treatment and return"
+    },
+    {
+     "id": "u11-13",
+     "title": "Recovery methods",
+     "module": "Treatment and return"
+    },
+    {
+     "id": "u11-14",
+     "title": "Psychological responses to injury",
+     "module": "Treatment and return"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Physical Activity",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u12-17",
+     "title": "Physical activity, exercise and fitness",
+     "module": "Activity and health"
+    },
+    {
+     "id": "u12-18",
+     "title": "The UK physical activity guidelines",
+     "module": "Activity and health"
+    },
+    {
+     "id": "u12-19",
+     "title": "Sedentary behaviour",
+     "module": "Activity and health"
+    },
+    {
+     "id": "u12-20",
+     "title": "The benefits of physical activity",
+     "module": "Activity and health"
+    },
+    {
+     "id": "u12-21",
+     "title": "Short-term responses to exercise",
+     "module": "How the body responds"
+    },
+    {
+     "id": "u12-22",
+     "title": "Long-term adaptations to training",
+     "module": "How the body responds"
+    },
+    {
+     "id": "u12-23",
+     "title": "Energy systems",
+     "module": "How the body responds"
+    },
+    {
+     "id": "u12-24",
+     "title": "Components of fitness",
+     "module": "How the body responds"
+    },
+    {
+     "id": "u12-25",
+     "title": "Measuring fitness",
+     "module": "How the body responds"
+    },
+    {
+     "id": "u12-26",
+     "title": "Physical activity in children and young people",
+     "module": "Promoting activity"
+    },
+    {
+     "id": "u12-27",
+     "title": "Physical activity in older adults",
+     "module": "Promoting activity"
+    },
+    {
+     "id": "u12-28",
+     "title": "Activity with long-term conditions",
+     "module": "Promoting activity"
+    },
+    {
+     "id": "u12-29",
+     "title": "Barriers to physical activity",
+     "module": "Promoting activity"
+    },
+    {
+     "id": "u12-30",
+     "title": "Active environments and active travel",
+     "module": "Promoting activity"
+    }
+   ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "motor-neurone",
+   "title": "The action potential and the all-or-none law",
+   "kind": "Simulation",
+   "sub": "Stimulate a patch of nerve membrane: below threshold nothing fires, above it every action potential is the same size. Find the threshold and the refractory period that limits firing rate.",
+   "note": "SciGradify Biology's simulation: the published Hodgkin–Huxley (1952) equations for squid axon membrane; a motor neurone behaves the same way in principle, with no propagation or myelin modelled.",
+   "tasks": null,
+   "lessons": [
+    "u01-17",
+    "u01-18"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/motor-neurone"
+  },
+  {
+   "id": "nmj",
+   "title": "The neuromuscular junction",
+   "kind": "Simulation",
+   "sub": "Acetylcholine release, receptors and acetylcholinesterase at a cholinergic synapse, the same chemistry that passes every signal from motor neurone to muscle fibre; summation, blockers and toxins.",
+   "note": "SciGradify Biology's simulation of a cholinergic synapse: a small kinetic model with illustrative values; the sequence of events is accurate.",
+   "tasks": null,
+   "lessons": [
+    "u01-17",
+    "u01-12"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/nmj"
+  },
+  {
+   "id": "heart",
+   "title": "The cardiac cycle",
+   "kind": "Simulation",
+   "sub": "A model left heart: pressures, volume, valves and the pressure–volume loop. Raise heart rate and contractility as in exercise and watch stroke volume and cardiac output respond.",
+   "note": "SciGradify Biology's simulation: a time-varying elastance ventricle with a two-element Windkessel; left heart only, constant filling pressure, no reflexes.",
+   "tasks": null,
+   "lessons": [
+    "u02-03",
+    "u02-04",
+    "u02-01",
+    "u02-06"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/heart"
+  },
+  {
+   "id": "gas-exchange",
+   "title": "Gas exchange and the oxygen dissociation curve",
+   "kind": "Simulation",
+   "sub": "Oxygen loading along a lung capillary, and the haemoglobin dissociation curve shifted by carbon dioxide, acid and heat as in working muscle.",
+   "note": "SciGradify Biology's simulation: Fick diffusion along one capillary and the Hill equation (n = 2.7, P₅₀ = 26.8 mmHg) with an empirical Bohr shift; no shunt or V/Q mismatch.",
+   "tasks": null,
+   "lessons": [
+    "u02-14",
+    "u02-10",
+    "u02-09"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/gas-exchange"
+  },
+  {
+   "id": "respiration",
+   "title": "Cellular respiration",
+   "kind": "Illustrative model",
+   "sub": "Glycolysis, the link reaction, the Krebs cycle and the electron transport chain, with the ATP made at each stage and the anaerobic alternative.",
+   "note": "SciGradify Biology's model: modern P/O ratios (2.5 ATP per NADH, 1.5 per FADH₂), about 30–32 ATP per glucose; older PE textbooks quote 36–38.",
+   "tasks": null,
+   "lessons": [
+    "u03-04",
+    "u03-03",
+    "u03-01"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/respiration"
+  },
+  {
+   "id": "projectile",
+   "title": "Projectile motion and air resistance",
+   "kind": "Simulation",
+   "sub": "Launch a ball at any speed, angle and height, with or without drag: find the best release angle and see why it isn't always 45°.",
+   "note": "SciGradify Physics's simulation: uniform gravity, still air, quadratic drag on a 145 g ball (C_d = 0.47), integrated numerically; no spin or lift.",
+   "tasks": null,
+   "lessons": [
+    "u05-12",
+    "u05-13",
+    "u05-14"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/projectile"
+  },
+  {
+   "id": "collisions",
+   "title": "Collisions and momentum",
+   "kind": "Simulation",
+   "sub": "Two bodies meet head-on: momentum is always conserved, kinetic energy only sometimes. The physics behind tackles, bat on ball and impacts.",
+   "note": "SciGradify Physics's simulation: one dimension on a frictionless air track, with the coefficient of restitution set by you.",
+   "tasks": null,
+   "lessons": [
+    "u05-08",
+    "u05-05"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/collisions"
+  },
+  {
+   "id": "reaction-time",
+   "title": "Choice reaction time (Hick's law)",
+   "kind": "Experiment",
+   "sub": "Respond to one, two or four possible lights and see whether your reaction time rises with the number of choices.",
+   "note": "PsychGradify's experiment: your own response times measured in the browser, which stay on this device; a classroom demonstration, not a laboratory measure.",
+   "tasks": null,
+   "lessons": [
+    "u10-12",
+    "u10-11"
+   ],
+   "url": "https://getgradify.com/sportgradify/course/#/practice/reaction-time"
+  }
+ ]
+}

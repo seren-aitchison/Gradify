@@ -57,10 +57,13 @@ X: Light (λ = 600 nm in air) enters glass with n = 1.5. Find its frequency and 
 > f = c/λ = 3 × 10^{8}/6 × 10^{-7} = 5 × 10^{14} Hz (unchanged)
 > v = c/1.5 = 2 × 10^{8} m s^{-1}; λ = 400 nm
 !: Frequency doesn't change at a boundary; wavelength and speed do. The colour we see depends on frequency.
+P: **Investigate with the lab.** Change the tension and mass per metre of the string and watch the wave speed change. Then check that v = fλ for the standing wave you make.
+IX: waves
 Q: What happens to frequency when a wave enters a new medium? | It stays the same.
 Q: What is the wavenumber? | k = 2π/λ, radians per metre.
 M1: A wave with f = 50 Hz and λ = 4 m has speed: | 200 m s^{-1} | 12.5 m s^{-1} | 54 m s^{-1} | 0.08 m s^{-1} | v = fλ.
 M2: Sound at 1000 Hz moves from air (343 m s^{-1}) into water (1480 m s^{-1}). Its wavelength: | Increases to 1.48 m | Decreases | Stays at 0.34 m | Becomes zero | λ = v/f.
+M2: A wave has frequency 50 Hz and wavelength 0.4 m. What is its speed? | 20 m/s | 125 m/s | 0.008 m/s | 50.4 m/s | v = fλ = 50 × 0.4 = 20 m/s.
 
 ## Wave equations
 S: The one-dimensional wave equation says the acceleration of each bit of medium is proportional to the curvature of the wave there. Any function of (x − vt) solves it, so shapes travel unchanged at speed v.
@@ -141,10 +144,13 @@ X: Two pulses, +3 cm and −2 cm, overlap on a string. Peak displacement where t
 > +3 + (−2) = +1 cm
 > After passing, each continues with its original shape
 !: Superposition adds displacements (amplitudes), not intensities, for coherent waves.
+P: **Investigate with the lab.** Add two waves with equal amplitude and set the phase difference to 180°: they cancel completely. Then set it to 0° and see the amplitude double.
+IX: waves
 Q: State the principle of superposition. | When waves overlap, the resultant displacement is the sum of the individual displacements.
 Q: When does superposition fail? | In nonlinear media, typically at large amplitudes.
 M1: Two waves of amplitude 4 cm meet in antiphase. The resultant amplitude is: | 0 | 8 cm | 4 cm | 16 cm | They cancel.
 M2: Frequency doubling of laser light shows: | A nonlinear medium | Superposition | Diffraction | Polarisation | Nonlinear optics.
+M2: Two equal waves meet exactly out of phase. What is the result? | They cancel to zero displacement | They double in amplitude | They reflect off each other | They change frequency | By superposition, displacements add; equal and opposite displacements cancel.
 
 ## Interference
 S: Interference is the pattern of reinforcement and cancellation when coherent waves overlap. It's the signature of wave behaviour, and it measures wavelengths, distances and surface flatness to a fraction of a wavelength.
@@ -164,10 +170,16 @@ H: Applications
 X: Light through slits 0.5 mm apart gives fringes 1.2 mm apart on a screen 1.0 m away. Find λ.
 > λ = xd/D = 1.2 × 10^{-3} × 5 × 10^{-4}/1.0 = 600 nm
 !: Two separate light bulbs don't produce visible interference: they aren't coherent with each other.
+P: **Investigate with the lab.** Vary the phase difference between two waves from 0° to 360° and watch the combined amplitude rise and fall.
+IX: waves
+P: **Investigate with the lab.** Look at the double-slit pattern and identify where the waves from the two slits arrive in phase and in antiphase.
+IX: interference
 Q: What is coherence? | A constant phase relationship between waves.
 Q: What is the fringe spacing in Young's experiment? | λD/d.
 M1: Increasing the slit separation in Young's experiment makes fringes: | Closer together | Further apart | Brighter | Disappear | x ∝ 1/d.
 M2: Interference of single electrons shows: | Each electron behaves as a wave going through both slits | Electrons are classical particles | Electrons interact with each other | The experiment is faulty | Quantum superposition.
+M2: What phase difference gives maximum constructive interference? | 0° or a whole number of cycles | 90° | 180° | 270° | Waves in phase add to give the largest amplitude.
+M2: On the screen of a double-slit experiment, what makes a dark fringe? | Waves from the two slits arriving in antiphase | Light being absorbed by the screen | No light passing through either slit | Waves arriving exactly in phase | A path difference of half a wavelength, or an odd number of half wavelengths, gives cancellation.
 
 ## Constructive and destructive interference
 S: Waves interfere constructively where they arrive in phase (path difference a whole number of wavelengths) and destructively where they arrive in antiphase (an odd number of half wavelengths).
@@ -183,10 +195,13 @@ X: An anti-reflection coating (n = 1.38) on glass (n = 1.5) for 550 nm light. Mi
 > Both reflections have a π shift, so they cancel; need 2nt = λ/2
 > t = 550/(4 × 1.38) = 100 nm
 !: Destructive interference at one place always comes with constructive interference elsewhere; total energy is conserved.
+P: **Investigate with the lab.** Set the phase difference to 0°, 180° and 360° in turn and record the combined amplitude each time.
+IX: waves
 Q: What path difference gives destructive interference for in-phase sources? | An odd number of half wavelengths.
 Q: What phase change occurs on reflection from a denser medium? | π (half a wavelength).
 M1: Two speakers in phase are 3.0 m and 3.5 m from you; λ = 1.0 m. You hear: | A quiet spot (destructive) | A loud spot | No sound change | Beats | Δ = 0.5λ.
 M2: Two equal waves interfering constructively give intensity: | 4 times one wave's | 2 times | The same | Zero | Amplitude doubles, intensity ∝ A^{2}.
+M2: Two waves arrive with a path difference of 1.5 wavelengths. What kind of interference occurs? | Destructive | Constructive | Neither, they don't interact | It depends only on amplitude | A path difference of a whole number plus a half wavelength puts the waves in antiphase.
 
 ## Standing waves
 S: A standing wave forms when two identical waves travel in opposite directions, usually a wave and its reflection. Some points (nodes) never move; others (antinodes) oscillate with maximum amplitude, and energy stays trapped between them.
@@ -205,10 +220,13 @@ X: Microwaves in an oven form standing waves with nodes 6 cm apart. Find f.
 > λ/2 = 6 cm ⇒ λ = 12 cm
 > f = 3 × 10^{8}/0.12 = 2.5 GHz (hence the turntable: food at nodes wouldn't heat)
 !: The distance between adjacent nodes is λ/2, not λ.
+P: **Investigate with the lab.** Send two equal waves in opposite directions and get a standing wave. Find the nodes, where the string never moves.
+IX: waves
 Q: How far apart are adjacent nodes? | Half a wavelength.
 Q: How does a standing wave differ from a travelling wave? | Its amplitude varies with position, points between nodes oscillate in phase, and it transfers no net energy.
 M1: The fundamental of a 0.6 m string with v = 240 m s^{-1} is: | 200 Hz | 400 Hz | 100 Hz | 144 Hz | f = v/2L.
 M2: Points on either side of a node oscillate: | In antiphase | In phase | Not at all | At different frequencies | sin kx changes sign at a node.
+M2: What is the distance between two neighbouring nodes in a standing wave? | Half a wavelength | One wavelength | A quarter of a wavelength | Two wavelengths | Nodes occur every half wavelength.
 
 ## Reflection and transmission
 S: When a wave meets a boundary between two media, part is reflected and part transmitted. The fractions and phases depend on how different the media's impedances are.
@@ -270,10 +288,13 @@ X: Can a 10 cm telescope resolve car headlights 1.5 m apart, 10 km away (λ = 55
 > θ_{min} = 1.22 × 5.5 × 10^{-7}/0.1 = 6.7 × 10^{-6} rad
 > Separation angle = 1.5/10^{4} = 1.5 × 10^{-4} rad: easily resolved
 !: You hear round corners but don't see round them because sound wavelengths (~1 m) match doorways while light's (~500 nm) are far smaller.
+P: **Investigate with the lab.** Narrow and widen a single slit and watch the central maximum change width. Compare the pattern with a double slit.
+IX: interference
 Q: When is diffraction most noticeable? | When the gap or obstacle size is comparable to the wavelength.
 Q: State the Rayleigh criterion. | Two point sources are just resolved when θ ≈ 1.22λ/D.
 M1: A grating with 500 lines per mm and 600 nm light gives a first order at: | 17.5° | 30° | 0.3° | 60° | d = 2 μm; sin θ = 0.3.
 M2: Narrowing a single slit makes the central maximum: | Wider | Narrower | Brighter | Disappear | Width ∝ λ/a.
+M2: When is diffraction through a gap most noticeable? | When the gap is about the same size as the wavelength | When the gap is much larger than the wavelength | When the light is very bright | Only when the wave is sound | Diffraction is greatest when the gap width is comparable to the wavelength.
 
 ## Dispersion
 S: Dispersion is the dependence of wave speed on frequency. It splits white light into colours, spreads pulses in optical fibres, and shapes water waves and seismic signals.
@@ -358,10 +379,13 @@ X: A piano string beats 2 times per second with a 440 Hz fork. Adding a little t
 > String is 438 or 442 Hz
 > Mass lowers the fork's frequency; beats increased, so the string is below: 438 Hz
 !: Beats only arise with nearly equal frequencies; with large differences you hear two separate tones (or a combination tone).
+P: **Investigate with the lab.** Tune two notes until you hear and see 2 beats per second. Then change one frequency and predict the new beat frequency before you listen.
+IX: waves
 Q: What is the beat frequency? | The difference between the two frequencies.
 Q: Why do beats disappear when two strings are in tune? | Their frequency difference is zero.
 M1: Two sources at 500 Hz and 506 Hz produce: | 6 beats per second | 3 beats per second | 1006 beats | 503 beats | Difference.
 M2: The perceived pitch during beating is: | The average of the two frequencies | The difference | The sum | The lower frequency | The carrier is f̄.
+M2: Two notes of 440 Hz and 443 Hz sound together. What is the beat frequency? | 3 Hz | 441.5 Hz | 883 Hz | 1.5 Hz | The beat frequency is the difference between the two frequencies.
 
 ## Boundary conditions
 S: Boundary conditions specify what a wave must do at the edges of its medium: fixed, free, or matched to another medium. They determine reflection, the allowed standing-wave patterns, and therefore the resonant frequencies.
@@ -380,10 +404,13 @@ X: A pipe 0.30 m long, closed at one end. Lowest two resonances (v = 343 m s^{-1
 > f_{1} = v/(4L) = 286 Hz
 > Next: 3f_{1} = 858 Hz (no even harmonics)
 !: For sound in pipes, a closed end is a displacement node but a pressure antinode. Be clear which quantity you mean.
+P: **Investigate with the lab.** Make standing waves on the string and check that both fixed ends are always nodes.
+IX: waves
 Q: What boundary condition does an open pipe end impose on displacement? | An antinode (approximately, with an end correction).
 Q: Why does a pipe closed at one end have only odd harmonics? | A node at one end and an antinode at the other fit only odd quarter-wavelengths.
 M1: A string fixed at both ends supports wavelengths: | 2L/n | 4L/n odd n | L/n | 4L | Nodes at both ends.
 M2: At the surface of a perfect conductor, the tangential electric field is: | Zero | Maximum | Equal to the normal field | Undefined | Charges move to cancel it.
+M2: For a string fixed at both ends, what must the length be? | A whole number of half wavelengths | A whole number of quarter wavelengths | Exactly one wavelength | Any length at all | Both ends must be nodes, so L = nλ/2.
 
 ## Resonant modes
 S: A bounded system can only sustain standing waves whose shapes fit its boundary conditions: its resonant modes. Each mode has a particular frequency, and the set of them gives instruments their sound, cavities their colours and atoms their energy levels.
@@ -400,10 +427,13 @@ P: An electron confined in an atom or box has allowed energies for the same reas
 X: A 1.5 m laser cavity: what is the frequency spacing between modes?
 > Δf = c/(2L) = 3 × 10^{8}/3 = 100 MHz
 !: Exciting a system at a non-resonant frequency gives only a small, forced response; strong response needs a mode near the drive.
+P: **Investigate with the lab.** Show the third harmonic and count its nodes. Predict the frequency of the fourth harmonic from the first.
+IX: waves
 Q: Why do drums have less definite pitch than strings? | Their mode frequencies aren't integer multiples of a fundamental.
 Q: What is the spacing between longitudinal modes in a laser cavity? | c/(2L).
 M1: The second harmonic of a 100 Hz fundamental string is: | 200 Hz | 150 Hz | 50 Hz | 400 Hz | 2f_{1}.
 M2: Why do small rooms have uneven bass? | Low-frequency room modes are widely spaced | Bass is absorbed | Walls are too hard | Speakers can't produce bass | Few modes, separated in frequency.
+M2: A string's fundamental frequency is 100 Hz. What is the frequency of its third harmonic? | 300 Hz | 150 Hz | 900 Hz | 33 Hz | For a string fixed at both ends, the nth harmonic is n times the fundamental.
 
 ## Coupled waves
 S: When two wave systems are linked, energy can pass between them. Coupled waves explain directional couplers in optics, energy exchange between pendulum chains, and mode conversion in seismology, plasmas and the ocean.

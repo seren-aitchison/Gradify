@@ -42,7 +42,7 @@
 .bar-col.top .bar-val { color: #000; background: #fff; box-shadow: 0 0 14px -4px #fff; }
 .rows { display: flex; flex-direction: column; gap: 10px; }
 .row {
-  display: flex; align-items: center; gap: 12px; padding: 8px 8px 8px 8px; border-radius: 18px;
+  display: flex; align-items: center; gap: 12px; padding: 8px 8px 8px 8px; border-radius: 12px;
   text-decoration: none; transition: background .2s;
 }
 .row:hover { background: rgba(255, 255, 255, .05); border-color: color-mix(in srgb, var(--c) 45%, transparent); }
@@ -175,10 +175,10 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .earth-top { align-items: flex-start; }
 .earth-top .sub { max-width: 52em; }
 .earth-body { display: grid; grid-template-columns: 1fr 300px; gap: 16px; align-items: stretch; }
-.earth-map { position: relative; min-width: 0; height: 540px; border-radius: 18px; overflow: hidden; background: radial-gradient(70% 70% at 50% 45%, #07152a, #02050b 60%, #000); }
+.earth-map { position: relative; min-width: 0; height: 540px; border-radius: 12px; overflow: hidden; background: radial-gradient(70% 70% at 50% 45%, #07152a, #02050b 60%, #000); }
 .earth-map canvas { display: block; width: 100%; height: 100%; cursor: grab; touch-action: pan-y; outline: none; }
 .earth-map canvas.grabbing { cursor: grabbing; }
-.earth-map canvas:focus-visible { box-shadow: inset 0 0 0 2px rgba(140, 190, 255, .8); border-radius: 18px; }
+.earth-map canvas:focus-visible { box-shadow: inset 0 0 0 2px rgba(140, 190, 255, .8); border-radius: 12px; }
 .earth-tools { position: absolute; top: 12px; left: 12px; right: 12px; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; pointer-events: none; }
 .earth-tools > * { pointer-events: auto; }
 .earth-jump select { max-width: 220px; height: 34px; padding: 0 10px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .14); background: rgba(0, 0, 0, .6); color: #fff; font: 500 13px var(--sans); backdrop-filter: blur(10px); }
@@ -186,7 +186,7 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .earth-zoom button { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .14); background: rgba(0, 0, 0, .6); color: #fff; font: 600 16px var(--sans); cursor: pointer; backdrop-filter: blur(10px); }
 .earth-zoom button:hover { background: rgba(255, 255, 255, .12); }
 .earth-hint { position: absolute; bottom: 12px; left: 16px; margin: 0; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: rgba(160, 200, 255, .5); pointer-events: none; }
-.inset-card { padding: 18px; border-radius: 18px; background: var(--inset); border: 1px solid rgba(255, 255, 255, .06); }
+.inset-card { padding: 18px; border-radius: 12px; background: var(--inset); border: 1px solid rgba(255, 255, 255, .06); }
 .inspector { --c: #888; display: flex; flex-direction: column; gap: 8px; }
 .inspector .topic { font-size: 20px; letter-spacing: -.02em; line-height: 1.2; }
 .inspector p { margin: 0; font-size: 13px; color: var(--mute); }
@@ -280,7 +280,7 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .ai-log { flex: 1; min-height: 300px; max-height: 460px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding: 4px 2px; scrollbar-width: thin; }
 .msg { display: flex; gap: 10px; align-items: flex-start; }
 .msg.me { justify-content: flex-end; }
-.chat-bubble { max-width: 88%; padding: 10px 14px; border-radius: 18px; font-size: 14px; line-height: 1.5; }
+.chat-bubble { max-width: 88%; padding: 10px 14px; border-radius: 12px; font-size: 14px; line-height: 1.5; }
 .msg.ai .chat-bubble { background: var(--inset); border: 1px solid rgba(255, 255, 255, .06); border-top-left-radius: 6px; }
 .msg.me .chat-bubble { background: #fff; color: #000; border-top-right-radius: 6px; }
 .chat-bubble p { margin: 0 0 8px; }
@@ -324,7 +324,7 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .event.planned .date { background: rgba(255, 255, 255, .12); }
 /* LifeOS window: sidebar + views */
 .os { display: grid; grid-template-columns: 196px 1fr; gap: 16px; align-items: start; }
-.os-rail { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 2px; padding: 10px; border-radius: 24px; }
+.os-rail { position: sticky; top: 84px; display: flex; flex-direction: column; gap: 2px; padding: 10px; border-radius: 16px; }
 .rail-btn {
   display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 14px; border: 1px solid transparent;
   background: transparent; color: var(--mute); font: inherit; font-size: 14px; text-align: left; cursor: pointer; white-space: nowrap;
@@ -389,7 +389,7 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .blk-title, .cal-edit select { font: inherit; font-size: 14px; color: var(--fg); padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: rgba(0, 0, 0, .35); width: 100%; }
 .blk-when { font-size: 12px; color: var(--mute); }
 .blk-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-.cal-scroll { --hr: 46px; height: min(680px, 75vh); overflow: auto; border-radius: 18px; background: rgba(0, 0, 0, .35); border: 1px solid var(--line); overscroll-behavior: contain; }
+.cal-scroll { --hr: 46px; height: min(680px, 75vh); overflow: auto; border-radius: 12px; background: rgba(0, 0, 0, .35); border: 1px solid var(--line); overscroll-behavior: contain; }
 .cal-grid { display: grid; grid-template-columns: 52px repeat(var(--cols), minmax(92px, 1fr)); min-width: calc(52px + var(--cols) * 92px); position: relative; }
 .cal-corner, .cal-dayhead { position: sticky; top: 0; z-index: 3; background: #0b0b0b; border-bottom: 1px solid var(--line); }
 .cal-corner { left: 0; z-index: 4; }
@@ -442,10 +442,10 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .study-progress .goal-bar i { background: var(--spectrum); }
 .feed-scroll {
   height: min(560px, 70vh); overflow-y: auto; scroll-snap-type: y mandatory; display: flex; flex-direction: column; gap: 14px;
-  padding: 2px; border-radius: 22px; scrollbar-width: none; overscroll-behavior: contain;
+  padding: 2px; border-radius: 14px; scrollbar-width: none; overscroll-behavior: contain;
 }
 .feed-scroll::-webkit-scrollbar { display: none; }
-.feed-item { scroll-snap-align: start; flex: none; min-height: calc(min(560px, 70vh) - 4px); border-radius: 22px; display: flex; flex-direction: column; padding: 22px; position: relative; overflow: hidden; }
+.feed-item { scroll-snap-align: start; flex: none; min-height: calc(min(560px, 70vh) - 4px); border-radius: 14px; display: flex; flex-direction: column; padding: 22px; position: relative; overflow: hidden; }
 .fcard {
   --c: #888;
   background: radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--c) 40%, transparent), transparent 60%), linear-gradient(180deg, #161616, #0c0c0c);
@@ -501,7 +501,7 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .tree-head h3 { display: flex; align-items: center; gap: 10px; }
 .tree-head .sub { max-width: 46em; }
 .grow-body { display: grid; grid-template-columns: 1fr 250px; gap: 16px; align-items: center; }
-.tree-wrap { border-radius: 18px; overflow: hidden; background: radial-gradient(90% 80% at 50% 35%, #142224, #070a0b); }
+.tree-wrap { border-radius: 12px; overflow: hidden; background: radial-gradient(90% 80% at 50% 35%, #142224, #070a0b); }
 .tree-wrap svg { display: block; width: 100%; height: auto; max-height: 520px; }
 .isle3d { width: 100%; touch-action: pan-y; }
 .isle3d canvas { display: block; width: 100%; height: auto; cursor: grab; }
@@ -611,7 +611,7 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
    a few points of light. Used by the Notes Studio outputs. */
 .holo {
   --holo: 94, 240, 255;
-  position: relative; overflow: hidden; isolation: isolate; border-radius: 20px; padding: 26px;
+  position: relative; overflow: hidden; isolation: isolate; border-radius: 14px; padding: 26px;
   background:
     radial-gradient(70% 60% at 10% 0%, rgba(var(--holo), .14), transparent 60%),
     linear-gradient(rgba(var(--holo), .045) 1px, transparent 1px) 0 0 / 32px 32px,
@@ -684,7 +684,7 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .fm-legend.fm-topic circle { fill: rgba(160, 120, 255, .45); stroke: #a78bfa; }
 .fm-legend.fm-term circle { fill: rgba(94, 240, 255, .12); stroke: rgba(94, 240, 255, .6); }
 .fm-legend.fm-def circle { fill: rgba(94, 240, 255, .05); stroke: rgba(94, 240, 255, .3); }
-.sheet svg { display: block; width: 100%; height: auto; border-radius: 20px; box-shadow: 0 0 42px -14px rgba(94, 240, 255, .5); }
+.sheet svg { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 0 42px -14px rgba(94, 240, 255, .5); }
 
 /* Flashcards: holo cards that flip in 3D */
 .holo-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; perspective: 1200px; }
@@ -738,7 +738,7 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .vc.rendering .vc-viewport { outline: 2px solid #ff5a4d; outline-offset: -2px; }
 .vc.rendering .vc-viewport::after { content: "● REC"; position: absolute; top: 10px; right: 90px; font: 700 11px var(--mono); color: #ff5a4d; }
 .song { display: grid; grid-template-columns: 1fr 240px; gap: 16px; }
-.lyrics { max-height: 420px; overflow-y: auto; padding: 18px; border-radius: 18px; background: var(--inset); display: flex; flex-direction: column; gap: 14px; scrollbar-width: thin; }
+.lyrics { max-height: 420px; overflow-y: auto; padding: 18px; border-radius: 12px; background: var(--inset); display: flex; flex-direction: column; gap: 14px; scrollbar-width: thin; }
 .lyrics .part { display: flex; flex-direction: column; gap: 4px; }
 .lyrics p { margin: 0; font-size: 18px; font-weight: 600; color: var(--mute); transition: color .2s, transform .2s; }
 .lyrics p.on { color: #fff; transform: translateX(6px); text-shadow: 0 0 18px rgba(240, 85, 221, .6); }
@@ -751,7 +751,7 @@ a.badge:hover { border-color: rgba(255, 255, 255, .4); }
 .eq i:nth-child(3n) { animation-delay: -.2s; }
 .eq i:nth-child(3n+1) { animation-delay: -.4s; }
 @keyframes eqbar { from { height: 15%; } to { height: 100%; } }
-.aq-card { position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 10px; padding: 26px; border-radius: 18px; background: radial-gradient(90% 90% at 80% 0%, rgba(70, 65, 255, .35), transparent 60%), #0b0b0b; border: 1px solid var(--line); min-height: 200px; justify-content: center; }
+.aq-card { position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 10px; padding: 26px; border-radius: 12px; background: radial-gradient(90% 90% at 80% 0%, rgba(70, 65, 255, .35), transparent 60%), #0b0b0b; border: 1px solid var(--line); min-height: 200px; justify-content: center; }
 .aq-card p { margin: 0; font-size: 20px; font-weight: 600; }
 .aq-card .aq-a { color: #4fe0a6; font-size: 17px; }
 /* Community */
@@ -806,7 +806,7 @@ h3.big { font-size: 20px; letter-spacing: -.02em; margin-top: 4px; }
 .path-tabs .ico { width: 15px; height: 15px; }
 .unit-banner {
   display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  padding: 16px 18px; border-radius: 18px; color: var(--ink);
+  padding: 16px 18px; border-radius: 12px; color: var(--ink);
   background: linear-gradient(180deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0) 60%), var(--c);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), 0 5px 0 color-mix(in srgb, var(--c) 60%, #000), 0 18px 34px -16px var(--c);
 }
@@ -847,7 +847,7 @@ h3.big { font-size: 20px; letter-spacing: -.02em; margin-top: 4px; }
 .mini-heat { display: grid; grid-template-rows: repeat(7, 1fr); grid-auto-flow: column; grid-template-columns: repeat(16, 1fr); gap: 3px; }
 .cert {
   position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 4px;
-  padding: 20px; border-radius: 20px;
+  padding: 20px; border-radius: 14px;
   background: radial-gradient(120% 100% at 100% 0%, color-mix(in srgb, var(--c) 40%, transparent), transparent 60%), linear-gradient(180deg, rgba(255, 255, 255, .07), rgba(255, 255, 255, .02));
   border: 1px solid color-mix(in srgb, var(--c) 45%, rgba(255, 255, 255, .1));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 20px 40px -24px var(--c);
@@ -866,7 +866,7 @@ code { font: 12px var(--mono); color: var(--mute); }
 .cred-note { margin: 0; font-size: 13px; color: var(--faint); }
 .toast {
   position: fixed; left: 50%; bottom: 24px; z-index: 50; transform: translateX(-50%);
-  max-width: min(560px, calc(100% - 32px)); padding: 12px 20px; border-radius: 18px;
+  max-width: min(560px, calc(100% - 32px)); padding: 12px 20px; border-radius: 12px;
   font-size: 14px; color: var(--fg); text-align: center;
 }
 .toast a { color: var(--fg); font-weight: 600; }
@@ -983,7 +983,7 @@ code { font: 12px var(--mono); color: var(--mute); }
 .mx-cal { font-size: 13px; color: var(--mute); margin: 14px 0 0; line-height: 1.5; }
 
 /* Your Gradify: the learner's own LifeOS (kit/lifeos/mine.js) */
-.mine { margin: 0 0 28px; padding: clamp(18px, 3vw, 28px); border-radius: 24px; display: flex; flex-direction: column; gap: 20px; }
+.mine { margin: 0 0 28px; padding: clamp(18px, 3vw, 28px); border-radius: 16px; display: flex; flex-direction: column; gap: 20px; }
 .mine h3 { margin: 4px 0 0; font-size: clamp(22px, 3vw, 30px); letter-spacing: -.02em; }
 .mine h4 { margin: 0 0 10px; font-size: 15px; }
 .mine-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; }

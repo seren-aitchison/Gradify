@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gradify AI usage</title>
+  <meta name="description" content="For Gradify's owners: Gradify AI requests, tokens and spend against the budgets.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/kit/styles/base.css">
+  <style>
+    :root { --bar: #3987e5; --good: #0ca30c; --warn: #fab219; --crit: #d03b3b; }
+    main { max-width: 1100px; margin: 0 auto; padding: 40px 16px 80px; }
+    h1 { font-size: clamp(28px, 5vw, 40px); letter-spacing: -.02em; margin: 0 0 6px; }
+    h2 { font-size: 18px; margin: 32px 0 10px; }
+    .lede, .note { color: var(--mute); line-height: 1.5; margin: 0 0 18px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 20px; }
+    .state { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; padding: 6px 12px; border-radius: 99px; border: 1px solid var(--line-strong); }
+    .state i { width: 10px; height: 10px; border-radius: 50%; background: var(--mute); }
+    .state.on i { background: var(--good); } .state.test i { background: var(--warn); }
+    .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .tile { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); padding: 14px 16px; }
+    .tile small { display: block; color: var(--mute); font-size: 13px; }
+    .tile b { display: block; font-size: 28px; letter-spacing: -.02em; margin: 4px 0 2px; font-variant-numeric: tabular-nums; }
+    .tile span { color: var(--mute); font-size: 13px; }
+    .meter { height: 8px; border-radius: 99px; background: rgba(255, 255, 255, .08); margin-top: 10px; overflow: hidden; }
+    .meter i { display: block; height: 100%; border-radius: 99px; background: var(--good); }
+    .meter.warn i { background: var(--warn); } .meter.crit i { background: var(--crit); }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+    tr:last-child td { border-bottom: 0; }
+    thead th { font: 500 11px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--mute); }
+    td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+    .chart { position: relative; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); padding: 14px 14px 8px; }
+    .chart svg { display: block; width: 100%; height: 180px; }
+    .chart .tip { position: absolute; pointer-events: none; background: #111; border: 1px solid var(--line-strong); border-radius: 8px; padding: 6px 9px; font-size: 13px; white-space: nowrap; transform: translate(-50%, -110%); }
+    .empty { color: var(--mute); padding: 14px 16px; }
+    code { font: 13px var(--mono); }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+  <main>
+    <a href="/">← Gradify</a>
+    <h1>Gradify AI usage</h1>
+    <p class="lede">For Gradify's owners: requests, tokens and estimated Anthropic spend this month, against the budgets and caps that the server enforces. Learners are shown by the start of their account id, never by email. Read-only: settings change in the Supabase SQL editor (docs/AI.md).</p>
+    <div class="actions"><button class="btn btn-primary btn-sm lg" id="refresh" type="button">Refresh</button><a class="btn btn-ghost btn-sm lg" href="/app.html#/account">Account</a></div>
+    <div id="out" aria-live="polite"><p class="note">Loading…</p></div>
+  </main>
+  <script src="/kit/vendor/supabase/supabase.js"></script>
+  <script type="module">
+    import { SUPABASE_URL, SUPABASE_ANON_KEY } from "/gradify.config.js";
+    const out = document.getElementById("out");
+    const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+    const gbp = (p) => `£${(Number(p) / 100).toFixed(2)}`;
+    const num = (n) => Number(n).toLocaleString("en-GB");
+    const table = (rows, cols) => rows.length
+      ? `<div class="table-wrap"><table><thead><tr>${cols.map(([h, , n]) => `<th scope="col"${n ? ' class="n"' : ""}>${h}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${cols.map(([, f, n]) => `<td${n ? ' class="n"' : ""}>${esc(f(r))}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`
+      : `<div class="table-wrap"><p class="empty">None yet.</p></div>`;
+    // budget meters: the fill colour follows how much is used, and the words say the same thing
+    function meter(used, limit) {
+      const pc = limit ? Math.min(100, (used / limit) * 100) : 0, tone = pc >= 90 ? "crit" : pc >= 70 ? "warn" : "";
+      return `<div class="meter ${tone}" role="img" aria-label="${Math.round(pc)}% used"><i style="width:${pc}%"></i></div>`;
+    }
+    // spend per day, one series: columns from a single baseline, values in the hover tip and in the table below
+    function dailyChart(days) {
+      if (!days.length) return `<div class="chart"><p class="empty">No requests in the last 30 days.</p></div>`;
+      const W = 720, H = 180, pad = { l: 44, r: 8, t: 10, b: 22 }, max = Math.max(1, ...days.map((d) => Number(d.cost_pence)));
+      const top = Math.ceil(max / 10) * 10, slot = (W - pad.l - pad.r) / days.length, bw = Math.min(24, slot - 2);
+      const y = (v) => pad.t + (H - pad.t - pad.b) * (1 - v / top);
+      const ticks = [0, top / 2, top];
+      const bars = days.map((d, i) => {
+        const x = pad.l + i * slot + (slot - bw) / 2, v = Number(d.cost_pence), h = Math.max(0, y(0) - y(v)), r = Math.min(4, h);
+        const path = h ? `M${x},${y(0)} V${y(v) + r} Q${x},${y(v)} ${x + r},${y(v)} H${x + bw - r} Q${x + bw},${y(v)} ${x + bw},${y(v) + r} V${y(0)} Z` : "";
+        return `<g data-i="${i}"><rect x="${pad.l + i * slot}" y="${pad.t}" width="${slot}" height="${H - pad.t - pad.b}" fill="transparent"/>${path ? `<path d="${path}" fill="var(--bar)"/>` : ""}</g>`;
+      }).join("");
+      const grid = ticks.map((t) => `<line x1="${pad.l}" x2="${W - pad.r}" y1="${y(t)}" y2="${y(t)}" stroke="rgba(255,255,255,.08)"/><text x="${pad.l - 6}" y="${y(t) + 4}" text-anchor="end" fill="var(--mute)" font-size="11">${gbp(t)}</text>`).join("");
+      const first = days[0].day.slice(5), last = days.at(-1).day.slice(5);
+      return `<div class="chart" id="daily"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Estimated Gradify AI spend per day, last 30 days. The table below has the values.">${grid}${bars}
+        <text x="${pad.l}" y="${H - 4}" fill="var(--mute)" font-size="11">${first}</text><text x="${W - pad.r}" y="${H - 4}" text-anchor="end" fill="var(--mute)" font-size="11">${last}</text></svg><div class="tip" hidden></div></div>`;
+    }
+    function hover(days) {
+      const box = document.getElementById("daily"); if (!box) return;
+      const tip = box.querySelector(".tip"), svg = box.querySelector("svg");
+      svg.addEventListener("pointermove", (e) => {
+        const g = e.target.closest("g[data-i]"); if (!g) { tip.hidden = true; return; }
+        const d = days[Number(g.dataset.i)], b = box.getBoundingClientRect();
+        tip.innerHTML = `<b>${esc(d.day)}</b> · ${gbp(d.cost_pence)} · ${num(d.requests)} requests`;
+        tip.style.left = `${e.clientX - b.left}px`; tip.style.top = `${e.clientY - b.top}px`; tip.hidden = false;
+      });
+      svg.addEventListener("pointerleave", () => { tip.hidden = true; });
+    }
+
+    function render(o) {
+      const s = o.settings, m = o.month;
+      const state = s.enabled ? ["on", "Gradify AI is on for everyone"] : s.testers ? ["test", `Off for learners · on for ${s.testers} tester${s.testers === 1 ? "" : "s"}`] : ["", "Gradify AI is off"];
+      out.innerHTML = `<p><span class="state ${state[0]}"><i aria-hidden="true"></i>${state[1]}</span></p>
+        <div class="tiles">
+          <div class="tile"><small>Spend this month</small><b>${gbp(m.spend_pence)}</b><span>of the ${gbp(s.monthly_budget_pence)} monthly budget (${s.monthly_budget_pence ? Math.round((m.spend_pence / s.monthly_budget_pence) * 100) : 0}%)</span>${meter(m.spend_pence, s.monthly_budget_pence)}</div>
+          <div class="tile"><small>Spend today</small><b>${gbp(m.today_pence)}</b><span>of the ${gbp(s.daily_budget_pence)} daily budget</span>${meter(m.today_pence, s.daily_budget_pence)}</div>
+          <div class="tile"><small>Requests this month</small><b>${num(m.requests)}</b><span>from ${num(m.learners)} learner${m.learners === 1 ? "" : "s"}</span></div>
+          <div class="tile"><small>In flight / abandoned</small><b>${num(m.in_flight)} / ${num(m.stale)}</b><span>abandoned requests don't count against allowances</span></div>
+          <div class="tile"><small>Response cache</small><b>${num(o.cache.hits)}</b><span>reuses from ${num(o.cache.entries)} saved answers</span></div>
+        </div>
+        <p class="note" style="margin-top:12px">Limits: ${s.per_minute} requests a minute and ${s.per_hour} an hour per learner, ${s.global_per_minute} a minute overall. Fair-use caps per learner per month: ${(o.plan_caps || []).map((c) => `${c.plan === "pro" ? "Pro" : "Free"} ${gbp(c.monthly_pence)}`).join(", ")}. Costs at £${s.gbp_per_usd} per US dollar.</p>
+        <h2>Spend per day, last 30 days</h2>${dailyChart(o.by_day)}
+        <h2>By feature and plan, this month</h2>${table(o.by_feature, [["Feature", (r) => r.feature], ["Plan", (r) => r.plan], ["Requests", (r) => num(r.requests), 1], ["Counted", (r) => num(r.counted), 1], ["Failed", (r) => num(r.failed), 1], ["Cached", (r) => num(r.cached), 1], ["Input tokens", (r) => num(r.input_tokens), 1], ["Output tokens", (r) => num(r.output_tokens), 1], ["Cache reads", (r) => num(r.cache_read_tokens), 1], ["Cost", (r) => gbp(r.cost_pence), 1], ["Per request", (r) => `${Number(r.avg_pence).toFixed(2)}p`, 1]])}
+        <h2>Top learners this month</h2>${table(o.top_learners, [["Learner", (r) => r.learner], ["Plan", (r) => r.plan], ["Requests", (r) => num(r.requests), 1], ["Cost", (r) => gbp(r.cost_pence), 1], ["Fair-use cap", (r) => gbp(r.cap_pence), 1], ["Of cap", (r) => `${r.cap_pence ? Math.round((r.cost_pence / r.cap_pence) * 100) : 0}%`, 1]])}
+        <h2>Spend per day (table)</h2>${table([...o.by_day].reverse(), [["Day", (r) => r.day], ["Requests", (r) => num(r.requests), 1], ["Cost", (r) => gbp(r.cost_pence), 1]])}
+        <h2>Failures, last 7 days</h2>${table(o.recent_errors, [["When", (r) => new Date(r.at).toLocaleString("en-GB")], ["Mode", (r) => r.mode], ["Why", (r) => r.error ?? ""]])}
+        <p class="note">Updated ${new Date(o.generated_at).toLocaleString("en-GB")}.</p>`;
+      hover(o.by_day);
+    }
+
+    async function load() {
+      if (!SUPABASE_URL || !window.supabase) { out.innerHTML = `<p class="note">Gradify accounts aren't configured on this site.</p>`; return; }
+      const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      const { data: { session } } = await sb.auth.getSession();
+      if (!session) { out.innerHTML = `<p class="note">Sign in on the <a href="/app.html#/account">Account</a> page with an owner's account, then come back.</p>`; return; }
+      const { data, error } = await sb.rpc("ai_admin_overview");
+      if (error) { out.innerHTML = `<p class="note">${error.code === "42501" ? "This page is for Gradify's owners. Your account isn't on the owners list (docs/AI.md says how to add it)." : `The usage couldn't be loaded: ${esc(error.message)}`}</p>`; return; }
+      render(data);
+    }
+    document.getElementById("refresh").onclick = load;
+    load();
+  </script>
+</body>
+</html>

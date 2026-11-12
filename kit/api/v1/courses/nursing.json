@@ -1,0 +1,3032 @@
+{
+ "api": 1,
+ "slug": "nursing",
+ "name": "Nursing",
+ "site": "NurseGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Clinical reasoning"
+ ],
+ "notice": "<b>Education, not clinical authorisation.</b> NurseGradify doesn't give NMC registration, replace approved practice placements or assess your competence. Practise clinical skills and give medicines only within your scope, under supervision where required, and following your local policies. NMC standards apply UK-wide; laws, policies and services that differ between England, Scotland, Wales and Northern Ireland are labelled.",
+ "notes": "/kit/courses/nursing/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Professional practice",
+   "units": [
+    1,
+    7,
+    17,
+    16
+   ],
+   "from": "#6a60ff",
+   "to": "#b38cff"
+  },
+  {
+   "name": "The body and its conditions",
+   "units": [
+    2,
+    5
+   ],
+   "from": "#ff3d6e",
+   "to": "#ff9f40"
+  },
+  {
+   "name": "Assessment and acute care",
+   "units": [
+    3,
+    9
+   ],
+   "from": "#00b3ff",
+   "to": "#40d4b1"
+  },
+  {
+   "name": "Medicines",
+   "units": [
+    4
+   ],
+   "from": "#16c784",
+   "to": "#a0ff74"
+  },
+  {
+   "name": "Clinical skills and infection prevention",
+   "units": [
+    6,
+    8
+   ],
+   "from": "#ff5600",
+   "to": "#ffc002"
+  },
+  {
+   "name": "Fields of nursing",
+   "units": [
+    10,
+    11,
+    12,
+    13
+   ],
+   "from": "#f055dd",
+   "to": "#4641ff"
+  },
+  {
+   "name": "Communities and later life",
+   "units": [
+    14,
+    15
+   ],
+   "from": "#0aa4c9",
+   "to": "#7ee0ff"
+  }
+ ],
+ "paths": [
+  {
+   "id": "adult",
+   "name": "Adult nursing",
+   "sub": "The shared core, then adult nursing across medical, surgical and community settings, acute and critical care, older adults and end-of-life care, with field scenarios, placement preparation and reflection.",
+   "units": [
+    1,
+    2,
+    3,
+    6,
+    8,
+    4,
+    5,
+    7,
+    17,
+    10,
+    9,
+    15,
+    14,
+    16
+   ],
+   "select": null
+  },
+  {
+   "id": "children",
+   "name": "Children's nursing",
+   "sub": "The shared core, then children's and young people's nursing: development, family-centred care, consent and parental responsibility, safeguarding, paediatric assessment, neonates, childhood conditions and medicines safety.",
+   "units": [
+    1,
+    2,
+    3,
+    6,
+    8,
+    4,
+    5,
+    7,
+    17,
+    11,
+    9,
+    14,
+    16
+   ],
+   "select": {
+    "5": [
+     "Disease processes",
+     "Critical illness"
+    ],
+    "9": [
+     "Recognising deterioration",
+     "Emergencies and resuscitation",
+     "Supporting vital functions"
+    ],
+    "14": [
+     "Prevention and protection",
+     "Community nursing roles",
+     "Sexual, reproductive and maternal health"
+    ]
+   }
+  },
+  {
+   "id": "mental-health",
+   "name": "Mental health nursing",
+   "sub": "The shared core, then mental health nursing: assessment, therapeutic relationships, conditions, risk and crisis, mental health and capacity law, de-escalation and recovery, with physical health care for people with mental illness.",
+   "units": [
+    1,
+    2,
+    3,
+    6,
+    8,
+    4,
+    7,
+    17,
+    12,
+    5,
+    15,
+    14,
+    16
+   ],
+   "select": {
+    "5": [
+     "Disease processes",
+     "Cardiovascular conditions",
+     "Endocrine conditions",
+     "Neurological conditions",
+     "Complex and end-of-life care"
+    ],
+    "14": [
+     "Public health foundations",
+     "Lifestyle and behaviour"
+    ],
+    "15": [
+     "Cognition"
+    ]
+   }
+  },
+  {
+   "id": "learning-disability",
+   "name": "Learning disability nursing",
+   "sub": "The shared core, then learning disability nursing: communication, reasonable adjustments, capacity and advocacy, positive behaviour support, health inequalities, epilepsy and complex needs, families and inclusion.",
+   "units": [
+    1,
+    2,
+    3,
+    6,
+    8,
+    4,
+    7,
+    17,
+    13,
+    5,
+    14,
+    16
+   ],
+   "select": {
+    "5": [
+     "Disease processes",
+     "Respiratory conditions",
+     "Neurological conditions",
+     "Liver and gastrointestinal conditions",
+     "Complex and end-of-life care"
+    ],
+    "14": [
+     "Public health foundations",
+     "Prevention and protection",
+     "Lifestyle and behaviour"
+    ]
+   }
+  },
+  {
+   "id": "year1",
+   "name": "Pre-registration year 1 (all fields)",
+   "sub": "Professional practice, the body, assessment and core skills: the foundations every field of nursing builds on.",
+   "units": [
+    1,
+    2,
+    3,
+    6,
+    8
+   ],
+   "select": null
+  },
+  {
+   "id": "acute",
+   "name": "Recognising and responding to deterioration",
+   "sub": "Assessment, observations, escalation, acute and critical care, and the conditions behind deterioration.",
+   "units": [
+    3,
+    9,
+    5,
+    4
+   ],
+   "select": null
+  },
+  {
+   "id": "medicines",
+   "name": "Medicines management",
+   "sub": "Pharmacology, the administration process, calculations and medicines safety. Education only: you give medicines under your local policy and supervision.",
+   "units": [
+    4,
+    2,
+    6
+   ],
+   "select": null
+  },
+  {
+   "id": "nqn",
+   "name": "Newly qualified nurse",
+   "sub": "Accountability, delegation, prioritisation, escalation, medicines safety and handover for your first post.",
+   "units": [
+    17,
+    7,
+    9,
+    4,
+    16
+   ],
+   "select": null
+  },
+  {
+   "id": "ien",
+   "name": "Internationally educated nurses: UK practice",
+   "sub": "The NMC Code, UK law and policy across the four nations, assessment conventions and medicines governance in the UK.",
+   "units": [
+    1,
+    17,
+    3,
+    4,
+    7
+   ],
+   "select": null
+  },
+  {
+   "id": "na",
+   "name": "Nursing associates",
+   "sub": "The foundations for nursing associates, within the NMC's standards of proficiency for nursing associates and your local scope.",
+   "units": [
+    1,
+    2,
+    3,
+    6,
+    7,
+    8
+   ],
+   "select": null
+  },
+  {
+   "id": "cpd",
+   "name": "CPD and revalidation",
+   "sub": "Refresh professional standards, evidence-based practice, leadership and medicines knowledge, and record it as CPD.",
+   "units": [
+    1,
+    16,
+    4,
+    5
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "adult",
+   "title": "Adult nursing practice exam",
+   "sub": "Mixed questions across the adult nursing pathway: clinical reasoning, prioritisation, safety and assessment interpretation.",
+   "units": null,
+   "path": "adult",
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "mixed"
+  },
+  {
+   "id": "children",
+   "title": "Children's nursing practice exam",
+   "sub": "Mixed questions across the children's nursing pathway.",
+   "units": null,
+   "path": "children",
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "mixed"
+  },
+  {
+   "id": "mental-health",
+   "title": "Mental health nursing practice exam",
+   "sub": "Mixed questions across the mental health nursing pathway.",
+   "units": null,
+   "path": "mental-health",
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "mixed"
+  },
+  {
+   "id": "learning-disability",
+   "title": "Learning disability nursing practice exam",
+   "sub": "Mixed questions across the learning disability nursing pathway.",
+   "units": null,
+   "path": "learning-disability",
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "mixed"
+  },
+  {
+   "id": "medicines",
+   "title": "Medicines safety",
+   "sub": "Pharmacology and medicines management. Education only: it doesn't assess your competence to give medicines.",
+   "units": [
+    4
+   ],
+   "path": null,
+   "count": 30,
+   "minutes": 45,
+   "pass": 0.8,
+   "format": "mixed"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Foundations of Nursing and Professional Practice",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "Introduction to nursing",
+     "module": "Nursing as a profession"
+    },
+    {
+     "id": "u01-02",
+     "title": "History and development of nursing",
+     "module": "Nursing as a profession"
+    },
+    {
+     "id": "u01-03",
+     "title": "The nursing profession",
+     "module": "Nursing as a profession"
+    },
+    {
+     "id": "u01-04",
+     "title": "Professional identity",
+     "module": "Nursing as a profession"
+    },
+    {
+     "id": "u01-05",
+     "title": "The NMC and professional regulation",
+     "module": "Regulation and the Code"
+    },
+    {
+     "id": "u01-06",
+     "title": "The NMC Code",
+     "module": "Regulation and the Code"
+    },
+    {
+     "id": "u01-07",
+     "title": "The seven NMC platforms",
+     "module": "Regulation and the Code"
+    },
+    {
+     "id": "u01-08",
+     "title": "Professional accountability",
+     "module": "Regulation and the Code"
+    },
+    {
+     "id": "u01-09",
+     "title": "Duty of care",
+     "module": "Duties, consent and information"
+    },
+    {
+     "id": "u01-10",
+     "title": "Duty of candour",
+     "module": "Duties, consent and information"
+    },
+    {
+     "id": "u01-11",
+     "title": "Consent",
+     "module": "Duties, consent and information"
+    },
+    {
+     "id": "u01-12",
+     "title": "Capacity",
+     "module": "Duties, consent and information"
+    },
+    {
+     "id": "u01-13",
+     "title": "Confidentiality",
+     "module": "Duties, consent and information"
+    },
+    {
+     "id": "u01-14",
+     "title": "Data protection",
+     "module": "Duties, consent and information"
+    },
+    {
+     "id": "u01-15",
+     "title": "Documentation",
+     "module": "Duties, consent and information"
+    },
+    {
+     "id": "u01-16",
+     "title": "Record keeping",
+     "module": "Duties, consent and information"
+    },
+    {
+     "id": "u01-17",
+     "title": "Professional boundaries",
+     "module": "Safe professional practice"
+    },
+    {
+     "id": "u01-18",
+     "title": "Delegation",
+     "module": "Safe professional practice"
+    },
+    {
+     "id": "u01-19",
+     "title": "Scope of practice",
+     "module": "Safe professional practice"
+    },
+    {
+     "id": "u01-20",
+     "title": "Clinical supervision",
+     "module": "Safe professional practice"
+    },
+    {
+     "id": "u01-21",
+     "title": "Reflective practice",
+     "module": "Reflection and evidence"
+    },
+    {
+     "id": "u01-22",
+     "title": "Evidence-based practice",
+     "module": "Reflection and evidence"
+    },
+    {
+     "id": "u01-23",
+     "title": "Equality, diversity and inclusion",
+     "module": "Rights, equality and safeguarding"
+    },
+    {
+     "id": "u01-24",
+     "title": "Human rights",
+     "module": "Rights, equality and safeguarding"
+    },
+    {
+     "id": "u01-25",
+     "title": "Safeguarding",
+     "module": "Rights, equality and safeguarding"
+    },
+    {
+     "id": "u01-26",
+     "title": "Professional resilience",
+     "module": "Sustaining professional practice"
+    },
+    {
+     "id": "u01-27",
+     "title": "Patient advocacy",
+     "module": "Sustaining professional practice"
+    },
+    {
+     "id": "u01-28",
+     "title": "Ethical decision-making",
+     "module": "Sustaining professional practice"
+    },
+    {
+     "id": "u01-29",
+     "title": "Multidisciplinary working",
+     "module": "Sustaining professional practice"
+    },
+    {
+     "id": "u01-30",
+     "title": "Continuing professional development",
+     "module": "Sustaining professional practice"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Human Anatomy and Physiology",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Anatomical terminology",
+     "module": "Foundations of the body"
+    },
+    {
+     "id": "u02-02",
+     "title": "Cells and tissues",
+     "module": "Foundations of the body"
+    },
+    {
+     "id": "u02-03",
+     "title": "Homeostasis",
+     "module": "Foundations of the body"
+    },
+    {
+     "id": "u02-04",
+     "title": "The integumentary system",
+     "module": "Protection and movement"
+    },
+    {
+     "id": "u02-05",
+     "title": "Skeletal system",
+     "module": "Protection and movement"
+    },
+    {
+     "id": "u02-06",
+     "title": "Muscular system",
+     "module": "Protection and movement"
+    },
+    {
+     "id": "u02-07",
+     "title": "Nervous system",
+     "module": "The nervous system"
+    },
+    {
+     "id": "u02-08",
+     "title": "Brain and spinal cord",
+     "module": "The nervous system"
+    },
+    {
+     "id": "u02-09",
+     "title": "Autonomic nervous system",
+     "module": "The nervous system"
+    },
+    {
+     "id": "u02-10",
+     "title": "Cardiovascular system",
+     "module": "The cardiovascular system"
+    },
+    {
+     "id": "u02-11",
+     "title": "Blood and circulation",
+     "module": "The cardiovascular system"
+    },
+    {
+     "id": "u02-12",
+     "title": "Respiratory system",
+     "module": "The respiratory system"
+    },
+    {
+     "id": "u02-13",
+     "title": "Gas exchange",
+     "module": "The respiratory system"
+    },
+    {
+     "id": "u02-14",
+     "title": "Digestive system",
+     "module": "Digestion and metabolism"
+    },
+    {
+     "id": "u02-15",
+     "title": "Liver and pancreas",
+     "module": "Digestion and metabolism"
+    },
+    {
+     "id": "u02-16",
+     "title": "Renal system",
+     "module": "The renal and urinary systems"
+    },
+    {
+     "id": "u02-17",
+     "title": "Urinary system",
+     "module": "The renal and urinary systems"
+    },
+    {
+     "id": "u02-18",
+     "title": "Endocrine system",
+     "module": "Endocrine and reproductive systems"
+    },
+    {
+     "id": "u02-19",
+     "title": "Reproductive system",
+     "module": "Endocrine and reproductive systems"
+    },
+    {
+     "id": "u02-20",
+     "title": "Immune system",
+     "module": "Immunity"
+    },
+    {
+     "id": "u02-21",
+     "title": "Lymphatic system",
+     "module": "Immunity"
+    },
+    {
+     "id": "u02-22",
+     "title": "Fluid balance",
+     "module": "Fluids and regulation"
+    },
+    {
+     "id": "u02-23",
+     "title": "Electrolytes",
+     "module": "Fluids and regulation"
+    },
+    {
+     "id": "u02-24",
+     "title": "Acid-base balance",
+     "module": "Fluids and regulation"
+    },
+    {
+     "id": "u02-25",
+     "title": "Temperature regulation",
+     "module": "Fluids and regulation"
+    },
+    {
+     "id": "u02-26",
+     "title": "Pain physiology",
+     "module": "Applied physiology"
+    },
+    {
+     "id": "u02-27",
+     "title": "Age-related physiological changes",
+     "module": "Applied physiology"
+    },
+    {
+     "id": "u02-28",
+     "title": "Cellular pathology",
+     "module": "Applied physiology"
+    },
+    {
+     "id": "u02-29",
+     "title": "Microbiology",
+     "module": "Applied physiology"
+    },
+    {
+     "id": "u02-30",
+     "title": "Genetics and genomics",
+     "module": "Applied physiology"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Health Assessment and Clinical Reasoning",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Introduction to clinical assessment",
+     "module": "Principles of assessment"
+    },
+    {
+     "id": "u03-02",
+     "title": "Person-centred assessment",
+     "module": "Principles of assessment"
+    },
+    {
+     "id": "u03-03",
+     "title": "History taking",
+     "module": "Principles of assessment"
+    },
+    {
+     "id": "u03-04",
+     "title": "Subjective and objective data",
+     "module": "Principles of assessment"
+    },
+    {
+     "id": "u03-05",
+     "title": "Physical assessment",
+     "module": "Physical assessment"
+    },
+    {
+     "id": "u03-06",
+     "title": "General inspection",
+     "module": "Physical assessment"
+    },
+    {
+     "id": "u03-07",
+     "title": "Vital signs",
+     "module": "Vital signs"
+    },
+    {
+     "id": "u03-08",
+     "title": "Temperature",
+     "module": "Vital signs"
+    },
+    {
+     "id": "u03-09",
+     "title": "Pulse",
+     "module": "Vital signs"
+    },
+    {
+     "id": "u03-10",
+     "title": "Respiratory rate",
+     "module": "Vital signs"
+    },
+    {
+     "id": "u03-11",
+     "title": "Blood pressure",
+     "module": "Vital signs"
+    },
+    {
+     "id": "u03-12",
+     "title": "Oxygen saturation",
+     "module": "Vital signs"
+    },
+    {
+     "id": "u03-13",
+     "title": "Pain assessment",
+     "module": "Vital signs"
+    },
+    {
+     "id": "u03-14",
+     "title": "Neurological observations",
+     "module": "Systems assessment"
+    },
+    {
+     "id": "u03-15",
+     "title": "Cardiovascular assessment",
+     "module": "Systems assessment"
+    },
+    {
+     "id": "u03-16",
+     "title": "Respiratory assessment",
+     "module": "Systems assessment"
+    },
+    {
+     "id": "u03-17",
+     "title": "Abdominal assessment",
+     "module": "Systems assessment"
+    },
+    {
+     "id": "u03-18",
+     "title": "Skin assessment",
+     "module": "Systems assessment"
+    },
+    {
+     "id": "u03-19",
+     "title": "Hydration assessment",
+     "module": "Systems assessment"
+    },
+    {
+     "id": "u03-20",
+     "title": "Nutritional assessment",
+     "module": "Systems assessment"
+    },
+    {
+     "id": "u03-21",
+     "title": "Mental state examination",
+     "module": "Mental state and function"
+    },
+    {
+     "id": "u03-22",
+     "title": "Mobility assessment",
+     "module": "Mental state and function"
+    },
+    {
+     "id": "u03-23",
+     "title": "Falls assessment",
+     "module": "Risk assessment"
+    },
+    {
+     "id": "u03-24",
+     "title": "Pressure ulcer risk assessment",
+     "module": "Risk assessment"
+    },
+    {
+     "id": "u03-25",
+     "title": "Clinical reasoning",
+     "module": "Clinical reasoning and escalation"
+    },
+    {
+     "id": "u03-26",
+     "title": "Differential considerations",
+     "module": "Clinical reasoning and escalation"
+    },
+    {
+     "id": "u03-27",
+     "title": "Recognising deterioration",
+     "module": "Clinical reasoning and escalation"
+    },
+    {
+     "id": "u03-28",
+     "title": "Escalation of concerns",
+     "module": "Clinical reasoning and escalation"
+    },
+    {
+     "id": "u03-29",
+     "title": "Structured handover",
+     "module": "Clinical reasoning and escalation"
+    },
+    {
+     "id": "u03-30",
+     "title": "Documentation and reassessment",
+     "module": "Clinical reasoning and escalation"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Pharmacology and Medicines Management",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Principles of pharmacology",
+     "module": "Principles of pharmacology"
+    },
+    {
+     "id": "u04-02",
+     "title": "Pharmacokinetics",
+     "module": "Principles of pharmacology"
+    },
+    {
+     "id": "u04-03",
+     "title": "Pharmacodynamics",
+     "module": "Principles of pharmacology"
+    },
+    {
+     "id": "u04-04",
+     "title": "Absorption",
+     "module": "Principles of pharmacology"
+    },
+    {
+     "id": "u04-05",
+     "title": "Distribution",
+     "module": "Principles of pharmacology"
+    },
+    {
+     "id": "u04-06",
+     "title": "Metabolism",
+     "module": "Principles of pharmacology"
+    },
+    {
+     "id": "u04-07",
+     "title": "Excretion",
+     "module": "Principles of pharmacology"
+    },
+    {
+     "id": "u04-08",
+     "title": "Drug interactions",
+     "module": "Principles of pharmacology"
+    },
+    {
+     "id": "u04-09",
+     "title": "Adverse drug reactions",
+     "module": "Principles of pharmacology"
+    },
+    {
+     "id": "u04-10",
+     "title": "Contraindications",
+     "module": "Principles of pharmacology"
+    },
+    {
+     "id": "u04-11",
+     "title": "Allergies",
+     "module": "Principles of pharmacology"
+    },
+    {
+     "id": "u04-12",
+     "title": "Medication reconciliation",
+     "module": "Medicines governance"
+    },
+    {
+     "id": "u04-13",
+     "title": "Medicines legislation",
+     "module": "Medicines governance"
+    },
+    {
+     "id": "u04-14",
+     "title": "Prescribing and administration responsibilities",
+     "module": "Medicines governance"
+    },
+    {
+     "id": "u04-15",
+     "title": "The medicines administration process",
+     "module": "Medicines governance"
+    },
+    {
+     "id": "u04-16",
+     "title": "The rights of medicines administration",
+     "module": "Medicines governance"
+    },
+    {
+     "id": "u04-17",
+     "title": "Oral medication",
+     "module": "Routes of administration"
+    },
+    {
+     "id": "u04-18",
+     "title": "Topical medication",
+     "module": "Routes of administration"
+    },
+    {
+     "id": "u04-19",
+     "title": "Inhaled medication",
+     "module": "Routes of administration"
+    },
+    {
+     "id": "u04-20",
+     "title": "Injectable medication",
+     "module": "Routes of administration"
+    },
+    {
+     "id": "u04-21",
+     "title": "Intravenous medication principles",
+     "module": "Routes of administration"
+    },
+    {
+     "id": "u04-22",
+     "title": "Controlled drugs",
+     "module": "Medicine groups"
+    },
+    {
+     "id": "u04-23",
+     "title": "Antimicrobials",
+     "module": "Medicine groups"
+    },
+    {
+     "id": "u04-24",
+     "title": "Analgesics",
+     "module": "Medicine groups"
+    },
+    {
+     "id": "u04-25",
+     "title": "Cardiovascular medicines",
+     "module": "Medicine groups"
+    },
+    {
+     "id": "u04-26",
+     "title": "Respiratory medicines",
+     "module": "Medicine groups"
+    },
+    {
+     "id": "u04-27",
+     "title": "Endocrine medicines",
+     "module": "Medicine groups"
+    },
+    {
+     "id": "u04-28",
+     "title": "Gastrointestinal medicines",
+     "module": "Medicine groups"
+    },
+    {
+     "id": "u04-29",
+     "title": "Neurological and psychiatric medicines",
+     "module": "Medicine groups"
+    },
+    {
+     "id": "u04-30",
+     "title": "Anticoagulants",
+     "module": "Medicine groups"
+    },
+    {
+     "id": "u04-31",
+     "title": "Insulin and diabetes medicines",
+     "module": "Medicine groups"
+    },
+    {
+     "id": "u04-32",
+     "title": "Polypharmacy",
+     "module": "Medicines safety and optimisation"
+    },
+    {
+     "id": "u04-33",
+     "title": "Medicines safety",
+     "module": "Medicines safety and optimisation"
+    },
+    {
+     "id": "u04-34",
+     "title": "Medication errors",
+     "module": "Medicines safety and optimisation"
+    },
+    {
+     "id": "u04-35",
+     "title": "Patient education",
+     "module": "Medicines safety and optimisation"
+    },
+    {
+     "id": "u04-36",
+     "title": "Medicines optimisation",
+     "module": "Medicines safety and optimisation"
+    },
+    {
+     "id": "u04-37",
+     "title": "Antimicrobial stewardship",
+     "module": "Medicines safety and optimisation"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Pathophysiology and Clinical Conditions",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Introduction to disease processes",
+     "module": "Disease processes"
+    },
+    {
+     "id": "u05-02",
+     "title": "Inflammation",
+     "module": "Disease processes"
+    },
+    {
+     "id": "u05-03",
+     "title": "Infection",
+     "module": "Disease processes"
+    },
+    {
+     "id": "u05-04",
+     "title": "Immune dysfunction",
+     "module": "Disease processes"
+    },
+    {
+     "id": "u05-05",
+     "title": "Cardiovascular disease",
+     "module": "Cardiovascular conditions"
+    },
+    {
+     "id": "u05-06",
+     "title": "Hypertension",
+     "module": "Cardiovascular conditions"
+    },
+    {
+     "id": "u05-07",
+     "title": "Heart failure",
+     "module": "Cardiovascular conditions"
+    },
+    {
+     "id": "u05-08",
+     "title": "Ischaemic heart disease",
+     "module": "Cardiovascular conditions"
+    },
+    {
+     "id": "u05-09",
+     "title": "Myocardial infarction",
+     "module": "Cardiovascular conditions"
+    },
+    {
+     "id": "u05-10",
+     "title": "Arrhythmias",
+     "module": "Cardiovascular conditions"
+    },
+    {
+     "id": "u05-11",
+     "title": "Stroke",
+     "module": "Cardiovascular conditions"
+    },
+    {
+     "id": "u05-12",
+     "title": "Respiratory disease",
+     "module": "Respiratory conditions"
+    },
+    {
+     "id": "u05-13",
+     "title": "Asthma",
+     "module": "Respiratory conditions"
+    },
+    {
+     "id": "u05-14",
+     "title": "COPD",
+     "module": "Respiratory conditions"
+    },
+    {
+     "id": "u05-15",
+     "title": "Pneumonia",
+     "module": "Respiratory conditions"
+    },
+    {
+     "id": "u05-16",
+     "title": "Pulmonary embolism",
+     "module": "Respiratory conditions"
+    },
+    {
+     "id": "u05-17",
+     "title": "Diabetes",
+     "module": "Endocrine conditions"
+    },
+    {
+     "id": "u05-18",
+     "title": "Thyroid disease",
+     "module": "Endocrine conditions"
+    },
+    {
+     "id": "u05-19",
+     "title": "Renal disease",
+     "module": "Renal conditions"
+    },
+    {
+     "id": "u05-20",
+     "title": "Acute kidney injury",
+     "module": "Renal conditions"
+    },
+    {
+     "id": "u05-21",
+     "title": "Chronic kidney disease",
+     "module": "Renal conditions"
+    },
+    {
+     "id": "u05-22",
+     "title": "Liver disease",
+     "module": "Liver and gastrointestinal conditions"
+    },
+    {
+     "id": "u05-23",
+     "title": "Gastrointestinal disorders",
+     "module": "Liver and gastrointestinal conditions"
+    },
+    {
+     "id": "u05-24",
+     "title": "Neurological disorders",
+     "module": "Neurological conditions"
+    },
+    {
+     "id": "u05-25",
+     "title": "Epilepsy",
+     "module": "Neurological conditions"
+    },
+    {
+     "id": "u05-26",
+     "title": "Dementia",
+     "module": "Neurological conditions"
+    },
+    {
+     "id": "u05-27",
+     "title": "Parkinson's disease",
+     "module": "Neurological conditions"
+    },
+    {
+     "id": "u05-28",
+     "title": "Cancer",
+     "module": "Cancer and blood disorders"
+    },
+    {
+     "id": "u05-29",
+     "title": "Haematological disorders",
+     "module": "Cancer and blood disorders"
+    },
+    {
+     "id": "u05-30",
+     "title": "Musculoskeletal disease",
+     "module": "Musculoskeletal, rheumatological and skin conditions"
+    },
+    {
+     "id": "u05-31",
+     "title": "Rheumatological conditions",
+     "module": "Musculoskeletal, rheumatological and skin conditions"
+    },
+    {
+     "id": "u05-32",
+     "title": "Skin conditions",
+     "module": "Musculoskeletal, rheumatological and skin conditions"
+    },
+    {
+     "id": "u05-33",
+     "title": "Sepsis",
+     "module": "Critical illness"
+    },
+    {
+     "id": "u05-34",
+     "title": "Shock",
+     "module": "Critical illness"
+    },
+    {
+     "id": "u05-35",
+     "title": "Multimorbidity",
+     "module": "Complex and end-of-life care"
+    },
+    {
+     "id": "u05-36",
+     "title": "Frailty",
+     "module": "Complex and end-of-life care"
+    },
+    {
+     "id": "u05-37",
+     "title": "Palliative and end-of-life conditions",
+     "module": "Complex and end-of-life care"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Core Nursing Procedures and Clinical Skills",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Hand hygiene",
+     "module": "Infection prevention in practice"
+    },
+    {
+     "id": "u06-02",
+     "title": "Standard infection precautions",
+     "module": "Infection prevention in practice"
+    },
+    {
+     "id": "u06-03",
+     "title": "Personal protective equipment",
+     "module": "Infection prevention in practice"
+    },
+    {
+     "id": "u06-04",
+     "title": "Aseptic technique",
+     "module": "Infection prevention in practice"
+    },
+    {
+     "id": "u06-05",
+     "title": "Wound assessment",
+     "module": "Wounds and skin integrity"
+    },
+    {
+     "id": "u06-06",
+     "title": "Wound dressing principles",
+     "module": "Wounds and skin integrity"
+    },
+    {
+     "id": "u06-07",
+     "title": "Pressure area care",
+     "module": "Wounds and skin integrity"
+    },
+    {
+     "id": "u06-08",
+     "title": "Catheter care",
+     "module": "Elimination and fluid balance"
+    },
+    {
+     "id": "u06-09",
+     "title": "Urinary catheterisation principles",
+     "module": "Elimination and fluid balance"
+    },
+    {
+     "id": "u06-10",
+     "title": "Fluid balance monitoring",
+     "module": "Elimination and fluid balance"
+    },
+    {
+     "id": "u06-11",
+     "title": "Intake and output recording",
+     "module": "Elimination and fluid balance"
+    },
+    {
+     "id": "u06-12",
+     "title": "Nutrition support",
+     "module": "Nutrition"
+    },
+    {
+     "id": "u06-13",
+     "title": "Enteral feeding principles",
+     "module": "Nutrition"
+    },
+    {
+     "id": "u06-14",
+     "title": "Oxygen therapy",
+     "module": "Respiratory care"
+    },
+    {
+     "id": "u06-15",
+     "title": "Nebuliser administration principles",
+     "module": "Respiratory care"
+    },
+    {
+     "id": "u06-16",
+     "title": "Blood glucose monitoring",
+     "module": "Diabetes care skills"
+    },
+    {
+     "id": "u06-17",
+     "title": "Insulin administration principles",
+     "module": "Diabetes care skills"
+    },
+    {
+     "id": "u06-18",
+     "title": "Blood sampling",
+     "module": "Vascular access and IV therapy"
+    },
+    {
+     "id": "u06-19",
+     "title": "Venepuncture principles",
+     "module": "Vascular access and IV therapy"
+    },
+    {
+     "id": "u06-20",
+     "title": "Cannulation principles",
+     "module": "Vascular access and IV therapy"
+    },
+    {
+     "id": "u06-21",
+     "title": "Intravenous therapy principles",
+     "module": "Vascular access and IV therapy"
+    },
+    {
+     "id": "u06-22",
+     "title": "Medication administration",
+     "module": "Medicines and specimens"
+    },
+    {
+     "id": "u06-23",
+     "title": "Specimen collection",
+     "module": "Medicines and specimens"
+    },
+    {
+     "id": "u06-24",
+     "title": "ECG recording",
+     "module": "Cardiac monitoring and resuscitation"
+    },
+    {
+     "id": "u06-25",
+     "title": "Resuscitation principles",
+     "module": "Cardiac monitoring and resuscitation"
+    },
+    {
+     "id": "u06-26",
+     "title": "Basic life support",
+     "module": "Cardiac monitoring and resuscitation"
+    },
+    {
+     "id": "u06-27",
+     "title": "Patient positioning",
+     "module": "Comfort, mobility and personal care"
+    },
+    {
+     "id": "u06-28",
+     "title": "Safe moving and handling",
+     "module": "Comfort, mobility and personal care"
+    },
+    {
+     "id": "u06-29",
+     "title": "Personal care",
+     "module": "Comfort, mobility and personal care"
+    },
+    {
+     "id": "u06-30",
+     "title": "Oral care",
+     "module": "Comfort, mobility and personal care"
+    },
+    {
+     "id": "u06-31",
+     "title": "Continence care",
+     "module": "Comfort, mobility and personal care"
+    },
+    {
+     "id": "u06-32",
+     "title": "Stoma care",
+     "module": "Stomas and drains"
+    },
+    {
+     "id": "u06-33",
+     "title": "Drain management",
+     "module": "Stomas and drains"
+    },
+    {
+     "id": "u06-34",
+     "title": "Observations and escalation",
+     "module": "Observation and records"
+    },
+    {
+     "id": "u06-35",
+     "title": "Documentation of procedures",
+     "module": "Observation and records"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Clinical Practice and Care Planning",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Nursing process",
+     "module": "The nursing process"
+    },
+    {
+     "id": "u07-02",
+     "title": "Assessment",
+     "module": "The nursing process"
+    },
+    {
+     "id": "u07-03",
+     "title": "Nursing diagnoses and problem identification",
+     "module": "The nursing process"
+    },
+    {
+     "id": "u07-04",
+     "title": "Care planning",
+     "module": "The nursing process"
+    },
+    {
+     "id": "u07-05",
+     "title": "SMART goals",
+     "module": "The nursing process"
+    },
+    {
+     "id": "u07-06",
+     "title": "Nursing interventions",
+     "module": "The nursing process"
+    },
+    {
+     "id": "u07-07",
+     "title": "Evidence-based care",
+     "module": "The nursing process"
+    },
+    {
+     "id": "u07-08",
+     "title": "Evaluation of outcomes",
+     "module": "The nursing process"
+    },
+    {
+     "id": "u07-09",
+     "title": "Person-centred care",
+     "module": "Person-centred care"
+    },
+    {
+     "id": "u07-10",
+     "title": "Holistic care",
+     "module": "Person-centred care"
+    },
+    {
+     "id": "u07-11",
+     "title": "Individualised care",
+     "module": "Person-centred care"
+    },
+    {
+     "id": "u07-12",
+     "title": "Shared decision-making",
+     "module": "Person-centred care"
+    },
+    {
+     "id": "u07-13",
+     "title": "Patient education",
+     "module": "Person-centred care"
+    },
+    {
+     "id": "u07-14",
+     "title": "Health promotion",
+     "module": "Prevention and recovery"
+    },
+    {
+     "id": "u07-15",
+     "title": "Preventative care",
+     "module": "Prevention and recovery"
+    },
+    {
+     "id": "u07-16",
+     "title": "Rehabilitation",
+     "module": "Prevention and recovery"
+    },
+    {
+     "id": "u07-17",
+     "title": "Discharge planning",
+     "module": "Transitions and coordination"
+    },
+    {
+     "id": "u07-18",
+     "title": "Continuity of care",
+     "module": "Transitions and coordination"
+    },
+    {
+     "id": "u07-19",
+     "title": "Complex care",
+     "module": "Transitions and coordination"
+    },
+    {
+     "id": "u07-20",
+     "title": "Multidisciplinary care",
+     "module": "Transitions and coordination"
+    },
+    {
+     "id": "u07-21",
+     "title": "Care coordination",
+     "module": "Transitions and coordination"
+    },
+    {
+     "id": "u07-22",
+     "title": "Risk assessment",
+     "module": "Safe practice"
+    },
+    {
+     "id": "u07-23",
+     "title": "Clinical prioritisation",
+     "module": "Safe practice"
+    },
+    {
+     "id": "u07-24",
+     "title": "Delegation",
+     "module": "Safe practice"
+    },
+    {
+     "id": "u07-25",
+     "title": "Safe escalation",
+     "module": "Safe practice"
+    },
+    {
+     "id": "u07-26",
+     "title": "Patient advocacy",
+     "module": "Safe practice"
+    },
+    {
+     "id": "u07-27",
+     "title": "End-of-life care",
+     "module": "Safe practice"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Infection Prevention and Control",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Microorganisms",
+     "module": "Microbiology"
+    },
+    {
+     "id": "u08-02",
+     "title": "Bacteria",
+     "module": "Microbiology"
+    },
+    {
+     "id": "u08-03",
+     "title": "Viruses",
+     "module": "Microbiology"
+    },
+    {
+     "id": "u08-04",
+     "title": "Fungi",
+     "module": "Microbiology"
+    },
+    {
+     "id": "u08-05",
+     "title": "Parasites",
+     "module": "Microbiology"
+    },
+    {
+     "id": "u08-06",
+     "title": "Transmission routes",
+     "module": "How infection spreads"
+    },
+    {
+     "id": "u08-07",
+     "title": "Chain of infection",
+     "module": "How infection spreads"
+    },
+    {
+     "id": "u08-08",
+     "title": "Standard precautions",
+     "module": "Precautions"
+    },
+    {
+     "id": "u08-09",
+     "title": "Hand hygiene",
+     "module": "Precautions"
+    },
+    {
+     "id": "u08-10",
+     "title": "PPE",
+     "module": "Precautions"
+    },
+    {
+     "id": "u08-11",
+     "title": "Isolation precautions",
+     "module": "Precautions"
+    },
+    {
+     "id": "u08-12",
+     "title": "Aseptic technique",
+     "module": "Precautions"
+    },
+    {
+     "id": "u08-13",
+     "title": "Sterilisation",
+     "module": "Decontamination"
+    },
+    {
+     "id": "u08-14",
+     "title": "Disinfection",
+     "module": "Decontamination"
+    },
+    {
+     "id": "u08-15",
+     "title": "Cleaning",
+     "module": "Decontamination"
+    },
+    {
+     "id": "u08-16",
+     "title": "Healthcare-associated infections",
+     "module": "Healthcare-associated infections"
+    },
+    {
+     "id": "u08-17",
+     "title": "MRSA",
+     "module": "Healthcare-associated infections"
+    },
+    {
+     "id": "u08-18",
+     "title": "Clostridioides difficile",
+     "module": "Healthcare-associated infections"
+    },
+    {
+     "id": "u08-19",
+     "title": "Bloodborne viruses",
+     "module": "Healthcare-associated infections"
+    },
+    {
+     "id": "u08-20",
+     "title": "Respiratory infections",
+     "module": "Healthcare-associated infections"
+    },
+    {
+     "id": "u08-21",
+     "title": "Sepsis recognition",
+     "module": "Healthcare-associated infections"
+    },
+    {
+     "id": "u08-22",
+     "title": "Antimicrobial resistance",
+     "module": "Antimicrobial resistance"
+    },
+    {
+     "id": "u08-23",
+     "title": "Antimicrobial stewardship",
+     "module": "Antimicrobial resistance"
+    },
+    {
+     "id": "u08-24",
+     "title": "Outbreak management",
+     "module": "Systems and safety"
+    },
+    {
+     "id": "u08-25",
+     "title": "Waste management",
+     "module": "Systems and safety"
+    },
+    {
+     "id": "u08-26",
+     "title": "Sharps safety",
+     "module": "Systems and safety"
+    },
+    {
+     "id": "u08-27",
+     "title": "Occupational exposure",
+     "module": "Systems and safety"
+    },
+    {
+     "id": "u08-28",
+     "title": "Infection surveillance",
+     "module": "Systems and safety"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Acute, Emergency and Critical Care Nursing",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Acute nursing principles",
+     "module": "Recognising deterioration"
+    },
+    {
+     "id": "u09-02",
+     "title": "Recognition of deterioration",
+     "module": "Recognising deterioration"
+    },
+    {
+     "id": "u09-03",
+     "title": "ABCDE assessment",
+     "module": "Recognising deterioration"
+    },
+    {
+     "id": "u09-04",
+     "title": "Early warning scores",
+     "module": "Recognising deterioration"
+    },
+    {
+     "id": "u09-05",
+     "title": "NEWS2",
+     "module": "Recognising deterioration"
+    },
+    {
+     "id": "u09-06",
+     "title": "Sepsis",
+     "module": "Critical conditions"
+    },
+    {
+     "id": "u09-07",
+     "title": "Shock",
+     "module": "Critical conditions"
+    },
+    {
+     "id": "u09-08",
+     "title": "Acute respiratory failure",
+     "module": "Critical conditions"
+    },
+    {
+     "id": "u09-09",
+     "title": "Acute cardiac conditions",
+     "module": "Critical conditions"
+    },
+    {
+     "id": "u09-10",
+     "title": "Acute neurological conditions",
+     "module": "Critical conditions"
+    },
+    {
+     "id": "u09-11",
+     "title": "Chest pain",
+     "module": "Critical conditions"
+    },
+    {
+     "id": "u09-12",
+     "title": "Stroke recognition",
+     "module": "Critical conditions"
+    },
+    {
+     "id": "u09-13",
+     "title": "Acute kidney injury",
+     "module": "Critical conditions"
+    },
+    {
+     "id": "u09-14",
+     "title": "Fluid resuscitation principles",
+     "module": "Supporting vital functions"
+    },
+    {
+     "id": "u09-15",
+     "title": "Oxygenation and ventilation",
+     "module": "Supporting vital functions"
+    },
+    {
+     "id": "u09-16",
+     "title": "Emergency escalation",
+     "module": "Emergencies and resuscitation"
+    },
+    {
+     "id": "u09-17",
+     "title": "Cardiac arrest",
+     "module": "Emergencies and resuscitation"
+    },
+    {
+     "id": "u09-18",
+     "title": "Resuscitation",
+     "module": "Emergencies and resuscitation"
+    },
+    {
+     "id": "u09-19",
+     "title": "Critical care fundamentals",
+     "module": "Critical care"
+    },
+    {
+     "id": "u09-20",
+     "title": "Intensive care",
+     "module": "Critical care"
+    },
+    {
+     "id": "u09-21",
+     "title": "Postoperative monitoring",
+     "module": "Critical care"
+    },
+    {
+     "id": "u09-22",
+     "title": "Trauma",
+     "module": "Emergency and major incident care"
+    },
+    {
+     "id": "u09-23",
+     "title": "Emergency triage",
+     "module": "Emergency and major incident care"
+    },
+    {
+     "id": "u09-24",
+     "title": "Major incident response",
+     "module": "Emergency and major incident care"
+    },
+    {
+     "id": "u09-25",
+     "title": "Deteriorating patient scenarios",
+     "module": "Emergency and major incident care"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Adult Nursing",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Adult health assessment",
+     "module": "Adult assessment and acute care"
+    },
+    {
+     "id": "u10-02",
+     "title": "Medical nursing",
+     "module": "Adult assessment and acute care"
+    },
+    {
+     "id": "u10-03",
+     "title": "Surgical nursing",
+     "module": "Adult assessment and acute care"
+    },
+    {
+     "id": "u10-04",
+     "title": "Cardiovascular nursing",
+     "module": "Systems nursing"
+    },
+    {
+     "id": "u10-05",
+     "title": "Respiratory nursing",
+     "module": "Systems nursing"
+    },
+    {
+     "id": "u10-06",
+     "title": "Neurological nursing",
+     "module": "Systems nursing"
+    },
+    {
+     "id": "u10-07",
+     "title": "Gastrointestinal nursing",
+     "module": "Systems nursing"
+    },
+    {
+     "id": "u10-08",
+     "title": "Renal nursing",
+     "module": "Systems nursing"
+    },
+    {
+     "id": "u10-09",
+     "title": "Endocrine nursing",
+     "module": "Systems nursing"
+    },
+    {
+     "id": "u10-10",
+     "title": "Diabetes care",
+     "module": "Systems nursing"
+    },
+    {
+     "id": "u10-11",
+     "title": "Oncology nursing",
+     "module": "Systems nursing"
+    },
+    {
+     "id": "u10-12",
+     "title": "Haematology nursing",
+     "module": "Systems nursing"
+    },
+    {
+     "id": "u10-13",
+     "title": "Musculoskeletal nursing",
+     "module": "Systems nursing"
+    },
+    {
+     "id": "u10-14",
+     "title": "Dermatology nursing",
+     "module": "Systems nursing"
+    },
+    {
+     "id": "u10-15",
+     "title": "Infection and infectious disease",
+     "module": "Systems nursing"
+    },
+    {
+     "id": "u10-16",
+     "title": "Older adult care",
+     "module": "Older adults and long-term conditions"
+    },
+    {
+     "id": "u10-17",
+     "title": "Frailty",
+     "module": "Older adults and long-term conditions"
+    },
+    {
+     "id": "u10-18",
+     "title": "Rehabilitation",
+     "module": "Older adults and long-term conditions"
+    },
+    {
+     "id": "u10-19",
+     "title": "Long-term conditions",
+     "module": "Older adults and long-term conditions"
+    },
+    {
+     "id": "u10-20",
+     "title": "Multimorbidity",
+     "module": "Older adults and long-term conditions"
+    },
+    {
+     "id": "u10-21",
+     "title": "Palliative care",
+     "module": "Palliative and end-of-life care"
+    },
+    {
+     "id": "u10-22",
+     "title": "End-of-life care",
+     "module": "Palliative and end-of-life care"
+    },
+    {
+     "id": "u10-23",
+     "title": "Postoperative care",
+     "module": "Transitions and community care"
+    },
+    {
+     "id": "u10-24",
+     "title": "Discharge planning",
+     "module": "Transitions and community care"
+    },
+    {
+     "id": "u10-25",
+     "title": "Community adult nursing",
+     "module": "Transitions and community care"
+    },
+    {
+     "id": "u10-26",
+     "title": "Law and professional considerations in adult nursing",
+     "module": "Law, placement and reflection"
+    },
+    {
+     "id": "u10-27",
+     "title": "Preparing for an adult nursing placement",
+     "module": "Law, placement and reflection"
+    },
+    {
+     "id": "u10-28",
+     "title": "Reflective learning and case studies in adult nursing",
+     "module": "Law, placement and reflection"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Children's and Young People's Nursing",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "Introduction to paediatric nursing",
+     "module": "Foundations and development"
+    },
+    {
+     "id": "u11-02",
+     "title": "Child development",
+     "module": "Foundations and development"
+    },
+    {
+     "id": "u11-03",
+     "title": "Growth and development",
+     "module": "Foundations and development"
+    },
+    {
+     "id": "u11-04",
+     "title": "Developmental assessment",
+     "module": "Foundations and development"
+    },
+    {
+     "id": "u11-05",
+     "title": "Family-centred care",
+     "module": "Family, communication and law"
+    },
+    {
+     "id": "u11-06",
+     "title": "Communication with children",
+     "module": "Family, communication and law"
+    },
+    {
+     "id": "u11-07",
+     "title": "Consent and parental responsibility",
+     "module": "Family, communication and law"
+    },
+    {
+     "id": "u11-08",
+     "title": "Safeguarding children",
+     "module": "Family, communication and law"
+    },
+    {
+     "id": "u11-09",
+     "title": "Paediatric assessment",
+     "module": "Paediatric assessment"
+    },
+    {
+     "id": "u11-10",
+     "title": "Paediatric vital signs",
+     "module": "Paediatric assessment"
+    },
+    {
+     "id": "u11-11",
+     "title": "Neonatal fundamentals",
+     "module": "Neonatal care"
+    },
+    {
+     "id": "u11-12",
+     "title": "Prematurity",
+     "module": "Neonatal care"
+    },
+    {
+     "id": "u11-13",
+     "title": "Congenital conditions",
+     "module": "Neonatal care"
+    },
+    {
+     "id": "u11-14",
+     "title": "Paediatric respiratory disease",
+     "module": "Childhood conditions and emergencies"
+    },
+    {
+     "id": "u11-15",
+     "title": "Paediatric cardiovascular conditions",
+     "module": "Childhood conditions and emergencies"
+    },
+    {
+     "id": "u11-16",
+     "title": "Paediatric neurological conditions",
+     "module": "Childhood conditions and emergencies"
+    },
+    {
+     "id": "u11-17",
+     "title": "Paediatric infections",
+     "module": "Childhood conditions and emergencies"
+    },
+    {
+     "id": "u11-18",
+     "title": "Paediatric emergencies",
+     "module": "Childhood conditions and emergencies"
+    },
+    {
+     "id": "u11-19",
+     "title": "Paediatric medication safety",
+     "module": "Childhood conditions and emergencies"
+    },
+    {
+     "id": "u11-20",
+     "title": "Childhood diabetes",
+     "module": "Childhood conditions and emergencies"
+    },
+    {
+     "id": "u11-21",
+     "title": "Childhood cancer",
+     "module": "Childhood conditions and emergencies"
+    },
+    {
+     "id": "u11-22",
+     "title": "Adolescent health",
+     "module": "Young people and protection"
+    },
+    {
+     "id": "u11-23",
+     "title": "Mental health in children",
+     "module": "Young people and protection"
+    },
+    {
+     "id": "u11-24",
+     "title": "Child protection",
+     "module": "Young people and protection"
+    },
+    {
+     "id": "u11-25",
+     "title": "Transition to adult services",
+     "module": "Young people and protection"
+    },
+    {
+     "id": "u11-26",
+     "title": "Preparing for a children's nursing placement",
+     "module": "Placement and reflection"
+    },
+    {
+     "id": "u11-27",
+     "title": "Reflective learning and case studies in children's nursing",
+     "module": "Placement and reflection"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Mental Health Nursing",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Foundations of mental health nursing",
+     "module": "Foundations and assessment"
+    },
+    {
+     "id": "u12-02",
+     "title": "Mental health assessment",
+     "module": "Foundations and assessment"
+    },
+    {
+     "id": "u12-03",
+     "title": "Mental state examination",
+     "module": "Foundations and assessment"
+    },
+    {
+     "id": "u12-04",
+     "title": "Therapeutic relationships",
+     "module": "Therapeutic practice"
+    },
+    {
+     "id": "u12-05",
+     "title": "Communication",
+     "module": "Therapeutic practice"
+    },
+    {
+     "id": "u12-06",
+     "title": "Trauma-informed care",
+     "module": "Therapeutic practice"
+    },
+    {
+     "id": "u12-07",
+     "title": "Depression",
+     "module": "Mental health conditions"
+    },
+    {
+     "id": "u12-08",
+     "title": "Bipolar disorder",
+     "module": "Mental health conditions"
+    },
+    {
+     "id": "u12-09",
+     "title": "Anxiety disorders",
+     "module": "Mental health conditions"
+    },
+    {
+     "id": "u12-10",
+     "title": "OCD",
+     "module": "Mental health conditions"
+    },
+    {
+     "id": "u12-11",
+     "title": "PTSD",
+     "module": "Mental health conditions"
+    },
+    {
+     "id": "u12-12",
+     "title": "Psychosis",
+     "module": "Mental health conditions"
+    },
+    {
+     "id": "u12-13",
+     "title": "Schizophrenia",
+     "module": "Mental health conditions"
+    },
+    {
+     "id": "u12-14",
+     "title": "Personality disorders",
+     "module": "Mental health conditions"
+    },
+    {
+     "id": "u12-15",
+     "title": "Eating disorders",
+     "module": "Mental health conditions"
+    },
+    {
+     "id": "u12-16",
+     "title": "Substance misuse",
+     "module": "Mental health conditions"
+    },
+    {
+     "id": "u12-17",
+     "title": "Addiction",
+     "module": "Mental health conditions"
+    },
+    {
+     "id": "u12-18",
+     "title": "Self-harm",
+     "module": "Risk and crisis"
+    },
+    {
+     "id": "u12-19",
+     "title": "Suicide risk assessment",
+     "module": "Risk and crisis"
+    },
+    {
+     "id": "u12-20",
+     "title": "Crisis intervention",
+     "module": "Risk and crisis"
+    },
+    {
+     "id": "u12-21",
+     "title": "Psychiatric medication",
+     "module": "Treatment and law"
+    },
+    {
+     "id": "u12-22",
+     "title": "Mental Health Act",
+     "module": "Treatment and law"
+    },
+    {
+     "id": "u12-23",
+     "title": "Mental Capacity Act",
+     "module": "Treatment and law"
+    },
+    {
+     "id": "u12-24",
+     "title": "Safeguarding",
+     "module": "Safety and recovery"
+    },
+    {
+     "id": "u12-25",
+     "title": "De-escalation",
+     "module": "Safety and recovery"
+    },
+    {
+     "id": "u12-26",
+     "title": "Recovery-oriented practice",
+     "module": "Safety and recovery"
+    },
+    {
+     "id": "u12-27",
+     "title": "Community mental health",
+     "module": "Settings and populations"
+    },
+    {
+     "id": "u12-28",
+     "title": "Inpatient mental health care",
+     "module": "Settings and populations"
+    },
+    {
+     "id": "u12-29",
+     "title": "Forensic mental health",
+     "module": "Settings and populations"
+    },
+    {
+     "id": "u12-30",
+     "title": "Older adult mental health",
+     "module": "Settings and populations"
+    },
+    {
+     "id": "u12-31",
+     "title": "Preparing for a mental health nursing placement",
+     "module": "Placement and reflection"
+    },
+    {
+     "id": "u12-32",
+     "title": "Reflective learning and case studies in mental health nursing",
+     "module": "Placement and reflection"
+    }
+   ]
+  },
+  {
+   "id": "u13",
+   "n": 13,
+   "title": "Learning Disability Nursing",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u13-01",
+     "title": "Foundations of learning disability nursing",
+     "module": "Foundations and conditions"
+    },
+    {
+     "id": "u13-02",
+     "title": "Intellectual disability",
+     "module": "Foundations and conditions"
+    },
+    {
+     "id": "u13-03",
+     "title": "Neurodevelopmental conditions",
+     "module": "Foundations and conditions"
+    },
+    {
+     "id": "u13-04",
+     "title": "Autism",
+     "module": "Foundations and conditions"
+    },
+    {
+     "id": "u13-05",
+     "title": "Down syndrome",
+     "module": "Foundations and conditions"
+    },
+    {
+     "id": "u13-06",
+     "title": "Communication needs",
+     "module": "Communication and access"
+    },
+    {
+     "id": "u13-07",
+     "title": "Accessible healthcare",
+     "module": "Communication and access"
+    },
+    {
+     "id": "u13-08",
+     "title": "Reasonable adjustments",
+     "module": "Communication and access"
+    },
+    {
+     "id": "u13-09",
+     "title": "Mental capacity",
+     "module": "Capacity, consent and advocacy"
+    },
+    {
+     "id": "u13-10",
+     "title": "Consent",
+     "module": "Capacity, consent and advocacy"
+    },
+    {
+     "id": "u13-11",
+     "title": "Advocacy",
+     "module": "Capacity, consent and advocacy"
+    },
+    {
+     "id": "u13-12",
+     "title": "Positive behavioural support",
+     "module": "Positive behaviour support"
+    },
+    {
+     "id": "u13-13",
+     "title": "Challenging behaviour",
+     "module": "Positive behaviour support"
+    },
+    {
+     "id": "u13-14",
+     "title": "Physical health inequalities",
+     "module": "Health and complex needs"
+    },
+    {
+     "id": "u13-15",
+     "title": "Epilepsy",
+     "module": "Health and complex needs"
+    },
+    {
+     "id": "u13-16",
+     "title": "Complex needs",
+     "module": "Health and complex needs"
+    },
+    {
+     "id": "u13-17",
+     "title": "Safeguarding",
+     "module": "Health and complex needs"
+    },
+    {
+     "id": "u13-18",
+     "title": "Family and carer support",
+     "module": "Families, services and inclusion"
+    },
+    {
+     "id": "u13-19",
+     "title": "Community learning disability services",
+     "module": "Families, services and inclusion"
+    },
+    {
+     "id": "u13-20",
+     "title": "Hospital care",
+     "module": "Families, services and inclusion"
+    },
+    {
+     "id": "u13-21",
+     "title": "Health promotion",
+     "module": "Families, services and inclusion"
+    },
+    {
+     "id": "u13-22",
+     "title": "Independent living",
+     "module": "Families, services and inclusion"
+    },
+    {
+     "id": "u13-23",
+     "title": "Multidisciplinary care",
+     "module": "Families, services and inclusion"
+    },
+    {
+     "id": "u13-24",
+     "title": "Rights and inclusion",
+     "module": "Families, services and inclusion"
+    },
+    {
+     "id": "u13-25",
+     "title": "Preparing for a learning disability nursing placement",
+     "module": "Placement and reflection"
+    },
+    {
+     "id": "u13-26",
+     "title": "Reflective learning and case studies in learning disability nursing",
+     "module": "Placement and reflection"
+    }
+   ]
+  },
+  {
+   "id": "u14",
+   "n": 14,
+   "title": "Community, Public Health and Health Promotion",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u14-01",
+     "title": "Public health foundations",
+     "module": "Public health foundations"
+    },
+    {
+     "id": "u14-02",
+     "title": "Social determinants of health",
+     "module": "Public health foundations"
+    },
+    {
+     "id": "u14-03",
+     "title": "Health inequalities",
+     "module": "Public health foundations"
+    },
+    {
+     "id": "u14-04",
+     "title": "Epidemiology",
+     "module": "Public health foundations"
+    },
+    {
+     "id": "u14-05",
+     "title": "Disease prevention",
+     "module": "Prevention and protection"
+    },
+    {
+     "id": "u14-06",
+     "title": "Health promotion",
+     "module": "Prevention and protection"
+    },
+    {
+     "id": "u14-07",
+     "title": "Screening",
+     "module": "Prevention and protection"
+    },
+    {
+     "id": "u14-08",
+     "title": "Vaccination",
+     "module": "Prevention and protection"
+    },
+    {
+     "id": "u14-09",
+     "title": "Immunisation",
+     "module": "Prevention and protection"
+    },
+    {
+     "id": "u14-10",
+     "title": "Sexual health",
+     "module": "Sexual, reproductive and maternal health"
+    },
+    {
+     "id": "u14-11",
+     "title": "Reproductive health",
+     "module": "Sexual, reproductive and maternal health"
+    },
+    {
+     "id": "u14-12",
+     "title": "Maternal health",
+     "module": "Sexual, reproductive and maternal health"
+    },
+    {
+     "id": "u14-13",
+     "title": "Smoking cessation",
+     "module": "Lifestyle and behaviour"
+    },
+    {
+     "id": "u14-14",
+     "title": "Alcohol and substance use",
+     "module": "Lifestyle and behaviour"
+    },
+    {
+     "id": "u14-15",
+     "title": "Nutrition",
+     "module": "Lifestyle and behaviour"
+    },
+    {
+     "id": "u14-16",
+     "title": "Physical activity",
+     "module": "Lifestyle and behaviour"
+    },
+    {
+     "id": "u14-17",
+     "title": "Community nursing",
+     "module": "Community nursing roles"
+    },
+    {
+     "id": "u14-18",
+     "title": "District nursing",
+     "module": "Community nursing roles"
+    },
+    {
+     "id": "u14-19",
+     "title": "School nursing",
+     "module": "Community nursing roles"
+    },
+    {
+     "id": "u14-20",
+     "title": "Health visiting",
+     "module": "Community nursing roles"
+    },
+    {
+     "id": "u14-21",
+     "title": "Population health",
+     "module": "Communities and populations"
+    },
+    {
+     "id": "u14-22",
+     "title": "Infection control in communities",
+     "module": "Communities and populations"
+    },
+    {
+     "id": "u14-23",
+     "title": "Health education",
+     "module": "Communities and populations"
+    },
+    {
+     "id": "u14-24",
+     "title": "Behaviour change",
+     "module": "Communities and populations"
+    },
+    {
+     "id": "u14-25",
+     "title": "Community assessment",
+     "module": "Communities and populations"
+    }
+   ]
+  },
+  {
+   "id": "u15",
+   "n": 15,
+   "title": "Older Adult, Palliative and End-of-Life Nursing",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u15-01",
+     "title": "Ageing physiology",
+     "module": "Ageing and frailty"
+    },
+    {
+     "id": "u15-02",
+     "title": "Frailty",
+     "module": "Ageing and frailty"
+    },
+    {
+     "id": "u15-03",
+     "title": "Falls",
+     "module": "Ageing and frailty"
+    },
+    {
+     "id": "u15-04",
+     "title": "Dementia",
+     "module": "Cognition"
+    },
+    {
+     "id": "u15-05",
+     "title": "Delirium",
+     "module": "Cognition"
+    },
+    {
+     "id": "u15-06",
+     "title": "Polypharmacy",
+     "module": "Everyday health needs"
+    },
+    {
+     "id": "u15-07",
+     "title": "Continence",
+     "module": "Everyday health needs"
+    },
+    {
+     "id": "u15-08",
+     "title": "Nutrition and hydration",
+     "module": "Everyday health needs"
+    },
+    {
+     "id": "u15-09",
+     "title": "Pressure injuries",
+     "module": "Everyday health needs"
+    },
+    {
+     "id": "u15-10",
+     "title": "Mobility",
+     "module": "Everyday health needs"
+    },
+    {
+     "id": "u15-11",
+     "title": "Rehabilitation",
+     "module": "Care settings and protection"
+    },
+    {
+     "id": "u15-12",
+     "title": "Care homes",
+     "module": "Care settings and protection"
+    },
+    {
+     "id": "u15-13",
+     "title": "Safeguarding older people",
+     "module": "Care settings and protection"
+    },
+    {
+     "id": "u15-14",
+     "title": "Advanced care planning",
+     "module": "Palliative and end-of-life care"
+    },
+    {
+     "id": "u15-15",
+     "title": "Palliative care",
+     "module": "Palliative and end-of-life care"
+    },
+    {
+     "id": "u15-16",
+     "title": "Symptom management",
+     "module": "Palliative and end-of-life care"
+    },
+    {
+     "id": "u15-17",
+     "title": "Pain management",
+     "module": "Palliative and end-of-life care"
+    },
+    {
+     "id": "u15-18",
+     "title": "End-of-life communication",
+     "module": "Palliative and end-of-life care"
+    },
+    {
+     "id": "u15-19",
+     "title": "Last days of life",
+     "module": "Palliative and end-of-life care"
+    },
+    {
+     "id": "u15-20",
+     "title": "Bereavement support",
+     "module": "Families, loss and ethics"
+    },
+    {
+     "id": "u15-21",
+     "title": "Family support",
+     "module": "Families, loss and ethics"
+    },
+    {
+     "id": "u15-22",
+     "title": "Ethical decision-making",
+     "module": "Families, loss and ethics"
+    }
+   ]
+  },
+  {
+   "id": "u16",
+   "n": 16,
+   "title": "Research, Evidence-Based Practice and Nursing Leadership",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u16-01",
+     "title": "Research literacy",
+     "module": "Research methods"
+    },
+    {
+     "id": "u16-02",
+     "title": "Quantitative research",
+     "module": "Research methods"
+    },
+    {
+     "id": "u16-03",
+     "title": "Qualitative research",
+     "module": "Research methods"
+    },
+    {
+     "id": "u16-04",
+     "title": "Mixed methods",
+     "module": "Research methods"
+    },
+    {
+     "id": "u16-05",
+     "title": "Study design",
+     "module": "Research methods"
+    },
+    {
+     "id": "u16-06",
+     "title": "Clinical trials",
+     "module": "Research methods"
+    },
+    {
+     "id": "u16-07",
+     "title": "Cohort studies",
+     "module": "Research methods"
+    },
+    {
+     "id": "u16-08",
+     "title": "Case-control studies",
+     "module": "Research methods"
+    },
+    {
+     "id": "u16-09",
+     "title": "Systematic reviews",
+     "module": "Research methods"
+    },
+    {
+     "id": "u16-10",
+     "title": "Meta-analysis",
+     "module": "Research methods"
+    },
+    {
+     "id": "u16-11",
+     "title": "Critical appraisal",
+     "module": "Appraisal and ethics"
+    },
+    {
+     "id": "u16-12",
+     "title": "Research ethics",
+     "module": "Appraisal and ethics"
+    },
+    {
+     "id": "u16-13",
+     "title": "Informed consent in research",
+     "module": "Appraisal and ethics"
+    },
+    {
+     "id": "u16-14",
+     "title": "Evidence-based practice",
+     "module": "Evidence into practice"
+    },
+    {
+     "id": "u16-15",
+     "title": "Clinical guidelines",
+     "module": "Evidence into practice"
+    },
+    {
+     "id": "u16-16",
+     "title": "Quality improvement",
+     "module": "Quality and safety"
+    },
+    {
+     "id": "u16-17",
+     "title": "Clinical audit",
+     "module": "Quality and safety"
+    },
+    {
+     "id": "u16-18",
+     "title": "Patient safety",
+     "module": "Quality and safety"
+    },
+    {
+     "id": "u16-19",
+     "title": "Human factors",
+     "module": "Quality and safety"
+    },
+    {
+     "id": "u16-20",
+     "title": "Leadership",
+     "module": "Leadership and teams"
+    },
+    {
+     "id": "u16-21",
+     "title": "Management",
+     "module": "Leadership and teams"
+    },
+    {
+     "id": "u16-22",
+     "title": "Teamwork",
+     "module": "Leadership and teams"
+    },
+    {
+     "id": "u16-23",
+     "title": "Delegation",
+     "module": "Leadership and teams"
+    },
+    {
+     "id": "u16-24",
+     "title": "Supervision",
+     "module": "Leadership and teams"
+    },
+    {
+     "id": "u16-25",
+     "title": "Service improvement",
+     "module": "Governance, policy and digital health"
+    },
+    {
+     "id": "u16-26",
+     "title": "Clinical governance",
+     "module": "Governance, policy and digital health"
+    },
+    {
+     "id": "u16-27",
+     "title": "Risk management",
+     "module": "Governance, policy and digital health"
+    },
+    {
+     "id": "u16-28",
+     "title": "Healthcare policy",
+     "module": "Governance, policy and digital health"
+    },
+    {
+     "id": "u16-29",
+     "title": "Digital health",
+     "module": "Governance, policy and digital health"
+    },
+    {
+     "id": "u16-30",
+     "title": "Health informatics",
+     "module": "Governance, policy and digital health"
+    }
+   ]
+  },
+  {
+   "id": "u17",
+   "n": 17,
+   "title": "Nursing Law, Ethics and Safeguarding",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u17-01",
+     "title": "Professional regulation",
+     "module": "Regulation and professional duties"
+    },
+    {
+     "id": "u17-02",
+     "title": "The NMC Code",
+     "module": "Regulation and professional duties"
+    },
+    {
+     "id": "u17-03",
+     "title": "Duty of care",
+     "module": "Regulation and professional duties"
+    },
+    {
+     "id": "u17-04",
+     "title": "Consent",
+     "module": "Consent, capacity and mental health law"
+    },
+    {
+     "id": "u17-05",
+     "title": "Mental Capacity Act 2005",
+     "module": "Consent, capacity and mental health law"
+    },
+    {
+     "id": "u17-06",
+     "title": "Mental Health Act",
+     "module": "Consent, capacity and mental health law"
+    },
+    {
+     "id": "u17-07",
+     "title": "Safeguarding adults",
+     "module": "Safeguarding and liberty"
+    },
+    {
+     "id": "u17-08",
+     "title": "Safeguarding children",
+     "module": "Safeguarding and liberty"
+    },
+    {
+     "id": "u17-09",
+     "title": "Deprivation of Liberty Safeguards and relevant reforms",
+     "module": "Safeguarding and liberty"
+    },
+    {
+     "id": "u17-10",
+     "title": "Human rights",
+     "module": "Rights and equality"
+    },
+    {
+     "id": "u17-11",
+     "title": "Equality law",
+     "module": "Rights and equality"
+    },
+    {
+     "id": "u17-12",
+     "title": "Data protection",
+     "module": "Information law"
+    },
+    {
+     "id": "u17-13",
+     "title": "Confidentiality",
+     "module": "Information law"
+    },
+    {
+     "id": "u17-14",
+     "title": "Information governance",
+     "module": "Information law"
+    },
+    {
+     "id": "u17-15",
+     "title": "Record keeping",
+     "module": "Information law"
+    },
+    {
+     "id": "u17-16",
+     "title": "Duty of candour",
+     "module": "Candour, negligence and accountability"
+    },
+    {
+     "id": "u17-17",
+     "title": "Negligence",
+     "module": "Candour, negligence and accountability"
+    },
+    {
+     "id": "u17-18",
+     "title": "Professional accountability",
+     "module": "Candour, negligence and accountability"
+    },
+    {
+     "id": "u17-19",
+     "title": "Clinical incidents",
+     "module": "Incidents and raising concerns"
+    },
+    {
+     "id": "u17-20",
+     "title": "Raising concerns",
+     "module": "Incidents and raising concerns"
+    },
+    {
+     "id": "u17-21",
+     "title": "Whistleblowing",
+     "module": "Incidents and raising concerns"
+    },
+    {
+     "id": "u17-22",
+     "title": "Professional boundaries",
+     "module": "Ethics and boundaries"
+    },
+    {
+     "id": "u17-23",
+     "title": "Ethical dilemmas",
+     "module": "Ethics and boundaries"
+    },
+    {
+     "id": "u17-24",
+     "title": "End-of-life law",
+     "module": "End-of-life law"
+    },
+    {
+     "id": "u17-25",
+     "title": "Advance decisions",
+     "module": "End-of-life law"
+    },
+    {
+     "id": "u17-26",
+     "title": "Best interests",
+     "module": "End-of-life law"
+    },
+    {
+     "id": "u17-27",
+     "title": "Professional misconduct",
+     "module": "Fitness to practise"
+    },
+    {
+     "id": "u17-28",
+     "title": "Regulatory investigations",
+     "module": "Fitness to practise"
+    }
+   ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "deteriorating",
+   "title": "The quiet patient in bay 3",
+   "kind": "Clinical reasoning scenario",
+   "sub": "A post-operative patient deteriorates: assess with ABCDE, score NEWS2 as the observations change, and escalate with SBAR.",
+   "note": "A fictional patient with scripted observations; decisions follow the ABCDE approach and NEWS2 (RCP, 2017). Educational only: follow your organisation's policy in practice.",
+   "tasks": null,
+   "lessons": [
+    "u09-25",
+    "u03-27",
+    "u09-02",
+    "u09-03",
+    "u03-28",
+    "u09-05",
+    "u09-06"
+   ],
+   "url": "https://getgradify.com/nursegradify/course/#/practice/deteriorating"
+  },
+  {
+   "id": "news2",
+   "title": "NEWS2 scoring practice",
+   "kind": "Observation interpretation",
+   "sub": "Score generated sets of adult observations parameter by parameter and choose the clinical response.",
+   "note": "Generated adult observations scored on the RCP NEWS2 chart (2017), oxygen scale 1. Educational only: use your organisation's chart and escalation policy.",
+   "tasks": null,
+   "lessons": [
+    "u09-05",
+    "u09-04",
+    "u03-07",
+    "u03-28"
+   ],
+   "url": "https://getgradify.com/nursegradify/course/#/practice/news2"
+  },
+  {
+   "id": "calculations",
+   "title": "Medicines calculations",
+   "kind": "Medicines numeracy",
+   "sub": "Tablets, liquids, infusion and drip rates, unit conversions and weight-based doses, with worked methods. Illustrative numbers only.",
+   "note": "Generated questions with invented medicines and round numbers: numeracy practice, not dosing advice.",
+   "tasks": null,
+   "lessons": [
+    "u04-15",
+    "u04-21",
+    "u06-21",
+    "u06-22",
+    "u04-33"
+   ],
+   "url": "https://getgradify.com/nursegradify/course/#/practice/calculations"
+  }
+ ]
+}

@@ -244,6 +244,8 @@ X: Earning more than your parents
 > Most of the fall reflected more unequal distribution of growth rather than slower growth itself.
 H: Interpreting trends
 P: Absolute mobility can rise or fall with the economy without any change in fairness. Relative mobility is a better measure of **equality of opportunity**, but it is harder to explain to the public. Different data and measures (class versus income) can lead to different conclusions about whether mobility in Britain is falling.
+P: **Investigate with the lab.** Follow classes over generations and compare absolute and relative mobility as professional jobs grow.
+IX: mobility
 K: Absolute mobility depends on structural change; relative mobility measures fairness; post-war Britain had high absolute but stable relative mobility.
 !: Taking rising absolute mobility as proof of greater fairness. It may simply reflect more room at the top.
 EV: established | Post-war structural change produced high absolute upward mobility in Britain.
@@ -263,6 +265,7 @@ NUM2#sociology-u05-07-q3@2: Chetty et al. found about what percentage of America
 TF2#sociology-u05-07-q4@3: Rising absolute mobility proves a society has become fairer. | false | It can rise through structural change without fairer relative chances.
 M3#sociology-u05-07-q5@3: Why did Bukodi and Goldthorpe find more downward mobility for younger cohorts? | Growth of professional jobs levelled off | Relative chances became equal | Education was abolished | Manufacturing expanded | With less room at the top, more people move down.
 SA3#sociology-u05-07-q6@3: Evaluate the claim that social mobility in Britain has declined. | Distinguish absolute and relative; Goldthorpe 1980 (high absolute, stable relative); Bukodi and Goldthorpe (slowing upward, more downward); income vs class measures; Chetty US comparison; conclusion depends on measure. | Definitions ; Earlier evidence ; Recent evidence ; Measures ; Judgement
+M2#sociology-u05-07-q7@1: What is absolute mobility? | The total amount of movement between classes | The chances of one class reaching another compared with another class | Movement within one generation only | Moving to another country | Absolute mobility can rise simply because more top jobs exist.
 
 ## Intergenerational and intragenerational mobility
 LV: Introductory · Foundation
@@ -280,6 +283,8 @@ X: Two routes
 > A young woman from a family of bus drivers becomes a nurse after university (upward intergenerational mobility).
 > She later reduces her hours to care for children and takes a lower-graded post (downward intragenerational mobility).
 > The two measures capture different parts of the same life.
+P: **Investigate with the lab.** Track mobility across generations, then within one person's career.
+IX: mobility
 K: Intergenerational mobility compares children with parents; intragenerational mobility tracks one career; inequality and caring roles affect both.
 !: Confusing the two. "Intra" means within one person's life; "inter" means between generations.
 EV: established | Countries with higher income inequality tend to have lower intergenerational income mobility (Corak, 2013).
@@ -298,6 +303,7 @@ M2#sociology-u05-08-q2@2: A daughter of a cleaner becomes a lawyer. This is… |
 TF2#sociology-u05-08-q3@2: Higher intergenerational income elasticity means more mobility. | false | Higher elasticity means parents' income predicts children's more strongly.
 M3#sociology-u05-08-q4@3: Why is part-time work linked to downward intragenerational mobility for women? | Part-time posts are lower graded | Women prefer lower pay | Part-time jobs always pay more | Childcare has no effect on careers | Moving to part-time often means taking lower-level jobs.
 SA2#sociology-u05-08-q5@2,3: Apply the concepts of inter- and intragenerational mobility to explain a family's experience over three generations. | Define both; trace grandparent, parent, child positions; factors (education, structure, networks, caring); Great Gatsby curve context; gendered careers. | Definitions ; Example ; Factors ; Context
+M2#sociology-u05-08-q6@1: What is intergenerational mobility? | Moving to a different class from one's parents | Changing class within one's own career | Moving between regions | Moving from school to work | Intergenerational mobility compares children's class with their parents'.
 
 ## Meritocracy
 LV: Intermediate · Evaluation
@@ -316,6 +322,8 @@ X: Class ceilings
 > They called this a "class pay gap" and linked it to networks, sponsorship and cultural fit.
 H: Critiques of the ideal
 P: Even a perfect meritocracy would justify large inequalities between winners and losers. Sandel (2020) argues meritocratic beliefs encourage arrogance among the successful and humiliation among those left behind. Others note that "merit" itself is shaped by family advantages, such as private tutoring and cultural capital.
+P: **Investigate with the lab.** Set the society to be very open, then very closed, and compare who ends up at the top.
+IX: mobility
 K: Meritocracy is an appealing ideal, but origins still shape outcomes, and critics question whether perfect meritocracy would be fair.
 !: Equating qualifications with pure merit. Access to qualifications is itself shaped by background.
 EV: established | Class origins continue to predict destinations even after controlling for measured ability (Breen and Goldthorpe, 1999).
@@ -335,6 +343,7 @@ M2#sociology-u05-09-q2@2: Two accountants with equal qualifications earn differe
 TF2#sociology-u05-09-q3@2: Breen and Goldthorpe found origins had no effect once ability was measured. | false | They found origins still had a strong effect.
 M3#sociology-u05-09-q4@3: What is Sandel's main critique of meritocracy? | It fuels arrogance and humiliation | It ignores qualifications | It is too egalitarian | It denies effort | Sandel argues meritocratic beliefs damage the common good.
 SA3#sociology-u05-09-q5@3: Evaluate the view that Britain is a meritocracy. | Definition and Young's warning; Saunders's evidence; Breen and Goldthorpe's reanalysis; class pay gap (Friedman and Laurison); merit shaped by background; Sandel's critique; conclusion. | Definition ; For ; Against ; Critique ; Judgement
+M2#sociology-u05-09-q6@1: What is a meritocracy? | A society where positions are earned by ability and effort | A society ruled by a monarch | A society with no inequality at all | A society where class is inherited | Critics question how far modern societies are truly meritocratic.
 
 ## Life chances
 LV: Introductory · Foundation
@@ -353,6 +362,8 @@ X: Different chances from birth (illustrative)
 > The second faces more exposure to pollution, overcrowding and financial stress. Neither outcome is fixed, but their chances differ.
 H: How chances are shaped
 P: Life chances depend on **resources** (income and wealth), **environments** (neighbourhoods, housing, schools), **networks** and **cultural capital**. They are also shaped by gender, ethnicity, disability and region, which interact with class.
+P: **Investigate with the lab.** Plot life expectancy against GDP per head for the 22 countries, and look for countries that do better than their income predicts.
+IX: data-inequality
 K: Life chances are the opportunities to obtain valued outcomes; in the UK they differ strongly by class and deprivation.
 !: Treating life chances as fixed destiny. They are probabilities, and many people beat the odds.
 EV: established | Healthy life expectancy is substantially lower in England's most deprived areas than its least deprived (ONS, 2022).
@@ -372,6 +383,7 @@ NUM2#sociology-u05-10-q3@2: In 2018–2020, around how many years lower was fema
 TF2#sociology-u05-10-q4@3: Life chances describe fixed outcomes that people can't change. | false | They are probabilities, not certainties.
 M3#sociology-u05-10-q5@3: Why might a material explanation of class gaps in health be stronger than a cultural one? | Resources directly affect health | Culture never matters at all | Health is entirely random | Poorer people choose poor health | Resources and environments shape exposure to risk.
 SA2#sociology-u05-10-q6@2,3: Explain how social class shapes life chances in the UK, using examples. | Weber's definition; health (ONS life expectancy gaps), education (free school meals, higher education), income and housing; mechanisms (resources, environments, networks, cultural capital); intersections. | Definition ; Health ; Education ; Mechanisms
+M2#sociology-u05-10-q7@1: What are life chances? | The opportunities a person has to achieve a good life, shaped by their social position | A person's personal luck | The odds of winning a lottery | Medical prognoses only | Weber's term for how class shapes health, education and income.
 
 ## Wealth inequality
 LV: Intermediate · Application
@@ -390,6 +402,8 @@ X: Why wealth compounds
 > Inheritance and gifts, such as help with house deposits, pass advantages to the next generation.
 H: Why it persists
 P: Wealth inequality persists through **inheritance**, **rising house prices** that benefit existing owners, **tax** systems that tax wealth more lightly than earnings and **compounding** returns. Marxists see concentrated wealth as the basis of ruling-class power; others focus on how wealth shapes life chances and security.
+P: **Investigate with the lab.** Reshape the imaginary society and transfer wealth from rich to poor, watching the Gini fall.
+IX: gini
 K: Wealth is a stock of assets; in Great Britain in 2018–2020 the top 10% of households held 43% of wealth, and inheritance and returns on capital help it persist.
 !: Confusing high income with high wealth. A well-paid renter may have little wealth, while a retired homeowner may have a lot.
 EV: established | Household wealth in Great Britain is much more unequally distributed than income (ONS, 2022).
@@ -409,6 +423,7 @@ M2#sociology-u05-11-q3@2: House prices rise fast for a decade. Who gains most? |
 TF2#sociology-u05-11-q4@2: Wealth is less unequally distributed than income in Great Britain. | false | Wealth is much more unequally distributed.
 M3#sociology-u05-11-q5@3: What does Piketty's r > g mean for inequality? | Wealth grows faster than wages | Wages grow faster than wealth | Inequality must fall | Growth stops completely | Returns on capital outpacing growth concentrate wealth.
 SA2#sociology-u05-11-q6@2,3: Explain why wealth inequality persists across generations in Britain. | Wealth vs income; distribution (ONS 2018–2020); inheritance and gifts; house prices; taxation; compounding returns (Piketty); Marxist and Weberian interpretations. | Definition ; Distribution ; Mechanisms ; Theory
+M2#sociology-u05-11-q7@1: What happens to the Gini coefficient when income is transferred from rich to poor? | It falls | It rises | It stays the same | It becomes negative | Transfers towards equality reduce the Gini coefficient.
 
 ## Income inequality
 LV: Intermediate · Application
@@ -504,6 +519,8 @@ X: Why after housing costs matters
 > AHC measures show higher poverty, especially among renters and in high-cost areas.
 H: Evaluation
 P: Relative measures capture exclusion and change with living standards. Critics argue they measure **inequality** rather than hardship: if all incomes fell equally, relative poverty wouldn't change. The **Social Metrics Commission** (2018) proposed a broader measure including assets, debts and inescapable costs such as childcare and disability. UK statistics now also use **material deprivation** questions.
+P: **Investigate with the lab.** Apply a recession to the income distribution and watch absolute and relative poverty move apart.
+IX: poverty
 K: Relative poverty is exclusion from normal life; in the UK it is measured as below 60% of median income, with 21% in poverty after housing costs in 2021/22 (JRF).
 !: Assuming relative poverty can never fall. It falls if low incomes rise faster than the median.
 EV: established | After-housing-cost measures show higher poverty than before-housing-cost measures in the UK.
@@ -524,6 +541,7 @@ NUM2#sociology-u05-14-q3@2: What percentage of people in the UK were in poverty 
 TF2#sociology-u05-14-q4@3: Relative poverty can never fall because some people always earn less than others. | false | It falls if low incomes rise relative to the median.
 M3#sociology-u05-14-q5@3: What did the Social Metrics Commission add to poverty measurement? | Assets, debts and inescapable costs | Only the World Bank line | Wealth taxes | Nothing new | Its measure accounts for resources and unavoidable costs.
 SA3#sociology-u05-14-q6@3: Evaluate relative measures of poverty in the UK. | Townsend's concept; 60% median, equivalisation, BHC and AHC; JRF 2021/22 figure; strengths: captures exclusion, tracks living standards; limitations: measures inequality, ignores assets and costs; Social Metrics Commission and material deprivation. | Concept ; Measurement ; Evidence ; Limitations ; Alternatives
+M2#sociology-u05-14-q7@1: How is relative poverty usually measured in the UK? | Household income below 60% of the median | Income below a fixed cost of basic needs | Having no income at all | Living without a home | Relative poverty compares income with typical living standards.
 
 ## Social exclusion
 LV: Intermediate · Application
@@ -581,6 +599,8 @@ X: Two people in one area
 > An area is in the most deprived 10% of the IMD.
 > Not everyone living there is deprived; some residents are well off.
 > Concluding that every resident is poor from area data would be the **ecological fallacy**.
+P: **Investigate with the lab.** Apply growth at the top of the distribution and see relative poverty rise even when nobody is poorer.
+IX: poverty
 K: Deprivation is going without necessities; the IMD measures area deprivation across seven domains, but area data doesn't describe every individual.
 !: Assuming everyone in a deprived area is deprived. Area measures describe places, not each person.
 EV: established | The IMD 2019 combines seven domains to rank small areas in England.
@@ -601,6 +621,7 @@ MATCH2#sociology-u05-16-q3@1: Match each example to an IMD domain. | Rates of be
 TF2#sociology-u05-16-q4@3: Runciman found people's sense of deprivation depends on whom they compare themselves with. | true | Reference groups shape feelings of injustice.
 M3#sociology-u05-16-q5@3: Why might area measures underestimate rural deprivation? | Deprived households are dispersed | Rural areas have no poverty | Rural data are not collected | Cities are excluded | Scattered disadvantage averages out in mixed areas.
 SA2#sociology-u05-16-q6@2,3: Explain how deprivation is measured in England and evaluate area-based measures. | Material deprivation and consensual approach; IMD seven domains and uses; strengths: detailed, multidimensional, targeting; limitations: ecological fallacy, rural dispersion, domain weights, dates of data. | Concepts ; IMD ; Uses ; Limitations
+M2#sociology-u05-16-q7@1: Can relative poverty rise when no one's income falls? | Yes, if median income rises faster than low incomes | No, never | Only during a recession | Only if prices fall | Relative poverty depends on the gap with the median.
 
 ## Status
 LV: Introductory · Foundation
@@ -894,6 +915,8 @@ H: Theories
 IX: data-inequality
 H: Evaluation
 P: Modernisation theory is criticised as ethnocentric and for ignoring colonial history, though some East Asian economies grew rapidly through investment and exports. Dependency theory explains colonial legacies but struggles to explain how countries like South Korea moved from periphery to core. World-systems theory allows for movement but is criticised as too economic and broad.
+P: **Investigate with the lab.** Compare the Lorenz curves and Gini coefficients of the ten countries.
+IX: lorenz
 K: Between-country inequality fell as Asian economies grew, while within-country inequality rose; modernisation, dependency and world-systems theories explain development differently.
 !: Equating global inequality with inequality between countries. Inequality within countries is also part of global inequality.
 EV: established | Income growth from 1988 to 2008 was strongest for the global middle and the top 1% (Lakner and Milanovic, 2016).
@@ -913,6 +936,7 @@ M2#sociology-u05-24-q2@2: A country moves from exporting raw materials to manufa
 TF2#sociology-u05-24-q3@2: Lakner and Milanovic found the lower-middle classes of rich countries had the fastest income growth. | false | Their growth was among the weakest.
 M3#sociology-u05-24-q4@3: Why is modernisation theory criticised as ethnocentric? | It treats Western development as the model | It ignores economics | It focuses on poor countries' culture only positively | It rejects investment | It assumes all countries should follow the Western path.
 SA3#sociology-u05-24-q5@3: Evaluate sociological explanations of global inequality. | Measurement (between countries vs interpersonal); elephant curve; modernisation (Rostow), dependency (Frank), world-systems (Wallerstein); evidence (East Asian growth, colonial legacies); evaluation and judgement. | Measurement ; Modernisation ; Dependency ; World systems ; Judgement
+M2#sociology-u05-24-q6@1: What would a Gini coefficient of 0 mean? | Perfect equality: everyone has the same income | Perfect inequality: one person has everything | Average inequality | No data available | 0 is perfect equality and 1 perfect inequality.
 
 ## Social reproduction
 LV: Intermediate · Evaluation

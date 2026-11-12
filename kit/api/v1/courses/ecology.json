@@ -1,0 +1,1383 @@
+{
+ "api": 1,
+ "slug": "ecology",
+ "name": "Ecology and Environmental Science",
+ "site": "EcoGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Study material, not a qualification or professional advice.</b> EcoGradify teaches ecology and environmental science. The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors; check important points against your course materials, your exam board's specification and official sources such as the IPCC, JNCC and DEFRA. Figures for populations, emissions and policy change over time: each is given with its year. Nothing here is an ecological survey, an environmental impact assessment or legal advice on planning or wildlife law; for real sites, protected species or development, consult a qualified ecologist (for example a CIEEM member) and the relevant statutory body (Natural England, NatureScot, Natural Resources Wales or DAERA). In the field, follow your organiser's risk assessment and the Countryside Code.",
+ "notes": "/kit/courses/ecology/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Foundations and fieldwork",
+   "units": [
+    1,
+    9
+   ],
+   "from": "#6aa84f",
+   "to": "#a3c76b"
+  },
+  {
+   "name": "Stage 2 · Populations and communities",
+   "units": [
+    2,
+    3
+   ],
+   "from": "#7cb342",
+   "to": "#2e9e6b"
+  },
+  {
+   "name": "Stage 3 · Ecosystems and cycles",
+   "units": [
+    4,
+    5
+   ],
+   "from": "#43a047",
+   "to": "#14b8a6"
+  },
+  {
+   "name": "Stage 4 · Biodiversity and conservation",
+   "units": [
+    6,
+    7
+   ],
+   "from": "#2e9e6b",
+   "to": "#0ea5a4"
+  },
+  {
+   "name": "Stage 5 · Global change and sustainability",
+   "units": [
+    8,
+    10,
+    11
+   ],
+   "from": "#14b8a6",
+   "to": "#22d3ee"
+  }
+ ],
+ "paths": [
+  {
+   "id": "alevel-bio",
+   "name": "A level Biology ecology",
+   "sub": "The ecology of A level Biology: populations, communities, ecosystems, nutrient cycles, biodiversity and the fieldwork and statistics behind them.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    9
+   ],
+   "select": null
+  },
+  {
+   "id": "alevel-env",
+   "name": "A level Environmental Science",
+   "sub": "The AQA A level Environmental Science course: the living and physical environment, energy, pollution, resources, sustainability and research methods.",
+   "units": [
+    1,
+    4,
+    5,
+    8,
+    10,
+    11,
+    9
+   ],
+   "select": null
+  },
+  {
+   "id": "year1",
+   "name": "University ecology, years 1 and 2",
+   "sub": "The core of an ecology degree: from individuals and populations to communities and ecosystems, with field methods and statistics.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    9,
+    6
+   ],
+   "select": null
+  },
+  {
+   "id": "conservation",
+   "name": "Conservation",
+   "sub": "What biodiversity is, why it is being lost and what the evidence says works to protect and restore it.",
+   "units": [
+    6,
+    7,
+    2,
+    3,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "climate",
+   "name": "Climate and the carbon cycle",
+   "sub": "How the climate system works, how we know it is changing, what that does to ecosystems and how societies respond.",
+   "units": [
+    8,
+    5,
+    4,
+    10,
+    11
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Foundations and fieldwork",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    9
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Populations and communities",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    2,
+    3
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Ecosystems and cycles",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    5
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Biodiversity and conservation",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    6,
+    7
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Global change and sustainability",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    8,
+    10,
+    11
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "methods",
+   "title": "Field methods and statistics",
+   "sub": "Study design, sampling, abundance measures and the statistical tests, including calculations.",
+   "units": [
+    9,
+    2
+   ],
+   "path": null,
+   "count": 25,
+   "minutes": 40,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Foundations of Ecology",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What is ecology?",
+     "module": "What ecology is"
+    },
+    {
+     "id": "u01-02",
+     "title": "Levels of ecological organisation",
+     "module": "What ecology is"
+    },
+    {
+     "id": "u01-03",
+     "title": "Ecology as a science: hypotheses and scale",
+     "module": "What ecology is"
+    },
+    {
+     "id": "u01-04",
+     "title": "Ecology and environmental science",
+     "module": "What ecology is"
+    },
+    {
+     "id": "u01-05",
+     "title": "Abiotic factors",
+     "module": "The physical environment"
+    },
+    {
+     "id": "u01-06",
+     "title": "Climate and the distribution of life",
+     "module": "The physical environment"
+    },
+    {
+     "id": "u01-07",
+     "title": "Soils",
+     "module": "The physical environment"
+    },
+    {
+     "id": "u01-08",
+     "title": "Water and aquatic environments",
+     "module": "The physical environment"
+    },
+    {
+     "id": "u01-09",
+     "title": "Tolerance ranges and limiting factors",
+     "module": "Organisms in their environment"
+    },
+    {
+     "id": "u01-10",
+     "title": "Adaptation to the environment",
+     "module": "Organisms in their environment"
+    },
+    {
+     "id": "u01-11",
+     "title": "Habitats and the ecological niche",
+     "module": "Organisms in their environment"
+    },
+    {
+     "id": "u01-12",
+     "title": "Biotic interactions: an overview",
+     "module": "Organisms in their environment"
+    },
+    {
+     "id": "u01-13",
+     "title": "Terrestrial biomes",
+     "module": "The living world"
+    },
+    {
+     "id": "u01-14",
+     "title": "Aquatic biomes",
+     "module": "The living world"
+    },
+    {
+     "id": "u01-15",
+     "title": "Biogeography and the distribution of species",
+     "module": "The living world"
+    },
+    {
+     "id": "u01-16",
+     "title": "Humans as an ecological force",
+     "module": "The living world"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Population Ecology",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "What is a population?",
+     "module": "Describing populations"
+    },
+    {
+     "id": "u02-02",
+     "title": "Population size and density",
+     "module": "Describing populations"
+    },
+    {
+     "id": "u02-03",
+     "title": "Dispersion patterns",
+     "module": "Describing populations"
+    },
+    {
+     "id": "u02-04",
+     "title": "Estimating population size: mark–release–recapture",
+     "module": "Describing populations"
+    },
+    {
+     "id": "u02-05",
+     "title": "Births, deaths, immigration and emigration",
+     "module": "Population growth"
+    },
+    {
+     "id": "u02-06",
+     "title": "Exponential growth",
+     "module": "Population growth"
+    },
+    {
+     "id": "u02-07",
+     "title": "Logistic growth and carrying capacity",
+     "module": "Population growth"
+    },
+    {
+     "id": "u02-08",
+     "title": "Density-dependent and density-independent factors",
+     "module": "Population growth"
+    },
+    {
+     "id": "u02-09",
+     "title": "Population cycles and fluctuations",
+     "module": "Population growth"
+    },
+    {
+     "id": "u02-10",
+     "title": "Life tables and survivorship curves",
+     "module": "Life histories"
+    },
+    {
+     "id": "u02-11",
+     "title": "Life-history strategies: r and K selection",
+     "module": "Life histories"
+    },
+    {
+     "id": "u02-12",
+     "title": "Age structure",
+     "module": "Life histories"
+    },
+    {
+     "id": "u02-13",
+     "title": "Metapopulations",
+     "module": "Life histories"
+    },
+    {
+     "id": "u02-14",
+     "title": "Human population growth",
+     "module": "Human populations"
+    },
+    {
+     "id": "u02-15",
+     "title": "The demographic transition",
+     "module": "Human populations"
+    },
+    {
+     "id": "u02-16",
+     "title": "Small populations and extinction risk",
+     "module": "Applied population ecology"
+    },
+    {
+     "id": "u02-17",
+     "title": "Harvesting and maximum sustainable yield",
+     "module": "Applied population ecology"
+    },
+    {
+     "id": "u02-18",
+     "title": "Population viability analysis",
+     "module": "Applied population ecology"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Communities and Species Interactions",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Intraspecific and interspecific competition",
+     "module": "Competition"
+    },
+    {
+     "id": "u03-02",
+     "title": "The competitive exclusion principle",
+     "module": "Competition"
+    },
+    {
+     "id": "u03-03",
+     "title": "Resource partitioning and niche differentiation",
+     "module": "Competition"
+    },
+    {
+     "id": "u03-04",
+     "title": "Predation",
+     "module": "Consumers and their prey"
+    },
+    {
+     "id": "u03-05",
+     "title": "Predator–prey dynamics",
+     "module": "Consumers and their prey"
+    },
+    {
+     "id": "u03-06",
+     "title": "Herbivory and plant defences",
+     "module": "Consumers and their prey"
+    },
+    {
+     "id": "u03-07",
+     "title": "Parasitism and disease",
+     "module": "Consumers and their prey"
+    },
+    {
+     "id": "u03-08",
+     "title": "Mutualism",
+     "module": "Positive interactions"
+    },
+    {
+     "id": "u03-09",
+     "title": "Commensalism and facilitation",
+     "module": "Positive interactions"
+    },
+    {
+     "id": "u03-10",
+     "title": "What is an ecological community?",
+     "module": "Community structure"
+    },
+    {
+     "id": "u03-11",
+     "title": "Keystone species and trophic cascades",
+     "module": "Community structure"
+    },
+    {
+     "id": "u03-12",
+     "title": "Species richness and evenness",
+     "module": "Community structure"
+    },
+    {
+     "id": "u03-13",
+     "title": "Island biogeography",
+     "module": "Community structure"
+    },
+    {
+     "id": "u03-14",
+     "title": "Ecological succession",
+     "module": "Change over time"
+    },
+    {
+     "id": "u03-15",
+     "title": "Primary and secondary succession",
+     "module": "Change over time"
+    },
+    {
+     "id": "u03-16",
+     "title": "Climax communities and plagioclimax",
+     "module": "Change over time"
+    },
+    {
+     "id": "u03-17",
+     "title": "Disturbance and the intermediate disturbance hypothesis",
+     "module": "Change over time"
+    },
+    {
+     "id": "u03-18",
+     "title": "Invasive non-native species",
+     "module": "Change over time"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Ecosystems and Energy Flow",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "What is an ecosystem?",
+     "module": "Ecosystem structure"
+    },
+    {
+     "id": "u04-02",
+     "title": "Producers, consumers and decomposers",
+     "module": "Ecosystem structure"
+    },
+    {
+     "id": "u04-03",
+     "title": "Food chains and food webs",
+     "module": "Ecosystem structure"
+    },
+    {
+     "id": "u04-04",
+     "title": "Trophic levels",
+     "module": "Ecosystem structure"
+    },
+    {
+     "id": "u04-05",
+     "title": "Photosynthesis and energy capture",
+     "module": "Energy and productivity"
+    },
+    {
+     "id": "u04-06",
+     "title": "Gross and net primary productivity",
+     "module": "Energy and productivity"
+    },
+    {
+     "id": "u04-07",
+     "title": "Secondary productivity",
+     "module": "Energy and productivity"
+    },
+    {
+     "id": "u04-08",
+     "title": "Efficiency of energy transfer",
+     "module": "Energy and productivity"
+    },
+    {
+     "id": "u04-09",
+     "title": "Ecological pyramids",
+     "module": "Energy and productivity"
+    },
+    {
+     "id": "u04-10",
+     "title": "Decomposition and detritus food webs",
+     "module": "Decomposition"
+    },
+    {
+     "id": "u04-11",
+     "title": "Soil ecosystems",
+     "module": "Decomposition"
+    },
+    {
+     "id": "u04-12",
+     "title": "Productivity across biomes",
+     "module": "Ecosystems across the planet"
+    },
+    {
+     "id": "u04-13",
+     "title": "Ocean productivity",
+     "module": "Ecosystems across the planet"
+    },
+    {
+     "id": "u04-14",
+     "title": "Ecosystem stability and resilience",
+     "module": "Ecosystems across the planet"
+    },
+    {
+     "id": "u04-15",
+     "title": "Ecosystem services",
+     "module": "Ecosystem services"
+    },
+    {
+     "id": "u04-16",
+     "title": "Agricultural ecosystems",
+     "module": "Ecosystem services"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Biogeochemical Cycles",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Cycling of matter",
+     "module": "Matter in ecosystems"
+    },
+    {
+     "id": "u05-02",
+     "title": "The water cycle",
+     "module": "Matter in ecosystems"
+    },
+    {
+     "id": "u05-03",
+     "title": "The carbon cycle",
+     "module": "The carbon cycle"
+    },
+    {
+     "id": "u05-04",
+     "title": "Carbon stores and fluxes",
+     "module": "The carbon cycle"
+    },
+    {
+     "id": "u05-05",
+     "title": "Peatlands, forests and blue carbon",
+     "module": "The carbon cycle"
+    },
+    {
+     "id": "u05-06",
+     "title": "The nitrogen cycle",
+     "module": "Nitrogen and phosphorus"
+    },
+    {
+     "id": "u05-07",
+     "title": "Nitrogen fixation",
+     "module": "Nitrogen and phosphorus"
+    },
+    {
+     "id": "u05-08",
+     "title": "Human alteration of the nitrogen cycle",
+     "module": "Nitrogen and phosphorus"
+    },
+    {
+     "id": "u05-09",
+     "title": "The phosphorus cycle",
+     "module": "Nitrogen and phosphorus"
+    },
+    {
+     "id": "u05-10",
+     "title": "Eutrophication",
+     "module": "Nitrogen and phosphorus"
+    },
+    {
+     "id": "u05-11",
+     "title": "The sulfur cycle and acid deposition",
+     "module": "Other cycles and limits"
+    },
+    {
+     "id": "u05-12",
+     "title": "Nutrient limitation",
+     "module": "Other cycles and limits"
+    },
+    {
+     "id": "u05-13",
+     "title": "Planetary boundaries",
+     "module": "Other cycles and limits"
+    },
+    {
+     "id": "u05-14",
+     "title": "Coupled cycles and global change",
+     "module": "Other cycles and limits"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Biodiversity and Evolution",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Defining biodiversity",
+     "module": "What biodiversity is"
+    },
+    {
+     "id": "u06-02",
+     "title": "Genetic, species and ecosystem diversity",
+     "module": "What biodiversity is"
+    },
+    {
+     "id": "u06-03",
+     "title": "Species concepts",
+     "module": "What biodiversity is"
+    },
+    {
+     "id": "u06-04",
+     "title": "Classification and naming",
+     "module": "What biodiversity is"
+    },
+    {
+     "id": "u06-05",
+     "title": "Variation and natural selection",
+     "module": "Where biodiversity comes from"
+    },
+    {
+     "id": "u06-06",
+     "title": "Adaptation and fitness",
+     "module": "Where biodiversity comes from"
+    },
+    {
+     "id": "u06-07",
+     "title": "Speciation",
+     "module": "Where biodiversity comes from"
+    },
+    {
+     "id": "u06-08",
+     "title": "Coevolution",
+     "module": "Where biodiversity comes from"
+    },
+    {
+     "id": "u06-09",
+     "title": "The history of life and mass extinctions",
+     "module": "Where biodiversity comes from"
+    },
+    {
+     "id": "u06-10",
+     "title": "The latitudinal diversity gradient",
+     "module": "Patterns of biodiversity"
+    },
+    {
+     "id": "u06-11",
+     "title": "Biodiversity hotspots",
+     "module": "Patterns of biodiversity"
+    },
+    {
+     "id": "u06-12",
+     "title": "Endemism",
+     "module": "Patterns of biodiversity"
+    },
+    {
+     "id": "u06-13",
+     "title": "Measuring biodiversity: diversity indices",
+     "module": "Measuring and losing biodiversity"
+    },
+    {
+     "id": "u06-14",
+     "title": "Biodiversity in the UK",
+     "module": "Measuring and losing biodiversity"
+    },
+    {
+     "id": "u06-15",
+     "title": "The global state of biodiversity",
+     "module": "Measuring and losing biodiversity"
+    },
+    {
+     "id": "u06-16",
+     "title": "Drivers of biodiversity loss",
+     "module": "Measuring and losing biodiversity"
+    },
+    {
+     "id": "u06-17",
+     "title": "Extinction risk and the IUCN Red List",
+     "module": "Measuring and losing biodiversity"
+    },
+    {
+     "id": "u06-18",
+     "title": "Why biodiversity matters",
+     "module": "Measuring and losing biodiversity"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Conservation Biology",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "What is conservation biology?",
+     "module": "Principles"
+    },
+    {
+     "id": "u07-02",
+     "title": "Conservation values and ethics",
+     "module": "Principles"
+    },
+    {
+     "id": "u07-03",
+     "title": "Conservation genetics",
+     "module": "Principles"
+    },
+    {
+     "id": "u07-04",
+     "title": "Minimum viable populations",
+     "module": "Principles"
+    },
+    {
+     "id": "u07-05",
+     "title": "Protected areas",
+     "module": "In situ conservation"
+    },
+    {
+     "id": "u07-06",
+     "title": "UK protected sites: SSSIs, SACs and SPAs",
+     "module": "In situ conservation"
+    },
+    {
+     "id": "u07-07",
+     "title": "Habitat management",
+     "module": "In situ conservation"
+    },
+    {
+     "id": "u07-08",
+     "title": "Habitat restoration",
+     "module": "In situ conservation"
+    },
+    {
+     "id": "u07-09",
+     "title": "Rewilding",
+     "module": "In situ conservation"
+    },
+    {
+     "id": "u07-10",
+     "title": "Species reintroductions",
+     "module": "In situ conservation"
+    },
+    {
+     "id": "u07-11",
+     "title": "Wildlife corridors and landscape connectivity",
+     "module": "In situ conservation"
+    },
+    {
+     "id": "u07-12",
+     "title": "Zoos and captive breeding",
+     "module": "Ex situ conservation"
+    },
+    {
+     "id": "u07-13",
+     "title": "Seed banks and botanic gardens",
+     "module": "Ex situ conservation"
+    },
+    {
+     "id": "u07-14",
+     "title": "Conservation on farmland",
+     "module": "Conservation in practice"
+    },
+    {
+     "id": "u07-15",
+     "title": "Marine conservation",
+     "module": "Conservation in practice"
+    },
+    {
+     "id": "u07-16",
+     "title": "International conservation agreements",
+     "module": "Conservation in practice"
+    },
+    {
+     "id": "u07-17",
+     "title": "Evidence-based conservation",
+     "module": "Conservation in practice"
+    },
+    {
+     "id": "u07-18",
+     "title": "Community-based conservation",
+     "module": "Conservation in practice"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Climate Change",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Weather and climate",
+     "module": "The climate system"
+    },
+    {
+     "id": "u08-02",
+     "title": "The atmosphere",
+     "module": "The climate system"
+    },
+    {
+     "id": "u08-03",
+     "title": "Earth's energy balance",
+     "module": "The climate system"
+    },
+    {
+     "id": "u08-04",
+     "title": "The greenhouse effect",
+     "module": "The climate system"
+    },
+    {
+     "id": "u08-05",
+     "title": "Greenhouse gases",
+     "module": "The climate system"
+    },
+    {
+     "id": "u08-06",
+     "title": "Radiative forcing",
+     "module": "The climate system"
+    },
+    {
+     "id": "u08-07",
+     "title": "The instrumental record",
+     "module": "Evidence and causes"
+    },
+    {
+     "id": "u08-08",
+     "title": "Past climates and proxies",
+     "module": "Evidence and causes"
+    },
+    {
+     "id": "u08-09",
+     "title": "Attribution of climate change",
+     "module": "Evidence and causes"
+    },
+    {
+     "id": "u08-10",
+     "title": "Climate feedbacks",
+     "module": "Evidence and causes"
+    },
+    {
+     "id": "u08-11",
+     "title": "Tipping points",
+     "module": "Evidence and causes"
+    },
+    {
+     "id": "u08-12",
+     "title": "Climate models and scenarios",
+     "module": "Projections"
+    },
+    {
+     "id": "u08-13",
+     "title": "Sea-level rise",
+     "module": "Projections"
+    },
+    {
+     "id": "u08-14",
+     "title": "Ocean warming and acidification",
+     "module": "Projections"
+    },
+    {
+     "id": "u08-15",
+     "title": "Phenology and mismatch",
+     "module": "Impacts on ecosystems"
+    },
+    {
+     "id": "u08-16",
+     "title": "Range shifts",
+     "module": "Impacts on ecosystems"
+    },
+    {
+     "id": "u08-17",
+     "title": "Coral reefs under climate change",
+     "module": "Impacts on ecosystems"
+    },
+    {
+     "id": "u08-18",
+     "title": "Climate change and extinction risk",
+     "module": "Impacts on ecosystems"
+    },
+    {
+     "id": "u08-19",
+     "title": "Mitigation",
+     "module": "Responses"
+    },
+    {
+     "id": "u08-20",
+     "title": "Adaptation",
+     "module": "Responses"
+    },
+    {
+     "id": "u08-21",
+     "title": "Nature-based solutions",
+     "module": "Responses"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Field Methods and Statistics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "The scientific method in ecology",
+     "module": "Designing ecological studies"
+    },
+    {
+     "id": "u09-02",
+     "title": "Hypotheses and null hypotheses",
+     "module": "Designing ecological studies"
+    },
+    {
+     "id": "u09-03",
+     "title": "Experimental and observational studies",
+     "module": "Designing ecological studies"
+    },
+    {
+     "id": "u09-04",
+     "title": "Replication and pseudoreplication",
+     "module": "Designing ecological studies"
+    },
+    {
+     "id": "u09-05",
+     "title": "Fieldwork ethics and safety",
+     "module": "Designing ecological studies"
+    },
+    {
+     "id": "u09-06",
+     "title": "Random, systematic and stratified sampling",
+     "module": "Sampling"
+    },
+    {
+     "id": "u09-07",
+     "title": "Quadrats",
+     "module": "Sampling"
+    },
+    {
+     "id": "u09-08",
+     "title": "Transects",
+     "module": "Sampling"
+    },
+    {
+     "id": "u09-09",
+     "title": "Measuring abundance: frequency, cover and ACFOR",
+     "module": "Sampling"
+    },
+    {
+     "id": "u09-10",
+     "title": "Sampling animals",
+     "module": "Sampling"
+    },
+    {
+     "id": "u09-11",
+     "title": "Freshwater sampling and biotic indices",
+     "module": "Sampling"
+    },
+    {
+     "id": "u09-12",
+     "title": "Measuring abiotic factors",
+     "module": "Sampling"
+    },
+    {
+     "id": "u09-13",
+     "title": "Types of data and variables",
+     "module": "Statistics"
+    },
+    {
+     "id": "u09-14",
+     "title": "Descriptive statistics",
+     "module": "Statistics"
+    },
+    {
+     "id": "u09-15",
+     "title": "Standard deviation and standard error",
+     "module": "Statistics"
+    },
+    {
+     "id": "u09-16",
+     "title": "Choosing a statistical test",
+     "module": "Statistics"
+    },
+    {
+     "id": "u09-17",
+     "title": "The chi-squared test",
+     "module": "Statistics"
+    },
+    {
+     "id": "u09-18",
+     "title": "Spearman's rank correlation",
+     "module": "Statistics"
+    },
+    {
+     "id": "u09-19",
+     "title": "The t-test",
+     "module": "Statistics"
+    },
+    {
+     "id": "u09-20",
+     "title": "The Mann–Whitney U test",
+     "module": "Statistics"
+    },
+    {
+     "id": "u09-21",
+     "title": "Remote sensing and GIS",
+     "module": "Modern methods"
+    },
+    {
+     "id": "u09-22",
+     "title": "Environmental DNA",
+     "module": "Modern methods"
+    },
+    {
+     "id": "u09-23",
+     "title": "Citizen science",
+     "module": "Modern methods"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Resources and Pollution",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Energy resources",
+     "module": "Energy"
+    },
+    {
+     "id": "u10-02",
+     "title": "Fossil fuels",
+     "module": "Energy"
+    },
+    {
+     "id": "u10-03",
+     "title": "Nuclear power",
+     "module": "Energy"
+    },
+    {
+     "id": "u10-04",
+     "title": "Renewable energy",
+     "module": "Energy"
+    },
+    {
+     "id": "u10-05",
+     "title": "Energy efficiency and storage",
+     "module": "Energy"
+    },
+    {
+     "id": "u10-06",
+     "title": "Soil degradation and conservation",
+     "module": "Land, water and food"
+    },
+    {
+     "id": "u10-07",
+     "title": "Water resources",
+     "module": "Land, water and food"
+    },
+    {
+     "id": "u10-08",
+     "title": "Agriculture and food security",
+     "module": "Land, water and food"
+    },
+    {
+     "id": "u10-09",
+     "title": "Fisheries",
+     "module": "Land, water and food"
+    },
+    {
+     "id": "u10-10",
+     "title": "Forestry",
+     "module": "Land, water and food"
+    },
+    {
+     "id": "u10-11",
+     "title": "Mineral resources",
+     "module": "Land, water and food"
+    },
+    {
+     "id": "u10-12",
+     "title": "Principles of pollution",
+     "module": "Pollution"
+    },
+    {
+     "id": "u10-13",
+     "title": "Air pollution",
+     "module": "Pollution"
+    },
+    {
+     "id": "u10-14",
+     "title": "Water pollution",
+     "module": "Pollution"
+    },
+    {
+     "id": "u10-15",
+     "title": "Plastics and persistent pollutants",
+     "module": "Pollution"
+    },
+    {
+     "id": "u10-16",
+     "title": "Pesticides and bioaccumulation",
+     "module": "Pollution"
+    },
+    {
+     "id": "u10-17",
+     "title": "Noise and light pollution",
+     "module": "Pollution"
+    },
+    {
+     "id": "u10-18",
+     "title": "Waste management",
+     "module": "Waste"
+    },
+    {
+     "id": "u10-19",
+     "title": "Life-cycle assessment",
+     "module": "Waste"
+    },
+    {
+     "id": "u10-20",
+     "title": "The circular economy",
+     "module": "Waste"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Sustainability and Environmental Policy",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "What is sustainability?",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-02",
+     "title": "Sustainable development and the SDGs",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-03",
+     "title": "Ecological footprints",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-04",
+     "title": "Environmental ethics",
+     "module": "Sustainability"
+    },
+    {
+     "id": "u11-05",
+     "title": "Market failure and externalities",
+     "module": "Environmental economics"
+    },
+    {
+     "id": "u11-06",
+     "title": "Valuing nature",
+     "module": "Environmental economics"
+    },
+    {
+     "id": "u11-07",
+     "title": "Policy instruments: regulation, taxes and markets",
+     "module": "Environmental economics"
+    },
+    {
+     "id": "u11-08",
+     "title": "International environmental agreements",
+     "module": "Law and policy"
+    },
+    {
+     "id": "u11-09",
+     "title": "UK environmental law",
+     "module": "Law and policy"
+    },
+    {
+     "id": "u11-10",
+     "title": "Environmental impact assessment",
+     "module": "Law and policy"
+    },
+    {
+     "id": "u11-11",
+     "title": "Biodiversity net gain",
+     "module": "Law and policy"
+    },
+    {
+     "id": "u11-12",
+     "title": "The precautionary principle",
+     "module": "Law and policy"
+    },
+    {
+     "id": "u11-13",
+     "title": "Environmental justice",
+     "module": "People and the environment"
+    },
+    {
+     "id": "u11-14",
+     "title": "Indigenous and local knowledge",
+     "module": "People and the environment"
+    },
+    {
+     "id": "u11-15",
+     "title": "Behaviour change and the environment",
+     "module": "People and the environment"
+    },
+    {
+     "id": "u11-16",
+     "title": "Monitoring progress: environmental indicators",
+     "module": "People and the environment"
+    }
+   ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "population",
+   "title": "Population ecology",
+   "kind": "Simulation",
+   "sub": "Logistic growth, predator–prey cycles and competition, over time and as phase plots.",
+   "note": "Classic Lotka–Volterra and logistic models; no age structure, space or chance.",
+   "tasks": null,
+   "lessons": [
+    "u02-07",
+    "u02-09",
+    "u02-06",
+    "u03-05",
+    "u03-02"
+   ],
+   "url": "https://getgradify.com/ecogradify/course/#/practice/population"
+  },
+  {
+   "id": "food-web",
+   "title": "Food webs and energy flow",
+   "kind": "Simulation",
+   "sub": "Remove species from a woodland food web to see secondary extinctions, and follow energy up the trophic levels.",
+   "note": "Topological model: consumers with no food left are lost; population effects aren't modelled.",
+   "tasks": null,
+   "lessons": [
+    "u04-03",
+    "u04-04",
+    "u04-08"
+   ],
+   "url": "https://getgradify.com/ecogradify/course/#/practice/food-web"
+  },
+  {
+   "id": "natural-selection",
+   "title": "Natural selection and drift",
+   "kind": "Simulation",
+   "sub": "Moths on light or sooty bark: birds pick off the conspicuous ones and allele frequencies shift. Turn selection off to see drift.",
+   "note": "One gene, random mating, fixed population size, predation proportional to contrast.",
+   "tasks": null,
+   "lessons": [
+    "u06-05",
+    "u01-10"
+   ],
+   "url": "https://getgradify.com/ecogradify/course/#/practice/natural-selection"
+  },
+  {
+   "id": "photosynthesis",
+   "title": "Photosynthesis and limiting factors",
+   "kind": "Simulation",
+   "sub": "Rate against light, CO₂ and temperature, the compensation point, and a pondweed giving off oxygen bubbles.",
+   "note": "Standard response curves with illustrative numbers for a C3 leaf.",
+   "tasks": null,
+   "lessons": [
+    "u04-05",
+    "u04-06"
+   ],
+   "url": "https://getgradify.com/ecogradify/course/#/practice/photosynthesis"
+  }
+ ]
+}
