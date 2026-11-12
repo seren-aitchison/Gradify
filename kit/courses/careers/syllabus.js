@@ -150,21 +150,29 @@ export const SYLLABUS = `
 * Raising a grievance
 * Your first 90 days
 * Workplace wellbeing
-10. Freelancing and Entrepreneurship
-> Freelancing
-* Freelancing and self-employment
-* Registering as self-employed
-* Finding clients and pricing your work
-* Contracts, invoices and getting paid
-* IR35 and contracting
-> Enterprise
-* Entrepreneurial skills
-* Testing a business idea
-* Business structures
-* Funding a start-up
-* Social enterprise
-* Intrapreneurship and side projects
-* Support for student and graduate start-ups
+10. Marketing
+> Marketing foundations
+* What is marketing?
+* Market research
+* Segmentation, targeting and positioning
+* Consumer behaviour
+* Business-to-business marketing
+> The marketing mix
+* Product and the product life cycle
+* Pricing strategies
+* Promotion and marketing communications
+* Place and distribution channels
+* The extended marketing mix
+> Brands and customers
+* Branding and brand equity
+* Customer relationship management
+* Services marketing
+> Modern marketing
+* Digital and social media marketing
+* Marketing metrics
+* Sustainable and ethical marketing
+* International marketing
+* The marketing plan
 11. Career Planning and Resilience
 > Planning a career
 * Career planning models
@@ -209,7 +217,7 @@ export const BLURBS = {
   7: "Every kind of interview, from video to case, and the exercises of an assessment centre.",
   8: "Graduate schemes, the recruitment calendar, offers, apprenticeships, further study and other routes.",
   9: "Employment status, contracts, pay, tax, pensions, rights at work, probation and your first months.",
-  10: "Self-employment, pricing, contracts and IR35, and testing, structuring and funding a business.",
+  10: "Understanding customers and markets, the marketing mix, brands, digital marketing and the marketing plan.",
   11: "Planning and managing a career for life, changing direction, and resilience through rejection and change.",
 };
 

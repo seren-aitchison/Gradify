@@ -117,18 +117,24 @@ export const IDS = {
   "u09-11": "Raising a grievance",
   "u09-12": "Your first 90 days",
   "u09-13": "Workplace wellbeing",
-  "u10-01": "Freelancing and self-employment",
-  "u10-02": "Registering as self-employed",
-  "u10-03": "Finding clients and pricing your work",
-  "u10-04": "Contracts, invoices and getting paid",
-  "u10-05": "IR35 and contracting",
-  "u10-06": "Entrepreneurial skills",
-  "u10-07": "Testing a business idea",
-  "u10-08": "Business structures",
-  "u10-09": "Funding a start-up",
-  "u10-10": "Social enterprise",
-  "u10-11": "Intrapreneurship and side projects",
-  "u10-12": "Support for student and graduate start-ups",
+  "u10-13": "What is marketing?",
+  "u10-14": "Market research",
+  "u10-15": "Segmentation, targeting and positioning",
+  "u10-16": "Consumer behaviour",
+  "u10-17": "Business-to-business marketing",
+  "u10-18": "Product and the product life cycle",
+  "u10-19": "Pricing strategies",
+  "u10-20": "Promotion and marketing communications",
+  "u10-21": "Place and distribution channels",
+  "u10-22": "The extended marketing mix",
+  "u10-23": "Branding and brand equity",
+  "u10-24": "Customer relationship management",
+  "u10-25": "Services marketing",
+  "u10-26": "Digital and social media marketing",
+  "u10-27": "Marketing metrics",
+  "u10-28": "Sustainable and ethical marketing",
+  "u10-29": "International marketing",
+  "u10-30": "The marketing plan",
   "u11-01": "Career planning models",
   "u11-02": "Career management skills",
   "u11-03": "Action planning",
@@ -142,4 +148,65 @@ export const IDS = {
   "u11-11": "Career wellbeing and burnout",
   "u11-12": "Getting careers guidance",
 };
-export const RETIRED = {};
+export const RETIRED = {
+  "u10-01": {
+    "title": "Freelancing and self-employment",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by business school 4 before it was written"
+  },
+  "u10-02": {
+    "title": "Registering as self-employed",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by business school 4 before it was written"
+  },
+  "u10-03": {
+    "title": "Finding clients and pricing your work",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by business school 4 before it was written"
+  },
+  "u10-04": {
+    "title": "Contracts, invoices and getting paid",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by business school 4 before it was written"
+  },
+  "u10-05": {
+    "title": "IR35 and contracting",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by business school 4 before it was written"
+  },
+  "u10-06": {
+    "title": "Entrepreneurial skills",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by business school 4 before it was written"
+  },
+  "u10-07": {
+    "title": "Testing a business idea",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by business school 4 before it was written"
+  },
+  "u10-08": {
+    "title": "Business structures",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by business school 4 before it was written"
+  },
+  "u10-09": {
+    "title": "Funding a start-up",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by business school 4 before it was written"
+  },
+  "u10-10": {
+    "title": "Social enterprise",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by business school 4 before it was written"
+  },
+  "u10-11": {
+    "title": "Intrapreneurship and side projects",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by business school 4 before it was written"
+  },
+  "u10-12": {
+    "title": "Support for student and graduate start-ups",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by business school 4 before it was written"
+  }
+};
