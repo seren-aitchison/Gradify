@@ -102,20 +102,22 @@ export const IDS = {
   "u06-19": "Magnetism and electromagnetism",
   "u06-20": "Physics equations: recall and use",
   "u06-21": "Physics required practicals",
-  "u07-01": "Natural hazards and risk",
-  "u07-02": "Plate tectonics",
-  "u07-03": "Earthquakes and volcanoes: causes, effects and responses",
-  "u07-04": "Tropical storms",
-  "u07-05": "Extreme weather in the UK",
-  "u07-06": "Climate change: evidence, causes and responses",
-  "u07-07": "Ecosystems and their components",
-  "u07-08": "Tropical rainforests",
-  "u07-09": "Hot deserts and cold environments",
-  "u07-10": "Coastal processes and landforms",
-  "u07-11": "Coastal management",
-  "u07-12": "River processes and landforms",
-  "u07-13": "Flooding and river management",
-  "u07-14": "Glacial landscapes",
+  "u07-15": "What is ecology?",
+  "u07-16": "Levels of ecological organisation",
+  "u07-17": "Ecology as a science: hypotheses and scale",
+  "u07-18": "Ecology and environmental science",
+  "u07-19": "Abiotic factors",
+  "u07-20": "Climate and the distribution of life",
+  "u07-21": "Soils",
+  "u07-22": "Water and aquatic environments",
+  "u07-23": "Tolerance ranges and limiting factors",
+  "u07-24": "Adaptation to the environment",
+  "u07-25": "Habitats and the ecological niche",
+  "u07-26": "Biotic interactions: an overview",
+  "u07-27": "Terrestrial biomes",
+  "u07-28": "Aquatic biomes",
+  "u07-29": "Biogeography and the distribution of species",
+  "u07-30": "Humans as an ecological force",
   "u08-01": "Global urbanisation",
   "u08-02": "Cities in lower-income countries",
   "u08-03": "UK cities: change and regeneration",
@@ -395,5 +397,75 @@ export const RETIRED = {
     "title": "Biology required practicals",
     "retired": "2026-11-12",
     "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u07-01": {
+    "title": "Natural hazards and risk",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by ecology school 1 before it was written"
+  },
+  "u07-02": {
+    "title": "Plate tectonics",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by ecology school 1 before it was written"
+  },
+  "u07-03": {
+    "title": "Earthquakes and volcanoes: causes, effects and responses",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by ecology school 1 before it was written"
+  },
+  "u07-04": {
+    "title": "Tropical storms",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by ecology school 1 before it was written"
+  },
+  "u07-05": {
+    "title": "Extreme weather in the UK",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by ecology school 1 before it was written"
+  },
+  "u07-06": {
+    "title": "Climate change: evidence, causes and responses",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by ecology school 1 before it was written"
+  },
+  "u07-07": {
+    "title": "Ecosystems and their components",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by ecology school 1 before it was written"
+  },
+  "u07-08": {
+    "title": "Tropical rainforests",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by ecology school 1 before it was written"
+  },
+  "u07-09": {
+    "title": "Hot deserts and cold environments",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by ecology school 1 before it was written"
+  },
+  "u07-10": {
+    "title": "Coastal processes and landforms",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by ecology school 1 before it was written"
+  },
+  "u07-11": {
+    "title": "Coastal management",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by ecology school 1 before it was written"
+  },
+  "u07-12": {
+    "title": "River processes and landforms",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by ecology school 1 before it was written"
+  },
+  "u07-13": {
+    "title": "Flooding and river management",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by ecology school 1 before it was written"
+  },
+  "u07-14": {
+    "title": "Glacial landscapes",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by ecology school 1 before it was written"
   }
 };

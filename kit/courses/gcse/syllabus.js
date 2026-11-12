@@ -139,24 +139,27 @@ export const SYLLABUS = `
 > Equations and practicals
 * Physics equations: recall and use
 * Physics required practicals
-7. Geography: Physical Environments
-> Natural hazards
-* Natural hazards and risk
-* Plate tectonics
-* Earthquakes and volcanoes: causes, effects and responses
-* Tropical storms
-* Extreme weather in the UK
-* Climate change: evidence, causes and responses
-> Ecosystems
-* Ecosystems and their components
-* Tropical rainforests
-* Hot deserts and cold environments
-> UK physical landscapes
-* Coastal processes and landforms
-* Coastal management
-* River processes and landforms
-* Flooding and river management
-* Glacial landscapes
+7. Foundations of Ecology
+> What ecology is
+* What is ecology?
+* Levels of ecological organisation
+* Ecology as a science: hypotheses and scale
+* Ecology and environmental science
+> The physical environment
+* Abiotic factors
+* Climate and the distribution of life
+* Soils
+* Water and aquatic environments
+> Organisms in their environment
+* Tolerance ranges and limiting factors
+* Adaptation to the environment
+* Habitats and the ecological niche
+* Biotic interactions: an overview
+> The living world
+* Terrestrial biomes
+* Aquatic biomes
+* Biogeography and the distribution of species
+* Humans as an ecological force
 8. Geography: Human Environments and Skills
 > Urban issues
 * Global urbanisation
@@ -221,7 +224,7 @@ export const BLURBS = {
   4: "Cells to systems: homeostasis, the heart, lungs, gut, liver, kidneys, immune, nervous, endocrine and musculoskeletal systems.",
   5: "Atoms, bonding, moles, reactions, electrolysis, rates, organic chemistry, analysis and the atmosphere.",
   6: "Energy, electricity, particles, radioactivity, forces, waves and magnetism, with every equation and required practical.",
-  7: "Natural hazards, climate change, ecosystems, and the UK's coasts, rivers and glacial landscapes.",
+  7: "What ecology studies, the physical environment, tolerance, adaptation and the niche, and the biomes of the living world.",
   8: "Urbanisation, development, the changing economy, resources, map and data skills, fieldwork and decision making.",
   9: "What health and wellbeing mean, what shapes them, how inequalities arise and how to judge health evidence and risk.",
 };
