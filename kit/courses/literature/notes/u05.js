@@ -167,7 +167,7 @@ Q: When did William Caxton introduce printing to England? | 1476.
 M1#literature-u05-04-q1@1: Who wrote Utopia? | Thomas More | Geoffrey Chaucer | John Milton | Edmund Spenser | More's Utopia was published in Latin in 1516.
 M2#literature-u05-04-q2@2: How did the Reformation affect English literature? | It brought the Bible and liturgy into English and encouraged reading | It banned all printing of books | It required all literature to be in Latin | It ended the writing of poetry | Protestant emphasis on scripture in English spread literacy and shaped style.
 M3#literature-u05-04-q3@3: Why do some scholars prefer the term "early modern" to "Renaissance"? | "Renaissance" may overstate a clean break with the medieval past | "Early modern" refers only to plays written for the stage | The Renaissance as a movement never reached England | "Renaissance" properly applies only to the history of science | The newer term stresses continuity and change rather than sudden rebirth.
-NUM1#literature-u05-04-q4@1: How many lines does a sonnet have? | 14 | 0 | lines | A sonnet has fourteen lines.
+NUM1#literature-u05-04-q4@1: How many lines does a sonnet have? | 14 | 0 | lines | A sonnet has 14 lines.
 SA2#literature-u05-04-q5@2,3: Explain how printing changed literature in the English Renaissance. | Printing made books cheaper and more widely available, increasing literacy and creating a market for poetry, plays, pamphlets and translations. It helped fix spelling and standardise English, spread new ideas from humanism and the Reformation, and allowed writers to reach wider audiences, though many poets still circulated work in manuscript among friends. | Cheaper books and literacy ; Standardisation ; Spread of ideas ; Manuscript culture continues
 
 ## Renaissance poetry: Wyatt, Sidney and Spenser
@@ -207,7 +207,7 @@ Q: What is the rhyme scheme of the Spenserian stanza? | ababbcbcc.
 M1#literature-u05-05-q1@1: Which virtue does the Redcrosse Knight represent? | Holiness | Justice | Courtesy | Temperance | Book I of The Faerie Queene follows the Knight of Holiness.
 M2#literature-u05-05-q2@2: What is an alexandrine? | A line of six stresses (iambic hexameter) | A line of four stresses | A rhyming couplet | An unrhymed line of any length | The Spenserian stanza ends with this longer line.
 M3#literature-u05-05-q3@3: A student reads "Whoso list to hunt" as proof of Wyatt's affair with Anne Boleyn. What is the weakness? | The link is speculative, and the poem adapts a Petrarchan convention | Wyatt never wrote about hunting | The poem is by Spenser | The poem is a direct historical record | Biographical readings are possible but cannot be proved from a conventional poem.
-NUM1#literature-u05-05-q4@1: How many lines are in a Spenserian stanza? | 9 | 0 | lines | Eight lines of iambic pentameter and a final alexandrine.
+NUM1#literature-u05-05-q4@1: How many lines are in a Spenserian stanza? | 9 | 0 | lines | 8 lines of iambic pentameter plus a final alexandrine make 9 lines.
 SA2#literature-u05-05-q5@2,3: Explain how Spenser's allegory works on more than one level in The Faerie Queene. | On a moral level, knights represent virtues struggling against vices, such as Redcrosse against Error and Duessa. On a religious level, Una stands for true Protestant faith and Duessa for the Catholic Church. On a political level, the poem celebrates Elizabeth I and England. Readers must interpret these layers together. | Moral level ; Religious level ; Political level ; Reader's interpretation
 
 ## Metaphysical poetry
