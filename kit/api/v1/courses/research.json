@@ -1,0 +1,1494 @@
+{
+ "api": 1,
+ "slug": "research",
+ "name": "Research and the Dissertation",
+ "site": "PostGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>General guidance, not your institution's rules.</b> PostGradify teaches research skills for Master's and doctoral study. The lessons were drafted with AI assistance and haven't yet been reviewed by research supervisors, so they may contain errors. Regulations on progression, word limits, ethics review, data protection and examination differ between universities and funders and change over time: always follow your own institution's regulations, your ethics committee and your supervisor. Nothing here is legal advice on data protection or a substitute for formal ethical approval.",
+ "notes": "/kit/courses/research/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Starting research",
+   "units": [
+    1,
+    2
+   ],
+   "from": "#5aa63a",
+   "to": "#2e5e18"
+  },
+  {
+   "name": "Stage 2 · Thinking about research",
+   "units": [
+    3,
+    4
+   ],
+   "from": "#7cc35a",
+   "to": "#3b8a2a"
+  },
+  {
+   "name": "Stage 3 · Methods",
+   "units": [
+    5,
+    6,
+    7
+   ],
+   "from": "#5aa63a",
+   "to": "#14b8a6"
+  },
+  {
+   "name": "Stage 4 · Doing research responsibly",
+   "units": [
+    8,
+    9
+   ],
+   "from": "#84cc16",
+   "to": "#16a34a"
+  },
+  {
+   "name": "Stage 5 · Writing, publishing and beyond",
+   "units": [
+    10,
+    11,
+    12
+   ],
+   "from": "#4ade80",
+   "to": "#22d3ee"
+  }
+ ],
+ "paths": [
+  {
+   "id": "masters",
+   "name": "Master's dissertation",
+   "sub": "From a question to a submitted dissertation: the literature review, design, methods, ethics and writing up.",
+   "units": [
+    2,
+    4,
+    8,
+    10,
+    5,
+    6
+   ],
+   "select": null
+  },
+  {
+   "id": "phd",
+   "name": "The doctoral journey",
+   "sub": "Everything a new PhD or MPhil researcher meets, in the order they meet it: supervision, philosophy, design, integrity, the thesis and the viva.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "quant",
+   "name": "Quantitative researcher",
+   "sub": "Design, measurement, inference and statistical models, reported and shared reproducibly.",
+   "units": [
+    4,
+    5,
+    7,
+    9
+   ],
+   "select": null
+  },
+  {
+   "id": "qual",
+   "name": "Qualitative researcher",
+   "sub": "Paradigms, reflexivity, interviews, observation and the main analytic approaches, from thematic analysis to grounded theory.",
+   "units": [
+    3,
+    4,
+    6,
+    7
+   ],
+   "select": null
+  },
+  {
+   "id": "integrity",
+   "name": "Ethics, integrity and open research",
+   "sub": "Ethical approval, the UK integrity framework, data protection and open, reproducible research.",
+   "units": [
+    8,
+    9
+   ],
+   "select": null
+  },
+  {
+   "id": "careers",
+   "name": "Publishing and careers",
+   "sub": "Getting work published, presented and used, and the careers a research degree leads to.",
+   "units": [
+    11,
+    12,
+    10
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Starting research",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Thinking about research",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    3,
+    4
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Methods",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    5,
+    6,
+    7
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Doing research responsibly",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    8,
+    9
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Writing, publishing and beyond",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "methods",
+   "title": "Methods and statistics",
+   "sub": "Design, quantitative, qualitative and mixed methods, including calculations.",
+   "units": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "path": null,
+   "count": 25,
+   "minutes": 40,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "The Research Landscape and Research Degrees",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What is research?",
+     "module": "What research is"
+    },
+    {
+     "id": "u01-02",
+     "title": "An original contribution to knowledge",
+     "module": "What research is"
+    },
+    {
+     "id": "u01-03",
+     "title": "Disciplines and interdisciplinarity",
+     "module": "What research is"
+    },
+    {
+     "id": "u01-04",
+     "title": "The UK research system and its funders",
+     "module": "What research is"
+    },
+    {
+     "id": "u01-05",
+     "title": "Research degrees: Master's, MPhil and PhD",
+     "module": "Research degrees"
+    },
+    {
+     "id": "u01-06",
+     "title": "Professional doctorates and the PhD by publication",
+     "module": "Research degrees"
+    },
+    {
+     "id": "u01-07",
+     "title": "Doctoral training: DTPs, CDTs and studentships",
+     "module": "Research degrees"
+    },
+    {
+     "id": "u01-08",
+     "title": "Progression: upgrade and confirmation",
+     "module": "Research degrees"
+    },
+    {
+     "id": "u01-09",
+     "title": "Researcher development and the Vitae RDF",
+     "module": "Research degrees"
+    },
+    {
+     "id": "u01-10",
+     "title": "The supervisory relationship",
+     "module": "Supervision and the research student"
+    },
+    {
+     "id": "u01-11",
+     "title": "Managing your supervisor",
+     "module": "Supervision and the research student"
+    },
+    {
+     "id": "u01-12",
+     "title": "Regulations, responsibilities and expectations",
+     "module": "Supervision and the research student"
+    },
+    {
+     "id": "u01-13",
+     "title": "Research culture and community",
+     "module": "Supervision and the research student"
+    },
+    {
+     "id": "u01-14",
+     "title": "Research project management",
+     "module": "Planning a research project"
+    },
+    {
+     "id": "u01-15",
+     "title": "Writing a research proposal",
+     "module": "Planning a research project"
+    },
+    {
+     "id": "u01-16",
+     "title": "Planning time: milestones and Gantt charts",
+     "module": "Planning a research project"
+    },
+    {
+     "id": "u01-17",
+     "title": "Wellbeing and resilience in research",
+     "module": "Planning a research project"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Research Questions and the Literature Review",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Choosing a research topic",
+     "module": "From topic to question"
+    },
+    {
+     "id": "u02-02",
+     "title": "Formulating research questions",
+     "module": "From topic to question"
+    },
+    {
+     "id": "u02-03",
+     "title": "Aims, objectives and hypotheses",
+     "module": "From topic to question"
+    },
+    {
+     "id": "u02-04",
+     "title": "Finding the gap: gap-spotting and problematisation",
+     "module": "From topic to question"
+    },
+    {
+     "id": "u02-05",
+     "title": "Searching databases",
+     "module": "Searching the literature"
+    },
+    {
+     "id": "u02-06",
+     "title": "Search strategies: Boolean operators and subject headings",
+     "module": "Searching the literature"
+    },
+    {
+     "id": "u02-07",
+     "title": "Grey literature",
+     "module": "Searching the literature"
+    },
+    {
+     "id": "u02-08",
+     "title": "Reference management",
+     "module": "Searching the literature"
+    },
+    {
+     "id": "u02-09",
+     "title": "Critical reading",
+     "module": "Reading critically"
+    },
+    {
+     "id": "u02-10",
+     "title": "Evaluating sources",
+     "module": "Reading critically"
+    },
+    {
+     "id": "u02-11",
+     "title": "Critical appraisal tools",
+     "module": "Reading critically"
+    },
+    {
+     "id": "u02-12",
+     "title": "Types of literature review",
+     "module": "Writing the review"
+    },
+    {
+     "id": "u02-13",
+     "title": "Systematic reviews and PRISMA",
+     "module": "Writing the review"
+    },
+    {
+     "id": "u02-14",
+     "title": "Scoping reviews",
+     "module": "Writing the review"
+    },
+    {
+     "id": "u02-15",
+     "title": "Synthesising the literature",
+     "module": "Writing the review"
+    },
+    {
+     "id": "u02-16",
+     "title": "Structuring a literature review",
+     "module": "Writing the review"
+    },
+    {
+     "id": "u02-17",
+     "title": "Theoretical and conceptual frameworks",
+     "module": "Writing the review"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Philosophy of Research",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Ontology",
+     "module": "Ontology and epistemology"
+    },
+    {
+     "id": "u03-02",
+     "title": "Epistemology",
+     "module": "Ontology and epistemology"
+    },
+    {
+     "id": "u03-03",
+     "title": "Research paradigms",
+     "module": "Ontology and epistemology"
+    },
+    {
+     "id": "u03-04",
+     "title": "Positivism",
+     "module": "Paradigms"
+    },
+    {
+     "id": "u03-05",
+     "title": "Post-positivism",
+     "module": "Paradigms"
+    },
+    {
+     "id": "u03-06",
+     "title": "Interpretivism",
+     "module": "Paradigms"
+    },
+    {
+     "id": "u03-07",
+     "title": "Social constructionism",
+     "module": "Paradigms"
+    },
+    {
+     "id": "u03-08",
+     "title": "Critical realism",
+     "module": "Paradigms"
+    },
+    {
+     "id": "u03-09",
+     "title": "Pragmatism",
+     "module": "Paradigms"
+    },
+    {
+     "id": "u03-10",
+     "title": "Critical and transformative paradigms",
+     "module": "Paradigms"
+    },
+    {
+     "id": "u03-11",
+     "title": "Deduction, induction and abduction",
+     "module": "Reasoning and theory"
+    },
+    {
+     "id": "u03-12",
+     "title": "The role of theory in research",
+     "module": "Reasoning and theory"
+    },
+    {
+     "id": "u03-13",
+     "title": "Popper and falsification",
+     "module": "Reasoning and theory"
+    },
+    {
+     "id": "u03-14",
+     "title": "Kuhn and paradigm shifts",
+     "module": "Reasoning and theory"
+    },
+    {
+     "id": "u03-15",
+     "title": "Reflexivity and positionality",
+     "module": "Reasoning and theory"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Research Design",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "What is research design?",
+     "module": "Foundations of design"
+    },
+    {
+     "id": "u04-02",
+     "title": "Aligning question, philosophy and method",
+     "module": "Foundations of design"
+    },
+    {
+     "id": "u04-03",
+     "title": "Quantitative, qualitative and mixed approaches",
+     "module": "Foundations of design"
+    },
+    {
+     "id": "u04-04",
+     "title": "Experimental designs",
+     "module": "Designs"
+    },
+    {
+     "id": "u04-05",
+     "title": "Quasi-experimental designs",
+     "module": "Designs"
+    },
+    {
+     "id": "u04-06",
+     "title": "Survey research design",
+     "module": "Designs"
+    },
+    {
+     "id": "u04-07",
+     "title": "Cross-sectional and longitudinal designs",
+     "module": "Designs"
+    },
+    {
+     "id": "u04-08",
+     "title": "Case study research",
+     "module": "Designs"
+    },
+    {
+     "id": "u04-09",
+     "title": "Ethnography",
+     "module": "Designs"
+    },
+    {
+     "id": "u04-10",
+     "title": "Action research",
+     "module": "Designs"
+    },
+    {
+     "id": "u04-11",
+     "title": "Evaluation research",
+     "module": "Designs"
+    },
+    {
+     "id": "u04-12",
+     "title": "Sampling strategies",
+     "module": "Sampling and quality"
+    },
+    {
+     "id": "u04-13",
+     "title": "Sample size and saturation",
+     "module": "Sampling and quality"
+    },
+    {
+     "id": "u04-14",
+     "title": "Validity and reliability",
+     "module": "Sampling and quality"
+    },
+    {
+     "id": "u04-15",
+     "title": "Trustworthiness in qualitative research",
+     "module": "Sampling and quality"
+    },
+    {
+     "id": "u04-16",
+     "title": "Pilot studies",
+     "module": "Sampling and quality"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Quantitative Methods and Statistics",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Variables and levels of measurement",
+     "module": "Measurement and data"
+    },
+    {
+     "id": "u05-02",
+     "title": "Questionnaire design",
+     "module": "Measurement and data"
+    },
+    {
+     "id": "u05-03",
+     "title": "Measurement scales and psychometrics",
+     "module": "Measurement and data"
+    },
+    {
+     "id": "u05-04",
+     "title": "Data screening and cleaning",
+     "module": "Measurement and data"
+    },
+    {
+     "id": "u05-05",
+     "title": "Missing data",
+     "module": "Measurement and data"
+    },
+    {
+     "id": "u05-06",
+     "title": "Descriptive statistics",
+     "module": "Describing data"
+    },
+    {
+     "id": "u05-07",
+     "title": "Distributions and the normal curve",
+     "module": "Describing data"
+    },
+    {
+     "id": "u05-08",
+     "title": "Visualising data",
+     "module": "Describing data"
+    },
+    {
+     "id": "u05-09",
+     "title": "Sampling distributions and confidence intervals",
+     "module": "Inference"
+    },
+    {
+     "id": "u05-10",
+     "title": "Null hypothesis significance testing",
+     "module": "Inference"
+    },
+    {
+     "id": "u05-11",
+     "title": "Effect sizes",
+     "module": "Inference"
+    },
+    {
+     "id": "u05-12",
+     "title": "Statistical power and sample size",
+     "module": "Inference"
+    },
+    {
+     "id": "u05-13",
+     "title": "Type I and Type II errors",
+     "module": "Inference"
+    },
+    {
+     "id": "u05-14",
+     "title": "t-tests",
+     "module": "Tests and models"
+    },
+    {
+     "id": "u05-15",
+     "title": "Analysis of variance (ANOVA)",
+     "module": "Tests and models"
+    },
+    {
+     "id": "u05-16",
+     "title": "Chi-square tests",
+     "module": "Tests and models"
+    },
+    {
+     "id": "u05-17",
+     "title": "Correlation",
+     "module": "Tests and models"
+    },
+    {
+     "id": "u05-18",
+     "title": "Linear regression",
+     "module": "Tests and models"
+    },
+    {
+     "id": "u05-19",
+     "title": "Multiple regression",
+     "module": "Tests and models"
+    },
+    {
+     "id": "u05-20",
+     "title": "Logistic regression",
+     "module": "Tests and models"
+    },
+    {
+     "id": "u05-21",
+     "title": "Non-parametric tests",
+     "module": "Tests and models"
+    },
+    {
+     "id": "u05-22",
+     "title": "Bayesian statistics",
+     "module": "Tests and models"
+    },
+    {
+     "id": "u05-23",
+     "title": "Statistical software: SPSS, R and Stata",
+     "module": "Statistics in practice"
+    },
+    {
+     "id": "u05-24",
+     "title": "Reporting statistics",
+     "module": "Statistics in practice"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Qualitative Methods",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "What is qualitative research?",
+     "module": "Qualitative foundations"
+    },
+    {
+     "id": "u06-02",
+     "title": "Qualitative research designs",
+     "module": "Qualitative foundations"
+    },
+    {
+     "id": "u06-03",
+     "title": "Purposive and theoretical sampling",
+     "module": "Qualitative foundations"
+    },
+    {
+     "id": "u06-04",
+     "title": "Semi-structured interviews",
+     "module": "Generating data"
+    },
+    {
+     "id": "u06-05",
+     "title": "Interviewing skills",
+     "module": "Generating data"
+    },
+    {
+     "id": "u06-06",
+     "title": "Focus groups",
+     "module": "Generating data"
+    },
+    {
+     "id": "u06-07",
+     "title": "Participant observation",
+     "module": "Generating data"
+    },
+    {
+     "id": "u06-08",
+     "title": "Documents and visual methods",
+     "module": "Generating data"
+    },
+    {
+     "id": "u06-09",
+     "title": "Online and remote qualitative research",
+     "module": "Generating data"
+    },
+    {
+     "id": "u06-10",
+     "title": "Transcription",
+     "module": "Analysis"
+    },
+    {
+     "id": "u06-11",
+     "title": "Coding qualitative data",
+     "module": "Analysis"
+    },
+    {
+     "id": "u06-12",
+     "title": "Thematic analysis: Braun and Clarke",
+     "module": "Analysis"
+    },
+    {
+     "id": "u06-13",
+     "title": "Reflexive thematic analysis",
+     "module": "Analysis"
+    },
+    {
+     "id": "u06-14",
+     "title": "Grounded theory",
+     "module": "Analysis"
+    },
+    {
+     "id": "u06-15",
+     "title": "Interpretative phenomenological analysis",
+     "module": "Analysis"
+    },
+    {
+     "id": "u06-16",
+     "title": "Discourse analysis",
+     "module": "Analysis"
+    },
+    {
+     "id": "u06-17",
+     "title": "Narrative analysis",
+     "module": "Analysis"
+    },
+    {
+     "id": "u06-18",
+     "title": "Framework analysis",
+     "module": "Analysis"
+    },
+    {
+     "id": "u06-19",
+     "title": "Qualitative data analysis software",
+     "module": "Analysis"
+    },
+    {
+     "id": "u06-20",
+     "title": "Rigour in qualitative research",
+     "module": "Quality and reporting"
+    },
+    {
+     "id": "u06-21",
+     "title": "Writing up qualitative findings",
+     "module": "Quality and reporting"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Mixed Methods and Evidence Synthesis",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "What is mixed methods research?",
+     "module": "Mixed methods"
+    },
+    {
+     "id": "u07-02",
+     "title": "Convergent designs",
+     "module": "Mixed methods"
+    },
+    {
+     "id": "u07-03",
+     "title": "Explanatory sequential designs",
+     "module": "Mixed methods"
+    },
+    {
+     "id": "u07-04",
+     "title": "Exploratory sequential designs",
+     "module": "Mixed methods"
+    },
+    {
+     "id": "u07-05",
+     "title": "Integration and joint displays",
+     "module": "Mixed methods"
+    },
+    {
+     "id": "u07-06",
+     "title": "Quality in mixed methods research",
+     "module": "Mixed methods"
+    },
+    {
+     "id": "u07-07",
+     "title": "Meta-analysis",
+     "module": "Evidence synthesis"
+    },
+    {
+     "id": "u07-08",
+     "title": "Qualitative evidence synthesis",
+     "module": "Evidence synthesis"
+    },
+    {
+     "id": "u07-09",
+     "title": "Realist reviews",
+     "module": "Evidence synthesis"
+    },
+    {
+     "id": "u07-10",
+     "title": "Secondary data analysis",
+     "module": "Secondary and digital research"
+    },
+    {
+     "id": "u07-11",
+     "title": "Big data and computational methods",
+     "module": "Secondary and digital research"
+    },
+    {
+     "id": "u07-12",
+     "title": "Using AI tools in research",
+     "module": "Secondary and digital research"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Research Ethics and Integrity",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Principles of research ethics",
+     "module": "Ethical principles"
+    },
+    {
+     "id": "u08-02",
+     "title": "The history of research ethics",
+     "module": "Ethical principles"
+    },
+    {
+     "id": "u08-03",
+     "title": "Informed consent",
+     "module": "Ethical principles"
+    },
+    {
+     "id": "u08-04",
+     "title": "Confidentiality and anonymity",
+     "module": "Ethical principles"
+    },
+    {
+     "id": "u08-05",
+     "title": "Avoiding harm",
+     "module": "Ethical principles"
+    },
+    {
+     "id": "u08-06",
+     "title": "Vulnerable participants",
+     "module": "Ethical principles"
+    },
+    {
+     "id": "u08-07",
+     "title": "Deception and covert research",
+     "module": "Ethical principles"
+    },
+    {
+     "id": "u08-08",
+     "title": "Research ethics committees",
+     "module": "Ethics governance"
+    },
+    {
+     "id": "u08-09",
+     "title": "Applying for ethical approval",
+     "module": "Ethics governance"
+    },
+    {
+     "id": "u08-10",
+     "title": "Health research: HRA approval",
+     "module": "Ethics governance"
+    },
+    {
+     "id": "u08-11",
+     "title": "Ethics in online research",
+     "module": "Ethics governance"
+    },
+    {
+     "id": "u08-12",
+     "title": "The Concordat to Support Research Integrity",
+     "module": "Research integrity"
+    },
+    {
+     "id": "u08-13",
+     "title": "The UKRIO Code of Practice for Research",
+     "module": "Research integrity"
+    },
+    {
+     "id": "u08-14",
+     "title": "Research misconduct",
+     "module": "Research integrity"
+    },
+    {
+     "id": "u08-15",
+     "title": "Questionable research practices",
+     "module": "Research integrity"
+    },
+    {
+     "id": "u08-16",
+     "title": "Authorship and plagiarism",
+     "module": "Research integrity"
+    },
+    {
+     "id": "u08-17",
+     "title": "Conflicts of interest",
+     "module": "Research integrity"
+    },
+    {
+     "id": "u08-18",
+     "title": "UK GDPR and the Data Protection Act 2018",
+     "module": "Data protection"
+    },
+    {
+     "id": "u08-19",
+     "title": "Special category data and research",
+     "module": "Data protection"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Research Data Management and Open Research",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Research data management",
+     "module": "Managing data"
+    },
+    {
+     "id": "u09-02",
+     "title": "Data management plans",
+     "module": "Managing data"
+    },
+    {
+     "id": "u09-03",
+     "title": "File organisation and version control",
+     "module": "Managing data"
+    },
+    {
+     "id": "u09-04",
+     "title": "Secure storage and backup",
+     "module": "Managing data"
+    },
+    {
+     "id": "u09-05",
+     "title": "Anonymising and pseudonymising data",
+     "module": "Managing data"
+    },
+    {
+     "id": "u09-06",
+     "title": "Archiving and data sharing",
+     "module": "Managing data"
+    },
+    {
+     "id": "u09-07",
+     "title": "The FAIR principles",
+     "module": "Managing data"
+    },
+    {
+     "id": "u09-08",
+     "title": "Open access publishing",
+     "module": "Open research"
+    },
+    {
+     "id": "u09-09",
+     "title": "Preregistration and registered reports",
+     "module": "Open research"
+    },
+    {
+     "id": "u09-10",
+     "title": "Reproducibility and the replication crisis",
+     "module": "Open research"
+    },
+    {
+     "id": "u09-11",
+     "title": "Open data and open code",
+     "module": "Open research"
+    },
+    {
+     "id": "u09-12",
+     "title": "Reproducible workflows",
+     "module": "Open research"
+    },
+    {
+     "id": "u09-13",
+     "title": "Persistent identifiers: ORCID and DOIs",
+     "module": "Open research"
+    },
+    {
+     "id": "u09-14",
+     "title": "Copyright and licensing",
+     "module": "Open research"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Academic Writing and the Thesis",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Academic writing style",
+     "module": "Writing as research"
+    },
+    {
+     "id": "u10-02",
+     "title": "Writing habits and productivity",
+     "module": "Writing as research"
+    },
+    {
+     "id": "u10-03",
+     "title": "Building an argument",
+     "module": "Writing as research"
+    },
+    {
+     "id": "u10-04",
+     "title": "Paragraphs and signposting",
+     "module": "Writing as research"
+    },
+    {
+     "id": "u10-05",
+     "title": "The structure of a thesis",
+     "module": "The thesis"
+    },
+    {
+     "id": "u10-06",
+     "title": "Writing the introduction",
+     "module": "The thesis"
+    },
+    {
+     "id": "u10-07",
+     "title": "Writing the methodology chapter",
+     "module": "The thesis"
+    },
+    {
+     "id": "u10-08",
+     "title": "Writing results and findings",
+     "module": "The thesis"
+    },
+    {
+     "id": "u10-09",
+     "title": "Writing the discussion",
+     "module": "The thesis"
+    },
+    {
+     "id": "u10-10",
+     "title": "Writing the conclusion",
+     "module": "The thesis"
+    },
+    {
+     "id": "u10-11",
+     "title": "Writing the abstract",
+     "module": "The thesis"
+    },
+    {
+     "id": "u10-12",
+     "title": "Referencing and citation styles",
+     "module": "Craft and revision"
+    },
+    {
+     "id": "u10-13",
+     "title": "Using sources and avoiding plagiarism",
+     "module": "Craft and revision"
+    },
+    {
+     "id": "u10-14",
+     "title": "Editing and revising",
+     "module": "Craft and revision"
+    },
+    {
+     "id": "u10-15",
+     "title": "Working with feedback",
+     "module": "Craft and revision"
+    },
+    {
+     "id": "u10-16",
+     "title": "Writing in English as an additional language",
+     "module": "Craft and revision"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Publishing, Presenting and Impact",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "The academic publishing system",
+     "module": "Publishing"
+    },
+    {
+     "id": "u11-02",
+     "title": "Choosing a journal",
+     "module": "Publishing"
+    },
+    {
+     "id": "u11-03",
+     "title": "Writing a journal article",
+     "module": "Publishing"
+    },
+    {
+     "id": "u11-04",
+     "title": "Peer review",
+     "module": "Publishing"
+    },
+    {
+     "id": "u11-05",
+     "title": "Responding to reviewers",
+     "module": "Publishing"
+    },
+    {
+     "id": "u11-06",
+     "title": "Predatory journals",
+     "module": "Publishing"
+    },
+    {
+     "id": "u11-07",
+     "title": "Research metrics",
+     "module": "Publishing"
+    },
+    {
+     "id": "u11-08",
+     "title": "Conference presentations",
+     "module": "Presenting"
+    },
+    {
+     "id": "u11-09",
+     "title": "Academic posters",
+     "module": "Presenting"
+    },
+    {
+     "id": "u11-10",
+     "title": "Public engagement",
+     "module": "Presenting"
+    },
+    {
+     "id": "u11-11",
+     "title": "Research impact",
+     "module": "Impact"
+    },
+    {
+     "id": "u11-12",
+     "title": "The Research Excellence Framework",
+     "module": "Impact"
+    },
+    {
+     "id": "u11-13",
+     "title": "Knowledge exchange and policy engagement",
+     "module": "Impact"
+    },
+    {
+     "id": "u11-14",
+     "title": "Communicating research online",
+     "module": "Impact"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "The Viva and Beyond",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "Preparing to submit",
+     "module": "Submission and examination"
+    },
+    {
+     "id": "u12-02",
+     "title": "Examiners and the viva",
+     "module": "Submission and examination"
+    },
+    {
+     "id": "u12-03",
+     "title": "Preparing for the viva",
+     "module": "Submission and examination"
+    },
+    {
+     "id": "u12-04",
+     "title": "In the viva",
+     "module": "Submission and examination"
+    },
+    {
+     "id": "u12-05",
+     "title": "Viva outcomes and corrections",
+     "module": "Submission and examination"
+    },
+    {
+     "id": "u12-06",
+     "title": "Academic careers",
+     "module": "Careers"
+    },
+    {
+     "id": "u12-07",
+     "title": "Postdoctoral research",
+     "module": "Careers"
+    },
+    {
+     "id": "u12-08",
+     "title": "Fellowships and grant writing",
+     "module": "Careers"
+    },
+    {
+     "id": "u12-09",
+     "title": "Careers beyond academia",
+     "module": "Careers"
+    },
+    {
+     "id": "u12-10",
+     "title": "Transferable skills and the RDF",
+     "module": "Careers"
+    },
+    {
+     "id": "u12-11",
+     "title": "Teaching in higher education",
+     "module": "Careers"
+    },
+    {
+     "id": "u12-12",
+     "title": "Networking and your research profile",
+     "module": "Careers"
+    }
+   ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "study-critique",
+   "title": "Study critique",
+   "kind": "Exercise",
+   "sub": "Find the key flaw in six invented studies: causation, power, demand, p-hacking, WEIRD samples and attrition.",
+   "note": "PsychGradify's exercise; invented study summaries.",
+   "tasks": null,
+   "lessons": [
+    "u02-11",
+    "u02-09",
+    "u08-15",
+    "u09-10"
+   ],
+   "url": "https://getgradify.com/postgradify/course/#/practice/study-critique"
+  },
+  {
+   "id": "experiment-builder",
+   "title": "Experiment builder",
+   "kind": "Exercise",
+   "sub": "Make the design decisions for nine studies: variables, hypotheses, designs, confounds, sampling, controls, analysis and ethics.",
+   "note": "PsychGradify's exercise; invented studies, standard design decisions.",
+   "tasks": null,
+   "lessons": [
+    "u04-04",
+    "u04-05",
+    "u04-01"
+   ],
+   "url": "https://getgradify.com/postgradify/course/#/practice/experiment-builder"
+  },
+  {
+   "id": "sampling",
+   "title": "Sampling simulator",
+   "kind": "Simulation",
+   "sub": "Draw hundreds of samples by random, stratified, opportunity and volunteer methods and compare their bias and standard error.",
+   "note": "SocGradify's simulation: a simulated population of 10,000 with invented response patterns.",
+   "tasks": null,
+   "lessons": [
+    "u04-12",
+    "u04-13"
+   ],
+   "url": "https://getgradify.com/postgradify/course/#/practice/sampling"
+  },
+  {
+   "id": "survey-design",
+   "title": "Survey design builder",
+   "kind": "Exercise",
+   "sub": "Diagnose eight flawed draft questions: double-barrelled, leading, vague, jargon, double negatives, bad categories, sensitivity and order effects.",
+   "note": "SocGradify's exercise; invented draft questions, standard design principles.",
+   "tasks": null,
+   "lessons": [
+    "u05-02",
+    "u04-06"
+   ],
+   "url": "https://getgradify.com/postgradify/course/#/practice/survey-design"
+  },
+  {
+   "id": "psychometrics",
+   "title": "Interpreting standardised scores",
+   "kind": "Tool",
+   "sub": "Convert between z, T and standard scores and percentiles, and see how reliability sets the confidence band around a score.",
+   "note": "PsychGradify's tool: exact normal-distribution values; the scores are invented for practice.",
+   "tasks": null,
+   "lessons": [
+    "u05-03",
+    "u05-07"
+   ],
+   "url": "https://getgradify.com/postgradify/course/#/practice/psychometrics"
+  },
+  {
+   "id": "stats-describe",
+   "title": "Statistics workspace: describing data",
+   "kind": "Tool",
+   "sub": "Paste in data or generate a set: mean, median, mode, SD, skew, kurtosis, standard error, a confidence interval and a histogram.",
+   "note": "Sample statistics (n − 1); example data simulated.",
+   "tasks": null,
+   "lessons": [
+    "u05-06",
+    "u05-07",
+    "u05-08",
+    "u05-09"
+   ],
+   "url": "https://getgradify.com/postgradify/course/#/practice/stats-describe"
+  },
+  {
+   "id": "hypothesis-test",
+   "title": "Hypothesis-test simulator",
+   "kind": "Simulation",
+   "sub": "Run one study or a thousand: p-values, power, Type I and II errors and the winner's curse, with an independent t-test.",
+   "note": "Simulated samples from normal populations with a true effect you choose.",
+   "tasks": null,
+   "lessons": [
+    "u05-10",
+    "u05-12",
+    "u05-13",
+    "u05-11",
+    "u05-14"
+   ],
+   "url": "https://getgradify.com/postgradify/course/#/practice/hypothesis-test"
+  },
+  {
+   "id": "correlation",
+   "title": "Correlation and regression visualiser",
+   "kind": "Tool",
+   "sub": "Anscombe's quartet and your own points: Pearson's r, Spearman's ρ, the regression line, R² and residuals.",
+   "note": "Anscombe's (1973) data are real; your own points are illustrative.",
+   "tasks": null,
+   "lessons": [
+    "u05-17",
+    "u05-18"
+   ],
+   "url": "https://getgradify.com/postgradify/course/#/practice/correlation"
+  },
+  {
+   "id": "crosstab",
+   "title": "Crosstabs and chi-square",
+   "kind": "Tool",
+   "sub": "Row percentages, expected counts, χ² and Cramér's V for a two-by-two table.",
+   "note": "Example counts invented; enter counts from a real table.",
+   "tasks": null,
+   "lessons": [
+    "u05-16",
+    "u05-01"
+   ],
+   "url": "https://getgradify.com/postgradify/course/#/practice/crosstab"
+  },
+  {
+   "id": "coding",
+   "title": "Qualitative coding",
+   "kind": "Exercise",
+   "sub": "Code invented interviews with delivery riders, then build themes, as in thematic analysis.",
+   "note": "SocGradify's exercise; invented excerpts, one defensible coding offered as feedback.",
+   "tasks": null,
+   "lessons": [
+    "u06-11",
+    "u06-12",
+    "u06-13"
+   ],
+   "url": "https://getgradify.com/postgradify/course/#/practice/coding"
+  },
+  {
+   "id": "ethics",
+   "title": "Research ethics scenarios",
+   "kind": "Exercise",
+   "sub": "Six dilemmas, from covert observation and Tearoom Trade to consent, anonymity, disclosure and data storage.",
+   "note": "SocGradify's exercise, judged against the BSA Statement of Ethical Practice (2017); your own committee's rules apply to real studies.",
+   "tasks": null,
+   "lessons": [
+    "u08-03",
+    "u08-04",
+    "u08-07",
+    "u08-06"
+   ],
+   "url": "https://getgradify.com/postgradify/course/#/practice/ethics"
+  }
+ ]
+}

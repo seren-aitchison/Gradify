@@ -1,6 +1,6 @@
 // Gradify service worker: lets the site open offline.
 // Network first, so a new deploy shows straight away; the cache is the fallback.
-const CACHE = "gradify-v69";
+const CACHE = "gradify-v70";
 const SHELL = [
   "./", "index.html", "app.html", "manifest.webmanifest", "gradify.config.js",
   // homepage
@@ -36,6 +36,12 @@ const SHELL = [
   "kit/courses/sport/course.js", "kit/courses/sport/syllabus.js", "kit/courses/sport/ids.js", "kit/courses/sport/qa.js", "kit/courses/sport/interactives.js", "kit/courses/sport/evidence.js", "kit/courses/sport/registry.js",
   "kit/courses/teaching/course.js", "kit/courses/teaching/syllabus.js", "kit/courses/teaching/ids.js", "kit/courses/teaching/qa.js", "kit/courses/teaching/interactives.js", "kit/courses/teaching/evidence.js", "kit/courses/teaching/registry.js",
   "kit/courses/veterinary/course.js", "kit/courses/veterinary/syllabus.js", "kit/courses/veterinary/ids.js", "kit/courses/veterinary/qa.js", "kit/courses/veterinary/interactives.js", "kit/courses/veterinary/evidence.js", "kit/courses/veterinary/registry.js",
+  "kit/courses/design/course.js", "kit/courses/design/syllabus.js", "kit/courses/design/ids.js", "kit/courses/design/qa.js", "kit/courses/design/interactives.js", "kit/courses/design/evidence.js", "kit/courses/design/registry.js",
+  "kit/courses/gcse/course.js", "kit/courses/gcse/syllabus.js", "kit/courses/gcse/ids.js", "kit/courses/gcse/qa.js", "kit/courses/gcse/interactives.js", "kit/courses/gcse/evidence.js", "kit/courses/gcse/registry.js",
+  "kit/courses/primary/course.js", "kit/courses/primary/syllabus.js", "kit/courses/primary/ids.js", "kit/courses/primary/qa.js", "kit/courses/primary/interactives.js", "kit/courses/primary/evidence.js", "kit/courses/primary/registry.js",
+  "kit/courses/professional/course.js", "kit/courses/professional/syllabus.js", "kit/courses/professional/ids.js", "kit/courses/professional/qa.js", "kit/courses/professional/interactives.js", "kit/courses/professional/evidence.js", "kit/courses/professional/registry.js",
+  "kit/courses/research/course.js", "kit/courses/research/syllabus.js", "kit/courses/research/ids.js", "kit/courses/research/qa.js", "kit/courses/research/interactives.js", "kit/courses/research/evidence.js", "kit/courses/research/registry.js",
+  "kit/courses/university/course.js", "kit/courses/university/syllabus.js", "kit/courses/university/ids.js", "kit/courses/university/qa.js", "kit/courses/university/interactives.js", "kit/courses/university/evidence.js", "kit/courses/university/registry.js",
   // the shared interactive engine and each course's lab lists and evidence maps (each lab itself is cached when first opened)
   "kit/course/review.js", "kit/course/reviews.js", "kit/course/ix-manifest.js", "kit/courses/biology/evidence.js", "kit/courses/chemistry/evidence.js", "kit/courses/physics/evidence.js", "kit/courses/psychology/evidence.js", "kit/courses/sociology/evidence.js", "kit/courses/maths/evidence.js", "kit/courses/maths/interactives.js", "kit/interactive/scenario.js", "kit/interactive/trainers.js", "kit/interactive/pharmcalc.js", "kit/interactive/mathgen.js", "kit/interactive/grapher.js", "kit/interactive/mathexpr.js", "kit/interactive/stepcheck.js", "kit/interactive/reasoning.js", "kit/interactive/clinsim.js", "kit/interactive/news2.js",
 ];

@@ -1,0 +1,1287 @@
+{
+ "api": 1,
+ "slug": "university",
+ "name": "University Study Skills",
+ "site": "UnderGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>General study skills, not your university's rules.</b> UnderGradify teaches study skills that apply across UK universities and subjects. Universities set their own regulations on assessment, extensions, referencing styles, academic misconduct and the use of generative AI, and these differ between institutions, departments and even modules: always follow your own university's regulations, your module handbook and your tutors' instructions where they differ from anything here. The lessons were drafted with AI assistance and haven't yet been reviewed by an academic skills specialist, so they may contain errors. Nothing here is medical, financial or legal advice; for wellbeing, disability or money matters speak to your university's support services or your GP, and in an emergency call 999 or Samaritans on 116 123 (UK).",
+ "notes": "/kit/courses/university/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Getting started",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "from": "#5b8fe0",
+   "to": "#3c78d8"
+  },
+  {
+   "name": "Stage 2 · Reading, thinking and writing",
+   "units": [
+    4,
+    5,
+    6
+   ],
+   "from": "#6ea0f0",
+   "to": "#4f6fd8"
+  },
+  {
+   "name": "Stage 3 · Research and numbers",
+   "units": [
+    7,
+    8
+   ],
+   "from": "#5b8fe0",
+   "to": "#38bdf8"
+  },
+  {
+   "name": "Stage 4 · Performing and assessment",
+   "units": [
+    9,
+    10
+   ],
+   "from": "#7aa7f0",
+   "to": "#22d3ee"
+  },
+  {
+   "name": "Stage 5 · Growing through your degree",
+   "units": [
+    11,
+    12
+   ],
+   "from": "#5b8fe0",
+   "to": "#2dd4bf"
+  }
+ ],
+ "paths": [
+  {
+   "id": "first-year",
+   "name": "First-year essentials",
+   "sub": "Everything a new undergraduate needs in the first semester: how university works, how to learn, time, lectures, reading, writing and referencing.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "select": null
+  },
+  {
+   "id": "learn-better",
+   "name": "Learn better",
+   "sub": "The science of learning applied: memory, retrieval and spacing, time and focus, revision and exams, feedback and reflection.",
+   "units": [
+    2,
+    3,
+    10,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "essays",
+   "name": "Essays and assignments",
+   "sub": "From reading and critical thinking to planning, writing, referencing and acting on feedback.",
+   "units": [
+    4,
+    5,
+    6,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "research",
+   "name": "Research and data",
+   "sub": "Finding and judging information, small research projects, numeracy and statistics for coursework and dissertations.",
+   "units": [
+    7,
+    8,
+    4
+   ],
+   "select": null
+  },
+  {
+   "id": "career",
+   "name": "Beyond the degree",
+   "sub": "Presentations, teamwork, reflection and employability: building and evidencing the skills employers ask for.",
+   "units": [
+    9,
+    11,
+    12
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Getting started",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    3
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Reading, thinking and writing",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    5,
+    6
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Research and numbers",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    7,
+    8
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Performing and assessment",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    9,
+    10
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Growing through your degree",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    11,
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Starting University and Independent Learning",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "What is different about university study",
+     "module": "The move to university"
+    },
+    {
+     "id": "u01-02",
+     "title": "Independent learning",
+     "module": "The move to university"
+    },
+    {
+     "id": "u01-03",
+     "title": "How degrees are structured: credits, levels and modules",
+     "module": "The move to university"
+    },
+    {
+     "id": "u01-04",
+     "title": "Learning outcomes and the QAA level descriptors",
+     "module": "The move to university"
+    },
+    {
+     "id": "u01-05",
+     "title": "Assessment at university: types, criteria and marks",
+     "module": "The move to university"
+    },
+    {
+     "id": "u01-06",
+     "title": "Academic regulations and the student handbook",
+     "module": "The move to university"
+    },
+    {
+     "id": "u01-07",
+     "title": "Teaching formats: lectures, seminars, labs and tutorials",
+     "module": "Learning in a university"
+    },
+    {
+     "id": "u01-08",
+     "title": "Personal tutors and academic staff",
+     "module": "Learning in a university"
+    },
+    {
+     "id": "u01-09",
+     "title": "Writing to academic staff",
+     "module": "Learning in a university"
+    },
+    {
+     "id": "u01-10",
+     "title": "The virtual learning environment and digital study",
+     "module": "Learning in a university"
+    },
+    {
+     "id": "u01-11",
+     "title": "The university library",
+     "module": "Learning in a university"
+    },
+    {
+     "id": "u01-12",
+     "title": "Support services and reasonable adjustments",
+     "module": "Learning in a university"
+    },
+    {
+     "id": "u01-13",
+     "title": "Self-assessment of study skills",
+     "module": "Becoming an independent learner"
+    },
+    {
+     "id": "u01-14",
+     "title": "Setting goals for your degree",
+     "module": "Becoming an independent learner"
+    },
+    {
+     "id": "u01-15",
+     "title": "Motivation and self-efficacy",
+     "module": "Becoming an independent learner"
+    },
+    {
+     "id": "u01-16",
+     "title": "Self-regulated learning",
+     "module": "Becoming an independent learner"
+    },
+    {
+     "id": "u01-17",
+     "title": "Building study habits",
+     "module": "Becoming an independent learner"
+    },
+    {
+     "id": "u01-18",
+     "title": "Peer learning and study groups",
+     "module": "Becoming an independent learner"
+    },
+    {
+     "id": "u01-19",
+     "title": "Belonging and the transition to university",
+     "module": "Becoming an independent learner"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "The Science of Learning",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "What learning is: memory and understanding",
+     "module": "How memory works"
+    },
+    {
+     "id": "u02-02",
+     "title": "Working memory and cognitive load",
+     "module": "How memory works"
+    },
+    {
+     "id": "u02-03",
+     "title": "Encoding and levels of processing",
+     "module": "How memory works"
+    },
+    {
+     "id": "u02-04",
+     "title": "Forgetting and the forgetting curve",
+     "module": "How memory works"
+    },
+    {
+     "id": "u02-05",
+     "title": "Desirable difficulties",
+     "module": "How memory works"
+    },
+    {
+     "id": "u02-06",
+     "title": "Rating study techniques: the evidence",
+     "module": "Evidence-based study techniques"
+    },
+    {
+     "id": "u02-07",
+     "title": "Retrieval practice",
+     "module": "Evidence-based study techniques"
+    },
+    {
+     "id": "u02-08",
+     "title": "Spaced practice",
+     "module": "Evidence-based study techniques"
+    },
+    {
+     "id": "u02-09",
+     "title": "Interleaving",
+     "module": "Evidence-based study techniques"
+    },
+    {
+     "id": "u02-10",
+     "title": "Elaboration and self-explanation",
+     "module": "Evidence-based study techniques"
+    },
+    {
+     "id": "u02-11",
+     "title": "Concrete examples and dual coding",
+     "module": "Evidence-based study techniques"
+    },
+    {
+     "id": "u02-12",
+     "title": "Flashcards and spaced repetition systems",
+     "module": "Evidence-based study techniques"
+    },
+    {
+     "id": "u02-13",
+     "title": "Rereading, highlighting and summarising",
+     "module": "Evidence-based study techniques"
+    },
+    {
+     "id": "u02-14",
+     "title": "Metacognition: thinking about your thinking",
+     "module": "Metacognition"
+    },
+    {
+     "id": "u02-15",
+     "title": "Judgements of learning and the illusion of competence",
+     "module": "Metacognition"
+    },
+    {
+     "id": "u02-16",
+     "title": "Planning, monitoring and evaluating your learning",
+     "module": "Metacognition"
+    },
+    {
+     "id": "u02-17",
+     "title": "Learning styles and other myths",
+     "module": "Metacognition"
+    },
+    {
+     "id": "u02-18",
+     "title": "Sleep, attention and learning",
+     "module": "Metacognition"
+    },
+    {
+     "id": "u02-19",
+     "title": "Putting it together: a study system",
+     "module": "Metacognition"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Time Management, Lectures and Note-making",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "How students use their time",
+     "module": "Time and planning"
+    },
+    {
+     "id": "u03-02",
+     "title": "Semester and weekly planning",
+     "module": "Time and planning"
+    },
+    {
+     "id": "u03-03",
+     "title": "Prioritising tasks",
+     "module": "Time and planning"
+    },
+    {
+     "id": "u03-04",
+     "title": "Procrastination",
+     "module": "Time and planning"
+    },
+    {
+     "id": "u03-05",
+     "title": "Focus and distraction",
+     "module": "Time and planning"
+    },
+    {
+     "id": "u03-06",
+     "title": "Balancing study, work and life",
+     "module": "Time and planning"
+    },
+    {
+     "id": "u03-07",
+     "title": "Preparing for lectures",
+     "module": "Lectures and note-making"
+    },
+    {
+     "id": "u03-08",
+     "title": "Active listening in lectures",
+     "module": "Lectures and note-making"
+    },
+    {
+     "id": "u03-09",
+     "title": "Note-making methods: linear, Cornell and maps",
+     "module": "Lectures and note-making"
+    },
+    {
+     "id": "u03-10",
+     "title": "Handwriting or typing notes",
+     "module": "Lectures and note-making"
+    },
+    {
+     "id": "u03-11",
+     "title": "Using lecture recordings and slides",
+     "module": "Lectures and note-making"
+    },
+    {
+     "id": "u03-12",
+     "title": "Reviewing and consolidating notes",
+     "module": "Lectures and note-making"
+    },
+    {
+     "id": "u03-13",
+     "title": "Seminars and discussion",
+     "module": "Lectures and note-making"
+    },
+    {
+     "id": "u03-14",
+     "title": "Practical classes and lab notebooks",
+     "module": "Lectures and note-making"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Reading Academic Texts and Critical Thinking",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Types of academic text",
+     "module": "Reading academic texts"
+    },
+    {
+     "id": "u04-02",
+     "title": "Reading strategically: purpose and selection",
+     "module": "Reading academic texts"
+    },
+    {
+     "id": "u04-03",
+     "title": "Reading a journal article",
+     "module": "Reading academic texts"
+    },
+    {
+     "id": "u04-04",
+     "title": "Reading actively: SQ3R and questioning",
+     "module": "Reading academic texts"
+    },
+    {
+     "id": "u04-05",
+     "title": "Making notes from reading",
+     "module": "Reading academic texts"
+    },
+    {
+     "id": "u04-06",
+     "title": "Paraphrasing and summarising",
+     "module": "Reading academic texts"
+    },
+    {
+     "id": "u04-07",
+     "title": "Reading difficult texts",
+     "module": "Reading academic texts"
+    },
+    {
+     "id": "u04-08",
+     "title": "What critical thinking is",
+     "module": "Critical thinking and argument"
+    },
+    {
+     "id": "u04-09",
+     "title": "Arguments: claims, reasons and conclusions",
+     "module": "Critical thinking and argument"
+    },
+    {
+     "id": "u04-10",
+     "title": "Identifying assumptions",
+     "module": "Critical thinking and argument"
+    },
+    {
+     "id": "u04-11",
+     "title": "Evaluating evidence",
+     "module": "Critical thinking and argument"
+    },
+    {
+     "id": "u04-12",
+     "title": "Flaws in reasoning",
+     "module": "Critical thinking and argument"
+    },
+    {
+     "id": "u04-13",
+     "title": "Cognitive biases in reasoning",
+     "module": "Critical thinking and argument"
+    },
+    {
+     "id": "u04-14",
+     "title": "Comparing perspectives",
+     "module": "Critical thinking and argument"
+    },
+    {
+     "id": "u04-15",
+     "title": "Moving from description to analysis",
+     "module": "Critical thinking and argument"
+    },
+    {
+     "id": "u04-16",
+     "title": "Building your own argument",
+     "module": "Critical thinking and argument"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Academic Writing",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "What academic writing is",
+     "module": "The writing process"
+    },
+    {
+     "id": "u05-02",
+     "title": "Analysing the question",
+     "module": "The writing process"
+    },
+    {
+     "id": "u05-03",
+     "title": "Planning and outlining",
+     "module": "The writing process"
+    },
+    {
+     "id": "u05-04",
+     "title": "Drafting",
+     "module": "The writing process"
+    },
+    {
+     "id": "u05-05",
+     "title": "Editing and proofreading",
+     "module": "The writing process"
+    },
+    {
+     "id": "u05-06",
+     "title": "Essay structure",
+     "module": "Structure"
+    },
+    {
+     "id": "u05-07",
+     "title": "Introductions and conclusions",
+     "module": "Structure"
+    },
+    {
+     "id": "u05-08",
+     "title": "Paragraphs and the PEEL model",
+     "module": "Structure"
+    },
+    {
+     "id": "u05-09",
+     "title": "Report structure",
+     "module": "Structure"
+    },
+    {
+     "id": "u05-10",
+     "title": "Writing a literature review",
+     "module": "Structure"
+    },
+    {
+     "id": "u05-11",
+     "title": "Reflective writing",
+     "module": "Structure"
+    },
+    {
+     "id": "u05-12",
+     "title": "Abstracts and summaries",
+     "module": "Structure"
+    },
+    {
+     "id": "u05-13",
+     "title": "Academic style and register",
+     "module": "Style"
+    },
+    {
+     "id": "u05-14",
+     "title": "Clarity and concision",
+     "module": "Style"
+    },
+    {
+     "id": "u05-15",
+     "title": "Hedging and stance",
+     "module": "Style"
+    },
+    {
+     "id": "u05-16",
+     "title": "Using sources in your writing",
+     "module": "Style"
+    },
+    {
+     "id": "u05-17",
+     "title": "Signposting and cohesion",
+     "module": "Style"
+    },
+    {
+     "id": "u05-18",
+     "title": "Grammar and punctuation for academic writing",
+     "module": "Style"
+    },
+    {
+     "id": "u05-19",
+     "title": "Writing in your discipline",
+     "module": "Style"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Referencing and Academic Integrity",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Why we reference",
+     "module": "Why and how to reference"
+    },
+    {
+     "id": "u06-02",
+     "title": "What needs a reference",
+     "module": "Why and how to reference"
+    },
+    {
+     "id": "u06-03",
+     "title": "Referencing styles: an overview",
+     "module": "Why and how to reference"
+    },
+    {
+     "id": "u06-04",
+     "title": "Harvard referencing",
+     "module": "Why and how to reference"
+    },
+    {
+     "id": "u06-05",
+     "title": "APA style",
+     "module": "Why and how to reference"
+    },
+    {
+     "id": "u06-06",
+     "title": "Numeric styles: Vancouver and IEEE",
+     "module": "Why and how to reference"
+    },
+    {
+     "id": "u06-07",
+     "title": "Footnote styles: OSCOLA and Chicago",
+     "module": "Why and how to reference"
+    },
+    {
+     "id": "u06-08",
+     "title": "Secondary referencing",
+     "module": "Why and how to reference"
+    },
+    {
+     "id": "u06-09",
+     "title": "Reference management software",
+     "module": "Why and how to reference"
+    },
+    {
+     "id": "u06-10",
+     "title": "Academic integrity and its values",
+     "module": "Academic integrity"
+    },
+    {
+     "id": "u06-11",
+     "title": "Plagiarism and how to avoid it",
+     "module": "Academic integrity"
+    },
+    {
+     "id": "u06-12",
+     "title": "Collusion and group work boundaries",
+     "module": "Academic integrity"
+    },
+    {
+     "id": "u06-13",
+     "title": "Contract cheating and essay mills",
+     "module": "Academic integrity"
+    },
+    {
+     "id": "u06-14",
+     "title": "Text-matching software",
+     "module": "Academic integrity"
+    },
+    {
+     "id": "u06-15",
+     "title": "Generative AI and academic integrity",
+     "module": "Academic integrity"
+    },
+    {
+     "id": "u06-16",
+     "title": "Using generative AI responsibly in study",
+     "module": "Academic integrity"
+    },
+    {
+     "id": "u06-17",
+     "title": "Academic misconduct procedures",
+     "module": "Academic integrity"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Research and Information Literacy",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Information literacy",
+     "module": "Finding information"
+    },
+    {
+     "id": "u07-02",
+     "title": "Defining a research question",
+     "module": "Finding information"
+    },
+    {
+     "id": "u07-03",
+     "title": "Search strategies: keywords and Boolean operators",
+     "module": "Finding information"
+    },
+    {
+     "id": "u07-04",
+     "title": "Library catalogues and discovery tools",
+     "module": "Finding information"
+    },
+    {
+     "id": "u07-05",
+     "title": "Subject databases",
+     "module": "Finding information"
+    },
+    {
+     "id": "u07-06",
+     "title": "Google Scholar and the open web",
+     "module": "Finding information"
+    },
+    {
+     "id": "u07-07",
+     "title": "Grey literature and official statistics",
+     "module": "Finding information"
+    },
+    {
+     "id": "u07-08",
+     "title": "Evaluating sources",
+     "module": "Evaluating and managing information"
+    },
+    {
+     "id": "u07-09",
+     "title": "Peer review and the publication process",
+     "module": "Evaluating and managing information"
+    },
+    {
+     "id": "u07-10",
+     "title": "Primary and secondary sources",
+     "module": "Evaluating and managing information"
+    },
+    {
+     "id": "u07-11",
+     "title": "Recognising misinformation",
+     "module": "Evaluating and managing information"
+    },
+    {
+     "id": "u07-12",
+     "title": "Open access",
+     "module": "Evaluating and managing information"
+    },
+    {
+     "id": "u07-13",
+     "title": "Organising your research",
+     "module": "Evaluating and managing information"
+    },
+    {
+     "id": "u07-14",
+     "title": "Research ethics for students",
+     "module": "Research skills"
+    },
+    {
+     "id": "u07-15",
+     "title": "Designing a small project",
+     "module": "Research skills"
+    },
+    {
+     "id": "u07-16",
+     "title": "Collecting data: surveys and interviews",
+     "module": "Research skills"
+    },
+    {
+     "id": "u07-17",
+     "title": "Writing up a project",
+     "module": "Research skills"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Numeracy and Data Skills",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Maths anxiety and number confidence",
+     "module": "Number confidence"
+    },
+    {
+     "id": "u08-02",
+     "title": "Percentages, ratios and proportions",
+     "module": "Number confidence"
+    },
+    {
+     "id": "u08-03",
+     "title": "Rounding, significant figures and estimation",
+     "module": "Number confidence"
+    },
+    {
+     "id": "u08-04",
+     "title": "Units and conversions",
+     "module": "Number confidence"
+    },
+    {
+     "id": "u08-05",
+     "title": "Using formulae",
+     "module": "Number confidence"
+    },
+    {
+     "id": "u08-06",
+     "title": "Types of data",
+     "module": "Working with data"
+    },
+    {
+     "id": "u08-07",
+     "title": "Descriptive statistics",
+     "module": "Working with data"
+    },
+    {
+     "id": "u08-08",
+     "title": "Tables and charts",
+     "module": "Working with data"
+    },
+    {
+     "id": "u08-09",
+     "title": "Reading graphs critically",
+     "module": "Working with data"
+    },
+    {
+     "id": "u08-10",
+     "title": "Correlation and causation",
+     "module": "Working with data"
+    },
+    {
+     "id": "u08-11",
+     "title": "Probability and risk",
+     "module": "Working with data"
+    },
+    {
+     "id": "u08-12",
+     "title": "Statistical significance in plain terms",
+     "module": "Working with data"
+    },
+    {
+     "id": "u08-13",
+     "title": "Spreadsheets for students",
+     "module": "Working with data"
+    },
+    {
+     "id": "u08-14",
+     "title": "Presenting numbers in writing",
+     "module": "Working with data"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Presentations and Group Work",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Planning a presentation",
+     "module": "Presentations"
+    },
+    {
+     "id": "u09-02",
+     "title": "Designing slides",
+     "module": "Presentations"
+    },
+    {
+     "id": "u09-03",
+     "title": "Delivering a presentation",
+     "module": "Presentations"
+    },
+    {
+     "id": "u09-04",
+     "title": "Managing presentation nerves",
+     "module": "Presentations"
+    },
+    {
+     "id": "u09-05",
+     "title": "Posters",
+     "module": "Presentations"
+    },
+    {
+     "id": "u09-06",
+     "title": "Answering questions",
+     "module": "Presentations"
+    },
+    {
+     "id": "u09-07",
+     "title": "Online presentations",
+     "module": "Presentations"
+    },
+    {
+     "id": "u09-08",
+     "title": "Why universities set group work",
+     "module": "Group work"
+    },
+    {
+     "id": "u09-09",
+     "title": "Forming a team and agreeing ways of working",
+     "module": "Group work"
+    },
+    {
+     "id": "u09-10",
+     "title": "Team roles",
+     "module": "Group work"
+    },
+    {
+     "id": "u09-11",
+     "title": "Communication and online collaboration",
+     "module": "Group work"
+    },
+    {
+     "id": "u09-12",
+     "title": "Managing conflict",
+     "module": "Group work"
+    },
+    {
+     "id": "u09-13",
+     "title": "Contributing fairly and peer assessment",
+     "module": "Group work"
+    },
+    {
+     "id": "u09-14",
+     "title": "Inclusive group work",
+     "module": "Group work"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Exams and Revision",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Types of exam",
+     "module": "Preparing for exams"
+    },
+    {
+     "id": "u10-02",
+     "title": "Planning revision",
+     "module": "Preparing for exams"
+    },
+    {
+     "id": "u10-03",
+     "title": "Revision techniques that work",
+     "module": "Preparing for exams"
+    },
+    {
+     "id": "u10-04",
+     "title": "Past papers and practice questions",
+     "module": "Preparing for exams"
+    },
+    {
+     "id": "u10-05",
+     "title": "Revising for different subjects",
+     "module": "Preparing for exams"
+    },
+    {
+     "id": "u10-06",
+     "title": "Exam technique: before and on the day",
+     "module": "In the exam"
+    },
+    {
+     "id": "u10-07",
+     "title": "Answering essay questions in exams",
+     "module": "In the exam"
+    },
+    {
+     "id": "u10-08",
+     "title": "Multiple-choice and short-answer questions",
+     "module": "In the exam"
+    },
+    {
+     "id": "u10-09",
+     "title": "Problem-solving and calculation exams",
+     "module": "In the exam"
+    },
+    {
+     "id": "u10-10",
+     "title": "Open-book and online exams",
+     "module": "In the exam"
+    },
+    {
+     "id": "u10-11",
+     "title": "Managing exam anxiety",
+     "module": "In the exam"
+    },
+    {
+     "id": "u10-12",
+     "title": "Results, resits and progression",
+     "module": "After the exam"
+    },
+    {
+     "id": "u10-13",
+     "title": "Extenuating circumstances",
+     "module": "After the exam"
+    },
+    {
+     "id": "u10-14",
+     "title": "Learning from exam feedback",
+     "module": "After the exam"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Feedback, Reflection and Wellbeing",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "What feedback is for",
+     "module": "Feedback"
+    },
+    {
+     "id": "u11-02",
+     "title": "Feedback literacy",
+     "module": "Feedback"
+    },
+    {
+     "id": "u11-03",
+     "title": "Reading and acting on feedback",
+     "module": "Feedback"
+    },
+    {
+     "id": "u11-04",
+     "title": "Asking for feedback",
+     "module": "Feedback"
+    },
+    {
+     "id": "u11-05",
+     "title": "Peer and self-assessment",
+     "module": "Feedback"
+    },
+    {
+     "id": "u11-06",
+     "title": "Reflective practice",
+     "module": "Reflection"
+    },
+    {
+     "id": "u11-07",
+     "title": "Models of reflection: Kolb and Gibbs",
+     "module": "Reflection"
+    },
+    {
+     "id": "u11-08",
+     "title": "Personal development planning",
+     "module": "Reflection"
+    },
+    {
+     "id": "u11-09",
+     "title": "Learning journals and e-portfolios",
+     "module": "Reflection"
+    },
+    {
+     "id": "u11-10",
+     "title": "Student wellbeing",
+     "module": "Wellbeing and support"
+    },
+    {
+     "id": "u11-11",
+     "title": "Stress and resilience",
+     "module": "Wellbeing and support"
+    },
+    {
+     "id": "u11-12",
+     "title": "Perfectionism and impostor feelings",
+     "module": "Wellbeing and support"
+    },
+    {
+     "id": "u11-13",
+     "title": "Sleep, activity and routine",
+     "module": "Wellbeing and support"
+    },
+    {
+     "id": "u11-14",
+     "title": "Money and student life",
+     "module": "Wellbeing and support"
+    },
+    {
+     "id": "u11-15",
+     "title": "Disability, neurodivergence and study",
+     "module": "Wellbeing and support"
+    },
+    {
+     "id": "u11-16",
+     "title": "Getting help: university and NHS support",
+     "module": "Wellbeing and support"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Employability and Placements",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "What employability means",
+     "module": "Employability"
+    },
+    {
+     "id": "u12-02",
+     "title": "Graduate attributes and transferable skills",
+     "module": "Employability"
+    },
+    {
+     "id": "u12-03",
+     "title": "Recognising and recording your skills",
+     "module": "Employability"
+    },
+    {
+     "id": "u12-04",
+     "title": "Careers services and planning",
+     "module": "Employability"
+    },
+    {
+     "id": "u12-05",
+     "title": "Part-time work and volunteering",
+     "module": "Employability"
+    },
+    {
+     "id": "u12-06",
+     "title": "CVs and cover letters",
+     "module": "Applications and placements"
+    },
+    {
+     "id": "u12-07",
+     "title": "Applications and personal statements",
+     "module": "Applications and placements"
+    },
+    {
+     "id": "u12-08",
+     "title": "Interviews and assessment centres",
+     "module": "Applications and placements"
+    },
+    {
+     "id": "u12-09",
+     "title": "Placements and internships",
+     "module": "Applications and placements"
+    },
+    {
+     "id": "u12-10",
+     "title": "Learning on placement",
+     "module": "Applications and placements"
+    },
+    {
+     "id": "u12-11",
+     "title": "Professional behaviour and online presence",
+     "module": "Applications and placements"
+    },
+    {
+     "id": "u12-12",
+     "title": "Further study and postgraduate options",
+     "module": "Beyond the degree"
+    },
+    {
+     "id": "u12-13",
+     "title": "Your degree outcome and the HEAR",
+     "module": "Beyond the degree"
+    },
+    {
+     "id": "u12-14",
+     "title": "Lifelong learning",
+     "module": "Beyond the degree"
+    }
+   ]
+  }
+ ],
+ "interactives": []
+}

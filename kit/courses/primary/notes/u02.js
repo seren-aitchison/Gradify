@@ -34,7 +34,7 @@ M1#primary-u02-01-q1@1: Which pair is a number bond to 10? | 6 and 4 | 6 and 5 |
 M2#primary-u02-01-q2@2: What must you add to 13 to make 20? | 7 | 17 | 3 | 33 | 3 + 7 = 10, so 13 + 7 = 20. You use the bond to 10 and keep the extra ten.
 M2#primary-u02-01-q3@2: What goes with 46 to make 100? | 54 | 64 | 44 | 56 | 46 + 4 = 50 and 50 + 50 = 100, so you add 4 + 50 = 54. Picking 64 makes 110.
 TF1#primary-u02-01-q4@3: If you know 8 + 2 = 10, you also know 10 − 8 = 2. | true | Addition and subtraction facts come in families: the same three numbers, 2, 8 and 10, make all four facts.
-M3#primary-u02-01-q5@3: Which fact is NOT in the same family as 30 + 70 = 100? | 100 − 30 = 30 | 70 + 30 = 100 | 100 − 70 = 30 | 100 − 30 = 70 | The family uses 30, 70 and 100. 100 − 30 is 70, not 30, so that fact is false.
+M3#primary-u02-01-q5@3: Which fact is wrong, and so NOT in the same family as 30 + 70 = 100? | 100 − 30 = 30 | 70 + 30 = 100 | 100 − 70 = 30 | 100 − 30 = 70 | The family uses 30, 70 and 100. 100 − 30 is 70, not 30, so that fact is false.
 SA3#primary-u02-01-q6@2,3: Explain how knowing 4 + 6 = 10 helps you work out 40 + 60 and 14 + 6. | 4 tens add 6 tens make 10 tens, so 40 + 60 = 100. In 14 + 6, the ones 4 + 6 make another ten, so 1 ten plus 1 ten is 2 tens: 20. The same bond to 10 works in each case. | 40 + 60 = 100 using tens ; 14 + 6 = 20 ; Links each to the bond 4 + 6 = 10
 
 ## Adding in your head
@@ -254,7 +254,7 @@ Q: What is any number multiplied by 0? | 0.
 M1#primary-u02-07-q1@1: Which addition is the same as 4 × 3? | 3 + 3 + 3 + 3 | 4 + 3 | 4 + 4 + 3 | 3 + 4 + 3 + 4 | 4 × 3 means 4 groups of 3, so add four threes: 12. The answer 4 + 3 = 7 adds the numbers instead.
 M2#primary-u02-07-q2@2: An array has 5 rows with 7 stars in each row. Which multiplication does it show? | 5 × 7 = 35 | 5 + 7 = 12 | 5 × 5 = 25 | 7 × 7 = 49 | 5 equal rows of 7 is 5 × 7, which is 35. You could also read it as 7 columns of 5.
 M2#primary-u02-07-q3@3: Which fact has the same answer as 6 × 8? | 8 × 6 | 6 + 8 | 8 − 6 | 6 × 6 | Multiplication is commutative, so the order doesn't change the answer: 6 × 8 = 8 × 6 = 48.
-TF1#primary-u02-07-q4@1: 7 × 0 = 7. | false | 7 groups of nothing is nothing, so 7 × 0 = 0. It is 7 × 1 that equals 7.
+TF1#primary-u02-07-q4@1: A pupil claims that 7 × 0 = 7. Is the claim true? | false | 7 groups of nothing is nothing, so 7 × 0 = 0. It is 7 × 1 that equals 7.
 M3#primary-u02-07-q5@3: A box has 3 rows of 4 cakes, and another has 2 rows of 6 cakes. Which is true? | Both boxes hold 12 cakes | The first box holds more | The second box holds more | You can't compare them | 3 × 4 = 12 and 2 × 6 = 12, so the boxes hold the same number even though the arrays look different.
 SA3#primary-u02-07-q6@3: Explain, using an array, why 2 × 5 is the same as 5 × 2. | Draw 2 rows of 5 dots: that is 2 × 5 = 10. Turn the array on its side and there are 5 rows of 2 dots. No dots have been added or taken away, so 5 × 2 must also be 10. The order of multiplying doesn't change the answer. | Draws or describes the array ; Turning shows the other fact ; Same number of dots ; Answer 10
 

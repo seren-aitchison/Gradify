@@ -20,12 +20,12 @@ export const GROUPS = [
     title: "By stage of life",
     blurb: "Where you are in your education or career.",
     items: [
-      { n: "UnderGradify", who: "Undergraduates at university", i: "cap", c: "3c78d8", d: "For undergraduates: module revision, lecture notes, flashcards, exam prep, coursework planning and degree progress.", u: "undergradify.com", built: true, status: "soon" },
-      { n: "PostGradify", who: "Master's and PhD students, researchers", i: "book", c: "2e5e18", d: "For postgraduates and researchers: advanced study, literature organisation, dissertation planning and specialist exams.", u: "postgradify.com", built: true, status: "soon" },
-      { n: "ProGradify", who: "Working professionals", i: "briefcase", c: "e69138", d: "For working professionals: CPD, certification prep, workplace skills and career progression.", u: "progradify.com", built: true, status: "soon" },
+      { n: "UnderGradify", who: "Undergraduates at university", i: "cap", c: "3c78d8", d: "For undergraduates: module revision, lecture notes, flashcards, exam prep, coursework planning and degree progress.", u: "undergradify.com", built: true, status: "beta" },
+      { n: "PostGradify", who: "Master's and PhD students, researchers", i: "book", c: "2e5e18", d: "For postgraduates and researchers: advanced study, literature organisation, dissertation planning and specialist exams.", u: "postgradify.com", built: true, status: "beta" },
+      { n: "ProGradify", who: "Working professionals", i: "briefcase", c: "e69138", d: "For working professionals: CPD, certification prep, workplace skills and career progression.", u: "progradify.com", built: true, status: "beta" },
       { n: "EduGradify", who: "Teachers and educators", i: "board", c: "ffc002", d: "For teachers and educators: teaching resources, lesson preparation and professional development.", built: true, status: "beta" },
-      { n: "YouthGradify", who: "Teenagers, 13 to 18", i: "backpack", c: "ffea05", d: "For young people: school learning, new skills and early career decisions, bridging school and adult learning.", u: "youthgradify.com", built: true, status: "soon" },
-      { n: "JuniorGradify", who: "Children, 5 to 12", i: "pencil", c: "a0ff74", d: "For younger learners: strong foundations, interactive practice and age-appropriate activities.", u: "juniorgradify.com", built: true, status: "soon" },
+      { n: "YouthGradify", who: "Teenagers, 13 to 18", i: "backpack", c: "ffea05", d: "For young people: school learning, new skills and early career decisions, bridging school and adult learning.", u: "youthgradify.com", built: true, status: "beta" },
+      { n: "JuniorGradify", who: "Children, 5 to 12", i: "pencil", c: "a0ff74", d: "For younger learners: strong foundations, interactive practice and age-appropriate activities.", u: "juniorgradify.com", built: true, status: "beta" },
     ],
   },
   {
@@ -63,7 +63,7 @@ export const GROUPS = [
       { n: "ArtGradify", who: "Artists and design students", i: "palette", c: "f055dd", d: "Techniques, art history, visual composition and creative skills.", u: "gradifyart.com", built: true, status: "beta" },
       { n: "MusicGradify", who: "Musicians and music students", i: "music", c: "a4834a", d: "Theory, instruments, composition, ear training and music history.", u: "gradifymusic.com", built: true, status: "beta" },
       { n: "SportGradify", who: "Athletes, coaches and sport students", i: "dumbbell", c: "0c26b8", d: "Exercise science, training principles, performance and coaching.", u: "gradifysport.com", built: true, status: "beta" },
-      { n: "CreateGradify", who: "Makers and creative thinkers", i: "bulb", c: "e52153", d: "Ideation, design thinking and creative problem-solving across disciplines.", built: true, status: "soon" },
+      { n: "CreateGradify", who: "Makers and creative thinkers", i: "bulb", c: "e52153", d: "Ideation, design thinking and creative problem-solving across disciplines.", built: true, status: "beta" },
     ],
   },
   {
