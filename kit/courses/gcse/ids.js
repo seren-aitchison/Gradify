@@ -45,29 +45,23 @@ export const IDS = {
   "u03-11": "Grammar and Standard English",
   "u03-12": "Vocabulary for effect",
   "u03-13": "Spoken language endorsement",
-  "u04-01": "Cell structure: animal, plant and bacterial cells",
-  "u04-02": "Microscopy and magnification",
-  "u04-03": "Cell division: mitosis and stem cells",
-  "u04-04": "Diffusion, osmosis and active transport",
-  "u04-05": "Enzymes and digestion",
-  "u04-06": "The heart, blood and circulation",
-  "u04-07": "Non-communicable disease",
-  "u04-08": "Pathogens and communicable disease",
-  "u04-09": "The immune system and vaccination",
-  "u04-10": "Antibiotics and drug development",
-  "u04-11": "Photosynthesis",
-  "u04-12": "Respiration: aerobic and anaerobic",
-  "u04-13": "The nervous system and reflexes",
-  "u04-14": "Hormones, blood glucose and diabetes",
-  "u04-15": "Reproductive hormones and contraception",
-  "u04-16": "DNA, genes and the genome",
-  "u04-17": "Meiosis and genetic inheritance",
-  "u04-18": "Variation and evolution",
-  "u04-19": "Selective breeding and genetic engineering",
-  "u04-20": "Ecosystems and interdependence",
-  "u04-21": "Cycles and decomposition",
-  "u04-22": "Biodiversity and human impact",
-  "u04-23": "Biology required practicals",
+  "u04-24": "Cells, tissues and organs",
+  "u04-25": "Homeostasis",
+  "u04-26": "Body temperature regulation",
+  "u04-27": "Blood glucose regulation",
+  "u04-28": "The nervous system",
+  "u04-29": "The endocrine system",
+  "u04-30": "The heart",
+  "u04-31": "Blood vessels and blood pressure",
+  "u04-32": "Blood",
+  "u04-33": "The respiratory system",
+  "u04-34": "Gas exchange and breathing",
+  "u04-35": "The digestive system",
+  "u04-36": "The liver",
+  "u04-37": "The kidneys and fluid balance",
+  "u04-38": "The immune system",
+  "u04-39": "The musculoskeletal system",
+  "u04-40": "The skin",
   "u05-01": "Atomic structure and isotopes",
   "u05-02": "The development of the atomic model",
   "u05-03": "The periodic table and groups",
@@ -286,5 +280,120 @@ export const RETIRED = {
     "title": "Work experience and employability skills",
     "retired": "2026-11-12",
     "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u04-01": {
+    "title": "Cell structure: animal, plant and bacterial cells",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-02": {
+    "title": "Microscopy and magnification",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-03": {
+    "title": "Cell division: mitosis and stem cells",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-04": {
+    "title": "Diffusion, osmosis and active transport",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-05": {
+    "title": "Enzymes and digestion",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-06": {
+    "title": "The heart, blood and circulation",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-07": {
+    "title": "Non-communicable disease",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-08": {
+    "title": "Pathogens and communicable disease",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-09": {
+    "title": "The immune system and vaccination",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-10": {
+    "title": "Antibiotics and drug development",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-11": {
+    "title": "Photosynthesis",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-12": {
+    "title": "Respiration: aerobic and anaerobic",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-13": {
+    "title": "The nervous system and reflexes",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-14": {
+    "title": "Hormones, blood glucose and diabetes",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-15": {
+    "title": "Reproductive hormones and contraception",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-16": {
+    "title": "DNA, genes and the genome",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-17": {
+    "title": "Meiosis and genetic inheritance",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-18": {
+    "title": "Variation and evolution",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-19": {
+    "title": "Selective breeding and genetic engineering",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-20": {
+    "title": "Ecosystems and interdependence",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-21": {
+    "title": "Cycles and decomposition",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-22": {
+    "title": "Biodiversity and human impact",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
+  },
+  "u04-23": {
+    "title": "Biology required practicals",
+    "retired": "2026-11-12",
+    "reason": "school 4 replaced by health school 2 before it was written"
   }
 };

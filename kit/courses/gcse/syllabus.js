@@ -63,36 +63,27 @@ export const SYLLABUS = `
 * Grammar and Standard English
 * Vocabulary for effect
 * Spoken language endorsement
-4. Biology
-> Cells and organisation
-* Cell structure: animal, plant and bacterial cells
-* Microscopy and magnification
-* Cell division: mitosis and stem cells
-* Diffusion, osmosis and active transport
-* Enzymes and digestion
-* The heart, blood and circulation
-* Non-communicable disease
-> Infection and response
-* Pathogens and communicable disease
-* The immune system and vaccination
-* Antibiotics and drug development
-> Bioenergetics
-* Photosynthesis
-* Respiration: aerobic and anaerobic
-> Homeostasis and response
-* The nervous system and reflexes
-* Hormones, blood glucose and diabetes
-* Reproductive hormones and contraception
-> Inheritance, variation and evolution
-* DNA, genes and the genome
-* Meiosis and genetic inheritance
-* Variation and evolution
-* Selective breeding and genetic engineering
-> Ecology
-* Ecosystems and interdependence
-* Cycles and decomposition
-* Biodiversity and human impact
-* Biology required practicals
+4. The Human Body
+> Organisation and control
+* Cells, tissues and organs
+* Homeostasis
+* Body temperature regulation
+* Blood glucose regulation
+* The nervous system
+* The endocrine system
+> Transport and exchange
+* The heart
+* Blood vessels and blood pressure
+* Blood
+* The respiratory system
+* Gas exchange and breathing
+> Processing, defence and movement
+* The digestive system
+* The liver
+* The kidneys and fluid balance
+* The immune system
+* The musculoskeletal system
+* The skin
 5. Chemistry
 > Atoms and the periodic table
 * Atomic structure and isotopes
@@ -227,7 +218,7 @@ export const BLURBS = {
   1: "How memory works and the revision methods that use it: retrieval, spacing, flashcards, past papers, command words and calm exams.",
   2: "What literature is and how to read it closely: diction, imagery, tone, syntax, sound, irony, allusion and argument.",
   3: "Descriptive, narrative and viewpoint writing, and the spelling, punctuation and grammar that earn the technical accuracy marks.",
-  4: "Cells, organisation, infection, bioenergetics, homeostasis, inheritance, evolution and ecology, with the required practicals.",
+  4: "Cells to systems: homeostasis, the heart, lungs, gut, liver, kidneys, immune, nervous, endocrine and musculoskeletal systems.",
   5: "Atoms, bonding, moles, reactions, electrolysis, rates, organic chemistry, analysis and the atmosphere.",
   6: "Energy, electricity, particles, radioactivity, forces, waves and magnetism, with every equation and required practical.",
   7: "Natural hazards, climate change, ecosystems, and the UK's coasts, rivers and glacial landscapes.",
