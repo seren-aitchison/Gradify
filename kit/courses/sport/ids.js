@@ -294,86 +294,6 @@ export const RETIRED = {
     "retired": "2026-11-12",
     "reason": "school 8 replaced by health school 3 before it was written"
   },
-  "u12-01": {
-    "title": "The UK Chief Medical Officers' physical activity guidelines",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
-  "u12-02": {
-    "title": "Physical activity and chronic disease",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
-  "u12-03": {
-    "title": "Sedentary behaviour",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
-  "u12-04": {
-    "title": "Physical activity and mental health",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
-  "u12-05": {
-    "title": "Exercise referral and prescription",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
-  "u12-06": {
-    "title": "The development of modern sport",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
-  "u12-07": {
-    "title": "Sport and social class",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
-  "u12-08": {
-    "title": "Participation and barriers",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
-  "u12-09": {
-    "title": "Gender in sport",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
-  "u12-10": {
-    "title": "Ethnicity and sport",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
-  "u12-11": {
-    "title": "Disability sport and the Paralympic movement",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
-  "u12-12": {
-    "title": "Commercialisation and the media",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
-  "u12-13": {
-    "title": "Deviance in sport",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
-  "u12-14": {
-    "title": "Doping and anti-doping",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
-  "u12-15": {
-    "title": "Sport policy and UK sports organisations",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
-  "u12-16": {
-    "title": "Olympism and mega-events",
-    "retired": "2026-11-12",
-    "reason": "school 12 replaced by health school 4 before it was written"
-  },
   "u09-01": {
     "title": "Personality in sport",
     "retired": "2026-11-12",
@@ -478,5 +398,85 @@ export const RETIRED = {
     "title": "Exercise psychology and adherence",
     "retired": "2026-11-12",
     "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u12-01": {
+    "title": "The UK Chief Medical Officers' physical activity guidelines",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-02": {
+    "title": "Physical activity and chronic disease",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-03": {
+    "title": "Sedentary behaviour",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-04": {
+    "title": "Physical activity and mental health",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-05": {
+    "title": "Exercise referral and prescription",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-06": {
+    "title": "The development of modern sport",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-07": {
+    "title": "Sport and social class",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-08": {
+    "title": "Participation and barriers",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-09": {
+    "title": "Gender in sport",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-10": {
+    "title": "Ethnicity and sport",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-11": {
+    "title": "Disability sport and the Paralympic movement",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-12": {
+    "title": "Commercialisation and the media",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-13": {
+    "title": "Deviance in sport",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-14": {
+    "title": "Doping and anti-doping",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-15": {
+    "title": "Sport policy and UK sports organisations",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-16": {
+    "title": "Olympism and mega-events",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
   }
 };
