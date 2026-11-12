@@ -327,103 +327,103 @@
   {
    "id": "u02",
    "n": 2,
-   "title": "The Science of Learning",
-   "written": false,
+   "title": "How Pupils Learn",
+   "written": true,
    "lessons": [
     {
-     "id": "u02-01",
-     "title": "What learning is: memory and understanding",
-     "module": "How memory works"
+     "id": "u02-20",
+     "title": "Learning as a change in long-term memory",
+     "module": "Memory and the architecture of learning"
     },
     {
-     "id": "u02-02",
-     "title": "Working memory and cognitive load",
-     "module": "How memory works"
+     "id": "u02-21",
+     "title": "Working memory and its limits",
+     "module": "Memory and the architecture of learning"
     },
     {
-     "id": "u02-03",
-     "title": "Encoding and levels of processing",
-     "module": "How memory works"
+     "id": "u02-22",
+     "title": "Long-term memory and schemas",
+     "module": "Memory and the architecture of learning"
     },
     {
-     "id": "u02-04",
-     "title": "Forgetting and the forgetting curve",
-     "module": "How memory works"
+     "id": "u02-23",
+     "title": "Prior knowledge and how it shapes learning",
+     "module": "Memory and the architecture of learning"
     },
     {
-     "id": "u02-05",
-     "title": "Desirable difficulties",
-     "module": "How memory works"
+     "id": "u02-24",
+     "title": "Misconceptions and conceptual change",
+     "module": "Memory and the architecture of learning"
     },
     {
-     "id": "u02-06",
-     "title": "Rating study techniques: the evidence",
-     "module": "Evidence-based study techniques"
+     "id": "u02-25",
+     "title": "Cognitive load theory: Sweller 1988",
+     "module": "Cognitive load theory"
     },
     {
-     "id": "u02-07",
+     "id": "u02-26",
+     "title": "Intrinsic and extraneous load",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u02-27",
+     "title": "The worked example effect",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u02-28",
+     "title": "The expertise reversal effect",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u02-29",
+     "title": "Split attention and redundancy",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u02-30",
+     "title": "Dual coding",
+     "module": "Cognitive load theory"
+    },
+    {
+     "id": "u02-31",
      "title": "Retrieval practice",
-     "module": "Evidence-based study techniques"
+     "module": "Making learning stick"
     },
     {
-     "id": "u02-08",
+     "id": "u02-32",
      "title": "Spaced practice",
-     "module": "Evidence-based study techniques"
+     "module": "Making learning stick"
     },
     {
-     "id": "u02-09",
+     "id": "u02-33",
      "title": "Interleaving",
-     "module": "Evidence-based study techniques"
+     "module": "Making learning stick"
     },
     {
-     "id": "u02-10",
-     "title": "Elaboration and self-explanation",
-     "module": "Evidence-based study techniques"
+     "id": "u02-34",
+     "title": "Elaboration and generative learning",
+     "module": "Making learning stick"
     },
     {
-     "id": "u02-11",
-     "title": "Concrete examples and dual coding",
-     "module": "Evidence-based study techniques"
+     "id": "u02-35",
+     "title": "Forgetting and desirable difficulties",
+     "module": "Making learning stick"
     },
     {
-     "id": "u02-12",
-     "title": "Flashcards and spaced repetition systems",
-     "module": "Evidence-based study techniques"
+     "id": "u02-36",
+     "title": "Motivation and self-efficacy",
+     "module": "The learner"
     },
     {
-     "id": "u02-13",
-     "title": "Rereading, highlighting and summarising",
-     "module": "Evidence-based study techniques"
+     "id": "u02-37",
+     "title": "Metacognition and self-regulated learning",
+     "module": "The learner"
     },
     {
-     "id": "u02-14",
-     "title": "Metacognition: thinking about your thinking",
-     "module": "Metacognition"
-    },
-    {
-     "id": "u02-15",
-     "title": "Judgements of learning and the illusion of competence",
-     "module": "Metacognition"
-    },
-    {
-     "id": "u02-16",
-     "title": "Planning, monitoring and evaluating your learning",
-     "module": "Metacognition"
-    },
-    {
-     "id": "u02-17",
-     "title": "Learning styles and other myths",
-     "module": "Metacognition"
-    },
-    {
-     "id": "u02-18",
-     "title": "Sleep, attention and learning",
-     "module": "Metacognition"
-    },
-    {
-     "id": "u02-19",
-     "title": "Putting it together: a study system",
-     "module": "Metacognition"
+     "id": "u02-38",
+     "title": "Learning styles and other neuromyths",
+     "module": "The learner"
     }
    ]
   },

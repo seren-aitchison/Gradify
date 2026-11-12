@@ -633,93 +633,108 @@
   {
    "id": "u05",
    "n": 5,
-   "title": "Managing Behaviour",
-   "written": false,
+   "title": "Learning and Behaviour",
+   "written": true,
    "lessons": [
     {
-     "id": "u05-01",
-     "title": "Behaviour and learning",
-     "module": "A positive culture"
+     "id": "u05-18",
+     "title": "Classical conditioning",
+     "module": "Classical conditioning"
     },
     {
-     "id": "u05-02",
-     "title": "Routines and high expectations",
-     "module": "A positive culture"
+     "id": "u05-19",
+     "title": "Acquisition and extinction",
+     "module": "Classical conditioning"
     },
     {
-     "id": "u05-03",
-     "title": "A positive classroom climate",
-     "module": "A positive culture"
+     "id": "u05-20",
+     "title": "Spontaneous recovery",
+     "module": "Classical conditioning"
     },
     {
-     "id": "u05-04",
-     "title": "Relationships with pupils",
-     "module": "A positive culture"
+     "id": "u05-21",
+     "title": "Generalisation and discrimination",
+     "module": "Classical conditioning"
     },
     {
-     "id": "u05-05",
-     "title": "The whole-school behaviour policy",
-     "module": "A positive culture"
+     "id": "u05-22",
+     "title": "Operant conditioning",
+     "module": "Operant conditioning"
     },
     {
-     "id": "u05-06",
-     "title": "Starting and ending lessons",
-     "module": "In the classroom"
+     "id": "u05-23",
+     "title": "Positive and negative reinforcement",
+     "module": "Operant conditioning"
     },
     {
-     "id": "u05-07",
-     "title": "Giving clear instructions",
-     "module": "In the classroom"
+     "id": "u05-24",
+     "title": "Punishment",
+     "module": "Operant conditioning"
     },
     {
-     "id": "u05-08",
-     "title": "Praise and positive reinforcement",
-     "module": "In the classroom"
+     "id": "u05-25",
+     "title": "Schedules of reinforcement",
+     "module": "Operant conditioning"
     },
     {
-     "id": "u05-09",
-     "title": "Low-level disruption and the least intrusive response",
-     "module": "In the classroom"
+     "id": "u05-26",
+     "title": "Shaping",
+     "module": "Operant conditioning"
     },
     {
-     "id": "u05-10",
-     "title": "Consequences and sanctions",
-     "module": "In the classroom"
+     "id": "u05-27",
+     "title": "Behaviour modification",
+     "module": "Operant conditioning"
     },
     {
-     "id": "u05-11",
-     "title": "De-escalation and scripted responses",
-     "module": "In the classroom"
+     "id": "u05-28",
+     "title": "Observational learning",
+     "module": "Social and cognitive learning"
     },
     {
-     "id": "u05-12",
-     "title": "Restorative approaches",
-     "module": "In the classroom"
+     "id": "u05-29",
+     "title": "Social learning theory",
+     "module": "Social and cognitive learning"
     },
     {
-     "id": "u05-13",
-     "title": "Attendance and punctuality",
-     "module": "The wider picture"
+     "id": "u05-30",
+     "title": "Modelling and imitation",
+     "module": "Social and cognitive learning"
     },
     {
-     "id": "u05-14",
-     "title": "Suspension and permanent exclusion",
-     "module": "The wider picture"
+     "id": "u05-31",
+     "title": "Vicarious reinforcement",
+     "module": "Social and cognitive learning"
     },
     {
-     "id": "u05-15",
-     "title": "Behaviour and SEND",
-     "module": "The wider picture"
+     "id": "u05-32",
+     "title": "Latent learning",
+     "module": "Social and cognitive learning"
     },
     {
-     "id": "u05-16",
-     "title": "Searching, screening and reasonable force",
-     "module": "The wider picture"
+     "id": "u05-33",
+     "title": "Insight learning",
+     "module": "Social and cognitive learning"
     },
     {
-     "id": "u05-17",
-     "title": "Bullying, including online",
-     "module": "The wider picture"
+     "id": "u05-34",
+     "title": "Biological constraints on learning",
+     "module": "Limits and applications"
+    },
+    {
+     "id": "u05-35",
+     "title": "Habituation and sensitisation",
+     "module": "Limits and applications"
+    },
+    {
+     "id": "u05-36",
+     "title": "Habit formation",
+     "module": "Limits and applications"
+    },
+    {
+     "id": "u05-37",
+     "title": "Applications of learning theory",
+     "module": "Limits and applications"
     }
    ]
   },
@@ -1166,136 +1181,291 @@
   {
    "id": "u11",
    "n": 11,
-   "title": "Educational Research and Evidence",
-   "written": false,
+   "title": "Research Methods",
+   "written": true,
    "lessons": [
     {
-     "id": "u11-01",
-     "title": "Why evidence matters in teaching",
-     "module": "Using evidence"
+     "id": "u11-13",
+     "title": "Scientific reasoning in psychology",
+     "module": "Scientific reasoning"
     },
     {
-     "id": "u11-02",
-     "title": "The EEF Teaching and Learning Toolkit",
-     "module": "Using evidence"
+     "id": "u11-14",
+     "title": "Research questions and hypotheses",
+     "module": "Scientific reasoning"
     },
     {
-     "id": "u11-03",
-     "title": "Reading an EEF guidance report",
-     "module": "Using evidence"
+     "id": "u11-15",
+     "title": "Operationalisation",
+     "module": "Scientific reasoning"
     },
     {
-     "id": "u11-04",
-     "title": "Effect sizes and months' progress",
-     "module": "Using evidence"
+     "id": "u11-16",
+     "title": "Independent and dependent variables",
+     "module": "Scientific reasoning"
     },
     {
-     "id": "u11-05",
-     "title": "Randomised controlled trials in education",
-     "module": "Using evidence"
+     "id": "u11-17",
+     "title": "Confounding variables",
+     "module": "Scientific reasoning"
     },
     {
-     "id": "u11-06",
-     "title": "Meta-analysis and its limits",
-     "module": "Using evidence"
+     "id": "u11-18",
+     "title": "Experimental design",
+     "module": "Experiments"
     },
     {
-     "id": "u11-07",
-     "title": "Implementation: putting evidence to work",
-     "module": "Research in school"
+     "id": "u11-19",
+     "title": "Laboratory experiments",
+     "module": "Experiments"
     },
     {
-     "id": "u11-08",
-     "title": "Practitioner enquiry and action research",
-     "module": "Research in school"
+     "id": "u11-20",
+     "title": "Field experiments",
+     "module": "Experiments"
     },
     {
-     "id": "u11-09",
-     "title": "Evaluating an intervention",
-     "module": "Research in school"
+     "id": "u11-21",
+     "title": "Natural experiments",
+     "module": "Experiments"
     },
     {
-     "id": "u11-10",
-     "title": "Research ethics in school",
-     "module": "Research in school"
+     "id": "u11-22",
+     "title": "Quasi-experiments",
+     "module": "Experiments"
     },
     {
-     "id": "u11-11",
-     "title": "Reading educational claims critically",
-     "module": "Research in school"
+     "id": "u11-23",
+     "title": "Correlational research",
+     "module": "Non-experimental methods"
     },
     {
-     "id": "u11-12",
-     "title": "Cognitive science in the classroom: uses and limits",
-     "module": "Research in school"
+     "id": "u11-24",
+     "title": "Cross-sectional and longitudinal research",
+     "module": "Non-experimental methods"
+    },
+    {
+     "id": "u11-25",
+     "title": "Case studies",
+     "module": "Non-experimental methods"
+    },
+    {
+     "id": "u11-26",
+     "title": "Naturalistic observation",
+     "module": "Non-experimental methods"
+    },
+    {
+     "id": "u11-27",
+     "title": "Structured observation",
+     "module": "Non-experimental methods"
+    },
+    {
+     "id": "u11-28",
+     "title": "Surveys and questionnaires",
+     "module": "Non-experimental methods"
+    },
+    {
+     "id": "u11-29",
+     "title": "Interviews",
+     "module": "Non-experimental methods"
+    },
+    {
+     "id": "u11-30",
+     "title": "Focus groups",
+     "module": "Non-experimental methods"
+    },
+    {
+     "id": "u11-31",
+     "title": "Quantitative, qualitative and mixed methods",
+     "module": "Approaches and sampling"
+    },
+    {
+     "id": "u11-32",
+     "title": "Random and stratified sampling",
+     "module": "Approaches and sampling"
+    },
+    {
+     "id": "u11-33",
+     "title": "Opportunity and volunteer sampling",
+     "module": "Approaches and sampling"
+    },
+    {
+     "id": "u11-34",
+     "title": "Sample size",
+     "module": "Approaches and sampling"
+    },
+    {
+     "id": "u11-35",
+     "title": "Reliability",
+     "module": "Quality of research"
+    },
+    {
+     "id": "u11-36",
+     "title": "Validity",
+     "module": "Quality of research"
+    },
+    {
+     "id": "u11-37",
+     "title": "Generalisability",
+     "module": "Quality of research"
+    },
+    {
+     "id": "u11-38",
+     "title": "Bias in research",
+     "module": "Quality of research"
+    },
+    {
+     "id": "u11-39",
+     "title": "Replication",
+     "module": "Quality of research"
+    },
+    {
+     "id": "u11-40",
+     "title": "Preregistration",
+     "module": "Quality of research"
+    },
+    {
+     "id": "u11-41",
+     "title": "Open science",
+     "module": "Quality of research"
+    },
+    {
+     "id": "u11-42",
+     "title": "Informed consent",
+     "module": "Research ethics"
+    },
+    {
+     "id": "u11-43",
+     "title": "Confidentiality",
+     "module": "Research ethics"
+    },
+    {
+     "id": "u11-44",
+     "title": "Deception and debriefing",
+     "module": "Research ethics"
+    },
+    {
+     "id": "u11-45",
+     "title": "Vulnerable participants",
+     "module": "Research ethics"
+    },
+    {
+     "id": "u11-46",
+     "title": "Research governance and ethics committees",
+     "module": "Research ethics"
     }
    ]
   },
   {
    "id": "u12",
    "n": 12,
-   "title": "Education Policy and the School System",
-   "written": false,
+   "title": "Education",
+   "written": true,
    "lessons": [
     {
-     "id": "u12-01",
-     "title": "The structure of education in England",
-     "module": "The school system"
+     "id": "u12-13",
+     "title": "Functionalist perspectives on education",
+     "module": "Theories of education"
     },
     {
-     "id": "u12-02",
-     "title": "Maintained schools, academies and free schools",
-     "module": "The school system"
+     "id": "u12-14",
+     "title": "Marxist perspectives on education",
+     "module": "Theories of education"
     },
     {
-     "id": "u12-03",
-     "title": "Phases and key stages",
-     "module": "The school system"
+     "id": "u12-15",
+     "title": "Feminist perspectives on education",
+     "module": "Theories of education"
     },
     {
-     "id": "u12-04",
-     "title": "Governance and accountability",
-     "module": "The school system"
+     "id": "u12-16",
+     "title": "Education, socialisation and social control",
+     "module": "Theories of education"
     },
     {
-     "id": "u12-05",
-     "title": "Ofsted and school inspection",
-     "module": "The school system"
+     "id": "u12-17",
+     "title": "The hidden curriculum",
+     "module": "Theories of education"
     },
     {
-     "id": "u12-06",
-     "title": "School funding",
-     "module": "The school system"
+     "id": "u12-18",
+     "title": "Educational achievement and social class",
+     "module": "Differential achievement"
     },
     {
-     "id": "u12-07",
-     "title": "The Department for Education and policy-making",
-     "module": "Policy and context"
+     "id": "u12-19",
+     "title": "Educational achievement and gender",
+     "module": "Differential achievement"
     },
     {
-     "id": "u12-08",
-     "title": "Disadvantage and the attainment gap",
-     "module": "Policy and context"
+     "id": "u12-20",
+     "title": "Educational achievement and ethnicity",
+     "module": "Differential achievement"
     },
     {
-     "id": "u12-09",
-     "title": "Curriculum and assessment reform",
-     "module": "Policy and context"
+     "id": "u12-21",
+     "title": "Cultural capital and education",
+     "module": "Differential achievement"
     },
     {
-     "id": "u12-10",
-     "title": "Post-16 education and training",
-     "module": "Policy and context"
+     "id": "u12-22",
+     "title": "Linguistic codes",
+     "module": "Differential achievement"
     },
     {
-     "id": "u12-11",
-     "title": "Education across the four UK nations",
-     "module": "Policy and context"
+     "id": "u12-23",
+     "title": "Labelling in education",
+     "module": "Processes inside schools"
     },
     {
-     "id": "u12-12",
-     "title": "A short history of state education in England",
-     "module": "Policy and context"
+     "id": "u12-24",
+     "title": "Teacher expectations",
+     "module": "Processes inside schools"
+    },
+    {
+     "id": "u12-25",
+     "title": "The self-fulfilling prophecy",
+     "module": "Processes inside schools"
+    },
+    {
+     "id": "u12-26",
+     "title": "Selection",
+     "module": "Processes inside schools"
+    },
+    {
+     "id": "u12-27",
+     "title": "Educational inequality",
+     "module": "Education systems"
+    },
+    {
+     "id": "u12-28",
+     "title": "Private education",
+     "module": "Education systems"
+    },
+    {
+     "id": "u12-29",
+     "title": "Higher education",
+     "module": "Education systems"
+    },
+    {
+     "id": "u12-30",
+     "title": "Education policy",
+     "module": "Education systems"
+    },
+    {
+     "id": "u12-31",
+     "title": "Global education",
+     "module": "Education systems"
+    },
+    {
+     "id": "u12-32",
+     "title": "Digital learning",
+     "module": "Education systems"
+    },
+    {
+     "id": "u12-33",
+     "title": "Educational reform",
+     "module": "Education systems"
     }
    ]
   }

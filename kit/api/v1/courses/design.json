@@ -298,7 +298,7 @@
    "id": "u02",
    "n": 2,
    "title": "The Psychology of Creativity",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u02-01",
@@ -366,7 +366,7 @@
    "id": "u03",
    "n": 3,
    "title": "Ideation Methods",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u03-01",
@@ -687,88 +687,98 @@
   {
    "id": "u07",
    "n": 7,
-   "title": "Visual and Interaction Design",
-   "written": false,
+   "title": "The Visual Language of Art and Design",
+   "written": true,
    "lessons": [
     {
-     "id": "u07-01",
-     "title": "Gestalt principles in design",
-     "module": "Visual design"
+     "id": "u07-17",
+     "title": "What is art and design?",
+     "module": "What art and design are"
     },
     {
-     "id": "u07-02",
-     "title": "Visual hierarchy",
-     "module": "Visual design"
+     "id": "u07-18",
+     "title": "How art and design are assessed: the four assessment objectives",
+     "module": "What art and design are"
     },
     {
-     "id": "u07-03",
-     "title": "Typography",
-     "module": "Visual design"
+     "id": "u07-19",
+     "title": "Looking closely: an approach to visual analysis",
+     "module": "What art and design are"
     },
     {
-     "id": "u07-04",
-     "title": "Colour theory",
-     "module": "Visual design"
+     "id": "u07-20",
+     "title": "Line",
+     "module": "The visual elements"
     },
     {
-     "id": "u07-05",
-     "title": "Layout and grids",
-     "module": "Visual design"
+     "id": "u07-21",
+     "title": "Shape and form",
+     "module": "The visual elements"
     },
     {
-     "id": "u07-06",
-     "title": "Imagery and iconography",
-     "module": "Visual design"
+     "id": "u07-22",
+     "title": "Tone and value",
+     "module": "The visual elements"
     },
     {
-     "id": "u07-07",
-     "title": "Affordances and signifiers",
-     "module": "Interaction design"
+     "id": "u07-23",
+     "title": "Colour as a visual element",
+     "module": "The visual elements"
     },
     {
-     "id": "u07-08",
-     "title": "Mapping, feedback and constraints",
-     "module": "Interaction design"
+     "id": "u07-24",
+     "title": "Texture",
+     "module": "The visual elements"
     },
     {
-     "id": "u07-09",
-     "title": "Mental models and conceptual models",
-     "module": "Interaction design"
+     "id": "u07-25",
+     "title": "Space",
+     "module": "The visual elements"
     },
     {
-     "id": "u07-10",
-     "title": "Nielsen's usability heuristics",
-     "module": "Interaction design"
+     "id": "u07-26",
+     "title": "Pattern",
+     "module": "The visual elements"
     },
     {
-     "id": "u07-11",
-     "title": "Information architecture",
-     "module": "Interaction design"
+     "id": "u07-27",
+     "title": "Balance and symmetry",
+     "module": "The principles of design"
     },
     {
-     "id": "u07-12",
-     "title": "Navigation design",
-     "module": "Interaction design"
+     "id": "u07-28",
+     "title": "Contrast and emphasis",
+     "module": "The principles of design"
     },
     {
-     "id": "u07-13",
-     "title": "Designing for errors",
-     "module": "Interaction design"
+     "id": "u07-29",
+     "title": "Rhythm, repetition and movement",
+     "module": "The principles of design"
     },
     {
-     "id": "u07-14",
-     "title": "Microinteractions",
-     "module": "Interaction design"
+     "id": "u07-30",
+     "title": "Proportion and scale",
+     "module": "The principles of design"
     },
     {
-     "id": "u07-15",
-     "title": "Fitts's law and Hick's law",
-     "module": "Laws of UX"
+     "id": "u07-31",
+     "title": "Unity and variety",
+     "module": "The principles of design"
     },
     {
-     "id": "u07-16",
-     "title": "Cognitive load in interfaces",
-     "module": "Laws of UX"
+     "id": "u07-32",
+     "title": "Composition and the picture plane",
+     "module": "Composition"
+    },
+    {
+     "id": "u07-33",
+     "title": "The rule of thirds and the golden ratio",
+     "module": "Composition"
+    },
+    {
+     "id": "u07-34",
+     "title": "Gestalt principles in art and design",
+     "module": "Composition"
     }
    ]
   },

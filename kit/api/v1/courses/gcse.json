@@ -289,68 +289,98 @@
   {
    "id": "u02",
    "n": 2,
-   "title": "English Language: Reading",
-   "written": false,
+   "title": "Foundations of Literary Study",
+   "written": true,
    "lessons": [
     {
-     "id": "u02-01",
-     "title": "Explicit and implicit information",
-     "module": "Reading for meaning"
+     "id": "u02-13",
+     "title": "What is literature?",
+     "module": "What literature is"
     },
     {
-     "id": "u02-02",
-     "title": "Retrieving and summarising",
-     "module": "Reading for meaning"
+     "id": "u02-14",
+     "title": "Genre and form",
+     "module": "What literature is"
     },
     {
-     "id": "u02-03",
-     "title": "Inference and selecting evidence",
-     "module": "Reading for meaning"
+     "id": "u02-15",
+     "title": "Author, narrator and reader",
+     "module": "What literature is"
     },
     {
-     "id": "u02-04",
-     "title": "Analysing language: words and phrases",
-     "module": "Language analysis"
+     "id": "u02-16",
+     "title": "Text and context",
+     "module": "What literature is"
     },
     {
-     "id": "u02-05",
-     "title": "Language techniques and their effects",
-     "module": "Language analysis"
+     "id": "u02-17",
+     "title": "The literary canon",
+     "module": "What literature is"
     },
     {
-     "id": "u02-06",
-     "title": "Sentence forms and their effects",
-     "module": "Language analysis"
+     "id": "u02-18",
+     "title": "Close reading: a method",
+     "module": "Close reading"
     },
     {
-     "id": "u02-07",
-     "title": "Analysing structure: openings, shifts and endings",
-     "module": "Structure"
+     "id": "u02-19",
+     "title": "Diction and register",
+     "module": "Close reading"
     },
     {
-     "id": "u02-08",
-     "title": "Narrative perspective and focus",
-     "module": "Structure"
+     "id": "u02-20",
+     "title": "Imagery",
+     "module": "Close reading"
     },
     {
-     "id": "u02-09",
-     "title": "Evaluating a text critically",
-     "module": "Evaluation and comparison"
+     "id": "u02-21",
+     "title": "Metaphor, simile and personification",
+     "module": "Close reading"
     },
     {
-     "id": "u02-10",
-     "title": "Non-fiction and viewpoint texts",
-     "module": "Evaluation and comparison"
+     "id": "u02-22",
+     "title": "Symbol and motif",
+     "module": "Close reading"
     },
     {
-     "id": "u02-11",
-     "title": "Nineteenth-century non-fiction",
-     "module": "Evaluation and comparison"
+     "id": "u02-23",
+     "title": "Tone and mood",
+     "module": "Close reading"
     },
     {
-     "id": "u02-12",
-     "title": "Comparing writers' viewpoints and methods",
-     "module": "Evaluation and comparison"
+     "id": "u02-24",
+     "title": "Syntax and sentence structure",
+     "module": "Close reading"
+    },
+    {
+     "id": "u02-25",
+     "title": "The sound of language",
+     "module": "Close reading"
+    },
+    {
+     "id": "u02-26",
+     "title": "Ambiguity and multiple meanings",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u02-27",
+     "title": "Irony",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u02-28",
+     "title": "Intertextuality and allusion",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u02-29",
+     "title": "Using quotations as evidence",
+     "module": "Interpretation"
+    },
+    {
+     "id": "u02-30",
+     "title": "From annotation to argument",
+     "module": "Interpretation"
     }
    ]
   },
