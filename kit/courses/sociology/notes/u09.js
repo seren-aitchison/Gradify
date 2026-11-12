@@ -544,6 +544,8 @@ X: The London effect
 > The case shows that place, population and policy interact.
 H: Reduce or reproduce?
 P: Functionalists see education as promoting meritocracy and mobility; Marxists and Bourdieu see it reproducing inequality. Evidence suggests education does both: it offers routes to mobility for some, especially with rising participation, while advantaged families use resources to maintain their position (Bukodi and Goldthorpe, 2019).
+P: **Investigate with the lab.** Look for gaps between countries in completion and enrolment, then consider gaps within countries.
+IX: data-education
 K: Educational inequality spans class, ethnicity, gender, SEN and region, accumulates over time and is both reduced and reproduced by education.
 !: Assuming expanding education automatically reduces inequality. Advantaged groups often maintain relative advantage.
 EV: established | Pupils eligible for free school meals are much less likely to enter higher education by age 25 (DfE).
@@ -564,6 +566,7 @@ M2#sociology-u09-15-q3@2: Burgess explained much of the London effect by… | Th
 TF2#sociology-u09-15-q4@2: Educational inequalities appear only at GCSE. | false | They begin before school and continue into HE.
 M3#sociology-u09-15-q5@3: Why might expanding education not reduce relative inequality? | Advantaged groups maintain their relative position | Everyone gains equally | Inequality disappears with expansion | Qualifications become irrelevant | Advantaged families use resources to stay ahead.
 SA3#sociology-u09-15-q6@3: Evaluate whether education reduces or reproduces social inequality. | Dimensions and data (gap index 2025/26, HE entry by FSM); accumulation and intersections; London effect; functionalist vs Marxist/Bourdieu; Bukodi and Goldthorpe; judgement. | Data ; Accumulation ; Example ; Theories ; Judgement
+M2#sociology-u09-15-q7@1: Which factor do sociologists most often link to educational inequality in the UK? | Social class | Height | Birth month only | Handwriting | Class background remains a strong predictor of attainment.
 
 ## Private education
 LV: Intermediate · Evaluation
@@ -620,6 +623,8 @@ X: Tuition fees
 > Debates continue about student debt, value for money and fairness between graduates and non-graduates.
 H: Widening participation
 P: Universities run outreach programmes, **contextual admissions** (lower offers for applicants from disadvantaged backgrounds or schools) and bursaries. Critics argue progress is slow and that gaps in completion, degree classification and graduate earnings persist after entry. Others question whether a mass system devalues degrees (credential inflation).
+P: **Investigate with the lab.** Compare university enrolment rates across countries and over time.
+IX: data-education
 K: Higher education has become a mass system with about half of young people entering by 25; access remains unequal by class and to elite universities; fees and widening participation are debated.
 !: Assuming expanded participation means equal access. Gaps by background persist, especially at selective universities.
 EV: established | 50.9% of young people in England had entered HE by age 25 in the latest cohort measured (DfE).
@@ -640,6 +645,7 @@ M2#sociology-u09-17-q3@2: A working-class student at an elite university feels o
 TF2#sociology-u09-17-q4@2: Part-time and mature student numbers rose sharply after the 2012 fee increase. | false | Part-time and mature student numbers fell sharply after the 2012 fee rise.
 M3#sociology-u09-17-q5@3: Why might gaps persist after disadvantaged students enter university? | Differences in completion, classification and earnings remain | All gaps close at entry | Universities treat all students identically | Earnings don't vary | Inequality continues through and after university.
 SA2#sociology-u09-17-q6@2,3: Evaluate access to higher education in England. | Expansion and 2023/24 data; FSM and gender gaps; elite universities and belonging (Reay et al.); tuition fees; widening participation and contextual admissions; credential inflation; judgement. | Expansion ; Access ; Fees ; Widening participation
+M2#sociology-u09-17-q7@1: What is the expansion of higher education often called? | Massification | Globalisation | Secularisation | Urbanisation | Higher education has moved from an elite to a mass system in many countries.
 
 ## Education policy
 LV: Intermediate · Evaluation
@@ -698,6 +704,8 @@ X: Girls' education
 > Barriers vary by context, so effective interventions differ.
 H: International goals
 P: **Sustainable Development Goal 4** (2015) aims to "ensure inclusive and equitable quality education and promote lifelong learning opportunities for all" by 2030. Progress is behind target. **Modernisation** theorists see education as a route to development; **dependency** and critical theorists warn that imported Western models may not fit local needs.
+P: **Investigate with the lab.** Compare primary completion and university enrolment across the 22 countries.
+IX: data-education
 K: Access to schooling has expanded, but around 250 million children were out of school in 2023 and learning poverty is high; poverty, gender, conflict and quality are key barriers.
 !: Equating enrolment with learning. Many children in school don't achieve basic skills.
 EV: established | Around 250 million children and young people were out of school in 2023 (UNESCO UIS).
@@ -717,6 +725,7 @@ M2#sociology-u09-19-q3@2: A government pays families when their daughters attend
 TF2#sociology-u09-19-q4@2: Most children enrolled in school worldwide achieve basic literacy. | false | Learning poverty remains high in low- and middle-income countries.
 M3#sociology-u09-19-q5@3: Why do critical theorists question exporting Western education models? | They may not fit local needs and cultures | They are always perfect | Local systems are identical | Education never helps development | Imported Western models may ignore local needs, languages and cultures.
 SA2#sociology-u09-19-q6@2,3: Explain barriers to education globally and evaluate efforts to overcome them. | Patterns (out of school 2023, learning poverty 2022); barriers (poverty, gender, conflict, quality); girls' education and cash transfers; SDG 4; modernisation vs critical views. | Patterns ; Barriers ; Interventions ; Evaluation
+M2#sociology-u09-19-q7@1: What is a common barrier to primary education in low-income countries? | Poverty and the cost of schooling | Too many teachers | Compulsory university | Excess school buildings | Fees, uniforms and the need for children's labour keep some out of school.
 
 ## Digital learning
 LV: Introductory · Application

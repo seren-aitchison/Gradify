@@ -407,6 +407,8 @@ X: Networks, not just spots
 > Reading a word aloud involves visual areas (seeing it), language areas (recognising it), motor areas (speaking) and attention networks.
 > Brain imaging shows many regions active together for most tasks.
 > Regions specialise, but behaviour emerges from their interaction.
+P: **Investigate with the lab.** Play the identification game on the side and midline views until you can find each major region without hints.
+IX: brain-identify
 K: The brain has cortex, subcortical structures, brainstem and cerebellum; anatomical terms describe locations; regions work as networks.
 !: Assuming each behaviour has a single brain "centre". Most behaviours depend on distributed networks.
 EV: established | The brain has distinct regions with specialised functions.
@@ -425,6 +427,7 @@ M2#psychology-u02-11-q2@2: A brain scan shows the brain from the side, cut down 
 MATCH1#psychology-u02-11-q3@1: Match each term to its meaning. | Anterior = Front ; Posterior = Back ; Medial = Towards the middle ; Lateral = Towards the side | Direction terms describe locations.
 TF3#psychology-u02-11-q4@3: Brain imaging shows most tasks activate just one brain region. | false | Most tasks engage several regions working together.
 SA2#psychology-u02-11-q5@2,3: Explain why the brain is described as both specialised and networked. | Regions specialise (e.g. visual cortex, cerebellum); folding and structures; tasks like reading need many regions; imaging shows networks; damage effects depend on connections too. | Specialisation ; Example ; Networks ; Evidence
+M2#psychology-u02-11-q6@1: Which part of the brain coordinates balance and fine movement? | The cerebellum | The hippocampus | The occipital lobe | The hypothalamus | The cerebellum fine-tunes movement and balance.
 
 ## The cerebral cortex and the four lobes
 LV: Introductory · Foundation
@@ -446,6 +449,8 @@ X: Phineas Gage
 > He survived, but reports described him as more impulsive and less reliable afterwards (Harlow, 1868).
 > His case is often cited as evidence linking the frontal lobe to personality and self-control, though reports of his change vary and he later held jobs, suggesting some recovery (Macmillan, 2000).
 P: The cortex also contains **association areas** that integrate information across senses and support complex thought. The **prefrontal cortex**, at the front of the frontal lobe, is among the last areas to mature, continuing into the mid-20s, and supports planning, working memory and impulse control.
+P: **Investigate with the lab.** Select each of the four lobes and note one function and one piece of classic evidence for it.
+IX: brain-explorer
 K: The frontal, parietal, temporal and occipital lobes have broad specialisations; motor and sensory cortex map the body contralaterally.
 !: Treating lobe functions as exclusive. Each lobe has many roles and they work together.
 EV: established | Motor and somatosensory cortex are organised as contralateral maps of the body.
@@ -465,6 +470,7 @@ M2#psychology-u02-12-q2@2: After a stroke, a patient can't feel touch on their l
 TF2#psychology-u02-12-q3@2: In the motor homunculus, the hands have a large area of cortex. | true | Fine motor control of the hands needs much cortex.
 M3#psychology-u02-12-q4@3: Why is Phineas Gage's case limited evidence for frontal lobe function? | Accounts are sparse and the damage uncertain | He had no brain injury | It was a large controlled experiment | He showed no change at all | Historical reports vary and the exact damage is reconstructed.
 SA3#psychology-u02-12-q5@3: Evaluate the evidence for localisation of function in the cortex. | Penfield's stimulation maps; Broca's and Wernicke's areas; visual cortex; Gage. Strengths: converging evidence. Limitations: case studies, plasticity, networks; imaging shows distributed activity. | Motor and sensory ; Language ; Case studies ; Limits ; Judgement
+M2#psychology-u02-12-q6@1: Which lobe contains the primary motor cortex? | The frontal lobe | The occipital lobe | The temporal lobe | The parietal lobe | The primary motor cortex lies at the back of the frontal lobe, in front of the central sulcus.
 
 ## The limbic system: hippocampus and amygdala
 LV: Intermediate · Application
@@ -483,6 +489,9 @@ X: London taxi drivers
 > This suggests the hippocampus may change with intensive spatial learning, though a cross-sectional design can't fully prove cause.
 H: The amygdala
 P: The **amygdala**, an almond-shaped structure in front of the hippocampus, is central to detecting threat and learning fear. Damage to the amygdala impairs fear conditioning. Patient SM, with damage to both amygdalae, showed very little fear in situations most people find frightening (Feinstein et al., 2011). The amygdala also helps make emotional events more memorable.
+P: **Investigate with the lab.** Find the hippocampus and the amygdala on the midline view, read their functions, then test yourself in the identification game.
+IX: brain-explorer
+IX: brain-identify
 K: The hippocampus supports forming memories and navigation; the amygdala supports threat detection and emotional learning.
 !: Calling the amygdala the "fear centre" alone. It processes many kinds of emotional and social relevance.
 EV: established | The hippocampus is essential for forming new declarative memories.
@@ -502,6 +511,7 @@ M2#psychology-u02-13-q2@2: A patient can't form new memories of events but can s
 TF2#psychology-u02-13-q3@2: London taxi drivers had larger posterior hippocampi than controls. | true | Maguire et al. found larger posterior hippocampi linked to driving experience.
 M3#psychology-u02-13-q4@3: Why did Woollett and Maguire's 2011 study strengthen the taxi driver findings? | It followed trainees over time | It used rats | It scanned only one driver | It removed the hippocampus | A longitudinal design showed change with learning.
 SA2#psychology-u02-13-q5@2,3: Explain the roles of the hippocampus and amygdala, using one study for each. | Hippocampus: declarative memory and navigation; HM or Maguire's taxi drivers; place cells. Amygdala: threat detection, fear conditioning, emotional memory; patient SM. Evaluation: case studies, correlational design. | Hippocampus ; Study ; Amygdala ; Study ; Evaluation
+M2#psychology-u02-13-q6@1: What did the case of HM show about the hippocampus? | It is needed to form new long-term memories | It controls the heart rate | It processes colour vision | It stores all childhood memories | After removal of his hippocampi, HM couldn't form new declarative memories.
 
 ## Hypothalamus and thalamus
 LV: Intermediate · Application
@@ -555,6 +565,8 @@ X: Two movement disorders
 H: The cerebellum
 P: The **cerebellum** ("little brain") contains more than half the brain's neurones. It coordinates **timing**, **balance** and **precision** of movement, compares intended with actual movements and corrects errors, and supports motor learning such as riding a bike. Damage causes **ataxia**: clumsy, unsteady movement. Alcohol affects the cerebellum, which is why sobriety tests check balance and coordination.
 P: The cerebellum also contributes to some cognitive functions, including timing, language and attention, as imaging and patient studies show.
+P: **Investigate with the lab.** Select the basal ganglia and the cerebellum and compare their roles in movement.
+IX: brain-explorer
 K: The basal ganglia select and initiate movements; the cerebellum coordinates and refines them.
 !: Thinking the cerebellum only matters for movement. It also supports aspects of cognition.
 EV: established | Parkinson's disease involves loss of dopaminergic neurones projecting to the striatum.
@@ -573,6 +585,7 @@ M2#psychology-u02-15-q2@2: A person staggers and can't touch their nose accurate
 TF2#psychology-u02-15-q3@2: Huntington's disease mainly produces slowed, reduced movement. | false | Huntington's produces involuntary, jerky movements.
 M3#psychology-u02-15-q4@3: Why do Parkinson's and Huntington's diseases support the idea that the basal ganglia select movements? | Their symptoms are opposite | Both cause blindness | Neither involves the basal ganglia | Both affect only memory | Opposite symptoms fit a role in selecting and suppressing movement.
 SA2#psychology-u02-15-q5@2,3: Compare the roles of the basal ganglia and cerebellum in movement, using evidence from disorders. | Basal ganglia: initiation and selection, dopamine, Parkinson's (too little), Huntington's (too much). Cerebellum: coordination, timing, error correction, motor learning, ataxia, alcohol effects. Both interact with motor cortex. | Basal ganglia ; Disorder evidence ; Cerebellum ; Comparison
+M2#psychology-u02-15-q6@1: Which condition involves loss of dopamine neurons supplying the basal ganglia? | Parkinson's disease | Down's syndrome | Schizophrenia | Dyslexia | Parkinson's disease is caused by loss of dopamine-producing neurons in the substantia nigra.
 
 ## Lateralisation of function
 LV: Intermediate · Evaluation
@@ -1008,6 +1021,9 @@ X: Testing a drug
 > A meta-analysis of 522 trials found all 21 antidepressants studied were more effective than placebo for adults with depression, with mostly modest average effects (Cipriani et al., 2018).
 H: Chemical imbalance?
 P: A popular idea is that depression is caused by low serotonin. A 2022 umbrella review found no consistent evidence that depression is caused by lowered serotonin activity (Moncrieff et al., 2022). This doesn't mean antidepressants don't work, but how they work is more complex than "correcting an imbalance". Decisions about medication belong with qualified prescribers and patients.
+P: **Investigate with the lab.** Release a vesicle at the cholinergic synapse, then add an agonist and an antagonist and compare the effect on the receptor.
+IX: synapse
+IX: neurotransmitters
 K: Drugs alter neurotransmission in specific ways; tolerance and dependence follow repeated use; RCTs test effectiveness.
 !: Concluding that a drug works because it fixes a single chemical imbalance. Mechanisms are usually more complex.
 EV: established | Antidepressants outperform placebo on average in trials, though average effects are modest (Cipriani et al., 2018).
@@ -1026,6 +1042,7 @@ M2#psychology-u02-27-q2@2: A trial gives half the participants a sugar pill. Wha
 TF2#psychology-u02-27-q3@2: Cipriani et al. found antidepressants were on average more effective than placebo. | true | All 21 drugs outperformed placebo, mostly modestly.
 M3#psychology-u02-27-q4@3: What did Moncrieff et al.'s 2022 review conclude? | No consistent evidence low serotonin causes depression | Antidepressants never work | Depression has no biology | Serotonin is not a neurotransmitter | The review questioned the serotonin deficiency theory, not drug effectiveness.
 SA3#psychology-u02-27-q5@3: Evaluate biological drug treatments for psychological disorders, using evidence. | Mechanisms at synapses; RCT evidence (Cipriani et al.) shows modest average benefit; side effects, withdrawal, adherence; placebo effects; chemical imbalance theory questioned (Moncrieff); combining with psychological therapy; decisions with qualified professionals. | Mechanisms ; Evidence ; Limitations ; Theory debate ; Judgement
+M2#psychology-u02-27-q6@1: What does an antagonist drug do at a receptor? | Blocks the receptor without activating it | Activates the receptor like the neurotransmitter | Speeds up neurotransmitter release | Breaks down the neurotransmitter | An antagonist binds but doesn't activate, blocking the natural transmitter.
 
 ## Biological explanations of mental disorders
 LV: Advanced · Evaluation
@@ -1046,6 +1063,8 @@ X: Why biology alone is incomplete
 > MZ twin concordance for schizophrenia is well below 100%, so genes don't determine the disorder.
 > Social factors such as urban upbringing, migration and childhood adversity are associated with higher risk.
 > Effective treatments include medication, psychological therapy and social support, each with evidence.
+P: **Investigate with the lab.** Look up dopamine and serotonin in the explorer and note the disorders and drugs linked to each.
+IX: neurotransmitters
 K: Genes, neurochemistry and brain structure contribute to mental disorders, but interact with psychological and social factors.
 !: Treating biological findings as proof that a disorder is "only in the brain" or that someone is destined to develop it. Risk is probabilistic and multifactorial.
 EV: established | Many mental disorders show substantial heritability in twin studies.
@@ -1065,4 +1084,5 @@ M2#psychology-u02-28-q2@2: MZ twin concordance for a disorder is about 40%. What
 TF2#psychology-u02-28-q3@2: Tienari et al. found family environment interacted with genetic risk for schizophrenia-spectrum disorders. | true | Risk was higher with both genetic risk and poor family communication.
 M3#psychology-u02-28-q4@3: Why is the dopamine hypothesis described as reductionist? | It reduces it to one chemical | It includes too many factors | It ignores biology | It denies treatment works | Reducing schizophrenia to dopamine omits other systems and social factors.
 SA3#psychology-u02-28-q5@3: Evaluate biological explanations of mental disorders, using one disorder as an example. | Genetic (twin heritability, polygenic), neurochemical (dopamine hypothesis, revisions), neuroanatomical (ventricles, overlap); strengths: evidence base, treatments; limitations: reductionism, determinism, correlation vs cause, social risk factors; diathesis–stress and biopsychosocial models. | Genetic ; Neurochemical ; Neuroanatomical ; Limitations ; Integrated models
+M2#psychology-u02-28-q6@1: The dopamine hypothesis links which disorder to dopamine activity? | Schizophrenia | Dyslexia | Insomnia | Phobias | It proposes excess dopamine activity in some pathways underlies symptoms of schizophrenia.
 `;

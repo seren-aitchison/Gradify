@@ -358,7 +358,7 @@
    "id": "u02",
    "n": 2,
    "title": "Scales, Keys and Intervals",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u02-01",
@@ -456,7 +456,7 @@
    "id": "u03",
    "n": 3,
    "title": "Chords and Harmony",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u03-01",
@@ -1356,6 +1356,35 @@
      "module": "Composition"
     }
    ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "harmonics",
+   "title": "Harmonics on a string",
+   "kind": "Simulation",
+   "sub": "Standing waves on a string fixed at both ends: step through the harmonics, count nodes and antinodes, and change tension and mass to retune every harmonic at once.",
+   "note": "SciGradify Physics' simulation of an ideal, lossless string (f = nv/2L); a real string's harmonics are slightly sharp because of its stiffness.",
+   "tasks": null,
+   "lessons": [
+    "u08-03",
+    "u08-02",
+    "u08-07"
+   ],
+   "url": "https://getgradify.com/musicgradify/course/#/practice/harmonics"
+  },
+  {
+   "id": "beats",
+   "title": "Beats and tuning",
+   "kind": "Simulation",
+   "sub": "Two pure tones a few hertz apart: see the beats, and tune the second note until the beating matches a target rate or stops.",
+   "note": "SciGradify Physics' simulation of two sine waves of equal amplitude; real instruments also beat between their upper harmonics.",
+   "tasks": null,
+   "lessons": [
+    "u08-04",
+    "u08-01"
+   ],
+   "url": "https://getgradify.com/musicgradify/course/#/practice/beats"
   }
  ]
 }

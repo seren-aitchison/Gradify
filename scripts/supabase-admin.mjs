@@ -34,6 +34,25 @@ export function client(ref, { token = process.env.SUPABASE_ACCESS_TOKEN || `sbp_
 
 // ---------- what each migration must leave behind ----------
 // Parsed from the SQL itself, so the check can't drift from the migration.
+// what "all" means for a table or view (PostgreSQL 17+, which production runs)
+const TABLE_PRIVILEGES = ["SELECT", "INSERT", "UPDATE", "DELETE", "TRUNCATE", "REFERENCES", "TRIGGER", "MAINTAIN"];
+/** Thrown for a revoke the tool can't verify. migrate refuses the migration before rehearsing or applying it. */
+export class UnverifiableRevoke extends Error {}
+// Fails closed: every privilege must be one PostgreSQL names for tables, and every grantee a plain role that
+// has_table_privilege can check. PUBLIC can't be passed to has_table_privilege, so a revoke from PUBLIC is refused until
+// the tool can verify it; so are GRANT OPTION FOR, CASCADE/RESTRICT and anything else it doesn't understand.
+function revokedPrivileges(privs, table, roles) {
+  const refuse = (why) => { throw new UnverifiableRevoke(`can't verify "revoke ${privs.trim()} on public.${table} from ${roles.trim()}": ${why}. Refused rather than skipped.`); };
+  const named = privs.trim().toLowerCase();
+  const p = named === "all" || named === "all privileges" ? TABLE_PRIVILEGES : privs.split(",").map((x) => x.trim().toUpperCase());
+  for (const x of p) if (!TABLE_PRIVILEGES.includes(x)) refuse(`"${x}" isn't a table privilege it can check`);
+  const rs = roles.split(",").map((r) => r.trim());
+  for (const r of rs) {
+    if (!/^[a-z_][a-z0-9_]*$/i.test(r)) refuse(`"${r}" isn't a single role name`);
+    if (r.toLowerCase() === "public") refuse("revokes from PUBLIC aren't verifiable yet");
+  }
+  return rs.map((role) => ({ table, role, privileges: p }));
+}
 export function expectations(sql) {
   const s = sql.replace(/--.*$/gm, "");
   const all = (re) => [...s.matchAll(re)].map((m) => m.slice(1));
@@ -47,9 +66,18 @@ export function expectations(sql) {
     views: all(/create (?:or replace )?view public\.(\w+)/gi).map(([v]) => v),
     constraints: all(/add constraint (\w+)/gi).map(([c]) => c),
     indexes: all(/create (?:unique )?index (?:if not exists )?(\w+)/gi).map(([i]) => i),
+    // table privileges a migration takes away: each (table, role) must afterwards hold none of them. A revoke this
+    // can't verify is refused, never skipped (see revokedPrivileges)
+    revoked: all(/revoke ([\w, ]+?) on (?:table )?public\.(\w+) from ([\w, ]+)/gi).flatMap(([privs, table, roles]) => revokedPrivileges(privs, table, roles)),
   };
 }
 const lit = (x) => `'${String(x).replace(/'/g, "''")}'`;
+/** The checks as statements that raise an error (and so roll back the query they're part of) when one doesn't hold.
+ *  Each is a DO block: if the check is false, RAISE EXCEPTION names it. These are added by this tool at apply time;
+ *  migration files themselves still may not contain DO blocks (see destructive()). */
+export function guards(v) {
+  return v.exprs.map((q, i) => `do $gradify_check$ begin if not (${q}) then raise exception '%', ${lit(`migration check failed: ${v.checks[i]}`)}; end if; end $gradify_check$;`).join("\n");
+}
 // one query that returns, for each expected object, whether it exists
 export function verifyQuery(e) {
   const checks = [
@@ -62,8 +90,9 @@ export function verifyQuery(e) {
     ...e.views.map((v) => [`view ${v}`, `exists (select 1 from pg_views where schemaname = 'public' and viewname = ${lit(v)})`]),
     ...e.constraints.map((c) => [`constraint ${c}`, `exists (select 1 from pg_constraint where conname = ${lit(c)})`]),
     ...(e.indexes || []).map((x) => [`index ${x}`, `exists (select 1 from pg_indexes where schemaname = 'public' and indexname = ${lit(x)})`]),
+    ...(e.revoked || []).map((r) => [`${r.role} holds no ${r.privileges.join("/")} on ${r.table}`, `not (${r.privileges.map((p) => `has_table_privilege(${lit(r.role)}, ${lit(`public.${r.table}`)}, ${lit(p)})`).join(" or ")})`]),
   ];
-  return { checks: checks.map(([label]) => label), query: checks.length ? `select ${checks.map(([, q], i) => `${q} as c${i}`).join(", ")};` : "select 1 as c0;" };
+  return { checks: checks.map(([label]) => label), exprs: checks.map(([, q]) => q), query: checks.length ? `select ${checks.map(([, q], i) => `${q} as c${i}`).join(", ")};` : "select 1 as c0;" };
 }
 
 // ---------- safety checks ----------
@@ -92,19 +121,36 @@ const SAFE = [
   /^create table (if not exists )?public\.\w+ \(/i,
   /^create (unique )?index (if not exists )?\w+ on public\.\w+ /i,
   /^create policy "[^"]+" on public\.\w+ /i,
-  /^create (or replace )?function public\.\w+\(.*\) returns [\w ]+ language (plpgsql|sql)( (stable|immutable|volatile))?( security definer set search_path = [\w, ]+)? as \$\$BODY\$\$$/i,
+  /^create (or replace )?function public\.\w+\(.*\) returns ([\w ]+|table \([\w, ]+\)) language (plpgsql|sql)( (stable|immutable|volatile))?( security definer set search_path = [\w, ]+)? as \$\$BODY\$\$$/i,
   /^create trigger \w+ (before|after) (insert|update|delete)( or (insert|update|delete))* on (public|auth)\.\w+ for each row execute function public\.\w+\(\)$/i,
   /^create (or replace )?view public\.\w+ with \(security_invoker = true\) as select /i,
   /^create schema if not exists \w+$/i,
   /^alter table public\.\w+ enable row level security$/i,
   /^revoke [\w, ]+ on (table )?public\.\w+ from [\w, ]+$/i,
+  // who may call a function: permissions only, never data
+  /^revoke (all|execute) on function public\.\w+\([\w, ]*\) from [\w, ]+$/i,
+  /^grant execute on function public\.\w+\([\w, ]*\) to [\w, ]+$/i,
   /^comment on /i,
 ];
 const ROW_EVALUATED = /\b(default|check|generated always as)\b[^,]*\bpublic\.\w+\s*\(/i;
+// Owner settings tables hold no learner data: a migration may change their values, but only one keyed row at a time,
+// to plain literals, e.g. update public.ai_limits set per_period = 40 where feature = 'tutor' and plan = 'pro'.
+// Rows in these tables that a migration updates are left out of the "existing values unchanged" comparison;
+// every other table, and every other row count, is still checked.
+export const CONFIG_TABLES = ["ai_limits", "ai_plan_caps", "ai_settings", "ai_prices", "ai_feature_models"];
+const LITERAL = String.raw`(?:'[^']*'|-?\d+(?:\.\d+)?|true|false)`;
+const CONFIG_UPDATE = new RegExp(String.raw`^update public\.(${CONFIG_TABLES.join("|")}) set \w+ = ${LITERAL}(?:, \w+ = ${LITERAL})* where \w+ = ${LITERAL}(?: and \w+ = ${LITERAL})*$`, "i");
+/** The owner settings tables a migration updates (their changed values are intended). */
+export const configUpdates = (sql) => [...new Set(statements(sql).map((st) => st.match(CONFIG_UPDATE)?.[1]?.toLowerCase()).filter(Boolean))];
 export function destructive(sql) {
   const found = [], stmts = statements(sql);
+  // seed rows may go only into tables this same migration creates (which have no existing rows to change)
+  const created = new Set(stmts.map((s) => s.match(/^create table (?:if not exists )?public\.(\w+) \(/i)?.[1]?.toLowerCase()).filter(Boolean));
   for (const st of stmts) {
     const lower = st.toLowerCase();
+    if (CONFIG_UPDATE.test(st)) continue;
+    const ins = st.match(/^insert into public\.(\w+) \(/i);
+    if (ins) { if (!created.has(ins[1].toLowerCase())) found.push(`insert into an existing table: ${st.slice(0, 100)}`); continue; }
     if (/^alter table public\.\w+ /i.test(st) && !/ enable row level security$/i.test(st)) {
       // ALTER TABLE: each comma-separated action must be add column / add constraint / drop constraint (re-added)
       const actions = st.replace(/^alter table public\.\w+ /i, "").split(/,(?![^(]*\))/).map((x) => x.trim());
@@ -143,6 +189,12 @@ export async function listMigrations() {
 /** Apply pending migrations in order. Stops at the first failure and reports it; never skips one. */
 export async function migrate(c, { list, log = () => {}, next = false, backedUp = false, rehearse = false } = {}) {
   list ||= await listMigrations();
+  // nothing pending: nothing to back up or apply (checked before the backup gate, which only matters for changes)
+  const recordedAlready = await c.sql("select version from supabase_migrations.schema_migrations").catch(() => []);
+  if (recordedAlready.length && list.every((m) => recordedAlready.some((r) => r.version === m.version))) {
+    for (const m of list) log(`= ${m.file} (already applied)`);
+    return { ok: true, report: list.map((m) => ({ ...m, result: "already applied" })) };
+  }
   // existing learner data needs a full backup taken by the owner (dashboard or supabase db dump) first
   const users = Number((await c.sql("select count(*)::int as n from auth.users"))[0]?.n || 0);
   const before0 = await rowCounts(c), rows0 = Object.values(before0).reduce((a, b) => a + b, 0);
@@ -162,26 +214,34 @@ export async function migrate(c, { list, log = () => {}, next = false, backedUp 
     if (done.has(m.version)) { report.push({ ...m, result: "already applied", sha }); log(`= ${m.file} (already applied)`); continue; }
     const danger = destructive(sql);
     if (danger.length) { report.push({ ...m, result: "REFUSED", sha, error: `could change or remove existing data: ${danger.join("; ")}` }); log(`✗ ${m.file}: refused (${danger.join("; ")})`); return { ok: false, report, stoppedAt: m.file }; }
+    // the checks this migration must pass, worked out before anything is rehearsed or applied: a revoke the tool
+    // can't verify stops here, with nothing changed
+    let v;
+    try { v = verifyQuery(expectations(sql)); }
+    catch (e) { if (!(e instanceof UnverifiableRevoke)) throw e; report.push({ ...m, result: "REFUSED", sha, error: e.message }); log(`✗ ${m.file}: refused (${e.message})`); return { ok: false, report, stoppedAt: m.file }; }
     // rehearse it first on a temporary copy of the current data (real PostgreSQL, never production)
     if (rehearse) {
-      const r = await rehearseMigration(JSON.parse(JSON.stringify(await snapshot(c))), list, m);
+      const r = await rehearseMigration(JSON.parse(JSON.stringify(await snapshot(c))), list, m, configUpdates(sql));
       if (!r.ok) { report.push({ ...m, result: "FAILED REHEARSAL", sha, error: r.problems.join("; ") }); log(`✗ ${m.file}: rehearsal on a copy failed (${r.problems.join("; ")})`); return { ok: false, report, stoppedAt: m.file }; }
       log(`✓ ${m.file}: rehearsed on a copy, every existing value unchanged`);
     }
     const before = await rowCounts(c), cols = await columnsNow(c), sums = await checksums(c, cols);
     const t0 = Date.now();
     try {
-      // one query: the migration and its ledger entry commit together or not at all (checked by the probe above)
-      await c.sql(`${sql}\ninsert into supabase_migrations.schema_migrations (version, name, statements) values (${lit(m.version)}, ${lit(m.name)}, array[${lit(sql)}]);`);
+      // one query: the migration, its ledger entry and its checks commit together or not at all (all-or-nothing is
+      // proved by the probe above). Each check that doesn't hold raises an error naming it, so the whole query is
+      // rolled back and production is left exactly as it was.
+      await c.sql(`${sql}\ninsert into supabase_migrations.schema_migrations (version, name, statements) values (${lit(m.version)}, ${lit(m.name)}, array[${lit(sql)}]);\n${guards(v)}`);
     } catch (e) {
       report.push({ ...m, result: "FAILED", sha, error: e.message });
       log(`✗ ${m.file}: ${e.message}`);
       return { ok: false, report, stoppedAt: m.file };
     }
-    const v = verifyQuery(expectations(sql));
+    // and confirmed again after the commit, from a fresh query
     const row = (await c.sql(v.query))[0] || {};
     const missing = v.checks.filter((_, i) => row[`c${i}`] !== true);
-    const gone = [...lost(before, await rowCounts(c)), ...changed(sums, await checksums(c, cols)).map((t) => `${t}: existing values changed`)];
+    const intended = configUpdates(sql);
+    const gone = [...lost(before, await rowCounts(c)), ...changed(sums, await checksums(c, cols)).filter((t) => !intended.includes(t)).map((t) => `${t}: existing values changed`)];
     const result = gone.length ? "EXISTING DATA CHANGED" : missing.length ? "APPLIED BUT INCOMPLETE" : "applied and verified";
     report.push({ ...m, result, sha, ms: Date.now() - t0, checked: v.checks.length, missing, gone });
     log(`${missing.length || gone.length ? "✗" : "✓"} ${m.file}: ${v.checks.length} objects checked, row counts kept${missing.length ? `; missing: ${missing.join(", ")}` : ""}${gone.length ? `; EXISTING DATA CHANGED: ${gone.join(", ")}` : ""}`);
@@ -310,9 +370,12 @@ export async function tokenScope(c, f = globalThis.fetch.bind(globalThis), token
 }
 
 // read-only: everything that must be true before anything is changed
-async function preflight(c) {
+async function preflight(c, { acceptBroad = false } = {}) {
   const scope = await tokenScope(c);
-  if (!scope.ok) return `**Token scope check failed: nothing else was run.**\n\n${md(scope.rows.map((r) => ({ ...r, result: r.ok ? "ok" : "FAIL" })), ["check", "status", "result"])}\n\nCreate a token restricted to the Gradify project with only: database (read and write), Edge Functions (read and deploy), secrets (read names).`;
+  // --accept-broad-token: the project owner's explicit, logged decision to proceed with a token that reaches more
+  // than this needs (Supabase personal tokens can't currently be narrowed). Nothing extra is read or printed.
+  const override = !scope.ok && acceptBroad ? "\n\n**Token broader than needed: accepted by the project owner for this run (--accept-broad-token).** The script still reads nothing beyond this project and prints no key." : "";
+  if (!scope.ok && !acceptBroad) return `**Token scope check failed: nothing else was run.**\n\n${md(scope.rows.map((r) => ({ ...r, result: r.ok ? "ok" : "FAIL" })), ["check", "status", "result"])}\n\nCreate a token restricted to the Gradify project with only: database (read and write), Edge Functions (read and deploy), secrets (read names).`;
   const st = await status(c);
   const users = Number((await c.sql("select count(*)::int as n from auth.users"))[0]?.n || 0);
   const counts = await rowCounts(c), rows = Object.values(counts).reduce((a, b) => a + b, 0);
@@ -327,7 +390,7 @@ Token scope:
 
 ${md(scope.rows.map((r) => ({ ...r, result: r.ok ? "ok" : "FAIL" })), ["check", "status", "result"])}
 
-Changes made by this check: none.`;
+Changes made by this check: none.${override}`;
 }
 
 async function rlsAudit(c) {
@@ -352,7 +415,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   let body, failed = false;
   try {
     if (cmd === "status") body = await status(c);
-    else if (cmd === "preflight") { body = await preflight(c); failed = /\*\*(Learner data exists|These tables exist|Token scope check failed)/.test(body); }
+    else if (cmd === "preflight") { body = await preflight(c, { acceptBroad: rest.includes("--accept-broad-token") }); failed = /\*\*(Learner data exists|These tables exist|Token scope check failed)/.test(body); }
     else if (cmd === "backup") body = await backup(c, rest.find((x) => !x.startsWith("--")));
     else if (cmd === "migrate") {
       const r = await migrate(c, { log: (l) => console.error(l), next: rest.includes("--next"), backedUp: rest.includes("--existing-data-backed-up"), rehearse: true });

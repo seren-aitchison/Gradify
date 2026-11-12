@@ -404,7 +404,7 @@
    "id": "u03",
    "n": 3,
    "title": "Cardiovascular Medicine",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u03-01",
@@ -502,7 +502,7 @@
    "id": "u04",
    "n": 4,
    "title": "Respiratory Medicine",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u04-01",
@@ -1479,6 +1479,110 @@
      "module": "Population health and evidence"
     }
    ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "action-potential",
+   "title": "Membrane potential and the action potential",
+   "kind": "Simulation",
+   "sub": "The Hodgkin–Huxley model: find the threshold and refractory period, and block Na⁺ or K⁺ channels as local anaesthetics and toxins do.",
+   "note": "SciGradify Biology's simulation: the published 1952 equations for one patch of squid axon membrane, with no propagation or myelin. Human values differ in detail; the mechanism is the same.",
+   "tasks": null,
+   "lessons": [
+    "u01-02",
+    "u03-02"
+   ],
+   "url": "https://getgradify.com/medgradify/course/#/practice/action-potential"
+  },
+  {
+   "id": "synapse",
+   "title": "The neuromuscular junction",
+   "kind": "Simulation",
+   "sub": "Calcium entry, acetylcholine release, nicotinic receptors and acetylcholinesterase, with agonists, antagonists and anticholinesterases.",
+   "note": "SciGradify Biology's simulation of a cholinergic synapse: a small kinetic model with illustrative values; the sequence of events is accurate.",
+   "tasks": null,
+   "lessons": [
+    "u01-16",
+    "u07-09"
+   ],
+   "url": "https://getgradify.com/medgradify/course/#/practice/synapse"
+  },
+  {
+   "id": "immune-response",
+   "title": "Primary and secondary immune responses",
+   "kind": "Illustrative model",
+   "sub": "Infect and vaccinate on any day and compare a first (mostly IgM) response with a faster, larger IgG memory response.",
+   "note": "SciGradify Biology's descriptive response curves, which follow measured shapes; arbitrary units, not a model of any one vaccine.",
+   "tasks": null,
+   "lessons": [
+    "u01-13",
+    "u08-07"
+   ],
+   "url": "https://getgradify.com/medgradify/course/#/practice/immune-response"
+  },
+  {
+   "id": "inheritance",
+   "title": "Inheritance and Punnett squares",
+   "kind": "Simulation",
+   "sub": "Autosomal, codominant (ABO) and X-linked crosses: work out a couple's risks, then breed offspring and test the ratio.",
+   "note": "SciGradify Biology's simulation: unlinked genes and equally viable genotypes. Real genetic counselling also weighs penetrance, new mutations and family history.",
+   "tasks": null,
+   "lessons": [
+    "u01-15"
+   ],
+   "url": "https://getgradify.com/medgradify/course/#/practice/inheritance"
+  },
+  {
+   "id": "news2",
+   "title": "NEWS2 scoring practice",
+   "kind": "Exercise",
+   "sub": "Score generated sets of adult observations parameter by parameter and choose the clinical response.",
+   "note": "NurseGradify's trainer: generated adult observations scored on the RCP NEWS2 chart (2017), oxygen scale 1. Educational only: use your organisation's chart and escalation policy.",
+   "tasks": null,
+   "lessons": [
+    "u02-06",
+    "u10-01"
+   ],
+   "url": "https://getgradify.com/medgradify/course/#/practice/news2"
+  },
+  {
+   "id": "heart",
+   "title": "The cardiac cycle and the pressure–volume loop",
+   "kind": "Simulation",
+   "sub": "A model left heart: the Wiggers diagram and pressure–volume loop, responding to heart rate, contractility and resistance.",
+   "note": "SciGradify Biology's time-varying elastance ventricle with a two-element Windkessel; left heart only, no reflexes.",
+   "tasks": null,
+   "lessons": [
+    "u03-01",
+    "u03-08"
+   ],
+   "url": "https://getgradify.com/medgradify/course/#/practice/heart"
+  },
+  {
+   "id": "gas-exchange",
+   "title": "Gas exchange and oxygen transport",
+   "kind": "Simulation",
+   "sub": "Oxygen loading along a lung capillary and the haemoglobin dissociation curve: thicken the membrane, climb to altitude, shift the curve.",
+   "note": "SciGradify Biology's simulation: Fick diffusion with the Hill equation (n = 2.7, P₅₀ 26.8 mmHg); one capillary, no shunt or V/Q mismatch.",
+   "tasks": null,
+   "lessons": [
+    "u04-01",
+    "u04-03"
+   ],
+   "url": "https://getgradify.com/medgradify/course/#/practice/gas-exchange"
+  },
+  {
+   "id": "kidney",
+   "title": "Glomerular filtration and reabsorption",
+   "kind": "Simulation",
+   "sub": "Starling forces set the GFR; glucose reabsorption saturates at the transport maximum (glycosuria); ADH controls urine concentration.",
+   "note": "SciGradify Biology's simulation with textbook values (GFR 125 mL/min, glucose Tm 375 mg/min); no autoregulation.",
+   "tasks": null,
+   "lessons": [
+    "u06-01"
+   ],
+   "url": "https://getgradify.com/medgradify/course/#/practice/kidney"
   }
  ]
 }

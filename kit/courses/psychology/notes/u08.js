@@ -137,6 +137,8 @@ X: Applying the ABC model
 > C: Feeling low and avoiding contact. Changing the belief, for example "they may just be busy", can change the consequence. This example is illustrative.
 H: Evaluation
 P: The cognitive model has strong practical support, as cognitive therapies are effective for many conditions. But it is unclear whether negative thinking causes distress or results from it; longitudinal studies suggest both. Critics argue it can underplay real adversity and social circumstances by focusing on how people interpret events.
+P: **Investigate with the lab.** Use the thought record to trace how a situation leads to a thought, an emotion and a behaviour.
+IX: thought-record
 K: Beck's cognitive triad and Ellis's ABC model link distress to thoughts and beliefs; attentional and interpretive biases maintain difficulties; cognitive therapies are effective, but causal direction is debated.
 !: Assuming negative thoughts are always irrational. Some reflect genuinely difficult circumstances.
 EV: established | Cognitive therapies based on the cognitive model are effective for many conditions.
@@ -155,6 +157,7 @@ M2#psychology-u08-04-q2@2: After failing a test, a student thinks "I'm stupid an
 TF2#psychology-u08-04-q3@2: Longitudinal studies suggest negative thinking and low mood may influence each other. | true | Causal direction may run both ways.
 M3#psychology-u08-04-q4@3: Why do critics say the cognitive model may underplay social circumstances? | It focuses on interpretation, not real adversity | It focuses only on wider society | It ignores thoughts completely | It rejects therapy of every kind | Some distress reflects real difficulties.
 SA3#psychology-u08-04-q5@3: Evaluate the cognitive model of psychopathology. | Beck (triad, schemas, distortions); Ellis (ABC); attentional and interpretive biases; therapy effectiveness; causal direction; social circumstances; judgement. | Theory ; Biases ; Evidence ; Judgement
+M2#psychology-u08-04-q6@1: In Beck's cognitive model, what drives emotional reactions? | How we interpret events | The events themselves alone | Unconscious drives | Reinforcement history only | Beck argued that interpretations, not events, shape emotions.
 
 ## The behavioural model
 LV: Introductory · Application

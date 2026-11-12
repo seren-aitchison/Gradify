@@ -130,6 +130,8 @@ P: After conditioning, stimuli similar to the CS also produce the CR, more weakl
 H: Discrimination
 P: In **discrimination training**, one stimulus is followed by the UCS (CS+) and a similar one is not (CS−). The organism learns to respond to the CS+ but not the CS−. Pavlov trained dogs to tell apart tones of different pitch; when the discrimination became too hard, some dogs became agitated, which he called "experimental neurosis".
 P: Generalisation also occurs in operant learning: a child praised for tidying their bedroom may also tidy the living room.
+P: **Investigate with the lab.** Run acquisition and then extinction in the Rescorla–Wagner model and see how a similar stimulus produces a weaker response.
+IX: classical
 K: Generalisation spreads a learned response to similar stimuli; discrimination narrows it to the stimulus that actually predicts the outcome.
 X: Overgeneralised fear
 > After a car accident on a motorway, someone fears all motorways (generalisation).
@@ -152,6 +154,7 @@ M2#psychology-u04-04-q2@2: A dog salivates to a high tone that predicts food but
 TF1#psychology-u04-04-q3@1: The more similar a stimulus is to the CS, the stronger the generalised response tends to be. | true | This is the generalisation gradient.
 M3#psychology-u04-04-q4@3: Why might overgeneralisation of fear be a problem in anxiety disorders? | It spreads fear to safe situations | It makes fear disappear too quickly | It prevents any learning about danger | It only affects fears of animals | Fear spreading to safe situations widens avoidance and distress, a pattern seen in anxiety disorders.
 SA3#psychology-u04-04-q5@2,3: Explain generalisation and discrimination using an example of a fear. | Example: after being bitten by a large dog, a child fears all dogs (generalisation), more strongly for large dogs (gradient). Through safe experiences with friendly dogs, the child learns to fear only threatening dogs (discrimination). Overgeneralisation features in anxiety; treatment builds discrimination. | Example ; Generalisation ; Gradient ; Discrimination ; Link to anxiety or treatment
+M2#psychology-u04-04-q6@1: What is stimulus generalisation? | Responding to stimuli similar to the conditioned stimulus | Learning to tell two stimuli apart | Forgetting a conditioned response | Responding only to the exact conditioned stimulus | Generalisation spreads the response to similar stimuli; discrimination narrows it.
 
 ## Operant conditioning
 LV: Introductory · Foundation
@@ -168,6 +171,8 @@ H: Operant versus classical
 - Classical conditioning links two **stimuli**; the learner's behaviour doesn't change what happens.
 - Operant conditioning links a **behaviour** to its **consequence**; what the learner does matters.
 - Classical responses are mostly involuntary (salivation, fear); operant behaviours are mostly voluntary (pressing, speaking, studying).
+P: **Investigate with the lab.** Compare cumulative records for fixed and variable ratio schedules, then switch to extinction.
+IX: schedules
 K: Operant conditioning changes voluntary behaviour through its consequences: reinforcement strengthens it and punishment weakens it.
 X: A student and phone notifications
 > Checking the phone (behaviour) is sometimes followed by an interesting message (reinforcement).
@@ -193,6 +198,7 @@ M2#psychology-u04-05-q2@2: A pupil answers questions more often after the teache
 MS2#psychology-u04-05-q3@2: Which are features of operant rather than classical conditioning? Choose all that apply. | Behaviour is followed by a consequence ; The learner's actions change what happens ; It mainly involves voluntary behaviour | Two stimuli are paired regardless of behaviour ; It mainly involves reflexes | Operant learning depends on consequences of voluntary actions.
 M3#psychology-u04-05-q4@3: Which finding most challenges a purely operant account of learning? | Rats learned a maze without reward, showing it once rewarded | Reinforced behaviours increase in frequency | Punished behaviours decrease | Pigeons peck keys for food | Tolman's latent learning shows learning can occur without reinforcement, implying cognition.
 SA3#psychology-u04-05-q5@3: Evaluate operant conditioning as an explanation of human behaviour. | Strengths: reliable principles; explains many habits; applications (token economies, behaviour modification, classroom management). Limitations: neglects cognition (latent learning, social learning); biological constraints; animal-to-human generalisation; ignores meaning and culture. | Principles ; Applications ; Cognitive critique ; Biological constraints ; Judgement
+M2#psychology-u04-05-q6@1: Which schedule of reinforcement produces behaviour most resistant to extinction? | Variable ratio | Continuous reinforcement | Fixed interval | Fixed ratio | Unpredictable reinforcement keeps responding going long after rewards stop.
 
 ## Positive and negative reinforcement
 LV: Introductory · Application
@@ -734,6 +740,8 @@ H: Education and parenting
 P: Praise and feedback (operant reinforcement), modelling of skills and behaviours by teachers, classroom token systems and clear routines all apply learning principles. Parenting programmes based on social learning theory, which teach reinforcement of positive behaviour and consistent, non-harsh discipline, have good evidence for reducing children's conduct problems.
 H: Technology
 P: Variable rewards in apps and games, streaks, badges and notifications apply operant principles to keep users engaged. This can support learning and healthy habits, as in this course's XP and streaks, but can also encourage compulsive use. Debates about "persuasive" or "addictive" design concern whether techniques serve users' goals or exploit them.
+P: **Investigate with the lab.** Read the ABAB graph by level, trend and variability, and decide whether the intervention worked.
+IX: abab
 K: Learning theory underpins exposure-based therapies, parenting programmes, education and technology design; its ethical use depends on consent and whose goals it serves.
 X: Applying exposure therapy to a fear of dogs
 > Build a hierarchy: pictures of dogs, a dog across the street, a calm dog on a lead, stroking a dog.
@@ -756,4 +764,5 @@ M2#psychology-u04-20-q2@2: A therapist helps a client with a fear of lifts ride 
 TF2#psychology-u04-20-q3@3: Aversion therapy to change sexual orientation is endorsed by professional bodies today. | false | Such practices are condemned as harmful and ineffective by professional bodies.
 M3#psychology-u04-20-q4@3: Which is the strongest ethical concern about engagement techniques in apps? | They can foster compulsive use that serves companies | They use principles from learning theory | They can support learning and habits | They give feedback to users | The concern is whose goals are served and whether users can meaningfully consent.
 SA3#psychology-u04-20-q5@3: Evaluate the application of learning theory to therapy. | Strengths: exposure therapy and systematic desensitisation effective for phobias and anxiety; parenting programmes reduce conduct problems. Limitations: relapse (spontaneous recovery, renewal); symptom-focused, may neglect cognition (hence CBT); ethical problems with aversion therapy. Education only; clinical use requires a qualified practitioner. | Exposure evidence ; Other application ; Relapse ; Ethics ; Judgement
+M2#psychology-u04-20-q6@1: Why is an ABAB design stronger than a simple AB design? | Reversing and reapplying the intervention shows the change follows it | It uses a much larger sample of participants | It needs no baseline phase | It removes all individual differences | Behaviour changing each time the intervention starts and stops suggests a causal effect.
 `;

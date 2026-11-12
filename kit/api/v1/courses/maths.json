@@ -6120,5 +6120,324 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "sieve",
+   "title": "Primes and the sieve of Eratosthenes",
+   "kind": "Explorer",
+   "sub": "Cross out multiples step by step to find every prime below 200, see why you can stop at √200, and factorise any number.",
+   "note": "Exact arithmetic on whole numbers up to 200; factorisation by trial division.",
+   "tasks": 3,
+   "lessons": [
+    "u01-11",
+    "u01-12",
+    "u01-13",
+    "u01-09",
+    "u01-15",
+    "u02-11",
+    "u02-33"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/sieve"
+  },
+  {
+   "id": "modular",
+   "title": "Clock arithmetic: modular arithmetic",
+   "kind": "Explorer",
+   "sub": "Add, multiply and raise to powers modulo n on a clock, with the full table: find inverses, zero divisors and Fermat's little theorem.",
+   "note": "Exact arithmetic modulo n; the clock and full table are drawn for small moduli.",
+   "tasks": 3,
+   "lessons": [
+    "u02-02",
+    "u02-03",
+    "u02-12",
+    "u02-13",
+    "u02-27",
+    "u02-17"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/modular"
+  },
+  {
+   "id": "practice",
+   "title": "Practice problems",
+   "kind": "Generated practice",
+   "sub": "Endless GCSE and A level problems, from fractions and percentages to differentiation, integration and series, each with a worked method. Type fractions, roots and lists as you would on paper.",
+   "note": "Problems generated in your browser from templates at GCSE and A level; answers are checked numerically or symbolically, so an unusual equivalent form can occasionally be marked wrong.",
+   "tasks": null,
+   "lessons": [
+    "u01-16",
+    "u01-18",
+    "u01-29",
+    "u01-22",
+    "u01-20",
+    "u01-14",
+    "u01-25",
+    "u03-09",
+    "u03-10",
+    "u03-11",
+    "u03-21",
+    "u05-10",
+    "u06-02",
+    "u12-03",
+    "u07-07",
+    "u07-29",
+    "u07-39",
+    "u21-03"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/practice"
+  },
+  {
+   "id": "grapher",
+   "title": "Graphs and transformations",
+   "kind": "Graph explorer",
+   "sub": "Plot any function, move sliders to see how each parameter changes it, and match target graphs in seven transformation challenges.",
+   "note": "Graphs are plotted by sampling the function, so a very steep or discontinuous graph can show a join that isn't there.",
+   "tasks": 7,
+   "lessons": [
+    "u03-33",
+    "u03-37",
+    "u07-25",
+    "u06-13",
+    "u03-29"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/grapher"
+  },
+  {
+   "id": "complex",
+   "title": "The complex plane",
+   "kind": "Laboratory",
+   "sub": "Add and multiply complex numbers on an Argand diagram: addition is vector addition, multiplication multiplies moduli and adds arguments.",
+   "note": "Exact complex arithmetic, drawn to scale on the Argand diagram.",
+   "tasks": 3,
+   "lessons": [
+    "u03-44",
+    "u09-02"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/complex"
+  },
+  {
+   "id": "unity",
+   "title": "Roots of complex numbers",
+   "kind": "Laboratory",
+   "sub": "Solve zⁿ = r e^{iθ}: the n roots sit evenly round a circle, form a regular polygon and always sum to zero.",
+   "note": "The n roots computed exactly with De Moivre's theorem.",
+   "tasks": 3,
+   "lessons": [
+    "u03-44"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/unity"
+  },
+  {
+   "id": "tangent",
+   "title": "From secant to tangent",
+   "kind": "Laboratory",
+   "sub": "Shrink the gap h and watch a secant become the tangent: the derivative as the limit of the difference quotient, and why |x| has no derivative at 0.",
+   "note": "Difference quotients computed numerically: a very small h shows floating-point rounding.",
+   "tasks": 4,
+   "lessons": [
+    "u07-03",
+    "u07-07",
+    "u07-08",
+    "u07-05",
+    "u07-06",
+    "u19-18"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/tangent"
+  },
+  {
+   "id": "riemann",
+   "title": "Riemann sums and area",
+   "kind": "Laboratory",
+   "sub": "Approximate a definite integral with left, right, midpoint or trapezium strips and watch the error shrink as n grows, at the rate the theory predicts.",
+   "note": "Numerical strip sums, compared with the exact integral where it's known.",
+   "tasks": 3,
+   "lessons": [
+    "u07-28",
+    "u07-29",
+    "u07-30",
+    "u07-26",
+    "u07-36"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/riemann"
+  },
+  {
+   "id": "matrix",
+   "title": "Matrices as transformations",
+   "kind": "Laboratory",
+   "sub": "Set a 2×2 matrix and watch the plane transform: columns as images of i and j, the determinant as area, and eigenvectors as the directions that only stretch.",
+   "note": "Real 2×2 matrices; complex eigenvalues are reported, but they have no real eigenvector line to draw.",
+   "tasks": 5,
+   "lessons": [
+    "u11-09",
+    "u11-21",
+    "u11-15",
+    "u11-24",
+    "u11-25",
+    "u11-14",
+    "u11-16",
+    "u05-24"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/matrix"
+  },
+  {
+   "id": "lln",
+   "title": "The law of large numbers",
+   "kind": "Simulation",
+   "sub": "Flip coins and roll dice thousands of times: the proportion of successes settles towards the probability, while the raw count keeps wandering.",
+   "note": "Pseudo-random numbers from your browser stand in for real coins and dice.",
+   "tasks": 3,
+   "lessons": [
+    "u12-19",
+    "u12-01",
+    "u12-02",
+    "u28-20",
+    "u29-27"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/lln"
+  },
+  {
+   "id": "clt",
+   "title": "The central limit theorem",
+   "kind": "Simulation",
+   "sub": "Take thousands of samples from a skewed population and plot their means: the histogram becomes a normal curve with spread σ/√n.",
+   "note": "Pseudo-random samples from the chosen population; the normal curve shown is the theoretical limit.",
+   "tasks": 3,
+   "lessons": [
+    "u12-20",
+    "u12-30",
+    "u12-07",
+    "u13-08"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/clt"
+  },
+  {
+   "id": "regression",
+   "title": "Least-squares regression",
+   "kind": "Laboratory",
+   "sub": "Click to add data points and see the line of best fit, its residuals and r. Add an outlier, or try data where r ≈ 0 but the pattern is strong.",
+   "note": "Ordinary least squares on the points you place; r measures linear association only.",
+   "tasks": 4,
+   "lessons": [
+    "u13-36",
+    "u13-02",
+    "u13-35",
+    "u13-41",
+    "u24-03"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/regression"
+  },
+  {
+   "id": "ode",
+   "title": "Slope fields and numerical solutions",
+   "kind": "Laboratory",
+   "sub": "Draw the slope field of dy/dx = f(x, y), click to set an initial value, and compare Euler's method with Runge–Kutta (RK4) against the exact solution.",
+   "note": "Numerical solutions (Euler and RK4) with the step size shown; the slope field is sampled on a grid.",
+   "tasks": 3,
+   "lessons": [
+    "u10-02",
+    "u10-13",
+    "u10-11",
+    "u10-01",
+    "u10-33",
+    "u20-12",
+    "u19-24"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/ode"
+  },
+  {
+   "id": "roots",
+   "title": "Root-finding: bisection, Newton and secant",
+   "kind": "Laboratory",
+   "sub": "Solve f(x) = 0 three ways, with every iterate and its error: watch bisection halve the error and Newton–Raphson double the correct digits, or fail.",
+   "note": "Floating-point iteration with the stopping tolerance shown.",
+   "tasks": 3,
+   "lessons": [
+    "u19-09",
+    "u19-10",
+    "u19-11",
+    "u19-12"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/roots"
+  },
+  {
+   "id": "descent",
+   "title": "Gradient descent",
+   "kind": "Laboratory",
+   "sub": "Roll downhill on a contour map: tune the learning rate, zigzag through a narrow valley, diverge, and find different local minima from different starts.",
+   "note": "Gradient descent on fixed two-variable functions with exact gradients; real machine-learning losses have far more dimensions.",
+   "tasks": 4,
+   "lessons": [
+    "u18-22",
+    "u18-02",
+    "u19-22",
+    "u24-05",
+    "u18-07",
+    "u24-04",
+    "u19-23"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/descent"
+  },
+  {
+   "id": "circles",
+   "title": "Circle theorems",
+   "kind": "Laboratory",
+   "sub": "Drag points round a circle and watch the angle at the centre, angles in the same segment, Thales' semicircle and cyclic quadrilaterals hold for every position.",
+   "note": "Exact geometry on one circle; points can be dragged or moved round the circle with the arrow keys.",
+   "tasks": null,
+   "lessons": [
+    "u05-13",
+    "u05-11",
+    "u05-04",
+    "u05-12"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/circles"
+  },
+  {
+   "id": "quadratics",
+   "title": "Quadratics: roots, vertex and discriminant",
+   "kind": "Laboratory",
+   "sub": "Move a, b and c and watch the parabola, its vertex, roots and discriminant change together, with the completed-square and factorised forms worked out live.",
+   "note": "Exact algebra for y = ax² + bx + c with coefficients in steps of 0.1.",
+   "tasks": null,
+   "lessons": [
+    "u03-11",
+    "u03-12",
+    "u03-13",
+    "u03-06"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/quadratics"
+  },
+  {
+   "id": "trig",
+   "title": "The unit circle and trigonometric graphs",
+   "kind": "Laboratory",
+   "sub": "Turn a point round the unit circle and watch it trace the sine and cosine graphs, with exact values, quadrants and the transformations of y = A sin(B(x − C)) + D.",
+   "note": "Exact values at the standard angles; angles in whole degrees.",
+   "tasks": null,
+   "lessons": [
+    "u06-07",
+    "u06-13",
+    "u06-03",
+    "u06-04",
+    "u06-06",
+    "u06-14"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/trig"
+  },
+  {
+   "id": "explog",
+   "title": "Exponentials and logarithms",
+   "kind": "Laboratory",
+   "sub": "Growth and decay, doubling time and half-life, logarithms as the reflection of exponentials in y = x, and growth turned into a straight line on a log scale.",
+   "note": "Exact functions; the base moves in steps of 0.01.",
+   "tasks": null,
+   "lessons": [
+    "u03-21",
+    "u03-22",
+    "u03-23",
+    "u03-36"
+   ],
+   "url": "https://getgradify.com/mathgradify/course/#/practice/explog"
+  }
  ]
 }

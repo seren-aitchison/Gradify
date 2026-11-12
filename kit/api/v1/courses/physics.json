@@ -7250,5 +7250,310 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "projectile",
+   "title": "Projectile motion and air resistance",
+   "kind": "Simulation",
+   "sub": "Launch a ball on Earth, the Moon, Mars or Jupiter, with or without drag, hit a target and find the best angle.",
+   "note": "Uniform gravity and still air; quadratic drag on a 145 g baseball (C_d = 0.47); integrated numerically.",
+   "tasks": null,
+   "lessons": [
+    "u04-07",
+    "u04-06",
+    "u04-05",
+    "u04-14",
+    "u04-29",
+    "u04-30"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/projectile"
+  },
+  {
+   "id": "collisions",
+   "title": "Collisions on an air track",
+   "kind": "Simulation",
+   "sub": "Elastic, sticky and exploding gliders: momentum is always conserved, kinetic energy only sometimes.",
+   "note": "One dimension, frictionless track; the coefficient of restitution sets how much kinetic energy survives.",
+   "tasks": null,
+   "lessons": [
+    "u04-22",
+    "u04-23",
+    "u04-24",
+    "u04-25",
+    "u04-26"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/collisions"
+  },
+  {
+   "id": "oscillator",
+   "title": "Damped and driven oscillations",
+   "kind": "Simulation",
+   "sub": "A mass on a spring: period, damping regimes, energy exchange, resonance curves and the quality factor.",
+   "note": "Linear spring and viscous damping; the motion is integrated numerically and the resonance curve is the exact steady state.",
+   "tasks": null,
+   "lessons": [
+    "u06-02",
+    "u06-03",
+    "u06-04",
+    "u06-06",
+    "u06-07",
+    "u06-08",
+    "u06-09",
+    "u06-10",
+    "u06-11",
+    "u06-19"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/oscillator"
+  },
+  {
+   "id": "pendulum",
+   "title": "Pendulums: small angles to chaos",
+   "kind": "Simulation",
+   "sub": "The exact period against 2π√(L/g), then two double pendulums released a millionth of a radian apart.",
+   "note": "Point masses on light rigid rods, no friction; the exact period is computed with the arithmetic–geometric mean.",
+   "tasks": null,
+   "lessons": [
+    "u06-05",
+    "u06-15",
+    "u06-16",
+    "u38-07",
+    "u38-08",
+    "u38-20"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/pendulum"
+  },
+  {
+   "id": "orbits",
+   "title": "Orbits and Kepler's laws",
+   "kind": "Simulation",
+   "sub": "Launch a planet: circles, ellipses and escape, equal areas in equal times, and T² against a³.",
+   "note": "Newtonian gravity from a fixed star much heavier than the planet; symplectic integration keeps energy steady.",
+   "tasks": null,
+   "lessons": [
+    "u07-01",
+    "u07-05",
+    "u07-06",
+    "u07-07",
+    "u07-08",
+    "u07-09",
+    "u07-10"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/orbits"
+  },
+  {
+   "id": "waves",
+   "title": "Superposition, standing waves and beats",
+   "kind": "Simulation",
+   "sub": "Add two waves, build standing waves on a string from its tension and mass, and hear beats between two notes.",
+   "note": "Ideal lossless string and pure sine waves; standing-wave motion is slowed down so it can be seen.",
+   "tasks": null,
+   "lessons": [
+    "u10-03",
+    "u10-07",
+    "u10-08",
+    "u10-09",
+    "u10-10",
+    "u10-17",
+    "u10-18",
+    "u10-19",
+    "u06-14"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/waves"
+  },
+  {
+   "id": "interference",
+   "title": "Double slit, single slit and gratings",
+   "kind": "Simulation",
+   "sub": "Interference fringes inside a diffraction envelope, missing orders, and the spectra a grating makes.",
+   "note": "Far-field (Fraunhofer) intensity for monochromatic light; the ripple-tank picture isn't to scale.",
+   "tasks": null,
+   "lessons": [
+    "u19-13",
+    "u19-14",
+    "u19-15",
+    "u19-16",
+    "u19-17",
+    "u10-08",
+    "u10-13",
+    "u20-07"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/interference"
+  },
+  {
+   "id": "circuits",
+   "title": "DC circuits and Kirchhoff's laws",
+   "kind": "Simulation",
+   "sub": "Series, parallel and mixed networks, internal resistance and maximum power, and a Wheatstone bridge to balance.",
+   "note": "Solved exactly by nodal analysis; ideal wires and fixed resistances; the bridge meter has 50 Ω resistance.",
+   "tasks": null,
+   "lessons": [
+    "u16-03",
+    "u16-05",
+    "u16-06",
+    "u16-07",
+    "u16-08",
+    "u16-09",
+    "u16-10",
+    "u16-25"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/circuits"
+  },
+  {
+   "id": "transients",
+   "title": "Charging capacitors and growing currents",
+   "kind": "Simulation",
+   "sub": "Throw the switch on an RC or RL circuit, time the charge to 63%, find the half-life and see why τ = RC.",
+   "note": "Exact exponential solutions with ideal components; the clock is sped up or slowed so each time constant is watchable.",
+   "tasks": null,
+   "lessons": [
+    "u16-11",
+    "u16-12",
+    "u16-13",
+    "u16-15",
+    "u15-15",
+    "u17-13",
+    "u17-14"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/transients"
+  },
+  {
+   "id": "efield",
+   "title": "Electric fields and potential",
+   "kind": "Simulation",
+   "sub": "Drag charges and a test charge: field lines, equipotentials, dipoles, null points and the uniform field between plates.",
+   "note": "Point charges in a plane, in a vacuum, added by Coulomb's law; field lines are traced numerically.",
+   "tasks": null,
+   "lessons": [
+    "u15-04",
+    "u15-05",
+    "u15-06",
+    "u15-07",
+    "u15-08",
+    "u15-09",
+    "u15-10",
+    "u15-16"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/efield"
+  },
+  {
+   "id": "lorentz",
+   "title": "Charged particles in magnetic fields",
+   "kind": "Simulation",
+   "sub": "Protons, electrons and alpha particles circling in B, drifting in crossed fields, and a velocity selector to tune.",
+   "note": "Uniform fields, non-relativistic speeds; integrated with the Boris method, which keeps the speed exact in a pure magnetic field.",
+   "tasks": null,
+   "lessons": [
+    "u17-01",
+    "u17-02",
+    "u17-03",
+    "u17-05"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/lorentz"
+  },
+  {
+   "id": "gas",
+   "title": "Kinetic theory of gases",
+   "kind": "Simulation",
+   "sub": "Hundreds of molecules in a box: pressure from wall collisions, Boyle's and Charles's laws, and the Maxwell–Boltzmann distribution.",
+   "note": "A two-dimensional gas of hard discs with elastic collisions, in units where k = m = 1.",
+   "tasks": null,
+   "lessons": [
+    "u13-05",
+    "u13-09",
+    "u13-10",
+    "u13-12",
+    "u12-28",
+    "u12-10"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/gas"
+  },
+  {
+   "id": "photoelectric",
+   "title": "The photoelectric effect",
+   "kind": "Simulation",
+   "sub": "Shine light on seven metals: thresholds, stopping voltages, intensity against frequency, and Planck's constant from your own data.",
+   "note": "Real work functions; the current scale is arbitrary and electron energies are spread evenly up to the maximum.",
+   "tasks": null,
+   "lessons": [
+    "u20-01",
+    "u20-03",
+    "u20-05"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/photoelectric"
+  },
+  {
+   "id": "decay",
+   "title": "Radioactive decay and half-life",
+   "kind": "Simulation",
+   "sub": "Watch individual nuclei decay at random, measure the half-life, and follow a parent–daughter decay chain.",
+   "note": "Each nucleus decays independently (Monte Carlo); the dashed curves are the exact equations.",
+   "tasks": null,
+   "lessons": [
+    "u23-08",
+    "u23-09",
+    "u23-10"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/decay"
+  },
+  {
+   "id": "quantum",
+   "title": "Quantum wells and tunnelling",
+   "kind": "Simulation",
+   "sub": "Energy levels and wavefunctions in four potentials, solved from the Schrödinger equation, and electrons tunnelling through barriers.",
+   "note": "One electron in one dimension; the Schrödinger equation is solved numerically and checked against the exact results.",
+   "tasks": null,
+   "lessons": [
+    "u20-09",
+    "u20-11",
+    "u20-12",
+    "u20-13",
+    "u20-22",
+    "u20-23",
+    "u20-24",
+    "u20-25"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/quantum"
+  },
+  {
+   "id": "relativity",
+   "title": "Time dilation and spacetime",
+   "kind": "Simulation",
+   "sub": "A light clock on a moving train, length contraction, relativistic velocity addition and a spacetime diagram of simultaneity.",
+   "note": "Exact Lorentz transformations for uniform motion; the train is drawn contracted along its motion.",
+   "tasks": null,
+   "lessons": [
+    "u25-04",
+    "u25-05",
+    "u25-06",
+    "u25-07",
+    "u25-08",
+    "u25-09",
+    "u25-10",
+    "u25-11",
+    "u25-23"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/relativity"
+  },
+  {
+   "id": "optics",
+   "title": "Refraction, lenses and mirrors",
+   "kind": "Simulation",
+   "sub": "Snell's law and total internal reflection, then ray diagrams for converging and diverging lenses and curved mirrors.",
+   "note": "Geometrical optics with thin lenses and paraxial rays; reflected brightness from the Fresnel equations.",
+   "tasks": null,
+   "lessons": [
+    "u19-01",
+    "u19-02",
+    "u19-03",
+    "u19-04",
+    "u19-05",
+    "u19-06",
+    "u19-07",
+    "u19-08",
+    "u19-26"
+   ],
+   "url": "https://getgradify.com/scigradify/physics/#/practice/optics"
+  }
  ]
 }

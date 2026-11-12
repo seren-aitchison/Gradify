@@ -2829,5 +2829,35 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "okoye",
+   "title": "Okoye v Harbour Cameras: was there a contract?",
+   "kind": "Legal reasoning case file",
+   "sub": "Identify the issues, apply offer, acceptance and the postal rule to a sequence of messages, and advise the client, building an IRAC analysis as you go.",
+   "note": "A fictional case file on offer and acceptance in the law of England and Wales, with simplified facts and scored decisions; study material, not legal advice.",
+   "tasks": null,
+   "lessons": [
+    "u03-02",
+    "u03-03",
+    "u03-04"
+   ],
+   "url": "https://getgradify.com/lawgradify/course/#/practice/okoye"
+  },
+  {
+   "id": "courts",
+   "title": "Court hierarchy and precedent",
+   "kind": "Precedent explorer",
+   "sub": "Explore the courts of England and Wales and decide whether earlier decisions bind, persuade or must be taken into account.",
+   "note": "The court hierarchy of England and Wales and the general rules of precedent; exceptions are summarised, not exhaustive.",
+   "tasks": null,
+   "lessons": [
+    "u01-09",
+    "u01-10",
+    "u01-08"
+   ],
+   "url": "https://getgradify.com/lawgradify/course/#/practice/courts"
+  }
  ]
 }

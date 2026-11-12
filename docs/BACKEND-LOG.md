@@ -39,3 +39,390 @@ No entries yet: no Supabase project is connected (6 November 2026).
 Create a token restricted to the Gradify project with only: database (read and write), Edge Functions (read and deploy), secrets (read names).
 
 **Follow-up, same day:** the project owner saved a second token meant to be limited to the Gradify project. After the proxy pickup delay, preflight still showed it can read organisations and the project's API keys, so the gate refused it again. Nothing was read beyond the scope probe, and nothing was changed. Still to do: save a token that fails those two probes, or decide deliberately to accept a broader one. Then run `preflight`, `backup`, `migrate --next` until none remain, `rls-audit` and `auth-config` (each with `--write`, and `NODE_USE_ENV_PROXY=1` when running behind the session proxy). After that, set `SUPABASE_URL` in `gradify.config.js` and do the two-account check.
+
+## 2026-11-09 23:47 UTC · Backup · ezlohntrnassgsbofcfc
+
+**Failed:** Backup NOT verified: restore rehearsal: migration 20261028120000 differs from the version that was applied; restore rehearsal: migration 20261029120000 differs from the version that was applied; restore rehearsal: migration 20261031120000 differs from the version that was applied; restore rehearsal: migration 20261101120000 differs from the version that was applied; restore rehearsal: migration 20261105120000 differs from the version that was applied; restore rehearsal: migration 20261105130000 differs from the version that was applied; restore rehearsal: migration 20261105140000 differs from the version that was applied; restore rehearsal: migration 20261106120000 differs from the version that was applied; restore rehearsal: migration 20261106130000 differs from the version that was applied; restore rehearsal: migration 20261106140000 differs from the version that was applied; restore rehearsal: migration 20261107120000 differs from the version that was applied. Nothing has been changed; don't migrate.
+
+## 2026-11-09 23:49 UTC · Backup · ezlohntrnassgsbofcfc
+
+Backup written to /tmp/claude-0/-home-user/e12758f2-df7b-5438-89fd-958e31037ed2/scratchpad/backup-2026-11-10/gradify-ezlohntrnassgsbofcfc-2026-11-09T23-48-28-152Z.json (sha256 e462516fd4361111…, readable only by you) and **verified**: re-read from disk with a matching hash, every table's saved rows equal its count, a fresh count of the live database matches, and it was **restored into a separate temporary PostgreSQL database** (built from the 11 recorded migrations) with every row and value identical (16 tables, 534 rows). 16 public tables, 534 rows, 7 accounts (counted, not copied). 11 migrations already recorded.
+
+Note: this is a logical snapshot through the API. Auth accounts and storage files aren't included; Supabase's own daily backups (and point-in-time recovery on paid plans) cover those.
+
+| table | rows |
+|---|---|
+| activity | 0 |
+| assessment_attempts | 0 |
+| body_checkins | 0 |
+| cards | 0 |
+| course_progress | 0 |
+| documents | 0 |
+| fitness_tests | 0 |
+| packs | 0 |
+| page_events | 525 |
+| plan_blocks | 0 |
+| profiles | 7 |
+| revalidation_entries | 0 |
+| reviews | 0 |
+| tutor_usage | 2 |
+| waitlist | 0 |
+| workouts | 0 |
+
+## 2026-11-09 23:58 UTC · Migrations · ezlohntrnassgsbofcfc
+
+Applied and verified 20261110120000_billing_and_ai_allowances.sql; paused there (--next).
+
+| migration | result | objects checked | sha256 | detail |
+|---|---|---|---|---|
+| 20261028120000_gradify_core.sql | already applied |  | 669c6c071f0a |  |
+| 20261029120000_mastery_evidence.sql | already applied |  | 1fa8fc1287fa |  |
+| 20261031120000_sport_body_intelligence.sql | already applied |  | f57af713cf3d |  |
+| 20261101120000_assessment_attempts.sql | already applied |  | 9a4dc8f0f92c |  |
+| 20261105120000_course_progress.sql | already applied |  | 8e91fc50a9f0 |  |
+| 20261105130000_tutor_usage.sql | already applied |  | e28f425f9254 |  |
+| 20261105140000_revalidation.sql | already applied |  | ea912e3a20e6 |  |
+| 20261106120000_learner_profile.sql | already applied |  | 94038916a0d5 |  |
+| 20261106130000_tutor_modes.sql | already applied |  | 07067e243f59 |  |
+| 20261106140000_page_events.sql | already applied |  | 0a42ad23bb52 |  |
+| 20261107120000_game_rewards.sql | already applied |  | 40f556898d25 |  |
+| 20261110120000_billing_and_ai_allowances.sql | applied and verified | 21 | aeafef577d4e |  |
+
+## 2026-11-09 23:58 UTC · Row-level security audit · ezlohntrnassgsbofcfc
+
+Every public table has row-level security, with policies limited to the row's owner where learners own the rows.
+
+| table | rls | learner-owned | policies | result |
+|---|---|---|---|---|
+| activity | on | yes | 1 | ok |
+| ai_limits | on | no | 1 | ok |
+| ai_settings | on | no | 0 | ok |
+| assessment_attempts | on | yes | 3 | ok |
+| billing_events | on | no | 0 | ok |
+| body_checkins | on | yes | 1 | ok |
+| cards | on | yes | 1 | ok |
+| course_progress | on | yes | 4 | ok |
+| documents | on | yes | 1 | ok |
+| fitness_tests | on | yes | 1 | ok |
+| packs | on | yes | 1 | ok |
+| page_events | on | no | 1 | ok |
+| plan_blocks | on | yes | 1 | ok |
+| profiles | on | yes | 1 | ok |
+| revalidation_entries | on | yes | 4 | ok |
+| reviews | on | yes | 1 | ok |
+| subscriptions | on | yes | 1 | ok |
+| tutor_usage | on | yes | 2 | ok |
+| waitlist | on | no | 1 | ok |
+| workouts | on | yes | 1 | ok |
+
+## 2026-11-10 01:13 UTC · Backup · ezlohntrnassgsbofcfc
+
+**Failed:** Backup NOT verified: page_events changed during the backup (549 → 550). Nothing has been changed; don't migrate.
+
+## 2026-11-10 01:14 UTC · Backup · ezlohntrnassgsbofcfc
+
+Backup written to /tmp/claude-0/-home-user/e12758f2-df7b-5438-89fd-958e31037ed2/scratchpad/backup-2026-11-10b/gradify-ezlohntrnassgsbofcfc-2026-11-10T01-13-33-731Z.json (sha256 add186d226e9e86a…, readable only by you) and **verified**: re-read from disk with a matching hash, every table's saved rows equal its count, a fresh count of the live database matches, and it was **restored into a separate temporary PostgreSQL database** (built from the 12 recorded migrations) with every row and value identical (20 tables, 570 rows). 20 public tables, 570 rows, 7 accounts (counted, not copied). 12 migrations already recorded.
+
+Note: this is a logical snapshot through the API. Auth accounts and storage files aren't included; Supabase's own daily backups (and point-in-time recovery on paid plans) cover those.
+
+| table | rows |
+|---|---|
+| activity | 0 |
+| ai_limits | 8 |
+| ai_settings | 1 |
+| assessment_attempts | 0 |
+| billing_events | 0 |
+| body_checkins | 0 |
+| cards | 0 |
+| course_progress | 0 |
+| documents | 0 |
+| fitness_tests | 0 |
+| packs | 0 |
+| page_events | 550 |
+| plan_blocks | 0 |
+| profiles | 7 |
+| revalidation_entries | 0 |
+| reviews | 0 |
+| subscriptions | 1 |
+| tutor_usage | 3 |
+| waitlist | 0 |
+| workouts | 0 |
+
+## 2026-11-10 01:15 UTC · Migrations · ezlohntrnassgsbofcfc
+
+All migrations applied and verified.
+
+| migration | result | objects checked | sha256 | detail |
+|---|---|---|---|---|
+| 20261028120000_gradify_core.sql | already applied |  | 669c6c071f0a |  |
+| 20261029120000_mastery_evidence.sql | already applied |  | 1fa8fc1287fa |  |
+| 20261031120000_sport_body_intelligence.sql | already applied |  | f57af713cf3d |  |
+| 20261101120000_assessment_attempts.sql | already applied |  | 9a4dc8f0f92c |  |
+| 20261105120000_course_progress.sql | already applied |  | 8e91fc50a9f0 |  |
+| 20261105130000_tutor_usage.sql | already applied |  | e28f425f9254 |  |
+| 20261105140000_revalidation.sql | already applied |  | ea912e3a20e6 |  |
+| 20261106120000_learner_profile.sql | already applied |  | 94038916a0d5 |  |
+| 20261106130000_tutor_modes.sql | already applied |  | 07067e243f59 |  |
+| 20261106140000_page_events.sql | already applied |  | 0a42ad23bb52 |  |
+| 20261107120000_game_rewards.sql | already applied |  | 40f556898d25 |  |
+| 20261110120000_billing_and_ai_allowances.sql | already applied |  | aeafef577d4e |  |
+| 20261110180000_monthly_ai_windows.sql | applied and verified | 1 | c565a2ddcac0 |  |
+
+## 2026-11-10 01:18 UTC · Stripe check (read-only) · ezlohntrnassgsbofcfc
+
+Everything matches what the site sells.
+
+| check | result | detail |
+|---|---|---|
+| Stripe account | ok | GB, default currency gbp, charges enabled |
+| Mode | ok | LIVE: real payments |
+| Gradify Pro monthly price | ok | price_1Ua3NEEOmpIuKzUMXI11yUK4: GBP 7.99 every 1 month, inclusive of tax, active; product "Gradify Pro" active; site sells 7.99 |
+| Gradify Pro yearly price | ok | price_1Ua3NEEOmpIuKzUM8q1nDCab: GBP 63.99 every 1 year, inclusive of tax, active; product "Gradify Pro" active; site sells 63.99 |
+| Both prices on the same product | ok | prod_VbFtYIrZfgHAtD |
+| No duplicate Gradify products | ok | prod_VbFtYIrZfgHAtD "Gradify Pro" |
+| Webhook endpoint | ok | we_1Ua3NFEOmpIuKzUM5WTc9Qwp enabled, API 2025-08-27.basil, 1 endpoint(s) for this URL |
+| Webhook events | ok | checkout.session.completed, customer.subscription.created, customer.subscription.updated, customer.subscription.deleted, customer.subscription.paused, customer.subscription.resumed |
+| Billing portal | ok | bpc_1Ua3NFEOmpIuKzUMj2Ai3lNL (default): cancel at_period_end, card updates on, invoices on |
+| Portal plan switching | ok | monthly ↔ yearly |
+| Supabase secret STRIPE_SECRET_KEY | ok | set |
+| Supabase secret STRIPE_WEBHOOK_SECRET | ok | set |
+| Supabase secret STRIPE_PRICE_MONTH | ok | set |
+| Supabase secret STRIPE_PRICE_YEAR | ok | set |
+| STRIPE_PRICE_MONTH is the live monthly price | ok | compared by SHA-256 |
+| STRIPE_PRICE_YEAR is the live yearly price | ok | compared by SHA-256 |
+| Gradify Pro on sale | ok | GRADIFY_PRO_ON_SALE not set: only GRADIFY_BILLING_TESTERS can check out; testers not set |
+| Existing subscriptions | ok | 0 |
+
+Changes made by this check: none.
+
+## 2026-11-10 01:51 UTC · Backup · ezlohntrnassgsbofcfc
+
+Backup written to /tmp/claude-0/-home-user/e12758f2-df7b-5438-89fd-958e31037ed2/scratchpad/backup-2026-11-10c/gradify-ezlohntrnassgsbofcfc-2026-11-10T01-50-13-438Z.json (sha256 0c8517f0e6fd7671…, readable only by you) and **verified**: re-read from disk with a matching hash, every table's saved rows equal its count, a fresh count of the live database matches, and it was **restored into a separate temporary PostgreSQL database** (built from the 13 recorded migrations) with every row and value identical (20 tables, 572 rows). 20 public tables, 572 rows, 7 accounts (counted, not copied). 13 migrations already recorded.
+
+Note: this is a logical snapshot through the API. Auth accounts and storage files aren't included; Supabase's own daily backups (and point-in-time recovery on paid plans) cover those.
+
+| table | rows |
+|---|---|
+| activity | 0 |
+| ai_limits | 8 |
+| ai_settings | 1 |
+| assessment_attempts | 0 |
+| billing_events | 0 |
+| body_checkins | 0 |
+| cards | 0 |
+| course_progress | 0 |
+| documents | 0 |
+| fitness_tests | 0 |
+| packs | 0 |
+| page_events | 552 |
+| plan_blocks | 0 |
+| profiles | 7 |
+| revalidation_entries | 0 |
+| reviews | 0 |
+| subscriptions | 1 |
+| tutor_usage | 3 |
+| waitlist | 0 |
+| workouts | 0 |
+
+## 2026-11-10 02:19 UTC · Backup · ezlohntrnassgsbofcfc
+
+Backup written to /tmp/claude-0/-home-user/e12758f2-df7b-5438-89fd-958e31037ed2/scratchpad/backup-2026-11-10d/gradify-ezlohntrnassgsbofcfc-2026-11-10T02-18-57-563Z.json (sha256 c96b9b990ced9bbb…, readable only by you) and **verified**: re-read from disk with a matching hash, every table's saved rows equal its count, a fresh count of the live database matches, and it was **restored into a separate temporary PostgreSQL database** (built from the 13 recorded migrations) with every row and value identical (20 tables, 574 rows). 20 public tables, 574 rows, 7 accounts (counted, not copied). 13 migrations already recorded.
+
+Note: this is a logical snapshot through the API. Auth accounts and storage files aren't included; Supabase's own daily backups (and point-in-time recovery on paid plans) cover those.
+
+| table | rows |
+|---|---|
+| activity | 0 |
+| ai_limits | 8 |
+| ai_settings | 1 |
+| assessment_attempts | 0 |
+| billing_events | 0 |
+| body_checkins | 0 |
+| cards | 0 |
+| course_progress | 0 |
+| documents | 0 |
+| fitness_tests | 0 |
+| packs | 0 |
+| page_events | 554 |
+| plan_blocks | 0 |
+| profiles | 7 |
+| revalidation_entries | 0 |
+| reviews | 0 |
+| subscriptions | 1 |
+| tutor_usage | 3 |
+| waitlist | 0 |
+| workouts | 0 |
+
+## 2026-11-10 02:27 UTC · Migrations · ezlohntrnassgsbofcfc
+
+All migrations applied and verified.
+
+| migration | result | objects checked | sha256 | detail |
+|---|---|---|---|---|
+| 20261028120000_gradify_core.sql | already applied |  | 669c6c071f0a |  |
+| 20261029120000_mastery_evidence.sql | already applied |  | 1fa8fc1287fa |  |
+| 20261031120000_sport_body_intelligence.sql | already applied |  | f57af713cf3d |  |
+| 20261101120000_assessment_attempts.sql | already applied |  | 9a4dc8f0f92c |  |
+| 20261105120000_course_progress.sql | already applied |  | 8e91fc50a9f0 |  |
+| 20261105130000_tutor_usage.sql | already applied |  | e28f425f9254 |  |
+| 20261105140000_revalidation.sql | already applied |  | ea912e3a20e6 |  |
+| 20261106120000_learner_profile.sql | already applied |  | 94038916a0d5 |  |
+| 20261106130000_tutor_modes.sql | already applied |  | 07067e243f59 |  |
+| 20261106140000_page_events.sql | already applied |  | 0a42ad23bb52 |  |
+| 20261107120000_game_rewards.sql | already applied |  | 40f556898d25 |  |
+| 20261110120000_billing_and_ai_allowances.sql | already applied |  | aeafef577d4e |  |
+| 20261110180000_monthly_ai_windows.sql | already applied |  | c565a2ddcac0 |  |
+| 20261111120000_ai_controls.sql | applied and verified | 41 | 5bbcecd24be9 |  |
+
+## 2026-11-10 02:27 UTC · Row-level security audit · ezlohntrnassgsbofcfc
+
+Every public table has row-level security, with policies limited to the row's owner where learners own the rows.
+
+| table | rls | learner-owned | policies | result |
+|---|---|---|---|---|
+| activity | on | yes | 1 | ok |
+| ai_admins | on | yes | 1 | ok |
+| ai_cache | on | no | 0 | ok |
+| ai_feature_models | on | no | 0 | ok |
+| ai_limits | on | no | 1 | ok |
+| ai_plan_caps | on | no | 1 | ok |
+| ai_prices | on | no | 0 | ok |
+| ai_settings | on | no | 0 | ok |
+| ai_testers | on | yes | 1 | ok |
+| assessment_attempts | on | yes | 3 | ok |
+| billing_events | on | no | 0 | ok |
+| body_checkins | on | yes | 1 | ok |
+| cards | on | yes | 1 | ok |
+| course_progress | on | yes | 4 | ok |
+| documents | on | yes | 1 | ok |
+| fitness_tests | on | yes | 1 | ok |
+| packs | on | yes | 1 | ok |
+| page_events | on | no | 1 | ok |
+| plan_blocks | on | yes | 1 | ok |
+| profiles | on | yes | 1 | ok |
+| revalidation_entries | on | yes | 4 | ok |
+| reviews | on | yes | 1 | ok |
+| subscriptions | on | yes | 1 | ok |
+| tutor_usage | on | yes | 2 | ok |
+| waitlist | on | no | 1 | ok |
+| workouts | on | yes | 1 | ok |
+
+## 2026-11-10 02:28 UTC · Gradify AI usage (read-only) · ezlohntrnassgsbofcfc
+
+**Gradify AI is OFF.**
+This month: £0.00 of the £50.00 budget (0%). Today: £0.00 of £5.00.
+3 requests from 1 learner; 0 in flight, 0 abandoned. Response cache: 0 answers, 0 reuses.
+Limits: 6 a minute and 60 an hour per learner, 120 a minute overall. Fair-use caps: free £1.00, pro £5.00 a month. £0.79 per $.
+
+### By feature and plan
+
+| feature | plan | requests | counted | failed | cached | input tokens | output tokens | cache reads | cost | per request |
+|---|---|---|---|---|---|---|---|---|---|---|
+| explain | free | 3 | 3 | 0 | 0 | 0 | 0 | 0 | £0.00 | 0.00p |
+
+### Top learners this month
+
+| learner | plan | requests | cost | fair-use cap |
+|---|---|---|---|---|
+| 0f6123cc | free | 3 | £0.00 | £1.00 |
+
+### Last 30 days
+
+| day | requests | cost |
+|---|---|---|
+| 2026-11-09 | 3 | £0.00 |
+
+### Failures in the last 7 days
+
+None yet.
+
+Changes made by this check: none.
+
+## 2026-11-10 02:35 UTC · Gradify AI functions deployed and verified (AI off) · ezlohntrnassgsbofcfc
+
+Deployed `course-tutor` and `study-pack` (v1, verify_jwt on) after the migration above. `ANTHROPIC_API_KEY` is not set.
+Checked live with a test learner: explain, Socratic turn, marking, study pack, AI quiz and card rewrite each answered
+503 `ai_off` with no usage row written (still 3 rows, none in flight); signed out 401. A learner calling `ai_claim`,
+`ai_settle`, `ai_claim_for`, `ai_settle_for`, `ai_cache_get`, `ai_usage_overview`, `ai_admin_overview` or `is_pro` gets
+403; reading `ai_settings`, `ai_prices`, `ai_feature_models`, `ai_cache`, `ai_testers` or `ai_admins` returns no rows;
+`my_ai_allowance` shows Free 5 / 5 / 1 / 2 with `enabled` false. `ai-usage.html`: signed out and non-owner messages
+correct; the owner view was checked with sample data only (adding a test account as an owner was not done).
+Settings after deploy: AI off, 0 testers, 0 owners; Pro allowances 40 / 25 / 5 / 8; caps Free £1, Pro £5; models:
+tutor and explain claude-opus-5-5, pack and quiz claude-sonnet-5-5.
+
+Changes made by this check: none.
+
+## 2026-11-10 · Goals release · production
+
+**Dates.** Everything below happened on 10 November 2026 (UTC). The migration's file name, `20261112120000_goals.sql`, is an ordering label that keeps it after the earlier migrations, not the day it ran. Earlier labels work the same way: `20261111120000_ai_controls.sql` was also applied on 10 November. The database records which migrations have been applied but not when, so the times below come from the tools' own output and GitHub Actions.
+
+| step | time (UTC) | result |
+|---|---|---|
+| Backup | 12:27 | verified |
+| Rehearsal on that backup | 12:28 | ok |
+| Migration applied | 12:29 | applied and verified |
+| Row-level security audit | 12:29 | every table as intended (see below) |
+| Code deployed | 12:31–12:34 | commit `1050d93`, GitHub Actions "Test and deploy" run 42816544933: success |
+
+### Backup
+
+A logical backup of the production database was taken through the API and **verified**:
+- it was re-read from disk with a matching hash;
+- every table's saved rows equal its count, and a fresh count of the live database matched;
+- it was **restored into a separate temporary PostgreSQL database**, built from the 14 recorded migrations, with every row and value identical.
+
+Totals: 26 tables, 604 rows, 7 accounts (counted, not copied). SHA-256 starts `37e38608ebc044e1`. The backup contains learner data and is intended for encrypted private storage outside this repository. It was handed to the owner on 10 November. **Durable encrypted storage, with a second copy, is not yet confirmed** (see outstanding actions below). See `docs/RECOVERY.md`.
+
+Sign-in accounts and stored files are not part of this logical backup. Supabase's own backups cover those.
+
+### Rehearsal
+
+`20261112120000_goals.sql`, the only pending migration, was applied to a temporary copy restored from the verified backup. Every existing value in all 26 tables was unchanged. Production was not touched.
+
+### Migration
+
+| migration | result | objects checked | sha256 |
+|---|---|---|---|
+| 14 earlier migrations (20261028120000 to 20261111120000) | already applied, unchanged | | |
+| 20261112120000_goals.sql | applied and verified | 6 (table, index, policy, function, trigger, RLS) | 9b5de1ebf0fa |
+
+It is additive: one new table (`goals`), its index, its row-level security policy and an `updated_at` trigger. No existing table was changed.
+
+Rolling it back would mean dropping the `goals` table, which **permanently deletes every goal learners have created since launch**. That is not the same as restoring a backup: this backup was taken before the table existed, so it holds no goals. Roll back only with the owner's explicit approval, after exporting the table's rows. See `docs/RECOVERY.md`, section 5.
+
+### Row-level security audit
+
+All 27 public tables (the 26 above plus `goals`) have row-level security switched on. That alone isn't the whole picture, so here is what each group of tables allows a client with the website's public key to do:
+
+| access from the website and apps | tables |
+|---|---|
+| **Owner only, read and write.** A signed-in learner can read, add, change and delete only their own rows | activity, body_checkins, cards, course_progress, documents, fitness_tests, **goals**, packs, plan_blocks, profiles, revalidation_entries, reviews, workouts |
+| **Owner only, limited.** Own rows only, and only some operations | assessment_attempts (read, add, delete; no edits), tutor_usage (read; additions are also refused by a trigger unless the server's allowance check made them), subscriptions (read; written only by the billing server), ai_admins and ai_testers (read: lets a user see their own role) |
+| **Public read-only settings.** Anyone can read; no client can change them (the owner changes them only through reviewed migrations) | ai_limits, ai_plan_caps |
+| **Add only, never read.** Visitors can add a row but can't read any | page_events (today's date only), waitlist |
+| **No client access.** Row-level security on, with no policy for any client role, so the website and apps can't read or write them at all | ai_cache, ai_feature_models, ai_prices, ai_settings, billing_events |
+
+**How this was checked.** From the live database itself: each table's policies (`pg_policies`: the operations, roles and conditions, not just the names), the table privileges, and which functions each client role can execute.
+
+- **Table privileges.** Supabase grants `anon` and `authenticated` every table privilege on every public table by default, so row-level security, not privileges, is what limits clients. Row-level security doesn't cover `TRUNCATE`. Today clients can't use it, because the database API the website and apps use only offers reading, adding, changing and deleting, but the privilege itself still exists in the database. Revoking the privileges clients never need is tracked as a separate security-hardening task (see outstanding actions). Nothing was changed here.
+- **Functions clients can run.**
+  - Signed-out and signed-in: `ai_feature` and `ai_row_pence`, plain calculations that run with the caller's own rights.
+  - Signed-in only: `my_ai_allowance` (the caller's own allowance), `ai_is_admin`, and `ai_admin_overview`, which refuses anyone who isn't a Gradify owner.
+
+  Every other privileged function can be run only by the server. `rls_auto_enable` is Supabase's own hook that switches row-level security on for new tables. Clients appear able to execute it, but it can't be called directly.
+- **Views.** `daily_activity` runs with the caller's rights (`security_invoker`), so the policies above apply. `daily_usage` isn't granted to clients.
+- **Keys.** The website and apps hold only the publishable key (`sb_publishable_…`). No secret or service-role key is in client code, and `tests/secrets.test.mjs` fails the build if one is committed.
+
+Administrative and server access (billing webhooks, AI functions, migrations) uses the server's service role. It bypasses row-level security by design and is never available to the website or apps.
+
+A signed-out check against production after the migration confirmed `goals` from a client's side: reading returned nothing, adding a goal was refused by row-level security, and changing goals affected nothing. The table had 0 rows.
+
+### Outstanding actions
+
+- **Owner:** confirm the backup's SHA-256 matches, then store it encrypted, with a second copy. Not yet confirmed.
+- **Signed-in check on production:** create, add to, edit, refresh, then archive and delete a disposable goal while
+  signed in. Not yet done. The account path is so far tested only against the same migration locally.
+- **Security hardening (separate, reviewed change):** revoke the table privileges `anon` and `authenticated` never need
+  (such as `TRUNCATE`, `REFERENCES`, `TRIGGER`, and writes on tables they can only read), after checking Supabase
+  compatibility. No production permissions were changed in this release.
+- **Recovery:** a tested single-table restore procedure (`docs/RECOVERY.md`, section 4) doesn't exist yet.

@@ -450,6 +450,8 @@ X: Does nonviolence work?
 > They argued nonviolent campaigns attract wider participation, which raises the costs for governments of repression.
 H: Evaluation
 P: Rational choice models explain why collective action is difficult but underplay identity, emotion and solidarity, which help people overcome free-riding. Crowd research suggests heavy-handed policing can unite crowds against police. Evidence on nonviolence is influential, though success depends on context.
+P: **Investigate with the lab.** Explore the movements from Chartism to school climate strikes and note what each shows about collective action.
+IX: movements
 K: Olson's free-rider problem explains why collective action is hard; Reicher showed crowds follow social identities; nonviolent campaigns have succeeded more often than violent ones.
 !: Seeing crowds as irrational mobs. Research shows crowd behaviour follows shared norms.
 EV: established | Nonviolent resistance campaigns from 1900 to 2006 succeeded about twice as often as violent ones (Chenoweth and Stephan, 2011).
@@ -469,6 +471,7 @@ M2#sociology-u11-12-q2@2: During a riot, crowds target police vehicles but leave
 TF2#sociology-u11-12-q3@2: Le Bon argued people in crowds become more rational. | false | He claimed crowds made people lose individuality and reason.
 M3#sociology-u11-12-q4@3: Why might nonviolent campaigns succeed more often? | They attract wider participation, raising repression costs | They avoid involving ordinary people | They rely on a few trained activists | Governments never respond to violence | Mass participation pressures governments.
 SA3#sociology-u11-12-q5@3: Evaluate explanations of collective action. | Olson and free-riding; Ostrom; Le Bon vs Reicher; Chenoweth and Stephan; rational choice vs identity; judgement. | Free-riding ; Crowds ; Effectiveness ; Judgement
+M2#sociology-u11-12-q6@1: What does resource mobilisation theory stress? | The resources and organisation movements need to act | The emotions of individual protesters | The role of mass media only | Biological drives for protest | Movements succeed when they can mobilise money, members and organisation.
 
 ## Civil society
 LV: Intermediate · Evaluation
@@ -524,6 +527,8 @@ X: UK protest law
 > Supporters argued the laws protect the public from disruption; critics, including human rights groups, argued they restrict rights to protest under Articles 10 and 11 of the European Convention on Human Rights.
 H: Evaluation
 P: Protest can win change, shift public debate and give voice to excluded groups. Disruptive tactics can raise attention but sometimes reduce public sympathy. Liberals stress free expression and assembly; others stress the rights of the public to go about daily life. The balance is set by law, courts and policing practice.
+P: **Investigate with the lab.** Compare the protest methods of three movements on the timeline.
+IX: movements
 K: Protest uses changing repertoires, from marches to direct action; policing style shapes outcomes; recent UK laws expanded powers, prompting debate about rights.
 !: Treating protest as outside democracy. Rights to expression and assembly are part of it.
 EV: established | The Public Order Act 2023 created new offences including "locking on".
@@ -544,6 +549,7 @@ M2#sociology-u11-14-q2@2: Police meet march organisers in advance to agree a rou
 TF2#sociology-u11-14-q3@2: Austin v United Kingdom (2012) found kettling always violates human rights. | false | The court upheld its use in the specific circumstances.
 M3#sociology-u11-14-q4@3: Why might disruptive protest tactics be a double-edged sword? | They gain attention but may cut public sympathy | They never gain any media attention | They always win wide public support | They are always fully legal | Disruption raises visibility but can alienate.
 SA2#sociology-u11-14-q5@2,3: Explain repertoires of protest and evaluate the policing of protest. | Repertoires (Tilly) and civil disobedience; policing styles and kettling; Austin v UK; 2022 and 2023 Acts; rights vs order; effectiveness. | Repertoires ; Policing ; Law ; Evaluation
+M2#sociology-u11-14-q6@1: What are new social movements usually concerned with? | Identity, lifestyle and values rather than class | Only wages and working conditions | Restoring traditional monarchy | Increasing state control | Movements such as environmentalism focus on values and identity.
 
 ## Political institutions
 LV: Introductory · Application

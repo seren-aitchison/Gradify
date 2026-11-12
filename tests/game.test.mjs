@@ -145,3 +145,26 @@ test("one level curve everywhere: course pages, the Journey, the study app and L
     assert.match(src, /from "\.\.\/game\/engine\.js"/, `${f} uses the shared engine`);
   }
 });
+
+test("one level and streak: learning outside courses counts once, course awards and synced rewards never twice", async () => {
+  const { gameState, outsideCourses } = await import("../kit/game/engine.js");
+  const now = Date.parse("2026-11-10T12:00:00"), d = 864e5, iso = (t) => new Date(t).toISOString();
+  // a course award is in the course's own log AND the activity log; a paid game reward is in the ledger AND synced
+  const courses = [{ slug: "law", S: { log: [{ t: now - d, xp: 10, k: "lesson", id: "u01-01" }] } }];
+  const game = { paid: { "ach:first": { t: now - d, xp: 10, title: "First Steps" } } };
+  const activity = [
+    { at: iso(now - d), kind: "law-lesson", xp: 10, site: "LawGradify" },        // already in the course log
+    { at: iso(now - d), kind: "game-ach:first", xp: 10, site: "Gradify" },       // already in the game ledger
+    { at: iso(now - 2 * d), kind: "session", xp: 6, site: "Gradify" },           // a flashcard session in the app
+    { at: iso(now), kind: "workout", xp: 15, site: "SportGradify" },             // a workout
+    { at: iso(now), kind: "block", xp: 0, site: "Gradify" },                     // no XP: not an event
+  ];
+  const extra = outsideCourses(activity, ["law", "maths"]);
+  assert.deepEqual(extra.map((a) => a.kind), ["session", "workout"]);
+  const without = gameState(courses, game, { now }), withLife = gameState(courses, game, { now, extra });
+  assert.equal(without.xp, 20);
+  assert.equal(withLife.xp, 41, "10 lesson + 10 reward + 6 session + 15 workout, each once");
+  assert.equal(without.habits.streak, 1);
+  assert.equal(withLife.habits.streak, 3, "the flashcard session two days ago and today's workout join the streak");
+  assert.equal(withLife.recent[0].k, "life");
+});

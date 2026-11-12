@@ -27,3 +27,17 @@ test("every course in the API has a page, a syllabus and a notes file for each w
     assert.equal(ids.size, c.lessons);
   }
 });
+
+test("every course lists its labs with a lesson link and a URL an app can open", async () => {
+  const { catalogue, courseApi } = await import("../scripts/build-api.mjs");
+  for (const c of (await catalogue()).courses) {
+    const api = await courseApi(c.slug);
+    assert.ok(Array.isArray(api.interactives), `${c.slug}: interactives is an array`);
+    const lessonIds = new Set(api.units.flatMap((u) => u.lessons.map((l) => l.id)));
+    for (const x of api.interactives) {
+      assert.ok(x.id && x.title && x.kind, `${c.slug}/${x.id}: id, title and kind`);
+      assert.match(x.url || "", /^https:\/\/getgradify\.com\/.+#\/practice\/[^/]+$/, `${c.slug}/${x.id}: url`);
+      for (const l of x.lessons) assert.ok(lessonIds.has(l), `${c.slug}/${x.id}: lesson ${l} exists`);
+    }
+  }
+});

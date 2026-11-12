@@ -272,7 +272,7 @@
    "id": "u02",
    "n": 2,
    "title": "Management and Organisational Behaviour",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u02-01",
@@ -370,7 +370,7 @@
    "id": "u03",
    "n": 3,
    "title": "Strategy",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u03-01",
@@ -1157,6 +1157,21 @@
      "module": "Integrity and risk"
     }
    ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "forecasting",
+   "title": "Correlation and regression explorer",
+   "kind": "Tool",
+   "sub": "Anscombe's quartet and your own points: Pearson's r, Spearman's rho, the regression line, R² and residuals, the tools behind a simple sales forecast.",
+   "note": "Anscombe's (1973) data are real; your own points are illustrative. A regression line describes association in past data, not cause.",
+   "tasks": null,
+   "lessons": [
+    "u10-07",
+    "u10-05"
+   ],
+   "url": "https://getgradify.com/businessgradify/course/#/practice/forecasting"
   }
  ]
 }

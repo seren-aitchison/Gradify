@@ -2977,5 +2977,56 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "deteriorating",
+   "title": "The quiet patient in bay 3",
+   "kind": "Clinical reasoning scenario",
+   "sub": "A post-operative patient deteriorates: assess with ABCDE, score NEWS2 as the observations change, and escalate with SBAR.",
+   "note": "A fictional patient with scripted observations; decisions follow the ABCDE approach and NEWS2 (RCP, 2017). Educational only: follow your organisation's policy in practice.",
+   "tasks": null,
+   "lessons": [
+    "u09-25",
+    "u03-27",
+    "u09-02",
+    "u09-03",
+    "u03-28",
+    "u09-05",
+    "u09-06"
+   ],
+   "url": "https://getgradify.com/nursegradify/course/#/practice/deteriorating"
+  },
+  {
+   "id": "news2",
+   "title": "NEWS2 scoring practice",
+   "kind": "Observation interpretation",
+   "sub": "Score generated sets of adult observations parameter by parameter and choose the clinical response.",
+   "note": "Generated adult observations scored on the RCP NEWS2 chart (2017), oxygen scale 1. Educational only: use your organisation's chart and escalation policy.",
+   "tasks": null,
+   "lessons": [
+    "u09-05",
+    "u09-04",
+    "u03-07",
+    "u03-28"
+   ],
+   "url": "https://getgradify.com/nursegradify/course/#/practice/news2"
+  },
+  {
+   "id": "calculations",
+   "title": "Medicines calculations",
+   "kind": "Medicines numeracy",
+   "sub": "Tablets, liquids, infusion and drip rates, unit conversions and weight-based doses, with worked methods. Illustrative numbers only.",
+   "note": "Generated questions with invented medicines and round numbers: numeracy practice, not dosing advice.",
+   "tasks": null,
+   "lessons": [
+    "u04-15",
+    "u04-21",
+    "u06-21",
+    "u06-22",
+    "u04-33"
+   ],
+   "url": "https://getgradify.com/nursegradify/course/#/practice/calculations"
+  }
  ]
 }

@@ -769,6 +769,8 @@ H: Monitoring
 - Early signs of reactions (rash, wheeze, hypotension) or extravasation (pain, swelling at the site).
 H: Blood transfusion
 P: Blood transfusion has its own strict policy: training, bedside identity checks, observations before, during and after, and immediate action for suspected reactions. Reporting to SHOT supports national learning.
+P: **Investigate with the lab.** Calculate drip rates in drops per minute for a gravity set, then check with the worked method.
+IX: calculations
 K: Every IV infusion needs a valid prescription, correct checks, a suitable device and close monitoring.
 SAFE: Administering IV fluids, medicines or blood products requires specific training and assessed competence, and follows the prescription, local policy and the injectable medicines guide. Students participate only under direct supervision as policy allows.
 !: Removing an infusion set from a pump without clamping the line, risking uncontrolled free-flow.
@@ -784,6 +786,7 @@ Q: What are NICE's 5 Rs of IV fluid therapy? | Resuscitation, routine maintenanc
 Q: How can free-flow be prevented? | Clamp the line before removing it from the pump, and use sets with anti-free-flow features.
 M1#nursing-u06-21-q1@2: Which device is usually used for small volumes at precise rates? | A syringe driver | A gravity set | A urine bag | A volumetric pump only for blood | Syringe drivers deliver small volumes accurately.
 M2#nursing-u06-21-q2@3: During an IV infusion, a patient becomes breathless with crackles at the lung bases and rising weight. What should the nurse suspect? | Fluid overload: stop or slow as policy allows and escalate urgently | An allergic reaction: give an antihistamine and continue | A blocked cannula: flush it and continue the infusion | An expected response to fluids that needs no action | These are signs of fluid overload needing urgent review.
+M2#nursing-u06-21-q4@1: 500 mL over 4 hours with a 20 drops/mL giving set. What is the drip rate? | About 42 drops per minute | About 125 drops per minute | About 20 drops per minute | About 8 drops per minute | (500 × 20) ÷ (4 × 60) ≈ 41.7 drops per minute.
 MATCH2#nursing-u06-21-q3@2: Match each risk to the safeguard. | Air embolism = Prime the line fully ; Free-flow = Clamp before removing from the pump ; Wrong patient = Positive identification at the bedside ; Wrong rate = Independent check of pump settings | Each IV risk has a specific safeguard built into practice.
 
 ## Medication administration
@@ -807,6 +810,8 @@ H: Refusals, omissions and errors
 - **Errors**: make the person safe, inform the nurse in charge and prescriber, be open with the person, document and report.
 H: Self-administration
 P: Where safe and assessed, people can manage their own medicines in hospital, supporting independence and preparing for discharge.
+P: **Investigate with the lab.** Practise liquid medicine calculations and unit conversions with the worked methods.
+IX: calculations
 K: Same process every time: check, identify, explain, give, document, monitor.
 SAFE: Medicines are given only against a valid prescription or legal authority, after the required checks, within your competence and local policy. Students administer under direct supervision as their programme and organisation allow.
 !: Signing for a medicine before it has been given or taken.
@@ -824,6 +829,7 @@ M1#nursing-u06-22-q1@1,3: A nurse gives an 08:00 dose, then is called away befor
 M2#nursing-u06-22-q2@3: A patient with Parkinson's disease is asleep when their levodopa is due. What should the nurse do? | Wake them gently and give it on time, or escalate if it can't be given | Omit it and record "asleep" on the chart | Give it at the next medicine round instead | Leave it on the table to take when they wake | Parkinson's medicines are time-critical; delays cause harm.
 SEQ1#nursing-u06-22-q3@1: Put the core medicine administration steps in order. | Check the prescription and the medicine ; Confirm the person's identity and allergies ; Explain and gain consent ; Give the medicine by the correct route ; Document immediately ; Monitor the effect | Checks and identity come first; documentation follows immediately after giving, then monitoring.
 M3#nursing-u06-22-q4@2: Two nurses check an IV potassium chloride infusion. The prescription says 40 mmol in 1,000 mL over 8 hours; the bag supplied is 40 mmol in 500 mL. What should they do? | Not give it; the concentration differs from the prescription, so query with the prescriber and pharmacist | Give it over 8 hours, as the dose is the same | Give it over 4 hours to match the concentration | Dilute the bag with another 500 mL on the ward | Concentrated potassium is a high-alert medicine; a product that doesn't match the prescription must not be given or altered on the ward.
+M2#nursing-u06-22-q5@1: A liquid contains 125 mg in 5 mL. How much is needed for a 250 mg dose? | 10 mL | 2.5 mL | 5 mL | 20 mL | Volume = (dose required ÷ stock strength) × stock volume = (250 ÷ 125) × 5 = 10 mL.
 
 ## Specimen collection
 S: Specimens such as urine, stool, sputum and swabs guide diagnosis and treatment. A poor-quality specimen, wrongly labelled or delayed, can mislead the team or need repeating.

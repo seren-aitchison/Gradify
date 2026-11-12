@@ -1,22 +1,27 @@
 // Supabase Edge Function: course-tutor
 // POST { mode: "mark", subject, task: { title, brief, prompt, rubric, model }, answer }  → { feedback }
-// POST { mode: "roleplay", subject, case: { client, persona, facts }, turns }            → { reply }
+// POST { mode: "roleplay", subject, case: { client, persona, facts }, turns, conversationId? } → { reply }
 // POST { mode: "debrief", subject, case, rubric, turns }                                 → { feedback }
 // POST { mode: "explain", subject, lesson: { id, title }, question, lab? }               → { answer, fromLesson }
 // POST { mode: "diagnose", subject, lesson, question: { q, options, chosen, why } }        → { misconception, explanation, check }
-// POST { mode: "socratic" | "examiner", subject, lesson, goal?, turns }                 → { reply }
+// POST { mode: "socratic" | "examiner", subject, lesson, goal?, turns, conversationId? }  → { reply }
 // POST { mode: "challenge", subject, lesson, focus }                                     → { questions }
 // POST { mode: "connect", subject, lesson, candidates: [{ id, title }] }                 → { links }
 // POST { mode: "director", subject, course, summary, candidates }                        → { message, steps }
-// The learner must be signed in; each mode has a daily limit per learner (DAILY in _shared/tutor.js),
-// counted from the tutor_usage table. The Claude API key stays here as a server secret.
+// Every reply also carries { usage: { feature, plan, used, allowance, resetsAt, counted } }; a refusal carries
+// { error, reason, feature, plan, used, allowance, resetsAt, upgrade } (docs/APP-API.md). The website and the iOS app
+// call this same function, so a learner's allowance is shared across them.
+// Controls (allowances, conversations, rate limits, spending caps, the response cache, cost tracking) are in
+// _shared/ai.js and public.ai_claim_for / ai_settle_for. The service role is used for those ledger calls only; the
+// learner is identified from their own token. The Claude API key stays here as a server secret.
 // The prompts, schemas and input checks are in _shared/tutor.js (a copy of kit/assess/tutor.js).
 // Lesson-grounded modes are given the lesson's canonical notes, fetched here from the published site by lesson id
 // (_shared/canon.js, a copy of kit/assess/canon.js). Any notes text the browser sends is ignored.
 import Anthropic from "npm:@anthropic-ai/sdk@0.133.0";
 import { createClient } from "npm:@supabase/supabase-js@2.117.0";
-import { MODEL, DAILY, FEEDBACK_MODES, buildRequest, checkReply } from "../_shared/tutor.js";
+import { MODEL, FEEDBACK_MODES, buildRequest, checkReply } from "../_shared/tutor.js";
 import { canonicalLesson } from "../_shared/canon.js";
+import { runAi, ledger, estimateTokens, cacheable, cacheKey, normaliseQuestion, conversationOf, fail } from "../_shared/ai.js";
 
 // modes that are grounded in a lesson's notes
 const LESSON_MODES = ["explain", "diagnose", "socratic", "examiner", "challenge", "connect"];
@@ -32,7 +37,10 @@ async function siteText(path: string): Promise<string | null> {
 }
 
 const ALLOWED = (Deno.env.get("GRADIFY_ALLOWED_ORIGINS") ?? "https://getgradify.com,http://localhost:8080").split(",");
-const anthropic = new Anthropic(); // reads ANTHROPIC_API_KEY
+// created on first use: without ANTHROPIC_API_KEY the SDK throws, and a request refused before any Claude call
+// (AI off, allowance used) must still get its proper answer
+let client: Anthropic | null = null;
+const anthropic = () => (client ??= new Anthropic()); // reads ANTHROPIC_API_KEY
 
 function cors(req: Request) {
   const origin = req.headers.get("origin") ?? "";
@@ -50,14 +58,14 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: cors(req) });
   if (req.method !== "POST") return json(req, { error: "Use POST." }, 405);
 
-  // who is asking: their own token, so row-level security applies to the usage table
-  const auth = req.headers.get("Authorization") ?? "";
-  const db = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!, { global: { headers: { Authorization: auth } } });
-  const { data: { user } } = await db.auth.getUser();
-  if (!user) return json(req, { error: "Please sign in to use the Gradify AI tutor." }, 401);
+  // who is asking: their own token
+  const asUser = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!, { global: { headers: { Authorization: req.headers.get("Authorization") ?? "" } } });
+  const { data: { user } } = await asUser.auth.getUser();
+  if (!user) return json(req, { error: "Please sign in to use the Gradify AI tutor.", reason: "signed_out" }, 401);
 
   let body: any;
   try { body = await req.json(); } catch { return json(req, { error: "Bad request." }, 400); }
+  if (body?.mode === "explain") body.question = normaliseQuestion(body.question);
 
   // the lesson's canonical notes replace whatever the browser sent
   if (LESSON_MODES.includes(body?.mode)) {
@@ -68,32 +76,33 @@ Deno.serve(async (req) => {
   let r: ReturnType<typeof buildRequest>;
   try { r = buildRequest(body); } catch (e) { return json(req, { error: (e as Error).message }, (e as { status?: number }).status ?? 400); }
 
-  // daily limit for this mode
-  const since = new Date(Date.now() - 864e5).toISOString();
-  const { count, error: countErr } = await db.from("tutor_usage").select("id", { count: "exact", head: true }).eq("mode", r.mode).gte("created_at", since);
-  if (countErr) return json(req, { error: "The tutor isn't set up yet." }, 503);
-  if ((count ?? 0) >= DAILY[r.mode as keyof typeof DAILY]) return json(req, { error: `You've reached today's limit for this tutor feature (${DAILY[r.mode as keyof typeof DAILY]}). Try again tomorrow.` }, 429);
-
-  try {
-    const stream = anthropic.beta.messages.stream({
-      model: MODEL,
+  // the ledger is written with the service role, for this learner only
+  const admin = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
+  const out = await runAi(ledger(admin, user.id), {
+    mode: r.mode,
+    site: String(body.subject ?? "").slice(0, 40) || null,
+    conversationId: conversationOf(r.mode, body.conversationId),
+    estInput: estimateTokens(r.system, r.messages),
+    maxOutput: r.maxTokens,
+    cacheKey: cacheable(r.mode, body) ? await cacheKey(MODEL, r) : null,
+    model: MODEL,
+    // the model for this feature comes from the claim (public.ai_feature_models): Opus for tutoring and explanations
+    call: (model: string) => anthropic().beta.messages.stream({
+      model,
       max_tokens: r.maxTokens,
       betas: ["server-side-fallback-2026-07-01"],
       fallbacks: "default",
       output_config: { effort: r.effort, ...(r.schema ? { format: { type: "json_schema", schema: r.schema } } : {}) },
       system: [{ type: "text", text: r.system, cache_control: { type: "ephemeral" } }],
       messages: r.messages,
-    });
-    const msg = await stream.finalMessage();
-    if (msg.stop_reason === "refusal") return json(req, { error: "The tutor couldn't help with that. Try rephrasing, and keep to the course material." }, 422);
-    const text = msg.content.filter((b) => b.type === "text").map((b) => (b as { text: string }).text).join("").trim();
-    await db.from("tutor_usage").insert({ mode: r.mode, site: String(body.subject ?? "").slice(0, 40), input_tokens: msg.usage.input_tokens, output_tokens: msg.usage.output_tokens });
-    if (!r.schema) return json(req, { reply: text, model: msg.model });
-    // lesson ids must be ones the request offered, choice questions need one right answer (checkReply)
-    const data = checkReply(r.mode, JSON.parse(text), body);
-    return json(req, FEEDBACK_MODES.includes(r.mode) ? { feedback: data, model: msg.model } : { ...data, model: msg.model });
-  } catch (e) {
-    console.error(e);
-    return json(req, { error: "The tutor is busy or unavailable. Please try again in a minute." }, 502);
-  }
+    }).finalMessage(),
+    parse: (msg: Anthropic.Beta.BetaMessage) => {
+      const text = msg.content.filter((b) => b.type === "text").map((b) => (b as { text: string }).text).join("").trim();
+      if (!r.schema) { if (!text) fail(502, "The tutor didn't reply. Please try again.", "empty"); return { reply: text, model: msg.model }; }
+      // lesson ids must be ones the request offered, choice questions need one right answer (checkReply)
+      const data = checkReply(r.mode, JSON.parse(text), body);
+      return FEEDBACK_MODES.includes(r.mode) ? { feedback: data, model: msg.model } : { ...data, model: msg.model };
+    },
+  }).catch((e) => { console.error("course-tutor", e); return { status: 503, body: { error: "Gradify AI isn't available right now." } }; });
+  return json(req, out.body, out.status);
 });

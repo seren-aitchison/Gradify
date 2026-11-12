@@ -2623,5 +2623,431 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "theorists",
+   "title": "Theorist timeline",
+   "kind": "Explorer",
+   "sub": "Thirty sociologists from Comte to Crenshaw on one timeline, by tradition, with a key work and idea for each.",
+   "note": "Dates of birth, death and first publication; ideas paraphrased.",
+   "tasks": null,
+   "lessons": [
+    "u02-01",
+    "u02-23",
+    "u03-24",
+    "u03-01",
+    "u03-07"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/theorists"
+  },
+  {
+   "id": "marx-durkheim-weber",
+   "title": "Marx, Durkheim and Weber compared",
+   "kind": "Exercise",
+   "sub": "The three founders side by side on eight big questions, then sort their ideas to the right theorist.",
+   "note": "Summaries and paraphrases in our own words.",
+   "tasks": null,
+   "lessons": [
+    "u02-23",
+    "u02-06",
+    "u02-10",
+    "u02-15",
+    "u02-19"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/marx-durkheim-weber"
+  },
+  {
+   "id": "movements",
+   "title": "Social movements timeline",
+   "kind": "Explorer",
+   "sub": "From Chartism to school climate strikes: what happened, and which concepts each movement illustrates.",
+   "note": "A selection of reference dates and events to illustrate concepts.",
+   "tasks": null,
+   "lessons": [
+    "u11-11",
+    "u11-12",
+    "u11-14",
+    "u14-17"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/movements"
+  },
+  {
+   "id": "lorenz",
+   "title": "Income inequality: Lorenz curves",
+   "kind": "Explorer",
+   "sub": "Real income shares by fifth of the population for ten countries, drawn as Lorenz curves with their Gini coefficients.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u05-12",
+    "u05-24",
+    "u18-17"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/lorenz"
+  },
+  {
+   "id": "gini",
+   "title": "Gini calculator",
+   "kind": "Tool",
+   "sub": "Type in incomes or reshape an imaginary society, transfer from rich to poor, and watch the Lorenz curve and Gini change.",
+   "note": "Exact Gini from individual values; example incomes invented.",
+   "tasks": null,
+   "lessons": [
+    "u18-17",
+    "u05-12",
+    "u05-11"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/gini"
+  },
+  {
+   "id": "poverty",
+   "title": "Measuring poverty: absolute and relative",
+   "kind": "Simulation",
+   "sub": "Apply growth, recession and changes at the top or middle to an income distribution and see the two measures move apart.",
+   "note": "Simulated incomes; the UK relative line convention (60% of median) explained.",
+   "tasks": null,
+   "lessons": [
+    "u05-13",
+    "u05-14",
+    "u18-18",
+    "u05-16"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/poverty"
+  },
+  {
+   "id": "mobility",
+   "title": "Social mobility simulator",
+   "kind": "Simulation",
+   "sub": "Set how open a society is and how fast professional jobs grow; follow classes over generations; compare absolute and relative mobility.",
+   "note": "Illustrative three-class transition matrices, not estimates from a real study.",
+   "tasks": null,
+   "lessons": [
+    "u05-06",
+    "u05-07",
+    "u05-08",
+    "u05-09"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/mobility"
+  },
+  {
+   "id": "data-inequality",
+   "title": "Data explorer: inequality and development",
+   "kind": "Explorer",
+   "sub": "Gini, extreme poverty, GDP per head and life expectancy for 22 countries since 1990, as trends or scatter plots.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u05-24",
+    "u14-07",
+    "u18-16",
+    "u05-10"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/data-inequality"
+  },
+  {
+   "id": "data-gender",
+   "title": "Data explorer: gender",
+   "kind": "Explorer",
+   "sub": "Women's and men's labour force participation, women in parliament and the gender gap in university enrolment.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u06-12",
+    "u06-13",
+    "u06-16",
+    "u06-14",
+    "u13-11"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/data-gender"
+  },
+  {
+   "id": "data-education",
+   "title": "Data explorer: education",
+   "kind": "Explorer",
+   "sub": "University enrolment, primary completion and gender parity across 22 countries.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u09-19",
+    "u09-17",
+    "u09-15"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/data-education"
+  },
+  {
+   "id": "data-crime",
+   "title": "Data explorer: crime statistics",
+   "kind": "Explorer",
+   "sub": "Homicide rates since 1990, and why homicide is the one crime that compares well between countries.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown. Homicide data originate with UNODC.",
+   "tasks": null,
+   "lessons": [
+    "u10-01",
+    "u10-02",
+    "u17-23"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/data-crime"
+  },
+  {
+   "id": "data-work",
+   "title": "Data explorer: work",
+   "kind": "Explorer",
+   "sub": "Unemployment and labour force participation by sex, with what these measures leave out.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u13-04",
+    "u13-14",
+    "u13-11"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/data-work"
+  },
+  {
+   "id": "data-climate",
+   "title": "Data explorer: climate and inequality",
+   "kind": "Explorer",
+   "sub": "CO₂ emissions per person against income: who emits, and who bears the risk?",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u14-18",
+    "u14-19",
+    "u14-21",
+    "u14-20"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/data-climate"
+  },
+  {
+   "id": "data-urban",
+   "title": "Data explorer: urbanisation",
+   "kind": "Explorer",
+   "sub": "The share of people living in towns and cities since 1990.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u15-01",
+    "u15-21"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/data-urban"
+  },
+  {
+   "id": "transition",
+   "title": "The demographic transition in real data",
+   "kind": "Explorer",
+   "sub": "Birth and death rates since 1960 for ten countries, read against the stages of the demographic transition model.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown.",
+   "tasks": null,
+   "lessons": [
+    "u15-14",
+    "u15-13",
+    "u15-15",
+    "u15-16"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/transition"
+  },
+  {
+   "id": "pyramids",
+   "title": "Population pyramids",
+   "kind": "Explorer",
+   "sub": "Real age–sex pyramids for 1960, 1990 and 2023: expansive, stationary and ageing populations.",
+   "note": "Real World Bank data (World Development Indicators), with source codes and retrieval date shown. (originally UN World Population Prospects).",
+   "tasks": null,
+   "lessons": [
+    "u15-17",
+    "u18-19",
+    "u16-17"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/pyramids"
+  },
+  {
+   "id": "transition-model",
+   "title": "Demographic transition simulator",
+   "kind": "Illustrative model",
+   "sub": "Set how long a population spends in each stage and see how the birth–death gap drives growth.",
+   "note": "Illustrative rates per stage, not data for any country.",
+   "tasks": null,
+   "lessons": [
+    "u15-14",
+    "u15-13"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/transition-model"
+  },
+  {
+   "id": "network",
+   "title": "Social network visualiser",
+   "kind": "Tool",
+   "sub": "Explore four networks: degree, density, betweenness and components; find the broker; cut a bridge.",
+   "note": "Invented networks; Brandes' algorithm for betweenness.",
+   "tasks": null,
+   "lessons": [
+    "u17-19",
+    "u18-22",
+    "u01-15"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/network"
+  },
+  {
+   "id": "method-chooser",
+   "title": "Methodology decision tool",
+   "kind": "Tool",
+   "sub": "Answer five questions about your project for suggested methods, with their strengths and trade-offs.",
+   "note": "Guidance following standard methods texts; a prompt for thinking, not a rule.",
+   "tasks": null,
+   "lessons": [
+    "u17-01",
+    "u17-06",
+    "u17-07",
+    "u17-08",
+    "u17-03",
+    "u17-04"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/method-chooser"
+  },
+  {
+   "id": "sampling",
+   "title": "Sampling simulator",
+   "kind": "Simulation",
+   "sub": "Draw hundreds of samples by random, stratified, opportunity and volunteer methods and compare their bias and standard error.",
+   "note": "A simulated population of 10,000 with invented response patterns.",
+   "tasks": null,
+   "lessons": [
+    "u17-26",
+    "u17-27",
+    "u18-07",
+    "u17-31"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/sampling"
+  },
+  {
+   "id": "survey-design",
+   "title": "Survey design builder",
+   "kind": "Exercise",
+   "sub": "Diagnose eight flawed draft questions: double-barrelled, leading, vague, jargon, double negatives, bad categories, sensitivity and order effects.",
+   "note": "Invented draft questions; standard design principles.",
+   "tasks": null,
+   "lessons": [
+    "u17-09",
+    "u17-10",
+    "u17-11"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/survey-design"
+  },
+  {
+   "id": "coding",
+   "title": "Qualitative coding",
+   "kind": "Exercise",
+   "sub": "Code invented interviews with delivery riders, then build themes, as in thematic analysis.",
+   "note": "Invented excerpts; one defensible coding offered as feedback.",
+   "tasks": null,
+   "lessons": [
+    "u17-07",
+    "u17-12",
+    "u17-37",
+    "u13-16"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/coding"
+  },
+  {
+   "id": "content-analysis",
+   "title": "Content analysis tool",
+   "kind": "Tool",
+   "sub": "Define coding categories by keyword and count them in any text, per 1,000 words.",
+   "note": "Keyword counts on your text; example headlines invented.",
+   "tasks": null,
+   "lessons": [
+    "u17-20",
+    "u17-21",
+    "u10-33"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/content-analysis"
+  },
+  {
+   "id": "ethnography",
+   "title": "Ethnographic fieldnotes",
+   "kind": "Exercise",
+   "sub": "Sort jottings from a café observation into description, interpretation and reflexive notes.",
+   "note": "An invented field setting.",
+   "tasks": null,
+   "lessons": [
+    "u17-15",
+    "u17-16",
+    "u17-33",
+    "u17-32"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/ethnography"
+  },
+  {
+   "id": "ethics",
+   "title": "Research ethics scenarios",
+   "kind": "Exercise",
+   "sub": "Six dilemmas, from covert observation and Tearoom Trade to consent, anonymity, disclosure and data storage.",
+   "note": "Judged against the BSA Statement of Ethical Practice (2017).",
+   "tasks": null,
+   "lessons": [
+    "u17-34",
+    "u17-35",
+    "u17-36"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/ethics"
+  },
+  {
+   "id": "stats-describe",
+   "title": "Statistics workspace: describing data",
+   "kind": "Tool",
+   "sub": "Descriptive statistics, a confidence interval and a histogram for any set of numbers.",
+   "note": "Sample statistics (n − 1); example data simulated.",
+   "tasks": null,
+   "lessons": [
+    "u18-02",
+    "u18-03",
+    "u18-04",
+    "u18-05",
+    "u18-10"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/stats-describe"
+  },
+  {
+   "id": "crosstab",
+   "title": "Crosstabs and chi-square",
+   "kind": "Tool",
+   "sub": "Row percentages, expected counts, χ² and Cramér's V for a two-by-two table.",
+   "note": "Example counts invented; enter counts from a real table.",
+   "tasks": null,
+   "lessons": [
+    "u18-14",
+    "u18-15",
+    "u18-09"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/crosstab"
+  },
+  {
+   "id": "correlation",
+   "title": "Correlation and regression explorer",
+   "kind": "Tool",
+   "sub": "Anscombe's quartet and your own points: r, ρ, the regression line, R² and residuals.",
+   "note": "Anscombe's (1973) data are real; your own points are illustrative.",
+   "tasks": null,
+   "lessons": [
+    "u18-12",
+    "u18-13"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/correlation"
+  },
+  {
+   "id": "hypothesis-test",
+   "title": "Hypothesis-test simulator",
+   "kind": "Simulation",
+   "sub": "Simulate studies to see p-values, power, Type I and II errors and effect sizes.",
+   "note": "Simulated samples from normal populations.",
+   "tasks": null,
+   "lessons": [
+    "u18-08",
+    "u18-09",
+    "u18-11",
+    "u18-06"
+   ],
+   "url": "https://getgradify.com/socgradify/course/#/practice/hypothesis-test"
+  }
  ]
 }

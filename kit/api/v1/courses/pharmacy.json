@@ -1996,5 +1996,28 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "pharmcalc",
+   "title": "Calculations practice",
+   "kind": "Pharmaceutical calculations",
+   "sub": "Percentage and ratio strengths, dilutions, millimoles, weight- and BSA-based doses, infusions, displacement values, creatinine clearance and quantities, with worked methods, in the style of the registration assessment.",
+   "note": "Generated questions with invented medicines and illustrative numbers: calculations practice, not dosing advice.",
+   "tasks": null,
+   "lessons": [
+    "u06-04",
+    "u06-05",
+    "u06-06",
+    "u06-07",
+    "u06-10",
+    "u06-11",
+    "u06-13",
+    "u06-15",
+    "u06-16",
+    "u06-17"
+   ],
+   "url": "https://getgradify.com/pharmagradify/course/#/practice/pharmcalc"
+  }
  ]
 }

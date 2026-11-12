@@ -418,7 +418,7 @@
    "id": "u03",
    "n": 3,
    "title": "Financial Reporting for Companies",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u03-01",
@@ -536,7 +536,7 @@
    "id": "u04",
    "n": 4,
    "title": "Interpreting Financial Statements and Group Accounts",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u04-01",
@@ -1344,5 +1344,6 @@
     }
    ]
   }
- ]
+ ],
+ "interactives": []
 }

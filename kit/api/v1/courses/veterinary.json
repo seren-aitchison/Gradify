@@ -1361,5 +1361,108 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "action-potential",
+   "title": "Nerve membrane and action potential",
+   "kind": "Simulation",
+   "sub": "The Hodgkin–Huxley model: find the threshold and the refractory period, and block sodium channels with tetrodotoxin or potassium channels with TEA (the way local anaesthetics block nerve conduction).",
+   "note": "SciGradify Biology's simulation: the published 1952 equations for one patch of squid axon membrane, with no propagation or myelin. The ionic mechanism is the same in mammalian nerve.",
+   "tasks": null,
+   "lessons": [
+    "u02-02"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/action-potential"
+  },
+  {
+   "id": "synapse",
+   "title": "The neuromuscular junction",
+   "kind": "Simulation",
+   "sub": "Calcium entry, acetylcholine release, nicotinic receptors and acetylcholinesterase, with the drugs and toxins that act at each step.",
+   "note": "SciGradify Biology's simulation of a cholinergic synapse: a small kinetic model with illustrative values; the sequence of events is accurate for the skeletal neuromuscular junction.",
+   "tasks": null,
+   "lessons": [
+    "u02-03"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/synapse"
+  },
+  {
+   "id": "heart",
+   "title": "The cardiac cycle",
+   "kind": "Simulation",
+   "sub": "The Wiggers diagram and the pressure–volume loop of the left heart; change heart rate, contractility and peripheral resistance.",
+   "note": "SciGradify Biology's lumped-parameter model of the left heart with human resting values. The sequence of the cycle is the same in domestic mammals; rates and volumes differ by species and size.",
+   "tasks": null,
+   "lessons": [
+    "u02-05",
+    "u02-06"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/heart"
+  },
+  {
+   "id": "gas",
+   "title": "Gas exchange and the oxygen dissociation curve",
+   "kind": "Simulation",
+   "sub": "Oxygen loading along a pulmonary capillary, Fick's law, and the haemoglobin–oxygen curve shifted by CO₂, acid and heat.",
+   "note": "SciGradify Biology's model with human values (P₅₀ about 27 mmHg). Domestic species' P₅₀ values differ (the curve sits further right in smaller mammals), but the shape and the Bohr effect are shared.",
+   "tasks": null,
+   "lessons": [
+    "u02-08",
+    "u02-14"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/gas"
+  },
+  {
+   "id": "kidney",
+   "title": "Filtration, reabsorption and ADH",
+   "kind": "Simulation",
+   "sub": "Glomerular filtration from Starling forces, the glucose transport maximum, and water reabsorption under antidiuretic hormone.",
+   "note": "SciGradify Biology's model with human textbook values (GFR about 125 mL/min). The mechanisms apply to domestic mammals; the renal glucose threshold differs by species (lower in the dog than in the cat).",
+   "tasks": null,
+   "lessons": [
+    "u02-13",
+    "u02-16"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/kidney"
+  },
+  {
+   "id": "punnett",
+   "title": "Punnett squares and crosses",
+   "kind": "Simulation",
+   "sub": "Monohybrid, dihybrid, codominant and X-linked crosses with the expected ratios, then breed offspring and test them with chi-squared.",
+   "note": "SciGradify Biology's simulation: unlinked genes, every genotype equally viable. Coat-colour and inherited-disease examples in the notes apply the same rules.",
+   "tasks": null,
+   "lessons": [
+    "u03-09",
+    "u03-10"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/punnett"
+  },
+  {
+   "id": "enzyme",
+   "title": "Enzyme kinetics and inhibition",
+   "kind": "Simulation",
+   "sub": "Michaelis–Menten rates, competitive and non-competitive inhibition and the Lineweaver–Burk plot, with a mystery inhibitor to identify.",
+   "note": "SciGradify Biology's simulation: standard steady-state kinetics; temperature and pH curves are illustrative.",
+   "tasks": null,
+   "lessons": [
+    "u03-02"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/enzyme"
+  },
+  {
+   "id": "immune",
+   "title": "Primary and secondary responses",
+   "kind": "Simulation",
+   "sub": "Give an infection or a vaccine dose on any day and watch antibody and pathogen levels: why primary courses and boosters work.",
+   "note": "SciGradify Biology's descriptive model of measured antibody responses, not a mechanistic simulation and not any licensed vaccine's schedule.",
+   "tasks": null,
+   "lessons": [
+    "u06-12",
+    "u06-16"
+   ],
+   "url": "https://getgradify.com/vetgradify/course/#/practice/immune"
+  }
  ]
 }

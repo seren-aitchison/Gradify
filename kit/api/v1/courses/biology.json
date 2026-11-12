@@ -2364,5 +2364,429 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "cell-explorer",
+   "title": "Animal and plant cell explorer",
+   "kind": "Explorer",
+   "sub": "Tap every organelle in an animal and a plant cell to see its structure and function, and compare the two.",
+   "note": "Labelled diagram, not to scale; real cells contain far more of each organelle.",
+   "tasks": null,
+   "lessons": [
+    "u02-03",
+    "u02-04",
+    "u02-05",
+    "u02-08"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/cell-explorer"
+  },
+  {
+   "id": "organelle-id",
+   "title": "Organelle identification",
+   "kind": "Exercise",
+   "sub": "Find the organelle you're asked for in animal and plant cells, against the clock of your own streak.",
+   "note": "Labelled diagram, not to scale.",
+   "tasks": null,
+   "lessons": [
+    "u02-08",
+    "u02-09",
+    "u02-10",
+    "u02-14",
+    "u02-11"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/organelle-id"
+  },
+  {
+   "id": "dna-helix",
+   "title": "DNA double helix explorer",
+   "kind": "Explorer",
+   "sub": "A 3D B-DNA helix built from your own sequence: base pairing, antiparallel strands, grooves and GC content.",
+   "note": "Real B-DNA dimensions (10.5 bp per turn, 0.34 nm rise); bases drawn as rods and the backbone as beads, not atoms.",
+   "tasks": null,
+   "lessons": [
+    "u04-02",
+    "u03-28",
+    "u03-29"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/dna-helix"
+  },
+  {
+   "id": "replication",
+   "title": "DNA replication at the fork",
+   "kind": "Illustrative model",
+   "sub": "Helicase, primase, DNA polymerases and ligase at work: the leading strand made continuously and the lagging strand in Okazaki fragments.",
+   "note": "Bacterial enzymes named; timing is illustrative and fragments are drawn far shorter than real ones.",
+   "tasks": null,
+   "lessons": [
+    "u04-03"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/replication"
+  },
+  {
+   "id": "transcription",
+   "title": "Transcription and translation",
+   "kind": "Tool",
+   "sub": "Transcribe a gene, translate it with the real genetic code, then mutate bases to see silent, missense, nonsense and frameshift mutations.",
+   "note": "Standard genetic code (NCBI table 1); no introns or splicing, as in a bacterial gene.",
+   "tasks": null,
+   "lessons": [
+    "u04-09",
+    "u04-11",
+    "u04-12",
+    "u04-18",
+    "u04-17"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/transcription"
+  },
+  {
+   "id": "ribosome",
+   "title": "Protein synthesis at the ribosome",
+   "kind": "Illustrative model",
+   "sub": "Watch tRNAs move through the A, P and E sites as the polypeptide grows, until a stop codon releases it.",
+   "note": "Schematic ribosome; the sequence and genetic code are real.",
+   "tasks": null,
+   "lessons": [
+    "u04-13",
+    "u02-12"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/ribosome"
+  },
+  {
+   "id": "punnett",
+   "title": "Mendelian genetics and Punnett squares",
+   "kind": "Simulation",
+   "sub": "Monohybrid, dihybrid, incomplete dominance, codominance and X-linked crosses; breed offspring and test the ratio with chi-squared.",
+   "note": "Unlinked genes, all genotypes equally viable; offspring drawn at random, with an exact chi-squared p-value.",
+   "tasks": null,
+   "lessons": [
+    "u04-20",
+    "u04-23",
+    "u04-24",
+    "u04-25",
+    "u04-26",
+    "u04-27"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/punnett"
+  },
+  {
+   "id": "division",
+   "title": "Mitosis and meiosis",
+   "kind": "Illustrative model",
+   "sub": "Step through both divisions with two pairs of chromosomes, including synapsis, crossing over and random orientation.",
+   "note": "Schematic chromosomes and spindle; the stages and chromosome behaviour are accurate.",
+   "tasks": null,
+   "lessons": [
+    "u05-03",
+    "u05-04",
+    "u05-05",
+    "u05-06"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/division"
+  },
+  {
+   "id": "natural-selection",
+   "title": "Natural selection and drift",
+   "kind": "Simulation",
+   "sub": "Moths on light or sooty bark: birds pick off the conspicuous ones and allele frequencies shift. Turn selection off to see drift.",
+   "note": "One gene, random mating, fixed population size, predation proportional to contrast.",
+   "tasks": null,
+   "lessons": [
+    "u06-03",
+    "u06-04",
+    "u06-10",
+    "u06-07"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/natural-selection"
+  },
+  {
+   "id": "tree-of-life",
+   "title": "Evolutionary tree explorer",
+   "kind": "Explorer",
+   "sub": "Pick any two organisms across the three domains to find their most recent common ancestor and when it lived.",
+   "note": "Rounded molecular-clock dates of the kind compiled by TimeTree; the deepest splits are very uncertain.",
+   "tasks": null,
+   "lessons": [
+    "u06-17",
+    "u06-18",
+    "u01-06"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/tree-of-life"
+  },
+  {
+   "id": "organ-systems",
+   "title": "Human organ-system explorer",
+   "kind": "Explorer",
+   "sub": "Switch body systems on and off on a real 3D anatomy model and tap organs to learn what they do.",
+   "note": "BodyParts3D adult male model (CC BY 4.0); female organs and fine structures aren't included.",
+   "tasks": null,
+   "lessons": [
+    "u07-01",
+    "u02-30"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/organ-systems"
+  },
+  {
+   "id": "heart",
+   "title": "The cardiac cycle",
+   "kind": "Simulation",
+   "sub": "A model left heart: pressures, volumes, valves and the pressure–volume loop, responding to heart rate, contractility and resistance.",
+   "note": "Time-varying elastance ventricle with a two-element Windkessel; left heart only, no reflexes.",
+   "tasks": null,
+   "lessons": [
+    "u07-13",
+    "u07-12",
+    "u07-11"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/heart"
+  },
+  {
+   "id": "action-potential",
+   "title": "The action potential",
+   "kind": "Simulation",
+   "sub": "The Hodgkin–Huxley model: find the threshold, the refractory period and repetitive firing, and block channels with toxins.",
+   "note": "The published 1952 equations for one patch of squid axon membrane; no propagation or myelin.",
+   "tasks": null,
+   "lessons": [
+    "u07-05",
+    "u07-04"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/action-potential"
+  },
+  {
+   "id": "synapse",
+   "title": "Synaptic transmission",
+   "kind": "Simulation",
+   "sub": "Ca²⁺ entry, vesicle release, receptors and acetylcholinesterase at a cholinergic synapse, with drugs and toxins.",
+   "note": "Small kinetic model with illustrative values; the sequence of events is accurate.",
+   "tasks": null,
+   "lessons": [
+    "u07-06"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/synapse"
+  },
+  {
+   "id": "gas-exchange",
+   "title": "Gas exchange and oxygen transport",
+   "kind": "Simulation",
+   "sub": "Oxygen loading along a lung capillary and the haemoglobin dissociation curve, at altitude, in disease and in exercise.",
+   "note": "Fick diffusion with the Hill equation (n = 2.7, P₅₀ 26.8 mmHg); one capillary, no shunt or V/Q mismatch.",
+   "tasks": null,
+   "lessons": [
+    "u07-19",
+    "u07-20"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/gas-exchange"
+  },
+  {
+   "id": "kidney",
+   "title": "Kidney filtration and reabsorption",
+   "kind": "Simulation",
+   "sub": "Starling forces set the GFR; glucose reabsorption saturates at the transport maximum; ADH controls urine concentration.",
+   "note": "Textbook values (GFR 125 mL/min, glucose Tm 375 mg/min); no autoregulation.",
+   "tasks": null,
+   "lessons": [
+    "u07-25",
+    "u07-26",
+    "u07-24"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/kidney"
+  },
+  {
+   "id": "photosynthesis",
+   "title": "Photosynthesis and limiting factors",
+   "kind": "Simulation",
+   "sub": "Rate against light, CO₂ and temperature, the compensation point, and a pondweed giving off oxygen bubbles.",
+   "note": "Standard response curves with illustrative numbers for a C3 leaf.",
+   "tasks": null,
+   "lessons": [
+    "u08-12",
+    "u08-13",
+    "u08-14"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/photosynthesis"
+  },
+  {
+   "id": "respiration",
+   "title": "Cellular respiration",
+   "kind": "Illustrative model",
+   "sub": "Glycolysis, the link reaction, the Krebs cycle and oxidative phosphorylation, with ATP counts, fermentation and poisons.",
+   "note": "Modern P/O ratios (2.5 ATP per NADH, 1.5 per FADH₂), about 30–32 ATP per glucose.",
+   "tasks": null,
+   "lessons": [
+    "u08-18",
+    "u03-30"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/respiration"
+  },
+  {
+   "id": "enzyme-kinetics",
+   "title": "Enzyme kinetics",
+   "kind": "Simulation",
+   "sub": "Michaelis–Menten curves, Lineweaver–Burk plots, three kinds of inhibitor, a noisy assay to fit and a mystery inhibitor.",
+   "note": "Steady-state kinetic equations; the temperature and pH curves are illustrative.",
+   "tasks": null,
+   "lessons": [
+    "u03-25",
+    "u03-26",
+    "u03-27",
+    "u03-23"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/enzyme-kinetics"
+  },
+  {
+   "id": "antibody",
+   "title": "Antibody–antigen binding",
+   "kind": "Simulation",
+   "sub": "Specificity and affinity: match binding sites to epitopes, read the Kd off a binding curve and run affinity maturation.",
+   "note": "One-site binding model; shapes are schematic.",
+   "tasks": null,
+   "lessons": [
+    "u10-12",
+    "u10-13"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/antibody"
+  },
+  {
+   "id": "immune-response",
+   "title": "Primary and secondary immune responses",
+   "kind": "Illustrative model",
+   "sub": "Infect and vaccinate on any day and compare a first response with a memory response.",
+   "note": "Descriptive response curves that follow measured shapes; arbitrary units.",
+   "tasks": null,
+   "lessons": [
+    "u10-19",
+    "u10-20",
+    "u10-03"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/immune-response"
+  },
+  {
+   "id": "bacterial-growth",
+   "title": "Bacterial growth and antibiotics",
+   "kind": "Simulation",
+   "sub": "The four phases of a growth curve, bactericidal and bacteriostatic drugs, and a rare resistant mutant taking over.",
+   "note": "Monod growth on one nutrient with a smooth lag; resistant cells start at one in a million.",
+   "tasks": null,
+   "lessons": [
+    "u09-04",
+    "u09-22",
+    "u06-23"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/bacterial-growth"
+  },
+  {
+   "id": "population",
+   "title": "Population ecology",
+   "kind": "Simulation",
+   "sub": "Logistic growth, predator–prey cycles and competition, over time and as phase plots.",
+   "note": "Classic Lotka–Volterra and logistic models; no age structure, space or chance.",
+   "tasks": null,
+   "lessons": [
+    "u11-15",
+    "u11-17",
+    "u11-16"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/population"
+  },
+  {
+   "id": "food-web",
+   "title": "Food webs and energy flow",
+   "kind": "Simulation",
+   "sub": "Remove species from a woodland food web to see secondary extinctions, and follow energy up the trophic levels.",
+   "note": "Topological model: consumers with no food left are lost; population effects aren't modelled.",
+   "tasks": null,
+   "lessons": [
+    "u11-07",
+    "u11-06",
+    "u11-08",
+    "u11-09"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/food-web"
+  },
+  {
+   "id": "pcr",
+   "title": "PCR and real-time PCR",
+   "kind": "Simulation",
+   "sub": "The thermal cycle and exponential amplification to a plateau, Ct values, dilutions and annealing temperature.",
+   "note": "Logistic amplification; primer Tm by the Wallace rule, a rough guide for short primers.",
+   "tasks": null,
+   "lessons": [
+    "u12-07",
+    "u14-09"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/pcr"
+  },
+  {
+   "id": "gel",
+   "title": "Gel electrophoresis",
+   "kind": "Simulation",
+   "sub": "Digest a plasmid with restriction enzymes, run the gel against a ladder and size an unknown band.",
+   "note": "Log-linear mobility; uncut supercoiled plasmid shown running fast.",
+   "tasks": null,
+   "lessons": [
+    "u12-08",
+    "u14-10",
+    "u12-03"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/gel"
+  },
+  {
+   "id": "crispr",
+   "title": "CRISPR gene editing",
+   "kind": "Exercise",
+   "sub": "Find a PAM, design a 20-nucleotide guide, cut, and repair by NHEJ (knockout) or HDR (precise edit).",
+   "note": "SpCas9 rules (NGG PAM, cut 3 bp upstream); forward strand only, no off-target search.",
+   "tasks": null,
+   "lessons": [
+    "u12-13",
+    "u12-14"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/crispr"
+  },
+  {
+   "id": "phylo-build",
+   "title": "Building a phylogenetic tree",
+   "kind": "Exercise",
+   "sub": "Compute distances from an alignment and build a tree with UPGMA, one merge at a time.",
+   "note": "Exact UPGMA on p-distances from a short invented alignment; assumes a molecular clock.",
+   "tasks": null,
+   "lessons": [
+    "u13-08",
+    "u06-16"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/phylo-build"
+  },
+  {
+   "id": "seq-align",
+   "title": "Sequence alignment",
+   "kind": "Tool",
+   "sub": "Needleman–Wunsch and Smith–Waterman alignment with the full dynamic-programming matrix and traceback.",
+   "note": "The exact algorithms with linear gaps; real tools add substitution matrices and affine gaps.",
+   "tasks": null,
+   "lessons": [
+    "u13-05",
+    "u13-03",
+    "u13-06"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/seq-align"
+  },
+  {
+   "id": "protein-viewer",
+   "title": "Protein structure viewer",
+   "kind": "Explorer",
+   "sub": "The four levels of protein structure in 3D, coloured by secondary structure or by side-chain chemistry.",
+   "note": "Idealised helix and strand geometry, not an experimental structure.",
+   "tasks": null,
+   "lessons": [
+    "u03-17",
+    "u03-18",
+    "u03-19",
+    "u03-20",
+    "u13-17",
+    "u13-15"
+   ],
+   "url": "https://getgradify.com/scigradify/biology/#/practice/protein-viewer"
+  }
  ]
 }

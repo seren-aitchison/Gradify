@@ -3,8 +3,9 @@
 // by value, and migrations rehearsed against real data with content checksums.
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import { tempDb, snapshot, restoreRehearsal, rehearseMigration, compareSnapshots, columnsNow, checksums, changed, loadRows, applyMigrations } from "../scripts/pg-rehearsal.mjs";
-import { migrate, listMigrations, destructive } from "../scripts/supabase-admin.mjs";
+import { migrate, listMigrations, destructive, configUpdates } from "../scripts/supabase-admin.mjs";
 
 const A = "11111111-1111-4111-8111-111111111111", B = "22222222-2222-4222-8222-222222222222";
 async function seeded(upTo = null) {
@@ -23,14 +24,44 @@ async function seeded(upTo = null) {
   return { c, list };
 }
 
-test("all eleven migrations apply and verify on real PostgreSQL, through the production migrate code", async () => {
+test("every migration applies and verifies on real PostgreSQL, through the production migrate code", async () => {
   const list = await listMigrations(), c = await tempDb();
   const r = await migrate(c, { list });
   assert.equal(r.ok, true, JSON.stringify(r.report));
-  assert.equal(r.report.length, 11);
+  assert.equal(r.report.length, (await (await import("node:fs/promises")).readdir(new URL("../supabase/migrations/", import.meta.url))).filter((f) => f.endsWith(".sql")).length);
   assert.ok(r.report.every((m) => m.result === "applied and verified" && m.checked > 0));
   const again = await migrate(c, { list });
   assert.ok(again.report.every((m) => m.result === "already applied"), "re-running applies nothing twice");
+  await c.close();
+});
+
+test("a migration whose own checks fail is rolled back completely, ledger entry included", async () => {
+  const c = await tempDb();
+  // anon can still read t through a grant to everyone (PUBLIC), so revoking anon's own SELECT leaves it able to read:
+  // the SQL succeeds, but the check (effective privilege, PUBLIC included) does not hold
+  await c.sql("create table public.t (x int); grant select on public.t to public, anon;");
+  const list = [{ file: "20990101000000_revoke.sql", version: "20990101000000", name: "revoke", sql: "revoke select on table public.t from anon;" }];
+  const r = await migrate(c, { list });
+  assert.equal(r.ok, false);
+  assert.equal(r.report[0].result, "FAILED");
+  assert.match(r.report[0].error, /migration check failed: anon holds no SELECT on t/);
+  assert.equal((await c.sql("select count(*)::int n from supabase_migrations.schema_migrations where version = '20990101000000'"))[0].n, 0, "not recorded as applied");
+  const own = await c.sql("select exists (select 1 from aclexplode((select relacl from pg_class where oid = 'public.t'::regclass)) a where pg_get_userbyid(a.grantee) = 'anon' and a.privilege_type = 'SELECT') as kept");
+  assert.equal(own[0].kept, true, "anon's own grant is back: the revoke was rolled back with the failed check");
+  await c.close();
+});
+
+test("migrate refuses a PUBLIC revoke before touching the database: nothing applied, nothing recorded", async () => {
+  const c = await tempDb();
+  await c.sql("create table public.t2 (x int); grant select on public.t2 to public;");
+  const list = [{ file: "20990102000000_public.sql", version: "20990102000000", name: "public", sql: "revoke select on table public.t2 from public;" }];
+  const r = await migrate(c, { list });
+  assert.equal(r.ok, false);
+  assert.equal(r.report[0].result, "REFUSED");
+  assert.match(r.report[0].error, /revokes from PUBLIC aren't verifiable yet/);
+  const rec = await c.sql("select count(*)::int n from supabase_migrations.schema_migrations where version = '20990102000000'").catch(() => [{ n: 0 }]);
+  assert.equal(rec[0].n, 0, "not recorded");
+  assert.equal((await c.sql("select has_table_privilege('anon', 'public.t2', 'SELECT') as still"))[0].still, true, "PUBLIC's grant untouched: nothing was applied");
   await c.close();
 });
 
@@ -69,12 +100,14 @@ test("each later migration, rehearsed against real data, leaves every existing v
   const { c, list } = await seeded("20261101120000");
   let snap = JSON.parse(JSON.stringify(await snapshot(c)));
   for (const m of list.filter((x) => x.version > "20261101120000")) {
-    const r = await rehearseMigration(snap, list, m);
+    const r = await rehearseMigration(snap, list, m, configUpdates(await readFile(m.url, "utf8")));
     assert.equal(r.ok, true, `${m.file}: ${r.problems.join("; ")}`);
     const cols = await columnsNow(c), before = await checksums(c, cols);
     const applied = await migrate(c, { list: list.filter((x) => x.version <= m.version), backedUp: true });
     assert.equal(applied.ok, true);
-    assert.deepEqual(changed(before, await checksums(c, cols)), [], `${m.file} changed existing values`);
+    // only owner settings rows the migration deliberately updates may change (scripts/supabase-admin.mjs configUpdates)
+    const intended = configUpdates(await readFile(m.url, "utf8"));
+    assert.deepEqual(changed(before, await checksums(c, cols)).filter((t) => !intended.includes(t)), [], `${m.file} changed existing values`);
     snap = JSON.parse(JSON.stringify(await snapshot(c)));
   }
   await c.close();
@@ -162,5 +195,13 @@ test("test accounts: created with only a locally made bcrypt hash, and deletion 
   assert.equal(left, 1, "only the real learner remains among the ids named");
   assert.equal((await c.sql("select count(*)::int as n from auth.users"))[0].n, 1);
   assert.equal((await c.sql("select count(*)::int as n from auth.identities"))[0].n, 0, "identities go with their accounts");
+  await c.close();
+});
+
+test("a rehearsal still catches changes to settings tables the migration doesn't name", async () => {
+  const { c, list } = await seeded();
+  const snap = JSON.parse(JSON.stringify(await snapshot(c)));
+  const r = await rehearseMigration(snap, list, { sql: "update public.cards set back = 'x';" }, ["ai_limits"]);
+  assert.equal(r.ok, false);
   await c.close();
 });

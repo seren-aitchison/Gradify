@@ -387,6 +387,8 @@ X: Chlorine is 75.78% ³⁵Cl (mass 34.969) and 24.22% ³⁷Cl (mass 36.966). Ca
 > = (2,650.0 + 895.3) ÷ 100 = 35.45.
 H: Why not whole numbers?
 P: Ar values are averages of several isotopes, so they are rarely whole numbers (chlorine 35.45). Even single isotopes don't have exactly whole-number masses (except carbon-12 by definition), because of the binding energy of the nucleus and the slightly different masses of protons and neutrons. IUPAC gives some atomic weights as ranges, because isotope abundances vary between natural sources.
+P: **Investigate with the lab.** Build the two common isotopes of chlorine, chlorine-35 and chlorine-37, and think about why the relative atomic mass isn't a whole number.
+IX: atom-builder
 K: Ar is the abundance-weighted mean isotopic mass on the scale where carbon-12 = 12 exactly.
 IX: mass-spec
 !: Taking the mass number of the most common isotope as Ar. Ar is a weighted mean of all the isotopes.
@@ -403,6 +405,7 @@ NUM2: Boron is 19.9% ¹⁰B (mass 10.013) and 80.1% ¹¹B (mass 11.009). Calcula
 M1: Which atom is used as the standard for relative atomic masses? | Carbon-12 | Hydrogen-1 | Oxygen-16 | Carbon-14 | Since 1961 one-twelfth of the mass of a carbon-12 atom has been the standard.
 M2: Copper has two isotopes, ⁶³Cu and ⁶⁵Cu, and Ar = 63.55. Which is more abundant? | ⁶³Cu | ⁶⁵Cu | They are equally abundant | It can't be told | The weighted mean is much closer to 63 than to 65, so ⁶³Cu must be more common (about 69%).
 M3: Why does IUPAC now give the atomic weight of some elements, such as hydrogen, as an interval? | Isotope abundances vary measurably between natural sources, so no single value fits all samples | The isotopes haven't been measured | Hydrogen has no isotopes | Atomic weights change over time | Natural variation in isotopic composition (for example of H, C, O) means the atomic weight depends on the sample's origin.
+M2: Why is the relative atomic mass of chlorine about 35.5? | It is a weighted mean of its isotopes' masses | Chlorine atoms have half a neutron each | It is rounded from the proton number | Electrons add half a mass unit | About three-quarters of chlorine is chlorine-35 and a quarter chlorine-37.
 
 ## Relative molecular mass
 S: The relative molecular (or formula) mass of a substance is the sum of the relative atomic masses of all the atoms in its formula. It is the starting point for almost every quantitative calculation in chemistry.

@@ -471,6 +471,8 @@ X: A worked example
 > Total change = +600, a growth rate of 0.6%. This example is illustrative.
 H: Evaluation
 P: In the UK, net migration has been the main driver of population growth in recent years, as low fertility has reduced natural change. Migration estimates are less certain than births and deaths because they rely on surveys and administrative data that are revised. Population change shapes demand for housing, schools, health care and pensions.
+P: **Investigate with the lab.** Set how long the population spends in each stage and watch how the birth–death gap drives growth.
+IX: transition-model
 K: Population change is natural change plus net migration; the UK population was 69.5 million in mid-2025, growing 0.3%; net migration fell to 171,000 in 2025 and has been the main driver of growth.
 !: Assuming population growth comes mainly from births. In the UK, migration has been the main driver.
 EV: established | The UK population was estimated at 69.5 million in mid-2025, up 0.3% on mid-2024 (ONS).
@@ -491,6 +493,7 @@ M2#sociology-u15-13-q3@2: A country has more deaths than births, but its populat
 TF2#sociology-u15-13-q4@2: UK long-term net migration nearly halved between the years ending December 2024 and December 2025. | true | It fell to a provisional 171,000.
 M3#sociology-u15-13-q5@3: Why are migration estimates less certain than births and deaths? | They rely on surveys and data that get revised | They are counted exactly at every border | Migration figures never change | Migration isn't measured at all | Births and deaths are registered; migration is estimated.
 SA2#sociology-u15-13-q6@2,3: Explain the components of population change and assess what drives UK population growth. | Components and formula; worked example; mid-2025 estimates; natural change; net migration (2025); uncertainty; consequences. | Components ; Data ; Drivers ; Evaluation
+M2#sociology-u15-13-q7@1: What happens to a population when the birth rate is below the death rate? | It declines | It grows | It stays exactly constant | It doubles | Natural decrease occurs when deaths exceed births.
 
 ## The demographic transition
 LV: Introductory · Evaluation
@@ -514,6 +517,8 @@ X: Countries today
 > These differences show countries are at very different points in the transition.
 H: Evaluation
 P: The model describes Western European history well and helps compare countries. But it was based on European experience and assumes all countries will follow the same path. Some countries saw death rates fall much faster due to imported medicine, and some birth rates fell rapidly due to government policy, such as China's former one-child policy. It doesn't include migration.
+P: **Investigate with the lab.** Read the birth and death rates of the ten countries against the stages of the demographic transition model.
+IX: transition
 K: The demographic transition moves from high to low birth and death rates; death rates fall first, causing growth; birth rates fall with development; fertility ranged from 4.4 (Nigeria) to 0.75 (South Korea) in 2024.
 !: Assuming every country follows the European path at the same pace. Policy, medicine and culture change the timing.
 EV: established | In 2024, fertility rates ranged from about 4.4 births per woman in Nigeria to about 0.75 in South Korea (World Bank).
@@ -534,6 +539,7 @@ M2#sociology-u15-14-q3@2: A country's birth rate falls sharply after girls' seco
 TF2#sociology-u15-14-q4@2: The demographic transition model includes migration. | false | It focuses on birth and death rates only.
 M3#sociology-u15-14-q5@3: Why is the model criticised as Eurocentric? | It assumes all countries follow the European path | It was based mainly on African data | It ignores European history | It predicts rising death rates | Other countries have followed different paths and timings.
 SA3#sociology-u15-14-q6@3: Evaluate the usefulness of the demographic transition model. | Stages; causes of falling death and birth rates; British history; 2024 fertility comparisons; Eurocentrism, speed of change, policy, migration; judgement. | Stages ; Causes ; Comparisons ; Judgement
+M2#sociology-u15-14-q7@1: In which stage of the demographic transition does population grow fastest? | Stage 2, when death rates fall but birth rates stay high | Stage 1, with high birth and death rates | Stage 4, with low birth and death rates | Stage 5, with births below deaths | The gap between births and deaths is widest in stage 2.
 
 ## Fertility
 LV: Intermediate · Evaluation

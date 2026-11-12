@@ -319,6 +319,8 @@ X: Was Hitler's appointment a victory for the Nazis or a mistake by the elite?
 > But the Nazi vote fell in November 1932, and the party was short of money.
 > The elite: Papen and Hindenburg's advisers chose Hitler to give themselves popular backing, expecting to control him.
 > Judgement: mass support made Hitler a candidate, but the elite's miscalculation made him chancellor.
+P: **Investigate with the lab.** Sort the reasons for Hitler's rise into long-term causes, short-term causes and the trigger of his appointment in January 1933.
+IX: cause-and-consequence
 K: After 1923 Hitler sought power through elections; the Depression, propaganda and the SA made the Nazis the largest party, but conservatives around Hindenburg made him chancellor on 30 January 1933.
 !: Saying Hitler was elected chancellor. The Nazis never won a majority in a free election; Hindenburg appointed Hitler.
 EV: established | Hindenburg appointed Hitler chancellor on 30 January 1933.
@@ -336,6 +338,7 @@ M2#history-u09-09-q2@2: Why did conservatives agree to make Hitler chancellor? |
 TF1#history-u09-09-q3@1: The Nazi vote fell between July and November 1932. | true | It fell from 37.3% to about 33%, and the party ran short of money.
 M3#history-u09-09-q4@3: Which judgement about Hitler's appointment is best supported? | Mass support made him a candidate, but the elite's miscalculation made him chancellor | He seized power in a successful armed revolution | He won a majority of votes in a free election | He was appointed against the wishes of every conservative | Both popularity and intrigue mattered: votes made Hitler a candidate, conservatives made him chancellor.
 SA3#history-u09-09-q5@2,3: Why was Hitler able to become chancellor in January 1933? | After 1923 Hitler pursued power legally. The Depression drove voters to the Nazis, whose propaganda under Goebbels, the SA and broad promises made them the largest party in July 1932. But their vote fell in November, and Hitler became chancellor because Papen and Hindenburg's circle, unable to govern without popular support, appointed him on 30 January 1933 expecting to control him. A strong answer weighs Nazi strength against elite intrigue. | Explains the change of strategy ; Explains Nazi support ; Explains the Depression's role ; Explains the elite's decision ; Reaches a judgement
+M2#history-u09-09-q6@1: Which short-term cause did most to raise Nazi support? | The Depression after 1929 and mass unemployment | The Treaty of Versailles of 1919 | The Munich Putsch of 1923 | The Reichstag fire after his appointment | Nazi votes rose sharply as unemployment soared from 1930.
 
 ## Nazi ideology
 LV: GCSE and A level · Application

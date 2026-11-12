@@ -379,7 +379,7 @@
    "id": "u03",
    "n": 3,
    "title": "Nutrition",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u03-01",
@@ -482,7 +482,7 @@
    "id": "u04",
    "n": 4,
    "title": "Physical Activity",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u04-01",
@@ -1171,6 +1171,102 @@
      "module": "Adulthood and later life"
     }
    ]
+  }
+ ],
+ "interactives": [
+  {
+   "id": "organ-systems",
+   "title": "Human organ-system explorer",
+   "kind": "Explorer",
+   "sub": "Switch body systems on and off on a real 3D anatomy model and tap organs to see what they do and which systems they belong to.",
+   "note": "SciGradify Biology's explorer on the BodyParts3D adult male model (CC BY 4.0); female organs and fine structures aren't included.",
+   "tasks": null,
+   "lessons": [
+    "u02-01",
+    "u02-12",
+    "u02-16"
+   ],
+   "url": "https://getgradify.com/healthgradify/course/#/practice/organ-systems"
+  },
+  {
+   "id": "heart",
+   "title": "The cardiac cycle",
+   "kind": "Simulation",
+   "sub": "A model left heart: pressures, volumes and valves through each beat, and how heart rate, contractility and resistance change cardiac output and blood pressure.",
+   "note": "SciGradify Biology's simulation: a time-varying elastance ventricle with a two-element Windkessel; left heart only, no reflexes.",
+   "tasks": null,
+   "lessons": [
+    "u02-07",
+    "u02-08"
+   ],
+   "url": "https://getgradify.com/healthgradify/course/#/practice/heart"
+  },
+  {
+   "id": "gas-exchange",
+   "title": "Gas exchange and oxygen transport",
+   "kind": "Simulation",
+   "sub": "Oxygen loading along a lung capillary and the haemoglobin dissociation curve, at altitude, with a thickened membrane and in exercise.",
+   "note": "SciGradify Biology's simulation: Fick diffusion with the Hill equation (n = 2.7, P₅₀ 26.8 mmHg); one capillary, no shunt or V/Q mismatch.",
+   "tasks": null,
+   "lessons": [
+    "u02-11",
+    "u02-10"
+   ],
+   "url": "https://getgradify.com/healthgradify/course/#/practice/gas-exchange"
+  },
+  {
+   "id": "kidney",
+   "title": "Kidney filtration and reabsorption",
+   "kind": "Simulation",
+   "sub": "Starling forces set the filtration rate; glucose reabsorption saturates, which is why uncontrolled diabetes puts glucose in the urine; ADH controls urine concentration.",
+   "note": "SciGradify Biology's simulation with textbook values (GFR 125 mL/min, glucose Tm 375 mg/min); no autoregulation.",
+   "tasks": null,
+   "lessons": [
+    "u02-14",
+    "u02-04"
+   ],
+   "url": "https://getgradify.com/healthgradify/course/#/practice/kidney"
+  },
+  {
+   "id": "immune-response",
+   "title": "Primary and secondary immune responses",
+   "kind": "Illustrative model",
+   "sub": "Infect and vaccinate on any day and compare a first response with a faster, larger memory response.",
+   "note": "SciGradify Biology's descriptive model of measured antibody responses, in arbitrary units; not a mechanistic simulation.",
+   "tasks": null,
+   "lessons": [
+    "u02-15",
+    "u08-03"
+   ],
+   "url": "https://getgradify.com/healthgradify/course/#/practice/immune-response"
+  },
+  {
+   "id": "sleep",
+   "title": "Sleep pressure and the body clock",
+   "kind": "Simulation",
+   "sub": "The two-process model: sleep pressure and the circadian clock across three days. Stay up late, cut sleep short or shift your schedule.",
+   "note": "PsychGradify's simulation; time constants from Daan, Beersma and Borbély (1984); circadian curve idealised; the clock doesn't re-entrain.",
+   "tasks": null,
+   "lessons": [
+    "u05-01",
+    "u05-03",
+    "u05-08"
+   ],
+   "url": "https://getgradify.com/healthgradify/course/#/practice/sleep"
+  },
+  {
+   "id": "stress",
+   "title": "The physiology of stress",
+   "kind": "Illustrative model",
+   "sub": "Step through the fast sympathetic (SAM) pathway and the slower HPA axis, cortisol's negative feedback and what changes under chronic stress.",
+   "note": "PsychGradify's illustrative sequence of established physiology; real responses overlap and vary.",
+   "tasks": null,
+   "lessons": [
+    "u05-11",
+    "u05-12",
+    "u02-06"
+   ],
+   "url": "https://getgradify.com/healthgradify/course/#/practice/stress"
   }
  ]
 }

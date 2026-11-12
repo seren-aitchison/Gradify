@@ -581,6 +581,8 @@ X: Did the Peasants' Revolt fail?
 > Immediate: yes. Its leaders were killed, its promises revoked and serfdom remained.
 > Longer term: rulers became wary of poll taxes, and labour laws proved hard to enforce.
 > Judgement: a short-term failure that revealed how far the old order had weakened.
+P: **Investigate with the lab.** Sort the causes of the Peasants' Revolt into long-term causes, short-term causes and the trigger.
+IX: cause-and-consequence
 K: Labour laws, the 1381 poll tax and radical ideas drove the revolt; the rebels took London in June 1381, but Tyler was killed at Smithfield, the king's promises were revoked and serfdom continued.
 !: Assuming the rebels were all poor peasants. Many were better-off villagers, artisans and some townspeople and clergy.
 EV: established | Wat Tyler was killed at Smithfield on 15 June 1381 and Richard II revoked his promises afterwards.
@@ -598,6 +600,7 @@ M2#history-u02-16-q2@2: Why did the third poll tax provoke so much resistance? |
 TF1#history-u02-16-q3@1: The Peasants' Revolt abolished serfdom in England. | false | Richard revoked his promises; serfdom declined slowly over later decades.
 M3#history-u02-16-q4@3: Which judgement on the revolt's outcome is best supported? | A short-term failure that showed how far the old order had weakened | A complete success, since the king kept all his promises to the rebels | An event with no significance for later English history | A rising of nobles against the king, using peasants as soldiers | It failed immediately but revealed deep change.
 SA3#history-u02-16-q5@2,3: Why did the Peasants' Revolt break out in 1381? | After the Black Death, the Statute of Labourers and lords' efforts to enforce old obligations angered peasants whose bargaining power had grown. Poll taxes in 1377, 1379 and 1381, the last at a flat rate, fell heavily on the poor, and its enforcement in Essex and Kent triggered resistance. John Ball's preaching challenged inequality, and the costs of war and dislike of ministers added grievances. A strong answer links long-term and trigger causes. | Explains post-plague grievances ; Explains the poll tax as trigger ; Explains the role of ideas ; Links causes ; Reaches a judgement
+M2#history-u02-16-q6@1: What was the trigger of the Peasants' Revolt of 1381? | The collection of the third poll tax | The Black Death of 1348 | The Statute of Labourers of 1351 | The death of Edward III | The poll tax sparked revolt against grievances that had built up since the Black Death.
 
 ## The Wars of the Roses
 LV: GCSE and A level · Application
@@ -619,6 +622,8 @@ X: Why did Richard III lose the throne?
 > Former Yorkists joined Henry Tudor, who promised to marry Edward IV's daughter Elizabeth of York.
 > At Bosworth, the Stanleys turned against Richard, and he was killed.
 > Judgement: Richard's usurpation divided the Yorkist party that had kept Edward IV in power.
+P: **Investigate with the lab.** Find the Wars of the Roses on the timeline and see how they overlapped with the reigns of Henry VI, Edward IV and Richard III.
+IX: timeline
 K: Henry VI's weakness, defeat in France and noble rivalry caused the Wars of the Roses (1455–1487); the crown changed hands several times until Henry Tudor won at Bosworth.
 !: Imagining thirty years of constant warfare. Campaigns were short and intermittent, and many areas saw little fighting.
 EV: established | Henry Tudor defeated and killed Richard III at Bosworth in 1485.
@@ -636,6 +641,7 @@ M2#history-u02-17-q2@2: Why did defeat in France contribute to civil war? | It d
 TF1#history-u02-17-q3@1: The name "Wars of the Roses" was popularised long after the wars, partly by Walter Scott. | true | Contemporaries did not use the name.
 M3#history-u02-17-q4@3: Which is the best explanation of Richard III's defeat in 1485? | His usurpation divided the Yorkists, and key nobles deserted him at Bosworth | He had no army at all | Henry Tudor had a stronger hereditary claim than any Yorkist | The princes in the Tower led the rebellion | Loss of noble support was decisive: Richard's usurpation split the Yorkists, and the Stanleys turned against him at Bosworth.
 SA3#history-u02-17-q5@2,3: Why did the Wars of the Roses break out? | Henry VI was a weak king, crowned as an infant and suffering a breakdown in 1453; England lost its French lands by 1453, discrediting his government; Richard, Duke of York, a great landowner with a claim to the throne, was excluded from power; and overmighty nobles could raise their own forces. A strong answer explains how royal weakness allowed noble rivalry to become civil war. | Explains Henry VI's weakness ; Explains the effect of defeat in France ; Explains York's position ; Explains the role of overmighty nobles ; Reaches a judgement
+M2#history-u02-17-q6@1: Which battle ended the Wars of the Roses for Richard III? | Bosworth in 1485 | Hastings in 1066 | Agincourt in 1415 | Flodden in 1513 | Henry Tudor defeated Richard III at Bosworth on 22 August 1485.
 
 ## The rise of the Tudor dynasty
 LV: GCSE and A level · Application
@@ -656,6 +662,8 @@ X: Why did the Tudor dynasty survive when earlier kings had been overthrown?
 > Control: financial strength and bonds kept nobles loyal.
 > Luck and time: a male heir, and the deaths of many rival claimants in the wars.
 > Judgement: Henry's careful management turned a weak claim into a secure dynasty.
+P: **Investigate with the lab.** Follow the Tudor reigns on the timeline from 1485 to 1603 and compare their lengths.
+IX: timeline
 K: Henry Tudor won at Bosworth in 1485, married Elizabeth of York in 1486, defeated rebels at Stoke in 1487 and secured the dynasty through financial control and careful management.
 !: Thinking Henry VII's throne was safe after Bosworth. Pretenders and rebellions threatened him for over a decade.
 EV: established | Henry Tudor defeated Richard III at Bosworth on 22 August 1485 and married Elizabeth of York in January 1486.
@@ -673,4 +681,5 @@ M2#history-u02-18-q2@2: Why did Henry VII date his reign from the day before Bos
 TF1#history-u02-18-q3@1: Perkin Warbeck claimed to be one of the princes in the Tower. | true | He claimed to be Richard, Duke of York, the younger prince.
 M3#history-u02-18-q4@3: Which is the best explanation of the Tudor dynasty's survival? | Careful management of marriage, rebels, finances and the nobility turned a weak claim into a secure throne | Henry VII had the strongest hereditary claim of anyone living in England | No one seriously challenged Henry VII after his victory in 1485 | The great nobility had all been killed in the wars by 1485 | Survival came from policy, not from the strength of his claim.
 SA3#history-u02-18-q5@2,3: Why was Henry VII able to secure the Tudor dynasty? | Henry's hereditary claim was weak, but he won at Bosworth in 1485, married Elizabeth of York in 1486 to unite the houses, and defeated the Simnel rebels at Stoke in 1487 and later Warbeck. He strengthened royal finances, controlled the nobility through bonds and recognisances, and avoided costly wars. A strong answer weighs his policies against favourable circumstances, such as the deaths of rival claimants. | Explains how he won the throne ; Explains marriage and its effect ; Explains how he dealt with pretenders ; Explains financial or noble control ; Reaches a judgement
+M2#history-u02-18-q6@1: Which Tudor monarch reigned longest? | Elizabeth I, from 1558 to 1603 | Henry VII, from 1485 to 1509 | Henry VIII, from 1509 to 1547 | Mary I, from 1553 to 1558 | Elizabeth reigned for 44 years, longer than Henry VIII's 38.
 `;

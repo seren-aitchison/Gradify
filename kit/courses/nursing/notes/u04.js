@@ -430,11 +430,14 @@ H: After
 - Document immediately, accurately, on the correct chart: given, or not given with the reason code.
 - Monitor for effect and adverse effects; reassess (for example, pain after analgesia).
 - Report and act on refusals, omissions and errors.
+P: **Investigate with the lab.** Work through tablet and liquid dose calculations with the worked methods. The numbers are illustrative only.
+IX: calculations
 K: Never sign for a medicine you haven't seen the person take, and never sign before giving it.
 Q: How many identifiers should be used to confirm a person's identity? | At least two (for example, name and date of birth), checked against the wristband and chart.
 Q: What should you check before giving digoxin? | The person's pulse (rate and rhythm), and know the most recent levels and electrolytes where relevant.
 M1#nursing-u04-15-q1@1: When should administration be documented? | Immediately after giving it | Before preparing it | At the end of the shift | When the next dose is due | Only if the person asks | Prompt documentation prevents double dosing.
 M2#nursing-u04-15-q2@2: A nurse is interrupted repeatedly during a medicine round and isn't sure whether one patient had their 8am dose. What should they do? | Check the chart and colleagues; don't give until sure | Give it again, just to be safe | Skip all of that patient's medicines today | Ask the patient to decide whether to take it | Sign for it now without giving it | Uncertainty risks a double dose; verify before acting.
+M2#nursing-u04-15-q3@1: A prescription is 500 mg; tablets are 250 mg. How many tablets are given? | 2 | 0.5 | 4 | 1 | Dose required ÷ dose per tablet = 500 ÷ 250 = 2.
 
 ## The rights of medicines administration
 S: The "rights" of medicines administration are a checklist to prevent errors. The core five are right person, right medicine, right dose, right route and right time; many organisations add more.
@@ -621,11 +624,14 @@ E: Drops per minute = (volume (mL) × drop factor (drops/mL)) ÷ time (minutes) 
 X: Illustrative only: 1,000 mL over 8 hours by pump.
 > 1,000 ÷ 8 = 125 mL/hour.
 > In practice the pump settings, the prescription and a second check confirm the rate.
+P: **Investigate with the lab.** Practise infusion and drip rate calculations, checking each against the worked method.
+IX: calculations
 K: If an IV medicine has been given, the dose can't be taken back. Check everything before connecting, and stay to observe for early reactions.
 Q: What is extravasation? | Leakage of a vesicant (tissue-damaging) medicine from the vein into surrounding tissue.
 Q: What is the formula for an infusion rate in mL per hour? | Volume (mL) divided by time (hours).
 M1#nursing-u04-21-q1@1: A prescription is for 500 mL over 4 hours via a pump. What is the rate? (Illustrative calculation.) | 125 mL/hour | 100 mL/hour | 200 mL/hour | 250 mL/hour | 50 mL/hour | Rate = volume ÷ time: 500 mL ÷ 4 hours = 125 mL per hour. In practice, the pump setting is checked against the prescription by a second person where policy requires.
 M2#nursing-u04-21-q2@2: During an infusion, the cannula site becomes swollen, cool and painful. What should the nurse do first? | Stop the infusion and assess the site | Increase the rate to finish it quickly | Flush the cannula forcefully to clear it | Apply heat to the area and continue | Ignore it until the infusion has ended | Swelling and pain suggest infiltration; stopping prevents further harm.
+M2#nursing-u04-21-q3@1: 1,000 mL is to be given over 8 hours by pump. What is the rate? | 125 mL/hour | 80 mL/hour | 250 mL/hour | 8 mL/hour | Rate = volume ÷ time = 1,000 ÷ 8 = 125 mL per hour.
 
 ## Controlled drugs
 S: Controlled drugs (CDs) are medicines with potential for misuse and harm, controlled under the Misuse of Drugs Act 1971 and its regulations. They have strict rules on prescribing, storage, recording, administration and destruction.
@@ -992,11 +998,14 @@ H: Safety barriers
 - Reducing interruptions during medicine rounds.
 H: Culture
 P: The WHO's *Medication Without Harm* challenge and national patient safety strategies promote open reporting, learning and a just culture, where people can speak up about risks without fear.
+P: **Investigate with the lab.** Convert between micrograms, milligrams and grams in the calculator before working out each dose.
+IX: calculations
 K: If something feels wrong about a medicine, stop and check. Speaking up is a safety barrier.
 Q: Name four high-alert medicines. | Insulin, anticoagulants, opioids, concentrated potassium, chemotherapy, methotrexate (any four).
 Q: What is tall-man lettering? | Using capital letters to highlight differences between look-alike drug names (for example, predniSOLONE and prednisONE).
 M1#nursing-u04-33-q1@1: Which design feature prevents oral liquids being given intravenously? | Oral or enteral syringes that can't connect to IV devices | Coloured labels only | Smaller bottles | Larger print on the chart | Separate drug rounds | Physical barriers prevent wrong-route connection.
 M2#nursing-u04-33-q2@2: A nurse notices two look-alike vials of different strengths stored next to each other. What should they do? | Separate them now and report the risk | Leave them, as staff should read labels | Swap the labels round on the shelf | Remove one vial without telling anyone | Mention it at next month's team meeting | Reporting near misses and risks prevents future errors.
+M2#nursing-u04-33-q3@1: How many micrograms are in 0.5 mg? | 500 micrograms | 50 micrograms | 5 micrograms | 5,000 micrograms | 1 mg = 1,000 micrograms, so 0.5 mg = 500 micrograms.
 
 ## Medication errors
 S: A medication error is any preventable event that may cause or lead to inappropriate medicine use or harm. Errors can occur in prescribing, dispensing, preparing, administering or monitoring. How you respond matters as much as preventing them.

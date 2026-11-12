@@ -700,6 +700,8 @@ X: Environmental justice
 > These cases show that environmental harm is distributed unequally by race and class.
 H: Evaluation
 P: Critical theories explain why environmental harm persists under capitalism but may be pessimistic about reform. Ecological modernisation offers practical paths but may underestimate limits and global inequalities. Environmental justice research shows that environmental problems are also problems of inequality and power.
+P: **Investigate with the lab.** Plot CO₂ emissions per person against income and compare who emits and who bears the risk.
+IX: data-climate
 K: The treadmill of production and metabolic rift link environmental harm to capitalism; ecological modernisation argues green growth is possible; environmental justice shows harms fall unequally.
 !: Assuming environmental harm affects everyone equally. Race and class shape exposure.
 EV: established | In 2020, a coroner recorded that air pollution contributed to the death of Ella Adoo-Kissi-Debrah.
@@ -720,6 +722,7 @@ M2#sociology-u14-19-q2@2: A poor neighbourhood next to a busy motorway has much 
 TF2#sociology-u14-19-q3@2: Foster's concept of metabolic rift draws on Marx. | true | He used Marx's ideas about soil and natural cycles.
 M3#sociology-u14-19-q4@3: Why do critics question ecological modernisation's evidence? | Some emissions cuts reflect offshoring production | Emissions have never fallen anywhere | Technology has no effect on emissions | Economic growth always stops | Imported goods carry emissions produced elsewhere.
 SA3#sociology-u14-19-q5@3: Evaluate sociological theories of the relationship between society and the environment. | Treadmill of production; metabolic rift; ecological modernisation and offshoring; environmental justice (Bullard, Ella Adoo-Kissi-Debrah); judgement. | Critical ; Modernisation ; Justice ; Judgement
+M2#sociology-u14-19-q6@1: What does environmental justice concern? | The unequal distribution of environmental harms and benefits | Laws protecting wildlife only | The cost of renewable energy | Recycling rates in cities | Low-emitting, poorer groups often bear the greatest environmental risk.
 
 ## Sustainable development
 LV: Intermediate · Evaluation

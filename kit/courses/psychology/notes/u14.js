@@ -96,6 +96,8 @@ X: The Good Behaviour Game
 > An EEF-funded trial in England found no overall impact on reading attainment, though there were some behaviour benefits for boys at risk of conduct problems.
 H: Evaluation
 P: Strict "zero tolerance" approaches are debated: supporters argue they create calm, consistent environments; critics argue they can increase exclusions, especially for pupils with special educational needs. Behaviour is shaped by needs, relationships and context, so effective approaches combine clear structure with support.
+P: **Investigate with the lab.** Read an ABAB graph of classroom behaviour and see how noise changes what you can conclude.
+IX: abab
 K: Behaviour can be shaped by clear routines and reinforcement and supported by relationships and restorative approaches; evidence favours combining structure with support.
 !: Assuming one behaviour strategy suits all pupils. Needs and context differ.
 EV: established | Consistent routines and specific praise can improve classroom behaviour.
@@ -114,6 +116,7 @@ M2#psychology-u14-03-q2@2: After a fight, both pupils meet with a teacher to dis
 TF2#psychology-u14-03-q3@2: The EEF trial of the Good Behaviour Game in England found large improvements in reading. | false | It found no overall impact on reading.
 M3#psychology-u14-03-q4@3: Why are zero-tolerance policies debated? | They may increase exclusions for some groups | They never create calm | They always reduce exclusions | They ignore rules | Strictness may disproportionately affect pupils with SEN.
 SA2#psychology-u14-03-q5@2,3: Evaluate approaches to managing behaviour in schools. | Behaviourist (routines, praise, tokens); relational, restorative, trauma-informed; EEF guidance; Good Behaviour Game evidence; zero tolerance debate; combining structure and support. | Behaviourist ; Relational ; Evidence ; Debate
+M2#psychology-u14-03-q6@1: In an ABAB design, what does the first A phase measure? | The baseline before any intervention | The effect of the intervention | Behaviour after the study ends | The teacher's behaviour only | A is the baseline; B is the intervention phase.
 
 ## Assessment in education
 LV: Intermediate · Application

@@ -358,6 +358,8 @@ X: The transactional model
 > In **secondary appraisal**, they judge whether they have the resources to cope. Stress occurs when demands seem to exceed resources, so the same event can stress one person but not another.
 H: Evaluation
 P: The SRRS is simple but treats all people as experiencing events the same way, includes positive events and relies on recall. The transactional model explains individual differences but is harder to measure. Social factors such as poverty, discrimination and job insecurity are also chronic stressors.
+P: **Investigate with the lab.** Step through the SAM pathway, then the HPA axis, and compare how fast each acts.
+IX: stress
 K: Stress occurs when demands seem to exceed resources; life events and hassles both matter; Lazarus and Folkman's appraisal model explains individual differences.
 !: Assuming the same event is equally stressful for everyone. Appraisal and resources shape stress.
 EV: established | Chronic stress is associated with poorer physical and mental health.
@@ -377,6 +379,7 @@ M2#psychology-u13-10-q2@2: Two students face the same exam; one feels threatened
 TF2#psychology-u13-10-q3@2: Kanner et al. found daily hassles predicted psychological symptoms better than major life events. | true | Hassles were stronger predictors in their study.
 M3#psychology-u13-10-q4@3: What is a limitation of the SRRS? | It assumes events affect everyone equally | It includes too few events | It measures only hassles | It ignores illness | People appraise the same life event differently, which the SRRS ignores.
 SA2#psychology-u13-10-q5@2,3: Evaluate ways of measuring and explaining stress. | Definitions (stressor, acute, chronic); SRRS (Holmes and Rahe) and limitations; hassles and uplifts (Kanner et al.); transactional model (Lazarus and Folkman); social stressors. | Measurement ; Hassles ; Appraisal ; Evaluation
+M2#psychology-u13-10-q6@1: Which hormone does the HPA axis release from the adrenal cortex? | Cortisol | Adrenaline | Insulin | Melatonin | The HPA axis ends with cortisol release; the faster SAM pathway releases adrenaline.
 
 ## The physiology of stress
 LV: Intermediate · Application

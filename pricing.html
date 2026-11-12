@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Pricing · Gradify</title>
+  <meta name="description" content="Every Gradify course, lesson, lab and quiz is free. Gradify Pro adds generous Gradify AI for £7.99 a month or £63.99 a year.">
+  <meta property="og:title" content="Gradify pricing">
+  <meta property="og:description" content="Learn free. Go further with Gradify Pro.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/kit/styles/base.css">
+  <style>
+    main { padding: 56px 0 40px; }
+    .hero { max-width: 760px; margin: 0 auto 36px; text-align: center; }
+    .hero h1 { font-size: clamp(34px, 6vw, 60px); letter-spacing: -.035em; line-height: 1.02; margin: 14px 0 14px; }
+    .hero h1 em { font-style: normal; background: var(--spectrum); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero p { color: var(--mute); font-size: 18px; line-height: 1.55; margin: 0; }
+    .notice { max-width: 900px; margin: 0 auto 24px; padding: 14px 18px; border-radius: var(--radius); border: 1px solid var(--line-strong); background: var(--panel); display: flex; gap: 12px; align-items: flex-start; line-height: 1.5; }
+    .notice b { color: var(--fg); } .notice p { margin: 0; color: var(--mute); }
+    .notice .ic { flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font: 700 13px var(--sans); background: rgba(255, 255, 255, .1); }
+    .notice.ok { border-color: #5fe3a166; } .notice.ok .ic { background: #5fe3a1; color: #000; }
+    .notice.warn { border-color: #ffc00266; } .notice.warn .ic { background: #ffc002; color: #000; }
+
+    /* monthly / yearly switch: a real radio group */
+    .period { display: flex; justify-content: center; margin: 0 0 26px; border: 0; padding: 0; }
+    .period legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .seg { display: inline-flex; padding: 4px; border-radius: 999px; background: var(--inset); border: 1px solid var(--line); gap: 2px; }
+    .seg input { position: absolute; opacity: 0; pointer-events: none; }
+    .seg label { padding: 9px 18px; border-radius: 999px; font-weight: 500; font-size: 15px; color: var(--mute); cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
+    .seg input:checked + label { background: #fff; color: #000; }
+    .seg input:focus-visible + label { outline: 2px solid #fff; outline-offset: 2px; }
+    .save-tag { font: 600 11px var(--sans); letter-spacing: .02em; padding: 2px 8px; border-radius: 99px; background: linear-gradient(90deg, #4641ff, #f055dd); color: #fff; }
+
+    .plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 980px; margin: 0 auto; }
+    .plan { position: relative; padding: 28px; border-radius: 18px; display: flex; flex-direction: column; gap: 18px; }
+    .plan.pro { border: 1px solid transparent; background: linear-gradient(var(--panel-strong), var(--panel-strong)) padding-box, var(--spectrum) border-box; }
+    .plan h2 { margin: 0; font-size: 22px; letter-spacing: -.01em; display: flex; align-items: center; gap: 10px; }
+    .plan .for { margin: 4px 0 0; color: var(--mute); line-height: 1.5; }
+    .price { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+    .price .amt { font-size: 46px; font-weight: 700; letter-spacing: -.03em; }
+    .price .per { color: var(--mute); }
+    .price-note { margin: -10px 0 0; color: var(--mute); font-size: 14px; min-height: 1.5em; }
+    .price-note b { color: var(--fg); }
+    .plan ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .plan li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; line-height: 1.45; }
+    .plan li svg { width: 18px; height: 18px; margin-top: 2px; }
+    .plan li small { display: block; color: var(--mute); }
+    .plan .cta { margin-top: auto; display: grid; gap: 8px; }
+    .plan .cta .btn { width: 100%; }
+    .plan .cta .btn[aria-disabled="true"] { opacity: .55; cursor: not-allowed; transform: none; }
+    .plan .cta p { margin: 0; color: var(--mute); font-size: 13px; text-align: center; line-height: 1.45; }
+    .notify label { display: block; font-size: 14px; color: var(--mute); margin-bottom: 8px; text-align: center; }
+    .notify-row { display: flex; gap: 8px; }
+    .notify-row input { flex: 1; min-width: 0; padding: 12px 16px; border-radius: 999px; border: 1px solid var(--line-strong); background: var(--inset); color: var(--fg); font: 15px var(--sans); }
+    .notify-row .btn { width: auto !important; }
+    .notify p { margin: 8px 0 0; color: var(--mute); font-size: 13px; text-align: center; }
+    .notify p a { color: inherit; }
+    @media (max-width: 760px) { .notify-row { flex-direction: column; } .notify-row .btn { width: 100% !important; } }
+    .current { font: 600 11px var(--sans); text-transform: uppercase; letter-spacing: .08em; padding: 3px 9px; border-radius: 99px; border: 1px solid var(--line-strong); color: var(--fg); }
+
+    section.more { max-width: 980px; margin: 56px auto 0; }
+    section.more h2 { font-size: 26px; letter-spacing: -.02em; margin: 0 0 6px; }
+    section.more > p { color: var(--mute); margin: 0 0 18px; line-height: 1.55; }
+    .table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--line); background: var(--panel); }
+    table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    th, td { text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--line); }
+    tr:last-child td { border-bottom: 0; }
+    thead th { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--mute); }
+    td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    tbody th { font-weight: 500; }
+    .faq { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .faq details { padding: 16px 18px; border-radius: var(--radius); }
+    .faq summary { cursor: pointer; font-weight: 600; line-height: 1.4; }
+    .faq details p { color: var(--mute); line-height: 1.55; margin: 10px 0 0; }
+    .foot { max-width: 980px; margin: 56px auto 32px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; color: var(--mute); font-size: 14px; }
+    .foot a { color: inherit; }
+    @media (max-width: 760px) { .plans, .faq { grid-template-columns: 1fr; } .plan { padding: 22px; } main { padding-top: 32px; } }
+  </style>
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="wrap">
+    <header class="bar glass">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" fill="none" stroke="url(#gg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Gradify
+      </a>
+      <nav class="sections" aria-label="Sections">
+        <a href="/#stage">Sites</a>
+        <a href="/#features">Features</a>
+        <a href="/pricing.html" class="active" aria-current="page">Pricing</a>
+      </nav>
+      <div class="right">
+        <a class="link" href="/app.html#/account" id="acct-link">Sign in</a>
+        <a class="btn btn-primary btn-sm lg" href="/app.html">Open Gradify</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="hero">
+        <span class="badge"><span class="spark"></span> Pricing</span>
+        <h1>Learn free.<br><em>Go further with Pro.</em></h1>
+        <p>Every Gradify course, lesson, lab and quiz is free, with your progress saved to your account on every device. Gradify Pro adds generous Gradify AI.</p>
+      </div>
+
+      <div id="status" aria-live="polite"></div>
+
+      <fieldset class="period">
+        <legend>Billing period</legend>
+        <div class="seg">
+          <input type="radio" name="period" id="p-month" value="month" checked><label for="p-month">Monthly</label>
+          <input type="radio" name="period" id="p-year" value="year"><label for="p-year">Yearly <span class="save-tag" id="save-tag"></span></label>
+        </div>
+      </fieldset>
+
+      <div class="plans">
+        <article class="plan glass" aria-labelledby="free-h">
+          <div>
+            <h2 id="free-h">Free <span class="current" id="free-current" hidden>Your plan</span></h2>
+            <p class="for">For everyone, for as long as you like.</p>
+          </div>
+          <div class="price"><span class="amt">£0</span><span class="per">forever</span></div>
+          <p class="price-note">No card needed.</p>
+          <ul id="free-list"></ul>
+          <div class="cta" id="free-cta"></div>
+        </article>
+
+        <article class="plan pro" aria-labelledby="pro-h">
+          <div>
+            <h2 id="pro-h">Gradify Pro <span class="current" id="pro-current" hidden>Your plan</span></h2>
+            <p class="for">For regular study with Gradify AI at your side.</p>
+          </div>
+          <div class="price"><span class="amt" id="pro-amt"></span><span class="per" id="pro-per"></span></div>
+          <p class="price-note" id="pro-note"></p>
+          <ul id="pro-list"></ul>
+          <div class="cta" id="pro-cta"></div>
+        </article>
+      </div>
+
+      <section class="more" aria-labelledby="allow-h">
+        <h2 id="allow-h">Gradify AI allowances</h2>
+        <p id="allow-lede">Uses a month, on monthly and yearly billing alike. Allowances reset each month and don't roll over. A request that fails doesn't count.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Gradify Pro</th></tr></thead>
+            <tbody id="allow-rows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="more" aria-labelledby="faq-h">
+        <h2 id="faq-h">How billing works</h2>
+        <p>Payments are handled by Stripe. Gradify never sees or stores your card number.</p>
+        <div class="faq" id="faq"></div>
+      </section>
+
+      <div class="foot">
+        <span>Prices in pounds sterling (GBP), including VAT.</span>
+        <span><a href="/privacy.html">Privacy</a> · <a href="/app.html#/account">Account</a> · <a href="/">Gradify</a></span>
+      </div>
+    </main>
+  </div>
+
+  <script src="/kit/vendor/supabase/supabase.js"></script>
+  <script type="module">
+    import { SUPABASE_URL, SUPABASE_ANON_KEY } from "/gradify.config.js";
+    import { joinWaitlist, PRO_LIST } from "/kit/data/waitlist.js";
+    import { PRO_PRICES, PRO_ON_SALE, AI_ALLOWANCES, uses, money, annualSaving, planOf, describePlan, clientStore, mySubscription, startCheckout, openPortal } from "/kit/data/billing.js";
+
+    const $ = (s) => document.querySelector(s);
+    const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+    const tick = `<svg viewBox="0 0 24 24" fill="none" stroke="#5fe3a1" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7"/></svg>`;
+    const spark = `<svg viewBox="0 0 24 24" fill="none" stroke="#f055dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg>`;
+    const li = (ic, t, sub) => `<li>${ic}<span>${t}${sub ? `<small>${sub}</small>` : ""}</span></li>`;
+    const save = annualSaving();
+    const tester = new URLSearchParams(location.search).has("tester");
+    const canBuy = PRO_ON_SALE || tester;
+    let period = "month", store = null, sub = null, signedIn = false;
+
+    // ---------- the parts that don't depend on the learner ----------
+    $("#save-tag").textContent = `Save ${save.percent}%`;
+    $("#free-list").innerHTML = [
+      li(tick, "Every course on every Gradify site", "Lessons, worked examples, labs and quizzes"),
+      li(tick, "Progress saved to your account", "Pick up on any device"),
+      li(tick, "Flashcards and spaced review", "Made from your own notes, in your browser"),
+      li(tick, "Planner, streaks and the Gradify road"),
+      li(spark, "A taste of Gradify AI", AI_ALLOWANCES.map((a) => uses(a, a.free)).join(" · ") + " a month"),
+    ].join("");
+    $("#pro-list").innerHTML = [
+      li(tick, "Everything in Free"),
+      ...AI_ALLOWANCES.map((a) => li(spark, uses(a, a.pro), `a month, instead of ${a.free}`)),
+      li(tick, "Cancel any time", "You keep Pro until the end of the period you've paid for"),
+    ].join("");
+    $("#allow-rows").innerHTML = AI_ALLOWANCES.map((a) => `<tr><th scope="row">${esc(a.label)}</th><td class="n">${a.free}</td><td class="n">${a.pro}</td></tr>`).join("");
+
+    const faq = [
+      ["Monthly or yearly?", `Monthly is ${money(PRO_PRICES.month)} each month. Yearly is ${money(PRO_PRICES.year)} once a year, which works out at ${money(save.perMonth)} a month. Twelve monthly payments come to ${money(save.twelveMonths)}, so paying yearly saves ${money(save.saved)} (${save.percent}%), about ${save.monthsFree} months free.`],
+      ["When am I charged?", "Straight away when you subscribe, then on the same date each month or each year. Your Account page shows the next renewal date."],
+      ["How do allowances work on yearly billing?", "The same as monthly: Gradify AI allowances are per month on both plans, and unused uses don't roll over."],
+      ["Can I switch between monthly and yearly?", "Yes, from Manage billing on your Account page. Stripe adjusts the price for the time left on your current period."],
+      ["How do I cancel?", "From Manage billing on your Account page, any time, in two clicks. You keep Pro until the end of the period you've already paid for, then move to Free. Nothing you've made is deleted."],
+      ["What if a payment fails?", "Stripe tries your card again over the next few days and emails you. You keep Pro for 3 days after a renewal date while it does. Update your card in Manage billing to keep Pro going."],
+      ["What happens when Pro ends?", "You move to Free. Every course, note, flashcard and bit of progress stays in your account; only the Gradify AI allowance goes back to Free's."],
+      ["Is there a fair-use limit?", "Yes. As well as the allowances above, each account has a monthly fair-use limit on how much Gradify AI it can use, which keeps Gradify Pro's price low. If you reach it, Gradify AI pauses until your allowance resets; everything else on Gradify keeps working. Long tutor conversations count once, and a study pack you've already made opens again without using anything."],
+      ["Do the prices include VAT?", "Yes. Prices are in pounds sterling and include VAT."],
+    ];
+    $("#faq").innerHTML = faq.map(([q, a]) => `<details class="glass"><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
+
+    function renderPrice() {
+      if (period === "year") {
+        $("#pro-amt").textContent = money(PRO_PRICES.year); $("#pro-per").textContent = "a year";
+        $("#pro-note").innerHTML = `${money(save.perMonth)} a month, billed yearly. <b>Save ${money(save.saved)}</b> on monthly.`;
+      } else {
+        $("#pro-amt").textContent = money(PRO_PRICES.month); $("#pro-per").textContent = "a month";
+        $("#pro-note").innerHTML = `Or ${money(PRO_PRICES.year)} a year, and save ${save.percent}%.`;
+      }
+      renderCta();
+    }
+
+    function notice(tone, title, text) {
+      $("#status").innerHTML = `<div class="notice ${tone}" role="status"><span class="ic" aria-hidden="true">${tone === "ok" ? "✓" : tone === "warn" ? "!" : "i"}</span><p><b>${esc(title)}</b> ${esc(text)}</p></div>`;
+    }
+
+    function renderCta() {
+      const plan = planOf(sub);
+      $("#free-current").hidden = !signedIn || plan !== "free";
+      $("#pro-current").hidden = plan !== "pro";
+      $("#free-cta").innerHTML = signedIn
+        ? `<a class="btn btn-ghost lg" href="/app.html">${plan === "free" ? "Keep learning" : "Open Gradify"}</a>`
+        : `<a class="btn btn-ghost lg" href="/app.html#/account">Start free</a><p>Sign in with email or Google. No card needed.</p>`;
+      const label = period === "year" ? `Get Pro yearly · ${money(PRO_PRICES.year)}` : `Get Pro monthly · ${money(PRO_PRICES.month)}`;
+      let html;
+      if (plan === "pro" || (sub && describePlan(sub).manage)) html = `<button class="btn btn-primary lg" id="manage" type="button">Manage billing</button><p>Change plan, update your card, see invoices or cancel.</p>`;
+      else if (!canBuy) html = `<form class="notify" id="notify" novalidate><label for="notify-email">Not on sale yet. Get one email when it opens:</label><div class="notify-row"><input id="notify-email" type="email" autocomplete="email" placeholder="you@example.com" required><button class="btn btn-primary lg" type="submit">Notify me</button></div><p id="notify-msg" role="status" aria-live="polite">No payment, no account needed. <a href="/privacy.html#launch-lists">What we keep</a>.</p></form>`;
+      else if (!signedIn) html = `<a class="btn btn-primary lg" href="/app.html#/account">Sign in to get Pro</a><p>Sign in first so Pro is added to your account.</p>`;
+      else html = `<button class="btn btn-primary lg" id="buy" type="button">${label}</button><p>Secure checkout by Stripe. Cancel any time.</p>`;
+      $("#pro-cta").innerHTML = html;
+      $("#notify")?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const f = e.currentTarget, msg = $("#notify-msg"), input = f.querySelector("input"), btn = f.querySelector("button");
+        btn.disabled = true;
+        try { msg.textContent = await joinWaitlist(input.value, PRO_LIST); f.querySelector(".notify-row").hidden = true; }
+        catch (err) { msg.textContent = err.invalid ? err.message : "Sorry, that didn't work. Please try again in a moment."; input.focus(); }
+        finally { btn.disabled = false; }
+      });
+      $("#buy")?.addEventListener("click", (e) => go(e.currentTarget, () => startCheckout(store, period, "/pricing.html")));
+      $("#manage")?.addEventListener("click", (e) => go(e.currentTarget, () => openPortal(store, "/pricing.html")));
+    }
+
+    async function go(btn, fn) {
+      const was = btn.textContent;
+      btn.disabled = true; btn.textContent = "Opening Stripe…";
+      try { await fn(); }
+      catch (e) { btn.disabled = false; btn.textContent = was; notice("warn", "That didn't work.", e.message); }
+    }
+
+    document.querySelectorAll('input[name="period"]').forEach((r) => r.addEventListener("change", () => { period = r.value; renderPrice(); }));
+
+    // ---------- the learner ----------
+    async function loadLearner() {
+      if (!SUPABASE_URL || !SUPABASE_ANON_KEY || !window.supabase) return;
+      const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      store = clientStore(client);
+      const { data } = await client.auth.getSession();
+      signedIn = Boolean(data.session);
+      $("#acct-link").textContent = signedIn ? "Account" : "Sign in";
+      if (signedIn) sub = await mySubscription(store).catch(() => null);
+    }
+
+    // Back from Stripe Checkout. The webhook usually lands within a few seconds; until then the row still says Free.
+    async function afterCheckout() {
+      const result = new URLSearchParams(location.search).get("checkout");
+      if (result === "cancelled") return notice("info", "Checkout cancelled.", "You haven't been charged.");
+      if (result !== "success") return;
+      notice("info", "Payment received.", "Adding Gradify Pro to your account…");
+      for (let i = 0; i < 12 && planOf(sub) !== "pro"; i++) {
+        await new Promise((r) => setTimeout(r, 2500));
+        sub = await mySubscription(store).catch(() => sub);
+      }
+      renderCta();
+      if (planOf(sub) === "pro") notice("ok", "Welcome to Gradify Pro.", describePlan(sub).line);
+      else notice("warn", "Your payment went through, but Pro isn't showing yet.", "This can take a minute. Refresh this page shortly; if it still says Free, your receipt from Stripe is your proof of payment.");
+    }
+
+    if (!canBuy) notice("info", "Gradify Pro is coming soon.", "Everything on Gradify is free and open now. Gradify Pro opens when Gradify AI launches; the prices shown are the planned launch prices.");
+    renderPrice();
+    await loadLearner();
+    renderCta();
+    if (store) await afterCheckout();
+  </script>
+</body>
+</html>

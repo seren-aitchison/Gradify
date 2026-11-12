@@ -1938,5 +1938,68 @@
     }
    ]
   }
+ ],
+ "interactives": [
+  {
+   "id": "source-investigation",
+   "title": "Source investigation",
+   "kind": "Exercise",
+   "sub": "Six real sources, from the Bayeux Tapestry to the Sadler Committee: judge what each can and can't show.",
+   "note": "Summaries of real sources; the judgements follow mainstream historical scholarship.",
+   "tasks": null,
+   "lessons": [
+    "u01-02",
+    "u01-03",
+    "u01-04",
+    "u01-05",
+    "u01-06",
+    "u01-14"
+   ],
+   "url": "https://getgradify.com/historygradify/course/#/practice/source-investigation"
+  },
+  {
+   "id": "timeline",
+   "title": "Timeline, 1066–1991",
+   "kind": "Explorer",
+   "sub": "Reigns, wars and events on one scale: see duration, overlap and the gaps between them.",
+   "note": "Well-established dates only; periods are conventional.",
+   "tasks": null,
+   "lessons": [
+    "u01-11",
+    "u01-09",
+    "u02-17",
+    "u02-18"
+   ],
+   "url": "https://getgradify.com/historygradify/course/#/practice/timeline"
+  },
+  {
+   "id": "cause-and-consequence",
+   "title": "Cause and consequence",
+   "kind": "Exercise",
+   "sub": "Sort the factors behind three turning points into long-term causes, short-term causes and triggers.",
+   "note": "Classifications follow standard accounts; where they are a matter of judgement, the explanations say so.",
+   "tasks": null,
+   "lessons": [
+    "u01-08",
+    "u02-16",
+    "u07-07",
+    "u07-08",
+    "u09-09"
+   ],
+   "url": "https://getgradify.com/historygradify/course/#/practice/cause-and-consequence"
+  },
+  {
+   "id": "chronology",
+   "title": "Chronology challenge",
+   "kind": "Exercise",
+   "sub": "Put events in order across four rounds, from the Norman Conquest to the end of the Soviet Union.",
+   "note": "Every date is a well-established one.",
+   "tasks": null,
+   "lessons": [
+    "u01-11",
+    "u01-09"
+   ],
+   "url": "https://getgradify.com/historygradify/course/#/practice/chronology"
+  }
  ]
 }

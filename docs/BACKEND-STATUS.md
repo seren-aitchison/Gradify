@@ -64,19 +64,48 @@ Two content claims were changed for accuracy, not because of the backend: LawGra
 ## Last verification run
 
 <!-- verify:start -->
-Last run: 2026-11-05, `node scripts/verify-backend.mjs --write`, against no project, no test accounts.
+Last run: 2026-11-09, `node scripts/verify-backend.mjs --site https://getgradify.com --write`, against ezlohntrnassgsbofcfc.supabase.co with 2 test accounts.
 
 | | Question | Result |
 |---|---|---|
 | 1 | Backend code in the repository | **working** |
-| 2 | Supabase project exists and is set up | **failing** |
-| 3 | Deployed site connected to it | **failing** |
-| 4 | Accounts and saving work in production | **untested** |
-| 5 | AI function deployed and answering | **untested** |
+| 2 | Supabase project exists and is set up | **working** |
+| 3 | Deployed site connected to it | **working** |
+| 4 | Accounts and saving work in production | **working** |
+| 5 | AI function deployed and answering | **failing** |
 
 | Check | Result | Detail |
 |---|---|---|
-| Migrations, study-pack function and cloud store exist | ✓ | 7 files |
-| The deployed site uses this project | ✗ | gradify.config.js in this checkout's gradify.config.js is empty |
-| Supabase URL and anon key provided | ✗ | Both are empty, so the site runs in this-browser-only mode. |
+| Migrations, study-pack function and cloud store exist | ✓ | 13 files |
+| The deployed site uses this project | ✓ | https://getgradify.com |
+| Key is the public anon key | ✓ | publishable key |
+| Supabase project answers | ✓ | https://ezlohntrnassgsbofcfc.supabase.co |
+| Email sign-in is enabled | ✓ | email on, Google off |
+| Every migration has been run | ✓ | 10 migrations present |
+| Signed-out visitors can't read learner data | ✓ | No rows visible without signing in |
+| Learner A can sign in | ✓ | gradify-check-a@getgradify.com |
+| The account has a profile | ✓ | created by the sign-up trigger |
+| Profile changes save | ✓ |  |
+| XP can't be set from the browser | ✓ | guard_xp kept XP unchanged |
+| Lesson progress saves to the account | ✓ |  |
+| Answers save to the account | ✓ |  |
+| Progress reads back on a second device (a new session) | ✓ |  |
+| Learner B can sign in | ✓ |  |
+| Learner B can't see or change learner A's progress | ✓ |  |
+| documents: only its owner can read, change, delete or create a row | ✓ | read, change, delete and forged create by another learner all refused; unreadable signed out |
+| packs: only its owner can read, change, delete or create a row | ✓ | read, change, delete and forged create by another learner all refused; unreadable signed out |
+| cards: only its owner can read, change, delete or create a row | ✓ | read, change, delete and forged create by another learner all refused; unreadable signed out |
+| activity: only its owner can read, change, delete or create a row | ✓ | read, change, delete and forged create by another learner all refused; unreadable signed out |
+| plan_blocks: only its owner can read, change, delete or create a row | ✓ | read, change, delete and forged create by another learner all refused; unreadable signed out |
+| workouts: only its owner can read, change, delete or create a row | ✓ | read, change, delete and forged create by another learner all refused; unreadable signed out |
+| body_checkins: only its owner can read, change, delete or create a row | ✓ | read, change, delete and forged create by another learner all refused; unreadable signed out |
+| fitness_tests: only its owner can read, change, delete or create a row | ✓ | read, change, delete and forged create by another learner all refused; unreadable signed out |
+| revalidation_entries: only its owner can read, change, delete or create a row | ✓ | read, change, delete and forged create by another learner all refused; unreadable signed out |
+| tutor_usage: only its owner can read, change, delete or create a row | ✓ | read, change, delete and forged create by another learner all refused; unreadable signed out |
+| assessment_attempts: only its owner can read, change, delete or create a row | ✓ | read, change, delete and forged create by another learner all refused; unreadable signed out |
+| profiles: only its owner can read or change it | ✓ |  |
+| page_events: visitors can add a count but not read them | ✓ |  |
+| Signing out ends the session | ✓ |  |
+| The study-pack function is deployed | ✗ | Not found: run supabase functions deploy study-pack |
+| The course-tutor function is deployed | ✗ | Not found: run supabase functions deploy course-tutor |
 <!-- verify:end -->

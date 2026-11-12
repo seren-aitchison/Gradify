@@ -4,7 +4,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { expectations, verifyQuery, migrate, judgeRls, listMigrations, client, destructive } from "../scripts/supabase-admin.mjs";
+import { UnverifiableRevoke, expectations, verifyQuery, migrate, judgeRls, listMigrations, client, destructive } from "../scripts/supabase-admin.mjs";
 
 function fakeDb({ applied = [], failOn = null, missing = [], atomic = true, users = 0, rows = {}, loseRowsOn = null } = {}) {
   const ledger = new Set(applied), ran = [], counts = { ...rows };
@@ -38,6 +38,28 @@ test("expectations are read from the migration itself", () => {
   assert.deepEqual(e.policies, [{ name: "own a", table: "a" }]);
   assert.deepEqual(e.columns, [{ table: "a", column: "note" }]);
   assert.equal(verifyQuery(e).checks.length, 4);
+});
+
+test("revoked table privileges are verified: each role must hold none of them afterwards", () => {
+  const e = expectations("revoke truncate, maintain on table public.goals from anon, authenticated;\nrevoke all on public.ai_cache from anon;");
+  assert.deepEqual(e.revoked, [
+    { table: "goals", role: "anon", privileges: ["TRUNCATE", "MAINTAIN"] },
+    { table: "goals", role: "authenticated", privileges: ["TRUNCATE", "MAINTAIN"] },
+    { table: "ai_cache", role: "anon", privileges: ["SELECT", "INSERT", "UPDATE", "DELETE", "TRUNCATE", "REFERENCES", "TRIGGER", "MAINTAIN"] },
+  ]);
+  const q = verifyQuery(e);
+  assert.equal(q.checks.length, 3);
+  assert.match(q.query, /not \(has_table_privilege\('anon', 'public\.goals', 'TRUNCATE'\) or has_table_privilege\('anon', 'public\.goals', 'MAINTAIN'\)\)/);
+});
+
+test("a revoke the tool can't verify is refused, never silently skipped", () => {
+  for (const sql of [
+    "revoke select on table public.x from public;",                       // PUBLIC: has_table_privilege can't check it
+    "revoke select on table public.x from anon, PUBLIC;",                 // PUBLIC alongside a checkable role
+    "revoke grant option for select on table public.x from anon;",        // not a privilege it can check
+    "revoke select on table public.x from anon cascade;",                 // not a single role name
+    "revoke usage on table public.x from anon;",                          // not a table privilege
+  ]) assert.throws(() => expectations(sql), (e) => e instanceof UnverifiableRevoke && /Refused rather than skipped/.test(e.message), sql);
 });
 
 test("every real migration has something to verify", async () => {
@@ -129,4 +151,30 @@ test("the token scope check passes a project-only token and fails a broader one,
   const broad = await tokenScope(c, fake(true), "t");
   assert.equal(broad.ok, false);
   assert.deepEqual(broad.rows.filter((r) => !r.ok).map((r) => r.check), ["Cannot list projects across the account", "Cannot read organisations", "Cannot read this project's API keys (not needed)"]);
+});
+
+test("the migration checker allows seed rows only in new tables, and function permissions", async () => {
+  const { destructive } = await import("../scripts/supabase-admin.mjs");
+  assert.deepEqual(destructive("create table public.t (a int);\ninsert into public.t (a) values (1);"), []);
+  assert.equal(destructive("insert into public.profiles (id) values (gen_random_uuid());").length, 1, "insert into an existing table is refused");
+  assert.deepEqual(destructive("revoke all on function public.f(uuid) from public, anon;\ngrant execute on function public.f(uuid) to authenticated;"), []);
+  assert.deepEqual(destructive("create or replace function public.f() returns table (a int, b text) language sql stable as $$ select 1, 'x' $$;"), []);
+  assert.equal(destructive("update public.profiles set xp = 0;").length, 1, "updates stay refused");
+  assert.equal(destructive("drop policy \"p\" on public.profiles;").length, 1, "dropping a policy stays refused");
+});
+
+test("owner settings may be changed one keyed row at a time; learner tables and broad updates are still refused", async () => {
+  const { configUpdates } = await import("../scripts/supabase-admin.mjs");
+  const ok = "update public.ai_limits set per_period = 40 where feature = 'tutor' and plan = 'pro';\nupdate public.ai_plan_caps set monthly_pence = 500, conversation_turns = 30 where plan = 'pro';\nupdate public.ai_settings set gbp_per_usd = 0.79 where id = true;";
+  assert.deepEqual(destructive(ok), []);
+  assert.deepEqual(configUpdates(ok).sort(), ["ai_limits", "ai_plan_caps", "ai_settings"]);
+  for (const bad of [
+    "update public.ai_limits set per_period = 40;",                                         // no key: every row
+    "update public.ai_limits set per_period = per_period * 2 where plan = 'pro';",          // not a literal
+    "update public.profiles set xp = 0 where user_id = 'x';",                                // learner data
+    "update public.subscriptions set status = 'active' where user_id = 'x';",
+    "update public.ai_limits set per_period = (select 1) where plan = 'pro';",
+    "update public.ai_limits set per_period = 1 where plan = 'pro' or true;",
+  ]) assert.ok(destructive(bad).length, bad);
+  assert.deepEqual(configUpdates("update public.profiles set xp = 0 where user_id = 'x';"), []);
 });

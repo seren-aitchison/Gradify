@@ -25,6 +25,8 @@ X: Assessing risk
 > Risk assessment informs a **safety plan** developed with the person.
 H: Evaluation
 P: Combining methods gives a fuller picture than any single source. But assessment can be affected by clinician bias, cultural misunderstanding and the person's trust in services. Good practice includes cultural humility, transparency about purpose and attention to strengths as well as difficulties.
+P: **Investigate with the lab.** Sort the client's difficulties into the 5 Ps of a case formulation.
+IX: formulation
 K: Clinical assessment aims to understand difficulties, context, strengths and risks collaboratively; methods include interviews, questionnaires, observation, testing and information from others.
 !: Assuming assessment is a one-off event. Understanding develops throughout care.
 EV: established | The PHQ-9 is a widely used, validated questionnaire for depressive symptoms (Kroenke et al., 2001).
@@ -43,6 +45,7 @@ M2#psychology-u09-01-q2@2: A psychologist uses an interview, the PHQ-9 and a con
 TF2#psychology-u09-01-q3@2: Asking someone about suicidal thoughts increases their risk. | false | Asking does not increase risk and allows support.
 M3#psychology-u09-01-q4@3: Why is cultural humility important in assessment? | Misreading culture can bias how difficulties are interpreted | Culture never affects any assessment | It replaces the need for questionnaires | It removes the need for interviews | Assessment must understand the person's context.
 SA2#psychology-u09-01-q5@2,3: Explain the aims and methods of clinical assessment and assess good practice. | Aims and collaboration; interviews, questionnaires (PHQ-9, GAD-7), observation, tests, others' information; risk and safety planning; bias and cultural humility. | Aims ; Methods ; Risk ; Evaluation
+M2#psychology-u09-01-q6@1: In the 5 Ps model, what is a precipitating factor? | Something that triggered the current difficulty | Something that keeps the difficulty going | A strength that protects the client | A long-standing vulnerability | Precipitating factors are recent triggers; perpetuating factors maintain problems.
 
 ## Clinical interviews
 LV: Introductory · Application
@@ -676,6 +679,8 @@ X: Interoceptive exposure
 > This targets fear of bodily sensations directly. This example is illustrative.
 H: Evaluation
 P: CBT-based treatments for anxiety have large effects in trials, and many people recover. But access is limited by waiting lists and availability of trained therapists, exposure can be challenging, and some people relapse. Digital and group options can widen access.
+P: **Investigate with the lab.** Help the client complete a thought record from the situation to a balanced thought.
+IX: thought-record
 K: Different anxiety disorders have tailored CBT-based treatments; shared principles include psychoeducation, reducing avoidance and safety behaviours, exposure and behavioural experiments; access remains a challenge.
 !: Assuming avoiding anxiety-provoking situations helps in the long run. Avoidance maintains anxiety.
 EV: established | NICE guidance recommends CBT-based treatments for generalised anxiety, panic and social anxiety disorders.
@@ -695,6 +700,7 @@ M2#psychology-u09-18-q2@2: A person with panic disorder breathes through a straw
 TF2#psychology-u09-18-q3@2: Avoiding anxiety-provoking situations reduces anxiety in the long term. | false | Avoidance maintains anxiety.
 M3#psychology-u09-18-q4@3: What limits access to anxiety treatments? | Waiting lists and shortages of trained therapists | Treatments are ineffective | Anxiety can't be treated | Everyone is treated immediately | The limited supply of trained therapists and long waiting lists restrict access.
 SA3#psychology-u09-18-q5@3: Evaluate psychological treatments for anxiety disorders. | Treatments for GAD, panic, social anxiety, phobias (NICE); shared principles; interoceptive exposure; transdiagnostic approaches; effectiveness, access and relapse; judgement. | Treatments ; Principles ; Access ; Judgement
+M2#psychology-u09-18-q6@1: What is the aim of a CBT thought record? | To identify and challenge unhelpful automatic thoughts | To uncover repressed childhood memories | To change behaviour by reward only | To reduce symptoms with medication | Thought records help clients test their thoughts against evidence.
 
 ## Psychological treatment of OCD
 LV: Intermediate · Application

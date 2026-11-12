@@ -18,7 +18,7 @@ const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 // what the website needs
 export const PUBLISH = {
   files: [
-    ".nojekyll", "CNAME", "404.html", "index.html", "app.html", "journey.html", "privacy.html", "status.html",
+    ".nojekyll", "CNAME", "404.html", "index.html", "app.html", "journey.html", "privacy.html", "pricing.html", "status.html", "ai-usage.html",
     "robots.txt", "sitemap.xml", "manifest.webmanifest", "sw.js", "gradify.config.js",
   ],
   // folders published whole, apart from EXCLUDE.inside. Sub-site folders (lawgradify/, medgradify/ …) are matched by
@@ -61,6 +61,15 @@ const BINARY = /\.(png|jpe?g|gif|webp|glb|gltf|bin|ico|woff2?|ttf|pdf|mp4|wasm)$
 
 export function tracked(root = REPO) {
   return execFileSync("git", ["ls-files", "-z"], { cwd: root, encoding: "utf8" }).split("\0").filter(Boolean);
+}
+
+// The files the site would be built from once the current work is committed: tracked files that still exist, plus new
+// files git isn't told to ignore. The tests check this, so local changes are validated before anything is committed;
+// publishing itself (the build above, run on a clean checkout) still takes committed files only.
+export function workingTree(root = REPO) {
+  const git = (...args) => execFileSync("git", ["ls-files", "-z", ...args], { cwd: root, encoding: "utf8" }).split("\0").filter(Boolean);
+  const deleted = new Set(git("--deleted"));
+  return [...new Set(git("--cached", "--others", "--exclude-standard"))].filter((f) => !deleted.has(f)).sort();
 }
 
 // every tracked file → publish, exclude, or unclassified (a new top-level entry nobody has decided about)
