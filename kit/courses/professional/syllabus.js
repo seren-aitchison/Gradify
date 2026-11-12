@@ -119,25 +119,28 @@ export const SYLLABUS = `
 * How adults learn
 * Reflective practice
 * Learning from mistakes
-6. Problem Solving and Decision Making
-> Defining problems
-* Defining the problem
-* Root cause analysis
-* Systems thinking
-> Generating and evaluating options
-* Creative thinking techniques
-* Evaluating options: criteria and weighting
-* Cost-benefit analysis
-> Making decisions
-* Rational choice and bounded rationality
-* Heuristics and biases in decisions
-* Group decisions and groupthink
-* Deciding under uncertainty
-* Evidence-based management
-> Critical thinking
-* Evaluating arguments and evidence
-* Logical fallacies at work
-* Making a recommendation
+6. Strategy
+> Strategic thinking
+* What is strategy?
+* Mission, vision and objectives
+* Planned and emergent strategy
+> Analysing the environment
+* Porter's five forces
+* The industry life cycle
+* SWOT analysis
+> Internal analysis
+* Resources and capabilities
+* The value chain
+* Core competences and the VRIO framework
+> Strategic choice
+* Porter's generic strategies
+* The Ansoff matrix
+* The Boston Matrix and portfolio analysis
+* Mergers, acquisitions and alliances
+* Blue ocean strategy
+> Implementing strategy
+* Strategy implementation
+* The balanced scorecard
 7. Data and Digital Skills at Work
 > Working with data
 * Data literacy
@@ -247,7 +250,7 @@ export const BLURBS = {
   3: "What managers do, how organisations are structured, and how motivation, leadership, culture and change work.",
   4: "Projects from business case to closure: scope, schedules, risk, PRINCE2, Agile, Scrum and Kanban.",
   5: "Goals, priorities, focus, procrastination, task systems, remote working and learning from experience.",
-  6: "Defining problems, finding root causes, weighing options, avoiding bias and making a sound recommendation.",
+  6: "How firms choose where to compete and how to win: five forces, the value chain, generic strategies and growth.",
   7: "Data literacy, spreadsheets, charts, honest statistics, cyber security, UK GDPR, AI and accessibility at work.",
   8: "What a business is, who it serves, the legal forms it can take and the external forces it must read.",
   9: "Professional ethics and integrity, the Equality Act 2010 and the basics of UK employment rights.",

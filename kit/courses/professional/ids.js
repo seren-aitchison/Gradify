@@ -89,20 +89,22 @@ export const IDS = {
   "u05-10": "How adults learn",
   "u05-11": "Reflective practice",
   "u05-12": "Learning from mistakes",
-  "u06-01": "Defining the problem",
-  "u06-02": "Root cause analysis",
-  "u06-03": "Systems thinking",
-  "u06-04": "Creative thinking techniques",
-  "u06-05": "Evaluating options: criteria and weighting",
-  "u06-06": "Cost-benefit analysis",
-  "u06-07": "Rational choice and bounded rationality",
-  "u06-08": "Heuristics and biases in decisions",
-  "u06-09": "Group decisions and groupthink",
-  "u06-10": "Deciding under uncertainty",
-  "u06-11": "Evidence-based management",
-  "u06-12": "Evaluating arguments and evidence",
-  "u06-13": "Logical fallacies at work",
-  "u06-14": "Making a recommendation",
+  "u06-15": "What is strategy?",
+  "u06-16": "Mission, vision and objectives",
+  "u06-17": "Planned and emergent strategy",
+  "u06-18": "Porter's five forces",
+  "u06-19": "The industry life cycle",
+  "u06-20": "SWOT analysis",
+  "u06-21": "Resources and capabilities",
+  "u06-22": "The value chain",
+  "u06-23": "Core competences and the VRIO framework",
+  "u06-24": "Porter's generic strategies",
+  "u06-25": "The Ansoff matrix",
+  "u06-26": "The Boston Matrix and portfolio analysis",
+  "u06-27": "Mergers, acquisitions and alliances",
+  "u06-28": "Blue ocean strategy",
+  "u06-29": "Strategy implementation",
+  "u06-30": "The balanced scorecard",
   "u07-01": "Data literacy",
   "u07-02": "Spreadsheet essentials",
   "u07-03": "Descriptive statistics for work",
@@ -480,5 +482,75 @@ export const RETIRED = {
     "title": "Resolving conflict: mediation and escalation",
     "retired": "2026-11-12",
     "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u06-01": {
+    "title": "Defining the problem",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by business school 3 before it was written"
+  },
+  "u06-02": {
+    "title": "Root cause analysis",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by business school 3 before it was written"
+  },
+  "u06-03": {
+    "title": "Systems thinking",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by business school 3 before it was written"
+  },
+  "u06-04": {
+    "title": "Creative thinking techniques",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by business school 3 before it was written"
+  },
+  "u06-05": {
+    "title": "Evaluating options: criteria and weighting",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by business school 3 before it was written"
+  },
+  "u06-06": {
+    "title": "Cost-benefit analysis",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by business school 3 before it was written"
+  },
+  "u06-07": {
+    "title": "Rational choice and bounded rationality",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by business school 3 before it was written"
+  },
+  "u06-08": {
+    "title": "Heuristics and biases in decisions",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by business school 3 before it was written"
+  },
+  "u06-09": {
+    "title": "Group decisions and groupthink",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by business school 3 before it was written"
+  },
+  "u06-10": {
+    "title": "Deciding under uncertainty",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by business school 3 before it was written"
+  },
+  "u06-11": {
+    "title": "Evidence-based management",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by business school 3 before it was written"
+  },
+  "u06-12": {
+    "title": "Evaluating arguments and evidence",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by business school 3 before it was written"
+  },
+  "u06-13": {
+    "title": "Logical fallacies at work",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by business school 3 before it was written"
+  },
+  "u06-14": {
+    "title": "Making a recommendation",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by business school 3 before it was written"
   }
 };
