@@ -62,14 +62,14 @@ So "18 schools generated, 5 QA verified, 0 academically verified" is a complete 
 | 12 | ArtGradify | Art and Design (`art`) | Psychology course | coordinator builder worktree (this session), School 2 next | 12 schools, 183 lessons | 18 (School 1) | 3 reused labs | pass | yes (beta) | `77c6a95` | yes, 9 Nov: course and u01-01 opened live, no errors |
 | 13 | SportGradify | Sport and Exercise Science (`sport`) | Psychology course + body tools | coordinator builder worktree (this session), School 2 next | 12 schools, 206 lessons | 19 (School 1) | 8 reused labs | pass | yes (beta) | `77c6a95` | yes, 9 Nov: course and u01-01 opened live, no errors |
 | 14 | EduGradify | Teaching (`teaching`) | Psychology course | coordinator builder worktree (this session), School 2 next | 12 schools, 194 lessons | 19 (School 1) | 3 reused labs | pass | yes (beta) | `77c6a95` | yes, 9 Nov: course and u01-01 opened live, no errors |
-| 15 | UnderGradify | University Study Skills (`university`) | Psychology course | – | – | – | – | – | – | – | – |
-| 16 | PostGradify | Research and the Dissertation (`research`) | Psychology course + research methods | – | – | – | – | – | – | – | – |
-| 17 | ProGradify | Professional Skills (`professional`) | Psychology course | – | – | – | – | – | – | – | – |
+| 15 | UnderGradify | University Study Skills (`university`) | Psychology course | coordinator builder worktree (this session), next school queued | 12 schools, 193 lessons | 19 (School 1) | – | pass | yes (beta) | `a53fdd1` | yes, 12 Nov: course and u01-01 opened live, no errors |
+| 16 | PostGradify | Research and the Dissertation (`research`) | Psychology course + research methods | coordinator builder worktree (this session), next school queued | 12 schools, 197 lessons | 17 (School 1) | 11 reused labs | pass | yes (beta) | `a53fdd1` | yes, 12 Nov: course and u01-01 opened live, no errors |
+| 17 | ProGradify | Professional Skills (`professional`) | Psychology course | coordinator builder worktree (this session), next school queued | 10 schools, 149 lessons | 14 (School 1) | – | pass | yes (beta) | `a53fdd1` | yes, 12 Nov: course and u01-01 opened live, no errors |
 | 18 | InternshipGradify | Careers and Employability (`careers`) | Psychology course | – | – | – | – | – | – | – | – |
-| 19 | CreateGradify | Design Thinking and Creativity (`design`) | Psychology course | – | – | – | – | – | – | – | – |
+| 19 | CreateGradify | Design Thinking and Creativity (`design`) | Psychology course | coordinator builder worktree (this session), next school queued | 12 schools, 170 lessons | 12 (School 1) | – | pass | yes (beta) | `a53fdd1` | yes, 12 Nov: course and u01-01 opened live, no errors |
 | 20 | LanguageGradify | Spanish (`spanish`) | Psychology course | – | – | – | – | – | – | – | – |
-| 21 | YouthGradify | GCSE Core (`gcse`) | Psychology course + Maths/Science | – | – | – | – | – | – | – | – |
-| 22 | JuniorGradify | Primary (`primary`) | Psychology course | – | – | – | – | – | – | – | – |
+| 21 | YouthGradify | GCSE Core (`gcse`) | Psychology course + Maths/Science | coordinator builder worktree (this session), next school queued | 9 schools, 143 lessons | 12 (School 1) | – | pass | yes (beta) | `a53fdd1` | yes, 12 Nov: course and u01-01 opened live, no errors |
+| 22 | JuniorGradify | Primary (`primary`) | Psychology course | coordinator builder worktree (this session), next school queued | 12 schools, 167 lessons | 24 (Schools 1–2) | – | pass | yes (beta) | `a53fdd1` | yes, 12 Nov: course and u01-01 opened live, no errors |
 | 23 | TechGradify | Computer Science (`computing`) | needs its site folder first (`npm run new-site`) | – | – | – | – | – | – | – | – |
 | 24 | HistoryGradify | History (`history`) | new-site + new-course scaffold (standard 2), own adapter `kit/subjects/history.js` | session `claude/lawgradify-nursegradify` (not a builder worktree) | ✅ 18 schools, 301 lessons | ✅ 18 of 18 schools, 301 lessons: generated and QA verified; 0 academically verified | 4 labs | ✅ QA verified (0 warnings) | ✅ | ✅ 4c03332 | ✅ 8 November 2026 (browser check of homepage, course, a School 10 lesson, a lab, Journey link; no errors) |
 
