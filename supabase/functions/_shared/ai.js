@@ -25,8 +25,17 @@ export const CONVERSATION_MODES = ["roleplay", "socratic", "examiner"];
 const day = (iso) => (iso ? new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", timeZone: "Europe/London" }) : null);
 const plural = (f, n) => (LABEL[f] ? LABEL[f][n === 1 ? 0 : 1] : "uses");
 
+/**
+ * When the monthly fair-use limit resets: the 1st of next month, 00:00 UTC. The database counts a learner's spend from
+ * date_trunc('month', now()), whatever their plan, so for Pro this is not the end of their billing period.
+ */
+export function capResetsAt(now = new Date()) {
+  const d = new Date(now);
+  return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1)).toISOString();
+}
+
 /** The learner-facing answer when a claim is refused. */
-export function refusal(claim, mode) {
+export function refusal(claim, mode, now = new Date()) {
   const feature = FEATURE_OF[mode] ?? null, resetsAt = claim.period_end ?? null, on = day(resetsAt);
   const base = { reason: claim.reason, feature, plan: claim.plan ?? null, used: claim.used ?? 0, allowance: claim.allowance ?? 0, resetsAt, upgrade: false };
   switch (claim.reason) {
@@ -36,7 +45,10 @@ export function refusal(claim, mode) {
     case "budget": return { status: 503, body: { ...base, error: "Gradify AI is taking a short break. Please try again later." } };
     case "busy": return { status: 503, body: { ...base, error: "Gradify AI is busy right now. Please try again in a minute." } };
     case "rate": return { status: 429, body: { ...base, error: "That's a lot of requests in a short time. Wait a minute, then try again." } };
-    case "fair_use": return { status: 429, body: { ...base, error: `You've reached this month's fair-use limit for Gradify AI.${on ? ` It resets on ${on}.` : ""}` } };
+    case "fair_use": {
+      const capAt = capResetsAt(now);
+      return { status: 429, body: { ...base, resetsAt: capAt, error: `You've reached this month's fair-use limit for Gradify AI. It resets on ${day(capAt)}.` } };
+    }
     case "conversation_long": return { status: 429, body: { ...base, error: "This conversation has reached its length limit. Start a new one to keep going." } };
     case "allowance": {
       const n = claim.allowance ?? 0, free = claim.plan !== "pro";

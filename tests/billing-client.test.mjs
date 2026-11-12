@@ -87,3 +87,25 @@ test("before Gradify Pro goes on sale, only listed billing testers can check out
   assert.equal(mayBuy("anyone@x.com", { GRADIFY_PRO_ON_SALE: "on" }), true);
   assert.equal(mayBuy("anyone@x.com", { GRADIFY_PRO_ON_SALE: "yes" }), false);
 });
+
+test("the Account page names both reset dates when they differ", async () => {
+  const { aiResetLine, capResetsAt } = await import("../kit/data/billing.js");
+  const now = Date.parse("2026-11-18T12:00:00Z");
+  assert.equal(capResetsAt(now), "2026-12-01T00:00:00.000Z");
+  assert.equal(capResetsAt(Date.parse("2026-12-31T23:30:00Z")), "2027-01-01T00:00:00.000Z", "across the year end");
+  // Free: allowances and the fair-use limit both reset on the 1st, so one date
+  assert.equal(aiResetLine("2026-12-01T00:00:00Z", "free", now), "Gradify AI used this month. Your allowances and the fair-use limit reset on 1 December.");
+  // Pro billed from the 18th: two different dates, each named
+  assert.equal(aiResetLine("2026-12-18T09:00:00Z", "pro", now),
+    "Gradify AI used this billing period. Your allowances reset on 18 December, at the end of your billing period. The monthly fair-use limit resets separately, on 1 December.");
+  // Pro whose billing date happens to be the 1st: one date again
+  assert.match(aiResetLine("2026-12-01T00:00:00Z", "pro", now), /allowances and the fair-use limit reset on 1 December/);
+  assert.match(aiResetLine(null, "free", now), /fair-use limit resets on 1 December/);
+});
+
+test("the server and the Account page agree on when the fair-use limit resets", async () => {
+  const client = await import("../kit/data/billing.js");
+  const server = await import("../supabase/functions/_shared/ai.js");
+  for (const t of ["2026-11-01T00:00:00Z", "2026-11-18T12:00:00Z", "2026-12-31T23:59:59Z", "2027-02-28T10:00:00Z"])
+    assert.equal(client.capResetsAt(Date.parse(t)), server.capResetsAt(new Date(t)), t);
+});

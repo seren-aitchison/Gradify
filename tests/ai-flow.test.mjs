@@ -32,6 +32,10 @@ test("every refusal reason gives a clear message, the right status and what the 
   assert.equal(p.body.upgrade, false);
   assert.equal(p.body.error, "You've used this month's 20 study packs. Your allowance resets on 1 December.");
   assert.match(refusal({ ...base, plan: "free", allowance: 1, reason: "allowance" }, "pack").body.error, /your 1 free study pack this month/);
+  // the fair-use limit resets on the 1st, even for Pro learners whose allowances reset on their billing date
+  const fu = refusal({ ...base, plan: "pro", reason: "fair_use", period_end: "2026-12-18T09:00:00Z" }, "explain", new Date("2026-11-20T10:00:00Z"));
+  assert.equal(fu.body.resetsAt, "2026-12-01T00:00:00.000Z");
+  assert.equal(fu.body.error, "You've reached this month's fair-use limit for Gradify AI. It resets on 1 December.");
   const expect = { signed_out: 401, unknown_mode: 400, ai_off: 503, budget: 503, busy: 503, rate: 429, fair_use: 429, conversation_long: 429, other: 503 };
   for (const [reason, status] of Object.entries(expect)) {
     const x = refusal({ ...base, reason }, "explain");
