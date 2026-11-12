@@ -207,26 +207,23 @@ export const SYLLABUS = `
 * Results, resits and progression
 * Extenuating circumstances
 * Learning from exam feedback
-11. Feedback, Reflection and Wellbeing
-> Feedback
-* What feedback is for
-* Feedback literacy
-* Reading and acting on feedback
-* Asking for feedback
-* Peer and self-assessment
-> Reflection
-* Reflective practice
-* Models of reflection: Kolb and Gibbs
-* Personal development planning
-* Learning journals and e-portfolios
-> Wellbeing and support
-* Student wellbeing
-* Stress and resilience
-* Perfectionism and impostor feelings
-* Sleep, activity and routine
-* Money and student life
-* Disability, neurodivergence and study
-* Getting help: university and NHS support
+11. Sleep, Stress and Rest
+> Sleep
+* Why we sleep
+* Sleep stages and cycles
+* Circadian rhythms
+* How much sleep we need
+* Sleep across the lifespan
+* Insomnia
+* Improving sleep
+* Shift work and sleep
+* Sleep disorders beyond insomnia
+> Stress
+* What stress is
+* The stress response
+* Stress and health
+* Coping and stress management
+* Work-related stress and burnout
 12. Knowing Yourself
 > Career development foundations
 * What career development is
@@ -274,7 +271,7 @@ export const BLURBS = {
   8: "Number confidence and data skills: percentages, units, descriptive statistics, charts, risk and significance in plain terms.",
   9: "Listening, questioning, plain-English writing, emails, reports, meetings, presentations and feedback that lands.",
   10: "Planning revision with evidence-based techniques, exam technique for every format, and what happens after results.",
-  11: "Using feedback, reflecting on your learning, and looking after your wellbeing with the support available at university.",
+  11: "Why we sleep, how much we need, circadian rhythms and insomnia; what stress is and how it affects health.",
   12: "Career development theory, the Gatsby Benchmarks and assessing your own skills, values, strengths and goals.",
 };
 

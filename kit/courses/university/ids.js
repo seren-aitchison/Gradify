@@ -165,22 +165,20 @@ export const IDS = {
   "u10-12": "Results, resits and progression",
   "u10-13": "Extenuating circumstances",
   "u10-14": "Learning from exam feedback",
-  "u11-01": "What feedback is for",
-  "u11-02": "Feedback literacy",
-  "u11-03": "Reading and acting on feedback",
-  "u11-04": "Asking for feedback",
-  "u11-05": "Peer and self-assessment",
-  "u11-06": "Reflective practice",
-  "u11-07": "Models of reflection: Kolb and Gibbs",
-  "u11-08": "Personal development planning",
-  "u11-09": "Learning journals and e-portfolios",
-  "u11-10": "Student wellbeing",
-  "u11-11": "Stress and resilience",
-  "u11-12": "Perfectionism and impostor feelings",
-  "u11-13": "Sleep, activity and routine",
-  "u11-14": "Money and student life",
-  "u11-15": "Disability, neurodivergence and study",
-  "u11-16": "Getting help: university and NHS support",
+  "u11-17": "Why we sleep",
+  "u11-18": "Sleep stages and cycles",
+  "u11-19": "Circadian rhythms",
+  "u11-20": "How much sleep we need",
+  "u11-21": "Sleep across the lifespan",
+  "u11-22": "Insomnia",
+  "u11-23": "Improving sleep",
+  "u11-24": "Shift work and sleep",
+  "u11-25": "Sleep disorders beyond insomnia",
+  "u11-26": "What stress is",
+  "u11-27": "The stress response",
+  "u11-28": "Stress and health",
+  "u11-29": "Coping and stress management",
+  "u11-30": "Work-related stress and burnout",
   "u12-15": "What career development is",
   "u12-16": "Career theories: matching, development and chance",
   "u12-17": "The Gatsby Benchmarks and careers support",
@@ -429,5 +427,85 @@ export const RETIRED = {
     "title": "Lifelong learning",
     "retired": "2026-11-12",
     "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u11-01": {
+    "title": "What feedback is for",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
+  },
+  "u11-02": {
+    "title": "Feedback literacy",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
+  },
+  "u11-03": {
+    "title": "Reading and acting on feedback",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
+  },
+  "u11-04": {
+    "title": "Asking for feedback",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
+  },
+  "u11-05": {
+    "title": "Peer and self-assessment",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
+  },
+  "u11-06": {
+    "title": "Reflective practice",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
+  },
+  "u11-07": {
+    "title": "Models of reflection: Kolb and Gibbs",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
+  },
+  "u11-08": {
+    "title": "Personal development planning",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
+  },
+  "u11-09": {
+    "title": "Learning journals and e-portfolios",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
+  },
+  "u11-10": {
+    "title": "Student wellbeing",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
+  },
+  "u11-11": {
+    "title": "Stress and resilience",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
+  },
+  "u11-12": {
+    "title": "Perfectionism and impostor feelings",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
+  },
+  "u11-13": {
+    "title": "Sleep, activity and routine",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
+  },
+  "u11-14": {
+    "title": "Money and student life",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
+  },
+  "u11-15": {
+    "title": "Disability, neurodivergence and study",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
+  },
+  "u11-16": {
+    "title": "Getting help: university and NHS support",
+    "retired": "2026-11-12",
+    "reason": "school 11 replaced by health school 5 before it was written"
   }
 };
