@@ -461,7 +461,7 @@ P: **Tresca** is slightly conservative; **von Mises** (distortion energy) agrees
 X: A ductile steel (σ_{Y} = 250 MPa) has principal stresses σ_{1} = 120 MPa and σ_{2} = −40 MPa.
 > Tresca: σ_{1} − σ_{2} = 160 MPa; factor of safety = 250 ÷ 160 = 1.56.
 > von Mises: √(120^{2} − 120 × (−40) + 40^{2}) = √(14,400 + 4,800 + 1,600) = 144 MPa.
-> Factor of safety = 250 ÷ 144 = 1.73.
+> Factor of safety = 250 ÷ 144 = 1.74.
 > Tresca gives the more conservative result.
 K: Brittle materials are judged by maximum normal stress; ductile materials by Tresca (maximum shear) or von Mises (distortion energy), with von Mises fitting experiments best.
 !: Comparing a single stress component with yield strength under combined loading. Combine stresses with a failure criterion first.
