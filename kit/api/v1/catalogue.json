@@ -48,7 +48,7 @@
    "page": "/internshipgradify/course/",
    "units": 11,
    "lessons": 145,
-   "lessonsWritten": 54,
+   "lessonsWritten": 66,
    "syllabus": "/kit/api/v1/courses/careers.json"
   },
   {
@@ -72,7 +72,7 @@
    "page": "/techgradify/course/",
    "units": 12,
    "lessons": 179,
-   "lessonsWritten": 46,
+   "lessonsWritten": 65,
    "syllabus": "/kit/api/v1/courses/computing.json"
   },
   {
@@ -96,7 +96,7 @@
    "page": "/creategradify/course/",
    "units": 12,
    "lessons": 173,
-   "lessonsWritten": 87,
+   "lessonsWritten": 99,
    "syllabus": "/kit/api/v1/courses/design.json"
   },
   {
@@ -180,7 +180,7 @@
    "page": "/investorgradify/course/",
    "units": 12,
    "lessons": 183,
-   "lessonsWritten": 66,
+   "lessonsWritten": 80,
    "syllabus": "/kit/api/v1/courses/investing.json"
   },
   {
@@ -288,7 +288,7 @@
    "page": "/juniorgradify/course/",
    "units": 12,
    "lessons": 167,
-   "lessonsWritten": 38,
+   "lessonsWritten": 56,
    "syllabus": "/kit/api/v1/courses/primary.json"
   },
   {
@@ -348,7 +348,7 @@
    "page": "/languagegradify/course/",
    "units": 10,
    "lessons": 145,
-   "lessonsWritten": 45,
+   "lessonsWritten": 59,
    "syllabus": "/kit/api/v1/courses/spanish.json"
   },
   {
@@ -372,7 +372,7 @@
    "page": "/edugradify/course/",
    "units": 12,
    "lessons": 228,
-   "lessonsWritten": 146,
+   "lessonsWritten": 162,
    "syllabus": "/kit/api/v1/courses/teaching.json"
   },
   {
@@ -396,7 +396,7 @@
    "page": "/vetgradify/course/",
    "units": 12,
    "lessons": 209,
-   "lessonsWritten": 53,
+   "lessonsWritten": 69,
    "syllabus": "/kit/api/v1/courses/veterinary.json"
   }
  ]
