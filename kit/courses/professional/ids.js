@@ -16,22 +16,32 @@ export const IDS = {
   "u01-12": "Delivering a presentation",
   "u01-13": "Communicating in virtual and hybrid teams",
   "u01-14": "Giving and receiving feedback",
-  "u02-01": "What makes an effective team",
-  "u02-02": "Team development: Tuckman's stages",
-  "u02-03": "Team roles: Belbin",
-  "u02-04": "Psychological safety",
-  "u02-05": "Collaboration across boundaries",
-  "u02-06": "Building professional relationships",
-  "u02-07": "Power and influence",
-  "u02-08": "Influencing without authority",
-  "u02-09": "Stakeholder mapping",
-  "u02-10": "Emotional intelligence at work",
-  "u02-11": "Principled negotiation",
-  "u02-12": "Preparing to negotiate: BATNA and the bargaining zone",
-  "u02-13": "Sources of workplace conflict",
-  "u02-14": "Conflict-handling styles",
-  "u02-15": "Difficult conversations",
-  "u02-16": "Resolving conflict: mediation and escalation",
+  "u02-17": "Social cognition",
+  "u02-18": "Social perception and impressions",
+  "u02-19": "Attribution",
+  "u02-20": "The fundamental attribution error and self-serving bias",
+  "u02-21": "Attitude formation",
+  "u02-22": "Attitude change and persuasion",
+  "u02-23": "Cognitive dissonance",
+  "u02-24": "Conformity",
+  "u02-25": "Obedience",
+  "u02-26": "Compliance",
+  "u02-27": "Social norms",
+  "u02-28": "Group dynamics",
+  "u02-29": "Group decision-making",
+  "u02-30": "Leadership",
+  "u02-31": "Power",
+  "u02-32": "Social identity theory",
+  "u02-33": "Self-categorisation",
+  "u02-34": "In-groups and out-groups",
+  "u02-35": "Prejudice, stereotyping and discrimination",
+  "u02-36": "Intergroup relations and conflict",
+  "u02-37": "Bystander behaviour",
+  "u02-38": "Prosocial behaviour and altruism",
+  "u02-39": "Aggression",
+  "u02-40": "Attraction",
+  "u02-41": "Close relationships",
+  "u02-42": "Culture and social behaviour",
   "u03-18": "What is management?",
   "u03-19": "Classical management theory: Taylor and Fayol",
   "u03-20": "Mintzberg's managerial roles",
@@ -390,5 +400,85 @@ export const RETIRED = {
     "title": "Managing career transitions",
     "retired": "2026-11-12",
     "reason": "school 10 replaced by psychology school 13 before it was written"
+  },
+  "u02-01": {
+    "title": "What makes an effective team",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-02": {
+    "title": "Team development: Tuckman's stages",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-03": {
+    "title": "Team roles: Belbin",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-04": {
+    "title": "Psychological safety",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-05": {
+    "title": "Collaboration across boundaries",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-06": {
+    "title": "Building professional relationships",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-07": {
+    "title": "Power and influence",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-08": {
+    "title": "Influencing without authority",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-09": {
+    "title": "Stakeholder mapping",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-10": {
+    "title": "Emotional intelligence at work",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-11": {
+    "title": "Principled negotiation",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-12": {
+    "title": "Preparing to negotiate: BATNA and the bargaining zone",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-13": {
+    "title": "Sources of workplace conflict",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-14": {
+    "title": "Conflict-handling styles",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-15": {
+    "title": "Difficult conversations",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
+  },
+  "u02-16": {
+    "title": "Resolving conflict: mediation and escalation",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by psychology school 6 before it was written"
   }
 };

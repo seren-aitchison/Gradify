@@ -34,22 +34,23 @@ export const IDS = {
   "u02-14": "The periodontal ligament and alveolar bone",
   "u02-15": "The oral mucosa",
   "u02-16": "Developmental anomalies of the teeth",
-  "u03-01": "Saliva: secretion and control",
-  "u03-02": "The functions and composition of saliva",
-  "u03-03": "Dry mouth and salivary flow",
-  "u03-04": "Taste and oral sensation",
-  "u03-05": "Mastication and swallowing",
-  "u03-06": "The oral microbiome",
-  "u03-07": "Dental plaque as a biofilm",
-  "u03-08": "Microbiology of caries and periodontal disease",
-  "u03-09": "Oral fungal and viral infections",
-  "u03-10": "Antimicrobials and antimicrobial stewardship in dentistry",
-  "u03-11": "Standard infection control precautions in dentistry",
-  "u03-12": "Hand hygiene and personal protective equipment",
-  "u03-13": "Decontamination of dental instruments (HTM 01-05)",
-  "u03-14": "Dental unit waterlines",
-  "u03-15": "Sharps injuries and blood-borne viruses",
-  "u03-16": "Healthcare waste in dental practice",
+  "u03-17": "Cell structure and function in health",
+  "u03-18": "Membranes, transport and the resting potential",
+  "u03-19": "Homeostasis and negative feedback",
+  "u03-20": "Body fluids, osmolality and electrolytes",
+  "u03-21": "Acid–base physiology",
+  "u03-22": "Cell injury, adaptation and death",
+  "u03-23": "Acute inflammation",
+  "u03-24": "Chronic inflammation and repair",
+  "u03-25": "Thrombosis, embolism and infarction",
+  "u03-26": "Neoplasia: benign and malignant tumours",
+  "u03-27": "The hallmarks and genetics of cancer",
+  "u03-28": "Innate immunity",
+  "u03-29": "Adaptive immunity",
+  "u03-30": "Hypersensitivity and autoimmunity",
+  "u03-31": "Patterns of inheritance in clinical genetics",
+  "u03-32": "Pharmacodynamics: receptors and dose–response",
+  "u03-33": "Pharmacokinetics: absorption, distribution, metabolism and excretion",
   "u04-01": "What dental caries is",
   "u04-02": "The ecological plaque hypothesis",
   "u04-03": "Demineralisation and remineralisation",
@@ -203,4 +204,85 @@ export const IDS = {
   "u12-14": "Continuing professional development",
   "u12-15": "Ethics in dental practice",
 };
-export const RETIRED = {};
+export const RETIRED = {
+  "u03-01": {
+    "title": "Saliva: secretion and control",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u03-02": {
+    "title": "The functions and composition of saliva",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u03-03": {
+    "title": "Dry mouth and salivary flow",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u03-04": {
+    "title": "Taste and oral sensation",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u03-05": {
+    "title": "Mastication and swallowing",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u03-06": {
+    "title": "The oral microbiome",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u03-07": {
+    "title": "Dental plaque as a biofilm",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u03-08": {
+    "title": "Microbiology of caries and periodontal disease",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u03-09": {
+    "title": "Oral fungal and viral infections",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u03-10": {
+    "title": "Antimicrobials and antimicrobial stewardship in dentistry",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u03-11": {
+    "title": "Standard infection control precautions in dentistry",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u03-12": {
+    "title": "Hand hygiene and personal protective equipment",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u03-13": {
+    "title": "Decontamination of dental instruments (HTM 01-05)",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u03-14": {
+    "title": "Dental unit waterlines",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u03-15": {
+    "title": "Sharps injuries and blood-borne viruses",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u03-16": {
+    "title": "Healthcare waste in dental practice",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by medicine school 1 before it was written"
+  }
+};

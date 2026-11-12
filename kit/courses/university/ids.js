@@ -137,20 +137,20 @@ export const IDS = {
   "u08-12": "Statistical significance in plain terms",
   "u08-13": "Spreadsheets for students",
   "u08-14": "Presenting numbers in writing",
-  "u09-01": "Planning a presentation",
-  "u09-02": "Designing slides",
-  "u09-03": "Delivering a presentation",
-  "u09-04": "Managing presentation nerves",
-  "u09-05": "Posters",
-  "u09-06": "Answering questions",
-  "u09-07": "Online presentations",
-  "u09-08": "Why universities set group work",
-  "u09-09": "Forming a team and agreeing ways of working",
-  "u09-10": "Team roles",
-  "u09-11": "Communication and online collaboration",
-  "u09-12": "Managing conflict",
-  "u09-13": "Contributing fairly and peer assessment",
-  "u09-14": "Inclusive group work",
+  "u09-15": "Communication at work: purpose and audience",
+  "u09-16": "Active listening",
+  "u09-17": "Questioning skills",
+  "u09-18": "Non-verbal communication",
+  "u09-19": "Plain English and clear writing",
+  "u09-20": "Structuring reports and briefings",
+  "u09-21": "Writing effective emails",
+  "u09-22": "Tone, etiquette and choosing the channel",
+  "u09-23": "Running effective meetings",
+  "u09-24": "Minutes, decisions and action points",
+  "u09-25": "Planning a presentation",
+  "u09-26": "Delivering a presentation",
+  "u09-27": "Communicating in virtual and hybrid teams",
+  "u09-28": "Giving and receiving feedback",
   "u10-01": "Types of exam",
   "u10-02": "Planning revision",
   "u10-03": "Revision techniques that work",
@@ -181,20 +181,18 @@ export const IDS = {
   "u11-14": "Money and student life",
   "u11-15": "Disability, neurodivergence and study",
   "u11-16": "Getting help: university and NHS support",
-  "u12-01": "What employability means",
-  "u12-02": "Graduate attributes and transferable skills",
-  "u12-03": "Recognising and recording your skills",
-  "u12-04": "Careers services and planning",
-  "u12-05": "Part-time work and volunteering",
-  "u12-06": "CVs and cover letters",
-  "u12-07": "Applications and personal statements",
-  "u12-08": "Interviews and assessment centres",
-  "u12-09": "Placements and internships",
-  "u12-10": "Learning on placement",
-  "u12-11": "Professional behaviour and online presence",
-  "u12-12": "Further study and postgraduate options",
-  "u12-13": "Your degree outcome and the HEAR",
-  "u12-14": "Lifelong learning",
+  "u12-15": "What career development is",
+  "u12-16": "Career theories: matching, development and chance",
+  "u12-17": "The Gatsby Benchmarks and careers support",
+  "u12-18": "Identifying your skills",
+  "u12-19": "Transferable skills and graduate attributes",
+  "u12-20": "Values and what matters to you at work",
+  "u12-21": "Strengths and how to use them",
+  "u12-22": "Interests and personality tools: uses and limits",
+  "u12-23": "Reflective practice and the skills audit",
+  "u12-24": "Motivations and work-life priorities",
+  "u12-25": "Your career story and personal brand",
+  "u12-26": "Setting career goals",
 };
 export const RETIRED = {
   "u02-01": {
@@ -291,5 +289,145 @@ export const RETIRED = {
     "title": "Putting it together: a study system",
     "retired": "2026-11-12",
     "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u09-01": {
+    "title": "Planning a presentation",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-02": {
+    "title": "Designing slides",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-03": {
+    "title": "Delivering a presentation",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-04": {
+    "title": "Managing presentation nerves",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-05": {
+    "title": "Posters",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-06": {
+    "title": "Answering questions",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-07": {
+    "title": "Online presentations",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-08": {
+    "title": "Why universities set group work",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-09": {
+    "title": "Forming a team and agreeing ways of working",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-10": {
+    "title": "Team roles",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-11": {
+    "title": "Communication and online collaboration",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-12": {
+    "title": "Managing conflict",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-13": {
+    "title": "Contributing fairly and peer assessment",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u09-14": {
+    "title": "Inclusive group work",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by professional school 1 before it was written"
+  },
+  "u12-01": {
+    "title": "What employability means",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-02": {
+    "title": "Graduate attributes and transferable skills",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-03": {
+    "title": "Recognising and recording your skills",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-04": {
+    "title": "Careers services and planning",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-05": {
+    "title": "Part-time work and volunteering",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-06": {
+    "title": "CVs and cover letters",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-07": {
+    "title": "Applications and personal statements",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-08": {
+    "title": "Interviews and assessment centres",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-09": {
+    "title": "Placements and internships",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-10": {
+    "title": "Learning on placement",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-11": {
+    "title": "Professional behaviour and online presence",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-12": {
+    "title": "Further study and postgraduate options",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-13": {
+    "title": "Your degree outcome and the HEAR",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
+  },
+  "u12-14": {
+    "title": "Lifelong learning",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by careers school 1 before it was written"
   }
 };

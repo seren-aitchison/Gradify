@@ -24,26 +24,40 @@ export const SYLLABUS = `
 * Delivering a presentation
 * Communicating in virtual and hybrid teams
 * Giving and receiving feedback
-2. Working with People
-> Teams
-* What makes an effective team
-* Team development: Tuckman's stages
-* Team roles: Belbin
-* Psychological safety
-* Collaboration across boundaries
-> Influence and relationships
-* Building professional relationships
-* Power and influence
-* Influencing without authority
-* Stakeholder mapping
-* Emotional intelligence at work
-> Negotiation and conflict
-* Principled negotiation
-* Preparing to negotiate: BATNA and the bargaining zone
-* Sources of workplace conflict
-* Conflict-handling styles
-* Difficult conversations
-* Resolving conflict: mediation and escalation
+2. Social Psychology
+> Social cognition
+* Social cognition
+* Social perception and impressions
+* Attribution
+* The fundamental attribution error and self-serving bias
+> Attitudes
+* Attitude formation
+* Attitude change and persuasion
+* Cognitive dissonance
+> Social influence
+* Conformity
+* Obedience
+* Compliance
+* Social norms
+> Groups
+* Group dynamics
+* Group decision-making
+* Leadership
+* Power
+> Identity and intergroup relations
+* Social identity theory
+* Self-categorisation
+* In-groups and out-groups
+* Prejudice, stereotyping and discrimination
+* Intergroup relations and conflict
+> Helping, harming and relating
+* Bystander behaviour
+* Prosocial behaviour and altruism
+* Aggression
+* Attraction
+* Close relationships
+> Culture
+* Culture and social behaviour
 3. Management and Organisational Behaviour
 > What managers do
 * What is management?
@@ -229,7 +243,7 @@ export const PATHS = [
 // one line per school for the overview page
 export const BLURBS = {
   1: "Listening, questioning, plain-English writing, emails, reports, meetings, presentations and feedback that lands.",
-  2: "Effective teams, psychological safety, influence, stakeholders, emotional intelligence, negotiation and conflict.",
+  2: "How other people shape what we think and do: attribution, attitudes, influence, groups and prejudice.",
   3: "What managers do, how organisations are structured, and how motivation, leadership, culture and change work.",
   4: "Projects from business case to closure: scope, schedules, risk, PRINCE2, Agile, Scrum and Kanban.",
   5: "Goals, priorities, focus, procrastination, task systems, remote working and learning from experience.",

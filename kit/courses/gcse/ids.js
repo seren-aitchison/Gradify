@@ -136,21 +136,20 @@ export const IDS = {
   "u08-12": "Graphs, statistics and data presentation",
   "u08-13": "Fieldwork enquiry",
   "u08-14": "Issue evaluation and decision making",
-  "u09-01": "Budgeting and needs versus wants",
-  "u09-02": "Bank accounts, cards and payments",
-  "u09-03": "Saving, borrowing and interest",
-  "u09-04": "Payslips, tax and National Insurance",
-  "u09-05": "Scams and financial fraud",
-  "u09-06": "Online safety and privacy",
-  "u09-07": "Social media, wellbeing and misinformation",
-  "u09-08": "Your digital footprint",
-  "u09-09": "Mental health and getting help",
-  "u09-10": "Healthy relationships and consent",
-  "u09-11": "Sleep, diet and exercise",
-  "u09-12": "Options after GCSEs",
-  "u09-13": "Exploring careers and the labour market",
-  "u09-14": "CVs, applications and interviews",
-  "u09-15": "Work experience and employability skills",
+  "u09-16": "What is health?",
+  "u09-17": "Models of health: biomedical and biopsychosocial",
+  "u09-18": "Wellbeing and how it is measured",
+  "u09-19": "Holistic health: physical, mental and social",
+  "u09-20": "The determinants of health",
+  "u09-21": "Health inequalities",
+  "u09-22": "Lifestyle factors and health",
+  "u09-23": "The wider determinants: housing, work and environment",
+  "u09-24": "Judging health information",
+  "u09-25": "Levels of evidence",
+  "u09-26": "Understanding risk: absolute and relative",
+  "u09-27": "Screening: benefits and harms",
+  "u09-28": "Measuring the nation's health",
+  "u09-29": "Leading causes of death and ill health in the UK",
 };
 export const RETIRED = {
   "u02-01": {
@@ -212,5 +211,80 @@ export const RETIRED = {
     "title": "Comparing writers' viewpoints and methods",
     "retired": "2026-11-12",
     "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u09-01": {
+    "title": "Budgeting and needs versus wants",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-02": {
+    "title": "Bank accounts, cards and payments",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-03": {
+    "title": "Saving, borrowing and interest",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-04": {
+    "title": "Payslips, tax and National Insurance",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-05": {
+    "title": "Scams and financial fraud",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-06": {
+    "title": "Online safety and privacy",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-07": {
+    "title": "Social media, wellbeing and misinformation",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-08": {
+    "title": "Your digital footprint",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-09": {
+    "title": "Mental health and getting help",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-10": {
+    "title": "Healthy relationships and consent",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-11": {
+    "title": "Sleep, diet and exercise",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-12": {
+    "title": "Options after GCSEs",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-13": {
+    "title": "Exploring careers and the labour market",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-14": {
+    "title": "CVs, applications and interviews",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
+  },
+  "u09-15": {
+    "title": "Work experience and employability skills",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by health school 1 before it was written"
   }
 };

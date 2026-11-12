@@ -185,26 +185,25 @@ export const SYLLABUS = `
 * Graphs, statistics and data presentation
 * Fieldwork enquiry
 * Issue evaluation and decision making
-9. Life Skills
-> Money
-* Budgeting and needs versus wants
-* Bank accounts, cards and payments
-* Saving, borrowing and interest
-* Payslips, tax and National Insurance
-* Scams and financial fraud
-> Digital life
-* Online safety and privacy
-* Social media, wellbeing and misinformation
-* Your digital footprint
-> Health and relationships
-* Mental health and getting help
-* Healthy relationships and consent
-* Sleep, diet and exercise
-> Careers and next steps
-* Options after GCSEs
-* Exploring careers and the labour market
-* CVs, applications and interviews
-* Work experience and employability skills
+9. Foundations of Health and Wellbeing
+> Defining health
+* What is health?
+* Models of health: biomedical and biopsychosocial
+* Wellbeing and how it is measured
+* Holistic health: physical, mental and social
+> What shapes health
+* The determinants of health
+* Health inequalities
+* Lifestyle factors and health
+* The wider determinants: housing, work and environment
+> Evidence about health
+* Judging health information
+* Levels of evidence
+* Understanding risk: absolute and relative
+* Screening: benefits and harms
+> Health in the UK
+* Measuring the nation's health
+* Leading causes of death and ill health in the UK
 `;
 
 export const TRACKS = [
@@ -233,7 +232,7 @@ export const BLURBS = {
   6: "Energy, electricity, particles, radioactivity, forces, waves and magnetism, with every equation and required practical.",
   7: "Natural hazards, climate change, ecosystems, and the UK's coasts, rivers and glacial landscapes.",
   8: "Urbanisation, development, the changing economy, resources, map and data skills, fieldwork and decision making.",
-  9: "Money, online safety, wellbeing, relationships, and choosing and applying for your next step after GCSEs.",
+  9: "What health and wellbeing mean, what shapes them, how inequalities arise and how to judge health evidence and risk.",
 };
 
 export const UNITS = parseSyllabus(SYLLABUS, IDS, RETIRED);

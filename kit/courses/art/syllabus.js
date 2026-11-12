@@ -210,21 +210,22 @@ export const SYLLABUS = `
 * The social history of art
 * Feminist and postcolonial art history
 * John Berger and ways of seeing
-11. The Creative Process and Critical Writing
-> The creative process
-* Sketchbooks
-* Developing ideas
-* Research and contextual sources
-* Experimenting and refining
-* Reviewing and reflecting
-* Presenting a final outcome
-> Writing about art
-* Describing a work of art
-* Analysing a work of art
-* Comparing works
-* Writing a critical essay
-* Referencing and citing art
-* The personal investigation and related study
+11. The Psychology of Creativity
+> Understanding creativity
+* What is creativity?
+* The four Ps of creativity
+* Divergent thinking and its measurement
+* Stages of the creative process
+> Minds and conditions
+* Insight and incubation
+* Knowledge, expertise and creativity
+* Motivation and creativity
+* Design fixation and how to break it
+> Creative environments
+* Creative confidence
+* Constraints and creativity
+* Creative climate in teams
+* Myths about creativity
 12. Art in Society and Professional Practice
 > Institutions
 * Museums and galleries
@@ -272,7 +273,7 @@ export const BLURBS = {
   8: "From cave painting to Mannerism: the ancient world, art beyond Europe, the Middle Ages and the Renaissance.",
   9: "From Caravaggio to Warhol: the Baroque, Romanticism, Impressionism and the movements of modernism.",
   10: "Minimalism to the global present, and the ways art historians interpret works: from formalism to postcolonial critique.",
-  11: "Sketchbooks, developing and refining ideas, reflection, and writing about art, from description to the critical essay.",
+  11: "What creativity is, how it is measured, insight and incubation, fixation, motivation and the conditions that help ideas flow.",
   12: "Museums, curating, the market and public art; copyright, appropriation, restitution and forgery; portfolios and careers.",
 };
 

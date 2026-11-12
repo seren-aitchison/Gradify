@@ -171,23 +171,24 @@ export const SYLLABUS = `
 * Statistical significance in plain terms
 * Spreadsheets for students
 * Presenting numbers in writing
-9. Presentations and Group Work
-> Presentations
+9. Professional Communication
+> Foundations of communication
+* Communication at work: purpose and audience
+* Active listening
+* Questioning skills
+* Non-verbal communication
+> Writing at work
+* Plain English and clear writing
+* Structuring reports and briefings
+* Writing effective emails
+* Tone, etiquette and choosing the channel
+> Meetings and presenting
+* Running effective meetings
+* Minutes, decisions and action points
 * Planning a presentation
-* Designing slides
 * Delivering a presentation
-* Managing presentation nerves
-* Posters
-* Answering questions
-* Online presentations
-> Group work
-* Why universities set group work
-* Forming a team and agreeing ways of working
-* Team roles
-* Communication and online collaboration
-* Managing conflict
-* Contributing fairly and peer assessment
-* Inclusive group work
+* Communicating in virtual and hybrid teams
+* Giving and receiving feedback
 10. Exams and Revision
 > Preparing for exams
 * Types of exam
@@ -226,24 +227,22 @@ export const SYLLABUS = `
 * Money and student life
 * Disability, neurodivergence and study
 * Getting help: university and NHS support
-12. Employability and Placements
-> Employability
-* What employability means
-* Graduate attributes and transferable skills
-* Recognising and recording your skills
-* Careers services and planning
-* Part-time work and volunteering
-> Applications and placements
-* CVs and cover letters
-* Applications and personal statements
-* Interviews and assessment centres
-* Placements and internships
-* Learning on placement
-* Professional behaviour and online presence
-> Beyond the degree
-* Further study and postgraduate options
-* Your degree outcome and the HEAR
-* Lifelong learning
+12. Knowing Yourself
+> Career development foundations
+* What career development is
+* Career theories: matching, development and chance
+* The Gatsby Benchmarks and careers support
+> Self-assessment
+* Identifying your skills
+* Transferable skills and graduate attributes
+* Values and what matters to you at work
+* Strengths and how to use them
+* Interests and personality tools: uses and limits
+* Reflective practice and the skills audit
+> From self-knowledge to direction
+* Motivations and work-life priorities
+* Your career story and personal brand
+* Setting career goals
 `;
 
 // stages on the map; UnderGradify's colours run from cornflower blue to teal
@@ -273,10 +272,10 @@ export const BLURBS = {
   6: "Why and how to reference, the main styles, and academic integrity, including contract cheating and generative AI.",
   7: "Searching libraries and databases, judging sources, managing information and carrying out a small research project ethically.",
   8: "Number confidence and data skills: percentages, units, descriptive statistics, charts, risk and significance in plain terms.",
-  9: "Planning and delivering presentations and posters, and working well in groups, including conflict and peer assessment.",
+  9: "Listening, questioning, plain-English writing, emails, reports, meetings, presentations and feedback that lands.",
   10: "Planning revision with evidence-based techniques, exam technique for every format, and what happens after results.",
   11: "Using feedback, reflecting on your learning, and looking after your wellbeing with the support available at university.",
-  12: "Employability, skills evidence, applications, interviews and placements, and options after graduation.",
+  12: "Career development theory, the Gatsby Benchmarks and assessing your own skills, values, strengths and goals.",
 };
 
 export const UNITS = parseSyllabus(SYLLABUS, IDS, RETIRED);
