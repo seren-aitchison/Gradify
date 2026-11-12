@@ -142,7 +142,7 @@ E: FV = PV × (1 + r)^{n}; PV = FV ÷ (1 + r)^{n} :: r interest or discount rate
 X: Compounding and discounting examples.
 > £1,000 invested at 5% for 3 years grows to 1,000 × 1.05^{3} = £1,157.63.
 > £1,000 received in 3 years, discounted at 10%, is worth 1,000 ÷ 1.10^{3} = £751.31 today.
-> The 3-year annuity factor at 10% is 0.909 + 0.826 + 0.751 = 2.487, so £1,000 a year for 3 years is worth £2,487 today.
+> The 3-year annuity factor at 10% is 2.487 (the sum of the three yearly discount factors), so £1,000 a year for 3 years is worth £2,487 today.
 > A perpetuity of £500 a year at 5% is worth 500 ÷ 0.05 = £10,000.
 H: Annuities and perpetuities
 E: PV of an annuity = annual cash flow × annuity factor; PV of a perpetuity = annual cash flow ÷ r
