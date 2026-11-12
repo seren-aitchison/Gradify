@@ -2,6 +2,7 @@
 
 Gradify Pro is £7.99 a month or £63.99 a year (GBP, VAT included). It adds Gradify AI allowances; everything else on
 Gradify is free. Stripe takes the payments; Supabase records who is Pro.
+**Launching:** follow [LAUNCH-CHECKLIST.md](LAUNCH-CHECKLIST.md) for the order of every step, from the first AI test to Pro on sale.
 
 ## How it fits together
 
