@@ -289,3 +289,65 @@ test("each feature names its model: Opus for tutoring and explanations, Sonnet f
   assert.deepEqual(caps.map((r) => [r.plan, Number(r.monthly_pence)]), [["free", 100], ["pro", 500]]);
   await x.close();
 });
+
+// The fair-use cap counts the request being claimed (20261114120000_fair_use_cap_includes_request.sql)
+const capCost = async (x, model, input, output) => Number((await x.owner(`select public.ai_cost_pence('${model}', ${input}, ${output}, 0, 0) as c`))[0].c);
+const spent = async (x, uid) => Number((await x.owner(`select public.ai_user_month_spend_pence('${uid}') as c`))[0].c);
+
+test("fair-use cap: a request whose worst case would pass the cap is refused before it starts", async () => {
+  const x = await db();
+  const est = await capCost(x, "claude-opus-5-5", 1000, 1000);   // what one claim below reserves
+  // a cap that leaves room for exactly two such requests and part of a third
+  await x.owner(`${OPEN}; update public.ai_plan_caps set monthly_pence = ${est * 2.5} where plan = 'free'`);
+  const r1 = await x.claim(A, "explain"); await x.settle(A, r1.usage_id, { input: 1000, output: 1000 });
+  const r2 = await x.claim(A, "explain"); await x.settle(A, r2.usage_id, { input: 1000, output: 1000 });
+  assert.ok((await spent(x, A)) < est * 2.5, "still under the cap");
+  // before the fix this claim was allowed, because spend so far was under the cap
+  assert.equal((await x.claim(A, "explain")).reason, "fair_use");
+  // a smaller request that does fit is still allowed
+  assert.ok((await x.claim(A, "explain", { input: 100, output: 100 })).usage_id);
+  assert.ok((await spent(x, A)) <= est * 2.5, "the cap was never passed");
+  await x.close();
+});
+
+test("fair-use cap: in-flight requests count at their worst case, so two at once can't share the last room", async () => {
+  const x = await db();
+  const est = await capCost(x, "claude-opus-5-5", 1000, 1000);
+  await x.owner(`${OPEN}; update public.ai_plan_caps set monthly_pence = ${est * 1.5} where plan = 'free'`);
+  // the first request is claimed and still running: its reservation holds the room
+  const first = await x.claim(A, "explain");
+  assert.ok(first.usage_id);
+  assert.equal((await x.claim(A, "socratic")).reason, "fair_use", "the second can't use the same remaining budget");
+  // the reservation is released at its real cost when the first finishes
+  await x.settle(A, first.usage_id, { input: 100, output: 100 });
+  assert.ok((await x.claim(A, "socratic", { input: 100, output: 100 })).usage_id, "room freed by the real, smaller cost");
+  // another learner is unaffected throughout
+  assert.ok((await x.claim(B, "explain")).usage_id);
+  await x.close();
+});
+
+test("fair-use cap: a request that costs more than its estimate is recorded in full, and the next one is refused", async () => {
+  const x = await db();
+  const est = await capCost(x, "claude-opus-5-5", 1000, 1000);
+  await x.owner(`${OPEN}; update public.ai_plan_caps set monthly_pence = ${est * 1.5} where plan = 'free'`);
+  const r = await x.claim(A, "explain");
+  // the estimate under-counted the input tenfold (it is worked out from characters)
+  const real = await x.settle(A, r.usage_id, { input: 10000, output: 1000 });
+  assert.ok(real > est, "the real cost exceeded the estimate");
+  assert.equal(await spent(x, A), real, "the real cost counts, not the estimate");
+  assert.ok(real > est * 1.5, "so the cap can be passed by an under-estimate: it is not absolute");
+  assert.equal((await x.claim(A, "explain", { input: 1, output: 1 })).reason, "fair_use", "nothing more is allowed");
+  await x.close();
+});
+
+test("fair-use cap: failed requests give the use back but their cost still counts towards the cap", async () => {
+  const x = await db();
+  const est = await capCost(x, "claude-opus-5-5", 1000, 1000);
+  await x.owner(`${OPEN}; update public.ai_plan_caps set monthly_pence = ${est * 1.5} where plan = 'free'`);
+  const r = await x.claim(A, "explain");
+  const cost = await x.settle(A, r.usage_id, { input: 1000, output: 900, outcome: "failed" });
+  assert.equal((await x.allowance(A, "explain")).used, 0, "the use is given back");
+  assert.equal(await spent(x, A), cost, "but the money Anthropic charged still counts");
+  assert.equal((await x.claim(A, "explain")).reason, "fair_use");
+  await x.close();
+});
