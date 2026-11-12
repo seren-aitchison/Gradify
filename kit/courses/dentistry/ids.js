@@ -85,24 +85,23 @@ export const IDS = {
   "u05-14": "Periodontal surgery: an overview",
   "u05-15": "Supportive periodontal care",
   "u05-16": "Peri-implant health and disease",
-  "u06-01": "Pulpitis and periapical disease",
-  "u06-02": "Odontogenic cysts",
-  "u06-03": "Odontogenic tumours",
-  "u06-04": "Bone diseases of the jaws",
-  "u06-05": "Tooth wear: erosion, attrition and abrasion",
-  "u06-06": "Oral ulceration",
-  "u06-07": "Recurrent aphthous stomatitis",
-  "u06-08": "Oral lichen planus",
-  "u06-09": "White and red patches",
-  "u06-10": "Oral potentially malignant disorders",
-  "u06-11": "Oral cancer",
-  "u06-12": "Salivary gland disease",
-  "u06-13": "Orofacial pain and temporomandibular disorders",
-  "u06-14": "Oral manifestations of systemic disease",
-  "u06-15": "Medical history and the medically complex patient",
-  "u06-16": "Anticoagulants and bleeding risk",
-  "u06-17": "Medication-related osteonecrosis of the jaw",
-  "u06-18": "Medical emergencies in the dental practice",
+  "u06-19": "The medical history",
+  "u06-20": "Consultation models and patient-centred care",
+  "u06-21": "Communicating risk and shared decision-making",
+  "u06-22": "Breaking bad news",
+  "u06-23": "Principles of physical examination",
+  "u06-24": "Vital signs and the early warning score (NEWS2)",
+  "u06-25": "The cardiovascular examination",
+  "u06-26": "The respiratory examination",
+  "u06-27": "The abdominal examination",
+  "u06-28": "The neurological examination",
+  "u06-29": "Clinical reasoning and diagnostic error",
+  "u06-30": "Interpreting tests: sensitivity, specificity and predictive values",
+  "u06-31": "Interpreting a full blood count and electrolytes",
+  "u06-32": "Arterial blood gas interpretation",
+  "u06-33": "The 12-lead ECG: a systematic approach",
+  "u06-34": "Chest X-ray interpretation",
+  "u06-35": "Presenting a patient and documenting care",
   "u07-01": "Properties of dental materials",
   "u07-02": "Biocompatibility of dental materials",
   "u07-03": "Adhesion to enamel and dentine",
@@ -284,5 +283,95 @@ export const RETIRED = {
     "title": "Healthcare waste in dental practice",
     "retired": "2026-11-12",
     "reason": "school 3 replaced by medicine school 1 before it was written"
+  },
+  "u06-01": {
+    "title": "Pulpitis and periapical disease",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-02": {
+    "title": "Odontogenic cysts",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-03": {
+    "title": "Odontogenic tumours",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-04": {
+    "title": "Bone diseases of the jaws",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-05": {
+    "title": "Tooth wear: erosion, attrition and abrasion",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-06": {
+    "title": "Oral ulceration",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-07": {
+    "title": "Recurrent aphthous stomatitis",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-08": {
+    "title": "Oral lichen planus",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-09": {
+    "title": "White and red patches",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-10": {
+    "title": "Oral potentially malignant disorders",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-11": {
+    "title": "Oral cancer",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-12": {
+    "title": "Salivary gland disease",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-13": {
+    "title": "Orofacial pain and temporomandibular disorders",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-14": {
+    "title": "Oral manifestations of systemic disease",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-15": {
+    "title": "Medical history and the medically complex patient",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-16": {
+    "title": "Anticoagulants and bleeding risk",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-17": {
+    "title": "Medication-related osteonecrosis of the jaw",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
+  },
+  "u06-18": {
+    "title": "Medical emergencies in the dental practice",
+    "retired": "2026-11-12",
+    "reason": "school 6 replaced by medicine school 2 before it was written"
   }
 };

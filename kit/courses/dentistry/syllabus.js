@@ -110,28 +110,27 @@ export const SYLLABUS = `
 * Periodontal surgery: an overview
 * Supportive periodontal care
 * Peri-implant health and disease
-6. Oral Pathology and Oral Medicine
-> Pathology of teeth and jaws
-* Pulpitis and periapical disease
-* Odontogenic cysts
-* Odontogenic tumours
-* Bone diseases of the jaws
-* Tooth wear: erosion, attrition and abrasion
-> Oral mucosal disease
-* Oral ulceration
-* Recurrent aphthous stomatitis
-* Oral lichen planus
-* White and red patches
-* Oral potentially malignant disorders
-* Oral cancer
-* Salivary gland disease
-> Oral medicine and the medically complex patient
-* Orofacial pain and temporomandibular disorders
-* Oral manifestations of systemic disease
-* Medical history and the medically complex patient
-* Anticoagulants and bleeding risk
-* Medication-related osteonecrosis of the jaw
-* Medical emergencies in the dental practice
+6. Clinical Method and Reasoning
+> The consultation
+* The medical history
+* Consultation models and patient-centred care
+* Communicating risk and shared decision-making
+* Breaking bad news
+> Examination
+* Principles of physical examination
+* Vital signs and the early warning score (NEWS2)
+* The cardiovascular examination
+* The respiratory examination
+* The abdominal examination
+* The neurological examination
+> Investigation and reasoning
+* Clinical reasoning and diagnostic error
+* Interpreting tests: sensitivity, specificity and predictive values
+* Interpreting a full blood count and electrolytes
+* Arterial blood gas interpretation
+* The 12-lead ECG: a systematic approach
+* Chest X-ray interpretation
+* Presenting a patient and documenting care
 7. Dental Materials
 > Materials science basics
 * Properties of dental materials
@@ -278,7 +277,7 @@ export const BLURBS = {
   3: "The cell biology, physiology, pathology, immunology, genetics and pharmacology that clinical medicine is built on.",
   4: "How caries starts and stops, fluoride and Delivering Better Oral Health, and the epidemiology and inequalities of oral disease.",
   5: "The periodontium in health and disease, the 2017 classification, BPE, staging and grading, and periodontal therapy.",
-  6: "Pulpal and jaw pathology, mucosal disease and oral cancer, orofacial pain and caring for the medically complex patient.",
+  6: "Taking a history, examining patients, reasoning to a diagnosis and interpreting the first-line tests.",
   7: "The science of the materials dentists place: amalgam, composites, glass ionomers, cements, impressions, ceramics and alloys.",
   8: "X-ray physics and biology, IRR17 and IR(ME)R, selection criteria, techniques, CBCT and radiographic interpretation.",
   9: "Treatment planning, operative dentistry, endodontics, crowns, bridges, dentures and implants.",
