@@ -12,6 +12,7 @@ The iPhone, iPad and Mac apps read the same courses as the website, so a new sub
 - **Generated, not hand-written:** `node scripts/build-api.mjs` writes `kit/api/v1/` from `kit/courses/*/course.js`. CI fails if it's out of date, and `tests/api.test.mjs` checks every course has a page, a syllabus and a notes file for each written unit.
 - **Notes files** are ES modules whose default export is one template literal in the format in `kit/course/notes.js`. Read them as text, never run them: `kit/assess/canon.js` shows how (cut out the literal, decode its escapes, split lessons at `## Title`, read the tagged lines). The Swift client does the same.
 - **Versioning:** `api` is 1. Fields are only added within a version; a breaking change gets `/v2/` alongside `/v1/`.
+- **Syncing with the native apps:** the plan, the proposed migrations (not applied) and the release checklist are in [APP-DB-INTEGRATION-REVIEW.md](APP-DB-INTEGRATION-REVIEW.md).
 - **Accounts and progress** come from Supabase, as on the website (`docs/SETUP.md`, `supabase/migrations/`): `course_progress` holds a course's progress object, `assessment_attempts` one row per answer, with the evidence classes in `kit/learning/evidence-class.js`. Until the project is connected, apps keep progress on the device, as the website does.
 
 ## Labs in lessons
