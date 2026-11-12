@@ -1322,5 +1322,62 @@
    ]
   }
  ],
- "interactives": []
+ "interactives": [
+  {
+   "id": "population",
+   "title": "Population ecology",
+   "kind": "Simulation",
+   "sub": "Logistic growth, predator–prey cycles and competition, over time and as phase plots.",
+   "note": "Classic Lotka–Volterra and logistic models; no age structure, space or chance.",
+   "tasks": null,
+   "lessons": [
+    "u02-07",
+    "u02-09",
+    "u02-06",
+    "u03-05",
+    "u03-02"
+   ],
+   "url": "https://getgradify.com/ecogradify/course/#/practice/population"
+  },
+  {
+   "id": "food-web",
+   "title": "Food webs and energy flow",
+   "kind": "Simulation",
+   "sub": "Remove species from a woodland food web to see secondary extinctions, and follow energy up the trophic levels.",
+   "note": "Topological model: consumers with no food left are lost; population effects aren't modelled.",
+   "tasks": null,
+   "lessons": [
+    "u04-03",
+    "u04-04",
+    "u04-08"
+   ],
+   "url": "https://getgradify.com/ecogradify/course/#/practice/food-web"
+  },
+  {
+   "id": "natural-selection",
+   "title": "Natural selection and drift",
+   "kind": "Simulation",
+   "sub": "Moths on light or sooty bark: birds pick off the conspicuous ones and allele frequencies shift. Turn selection off to see drift.",
+   "note": "One gene, random mating, fixed population size, predation proportional to contrast.",
+   "tasks": null,
+   "lessons": [
+    "u06-05",
+    "u01-10"
+   ],
+   "url": "https://getgradify.com/ecogradify/course/#/practice/natural-selection"
+  },
+  {
+   "id": "photosynthesis",
+   "title": "Photosynthesis and limiting factors",
+   "kind": "Simulation",
+   "sub": "Rate against light, CO₂ and temperature, the compensation point, and a pondweed giving off oxygen bubbles.",
+   "note": "Standard response curves with illustrative numbers for a C3 leaf.",
+   "tasks": null,
+   "lessons": [
+    "u04-05",
+    "u04-06"
+   ],
+   "url": "https://getgradify.com/ecogradify/course/#/practice/photosynthesis"
+  }
+ ]
 }
