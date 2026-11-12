@@ -5,7 +5,7 @@ import { UNITS, TRACKS, PATHS, BLURBS } from "./syllabus.js";
 import { QA, WRITTEN_ON } from "./qa.js";
 import { INTERACTIVES } from "./interactives.js";
 import { QUESTIONS, LESSONS } from "./registry.js";
-import { EVIDENCE } from "./evidence.js";
+import { EVIDENCE, EXPLORATION } from "./evidence.js";
 export default {
   site: "EduGradify", slug: "teaching", name: "Teaching", app: "../app.html", page: "/edugradify/course/", unitWord: "School", trackWord: "Stage",
   // who must sign a school off before it counts as published (docs/CURRICULUM_QA.md)
@@ -16,14 +16,14 @@ export default {
   levels: ["Foundation", "Application", "Evaluation"],
   theme: { accent: "#ffc002", spectrum: "linear-gradient(90deg, #ffc002, #22d3ee)" },
   notice: "<b>Study material, not a teaching qualification.</b> EduGradify is for trainee and early-career teachers. It does not award or count towards Qualified Teacher Status (QTS), and it doesn't replace your training provider, mentor or induction programme. The lessons were drafted with AI assistance and haven't yet been reviewed by teacher educators, so they may contain errors; check important points against the DfE's current guidance. Always follow your own school's policies, especially on safeguarding: if you are worried about a child, speak to your designated safeguarding lead straight away, and if a child is in immediate danger call 999.",
-  interactives: INTERACTIVES, evidence: EVIDENCE,
+  interactives: INTERACTIVES, evidence: EVIDENCE, exploration: EXPLORATION,
   practiceNote: "Interactives run a stated model or check your reasoning. Challenges inside them earn XP and count as evidence for their lesson.",
   exams: [
     ...TRACKS.map((t, i) => ({ id: `stage-${i + 1}`, title: t.name, sub: "Mixed questions from every written school in this stage.", units: t.units, format: "science", count: 20, minutes: 30, pass: 0.7 })),
     { id: "whole", title: "Whole course", sub: "Forty mixed questions from every written school.", units: UNITS.map((u) => u.n), format: "science", count: 40, minutes: 60, pass: 0.7 },
   ],
   // the schools whose notes are written (one notes/uNN.js file each)
-  written: ["u01", "u05", "u11", "u12"],
+  written: ["u01", "u02", "u05", "u11", "u12"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
   overview: {
     headline: "How to teach well, and why it works",
