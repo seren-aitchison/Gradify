@@ -3,6 +3,7 @@
 // "reviewed" only if `by` says so; it can never complete "sources" or "signoff". Sign-off needs a registered health
 // professional or public health specialist who teaches (course.js `expert`).
 export const QA = {
+  u08: { standard: 2, reviewed: null, sources: null, signoff: null },
   u07: { standard: 2, reviewed: null, sources: null, signoff: null },
   u06: { standard: 2, reviewed: null, sources: null, signoff: null },
   u05: { standard: 2, reviewed: null, sources: null, signoff: null },
@@ -13,4 +14,4 @@ export const QA = {
   u02: { standard: 2, reviewed: null, sources: null, signoff: null },
 };
 // the date each school's notes were first written
-export const WRITTEN_ON = { u01: "2026-11-07", u02: "2026-11-07", u03: "2026-11-10", u04: "2026-11-11", u05: "2026-11-12", u06: "2026-11-12", u07: "2026-11-12" };
+export const WRITTEN_ON = { u01: "2026-11-07", u02: "2026-11-07", u03: "2026-11-10", u04: "2026-11-11", u05: "2026-11-12", u06: "2026-11-12", u07: "2026-11-12", u08: "2026-11-12" };
