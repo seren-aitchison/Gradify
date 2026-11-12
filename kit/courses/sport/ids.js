@@ -120,44 +120,45 @@ export const IDS = {
   "u07-13": "Laboratory versus field testing",
   "u07-14": "Performance and notational analysis",
   "u07-15": "Wearable technology and GPS",
-  "u08-01": "Macronutrients: carbohydrate, fat and protein",
-  "u08-02": "Micronutrients",
-  "u08-03": "Energy balance",
-  "u08-04": "Body weight and composition goals",
-  "u08-05": "Carbohydrate before, during and after exercise",
-  "u08-06": "Carbohydrate loading",
-  "u08-07": "Protein for training adaptation",
-  "u08-08": "Hydration and fluid balance",
-  "u08-09": "Electrolytes and hyponatraemia",
-  "u08-10": "Nutrient timing",
-  "u08-11": "Evidence-based supplements",
-  "u08-12": "Caffeine",
-  "u08-13": "Creatine",
-  "u08-14": "Nitrate and buffering agents",
-  "u08-15": "Supplement risks and contamination",
-  "u08-16": "Vegetarian and vegan athletes",
-  "u08-17": "Disordered eating in sport",
-  "u09-01": "Personality in sport",
-  "u09-02": "Attitudes",
-  "u09-03": "Motivation",
-  "u09-04": "Achievement motivation",
-  "u09-05": "Self-determination theory",
-  "u09-06": "Attribution theory",
-  "u09-07": "Self-efficacy and confidence",
-  "u09-08": "Learned helplessness",
-  "u09-09": "Arousal theories: drive and inverted-U",
-  "u09-10": "Catastrophe theory and the zone of optimal functioning",
-  "u09-11": "Anxiety: cognitive and somatic",
-  "u09-12": "Stress management techniques",
-  "u09-13": "Attentional control",
-  "u09-14": "Group dynamics and cohesion",
-  "u09-15": "Social loafing and the Ringelmann effect",
-  "u09-16": "Leadership in sport",
-  "u09-17": "Social facilitation and inhibition",
-  "u09-18": "Aggression in sport",
-  "u09-19": "Goal setting",
-  "u09-20": "Imagery and mental rehearsal",
-  "u09-21": "Exercise psychology and adherence",
+  "u08-18": "Carbohydrates and dietary fibre",
+  "u08-19": "Protein",
+  "u08-20": "Fats",
+  "u08-21": "Vitamins",
+  "u08-22": "Minerals",
+  "u08-23": "Water and hydration",
+  "u08-24": "The Eatwell Guide",
+  "u08-25": "Energy balance",
+  "u08-26": "Reading food labels",
+  "u08-27": "Salt, sugar and saturated fat",
+  "u08-28": "Ultra-processed food",
+  "u08-29": "Nutrition in pregnancy and infancy",
+  "u08-30": "Nutrition in childhood and adolescence",
+  "u08-31": "Nutrition in older age",
+  "u08-32": "Vegetarian and vegan diets",
+  "u08-33": "Malnutrition",
+  "u08-34": "Diet and chronic disease",
+  "u08-35": "Food insecurity",
+  "u08-36": "Eating disorders",
+  "u09-22": "Intrinsic and extrinsic motivation",
+  "u09-23": "Drive theories",
+  "u09-24": "Incentive theories",
+  "u09-25": "Self-determination theory",
+  "u09-26": "Goal-setting theory",
+  "u09-27": "Achievement motivation in context",
+  "u09-28": "Theories of emotion: James–Lange and Cannon–Bard",
+  "u09-29": "The two-factor theory: Schachter–Singer",
+  "u09-30": "Emotion regulation",
+  "u09-31": "Stress",
+  "u09-32": "The physiology of stress",
+  "u09-33": "Coping",
+  "u09-34": "Resilience",
+  "u09-35": "Subjective wellbeing",
+  "u09-36": "Happiness",
+  "u09-37": "Positive psychology in practice",
+  "u09-38": "Flow",
+  "u09-39": "Gratitude",
+  "u09-40": "Mindfulness research",
+  "u09-41": "Flourishing",
   "u10-01": "The nature of skill",
   "u10-02": "Classifying skills",
   "u10-03": "Abilities",
@@ -192,21 +193,290 @@ export const IDS = {
   "u11-12": "Return to play",
   "u11-13": "Recovery methods",
   "u11-14": "Psychological responses to injury",
-  "u12-01": "The UK Chief Medical Officers' physical activity guidelines",
-  "u12-02": "Physical activity and chronic disease",
-  "u12-03": "Sedentary behaviour",
-  "u12-04": "Physical activity and mental health",
-  "u12-05": "Exercise referral and prescription",
-  "u12-06": "The development of modern sport",
-  "u12-07": "Sport and social class",
-  "u12-08": "Participation and barriers",
-  "u12-09": "Gender in sport",
-  "u12-10": "Ethnicity and sport",
-  "u12-11": "Disability sport and the Paralympic movement",
-  "u12-12": "Commercialisation and the media",
-  "u12-13": "Deviance in sport",
-  "u12-14": "Doping and anti-doping",
-  "u12-15": "Sport policy and UK sports organisations",
-  "u12-16": "Olympism and mega-events",
+  "u12-17": "Physical activity, exercise and fitness",
+  "u12-18": "The UK physical activity guidelines",
+  "u12-19": "Sedentary behaviour",
+  "u12-20": "The benefits of physical activity",
+  "u12-21": "Short-term responses to exercise",
+  "u12-22": "Long-term adaptations to training",
+  "u12-23": "Energy systems",
+  "u12-24": "Components of fitness",
+  "u12-25": "Measuring fitness",
+  "u12-26": "Physical activity in children and young people",
+  "u12-27": "Physical activity in older adults",
+  "u12-28": "Activity with long-term conditions",
+  "u12-29": "Barriers to physical activity",
+  "u12-30": "Active environments and active travel",
 };
-export const RETIRED = {};
+export const RETIRED = {
+  "u08-01": {
+    "title": "Macronutrients: carbohydrate, fat and protein",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-02": {
+    "title": "Micronutrients",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-03": {
+    "title": "Energy balance",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-04": {
+    "title": "Body weight and composition goals",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-05": {
+    "title": "Carbohydrate before, during and after exercise",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-06": {
+    "title": "Carbohydrate loading",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-07": {
+    "title": "Protein for training adaptation",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-08": {
+    "title": "Hydration and fluid balance",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-09": {
+    "title": "Electrolytes and hyponatraemia",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-10": {
+    "title": "Nutrient timing",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-11": {
+    "title": "Evidence-based supplements",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-12": {
+    "title": "Caffeine",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-13": {
+    "title": "Creatine",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-14": {
+    "title": "Nitrate and buffering agents",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-15": {
+    "title": "Supplement risks and contamination",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-16": {
+    "title": "Vegetarian and vegan athletes",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u08-17": {
+    "title": "Disordered eating in sport",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by health school 3 before it was written"
+  },
+  "u12-01": {
+    "title": "The UK Chief Medical Officers' physical activity guidelines",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-02": {
+    "title": "Physical activity and chronic disease",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-03": {
+    "title": "Sedentary behaviour",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-04": {
+    "title": "Physical activity and mental health",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-05": {
+    "title": "Exercise referral and prescription",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-06": {
+    "title": "The development of modern sport",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-07": {
+    "title": "Sport and social class",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-08": {
+    "title": "Participation and barriers",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-09": {
+    "title": "Gender in sport",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-10": {
+    "title": "Ethnicity and sport",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-11": {
+    "title": "Disability sport and the Paralympic movement",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-12": {
+    "title": "Commercialisation and the media",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-13": {
+    "title": "Deviance in sport",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-14": {
+    "title": "Doping and anti-doping",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-15": {
+    "title": "Sport policy and UK sports organisations",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u12-16": {
+    "title": "Olympism and mega-events",
+    "retired": "2026-11-12",
+    "reason": "school 12 replaced by health school 4 before it was written"
+  },
+  "u09-01": {
+    "title": "Personality in sport",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-02": {
+    "title": "Attitudes",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-03": {
+    "title": "Motivation",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-04": {
+    "title": "Achievement motivation",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-05": {
+    "title": "Self-determination theory",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-06": {
+    "title": "Attribution theory",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-07": {
+    "title": "Self-efficacy and confidence",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-08": {
+    "title": "Learned helplessness",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-09": {
+    "title": "Arousal theories: drive and inverted-U",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-10": {
+    "title": "Catastrophe theory and the zone of optimal functioning",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-11": {
+    "title": "Anxiety: cognitive and somatic",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-12": {
+    "title": "Stress management techniques",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-13": {
+    "title": "Attentional control",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-14": {
+    "title": "Group dynamics and cohesion",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-15": {
+    "title": "Social loafing and the Ringelmann effect",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-16": {
+    "title": "Leadership in sport",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-17": {
+    "title": "Social facilitation and inhibition",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-18": {
+    "title": "Aggression in sport",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-19": {
+    "title": "Goal setting",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-20": {
+    "title": "Imagery and mental rehearsal",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  },
+  "u09-21": {
+    "title": "Exercise psychology and adherence",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by psychology school 13 before it was written"
+  }
+};

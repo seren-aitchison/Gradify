@@ -158,52 +158,54 @@ export const SYLLABUS = `
 * Performance and notational analysis
 * Wearable technology and GPS
 8. Sport and Exercise Nutrition
-> Nutrients and energy
-* Macronutrients: carbohydrate, fat and protein
-* Micronutrients
+> Nutrients
+* Carbohydrates and dietary fibre
+* Protein
+* Fats
+* Vitamins
+* Minerals
+* Water and hydration
+> Healthy eating
+* The Eatwell Guide
 * Energy balance
-* Body weight and composition goals
-> Fuelling performance
-* Carbohydrate before, during and after exercise
-* Carbohydrate loading
-* Protein for training adaptation
-* Hydration and fluid balance
-* Electrolytes and hyponatraemia
-* Nutrient timing
-> Supplements and special issues
-* Evidence-based supplements
-* Caffeine
-* Creatine
-* Nitrate and buffering agents
-* Supplement risks and contamination
-* Vegetarian and vegan athletes
-* Disordered eating in sport
-9. Sport and Exercise Psychology
-> Individual differences and motivation
-* Personality in sport
-* Attitudes
-* Motivation
-* Achievement motivation
+* Reading food labels
+* Salt, sugar and saturated fat
+* Ultra-processed food
+> Nutrition across life
+* Nutrition in pregnancy and infancy
+* Nutrition in childhood and adolescence
+* Nutrition in older age
+* Vegetarian and vegan diets
+> Diet, disease and access
+* Malnutrition
+* Diet and chronic disease
+* Food insecurity
+* Eating disorders
+9. Motivation, Emotion and Wellbeing
+> Motivation
+* Intrinsic and extrinsic motivation
+* Drive theories
+* Incentive theories
 * Self-determination theory
-* Attribution theory
-* Self-efficacy and confidence
-* Learned helplessness
-> Arousal, anxiety and performance
-* Arousal theories: drive and inverted-U
-* Catastrophe theory and the zone of optimal functioning
-* Anxiety: cognitive and somatic
-* Stress management techniques
-* Attentional control
-> Groups and leadership
-* Group dynamics and cohesion
-* Social loafing and the Ringelmann effect
-* Leadership in sport
-* Social facilitation and inhibition
-* Aggression in sport
-> Applied sport psychology
-* Goal setting
-* Imagery and mental rehearsal
-* Exercise psychology and adherence
+* Goal-setting theory
+* Achievement motivation in context
+> Emotion
+* Theories of emotion: James–Lange and Cannon–Bard
+* The two-factor theory: Schachter–Singer
+* Emotion regulation
+> Stress and coping
+* Stress
+* The physiology of stress
+* Coping
+* Resilience
+> Wellbeing
+* Subjective wellbeing
+* Happiness
+* Positive psychology in practice
+* Flow
+* Gratitude
+* Mindfulness research
+* Flourishing
 10. Skill Acquisition and Coaching
 > Skill and ability
 * The nature of skill
@@ -247,25 +249,24 @@ export const SYLLABUS = `
 * Return to play
 * Recovery methods
 * Psychological responses to injury
-12. Physical Activity, Health and Sport in Society
-> Physical activity and health
-* The UK Chief Medical Officers' physical activity guidelines
-* Physical activity and chronic disease
+12. Physical Activity
+> Activity and health
+* Physical activity, exercise and fitness
+* The UK physical activity guidelines
 * Sedentary behaviour
-* Physical activity and mental health
-* Exercise referral and prescription
-> Sport in society
-* The development of modern sport
-* Sport and social class
-* Participation and barriers
-* Gender in sport
-* Ethnicity and sport
-* Disability sport and the Paralympic movement
-* Commercialisation and the media
-* Deviance in sport
-* Doping and anti-doping
-* Sport policy and UK sports organisations
-* Olympism and mega-events
+* The benefits of physical activity
+> How the body responds
+* Short-term responses to exercise
+* Long-term adaptations to training
+* Energy systems
+* Components of fitness
+* Measuring fitness
+> Promoting activity
+* Physical activity in children and young people
+* Physical activity in older adults
+* Activity with long-term conditions
+* Barriers to physical activity
+* Active environments and active travel
 `;
 
 // stages on the map; SportGradify's colours run from cobalt to cyan
@@ -294,11 +295,11 @@ export const BLURBS = {
   5: "Motion, Newton's laws, impulse, levers, projectiles, fluid forces, spin and angular momentum in sport.",
   6: "The principles of training, every major training method, needs analysis, load monitoring, periodisation and tapering.",
   7: "Choosing and running valid, reliable fitness tests, interpreting the results and analysing performance.",
-  8: "Energy and nutrients, fuelling and hydration for training and competition, and the evidence on supplements.",
-  9: "Personality, motivation, confidence, arousal and anxiety, groups, leadership, aggression and mental skills.",
+  8: "Nutrients, the Eatwell Guide, energy balance, food labels, diet across life, and the links between diet and disease.",
+  9: "Why we act, what emotions are, how stress works and what the science of wellbeing has found.",
   10: "What skill is, how it is learned and practised, information processing, feedback and the craft of coaching.",
   11: "Types and causes of sports injury, prevention, first aid, tissue healing, rehabilitation and return to play.",
-  12: "Physical activity guidelines and health, and sport's history, inequalities, commerce, deviance and policy.",
+  12: "The UK activity guidelines, how the body responds and adapts to exercise, fitness, and getting people moving.",
 };
 
 export const UNITS = parseSyllabus(SYLLABUS, IDS, RETIRED);

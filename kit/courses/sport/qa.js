@@ -4,6 +4,9 @@
 export const QA = {
   // written to standard 2 on 2026-11-07; review, source check and expert sign-off pending
   u01: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u08: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from health u03
+  u12: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from health u04
+  u09: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from psychology u13
 };
 // the date each school's notes were first written
-export const WRITTEN_ON = { u01: "2026-11-07" };
+export const WRITTEN_ON = { u09: "2026-11-12", u12: "2026-11-12", u08: "2026-11-12", u01: "2026-11-07" };

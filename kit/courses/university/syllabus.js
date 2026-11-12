@@ -30,29 +30,30 @@ export const SYLLABUS = `
 * Building study habits
 * Peer learning and study groups
 * Belonging and the transition to university
-2. The Science of Learning
-> How memory works
-* What learning is: memory and understanding
-* Working memory and cognitive load
-* Encoding and levels of processing
-* Forgetting and the forgetting curve
-* Desirable difficulties
-> Evidence-based study techniques
-* Rating study techniques: the evidence
+2. How Pupils Learn
+> Memory and the architecture of learning
+* Learning as a change in long-term memory
+* Working memory and its limits
+* Long-term memory and schemas
+* Prior knowledge and how it shapes learning
+* Misconceptions and conceptual change
+> Cognitive load theory
+* Cognitive load theory: Sweller 1988
+* Intrinsic and extraneous load
+* The worked example effect
+* The expertise reversal effect
+* Split attention and redundancy
+* Dual coding
+> Making learning stick
 * Retrieval practice
 * Spaced practice
 * Interleaving
-* Elaboration and self-explanation
-* Concrete examples and dual coding
-* Flashcards and spaced repetition systems
-* Rereading, highlighting and summarising
-> Metacognition
-* Metacognition: thinking about your thinking
-* Judgements of learning and the illusion of competence
-* Planning, monitoring and evaluating your learning
-* Learning styles and other myths
-* Sleep, attention and learning
-* Putting it together: a study system
+* Elaboration and generative learning
+* Forgetting and desirable difficulties
+> The learner
+* Motivation and self-efficacy
+* Metacognition and self-regulated learning
+* Learning styles and other neuromyths
 3. Time Management, Lectures and Note-making
 > Time and planning
 * How students use their time
@@ -265,7 +266,7 @@ export const PATHS = [
 // one line per school for the overview page
 export const BLURBS = {
   1: "How university study works: credits, levels, assessment and regulations, the people and services that support you, and becoming an independent learner.",
-  2: "How memory works and what the evidence says about studying: retrieval practice, spacing, interleaving, elaboration and metacognition.",
+  2: "Working and long-term memory, cognitive load, retrieval, spacing and interleaving, motivation and metacognition: what the evidence says about how pupils learn.",
   3: "Planning a semester and a week, beating procrastination and distraction, and getting the most from lectures, seminars and labs.",
   4: "Reading academic texts with purpose, and the critical thinking that turns reading into argument and analysis.",
   5: "The writing process, essay and report structure, and an academic style that is clear, careful and your own.",

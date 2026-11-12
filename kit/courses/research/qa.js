@@ -5,6 +5,7 @@
 export const QA = {
   // written to standard 2 on 2026-11-08; review pending
   u01: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u07: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from sociology u17
 };
 // the date each school's notes were first written
-export const WRITTEN_ON = { u01: "2026-11-08" };
+export const WRITTEN_ON = { u07: "2026-11-12", u01: "2026-11-08" };

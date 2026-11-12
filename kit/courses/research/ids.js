@@ -112,18 +112,44 @@ export const IDS = {
   "u06-19": "Qualitative data analysis software",
   "u06-20": "Rigour in qualitative research",
   "u06-21": "Writing up qualitative findings",
-  "u07-01": "What is mixed methods research?",
-  "u07-02": "Convergent designs",
-  "u07-03": "Explanatory sequential designs",
-  "u07-04": "Exploratory sequential designs",
-  "u07-05": "Integration and joint displays",
-  "u07-06": "Quality in mixed methods research",
-  "u07-07": "Meta-analysis",
-  "u07-08": "Qualitative evidence synthesis",
-  "u07-09": "Realist reviews",
-  "u07-10": "Secondary data analysis",
-  "u07-11": "Big data and computational methods",
-  "u07-12": "Using AI tools in research",
+  "u07-13": "Research design",
+  "u07-14": "Research questions and hypotheses",
+  "u07-15": "Positivism",
+  "u07-16": "Interpretivism",
+  "u07-17": "Realism",
+  "u07-18": "Quantitative research",
+  "u07-19": "Qualitative research",
+  "u07-20": "Mixed methods",
+  "u07-21": "Surveys",
+  "u07-22": "Questionnaire design",
+  "u07-23": "Structured interviews",
+  "u07-24": "Semi-structured interviews",
+  "u07-25": "Unstructured interviews",
+  "u07-26": "Focus groups",
+  "u07-27": "Participant observation",
+  "u07-28": "Ethnography",
+  "u07-29": "Case studies",
+  "u07-30": "Experiments in sociology",
+  "u07-31": "Social network analysis",
+  "u07-32": "Content analysis",
+  "u07-33": "Discourse analysis",
+  "u07-34": "Secondary data",
+  "u07-35": "Official statistics",
+  "u07-36": "Longitudinal research",
+  "u07-37": "Comparative research",
+  "u07-38": "Probability sampling",
+  "u07-39": "Non-probability sampling",
+  "u07-40": "Reliability",
+  "u07-41": "Validity",
+  "u07-42": "Generalisability",
+  "u07-43": "Bias",
+  "u07-44": "Positionality",
+  "u07-45": "Reflexivity",
+  "u07-46": "Informed consent",
+  "u07-47": "Anonymity and confidentiality",
+  "u07-48": "Researching vulnerable groups",
+  "u07-49": "Interpreting findings",
+  "u07-50": "Disseminating research",
   "u08-01": "Principles of research ethics",
   "u08-02": "The history of research ethics",
   "u08-03": "Informed consent",
@@ -200,4 +226,65 @@ export const IDS = {
   "u12-11": "Teaching in higher education",
   "u12-12": "Networking and your research profile",
 };
-export const RETIRED = {};
+export const RETIRED = {
+  "u07-01": {
+    "title": "What is mixed methods research?",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by sociology school 17 before it was written"
+  },
+  "u07-02": {
+    "title": "Convergent designs",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by sociology school 17 before it was written"
+  },
+  "u07-03": {
+    "title": "Explanatory sequential designs",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by sociology school 17 before it was written"
+  },
+  "u07-04": {
+    "title": "Exploratory sequential designs",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by sociology school 17 before it was written"
+  },
+  "u07-05": {
+    "title": "Integration and joint displays",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by sociology school 17 before it was written"
+  },
+  "u07-06": {
+    "title": "Quality in mixed methods research",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by sociology school 17 before it was written"
+  },
+  "u07-07": {
+    "title": "Meta-analysis",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by sociology school 17 before it was written"
+  },
+  "u07-08": {
+    "title": "Qualitative evidence synthesis",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by sociology school 17 before it was written"
+  },
+  "u07-09": {
+    "title": "Realist reviews",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by sociology school 17 before it was written"
+  },
+  "u07-10": {
+    "title": "Secondary data analysis",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by sociology school 17 before it was written"
+  },
+  "u07-11": {
+    "title": "Big data and computational methods",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by sociology school 17 before it was written"
+  },
+  "u07-12": {
+    "title": "Using AI tools in research",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by sociology school 17 before it was written"
+  }
+};

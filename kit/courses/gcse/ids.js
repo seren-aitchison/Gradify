@@ -14,18 +14,24 @@ export const IDS = {
   "u01-10": "Timing and exam technique",
   "u01-11": "Exam stress and wellbeing",
   "u01-12": "Making a revision plan",
-  "u02-01": "Explicit and implicit information",
-  "u02-02": "Retrieving and summarising",
-  "u02-03": "Inference and selecting evidence",
-  "u02-04": "Analysing language: words and phrases",
-  "u02-05": "Language techniques and their effects",
-  "u02-06": "Sentence forms and their effects",
-  "u02-07": "Analysing structure: openings, shifts and endings",
-  "u02-08": "Narrative perspective and focus",
-  "u02-09": "Evaluating a text critically",
-  "u02-10": "Non-fiction and viewpoint texts",
-  "u02-11": "Nineteenth-century non-fiction",
-  "u02-12": "Comparing writers' viewpoints and methods",
+  "u02-13": "What is literature?",
+  "u02-14": "Genre and form",
+  "u02-15": "Author, narrator and reader",
+  "u02-16": "Text and context",
+  "u02-17": "The literary canon",
+  "u02-18": "Close reading: a method",
+  "u02-19": "Diction and register",
+  "u02-20": "Imagery",
+  "u02-21": "Metaphor, simile and personification",
+  "u02-22": "Symbol and motif",
+  "u02-23": "Tone and mood",
+  "u02-24": "Syntax and sentence structure",
+  "u02-25": "The sound of language",
+  "u02-26": "Ambiguity and multiple meanings",
+  "u02-27": "Irony",
+  "u02-28": "Intertextuality and allusion",
+  "u02-29": "Using quotations as evidence",
+  "u02-30": "From annotation to argument",
   "u03-01": "Descriptive writing",
   "u03-02": "Narrative writing: openings and structure",
   "u03-03": "Character, setting and voice",
@@ -146,4 +152,65 @@ export const IDS = {
   "u09-14": "CVs, applications and interviews",
   "u09-15": "Work experience and employability skills",
 };
-export const RETIRED = {};
+export const RETIRED = {
+  "u02-01": {
+    "title": "Explicit and implicit information",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-02": {
+    "title": "Retrieving and summarising",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-03": {
+    "title": "Inference and selecting evidence",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-04": {
+    "title": "Analysing language: words and phrases",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-05": {
+    "title": "Language techniques and their effects",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-06": {
+    "title": "Sentence forms and their effects",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-07": {
+    "title": "Analysing structure: openings, shifts and endings",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-08": {
+    "title": "Narrative perspective and focus",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-09": {
+    "title": "Evaluating a text critically",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-10": {
+    "title": "Non-fiction and viewpoint texts",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-11": {
+    "title": "Nineteenth-century non-fiction",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  },
+  "u02-12": {
+    "title": "Comparing writers' viewpoints and methods",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by literature school 1 before it was written"
+  }
+};

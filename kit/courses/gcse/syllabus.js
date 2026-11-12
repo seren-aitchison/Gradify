@@ -24,23 +24,28 @@ export const SYLLABUS = `
 * Timing and exam technique
 * Exam stress and wellbeing
 * Making a revision plan
-2. English Language: Reading
-> Reading for meaning
-* Explicit and implicit information
-* Retrieving and summarising
-* Inference and selecting evidence
-> Language analysis
-* Analysing language: words and phrases
-* Language techniques and their effects
-* Sentence forms and their effects
-> Structure
-* Analysing structure: openings, shifts and endings
-* Narrative perspective and focus
-> Evaluation and comparison
-* Evaluating a text critically
-* Non-fiction and viewpoint texts
-* Nineteenth-century non-fiction
-* Comparing writers' viewpoints and methods
+2. Foundations of Literary Study
+> What literature is
+* What is literature?
+* Genre and form
+* Author, narrator and reader
+* Text and context
+* The literary canon
+> Close reading
+* Close reading: a method
+* Diction and register
+* Imagery
+* Metaphor, simile and personification
+* Symbol and motif
+* Tone and mood
+* Syntax and sentence structure
+* The sound of language
+> Interpretation
+* Ambiguity and multiple meanings
+* Irony
+* Intertextuality and allusion
+* Using quotations as evidence
+* From annotation to argument
 3. English Language: Writing
 > Writing to describe and narrate
 * Descriptive writing
@@ -221,7 +226,7 @@ export const PATHS = [
 // one line per school for the overview page
 export const BLURBS = {
   1: "How memory works and the revision methods that use it: retrieval, spacing, flashcards, past papers, command words and calm exams.",
-  2: "Reading fiction and non-fiction like an examiner: inference, language, structure, evaluation and comparing viewpoints.",
+  2: "What literature is and how to read it closely: diction, imagery, tone, syntax, sound, irony, allusion and argument.",
   3: "Descriptive, narrative and viewpoint writing, and the spelling, punctuation and grammar that earn the technical accuracy marks.",
   4: "Cells, organisation, infection, bioenergetics, homeostasis, inheritance, evolution and ecology, with the required practicals.",
   5: "Atoms, bonding, moles, reactions, electrolysis, rates, organic chemistry, analysis and the atmosphere.",

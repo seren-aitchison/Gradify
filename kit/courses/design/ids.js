@@ -84,22 +84,24 @@ export const IDS = {
   "u06-14": "Iterating on feedback",
   "u06-15": "Minimum viable product",
   "u06-16": "Design sprints",
-  "u07-01": "Gestalt principles in design",
-  "u07-02": "Visual hierarchy",
-  "u07-03": "Typography",
-  "u07-04": "Colour theory",
-  "u07-05": "Layout and grids",
-  "u07-06": "Imagery and iconography",
-  "u07-07": "Affordances and signifiers",
-  "u07-08": "Mapping, feedback and constraints",
-  "u07-09": "Mental models and conceptual models",
-  "u07-10": "Nielsen's usability heuristics",
-  "u07-11": "Information architecture",
-  "u07-12": "Navigation design",
-  "u07-13": "Designing for errors",
-  "u07-14": "Microinteractions",
-  "u07-15": "Fitts's law and Hick's law",
-  "u07-16": "Cognitive load in interfaces",
+  "u07-17": "What is art and design?",
+  "u07-18": "How art and design are assessed: the four assessment objectives",
+  "u07-19": "Looking closely: an approach to visual analysis",
+  "u07-20": "Line",
+  "u07-21": "Shape and form",
+  "u07-22": "Tone and value",
+  "u07-23": "Colour as a visual element",
+  "u07-24": "Texture",
+  "u07-25": "Space",
+  "u07-26": "Pattern",
+  "u07-27": "Balance and symmetry",
+  "u07-28": "Contrast and emphasis",
+  "u07-29": "Rhythm, repetition and movement",
+  "u07-30": "Proportion and scale",
+  "u07-31": "Unity and variety",
+  "u07-32": "Composition and the picture plane",
+  "u07-33": "The rule of thirds and the golden ratio",
+  "u07-34": "Gestalt principles in art and design",
   "u08-01": "Why accessibility matters",
   "u08-02": "Models of disability",
   "u08-03": "Inclusive design principles",
@@ -173,4 +175,85 @@ export const IDS = {
   "u12-15": "Trade marks",
   "u12-16": "Protecting and licensing ideas",
 };
-export const RETIRED = {};
+export const RETIRED = {
+  "u07-01": {
+    "title": "Gestalt principles in design",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u07-02": {
+    "title": "Visual hierarchy",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u07-03": {
+    "title": "Typography",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u07-04": {
+    "title": "Colour theory",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u07-05": {
+    "title": "Layout and grids",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u07-06": {
+    "title": "Imagery and iconography",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u07-07": {
+    "title": "Affordances and signifiers",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u07-08": {
+    "title": "Mapping, feedback and constraints",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u07-09": {
+    "title": "Mental models and conceptual models",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u07-10": {
+    "title": "Nielsen's usability heuristics",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u07-11": {
+    "title": "Information architecture",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u07-12": {
+    "title": "Navigation design",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u07-13": {
+    "title": "Designing for errors",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u07-14": {
+    "title": "Microinteractions",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u07-15": {
+    "title": "Fitts's law and Hick's law",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u07-16": {
+    "title": "Cognitive load in interfaces",
+    "retired": "2026-11-12",
+    "reason": "school 7 replaced by art school 1 before it was written"
+  }
+};

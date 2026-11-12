@@ -4,6 +4,9 @@
 // and initial teacher education tutor.
 export const QA = {
   u01: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u12: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from sociology u09
+  u11: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from psychology u10
+  u05: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from psychology u04
 };
 // the date each school's notes were first written
-export const WRITTEN_ON = { u01: "2026-11-08" };
+export const WRITTEN_ON = { u05: "2026-11-12", u11: "2026-11-12", u12: "2026-11-12", u01: "2026-11-08" };

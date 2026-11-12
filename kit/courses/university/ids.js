@@ -21,25 +21,25 @@ export const IDS = {
   "u01-17": "Building study habits",
   "u01-18": "Peer learning and study groups",
   "u01-19": "Belonging and the transition to university",
-  "u02-01": "What learning is: memory and understanding",
-  "u02-02": "Working memory and cognitive load",
-  "u02-03": "Encoding and levels of processing",
-  "u02-04": "Forgetting and the forgetting curve",
-  "u02-05": "Desirable difficulties",
-  "u02-06": "Rating study techniques: the evidence",
-  "u02-07": "Retrieval practice",
-  "u02-08": "Spaced practice",
-  "u02-09": "Interleaving",
-  "u02-10": "Elaboration and self-explanation",
-  "u02-11": "Concrete examples and dual coding",
-  "u02-12": "Flashcards and spaced repetition systems",
-  "u02-13": "Rereading, highlighting and summarising",
-  "u02-14": "Metacognition: thinking about your thinking",
-  "u02-15": "Judgements of learning and the illusion of competence",
-  "u02-16": "Planning, monitoring and evaluating your learning",
-  "u02-17": "Learning styles and other myths",
-  "u02-18": "Sleep, attention and learning",
-  "u02-19": "Putting it together: a study system",
+  "u02-20": "Learning as a change in long-term memory",
+  "u02-21": "Working memory and its limits",
+  "u02-22": "Long-term memory and schemas",
+  "u02-23": "Prior knowledge and how it shapes learning",
+  "u02-24": "Misconceptions and conceptual change",
+  "u02-25": "Cognitive load theory: Sweller 1988",
+  "u02-26": "Intrinsic and extraneous load",
+  "u02-27": "The worked example effect",
+  "u02-28": "The expertise reversal effect",
+  "u02-29": "Split attention and redundancy",
+  "u02-30": "Dual coding",
+  "u02-31": "Retrieval practice",
+  "u02-32": "Spaced practice",
+  "u02-33": "Interleaving",
+  "u02-34": "Elaboration and generative learning",
+  "u02-35": "Forgetting and desirable difficulties",
+  "u02-36": "Motivation and self-efficacy",
+  "u02-37": "Metacognition and self-regulated learning",
+  "u02-38": "Learning styles and other neuromyths",
   "u03-01": "How students use their time",
   "u03-02": "Semester and weekly planning",
   "u03-03": "Prioritising tasks",
@@ -196,4 +196,100 @@ export const IDS = {
   "u12-13": "Your degree outcome and the HEAR",
   "u12-14": "Lifelong learning",
 };
-export const RETIRED = {};
+export const RETIRED = {
+  "u02-01": {
+    "title": "What learning is: memory and understanding",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-02": {
+    "title": "Working memory and cognitive load",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-03": {
+    "title": "Encoding and levels of processing",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-04": {
+    "title": "Forgetting and the forgetting curve",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-05": {
+    "title": "Desirable difficulties",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-06": {
+    "title": "Rating study techniques: the evidence",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-07": {
+    "title": "Retrieval practice",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-08": {
+    "title": "Spaced practice",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-09": {
+    "title": "Interleaving",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-10": {
+    "title": "Elaboration and self-explanation",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-11": {
+    "title": "Concrete examples and dual coding",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-12": {
+    "title": "Flashcards and spaced repetition systems",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-13": {
+    "title": "Rereading, highlighting and summarising",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-14": {
+    "title": "Metacognition: thinking about your thinking",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-15": {
+    "title": "Judgements of learning and the illusion of competence",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-16": {
+    "title": "Planning, monitoring and evaluating your learning",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-17": {
+    "title": "Learning styles and other myths",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-18": {
+    "title": "Sleep, attention and learning",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  },
+  "u02-19": {
+    "title": "Putting it together: a study system",
+    "retired": "2026-11-12",
+    "reason": "school 2 replaced by teaching school 1 before it was written"
+  }
+};
