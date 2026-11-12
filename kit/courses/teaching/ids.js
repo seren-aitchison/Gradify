@@ -161,20 +161,20 @@ export const IDS = {
   "u09-17": "Safer working practice",
   "u09-18": "Safeguarding children with SEND",
   "u09-19": "Attendance as a safeguarding issue",
-  "u10-01": "The Teachers' Standards Part Two",
-  "u10-02": "Professional boundaries",
-  "u10-03": "Teacher misconduct and the Teaching Regulation Agency",
-  "u10-04": "Working with parents and carers",
-  "u10-05": "Working with colleagues and support staff",
-  "u10-06": "The Initial Teacher Training and Early Career Framework",
-  "u10-07": "QTS and statutory induction",
-  "u10-08": "Mentoring and instructional coaching",
-  "u10-09": "Effective professional development",
-  "u10-10": "Reflective practice",
-  "u10-11": "Teacher workload",
-  "u10-12": "Teacher wellbeing",
-  "u10-13": "Managing time and priorities",
-  "u10-14": "Pay, conditions and contracts",
+  "u10-15": "Why we sleep",
+  "u10-16": "Sleep stages and cycles",
+  "u10-17": "Circadian rhythms",
+  "u10-18": "How much sleep we need",
+  "u10-19": "Sleep across the lifespan",
+  "u10-20": "Insomnia",
+  "u10-21": "Improving sleep",
+  "u10-22": "Shift work and sleep",
+  "u10-23": "Sleep disorders beyond insomnia",
+  "u10-24": "What stress is",
+  "u10-25": "The stress response",
+  "u10-26": "Stress and health",
+  "u10-27": "Coping and stress management",
+  "u10-28": "Work-related stress and burnout",
   "u11-13": "Scientific reasoning in psychology",
   "u11-14": "Research questions and hypotheses",
   "u11-15": "Operationalisation",
@@ -436,5 +436,75 @@ export const RETIRED = {
     "title": "Bullying, including online",
     "retired": "2026-11-12",
     "reason": "school 5 replaced by psychology school 4 before it was written"
+  },
+  "u10-01": {
+    "title": "The Teachers' Standards Part Two",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by health school 5 before it was written"
+  },
+  "u10-02": {
+    "title": "Professional boundaries",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by health school 5 before it was written"
+  },
+  "u10-03": {
+    "title": "Teacher misconduct and the Teaching Regulation Agency",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by health school 5 before it was written"
+  },
+  "u10-04": {
+    "title": "Working with parents and carers",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by health school 5 before it was written"
+  },
+  "u10-05": {
+    "title": "Working with colleagues and support staff",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by health school 5 before it was written"
+  },
+  "u10-06": {
+    "title": "The Initial Teacher Training and Early Career Framework",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by health school 5 before it was written"
+  },
+  "u10-07": {
+    "title": "QTS and statutory induction",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by health school 5 before it was written"
+  },
+  "u10-08": {
+    "title": "Mentoring and instructional coaching",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by health school 5 before it was written"
+  },
+  "u10-09": {
+    "title": "Effective professional development",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by health school 5 before it was written"
+  },
+  "u10-10": {
+    "title": "Reflective practice",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by health school 5 before it was written"
+  },
+  "u10-11": {
+    "title": "Teacher workload",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by health school 5 before it was written"
+  },
+  "u10-12": {
+    "title": "Teacher wellbeing",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by health school 5 before it was written"
+  },
+  "u10-13": {
+    "title": "Managing time and priorities",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by health school 5 before it was written"
+  },
+  "u10-14": {
+    "title": "Pay, conditions and contracts",
+    "retired": "2026-11-12",
+    "reason": "school 10 replaced by health school 5 before it was written"
   }
 };

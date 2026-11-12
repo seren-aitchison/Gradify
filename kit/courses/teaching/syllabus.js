@@ -203,24 +203,23 @@ export const SYLLABUS = `
 * Safer working practice
 * Safeguarding children with SEND
 * Attendance as a safeguarding issue
-10. Professional Behaviours and Wellbeing
-> Professional conduct
-* The Teachers' Standards Part Two
-* Professional boundaries
-* Teacher misconduct and the Teaching Regulation Agency
-* Working with parents and carers
-* Working with colleagues and support staff
-> Professional development
-* The Initial Teacher Training and Early Career Framework
-* QTS and statutory induction
-* Mentoring and instructional coaching
-* Effective professional development
-* Reflective practice
-> Sustaining a career
-* Teacher workload
-* Teacher wellbeing
-* Managing time and priorities
-* Pay, conditions and contracts
+10. Sleep, Stress and Rest
+> Sleep
+* Why we sleep
+* Sleep stages and cycles
+* Circadian rhythms
+* How much sleep we need
+* Sleep across the lifespan
+* Insomnia
+* Improving sleep
+* Shift work and sleep
+* Sleep disorders beyond insomnia
+> Stress
+* What stress is
+* The stress response
+* Stress and health
+* Coping and stress management
+* Work-related stress and burnout
 11. Research Methods
 > Scientific reasoning
 * Scientific reasoning in psychology
@@ -317,7 +316,7 @@ export const BLURBS = {
   7: "Planning backwards from what pupils should learn: sequences, lesson structure, tasks, explanations, questions, homework and evaluation.",
   8: "Reading, vocabulary, writing and talk in every subject: disciplinary literacy, fluency, comprehension, phonics and oracy.",
   9: "Keeping Children Safe in Education: recognising, responding to and reporting concerns, and the duties every member of staff has.",
-  10: "The Teachers' Standards Part Two, boundaries, working with families and colleagues, induction, professional development and wellbeing.",
+  10: "Why we sleep, how much we need, circadian rhythms and insomnia; what stress is and how it affects health.",
   11: "Designing research well: hypotheses, experiments, observation, surveys, sampling, validity, open science and ethics.",
   12: "Theories of education, differential achievement, labelling, selection and education policy.",
 };
