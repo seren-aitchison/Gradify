@@ -151,24 +151,25 @@ export const SYLLABUS = `
 * Testing for accessibility
 * Cognitive accessibility
 * Accessibility and UK law
-9. Product Design and Materials
-> Materials
-* Material properties
-* Woods and manufactured boards
-* Metals and alloys
-* Polymers
-* Textiles and composites
-* Smart and modern materials
-> Making
-* Manufacturing processes
-* Scales of production
-* Design for manufacture and assembly
-* Ergonomics and anthropometrics
-* Tolerances and quality control
-> Product thinking
-* Form and function
-* The product life cycle
-* Influential designers and movements
+9. Mechanics of Materials
+> Stress and strain
+* Normal stress and strain
+* Shear stress and strain
+* Hooke's law and elastic constants
+* Axially loaded members
+* Thermal stress
+> Torsion and bending
+* Torsion of circular shafts
+* Bending stress in beams
+* Shear stress in beams
+* Beam deflection
+> Combined loading and stability
+* Combined loading
+* Stress transformation and Mohr's circle
+* Failure theories
+* Buckling of columns
+* Thin-walled pressure vessels
+* Strain energy
 10. Service and Systems Design
 > Services
 * What is service design?
@@ -252,7 +253,7 @@ export const BLURBS = {
   6: "Prototypes from paper to code, usability testing, heuristic evaluation, A/B tests, MVPs, sprints and iteration.",
   7: "The visual elements and principles of design, composition and how to look closely: the vocabulary of every later school.",
   8: "Models of disability, inclusive and universal design, WCAG 2.2 in practice, assistive technology and UK accessibility law.",
-  9: "Material properties, woods, metals, polymers, textiles and smart materials, manufacturing, ergonomics and product life cycles.",
+  9: "Stress, strain, torsion, bending, deflection, combined loading, failure theories and buckling.",
   10: "Service blueprints, touchpoints, co-design and public services, then systems thinking, feedback loops and behaviour change.",
   11: "Life cycle assessment, the circular economy and design for repair, then dark patterns, privacy, bias and design ethics.",
   12: "Collaboration, workshops and critique, storytelling, pitching and portfolios, design systems and UK intellectual property.",

@@ -7,6 +7,7 @@ export const QA = {
   u03: { standard: 2, reviewed: null, sources: null, signoff: null },
   u04: { standard: 2, reviewed: null, sources: null, signoff: null },
   u07: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from art u01
+  u09: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from engineering u04
 };
 // the date each school's notes were first written
-export const WRITTEN_ON = { u01: "2026-11-08", u02: "2026-11-12", u03: "2026-11-12", u04: "2026-11-12", u07: "2026-11-12" };
+export const WRITTEN_ON = { u09: "2026-11-12", u01: "2026-11-08", u02: "2026-11-12", u03: "2026-11-12", u04: "2026-11-12", u07: "2026-11-12" };

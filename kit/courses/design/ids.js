@@ -116,20 +116,21 @@ export const IDS = {
   "u08-12": "Testing for accessibility",
   "u08-13": "Cognitive accessibility",
   "u08-14": "Accessibility and UK law",
-  "u09-01": "Material properties",
-  "u09-02": "Woods and manufactured boards",
-  "u09-03": "Metals and alloys",
-  "u09-04": "Polymers",
-  "u09-05": "Textiles and composites",
-  "u09-06": "Smart and modern materials",
-  "u09-07": "Manufacturing processes",
-  "u09-08": "Scales of production",
-  "u09-09": "Design for manufacture and assembly",
-  "u09-10": "Ergonomics and anthropometrics",
-  "u09-11": "Tolerances and quality control",
-  "u09-12": "Form and function",
-  "u09-13": "The product life cycle",
-  "u09-14": "Influential designers and movements",
+  "u09-15": "Normal stress and strain",
+  "u09-16": "Shear stress and strain",
+  "u09-17": "Hooke's law and elastic constants",
+  "u09-18": "Axially loaded members",
+  "u09-19": "Thermal stress",
+  "u09-20": "Torsion of circular shafts",
+  "u09-21": "Bending stress in beams",
+  "u09-22": "Shear stress in beams",
+  "u09-23": "Beam deflection",
+  "u09-24": "Combined loading",
+  "u09-25": "Stress transformation and Mohr's circle",
+  "u09-26": "Failure theories",
+  "u09-27": "Buckling of columns",
+  "u09-28": "Thin-walled pressure vessels",
+  "u09-29": "Strain energy",
   "u10-01": "What is service design?",
   "u10-02": "Service blueprints",
   "u10-03": "Touchpoints and channels",
@@ -255,5 +256,75 @@ export const RETIRED = {
     "title": "Cognitive load in interfaces",
     "retired": "2026-11-12",
     "reason": "school 7 replaced by art school 1 before it was written"
+  },
+  "u09-01": {
+    "title": "Material properties",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by engineering school 4 before it was written"
+  },
+  "u09-02": {
+    "title": "Woods and manufactured boards",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by engineering school 4 before it was written"
+  },
+  "u09-03": {
+    "title": "Metals and alloys",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by engineering school 4 before it was written"
+  },
+  "u09-04": {
+    "title": "Polymers",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by engineering school 4 before it was written"
+  },
+  "u09-05": {
+    "title": "Textiles and composites",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by engineering school 4 before it was written"
+  },
+  "u09-06": {
+    "title": "Smart and modern materials",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by engineering school 4 before it was written"
+  },
+  "u09-07": {
+    "title": "Manufacturing processes",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by engineering school 4 before it was written"
+  },
+  "u09-08": {
+    "title": "Scales of production",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by engineering school 4 before it was written"
+  },
+  "u09-09": {
+    "title": "Design for manufacture and assembly",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by engineering school 4 before it was written"
+  },
+  "u09-10": {
+    "title": "Ergonomics and anthropometrics",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by engineering school 4 before it was written"
+  },
+  "u09-11": {
+    "title": "Tolerances and quality control",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by engineering school 4 before it was written"
+  },
+  "u09-12": {
+    "title": "Form and function",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by engineering school 4 before it was written"
+  },
+  "u09-13": {
+    "title": "The product life cycle",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by engineering school 4 before it was written"
+  },
+  "u09-14": {
+    "title": "Influential designers and movements",
+    "retired": "2026-11-12",
+    "reason": "school 9 replaced by engineering school 4 before it was written"
   }
 };
