@@ -161,28 +161,27 @@ export const SYLLABUS = `
 * Cardiovascular drugs
 * Drugs acting on the gut
 * Drug calculations: principles
-8. Clinical Examination, Diagnostics and Surgical Principles
-> Clinical examination
-* Taking a clinical history
-* The general clinical examination
-* Examination of the cardiovascular and respiratory systems
-* Examination of the alimentary and urinary systems
+8. Clinical Method and Reasoning
+> The consultation
+* The medical history
+* Consultation models and patient-centred care
+* Communicating risk and shared decision-making
+* Breaking bad news
+> Examination
+* Principles of physical examination
+* Vital signs and the early warning score (NEWS2)
+* The cardiovascular examination
+* The respiratory examination
+* The abdominal examination
 * The neurological examination
-* The orthopaedic and lameness examination
-* Clinical reasoning and the problem-oriented approach
-> Diagnostics
-* Sample collection and handling
-* Diagnostic imaging: radiography
-* Ultrasonography and advanced imaging
-* Interpreting diagnostic tests
-> Anaesthesia and surgery
-* Principles of anaesthesia
-* Anaesthetic monitoring
-* Asepsis and surgical preparation
-* Wound management
-* Fluid therapy principles
-* Emergency triage and first aid
-* Euthanasia
+> Investigation and reasoning
+* Clinical reasoning and diagnostic error
+* Interpreting tests: sensitivity, specificity and predictive values
+* Interpreting a full blood count and electrolytes
+* Arterial blood gas interpretation
+* The 12-lead ECG: a systematic approach
+* Chest X-ray interpretation
+* Presenting a patient and documenting care
 9. Small Animal Medicine and Surgery
 > Medicine
 * Vomiting and diarrhoea in dogs and cats
@@ -291,7 +290,7 @@ export const BLURBS = {
   5: "How disease changes tissues: inflammation, repair, circulation, neoplasia, systemic pathology and the post-mortem.",
   6: "Bacteria, viruses, parasites and the immune system, antimicrobial resistance and the principles of vaccination.",
   7: "How drugs work and how they are regulated in UK practice: the cascade, withdrawal periods and the main drug classes.",
-  8: "History, examination, clinical reasoning, sampling, imaging, anaesthesia, asepsis, fluids, triage and euthanasia.",
+  8: "Taking a history, examining patients, reasoning to a diagnosis and interpreting the first-line tests.",
   9: "Common medical and surgical problems of dogs, cats, rabbits and exotics, as met in first-opinion practice.",
   10: "Colic, lameness, laminitis, respiratory and infectious disease, stud medicine, the foal and equine records.",
   11: "Herd and flock health: mastitis, lameness, metabolic disease, fertility, TB, sheep, pigs and poultry.",

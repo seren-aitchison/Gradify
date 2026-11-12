@@ -127,24 +127,23 @@ export const IDS = {
   "u07-16": "Cardiovascular drugs",
   "u07-17": "Drugs acting on the gut",
   "u07-18": "Drug calculations: principles",
-  "u08-01": "Taking a clinical history",
-  "u08-02": "The general clinical examination",
-  "u08-03": "Examination of the cardiovascular and respiratory systems",
-  "u08-04": "Examination of the alimentary and urinary systems",
-  "u08-05": "The neurological examination",
-  "u08-06": "The orthopaedic and lameness examination",
-  "u08-07": "Clinical reasoning and the problem-oriented approach",
-  "u08-08": "Sample collection and handling",
-  "u08-09": "Diagnostic imaging: radiography",
-  "u08-10": "Ultrasonography and advanced imaging",
-  "u08-11": "Interpreting diagnostic tests",
-  "u08-12": "Principles of anaesthesia",
-  "u08-13": "Anaesthetic monitoring",
-  "u08-14": "Asepsis and surgical preparation",
-  "u08-15": "Wound management",
-  "u08-16": "Fluid therapy principles",
-  "u08-17": "Emergency triage and first aid",
-  "u08-18": "Euthanasia",
+  "u08-19": "The medical history",
+  "u08-20": "Consultation models and patient-centred care",
+  "u08-21": "Communicating risk and shared decision-making",
+  "u08-22": "Breaking bad news",
+  "u08-23": "Principles of physical examination",
+  "u08-24": "Vital signs and the early warning score (NEWS2)",
+  "u08-25": "The cardiovascular examination",
+  "u08-26": "The respiratory examination",
+  "u08-27": "The abdominal examination",
+  "u08-28": "The neurological examination",
+  "u08-29": "Clinical reasoning and diagnostic error",
+  "u08-30": "Interpreting tests: sensitivity, specificity and predictive values",
+  "u08-31": "Interpreting a full blood count and electrolytes",
+  "u08-32": "Arterial blood gas interpretation",
+  "u08-33": "The 12-lead ECG: a systematic approach",
+  "u08-34": "Chest X-ray interpretation",
+  "u08-35": "Presenting a patient and documenting care",
   "u09-01": "Vomiting and diarrhoea in dogs and cats",
   "u09-02": "Cardiac disease in dogs and cats",
   "u09-03": "Respiratory disease in dogs and cats",
@@ -213,4 +212,95 @@ export const IDS = {
   "u12-15": "Wellbeing and professional life",
   "u12-16": "The Day One Competences",
 };
-export const RETIRED = {};
+export const RETIRED = {
+  "u08-01": {
+    "title": "Taking a clinical history",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-02": {
+    "title": "The general clinical examination",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-03": {
+    "title": "Examination of the cardiovascular and respiratory systems",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-04": {
+    "title": "Examination of the alimentary and urinary systems",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-05": {
+    "title": "The neurological examination",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-06": {
+    "title": "The orthopaedic and lameness examination",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-07": {
+    "title": "Clinical reasoning and the problem-oriented approach",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-08": {
+    "title": "Sample collection and handling",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-09": {
+    "title": "Diagnostic imaging: radiography",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-10": {
+    "title": "Ultrasonography and advanced imaging",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-11": {
+    "title": "Interpreting diagnostic tests",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-12": {
+    "title": "Principles of anaesthesia",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-13": {
+    "title": "Anaesthetic monitoring",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-14": {
+    "title": "Asepsis and surgical preparation",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-15": {
+    "title": "Wound management",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-16": {
+    "title": "Fluid therapy principles",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-17": {
+    "title": "Emergency triage and first aid",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  },
+  "u08-18": {
+    "title": "Euthanasia",
+    "retired": "2026-11-12",
+    "reason": "school 8 replaced by medicine school 2 before it was written"
+  }
+};
