@@ -608,7 +608,7 @@
    "id": "u05",
    "n": 5,
    "title": "Materials Science",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u05-01",
