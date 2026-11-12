@@ -32,19 +32,24 @@ export const IDS = {
   "u02-28": "Intertextuality and allusion",
   "u02-29": "Using quotations as evidence",
   "u02-30": "From annotation to argument",
-  "u03-01": "Descriptive writing",
-  "u03-02": "Narrative writing: openings and structure",
-  "u03-03": "Character, setting and voice",
-  "u03-04": "Crafting sentences for effect",
-  "u03-05": "Viewpoint writing: forms and audiences",
-  "u03-06": "Planning an argument",
-  "u03-07": "Rhetorical and persuasive techniques",
-  "u03-08": "Letters, articles and speeches",
-  "u03-09": "Sentence demarcation and punctuation",
-  "u03-10": "Spelling strategies",
-  "u03-11": "Grammar and Standard English",
-  "u03-12": "Vocabulary for effect",
-  "u03-13": "Spoken language endorsement",
+  "u03-14": "Drama as performance",
+  "u03-15": "Tragedy",
+  "u03-16": "Comedy",
+  "u03-17": "Dramatic structure",
+  "u03-18": "Character and dialogue in drama",
+  "u03-19": "Stagecraft and stage directions",
+  "u03-20": "Shakespeare's theatre",
+  "u03-21": "Shakespeare's language",
+  "u03-22": "Soliloquy and aside",
+  "u03-23": "Shakespearean tragedy",
+  "u03-24": "Shakespearean comedy",
+  "u03-25": "The history plays and the late romances",
+  "u03-26": "Marlowe and Shakespeare's contemporaries",
+  "u03-27": "Restoration and eighteenth-century drama",
+  "u03-28": "Wilde, Shaw and the Victorian stage",
+  "u03-29": "Ibsen, Chekhov and modern realism",
+  "u03-30": "Modernist and absurdist drama",
+  "u03-31": "Post-war and contemporary British drama",
   "u04-24": "Cells, tissues and organs",
   "u04-25": "Homeostasis",
   "u04-26": "Body temperature regulation",
@@ -467,5 +472,70 @@ export const RETIRED = {
     "title": "Glacial landscapes",
     "retired": "2026-11-12",
     "reason": "school 7 replaced by ecology school 1 before it was written"
+  },
+  "u03-01": {
+    "title": "Descriptive writing",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by literature school 3 before it was written"
+  },
+  "u03-02": {
+    "title": "Narrative writing: openings and structure",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by literature school 3 before it was written"
+  },
+  "u03-03": {
+    "title": "Character, setting and voice",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by literature school 3 before it was written"
+  },
+  "u03-04": {
+    "title": "Crafting sentences for effect",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by literature school 3 before it was written"
+  },
+  "u03-05": {
+    "title": "Viewpoint writing: forms and audiences",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by literature school 3 before it was written"
+  },
+  "u03-06": {
+    "title": "Planning an argument",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by literature school 3 before it was written"
+  },
+  "u03-07": {
+    "title": "Rhetorical and persuasive techniques",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by literature school 3 before it was written"
+  },
+  "u03-08": {
+    "title": "Letters, articles and speeches",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by literature school 3 before it was written"
+  },
+  "u03-09": {
+    "title": "Sentence demarcation and punctuation",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by literature school 3 before it was written"
+  },
+  "u03-10": {
+    "title": "Spelling strategies",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by literature school 3 before it was written"
+  },
+  "u03-11": {
+    "title": "Grammar and Standard English",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by literature school 3 before it was written"
+  },
+  "u03-12": {
+    "title": "Vocabulary for effect",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by literature school 3 before it was written"
+  },
+  "u03-13": {
+    "title": "Spoken language endorsement",
+    "retired": "2026-11-12",
+    "reason": "school 3 replaced by literature school 3 before it was written"
   }
 };

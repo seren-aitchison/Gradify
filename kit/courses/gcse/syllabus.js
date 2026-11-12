@@ -46,23 +46,28 @@ export const SYLLABUS = `
 * Intertextuality and allusion
 * Using quotations as evidence
 * From annotation to argument
-3. English Language: Writing
-> Writing to describe and narrate
-* Descriptive writing
-* Narrative writing: openings and structure
-* Character, setting and voice
-* Crafting sentences for effect
-> Writing to present a viewpoint
-* Viewpoint writing: forms and audiences
-* Planning an argument
-* Rhetorical and persuasive techniques
-* Letters, articles and speeches
-> Technical accuracy
-* Sentence demarcation and punctuation
-* Spelling strategies
-* Grammar and Standard English
-* Vocabulary for effect
-* Spoken language endorsement
+3. Drama and Shakespeare
+> The nature of drama
+* Drama as performance
+* Tragedy
+* Comedy
+* Dramatic structure
+* Character and dialogue in drama
+* Stagecraft and stage directions
+> Shakespeare
+* Shakespeare's theatre
+* Shakespeare's language
+* Soliloquy and aside
+* Shakespearean tragedy
+* Shakespearean comedy
+* The history plays and the late romances
+* Marlowe and Shakespeare's contemporaries
+> Drama after Shakespeare
+* Restoration and eighteenth-century drama
+* Wilde, Shaw and the Victorian stage
+* Ibsen, Chekhov and modern realism
+* Modernist and absurdist drama
+* Post-war and contemporary British drama
 4. The Human Body
 > Organisation and control
 * Cells, tissues and organs
@@ -220,7 +225,7 @@ export const PATHS = [
 export const BLURBS = {
   1: "How memory works and the revision methods that use it: retrieval, spacing, flashcards, past papers, command words and calm exams.",
   2: "What literature is and how to read it closely: diction, imagery, tone, syntax, sound, irony, allusion and argument.",
-  3: "Descriptive, narrative and viewpoint writing, and the spelling, punctuation and grammar that earn the technical accuracy marks.",
+  3: "Drama on the page and the stage: tragedy and comedy, Shakespeare's theatre and language, and drama since.",
   4: "Cells to systems: homeostasis, the heart, lungs, gut, liver, kidneys, immune, nervous, endocrine and musculoskeletal systems.",
   5: "Atoms, bonding, moles, reactions, electrolysis, rates, organic chemistry, analysis and the atmosphere.",
   6: "Energy, electricity, particles, radioactivity, forces, waves and magnetism, with every equation and required practical.",
