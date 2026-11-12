@@ -335,7 +335,7 @@
    "id": "u02",
    "n": 2,
    "title": "Population Ecology",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u02-01",
@@ -433,7 +433,7 @@
    "id": "u03",
    "n": 3,
    "title": "Communities and Species Interactions",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u03-01",
