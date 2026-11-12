@@ -1,0 +1,1044 @@
+{
+ "api": 1,
+ "slug": "spanish",
+ "name": "Spanish",
+ "site": "LanguageGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Study material, not a qualification or an exam board.</b> LanguageGradify teaches Spanish grammar, vocabulary, pronunciation and culture for study. The lessons were drafted with AI assistance and haven't yet been reviewed by a Spanish teacher or lecturer, so they may contain errors; check important points against your course materials, your exam board's specification and a reference grammar. It isn't an Instituto Cervantes (DELE), AQA, Edexcel or Eduqas product, doesn't award a CEFR level or any grade, and can't replace speaking practice with a teacher and with native speakers.",
+ "notes": "/kit/courses/spanish/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · A1 Breakthrough",
+   "units": [
+    1,
+    2
+   ],
+   "from": "#e8846f",
+   "to": "#f0a35e"
+  },
+  {
+   "name": "Stage 2 · A2 Waystage",
+   "units": [
+    3,
+    4,
+    5
+   ],
+   "from": "#f0a35e",
+   "to": "#e8846f"
+  },
+  {
+   "name": "Stage 3 · B1 Threshold",
+   "units": [
+    6,
+    7
+   ],
+   "from": "#e8846f",
+   "to": "#c86b8a"
+  },
+  {
+   "name": "Stage 4 · B2 Vantage",
+   "units": [
+    8
+   ],
+   "from": "#c86b8a",
+   "to": "#6b8ac8"
+  },
+  {
+   "name": "Stage 5 · Cultures and skills",
+   "units": [
+    9,
+    10
+   ],
+   "from": "#6b8ac8",
+   "to": "#22d3ee"
+  }
+ ],
+ "paths": [
+  {
+   "id": "gcse-foundation",
+   "name": "GCSE Spanish: Foundation",
+   "sub": "The sounds, core grammar and everyday topics of the GCSE Foundation tier, with exam skills.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    10
+   ],
+   "select": null
+  },
+  {
+   "id": "gcse-higher",
+   "name": "GCSE Spanish: Higher",
+   "sub": "Everything for the Higher tier: present, past and future time frames, object pronouns, the conditional and a first look at the subjunctive.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    10
+   ],
+   "select": null
+  },
+  {
+   "id": "alevel",
+   "name": "A level Spanish",
+   "sub": "Secure the past and future, master the subjunctive, por and para and advanced structures, and study Hispanic society and culture.",
+   "units": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "select": null
+  },
+  {
+   "id": "grammar",
+   "name": "Grammar in order",
+   "sub": "The verb system from the present to the pluperfect subjunctive, with pronouns, prepositions and the passive.",
+   "units": [
+    2,
+    5,
+    6,
+    7,
+    8
+   ],
+   "select": null
+  },
+  {
+   "id": "traveller",
+   "name": "Spanish for travel",
+   "sub": "Pronunciation, greetings, numbers, food, directions, transport, hotels and the regional Spanish you will hear.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    9
+   ],
+   "select": null
+  },
+  {
+   "id": "culture",
+   "name": "Cultures of the Spanish-speaking world",
+   "sub": "Spain, Latin America and the US: history, festivals, art, film, music and how Spanish varies from place to place.",
+   "units": [
+    9,
+    10
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · A1 Breakthrough",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · A2 Waystage",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    3,
+    4,
+    5
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · B1 Threshold",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    6,
+    7
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · B2 Vantage",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    8
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Cultures and skills",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    9,
+    10
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "First Steps in Spanish",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "The Spanish alphabet and its sounds",
+     "module": "Sounds and spelling"
+    },
+    {
+     "id": "u01-02",
+     "title": "Vowels and diphthongs",
+     "module": "Sounds and spelling"
+    },
+    {
+     "id": "u01-03",
+     "title": "Stress and written accents",
+     "module": "Sounds and spelling"
+    },
+    {
+     "id": "u01-04",
+     "title": "Consonants that differ from English",
+     "module": "Sounds and spelling"
+    },
+    {
+     "id": "u01-05",
+     "title": "Greetings and goodbyes",
+     "module": "First conversations"
+    },
+    {
+     "id": "u01-06",
+     "title": "Introducing yourself",
+     "module": "First conversations"
+    },
+    {
+     "id": "u01-07",
+     "title": "Tú and usted",
+     "module": "First conversations"
+    },
+    {
+     "id": "u01-08",
+     "title": "Numbers 0 to 100",
+     "module": "First conversations"
+    },
+    {
+     "id": "u01-09",
+     "title": "Days, months and dates",
+     "module": "First conversations"
+    },
+    {
+     "id": "u01-10",
+     "title": "Telling the time",
+     "module": "First conversations"
+    },
+    {
+     "id": "u01-11",
+     "title": "Asking questions",
+     "module": "First conversations"
+    },
+    {
+     "id": "u01-12",
+     "title": "Nouns: gender and number",
+     "module": "First grammar"
+    },
+    {
+     "id": "u01-13",
+     "title": "Definite and indefinite articles",
+     "module": "First grammar"
+    },
+    {
+     "id": "u01-14",
+     "title": "Subject pronouns",
+     "module": "First grammar"
+    },
+    {
+     "id": "u01-15",
+     "title": "Ser: identity, origin and nationality",
+     "module": "First grammar"
+    },
+    {
+     "id": "u01-16",
+     "title": "Adjective agreement",
+     "module": "First grammar"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "The Present Tense, Family and Friends",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Regular -ar verbs in the present",
+     "module": "Regular verbs"
+    },
+    {
+     "id": "u02-02",
+     "title": "Regular -er and -ir verbs in the present",
+     "module": "Regular verbs"
+    },
+    {
+     "id": "u02-03",
+     "title": "Using the present tense",
+     "module": "Regular verbs"
+    },
+    {
+     "id": "u02-04",
+     "title": "Tener and expressions with tener",
+     "module": "Irregular verbs"
+    },
+    {
+     "id": "u02-05",
+     "title": "Ir, ir a and the near future",
+     "module": "Irregular verbs"
+    },
+    {
+     "id": "u02-06",
+     "title": "Irregular yo forms: hacer, poner, salir and others",
+     "module": "Irregular verbs"
+    },
+    {
+     "id": "u02-07",
+     "title": "Stem-changing verbs: e to ie",
+     "module": "Irregular verbs"
+    },
+    {
+     "id": "u02-08",
+     "title": "Stem-changing verbs: o to ue and e to i",
+     "module": "Irregular verbs"
+    },
+    {
+     "id": "u02-09",
+     "title": "Estar: location and states",
+     "module": "Ser, estar and hay"
+    },
+    {
+     "id": "u02-10",
+     "title": "Ser or estar?",
+     "module": "Ser, estar and hay"
+    },
+    {
+     "id": "u02-11",
+     "title": "Hay and estar compared",
+     "module": "Ser, estar and hay"
+    },
+    {
+     "id": "u02-12",
+     "title": "Family and relationships",
+     "module": "Me and my people"
+    },
+    {
+     "id": "u02-13",
+     "title": "Describing people: appearance and personality",
+     "module": "Me and my people"
+    },
+    {
+     "id": "u02-14",
+     "title": "Possessive adjectives",
+     "module": "Me and my people"
+    },
+    {
+     "id": "u02-15",
+     "title": "Gustar and expressing likes",
+     "module": "Me and my people"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Daily Life, School and Food",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Reflexive verbs",
+     "module": "Routine"
+    },
+    {
+     "id": "u03-02",
+     "title": "Daily routine",
+     "module": "Routine"
+    },
+    {
+     "id": "u03-03",
+     "title": "Frequency and time expressions",
+     "module": "Routine"
+    },
+    {
+     "id": "u03-04",
+     "title": "School subjects and opinions",
+     "module": "School"
+    },
+    {
+     "id": "u03-05",
+     "title": "Obligation: tener que, hay que and deber",
+     "module": "School"
+    },
+    {
+     "id": "u03-06",
+     "title": "Comparatives",
+     "module": "School"
+    },
+    {
+     "id": "u03-07",
+     "title": "Superlatives",
+     "module": "School"
+    },
+    {
+     "id": "u03-08",
+     "title": "Food and meals",
+     "module": "Food and drink"
+    },
+    {
+     "id": "u03-09",
+     "title": "At the restaurant",
+     "module": "Food and drink"
+    },
+    {
+     "id": "u03-10",
+     "title": "Shopping for food: quantities and large numbers",
+     "module": "Food and drink"
+    },
+    {
+     "id": "u03-11",
+     "title": "Demonstratives",
+     "module": "Food and drink"
+    },
+    {
+     "id": "u03-12",
+     "title": "My home and my room",
+     "module": "Home"
+    },
+    {
+     "id": "u03-13",
+     "title": "Prepositions of place",
+     "module": "Home"
+    },
+    {
+     "id": "u03-14",
+     "title": "Household chores and helping at home",
+     "module": "Home"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Town, Travel and Directions",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "Places in town",
+     "module": "In town"
+    },
+    {
+     "id": "u04-02",
+     "title": "Asking for and giving directions",
+     "module": "In town"
+    },
+    {
+     "id": "u04-03",
+     "title": "Tú commands",
+     "module": "In town"
+    },
+    {
+     "id": "u04-04",
+     "title": "Usted and ustedes commands",
+     "module": "In town"
+    },
+    {
+     "id": "u04-05",
+     "title": "Transport and travel",
+     "module": "Getting around"
+    },
+    {
+     "id": "u04-06",
+     "title": "Weather and seasons",
+     "module": "Getting around"
+    },
+    {
+     "id": "u04-07",
+     "title": "Holiday plans",
+     "module": "Getting around"
+    },
+    {
+     "id": "u04-08",
+     "title": "At the hotel",
+     "module": "Services"
+    },
+    {
+     "id": "u04-09",
+     "title": "Shopping for clothes",
+     "module": "Services"
+    },
+    {
+     "id": "u04-10",
+     "title": "Direct object pronouns",
+     "module": "Services"
+    },
+    {
+     "id": "u04-11",
+     "title": "Indirect object pronouns",
+     "module": "Services"
+    },
+    {
+     "id": "u04-12",
+     "title": "Double object pronouns",
+     "module": "Services"
+    },
+    {
+     "id": "u04-13",
+     "title": "Invitations and arrangements",
+     "module": "Making plans"
+    },
+    {
+     "id": "u04-14",
+     "title": "The present continuous",
+     "module": "Making plans"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Talking about the Past",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "The regular preterite",
+     "module": "The preterite"
+    },
+    {
+     "id": "u05-02",
+     "title": "Spelling changes in the preterite",
+     "module": "The preterite"
+    },
+    {
+     "id": "u05-03",
+     "title": "Irregular preterites: ser, ir, hacer and tener",
+     "module": "The preterite"
+    },
+    {
+     "id": "u05-04",
+     "title": "More irregular preterites: estar, poder, poner, querer, venir and decir",
+     "module": "The preterite"
+    },
+    {
+     "id": "u05-05",
+     "title": "Stem-changing -ir verbs in the preterite",
+     "module": "The preterite"
+    },
+    {
+     "id": "u05-06",
+     "title": "The imperfect tense",
+     "module": "The imperfect"
+    },
+    {
+     "id": "u05-07",
+     "title": "Describing childhood and the past",
+     "module": "The imperfect"
+    },
+    {
+     "id": "u05-08",
+     "title": "Preterite or imperfect?",
+     "module": "Choosing a past tense"
+    },
+    {
+     "id": "u05-09",
+     "title": "Narrating a story in the past",
+     "module": "Choosing a past tense"
+    },
+    {
+     "id": "u05-10",
+     "title": "The past continuous",
+     "module": "Choosing a past tense"
+    },
+    {
+     "id": "u05-11",
+     "title": "The perfect tense",
+     "module": "Other past tenses"
+    },
+    {
+     "id": "u05-12",
+     "title": "Preterite or perfect: Spain and Latin America",
+     "module": "Other past tenses"
+    },
+    {
+     "id": "u05-13",
+     "title": "The pluperfect",
+     "module": "Other past tenses"
+    },
+    {
+     "id": "u05-14",
+     "title": "Acabar de and hace with time",
+     "module": "Other past tenses"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "The Future, the Conditional and Work",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "The future tense",
+     "module": "The future"
+    },
+    {
+     "id": "u06-02",
+     "title": "Irregular futures",
+     "module": "The future"
+    },
+    {
+     "id": "u06-03",
+     "title": "The future of probability",
+     "module": "The future"
+    },
+    {
+     "id": "u06-04",
+     "title": "The conditional",
+     "module": "The conditional"
+    },
+    {
+     "id": "u06-05",
+     "title": "Polite requests and advice",
+     "module": "The conditional"
+    },
+    {
+     "id": "u06-06",
+     "title": "Si clauses: possible conditions",
+     "module": "The conditional"
+    },
+    {
+     "id": "u06-07",
+     "title": "Jobs and workplaces",
+     "module": "The world of work"
+    },
+    {
+     "id": "u06-08",
+     "title": "Future plans and careers",
+     "module": "The world of work"
+    },
+    {
+     "id": "u06-09",
+     "title": "Applying for a job: formal letters and emails",
+     "module": "The world of work"
+    },
+    {
+     "id": "u06-10",
+     "title": "Part-time jobs and money",
+     "module": "The world of work"
+    },
+    {
+     "id": "u06-11",
+     "title": "Relative pronouns: que, quien and donde",
+     "module": "Linking ideas"
+    },
+    {
+     "id": "u06-12",
+     "title": "Lo que and lo with adjectives",
+     "module": "Linking ideas"
+    },
+    {
+     "id": "u06-13",
+     "title": "Adverbs",
+     "module": "Linking ideas"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "The Subjunctive",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Forming the present subjunctive",
+     "module": "The present subjunctive"
+    },
+    {
+     "id": "u07-02",
+     "title": "Irregular present subjunctives",
+     "module": "The present subjunctive"
+    },
+    {
+     "id": "u07-03",
+     "title": "The subjunctive after wishes and influence",
+     "module": "The present subjunctive"
+    },
+    {
+     "id": "u07-04",
+     "title": "The subjunctive after emotion",
+     "module": "The present subjunctive"
+    },
+    {
+     "id": "u07-05",
+     "title": "The subjunctive after doubt and denial",
+     "module": "The present subjunctive"
+    },
+    {
+     "id": "u07-06",
+     "title": "Impersonal expressions and the subjunctive",
+     "module": "The present subjunctive"
+    },
+    {
+     "id": "u07-07",
+     "title": "The subjunctive after cuando and time conjunctions",
+     "module": "The subjunctive in clauses"
+    },
+    {
+     "id": "u07-08",
+     "title": "The subjunctive after para que and other conjunctions",
+     "module": "The subjunctive in clauses"
+    },
+    {
+     "id": "u07-09",
+     "title": "The subjunctive in relative clauses",
+     "module": "The subjunctive in clauses"
+    },
+    {
+     "id": "u07-10",
+     "title": "Negative commands",
+     "module": "The subjunctive in clauses"
+    },
+    {
+     "id": "u07-11",
+     "title": "Ojalá, quizás and tal vez",
+     "module": "The subjunctive in clauses"
+    },
+    {
+     "id": "u07-12",
+     "title": "The imperfect subjunctive",
+     "module": "The past subjunctive"
+    },
+    {
+     "id": "u07-13",
+     "title": "Si clauses: hypothetical conditions",
+     "module": "The past subjunctive"
+    },
+    {
+     "id": "u07-14",
+     "title": "Sequence of tenses",
+     "module": "The past subjunctive"
+    },
+    {
+     "id": "u07-15",
+     "title": "Como si and the pluperfect subjunctive",
+     "module": "The past subjunctive"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Advanced Grammar and Accuracy",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Por and para",
+     "module": "Prepositions"
+    },
+    {
+     "id": "u08-02",
+     "title": "Personal a",
+     "module": "Prepositions"
+    },
+    {
+     "id": "u08-03",
+     "title": "Verbs with prepositions",
+     "module": "Prepositions"
+    },
+    {
+     "id": "u08-04",
+     "title": "The passive with ser",
+     "module": "Verb structures"
+    },
+    {
+     "id": "u08-05",
+     "title": "Passive and impersonal se",
+     "module": "Verb structures"
+    },
+    {
+     "id": "u08-06",
+     "title": "Se for unplanned events",
+     "module": "Verb structures"
+    },
+    {
+     "id": "u08-07",
+     "title": "Gerunds and infinitives",
+     "module": "Verb structures"
+    },
+    {
+     "id": "u08-08",
+     "title": "Verbs of becoming",
+     "module": "Verb structures"
+    },
+    {
+     "id": "u08-09",
+     "title": "The future perfect and conditional perfect",
+     "module": "Verb structures"
+    },
+    {
+     "id": "u08-10",
+     "title": "Diminutives and augmentatives",
+     "module": "Words and style"
+    },
+    {
+     "id": "u08-11",
+     "title": "Connectives and discourse markers",
+     "module": "Words and style"
+    },
+    {
+     "id": "u08-12",
+     "title": "Register: formal and informal Spanish",
+     "module": "Words and style"
+    },
+    {
+     "id": "u08-13",
+     "title": "Common errors for English speakers",
+     "module": "Words and style"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "The Spanish-Speaking World",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Spain's regions and languages",
+     "module": "Spain"
+    },
+    {
+     "id": "u09-02",
+     "title": "Festivals and traditions in Spain",
+     "module": "Spain"
+    },
+    {
+     "id": "u09-03",
+     "title": "The Civil War, Franco and the transition to democracy",
+     "module": "Spain"
+    },
+    {
+     "id": "u09-04",
+     "title": "Mexico: history and culture",
+     "module": "Latin America"
+    },
+    {
+     "id": "u09-05",
+     "title": "The Andes and Indigenous cultures",
+     "module": "Latin America"
+    },
+    {
+     "id": "u09-06",
+     "title": "The Southern Cone",
+     "module": "Latin America"
+    },
+    {
+     "id": "u09-07",
+     "title": "Central America and the Caribbean",
+     "module": "Latin America"
+    },
+    {
+     "id": "u09-08",
+     "title": "Spanish in the United States",
+     "module": "Latin America"
+    },
+    {
+     "id": "u09-09",
+     "title": "Family and society today",
+     "module": "Society and culture today"
+    },
+    {
+     "id": "u09-10",
+     "title": "Technology and cyberspace",
+     "module": "Society and culture today"
+    },
+    {
+     "id": "u09-11",
+     "title": "Equality, migration and diversity",
+     "module": "Society and culture today"
+    },
+    {
+     "id": "u09-12",
+     "title": "Art and architecture",
+     "module": "Society and culture today"
+    },
+    {
+     "id": "u09-13",
+     "title": "Literature and film in Spanish",
+     "module": "Society and culture today"
+    },
+    {
+     "id": "u09-14",
+     "title": "Music and dance",
+     "module": "Society and culture today"
+    },
+    {
+     "id": "u09-15",
+     "title": "Regional variation: vocabulary and pronunciation",
+     "module": "Varieties of Spanish"
+    },
+    {
+     "id": "u09-16",
+     "title": "Voseo",
+     "module": "Varieties of Spanish"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Skills: Listening, Reading, Speaking, Writing and Translation",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Listening strategies",
+     "module": "Listening"
+    },
+    {
+     "id": "u10-02",
+     "title": "Understanding numbers, dates and details",
+     "module": "Listening"
+    },
+    {
+     "id": "u10-03",
+     "title": "Listening for opinions and attitudes",
+     "module": "Listening"
+    },
+    {
+     "id": "u10-04",
+     "title": "Reading strategies",
+     "module": "Reading"
+    },
+    {
+     "id": "u10-05",
+     "title": "Reading literary texts",
+     "module": "Reading"
+    },
+    {
+     "id": "u10-06",
+     "title": "Cognates and false friends",
+     "module": "Reading"
+    },
+    {
+     "id": "u10-07",
+     "title": "Pronunciation and intonation in practice",
+     "module": "Speaking"
+    },
+    {
+     "id": "u10-08",
+     "title": "Role plays",
+     "module": "Speaking"
+    },
+    {
+     "id": "u10-09",
+     "title": "Describing a photo",
+     "module": "Speaking"
+    },
+    {
+     "id": "u10-10",
+     "title": "Conversation and spontaneity",
+     "module": "Speaking"
+    },
+    {
+     "id": "u10-11",
+     "title": "Writing structured paragraphs",
+     "module": "Writing and translation"
+    },
+    {
+     "id": "u10-12",
+     "title": "Writing an extended essay",
+     "module": "Writing and translation"
+    },
+    {
+     "id": "u10-13",
+     "title": "Translation into English",
+     "module": "Writing and translation"
+    },
+    {
+     "id": "u10-14",
+     "title": "Translation into Spanish",
+     "module": "Writing and translation"
+    },
+    {
+     "id": "u10-15",
+     "title": "Dictation",
+     "module": "Writing and translation"
+    }
+   ]
+  }
+ ],
+ "interactives": []
+}
