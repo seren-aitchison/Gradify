@@ -6,18 +6,18 @@ These checks are mechanical. They find text that won't display as written (swall
 
 | Course | Notes files | Lines | NUM questions | Hard failures | Arithmetic to check | NUM explanations to check | Source links |
 |---|---|---|---|---|---|---|---|
-| art | 2 | 1,373 | 1 | 0 | 0 | 0 | 0 |
+| art | 3 | 1,824 | 1 | 0 | 0 | 0 | 0 |
 | biology | 2 | 1,725 | 11 | 0 | 0 | 1 | 0 |
 | business | 4 | 2,976 | 6 | 0 | 0 | 0 | 0 |
 | careers | 2 | 932 | 0 | 0 | 0 | 0 | 0 |
 | chemistry | 2 | 1,548 | 30 | 0 | 0 | 4 | 0 |
 | computing | 2 | 1,125 | 0 | 0 | 0 | 0 | 0 |
-| dentistry | 2 | 1,255 | 0 | 0 | 0 | 0 | 0 |
+| dentistry | 3 | 1,953 | 5 | 0 | 0 | 0 | 0 |
 | design | 4 | 2,167 | 1 | 0 | 0 | 0 | 0 |
 | ecology | 4 | 2,899 | 9 | 0 | 0 | 0 | 0 |
 | engineering | 4 | 2,763 | 68 | 0 | 0 | 0 | 0 |
 | finance | 5 | 3,816 | 73 | 0 | 0 | 0 | 0 |
-| gcse | 2 | 1,157 | 0 | 0 | 0 | 0 | 0 |
+| gcse | 3 | 1,752 | 5 | 0 | 0 | 0 | 0 |
 | health | 5 | 3,395 | 10 | 0 | 0 | 0 | 0 |
 | history | 18 | 11,526 | 0 | 0 | 0 | 0 | 0 |
 | investing | 3 | 1,926 | 32 | 0 | 0 | 0 | 0 |
@@ -30,14 +30,14 @@ These checks are mechanical. They find text that won't display as written (swall
 | pharmacy | 17 | 7,790 | 21 | 0 | 0 | 0 | 0 |
 | physics | 54 | 31,082 | 0 | 0 | 0 | 0 | 0 |
 | primary | 2 | 889 | 0 | 0 | 0 | 0 | 0 |
-| professional | 4 | 2,825 | 4 | 0 | 0 | 0 | 0 |
+| professional | 5 | 3,810 | 6 | 0 | 0 | 0 | 0 |
 | psychology | 16 | 15,002 | 51 | 0 | 0 | 4 | 0 |
 | research | 1 | 687 | 1 | 0 | 0 | 0 | 0 |
 | sociology | 18 | 16,845 | 112 | 0 | 0 | 8 | 0 |
 | spanish | 2 | 1,179 | 0 | 0 | 0 | 0 | 0 |
 | sport | 6 | 4,184 | 36 | 0 | 0 | 0 | 0 |
 | teaching | 5 | 4,340 | 10 | 0 | 0 | 0 | 0 |
-| university | 2 | 1,540 | 0 | 0 | 0 | 0 | 0 |
+| university | 4 | 2,572 | 0 | 0 | 0 | 0 | 0 |
 | veterinary | 2 | 1,569 | 0 | 0 | 0 | 0 | 0 |
 
 Allowed exceptions (correct in context):

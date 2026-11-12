@@ -12,7 +12,7 @@
    "page": "/artgradify/course/",
    "units": 12,
    "lessons": 183,
-   "lessonsWritten": 35,
+   "lessonsWritten": 47,
    "syllabus": "/kit/api/v1/courses/art.json"
   },
   {
@@ -83,8 +83,8 @@
    "accent": "#40d4b1",
    "page": "/dentalgradify/course/",
    "units": 12,
-   "lessons": 200,
-   "lessonsWritten": 32,
+   "lessons": 201,
+   "lessonsWritten": 49,
    "syllabus": "/kit/api/v1/courses/dentistry.json"
   },
   {
@@ -143,8 +143,8 @@
    "accent": "#ffea05",
    "page": "/youthgradify/course/",
    "units": 9,
-   "lessons": 149,
-   "lessonsWritten": 30,
+   "lessons": 148,
+   "lessonsWritten": 44,
    "syllabus": "/kit/api/v1/courses/gcse.json"
   },
   {
@@ -299,8 +299,8 @@
    "accent": "#e69138",
    "page": "/progradify/course/",
    "units": 10,
-   "lessons": 157,
-   "lessonsWritten": 68,
+   "lessons": 167,
+   "lessonsWritten": 94,
    "syllabus": "/kit/api/v1/courses/professional.json"
   },
   {
@@ -383,8 +383,8 @@
    "accent": "#3c78d8",
    "page": "/undergradify/course/",
    "units": 12,
-   "lessons": 193,
-   "lessonsWritten": 38,
+   "lessons": 191,
+   "lessonsWritten": 64,
    "syllabus": "/kit/api/v1/courses/university.json"
   },
   {

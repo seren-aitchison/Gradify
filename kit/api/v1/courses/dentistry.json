@@ -390,88 +390,93 @@
   {
    "id": "u03",
    "n": 3,
-   "title": "Oral Physiology, Microbiology and Infection Control",
-   "written": false,
+   "title": "Foundations of Medical Science",
+   "written": true,
    "lessons": [
     {
-     "id": "u03-01",
-     "title": "Saliva: secretion and control",
-     "module": "Oral physiology"
+     "id": "u03-17",
+     "title": "Cell structure and function in health",
+     "module": "Cells and homeostasis"
     },
     {
-     "id": "u03-02",
-     "title": "The functions and composition of saliva",
-     "module": "Oral physiology"
+     "id": "u03-18",
+     "title": "Membranes, transport and the resting potential",
+     "module": "Cells and homeostasis"
     },
     {
-     "id": "u03-03",
-     "title": "Dry mouth and salivary flow",
-     "module": "Oral physiology"
+     "id": "u03-19",
+     "title": "Homeostasis and negative feedback",
+     "module": "Cells and homeostasis"
     },
     {
-     "id": "u03-04",
-     "title": "Taste and oral sensation",
-     "module": "Oral physiology"
+     "id": "u03-20",
+     "title": "Body fluids, osmolality and electrolytes",
+     "module": "Cells and homeostasis"
     },
     {
-     "id": "u03-05",
-     "title": "Mastication and swallowing",
-     "module": "Oral physiology"
+     "id": "u03-21",
+     "title": "Acid–base physiology",
+     "module": "Cells and homeostasis"
     },
     {
-     "id": "u03-06",
-     "title": "The oral microbiome",
-     "module": "Oral microbiology"
+     "id": "u03-22",
+     "title": "Cell injury, adaptation and death",
+     "module": "Pathological processes"
     },
     {
-     "id": "u03-07",
-     "title": "Dental plaque as a biofilm",
-     "module": "Oral microbiology"
+     "id": "u03-23",
+     "title": "Acute inflammation",
+     "module": "Pathological processes"
     },
     {
-     "id": "u03-08",
-     "title": "Microbiology of caries and periodontal disease",
-     "module": "Oral microbiology"
+     "id": "u03-24",
+     "title": "Chronic inflammation and repair",
+     "module": "Pathological processes"
     },
     {
-     "id": "u03-09",
-     "title": "Oral fungal and viral infections",
-     "module": "Oral microbiology"
+     "id": "u03-25",
+     "title": "Thrombosis, embolism and infarction",
+     "module": "Pathological processes"
     },
     {
-     "id": "u03-10",
-     "title": "Antimicrobials and antimicrobial stewardship in dentistry",
-     "module": "Oral microbiology"
+     "id": "u03-26",
+     "title": "Neoplasia: benign and malignant tumours",
+     "module": "Pathological processes"
     },
     {
-     "id": "u03-11",
-     "title": "Standard infection control precautions in dentistry",
-     "module": "Infection prevention and control"
+     "id": "u03-27",
+     "title": "The hallmarks and genetics of cancer",
+     "module": "Pathological processes"
     },
     {
-     "id": "u03-12",
-     "title": "Hand hygiene and personal protective equipment",
-     "module": "Infection prevention and control"
+     "id": "u03-28",
+     "title": "Innate immunity",
+     "module": "Immunity and genetics"
     },
     {
-     "id": "u03-13",
-     "title": "Decontamination of dental instruments (HTM 01-05)",
-     "module": "Infection prevention and control"
+     "id": "u03-29",
+     "title": "Adaptive immunity",
+     "module": "Immunity and genetics"
     },
     {
-     "id": "u03-14",
-     "title": "Dental unit waterlines",
-     "module": "Infection prevention and control"
+     "id": "u03-30",
+     "title": "Hypersensitivity and autoimmunity",
+     "module": "Immunity and genetics"
     },
     {
-     "id": "u03-15",
-     "title": "Sharps injuries and blood-borne viruses",
-     "module": "Infection prevention and control"
+     "id": "u03-31",
+     "title": "Patterns of inheritance in clinical genetics",
+     "module": "Immunity and genetics"
     },
     {
-     "id": "u03-16",
-     "title": "Healthcare waste in dental practice",
-     "module": "Infection prevention and control"
+     "id": "u03-32",
+     "title": "Pharmacodynamics: receptors and dose–response",
+     "module": "Principles of pharmacology"
+    },
+    {
+     "id": "u03-33",
+     "title": "Pharmacokinetics: absorption, distribution, metabolism and excretion",
+     "module": "Principles of pharmacology"
     }
    ]
   },

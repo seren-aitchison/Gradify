@@ -316,88 +316,138 @@
   {
    "id": "u02",
    "n": 2,
-   "title": "Working with People",
-   "written": false,
+   "title": "Social Psychology",
+   "written": true,
    "lessons": [
     {
-     "id": "u02-01",
-     "title": "What makes an effective team",
-     "module": "Teams"
+     "id": "u02-17",
+     "title": "Social cognition",
+     "module": "Social cognition"
     },
     {
-     "id": "u02-02",
-     "title": "Team development: Tuckman's stages",
-     "module": "Teams"
+     "id": "u02-18",
+     "title": "Social perception and impressions",
+     "module": "Social cognition"
     },
     {
-     "id": "u02-03",
-     "title": "Team roles: Belbin",
-     "module": "Teams"
+     "id": "u02-19",
+     "title": "Attribution",
+     "module": "Social cognition"
     },
     {
-     "id": "u02-04",
-     "title": "Psychological safety",
-     "module": "Teams"
+     "id": "u02-20",
+     "title": "The fundamental attribution error and self-serving bias",
+     "module": "Social cognition"
     },
     {
-     "id": "u02-05",
-     "title": "Collaboration across boundaries",
-     "module": "Teams"
+     "id": "u02-21",
+     "title": "Attitude formation",
+     "module": "Attitudes"
     },
     {
-     "id": "u02-06",
-     "title": "Building professional relationships",
-     "module": "Influence and relationships"
+     "id": "u02-22",
+     "title": "Attitude change and persuasion",
+     "module": "Attitudes"
     },
     {
-     "id": "u02-07",
-     "title": "Power and influence",
-     "module": "Influence and relationships"
+     "id": "u02-23",
+     "title": "Cognitive dissonance",
+     "module": "Attitudes"
     },
     {
-     "id": "u02-08",
-     "title": "Influencing without authority",
-     "module": "Influence and relationships"
+     "id": "u02-24",
+     "title": "Conformity",
+     "module": "Social influence"
     },
     {
-     "id": "u02-09",
-     "title": "Stakeholder mapping",
-     "module": "Influence and relationships"
+     "id": "u02-25",
+     "title": "Obedience",
+     "module": "Social influence"
     },
     {
-     "id": "u02-10",
-     "title": "Emotional intelligence at work",
-     "module": "Influence and relationships"
+     "id": "u02-26",
+     "title": "Compliance",
+     "module": "Social influence"
     },
     {
-     "id": "u02-11",
-     "title": "Principled negotiation",
-     "module": "Negotiation and conflict"
+     "id": "u02-27",
+     "title": "Social norms",
+     "module": "Social influence"
     },
     {
-     "id": "u02-12",
-     "title": "Preparing to negotiate: BATNA and the bargaining zone",
-     "module": "Negotiation and conflict"
+     "id": "u02-28",
+     "title": "Group dynamics",
+     "module": "Groups"
     },
     {
-     "id": "u02-13",
-     "title": "Sources of workplace conflict",
-     "module": "Negotiation and conflict"
+     "id": "u02-29",
+     "title": "Group decision-making",
+     "module": "Groups"
     },
     {
-     "id": "u02-14",
-     "title": "Conflict-handling styles",
-     "module": "Negotiation and conflict"
+     "id": "u02-30",
+     "title": "Leadership",
+     "module": "Groups"
     },
     {
-     "id": "u02-15",
-     "title": "Difficult conversations",
-     "module": "Negotiation and conflict"
+     "id": "u02-31",
+     "title": "Power",
+     "module": "Groups"
     },
     {
-     "id": "u02-16",
-     "title": "Resolving conflict: mediation and escalation",
-     "module": "Negotiation and conflict"
+     "id": "u02-32",
+     "title": "Social identity theory",
+     "module": "Identity and intergroup relations"
+    },
+    {
+     "id": "u02-33",
+     "title": "Self-categorisation",
+     "module": "Identity and intergroup relations"
+    },
+    {
+     "id": "u02-34",
+     "title": "In-groups and out-groups",
+     "module": "Identity and intergroup relations"
+    },
+    {
+     "id": "u02-35",
+     "title": "Prejudice, stereotyping and discrimination",
+     "module": "Identity and intergroup relations"
+    },
+    {
+     "id": "u02-36",
+     "title": "Intergroup relations and conflict",
+     "module": "Identity and intergroup relations"
+    },
+    {
+     "id": "u02-37",
+     "title": "Bystander behaviour",
+     "module": "Helping, harming and relating"
+    },
+    {
+     "id": "u02-38",
+     "title": "Prosocial behaviour and altruism",
+     "module": "Helping, harming and relating"
+    },
+    {
+     "id": "u02-39",
+     "title": "Aggression",
+     "module": "Helping, harming and relating"
+    },
+    {
+     "id": "u02-40",
+     "title": "Attraction",
+     "module": "Helping, harming and relating"
+    },
+    {
+     "id": "u02-41",
+     "title": "Close relationships",
+     "module": "Helping, harming and relating"
+    },
+    {
+     "id": "u02-42",
+     "title": "Culture and social behaviour",
+     "module": "Culture"
     }
    ]
   },

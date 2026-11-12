@@ -955,83 +955,78 @@
   {
    "id": "u09",
    "n": 9,
-   "title": "Life Skills",
-   "written": false,
+   "title": "Foundations of Health and Wellbeing",
+   "written": true,
    "lessons": [
     {
-     "id": "u09-01",
-     "title": "Budgeting and needs versus wants",
-     "module": "Money"
+     "id": "u09-16",
+     "title": "What is health?",
+     "module": "Defining health"
     },
     {
-     "id": "u09-02",
-     "title": "Bank accounts, cards and payments",
-     "module": "Money"
+     "id": "u09-17",
+     "title": "Models of health: biomedical and biopsychosocial",
+     "module": "Defining health"
     },
     {
-     "id": "u09-03",
-     "title": "Saving, borrowing and interest",
-     "module": "Money"
+     "id": "u09-18",
+     "title": "Wellbeing and how it is measured",
+     "module": "Defining health"
     },
     {
-     "id": "u09-04",
-     "title": "Payslips, tax and National Insurance",
-     "module": "Money"
+     "id": "u09-19",
+     "title": "Holistic health: physical, mental and social",
+     "module": "Defining health"
     },
     {
-     "id": "u09-05",
-     "title": "Scams and financial fraud",
-     "module": "Money"
+     "id": "u09-20",
+     "title": "The determinants of health",
+     "module": "What shapes health"
     },
     {
-     "id": "u09-06",
-     "title": "Online safety and privacy",
-     "module": "Digital life"
+     "id": "u09-21",
+     "title": "Health inequalities",
+     "module": "What shapes health"
     },
     {
-     "id": "u09-07",
-     "title": "Social media, wellbeing and misinformation",
-     "module": "Digital life"
+     "id": "u09-22",
+     "title": "Lifestyle factors and health",
+     "module": "What shapes health"
     },
     {
-     "id": "u09-08",
-     "title": "Your digital footprint",
-     "module": "Digital life"
+     "id": "u09-23",
+     "title": "The wider determinants: housing, work and environment",
+     "module": "What shapes health"
     },
     {
-     "id": "u09-09",
-     "title": "Mental health and getting help",
-     "module": "Health and relationships"
+     "id": "u09-24",
+     "title": "Judging health information",
+     "module": "Evidence about health"
     },
     {
-     "id": "u09-10",
-     "title": "Healthy relationships and consent",
-     "module": "Health and relationships"
+     "id": "u09-25",
+     "title": "Levels of evidence",
+     "module": "Evidence about health"
     },
     {
-     "id": "u09-11",
-     "title": "Sleep, diet and exercise",
-     "module": "Health and relationships"
+     "id": "u09-26",
+     "title": "Understanding risk: absolute and relative",
+     "module": "Evidence about health"
     },
     {
-     "id": "u09-12",
-     "title": "Options after GCSEs",
-     "module": "Careers and next steps"
+     "id": "u09-27",
+     "title": "Screening: benefits and harms",
+     "module": "Evidence about health"
     },
     {
-     "id": "u09-13",
-     "title": "Exploring careers and the labour market",
-     "module": "Careers and next steps"
+     "id": "u09-28",
+     "title": "Measuring the nation's health",
+     "module": "Health in the UK"
     },
     {
-     "id": "u09-14",
-     "title": "CVs, applications and interviews",
-     "module": "Careers and next steps"
-    },
-    {
-     "id": "u09-15",
-     "title": "Work experience and employability skills",
-     "module": "Careers and next steps"
+     "id": "u09-29",
+     "title": "Leading causes of death and ill health in the UK",
+     "module": "Health in the UK"
     }
    ]
   }
