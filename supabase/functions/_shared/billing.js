@@ -143,3 +143,20 @@ export function mayBuy(email, env) {
   const testers = (env.GRADIFY_BILLING_TESTERS || "").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
   return Boolean(email) && testers.includes(String(email).toLowerCase());
 }
+
+// DRAFT, awaiting legal review (Launch Control L-04). The wording a learner must tick at Stripe Checkout before paying:
+// agreement to the terms, a request to start Pro now, and what happens if they cancel within 14 days. Shown only when
+// STRIPE_TERMS_CONSENT=on, which also needs a terms of service URL in Stripe (Settings → Public details), or Stripe
+// refuses the checkout. Keep it in step with the "Cancelling in the first 14 days" section of terms.html.
+export const CONSENT_MESSAGE =
+  "I agree to the [Gradify terms](https://getgradify.com/terms.html) and ask for Gradify Pro to start straight away. " +
+  "I understand I can cancel within 14 days for a refund, less a fair amount for the Gradify AI I've already used.";
+
+/** The Checkout Session fields that collect that consent, or none while it's switched off. */
+export function termsConsent(env) {
+  if (env.STRIPE_TERMS_CONSENT !== "on") return {};
+  return {
+    consent_collection: { terms_of_service: "required" },
+    custom_text: { terms_of_service_acceptance: { message: CONSENT_MESSAGE } },
+  };
+}

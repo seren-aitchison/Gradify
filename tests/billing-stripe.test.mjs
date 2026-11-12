@@ -45,3 +45,16 @@ test("checkout maps month and year to the configured prices, and refuses anythin
   assert.throws(() => priceFor("week", env), /monthly or yearly/);
   assert.throws(() => priceFor("month", {}), /isn't on sale yet/);
 });
+
+test("checkout asks for terms and 14-day consent only when switched on", async () => {
+  const { termsConsent, CONSENT_MESSAGE } = await import("../supabase/functions/_shared/billing.js");
+  assert.deepEqual(termsConsent({}), {});
+  assert.deepEqual(termsConsent({ STRIPE_TERMS_CONSENT: "off" }), {});
+  const on = termsConsent({ STRIPE_TERMS_CONSENT: "on" });
+  assert.equal(on.consent_collection.terms_of_service, "required");
+  assert.equal(on.custom_text.terms_of_service_acceptance.message, CONSENT_MESSAGE);
+  // Stripe's limit for this text, and the link learners need to read before agreeing
+  assert.ok(CONSENT_MESSAGE.length <= 1200);
+  assert.match(CONSENT_MESSAGE, /https:\/\/getgradify\.com\/terms\.html/);
+  assert.match(form(on), /consent_collection%5Bterms_of_service%5D=required/);
+});
