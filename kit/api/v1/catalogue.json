@@ -64,6 +64,18 @@
    "syllabus": "/kit/api/v1/courses/dentistry.json"
   },
   {
+   "slug": "design",
+   "name": "Design Thinking and Creativity",
+   "site": "CreateGradify",
+   "status": "beta",
+   "accent": "#e52153",
+   "page": "/creategradify/course/",
+   "units": 12,
+   "lessons": 170,
+   "lessonsWritten": 12,
+   "syllabus": "/kit/api/v1/courses/design.json"
+  },
+  {
    "slug": "ecology",
    "name": "Ecology and Environmental Science",
    "site": "EcoGradify",
@@ -98,6 +110,18 @@
    "lessons": 202,
    "lessonsWritten": 90,
    "syllabus": "/kit/api/v1/courses/finance.json"
+  },
+  {
+   "slug": "gcse",
+   "name": "GCSE Core",
+   "site": "YouthGradify",
+   "status": "beta",
+   "accent": "#ffea05",
+   "page": "/youthgradify/course/",
+   "units": 9,
+   "lessons": 143,
+   "lessonsWritten": 12,
+   "syllabus": "/kit/api/v1/courses/gcse.json"
   },
   {
    "slug": "health",
@@ -232,6 +256,30 @@
    "syllabus": "/kit/api/v1/courses/physics.json"
   },
   {
+   "slug": "primary",
+   "name": "Primary",
+   "site": "JuniorGradify",
+   "status": "beta",
+   "accent": "#a0ff74",
+   "page": "/juniorgradify/course/",
+   "units": 12,
+   "lessons": 167,
+   "lessonsWritten": 24,
+   "syllabus": "/kit/api/v1/courses/primary.json"
+  },
+  {
+   "slug": "professional",
+   "name": "Professional Skills",
+   "site": "ProGradify",
+   "status": "beta",
+   "accent": "#e69138",
+   "page": "/progradify/course/",
+   "units": 10,
+   "lessons": 149,
+   "lessonsWritten": 14,
+   "syllabus": "/kit/api/v1/courses/professional.json"
+  },
+  {
    "slug": "psychology",
    "name": "Psychology",
    "site": "PsychGradify",
@@ -242,6 +290,18 @@
    "lessons": 393,
    "lessonsWritten": 393,
    "syllabus": "/kit/api/v1/courses/psychology.json"
+  },
+  {
+   "slug": "research",
+   "name": "Research and the Dissertation",
+   "site": "PostGradify",
+   "status": "beta",
+   "accent": "#2e5e18",
+   "page": "/postgradify/course/",
+   "units": 12,
+   "lessons": 197,
+   "lessonsWritten": 17,
+   "syllabus": "/kit/api/v1/courses/research.json"
   },
   {
    "slug": "sociology",
@@ -278,6 +338,18 @@
    "lessons": 194,
    "lessonsWritten": 19,
    "syllabus": "/kit/api/v1/courses/teaching.json"
+  },
+  {
+   "slug": "university",
+   "name": "University Study Skills",
+   "site": "UnderGradify",
+   "status": "beta",
+   "accent": "#3c78d8",
+   "page": "/undergradify/course/",
+   "units": 12,
+   "lessons": 193,
+   "lessonsWritten": 19,
+   "syllabus": "/kit/api/v1/courses/university.json"
   },
   {
    "slug": "veterinary",

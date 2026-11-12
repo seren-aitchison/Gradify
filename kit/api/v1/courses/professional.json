@@ -1,0 +1,1065 @@
+{
+ "api": 1,
+ "slug": "professional",
+ "name": "Professional Skills",
+ "site": "ProGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>General guidance, not legal or HR advice.</b> ProGradify teaches professional skills for study and self-development. The lessons were drafted with AI assistance and haven't yet been reviewed by subject experts, so they may contain errors; check important points against official sources. It is not a CMI, CIPD, APM or PRINCE2 qualification and is not endorsed by those bodies. Lessons on employment rights and equality describe the law of Great Britain in general terms only: for a problem at work, read your employer's policies and contact ACAS (0300 123 1100), Citizens Advice, a trade union or a qualified employment adviser or solicitor. If work is affecting your health, speak to your GP.",
+ "notes": "/kit/courses/professional/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · Core professional skills",
+   "units": [
+    1,
+    5
+   ],
+   "from": "#e69138",
+   "to": "#f6b26b"
+  },
+  {
+   "name": "Stage 2 · Working with others",
+   "units": [
+    2,
+    3
+   ],
+   "from": "#f6b26b",
+   "to": "#e06666"
+  },
+  {
+   "name": "Stage 3 · Getting things done",
+   "units": [
+    4,
+    6,
+    7
+   ],
+   "from": "#e69138",
+   "to": "#22d3ee"
+  },
+  {
+   "name": "Stage 4 · The organisation",
+   "units": [
+    8,
+    9
+   ],
+   "from": "#cc7a29",
+   "to": "#a78bfa"
+  },
+  {
+   "name": "Stage 5 · Your career",
+   "units": [
+    10
+   ],
+   "from": "#f6b26b",
+   "to": "#22d3ee"
+  }
+ ],
+ "paths": [
+  {
+   "id": "graduate",
+   "name": "Starting your career",
+   "sub": "The essential skills of a first professional job: communication, teamwork, productivity, problem solving and career growth.",
+   "units": [
+    1,
+    2,
+    5,
+    6,
+    10
+   ],
+   "select": null
+  },
+  {
+   "id": "manager",
+   "name": "New manager",
+   "sub": "The CMI Level 5 core: leading and managing people, change, decisions, projects, ethics and employment basics.",
+   "units": [
+    3,
+    2,
+    1,
+    6,
+    4,
+    9
+   ],
+   "select": null
+  },
+  {
+   "id": "projects",
+   "name": "Project delivery",
+   "sub": "Planning and delivering projects with APM, PRINCE2 and Agile principles, backed by data and decision skills.",
+   "units": [
+    4,
+    6,
+    7,
+    2,
+    5
+   ],
+   "select": null
+  },
+  {
+   "id": "business",
+   "name": "Business and commercial",
+   "sub": "How organisations make money, measure success and stay on the right side of ethics and the law.",
+   "units": [
+    8,
+    7,
+    6,
+    9
+   ],
+   "select": null
+  },
+  {
+   "id": "skills-builder",
+   "name": "Essential skills",
+   "sub": "The eight Skills Builder essential skills: listening, speaking, problem solving, creativity, staying positive, aiming high, leadership and teamwork.",
+   "units": [
+    1,
+    6,
+    10,
+    5,
+    2,
+    3
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · Core professional skills",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    5
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · Working with others",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    2,
+    3
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · Getting things done",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    4,
+    6,
+    7
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · The organisation",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    8,
+    9
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-5",
+   "title": "Stage 5 · Your career",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    10
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "workplace",
+   "title": "Communication and people",
+   "sub": "Writing, meetings, presenting, feedback, teams, influence, negotiation and conflict, applied to scenarios.",
+   "units": [
+    1,
+    2
+   ],
+   "path": null,
+   "count": 25,
+   "minutes": 40,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "Professional Communication",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "Communication at work: purpose and audience",
+     "module": "Foundations of communication"
+    },
+    {
+     "id": "u01-02",
+     "title": "Active listening",
+     "module": "Foundations of communication"
+    },
+    {
+     "id": "u01-03",
+     "title": "Questioning skills",
+     "module": "Foundations of communication"
+    },
+    {
+     "id": "u01-04",
+     "title": "Non-verbal communication",
+     "module": "Foundations of communication"
+    },
+    {
+     "id": "u01-05",
+     "title": "Plain English and clear writing",
+     "module": "Writing at work"
+    },
+    {
+     "id": "u01-06",
+     "title": "Structuring reports and briefings",
+     "module": "Writing at work"
+    },
+    {
+     "id": "u01-07",
+     "title": "Writing effective emails",
+     "module": "Writing at work"
+    },
+    {
+     "id": "u01-08",
+     "title": "Tone, etiquette and choosing the channel",
+     "module": "Writing at work"
+    },
+    {
+     "id": "u01-09",
+     "title": "Running effective meetings",
+     "module": "Meetings and presenting"
+    },
+    {
+     "id": "u01-10",
+     "title": "Minutes, decisions and action points",
+     "module": "Meetings and presenting"
+    },
+    {
+     "id": "u01-11",
+     "title": "Planning a presentation",
+     "module": "Meetings and presenting"
+    },
+    {
+     "id": "u01-12",
+     "title": "Delivering a presentation",
+     "module": "Meetings and presenting"
+    },
+    {
+     "id": "u01-13",
+     "title": "Communicating in virtual and hybrid teams",
+     "module": "Meetings and presenting"
+    },
+    {
+     "id": "u01-14",
+     "title": "Giving and receiving feedback",
+     "module": "Meetings and presenting"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Working with People",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "What makes an effective team",
+     "module": "Teams"
+    },
+    {
+     "id": "u02-02",
+     "title": "Team development: Tuckman's stages",
+     "module": "Teams"
+    },
+    {
+     "id": "u02-03",
+     "title": "Team roles: Belbin",
+     "module": "Teams"
+    },
+    {
+     "id": "u02-04",
+     "title": "Psychological safety",
+     "module": "Teams"
+    },
+    {
+     "id": "u02-05",
+     "title": "Collaboration across boundaries",
+     "module": "Teams"
+    },
+    {
+     "id": "u02-06",
+     "title": "Building professional relationships",
+     "module": "Influence and relationships"
+    },
+    {
+     "id": "u02-07",
+     "title": "Power and influence",
+     "module": "Influence and relationships"
+    },
+    {
+     "id": "u02-08",
+     "title": "Influencing without authority",
+     "module": "Influence and relationships"
+    },
+    {
+     "id": "u02-09",
+     "title": "Stakeholder mapping",
+     "module": "Influence and relationships"
+    },
+    {
+     "id": "u02-10",
+     "title": "Emotional intelligence at work",
+     "module": "Influence and relationships"
+    },
+    {
+     "id": "u02-11",
+     "title": "Principled negotiation",
+     "module": "Negotiation and conflict"
+    },
+    {
+     "id": "u02-12",
+     "title": "Preparing to negotiate: BATNA and the bargaining zone",
+     "module": "Negotiation and conflict"
+    },
+    {
+     "id": "u02-13",
+     "title": "Sources of workplace conflict",
+     "module": "Negotiation and conflict"
+    },
+    {
+     "id": "u02-14",
+     "title": "Conflict-handling styles",
+     "module": "Negotiation and conflict"
+    },
+    {
+     "id": "u02-15",
+     "title": "Difficult conversations",
+     "module": "Negotiation and conflict"
+    },
+    {
+     "id": "u02-16",
+     "title": "Resolving conflict: mediation and escalation",
+     "module": "Negotiation and conflict"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Leadership and Management",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Management and leadership",
+     "module": "Understanding management"
+    },
+    {
+     "id": "u03-02",
+     "title": "The functions of management",
+     "module": "Understanding management"
+    },
+    {
+     "id": "u03-03",
+     "title": "Mintzberg's managerial roles",
+     "module": "Understanding management"
+    },
+    {
+     "id": "u03-04",
+     "title": "Trait and behavioural theories of leadership",
+     "module": "Leadership theories"
+    },
+    {
+     "id": "u03-05",
+     "title": "Situational and contingency leadership",
+     "module": "Leadership theories"
+    },
+    {
+     "id": "u03-06",
+     "title": "Transformational and transactional leadership",
+     "module": "Leadership theories"
+    },
+    {
+     "id": "u03-07",
+     "title": "Authentic and servant leadership",
+     "module": "Leadership theories"
+    },
+    {
+     "id": "u03-08",
+     "title": "Content theories of motivation",
+     "module": "Leading people"
+    },
+    {
+     "id": "u03-09",
+     "title": "Process theories of motivation",
+     "module": "Leading people"
+    },
+    {
+     "id": "u03-10",
+     "title": "Delegation",
+     "module": "Leading people"
+    },
+    {
+     "id": "u03-11",
+     "title": "Coaching and mentoring",
+     "module": "Leading people"
+    },
+    {
+     "id": "u03-12",
+     "title": "Performance management and objectives",
+     "module": "Leading people"
+    },
+    {
+     "id": "u03-13",
+     "title": "Managing underperformance",
+     "module": "Leading people"
+    },
+    {
+     "id": "u03-14",
+     "title": "Recruiting and inducting new staff",
+     "module": "Leading people"
+    },
+    {
+     "id": "u03-15",
+     "title": "Lewin's change model",
+     "module": "Leading change"
+    },
+    {
+     "id": "u03-16",
+     "title": "Kotter's eight steps",
+     "module": "Leading change"
+    },
+    {
+     "id": "u03-17",
+     "title": "How people respond to change",
+     "module": "Leading change"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Project Management",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "What a project is",
+     "module": "Project foundations"
+    },
+    {
+     "id": "u04-02",
+     "title": "Project life cycles",
+     "module": "Project foundations"
+    },
+    {
+     "id": "u04-03",
+     "title": "Project roles and governance",
+     "module": "Project foundations"
+    },
+    {
+     "id": "u04-04",
+     "title": "The business case",
+     "module": "Project foundations"
+    },
+    {
+     "id": "u04-05",
+     "title": "Scope and requirements",
+     "module": "Planning"
+    },
+    {
+     "id": "u04-06",
+     "title": "The work breakdown structure",
+     "module": "Planning"
+    },
+    {
+     "id": "u04-07",
+     "title": "Scheduling and the critical path",
+     "module": "Planning"
+    },
+    {
+     "id": "u04-08",
+     "title": "Estimating and budgeting",
+     "module": "Planning"
+    },
+    {
+     "id": "u04-09",
+     "title": "Risk management",
+     "module": "Planning"
+    },
+    {
+     "id": "u04-10",
+     "title": "Stakeholders and communication in projects",
+     "module": "Planning"
+    },
+    {
+     "id": "u04-11",
+     "title": "PRINCE2 principles",
+     "module": "Methods"
+    },
+    {
+     "id": "u04-12",
+     "title": "Agile and the Agile Manifesto",
+     "module": "Methods"
+    },
+    {
+     "id": "u04-13",
+     "title": "Scrum",
+     "module": "Methods"
+    },
+    {
+     "id": "u04-14",
+     "title": "Kanban",
+     "module": "Methods"
+    },
+    {
+     "id": "u04-15",
+     "title": "Choosing a delivery approach",
+     "module": "Methods"
+    },
+    {
+     "id": "u04-16",
+     "title": "Monitoring and controlling progress",
+     "module": "Delivery and closure"
+    },
+    {
+     "id": "u04-17",
+     "title": "Closing a project and learning lessons",
+     "module": "Delivery and closure"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "Productivity and Personal Effectiveness",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Setting goals: SMART objectives and OKRs",
+     "module": "Goals and priorities"
+    },
+    {
+     "id": "u05-02",
+     "title": "Prioritisation: urgency and importance",
+     "module": "Goals and priorities"
+    },
+    {
+     "id": "u05-03",
+     "title": "Planning your week",
+     "module": "Goals and priorities"
+    },
+    {
+     "id": "u05-04",
+     "title": "Focus, interruptions and deep work",
+     "module": "Goals and priorities"
+    },
+    {
+     "id": "u05-05",
+     "title": "Procrastination",
+     "module": "Goals and priorities"
+    },
+    {
+     "id": "u05-06",
+     "title": "Managing email and information overload",
+     "module": "Working habits"
+    },
+    {
+     "id": "u05-07",
+     "title": "Task management systems",
+     "module": "Working habits"
+    },
+    {
+     "id": "u05-08",
+     "title": "Saying no and managing expectations",
+     "module": "Working habits"
+    },
+    {
+     "id": "u05-09",
+     "title": "Working remotely and flexibly",
+     "module": "Working habits"
+    },
+    {
+     "id": "u05-10",
+     "title": "How adults learn",
+     "module": "Learning at work"
+    },
+    {
+     "id": "u05-11",
+     "title": "Reflective practice",
+     "module": "Learning at work"
+    },
+    {
+     "id": "u05-12",
+     "title": "Learning from mistakes",
+     "module": "Learning at work"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Problem Solving and Decision Making",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Defining the problem",
+     "module": "Defining problems"
+    },
+    {
+     "id": "u06-02",
+     "title": "Root cause analysis",
+     "module": "Defining problems"
+    },
+    {
+     "id": "u06-03",
+     "title": "Systems thinking",
+     "module": "Defining problems"
+    },
+    {
+     "id": "u06-04",
+     "title": "Creative thinking techniques",
+     "module": "Generating and evaluating options"
+    },
+    {
+     "id": "u06-05",
+     "title": "Evaluating options: criteria and weighting",
+     "module": "Generating and evaluating options"
+    },
+    {
+     "id": "u06-06",
+     "title": "Cost-benefit analysis",
+     "module": "Generating and evaluating options"
+    },
+    {
+     "id": "u06-07",
+     "title": "Rational choice and bounded rationality",
+     "module": "Making decisions"
+    },
+    {
+     "id": "u06-08",
+     "title": "Heuristics and biases in decisions",
+     "module": "Making decisions"
+    },
+    {
+     "id": "u06-09",
+     "title": "Group decisions and groupthink",
+     "module": "Making decisions"
+    },
+    {
+     "id": "u06-10",
+     "title": "Deciding under uncertainty",
+     "module": "Making decisions"
+    },
+    {
+     "id": "u06-11",
+     "title": "Evidence-based management",
+     "module": "Making decisions"
+    },
+    {
+     "id": "u06-12",
+     "title": "Evaluating arguments and evidence",
+     "module": "Critical thinking"
+    },
+    {
+     "id": "u06-13",
+     "title": "Logical fallacies at work",
+     "module": "Critical thinking"
+    },
+    {
+     "id": "u06-14",
+     "title": "Making a recommendation",
+     "module": "Critical thinking"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "Data and Digital Skills at Work",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "Data literacy",
+     "module": "Working with data"
+    },
+    {
+     "id": "u07-02",
+     "title": "Spreadsheet essentials",
+     "module": "Working with data"
+    },
+    {
+     "id": "u07-03",
+     "title": "Descriptive statistics for work",
+     "module": "Working with data"
+    },
+    {
+     "id": "u07-04",
+     "title": "Charts and data visualisation",
+     "module": "Working with data"
+    },
+    {
+     "id": "u07-05",
+     "title": "Telling a story with data",
+     "module": "Working with data"
+    },
+    {
+     "id": "u07-06",
+     "title": "Spotting misleading statistics",
+     "module": "Working with data"
+    },
+    {
+     "id": "u07-07",
+     "title": "Digital collaboration tools",
+     "module": "Digital working"
+    },
+    {
+     "id": "u07-08",
+     "title": "Information management and version control",
+     "module": "Digital working"
+    },
+    {
+     "id": "u07-09",
+     "title": "Cyber security at work",
+     "module": "Digital working"
+    },
+    {
+     "id": "u07-10",
+     "title": "Data protection: UK GDPR basics",
+     "module": "Digital working"
+    },
+    {
+     "id": "u07-11",
+     "title": "Artificial intelligence at work",
+     "module": "Digital working"
+    },
+    {
+     "id": "u07-12",
+     "title": "Digital accessibility",
+     "module": "Digital working"
+    },
+    {
+     "id": "u07-13",
+     "title": "Your online professional presence",
+     "module": "Digital professionalism"
+    },
+    {
+     "id": "u07-14",
+     "title": "Digital wellbeing",
+     "module": "Digital professionalism"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Commercial Awareness",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Types of organisation",
+     "module": "How organisations work"
+    },
+    {
+     "id": "u08-02",
+     "title": "Organisational structures",
+     "module": "How organisations work"
+    },
+    {
+     "id": "u08-03",
+     "title": "Business models",
+     "module": "How organisations work"
+    },
+    {
+     "id": "u08-04",
+     "title": "Strategy basics",
+     "module": "How organisations work"
+    },
+    {
+     "id": "u08-05",
+     "title": "The profit and loss account",
+     "module": "Money"
+    },
+    {
+     "id": "u08-06",
+     "title": "The balance sheet and cash flow",
+     "module": "Money"
+    },
+    {
+     "id": "u08-07",
+     "title": "Budgets and forecasts",
+     "module": "Money"
+    },
+    {
+     "id": "u08-08",
+     "title": "Key performance indicators",
+     "module": "Money"
+    },
+    {
+     "id": "u08-09",
+     "title": "PESTLE analysis",
+     "module": "The external environment"
+    },
+    {
+     "id": "u08-10",
+     "title": "SWOT analysis",
+     "module": "The external environment"
+    },
+    {
+     "id": "u08-11",
+     "title": "Porter's five forces",
+     "module": "The external environment"
+    },
+    {
+     "id": "u08-12",
+     "title": "Customers and value",
+     "module": "The external environment"
+    },
+    {
+     "id": "u08-13",
+     "title": "Sustainability and ESG",
+     "module": "The external environment"
+    },
+    {
+     "id": "u08-14",
+     "title": "Showing commercial awareness",
+     "module": "The external environment"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "Ethics, Professionalism and Employment Rights",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "What professionalism means",
+     "module": "Professionalism and ethics"
+    },
+    {
+     "id": "u09-02",
+     "title": "Professional codes of conduct",
+     "module": "Professionalism and ethics"
+    },
+    {
+     "id": "u09-03",
+     "title": "Ethical decision making",
+     "module": "Professionalism and ethics"
+    },
+    {
+     "id": "u09-04",
+     "title": "Integrity and conflicts of interest",
+     "module": "Professionalism and ethics"
+    },
+    {
+     "id": "u09-05",
+     "title": "Whistleblowing",
+     "module": "Professionalism and ethics"
+    },
+    {
+     "id": "u09-06",
+     "title": "The Equality Act 2010",
+     "module": "Fairness at work"
+    },
+    {
+     "id": "u09-07",
+     "title": "Discrimination, harassment and victimisation",
+     "module": "Fairness at work"
+    },
+    {
+     "id": "u09-08",
+     "title": "Reasonable adjustments",
+     "module": "Fairness at work"
+    },
+    {
+     "id": "u09-09",
+     "title": "Inclusion and unconscious bias",
+     "module": "Fairness at work"
+    },
+    {
+     "id": "u09-10",
+     "title": "Employment status",
+     "module": "Employment rights basics"
+    },
+    {
+     "id": "u09-11",
+     "title": "The contract of employment",
+     "module": "Employment rights basics"
+    },
+    {
+     "id": "u09-12",
+     "title": "Working time, pay and holiday",
+     "module": "Employment rights basics"
+    },
+    {
+     "id": "u09-13",
+     "title": "Family-friendly rights",
+     "module": "Employment rights basics"
+    },
+    {
+     "id": "u09-14",
+     "title": "Discipline and grievance: the ACAS Code",
+     "module": "Employment rights basics"
+    },
+    {
+     "id": "u09-15",
+     "title": "Dismissal and redundancy basics",
+     "module": "Employment rights basics"
+    },
+    {
+     "id": "u09-16",
+     "title": "Getting help: ACAS and advice services",
+     "module": "Employment rights basics"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Wellbeing, Resilience and Career Development",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "Wellbeing at work",
+     "module": "Wellbeing at work"
+    },
+    {
+     "id": "u10-02",
+     "title": "Work-related stress and the HSE Management Standards",
+     "module": "Wellbeing at work"
+    },
+    {
+     "id": "u10-03",
+     "title": "Burnout",
+     "module": "Wellbeing at work"
+    },
+    {
+     "id": "u10-04",
+     "title": "Resilience",
+     "module": "Wellbeing at work"
+    },
+    {
+     "id": "u10-05",
+     "title": "Mental health at work",
+     "module": "Wellbeing at work"
+    },
+    {
+     "id": "u10-06",
+     "title": "Boundaries and work-life balance",
+     "module": "Wellbeing at work"
+    },
+    {
+     "id": "u10-07",
+     "title": "What CPD is",
+     "module": "Continuing professional development"
+    },
+    {
+     "id": "u10-08",
+     "title": "Planning and recording CPD",
+     "module": "Continuing professional development"
+    },
+    {
+     "id": "u10-09",
+     "title": "Professional bodies and chartered status",
+     "module": "Continuing professional development"
+    },
+    {
+     "id": "u10-10",
+     "title": "Career planning",
+     "module": "Career progression"
+    },
+    {
+     "id": "u10-11",
+     "title": "Knowing your strengths and values",
+     "module": "Career progression"
+    },
+    {
+     "id": "u10-12",
+     "title": "CVs and applications",
+     "module": "Career progression"
+    },
+    {
+     "id": "u10-13",
+     "title": "Interviews and assessment centres",
+     "module": "Career progression"
+    },
+    {
+     "id": "u10-14",
+     "title": "Networking",
+     "module": "Career progression"
+    },
+    {
+     "id": "u10-15",
+     "title": "Managing career transitions",
+     "module": "Career progression"
+    }
+   ]
+  }
+ ],
+ "interactives": []
+}
