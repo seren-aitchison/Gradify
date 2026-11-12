@@ -31,7 +31,7 @@ const plural = (f, n) => (LABEL[f] ? LABEL[f][n === 1 ? 0 : 1] : "uses");
  */
 export function capResetsAt(now = new Date()) {
   const d = new Date(now);
-  return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1)).toISOString();
+  return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1)).toISOString().replace(".000Z", "Z");  // no milliseconds: the same form as the database's dates, which strict ISO 8601 parsers (Swift's ISO8601DateFormatter) accept
 }
 
 /** The learner-facing answer when a claim is refused. */

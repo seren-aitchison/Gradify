@@ -48,7 +48,7 @@ const dayMonth = (iso) => new Date(iso).toLocaleDateString("en-GB", { day: "nume
 /** The 1st of next month, 00:00 UTC: when the monthly fair-use limit resets (mirrors capResetsAt on the server). */
 export function capResetsAt(now = Date.now()) {
   const d = new Date(now);
-  return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1)).toISOString();
+  return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1)).toISOString().replace(".000Z", "Z");  // no milliseconds: the same form as the database's dates, which strict ISO 8601 parsers (Swift's ISO8601DateFormatter) accept
 }
 /**
  * The Account page's sentence under the Gradify AI allowances. Allowances reset when the learner's period ends (the
