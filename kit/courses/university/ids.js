@@ -37,7 +37,7 @@ export const IDS = {
   "u02-33": "Interleaving",
   "u02-34": "Elaboration and generative learning",
   "u02-35": "Forgetting and desirable difficulties",
-  "u02-36": "Motivation and self-efficacy",
+  "u02-36": "Motivation and self-efficacy in learning",
   "u02-37": "Metacognition and self-regulated learning",
   "u02-38": "Learning styles and other neuromyths",
   "u03-01": "How students use their time",

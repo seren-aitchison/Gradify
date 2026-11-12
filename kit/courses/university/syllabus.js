@@ -51,7 +51,7 @@ export const SYLLABUS = `
 * Elaboration and generative learning
 * Forgetting and desirable difficulties
 > The learner
-* Motivation and self-efficacy
+* Motivation and self-efficacy in learning
 * Metacognition and self-regulated learning
 * Learning styles and other neuromyths
 3. Time Management, Lectures and Note-making

@@ -36,7 +36,7 @@ export const LESSONS = {
   "u02-33":{"v":1,"hash":"e4d618aeeee3","updated":"2026-11-12"},
   "u02-34":{"v":1,"hash":"e9d4fec57aba","updated":"2026-11-12"},
   "u02-35":{"v":1,"hash":"e62e2a25643a","updated":"2026-11-12"},
-  "u02-36":{"v":1,"hash":"faccaf3becf0","updated":"2026-11-12"},
+  "u02-36":{"v":2,"hash":"712682895ef3","updated":"2026-11-12"},
   "u02-37":{"v":1,"hash":"770870028f57","updated":"2026-11-12"},
   "u02-38":{"v":1,"hash":"5846686a7b14","updated":"2026-11-12"}
 };

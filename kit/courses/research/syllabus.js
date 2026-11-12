@@ -145,53 +145,22 @@ export const SYLLABUS = `
 > Quality and reporting
 * Rigour in qualitative research
 * Writing up qualitative findings
-7. Research Methods in the Social Sciences
-> Designing research
-* Research design
-* Research questions and hypotheses
-* Positivism
-* Interpretivism
-* Realism
-* Quantitative research
-* Qualitative research
-* Mixed methods
-> Asking questions
-* Surveys
-* Questionnaire design
-* Structured interviews
-* Semi-structured interviews
-* Unstructured interviews
-* Focus groups
-> Observing and immersion
-* Participant observation
-* Ethnography
-* Case studies
-* Experiments in sociology
-> Analysing texts and networks
-* Social network analysis
-* Content analysis
-* Discourse analysis
-> Existing data
-* Secondary data
-* Official statistics
-* Longitudinal research
-* Comparative research
-> Sampling and quality
-* Probability sampling
-* Non-probability sampling
-* Reliability
-* Validity
-* Generalisability
-* Bias
-> Ethics and reflexivity
-* Positionality
-* Reflexivity
-* Informed consent
-* Anonymity and confidentiality
-* Researching vulnerable groups
-> From data to findings
-* Interpreting findings
-* Disseminating research
+7. Mixed Methods and Evidence Synthesis
+> Mixed methods
+* What is mixed methods research?
+* Convergent designs
+* Explanatory sequential designs
+* Exploratory sequential designs
+* Integration and joint displays
+* Quality in mixed methods research
+> Evidence synthesis
+* Meta-analysis
+* Qualitative evidence synthesis
+* Realist reviews
+> Secondary and digital research
+* Secondary data analysis
+* Big data and computational methods
+* Using AI tools in research
 8. Research Ethics and Integrity
 > Ethical principles
 * Principles of research ethics
@@ -314,7 +283,7 @@ export const BLURBS = {
   4: "Choosing and justifying a design: experiments, surveys, case studies, ethnography, sampling and quality.",
   5: "Measurement, questionnaires, inference, effect sizes, power, the main tests and models, and reporting.",
   6: "Interviews, focus groups, observation and the main analytic approaches, from thematic analysis to IPA.",
-  7: "Positivism and interpretivism, surveys, interviews, ethnography, content analysis, sampling, reflexivity and ethics.",
+  7: "Mixed methods designs and integration, meta-analysis, qualitative synthesis, secondary data and AI tools.",
   8: "Consent, harm, ethics review, the Concordat, the UKRIO Code, misconduct and data protection law.",
   9: "Data management plans, secure storage, anonymisation, FAIR data, open access and reproducibility.",
   10: "Academic style, argument, the thesis chapter by chapter, referencing, revision and feedback.",

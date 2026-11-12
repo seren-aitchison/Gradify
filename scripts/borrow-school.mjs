@@ -23,6 +23,10 @@ await access(new URL(`${S}notes/${sid}.js`, root));
   if (!L.every((x) => x.level && x.evidence.length && x.tasks.some((q) => q.type === "short"))) throw new Error(`${source} ${sid} isn't written to the full lesson standard (LV:, EV:, SA:), so it can't be reused`); }
 const sUnit = sc.units.find((u) => u.id === sid), tUnit = tc.units.find((u) => u.id === tid);
 const title = titleArg || sUnit.title;
+// a lesson title used elsewhere in the target course would make two lessons look the same (and confuse lab links)
+const others = new Set(tc.units.filter((u) => u.id !== tid).flatMap((u) => u.lessons.map((l) => l.title.toLowerCase())));
+const clash = sUnit.lessons.filter((l) => others.has(l.title.toLowerCase())).map((l) => l.title);
+if (clash.length) throw new Error(`${target} already has lessons titled ${clash.join(", ")}: rename them or choose another school`);
 
 // 1. syllabus: replace the target school's block with the source school's modules and lessons
 const block = (text, n) => { const m = text.match(new RegExp(`(^|\\n)(${n}\\. [^\\n]*\\n[\\s\\S]*?)(?=\\n\\d+\\. |\\n\`)`)); if (!m) throw new Error(`school ${n} not found`); return m[2]; };

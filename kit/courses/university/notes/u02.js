@@ -656,7 +656,7 @@ M3#university-u02-35-q3@3: A trainee sets Year 7 a problem using a method they h
 TF2#university-u02-35-q4@1: Forgetting is often a failure to retrieve a memory rather than the memory being erased. | true | Much forgotten information can be relearned faster (savings) or recalled with better cues, showing it was still stored.
 SA3#university-u02-35-q5@2,3: Explain the difference between storage strength and retrieval strength, and use it to evaluate a revision strategy based on re-reading notes. | Storage strength is how well information is embedded in long-term memory; retrieval strength is how easily it can be accessed now. Re-reading keeps retrieval strength high during study, so it feels fluent, but adds little storage strength. Retrieval practice and spacing make access harder at the time but increase storage strength. Re-reading is therefore a weak strategy compared with self-testing spaced over time, though it can help if followed by retrieval. | Defines storage strength ; Defines retrieval strength ; Explains why re-reading feels effective ; Contrasts with desirable difficulties ; Reaches a judgement
 
-## Motivation and self-efficacy
+## Motivation and self-efficacy in learning
 LV: Intermediate · Application
 S: Pupils are more likely to persist and succeed when they believe they can, value the work and feel some control and belonging. This lesson explains self-efficacy, self-determination theory and the link between success and motivation, with what this means for teaching.
 O: Explain self-efficacy and the sources that build it
