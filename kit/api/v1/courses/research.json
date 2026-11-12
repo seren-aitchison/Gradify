@@ -854,198 +854,68 @@
   {
    "id": "u07",
    "n": 7,
-   "title": "Research Methods in the Social Sciences",
-   "written": true,
+   "title": "Mixed Methods and Evidence Synthesis",
+   "written": false,
    "lessons": [
     {
-     "id": "u07-13",
-     "title": "Research design",
-     "module": "Designing research"
+     "id": "u07-01",
+     "title": "What is mixed methods research?",
+     "module": "Mixed methods"
     },
     {
-     "id": "u07-14",
-     "title": "Research questions and hypotheses",
-     "module": "Designing research"
+     "id": "u07-02",
+     "title": "Convergent designs",
+     "module": "Mixed methods"
     },
     {
-     "id": "u07-15",
-     "title": "Positivism",
-     "module": "Designing research"
+     "id": "u07-03",
+     "title": "Explanatory sequential designs",
+     "module": "Mixed methods"
     },
     {
-     "id": "u07-16",
-     "title": "Interpretivism",
-     "module": "Designing research"
+     "id": "u07-04",
+     "title": "Exploratory sequential designs",
+     "module": "Mixed methods"
     },
     {
-     "id": "u07-17",
-     "title": "Realism",
-     "module": "Designing research"
+     "id": "u07-05",
+     "title": "Integration and joint displays",
+     "module": "Mixed methods"
     },
     {
-     "id": "u07-18",
-     "title": "Quantitative research",
-     "module": "Designing research"
+     "id": "u07-06",
+     "title": "Quality in mixed methods research",
+     "module": "Mixed methods"
     },
     {
-     "id": "u07-19",
-     "title": "Qualitative research",
-     "module": "Designing research"
+     "id": "u07-07",
+     "title": "Meta-analysis",
+     "module": "Evidence synthesis"
     },
     {
-     "id": "u07-20",
-     "title": "Mixed methods",
-     "module": "Designing research"
+     "id": "u07-08",
+     "title": "Qualitative evidence synthesis",
+     "module": "Evidence synthesis"
     },
     {
-     "id": "u07-21",
-     "title": "Surveys",
-     "module": "Asking questions"
+     "id": "u07-09",
+     "title": "Realist reviews",
+     "module": "Evidence synthesis"
     },
     {
-     "id": "u07-22",
-     "title": "Questionnaire design",
-     "module": "Asking questions"
+     "id": "u07-10",
+     "title": "Secondary data analysis",
+     "module": "Secondary and digital research"
     },
     {
-     "id": "u07-23",
-     "title": "Structured interviews",
-     "module": "Asking questions"
+     "id": "u07-11",
+     "title": "Big data and computational methods",
+     "module": "Secondary and digital research"
     },
     {
-     "id": "u07-24",
-     "title": "Semi-structured interviews",
-     "module": "Asking questions"
-    },
-    {
-     "id": "u07-25",
-     "title": "Unstructured interviews",
-     "module": "Asking questions"
-    },
-    {
-     "id": "u07-26",
-     "title": "Focus groups",
-     "module": "Asking questions"
-    },
-    {
-     "id": "u07-27",
-     "title": "Participant observation",
-     "module": "Observing and immersion"
-    },
-    {
-     "id": "u07-28",
-     "title": "Ethnography",
-     "module": "Observing and immersion"
-    },
-    {
-     "id": "u07-29",
-     "title": "Case studies",
-     "module": "Observing and immersion"
-    },
-    {
-     "id": "u07-30",
-     "title": "Experiments in sociology",
-     "module": "Observing and immersion"
-    },
-    {
-     "id": "u07-31",
-     "title": "Social network analysis",
-     "module": "Analysing texts and networks"
-    },
-    {
-     "id": "u07-32",
-     "title": "Content analysis",
-     "module": "Analysing texts and networks"
-    },
-    {
-     "id": "u07-33",
-     "title": "Discourse analysis",
-     "module": "Analysing texts and networks"
-    },
-    {
-     "id": "u07-34",
-     "title": "Secondary data",
-     "module": "Existing data"
-    },
-    {
-     "id": "u07-35",
-     "title": "Official statistics",
-     "module": "Existing data"
-    },
-    {
-     "id": "u07-36",
-     "title": "Longitudinal research",
-     "module": "Existing data"
-    },
-    {
-     "id": "u07-37",
-     "title": "Comparative research",
-     "module": "Existing data"
-    },
-    {
-     "id": "u07-38",
-     "title": "Probability sampling",
-     "module": "Sampling and quality"
-    },
-    {
-     "id": "u07-39",
-     "title": "Non-probability sampling",
-     "module": "Sampling and quality"
-    },
-    {
-     "id": "u07-40",
-     "title": "Reliability",
-     "module": "Sampling and quality"
-    },
-    {
-     "id": "u07-41",
-     "title": "Validity",
-     "module": "Sampling and quality"
-    },
-    {
-     "id": "u07-42",
-     "title": "Generalisability",
-     "module": "Sampling and quality"
-    },
-    {
-     "id": "u07-43",
-     "title": "Bias",
-     "module": "Sampling and quality"
-    },
-    {
-     "id": "u07-44",
-     "title": "Positionality",
-     "module": "Ethics and reflexivity"
-    },
-    {
-     "id": "u07-45",
-     "title": "Reflexivity",
-     "module": "Ethics and reflexivity"
-    },
-    {
-     "id": "u07-46",
-     "title": "Informed consent",
-     "module": "Ethics and reflexivity"
-    },
-    {
-     "id": "u07-47",
-     "title": "Anonymity and confidentiality",
-     "module": "Ethics and reflexivity"
-    },
-    {
-     "id": "u07-48",
-     "title": "Researching vulnerable groups",
-     "module": "Ethics and reflexivity"
-    },
-    {
-     "id": "u07-49",
-     "title": "Interpreting findings",
-     "module": "From data to findings"
-    },
-    {
-     "id": "u07-50",
-     "title": "Disseminating research",
-     "module": "From data to findings"
+     "id": "u07-12",
+     "title": "Using AI tools in research",
+     "module": "Secondary and digital research"
     }
    ]
   },
@@ -1516,7 +1386,7 @@
    "note": "SocGradify's exercise; invented draft questions, standard design principles.",
    "tasks": null,
    "lessons": [
-    "u07-22",
+    "u05-02",
     "u04-06"
    ],
    "url": "https://getgradify.com/postgradify/course/#/practice/survey-design"

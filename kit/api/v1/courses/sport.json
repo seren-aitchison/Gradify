@@ -353,7 +353,7 @@
    "id": "u02",
    "n": 2,
    "title": "The Cardiorespiratory System in Exercise",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u02-01",
@@ -451,7 +451,7 @@
    "id": "u03",
    "n": 3,
    "title": "Energy Systems and Exercise Metabolism",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u03-01",

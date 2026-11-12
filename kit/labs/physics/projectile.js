@@ -28,7 +28,7 @@ export function bestAngle(p) {
 export function mount(el, ctx = {}) {
   const $ = shell(el, `<div class="lab-row top"></div><div class="lab-cols"><div class="lab-stage"></div><div class="lab-ctrl"></div></div><div class="lab-out"></div>`);
   const cv = canvas($(".lab-stage"), { aspect: 0.55, max: 380 }), ctrl = $(".lab-ctrl"), out = panel($(".lab-out"));
-  const P = { v: 25, deg: 45, h: 0, planet: "earth", air: false, target: 40 + Math.round(Math.random() * 30) };
+  const P = { v: 25, deg: 45, h: 0, planet: "earth", air: false, target: 40 + Math.round(Math.random() * 18) };   // 40–58 m: never within reach of the default 64 m throw, so the challenge needs a change
   const trails = []; let st = { hit: false, drag45: false, moon: false, high: false };
   const ch = challenges(ctrl, ctx, [
     { id: "hit", text: `Land the ball within 1 m of the flag at ${P.target} m`, test: (s) => s.hit },
