@@ -444,7 +444,7 @@
    "id": "u04",
    "n": 4,
    "title": "User Research and Empathy",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u04-01",
@@ -863,78 +863,83 @@
   {
    "id": "u09",
    "n": 9,
-   "title": "Product Design and Materials",
-   "written": false,
+   "title": "Mechanics of Materials",
+   "written": true,
    "lessons": [
     {
-     "id": "u09-01",
-     "title": "Material properties",
-     "module": "Materials"
+     "id": "u09-15",
+     "title": "Normal stress and strain",
+     "module": "Stress and strain"
     },
     {
-     "id": "u09-02",
-     "title": "Woods and manufactured boards",
-     "module": "Materials"
+     "id": "u09-16",
+     "title": "Shear stress and strain",
+     "module": "Stress and strain"
     },
     {
-     "id": "u09-03",
-     "title": "Metals and alloys",
-     "module": "Materials"
+     "id": "u09-17",
+     "title": "Hooke's law and elastic constants",
+     "module": "Stress and strain"
     },
     {
-     "id": "u09-04",
-     "title": "Polymers",
-     "module": "Materials"
+     "id": "u09-18",
+     "title": "Axially loaded members",
+     "module": "Stress and strain"
     },
     {
-     "id": "u09-05",
-     "title": "Textiles and composites",
-     "module": "Materials"
+     "id": "u09-19",
+     "title": "Thermal stress",
+     "module": "Stress and strain"
     },
     {
-     "id": "u09-06",
-     "title": "Smart and modern materials",
-     "module": "Materials"
+     "id": "u09-20",
+     "title": "Torsion of circular shafts",
+     "module": "Torsion and bending"
     },
     {
-     "id": "u09-07",
-     "title": "Manufacturing processes",
-     "module": "Making"
+     "id": "u09-21",
+     "title": "Bending stress in beams",
+     "module": "Torsion and bending"
     },
     {
-     "id": "u09-08",
-     "title": "Scales of production",
-     "module": "Making"
+     "id": "u09-22",
+     "title": "Shear stress in beams",
+     "module": "Torsion and bending"
     },
     {
-     "id": "u09-09",
-     "title": "Design for manufacture and assembly",
-     "module": "Making"
+     "id": "u09-23",
+     "title": "Beam deflection",
+     "module": "Torsion and bending"
     },
     {
-     "id": "u09-10",
-     "title": "Ergonomics and anthropometrics",
-     "module": "Making"
+     "id": "u09-24",
+     "title": "Combined loading",
+     "module": "Combined loading and stability"
     },
     {
-     "id": "u09-11",
-     "title": "Tolerances and quality control",
-     "module": "Making"
+     "id": "u09-25",
+     "title": "Stress transformation and Mohr's circle",
+     "module": "Combined loading and stability"
     },
     {
-     "id": "u09-12",
-     "title": "Form and function",
-     "module": "Product thinking"
+     "id": "u09-26",
+     "title": "Failure theories",
+     "module": "Combined loading and stability"
     },
     {
-     "id": "u09-13",
-     "title": "The product life cycle",
-     "module": "Product thinking"
+     "id": "u09-27",
+     "title": "Buckling of columns",
+     "module": "Combined loading and stability"
     },
     {
-     "id": "u09-14",
-     "title": "Influential designers and movements",
-     "module": "Product thinking"
+     "id": "u09-28",
+     "title": "Thin-walled pressure vessels",
+     "module": "Combined loading and stability"
+    },
+    {
+     "id": "u09-29",
+     "title": "Strain energy",
+     "module": "Combined loading and stability"
     }
    ]
   },

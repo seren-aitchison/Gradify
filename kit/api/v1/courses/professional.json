@@ -713,78 +713,88 @@
   {
    "id": "u06",
    "n": 6,
-   "title": "Problem Solving and Decision Making",
-   "written": false,
+   "title": "Strategy",
+   "written": true,
    "lessons": [
     {
-     "id": "u06-01",
-     "title": "Defining the problem",
-     "module": "Defining problems"
+     "id": "u06-15",
+     "title": "What is strategy?",
+     "module": "Strategic thinking"
     },
     {
-     "id": "u06-02",
-     "title": "Root cause analysis",
-     "module": "Defining problems"
+     "id": "u06-16",
+     "title": "Mission, vision and objectives",
+     "module": "Strategic thinking"
     },
     {
-     "id": "u06-03",
-     "title": "Systems thinking",
-     "module": "Defining problems"
+     "id": "u06-17",
+     "title": "Planned and emergent strategy",
+     "module": "Strategic thinking"
     },
     {
-     "id": "u06-04",
-     "title": "Creative thinking techniques",
-     "module": "Generating and evaluating options"
+     "id": "u06-18",
+     "title": "Porter's five forces",
+     "module": "Analysing the environment"
     },
     {
-     "id": "u06-05",
-     "title": "Evaluating options: criteria and weighting",
-     "module": "Generating and evaluating options"
+     "id": "u06-19",
+     "title": "The industry life cycle",
+     "module": "Analysing the environment"
     },
     {
-     "id": "u06-06",
-     "title": "Cost-benefit analysis",
-     "module": "Generating and evaluating options"
+     "id": "u06-20",
+     "title": "SWOT analysis",
+     "module": "Analysing the environment"
     },
     {
-     "id": "u06-07",
-     "title": "Rational choice and bounded rationality",
-     "module": "Making decisions"
+     "id": "u06-21",
+     "title": "Resources and capabilities",
+     "module": "Internal analysis"
     },
     {
-     "id": "u06-08",
-     "title": "Heuristics and biases in decisions",
-     "module": "Making decisions"
+     "id": "u06-22",
+     "title": "The value chain",
+     "module": "Internal analysis"
     },
     {
-     "id": "u06-09",
-     "title": "Group decisions and groupthink",
-     "module": "Making decisions"
+     "id": "u06-23",
+     "title": "Core competences and the VRIO framework",
+     "module": "Internal analysis"
     },
     {
-     "id": "u06-10",
-     "title": "Deciding under uncertainty",
-     "module": "Making decisions"
+     "id": "u06-24",
+     "title": "Porter's generic strategies",
+     "module": "Strategic choice"
     },
     {
-     "id": "u06-11",
-     "title": "Evidence-based management",
-     "module": "Making decisions"
+     "id": "u06-25",
+     "title": "The Ansoff matrix",
+     "module": "Strategic choice"
     },
     {
-     "id": "u06-12",
-     "title": "Evaluating arguments and evidence",
-     "module": "Critical thinking"
+     "id": "u06-26",
+     "title": "The Boston Matrix and portfolio analysis",
+     "module": "Strategic choice"
     },
     {
-     "id": "u06-13",
-     "title": "Logical fallacies at work",
-     "module": "Critical thinking"
+     "id": "u06-27",
+     "title": "Mergers, acquisitions and alliances",
+     "module": "Strategic choice"
     },
     {
-     "id": "u06-14",
-     "title": "Making a recommendation",
-     "module": "Critical thinking"
+     "id": "u06-28",
+     "title": "Blue ocean strategy",
+     "module": "Strategic choice"
+    },
+    {
+     "id": "u06-29",
+     "title": "Strategy implementation",
+     "module": "Implementing strategy"
+    },
+    {
+     "id": "u06-30",
+     "title": "The balanced scorecard",
+     "module": "Implementing strategy"
     }
    ]
   },

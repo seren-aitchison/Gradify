@@ -1119,88 +1119,78 @@
   {
    "id": "u11",
    "n": 11,
-   "title": "Feedback, Reflection and Wellbeing",
-   "written": false,
+   "title": "Sleep, Stress and Rest",
+   "written": true,
    "lessons": [
     {
-     "id": "u11-01",
-     "title": "What feedback is for",
-     "module": "Feedback"
+     "id": "u11-17",
+     "title": "Why we sleep",
+     "module": "Sleep"
     },
     {
-     "id": "u11-02",
-     "title": "Feedback literacy",
-     "module": "Feedback"
+     "id": "u11-18",
+     "title": "Sleep stages and cycles",
+     "module": "Sleep"
     },
     {
-     "id": "u11-03",
-     "title": "Reading and acting on feedback",
-     "module": "Feedback"
+     "id": "u11-19",
+     "title": "Circadian rhythms",
+     "module": "Sleep"
     },
     {
-     "id": "u11-04",
-     "title": "Asking for feedback",
-     "module": "Feedback"
+     "id": "u11-20",
+     "title": "How much sleep we need",
+     "module": "Sleep"
     },
     {
-     "id": "u11-05",
-     "title": "Peer and self-assessment",
-     "module": "Feedback"
+     "id": "u11-21",
+     "title": "Sleep across the lifespan",
+     "module": "Sleep"
     },
     {
-     "id": "u11-06",
-     "title": "Reflective practice",
-     "module": "Reflection"
+     "id": "u11-22",
+     "title": "Insomnia",
+     "module": "Sleep"
     },
     {
-     "id": "u11-07",
-     "title": "Models of reflection: Kolb and Gibbs",
-     "module": "Reflection"
+     "id": "u11-23",
+     "title": "Improving sleep",
+     "module": "Sleep"
     },
     {
-     "id": "u11-08",
-     "title": "Personal development planning",
-     "module": "Reflection"
+     "id": "u11-24",
+     "title": "Shift work and sleep",
+     "module": "Sleep"
     },
     {
-     "id": "u11-09",
-     "title": "Learning journals and e-portfolios",
-     "module": "Reflection"
+     "id": "u11-25",
+     "title": "Sleep disorders beyond insomnia",
+     "module": "Sleep"
     },
     {
-     "id": "u11-10",
-     "title": "Student wellbeing",
-     "module": "Wellbeing and support"
+     "id": "u11-26",
+     "title": "What stress is",
+     "module": "Stress"
     },
     {
-     "id": "u11-11",
-     "title": "Stress and resilience",
-     "module": "Wellbeing and support"
+     "id": "u11-27",
+     "title": "The stress response",
+     "module": "Stress"
     },
     {
-     "id": "u11-12",
-     "title": "Perfectionism and impostor feelings",
-     "module": "Wellbeing and support"
+     "id": "u11-28",
+     "title": "Stress and health",
+     "module": "Stress"
     },
     {
-     "id": "u11-13",
-     "title": "Sleep, activity and routine",
-     "module": "Wellbeing and support"
+     "id": "u11-29",
+     "title": "Coping and stress management",
+     "module": "Stress"
     },
     {
-     "id": "u11-14",
-     "title": "Money and student life",
-     "module": "Wellbeing and support"
-    },
-    {
-     "id": "u11-15",
-     "title": "Disability, neurodivergence and study",
-     "module": "Wellbeing and support"
-    },
-    {
-     "id": "u11-16",
-     "title": "Getting help: university and NHS support",
-     "module": "Wellbeing and support"
+     "id": "u11-30",
+     "title": "Work-related stress and burnout",
+     "module": "Stress"
     }
    ]
   },

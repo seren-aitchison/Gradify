@@ -404,7 +404,7 @@
    "id": "u03",
    "n": 3,
    "title": "Colour Theory",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u03-01",
@@ -487,7 +487,7 @@
    "id": "u04",
    "n": 4,
    "title": "Painting Media and Techniques",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u04-01",

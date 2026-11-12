@@ -899,98 +899,93 @@
   {
    "id": "u08",
    "n": 8,
-   "title": "Clinical Examination, Diagnostics and Surgical Principles",
-   "written": false,
+   "title": "Clinical Method and Reasoning",
+   "written": true,
    "lessons": [
     {
-     "id": "u08-01",
-     "title": "Taking a clinical history",
-     "module": "Clinical examination"
+     "id": "u08-19",
+     "title": "The medical history",
+     "module": "The consultation"
     },
     {
-     "id": "u08-02",
-     "title": "The general clinical examination",
-     "module": "Clinical examination"
+     "id": "u08-20",
+     "title": "Consultation models and patient-centred care",
+     "module": "The consultation"
     },
     {
-     "id": "u08-03",
-     "title": "Examination of the cardiovascular and respiratory systems",
-     "module": "Clinical examination"
+     "id": "u08-21",
+     "title": "Communicating risk and shared decision-making",
+     "module": "The consultation"
     },
     {
-     "id": "u08-04",
-     "title": "Examination of the alimentary and urinary systems",
-     "module": "Clinical examination"
+     "id": "u08-22",
+     "title": "Breaking bad news",
+     "module": "The consultation"
     },
     {
-     "id": "u08-05",
+     "id": "u08-23",
+     "title": "Principles of physical examination",
+     "module": "Examination"
+    },
+    {
+     "id": "u08-24",
+     "title": "Vital signs and the early warning score (NEWS2)",
+     "module": "Examination"
+    },
+    {
+     "id": "u08-25",
+     "title": "The cardiovascular examination",
+     "module": "Examination"
+    },
+    {
+     "id": "u08-26",
+     "title": "The respiratory examination",
+     "module": "Examination"
+    },
+    {
+     "id": "u08-27",
+     "title": "The abdominal examination",
+     "module": "Examination"
+    },
+    {
+     "id": "u08-28",
      "title": "The neurological examination",
-     "module": "Clinical examination"
+     "module": "Examination"
     },
     {
-     "id": "u08-06",
-     "title": "The orthopaedic and lameness examination",
-     "module": "Clinical examination"
+     "id": "u08-29",
+     "title": "Clinical reasoning and diagnostic error",
+     "module": "Investigation and reasoning"
     },
     {
-     "id": "u08-07",
-     "title": "Clinical reasoning and the problem-oriented approach",
-     "module": "Clinical examination"
+     "id": "u08-30",
+     "title": "Interpreting tests: sensitivity, specificity and predictive values",
+     "module": "Investigation and reasoning"
     },
     {
-     "id": "u08-08",
-     "title": "Sample collection and handling",
-     "module": "Diagnostics"
+     "id": "u08-31",
+     "title": "Interpreting a full blood count and electrolytes",
+     "module": "Investigation and reasoning"
     },
     {
-     "id": "u08-09",
-     "title": "Diagnostic imaging: radiography",
-     "module": "Diagnostics"
+     "id": "u08-32",
+     "title": "Arterial blood gas interpretation",
+     "module": "Investigation and reasoning"
     },
     {
-     "id": "u08-10",
-     "title": "Ultrasonography and advanced imaging",
-     "module": "Diagnostics"
+     "id": "u08-33",
+     "title": "The 12-lead ECG: a systematic approach",
+     "module": "Investigation and reasoning"
     },
     {
-     "id": "u08-11",
-     "title": "Interpreting diagnostic tests",
-     "module": "Diagnostics"
+     "id": "u08-34",
+     "title": "Chest X-ray interpretation",
+     "module": "Investigation and reasoning"
     },
     {
-     "id": "u08-12",
-     "title": "Principles of anaesthesia",
-     "module": "Anaesthesia and surgery"
-    },
-    {
-     "id": "u08-13",
-     "title": "Anaesthetic monitoring",
-     "module": "Anaesthesia and surgery"
-    },
-    {
-     "id": "u08-14",
-     "title": "Asepsis and surgical preparation",
-     "module": "Anaesthesia and surgery"
-    },
-    {
-     "id": "u08-15",
-     "title": "Wound management",
-     "module": "Anaesthesia and surgery"
-    },
-    {
-     "id": "u08-16",
-     "title": "Fluid therapy principles",
-     "module": "Anaesthesia and surgery"
-    },
-    {
-     "id": "u08-17",
-     "title": "Emergency triage and first aid",
-     "module": "Anaesthesia and surgery"
-    },
-    {
-     "id": "u08-18",
-     "title": "Euthanasia",
-     "module": "Anaesthesia and surgery"
+     "id": "u08-35",
+     "title": "Presenting a patient and documenting care",
+     "module": "Investigation and reasoning"
     }
    ]
   },
