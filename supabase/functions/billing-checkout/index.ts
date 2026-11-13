@@ -2,10 +2,11 @@
 // POST { interval: "month" | "year" }  (signed in)  → { url }  a Stripe Checkout page for Gradify Pro
 // Learners who are already Pro get the billing portal instead, so nobody can subscribe twice.
 // Secrets: STRIPE_SECRET_KEY, STRIPE_PRICE_MONTH, STRIPE_PRICE_YEAR (optional: STRIPE_AUTOMATIC_TAX=on).
+// STRIPE_TERMS_CONSENT=on adds the required terms and 14-day consent tick box (draft wording in _shared/billing.js).
 // Not on sale until GRADIFY_PRO_ON_SALE=on; before that only GRADIFY_BILLING_TESTERS (comma-separated emails) may buy.
 // The learner is identified from their own Supabase token; their Stripe customer id is stored with the service role.
 import { createClient } from "npm:@supabase/supabase-js@2.117.0";
-import { stripe, priceFor, safeBack, returnUrl, mayBuy } from "../_shared/billing.js";
+import { stripe, priceFor, safeBack, returnUrl, mayBuy, termsConsent } from "../_shared/billing.js";
 
 const SITE = (Deno.env.get("GRADIFY_SITE_URL") ?? "https://getgradify.com").replace(/\/+$/, "");
 const ALLOWED = (Deno.env.get("GRADIFY_ALLOWED_ORIGINS") ?? "https://getgradify.com,http://localhost:8080").split(",");
@@ -58,6 +59,7 @@ Deno.serve(async (req) => {
       allow_promotion_codes: "true",
       automatic_tax: Deno.env.get("STRIPE_AUTOMATIC_TAX") === "on" ? { enabled: "true" } : undefined,
       customer_update: Deno.env.get("STRIPE_AUTOMATIC_TAX") === "on" ? { address: "auto" } : undefined,
+      ...termsConsent(env),
       success_url: returnUrl(SITE, back, { checkout: "success" }),
       cancel_url: returnUrl(SITE, back, { checkout: "cancelled" }),
     });

@@ -160,7 +160,7 @@
 
       <div class="foot">
         <span>Prices in pounds sterling (GBP), including VAT.</span>
-        <span><a href="/privacy.html">Privacy</a> · <a href="/app.html#/account">Account</a> · <a href="/">Gradify</a></span>
+        <span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/app.html#/account">Account</a> · <a href="/">Gradify</a></span>
       </div>
     </main>
   </div>
@@ -237,7 +237,7 @@
       if (plan === "pro" || (sub && describePlan(sub).manage)) html = `<button class="btn btn-primary lg" id="manage" type="button">Manage billing</button><p>Change plan, update your card, see invoices or cancel.</p>`;
       else if (!canBuy) html = `<form class="notify" id="notify" novalidate><label for="notify-email">Not on sale yet. Get one email when it opens:</label><div class="notify-row"><input id="notify-email" type="email" autocomplete="email" placeholder="you@example.com" required><button class="btn btn-primary lg" type="submit">Notify me</button></div><p id="notify-msg" role="status" aria-live="polite">No payment, no account needed. <a href="/privacy.html#launch-lists">What we keep</a>.</p></form>`;
       else if (!signedIn) html = `<a class="btn btn-primary lg" href="/app.html#/account">Sign in to get Pro</a><p>Sign in first so Pro is added to your account.</p>`;
-      else html = `<button class="btn btn-primary lg" id="buy" type="button">${label}</button><p>Secure checkout by Stripe. Cancel any time.</p>`;
+      else html = `<button class="btn btn-primary lg" id="buy" type="button">${label}</button><p>Secure checkout by Stripe. Cancel any time. <a href="/terms.html">Terms</a>.</p>`;
       $("#pro-cta").innerHTML = html;
       $("#notify")?.addEventListener("submit", async (e) => {
         e.preventDefault();
