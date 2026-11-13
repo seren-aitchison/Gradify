@@ -546,7 +546,7 @@
    "id": "u04",
    "n": 4,
    "title": "Assessment and Feedback",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u04-01",
