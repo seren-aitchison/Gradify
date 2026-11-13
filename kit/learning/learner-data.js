@@ -27,6 +27,8 @@ export const COURSES = {
   research: "/postgradify/course/", professional: "/progradify/course/", careers: "/internshipgradify/course/",
   design: "/creategradify/course/", spanish: "/languagegradify/course/", gcse: "/youthgradify/course/",
   primary: "/juniorgradify/course/", computing: "/techgradify/course/",
+  french: "/languagegradify/french/", german: "/languagegradify/german/", italian: "/languagegradify/italian/", dutch: "/languagegradify/dutch/",
+  swedish: "/languagegradify/swedish/", japanese: "/languagegradify/japanese/", mandarin: "/languagegradify/mandarin/",
 };
 const dayKey = (t) => { const d = new Date(t); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
 
