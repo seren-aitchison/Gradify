@@ -29,6 +29,17 @@ Gradify Intelligence is one evolving model of each learner. It's built from ever
 
 Haptics (`kit/core/haptics.js`) fire on card ratings, shuffles, plan accepts and navigation. They're silent on devices without vibration, with reduced motion on, or when turned off in Settings.
 
+## Intelligence 3.0 (in progress): adaptive learning
+
+- **FSRS-5 spaced repetition** (`kit/learning/srs.js`): published default parameters, with stability, difficulty and retrievability per card.
+  - **Storage:** stability goes in `interval_days`, difficulty in `ease` (as 10 + D), and the last review time in `updated_at`. That means it works live with no database change, and old SM-2 cards convert on their next review.
+  - **Placement:** reviews land where recall falls to the learner's chosen retention (85%, 90% or 95%), and never after their exam.
+  - **Everything else follows:** the Mastery Engine's recall, the forgetting forecast and readiness all come from FSRS retrievability.
+- **Lesson time** (`kit/course/lesson-time.js`): only active, visible time counts (input in the last minute), along with scroll depth and revisits.
+  - **Where it's stored:** in course progress, which already syncs to the account. When two devices merge, the larger record wins, so time is never double counted.
+  - **Ledger events:** `lesson_time`, `lesson_revisited` and `lesson_completed`.
+  - **Pace:** once three or more completed lessons are timed, the learner's own median minutes per lesson replace the 12-minute estimate in course pacing.
+
 ## Intelligence 2.0: the learning memory and prediction engine
 
 - **Learning event ledger** (`kit/intel/ledger.js`, `learning_events` table, `20261113140000_learning_events.sql`): append-only, owner-only. Events:
@@ -126,11 +137,10 @@ Other events: `study_pack_made`, `study_session`, `plan_block_done`, `plan_block
 ## Next (backlog, in order)
 
 1. **Lesson events from course pages** into the ledger (time in lesson, revisits, skipped sections).
-2. **FSRS** in place of SM-2 in `kit/learning/srs.js`. Same card fields plus `stability` and `difficulty`; `recallProbability` becomes FSRS retrievability.
 3. **Deeper course graph use.** `kit/learning/concepts.js` already has prerequisites and `weakPrerequisites`. Rank "revisit the smallest useful prerequisite" for course lessons, and link note topics to course concepts with `topic-match.js`.
 4. **Misconception and connection cards** written by Gradify AI for the learner's confident mistakes, using the `study-pack` function's `questions` mode, with a follow-up question to verify.
 5. **Prediction service** (Python) once there's enough data: calibrated readiness by topic, learned break lengths and best times of day.
 6. **Academic inbox connections**: read-only OAuth to Outlook or Gmail and Canvas or Moodle, feeding the same `parseInbox`.
 7. **Adaptive pedagogy**: test which teaching mode (visual, worked example, Socratic) improves retention for each learner.
 
-Tests: `tests/intel.test.mjs`, `tests/nlp.test.mjs`, `tests/ical.test.mjs`, `tests/debt.test.mjs`, `tests/calibrate.test.mjs`, `tests/nudges.test.mjs`, `tests/ledger.test.mjs`, `tests/tutor-modes.test.mjs` (coach) (memory, predictions, priority, scheduler, rescheduling, events, Ask).
+Tests: `tests/srs.test.mjs`, `tests/lesson-time.test.mjs`, `tests/intel.test.mjs`, `tests/nlp.test.mjs`, `tests/ical.test.mjs`, `tests/debt.test.mjs`, `tests/calibrate.test.mjs`, `tests/nudges.test.mjs`, `tests/ledger.test.mjs`, `tests/tutor-modes.test.mjs` (coach) (memory, predictions, priority, scheduler, rescheduling, events, Ask).

@@ -1153,3 +1153,33 @@ a.wd-s:hover { transform: translateY(-3px); }
 .wd-raw > .cp-hero { min-height: 260px; }
 .wd-week i.cap { border: 0; background: rgba(255, 255, 255, .045); }
 .wd-week span.away i.cap { background: repeating-linear-gradient(135deg, rgba(255, 192, 2, .14) 0 6px, transparent 6px 12px); }
+
+/* =========================================================
+   The top bar: the open section's tabs (tabify in main.js).
+   White labels; the open one sits on a soft tile with a
+   rainbow line beneath it.
+   ========================================================= */
+.app-bar .app-nav, .lo-shell .app-nav { display: flex !important; flex: 1; min-width: 0; gap: 4px; margin-left: 18px; padding: 0; background: none; box-shadow: none; overflow-x: auto; scrollbar-width: none; }
+.app-nav::-webkit-scrollbar { display: none; }
+.app-nav [data-tab] { position: relative; flex: none; border: 0; background: none; color: var(--mute); font: 500 16px var(--sans); padding: 10px 16px 12px; border-radius: 14px; cursor: pointer; white-space: nowrap; transition: color .2s, background .2s; }
+.app-nav [data-tab]:hover { color: var(--fg); }
+.app-nav [data-tab][aria-selected="true"] { color: #fff; background: rgba(255, 255, 255, .07); }
+.app-nav [data-tab][aria-selected="true"]::after { content: ""; position: absolute; left: 16px; right: 16px; bottom: 5px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, #4641ff, #f055dd 40%, #ff5600 75%, #ffc002); }
+.app-nav [data-tab]:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.app-nav .tab-title { align-self: center; color: #fff; font: 600 16px var(--sans); padding: 0 6px; }
+@media (max-width: 860px) {
+  .app-bar { flex-wrap: wrap; }
+  .app-bar .app-nav { order: 3; flex-basis: 100%; margin: 6px -4px 0; }
+  .app-nav [data-tab] { font-size: 14px; padding: 8px 12px 11px; }
+}
+
+/* grid, not random sizes: boxes in a row share its height */
+.board-w, .board-b { align-items: stretch; }
+.board-s { align-items: stretch; }
+.wd-raw > .cp-hero, .wd-raw > .cp-card { height: 100%; }
+.i-grid { align-items: stretch; }
+.i-grid > .panel { height: 100%; }
+.i-ask, .ai-allow { margin: 0; }
+section[data-tab] { gap: 16px; }
+.i-controls[data-pane] { max-width: 760px; }
+.intel-page > .notify { max-width: 760px; }

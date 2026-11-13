@@ -11,7 +11,7 @@ create table public.learning_events (
   site text check (site is null or length(site) <= 40),
   event text not null check (event in (
     'card_answered', 'question_answered', 'session_started', 'session_finished', 'session_abandoned',
-    'stage_reached', 'forgotten', 'misconception_fixed', 'lesson_completed', 'lesson_revisited',
+    'stage_reached', 'forgotten', 'misconception_fixed', 'lesson_completed', 'lesson_revisited', 'lesson_time',
     'pack_made', 'plan_accepted', 'plan_block_done', 'plan_block_missed', 'autopilot_change', 'change_undone',
     'recommendation_followed', 'mode_changed', 'tell_applied', 'calendar_synced', 'notification_opened')),
   concept text check (concept is null or length(concept) <= 200),       -- "<document id>|<topic>" or a course lesson id

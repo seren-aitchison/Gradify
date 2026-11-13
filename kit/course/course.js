@@ -28,6 +28,7 @@ import { paceFor } from "../learning/pace.js";
 import { trackView, track } from "../core/analytics.js";
 import { callFunction } from "../data/functions.js";
 import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, confirmAttempts } from "./progress.js";
+import { lessonTimer, addTime, MIN_LOG_MS, minutesPerLesson } from "./lesson-time.js";
 import { mountRevalidation } from "./revalidation.js";
 import { scoreFeedback } from "../assess/tutor.js";
 import { feedbackHtml, paras } from "../assess/tutor-view.js";
@@ -461,7 +462,7 @@ export function mountCourse(root, cfg) {
     const remaining = pool.filter((l) => !S.done[l.id]).length, prior = prof.learner.prior[cfg.site] || "new";
     // the profile's exam date belongs to the learner's main subject
     const examDate = prof.site === cfg.site ? prof.exam_date : null;
-    const p = paceFor({ examDate, dailyMinutes: prof.daily_minutes, remaining, dueCards: dueCards().length, dueQuestions: revisionQueue(S.attempts || [], { limit: 500 }).length, prior });
+    const p = paceFor({ minutesPerLesson: minutesPerLesson(S), examDate, dailyMinutes: prof.daily_minutes, remaining, dueCards: dueCards().length, dueQuestions: revisionQueue(S.attempts || [], { limit: 500 }).length, prior });
     const t = p.today, parts = [t.cards && `${t.cards} flashcard${t.cards === 1 ? "" : "s"}`, t.questions && `${t.questions} question${t.questions === 1 ? "" : "s"} to revisit`, t.lessons && `${t.lessons} new lesson${t.lessons === 1 ? "" : "s"}`].filter(Boolean);
     const fmt = (d) => new Date(`${d}T12:00:00Z`).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
     const n1 = (x) => (x < 1 ? x.toFixed(1) : Math.round(x));
@@ -575,6 +576,8 @@ export function mountCourse(root, cfg) {
   }
   async function viewLesson(id) {
     const l = byId[id]; if (!l) return go("learn");
+    lt.start(id);
+    if (S.done[id] || S.time?.[id]?.v) ledger({ event: "lesson_revisited", concept: `${cfg.slug}:${id}`, source: "course", detail: { visits: (S.time?.[id]?.v || 0) + 1, done: Boolean(S.done[id]) } });
     const u = l.unit, t = trackOf(u), N = await notesFor(l), prev = u.lessons[l.i - 1], next = u.lessons[l.i + 1] || units[u.n]?.lessons[0];
     main.innerHTML = `<article class="co-lesson" style="--a:${t.from};--b:${t.to}">
       <div class="co-crumbs"><a href="#/learn/${u.id}">← ${U} ${u.n}: ${esc(u.title)}</a><span>Lesson ${l.i + 1} of ${u.lessons.length}</span></div>
@@ -620,7 +623,8 @@ export function mountCourse(root, cfg) {
     });
     main.querySelector(".co-complete").addEventListener("click", async (e) => {
       if (S.done[id]) return;
-      S.done[id] = Date.now(); save(); track("lesson_complete", cfg.site); e.currentTarget.disabled = true; e.currentTarget.querySelector("span").textContent = "Completed ✓";
+      S.done[id] = Date.now(); save(); track("lesson_complete", cfg.site);
+      ledger({ event: "lesson_completed", concept: `${cfg.slug}:${id}`, source: "course", detail: { seconds: Math.round((lt.current()?.ms || 0) / 1000) + (S.time?.[id]?.s || 0) } }); e.currentTarget.disabled = true; e.currentTarget.querySelector("span").textContent = "Completed ✓";
       await award(XP.lesson, "lesson", id, `${cfg.name}: ${l.title}`);
       if (unitDone(u) === u.lessons.length) celebrate(`${U} ${u.n} complete`, `${esc(u.title)}: every lesson done. Take the unit quiz for +${XP.quiz} XP.`, `<a class="btn btn-ghost lg btn-sm" href="#/quiz/${u.id}"><span>${U} quiz</span></a>`);
       else if (next) setTimeout(() => go(`lesson/${next.id}`), 650);
@@ -1314,8 +1318,20 @@ export function mountCourse(root, cfg) {
 
   // ---------- router ----------
   const go = (h) => { location.hash = `#/${h}`; };
+  // lesson time (kit/course/lesson-time.js): active time on each lesson, how far down it, and how often it's opened
+  const ledger = (e) => { try { storeNow?.logEvent?.({ site: cfg.site, ...e })?.catch?.(() => {}); } catch { /* best effort */ } };
+  const lt = lessonTimer({ onStop: (v) => {
+    if (v.ms < MIN_LOG_MS) return;
+    const t = addTime(S, v); save();
+    ledger({ event: "lesson_time", concept: `${cfg.slug}:${v.id}`, source: "course", response_ms: Math.min(3600000, v.ms), detail: { seconds: Math.round(v.ms / 1000), depth: Math.round(v.depth * 100) / 100, visits: t.v, done: Boolean(S.done[v.id]) } });
+  } });
+  addEventListener("scroll", () => { const h = document.documentElement; lt.scroll((h.scrollTop + innerHeight) / Math.max(1, h.scrollHeight)); }, { passive: true });
+  for (const ev of ["pointerdown", "keydown", "touchstart"]) addEventListener(ev, () => lt.input(), { passive: true });
+  document.addEventListener("visibilitychange", () => lt.visibility(document.visibilityState === "visible"));
+  addEventListener("pagehide", () => lt.stop());
   async function route() {
     unmountIx();
+    lt.stop();
     const home = cfg.overview ? "overview" : "learn";
     const [v0, arg] = location.hash.replace(/^#\/?/, "").split("/"), v = v0 || home;
     const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam"].includes(v) ? v : home;

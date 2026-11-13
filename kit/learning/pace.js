@@ -8,10 +8,11 @@ export const MIN_PER_LESSON = 12, MIN_PER_CARD = 0.4, MIN_PER_QUESTION = 1.5;
  * @param {{ examDate?: string|null, dailyMinutes?: number, remaining: number, dueCards?: number, dueQuestions?: number, prior?: string, now?: number }} o
  * remaining: lessons still to do (written ones, on the learner's path)
  */
-export function paceFor({ examDate = null, dailyMinutes = 20, remaining, dueCards = 0, dueQuestions = 0, prior = "new", now = Date.now() }) {
+export function paceFor({ examDate = null, dailyMinutes = 20, remaining, dueCards = 0, dueQuestions = 0, prior = "new", minutesPerLesson = null, now = Date.now() }) {
   const budget = Math.max(5, dailyMinutes || 20);
   // lessons the learner already partly knows go faster
-  const perLesson = MIN_PER_LESSON * (prior === "confident" ? 0.6 : prior === "some" ? 0.8 : 1);
+  // the learner's own measured minutes per lesson (kit/course/lesson-time.js) once there are enough, else an estimate
+  const perLesson = minutesPerLesson || MIN_PER_LESSON * (prior === "confident" ? 0.6 : prior === "some" ? 0.8 : 1);
   // today: due reviews first (they're what keeps knowledge), then new lessons with what's left
   const reviewMins = Math.min(budget * 0.6, dueCards * MIN_PER_CARD + dueQuestions * MIN_PER_QUESTION);
   const cards = Math.min(dueCards, Math.floor(reviewMins / MIN_PER_CARD));

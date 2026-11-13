@@ -224,3 +224,10 @@ a { color: inherit; }
 /* learner settings (kit/data/profile.js applyPrefs): reduce motion and larger text, on every site */
 html[data-motion="reduce"] *, html[data-motion="reduce"] *::before, html[data-motion="reduce"] *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
 html[data-text="large"] body { zoom: 1.15; }
+
+/* the Gradify bar, rainbow-edged, everywhere (homepage, pricing, the app, every sub-site) */
+header.bar.glass, header.sub-nav.glass {
+  border: 1px solid transparent !important;
+  background: linear-gradient(rgba(14, 14, 16, .9), rgba(14, 14, 16, .9)) padding-box, linear-gradient(90deg, #4641ff, #8b3dff 25%, #f055dd 50%, #ff5600 75%, #ffc002) border-box !important;
+}
+

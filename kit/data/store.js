@@ -8,6 +8,22 @@ const uid = () => (crypto.randomUUID ? crypto.randomUUID() : "10000000-1000-4000
 const now = () => new Date().toISOString();
 export const cloudConfigured = () => Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
 
+// Which sign-in methods the Gradify project has switched on (Supabase's public auth settings). Google sign-in only
+// works once the Google provider is enabled in Supabase (Authentication → Sign In / Providers → Google, with a Google
+// OAuth client); until then the Google button is hidden instead of sending learners to Supabase's error page.
+let providersP = null;
+export function authProviders({ fetch: f = globalThis.fetch } = {}) {
+  return (providersP ||= (async () => {
+    if (!cloudConfigured()) return { email: false, google: false };
+    try {
+      const r = await f(`${SUPABASE_URL}/auth/v1/settings`, { headers: { apikey: SUPABASE_ANON_KEY } });
+      if (!r.ok) throw new Error(String(r.status));
+      const j = await r.json();
+      return { email: j.external?.email !== false, google: Boolean(j.external?.google), checked: true };
+    } catch { providersP = null; return { email: true, google: false, checked: false }; }   // unknown: offer email only, ask again next time
+  })());
+}
+
 // ---------- This device ----------
 const KEY = "gradify.v1";
 const EMPTY = () => ({ profile: { xp: 0, daily_minutes: 20, level: "undergraduate" }, documents: [], packs: [], cards: [], reviews: [], activity: [], blocks: [] });
@@ -128,7 +144,12 @@ export class CloudStore {
     const { error } = await this.db.auth.signInWithOtp({ email, options: { emailRedirectTo: location.origin + location.pathname } });
     if (error) throw error;
   }
-  async signInWithGoogle() { const { error } = await this.db.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + location.pathname } }); if (error) throw error; }
+  async signInWithGoogle() {
+    const p = await authProviders();
+    if (!p.google) throw Object.assign(new Error(p.checked ? "Google sign-in isn't switched on for Gradify yet. Use the email link: it takes a few seconds." : "Couldn't check Google sign-in just now. Use the email link, or try again in a moment."), { disabled: true });
+    const { error } = await this.db.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + location.pathname } });
+    if (error) throw error;
+  }
   async signOut() { await this.db.auth.signOut(); }
   onAuth(cb) { this.db.auth.onAuthStateChange((_e, s) => cb(s?.user || null)); }
   async q(p) { const { data, error } = await p; if (error) throw error; return data; }
