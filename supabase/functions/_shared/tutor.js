@@ -15,6 +15,8 @@
 //   connect   links from this lesson to others in the course, chosen only from the lessons sent (titles)
 //   examiner  a short viva on a lesson: one question at a time, a verdict on each answer, then overall (notes)
 //   director  a study plan from the learner's own mastery data, using only the lessons sent (mastery data)
+//   coach     answers a question about the learner's own learning from their Gradify Intelligence summary
+//             (kit/intel), pointing only to actions that summary offered (learner model)
 // explain and socratic can also carry { lab: { title, state } }: what an interactive lab on the page shows right
 // now, written by the lab itself, so the tutor explains what the learner is actually looking at.
 // Not built: a "research" mode. It would need live sources the tutor can cite and check; until then the tutor
@@ -23,7 +25,7 @@
 
 export const MODEL = "claude-opus-5-5";
 // requests per learner per rolling 24 hours, by mode
-export const DAILY = { mark: 20, roleplay: 150, debrief: 10, explain: 40, diagnose: 40, socratic: 120, challenge: 15, connect: 20, examiner: 100, director: 6 };
+export const DAILY = { mark: 20, roleplay: 150, debrief: 10, explain: 40, diagnose: 40, socratic: 120, challenge: 15, connect: 20, examiner: 100, director: 6, coach: 30 };
 // modes whose reply is rubric feedback (returned as { feedback }); the rest return their fields directly
 export const FEEDBACK_MODES = ["mark", "debrief"];
 const CAP = { lab: 2000, answer: 8000, lesson: 30000, question: 1000, turn: 1500, turns: 40, field: 4000, candidates: 400, title: 200 };
@@ -123,6 +125,7 @@ export function buildRequest(body) {
   if (!DAILY[mode]) throw bad("Unknown mode.");
   const subject = cut(body.subject, 40), rules = rulesFor(subject);
   if (mode === "director") return directorRequest(body, rules);
+  if (mode === "coach") return coachRequest(body, rules);
 
   if (mode === "mark") {
     checkTask(body.task);
@@ -275,9 +278,45 @@ ${cands.map((c) => `${c.id}: ${c.title}`).join("\n")}`;
   return { mode: "director", system, messages: [{ role: "user", content: user }], schema: DIRECTOR_SCHEMA, effort: "medium", maxTokens: 2000 };
 }
 
+export const COACH_SCHEMA = {
+  type: "object", additionalProperties: false, required: ["answer", "actions"],
+  properties: { answer: { type: "string" }, actions: { type: "array", items: { type: "object", additionalProperties: false, required: ["id", "why"], properties: { id: { type: "string" }, why: { type: "string" } } } } },
+};
+const pctOf = (x) => (Number.isFinite(Number(x)) ? `${Math.round(Number(x) * 100)}%` : "unknown");
+// the coach: a learner's question, answered only from the Gradify Intelligence summary (kit/intel/coach.js builds it)
+function coachRequest(body, rules) {
+  const q = cut(body.question, CAP.question).trim();
+  if (!q) throw bad("Ask a question first.");
+  const p = body.profile;
+  if (!p || typeof p !== "object") throw bad("Missing the learner summary.");
+  const acts = (Array.isArray(p.actions) ? p.actions : []).slice(0, 20).map((a) => ({ id: cut(a.id, 120), title: cut(a.title, 160), why: cut(a.why, 300), mins: Number(a.mins) || 0 })).filter((a) => a.id && a.title);
+  const concepts = (Array.isArray(p.concepts) ? p.concepts : []).slice(0, 30).map((c) => `- ${cut(c.name, 120)}: ${cut(c.level, 20)}, mastery ${pctOf(c.mastery)} (${cut(c.certainty, 10)} certainty), retention ${pctOf(c.retention)}, ${c.forgetInDays == null ? "not tested" : `fades below 70% in ${Number(c.forgetInDays)} days`}, stage ${cut(c.stage, 20)}, ${Number(c.confidentErrors) || 0} confident mistakes, ${Number(c.recentErrors) || 0} wrong in 30 days`).join("\n");
+  const turns = Array.isArray(body.turns) ? body.turns.slice(-6).map((t) => `${t.role === "coach" ? "COACH" : "LEARNER"}: ${cut(t.text, CAP.turn)}`).join("\n") : "";
+  const system = `You are Gradify's learning coach: a calm, honest personal assistant who knows this learner's study data and helps them decide what to do. ${rules}
+Use only the LEARNER SUMMARY below. Never invent scores, topics, dates or deadlines, and never claim the learner knows something the data doesn't show. If the data can't answer the question, say what evidence is missing and how to get it (for example, answering more cards or setting an exam date). You can't change their plan, scores or calendar yourself: to suggest doing something, choose from AVAILABLE ACTIONS by id (at most four, most valuable first) with a one-sentence reason tied to the data; don't describe actions that aren't in the list as if they exist. Explaining subject content in depth is the lesson tutor's job: give a short orientation and point to the relevant action. "answer" is at most 120 words, in the second person, plain British English, no headings or lists.`;
+  const user = `LEARNER SUMMARY
+Subject: ${cut(p.site, 60) || "not set"}. Daily study time: ${Number(p.dailyMinutes) || 20} min. Exam: ${cut(p.examDate, 20) || "none set"}${p.examIn != null ? ` (in ${Number(p.examIn)} days)` : ""}.
+Readiness: ${pctOf(p.readiness)} (likely ${pctOf(p.readinessLow)}–${pctOf(p.readinessHigh)}); ${p.enoughEvidence ? "enough evidence" : "not enough evidence for a firm figure"}.
+To reach ${pctOf(p.target)} by the exam: ${p.perDay != null ? `about ${Number(p.perDay)} min a day` : "unknown"} (${cut(p.paceStatus, 20)}).
+This week: ${p.rightThisWeek == null ? "no answers" : `${pctOf(p.rightThisWeek)} right over ${Number(p.answersThisWeek) || 0} answers`}${p.velocityDelta != null ? `, ${Number(p.velocityDelta) >= 0 ? "up" : "down"} ${Math.abs(Math.round(Number(p.velocityDelta) * 100))} points on last week` : ""}. Plan kept: ${p.planKept == null ? "no plan yet" : pctOf(p.planKept)}. Missed Gradify sessions: ${Number(p.missed) || 0}. Cards due now: ${Number(p.dueCards) || 0}; revision due in the next 3 days: about ${Number(p.dueSoonMinutes) || 0} min.
+Upcoming deadlines: ${(Array.isArray(p.deadlines) ? p.deadlines.slice(0, 6) : []).map((d) => `${cut(d.title, 100)} on ${cut(d.day, 12)}`).join("; ") || "none"}.
+CONCEPTS:
+${concepts || "- none yet"}
+AVAILABLE ACTIONS:
+${acts.map((a) => `${a.id}: ${a.title} (${a.mins} min) — ${a.why}`).join("\n") || "none"}
+${turns ? `\nCONVERSATION SO FAR\n${turns}\n` : ""}
+QUESTION: ${q}`;
+  return { mode: "coach", system, messages: [{ role: "user", content: user }], schema: COACH_SCHEMA, effort: "medium", maxTokens: 1500 };
+}
+
 // What the function checks in a reply before returning it: lesson ids must be ones the request offered,
 // choice questions must have exactly one right answer, and lists are capped. Anything that fails is dropped.
 export function checkReply(mode, data, body) {
+  if (mode === "coach") {
+    const ok = new Set((Array.isArray(body.profile?.actions) ? body.profile.actions : []).map((a) => cut(a.id, 120)));
+    const seen = new Set();
+    return { answer: String(data.answer || "").slice(0, 1500), actions: (data.actions || []).filter((a) => ok.has(a.id) && !seen.has(a.id) && seen.add(a.id)).slice(0, 4).map((a) => ({ id: a.id, why: String(a.why || "").slice(0, 300) })) };
+  }
   if (mode === "connect" || mode === "director") {
     const ok = new Set(candidates(body.candidates).map((c) => c.id));
     if (mode === "connect") return { links: (data.links || []).filter((l) => ok.has(l.id)).slice(0, 5) };

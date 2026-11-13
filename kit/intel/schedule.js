@@ -20,7 +20,8 @@ export const windowsFor = (day, intel) => (isWeekend(day) ? intel.weekend : inte
 export function freeIntervals(day, { windows, existing = [], now = Date.now() }) {
   let free = windows.map((w) => ({ from: w.from, to: w.to }));
   const cut = (a, b) => { free = free.flatMap((f) => (b <= f.from || a >= f.to ? [f] : [...(a > f.from ? [{ from: f.from, to: a }] : []), ...(b < f.to ? [{ from: b, to: f.to }] : [])])); };
-  for (const b of existing.filter((x) => x.day === day)) cut(b.start_min, b.end_min);
+  // everything in the calendar is busy, except all-day events that aren't "away" (birthdays, reminders)
+  for (const b of existing.filter((x) => x.day === day && x.cal !== "allday")) cut(b.start_min, b.end_min);
   if (day === dayKey(now)) cut(0, Math.ceil(minuteOf(now) / 5) * 5);
   return free.filter((f) => f.to - f.from >= 5).sort((a, b) => a.from - b.from);
 }

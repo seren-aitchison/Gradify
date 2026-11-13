@@ -190,10 +190,10 @@ function drawDeck(el, packs, order) {
 // ---------- coming up ----------
 function comingUpCard({ blocks, profile, examIn }) {
   const now = new Date(), nowMin = now.getHours() * 60 + now.getMinutes(), today = dayKey(now);
-  const items = blocks.filter((b) => !b.done && (b.day > today || (b.day === today && b.end_min > nowMin)))
+  const items = blocks.filter((b) => !b.done && b.cal !== "allday" && (b.day > today || (b.day === today && b.end_min > nowMin)))
     .sort((a, b) => (a.day + String(a.start_min).padStart(4, "0")).localeCompare(b.day + String(b.start_min).padStart(4, "0")))
     .slice(0, 4).map((b) => ({ ico: b.cal === "exam" ? "flame" : b.cal === "deadline" ? "alert" : "clock", late: b.cal === "exam" || b.cal === "deadline", text: b.title,
-      when: `${new Date(b.day + "T12:00:00").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })} · ${String(Math.floor(b.start_min / 60)).padStart(2, "0")}:${String(b.start_min % 60).padStart(2, "0")}` }));
+      when: `${new Date(b.day + "T12:00:00").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })} · ${b.end_min - b.start_min >= 1440 ? "All day" : `${String(Math.floor(b.start_min / 60)).padStart(2, "0")}:${String(b.start_min % 60).padStart(2, "0")}`}` }));
   if (profile.exam_date && examIn != null && examIn >= 0 && !items.some((i) => /exam/i.test(i.text))) {
     items.unshift({ ico: "flame", late: true, text: `Your exam${examIn === 0 ? " is today" : ` in ${examIn} ${examIn === 1 ? "day" : "days"}`}`, when: new Date(profile.exam_date + "T12:00:00").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" }) });
   }

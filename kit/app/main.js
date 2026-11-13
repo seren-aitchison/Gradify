@@ -27,9 +27,13 @@ import { goalData } from "../learning/goal-data.js";
 import { PRO_ON_SALE } from "../data/billing.js";
 import { cockpitHtml, wireCockpit, welcomeHtml } from "./cockpit.js";
 import { haptic, hapticsOn, setHaptics, hapticsSupported } from "../core/haptics.js";
+import { complete } from "../core/complete.js";
+import { offerInstall, countVisit } from "../core/install.js";
 import { loadModel } from "../intel/model.js";
 import { intelOf } from "../intel/schedule.js";
-import { intelStripHtml, nextHtml, upcomingHtml, rescheduleHtml, forecastWidget, askWidget, conceptPileWidget, wireIntel, applyMoves, renderIntelPage, renderKnowledgePage, renderRevisePage, askHtml, wireAsk, smartPlanHtml, wireSmartPlan, planWeek } from "./intel-views.js";
+import { runAutopilot, briefingHtml, catchUpHtml, opportunitiesWidget, tellHtml, wireTell, decomposeHtml, wireDecompose, wireAutopilot, modesHtml } from "./autopilot-views.js";
+import { modeOf } from "../intel/autopilot.js";
+import { calendarPanelHtml, wireCalendar, intelStripHtml, nextHtml, upcomingHtml, rescheduleHtml, forecastWidget, askWidget, conceptPileWidget, wireIntel, applyMoves, renderIntelPage, renderKnowledgePage, renderRevisePage, askHtml, wireAsk, smartPlanHtml, wireSmartPlan, planWeek } from "./intel-views.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -142,14 +146,29 @@ async function model({ autoMove = true } = {}) {
   const L = await learnerAcross().catch(() => null);
   const courseNext = (L?.next || []).filter((x) => x.site);
   let m = await loadModel(store, profile, { courseNext });
-  if (autoMove && m.intel.autonomy === "auto" && m.missed.moves.length) {
-    await applyMoves(m, store);
-    const moved = m.missed;
-    m = await loadModel(store, profile, { courseNext });
-    m.missed = moved;   // so the screen can say what changed and why
+  // Adaptive and Autopilot act on their own (moving missed sessions, keeping the week planned, recovering), then
+  // the model is rebuilt so the screen shows the result; every change is in the log with an undo
+  if (autoMove && modeOf(m.intel) !== "copilot") {
+    const made = await runAutopilot(m, apctx()).catch((e) => { console.warn("Autopilot", e); return []; });
+    if (made.length) { profile = await store.getProfile(); m = await loadModel(store, profile, { courseNext }); }
+    m.made = made;
   }
   m.L = L;
+  backgroundSync(m);
   return m;
+}
+// calendar links re-sync in the background every six hours; the screen refreshes once when they're in
+let syncing = false;
+function backgroundSync(m) {
+  const feeds = m.intel.calendars || [];
+  const stale = feeds.length && feeds.some((f) => !f.at || Date.now() - Date.parse(f.at) > 6 * 36e5);
+  if (!stale || syncing || store.mode !== "cloud") return;
+  syncing = true;
+  const at = location.hash;
+  import("../intel/calsync.js").then(({ syncCalendars }) => syncCalendars(store, feeds)).then(async (res) => {
+    await saveIntel({ calendars: res.map(({ name, url, ok, events, error, at: t }) => ({ name, url, ok, events, error, at: t })) });
+    if (location.hash === at) route();
+  }).catch(() => {}).finally(() => { setTimeout(() => { syncing = false; }, 60000); });
 }
 async function saveIntel(patch) {
   const cur = intelOf(learnerOf(profile));
@@ -157,6 +176,7 @@ async function saveIntel(patch) {
   profile = await store.getProfile();
 }
 const rerender = () => route();
+const apctx = () => ({ store, toast, rerender, saveIntel, intel: () => intelOf(learnerOf(profile)), saveProfile: async (p) => { profile = await store.saveProfile(p); } });
 // thin borders in the colours of the spectrum, one per box, and a gentle flow in as each screen opens
 const RAINBOW = ["#4641ff", "#8b3dff", "#f055dd", "#ff5a4d", "#ff8a00", "#ffc002", "#1fae8c", "#3c78d8"];
 function decorate(root) {
@@ -358,6 +378,8 @@ async function renderNew(arg) {
       await store.logActivity({ site: profile.site, kind: "pack", xp: 15, detail: { title: doc.title, cards: out.cards.length } });
       // dates in the notes become plan items
       for (const d of out.pack.dates || []) if (d.date && d.date >= today()) await store.saveBlock({ day: d.date, start_min: 9 * 60, end_min: 9 * 60 + 30, title: d.what, cal: d.kind === "exam" ? "exam" : "deadline" });
+      complete("Study pack ready", { sub: `${out.cards.length} cards from ${doc.title}` });
+      setTimeout(() => offerInstall({ reason: "Revise this pack anywhere: keep Gradify on your Home Screen, full screen and working offline." }), 2600);
       location.hash = `#/deck/${doc.id}`;
     } catch (err) {
       status.textContent = err.message;
@@ -603,6 +625,8 @@ async function renderStudy(arg) {
     profile = await store.getProfile();
     const s = await stats();
     const right = answered - results.again;
+    complete("Session complete", { sub: `${answered} ${answered === 1 ? "card" : "cards"} · +${Math.min(xp, 500)} XP` });
+    setTimeout(() => offerInstall({ reason: "Your next reviews will be ready tomorrow. Keep Gradify one tap away, full screen and working offline." }), 1900);
     view.innerHTML = `<section class="done-screen">
       <div class="done-burst">${icon("check")}</div>
       <h1>Session done</h1>
@@ -712,11 +736,13 @@ async function renderToday() {
     <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""} <span class="wave" aria-hidden="true">👋</span></h1>
     <p class="sub lo-hello">${s.cards.length ? `${n0(s.cards.length)} flashcards across ${n0(s.docs.length)} study ${s.docs.length === 1 ? "pack" : "packs"}${streakDays ? ` · ${streakDays}-day streak` : ""}.` : "Nice to have you here."}</p>
     ${!s.cards.length && !courses.length ? welcomeHtml(profile.display_name) : ""}
-    ${rescheduleHtml(M)}
+    ${briefingHtml(M, { made: M.made || [] })}
+    ${catchUpHtml(M) || rescheduleHtml(M)}
     ${nextHtml(M)}
+    ${tellHtml()}
     ${intelStripHtml(M)}
     ${cockpitHtml(cockpitCtx)}
-    <div class="intel-row">${upcomingHtml(M)}${forecastWidget(M)}${conceptPileWidget(M)}${askWidget()}</div>
+    <div class="intel-row">${upcomingHtml(M)}${forecastWidget(M)}${conceptPileWidget(M)}${askWidget()}${opportunitiesWidget(M)}</div>
     ${acrossNext.length || courses.length ? `<div class="lo-across">
       ${acrossNext.length > (s.cards.length ? 0 : 1) ? `<article class="panel glass"><div class="panel-head"><h3>${s.cards.length ? "Across" : "Then, across"} ${SITE ? esc(SITE) : "Gradify"}</h3><a class="see" href="#/learning">My Learning</a></div>${nextList(acrossNext.slice(s.cards.length ? 0 : 1, s.cards.length ? 3 : 4))}</article>` : ""}
       ${courses.length ? `<article class="panel glass"><div class="panel-head"><h3>Your courses</h3><span class="pill-dark">${courses.length}</span></div><ul class="lo-courses">${courses.slice(0, 4).map((c) => { const pct = c.written ? Math.round((100 * c.done) / c.written) : 0; return `<li><a href="${c.href && c.next ? `${c.href}#/lesson/${encodeURIComponent(c.next.id)}` : c.href || "#/learning"}"><span><b>${esc(c.name)}</b><em>${c.next ? `Next: ${esc(c.next.title)}` : "Finished"}</em></span><span class="goal-bar" role="img" aria-label="${pct}%"><i style="width:${pct}%"></i></span><em>${pct}%</em></a></li>`; }).join("")}</ul></article>` : ""}
@@ -751,6 +777,8 @@ async function renderToday() {
   </section>`;
   wireCockpit(view, cockpitCtx);
   wireIntel(view, M, { store, toast, rerender });
+  wireAutopilot(view, M, apctx());
+  wireTell(view, M, apctx());
   // the daily goal and today's quests, from the same engine as My Progress
   if (G) {
     const pct = Math.min(1, G.todayXp / (G.goal || 1)), R = 30, C = 2 * Math.PI * R;
@@ -863,7 +891,7 @@ function goalCard(g, p, { compact = false } = {}) {
 }
 // one change to a goal, refused if another device saved it first
 async function changeGoal(g, patch, done) {
-  try { await store.saveGoal({ ...g, ...patch }, { expect: g.updated_at }); if (done) toast(done); }
+  try { await store.saveGoal({ ...g, ...patch }, { expect: g.updated_at }); if (done) { if (patch.status === "done") complete("Goal complete", { sub: g.title }); else toast(done); } }
   catch (e) { toast(esc(e.conflict ? e.message : `Couldn't save: ${e.message}`)); }
   route();
 }
@@ -1141,8 +1169,10 @@ async function renderPlan(arg) {
   const paced = (L?.courses || []).filter((c) => c.examDate && c.pace && !["done", "no-date"].includes(c.pace.status));
   view.innerHTML = `<section class="planner">
     <div class="deck-head"><div><span class="kicker lo-kicker">${icon("calendar")}Smart Plan</span><h1>Your plan, worked out for you</h1><p class="sub">Gradify builds each day from what matters most (misconceptions, fading memory, deadlines, due cards and new material) and fits it into your free time, with breaks. <a href="#/intel">Change your hours and energy</a>.</p></div><button type="button" class="btn btn-primary lg" id="autoplan"><span>Plan my week</span></button></div>
-    ${rescheduleHtml(M)}
+    ${catchUpHtml(M) || rescheduleHtml(M)}
+    ${tellHtml()}
     ${smartPlanHtml(M, arg)}
+    ${calendarPanelHtml(M, { signedIn: store.mode === "cloud" })}
     <div class="cal-top">
       <article class="panel glass"><div class="panel-head"><h3>Next five weeks</h3><span class="pill-dark">${fmtDate(Date.now(), { month: "long", year: "numeric" })}</span></div>${monthGrid([...ahead, ...goalDates.map((g) => ({ day: g.target_date, cal: "goal" }))], profile.exam_date)}</article>
       <article class="panel glass"><div class="panel-head"><h3>Coming up</h3></div>
@@ -1185,16 +1215,20 @@ async function renderPlan(arg) {
     if (act === "del") await store.deleteBlock(b.id);
     else {
       await store.saveBlock({ ...b, done: !b.done });
+      if (!b.done) complete("Session done", { sub: b.title });
       if (!b.done) await store.logActivity({ site: profile.site, kind: "block", xp: Math.min(60, Math.round((b.end_min - b.start_min) / 3)), detail: { title: b.title } });
     }
     renderPlan();
   });
   wireSmartPlan(view, M, { store, toast, rerender }, arg);
+  wireCalendar(view, M, { store, toast, saveIntel, rerender, complete });
+  wireAutopilot(view, M, apctx());
+  wireTell(view, M, apctx());
   $("#autoplan").addEventListener("click", async (e) => {
     e.currentTarget.disabled = true;
     const made = await planWeek(M, store, s.cards);
-    haptic(made ? "success" : "tap");
-    toast(made ? `Planned ${made} study ${made === 1 ? "session" : "sessions"} across the next six days, in your free time.` : "Your week already has Gradify sessions, or no free time is set.");
+    if (made) complete("Week planned", { sub: `${made} ${made === 1 ? "session" : "sessions"} in your free time` });
+    else toast("Your week already has Gradify sessions, or no free time is set.");
     renderPlan(arg);
   });
 }
@@ -1333,14 +1367,14 @@ async function renderAi(arg) {
     <div class="ai-tools">${tools.map(([ic, t, d, href, cta]) => `<a class="panel glass ai-tool" href="${href}"><span class="ai-ico">${icon(ic)}</span><b>${t}</b><span class="sub">${d}</span><span class="see">${cta} →</span></a>`).join("")}</div>
     <p class="sub">Studying ${esc(s.n)}. Ask Gradify answers from your own evidence in this browser; when you use Gradify AI, the text it needs is sent to Anthropic's Claude API. See <a href="/privacy.html">privacy</a>.</p>
   </section>`;
-  wireAsk(view, M);
+  wireAsk(view, M, { store, ai: Boolean(user), signin: store.mode !== "cloud" && cloudConfigured() });
 }
 routes.ai = renderAi;
 
 // ---------- Intelligence, My Knowledge, Revision Centre (kit/app/intel-views.js) ----------
-routes.intel = async () => { const m = await model(); renderIntelPage(view, m, { toast, saveIntel }); };
+routes.intel = async () => { const m = await model(); renderIntelPage(view, m, { toast, saveIntel, modes: modesHtml(m) }); wireAutopilot(view, m, apctx()); };
 routes.knowledge = async () => { const m = await model({ autoMove: false }); renderKnowledgePage(view, m, { courses: m.L?.courses || [] }); };
-routes.revise = async (arg) => { const m = await model({ autoMove: false }); renderRevisePage(view, m, arg); };
+routes.revise = async (arg) => { const m = await model({ autoMove: false }); renderRevisePage(view, m, arg); view.querySelector(".revise-page .seg-chips")?.insertAdjacentHTML("beforebegin", decomposeHtml()); wireDecompose(view, m, apctx()); };
 
 // ---------- Community: not built yet; say so, and offer the one real thing (bringing friends) ----------
 async function renderCommunity() {
@@ -1396,5 +1430,7 @@ async function boot() {
   $("#mode").innerHTML = user ? `${icon("check")}<span>${esc(user.email)}</span>` : `${icon("lock")}<span>On this device</span>`;
   addEventListener("hashchange", route);
   route();
+  // a returning learner is offered Gradify on their Home Screen (once; dismissing it keeps it away for three weeks)
+  if (countVisit() >= 2) setTimeout(() => offerInstall(), 6000);
 }
 boot();

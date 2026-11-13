@@ -13,6 +13,7 @@ export const QUESTIONS = [
   "I've got 2 hours free. What should I do?",
   "What can I stop revising?",
   "How am I doing this week?",
+  "What happens if I take Friday off?",
 ];
 const pct = (v) => `${Math.round(v * 100)}%`;
 
@@ -26,6 +27,20 @@ export function answer(q, m) {
   const { concepts = [], preds, prio, now = Date.now() } = m;
   if (!concepts.length && !prio?.items?.length) return { intent: "empty", lead: "Gradify doesn't know enough about your learning yet to answer that.", items: [], note: "Add some notes and answer a few cards: every answer teaches Gradify what you know." };
 
+  // what-if: "what happens if I take Friday off?"
+  const off = s.match(/\b(take|have|skip|miss)\b.*?\b(today|tomorrow|monday|tuesday|wednesday|thursday|friday|saturday|sunday|the weekend|this weekend)\b.*?\b(off|free|out)?/);
+  if (/what if|what happens|if i (?:take|skip|miss)/.test(s) && off) {
+    off[2] = /day$/.test(off[2]) && !/today/.test(off[2]) ? off[2][0].toUpperCase() + off[2].slice(1) : off[2];
+    const req = preds.requirement, lost = m.dailyMinutes * (/weekend/.test(off[2]) ? 2 : 1);
+    if (req.examIn == null || req.examIn <= 1) return { intent: "whatif", lead: `Taking ${off[2]} off costs about ${lost} minutes of study. Without an exam date, nothing is at risk: Gradify moves the work to your next free time.`, items: [] };
+    const days = req.examIn - (/weekend/.test(off[2]) ? 2 : 1);
+    const perDay = Math.ceil(req.minutes / Math.max(1, days));
+    return { intent: "whatif", lead: perDay <= m.dailyMinutes ? `Go ahead. Taking ${off[2]} off still leaves you on track: about ${perDay} min a day over the other ${days} days, within your ${m.dailyMinutes}.` : `You can, but it tightens things: about ${perDay} min a day over the other ${days} days instead of ${req.perDay}, against the ${m.dailyMinutes} you have.`,
+      items: [
+        { title: `Exam readiness stays at ${pct(preds.readiness.value)} for now`, detail: "Readiness changes with your answers, not your calendar. A day off only matters if it lets memory fade." },
+        ...preds.forgetting.filter((x) => x.days <= 2).slice(0, 3).map((x) => ({ title: `Review ${x.name} before you go`, detail: `It drops below 70% recall in about ${x.days} ${x.days === 1 ? "day" : "days"}.`, href: `#/study/t:${encodeURIComponent(x.key)}` })),
+      ], note: "Tell Gradify you're away (on Today or Smart Plan) and it'll plan around it." };
+  }
   const hours = s.match(/(\d+(?:\.\d+)?)\s*(h|hour|hr)/), mins = s.match(/(\d+)\s*(m|min)/);
   if (hours || mins || /free|spare|got time/.test(s)) {
     const minutes = hours ? Math.round(parseFloat(hours[1]) * 60) : mins ? parseInt(mins[1], 10) : 60;
