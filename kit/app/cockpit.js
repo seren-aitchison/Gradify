@@ -5,6 +5,7 @@
 // Styles: the "Cockpit" section of kit/app/app.css.
 import { icon } from "../core/icons.js";
 import { LEVELS } from "../learning/mastery.js";
+import { haptic } from "../core/haptics.js";
 
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const n = (x) => Number(x || 0).toLocaleString("en-GB");
@@ -47,7 +48,7 @@ export function cockpitHtml(ctx) {
 }
 
 // ---------- the headline card ----------
-function heroCard({ s, reviews }) {
+export function heroCard({ s, reviews }) {
   const week = reviews.filter((r) => Date.parse(r.reviewed_at) >= Date.now() - 7 * DAY).length;
   return `<article class="cp-hero" aria-labelledby="cp-hero-h">
     <span class="cp-hero-shape" aria-hidden="true"></span>
@@ -94,7 +95,7 @@ function dueCard({ s, mins }) {
 }
 
 // ---------- answers, day by day ----------
-function barsCard({ reviews }) {
+export function barsCard({ reviews }) {
   const days = Array.from({ length: 7 }, (_, i) => { const d = new Date(Date.now() - (6 - i) * DAY); return { key: dayKey(d), label: d.toLocaleDateString("en-GB", { weekday: "short" }), n: 0 }; });
   const at = Object.fromEntries(days.map((d) => [d.key, d]));
   for (const r of reviews) { const d = at[dayKey(r.reviewed_at)]; if (d) d.n++; }
@@ -111,7 +112,7 @@ function barsCard({ reviews }) {
 }
 
 // ---------- topics by level ----------
-function splitCard({ s }) {
+export function splitCard({ s }) {
   const rows = LEVEL_ORDER.map(([lv, c]) => ({ lv, c, count: s.topics.filter((t) => t.level === lv).length })).filter((r) => r.count);
   const total = rows.reduce((a, r) => a + r.count, 0);
   const size = 150, R = 58, C = 2 * Math.PI * R;
@@ -161,7 +162,7 @@ function packsOf({ s, docs }) {
     return { id: d.id, title: d.title, site: d.site, at: d.created_at, total: cards.length, learned, due, colour: DECK[i % DECK.length] };
   });
 }
-function deckCard(ctx) {
+export function deckCard(ctx) {
   const packs = packsOf(ctx);
   return `<article class="cp-card cp-deck-card" aria-labelledby="cp-deck-h">
     <div class="cp-head"><h2 id="cp-deck-h">Your study packs <sup>${packs.length}</sup></h2><a class="cp-chip link" href="#/new">+ New</a></div>
@@ -189,10 +190,10 @@ function drawDeck(el, packs, order) {
 // ---------- coming up ----------
 function comingUpCard({ blocks, profile, examIn }) {
   const now = new Date(), nowMin = now.getHours() * 60 + now.getMinutes(), today = dayKey(now);
-  const items = blocks.filter((b) => !b.done && (b.day > today || (b.day === today && b.end_min > nowMin)))
+  const items = blocks.filter((b) => !b.done && b.cal !== "allday" && (b.day > today || (b.day === today && b.end_min > nowMin)))
     .sort((a, b) => (a.day + String(a.start_min).padStart(4, "0")).localeCompare(b.day + String(b.start_min).padStart(4, "0")))
     .slice(0, 4).map((b) => ({ ico: b.cal === "exam" ? "flame" : b.cal === "deadline" ? "alert" : "clock", late: b.cal === "exam" || b.cal === "deadline", text: b.title,
-      when: `${new Date(b.day + "T12:00:00").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })} · ${String(Math.floor(b.start_min / 60)).padStart(2, "0")}:${String(b.start_min % 60).padStart(2, "0")}` }));
+      when: `${new Date(b.day + "T12:00:00").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" })} · ${b.end_min - b.start_min >= 1440 ? "All day" : `${String(Math.floor(b.start_min / 60)).padStart(2, "0")}:${String(b.start_min % 60).padStart(2, "0")}`}` }));
   if (profile.exam_date && examIn != null && examIn >= 0 && !items.some((i) => /exam/i.test(i.text))) {
     items.unshift({ ico: "flame", late: true, text: `Your exam${examIn === 0 ? " is today" : ` in ${examIn} ${examIn === 1 ? "day" : "days"}`}`, when: new Date(profile.exam_date + "T12:00:00").toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" }) });
   }
@@ -246,13 +247,14 @@ export function wireCockpit(view, ctx) {
     draw();
     view.querySelector("[data-shuffle]")?.addEventListener("click", () => {
       if (packs.length < 2 || leaving) return;
-      leaving = true;
+      leaving = true; haptic("shuffle");
       deck.querySelector(".front")?.classList.add("leaving");
       setTimeout(() => { order = [...order.slice(1), order[0]]; leaving = false; draw(); }, matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 260);
     });
     deck.addEventListener("click", (e) => {
       const b = e.target.closest("[data-bring]");
       if (!b) return;
+      haptic("select");
       const k = order.findIndex((i) => packs[i].id === b.dataset.bring);
       order = [order[k], ...order.filter((_, j) => j !== k)];
       draw();

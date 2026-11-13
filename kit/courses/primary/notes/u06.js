@@ -2,522 +2,440 @@
 export default `
 ## Reading for pleasure
 LV: Year 1 to Year 6 · Foundation
-S: Reading for fun is one of the best things you can do for your learning. This lesson explains why reading for pleasure matters, how to choose books you will enjoy and how to build a reading habit.
-O: Explain why reading for pleasure is important
-O: Describe ways to choose a book you will enjoy
-O: Plan simple ways to read more often
+S: Reading for pleasure means choosing to read because you enjoy it. This lesson explains why it matters, how to find books you will love, and how grown-ups can share reading with children at home.
+O: Describe different ways to find and choose books you enjoy
+O: Talk about a book you have read, giving reasons for your opinion
+O: Explain why reading regularly helps with learning in every subject
 H: Why read for fun?
-P: **Reading for pleasure** means reading because you want to, not because you have to. Research by the National Literacy Trust and others shows that children who enjoy reading tend to read more, learn more words and do better at school. Reading also lets you visit new places, meet new characters and find out about things you are curious about. The national curriculum in England says schools should help pupils develop the habit of reading widely and often, for pleasure and for information.
-H: Choosing a book
-- Look at the **cover** and read the **blurb** on the back.
-- Read the **first page**: does it make you want to read on?
-- Try different kinds of books: stories, poems, comics, joke books and information books.
-- Ask friends, teachers or librarians for **recommendations**.
-- It is fine to stop reading a book you are not enjoying and try another.
-H: Building a habit
-- Read a little every day, even for ten minutes.
-- Keep a book in your bag or by your bed.
-- Visit your **local library**: borrowing books is free.
-- Talk about books with friends and family.
-- Keep a reading log of books you have enjoyed.
-X: Finding the right book.
-> Amira says she does not like reading.
-> Her teacher asks what she likes doing: she loves animals.
-> Amira tries an information book about sharks and a story about a girl who rescues a fox.
-> She enjoys both and starts reading every night before bed.
-K: Reading for pleasure means reading because you want to; it helps you learn more words and do better at school, and you can find books you enjoy by looking at covers and blurbs, trying different types and asking for recommendations, then build a habit by reading a little every day.
-!: Thinking only long novels count as "proper" reading. Comics, poems and information books all count.
-EV: established | Children who enjoy reading tend to read more often and have higher reading attainment.
-T: Reading for pleasure | Reading because you want to, for enjoyment
-T: Blurb | A short description of a book, usually on the back cover
-T: Recommendation | A suggestion from someone about a book to try
-SUM: Read because you want to.
-SUM: Try lots of kinds of books.
-SUM: Read a little every day.
-SRC: Department for Education, National curriculum in England: English programmes of study | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
-SRC: National Literacy Trust, Children and young people's reading in 2024 | data | 2024 | https://literacytrust.org.uk/research-services/research-reports/
-Q: What does reading for pleasure mean? | Reading because you want to, for enjoyment.
-Q: What is a blurb? | A short description of a book, usually on the back cover.
-M1#primary-u06-01-q1@1: Where can you borrow books for free? | A library | A sweet shop | A car park | A football pitch | Applying the standard result: Libraries lend books free.
-M2#primary-u06-01-q2@2: What could you do if you are not enjoying a book? | Try a different book | Never read again | Read it upside down | Throw it away | Applying the standard result: Choose something you like.
-TF1#primary-u06-01-q3@2: Comics and joke books count as reading. | true | Any reading you enjoy counts and helps you learn.
-M3#primary-u06-01-q4@3: A friend says reading is boring. What is the best advice? | Find books about things you are interested in | Only read very long books | Stop going to the library | Read only in lessons | Applying the standard result: Interest makes reading enjoyable.
-SA2#primary-u06-01-q5@2,3: Explain how someone could start enjoying reading more. | They could choose books about things they are interested in, look at the cover and blurb and read the first page to check they like it. They could try different types, such as comics, poems and information books, and ask friends or librarians for suggestions. Reading a little every day and talking about books with others helps build the habit. | Interests ; Choosing books ; Variety ; Habit
+P: Reading for fun takes you to other places and times, lets you see the world through other people's eyes, and teaches you new words without you even noticing. Children who read a lot meet many more words than those who read only at school.
+P: The national curriculum asks schools to help children develop "the habit of reading widely and often, for both pleasure and information".
+K: The more you read, the more words and ideas you meet, and the easier reading becomes: a few minutes every day matters more than a long time once a week.
+H: Finding books you love
+- Try a series: if you like the first book, there are more waiting.
+- Ask a librarian, teacher or friend what they recommend.
+- Read the blurb on the back and the first page before choosing.
+- Mix it up: stories, comics, poems, joke books, and books about animals, space or sport all count.
+X: Use the "five finger test" to check if a book is the right level.
+> Open a page in the middle and start reading.
+> Hold up a finger for each word you don't know.
+> 0 to 1 fingers: easy. 2 to 3: just right. 4 to 5: a bit hard for now, so maybe share it with a grown-up.
+P: Grown-ups can help by reading aloud, even to children who can already read, talking about books together, and letting children choose some books just for fun.
+!: Thinking only long chapter books "count". Picture books, comics, poems and non-fiction all build reading skills and enjoyment.
+EV: established | Children who read for pleasure tend to have larger vocabularies and do better in reading tests, though children who already read well are also more likely to enjoy it, so the link works both ways.
+T: Blurb | The short description on the back of a book that tells you what it is about
+T: Genre | A type of writing, such as adventure, mystery, fantasy or non-fiction
+SUM: Reading for pleasure builds vocabulary and understanding in every subject.
+SUM: Choose books you enjoy, use the blurb and the five finger test, and read a little every day.
+SRC: Department for Education, National curriculum in England: English programmes of study, purpose of study and reading | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Department for Education, The reading framework: teaching the foundations of literacy | guidance | 2023 | https://www.gov.uk/government/publications/the-reading-framework-teaching-the-foundations-of-literacy
+Q: What is a blurb? | The short description on the back of a book.
+Q: What is better: reading a little every day or a lot once a week? | A little every day.
+M1#primary-u06-01-q1@1: Where would you usually find a book's blurb? | On the back cover | On the first page of chapter 1 | In the index | On the spine | The blurb is on the back cover and tells you what the book is about, to help you decide whether to read it.
+M2#primary-u06-01-q2@1: In the five finger test, you find 2 words you don't know on a page. What does that suggest? | The book is about right for you | The book is far too hard | The book is too easy to read | You should stop reading | Two or three unknown words means the book is "just right": challenging enough to learn from but not too hard.
+M2#primary-u06-01-q3@2: Which reason for choosing a book shows the best thinking? | "I liked the first book in this series" | "It has the most pages" | "It was nearest the door" | "Its cover is blue" | Knowing you enjoyed the first book is a good reason to think you will enjoy the next one. Length and colour don't tell you whether you'll like it.
+TF1#primary-u06-01-q4@3: Comics and joke books can help you become a better reader. | true | Any reading practises decoding and understanding, and builds the habit of reading, so comics and joke books count.
+M3#primary-u06-01-q5@3: Why might reading lots of stories help with science and history too? | You meet more words and ideas you can use in other subjects | Stories always contain science facts | It makes your handwriting neater | It means you don't need to read textbooks | Wide reading builds vocabulary and background knowledge, which help you understand what you read in every subject.
+SA3#primary-u06-01-q6@2,3: Tell someone about a book you enjoyed and explain why you would recommend it. | A strong answer names the book, says briefly what it is about without giving away the ending, and gives at least two reasons, such as an exciting plot, a funny character or something interesting learned, with an example from the book. It says who else might enjoy it. | Names the book ; Short summary without spoilers ; At least two reasons ; Uses an example ; Says who would enjoy it
 
 ## Reading fluently
-LV: Year 2 to Year 4 · Application
-S: Fluent readers read accurately, at a good pace and with expression. This lesson explains what fluency is, why it helps understanding and how to practise it.
-O: Describe the parts of reading fluency
+LV: Year 1 to Year 4 · Foundation
+S: Fluent readers read accurately, at a good speed and with expression, so they can think about what the words mean. This lesson explains the three parts of fluency and how practising aloud helps.
+O: Read aloud accurately and at a steady pace
+O: Read with expression, using punctuation to guide your voice
 O: Explain why fluency helps understanding
-O: Use strategies to practise reading fluently
-H: What fluency is
-P: **Reading fluency** means reading **accurately**, at a good **speed** and with **expression** (sometimes called **prosody**). A fluent reader does not have to stop and sound out every word, so their brain has more space to think about what the words mean. The Education Endowment Foundation's guidance on improving literacy recommends developing pupils' fluency, for example through guided oral reading and repeated reading.
-H: Parts of fluency
+H: Three parts of fluency
 - **Accuracy**: reading the words correctly.
-- **Speed**: reading at a comfortable pace, not too slow or rushed.
-- **Expression**: making your voice go up and down, pausing at full stops and commas and showing feelings.
-- Punctuation helps: a question mark means your voice goes up; an exclamation mark shows strong feeling.
-H: How to practise
-- **Repeated reading**: read the same short passage several times.
-- **Echo reading**: an adult reads a sentence and you copy their expression.
-- **Paired reading**: take turns reading with a partner.
-- Read aloud to a family member, a pet or a toy.
-- Choose texts that are not too hard, so you can read most words easily.
-X: Reading with expression.
-> The sentence is: "Help!" shouted Sam. "The boat is sinking!"
-> A flat reading sounds bored and robotic.
-> A fluent reader says "Help!" loudly and quickly, then pauses before "The boat is sinking!"
-> The expression shows Sam is frightened.
-K: Reading fluency is reading accurately, at a good speed and with expression; it frees the brain to think about meaning, and you can practise through repeated, echo and paired reading, using punctuation to guide your voice.
-!: Thinking fluency just means reading as fast as possible. Reading too fast can make you miss words and meaning.
-EV: established | Fluency practice such as repeated reading improves reading fluency and comprehension.
+- **Speed**: reading smoothly, not too slowly and not racing.
+- **Expression** (also called prosody): reading the way people talk, with your voice going up and down to show meaning.
+P: When reading is slow and word by word, all your brain power goes into working out the words. When it becomes fluent, your brain is free to think about what the text means.
+K: Fluent reading is accurate, smooth and expressive, and it frees your mind to understand what you read.
+H: Practising fluency
+P: Punctuation is like a set of road signs for your voice. A full stop means a short pause. A question mark makes your voice go up at the end. An exclamation mark shows surprise or strong feeling. Speech marks tell you a character is speaking, so try a voice for them.
+X: Read this aloud with expression: "Watch out!" shouted Sam. "Is that a spider?"
+> "Watch out!" has an exclamation mark, so say it loudly and urgently.
+> "shouted Sam" is the narrator, in a normal voice.
+> "Is that a spider?" is a question, so let your voice rise at the end.
+P: Rereading the same short passage several times, echo reading (a grown-up reads a sentence, the child copies) and reading poems aloud are all good ways to build fluency.
+!: Thinking fast means fluent. Racing through and ignoring punctuation makes it harder to understand; aim for the speed of natural talking.
+EV: established | Repeated reading aloud with feedback is one of the most effective ways to improve reading fluency, according to the Education Endowment Foundation.
 T: Fluency | Reading accurately, at a good pace and with expression
-T: Expression | Using your voice to show meaning and feeling when reading
-T: Repeated reading | Reading the same passage several times to improve fluency
-SUM: Accuracy, speed and expression.
-SUM: Fluency helps understanding.
-SUM: Practise by rereading.
-SRC: Education Endowment Foundation, Improving Literacy in Key Stage 2 | guidance | 2021 | https://educationendowmentfoundation.org.uk/education-evidence/guidance-reports/literacy-ks2
-SRC: Department for Education, The reading framework | guidance | 2023 | https://www.gov.uk/government/publications/the-reading-framework-teaching-the-foundations-of-literacy
+T: Expression | Changing your voice to show meaning and feeling when reading aloud
+SUM: Fluency means accuracy, a natural speed and expression.
+SUM: Use punctuation to guide your voice, and practise by rereading and echo reading.
+SRC: Department for Education, National curriculum in England: English programmes of study, Years 1 to 4 reading | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Education Endowment Foundation, Improving literacy in key stage 2 (guidance report) | guidance | 2021
 Q: What are the three parts of reading fluency? | Accuracy, speed and expression.
-Q: What is echo reading? | An adult reads a sentence and you copy their expression.
-M1#primary-u06-02-q1@1: What does accuracy mean in reading? | Reading the words correctly | Reading as fast as you can | Reading in a whisper | Reading only the pictures | Applying the standard result: Accuracy means getting words right.
-M2#primary-u06-02-q2@2: What should your voice do at a question mark? | Go up at the end | Stop completely | Get very quiet | Shout loudly | Applying the standard result: Questions often rise.
-M2#primary-u06-02-q3@3: Why does fluent reading help understanding? | Your brain has more space to think about meaning | You can skip the hard words | You finish the book first | You do not need to think | Less effort on words means more on meaning.
-M3#primary-u06-02-q4@3: A child reads very fast but makes many mistakes. What advice is best? | Slow down and read accurately with expression | Read even faster | Skip all the long words | Stop reading aloud | Applying the standard result: Speed is not the only part.
-SA2#primary-u06-02-q5@2,3: Explain how a pupil could become a more fluent reader. | The pupil could practise repeated reading of short passages, copy an adult's expression through echo reading and take turns in paired reading. They should choose texts where they can read most words, use punctuation to guide pauses and expression, and aim for accuracy and a comfortable pace rather than speed alone. | Repeated reading ; Echo and paired ; Suitable texts ; Punctuation and pace
+Q: What should your voice do at a question mark? | Go up at the end.
+M1#primary-u06-02-q1@1: What does a full stop tell you to do when reading aloud? | Pause briefly | Shout | Read faster | Stop reading altogether | A full stop marks the end of a sentence, so you pause briefly before the next one.
+M2#primary-u06-02-q2@2: Which is the best example of fluent reading? | Reading smoothly and changing your voice for speech | Reading as fast as possible without stopping | Reading every word separately and slowly | Reading only the words you know | Fluency is accurate, smooth and expressive. Racing or reading word by word makes it harder to understand.
+M2#primary-u06-02-q3@3: Why does fluency help you understand a text? | Your brain can focus on meaning instead of working out words | You finish the book more quickly and can start another | It makes all the words in the book easier to spell | It means you no longer need to think about the story | When you don't have to work hard to decode each word, you have attention left over to think about what it means.
+TF2#primary-u06-02-q4@2: An exclamation mark often shows surprise or strong feeling. | true | Exclamation marks show emphasis, so reading those sentences with more energy helps show their meaning.
+M3#primary-u06-02-q5@3: Jo reads "Help me," whispered the boy, in a loud, cheerful voice. What should she change? | Read "Help me" quietly, because the boy whispered | Read it faster | Leave out "whispered the boy" | Nothing; it was correct | The word "whispered" tells you how the boy spoke, so a fluent reader would say "Help me" quietly and perhaps worried.
+SA3#primary-u06-02-q6@3: Explain how a grown-up could help a child become a more fluent reader. | They could read a short passage aloud first to model expression, then have the child read it, using echo reading. The child could reread the same passage several times to get smoother. The grown-up should praise, point out punctuation and talk about the meaning, little and often. | Modelling by the grown-up ; Repeated reading ; Uses punctuation and expression ; Little and often
 
 ## Understanding new words
 LV: Year 2 to Year 6 · Application
-S: Good readers work out the meaning of new words. This lesson explains how to use context, word parts and dictionaries to understand unfamiliar vocabulary.
-O: Use the context of a sentence to work out a word's meaning
-O: Use prefixes, suffixes and root words to understand words
-O: Use a dictionary and thesaurus
-H: Using context
-P: When you meet a new word, look at the **context**: the words and sentences around it. Clues can tell you what the word means. In "The puppy was so **exhausted** after the long walk that it fell asleep straight away", the clues "long walk" and "fell asleep" suggest *exhausted* means very tired. Pictures can also give clues. After guessing, reread the sentence with your meaning to check it makes sense.
-H: Word parts
-- A **root word** is the main part of a word, such as *help*.
-- A **prefix** goes at the start and changes the meaning: *un-* means not, so *unhelpful* means not helpful.
-- A **suffix** goes at the end: *-ful* means full of, so *helpful* means full of help.
-- Other common prefixes: *re-* (again), *dis-* (not), *pre-* (before).
-- Knowing word families helps: *sign*, *signal*, *signature*.
-H: Dictionaries and thesauruses
-- A **dictionary** gives the meanings of words in **alphabetical order**.
-- Use the first, second and third letters to find a word quickly.
-- A **thesaurus** gives **synonyms**, words with similar meanings.
-- Keep a word book to record and use new words.
-X: Working out "reappear".
-> The sentence is: "The rabbit vanished behind the hat, then started to reappear."
-> The root word is *appear*, meaning to come into view.
-> The prefix *re-* means again.
-> So *reappear* means to come into view again.
-K: You can work out new words using context clues from the surrounding sentences and pictures, by breaking words into prefixes, root words and suffixes, and by checking in a dictionary, while a thesaurus gives synonyms.
-!: Skipping every word you do not know. Using clues helps you understand the text and learn new words.
-EV: established | Teaching vocabulary and strategies for working out word meanings supports reading comprehension.
-T: Context | The words and sentences around a word that help explain it
-T: Prefix | Letters added to the start of a word to change its meaning
-T: Synonym | A word with a similar meaning to another word
-SUM: Look for clues around the word.
-SUM: Break the word into parts.
-SUM: Check in a dictionary.
-SRC: Department for Education, National curriculum in England: English programmes of study, Key stage 2 | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
-SRC: Beck I. L., McKeown M. G. and Kucan L., Bringing Words to Life: Robust Vocabulary Instruction, 2nd edition, Guilford Press | secondary | 2013
-Q: What is a prefix? | Letters added to the start of a word to change its meaning.
-Q: What does a thesaurus give you? | Synonyms, words with similar meanings.
-M1#primary-u06-03-q1@1: What does the prefix "un-" mean? | Not | Again | Before | Full of | Applying the standard result: Unhappy means not happy.
-M2#primary-u06-03-q2@2: "The ancient castle was hundreds of years old." What does "ancient" mean? | Very old | Very new | Very small | Very loud | Applying the standard result: The clue is "hundreds of years old".
-MATCH2#primary-u06-03-q3@2: Match each prefix to its meaning. | un- = not ; re- = again ; pre- = before ; dis- = not or opposite | Prefixes change meanings.
-M3#primary-u06-03-q4@3: What does "disappear" most likely mean? | To go out of view | To come into view again | To appear before | To appear slowly | Applying the standard result: Dis- reverses appear.
-SA2#primary-u06-03-q5@2,3: Explain how you could work out the meaning of a new word in a story. | First, look at the context: the words and sentences around it, and any pictures, for clues. Next, break the word into parts, such as a prefix, root word and suffix, to see what each part means. Then reread the sentence with your meaning to check it makes sense, and if you are still unsure, check a dictionary. | Context clues ; Word parts ; Checking ; Dictionary
+S: Good readers meet new words all the time. This lesson shows how to work out what an unfamiliar word means from the words around it, from its parts (root, prefix and suffix), and with a dictionary.
+O: Use context to work out the meaning of an unfamiliar word
+O: Use prefixes, suffixes and root words to work out meanings
+O: Explain how to check a meaning using a dictionary
+H: Clues in the sentence
+P: The words and sentences around a new word are called its **context**. They often give clues to its meaning.
+X: What does "ravenous" mean? "After the long walk, Kit was ravenous. She ate three sandwiches and still wanted more."
+> Look for clues: a long walk, three sandwiches, still wanting more.
+> These all suggest she was very hungry.
+> So "ravenous" means extremely hungry.
+K: To work out a new word, look for clues in the sentences around it, break the word into parts, then check with a dictionary.
+H: Word parts and dictionaries
+- Look for a **root word** you know: "unbreakable" contains "break".
+- Use the **prefix**: "un-" means not. Use the **suffix**: "-able" means can be.
+- Put it together: "unbreakable" means cannot be broken.
+P: A **dictionary** lists words in alphabetical order with their meanings. Look at the first letter, then the second, to find the right page. Guide words at the top of each page show the first and last word on it.
+P: In the Key Stage 2 reading test, some questions ask what a word or phrase means "in this context", because many words have more than one meaning: a "bat" in a cricket story is different from a "bat" in a story about a cave.
+!: Skipping every word you don't know. Skipping one or two is fine, but if you skip many, you lose the meaning, so stop and use the clues.
+EV: established | Teaching children to use context and word parts helps them work out unfamiliar words, though a large vocabulary built from wide reading is the biggest help.
+T: Context | The words and sentences around a word that help show its meaning
+T: Synonym | A word with the same or nearly the same meaning as another
+SUM: Context clues and word parts help you work out new words.
+SUM: Check meanings in a dictionary, and remember that a word can mean different things in different contexts.
+SRC: Department for Education, National curriculum in England: English programmes of study, Years 3 to 6 reading comprehension | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Standards and Testing Agency, Key stage 2 English reading test framework, content domain 2a | standard | 2015 | https://www.gov.uk/government/publications/key-stage-2-english-reading-test-framework
+Q: What is context? | The words around a word that give clues to its meaning.
+Q: What does "un-" mean in "unhelpful"? | Not.
+M1#primary-u06-03-q1@1: "The tiny kitten was so minuscule it fitted in my hand." What does "minuscule" mean? | Very small | Very fluffy | Very loud | Very old | The clues "tiny" and "fitted in my hand" show that minuscule means very small.
+M2#primary-u06-03-q2@2: "The ground was parched; there had been no rain for months." What does "parched" mean? | Very dry | Very muddy | Freshly painted | Covered in snow | "No rain for months" is the clue: the ground was very dry.
+M2#primary-u06-03-q3@3: Which word part helps you understand "replay"? | The prefix "re-", meaning again | The suffix "-ing", meaning now | The final letter y, meaning more | The root word "ray", meaning light | "Re-" means again, and "play" is the root, so replay means play again.
+TF2#primary-u06-03-q4@2: In a dictionary, "bridge" comes before "brick". | false | Compare letter by letter: b-r-i-d and b-r-i-c. "c" comes before "d", so "brick" comes first.
+M3#primary-u06-03-q5@3: "The knight drew his sword." What does "drew" mean in this context? | Pulled out | Made a picture of | Tied a game | Moved closer | "Drew" can mean made a picture, but with a sword it means pulled the sword out. Context tells you which meaning fits.
+SA3#primary-u06-03-q6@2,3: Explain how you could work out the meaning of "disagreement" if you had never seen it. | Break it into parts: the prefix "dis-" means not or the opposite, the root "agree" means to have the same opinion, and the suffix "-ment" turns it into a thing. So a disagreement is when people don't agree, an argument. Check the sentence it is in and a dictionary to confirm. | Identifies dis- ; Identifies the root agree ; Identifies -ment makes a noun ; Puts the meaning together and checks
 
 ## Retrieving information
-LV: Year 2 to Year 6 · Application
-S: Retrieval means finding information that is written in a text. This lesson explains how to skim, scan and use features of a text to find answers quickly and accurately.
-O: Explain what retrieval questions ask
-O: Use skimming and scanning to find information
-O: Use text features to locate information
-H: Retrieval
-P: A **retrieval** question asks you to find information that is **written in the text**, such as who, what, where or when. The answer is "right there" on the page. For example, if a text says "The fox lived in a den under the old oak tree", a retrieval question might ask: "Where did the fox live?" Retrieval is assessed in the Key Stage 2 reading test, using content domain 2b: retrieve and record information.
-H: Skimming and scanning
-- **Skimming**: reading quickly to get the general idea, often looking at headings and first sentences.
-- **Scanning**: moving your eyes quickly to find a particular word, name or number.
-- Find a **key word** from the question and scan for it in the text.
-- When you find it, read the sentences around it carefully.
-H: Using text features
-- **Headings** and **subheadings** show what each section is about.
-- A **contents page** lists chapters or sections.
-- An **index** lists topics alphabetically with page numbers.
-- **Captions**, **labels** and **diagrams** give extra information.
-- Use the exact words or details from the text in your answer.
-X: Answering a retrieval question.
-> Question: "How long can a camel go without water?"
-> The key words are "camel" and "water".
-> Scanning finds: "Camels can survive for up to two weeks without drinking water."
-> Answer: up to two weeks.
-K: Retrieval questions ask for information written in the text; skimming gives the general idea, scanning finds key words, and text features such as headings, contents pages and indexes help you locate information to answer accurately.
-!: Answering from memory instead of checking the text. Retrieval answers must come from what is written.
-EV: established | Retrieval of information is a core reading skill assessed in the Key Stage 2 reading test.
-T: Retrieval | Finding information written in a text
-T: Scanning | Looking quickly for a particular word or detail
-T: Index | An alphabetical list of topics with page numbers
-SUM: The answer is on the page.
-SUM: Skim for gist, scan for detail.
-SUM: Use headings and indexes.
-SRC: Standards and Testing Agency, Key stage 2 English reading test framework | standard | 2015 | https://www.gov.uk/government/publications/key-stage-2-english-reading-test-framework
-SRC: Department for Education, National curriculum in England: English programmes of study | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
-Q: What is scanning? | Looking quickly through a text for a particular word or detail.
-Q: Where is an index usually found? | At the back of a book.
-M1#primary-u06-04-q1@1: What does a retrieval question ask you to do? | Find information written in the text | Make up your own ending | Draw a picture | Guess what happens next | Applying the standard result: The answer is on the page.
-M2#primary-u06-04-q2@2: Which text feature lists topics in alphabetical order with page numbers? | An index | A blurb | A title | A caption | Applying the standard result: Indexes help you find topics.
-M2#primary-u06-04-q3@3: What should you do after scanning and finding your key word? | Read the sentences around it carefully | Stop reading immediately | Turn to the last page | Write any answer | Applying the standard result: Context confirms the answer.
-M3#primary-u06-04-q4@3: A pupil answers "Camels never drink water" from memory, but the text says "up to two weeks". What went wrong? | They did not check the text | They scanned too carefully | They used the index | They read the heading | Applying the standard result: Retrieval needs the text.
-SA2#primary-u06-04-q5@2,3: Explain how to answer a retrieval question about an information text. | Read the question and pick out the key words. Use headings, the contents page or index to find the right section, then scan for the key words. When you find them, read the sentences around them carefully and use the details written in the text to answer, rather than relying on memory. | Key words ; Text features ; Scanning ; Using the text
+LV: Year 2 to Year 6 · Foundation
+S: Retrieval means finding information that is written in a text. This lesson shows how to scan for key words, find the right part of the text, and answer retrieval questions accurately using the text's own words.
+O: Find and copy information from a text to answer a question
+O: Use key words in a question to scan a text quickly
+O: Explain how to check an answer by going back to the text
+H: Finding the answer
+P: **Retrieval** questions ask you to find facts that the text tells you directly, such as who, what, where and when. The answer is right there in the words: you don't need to guess.
+P: Read this text: "The red squirrel is smaller than the grey squirrel. It lives mainly in pine forests in Scotland and northern England, and it eats seeds, nuts and fungi."
+X: Where do red squirrels mainly live?
+> Find the key word in the question: "live".
+> Scan the text for "live": "It lives mainly in pine forests in Scotland and northern England."
+> Answer: in pine forests in Scotland and northern England.
+K: For a retrieval question, underline the key words, scan the text to find them, read that part carefully and use the text to answer.
+H: Tips for retrieval
+- **Skim** to get the gist of a text quickly; **scan** to hunt for one fact.
+- Look at headings, bold words and numbers to find the right section.
+- If a question says "find and copy", copy the exact word or phrase.
+- If it asks for two things, give two.
+!: Answering from your own knowledge instead of the text. If the text says red squirrels eat fungi, write that, even if you think they eat something else.
+EV: established | Retrieving and recording information is one of the content domains of the Key Stage 2 English reading test.
+T: Retrieve | To find and take information from a text
+T: Scan | To look quickly through a text for a particular word or fact
+SUM: Retrieval answers are written in the text; find the key words and read that part carefully.
+SUM: Skim for the gist, scan for facts, and follow the instructions such as "find and copy".
+SRC: Department for Education, National curriculum in England: English programmes of study, Years 2 to 6 reading comprehension | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Standards and Testing Agency, Key stage 2 English reading test framework, content domain 2b | standard | 2015 | https://www.gov.uk/government/publications/key-stage-2-english-reading-test-framework
+Q: What is the difference between skimming and scanning? | Skimming gets the gist; scanning looks for a particular fact.
+Q: Where is the answer to a retrieval question? | Written in the text.
+M1#primary-u06-04-q1@1: Using the squirrel text, what do red squirrels eat? | Seeds, nuts and fungi | Grass and leaves | Insects and worms | Berries and fish | The text says "it eats seeds, nuts and fungi". Retrieval answers come straight from the words.
+M2#primary-u06-04-q2@2: Which word would you scan for to answer "How big is a red squirrel compared with a grey one?" | smaller | forests | Scotland | fungi | The question is about size, so scan for a size word. "Smaller" tells you red squirrels are smaller than grey ones.
+M2#primary-u06-04-q3@3: A question says "Find and copy one word that shows the squirrel's home is full of trees." What should you write? | forests | pine trees grow there | Scotland | woods | "Find and copy" means use the exact word from the text: "forests". "Woods" is not in the text.
+TF1#primary-u06-04-q4@1: For a retrieval question, the answer can be found written in the text. | true | Retrieval questions are about facts the text states directly, unlike inference questions.
+M3#primary-u06-04-q5@3: A pupil answers "Where do red squirrels live?" with "In trees, because squirrels climb." What is wrong? | It isn't what the text says | It is too short | It uses the word "because" | Nothing; it is right | The text says pine forests in Scotland and northern England. The pupil used their own knowledge instead of retrieving from the text.
+SA3#primary-u06-04-q6@2,3: Explain the steps you would follow to answer a retrieval question about a long non-fiction text. | Read the question and underline the key words. Use headings to find the right section, then scan for the key words. Read that part carefully, find the answer and write it using the text's words. Check you have given the number of answers asked for. | Underlines key words ; Uses headings ; Scans then reads carefully ; Checks the answer against the question
 
 ## Making inferences
-LV: Year 3 to Year 6 · Application
-S: Inference means working out things the writer suggests but does not say directly. This lesson explains how to use clues and what you already know to make and explain inferences.
-O: Explain what an inference is
-O: Use clues from a text to make inferences
-O: Support inferences with evidence
+LV: Year 2 to Year 6 · Application
+S: Inference means working out something the writer hasn't said directly, using clues in the text. This lesson shows how to read between the lines about characters' feelings and motives, and how to back up an inference with evidence.
+O: Infer characters' feelings, thoughts and motives from what they say and do
+O: Support an inference with evidence from the text
+O: Explain the difference between retrieving and inferring
 H: Reading between the lines
-P: An **inference** is a sensible conclusion you reach using **clues** in the text and your own knowledge. Writers often **show** rather than **tell**. If a text says "Leo's hands shook as he stepped onto the stage", the writer does not say Leo is nervous, but you can infer it from the clue. Inference is sometimes called "reading between the lines". The Key Stage 2 reading test assesses inference as content domain 2d.
-H: Using clues
-- Look for what characters **do**, **say** and **think**.
-- Notice **descriptions** of faces, bodies and settings.
-- Use your own **experience**: what would make someone act like that?
-- Ask: how does the character feel? Why did they do that? What is the writer suggesting?
+P: Writers don't always tell us everything. Instead they **show** us clues, and we work out the rest. This is called **inference**.
+P: Read this: "Mia stared at the floor. Her hands twisted the hem of her jumper, and when Mr Patel asked who had broken the window, her cheeks turned bright red."
+X: How does Mia feel, and how do you know?
+> Find the clues: she stares at the floor, twists her jumper, and her cheeks go red when he asks about the window.
+> Think what these usually mean: nervousness, guilt or embarrassment.
+> Answer: Mia feels guilty and nervous, perhaps because she broke the window. Evidence: "her cheeks turned bright red" when asked who broke it.
+K: An inference is a sensible conclusion based on clues in the text, and it must always be backed up with evidence.
 H: Using evidence
-- Support your inference with **evidence**: a quotation or detail from the text.
-- Use the **point–evidence–explain** pattern: make your point, give the evidence, explain how it shows your point.
-- More than one inference can sometimes be sensible.
-- Avoid guesses with no clues to support them.
-X: Inferring feelings.
-> Text: "Maya slammed the door and threw her bag onto the floor. She didn't say a word at dinner."
-> Inference: Maya is angry or upset.
-> Evidence: "slammed the door" and "threw her bag".
-> Explanation: people often slam doors and throw things when they are angry, and her silence suggests she is upset.
-K: An inference is a sensible conclusion using clues from the text and your own knowledge; look at what characters do, say and think and at descriptions, then support inferences with evidence and explanation, using point–evidence–explain.
-!: Making a guess with no evidence. Every inference should be supported by clues in the text.
-EV: established | Inference is a key component of reading comprehension and can be improved through teaching.
-T: Inference | A sensible conclusion from clues and knowledge
-T: Evidence | A detail or quotation from the text that supports a point
-T: Show, don't tell | A writing technique where clues reveal feelings without stating them
-SUM: Read between the lines.
-SUM: Use clues and knowledge.
-SUM: Point, evidence, explain.
-SRC: Standards and Testing Agency, Key stage 2 English reading test framework | standard | 2015 | https://www.gov.uk/government/publications/key-stage-2-english-reading-test-framework
-SRC: Oakhill J., Cain K. and Elbro C., Understanding and Teaching Reading Comprehension: A Handbook, Routledge | secondary | 2015
-Q: What is an inference? | A sensible conclusion using clues in the text and your own knowledge.
-Q: What does PEE stand for? | Point, evidence, explain.
-M1#primary-u06-05-q1@1: "Tom yawned and rubbed his eyes." How does Tom feel? | Tired | Excited | Angry | Hungry | Applying the standard result: Yawning shows tiredness.
-M2#primary-u06-05-q2@2: What should you use to support an inference? | Evidence from the text | A random guess | The book's price | The number of pages | Applying the standard result: Inferences need clues.
-M2#primary-u06-05-q3@3: "The streets were empty and every shop had its shutters down." What can you infer? | It is late at night or a holiday | It is a busy market day | The shops are having a sale | Everyone is shopping | Applying the standard result: Empty streets suggest closing time.
-M3#primary-u06-05-q4@3: "Grandad smiled, but his eyes were wet as he waved goodbye." What is the best inference? | He feels happy and sad at the same time | He is only angry | He does not care about leaving | He is laughing at a joke | Applying the standard result: Smile and tears show mixed feelings.
-SA2#primary-u06-05-q5@2,3: Explain how you would answer an inference question about a character's feelings. | First, look for clues about what the character does, says and thinks, and how they are described. Then use your own experience to decide what those clues suggest about their feelings. Write your point, give evidence such as a short quotation, and explain how the evidence shows the feeling. | Finding clues ; Own knowledge ; Point and evidence ; Explanation
+- Use the formula **Point, Evidence, Explain**: say what you think, quote the text, then explain how the quote shows it.
+- Clues come from actions, speech, descriptions, and the setting.
+- More than one inference can be reasonable, as long as the evidence supports it.
+!: Making a guess with no evidence. "Mia is hungry" can't be supported by the text, so it isn't a good inference.
+EV: established | Drawing inferences such as characters' feelings, thoughts and motives from their actions, and justifying them with evidence, is part of the Year 3 to Year 6 programme of study.
+T: Inference | A conclusion worked out from clues, when something isn't stated directly
+T: Evidence | Words from the text that support your answer
+SUM: Inference means working out what isn't said, using clues from the text.
+SUM: Back up every inference with evidence and explain how the evidence shows it.
+SRC: Department for Education, National curriculum in England: English programmes of study, Years 3 to 6 reading comprehension | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Standards and Testing Agency, Key stage 2 English reading test framework, content domain 2d | standard | 2015 | https://www.gov.uk/government/publications/key-stage-2-english-reading-test-framework
+Q: What is an inference? | Working out something the text doesn't say directly, using clues.
+Q: What does PEE stand for? | Point, Evidence, Explain.
+M1#primary-u06-05-q1@1: "Tom slammed the door and stamped up the stairs." How does Tom probably feel? | Angry | Sleepy | Excited | Calm | Slamming doors and stamping are clues that someone is angry. The text doesn't say "angry", so this is an inference.
+M2#primary-u06-05-q2@2: Which piece of evidence best shows that Mia feels guilty? | "her cheeks turned bright red" when asked who broke the window | "Mia stared" | "Mr Patel asked" | "her jumper" | Blushing just when the window is mentioned links her feelings to the question, which suggests guilt.
+M2#primary-u06-05-q3@3: Which is an inference rather than retrieval? | Mia may have broken the window | Mia twisted her jumper | Mr Patel asked a question | The window was broken | The text says she twisted her jumper and the window was broken, but not that she broke it. That is worked out from clues.
+TF2#primary-u06-05-q4@2: An inference must be supported by clues in the text. | true | Without evidence it is just a guess. Good inferences can always point to words in the text.
+M3#primary-u06-05-q5@3: "Grandad's smile didn't reach his eyes as he waved goodbye." What can you infer? | He was sad underneath his smile | He was very happy | He had something in his eye | He didn't see them leave | A smile that "didn't reach his eyes" suggests he was pretending to be happy, so he may have felt sad about them leaving.
+SA3#primary-u06-05-q6@2,3: "Ella hugged the letter to her chest and danced around the kitchen." What can you infer about the letter? Use evidence. | The letter probably contained good news, perhaps something she had hoped for. Evidence: she "hugged the letter to her chest" and "danced around the kitchen". Hugging shows she treasures it, and dancing shows she is very happy, so the news must be good. | Makes a sensible inference ; Quotes evidence ; Explains how the evidence shows it
 
 ## Predicting
-LV: Year 2 to Year 4 · Application
-S: Good readers think ahead about what might happen. This lesson explains how to make sensible predictions using clues and how to check and change them as you read.
-O: Explain what a prediction is
-O: Make predictions using clues from a text
-O: Check and revise predictions while reading
-H: What predicting is
-P: A **prediction** is a sensible idea about what might happen next, based on **clues**. You can predict before reading, using the title, cover and pictures, and during reading, using events and characters' actions. Predicting keeps you thinking and helps you notice details. Content domain 2e of the Key Stage 2 reading test asks pupils to predict what might happen from details stated and implied.
-H: Using clues
-- The **title** and **cover** may show the setting or problem.
-- What has already happened suggests what might come next.
-- Characters' **personalities** suggest how they will act.
-- The **type of story**: fairy tales often have happy endings; adventure stories have dangers to overcome.
-- Use the sentence starter: "I predict … because …".
+LV: Year 1 to Year 6 · Application
+S: Predicting means using what you have read so far to suggest what might happen next. This lesson shows how to make predictions from the title, pictures and details in the text, and how to check and change them as you read.
+O: Make predictions using the title, cover, pictures and details so far
+O: Justify a prediction with evidence from the text
+O: Explain why good readers change their predictions as they read
+H: What might happen next?
+P: Before and while reading, good readers ask, "What do I think will happen?" They use clues from the **title**, the **cover**, **pictures**, what characters are like, and what has already happened.
+X: Read: "Ben had been told never to open the old wooden box in the attic. One rainy afternoon, with everyone out, he climbed the attic stairs." Predict what happens next.
+> Clues: he was told never to open the box; he is alone; he is climbing to the attic.
+> Stories often have characters break rules.
+> Prediction: Ben will open the box and something unexpected, perhaps magical or frightening, will happen.
+K: A good prediction is based on clues in the text, not just a wild guess, and it can change as you learn more.
 H: Checking predictions
-- Read on to see if your prediction was right.
-- It is fine to be wrong: change your prediction when new clues appear.
-- Ask yourself why the writer surprised you.
-- Good predictions are sensible, not wild guesses.
-X: Predicting from a story.
-> In *The Tale of Peter Rabbit* by Beatrix Potter, Peter's mother tells him not to go into Mr McGregor's garden.
-> Peter is described as "very naughty".
-> Prediction: Peter will go into the garden and get into trouble, because he is naughty and was told not to.
-> Reading on shows Peter is chased by Mr McGregor.
-K: A prediction is a sensible idea about what might happen next, based on clues from the title, cover, events, characters and type of story; good readers explain their predictions and check and change them as they read.
-!: Refusing to change a prediction when new clues appear. Good readers revise their ideas.
-EV: established | Prediction is a widely taught comprehension strategy that supports active reading.
-T: Prediction | A sensible idea about what might happen next
-T: Clue | A detail that helps you work something out
-T: Revise | To change your idea using new information
-SUM: Think ahead.
-SUM: Use clues and explain.
-SUM: Check and change.
-SRC: Potter B., The Tale of Peter Rabbit, Frederick Warne | primary | 1902
-SRC: Standards and Testing Agency, Key stage 2 English reading test framework | standard | 2015 | https://www.gov.uk/government/publications/key-stage-2-english-reading-test-framework
-Q: What is a prediction? | A sensible idea about what might happen next, based on clues.
-Q: What should you do if your prediction is wrong? | Change it using the new clues.
-M1#primary-u06-06-q1@1: Which can help you predict before you start reading? | The title and cover | The barcode | The page numbers | The price | Applying the standard result: The cover gives clues.
-M2#primary-u06-06-q2@2: Which is the best way to share a prediction? | I predict … because … | It will happen | I don't know | Anything could happen | Applying the standard result: Give a reason.
-TF2#primary-u06-06-q3@3: A good prediction can be a wild guess with no clues. | false | Good predictions are sensible and based on clues from the text.
-M3#primary-u06-06-q4@3: A character has been kind all story and finds a lost purse. What is the most sensible prediction? | She will try to return it | She will keep the money | She will throw it away | She will forget about it | Applying the standard result: Character suggests action.
-SA2#primary-u06-06-q5@2,3: Explain how to make and check a prediction while reading a story. | Use clues such as the title, the cover, what has happened so far, the characters' personalities and the type of story to suggest what might happen next. Share it as "I predict … because …". Then read on to check whether you were right, and change your prediction if new clues appear. | Clues ; Explaining ; Checking ; Revising
+- Keep reading and see whether you were right.
+- If new clues appear, update your prediction. This isn't failing; it is what careful readers do.
+- Use what you know about the type of story: in a fairy tale, a third try often succeeds.
+P: In the Key Stage 2 reading test, prediction questions ask what is likely to happen, "using details stated and implied", so you need to give evidence.
+!: Predicting something with no link to the text, such as "Ben goes to the moon." Base your prediction on the clues the writer has given.
+EV: established | Predicting what might happen from details stated and implied is listed in the Years 3 to 6 reading comprehension programme of study.
+T: Prediction | A sensible idea about what will happen next, based on evidence
+T: Implied | Suggested by the writer without being stated directly
+SUM: Predictions use clues from the title, pictures and the story so far.
+SUM: Justify predictions with evidence, and change them as new clues appear.
+SRC: Department for Education, National curriculum in England: English programmes of study, Years 1 to 6 reading comprehension | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Standards and Testing Agency, Key stage 2 English reading test framework, content domain 2e | standard | 2015 | https://www.gov.uk/government/publications/key-stage-2-english-reading-test-framework
+Q: What is a prediction? | A sensible idea about what will happen next, based on clues.
+Q: Should you change a prediction if new clues appear? | Yes; good readers update their predictions.
+M1#primary-u06-06-q1@1: A book is called "The Lost Puppy" and shows a sad girl on the cover. What is it most likely about? | A girl looking for her missing dog | A trip to the seaside | A cooking competition | A space adventure | The title and cover both point to a missing puppy and a sad owner, so a search for the dog is the best prediction.
+M2#primary-u06-06-q2@2: In the Ben story, which clue best supports the prediction that he will open the box? | He was told never to, and now he is alone | It is raining | The box is wooden | The house has stairs | Being alone with something forbidden suggests he will be tempted to open it.
+M2#primary-u06-06-q3@3: Halfway through a story you predicted the hero would win, but she has just lost her map. What should you do? | Rethink the prediction using the new clue | Ignore the new clue and keep the old one | Stop reading the book and choose another | Decide the writer has made a mistake | Good readers update predictions with new evidence. Losing the map might mean a harder journey or a different ending.
+TF1#primary-u06-06-q4@2: A good prediction should be supported by evidence from the text. | true | Predictions should be linked to clues the writer gives, such as what characters are like and what has happened.
+M3#primary-u06-06-q5@3: "Dark clouds gathered as the sailors untied the boat." What does the writer probably want you to predict? | A storm will cause trouble at sea | The sailors will have a calm trip | The boat will sink in harbour | The sailors will go home | Dark clouds are a clue that bad weather is coming, which hints at danger ahead for the sailors.
+SA3#primary-u06-06-q6@2,3: Read: "The key glinted at the bottom of the well. Maya looked at the long rope, then at the darkening sky." Make a prediction and explain your evidence. | Maya will try to climb down the well on the rope to get the key, but it will be hard because night is coming. Evidence: she looks at the key, then the rope, which suggests she is planning to use it; the "darkening sky" hints she is running out of time or that danger is near. | Makes a sensible prediction ; Uses the key and rope as evidence ; Uses the darkening sky ; Explains the link
 
 ## Summarising
 LV: Year 3 to Year 6 · Application
-S: Summarising means picking out the most important ideas and saying them briefly. This lesson explains how to summarise a paragraph, a section or a whole story.
-O: Explain what a summary is
-O: Identify main ideas and leave out less important details
-O: Write a short summary in your own words
-H: What a summary is
-P: A **summary** is a short version of a text that gives the **main ideas** in your **own words**. It leaves out small details, examples and repetition. Summarising shows that you have understood what is most important. The Key Stage 2 reading test asks pupils to summarise main ideas from more than one paragraph (content domain 2c).
-H: Finding main ideas
-- Ask: what is this paragraph mostly about?
-- The **topic sentence**, often the first sentence, may give the main idea.
-- For stories, think about **who**, **where**, the **problem** and how it is **solved**.
-- Use the **"somebody wanted, but, so, then"** frame for stories.
-- Leave out descriptions and details that do not change the main idea.
-H: Writing a summary
-- Keep it short: a sentence for a paragraph, a few sentences for a story.
-- Use your own words rather than copying.
-- Keep events in order.
-- Do not add your own opinions.
-- Check that someone who has not read the text would understand the main points.
-X: Summarising a story.
-> Somebody: Goldilocks.
-> Wanted: to find somewhere to rest in the woods.
-> But: she ate the bears' porridge, broke a chair and slept in a bed.
-> So: when the bears came home, she woke up, saw them and ran away.
-K: A summary gives the main ideas of a text briefly in your own words, leaving out small details; find main ideas using topic sentences or story frames like "somebody wanted, but, so, then", and keep summaries short, in order and without opinions.
-!: Retelling every detail. A summary keeps only the most important ideas.
-EV: established | Summarising is an effective comprehension strategy when explicitly taught.
-T: Summary | A short version of a text giving the main ideas
-T: Main idea | The most important point of a paragraph or text
-T: Topic sentence | A sentence, often the first, that states a paragraph's main idea
-SUM: Main ideas only.
-SUM: Your own words.
-SUM: Short and in order.
-SRC: Education Endowment Foundation, Improving Literacy in Key Stage 2 | guidance | 2021 | https://educationendowmentfoundation.org.uk/education-evidence/guidance-reports/literacy-ks2
-SRC: Standards and Testing Agency, Key stage 2 English reading test framework | standard | 2015 | https://www.gov.uk/government/publications/key-stage-2-english-reading-test-framework
-Q: What is a summary? | A short version of a text giving the main ideas in your own words.
-Q: What is a topic sentence? | A sentence, often the first, that states the main idea of a paragraph.
-M1#primary-u06-07-q1@1: What should a summary include? | The main ideas | Every small detail | Your favourite word only | The page numbers | Applying the standard result: Summaries keep the key points.
-M2#primary-u06-07-q2@2: What should you leave out of a summary? | Small details and examples | The main problem | The main character | The ending | Applying the standard result: Details are left out.
-SEQ1#primary-u06-07-q3@2: Put the "somebody wanted, but, so" frame in order. | Somebody ; Wanted ; But ; So ; Then | The frame follows the story's order.
-M3#primary-u06-07-q4@3: A summary of a 300-word paragraph is 250 words long. What is the problem? | It is too long and includes too much detail | It is too short | It uses too few words from the text | It has no details at all | Applying the standard result: Summaries must be brief.
-SA2#primary-u06-07-q5@2,3: Explain how to summarise a story. | First, work out who the main character is, what they wanted, the problem and how it was solved, perhaps using the "somebody wanted, but, so, then" frame. Then write a few sentences in your own words, keeping events in order and leaving out small details and your own opinions. Check that someone who has not read the story would understand the main points. | Main ideas ; Story frame ; Own words ; Checking
+S: Summarising means giving the main ideas of a text in a few words, leaving out the details. This lesson shows how to pick out the key points of a paragraph or story and put them in your own words.
+O: Identify the main idea of a paragraph or text
+O: Summarise a text in a few sentences in your own words
+O: Explain the difference between a main idea and a detail
+H: Main ideas and details
+P: A **summary** tells the most important points briefly. The **main idea** is what the paragraph or text is mostly about; **details** are extra information, examples and descriptions.
+P: Read: "Hedgehogs are small mammals covered in spines. At night they snuffle through gardens looking for beetles, worms and slugs. In winter, when food is scarce, they hibernate in nests of leaves until spring."
+X: Summarise the paragraph in one sentence.
+> Main points: hedgehogs are spiny mammals; they hunt insects at night; they hibernate in winter.
+> Leave out details such as "snuffle" and "nests of leaves".
+> Summary: Hedgehogs are spiny mammals that feed on small creatures at night and hibernate through the winter.
+K: A summary keeps the main ideas, leaves out details, and uses your own words.
+H: How to summarise
+- Ask: who or what is it about, and what happens or what is the point?
+- For a story, use **Somebody, Wanted, But, So, Then**: who, what they wanted, the problem, what they did, how it ended.
+- Give each paragraph a one-line heading, then join the headings.
+!: Retelling everything. If your summary is nearly as long as the text, cut the examples and descriptions and keep only the key points.
+EV: established | Summarising the main ideas from more than one paragraph is part of the Year 5 and 6 programme of study and a Key Stage 2 reading test domain.
+T: Summary | A short account of the main points of a text
+T: Main idea | What a paragraph or text is mostly about
+SUM: A summary gives the main ideas briefly, in your own words.
+SUM: Leave out details and examples; for stories, try Somebody, Wanted, But, So, Then.
+SRC: Department for Education, National curriculum in England: English programmes of study, Years 3 to 6 reading comprehension | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Standards and Testing Agency, Key stage 2 English reading test framework, content domain 2c | standard | 2015 | https://www.gov.uk/government/publications/key-stage-2-english-reading-test-framework
+Q: What should a summary leave out? | Details, examples and descriptions.
+Q: What does "Somebody, Wanted, But, So, Then" help you do? | Summarise a story.
+M1#primary-u06-07-q1@1: What is the main idea of the hedgehog paragraph? | How hedgehogs live and survive the year | What beetles and worms like to eat | How to build a nest from leaves | Why so many gardens have slugs | The paragraph is mostly about hedgehogs: what they are, how they feed and how they get through winter.
+M2#primary-u06-07-q2@2: Which is the best summary of "Cinderella"? | A badly treated girl goes to a ball with magical help, loses a slipper, and the prince finds and marries her | Cinderella has two stepsisters | A pumpkin turns into a coach at night | The prince is looking for a wife at the ball | A summary covers the beginning, problem and ending in a few words. The others are single details.
+M2#primary-u06-07-q3@3: Which detail would you leave out of a summary of the hedgehog paragraph? | They "snuffle" through gardens | They are mammals | They feed at night | They hibernate in winter | "Snuffle" is a descriptive detail. The other points are key facts about hedgehogs.
+TF1#primary-u06-07-q4@2: A summary should be shorter than the original text. | true | A summary gives just the main points, so it should be much shorter than the text it summarises.
+M3#primary-u06-07-q5@3: A pupil's summary of a one-page story is nearly a page long. What advice is best? | Keep the main events and cut the descriptions | Add more adjectives | Copy the first paragraph | Write it in bullet points of every event | A summary should be brief. Keeping only the main events and leaving out descriptions makes it short and useful.
+SA3#primary-u06-07-q6@2,3: Explain how to summarise a story you know using Somebody, Wanted, But, So, Then. | Example: Goldilocks. Somebody: Goldilocks. Wanted: to rest and eat in a house in the woods. But: it belonged to three bears. So: she tried their porridge, chairs and beds. Then: the bears came home and she ran away. The five parts give the main events in a few lines. | Names the character ; What they wanted ; The problem ; What happened ; The ending
 
 ## The author's choice of language
-LV: Year 4 to Year 6 · Evaluation
-S: Writers choose words carefully to create effects. This lesson explains how to spot and explain powerful language, including adjectives, verbs, similes, metaphors and personification.
-O: Identify powerful word choices in a text
-O: Recognise similes, metaphors and personification
-O: Explain the effect of language on the reader
-H: Word choice
-P: Writers choose words to help readers **picture** things, **feel** emotions or understand characters. **Verbs** can show how something is done: *crept* is different from *stomped*. **Adjectives** describe nouns: a *gloomy* forest feels different from a *sunny* one. Questions about the effect of language are in the Key Stage 2 reading test (content domain 2g: identify how meaning is enhanced through choice of words and phrases).
+LV: Year 3 to Year 6 · Evaluation
+S: Writers choose their words carefully to create pictures, feelings and effects in the reader's mind. This lesson shows how to spot and explain powerful word choices, similes, metaphors and personification.
+O: Identify powerful words and figurative language such as similes, metaphors and personification
+O: Explain the effect of a word or phrase on the reader
+O: Compare the effect of different word choices
+H: Words with power
+P: Writers pick words that do more than one job. "The dog walked" is plain. "The dog **limped**" tells us it is hurt; "the dog **bounded**" tells us it is full of energy. A good answer says what the word makes the reader think, feel or picture.
+X: Explain the effect of "The wind howled around the house."
+> Notice the word "howled": a sound wolves or people in pain make.
+> It makes the wind sound wild, loud and frightening, almost like an animal.
+> Effect: the reader feels the storm is fierce and the house might be in danger.
+K: To explain a word choice, name the word, say what it suggests, and describe the effect on the reader.
 H: Figurative language
-- A **simile** compares using *like* or *as*: "as cold as ice".
-- A **metaphor** says something *is* something else: "The classroom was a zoo."
-- **Personification** gives human qualities to objects or nature: "The wind howled."
-- **Alliteration** repeats starting sounds: "silent, slippery snake".
-- **Onomatopoeia** uses words that sound like their meaning: *crash*, *buzz*.
-H: Explaining effects
-- Name the technique, quote the words and explain the **effect**.
-- Ask: what picture does it create? How does it make me feel?
-- Think about why the writer chose this word rather than a simpler one.
-- Robert Louis Stevenson, in "From a Railway Carriage" (1885), writes "Faster than fairies, faster than witches": the repetition and alliteration create a sense of speed.
-X: Explaining a word choice.
-> Sentence: "The old door groaned as Ella pushed it open."
-> Technique: personification, because doors cannot really groan.
-> Effect: it makes the door sound old and creepy.
-> It builds a feeling of suspense, as if something unpleasant is behind it.
-K: Writers choose verbs, adjectives and figurative language such as similes, metaphors, personification, alliteration and onomatopoeia to create pictures and feelings; to explain language, name the technique, quote it and explain its effect on the reader.
-!: Only naming a technique. You must also explain its effect on the reader.
-EV: established | Analysing authors' word choices is part of the national curriculum for reading in Key Stage 2.
-T: Simile | A comparison using like or as
-T: Metaphor | Saying something is something else
-T: Personification | Giving human qualities to non-human things
-SUM: Words are chosen carefully.
-SUM: Name, quote, explain.
-SUM: Think about effect.
-SRC: Stevenson R. L., A Child's Garden of Verses, Longmans, Green | primary | 1885
-SRC: Standards and Testing Agency, Key stage 2 English reading test framework | standard | 2015 | https://www.gov.uk/government/publications/key-stage-2-english-reading-test-framework
-Q: What is a simile? | A comparison using like or as.
-Q: What three steps help explain language? | Name the technique, quote the words and explain the effect.
-M1#primary-u06-08-q1@1: "As brave as a lion" is an example of what? | A simile | A metaphor | Onomatopoeia | Alliteration | Applying the standard result: It uses "as".
-M2#primary-u06-08-q2@2: "The trees whispered in the breeze." Which technique is this? | Personification | Simile | Onomatopoeia | Rhyme | Applying the standard result: Trees cannot really whisper.
-MATCH2#primary-u06-08-q3@2: Match each example to its technique. | Buzz = Onomatopoeia ; Silent slippery snake = Alliteration ; The sun smiled = Personification ; Her eyes were stars = Metaphor | Each creates a different effect.
-M3#primary-u06-08-q4@3: Why might a writer use "stomped" instead of "walked"? | It shows the character is angry or heavy-footed | It is a shorter word | It rhymes with the next line | It has no special meaning | Applying the standard result: Verbs show how.
-SA3#primary-u06-08-q5@2,3: Explain the effect of the sentence "The storm roared like a hungry lion." | The writer uses a simile comparing the storm to a hungry lion, and the verb "roared" suggests a loud, frightening noise. The comparison makes the storm seem powerful, wild and dangerous, as if it might attack. This creates a sense of fear and tension for the reader. | Technique ; Verb choice ; Picture created ; Feeling for reader
+- **Simile**: compares using "like" or "as": "as cold as ice", "ran like the wind".
+- **Metaphor**: says something **is** something else: "The classroom was a zoo."
+- **Personification**: gives human qualities to something not human: "The trees whispered."
+- **Alliteration**: repeats the first sound: "slippery, slimy snake".
+- **Onomatopoeia**: words that sound like their meaning: buzz, crash, sizzle.
+P: Writers also choose the length of sentences. A very short sentence after long ones can create shock or tension: "Then the lights went out."
+!: Just naming a technique: "This is a simile." Always explain the effect: what it makes the reader picture or feel, and why the writer chose it.
+EV: established | Identifying and explaining how meaning is enhanced through choice of words and phrases is a content domain of the Key Stage 2 English reading test.
+T: Simile | A comparison using "like" or "as"
+T: Personification | Describing a non-human thing as if it had human qualities
+SUM: Writers choose words for their effect on the reader.
+SUM: Name the word or technique, say what it suggests, and explain the effect.
+SRC: Department for Education, National curriculum in England: English programmes of study, Years 3 to 6 reading comprehension | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Standards and Testing Agency, Key stage 2 English reading test framework, content domain 2g | standard | 2015 | https://www.gov.uk/government/publications/key-stage-2-english-reading-test-framework
+Q: What is a metaphor? | Saying something is something else, such as "Her smile was sunshine."
+Q: Give an example of onomatopoeia. | buzz, bang, splash, crash.
+M1#primary-u06-08-q1@1: Which is a simile? | Her eyes sparkled like stars | Her eyes were stars | The stars winked at her | Silver stars shone softly | A simile compares using "like" or "as". The second is a metaphor, the third personification and the last alliteration.
+M2#primary-u06-08-q2@2: What does "crept" suggest in "The cat crept towards the bird"? | It moved slowly and quietly so as not to be noticed | It moved fast and noisily | It was tired | It was playing | "Crept" suggests careful, secret movement, which builds tension as the cat stalks the bird.
+M2#primary-u06-08-q3@2: "The old car coughed and spluttered up the hill." What technique is used? | Personification | Simile | Alliteration only | Rhyme | Coughing and spluttering are things people do, so the car is described as if it were a tired old person.
+TF2#primary-u06-08-q4@3: Saying "this is a metaphor" is enough to explain an author's word choice. | false | You must also explain the effect: what the metaphor makes the reader picture or feel.
+M3#primary-u06-08-q5@3: Which word makes "The children ___ into the playground" sound the most excited? | burst | walked | went | moved | "Burst" suggests sudden energy and excitement, like something that can't be held in. The others are neutral.
+SA3#primary-u06-08-q6@2,3: Explain the effect of the metaphor "The playground was an ocean of noise." | The metaphor says the playground was an ocean, which is huge, deep and never still. It suggests the noise was enormous and came from every direction, so loud you could drown in it. It helps the reader imagine how overwhelming the playground felt. | Identifies the metaphor ; Says what an ocean suggests ; Links it to the noise ; Effect on the reader
 
 ## Fiction and non-fiction
-LV: Year 2 to Year 4 · Foundation
-S: Texts can be made-up stories or factual writing. This lesson explains the differences between fiction and non-fiction, their features and how to read each.
-O: Distinguish fiction from non-fiction
-O: Identify features of common non-fiction texts
-O: Adapt how you read for different types of text
-H: Fiction and non-fiction
-P: **Fiction** is writing that is **made up** by the author, such as stories, fairy tales and novels. It has characters, settings and a plot. **Non-fiction** gives **facts** and true information about the real world, such as information books, instructions, newspaper reports, recipes and biographies. Some texts mix both: historical fiction tells a made-up story in a real past setting.
-H: Features
-- **Fiction**: characters, a setting, a problem and a resolution; often told in chapters.
-- **Information texts**: headings, subheadings, diagrams, captions, glossaries and facts.
-- **Instructions**: a list of things you need, numbered steps and **bossy** (imperative) verbs like *mix* and *cut*.
-- **Newspaper reports**: a headline, who, what, where, when and why, and quotations.
-- **Biographies**: a true account of someone's life, usually in time order.
-H: Reading each type
-- Fiction is usually read from start to finish.
-- Non-fiction can be **dipped into** using contents pages and indexes.
-- Ask whether a text is trying to inform, instruct, entertain or persuade.
-- Check facts in non-fiction by comparing sources.
-X: Two texts about foxes.
-> Text A: "Fern the fox crept through the moonlit garden, hoping to find her lost cub."
-> Text B: "Red foxes are found across the UK. They mainly hunt at night."
-> Text A is fiction: it has a named character and a story.
-> Text B is non-fiction: it gives facts.
-K: Fiction is made up and has characters, settings and plots, while non-fiction gives facts using features such as headings, diagrams, glossaries, numbered steps and headlines; fiction is usually read in order, and non-fiction can be dipped into using contents pages and indexes.
-!: Thinking every book with pictures is fiction. Many information books have photographs and diagrams.
-EV: established | Recognising text types and their features supports comprehension.
-T: Fiction | Writing that is made up by the author
-T: Non-fiction | Writing that gives facts and true information
-T: Imperative verb | A "bossy" verb that gives an instruction
-SUM: Fiction is made up.
-SUM: Non-fiction gives facts.
-SUM: Read each type differently.
-SRC: Department for Education, National curriculum in England: English programmes of study | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
-SRC: Lewis M. and Wray D., Writing Frames: Scaffolding Children's Non-fiction Writing, University of Reading | secondary | 1996
-Q: What is non-fiction? | Writing that gives facts and true information.
-Q: What is an imperative verb? | A "bossy" verb that gives an instruction, such as mix or cut.
-M1#primary-u06-09-q1@1: Which is non-fiction? | A recipe | A fairy tale | A made-up adventure story | A poem about a dragon | Applying the standard result: Recipes give real instructions.
-M2#primary-u06-09-q2@2: Which feature is usually found in instructions? | Numbered steps | A villain | A happy ending | Speech marks for characters | Applying the standard result: Steps show the order.
-MATCH1#primary-u06-09-q3@2: Match each text type to a feature. | Instructions = Numbered steps ; Newspaper report = Headline ; Information book = Glossary ; Story = Characters and plot | Text types have typical features.
-M3#primary-u06-09-q4@3: A story about a real Victorian chimney sweep includes made-up characters. What type of text is this? | Historical fiction | A biography | Instructions | A dictionary | It mixes a real setting with a made-up story.
-SA2#primary-u06-09-q5@1,2: Explain the differences between fiction and non-fiction, with examples. | Fiction is made up by the author and has characters, settings and a plot, such as a fairy tale or novel. Non-fiction gives facts about the real world, such as information books, instructions, newspaper reports and biographies, and uses features like headings, diagrams, numbered steps and glossaries. Fiction is usually read from start to finish, while non-fiction can be dipped into. | Fiction ; Non-fiction ; Features ; Reading differently
+LV: Year 1 to Year 6 · Foundation
+S: Fiction is made-up writing such as stories; non-fiction gives real information. This lesson shows the features of each, the common types of non-fiction, and how to read each kind in the right way.
+O: Tell the difference between fiction and non-fiction
+O: Identify features of non-fiction texts such as headings, captions and glossaries
+O: Explain how you would read a non-fiction book differently from a story
+H: Made up or real?
+P: **Fiction** is invented by the writer: stories, fairy tales, fantasy, mysteries. It has characters, a setting and a plot. **Non-fiction** gives true information or instructions: information books, recipes, newspapers, biographies, letters.
+K: Fiction tells an invented story; non-fiction gives real information and has features that help you find it quickly.
+H: Features of non-fiction
+- **Contents page**: lists the chapters at the front.
+- **Index**: an alphabetical list of topics at the back, with page numbers.
+- **Glossary**: explains special words.
+- **Headings and subheadings**: show what each section is about.
+- **Pictures, diagrams and captions**: show and explain information.
+- **Fact boxes** and **bullet points**: give key facts quickly.
+X: You want to find out what bees eat in an information book about insects. What should you do?
+> You don't need to read it from the start, as you would a story.
+> Look in the index under "bees", or check the contents page.
+> Turn to that page and scan the headings for "food" or "diet".
+P: Types of non-fiction include **recounts** (what happened), **instructions** (how to), **explanations** (how or why), **reports** (facts about a topic), **persuasive** texts (trying to change your mind), and **discussions** (two sides of an argument).
+!: Thinking everything in a book with facts is true. Non-fiction can be out of date or biased, so check who wrote it and when.
+EV: established | Reading a range of fiction and non-fiction and recognising their features is part of every year group's reading programme of study.
+T: Fiction | Writing about imaginary people and events
+T: Index | An alphabetical list at the back of a book showing which pages topics are on
+SUM: Fiction is invented; non-fiction gives real information.
+SUM: Use contents pages, indexes, headings and glossaries to find information in non-fiction.
+SRC: Department for Education, National curriculum in England: English programmes of study, Years 1 to 6 reading comprehension | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: BBC Bitesize, KS2 English: fiction and non-fiction | secondary | 2026 | https://www.bbc.co.uk/bitesize/primary
+Q: Where is the index in a book? | At the back.
+Q: What does a glossary do? | Explains the meaning of special words used in the book.
+M1#primary-u06-09-q1@1: Which of these is non-fiction? | A recipe for pancakes | A fairy tale about a dragon | A story about talking animals | A poem about a magic castle | A recipe gives real instructions, so it is non-fiction. The others are invented.
+M2#primary-u06-09-q2@2: Where would you look to find what the word "pollen" means in a science book? | The glossary | The blurb | The title page | The front cover | A glossary explains special words used in the book, like "pollen".
+M2#primary-u06-09-q3@3: Why don't you usually read an information book from cover to cover? | You can use the contents and index to find what you need | Information books have no beginning | The pages are in a random order | Only the last chapter is useful | Non-fiction is organised so you can go straight to the part you need using the contents page, index and headings.
+TF1#primary-u06-09-q4@1: An index is arranged in alphabetical order. | true | An index lists topics from A to Z with page numbers, so you can find a topic quickly.
+M3#primary-u06-09-q5@3: A leaflet says "Our toothpaste is the best in the world! Buy it today!" What type of non-fiction is this? | Persuasive | Instructions | Recount | Explanation | It tries to make you buy something, using strong opinions and commands, so it is persuasive writing.
+SA3#primary-u06-09-q6@3: Explain three ways a non-fiction book helps readers find information quickly. | The contents page at the front lists chapters so you can go to the right section. The index at the back lists topics alphabetically with page numbers. Headings and subheadings show what each part is about, so you can scan for the right section. Other features include glossaries, captions and fact boxes. | First feature and how it helps ; Second feature ; Third feature
 
 ## Poetry
-LV: Year 2 to Year 6 · Application
-S: Poems use sound, rhythm and imagery to create meaning and feeling. This lesson explains rhyme, rhythm, verses and imagery, and how to read and respond to poems.
-O: Identify features of poems, including rhyme, rhythm and verses
-O: Read poems aloud with expression
-O: Explain how a poem creates meaning and feeling
-H: Features of poems
-P: **Poems** are written in **lines** and often grouped into **verses** or **stanzas**. Many poems use **rhyme**, where words end with the same sound, such as *cat* and *hat*, and **rhythm**, a pattern of strong and weak beats. Poems often use **imagery**, language that creates pictures in your mind, and techniques like similes and alliteration. Some poems do not rhyme at all; these are called **free verse**.
-H: Types of poem
-- **Narrative poems** tell a story, such as Robert Browning's "The Pied Piper of Hamelin" (1842).
-- **Haiku** have three lines with five, seven and five syllables.
-- **Limericks** are funny five-line poems with an AABBA rhyme pattern, popularised by Edward Lear.
-- **Shape poems** are arranged in the shape of their subject.
-- **Nonsense poems** play with words, such as Lewis Carroll's "Jabberwocky" (1871).
-H: Reading poems
-- Read the poem **aloud** to hear its sounds and rhythm.
-- Pause at line breaks and punctuation.
-- Think about the **mood**: is it happy, sad, spooky or funny?
-- Ask what pictures the poem creates and which words are most powerful.
-- Learning poems by heart and performing them is part of the national curriculum.
-X: A haiku.
-> Line 1: "Cold morning sunrise" has 5 syllables.
-> Line 2: "frost glitters on every leaf" has 7 syllables.
-> Line 3: "birds sing to the sky" has 5 syllables.
-> The imagery creates a calm, bright winter picture.
-K: Poems use lines, verses, rhyme, rhythm and imagery, and include types such as narrative poems, haiku, limericks, shape poems and nonsense poems; reading aloud, noticing mood and explaining powerful words help you understand and enjoy them.
-!: Thinking all poems must rhyme. Free verse and haiku often do not rhyme.
-EV: established | Reading, learning and performing poetry is part of the English national curriculum.
-T: Stanza | A group of lines in a poem, also called a verse
-T: Rhyme | Words that end with the same sound
-T: Haiku | A three-line poem with five, seven and five syllables
-SUM: Lines, verses, rhyme and rhythm.
-SUM: Many types of poem.
-SUM: Read aloud, feel the mood.
-SRC: Lear E., A Book of Nonsense | primary | 1846
-SRC: Carroll L., Through the Looking-Glass, and What Alice Found There, Macmillan | primary | 1871
-SRC: Department for Education, National curriculum in England: English programmes of study | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
-Q: What is a stanza? | A group of lines in a poem, also called a verse.
-Q: How many lines does a limerick have? | Five.
-M1#primary-u06-10-q1@1: Which pair of words rhyme? | Cat and hat | Dog and cup | Sun and tree | Fish and car | Applying the standard result: They end with the same sound.
-NUM2#primary-u06-10-q2@2: A haiku has three lines with 5, 7 and 5 syllables. How many syllables does it have in total? | 17 | 0 | syllables | 5 + 7 + 5 = 17 syllables in a haiku.
-M2#primary-u06-10-q3@3: Who popularised limericks? | Edward Lear | Lewis Carroll | Beatrix Potter | Robert Browning | Applying the standard result: Lear wrote A Book of Nonsense.
-M3#primary-u06-10-q4@3: Why should you read a poem aloud? | To hear its sounds, rhyme and rhythm | To finish it faster | Because poems cannot be read silently | To avoid thinking about meaning | Applying the standard result: Poems are made for the ear.
-SA2#primary-u06-10-q5@2,3: Explain how you would read and respond to a new poem. | Read the poem aloud to hear its rhyme and rhythm, pausing at line breaks and punctuation. Think about the mood it creates and the pictures in your mind, and notice powerful words and techniques such as similes or alliteration. Then explain how these choices make you feel and what you think the poem is about. | Reading aloud ; Mood and imagery ; Techniques ; Response
+LV: Year 1 to Year 6 · Application
+S: Poems use rhythm, rhyme, sound and imagery to create feelings and pictures in very few words. This lesson shows how to read, perform and understand poems, and the features to look for, from rhyme and rhythm to verses and kennings.
+O: Identify features of poetry such as rhyme, rhythm, verses and repetition
+O: Perform a poem aloud with expression and understanding
+O: Explain how a poet's choices create mood or effect
+H: What makes a poem
+- **Rhyme**: words that end with the same sound: cat, hat.
+- **Rhythm**: the beat of the words, like a drum.
+- **Verse** (or stanza): a group of lines, like a paragraph in a poem.
+- **Repetition**: repeating words or lines for effect.
+- **Imagery**: words that create pictures in your mind, often with similes and metaphors.
+P: Poems come in many forms. A **haiku** has three lines of 5, 7 and 5 syllables. A **limerick** is a funny five-line poem with the rhyme pattern AABBA. A **kenning** describes something in two-word phrases: a cat might be a "mouse-catcher" or "fire-warmer". **Free verse** has no fixed rhyme or rhythm.
+K: Poets choose sounds, rhythms and images carefully; ask how each choice makes you feel and what it helps you picture.
+H: Reading and performing poems
+X: Read this verse and describe its mood: "Softly, slowly, snow is falling, / Hushing hills and fields asleep."
+> Notice the sounds: soft "s" and "h" sounds repeated (sibilance and alliteration).
+> Notice the words: "softly", "slowly", "hushing", "asleep".
+> The mood is calm and peaceful, like a quiet winter day.
+P: Learning a poem by heart and performing it, using tone, volume and pauses, is part of the national curriculum from Year 1 to Year 6.
+!: Thinking all poems must rhyme. Many great poems don't; rhythm, imagery and word choice matter just as much.
+EV: established | Learning poems by heart and reciting them is a statutory part of the English programme of study in every key stage.
+T: Verse | A group of lines in a poem, also called a stanza
+T: Rhythm | The pattern of beats in a line of poetry
+SUM: Poems use rhyme, rhythm, repetition and imagery to create effects.
+SUM: Read poems aloud, notice how sounds and images create mood, and learn some by heart.
+SRC: Department for Education, National curriculum in England: English programmes of study, Years 1 to 6 reading comprehension (poetry) | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Oak National Academy, primary English: poetry | secondary | 2026 | https://www.thenational.academy/
+Q: How many syllables are in each line of a haiku? | 5, 7 and 5.
+Q: What is a verse? | A group of lines in a poem.
+M1#primary-u06-10-q1@1: Which pair of words rhyme? | moon and spoon | moon and sun | spoon and fork | moon and mean | Moon and spoon end with the same sound, "oon", so they rhyme.
+M2#primary-u06-10-q2@2: Which is a kenning for a dog? | tail-wagger | barking dog | a dog is loyal | the dog ran | A kenning describes something in a two-word phrase, often noun-verb-er: "tail-wagger".
+M2#primary-u06-10-q3@3: Which feature is a limerick known for? | It is funny and has five lines rhyming AABBA | It has three lines of 5, 7 and 5 syllables | It never rhymes | It is always very sad | A limerick is a humorous five-line poem. The 5-7-5 pattern is a haiku.
+TF2#primary-u06-10-q4@1: A poem must rhyme to be a poem. | false | Free verse and many other poems don't rhyme. Rhythm, imagery and word choice also make writing poetic.
+M3#primary-u06-10-q5@3: In the snow verse, why might the poet repeat soft "s" and "h" sounds? | To make the poem sound quiet and calm like falling snow | To make it sound angry | Because the poem has to rhyme | To make it easier to spell | The soft, hushing sounds match the quiet of snow falling, creating a peaceful mood.
+SA3#primary-u06-10-q6@2,3: Explain how you would perform a poem about a storm to bring out its meaning. | Read the loud, wild parts with a strong, louder voice and faster pace, and quieter parts more softly. Pause at the ends of verses and at dramatic moments. Stress the onomatopoeia like "crash" and "roar". Use your face and gestures to show the mood. Knowing what the poem means helps choose the right tone. | Varies volume ; Varies pace and pauses ; Emphasises key words or sounds ; Links performance to meaning
 
 ## Reading a play
-LV: Year 3 to Year 6 · Application
-S: Plays are written to be performed. This lesson explains the features of a playscript and how to read and perform one.
-O: Identify the features of a playscript
-O: Explain the purpose of stage directions
-O: Read a playscript aloud with expression
-H: Playscripts
-P: A **play** is a story written to be **performed** by actors on a stage. A **playscript** sets out what the actors say and do. Instead of speech marks, each line begins with the **character's name**, followed by what they say. Plays are often divided into **acts** and **scenes**. The cast list at the start shows all the characters.
-H: Features
-- **Character names** on the left, often followed by a colon.
-- **Dialogue**: the words the characters speak.
-- **Stage directions**: instructions in brackets or italics telling actors how to speak or move, such as *(whispering)* or *(exits left)*.
-- **Scene settings**: where and when a scene takes place.
-- A **narrator** sometimes explains events to the audience.
-H: Reading and performing
-- Read only your character's lines, not the names or stage directions.
-- Follow stage directions to show feelings and actions.
-- Use expression, tone and volume to bring the character to life.
-- Face the audience and speak clearly.
-- Shakespeare's plays, such as *A Midsummer Night's Dream*, are often adapted for children.
-X: A short scene.
-> SCENE 1: A dark forest at night.
-> JACK: (nervously) Did you hear that noise?
-> LILY: (laughing) It's only an owl, Jack!
-> The stage directions tell Jack to sound nervous and Lily to laugh.
-K: Playscripts are written to be performed, with character names, dialogue without speech marks, stage directions in brackets or italics, and scene settings; when performing, read only your lines, follow stage directions and use expression and volume.
-!: Reading the stage directions aloud as part of the lines. Stage directions tell actors what to do; they are not spoken.
-EV: established | Drama and performance activities support pupils' spoken language and reading.
-T: Playscript | The written text of a play
-T: Stage direction | An instruction telling actors how to speak or move
-T: Scene | A section of a play set in one place and time
-SUM: Written to be performed.
-SUM: Names, dialogue, directions.
-SUM: Do not read directions aloud.
-SRC: Shakespeare W., A Midsummer Night's Dream, Folger Shakespeare Library edition | primary | 1600 | https://www.folger.edu/explore/shakespeares-works/a-midsummer-nights-dream/
-SRC: Department for Education, National curriculum in England: English programmes of study | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+LV: Year 2 to Year 6 · Application
+S: A play script is written to be performed. It looks different from a story: it has a cast list, character names, stage directions and no speech marks. This lesson shows how to read and perform a play script.
+O: Identify the features of a play script
+O: Read a part in a play script with expression, following stage directions
+O: Explain how a play script differs from a story
+H: Features of a play script
+- **Title** and **cast list**: who is in the play.
+- **Scenes**: the play is split into scenes, often with a new setting.
+- **Character names** on the left, followed by what they say. **No speech marks** are used.
+- **Stage directions**, usually in brackets or italics, tell actors how to speak or move: (whispering), (she slams the door).
+K: In a play script, the character's name shows who speaks, there are no speech marks, and stage directions tell actors how to say and do things.
+H: Reading a script
+X: Read this line aloud: GRACE: (nervously) Is anyone there? (She tiptoes forward.)
+> GRACE is the character, so you don't say her name aloud when performing.
+> "(nervously)" tells you how to say the line: quietly, a little shaky.
+> "(She tiptoes forward.)" is an action, so you do it rather than say it.
+P: In a story, the narrator tells you what characters say and feel, with speech marks and words like "said". In a play, actors show this through their voices and actions, guided by the stage directions.
+P: Some scripts begin with a narrator's part or a description of the setting, such as "Scene 1: a dark forest at night", to help the audience and the people staging the play.
+!: Reading the stage directions or character names aloud as if they were lines. They are instructions for the actors, not words to say.
+EV: established | Preparing play scripts to read aloud and to perform, showing understanding through intonation, tone and volume, is part of the Years 3 to 6 reading programme of study.
+T: Play script | Writing for a play, showing what each character says and does
+T: Stage direction | An instruction in a script telling actors how to speak or move
+SUM: Play scripts use character names, no speech marks, scenes and stage directions.
+SUM: Follow the stage directions to perform, but don't say them aloud.
+SRC: Department for Education, National curriculum in England: English programmes of study, Years 3 to 6 reading comprehension | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: BBC Bitesize, KS2 English: play scripts | secondary | 2026 | https://www.bbc.co.uk/bitesize/primary
+Q: Does a play script use speech marks? | No.
 Q: What is a stage direction? | An instruction telling actors how to speak or move.
-Q: How does a playscript show who is speaking? | The character's name is written before their lines.
-M1#primary-u06-11-q1@1: What does a playscript use instead of speech marks? | The character's name before each line | Question marks only | Bullet points | Pictures | Applying the standard result: Names show speakers.
-M2#primary-u06-11-q2@2: What does "(exits left)" tell an actor? | To leave the stage on the left | To say the words "exits left" | To sit down | To laugh loudly | Applying the standard result: It is a stage direction.
-TF1#primary-u06-11-q3@2: Stage directions should be read aloud as part of a character's lines. | false | Stage directions tell actors what to do; they are not spoken.
-M3#primary-u06-11-q4@3: A script says "BEN: (angrily) Give it back!" How should Ben's actor say the line? | In an angry voice | In a quiet, happy voice | Without any expression | Very slowly and sleepily | Applying the standard result: Follow the direction.
-SA2#primary-u06-11-q5@2,3: Explain the features of a playscript and how they help actors. | A playscript lists the characters, divides the play into scenes with settings, and shows each character's name before their dialogue instead of using speech marks. Stage directions, in brackets or italics, tell actors how to speak and move, such as whispering or exiting. These features help actors know when to speak, what to say and how to perform. | Character names ; Dialogue ; Stage directions ; Scenes
+M1#primary-u06-11-q1@1: In a play script, where is the name of the character who is speaking? | At the start of the line, before their words | Inside speech marks after the words | In a list at the end of the play | In the title at the top of the page | Each line starts with the character's name, then what they say. Speech marks aren't used.
+M2#primary-u06-11-q2@2: In "TOM: (shouting) Come back!", how should Tom say his line? | Loudly | Quietly | Sadly | Slowly | The stage direction "(shouting)" tells the actor to say "Come back!" loudly.
+M2#primary-u06-11-q3@3: How does a play script show a character's feelings without a narrator? | Through stage directions and how the actor speaks | Through speech marks around each line | Through a glossary at the back | Through the titles of each chapter | There is no narrator, so stage directions such as "(angrily)" and the actor's voice and actions show feelings.
+TF1#primary-u06-11-q4@1: You should read stage directions aloud when performing a play. | false | Stage directions are instructions for the actors, so you follow them rather than say them.
+M3#primary-u06-11-q5@3: Which line is set out correctly as a play script? | MUM: (calling upstairs) Dinner's ready! | "Dinner's ready!" called Mum. | Mum called, "Dinner's ready!" | MUM: "Dinner's ready!" she called. | A script has the name, a stage direction in brackets, then the words with no speech marks. The others are written as story dialogue.
+SA3#primary-u06-11-q6@3: Explain two differences between a story and a play script. | A story has a narrator who describes what happens, while a play has no narrator and relies on actors. A story uses speech marks and words like "said", while a script puts the character's name before their words with no speech marks. A script also uses stage directions to show actions and feelings. | Narrator versus no narrator ; Speech marks versus character names ; Mentions stage directions
 
 ## Answering comprehension questions
-LV: Year 5 to Year 6 · Evaluation
-S: Comprehension questions test different reading skills. This lesson explains the main types of question, how to read questions carefully and how to write good answers.
-O: Identify different types of comprehension question
-O: Use the marks and wording to plan answers
-O: Write clear answers supported by evidence
+LV: Year 2 to Year 6 · Evaluation
+S: Comprehension questions test how well you understand a text. This lesson brings together all the reading skills and shows how to tackle different question types, including how many marks to aim for, and how to use evidence in longer answers.
+O: Recognise different types of comprehension question
+O: Answer questions using evidence from the text, matching the marks available
+O: Explain how to plan a longer answer that compares or explains
 H: Types of question
-P: Comprehension questions check how well you understand a text. The Key Stage 2 reading test covers areas including **vocabulary**, **retrieval**, **summarising**, **inference**, **prediction**, **explaining** how the text is organised and **language** choices. Some questions ask you to tick a box, circle a word or draw lines to match. Others ask you to write a short or longer answer.
-H: Reading the question
-- **Underline the key words** in the question.
-- Check **what kind** of answer is needed: a word, a phrase, a quotation or an explanation.
-- Look at the **marks**: a 3-mark question needs more detail than a 1-mark question.
-- Words like "explain", "give two" or "use evidence" tell you what to include.
-- Find the right **part of the text** before answering.
+- **Retrieval**: find a fact ("Where…?", "Find and copy…").
+- **Vocabulary**: explain a word ("What does … mean?").
+- **Inference**: work out what isn't said ("How do you know…?").
+- **Prediction**: what will happen next.
+- **Summary**: main ideas.
+- **Language**: explain the effect of words.
+- **Comparison**: how things are alike or different.
+K: Read the question carefully, decide what type it is, find evidence in the text, and match the length of your answer to the marks.
 H: Writing good answers
-- Answer the question directly.
-- Use **evidence** from the text for inference questions.
-- Use point–evidence–explain for longer answers.
-- Spell words copied from the text correctly.
-- Check your answers if you have time, and do not leave questions blank.
-X: A 2-mark inference question.
-> Question: "How do you know Sam was scared? Give two pieces of evidence."
-> The key words are "scared" and "two pieces of evidence".
-> Answer: "His legs were shaking" and "he hid behind the curtain".
-> Two marks need two separate pieces of evidence.
-K: Comprehension questions test skills such as vocabulary, retrieval, summarising, inference, prediction and language; read questions carefully, underline key words, use the marks to judge how much to write, find evidence in the text and answer directly.
-!: Giving one point for a two-mark question. Use the marks to decide how much to write.
-EV: established | The Key Stage 2 reading test assesses a defined set of reading skills set out in its test framework.
+P: Look at the **marks**. A 1-mark question needs a short answer. A 3-mark question needs a point, evidence and explanation, sometimes more than once.
+X: Answer this 3-mark question: "How does the writer show that the forest is frightening?"
+> Point: the writer makes the forest sound dangerous and dark.
+> Evidence: "twisted branches clawed at her hair" and "the silence was thick".
+> Explain: "clawed" makes the branches sound like monsters attacking, and "thick" silence makes it feel heavy and threatening.
+- Underline key words in the question.
+- Go back to the text: don't answer from memory.
+- Check your answer actually answers the question asked.
+!: Writing a long answer for a 1-mark question and a short one for a 3-mark question. Let the marks guide how much you write.
+EV: established | The Key Stage 2 reading test uses questions across eight content domains, from word meaning and retrieval to inference, prediction, summary and comparison.
 T: Comprehension | Understanding what you read
-T: Key words | The important words in a question
-T: Evidence | Details or quotations from a text supporting an answer
-SUM: Know the question types.
-SUM: Read questions carefully.
-SUM: Use evidence and marks.
+T: Point, Evidence, Explain | A way to structure an answer: make a point, quote the text, explain how it supports the point
+SUM: Identify the question type and find evidence in the text.
+SUM: Match the length of your answer to the marks, and use Point, Evidence, Explain for longer answers.
 SRC: Standards and Testing Agency, Key stage 2 English reading test framework | standard | 2015 | https://www.gov.uk/government/publications/key-stage-2-english-reading-test-framework
-SRC: Standards and Testing Agency, Key stage 2 English reading test mark schemes | standard | 2024 | https://www.gov.uk/government/collections/national-curriculum-assessments-practice-materials
-Q: Why should you underline key words in a question? | To understand exactly what the question is asking.
-Q: What do the marks tell you? | How much detail or how many points the answer needs.
-M1#primary-u06-12-q1@1: What does "give two" in a question mean? | Write two separate points | Write one long sentence | Draw two pictures | Write the word "two" | Applying the standard result: Two points are needed.
-M2#primary-u06-12-q2@2: A question is worth 3 marks. What does this suggest? | A more detailed answer is needed | A one-word answer is enough | It can be skipped | Only drawing is needed | Applying the standard result: More marks need more detail.
-M2#primary-u06-12-q3@3: What should an inference answer include? | Evidence from the text | Only your opinion | The page number | A guess with no reasons | Applying the standard result: Evidence supports inferences.
-M3#primary-u06-12-q4@3: A pupil writes a long answer to a 1-mark retrieval question and runs out of time. What should they do next time? | Match the length of answers to the marks | Write even more for every question | Skip all retrieval questions | Never check the marks | Applying the standard result: Marks guide length.
-SA2#primary-u06-12-q5@2,3: Explain how to answer reading comprehension questions well. | Read each question carefully, underline the key words and check what kind of answer is needed. Use the marks to decide how much to write, and find the right part of the text before answering. For inference and explanation questions, include evidence from the text and explain it. Answer directly, check answers if there is time and avoid leaving any blank. | Reading the question ; Using marks ; Evidence ; Checking
+SRC: Department for Education, National curriculum in England: English programmes of study, Years 2 to 6 reading comprehension | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+Q: What should the number of marks tell you? | How much to write.
+Q: What type of question begins "Find and copy"? | A retrieval question.
+M1#primary-u06-12-q1@1: "Find and copy one word that shows the girl was tired." What type of question is this? | Retrieval | Prediction | Summary | Comparison | "Find and copy" asks you to retrieve an exact word from the text.
+M2#primary-u06-12-q2@2: A question is worth 3 marks. What does that suggest? | You need a point, evidence and explanation | One word is enough | You should copy the whole paragraph | You can skip it | More marks need more developed answers, usually with evidence and an explanation of how it supports the point.
+M2#primary-u06-12-q3@2: "Why do you think Sam hid the letter?" What type of question is this? | Inference | Retrieval | Vocabulary | Summary | The text probably doesn't say why directly, so you must work it out from clues, which is inference.
+TF2#primary-u06-12-q4@3: You should always go back to the text to find evidence rather than answering from memory. | true | Answers must be based on the text, and checking it helps you quote accurately and avoid mistakes.
+M3#primary-u06-12-q5@3: A pupil answers "How does the writer make the beach sound peaceful?" with "The beach is peaceful." What is missing? | Evidence from the text and an explanation | A full stop | A title | The word "because" at the start | The answer repeats the question. It needs quotes, such as "waves whispered", and an explanation of their effect.
+SA3#primary-u06-12-q6@2,3: Explain how you would answer a 3-mark question: "How does the writer show that Leo is brave?" | Underline "brave" and "show". Go back to the text and find two or three moments where Leo acts bravely, such as stepping in front of his sister or speaking up. For each, make a point, quote the evidence and explain how it shows bravery. Check the answer covers the 3 marks. | Identifies key words ; Finds evidence in the text ; Uses point, evidence, explain ; Matches the answer to the marks
 `;

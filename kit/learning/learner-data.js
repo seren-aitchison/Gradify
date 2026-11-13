@@ -10,6 +10,7 @@ import { evidenceFromAttempts, sixProfiles, revisionQueue, topicProfiles } from 
 import { weaknessTargets } from "./targets.js";
 import { conceptGraph } from "./concepts.js";
 import { isDue } from "./srs.js";
+import { minutesPerLesson } from "../course/lesson-time.js";
 import { paceFor } from "./pace.js";
 
 const DAY = 864e5;
@@ -71,7 +72,9 @@ export function courseSummary(cfg, S = {}, { now = Date.now(), profile = null } 
   const remaining = lessons.filter((l) => written(l.unit) && !S.done?.[l.id]).length;
   const examDate = profile?.site === cfg.site ? profile?.exam_date || null : null;
   const prior = profile?.learner?.prior?.[cfg.site] || "new";
-  const pace = paceFor({ examDate, dailyMinutes: profile?.daily_minutes || 20, remaining, dueCards, dueQuestions: revisit.length, prior, now });
+  const perLesson = minutesPerLesson(S);
+  const pace = paceFor({ examDate, dailyMinutes: profile?.daily_minutes || 20, remaining, dueCards, dueQuestions: revisit.length, prior, minutesPerLesson: perLesson, now });
+  const timeMins = Math.round(Object.values(S.time || {}).reduce((a, t) => a + (t.s || 0), 0) / 60);
   const schools = cfg.units.map((u) => {
     const g = groups.find((x) => x.key === u.id) || null, d = u.lessons.filter((l) => S.done?.[l.id]).length;
     const t = [...(S.log || []).filter((r) => u.lessons.some((l) => l.id === r.id)).map((r) => r.t), ...attempts.filter((a) => a.unit === u.id).map((a) => Date.parse(a.at))];
@@ -81,7 +84,8 @@ export function courseSummary(cfg, S = {}, { now = Date.now(), profile = null } 
   return { slug: cfg.slug, site: cfg.site, name: cfg.name, href: COURSES[cfg.slug] || null, total: lessons.length, written: lessons.filter((l) => written(l.unit)).length,
     done, remaining, lastAt, six: all, schools, revisit: revisit.length, dueCards, cards: Object.keys(S.cards || {}).length, pace, examDate, next: next && { id: next.id, title: next.title },
     weak: weak.map((t) => ({ lesson: t.lesson, title: titleOf(t.lesson), kind: t.kind, why: t.why, for: t.for ? titleOf(t.for) : null })),
-    started: Boolean(done || attempts.length || Object.keys(S.cards || {}).length) };
+    timeMins, minutesPerLesson: perLesson,
+    started: Boolean(done || attempts.length || Object.keys(S.cards || {}).length || Object.keys(S.time || {}).length) };
 }
 
 // a course school on a subject Earth map, in the shape the map uses for a deck topic (kit/earth/subject-map.js)

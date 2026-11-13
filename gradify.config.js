@@ -12,3 +12,7 @@ export const SITE = null;
 // security permits. Leave them empty and the app runs in "this device" mode.
 export const SUPABASE_URL = "https://ezlohntrnassgsbofcfc.supabase.co";
 export const SUPABASE_ANON_KEY = "sb_publishable_TG7ZtA0a9zQdObOW0tub7g_NedlFGj-";
+
+// Push notifications (docs/NOTIFICATIONS.md): the public half of the VAPID key pair the push-send function signs with.
+// Safe to publish. Leave it empty and Gradify still sends reminders while it's open, but not when it's closed.
+export const PUSH_PUBLIC_KEY = "";

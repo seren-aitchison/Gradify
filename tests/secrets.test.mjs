@@ -44,7 +44,7 @@ test("the site config holds only the public project URL and anon key", async () 
 // The AI functions use it only for the Gradify AI usage ledger (ai_claim_for / ai_settle_for / the response cache), which
 // learners must not be able to write: everything else they do (sign-in, saved packs) uses the learner's own token.
 const SERVICE_ROLE_ALLOWED = new Set(["supabase/functions/billing-webhook/index.ts", "supabase/functions/billing-checkout/index.ts",
-  "supabase/functions/course-tutor/index.ts", "supabase/functions/study-pack/index.ts"]);
+  "supabase/functions/course-tutor/index.ts", "supabase/functions/study-pack/index.ts", "supabase/functions/push-send/index.ts"]);
 
 test("server functions act as the signed-in learner, never with the service role (billing writes excepted)", async () => {
   for (const f of files.filter((x) => x.startsWith("supabase/functions/") && /\.(ts|js)$/.test(x))) {
@@ -58,6 +58,16 @@ test("server functions act as the signed-in learner, never with the service role
     if (f.includes("checkout")) assert.match(src, /auth\.getUser\(\)/, `${f} must identify the learner from their token`);
     // handleStripeEvent verifies the signature before anything else (tests/billing-lifecycle.test.mjs)
     if (f.includes("webhook")) assert.match(src, /handleStripeEvent|verifyStripeEvent/, `${f} must verify Stripe's signature before writing`);
+    // push-send runs on a schedule, with no learner signed in: it must check the scheduler's secret before anything,
+    // read only what notifications need, and write only to the subscriptions table (what was sent; gone devices)
+    if (f.includes("push-send")) {
+      const body = src.slice(src.indexOf("Deno.serve"));
+      assert.ok(body.indexOf("x-cron-secret") > -1 && body.indexOf("x-cron-secret") < body.indexOf("createClient"), `${f} must check x-cron-secret before connecting`);
+      const tables = [...src.matchAll(/\.from\("(\w+)"\)/g)].map((m) => m[1]);
+      for (const t of tables) assert.ok(["push_subscriptions", "cards", "plan_blocks", "activity"].includes(t), `${f} reads ${t}, which notifications don't need`);
+      assert.doesNotMatch(src, /\.insert\(|\.upsert\(|\.rpc\(/, `${f} must not add rows or call functions`);
+      for (const m of src.matchAll(/\.from\("(\w+)"\)\.(update|delete)\(/g)) assert.equal(m[1], "push_subscriptions", `${f} may only change push_subscriptions`);
+    }
     if (f.includes("tutor") || f.includes("study-pack")) {
       assert.match(src, /auth\.getUser\(\)/, `${f} must identify the learner from their token`);
       // the service-role client is handed to the ledger and used for nothing else

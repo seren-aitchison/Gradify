@@ -8,6 +8,7 @@ export const QA = {
   u02: { standard: 2, reviewed: null, sources: null, signoff: null },
   u03: { standard: 2, reviewed: null, sources: null, signoff: null },
   u04: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u06: { standard: 2, reviewed: null, sources: null, signoff: null },
   u12: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from sociology u09
   u11: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from psychology u10
   u05: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from psychology u04
