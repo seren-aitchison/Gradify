@@ -579,7 +579,7 @@
    "id": "u05",
    "n": 5,
    "title": "Chemistry",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u05-01",
