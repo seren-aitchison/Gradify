@@ -207,3 +207,8 @@
 .sub-status.is-beta { border-color: rgba(255, 192, 2, .45); background: rgba(255, 192, 2, .07); }
 .sub-status b { margin-right: 4px; } .sub-status a { color: var(--fg); }
 .sub-course.chem::before, .sub-course.bio::before { background: linear-gradient(100deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .34) 60%, rgba(0, 0, 0, .2)); }
+
+/* a learning map shown inside LifeOS (kit/earth/subject-map.js adds the class when framed) */
+body.map-embedded .sub-nav, body.map-embedded .sub-foot { display: none; }
+body.map-embedded .map-page { padding-top: 8px; }
+body.map-embedded .aurora { display: none; }
