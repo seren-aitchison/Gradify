@@ -122,7 +122,7 @@ SRC: Alexander C. K. and Sadiku M. N. O., Fundamentals of Electric Circuits, 6th
 Q: Which conservation law underlies KVL? | Conservation of energy.
 Q: What does a negative current in your answer mean? | The current flows in the opposite direction to the one you assumed.
 M1#engineering-u08-03-q1@1: Kirchhoff's current law is a consequence of what? | Conservation of charge | Conservation of energy | Ohm's law | Conservation of momentum | Charge cannot accumulate at a node, so currents in equal currents out.
-NUM2#engineering-u08-03-q2@2: Currents of 3 A and 4 A enter a node, and 1 A leaves through one branch. What current leaves through the only other branch, in A? | 6 | 0.01 | A | KCL: 3 + 4 = 1 + I, so I = 6 A.
+NUM2#engineering-u08-03-q2@2: Currents of 3 A and 4 A enter a node, and 1 A leaves through one branch. What current leaves through the only other branch, in A? | 6 | 0.01 | A | By KCL, 7 A enters in total, so the other branch carries 7 − 1 = 6 A.
 M2#engineering-u08-03-q3@2: A 24 V source drives a loop containing 4 Ω and 8 Ω. What is the drop across the 8 Ω? | 16 V | 8 V | 12 V | 24 V | I = 24 ÷ 12 = 2 A, so the drop is 2 × 8 = 16 V; KVL: 24 − 8 − 16 = 0.
 M3#engineering-u08-03-q4@3: A circuit has 5 branches and 3 nodes. How many independent KVL equations are there? | 3 | 2 | 5 | 8 | Independent loop equations number b − n + 1 = 5 − 3 + 1 = 3.
 SA3#engineering-u08-03-q5@1,3: Explain, with reference to the example, how one source in a parallel pair can absorb power. | When two sources of different voltage are paralleled, the common voltage settles between them. The higher-voltage source drives current into the lower one, which is then charged: current enters its positive terminal, so it absorbs power. In the example the 6 V source carries −1.09 A, meaning current flows into it. | Common terminal voltage ; Higher source drives current ; Current into positive terminal ; Absorbs power
@@ -450,7 +450,7 @@ P: Adding **capacitors in parallel** with an inductive load supplies the reactiv
 X: Correcting the coil from the impedance lesson.
 > The coil takes 4.6 A at 230 V with φ = 53.1°, so cos φ = 0.6.
 > P = 230 × 4.6 × 0.6 = 635 W; Q = 230 × 4.6 × 0.8 = 846 var; S = 1058 VA.
-> To correct fully, the capacitor must supply 846 var: C = 846 ÷ (314.2 × 230^{2}) = 50.9 µF.
+> To correct fully, the capacitor must supply 846 var. Using C = Q_{C} ÷ (ωV^{2}) with ω = 314.2 rad/s and V = 230 V gives about 50.9 µF.
 > Supply current then falls to 635 ÷ 230 = 2.76 A, from 4.6 A, for the same useful power.
 K: Real power P = VI cos φ does work, reactive power Q = VI sin φ circulates, and apparent power S = VI sets the current; parallel capacitors improve a lagging power factor.
 !: Thinking power factor correction reduces the load's real power. It reduces the supply current and losses, while the useful power is unchanged.
