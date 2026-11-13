@@ -23,7 +23,7 @@ export async function loadModel(store, profile, { courseNext = [], now = Date.no
   const preds = predictions({ concepts, cards, reviews, blocks, examDate: profile.exam_date || null, dailyMinutes, now });
   const today = dayKey(now);
   const deadlines = [
-    ...blocks.filter((b) => (b.cal === "exam" || b.cal === "deadline") && b.day >= today).map((b) => ({ day: b.day, title: b.title, kind: b.cal })),
+    ...blocks.filter((b) => ["exam", "deadline", "ext-exam", "ext-deadline"].includes(b.cal) && b.day >= today).map((b) => ({ day: b.day, title: b.title, kind: b.cal.replace("ext-", "") })),
     ...(profile.exam_date && profile.exam_date >= today ? [{ day: profile.exam_date, title: `your ${profile.site || ""} exam`.replace("  ", " "), kind: "exam" }] : []),
   ];
   const prio = prioritise({ concepts, preds, courseNext, deadlines, dailyMinutes, now });

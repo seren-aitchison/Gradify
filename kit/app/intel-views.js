@@ -4,16 +4,20 @@
 // the evidence behind it. Styles: the "Intelligence" section of kit/app/app.css.
 import { icon } from "../core/icons.js";
 import { haptic } from "../core/haptics.js";
+import { complete } from "../core/complete.js";
 import { LEVELS } from "../learning/mastery.js";
 import { planDay, reschedule, INTEL_DEFAULTS, fmtRange } from "../intel/schedule.js";
 import { answer, QUESTIONS } from "../intel/ask.js";
 import { dayKey, hhmm, DAY } from "../intel/memory.js";
+import { askCoach } from "../intel/coach.js";
+import { modeOf, fillFocus, FOCUS } from "../intel/autopilot.js";
 
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const pct = (v) => (v == null ? "–" : `${Math.round(v * 100)}%`);
 const enc = encodeURIComponent;
 const dateLabel = (d, o = { weekday: "short", day: "numeric", month: "short" }) => new Date(`${d}T12:00:00`).toLocaleDateString("en-GB", o);
 const ago = (iso) => { const d = Math.round((Date.now() - Date.parse(iso)) / DAY); return d <= 0 ? "today" : d === 1 ? "yesterday" : `${d} days ago`; };
+const EXT = ["external", "away", "allday", "ext-exam", "ext-deadline"];
 export const STAGES = [["seen", "Seen"], ["understood", "Understood"], ["retained", "Retained"], ["applied", "Applied"]];
 const TAG_TONE = { "High priority": "hot", "Repeated mistake": "hot", "Deadline priority": "amber", Fading: "amber", "Due today": "blue", "New material": "green", Stretch: "violet" };
 const tag = (t) => (t ? `<span class="i-tag ${TAG_TONE[t] || ""}">${esc(t)}</span>` : "");
@@ -64,7 +68,7 @@ export function upcomingHtml(m) {
     ${!rows.length ? `<p class="cp-empty">${m.plan.free?.length ? "Nothing planned for the rest of today." : "No study time left in today's availability."} <a href="#/plan">Plan tomorrow</a>.</p>`
     : `<ol class="i-timeline">${rows.map((b) => `<li class="${b.kind === "break" ? "is-break" : ""} ${b.suggested ? "is-suggested" : ""} ${b.done ? "is-done" : ""}">
         <time>${hhmm(b.start_min)}</time><span class="i-dot" aria-hidden="true"></span>
-        <span class="i-tl-main"><b>${esc(b.title)}</b><em>${b.suggested ? esc(b.why || "") : b.done ? "Done" : "In your calendar"}</em></span>
+        <span class="i-tl-main"><b>${esc(b.title)}</b><em>${b.suggested ? esc(b.why || "") : b.done ? "Done" : b.title === FOCUS && b.auto ? `Now: <a href="${esc(fillFocus(m, b)?.href || "#/revise")}">${esc(fillFocus(m, b)?.title || "your top priority")}</a>` : "In your calendar"}</em></span>
         <span class="i-tl-len">${b.end_min - b.start_min} min</span></li>`).join("")}</ol>
       ${suggested.filter((b) => b.kind !== "break").length ? `<div class="row-actions"><button type="button" class="cp-pill dark" data-accept-today>Add suggestions to today</button><span class="small muted">Only Gradify's own blocks are ever moved.</span></div>` : ""}`}
   </article>`;
@@ -73,7 +77,7 @@ export function upcomingHtml(m) {
 export function rescheduleHtml(m) {
   const { moves, unplaced } = m.missed;
   if (!moves.length && !unplaced.length) return "";
-  const auto = m.intel.autonomy === "auto";
+  const auto = modeOf(m.intel) !== "copilot";
   return `<article class="i-resched" data-resched>
     <span class="i-resched-ico" aria-hidden="true">${icon("route")}</span>
     <div><b>${moves.length + unplaced.length} missed ${moves.length + unplaced.length === 1 ? "session" : "sessions"}${auto ? ", rearranged" : ""}</b>
@@ -136,9 +140,9 @@ export function wireIntel(view, m, ctx) {
   view.querySelector("[data-accept-today]")?.addEventListener("click", async (e) => {
     e.target.disabled = true; haptic("success");
     for (const b of m.plan.blocks.filter((x) => x.kind !== "break" && x.kind !== "wrap")) await ctx.store.saveBlock({ day: b.day, start_min: b.start_min, end_min: b.end_min, title: b.title, cal: "study", auto: true });
-    ctx.toast("Added to today. Gradify will move them if you miss one."); ctx.rerender();
+    complete("Added to today", { sub: "Missed one? Gradify moves it for you." }); ctx.rerender();
   });
-  view.querySelector("[data-apply-resched]")?.addEventListener("click", async (e) => { e.target.disabled = true; await applyMoves(m, ctx.store); haptic("success"); ctx.toast("Moved. Each day stays within your study time."); ctx.rerender(); });
+  view.querySelector("[data-apply-resched]")?.addEventListener("click", async (e) => { e.target.disabled = true; await applyMoves(m, ctx.store); complete("Rescheduled", { sub: "Each day stays within your study time." }); ctx.rerender(); });
   view.querySelectorAll("[data-haptic]").forEach((a) => a.addEventListener("click", () => haptic(a.dataset.haptic)));
 }
 export async function applyMoves(m, store) {
@@ -147,6 +151,7 @@ export async function applyMoves(m, store) {
 
 // ---------- Intelligence: the whole picture, why Gradify recommends what it does, and the controls ----------
 export function renderIntelPage(view, m, ctx) {
+  const log = (m.intel.log || []).map((e, ix) => ({ ...e, ix })).reverse().slice(0, 10);
   const p = m.preds, r = p.readiness, i = m.intel;
   const win = (w) => (w || []).map((x) => `${hhmm(x.from)}–${hhmm(x.to)}`).join(", ") || "none";
   view.innerHTML = `<section class="intel-page">
@@ -182,7 +187,7 @@ export function renderIntelPage(view, m, ctx) {
       <article class="panel glass"><div class="panel-head"><h3>Recent evidence</h3><span class="pill-dark">${m.events.length} events</span></div>
         <ul class="i-events">${m.events.slice(0, 12).map((e) => `<li><span class="ev-dot ${e.event}"></span><span><b>${esc(eventLabel(e))}</b><em>${ago(e.at)}</em></span></li>`).join("") || `<li class="sub">Nothing yet.</li>`}</ul></article>
       <form class="panel glass i-controls" id="intel-controls"><div class="panel-head"><h3>You're in control</h3></div>
-        <label><span>When Gradify plans for you</span><select name="autonomy"><option value="suggest" ${i.autonomy === "suggest" ? "selected" : ""}>Suggest changes, I'll approve them</option><option value="auto" ${i.autonomy === "auto" ? "selected" : ""}>Rearrange Gradify's study blocks for me</option></select></label>
+        <span class="i-label">How much Gradify does for you</span>${ctx.modes || ""}
         <label><span>Your energy</span><select name="energy"><option value="none" ${i.energy === "none" ? "selected" : ""}>Just go by priority</option><option value="morning" ${i.energy === "morning" ? "selected" : ""}>Hardest work first</option><option value="evening" ${i.energy === "evening" ? "selected" : ""}>Warm up with lighter work</option></select></label>
         <div class="i-two"><label><span>Weekdays, free from</span><input type="time" name="wd_from" value="${hhmm(i.weekday[0]?.from ?? 1020)}" step="900"></label><label><span>to</span><input type="time" name="wd_to" value="${hhmm(i.weekday[0]?.to ?? 1260)}" step="900"></label></div>
         <div class="i-two"><label><span>Weekends, free from</span><input type="time" name="we_from" value="${hhmm(i.weekend[0]?.from ?? 600)}" step="900"></label><label><span>to</span><input type="time" name="we_to" value="${hhmm(i.weekend[0]?.to ?? 780)}" step="900"></label></div>
@@ -191,6 +196,8 @@ export function renderIntelPage(view, m, ctx) {
         <button class="cp-pill dark" type="submit">Save</button>
       </form>
     </div>
+    <article class="panel glass"><div class="panel-head"><h3>Activity log</h3><span class="pill-dark">Everything Gradify changed</span></div>
+      ${log.length ? `<ul class="ap-log">${log.map((e) => `<li class="${e.undone ? "undone" : ""}"><span>${icon(e.undone ? "x" : "check")}${esc(e.what)} <em>${new Date(e.at).toLocaleString("en-GB", { weekday: "short", hour: "2-digit", minute: "2-digit" })}${e.undone ? " · undone" : ""}</em></span>${e.undone ? "" : `<button type="button" class="ap-undo" data-undo="${e.ix}">Undo</button>`}</li>`).join("")}</ul>` : `<p class="sub">Nothing yet. In Adaptive and Autopilot, every change Gradify makes is listed here, with an undo.</p>`}</article>
     <article class="panel glass"><div class="panel-head"><h3>Your data</h3></div><p class="sub">Gradify stores your answers, packs, plan and progress, and works everything on this page out from them in your browser. Nothing here is sold or shared. You can download or delete everything in <a href="#/account">Settings</a>. When you use Gradify AI, the text it needs is sent to Anthropic's Claude API.</p></article>
   </section>`;
   view.querySelector("#intel-controls").addEventListener("submit", async (e) => {
@@ -198,8 +205,8 @@ export function renderIntelPage(view, m, ctx) {
     const f = new FormData(e.target), t = (v) => { const [h, mm] = String(v).split(":").map(Number); return h * 60 + mm; };
     const wd = { from: t(f.get("wd_from")), to: t(f.get("wd_to")) }, we = { from: t(f.get("we_from")), to: t(f.get("we_to")) };
     if (wd.to <= wd.from || we.to <= we.from) { ctx.toast("Each window needs to end after it starts."); return; }
-    await ctx.saveIntel({ autonomy: f.get("autonomy"), energy: f.get("energy"), weekday: [wd], weekend: [we], breakEvery: Number(f.get("breakEvery")) });
-    haptic("success"); ctx.toast("Saved. Your plan now follows these settings.");
+    await ctx.saveIntel({ energy: f.get("energy"), weekday: [wd], weekend: [we], breakEvery: Number(f.get("breakEvery")) });
+    complete("Saved", { sub: "Your plan now follows these settings." });
   });
 }
 function eventLabel(e) {
@@ -254,14 +261,25 @@ export function askHtml(initial) {
     <div class="i-answer" id="ask-out" aria-live="polite"></div>
   </article>`;
 }
-export function wireAsk(view, m) {
+export function wireAsk(view, m, ctx = {}) {
   const out = view.querySelector("#ask-out"), input = view.querySelector("#ask-q");
+  const turns = [];
   const run = (q) => {
     if (!q) return;
     haptic("tap");
     const a = answer(q, { concepts: m.concepts, preds: m.preds, prio: m.prio, intel: m.intel, dailyMinutes: m.dailyMinutes, existing: m.blocks, now: Date.now() });
     out.innerHTML = `<p class="i-q">${esc(q)}</p><p class="i-lead">${esc(a.lead)}</p>${a.items.length ? `<ol>${a.items.map((x) => `<li>${x.href ? `<a href="${esc(x.href)}">` : "<span>"}<b>${esc(x.title)}</b>${x.detail ? `<em>${esc(x.detail)}</em>` : ""}${x.href ? "</a>" : "</span>"}</li>`).join("")}</ol>` : ""}${a.note ? `<p class="small muted">${esc(a.note)}</p>` : ""}`;
     out.classList.remove("in"); void out.offsetWidth; out.classList.add("in");
+    // Gradify AI (Claude) on top, when signed in: it sees the same model and can only point to the actions above
+    if (!ctx.ai) { out.insertAdjacentHTML("beforeend", `<p class="small muted">${ctx.signin ? `<a href="#/account">Sign in</a> and Gradify AI will add its own answer, worked out from this same data.` : ""}</p>`); return; }
+    const box = document.createElement("div");
+    box.className = "i-coach"; box.innerHTML = `<span class="kicker">${icon("sparkles")}Gradify AI</span><p class="i-thinking"><i></i><i></i><i></i> Reading your learning data…</p>`;
+    out.append(box);
+    askCoach(ctx.store, m, q, turns.slice(-6)).then((r) => {
+      turns.push({ role: "learner", text: q }, { role: "coach", text: r.answer });
+      box.innerHTML = `<span class="kicker">${icon("sparkles")}Gradify AI</span><p class="i-coach-a">${esc(r.answer)}</p>${r.actions.length ? `<ol class="i-coach-acts">${r.actions.map((a) => `<li><a href="${esc(a.item.href)}" data-haptic="tap"><b>${esc(a.item.title)}</b><em>${esc(a.why)}</em><span>${a.item.mins} min →</span></a></li>`).join("")}</ol>` : ""}<p class="small muted">Gradify AI answers only from your data above, and can't change your plan: it can only suggest what Gradify already offered.</p>`;
+      box.querySelectorAll("[data-haptic]").forEach((x) => x.addEventListener("click", () => haptic("tap")));
+    }).catch((e) => { box.innerHTML = `<span class="kicker">${icon("sparkles")}Gradify AI</span><p class="small muted">${esc(e.message)}${e.upgrade ? ' <a href="/pricing.html">See Gradify Pro</a>' : ""}</p>`; });
   };
   view.querySelector("#ask-form").addEventListener("submit", (e) => { e.preventDefault(); run(input.value.trim()); });
   view.querySelectorAll("[data-q]").forEach((b) => b.addEventListener("click", () => { input.value = b.dataset.q; run(b.dataset.q); }));
@@ -279,11 +297,11 @@ export function smartPlanHtml(m, dayArg) {
     <div class="i-dp-head"><div><span class="kicker">${icon("sparkles")}${target === m.today ? "Today's" : "Tomorrow's"} intelligent plan</span><h2>${dateLabel(target, { weekday: "long", day: "numeric", month: "long" })}</h2>
       <p class="sub">${focus ? `${focus} min of focused study, fitted to your free time (${(target === m.today || ![0, 6].includes(new Date(`${target}T12:00:00`).getDay()) ? m.intel.weekday : m.intel.weekend).map((w) => `${hhmm(w.from)}–${hhmm(w.to)}`).join(", ")}) and your ${m.dailyMinutes}-minute day.` : "No study time left in this day's availability. Change your hours in Intelligence."}</p></div>
       <div class="seg-chips"><a class="chip" href="#/plan" aria-pressed="${target === m.today}">Today</a><a class="chip" href="#/plan/tomorrow" aria-pressed="${target !== m.today}">Tomorrow</a></div></div>
-    ${rows.length ? `<ol class="i-timeline big">${rows.map((b) => `<li class="${b.kind === "break" ? "is-break" : ""} ${b.suggested ? "is-suggested" : ""} ${b.done ? "is-done" : ""}">
+    ${rows.length ? `<ol class="i-timeline big">${rows.map((b) => `<li class="${EXT.includes(b.cal) ? "is-external" : ""} ${b.kind === "break" ? "is-break" : ""} ${b.suggested ? "is-suggested" : ""} ${b.done ? "is-done" : ""}">
       <time>${fmtRange(b)}</time><span class="i-dot" aria-hidden="true"></span>
-      <span class="i-tl-main"><b>${esc(b.title)}</b>${b.tag && b.suggested ? tag(b.tag) : ""}<em>${b.suggested ? esc(b.why || "") : b.done ? "Done" : b.auto ? "Planned by Gradify" : "Yours: never moved"}</em></span>
+      <span class="i-tl-main"><b>${esc(b.title)}</b>${b.tag && b.suggested ? tag(b.tag) : ""}<em>${b.suggested ? esc(b.why || "") : b.done ? "Done" : b.title === FOCUS && b.auto ? `Gradify picks the task when you start · now: <a href="${esc(fillFocus(m, b)?.href || "#/revise")}">${esc(fillFocus(m, b)?.title || "your top priority")}</a>` : b.auto ? "Planned by Gradify" : EXT.includes(b.cal) ? (b.cal === "away" ? "Away: nothing planned today" : "From your calendar · never moved") : "Yours: never moved"}</em></span>
       <span class="i-tl-len">${b.end_min - b.start_min} min</span></li>`).join("")}</ol>` : ""}
-    ${plan.blocks.some((b) => b.kind !== "break") ? `<div class="row-actions"><button type="button" class="cp-pill dark" data-accept-day="${target}">Add this plan to my calendar</button><span class="small muted">Suggestions only appear in your calendar when you add them.</span></div>` : ""}
+    <div class="row-actions">${plan.blocks.some((b) => b.kind !== "break") ? `<button type="button" class="cp-pill dark" data-accept-day="${target}">Add this plan to my calendar</button>` : ""}<button type="button" class="cp-pill" data-focus title="Time is reserved now; Gradify chooses the task when you start">Reserve flexible focus blocks</button><span class="small muted">Suggestions only appear in your calendar when you add them.</span></div>
     ${plan.left.length ? `<p class="small muted">Didn't fit: ${esc(plan.left.slice(0, 3).map((x) => x.title).join(", "))}${plan.left.length > 3 ? ` and ${plan.left.length - 3} more` : ""}. They roll into the next day.</p>` : ""}
   </article>`;
 }
@@ -292,9 +310,9 @@ export function wireSmartPlan(view, m, ctx, dayArg) {
     const day = e.target.dataset.acceptDay; e.target.disabled = true;
     const plan = day === m.today ? m.plan : planDay({ items: m.prio.items, day, minutes: m.dailyMinutes, intel: m.intel, existing: m.blocks.filter((b) => b.day === day), now: m.now });
     for (const b of plan.blocks.filter((x) => x.kind !== "break" && x.kind !== "wrap")) await ctx.store.saveBlock({ day, start_min: b.start_min, end_min: b.end_min, title: b.title, cal: "study", auto: true });
-    haptic("success"); ctx.toast("Added. If you miss a session, Gradify moves it to free time."); ctx.rerender();
+    complete("Plan added", { sub: "If you miss a session, Gradify moves it." }); ctx.rerender();
   });
-  view.querySelector("[data-apply-resched]")?.addEventListener("click", async (e) => { e.target.disabled = true; await applyMoves(m, ctx.store); haptic("success"); ctx.toast("Moved."); ctx.rerender(); });
+  view.querySelector("[data-apply-resched]")?.addEventListener("click", async (e) => { e.target.disabled = true; await applyMoves(m, ctx.store); complete("Rescheduled"); ctx.rerender(); });
 }
 // the week: each day's due reviews, plus the ranked work spread across days, so nothing is planned twice
 export async function planWeek(m, store, cards) {
@@ -313,3 +331,73 @@ export async function planWeek(m, store, cards) {
   return made;
 }
 export { reschedule, INTEL_DEFAULTS };
+
+// ---------- Your calendars: outside calendars in, Gradify's plan out ----------
+const PROVIDERS = [
+  ["Google Calendar", "On a computer: Settings → pick the calendar → Integrate calendar → copy “Secret address in iCal format”."],
+  ["Apple Calendar (iCloud)", "Calendar app → right-click the calendar → Sharing settings → Public calendar → copy the link (it starts webcal://)."],
+  ["Outlook", "Outlook on the web → Settings → Calendar → Shared calendars → Publish a calendar → copy the ICS link."],
+  ["University timetable, Moodle, Canvas, Blackboard", "Look for “Export calendar” or “Subscribe” and copy the .ics link. Exams and “due” dates in it become deadlines."],
+];
+export function calendarPanelHtml(m, { signedIn }) {
+  const feeds = m.intel.calendars || [];
+  const imported = m.blocks.filter((b) => ["external", "away", "allday", "ext-exam", "ext-deadline"].includes(b.cal) && b.day >= m.today).length;
+  return `<article class="panel glass cal-sync" id="calendars">
+    <div class="panel-head"><div><h3>${icon("calendar")} Your calendars</h3><p class="sub">Bring in your lectures, shifts and plans, and Gradify plans around them. They're never moved. Exams and deadlines in them are picked up automatically.</p></div><span class="pill-dark">${imported} upcoming ${imported === 1 ? "event" : "events"}</span></div>
+    ${feeds.length ? `<ul class="feeds">${feeds.map((f, i) => `<li><span class="feed-dot ${f.ok === false ? "bad" : "ok"}"></span><span><b>${esc(f.name || "Calendar")}</b><em>${f.ok === false ? esc(f.error || "Couldn't sync") : f.at ? `Synced ${ago(f.at)} · ${f.events ?? 0} events` : "Not synced yet"}</em></span><button type="button" class="icon-btn" data-feed-del="${i}" aria-label="Remove ${esc(f.name || "calendar")}">${icon("x")}</button></li>`).join("")}</ul>` : ""}
+    <form class="feed-form" id="feed-form">
+      <label class="grow"><span>Calendar link (.ics or webcal://)</span><input name="url" type="url" inputmode="url" placeholder="https://calendar.google.com/calendar/ical/…/basic.ics" required></label>
+      <label><span>Name</span><input name="name" placeholder="e.g. Lectures" maxlength="40"></label>
+      <button class="cp-pill dark" type="submit">Connect</button>
+    </form>
+    ${signedIn ? "" : `<p class="small muted">Most calendar links need you to be <a href="#/account">signed in</a>, so Gradify can fetch them for you. Importing a file works now.</p>`}
+    <div class="row-actions">
+      ${feeds.length ? `<button type="button" class="cp-pill" data-sync>↻ Sync now</button>` : ""}
+      <label class="cp-pill file-pill">${icon("upload")} Import an .ics file<input type="file" accept=".ics,text/calendar" data-ics-file hidden></label>
+      <button type="button" class="cp-pill" data-export>Export my Gradify plan</button>
+    </div>
+    <details class="howto"><summary>Where do I find my calendar link?</summary><ul>${PROVIDERS.map(([n, d]) => `<li><b>${n}</b><span>${d}</span></li>`).join("")}</ul>
+      <p class="small muted">To see Gradify's plan in your own calendar, export it and open the file: Apple Calendar, Outlook and Google Calendar (Settings → Import) all accept it.</p></details>
+  </article>`;
+}
+export function wireCalendar(view, m, ctx) {
+  const save = async (calendars) => ctx.saveIntel({ calendars });
+  const run = async (feeds, btn) => {
+    if (btn) { btn.disabled = true; btn.textContent = "Syncing…"; }
+    const { syncCalendars } = await import("../intel/calsync.js");
+    const res = await syncCalendars(ctx.store, feeds);
+    await save(res.map(({ name, url, ok, events, error, at }) => ({ name, url, ok, events, error, at })));
+    const ok = res.filter((r) => r.ok);
+    if (ok.length) ctx.complete?.(`Synced ${ok.reduce((a, r) => a + r.events, 0)} events. Your plan now works around them.`);
+    else ctx.toast(esc(res[0]?.error || "Couldn't sync."));
+    ctx.rerender();
+  };
+  view.querySelector("#feed-form")?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const f = new FormData(e.target), url = String(f.get("url")).trim();
+    const { isFeedUrl } = await import("../intel/calsync.js");
+    if (!isFeedUrl(url)) { ctx.toast("Use the calendar's https:// or webcal:// link."); return; }
+    const feeds = [...(m.intel.calendars || []).filter((x) => x.url !== url), { name: String(f.get("name") || "").trim() || new URL(url.replace(/^webcal/i, "https")).hostname.replace(/^www\./, ""), url }];
+    await run(feeds, e.target.querySelector("button"));
+  });
+  view.querySelector("[data-sync]")?.addEventListener("click", (e) => run(m.intel.calendars || [], e.currentTarget));
+  view.querySelectorAll("[data-feed-del]").forEach((b) => b.addEventListener("click", async () => {
+    const feeds = (m.intel.calendars || []).filter((_, i) => i !== Number(b.dataset.feedDel));
+    await save(feeds);
+    if (feeds.length) await run(feeds); else { const { syncCalendars } = await import("../intel/calsync.js"); await syncCalendars(ctx.store, []); ctx.toast("Removed."); ctx.rerender(); }
+  }));
+  view.querySelector("[data-ics-file]")?.addEventListener("change", async (e) => {
+    const file = e.target.files[0]; if (!file) return;
+    const { importIcsText } = await import("../intel/calsync.js");
+    try { const r = await importIcsText(ctx.store, await file.text()); ctx.complete?.(r.added ? `Imported ${r.added} events from ${esc(file.name)}.` : "Nothing new in that file."); ctx.rerender(); }
+    catch { ctx.toast("That file couldn't be read as a calendar."); }
+  });
+  view.querySelector("[data-export]")?.addEventListener("click", async () => {
+    const { toICS } = await import("../intel/ical.js");
+    const blocks = (await ctx.store.listBlocks(m.today, dayKey(m.now + 60 * DAY))).filter((b) => !b.done);
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([toICS(blocks)], { type: "text/calendar" }));
+    a.download = "gradify-plan.ics"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    haptic("tap");
+  });
+}

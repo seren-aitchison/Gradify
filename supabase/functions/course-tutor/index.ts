@@ -8,6 +8,7 @@
 // POST { mode: "challenge", subject, lesson, focus }                                     → { questions }
 // POST { mode: "connect", subject, lesson, candidates: [{ id, title }] }                 → { links }
 // POST { mode: "director", subject, course, summary, candidates }                        → { message, steps }
+// POST { mode: "coach", subject, question, profile, turns? }                            → { answer, actions }
 // Every reply also carries { usage: { feature, plan, used, allowance, resetsAt, counted } }; a refusal carries
 // { error, reason, feature, plan, used, allowance, resetsAt, upgrade } (docs/APP-API.md). The website and the iOS app
 // call this same function, so a learner's allowance is shared across them.

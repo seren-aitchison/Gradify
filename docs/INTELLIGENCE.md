@@ -29,6 +29,57 @@ Gradify Intelligence is one evolving model of each learner. It's built from ever
 
 Haptics (`kit/core/haptics.js`) fire on card ratings, shuffles, plan accepts and navigation. They're silent on devices without vibration, with reduced motion on, or when turned off in Settings.
 
+## Autopilot (`kit/intel/autopilot.js`, `kit/app/autopilot-views.js`)
+
+Three modes, switchable any time from Today or Intelligence:
+
+| Mode | What Gradify does on its own |
+| --- | --- |
+| **Copilot** | Nothing. It recommends and explains; every change is a tap. |
+| **Adaptive** | Moves missed Gradify sessions into free time, fills **focus blocks** (reserved time whose task is chosen when it starts), re-plans its own blocks. |
+| **Autopilot** | Adaptive, plus it keeps the next seven days planned and applies a **recovery plan** when the learner falls behind. |
+
+The engine proposes actions and `applyChange` validates them before anything is written. It touches Gradify's own blocks only, keeps each day within the daily time, and plans only inside free hours. Every change goes in the activity log (`learner.intel.log`) with an undo, and an undone change isn't made again for 24 hours.
+
+- **Executive briefing** on Today: what changed (with undo), the highest priority, deadlines, exam status, concepts to revisit, and the revision due over the next three days.
+- **Catch-up machine**: three or more missed sessions, or three idle days with work due, gives a recovery (essential tasks, what can wait, cards due, deadlines) and a fresh seven days that doesn't cram. Missed sessions aren't repeated blindly; priorities are worked out again from the evidence.
+- **Opportunity detector**: free time before the next calendar event with tasks that fit, packs ready to move on from, application lagging recall, an exam soon with no long mixed session, and plenty of free time when behind.
+- **Task decomposition** (Revision Centre): "Revise cardiovascular physiology" becomes warm-up, gaps, priority cards, new material, application and a mastery check. Each step has a "done when" based on evidence, not time spent.
+- **Tell Gradify** (`kit/intel/nlp.js`): plain English such as "Biology exam on 10 December, chemistry assignment due on the 4th, away this weekend" becomes exams, deadlines, away days, shifts and daily hours. **Paste an email** finds new and moved dates and matches them to existing deadlines (the academic inbox). Everything is previewed for the learner to confirm.
+- **What-if** in Ask: "What happens if I take Friday off?"
+
+## Calendar sync (`kit/intel/ical.js`, `kit/intel/calsync.js`, `supabase/functions/calendar-sync`)
+
+- **In:** calendar links (Google's secret iCal address, iCloud public calendars, Outlook published calendars, university timetables, Moodle, Canvas, Blackboard) and .ics files. Repeats, exclusions, all-day events, cancelled and "free" events are handled.
+- **How imported events are treated:** they become busy time that's never moved. All-day events block the day only when they say "away", "holiday" and so on. Titles with "exam" or "due" become deadlines.
+- **Refreshing:** links re-sync in the background every six hours, and a re-sync replaces only imported events.
+- **Out:** "Export my Gradify plan" downloads an .ics that any calendar app opens.
+- **Time zones:** times with a time zone are read in the learner's local time (fine for their own calendars).
+
+## Gradify AI coach (`kit/intel/coach.js`, mode `coach` in `kit/assess/tutor.js`)
+
+Ask Gradify answers from the model straight away. When the learner is signed in, Gradify AI (Claude) then adds an answer from a structured summary of the same model. It may recommend only actions the priority engine offered, by id; `checkReply` drops anything else. It can't change the plan, scores or calendar. It counts as a tutor conversation.
+
+## Deploying the server parts
+
+1. Run `supabase/migrations/20261114120000_coach_mode.sql`, which allows the `coach` mode in the usage ledger and maps it to the tutor allowance.
+2. Deploy the functions:
+
+   ```bash
+   supabase functions deploy course-tutor
+   ```
+
+   ```bash
+   supabase functions deploy calendar-sync
+   ```
+
+Until then, everything else works. Ask Gradify answers from the learner's data, and calendar files import. Calendar links that don't allow browsers show a "sign in" or "couldn't sync" message.
+
+## Also
+
+- **Completion:** `kit/core/complete.js` and `kit/core/haptics.js` show an Apple Pay-style "Done" (ring, tick, double-tap haptic) on every completion. iPhone haptics use the iOS 18 switch-control haptic; Android uses the Vibration API.
+- **Home Screen prompt:** `kit/core/install.js` offers "Put Gradify on your Home Screen" with steps for iPhone, iPad, Mac (Add to Dock) and Chrome or Edge (install). It shows after a finished session or pack, or on a return visit, and stays away for three weeks once dismissed. The manifest has app-icon shortcuts. Home Screen **widgets** need the native app (WidgetKit); the web app can't add them.
+
 ## Event schema
 
 ```json
@@ -52,9 +103,9 @@ Other events: `study_pack_made`, `study_session`, `plan_block_done`, `plan_block
 2. **FSRS** in place of SM-2 in `kit/learning/srs.js`. Same card fields plus `stability` and `difficulty`; `recallProbability` becomes FSRS retrievability.
 3. **Course concept graph in the priority engine.** `kit/learning/concepts.js` already has prerequisites and `weakPrerequisites`. Rank "revisit the smallest useful prerequisite" for course lessons, and link note topics to course concepts with `topic-match.js`.
 4. **Misconception and connection cards** written by Gradify AI for the learner's confident mistakes, using the `study-pack` function's `questions` mode, with a follow-up question to verify.
-5. **Calendar sync**: ICS import of classes and work (read-only, never moved), and export of Gradify's plan.
-6. **Learner-aware Gradify AI**: pass the Ask model's evidence summary into `course-tutor`'s director mode, so its answers cite the same evidence.
-7. **Notifications**: a daily plan digest and "about to forget" nudges, at the learner's chosen time.
-8. **Prediction service** (Python) once there's enough data: calibrated readiness by topic, learned break lengths and best times of day.
+5. **Notifications**: a daily plan digest and "about to forget" nudges, at the learner's chosen time.
+6. **Prediction service** (Python) once there's enough data: calibrated readiness by topic, learned break lengths and best times of day.
+7. **Academic inbox connections**: read-only OAuth to Outlook or Gmail and Canvas or Moodle, feeding the same `parseInbox`.
+8. **Adaptive pedagogy**: test which teaching mode (visual, worked example, Socratic) improves retention for each learner.
 
-Tests: `tests/intel.test.mjs` (memory, predictions, priority, scheduler, rescheduling, events, Ask).
+Tests: `tests/intel.test.mjs`, `tests/nlp.test.mjs`, `tests/ical.test.mjs`, `tests/tutor-modes.test.mjs` (coach) (memory, predictions, priority, scheduler, rescheduling, events, Ask).
