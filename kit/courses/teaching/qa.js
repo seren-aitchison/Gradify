@@ -6,10 +6,11 @@ export const QA = {
   u01: { standard: 2, reviewed: null, sources: null, signoff: null },
   u02: { standard: 2, reviewed: null, sources: null, signoff: null },
   u03: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u04: { standard: 2, reviewed: null, sources: null, signoff: null },
   u12: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from sociology u09
   u11: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from psychology u10
   u05: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from psychology u04
   u10: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from health u05
 };
 // the date each school's notes were first written
-export const WRITTEN_ON = { u10: "2026-11-12", u05: "2026-11-12", u11: "2026-11-12", u12: "2026-11-12", u01: "2026-11-08", u02: "2026-11-12", u03: "2026-11-12" };
+export const WRITTEN_ON = { u10: "2026-11-12", u05: "2026-11-12", u11: "2026-11-12", u12: "2026-11-12", u01: "2026-11-08", u02: "2026-11-12", u03: "2026-11-12", u04: "2026-11-12" };
