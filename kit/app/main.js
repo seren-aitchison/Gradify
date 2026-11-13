@@ -4,7 +4,7 @@ import { GROUPS } from "../core/sites.js";
 import { icon } from "../core/icons.js";
 import { tile, ink } from "../core/colour.js";
 import { SAMPLE, readFile } from "../notes/studio.js";
-import { LocalStore, CloudStore, cloudConfigured, scopeToSite } from "../data/store.js";
+import { LocalStore, CloudStore, cloudConfigured, scopeToSite, authProviders } from "../data/store.js";
 import { describePlan, mySubscription, myAllowance, openPortal, AI_ALLOWANCES } from "../data/billing.js";
 import { learnerOf, saveLearner, syncMirror, needsSetup, applyPrefs, PRIOR } from "../data/profile.js";
 import { trackView } from "../core/analytics.js";
@@ -52,6 +52,8 @@ const siteOf = (n) => SITES.find((s) => s.n === n) || { n: "Gradify", c: "f055dd
 const levelOf = (xp) => gameLevelOf(xp).n;
 const xpForLevel = (l) => 50 * (l - 1) * l;
 const SEC_PER_CARD = 25;
+// FSRS options: the learner's desired retention, and their exam date (no card is scheduled after it)
+const srsOpts = () => ({ retention: Number(learnerOf(profile).intel?.retention) || 0.9, examDate: profile.exam_date || null });
 
 let store, profile, view = $("#view");
 
@@ -128,7 +130,7 @@ function drawNav() {
     document.querySelector("#view")?.parentElement.classList.add("lo-shell");
   }
   side.innerHTML = `<span class="lo-side-title">LifeOS</span>${NAV.map(([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`).join("")}`;
-  for (const nav of document.querySelectorAll(".app-nav")) nav.innerHTML = NAV.slice(0, 6).map(([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`).join("");
+  // the top bar's middle holds the open section's tabs (tabify, after each screen renders)
   for (const nav of document.querySelectorAll(".tabbar")) {
     nav.innerHTML = NAV.filter(([r]) => TABS.includes(r)).map(([r, , short, ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${short}</span></a>`).join("")
       + `<button type="button" class="tab-more" aria-expanded="false" aria-controls="lo-side"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg><span>More</span></button>`;
@@ -144,6 +146,52 @@ const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/
 
 // ---------- Router ----------
 const routes = { today: renderToday, start: renderStart, new: renderNew, deck: renderDeck, study: renderStudy, topic: renderTopic, progress: renderProgress, plan: renderPlan, account: renderAccount };
+// ---------- Section tabs: each LifeOS section's own top bar ----------
+// Every section's page is split into a few panes, shown one at a time from tabs in the top bar (white labels, a
+// rainbow line under the one that's open), so each is a short scroll. A pane is an element marked data-pane="id", or
+// one matching the tab's selectors; anything else (the page's heading) shows on every tab. The tab a learner was on
+// is remembered for each section during the visit.
+const SECTION_TABS = {
+  today: [["overview", "Overview", ".cp-welcome, .notify-ask, .ap-brief, .ap-catch, .i-resched, .i-next"], ["widgets", "Widgets", ".board"]],
+  intel: [["overview", "Overview", ".intel-strip"], ["evidence", "Concepts", ""], ["timeline", "Timeline", ""], ["learning", "How you study", ""], ["control", "Controls", ""], ["log", "Activity log", ""]],
+  plan: [["day", "Day", ".ap-catch, .i-resched, .i-dayplan"], ["tell", "Tell Gradify", ".ap-tell"], ["week", "Week", "h2.lo-h, .add-block, .week-list"], ["month", "Month", ".cal-top"], ["calendars", "Calendars", ".cal-sync"]],
+  revise: [["queue", "Queue", ".seg-chips, .r-list, .revise-page > article.panel:not([data-pane])"], ["breakdown", "Break it down", ""], ["ease", "Ease off", ""]],
+  knowledge: [["stages", "Stages", ".k-funnel, .k-grid, .knowledge-page > article.panel:not([data-pane])"], ["debt", "Knowledge debt", ""], ["courses", "Courses", ""]],
+  progress: [["year", "Your year", ".today > article.panel, section > article.panel:first-of-type"], ["mastery", "Mastery", ".prog-grid"], ["journey", "Level and quests", ".lo-journey"]],
+  account: [["account", "Account", "#plan-panel, article:has(#signin), article:has(#signout), article:has(.signin)"], ["learning", "Your learning", "form.setup-form"], ["prefs", "Preferences", ".notify, article:has(#haptics)"], ["data", "Your data", "article:has(#export)"]],
+  ai: [["ask", "Ask Gradify", ".i-ask"], ["features", "Gradify AI", ".ai-allow, .ai-tools, .ai-route > p.sub:last-child"]],
+};
+const activeTab = new Map();
+function tabify(name) {
+  const bar = document.querySelector(".app-nav");
+  const tabs = SECTION_TABS[name], root = view.querySelector(":scope > section") || view;
+  const label = NAV.find(([r]) => r === (name in SECTION_OF ? SECTION_OF[name] : name))?.[1] || "";
+  if (!tabs) { if (bar) bar.innerHTML = label ? `<span class="tab-title">${esc(label)}</span>` : ""; return; }
+  const ids = tabs.map(([id]) => id);
+  const paneOf = (el) => {
+    if (el.dataset.pane && ids.includes(el.dataset.pane)) return el.dataset.pane;
+    for (const [id, , sel] of tabs) if (sel && sel.split(",").some((x) => { try { return el.matches(x.trim()); } catch { return false; } })) return id;
+    return el.dataset.pane ? ids[ids.length - 1] : null;
+  };
+  const kids = [...root.children].map((el) => ({ el, pane: paneOf(el) }));
+  const present = ids.filter((id) => kids.some((k) => k.pane === id));
+  if (present.length < 2) { if (bar) bar.innerHTML = `<span class="tab-title">${esc(label)}</span>`; return; }
+  let cur = activeTab.get(name);
+  if (!present.includes(cur)) cur = present[0];
+  const show = (id) => {
+    cur = id; activeTab.set(name, id);
+    for (const k of kids) if (k.pane) k.el.hidden = k.pane !== id;
+    bar?.querySelectorAll("[data-tab]").forEach((b) => b.setAttribute("aria-selected", String(b.dataset.tab === id)));
+    root.dataset.tab = id;
+  };
+  if (bar) {
+    bar.innerHTML = tabs.filter(([id]) => present.includes(id)).map(([id, l]) => `<button type="button" role="tab" data-tab="${id}" aria-selected="false">${esc(l)}</button>`).join("");
+    bar.setAttribute("role", "tablist");
+    bar.onclick = (e) => { const b = e.target.closest("[data-tab]"); if (!b) return; haptic("tap"); show(b.dataset.tab); scrollTo({ top: 0, behavior: "smooth" }); };
+  }
+  show(cur);
+}
+
 // ---------- Gradify Intelligence: one model for every screen ----------
 // In "auto" mode, missed Gradify blocks are moved first (once per visit to a screen), then the model is rebuilt.
 async function model({ autoMove = true } = {}) {
@@ -200,6 +248,9 @@ async function route() {
   view.innerHTML = '<div class="loading" aria-busy="true"></div>';
   try { await (routes[name] || renderToday)(arg); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
   decorate(view);
+  tabify(name);
+  // Google sign-in is offered only when the project has it switched on (see authProviders in kit/data/store.js)
+  if (view.querySelector("#google, #save-google")) authProviders().then((p) => { if (!p.google) view.querySelectorAll("#google, #save-google").forEach((b) => { b.hidden = true; }); });
   view.focus({ preventScroll: true });
   scrollTo(0, 0);
 }
@@ -592,7 +643,7 @@ async function renderStudy(arg) {
   let attempt = "";
   const draw = () => {
     const c = queue[i];
-    const p = preview(c);
+    const p = preview(c, srsOpts());
     const deep = c.kind === "why" || c.kind === "apply";
     view.innerHTML = `<section class="study-session">
       <div class="sess-top"><a href="${topicKey ? `#/topic/${encodeURIComponent(topicKey)}` : deckId ? `#/deck/${deckId}` : "#/today"}" class="back">✕ End</a><span class="goal-bar"><i style="width:${(i / total) * 100}%"></i></span><span class="sub">${Math.min(i + 1, total)} / ${total}${practice ? " · practice" : ""}${topicName ? ` · ${esc(topicName)}` : ""}</span></div>
@@ -615,7 +666,7 @@ async function renderStudy(arg) {
     const c = queue[i];
     // in a topic session, cards that aren't due yet only move if you've forgotten them
     const reschedule = !practice && (!topicKey || !c.reps || isDue(c) || r === "again");
-    const next = reschedule ? schedule(c, r) : {};
+    const next = reschedule ? schedule(c, r, srsOpts()) : {};
     results[r]++; answeredSoFar++;
     xp += r === "again" ? 1 : 2;
     record(store, answerEvent(c, { rating: r, confidence: sure, ms: Date.now() - t0, mode: practice ? "practice" : "scheduled", site: profile.site }));

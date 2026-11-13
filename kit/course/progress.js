@@ -39,6 +39,8 @@ export function mergeProgress(local = {}, cloud = {}) {
     quiz: union(local.quiz, cloud.quiz, quiz),
     ws: union(local.ws, cloud.ws, ws),
     cards: union(local.cards, cloud.cards, card),
+    // lesson time (kit/course/lesson-time.js): the larger record wins, so copies merged again and again never double count
+    time: union(local.time, cloud.time, (x, y) => ({ s: Math.max(x.s || 0, y.s || 0), v: Math.max(x.v || 0, y.v || 0), depth: Math.max(x.depth || 0, y.depth || 0), first: Math.min(x.first || Infinity, y.first || Infinity), last: Math.max(x.last || 0, y.last || 0) })),
     mocks,
     log: dedupe([...(local.log || []), ...(cloud.log || [])], (e) => `${e.t}|${e.k}|${e.id}`).sort((a, b) => a.t - b.t),
     goal: newer.goal ?? local.goal, path: newer.path ?? null,

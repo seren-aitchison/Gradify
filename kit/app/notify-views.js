@@ -25,7 +25,7 @@ export function startReminders(getModel, prefs) { startLocalReminders(async () =
 
 export function notifyPanelHtml(m) {
   const p = prefsOf(m.intel.notify), st = status();
-  return `<article class="panel glass notify" id="notifications">
+  return `<article class="panel glass notify" id="notifications" data-pane="control">
     <div class="panel-head"><div><h3>${icon("bell")} Notifications</h3><p class="sub">A few useful nudges, never more than ${p.cap} a day, never in your quiet hours.</p></div>
       <label class="switch"><input type="checkbox" id="n-on" role="switch" ${p.on && st.ok && st.granted ? "checked" : ""} ${st.ok ? "" : "disabled"}><span class="sw-track lg" aria-hidden="true"><span class="sw-knob"></span></span><span class="sr-only">Notifications</span></label></div>
     ${st.ok ? `<p class="small muted">${st.push ? (m.storeMode === "cloud" ? "They reach this device even when Gradify is closed." : "Sign in to get them when Gradify is closed; until then they arrive while it's open.") : "They arrive while Gradify is open or in the background. Notifications when it's closed switch on once push is set up."}</p>` : `<p class="notify-why">${esc(st.why)}</p>`}

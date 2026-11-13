@@ -171,7 +171,7 @@ export function wireTell(view, m, ctx) {
 
 // ---------- break a topic down (Revision Centre) ----------
 export function decomposeHtml() {
-  return `<article class="panel glass ap-decomp"><div class="panel-head"><h3>${icon("checklist")} Break a topic down</h3><span class="pill-dark">From your evidence</span></div>
+  return `<article class="panel glass ap-decomp" data-pane="breakdown"><div class="panel-head"><h3>${icon("checklist")} Break a topic down</h3><span class="pill-dark">From your evidence</span></div>
     <form class="widget-ask" id="decomp-form"><label class="sr-only" for="decomp-q">A topic to revise</label><input id="decomp-q" placeholder="e.g. Revise cardiovascular physiology" maxlength="120" autocomplete="off"><button class="cp-pill dark" type="submit">Break it down</button></form>
     <div id="decomp-out" aria-live="polite"></div></article>`;
 }
