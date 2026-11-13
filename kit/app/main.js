@@ -33,6 +33,10 @@ import { loadModel } from "../intel/model.js";
 import { intelOf } from "../intel/schedule.js";
 import { runAutopilot, briefingHtml, catchUpHtml, opportunitiesWidget, tellHtml, wireTell, decomposeHtml, wireDecompose, wireAutopilot, modesHtml } from "./autopilot-views.js";
 import { modeOf } from "../intel/autopilot.js";
+import { record, answerEvent, forgotEvent, stageEvents } from "../intel/ledger.js";
+import { learnerMemory } from "../intel/memory.js";
+import { boardHtml, wireBoard, DEFAULT_WIDGETS } from "./widgets.js";
+import { notifyPanelHtml, wireNotify, notifyAskHtml, wireNotifyAsk, startReminders } from "./notify-views.js";
 import { calendarPanelHtml, wireCalendar, intelStripHtml, nextHtml, upcomingHtml, rescheduleHtml, forecastWidget, askWidget, conceptPileWidget, wireIntel, applyMoves, renderIntelPage, renderKnowledgePage, renderRevisePage, askHtml, wireAsk, smartPlanHtml, wireSmartPlan, planWeek } from "./intel-views.js";
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -145,18 +149,21 @@ const routes = { today: renderToday, start: renderStart, new: renderNew, deck: r
 async function model({ autoMove = true } = {}) {
   const L = await learnerAcross().catch(() => null);
   const courseNext = (L?.next || []).filter((x) => x.site);
-  let m = await loadModel(store, profile, { courseNext });
+  let m = await loadModel(store, profile, { courseNext, courses: L?.courses || [] });
   // Adaptive and Autopilot act on their own (moving missed sessions, keeping the week planned, recovering), then
   // the model is rebuilt so the screen shows the result; every change is in the log with an undo
   if (autoMove && modeOf(m.intel) !== "copilot") {
     const made = await runAutopilot(m, apctx()).catch((e) => { console.warn("Autopilot", e); return []; });
-    if (made.length) { profile = await store.getProfile(); m = await loadModel(store, profile, { courseNext }); }
+    if (made.length) { profile = await store.getProfile(); m = await loadModel(store, profile, { courseNext, courses: L?.courses || [] }); }
     m.made = made;
   }
   m.L = L;
+  m.storeMode = store.mode;
   backgroundSync(m);
+  if (!remindersStarted && m.intel.notify?.on) { remindersStarted = true; startReminders(() => model({ autoMove: false }), m.intel.notify); }
   return m;
 }
+let remindersStarted = false;
 // calendar links re-sync in the background every six hours; the screen refreshes once when they're in
 let syncing = false;
 function backgroundSync(m) {
@@ -180,7 +187,7 @@ const apctx = () => ({ store, toast, rerender, saveIntel, intel: () => intelOf(l
 // thin borders in the colours of the spectrum, one per box, and a gentle flow in as each screen opens
 const RAINBOW = ["#4641ff", "#8b3dff", "#f055dd", "#ff5a4d", "#ff8a00", "#ffc002", "#1fae8c", "#3c78d8"];
 function decorate(root) {
-  const boxes = root.querySelectorAll(".panel, .cp-card, .cp-mini, .i-next, .i-dayplan, .i-resched, .k-card, .r-list > li > a, .ai-tool, .start-card:not(.primary)");
+  const boxes = root.querySelectorAll(".panel, .cp-card, .cp-mini, .wd:not(.wd-raw), .i-next, .i-dayplan, .i-resched, .k-card, .r-list > li > a, .ai-tool, .start-card:not(.primary)");
   boxes.forEach((el, i) => { el.style.setProperty("--rb", RAINBOW[i % RAINBOW.length]); el.style.setProperty("--i", Math.min(i, 14)); el.classList.add("rb", "flow"); });
 }
 
@@ -379,6 +386,7 @@ async function renderNew(arg) {
       // dates in the notes become plan items
       for (const d of out.pack.dates || []) if (d.date && d.date >= today()) await store.saveBlock({ day: d.date, start_min: 9 * 60, end_min: 9 * 60 + 30, title: d.what, cal: d.kind === "exam" ? "exam" : "deadline" });
       complete("Study pack ready", { sub: `${out.cards.length} cards from ${doc.title}` });
+      record(store, { event: "pack_made", site: profile.site, concept: doc.id, source: out.engine, detail: { cards: out.cards.length, title: doc.title.slice(0, 120) } });
       setTimeout(() => offerInstall({ reason: "Revise this pack anywhere: keep Gradify on your Home Screen, full screen and working offline." }), 2600);
       location.hash = `#/deck/${doc.id}`;
     } catch (err) {
@@ -568,6 +576,11 @@ async function renderStudy(arg) {
   // reviews first, then new cards (a topic session keeps the engine's order)
   if (!topicKey) queue.sort((a, b) => (a.reps ? 0 : 1) - (b.reps ? 0 : 1) || new Date(a.due_at) - new Date(b.due_at));
   queue = queue.slice(0, cap);
+  // the ledger: the session starts, and a snapshot of what the learner knew, to see what changed by the end
+  const before = queue.length && !practice ? learnerMemory({ cards: all, reviews: await store.listReviews(400) }) : null;
+  let finished = false, answeredSoFar = 0;
+  if (queue.length) record(store, { event: "session_started", site: profile.site, concept: topicKey, source: practice ? "practice" : topicKey ? "topic" : "due", detail: { cards: queue.length } });
+  addEventListener("hashchange", () => { if (!finished && answeredSoFar) record(store, { event: "session_abandoned", site: profile.site, concept: topicKey, detail: { answered: answeredSoFar, of: queue.length } }); }, { once: true });
   if (!queue.length) {
     view.innerHTML = `<div class="empty-state panel glass">${icon("check")}<h3>${topicKey ? "No cards in this topic" : "All caught up"}</h3><p class="sub">Nothing is due right now. Add more notes, or come back later.</p><div class="row-actions"><a class="btn btn-primary lg" href="#/new"><span>Add notes</span></a><a class="btn btn-ghost lg" href="#/today"><span>Back to Today</span></a></div></div>`;
     return;
@@ -603,8 +616,10 @@ async function renderStudy(arg) {
     // in a topic session, cards that aren't due yet only move if you've forgotten them
     const reschedule = !practice && (!topicKey || !c.reps || isDue(c) || r === "again");
     const next = reschedule ? schedule(c, r) : {};
-    results[r]++;
+    results[r]++; answeredSoFar++;
     xp += r === "again" ? 1 : 2;
+    record(store, answerEvent(c, { rating: r, confidence: sure, ms: Date.now() - t0, mode: practice ? "practice" : "scheduled", site: profile.site }));
+    const forgot = forgotEvent(c, r, profile.site); if (forgot) record(store, forgot);
     if (!practice) {
       if (reschedule) await store.updateCard(c.id, next);
       await store.addReview({ card_id: c.id, rating: r, interval_days: next.interval_days ?? null, ms: Date.now() - t0, confidence: sure, mode: reschedule ? "scheduled" : "practice" });
@@ -619,6 +634,9 @@ async function renderStudy(arg) {
     const answered = Object.values(results).reduce((a, b) => a + b, 0);
     xp += 10;
     await store.logActivity({ site: profile.site, kind: "session", xp: Math.min(xp, 500), detail: { cards: answered, ...results, practice: Boolean(practice), topic: topicName } });
+    finished = true;
+    record(store, { event: "session_finished", site: profile.site, concept: topicKey, detail: { answered, ...results } });
+    if (before) { const after = learnerMemory({ cards: await store.listCards(deckId ? { documentId: deckId } : {}), reviews: await store.listReviews(400) }); for (const e of stageEvents(before, after, profile.site)) record(store, e); }
     // tick off today's review block in the plan
     const blocks = await store.listBlocks(today(), today());
     for (const b of blocks) if (b.auto && !b.done && /review/i.test(b.title)) await store.saveBlock({ ...b, done: true });
@@ -732,62 +750,23 @@ async function renderToday() {
   // course steps from every site; steps from the learner's own notes are already in "what to do next"
   const acrossNext = (L?.next || []).filter((x) => x.site);
   view.innerHTML = `<section class="today">
-    <span class="kicker lo-kicker">${icon("home")}Command Centre · ${fmtDate(Date.now(), { weekday: "long", day: "numeric", month: "long" })}</span>
-    <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""} <span class="wave" aria-hidden="true">👋</span></h1>
-    <p class="sub lo-hello">${s.cards.length ? `${n0(s.cards.length)} flashcards across ${n0(s.docs.length)} study ${s.docs.length === 1 ? "pack" : "packs"}${streakDays ? ` · ${streakDays}-day streak` : ""}.` : "Nice to have you here."}</p>
+    <div class="today-head"><div><span class="kicker lo-kicker">${icon("home")}Command Centre · ${fmtDate(Date.now(), { weekday: "long", day: "numeric", month: "long" })}</span>
+      <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""} <span class="wave" aria-hidden="true">👋</span></h1>
+      <p class="sub lo-hello">${s.cards.length ? `${n0(s.cards.length)} flashcards across ${n0(s.docs.length)} study ${s.docs.length === 1 ? "pack" : "packs"}${streakDays ? ` · ${streakDays}-day streak` : ""}.` : "Nice to have you here."}</p></div>
+      <a class="cp-pill dark today-cta" href="${esc(M.prio.items[0]?.href || "#/new")}" data-haptic="success">${M.prio.items[0] ? `Start · ${M.prio.items[0].mins} min` : "Add notes"}</a></div>
     ${!s.cards.length && !courses.length ? welcomeHtml(profile.display_name) : ""}
+    ${notifyAskHtml(M)}
     ${briefingHtml(M, { made: M.made || [] })}
     ${catchUpHtml(M) || rescheduleHtml(M)}
     ${nextHtml(M)}
-    ${tellHtml()}
-    ${intelStripHtml(M)}
-    ${cockpitHtml(cockpitCtx)}
-    <div class="intel-row">${upcomingHtml(M)}${forecastWidget(M)}${conceptPileWidget(M)}${askWidget()}${opportunitiesWidget(M)}</div>
-    ${acrossNext.length || courses.length ? `<div class="lo-across">
-      ${acrossNext.length > (s.cards.length ? 0 : 1) ? `<article class="panel glass"><div class="panel-head"><h3>${s.cards.length ? "Across" : "Then, across"} ${SITE ? esc(SITE) : "Gradify"}</h3><a class="see" href="#/learning">My Learning</a></div>${nextList(acrossNext.slice(s.cards.length ? 0 : 1, s.cards.length ? 3 : 4))}</article>` : ""}
-      ${courses.length ? `<article class="panel glass"><div class="panel-head"><h3>Your courses</h3><span class="pill-dark">${courses.length}</span></div><ul class="lo-courses">${courses.slice(0, 4).map((c) => { const pct = c.written ? Math.round((100 * c.done) / c.written) : 0; return `<li><a href="${c.href && c.next ? `${c.href}#/lesson/${encodeURIComponent(c.next.id)}` : c.href || "#/learning"}"><span><b>${esc(c.name)}</b><em>${c.next ? `Next: ${esc(c.next.title)}` : "Finished"}</em></span><span class="goal-bar" role="img" aria-label="${pct}%"><i style="width:${pct}%"></i></span><em>${pct}%</em></a></li>`; }).join("")}</ul></article>` : ""}
-    </div>` : ""}
-    ${goalsPanel(GO)}
-    <div class="today-grid">
-      <article class="panel glass lo-day" aria-live="polite"></article>
-      ${dueHtml(s, courses)}
-
-      ${briefing.length || s.topics.length ? `<article class="panel glass briefing">
-        <div class="panel-head"><h3>Your briefing</h3><span class="pill-dark">${fmtDate(Date.now(), { weekday: "long", day: "numeric", month: "short" })}</span></div>
-        ${briefing.length ? `<ul class="brief-list">${briefing.map((b) => `<li class="${b.c}">${icon(b.ico)}<span><b>${b.t}</b><em>${b.d}</em></span>${b.href ? `<a class="btn btn-ghost lg btn-sm" href="${b.href}"><span>${b.cta}</span></a>` : ""}</li>`).join("")}</ul>` : ""}
-      </article>` : ""}
-      <article class="panel glass stat-tiles">
-        <div><b>${streakDays}</b><span>day streak${G?.restBank ? ` · ${G.restBank} rest day${G.restBank > 1 ? "s" : ""}` : ""}</span></div>
-        ${s.cards.length ? `<div><b>${s.learned.length}<small>/${s.cards.length}</small></b><span>cards learned</span></div>
-        <div><b>${s.accuracy == null ? "–" : Math.round(s.accuracy * 100) + "%"}</b><span>right, last 30 days</span></div>` : `<div><b>${G?.rank?.name ? esc(G.rank.name) : "–"}</b><span>rank</span></div>`}
-        <div class="lvl"><b>Level ${lv}</b><span class="goal-bar"><i style="width:${(into / need) * 100}%"></i></span><span>${into}/${need} XP to level ${lv + 1}</span></div>
-      </article>
-      ${examIn != null && !s.topics.length && examCourse ? `<article class="panel glass exam">
-        <span class="kicker">${icon("calendar")}${examIn >= 0 ? `Exam in ${examIn} ${examIn === 1 ? "day" : "days"}` : "Exam date has passed"}</span>
-        <h3>${esc(examCourse.name)}: ${esc((PACE[examCourse.pace?.status] || ["", "pace unknown"])[1].toLowerCase())}</h3>
-        <p class="sub">${examCourse.done} of ${examCourse.written} lessons done${examCourse.pace?.needPerDay ? `; about ${Math.round(examCourse.pace.needPerDay * 10) / 10} lessons a day finish the course before your exam` : ""}. ${examCourse.pace?.status === "behind" ? "Add study time in Calendar, or focus on the schools that count most." : ""}</p>
-        <a class="see" href="#/plan">Open Calendar</a>
-      </article>` : ""}
-      <article class="panel glass hm-panel">
-        <div class="panel-head"><h3>Last 16 weeks</h3><a class="see" href="#/progress">Progress</a></div>
-        ${heatmap(s.byDay)}
-      </article>
-      ${proCard(sub)}
-    </div>
+    ${boardHtml({ m: M, s, G, L, streak: streakDays, xp: gxp, lv, xpForLevel, heat: heatmap(s.byDay) }, M.intel.widgets?.length ? M.intel.widgets : DEFAULT_WIDGETS)}
   </section>`;
   wireCockpit(view, cockpitCtx);
   wireIntel(view, M, { store, toast, rerender });
   wireAutopilot(view, M, apctx());
   wireTell(view, M, apctx());
-  // the daily goal and today's quests, from the same engine as My Progress
-  if (G) {
-    const pct = Math.min(1, G.todayXp / (G.goal || 1)), R = 30, C = 2 * Math.PI * R;
-    view.querySelector(".lo-day").innerHTML = `<div class="panel-head"><h3>Today's goal</h3><a class="see" href="#/progress">${G.readyToClaim ? `${G.readyToClaim} to claim` : "All quests"}</a></div>
-      <div class="lo-goal"><svg viewBox="0 0 72 72" aria-hidden="true"><circle cx="36" cy="36" r="${R}" class="bg"/><circle cx="36" cy="36" r="${R}" class="fg" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - pct)}"/></svg>
-        <div><b>${G.todayXp}<small> / ${G.goal} XP</small></b><span class="sub">${G.goalMet ? "Daily goal met. Anything more is a bonus." : G.todayXp ? `${G.goal - G.todayXp} XP to go today.` : "Any lesson, review or quest counts."}</span></div></div>
-      ${G.quests.length ? `<ul class="lo-quests">${G.quests.map((q) => `<li class="${q.paid ? "paid" : q.done ? "ready" : ""}"><span><b>${esc(q.title)}</b><em>${q.paid ? "Claimed" : q.done ? "Ready to claim in My Progress" : esc(q.why || "")}</em></span><span class="goal-bar" role="img" aria-label="${q.n} of ${q.of}"><i style="width:${(100 * Math.min(q.n, q.of)) / q.of}%"></i></span><em>${Math.min(q.n, q.of)}/${q.of} · +${q.xp}</em></li>`).join("")}</ul>` : `<p class="sub">Start a course and daily quests appear here.</p>`}
-      ${G.nextAchievement ? `<p class="sub lo-ach">${icon("award")} Next achievement: <b>${esc(G.nextAchievement.name)}</b> (${G.nextAchievement.n} / ${G.nextAchievement.of})</p>` : ""}`;
-  } else view.querySelector(".lo-day")?.remove();
+  wireNotifyAsk(view, M, apctx());
+  wireBoard(view, { ...apctx(), complete });
 }
 
 // ---------- LifeOS: across every Gradify site ----------
@@ -1215,7 +1194,7 @@ async function renderPlan(arg) {
     if (act === "del") await store.deleteBlock(b.id);
     else {
       await store.saveBlock({ ...b, done: !b.done });
-      if (!b.done) complete("Session done", { sub: b.title });
+      if (!b.done) { complete("Session done", { sub: b.title }); record(store, { event: "plan_block_done", site: profile.site, detail: { title: b.title.slice(0, 120), mins: b.end_min - b.start_min, auto: Boolean(b.auto), start_min: b.start_min } }); }
       if (!b.done) await store.logActivity({ site: profile.site, kind: "block", xp: Math.min(60, Math.round((b.end_min - b.start_min) / 3)), detail: { title: b.title } });
     }
     renderPlan();
@@ -1260,6 +1239,7 @@ async function renderAccount() {
       <button class="btn btn-light lg btn-sm" type="submit"><span>Save</span></button>
     </form>
     ${hapticsSupported() ? `<article class="panel glass"><div class="panel-head"><div><h3>Haptics</h3><p class="sub">A light buzz when you rate a card, shuffle a pile or plan your day.</p></div><label class="switch"><input type="checkbox" id="haptics" role="switch" ${hapticsOn() ? "checked" : ""}><span class="sw-track lg" aria-hidden="true"><span class="sw-knob"></span></span></label></div></article>` : ""}
+    <div id="notify-slot"></div>
     <article class="panel glass"><h3>Your data</h3><p class="sub">${SITE ? `It's yours. Download or delete everything you've added on ${esc(SITE)}. Your notes on other Gradify sites stay as they are.` : "It's yours. Download everything, or delete it."}</p>
       <div class="row-actions"><button type="button" class="btn btn-light lg btn-sm" id="export"><span>Download my data</span></button><button type="button" class="btn btn-ghost lg btn-sm danger" id="wipe"><span>Delete all my data</span></button></div></article>
   </section>`;
@@ -1275,6 +1255,7 @@ async function renderAccount() {
     toast("Saved.");
   });
   $("#haptics")?.addEventListener("change", (e) => { setHaptics(e.target.checked); haptic("success"); });
+  { const nm = { intel: intelOf(learnerOf(profile)), storeMode: store.mode }; const slot = $("#notify-slot"); if (slot) { slot.outerHTML = notifyPanelHtml(nm); wireNotify(view, nm, apctx()); } }
   $("#export").addEventListener("click", async () => {
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([JSON.stringify(await store.exportAll(), null, 2)], { type: "application/json" }));
@@ -1372,7 +1353,7 @@ async function renderAi(arg) {
 routes.ai = renderAi;
 
 // ---------- Intelligence, My Knowledge, Revision Centre (kit/app/intel-views.js) ----------
-routes.intel = async () => { const m = await model(); renderIntelPage(view, m, { toast, saveIntel, modes: modesHtml(m) }); wireAutopilot(view, m, apctx()); };
+routes.intel = async () => { const m = await model(); renderIntelPage(view, m, { toast, saveIntel, modes: modesHtml(m) }); view.querySelector(".intel-page .learned")?.insertAdjacentHTML("beforebegin", notifyPanelHtml(m)); wireAutopilot(view, m, apctx()); wireNotify(view, m, apctx()); };
 routes.knowledge = async () => { const m = await model({ autoMove: false }); renderKnowledgePage(view, m, { courses: m.L?.courses || [] }); };
 routes.revise = async (arg) => { const m = await model({ autoMove: false }); renderRevisePage(view, m, arg); view.querySelector(".revise-page .seg-chips")?.insertAdjacentHTML("beforebegin", decomposeHtml()); wireDecompose(view, m, apctx()); };
 

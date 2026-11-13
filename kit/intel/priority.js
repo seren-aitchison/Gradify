@@ -12,7 +12,7 @@ const when = (iso, now) => { const d = Math.round((now - Date.parse(iso)) / DAY)
  * @param {{ concepts: object[], preds: object, courseNext?: object[], deadlines?: {day:string,title:string,kind:string}[], dailyMinutes?: number, now?: number }} o
  * @returns {{ items: object[], stop: object[] }} ranked activities, and concepts that need nothing now
  */
-export function prioritise({ concepts = [], preds, courseNext = [], deadlines = [], dailyMinutes = 20, now = Date.now() } = {}) {
+export function prioritise({ concepts = [], preds, courseNext = [], deadlines = [], dailyMinutes = 20, debts = [], underpins = new Map(), now = Date.now() } = {}) {
   const items = [];
   const add = (x) => items.push({ weight: "hard", isNew: false, ...x });
 
@@ -66,6 +66,33 @@ export function prioritise({ concepts = [], preds, courseNext = [], deadlines = 
       why: "You haven't been tested on it yet, so Gradify can't tell what you know.", because: `${c.cards} cards from ${c.pack || "your notes"}.`, href: `#/study/t:${enc(c.key)}` });
     else if ((c.level === "strong" || c.level === "mastered") && !c.stages.applied) add({ id: `apply:${c.key}`, kind: "stretch", tag: "Stretch", isNew: true, score: 40, title: `Apply ${c.name}`, mins: 6,
       why: "You recall it well. Using it on a problem you haven't seen is the next level, and it's what exams test.", because: `Recall at ${Math.round((c.dims.recall.value ?? 0) * 100)}%, no application evidence yet.`, href: `#/deck/${enc(c.documentId)}` });
+  }
+
+  // knowledge debt: a root cause outranks the weak topics that rest on it, which wait until it's fixed
+  const symptomOf = new Map();
+  for (const d of debts) {
+    add({ id: `root:${d.key}`, kind: "root", tag: "Root cause", score: 108 + d.symptoms.length * 5, title: `Fix the root: ${d.name}`, mins: d.mins, why: d.why, because: d.because, href: d.href });
+    for (const s of d.symptoms) if (s.key) symptomOf.set(s.key, d.name);
+  }
+  for (const x of items) {
+    const k = x.id.split(":").slice(1).join(":");
+    if (symptomOf.has(k) && x.kind !== "root") { x.score -= 18; x.why = `${x.why} Gradify puts ${symptomOf.get(k)} first, because this rests on it.`; }
+  }
+
+  // why each item is where it is: the parts of its score, in plain words ("Why this first?")
+  const byKey = new Map(concepts.map((c) => [c.key, c]));
+  const maxDep = Math.max(1, ...underpins.values());
+  for (const x of items) {
+    const c = byKey.get(x.id.split(":").slice(1).join(":"));
+    const dl = x.kind === "deadline" ? deadlines.find((d) => x.id === `dl:${d.day}:${d.title}`) : null;
+    const days = dl ? Math.round((Date.parse(`${dl.day}T00:00:00`) - Date.parse(`${dayKey(now)}T00:00:00`)) / DAY) : null;
+    const dep = c ? (underpins.get(c.key) || 0) : x.kind === "root" ? (debts.find((d) => `root:${d.key}` === x.id)?.symptoms.length || 1) : 0;
+    x.factors = [
+      { key: "urgency", label: "Urgency", value: x.kind === "deadline" ? Math.max(0, 1 - days / 14) : x.kind === "review" || x.id === "due" ? 0.6 : 0.2, note: x.kind === "deadline" ? `Due in ${days} ${days === 1 ? "day" : "days"}.` : x.id === "due" ? "Due today." : "No deadline attached." },
+      { key: "importance", label: "Importance", value: Math.min(1, (x.kind === "root" ? 0.7 : 0.2) + dep / maxDep * 0.5 + (x.kind === "misconception" ? 0.3 : 0)), note: dep ? `Underpins ${dep} other ${dep === 1 ? "topic" : "topics"}.` : x.kind === "misconception" ? "A misunderstanding spreads to what's built on it." : "Not a foundation for anything else you've added." },
+      { key: "forgetting", label: "Forgetting risk", value: c?.retention != null ? Math.max(0, Math.min(1, 1 - c.retention)) : x.id === "due" ? 0.6 : 0, note: c?.forgetInDays != null ? (c.forgetInDays === 0 ? "Already below 70% recall." : `Below 70% recall in about ${c.forgetInDays} ${c.forgetInDays === 1 ? "day" : "days"}.`) : "No memory evidence yet." },
+      { key: "evidence", label: "Evidence of a gap", value: c ? Math.min(1, (c.errors.confident * 0.35 + c.errors.recent * 0.1 + (c.level === "new" ? 0.2 : 0))) : x.kind === "root" ? 0.6 : 0.2, note: c ? (c.errors.confident ? `${c.errors.confident} confident ${c.errors.confident === 1 ? "mistake" : "mistakes"}, ${c.errors.recent} wrong in 30 days.` : c.level === "new" ? "Not tested yet." : `${c.errors.recent} wrong in 30 days.`) : x.because || "" },
+    ];
   }
 
   // one item per id, best first

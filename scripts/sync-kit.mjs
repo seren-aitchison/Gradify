@@ -9,4 +9,6 @@ await copyFile("kit/assess/tutor.js", "supabase/functions/_shared/tutor.js");
 console.log("Copied kit/assess/tutor.js to supabase/functions/_shared/tutor.js");
 await copyFile("kit/assess/canon.js", "supabase/functions/_shared/canon.js");
 console.log("Copied kit/assess/canon.js to supabase/functions/_shared/canon.js");
+await copyFile("kit/intel/nudges.js", "supabase/functions/_shared/nudges.js");
+console.log("Copied kit/intel/nudges.js to supabase/functions/_shared/nudges.js");
 await import("./build-dashboard-function.mjs");

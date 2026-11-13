@@ -10,6 +10,7 @@ import { planDay, reschedule, INTEL_DEFAULTS, fmtRange } from "../intel/schedule
 import { answer, QUESTIONS } from "../intel/ask.js";
 import { dayKey, hhmm, DAY } from "../intel/memory.js";
 import { askCoach } from "../intel/coach.js";
+import { record } from "../intel/ledger.js";
 import { modeOf, fillFocus, FOCUS } from "../intel/autopilot.js";
 
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -20,6 +21,8 @@ const ago = (iso) => { const d = Math.round((Date.now() - Date.parse(iso)) / DAY
 const EXT = ["external", "away", "allday", "ext-exam", "ext-deadline"];
 export const STAGES = [["seen", "Seen"], ["understood", "Understood"], ["retained", "Retained"], ["applied", "Applied"]];
 const TAG_TONE = { "High priority": "hot", "Repeated mistake": "hot", "Deadline priority": "amber", Fading: "amber", "Due today": "blue", "New material": "green", Stretch: "violet" };
+// "Why this first?": the parts of an item's ranking, as bars with the evidence behind each
+export const factorsHtml = (x) => (x?.factors ? `<details class="i-why"><summary>Why this ${x.rank === 0 ? "first" : "here"}?</summary><ul>${x.factors.map((f) => `<li><span>${f.label}</span><span class="i-why-bar"><i class="f-${f.key}" style="width:${Math.round(f.value * 100)}%"></i></span><em>${esc(f.note)}</em></li>`).join("")}</ul></details>` : "");
 const tag = (t) => (t ? `<span class="i-tag ${TAG_TONE[t] || ""}">${esc(t)}</span>` : "");
 
 // ---------- the Command Centre ----------
@@ -51,9 +54,10 @@ export function nextHtml(m) {
       <h2>${esc(first.title)}</h2>
       <p class="sub">${esc(first.why)}</p>
       ${first.because ? `<p class="i-because">${icon("check")}<span><b>Recommended because</b> ${esc(first.because)}</span></p>` : ""}
-      <div class="row-actions"><a class="cp-pill dark i-go" href="${esc(first.href)}" data-haptic="success">Start · ${first.mins} min</a><a class="i-link" href="#/revise">See everything, in order →</a></div>
+      ${factorsHtml({ ...first, rank: 0 })}
+      <div class="row-actions"><a class="cp-pill dark i-go" href="${esc(first.href)}" data-haptic="success" data-rec="0">Start · ${first.mins} min</a><a class="i-link" href="#/revise">See everything, in order →</a></div>
     </div>
-    ${rest.length ? `<ol class="i-then">${rest.slice(0, 3).map((x) => `<li><a href="${esc(x.href)}">${tag(x.tag)}<b>${esc(x.title)}</b><span>${esc(x.why)}</span><em>${x.mins} min</em></a></li>`).join("")}</ol>` : ""}
+    ${rest.length ? `<ol class="i-then">${rest.slice(0, 3).map((x, k) => `<li><a href="${esc(x.href)}" data-rec="${k + 1}">${tag(x.tag)}<b>${esc(x.title)}</b><span>${esc(x.why)}</span><em>${x.mins} min</em></a></li>`).join("")}</ol>` : ""}
   </article>`;
 }
 
@@ -144,6 +148,8 @@ export function wireIntel(view, m, ctx) {
   });
   view.querySelector("[data-apply-resched]")?.addEventListener("click", async (e) => { e.target.disabled = true; await applyMoves(m, ctx.store); complete("Rescheduled", { sub: "Each day stays within your study time." }); ctx.rerender(); });
   view.querySelectorAll("[data-haptic]").forEach((a) => a.addEventListener("click", () => haptic(a.dataset.haptic)));
+  // following a recommendation is evidence about how good Gradify's recommendations are
+  view.querySelectorAll("[data-rec]").forEach((a) => a.addEventListener("click", () => { const ix = Number(a.dataset.rec), x = m.prio.items[ix]; if (x) record(ctx.store, { event: "recommendation_followed", source: x.kind, concept: x.id.split(":").slice(1).join(":") || null, detail: { rank: ix + 1, title: x.title.slice(0, 120) } }); }));
 }
 export async function applyMoves(m, store) {
   for (const mv of m.missed.moves) { const b = m.blocks.find((x) => x.id === mv.id); if (b) await store.saveBlock({ ...b, ...mv.to, done: false }); }
@@ -152,7 +158,7 @@ export async function applyMoves(m, store) {
 // ---------- Intelligence: the whole picture, why Gradify recommends what it does, and the controls ----------
 export function renderIntelPage(view, m, ctx) {
   const log = (m.intel.log || []).map((e, ix) => ({ ...e, ix })).reverse().slice(0, 10);
-  const p = m.preds, r = p.readiness, i = m.intel;
+  const p = m.preds, r = p.readiness, i = m.chosen || m.intel;
   const win = (w) => (w || []).map((x) => `${hhmm(x.from)}–${hhmm(x.to)}`).join(", ") || "none";
   view.innerHTML = `<section class="intel-page">
     <span class="kicker lo-kicker">${icon("sparkles")}Gradify Intelligence</span>
@@ -196,6 +202,7 @@ export function renderIntelPage(view, m, ctx) {
         <button class="cp-pill dark" type="submit">Save</button>
       </form>
     </div>
+    ${learnedPanel(m)}
     <article class="panel glass"><div class="panel-head"><h3>Activity log</h3><span class="pill-dark">Everything Gradify changed</span></div>
       ${log.length ? `<ul class="ap-log">${log.map((e) => `<li class="${e.undone ? "undone" : ""}"><span>${icon(e.undone ? "x" : "check")}${esc(e.what)} <em>${new Date(e.at).toLocaleString("en-GB", { weekday: "short", hour: "2-digit", minute: "2-digit" })}${e.undone ? " · undone" : ""}</em></span>${e.undone ? "" : `<button type="button" class="ap-undo" data-undo="${e.ix}">Undo</button>`}</li>`).join("")}</ul>` : `<p class="sub">Nothing yet. In Adaptive and Autopilot, every change Gradify makes is listed here, with an undo.</p>`}</article>
     <article class="panel glass"><div class="panel-head"><h3>Your data</h3></div><p class="sub">Gradify stores your answers, packs, plan and progress, and works everything on this page out from them in your browser. Nothing here is sold or shared. You can download or delete everything in <a href="#/account">Settings</a>. When you use Gradify AI, the text it needs is sent to Anthropic's Claude API.</p></article>
@@ -213,19 +220,24 @@ function eventLabel(e) {
   if (e.event === "flashcard_answered") return `${e.result === "correct" ? "Right" : "Wrong"}${e.confidence === 1 ? " (sure)" : e.confidence === 0 ? " (guess)" : ""}: ${e.card || "a card"}`;
   if (e.event === "plan_block_missed") return `Missed: ${e.title}`;
   const d = e.detail && typeof e.detail === "object" ? e.detail : {};
+  const name = d.name ? `: ${d.name}` : "";
+  const ledger = { session_abandoned: `Stopped a session after ${d.answered ?? "some"} of ${d.of ?? "?"} cards`, forgotten: "Forgot a card you'd learned", stage_reached: `Reached “${d.stage}”${name}`, misconception_fixed: `Fixed a misconception${name}`,
+    recommendation_followed: `Followed a recommendation${d.title ? `: ${d.title}` : ""}`, mode_changed: `Switched to ${e.source}`, autopilot_change: d.what || "Gradify changed the plan", change_undone: `Undid: ${d.what || "a change"}`, plan_accepted: d.what || "Accepted a plan", calendar_synced: "Synced calendars" };
+  if (ledger[e.event]) return ledger[e.event];
   return { study_pack_made: `Made a study pack${d.title ? `: ${d.title}` : ""}`, study_session: `Study session${d.cards ? `: ${d.cards} cards` : ""}`, plan_block_done: `Finished: ${d.title || "a plan block"}`, quiz_finished: `Quiz${d.quiz ? `: ${d.quiz}` : ""}`, lesson_completed: "Finished a lesson", tutor_used: "Used the tutor" }[e.event] || e.event.replace(/_/g, " ");
 }
 
 // ---------- My Knowledge: every concept and its stage, grouped by where it came from ----------
 export function renderKnowledgePage(view, m, { courses = [] } = {}) {
   const groups = new Map();
-  for (const c of m.concepts) { const k = c.pack || "Your notes"; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(c); }
+  for (const c of m.concepts) { const k = `${c.pack || "Your notes"}${c.site ? ` · ${c.site}` : ""}`; if (!groups.has(k)) groups.set(k, []); groups.get(k).push(c); }
   const count = (k) => m.concepts.filter((c) => c.stage === k || (k === "seen" && c.stage === "seen")).length;
   view.innerHTML = `<section class="knowledge-page">
     <span class="kicker lo-kicker">${icon("brain")}My Knowledge</span>
     <h1>Everything you know, and how well</h1>
     <p class="sub">Each concept moves through four stages, and only on evidence: <b>seen</b> (you've been tested), <b>understood</b> (right, and no misconceptions), <b>retained</b> (still right after time has passed), <b>applied</b> (used on a new problem).</p>
     <div class="k-funnel">${[["new", "Not started"], ...STAGES].map(([k, l], ix) => { const n = m.concepts.filter((c) => c.stage === k).length; return `<div class="k-step s${ix}"><b>${n}</b><span>${l}</span></div>`; }).join("")}</div>
+    ${debtPanel(m)}
     ${!m.concepts.length ? `<article class="panel glass"><p class="sub">No concepts yet. <a href="#/new">Add notes</a> and answer a few cards.</p></article>` : [...groups.entries()].map(([g, list]) => `<article class="panel glass"><div class="panel-head"><h3>${esc(g)}</h3><span class="pill-dark">${list.length}</span></div>
       <div class="k-grid">${list.map((c) => `<a class="k-card lvl-${c.level}" href="#/topic/${enc(c.key)}"><span class="k-top"><b>${esc(c.name)}</b><span class="i-tag ${c.level === "shaky" ? "hot" : c.level === "fading" ? "amber" : c.level === "mastered" || c.level === "strong" ? "green" : ""}">${esc(LEVELS[c.level].label)}</span></span>
         ${ladder(c)}<span class="k-bar"><i style="width:${Math.round(c.mastery * 100)}%"></i></span>
@@ -246,7 +258,7 @@ export function renderRevisePage(view, m, arg) {
     <h1>Everything worth doing, best first</h1>
     <p class="sub">Cards, lessons, deadlines and stretch questions from every Gradify site, ranked by how much each will move your learning. About ${total} min in all.</p>
     <div class="seg-chips">${kinds.map(([k, l]) => `<a class="chip" href="#/revise/${k}" aria-pressed="${k === pick}">${l} <small>${k === "all" ? m.prio.items.length : m.prio.items.filter((x) => of(x) === k).length}</small></a>`).join("")}</div>
-    ${list.length ? `<ol class="r-list">${list.map((x, ix) => `<li><a href="${esc(x.href)}" data-haptic="tap"><span class="r-n">${ix + 1}</span><span class="r-main">${tag(x.tag)}<b>${esc(x.title)}</b><span>${esc(x.why)}</span>${x.because ? `<em>${esc(x.because)}</em>` : ""}</span><span class="r-min">${x.mins} min</span></a></li>`).join("")}</ol>` : `<article class="panel glass"><p class="sub">Nothing here right now.</p></article>`}
+    ${list.length ? `<ol class="r-list">${list.map((x, ix) => `<li><a href="${esc(x.href)}" data-haptic="tap"><span class="r-n">${ix + 1}</span><span class="r-main">${tag(x.tag)}<b>${esc(x.title)}</b><span>${esc(x.why)}</span>${x.because ? `<em>${esc(x.because)}</em>` : ""}</span><span class="r-min">${x.mins} min</span></a>${factorsHtml({ ...x, rank: ix })}</li>`).join("")}</ol>` : `<article class="panel glass"><p class="sub">Nothing here right now.</p></article>`}
     ${m.prio.stop.length ? `<article class="panel glass"><div class="panel-head"><h3>You can ease off these</h3><span class="pill-dark">${m.prio.stop.length}</span></div><p class="sub">Strong and lasting. Gradify brings each back before you'd forget, so time is better spent elsewhere.</p><div class="i-chips">${m.prio.stop.map((c) => `<span class="i-chip static">${esc(c.name)}</span>`).join("")}</div></article>` : ""}
   </section>`;
   view.querySelectorAll("[data-haptic]").forEach((a) => a.addEventListener("click", () => haptic(a.dataset.haptic)));
@@ -400,4 +412,25 @@ export function wireCalendar(view, m, ctx) {
     a.download = "gradify-plan.ics"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
     haptic("tap");
   });
+}
+
+// ---------- knowledge debt ----------
+export function debtPanel(m) {
+  const d = m.debts || [];
+  return `<article class="panel glass k-debt"><div class="panel-head"><div><h3>${icon("route")} Knowledge debt</h3><p class="sub">Foundations you haven't secured that are making later topics harder. Fixing the root is quicker than repeating what rests on it.</p></div><span class="pill-dark">${d.length ? `${d.length} root ${d.length === 1 ? "cause" : "causes"}` : "None found"}</span></div>
+    ${!d.length ? `<p class="sub">No root causes in your answers: your weak spots don't rest on other weak topics. Gradify checks again after every session.</p>` : `<ul class="debt-list">${d.map((x) => `<li><a href="${esc(x.href)}"><span class="debt-root"><span class="i-tag hot">Root</span><b>${esc(x.name)}</b>${x.site ? `<em>${esc(x.site)}</em>` : ""}</span>
+      <span class="debt-arrow" aria-hidden="true">→</span><span class="debt-sym">${x.symptoms.slice(0, 4).map((y) => `<span class="i-chip static">${esc(y.name)}</span>`).join("")}</span>
+      <span class="debt-why">${esc(x.why)}${x.because ? ` <i>${esc(x.because)}</i>` : ""}</span><span class="r-min">${x.mins} min</span></a></li>`).join("")}</ul>`}
+  </article>`;
+}
+
+// ---------- what Gradify has learned about how this learner studies ----------
+export function learnedPanel(m) {
+  const c = m.cal;
+  if (!c) return "";
+  const bar = (b) => `<li><span>${esc(b.label)}</span><span class="i-why-bar"><i style="width:${b.rate == null ? 0 : Math.round(b.rate * 100)}%"></i></span><em>${b.n ? `${b.done} of ${b.n} done` : "no plans yet"}</em></li>`;
+  return `<article class="panel glass learned"><div class="panel-head"><div><h3>${icon("brain")} What Gradify has learned about how you study</h3><p class="sub">From ${c.planned} planned sessions and ${c.answers} timed answers. Gradify changes how it plans only once there's enough evidence.</p></div><span class="pill-dark">${c.enough ? "Learning from you" : "Still watching"}</span></div>
+    ${c.notes.length ? `<ul class="learned-notes">${c.notes.map((n) => `<li>${icon("check")}${esc(n)}</li>`).join("")}</ul>` : `<p class="sub">Nothing to change yet. As you complete (or skip) planned sessions, Gradify learns which lengths and times work for you.</p>`}
+    <div class="i-grid"><div><h4 class="brief-h">Sessions done, by length</h4><ul class="i-why-list">${c.byLength.map(bar).join("")}</ul></div><div><h4 class="brief-h">Sessions done, by time of day</h4><ul class="i-why-list">${c.byTime.map(bar).join("")}</ul></div></div>
+  </article>`;
 }

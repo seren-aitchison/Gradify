@@ -43,7 +43,7 @@ export function learnerMemory({ cards = [], reviews = [], docs = [], examDate = 
   const profiles = topicProfiles(live, reviews, { now, examDate });
   const byCard = new Map();
   for (const r of reviews) (byCard.get(r.card_id) || byCard.set(r.card_id, []).get(r.card_id)).push(r);
-  const docTitle = new Map(docs.map((d) => [d.id, d.title]));
+  const docTitle = new Map(docs.map((d) => [d.id, d.title])), docSite = new Map(docs.map((d) => [d.id, d.site || null]));
   return profiles.map((p) => {
     const tc = live.filter((c) => keyOf(c) === p.key);
     const rs = tc.flatMap((c) => (byCard.get(c.id) || []).map((r) => ({ ...r, front: c.front }))).sort((a, b) => Date.parse(b.reviewed_at) - Date.parse(a.reviewed_at));
@@ -66,7 +66,7 @@ export function learnerMemory({ cards = [], reviews = [], docs = [], examDate = 
     const seenCards = tc.filter((c) => c.reps > 0);
     const nextReview = seenCards.length ? new Date(Math.min(...seenCards.map((c) => Date.parse(c.due_at)))).toISOString() : null;
     return {
-      key: p.key, name: p.topic, documentId: p.documentId, pack: docTitle.get(p.documentId) || null,
+      key: p.key, name: p.topic, documentId: p.documentId, pack: docTitle.get(p.documentId) || null, site: docSite.get(p.documentId) || null,
       mastery: p.mastery, level: p.level, certainty, certaintyLabel: certainty >= 0.75 ? "high" : certainty >= 0.45 ? "medium" : "low",
       retention: p.dims.retention.value, forgetInDays: forgetIn(seenCards, now), lastTested: p.lastSeen ? new Date(p.lastSeen).toISOString() : null, nextReview,
       errors: { recent: wrong.length, confident: p.misconceptions.length, repeated: repeated.map((c) => c.front), slow },

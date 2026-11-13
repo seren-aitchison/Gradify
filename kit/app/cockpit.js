@@ -48,7 +48,7 @@ export function cockpitHtml(ctx) {
 }
 
 // ---------- the headline card ----------
-function heroCard({ s, reviews }) {
+export function heroCard({ s, reviews }) {
   const week = reviews.filter((r) => Date.parse(r.reviewed_at) >= Date.now() - 7 * DAY).length;
   return `<article class="cp-hero" aria-labelledby="cp-hero-h">
     <span class="cp-hero-shape" aria-hidden="true"></span>
@@ -95,7 +95,7 @@ function dueCard({ s, mins }) {
 }
 
 // ---------- answers, day by day ----------
-function barsCard({ reviews }) {
+export function barsCard({ reviews }) {
   const days = Array.from({ length: 7 }, (_, i) => { const d = new Date(Date.now() - (6 - i) * DAY); return { key: dayKey(d), label: d.toLocaleDateString("en-GB", { weekday: "short" }), n: 0 }; });
   const at = Object.fromEntries(days.map((d) => [d.key, d]));
   for (const r of reviews) { const d = at[dayKey(r.reviewed_at)]; if (d) d.n++; }
@@ -112,7 +112,7 @@ function barsCard({ reviews }) {
 }
 
 // ---------- topics by level ----------
-function splitCard({ s }) {
+export function splitCard({ s }) {
   const rows = LEVEL_ORDER.map(([lv, c]) => ({ lv, c, count: s.topics.filter((t) => t.level === lv).length })).filter((r) => r.count);
   const total = rows.reduce((a, r) => a + r.count, 0);
   const size = 150, R = 58, C = 2 * Math.PI * R;
@@ -162,7 +162,7 @@ function packsOf({ s, docs }) {
     return { id: d.id, title: d.title, site: d.site, at: d.created_at, total: cards.length, learned, due, colour: DECK[i % DECK.length] };
   });
 }
-function deckCard(ctx) {
+export function deckCard(ctx) {
   const packs = packsOf(ctx);
   return `<article class="cp-card cp-deck-card" aria-labelledby="cp-deck-h">
     <div class="cp-head"><h2 id="cp-deck-h">Your study packs <sup>${packs.length}</sup></h2><a class="cp-chip link" href="#/new">+ New</a></div>

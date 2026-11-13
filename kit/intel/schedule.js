@@ -31,7 +31,9 @@ export function freeIntervals(day, { windows, existing = [], now = Date.now() })
  * @returns {{ blocks: object[], used: number, left: object[] }}
  */
 export function planDay({ items = [], day, minutes = 20, intel = INTEL_DEFAULTS, existing = [], now = Date.now() } = {}) {
-  const free = freeIntervals(day, { windows: windowsFor(day, intel), existing, now });
+  let free = freeIntervals(day, { windows: windowsFor(day, intel), existing, now });
+  // a time of day the learner is known to get study done in (kit/intel/calibrate.js) is used first
+  if (intel.prefer) { const p = intel.prefer, hit = (f) => f.to > p.from && f.from < p.to; free = [...free.filter(hit), ...free.filter((f) => !hit(f))]; }
   let order = items.filter((x) => x.mins > 0);
   if (intel.energy === "morning") order = [...order.filter((x) => x.weight === "hard"), ...order.filter((x) => x.weight !== "hard")];
   if (intel.energy === "evening") order = [...order.filter((x) => x.weight !== "hard"), ...order.filter((x) => x.weight === "hard")];

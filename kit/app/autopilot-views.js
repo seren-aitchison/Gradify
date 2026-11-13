@@ -9,6 +9,7 @@ import { MODES, modeOf, catchUp, proposeWeek, proposeFocusBlocks, fillFocus, isF
 import { parseTell, parseInbox } from "../intel/nlp.js";
 import { planDay } from "../intel/schedule.js";
 import { dayKey, DAY, hhmm } from "../intel/memory.js";
+import { record } from "../intel/ledger.js";
 
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const dl = (d, o = { weekday: "short", day: "numeric", month: "short" }) => new Date(`${d}T12:00:00`).toLocaleDateString("en-GB", o);
@@ -22,6 +23,7 @@ export async function applyChange(ctx, what, { add = [], remove = [], move = [] 
   for (const b of add) { const r = await ctx.store.saveBlock(b); if (r?.id) added.push(r.id); }
   const log = trimLog([...(ctx.intel().log || []), { ...logEntry(what, { added, removed: removed.map(({ id, created_at, user_id, ...rest }) => rest), moved }), kind }]);
   await ctx.saveIntel({ log });
+  record(ctx.store, { event: kind === "manual" ? "plan_accepted" : "autopilot_change", source: kind, detail: { what: what.slice(0, 200), added: added.length, removed: removed.length, moved: moved.length } });
   return log;
 }
 export async function undoEntry(ctx, index) {
@@ -31,6 +33,7 @@ export async function undoEntry(ctx, index) {
   for (const b of e.undo.removed || []) await ctx.store.saveBlock(b);
   for (const mv of e.undo.moved || []) { const all = await ctx.store.listBlocks(dayKey(Date.now() - 30 * DAY), dayKey(Date.now() + 120 * DAY)); const b = all.find((x) => x.id === mv.id); if (b) await ctx.store.saveBlock({ ...b, ...mv.from }); }
   log[index] = { ...e, undone: true, undoneAt: new Date().toISOString() };
+  record(ctx.store, { event: "change_undone", source: e.kind || "manual", detail: { what: String(e.what).slice(0, 200) } });
   await ctx.saveIntel({ log });
 }
 
@@ -208,6 +211,7 @@ export function wireAutopilot(view, m, ctx) {
     if (b.getAttribute("aria-checked") === "true") return;
     haptic("select");
     await ctx.saveIntel({ autonomy: b.dataset.mode });
+    record(ctx.store, { event: "mode_changed", source: b.dataset.mode });
     complete(`${MODES.find((x) => x.id === b.dataset.mode).name} on`, { sub: MODES.find((x) => x.id === b.dataset.mode).line });
     ctx.rerender();
   }));

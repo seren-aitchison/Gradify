@@ -53,6 +53,9 @@ export class LocalStore {
   async logAttempts(list) { for (const a of list) if (!(this.mem.attempts || []).some((x) => x.id === a.id)) await this.logAttempt(a); }
   async logAttempt(a) { (this.mem.attempts ||= []).push(a); if (this.mem.attempts.length > 5000) this.mem.attempts.splice(0, this.mem.attempts.length - 5000); this.save(); return a; }
   async listAttempts(sinceDays = 400) { const t = Date.now() - sinceDays * 864e5; return (this.mem.attempts || []).filter((a) => Date.parse(a.at) >= t); }
+  // the learning event ledger (supabase/migrations/20261113140000_learning_events.sql): append-only, newest kept
+  async logEvent(e) { const row = { id: uid(), at: now(), ...e }; (this.mem.events ||= []).push(row); if (this.mem.events.length > 3000) this.mem.events.splice(0, this.mem.events.length - 3000); this.save(); return row; }
+  async listEvents(limit = 500) { return [...(this.mem.events || [])].reverse().slice(0, limit); }
   async listActivity(sinceDays = 400) { const t = Date.now() - sinceDays * 864e5; return this.mem.activity.filter((a) => Date.parse(a.at) >= t); }
   async listBlocks(fromDay, toDay) { return this.mem.blocks.filter((b) => b.day >= fromDay && b.day <= toDay); }
   async saveBlock(b) { if (b.id) { Object.assign(this.mem.blocks.find((x) => x.id === b.id), b); } else { b = { id: uid(), created_at: now(), done: false, auto: false, ...b }; this.mem.blocks.push(b); } this.save(); return b; }
@@ -221,12 +224,24 @@ export class CloudStore {
     for (const g of mine) await local.deleteGoal(g.id);
     return { moved: rows.length, already: mine.length - rows.length };
   }
+  // the learning event ledger: if the migration hasn't been run yet, events are kept on this device instead
+  async logEvent(e) {
+    if (this._noLedger) return this._local().logEvent(e);
+    try { const [row] = await this.q(this.db.from("learning_events").insert(e).select()); return row; }
+    catch (err) { if (/learning_events|does not exist|schema cache/i.test(err.message || "")) { this._noLedger = true; return this._local().logEvent(e); } throw err; }
+  }
+  async listEvents(limit = 500) {
+    if (this._noLedger) return this._local().listEvents(limit);
+    try { return await this.q(this.db.from("learning_events").select("*").order("at", { ascending: false }).limit(limit)); }
+    catch { this._noLedger = true; return this._local().listEvents(limit); }
+  }
+  _local() { return (this._ledger ||= new LocalStore()); }
   async exportAll() {
     const t = ["profiles", "documents", "packs", "cards", "reviews", "activity", "plan_blocks"];
     const out = {};
     for (const name of t) out[name] = await this.q(this.db.from(name).select("*"));
     // tables added by later migrations: included when the migration has been run
-    for (const name of ["assessment_attempts", "course_progress", "revalidation_entries", "goals"]) { try { out[name] = await this.q(this.db.from(name).select("*")); } catch { /* not set up yet */ } }
+    for (const name of ["assessment_attempts", "course_progress", "revalidation_entries", "goals", "learning_events"]) { try { out[name] = await this.q(this.db.from(name).select("*")); } catch { /* not set up yet */ } }
     return out;
   }
   async wipe() {
@@ -235,6 +250,7 @@ export class CloudStore {
     try { await this.q(this.db.from("course_progress").delete().not("subject", "is", null)); } catch { /* not set up yet */ }
     try { await this.q(this.db.from("revalidation_entries").delete().not("id", "is", null)); } catch { /* not set up yet */ }
     try { await this.q(this.db.from("goals").delete().not("id", "is", null)); } catch { /* not set up yet */ }
+    try { await this.q(this.db.from("learning_events").delete().not("id", "is", null)); } catch { /* not set up yet */ }
   }
 
   // Move everything from this device into the account (after first sign-in)
@@ -254,6 +270,9 @@ export class CloudStore {
     // activity in chunks, capped per row by the database
     const acts = m.activity.map(({ id, ...a }) => ({ ...a, xp: Math.min(500, a.xp || 0) }));
     for (let i = 0; i < acts.length; i += 200) await this.q(this.db.from("activity").insert(acts.slice(i, i + 200)));
+    // the event ledger moves too, when the account has it (card ids are remapped; unknown ones are dropped)
+    const evs = (m.events || []).map(({ id, user_id, ...e }) => ({ ...e, card_id: e.card_id ? cardIds[e.card_id] || null : null, concept: e.concept ? String(e.concept).replace(/^[^|]+/, (d) => docIds[d] || d) : null }));
+    try { for (let i = 0; i < evs.length; i += 200) await this.q(this.db.from("learning_events").insert(evs.slice(i, i + 200))); } catch { /* not set up yet: they stay on this device */ }
     // the revalidation record, if the table exists
     for (const e of m.revalidation || []) { try { const { id, ...rest } = e; await this.saveRevalidation(rest); } catch { break; } }
     // the set-up answers go separately: the learner column may not exist yet (kit/data/profile.js)
@@ -276,6 +295,8 @@ export function scopeToSite(store, site) {
     async listReviews(sinceDays) { const ids = new Set((await scoped.listCards()).map((c) => c.id)); return (await store.listReviews(sinceDays)).filter((r) => ids.has(r.card_id)); },
     async listActivity(sinceDays) { return (await store.listActivity(sinceDays)).filter((a) => a.site === site); },
     async listAttempts(sinceDays) { return (await store.listAttempts?.(sinceDays) || []).filter((a) => a.site === site); },
+    async logEvent(e) { return store.logEvent?.({ site, ...e }); },
+    async listEvents(limit) { return (await store.listEvents?.(limit) || []).filter((e) => !e.site || e.site === site); },
     async getProfile() { return { ...(await store.getProfile()), site }; },
     async saveProfile(patch) { return { ...(await store.saveProfile({ ...patch, site })), site }; },
     async exportAll() {
