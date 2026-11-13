@@ -3,11 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Gradify™ · One family of learning sites</title>
-  <meta name="description" content="Gradify is a family of learning sites, each built for one kind of learner: from JuniorGradify to MedGradify, LawGradify and TechGradify.">
-  <meta property="og:title" content="Gradify™">
-  <meta property="og:description" content="One family of learning sites. Find yours.">
+  <title>Gradify · Turn your notes into flashcards, free</title>
+  <meta name="description" content="Upload your notes and Gradify turns them into flashcards checked against what you wrote, then schedules your revision around your exam. Free, no card.">
+  <meta property="og:title" content="Gradify: turn your notes into flashcards">
+  <meta property="og:description" content="Upload a PDF of your notes. Get flashcards checked against what you wrote, and a revision plan for your exam. Free.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://getgradify.com/">
+  <meta property="og:site_name" content="Gradify">
+  <meta property="og:image" content="https://getgradify.com/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Gradify: turn your notes into flashcards checked against what you wrote.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gradify: turn your notes into flashcards">
+  <meta name="twitter:description" content="Upload a PDF of your notes. Get flashcards checked against what you wrote, and a revision plan for your exam. Free.">
+  <meta name="twitter:image" content="https://getgradify.com/assets/og.png">
+  <link rel="canonical" href="https://getgradify.com/">
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
@@ -36,108 +47,79 @@
         Gradify
       </a>
       <nav class="sections" aria-label="Sections">
-        <a href="#features">Features</a>
-        <a href="#lifeos">LifeOS</a>
-        <a href="#stage">Stage of life</a>
-        <a href="#profession">Profession</a>
-        <a href="#subject">Subject</a>
-        <a href="#tech">Technology</a>
+        <a href="#how">How it works</a>
         <a href="pricing.html">Pricing</a>
+        <a href="#faq">Questions</a>
       </nav>
       <div class="right">
-        <a class="icon-btn" href="#find" id="nav-search" aria-label="Search all sites" title="Search (/)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        </a>
-        <a class="pro-chip" href="#pro"><span class="pro-gem" aria-hidden="true"></span><span>Gradify Pro</span></a>
-        <a class="btn btn-primary btn-sm lg" href="app.html">Open Gradify</a>
+                <a class="btn btn-primary btn-sm lg" href="app.html">Try it free</a>
         <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
       <nav class="menu" id="menu" aria-label="Menu" hidden>
-        <a href="#pro">Gradify Pro</a>
+        <a href="app.html">Try Gradify free</a>
+        <a href="#how">How it works</a>
         <a href="pricing.html">Pricing</a>
-        <a href="#features">All features</a>
-        <a href="#journey">The Gradify road</a>
-        <span class="menu-label">LifeOS</span>
-        <a href="#lifeos">Overview</a>
-        <a href="#command">Today</a>
-        <a href="#plan-cal">Time blocking</a>
-        <a href="#life-heat">Life progress</a>
-        <a href="#earth">Gradify Earth</a>
-        <a href="#plan">Path</a>
-        <a href="#ai">Gradify AI</a>
-        <a href="#path-panel">Learning path</a>
-        <a href="#study">Flashcard feed</a>
-        <a href="#capture">Notes Studio</a>
-        <span class="menu-label">All sites</span>
-        <a href="#stage">Stage of life</a>
-        <a href="#profession">Profession</a>
-        <a href="#subject">Subject</a>
-        <a href="#tech">Technology</a>
-        <span class="menu-label">Gradify</span>
-        <a href="#organisations">For organisations</a>
-        <a href="#roadmap">Roadmap</a>
         <a href="#faq">Questions</a>
       </nav>
     </header>
 
     <section class="hero hero-v2" id="top">
       <div class="hero-copy">
-        <a class="badge" href="app.html"><span class="spark" aria-hidden="true"></span><span>Gradify LifeOS · free to start, no card</span></a>
-        <h1>Everything you need to <span class="grad">learn, grow and get more out of life.</span></h1>
-        <p class="lede">Specialist learning sites for every stage of life, from school to medicine, law and engineering, and one LifeOS that brings your courses, revision, plans and progress together under one account.</p>
+        <a class="badge" href="app.html"><span class="spark" aria-hidden="true"></span><span>Free · no card · works on your phone</span></a>
+        <h1>Turn your notes into flashcards <span class="grad">that are checked against what you wrote.</span></h1>
+        <p class="lede">Upload a PDF of your lecture notes, however messy, or paste them in. Gradify makes a study pack in about a minute, then schedules your revision around your exam date.</p>
         <div class="actions">
-          <a class="btn btn-primary lg" href="app.html"><span>Explore Gradify</span> <span aria-hidden="true">→</span></a>
-          <a class="btn btn-pro lg" href="#pro"><span class="pro-gem" aria-hidden="true"></span><span>Unlock Gradify Pro</span></a>
-          <a class="text-link" href="#find">Find your site</a>
+          <a class="btn btn-primary lg" href="app.html"><span>Turn my notes into flashcards</span> <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="#how">See how it works</a>
         </div>
         <ul class="hero-proof" aria-label="What's included">
-          <li><span aria-hidden="true">✓</span> Every course, lesson and lab is free</li>
-          <li><span aria-hidden="true">✓</span> One account across every Gradify site</li>
-          <li><span aria-hidden="true">✓</span> Progress saved on every device</li>
+          <li><span aria-hidden="true">✓</span> Every card shows where it came from in your notes</li>
+          <li><span aria-hidden="true">✓</span> Spaced repetition, so you revise just before you forget</li>
+          <li><span aria-hidden="true">✓</span> Try it without an account</li>
         </ul>
       </div>
       <figure class="hero-shot">
         <div class="shot-frame">
-          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>getgradify.com · LifeOS</span></div>
-          <img src="assets/screens/lifeos-today.jpg" width="1376" height="840" alt="The Gradify LifeOS Today screen: a learner's level and XP, a recommended review, goals linked to activity, the week's deadlines and activity across Gradify sites." fetchpriority="high">
+          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i><span>getgradify.com · Study pack</span></div>
+          <img src="assets/screens/notes-deck.jpg" width="1376" height="860" alt="A Gradify study pack made from notes on the cardiac cycle: 19 flashcards, 100% checked against the notes, ready to revise." fetchpriority="high">
         </div>
-        <figcaption>The real LifeOS Today screen, shown with an example learner.</figcaption>
+        <figcaption>A real study pack, made from the sample notes in the app.</figcaption>
       </figure>
     </section>
 
     <!-- How Gradify works -->
     <section class="how" id="how" aria-labelledby="how-title">
       <div class="sec-head">
-        <span class="eyebrow">How Gradify works</span>
-        <h2 id="how-title">Pick your site. Learn by doing. <span class="grad">See it all in LifeOS.</span></h2>
+        <span class="eyebrow">How it works</span>
+        <h2 id="how-title">Notes in. Flashcards out. <span class="grad">Revision planned.</span></h2>
       </div>
       <ol class="how-steps">
         <li class="how-step glass">
           <span class="how-n">1</span>
-          <h3>Pick your site</h3>
-          <p>Each Gradify site is built for one kind of learner, with its own courses, labs and exam practice. Start with as many as you need.</p>
-          <img src="assets/screens/course-home.jpg" width="1440" height="900" loading="lazy" alt="A LawGradify course: the first school's learning path, the daily XP goal, the learner's plan and next milestone.">
+          <h3>Bring your notes</h3>
+          <p>Drop in a PDF or paste your notes. One lecture or topic at a time works best. No account needed to try it.</p>
+          <img src="assets/screens/notes-upload.jpg" width="1376" height="860" loading="lazy" alt="The Bring your notes screen, with notes on the cardiac cycle pasted in and a Make my study pack button.">
         </li>
         <li class="how-step glass">
           <span class="how-n">2</span>
-          <h3>Learn by doing</h3>
-          <p>Short lessons with worked examples, interactive labs, quizzes and flashcards from your own notes, scheduled so you revise just before you forget.</p>
-          <img src="assets/screens/lifeos-study.jpg" width="1376" height="729" loading="lazy" alt="The Study view: a flashcard feed drawn from several Gradify sites, with mastery for each topic.">
+          <h3>Get checked flashcards</h3>
+          <p>Every card is matched to the line in your notes it came from. Anything that doesn't match is flagged so you can fix it.</p>
+          <img src="assets/screens/notes-deck.jpg" width="1376" height="860" loading="lazy" alt="A study pack of 19 flashcards, 100% checked against the notes.">
         </li>
         <li class="how-step glass">
           <span class="how-n">3</span>
-          <h3>See it all in LifeOS</h3>
-          <p>Every lesson, review and workout lands in one place: your level, streak, plan, heatmap and what to do next.</p>
-          <img src="assets/screens/lifeos-progress.jpg" width="1376" height="860" loading="lazy" alt="The Progress view: a year-long activity heatmap and progress in each Gradify site.">
+          <h3>Revise at the right time</h3>
+          <p>Rate how well you knew each card. Gradify brings it back just before you'd forget, paced to your exam date.</p>
+          <img src="assets/screens/notes-study.jpg" width="1376" height="860" loading="lazy" alt="A flashcard asking: What is the cardiac cycle? with I know it, Not sure and No idea buttons.">
         </li>
       </ol>
-      <p class="example-note">Screens from the real product. LifeOS views show an example learner.</p>
+      <p class="how-cta"><a class="btn btn-primary lg" href="app.html"><span>Try it with your notes</span> <span aria-hidden="true">→</span></a></p>
     </section>
 
     <!-- One account, every site -->
-    <section class="ecosystem" id="ecosystem" aria-labelledby="eco-title">
+    <section class="ecosystem" id="ecosystem" hidden aria-labelledby="eco-title">
       <div class="eco-copy">
         <span class="eyebrow">One Gradify</span>
         <h2 id="eco-title">Specialist sites. <span class="grad">One account.</span></h2>
@@ -166,7 +148,7 @@
     </section>
 
     <!-- Overview panels -->
-    <section class="bento" aria-label="Overview">
+    <section class="bento" aria-label="Overview" hidden>
       <div class="panel glass tiles-panel">
         <div class="panel-head">
           <h3>Every site, by colour</h3>
@@ -201,7 +183,7 @@
 
 
     <!-- Every feature -->
-    <section class="showcase" id="features" aria-labelledby="features-title">
+    <section class="showcase" id="features" hidden aria-labelledby="features-title">
       <div class="section-head">
         <span class="badge"><span class="spark" aria-hidden="true"></span><span id="feature-count"></span></span>
         <h2 id="features-title">Everything that makes Gradify work</h2>
@@ -216,7 +198,7 @@
 
 
     <!-- The Gradify road -->
-    <section class="journey" id="journey" aria-labelledby="journey-title">
+    <section class="journey" id="journey" hidden aria-labelledby="journey-title">
       <div class="section-head">
         <h2 id="journey-title">The Gradify road</h2>
         <p>From your first lesson to your first job. Scroll to drive it.</p>
@@ -225,7 +207,7 @@
     </section>
 
     <!-- LifeOS preview (example data; rendered by assets/lifeos.js) -->
-    <section class="lifeos" id="lifeos" aria-labelledby="lifeos-title">
+    <section class="lifeos" id="lifeos" hidden aria-labelledby="lifeos-title">
       <div class="life-head">
         <span class="badge"><span class="spark" aria-hidden="true"></span>Gradify LifeOS · Interactive tour</span>
         <h2 id="lifeos-title">Your whole life's progress, <span class="grad">in one place.</span></h2>
@@ -501,7 +483,7 @@
 
     <div class="toast lg" id="toast" role="status" aria-live="polite" hidden></div>
 
-    <main id="find">
+    <main id="find" hidden>
       <div class="controls glass" role="search">
         <label class="search lg">
           <span class="sr-only">Search sites</span>
@@ -569,7 +551,7 @@
       </div>
     </section>
 
-    <section class="orgs" id="organisations" aria-labelledby="orgs-title">
+    <section class="orgs" id="organisations" hidden aria-labelledby="orgs-title">
       <div class="section-head">
         <span class="badge"><span class="spark" aria-hidden="true"></span>Coming in phase 3</span>
         <h2 id="orgs-title">Gradify for organisations</h2>
@@ -585,7 +567,7 @@
     </section>
 
     <!-- Everywhere -->
-    <section class="everywhere" id="everywhere" aria-labelledby="everywhere-title">
+    <section class="everywhere" id="everywhere" hidden aria-labelledby="everywhere-title">
       <div class="section-head">
         <h2 id="everywhere-title">Gradify everywhere</h2>
         <p>Start on the web today. Your progress will follow you to every device.</p>
@@ -599,7 +581,7 @@
     </section>
 
     <!-- Roadmap -->
-    <section class="roadmap" id="roadmap" aria-labelledby="roadmap-title">
+    <section class="roadmap" id="roadmap" hidden aria-labelledby="roadmap-title">
       <div class="section-head">
         <span class="badge"><span class="spark" aria-hidden="true"></span>Roadmap</span>
         <h2 id="roadmap-title">Built in three phases</h2>
@@ -653,43 +635,38 @@
       </div>
       <div class="faq-list">
         <details class="glass">
-          <summary>What is Gradify?</summary>
-          <p>A family of learning sites, each built for one kind of learner: a stage of life like UnderGradify, a profession like MedGradify, or a subject like LanguageGradify. getgradify.com is the home of all of them, and of Gradify LifeOS.</p>
+          <summary>Is it really free?</summary>
+          <p>Yes. Making flashcards from your notes, revising them and planning your revision are free, with no card. <a href="pricing.html">Gradify Pro</a> will add more Gradify AI each month for people who use it a lot.</p>
         </details>
         <details class="glass">
-          <summary>What is Gradify LifeOS?</summary>
-          <p>One place for your whole learning life. Every Gradify site has its own learning path and heatmap, and everything you do on any of them comes together in LifeOS: one heatmap, one set of goals, XP and streaks, your knowledge map on Gradify Earth, and every course you've completed.</p>
+          <summary>What kind of notes work?</summary>
+          <p>A PDF with selectable text, a .txt or .md file, or notes pasted straight in. One lecture or topic at a time works best. Gradify AI, which comes with an account, also handles messy notes, diagrams and scanned pages.</p>
         </details>
         <details class="glass">
-          <summary>Can I use LifeOS yet?</summary>
-          <p>Not yet. The LifeOS section on this page is a preview with example data, so you can see how it will work. Accounts come first, then ForgeLab will be the first site connected to it.</p>
+          <summary>How do I know the flashcards are right?</summary>
+          <p>Every card is matched to the line in your notes it came from, and you can see that line. Cards that don't fully match are marked <em>to check</em>, so you can edit, regenerate or delete them before you revise.</p>
         </details>
         <details class="glass">
-          <summary>Will Gradify courses count as qualifications?</summary>
-          <p>That's the aim. Every completed course will come with a certificate that has a unique ID and a public page where anyone, such as an employer or a university, can check it's genuine. Which organisations recognise them will build up over time.</p>
+          <summary>Do I need an account?</summary>
+          <p>Not to try it. Your first study pack is saved on your device. Make a free account (email link or Google, no password) to keep your packs on every device and use Gradify AI. Anything you made before moves across.</p>
         </details>
         <details class="glass">
-          <summary>How much will it cost?</summary>
-          <p>Pricing hasn't been decided yet. It will be published before accounts open.</p>
-        </details>
-        <details class="glass">
-          <summary>Which sites are live?</summary>
-          <p>Each site's card shows whether it's live or coming soon. Turn on “Live only” in the directory to see just the live ones.</p>
+          <summary>How does the revision schedule work?</summary>
+          <p>After each card you say how well you knew it. Gradify uses spaced repetition to bring it back just before you'd forget, and paces everything to your exam date and the time you have each day.</p>
         </details>
         <details class="glass">
           <summary>What happens to my data?</summary>
-          <p>LifeOS is being designed so your progress belongs to you: you'll be able to export it or delete it, and each Gradify site will only see the data it needs.</p>
+          <p>It's yours. You can download everything or delete it from Account at any time. When you use Gradify AI, the text it needs is sent to Anthropic's Claude API to make your pack. The <a href="privacy.html">privacy page</a> has the details.</p>
         </details>
       </div>
     </section>
 
     <!-- Closing call to action -->
     <section class="closing glass" aria-labelledby="closing-title">
-      <h2 id="closing-title">Start learning today. <span class="grad">It's free.</span></h2>
-      <p class="lede">Open Gradify, pick your site and finish your first lesson in a few minutes. Your progress is saved from the start.</p>
+      <h2 id="closing-title">Your next lecture, as flashcards. <span class="grad">Free.</span></h2>
+      <p class="lede">Bring one set of notes and see your study pack in about a minute. No account needed to try it.</p>
       <div class="actions">
-        <a class="btn btn-primary lg" href="app.html"><span>Explore Gradify</span> <span aria-hidden="true">→</span></a>
-        <a class="btn btn-pro lg" href="#pro"><span class="pro-gem" aria-hidden="true"></span><span>See Gradify Pro</span></a>
+        <a class="btn btn-primary lg" href="app.html"><span>Turn my notes into flashcards</span> <span aria-hidden="true">→</span></a>
       </div>
     </section>
 
@@ -697,19 +674,11 @@
       <div class="foot-cols">
         <div class="foot-brand">
           <b>Gradify™</b>
-          <p>One family of learning sites, and the LifeOS that brings your progress together.</p>
+          <p>Turn your notes into flashcards checked against what you wrote, and revise them at the right time.</p>
         </div>
-        <nav aria-label="LifeOS">
-          <b>LifeOS</b>
-          <a href="#command">Today</a><a href="#plan-cal">Time blocking</a><a href="#life-heat">Life progress</a><a href="#earth">Gradify Earth</a><a href="#plan">Path</a><a href="#ai">Gradify AI</a>
-        </nav>
-        <nav aria-label="Sites">
-          <b>Sites</b>
-          <a href="#stage">Stage of life</a><a href="#profession">Profession</a><a href="#subject">Subject</a><a href="#tech">Technology</a>
-        </nav>
         <nav aria-label="Gradify">
           <b>Gradify</b>
-          <a href="#organisations">For organisations</a><a href="#everywhere">Apps and devices</a><a href="#roadmap">Roadmap</a><a href="#faq">Questions</a><a href="pricing.html">Pricing</a><a href="privacy.html">Privacy</a>
+          <a href="app.html">Try it free</a><a href="#how">How it works</a><a href="pricing.html">Pricing</a><a href="#faq">Questions</a><a href="privacy.html">Privacy</a>
         </nav>
       </div>
       <div class="foot-base">
@@ -718,7 +687,7 @@
       </div>
     </footer>
   </div>
-  <button type="button" class="ai-fab lg" id="ai-fab" aria-label="Gradify AI preview (scripted demo)"><span class="ai-av" aria-hidden="true"></span><span class="fab-txt">Gradify AI preview</span></button>
+  <button type="button" class="ai-fab lg" id="ai-fab" hidden aria-label="Gradify AI preview (scripted demo)"><span class="ai-av" aria-hidden="true"></span><span class="fab-txt">Gradify AI preview</span></button>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
     if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));

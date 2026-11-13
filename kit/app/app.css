@@ -472,3 +472,11 @@ kbd { font: 11px var(--mono); padding: 1px 6px; border-radius: 5px; border: 1px 
 .goal .hb-week { align-self: flex-start; }
 .goal .gl-actions { justify-content: flex-start; }
 .lo-across:has(> article:only-child) { grid-template-columns: 1fr; }
+
+/* the sign-up ask on a new pack, and the share nudge once signed in */
+.save-panel { display: grid; gap: 12px; border: 1px solid transparent; background: linear-gradient(var(--panel-strong, #111), var(--panel-strong, #111)) padding-box, linear-gradient(90deg, #4641ff, #f055dd, #ff5600) border-box; }
+.save-panel h3, .share-panel h3 { margin: 0 0 4px; }
+.save-panel .save-fine { margin: 0; font-size: 13px; }
+.save-panel #save-google { justify-self: start; }
+.share-panel { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+.setup-more { margin: 16px 0 0; }

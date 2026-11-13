@@ -1,6 +1,6 @@
 // Gradify service worker: lets the site open offline.
 // Network first, so a new deploy shows straight away; the cache is the fallback.
-const CACHE = "gradify-v72";
+const CACHE = "gradify-v73";
 const SHELL = [
   "./", "index.html", "app.html", "manifest.webmanifest", "gradify.config.js",
   // homepage
@@ -8,7 +8,7 @@ const SHELL = [
   // the Gradify Kit
   "kit/styles/base.css", "kit/styles/components.css",
   "kit/core/icons.js", "kit/core/colour.js", "kit/core/sites.js", "kit/core/site.js", "kit/core/subnav.js", "kit/core/site-pages.js", "kit/core/site-content.js", "kit/core/subsite-home.js", "kit/core/site-maps.js", "kit/earth/subject-map.js", "kit/learning/topic-match.js", "kit/models/viewer.js", "kit/models/index.js", "kit/models/anatomy-glb.js", "kit/vendor/three/addons/GLTFLoader.js", "kit/vendor/three/addons/meshopt_decoder.module.js", "kit/vendor/three/addons/BufferGeometryUtils.js", "kit/styles/model.css", "kit/vendor/three/addons/EffectComposer.js", "kit/vendor/three/addons/RenderPass.js", "kit/vendor/three/addons/ShaderPass.js", "kit/vendor/three/addons/MaskPass.js", "kit/vendor/three/addons/Pass.js", "kit/vendor/three/addons/UnrealBloomPass.js", "kit/vendor/three/addons/OutputPass.js", "kit/vendor/three/addons/CopyShader.js", "kit/vendor/three/addons/LuminosityHighPassShader.js", "kit/vendor/three/addons/OutputShader.js", "kit/vendor/three/addons/RoomEnvironment.js", "kit/vendor/three/three.module.min.js", "kit/vendor/three/OrbitControls.js", "kit/styles/subsite.css",
-  "kit/app/main.js", "kit/app/app.css", "kit/data/store.js", "kit/data/functions.js", "kit/data/profile.js", "kit/core/analytics.js", "kit/learning/pace.js",
+  "kit/app/main.js", "kit/app/app.css", "kit/data/store.js", "kit/data/functions.js", "kit/data/profile.js", "kit/core/analytics.js", "kit/core/attribution.js", "kit/learning/pace.js",
   "kit/learning/srs.js", "kit/learning/mastery.js", "kit/learning/evidence-class.js", "kit/learning/targets.js", "kit/learning/achievements.js", "kit/learning/mastery-view.js", "kit/learning/learner-data.js", "kit/lifeos/mine.js",
   "kit/course/course.js", "kit/course/notes.js", "kit/course/road.js", "kit/course/syllabus.js", "kit/core/text.js", "kit/assess/questions.js", "kit/assess/model.js", "kit/assess/types.js", "kit/assess/attempts.js", "kit/assess/exam.js", "kit/assess/tutor.js", "kit/assess/tutor-view.js", "kit/course/tutor-panel.js", "kit/course/lab-state.js", "kit/styles/course.css", "kit/courses/physics/course.js", "kit/courses/physics/interactives.js", "kit/courses/physics/syllabus.js", "kit/courses/law/course.js", "kit/courses/law/syllabus.js", "kit/courses/law/qa.js", "kit/courses/law/ids.js", "kit/courses/law/registry.js", "kit/courses/law/map.js", "kit/courses/nursing/course.js", "kit/courses/nursing/syllabus.js", "kit/courses/nursing/qa.js", "kit/courses/nursing/ids.js", "kit/courses/nursing/registry.js", "kit/courses/nursing/map.js",
   "kit/labs/lab.js", "kit/styles/labs.css",

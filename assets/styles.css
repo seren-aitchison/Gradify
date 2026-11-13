@@ -501,3 +501,4 @@ footer b { color: var(--fg); font-weight: 600; }
 .notify-pro.done .notify-msg { color: var(--fg) !important; font-size: 15px; }
 @media (max-width: 960px) { .pro-later { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .notify-row { flex-direction: column; } .pro-later { padding: 18px; } }
+.how-cta { display: flex; justify-content: center; margin: 28px 0 0; }
