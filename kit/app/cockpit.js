@@ -5,6 +5,7 @@
 // Styles: the "Cockpit" section of kit/app/app.css.
 import { icon } from "../core/icons.js";
 import { LEVELS } from "../learning/mastery.js";
+import { haptic } from "../core/haptics.js";
 
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const n = (x) => Number(x || 0).toLocaleString("en-GB");
@@ -246,13 +247,14 @@ export function wireCockpit(view, ctx) {
     draw();
     view.querySelector("[data-shuffle]")?.addEventListener("click", () => {
       if (packs.length < 2 || leaving) return;
-      leaving = true;
+      leaving = true; haptic("shuffle");
       deck.querySelector(".front")?.classList.add("leaving");
       setTimeout(() => { order = [...order.slice(1), order[0]]; leaving = false; draw(); }, matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 260);
     });
     deck.addEventListener("click", (e) => {
       const b = e.target.closest("[data-bring]");
       if (!b) return;
+      haptic("select");
       const k = order.findIndex((i) => packs[i].id === b.dataset.bring);
       order = [order[k], ...order.filter((_, j) => j !== k)];
       draw();
