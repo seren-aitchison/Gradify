@@ -71,6 +71,8 @@ async function loadMine(siteName) {
 }
 
 export async function mountSubjectMap(siteName) {
+  // shown inside LifeOS (app.html#/earth): just the map, without the site's own header and footer
+  try { if (window.self !== window.top) document.body.classList.add("map-embedded"); } catch { /* cross-origin parent: leave the page as it is */ }
   const site = SITES.find((s) => s.n === siteName), content = SITES_CONTENT[siteName], subs = SITE_MAPS[siteName];
   if (!site || !content || !subs) return;
   const colours = [site.c, ...PALETTE.filter((c) => c !== site.c)];

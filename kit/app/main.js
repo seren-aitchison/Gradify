@@ -11,7 +11,7 @@ import { trackView } from "../core/analytics.js";
 import { captureFirstTouch, recordFirstTouch } from "../core/attribution.js";
 captureFirstTouch();
 applyPrefs();
-import { currentSite, nameHtml } from "../core/site.js";
+import { currentSite, nameHtml, pathOf } from "../core/site.js";
 // on a sub-site (getgradify.com/medgradify/), the app belongs to that site
 const SITE = currentSite();
 trackView(SITE || "Gradify app");
@@ -25,12 +25,14 @@ import { mountJourney, journeySummary } from "../game/journey.js";
 import { AREAS, METRICS, PERIODS, HABIT_MODES, validateGoal, goalProgress, focusGoals } from "../learning/goals.js";
 import { goalData } from "../learning/goal-data.js";
 import { PRO_ON_SALE } from "../data/billing.js";
+import { cockpitHtml, wireCockpit, welcomeHtml } from "./cockpit.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const DAY = 864e5;
 const dayKey = (d) => { const x = new Date(d); return `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, "0")}-${String(x.getDate()).padStart(2, "0")}`; };
 const today = () => dayKey(new Date());
+const n0 = (x) => Number(x || 0).toLocaleString("en-GB");
 const fmtDate = (d, o = { day: "numeric", month: "short" }) => new Date(d).toLocaleDateString("en-GB", o);
 const SITES = GROUPS.flatMap((g) => g.items).filter((s) => s.n !== "Klerio");
 const siteOf = (n) => SITES.find((s) => s.n === n) || { n: "Gradify", c: "f055dd", i: "sparkles" };
@@ -85,18 +87,40 @@ async function stats() {
 // One navigation for every Gradify site's app, drawn here so the 33 app pages share it: the signed-in LifeOS.
 // [route, label, short label for the phone tab bar, icon]
 const NAV = [
-  ["today", "Command Centre", "Today", "home"],
-  ["learning", "My Learning", "Learning", "book"],
-  ["plan", "Calendar", "Calendar", "calendar"],
-  ["goals", "My Goals", "Goals", "trophy"],
-  ["progress", "My Progress", "Progress", "trend"],
-  ["notes", "Library", "Library", "layers"],
+  ["today", "Today", "Today", "home"],
+  ["plan", "Plan", "Plan", "calendar"],
+  ["progress", "Progress", "Progress", "trend"],
+  ["earth", "Earth", "Earth", "globe"],
+  ["goals", "Path", "Path", "route"],
+  ["ai", "Gradify AI", "AI", "sparkles"],
+  ["learning", "Learn", "Learn", "book"],
+  ["study", "Study", "Study", "layers"],
+  ["notes", "Notes Studio", "Notes", "upload"],
+  ["community", "Community", "Community", "people"],
+  ["account", "Settings", "Settings", "cog"],
 ];
+// the phone tab bar has room for five: the rest are under More
+const TABS = ["today", "study", "notes", "plan"];
 // screens that belong to a section without being one
-const SECTION_OF = { deck: "notes", new: "notes", topic: "progress", study: "learning", account: null, start: null, goal: "goals" };
+const SECTION_OF = { deck: "notes", new: "notes", topic: "progress", start: null, goal: "goals" };
 function drawNav() {
-  for (const nav of document.querySelectorAll(".app-nav")) nav.innerHTML = NAV.map(([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`).join("");
-  for (const nav of document.querySelectorAll(".tabbar")) nav.innerHTML = NAV.map(([r, , short, ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${short}</span></a>`).join("");
+  // the LifeOS sidebar (wide screens) and, inside it, every section; the top bar keeps the brand and account
+  let side = document.querySelector(".lo-side");
+  if (!side) {
+    side = document.createElement("nav");
+    side.className = "lo-side"; side.id = "lo-side"; side.setAttribute("aria-label", "LifeOS");
+    document.querySelector("#view")?.before(side);
+    document.querySelector("#view")?.parentElement.classList.add("lo-shell");
+  }
+  side.innerHTML = `<span class="lo-side-title">LifeOS</span>${NAV.map(([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`).join("")}`;
+  for (const nav of document.querySelectorAll(".app-nav")) nav.innerHTML = NAV.slice(0, 7).map(([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`).join("");
+  for (const nav of document.querySelectorAll(".tabbar")) {
+    nav.innerHTML = NAV.filter(([r]) => TABS.includes(r)).map(([r, , short, ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${short}</span></a>`).join("")
+      + `<button type="button" class="tab-more" aria-expanded="false" aria-controls="lo-side">${icon("layers")}<span>More</span></button>`;
+    const more = nav.querySelector(".tab-more");
+    more.addEventListener("click", () => { const open = !document.body.classList.contains("side-open"); document.body.classList.toggle("side-open", open); more.setAttribute("aria-expanded", String(open)); });
+  }
+  side.addEventListener("click", (e) => { if (e.target.closest("a")) document.body.classList.remove("side-open"); });
 }
 drawNav();
 // the pricing page lives on getgradify.com; sub-sites served elsewhere link to it there
@@ -108,7 +132,8 @@ async function route() {
   const [name, arg] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
   if (needsSetup(profile) && !["start", "account"].includes(name)) { location.replace("#/start"); return; }
   const section = name in SECTION_OF ? SECTION_OF[name] : name;
-  document.querySelectorAll(".app-nav a, .tabbar a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === section)));
+  document.querySelectorAll(".app-nav a, .tabbar a, .lo-side a").forEach((a) => a.setAttribute("aria-current", String(a.dataset.route === section)));
+  document.body.classList.remove("side-open");
   view.innerHTML = '<div class="loading" aria-busy="true"></div>';
   try { await (routes[name] || renderToday)(arg); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
   view.focus({ preventScroll: true });
@@ -234,7 +259,7 @@ async function renderStart(stepArg) {
 }
 
 // ---------- Add notes ----------
-async function renderNew() {
+async function renderNew(arg) {
   const s = siteOf(profile.site);
   const ai = store.mode === "cloud" && (await store.user());
   view.innerHTML = `<section class="new">
@@ -276,6 +301,7 @@ async function renderNew() {
   drop.addEventListener("dragleave", () => drop.classList.remove("over"));
   drop.addEventListener("drop", (e) => { e.preventDefault(); drop.classList.remove("over"); take(e.dataTransfer.files[0]); });
   $("#sample").addEventListener("click", () => { $("#text").value = SAMPLE; $("#title").value = "Cardiac cycle"; status.textContent = "Sample notes added. Press “Make my study pack”."; });
+  if (arg === "sample") $("#sample").click();
   $("#upload").addEventListener("submit", async (e) => {
     e.preventDefault();
     const text = $("#text").value.trim();
@@ -603,6 +629,8 @@ function heatmap(byDay, weeks = 16) {
 async function renderToday() {
   const [s, L, sub, G, GO] = await Promise.all([stats(), learnerAcross(), store.mode === "cloud" ? mySubscription(store).catch(() => null) : null, journeySummary({ store }).catch(() => null), loadGoals().catch(() => ({ goals: [], progress: {}, unavailable: "x" }))]);
   const blocks = (await ensureReviewBlock(s)).sort((a, b) => a.start_min - b.start_min);
+  const [reviews, ahead] = await Promise.all([store.listReviews(400).catch(() => []), store.listBlocks(today(), dayKey(Date.now() + 14 * DAY)).catch(() => [])]);
+  const allowance = store.mode === "cloud" ? myAllowance(store).then((u) => u.map((x) => ({ ...x, label: AI_ALLOWANCES.find((a) => a.feature === x.feature)?.label || x.feature }))) : null;
   const site = siteOf(profile.site);
   // level and streak as the Journey works them out (rest days included), so every screen agrees
   const gxp = G ? G.xp : s.xp, streakDays = G ? G.streak : s.streak;
@@ -637,13 +665,17 @@ async function renderToday() {
   const hour = new Date().getHours();
   const courses = L?.courses || [];
   const examCourse = courses.find((c) => c.examDate) || null;
+  const cockpitCtx = { s, reviews, blocks: ahead, docs: s.docs, profile, examIn, mins, topicHref, studyHref, allowance };
   view.innerHTML = `<section class="today">
     <span class="kicker lo-kicker">${icon("home")}Command Centre · ${fmtDate(Date.now(), { weekday: "long", day: "numeric", month: "long" })}</span>
-    <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""}</h1>
+    <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""} <span class="wave" aria-hidden="true">👋</span></h1>
+    <p class="sub lo-hello">${s.cards.length ? `${n0(s.cards.length)} flashcards across ${n0(s.docs.length)} study ${s.docs.length === 1 ? "pack" : "packs"}${streakDays ? ` · ${streakDays}-day streak` : ""}.` : "Nice to have you here."}</p>
+    ${!s.cards.length && !courses.length ? welcomeHtml(profile.display_name) : ""}
     <article class="panel glass next-up" style="--c:#${site.c}">
         <span class="kicker">${icon("flame")}Do this next</span><h2>${next.t}</h2><p class="sub">${next.d}</p>
         <a class="btn btn-light lg" href="${next.href}"><span>${next.cta}</span></a>
       </article>
+    ${cockpitHtml(cockpitCtx)}
     ${L?.next?.length || courses.length ? `<div class="lo-across">
       ${L?.next?.length > (s.cards.length ? 0 : 1) ? `<article class="panel glass"><div class="panel-head"><h3>${s.cards.length ? "Across" : "Then, across"} ${SITE ? esc(SITE) : "Gradify"}</h3><a class="see" href="#/learning">My Learning</a></div>${nextList(L.next.slice(s.cards.length ? 0 : 1, s.cards.length ? 3 : 4))}</article>` : ""}
       ${courses.length ? `<article class="panel glass"><div class="panel-head"><h3>Your courses</h3><span class="pill-dark">${courses.length}</span></div><ul class="lo-courses">${courses.slice(0, 4).map((c) => { const pct = c.written ? Math.round((100 * c.done) / c.written) : 0; return `<li><a href="${c.href && c.next ? `${c.href}#/lesson/${encodeURIComponent(c.next.id)}` : c.href || "#/learning"}"><span><b>${esc(c.name)}</b><em>${c.next ? `Next: ${esc(c.next.title)}` : "Finished"}</em></span><span class="goal-bar" role="img" aria-label="${pct}%"><i style="width:${pct}%"></i></span><em>${pct}%</em></a></li>`; }).join("")}</ul></article>` : ""}
@@ -685,6 +717,7 @@ async function renderToday() {
       ${proCard(sub)}
     </div>
   </section>`;
+  wireCockpit(view, cockpitCtx);
   // the daily goal and today's quests, from the same engine as My Progress
   if (G) {
     const pct = Math.min(1, G.todayXp / (G.goal || 1)), R = 30, C = 2 * Math.PI * R;
@@ -1224,6 +1257,67 @@ async function renderBillingPlan() {
     catch (err) { b.disabled = false; b.querySelector("span").textContent = "Manage billing"; toast(esc(err.message)); }
   });
 }
+
+// ---------- Earth: the learner's subject as a world, with their real topics and mastery ----------
+// Each built Gradify site has a learning map (kit/earth/subject-map.js) that sorts the learner's own topics into the
+// subject's areas. Here it's shown inside LifeOS, for the subject they're studying, with a switch between subjects.
+async function renderEarth(arg) {
+  const L = await learnerAcross().catch(() => null);
+  const mine = [...new Set([profile.site, ...learnerOf(profile).subjects, ...(L?.courses || []).map((c) => c.site)])].map(siteOf).filter((x) => x.built);
+  const choice = mine.find((x) => x.n === decodeURIComponent(arg || "")) || mine[0];
+  view.innerHTML = `<section class="earth-route">
+    <span class="kicker lo-kicker">${icon("globe")}Gradify Earth</span>
+    <h1>Your subject, as a world</h1>
+    <p class="sub">Each area of ${choice ? esc(choice.n) : "your subject"} is a region and each topic is a pin. Topics from your own notes take the place of the ones they match, lit by your real mastery. Pins you haven't studied yet show example progress, and say so.</p>
+    ${mine.length > 1 ? `<div class="seg-chips">${mine.map((x) => `<a class="chip" href="#/earth/${encodeURIComponent(x.n)}" aria-pressed="${x === choice}">${esc(x.n)}</a>`).join("")}</div>` : ""}
+    ${choice ? `<div class="earth-frame panel glass"><iframe src="${pathOf(choice)}map.html" title="${esc(choice.n)} learning map" loading="lazy"></iframe></div>
+      <p class="sub"><a href="${pathOf(choice)}map.html" target="_blank" rel="noopener">Open the map full screen ↗</a></p>`
+    : `<article class="panel glass"><h3>No map for this subject yet</h3><p class="sub">Choose a subject with a Gradify site in <a href="#/account">Settings</a> and its world appears here.</p></article>`}
+  </section>`;
+}
+routes.earth = renderEarth;
+
+// ---------- Gradify AI: what it does for you, and how much of this month's allowance is left ----------
+async function renderAi() {
+  const user = store.mode === "cloud" ? await store.user() : null;
+  const uses = user ? await myAllowance(store).catch(() => []) : [];
+  const on = uses.filter((u) => u.enabled);
+  const docs = await store.listDocuments().catch(() => []);
+  const s = siteOf(profile.site);
+  const tools = [
+    ["upload", "Study packs from messy notes", "Reads handwriting-heavy PDFs, diagrams and scans, and checks every card against what you wrote.", "#/new", "Add notes"],
+    ["brain", "Explain and apply questions", "Questions that make you explain why and use an idea on a problem you haven't seen.", docs[0] ? `#/deck/${docs[0].id}` : "#/new", docs[0] ? "Open your latest pack" : "Make a pack first"],
+    ["book", "A tutor in every lesson", "Talk a topic through, get questioned like a viva, or ask why something works, grounded in the lesson's notes.", "#/learning", "Go to your courses"],
+    ["checklist", "Fix a card", "Regenerate any card that doesn't match your notes, straight from the pack.", docs[0] ? `#/deck/${docs[0].id}` : "#/notes", "Open a pack"],
+  ];
+  view.innerHTML = `<section class="ai-route">
+    <span class="kicker lo-kicker">${icon("sparkles")}Gradify AI</span>
+    <h1>An assistant that works from your own notes</h1>
+    <p class="sub">Gradify AI (Claude) only answers from your notes and Gradify's lessons, so you can check every answer against the source.</p>
+    <article class="panel glass ai-allow">
+      ${user ? (on.length ? `<div class="panel-head"><h3>This month</h3><a class="see" href="${PRICING}">Plans</a></div><ul class="plan-uses">${on.map((u) => `<li><span>${esc(AI_ALLOWANCES.find((a) => a.feature === u.feature)?.label || u.feature)}</span><b>${u.used} of ${u.allowance}</b></li>`).join("")}</ul>`
+        : `<h3>Gradify AI isn't switched on yet</h3><p class="sub">Your allowance will show here when it is. Everything else in Gradify works now.</p>`)
+      : `<h3>Sign in to use Gradify AI</h3><p class="sub">It's free, with a monthly allowance. Your notes and cards on this device move into your account.</p><a class="btn btn-light lg btn-sm" href="#/account"><span>Sign in</span></a>`}
+    </article>
+    <div class="ai-tools">${tools.map(([ic, t, d, href, cta]) => `<a class="panel glass ai-tool" href="${href}"><span class="ai-ico">${icon(ic)}</span><b>${t}</b><span class="sub">${d}</span><span class="see">${cta} →</span></a>`).join("")}</div>
+    <p class="sub">Studying ${esc(s.n)}. When you use Gradify AI, the text it needs is sent to Anthropic's Claude API; see <a href="/privacy.html">privacy</a>.</p>
+  </section>`;
+}
+routes.ai = renderAi;
+
+// ---------- Community: not built yet; say so, and offer the one real thing (bringing friends) ----------
+async function renderCommunity() {
+  view.innerHTML = `<section class="community-route">
+    <span class="kicker lo-kicker">${icon("people")}Community</span>
+    <h1>Study with other people</h1>
+    <article class="panel glass"><span class="pill-dark">Coming soon</span>
+      <h3>Study groups, shared packs and leaderboards</h3>
+      <p class="sub">Revise with your course mates, share a pack in one tap and see who's on a streak. It isn't built yet, so nothing here is pretend: it'll appear when it's real.</p></article>
+    ${sharePanel()}
+  </section>`;
+  wireSharePanel();
+}
+routes.community = renderCommunity;
 
 // ---------- Start ----------
 async function boot() {
