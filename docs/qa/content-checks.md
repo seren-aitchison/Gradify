@@ -6,21 +6,21 @@ These checks are mechanical. They find text that won't display as written (swall
 
 | Course | Notes files | Lines | NUM questions | Hard failures | Arithmetic to check | NUM explanations to check | Source links |
 |---|---|---|---|---|---|---|---|
-| art | 5 | 3,095 | 1 | 0 | 0 | 0 | 0 |
+| art | 6 | 3,768 | 3 | 0 | 0 | 0 | 0 |
 | biology | 2 | 1,725 | 11 | 0 | 0 | 1 | 0 |
 | business | 10 | 7,007 | 50 | 0 | 0 | 0 | 0 |
-| careers | 5 | 2,676 | 6 | 0 | 0 | 0 | 0 |
+| careers | 6 | 3,194 | 6 | 0 | 0 | 0 | 0 |
 | chemistry | 2 | 1,548 | 30 | 0 | 0 | 4 | 0 |
-| computing | 4 | 2,511 | 0 | 0 | 0 | 0 | 0 |
-| dentistry | 4 | 2,681 | 10 | 0 | 0 | 0 | 0 |
-| design | 7 | 3,854 | 16 | 0 | 0 | 0 | 0 |
+| computing | 5 | 3,152 | 12 | 0 | 0 | 0 | 0 |
+| dentistry | 5 | 3,469 | 15 | 0 | 0 | 0 | 0 |
+| design | 8 | 4,556 | 19 | 0 | 0 | 0 | 0 |
 | ecology | 10 | 7,811 | 41 | 0 | 0 | 0 | 0 |
 | engineering | 10 | 6,796 | 153 | 0 | 0 | 0 | 0 |
 | finance | 11 | 8,082 | 121 | 0 | 0 | 0 | 0 |
-| gcse | 6 | 3,897 | 7 | 0 | 0 | 0 | 0 |
+| gcse | 7 | 4,716 | 16 | 0 | 0 | 0 | 0 |
 | health | 11 | 7,620 | 22 | 0 | 0 | 0 | 0 |
 | history | 18 | 11,526 | 0 | 0 | 0 | 0 | 0 |
-| investing | 5 | 3,072 | 71 | 0 | 0 | 0 | 0 |
+| investing | 6 | 3,719 | 82 | 0 | 0 | 0 | 0 |
 | law | 19 | 15,104 | 0 | 0 | 0 | 0 | 0 |
 | literature | 10 | 6,965 | 3 | 0 | 0 | 0 | 0 |
 | maths | 29 | 37,481 | 1023 | 0 | 0 | 42 | 8 |
@@ -29,16 +29,16 @@ These checks are mechanical. They find text that won't display as written (swall
 | nursing | 17 | 19,066 | 0 | 0 | 0 | 0 | 1 |
 | pharmacy | 17 | 7,790 | 21 | 0 | 0 | 0 | 0 |
 | physics | 54 | 31,082 | 0 | 0 | 0 | 0 | 0 |
-| primary | 4 | 2,060 | 0 | 0 | 0 | 0 | 0 |
-| professional | 6 | 4,489 | 6 | 0 | 0 | 0 | 0 |
+| primary | 5 | 2,576 | 5 | 0 | 0 | 0 | 0 |
+| professional | 7 | 5,224 | 12 | 0 | 0 | 0 | 0 |
 | psychology | 16 | 15,002 | 51 | 0 | 0 | 4 | 0 |
-| research | 1 | 687 | 1 | 0 | 0 | 0 | 0 |
+| research | 2 | 1,449 | 4 | 0 | 0 | 0 | 0 |
 | sociology | 18 | 16,845 | 112 | 0 | 0 | 8 | 0 |
-| spanish | 4 | 2,212 | 0 | 0 | 0 | 0 | 0 |
-| sport | 6 | 4,184 | 36 | 0 | 0 | 0 | 0 |
-| teaching | 8 | 6,395 | 10 | 0 | 0 | 0 | 0 |
-| university | 5 | 3,191 | 0 | 0 | 0 | 0 | 0 |
-| veterinary | 4 | 2,982 | 5 | 0 | 0 | 0 | 0 |
+| spanish | 5 | 2,790 | 1 | 0 | 0 | 0 | 0 |
+| sport | 7 | 4,849 | 43 | 0 | 0 | 0 | 0 |
+| teaching | 9 | 7,143 | 10 | 0 | 0 | 0 | 0 |
+| university | 6 | 3,796 | 4 | 0 | 0 | 0 | 0 |
+| veterinary | 5 | 3,814 | 13 | 0 | 0 | 0 | 0 |
 
 Allowed exceptions (correct in context):
 
