@@ -4,6 +4,8 @@ import { triple, mix, ink, tile } from "../kit/core/colour.js";
 import { pathOf, nameHtml } from "../kit/core/site.js";
 import { applyPrefs } from "../kit/data/profile.js";
 import { trackView } from "../kit/core/analytics.js";
+import { captureFirstTouch } from "../kit/core/attribution.js";
+captureFirstTouch();
 import { joinWaitlist } from "../kit/data/waitlist.js";
 applyPrefs();
 trackView("Gradify");

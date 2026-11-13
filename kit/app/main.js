@@ -8,6 +8,8 @@ import { LocalStore, CloudStore, cloudConfigured, scopeToSite } from "../data/st
 import { describePlan, mySubscription, myAllowance, openPortal, AI_ALLOWANCES } from "../data/billing.js";
 import { learnerOf, saveLearner, syncMirror, needsSetup, applyPrefs, PRIOR } from "../data/profile.js";
 import { trackView } from "../core/analytics.js";
+import { captureFirstTouch, recordFirstTouch } from "../core/attribution.js";
+captureFirstTouch();
 applyPrefs();
 import { currentSite, nameHtml } from "../core/site.js";
 // on a sub-site (getgradify.com/medgradify/), the app belongs to that site
@@ -126,6 +128,41 @@ const prefsFields = (pr) => `<fieldset class="setup-prefs"><legend>Display</lege
   <label class="check"><input type="checkbox" name="motion" ${pr.motion === "reduce" ? "checked" : ""}> <span>Reduce motion (no animations)</span></label>
   <label class="check"><input type="checkbox" name="text" ${pr.text === "large" ? "checked" : ""}> <span>Larger text</span></label></fieldset>`;
 const prefsFrom = (f) => ({ motion: f.get("motion") ? "reduce" : "auto", text: f.get("text") ? "large" : "normal" });
+// the subjects most learners pick, shown first in set-up; the rest are one tap (or a search) away
+const POPULAR = ["UnderGradify", "MedGradify", "LawGradify", "NurseGradify", "PsychGradify", "BusinessGradify"];
+const pickBtn = (s) => `<button type="button" class="site-pick ${profile.site === s.n ? "on" : ""}" data-site="${esc(s.n)}" data-s="${esc((s.n + " " + s.d).toLowerCase())}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="icon">${icon(s.i)}</span><span><b>${esc(s.n.replace(" · ForgeLab", ""))}</b><em>${esc(s.d.split(/[:.]/)[0])}</em></span></button>`;
+
+// ---------- Save your work: the sign-up ask, shown once a learner has something worth keeping ----------
+function savePanel(title, line) {
+  return `<article class="panel glass save-panel" id="save-panel"><div><h3>${title}</h3><p class="sub">${line}</p></div>
+    <form id="save-signin" class="signin"><label class="sr-only" for="save-email">Email</label><input id="save-email" type="email" required placeholder="you@example.com" autocomplete="email"><button class="btn btn-primary lg btn-sm" type="submit"><span>Email me a link</span></button></form>
+    <button type="button" class="btn btn-light lg btn-sm" id="save-google"><span>Continue with Google</span></button>
+    <p class="sub save-fine">Free. No password, no card. Everything on this device moves into your account.</p></article>`;
+}
+function wireSavePanel() {
+  $("#save-signin")?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = e.target.querySelector("button");
+    btn.disabled = true;
+    try { await store.signInWithEmail($("#save-email").value.trim()); $("#save-panel").innerHTML = `<div><h3>Check your email</h3><p class="sub">We've sent a sign-in link to ${esc($("#save-email").value.trim())}. Open it on this device and your pack is saved to your account.</p></div>`; }
+    catch (err) { btn.disabled = false; toast(esc(err.message)); }
+  });
+  $("#save-google")?.addEventListener("click", () => store.signInWithGoogle().catch((err) => toast(esc(err.message))));
+}
+// once signed in: an easy way to bring a study group along (tagged, so invites show up in first_touch)
+function sharePanel() {
+  return `<article class="panel glass share-panel"><div><h3>Revising with friends?</h3><p class="sub">Send them Gradify. They can turn their own notes into checked flashcards in about a minute, free.</p></div>
+    <button type="button" class="btn btn-light lg btn-sm" id="share-gradify"><span>Share Gradify</span></button></article>`;
+}
+function wireSharePanel() {
+  $("#share-gradify")?.addEventListener("click", async () => {
+    const url = "https://getgradify.com/?utm_source=invite&utm_medium=share";
+    const text = "I'm using Gradify to turn my notes into flashcards. It's free:";
+    try { if (navigator.share) { await navigator.share({ title: "Gradify", text, url }); return; } } catch { return; /* cancelled */ }
+    try { await navigator.clipboard.writeText(`${text} ${url}`); toast("Link copied. Paste it in your group chat."); } catch { toast(url); }
+  });
+}
+
 async function renderStart(stepArg) {
   const step = Number(stepArg) || 1;
   const p = profile;
@@ -151,11 +188,17 @@ async function renderStart(stepArg) {
     view.innerHTML = `<section class="setup"><div class="setup-dots">${dots}</div>
       <h1>What are you studying?</h1><p class="sub">Pick the Gradify site that fits. Your notes, cards and progress will be tagged with it.</p>
       <label class="search-field"><span class="sr-only">Search subjects</span><input id="site-q" type="search" placeholder="Search, e.g. medicine, law, maths" autocomplete="off"></label>
-      ${groups.map((g) => `<h3 class="setup-group">${esc(g.title)}</h3><div class="site-grid">${g.items.filter((s) => s.n !== "Klerio").map((s) => `<button type="button" class="site-pick ${picked === s.n ? "on" : ""}" data-site="${esc(s.n)}" data-s="${esc((s.n + " " + s.d).toLowerCase())}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="icon">${icon(s.i)}</span><span><b>${esc(s.n.replace(" · ForgeLab", ""))}</b><em>${esc(s.d.split(/[:.]/)[0])}</em></span></button>`).join("")}</div>`).join("")}
+      <h3 class="setup-group">Most popular</h3><div class="site-grid">${POPULAR.map((n) => SITES.find((s) => s.n === n)).filter(Boolean).map(pickBtn).join("")}</div>
+      <p class="setup-more"><button type="button" class="btn btn-ghost btn-sm" id="all-subjects" aria-expanded="false" aria-controls="more-subjects"><span>Show all subjects</span></button></p>
+      <div id="more-subjects" hidden>${groups.map((g) => { const items = g.items.filter((s) => s.n !== "Klerio" && !POPULAR.includes(s.n)); return items.length ? `<h3 class="setup-group">${esc(g.title)}</h3><div class="site-grid">${items.map(pickBtn).join("")}</div>` : ""; }).join("")}</div>
     </section>`;
+    const more = $("#more-subjects"), moreBtn = $("#all-subjects");
+    moreBtn.addEventListener("click", () => { more.hidden = false; moreBtn.parentElement.hidden = true; });
     $("#site-q").addEventListener("input", (e) => {
       const q = e.target.value.trim().toLowerCase();
+      if (q) { more.hidden = false; moreBtn.parentElement.hidden = true; }
       view.querySelectorAll(".site-pick").forEach((b) => { b.hidden = q && !b.dataset.s.includes(q); });
+      view.querySelectorAll("#more-subjects .setup-group").forEach((h) => { h.hidden = ![...h.nextElementSibling.children].some((b) => !b.hidden); });
     });
     view.querySelector(".setup").addEventListener("click", (e) => {
       const b = e.target.closest("[data-site]");
@@ -291,6 +334,8 @@ async function renderDeck(id) {
       <div class="${flagged.length ? "warn" : ""}"><b>${flagged.length}</b><span>to check</span></div>
       <div><b>${cards.filter(isLearned).length}</b><span>learned</span></div>
     </div>
+    ${store.mode !== "cloud" && cloudConfigured() ? savePanel(`Save these ${cards.length} cards to your free account`, "Keep this pack on every device, get Gradify AI for messy notes and scans, and let Gradify plan your revision around your exam.") : ""}
+    ${store.mode === "cloud" ? sharePanel() : ""}
     ${(pack?.pack?.unclear || []).length ? `<div class="unclear panel glass"><b>${icon("bell")}Gradify AI noticed</b><ul>${pack.pack.unclear.map((u) => `<li>${esc(u)}</li>`).join("")}</ul></div>` : ""}
     ${flagged.length ? `<p class="sub">Cards marked <span class="g-pill warn">to check</span> couldn't be fully matched to your notes. Edit them, regenerate them or delete them before you revise.</p>` : ""}
     <div class="deeper panel glass">
@@ -302,6 +347,8 @@ async function renderDeck(id) {
       <button type="button" class="btn btn-ghost lg btn-sm danger" id="del-deck"><span>Delete these notes</span></button></div>
     ${topics.map((t) => `<h3 class="topic-h">${esc(t)}</h3><div class="card-list">${cards.filter((c) => (c.topic || "Cards") === t).map(cardRow).join("")}</div>`).join("")}
   </section>`;
+  wireSavePanel();
+  wireSharePanel();
   const list = view.querySelector(".deck");
   list.addEventListener("click", async (e) => {
     const row = e.target.closest(".c-row");
@@ -1196,6 +1243,7 @@ async function boot() {
   }
   // goals made on this device move into the account; retried on every signed-in visit until they're all there
   if (user) { try { const r = await cloud.moveGoals(local); if (r.moved) toast(`Moved ${r.moved} goal${r.moved === 1 ? "" : "s"} from this device into your account.`); } catch (e) { console.warn("Goals stay on this device for now", e?.message); } }
+  if (user) recordFirstTouch(cloud.db, user);
   cloud?.onAuth((u) => { if (Boolean(u) !== Boolean(user)) location.reload(); });
   // on a sub-site, the app only sees that site's notes and progress
   if (SITE) { store = scopeToSite(store, SITE); picks.site = SITE; }
