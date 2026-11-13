@@ -12,6 +12,8 @@ export const QA = {
   u03: { standard: 2, reviewed: null, sources: null, signoff: null },
   // written to standard 2 on 2026-11-12
   u04: { standard: 2, reviewed: null, sources: null, signoff: null },
+  // written to standard 2 on 2026-11-13
+  u05: { standard: 2, reviewed: null, sources: null, signoff: null },
   u07: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from finance u04
 };
 // the date each school's notes were first written
