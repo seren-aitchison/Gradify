@@ -58,7 +58,7 @@ Every successful reply carries the learner's position:
 | `ai_off` | 503 | Gradify AI isn't switched on (or not for this learner yet) | hide or disable AI features |
 | `allowance` | 429 | this feature's monthly allowance is used | show `error`; if `upgrade`, offer Gradify Pro |
 | `conversation_long` | 429 | the conversation reached its turn limit | offer to start a new conversation |
-| `fair_use` | 429 | the learner's monthly fair-use limit is reached | show `error` (says when it resets) |
+| `fair_use` | 429 | the learner's monthly fair-use limit is reached | show `error` (says when it resets). `resetsAt` is the 1st of next month (00:00 UTC), not the end of the billing period |
 | `rate` | 429 | too many requests in a minute or an hour | ask the learner to wait a minute |
 | `busy`, `budget` | 503 | Gradify AI is paused or overloaded for everyone | show `error`, try later |
 | (none) | 4xx/5xx | the request itself failed (too long, Claude unavailable) | show `error`; the use was given back |

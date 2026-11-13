@@ -44,6 +44,25 @@ export function planOf(row, now = Date.now()) {
 
 const day = (iso) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 
+const dayMonth = (iso) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", timeZone: "Europe/London" });
+/** The 1st of next month, 00:00 UTC: when the monthly fair-use limit resets (mirrors capResetsAt on the server). */
+export function capResetsAt(now = Date.now()) {
+  const d = new Date(now);
+  return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1)).toISOString().replace(".000Z", "Z");  // no milliseconds: the same form as the database's dates, which strict ISO 8601 parsers (Swift's ISO8601DateFormatter) accept
+}
+/**
+ * The Account page's sentence under the Gradify AI allowances. Allowances reset when the learner's period ends (the
+ * calendar month on Free, the billing period on Pro); the fair-use limit always resets on the 1st. When those fall on
+ * the same day, one date is shown; when they don't (Pro, mostly), both are, so neither surprises anyone.
+ */
+export function aiResetLine(periodEnd, plan, now = Date.now()) {
+  const cap = capResetsAt(now);
+  if (!periodEnd) return `Gradify AI used so far. The monthly fair-use limit resets on ${dayMonth(cap)}.`;
+  if (dayMonth(periodEnd) === dayMonth(cap)) return `Gradify AI used this month. Your allowances and the fair-use limit reset on ${dayMonth(cap)}.`;
+  const when = plan === "pro" ? ", at the end of your billing period" : "";
+  return `Gradify AI used this ${plan === "pro" ? "billing period" : "month"}. Your allowances reset on ${dayMonth(periodEnd)}${when}. The monthly fair-use limit resets separately, on ${dayMonth(cap)}.`;
+}
+
 /** A plain-English line about the learner's plan, and what (if anything) they need to do. */
 export function describePlan(row, now = Date.now()) {
   const plan = planOf(row, now);

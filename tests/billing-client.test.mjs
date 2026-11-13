@@ -87,3 +87,67 @@ test("before Gradify Pro goes on sale, only listed billing testers can check out
   assert.equal(mayBuy("anyone@x.com", { GRADIFY_PRO_ON_SALE: "on" }), true);
   assert.equal(mayBuy("anyone@x.com", { GRADIFY_PRO_ON_SALE: "yes" }), false);
 });
+
+test("the Account page names both reset dates when they differ", async () => {
+  const { aiResetLine, capResetsAt } = await import("../kit/data/billing.js");
+  const now = Date.parse("2026-11-18T12:00:00Z");
+  assert.equal(capResetsAt(now), "2026-12-01T00:00:00Z");
+  assert.equal(capResetsAt(Date.parse("2026-12-31T23:30:00Z")), "2027-01-01T00:00:00Z", "across the year end");
+  // Free: allowances and the fair-use limit both reset on the 1st, so one date
+  assert.equal(aiResetLine("2026-12-01T00:00:00Z", "free", now), "Gradify AI used this month. Your allowances and the fair-use limit reset on 1 December.");
+  // Pro billed from the 18th: two different dates, each named
+  assert.equal(aiResetLine("2026-12-18T09:00:00Z", "pro", now),
+    "Gradify AI used this billing period. Your allowances reset on 18 December, at the end of your billing period. The monthly fair-use limit resets separately, on 1 December.");
+  // Pro whose billing date happens to be the 1st: one date again
+  assert.match(aiResetLine("2026-12-01T00:00:00Z", "pro", now), /allowances and the fair-use limit reset on 1 December/);
+  assert.match(aiResetLine(null, "free", now), /fair-use limit resets on 1 December/);
+});
+
+test("the server and the Account page agree on when the fair-use limit resets", async () => {
+  const client = await import("../kit/data/billing.js");
+  const server = await import("../supabase/functions/_shared/ai.js");
+  for (const t of ["2026-11-01T00:00:00Z", "2026-11-18T12:00:00Z", "2026-12-31T23:59:59Z", "2027-02-28T10:00:00Z"])
+    assert.equal(client.capResetsAt(Date.parse(t)), server.capResetsAt(new Date(t)), t);
+});
+
+test("reset dates at month ends: billed on the 1st, 18th, 28th and 31st, including short months", async () => {
+  const { aiResetLine } = await import("../kit/data/billing.js");
+  const both = /allowances and the fair-use limit reset on (\d+ \w+)/, apart = /allowances reset on (\d+ \w+), at the end of your billing period\. The monthly fair-use limit resets separately, on (\d+ \w+)/;
+  const cases = [
+    // [billing anchor, now, period end Stripe sends, expected allowance date, expected fair-use date]
+    ["1st", "2027-01-15T12:00:00Z", "2027-02-01T00:00:00Z", null, "1 February"],
+    ["18th", "2027-01-20T12:00:00Z", "2027-02-18T00:00:00Z", "18 February", "1 February"],
+    ["28th", "2027-02-10T12:00:00Z", "2027-02-28T00:00:00Z", "28 February", "1 March"],
+    // billed on the 31st: Stripe ends February's period on its last day, then goes back to the 31st where it exists
+    ["31st in February", "2027-02-10T12:00:00Z", "2027-02-28T00:00:00Z", "28 February", "1 March"],
+    ["31st in a leap February", "2028-02-10T12:00:00Z", "2028-02-29T00:00:00Z", "29 February", "1 March"],
+    ["31st in April", "2027-04-10T12:00:00Z", "2027-04-30T00:00:00Z", "30 April", "1 May"],
+    ["31st in December", "2027-12-10T12:00:00Z", "2027-12-31T00:00:00Z", "31 December", "1 January"],
+  ];
+  for (const [name, now, end, allow, cap] of cases) {
+    const line = aiResetLine(end, "pro", Date.parse(now));
+    if (allow === null) assert.equal(line.match(both)?.[1], cap, name);
+    else assert.deepEqual(line.match(apart)?.slice(1), [allow, cap], name);
+  }
+});
+
+test("reset dates around midnight and the clocks: the limit resets at 00:00 UTC, shown as a UK date", async () => {
+  const { capResetsAt, aiResetLine } = await import("../kit/data/billing.js");
+  const server = await import("../supabase/functions/_shared/ai.js");
+  // 31 May 23:30 UTC is already 1 June 00:30 in the UK (BST), but the database still counts May: the limit resets
+  // at 00:00 UTC on 1 June, which is 01:00 BST, so "1 June" is right
+  assert.equal(capResetsAt(Date.parse("2027-05-31T23:30:00Z")), "2027-06-01T00:00:00Z");
+  // half an hour later in UTC terms the new month has started, and the next reset is 1 July
+  assert.equal(capResetsAt(Date.parse("2027-06-01T00:30:00Z")), "2027-07-01T00:00:00Z");
+  // year end, in GMT: one second before and one second after midnight
+  assert.equal(capResetsAt(Date.parse("2027-12-31T23:59:59Z")), "2028-01-01T00:00:00Z");
+  assert.equal(capResetsAt(Date.parse("2028-01-01T00:00:01Z")), "2028-02-01T00:00:00Z");
+  // a reset at 00:00 UTC is still the 1st in the UK in summer (01:00 BST) and in winter (00:00 GMT)
+  assert.match(aiResetLine(null, "free", Date.parse("2027-06-15T12:00:00Z")), /on 1 July\./);
+  assert.match(aiResetLine(null, "free", Date.parse("2027-12-15T12:00:00Z")), /on 1 January\./);
+  // the server's message gives the same date at each of those moments
+  for (const t of ["2027-05-31T23:30:00Z", "2027-06-01T00:30:00Z", "2027-12-31T23:59:59Z", "2028-01-01T00:00:01Z"])
+    assert.equal(server.refusal({ reason: "fair_use", plan: "pro", period_end: "2028-03-18T00:00:00Z" }, "explain", new Date(t)).body.resetsAt, capResetsAt(Date.parse(t)), t);
+  // no milliseconds, so strict ISO 8601 parsers (the iOS app's) accept it
+  assert.match(capResetsAt(Date.parse("2027-01-15T12:00:00Z")), /^\d{4}-\d\d-\d\dT00:00:00Z$/);
+});

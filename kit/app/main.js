@@ -5,7 +5,7 @@ import { icon } from "../core/icons.js";
 import { tile, ink } from "../core/colour.js";
 import { SAMPLE, readFile } from "../notes/studio.js";
 import { LocalStore, CloudStore, cloudConfigured, scopeToSite } from "../data/store.js";
-import { describePlan, mySubscription, myAllowance, openPortal, AI_ALLOWANCES } from "../data/billing.js";
+import { describePlan, mySubscription, myAllowance, openPortal, AI_ALLOWANCES, aiResetLine } from "../data/billing.js";
 import { learnerOf, saveLearner, syncMirror, needsSetup, applyPrefs, PRIOR } from "../data/profile.js";
 import { trackView } from "../core/analytics.js";
 applyPrefs();
@@ -1166,7 +1166,7 @@ async function renderBillingPlan() {
   const tone = { ok: "✓", warn: "!", info: "i" }[p.tone];
   const on = uses.some((u) => u.enabled);
   const usage = uses.length && on
-    ? `<ul class="plan-uses">${uses.map((u) => `<li><span>${esc(AI_ALLOWANCES.find((a) => a.feature === u.feature)?.label || u.feature)}</span><b>${u.used} of ${u.allowance}</b></li>`).join("")}</ul><p class="sub">Gradify AI used this month${uses[0]?.period_end ? `, resetting on ${new Date(uses[0].period_end).toLocaleDateString("en-GB", { day: "numeric", month: "long" })}` : ""}.</p>`
+    ? `<ul class="plan-uses">${uses.map((u) => `<li><span>${esc(AI_ALLOWANCES.find((a) => a.feature === u.feature)?.label || u.feature)}</span><b>${u.used} of ${u.allowance}</b></li>`).join("")}</ul><p class="sub">${esc(aiResetLine(uses[0]?.period_end, uses[0]?.plan))}</p>`
     : `<p class="sub">Gradify AI isn't switched on yet. Your allowance will show here when it is.</p>`;
   box.innerHTML = `<div class="panel-head"><div><h3>Your plan: ${esc(p.title)}</h3><p class="sub plan-line ${p.tone}"><span aria-hidden="true">${tone}</span> ${esc(p.line)}</p></div>
       <div class="row-actions">${p.manage ? `<button type="button" class="btn btn-light lg btn-sm" id="manage-billing"><span>Manage billing</span></button>` : ""}<a class="btn btn-ghost lg btn-sm" href="${pricing}"><span>${p.plan === "pro" ? "See plans" : "See Gradify Pro"}</span></a></div></div>
