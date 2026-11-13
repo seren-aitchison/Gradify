@@ -8,6 +8,10 @@
 // Record facts, never aspirations: leave a stage null until it has actually happened. AI review may complete
 // "reviewed" only if `by` says so; it can never complete "sources" or "signoff".
 export const QA = {
+  u09: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u08: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u07: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u06: { standard: 2, reviewed: null, sources: null, signoff: null },
   u05: { standard: 2, reviewed: null, sources: null, signoff: null },
   u04: { standard: 2, reviewed: null, sources: null, signoff: null },
   u03: { standard: 2, reviewed: null, sources: null, signoff: null },
@@ -16,4 +20,4 @@ export const QA = {
   u02: { standard: 2, reviewed: null, sources: null, signoff: null },
 };
 // the date each school's notes were first written (shown on every lesson with the review state)
-export const WRITTEN_ON = { u01: "2026-11-08", u02: "2026-11-08", u03: "2026-11-10", u04: "2026-11-11", u05: "2026-11-12" };
+export const WRITTEN_ON = { u01: "2026-11-08", u02: "2026-11-08", u03: "2026-11-10", u04: "2026-11-11", u05: "2026-11-12", u06: "2026-11-12", u07: "2026-11-12", u08: "2026-11-12", u09: "2026-11-13" };

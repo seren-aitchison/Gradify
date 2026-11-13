@@ -732,7 +732,7 @@
    "id": "u06",
    "n": 6,
    "title": "Management Accounting: Planning, Control and Decisions",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u06-01",
@@ -840,7 +840,7 @@
    "id": "u07",
    "n": 7,
    "title": "Financial Management",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u07-01",
@@ -963,7 +963,7 @@
    "id": "u08",
    "n": 8,
    "title": "Audit, Assurance and Ethics",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u08-01",
@@ -1056,7 +1056,7 @@
    "id": "u09",
    "n": 9,
    "title": "Taxation",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u09-01",

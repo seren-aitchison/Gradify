@@ -608,7 +608,7 @@
    "id": "u05",
    "n": 5,
    "title": "Materials Science",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u05-01",
@@ -701,7 +701,7 @@
    "id": "u06",
    "n": 6,
    "title": "Thermodynamics",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u06-01",
@@ -789,7 +789,7 @@
    "id": "u07",
    "n": 7,
    "title": "Fluid Mechanics",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u07-01",
@@ -867,7 +867,7 @@
    "id": "u08",
    "n": 8,
    "title": "Electrical Circuits and Electronics",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u08-01",
