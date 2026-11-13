@@ -29,6 +29,32 @@ Gradify Intelligence is one evolving model of each learner. It's built from ever
 
 Haptics (`kit/core/haptics.js`) fire on card ratings, shuffles, plan accepts and navigation. They're silent on devices without vibration, with reduced motion on, or when turned off in Settings.
 
+## Intelligence 2.0: the learning memory and prediction engine
+
+- **Learning event ledger** (`kit/intel/ledger.js`, `learning_events` table, `20261113140000_learning_events.sql`): append-only, owner-only. Events:
+  - every answer (result, confidence, response time, source)
+  - sessions started, finished and **abandoned**
+  - **forgotten** (a learned card answered wrong)
+  - **stage reached** (understood, retained, applied) and **misconception fixed**, from before-and-after snapshots
+  - packs made, plans accepted, Autopilot changes and undos
+  - **recommendations followed**, and mode changes
+
+  Until the migration is applied, events are kept on the device. They move into the account at sign-in. The model reads the ledger alongside the existing tables; no LLM memory is involved.
+- **Knowledge debt** (`kit/intel/debt.js`): dependencies come from evidence. A topic that *defines* a term ("What is stroke volume?") underpins topics whose cards *use* it. Course prerequisite graphs add their weak foundations. Weak topics are traced to their deepest insecure root, and the root is ranked above its symptoms, with the shared term as the evidence. It's shown in My Knowledge and in the Knowledge debt widget.
+- **Importance, not just urgency** (`kit/intel/priority.js`): every item carries four factors, each with its evidence, shown as "Why this first?":
+  - urgency (deadline or due)
+  - importance (how many topics it underpins; misconceptions spread)
+  - forgetting risk
+  - evidence of a gap
+- **Learning from its own recommendations** (`kit/intel/calibrate.js`):
+  - **What it measures:** completion of planned sessions by length and by time of day, abandon rate from the ledger, and real seconds per card.
+  - **What it changes:** the planner caps session length at what the learner actually finishes, plans first in the times that work, and rescales card estimates (0.6–1.8×).
+  - **Safeguards:** it changes nothing until there's enough evidence, and says what it learned in Intelligence and the "How you study" widget.
+- **One learner across sites:** every concept carries its site, My Knowledge groups by pack and site, and course weak foundations from every Gradify site join the same debt list.
+- **Catch-up optimises objectives:** the recovery plan re-ranks from current evidence, so work whose objective is already met (mastered topics) isn't rescheduled.
+- **Push notifications:** see `docs/NOTIFICATIONS.md`.
+- **The Today board** (`kit/app/widgets.js`): 30 widgets (10 small, 10 wide, 10 big) built on the same model, a calm default of 14, and a customise gallery.
+
 ## Autopilot (`kit/intel/autopilot.js`, `kit/app/autopilot-views.js`)
 
 Three modes, switchable any time from Today or Intelligence:
@@ -62,7 +88,7 @@ Ask Gradify answers from the model straight away. When the learner is signed in,
 
 ## Deploying the server parts
 
-1. Run `supabase/migrations/20261114120000_coach_mode.sql`, which allows the `coach` mode in the usage ledger and maps it to the tutor allowance.
+1. Run `supabase/migrations/20261113130000_coach_mode.sql`, which allows the `coach` mode in the usage ledger and maps it to the tutor allowance.
 2. Deploy the functions:
 
    ```bash
@@ -99,13 +125,12 @@ Other events: `study_pack_made`, `study_session`, `plan_block_done`, `plan_block
 
 ## Next (backlog, in order)
 
-1. **`learning_events` table** in Supabase (append-only, owner-only row-level security), written alongside the existing tables. This lets the iOS app and the analytics service read one stream, and records lesson time and skipped topics, which aren't stored today.
+1. **Lesson events from course pages** into the ledger (time in lesson, revisits, skipped sections).
 2. **FSRS** in place of SM-2 in `kit/learning/srs.js`. Same card fields plus `stability` and `difficulty`; `recallProbability` becomes FSRS retrievability.
-3. **Course concept graph in the priority engine.** `kit/learning/concepts.js` already has prerequisites and `weakPrerequisites`. Rank "revisit the smallest useful prerequisite" for course lessons, and link note topics to course concepts with `topic-match.js`.
+3. **Deeper course graph use.** `kit/learning/concepts.js` already has prerequisites and `weakPrerequisites`. Rank "revisit the smallest useful prerequisite" for course lessons, and link note topics to course concepts with `topic-match.js`.
 4. **Misconception and connection cards** written by Gradify AI for the learner's confident mistakes, using the `study-pack` function's `questions` mode, with a follow-up question to verify.
-5. **Notifications**: a daily plan digest and "about to forget" nudges, at the learner's chosen time.
-6. **Prediction service** (Python) once there's enough data: calibrated readiness by topic, learned break lengths and best times of day.
-7. **Academic inbox connections**: read-only OAuth to Outlook or Gmail and Canvas or Moodle, feeding the same `parseInbox`.
-8. **Adaptive pedagogy**: test which teaching mode (visual, worked example, Socratic) improves retention for each learner.
+5. **Prediction service** (Python) once there's enough data: calibrated readiness by topic, learned break lengths and best times of day.
+6. **Academic inbox connections**: read-only OAuth to Outlook or Gmail and Canvas or Moodle, feeding the same `parseInbox`.
+7. **Adaptive pedagogy**: test which teaching mode (visual, worked example, Socratic) improves retention for each learner.
 
-Tests: `tests/intel.test.mjs`, `tests/nlp.test.mjs`, `tests/ical.test.mjs`, `tests/tutor-modes.test.mjs` (coach) (memory, predictions, priority, scheduler, rescheduling, events, Ask).
+Tests: `tests/intel.test.mjs`, `tests/nlp.test.mjs`, `tests/ical.test.mjs`, `tests/debt.test.mjs`, `tests/calibrate.test.mjs`, `tests/nudges.test.mjs`, `tests/ledger.test.mjs`, `tests/tutor-modes.test.mjs` (coach) (memory, predictions, priority, scheduler, rescheduling, events, Ask).

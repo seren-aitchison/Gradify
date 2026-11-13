@@ -11,7 +11,7 @@ const NEW = ["diagnose", "socratic", "challenge", "connect", "examiner", "direct
 test("every mode has a daily limit, and the usage table accepts every mode", async () => {
   for (const m of NEW) assert.ok(DAILY[m] > 0, m);
   // the latest migration that sets the usage table's allowed modes
-  const sql = await readFile(new URL("../supabase/migrations/20261114120000_coach_mode.sql", import.meta.url), "utf8");
+  const sql = await readFile(new URL("../supabase/migrations/20261113130000_coach_mode.sql", import.meta.url), "utf8");
   for (const m of Object.keys(DAILY)) assert.match(sql, new RegExp(`'${m}'`), `${m} missing from the migration`);
 });
 
