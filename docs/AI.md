@@ -2,7 +2,8 @@
 
 Gradify AI is the AI tutor (`course-tutor`) and AI study packs (`study-pack`), both Supabase Edge Functions that call
 Claude with a server-side Anthropic key. **It is off for every account.** The controls and both functions have been live since 10 November 2026 and refuse every request (`ai_off`) until it's switched on. This page is how it's controlled, watched and switched on.
-Costs: `docs/AI-COSTS.md`. The app contract: `docs/APP-API.md` (Gradify AI).
+Costs: `docs/AI-COSTS.md`.
+**Launching:** follow [LAUNCH-CHECKLIST.md](LAUNCH-CHECKLIST.md) for the order of every step, from the first AI test to Pro on sale. The app contract: `docs/APP-API.md` (Gradify AI).
 
 ## Status: paused by the owner (10 November 2026)
 
