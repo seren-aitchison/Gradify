@@ -211,7 +211,7 @@ export const LESSONS = {
   "u11-16":{"v":1,"hash":"7281cc71de36","updated":"2026-11-13"},
   "u11-17":{"v":1,"hash":"6385e679444b","updated":"2026-11-13"},
   "u11-18":{"v":1,"hash":"7fc32667e7fe","updated":"2026-11-13"},
-  "u11-19":{"v":1,"hash":"b7b16fbbdca0","updated":"2026-11-13"},
+  "u11-19":{"v":2,"hash":"02646fab4a4e","updated":"2026-11-13"},
   "u11-20":{"v":1,"hash":"791e4d0cba69","updated":"2026-11-13"},
   "u11-21":{"v":1,"hash":"7ecfc02e6938","updated":"2026-11-13"},
   "u11-22":{"v":1,"hash":"1dbc07a99b49","updated":"2026-11-13"}
@@ -1270,7 +1270,7 @@ export const QUESTIONS = {
   "medicine-u11-19-q1":{"lesson":"u11-19","type":"M","v":1,"hash":"66e3a0414c99","updated":"2026-11-13"},
   "medicine-u11-19-q2":{"lesson":"u11-19","type":"M","v":1,"hash":"110508cceb89","updated":"2026-11-13"},
   "medicine-u11-19-q3":{"lesson":"u11-19","type":"M","v":1,"hash":"57047110bc47","updated":"2026-11-13"},
-  "medicine-u11-19-q4":{"lesson":"u11-19","type":"NUM","v":1,"hash":"d5eda10c5d4c","updated":"2026-11-13"},
+  "medicine-u11-19-q4":{"lesson":"u11-19","type":"NUM","v":2,"hash":"fc9be14182e9","updated":"2026-11-13"},
   "medicine-u11-19-q5":{"lesson":"u11-19","type":"SA","v":1,"hash":"508b7a772192","updated":"2026-11-13"},
   "medicine-u11-20-q1":{"lesson":"u11-20","type":"M","v":1,"hash":"0ad58db17e68","updated":"2026-11-13"},
   "medicine-u11-20-q2":{"lesson":"u11-20","type":"M","v":1,"hash":"0fa7de69aaf4","updated":"2026-11-13"},
