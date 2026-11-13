@@ -84,7 +84,7 @@
    "page": "/dentalgradify/course/",
    "units": 12,
    "lessons": 200,
-   "lessonsWritten": 84,
+   "lessonsWritten": 100,
    "syllabus": "/kit/api/v1/courses/dentistry.json"
   },
   {
@@ -324,7 +324,7 @@
    "page": "/postgradify/course/",
    "units": 12,
    "lessons": 197,
-   "lessonsWritten": 34,
+   "lessonsWritten": 49,
    "syllabus": "/kit/api/v1/courses/research.json"
   },
   {
@@ -348,7 +348,7 @@
    "page": "/languagegradify/course/",
    "units": 10,
    "lessons": 145,
-   "lessonsWritten": 73,
+   "lessonsWritten": 86,
    "syllabus": "/kit/api/v1/courses/spanish.json"
   },
   {
