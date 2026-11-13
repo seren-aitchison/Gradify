@@ -742,7 +742,7 @@
    "id": "u06",
    "n": 6,
    "title": "Curriculum and Subject Knowledge",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u06-01",

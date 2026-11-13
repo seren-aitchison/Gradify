@@ -23,7 +23,7 @@ export default {
     { id: "whole", title: "Whole course", sub: "Forty mixed questions from every written school.", units: UNITS.map((u) => u.n), format: "science", count: 40, minutes: 60, pass: 0.7 },
   ],
   // the schools whose notes are written (one notes/uNN.js file each)
-  written: ["u01", "u02", "u03", "u04", "u07"],
+  written: ["u01", "u02", "u03", "u04", "u05", "u07"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
   overview: {
     headline: "How investing really works",
