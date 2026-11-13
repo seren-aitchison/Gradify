@@ -26,6 +26,10 @@ import { AREAS, METRICS, PERIODS, HABIT_MODES, validateGoal, goalProgress, focus
 import { goalData } from "../learning/goal-data.js";
 import { PRO_ON_SALE } from "../data/billing.js";
 import { cockpitHtml, wireCockpit, welcomeHtml } from "./cockpit.js";
+import { haptic, hapticsOn, setHaptics, hapticsSupported } from "../core/haptics.js";
+import { loadModel } from "../intel/model.js";
+import { intelOf } from "../intel/schedule.js";
+import { intelStripHtml, nextHtml, upcomingHtml, rescheduleHtml, forecastWidget, askWidget, conceptPileWidget, wireIntel, applyMoves, renderIntelPage, renderKnowledgePage, renderRevisePage, askHtml, wireAsk, smartPlanHtml, wireSmartPlan, planWeek } from "./intel-views.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -88,11 +92,14 @@ async function stats() {
 // [route, label, short label for the phone tab bar, icon]
 const NAV = [
   ["today", "Today", "Today", "home"],
-  ["plan", "Plan", "Plan", "calendar"],
+  ["intel", "Intelligence", "Intel", "sparkles"],
+  ["plan", "Smart Plan", "Plan", "calendar"],
+  ["revise", "Revision Centre", "Revise", "checklist"],
+  ["knowledge", "My Knowledge", "Knowledge", "brain"],
   ["progress", "Progress", "Progress", "trend"],
   ["earth", "Earth", "Earth", "globe"],
   ["goals", "Path", "Path", "route"],
-  ["ai", "Gradify AI", "AI", "sparkles"],
+  ["ai", "Gradify AI", "AI", "bulb"],
   ["learning", "Learn", "Learn", "book"],
   ["study", "Study", "Study", "layers"],
   ["notes", "Notes Studio", "Notes", "upload"],
@@ -113,14 +120,15 @@ function drawNav() {
     document.querySelector("#view")?.parentElement.classList.add("lo-shell");
   }
   side.innerHTML = `<span class="lo-side-title">LifeOS</span>${NAV.map(([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`).join("")}`;
-  for (const nav of document.querySelectorAll(".app-nav")) nav.innerHTML = NAV.slice(0, 7).map(([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`).join("");
+  for (const nav of document.querySelectorAll(".app-nav")) nav.innerHTML = NAV.slice(0, 6).map(([r, label, , ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${label}</span></a>`).join("");
   for (const nav of document.querySelectorAll(".tabbar")) {
     nav.innerHTML = NAV.filter(([r]) => TABS.includes(r)).map(([r, , short, ic]) => `<a href="#/${r}" data-route="${r}">${icon(ic)}<span>${short}</span></a>`).join("")
-      + `<button type="button" class="tab-more" aria-expanded="false" aria-controls="lo-side">${icon("layers")}<span>More</span></button>`;
+      + `<button type="button" class="tab-more" aria-expanded="false" aria-controls="lo-side"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg><span>More</span></button>`;
     const more = nav.querySelector(".tab-more");
     more.addEventListener("click", () => { const open = !document.body.classList.contains("side-open"); document.body.classList.toggle("side-open", open); more.setAttribute("aria-expanded", String(open)); });
   }
-  side.addEventListener("click", (e) => { if (e.target.closest("a")) document.body.classList.remove("side-open"); });
+  side.addEventListener("click", (e) => { if (e.target.closest("a")) { haptic("tap"); document.body.classList.remove("side-open"); } });
+  document.querySelector(".tabbar")?.addEventListener("click", (e) => { if (e.target.closest("a, button")) haptic("tap"); });
 }
 drawNav();
 // the pricing page lives on getgradify.com; sub-sites served elsewhere link to it there
@@ -128,6 +136,34 @@ const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/
 
 // ---------- Router ----------
 const routes = { today: renderToday, start: renderStart, new: renderNew, deck: renderDeck, study: renderStudy, topic: renderTopic, progress: renderProgress, plan: renderPlan, account: renderAccount };
+// ---------- Gradify Intelligence: one model for every screen ----------
+// In "auto" mode, missed Gradify blocks are moved first (once per visit to a screen), then the model is rebuilt.
+async function model({ autoMove = true } = {}) {
+  const L = await learnerAcross().catch(() => null);
+  const courseNext = (L?.next || []).filter((x) => x.site);
+  let m = await loadModel(store, profile, { courseNext });
+  if (autoMove && m.intel.autonomy === "auto" && m.missed.moves.length) {
+    await applyMoves(m, store);
+    const moved = m.missed;
+    m = await loadModel(store, profile, { courseNext });
+    m.missed = moved;   // so the screen can say what changed and why
+  }
+  m.L = L;
+  return m;
+}
+async function saveIntel(patch) {
+  const cur = intelOf(learnerOf(profile));
+  await saveLearner(store, { intel: { ...cur, ...patch } });
+  profile = await store.getProfile();
+}
+const rerender = () => route();
+// thin borders in the colours of the spectrum, one per box, and a gentle flow in as each screen opens
+const RAINBOW = ["#4641ff", "#8b3dff", "#f055dd", "#ff5a4d", "#ff8a00", "#ffc002", "#1fae8c", "#3c78d8"];
+function decorate(root) {
+  const boxes = root.querySelectorAll(".panel, .cp-card, .cp-mini, .i-next, .i-dayplan, .i-resched, .k-card, .r-list > li > a, .ai-tool, .start-card:not(.primary)");
+  boxes.forEach((el, i) => { el.style.setProperty("--rb", RAINBOW[i % RAINBOW.length]); el.style.setProperty("--i", Math.min(i, 14)); el.classList.add("rb", "flow"); });
+}
+
 async function route() {
   const [name, arg] = (location.hash.replace(/^#\/?/, "") || "today").split("/");
   if (needsSetup(profile) && !["start", "account"].includes(name)) { location.replace("#/start"); return; }
@@ -136,6 +172,7 @@ async function route() {
   document.body.classList.remove("side-open");
   view.innerHTML = '<div class="loading" aria-busy="true"></div>';
   try { await (routes[name] || renderToday)(arg); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
+  decorate(view);
   view.focus({ preventScroll: true });
   scrollTo(0, 0);
 }
@@ -539,6 +576,7 @@ async function renderStudy(arg) {
     </section>`;
   };
   const rate = async (r) => {
+    haptic(r === "again" ? "warn" : r === "easy" ? "success" : "select");
     const c = queue[i];
     // in a topic session, cards that aren't due yet only move if you've forgotten them
     const reschedule = !practice && (!topicKey || !c.reps || isDue(c) || r === "again");
@@ -596,7 +634,7 @@ async function renderStudy(arg) {
     attempt = view.querySelector("#attempt")?.value ?? attempt;
     if (e.target.closest("#reveal")) { shown = true; draw(); return; }
     const sb = e.target.closest("[data-sure]");
-    if (sb) { sure = sb.dataset.sure; shown = true; draw(); return; }
+    if (sb) { haptic("tap"); sure = sb.dataset.sure; shown = true; draw(); return; }
     const r = e.target.closest("[data-r]");
     if (r) rate(r.dataset.r);
   }, { signal: session.signal });
@@ -666,18 +704,21 @@ async function renderToday() {
   const courses = L?.courses || [];
   const examCourse = courses.find((c) => c.examDate) || null;
   const cockpitCtx = { s, reviews, blocks: ahead, docs: s.docs, profile, examIn, mins, topicHref, studyHref, allowance };
+  const M = await model();
+  // course steps from every site; steps from the learner's own notes are already in "what to do next"
+  const acrossNext = (L?.next || []).filter((x) => x.site);
   view.innerHTML = `<section class="today">
     <span class="kicker lo-kicker">${icon("home")}Command Centre · ${fmtDate(Date.now(), { weekday: "long", day: "numeric", month: "long" })}</span>
     <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""} <span class="wave" aria-hidden="true">👋</span></h1>
     <p class="sub lo-hello">${s.cards.length ? `${n0(s.cards.length)} flashcards across ${n0(s.docs.length)} study ${s.docs.length === 1 ? "pack" : "packs"}${streakDays ? ` · ${streakDays}-day streak` : ""}.` : "Nice to have you here."}</p>
     ${!s.cards.length && !courses.length ? welcomeHtml(profile.display_name) : ""}
-    <article class="panel glass next-up" style="--c:#${site.c}">
-        <span class="kicker">${icon("flame")}Do this next</span><h2>${next.t}</h2><p class="sub">${next.d}</p>
-        <a class="btn btn-light lg" href="${next.href}"><span>${next.cta}</span></a>
-      </article>
+    ${rescheduleHtml(M)}
+    ${nextHtml(M)}
+    ${intelStripHtml(M)}
     ${cockpitHtml(cockpitCtx)}
-    ${L?.next?.length || courses.length ? `<div class="lo-across">
-      ${L?.next?.length > (s.cards.length ? 0 : 1) ? `<article class="panel glass"><div class="panel-head"><h3>${s.cards.length ? "Across" : "Then, across"} ${SITE ? esc(SITE) : "Gradify"}</h3><a class="see" href="#/learning">My Learning</a></div>${nextList(L.next.slice(s.cards.length ? 0 : 1, s.cards.length ? 3 : 4))}</article>` : ""}
+    <div class="intel-row">${upcomingHtml(M)}${forecastWidget(M)}${conceptPileWidget(M)}${askWidget()}</div>
+    ${acrossNext.length || courses.length ? `<div class="lo-across">
+      ${acrossNext.length > (s.cards.length ? 0 : 1) ? `<article class="panel glass"><div class="panel-head"><h3>${s.cards.length ? "Across" : "Then, across"} ${SITE ? esc(SITE) : "Gradify"}</h3><a class="see" href="#/learning">My Learning</a></div>${nextList(acrossNext.slice(s.cards.length ? 0 : 1, s.cards.length ? 3 : 4))}</article>` : ""}
       ${courses.length ? `<article class="panel glass"><div class="panel-head"><h3>Your courses</h3><span class="pill-dark">${courses.length}</span></div><ul class="lo-courses">${courses.slice(0, 4).map((c) => { const pct = c.written ? Math.round((100 * c.done) / c.written) : 0; return `<li><a href="${c.href && c.next ? `${c.href}#/lesson/${encodeURIComponent(c.next.id)}` : c.href || "#/learning"}"><span><b>${esc(c.name)}</b><em>${c.next ? `Next: ${esc(c.next.title)}` : "Finished"}</em></span><span class="goal-bar" role="img" aria-label="${pct}%"><i style="width:${pct}%"></i></span><em>${pct}%</em></a></li>`; }).join("")}</ul></article>` : ""}
     </div>` : ""}
     ${goalsPanel(GO)}
@@ -688,7 +729,6 @@ async function renderToday() {
       ${briefing.length || s.topics.length ? `<article class="panel glass briefing">
         <div class="panel-head"><h3>Your briefing</h3><span class="pill-dark">${fmtDate(Date.now(), { weekday: "long", day: "numeric", month: "short" })}</span></div>
         ${briefing.length ? `<ul class="brief-list">${briefing.map((b) => `<li class="${b.c}">${icon(b.ico)}<span><b>${b.t}</b><em>${b.d}</em></span>${b.href ? `<a class="btn btn-ghost lg btn-sm" href="${b.href}"><span>${b.cta}</span></a>` : ""}</li>`).join("")}</ul>` : ""}
-        ${s.topics.filter((t) => t.next.kind !== "done").length > 1 ? `<h4 class="brief-h">Then, in order</h4><ol class="focus-list">${s.topics.filter((t) => t.next.kind !== "done").slice(0, 3).map((t) => `<li><a href="${topicHref(t.key)}"><span><b>${esc(t.topic)}</b><em>${esc(t.next.label)} · ${t.next.mins} min</em></span>${levelPill(t.level)}</a></li>`).join("")}</ol>` : ""}
       </article>` : ""}
       <article class="panel glass stat-tiles">
         <div><b>${streakDays}</b><span>day streak${G?.restBank ? ` · ${G.restBank} rest day${G.restBank > 1 ? "s" : ""}` : ""}</span></div>
@@ -701,15 +741,7 @@ async function renderToday() {
         <h3>${esc(examCourse.name)}: ${esc((PACE[examCourse.pace?.status] || ["", "pace unknown"])[1].toLowerCase())}</h3>
         <p class="sub">${examCourse.done} of ${examCourse.written} lessons done${examCourse.pace?.needPerDay ? `; about ${Math.round(examCourse.pace.needPerDay * 10) / 10} lessons a day finish the course before your exam` : ""}. ${examCourse.pace?.status === "behind" ? "Add study time in Calendar, or focus on the schools that count most." : ""}</p>
         <a class="see" href="#/plan">Open Calendar</a>
-      </article>` : examIn != null ? `<article class="panel glass exam">
-        <span class="kicker">${icon("calendar")}${examIn >= 0 ? `Exam in ${examIn} ${examIn === 1 ? "day" : "days"}` : "Exam date has passed"}</span>
-        <div class="ring-sm"><svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="34" class="track"/><circle cx="40" cy="40" r="34" class="fill" style="stroke-dasharray:${2 * Math.PI * 34};stroke-dashoffset:${2 * Math.PI * 34 * (1 - s.readiness)}"/></svg><b>${Math.round(s.readiness * 100)}%</b></div>
-        <p class="sub">ready: your average mastery across every topic, from the evidence in your answers.</p>
       </article>` : ""}
-      <article class="panel glass plan-today">
-        <div class="panel-head"><h3>Today's plan</h3><a class="see" href="#/plan">Plan the week</a></div>
-        ${blocks.length ? `<ul class="blocks">${blocks.map((b) => `<li class="${b.done ? "done" : ""} cal-${b.cal}"><time>${String(Math.floor(b.start_min / 60)).padStart(2, "0")}:${String(b.start_min % 60).padStart(2, "0")}</time><span>${esc(b.title)}</span>${b.done ? icon("check") : ""}</li>`).join("")}</ul>` : `<p class="sub">Nothing planned. Add study blocks in Plan.</p>`}
-      </article>
       <article class="panel glass hm-panel">
         <div class="panel-head"><h3>Last 16 weeks</h3><a class="see" href="#/progress">Progress</a></div>
         ${heatmap(s.byDay)}
@@ -718,6 +750,7 @@ async function renderToday() {
     </div>
   </section>`;
   wireCockpit(view, cockpitCtx);
+  wireIntel(view, M, { store, toast, rerender });
   // the daily goal and today's quests, from the same engine as My Progress
   if (G) {
     const pct = Math.min(1, G.todayXp / (G.goal || 1)), R = 30, C = 2 * Math.PI * R;
@@ -1091,9 +1124,10 @@ function monthGrid(blocksAhead, examDate) {
     <p class="sub month-key"><i class="mk exam"></i> Exam <i class="mk deadline"></i> Deadline <i class="mk goal"></i> Goal due <i class="mk study"></i> Study planned</p>`;
 }
 
-async function renderPlan() {
+async function renderPlan(arg) {
   const s = await stats();
   await ensureReviewBlock(s);
+  const M = await model();
   const days = Array.from({ length: 7 }, (_, k) => dayKey(Date.now() + k * DAY));
   const [blocks, ahead, L, goalsAll] = await Promise.all([store.listBlocks(days[0], days[6]), store.listBlocks(days[0], dayKey(Date.now() + 120 * DAY)).catch(() => []), learnerAcross(), store.listGoals().catch(() => [])]);
   const goalDates = goalsAll.filter((g) => g.status === "active" && g.target_date && g.target_date >= days[0]);
@@ -1106,7 +1140,9 @@ async function renderPlan() {
   ].sort((a, b) => a.day.localeCompare(b.day)).slice(0, 8);
   const paced = (L?.courses || []).filter((c) => c.examDate && c.pace && !["done", "no-date"].includes(c.pace.status));
   view.innerHTML = `<section class="planner">
-    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("calendar")}Calendar</span><h1>Your calendar</h1><p class="sub">Exams, deadlines and study across Gradify. Review blocks are added and ticked off automatically.</p></div><button type="button" class="btn btn-primary lg" id="autoplan"><span>Auto-plan my week</span></button></div>
+    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("calendar")}Smart Plan</span><h1>Your plan, worked out for you</h1><p class="sub">Gradify builds each day from what matters most (misconceptions, fading memory, deadlines, due cards and new material) and fits it into your free time, with breaks. <a href="#/intel">Change your hours and energy</a>.</p></div><button type="button" class="btn btn-primary lg" id="autoplan"><span>Plan my week</span></button></div>
+    ${rescheduleHtml(M)}
+    ${smartPlanHtml(M, arg)}
     <div class="cal-top">
       <article class="panel glass"><div class="panel-head"><h3>Next five weeks</h3><span class="pill-dark">${fmtDate(Date.now(), { month: "long", year: "numeric" })}</span></div>${monthGrid([...ahead, ...goalDates.map((g) => ({ day: g.target_date, cal: "goal" }))], profile.exam_date)}</article>
       <article class="panel glass"><div class="panel-head"><h3>Coming up</h3></div>
@@ -1153,22 +1189,13 @@ async function renderPlan() {
     }
     renderPlan();
   });
-  $("#autoplan").addEventListener("click", async () => {
-    // Each day: enough review time for what's due that day, at the learner's usual length
-    const mins = profile.daily_minutes || 20;
-    let made = 0;
-    for (const [k, d] of days.entries()) {
-      if (k === 0) continue;
-      const end = new Date(d).getTime() + DAY;
-      const due = s.cards.filter((c) => new Date(c.due_at).getTime() < end).length;
-      const has = blocks.some((b) => b.day === d && b.auto);
-      if (has || (!due && !profile.exam_date)) continue;
-      const len = Math.max(10, Math.min(mins, Math.ceil((Math.max(due, 10) * SEC_PER_CARD) / 60)));
-      await store.saveBlock({ day: d, start_min: 18 * 60, end_min: 18 * 60 + len, title: due ? `Review cards (about ${due})` : "Learn new cards", cal: "study", auto: true });
-      made++;
-    }
-    toast(made ? `Added ${made} study ${made === 1 ? "block" : "blocks"} at 18:00. Drag isn't needed: edit the time by deleting and re-adding.` : "Your week already has study blocks.");
-    renderPlan();
+  wireSmartPlan(view, M, { store, toast, rerender }, arg);
+  $("#autoplan").addEventListener("click", async (e) => {
+    e.currentTarget.disabled = true;
+    const made = await planWeek(M, store, s.cards);
+    haptic(made ? "success" : "tap");
+    toast(made ? `Planned ${made} study ${made === 1 ? "session" : "sessions"} across the next six days, in your free time.` : "Your week already has Gradify sessions, or no free time is set.");
+    renderPlan(arg);
   });
 }
 
@@ -1198,6 +1225,7 @@ async function renderAccount() {
       <p class="sub">Every Gradify site uses these: courses pace your plan from your exam date and daily time.${learnerOf(profile).onboarded_at ? "" : ` <a href="#/start">Run set-up</a>`}</p>
       <button class="btn btn-light lg btn-sm" type="submit"><span>Save</span></button>
     </form>
+    ${hapticsSupported() ? `<article class="panel glass"><div class="panel-head"><div><h3>Haptics</h3><p class="sub">A light buzz when you rate a card, shuffle a pile or plan your day.</p></div><label class="switch"><input type="checkbox" id="haptics" role="switch" ${hapticsOn() ? "checked" : ""}><span class="sw-track lg" aria-hidden="true"><span class="sw-knob"></span></span></label></div></article>` : ""}
     <article class="panel glass"><h3>Your data</h3><p class="sub">${SITE ? `It's yours. Download or delete everything you've added on ${esc(SITE)}. Your notes on other Gradify sites stay as they are.` : "It's yours. Download everything, or delete it."}</p>
       <div class="row-actions"><button type="button" class="btn btn-light lg btn-sm" id="export"><span>Download my data</span></button><button type="button" class="btn btn-ghost lg btn-sm danger" id="wipe"><span>Delete all my data</span></button></div></article>
   </section>`;
@@ -1212,6 +1240,7 @@ async function renderAccount() {
     profile = await store.getProfile();
     toast("Saved.");
   });
+  $("#haptics")?.addEventListener("change", (e) => { setHaptics(e.target.checked); haptic("success"); });
   $("#export").addEventListener("click", async () => {
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([JSON.stringify(await store.exportAll(), null, 2)], { type: "application/json" }));
@@ -1278,7 +1307,8 @@ async function renderEarth(arg) {
 routes.earth = renderEarth;
 
 // ---------- Gradify AI: what it does for you, and how much of this month's allowance is left ----------
-async function renderAi() {
+async function renderAi(arg) {
+  const M = await model({ autoMove: false });
   const user = store.mode === "cloud" ? await store.user() : null;
   const uses = user ? await myAllowance(store).catch(() => []) : [];
   const on = uses.filter((u) => u.enabled);
@@ -1294,16 +1324,23 @@ async function renderAi() {
     <span class="kicker lo-kicker">${icon("sparkles")}Gradify AI</span>
     <h1>An assistant that works from your own notes</h1>
     <p class="sub">Gradify AI (Claude) only answers from your notes and Gradify's lessons, so you can check every answer against the source.</p>
+    ${askHtml(arg ? decodeURIComponent(arg) : "")}
     <article class="panel glass ai-allow">
       ${user ? (on.length ? `<div class="panel-head"><h3>This month</h3><a class="see" href="${PRICING}">Plans</a></div><ul class="plan-uses">${on.map((u) => `<li><span>${esc(AI_ALLOWANCES.find((a) => a.feature === u.feature)?.label || u.feature)}</span><b>${u.used} of ${u.allowance}</b></li>`).join("")}</ul>`
         : `<h3>Gradify AI isn't switched on yet</h3><p class="sub">Your allowance will show here when it is. Everything else in Gradify works now.</p>`)
       : `<h3>Sign in to use Gradify AI</h3><p class="sub">It's free, with a monthly allowance. Your notes and cards on this device move into your account.</p><a class="btn btn-light lg btn-sm" href="#/account"><span>Sign in</span></a>`}
     </article>
     <div class="ai-tools">${tools.map(([ic, t, d, href, cta]) => `<a class="panel glass ai-tool" href="${href}"><span class="ai-ico">${icon(ic)}</span><b>${t}</b><span class="sub">${d}</span><span class="see">${cta} →</span></a>`).join("")}</div>
-    <p class="sub">Studying ${esc(s.n)}. When you use Gradify AI, the text it needs is sent to Anthropic's Claude API; see <a href="/privacy.html">privacy</a>.</p>
+    <p class="sub">Studying ${esc(s.n)}. Ask Gradify answers from your own evidence in this browser; when you use Gradify AI, the text it needs is sent to Anthropic's Claude API. See <a href="/privacy.html">privacy</a>.</p>
   </section>`;
+  wireAsk(view, M);
 }
 routes.ai = renderAi;
+
+// ---------- Intelligence, My Knowledge, Revision Centre (kit/app/intel-views.js) ----------
+routes.intel = async () => { const m = await model(); renderIntelPage(view, m, { toast, saveIntel }); };
+routes.knowledge = async () => { const m = await model({ autoMove: false }); renderKnowledgePage(view, m, { courses: m.L?.courses || [] }); };
+routes.revise = async (arg) => { const m = await model({ autoMove: false }); renderRevisePage(view, m, arg); };
 
 // ---------- Community: not built yet; say so, and offer the one real thing (bringing friends) ----------
 async function renderCommunity() {
