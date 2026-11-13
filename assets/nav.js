@@ -16,7 +16,7 @@ document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !menu.hi
 document.addEventListener("click", (e) => { if (!menu.hidden && !e.target.closest("#menu, #menu-btn")) setMenu(false); });
 
 // Search button: go to the directory search and put the cursor in it
-$("#nav-search").addEventListener("click", (e) => {
+$("#nav-search")?.addEventListener("click", (e) => {
   e.preventDefault();
   $("#find").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   $("#q").focus({ preventScroll: true });

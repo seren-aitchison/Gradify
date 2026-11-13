@@ -15,8 +15,11 @@ test("a card's recall probability is 90% when it comes due, and falls after", ()
   assert.equal(recallProbability(card("a", "T", "definition"), NOW), null);
   const c = card("a", "T", "definition", { reps: 2, interval: 4, ago: 4, last: "good" });
   assert.ok(Math.abs(recallProbability(c, NOW) - 0.9) < 1e-9);
+  // FSRS forgets along a power curve: four stabilities after the last review, recall is about 72% ((1 + 19/81 · 4)^-0.5); ten, about 55%
   const late = card("a", "T", "definition", { reps: 2, interval: 4, ago: 16, last: "good" });
-  assert.ok(recallProbability(late, NOW) < 0.7);
+  assert.ok(Math.abs(recallProbability(late, NOW) - 0.7183) < 0.001);
+  const later = card("a", "T", "definition", { reps: 2, interval: 4, ago: 40, last: "good" });
+  assert.ok(recallProbability(later, NOW) < 0.6);
 });
 
 test("untouched topics are 'not started' and suggest learning", () => {

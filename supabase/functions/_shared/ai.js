@@ -14,7 +14,7 @@
 /** Which allowance a request mode counts against (mirrors public.ai_feature). */
 export const FEATURE_OF = {
   mark: "tutor", roleplay: "tutor", debrief: "tutor", diagnose: "tutor", socratic: "tutor", challenge: "tutor",
-  connect: "tutor", examiner: "tutor", director: "tutor",
+  connect: "tutor", examiner: "tutor", director: "tutor", coach: "tutor",
   explain: "explain", card: "explain",
   pack: "pack", questions: "quiz",
 };

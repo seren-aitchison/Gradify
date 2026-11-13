@@ -519,7 +519,7 @@
    "id": "u05",
    "n": 5,
    "title": "Phonics and Spelling",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u05-01",
@@ -587,7 +587,7 @@
    "id": "u06",
    "n": 6,
    "title": "Reading and Comprehension",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u06-01",

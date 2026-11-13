@@ -10,7 +10,8 @@ const NEW = ["diagnose", "socratic", "challenge", "connect", "examiner", "direct
 
 test("every mode has a daily limit, and the usage table accepts every mode", async () => {
   for (const m of NEW) assert.ok(DAILY[m] > 0, m);
-  const sql = await readFile(new URL("../supabase/migrations/20261106130000_tutor_modes.sql", import.meta.url), "utf8");
+  // the latest migration that sets the usage table's allowed modes
+  const sql = await readFile(new URL("../supabase/migrations/20261113130000_coach_mode.sql", import.meta.url), "utf8");
   for (const m of Object.keys(DAILY)) assert.match(sql, new RegExp(`'${m}'`), `${m} missing from the migration`);
 });
 
@@ -63,4 +64,18 @@ test("the existing modes still reply the same way", () => {
   assert.deepEqual(FEEDBACK_MODES, ["mark", "debrief"]);
   assert.equal(buildRequest({ mode: "explain", subject: "law", lesson, question: "What is law?" }).mode, "explain");
   assert.deepEqual(checkReply("explain", { answer: "x", fromLesson: true }, {}), { answer: "x", fromLesson: true });
+});
+
+test("coach answers from the learner summary and can only point to actions it was offered", () => {
+  const profile = { site: "MedGradify", dailyMinutes: 30, readiness: 0.4, readinessLow: 0.3, readinessHigh: 0.5, concepts: [{ name: "Systole", level: "shaky", mastery: 0.3, certainty: "medium", retention: 0.6, forgetInDays: 1, stage: "seen", confidentErrors: 2, recentErrors: 3 }],
+    actions: [{ id: "fix:d1|Systole", title: "Revisit Systole", why: "Confident mistakes", mins: 6 }, { id: "due", title: "Review 4 due cards", why: "Due", mins: 3 }] };
+  const r = buildRequest({ mode: "coach", subject: "medicine", question: "Why am I struggling?", profile });
+  assert.match(r.system, /Never invent scores/); assert.match(r.system, /not medical advice/);
+  assert.match(r.messages[0].content, /Systole: shaky, mastery 30%/);
+  assert.match(r.messages[0].content, /fix:d1\|Systole: Revisit Systole/);
+  assert.ok(r.schema);
+  const out = checkReply("coach", { answer: "Start with systole.", actions: [{ id: "fix:d1|Systole", why: "w" }, { id: "made-up", why: "x" }, { id: "fix:d1|Systole", why: "dup" }] }, { profile });
+  assert.deepEqual(out.actions.map((a) => a.id), ["fix:d1|Systole"]);
+  assert.throws(() => buildRequest({ mode: "coach", subject: "law", profile }), /Ask a question/);
+  assert.throws(() => buildRequest({ mode: "coach", subject: "law", question: "hi" }), /learner summary/);
 });

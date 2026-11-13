@@ -2,6 +2,7 @@
 // has produced (their answers, how sure they were, and when they last saw each card), and a
 // ranked answer to "what should I practise next, and why?". No browser APIs, so Node can test it.
 import { evidenceClass, explorationIds, EVIDENCE_CLASSES } from "./evidence-class.js";
+import { recallNow } from "./srs.js";
 const DAY = 864e5;
 
 // What each card type is evidence of. Recall-style cards test remembering; "why" cards test
@@ -27,15 +28,12 @@ export const LEVELS = {
   mastered: { label: "Mastered", note: "Strong on every kind of evidence you've shown so far." },
 };
 
-// The chance of recalling a card right now. The scheduler picks each interval so recall should
-// still be about 90% when the card comes due, so memory decays as 0.9^(elapsed / interval).
+// The chance of recalling a card right now, from its FSRS memory model (kit/learning/srs.js): retrievability falls
+// along a power curve from the last review, at a pace set by the card's stability. A card just answered wrong reads 30%.
 export function recallProbability(card, now = Date.now()) {
   if (!card.reps) return null;
   if (card.last_rating === "again") return 0.3;
-  const interval = Math.max(card.interval_days || 0, 1 / 24);
-  const last = new Date(card.due_at).getTime() - interval * DAY;
-  const elapsed = Math.max(0, (now - last) / DAY);
-  return Math.pow(0.9, elapsed / interval);
+  return recallNow(card, now);
 }
 
 // Weighted average with a gentle pull towards 50% while evidence is thin, so one lucky answer

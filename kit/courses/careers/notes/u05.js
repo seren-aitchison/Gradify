@@ -2,476 +2,518 @@
 export default `
 ## What a CV is for
 LV: Introductory · Foundation
-S: A CV (curriculum vitae) is a short marketing document that persuades an employer to shortlist you. This lesson explains what recruiters use CVs for, how quickly they read them, and what UK conventions apply, including what to leave out.
-O: Explain the purpose of a CV and how recruiters screen it
-O: Judge whether CV content is relevant and appropriate for a UK application
-O: Evaluate the claim that one good CV can be used for every application
-PRE: Turning experience into evidence
-H: Purpose and screening
-P: A **CV** summarises your education, experience, skills and achievements to show an employer that you meet their criteria and deserve an interview. It isn't a full life history: it is selective, evidence-based and written for a particular reader. In the UK a graduate CV is usually **two sides of A4**; in the US the equivalent résumé is usually one page.
-P: Recruiters often have many applications, so the first screen is fast. A widely reported eye-tracking study by the job site Ladders (2018) found recruiters spent around seven seconds on an initial scan, focusing on names, job titles, dates, education and the top third of the first page. Many large employers also use **applicant tracking systems (ATS)** to store and search CVs. So a CV must be easy to scan, with the most relevant evidence near the top.
-H: UK conventions
-- **Include**: name and contact details (phone, professional email, town or city, LinkedIn URL), education, experience, skills, achievements and, optionally, a short profile and interests.
-- **Leave out** (unless the employer asks): a photo, date of birth or age, marital status, nationality (state your right to work if relevant), full address, and references themselves.
-- **Why**: these details aren't needed to assess you and can invite bias on protected characteristics under the Equality Act 2010.
-X: Amara's CV is four pages, starts with a photo and date of birth, lists every school qualification from age 11 and puts her placement year on page three.
-> Cut to two pages: remove the photo and date of birth, summarise GCSEs in one line ("9 GCSEs including English and Maths").
-> Move the placement year near the top of the experience section, with three achievement bullet points.
-> Add a short profile tailored to the role.
-> Conclusion: a recruiter scanning for seven seconds now sees her degree and placement immediately.
-K: A CV is a selective two-page marketing document that gets you shortlisted; recruiters scan it fast, so put the most relevant evidence first and leave out personal details such as photo and date of birth that aren't needed.
-!: Treating a CV as a complete record of everything you've done. Relevance beats completeness; include what supports this application.
-EV: established | UK careers services advise a two-page graduate CV without a photo, date of birth or marital status.
-EV: contested | The often-quoted figure of a seven-second initial scan comes from a small industry eye-tracking study; recruiters' reading time varies, but fast initial screening is widely reported.
-T: CV | Curriculum vitae: a concise document summarising education, experience, skills and achievements for job applications
-T: Applicant tracking system | Software employers use to receive, store, search and filter applications
-SUM: A CV is a selective marketing document, usually two pages in the UK, designed to get you shortlisted.
-SUM: Recruiters scan quickly and may use ATS software; put relevant evidence first and leave out photo, date of birth and other unnecessary personal details.
-SRC: Prospects (Jisc), "CVs and cover letters" | guidance | 2024 | https://www.prospects.ac.uk/careers-advice/cvs-and-cover-letters
-SRC: Ladders, Eye-Tracking Study | secondary | 2018
-Q: How long is a typical UK graduate CV? | Two sides of A4.
-Q: Name three personal details normally left off a UK CV. | Any three: photo, date of birth or age, marital status, nationality, full address.
-M1#careers-u05-01-q1@1: What is the main purpose of a CV? | To persuade an employer to shortlist you | To record every job you've ever done | To list your full school exam history | To replace the need for an interview | A CV is a marketing document aiming to secure an interview; it is selective, not a complete record.
-M2#careers-u05-01-q2@2: Which item should usually be removed from a UK graduate CV? | A photo of the candidate | A placement-year achievement | A degree classification | A professional email address | UK convention is no photo, as it isn't needed and can invite bias; the others are useful evidence or contact details.
-TF1#careers-u05-01-q3@1: In the UK a graduate CV is typically two sides of A4. | true | Two pages is the standard UK guidance for graduates; US résumés are usually one page.
-M3#careers-u05-01-q4@3: Which is the strongest reason to put your most relevant experience near the top of the first page? | Recruiters scan fast and focus on the top of the first page | Applicant tracking systems only read the very first line of a CV | Employers are legally required to read only the first half page | Experience at the top of a CV is automatically given extra marks | Fast initial scanning concentrates attention at the top, so the best evidence must be easy to find there.
-SA3#careers-u05-01-q5@2,3: Evaluate the advice "write one excellent CV and send it to every employer". | One well-written CV saves time and gives a strong base. But recruiters assess evidence against their own criteria, and ATS searches use the role's keywords, so a generic CV may miss what each employer wants and push relevant evidence down. Tailoring the profile, order of sections, bullet points and keywords for each role improves relevance. Best practice: keep a master CV and tailor it for each application. | Recognises value of a strong base CV ; Explains recruiters assess against specific criteria ; Mentions keywords or ATS ; Recommends a master CV tailored per role ; Reaches a judgement
+S: A CV is a short marketing document that persuades an employer to invite you to interview. This lesson explains what a CV does, how recruiters read it, and what UK employers expect.
+O: Explain the purpose of a CV
+O: Describe how recruiters typically read CVs
+O: Identify what UK employers do and do not expect on a CV
+PRE: Job scams and staying safe online
+H: The purpose of a CV
+P: A **curriculum vitae** (CV) summarises your education, experience, skills and achievements. Its job is not to tell your whole life story but to show, quickly and convincingly, that you match a particular role well enough to be shortlisted. It works alongside a cover letter or application form. In the UK, a typical graduate or school-leaver CV is **two sides of A4** at most; one side can work for those with little experience.
+H: How recruiters read CVs
+- Recruiters often skim CVs very quickly at first, looking for evidence that matches the job's essential criteria.
+- An often-cited eye-tracking study by the jobs site Ladders found an initial scan of only a few seconds.
+- Clear headings, white space and the most relevant information near the top make that first scan successful.
+- Many large employers use **applicant tracking systems** that search CVs for keywords before a person reads them.
+H: UK expectations
+- Include: name, contact details, a short profile (optional), education, experience, skills and achievements.
+- Do **not** include a photo, date of birth, marital status or nationality, which are not needed and could expose candidates to discrimination, contrary to the spirit of the Equality Act 2010.
+- References can be provided on request rather than listed.
+- Be truthful: false claims can lead to dismissal and, in serious cases, prosecution for fraud.
+X: Two opening sections.
+> CV A begins with a full page about the candidate's hobbies and family background.
+> CV B begins with a two-line profile, then relevant experience: "Customer assistant, Boots, 2023 to present: handled 150+ customer queries a week."
+> A recruiter skimming for customer service experience sees the evidence in CV B straight away.
+> CV B is far more likely to be shortlisted.
+K: A CV is a concise, targeted marketing document, usually no more than two A4 sides in the UK, designed to win an interview by showing quickly that you meet a role's criteria; recruiters skim first, and UK CVs should omit photos, dates of birth and other personal details.
+!: Treating a CV as a complete life history. It should be selective and focused on the role.
+EV: established | UK careers services advise that most graduate CVs should be no longer than two A4 pages.
+EV: contested | The exact time recruiters spend on a first scan varies widely between studies and employers.
+T: Curriculum vitae | A summary of education, experience and skills used to apply for jobs
+T: Shortlisting | Selecting applicants to invite to the next stage
+T: Applicant tracking system | Software that stores and filters job applications
+SUM: A CV markets you for a role.
+SUM: Recruiters skim first.
+SUM: Keep it relevant and truthful.
+SRC: National Careers Service, CV sections | guidance | 2024 | https://nationalcareers.service.gov.uk/careers-advice/cv-sections
+SRC: Prospects (Jisc), "How to write a CV" | guidance | 2024
+SRC: Equality Act 2010, c. 15 | legislation | 2010 | https://www.legislation.gov.uk/ukpga/2010/15/contents
+Q: What is the main purpose of a CV? | To persuade an employer to invite you to interview.
+Q: Why should UK CVs not include a photo or date of birth? | They are not needed and could expose candidates to discrimination.
+M1#careers-u05-01-q1@1: How long should a typical UK graduate CV be? | No more than two sides of A4 | At least five pages long | Exactly half a page | As long as possible | Applying the standard result: Two sides is the usual maximum.
+M2#careers-u05-01-q2@2: What does a recruiter usually look for in the first scan of a CV? | Evidence matching the job's essential criteria | The candidate's photograph and age | A full list of every hobby | The font size used on the page | Applying the standard result: Relevance decides shortlisting.
+M3#careers-u05-01-q3@3: A candidate wants to include their marital status and nationality on a UK CV. What is the best advice? | Leave them out, as they are not needed | Put them at the very top of the CV | Include them only if married | Add a photo alongside them | Applying the standard result: Personal details are unnecessary.
+TF1#careers-u05-01-q4@1: A CV should list every job and activity you have ever done. | false | A CV should be selective and focused on what is relevant to the role.
+SA2#careers-u05-01-q5@2,3: Explain how understanding the way recruiters read CVs should shape the way you write one. | Recruiters often skim a CV quickly at first, looking for evidence of the essential criteria, and many employers first filter CVs with applicant tracking systems. So a CV should put the most relevant information near the top, use clear headings and white space, include keywords from the job description, and give concise, specific evidence of skills and achievements. | Quick first scan ; ATS filtering ; Clear structure ; Relevant evidence
 
 ## CV structure and sections
 LV: Introductory · Application
-S: Most graduate CVs follow a familiar structure that recruiters can scan quickly. This lesson explains each standard section, the order to use, and how layout and formatting help a reader find the evidence.
-O: List the standard sections of a UK graduate CV and their purpose
-O: Organise CV content into sections in an order suited to a candidate
-O: Evaluate layout and formatting choices for readability and accessibility
-PRE: What a CV is for
+S: A well-structured CV makes information easy to find. This lesson sets out the standard sections, their order, and how to present each one clearly.
+O: Identify the standard sections of a UK CV
+O: Choose an effective order for the sections
+O: Present each section clearly and concisely
 H: Standard sections
-P: Recruiters expect a familiar order because it lets them find evidence quickly. Unusual section names or structures slow them down, so creativity is better spent on the content of your bullets than on reinventing the layout.
-- **Name and contact details**: at the top, with phone, professional email, town and LinkedIn URL.
-- **Profile** (optional): two to four lines saying who you are, what you offer and what you're looking for, tailored to the role.
-- **Education**: degree, university, dates, classification or expected grade, relevant modules, dissertation and achievements; then A levels or equivalent briefly.
-- **Experience**: reverse chronological (most recent first), with employer, job title, dates and achievement bullet points. You can split it into "Relevant experience" and "Other experience".
-- **Skills**: technical skills, software, languages (with level) and certifications.
-- **Achievements, positions of responsibility and interests**: prizes, society roles, volunteering, and specific interests that say something about you.
-- **References**: usually "References available on request", or leave out to save space.
-H: Order and layout
-P: For most students, education comes before experience because the degree is the main qualification. If you have substantial relevant experience, such as a placement year, or you're a career changer, put experience first. Use clear headings, consistent date formats, bullet points and white space. A clean single-column layout in a standard font (such as Arial or Calibri) at 10 to 12 point reads well for people and ATS software. Avoid tables, text boxes, graphics and headers for key details, which some systems can't read, and send it as a PDF unless asked for Word.
-X: Ollie is a final-year engineering student with a 12-month placement at Rolls-Royce.
-> Because the placement is highly relevant and substantial, he puts "Engineering experience" before Education.
-> Order: contact details, short profile, engineering experience (placement with four achievement bullets), education (degree, modules, final-year project), other experience (part-time jobs), skills (MATLAB, SolidWorks, Python), achievements and interests.
-> Layout: one column, clear headings, consistent dates, two pages.
-> Conclusion: the structure puts his strongest evidence where recruiters look first.
-K: A graduate CV usually has contact details, an optional profile, education, experience, skills and achievements and interests, in an order that puts your strongest evidence first, with a clean, consistent, readable layout.
-!: Using complex designs, columns and graphics to stand out. They often confuse ATS software and make scanning harder; clarity beats decoration in most sectors.
-EV: established | UK careers services recommend reverse chronological order, clear headings and a simple layout for graduate CVs.
-EV: contested | How badly ATS software handles columns, tables and graphics varies by system; advice to avoid them is a cautious general rule rather than a universal fact.
-T: Reverse chronological | Listing the most recent education or experience first
-T: Profile | A short, tailored statement at the top of a CV summarising who you are and what you offer
-SUM: Standard sections are contact details, optional profile, education, experience, skills, and achievements and interests.
-SUM: Put the strongest evidence first (usually education for students, experience for those with placements), using reverse chronological order and a simple, readable layout.
-SRC: National Careers Service, "CV sections" | guidance | 2024 | https://nationalcareers.service.gov.uk/careers-advice/cv-sections
-SRC: Prospects (Jisc), "CVs and cover letters" | guidance | 2024 | https://www.prospects.ac.uk/careers-advice/cvs-and-cover-letters
-Q: What does reverse chronological order mean on a CV? | Listing the most recent education or experience first.
-Q: When should experience come before education on a CV? | When you have substantial relevant experience, such as a placement year, or are changing career.
-M1#careers-u05-02-q1@1: Which section usually comes first on a CV? | Name and contact details | Interests | References | Skills | Contact details go at the top so the recruiter knows who you are and how to reach you.
-M2#careers-u05-02-q2@2: A final-year student with no relevant work experience should usually put which section first after contact details and profile? | Education | Interests | References | Hobbies | For most students the degree is the main qualification, so education comes first.
-TF1#careers-u05-02-q3@1: Some applicant tracking systems struggle to read text inside tables, text boxes and graphics. | true | Complex layouts can confuse parsing software, so key information should be in plain text.
-M3#careers-u05-02-q4@3: Which layout choice best balances visual appeal and readability? | One column, clear headings, consistent dates and white space | Three columns with icons, skill bars and a coloured photo | Dense paragraphs with no headings to fit more onto the page | Very small font size so that the CV fits onto a single page | A clean single-column design is easy for recruiters and software to scan; graphics, density and tiny fonts hinder reading.
-SA3#careers-u05-02-q5@2,3: Explain how a student should decide the order of sections on their CV. | Start with contact details and an optional tailored profile. Then put the strongest, most relevant evidence first: education for most students, experience for those with a placement year or career changers. Split experience into relevant and other if helpful. Follow with skills, achievements and interests. Within sections use reverse chronological order. The aim is that a recruiter scanning the top of page one sees the evidence that best matches the role. | Places contact details and profile first ; Explains education first for most students ; Explains when experience comes first ; Uses reverse chronological order ; Links ordering to recruiters' scanning
+- **Name and contact details**: name, phone, professional email, town or city, and a LinkedIn link if useful; a full address is not needed.
+- **Personal profile** (optional): two to four lines summarising who you are, your key strengths and what you are looking for.
+- **Education**: qualifications in reverse chronological order, with relevant modules, projects or grades.
+- **Work experience**: roles in reverse chronological order, with employer, dates and achievements.
+- **Skills**: languages, IT, technical skills, with levels.
+- **Additional sections**: volunteering, positions of responsibility, awards, interests if relevant.
+H: Ordering and layout
+P: Put the most relevant section first after your details. A student applying for a graduate scheme may lead with **education**; someone with strong relevant experience may lead with **experience**. Use **reverse chronological order** within sections, so the most recent comes first. Choose a clean, readable font, consistent formatting, clear headings and enough white space. Avoid complex tables, graphics and columns that applicant tracking systems may not read correctly.
+H: Writing each section
+- Use **bullet points** starting with action verbs rather than long paragraphs.
+- Give dates consistently, for example "Sept 2023 to June 2024".
+- Explain unfamiliar qualifications or employers briefly.
+- Keep interests short and specific, and only include them if they add something.
+X: Reordering a CV.
+> A final-year engineering student has a two-month industrial placement and a strong dissertation project.
+> Her first draft starts with a long list of hobbies, then education, then experience.
+> She moves education (with the dissertation project) to the top, followed by the placement.
+> Hobbies shrink to one line about leading the university robotics club, which shows relevant skills.
+K: A UK CV usually has contact details, an optional profile, education, experience and skills, with optional extra sections; the most relevant section should come first, entries should be in reverse chronological order, and a clean, consistent layout with bullet points helps both people and applicant tracking systems.
+!: Using elaborate templates with columns and graphics. They can confuse applicant tracking systems and distract readers.
+EV: established | Reverse chronological order is the standard convention for UK CVs.
+T: Personal profile | A brief summary at the top of a CV
+T: Reverse chronological order | Listing the most recent items first
+T: Action verb | A verb that describes what you did, such as led or designed
+SUM: Standard sections in a sensible order.
+SUM: Most recent first.
+SUM: Clean, consistent layout.
+SRC: National Careers Service, CV sections | guidance | 2024 | https://nationalcareers.service.gov.uk/careers-advice/cv-sections
+SRC: Prospects (Jisc), "Example CVs" | guidance | 2024
+Q: What is reverse chronological order? | Listing the most recent items first.
+Q: When should education come before experience on a CV? | When it is your strongest and most relevant evidence, as for many students and recent graduates.
+M1#careers-u05-02-q1@1: Which detail is usually unnecessary on a modern UK CV? | A full home address | A phone number | A professional email address | Your name | Applying the standard result: Town or city is enough.
+M2#careers-u05-02-q2@2: How should entries within a section be ordered? | Most recent first | Oldest first | Alphabetically by employer | By length of time | Applying the standard result: Reverse chronological order is standard.
+M3#careers-u05-02-q3@3: Why should complex columns and graphics be avoided on a CV? | Applicant tracking systems may not read them correctly | They are always against UK employment law | Recruiters cannot see colours on screens | They make the CV too short to be read | Applying the standard result: ATS can misread layouts.
+SEQ1#careers-u05-02-q4@1: Put typical CV sections in a common order for a student. | Name and contact details ; Personal profile ; Education ; Work experience ; Skills | Contact details first, then the strongest evidence.
+SA2#careers-u05-02-q5@2,3: Explain how you would decide the order of sections on your CV. | After contact details and an optional profile, I would put first whichever section gives the strongest evidence for the role. As a student applying for a graduate scheme, that may be education, including relevant projects; with significant relevant experience, it may be work experience. Within each section I would use reverse chronological order, so recruiters see the most recent and relevant information first. | Contact and profile ; Strongest evidence first ; Student versus experienced ; Reverse chronological
 
 ## Writing achievement statements
-LV: Intermediate · Application
-S: Bullet points that describe achievements, not duties, are the heart of a strong CV. This lesson shows how to write achievement statements with action verbs, specific actions and measurable results.
-O: Distinguish duty statements from achievement statements
-O: Rewrite duty statements as achievement statements using a formula
-O: Evaluate when and how to quantify results honestly
-PRE: CV structure and sections
+LV: Introductory · Application
+S: Strong CVs describe achievements, not just duties. This lesson shows how to turn responsibilities into achievement statements using action verbs, evidence and numbers.
+O: Distinguish duties from achievements
+O: Write achievement statements using action verbs and results
+O: Quantify impact where possible
 H: Duties versus achievements
-P: A **duty statement** says what you were supposed to do ("Responsible for social media"). An **achievement statement** says what you did and what difference it made ("Grew the society's Instagram followers from 400 to 1,500 in a year by running weekly themed posts"). Recruiters can't tell from duties how well you did the job; achievements give evidence.
+P: A **duty** describes what a role involved: "Responsible for serving customers." An **achievement** shows what you did and the difference it made: "Resolved an average of 40 customer queries a day, contributing to a store satisfaction score of 92%." Employers can guess the duties of most jobs; achievements show your skills, initiative and results, and help you stand out from others who held similar roles.
 H: A formula
-P: A reliable structure is **action verb + what you did + result** (sometimes written as "Accomplished X, as measured by Y, by doing Z"). Start each bullet with a strong past-tense verb, keep it to one or two lines, and put the most impressive bullet first.
-- **Action verbs**: led, organised, designed, analysed, negotiated, trained, reduced, increased, launched, resolved, presented, built.
-- **Results**: numbers (people, money, time, percentages), outcomes (adopted, praised, won) or scale (for 200 customers, across five branches).
-- **Honesty**: use accurate figures or reasonable estimates ("around", "approximately"), and be ready to explain them at interview.
-X: Rewrite three duty statements from Priya's supermarket job.
-> "Responsible for training new staff" becomes "Trained 8 new starters on till and customer service procedures; all passed probation."
-> "Dealt with customer complaints" becomes "Resolved around 10 customer complaints a week, often turning them into positive feedback to the store manager."
-> "Helped with stock" becomes "Suggested a reorganisation of the chilled stockroom that cut weekly waste by an estimated 15%."
-> Conclusion: the same job now gives clear evidence of coaching, communication and problem solving.
-K: Write CV bullets as achievements: a strong action verb, what you did and the result, quantified honestly where possible, with the strongest first.
-!: Inflating numbers or claiming team results as your own. Recruiters probe achievements at interview, and exaggeration is easily exposed.
-EV: established | UK careers services and recruiters consistently recommend achievement-focused bullets with action verbs and quantified results over lists of duties.
-EV: hypothetical | Quantified achievements are likely to be judged more credible and memorable than general claims, although recruiters may discount figures that seem implausible or unexplained.
-T: Achievement statement | A CV bullet describing an action you took and the result it produced
-T: Action verb | A strong verb, such as led, built or reduced, that begins an achievement statement
-SUM: Duty statements describe responsibilities; achievement statements show actions and results.
-SUM: Use action verb + what you did + result, quantify honestly, and put the strongest bullet first.
-SRC: Prospects (Jisc), "CVs and cover letters" | guidance | 2024 | https://www.prospects.ac.uk/careers-advice/cvs-and-cover-letters
-SRC: Bock L., Work Rules! Insights from Inside Google That Will Transform How You Live and Lead, John Murray | secondary | 2015
-Q: What is the difference between a duty and an achievement statement? | A duty says what you were responsible for; an achievement says what you did and the result.
-Q: What formula can structure an achievement statement? | Action verb + what you did + result (accomplished X, as measured by Y, by doing Z).
-M1#careers-u05-03-q1@1: Which is an achievement statement rather than a duty statement? | Cut invoice errors by 20% by creating a checking template | Responsible for processing invoices for the finance team | Duties included processing invoices and filing receipts | Worked in the finance office processing some invoices | It shows an action and a measurable result; the others only describe responsibilities.
-M2#careers-u05-03-q2@2: Which verb would best start a bullet about running a fundraising event? | Organised | Assisted | Attended | Observed | "Organised" shows ownership and action; the others suggest a passive or minor role.
-TF1#careers-u05-03-q3@1: It is acceptable to use a reasonable estimate such as "around 15%" in an achievement statement if you can explain it. | true | Honest estimates are fine when exact figures aren't available, provided you can justify them at interview.
-M3#careers-u05-03-q4@3: Which bullet is strongest overall? | Led a team of four to build a booking app now used by 300 society members | Was part of a team that built an app that was quite popular with students | Excellent leader with strong technical skills in app development and design | Responsible for helping with app development for the student society | It combines a leadership verb, a specific action and a measurable result; the others are vague, claims or duties.
-SA3#careers-u05-03-q5@2,3: Rewrite the duty "Responsible for the society's social media" as an achievement statement and explain the principles you used. | Example: "Grew the Film Society's Instagram following from 450 to 1,200 in one year by planning weekly themed posts and collaborating with two local cinemas." Principles: start with a strong action verb; describe the specific actions taken; give a measurable result (followers, engagement, ticket sales); keep it to one or two lines; use accurate or honestly estimated figures; make clear the candidate's own contribution. | Produces a credible achievement statement ; Starts with a strong action verb ; Includes specific actions ; Includes a measurable result ; Explains honesty or personal contribution
+- Start with a strong **action verb**: led, organised, improved, designed, trained, reduced, increased, won.
+- Say **what** you did and **how**.
+- Give the **result**, ideally with a **number**: money, time, percentage, people, scale.
+- Many careers services suggest a **CAR** structure: Context, Action, Result, in one line.
+- Keep each statement to one or two lines.
+H: Finding numbers
+- How many customers, pupils, events or orders?
+- How much money raised, saved or managed?
+- How much time saved, or how quickly was something done?
+- What ranking, grade or award?
+- If you cannot quantify, describe the scale or a positive outcome, such as feedback from a manager.
+X: Rewriting a bullet point.
+> Before: "Helped with social media for the student society."
+> Add an action verb and what you did: "Planned and posted weekly Instagram content for the Film Society."
+> Add the result: "...increasing followers from 300 to 1,100 in one academic year."
+> The final statement shows initiative, digital skills and impact.
+K: Achievement statements begin with action verbs, describe what you did and show results, ideally with numbers such as people, money, time or percentages, often following a Context, Action, Result pattern, which makes a CV far more persuasive than lists of duties.
+!: Starting bullets with "Responsible for". It describes a duty, not what you achieved.
+EV: established | UK careers services consistently advise using action verbs and quantified results on CVs.
+T: Achievement statement | A CV line showing what you did and the result
+T: CAR | Context, Action, Result: a structure for describing achievements
+T: Quantify | To express a result with numbers
+SUM: Achievements beat duties.
+SUM: Action verb, action, result.
+SUM: Add numbers where possible.
+SRC: Prospects (Jisc), "How to write a CV" | guidance | 2024
+SRC: National Careers Service, CV sections | guidance | 2024 | https://nationalcareers.service.gov.uk/careers-advice/cv-sections
+Q: What does CAR stand for? | Context, Action, Result.
+Q: Give three action verbs suitable for a CV. | Led, organised and improved (also designed, trained or increased).
+M1#careers-u05-03-q1@1: Which is an achievement statement? | Raised £1,200 for charity by organising a sponsored walk | Responsible for charity events | Duties included fundraising | Helped out sometimes with charity work | Applying the standard result: It shows action and result.
+M2#careers-u05-03-q2@2: What makes an achievement statement more persuasive? | A measurable result | A long paragraph | Starting with "I was" | Using technical jargon | Applying the standard result: Numbers show impact.
+M3#careers-u05-03-q3@3: A student cannot find a number for an achievement. What should they do? | Describe the scale or a positive outcome such as feedback | Invent a plausible figure that sounds right | Leave the achievement out of the CV entirely | Write only the job title with no detail | Applying the standard result: Never invent numbers.
+MATCH1#careers-u05-03-q4@2: Match each weak phrase to a stronger version. | Responsible for rotas = Organised weekly rotas for 15 staff ; Helped customers = Resolved 40 customer queries a day ; Did social media = Grew followers from 300 to 1,100 ; Worked on a project = Designed a survey completed by 200 students | Stronger versions show actions and results.
+SA2#careers-u05-03-q5@2,3: Rewrite the duty "Responsible for training new staff" as an achievement statement and explain your changes. | "Trained 12 new team members in till and safety procedures, reducing early mistakes and cutting induction time from two weeks to one." I replaced "Responsible for" with the action verb "Trained", said what the training covered, added the number of people, and gave a measurable result showing impact, turning a duty into evidence of skill. | Action verb ; Specific content ; Number ; Result
 
 ## Tailoring a CV to a role
 LV: Intermediate · Application
-S: A tailored CV matches the employer's criteria closely, making it easy for a recruiter to shortlist you. This lesson shows how to analyse a job advert and adapt your profile, section order, bullets and keywords for each application.
-O: Explain why tailoring improves a CV's effectiveness
-O: Tailor a master CV to a specific job advert
-O: Evaluate how much tailoring is worthwhile for different kinds of application
-PRE: Writing achievement statements
-H: Why tailor
-P: Recruiters assess your CV against their criteria. If the most relevant evidence is buried or phrased differently from the advert, they may miss it, and ATS searches may not find it. Tailoring means making the match obvious. It doesn't mean inventing anything: you choose and order true evidence to fit.
-H: How to tailor
-P: Tailoring takes time, so prioritise: a role you really want deserves a carefully rewritten profile and reordered bullets, while similar roles in the same field may need only small changes to the profile and keywords.
-- **Keep a master CV**: a longer document with every role, achievement and skill, from which you select.
-- **Analyse the advert**: highlight the essential and desirable criteria, key skills and repeated words.
-- **Profile**: rewrite two to four lines to mirror the role and its top criteria.
-- **Order**: move the most relevant experience and bullets up; consider a "Relevant experience" section.
-- **Bullets**: choose the achievements that evidence each criterion, and use the employer's language where accurate (if they say "stakeholder management", use it rather than "working with people").
-- **Skills**: list the technical skills and software the advert names that you have.
-- **Check**: could a recruiter tick off each essential criterion from your CV in under a minute?
-X: Zoe applies for two roles: a graduate data analyst at an energy company and a policy assistant at a charity.
-> Data analyst CV: profile mentions SQL, Excel and her dissertation's regression analysis; first bullet under her internship is "Automated a weekly sales report in SQL, saving 3 hours a week".
-> Policy assistant CV: profile highlights research and writing; first bullet under the same internship is "Summarised findings from 40 customer interviews into a briefing used by senior managers"; her volunteering with a housing charity moves up.
-> Both CVs are true; each puts different evidence first.
-> Conclusion: tailoring makes the match obvious for each recruiter without inventing anything.
-K: Tailor each CV by analysing the advert and selecting, ordering and phrasing true evidence from a master CV so each essential criterion is easy to find.
-!: Tailoring by copying the advert's wording without evidence behind it. Keywords help you get found, but the recruiter still looks for proof.
-EV: established | UK careers services and recruiters consistently advise tailoring CVs to each role rather than sending a generic CV.
-EV: contested | How much tailoring pays off for high-volume applications is debated; some recruiters say light tailoring of profile and keywords is enough, while competitive schemes reward deeper tailoring.
-T: Master CV | A full working document listing all your experience and achievements, from which tailored CVs are built
-T: Tailoring | Adapting a CV's content, order and language to match a specific role's criteria
-SUM: Tailoring makes your fit with the employer's criteria obvious to people and ATS software, without inventing evidence.
-SUM: Build tailored CVs from a master CV by analysing the advert and adapting the profile, order, bullets, language and skills.
-SRC: Prospects (Jisc), "CVs and cover letters" | guidance | 2024 | https://www.prospects.ac.uk/careers-advice/cvs-and-cover-letters
-SRC: National Careers Service, "How to write a CV" | guidance | 2024
-Q: What is a master CV? | A full document of all your experience and achievements, from which you build tailored CVs.
-Q: Name three parts of a CV to adapt when tailoring. | Any three: profile, order of sections, choice and order of bullets, language and keywords, skills list.
-M1#careers-u05-04-q1@1: What does tailoring a CV involve? | Selecting and ordering true evidence to match a role | Inventing experience to fit what the employer wants | Changing the font and colours for each employer | Sending the same CV to many employers at once | Tailoring adapts real evidence to the role's criteria; inventing experience is dishonest.
-M2#careers-u05-04-q2@2: An advert stresses "stakeholder management". A student's CV says "worked with lots of different people". What is the best change? | Rewrite the bullet with a specific example of managing stakeholders, using that term | Add the phrase "stakeholder management" to the skills list without any example | Leave the wording as it is, since recruiters will understand what she means | Delete the bullet because it isn't relevant to the role at all | Using the employer's term with real evidence makes the match clear to both recruiters and ATS searches.
-TF1#careers-u05-04-q3@1: A tailored CV may put different achievements first for different roles. | true | Tailoring reorders and selects true evidence to match each role's criteria.
-M3#careers-u05-04-q4@3: Which test best shows whether a CV is well tailored? | A recruiter could find evidence for each essential criterion within a minute | The CV includes every single keyword from the advert at least twice | The CV is exactly the same length as the job advert itself | The CV uses the employer's brand colours and logo design | Tailoring succeeds when each essential criterion is quickly evidenced; keyword stuffing and visual tricks don't do this.
-SA3#careers-u05-04-q5@2,3: Explain how a student should tailor their CV for a specific graduate role. | Keep a master CV. Analyse the advert, highlighting essential and desirable criteria, skills and repeated terms. Rewrite the profile to match the role. Reorder sections and bullets so the most relevant evidence comes first; consider a relevant experience section. Select achievements that evidence each criterion and use the employer's terms where accurate. Update the skills list. Check that each essential criterion can be found quickly, and never invent evidence. | Uses a master CV ; Analyses the advert's criteria ; Adapts profile and order ; Uses employer language with evidence ; Checks against criteria and stays honest
+S: A tailored CV is far more effective than one sent unchanged to every employer. This lesson shows how to analyse a job description and adapt your CV to match.
+O: Analyse a job description and person specification
+O: Match evidence on your CV to the role's criteria
+O: Adapt profile, order and wording efficiently
+H: Reading the job description
+P: A **job description** sets out the role's duties, and a **person specification** lists the skills, qualifications and qualities sought, often divided into **essential** and **desirable** criteria. Highlight the key requirements and the words used to describe them. Research the organisation's values and recent news, too. These show what evidence to put forward, and which **keywords** applicant tracking systems may search for.
+H: Matching evidence
+- For each essential criterion, find a specific example on your CV that shows it.
+- Move the most relevant experience and achievements higher up.
+- Use the employer's language where it is accurate: if they ask for "stakeholder management", show it with that phrase.
+- Cut or shorten material that is irrelevant to this role.
+- Do not exaggerate or claim skills you do not have.
+H: Working efficiently
+- Keep a **master CV** with everything, and create tailored versions from it.
+- Adjust the **profile** to name the role and your two or three strongest matching strengths.
+- Reorder bullet points within each job to put the most relevant first.
+- Check that every essential criterion is clearly evidenced before sending.
+X: Tailoring for a marketing role.
+> The person specification asks for "copywriting", "analysing campaign data" and "working to deadlines".
+> The student's master CV mentions a society newsletter, a statistics module and a part-time café job.
+> She rewrites: "Wrote and edited a monthly newsletter for 400 members, meeting every print deadline" and "Analysed survey data in Excel to evaluate a recruitment campaign."
+> Her profile names the marketing assistant role and highlights copywriting and data analysis.
+K: Tailoring means analysing the job description and person specification, matching specific evidence to each essential criterion, using accurate keywords, reordering and trimming content, and keeping a master CV to create targeted versions efficiently.
+!: Sending the same generic CV to every vacancy. Tailored CVs show employers clearly how you fit their role.
+EV: established | Employers report that generic, untailored applications are a common reason for rejection.
+T: Job description | A document setting out a role's duties
+T: Person specification | A list of the skills and qualities sought for a role
+T: Master CV | A full record from which tailored CVs are created
+SUM: Analyse the criteria.
+SUM: Match evidence and keywords.
+SUM: Tailor from a master CV.
+SRC: Prospects (Jisc), "How to write a CV" | guidance | 2024
+SRC: Institute of Student Employers, Student Recruitment Survey | data | 2024
+Q: What is a person specification? | A list of the skills, qualifications and qualities an employer is looking for.
+Q: What is a master CV? | A full record of your experience from which tailored versions are created.
+M1#careers-u05-04-q1@1: Which document lists the essential and desirable criteria for a role? | The person specification | The contract of employment | The payslip | The staff handbook | Applying the standard result: It describes the ideal candidate.
+M2#careers-u05-04-q2@2: Why should you use the employer's wording where accurate? | It shows a clear match and helps with keyword searches | It allows you to claim skills you lack | It makes the CV longer | Employers require copied text | Applying the standard result: Accurate keywords help.
+M3#careers-u05-04-q3@3: A role's essential criteria include teamwork, but your CV shows no example. What should you do? | Add a specific example that shows teamwork | Claim teamwork without evidence | Ignore the criterion | Apply with the CV unchanged | Every essential criterion needs evidence.
+TF1#careers-u05-04-q4@1: It is acceptable to add skills you do not have if the job description asks for them. | false | Claims must be truthful; exaggeration can lead to rejection or dismissal.
+SA2#careers-u05-04-q5@2,3: Describe a step-by-step process for tailoring a CV to a specific vacancy. | Read the job description and person specification, highlighting essential and desirable criteria and key words, and research the organisation. Using a master CV, select the most relevant evidence for each criterion, move it higher, rewrite bullet points with accurate keywords, adapt the profile to the role, cut irrelevant material and check that every essential criterion is clearly shown. | Analyse the vacancy ; Select evidence ; Rewrite and reorder ; Final check
 
 ## CV formats: chronological and skills-based
 LV: Intermediate · Application
-S: Most graduates use a chronological CV, but skills-based (functional) and hybrid formats can suit career changers or people with gaps. This lesson compares formats and how to choose one honestly.
+S: Most CVs use a chronological format, but a skills-based format can work better in some situations. This lesson compares the two, and the hybrid approach.
 O: Describe chronological, skills-based and hybrid CV formats
-O: Choose and justify a CV format for a candidate's circumstances
-O: Evaluate recruiters' concerns about skills-based CVs
-PRE: CV structure and sections
-H: The formats
-P: A **chronological CV** lists education and experience in reverse chronological order, with achievements under each role. It is the most common format, preferred by most recruiters because it shows progression and context clearly.
-P: A **skills-based** or **functional CV** groups achievements under skill headings (such as "Leadership", "Data analysis", "Communication"), followed by a brief list of roles and dates. It can help career changers, people whose most relevant experience comes from varied or unpaid roles, and people with gaps in employment.
-P: A **hybrid CV** combines the two: a short "key skills" section with evidence at the top, followed by a chronological experience section. Many careers advisers recommend hybrids as a compromise.
-H: Choosing a format
-- **Chronological**: most students and graduates, especially with a clear degree and some experience.
-- **Hybrid**: career changers, people moving sector, or those whose skills cut across many short roles.
-- **Skills-based**: occasionally, when chronology would hide relevant skills, but use with care.
-P: Recruiters sometimes distrust purely skills-based CVs because they can hide gaps or make it hard to see where skills were used. Whatever the format, include dates and employers, and be ready to explain gaps honestly (for example, caring, illness, travel or study).
-X: Leon, 29, worked in hospitality for seven years and has just finished a part-time data analytics course; he wants a junior analyst role.
-> Chronological CV: hospitality roles dominate, and analytics appears only at the end.
-> Hybrid CV: a key skills section first ("Data analysis: built a stock forecasting spreadsheet that cut waste by 12%"; "SQL and Python: course project analysing 50,000 sales records"), then his roles in reverse order.
-> Conclusion: the hybrid shows his relevant skills first while keeping dates and employers clear, addressing recruiters' concerns.
-K: Chronological CVs suit most graduates; hybrid CVs, with key skills first and chronology after, suit career changers; purely skills-based CVs can hide context, so always include dates and employers.
-!: Using a skills-based CV to hide a gap. Recruiters notice missing dates; it is better to show them and explain gaps briefly and positively.
-EV: established | Most UK recruiters prefer chronological CVs for graduates, according to university careers guidance.
-EV: contested | Whether skills-based CVs disadvantage applicants is debated; they may help career changers, but some recruiters view them with suspicion.
-T: Skills-based CV | A CV format grouping achievements under skill headings, with a brief list of roles and dates
-T: Hybrid CV | A CV with a key skills section at the top followed by a chronological experience section
-SUM: Chronological CVs show progression and suit most graduates; skills-based CVs group evidence by skill; hybrid CVs combine both.
-SUM: Choose by circumstance, always include dates and employers, and explain gaps honestly.
-SRC: National Careers Service, "CV sections" | guidance | 2024 | https://nationalcareers.service.gov.uk/careers-advice/cv-sections
-SRC: Prospects (Jisc), "CVs and cover letters" | guidance | 2024 | https://www.prospects.ac.uk/careers-advice/cvs-and-cover-letters
-Q: What is a hybrid CV? | A CV with a key skills section at the top, followed by a chronological experience section.
-Q: Why do some recruiters distrust purely skills-based CVs? | They can hide gaps and make it hard to see where and when skills were used.
-M1#careers-u05-05-q1@1: Which CV format is most common for UK graduates? | Chronological | Skills-based | Video CV | Infographic CV | Reverse chronological CVs are standard for graduates because they show progression and context clearly.
-M2#careers-u05-05-q2@2: A nurse moving into project management wants to highlight transferable skills. Which format is most suitable? | A hybrid CV with key skills first, then chronological roles | A chronological CV listing only her nursing duties in order | A skills-based CV with no dates or employers anywhere | A one-line CV giving only her current job title and pay | A hybrid shows relevant skills prominently while keeping chronology clear, which suits career changers.
-TF1#careers-u05-05-q3@2: A skills-based CV should still include dates and employers. | true | Including them provides context and avoids suspicion that something is being hidden.
-M3#careers-u05-05-q4@3: Which is the best way to handle a one-year gap for illness on a CV? | Include the dates and a brief, honest note, focusing on readiness to work | Remove all dates from the CV so the gap can't be noticed at all | Invent a job to cover the period so the history looks continuous | Describe the illness in full medical detail in the experience section | A brief honest note is enough; candidates needn't give medical details, and hiding or inventing is risky and dishonest.
-SA3#careers-u05-05-q5@2,3: Compare chronological and hybrid CVs, and recommend a format for a graduate whose relevant experience comes from society roles and volunteering rather than jobs. | Chronological: clear progression and context, preferred by recruiters, but relevant society and volunteering experience might be buried under unrelated part-time jobs. Hybrid: puts key skills with evidence at the top, then chronology, so relevant achievements from any setting appear first while dates remain clear. Recommendation: a chronological CV with a "Relevant experience" section including society and volunteering roles, or a hybrid; either way, include dates and employers. | Describes chronological strengths and limits ; Describes hybrid format ; Applies to the scenario ; Notes need for dates and context ; Makes a justified recommendation
+O: Choose a format suited to a candidate's situation
+O: Avoid the pitfalls of skills-based CVs
+H: Chronological CVs
+P: A **chronological CV** lists education and work experience in reverse chronological order, with achievements under each role. It is the most common format in the UK and is preferred by many recruiters because it shows a clear history, progression and context for each achievement. It suits candidates with steady, relevant experience or education.
+H: Skills-based CVs
+- A **skills-based** (functional) CV groups evidence under skill headings, such as "Communication" or "Project management", followed by a brief employment history.
+- It can suit **career changers**, people with **gaps** or varied short-term roles, and students whose skills come from many different activities.
+- The risk is that recruiters may suspect something is being hidden, or struggle to see where each skill was developed.
+H: Hybrid CVs
+- A **hybrid** CV opens with a short key skills section, then gives a full chronological history.
+- It highlights transferable skills while still showing context and progression.
+- It is a safe choice for many career changers and graduates with diverse experience.
+X: A career changer.
+> After five years in retail management, Sam wants to move into human resources.
+> A chronological CV would emphasise sales targets more than people skills.
+> Sam writes a hybrid CV: a "Key skills" section with evidence of recruitment, training and handling staff issues, then a full employment history.
+> The recruiter can see both the relevant skills and where they were developed.
+K: Chronological CVs show history and progression and suit most candidates; skills-based CVs group evidence by skill and can help career changers or those with gaps, but may raise suspicion; hybrid CVs combine a skills summary with a chronological history.
+!: Using a skills-based CV without saying where each skill was developed. Recruiters need context to judge your claims.
+EV: established | Chronological CVs are the most widely expected format among UK recruiters.
+T: Chronological CV | A CV listing experience in reverse date order
+T: Skills-based CV | A CV grouping evidence under skill headings
+T: Hybrid CV | A CV combining a skills summary with a chronological history
+SUM: Chronological is standard.
+SUM: Skills-based suits some situations.
+SUM: Hybrid combines both.
+SRC: Prospects (Jisc), "Example CVs" | guidance | 2024
+SRC: National Careers Service, CV sections | guidance | 2024 | https://nationalcareers.service.gov.uk/careers-advice/cv-sections
+Q: Who might benefit from a skills-based CV? | Career changers or people with gaps or varied short-term roles.
+Q: What is a hybrid CV? | A CV opening with key skills followed by a chronological history.
+M1#careers-u05-05-q1@1: Which CV format is most common in the UK? | Chronological | Skills-based | Video-only | Infographic | Applying the standard result: Most recruiters expect it.
+M2#careers-u05-05-q2@2: What is a risk of a purely skills-based CV? | Recruiters may suspect something is being hidden | It is too detailed about dates | It cannot include any skills | It is not allowed in the UK | Applying the standard result: Lack of context raises doubts.
+M3#careers-u05-05-q3@3: A graduate with varied part-time jobs wants to highlight transferable skills but show her history. Which format fits? | A hybrid CV | A one-line CV | A purely chronological list of shifts | A CV with no experience section | Applying the standard result: Hybrid gives both.
+MATCH1#careers-u05-05-q4@2: Match each candidate to a suitable format. | Steady relevant experience = Chronological ; Major career change = Hybrid ; Long career gap with varied roles = Skills-based or hybrid ; Recent graduate with relevant degree = Chronological | Format depends on circumstances.
+SA2#careers-u05-05-q5@2,3: Compare chronological and skills-based CV formats and explain when each is most appropriate. | A chronological CV lists experience in reverse date order, showing progression and the context of each achievement, which suits candidates with steady, relevant experience. A skills-based CV groups evidence under skill headings, which can help career changers or people with gaps highlight transferable skills, but it can hide context and make recruiters suspicious, so a hybrid is often a safer compromise. | Chronological strengths ; Skills-based strengths ; Risks ; Hybrid compromise
 
 ## Applicant tracking systems and keywords
 LV: Intermediate · Application
-S: Many employers use applicant tracking systems (ATS) to manage and search applications. This lesson explains what ATS do and don't do, how keywords and formatting affect them, and how to write a CV that works for both software and people.
-O: Describe what applicant tracking systems do in recruitment
-O: Optimise a CV's keywords and format for ATS without keyword stuffing
-O: Evaluate concerns that automated screening excludes suitable candidates
-PRE: Tailoring a CV to a role
+S: Many employers use software to manage and filter applications. This lesson explains what applicant tracking systems do, how to make a CV readable by them, and how to use keywords honestly.
+O: Explain what applicant tracking systems do
+O: Format a CV so that it can be read reliably by software
+O: Use keywords from a job description honestly and effectively
 H: What ATS do
-P: An **applicant tracking system** is software that receives applications, stores them in a database, moves candidates through stages and lets recruiters search and filter. Some systems **parse** CVs into fields (name, education, employers) and rank or filter candidates by keywords, qualifications or answers to screening questions ("Do you have the right to work in the UK?"). Many large graduate employers use online forms rather than CVs, but SMEs, recruitment agencies and experienced-hire roles often rely on CVs uploaded to an ATS.
-P: Not every ATS automatically rejects CVs; often a recruiter searches the database. Either way, a CV that parses cleanly and contains the right terms is more likely to be found.
-H: Writing for software and people
-- **Keywords**: use the role's key skills and qualifications in context ("Analysed 10,000 survey responses in SPSS").
-- **Exact terms**: include both acronyms and full forms where relevant ("Search engine optimisation (SEO)").
-- **Standard headings**: "Education", "Experience", "Skills".
-- **Simple format**: no text boxes, images or key details in headers; standard fonts; PDF or Word as requested.
-- **Answer knockout questions accurately**: screening questions can filter automatically.
-- **No keyword stuffing**: hidden white text or lists of repeated terms may be spotted and look dishonest to recruiters.
-H: Fairness concerns
-P: The Harvard Business School and Accenture report *Hidden Workers* (2021) found that automated screening often filtered out capable candidates, for example those with employment gaps or without exact credentials. Under UK GDPR, people have rights relating to solely automated decisions with legal or similarly significant effects, and the Equality Act 2010 applies to algorithmic decisions as much as human ones.
-X: Musa applies for a junior marketing role on a recruitment agency's site. The advert asks for Google Analytics, SEO, content writing and CRM experience.
-> His CV says "Managed website stats" and "Wrote blogs".
-> Revised bullets: "Used Google Analytics to track blog traffic, increasing monthly visitors by 40% through search engine optimisation (SEO)"; "Wrote 20 blog posts and email campaigns in HubSpot CRM".
-> He removes a two-column template with icons and uses standard headings.
-> Conclusion: the CV now parses cleanly and matches the recruiter's searches, while giving real evidence.
-K: Applicant tracking systems store, parse and search applications; use the role's keywords in evidence, standard headings and a simple format, answer screening questions accurately and avoid keyword stuffing.
-!: Believing a "robot" rejects most CVs automatically. Many systems help recruiters search; the bigger risk is a CV that parses poorly or lacks the terms recruiters search for.
-EV: established | Applicant tracking systems are widely used by UK employers and recruitment agencies to manage and search applications.
-EV: contested | Claims that most CVs are rejected by software before a person sees them are exaggerated; practices vary, though research such as Hidden Workers shows automated filters can exclude capable candidates.
-T: Parsing | Software extracting information from a CV into structured fields such as employer, dates and skills
-T: Knockout question | A screening question in an online application that can automatically filter out candidates
-SUM: ATS store, parse, search and sometimes filter applications; knockout questions can screen automatically.
-SUM: Use keywords in context, standard headings and simple formatting, avoid stuffing, and be aware of fairness concerns and legal protections.
-SRC: Fuller J. B., Raman M., Sage-Gavin E. and Hines K., Hidden Workers: Untapped Talent, Harvard Business School and Accenture | secondary | 2021
-SRC: Information Commissioner's Office, "Rights related to automated decision making including profiling" | guidance | 2024 | https://ico.org.uk
-Q: What does an applicant tracking system do? | Receives, stores, parses and searches applications and moves candidates through recruitment stages.
-Q: What is keyword stuffing and why avoid it? | Repeating keywords or hiding them in the CV; recruiters may spot it and it looks dishonest.
-M1#careers-u05-06-q1@1: What does it mean when an ATS "parses" a CV? | It extracts information into structured fields | It prints the CV for an interviewer to read | It sends the CV to every employer in the area | It translates the CV into another language | Parsing turns CV text into fields such as name, employers, dates and skills that can be searched.
-M2#careers-u05-06-q2@2: Which CV choice is most likely to cause problems with an ATS? | Putting contact details in a header image | Using the heading "Experience" | Writing in a standard font | Saving as a PDF when allowed | Text inside images or headers may not be read, so contact details could be lost.
-TF1#careers-u05-06-q3@1: Including both "SEO" and "search engine optimisation" can help a CV match different searches. | true | Recruiters may search for either form, so including both where natural improves matching.
-M3#careers-u05-06-q4@3: Which is the strongest concern about automated CV screening? | It may filter out capable candidates who lack exact terms or have gaps | It always selects candidates more fairly than any human recruiter could | It is illegal for all UK employers to use any recruitment software | It reads every CV in more detail than a human and is too strict | Research shows rigid filters can exclude suitable candidates, which raises fairness concerns alongside legal protections.
-SA3#careers-u05-06-q5@2,3: Explain how to write a CV that works well for both applicant tracking systems and human recruiters. | Use the role's key skills and qualifications as keywords, embedded in real achievement statements, including acronyms and full forms. Use standard headings, a simple single-column layout, standard fonts and no key details in images or headers; send the requested file type. Answer screening questions accurately. Avoid keyword stuffing, which recruiters dislike. Keep achievements clear and quantified so the human reader is persuaded once the CV is found. | Uses keywords in context ; Uses standard headings and simple format ; Mentions screening questions or file type ; Avoids keyword stuffing ; Keeps the CV persuasive for humans
+P: An **applicant tracking system (ATS)** is software that stores applications, moves candidates through stages and, in many cases, lets recruiters search or rank CVs by **keywords**, qualifications or experience. Large graduate employers and agencies commonly use them. An ATS does not usually reject people automatically on its own, but recruiters may only read the CVs that match their searches, so a CV must be both **machine-readable** and **human-persuasive**.
+H: Formatting for ATS
+- Use a simple layout with standard headings, such as "Education" and "Work experience".
+- Avoid text in images, headers and footers, graphics, icons and complex tables or columns.
+- Use common fonts and save in the format requested, often Word or PDF.
+- Spell out abbreviations at least once, for example "Search engine optimisation (SEO)".
+H: Keywords
+- Identify the skills, tools, qualifications and job titles in the job description.
+- Include them where they truthfully describe your experience, in context: "Used Python to clean survey data."
+- Do not copy the job description wholesale or hide keywords in white text: recruiters will notice.
+- The CV still has to persuade the human who reads it.
+X: Making a CV ATS-friendly.
+> A candidate's CV is designed with two columns, icons for skills and a photo.
+> The ATS reads the columns in the wrong order and misses several skills shown only as icons.
+> She switches to a single column with standard headings, lists skills in text and adds keywords from the advert, such as "Excel" and "stakeholder engagement", where accurate.
+> Her CV is now parsed correctly and reads well to a recruiter.
+K: Applicant tracking systems store and help filter applications, so CVs should use simple layouts and standard headings that software can read, and include accurate keywords from the job description in context, while still persuading the human recruiter.
+!: Hiding keywords in white text to fool an ATS. Recruiters see it when the CV is read, and it damages trust.
+EV: established | Applicant tracking systems are widely used by large employers and recruitment agencies.
+EV: contested | Claims about the proportion of CVs automatically rejected by ATS are often exaggerated and poorly evidenced.
+T: Applicant tracking system | Software that manages and filters job applications
+T: Keyword | A word or phrase from a job description that recruiters may search for
+T: Parsing | Software reading and extracting information from a document
+SUM: ATS store and search CVs.
+SUM: Keep the format simple.
+SUM: Use keywords honestly.
+SRC: Prospects (Jisc), "How to write a CV" | guidance | 2024
+SRC: Institute of Student Employers, Student Recruitment Survey | data | 2024
+Q: What does an applicant tracking system do? | It stores applications, manages candidates through stages and helps recruiters search CVs.
+Q: Why should skills not be shown only as icons? | Software may not read them, so the skills could be missed.
+M1#careers-u05-06-q1@1: Which layout is most ATS-friendly? | A single column with standard headings | Two columns with icons and photos | Text inside images | Headers containing key information | Applying the standard result: Simple layouts parse reliably.
+M2#careers-u05-06-q2@2: Where should keywords from a job description appear on a CV? | Where they truthfully describe your experience, in context | Hidden in white text at the bottom of the page | Copied as one block straight from the advert | Only in the file name of the document | Applying the standard result: Honest, contextual use.
+M3#careers-u05-06-q3@3: A candidate hears that ATS reject most CVs automatically. What is the most accurate view? | Systems help recruiters filter, but such claims are often exaggerated | All CVs are always rejected by the software | The systems only read photos and logos | These systems are banned by UK law | Applying the standard result: Recruiters still decide.
+TF1#careers-u05-06-q4@1: Spelling out abbreviations at least once can help a CV match searches. | true | Recruiters may search for either the full term or the abbreviation.
+SA2#careers-u05-06-q5@2,3: Explain how to make a CV work well for both an applicant tracking system and a human recruiter. | For the software, use a simple single-column layout, standard headings, plain text rather than icons or images, and the requested file type, and include accurate keywords from the job description, spelling out abbreviations. For the human, use those keywords naturally in achievement statements with clear evidence and results, so the CV is easy to read and persuasive once it is opened. | Simple format ; Accurate keywords ; Readable evidence ; Persuasion
 
 ## Common CV mistakes
 LV: Introductory · Application
-S: Small, avoidable mistakes can get a strong CV rejected. This lesson covers the most common errors recruiters report, from spelling mistakes and vague claims to poor layout and dishonesty, and how to check a CV before sending it.
-O: Identify common CV mistakes that recruiters report
-O: Edit a flawed CV extract to correct mistakes
-O: Evaluate the consequences of exaggeration and dishonesty on a CV
-PRE: Writing achievement statements
-H: The usual errors
-- **Spelling and grammar errors**: recruiters frequently cite them as a reason to reject, especially for roles needing attention to detail.
-- **Generic content**: the same CV for every role, an untailored profile, or "To whom it may concern".
-- **Clichés without evidence**: "hard-working team player with excellent communication skills".
-- **Duties, not achievements**: "Responsible for..." bullets.
-- **Too long or too dense**: over two pages, long paragraphs, tiny fonts.
-- **Unprofessional details**: a jokey email address, a photo or irrelevant personal information.
-- **Unexplained gaps or inconsistent dates**: different dates on CV and LinkedIn.
-- **Wrong employer name**: forgetting to update the name when reusing a CV or letter.
-H: Honesty
-P: Exaggerating grades, job titles, dates or responsibilities is risky and can be serious. Employers check qualifications through services such as the Higher Education Degree Datacheck (HEDD), take references and ask detailed questions at interview. Lying about qualifications can lead to dismissal, and in serious cases, making false representations for gain can be fraud under the Fraud Act 2006. Present real achievements positively, but never invent them.
-H: Checking
-P: Read your CV aloud, use a spellchecker set to UK English, print it out, check every date and name, and ask someone else (such as your careers service) to review it. Check the file name and format, and that links work.
-X: Ella's CV extract reads: "Hard working and reliable team player. Responsable for managing the tills at Tesco from 2022-present. Email: partygirl99@..."
-> Spelling: "Responsable" becomes "Responsible", and better still is replaced with an achievement.
-> Cliché: delete "Hard working and reliable team player" and show it through evidence.
-> Bullet: "Handled up to £3,000 in takings per shift with no cash discrepancies over two years."
-> Email: change to a name-based address.
-> Conclusion: four quick fixes remove reasons to reject and add evidence.
-K: Avoid spelling errors, generic content, clichés, duty lists, excessive length, unprofessional details and inconsistent dates; never exaggerate or invent, and check every CV carefully before sending.
-!: Relying on a spellchecker alone. It won't catch wrong words that are spelled correctly ("manger" for "manager") or the wrong company name.
-EV: established | Spelling and grammar errors are among the most frequently cited reasons recruiters give for rejecting CVs.
-EV: established | Employers can verify UK degrees through HEDD, and lying about qualifications can lead to dismissal and, in serious cases, prosecution for fraud.
-T: HEDD | Higher Education Degree Datacheck, the UK's official service for verifying degrees
-T: Cliché | An overused phrase, such as "team player", that adds little without evidence
-SUM: Common mistakes include spelling errors, generic content, clichés, duties, excessive length, unprofessional details and inconsistent dates.
-SUM: Never exaggerate or invent; employers verify qualifications and references; check every CV carefully and get it reviewed.
-SRC: Fraud Act 2006 | legislation | 2006 | https://www.legislation.gov.uk/ukpga/2006/35/contents
-SRC: Higher Education Degree Datacheck, "Verify a degree" | guidance | 2024 | https://hedd.ac.uk
-Q: Name four common CV mistakes. | Any four: spelling errors, generic content, clichés without evidence, duty lists, excessive length, unprofessional email, inconsistent dates, wrong employer name.
-Q: How can employers verify a UK degree? | Through the Higher Education Degree Datacheck (HEDD), as well as certificates and references.
-M1#careers-u05-07-q1@1: Which is the most common reason recruiters give for rejecting a CV quickly? | Spelling and grammar errors | Using a standard font | Listing modules studied | Two pages in length | Errors suggest carelessness and are widely cited as a rejection reason; the others are normal CV features.
-M2#careers-u05-07-q2@2: Which edit best improves "Excellent communication skills"? | Replace it with an example, such as presenting findings to 50 staff | Change it to "Very excellent communication skills indeed" | Move it to the very top of the CV in a large bold font | Repeat it in every section of the CV for emphasis | Evidence shows the skill; adjectives, emphasis and repetition don't.
-TF1#careers-u05-07-q3@1: A spellchecker will reliably catch every error in a CV. | false | It misses correctly spelled wrong words and wrong names, so careful proofreading and a second reader are needed.
-M3#careers-u05-07-q4@3: A candidate claims a 2:1 but was awarded a 2:2. What is the most likely consequence if discovered? | Withdrawal of the offer or dismissal, and possibly a fraud investigation | Nothing, because employers never check degree classifications | A small pay cut, but the candidate keeps the job as normal | The university changes the classification to match the CV | Degrees can be verified through HEDD; lying about qualifications can lead to dismissal and, in serious cases, prosecution.
-SA3#careers-u05-07-q5@2,3: Explain a checking process a student should follow before sending a CV, and why each step matters. | Proofread aloud and on paper to catch errors a screen hides; use a UK English spellchecker but don't rely on it; check every date, name, job title and the employer's name for consistency with LinkedIn and the application; check length, layout and file format; test links; ensure every claim is true and can be explained; ask a careers adviser or friend to review. Each step removes avoidable reasons for rejection and protects credibility. | Includes proofreading methods ; Checks dates names and consistency ; Checks format and links ; Confirms honesty of claims ; Seeks a second reviewer
+S: Small errors can stop an otherwise strong CV from being shortlisted. This lesson covers the most common CV mistakes and a checklist for avoiding them.
+O: Identify common content and presentation mistakes on CVs
+O: Use a checklist to proofread a CV
+O: Explain why accuracy and honesty matter
+H: Content mistakes
+- **Generic CVs** not tailored to the role.
+- **Duties instead of achievements**: "responsible for" lists with no results.
+- **Too long**, or padded with irrelevant detail.
+- **Unexplained gaps**: brief, honest explanations, such as travel, caring or illness, are better than silence.
+- **Unprofessional email addresses**: use a simple name-based address.
+- **Clichés** without evidence, such as "hard-working team player".
+H: Presentation mistakes
+P: **Spelling and grammar errors** are among the most frequently cited reasons employers give for rejecting CVs, because they suggest a lack of care. Inconsistent formatting, such as mixed date styles or fonts, cramped layouts, tiny fonts and unusual file names, also create a poor impression. Save the file with a clear name, such as "Aisha-Khan-CV.pdf", and check how it looks when opened on another device.
+H: Honesty and checking
+- Never exaggerate grades, job titles or responsibilities: employers check qualifications and references, and false claims can lead to withdrawn offers or dismissal.
+- Read the CV aloud, check it against the job advert, and ask someone else to proofread it.
+- University careers services offer CV reviews.
+X: Proofreading a CV.
+> A student's CV says "Excellent attension to detail" in the profile.
+> It also mixes "Sept 2023" with "09/2024" and has an email address based on a nickname.
+> She corrects the spelling, uses one date format throughout and creates a name-based email.
+> A friend then spots a missing month in her employment history, which she explains briefly.
+K: Common CV mistakes include generic content, duties instead of achievements, excessive length, unexplained gaps, unprofessional emails and clichés, while spelling errors and inconsistent formatting undermine credibility; honest content and careful proofreading by yourself and others prevent them.
+!: Claiming "excellent attention to detail" on a CV that contains errors. Careless mistakes contradict the claim.
+EV: established | UK employers frequently cite spelling and grammar errors as a reason for rejecting CVs.
+T: Proofreading | Checking a document carefully for errors
+T: Employment gap | A period not accounted for on a CV
+T: Cliché | An overused phrase that adds little meaning
+SUM: Tailor and show achievements.
+SUM: Check spelling and consistency.
+SUM: Be honest about everything.
+SRC: Prospects (Jisc), "How to write a CV" | guidance | 2024
+SRC: National Careers Service, CV sections | guidance | 2024 | https://nationalcareers.service.gov.uk/careers-advice/cv-sections
+Q: Why do spelling errors matter on a CV? | They suggest a lack of care and are a common reason for rejection.
+Q: How should a gap in employment be handled? | With a brief, honest explanation, such as travel, caring or illness.
+M1#careers-u05-07-q1@1: Which email address is most suitable for a CV? | aisha.khan@email.com | partyqueen99@email.com | coolkid@email.com | dontemailme@email.com | Applying the standard result: Use a simple name-based address.
+M2#careers-u05-07-q2@2: Why are clichés like "hard-working team player" weak? | They make claims without any evidence | They are always untrue | Employers never value teamwork | They make the CV too short | Applying the standard result: Evidence persuades.
+M3#careers-u05-07-q3@3: A candidate inflates a 2:2 to a 2:1 on her CV. What is the main risk? | The offer may be withdrawn when qualifications are checked | The CV becomes too long for recruiters to read | She will automatically be paid a higher salary | Nothing, because grades are never checked | Applying the standard result: Employers verify qualifications.
+SEQ1#careers-u05-07-q4@2: Order a sensible final check of a CV. | Check it against the job advert ; Read it aloud for errors ; Check consistent formatting ; Ask someone else to proofread ; Save with a clear file name | A structured check catches more errors.
+SA2#careers-u05-07-q5@2,3: Explain why honesty and accuracy are essential on a CV. | Employers rely on CVs to decide whom to interview and often verify qualifications, employment dates and references. Errors suggest carelessness, while exaggerated grades, titles or responsibilities can lead to rejection, withdrawn offers or dismissal if discovered, and in serious cases may be fraud. Accurate, truthful CVs build trust and can be defended confidently at interview. | Employer reliance ; Verification ; Consequences of dishonesty ; Trust at interview
 
 ## Academic and international CVs
-LV: Advanced · Application
-S: CV conventions vary between sectors and countries. This lesson explains how academic CVs differ from graduate CVs, and the main conventions for applying abroad, including US résumés and the Europass format.
-O: Describe how an academic CV differs from a standard graduate CV
-O: Adapt a CV for an academic or international application
-O: Evaluate the importance of researching local CV conventions
-PRE: CV structure and sections
+LV: Intermediate · Application
+S: Academic posts and jobs abroad often need a different kind of CV. This lesson explains the academic CV, the conventions of other countries, and the Europass format.
+O: Describe the structure of an academic CV
+O: Recognise how CV conventions differ between countries
+O: Adapt a CV for an international application
 H: Academic CVs
-P: An **academic CV**, used for PhD, research and lecturing applications, has no strict length limit and grows over a career. It emphasises research and teaching: education (with dissertation or thesis titles and supervisors), research experience, **publications** (in a standard citation style), conference presentations, grants and awards, teaching experience, research skills and methods, professional memberships and referees (usually named, often two or three academics). Vitae's Researcher Development Framework describes the knowledge and skills of researchers and is a useful source of language.
-P: For a PhD application, a student's academic CV might be two or three pages, highlighting the dissertation, research methods, any research assistant work and relevant modules.
-H: International conventions
-- **US résumé**: usually one page; no photo, date of birth or marital status (anti-discrimination law); strong focus on achievements.
-- **Europass CV**: the EU's standard template, accepted in many European countries, with sections for skills and languages (using the Common European Framework of Reference for language levels).
-- **Some countries** traditionally include a photo or personal details (for example, in parts of continental Europe and Asia), though this is changing.
-- **Other differences**: date formats, paper size (A4 or US Letter), spelling (UK or US English) and terms such as "GPA" or equivalents for UK classifications.
-P: Research local conventions using the employer's guidance, your careers service, Prospects country profiles and people in the country. When in doubt, follow the employer's instructions.
-X: Hana is applying for a PhD in the UK and a graduate job in New York.
-> PhD CV: three pages, education with dissertation title and supervisor, research assistant post, a conference poster, methods (R, qualitative interviewing), teaching assistant experience and two academic referees.
-> US résumé: one page, US Letter size, US spelling, achievements focused on her internship and data skills, no photo, and her 2:1 explained ("equivalent to approximately 3.3 GPA" only if the employer asks for GPA, otherwise stated as UK classification).
-> Conclusion: the same experience is presented differently for each audience and country.
-K: Academic CVs are longer and focus on research, publications, teaching and named referees; international CVs follow local conventions on length, personal details and format, so research them for each country.
-!: Using a UK graduate CV for every academic or overseas application. Conventions differ, and following them shows you understand the context.
-EV: established | US résumés are conventionally one page and omit photos and personal details, reflecting anti-discrimination law and practice.
-EV: contested | Converting UK degree classifications to GPA or other systems has no single official method; conversions are approximate and employers' expectations vary.
-T: Academic CV | A CV for research and academic roles, emphasising research, publications, presentations, teaching and referees
-T: Europass | The European Union's standard CV template and set of documents for presenting skills and qualifications
-SUM: Academic CVs emphasise research, publications, presentations, teaching and named referees, with no fixed length.
-SUM: International CVs vary on length, personal details, formats and spelling; US résumés are one page; Europass is common in the EU; research local conventions.
-SRC: Vitae, Researcher Development Framework | standard | 2010
-SRC: European Union, Europass | guidance | 2024 | https://europass.europa.eu
-Q: Name three sections found on an academic CV but rarely on a graduate CV. | Any three: publications, conference presentations, grants and awards, teaching experience, research methods, named academic referees.
-Q: How long is a typical US résumé for a graduate? | One page.
-M1#careers-u05-08-q1@1: Which CV usually includes a list of publications? | An academic CV | A US résumé | A skills-based CV | A retail CV | Publications are central to academic CVs, which focus on research output.
-M2#careers-u05-08-q2@2: A student applies for a graduate role in the US. Which change is most appropriate? | Shorten to one page and remove personal details | Add a photo and date of birth to the top | Extend to four pages to include more detail | Keep UK A4 format and two pages unchanged | US résumés are usually one page without personal details; the UK two-page CV is less suitable.
-TF1#careers-u05-08-q3@1: Europass is a standard CV template used in the European Union. | true | Europass is the EU's framework of templates and tools for presenting skills, qualifications and languages.
-M3#careers-u05-08-q4@3: Which is the strongest reason to research local CV conventions? | Following local norms shows you understand the context and avoids negative impressions | All countries legally require identical CV formats from every applicant | Employers abroad never read CVs that aren't in a fixed national style | Local conventions matter only for applicants who are already living abroad | Recruiters judge against local expectations; meeting them makes the content easier to assess and shows cultural awareness.
-SA3#careers-u05-08-q5@2,3: Compare an academic CV with a standard graduate CV and explain how a student should adapt their CV for a funded PhD application. | Graduate CV: two pages, tailored to employers, achievement-focused across work and extra-curricular activity. Academic CV: no fixed length, focuses on research and teaching: thesis or dissertation with supervisor, research experience, publications and presentations, methods and skills, awards, teaching, memberships and named academic referees. For a PhD: lead with education and dissertation, research methods and any research assistant or lab work, link experience to the project, include presentations or posters, and give two or three academic referees. | Describes graduate CV conventions ; Describes academic CV sections ; Notes difference in length ; Adapts for a PhD application specifically ; Mentions referees or research methods
+P: An **academic CV**, used for research and lecturing posts, PhD applications and fellowships, is usually **longer** than a standard CV and grows over a career. It typically includes education (with thesis title and supervisor), research experience and interests, **publications** in a standard citation style, conference presentations, grants and awards, teaching experience, academic service and referees. Vitae, which supports researcher development, recommends tailoring even academic CVs to each post and highlighting research impact.
+H: International differences
+- **United States**: "résumé" usually means a one-page document for most jobs; "CV" means an academic CV.
+- **Europe**: some employers expect a photo and date of birth, though this is changing; the European Union's **Europass** CV offers a standard format.
+- **Some Asian and Middle Eastern countries**: personal details, such as nationality, may be expected.
+- **Australia and Canada**: conventions are similar to the UK, often with no photo.
+- Always research local expectations, for example through careers service guides or the employer's own advice.
+H: Adapting a CV
+- Translate qualifications into local equivalents or explain them, such as describing a UK 2:1.
+- Check language: use the employer's language accurately or have it checked.
+- Adjust length, format and personal details to local norms.
+X: Applying for a job in the United States.
+> A UK graduate applies for a marketing role in New York.
+> Her two-page UK CV is condensed into a one-page résumé with strong achievement bullets.
+> She explains her degree as "BA (Hons), equivalent to a US bachelor's degree" and gives her grade context.
+> For a later PhD application in the US, she prepares a longer academic CV listing research projects and conference posters.
+K: Academic CVs are longer and focus on research, publications, conferences, grants and teaching, while international CVs follow local conventions on length, format and personal details, from the one-page US résumé to the Europass format, so applicants should research expectations and explain their qualifications.
+!: Assuming UK CV conventions apply everywhere. Length, personal details and format vary between countries.
+EV: established | CV conventions on length and personal details differ significantly between countries.
+T: Academic CV | A detailed CV for research and academic posts
+T: Résumé | In the US, a short CV, usually one page
+T: Europass | A standard European format for CVs
+SUM: Academic CVs emphasise research.
+SUM: Conventions vary by country.
+SUM: Research local norms.
+SRC: Vitae, "Academic CVs" | guidance | 2024 | https://www.vitae.ac.uk/
+SRC: European Union, Europass | guidance | 2024 | https://europass.europa.eu/
+SRC: Prospects (Jisc), "Academic CVs" | guidance | 2024
+Q: What does "résumé" usually mean in the United States? | A short CV, typically one page.
+Q: Name three sections often found on an academic CV. | Publications, conference presentations and grants (also teaching experience).
+M1#careers-u05-08-q1@1: Which section is typical of an academic CV? | Publications | A photograph | Hobbies only | Salary history | Applying the standard result: Academic CVs list publications.
+M2#careers-u05-08-q2@2: What is Europass? | A standard European CV format | A visa for working abroad | A university ranking | A language test | Applying the standard result: It standardises CVs in Europe.
+M3#careers-u05-08-q3@3: A UK graduate applies for a job in the US. What is the best adaptation? | Condense the CV into a one-page résumé | Add a photo and date of birth | Make it five pages long | Remove all achievements | Applying the standard result: US résumés are typically one page.
+MATCH1#careers-u05-08-q4@2: Match each context to its CV convention. | US graduate job = One-page résumé ; UK graduate job = Up to two pages, no photo ; Academic post = Longer CV with publications ; European application = Europass format available | CV conventions on length, format and personal details differ between countries and sectors.
+SA2#careers-u05-08-q5@2,3: Explain how you would adapt a UK CV for an application to an employer in another country. | I would research the country's conventions through careers service guides and the employer's advice, adjusting length, for example to a one-page résumé in the US, and personal details such as whether a photo is expected. I would explain UK qualifications and grades in local terms, check the language carefully, and keep the focus on achievements relevant to the role. | Research norms ; Length and details ; Explaining qualifications ; Language and relevance
 
 ## The purpose of a cover letter
 LV: Introductory · Foundation
-S: A cover letter introduces your CV and explains why you want this role at this organisation and why you fit it. This lesson explains what cover letters are for, when they are needed and how recruiters use them.
-O: Explain the purposes of a cover letter alongside a CV
-O: Decide when a cover letter is needed and what it should emphasise
-O: Evaluate the claim that cover letters no longer matter
-PRE: What a CV is for
+S: A cover letter introduces your CV and explains why you want this role and why you are a good fit. This lesson explains what cover letters are for, when they are needed and how employers use them.
+O: Explain the purpose of a cover letter
+O: Distinguish a cover letter from a CV and a personal statement
+O: Recognise when a cover letter is required
 H: What a cover letter does
-P: A **cover letter** (or covering letter) accompanies a CV. Where the CV shows what you've done, the letter explains **why you are applying**, **why this organisation**, and **how your experience matches the role**. It shows motivation, research, written communication and fit, things a CV can only hint at. It also lets you explain anything unusual, such as a career change, a gap or a relocation.
-P: A cover letter is usually **one page** (around 250 to 400 words) and tailored to each application. Recruiters read it to judge genuine interest and communication, especially in roles where writing matters, or for SMEs and charities that receive fewer applications and read them closely.
-H: When it's needed
-- **Required**: when the advert asks for one; failing to include it may mean rejection.
-- **Optional box**: if there's an optional field, use it; a strong letter can help.
-- **Online forms**: many graduate schemes replace the letter with motivational questions ("Why do you want to join us?"), which serve the same purpose.
-- **Speculative applications**: the email or letter is essential, since there is no advert to respond to.
-X: Isla applies to a small publishing house that asks for "a CV and covering letter".
-> Her CV shows a literature degree, a student magazine editor role and a bookshop job.
-> Her letter explains why she wants to work in publishing, why this house (its list of translated fiction, which she studied), and how her editing and bookselling experience fits the editorial assistant role.
-> The managing editor, reading every application herself, shortlists Isla because the letter shows genuine knowledge and clear writing.
-> Conclusion: the letter did what the CV couldn't: show motivation, research and fit.
-K: A cover letter explains why you want this role and organisation and how you fit, showing motivation, research and writing; keep it to one page, tailor it and include it whenever asked or allowed.
-!: Repeating your CV in paragraph form. The letter should select and interpret your best evidence and add motivation and fit, not list everything again.
-EV: established | UK careers services advise including a tailored one-page cover letter when requested, and many SMEs and charities read them closely.
-EV: contested | Some recruiters say they rarely read cover letters, especially in high-volume recruitment, while others value them highly; practice varies by employer and sector.
-T: Cover letter | A one-page letter accompanying a CV explaining motivation, fit and interest in a specific role
-T: Motivational question | An application form question, such as "Why do you want to work here?", that does the job of a cover letter
-SUM: A cover letter explains why you want the role and organisation and how your experience fits, adding motivation and research to the CV.
-SUM: Keep it to one page, tailor it, include it when asked or allowed; motivational questions serve the same purpose on forms.
-SRC: Prospects (Jisc), "CVs and cover letters" | guidance | 2024 | https://www.prospects.ac.uk/careers-advice/cvs-and-cover-letters
-SRC: National Careers Service, "Write a cover letter" | guidance | 2024
-Q: What three questions should a cover letter answer? | Why you're applying, why this organisation, and how your experience matches the role.
-Q: How long should a cover letter usually be? | One page, around 250 to 400 words.
-M1#careers-u05-09-q1@1: What does a cover letter add that a CV usually can't? | Motivation for the role and organisation | A full list of grades and exam results | The dates of every job you have held | A complete record of all your references | The CV shows what you've done; the letter explains why you want this role and why you fit.
-M2#careers-u05-09-q2@2: An advert asks for a CV and cover letter. A student sends only a CV. What is the most likely result? | The application may be rejected for not following instructions | The employer will contact her to request the letter later on | It makes no difference, since letters are never actually read | The application will be treated as stronger because it is shorter | Not following the employer's instructions can be a reason for rejection.
-TF1#careers-u05-09-q3@1: Many graduate scheme application forms replace the cover letter with motivational questions. | true | Online forms often ask "Why this role?" and "Why us?", which serve the same purpose as a letter.
-M3#careers-u05-09-q4@3: Which is the strongest response to the claim that cover letters no longer matter? | Practice varies, but many employers, especially SMEs, read them and they're often required | Cover letters matter more than CVs for every employer in every sector | Cover letters are now banned by most UK employers in recruitment | Employers only read letters from candidates with relevant degrees | Some high-volume recruiters skim letters, but many employers read them closely and requests must be followed, so a strong letter remains worthwhile.
-SA3#careers-u05-09-q5@2,3: Explain the purpose of a cover letter and when a student should write one. | A cover letter introduces the CV and explains motivation for the role, reasons for choosing the organisation and how the candidate's experience fits the criteria; it shows research and written communication and can address career changes or gaps. Write one whenever the advert asks or there's an optional field, for speculative applications, and particularly for SMEs and charities that read applications closely. Where forms use motivational questions instead, answer those with the same care. | Explains motivation and fit purposes ; Mentions research and writing skills ; Mentions explaining gaps or changes ; Identifies when letters are needed ; Links to motivational questions on forms
+P: A **cover letter** accompanies a CV. While the CV sets out your evidence, the letter **connects** it to the role: it explains why you are applying, what attracts you to this employer and how your skills and experience match the key requirements. It also shows your written communication. A good letter is **tailored**, concise and confident, usually **no more than one page**.
+H: How it differs
+- A **CV** is a structured summary of evidence; the letter is a persuasive, personal argument in paragraphs.
+- A **personal statement** on an application form or for university admissions answers set questions or criteria.
+- Some employers ask for a **supporting statement** addressing the person specification point by point, common in public sector and education jobs.
+H: When it is needed
+- Send one whenever a CV is requested, unless the employer says not to.
+- Many online application systems include a "covering letter" or "motivation" box.
+- Speculative applications always need a letter.
+- Even when optional, a strong letter can set you apart.
+X: Why a letter matters.
+> Two candidates have similar CVs for a charity communications role.
+> Candidate A sends no letter.
+> Candidate B writes a one-page letter explaining her personal connection to the charity's cause and highlighting her campaign and writing experience.
+> The recruiter can see B's motivation and fit, and invites her to interview.
+K: A cover letter accompanies a CV, linking your evidence to the role, explaining your motivation and demonstrating your writing; it differs from a CV and supporting statement, should be tailored and about one page, and is worth sending whenever a CV is requested.
+!: Simply repeating the CV in paragraph form. The letter should select and connect evidence, and show motivation.
+EV: established | Many employers use cover letters to assess motivation and written communication.
+EV: contested | Some recruiters say they rarely read cover letters, while others treat them as decisive; practice varies by sector.
+T: Cover letter | A letter accompanying a CV explaining motivation and fit
+T: Supporting statement | A statement addressing a person specification point by point
+T: Motivation | Your reasons for wanting a particular role and employer
+SUM: Connect your CV to the role.
+SUM: Show motivation and writing.
+SUM: Tailored, about one page.
+SRC: Prospects (Jisc), "Cover letters" | guidance | 2024
+SRC: National Careers Service, Cover letters | guidance | 2024 | https://nationalcareers.service.gov.uk/careers-advice/cover-letters
+Q: How long should a cover letter usually be? | No more than one page.
+Q: What is a supporting statement? | A statement addressing the person specification point by point, common in public sector jobs.
+M1#careers-u05-09-q1@1: What is the main purpose of a cover letter? | To link your evidence to the role and show motivation | To list every job you have had | To give your salary history | To replace the CV completely | Applying the standard result: It connects CV and role.
+M2#careers-u05-09-q2@2: How does a cover letter differ from a CV? | It is a persuasive argument in paragraphs | It lists qualifications in a table | It must include a photo | It is always longer than the CV | Applying the standard result: Letters argue; CVs summarise.
+M3#careers-u05-09-q3@3: An employer's online form has an optional "covering letter" box. What is best? | Write a short, tailored letter to strengthen the application | Leave it blank to save time | Paste the CV text into it | Write one word, "Interested" | Applying the standard result: A strong letter adds value.
+TF1#careers-u05-09-q4@1: A cover letter should simply repeat the CV in full sentences. | false | It should select and connect key evidence to the role and show motivation.
+SA2#careers-u05-09-q5@2,3: Explain what a cover letter can achieve that a CV cannot. | A CV summarises evidence in a structured way, but a cover letter can explain why you want this particular role and employer, connect your most relevant experience directly to their key requirements, address anything unusual such as a career change, and demonstrate your written communication and enthusiasm, giving the recruiter a fuller picture of your fit. | Motivation ; Connecting evidence ; Explaining context ; Demonstrating writing
 
 ## Structuring a cover letter
-LV: Intermediate · Application
-S: A clear structure makes a cover letter persuasive and easy to read. This lesson sets out a standard four-part structure, the conventions of layout, greeting and sign-off, and how to keep the letter to one page.
-O: Describe a standard structure for a cover letter
-O: Draft a cover letter for a given advert using the structure
-O: Evaluate a cover letter's effectiveness against its purpose
-PRE: The purpose of a cover letter
-H: A four-part structure
-P: Each paragraph should do one job. A recruiter skimming the first sentence of each paragraph should be able to see who you are, why you fit, why you want them and what happens next.
-- **Opening paragraph**: the role you're applying for (with reference number), where you saw it, and a one-sentence summary of why you're a strong fit.
-- **Why you (one or two paragraphs)**: two or three of your strongest pieces of evidence matched to the key criteria, with specific achievements.
-- **Why them**: what attracts you to this organisation and role, based on research (projects, values, training, clients), linked to your goals.
-- **Closing paragraph**: restate your enthusiasm, mention availability, and thank the reader.
-H: Conventions
-P: Address a named person where possible ("Dear Dr Shah"); otherwise "Dear Hiring Manager". In the UK, "Yours sincerely" follows a named greeting and "Yours faithfully" follows "Dear Sir or Madam", though "Kind regards" is common in emails. Use the same font and header as your CV, keep to one page, and save as a PDF named clearly. Write in a confident, natural tone; avoid starting every sentence with "I", and avoid clichés like "I am writing to apply" if you can open more strongly.
-X: Draft an outline for Ben's application to a graduate surveyor role at a property consultancy.
-> Opening: "I'm applying for the Graduate Building Surveyor role (ref GBS25), advertised on your website. As a final-year RICS-accredited Building Surveying student with a summer placement at a housing association, I'd bring practical surveying experience and a strong interest in sustainable retrofit."
-> Why you: his placement (carried out 15 condition surveys under supervision and drafted reports) and his dissertation on heat loss in Victorian terraces.
-> Why them: the firm's retrofit work for local councils, mentioned at a careers fair by a graduate, and its support for the APC route to chartership.
-> Closing: enthusiasm, availability from July, thanks.
-> Conclusion: each paragraph has one clear job, and the evidence matches the criteria.
-K: Structure a cover letter as opening (role and summary), why you (matched evidence), why them (researched motivation) and closing, on one page with a named greeting where possible and a matching sign-off.
-!: Spending the letter on why the job would benefit you ("This would be a great step for my career"). Focus on what you offer and why you're genuinely drawn to them.
-EV: established | UK careers services commonly recommend a structure covering the role applied for, evidence of fit, motivation for the organisation and a closing.
-EV: hypothetical | Letters that open with a specific, confident summary of fit are likely to hold recruiters' attention better than generic openings, though evidence comes mainly from recruiter opinion rather than controlled studies.
-T: Yours sincerely | The UK sign-off used after a named greeting such as "Dear Ms Patel"
-T: Yours faithfully | The UK sign-off used after "Dear Sir or Madam"
-SUM: Use four parts: opening, why you, why them and closing.
-SUM: Address a named person, match the sign-off, keep to one page in a format matching your CV, and focus on what you offer.
-SRC: Prospects (Jisc), "CVs and cover letters" | guidance | 2024 | https://www.prospects.ac.uk/careers-advice/cvs-and-cover-letters
-SRC: National Careers Service, "Write a cover letter" | guidance | 2024
-Q: What are the four parts of a standard cover letter? | Opening, why you, why them, and closing.
-Q: When do you use "Yours sincerely" and "Yours faithfully"? | "Yours sincerely" after a named greeting; "Yours faithfully" after "Dear Sir or Madam".
-M1#careers-u05-10-q1@1: Which sign-off follows "Dear Mr Jones" in a formal UK letter? | Yours sincerely | Yours faithfully | Cheers | Love | Named greetings take "Yours sincerely"; "Yours faithfully" follows "Dear Sir or Madam".
-M2#careers-u05-10-q2@2: Which opening sentence is strongest? | As a finance graduate with an audit internship, I'm applying for your Graduate Auditor role (ref GA24) | I am writing to apply for the job that I saw advertised on your website last week | My name is Sam and I am a student who is looking for a job in some kind of audit | To whom it may concern, please consider me for any vacancy you might have | It names the role and gives a concise summary of fit; the others are generic or vague.
-TF1#careers-u05-10-q3@1: A cover letter should usually be no more than one page. | true | One page keeps it focused and respects the reader's time.
-M3#careers-u05-10-q4@3: Which "why them" paragraph is strongest? | It names a specific project and training route and links them to the candidate's goals | It praises the company as a world-leading firm with excellent values | It says the company offers a good salary and generous holidays | It explains that the candidate needs a job soon after graduating | Specific, researched reasons connected to the candidate's goals show genuine motivation; generic praise or self-interest doesn't.
-SA3#careers-u05-10-q5@2,3: Using the four-part structure, outline a cover letter for a graduate marketing role at a sustainable fashion brand, explaining each part. | Opening: names the role and reference and summarises fit (marketing degree, social media internship, interest in sustainability). Why you: two or three achievements matched to criteria, such as growing a society's Instagram by 150% and running a campaign for a charity shop. Why them: specific research, such as the brand's repair scheme and supply chain transparency, linked to personal values and goals. Closing: enthusiasm, availability and thanks. Named greeting and matching sign-off; one page. | Includes an opening naming role and fit ; Includes matched evidence ; Includes specific researched motivation ; Includes a closing ; Uses conventions and one page
+LV: Introductory · Application
+S: A clear structure makes a cover letter easy to read and persuasive. This lesson sets out a standard four-paragraph structure, layout conventions and how to open and close effectively.
+O: Lay out a cover letter using UK business conventions
+O: Organise content into a clear paragraph structure
+O: Write strong openings and closings
+H: Layout
+- Your **contact details** at the top, then the **date**, then the employer's name and address if known.
+- **Salutation**: "Dear Ms Patel" if you know the name; otherwise "Dear Hiring Manager" is now widely used.
+- **Sign-off**: "Yours sincerely" when you have used a name, "Yours faithfully" with "Dear Sir or Madam".
+- When sending by email, the letter can be in the email body or attached, with a clear subject line giving the role and any reference.
+H: Paragraph structure
+P: A common structure has four parts. **Opening**: state the role, where you saw it and a one-line summary of why you are a strong candidate. **Why them**: show what attracts you to this organisation, using research about its work, values or projects. **Why you**: give two or three pieces of evidence that match the key requirements, with results. **Closing**: summarise your fit, mention availability and thank the reader. Keep paragraphs short and the whole letter under one page.
+H: Openings and closings
+- Avoid weak openings like "My name is..." or "I am writing to apply..." on their own.
+- Strong openings combine the role with a hook: "As a final-year chemistry student who has led outreach events for 300 pupils, I am excited to apply for your Science Communication Assistant role."
+- Close positively: "I would welcome the opportunity to discuss how I could contribute."
+X: Drafting an opening paragraph.
+> Weak: "My name is Tom and I am applying for the job I saw online."
+> Better: "I am applying for the Junior Data Analyst role advertised on your website."
+> Strong: "I am applying for the Junior Data Analyst role advertised on your website. My statistics degree and placement building Excel dashboards for a logistics firm have prepared me to turn data into practical insights for your clients."
+> The strong version names the role and gives an immediate reason to keep reading.
+K: A UK cover letter has contact details, date, a suitable salutation and sign-off, and a clear four-part structure: an opening that names the role with a hook, why this employer, why you with evidence, and a positive close, all within one page.
+!: Using "Yours faithfully" after "Dear Ms Patel". Use "Yours sincerely" when you have addressed someone by name.
+EV: established | UK business letter conventions pair "Yours sincerely" with named salutations and "Yours faithfully" with "Dear Sir or Madam".
+T: Salutation | The greeting at the start of a letter
+T: Sign-off | The closing phrase before your name
+T: Hook | An opening line that captures the reader's interest
+SUM: Follow UK letter conventions.
+SUM: Opening, why them, why you, close.
+SUM: Strong hooks and positive endings.
+SRC: Prospects (Jisc), "Cover letters" | guidance | 2024
+SRC: National Careers Service, Cover letters | guidance | 2024 | https://nationalcareers.service.gov.uk/careers-advice/cover-letters
+Q: Which sign-off follows "Dear Sir or Madam"? | Yours faithfully.
+Q: What should the "why you" paragraph contain? | Two or three pieces of evidence matching the key requirements, with results.
+M1#careers-u05-10-q1@1: Which sign-off is correct after "Dear Mr Jones"? | Yours sincerely | Yours faithfully | Cheers | See you soon | Applying the standard result: Named salutations take "sincerely".
+M2#careers-u05-10-q2@2: What should the second paragraph of a cover letter usually explain? | Why you are attracted to this organisation | Your full education history | Your salary expectations | Your hobbies and holidays | Applying the standard result: "Why them" shows research.
+M3#careers-u05-10-q3@3: Which opening line is strongest? | I am applying for your Marketing Assistant role; my campaign work grew a society's events attendance by 50% | My name is Jo and I want a job | I saw your advert and thought I would apply | To whom it may concern, here is my CV | Applying the standard result: It names the role with evidence.
+SEQ1#careers-u05-10-q4@1: Put the paragraphs of a cover letter in order. | Opening naming the role ; Why this organisation ; Why you, with evidence ; Positive closing | This is a common four-part structure.
+SA2#careers-u05-10-q5@2,3: Describe a clear structure for a cover letter and explain the purpose of each part. | The opening names the role and gives a hook summarising why you are a strong candidate, encouraging the reader to continue. The second paragraph shows motivation by explaining what attracts you to the organisation, based on research. The third gives specific evidence matching the key requirements, with results. The closing summarises your fit, mentions availability and thanks the reader, ending positively. | Opening ; Why them ; Why you ; Closing
 
 ## Showing motivation and fit
-LV: Intermediate · Evaluation
-S: Recruiters want to know that you genuinely want this job and will thrive in it. This lesson shows how to demonstrate motivation and fit convincingly, through specific research, personal connection and evidence, in letters and motivational questions.
-O: Explain why recruiters assess motivation and organisational fit
-O: Write a convincing answer to "Why do you want to work for us?"
-O: Evaluate the risks of "fit" in selection for fairness and diversity
-PRE: Structuring a cover letter
-H: Why motivation matters
-P: Recruiters assess **motivation** because motivated employees are more likely to accept offers, stay, learn quickly and perform well. They assess **fit** (with the role, team and organisation's values) to judge whether you'll thrive. In graduate recruitment, motivation questions such as "Why this sector?", "Why this role?" and "Why us?" are among the most common, and weak answers are a frequent reason for rejection.
-H: Showing it convincingly
-- **Specific**: name concrete things about the organisation, such as projects, clients, products, training, values in practice, recent news.
-- **Personal**: connect them to your own experience, interests or values ("Having volunteered with a food bank, I was struck by your work on food waste...").
-- **Evidenced**: show actions you've taken to explore the field (events, conversations, work experience, reading).
-- **Forward-looking**: explain what you'd contribute and how the role fits your goals.
-- **Three levels**: sector (why this field), role (why this kind of work), organisation (why them rather than competitors).
-H: Fit and fairness
-P: Judging "cultural fit" can let bias in: recruiters may favour people like themselves in background, interests or style. Many employers now speak of **values fit** or **culture add** and use structured criteria to reduce this. For candidates, showing alignment with an organisation's stated values, with evidence, is more useful than trying to match an imagined "type".
-X: Two answers to "Why do you want to join our graduate scheme?" at a water company.
-> Weak: "You are a leading company with great training and I want to develop my career in a large organisation."
-> Strong: "Studying civil engineering, I became interested in how utilities adapt to climate change. Your plan to reduce leakage by 2030 and the nature-based flood scheme you presented at our careers fair are exactly the projects I want to work on. My placement modelling drainage for a council gave me relevant skills, and your rotations across operations and asset planning would help me become chartered."
-> The strong answer works at three levels (sector, role, organisation), is specific, personal and evidenced, and looks forward.
-> Conclusion: specificity and personal connection turn a generic answer into convincing motivation.
-K: Show motivation and fit with specific research, a personal connection and evidence of exploring the field, at sector, role and organisation levels; be aware that "fit" judgements can carry bias, so focus on stated values and evidence.
-!: Answering "Why us?" with praise that could apply to any employer ("world-leading", "great training"). If your answer would work for a competitor, it isn't specific enough.
-EV: established | Motivation questions are among the most common questions in UK graduate applications and interviews.
-EV: contested | Assessing cultural fit can introduce affinity bias; structured, values-based criteria are recommended to reduce this, though evidence on their effectiveness is still developing.
-T: Organisational fit | The match between a person's values, goals and style and those of an organisation and role
-T: Affinity bias | The tendency to favour people who are similar to oneself
-SUM: Recruiters assess motivation and fit to predict acceptance, retention and performance.
-SUM: Answer at sector, role and organisation levels with specific, personal, evidenced and forward-looking reasons; be aware that "fit" can carry bias.
-SRC: Kristof-Brown A. L., Zimmerman R. D. and Johnson E. C., "Consequences of individuals' fit at work: a meta-analysis of person–job, person–organization, person–group, and person–supervisor fit", Personnel Psychology 58(2), 281–342 | primary | 2005
-SRC: Rivera L. A., "Hiring as cultural matching: the case of elite professional service firms", American Sociological Review 77(6), 999–1022 | primary | 2012
-Q: What are the three levels of motivation to address? | Sector (why this field), role (why this kind of work) and organisation (why them).
-Q: What test shows whether a "Why us?" answer is specific enough? | Whether it would work equally well for a competitor; if so, it's too generic.
-M1#careers-u05-11-q1@1: What is affinity bias? | Favouring people similar to oneself | Favouring the most qualified candidate | Preferring candidates who apply early | Choosing candidates by random lottery | Affinity bias is a tendency to prefer people like oneself, which can distort "fit" judgements.
-M2#careers-u05-11-q2@2: Which sentence best shows motivation for a specific employer? | Your community energy project in Bristol, which I discussed with your team at our fair, matches my dissertation | You are a market-leading company with an excellent reputation and fantastic training | I have always wanted to work for a big company with a good name and strong values | Your company would be a great place for me to develop my career and earn well | It is specific, personal and evidenced; the others are generic or self-focused.
-TF1#careers-u05-11-q3@2: Rivera's research on elite firms found that interviewers often judged candidates on similarity in interests and experiences. | true | Rivera (2012) described hiring as "cultural matching", with evaluators favouring candidates who shared their leisure pursuits and backgrounds.
-M3#careers-u05-11-q4@3: Which approach best reduces bias in assessing fit? | Using structured criteria based on stated values and evidence | Letting interviewers pick who they would most enjoy a drink with | Choosing candidates with the same hobbies as the current team | Removing all criteria and relying on overall gut feeling | Structured, evidence-based criteria reduce the influence of similarity; gut feeling and shared hobbies amplify it.
-SA3#careers-u05-11-q5@2,3: Evaluate the use of "fit" in graduate recruitment and explain how candidates should respond. | Fit matters: people whose values and goals match their organisation tend to be more satisfied and committed (meta-analytic evidence). But "cultural fit" can mask affinity bias, favouring candidates similar in background or interests, as Rivera found in elite firms, which harms diversity. Structured values-based criteria and "culture add" approaches help. Candidates should research stated values, show genuine alignment with evidence, explain motivation at sector, role and organisation levels, and stay authentic rather than imitating a type. | Explains benefits of fit ; Explains affinity bias risk ; Refers to research evidence ; Mentions structured criteria ; Advises candidates appropriately
+LV: Intermediate · Application
+S: Employers want candidates who genuinely want the role and fit the organisation. This lesson shows how to research an employer and turn that research into convincing evidence of motivation and fit.
+O: Research an employer effectively
+O: Express specific, credible motivation
+O: Show fit with an organisation's values and culture
+H: Researching the employer
+- The employer's **website**: mission, values, services, recent projects and news.
+- **Annual reports** and strategy documents for larger organisations.
+- **Social media** and LinkedIn: current priorities and culture.
+- **People**: speak to current employees, alumni or recruiters at careers fairs.
+- **Sector news** and professional bodies.
+- Note specific facts you can mention credibly.
+H: Expressing motivation
+P: Weak motivation is generic: "I want to work for a leading company." Strong motivation is **specific** and **personal**, linking something about the organisation to your own interests, experiences or values: "Your partnership with local schools to widen access to engineering reflects my own experience as a STEM ambassador, and I want to help expand it." Employers are more convinced by evidence that your interest is genuine, such as related experience, courses or activities.
+H: Showing fit
+- Match your values and working style to the organisation's stated values, with examples.
+- Show you understand the role's day-to-day work, not just the brand.
+- Avoid flattery without substance.
+- Be honest: if you do not share an organisation's values, it may not be the right place for you.
+X: Strengthening a motivation paragraph.
+> Generic: "I have always wanted to work for your firm because it is very successful."
+> The student researches the firm and finds a new sustainability consulting team.
+> Revised: "Your new sustainability practice, advising retailers on reducing packaging, connects directly with my dissertation on plastic waste and my volunteering with a refill shop."
+> The revised version is specific, credible and shows genuine interest.
+K: Showing motivation and fit means researching the employer through its website, reports, people and news, then linking specific aspects of the organisation to your own experiences and values with credible evidence, rather than offering generic praise.
+!: Using the same motivation paragraph for every employer. Recruiters quickly spot generic statements.
+EV: established | Graduate employers frequently report that candidates fail to show genuine knowledge of the organisation.
+T: Organisational fit | How well a candidate's values and style match an employer
+T: Employer research | Finding out about an organisation's work, values and priorities
+T: Genuine motivation | Interest supported by evidence and specific knowledge
+SUM: Research specifically.
+SUM: Link the employer to your experience.
+SUM: Avoid generic flattery.
+SRC: Institute of Student Employers, Student Recruitment Survey | data | 2024
+SRC: Prospects (Jisc), "Cover letters" | guidance | 2024
+Q: Name three sources for researching an employer. | Its website, its annual report and current employees (also social media or sector news).
+Q: What makes a statement of motivation convincing? | Specific knowledge of the employer linked to your own experience or values.
+M1#careers-u05-11-q1@1: Which statement shows the strongest motivation? | Your apprenticeship scheme's focus on renewable projects matches my placement in solar installation | I want to work for a big company | Your company is very famous | I need a job quickly | Applying the standard result: It is specific and personal.
+M2#careers-u05-11-q2@2: What is the main problem with flattering but vague statements? | They show no real knowledge of the employer | They are too specific | They are always rude | They make the letter too short | Applying the standard result: Generic praise is unconvincing.
+M3#careers-u05-11-q3@3: A candidate discovers an organisation's values conflict with her own. What is the most sensible response? | Consider whether it is the right employer for her | Pretend to share the values strongly | Never research employers | Copy the values into her letter anyway | Applying the standard result: Fit matters both ways.
+MATCH2#careers-u05-11-q4@2: Match each research source to what it reveals. | Annual report = Strategy and performance ; Careers fair conversation = Culture and day-to-day work ; News articles = Recent developments ; Mission statement = Stated values | Sources offer different insights.
+SA2#careers-u05-11-q5@2,3: Explain how employer research can strengthen a cover letter. | Research reveals the organisation's values, current projects, priorities and culture. A candidate can then refer to specific facts, such as a new initiative, and link them to their own experiences, studies or values, showing genuine and informed motivation. This makes the letter more convincing than generic praise and shows the recruiter that the candidate understands the role and the organisation. | Revealing priorities ; Specific references ; Linking to experience ; Credibility
 
 ## Speculative letters
 LV: Intermediate · Application
-S: A speculative letter or email asks about opportunities that haven't been advertised. This lesson shows how to target organisations, structure a speculative letter, and follow up, so you can reach the hidden job market.
-O: Explain when speculative letters are most effective
-O: Write a speculative letter for a given scenario
-O: Evaluate how to make speculative approaches effective while respecting employers
-PRE: Showing motivation and fit
-H: When to use them
-P: **Speculative letters** work best for small and medium-sized employers, creative industries, research groups, charities and local organisations, which recruit less formally and may create a role for the right person. They are less effective for large graduate schemes, which recruit through set processes. Speculative approaches are often used for work experience, internships, shadowing and entry-level roles.
-H: Structure
-- **Opening**: who you are and what you're asking for (a type of role, work experience, or a conversation), with dates if relevant.
-- **Why them**: specific reasons you've chosen this organisation.
-- **What you offer**: two or three relevant skills or achievements, briefly evidenced.
-- **Close**: a clear next step ("I'll call next week to see whether a conversation would be possible"), thanks.
-P: Address it to a named person, such as the head of the team you'd like to join or the owner of a small firm. Keep it shorter than a standard cover letter (about 200 to 300 words), attach a tailored CV, and follow up after a week or so. Be flexible: if there's no role, ask for advice or a short conversation instead.
-X: Callum wants experience at a small digital agency that doesn't advertise vacancies.
-> Opening: "I'm a final-year computer science student at Sheffield seeking a junior front-end developer role from July."
-> Why them: their accessible website for a local NHS trust, which he studied for a module on inclusive design.
-> What he offers: React and accessibility testing skills, a portfolio website and a hackathon prize.
-> Close: "I'd welcome the chance to discuss any opportunities, or to hear your advice. I'll get in touch next week."
-> Follow-up call a week later leads to a coffee meeting and, two months later, a paid trial project.
-> Conclusion: a targeted, specific letter with a clear next step reached an unadvertised opportunity.
-K: Speculative letters reach unadvertised roles, especially in SMEs, creative and research organisations; address a named person, say what you're asking for, why them and what you offer, keep it short and follow up.
-!: Sending a vague letter asking "if you have any vacancies". Be specific about the kind of role or experience you want, so the employer can picture where you'd fit.
-EV: established | Small and creative employers frequently fill roles informally, which makes speculative approaches a recommended strategy for these sectors.
-EV: hypothetical | Speculative letters with a specific request and named recipient are likely to receive more responses than generic ones, consistent with careers services' experience, though systematic data are limited.
-T: Speculative letter | A letter or email asking about unadvertised opportunities at a chosen organisation
-T: Next step | A clear, polite statement of what you will do or would like to happen after the letter
-SUM: Speculative letters suit SMEs, creative industries, research groups and charities that recruit informally.
-SUM: Address a named person; state your request, why them and what you offer briefly; attach a CV; follow up; be open to advice instead.
+S: Many jobs are never advertised. This lesson explains how to write a speculative letter to an employer who has not advertised a vacancy, and how to follow it up.
+O: Explain when speculative applications are useful
+O: Write a targeted speculative letter
+O: Follow up a speculative approach professionally
+H: Why speculate?
+P: A **speculative application** is sent to an employer who has not advertised a vacancy. It can uncover the **hidden job market**: roles filled through contacts, internal moves or direct approaches, especially in small and medium-sized enterprises, creative industries, charities and for work experience or placements. A good speculative letter shows you have researched the organisation and explains clearly what you are asking for.
+H: Writing the letter
+- Find the **right person** by name, such as a team manager or the head of a department, rather than a general inbox where possible.
+- **Opening**: say who you are and what you are looking for, such as a summer internship, work shadowing or an entry-level role.
+- **Why them**: show specific research and genuine interest.
+- **Why you**: give two or three pieces of evidence of what you could offer.
+- **Ask**: request a short conversation, suggest timescales and attach your CV.
+- Keep it brief: under one page, or a short email.
+H: Following up
+- If you hear nothing, follow up politely after about **one to two weeks**.
+- Thank them for any reply, even a refusal, and ask if they can suggest anyone else.
+- Keep a record of who you contacted and when.
+- Combine speculative letters with networking, such as LinkedIn and careers fairs.
+X: A speculative email.
+> A history student wants museum experience.
+> She finds the name of the learning manager at a local museum and reads about its schools programme.
+> Her email explains her interest in heritage education, her experience running reading clubs and her availability for two weeks in July, asking for a short call.
+> She follows up politely after ten days, and is offered a week of work experience.
+K: Speculative applications target employers without advertised vacancies, uncovering the hidden job market; effective letters are addressed to a named person, show research, state clearly what is being sought and what the candidate offers, and are followed up politely after one to two weeks.
+!: Sending a generic speculative email to many employers at once. Targeted, researched letters to named people are far more effective.
+EV: established | A substantial share of jobs, especially in small businesses, are filled without public advertisement.
+EV: contested | Estimates of the size of the hidden job market vary widely and are hard to measure.
+T: Speculative application | An application to an employer without an advertised vacancy
+T: Hidden job market | Jobs filled without being publicly advertised
+T: Follow-up | A polite later contact after an initial approach
+SUM: Approach employers without adverts.
+SUM: Target a named person with research.
+SUM: Follow up politely.
 SRC: Prospects (Jisc), "Speculative applications" | guidance | 2024
-SRC: National Careers Service, "Write a cover letter" | guidance | 2024
-Q: Which employers are speculative letters most effective with? | SMEs, creative industries, research groups, charities and local organisations that recruit informally.
-Q: What four elements should a speculative letter include? | What you're asking for, why them, what you offer, and a clear next step with thanks.
-M1#careers-u05-12-q1@1: For which employer is a speculative letter most likely to work? | A small design studio with no advertised roles | A large bank with a set graduate scheme | A government department using Civil Service Jobs | An NHS trust recruiting through NHS Jobs | Small organisations often recruit informally; large employers and public bodies use formal processes.
-M2#careers-u05-12-q2@2: Which request in a speculative letter is best? | Two to four weeks of work experience in your editorial team this summer | Any job at all that might be available at your company at some point | A senior management role with a salary to be agreed between us later | Whatever you think might suit me, as I am open to absolutely anything | A specific, realistic request helps the employer picture where the candidate fits.
-TF1#careers-u05-12-q3@2: If an employer has no vacancy, asking for advice or a short conversation can still be valuable. | true | Advice and contacts can lead to future opportunities and build a network.
-M3#careers-u05-12-q4@3: Which approach to speculative letters is most effective and respectful? | Target a few organisations with researched letters and one follow-up each | Send an identical letter to hundreds of organisations in one day | Phone the organisation daily until someone agrees to meet you | Turn up at the office without notice and ask to see the director | Targeted, researched letters with a single polite follow-up are effective without being intrusive.
-SA3#careers-u05-12-q5@2,3: Write a plan for a speculative letter to a local environmental consultancy, explaining each part. | Research the consultancy and identify a named contact (a director or team lead). Opening: who the student is and a specific request, such as a summer placement in their ecology team. Why them: a specific project, such as their habitat surveys for a local development. What I offer: two or three evidenced skills (species identification, GIS, a survey internship). Close: a clear next step and thanks. Keep it to around 250 words, attach a tailored CV, follow up after a week, and ask for advice if no role exists. | Identifies a named contact ; Makes a specific request ; Gives researched reasons ; Evidences relevant skills ; Includes next step and follow-up
+SRC: Bolles R. N., What Color Is Your Parachute? Your Guide to a Lifetime of Meaningful Work and Career Success, Ten Speed Press | secondary | 2024
+Q: What is the hidden job market? | Jobs filled without being publicly advertised.
+Q: When should you follow up a speculative application? | After about one to two weeks, politely.
+M1#careers-u05-12-q1@1: What is a speculative application? | One sent to an employer with no advertised vacancy | A reply to a job advert | An internal promotion request | A complaint to an employer | Applying the standard result: It speculates on opportunities.
+M2#careers-u05-12-q2@2: Who should a speculative letter ideally be addressed to? | A named relevant manager | "To whom it may concern" | The company's accounts department | Every employee you can find | Applying the standard result: Named contacts respond more.
+M3#careers-u05-12-q3@3: A speculative email gets a polite refusal. What is the best next step? | Thank them and ask whether they can suggest anyone else | Ignore the reply | Email again every day | Post a complaint online | Applying the standard result: Refusals can lead to referrals.
+TF1#careers-u05-12-q4@1: A speculative letter should say clearly what you are asking for. | true | Being specific, such as asking for work experience in July, helps the employer respond.
+SA2#careers-u05-12-q5@2,3: Explain how to make a speculative application effective. | Research the organisation and identify a named, relevant person to contact. Write a brief, tailored letter or email explaining who you are, exactly what you are seeking, why you are interested in this organisation and what you could offer, with specific evidence and your CV attached. Follow up politely after one to two weeks, thank them for any response and keep records. | Research and named contact ; Clear request ; Evidence of value ; Polite follow-up
 `;
