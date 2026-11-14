@@ -646,7 +646,7 @@
    "id": "u05",
    "n": 5,
    "title": "Productivity and Personal Effectiveness",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u05-01",
@@ -802,7 +802,7 @@
    "id": "u07",
    "n": 7,
    "title": "Data and Digital Skills at Work",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u07-01",
