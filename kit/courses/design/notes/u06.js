@@ -1,703 +1,625 @@
-// CreateGradify Prototyping, Testing and Iteration (content standard 2). Added by scripts/new-course.mjs add-notes.
+// School 6: Prototyping, Testing and Iteration. Written to content standard 2 (docs/CURRICULUM_CONTENT_STANDARD.md):
+// objectives, key terms, summaries, typed and dated sources, evidence status (EV:) and questions at three levels
+// (Foundation, Application, Evaluation) in every lesson. Explanations are original; sources are those used and cited for
+// checking, pending human verification (qa.js records the review stages). Level: GCSE and A level D&T to first-year undergraduate.
 export default `
 ## Why prototype
 LV: Introductory · Foundation
-S: A prototype is an early, cheap version of a design used to learn something before committing to the final product. This lesson explains what prototypes are for, the questions they answer and why prototyping early saves time and money.
-O: Define a prototype and its purposes
-O: Explain how prototyping reduces risk
-O: Identify the question a prototype is meant to answer
+S: A prototype is any representation of a design that lets people explore, test or communicate an idea before it is finished. This lesson explains why designers prototype, what prototypes are for, and the research showing that making several prototypes in parallel improves results.
+O: Define a prototype and describe its purposes
+O: Explain Houde and Hill's model of what prototypes prototype
+O: Evaluate the evidence for prototyping early, often and in parallel
 H: What a prototype is
-P: A **prototype** is any representation of a design idea made to **test or communicate** it before the final version exists. It can be a sketch, a cardboard model, a clickable screen or a role-play. Prototypes turn abstract ideas into something people can see, hold or use, so that designers, users and stakeholders can react to it. As designer Tom Kelley of IDEO put it, if a picture is worth a thousand words, a prototype is worth a thousand meetings.
-H: Why prototype
-- To **learn** whether an idea works before investing heavily.
-- To **test assumptions** about what users need and how they behave.
-- To **communicate** ideas to clients, teams and users.
-- To **explore** several options quickly and compare them.
-- Changes are cheapest early: fixing a problem in a sketch costs far less than after manufacture or launch.
-H: Prototypes answer questions
-- Every good prototype is built to answer a specific question, such as "Can users find the checkout?"
-- Houde and Hill (1997) describe prototypes exploring **role** (what it does for people), **look and feel** and **implementation** (how it works technically).
-- Making only what is needed to answer the question keeps prototypes fast and cheap.
-X: A prototype that saved a product.
-> A team designs a new kitchen timer app.
-> Before coding, they sketch the main screen on paper and ask five people to set a timer.
-> Three people look for a "start" button that is not there.
-> The team adds it in the sketch in minutes, avoiding a costly change after development.
-K: Prototypes are early representations of designs made to learn, test assumptions, communicate and explore options cheaply; each should answer a specific question about role, look and feel or implementation, and early prototyping reduces the cost of changes.
-!: Treating a prototype as a first version of the final product. It is a learning tool and may be thrown away.
-EV: established | The cost of changing a design rises sharply the later in development the change is made.
-T: Prototype | An early representation of a design made to test or communicate it
-T: Assumption | Something believed true but not yet tested
-T: Look and feel | How a design appears and feels to use
-SUM: Prototypes help teams learn.
-SUM: Test before investing.
-SUM: Answer a specific question.
-SRC: Houde S. and Hill C., "What do prototypes prototype?", in Helander M. et al. (eds), Handbook of Human-Computer Interaction, 2nd edition, Elsevier | primary | 1997
-SRC: Kelley T. and Littman J., The Art of Innovation, Currency/Doubleday | secondary | 2001
-Q: What is a prototype? | An early representation of a design made to test or communicate it.
-Q: Why should a prototype answer a specific question? | So it stays quick and cheap and the team learns what it needs.
-M1#design-u06-01-q1@1: What is the main purpose of a prototype? | To learn and test ideas before committing | To sell the final product | To replace user research entirely | To finish the design quickly | Applying the standard result: Prototypes are for learning.
-M2#design-u06-01-q2@2: When is it cheapest to fix a design problem? | Early, at the sketch or prototype stage | After the product has launched | During mass manufacture | After customer complaints | Applying the standard result: Early changes cost least.
-TF1#design-u06-01-q3@3: A prototype should include every feature of the final product. | false | A prototype should include only what is needed to answer its question.
-M3#design-u06-01-q4@3: Houde and Hill describe prototypes exploring role, look and feel and what else? | Implementation | Marketing | Pricing | Packaging | Applying the standard result: How it works technically.
-SA2#design-u06-01-q5@2,3: Explain why designers prototype early and often. | Prototyping early lets designers test assumptions and learn whether ideas work before investing time and money, when changes are still cheap. Prototyping often allows several options to be explored and compared, and gives users and stakeholders something concrete to react to. Each prototype should answer a clear question, so the team learns quickly and avoids building the wrong thing. | Learning early ; Cheap changes ; Exploring options ; Clear questions
+P: A **prototype** is a representation of a design idea made to learn something: a sketch on a card, a foam model, a clickable screen mock-up or a working circuit. Lim, Stolterman and Tenenberg (2008) describe prototypes as **filters** that let designers examine particular qualities of an idea while ignoring others, and as **manifestations** that make ideas concrete enough to think with.
+- **Explore**: try out ideas quickly to see what works.
+- **Test**: check an idea with users or against requirements.
+- **Communicate**: show clients, colleagues and manufacturers what is intended.
+- **Reduce risk**: find problems while changes are cheap.
+H: What do prototypes prototype?
+P: Houde and Hill (1997) proposed that a prototype can address three dimensions of a design: its **role** (what it does for the user and how it fits their life), its **look and feel** (what it is like to see, touch and use) and its **implementation** (how it will technically work). An **integration** prototype combines all three. Choosing which question a prototype answers prevents wasted effort.
+X: Three prototypes for a smart plant pot.
+> Role: a cardboard pot with a printed card that says "water me", left in a user's home for a week to see if reminders help.
+> Look and feel: a foam model in three sizes and finishes to test what fits on a windowsill.
+> Implementation: a moisture sensor wired to a microcontroller on the bench, to check readings are reliable.
+H: Parallel prototyping
+P: Dow and colleagues (2010) asked participants to design web adverts. Those who made several prototypes in parallel and got feedback on all of them produced adverts that performed better, were more varied and gave the designers more confidence than those who iterated on one design at a time.
+K: Prototype to answer a specific question as cheaply as possible, and make several in parallel early, before committing to one.
+!: Building a polished prototype before knowing what question it should answer. Effort spent on detail early is often wasted when the concept changes.
+EV: established | Creating multiple prototypes in parallel led to better and more diverse designs than serial iteration in a controlled study (Dow et al., 2010).
+EV: contested | How far laboratory findings on parallel prototyping generalise to large, long professional projects is uncertain.
+T: Prototype | A representation of a design idea made to explore, test or communicate it before it is finished
+T: Parallel prototyping | Making several different prototypes at the same time and gathering feedback on all of them
+SUM: Prototypes explore, test and communicate ideas, reducing risk while change is cheap.
+SUM: Each prototype should answer a question about role, look and feel or implementation; parallel prototypes improve results.
+SRC: Houde S. and Hill C., "What do prototypes prototype?", in Helander M., Landauer T. and Prabhu P. (eds), Handbook of Human-Computer Interaction, 2nd edition, Elsevier | primary | 1997
+SRC: Dow S. P., Glassco A., Kass J., Schwarz M., Schwartz D. L. and Klemmer S. R., "Parallel prototyping leads to better design results, more divergence, and increased self-efficacy", ACM Transactions on Computer-Human Interaction 17(4):18 | primary | 2010 | https://doi.org/10.1145/1879831.1879836
+SRC: Lim Y.-K., Stolterman E. and Tenenberg J., "The anatomy of prototypes", ACM Transactions on Computer-Human Interaction 15(2):7 | primary | 2008 | https://doi.org/10.1145/1375761.1375762
+Q: What are Houde and Hill's three dimensions of a prototype? | Role, look and feel, and implementation.
+Q: What did Dow et al. (2010) find about parallel prototyping? | Making several prototypes in parallel produced better, more varied designs and more designer confidence than serial iteration.
+M1#design-u06-01-q1@1: Which is a main purpose of prototyping? | Finding problems while changes are still cheap | Producing the final product for sale | Replacing the need for a design brief | Making the portfolio look finished | Prototypes help learn and reduce risk early, before costly commitments.
+M2#design-u06-01-q2@2: A team wants to know if a new wearable fits comfortably on the wrist. Which prototype dimension is it testing? | Look and feel | Role | Implementation | Integration | Comfort and fit concern what it is like to wear and use: look and feel.
+M3#design-u06-01-q3@3: A team has two weeks and is unsure which of three concepts to pursue. What does the research suggest? | Make rough prototypes of all three, get feedback, then choose | Pick one and refine it in detail for the whole two weeks | Wait until the concept is certain before prototyping | Build the most expensive one first to impress the client | Parallel prototyping improves outcomes and avoids early lock-in (Dow et al., 2010).
+MATCH1#design-u06-01-q4@1: Match each prototype to the dimension it mainly tests. | A sensor circuit on a breadboard = implementation ; A foam model of a handle = look and feel ; A week-long trial of a paper reminder card = role ; A working, finished-looking model = integration | Houde and Hill's model separates what a prototype is for.
+SA3#design-u06-01-q5@2,3: Explain why a designer should prototype early and in parallel, using research, and evaluate when a single detailed prototype might be needed. | Early, rough prototypes find problems cheaply and test role, look and feel or implementation separately; parallel prototypes reduce fixation and improve results and confidence (Dow et al., 2010). A single detailed integration prototype becomes necessary later, to test how everything works together, for safety or regulatory testing, or to persuade investors. | Early cheap learning ; Dimensions or focused questions ; Parallel prototyping evidence ; When detailed prototypes are needed ; Judgement
 
 ## Prototype fidelity
-LV: Introductory · Application
-S: Prototypes range from rough sketches to polished models. This lesson explains low- and high-fidelity prototypes, the dimensions of fidelity and how to choose the right level for each stage.
-O: Distinguish low-fidelity and high-fidelity prototypes
-O: Describe the dimensions along which fidelity can vary
-O: Choose an appropriate fidelity for a design question
+LV: Introductory · Foundation
+S: Fidelity is how closely a prototype resembles the finished product. This lesson explains low and high fidelity, why fidelity is better thought of in several dimensions, and how to choose the right fidelity for each question.
+O: Distinguish low-fidelity from high-fidelity prototypes
+O: Choose a suitable fidelity for a given design question
+O: Evaluate the research on low- versus high-fidelity testing
 H: Low and high fidelity
-P: **Fidelity** describes how closely a prototype resembles the final product. **Low-fidelity** prototypes, such as paper sketches or foam models, are quick, cheap and easy to change. They encourage honest feedback about concepts because they look unfinished. **High-fidelity** prototypes, such as detailed interactive screens or working models, look and behave much like the final product and are better for testing details, visual design and realistic interaction, but they take longer to make and change.
-H: Dimensions of fidelity
+P: **Fidelity** describes how closely a prototype resembles the final product. **Low-fidelity** prototypes (sketches, paper screens, card models) are quick, cheap and easy to change; **high-fidelity** prototypes (detailed interactive mock-ups, finished-looking models) look and behave like the real thing. Rudd, Stern and Isensee (1996) summarised the debate: low fidelity is better for exploring concepts early; high fidelity is better for detailed testing and selling ideas.
+H: Fidelity has dimensions
 - **Visual**: how realistic it looks.
-- **Interaction**: how realistically it responds to users.
-- **Content**: whether it uses real text and data or placeholders.
-- **Breadth**: how many features are included.
-- **Depth**: how fully each feature works.
-- Prototypes can be mixed fidelity, such as rough visuals with realistic content.
-H: Choosing fidelity
-- Early stages: low fidelity to explore concepts and structure.
-- Later stages: higher fidelity to refine details and test realistic use.
-- High-fidelity prototypes can lead users to comment on colours rather than concepts.
-- Polished prototypes can make teams reluctant to change their work, a form of **sunk cost** bias.
-X: Choosing fidelity for a booking site.
-> Week 1: the team sketches five page layouts on paper to compare structure.
-> Week 3: they build a clickable grey-box prototype to test the booking flow.
-> Week 6: they make a high-fidelity prototype with real prices and brand colours.
-> Each stage matches the question being asked.
-K: Fidelity is how closely a prototype resembles the final product, varying in visual, interaction, content, breadth and depth; low fidelity suits early concept exploration and honest feedback, high fidelity suits refining details, and the level should match the question.
-!: Jumping straight to high fidelity. Polished prototypes are slow to change and can attract feedback on surface details instead of concepts.
-EV: established | Low-fidelity prototypes can uncover many usability problems at a fraction of the cost of high-fidelity ones.
-EV: contested | How closely low-fidelity testing results match those from high-fidelity prototypes varies between studies.
-T: Fidelity | How closely a prototype resembles the final product
-T: Low-fidelity prototype | A quick, rough representation such as a sketch
-T: High-fidelity prototype | A detailed, realistic representation of the final product
-SUM: Low fidelity: fast and cheap.
-SUM: High fidelity: realistic details.
-SUM: Match fidelity to the question.
-SRC: Rudd J., Stern K. and Isensee S., "Low vs. high-fidelity prototyping debate", Interactions 3(1), 76–85 | primary | 1996
-SRC: Walker M., Takayama L. and Landay J. A., "High-fidelity or low-fidelity, paper or computer? Choosing attributes when testing web prototypes", Proceedings of the Human Factors and Ergonomics Society Annual Meeting 46(5), 661–665 | primary | 2002
-Q: What does fidelity mean in prototyping? | How closely a prototype resembles the final product.
-Q: Why do low-fidelity prototypes often get more honest feedback? | They look unfinished, so people feel free to criticise the concept.
-M1#design-u06-02-q1@1: Which is a low-fidelity prototype? | A paper sketch of a screen | A fully coded app | A finished production model | A printed final brochure | Applying the standard result: Sketches are rough and fast.
-M2#design-u06-02-q2@2: What does the depth of a prototype describe? | How fully each feature works | How many colours it uses | How large it is | How many people tested it | Applying the standard result: Depth is completeness of features.
-MATCH2#design-u06-02-q3@2: Match each fidelity dimension to its description. | Visual = How realistic it looks ; Interaction = How realistically it responds ; Content = Real or placeholder text ; Breadth = How many features are included | Fidelity has several dimensions.
-M3#design-u06-02-q4@3: Users testing a polished prototype mainly comment on colours. What might the team do? | Test concepts with a lower-fidelity version | Add more colours | Stop testing entirely | Launch the product immediately | Applying the standard result: Lower fidelity focuses on concepts.
-SA2#design-u06-02-q5@2,3: Explain how a design team should choose the fidelity of a prototype. | The team should start from the question the prototype must answer. To explore concepts and structure early, low-fidelity prototypes are quick, cheap and attract honest feedback. To test details, visual design or realistic interactions later, higher fidelity is needed. Fidelity can vary by dimension, so the team can make only the aspects realistic that matter for the test. | Question first ; Early low fidelity ; Later high fidelity ; Mixed dimensions
+- **Interaction**: how much it responds like the real product.
+- **Content**: whether it uses real text and data or placeholder text.
+- **Breadth and depth**: how many features it covers and how far each works.
+P: A prototype can be high in one dimension and low in another: a working app with grey boxes for images is high in interaction but low in visual fidelity.
+X: Choosing fidelity for a banking app redesign.
+> Question 1: do customers understand the new navigation? Paper or simple clickable wireframes (low visual, medium interaction).
+> Question 2: do customers trust the new look? A visually polished static mock-up (high visual, low interaction).
+> Question 3: is transferring money quick? An interactive prototype with real-looking content (high interaction and content).
+K: Match fidelity to the question: as low as possible, but high enough in the dimension you're testing.
+!: Showing a polished prototype too early. People comment on colours and fonts and hesitate to criticise something that looks finished, so concept problems go unnoticed.
+H: What research shows
+P: Walker, Takayama and Landay (2002) found low- and high-fidelity web prototypes revealed similar numbers of usability problems, suggesting low fidelity is efficient for many usability questions. High fidelity matters for questions about aesthetics, timing, feel and trust.
+EV: established | Low-fidelity prototypes can identify many of the same usability problems as high-fidelity ones (Walker, Takayama and Landay, 2002).
+EV: contested | Whether low-fidelity prototypes bias user feedback (for example, by seeming unfinished and inviting more criticism, or less engagement) is debated.
+T: Fidelity | How closely a prototype resembles the finished product in appearance, interaction and content
+T: Low-fidelity prototype | A quick, rough prototype such as a sketch, paper screen or card model
+SUM: Low fidelity suits exploring concepts quickly; high fidelity suits detailed testing and communication.
+SUM: Fidelity has several dimensions; choose the lowest fidelity that answers the question.
+SRC: Rudd J., Stern K. and Isensee S., "Low vs. high-fidelity prototyping debate", Interactions 3(1):76–85 | primary | 1996 | https://doi.org/10.1145/223500.223514
+SRC: Walker M., Takayama L. and Landay J. A., "High-fidelity or low-fidelity, paper or computer? Choosing attributes when testing web prototypes", Proceedings of the Human Factors and Ergonomics Society Annual Meeting 46(5):661–665 | primary | 2002
+Q: What is fidelity in prototyping? | How closely a prototype resembles the finished product in appearance, interaction and content.
+Q: Why can a polished prototype be a problem early on? | Users focus on surface details and hesitate to criticise something that looks finished.
+M1#design-u06-02-q1@1: Which is a low-fidelity prototype? | Paper sketches of app screens | A fully coded app ready for release | A painted, finished-looking product model | A pre-production manufacturing sample | Paper screens are quick, rough and cheap: low fidelity.
+M2#design-u06-02-q2@2: A team wants to test whether users trust a new brand look on a checkout page. Which prototype fits best? | A visually polished mock-up of the page | Hand-drawn boxes on paper | A spoken description of the page | A list of the page's features | Trust in appearance needs high visual fidelity; interaction can stay low.
+M3#design-u06-02-q3@3: Which is the best interpretation of Walker, Takayama and Landay's finding? | Low fidelity is efficient for many usability questions, but not for those about look and feel | High-fidelity prototypes are never worth building | Paper prototypes always find more problems than digital ones | Fidelity has no effect on what any test reveals | Similar problem counts suggest low fidelity is efficient; aesthetic and feel questions still need higher fidelity.
+TF2#design-u06-02-q4@2: A prototype can be high-fidelity in interaction but low-fidelity in visual design. | true | Fidelity has several dimensions that can be set independently.
+SA3#design-u06-02-q5@2,3: For a new self-service library kiosk, plan prototypes of different fidelities for three stages of design and justify each. | Early: paper screens and a cardboard kiosk to test the concept and flow (low fidelity, quick to change). Middle: clickable wireframes on a tablet mounted at kiosk height to test navigation and reach (medium interaction, low visual). Late: a high-fidelity interactive prototype with real content and a scanner to test speed, feedback and trust. Fidelity rises as uncertainty falls. | Three stages ; Fidelity matched to question ; Dimensions considered ; Justifications ; Fidelity rising with certainty
 
 ## Paper prototyping
-LV: Introductory · Application
-S: Paper prototyping uses hand-drawn screens and cut-outs to test interfaces before any code is written. This lesson explains how to make and run a paper prototype test.
-O: Describe how to create a paper prototype
-O: Explain how to run a paper prototype test
-O: Evaluate the strengths and limitations of paper prototyping
-H: Making a paper prototype
-P: A **paper prototype** represents an interface with sketches on paper or card. Each screen, menu, pop-up or error message is drawn separately, and moving parts, such as drop-down lists, are cut out. Sticky notes are useful for changeable elements. Carolyn Snyder's book *Paper Prototyping* (2003) set out practical methods widely used in industry. Making a paper prototype can take hours rather than days.
-H: Running a test
-- A **facilitator** gives the participant tasks and asks them to think aloud.
-- A team member acts as the **"computer"**, swapping paper screens in response to the user's taps or clicks.
-- Observers take notes but do not help.
-- Problems can be fixed with a pen between sessions.
-H: Strengths and limitations
-- **Strengths**: very cheap and fast; no technical skills needed; easy to change; encourages feedback on concepts.
-- **Limitations**: cannot test timing, animation or fine visual detail well; the "computer" can be slow; some users find the method artificial.
-- Paper prototyping is less suited to testing complex data or highly visual products.
-X: Testing a ticket app on paper.
-> The team draws six screens for buying a train ticket.
-> A participant is asked to buy a return ticket to Leeds.
-> She taps the paper "Buy" button; the "computer" swaps in the payment screen.
-> She cannot find how to change the date, so the team redraws the date control before the next session.
-K: Paper prototypes represent interfaces with hand-drawn screens and cut-outs, tested by a facilitator with a team member acting as the computer; they are cheap, fast and easy to change but cannot test timing, animation or fine visual detail well.
-!: Helping the participant during the test. Observers should watch and note problems, not explain the design.
-EV: established | Paper prototyping can identify many usability problems early and at low cost.
-T: Paper prototype | A representation of an interface made from paper sketches
-T: Facilitator | The person who runs a test session and gives tasks
-T: Human computer | A team member who swaps screens to simulate the system
-SUM: Draw each screen.
-SUM: A person plays the computer.
-SUM: Cheap, fast, limited for detail.
+LV: Introductory · Foundation
+S: Paper prototyping uses hand-drawn screens and pieces of paper to simulate an interface, with a person playing the computer. This lesson explains how to make and test paper prototypes, why they work so well early on, and their limits.
+O: Describe how a paper prototype is made and tested
+O: Run a paper prototype test with roles for facilitator, computer and observer
+O: Evaluate the strengths and limits of paper prototyping
+H: How it works
+P: In **paper prototyping**, designers sketch screens, menus, pop-ups and buttons on paper or cards. During a test, a user "taps" with a finger, and a team member playing the **computer** swaps in the next screen by hand. Carolyn Snyder's *Paper Prototyping* (2003) describes the method in detail.
+- **Facilitator**: gives tasks and asks the user to think aloud.
+- **Computer**: changes the paper pieces in response to actions, without speaking.
+- **Observer**: takes notes on problems and comments.
+X: Testing a paper prototype of a cinema booking app.
+> Task: "Book two tickets for tonight's 7pm film."
+> User taps "Showtimes"; the computer places the showtimes screen.
+> User looks for a seat map but can't find it; the observer notes the problem.
+> Between sessions, the team redraws the screen with a clear "Choose seats" button and tests again the same day.
+K: Paper prototypes are so quick to change that designs can be fixed between test sessions, and users feel free to criticise them because they're obviously unfinished.
+H: Strengths and limits
+P: Paper prototyping needs no technical skill, involves the whole team, and works for testing concepts, navigation, terminology and layout. It is weak for testing timing, animation, scrolling, detailed visual design and real data, and the human computer can introduce delays and bias. It also suits physical products when combined with card models.
+!: Making paper prototypes too neat. Rough sketches are faster and signal that feedback is welcome.
+EV: established | Paper prototyping is a widely used, low-cost method for testing interface concepts and navigation early (Snyder, 2003).
+EV: contested | How closely user behaviour with paper prototypes reflects behaviour with real software is debated, especially for complex interactions.
+T: Paper prototype | A hand-drawn, paper version of an interface manipulated by a person to simulate interaction
+T: Human computer | The team member who changes paper screens in response to a user's actions during a test
+SUM: Paper prototypes simulate interfaces with drawn screens and a human playing the computer.
+SUM: They are fast, cheap and invite criticism, but can't test timing, animation or detailed visuals.
 SRC: Snyder C., Paper Prototyping: The Fast and Easy Way to Design and Refine User Interfaces, Morgan Kaufmann | secondary | 2003
-SRC: Nielsen Norman Group, "Paper prototyping: getting user data before you code" | secondary | 2003 | https://www.nngroup.com/articles/paper-prototyping/
-Q: Who plays the "computer" in a paper prototype test? | A team member who swaps screens in response to the user's actions.
-Q: What is one limitation of paper prototyping? | It cannot test timing, animation or fine visual detail well.
-M1#design-u06-03-q1@1: What materials are typically used for paper prototypes? | Paper, card, pens and sticky notes | Production plastics | Finished software | Metal sheets | Applying the standard result: They are cheap materials.
-M2#design-u06-03-q2@2: What should observers do during a paper prototype test? | Take notes without helping | Explain how the design works | Complete tasks for the user | Change the screens mid-task | Applying the standard result: Observers must not intervene.
-SEQ1#design-u06-03-q3@2: Put the steps of a paper prototype test in order. | Draw the screens and elements ; Give the participant a task ; The participant taps or points ; The computer swaps in the next screen ; The team notes problems | The test simulates interaction.
-M3#design-u06-03-q4@3: Which design would be hardest to test with a paper prototype? | A game that depends on fast animation | A simple sign-up form | A website navigation menu | A settings screen | Applying the standard result: Timing cannot be shown on paper.
-SA2#design-u06-03-q5@2,3: Evaluate paper prototyping as a method for testing an app design. | Paper prototyping is very cheap and quick, needs no technical skills and is easy to change between sessions, so many usability problems can be found before coding. Its rough look encourages honest feedback on concepts. However, it cannot represent timing, animation or detailed visuals, the human computer can be slow, and some participants find it artificial, so it is best for early structure and flow. | Cheap and fast ; Easy changes ; Limits on detail ; Best stage
+SRC: Rudd J., Stern K. and Isensee S., "Low vs. high-fidelity prototyping debate", Interactions 3(1):76–85 | primary | 1996 | https://doi.org/10.1145/223500.223514
+Q: What does the "computer" do in a paper prototype test? | Changes the paper screens in response to the user's actions, without speaking.
+Q: Name one thing paper prototypes test poorly. | Timing, animation, scrolling, detailed visual design or real data.
+M1#design-u06-03-q1@1: Which role in a paper prototype test gives the user tasks? | The facilitator | The computer | The observer | The client | The facilitator sets tasks and prompts thinking aloud; the computer changes screens.
+M2#design-u06-03-q2@2: After two paper prototype sessions, users can't find the search button. What should the team do? | Redraw the screen and test the change in the next session | Wait until the coded version to fix it | Tell users where the button is in future tests | Stop testing because paper is unreliable | Paper's speed allows changes between sessions, so fix and retest.
+M3#design-u06-03-q3@3: For which question is a paper prototype least suitable? | Whether an animation feels smooth enough | Whether users understand the menu labels | Whether the overall flow makes sense | Whether users can find the main features | Animation and timing need digital prototypes; paper suits concepts, labels and flow.
+MS1#design-u06-03-q4@1: Which are strengths of paper prototyping? Choose all that apply. | Quick and cheap to make ; Easy to change between tests ; Users feel free to criticise | Tests animation precisely ; Uses real data | Speed, flexibility and openness to criticism are strengths; animation and real data are weaknesses.
+SA3#design-u06-03-q5@2,3: Plan a paper prototype test for a school's lunch pre-order screen and evaluate the method. | Sketch screens for menu, meal choice, allergens and confirmation; roles: facilitator gives task ("order a vegetarian lunch with no nuts"), computer swaps screens, observer notes issues; test with five pupils, revising between sessions. Evaluation: cheap, fast, inclusive, invites criticism, finds labelling and flow problems; cannot test timing or real allergen data, and the human computer may slow things. | Screens and task ; Roles ; Iterate between sessions ; Strengths ; Limitations
 
 ## Wireframes
-LV: Introductory · Application
-S: Wireframes are simplified layouts showing the structure of a page or screen. This lesson explains what wireframes include, how they differ from mock-ups and prototypes and how to use them well.
-O: Describe what a wireframe shows
+LV: Introductory · Foundation
+S: A wireframe is a simplified visual guide to the structure of a screen or page, showing layout, content and functions without visual styling. This lesson explains what wireframes show, how they fit into the UX process and how they differ from mock-ups and prototypes.
+O: Describe what a wireframe shows and what it leaves out
+O: Create a wireframe for a simple screen with a clear hierarchy
 O: Distinguish wireframes, mock-ups and prototypes
-O: Apply wireframing to plan a screen layout
-H: What a wireframe is
-P: A **wireframe** is a simple, usually grey-scale layout that shows the **structure** of a page or screen: where content, navigation, images and controls go, and how important each element is. It deliberately leaves out colour, typography and imagery so that people focus on **layout, hierarchy and content**. Wireframes can be hand-drawn or made with digital tools, and they help teams agree on structure before visual design begins.
+H: What wireframes show
+P: A **wireframe** is a skeletal layout of a screen. It shows where elements go (navigation, headings, content, buttons, forms) and their relative importance, using boxes, lines and placeholder text, usually in greyscale. In Garrett's (2011) **elements of user experience**, wireframes belong to the **skeleton** plane, between structure (information architecture) and surface (visual design).
+- **Shows**: layout, content priority, navigation, functions, labels.
+- **Leaves out**: colour, imagery, typography details, branding.
 H: Wireframes, mock-ups and prototypes
 - **Wireframe**: structure and layout; low visual fidelity.
-- **Mock-up**: a static, high-visual-fidelity image showing colours, fonts and images.
-- **Prototype**: interactive; lets users click or tap through.
-- Wireframes can be linked together to make a simple clickable prototype.
-H: Good practice
-- Use placeholder boxes with a cross for images, and lines or "lorem ipsum" for text, but use **real content** where it affects layout.
-- Show **hierarchy** with size and position.
-- Annotate to explain behaviour, such as what a button does.
-- Design for different screen sizes, such as mobile and desktop.
-- Keep wireframes simple so feedback focuses on structure.
+- **Mock-up**: a static, visually designed version of the screen; high visual fidelity, no interaction.
+- **Prototype**: something interactive that can be clicked or used to test flows; any visual fidelity.
 X: Wireframing a recipe page.
-> The team draws a box for the recipe photo at the top, then the title and cooking time.
-> Ingredients appear in a list on the left and method steps on the right on desktop.
-> On mobile, the ingredients stack above the method.
-> Annotations explain that tapping an ingredient adds it to a shopping list.
-K: Wireframes show the structure, layout and hierarchy of a screen without visual styling, differ from static high-fidelity mock-ups and interactive prototypes, and work best when annotated, designed for different screen sizes and kept simple.
-!: Adding colour and branding to wireframes too early. People then comment on style instead of structure.
-EV: established | Wireframes are widely used in interaction design to plan layout and information hierarchy.
-T: Wireframe | A simple layout showing the structure of a screen
-T: Mock-up | A static, visually detailed image of a design
-T: Visual hierarchy | The arrangement that shows the relative importance of elements
-SUM: Structure, not style.
-SUM: Wireframe, mock-up, prototype.
-SUM: Annotate and plan for screens.
-SRC: Garrett J. J., The Elements of User Experience, 2nd edition, New Riders | secondary | 2011
-SRC: Brown D. M., Communicating Design: Developing Web Site Documentation for Design and Planning, 2nd edition, New Riders | secondary | 2010
-Q: What does a wireframe leave out? | Colour, typography and imagery.
-Q: How does a mock-up differ from a wireframe? | A mock-up is a static, visually detailed image showing colours, fonts and images.
-M1#design-u06-04-q1@1: What is the main focus of a wireframe? | Structure and layout | Final colours | Brand fonts | Marketing copy | Applying the standard result: Wireframes show structure.
-M2#design-u06-04-q2@2: What does an annotation on a wireframe usually explain? | How an element behaves | The final colour scheme | The price of the product | The developer's name | Applying the standard result: Notes explain behaviour.
-MATCH2#design-u06-04-q3@3: Match each artefact to its description. | Wireframe = Grey-scale structure ; Mock-up = Static visual design ; Prototype = Interactive simulation ; Sketch = Quick rough idea | Each serves a different purpose.
-M3#design-u06-04-q4@3: Why might a designer use real content rather than placeholder text in a wireframe? | Real content can change the layout needed | Placeholder text is not allowed | Real content always looks better | Clients dislike grey boxes | Applying the standard result: Content length affects layout.
-SA2#design-u06-04-q5@2,3: Explain why designers create wireframes before visual design. | Wireframes let the team agree on structure, layout and hierarchy before investing time in colours, fonts and images. Leaving out styling means feedback focuses on whether content is in the right place and in the right order. They are quick to change, can be annotated to explain behaviour, and can be linked to create a simple clickable prototype for early testing. | Agree structure ; Focused feedback ; Quick changes ; Link to prototypes
+> Top: logo, search, menu.
+> Main area: recipe title, photo placeholder (box with a cross), cooking time and servings.
+> Ingredients list on the left, method steps on the right; "Add to shopping list" button prominent under ingredients.
+> Annotation: ingredients scale with servings; method steps can be ticked off.
+K: Wireframes let teams agree structure and priorities before visual design, so discussions focus on what goes where and why, not on colours.
+!: Treating a wireframe as a finished design to hand over. Wireframes need annotation, testing and visual design before build.
+H: Annotation and testing
+P: Annotated wireframes explain behaviour (what happens when a button is pressed, rules for content). Linked wireframes in a prototyping tool can be tested with users to check navigation and comprehension early.
+EV: established | Wireframes are a standard UX deliverable for defining layout and content priority before visual design (Garrett, 2011).
+EV: contested | Some teams skip wireframes in favour of designing directly in high-fidelity components from a design system; whether this saves time or narrows exploration is debated.
+T: Wireframe | A simplified, usually greyscale layout of a screen showing structure, content and functions
+T: Mock-up | A static, visually detailed representation of a screen without interaction
+SUM: Wireframes show layout, priority and functions without visual styling.
+SUM: Mock-ups add visual design; prototypes add interaction; annotated wireframes can be tested early.
+SRC: Garrett J. J., The Elements of User Experience: User-Centered Design for the Web and Beyond, 2nd edition, New Riders | secondary | 2011
+SRC: Buxton B., Sketching User Experiences: Getting the Design Right and the Right Design, Morgan Kaufmann | secondary | 2007
+Q: What does a wireframe leave out? | Colour, imagery, detailed typography and branding.
+Q: How does a mock-up differ from a wireframe? | A mock-up is visually detailed; a wireframe shows only structure and layout.
+M1#design-u06-04-q1@1: What is the main purpose of a wireframe? | To agree layout and content priority before visual design | To choose the brand's colour palette | To write the final code | To photograph the finished product | Wireframes focus on structure, hierarchy and function.
+M2#design-u06-04-q2@2: In a review of a greyscale wireframe, a manager asks to change the button colour to red. What is the best response? | Note it for visual design and focus the review on layout and priority | Make the change immediately in the wireframe | Remove the button from the wireframe | Stop the review because colours are missing | Wireframes deliberately omit colour so discussions focus on structure.
+M3#design-u06-04-q3@3: A team has clickable greyscale screens that users can tap through to test navigation. What is this best called? | A low-visual-fidelity interactive prototype | A static mock-up | A finished design specification | A mood board | It is interactive (prototype) but visually simple (low visual fidelity).
+MATCH1#design-u06-04-q4@1: Match each item to its description. | Wireframe = structure and layout in greyscale ; Mock-up = static and visually detailed ; Prototype = interactive and testable ; Annotation = notes explaining behaviour | Each deliverable plays a different role in UX design.
+SA2#design-u06-04-q5@2,3: Describe a wireframe for the home screen of a school events app and explain your layout decisions. | Header with school name and menu; prominent "This week" list of events with date, time and place; a filter by year group; a clear "Add to calendar" button; secondary links to clubs and term dates. Decisions: most common task (seeing upcoming events) at the top; filters reduce scrolling; one primary action per event; placeholders for images; annotations for behaviour. | Key elements placed ; Hierarchy reflects user tasks ; Clear primary action ; Explains decisions
 
 ## Physical models and mock-ups
-LV: Introductory · Application
-S: Product designers make physical models to explore form, size, ergonomics and function. This lesson explains sketch models, block models, appearance models and working prototypes, and the materials used.
-O: Describe the main types of physical model
-O: Explain how models test ergonomics and function
-O: Select suitable materials and methods for modelling
-H: Types of physical model
-P: Physical models let designers explore three-dimensional form in a way drawings cannot. **Sketch models** are quick, rough models in card, foam or clay to explore ideas. **Block models** show overall shape, size and proportion. **Appearance models** look like the final product but do not work. **Working prototypes**, or **functional prototypes**, test how the product works and may look rough. A final **pre-production prototype** combines appearance and function before manufacture.
-H: Testing with models
-- **Ergonomics**: models let people hold and use a product to check comfort and fit, often against **anthropometric** data on body sizes.
-- **Proportion and scale**: seeing a model at full size can reveal problems hidden in drawings.
-- **Function**: working models test mechanisms, electronics and strength.
-- **User feedback**: physical objects invite people to try them.
+LV: Introductory · Foundation
+S: Product designers use physical models to explore form, scale, ergonomics and function. This lesson explains the types of physical model used in D&T and industry, the materials and methods for each, and what each type can test.
+O: Describe the types of physical model used in product design
+O: Select suitable modelling materials and methods for a given purpose
+O: Evaluate physical modelling against CAD and digital simulation
+H: Types of model
+- **Sketch models**: quick, rough models in card, foam or tape to explore form and scale.
+- **Ergonomic or test-fit rigs**: models to test how a product fits the body or hand.
+- **Appearance models (mock-ups)**: look like the final product but don't work; used for presentation and user reactions.
+- **Functional or proof-of-concept models**: test whether a mechanism or principle works, often ugly.
+- **Pre-production prototypes**: close to the final product in materials and processes, for final testing.
 H: Materials and methods
-- **Card and paper**: quick and cheap.
-- **Styrofoam and high-density modelling foam**: easy to cut and sand.
-- **Modelling clay**: useful for organic, ergonomic shapes.
-- **3D printing** and **laser cutting**: accurate digital fabrication.
-- **Rapid prototyping** shortens the time from CAD model to physical object.
+P: Common modelling materials include corrugated card and foam board (fast, flat forms), polystyrene and polyurethane modelling foam (carved forms, sanded smooth), modelling clay (organic shapes), MDF and plywood (laser-cut structures), and 3D-printed polymers (complex shapes from CAD). Hallgrimsson (2012) describes how designers move from quick sketch models to refined models as the design develops.
 X: Modelling a handheld torch.
-> The designer makes five foam sketch models with different grips.
-> Users hold each one; most prefer a slightly flattened shape.
-> A 3D-printed version tests the fit of the battery and switch.
-> An appearance model in painted resin is used for client approval.
-K: Physical models range from quick sketch models through block and appearance models to working and pre-production prototypes; they test ergonomics, proportion and function, using materials such as card, foam and clay and methods such as 3D printing and laser cutting.
-!: Assuming appearance models must work. They show how a product looks; working prototypes test how it functions.
-EV: established | Physical models reveal ergonomic and proportion problems that are hard to judge in drawings or on screen.
-T: Sketch model | A quick, rough 3D model used to explore ideas
+> Sketch models: five foam shapes carved in an hour, held by classmates to compare grip.
+> Ergonomic model: the favourite shape refined in clay, tested with large and small hands.
+> Functional model: LED, battery and switch on a breadboard to test brightness and battery life.
+> Appearance model: 3D-printed, sanded and painted to show the final look.
+K: Each model should answer a specific question; a cheap, rough model that answers it is better than an expensive one made too soon.
+!: Relying only on screen models for things people hold. Weight, balance, texture and grip are hard to judge on a screen.
+H: Physical and digital
+P: CAD and simulation allow precise geometry, stress analysis and fast iteration, and 3D printing bridges digital and physical. But many designers find physical models reveal problems of scale, ergonomics and feel that screens hide.
+EV: established | Physical models of different types are used throughout product design to explore and test form, ergonomics and function (Hallgrimsson, 2012).
+EV: contested | How much physical modelling can be replaced by CAD, simulation and virtual reality is debated; practice varies by industry.
+T: Sketch model | A quick, rough physical model used to explore form and scale
 T: Appearance model | A model that looks like the final product but does not work
-T: Anthropometrics | Measurements of the human body used in design
-SUM: Sketch, block, appearance, working.
-SUM: Test ergonomics at full size.
-SUM: Choose fast materials early.
+T: Functional model | A model that tests whether a mechanism or principle works, regardless of appearance
+SUM: Sketch, ergonomic, appearance, functional and pre-production models answer different questions.
+SUM: Choose materials for speed and purpose; physical models reveal feel and scale that screens miss.
 SRC: Hallgrimsson B., Prototyping and Modelmaking for Product Design, Laurence King | secondary | 2012
-SRC: Pheasant S. and Haslegrave C. M., Bodyspace: Anthropometry, Ergonomics and the Design of Work, 3rd edition, CRC Press | secondary | 2006
-Q: What is a block model? | A model showing the overall shape, size and proportion of a product.
-Q: What are anthropometric data? | Measurements of human body sizes used in design.
-M1#design-u06-05-q1@1: Which material is often used for quick sketch models? | Card or foam | Cast steel | Glass | Concrete | Applying the standard result: Fast, cheap materials suit early models.
-M2#design-u06-05-q2@2: What does an appearance model test? | How the product looks | Whether the mechanism works | The product's strength under load | The electronics | Applying the standard result: It looks real but does not work.
-M2#design-u06-05-q3@3: A designer wants an accurate model of a CAD design within a day. Which method suits best? | 3D printing | Hand carving in wood | Casting in bronze | Injection moulding | Applying the standard result: Rapid prototyping is fast and accurate.
-M3#design-u06-05-q4@3: Why test a handheld product with physical models rather than only drawings? | Comfort and fit can only be judged by holding it | Drawings are always inaccurate | Clients refuse drawings | Physical models are cheaper than sketches | Applying the standard result: Ergonomics needs hands-on testing.
-SA2#design-u06-05-q5@2,3: Explain how physical models help develop a new product. | Quick sketch models in card or foam let designers explore form and compare ideas cheaply. Block and full-size models reveal problems of proportion and allow users to test comfort against anthropometric data. Working prototypes test mechanisms and function, and appearance models show the final look for approval. Each type answers different questions before costly manufacture. | Exploring form ; Ergonomics ; Function ; Appearance and approval
+SRC: Kelley T. and Littman J., The Art of Innovation, Currency Doubleday | secondary | 2001
+Q: What is an appearance model? | A model that looks like the final product but doesn't work, used for presentation and reactions.
+Q: Why use foam for sketch models? | It is cheap, quick to carve and sand, so many forms can be explored fast.
+M1#design-u06-05-q1@1: Which model tests whether a mechanism works, regardless of looks? | Functional model | Appearance model | Sketch model | Mood board | Functional (proof-of-concept) models test principles, often looking rough.
+M2#design-u06-05-q2@2: A designer wants to compare the grip of five handle shapes in one afternoon. Which material is most suitable? | Modelling foam | Cast aluminium | Injection-moulded plastic | Hardwood with a lacquer finish | Foam is fast to carve and cheap, ideal for quick comparisons.
+M3#design-u06-05-q3@3: Which is the best evaluation of using CAD instead of physical models for a hand tool? | CAD is precise and fast to change, but physical models are needed to judge grip and balance | CAD can fully replace physical models in every case | Physical models are always better, so CAD should be avoided | Neither tells you anything about ergonomics | Each has strengths; feel and weight are best judged physically.
+SEQ1#design-u06-05-q4@1: Put these models in the usual order of development. | Sketch models ; Ergonomic models ; Functional model ; Appearance model ; Pre-production prototype | Models generally move from rough exploration to refined, near-final versions.
+SA3#design-u06-05-q5@2,3: Plan the physical models you would make for a new reusable coffee cup and explain what each would test. | Sketch models in card and foam to explore size and shape; ergonomic models in clay to test grip and drinking angle with users; functional model to test lid seal and heat retention (leak and temperature tests); appearance model, 3D-printed and finished, to gather user reactions; pre-production prototype in the intended material for durability and dishwasher tests. Each answers a different question, from cheap to costly. | Sketch models ; Ergonomic testing ; Functional tests ; Appearance or pre-production ; Purpose of each
 
 ## Wizard of Oz and experience prototypes
 LV: Intermediate · Application
-S: Some designs are too complex or expensive to build just to test. This lesson explains Wizard of Oz prototyping, experience prototyping, role-play and bodystorming.
-O: Explain the Wizard of Oz technique
-O: Describe experience prototyping and bodystorming
-O: Evaluate the ethics and limits of simulated prototypes
-H: Wizard of Oz prototyping
-P: In a **Wizard of Oz** prototype, a person secretly performs functions that a system would do, so users experience the design before the technology exists. The name comes from the character who operates a machine behind a curtain. In the early 1980s, IBM researchers, including John Gould, tested a "listening typewriter" by having a typist hidden in another room type what participants said, to see whether speech-to-text would be useful before building it. The technique is common for testing chatbots, voice assistants and AI features.
-H: Experience prototyping and bodystorming
-- **Experience prototyping** simulates the experience of using a product or service, focusing on what it feels like.
-- **Role-play** has people act out a service interaction, such as checking into a hotel.
-- **Bodystorming** means brainstorming while physically acting in a real or mocked-up setting.
-- These methods are valuable for **service design**, where the "product" is an interaction over time.
-- Buchenau and Fulton Suri (2000) described experience prototypes at IDEO.
-H: Ethics and limits
-- Participants should usually be **debriefed** afterwards if they were not told a human was involved.
-- Consent and honesty about data use matter, especially with recordings.
-- The "wizard" may behave more cleverly or consistently than real technology could.
-- Results may overestimate how well a future system will perform.
-X: Testing a chatbot.
-> A bank wants to test a chatbot for lost cards.
-> A staff member types the bot's replies live, following a script.
-> Users report the experience is helpful but want an option to speak to a person.
-> The team adds this before investing in AI development, and debriefs participants.
-K: Wizard of Oz prototypes use hidden people to simulate system functions so designs can be tested before the technology exists, while experience prototyping, role-play and bodystorming simulate services and interactions; these require debriefing and care, and may overestimate future system performance.
-!: Forgetting that the wizard may outperform the real system. A human can handle situations that the technology may not.
-EV: established | Wizard of Oz testing is a long-established method in human–computer interaction research.
-T: Wizard of Oz | A prototype where a hidden person simulates system functions
-T: Experience prototype | A simulation of what it feels like to use a product or service
-T: Bodystorming | Generating ideas by physically acting them out in context
-SUM: A hidden human plays the system.
-SUM: Act out services.
-SUM: Debrief and beware overestimation.
-SRC: Gould J. D., Conti J. and Hovanyecz T., "Composing letters with a simulated listening typewriter", Communications of the ACM 26(4), 295–308 | primary | 1983
-SRC: Buchenau M. and Fulton Suri J., "Experience prototyping", Proceedings of DIS 2000, ACM, 424–433 | primary | 2000
-Q: What is a Wizard of Oz prototype? | A prototype where a hidden person performs the system's functions.
-Q: What is bodystorming? | Brainstorming by physically acting out ideas in a real or mocked-up setting.
-M1#design-u06-06-q1@1: In a Wizard of Oz test, who produces the system's responses? | A hidden person | The finished software | The participant | An unrelated computer program | Applying the standard result: A human simulates the system.
-M2#design-u06-06-q2@2: Which design is best suited to role-play testing? | A hotel check-in service | A new font | A printed poster | A metal bracket | Applying the standard result: Services are interactions.
-TF2#design-u06-06-q3@3: Participants in a Wizard of Oz study should normally be debriefed afterwards. | true | Debriefing explains that a human was simulating the system, supporting ethical practice.
-M3#design-u06-06-q4@3: Why might a Wizard of Oz test overestimate a future chatbot's success? | The human wizard can handle questions the real system may not | Users always dislike chatbots | The test is too short | Chatbots are always better than humans | Applying the standard result: Human wizards are more flexible.
-SA2#design-u06-06-q5@2,3: Evaluate the Wizard of Oz technique for testing an AI voice assistant. | The technique lets designers learn how people speak to and use a voice assistant before costly AI development, revealing needs and problems early. It is quick to set up with a script and a hidden operator. However, the human wizard may respond more intelligently than the eventual system, so results can be too positive, and ethical care is needed, including consent and debriefing. | Early learning ; Low cost ; Overestimation ; Ethics
+S: Some ideas are too complex or expensive to build just to test. Wizard of Oz prototypes fake the technology with a hidden human, and experience prototypes let people feel what a product or service would be like. This lesson explains both methods, examples and ethical considerations.
+O: Describe Wizard of Oz and experience prototyping
+O: Design a Wizard of Oz test for a technology concept
+O: Evaluate the ethical issues of simulated prototypes
+H: Wizard of Oz
+P: In a **Wizard of Oz** prototype, users interact with what appears to be a working system, but a hidden person (the "wizard") produces the responses. Kelley (1984) used the method to develop a natural language interface: users typed requests, and an experimenter typed replies, so the designers learned how people would phrase requests before building the software.
+X: Testing a voice assistant for a hotel room.
+> A speaker sits in a mock hotel room; a researcher in the next room listens and replies using a text-to-speech tool.
+> Guests ask for towels, check-out times and restaurant tips.
+> Findings: guests phrase requests in ways the team hadn't predicted and expect the assistant to remember earlier questions.
+> These findings shape the real system before any speech software is built.
+H: Experience prototyping
+P: Buchenau and Fulton Suri (2000) described **experience prototyping** as any representation that helps people understand or explore what it would be like to engage with a product, space or system. Methods include role-play, bodystorming (acting out scenarios in a real or mock-up setting), simulated environments and wearable simulations. A team designing for older people might wear glasses that blur vision and gloves that limit dexterity to experience a product as some users would.
+- **Role-play and bodystorming**: act out a service encounter with props.
+- **Simulated environment**: a mock hospital room or train carriage.
+- **Empathy tools**: suits or glasses that simulate impairments (to be used carefully; see below).
+K: Wizard of Oz and experience prototypes test what an experience is like before investing in technology or buildings.
+!: Leaving participants deceived. If users believe a system is automated, debrief them afterwards and get consent for using their data; avoid simulating something users could rely on for safety.
+H: Limits
+P: Wizards can be inconsistent and faster or more forgiving than real technology. Impairment simulations can give misleading impressions of disability and should not replace involving disabled people themselves.
+EV: established | Wizard of Oz methods have been used since the 1980s to test interfaces before building them (Kelley, 1984).
+EV: contested | Disability simulation exercises are criticised for producing misleading impressions and sometimes increasing negative attitudes; involving disabled people directly is preferred.
+T: Wizard of Oz prototype | A prototype in which a hidden person simulates the responses of a system that has not been built
+T: Experience prototype | A representation that lets people explore what an experience with a product or service would be like
+T: Bodystorming | Acting out scenarios physically, often in a real or mock-up setting, to explore ideas
+SUM: Wizard of Oz prototypes fake technology with a hidden human to learn before building.
+SUM: Experience prototypes let people feel an experience through role-play and simulation; both need ethical care.
+SRC: Kelley J. F., "An iterative design methodology for user-friendly natural language office information applications", ACM Transactions on Information Systems 2(1):26–41 | primary | 1984 | https://doi.org/10.1145/357417.357420
+SRC: Buchenau M. and Fulton Suri J., "Experience prototyping", Proceedings of DIS 2000, ACM, 424–433 | primary | 2000 | https://doi.org/10.1145/347642.347802
+Q: What is a Wizard of Oz prototype? | A prototype where a hidden person simulates the responses of a system that hasn't been built yet.
+Q: What is bodystorming? | Acting out scenarios physically, often in a real or mock-up setting, to explore ideas.
+M1#design-u06-06-q1@1: In a Wizard of Oz test, who produces the system's responses? | A hidden person | A finished computer program | The user themselves | A random number generator | The "wizard" is a hidden human simulating the system.
+M2#design-u06-06-q2@2: A team wants to know how shoppers would talk to a smart shopping trolley before building speech recognition. Which method fits? | A Wizard of Oz test with a hidden researcher replying | A heuristic evaluation by experts | A survey of trolley manufacturers | An A/B test of trolley colours | Simulating the voice system reveals how people would speak to it before building it.
+M3#design-u06-06-q3@3: Which is the strongest ethical concern with Wizard of Oz testing? | Participants may be deceived about automation and should be debriefed and consent to data use | Wizards are always faster than real systems | The method requires too many participants | It can only be used with software | Deception requires debriefing and consent; the other issues are practical, not ethical, or false.
+TF2#design-u06-06-q4@2: Wearing a simulation suit is a good substitute for involving disabled people in research. | false | Simulations can mislead; involving disabled people directly gives more accurate understanding.
+SA3#design-u06-06-q5@2,3: Design a Wizard of Oz or experience prototype to test a new hospital discharge service, and evaluate the method. | Experience prototype: mock discharge room, staff and patients role-play the new process with printed information and a "discharge coordinator"; or Wizard of Oz: patients text questions to a "discharge bot" answered by a nurse behind the scenes. Learn what questions arise and where confusion occurs. Evaluate: tests experience cheaply before building; but wizards may be more helpful than real systems, role-play differs from real stress, and deception and consent need handling. | Method described ; What it would reveal ; Strength ; Limitation ; Ethics
 
 ## Digital prototyping tools
-LV: Introductory · Application
-S: Digital tools let designers create interactive prototypes without writing code. This lesson explains the features of common prototyping tools, collaboration, design systems and when to prototype in code.
-O: Describe the main features of digital prototyping tools
-O: Explain how design systems and components speed up prototyping
-O: Evaluate when to prototype in code rather than design tools
-H: What digital tools do
-P: **Digital prototyping tools**, such as Figma, Adobe XD, Sketch and Axure, let designers draw screens and link them with **interactions**, such as taps, swipes and transitions, to create clickable prototypes. Many run in the browser and allow **real-time collaboration**, so several people can edit and comment at once. Prototypes can be shared by link and tested on real phones or computers. Tools for 3D and physical products include CAD software such as Fusion and SolidWorks.
-H: Components and design systems
-- **Components** are reusable elements, such as buttons and menus, that update everywhere when edited.
-- A **design system** collects components, styles and guidelines for a product or organisation, such as the GOV.UK Design System.
-- Using them keeps prototypes **consistent** and speeds up work.
-- **Auto layout** features help designs adapt to different screen sizes.
-H: Prototyping in code
-- **Code prototypes**, using HTML, CSS and JavaScript or frameworks, can test real data, performance and complex interactions.
-- The GOV.UK Prototype Kit lets teams build realistic prototypes in code.
-- Code takes more skill and time, but can be closer to the final product.
-- No-code and AI-assisted tools are blurring the line between design and code.
-X: Prototyping a council service.
-> A team builds a prototype for reporting potholes using the GOV.UK Prototype Kit.
-> Components from the GOV.UK Design System make it look and behave like a real service.
-> Users enter real addresses and upload photos.
-> The team learns that many users report from their phones at the roadside.
-K: Digital tools such as Figma let designers create clickable, shareable prototypes and collaborate in real time; components and design systems keep work consistent and fast, while code prototypes test real data and complex behaviour at the cost of more time and skill.
-!: Believing a polished digital prototype proves a design works. It still needs testing with real users.
-EV: established | Design systems improve consistency and efficiency in digital product teams.
-T: Clickable prototype | A digital prototype in which screens are linked by interactions
-T: Component | A reusable interface element in a design tool
-T: Design system | A collection of reusable components, styles and guidance
-SUM: Link screens with interactions.
-SUM: Reuse components.
-SUM: Code for realistic data.
-SRC: Government Digital Service, GOV.UK Design System | guidance | 2024 | https://design-system.service.gov.uk/
-SRC: Government Digital Service, GOV.UK Prototype Kit | guidance | 2024 | https://prototype-kit.service.gov.uk/
-Q: What is a component in a design tool? | A reusable interface element that updates everywhere when edited.
-Q: Why might a team prototype in code? | To test real data, performance or complex interactions.
-M1#design-u06-07-q1@1: What does a clickable prototype let users do? | Tap or click through linked screens | Print the final product | Write the code automatically | Change the brand colours | Applying the standard result: Screens are linked by interactions.
-M2#design-u06-07-q2@2: What is the main benefit of a design system? | Consistency and speed across a product | It removes the need for testing | It makes every design unique | It replaces developers | Applying the standard result: Shared components keep work consistent.
-M2#design-u06-07-q3@3: Which feature allows several designers to edit a prototype at once? | Real-time collaboration | Auto layout | Version numbering | Offline storage | Applying the standard result: Browser tools allow shared editing.
-M3#design-u06-07-q4@3: A team needs to test how users handle a search returning thousands of real records. Which approach suits best? | A prototype built in code | A paper prototype | A static mock-up | A foam model | Applying the standard result: Real data needs code.
-SA2#design-u06-07-q5@2,3: Compare prototyping in a design tool with prototyping in code. | Design tools such as Figma are quick, visual and collaborative, letting designers link screens into clickable prototypes and reuse components without coding skills. Code prototypes take more time and expertise, but can use real data, test performance and handle complex interactions, so they are closer to the final product. Teams often start in design tools and move to code when realistic behaviour matters. | Speed and accessibility ; Collaboration ; Realism of code ; When to switch
+LV: Introductory · Foundation
+S: Designers use digital tools to create interactive prototypes, from linked screens to coded components. This lesson explains the main kinds of digital prototyping tool, what each is good for and how to choose without becoming tied to one tool.
+O: Describe the main categories of digital prototyping tools
+O: Choose a suitable tool approach for a prototyping question
+O: Evaluate the trade-offs between design tools and coded prototypes
+H: Kinds of tool
+- **Interface design tools** (for example Figma, Sketch, Adobe XD): draw screens and link them with hotspots and transitions to make clickable prototypes; support collaboration and shared component libraries.
+- **Advanced interaction tools** (for example ProtoPie, Framer): add logic, variables, sensors and realistic animation.
+- **Coded prototypes**: HTML, CSS and JavaScript or app frameworks; test real data, performance and accessibility.
+- **CAD for physical products** (for example Fusion, SolidWorks, Onshape): 3D models, assemblies, simulations and files for 3D printing or CNC.
+- **Physical computing** (for example Arduino, micro:bit): quick electronics prototypes with sensors and outputs.
+P: Tools change quickly; the underlying skills (structuring screens, linking flows, modelling interactions, thinking in components) transfer between them.
+X: Choosing tools for a fitness app prototype.
+> Test navigation with new users: a clickable prototype in an interface design tool.
+> Test a heart-rate animation's timing: an advanced interaction tool using sample data.
+> Test whether a screen reader can read the workout list: a small coded prototype.
+H: Trade-offs
+P: Design tools are fast and visual but can create prototypes that look finished while hiding technical problems, and some interactions are hard to simulate. Coded prototypes are realistic and test accessibility properly, but take longer and can tempt teams to treat them as production code. The guiding question remains: what do we need to learn, and what is the cheapest tool that will teach us?
+K: Choose the tool for the question, not the question for the tool. Skills in structuring and testing outlast any particular software.
+!: Testing accessibility only in a design tool. Screen reader and keyboard behaviour depend on real code, so accessibility needs coded or live testing.
+EV: established | Interactive digital prototypes are a standard part of UX and product design practice for testing flows before build.
+EV: contested | Whether designers should learn to code to prototype is debated; many argue it improves collaboration and realism, others that it distracts from design.
+T: Clickable prototype | Linked digital screens with hotspots that simulate navigation
+T: Coded prototype | A prototype built with real code, used to test realistic behaviour, data and accessibility
+SUM: Digital tools range from clickable screen prototypes to advanced interactions, code, CAD and physical computing.
+SUM: Pick the cheapest tool that answers the question; test accessibility in real code.
+SRC: Buxton B., Sketching User Experiences: Getting the Design Right and the Right Design, Morgan Kaufmann | secondary | 2007
+SRC: Garrett J. J., The Elements of User Experience: User-Centered Design for the Web and Beyond, 2nd edition, New Riders | secondary | 2011
+Q: What is a clickable prototype? | Linked digital screens with hotspots that simulate navigation through an interface.
+Q: Why test accessibility in a coded prototype? | Screen reader and keyboard behaviour depend on real code, which design tools don't fully simulate.
+M1#design-u06-07-q1@1: Which tool type is used to make 3D models for 3D printing a product? | CAD software | A survey tool | A presentation tool | A spreadsheet | CAD creates 3D geometry that can be exported for printing or machining.
+M2#design-u06-07-q2@2: A team needs to test whether users understand a new navigation menu tomorrow. What should they use? | A quick clickable prototype in an interface design tool | A fully coded production app | A CNC-machined model | A month-long diary study | Navigation comprehension can be tested fast with a clickable prototype.
+M3#design-u06-07-q3@3: A prototype made in a design tool tests well, but the developers say one animation is impossible on the target devices. What does this illustrate? | Design-tool prototypes can hide technical constraints that code would reveal | The developers are wrong because the prototype worked | Animations should never be prototyped | Testing with users was unnecessary | Design tools simulate freely; feasibility needs checking with developers or coded prototypes.
+MS2#design-u06-07-q4@2: When is a coded prototype most worthwhile? Choose all that apply. | Testing with real data ; Testing screen reader access ; Testing performance on real devices | Exploring early layout ideas ; Comparing ten rough concepts in a day | Code is valuable for realism and accessibility; early exploration is faster with paper or design tools.
+SA3#design-u06-07-q5@1,3: Evaluate design tools and coded prototypes for testing a council website's form for reporting potholes. | Design tool: quick, collaborative, good for testing flow and wording early; but can't test real validation, location services or screen reader behaviour. Coded prototype: tests real form behaviour, errors, maps and accessibility (keyboard, screen reader) on real devices; slower. Recommend design tool early for flow, coded prototype later for accessibility and validation. | Describes design tool strengths ; Its limits ; Coded strengths ; Accessibility point ; Justified recommendation
 
 ## Usability testing
-LV: Intermediate · Application
-S: Usability testing observes real people trying to complete tasks with a design. This lesson explains how to plan and run a usability test, write good tasks and avoid bias.
-O: Explain the purpose of usability testing
+LV: Introductory · Foundation
+S: Usability testing watches real people try to complete realistic tasks with a design, to find where it causes difficulty. This lesson defines usability, explains how to plan and run a test, and how to write good tasks.
+O: Define usability using effectiveness, efficiency and satisfaction
 O: Plan a usability test with realistic tasks
-O: Identify sources of bias in testing
-H: What usability testing is
-P: **Usability testing** involves watching representative users attempt realistic tasks with a product or prototype, to find where they succeed, struggle or fail. ISO 9241-11 defines **usability** as the extent to which a product can be used by specified users to achieve specified goals with **effectiveness**, **efficiency** and **satisfaction** in a specified context of use. Testing reveals problems that designers, who know the product too well, often miss.
-H: Planning a test
-- Define **goals**: what do you need to learn?
-- Recruit **representative participants**, including people with access needs where relevant.
-- Write **realistic tasks** based on user goals, such as "Book a table for four on Friday evening".
-- Avoid wording that gives away the answer, such as using the same label as a button.
-- Choose **moderated** (with a facilitator) or **unmoderated** (participants work alone, often remotely) testing.
-- Gain **informed consent** and explain that the product, not the participant, is being tested.
-H: Avoiding bias
-- **Leading questions**, such as "Was that easy?", push answers; ask "How did you find that?" instead.
-- Facilitators should not help or react to mistakes.
-- **Observation** of what people do is more reliable than what they say they would do.
-- Testing only colleagues or friends gives unrepresentative results.
-X: Writing a task.
-> Weak task: "Click on 'Find a GP' and enter your postcode."
-> This gives away the label and the steps.
-> Better task: "You've just moved to Bristol. Find a doctor's surgery near your new home."
-> The better task is realistic and does not reveal the interface wording.
-K: Usability testing observes representative users attempting realistic tasks to measure effectiveness, efficiency and satisfaction; good tests have clear goals, realistic tasks that do not reveal interface wording, informed consent and facilitation that avoids leading questions and help.
-!: Asking users whether they like the design instead of watching them use it. Behaviour reveals more than opinions.
-EV: established | Observing users reveals usability problems that designers and experts frequently miss.
-T: Usability | Effectiveness, efficiency and satisfaction of use in a context
-T: Moderated test | A test run with a facilitator present
-T: Leading question | A question that suggests a particular answer
-SUM: Watch real users do real tasks.
-SUM: Do not reveal the answer.
-SUM: Avoid leading and helping.
-SRC: International Organization for Standardization, ISO 9241-11:2018 Ergonomics of human-system interaction — Usability: definitions and concepts | standard | 2018
-SRC: Krug S., Rocket Surgery Made Easy, New Riders | secondary | 2010
+O: Evaluate usability testing compared with other evaluation methods
+H: What usability is
+P: ISO 9241-11 defines **usability** as the extent to which a product can be used by specified users to achieve specified goals with **effectiveness** (accuracy and completeness), **efficiency** (resources such as time and effort) and **satisfaction** in a specified context of use. Usability depends on who the users are, what they are trying to do and where.
+H: Running a test
+- **Recruit** representative participants, including people with access needs.
+- **Write realistic tasks** framed as scenarios, without giving away the answer.
+- **Facilitate** neutrally: ask participants to think aloud; don't help unless they are stuck for a long time.
+- **Observe and record** successes, errors, time, hesitations and comments.
+- **Debrief** with a short questionnaire or interview.
+P: Tests can be **moderated** (a facilitator present in person or remotely) or **unmoderated** (participants complete tasks alone using an online tool). Moderated tests allow follow-up questions; unmoderated tests are cheaper and scale to more people.
+X: Writing tasks for a train ticket website.
+> Poor task: "Click on 'Railcards' and add a 16–25 Railcard." (gives away the steps and the label)
+> Better task: "You're 19 and travelling from Leeds to York next Saturday. Buy the cheapest return ticket you can."
+> The better task reveals whether users realise a railcard saves money and whether they can find where to add it.
+K: Good tasks describe a goal in the user's language, not the steps or labels in the interface.
+!: Helping participants when they struggle. It feels kind but hides the problem; note where they get stuck and offer help only if needed to continue.
+H: Usability testing and other methods
+P: Testing with real users finds problems that experts and designers miss, because it shows real behaviour. It works with any prototype fidelity. It is less suitable for measuring how common problems are across a population (which needs larger samples or analytics) or for finding unmet needs (which needs earlier research).
+EV: established | ISO 9241-11 defines usability in terms of effectiveness, efficiency and satisfaction in a specified context of use.
+EV: contested | How closely behaviour in a usability test reflects real-world use is debated, as participants know they are being observed and tasks are artificial.
+T: Usability | The extent to which specified users can achieve specified goals with effectiveness, efficiency and satisfaction in a context of use
+T: Moderated test | A usability test run with a facilitator present, in person or remotely
+SUM: Usability means effectiveness, efficiency and satisfaction for specified users, goals and contexts.
+SUM: Tests watch representative users attempt realistic tasks, with neutral facilitation and careful observation.
+SRC: International Organization for Standardization, ISO 9241-11:2018 Ergonomics of human-system interaction, Part 11: Usability: definitions and concepts | standard | 2018
 SRC: Rubin J. and Chisnell D., Handbook of Usability Testing, 2nd edition, Wiley | secondary | 2008
-Q: What three qualities does ISO 9241-11 use to define usability? | Effectiveness, efficiency and satisfaction.
-Q: What is unmoderated testing? | Testing where participants complete tasks alone, often remotely, without a facilitator.
-M1#design-u06-08-q1@1: What does usability testing involve? | Watching users attempt realistic tasks | Asking designers for their opinions | Checking code for errors | Surveying the general public only | Applying the standard result: It observes real use.
-M2#design-u06-08-q2@2: Which is a less leading question? | How did you find that task? | Wasn't that easy? | You liked that, didn't you? | Was that the best design ever? | Applying the standard result: Neutral wording avoids bias.
-M2#design-u06-08-q3@3: Why should a test task avoid using the exact label of a button? | It gives away the answer | Labels are always wrong | It makes the task too long | Users cannot read labels | Applying the standard result: Matching words cue the user.
-M3#design-u06-08-q4@3: A team tests only with colleagues who know the product. What is the main problem? | Results will not represent real users | Colleagues are always too critical | The test will take too long | No problems can ever be found | Applying the standard result: Participants must be representative.
-SA2#design-u06-08-q5@2,3: Explain how to plan a usability test that gives reliable results. | Start with clear goals about what you need to learn. Recruit participants who represent real users, including those with access needs. Write realistic tasks based on user goals that do not reveal interface wording. Gain consent and reassure participants that the product is being tested. During the session, avoid leading questions or helping, and focus on observing what people actually do. | Goals ; Representative users ; Realistic tasks ; Neutral facilitation
+Q: What three measures define usability in ISO 9241-11? | Effectiveness, efficiency and satisfaction.
+Q: What is a moderated usability test? | A test with a facilitator present, in person or remotely, who can observe and ask follow-up questions.
+M1#design-u06-08-q1@1: In ISO 9241-11, what does efficiency refer to? | The resources, such as time and effort, used to achieve goals | Whether users like the product | Whether users complete the task accurately | The cost of manufacturing the product | Efficiency concerns resources used; effectiveness is accuracy and completeness; satisfaction is attitude.
+M2#design-u06-08-q2@2: Which is the best usability test task for a library website? | You want to borrow a book about bees for a school project. Find one you could collect today | Click "Catalogue", then "Search", then type "bees" | Tell us what you think of the home page colours | Find the button labelled "Reserve" | It sets a realistic goal without revealing steps or labels.
+M3#design-u06-08-q3@3: A participant struggles for three minutes and the facilitator shows them the answer. What is the main problem? | The test no longer reveals how users would cope without help | The facilitator saved time, so nothing went wrong | Usability tests should always give answers immediately | The participant should be removed from the results | Helping hides the problem; facilitators should note the difficulty and help only if needed to continue.
+TF1#design-u06-08-q4@1: Usability depends on the users, their goals and the context of use. | true | ISO 9241-11 defines usability for specified users, goals and contexts.
+SA3#design-u06-08-q5@2,3: Plan a usability test for a new online form to apply for a school bus pass and evaluate usability testing as a method. | Recruit six to eight parents and pupils, including someone with low digital confidence and a screen reader user. Task: "Your child starts at the school in September and lives 4 miles away. Apply for a bus pass." Moderated, think-aloud, record completion, errors, time, comments; debrief questionnaire. Evaluation: reveals real behaviour and problems experts miss; artificial setting and small sample, so combine with analytics after launch. | Participants including access needs ; Realistic task ; Facilitation and measures ; Strength ; Limitation
 
 ## Thinking aloud
 LV: Intermediate · Application
-S: The think-aloud protocol asks participants to say what they are thinking as they use a design. This lesson explains how it works, how to prompt participants and its strengths and limitations.
-O: Describe the think-aloud protocol
-O: Apply neutral prompts during a session
-O: Evaluate the strengths and limitations of thinking aloud
-H: The think-aloud method
-P: In the **think-aloud protocol**, participants continuously say what they are looking at, thinking, doing and feeling as they work through tasks. It reveals **why** people behave as they do, such as what they expect a button to do or why a label confuses them. The method comes from cognitive psychology, notably Ericsson and Simon's work on verbal reports (1980, 1993), and Jakob Nielsen has called it possibly the single most valuable usability method.
-H: Running a session
-- Explain the method and give a short **practice task**, such as finding an item on an unrelated website.
-- Reassure participants that there are no wrong answers.
-- When participants fall silent, use **neutral prompts** such as "What are you thinking now?" or "Keep talking".
-- Avoid explaining the design or asking leading questions.
-- **Retrospective** think-aloud asks participants to comment while watching a recording afterwards.
-H: Strengths and limitations
-- **Strengths**: cheap, flexible and rich in insight into users' mental models.
-- Works with paper or digital prototypes.
-- **Limitations**: talking can feel unnatural and may slow people down or change their behaviour.
-- Participants may explain or rationalise rather than report thoughts.
-- Not suitable when measuring task times precisely.
-X: An insight from thinking aloud.
-> A participant using a grocery app says: "I'm looking for the basket... I thought this bag icon was for saved items."
-> Observation alone showed only that she hesitated for 12 seconds.
-> Her words show the icon's meaning was unclear.
-> The team adds the word "Basket" beneath the icon.
-K: The think-aloud protocol has participants voice their thoughts as they work, revealing why they behave as they do; it needs practice, reassurance and neutral prompts, is cheap and insightful, but can change behaviour and is unsuited to precise timing.
-!: Prompting with leading questions such as "Is that confusing?". Neutral prompts like "What are you thinking?" avoid bias.
-EV: established | Thinking aloud is one of the most widely used methods in usability evaluation.
-EV: contested | How much thinking aloud changes participants' behaviour and performance is debated.
-T: Think-aloud protocol | A method where participants verbalise their thoughts during tasks
-T: Mental model | A user's understanding of how a system works
-T: Retrospective think-aloud | Commenting while watching a recording of one's session
-SUM: Users say what they think.
-SUM: Use neutral prompts.
-SUM: Rich insight, unnatural task.
-SRC: Ericsson K. A. and Simon H. A., Protocol Analysis: Verbal Reports as Data, revised edition, MIT Press | primary | 1993
+S: In a think-aloud test, participants say what they are thinking as they use a design. Nielsen called it the single most valuable usability method. This lesson explains how thinking aloud works, its theoretical basis, how to facilitate it and its limits.
+O: Describe the think-aloud method and its purpose
+O: Facilitate a think-aloud session with neutral prompts
+O: Evaluate the validity of think-aloud data
+H: The method
+P: In the **think-aloud protocol**, participants verbalise their thoughts continuously while doing tasks: what they are looking for, what they expect and what confuses them. Nielsen (2012) argued it is the most valuable single usability method because it is cheap, flexible and reveals *why* users have problems, not just where. Its theory comes from Ericsson and Simon's (1984) **protocol analysis**, which argued that people can report the contents of working memory without changing their thinking much, as long as they simply say what they're attending to rather than explaining or justifying it.
+H: Facilitating
+- Explain and demonstrate thinking aloud with a neutral example first.
+- Use minimal, neutral prompts when participants fall silent: "What are you thinking?" or "Keep talking."
+- Avoid leading prompts: not "Is that button confusing?"
+- Don't ask participants to explain their reasons during tasks; save "why" questions for after.
+- Note what they say and what they do, and where the two differ.
+X: A think-aloud excerpt on a council website.
+> "I want to report a broken streetlight... I'd expect it under 'Roads'... no, that's about roadworks... maybe 'Report it'... there's a lot of text here..."
+> Insight: users look for "Report" but the link is buried under "Environment"; long text slows scanning.
+> Fix: a prominent "Report a problem" link on the home page, with streetlights listed.
+K: Thinking aloud reveals users' expectations and mental models in their own words, which explains the problems that observation alone shows.
+!: Asking participants to explain and evaluate while working ("why did you do that?"). This changes their thinking and slows them down; Ericsson and Simon's theory supports reporting, not explaining.
+H: Limits
+P: Thinking aloud is unnatural for some people and can slow them down, so it can distort time measures. Boren and Ramey (2000) found practitioners often intervene more than Ericsson and Simon's theory recommends. Participants may also filter what they say. Retrospective think-aloud (watching a recording and commenting afterwards) avoids interference but relies on memory.
+EV: established | Think-aloud protocols are a widely used usability method that reveals users' reasoning (Nielsen, 2012; Ericsson and Simon, 1984).
+EV: contested | How far thinking aloud alters task performance, especially time and complex reasoning, is debated (Boren and Ramey, 2000).
+T: Think-aloud protocol | A method in which participants verbalise their thoughts continuously while performing tasks
+T: Retrospective think-aloud | Participants comment on a recording of their session afterwards
+SUM: Think-aloud reveals why users struggle by capturing their expectations in their own words.
+SUM: Use neutral prompts, avoid asking for explanations mid-task, and treat time data with caution.
+SRC: Ericsson K. A. and Simon H. A., Protocol Analysis: Verbal Reports as Data, MIT Press | primary | 1984
 SRC: Nielsen J., "Thinking aloud: the #1 usability tool", Nielsen Norman Group | secondary | 2012 | https://www.nngroup.com/articles/thinking-aloud-the-1-usability-tool/
-Q: What does the think-aloud protocol ask participants to do? | Say what they are thinking, seeing and doing as they work through tasks.
-Q: Why give a practice task first? | So participants get used to talking aloud before the real tasks.
-M1#design-u06-09-q1@1: What does thinking aloud mainly reveal? | Why users behave as they do | Exact task completion times | The cost of the product | How fast the code runs | Applying the standard result: Words explain behaviour.
-M2#design-u06-09-q2@2: A participant goes quiet. What is a suitable prompt? | What are you thinking now? | Why can't you find it? | Isn't the button obvious? | Click on the menu | Applying the standard result: Neutral prompts avoid bias.
-TF2#design-u06-09-q3@3: Thinking aloud is ideal for measuring precise task times. | false | Talking can slow people down, so it is not suited to precise timing.
-M3#design-u06-09-q4@3: What is a limitation of the think-aloud method? | Talking may change how participants behave | It requires expensive equipment | It only works with finished products | It never reveals mental models | Applying the standard result: Verbalising is unnatural.
-SA2#design-u06-09-q5@2,3: Evaluate the think-aloud protocol as a usability method. | Thinking aloud is cheap and flexible, works with any fidelity of prototype and reveals why users struggle, showing their expectations and mental models. However, talking while working is unnatural, may slow participants or change their behaviour, and people may rationalise rather than report thoughts, so it is less suitable for measuring performance. Neutral prompts and practice tasks reduce these problems. | Rich insight ; Low cost ; Changes behaviour ; Mitigation
+SRC: Boren T. and Ramey J., "Thinking aloud: reconciling theory and practice", IEEE Transactions on Professional Communication 43(3):261–278 | primary | 2000 | https://doi.org/10.1109/47.867942
+Q: What is the theoretical basis of the think-aloud method? | Ericsson and Simon's protocol analysis: people can report what they attend to in working memory with little disruption.
+Q: Give a neutral think-aloud prompt. | "What are you thinking?" or "Keep talking."
+M1#design-u06-09-q1@1: What do participants do in a think-aloud test? | Say what they are thinking while doing tasks | Fill in a survey about the product afterwards | Watch the designer use the product | Draw their ideal version of the product | Continuous verbalisation during tasks is the core of the method.
+M2#design-u06-09-q2@2: A participant goes quiet while searching a menu. What should the facilitator say? | What are you thinking? | Is the menu confusing you? | The option you need is under Settings | Why did you choose that menu? | A neutral prompt keeps them talking without leading or explaining.
+M3#design-u06-09-q3@3: Why should task times from think-aloud sessions be treated with caution? | Verbalising can slow participants, so times may not reflect normal use | Participants always lie about how long tasks take | Think-aloud sessions are never timed accurately | Times are always faster than normal use | Thinking aloud adds effort; separate unmoderated tests give better time measures.
+MS2#design-u06-09-q4@2: Which are good think-aloud practices? Choose all that apply. | Demonstrating the method first ; Using minimal neutral prompts ; Saving "why" questions until after tasks | Suggesting where to click ; Asking participants to rate each screen while working | Demonstration, neutral prompts and post-task questions follow good practice; leading and mid-task evaluation distort thinking.
+SA3#design-u06-09-q5@1,3: Evaluate the think-aloud method for testing a new online banking app. | Strengths: cheap, works with any fidelity, reveals expectations, mental models and reasons for problems in users' own words (Nielsen; Ericsson and Simon). Limits: unnatural, can slow users and distort times, facilitators may intervene, participants may filter sensitive comments (money), and some cognitively demanding tasks may be affected. Use alongside observation and later quantitative testing. | Describes the method ; Strengths with evidence ; Effect on performance ; Facilitation or filtering issue ; Judgement
 
 ## How many users to test
-LV: Intermediate · Evaluation
-S: How many participants does a usability test need? This lesson explains Nielsen and Landauer's model, the famous "five users" guideline, its limits and how sample size depends on the type of study.
-O: Explain the reasoning behind testing with about five users
-O: Distinguish sample sizes for qualitative and quantitative studies
-O: Evaluate the limitations of the five-user guideline
-H: The five-user guideline
-P: Nielsen and Landauer (1993) modelled how many usability problems are found as more users are tested. If each user finds about **31%** of problems, the first user reveals almost a third, but each new user increasingly repeats problems already seen. With **five users**, about **85%** of problems are found in their model. Nielsen argued it is better to run several small tests with about five users each, fixing problems between rounds, than one large test.
-H: Qualitative and quantitative studies
-- **Qualitative** tests aim to find and understand problems; small samples of around five per user group are often enough.
-- **Quantitative** tests measure things like success rates or task times; they need larger samples, often 20 or more, for useful confidence intervals.
-- **A/B tests** and surveys may need hundreds or thousands of users.
-- Each distinct **user group**, such as buyers and sellers, needs its own participants.
-H: Limits of "five users"
-- The 31% figure is an average; real detection rates vary with the product and tasks.
-- Complex products with many tasks may need more participants.
-- Rare but serious problems, such as accessibility barriers for particular users, may be missed.
-- Faulkner (2003) found that sets of five users varied widely in the share of problems found.
-X: Applying the model.
-> If each user finds 31% of problems, the share found by n users is 1 − (1 − 0.31)ⁿ.
-> One user: 1 − 0.69 = 31%.
-> Five users: 1 − 0.69⁵ ≈ 1 − 0.156 ≈ 84%.
-> A sixth user adds only about 5 percentage points more.
-K: Nielsen and Landauer's model suggests about five users find most problems when each finds about 31%, supporting small iterative qualitative tests, but quantitative studies need larger samples, separate user groups need their own participants, and real detection rates vary widely.
-!: Applying "five users" to quantitative measures. Success rates and task times need much larger samples.
-EV: established | Diminishing returns occur as more participants are added to a qualitative usability test.
-EV: contested | Whether five users are enough for most usability studies is debated, given wide variation between samples.
-T: Qualitative test | A study aimed at finding and understanding problems
-T: Quantitative test | A study that measures performance with numbers
-T: Diminishing returns | Each additional unit adds less benefit than the last
-SUM: Five users find most problems in the model.
-SUM: Test small and often.
-SUM: Numbers need bigger samples.
-SRC: Nielsen J. and Landauer T. K., "A mathematical model of the finding of usability problems", Proceedings of INTERCHI '93, ACM, 206–213 | primary | 1993
-SRC: Faulkner L., "Beyond the five-user assumption: benefits of increased sample sizes in usability testing", Behavior Research Methods, Instruments and Computers 35(3), 379–383 | primary | 2003
-Q: What share of problems does each user find in Nielsen and Landauer's model? | About 31%.
-Q: Why test separate user groups separately? | Different groups have different needs and problems.
-M1#design-u06-10-q1@1: What did Nielsen recommend instead of one large test? | Several small tests with about five users each | One test with a hundred users | No testing at all | Testing only with experts | Applying the standard result: Iterate with small groups.
-M2#design-u06-10-q2@2: Which type of study needs the largest sample? | An A/B test of conversion rates | A qualitative think-aloud test | A paper prototype test | A heuristic evaluation | Applying the standard result: Statistics need numbers.
-NUM3#design-u06-10-q3@3: If each user finds 31% of problems, what percentage of problems does one user leave undiscovered? | 69 | 0 | % | 100 − 31 = 69% of problems remain after one user.
-M3#design-u06-10-q4@3: What did Faulkner's 2003 study show about five-user tests? | Different sets of five users found very different shares of problems | Five users always find every problem | One user is enough | Larger samples find fewer problems | Applying the standard result: Results varied widely.
-SA3#design-u06-10-q5@3: Evaluate the claim that five users are enough for a usability test. | Nielsen and Landauer's model shows diminishing returns, with about five users finding most problems if each finds 31%, which supports small, iterative qualitative tests. However, detection rates vary by product and task, samples of five can differ widely, rare but serious problems can be missed, separate user groups need their own participants, and quantitative measures need much larger samples. | Diminishing returns ; Iteration ; Variation ; Quantitative needs
+LV: Intermediate · Application
+S: How many participants does a usability test need? Nielsen and Landauer's model suggests about five users find most problems in one round, but the right number depends on the goal. This lesson explains the model, the calculation, its assumptions and when larger samples are needed.
+O: Describe Nielsen and Landauer's model of problem discovery
+O: Calculate the proportion of problems found with a given number of users
+O: Evaluate the five-user guideline for different testing goals
+H: The model
+P: Nielsen and Landauer (1993) modelled how many usability problems are found as more users are tested. If each user finds a proportion L of the problems, then n users find:
+E: Proportion found = 1 − (1 − L)^{n} :: L is the probability that one user reveals a given problem; n is the number of users
+P: In their data, L averaged about 0.31. With five users, 1 − 0.69^{5} ≈ 0.84, so about 85% of problems are found. Each additional user finds fewer new problems, so Nielsen (2000) recommended testing with about five users, fixing problems, and testing again in several small rounds.
+X: Calculating problem discovery with L = 0.31.
+> One user: 1 − 0.69 = 0.31, so 31%.
+> Three users: 1 − 0.69^{3} = 1 − 0.33 = 0.67, so about 67%.
+> Five users: 1 − 0.69^{5} = 1 − 0.16 = 0.84, so about 84%.
+> Fifteen users: 1 − 0.69^{15} ≈ 0.996, nearly all, but three rounds of five with fixes between would find more problems overall.
+K: Small, repeated rounds of testing with fixes in between usually find more problems than one large test.
+H: When five isn't enough
+- **Diverse users**: different groups (novices and experts, disabled users, different languages) may have different problems; test about five from each.
+- **Rare or severe problems**: problems with low L (affecting few users) need larger samples.
+- **Measuring rather than finding**: estimating success rates or comparing designs statistically needs larger samples (often 20 or more per group, and many more for A/B tests).
+P: Faulkner (2003) ran tests with 60 participants and showed that random groups of five sometimes found as few as 55% of problems, showing variability around the average.
+!: Quoting "five users is enough" for every purpose. The guideline is for finding problems in qualitative tests with fairly similar users, repeated iteratively.
+EV: established | Problem discovery shows diminishing returns as more users are tested, following approximately 1 − (1 − L)^n (Nielsen and Landauer, 1993).
+EV: contested | Whether five users are enough is debated: L varies between products and users, and samples of five can miss many problems (Faulkner, 2003).
+T: Problem discovery rate (L) | The average probability that a single test user reveals a given usability problem
+T: Diminishing returns | Each additional user reveals fewer new problems than the last
+SUM: Problem discovery follows 1 − (1 − L)^n; with L ≈ 0.31, five users find about 85% of problems.
+SUM: Use several small rounds; test more users for diverse groups, rare problems or measurement.
+SRC: Nielsen J. and Landauer T. K., "A mathematical model of the finding of usability problems", Proceedings of INTERCHI '93, ACM, 206–213 | primary | 1993 | https://doi.org/10.1145/169059.169166
+SRC: Faulkner L., "Beyond the five-user assumption: benefits of increased sample sizes in usability testing", Behavior Research Methods, Instruments, and Computers 35(3):379–383 | primary | 2003 | https://doi.org/10.3758/BF03195514
+SRC: Nielsen J., "Why you only need to test with 5 users", Nielsen Norman Group | secondary | 2000 | https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/
+Q: What formula models the proportion of problems found by n users? | 1 − (1 − L)^n, where L is the probability one user reveals a given problem.
+Q: Why test in several small rounds rather than one big one? | Each round's fixes let the next round find new problems, and returns diminish within a round.
+M1#design-u06-10-q1@1: According to Nielsen, about how many users find most usability problems in one round? | About five | About one | About fifty | About five hundred | With L ≈ 0.31, five users find around 85% of problems.
+M2#design-u06-10-q2@2: If L = 0.31, approximately what proportion of problems do two users find? | 52% | 31% | 62% | 85% | With L = 0.31, two users find 1 − 0.69^{2} = 1 − 0.476 ≈ 0.52, about 52% of problems.
+M3#design-u06-10-q3@3: A website serves both first-time visitors and expert staff. How should the five-user guideline be applied? | Test about five from each group, because they may meet different problems | Test five people in total, mixing both groups | Test only the experts, as they use it most | Test fifty first-time visitors and no staff | Different groups have different problems, so each needs its own small sample.
+TF3#design-u06-10-q4@3: A test of five users is the right sample size for estimating, with precision, what percentage of all customers complete checkout. | false | Five users suit finding problems; estimating percentages needs much larger quantitative samples.
+SA3#design-u06-10-q5@2,3: Explain Nielsen and Landauer's model and evaluate the advice to test with five users. | Model: each user finds a proportion L of problems; n users find 1 − (1 − L)^n; with L ≈ 0.31, five users find about 85%, with diminishing returns. Advice: test five, fix, retest iteratively. Evaluation: L varies by product and user; Faulkner (2003) showed groups of five sometimes found only 55%; diverse groups need about five each; rare problems and quantitative measures need larger samples. Good for iterative problem-finding, not for measurement. | States the formula ; Calculates or cites 85% ; Iterative rounds ; Variability or Faulkner ; Diverse users or measurement limits
 
 ## Heuristic evaluation
 LV: Intermediate · Application
-S: Heuristic evaluation is an expert review of a design against established usability principles. This lesson explains Nielsen's ten heuristics, how to run an evaluation and how it compares with user testing.
-O: Describe Nielsen's usability heuristics
-O: Explain how to conduct a heuristic evaluation
+S: Heuristic evaluation is an expert review in which evaluators check an interface against a set of usability principles. This lesson explains Nielsen and Molich's method, Nielsen's ten heuristics, severity ratings and how heuristic evaluation compares with user testing.
+O: Describe the heuristic evaluation method
+O: Apply usability heuristics and severity ratings to an interface
 O: Compare heuristic evaluation with usability testing
-H: What heuristic evaluation is
-P: In **heuristic evaluation**, a small group of evaluators inspect an interface and judge it against recognised usability principles, or **heuristics**. Jakob Nielsen and Rolf Molich introduced the method in 1990, and Nielsen's **ten usability heuristics** (1994) are the best known. Because it needs no users, it is quick and cheap and can be done early, even on wireframes.
+H: The method
+P: Nielsen and Molich (1990) introduced **heuristic evaluation**: a small number of evaluators independently examine an interface and judge it against recognised usability principles (**heuristics**), then combine their findings. Nielsen found that a single evaluator finds only a minority of problems, but three to five evaluators together find a large majority, because different people spot different problems.
 H: Nielsen's ten heuristics
-- Visibility of system status.
-- Match between system and the real world.
-- User control and freedom, such as undo.
-- Consistency and standards.
-- Error prevention.
-- Recognition rather than recall.
-- Flexibility and efficiency of use.
-- Aesthetic and minimalist design.
-- Help users recognise, diagnose and recover from errors.
-- Help and documentation.
-H: Running an evaluation
-- Use **three to five evaluators**, as each finds different problems.
-- Evaluators work **independently** first, then combine findings.
-- Each problem is linked to a heuristic and given a **severity rating**.
-- Limitations: experts are not real users, may miss context-specific problems and may flag issues users do not experience.
-- It works best **alongside** user testing, not instead of it.
-X: Applying a heuristic.
-> An evaluator reviews a file upload screen.
-> After clicking "Upload", nothing changes for 20 seconds.
-> This breaks "visibility of system status": users cannot tell whether it is working.
-> The evaluator rates it as a major problem and recommends a progress bar.
-K: Heuristic evaluation has several evaluators independently judge an interface against principles such as Nielsen's ten heuristics, rating severity and combining findings; it is quick, cheap and usable early, but experts are not users, so it complements rather than replaces user testing.
-!: Using heuristic evaluation as a substitute for testing with users. It misses problems that only real users in context encounter.
-EV: established | Several independent evaluators find substantially more problems than a single evaluator.
-T: Heuristic | A general rule of thumb or principle
-T: Heuristic evaluation | An expert review of a design against usability principles
-T: Severity rating | A score showing how serious a usability problem is
-SUM: Experts judge against principles.
-SUM: Three to five evaluators.
-SUM: Combine with user testing.
-SRC: Nielsen J. and Molich R., "Heuristic evaluation of user interfaces", Proceedings of CHI '90, ACM, 249–256 | primary | 1990
-SRC: Nielsen J., "10 usability heuristics for user interface design", Nielsen Norman Group | secondary | 1994 | https://www.nngroup.com/articles/ten-usability-heuristics/
-Q: Who introduced heuristic evaluation? | Jakob Nielsen and Rolf Molich, in 1990.
-Q: Why should evaluators work independently first? | So their findings are not influenced by each other and more problems are found.
-M1#design-u06-11-q1@1: What do evaluators compare an interface against in heuristic evaluation? | Usability principles | Sales figures | Competitor prices | The developer's preferences | Applying the standard result: Heuristics are principles.
-M2#design-u06-11-q2@2: A form deletes all entries when one field is wrong. Which heuristic does this mainly break? | Error prevention and recovery | Aesthetic and minimalist design | Help and documentation | Flexibility and efficiency | Applying the standard result: Users lose their work.
-MATCH2#design-u06-11-q3@2: Match each problem to the heuristic it breaks. | No loading indicator = Visibility of system status ; No undo button = User control and freedom ; Different button styles on each page = Consistency and standards ; Technical jargon labels = Match with the real world | Each heuristic covers a type of problem.
-M3#design-u06-11-q4@3: Why is heuristic evaluation not a replacement for user testing? | Experts are not real users and miss contextual problems | It is more expensive than user testing | It needs hundreds of participants | It can only be used after launch | Applying the standard result: Users reveal real-world issues.
-SA2#design-u06-11-q5@2,3: Compare heuristic evaluation with usability testing. | Heuristic evaluation uses a few experts to judge an interface against principles such as Nielsen's heuristics; it is fast, cheap and can be used early without recruiting users. Usability testing observes real users attempting tasks, revealing problems that arise from their context, knowledge and goals. Heuristic evaluation can flag issues users never notice and miss ones they do, so the two methods work best together. | Experts and principles ; Real users ; Strengths of each ; Complementary
+- Visibility of system status
+- Match between system and the real world
+- User control and freedom
+- Consistency and standards
+- Error prevention
+- Recognition rather than recall
+- Flexibility and efficiency of use
+- Aesthetic and minimalist design
+- Help users recognise, diagnose and recover from errors
+- Help and documentation
+H: Severity ratings
+P: Each problem is rated for **severity**, considering frequency (how often it occurs), impact (how hard it is to overcome) and persistence (whether users can learn to avoid it). Nielsen's scale runs from 0 (not a problem) to 4 (usability catastrophe: fix before release).
+X: A heuristic evaluation of a parking payment app.
+> Problem: no confirmation after paying. Heuristic: visibility of system status. Severity 4 (users may pay twice or get a fine).
+> Problem: users must remember a 6-digit location code from a sign. Heuristic: recognition rather than recall. Severity 3.
+> Problem: inconsistent button labels ("Pay", "Submit", "Go"). Heuristic: consistency and standards. Severity 2.
+K: Heuristic evaluation is fast and cheap and finds many problems early, but evaluators are not users: combine it with testing real people.
+!: Treating heuristic evaluation as a replacement for user testing. Experts miss problems that come from users' own knowledge and context, and can flag "problems" that don't trouble real users.
+EV: established | Several independent evaluators find substantially more usability problems than one (Nielsen and Molich, 1990).
+EV: contested | Heuristic evaluation can produce false positives and miss context-specific problems; its agreement with user testing results varies between studies.
+T: Heuristic evaluation | An expert review of an interface against a set of usability principles
+T: Severity rating | A judgement of a usability problem's seriousness based on frequency, impact and persistence
+SUM: Heuristic evaluation uses three to five independent evaluators judging against principles such as Nielsen's ten.
+SUM: Severity ratings prioritise fixes; the method is fast but complements, not replaces, user testing.
+SRC: Nielsen J. and Molich R., "Heuristic evaluation of user interfaces", Proceedings of CHI '90, ACM, 249–256 | primary | 1990 | https://doi.org/10.1145/97243.97281
+SRC: Nielsen J., "10 usability heuristics for user interface design", Nielsen Norman Group | secondary | 2024 | https://www.nngroup.com/articles/ten-usability-heuristics/
+Q: Why use several evaluators in heuristic evaluation? | Each finds different problems, so three to five together find a large majority, while one finds a minority.
+Q: What three factors determine severity? | Frequency, impact and persistence.
+M1#design-u06-11-q1@1: Which is one of Nielsen's ten usability heuristics? | Visibility of system status | Maximise the number of features | Use as many colours as possible | Always hide error messages | Keeping users informed about what is happening is the first heuristic.
+M2#design-u06-11-q2@2: A form clears all entries when one field has an error. Which heuristic does this most clearly violate? | Error prevention and recovery | Aesthetic and minimalist design | Help and documentation | Match with the real world | Losing all entries makes recovery from errors hard and punishes small mistakes.
+M3#design-u06-11-q3@3: Which is the strongest reason not to rely on heuristic evaluation alone? | Experts can miss problems arising from users' real knowledge and contexts | It requires hundreds of evaluators to work | It can only be used on finished products | It never finds any real problems | Evaluators aren't users; testing reveals context-specific problems experts miss.
+MATCH2#design-u06-11-q4@2: Match each problem to the heuristic it violates. | No progress indicator during upload = visibility of system status ; Jargon like "authenticate credentials" = match with the real world ; No undo after deleting = user control and freedom ; "Save" in one place and "Store" in another = consistency and standards | Each problem maps to one of Nielsen's heuristics.
+SA3#design-u06-11-q5@2,3: Carry out a short heuristic evaluation of a ticket machine that shows "ERROR 37" when a card is declined, and compare the method with user testing. | Problem: unhelpful error message. Heuristics: help users recognise, diagnose and recover from errors; match with the real world. Severity: 3 to 4 (frequent, blocks purchase). Fix: plain message explaining the card was declined and options. Comparison: heuristic evaluation is quick, cheap and early; user testing shows real behaviour and context (queues, stress) but takes longer; use both. | Identifies heuristic ; Severity with reasoning ; Proposes fix ; Strength of heuristic evaluation ; Comparison with testing
 
 ## A/B testing
-LV: Intermediate · Evaluation
-S: A/B testing compares two versions of a design with real users to see which performs better. This lesson explains how A/B tests work, statistical significance, common pitfalls and ethical concerns.
-O: Explain how an A/B test works
-O: Interpret A/B test results, including significance
-O: Evaluate the limitations and ethics of A/B testing
-H: How A/B testing works
-P: In an **A/B test**, live users are **randomly assigned** to see either the current design (**A**, the control) or a variation (**B**). A chosen **metric**, such as the percentage who sign up (the **conversion rate**), is compared. Randomisation means differences in results can be attributed to the design change. Large online companies run thousands of such experiments a year; Kohavi, Tang and Xu (2020) describe the practice in detail.
-H: Interpreting results
-- Tests need **enough users** to detect a real difference; small samples give unreliable results.
-- **Statistical significance** indicates how unlikely a difference would be if there were no real effect, often using a 5% threshold.
-- Decide the sample size and duration **in advance**; stopping as soon as results look good ("peeking") inflates false positives.
-- Run tests for full weeks to capture different user behaviour on different days.
-H: Limitations and ethics
-- A/B tests show **what** works, not **why**; combine them with qualitative research.
-- They suit small changes on high-traffic products, not early concepts.
-- Optimising one metric, such as clicks, can harm others, such as trust.
-- Using **dark patterns** to boost conversions can mislead users.
-- Tests that affect wellbeing raise ethical concerns, as with Facebook's 2014 emotional contagion study.
-X: A sign-up button test.
-> Version A has a "Submit" button; version B says "Start my free trial".
-> Each version is shown to 10,000 visitors.
-> A converts 500 visitors (5%); B converts 600 (6%).
-> The difference is statistically significant, so B is adopted, and interviews explore why.
-K: A/B tests randomly assign users to versions and compare a metric such as conversion rate; reliable conclusions need adequate samples, pre-set durations and significance testing without peeking, and tests reveal what works but not why, can optimise the wrong metric and raise ethical issues.
-!: Stopping a test as soon as one version looks ahead. Early peeking greatly increases the chance of false positives.
-EV: established | Randomised controlled experiments are the most reliable way to establish the causal effect of a design change on user behaviour.
-EV: contested | The ethics of running experiments on users without explicit consent is debated.
-T: A/B test | An experiment comparing two versions with randomly assigned users
-T: Conversion rate | The percentage of users who complete a desired action
-T: Statistical significance | A measure of how unlikely a result is to be due to chance alone
-SUM: Randomise users to A or B.
-SUM: Plan the sample; do not peek.
-SUM: Shows what, not why.
+LV: Intermediate · Application
+S: A/B testing compares two versions of a design with real users at random to see which performs better on a chosen measure. This lesson explains how A/B tests work, the statistics behind them, common pitfalls and their limits.
+O: Describe how an A/B test works
+O: Interpret A/B test results, including statistical significance
+O: Evaluate the strengths, pitfalls and limits of A/B testing
+H: How it works
+P: In an **A/B test** (an online controlled experiment), users are randomly assigned to see version A (the control) or version B (a variation), and a predefined **metric** is compared, such as sign-up rate. Randomisation means differences in the metric can be attributed to the design change rather than to differences between users. Kohavi, Tang and Xu (2020) describe how large technology companies run thousands of such experiments each year.
+X: Interpreting an A/B test of a sign-up button.
+> Version A ("Sign up"): 10,000 visitors, 500 sign-ups: 5.0%.
+> Version B ("Start free trial"): 10,000 visitors, 580 sign-ups: 5.8%.
+> A statistical test shows the difference is unlikely to be due to chance (statistically significant at the chosen threshold).
+> The team also checks that cancellations in week one didn't rise, before adopting B.
+H: Statistics and pitfalls
+- **Sample size**: small effects need large samples; decide the size in advance.
+- **Significance**: a p-value below a chosen threshold (often 0.05) means a difference this large would be unlikely if there were no real effect.
+- **Peeking**: stopping a test as soon as it looks significant inflates false positives.
+- **Guardrail metrics**: watch for harm to other measures (complaints, cancellations, page speed).
+- **Novelty effects**: a change may perform well at first just because it's new.
+K: A/B tests show which version performs better on a metric, with causal confidence, but not why, and only for the options you thought to test.
+!: Optimising a metric that doesn't reflect user value, such as clicks from a misleading button. A/B testing can reward dark patterns unless guardrails and ethics are applied.
+H: Limits
+P: A/B testing needs large numbers of users, so it suits live digital products with high traffic, not early concepts or small services. It finds local improvements but can't generate new concepts, and it tells you what, not why, so qualitative research is still needed.
+EV: established | Randomised online controlled experiments provide causal evidence about the effect of design changes on chosen metrics (Kohavi, Tang and Xu, 2020).
+EV: contested | Whether heavy reliance on A/B testing leads to incremental optimisation at the expense of bold design, or to manipulative designs, is debated.
+T: A/B test | A randomised experiment comparing two versions of a design on a predefined metric
+T: Statistical significance | A result unlikely to have arisen by chance if there were no real effect, judged against a chosen threshold
+T: Guardrail metric | A metric monitored to make sure an experiment doesn't cause harm elsewhere
+SUM: A/B tests randomly assign users to versions and compare a predefined metric, giving causal evidence.
+SUM: Plan sample size, avoid peeking, use guardrails; A/B tests show what, not why, and need large traffic.
 SRC: Kohavi R., Tang D. and Xu Y., Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing, Cambridge University Press | secondary | 2020
-SRC: Kramer A. D. I., Guillory J. E. and Hancock J. T., "Experimental evidence of massive-scale emotional contagion through social networks", PNAS 111(24), 8788–8790 | primary | 2014
-Q: What is a conversion rate? | The percentage of users who complete a desired action.
-Q: Why are users randomly assigned in an A/B test? | So differences in results can be attributed to the design change.
-M1#design-u06-12-q1@1: In an A/B test, what is version A usually? | The current design, or control | A random new design | The most expensive option | A paper prototype | Applying the standard result: A is the baseline.
-NUM2#design-u06-12-q2@2: Version B is shown to 8,000 visitors and 400 sign up. What is the conversion rate, in %? | 5 | 0 | % | 400 ÷ 8,000 × 100 = 5% conversion.
-M2#design-u06-12-q3@3: Why should an A/B test run for whole weeks? | User behaviour differs between days of the week | Servers are cheaper at weekends | It is a legal requirement | Results never change after a week | Applying the standard result: Weekly cycles affect behaviour.
-M3#design-u06-12-q4@3: An A/B test shows version B gets more clicks, but customer complaints rise. What does this show? | Optimising one metric can harm others | The test was perfectly designed | Clicks are the only measure that matters | Complaints are unrelated | Applying the standard result: Watch wider effects.
-SA3#design-u06-12-q5@3: Evaluate A/B testing as a method for improving a website. | A/B tests provide strong causal evidence by randomly assigning real users to versions and comparing behaviour, which suits refining details on high-traffic sites. However, they need large samples and careful statistics, as peeking produces false positives; they show what works but not why; they are unsuited to early concepts; and optimising one metric can damage others or encourage manipulative designs, raising ethical concerns. | Causal evidence ; Statistical care ; What not why ; Metrics and ethics
+SRC: Kohavi R. and Thomke S., "The surprising power of online experiments", Harvard Business Review 95(5):74–82 | secondary | 2017 | https://hbr.org/2017/09/the-surprising-power-of-online-experiments
+Q: Why are users randomly assigned in an A/B test? | So differences in results can be attributed to the design change rather than to differences between groups.
+Q: What is "peeking" and why is it a problem? | Checking results and stopping as soon as they look significant, which inflates false positives.
+M1#design-u06-12-q1@1: In an A/B test, what is version A usually? | The control, or current design | The winning design | The cheapest design | A random design | Version A is the control against which the variation B is compared.
+M2#design-u06-12-q2@2: Version A converts 4.0% of 5,000 visitors; version B converts 4.2% of 5,000. What should the team conclude first? | Check whether the difference is statistically significant before deciding | B is definitely better, so launch it immediately | A is better because it is the original | The test proves both versions are equal | A small difference in a modest sample may be due to chance; significance must be checked.
+M3#design-u06-12-q3@3: A new "Buy now" button increases clicks by 15%, but refund requests also rise. What does this show? | The need for guardrail metrics and checking real user value | That A/B testing always gives wrong answers | That clicks are the only metric that matters | That refunds are unrelated to design | Optimising one metric can cause harm elsewhere; guardrails catch this.
+MS2#design-u06-12-q4@2: Which are pitfalls in A/B testing? Choose all that apply. | Stopping early when results look good ; Too small a sample ; Ignoring novelty effects | Randomly assigning users ; Choosing a metric in advance | Peeking, small samples and novelty effects distort results; randomisation and predefined metrics are good practice.
+SA3#design-u06-12-q5@1,3: Evaluate A/B testing as a way to improve a charity's online donation page. | Strengths: causal evidence about which version raises more donations, real users and real behaviour, can test wording, layout and defaults. Limits: needs enough traffic for significance; shows what, not why; risks optimising short-term donations with pressure tactics (ethics, guardrails like complaints or cancellations of regular gifts); can't generate new concepts. Combine with user research. | Explains method ; Causal strength ; Traffic or significance limit ; Ethics or guardrails ; Judgement
 
 ## Analysing test results
-LV: Intermediate · Application
-S: Testing produces notes, recordings and numbers that must be turned into clear findings. This lesson explains how to synthesise observations, rate severity, use usability metrics and report results.
-O: Synthesise observations from usability testing
-O: Prioritise problems by severity
-O: Use common usability metrics
-H: Synthesising observations
-P: After testing, the team gathers notes and recordings and looks for **patterns**. A common method is **affinity mapping**: writing each observation on a sticky note, then grouping related notes into themes, such as "unclear navigation labels". The aim is to move from individual observations to **findings** that explain problems and their causes. Debriefing straight after each session helps capture insights while they are fresh.
-H: Prioritising problems
-- Rate **severity** using factors such as **frequency** (how many users), **impact** (how badly it blocks them) and **persistence** (whether users overcome it).
-- A simple scale: critical, serious, minor and cosmetic.
-- Prioritise by severity against **effort** to fix.
-- Record positive findings too, so good features are kept.
-H: Usability metrics
-- **Task success rate**: the percentage of users who complete a task.
-- **Time on task**: how long completion takes.
-- **Error rate**: how often mistakes are made.
-- **System Usability Scale (SUS)**: a ten-item questionnaire giving a score from 0 to 100; around 68 is often treated as average.
-- Report findings with evidence, such as quotes and clips, and clear recommendations.
-X: Prioritising findings.
-> Four of five users could not find the "returns" link: frequent and blocking, so critical.
-> Two users disliked the font size but completed all tasks: minor.
-> One user mistyped a postcode and easily corrected it: cosmetic.
-> The team fixes the returns link first.
-K: Test results are synthesised by grouping observations into themes, for example with affinity mapping, then prioritised by severity using frequency, impact and persistence against effort; metrics such as success rate, time on task, error rate and SUS scores add measurable evidence to clear, evidence-based reports.
-!: Treating every observation as equally important. Prioritise by severity and effort.
-EV: established | The System Usability Scale is a widely used, reliable questionnaire for perceived usability.
-T: Affinity mapping | Grouping observations into themes to find patterns
-T: Severity | How serious a usability problem is for users
-T: System Usability Scale | A ten-item questionnaire giving a usability score from 0 to 100
-SUM: Group observations into themes.
-SUM: Rate severity.
-SUM: Measure success, time and SUS.
-SRC: Brooke J., "SUS: a 'quick and dirty' usability scale", in Jordan P. W. et al. (eds), Usability Evaluation in Industry, Taylor and Francis, 189–194 | primary | 1996
-SRC: Sauro J. and Lewis J. R., Quantifying the User Experience, 2nd edition, Morgan Kaufmann | secondary | 2016
-Q: What is affinity mapping? | Grouping observations, often on sticky notes, into themes to find patterns.
-Q: What SUS score is often treated as average? | About 68.
-M1#design-u06-13-q1@1: What does task success rate measure? | The percentage of users who complete a task | The time taken to load a page | The number of designers involved | The cost of testing | Applying the standard result: Success is completion.
-NUM2#design-u06-13-q2@2: Twelve participants attempt a task and nine succeed. What is the task success rate, in %? | 75 | 0 | % | 9 ÷ 12 × 100 = 75% task success rate.
-M2#design-u06-13-q3@3: Which factors help rate the severity of a problem? | Frequency, impact and persistence | Colour, font and size | The designer's opinion only | The number of screens | Applying the standard result: Severity has several factors.
-M3#design-u06-13-q4@3: A problem affects one user and is easily overcome. How should it be prioritised? | Low, unless very cheap to fix | Critical, above all others | It should be ignored forever | It needs a full redesign | Applying the standard result: Low severity, low priority.
-SA2#design-u06-13-q5@2,3: Explain how a design team should turn usability test observations into actions. | The team should debrief after sessions, then gather all observations and group them into themes, for example using affinity mapping, to identify problems and their causes. Each problem should be rated by severity, considering how many users it affects, how badly and whether they overcome it, and weighed against the effort to fix. Findings should be reported with evidence and clear recommendations, and good features noted. | Synthesis ; Severity ; Effort ; Reporting
+LV: Advanced · Evaluation
+S: Testing produces notes, recordings, numbers and quotes. This lesson explains how to turn test data into prioritised findings: logging observations, rating severity, using measures such as task success and the System Usability Scale, and reporting clearly.
+O: Describe how to log and categorise usability test observations
+O: Calculate task success rates and System Usability Scale scores
+O: Evaluate how to prioritise and report findings
+H: From observations to findings
+P: After each session, the team logs observations: what happened, on which task, with quotes and timestamps. Observations are grouped into **issues** (the same problem seen in several sessions), and each issue is described with evidence, the likely cause and a severity rating. Rubin and Chisnell (2008) recommend separating observations (what happened) from interpretations (why).
+H: Measures
+- **Task success rate**: the percentage of participants who completed a task (sometimes with partial credit).
+- **Time on task**: how long successful completions took.
+- **Errors**: number and type of mistakes.
+- **System Usability Scale (SUS)**: Brooke's (1996) ten-item questionnaire, scored 0 to 100. Sauro and Lewis report an average around 68 across many studies.
+E: SUS score = 2.5 × [Σ(odd item − 1) + Σ(5 − even item)] :: each item is answered from 1 (strongly disagree) to 5 (strongly agree)
+X: Summarising a test of a booking site with eight participants.
+> Task "change a booking": 5 of 8 succeeded: 62.5% success.
+> Issue: the "Manage booking" link is in the footer; six participants looked in the header first. Severity: high.
+> SUS scores: mean 61, below the ~68 benchmark, suggesting below-average perceived usability.
+> Recommendation: move "Manage booking" to the header; retest.
+K: Report issues with evidence, severity and a recommendation, prioritised so the team fixes the most serious problems first.
+!: Over-interpreting small numbers. With eight participants, 62.5% success is an indication, not a precise estimate; report counts ("5 of 8") as well as percentages.
+H: Reporting
+P: Effective reports are short and visual: top issues first, with clips or quotes, screenshots, severity and recommendations. Watching sessions together, or reviewing clips, builds shared understanding faster than long documents.
+EV: established | The System Usability Scale is a widely used, reliable ten-item measure of perceived usability (Brooke, 1996; Sauro and Lewis, 2016).
+EV: contested | Severity ratings vary between evaluators, so prioritisation involves judgement even when based on evidence.
+T: Task success rate | The percentage of participants who complete a task successfully
+T: System Usability Scale (SUS) | A ten-item questionnaire giving a perceived usability score from 0 to 100
+SUM: Log observations, group them into issues with evidence, cause and severity, then prioritise.
+SUM: Measures include task success, time, errors and SUS; report counts with percentages for small samples.
+SRC: Brooke J., "SUS: a quick and dirty usability scale", in Jordan P. W. et al. (eds), Usability Evaluation in Industry, Taylor and Francis | primary | 1996
+SRC: Sauro J. and Lewis J. R., Quantifying the User Experience: Practical Statistics for User Research, 2nd edition, Morgan Kaufmann | secondary | 2016
+SRC: Rubin J. and Chisnell D., Handbook of Usability Testing, 2nd edition, Wiley | secondary | 2008
+Q: What is the approximate average SUS score across many studies? | About 68.
+Q: Why report "5 of 8" as well as 62.5%? | With small samples, percentages look more precise than they are; counts show the real basis.
+M1#design-u06-13-q1@1: What does the System Usability Scale measure? | Perceived usability, from 0 to 100 | The number of errors made | The time taken to complete a task | The number of features in a product | SUS is a ten-item questionnaire of perceived usability.
+M2#design-u06-13-q2@2: Six of ten participants completed a task. What is the task success rate? | 60% | 6% | 40% | 16% | Task success is completions divided by participants: 6 ÷ 10 = 0.6, so 60%.
+M3#design-u06-13-q3@3: A test finds 25 issues and the team has time to fix five. What is the best approach? | Prioritise by severity and frequency, with evidence, and fix the most serious | Fix the five easiest issues regardless of impact | Fix the issues mentioned by the most senior observer | Fix none until all 25 can be fixed together | Severity and frequency show where fixes help users most.
+M2#design-u06-13-q4@2: A participant answers all five odd SUS items with 4 and all five even items with 2. What is their SUS score? | 75 | 30 | 60 | 85 | Odd items give (4 − 1) × 5 = 15; even items give (5 − 2) × 5 = 15; the total of 30 is multiplied by 2.5 to give 75.
+SA3#design-u06-13-q5@2,3: Explain how to analyse and report the results of a usability test of a school website with eight parents. | Log observations per session with quotes and timestamps; group into issues; describe each with evidence, likely cause and severity (frequency, impact, persistence); calculate task success and SUS (compare with ~68); report top issues first with clips, screenshots and recommendations, giving counts alongside percentages. Evaluate: small samples are indicative; severity involves judgement; retest after fixes. | Logging and grouping ; Severity ; Quantitative measures ; Reporting format ; Limits of small samples
 
 ## Iterating on feedback
 LV: Intermediate · Application
-S: Iteration means repeatedly designing, testing and refining. This lesson explains iterative design cycles, how to respond to feedback and how to know when to stop iterating.
-O: Explain the iterative design cycle
-O: Respond appropriately to different kinds of feedback
-O: Decide when a design is ready to move forward
-H: The iterative cycle
-P: **Iterative design** repeats a cycle of **design, prototype, test and refine**, improving the design with each round. ISO 9241-210 on human-centred design calls for iteration until the design meets user requirements. Small, frequent cycles help teams learn fast. The **Double Diamond** (Design Council, 2005) also shows iteration within its discover, define, develop and deliver phases.
-H: Responding to feedback
-- Separate **observations** (what people did) from **opinions** (what they said they like).
-- Look for **underlying needs** behind requests: users asking for a feature may have a different problem.
-- Not all feedback should be acted on; consider evidence, goals and constraints.
-- Test changes again, as fixes can introduce new problems.
-- Keep a record of decisions and why they were made.
-H: When to stop
-- When the design meets agreed **success criteria**, such as a target task success rate.
-- When remaining problems are minor relative to the cost of fixing them.
-- When deadlines or budgets require it, with known issues documented.
-- Iteration usually continues after launch, using analytics and feedback.
-X: Three rounds of iteration.
-> Round 1: only 2 of 5 users complete checkout; the payment step confuses them.
-> Round 2: a redesigned payment page lets 4 of 5 succeed, but the delivery options are unclear.
-> Round 3: clearer delivery labels let all 5 succeed.
-> The target of 90% success is reached, so the design moves to development.
-K: Iterative design repeatedly prototypes, tests and refines, as human-centred design standards require; teams should separate observations from opinions, find underlying needs, retest changes and stop when success criteria are met or remaining problems are minor, while continuing to improve after launch.
-!: Building every feature users request. Look for the need behind the request.
-EV: established | Iterative design with user feedback produces more usable products than designing once without testing.
-T: Iteration | Repeating a cycle to improve a design
-T: Human-centred design | An approach that involves users throughout design and development
-T: Success criteria | Agreed measures showing when a design meets its goals
-SUM: Design, test, refine, repeat.
-SUM: Look for the underlying need.
-SUM: Stop when criteria are met.
-SRC: International Organization for Standardization, ISO 9241-210:2019 Ergonomics of human-system interaction — Human-centred design for interactive systems | standard | 2019
-SRC: Design Council, Framework for Innovation: Design Council's evolved Double Diamond | guidance | 2019 | https://www.designcouncil.org.uk/our-resources/framework-for-innovation/
-Q: What is iterative design? | Repeating cycles of design, prototyping, testing and refinement.
-Q: Why should changes be tested again? | Fixes can introduce new problems.
-M1#design-u06-14-q1@1: What are the steps in an iterative cycle? | Design, prototype, test and refine | Design once and launch | Test only after launch | Sell, then design | Applying the standard result: Iteration repeats the cycle.
-M2#design-u06-14-q2@2: A user says "Add a search bar" but the real issue is unclear menus. What should the designer focus on? | The underlying need to find content | Adding a search bar immediately | Ignoring the user | Removing the menu entirely | Applying the standard result: Find the need behind the request.
-M2#design-u06-14-q3@3: Which is the best reason to stop iterating? | The design meets agreed success criteria | The designer is bored | One user liked it | The colours look good | Applying the standard result: Criteria define readiness.
-M3#design-u06-14-q4@3: Why separate observations from opinions in feedback? | What users do is often more reliable than what they say | Opinions are always wrong | Observations cannot be recorded | Opinions are not allowed in tests | Applying the standard result: Behaviour is stronger evidence.
-SA2#design-u06-14-q5@2,3: Explain how a design team should respond to feedback during iteration. | The team should distinguish what users did from what they said, and look for the underlying needs behind requests rather than adding every feature asked for. Feedback should be weighed against evidence, goals and constraints. Changes should be prototyped and tested again, since fixes can create new problems, and decisions recorded. Iteration continues until agreed success criteria are met. | Observations versus opinions ; Underlying needs ; Retesting ; Success criteria
+S: Iteration means using what testing reveals to improve the design, then testing again. This lesson explains how to decide what to change, how to handle conflicting feedback, and the evidence that iteration improves usability.
+O: Explain how test findings should drive design iterations
+O: Decide how to respond to conflicting or unexpected feedback
+O: Evaluate the benefits and costs of iterative design
+H: Why iterate
+P: Nielsen (1993) reviewed case studies of iterative user interface design and found substantial improvements in usability from each iteration, with a median improvement of about 38% per iteration in the cases he measured, and further gains in later rounds. Iteration works because each round fixes problems and reveals new ones that were hidden behind them.
+H: Deciding what to change
+- **Fix causes, not symptoms**: work out why users struggled before changing anything.
+- **Prioritise by severity and frequency**: the problems that block most users come first.
+- **Change one thing where possible** when you need to know what caused an improvement.
+- **Retest changes**: fixes can introduce new problems.
+- **Look for patterns**: one person's comment is a clue; the same problem across several people is a finding.
+X: Handling conflicting feedback on a recipe app.
+> Two users want more photos; two want less clutter.
+> The team looks at behaviour: users who wanted photos were choosing what to cook; those wanting less clutter were cooking with messy hands.
+> Insight: different needs at different moments. Iteration: photo-rich browsing, and a simplified "cooking mode" with large text.
+K: Feedback is evidence about needs, not instructions. Look past what users suggest to the problem behind it.
+!: Implementing every user suggestion. Users are experts in their experience, not in design; a suggested feature may not be the best solution to their underlying problem.
+H: Costs and limits
+P: Iteration takes time and money, and without clear goals teams can iterate endlessly on details. Time-boxing rounds, setting success criteria in advance and knowing when a design is "good enough" for its purpose keep iteration productive.
+EV: established | Iterative design with repeated user testing improves usability across rounds (Nielsen, 1993).
+EV: contested | The size of improvement per iteration varies widely between projects, and published case studies may over-represent successes.
+T: Iteration | A cycle of designing, testing and refining based on what is learned
+T: Time-boxing | Setting a fixed time limit for an activity, such as a round of iteration
+SUM: Iteration uses test findings to fix causes, prioritised by severity, and retests changes.
+SUM: Treat feedback as evidence of needs, resolve conflicts by looking at behaviour, and time-box rounds.
+SRC: Nielsen J., "Iterative user-interface design", IEEE Computer 26(11):32–41 | primary | 1993 | https://doi.org/10.1109/2.241424
+SRC: Rubin J. and Chisnell D., Handbook of Usability Testing, 2nd edition, Wiley | secondary | 2008
+Q: Why can iteration reveal new problems? | Fixing one problem lets users get further, exposing problems that were hidden behind it, and fixes can introduce new issues.
+Q: How should conflicting feedback be handled? | Look at users' behaviour and contexts to find the different needs behind the comments.
+M1#design-u06-14-q1@1: What is iteration in design? | Repeated cycles of designing, testing and refining | Building the final product in one attempt | Copying a competitor's latest version | Writing the design specification | Iteration improves a design through repeated test-and-refine cycles.
+M2#design-u06-14-q2@2: One user in a test says "add a chatbot". What is the best response? | Explore what problem they were trying to solve and check if others had it | Add a chatbot immediately | Ignore the comment completely | Remove the feature they were using | Suggestions point to needs; the team should understand the underlying problem first.
+M3#design-u06-14-q3@3: A team has iterated a login screen ten times on tiny details while bigger problems remain. What is the best advice? | Set success criteria, prioritise by severity and time-box iterations | Keep iterating until the login screen is perfect | Stop testing altogether | Ask users to stop finding problems | Without goals and priorities, iteration can stall on details.
+TF1#design-u06-14-q4@1: In iterative design, fixes should be retested because they can introduce new problems. | true | Changes may solve one issue and create another, so retesting is part of each cycle.
+SA3#design-u06-14-q5@2,3: A test of a bike-hire app finds that users can't find how to end a hire, and some ask for a bigger map. Explain how you would iterate and evaluate your approach. | Prioritise the "end hire" problem (high severity: users may be charged). Find the cause (button hidden, unclear label); redesign with a prominent "End hire" action and confirmation; retest. For the map request, investigate the need (finding docks?) before enlarging the map. Evaluate: fixes causes, prioritised by severity, retested; small samples and time limits mean some issues wait; success criteria tell the team when it is good enough. | Prioritises by severity ; Finds cause ; Redesign and retest ; Treats suggestion as evidence of need ; Evaluation
 
 ## Minimum viable product
-LV: Intermediate · Evaluation
-S: A minimum viable product is the smallest version of a product that lets a team learn from real customers. This lesson explains the concept, its origins in lean start-up thinking, types of MVP and common misunderstandings.
+LV: Intermediate · Application
+S: A minimum viable product is the smallest version of a product that lets a team learn whether its idea works with real customers. This lesson explains the MVP concept from lean start-up, types of MVP, famous examples and common misunderstandings.
 O: Define a minimum viable product
-O: Describe different types of MVP
-O: Evaluate the strengths and risks of the MVP approach
-H: What an MVP is
-P: Eric Ries, in *The Lean Startup* (2011), defined a **minimum viable product (MVP)** as the version of a new product that allows a team to collect the maximum amount of **validated learning** about customers with the least effort. It is part of a **build–measure–learn** loop: build something small, measure how real customers respond and learn whether to **persevere** or **pivot**. The term was coined by Frank Robinson and popularised by Steve Blank and Ries.
-H: Types of MVP
-- **Landing page MVP**: describe a product and measure sign-ups before building it.
-- **Concierge MVP**: deliver the service manually to a few customers.
-- **Wizard of Oz MVP**: customers think it is automated, but people do the work behind the scenes.
-- **Single-feature MVP**: launch only the core feature.
-- Dropbox's founders used an explainer video to test demand before building the full product.
-H: Strengths and risks
-- **Strengths**: reduces waste by testing demand early; generates real data from real customers.
-- **Risks**: "minimum" can become an excuse for poor quality, damaging reputation.
-- MVPs suit uncertain markets more than safety-critical products, such as medical devices.
-- Henrik Kniberg's skateboard-to-car illustration argues each version should be usable, not just a part of the final product.
-X: A concierge MVP.
-> A start-up plans a meal-planning app for busy parents.
-> Instead of building it, the founders email ten families personalised weekly plans by hand.
-> Eight families renew after a month, and their feedback shows which features matter.
-> The founders build the app around these features.
-K: An MVP is the smallest product that delivers the most validated learning with the least effort, within a build–measure–learn loop; types include landing page, concierge, Wizard of Oz and single-feature MVPs, which reduce waste but risk poor quality and suit uncertain markets more than safety-critical products.
-!: Treating an MVP as a cheap, low-quality first release. It is an experiment designed for learning, and each version should still be usable.
-EV: established | Testing demand early can prevent large investments in products customers do not want.
-EV: contested | How applicable lean start-up methods are beyond software and start-ups is debated.
-T: Minimum viable product | The smallest product version that enables validated learning
-T: Pivot | A change of strategy based on what has been learned
-T: Validated learning | Learning confirmed by evidence from real customers
-SUM: Smallest product for learning.
-SUM: Build, measure, learn.
-SUM: Minimum is not poor quality.
-SRC: Ries E., The Lean Startup, Crown Business | primary | 2011
-SRC: Blank S., The Four Steps to the Epiphany, K&S Ranch | primary | 2005
-SRC: Kniberg H., "Making sense of MVP (minimum viable product) — and why I prefer earliest testable/usable/lovable" | secondary | 2016 | https://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp
-Q: What is a pivot? | A change of strategy based on what has been learned.
-Q: What loop is the MVP part of? | The build–measure–learn loop.
-M1#design-u06-15-q1@1: Who popularised the MVP concept in The Lean Startup? | Eric Ries | Jakob Nielsen | Don Norman | Tim Brown | Applying the standard result: Ries wrote The Lean Startup.
-M2#design-u06-15-q2@2: A team delivers its service manually to a few customers before automating it. What type of MVP is this? | Concierge MVP | Landing page MVP | Single-feature MVP | Pre-production prototype | Applying the standard result: Manual service is concierge.
-TF2#design-u06-15-q3@3: The MVP approach is equally suitable for every type of product, including medical devices. | false | Safety-critical products cannot be released in minimal form to learn from failures.
-M3#design-u06-15-q4@3: What does Kniberg's skateboard-to-car illustration argue? | Each version should be usable in its own right | Build the wheels first, then the car | Only release the finished product | Never test with customers | Applying the standard result: Each step should deliver value.
-SA3#design-u06-15-q5@3: Evaluate the minimum viable product approach to developing new products. | MVPs reduce waste by testing whether customers want a product before heavy investment, using real behaviour rather than opinions, and the build–measure–learn loop allows teams to persevere or pivot. However, "minimum" can become an excuse for poor quality that harms reputation, early adopters may not represent the wider market, and the approach is unsuitable for safety-critical or highly regulated products. | Reducing waste ; Real evidence ; Quality risk ; Limits of use
+O: Describe types of MVP, including concierge, Wizard of Oz and landing-page MVPs
+O: Evaluate the MVP approach and its risks
+H: The idea
+P: Eric Ries (2011) defined a **minimum viable product (MVP)** as the version of a new product that allows a team to collect the maximum amount of validated learning about customers with the least effort. The MVP is not a cheap first version to sell; it is an experiment to test the riskiest assumptions with real customers in the build-measure-learn loop.
+- **Landing page or video MVP**: describe the product and measure sign-ups before building it.
+- **Concierge MVP**: deliver the service manually to a few customers, learning what they need.
+- **Wizard of Oz MVP**: customers think they use an automated product, but people do the work behind the scenes.
+- **Single-feature MVP**: build only the core feature that tests the main value.
+X: Two famous MVPs (as told in Ries, 2011).
+> Dropbox: before building the full file-syncing product, the founder posted a short video demonstrating how it would work; sign-ups for the beta waiting list jumped from thousands to tens of thousands, validating demand.
+> Zappos: to test whether people would buy shoes online, the founder photographed shoes in local shops and posted them online; when someone ordered, he bought the shoes and posted them.
+K: An MVP is the smallest experiment that tests whether customers want the product, measured by what they do, not what they say.
+!: Using "MVP" to mean a poor-quality product rushed out. A bad experience can kill a good idea; the MVP must be viable enough to test the value fairly, and safe.
+H: Risks and debates
+P: MVPs can damage a brand if released too publicly, can test the wrong assumption, and in safety-critical fields (medical devices, vehicles) a minimal product may be unacceptable. Designers often argue for a "minimum lovable" or "minimum delightful" product so that low quality doesn't mask genuine demand.
+EV: established | The MVP is a central concept of lean start-up methods for testing product assumptions with real customers (Ries, 2011).
+EV: contested | Evidence on MVPs is largely case-based; critics argue the term is often misused for low-quality releases and that some products need more complete versions to test value fairly.
+T: Minimum viable product | The smallest version of a product that allows maximum validated learning about customers with least effort
+T: Concierge MVP | An MVP in which the service is delivered manually to a few customers to learn their needs
+SUM: An MVP is an experiment testing the riskiest assumption with real customer behaviour and minimal effort.
+SUM: Types include landing-page, concierge, Wizard of Oz and single-feature MVPs; misuse and safety are risks.
+SRC: Ries E., The Lean Startup: How Constant Innovation Creates Radically Successful Businesses, Crown Business | secondary | 2011
+SRC: Bland D. J. and Osterwalder A., Testing Business Ideas, Wiley | secondary | 2019
+Q: What is the main purpose of an MVP? | To learn as much as possible about whether customers want the product, with the least effort.
+Q: What is a concierge MVP? | Delivering a service manually to a few customers to learn what they need before automating it.
+M1#design-u06-15-q1@1: According to Ries, what is an MVP mainly for? | Validated learning about customers with least effort | Making as much profit as possible at launch | Producing the final, polished product | Impressing investors with features | The MVP is an experiment for learning, not a finished product.
+M2#design-u06-15-q2@2: A start-up personally plans meals for ten families by email before building a meal-planning app. What type of MVP is this? | Concierge MVP | Landing-page MVP | Single-feature MVP | Pre-production prototype | Delivering the service manually to a few customers is a concierge MVP.
+M3#design-u06-15-q3@3: Why might an MVP approach be unsuitable for a new insulin pump? | A minimal, unproven device could harm users and must meet strict safety standards | Medical devices never need customer feedback | MVPs only work for physical products | Insulin pumps have no assumptions to test | In safety-critical fields, minimal products can cause harm; testing must happen in controlled, regulated ways.
+MS2#design-u06-15-q4@2: Which are examples of MVPs? Choose all that apply. | A video explaining a product before it is built ; Manually fulfilling orders from a simple website ; A landing page measuring sign-ups | A fully featured product launched worldwide ; A final injection-moulded production run | MVPs test demand with minimal effort; full launches and production runs are not experiments.
+SA3#design-u06-15-q5@1,3: Evaluate the MVP approach for a new subscription service delivering second-hand children's clothes. | MVP: a landing page and a concierge trial with twenty families, hand-picked bundles posted manually, measuring sign-ups, retention and returns. Strengths: tests the riskiest assumptions (will parents pay? are clothes acceptable?) cheaply with real behaviour. Risks: manual service may not reflect scaled experience; poor quality could put off customers; hygiene and safety must be ensured; small samples. | Describes an MVP ; Assumptions tested ; Behavioural measures ; Strength ; Risks
 
 ## Design sprints
-LV: Advanced · Evaluation
-S: A design sprint compresses months of work into a few days of structured activity. This lesson explains the five-day Google Ventures design sprint, its stages and roles, and its strengths and limitations.
-O: Describe the stages of a design sprint
-O: Explain the roles and preparation a sprint needs
-O: Evaluate when a design sprint is appropriate
-H: What a design sprint is
-P: A **design sprint** is a time-boxed process, usually **five days**, in which a small team moves from a big problem to a tested prototype. Jake Knapp developed it at Google Ventures and described it, with John Zeratsky and Braden Kowitz, in *Sprint* (2016). By the end of the week, the team has tested a realistic prototype with real users, gaining evidence before committing to building anything.
-H: The five days
-- **Monday: Map** — agree a long-term goal, map the problem and choose a target.
-- **Tuesday: Sketch** — review existing ideas and individually sketch solutions.
-- **Wednesday: Decide** — critique the sketches and choose the strongest, building a storyboard.
-- **Thursday: Prototype** — build a realistic façade prototype in one day.
-- **Friday: Test** — interview and observe about five target customers using the prototype.
-H: Roles and limits
-- The **Decider** makes final decisions; the **Facilitator** manages time and the process.
-- The team, ideally up to seven people, combines skills from design, engineering, marketing and the business.
-- Sprints need **clear problems**, protected time and recruited users.
-- **Limitations**: intense and costly in staff time; five days may be too short for complex problems; testing with about five users gives qualitative, not statistical, evidence.
-- Shorter variants, such as four-day sprints, are common.
-X: A sprint for a clinic.
-> A clinic wants to reduce missed appointments.
-> On Monday, the team maps the patient journey and targets reminders.
-> On Thursday, they build a fake text-message and booking prototype.
-> On Friday, five patients test it; three say they would prefer to rebook by reply, so this becomes the focus.
-K: A design sprint is a five-day process of mapping, sketching, deciding, prototyping and testing with about five users, developed at Google Ventures, led by a Decider and Facilitator with a cross-functional team; it rapidly produces evidence but is intense, needs clear problems and gives qualitative results.
-!: Expecting a sprint to deliver a finished product. It delivers a tested prototype and evidence for the next decision.
-EV: established | Design sprints are widely used in industry to test ideas rapidly before building.
-EV: contested | Evidence on the long-term impact of design sprints on product success is limited and largely anecdotal.
-T: Design sprint | A time-boxed process, usually five days, from problem to tested prototype
-T: Decider | The person with authority to make final sprint decisions
-T: Façade prototype | A realistic-looking prototype that shows only the surface needed for testing
-SUM: Map, sketch, decide, prototype, test.
-SUM: A Decider and a Facilitator.
-SUM: Fast evidence, qualitative limits.
-SRC: Knapp J., Zeratsky J. and Kowitz B., Sprint: How to Solve Big Problems and Test New Ideas in Just Five Days, Simon and Schuster | primary | 2016
-SRC: Google, Design Sprint Kit | guidance | 2020 | https://designsprintkit.withgoogle.com/
-Q: Who makes final decisions in a design sprint? | The Decider.
-Q: What happens on the last day of a design sprint? | The team tests the prototype with about five target customers.
-M1#design-u06-16-q1@1: How long does a standard design sprint last? | Five days | One hour | Six months | One year | Applying the standard result: It is time-boxed to a week.
-SEQ2#design-u06-16-q2@2: Put the stages of a design sprint in order. | Map ; Sketch ; Decide ; Prototype ; Test | The sprint moves from understanding to a tested prototype, one stage per day.
-M2#design-u06-16-q3@3: What kind of prototype is typically built on Thursday? | A realistic façade showing only what is needed | A fully working product | A production-ready app | A rough foam block model | Applying the standard result: Only the surface is needed.
-M3#design-u06-16-q4@3: For which situation is a design sprint least suitable? | A vague problem with no decision-maker available | A clear question about a new feature | A team able to commit a week | A product with available target users | Sprints need clear problems and a Decider.
-SA3#design-u06-16-q5@3: Evaluate the design sprint as a way to develop new ideas. | Design sprints compress decisions into a focused week, bring together different skills and end with real user evidence on a realistic prototype, reducing the risk of building the wrong thing. However, they take a full team away from other work, need a clear problem and an available decision-maker, may be too short for complex challenges, and testing with about five users gives qualitative rather than statistical evidence, so results must be followed up. | Speed and focus ; Evidence ; Cost and preparation ; Limits of findings
+LV: Intermediate · Application
+S: A design sprint is a five-day process for answering a critical business question through design, prototyping and testing with users. This lesson explains the sprint developed at Google Ventures, what happens each day, and when sprints are and aren't appropriate.
+O: Describe the five days of a design sprint
+O: Plan a design sprint for a defined challenge
+O: Evaluate when design sprints are suitable
+H: The sprint
+P: Jake Knapp developed the **design sprint** at Google and Google Ventures; *Sprint* (Knapp, Zeratsky and Kowitz, 2016) describes it. A small team (about seven people, including a **Decider** with authority) clears five days to go from a problem to a tested prototype.
+- **Monday, Map**: set a long-term goal, list sprint questions, map the challenge, ask experts, choose a target.
+- **Tuesday, Sketch**: review existing ideas, then each person sketches solutions alone (the "four-step sketch", including Crazy 8s).
+- **Wednesday, Decide**: critique sketches silently, vote with a heat map, the Decider makes a final choice, storyboard the prototype.
+- **Thursday, Prototype**: build a realistic-looking prototype ("fake it") in one day.
+- **Friday, Test**: test with five target customers in one-to-one interviews; look for patterns.
+K: A sprint compresses months of debate into a week by combining focus, individual idea generation, structured decisions and a realistic prototype tested with real users.
+X: A sprint for a hospital's outpatient check-in.
+> Monday: goal "patients check in without queuing"; map from arrival to seeing a clinician; target the check-in moment.
+> Tuesday: sketches include text check-in, kiosks and a receptionist with a tablet who greets patients.
+> Wednesday: the Decider chooses text check-in with a kiosk backup; storyboard.
+> Thursday: clickable phone prototype and a printed kiosk screen on a box.
+> Friday: five patients test; most like the text, but older patients want a person at the door, so the next iteration adds a greeter.
+!: Using a sprint for every problem. Sprints suit important, uncertain challenges with a clear target; they are poor for tiny tweaks, very early research, or problems needing months of engineering to test.
+H: Strengths and limits
+P: Sprints build alignment and momentum, involve decision-makers, and get evidence fast. But they demand a full week from key people, can encourage rushing past research, and five tests on Friday give indicative, not conclusive, evidence.
+EV: established | The five-day design sprint is a widely used method for rapidly prototyping and testing ideas (Knapp, Zeratsky and Kowitz, 2016).
+EV: contested | Rigorous evidence on sprint outcomes is limited; critics argue sprints can skip research and give false confidence from small tests.
+T: Design sprint | A five-day process to map, sketch, decide, prototype and test a solution to a critical question
+T: Decider | The sprint team member with authority to make final decisions
+SUM: A design sprint runs Map, Sketch, Decide, Prototype and Test over five days.
+SUM: It builds alignment and fast evidence for important, uncertain challenges, but is not right for every problem.
+SRC: Knapp J., Zeratsky J. and Kowitz B., Sprint: How to Solve Big Problems and Test New Ideas in Just Five Days, Simon and Schuster | secondary | 2016
+SRC: Nielsen J., "Why you only need to test with 5 users", Nielsen Norman Group | secondary | 2000 | https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/
+Q: Name the five days of a design sprint. | Map, sketch, decide, prototype, test.
+Q: What is the Decider's role? | To make final decisions, such as which solution to prototype, so the team doesn't stall.
+M1#design-u06-16-q1@1: On which day of a design sprint is the prototype tested with customers? | Friday | Monday | Tuesday | Wednesday | Friday is test day, with five one-to-one customer interviews.
+SEQ1#design-u06-16-q2@1: Put the design sprint days in order. | Map ; Sketch ; Decide ; Prototype ; Test | Monday to Friday move from understanding to tested prototype.
+M2#design-u06-16-q3@2: In a sprint, why do people sketch solutions alone on Tuesday rather than brainstorm as a group? | To avoid production blocking and dominance, getting more varied, detailed ideas | Because group work is banned in sprints | To finish the prototype faster on the same day | Because the Decider must not see any ideas | Individual work produces more and better-developed ideas than open group discussion.
+M3#design-u06-16-q4@3: For which challenge is a design sprint least suitable? | Changing the colour of one button on a website | Testing a new service concept for patient check-in | Deciding how a new app should onboard users | Exploring how customers might respond to a new product idea | A sprint is too heavy for a small tweak; it suits important, uncertain challenges.
+SA3#design-u06-16-q5@1,3: Plan a design sprint for a museum that wants more families to visit, and evaluate the method for this challenge. | Monday: goal (more family visits), map family journey from planning to leaving, choose target (planning the visit). Tuesday: individual sketches (family trails, booking bundles, kids' app). Wednesday: critique, vote, Decider chooses, storyboard. Thursday: prototype a family visit webpage and printed trail. Friday: test with five families. Evaluation: fast, aligned and evidence-based; but needs research first, a week of key staff, and five tests are indicative; follow with further iteration. | Each day planned ; Appropriate target ; Prototype and test ; Strengths ; Limitations
 `;

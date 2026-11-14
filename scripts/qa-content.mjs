@@ -86,7 +86,7 @@ function evaluate(expr) {
   try { const v = Function(`"use strict"; return (${e});`)(); return Number.isFinite(v) ? v : null; } catch { return null; }
 }
 // Lines that state a wrong sum on purpose ("A pupil writes 52 − 37 = 25") or use modular arithmetic are skipped.
-const SKIP_LINE = /\b(mod|GF\(|writes|wrote|claims|error|mistake|wrong|incorrect)\b|≡|ℤ/i;
+const SKIP_LINE = /\b(mod|GF\(|writes|wrote|claims|error|mistake|wrong|incorrect|binary|base 2|base two)\b|≡|ℤ/i;
 // Only statements presented as true are checked: misconception lines (!:) and the distractors of a multiple-choice
 // question (every field but the stem, the first option and the explanation) are left out.
 export function assertedText(line) {

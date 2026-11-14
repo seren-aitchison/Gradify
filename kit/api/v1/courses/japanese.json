@@ -1,0 +1,1245 @@
+{
+ "api": 1,
+ "slug": "japanese",
+ "name": "Japanese",
+ "site": "LanguageGradify",
+ "unitWord": "School",
+ "levels": [
+  "Foundation",
+  "Application",
+  "Evaluation"
+ ],
+ "notice": "<b>Study material, not a qualification or an exam board.</b> LanguageGradify teaches Japanese writing, grammar, vocabulary, pronunciation and culture for study. The lessons were drafted with AI assistance and haven't yet been reviewed by a Japanese teacher or lecturer, so they may contain errors; check important points against your course materials, your exam board's specification and a reference grammar. It isn't a Japan Foundation, JEES (JLPT) or Pearson Edexcel product, doesn't award a JLPT level, a CEFR level or any grade, and can't replace speaking practice with a teacher and with native speakers.",
+ "notes": "/kit/courses/japanese/notes/{unit}.js",
+ "tracks": [
+  {
+   "name": "Stage 1 · N5 Beginner (A1)",
+   "units": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "from": "#e05a6a",
+   "to": "#f0a35e"
+  },
+  {
+   "name": "Stage 2 · N4 Elementary (A2)",
+   "units": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "from": "#f0a35e",
+   "to": "#e8846f"
+  },
+  {
+   "name": "Stage 3 · N3 Intermediate (B1)",
+   "units": [
+    9,
+    10
+   ],
+   "from": "#e8846f",
+   "to": "#6b8ac8"
+  },
+  {
+   "name": "Stage 4 · Culture and skills",
+   "units": [
+    11,
+    12
+   ],
+   "from": "#6b8ac8",
+   "to": "#22d3ee"
+  }
+ ],
+ "paths": [
+  {
+   "id": "gcse",
+   "name": "GCSE Japanese",
+   "sub": "Kana, the first kanji, core grammar from desu to the te-form and plain forms, the GCSE themes and exam skills.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "jlpt-n5",
+   "name": "JLPT N5",
+   "sub": "Hiragana, katakana, around a hundred kanji, the masu form, particles, adjectives and counters.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "jlpt-n4",
+   "name": "JLPT N4",
+   "sub": "The te-form, plain forms, potential, volitional, conditionals, giving and receiving, the passive and basic keigo.",
+   "units": [
+    5,
+    7,
+    8,
+    10,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "jlpt-n3",
+   "name": "JLPT N3",
+   "sub": "Aspect, hearsay and appearance, purpose and reasoning, keigo in use, kanji to around 650 and reading longer texts.",
+   "units": [
+    8,
+    9,
+    10,
+    12
+   ],
+   "select": null
+  },
+  {
+   "id": "grammar",
+   "name": "Grammar in order",
+   "sub": "From X wa Y desu to the causative-passive and N3 nuance, one structure at a time.",
+   "units": [
+    2,
+    3,
+    4,
+    5,
+    7,
+    9
+   ],
+   "select": null
+  },
+  {
+   "id": "traveller",
+   "name": "Japanese for travel",
+   "sub": "Kana, greetings, numbers, prices, directions, transport, food, polite shop Japanese and etiquette.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    11
+   ],
+   "select": null
+  },
+  {
+   "id": "culture",
+   "name": "Japan: culture and society",
+   "sub": "History, religion, festivals, the arts, popular culture, work, an ageing society, dialects and the writing system.",
+   "units": [
+    6,
+    8,
+    11
+   ],
+   "select": null
+  }
+ ],
+ "exams": [
+  {
+   "id": "stage-1",
+   "title": "Stage 1 · N5 Beginner (A1)",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-2",
+   "title": "Stage 2 · N4 Elementary (A2)",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    5,
+    6,
+    7,
+    8
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-3",
+   "title": "Stage 3 · N3 Intermediate (B1)",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    9,
+    10
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "stage-4",
+   "title": "Stage 4 · Culture and skills",
+   "sub": "Mixed questions from every written school in this stage.",
+   "units": [
+    11,
+    12
+   ],
+   "path": null,
+   "count": 20,
+   "minutes": 30,
+   "pass": 0.7,
+   "format": "science"
+  },
+  {
+   "id": "whole",
+   "title": "Whole course",
+   "sub": "Forty mixed questions from every written school.",
+   "units": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ],
+   "path": null,
+   "count": 40,
+   "minutes": 60,
+   "pass": 0.7,
+   "format": "science"
+  }
+ ],
+ "units": [
+  {
+   "id": "u01",
+   "n": 1,
+   "title": "First Steps: Sounds and Hiragana",
+   "written": true,
+   "lessons": [
+    {
+     "id": "u01-01",
+     "title": "The sounds of Japanese and the mora",
+     "module": "The sound system"
+    },
+    {
+     "id": "u01-02",
+     "title": "Vowels, long vowels and devoicing",
+     "module": "The sound system"
+    },
+    {
+     "id": "u01-03",
+     "title": "Pitch accent basics",
+     "module": "The sound system"
+    },
+    {
+     "id": "u01-04",
+     "title": "Hiragana: the vowel, k and s rows",
+     "module": "Hiragana"
+    },
+    {
+     "id": "u01-05",
+     "title": "Hiragana: the t, n and h rows",
+     "module": "Hiragana"
+    },
+    {
+     "id": "u01-06",
+     "title": "Hiragana: the m, y, r and w rows and n",
+     "module": "Hiragana"
+    },
+    {
+     "id": "u01-07",
+     "title": "Voiced sounds: dakuten and handakuten",
+     "module": "Hiragana"
+    },
+    {
+     "id": "u01-08",
+     "title": "Combined sounds: small ya, yu and yo",
+     "module": "Hiragana"
+    },
+    {
+     "id": "u01-09",
+     "title": "The small tsu and double consonants",
+     "module": "Hiragana"
+    },
+    {
+     "id": "u01-10",
+     "title": "Long vowels in hiragana and particle spellings",
+     "module": "Hiragana"
+    },
+    {
+     "id": "u01-11",
+     "title": "Greetings through the day",
+     "module": "First phrases"
+    },
+    {
+     "id": "u01-12",
+     "title": "Hajimemashite: introducing yourself",
+     "module": "First phrases"
+    },
+    {
+     "id": "u01-13",
+     "title": "Set phrases for home, school and the table",
+     "module": "First phrases"
+    },
+    {
+     "id": "u01-14",
+     "title": "Numbers 0 to 100",
+     "module": "First phrases"
+    },
+    {
+     "id": "u01-15",
+     "title": "Thank you, sorry and excuse me",
+     "module": "First phrases"
+    }
+   ]
+  },
+  {
+   "id": "u02",
+   "n": 2,
+   "title": "Katakana, First Kanji and the Basic Sentence",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u02-01",
+     "title": "Katakana: the basic chart",
+     "module": "Katakana"
+    },
+    {
+     "id": "u02-02",
+     "title": "Katakana: voiced sounds, combinations and the long vowel mark",
+     "module": "Katakana"
+    },
+    {
+     "id": "u02-03",
+     "title": "Loanwords and extended katakana",
+     "module": "Katakana"
+    },
+    {
+     "id": "u02-04",
+     "title": "What kanji are: on and kun readings",
+     "module": "First kanji"
+    },
+    {
+     "id": "u02-05",
+     "title": "Strokes, stroke order and radicals",
+     "module": "First kanji"
+    },
+    {
+     "id": "u02-06",
+     "title": "First kanji: numbers, days and time",
+     "module": "First kanji"
+    },
+    {
+     "id": "u02-07",
+     "title": "First kanji: people, places and nature",
+     "module": "First kanji"
+    },
+    {
+     "id": "u02-08",
+     "title": "Okurigana and furigana",
+     "module": "First kanji"
+    },
+    {
+     "id": "u02-09",
+     "title": "X wa Y desu",
+     "module": "The basic sentence"
+    },
+    {
+     "id": "u02-10",
+     "title": "Questions with ka and question words",
+     "module": "The basic sentence"
+    },
+    {
+     "id": "u02-11",
+     "title": "Negative and past of desu",
+     "module": "The basic sentence"
+    },
+    {
+     "id": "u02-12",
+     "title": "The particle no",
+     "module": "The basic sentence"
+    },
+    {
+     "id": "u02-13",
+     "title": "Kore, sore, are and dore",
+     "module": "The basic sentence"
+    },
+    {
+     "id": "u02-14",
+     "title": "Kono, sono, ano and koko, soko, asoko",
+     "module": "The basic sentence"
+    },
+    {
+     "id": "u02-15",
+     "title": "Nationalities, languages and jobs",
+     "module": "The basic sentence"
+    },
+    {
+     "id": "u02-16",
+     "title": "Mo: also and too",
+     "module": "The basic sentence"
+    }
+   ]
+  },
+  {
+   "id": "u03",
+   "n": 3,
+   "title": "Verbs, Particles and Daily Routine",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u03-01",
+     "title": "Verb groups: ru-verbs, u-verbs and irregular verbs",
+     "module": "Verbs and the masu form"
+    },
+    {
+     "id": "u03-02",
+     "title": "The masu form: present and future",
+     "module": "Verbs and the masu form"
+    },
+    {
+     "id": "u03-03",
+     "title": "Negative and past masu forms",
+     "module": "Verbs and the masu form"
+    },
+    {
+     "id": "u03-04",
+     "title": "Mashou and masen ka: suggestions and invitations",
+     "module": "Verbs and the masu form"
+    },
+    {
+     "id": "u03-05",
+     "title": "The object particle o",
+     "module": "Core particles"
+    },
+    {
+     "id": "u03-06",
+     "title": "Ni and e: direction and destination",
+     "module": "Core particles"
+    },
+    {
+     "id": "u03-07",
+     "title": "De: place of action and means",
+     "module": "Core particles"
+    },
+    {
+     "id": "u03-08",
+     "title": "Ni for time and to for together",
+     "module": "Core particles"
+    },
+    {
+     "id": "u03-09",
+     "title": "Arimasu and imasu: existence and location",
+     "module": "Core particles"
+    },
+    {
+     "id": "u03-10",
+     "title": "Wa and ga: a first look",
+     "module": "Core particles"
+    },
+    {
+     "id": "u03-11",
+     "title": "Telling the time",
+     "module": "Time and routine"
+    },
+    {
+     "id": "u03-12",
+     "title": "Days of the week and dates",
+     "module": "Time and routine"
+    },
+    {
+     "id": "u03-13",
+     "title": "Daily routine",
+     "module": "Time and routine"
+    },
+    {
+     "id": "u03-14",
+     "title": "Frequency adverbs",
+     "module": "Time and routine"
+    },
+    {
+     "id": "u03-15",
+     "title": "Hoshii and tai: wants",
+     "module": "Time and routine"
+    }
+   ]
+  },
+  {
+   "id": "u04",
+   "n": 4,
+   "title": "Adjectives, Counters and Description",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u04-01",
+     "title": "I-adjectives: present and negative",
+     "module": "Adjectives"
+    },
+    {
+     "id": "u04-02",
+     "title": "Na-adjectives: present and negative",
+     "module": "Adjectives"
+    },
+    {
+     "id": "u04-03",
+     "title": "Past tense of adjectives",
+     "module": "Adjectives"
+    },
+    {
+     "id": "u04-04",
+     "title": "Adjectives before nouns and joining adjectives",
+     "module": "Adjectives"
+    },
+    {
+     "id": "u04-05",
+     "title": "Suki, kirai, jouzu and heta",
+     "module": "Adjectives"
+    },
+    {
+     "id": "u04-06",
+     "title": "Native numbers and the tsu counter",
+     "module": "Counting"
+    },
+    {
+     "id": "u04-07",
+     "title": "Counters: nin, mai, hon, hiki and others",
+     "module": "Counting"
+    },
+    {
+     "id": "u04-08",
+     "title": "Sound changes in counters",
+     "module": "Counting"
+    },
+    {
+     "id": "u04-09",
+     "title": "Large numbers, prices and shopping",
+     "module": "Counting"
+    },
+    {
+     "id": "u04-10",
+     "title": "Ages, years and duration",
+     "module": "Counting"
+    },
+    {
+     "id": "u04-11",
+     "title": "Comparisons: yori and no hou ga",
+     "module": "Comparing and locating"
+    },
+    {
+     "id": "u04-12",
+     "title": "Superlatives with ichiban",
+     "module": "Comparing and locating"
+    },
+    {
+     "id": "u04-13",
+     "title": "Position words: ue, shita, naka and more",
+     "module": "Comparing and locating"
+    },
+    {
+     "id": "u04-14",
+     "title": "Describing a room and a town",
+     "module": "Comparing and locating"
+    }
+   ]
+  },
+  {
+   "id": "u05",
+   "n": 5,
+   "title": "The Te-form and Plain Forms",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u05-01",
+     "title": "Making the te-form",
+     "module": "The te-form"
+    },
+    {
+     "id": "u05-02",
+     "title": "Te kudasai: requests",
+     "module": "The te-form"
+    },
+    {
+     "id": "u05-03",
+     "title": "Te imasu: ongoing actions and resulting states",
+     "module": "The te-form"
+    },
+    {
+     "id": "u05-04",
+     "title": "Te mo ii desu and te wa ikemasen",
+     "module": "The te-form"
+    },
+    {
+     "id": "u05-05",
+     "title": "Linking actions and states with the te-form",
+     "module": "The te-form"
+    },
+    {
+     "id": "u05-06",
+     "title": "Te kara: after doing",
+     "module": "The te-form"
+    },
+    {
+     "id": "u05-07",
+     "title": "The dictionary form",
+     "module": "Plain forms"
+    },
+    {
+     "id": "u05-08",
+     "title": "The nai form",
+     "module": "Plain forms"
+    },
+    {
+     "id": "u05-09",
+     "title": "The plain past: the ta form",
+     "module": "Plain forms"
+    },
+    {
+     "id": "u05-10",
+     "title": "Plain past negative: nakatta",
+     "module": "Plain forms"
+    },
+    {
+     "id": "u05-11",
+     "title": "Casual speech between friends",
+     "module": "Plain forms"
+    },
+    {
+     "id": "u05-12",
+     "title": "Ta koto ga aru: experiences",
+     "module": "Using plain forms"
+    },
+    {
+     "id": "u05-13",
+     "title": "Tari tari: listing actions",
+     "module": "Using plain forms"
+    },
+    {
+     "id": "u05-14",
+     "title": "To omoimasu and to iimasu",
+     "module": "Using plain forms"
+    },
+    {
+     "id": "u05-15",
+     "title": "Noun-modifying clauses",
+     "module": "Using plain forms"
+    },
+    {
+     "id": "u05-16",
+     "title": "Kara and node: giving reasons",
+     "module": "Using plain forms"
+    }
+   ]
+  },
+  {
+   "id": "u06",
+   "n": 6,
+   "title": "Everyday Life: GCSE Themes",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u06-01",
+     "title": "Family and relationships",
+     "module": "People and lifestyle"
+    },
+    {
+     "id": "u06-02",
+     "title": "Describing people: appearance and personality",
+     "module": "People and lifestyle"
+    },
+    {
+     "id": "u06-03",
+     "title": "Hobbies, sport and free time",
+     "module": "People and lifestyle"
+    },
+    {
+     "id": "u06-04",
+     "title": "Health, the body and illness",
+     "module": "People and lifestyle"
+    },
+    {
+     "id": "u06-05",
+     "title": "School life in Japan",
+     "module": "School and work"
+    },
+    {
+     "id": "u06-06",
+     "title": "Part-time work and future plans",
+     "module": "School and work"
+    },
+    {
+     "id": "u06-07",
+     "title": "Technology and social media",
+     "module": "School and work"
+    },
+    {
+     "id": "u06-08",
+     "title": "Home and housing",
+     "module": "Home, town and travel"
+    },
+    {
+     "id": "u06-09",
+     "title": "Town, directions and transport",
+     "module": "Home, town and travel"
+    },
+    {
+     "id": "u06-10",
+     "title": "Holidays and travel in Japan",
+     "module": "Home, town and travel"
+    },
+    {
+     "id": "u06-11",
+     "title": "Weather and seasons",
+     "module": "Home, town and travel"
+    },
+    {
+     "id": "u06-12",
+     "title": "Japanese food and eating out",
+     "module": "Food and shopping"
+    },
+    {
+     "id": "u06-13",
+     "title": "Shopping and clothes",
+     "module": "Food and shopping"
+    },
+    {
+     "id": "u06-14",
+     "title": "The environment and recycling",
+     "module": "The wider world"
+    },
+    {
+     "id": "u06-15",
+     "title": "Volunteering and global issues",
+     "module": "The wider world"
+    },
+    {
+     "id": "u06-16",
+     "title": "Festivals and celebrations: describing an event",
+     "module": "The wider world"
+    }
+   ]
+  },
+  {
+   "id": "u07",
+   "n": 7,
+   "title": "N4 Grammar: Ability, Intention and Conditions",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u07-01",
+     "title": "The potential form",
+     "module": "Ability and intention"
+    },
+    {
+     "id": "u07-02",
+     "title": "The volitional form and to omotte imasu",
+     "module": "Ability and intention"
+    },
+    {
+     "id": "u07-03",
+     "title": "Tsumori desu: plans",
+     "module": "Ability and intention"
+    },
+    {
+     "id": "u07-04",
+     "title": "Koto ga dekiru",
+     "module": "Ability and intention"
+    },
+    {
+     "id": "u07-05",
+     "title": "You ni naru and you ni suru",
+     "module": "Ability and intention"
+    },
+    {
+     "id": "u07-06",
+     "title": "Hazu desu: expectation",
+     "module": "Ability and intention"
+    },
+    {
+     "id": "u07-07",
+     "title": "The to conditional",
+     "module": "Conditionals"
+    },
+    {
+     "id": "u07-08",
+     "title": "The ba conditional",
+     "module": "Conditionals"
+    },
+    {
+     "id": "u07-09",
+     "title": "The tara conditional",
+     "module": "Conditionals"
+    },
+    {
+     "id": "u07-10",
+     "title": "Nara: if that is the case",
+     "module": "Conditionals"
+    },
+    {
+     "id": "u07-11",
+     "title": "Choosing a conditional",
+     "module": "Conditionals"
+    },
+    {
+     "id": "u07-12",
+     "title": "Ageru, kureru and morau",
+     "module": "Giving and receiving"
+    },
+    {
+     "id": "u07-13",
+     "title": "Te ageru, te kureru and te morau",
+     "module": "Giving and receiving"
+    },
+    {
+     "id": "u07-14",
+     "title": "The passive form",
+     "module": "Passive and causative"
+    },
+    {
+     "id": "u07-15",
+     "title": "The suffering passive",
+     "module": "Passive and causative"
+    },
+    {
+     "id": "u07-16",
+     "title": "The causative form",
+     "module": "Passive and causative"
+    },
+    {
+     "id": "u07-17",
+     "title": "The causative-passive",
+     "module": "Passive and causative"
+    }
+   ]
+  },
+  {
+   "id": "u08",
+   "n": 8,
+   "title": "Keigo and Social Register",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u08-01",
+     "title": "Plain, polite and honorific speech",
+     "module": "Levels of politeness"
+    },
+    {
+     "id": "u08-02",
+     "title": "Uchi and soto: in-group and out-group",
+     "module": "Levels of politeness"
+    },
+    {
+     "id": "u08-03",
+     "title": "Beautifying o and go",
+     "module": "Levels of politeness"
+    },
+    {
+     "id": "u08-04",
+     "title": "Sonkeigo: respectful verbs",
+     "module": "Honorific and humble language"
+    },
+    {
+     "id": "u08-05",
+     "title": "O ni naru and the honorific passive",
+     "module": "Honorific and humble language"
+    },
+    {
+     "id": "u08-06",
+     "title": "Kenjougo: humble verbs",
+     "module": "Honorific and humble language"
+    },
+    {
+     "id": "u08-07",
+     "title": "O shimasu: humble patterns",
+     "module": "Honorific and humble language"
+    },
+    {
+     "id": "u08-08",
+     "title": "Choosing sonkeigo or kenjougo",
+     "module": "Honorific and humble language"
+    },
+    {
+     "id": "u08-09",
+     "title": "Keigo in shops and restaurants",
+     "module": "Keigo in use"
+    },
+    {
+     "id": "u08-10",
+     "title": "Telephone Japanese",
+     "module": "Keigo in use"
+    },
+    {
+     "id": "u08-11",
+     "title": "Formal emails and letters",
+     "module": "Keigo in use"
+    },
+    {
+     "id": "u08-12",
+     "title": "Requests and refusals: indirectness",
+     "module": "Keigo in use"
+    },
+    {
+     "id": "u08-13",
+     "title": "Apologies and gratitude in formal settings",
+     "module": "Keigo in use"
+    },
+    {
+     "id": "u08-14",
+     "title": "Aizuchi and conversational etiquette",
+     "module": "Keigo in use"
+    }
+   ]
+  },
+  {
+   "id": "u09",
+   "n": 9,
+   "title": "N3 Grammar: Nuance and Viewpoint",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u09-01",
+     "title": "Te shimau: completion and regret",
+     "module": "Aspect with the te-form"
+    },
+    {
+     "id": "u09-02",
+     "title": "Te oku: doing in advance",
+     "module": "Aspect with the te-form"
+    },
+    {
+     "id": "u09-03",
+     "title": "Te aru: deliberate results",
+     "module": "Aspect with the te-form"
+    },
+    {
+     "id": "u09-04",
+     "title": "Te iku and te kuru",
+     "module": "Aspect with the te-form"
+    },
+    {
+     "id": "u09-05",
+     "title": "Te miru: trying",
+     "module": "Aspect with the te-form"
+    },
+    {
+     "id": "u09-06",
+     "title": "Sou desu: hearsay",
+     "module": "Hearsay and appearance"
+    },
+    {
+     "id": "u09-07",
+     "title": "Sou desu: it looks like",
+     "module": "Hearsay and appearance"
+    },
+    {
+     "id": "u09-08",
+     "title": "Rashii",
+     "module": "Hearsay and appearance"
+    },
+    {
+     "id": "u09-09",
+     "title": "You da and mitai da",
+     "module": "Hearsay and appearance"
+    },
+    {
+     "id": "u09-10",
+     "title": "Kamoshirenai and darou",
+     "module": "Hearsay and appearance"
+    },
+    {
+     "id": "u09-11",
+     "title": "Noni: despite and in order to",
+     "module": "Advanced structures"
+    },
+    {
+     "id": "u09-12",
+     "title": "Tame ni and you ni: purpose",
+     "module": "Advanced structures"
+    },
+    {
+     "id": "u09-13",
+     "title": "Bakari and tokoro",
+     "module": "Advanced structures"
+    },
+    {
+     "id": "u09-14",
+     "title": "Wake and hazu: reasoning",
+     "module": "Advanced structures"
+    },
+    {
+     "id": "u09-15",
+     "title": "Nagara and aida ni",
+     "module": "Advanced structures"
+    },
+    {
+     "id": "u09-16",
+     "title": "Shika and dake",
+     "module": "Advanced structures"
+    },
+    {
+     "id": "u09-17",
+     "title": "Sentence-ending particles ne, yo and yo ne",
+     "module": "Advanced structures"
+    }
+   ]
+  },
+  {
+   "id": "u10",
+   "n": 10,
+   "title": "Kanji and Reading to N3",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u10-01",
+     "title": "The Joyo kanji list and the JLPT levels",
+     "module": "The kanji system"
+    },
+    {
+     "id": "u10-02",
+     "title": "Radicals and semantic-phonetic kanji",
+     "module": "The kanji system"
+    },
+    {
+     "id": "u10-03",
+     "title": "Kanji compounds: on and kun readings together",
+     "module": "The kanji system"
+    },
+    {
+     "id": "u10-04",
+     "title": "Rendaku and sound changes in compounds",
+     "module": "The kanji system"
+    },
+    {
+     "id": "u10-05",
+     "title": "Homophones and choosing the right kanji",
+     "module": "The kanji system"
+    },
+    {
+     "id": "u10-06",
+     "title": "Native, Sino-Japanese and loan vocabulary",
+     "module": "Building vocabulary"
+    },
+    {
+     "id": "u10-07",
+     "title": "Four-character compounds and set phrases",
+     "module": "Building vocabulary"
+    },
+    {
+     "id": "u10-08",
+     "title": "Onomatopoeia: giongo and gitaigo",
+     "module": "Building vocabulary"
+    },
+    {
+     "id": "u10-09",
+     "title": "Using a Japanese dictionary",
+     "module": "Building vocabulary"
+    },
+    {
+     "id": "u10-10",
+     "title": "Reading signs and notices",
+     "module": "Reading"
+    },
+    {
+     "id": "u10-11",
+     "title": "Reading emails and messages",
+     "module": "Reading"
+    },
+    {
+     "id": "u10-12",
+     "title": "Reading news and articles",
+     "module": "Reading"
+    },
+    {
+     "id": "u10-13",
+     "title": "Reading stories",
+     "module": "Reading"
+    },
+    {
+     "id": "u10-14",
+     "title": "Vertical writing and Japanese punctuation",
+     "module": "Reading"
+    },
+    {
+     "id": "u10-15",
+     "title": "Strategies for unknown kanji",
+     "module": "Reading"
+    }
+   ]
+  },
+  {
+   "id": "u11",
+   "n": 11,
+   "title": "Japanese Culture and Society",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u11-01",
+     "title": "A short history of Japan",
+     "module": "History and belief"
+    },
+    {
+     "id": "u11-02",
+     "title": "Shinto and Buddhism in everyday life",
+     "module": "History and belief"
+    },
+    {
+     "id": "u11-03",
+     "title": "The history of the writing system",
+     "module": "History and belief"
+    },
+    {
+     "id": "u11-04",
+     "title": "Festivals and the Japanese calendar",
+     "module": "Traditions and customs"
+    },
+    {
+     "id": "u11-05",
+     "title": "New Year in Japan",
+     "module": "Traditions and customs"
+    },
+    {
+     "id": "u11-06",
+     "title": "The tea ceremony and traditional arts",
+     "module": "Traditions and customs"
+    },
+    {
+     "id": "u11-07",
+     "title": "Gift-giving, bowing and etiquette",
+     "module": "Traditions and customs"
+    },
+    {
+     "id": "u11-08",
+     "title": "Anime, manga and popular culture",
+     "module": "Modern Japan"
+    },
+    {
+     "id": "u11-09",
+     "title": "Work culture and society",
+     "module": "Modern Japan"
+    },
+    {
+     "id": "u11-10",
+     "title": "An ageing society",
+     "module": "Modern Japan"
+    },
+    {
+     "id": "u11-11",
+     "title": "Japanese cities and regions",
+     "module": "Modern Japan"
+    },
+    {
+     "id": "u11-12",
+     "title": "Dialects: Kansai-ben and standard Japanese",
+     "module": "Modern Japan"
+    },
+    {
+     "id": "u11-13",
+     "title": "Washoku: Japanese food culture",
+     "module": "Modern Japan"
+    },
+    {
+     "id": "u11-14",
+     "title": "Japan and the world",
+     "module": "Modern Japan"
+    }
+   ]
+  },
+  {
+   "id": "u12",
+   "n": 12,
+   "title": "Exam Skills: GCSE and JLPT",
+   "written": false,
+   "lessons": [
+    {
+     "id": "u12-01",
+     "title": "The JLPT: levels and format",
+     "module": "The exams"
+    },
+    {
+     "id": "u12-02",
+     "title": "GCSE Japanese: the four skills",
+     "module": "The exams"
+    },
+    {
+     "id": "u12-03",
+     "title": "Listening strategies",
+     "module": "Receptive skills"
+    },
+    {
+     "id": "u12-04",
+     "title": "Reading strategies for exams",
+     "module": "Receptive skills"
+    },
+    {
+     "id": "u12-05",
+     "title": "JLPT vocabulary and grammar questions",
+     "module": "Receptive skills"
+    },
+    {
+     "id": "u12-06",
+     "title": "Speaking: role plays",
+     "module": "Productive skills"
+    },
+    {
+     "id": "u12-07",
+     "title": "Speaking: photo description and conversation",
+     "module": "Productive skills"
+    },
+    {
+     "id": "u12-08",
+     "title": "Writing: short texts in kana and kanji",
+     "module": "Productive skills"
+    },
+    {
+     "id": "u12-09",
+     "title": "Writing: longer texts and genkou youshi",
+     "module": "Productive skills"
+    },
+    {
+     "id": "u12-10",
+     "title": "Translation from Japanese",
+     "module": "Productive skills"
+    },
+    {
+     "id": "u12-11",
+     "title": "Translation into Japanese",
+     "module": "Productive skills"
+    },
+    {
+     "id": "u12-12",
+     "title": "Pronunciation and pitch in speaking exams",
+     "module": "Productive skills"
+    },
+    {
+     "id": "u12-13",
+     "title": "Common errors and how to avoid them",
+     "module": "Productive skills"
+    }
+   ]
+  }
+ ],
+ "interactives": []
+}

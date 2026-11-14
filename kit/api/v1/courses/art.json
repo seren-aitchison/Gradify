@@ -668,7 +668,7 @@
    "id": "u06",
    "n": 6,
    "title": "Photography, Moving Image and Digital Art",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u06-01",
@@ -746,7 +746,7 @@
    "id": "u07",
    "n": 7,
    "title": "Graphic and Communication Design",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u07-01",
@@ -824,7 +824,7 @@
    "id": "u08",
    "n": 8,
    "title": "Art History: The Ancient World to the Renaissance",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u08-01",

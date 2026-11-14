@@ -443,7 +443,7 @@
    "id": "u03",
    "n": 3,
    "title": "Philosophy of Research",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u03-01",
@@ -526,7 +526,7 @@
    "id": "u04",
    "n": 4,
    "title": "Research Design",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u04-01",
@@ -614,7 +614,7 @@
    "id": "u05",
    "n": 5,
    "title": "Quantitative Methods and Statistics",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u05-01",

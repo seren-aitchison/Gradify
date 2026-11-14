@@ -1,648 +1,545 @@
-// InvestorGradify Diversification and Portfolio Theory (content standard 2). Added by scripts/new-course.mjs add-notes.
+// School 5: Diversification and Portfolio Theory. Written to content standard 2 (docs/CURRICULUM_CONTENT_STANDARD.md):
+// objectives, key terms, summaries, typed and dated sources, evidence status (EV:) and questions at three levels
+// (Foundation, Application, Evaluation) in every lesson. Education, not financial advice: no portfolio here is a
+// recommendation and worked numbers are illustrative. Explanations are original; sources are those used for checking,
+// pending human verification.
 export default `
 ## Why diversification works
 LV: Introductory · Foundation
-S: Diversification means spreading money across many investments so that no single loss is devastating. This lesson explains why combining investments reduces risk without necessarily reducing expected return.
-O: Explain what diversification is
-O: Show why combining investments reduces the volatility of a portfolio
-O: Distinguish diversification from simply owning many similar assets
-H: Not putting all your eggs in one basket
-P: **Diversification** spreads money across different investments, such as many companies, sectors, countries and asset classes. If one investment falls sharply, others may hold steady or rise, so the overall portfolio is less affected. Harry Markowitz, who developed modern portfolio theory in 1952, showed that the **risk of a portfolio** depends not only on the risk of each holding but on how their returns **move together**. Diversification has been called "the only free lunch in investing" because it can reduce risk without lowering expected return.
-H: How it works
-- Each investment's return is partly **specific** to it, from company news or events, and partly driven by **market-wide** forces.
-- Specific ups and downs in different holdings partly **cancel out** when combined.
-- The portfolio's expected return is the **weighted average** of the holdings' expected returns, but its volatility is usually **lower** than the weighted average volatility.
-- The benefit is greatest when holdings are **not closely correlated**.
-H: Real diversification
-- Owning 20 technology shares is less diversified than owning 20 shares across different sectors and countries.
-- Diversification does not eliminate risk: in a general market fall, most shares decline together.
-- Broad index funds give wide diversification at low cost.
-X: One share versus a fund.
-> Investor A puts £10,000 into a single company. It issues a profit warning and its shares fall 40%: a loss of £4,000.
-> Investor B puts £10,000 into a fund holding 500 companies, including the same one at 0.2% of the fund.
-> The profit warning reduces B's portfolio by only about 0.08%, or £8.
-> B is still exposed to the market as a whole, but not to the fate of one company.
-K: Diversification spreads money across many different investments so that specific losses are offset by other holdings; because portfolio risk depends on how returns move together, combining imperfectly correlated assets lowers volatility without necessarily lowering expected return, though it cannot remove market-wide risk.
-!: Thinking diversification means owning many funds that hold the same shares. Real diversification needs holdings that behave differently.
-EV: established | Combining assets that are not perfectly correlated reduces portfolio volatility.
-T: Diversification | Spreading investments to reduce the impact of any single loss
-T: Volatility | How much an investment's returns vary over time
-T: Portfolio | The collection of investments a person holds
-SUM: Spread money across different assets.
-SUM: Specific risks partly cancel out.
-SUM: Market risk remains.
-SRC: Markowitz H., "Portfolio selection", Journal of Finance 7(1), 77–91 | primary | 1952
-SRC: Bodie Z., Kane A. and Marcus A. J., Investments, 12th edition, McGraw-Hill | secondary | 2021
-Q: Why is diversification sometimes called a "free lunch"? | It can reduce risk without necessarily reducing expected return.
-Q: Can diversification remove all investment risk? | No, market-wide risk remains.
-M1#investing-u05-01-q1@1: What does diversification mean? | Spreading money across different investments | Putting all money in one share | Holding only cash | Trading as often as possible | Applying the standard result: It spreads risk.
-M2#investing-u05-01-q2@2: When is diversification most effective? | When holdings are not closely correlated | When all holdings move together | When you own one sector only | When you hold only one fund | Applying the standard result: Low correlation helps most.
-NUM2#investing-u05-01-q3@2: A fund holds a company at 0.5% of its value. If that company's shares fall 40%, by how much does the fund fall, in per cent? | 0.2 | 0.01 | % | 0.5% × 40% = 0.2% fall in the fund.
-M3#investing-u05-01-q4@3: An investor holds five funds that all track the same UK index. How diversified is she? | Barely more than holding one of the funds | Very well diversified globally | Fully protected from market falls | Diversified across asset classes | Applying the standard result: The funds hold the same shares.
-SA2#investing-u05-01-q5@2,3: Explain why diversification reduces risk but cannot eliminate it. | Each investment's return includes specific events, such as a company's results, and market-wide movements. When many different investments are combined, specific gains and losses partly cancel out, so the portfolio is less volatile than its parts. But market-wide forces, such as recessions or interest rate changes, affect most investments together, so this systematic risk remains however many holdings are added. | Specific events ; Cancelling out ; Market-wide forces ; Remaining risk
+S: Diversification means spreading money across many investments that do not all move together. Because their ups and downs partly cancel out, a diversified portfolio is less volatile than its parts, without giving up expected return. It has been called the only free lunch in investing.
+O: Explain how combining imperfectly correlated assets reduces risk
+O: Calculate the expected return and risk of a simple two-asset portfolio
+O: Evaluate the limits of diversification
+H: The idea
+P: A portfolio's **expected return** is simply the weighted average of its holdings' expected returns. Its **risk**, however, is usually lower than the weighted average of their risks, because when one holding falls another may rise or fall less. The less closely holdings move together, the bigger the reduction. Harry Markowitz formalised this in 1952, and it is the foundation of modern portfolio management.
+E: Expected return of portfolio = Σ weight × expected return
+E: σ_{p}² = w_{1}²σ_{1}² + w_{2}²σ_{2}² + 2w_{1}w_{2}ρσ_{1}σ_{2} :: ρ is the correlation between the two assets
+X: Half in Asset A (expected 8%, volatility 15%) and half in Asset B (expected 6%, volatility 12%), with correlation 0.2 (illustrative).
+> Expected return = 0.5 × 8% + 0.5 × 6% = 7%.
+> Variance = 0.25 × 0.0225 + 0.25 × 0.0144 + 2 × 0.25 × 0.2 × 0.15 × 0.12 = 0.011025; volatility = 10.5%.
+> The weighted average volatility is 13.5%, so diversification removed 3 percentage points of risk at no cost to expected return.
+H: What it cannot do
+- It cannot remove **market risk**: in a global crash most shares fall together.
+- Correlations tend to **rise in crises**, just when diversification is most wanted.
+- It reduces the chance of a spectacular result as well as a disastrous one: you will never own only the best performer.
+K: Diversification lowers risk without lowering expected return, because imperfectly correlated holdings partly offset each other; it cannot remove market-wide risk.
+!: Thinking you are diversified because you own many funds. If they all hold the same large companies, the overlap leaves you concentrated.
+EV: established | Combining assets that are not perfectly correlated produces portfolio volatility below the weighted average of individual volatilities (Markowitz, 1952).
+EV: established | Correlations between risky assets tend to increase during market crises.
+T: Diversification | Spreading investments across assets that do not move perfectly together to reduce risk
+T: Portfolio | The collection of investments held by an investor
+SUM: Portfolio return is a weighted average; portfolio risk is lower when holdings are imperfectly correlated.
+SUM: Diversification removes specific risk at no cost but cannot remove market risk, and correlations rise in crises.
+SRC: Markowitz H., Portfolio selection, Journal of Finance 7(1) | primary | 1952
+SRC: Bodie Z., Kane A. and Marcus A. J., Investments (12th edition), McGraw Hill: optimal risky portfolios | secondary | 2021
+Q: Why is diversification called a free lunch? | It reduces risk without reducing expected return.
+Q: Which risk can diversification not remove? | Market (systematic) risk.
+M1#investing-u05-01-q1@1: What determines how much diversification reduces risk? | How closely the holdings' returns move together (their correlation) | The number of letters in each fund's name | The size of each company's head office | Whether shares pay dividends | Lower correlation means more offsetting and more risk reduction.
+NUM2#investing-u05-01-q2@2: A portfolio is 60% in shares expected to return 8% and 40% in bonds expected to return 3%. What is its expected return as a percentage? | 6 | 0.01 | % | Weighted average: 0.6 × 8% + 0.4 × 3% = 4.8% + 1.2% = 6%.
+M2#investing-u05-01-q3@2: Two assets each have 20% volatility. If they are perfectly correlated (ρ = 1), what is the volatility of a 50/50 portfolio? | 20%: with perfect correlation there is no diversification benefit | 10% | 0% | 28% | With ρ = 1 the portfolio volatility equals the weighted average, so no risk is removed.
+M3#investing-u05-01-q4@3: In a severe global crash most of an investor's holdings fall together. Which is the best evaluation? | Diversification still helped against specific risk, but rising correlations in crises limit its protection against market-wide falls | Diversification has failed and should be abandoned | The investor must not have owned any shares | Diversification guarantees protection in crashes | Diversification is not insurance against systematic falls; bonds and cash may help more in such periods.
+SA3#investing-u05-01-q5@1,3: Evaluate the claim that diversification is "the only free lunch in investing". | Diversification reduces volatility without lowering expected return, because imperfectly correlated holdings partly cancel, which is genuinely free in that sense. But it cannot remove market risk, correlations rise in crises, it gives up the chance of concentrated windfalls, and over-diversification across costly funds can add fees. Broadly it is free, but it is not unlimited protection. | Risk reduced without lower expected return ; Correlation is the mechanism ; Market risk remains ; Correlations rise in crises ; Costs or concentrated upside caveat
 
 ## Correlation between assets
-LV: Introductory · Application
-S: Correlation measures how investments move in relation to each other. This lesson explains correlation coefficients, how correlation affects portfolio risk, and why correlations can change in crises.
-O: Interpret correlation coefficients between assets
-O: Explain how correlation affects portfolio volatility
-O: Recognise that correlations can rise in market crises
-H: Measuring correlation
-P: The **correlation coefficient** (ρ) ranges from **+1** to **−1**. A value of +1 means two assets always move in the same direction in proportion; 0 means no linear relationship; −1 means they always move in opposite directions. Shares in the same sector tend to have high positive correlations; shares and high-quality government bonds have often had low or negative correlations, though not always.
-H: Correlation and portfolio risk
-- For two assets, portfolio volatility is σ_p = √(w_{1}^{2}σ_{1}^{2} + w_{2}^{2}σ_{2}^{2} + 2w_{1}w_{2}ρσ_{1}σ_{2}).
-- If ρ = +1, there is **no diversification benefit**: portfolio volatility is the weighted average.
-- The lower the correlation, the lower the portfolio's volatility.
-- With ρ = −1, risk could in theory be eliminated with the right weights.
-E: σ_p = √(w_{1}^{2}σ_{1}^{2} + w_{2}^{2}σ_{2}^{2} + 2w_{1}w_{2}ρσ_{1}σ_{2}) :: volatility of a two-asset portfolio
+LV: Intermediate · Application
+S: Correlation measures how closely two assets' returns move together, on a scale from −1 to +1. It is the key input to diversification: assets with low or negative correlation combine to give smoother portfolios.
+O: Interpret correlation coefficients between −1 and +1
+O: Calculate portfolio volatility for different correlations
+O: Evaluate the stability of correlations over time
+H: The scale
+- **+1**: perfect positive correlation; the assets always move in step, so no diversification benefit.
+- **0**: no linear relationship; substantial risk reduction.
+- **−1**: perfect negative correlation; risk can in principle be eliminated.
+P: Shares in the same country and sector tend to have high positive correlations; shares and high-quality government bonds have often had low or negative correlations in recent decades, though not in 2022; cash has almost no correlation with anything. Correlation is calculated from historical returns and is related to **covariance**: covariance = ρ × σ_{1} × σ_{2}.
+X: A portfolio is 60% shares (volatility 20%) and 40% bonds (volatility 8%) (illustrative).
+> Correlation +1: volatility = 0.6 × 20% + 0.4 × 8% = 15.2%.
+> Correlation 0: volatility = √(0.36 × 0.04 + 0.16 × 0.0064) = 12.4%.
+> Correlation −0.5: volatility = 10.8%. The lower the correlation, the smoother the portfolio.
 H: Correlations change
-- Correlations are estimated from past data and vary over time.
-- In crises, such as 2008, many risky assets fell together and correlations rose, reducing diversification just when it was most needed.
-- In 2022, both shares and bonds fell as interest rates rose, showing that the usual negative share–bond correlation is not guaranteed.
-X: Two assets with equal volatility.
-> Two assets each have volatility of 20%, and you hold 50% in each.
-> If ρ = +1, portfolio volatility is 20%: no benefit.
-> If ρ = 0, volatility is √(0.25 × 0.04 + 0.25 × 0.04), which is √0.02, about 14.1%.
-> Lower correlation substantially reduces risk with the same expected return.
-K: Correlation, from +1 to −1, measures how assets move together; lower correlation means greater diversification benefit, as the two-asset volatility formula shows, but correlations are estimated from the past and can rise sharply in crises.
-!: Assuming historical correlations will always hold. In crises, many assets fall together.
-EV: established | Correlations between risky assets tend to increase during market crises.
-EV: contested | Whether shares and bonds will remain negatively correlated in future is debated, especially when inflation is high.
-T: Correlation coefficient | A measure from −1 to +1 of how two variables move together
-T: Positive correlation | A tendency to move in the same direction
-T: Negative correlation | A tendency to move in opposite directions
-SUM: Correlation ranges from −1 to +1.
-SUM: Lower correlation, lower risk.
-SUM: Correlations change in crises.
-SRC: Markowitz H., "Portfolio selection", Journal of Finance 7(1), 77–91 | primary | 1952
-SRC: Bodie Z., Kane A. and Marcus A. J., Investments, 12th edition, McGraw-Hill | secondary | 2021
-Q: What does a correlation of 0 mean? | There is no linear relationship between the two assets' returns.
-Q: Why did diversification seem to fail in 2008? | Correlations between risky assets rose as many fell together.
-M1#investing-u05-02-q1@1: What correlation gives no diversification benefit? | +1 | 0 | −0.5 | −1 | Perfectly correlated assets move together.
-M2#investing-u05-02-q2@2: What happened to share–bond correlation in 2022? | Both fell together as interest rates rose | Bonds rose sharply as shares fell | Shares rose and bonds fell | Neither asset changed | Applying the standard result: Rising rates hit both.
-NUM2#investing-u05-02-q3@2: Two assets each have 10% volatility, are held 50:50 and have ρ = 0. What is portfolio volatility, in per cent, to one decimal place? | 7.1 | 0.05 | % | √(0.25 × 0.01 × 2) = √0.005, about 0.0707, or 7.1%.
-M3#investing-u05-02-q4@3: An investor relies on past correlations to build a portfolio. What is the main risk? | Correlations may rise in a crisis, reducing protection | Correlations always fall in crises | Past data are always perfect predictors | Correlation has no effect on risk | Applying the standard result: Relationships change.
-SA2#investing-u05-02-q5@2,3: Explain how correlation affects the benefits of diversification. | Portfolio volatility depends on each asset's volatility, its weight and the correlations between assets. If assets are perfectly correlated, their movements never offset, so combining them gives no reduction in risk. As correlation falls, gains in one asset more often offset losses in another, so portfolio volatility falls below the weighted average, with the greatest benefit at low or negative correlation, though correlations can change over time. | Formula components ; Perfect correlation ; Lower correlation ; Changing correlations
+P: Correlation is not a fixed property. The share–bond correlation was mostly positive in the high-inflation decades before the late 1990s, mostly negative from about 2000 to 2021, then positive again in 2022. In crises, correlations between risky assets often jump towards +1. Portfolios built on recent correlations alone can disappoint.
+K: Correlation from −1 to +1 measures co-movement; lower correlation means greater diversification benefit, but correlations shift over time and rise in crises.
+!: Assuming correlation means causation, or that a historical correlation will hold in the next crisis.
+EV: established | The correlation between US and UK equity and government bond returns has changed sign over recent decades, varying with the inflation environment.
+T: Correlation coefficient | A measure from −1 to +1 of how closely two variables move together
+T: Covariance | A measure of how two variables move together, equal to correlation times the two standard deviations
+T: Negative correlation | A relationship in which one variable tends to rise when the other falls
+SUM: Correlation runs from −1 (opposite) through 0 (unrelated) to +1 (in step).
+SUM: Lower correlations give smoother portfolios, but correlations change with economic conditions.
+SRC: Markowitz H., Portfolio selection, Journal of Finance 7(1) | primary | 1952
+SRC: Dimson E., Marsh P. and Staunton M., UBS Global Investment Returns Yearbook: stock–bond correlation | data | 2024
+Q: What does a correlation of zero mean? | No linear relationship between the two assets' returns.
+Q: How is covariance related to correlation? | Covariance = correlation × σ1 × σ2.
+M1#investing-u05-02-q1@1: What correlation gives no diversification benefit? | +1 | 0 | −1 | −0.5 | Perfectly correlated assets move in step, so combining them does not reduce volatility.
+NUM2#investing-u05-02-q2@2: Two assets have volatilities of 15% and 10% and a correlation of 0.4. What is their covariance, as a decimal to four places? | 0.006 | 0.0001 |  | Covariance = 0.4 × 0.15 × 0.10 = 0.006.
+M2#investing-u05-02-q3@2,3: Which pair would usually offer the largest diversification benefit? | Global shares and high-quality short-dated government bonds | Two UK bank shares | Two FTSE 100 tracker funds | A FTSE 100 fund and a FTSE All-Share fund | Pairs from different asset classes have lower correlations; the others overlap heavily.
+M3#investing-u05-02-q4@3: Why did many 60/40 share–bond portfolios fall sharply in 2022? | Rising inflation and interest rates turned the share–bond correlation positive, so both fell together | Bonds were removed from the indices | Share–bond correlation is always +1 | Diversification was banned | Correlation depends on the economic regime; inflation shocks hurt both.
+SA3#investing-u05-02-q5@1,3: Evaluate the use of historical correlations to build a portfolio. | Historical correlations show which assets have moved together and give a reasoned starting point for diversification. But they vary with the period and economic regime, rise in crises, and are estimated with error. Robust portfolios assume correlations may be higher than history suggests, diversify across genuinely different return drivers, and test scenarios such as inflation shocks. | Useful starting point ; Vary with period and regime ; Rise in crises ; Estimation error ; Robust approach and scenarios
 
 ## Specific and systematic risk
 LV: Introductory · Application
-S: Investment risk has two parts: risk specific to individual holdings, which diversification can reduce, and systematic risk, which affects the whole market. This lesson explains the difference and why only systematic risk is rewarded.
-O: Distinguish specific risk from systematic risk
-O: Explain how diversification affects each type
-O: Explain why investors are not rewarded for specific risk
+S: Total risk divides into specific risk, unique to a company or sector, and systematic risk, which affects the whole market. Diversification removes most specific risk; systematic risk remains and is the risk investors are rewarded for bearing.
+O: Distinguish specific risk from systematic risk with examples
+O: Explain why only systematic risk earns a risk premium
+O: Evaluate the risks of holding concentrated positions, such as employer shares
 H: Two kinds of risk
-P: **Specific risk** (also called unsystematic, idiosyncratic or diversifiable risk) comes from events affecting a particular company or sector: a product failure, a fraud, a lawsuit or a strike. **Systematic risk** (market or non-diversifiable risk) comes from forces affecting the whole market: recessions, interest rate changes, inflation, pandemics and political shocks. Total risk is the sum of both.
-H: Diversification and risk
-- Adding more holdings reduces **specific risk**, because company-specific events tend to cancel out.
-- **Systematic risk** remains, however many shares you own, because they all respond to the same market forces.
-- A well-diversified portfolio is left mainly with systematic risk.
-H: Reward for risk
-- Because specific risk can be removed cheaply by diversifying, markets do not generally offer extra expected return for bearing it.
-- Investors expect to be rewarded for bearing **systematic risk**, which cannot be diversified away.
-- This idea underpins the capital asset pricing model.
-- Concentrated portfolios take on risk that is unlikely to be rewarded on average.
-X: Two kinds of loss.
-> A pharmaceutical company's key drug fails a trial, and its shares fall 30%: specific risk.
-> A diversified investor holding hundreds of companies barely notices.
-> In March 2020, the pandemic caused most shares worldwide to fall sharply: systematic risk.
-> The diversified investor's portfolio fell too, because systematic risk cannot be diversified away.
-K: Specific risk arises from events affecting individual companies and can be reduced by diversification, while systematic risk comes from market-wide forces and remains; because specific risk can be diversified cheaply, investors are rewarded on average only for bearing systematic risk.
-!: Expecting a higher return for holding a few concentrated shares. Specific risk is not generally rewarded.
-EV: established | Diversification substantially reduces specific risk in a portfolio of shares.
-T: Specific risk | Risk from events affecting a particular company or sector
-T: Systematic risk | Risk from market-wide forces that cannot be diversified away
-T: Idiosyncratic | Specific to one company or asset
-SUM: Specific risk can be diversified.
-SUM: Systematic risk remains.
-SUM: Only systematic risk is rewarded.
-SRC: Sharpe W. F., "Capital asset prices: a theory of market equilibrium under conditions of risk", Journal of Finance 19(3), 425–442 | primary | 1964
-SRC: Bodie Z., Kane A. and Marcus A. J., Investments, 12th edition, McGraw-Hill | secondary | 2021
-Q: Give an example of specific risk. | A company's key product failing (also a fraud, lawsuit or strike at that company).
-Q: Why are investors not rewarded for specific risk? | It can be removed cheaply through diversification.
-M1#investing-u05-03-q1@1: Which is an example of systematic risk? | A global recession | A single company's product recall | One firm's chief executive resigning | A strike at one factory | Applying the standard result: Recessions affect the whole market.
-M2#investing-u05-03-q2@2: What happens to specific risk as more holdings are added? | It falls | It rises | It stays the same | It becomes systematic risk | Applying the standard result: Specific events cancel out.
-M3#investing-u05-03-q3@3: Why did diversified portfolios still fall in March 2020? | Systematic risk from the pandemic affected most shares | Diversification increases risk in crises | Specific risk rose for every company | Diversified funds hold no shares | Applying the standard result: Market-wide shocks remain.
-MATCH1#investing-u05-03-q4@2: Match each event to its type of risk. | Rise in interest rates = Systematic ; Fraud at one bank = Specific ; Pandemic market crash = Systematic ; Failed drug trial = Specific | Specific events affect individual firms.
-SA2#investing-u05-03-q5@2,3: Explain why concentrated portfolios are unlikely to be rewarded with higher returns on average. | A concentrated portfolio carries a large amount of specific risk from the few companies it holds. Because investors can remove this risk cheaply by diversifying, competitive markets do not generally offer extra expected return for bearing it. Investors are rewarded for systematic risk, which cannot be diversified, so concentration adds volatility without a corresponding increase in expected return. | Concentration ; Diversifiable risk ; No reward ; Systematic risk rewarded
+- **Specific (unsystematic, idiosyncratic) risk**: a product recall, a fraud, a failed drug trial, a chief executive leaving. It affects one company or sector.
+- **Systematic (market) risk**: recessions, interest-rate changes, inflation, pandemics. It affects nearly all companies.
+E: Total risk = systematic risk + specific risk :: in variance terms
+P: Because specific risks are largely independent across companies, they cancel out in a large portfolio. Systematic risk does not, because it hits everything at once.
+H: Why only systematic risk is rewarded
+P: If specific risk can be removed cheaply by diversifying, markets do not need to pay investors for bearing it: any investor who chooses to hold it could get rid of it at little cost. Capital market theory therefore predicts that expected returns depend on systematic risk alone (see The capital asset pricing model).
+X: An employee holds 60% of their savings in their employer's shares (illustrative).
+> If the company fails, they lose both their job and most of their savings at once.
+> The concentration adds large specific risk with no extra expected return.
+> Examples such as Enron in 2001, where many employees held company stock in their retirement plans, show the danger.
+K: Specific risk can be diversified away and earns no premium; systematic risk cannot be diversified and is what investors are paid to bear.
+!: Holding a large stake in your employer's shares because you "know the company". Your income already depends on it.
+EV: established | Specific risk falls rapidly as the number of holdings increases, while market risk remains.
+EV: established | Employees concentrated in employer stock suffered heavy losses when firms such as Enron collapsed.
+T: Specific risk | Risk unique to a company or sector, which diversification can reduce
+T: Systematic risk | Risk affecting the whole market, which diversification cannot remove
+T: Concentration risk | Risk from holding a large share of a portfolio in one investment, sector or country
+SUM: Total risk = systematic + specific; diversification removes most specific risk.
+SUM: Only systematic risk is rewarded, so concentrated positions add risk without extra expected return.
+SRC: Sharpe W. F., Capital asset prices: a theory of market equilibrium under conditions of risk, Journal of Finance 19(3) | primary | 1964
+SRC: Bodie Z., Kane A. and Marcus A. J., Investments (12th edition), McGraw Hill | secondary | 2021
+Q: Give an example of specific risk. | Any company-specific event such as a product recall, fraud, failed trial or loss of a key contract.
+Q: Why does specific risk earn no premium? | Because it can be diversified away cheaply, so markets do not compensate investors for bearing it.
+M1#investing-u05-03-q1@1: Which is an example of systematic risk? | A rise in interest rates that affects all companies | A fraud at one company | A failed drug trial | A factory fire | Market-wide shocks such as interest-rate changes are systematic.
+M2#investing-u05-03-q2@2: An investor holds one pharmaceutical company's shares. Its main drug fails a trial and the price halves. What type of risk caused the loss? | Specific risk | Systematic risk | Currency risk | Inflation risk | The event is unique to that company and could have been diversified away.
+TF2#investing-u05-03-q3@1,2: Adding more shares from different sectors to a portfolio reduces its systematic risk. | false | Diversification reduces specific risk; systematic risk affects all shares and remains.
+M3#investing-u05-03-q4@3: Why is holding a large share of savings in an employer's shares particularly risky? | The employee's income and savings depend on the same company, so a failure hits both at once | Employer shares never pay dividends | It is illegal | It removes systematic risk | Concentration combines human capital and financial capital risk in one company.
+SA3#investing-u05-03-q5@1,3: Explain why a diversified investor should not expect extra return for holding a single risky share. | A single share's risk is mostly specific, which can be removed by holding many shares. Since diversified investors set prices and do not bear specific risk, the market does not pay a premium for it. Expected returns reflect only systematic risk (as in CAPM), so concentrated holdings carry extra volatility without extra expected reward. | Single shares mainly specific risk ; Specific risk diversifiable ; Diversified investors set prices ; Only systematic risk rewarded ; Conclusion on concentration
 
 ## How many holdings are enough?
 LV: Intermediate · Application
-S: How many shares does a portfolio need to be diversified? This lesson reviews the evidence from classic studies, the effect of concentration in indices, and the case for broad funds.
-O: Summarise research on the number of holdings needed for diversification
-O: Explain diminishing returns to adding holdings
-O: Evaluate the case for broad index funds
-H: Early studies
-P: In 1968, John Evans and Stephen Archer found that most of the reduction in volatility from diversifying came with the first **10 or so** randomly chosen US shares. Later studies, such as Meir Statman's in 1987, argued that **30 to 40 or more** shares were needed when the costs and benefits were balanced. More recent research suggests that, because individual share volatility has increased, investors need even more holdings to achieve the same reduction in specific risk.
+S: Adding holdings reduces specific risk quickly at first and then more slowly. Research suggests a few dozen well-spread shares remove most specific risk, but for most private investors a fund holding hundreds or thousands is simpler and cheaper.
+O: Describe how portfolio risk falls as the number of holdings rises
+O: Calculate the volatility of an equally weighted portfolio of n similar shares
+O: Evaluate direct share portfolios against diversified funds
 H: Diminishing returns
-- Each additional holding reduces specific risk by less than the one before.
-- Going from 1 to 10 holdings removes much specific risk; going from 100 to 110 adds little.
-- But even with dozens of holdings, a portfolio may miss the rare big winners that drive much of market returns.
-- Research has found that a small proportion of shares accounts for most of the long-run wealth creation in stock markets.
-H: Broad funds
-- **Index funds** and **ETFs** can hold hundreds or thousands of companies cheaply.
-- Market-cap-weighted indices can become **concentrated**: a few very large companies may make up a large share of an index, reducing diversification.
-- Owning a global fund spreads risk across countries and sectors as well as companies.
-X: Comparing portfolios.
-> Investor A holds 8 UK shares she picked herself.
-> Investor B holds a global index fund with about 3,000 companies.
-> A has much higher specific risk and may miss the few companies that deliver outsized returns.
-> B's risk is mainly systematic, and her costs are low.
-K: Classic studies suggested 10 to 40 shares captured most diversification benefits, with diminishing returns to each addition, but rising individual volatility and the concentration of long-run returns in a few shares favour broad, low-cost funds holding hundreds or thousands of companies, while noting index concentration.
-!: Believing 10 shares make a fully diversified portfolio. Much specific risk can remain, and big winners may be missed.
-EV: established | The marginal reduction in specific risk falls as holdings are added.
-EV: contested | The number of shares needed for adequate diversification depends on the measure used and market conditions.
-T: Diminishing returns | Each extra unit giving a smaller benefit than the last
-T: Index fund | A fund that tracks a market index
-T: Concentration | A large share of a portfolio or index held in few assets
-SUM: Most benefit comes early.
-SUM: More holdings help less each time.
-SUM: Broad funds diversify cheaply.
-SRC: Evans J. L. and Archer S. H., "Diversification and the reduction of dispersion: an empirical analysis", Journal of Finance 23(5), 761–767 | primary | 1968
-SRC: Statman M., "How many stocks make a diversified portfolio?", Journal of Financial and Quantitative Analysis 22(3), 353–363 | primary | 1987
-SRC: Bessembinder H., "Do stocks outperform Treasury bills?", Journal of Financial Economics 129(3), 440–457 | primary | 2018
-Q: What did Evans and Archer find in 1968? | Most of the volatility reduction came with the first 10 or so shares.
-Q: Why can a market-cap-weighted index become concentrated? | A few very large companies can make up a large share of it.
-M1#investing-u05-04-q1@1: What happens to the benefit of each extra holding? | It gets smaller | It gets larger | It stays constant | It becomes negative | Applying the standard result: Diminishing returns apply.
-M2#investing-u05-04-q2@2: What did Bessembinder's research suggest about share returns? | A small proportion of shares accounts for most wealth creation | Every share beats Treasury bills | Small portfolios capture all big winners | Returns are spread evenly across shares | Applying the standard result: Winners are concentrated.
-M3#investing-u05-04-q3@3: Why might a broad global index fund be preferred to 15 hand-picked shares? | It reduces specific risk and is less likely to miss big winners | It guarantees higher returns | It has no market risk | It always costs more | Applying the standard result: Breadth reduces specific risk.
-TF1#investing-u05-04-q4@1: Market-cap-weighted index funds can never become concentrated. | false | A few very large companies can make up a large share of such an index.
-SA2#investing-u05-04-q5@2,3: Evaluate the claim that "you only need 20 shares to be diversified". | Classic studies found most specific risk is removed by 10 to 40 holdings, so 20 shares remove a lot of it. However, individual share volatility has risen, so more holdings are now needed for the same effect, and long-run returns are concentrated in a few companies that a small portfolio may miss. Broad, low-cost funds diversify across thousands of companies, countries and sectors more effectively. | Classic evidence ; Rising volatility ; Concentrated returns ; Broad funds
+E: σ_{p}² = average variance ÷ n + (1 − 1/n) × average covariance :: equally weighted n shares
+P: As n grows, the first term (specific risk) shrinks towards zero and the portfolio's risk approaches the average covariance: the market risk that remains. Early studies, such as Evans and Archer (1968), suggested about ten shares captured much of the benefit; later work (Statman, 1987) argued that 30 to 40 or more were needed, and since then individual share volatility has risen, increasing the number needed.
+X: Shares each have volatility 40% and pairwise correlation 0.3 (illustrative).
+> One share: 40%.
+> Ten shares: about 24.3%. Thirty shares: about 22.7%. A hundred: about 22.2%.
+> The floor is √(0.3 × 0.16) ≈ 21.9%: market risk, which no number of these shares removes.
+H: Practical choices
+- A small number of shares leaves the investor exposed to **stock-specific** disasters and to missing the few big winners that drive index returns; research by Bessembinder (2018) found most US stocks underperformed Treasury bills over their lifetimes, with a small minority creating most wealth.
+- Shares in the same sector or country are more correlated, so 30 UK banks are not diversified.
+- A global index fund provides thousands of holdings for a low charge.
+K: Risk falls quickly with the first holdings, then levels off at market risk; dozens of well-spread shares or a broad fund remove most specific risk.
+!: Counting holdings rather than exposures. Ten funds can hold the same companies; thirty shares can sit in one sector.
+EV: established | Most of the reduction in specific risk is achieved with a few dozen randomly chosen shares, with diminishing benefits thereafter.
+EV: established | A small fraction of listed companies account for most of the long-run wealth created by stock markets (Bessembinder, 2018).
+T: Average covariance | The typical co-movement between pairs of holdings, which sets the floor for a diversified portfolio's risk
+T: Equally weighted portfolio | A portfolio holding the same amount in each investment
+SUM: Portfolio risk falls with each holding but levels off at the market's average covariance.
+SUM: Dozens of shares across sectors or a broad fund remove most specific risk; skewed winners argue for breadth.
+SRC: Statman M., How many stocks make a diversified portfolio?, Journal of Financial and Quantitative Analysis 22(3) | primary | 1987
+SRC: Bessembinder H., Do stocks outperform Treasury bills?, Journal of Financial Economics 129(3) | primary | 2018
+Q: What level does portfolio risk approach as holdings increase? | The average covariance between holdings: market risk.
+Q: What did Bessembinder (2018) find? | Most US stocks underperformed Treasury bills over their lifetimes; a small minority created most wealth.
+M1#investing-u05-04-q1@1: As more shares are added to a portfolio, what happens to the reduction in risk from each extra share? | It gets smaller | It gets larger | It stays the same | It becomes negative | Diversification shows diminishing returns as risk approaches the market floor.
+NUM3#investing-u05-04-q2@2: Shares each have variance 0.09 and average covariance 0.027. What is the variance of an equally weighted 10-share portfolio, to four decimal places? | 0.0333 | 0.0002 |  | 0.09 ÷ 10 + (1 − 0.1) × 0.027 = 0.009 + 0.0243 = 0.0333.
+M2#investing-u05-04-q3@2,3: An investor holds 25 shares, all UK banks and insurers. What is the main problem? | High correlation within one sector leaves much specific and sector risk | 25 shares is too many to manage | Banks never pay dividends | The portfolio has no market risk | Holdings in one sector move together, limiting the benefit of their number.
+M3#investing-u05-04-q4@3: Why might a broad index fund beat a hand-picked portfolio of 15 shares even if the picker has average skill? | Returns are skewed towards a few big winners that a small portfolio is likely to miss, and the fund is cheaper | Index funds are guaranteed | 15 shares cannot be bought on a platform | Small portfolios have no risk | Skewness and costs favour broad diversification.
+SA3#investing-u05-04-q5@1,3: Evaluate whether a private investor should build a portfolio of individual shares or use funds. | Individual shares avoid ongoing fund charges, give control and can be tax-managed, and 30 or more well-spread holdings remove much specific risk. But building that diversification costs time and dealing fees, sector and country spread is hard, skewed returns mean small portfolios often miss the winners, and behavioural mistakes are common. For most, low-cost diversified funds achieve more diversification more cheaply; direct shares may suit a small satellite portion. | Benefits of direct shares ; Numbers and spread needed ; Skewness of returns ; Costs and behaviour ; Reaches a justified judgement
 
 ## Home bias and global diversification
-LV: Intermediate · Application
-S: Investors tend to hold far more of their own country's shares than its share of world markets would suggest. This lesson explains home bias, its causes, and the case for global diversification.
-O: Define home bias and give evidence for it
-O: Explain the reasons for home bias
-O: Evaluate the benefits and risks of global diversification
-H: Home bias
-P: **Home bias** is the tendency to invest disproportionately in your own country's markets. Kenneth French and James Poterba documented it in 1991, finding that investors in the US, Japan and the UK held the great majority of their equities at home. The UK accounts for only a small share, around 4%, of global stock market value, while the US accounts for well over half of global indices. A UK investor holding mostly UK shares is heavily concentrated.
-H: Why it happens
-- **Familiarity**: people feel more comfortable with companies they know.
-- **Currency**: home assets avoid exchange rate risk.
-- **Costs and taxes**, historically higher for foreign investment.
-- **Information**: investors feel better informed about local firms.
-- **Liabilities**: spending in pounds may justify some home bias, especially in bonds.
-H: Global diversification
-- Spreads risk across economies, sectors and currencies.
-- The UK market is weighted towards certain sectors, such as financials, energy and consumer staples, and has fewer large technology companies.
-- Global funds give access to a wider range of companies.
-- Currency movements add volatility; some investors use **currency-hedged** funds, especially for bonds.
-- Global diversification also means significant exposure to the US.
-X: Comparing exposures.
-> A UK investor holds 90% of her shares in a FTSE 100 tracker.
-> The FTSE 100 makes up only a few per cent of global market value and is concentrated in a few sectors.
-> Switching part of the portfolio to a global fund spreads her holdings across thousands of companies in dozens of countries.
-> She accepts that currency movements will now affect her returns in pounds.
-K: Home bias leads investors to hold far more domestic shares than global market weights suggest, for reasons of familiarity, currency, costs and information; the UK is a small part of world markets, so global diversification spreads risk across economies, sectors and currencies, at the cost of currency volatility.
-!: Assuming a FTSE 100 tracker is globally diversified because many of its companies earn overseas. It is still concentrated in certain sectors and in UK-listed firms.
-EV: established | Investors in many countries hold a much larger share of domestic equities than their weight in world markets.
-EV: contested | The optimal degree of home bias is debated, especially given currency and liability considerations.
-T: Home bias | Overweighting investments in one's own country
-T: Currency risk | The risk that exchange rate changes affect returns
-T: Currency-hedged fund | A fund that reduces the effect of currency movements
-SUM: Investors overweight home markets.
-SUM: The UK is a small part of world markets.
-SUM: Global diversification spreads risk.
-SRC: French K. R. and Poterba J. M., "Investor diversification and international equity markets", American Economic Review 81(2), 222–226 | primary | 1991
-SRC: Dimson E., Marsh P. and Staunton M., UBS Global Investment Returns Yearbook | data | 2024
-Q: What is home bias? | The tendency to invest disproportionately in one's own country.
-Q: Roughly what share of global stock market value does the UK represent? | About 4%.
-M1#investing-u05-05-q1@1: What does home bias describe? | Overweighting your own country's investments | Investing only in property | Buying shares in your employer | Holding no foreign currency | Applying the standard result: It is domestic overweighting.
-M2#investing-u05-05-q2@2: Which is a reason for home bias? | Familiarity with local companies | Lower returns at home guaranteed | Laws banning foreign investment in the UK | Foreign shares cannot be bought | Applying the standard result: People favour what they know.
-NUM2#investing-u05-05-q3@2: A UK investor holds £50,000 in shares, all in UK companies. If the UK is about 4% of global markets, how much would a global market weighting put in UK shares, in £? | 2000 | 0 | £ | 4% × 50,000 = 2000 in UK shares under global weights.
-M3#investing-u05-05-q4@3: Why might a UK investor use a currency-hedged global bond fund? | To reduce the effect of exchange rate swings on returns | To increase currency risk deliberately | To avoid all interest rate risk | Because hedging guarantees profits | Applying the standard result: Hedging reduces currency volatility.
-SA2#investing-u05-05-q5@2,3: Evaluate the case for a UK investor diversifying globally. | The UK is only a small part of world markets and is concentrated in sectors such as financials and energy, so a UK-focused portfolio carries concentrated risk. Global funds spread holdings across economies, sectors and currencies, giving access to industries underrepresented in the UK. However, currency movements add volatility, global indices are heavily weighted to the US, and some home bias may suit sterling spending needs. | UK concentration ; Global breadth ; Currency risk ; Balanced view
+LV: Intermediate · Evaluation
+S: Investors everywhere tend to hold far more of their own country's shares than its share of world markets would suggest. For UK investors, whose market is a small slice of the global total, home bias means concentration in a few sectors and companies.
+O: Define home bias and describe its extent for UK investors
+O: Explain the diversification benefits and costs of investing globally
+O: Evaluate reasons an investor might still hold more domestic assets
+H: The bias
+P: The UK makes up roughly 4% of global share market value, but UK investors have traditionally held a much larger proportion of their equities at home, though the share has fallen in recent decades. French and Poterba (1991) documented home bias in the US, Japan and the UK. The UK market is concentrated in sectors such as financials, energy, mining, consumer staples and pharmaceuticals, with relatively little technology, so a UK-only portfolio misses much of the world economy.
+X: A global index fund's weights compared with a UK-only fund (illustrative, approximate).
+> Global: US around 60% or more, Japan, UK, France and others each a few per cent; many sectors represented.
+> UK-only: the ten largest companies make up roughly half of the FTSE 100.
+> The global fund spreads company, sector and country risk far more widely.
+H: Reasons for and against home bias
+- **For global**: diversification across economies, sectors and currencies; access to industries missing at home.
+- **For some home bias**: liabilities in pounds (home bias avoids currency risk for spending in sterling), lower costs and taxes in some cases, familiarity, and UK bonds for sterling needs.
+- **Caution on global**: a cap-weighted global index is itself concentrated, currently heavily in the US and in a few very large technology companies.
+P: Many UK investors now use a global index fund as their core equity holding, sometimes adding a UK fund to raise the domestic share. There is no single correct split; what matters is making the choice deliberately, knowing the concentration each option brings.
+K: Home bias concentrates UK investors in a small, sector-skewed market; global diversification spreads risk, though sterling spending needs justify some domestic assets, especially bonds.
+!: Assuming a global index fund is evenly spread around the world. Cap-weighting puts most of it in the US.
+EV: established | Investors hold more domestic equities than market weights would imply, across many countries (French and Poterba, 1991).
+EV: contested | How much home bias is rational, given currency, costs and liabilities, is debated.
+T: Home bias | The tendency to hold a disproportionately large share of investments in one's home country
+T: Global market capitalisation weight | A country's share of the total value of the world's listed companies
+SUM: The UK is a small part of global markets, but UK investors have historically held much more at home.
+SUM: Global investing spreads country, sector and company risk; currency and liabilities can justify some home bias.
+SRC: French K. R. and Poterba J. M., Investor diversification and international equity markets, American Economic Review 81(2) | primary | 1991
+SRC: MSCI, MSCI ACWI Index factsheet (country weights) | data | 2026 | https://www.msci.com/
+Q: What is home bias? | Holding a disproportionate share of investments in one's own country.
+Q: Roughly what share of global share market value does the UK represent? | About 4%.
+M1#investing-u05-05-q1@1: Which is a consequence of home bias for a UK-only share investor? | Concentration in a few sectors and companies | Exposure to every major global industry | No currency risk on any holdings ever | Guaranteed higher returns | The UK market is sector-skewed and top-heavy.
+M2#investing-u05-05-q2@2,3: Which is the best reason a UK retiree might keep bonds mainly in sterling? | Their spending is in pounds, so sterling bonds avoid currency swings on money they need | Overseas bonds are illegal for UK investors | Sterling bonds always yield more | Currency risk improves bond returns | Matching assets to the currency of liabilities is a sound reason for domestic bonds.
+TF2#investing-u05-05-q3@3: A market-capitalisation-weighted global share index is spread equally across countries. | false | Weights follow market value, so the US makes up the majority, with a few large companies very prominent.
+M3#investing-u05-05-q4@3: An investor switches from a UK fund to a global fund. Which new risk should they understand? | Currency risk and concentration in the US market | No risk at all | Higher specific risk | Loss of all dividends | Global funds diversify sector and country but introduce currency exposure and US concentration.
+SA3#investing-u05-05-q5@1,3: Evaluate the case for a UK investor holding a global rather than UK-only share portfolio. | Global holdings diversify across countries, sectors and currencies, and give access to industries underrepresented in the UK, such as technology. But they add currency risk, concentrate heavily in the US and a few giant companies, and may cost slightly more. Some home bias can be rational for sterling spending, especially in bonds. A global core with considered domestic exposure is a common compromise. | Diversification across countries and sectors ; Access to missing industries ; Currency risk ; US and mega-cap concentration ; Reaches a balanced judgement
 
 ## Modern portfolio theory
 LV: Intermediate · Application
-S: Modern portfolio theory, developed by Harry Markowitz, treats investment as a trade-off between expected return and risk across a whole portfolio. This lesson explains its key ideas and assumptions.
-O: Describe the main ideas of modern portfolio theory
-O: Calculate the expected return of a portfolio
-O: Evaluate the assumptions and limitations of the theory
-H: Markowitz's insight
-P: In 1952, **Harry Markowitz** argued that investors should judge investments not in isolation but by their effect on the **whole portfolio**. He measured return by **expected return** and risk by **variance** (or standard deviation) of returns, and showed how combining assets with imperfect correlations can produce portfolios with better risk–return trade-offs than any single asset. A rational investor should choose a portfolio that maximises expected return for a given level of risk. Markowitz shared the Nobel Prize in Economics in 1990.
-H: Portfolio return and risk
-- **Expected portfolio return** is the weighted average of the expected returns of its holdings.
-- **Portfolio risk** depends on weights, individual volatilities and correlations.
-- Investors are assumed to be **risk-averse**: they need a higher expected return to accept more risk.
-E: E(R_p) = w_{1}E(R_{1}) + w_{2}E(R_{2}) :: expected return of a two-asset portfolio
-H: Limitations
-- It relies on **estimates** of expected returns, volatilities and correlations, which are uncertain and change.
-- Small changes in inputs can produce very different "optimal" portfolios.
-- It assumes returns are roughly normally distributed, but markets have more extreme events ("fat tails").
-- Variance treats upside and downside equally, though investors mainly fear losses.
-X: Expected return of a 60/40 portfolio.
-> Shares are expected to return 7% a year and bonds 3%.
-> A portfolio holds 60% shares and 40% bonds.
-> Expected return = 0.6 × 7 + 0.4 × 3 = 4.2 + 1.2 = 5.4%.
-> Its volatility will be lower than 60% of the share volatility plus 40% of the bond volatility, unless the two are perfectly correlated.
-K: Modern portfolio theory judges investments by their effect on a whole portfolio, measuring risk by variance and showing that imperfectly correlated assets combine into better risk–return trade-offs; it underpins diversification but relies on uncertain estimates and simplifying assumptions about returns.
-!: Treating "optimal" portfolio weights from historical data as precise. Small changes in estimates can change them greatly.
-EV: established | Modern portfolio theory is a foundation of professional portfolio management.
-EV: contested | Critics argue that mean–variance optimisation is too sensitive to estimation errors to be used mechanically.
-T: Modern portfolio theory | A framework for choosing portfolios by expected return and risk
-T: Expected return | The average return anticipated from an investment
-T: Risk aversion | Preferring less risk for a given expected return
-SUM: Judge investments by portfolio effect.
-SUM: Return is weighted; risk depends on correlation.
-SUM: Inputs are uncertain.
-SRC: Markowitz H., "Portfolio selection", Journal of Finance 7(1), 77–91 | primary | 1952
-SRC: Bodie Z., Kane A. and Marcus A. J., Investments, 12th edition, McGraw-Hill | secondary | 2021
-Q: How did Markowitz measure risk? | By the variance or standard deviation of returns.
-Q: How is a portfolio's expected return calculated? | As the weighted average of its holdings' expected returns.
-M1#investing-u05-06-q1@1: Who developed modern portfolio theory? | Harry Markowitz | Warren Buffett | John Maynard Keynes | Eugene Fama | Applying the standard result: Markowitz published it in 1952.
-M2#investing-u05-06-q2@2: What does risk aversion mean in MPT? | Investors need higher expected return to accept more risk | Investors prefer maximum risk | Investors ignore risk entirely | Investors never hold shares | Applying the standard result: Risk must be compensated.
-NUM2#investing-u05-06-q3@2: A portfolio is 70% shares expected to return 8% and 30% bonds expected to return 3%. What is the expected return, in per cent? | 6.5 | 0.05 | % | 0.7 × 8 + 0.3 × 3 = 5.6 + 0.9 = 6.5%.
-M3#investing-u05-06-q4@3: A model gives very different "optimal" portfolios when expected returns change slightly. What does this show? | MPT is sensitive to uncertain inputs | MPT is always precise | Expected returns are known exactly | Correlation has no effect | Applying the standard result: Estimation error matters.
-SA2#investing-u05-06-q5@2,3: Evaluate modern portfolio theory as a guide for investors. | MPT shows clearly that risk should be judged at the portfolio level and that combining imperfectly correlated assets improves the risk–return trade-off, providing the foundation for diversification. However, its inputs are estimates that change over time, optimised portfolios are highly sensitive to small errors, returns are not normally distributed, and variance treats gains like losses, so it is best used as a framework rather than a precise formula. | Portfolio-level insight ; Diversification basis ; Input sensitivity ; Distribution and variance limits
+S: Modern portfolio theory, developed by Harry Markowitz, treats a portfolio as a whole: investors should choose combinations of assets that give the highest expected return for each level of risk, using expected returns, volatilities and correlations.
+O: Describe the assumptions and main ideas of modern portfolio theory
+O: Explain mean–variance optimisation
+O: Evaluate the strengths and weaknesses of MPT in practice
+H: The theory
+P: In "Portfolio Selection" (1952), Markowitz argued that investors care about expected return and risk (measured by variance), and that an asset should be judged by its contribution to the portfolio, not on its own. **Mean–variance optimisation** finds the weights that minimise variance for each target return. Markowitz shared the 1990 Nobel Memorial Prize in Economics with William Sharpe and Merton Miller.
+- Investors are risk-averse and prefer more return to less.
+- Risk is measured by the variance (or standard deviation) of returns.
+- Investors know or can estimate expected returns, volatilities and correlations.
+H: In practice
+P: MPT is the basis of asset allocation, risk models and multi-asset funds. Its weaknesses are practical. Optimisers are very sensitive to expected-return inputs, which are hard to estimate, and can produce extreme, concentrated portfolios ("error maximisation"). Variance treats upside and downside alike and assumes normal returns, while real returns have fat tails.
+X: An optimiser is told that Asset A will return 7% and Asset B 6.5%, with similar risk and correlation 0.9 (illustrative).
+> Because the assets are near-substitutes, the optimiser piles into A, perhaps 90% or more.
+> If the true expected returns are reversed, the "optimal" portfolio is badly concentrated in the worse asset.
+> Practitioners respond with constraints, blended inputs (such as Black–Litterman) or simple rules like equal or market weights.
+K: MPT judges assets by their contribution to portfolio risk and return; it is the foundation of diversification and asset allocation, but its outputs are only as good as uncertain inputs.
+!: Treating an optimiser's output as precise. Small changes in estimated returns can swing the "optimal" weights dramatically.
+EV: established | Mean–variance optimised portfolios are highly sensitive to errors in expected return estimates (Michaud, 1989).
+EV: contested | Whether simple allocations such as equal weighting perform as well as optimised ones out of sample is debated (DeMiguel, Garlappi and Uppal, 2009).
+T: Modern portfolio theory | Markowitz's framework for choosing portfolios by expected return and variance, taking correlations into account
+T: Mean–variance optimisation | Choosing weights to minimise portfolio variance for a target expected return
+SUM: MPT evaluates assets by their effect on the whole portfolio using expected returns, variances and correlations.
+SUM: It underpins asset allocation but is sensitive to inputs and assumes normal, symmetric risk.
+SRC: Markowitz H., Portfolio selection, Journal of Finance 7(1) | primary | 1952
+SRC: Michaud R. O., The Markowitz optimization enigma: is optimized optimal?, Financial Analysts Journal 45(1) | primary | 1989
+Q: Who developed modern portfolio theory, and when? | Harry Markowitz, in 1952.
+Q: What is the main practical weakness of mean–variance optimisation? | Extreme sensitivity to estimated expected returns, producing concentrated portfolios.
+M1#investing-u05-06-q1@1: In modern portfolio theory, how is risk measured? | By the variance or standard deviation of returns | By the number of holdings | By the share price | By the dividend yield | Markowitz used variance as the measure of risk.
+M2#investing-u05-06-q2@2: According to MPT, how should a new asset be judged? | By how it changes the risk and return of the whole portfolio | By its own return alone | By its past price chart | By its popularity | An asset with high risk can still reduce portfolio risk if it has low correlation with the rest.
+NUM2#investing-u05-06-q3@2: A 50/50 portfolio holds two assets each with 10% volatility and correlation 0. What is the portfolio volatility as a percentage, to two decimal places? | 7.07 | 0.02 | % | Variance = 0.25 × 0.01 + 0.25 × 0.01 = 0.005; √0.005 = 0.0707, so 7.07%.
+M3#investing-u05-06-q4@3: Why do many professional investors constrain mean–variance optimisers or use simple weighting rules? | Optimisers amplify estimation errors into extreme, unstable weights | Optimisation is banned by the FCA | Simple rules always outperform | Correlations cannot be measured | Constraints and simple rules make portfolios more robust to uncertain inputs.
+SA3#investing-u05-06-q5@1,3: Evaluate modern portfolio theory as a guide for private investors. | MPT's central insight, that assets should be judged by their contribution to portfolio risk and that diversification reduces risk, is sound and widely used. But precise optimisation needs inputs that cannot be known, produces fragile portfolios, uses variance as risk and assumes normal returns. For private investors its value lies in principles: diversify across imperfectly correlated assets and choose risk deliberately, rather than in exact optimisation. | Core insight on portfolio contribution ; Diversification principle ; Input sensitivity ; Variance and normality limits ; Practical conclusion
 
 ## The efficient frontier
 LV: Intermediate · Application
-S: The efficient frontier shows the portfolios that offer the highest expected return for each level of risk. This lesson explains the frontier, the role of a risk-free asset, and the Sharpe ratio.
-O: Describe the efficient frontier
-O: Explain how a risk-free asset creates the capital market line
-O: Calculate and interpret the Sharpe ratio
-H: The efficient frontier
-P: If you plot every possible portfolio of risky assets by **risk** (standard deviation) on the horizontal axis and **expected return** on the vertical axis, the upper-left edge of the possible combinations forms the **efficient frontier**. Portfolios on the frontier give the **highest expected return for each level of risk**. Portfolios below it are **inefficient**: another portfolio offers more return for the same risk, or the same return for less risk. The leftmost point is the **minimum-variance portfolio**.
-H: Adding a risk-free asset
-- If investors can lend or borrow at a **risk-free rate**, such as short-term government bills, they can combine it with a risky portfolio.
-- The best risky portfolio is the one where a straight line from the risk-free rate just touches the frontier: the **tangency portfolio**.
-- That line is the **capital market line**; investors choose a point on it according to their risk tolerance.
-- In theory, all investors hold the same risky portfolio, mixed with different amounts of the risk-free asset.
-H: The Sharpe ratio
-- The **Sharpe ratio**, developed by William Sharpe, measures excess return per unit of risk: (portfolio return − risk-free rate) ÷ standard deviation.
-- The tangency portfolio has the highest Sharpe ratio.
-- It is used to compare funds, though it relies on past data and on volatility as the measure of risk.
-E: Sharpe ratio = (R_p − R_f) ÷ σ_p :: excess return per unit of risk
-X: Comparing two funds.
-> Fund A returned 8% with volatility of 16%; Fund B returned 6% with volatility of 8%. The risk-free rate is 4%.
-> Sharpe ratio of A: (8 − 4) ÷ 16 = 0.25.
-> Sharpe ratio of B: (6 − 4) ÷ 8 = 0.25.
-> Both delivered the same excess return per unit of risk, despite their different returns.
-K: The efficient frontier traces portfolios with the highest expected return for each level of risk; combining a risk-free asset with the tangency portfolio produces the capital market line, and the Sharpe ratio measures excess return per unit of risk, highest at the tangency portfolio.
-!: Comparing funds only by their returns. A higher return may simply reflect higher risk; the Sharpe ratio adjusts for this.
-EV: established | The Sharpe ratio is one of the most widely used measures of risk-adjusted performance.
-T: Efficient frontier | The set of portfolios with the highest expected return for each level of risk
-T: Capital market line | The line of portfolios combining the risk-free asset and the tangency portfolio
-T: Sharpe ratio | Excess return divided by standard deviation
-SUM: The frontier shows efficient portfolios.
-SUM: The risk-free asset creates the CML.
-SUM: Sharpe ratio adjusts for risk.
-SRC: Sharpe W. F., "Mutual fund performance", Journal of Business 39(1), 119–138 | primary | 1966
-SRC: Bodie Z., Kane A. and Marcus A. J., Investments, 12th edition, McGraw-Hill | secondary | 2021
-Q: What is an inefficient portfolio? | One below the frontier, where another portfolio gives more return for the same risk.
-Q: How is the Sharpe ratio calculated? | (Portfolio return minus the risk-free rate) divided by the portfolio's standard deviation.
-M1#investing-u05-07-q1@1: What does the efficient frontier show? | The highest expected return for each level of risk | The lowest return for each risk | All portfolios with zero risk | Only single shares | Applying the standard result: It shows efficient portfolios.
-M2#investing-u05-07-q2@2: Which portfolio has the highest Sharpe ratio in theory? | The tangency portfolio | The minimum-variance portfolio | Any portfolio below the frontier | The risk-free asset alone | Applying the standard result: The CML touches the frontier there.
-NUM2#investing-u05-07-q3@2: A fund returned 9% with volatility of 10% when the risk-free rate was 4%. What is its Sharpe ratio? | 0.5 | 0.01 | – | Sharpe ratio = (9 − 4) ÷ 10 = 0.5.
-M3#investing-u05-07-q4@3: A portfolio lies below the efficient frontier. What does this mean? | Another portfolio offers more return for the same risk | It is the best possible portfolio | It has no risk at all | It cannot be held by investors | Applying the standard result: It is inefficient.
-SA2#investing-u05-07-q5@2,3: Explain how adding a risk-free asset changes the choice of portfolio. | Without a risk-free asset, investors choose a point on the efficient frontier. With one, they can combine lending or borrowing at the risk-free rate with a risky portfolio. The best risky portfolio is where a line from the risk-free rate touches the frontier, the tangency portfolio with the highest Sharpe ratio. All investors then hold that portfolio, adjusting risk by how much they put in the risk-free asset. | Frontier choice ; Risk-free combinations ; Tangency portfolio ; Adjusting risk
+S: The efficient frontier is the set of portfolios offering the highest expected return for each level of risk. Adding a risk-free asset turns it into the capital market line, along which investors choose their risk by mixing cash with one optimal risky portfolio.
+O: Describe the efficient frontier and the minimum-variance portfolio
+O: Explain the capital market line and the tangency portfolio
+O: Evaluate the practical use of the frontier for choosing a portfolio
+H: The frontier
+P: Plot every possible portfolio of risky assets by risk (horizontal) and expected return (vertical). The upper edge of the region is the **efficient frontier**: no portfolio offers more return for the same risk. Portfolios below it are **inefficient**. The leftmost point is the **minimum-variance portfolio**. Each investor should hold a frontier portfolio that suits their risk tolerance.
+H: Adding cash
+P: With a risk-free asset, combinations of cash and any risky portfolio lie on a straight line. The steepest such line touches the frontier at the **tangency portfolio**, which has the highest Sharpe ratio. This line is the **capital market line (CML)**. Tobin's separation theorem (1958) says every investor should hold the same risky portfolio, mixed with cash (or borrowing) according to their risk tolerance.
+E: CML: E(R_{p}) = r_{f} + [(E(R_{T}) − r_{f}) ÷ σ_{T}] × σ_{p} :: T is the tangency portfolio
+X: The tangency portfolio expects 8% with 16% volatility; cash yields 4% (illustrative).
+> Slope (Sharpe ratio) = (8 − 4) ÷ 16 = 0.25.
+> A cautious investor wanting 8% volatility holds half cash, half tangency: expected return 4% + 0.25 × 8% = 6%.
+> An investor wanting 12% volatility holds 75% tangency: expected return 7%.
+K: The efficient frontier shows the best risk–return trade-offs; with cash, investors mix one optimal risky portfolio with cash to reach their chosen risk.
+!: Thinking a "riskier" portfolio is automatically better at delivering returns. Only efficient portfolios are worth holding; inefficient ones take risk without reward.
+EV: established | With a risk-free asset and mean–variance investors, the optimal risky portfolio is the same for all investors (Tobin's separation theorem).
+EV: contested | Real-world frontiers estimated from historical data are unstable, so investors cannot locate the true tangency portfolio precisely.
+T: Efficient frontier | The set of portfolios giving the highest expected return for each level of risk
+T: Capital market line | The line of portfolios combining the risk-free asset with the tangency portfolio
+T: Tangency portfolio | The risky portfolio with the highest Sharpe ratio, where the capital market line touches the efficient frontier
+SUM: The efficient frontier traces the best available risk–return combinations of risky assets.
+SUM: With cash, all investors hold the tangency portfolio in different proportions along the capital market line.
+SRC: Tobin J., Liquidity preference as behavior towards risk, Review of Economic Studies 25(2) | primary | 1958
+SRC: Bodie Z., Kane A. and Marcus A. J., Investments (12th edition), McGraw Hill: capital allocation | secondary | 2021
+Q: What is the efficient frontier? | The set of portfolios with the highest expected return for each level of risk.
+Q: What does Tobin's separation theorem say? | Every investor holds the same risky portfolio, mixed with cash according to risk tolerance.
+M1#investing-u05-07-q1@1: A portfolio lies below the efficient frontier. What does this mean? | Another portfolio offers higher expected return for the same risk | It has no risk | It is the minimum-variance portfolio | It is the tangency portfolio | Below the frontier means inefficient: more return was available for that risk.
+NUM2#investing-u05-07-q2@2: The tangency portfolio expects 9% with 15% volatility and cash yields 3%. What is the expected return of a portfolio on the capital market line with 10% volatility? | 7 | 0.01 | % | Slope = (9 − 3) ÷ 15 = 0.4; 3% + 0.4 × 10% = 7%.
+M2#investing-u05-07-q3@2: According to the capital market line, how should a very cautious investor reduce risk? | Hold more cash alongside the same risky portfolio | Switch to a completely different set of risky assets | Hold only the minimum-variance portfolio of single shares | Borrow to invest | Separation means adjusting the cash proportion, not the risky mix.
+M3#investing-u05-07-q4@3: Why is the separation theorem only an approximation for real investors? | Inputs are uncertain, investors face different taxes, constraints and liabilities, and borrowing costs exceed the risk-free rate | It is mathematically false | Cash does not exist | All investors already hold the same portfolio | Real frictions and estimation errors mean portfolios reasonably differ, though the idea supports broad market funds plus cash.
+SA3#investing-u05-07-q5@1,3: Explain how the efficient frontier and capital market line support the use of a diversified fund plus cash for different risk levels. | The frontier shows that well-diversified portfolios dominate concentrated ones. With cash, the best strategy is to hold one high-Sharpe risky portfolio and adjust risk by changing the cash proportion. A broad market fund approximates that risky portfolio, so investors of different risk tolerances can hold it in different amounts with cash or bonds. In practice inputs are uncertain, but the logic favours diversified cores. | Frontier favours diversification ; Tangency portfolio and CML ; Risk adjusted via cash proportion ; Broad fund as proxy ; Practical caveats
 
 ## The capital asset pricing model (CAPM)
 LV: Intermediate · Application
-S: The capital asset pricing model links an investment's expected return to its systematic risk. This lesson explains the CAPM formula, the market risk premium and the security market line, and evaluates the model.
-O: State the CAPM and explain its components
-O: Calculate expected returns using CAPM
+S: The CAPM says an asset's expected return equals the risk-free rate plus its beta times the market risk premium. It turns the idea that only systematic risk is rewarded into a formula used to estimate required returns and costs of capital.
+O: State the CAPM formula and its assumptions
+O: Calculate an expected return using CAPM
 O: Evaluate the empirical evidence on CAPM
 H: The model
-P: Developed in the 1960s by William Sharpe, John Lintner and others, the **capital asset pricing model** says that the expected return on an investment equals the **risk-free rate** plus a premium for its **systematic risk**, measured by **beta**: E(R) = R_f + β × (E(R_m) − R_f). The term E(R_m) − R_f is the **market risk premium**: the extra return investors expect for holding the market rather than risk-free assets. Specific risk earns no premium, because it can be diversified away.
-E: E(R) = R_f + β (E(R_m) − R_f) :: capital asset pricing model
-H: The security market line
-- Plotting expected return against beta gives the **security market line (SML)**.
-- An asset with β = 1 has the same expected return as the market; β = 0 earns the risk-free rate.
-- Assets plotting above the line would appear undervalued, and those below overvalued.
-- Companies use CAPM to estimate their **cost of equity**.
-H: Evaluating CAPM
-- CAPM is simple and widely used, and captures the idea that only systematic risk is rewarded.
-- Empirical tests have found the relationship between beta and returns flatter than predicted: low-beta shares have often done better, and high-beta shares worse, than CAPM suggests.
-- Other factors, such as size and value, also explain returns, leading to multi-factor models.
-X: Estimating an expected return.
-> The risk-free rate is 4%, the expected market return is 9% and a share's beta is 1.2.
-> The market risk premium is 9 − 4 = 5%.
-> Expected return = 4 + 1.2 × 5 = 4 + 6 = 10%.
-> A share with beta 0.8 would have expected return 4 + 0.8 × 5 = 8%.
-K: The CAPM sets expected return equal to the risk-free rate plus beta times the market risk premium, rewarding only systematic risk; it underpins the security market line and cost-of-equity estimates, but empirical evidence shows the beta–return relationship is flatter than predicted and other factors matter.
-!: Using CAPM to predict next year's return precisely. It gives a theoretical required return, not a forecast.
-EV: established | CAPM remains widely used to estimate the cost of equity.
-EV: contested | Empirical tests show that beta alone does not fully explain differences in average returns.
-T: CAPM | A model linking expected return to systematic risk measured by beta
-T: Market risk premium | The expected return on the market above the risk-free rate
-T: Security market line | A graph of expected return against beta
-SUM: E(R) = R_f + β × premium.
-SUM: Only systematic risk is rewarded.
-SUM: Evidence is mixed.
-SRC: Sharpe W. F., "Capital asset prices: a theory of market equilibrium under conditions of risk", Journal of Finance 19(3), 425–442 | primary | 1964
-SRC: Lintner J., "The valuation of risk assets and the selection of risky investments in stock portfolios and capital budgets", Review of Economics and Statistics 47(1), 13–37 | primary | 1965
-SRC: Fama E. F. and French K. R., "The capital asset pricing model: theory and evidence", Journal of Economic Perspectives 18(3), 25–46 | secondary | 2004
-Q: What is the market risk premium? | The expected return on the market minus the risk-free rate.
-Q: What expected return does CAPM give an asset with beta of zero? | The risk-free rate.
-M1#investing-u05-08-q1@1: In CAPM, what measures an asset's systematic risk? | Beta | Standard deviation | Dividend yield | Price–earnings ratio | Applying the standard result: Beta measures market sensitivity.
-M2#investing-u05-08-q2@2: What return does CAPM predict for a share with beta of 1? | The expected market return | The risk-free rate | Zero | Twice the market return | Applying the standard result: Beta 1 matches the market.
-NUM2#investing-u05-08-q3@2: The risk-free rate is 3%, the market return is 8% and a share's beta is 1.5. What is its CAPM expected return, in per cent? | 10.5 | 0.05 | % | 3 + 1.5 × 5 = 3 + 7.5 = 10.5%.
-M3#investing-u05-08-q4@3: Empirical studies found low-beta shares did better than CAPM predicted. What does this suggest? | Beta alone does not fully explain returns | CAPM is perfect | High-beta shares always win | Risk is never rewarded | Applying the standard result: Other factors matter.
-SA2#investing-u05-08-q5@2,3: Evaluate the capital asset pricing model. | CAPM is simple and intuitive, showing that investors should be rewarded only for systematic risk, and it is widely used to estimate the cost of equity. However, it rests on strong assumptions, such as investors holding the market portfolio, and empirical tests find the link between beta and returns flatter than predicted, while factors such as size and value also explain returns, so multi-factor models are often preferred. | Intuition and use ; Assumptions ; Empirical weaknesses ; Alternatives
+E: E(R_{i}) = r_{f} + β_{i} × [E(R_{m}) − r_{f}] :: β measures sensitivity to the market; the bracket is the market risk premium
+P: Developed by William Sharpe (1964), John Lintner (1965) and Jan Mossin (1966), the CAPM follows from MPT if all investors hold the market portfolio. Because specific risk is diversified away, the only risk priced is the asset's contribution to market risk, measured by **beta**. Plotting expected return against beta gives the **security market line (SML)**.
+X: The risk-free rate is 4%, the market is expected to return 9% and a share's beta is 1.2 (illustrative).
+> Market risk premium: 9% − 4% = 5%.
+> Expected return = 4% + 1.2 × 5% = 10%.
+> A share expected to return 12% would lie above the SML, looking undervalued; one expected to return 8% would look overvalued.
+H: Assumptions and evidence
+- Investors hold diversified portfolios, can borrow and lend at the risk-free rate, share the same expectations and face no taxes or costs.
+- Early tests found a positive relation between beta and return, but flatter than predicted: low-beta shares have earned more, and high-beta less, than CAPM implies (Black, Jensen and Scholes, 1972; Fama and French, 1992).
+- Other factors, such as size and value, explained returns better in many periods (see Factor investing).
+P: Despite its weaknesses, CAPM remains widely used to estimate the cost of equity in company valuation and regulation, because it is simple and grounded in theory.
+K: CAPM: expected return = risk-free rate + beta × market risk premium; simple and widely used, but empirically incomplete.
+!: Treating a CAPM expected return as a forecast. It is a model of required return under strong assumptions.
+EV: established | Empirically, the relation between beta and average return has been flatter than CAPM predicts.
+EV: contested | Whether CAPM's failures reflect the model or the difficulty of measuring the true market portfolio (Roll, 1977) is debated.
+T: CAPM | A model in which expected return equals the risk-free rate plus beta times the market risk premium
+T: Market risk premium | The expected return on the market minus the risk-free rate
+T: Security market line | The line showing expected return against beta under CAPM
+SUM: CAPM prices only systematic risk, measured by beta, through the security market line.
+SUM: It is widely used for the cost of equity, though evidence shows a flatter beta–return relation and other factors.
+SRC: Sharpe W. F., Capital asset prices: a theory of market equilibrium under conditions of risk, Journal of Finance 19(3) | primary | 1964
+SRC: Fama E. F. and French K. R., The capital asset pricing model: theory and evidence, Journal of Economic Perspectives 18(3) | primary | 2004
+Q: State the CAPM formula. | E(Ri) = rf + βi × (E(Rm) − rf).
+Q: What risk does CAPM say is rewarded? | Only systematic (market) risk, measured by beta.
+M1#investing-u05-08-q1@1: Under CAPM, what determines a share's expected return? | Its beta, the risk-free rate and the market risk premium | Its total volatility | Its dividend yield | Its share price | Only systematic risk, via beta, matters in CAPM.
+NUM2#investing-u05-08-q2@2: The risk-free rate is 3.5%, the market risk premium is 5.5% and a share's beta is 0.8. What is its CAPM expected return as a percentage? | 7.9 | 0.01 | % | 3.5% + 0.8 × 5.5% = 3.5% + 4.4% = 7.9%.
+M2#investing-u05-08-q3@2: An analyst expects a share with beta 1.5 to return 9%. The risk-free rate is 4% and the market return 8%. What does CAPM suggest? | The share looks overvalued, since CAPM requires 10% | It looks undervalued | It is fairly valued | CAPM cannot be applied | Required return = 4% + 1.5 × 4% = 10%; an expected 9% lies below the SML.
+M3#investing-u05-08-q4@3: Which finding most challenges CAPM? | Low-beta shares have historically earned more, and high-beta shares less, than CAPM predicts | Shares with higher beta are more volatile | The market risk premium is positive | Diversification reduces specific risk | A flatter-than-predicted SML contradicts CAPM's central prediction.
+SA3#investing-u05-08-q5@1,3: Evaluate the continued use of CAPM despite its empirical weaknesses. | CAPM is simple, grounded in theory and gives a consistent way to estimate required returns and the cost of equity, which is why companies and regulators use it. But evidence shows beta explains returns poorly, the market portfolio cannot be observed, and assumptions are unrealistic; multi-factor models fit better. CAPM is best used as a benchmark with judgement, not as a precise tool. | Simplicity and theory ; Practical uses in cost of equity ; Empirical weaknesses ; Alternative factor models ; Reaches a balanced judgement
 
 ## Beta
 LV: Intermediate · Application
-S: Beta measures how much an investment tends to move with the market. This lesson explains how beta is estimated, how to interpret it, and its limitations.
-O: Define beta and interpret its values
-O: Explain how beta is estimated from historical data
-O: Evaluate the limitations of beta as a measure of risk
-H: What beta measures
-P: **Beta** (β) measures the sensitivity of an investment's returns to movements in the overall market. A beta of **1** means the investment tends to move in line with the market. A beta **above 1**, such as 1.5, means it tends to amplify market moves: rising about 15% when the market rises 10%, and falling about 15% when it falls 10%. A beta **below 1** means smaller moves, and a **negative** beta means it tends to move opposite to the market. The market itself has a beta of 1.
-H: Estimating beta
-- Beta is estimated by **regressing** an asset's past returns against the market's returns, for example using five years of monthly data.
-- Mathematically, β = covariance(asset, market) ÷ variance(market).
-- Estimates vary with the period, frequency of data and choice of market index.
-- A portfolio's beta is the **weighted average** of its holdings' betas.
-H: Interpreting and using beta
-- High-beta sectors, such as technology and consumer discretionary, tend to swing more with the economy.
-- Low-beta sectors, such as utilities and consumer staples, tend to be more defensive.
-- Beta captures **systematic** risk only; a share can have low beta but high specific risk.
-- Betas change over time as companies and markets change.
-X: A portfolio beta.
-> A portfolio holds 50% in a fund with beta 1.2, 30% in a fund with beta 0.8 and 20% in cash with beta 0.
-> Portfolio beta = 0.5 × 1.2 + 0.3 × 0.8 + 0.2 × 0 = 0.6 + 0.24 + 0 = 0.84.
-> If the market falls 10%, the portfolio would be expected to fall about 8.4%, all else equal.
-> Actual results will differ because of specific risk and changing betas.
-K: Beta measures an investment's sensitivity to market movements, with 1 matching the market, above 1 amplifying and below 1 dampening moves; it is estimated by regression on past data, a portfolio's beta is the weighted average of its holdings, and it captures only systematic risk and changes over time.
-!: Assuming a low-beta share is low-risk overall. Beta ignores specific risk, which can still be large.
-EV: established | Beta is the standard measure of an asset's systematic risk in the CAPM.
-EV: contested | Historical beta estimates are unstable and may predict future sensitivity poorly.
-T: Beta | A measure of an investment's sensitivity to market movements
-T: Covariance | A measure of how two variables move together
-T: Defensive share | A share with low sensitivity to the economic cycle
-SUM: Beta 1 matches the market.
-SUM: Estimated from past returns.
-SUM: Measures systematic risk only.
-SRC: Sharpe W. F., "Capital asset prices: a theory of market equilibrium under conditions of risk", Journal of Finance 19(3), 425–442 | primary | 1964
-SRC: Bodie Z., Kane A. and Marcus A. J., Investments, 12th edition, McGraw-Hill | secondary | 2021
-Q: What does a beta of 1.5 mean? | The investment tends to move about 1.5 times as much as the market.
-Q: How is a portfolio's beta calculated? | As the weighted average of its holdings' betas.
-M1#investing-u05-09-q1@1: What is the beta of the market itself? | 1 | 0 | 0.5 | 2 | Applying the standard result: The market moves with itself.
-M2#investing-u05-09-q2@2: Which sector typically has a low beta? | Utilities | Technology | Luxury goods | Airlines | Applying the standard result: Utilities are defensive.
-NUM2#investing-u05-09-q3@2: A portfolio is 60% in a fund with beta 1.0 and 40% in a fund with beta 0.5. What is the portfolio beta? | 0.8 | 0.01 | – | 0.6 × 1.0 + 0.4 × 0.5 = 0.6 + 0.2 = 0.8.
-M3#investing-u05-09-q4@3: A share has a beta of 0.6 but its company faces a major lawsuit. What does beta fail to capture? | Specific risk from the lawsuit | Systematic market risk | The share's price | Its dividend payments | Applying the standard result: Beta measures only market sensitivity.
-SA2#investing-u05-09-q5@2,3: Evaluate beta as a measure of investment risk. | Beta is simple and useful: it shows how sensitive an investment is to market movements, which is the systematic risk that cannot be diversified, and portfolio betas are easy to calculate. However, it is estimated from past data and changes over time, depends on the period and index chosen, and ignores specific risk, so a share can have low beta but high total risk. | Usefulness ; Systematic focus ; Estimation problems ; Ignores specific risk
+S: Beta measures how sensitive an investment is to movements in the overall market. A beta of 1 moves with the market; above 1 amplifies it; below 1 dampens it. It is the measure of systematic risk in CAPM.
+O: Interpret beta values for shares and portfolios
+O: Calculate beta from correlation and volatilities, and portfolio beta from weights
+O: Evaluate the reliability of beta estimates
+H: What beta means
+E: β = covariance(asset, market) ÷ variance(market) = ρ × σ_{asset} ÷ σ_{market}
+- **β = 1**: tends to move in line with the market.
+- **β > 1**: amplifies market moves (often cyclical companies, such as housebuilders).
+- **0 < β < 1**: moves less (often defensive companies, such as utilities and consumer staples).
+- **β < 0**: tends to move against the market (rare; some hedging assets).
+X: A share has volatility 25% and correlation 0.8 with the market, whose volatility is 16% (illustrative).
+> β = 0.8 × 25% ÷ 16% = 1.25.
+> If the market falls 10%, the share would be expected to fall about 12.5%, plus any specific movement.
+> A highly volatile share with low correlation can have a low beta: beta measures market sensitivity, not total risk.
+H: Portfolio beta and reliability
+E: Portfolio beta = Σ weight × beta
+P: Betas are estimated by regressing an asset's returns on the market's, usually over a few years. Estimates vary with the period, the frequency of data and the index used, and tend to drift towards 1 over time. Beta also ignores specific risk, which matters to an undiversified investor.
+K: Beta measures market sensitivity: systematic risk, not total risk; portfolio beta is the weighted average of holdings' betas.
+!: Equating high volatility with high beta. A share can be very volatile for company-specific reasons yet have a low beta.
+EV: established | Estimated betas tend to regress towards 1 over time (Blume, 1971).
+T: Beta | A measure of an asset's sensitivity to movements in the overall market
+T: Defensive share | A share with a beta below 1, whose earnings are relatively stable through the economic cycle
+T: Cyclical share | A share whose earnings and price are strongly tied to the economic cycle, typically with beta above 1
+SUM: Beta = covariance with the market ÷ market variance; 1 is market-like, above amplifies, below dampens.
+SUM: Portfolio beta is a weighted average; beta estimates are unstable and ignore specific risk.
+SRC: Blume M. E., On the assessment of risk, Journal of Finance 26(1) | primary | 1971
+SRC: CFA Institute, Investment Foundations Certificate curriculum: risk and return | secondary | 2024 | https://www.cfainstitute.org/
+Q: What does a beta of 0.6 mean? | The asset tends to move about 60% as much as the market.
+Q: How do you calculate a portfolio's beta? | The weighted average of its holdings' betas.
+M1#investing-u05-09-q1@1: A share has a beta of 1.4. If the market rises 10%, what is its expected move from market effects? | About 14% | About 10% | About 4% | About 1.4% | Beta 1.4 means 1.4 × 10% = 14% from market sensitivity.
+NUM2#investing-u05-09-q2@2: A share's correlation with the market is 0.6, its volatility is 30% and the market's volatility is 15%. What is its beta? | 1.2 | 0.01 |  | β = 0.6 × 30% ÷ 15% = 1.2.
+NUM2#investing-u05-09-q3@2: A portfolio is 70% in a fund with beta 1.1 and 30% in a fund with beta 0.4. What is the portfolio beta, to two decimal places? | 0.89 | 0.01 |  | 0.7 × 1.1 + 0.3 × 0.4 = 0.77 + 0.12 = 0.89.
+M2#investing-u05-09-q4@2,3: Which company is most likely to have a beta below 1? | A water utility | A housebuilder | A luxury car maker | A small mining explorer | Utilities have stable demand and earnings, so they move less with the market.
+M3#investing-u05-09-q5@3: A biotech share has 50% volatility but a beta of 0.5. Which is the best evaluation? | Most of its risk is specific, which CAPM says is not rewarded but which matters greatly to an undiversified holder | It is a low-risk share | Its beta must be wrong | It will move exactly half as much as the market every day | Beta captures only market sensitivity; total risk can still be high.
+SA3#investing-u05-09-q6@1,3: Evaluate beta as a measure of risk for a private investor. | Beta usefully measures how much a holding amplifies market moves, and portfolio beta helps gauge market exposure. But estimates depend on period and index, change over time, and ignore specific risk, which matters if the investor is not diversified. It also says nothing about liquidity, default or permanent loss. Beta is helpful within a diversified portfolio, less so for concentrated holdings. | Measures market sensitivity ; Portfolio beta use ; Estimation instability ; Ignores specific and other risks ; Context of diversification
 
 ## Factor investing
 LV: Intermediate · Evaluation
-S: Factor investing targets characteristics, such as value, size and momentum, that research links to long-run returns. This lesson explains the main factors, the Fama–French models, smart beta funds and the debate about whether factors will keep working.
-O: Describe the main investment factors
-O: Explain the Fama–French and Carhart factor models
-O: Evaluate the risks and costs of factor investing
-H: What are factors?
-P: A **factor** is a characteristic shared by a group of securities that helps explain their returns. Eugene Fama and Kenneth French's **three-factor model** (1993) added **size** (small companies) and **value** (cheap companies relative to book value) to the market factor. Mark Carhart added **momentum** (recent winners) in 1997. Fama and French later added **profitability** and **investment** factors (2015). Other widely used factors include **quality** and **low volatility**.
-H: Why factors might work
-- **Risk explanations**: value and small companies may be riskier, for example more vulnerable in recessions, so investors demand higher returns.
-- **Behavioural explanations**: investors may overreact or underreact to news, creating patterns such as momentum.
-- **Structural** reasons, such as constraints on some investors.
-H: Factor funds and risks
-- **Smart beta** or factor ETFs tilt portfolios towards chosen factors using rules.
-- Factors can **underperform for long periods**: value shares lagged growth shares for much of the 2010s.
-- Once factors are widely known and traded, their premiums may shrink.
-- Some apparent factors found in historical data may be due to **data mining**.
-- Costs and turnover reduce net returns.
-X: A value tilt.
-> An investor uses a global value ETF for part of her equity allocation.
-> In 2014 to 2020, value shares lag growth shares and her portfolio trails a market fund.
-> In 2022, value outperforms as interest rates rise.
-> She concludes that factor tilts require patience and conviction through long dry spells.
-K: Factors such as market, size, value, momentum, profitability, investment, quality and low volatility help explain returns in models from Fama–French and Carhart; they may reflect risk or behaviour, and factor funds can capture them, but premiums vary, can disappear for years and may shrink once widely exploited.
-!: Expecting a factor tilt to outperform every year. Factors can underperform for a decade or more.
-EV: established | Multi-factor models explain more of the variation in returns than CAPM alone.
-EV: contested | Whether factor premiums will persist after becoming widely known is debated.
-T: Factor | A characteristic of securities linked to their returns
-T: Value factor | The tendency of cheap shares relative to fundamentals to outperform
-T: Smart beta | Rules-based funds that tilt towards chosen factors
-SUM: Size, value, momentum and more.
-SUM: Risk or behaviour may explain them.
-SUM: Factors can lag for years.
-SRC: Fama E. F. and French K. R., "Common risk factors in the returns on stocks and bonds", Journal of Financial Economics 33(1), 3–56 | primary | 1993
-SRC: Carhart M. M., "On persistence in mutual fund performance", Journal of Finance 52(1), 57–82 | primary | 1997
-SRC: Fama E. F. and French K. R., "A five-factor asset pricing model", Journal of Financial Economics 116(1), 1–22 | primary | 2015
-Q: Which factors did Fama and French add in their 1993 model? | Size and value.
-Q: What did Carhart add? | Momentum.
-M1#investing-u05-10-q1@1: Which factor targets companies that are cheap relative to their book value? | Value | Momentum | Size | Low volatility | Applying the standard result: Value buys cheap shares.
-M2#investing-u05-10-q2@2: What is momentum in factor investing? | The tendency of recent winners to keep outperforming for a time | Buying only the largest companies | Holding only bonds | Avoiding all volatility | Applying the standard result: Momentum follows trends.
-M3#investing-u05-10-q3@3: Value shares underperform for years. What does this show? | Factor premiums can disappear for long periods | Value investing never works | Factors always beat the market | Factor funds have no costs | Applying the standard result: Factors are not guaranteed.
-MATCH2#investing-u05-10-q4@2: Match each factor to its description. | Size = Small companies ; Value = Cheap relative to fundamentals ; Momentum = Recent winners ; Quality = Profitable, stable companies | Factors target characteristics.
-SA2#investing-u05-10-q5@2,3: Evaluate factor investing as a strategy. | Research shows factors such as value, size and momentum have historically explained and added to returns, and smart beta funds offer cheap, rules-based exposure. However, factors can underperform for many years, premiums may shrink as more investors exploit them, some may be artefacts of data mining, and costs reduce returns, so investors need diversification across factors and long-term patience. | Evidence ; Access via funds ; Long underperformance ; Data mining and costs
+S: Factors are characteristics of securities, such as value, size, momentum, quality and low volatility, that have historically been associated with returns beyond the market. Factor or "smart beta" funds tilt portfolios towards them, with mixed results.
+O: Describe the main equity factors and the research behind them
+O: Explain how factor funds tilt portfolios
+O: Evaluate the evidence on whether factor premiums persist
+H: The main factors
+- **Market**: the equity risk premium itself.
+- **Size**: small companies have historically outperformed large ones on average (Banz, 1981), though the effect has been weak in recent decades.
+- **Value**: cheap shares (high book-to-price or earnings-to-price) have outperformed expensive ones over long periods (Fama and French, 1992, 1993), but value lagged badly from about 2007 to 2020.
+- **Momentum**: recent winners have tended to keep winning in the short term (Jegadeesh and Titman, 1993; Carhart, 1997), with occasional sharp crashes.
+- **Quality and profitability**: profitable, stable companies have earned more than the CAPM predicts (Novy-Marx, 2013; Fama and French five-factor model, 2015).
+- **Low volatility**: low-risk shares have delivered returns similar to or better than high-risk shares, contrary to CAPM.
+P: Factor funds, often marketed as "smart beta", follow rules that weight shares by these characteristics rather than by market value. They usually cost more than plain market trackers and less than active funds, and they create tracking error against the market index.
+H: Why might they work?
+P: Two explanations compete. **Risk-based**: factors reward exposure to risks, for example value companies are more vulnerable in recessions. **Behavioural**: investors systematically overpay for glamorous growth shares or underreact to news. If a premium is a reward for risk, it should persist; if it is a mispricing, it may shrink once widely known and traded, as McLean and Pontiff (2016) found for many published anomalies.
+X: A value fund and a broad market fund over a decade in which growth companies lead (illustrative).
+> The market fund rises 150%; the value fund 80%.
+> Investors who chose value for its long-run premium had to endure ten years of underperformance.
+> Factor premiums, if real, arrive unevenly and require patience and conviction.
+K: Factors such as value, size, momentum and quality have historically earned premiums, but they come and go for long periods and may shrink once widely exploited.
+!: Buying a factor fund after a strong run. Factor returns are cyclical, and recent performance says little about the next decade.
+EV: established | Value, momentum and profitability factors have explained a substantial part of differences in historical equity returns across many markets.
+EV: contested | Whether factor premiums will persist after publication and wide adoption, and whether they reflect risk or mispricing, is debated.
+T: Factor | A characteristic of securities associated with differences in average returns
+T: Value investing | Favouring shares that are cheap relative to fundamentals such as earnings or book value
+T: Smart beta | Index strategies that weight holdings by factors rather than by market capitalisation
+SUM: Size, value, momentum, quality and low volatility have historically been associated with excess returns.
+SUM: Explanations split between risk and behaviour; premiums are cyclical and may decay after discovery.
+SRC: Fama E. F. and French K. R., Common risk factors in the returns on stocks and bonds, Journal of Financial Economics 33(1) | primary | 1993
+SRC: McLean R. D. and Pontiff J., Does academic research destroy stock return predictability?, Journal of Finance 71(1) | primary | 2016
+Q: Name four equity factors. | Any four of: market, size, value, momentum, quality or profitability, low volatility.
+Q: What did McLean and Pontiff (2016) find? | Returns to published anomalies fell substantially after publication.
+M1#investing-u05-10-q1@1: Which factor favours shares that have risen most over the past year? | Momentum | Value | Size | Low volatility | Momentum strategies buy recent winners and sell recent losers, betting that trends persist for a few months.
+M2#investing-u05-10-q2@1,2: A fund buys shares with low prices relative to book value and earnings. Which factor is it targeting? | Value | Momentum | Size | Quality | Low price-to-book and price-to-earnings define value.
+TF2#investing-u05-10-q3@3: The value factor underperformed growth for much of the period from about 2007 to 2020. | true | Value had one of its longest periods of underperformance, a reminder that factor premiums are uneven.
+M3#investing-u05-10-q4@3: Why might a factor premium shrink after it becomes widely known? | If it reflected mispricing, investors exploiting it bid prices up and reduce future returns | Factors are banned after publication | Published factors become riskier | Index providers remove the shares | Research on many anomalies shows weaker returns after publication, consistent with arbitrage.
+SA3#investing-u05-10-q5@1,3: Evaluate whether a private investor should tilt their portfolio towards factors such as value or small companies. | Long-run research supports factor premiums, and low-cost funds now offer them, potentially improving returns or diversification. But premiums are cyclical with decades-long droughts, may shrink after discovery, funds cost more than plain trackers, and investors often abandon tilts at the wrong time. A modest tilt held with conviction may suit some; a plain market fund is a reasonable default. | Evidence for premiums ; Cyclicality and long underperformance ; Decay after publication ; Costs and behavioural risk ; Reaches a justified judgement
 
 ## Strategic asset allocation
-LV: Intermediate · Application
-S: Strategic asset allocation sets the long-term mix of asset classes in a portfolio. This lesson explains how it is set, why it matters so much, and how it relates to goals, time horizon and risk tolerance.
-O: Define strategic asset allocation
-O: Explain the factors that determine an investor's allocation
-O: Evaluate evidence on the importance of asset allocation
-H: What it is
-P: **Strategic asset allocation** is the long-term target mix of **asset classes**, such as shares, bonds, property and cash, that suits an investor's objectives. A common example is a "60/40" portfolio of 60% shares and 40% bonds. The allocation is set in advance and maintained by rebalancing, rather than changed in response to short-term market views. Because different asset classes have very different risks and returns, the allocation is the main driver of how a portfolio behaves.
-H: Setting the allocation
-- **Goals**: what the money is for, such as retirement or a house deposit.
-- **Time horizon**: longer horizons can usually tolerate more volatile assets such as shares.
-- **Risk tolerance**: willingness to accept losses without panicking.
-- **Risk capacity**: ability to absorb losses without harming essential plans.
-- **Liquidity needs**, tax and costs.
-- Regulated advisers must assess suitability under FCA rules, including the Consumer Duty.
-H: Why it matters
-- A 1986 study by Brinson, Hood and Beebower found that asset allocation policy explained over 90% of the **variation** in pension funds' quarterly returns over time.
-- This is often misquoted as explaining 90% of **returns**; later work showed it explains variation through time much more than differences between funds.
-- Even so, the choice between, say, 80% and 20% in shares matters far more for most investors' outcomes than picking individual funds.
-X: Two investors.
-> Investor A, aged 30, is saving for retirement in 35 years and is comfortable with large swings: an allocation of 80% shares and 20% bonds may suit her.
-> Investor B, aged 60, plans to buy a home in two years: he needs stability, so more cash and short-term bonds.
-> Both choose diversified funds, but their strategic allocations differ greatly.
-> Their outcomes will depend far more on these allocations than on which share funds they choose.
-K: Strategic asset allocation sets a long-term mix of asset classes based on goals, time horizon, risk tolerance and risk capacity, maintained through rebalancing; it largely determines a portfolio's behaviour, as Brinson's study of return variation shows, though it is often misquoted as explaining 90% of returns.
-!: Saying asset allocation explains 90% of returns. Brinson's finding concerned the variation of returns over time.
-EV: established | Asset allocation is the main determinant of a diversified portfolio's risk and return profile.
-EV: contested | How much of the differences in returns between funds is explained by allocation rather than selection remains debated.
-T: Strategic asset allocation | A long-term target mix of asset classes
-T: Risk tolerance | Willingness to accept investment losses
-T: Risk capacity | Ability to absorb losses without harming essential plans
-SUM: Set a long-term mix.
-SUM: Base it on goals and risk.
-SUM: Allocation drives outcomes.
-SRC: Brinson G. P., Hood L. R. and Beebower G. L., "Determinants of portfolio performance", Financial Analysts Journal 42(4), 39–44 | primary | 1986
-SRC: Financial Conduct Authority, Consumer Duty (PRIN 2A) | standard | 2023 | https://www.fca.org.uk/firms/consumer-duty
-Q: What is a 60/40 portfolio? | A portfolio of 60% shares and 40% bonds.
-Q: What is risk capacity? | The ability to absorb losses without harming essential plans.
-M1#investing-u05-11-q1@1: What does strategic asset allocation set? | A long-term target mix of asset classes | Daily share trades | The price of each share | Interest rates | Applying the standard result: It is a long-term plan.
-M2#investing-u05-11-q2@2: Which factor usually allows a higher allocation to shares? | A longer time horizon | Needing the money next month | Very low risk tolerance | A need for regular cash withdrawals | Applying the standard result: Time helps absorb volatility.
-NUM2#investing-u05-11-q3@2: A £20,000 portfolio follows a 70/30 share–bond allocation. How much is in bonds, in £? | 6000 | 0 | £ | 30% × 20,000 = 6000 in bonds.
-M3#investing-u05-11-q4@3: Which statement about Brinson's 1986 study is accurate? | Allocation explained most of the variation in returns over time | Allocation explains exactly 90% of all returns | Fund selection matters more than allocation | Asset allocation has no effect | Applying the standard result: The result concerns variation.
-SA2#investing-u05-11-q5@2,3: Explain how an investor's circumstances shape their strategic asset allocation. | The allocation depends on goals, such as retirement or a house deposit; time horizon, since longer horizons can absorb share volatility; risk tolerance, the willingness to bear losses; and risk capacity, the ability to absorb losses without harming essential plans. Liquidity needs, taxes and costs also matter, and regulated advisers must ensure the allocation is suitable for the client. | Goals ; Time horizon ; Tolerance and capacity ; Other factors
+LV: Introductory · Application
+S: Strategic asset allocation is the long-term mix of asset classes, such as shares, bonds and cash, chosen to fit an investor's goals and risk tolerance. It is the most important investment decision most people make, more than which funds they pick.
+O: Define strategic asset allocation and the factors that set it
+O: Calculate a portfolio's expected return from its allocation
+O: Evaluate the claim that asset allocation explains most of portfolio returns
+H: Setting the mix
+P: A **strategic asset allocation** sets long-term target weights, for example 60% global shares, 30% bonds, 10% cash, based on the investor's time horizon, attitude to risk, capacity for loss, goals and need for return. Once set, it is maintained through rebalancing and changed only when circumstances change, not in response to market forecasts.
+- More equities: higher expected return and volatility, suited to long horizons and high capacity for loss.
+- More bonds and cash: lower volatility and drawdowns, suited to short horizons and low capacity for loss.
+- Within each class: decisions about regions, bond duration and credit quality.
+E: Expected portfolio return = Σ allocation weight × expected asset class return
+X: A 60/40 allocation with assumed returns of 7% for shares and 3.5% for bonds (illustrative).
+> Expected return = 0.6 × 7% + 0.4 × 3.5% = 5.6%.
+> An 80/20 mix: 0.8 × 7% + 0.2 × 3.5% = 6.3%, but with deeper expected falls.
+> A 40/60 mix: 4.9%, with shallower falls.
+H: How much does allocation matter?
+P: Brinson, Hood and Beebower (1986) found that asset allocation policy explained over 90% of the **variation** of pension funds' returns over time. This is often misquoted as explaining 90% of the **level** of returns. Ibbotson and Kaplan (2000) clarified that allocation explains most of a fund's ups and downs over time, while differences between funds' returns depend on both allocation and implementation. Either way, the mix of assets dominates the experience of most investors.
+K: The long-term mix of shares, bonds and cash sets most of a portfolio's risk and return; choose it to fit goals and risk, then keep it with discipline.
+!: Spending hours choosing funds while ignoring the overall split between shares and bonds, which matters far more.
+EV: established | Asset allocation policy explains most of the variation in a diversified portfolio's returns over time (Brinson, Hood and Beebower, 1986; Ibbotson and Kaplan, 2000).
+T: Strategic asset allocation | A long-term target mix of asset classes set to match an investor's goals and risk
+T: Asset class | A group of investments with similar characteristics, such as shares, bonds, property or cash
+SUM: Strategic allocation sets long-term target weights from goals, horizon and risk tolerance.
+SUM: It drives most of a portfolio's variation in returns; implementation matters less than the mix.
+SRC: Brinson G. P., Hood L. R. and Beebower G. L., Determinants of portfolio performance, Financial Analysts Journal 42(4) | primary | 1986
+SRC: Ibbotson R. G. and Kaplan P. D., Does asset allocation policy explain 40, 90, or 100 percent of performance?, Financial Analysts Journal 56(1) | primary | 2000
+Q: What is strategic asset allocation? | A long-term target mix of asset classes chosen to suit an investor's goals and risk.
+Q: What did Brinson, Hood and Beebower (1986) find? | Asset allocation policy explained over 90% of the variation of pension funds' returns over time.
+M1#investing-u05-11-q1@1: Which decision usually has the biggest effect on a diversified portfolio's risk? | The split between shares, bonds and cash | The choice between two similar global trackers | The day of the week trades are placed | The platform's website design | Asset allocation dominates portfolio risk and return.
+NUM2#investing-u05-11-q2@2: A portfolio holds 70% shares (expected 7.5%), 25% bonds (expected 4%) and 5% cash (expected 3%). What is its expected return as a percentage, to two decimal places? | 6.4 | 0.01 | % | 0.7 × 7.5% + 0.25 × 4% + 0.05 × 3% = 5.25% + 1% + 0.15% = 6.4%.
+M2#investing-u05-11-q3@2,3: A 62-year-old planning to retire at 65 has 100% in shares and low capacity for loss. What would a strategic allocation review most likely suggest? | Reducing equity exposure towards a mix with more bonds and cash | Adding more shares to maximise growth | Moving everything to a single share | No change, since allocation does not matter | Short horizon and low capacity for loss argue for less volatility.
+M3#investing-u05-11-q4@3: A common claim is "asset allocation explains 90% of returns". Which is the most accurate evaluation? | It explains about 90% of the variation in a portfolio's returns over time, not 90% of the level of returns or of differences between funds | It is exactly right in every sense | It is false; allocation does not matter | It applies only to cash | Ibbotson and Kaplan showed the figure refers to time-series variation.
+SA3#investing-u05-11-q5@1,3: Explain why strategic asset allocation is described as the most important investment decision. | The split between asset classes determines most of a diversified portfolio's volatility and long-run expected return, because asset classes differ far more from each other than funds within a class. Getting the mix right for goals, horizon and risk tolerance matters more than fund selection. Research (Brinson et al.; Ibbotson and Kaplan) supports this, though implementation and costs also matter. | Allocation drives risk and expected return ; Asset classes differ more than funds ; Fits goals and risk ; Research cited accurately ; Implementation still matters
 
 ## Tactical asset allocation
 LV: Intermediate · Evaluation
-S: Tactical asset allocation adjusts a portfolio away from its long-term mix to exploit short-term market views. This lesson explains how it works and examines the evidence on whether it adds value.
+S: Tactical asset allocation means deliberately moving away from the strategic mix for a period to exploit expected short-term opportunities, for example holding more cash when shares look expensive. It is a form of market timing, and the evidence that it adds value is weak.
 O: Distinguish tactical from strategic asset allocation
-O: Describe how tactical decisions are made
-O: Evaluate the evidence on the success of market timing
-H: What tactical allocation is
-P: **Tactical asset allocation (TAA)** makes temporary departures from the strategic mix to take advantage of perceived short-term opportunities: for example, moving from 60% to 65% shares because a manager believes shares are cheap. The aim is to add return or reduce risk relative to the strategic benchmark. Tactical moves are usually limited to set ranges around the strategic weights.
-H: How decisions are made
-- **Valuation** signals, such as price–earnings ratios or bond yields.
-- **Economic forecasts**, such as expected growth or inflation.
-- **Momentum** and trend signals.
-- **Sentiment** indicators, such as investor surveys.
-- Many multi-asset fund managers use some tactical allocation.
-H: Does it work?
-- Successful timing requires being right twice: when to move and when to move back.
-- Many of the market's best days occur close to its worst days, so investors who move to cash during falls often miss the rebound.
-- Studies of fund managers find little consistent evidence that tactical calls add value after costs.
-- Valuations have some long-term predictive power, but are weak guides to short-term returns.
-- Behavioural biases, such as overconfidence, can lead individual investors to trade too often.
-X: Market timing in a crash.
-> An investor sells her shares in March 2020 as markets fall sharply, planning to buy back "when things settle".
-> Markets rebound strongly within weeks, partly on a few very strong days.
-> She buys back months later at higher prices.
-> Her tactical move locked in losses and missed the recovery.
-K: Tactical asset allocation makes temporary, limited departures from the strategic mix based on valuations, forecasts, momentum or sentiment, but successful market timing requires repeated correct decisions, the best and worst days often cluster together, and evidence that tactical calls add value after costs is weak.
-!: Selling everything during a crash to "wait for things to settle". Investors often miss the rebound.
-EV: established | A significant share of long-run equity returns comes from a small number of strong days, many close to market lows.
-EV: contested | Whether skilled managers can add value through tactical allocation is debated, with mixed evidence.
-T: Tactical asset allocation | Short-term departures from a strategic mix based on market views
-T: Market timing | Trying to move in and out of markets ahead of price moves
-T: Overconfidence | Overestimating one's own judgement or knowledge
-SUM: Short-term tilts from the strategic mix.
-SUM: Must be right twice.
-SUM: Evidence of added value is weak.
-SRC: Bodie Z., Kane A. and Marcus A. J., Investments, 12th edition, McGraw-Hill | secondary | 2021
-SRC: Barber B. M. and Odean T., "Trading is hazardous to your wealth: the common stock investment performance of individual investors", Journal of Finance 55(2), 773–806 | primary | 2000
-Q: What is tactical asset allocation? | Temporary departures from the strategic mix to exploit short-term market views.
-Q: Why is market timing difficult? | You must be right about both when to move out and when to move back.
-M1#investing-u05-12-q1@1: How does tactical allocation differ from strategic allocation? | It makes temporary short-term adjustments | It sets the long-term target mix | It never changes the portfolio | It only applies to cash | Applying the standard result: Tactical moves are temporary.
-M2#investing-u05-12-q2@2: What did Barber and Odean find about individual investors who traded most? | They earned lower returns after costs | They earned the highest returns | Trading had no effect | They avoided all losses | Applying the standard result: Frequent trading hurt returns.
-M3#investing-u05-12-q3@3: Why do investors who sell during a market crash often lose out? | They miss the strong rebound days that follow | Markets never recover after crashes | Cash always outperforms shares | Selling has no effect on returns | Applying the standard result: Best days cluster near worst days.
-TF2#investing-u05-12-q4@2: Valuation measures such as price–earnings ratios are reliable guides to next month's returns. | false | Valuations have some long-term predictive power but are weak short-term guides.
-SA2#investing-u05-12-q5@2,3: Evaluate tactical asset allocation as a way to improve returns. | Tactical allocation can, in principle, add value by tilting towards cheaper or more promising assets, and some managers use valuation and momentum signals. However, it requires repeated correct timing decisions, incurs trading costs and taxes, and the best market days often follow the worst, so moving out can miss rebounds. Evidence that tactical calls consistently add value after costs is weak, especially for individual investors prone to overconfidence. | Potential benefits ; Timing difficulty ; Costs ; Weak evidence
+O: Calculate the effect of a tactical tilt on returns
+O: Evaluate the evidence on tactical allocation and market timing
+H: What it is
+P: A strategic allocation might be 60% shares and 40% bonds. A **tactical** decision might move to 50/50 because shares look overvalued, or to 70/30 after a crash. Tactical moves are usually limited to set ranges and reversed later. They rely on forecasting relative returns over months or a few years.
+X: A portfolio cuts shares from 60% to 45% for a year, adding to bonds; shares return 20% and bonds 3% that year (illustrative).
+> Strategic return: 0.6 × 20% + 0.4 × 3% = 13.2%.
+> Tactical return: 0.45 × 20% + 0.55 × 3% = 10.65%.
+> The tilt cost 2.55 percentage points; if shares had fallen 20%, it would have added a similar amount.
+H: The evidence
+- Professional multi-asset managers, on average, have not reliably added value through tactical allocation after costs.
+- Valuation measures such as the cyclically adjusted P/E (School 6) have had some ability to predict 10-year returns, but little over one or two years.
+- Every tactical move needs two correct decisions: when to leave and when to return.
+- Tilts also create tracking error and regret, and can lead investors to abandon their plan.
+P: Where tactical moves are used, good practice is to set them in advance: a written range around each strategic weight (for example ±10 percentage points), clear reasons for a tilt, and a rule for reversing it. That separates a deliberate, limited decision from a reaction to headlines.
+K: Tactical allocation is short-term timing around a strategic mix; it can add or subtract value, but evidence that it adds value consistently after costs is weak.
+!: Calling panic selling "tactical asset allocation". A pre-set, limited, rules-based tilt is different from abandoning a plan in fear.
+EV: established | Valuation ratios have some predictive power for long-horizon equity returns but very little for short horizons (Campbell and Shiller, 1998).
+EV: contested | Whether skilled managers can add value through tactical allocation is debated; average results after costs are unimpressive.
+T: Tactical asset allocation | Temporary deviations from the strategic asset mix to exploit expected short-term opportunities
+T: Market timing | Moving in and out of markets or asset classes based on forecasts of their short-term direction
+SUM: Tactical allocation tilts temporarily away from the strategic mix based on forecasts.
+SUM: It can add or lose value; evidence of consistent success after costs is weak.
+SRC: Campbell J. Y. and Shiller R. J., Valuation ratios and the long-run stock market outlook, Journal of Portfolio Management 24(2) | primary | 1998
+SRC: Malkiel B. G., A Random Walk Down Wall Street (50th anniversary edition), W. W. Norton | secondary | 2023
+Q: What is tactical asset allocation? | A temporary deviation from the strategic mix to exploit expected short-term opportunities.
+Q: Why is market timing difficult? | It requires two correct decisions, when to leave and when to return, and short-term returns are hard to predict.
+M1#investing-u05-12-q1@1: How does tactical asset allocation differ from strategic asset allocation? | It is a short-term deviation from the long-term target mix | It sets the long-term target mix | It never changes | It only applies to cash | Strategic allocation is long-term; tactical moves are temporary tilts around it.
+NUM2#investing-u05-12-q2@2: A strategic 60/40 portfolio is tilted to 70/30 for a year in which shares return −10% and bonds 5%. By how many percentage points does the tilt change the return? | -1.5 | 0.01 | percentage points | Strategic: 0.6 × (−10) + 0.4 × 5 = −4%. Tactical: 0.7 × (−10) + 0.3 × 5 = −5.5%. Difference −1.5 points.
+M2#investing-u05-12-q3@2,3: A manager moves heavily to cash because shares "look expensive". Shares keep rising for three years. What does this illustrate? | Valuations are poor short-term timing signals, and tactical bets can be costly | Valuation always predicts next year's returns | Cash always outperforms | Tactical allocation is risk-free | Expensive markets can stay expensive; valuation predicts long-run, not short-run, returns.
+M3#investing-u05-12-q4@3: Which is the best evaluation of a private investor using tactical allocation? | Small, rules-based tilts may be harmless, but frequent forecast-driven moves risk costs, bad timing and abandoning the plan | It is the most reliable way to increase returns | It removes all risk | It is required by regulation | Evidence favours a stable strategic mix; tactical moves need skill most investors lack.
+SA3#investing-u05-12-q5@1,3: Evaluate the case for and against tactical asset allocation. | For: valuations and economic conditions do vary, extreme valuations have predicted poor long-run returns, and disciplined tilts within limits might add modest value. Against: short-term returns are hard to forecast, average managers do not add value after costs, timing needs two right decisions, and tilts create tracking error and behavioural risks. A stable strategic allocation with rebalancing is a sound default. | Arguments for ; Long versus short horizon predictability ; Evidence on managers ; Two decisions and costs ; Reaches a justified judgement
 
 ## Rebalancing
-LV: Intermediate · Application
-S: Over time, market movements push a portfolio away from its target allocation. This lesson explains why rebalancing matters, the main approaches and their trade-offs.
-O: Explain why portfolios drift from their target allocation
-O: Compare calendar and threshold rebalancing
+LV: Introductory · Application
+S: As markets move, a portfolio drifts away from its target mix. Rebalancing means trading back to the targets, which keeps risk at the chosen level and enforces a disciplined "sell high, buy low" habit.
+O: Explain why portfolios drift and why rebalancing controls risk
 O: Calculate the trades needed to rebalance a portfolio
+O: Evaluate calendar and threshold rebalancing approaches
 H: Drift
-P: If shares rise faster than bonds, a 60/40 portfolio may drift to 70/30, making it **riskier** than intended. If shares fall, the portfolio becomes more conservative. **Rebalancing** means buying and selling to bring the portfolio back to its target. Its main purpose is to **control risk** and keep the portfolio consistent with the investor's plan, rather than to boost returns.
-H: Approaches
-- **Calendar rebalancing**: at fixed intervals, such as once a year.
-- **Threshold rebalancing**: when an asset class drifts beyond a set band, such as 5 percentage points from target.
-- **Combined**: check at intervals and rebalance only if thresholds are breached.
-- Research by Vanguard suggests there is no single optimal frequency; annual or threshold-based approaches balance risk control and costs reasonably.
-H: Practical considerations
-- Rebalancing can involve **trading costs** and, outside tax wrappers such as ISAs and pensions, **capital gains tax**.
-- Using new contributions or withdrawals to rebalance can reduce costs.
-- Rebalancing means **selling what has risen and buying what has fallen**, which can feel uncomfortable but enforces discipline.
-- Multi-asset funds rebalance automatically.
-X: Rebalancing a portfolio.
-> A £100,000 portfolio targets 60% shares and 40% bonds.
-> After a strong year, shares are worth £70,000 and bonds £35,000: a total of £105,000.
-> The target is 60% of £105,000, or £63,000, in shares, and £42,000 in bonds.
-> The investor sells £7,000 of shares and buys £7,000 of bonds.
-K: Market movements cause portfolios to drift from their targets, changing their risk; rebalancing, by calendar, threshold or a combination, restores the target mix, mainly to control risk, while costs, taxes and the use of new cash flows affect how and when to do it.
-!: Thinking rebalancing is mainly a way to increase returns. Its main purpose is to keep risk at the intended level.
-EV: established | Without rebalancing, portfolios tend to drift towards higher-risk assets over long periods of rising share prices.
-T: Rebalancing | Restoring a portfolio to its target allocation
-T: Drift | The change in a portfolio's allocation caused by market movements
-T: Threshold rebalancing | Rebalancing when an allocation moves beyond a set band
-SUM: Portfolios drift.
-SUM: Rebalance by calendar or threshold.
-SUM: Control risk, mind costs.
-SRC: Zilbering Y., Jaconetti C. M. and Kinniry F. M., Best Practices for Portfolio Rebalancing, Vanguard | secondary | 2015
-SRC: Bodie Z., Kane A. and Marcus A. J., Investments, 12th edition, McGraw-Hill | secondary | 2021
-Q: What is the main purpose of rebalancing? | To keep a portfolio's risk consistent with its target allocation.
-Q: How can new contributions help rebalancing? | By directing new money to underweight assets, reducing the need to sell.
-M1#investing-u05-13-q1@1: What does rebalancing involve? | Restoring a portfolio to its target allocation | Moving all money into cash | Choosing new funds every month | Increasing risk deliberately | Applying the standard result: It restores the target mix.
-M2#investing-u05-13-q2@2: What is threshold rebalancing? | Rebalancing when an asset moves beyond a set band | Rebalancing on a fixed date only | Never rebalancing | Rebalancing every day | Applying the standard result: Bands trigger trades.
-NUM2#investing-u05-13-q3@2: A portfolio targets 50% shares. It is worth £80,000, with £48,000 in shares. How much must be sold from shares to return to target, in £? | 8000 | 0 | £ | Target shares are 50% × 80,000 = 40,000, so sell 48,000 − 40,000 = 8000.
-M3#investing-u05-13-q4@3: An investor never rebalances during a long bull market. What is the likely effect? | The portfolio becomes riskier than intended | The portfolio becomes safer over time | Nothing changes at all | It always earns higher returns safely | Applying the standard result: Shares grow as a share of the total.
-SA2#investing-u05-13-q5@2,3: Explain why rebalancing is important and how an investor might do it. | As markets move, portfolios drift; after share gains, a 60/40 portfolio might become 70/30 and riskier than the investor intended. Rebalancing restores the target by selling what has risen and buying what has fallen, either on a fixed schedule or when allocations pass set thresholds. Investors can reduce costs and tax by using new contributions or withdrawals and rebalancing within ISAs and pensions. | Drift and risk ; Restoring target ; Calendar and threshold ; Costs and tax
+P: If shares rise faster than bonds, a 60/40 portfolio may become 70/30, with more risk than intended. Without rebalancing, a portfolio tends to drift towards its highest-returning, usually riskiest, asset over time.
+X: A £100,000 portfolio starts 60/40. Shares rise 25% and bonds are flat (illustrative).
+> Shares £75,000, bonds £40,000; total £115,000; shares now 65.2%.
+> Target shares: 60% × £115,000 = £69,000; target bonds £46,000.
+> Sell £6,000 of shares and buy £6,000 of bonds to restore 60/40.
+H: How and when
+- **Calendar rebalancing**: review once or twice a year and trade back to targets.
+- **Threshold rebalancing**: trade when an asset drifts beyond a band, such as 5 percentage points.
+- **Cash-flow rebalancing**: direct new contributions or withdrawals towards the underweight asset, avoiding sales.
+P: Rebalancing has costs: dealing charges, spreads and, outside ISAs and pensions, potential capital gains tax. Multi-asset funds rebalance automatically. Research by Vanguard and others suggests that annual or threshold-based rebalancing controls risk adequately; very frequent rebalancing adds costs without much benefit.
+K: Rebalancing keeps a portfolio's risk at its chosen level by trimming what has risen and topping up what has fallen; once or twice a year, or at thresholds, is usually enough.
+!: Expecting rebalancing to always boost returns. Its main purpose is controlling risk; in a long bull market it can lower returns compared with letting shares run.
+EV: established | Rebalancing keeps portfolio risk close to target; its effect on returns depends on market patterns.
+EV: contested | The optimal rebalancing frequency and threshold vary by study and cost assumptions.
+T: Rebalancing | Trading a portfolio back to its target allocation after market movements
+T: Drift | The change in a portfolio's allocation caused by different returns on its assets
+T: Threshold rebalancing | Rebalancing only when an allocation moves outside a set band
+SUM: Portfolios drift towards their best-performing assets, raising risk.
+SUM: Rebalancing by calendar, threshold or cash flows restores targets; mind costs and tax.
+SRC: Jaconetti C. M., Kinniry F. M. and Zilbering Y., Best practices for portfolio rebalancing, Vanguard research | secondary | 2010
+SRC: Bodie Z., Kane A. and Marcus A. J., Investments (12th edition), McGraw Hill | secondary | 2021
+Q: Why does a portfolio drift? | Its assets earn different returns, so their weights change.
+Q: Name three ways to rebalance. | Calendar, threshold and cash-flow rebalancing.
+M1#investing-u05-13-q1@1: What is the main purpose of rebalancing? | To keep the portfolio's risk in line with its target allocation | To maximise returns every year | To avoid all taxes | To time the market | Rebalancing controls risk by restoring target weights.
+NUM2#investing-u05-13-q2@2: A portfolio of £50,000 targets 50/50. Shares grow to £32,000 and bonds stay at £20,000. How much should be moved from shares to bonds, in pounds? | 6000 | 0 | £ | Total £52,000; target £26,000 each; sell £32,000 − £26,000 = £6,000 of shares.
+M2#investing-u05-13-q3@3: An investor adds £500 a month and their shares are above target. What is a low-cost way to rebalance? | Direct new contributions to bonds until the target is restored | Sell all the shares | Stop contributing | Borrow to buy bonds | Cash-flow rebalancing avoids dealing costs and tax on sales.
+M3#investing-u05-13-q4@3: Shares rise strongly for ten years. Which is the best evaluation of an investor who rebalanced annually? | They probably earned slightly less than letting shares run, but kept risk at the level they chose | They made a mistake and should never rebalance | Rebalancing guaranteed higher returns | Their risk increased | Rebalancing trades some return in trending markets for risk control.
+SA3#investing-u05-13-q5@1,3: Evaluate the costs and benefits of rebalancing a portfolio held outside a tax wrapper. | Benefits: keeps risk at target, enforces buying low and selling high, and prevents drift into riskier allocations. Costs: dealing fees and spreads, and selling winners outside an ISA or pension can trigger capital gains tax. Using new contributions, wider thresholds, annual reviews or holding assets in wrappers reduces costs. Rebalancing is usually worthwhile but should be done efficiently. | Risk control benefit ; Discipline benefit ; Dealing costs ; Capital gains tax outside wrappers ; Efficient methods and conclusion
 
 ## Lifestyling and glide paths
 LV: Intermediate · Application
-S: As people approach the time they need their money, many funds gradually reduce investment risk. This lesson explains lifestyling, target-date funds and glide paths, and how pension freedoms changed them.
-O: Explain lifestyling and glide paths
-O: Describe target-date funds
-O: Evaluate the strengths and limitations of automatic de-risking
-H: Lifestyling
-P: **Lifestyling** automatically moves a pension or savings fund from higher-risk assets, such as shares, towards lower-risk assets, such as bonds and cash, as the saver approaches a target date such as retirement. The idea is to reduce the risk that a market fall just before retirement badly damages savings, a problem called **sequence risk**. The planned path of this shift is the **glide path**. Many UK workplace pension default funds use lifestyling.
-H: Target-date funds
-- A **target-date fund** has a set year in its name, such as "Retirement 2050", and follows a glide path towards that date.
-- Early on it may hold mainly shares; it de-risks gradually over the final 10 to 15 years.
-- It offers a simple "single-fund" solution.
-- Glide paths differ between providers, so two funds with the same date can hold very different mixes.
-H: Pension freedoms
-- Before 2015, many UK savers bought an **annuity** at retirement, so lifestyling often moved into bonds that matched annuity prices, and cash.
-- The **pension freedoms** introduced in April 2015 allowed people to keep money invested in **drawdown**.
-- Many default funds now target drawdown, keeping more in growth assets beyond retirement.
-- Savers should check that their glide path matches how they plan to use their pension.
-X: A glide path in practice.
-> A saver aged 40 is in a workplace pension default fund targeting retirement at 67.
-> Until about 15 years before retirement, the fund holds mostly global shares.
-> From age 52 it gradually increases bonds and cash, ending with a balanced mix.
-> If she plans to stay invested in drawdown, she checks the fund is not designed for buying an annuity.
-K: Lifestyling and target-date funds reduce investment risk automatically along a glide path as a target date approaches, limiting sequence risk; glide paths differ between providers, and since the 2015 pension freedoms many target drawdown rather than annuity purchase, so savers should check that the path matches their plans.
-!: Assuming all target-date funds with the same year are the same. Glide paths and asset mixes vary widely.
-EV: established | Most UK workplace pension default funds use some form of lifestyling.
-EV: contested | How much risk to keep in retirement, especially in drawdown, is debated.
-T: Lifestyling | Automatically reducing investment risk as a target date approaches
-T: Glide path | The planned shift in asset mix over time
-T: Sequence risk | The danger that poor returns near withdrawals cause lasting damage
-SUM: De-risk as the target nears.
-SUM: Target-date funds follow glide paths.
-SUM: Match the path to your plans.
-SRC: Pensions Policy Institute, The DC Future Book | data | 2024
-SRC: Financial Conduct Authority, Retirement Outcomes Review: Final Report (MS16/1.3) | primary | 2018
-Q: What is sequence risk? | The danger that poor returns near the time of withdrawal cause lasting damage to savings.
-Q: How did the 2015 pension freedoms affect lifestyling? | Many funds shifted from targeting annuity purchase to targeting drawdown.
-M1#investing-u05-14-q1@1: What does lifestyling do? | Gradually reduces risk as a target date approaches | Increases risk every year until retirement | Keeps the same mix forever | Moves all money into shares at retirement | Applying the standard result: It de-risks over time.
-M2#investing-u05-14-q2@2: What is a target-date fund? | A fund following a glide path towards a set year | A fund that only holds cash | A fund for day trading | A fund that guarantees returns | Applying the standard result: The date sets the glide path.
-NUM2#investing-u05-14-q3@2: A glide path starts de-risking 15 years before retirement at 67. At what age does de-risking begin? | 52 | 0 | years | 67 − 15 = 52, so de-risking begins at age 52.
-M3#investing-u05-14-q4@3: A saver plans to stay invested in drawdown, but her default fund de-risks fully into cash for an annuity. What should she do? | Check whether a drawdown-focused option suits her better | Ignore it, as all funds are the same | Move everything into a single share | Stop contributing to her pension | Applying the standard result: The path should match her plans.
-SA2#investing-u05-14-q5@2,3: Evaluate the use of lifestyling in pension default funds. | Lifestyling protects savers who do not actively manage their pensions by reducing risk as retirement nears, limiting the damage a late market fall could cause. However, glide paths vary, may de-risk too early or too much, and may not match how people now use pensions under the 2015 freedoms, such as staying invested in drawdown, so savers should check their default fund suits their plans. | Protection from sequence risk ; Simplicity ; Variation and timing ; Fit with pension freedoms
+S: Lifestyling automatically moves a pension from higher-risk to lower-risk assets as the planned retirement date approaches, following a glide path. It reduces sequence risk but must match how the saver will actually take their money.
+O: Describe how lifestyling and target-date funds work
+O: Explain the link between glide paths and sequence of returns risk
+O: Evaluate whether a default glide path suits a given saver
+H: How it works
+P: Many workplace pension default funds hold mainly shares while retirement is far away, then switch gradually, often over the last 5 to 15 years, into bonds and cash. **Target-date funds** do the same within a single fund named for a retirement year. The schedule of changes is the **glide path**.
+X: A default fund holds 90% shares until 15 years before the selected retirement age, then reduces shares by about 4 percentage points a year (illustrative).
+> At 10 years to go: about 70% shares.
+> At retirement: perhaps 30% shares, with the rest in bonds and cash.
+> A crash in the final years then hits a smaller share of the pot.
+H: Matching the glide path to the plan
+P: Older glide paths targeted buying an **annuity** at retirement, ending heavily in long gilts and cash. Since the 2015 pension freedoms, most people take flexible drawdown, keeping money invested for decades after retirement. A glide path designed for an annuity can be too cautious for someone who will stay invested. Savers should also check that the selected retirement age matches their real plans, as the switching is based on it.
+K: Lifestyling reduces risk as retirement nears, protecting against a late crash, but the glide path should match the retirement date and how the money will be used.
+P: Savers can usually opt out of the default lifestyle strategy and choose their own funds, or choose a different strategy aimed at drawdown, annuity purchase or a cash lump sum. Pension Wise, the free government guidance service from MoneyHelper, explains the options for people aged 50 and over with a defined contribution pension.
+!: Ignoring the retirement age recorded on a workplace pension. If it is earlier or later than you plan, the de-risking happens at the wrong time.
+EV: established | Glide paths reduce exposure to equity falls near retirement, the period of greatest sequence risk.
+EV: contested | The ideal glide path, including whether equity exposure should rise again after retirement, is debated in research.
+T: Lifestyling | Automatically switching a pension into lower-risk assets as the selected retirement date approaches
+T: Glide path | The planned schedule by which a fund's allocation becomes more cautious over time
+T: Target-date fund | A fund that follows a glide path towards a named target year
+SUM: Lifestyling and target-date funds reduce risk on a schedule as retirement approaches.
+SUM: The glide path should match the real retirement date and whether the saver will buy an annuity or use drawdown.
+SRC: Department for Work and Pensions, Guidance for offering a default option for defined contribution automatic enrolment pension schemes | guidance | 2019 | https://www.gov.uk/government/publications/automatic-enrolment-default-option-guidance
+SRC: MoneyHelper, Lifestyling and your pension investments (Money and Pensions Service) | guidance | 2026 | https://www.moneyhelper.org.uk/en/pensions-and-retirement
+Q: What does lifestyling do? | It switches a pension into lower-risk assets automatically as the selected retirement date approaches.
+Q: Why might an old-style glide path not suit someone using drawdown? | It may be designed for buying an annuity and be too cautious for money that stays invested for decades.
+M1#investing-u05-14-q1@1: Which describes a target-date fund? | A fund that becomes more cautious over time towards a named year | A fund that always holds 100% shares | A fund that only holds cash | A fund that guarantees a return by its target date | Target-date funds follow a glide path toward their named year.
+NUM2#investing-u05-14-q2@2: A glide path cuts equity exposure from 80% by 5 percentage points a year starting 10 years before retirement. What is the equity share 4 years before retirement, as a percentage? | 50 | 0 | % | Six years of reductions (from 10 to 4 years to go): 80% − 6 × 5% = 50%.
+M2#investing-u05-14-q3@2,3: A saver's pension records a retirement age of 60 but they plan to work to 68. What is the main risk? | Their pot will be de-risked years too early, reducing likely growth | Their pot will be too risky at 68 | Nothing, because retirement ages are ignored | They will lose tax relief | Lifestyling follows the recorded date, so it should match real plans.
+M3#investing-u05-14-q4@3: Why have many pension providers redesigned glide paths since 2015? | The pension freedoms meant most savers use drawdown rather than buying an annuity at retirement | Shares were banned in pensions | Auto-enrolment ended | Annuities became compulsory | Glide paths now often target a mixed, drawdown-friendly allocation.
+SA3#investing-u05-14-q5@1,3: Evaluate whether a saver should rely on their workplace pension's default lifestyle strategy. | Defaults are designed for typical members, are low-cost, and reduce sequence risk near retirement, which suits savers who do not want to manage investments. But they assume a retirement date and withdrawal approach that may not fit: someone planning drawdown, retiring later, or with other assets might want a different glide path. Checking the retirement age and strategy, and getting guidance (Pension Wise) or advice, is sensible. | Defaults suit typical members ; Reduce sequence risk ; Assumptions on date and withdrawal ; May not suit drawdown or other assets ; Check and seek guidance
 
 ## Multi-asset funds and model portfolios
-LV: Intermediate · Application
-S: Many investors use ready-made portfolios that hold a mix of assets. This lesson explains multi-asset funds and model portfolios, how risk ratings work, and what to check before investing.
-O: Describe multi-asset funds and model portfolios
-O: Explain risk ratings and risk-graded portfolios
-O: Evaluate costs, transparency and suitability
-H: Ready-made portfolios
-P: A **multi-asset fund** holds a mix of asset classes, such as shares, bonds and sometimes property and alternatives, in one fund, with the manager handling allocation and rebalancing. Types include **static allocation** funds, such as fixed 60/40 index funds, and **actively managed** funds that change allocations. A **model portfolio** is a recommended mix of funds, often offered by platforms or advisers, which may be rebalanced on the investor's behalf. Both offer **diversification** and **convenience** in a single decision.
-H: Risk ratings
-- Funds are often grouped by risk level, such as "cautious", "balanced" and "adventurous", or numbered scales.
-- The Synthetic Risk and Reward Indicator (SRRI), on a scale of 1 to 7, has been used in UK fund key information documents, based on past volatility.
-- Risk labels are not standardised across providers, so a "balanced" fund from one may hold far more shares than another's.
-- Always check the actual asset mix.
+LV: Introductory · Application
+S: Multi-asset funds hold a mix of shares, bonds and other assets in one fund, rebalancing automatically. Model portfolios offered by platforms and advisers do something similar with several funds. They package asset allocation for investors who prefer not to build it themselves.
+O: Describe the main types of multi-asset fund and model portfolio
+O: Explain how risk-targeted and fixed-allocation funds differ
+O: Evaluate multi-asset funds against building a portfolio yourself
+H: Types
+- **Fixed-allocation funds**: hold a set mix, such as 60% shares and 40% bonds, rebalanced automatically; often index-based and low-cost.
+- **Risk-targeted funds**: aim to keep volatility within a band, adjusting the mix as markets change.
+- **Active multi-asset funds**: managers change the allocation tactically and select holdings; usually more expensive.
+- **Target-date funds**: follow a glide path (previous lesson).
+- **Model portfolios**: a recommended set of funds in set proportions, maintained by a platform or adviser.
+P: Under FCA rules, a model portfolio recommended by an adviser is part of personal advice and must be suitable for the client; a ready-made portfolio chosen by the investor on a platform is not advice, so the investor carries the responsibility for choosing a suitable one.
+X: An investor compares holding one 60/40 multi-asset index fund with building the same mix from two trackers (illustrative).
+> One fund: automatic rebalancing, one charge, no decisions; but the investor cannot change the mix within it.
+> Two trackers: possibly slightly cheaper and more flexible; but the investor must rebalance and resist tinkering.
+> For many, the convenience and discipline of the single fund outweigh the small difference in cost.
 H: What to check
-- **Costs**: the ongoing charges figure (OCF) and any platform or adviser fees.
-- **Asset mix** and how much it can change.
-- **Diversification** across regions and asset classes.
-- **Performance** relative to suitable benchmarks, over the long term.
-- **Suitability** for your goals and risk, as FCA rules require firms to consider.
-X: Comparing two "balanced" funds.
-> Fund A, labelled "balanced", holds 60% shares and has an OCF of 0.22%.
-> Fund B, also "balanced", holds 40% shares, 20% alternatives and has an OCF of 0.95%.
-> Despite the same label, they have different risk profiles and costs.
-> Over 20 years, the difference in charges alone could significantly affect the final value.
-K: Multi-asset funds and model portfolios provide diversified, managed mixes of assets in one decision, grouped by risk level, but labels are not standardised, so investors should check the actual asset mix, costs, diversification, performance and suitability.
-!: Relying on a fund's "balanced" label alone. Asset mixes and risk vary widely between providers.
-EV: established | Charges compound over time and can substantially reduce long-term returns.
+P: Compare the **ongoing charges figure**, the actual mix (equity share, regions, bond duration and credit quality) and the risk rating. Names such as "cautious", "balanced" and "adventurous" are not standardised and can describe very different mixes. Industry sector averages, such as the Investment Association's Mixed Investment sectors, group funds by equity range and help comparison.
+K: Multi-asset funds and model portfolios deliver a ready-made, rebalanced allocation; check the actual mix and charges, since labels like "balanced" are not standardised.
+!: Holding a multi-asset fund alongside several other funds without checking the combined allocation, which can end up far from what was intended.
+EV: established | Investment Association sectors such as Mixed Investment 40–85% Shares classify multi-asset funds by their equity range.
+EV: contested | Whether active multi-asset managers add value over simple fixed-allocation index funds after charges is debated.
 T: Multi-asset fund | A fund holding several asset classes in one portfolio
-T: Model portfolio | A recommended mix of funds, often rebalanced for the investor
-T: Ongoing charges figure | The annual cost of running a fund, as a percentage of assets
-SUM: One-stop diversified portfolios.
-SUM: Check the real asset mix.
-SUM: Costs and suitability matter.
-SRC: Financial Conduct Authority, Asset Management Market Study: Final Report (MS15/2.3) | primary | 2017
-SRC: Financial Conduct Authority, Consumer Duty (PRIN 2A) | standard | 2023 | https://www.fca.org.uk/firms/consumer-duty
-Q: What is a model portfolio? | A recommended mix of funds, often rebalanced on the investor's behalf.
-Q: Why should you check a multi-asset fund's actual holdings? | Risk labels are not standardised, so funds with the same label can differ greatly.
-M1#investing-u05-15-q1@1: What does a multi-asset fund hold? | A mix of asset classes in one fund | Shares in one company only | Only cash deposits | A single government bond | Applying the standard result: It combines asset classes.
-M2#investing-u05-15-q2@2: What does the OCF measure? | The annual cost of running a fund | The fund's expected return | The number of holdings | The fund's risk rating | Applying the standard result: Charges reduce returns.
-NUM2#investing-u05-15-q3@2: A £50,000 investment is in a fund with an ongoing charge of 0.8% a year. Roughly how much is charged in the first year, in £? | 400 | 0 | £ | 0.8% × 50,000 = 400 in the first year.
-M3#investing-u05-15-q4@3: Two funds are both labelled "cautious" but one holds 70% shares. What should an investor conclude? | Labels are not standardised, so check holdings | Both funds must be identical | The 70% shares fund is the safest | Labels guarantee the asset mix | Applying the standard result: Real holdings decide risk.
-SA2#investing-u05-15-q5@2,3: Explain what an investor should check before choosing a multi-asset fund or model portfolio. | They should check the actual asset mix rather than the label, how much the manager can change it, and how diversified it is across regions and asset classes. They should compare ongoing charges and platform or adviser fees, since costs compound, look at long-term performance against suitable benchmarks, and make sure the risk level suits their goals, time horizon and capacity for loss. | Asset mix ; Costs ; Performance ; Suitability
+T: Model portfolio | A predefined combination of funds maintained by a platform or adviser
+T: Risk-targeted fund | A fund that adjusts its asset mix to keep volatility within a target range
+SUM: Multi-asset funds and model portfolios package allocation and rebalancing.
+SUM: Compare actual mix, risk and charges; "balanced" means different things at different providers.
+SRC: Investment Association, IA sector definitions | standard | 2026 | https://www.theia.org/
+SRC: Financial Conduct Authority, Asset management market study: final report (MS15/2.3) | primary | 2017 | https://www.fca.org.uk/
+Q: What does a fixed-allocation multi-asset fund do? | Holds a set mix of assets and rebalances automatically.
+Q: Are fund risk labels such as "balanced" standardised? | No; they vary between providers, so check the actual mix.
+M1#investing-u05-15-q1@1: What is a model portfolio? | A predefined set of funds in set proportions maintained by a platform or adviser | A single share | A savings account | A government bond | Model portfolios combine several funds into a recommended mix.
+M2#investing-u05-15-q2@2: Two "balanced" funds hold 40% and 80% in shares. What follows? | Their risk differs considerably despite the same label | They must have identical risk | The label guarantees the mix | Neither holds shares | Labels are not standardised; the equity share drives risk.
+NUM2#investing-u05-15-q3@2: A multi-asset fund holds 60% in a share index charging 0.10% and 40% in a bond index charging 0.08%, plus a 0.10% management layer. What is its total ongoing charge as a percentage, to three decimal places? | 0.192 | 0.001 | % | Weighted underlying: 0.6 × 0.10 + 0.4 × 0.08 = 0.092%; plus 0.10% = 0.192%.
+M3#investing-u05-15-q4@3: Which investor is best suited to a single fixed-allocation multi-asset index fund? | Someone who wants a simple, low-cost, rebalanced portfolio and is unlikely to manage it actively | Someone who wants to pick individual shares daily | Someone needing all their money next month | Someone who wants only cash | The fund's strength is simplicity and automatic discipline.
+SA3#investing-u05-15-q5@1,3: Evaluate a single multi-asset fund as a complete portfolio for a beginner. | Advantages: instant diversification across asset classes and regions, automatic rebalancing, one charge and fewer decisions, which reduces behavioural mistakes. Disadvantages: the mix cannot be tailored, charges vary widely (active versions cost more), labels are not standardised, and the fund may not match the investor's risk or home-currency needs. A low-cost fund matching the investor's risk level can be a sensible complete solution. | Diversification and rebalancing ; Simplicity and behavioural benefit ; Lack of tailoring ; Charges and labels vary ; Reaches a justified judgement
 `;

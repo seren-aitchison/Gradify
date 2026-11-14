@@ -648,7 +648,7 @@
    "id": "u06",
    "n": 6,
    "title": "Valuation",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u06-01",
@@ -819,7 +819,7 @@
    "id": "u08",
    "n": 8,
    "title": "Funds, Index Investing and Costs",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u08-01",

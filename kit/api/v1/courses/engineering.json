@@ -1126,7 +1126,7 @@
    "id": "u11",
    "n": 11,
    "title": "Engineering in Society",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u11-01",
@@ -1209,7 +1209,7 @@
    "id": "u12",
    "n": 12,
    "title": "Projects and Professional Practice",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u12-01",

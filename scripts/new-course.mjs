@@ -2,7 +2,7 @@
 // PsychGradify/SocGradify pattern (content standard 2: objectives, key terms, summaries, typed and dated sources,
 // evidence status, questions at three levels with permanent ids), run by the shared course engine.
 //
-//   node scripts/new-course.mjs scaffold <slug> --site EcoGradify --folder ecogradify --name "Ecology" \
+//   node scripts/new-course.mjs scaffold <slug> --site EcoGradify --folder ecogradify [--sub course] --name "Ecology" \
 //        --accent "#6aa84f" --expert "a university ecology lecturer"
 //     creates kit/courses/<slug>/ (course.js, syllabus.js, ids.js, qa.js, interactives.js, evidence.js, registry.js,
 //     notes/) and <folder>/course/index.html, and links the course from the site's homepage and nav. Never
@@ -33,6 +33,8 @@ async function put(p, text) {
 
 async function scaffold() {
   const { site, folder, name, accent = "#a78bfa", expert = "a subject expert" } = opt;
+  // the course page's folder inside the site: "course" by default; a site with several courses names each (--sub french)
+  const sub = opt.sub || "course";
   if (!slug || !site || !folder || !name) throw new Error("scaffold <slug> --site Name --folder dir --name Subject [--accent #hex --expert '…']");
   const dir = `kit/courses/${slug}/`;
   await put(`${dir}course.js`, `// ${site} ${name}: the curriculum, notes, interactives and quality record, handed to the shared course engine
@@ -44,7 +46,7 @@ import { INTERACTIVES } from "./interactives.js";
 import { QUESTIONS, LESSONS } from "./registry.js";
 import { EVIDENCE } from "./evidence.js";
 export default {
-  site: "${site}", slug: "${slug}", name: "${name}", app: "../app.html", page: "/${folder}/course/", unitWord: "School", trackWord: "Stage",
+  site: "${site}", slug: "${slug}", name: "${name}", app: "../app.html", page: "/${folder}/${sub}/", unitWord: "School", trackWord: "Stage",
   // who must sign a school off before it counts as published (docs/CURRICULUM_QA.md)
   expert: "${expert}",
   units: UNITS, tracks: TRACKS, paths: PATHS, blurbs: BLURBS,
@@ -140,13 +142,15 @@ export const EVIDENCE = {};
     .replace(/\s*<link rel="stylesheet" href="..\/..\/kit\/styles\/social-labs.css">/, "")
     .replace(/\s*<a href="..\/3d.html">Brain 3D<\/a>/, (await exists(`${folder}/3d.html`)) ? `\n        <a href="../3d.html">3D</a>` : "")
     .replace(/\s*<a href="\/socgradify\/course\/">SocGradify<\/a>/, "");
-  await put(`${folder}/course/index.html`, page);
+  await put(`${folder}/${sub}/index.html`, page);
   // link the course from the site's own pages
   for (const f of ["index.html", "map.html", "3d.html"]) {
     if (!(await exists(`${folder}/${f}`))) continue;
     let h = await readFile(new URL(`${folder}/${f}`, root), "utf8"); const before = h;
-    if (!/href="course\/"/.test(h)) h = h.replace(/(<nav class="sub-links"[^>]*>\s*\n)(\s*)/, `$1$2<a href="course/">Course</a>\n$2`);
-    if (f === "index.html" && !h.includes('class="sub-course"')) h = h.replace(/(\s*)<div id="sub-more"><\/div>/, `$1<a class="sub-course" href="course/">$1  <span class="sc-k">New course</span>$1  <b>${name}</b>$1  <span>${opt.blurb || `A structured ${name.toLowerCase()} course: schools of lessons with check questions at three levels, flashcards, quizzes and exams.`}</span>$1  <span class="sc-go">Choose your pathway →</span>$1</a>$1<div id="sub-more"></div>`);
+    const label = sub === "course" ? "Course" : name;
+    if (!h.includes(`href="${sub}/"`)) h = h.replace(/(<nav class="sub-links"[^>]*>\s*\n)(\s*)/, `$1$2<a href="${sub}/">${label}</a>\n$2`);
+    // one card per course: a second course on the same site (e.g. LanguageGradify's languages) adds its own card
+    if (f === "index.html" && !h.includes(`class="sub-course" href="${sub}/"`)) h = h.replace(/(\s*)<div id="sub-more"><\/div>/, `$1<a class="sub-course" href="${sub}/">$1  <span class="sc-k">New course</span>$1  <b>${name}</b>$1  <span>${opt.blurb || `A structured ${name.toLowerCase()} course: schools of lessons with check questions at three levels, flashcards, quizzes and exams.`}</span>$1  <span class="sc-go">Choose your pathway →</span>$1</a>$1<div id="sub-more"></div>`);
     if (h !== before) { await writeFile(new URL(`${folder}/${f}`, root), h); console.log(`  linked the course from ${folder}/${f}`); }
   }
 }

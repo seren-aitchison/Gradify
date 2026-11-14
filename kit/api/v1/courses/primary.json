@@ -587,7 +587,7 @@
    "id": "u06",
    "n": 6,
    "title": "Reading and Comprehension",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u06-01",
@@ -655,7 +655,7 @@
    "id": "u07",
    "n": 7,
    "title": "Grammar, Punctuation and Writing",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u07-01",
@@ -753,7 +753,7 @@
    "id": "u08",
    "n": 8,
    "title": "Plants, Animals and Habitats",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u08-01",
@@ -841,7 +841,7 @@
    "id": "u09",
    "n": 9,
    "title": "Materials, Forces and Magnets",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u09-01",

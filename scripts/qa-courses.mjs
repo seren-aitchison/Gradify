@@ -126,7 +126,8 @@ for (const C0 of COURSES) {
           if (m.wrong.length < C.minWrong - 1) row.hard.push(`${where}: "${m.q.slice(0, 50)}…" has too few options`);
           if (m.why.length <= 40) row.hard.push(`${where}: "${m.q.slice(0, 50)}…" explanation too thin`);
           if (m.wrong.includes(m.right) || new Set(m.wrong).size !== m.wrong.length) row.hard.push(`${where}: duplicate option in "${m.q.slice(0, 50)}…"`);
-          if (m.right.length > 12 && norm(m.q).includes(norm(m.right))) row.hard.push(`${where}: answer appears in the question "${m.q.slice(0, 50)}…"`);
+          // answers written in another script (Japanese, Chinese) normalise to nothing, so only compare when something is left
+          if (m.right.length > 12 && norm(m.right).length > 8 && norm(m.q).includes(norm(m.right))) row.hard.push(`${where}: answer appears in the question "${m.q.slice(0, 50)}…"`);
           const k = norm(m.q); if (seenQ.has(k)) row.hard.push(`${where}: question duplicates one in ${seenQ.get(k)}`); else seenQ.set(k, `${unit.id} ${l.title}`);
           // a classic flaw: the right answer is conspicuously the longest option
           if (m.right.length > 1.6 * Math.max(...m.wrong.map((w) => w.length))) longestRight++;

@@ -606,7 +606,7 @@
    "id": "u05",
    "n": 5,
    "title": "Veterinary Pathology",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u05-01",
@@ -704,7 +704,7 @@
    "id": "u06",
    "n": 6,
    "title": "Microbiology, Parasitology and Immunology",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u06-01",
@@ -802,7 +802,7 @@
    "id": "u07",
    "n": 7,
    "title": "Veterinary Pharmacology and Therapeutics",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u07-01",

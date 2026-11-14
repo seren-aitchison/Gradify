@@ -1,517 +1,446 @@
 // JuniorGradify Phonics and Spelling (content standard 2). Added by scripts/new-course.mjs add-notes.
 export default `
 ## Letters and sounds
-LV: Year 1 · Foundation
-S: Words are made of sounds, and letters are the way we write those sounds down. This lesson explains phonemes and graphemes, shows how children learn the main letter–sound links, and why saying sounds clearly helps reading and spelling.
-O: Explain the difference between a sound (phoneme) and the letters that write it (grapheme)
-O: Say the common sound for each single letter clearly
-O: Count the sounds in a short word
+LV: Reception to Year 1 · Foundation
+S: Phonics teaches the link between the sounds we hear in words and the letters we write. This lesson explains phonemes (sounds) and graphemes (the letters that write them), and why saying pure sounds helps children read.
+O: Say the sound most commonly made by each letter of the alphabet
+O: Explain the difference between a phoneme and a grapheme
+O: Explain why pure sounds, without an added "uh", make blending easier
 H: Sounds and letters
-P: A **phoneme** is the smallest sound in a word. The word *cat* has three phonemes: /c/ /a/ /t/. A **grapheme** is the letter or group of letters that writes a phoneme down. In *cat*, each phoneme is written with one letter. English has about 44 phonemes but only 26 letters, so some phonemes are written with two or more letters, such as *sh* in *ship*.
-H: Saying sounds clearly
-- Say each sound as short and pure as you can: /m/, not "muh".
-- Some sounds can be stretched, like /mmm/ and /sss/; others are short bounces, like /t/ and /p/.
-- Letter **names** (ay, bee, see) are different from letter **sounds** (/a/, /b/, /c/). For reading, we use the sounds.
-- Most schools in England teach sounds in a set order through a **systematic synthetic phonics** programme, starting with letters such as s, a, t, p, i, n.
-H: Counting sounds
-- Say the word slowly and hold up a finger for each sound you hear.
-- *Dog* has 3 sounds: /d/ /o/ /g/.
-- *Shop* also has 3 sounds: /sh/ /o/ /p/, even though it has 4 letters.
-- Counting sounds, not letters, is the first step to spelling words correctly.
-X: Sounds in "fish".
-> Say the word slowly: /f/ /i/ /sh/.
-> Hold up a finger for each sound: 3 fingers.
-> The word has 4 letters: f, i, s, h.
-> The letters s and h work together to make one sound, /sh/.
-K: A phoneme is a single sound and a grapheme is the letter or letters that write it; children learn to say each sound clearly, use sounds rather than letter names for reading, and count the sounds in a word before writing it.
-!: Adding "uh" to sounds, such as saying "buh" for /b/. Extra sounds make blending harder: "buh-a-tuh" does not sound like *bat*.
-EV: established | Systematic synthetic phonics is the approach to early reading required in English schools by the national curriculum and the Reading Framework.
-T: Phoneme | The smallest sound in a word
-T: Grapheme | A letter or group of letters that writes a phoneme
-T: Systematic synthetic phonics | Teaching letter–sound links in a planned order and blending them to read
-SUM: Phonemes are sounds; graphemes write them.
-SUM: Say sounds short and pure.
-SUM: Count sounds, not letters.
-SRC: Department for Education, National curriculum in England: English programmes of study, Key stage 1 | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
-SRC: Department for Education, The reading framework | guidance | 2023 | https://www.gov.uk/government/publications/the-reading-framework-teaching-the-foundations-of-literacy
-Q: How many sounds are in the word "dog"? | Three: /d/ /o/ /g/.
-Q: What is the difference between a letter's name and its sound? | The name is what we call it in the alphabet (such as "bee"); the sound is what it says in a word (/b/).
-M1#primary-u05-01-q1@1: What is a phoneme? | The smallest sound in a word | A whole sentence | A capital letter | A type of punctuation | Applying the standard result: Phonemes are single sounds.
-M2#primary-u05-01-q2@2: Why should we say /m/ rather than "muh"? | Adding "uh" makes blending sounds into words harder | It is always quicker to say "muh" | Letter names are used for reading | "Muh" is the correct sound | Applying the standard result: Pure sounds blend smoothly.
-NUM1#primary-u05-01-q3@2: How many phonemes are in the word "ship"? | 3 | 0 | sounds | The sounds are /sh/ /i/ /p/, so "ship" has 3 phonemes even though it has 4 letters.
-M3#primary-u05-01-q4@3: A child counts 4 sounds in "shop" because it has 4 letters. What should you explain? | Two letters, s and h, make one sound, so there are 3 sounds | The child is right: letters and sounds always match | "Shop" has only 2 sounds | Sounds cannot be counted | Applying the standard result: Count sounds, not letters.
-SA2#primary-u05-01-q5@2,3: Explain why English has more sounds than letters and what this means for writing words. | English has about 44 sounds but only 26 letters, so some sounds have to be written using two or more letters together, such as sh in ship or ee in tree. This means the number of letters in a word is not always the same as the number of sounds, so children need to learn which letter groups make which sounds. | 44 sounds, 26 letters ; Letter groups ; Letters differ from sounds ; Learning the groups
+P: Spoken words are made of small sounds called **phonemes**. The word "cat" has three phonemes: /c/ /a/ /t/. The letters we write to show a phoneme are called a **grapheme**. In "cat", each grapheme is one letter.
+P: English has 26 letters but about 44 phonemes (the exact number depends on accent). That is why some sounds need two or more letters, like "sh" in "ship".
+K: A phoneme is a sound; a grapheme is the letter or letters that write it. Reading means turning graphemes into phonemes.
+H: Pure sounds
+P: Say each sound as short and clean as you can. The sound for "m" is "mmm", not "muh". For "s" it is "sss", not "suh". These are called **pure sounds**.
+- Stretchy sounds can be held: mmm, sss, fff, nnn, lll.
+- Bouncy sounds are short: b, d, t, p, c.
+- Letter names (ay, bee, see) are different from letter sounds and are learned separately.
+X: Say the sounds in "sun".
+> Point to each letter: s, u, n.
+> Say each pure sound: /s/ /u/ /n/.
+> Push them together: sun.
+!: Adding "uh" to sounds, so "c-a-t" becomes "cuh-a-tuh", which blends to "cuhatuh" instead of "cat". Keep the sounds pure.
+EV: established | Systematic synthetic phonics is the approach to early reading required in English state schools and recommended in the DfE's reading framework.
+T: Phoneme | The smallest unit of sound in a word
+T: Grapheme | A letter or group of letters that represents a phoneme
+SUM: Words are made of phonemes (sounds), written with graphemes (letters).
+SUM: Saying pure sounds without an extra "uh" makes blending into words much easier.
+SRC: Department for Education, National curriculum in England: English programmes of study, Year 1 word reading | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Department for Education, The reading framework: teaching the foundations of literacy | guidance | 2023 | https://www.gov.uk/government/publications/the-reading-framework-teaching-the-foundations-of-literacy
+Q: What is a phoneme? | The smallest sound in a word, such as /m/ in "map".
+Q: What is a grapheme? | The letter or letters used to write a sound.
+M1#primary-u05-01-q1@1: How many phonemes are in the word "dog"? | 3 | 1 | 2 | 4 | "Dog" has three sounds: /d/ /o/ /g/. Each sound is one phoneme.
+M2#primary-u05-01-q2@2: Which is a grapheme? | The letters "sh" in "ship" | The sound you hear at the start of "ship" | The whole word "ship" | The picture of a ship | A grapheme is the written letter or letters for one sound. "sh" is two letters writing one sound.
+M2#primary-u05-01-q3@3: Why should you say "mmm" rather than "muh" for the letter m? | Pure sounds blend into words more easily | It sounds more grown-up | "Muh" is the letter's name | "Mmm" is louder | Extra "uh" sounds get in the way when you push sounds together, so pure sounds make blending accurate.
+TF1#primary-u05-01-q4@2: The letter name "bee" and the letter sound /b/ are the same thing. | false | "Bee" is the letter's name, used in the alphabet song. The sound /b/ is what it says in words like "bat".
+M3#primary-u05-01-q5@3: Why does English need graphemes with more than one letter? | It has more sounds than letters | It has more letters than sounds | Some letters are silent | Long words need more letters | English has about 44 sounds but only 26 letters, so some sounds are written with two or three letters, like "sh" and "igh".
+SA3#primary-u05-01-q6@2,3: Explain to a grown-up the difference between a phoneme and a grapheme, using the word "fish". | "Fish" has three phonemes, the sounds /f/ /i/ /sh/. It has three graphemes, the written parts f, i and sh. The last grapheme has two letters but makes only one sound. | Three phonemes ; Three graphemes ; sh is two letters, one sound
 
 ## Blending to read
-LV: Year 1 · Foundation
-S: Blending means saying the sounds in a word and pushing them together to hear the word. This lesson shows how to blend sounds, from short words like *sat* to longer ones, and how practice builds fluent reading.
-O: Blend two, three and four sounds to read a word
-O: Read words containing two-letter sounds by blending
-O: Explain how blending helps children read new words
-H: How blending works
-P: To read a word, look at each grapheme from left to right, say its sound, then **push the sounds together** until you hear the word. For *sat*: /s/ /a/ /t/, then "sssat", then *sat*. Some teachers call this "sound-talk" and then "say the word". Stretchy sounds, like /s/ and /m/, help the sounds run together smoothly.
-H: Building up
-- Start with simple words with three single-letter sounds: *pin*, *top*, *mud*.
-- Then add words with **consonant clusters**, where two consonants sit together but keep their own sounds: *stop* is /s/ /t/ /o/ /p/, four sounds.
-- Then words with two-letter sounds, spotted as one sound: *chip* is /ch/ /i/ /p/.
-- Longer words can be split into **syllables** and each part blended: *rab-bit*, *pic-nic*.
-H: From blending to fluency
-- At first, children blend every sound out loud.
-- With practice, they blend silently in their heads.
-- Eventually they recognise familiar words straight away, freeing their attention for meaning.
-- Reading books that match the sounds a child has learned (**decodable books**) gives the right practice.
-X: Blending "frog".
-> Point to each letter: f, r, o, g.
-> Say each sound: /f/ /r/ /o/ /g/.
-> Push them together: "ffrrog".
-> Say the word: *frog*.
-K: Blending means saying each sound from left to right and pushing the sounds together to hear the word; children build from simple words to clusters, two-letter sounds and syllables, and practice with decodable books turns blending into fluent reading.
-!: Guessing a word from the first letter or the picture. Blending all the way through the word is more reliable.
-EV: established | The Reading Framework advises that early reading books should be decodable, matching the phonics children have been taught.
+LV: Reception to Year 1 · Foundation
+S: Blending means pushing sounds together to hear the word. It is how children read new words for themselves. This lesson shows how to blend step by step, how to read real and made-up words, and what the Year 1 phonics screening check involves.
+O: Blend sounds together to read simple words
+O: Read words with adjacent consonants, such as "stop" and "milk"
+O: Explain why reading made-up words is a useful check of phonics
+H: Push the sounds together
+P: To read a new word, say the sound for each grapheme from left to right, then push the sounds together until you hear the word.
+X: Read the word "frog".
+> Say the sounds: /f/ /r/ /o/ /g/.
+> Say them again, faster and closer: f-r-o-g.
+> Push them together: frog.
+K: To read an unfamiliar word, say each sound from left to right and blend them, faster and faster, until you hear the word.
+H: Trickier blends
+- Words with two consonants together, like "st" in "stop" or "lk" in "milk", need each sound said: /s/ /t/ /o/ /p/.
+- Longer words can be split into chunks: "sun-set", "rab-bit".
+- After blending, check the word makes sense in the sentence.
+P: In June of Year 1, children in England take the **phonics screening check**. They read 40 words aloud to their teacher. Some are real words and some are made-up "alien" or pseudo-words, like "vap" or "blorn". Made-up words show whether a child can really blend, because they can't be remembered by sight.
+!: Guessing a word from its first letter or a picture. Look at every letter, all the way through the word, and blend.
+EV: established | Teaching children to blend all through a word, rather than guess from pictures or context, is the core of systematic synthetic phonics.
 T: Blending | Pushing sounds together to read a word
-T: Consonant cluster | Two or more consonants together, each keeping its own sound
-T: Decodable book | A book containing words that use only the sounds a child has learned
-SUM: Say each sound left to right.
-SUM: Push the sounds together.
-SUM: Practise with decodable books.
-SRC: Department for Education, The reading framework | guidance | 2023 | https://www.gov.uk/government/publications/the-reading-framework-teaching-the-foundations-of-literacy
-SRC: Rose J., Independent Review of the Teaching of Early Reading: Final Report, Department for Education and Skills | primary | 2006
-Q: What is blending? | Saying the sounds in a word and pushing them together to hear the word.
-Q: What is a decodable book? | A book using words made only from sounds the reader has already learned.
-M1#primary-u05-02-q1@1: In which direction should you read the sounds when blending? | Left to right | Right to left | From the middle outwards | Last letter first | Applying the standard result: English is read left to right.
-M2#primary-u05-02-q2@2: How many sounds are blended to read "stop"? | Four | Three | Two | Five | /s/ /t/ /o/ /p/: the s and t keep their own sounds.
-M3#primary-u05-02-q3@3: A child says "cat" when reading "cap" because of a picture of a cat. What would help? | Encourage blending every sound through to the end | Tell them to look at the picture more | Ask them to guess faster | Skip the word | Applying the standard result: Blending checks every sound.
-SEQ1#primary-u05-02-q4@1: Put the steps for blending a word in order. | Look at the first grapheme ; Say each sound in turn ; Push the sounds together ; Say the whole word | Blending runs from sounds to word.
-SA2#primary-u05-02-q5@2,3: Explain why decodable books help children who are learning to blend. | Decodable books contain words made from sounds the child already knows, so every word can be read by blending rather than guessing. This gives the child lots of successful practice, builds confidence, and helps blending become faster until familiar words are recognised automatically and the child can focus on meaning. | Known sounds ; Blending not guessing ; Successful practice ; Fluency and meaning
+T: Pseudo-word | A made-up word used to check that a reader can blend sounds
+SUM: Read new words by saying each sound from left to right and pushing them together.
+SUM: Made-up words in the phonics check test blending rather than memory.
+SRC: Department for Education, National curriculum in England: English programmes of study, Year 1 word reading | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Department for Education, The reading framework: teaching the foundations of literacy | guidance | 2023 | https://www.gov.uk/government/publications/the-reading-framework-teaching-the-foundations-of-literacy
+Q: What is blending? | Pushing sounds together to read a word.
+Q: How many words are in the Year 1 phonics screening check? | 40.
+M1#primary-u05-02-q1@1: Blend the sounds /m/ /a/ /p/. What word do they make? | map | mat | nap | pam | /m/ /a/ /p/ pushed together in order make "map". Keep the sounds in left-to-right order.
+M2#primary-u05-02-q2@2: Which sounds do you blend to read "stamp"? | /s/ /t/ /a/ /m/ /p/ | /st/ /amp/ | /s/ /a/ /p/ | /s/ /t/ /a/ /p/ | Every grapheme in "stamp" is one letter, so blend all five sounds. Missing out the /m/ gives a different word.
+M2#primary-u05-02-q3@3: Why does the phonics screening check include made-up words like "jound"? | They can only be read by blending | They are harder to spell | They are old words | They are words from other languages | A child can't have memorised a made-up word, so reading it correctly shows they can blend.
+TF1#primary-u05-02-q4@1: When blending, you say the sounds from left to right. | true | English is read left to right, so sounds are said and blended in that order.
+M3#primary-u05-02-q5@3: Ava reads "black" as "back". What did she most likely do? | She missed out the /l/ sound | She added an extra sound | She guessed from the picture | She read it right to left | "Black" has /b/ /l/ /a/ /ck/. Leaving out the /l/ gives "back", so she needs to say every sound.
+SA3#primary-u05-02-q6@3: Explain how you would help a child read the new word "chimp". | Point to each grapheme: ch, i, m, p. Say each sound, remembering ch makes one sound: /ch/ /i/ /m/ /p/. Say them again closer together and push them into the word "chimp". Then check it makes sense. | Spots ch as one sound ; Says each sound in order ; Blends into the word ; Checks meaning
 
 ## Segmenting to spell
-LV: Year 1 · Foundation
-S: Segmenting is the opposite of blending: hearing a word and breaking it into sounds so you can write it. This lesson shows how to segment, how to match sounds to letters, and how to check a spelling.
-O: Segment a spoken word into its sounds
-O: Write the grapheme for each sound in order
-O: Check a spelling by reading it back
-H: Hearing the sounds
-P: To spell a word, say it clearly, then **break it into its sounds**. Many children use **sound buttons** (a dot under each single-letter sound and a line under each two-letter sound) or **phoneme frames** (a row of boxes, one box per sound). For *hat*, there are three sounds and three boxes: h, a, t.
-H: Writing the graphemes
-- Say the word, then count the sounds on your fingers.
-- Write the grapheme for each sound, in order.
-- If a sound is written with two letters, both letters go in one box, such as *sh* in *shed*.
-- Some words have sounds that can be spelt in more than one way; children learn the most common spelling first.
-H: Checking
-- Read back what you have written, blending the sounds.
-- Does it say the word you wanted?
-- If not, find the sound that is wrong and fix it.
-- Clear handwriting helps you and others read your spelling.
-X: Spelling "chest".
-> Say the word: *chest*.
-> Segment it: /ch/ /e/ /s/ /t/: four sounds.
-> Write ch in the first box, e in the second, s in the third, t in the fourth.
-> Read it back: "ch-e-s-t, chest". It is correct.
-K: Segmenting means breaking a spoken word into sounds and writing the grapheme for each in order, often with sound buttons or phoneme frames, then reading the spelling back to check it.
-!: Missing sounds in the middle of clusters, such as writing "bak" for *bank*. Saying the word slowly helps you hear every sound.
-EV: established | Segmenting for spelling and blending for reading are taught together as reversible processes in synthetic phonics.
-T: Segmenting | Breaking a word into its sounds to spell it
-T: Phoneme frame | A row of boxes, one for each sound in a word
-T: Sound buttons | Dots and lines marking each sound in a written word
-SUM: Say the word and break it into sounds.
-SUM: Write one grapheme per sound.
-SUM: Read it back to check.
-SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: Spelling | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
-SRC: Department for Education, The reading framework | guidance | 2023 | https://www.gov.uk/government/publications/the-reading-framework-teaching-the-foundations-of-literacy
-Q: What is a phoneme frame? | A row of boxes with one box for each sound in a word.
-Q: How do you check a spelling you have written? | Read it back by blending the sounds to see whether it says the word.
-M1#primary-u05-03-q1@1: What is segmenting? | Breaking a word into its sounds to spell it | Pushing sounds together to read | Copying a word from a book | Drawing a picture of a word | Applying the standard result: Segmenting is the reverse of blending.
-M2#primary-u05-03-q2@2: How many boxes are needed in a phoneme frame for "shed"? | Three | Four | Two | Five | Applying the standard result: /sh/ /e/ /d/: three sounds.
-NUM1#primary-u05-03-q3@2: How many sounds are in the word "chest"? | 4 | 0 | sounds | The sounds are /ch/ /e/ /s/ /t/, so "chest" has 4 sounds.
-M3#primary-u05-03-q4@3: A child writes "jup" for "jump". What is the best advice? | Say the word slowly to hear the /m/ before the /p/ | Learn the word as a picture | Write more quickly | Leave out sounds that are hard to hear | Applying the standard result: The missing sound is in a cluster.
-SA2#primary-u05-03-q5@2,3: Explain how segmenting and blending work together. | Blending turns letters into sounds and then into a spoken word for reading, while segmenting turns a spoken word into sounds and then into letters for spelling. They are the same skill in reverse. After segmenting to spell a word, children blend what they have written to check it, so practising one strengthens the other. | Blending for reading ; Segmenting for spelling ; Reverse processes ; Checking
+LV: Reception to Year 2 · Foundation
+S: Segmenting is the opposite of blending: you break a spoken word into its sounds so that you can write each one. This lesson shows how to segment words for spelling using sound buttons and fingers.
+O: Segment spoken words into their phonemes
+O: Write a grapheme for each phoneme to spell simple words
+O: Explain how blending and segmenting are linked
+H: Breaking a word into sounds
+P: To spell a word, say it slowly and listen for each sound. Hold up a finger for each sound you hear, then write a grapheme for each one.
+X: Spell "tent".
+> Say it slowly: t-e-n-t.
+> Count the sounds on fingers: /t/ /e/ /n/ /t/, four sounds.
+> Write a letter for each: t, e, n, t.
+K: Segmenting means splitting a word into its sounds, then writing one grapheme for each sound.
+H: Using what you know
+- Some sounds need two letters: "shop" has three sounds, /sh/ /o/ /p/, but four letters.
+- After writing, read the word back by blending to check it.
+- Practise with "sound buttons": draw a dot under each single-letter sound and a line under each digraph.
+P: Blending and segmenting are two halves of the same skill. Blending puts sounds together to **read**; segmenting takes them apart to **spell**.
+!: Missing sounds in the middle of words, like writing "tet" for "tent". Say the word slowly and touch a finger for every sound.
+EV: established | Teaching segmenting alongside blending helps children use phonics for both reading and spelling.
+T: Segmenting | Breaking a word into its separate sounds in order to spell it
+T: Sound buttons | Dots and lines drawn under graphemes to show each sound
+SUM: To spell, say the word slowly, count its sounds and write a grapheme for each.
+SUM: Blending is for reading and segmenting is for spelling; read your word back to check.
+SRC: Department for Education, National curriculum in England: English programmes of study, Year 1 spelling | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Oak National Academy, Key Stage 1 English: phonics and spelling | secondary | 2026 | https://www.thenational.academy/
+Q: What is segmenting? | Breaking a word into its sounds so you can spell it.
+Q: How many sounds are in "shop"? | Three: /sh/ /o/ /p/.
+M1#primary-u05-03-q1@1: How many sounds are in the word "lamp"? | 4 | 3 | 2 | 5 | "Lamp" breaks into /l/ /a/ /m/ /p/: four sounds, each written with one letter.
+M2#primary-u05-03-q2@2: A child writes "jup" for "jump". Which sound did they miss? | /m/ | /j/ | /u/ | /p/ | "Jump" is /j/ /u/ /m/ /p/. The /m/ before the /p/ is easy to miss, so say the word slowly.
+M2#primary-u05-03-q3@3: How are blending and segmenting different? | Blending is for reading; segmenting is for spelling | They are the same thing | Blending is for spelling; segmenting is for reading | Segmenting is only for long words | Blending pushes sounds together to read a word; segmenting pulls a spoken word apart into sounds to spell it.
+TF2#primary-u05-03-q4@2: The word "chip" has four letters but only three sounds. | true | "ch" makes one sound, so "chip" is /ch/ /i/ /p/: three sounds written with four letters.
+M3#primary-u05-03-q5@3: Which word has the same number of sounds as letters? | frog | ship | duck | thin | "Frog" is /f/ /r/ /o/ /g/: four sounds and four letters. The others each have a two-letter grapheme (sh, ck, th).
+SA3#primary-u05-03-q6@2,3: Explain how to spell the word "crisp" using segmenting. | Say the word slowly and count the sounds on your fingers: /c/ /r/ /i/ /s/ /p/, five sounds. Write a letter for each sound in order: c, r, i, s, p. Then blend it back to check it says "crisp". | Says the word slowly ; Five sounds ; Writes a grapheme for each ; Reads back to check
 
 ## Digraphs and trigraphs
-LV: Year 1 · Foundation
-S: Some sounds are written with two or three letters together. This lesson introduces digraphs and trigraphs, including split digraphs, and shows how to spot them when reading and use them when spelling.
-O: Recognise consonant and vowel digraphs and trigraphs
-O: Read words containing split digraphs such as a-e
-O: Spell words using common digraphs and trigraphs
+LV: Year 1 to Year 2 · Foundation
+S: Some sounds are written with two letters (digraphs, like "sh") or three letters (trigraphs, like "igh"). This lesson shows the common ones and how to spot them when reading and use them when spelling.
+O: Read and write common consonant and vowel digraphs and trigraphs
+O: Spot digraphs and trigraphs inside longer words
+O: Explain why "sh" makes one sound, not two
 H: Two letters, one sound
-P: A **digraph** is two letters that make one sound. **Consonant digraphs** include *sh* (ship), *ch* (chip), *th* (thin), *ng* (ring), *ck* (duck) and *ph* (phone). **Vowel digraphs** include *ai* (rain), *ee* (tree), *oa* (boat), *oo* (moon), *ar* (car) and *or* (fork). A **trigraph** is three letters that make one sound, such as *igh* (night), *air* (chair), *ear* (hear) and *ure* (sure).
-H: Split digraphs
-- In a **split digraph**, two vowel letters work together but are split by a consonant.
-- In *cake*, the *a* and *e* work together to make /ai/, with the *k* in between: a-e.
-- Others are i-e (bike), o-e (home), u-e (cube) and e-e (these).
-- Compare *hop* and *hope*, *kit* and *kite*: the final *e* changes the vowel sound.
-H: Spotting them
-- When reading, look for letter groups you know before blending.
-- When spelling, remember that one sound can need two or three letters.
-- Sound buttons help: a line under a digraph or trigraph shows it is one sound.
-X: Reading "light" and "coat".
-> In *light*, spot the trigraph igh: /l/ /igh/ /t/, three sounds.
-> Blend them: *light*.
-> In *coat*, spot the digraph oa: /c/ /oa/ /t/, three sounds.
-> Blend them: *coat*.
-K: Digraphs are two letters and trigraphs three letters making one sound, and split digraphs such as a-e are separated by a consonant; spotting these groups before blending makes reading accurate, and remembering them makes spelling correct.
-!: Sounding out each letter of a digraph separately, such as /s/ /h/ in *ship*. The letters must be read together as one sound.
-EV: established | Learning grapheme–phoneme correspondences, including digraphs and trigraphs, is central to early reading in the English curriculum.
-T: Digraph | Two letters that make one sound
-T: Trigraph | Three letters that make one sound
-T: Split digraph | Two vowel letters making one sound, split by a consonant
-SUM: Digraphs: two letters, one sound.
-SUM: Trigraphs: three letters, one sound.
-SUM: Split digraphs change the vowel.
-SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: Spelling | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
-SRC: Department for Education, The reading framework | guidance | 2023 | https://www.gov.uk/government/publications/the-reading-framework-teaching-the-foundations-of-literacy
-Q: What is a trigraph? | Three letters that make one sound, such as igh in night.
-Q: Which split digraph is in "bike"? | i-e.
-M1#primary-u05-04-q1@1: Which word contains a consonant digraph? | Ship | Sat | Pen | Mud | Applying the standard result: Sh makes one sound.
-M2#primary-u05-04-q2@2: Which word has a split digraph? | Cake | Cat | Rain | Coat | Applying the standard result: The a and e are split by k.
-NUM1#primary-u05-04-q3@2: How many sounds are in the word "night"? | 3 | 0 | sounds | The sounds are /n/ /igh/ /t/: the trigraph igh is one sound, so there are 3.
-M3#primary-u05-04-q4@3: A child reads "hope" as "hop". What should they notice? | The final e works with o to make a split digraph | The e is always silent and does nothing | The word has only two sounds | Hope and hop sound the same | Applying the standard result: The split digraph changes the vowel.
-MATCH1#primary-u05-04-q5@1: Match each word to its digraph or trigraph. | Rain = ai ; Night = igh ; Chair = air ; Phone = ph | Each word contains a letter group for one sound.
-SA2#primary-u05-04-q6@2,3: Explain how a split digraph changes the sound of a word, using examples. | In a split digraph, two vowel letters work together to make one long vowel sound, but a consonant sits between them. In "hop" the o is short, but in "hope" the o and e together make /oa/. Similarly "kit" becomes "kite" and "cub" becomes "cube". Spotting the final e helps children read the vowel correctly. | Two vowels split ; Long vowel sound ; Examples ; Spotting the final e
+P: A **digraph** is two letters that make **one** sound.
+- Consonant digraphs: sh (ship), ch (chop), th (thin), ng (ring), ck (duck), ph (phone), wh (when)
+- Vowel digraphs: ai (rain), ee (feet), oa (boat), oo (moon), ar (car), or (fork), ow (cow), oi (coin)
+- Split digraphs: a-e (cake), i-e (bike), o-e (bone), u-e (cube), e-e (these). The two letters are split by a consonant.
+K: In a digraph or trigraph, the letters work together to make one sound; read them as a team, not one at a time.
+H: Three letters, one sound
+P: A **trigraph** is three letters making one sound: igh (night), air (chair), ear (hear), ure (pure), tch (catch), dge (bridge).
+X: How many sounds are in "night"?
+> Look for letter teams: "igh" is a trigraph.
+> So the sounds are /n/ /igh/ /t/.
+> "Night" has 5 letters but only 3 sounds.
+!: Sounding out each letter in a digraph separately, so "ship" becomes "s-h-i-p". The s and h make one sound together: /sh/.
+EV: established | Teaching common digraphs and trigraphs as single units is part of every systematic synthetic phonics programme validated by the DfE.
+T: Digraph | Two letters that together make one sound
+T: Trigraph | Three letters that together make one sound
+SUM: Digraphs are two letters for one sound; trigraphs are three letters for one sound.
+SUM: Spot letter teams first, then blend the sounds.
+SRC: Department for Education, National curriculum in England: English programmes of study, Year 1 word reading and English Appendix 1 | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Department for Education, The reading framework: teaching the foundations of literacy | guidance | 2023 | https://www.gov.uk/government/publications/the-reading-framework-teaching-the-foundations-of-literacy
+Q: What is a digraph? | Two letters that make one sound, such as "ch".
+Q: Which trigraph is in "light"? | igh.
+M1#primary-u05-04-q1@1: Which word has the digraph "ee"? | tree | tent | ten | step | "Tree" has "ee" making one long sound. The others have a single "e".
+M2#primary-u05-04-q2@2: How many sounds are in the word "chair"? | 2 | 5 | 3 | 4 | "Chair" is /ch/ /air/: a digraph and a trigraph, so just two sounds from five letters.
+M2#primary-u05-04-q3@3: In "cake", which letters make the long a sound? | a and e, split by the k | a on its own | k and e | c and a | "a-e" is a split digraph: the a and the e work together across the k to make the long /ay/ sound.
+TF1#primary-u05-04-q4@2: In "thin", the letters t and h make two separate sounds. | false | "th" is a digraph making one sound, so "thin" is /th/ /i/ /n/.
+M3#primary-u05-04-q5@3: Which word contains a trigraph? | bridge | bring | brick | brush | "dge" in "bridge" is three letters making one sound, /j/. "ng", "ck" and "sh" are digraphs.
+SA3#primary-u05-04-q6@2,3: Explain how to read the word "fright". | Look for letter teams first: "igh" is a trigraph. So the sounds are /f/ /r/ /igh/ /t/. Say each sound and push them together: fright. The word has six letters but four sounds. | Spots the igh trigraph ; Four sounds in order ; Blends the word
 
 ## Tricky words
-LV: Year 1 to Year 2 · Foundation
-S: Some common words have spellings that do not follow the sounds children have learned yet. This lesson explains tricky words, also called common exception words, and how to learn them by spotting the tricky part.
-O: Explain what makes a word "tricky"
-O: Read and spell common exception words for Year 1 and Year 2
-O: Use the "tricky part" strategy to learn a new word
-H: What makes a word tricky?
-P: Most words can be read by blending. But some very common words contain a part that does not match the usual letter–sound links children know. In *said*, the *ai* makes /e/, not the /ai/ sound of *rain*. The national curriculum lists **common exception words** that pupils should learn in Year 1 and Year 2, such as *the*, *said*, *was*, *you*, *they*, *are*, *come*, *some*, *one*, *friend*, *school* and *people*. Some words are only tricky at first: once children learn more sounds, they become regular.
-H: The tricky part
-- Most tricky words are only partly irregular.
-- In *was*, the *w* and *s* behave normally; only the *a*, making /o/, is unusual.
-- Blend the regular parts and learn the tricky part by heart.
-- Many schools call this "heart words", marking the tricky part with a heart.
+LV: Reception to Year 2 · Foundation
+S: Some common words don't follow the usual phonics patterns, or use patterns children haven't learned yet. These are called tricky words or common exception words. This lesson shows how to learn them by spotting the tricky part.
+O: Read and spell common exception words such as "the", "said" and "was"
+O: Identify which part of a tricky word doesn't follow the usual sound
+O: Explain a good way to learn a tricky word
+H: Why some words are tricky
+P: Most words can be sounded out, but some very common words have an unusual spelling. In "said", the "ai" makes an /e/ sound, not the /ai/ in "rain". These are called **common exception words** in the national curriculum.
+- Year 1 examples: the, a, do, to, today, of, said, says, are, were, was, is, his, has, I, you, your, they, be, he, me, she, we, no, go, so, by, my, here, there, where, love, come, some, one, once, ask, friend, school, put, push, pull, full, house, our
+- Year 2 examples include: door, floor, because, find, kind, mind, behind, child, children, wild, climb, most, both, only, old, cold, gold, every, everybody, even, great, break, steak, pretty, beautiful, after, fast, last, past, father, class, grass, pass, plant, path, bath, hour, move, prove, improve, sure, sugar, eye, could, should, would, who, whole, any, many, clothes, busy, people, water, again, half, money, Mr, Mrs, parents, Christmas
+P: Read tricky words often in books, and keep a short list on the fridge to practise a few at a time.
+K: Most of a tricky word still follows phonics; only one part is tricky, so learn that part.
 H: Learning them
-- Read them often in sentences and books.
-- Say the letters while writing them: "s-a-i-d says said".
-- Look, say, cover, write, check.
-- Group words that share a pattern, such as *could*, *would* and *should*.
-X: Learning "they".
-> Blend the regular part: th makes /th/.
-> The tricky part is ey, which makes /ai/ here.
-> Say it: "th-ey, they".
-> Write it three times, covering the word each time, then check.
-K: Tricky words, or common exception words, contain a part that does not follow the usual letter–sound rules; children blend the regular parts, learn the tricky part by heart, and practise them often because they appear in almost every sentence.
-!: Trying to learn tricky words only as whole shapes. Most of each word can still be blended, so only the tricky part needs special attention.
-EV: established | The national curriculum specifies common exception words for pupils to read and spell in Years 1 and 2.
-T: Common exception word | A common word whose spelling does not follow the usual rules
-T: Tricky part | The part of a word that does not match known letter–sound links
-T: Heart word | A word with a part that must be learned by heart
-SUM: Tricky words break the usual rules.
-SUM: Only part of the word is tricky.
-SUM: Practise them often.
-SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: Spelling (common exception words) | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
-SRC: Department for Education, The reading framework | guidance | 2023 | https://www.gov.uk/government/publications/the-reading-framework-teaching-the-foundations-of-literacy
-Q: What is the tricky part of "said"? | The ai, which makes the sound /e/.
-Q: Give three common exception words. | The, said and was (also you, they, are or people).
-M1#primary-u05-05-q1@1: Which word is a common exception word? | Said | Cat | Dog | Sun | Applying the standard result: The ai in said makes /e/.
-M2#primary-u05-05-q2@2: In the word "was", which part is tricky? | The a, which makes the sound /o/ | The w | The s | The whole word | Applying the standard result: Only the vowel is unusual.
-M3#primary-u05-05-q3@3: Why are words like "could", "would" and "should" learned together? | They share the same tricky spelling pattern | They mean the same thing | They have no vowels | They are all nouns | Applying the standard result: Grouping by pattern helps memory.
-SEQ1#primary-u05-05-q4@2: Put the "look, say, cover, write, check" steps in order. | Look at the word ; Say the word ; Cover the word ; Write the word ; Check the spelling | This routine helps children learn tricky words.
-SA2#primary-u05-05-q5@2,3: Explain why children should still blend most of a tricky word. | Most tricky words are only partly irregular: in "was", the w and s follow the usual sounds, and only the a is unusual. Blending the regular parts uses the phonics children already know, so they only need to memorise the small tricky part. This is quicker and more reliable than remembering the whole word as a shape. | Partly irregular ; Using phonics ; Memorising the tricky part ; Reliability
+X: Learn to spell "was".
+> Sound it out: /w/ /o/ /z/.
+> The w is regular; the tricky parts are "a" making /o/ and "s" making /z/.
+> Practise: look, say, cover, write, check. Use it in sentences.
+!: Thinking tricky words have to be learned as a whole picture. Usually most letters still follow phonics, so sound out what you can and focus on the tricky bit.
+EV: established | The national curriculum lists common exception words that pupils should be able to read and spell by the end of Year 1 and Year 2.
+T: Common exception word | A common word whose spelling doesn't follow the usual phonics rules
+T: Look, say, cover, write, check | A way to practise spelling: study the word, say it, hide it, write it, then compare
+SUM: Tricky words have one part that doesn't match the usual sound.
+SUM: Sound out the regular part, notice the tricky part, and practise with look, say, cover, write, check.
+SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: spelling (common exception words) | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: BBC Bitesize, KS1 English: tricky words | secondary | 2026 | https://www.bbc.co.uk/bitesize/primary
+Q: What sound does "ai" make in "said"? | /e/, as in "bed".
+Q: Name a way to practise a tricky spelling. | Look, say, cover, write, check.
+M1#primary-u05-05-q1@1: Which is a common exception word? | said | sat | sun | sit | In "said" the "ai" says /e/, which is unusual. "Sat", "sun" and "sit" can all be sounded out.
+M2#primary-u05-05-q2@2: In the word "was", which part is tricky? | The "a", which says /o/ | The "w", which says /w/ | It has no tricky part | The whole word | Most of "was" is ordinary, but the "a" makes an /o/ sound and the "s" an /z/ sound, which children have to remember.
+M2#primary-u05-05-q3@3: What is the best way to learn the tricky word "friend"? | Notice the "ie" and practise it in sentences | Copy it out once | Guess it from the first letter | Learn it as a picture without looking at letters | Most of "friend" is regular. Focusing on the tricky "ie" and practising it in real sentences makes it stick.
+TF1#primary-u05-05-q4@1: "The" is a common exception word. | true | The "e" in "the" doesn't make its usual short /e/ sound, so it is learned as a common exception word in Year 1.
+M3#primary-u05-05-q5@3: Which spelling of the Year 2 word meaning "for the reason that" is correct? | because | becos | becuase | beacause | "Because" is a Year 2 common exception word. Remembering "cause" at the end helps: be-cause.
+SA3#primary-u05-05-q6@3: Explain why "said" is called a tricky word and how a child could learn it. | "Said" is tricky because the "ai" makes an /e/ sound instead of the usual /ai/ sound in "rain". The s and d follow phonics. A child can learn it by noticing the tricky "ai", saying it in a funny way to remember, and practising with look, say, cover, write, check. | Names the tricky ai ; Says the rest is regular ; Gives a learning method
 
 ## Alternative spellings of sounds
-LV: Year 2 to Year 3 · Foundation
-S: Many sounds in English can be spelt in more than one way. This lesson explores the different spellings of long vowel sounds and some consonant sounds, and gives strategies for choosing the right one.
-O: Recognise different spellings of the same sound
-O: Choose the likely spelling from its position in the word
-O: Use word families and a dictionary to check spellings
-H: One sound, several spellings
-P: Once children know one spelling for each sound, they learn that many sounds have **alternative spellings**. The /ai/ sound can be spelt *ai* (rain), *ay* (play) or *a-e* (cake). The /ee/ sound can be *ee* (tree), *ea* (beach), *e-e* (these), *y* (happy) or *ey* (key). The /igh/ sound can be *igh* (light), *ie* (pie), *i-e* (bike) or *y* (fly). Consonants vary too: /f/ can be *f* or *ph*, and /j/ can be *j*, *g* (giant) or *dge* (bridge).
-H: Position clues
-- *ay* is usually at the **end** of a word (*day*, *stay*); *ai* is usually in the **middle** (*rain*, *paint*).
-- *oy* is usually at the end (*boy*), *oi* in the middle (*coin*).
-- *ck* comes straight after a short vowel (*duck*), while *k* follows other sounds (*milk*).
-- *-dge* follows a short vowel (*badge*), *-ge* follows others (*large*).
-H: Checking strategies
-- Write the word in different ways and see which **looks right**.
-- Think of a **related word**: *please* links to *pleasant*.
-- Use a **dictionary** or word bank.
-- Learn common patterns in groups, such as *day, play, say, stay*.
-X: Choosing between ai and ay.
-> A child wants to spell the word *train*.
-> The /ai/ sound is in the middle of the word, so *ai* is most likely: *train*.
-> For the word *spray*, the /ai/ sound is at the end, so *ay* is most likely: *spray*.
-> Reading both back confirms they look right.
-K: Many sounds have several spellings, such as ai, ay and a-e for /ai/; the position of the sound in a word often suggests the right choice, and looking, using related words and checking a dictionary help confirm it.
-!: Assuming every sound has only one correct spelling. Learning the alternatives and position clues makes spelling more accurate.
-EV: established | The English Appendix 1 to the national curriculum sets out common alternative spellings to be taught in Years 1 and 2.
-T: Alternative spelling | A different way of writing the same sound
-T: Position clue | Where a sound appears in a word, which can suggest its spelling
-T: Word family | A group of words sharing a root or spelling pattern
-SUM: Sounds can have several spellings.
-SUM: Position gives clues.
-SUM: Check with related words and dictionaries.
-SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: Spelling | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
-SRC: Department for Education, The reading framework | guidance | 2023 | https://www.gov.uk/government/publications/the-reading-framework-teaching-the-foundations-of-literacy
-Q: Name three ways to spell the /ai/ sound. | ai, ay and a-e.
-Q: Where in a word is "ay" usually found? | At the end.
-M1#primary-u05-06-q1@1: Which spelling of /ee/ is in the word "beach"? | ea | ee | e-e | ey | Applying the standard result: Beach uses ea.
-M2#primary-u05-06-q2@2: Which spelling of /oi/ is usual at the end of a word? | oy | oi | oa | ow | Applying the standard result: Boy, toy and enjoy end in oy.
-M3#primary-u05-06-q3@3: A child is unsure whether to write "bage" or "badge". Which clue helps? | After a short vowel, the /j/ sound is usually spelt dge | The /j/ sound is always spelt g | Words never end in dge | Short vowels are followed by ge | Applying the standard result: Badge has a short a.
-MATCH2#primary-u05-06-q4@2: Match each word to the spelling of its long vowel sound. | Play = ay ; Pie = ie ; Bike = i-e ; Key = ey | Each word uses an alternative spelling.
-SA2#primary-u05-06-q5@2,3: Explain strategies a child can use when a sound has more than one possible spelling. | The child can think about where the sound comes in the word, since some spellings usually go at the end, like ay, and others in the middle, like ai. They can write the word in different ways to see which looks right, think of a related word with a clearer spelling, and check in a dictionary or word bank. | Position clues ; Looks right ; Related words ; Dictionary
+LV: Year 1 to Year 2 · Application
+S: Many sounds in English can be spelled in more than one way, and some spellings make more than one sound. This lesson shows the common alternatives, such as ai, ay and a-e for the long a sound, and how to choose between them.
+O: Recognise different graphemes for the same sound
+O: Choose a likely spelling using where the sound comes in the word
+O: Explain why one grapheme, such as "ow", can make different sounds
+H: One sound, many spellings
+- Long /ay/: ai (rain), ay (play), a-e (make)
+- Long /ee/: ee (see), ea (sea), e-e (these), y (happy)
+- Long /igh/: igh (night), ie (pie), i-e (bike), y (fly)
+- Long /oa/: oa (boat), ow (snow), o-e (home)
+- /f/: f (fish), ph (phone)
+P: Position helps you choose. "ay" usually comes at the **end** of a word (day, play), while "ai" usually comes in the **middle** (rain, train).
+K: When a sound has several spellings, think about where it comes in the word and which spelling you have seen in similar words.
+H: One spelling, more than one sound
+P: Some graphemes make more than one sound, so when reading, try one and check it makes a real word.
+X: Read "snow" and "cow".
+> Both have "ow".
+> In "cow" it says /ow/, as in "ouch".
+> In "snow" it says /oa/. Try each sound and choose the one that makes a word you know.
+!: Always using the first spelling you learned, such as writing "rane" or "rayn" for "rain". Check which spelling fits the position, and learn common words.
+EV: established | English spelling is less regular than languages such as Spanish or Finnish, which is why alternative spellings are taught explicitly in Year 1 and Year 2.
+T: Alternative spelling | A different grapheme for the same sound, such as "ay" and "ai"
+T: Split digraph | A vowel digraph split by a consonant, such as a-e in "make"
+SUM: Many sounds have several spellings; position in the word helps you choose.
+SUM: Some graphemes make different sounds, so try each and check it makes sense.
+SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: spelling, Year 1 and Year 2 | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Department for Education, The reading framework: teaching the foundations of literacy | guidance | 2023 | https://www.gov.uk/government/publications/the-reading-framework-teaching-the-foundations-of-literacy
+Q: Give three ways to spell the long /ay/ sound. | ai (rain), ay (day), a-e (cake).
+Q: Where does "ay" usually come in a word? | At the end, as in "play".
+M1#primary-u05-06-q1@1: Which word uses "ph" to make the /f/ sound? | photo | fan | fun | fox | In "photo", "ph" makes /f/. The other words use the letter f.
+M2#primary-u05-06-q2@2: Which spelling of "play" is correct? | play | plai | plae | plaiy | The long /ay/ sound at the end of a word is usually spelled "ay", so "play" is correct.
+M2#primary-u05-06-q3@3: In which word does "ea" make a different sound from "sea"? | bread | team | read (I read every day) | meat | In "bread", "ea" makes a short /e/ sound. In "team", "meat" and the present tense "read" it says /ee/, like "sea".
+TF2#primary-u05-06-q4@2: "Boat", "snow" and "home" all have the same long vowel sound spelled differently. | true | Each has the long /oa/ sound, spelled oa, ow and o-e.
+M3#primary-u05-06-q5@3: A child reads "blow" to rhyme with "cow". What should they try? | The /oa/ sound for "ow", as in "snow" | Reading it backwards | Leaving out the w | Using the letter names | "ow" can say /ow/ or /oa/. Trying /oa/ gives "blow", a real word that fits.
+SA3#primary-u05-06-q6@2,3: Explain how you would decide between "ai" and "ay" when spelling a word with the long /ay/ sound. | Think about where the sound comes. At the end of a word it is usually "ay", as in "day" or "stay". In the middle it is usually "ai", as in "rain" or "paint". Then check by reading the word back and comparing it with words you know. | ay at the end ; ai in the middle ; Gives examples ; Checks the word
 
 ## Adding suffixes
-LV: Year 2 to Year 4 · Application
-S: A suffix is a group of letters added to the end of a word to change its meaning or how it is used. This lesson covers common suffixes and the three main rules for adding them: doubling, dropping the e and changing y to i.
-O: Add common suffixes such as -ing, -ed, -er, -est, -ful, -ness and -ly
+LV: Year 2 to Year 6 · Application
+S: A suffix is a group of letters added to the end of a word to change its meaning or how it is used, like "-ing", "-ed", "-ness" and "-ful". This lesson covers the main spelling rules for adding suffixes: just add, double the consonant, drop the e, and change y to i.
+O: Add common suffixes such as -ing, -ed, -er, -est, -ful, -ness, -ment and -ly
 O: Apply the doubling, drop-the-e and y-to-i rules
-O: Explain how a suffix changes a word's meaning or job
-H: What suffixes do
-P: A **suffix** is added to the end of a **root word**. Some suffixes change the tense of a verb (*jump* → *jumped*, *jumping*), some compare things (*fast* → *faster*, *fastest*), and some change the type of word: *-ful* and *-less* make adjectives (*hopeful*, *careless*), *-ness* and *-ment* make nouns (*kindness*, *enjoyment*), and *-ly* makes adverbs (*quickly*). Often you just add the suffix: *help* → *helped*, *helpful*.
-H: Three spelling rules
-- **Doubling**: if a short word ends in one short vowel and one consonant, double the consonant before a suffix starting with a vowel: *hop* → *hopping*, *big* → *bigger*, *run* → *runner*.
-- **Drop the e**: if a word ends in *e*, drop it before a suffix starting with a vowel: *hope* → *hoping*, *make* → *making*; keep it before a consonant suffix: *hopeful*.
-- **Change y to i**: if a word ends in a consonant then *y*, change the *y* to *i* before most suffixes: *happy* → *happiness*, *cry* → *cried*, *baby* → *babies*; but keep the *y* before *-ing*: *crying*.
-H: Checking
-- Say the word with its suffix and listen to the vowel: *hoping* (long o) and *hopping* (short o) sound different.
-- Write it, then read it back.
-- Learn exceptions as they come up.
-X: Adding -ing.
-> *Swim* ends in one short vowel and one consonant, so double the m: *swimming*.
-> *Smile* ends in e, so drop it: *smiling*.
-> *Play* ends in a vowel then y, so just add the suffix: *playing*.
-> *Jump* ends in two consonants, so just add the suffix: *jumping*.
-K: Suffixes added to the end of root words change their tense, degree or word class; most are simply added, but short words with one short vowel double the last consonant, final e is dropped before vowel suffixes, and consonant-plus-y changes to i except before -ing.
-!: Writing "hopeing" or "happyness". Remember to drop the e before -ing and change y to i before -ness.
-EV: established | The national curriculum sets out these suffix rules for Years 1 to 4.
-T: Suffix | Letters added to the end of a word
-T: Root word | The basic word to which prefixes and suffixes are added
-T: Doubling rule | Doubling a final consonant after a short vowel before a vowel suffix
-SUM: Suffixes change meaning or word type.
-SUM: Double, drop the e or change y to i.
-SUM: Listen to the vowel to check.
-SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: Spelling | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
-SRC: Standards and Testing Agency, English grammar, punctuation and spelling test framework: key stage 2 | standard | 2015
-Q: What is a suffix? | Letters added to the end of a word to change its meaning or use.
-Q: Why does "hop" become "hopping" but "hope" become "hoping"? | Hop has a short vowel, so the p doubles; hope ends in e, which is dropped.
-M1#primary-u05-07-q1@1: Which suffix turns "kind" into a noun? | -ness | -ly | -ed | -est | Applying the standard result: Kindness is a noun.
-M2#primary-u05-07-q2@2: How is "happy" spelt with the suffix -ly? | Happily | Happyly | Happly | Happilly | Applying the standard result: Change y to i, then add -ly.
-NUM1#primary-u05-07-q3@2: When "stop" becomes "stopping", how many letter p's are in the new word? | 2 | 0 | p's | The p doubles after the short vowel o, giving 2 p's in "stopping".
-M3#primary-u05-07-q4@3: A child writes "makeing". Which rule should they use? | Drop the final e before a vowel suffix | Double the k | Change e to i | Add an extra e | Applying the standard result: Make becomes making.
-SA2#primary-u05-07-q5@2,3: Explain the three main rules for adding suffixes, with an example of each. | Doubling: when a short word ends in one short vowel and one consonant, double the consonant before a vowel suffix, as in run to running. Drop the e: when a word ends in e, drop it before a vowel suffix, as in hope to hoping. Change y to i: when a word ends in a consonant and y, change y to i before most suffixes, as in happy to happiness, but keep it before -ing. | Doubling rule ; Drop the e ; Y to i ; Examples
+O: Explain how a suffix can change a word's meaning or word class
+H: What a suffix does
+P: A **suffix** goes at the end of a **root word**. It can change the tense (jump → jumped), compare (fast → faster → fastest), or change the word class (happy → happiness, care → careful, slow → slowly).
+K: Before adding a suffix, look at how the root word ends: a short vowel and one consonant, a silent e, or a consonant and y.
+H: The spelling rules
+- **Just add**: jump → jumping, jumped; help → helpful.
+- **Double**: a short vowel with one consonant doubles the consonant before -ing, -ed, -er or -est: hop → hopping, big → bigger.
+- **Drop the e**: a word ending in e drops it before a vowel suffix: hope → hoping, make → making. Keep the e before a consonant suffix: hope → hopeful.
+- **Change y to i**: a consonant + y changes to i: happy → happier, happiness; carry → carried. But keep the y before -ing: carrying.
+X: Add "-ed" to "stop", "smile" and "cry".
+> "stop" has a short vowel and one consonant: double the p, stopped.
+> "smile" ends in e: drop it before -ed, smiled.
+> "cry" ends in consonant + y: change y to i, cried.
+P: Some suffixes start with a vowel (-ing, -ed, -er, -est) and some with a consonant (-ful, -ness, -ment, -ly). The rules about doubling and dropping the e only apply to vowel suffixes.
+!: Writing "hopeing" or "hopping" for "hoping". "Hope" has a long vowel and silent e, so drop the e: hoping. "Hopping" comes from "hop".
+EV: established | The national curriculum's spelling appendix sets out these suffix rules for Years 1 to 6, and they are assessed in the Key Stage 2 spelling test.
+T: Suffix | Letters added to the end of a word to change its meaning or use
+T: Root word | The basic word that prefixes and suffixes are added to
+SUM: Suffixes change tense, comparison or word class.
+SUM: Double after a short vowel, drop a final e before a vowel suffix, and change consonant + y to i except before -ing.
+SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: spelling, Years 1 to 6 | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Standards and Testing Agency, Key stage 2 English grammar, punctuation and spelling test framework | standard | 2015 | https://www.gov.uk/government/publications/key-stage-2-english-grammar-punctuation-and-spelling-test-framework
+Q: What is "run" + "-ing"? | running.
+Q: What is "happy" + "-ness"? | happiness.
+M1#primary-u05-07-q1@1: What is "jump" + "-ed"? | jumped | jumpped | jumpt | jumpd | "Jump" ends in two consonants, so you just add "-ed": jumped.
+M2#primary-u05-07-q2@2: What is "make" + "-ing"? | making | makeing | makking | maiking | "Make" ends in a silent e, which is dropped before a vowel suffix like "-ing": making.
+M2#primary-u05-07-q3@2: What is "fly" + "-es"? | flies | flys | flyes | flise | "Fly" ends in consonant + y, so change y to i before adding: flies.
+TF2#primary-u05-07-q4@3: Adding "-ful" to "care" makes "careful", keeping the e. | true | "-ful" starts with a consonant, so the silent e stays: care + ful = careful.
+M3#primary-u05-07-q5@3: Which form of "hurry" is spelled correctly? | hurrying | hurriing | hurryed | hurrys | Before "-ing", keep the y (otherwise you would get two i's): hurrying. The others should be hurried and hurries.
+SA3#primary-u05-07-q6@2,3: Explain why "hop" becomes "hopping" but "hope" becomes "hoping". | "Hop" has a short vowel followed by one consonant, so you double the p before adding "-ing": hopping. "Hope" has a long vowel and ends in a silent e, so you drop the e before the vowel suffix: hoping. The double p keeps the vowel short. | Hop: short vowel, double consonant ; Hope: drop the e ; The doubling keeps the vowel short
 
 ## Prefixes
-LV: Year 2 to Year 4 · Application
-S: A prefix is a group of letters added to the beginning of a word to change its meaning. This lesson covers common prefixes, what they mean, and the spelling of negative prefixes such as in-, im-, il- and ir-.
-O: Add common prefixes to root words
-O: Explain the meaning of common prefixes
-O: Choose the correct negative prefix
-H: What prefixes do
-P: A **prefix** is added to the **start** of a root word and changes its meaning, but unlike many suffixes it never changes the spelling of the root. *Happy* becomes *unhappy*; *appear* becomes *disappear*; *behave* becomes *misbehave*. When the prefix ends with the same letter as the root begins, both letters stay: *dis* + *satisfied* = *dissatisfied*, *mis* + *spell* = *misspell*.
-H: Common prefixes and meanings
-- **un-**, **dis-**: not, or the opposite: *unkind*, *disagree*.
-- **mis-**: wrongly: *misread*.
-- **re-**: again or back: *rewrite*, *return*.
-- **pre-**: before: *preview*.
-- **sub-**: under: *submarine*.
-- **inter-**: between: *international*.
-- **super-**: above or beyond: *superstar*.
-- **anti-**: against: *antiseptic*.
-- **auto-**: self: *autograph*.
-H: Negative prefixes in-, im-, il-, ir-
-- **in-** means "not": *incorrect*, *invisible*.
-- Before a root starting with **m** or **p**, it becomes **im-**: *impossible*, *immature*.
-- Before **l**, it becomes **il-**: *illegal*, *illogical*.
-- Before **r**, it becomes **ir-**: *irregular*, *irresponsible*.
-X: Building words with prefixes.
-> *Pack* with *un-* becomes *unpack*: to do the opposite of pack.
-> *Heat* with *re-* becomes *reheat*: to heat again.
-> *Legal* with the negative prefix becomes *illegal*, because legal starts with l.
-> *Possible* becomes *impossible*, because possible starts with p.
-K: Prefixes added to the start of root words change their meaning without changing the root's spelling; common ones include un-, dis-, mis-, re-, pre- and sub-, and the negative prefix in- changes to im- before m or p, il- before l and ir- before r.
-!: Dropping a letter when the prefix and root meet, as in "mispell". Keep both letters: misspell.
-EV: established | Knowing prefix meanings helps pupils work out unfamiliar words when reading.
+LV: Year 3 to Year 6 · Application
+S: A prefix is a group of letters added to the start of a word to change its meaning, like "un-" in "unhappy". This lesson covers common prefixes, what they mean, and the spelling rule that the root word doesn't change.
+O: Add common prefixes such as un-, dis-, mis-, re-, pre-, sub- and in-
+O: Use the meaning of a prefix to work out the meaning of a word
+O: Explain how to choose between in-, im-, il- and ir-
+H: Common prefixes
+- **un-**: not (unkind, unlock)
+- **dis-**: not or opposite (disagree, disappear)
+- **mis-**: wrongly (misspell, misbehave)
+- **re-**: again or back (redo, return)
+- **pre-**: before (preview, prehistoric)
+- **sub-**: under (submarine, subway)
+- **anti-**: against (antiseptic)
+- **super-**: above or beyond (superstar)
+K: Adding a prefix never changes the spelling of the root word: just put the prefix on the front, even if letters double up.
+H: Choosing in-, im-, il- or ir-
+P: These all mean **not**. The choice depends on the first letter of the root word:
+- **im-** before m or p: impossible, impatient, immature
+- **il-** before l: illegal, illogical
+- **ir-** before r: irregular, irresponsible
+- **in-** before most others: incorrect, invisible
+X: Add "mis-" to "spell".
+> Just put the prefix on the front: mis + spell.
+> Keep every letter of both parts.
+> misspell, with a double s.
+!: Dropping a letter when two meet, as in "mispell" or "disapear". Keep all the letters: mis + spell = misspell; dis + appear = disappear.
+EV: established | Knowing the meanings of common prefixes helps readers work out unfamiliar words, which is part of the Key Stage 2 reading curriculum.
 T: Prefix | Letters added to the start of a word to change its meaning
-T: Negative prefix | A prefix meaning "not", such as un- or in-
-T: Root word | The basic word that prefixes and suffixes attach to
-SUM: Prefixes go at the start.
-SUM: They change meaning, not the root's spelling.
-SUM: in- becomes im-, il- or ir-.
-SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: Spelling | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
-SRC: Standards and Testing Agency, English grammar, punctuation and spelling test framework: key stage 2 | standard | 2015
+T: Antonym | A word with the opposite meaning, often made with a prefix such as un- or dis-
+SUM: Prefixes go at the start and change the meaning; the root word's spelling never changes.
+SUM: For "not", use im- before m or p, il- before l, ir- before r, and in- for most other words.
+SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: spelling, Years 3 to 6 | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: BBC Bitesize, KS2 English: prefixes | secondary | 2026 | https://www.bbc.co.uk/bitesize/primary
 Q: What does the prefix "re-" mean? | Again or back.
-Q: Why is "illegal" spelt with two l's? | The prefix il- is added to legal, which begins with l, so both letters stay.
-M1#primary-u05-08-q1@1: What does the prefix "un-" usually mean? | Not | Again | Before | Under | Applying the standard result: Unhappy means not happy.
-M2#primary-u05-08-q2@2: Which is the correct spelling? | Irregular | Inregular | Unregular | Imregular | Applying the standard result: In- becomes ir- before r.
-M3#primary-u05-08-q3@3: A child writes "dissappear". What is wrong? | Disappear has one s, because appear starts with a | Disappear needs three s's | The prefix should be mis- | Nothing is wrong | Applying the standard result: Dis + appear = disappear.
-MATCH1#primary-u05-08-q4@1: Match each prefix to its meaning. | Re- = Again ; Pre- = Before ; Sub- = Under ; Mis- = Wrongly | Prefixes have regular meanings.
-SA2#primary-u05-08-q5@2,3: Explain how knowing prefixes helps with both reading and spelling. | When reading an unfamiliar word, recognising a prefix such as pre- or mis- helps a child split it into parts and work out its meaning from the root. When spelling, knowing that a prefix never changes the root's spelling means children simply join the parts, keeping both letters where they meet, as in misspell, and choosing im-, il- or ir- by the root's first letter. | Splitting words ; Working out meaning ; Root spelling unchanged ; Choosing the right prefix
+Q: What is the opposite of "legal" made with a prefix? | illegal.
+M1#primary-u05-08-q1@1: Which prefix makes "happy" mean "not happy"? | un- | dis- | re- | pre- | "Unhappy" means not happy. "Dis-" goes with words like agree and appear.
+M2#primary-u05-08-q2@2: Which is the correct opposite of "possible"? | impossible | inpossible | unpossible | dispossible | "Possible" begins with p, so the "not" prefix is "im-": impossible.
+M2#primary-u05-08-q3@3: What does "submerge" most likely mean? | To go under the surface | To go back again | To join together | To wrongly mix | "Sub-" means under, so to submerge is to go under, usually under water.
+TF2#primary-u05-08-q4@1: "Dis" + "satisfied" is spelled "dissatisfied", with a double s. | true | A prefix doesn't change the root word, so the s at the end of "dis" and the s at the start of "satisfied" both stay.
+M3#primary-u05-08-q5@3: Which "not" form of "responsible" is spelled correctly? | irresponsible | iresponsible | inresponsible | unresponsable | "Responsible" begins with r, so it takes "ir-", keeping both r's: irresponsible.
+SA3#primary-u05-08-q6@2,3: Explain how knowing prefixes can help you understand the word "prehistoric". | "Pre-" means before, and "historic" is about history, the time when people have written records. So "prehistoric" means the time before written history, such as the Stone Age. | Pre- means before ; Historic relates to history ; Combines to give the meaning
 
 ## Plurals
-LV: Year 1 to Year 3 · Foundation
-S: A plural means more than one. This lesson explains the rules for making plurals with -s and -es, changing y to ies and f to ves, and learning irregular plurals.
-O: Form plurals with -s and -es
-O: Apply the rules for words ending in y and f
-O: Recognise common irregular plurals
+LV: Year 1 to Year 4 · Foundation
+S: Plural means more than one. Most nouns just add -s, but there are rules for words ending in s, x, ch and sh, in y, and in f, plus some irregular plurals to learn. This lesson covers them all.
+O: Form regular plurals with -s and -es
+O: Apply the rules for nouns ending in y and f
+O: Explain why some plurals, such as "children" and "mice", must be learned separately
 H: Adding -s or -es
-P: Most nouns become plural by adding **-s**: *cat* → *cats*, *book* → *books*. Add **-es** when the word ends in **s, x, z, ch** or **sh**, because it is easier to say: *bus* → *buses*, *box* → *boxes*, *church* → *churches*, *dish* → *dishes*. You can hear the extra syllable: "box-es".
+P: Most nouns add **-s**: cat → cats, book → books. Nouns ending in **s, x, z, ch or sh** add **-es**, because you can hear an extra syllable: bus → buses, box → boxes, church → churches, wish → wishes.
+K: Add -s to most nouns, but add -es when the word ends in s, x, z, ch or sh and you can hear an extra syllable.
 H: Words ending in y and f
-- If a word ends in a **consonant and y**, change the y to i and add -es: *baby* → *babies*, *city* → *cities*.
-- If it ends in a **vowel and y**, just add -s: *day* → *days*, *toy* → *toys*.
-- Many words ending in **f** or **fe** change to **ves**: *leaf* → *leaves*, *knife* → *knives*, *wolf* → *wolves*.
-- Some just add -s: *roof* → *roofs*, *chief* → *chiefs*.
-H: Irregular plurals
-- Some plurals change the vowel: *man* → *men*, *foot* → *feet*, *mouse* → *mice*, *tooth* → *teeth*.
-- Some add -en: *child* → *children*, *ox* → *oxen*.
-- Some stay the same: *sheep*, *deer*, *fish*.
-- Words ending in o vary: *tomatoes*, *potatoes*, but *pianos*, *photos*.
-X: Making plurals.
-> *Fox* ends in x, so add -es: *foxes*.
-> *Party* ends in a consonant and y, so change y to i and add -es: *parties*.
-> *Monkey* ends in a vowel and y, so add -s: *monkeys*.
-> *Half* changes f to ves: *halves*.
-K: Most plurals add -s, words ending in s, x, z, ch or sh add -es, consonant-plus-y changes to ies, many f and fe words change to ves, and irregular plurals such as children, mice and sheep must be learned.
-!: Writing "babys" or "toies". Check the letter before the y: a consonant means ies, a vowel means just add s.
-EV: established | Plural rules with -s and -es are taught in Year 1 of the national curriculum, with further patterns in later years.
-T: Plural | A form meaning more than one
-T: Irregular plural | A plural that does not follow the usual rules
-T: Singular | A form meaning one
+- Consonant + y: change y to i and add -es: baby → babies, city → cities.
+- Vowel + y: just add -s: day → days, toy → toys.
+- Many words ending in f or fe change to -ves: leaf → leaves, knife → knives, wolf → wolves. Some just add -s: roof → roofs, chief → chiefs.
+- Irregular plurals change in other ways: child → children, man → men, mouse → mice, tooth → teeth, foot → feet. Some don't change at all: sheep, fish, deer.
+X: Make "lady", "monkey" and "half" plural.
+> "lady": consonant + y, so change to ies: ladies.
+> "monkey": vowel + y, so just add s: monkeys.
+> "half": f changes to ves: halves.
+P: Some words from other languages keep their own plural: cactus → cacti, and many words ending in o add -es: potato → potatoes, tomato → tomatoes.
+!: Using an apostrophe to make a plural, such as "apple's for sale". Plurals never need an apostrophe: apples.
+EV: established | Regular and irregular plural forms are taught across Key Stage 1 and lower Key Stage 2 in the national curriculum's spelling appendix.
+T: Plural | The form of a noun that means more than one
+T: Irregular plural | A plural that doesn't follow the usual -s or -es pattern, such as "mice"
 SUM: Add -s, or -es after s, x, z, ch and sh.
-SUM: Consonant + y becomes ies.
-SUM: Learn irregular plurals.
-SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: Spelling | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
-SRC: Standards and Testing Agency, English grammar, punctuation and spelling test framework: key stage 2 | standard | 2015
-Q: When do you add -es to make a plural? | When a word ends in s, x, z, ch or sh.
-Q: What is the plural of "child"? | Children.
-M1#primary-u05-09-q1@1: What is the plural of "dish"? | Dishes | Dishs | Dishies | Dish | Applying the standard result: Sh takes -es.
-M2#primary-u05-09-q2@2: What is the plural of "lady"? | Ladies | Ladys | Ladyes | Ladis | Applying the standard result: Consonant plus y becomes ies.
-NUM1#primary-u05-09-q3@2: The word "box" becomes "boxes". How many syllables does "boxes" have? | 2 | 0 | syllables | "Box-es" has 2 syllables, which is why -es is added after x.
-M3#primary-u05-09-q4@3: Which plural is correct? | Monkeys | Monkies | Monkeyes | Monkeis | Applying the standard result: A vowel before y means just add s.
-MATCH1#primary-u05-09-q5@2: Match each word to its plural. | Mouse = Mice ; Knife = Knives ; Tooth = Teeth ; Sheep = Sheep | These are irregular or changing plurals.
-SA2#primary-u05-09-q6@2,3: Explain the rule for making plurals of words ending in y. | Look at the letter before the y. If it is a consonant, as in baby or city, change the y to i and add -es to make babies and cities. If it is a vowel, as in day or toy, simply add -s to make days and toys. Checking the letter before the y tells you which rule to use. | Letter before y ; Consonant rule ; Vowel rule ; Examples
+SUM: Consonant + y becomes -ies, many f words become -ves, and irregular plurals must be learned.
+SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: spelling, Years 1 to 4 | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Oak National Academy, primary English: plurals | secondary | 2026 | https://www.thenational.academy/
+Q: What is the plural of "fox"? | foxes.
+Q: What is the plural of "tooth"? | teeth.
+M1#primary-u05-09-q1@1: What is the plural of "dish"? | dishes | dishs | dish's | dishies | "Dish" ends in "sh", so add "-es": dishes. You can hear the extra syllable.
+M2#primary-u05-09-q2@2: What is the plural of "party"? | parties | partys | party's | partyes | "Party" ends in consonant + y, so change the y to i and add -es: parties.
+M2#primary-u05-09-q3@2: What is the plural of "key"? | keys | kies | keyes | key's | "Key" ends in vowel + y, so just add -s: keys.
+TF2#primary-u05-09-q4@3: The plural of "mouse" is made by adding -s. | false | "Mouse" has an irregular plural, "mice", which must be learned rather than worked out by a rule.
+M3#primary-u05-09-q5@3: Which plural is spelled correctly? | wolves | wolfs | wolfes | wolve's | Many words ending in f change to -ves: wolf → wolves. Plurals never need an apostrophe.
+SA3#primary-u05-09-q6@2,3: Explain the rule for making nouns ending in y plural, with two examples. | If the letter before the y is a consonant, change the y to i and add -es: puppy → puppies. If the letter before the y is a vowel, just add -s: boy → boys. | Consonant + y → ies ; Example ; Vowel + y → add s ; Example
 
 ## Homophones
-LV: Year 2 to Year 4 · Application
-S: Homophones are words that sound the same but have different meanings and spellings. This lesson covers common homophones and strategies for choosing the right one.
-O: Recognise common homophones
-O: Choose the correct homophone from the meaning of a sentence
-O: Use memory tricks to remember tricky homophones
+LV: Year 2 to Year 6 · Application
+S: Homophones are words that sound the same but have different meanings and spellings, like "there", "their" and "they're". This lesson shows the most commonly confused homophones and tricks for choosing the right one.
+O: Recognise common homophones and their meanings
+O: Choose the correct homophone in a sentence
+O: Explain a strategy for remembering which homophone is which
 H: Same sound, different word
-P: **Homophones** sound the same but are spelt differently and mean different things. Choosing the wrong one is a common spelling mistake, because spell-checkers often miss it. The national curriculum lists homophones for each year group, including *there/their/they're*, *to/too/two*, *see/sea*, *here/hear*, *right/write*, *knight/night*, *bare/bear*, *son/sun*, *break/brake* and *whether/weather*.
-H: Common sets
-- **there**: a place ("over there"); **their**: belonging to them ("their coats"); **they're**: they are ("they're late").
-- **to**: towards, or before a verb ("go to school", "to run"); **too**: also, or more than enough ("too hot"); **two**: the number 2.
-- **your**: belonging to you; **you're**: you are.
-- **its**: belonging to it ("the dog wagged its tail"); **it's**: it is or it has.
-H: Strategies
-- Think about the meaning of the sentence.
-- Expand contractions: if "they are" works, write *they're*.
-- Use memory tricks: *here* and *there* are places and both contain *here*; you **hear** with your **ear**.
-- Proofread for homophones, because spell-checkers will not catch them.
-X: Choosing the homophone.
-> Sentence: "___ going to bring ___ bikes over ___."
-> "They are going" works, so the first is *they're*.
-> The bikes belong to them, so the second is *their*.
-> "Over" a place, so the third is *there*: "They're going to bring their bikes over there."
-K: Homophones sound alike but differ in spelling and meaning; choosing the right one depends on the sentence's meaning, expanding contractions and using memory tricks, and proofreading is essential because spell-checkers miss them.
-!: Using "its" and "it's" the wrong way round. Only it's (with the apostrophe) means "it is" or "it has".
-EV: established | Homophone errors are among the most common spelling errors in pupils' writing.
+P: **Homophones** sound alike but are spelled differently and mean different things. Choosing the wrong one is a very common spelling mistake, so it helps to learn the most useful sets.
+- **there** (a place: over there), **their** (belonging to them), **they're** (they are)
+- **to** (go to school), **too** (also, or too much), **two** (2)
+- **your** (belonging to you), **you're** (you are)
+- **here** (this place), **hear** (with your ears)
+- **see** (with your eyes), **sea** (salty water)
+- **knight** (soldier in armour), **night** (when it's dark)
+K: Choose a homophone by its meaning: check the sentence, and test shortened forms by saying them in full.
+H: Tricks to remember
+X: Choose: "___ going to the park." (There, Their, They're)
+> Try saying it in full: "They are going to the park."
+> That makes sense, so the short form is right.
+> The answer is "They're".
+- "Hear" has an **ear** in it.
+- "Here" and "there" are both about places, and both contain "here".
+- "Too" has too many o's.
+!: Writing "your" when you mean "you're". If you can say "you are", it needs the apostrophe: you're.
+EV: established | Homophones and near-homophones are listed for every year group from Year 2 in the national curriculum's spelling appendix.
 T: Homophone | A word that sounds the same as another but has a different meaning and spelling
-T: Contraction | A shortened form using an apostrophe, such as they're for they are
-T: Proofreading | Checking writing for errors
-SUM: Same sound, different meaning.
-SUM: Use meaning and contractions to choose.
-SUM: Proofread; spell-checkers miss them.
-SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: Spelling | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
-SRC: Standards and Testing Agency, English grammar, punctuation and spelling test framework: key stage 2 | standard | 2015
-Q: What is a homophone? | A word that sounds the same as another but has a different spelling and meaning.
-Q: Which "there" means "they are"? | They're.
-M1#primary-u05-10-q1@1: Which word means "belonging to them"? | Their | There | They're | Theyre | Applying the standard result: Their shows possession.
-M2#primary-u05-10-q2@2: Choose the correct word: "The cake is ___ hot to eat." | too | to | two | toe | Applying the standard result: Too means more than enough.
-M3#primary-u05-10-q3@3: A spell-checker finds no errors in "Its raining and the cat licked it's paw." What is wrong? | It's and its are swapped | Nothing is wrong | Raining is misspelt | Paw should be paws | Applying the standard result: It's means it is; its shows belonging.
-MATCH2#primary-u05-10-q4@2: Match each homophone to its meaning. | Hear = Listen ; Here = This place ; Right = Correct ; Write = Put words on paper | Homophones differ in meaning.
-SA2#primary-u05-10-q5@2,3: Explain how to choose between there, their and they're. | First see whether "they are" fits the sentence; if it does, write they're. If the word shows that something belongs to them, write their. If it refers to a place or begins a sentence like "There is", write there, remembering it contains the word here, another place word. Checking the meaning of the sentence each time avoids mistakes. | Expand the contraction ; Belonging ; Place ; Memory trick
+T: Contraction | A shortened form of words, with an apostrophe for missing letters, such as "they're"
+SUM: Homophones sound the same but differ in spelling and meaning.
+SUM: Use meaning, memory tricks and saying contractions in full to choose the right one.
+SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: spelling, homophones | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Standards and Testing Agency, Key stage 2 English grammar, punctuation and spelling test framework | standard | 2015 | https://www.gov.uk/government/publications/key-stage-2-english-grammar-punctuation-and-spelling-test-framework
+Q: Which "there" means "belonging to them"? | their.
+Q: How can you remember "hear"? | It has an "ear" in it.
+M1#primary-u05-10-q1@1: Which word means the number 2? | two | to | too | tow | "Two" is the number. "To" shows direction and "too" means also or too much.
+M2#primary-u05-10-q2@2: Choose the right word: "The children packed ___ bags." | their | there | they're | thier | The bags belong to the children, so use "their". "Thier" is a misspelling.
+M2#primary-u05-10-q3@2: Choose the right word: "I can ___ the birds singing." | hear | here | heer | hare | You hear with your ears, and "hear" has "ear" inside it.
+TF2#primary-u05-10-q4@3: In "You're my best friend", "you're" is correct because it means "you are". | true | Saying it in full, "You are my best friend", makes sense, so the contraction is right.
+M3#primary-u05-10-q5@3: Which sentence is correct? | It's too cold to go to the beach. | Its to cold too go to the beach. | It's two cold to go to the beach. | Its too cold to go two the beach. | "It's" means it is, "too" means very, and "to" shows direction. Only the first sentence uses all three correctly.
+SA3#primary-u05-10-q6@2,3: Explain how to decide between "there", "their" and "they're" in a sentence. | Try saying "they are": if it makes sense, use "they're". If the word shows something belongs to people, use "their". If it is about a place, or starts a sentence like "There is", use "there", which contains "here", another place word. | Tests "they are" for they're ; Their for belonging ; There for place ; Gives a memory trick
 
 ## Silent letters
 LV: Year 2 to Year 4 · Application
-S: Some words contain letters we write but do not say. This lesson covers common silent letter patterns, why they exist, and how to learn words that contain them.
-O: Recognise common silent letter patterns
-O: Spell words with silent letters
-O: Explain why some English words have silent letters
-H: Letters you write but do not say
-P: A **silent letter** is written in a word but not pronounced. Many come from older pronunciations of English, or from words borrowed from Latin, Greek or French. In the Middle Ages, the *k* in *knight* was said aloud; today it is silent, but the spelling has stayed.
-H: Common patterns
-- **kn**: the *k* is silent in *knee*, *knife*, *knock*, *know*.
-- **wr**: the *w* is silent in *write*, *wrong*, *wrist*, *wrap*.
-- **gn**: the *g* is silent in *gnat*, *gnome*, *sign*, *design*.
-- **mb**: the *b* is silent in *lamb*, *thumb*, *climb*, *comb*.
-- **mn**: the *n* is silent in *autumn*, *column*.
-- **gh**: often silent, as in *night*, *daughter*, *though*.
-- **h**: silent in *hour*, *honest*, *ghost* and *school* (in *ch*).
-- **t**: silent in *listen*, *castle*, *whistle*.
-- **st**: the t in *-stle* words is silent.
-H: Learning them
-- Say the word "as it is spelt" to remember the silent letter: "k-nife".
-- Group words with the same pattern.
-- Look at related words: *sign* is linked to *signature*, where the *g* is sounded.
-- Practise in sentences.
-X: Spelling with silent letters.
-> A child wants to write *knock*.
-> Remember the kn pattern: the k is silent at the start.
-> Saying "k-nock" as a memory trick helps.
-> For *thumb*, remember mb at the end, with a silent b, as in *lamb* and *climb*.
-K: Silent letters are written but not pronounced, often because pronunciation changed while spelling did not; common patterns include kn, wr, gn, mb, mn and gh, learned by grouping, saying words as spelt and using related words.
-!: Leaving out the silent letter, as in "nife" or "rong". Learn the pattern groups so you remember to include it.
-EV: established | Many silent letters in English reflect older pronunciations or the spellings of borrowed words.
-T: Silent letter | A letter written in a word but not pronounced
-T: Pattern | A group of letters that often appears together
-T: Related word | A word from the same family that may sound the silent letter
-SUM: Silent letters are written but not said.
-SUM: Learn kn, wr, gn and mb groups.
-SUM: Related words can sound the letter.
-SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: Spelling | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+S: Some words contain letters that we write but don't say, like the k in "knee" and the b in "lamb". This lesson shows the common silent letter patterns and where they came from.
+O: Spell words with common silent letters such as kn, wr, gn, mb and st
+O: Recognise silent letter patterns when reading
+O: Explain why English spelling contains silent letters
+H: Common silent letters
+- **kn**: knee, knife, know, knock, knight
+- **wr**: write, wrong, wrap, wrist
+- **gn**: gnome, gnat, sign
+- **mb**: lamb, climb, thumb, comb
+- **st** (silent t): castle, listen, whistle
+- **sc** (silent c): science, scene, scissors
+- **h**: hour, honest, rhyme, ghost
+K: Silent letters are written but not said; learn the common patterns, such as kn at the start and mb at the end.
+H: Why are they there?
+P: Many silent letters used to be said. Hundreds of years ago, people in England really did pronounce the k in "knight" and "knee". Over time the way people spoke changed, but the spelling stayed the same.
+X: Spell "wrist".
+> Say it: /r/ /i/ /s/ /t/.
+> Remember that some /r/ words at the start begin with a silent w, especially words about twisting: wrap, wring, wriggle.
+> So write w-r-i-s-t.
+P: Silent letters can also help: the silent e at the end of "made" changes the a sound, and the silent u in "guess" stops the g sounding like /j/.
+!: Leaving out silent letters, such as writing "nife" or "lam". Picture the word and say it in a "spelling voice": k-nife, lam-b.
+EV: established | Many English silent letters, such as the k in "knight", were pronounced in older forms of English and kept when pronunciation changed.
+T: Silent letter | A letter in a word that is written but not sounded
+T: Spelling voice | Saying a word as it is spelled, sounding every letter, to help remember it
+SUM: Common silent letters include kn, wr, gn, mb, st and sc.
+SUM: Many were once spoken; learn them by pattern and by saying them in a spelling voice.
+SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: spelling, Year 2 | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
 SRC: Crystal D., Spell It Out: The Singular Story of English Spelling, Profile Books | secondary | 2012
-Q: Which letter is silent in "write"? | The w.
-Q: How can "signature" help you spell "sign"? | In signature the g is sounded, reminding you that sign has a g.
-M1#primary-u05-11-q1@1: Which letter is silent in "knee"? | k | n | e | none | Applying the standard result: Kn starts with a silent k.
-M2#primary-u05-11-q2@2: Which word has a silent b? | Climb | Bat | Robot | Bubble | Applying the standard result: Mb ends with a silent b.
-M3#primary-u05-11-q3@3: Why does "knight" have a silent k? | The k was once pronounced, and the spelling stayed when speech changed | Someone added it as a joke | It shows the word is a verb | It makes the word longer | Applying the standard result: Spelling kept older pronunciation.
-MATCH1#primary-u05-11-q4@2: Match each word to its silent letter. | Knock = k ; Wrist = w ; Lamb = b ; Autumn = n | Each word has a silent letter.
-SA2#primary-u05-11-q5@2,3: Explain why English has silent letters and how children can learn to spell words that contain them. | English spelling often keeps older pronunciations or the spelling of borrowed words, so letters such as the k in knight stopped being said but stayed in writing. Children can learn them by grouping words with the same pattern, like kn or mb, saying the word as it is spelt as a memory trick, and using related words such as signature to remember the g in sign. | Historical reasons ; Pattern groups ; Saying as spelt ; Related words
+Q: Which letter is silent in "lamb"? | b.
+Q: Which letter is silent in "write"? | w.
+M1#primary-u05-11-q1@1: Which letter is silent in "knot"? | k | n | o | t | You say "not", so the k at the start is silent. This is the common kn pattern.
+M2#primary-u05-11-q2@2: Which word has a silent t? | castle | cast | table | tent | In "castle" you don't say the t: "cassle". In the other words the t is sounded.
+M2#primary-u05-11-q3@3: Why is there a k in "knee"? | It was once pronounced in older English | It makes the word longer | It changes the vowel sound | It shows the word is a noun | In older English the k in "knee" was sounded. Pronunciation changed but the spelling stayed the same.
+TF1#primary-u05-11-q4@1: The h in "hour" is silent. | true | "Hour" is said "our", so the h is silent. That is why we say "an hour", not "a hour".
+M3#primary-u05-11-q5@3: Which spelling of the word meaning "go up a ladder" is correct? | climb | clime | clim | climbe | "Climb" ends in the silent b pattern mb, like lamb and thumb.
+SA3#primary-u05-11-q6@2,3: Explain why English has silent letters, using "knight" as an example. | Many silent letters were once spoken. Long ago, people really said the k and the gh sound in "knight". Over hundreds of years pronunciation changed and those sounds were dropped, but the written spelling stayed the same, so the letters are now silent. | Letters were once spoken ; Knight example ; Pronunciation changed ; Spelling stayed the same
 
 ## Spelling rules and exceptions
-LV: Year 3 to Year 6 · Application
-S: English spelling follows many patterns, but almost every rule has exceptions. This lesson brings together useful rules for upper Key Stage 2, explains the exceptions and gives strategies for learning statutory word list spellings.
-O: Apply useful rules such as "i before e", soft c and g, and -tion and -sion
-O: Recognise common exceptions to spelling rules
-O: Use a range of strategies to learn statutory spellings
+LV: Year 3 to Year 6 · Evaluation
+S: Spelling in English follows many patterns, but almost every rule has exceptions. This lesson covers some of the most useful rules for upper Key Stage 2, such as i before e, -tion and -sion endings, and -cious and -tious, and how to learn the words that break them.
+O: Apply useful spelling rules such as i before e except after c
+O: Choose between endings such as -tion, -sion, -ssion and -cian
+O: Explain why it is important to learn the exceptions to a rule
 H: Useful rules
-P: Rules help with many words, as long as children remember that they are patterns rather than laws. **"i before e except after c"** works for words where *ie* or *ei* makes the /ee/ sound: *believe*, *field*, *receive*, *ceiling*. **Soft c and g**: *c* sounds like /s/ and *g* often like /j/ before *e*, *i* or *y* (*city*, *ice*, *giant*, *gym*). Endings **-tion** (*station*), **-sion** (*television*) and **-cian** (*musician*) all make a "shun" sound; *-cian* is usually for people's jobs.
-H: Exceptions
-- "i before e" has exceptions such as *weird*, *seize* and *protein*, and does not apply when *ei* makes other sounds, as in *eight* or *their*.
-- *g* is sometimes hard before e or i: *get*, *girl*.
-- Many common words break the rules, which is why the national curriculum includes statutory word lists for Years 3 and 4 and Years 5 and 6, with words such as *accommodate*, *necessary*, *rhythm* and *separate*.
-H: Learning strategies
-- **Look, say, cover, write, check**.
-- **Break words into syllables**: *sep-ar-ate*.
-- **Find words within words**: there is "a rat" in *separate*.
-- **Mnemonics**: "necessary" has one collar and two sleeves (one c, two s's).
-- **Word families**: *sign*, *signal*, *signature*.
-- Practise little and often, and use the words in writing.
-X: Applying rules and exceptions.
-> *Receive*: the /ee/ sound follows c, so ei: receive.
-> *Believe*: no c before the sound, so ie: believe.
-> *Weird*: an exception, learned with the reminder "weird is weird".
-> *Necessary*: remembered with the mnemonic "one collar, two sleeves".
-K: Spelling rules such as "i before e except after c", soft c and g, and -tion, -sion and -cian endings help with many words, but exceptions are common, so statutory words are learned through strategies such as syllables, words within words, mnemonics and word families.
-!: Treating spelling rules as if they had no exceptions. Use rules as a guide and learn the common exceptions.
-EV: established | The national curriculum includes statutory word lists for Years 3 and 4 and Years 5 and 6.
-EV: contested | How useful the "i before e except after c" rule is has been debated, because of its many exceptions.
-T: Soft c | The letter c making an /s/ sound before e, i or y
-T: Mnemonic | A memory aid such as a phrase or rhyme
-T: Statutory word list | Words the national curriculum requires pupils to learn to spell
-SUM: Rules help but have exceptions.
-SUM: Soft c and g before e, i and y.
-SUM: Use strategies for tricky words.
-SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: Spelling (word lists for years 3 and 4 and years 5 and 6) | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
-SRC: Crystal D., Spell It Out: The Singular Story of English Spelling, Profile Books | secondary | 2012
-Q: What sound does c make before e, i or y? | A soft /s/ sound, as in city.
-Q: Which ending is usually used for people's jobs, as in musician? | -cian.
-M1#primary-u05-12-q1@1: Which word follows "i before e except after c"? | Receive | Weird | Seize | Protein | Applying the standard result: Ei follows c in receive.
-M2#primary-u05-12-q2@2: In which word does g make a soft /j/ sound? | Giant | Girl | Get | Garden | Applying the standard result: G is soft before i here.
-M3#primary-u05-12-q3@3: Which strategy best helps with "separate"? | Spotting "a rat" inside the word | Adding an extra e | Spelling it as it sounds: "seperate" | Ignoring the middle vowel | Applying the standard result: Words within words help memory.
-TF1#primary-u05-12-q4@1: The word "weird" follows the "i before e except after c" rule. | false | Weird is a well-known exception.
-SA2#primary-u05-12-q5@2,3: Explain how children can learn spellings from the statutory word lists. | They can break words into syllables, such as sep-ar-ate, find smaller words inside them, such as "a rat" in separate, use mnemonics like "one collar, two sleeves" for necessary, and link words in families, such as sign and signature. Using look, say, cover, write, check, practising little and often and using the words in their own writing helps the spellings stick. | Syllables ; Words within words ; Mnemonics and families ; Regular practice
+- **i before e except after c**, when the sound is /ee/: believe, field, but receive, ceiling. Exceptions include seize and protein.
+- **-tion** is the most common ending for the /shun/ sound: action, invention.
+- **-sion** often follows a root ending in d or se: extend → extension, tense → tension; and -sion can make a /zhun/ sound: television, decision.
+- **-ssion** follows roots ending in ss or mit: discuss → discussion, permit → permission.
+- **-cian** is used for people, from roots ending in c: music → musician, magic → magician.
+- **-cious** or **-tious**: if the root ends in ce, use -cious: grace → gracious; otherwise often -tious: ambitious.
+K: Spelling rules are patterns that work most of the time; learn the rule, then learn the common exceptions as separate words.
+H: Learning exceptions
+P: The national curriculum includes word lists for Years 3 and 4 and Years 5 and 6, full of words that break the patterns: for example "separate", "necessary", "rhythm", "definitely" and "government".
+X: Remember how to spell "necessary".
+> Notice the tricky bits: one c and two s's.
+> Use a memory trick: a shirt has one collar and two sleeves.
+> Practise writing it in sentences, then test yourself later.
+P: Make your own spelling journal: write each tricky word, underline the hard part and add a memory trick of your own.
+!: Applying "i before e" to every word with ie or ei. The rule only works for the /ee/ sound: "their", "weight" and "neighbour" don't make /ee/, so they don't follow it.
+EV: established | The Key Stage 2 spelling test assesses words from the statutory word lists for Years 3 to 6 and the spelling patterns in English Appendix 1.
+T: Spelling rule | A pattern that helps you spell many words correctly
+T: Exception | A word that doesn't follow a rule
+SUM: Rules such as i before e except after c and -tion, -sion, -ssion and -cian endings cover many words.
+SUM: Learn the exceptions with memory tricks and practise them in sentences.
+SRC: Department for Education, National curriculum in England: English programmes of study, English Appendix 1: spelling, Years 3 to 6 and word lists | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-english-programmes-of-study
+SRC: Standards and Testing Agency, Key stage 2 English grammar, punctuation and spelling test framework | standard | 2015 | https://www.gov.uk/government/publications/key-stage-2-english-grammar-punctuation-and-spelling-test-framework
+Q: Which ending is used for a person who plays music? | -cian: musician.
+Q: Spell the /ee/ word that means "to get": rec___ve. | receive (ei after c).
+M1#primary-u05-12-q1@1: Which word follows the rule "i before e except after c"? | field | feild | recieve | beleive | "Field" has ie making /ee/, so i comes first. "Receive" needs ei after c, and "believe" is ie.
+M2#primary-u05-12-q2@2: Which ending completes "electri___" for a person who fixes wiring? | -cian | -tion | -sion | -ssion | The root "electric" ends in c and the word names a person, so use -cian: electrician.
+M2#primary-u05-12-q3@2: Which noun made from "discuss" is spelled correctly? | discussion | discution | discusion | discusian | The root "discuss" ends in ss, so the ending is -ssion: discussion.
+TF2#primary-u05-12-q4@3: "Weight" breaks the rule "i before e except after c". | false | The rule only applies when the letters make an /ee/ sound. In "weight" ei says /ay/, so the rule doesn't apply at all.
+M3#primary-u05-12-q5@3: Which spelling of the word meaning "apart" is correct? | separate | seperate | seprate | separete | "Separate" is on the Year 5 and 6 word list. A memory trick: there is "a rat" in sep-a-rat-e.
+SA3#primary-u05-12-q6@3: Explain why learning a spelling rule is useful but not enough on its own. | A rule, such as i before e except after c, helps you spell many words you have never seen. But English has many exceptions, like "seize" and "protein", which would be spelled wrongly if you only followed the rule. So you need to learn the rule and the common exceptions too. | Rules help with many words ; Gives a rule ; Exceptions exist ; Gives an exception
 `;
