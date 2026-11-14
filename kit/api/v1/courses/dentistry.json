@@ -763,7 +763,7 @@
    "id": "u07",
    "n": 7,
    "title": "Dental Materials",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u07-01",
@@ -846,7 +846,7 @@
    "id": "u08",
    "n": 8,
    "title": "Dental Radiography and Radiation Protection",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u08-01",
