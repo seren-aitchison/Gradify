@@ -1,638 +1,559 @@
-// CreateGradify Accessibility and Inclusive Design (content standard 2). Added by scripts/new-course.mjs add-notes.
+// School 8: Accessibility and Inclusive Design. Written to content standard 2 (docs/CURRICULUM_CONTENT_STANDARD.md):
+// objectives, key terms, summaries, typed and dated sources, evidence status (EV:) and questions at three levels
+// (Foundation, Application, Evaluation) in every lesson. Explanations are original; sources are those used and cited for
+// checking, pending human verification (qa.js records the review stages). Level: GCSE and A level D&T to first-year
+// undergraduate. WCAG is described as at version 2.2 (W3C Recommendation, October 2023) and UK law as at November 2026,
+// for study, not as a compliance audit or legal advice.
 export default `
 ## Why accessibility matters
 LV: Introductory · Foundation
-S: Accessibility means designing products and services that disabled people can perceive, understand, navigate and use. This lesson explains how many people are affected, why exclusion is a design failure and how accessible design benefits everyone.
-O: Define accessibility in design
-O: Describe the scale of disability in the UK and worldwide
-O: Explain the ethical, legal and business case for accessibility
-H: What accessibility means
-P: **Accessibility** is the degree to which a product, service or environment can be used by people with the widest range of abilities, including disabled people. In digital design it means people can **perceive**, **understand**, **navigate** and **interact** with content, whether they use a mouse, a keyboard, a screen reader or voice control. Tim Berners-Lee, inventor of the World Wide Web, said that "the power of the Web is in its universality" and that access by everyone regardless of disability is an essential aspect. When a design shuts people out, the failure lies in the design, not in the person.
-H: The scale of disability
-- The World Health Organization estimated in 2022 that about **1.3 billion people**, roughly **one in six** of the world's population, experience significant disability.
-- The UK Family Resources Survey 2022 to 2023 reported about **16 million disabled people**, around **24%** of the population.
-- Disability includes **visual**, **hearing**, **motor**, **cognitive**, **mental health** and **speech** impairments, and many disabilities are not visible.
-- Disability becomes more common with **age**, so ageing populations increase the need for accessible design.
-- Anyone can experience **temporary** or **situational** limitations, such as a broken arm or bright sunlight on a screen.
-H: Why it matters
-- **Ethical**: access to information, services and products is a matter of equality and dignity.
-- **Legal**: in the UK the **Equality Act 2010** requires service providers to make reasonable adjustments, and public sector websites must meet accessibility regulations.
-- **Business**: disabled people and their households have significant spending power, often called the **purple pound**.
-- **Quality**: accessible designs tend to be clearer, more robust and easier for everyone to use.
-- **Cost**: building accessibility in from the start is far cheaper than retrofitting it after launch.
-X: A bus timetable redesign.
-> A council publishes its bus timetable only as a scanned image in a PDF.
-> Screen reader users cannot read it, and people on phones must pinch and zoom.
-> The team rebuilds it as a simple, responsive web table with clear headings.
-> Complaints fall, and analytics show most visitors now finish their journey search on a phone.
-K: Accessibility is about making products usable by people with the widest range of abilities; around one in six people worldwide and about a quarter of the UK population are disabled, and accessible design is an ethical, legal and business necessity that usually improves quality for everyone.
-!: Thinking accessibility only affects a small minority. Disability is common, often invisible and increases with age, and situational limitations affect everyone.
-EV: established | The WHO estimates that around 1.3 billion people, about 16% of the global population, experience significant disability.
-T: Accessibility | The degree to which a product or service can be used by people with the widest range of abilities
-T: Situational limitation | A temporary barrier caused by context, such as noise, glare or holding something
-T: Purple pound | The spending power of disabled people and their households
-SUM: Disability is common.
-SUM: Exclusion is a design failure.
-SUM: Accessibility improves quality.
-SRC: World Health Organization, Global Report on Health Equity for Persons with Disabilities, WHO | data | 2022 | https://www.who.int/publications/i/item/9789240063600
-SRC: Department for Work and Pensions, Family Resources Survey: financial year 2022 to 2023, gov.uk | data | 2024 | https://www.gov.uk/government/statistics/family-resources-survey-financial-year-2022-to-2023
-SRC: W3C Web Accessibility Initiative, Introduction to Web Accessibility, W3C | guidance | 2024 | https://www.w3.org/WAI/fundamentals/accessibility-intro/
-Q: Roughly what proportion of the world's population experiences significant disability? | About one in six (around 1.3 billion people).
-Q: What is the purple pound? | The spending power of disabled people and their households.
-M1#design-u08-01-q1@1: According to the WHO in 2022, roughly how many people worldwide experience significant disability? | About 1.3 billion | About 13 million | About 130 million | About 4 billion | The WHO estimate is about 1.3 billion people, around 16% of the world's population.
-M2#design-u08-01-q2@2: About what share of the UK population was reported as disabled in the Family Resources Survey 2022 to 2023? | Around 24% | Around 4% | Around 50% | Around 10% | The survey reported about 16 million disabled people, roughly a quarter of the population.
-TF1#design-u08-01-q3@1: Most disabilities are immediately visible to other people. | false | Many disabilities, such as hearing loss, chronic illness, dyslexia and mental health conditions, are not visible.
-M3#design-u08-01-q4@3: A start-up says accessibility can wait until after launch. What is the strongest response? | Retrofitting later is costlier and excludes users meanwhile | Accessibility is only needed for government sites | Disabled users rarely buy online products | Accessibility only matters for large companies | Building accessibility in early is cheaper, and waiting excludes disabled customers and risks legal claims.
-SA2#design-u08-01-q5@2,3: Explain why accessibility matters for designers, using ethical, legal and business arguments. | Ethically, disabled people have the same right to information, products and services as anyone else, and a design that excludes them fails its purpose. Legally, the Equality Act 2010 requires reasonable adjustments, and public sector websites must meet accessibility regulations. In business terms, disabled people and their households form a large market, and accessible products are often clearer and easier for everyone. Building accessibility in from the start is also cheaper than fixing it later. | Ethical equality ; Equality Act duty ; Market and purple pound ; Benefits everyone and cheaper early
+S: Accessibility means people with disabilities can perceive, understand, navigate and use a design. This lesson explains how many people it affects, why accessible design benefits everyone, and the ethical, legal and business reasons for it.
+O: Define accessibility and inclusive design
+O: Explain how many people accessibility affects, including temporary and situational needs
+O: Evaluate the ethical, legal and business arguments for accessible design
+H: Who it affects
+P: **Accessibility** is the degree to which a product, service or environment can be used by people with disabilities, including visual, hearing, motor, cognitive and speech impairments. The World Health Organization (2022) estimates about 1.3 billion people, around 16% of the world's population, experience significant disability. In the UK, the Department for Work and Pensions' Family Resources Survey reports that about a quarter of people are disabled, and the proportion rises steeply with age.
+- **Permanent**: a person who is blind, Deaf, or has one arm.
+- **Temporary**: a broken wrist, an eye infection, recovering from surgery.
+- **Situational**: bright sunlight on a screen, a noisy station, holding a baby in one arm.
+K: Accessible design is good design for everyone. Microsoft's inclusive design guidance captures this as "solve for one, extend to many": a design for someone with one arm also helps a parent holding a child.
+X: The curb-cut effect.
+> Dropped kerbs were campaigned for by wheelchair users.
+> They also help people with pushchairs, suitcases, bikes and delivery trolleys.
+> Similarly, captions designed for Deaf people are widely used in noisy places, by language learners and by people watching without sound.
+H: Why do it
+- **Ethical**: excluding people from information, services and products is unfair; the UN Convention on the Rights of Persons with Disabilities (2006) recognises access as a right.
+- **Legal**: in the UK the Equality Act 2010 requires reasonable adjustments, and public sector websites must meet accessibility regulations (see Accessibility and UK law).
+- **Business**: disabled people and their households are a large market; accessible products often have better usability and search performance for everyone.
+!: Treating accessibility as a final check before launch. Retrofitting is expensive; accessibility is cheapest when designed in from the start.
+EV: established | About 1.3 billion people worldwide experience significant disability (WHO, 2022).
+EV: contested | The size of the business benefit of accessibility is hard to measure, and estimates of disabled people's spending power vary widely.
+T: Accessibility | The degree to which a design can be used by people with disabilities
+T: Situational disability | A temporary limitation caused by context, such as glare, noise or having one hand busy
+SUM: Accessibility affects permanent, temporary and situational needs, about one in six people worldwide having a significant disability.
+SUM: Accessible design is ethically required, often legally required, and usually improves design for everyone.
+SRC: World Health Organization, Global Report on Health Equity for Persons with Disabilities | data | 2022 | https://www.who.int/publications/i/item/9789240063600
+SRC: Microsoft, Inclusive Design toolkit | guidance | 2016 | https://inclusive.microsoft.design/
+SRC: Blackwell A. G., "The curb-cut effect", Stanford Social Innovation Review 15(1):28–33 | secondary | 2017
+Q: What is a situational disability? | A temporary limitation caused by context, such as glare on a screen or holding something in one hand.
+Q: What is the curb-cut effect? | Designs made for disabled people often benefit many others, as dropped kerbs help people with pushchairs and luggage.
+M1#design-u08-01-q1@1: About what proportion of the world's population does the WHO estimate experience significant disability? | About 16% | About 1% | About 50% | About 75% | The WHO (2022) estimated around 1.3 billion people, roughly 16%.
+M2#design-u08-01-q2@2: A designer adds large touch targets for users with tremors. Who else is most likely to benefit? | People using a phone on a bumpy bus | Only users with tremors | Nobody else at all | Only users of desktop computers | Larger targets help anyone with reduced precision, including situational limits.
+M3#design-u08-01-q3@3: Which is the strongest argument for designing accessibility in from the start? | Retrofitting is costly, and early inclusion improves the design for everyone | Accessibility laws only apply after a product is launched | Disabled people are a small group, so a quick check is enough | Accessible designs always cost more than other designs | Designing in early avoids expensive rework and brings wider usability benefits.
+MATCH1#design-u08-01-q4@1: Match each example to the type of disability. | Being blind = permanent ; A broken wrist = temporary ; Glare on a phone screen in sunlight = situational ; Holding a baby in one arm = situational | Inclusive design considers permanent, temporary and situational needs.
+SA3#design-u08-01-q5@1,3: Evaluate the ethical, legal and business case for making a supermarket's website accessible. | Ethical: excluding disabled customers from buying food is unfair; access is a right (UN CRPD). Legal: the Equality Act 2010 requires reasonable adjustments by service providers. Business: about a quarter of UK people are disabled, older customers are a growing group, and accessible sites tend to be more usable for everyone (curb-cut effect). Business estimates are uncertain, but the ethical and legal case alone is strong. | Ethical argument ; Legal argument ; Business argument ; Benefit to all users ; Judgement
 
 ## Models of disability
-LV: Introductory · Foundation
-S: How we think about disability shapes how we design. This lesson compares the medical, social, biopsychosocial and human rights models of disability and explains why the social model matters to designers.
-O: Describe the medical and social models of disability
-O: Explain the biopsychosocial and human rights models
+LV: Intermediate · Application
+S: How disability is understood shapes how designers respond to it. This lesson compares the medical, social, biopsychosocial and human rights models of disability, and explains why the social model is central to inclusive design.
+O: Describe the medical, social, biopsychosocial and human rights models of disability
 O: Apply the social model to identify design barriers
-H: Medical and social models
-P: The **medical model** sees disability as a problem located in a person's body or mind, to be diagnosed, treated or cured by professionals. The **social model**, developed by disabled activists in the UK, distinguishes **impairment** (a physical, sensory or cognitive difference) from **disability** (the exclusion caused by barriers in society). The Union of the Physically Impaired Against Segregation set out this distinction in its 1976 Fundamental Principles of Disability, and the sociologist Mike Oliver named it the social model in 1983. Under the social model, a wheelchair user is disabled by steps, not by their legs; remove the steps and the barrier disappears.
-H: Other models
-- The **biopsychosocial model**, used in the WHO International Classification of Functioning, Disability and Health (**ICF**, 2001), sees disability as an interaction between health conditions and personal and environmental factors.
-- The **human rights model**, reflected in the **UN Convention on the Rights of Persons with Disabilities** (2006), treats access as a right, not a favour.
-- The **charity model** treats disabled people as objects of pity, and is widely rejected by disabled people.
-- Many disabled people use **identity-first** language ("disabled people"), which in the UK reflects the social model.
-H: What the social model means for designers
-- Designers create or remove **barriers**: inaccessible design produces disability.
-- Barriers can be **physical** (steps), **communication** (no captions), **attitudinal** (assumptions) or **organisational** (rigid processes).
-- The question becomes "what in this design excludes people?" rather than "what is wrong with this user?"
-- It places responsibility on teams and organisations to fix barriers.
-- It encourages **involving disabled people** in research and testing.
+O: Evaluate the strengths and criticisms of the social model
+H: Four models
+- **Medical model**: disability is a problem in the individual's body or mind, to be diagnosed, treated or cured.
+- **Social model**: people have **impairments**, but they are **disabled** by barriers in society: inaccessible buildings, products, information and attitudes. It grew from the Union of the Physically Impaired Against Segregation's *Fundamental Principles of Disability* (1976) and was named by Mike Oliver (1983).
+- **Biopsychosocial model**: disability results from interaction between health conditions and contextual factors, personal and environmental. The WHO's International Classification of Functioning, Disability and Health (ICF, 2001) uses this approach.
+- **Human rights model**: disabled people have equal rights to participation; the UN Convention on the Rights of Persons with Disabilities (2006) requires states to remove barriers.
+H: Why the social model matters for design
+P: The social model places responsibility on the design of environments, products and services. If a wheelchair user can't enter a shop, the problem is the step, not the wheelchair. This makes disability a design problem designers can do something about. In the UK, "disabled people" (rather than "people with disabilities") is often preferred by those who use the social model, because it emphasises that people are disabled by barriers.
 X: Applying the social model to a ticket machine.
-> A railway ticket machine has a touch screen mounted high and no audio output.
-> Under the medical model, the problem is framed as the user's poor sight or short stature.
-> Under the social model, the barriers are the screen height, lack of audio and small text.
-> The redesign lowers the screen, adds a headphone socket with speech and offers larger text.
-K: The medical model locates disability in the person, while the social model separates impairment from the disability caused by societal barriers; the biopsychosocial and human rights models add interaction and rights, and the social model reminds designers that their choices create or remove barriers.
-!: Treating the social model as denying that impairments exist. It accepts impairments but argues that exclusion is caused by barriers that can be removed.
-EV: established | The social model distinguishes impairment from disability caused by barriers, as set out by UPIAS in 1976 and named by Mike Oliver in 1983.
-EV: contested | Some scholars, such as Tom Shakespeare, argue the strict social model underplays the effects of impairment itself, such as pain or fatigue.
-T: Impairment | A physical, sensory, cognitive or mental difference in a person
-T: Social model | The view that people are disabled by barriers in society rather than by their impairments
-T: Barrier | Anything in the environment, design or attitudes that prevents participation
-SUM: Medical model: the person is the problem.
-SUM: Social model: barriers disable.
-SUM: Designers create or remove barriers.
-SRC: Oliver M., The Politics of Disablement, Macmillan | secondary | 1990
-SRC: World Health Organization, International Classification of Functioning, Disability and Health (ICF), WHO | standard | 2001 | https://www.who.int/standards/classifications/international-classification-of-functioning-disability-and-health
-SRC: Shakespeare T., Disability Rights and Wrongs Revisited, 2nd edition, Routledge | secondary | 2014
-Q: In the social model, what is the difference between impairment and disability? | Impairment is a difference in the person; disability is the exclusion caused by barriers in society.
-Q: Which WHO framework uses a biopsychosocial model of disability? | The International Classification of Functioning, Disability and Health (ICF).
-M1#design-u08-02-q1@1: Which model of disability says people are disabled mainly by barriers in society? | The social model | The medical model | The charity model | The deficit model | The social model separates impairment from the disability caused by social and environmental barriers.
-MATCH2#design-u08-02-q2@2: Match each model of disability to its main idea. | Medical = Disability is a condition to treat ; Social = Barriers in society disable people ; Biopsychosocial = Health and context interact ; Human rights = Access is a right | Each model frames disability differently and so suggests different responses.
-M2#design-u08-02-q3@2: Which document reflects the human rights model of disability? | The UN Convention on the Rights of Persons with Disabilities | The WHO ICF classification of 2001 | The Fundamental Principles of 1976 | The NHS Long Term Plan of 2019 | The UN Convention of 2006 treats accessibility and participation as rights.
-M3#design-u08-02-q4@3: A deaf student cannot follow uncaptioned lecture videos. What would a social model response focus on? | Adding captions and transcripts to the videos | Recommending a hearing test | Asking the student to sit nearer the screen | Advising the student to change course | The social model removes the barrier, here the missing captions, rather than treating the person.
-SA2#design-u08-02-q5@2,3: Compare the medical and social models of disability and explain why the social model is useful for designers. | The medical model sees disability as a problem within the person that professionals diagnose and treat. The social model separates impairment from disability and argues that people are disabled by barriers such as steps, missing captions or rigid processes. For designers this is useful because it shows that their decisions create or remove barriers, so they can take responsibility for removing them. It also encourages teams to involve disabled people in finding and fixing barriers. | Medical model ; Impairment versus disability ; Barriers created by design ; Responsibility and involvement
+> Medical-model thinking: "Blind users can't use the machine; they should ask staff."
+> Social-model thinking: "The machine disables blind users because it relies only on a touchscreen."
+> Design response: tactile buttons, audio output through a headphone socket and a high-contrast screen.
+K: Under the social model, the designer's job is to find and remove the barriers a design creates.
+!: Assuming language preferences are universal. Many UK disabled people prefer "disabled people", while elsewhere "people with disabilities" is common; some prefer identity-first terms such as "autistic person". Ask, and follow the person's preference.
+H: Criticisms
+P: Critics, including Tom Shakespeare, argue the strong social model underplays the real effects of impairment, such as pain or fatigue, that no redesign removes. The biopsychosocial model tries to include both. For designers, the social model remains the most useful starting point for action.
+EV: established | The social model of disability, which locates disability in societal barriers, underpins UK disability rights and inclusive design (UPIAS, 1976; Oliver, 1983).
+EV: contested | Whether the social model neglects the lived experience of impairment, such as pain and fatigue, is debated (Shakespeare, 2006).
+T: Social model of disability | The view that people are disabled by barriers in society rather than by their impairments
+T: Impairment | A long-term limitation of physical, mental, sensory or cognitive function
+SUM: The medical model locates disability in the person; the social model locates it in barriers created by society.
+SUM: The social model makes disability a design responsibility; critics argue it underplays impairment itself.
+SRC: Union of the Physically Impaired Against Segregation, Fundamental Principles of Disability | primary | 1976
+SRC: Oliver M., Social Work with Disabled People, Macmillan | primary | 1983
+SRC: Shakespeare T., Disability Rights and Wrongs, Routledge | secondary | 2006
+Q: What does the social model of disability say? | People have impairments but are disabled by barriers in society, such as inaccessible design and attitudes.
+Q: Which model does the WHO's ICF use? | The biopsychosocial model.
+M1#design-u08-02-q1@1: Which model sees disability mainly as a problem in a person's body to be treated? | The medical model | The social model | The human rights model | The biopsychosocial model | The medical model focuses on diagnosis and treatment of the individual.
+M2#design-u08-02-q2@2: A college website uses images of text with no alternatives, so a blind student can't read the timetable. How would the social model describe this? | The website's design disables the student | The student's blindness is the only problem | The student should ask friends to read it | The college has no responsibility | The barrier is in the design, which the college can remove.
+M3#design-u08-02-q3@3: Which is the strongest criticism of the strong social model? | It can underplay effects of impairment, such as pain, that design cannot remove | It gives designers too much responsibility for barriers | It ignores the role of buildings and products | It was invented by medical doctors | Critics like Shakespeare argue impairment effects matter alongside barriers.
+TF1#design-u08-02-q4@1: The social model of disability distinguishes impairment from disability. | true | Impairment is a person's condition; disability is the exclusion caused by barriers.
+SA3#design-u08-02-q5@2,3: Using the social model, analyse a public library's barriers for disabled visitors and evaluate the model's usefulness for designers. | Barriers: steps at the entrance, high counters, small-print signs, no hearing loop, a catalogue that doesn't work with screen readers, staff attitudes. Each is a design or organisational barrier that can be removed. Evaluation: the social model directs designers to action and shared responsibility; but impairments such as fatigue or pain still matter, so involve disabled people to understand lived experience. | Applies social model ; Identifies several barriers ; Proposes removal ; Strength ; Criticism
 
 ## Inclusive design principles
-LV: Introductory · Application
-S: Inclusive design deliberately considers the full range of human diversity. This lesson explains Microsoft's inclusive design principles and persona spectrum, and the Inclusive Design Principles for digital products.
-O: Define inclusive design
-O: Explain recognising exclusion and the persona spectrum
-O: Apply inclusive design principles to a product
-H: What inclusive design is
-P: **Inclusive design** is a methodology that draws on the full range of human diversity, including ability, language, culture, gender and age, and involves people who are often excluded. The Royal College of Art's Helen Hamlyn Centre and Microsoft's Inclusive Design toolkit (2016) helped popularise it. Microsoft sets out three principles: **recognise exclusion**, because exclusion happens when we solve problems using our own biases; **learn from diversity**, because people who adapt to exclusion are experts; and **solve for one, extend to many**, because designing for people with permanent disabilities often benefits many others.
-H: The persona spectrum
-- Microsoft's **persona spectrum** links **permanent**, **temporary** and **situational** limitations.
-- Touch: someone with **one arm** (permanent), an **arm injury** (temporary), a **new parent holding a baby** (situational).
-- Hearing: a **deaf** person, someone with an **ear infection**, a **bartender in a noisy bar**.
-- Sight: a **blind** person, someone with **cataracts**, a **distracted driver**.
-- Designing for the permanent case extends benefits across the spectrum.
+LV: Introductory · Foundation
+S: Inclusive design is a way of designing that considers the full range of human diversity from the start. This lesson explains Microsoft's three inclusive design principles, the Inclusive Design Principles for digital products and the persona spectrum.
+O: Describe the principles of inclusive design
+O: Apply the persona spectrum to a design problem
+O: Distinguish inclusive design from accessibility compliance
+H: Recognising exclusion
+P: **Inclusive design** is a methodology that draws on the full range of human diversity: ability, language, culture, gender, age and other differences. Microsoft's Inclusive Design toolkit (2016) sets out three principles:
+- **Recognise exclusion**: exclusion happens when we design using our own biases; identify who is left out.
+- **Learn from diversity**: people adapt to exclusion in creative ways; involve them as experts.
+- **Solve for one, extend to many**: designing for people with permanent disabilities produces solutions that help many others.
+P: The **persona spectrum** illustrates this: one-handed use spans someone with one arm (permanent), someone with an arm injury (temporary) and a new parent holding a baby (situational).
 H: Inclusive Design Principles for digital products
-- Published by Swan, Pouncey, Pickering and Watson (2016): **provide comparable experience**, **consider situation**, **be consistent**, **give control**, **offer choice**, **prioritise content**, **add value**.
-- Comparable experience means alternatives should be equivalent in quality, not a lesser version.
-- Giving control means users can pause motion, change text size or stop autoplay.
-- Offering choice means more than one way to complete a task.
-- Involve excluded people as **co-designers**, not just test participants.
-X: Solve for one, extend to many: captions.
-> Captions were developed for deaf and hard of hearing viewers.
-> Today many people watch videos with captions on in noisy places, quiet offices or while learning a language.
-> Social media videos are often watched with the sound off.
-> A feature designed for a permanent need now benefits a large situational audience.
-K: Inclusive design draws on human diversity and involves excluded people; Microsoft's principles are recognise exclusion, learn from diversity and solve for one, extend to many, the persona spectrum links permanent, temporary and situational limitations, and the Inclusive Design Principles guide digital products.
-!: Thinking inclusive design means one design for everyone. It often means offering choice and flexibility so different people can use the product in different ways.
-EV: established | Features designed for disabled people, such as captions and curb cuts, frequently benefit much wider groups, known as the curb-cut effect.
-T: Inclusive design | A methodology that draws on the full range of human diversity and involves excluded people
-T: Persona spectrum | A tool linking permanent, temporary and situational versions of a limitation
-T: Curb-cut effect | The way features designed for disabled people benefit many others
-SUM: Recognise exclusion.
-SUM: Learn from diversity.
-SUM: Solve for one, extend to many.
-SRC: Microsoft, Inclusive Design Toolkit, Microsoft Design | guidance | 2016 | https://inclusive.microsoft.design/
+P: Swan, Pouncey, Pickering and Watson's **Inclusive Design Principles** (2016) list seven principles: provide a comparable experience; consider situation; be consistent; give control; offer choice; prioritise content; add value.
+X: Applying inclusive principles to a video calling app.
+> Recognise exclusion: Deaf users and people in noisy places can't follow speech.
+> Learn from diversity: work with Deaf users who rely on lipreading and sign language.
+> Solve for one, extend to many: live captions and a pinned signer video, which also help people in noisy places and non-native speakers.
+> Give control and offer choice: users can resize captions and choose whose video is pinned.
+K: Inclusive design is a process that involves excluded people throughout; accessibility standards set a minimum outcome.
+!: Equating inclusive design with meeting WCAG. Standards matter, but a design can pass checks and still exclude people in practice.
+EV: established | Inclusive design methods, including recognising exclusion and involving diverse users, are widely used in industry guidance (Microsoft, 2016).
+EV: contested | Whether "solve for one, extend to many" always holds is debated: some accessibility needs conflict (for example high contrast versus low glare), requiring options rather than one solution.
+T: Inclusive design | A design methodology that considers the full range of human diversity and involves excluded people
+T: Persona spectrum | A way of showing how one need spans permanent, temporary and situational contexts
+SUM: Inclusive design recognises exclusion, learns from diversity and solves for one to extend to many.
+SUM: Digital inclusive principles include comparable experience, control and choice; inclusive design goes beyond compliance.
+SRC: Microsoft, Inclusive Design toolkit | guidance | 2016 | https://inclusive.microsoft.design/
 SRC: Swan H., Pouncey I., Pickering H. and Watson L., Inclusive Design Principles | guidance | 2016 | https://inclusivedesignprinciples.info/
-SRC: Holmes K., Mismatch: How Inclusion Shapes Design, MIT Press | secondary | 2018
-Q: What are Microsoft's three inclusive design principles? | Recognise exclusion, learn from diversity, and solve for one, extend to many.
-Q: Give a situational example of a hearing limitation. | Someone in a noisy bar or on a busy street.
-M1#design-u08-03-q1@1: Which is one of Microsoft's three inclusive design principles? | Learn from diversity | Design for the average user | Prioritise aesthetics first | Test only with experts | Microsoft's principles are recognise exclusion, learn from diversity, and solve for one, extend to many.
-MATCH2#design-u08-03-q2@2: Match each limitation to its place on the persona spectrum. | One arm = Permanent ; Broken wrist = Temporary ; Holding a baby = Situational ; Ear infection = Temporary | The persona spectrum links permanent, temporary and situational versions of the same limitation.
-M2#design-u08-03-q3@2: Which principle is shown when a video player lets users pause animations and turn off autoplay? | Give control | Prioritise content | Be consistent | Add value | Giving control lets people adjust the experience to their needs, such as stopping motion.
-M3#design-u08-03-q4@3: A team offers a separate text-only version of its site that is rarely updated. Which principle does this break? | Provide comparable experience | Consider situation | Offer choice | Prioritise content | Alternatives must be equivalent in quality and kept up to date, not a lesser version.
-SA2#design-u08-03-q5@2,3: Use the persona spectrum to explain how designing for one group can benefit many. | The persona spectrum shows that a limitation can be permanent, temporary or situational, such as having one arm, a broken wrist or holding a baby. If a team designs a phone app that can be used with one hand for someone with one arm, the same feature helps someone with a broken wrist and a parent carrying a child. This is the principle of solve for one, extend to many. It shows that designing with disabled people often produces better products for a much wider audience. | Permanent, temporary, situational ; Concrete example ; Solve for one, extend to many ; Wider benefit
+Q: Name Microsoft's three inclusive design principles. | Recognise exclusion, learn from diversity, solve for one and extend to many.
+Q: How does inclusive design differ from accessibility compliance? | Inclusive design is a process involving diverse people throughout; compliance checks a minimum standard.
+M1#design-u08-03-q1@1: Which is one of Microsoft's inclusive design principles? | Recognise exclusion | Design for the average user | Add accessibility at the end | Design for the designer's preferences | Recognising who is excluded is the first principle.
+M2#design-u08-03-q2@2: A team adds a "listen to this page" feature first designed for blind users, and commuters use it on the move. Which principle does this show? | Solve for one, extend to many | Recognise exclusion | Be consistent | Prioritise content | A solution for one group benefits many others.
+M3#design-u08-03-q3@3: A website passes automated WCAG checks but disabled users still struggle to complete tasks. What is the best conclusion? | Compliance is a minimum; inclusive design needs testing with disabled people | The website is fully accessible because it passed the checks | Disabled users are using the website incorrectly | Automated checks always find every barrier | Passing checks doesn't guarantee a usable experience; involving people reveals real barriers.
+MS2#design-u08-03-q4@2: Which are among the Inclusive Design Principles for digital products? Choose all that apply. | Provide a comparable experience ; Give control ; Offer choice | Design for the average user ; Hide content for simplicity | Comparable experience, control and choice are principles; designing for an average and hiding content are not.
+SA3#design-u08-03-q5@2,3: Use the persona spectrum and inclusive design principles to improve a supermarket self-checkout. | Persona spectrum for limited reach: wheelchair user (permanent), someone with a back injury (temporary), a parent with a child in one arm (situational). Recognise exclusion: high screens, weighing scale errors, touch-only input, small text. Learn from diversity: involve wheelchair users, blind shoppers and older people. Solutions: adjustable or lower screen, audio and tactile options, larger text, easy call for help; these help many shoppers. | Persona spectrum ; Recognises exclusion ; Involves diverse users ; Specific solutions ; Extends to many
 
 ## Universal design
-LV: Introductory · Application
-S: Universal design aims to make environments and products usable by all people, to the greatest extent possible, without adaptation. This lesson explains its origins, the seven principles and how it differs from inclusive design.
-O: Describe the origins of universal design
-O: Explain the seven principles of universal design
+LV: Introductory · Foundation
+S: Universal design aims to create products and environments usable by all people, to the greatest extent possible, without need for adaptation. This lesson explains the seven principles of universal design and how they apply to products and buildings.
+O: State the seven principles of universal design
+O: Apply the principles to evaluate a product or space
 O: Compare universal design with inclusive design
 H: Origins
-P: **Universal design** was coined by the architect **Ronald Mace**, who used a wheelchair, and was developed at the **Center for Universal Design** at North Carolina State University. It is defined as the design of products and environments to be usable by all people, to the greatest extent possible, without the need for adaptation or specialised design. In 1997 a working group led by Mace published the **seven principles of universal design**. In the UK and Europe, related ideas are often called **design for all** or **inclusive design**, and in education **Universal Design for Learning** applies similar thinking to teaching.
+P: Architect Ronald Mace, who used a wheelchair, coined **universal design** to mean design of products and environments usable by all people, to the greatest extent possible, without the need for adaptation or specialised design. In 1997 the Center for Universal Design at North Carolina State University published seven principles.
 H: The seven principles
-- **Equitable use**: useful to people with diverse abilities, with the same means of use where possible.
-- **Flexibility in use**: accommodates a wide range of preferences and abilities, such as left- or right-handed use.
-- **Simple and intuitive use**: easy to understand regardless of experience, knowledge or language.
-- **Perceptible information**: communicates necessary information through several senses.
-- **Tolerance for error**: minimises hazards and the consequences of accidental actions.
-- **Low physical effort** and **size and space for approach and use**: efficient, comfortable use and enough room for any body size, posture or mobility.
+- **Equitable use**: useful to people with diverse abilities, without segregating anyone.
+- **Flexibility in use**: accommodates a range of preferences and abilities (left- or right-handed use).
+- **Simple and intuitive use**: easy to understand regardless of experience or language.
+- **Perceptible information**: communicates necessary information through more than one sense.
+- **Tolerance for error**: minimises hazards and consequences of accidental actions.
+- **Low physical effort**: can be used efficiently and comfortably with minimum fatigue.
+- **Size and space for approach and use**: appropriate size and space for reach and manipulation, whatever body size, posture or mobility.
+X: Evaluating a lever door handle against the principles.
+> Equitable use: anyone can open it, including with a closed fist or elbow.
+> Low physical effort: no gripping or twisting, unlike a round knob.
+> Flexibility: works with either hand.
+> Conclusion: a lever handle is a classic universal design improvement over a round knob.
+K: Universal design builds access into the mainstream design, so nobody needs a separate, stigmatising "special" version.
+!: Assuming one design can suit absolutely everyone. Universal design aims for "the greatest extent possible"; some needs still require options or assistive technology.
 H: Universal and inclusive design
-- Universal design tends to seek **one solution** usable by everyone.
-- Inclusive design accepts that one size rarely fits all and may offer **several solutions** or choices.
-- Both reject designing for an imagined average user.
-- Universal design began in **architecture and products**; inclusive design is widely used in **digital** and service design.
-- In practice many designers combine both approaches.
-X: A lever door handle.
-> A round door knob needs grip and wrist rotation.
-> A lever handle can be opened with an elbow, a closed fist or a full shopping hand.
-> It supports equitable use, low physical effort and flexibility in use.
-> The same handle works for children, older people, wheelchair users and people carrying bags.
-K: Universal design, coined by Ronald Mace, aims for products and environments usable by all without adaptation; its seven principles are equitable use, flexibility, simple and intuitive use, perceptible information, tolerance for error, low physical effort and size and space for approach and use.
-!: Assuming universal design means a single bland design. It aims for wide usability and can still be attractive and distinctive, as many lever handles and step-free entrances show.
-EV: established | The seven principles of universal design were published by the Center for Universal Design at North Carolina State University in 1997.
-T: Universal design | Design of products and environments usable by all people to the greatest extent possible without adaptation
-T: Tolerance for error | A principle that minimises hazards and the consequences of mistakes
-T: Perceptible information | A principle that information is communicated through several senses
-SUM: Coined by Ronald Mace.
-SUM: Seven principles.
-SUM: One design for as many as possible.
-SRC: Center for Universal Design, The Principles of Universal Design, version 2.0, North Carolina State University | standard | 1997
-SRC: Clarkson P. J. and Coleman R., "History of inclusive design in the UK", Applied Ergonomics 46 | primary | 2015
-Q: Who coined the term universal design? | The architect Ronald Mace.
-Q: Name three of the seven principles of universal design. | Any three of equitable use, flexibility in use, simple and intuitive use, perceptible information, tolerance for error, low physical effort, size and space for approach and use.
-M1#design-u08-04-q1@1: Where were the seven principles of universal design developed? | The Center for Universal Design at North Carolina State University | The Helen Hamlyn Centre at the Royal College of Art | The W3C Web Accessibility Initiative in Boston | The Design Council in London | The principles were published in 1997 by a group led by Ronald Mace at NC State.
-M2#design-u08-04-q2@2: A kettle gives a sound, a light and a raised mark when it has boiled. Which principle does this show? | Perceptible information | Low physical effort | Size and space for approach and use | Equitable use | It communicates the same information through hearing, sight and touch.
-TF2#design-u08-04-q3@2: Universal design tends to seek one solution for everyone, while inclusive design may offer several. | true | Inclusive design accepts that one size rarely fits all and often provides choice.
-M3#design-u08-04-q4@3: An undo button and a confirmation step before deleting files best illustrate which principle? | Tolerance for error | Simple and intuitive use | Flexibility in use | Perceptible information | These features reduce the consequences of accidental actions.
-SA2#design-u08-04-q5@1,2,3: Explain universal design and compare it with inclusive design. | Universal design, coined by Ronald Mace, aims to make products and environments usable by all people as far as possible without adaptation, guided by seven principles such as equitable use, flexibility and tolerance for error. Inclusive design shares the goal of not designing for an average user but accepts that one solution rarely suits everyone, so it may offer choices or several versions. Universal design began in architecture and products, while inclusive design is widely used in digital services. Designers often combine both approaches. | Definition and origin ; Seven principles ; One solution versus choice ; Combined in practice
+P: Universal design emphasises one solution for all, especially in architecture and products. Inclusive design (UK and digital usage) emphasises a process that recognises diversity and may provide options and personalisation. In practice the terms overlap, and many designers use both.
+EV: established | The seven principles of universal design were published by the Center for Universal Design at NC State University in 1997.
+EV: contested | Whether "one design for all" is achievable or desirable, compared with offering choices, is debated.
+T: Universal design | Design of products and environments usable by all people, to the greatest extent possible, without adaptation
+T: Perceptible information | A universal design principle: communicating information through more than one sense
+SUM: Universal design aims for mainstream designs usable by everyone without adaptation.
+SUM: Its seven principles range from equitable use to size and space; inclusive design adds process and options.
+SRC: Center for Universal Design, The Principles of Universal Design, Version 2.0, North Carolina State University | guidance | 1997
+SRC: Story M. F., Mueller J. L. and Mace R. L., The Universal Design File: Designing for People of All Ages and Abilities, NC State University | secondary | 1998
+Q: Who coined the term universal design? | Architect Ronald Mace.
+Q: What does "perceptible information" mean in universal design? | Communicating necessary information through more than one sense, such as sight and sound.
+M1#design-u08-04-q1@1: Which is a principle of universal design? | Tolerance for error | Maximum decoration | Specialised versions for disabled users | Highest possible price | Tolerance for error is one of the seven principles; universal design avoids separate special versions.
+M2#design-u08-04-q2@2: A lift announces each floor aloud and displays it on a screen. Which principle does this show? | Perceptible information | Low physical effort | Size and space for approach | Flexibility in use | Communicating through sound and sight is perceptible information.
+M3#design-u08-04-q3@3: A museum provides a separate entrance at the back for wheelchair users. Which principle is most at issue? | Equitable use, as it segregates some visitors | Low physical effort, as ramps are hard work | Simple and intuitive use, as entrances confuse | Tolerance for error, as doors may jam | Equitable use requires the same means of use for all, avoiding segregation.
+MATCH1#design-u08-04-q4@1: Match each example to the universal design principle. | Scissors usable by either hand = flexibility in use ; An "undo" button = tolerance for error ; A wide accessible toilet with turning space = size and space for approach and use ; A tap with a sensor = low physical effort | Each example applies one of the seven principles.
+SA3#design-u08-04-q5@2,3: Apply three universal design principles to evaluate a bus stop and recommend improvements. | Perceptible information: timetable only in small print, so add audio announcements and large high-contrast displays. Size and space: narrow shelter blocks wheelchairs, so widen it and provide level boarding. Low physical effort: no seating, so add perch seats with armrests. Equitable use: the same improvements serve everyone. Recommendations benefit older people, parents and visitors too. | Three principles applied ; Barriers identified ; Specific improvements ; Equitable or mainstream point ; Benefits to many
 
 ## WCAG 2.2 and the POUR principles
-LV: Introductory · Foundation
-S: The Web Content Accessibility Guidelines are the international standard for digital accessibility. This lesson explains how WCAG 2.2 is structured and the four POUR principles.
-O: Describe what WCAG is and who publishes it
-O: Explain the four POUR principles
-O: Describe the structure of principles, guidelines and success criteria
+LV: Intermediate · Application
+S: The Web Content Accessibility Guidelines are the international standard for digital accessibility. This lesson explains the structure of WCAG 2.2, its four principles (perceivable, operable, understandable, robust) and what changed in version 2.2.
+O: Describe the structure of WCAG 2.2: principles, guidelines and success criteria
+O: Classify accessibility issues under the POUR principles
+O: Explain what WCAG 2.2 added and why
 H: What WCAG is
-P: The **Web Content Accessibility Guidelines** (**WCAG**) are published by the **World Wide Web Consortium** (**W3C**) through its **Web Accessibility Initiative** (WAI). WCAG 1.0 appeared in 1999, WCAG 2.0 in 2008, WCAG 2.1 in 2018 and **WCAG 2.2** became a W3C Recommendation in **October 2023**. WCAG 2.0 is also an international standard, ISO/IEC 40500. The guidelines are **technology-neutral**: they describe outcomes, so they apply to websites, apps, documents and other digital content. WCAG is backwards compatible, so content that meets WCAG 2.2 also meets 2.1 and 2.0.
+P: The **Web Content Accessibility Guidelines (WCAG)** are published by the World Wide Web Consortium's Web Accessibility Initiative (W3C WAI). WCAG 2.2 became a W3C Recommendation in October 2023. It is organised in layers: four **principles**, 13 **guidelines** and testable **success criteria**, each at level A, AA or AAA. Supporting documents ("Understanding WCAG" and "Techniques") explain intent and ways to meet each criterion. Although written for the web, WCAG is applied to apps and other digital content too.
 H: The POUR principles
-- **Perceivable**: information must be presented in ways users can perceive, such as text alternatives and captions.
-- **Operable**: interface components must be usable, such as by keyboard, with enough time and no seizure risks.
-- **Understandable**: content and operation must be clear, with readable text and predictable behaviour.
-- **Robust**: content must work reliably with a wide range of user agents, including **assistive technologies**.
-- If any one principle fails, some users cannot use the content.
-H: Structure of WCAG 2.2
-- Four **principles** contain **13 guidelines**, such as 1.4 Distinguishable.
-- Guidelines contain testable **success criteria**, such as 1.4.3 Contrast (Minimum).
-- WCAG 2.2 has **86 success criteria**, each at **level A, AA or AAA**.
-- WCAG 2.2 added nine criteria, including **2.5.8 Target Size (Minimum)**, **2.4.11 Focus Not Obscured** and **3.3.8 Accessible Authentication**, and removed **4.1.1 Parsing**.
-- Supporting documents such as **Understanding WCAG** and **Techniques** explain intent and give examples.
-X: Reading a success criterion reference.
-> A designer sees the reference "2.4.7 Focus Visible (AA)" in an audit.
-> The first number, 2, is the principle: Operable.
-> 2.4 is the guideline Navigable, and 2.4.7 is the success criterion itself.
-> AA is its conformance level, which most organisations target.
-K: WCAG, published by the W3C, is the international standard for digital accessibility; WCAG 2.2 (2023) is organised into four POUR principles (perceivable, operable, understandable, robust), 13 guidelines and 86 testable success criteria at levels A, AA and AAA.
-!: Treating WCAG as only for websites. Its outcome-based criteria apply to apps, documents, kiosks and other digital content too.
-EV: established | WCAG 2.2 became a W3C Recommendation on 5 October 2023 and added nine new success criteria to WCAG 2.1.
-T: WCAG | Web Content Accessibility Guidelines, the W3C standard for digital accessibility
-T: Success criterion | A testable statement in WCAG used to judge conformance
-T: POUR | Perceivable, operable, understandable and robust, the four principles of WCAG
-SUM: Published by the W3C.
-SUM: Perceivable, operable, understandable, robust.
-SUM: Principles, guidelines, success criteria.
-SRC: W3C, Web Content Accessibility Guidelines (WCAG) 2.2, W3C Recommendation | standard | 2023 | https://www.w3.org/TR/WCAG22/
-SRC: W3C Web Accessibility Initiative, What's New in WCAG 2.2, W3C | guidance | 2023 | https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/
+- **Perceivable**: information must be presentable in ways users can perceive (text alternatives, captions, adaptable layouts, sufficient contrast).
+- **Operable**: interface components must be operable (keyboard access, enough time, no content that causes seizures, navigable, input beyond a pointer).
+- **Understandable**: information and operation must be understandable (readable, predictable, input assistance).
+- **Robust**: content must work reliably with a wide range of user agents, including assistive technologies.
+X: Classifying issues under POUR.
+> An image of a chart with no text alternative: perceivable.
+> A menu that can only be opened by mouse hover: operable.
+> An error message that says only "Invalid input": understandable.
+> A custom button that a screen reader announces as nothing: robust (name, role and value not exposed).
+H: What 2.2 added
+P: WCAG 2.2 added nine success criteria, many for people with low vision, motor impairments and cognitive disabilities, including **Focus Not Obscured** (focused items aren't hidden by sticky headers), **Dragging Movements** (a single-pointer alternative to dragging), **Target Size (Minimum)** (targets at least 24 by 24 CSS pixels, with exceptions), **Consistent Help**, **Redundant Entry** (don't make people re-enter information) and **Accessible Authentication** (no cognitive tests such as remembering passwords or solving puzzles without an alternative). It removed 4.1.1 Parsing as obsolete. WCAG 2.2 is backwards compatible: content meeting 2.2 also meets 2.1 and 2.0.
+K: POUR gives a quick way to think about any barrier: can people perceive it, operate it, understand it, and does it work robustly with their technology?
+!: Thinking WCAG covers every accessibility need. It is a baseline; W3C notes it does not address every need, especially for cognitive and learning disabilities.
+EV: established | WCAG 2.2 became a W3C Recommendation in October 2023, organised under four principles: perceivable, operable, understandable and robust.
+EV: contested | How fully WCAG addresses cognitive and learning disabilities is debated; W3C publishes additional guidance because many needs fall outside testable criteria.
+T: WCAG | The Web Content Accessibility Guidelines, the W3C's international standard for digital accessibility
+T: Success criterion | A testable statement in WCAG that content must meet, at level A, AA or AAA
+T: POUR | The four WCAG principles: perceivable, operable, understandable and robust
+SUM: WCAG 2.2 is organised as four POUR principles, 13 guidelines and testable success criteria at A, AA and AAA.
+SUM: Version 2.2 added nine criteria on focus, targets, dragging, help, redundant entry and authentication.
+SRC: World Wide Web Consortium, Web Content Accessibility Guidelines (WCAG) 2.2, W3C Recommendation | standard | 2023 | https://www.w3.org/TR/WCAG22/
+SRC: W3C Web Accessibility Initiative, What's New in WCAG 2.2 | guidance | 2023 | https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/
 Q: What does POUR stand for? | Perceivable, operable, understandable and robust.
-Q: When did WCAG 2.2 become a W3C Recommendation? | October 2023.
-M1#design-u08-05-q1@1: Which organisation publishes WCAG? | The World Wide Web Consortium (W3C) | The International Organization for Standardization | The UK Government Digital Service | The Royal National Institute of Blind People | WCAG is published by the W3C through its Web Accessibility Initiative.
-SEQ1#design-u08-05-q2@3: Put the WCAG versions in order of publication, earliest first. | WCAG 1.0 ; WCAG 2.0 ; WCAG 2.1 ; WCAG 2.2 | WCAG 1.0 came in 1999, 2.0 in 2008, 2.1 in 2018 and 2.2 in 2023.
-M2#design-u08-05-q3@2: Ensuring a site works reliably with screen readers and future browsers falls under which POUR principle? | Robust | Perceivable | Operable | Understandable | Robust content works with a wide range of user agents, including assistive technologies.
-M3#design-u08-05-q4@2: In the reference 1.4.3 Contrast (Minimum), what does 1.4 identify? | The guideline, Distinguishable | The principle, Perceivable | The conformance level, AA | The version, WCAG 1.4 | The first number is the principle, the second level is the guideline and the third is the criterion.
-SA2#design-u08-05-q5@2,3: Explain the four POUR principles of WCAG with a design example for each. | Perceivable means users must be able to perceive information, for example by providing alt text for images and captions for video. Operable means people must be able to use controls, for example by keyboard alone and with enough time. Understandable means content and behaviour are clear, for example plain language and helpful error messages. Robust means content works with many user agents, including screen readers, for example by using correctly coded native controls. | Perceivable example ; Operable example ; Understandable example ; Robust example
+Q: Name two success criteria added in WCAG 2.2. | Any two of: Focus Not Obscured, Dragging Movements, Target Size (Minimum), Consistent Help, Redundant Entry, Accessible Authentication (and Focus Appearance).
+M1#design-u08-05-q1@1: Which organisation publishes WCAG? | The World Wide Web Consortium (W3C) | The UK Government Digital Service | The International Olympic Committee | The Design Council | WCAG is produced by W3C's Web Accessibility Initiative.
+M2#design-u08-05-q2@2: A video has no captions. Under which POUR principle does this fall? | Perceivable | Operable | Understandable | Robust | Deaf users can't perceive the audio information without captions.
+M3#design-u08-05-q3@3: A login asks users to type characters from a distorted image with no alternative. Which WCAG 2.2 addition addresses this? | Accessible Authentication | Dragging Movements | Target Size (Minimum) | Focus Not Obscured | Accessible Authentication requires alternatives to cognitive function tests in login.
+MATCH2#design-u08-05-q4@2: Match each issue to its POUR principle. | Low-contrast text = perceivable ; A keyboard user can't reach a button = operable ; Jargon-filled instructions = understandable ; A custom control a screen reader can't identify = robust | Each barrier falls under one of the four principles.
+SA3#design-u08-05-q5@1,3: Explain the structure of WCAG 2.2 and evaluate its role in designing accessible digital products. | Four POUR principles, 13 guidelines, testable success criteria at A, AA and AAA, with Understanding and Techniques documents; 2.2 added criteria on focus, target size, dragging, consistent help, redundant entry and authentication. Role: an internationally recognised, testable baseline used in law and procurement. Limits: doesn't cover every need, especially cognitive; passing criteria doesn't guarantee usability; testing with disabled people is still needed. | Structure ; POUR ; 2.2 additions ; Value as a standard ; Limits
 
 ## Conformance levels
 LV: Intermediate · Application
-S: WCAG success criteria are grouped into three conformance levels. This lesson explains levels A, AA and AAA, what full conformance requires and why most organisations target AA.
-O: Describe WCAG levels A, AA and AAA
-O: Explain the WCAG conformance requirements
-O: Judge an appropriate conformance target for a project
-H: The three levels
-P: Each WCAG success criterion has a **conformance level**. **Level A** is the minimum: failing it creates severe barriers for some groups, for example images without text alternatives or controls that cannot be used by keyboard. **Level AA** addresses the biggest and most common barriers, such as low text contrast and invisible focus; it is the level most laws and policies require. **Level AAA** is the highest, such as sign language for prerecorded video or a 7:1 contrast ratio. To claim a level, a page must meet **every** criterion at that level and all lower levels, so AA conformance means meeting all A and AA criteria.
+S: WCAG success criteria are grouped into three conformance levels: A, AA and AAA. This lesson explains what each level means, the requirements for claiming conformance, and why AA is the usual target.
+O: Describe WCAG's three conformance levels
+O: Apply conformance requirements to judge whether a page conforms
+O: Evaluate why AA is the common target and AAA is not required as policy
+H: Three levels
+- **Level A**: the minimum; failing these makes content impossible for some people to use (for example 1.1.1 Non-text Content, 2.1.1 Keyboard).
+- **Level AA**: addresses the most common and significant barriers (for example 1.4.3 Contrast (Minimum), 2.4.7 Focus Visible). Meeting AA means meeting all A and AA criteria.
+- **Level AAA**: the highest level (for example 1.4.6 Contrast (Enhanced) at 7:1, 2.4.9 Link Purpose (Link Only)).
 H: Conformance requirements
-- **Full pages**: conformance applies to whole pages, not parts of them.
-- **Complete processes**: every page in a process, such as a checkout, must conform.
-- **Accessibility-supported technologies**: content must work with the assistive technologies people actually use.
-- **Non-interference**: non-conforming content must not block the rest of the page, for example by trapping focus.
-- An alternative conforming version can be provided in some cases.
-H: Choosing a target
-- **WCAG 2.2 AA** is the common target for public sector and most commercial work in the UK.
-- The W3C does **not recommend** requiring AAA for entire sites, because some content cannot meet every AAA criterion.
-- Teams can still adopt **specific AAA criteria** where they help their users, such as plain language for a health service.
-- Conformance is a **floor**, not a guarantee of a good experience; usability testing with disabled people is still needed.
-- An **accessibility statement** should explain the target and any known issues.
-X: Claiming conformance on a booking site.
-> A cinema's booking flow meets every A and AA criterion except on the seat map, which only works with a mouse.
-> Because conformance requires complete processes, the whole booking flow does not conform to AA.
-> The team adds a keyboard-operable list of seats as an equivalent alternative.
-> The flow can now be claimed as WCAG 2.2 AA conformant.
-K: WCAG criteria are at levels A (minimum), AA (common target, required by most laws) and AAA (highest); claiming a level means meeting all criteria at that level and below across full pages and complete processes, and AAA is not recommended as a general requirement for whole sites.
-!: Thinking a page can be 'mostly AA'. Conformance is all or nothing for each level: one failed AA criterion means the page does not conform to AA.
-EV: established | The W3C states that it is not recommended that Level AAA conformance be required as a general policy for entire sites.
-T: Conformance level | The grade A, AA or AAA assigned to a WCAG success criterion
-T: Complete process | A series of pages needed to finish a task, all of which must conform
-T: Accessibility statement | A public statement of a service's accessibility, known issues and contact routes
-SUM: A, AA, AAA.
-SUM: AA is the usual target.
-SUM: All or nothing per level.
-SRC: W3C, Web Content Accessibility Guidelines (WCAG) 2.2, Conformance section | standard | 2023 | https://www.w3.org/TR/WCAG22/#conformance
-SRC: Government Digital Service, Understanding accessibility requirements for public sector bodies, gov.uk | guidance | 2024 | https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps
-Q: Which WCAG level do most laws and policies require? | Level AA.
-Q: What does AA conformance require? | Meeting every level A and level AA success criterion.
-M1#design-u08-06-q1@1: Which WCAG level is the minimum? | Level A | Level AA | Level AAA | Level B | Level A covers the most severe barriers and is the minimum level of conformance.
-M2#design-u08-06-q2@2: A checkout's payment page fails one AA criterion, but every other page passes. What can be claimed for the checkout? | It does not conform to AA | It conforms to AA overall | It conforms to AA on most pages, which is enough | It conforms to AAA instead | Conformance applies to complete processes, so one failing page means the process does not conform.
-TF2#design-u08-06-q3@2: The W3C recommends that all websites be required to meet level AAA. | false | The W3C says AAA should not be required as a general policy for entire sites, because some content cannot meet it.
-M3#design-u08-06-q4@3: A health charity targets AA but its users include many people with learning disabilities. What is a sensible approach? | Target AA and adopt relevant AAA criteria such as plain reading level | Require full AAA for the whole site immediately | Target level A only to save budget | Skip WCAG and rely on user feedback alone | Teams can adopt specific AAA criteria that help their users while targeting AA overall.
-SA2#design-u08-06-q5@2,3: Explain the three WCAG conformance levels and recommend a target for a UK public sector service. | Level A is the minimum and removes the most severe barriers, level AA removes the most common and significant barriers, and level AAA is the highest standard. To claim a level, every criterion at that level and below must be met across full pages and complete processes. A UK public sector service should target WCAG 2.2 AA, which the government expects, and publish an accessibility statement. It can also adopt relevant AAA criteria where these help its users, while testing with disabled people. | Levels A, AA, AAA ; All criteria at and below ; AA target for public sector ; Selective AAA and testing
+P: WCAG sets out what a conformance claim means: the **whole page** must meet the level (not part of it); **complete processes** must conform (every page in a checkout, not just the first); only **accessibility-supported** ways of using technologies count; and non-conforming content must not **interfere** with the rest (for example by trapping keyboard focus).
+X: Can this checkout claim AA?
+> Product pages meet all A and AA criteria.
+> The payment page is provided by a third party and has a keyboard trap.
+> Because the checkout is a complete process, the failure on one page means the process does not conform, and the keyboard trap fails a level A criterion.
+> The shop must fix or replace the payment step, or the claim is false.
+K: AA is the level referenced by most laws and policies, including UK public sector requirements; it covers the most significant barriers while remaining achievable for most content.
+!: Claiming a site is "WCAG compliant" without saying which version and level, or after testing only some pages.
+H: Why not AAA everywhere?
+P: W3C advises that requiring AAA as a general policy for entire sites is not recommended, because some AAA criteria cannot be met for some content (for example, sign language for all prerecorded video may not be possible). Teams can still meet AAA criteria where they can, such as enhanced contrast for important text.
+EV: established | WCAG defines three conformance levels and states that AAA is not recommended as a general policy for entire sites.
+EV: contested | Whether AA is sufficient for real accessibility, particularly for people with cognitive disabilities, is debated.
+T: Conformance level | One of WCAG's three levels, A, AA or AAA, each requiring all criteria at that level and below
+T: Complete process | A sequence of pages to complete an activity, all of which must conform for a claim to be valid
+SUM: Level A is the minimum, AA the common target, AAA the highest; each includes those below.
+SUM: Claims require whole pages and complete processes to conform; AAA is not required site-wide.
+SRC: World Wide Web Consortium, Web Content Accessibility Guidelines (WCAG) 2.2, W3C Recommendation, section 5 Conformance | standard | 2023 | https://www.w3.org/TR/WCAG22/
+SRC: W3C Web Accessibility Initiative, Understanding Conformance | guidance | 2023 | https://www.w3.org/WAI/WCAG22/Understanding/conformance
+Q: What does meeting level AA require? | Meeting every level A and level AA success criterion.
+Q: Why must a complete process conform? | If any step fails, people can't complete the activity, so the whole sequence must meet the level.
+M1#design-u08-06-q1@1: Which WCAG level is the usual target in laws and policies? | AA | A | AAA | AAAA | Most legal and policy requirements, including UK public sector rules, reference AA.
+M2#design-u08-06-q2@2: A website meets all AA criteria except one level A criterion on one page. Can it claim AA for that page? | No, because AA requires all A and AA criteria | Yes, because only one criterion failed | Yes, because level A is less important than AA | No, because AAA is required | Each level includes all criteria below it, so a single A failure prevents an AA claim.
+M3#design-u08-06-q3@3: Why does W3C not recommend requiring AAA for entire sites? | Some AAA criteria cannot be met for some content | AAA criteria make sites less accessible | AAA has been withdrawn from WCAG | AAA criteria are only for printed documents | Some AAA requirements are not achievable for all content, so they are better applied selectively.
+TF2#design-u08-06-q4@2: If the payment step of a checkout fails WCAG, the checkout process can still conform as long as the other pages pass. | false | Complete processes must conform as a whole, so one failing step means the process doesn't conform.
+SA3#design-u08-06-q5@2,3: A council says its website "meets WCAG". Explain what a valid conformance claim requires and evaluate the council's statement. | A valid claim states the WCAG version and level (e.g. 2.2 AA), and requires whole pages and complete processes to meet all criteria at that level and below, using accessibility-supported technologies without interference. The council's statement is vague: no version, no level, and no evidence of which pages and processes were tested. It should publish an accessibility statement with scope, testing method and known issues. | Version and level ; Whole page and complete process ; Accessibility support or non-interference ; Critique of vague claim ; Recommendation
 
 ## Colour contrast
 LV: Intermediate · Application
-S: Text and interface elements must stand out clearly from their background. This lesson explains contrast ratios, the WCAG contrast criteria and why colour must never be the only way information is shown.
-O: Explain what a contrast ratio measures
-O: Apply the WCAG contrast thresholds for text and non-text elements
-O: Evaluate designs that rely on colour alone
-H: Contrast ratio
-P: **Contrast ratio** compares the **relative luminance** of two colours, from **1:1** (no contrast, the same colour) to **21:1** (black on white). WCAG calculates it as (L1 + 0.05) divided by (L2 + 0.05), where L1 is the lighter colour's luminance. Good contrast helps people with **low vision**, older people whose contrast sensitivity declines, and anyone using a phone in **bright sunlight**. Contrast depends on **luminance**, not hue, so two colours that look very different, such as red and green, can still have poor contrast.
-H: WCAG contrast thresholds
-- **1.4.3 Contrast (Minimum), AA**: at least **4.5:1** for normal text and **3:1** for large text.
-- **Large text** is at least **18 point** (about 24 CSS pixels), or **14 point bold** (about 18.66 pixels).
-- **1.4.6 Contrast (Enhanced), AAA**: at least **7:1** for normal text and **4.5:1** for large text.
-- **1.4.11 Non-text Contrast, AA**: at least **3:1** for interface components and meaningful graphics, such as input borders, icons and chart lines.
-- Logos and purely decorative or disabled elements are exempt.
-H: Do not rely on colour alone
-- **1.4.1 Use of Color, A**: colour must not be the **only** way to convey information, indicate an action or distinguish an element.
-- About **1 in 12 men** and **1 in 200 women** have a colour vision deficiency, most commonly red-green.
-- Add **text labels**, **icons**, **patterns** or **underlines** alongside colour.
-- Links in body text should be distinguishable by more than colour, usually an underline.
-- Check designs with contrast checkers and colour-blindness simulators.
-X: Fixing a form error state.
-> A form shows errors only by turning the field border red, a 2.9:1 contrast against white.
-> Users with red-green colour blindness cannot tell which field is wrong, and the border fails 1.4.11.
-> The designer darkens the red to reach at least 3:1, thickens the border and adds an error icon.
-> A text message, "Enter your postcode", now appears above the field.
-K: Contrast ratio ranges from 1:1 to 21:1; WCAG AA requires 4.5:1 for normal text, 3:1 for large text and 3:1 for interface components and graphics, AAA requires 7:1 for normal text, and colour must never be the only way information is conveyed.
-!: Judging contrast by eye or by hue. Use a contrast checker: colours with different hues can have very similar luminance.
-EV: established | WCAG 2.2 success criterion 1.4.3 requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text.
-T: Contrast ratio | A measure of the difference in relative luminance between two colours, from 1:1 to 21:1
-T: Large text | Text at least 18 point, or 14 point bold, for WCAG contrast purposes
-T: Colour vision deficiency | Reduced ability to distinguish certain colours, often called colour blindness
-SUM: 4.5:1 for normal text.
-SUM: 3:1 for large text and components.
-SUM: Never colour alone.
-SRC: W3C, Understanding Success Criterion 1.4.3: Contrast (Minimum), W3C | guidance | 2023 | https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html
-SRC: W3C, Understanding Success Criterion 1.4.11: Non-text Contrast, W3C | guidance | 2023 | https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html
-SRC: Colour Blind Awareness, About colour blindness | data | 2024 | https://www.colourblindawareness.org/colour-blindness/
-Q: What contrast ratio does WCAG AA require for normal body text? | At least 4.5:1.
-Q: What is the highest possible contrast ratio? | 21:1, black on white.
-NUM1#design-u08-07-q1@2: What is the minimum WCAG AA contrast ratio, written as the first number of the ratio, for large text? | 3 | 0 | – | WCAG 1.4.3 requires at least 3:1 for large text, compared with 4.5:1 for normal text.
-M1#design-u08-07-q2@1: What does a contrast ratio compare? | The relative luminance of two colours | The hue of two colours | The saturation of the text only | The size of the text and its weight | Contrast ratio depends on luminance, so different hues can still have poor contrast.
-M2#design-u08-07-q3@2: Grey body text on white has a contrast ratio of 3.8:1. Does it meet WCAG AA? | No, normal text needs 4.5:1 | Yes, 3:1 is enough for all text | Yes, because grey is a neutral colour | No, it needs at least 7:1 | Normal-size text needs 4.5:1 at AA; 3:1 applies only to large text.
-M3#design-u08-07-q4@3: A chart shows profit in green and loss in red with no labels. What is the best fix? | Add labels or patterns so colour is not the only cue | Make the green and red brighter | Swap the red and green around | Add a note that colour-blind users may struggle | WCAG 1.4.1 requires information not to be conveyed by colour alone.
-SA2#design-u08-07-q5@2,3: Explain the WCAG requirements for colour and contrast and how a designer should check a design. | WCAG AA requires a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text, and 3:1 for interface components and meaningful graphics such as input borders and icons. AAA raises normal text to 7:1. Colour must never be the only way information is conveyed, because many people have colour vision deficiencies, so labels, icons or patterns should be added. Designers should measure contrast with a checker rather than by eye and preview designs with colour-blindness simulators. | Text thresholds ; Non-text contrast ; Not colour alone ; Measure with tools
+S: Text and interface elements must stand out enough from their background for people with low vision or colour vision deficiency to see them. This lesson explains contrast ratios, the WCAG thresholds, how they are calculated, and why colour must not be the only way information is shown.
+O: State the WCAG contrast requirements for text and non-text elements
+O: Calculate or check a contrast ratio and judge whether it passes
+O: Apply the use of colour criterion to an interface
+H: Contrast ratios
+P: Contrast is measured as a **contrast ratio** between the relative luminance of two colours, from 1:1 (identical) to 21:1 (black on white).
+E: Contrast ratio = (L_{1} + 0.05) ÷ (L_{2} + 0.05) :: L₁ is the relative luminance of the lighter colour and L₂ of the darker, each from 0 (black) to 1 (white)
+- **1.4.3 Contrast (Minimum), AA**: at least 4.5:1 for normal text and 3:1 for large text (at least 18 point, or 14 point bold).
+- **1.4.6 Contrast (Enhanced), AAA**: at least 7:1 for normal text and 4.5:1 for large text.
+- **1.4.11 Non-text Contrast, AA**: at least 3:1 for user interface components (such as input borders) and meaningful graphics.
+X: Checking contrast with relative luminances.
+> White has L = 1.0; a mid-grey #777777 has L ≈ 0.18.
+> Ratio = (1.0 + 0.05) ÷ (0.18 + 0.05) = 1.05 ÷ 0.23 ≈ 4.6:1.
+> Normal text in #777777 on white just passes AA (4.5:1) but fails AAA (7:1).
+> A lighter grey, #999999 (L ≈ 0.32), gives 1.05 ÷ 0.37 ≈ 2.8:1, which fails even for large text.
+H: Don't rely on colour alone
+P: **1.4.1 Use of Color (A)** requires that colour is not the only visual means of conveying information. About 1 in 12 men and 1 in 200 women have a colour vision deficiency, most commonly red-green. A form that marks errors only in red, or a chart that distinguishes lines only by colour, excludes them.
+- Add text or icons to colour cues ("Error: enter your postcode", with an icon).
+- Underline links in body text, or use another non-colour cue.
+- Use patterns or labels in charts as well as colour.
+K: Check contrast with a tool (most design tools and browser developer tools have one) and always pair colour with another cue.
+!: Using light grey placeholder text as a label. It usually fails contrast and disappears when the user types.
+EV: established | WCAG 2.2 requires 4.5:1 contrast for normal text and 3:1 for large text at level AA (1.4.3).
+EV: contested | The WCAG contrast formula is criticised for poorly predicting readability for some colour pairs, especially on dark backgrounds; alternative models such as APCA have been proposed for future guidelines.
+T: Contrast ratio | A measure of the difference in luminance between two colours, from 1:1 to 21:1
+T: Colour vision deficiency | Reduced ability to distinguish certain colours, most commonly red and green
+SUM: AA requires 4.5:1 for normal text, 3:1 for large text and UI components; AAA requires 7:1 for normal text.
+SUM: Never rely on colour alone; pair it with text, icons, patterns or underlines.
+SRC: World Wide Web Consortium, Web Content Accessibility Guidelines (WCAG) 2.2, success criteria 1.4.1, 1.4.3, 1.4.6 and 1.4.11 | standard | 2023 | https://www.w3.org/TR/WCAG22/
+SRC: W3C Web Accessibility Initiative, Understanding Success Criterion 1.4.3: Contrast (Minimum) | guidance | 2023 | https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum
+Q: What contrast ratio does WCAG AA require for normal text? | At least 4.5:1.
+Q: What does 1.4.1 Use of Color require? | Colour must not be the only visual means of conveying information.
+M1#design-u08-07-q1@1: What is the WCAG AA minimum contrast ratio for large text? | 3:1 | 4.5:1 | 7:1 | 21:1 | Large text (at least 18pt, or 14pt bold) needs 3:1 at AA.
+M2#design-u08-07-q2@2: Normal body text has a contrast ratio of 4.0:1 with its background. Does it meet WCAG AA? | No, it needs at least 4.5:1 | Yes, because it exceeds 3:1 | Yes, because AA has no contrast rule | No, it needs at least 21:1 | 4.0:1 is below the 4.5:1 threshold for normal text at AA.
+M3#design-u08-07-q3@3: A form shows required fields only with red labels. What is the best fix? | Add a text marker such as "(required)" as well as colour | Make the red brighter | Use green instead of red | Remove the colour entirely and add nothing | Colour must be paired with another cue so people with colour vision deficiency get the information.
+MS2#design-u08-07-q4@2: Which designs meet the use of colour principle? Choose all that apply. | Error messages with an icon and text ; Chart lines with different patterns and labels ; Underlined links in body text | Status shown only by a red or green dot ; Links distinguished only by colour | Additional cues make information available without colour perception.
+SA3#design-u08-07-q5@2,3: A designer chooses pale grey text (#AAAAAA) on white for a minimalist look. Evaluate this choice using WCAG and recommend changes. | #AAAAAA on white has a contrast ratio of about 2.3:1, failing 1.4.3 AA (4.5:1 for normal text) and even 3:1 for large text, so people with low vision, older users and anyone in bright light will struggle. Recommend a darker grey of at least 4.5:1 (such as #767676 or darker), checking with a contrast tool, and keep minimalism through spacing and type rather than low contrast. | Identifies contrast failure ; States thresholds ; Users affected ; Specific fix ; Keeps aesthetic aim
 
 ## Keyboard access and focus
 LV: Intermediate · Application
-S: Many people navigate without a mouse, using a keyboard, switch or voice. This lesson explains the WCAG keyboard and focus requirements, logical focus order, skip links and visible focus indicators.
-O: Explain why keyboard access matters and who relies on it
-O: Describe the main WCAG keyboard and focus criteria
-O: Evaluate an interface for keyboard and focus problems
-H: Who uses a keyboard
-P: **Keyboard access** means every function can be reached and operated without a pointing device. Blind screen reader users, people with tremors or limited dexterity, people using **switch devices** or **voice control**, and many power users all rely on keyboard-style navigation. The **Tab** key moves forward through interactive elements, **Shift and Tab** moves back, **Enter** activates links and buttons, **Space** toggles checkboxes and buttons, and **arrow keys** move within groups such as radio buttons and menus. The element that currently receives keyboard input has **focus**, and users need to see where it is.
-H: WCAG keyboard and focus criteria
-- **2.1.1 Keyboard, A**: all functionality is operable through a keyboard.
-- **2.1.2 No Keyboard Trap, A**: focus can always be moved away from a component.
-- **2.4.1 Bypass Blocks, A**: a way to skip repeated content, such as a **skip link** to the main content.
-- **2.4.3 Focus Order, A**: focus moves in an order that preserves meaning, usually matching the visual reading order.
-- **2.4.7 Focus Visible, AA**: a visible focus indicator; WCAG 2.2 adds **2.4.11 Focus Not Obscured (Minimum), AA**, so sticky headers or cookie banners must not hide the focused item.
-- **2.5.8 Target Size (Minimum), AA** in WCAG 2.2 requires pointer targets of at least **24 by 24 CSS pixels**, or enough spacing.
-H: Designing good focus
-- Never remove the browser's focus outline without providing a **clear replacement**.
-- A strong indicator has good contrast, for example a thick outline that contrasts at least **3:1** with its surroundings.
-- Use **native elements** such as buttons and links, which are keyboard accessible by default.
-- When a dialog opens, move focus into it, keep it there until closed, then return focus to the trigger.
-- Test by putting the mouse away and completing key tasks using only the keyboard.
-X: A keyboard trap in a video player.
-> A tester tabs into an embedded video player on a news page.
-> The player captures every key press, and pressing Tab no longer leaves it.
-> The rest of the page is now unreachable without a mouse, failing 2.1.2 No Keyboard Trap.
-> The developers fix the player so Tab and Shift and Tab move focus out, and document the Escape key.
-K: All functionality must be operable by keyboard, without traps, in a logical order, with a skip link and a clearly visible, unobscured focus indicator; native elements, good focus management in dialogs and keyboard-only testing make this achievable.
-!: Removing focus outlines because they look untidy. Without a visible focus indicator keyboard users cannot tell where they are; restyle it instead of removing it.
-EV: established | WCAG 2.2 success criterion 2.1.1 requires all functionality to be operable through a keyboard interface.
-T: Focus | The state of the element that currently receives keyboard input
-T: Keyboard trap | A component that focus can enter but not leave using the keyboard
-T: Skip link | A link at the start of a page that lets users jump past repeated content to the main content
-SUM: Everything works by keyboard.
-SUM: Logical order, no traps.
-SUM: Focus always visible.
-SRC: W3C, Understanding Success Criterion 2.1.1: Keyboard, W3C | guidance | 2023 | https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html
-SRC: W3C, Understanding Success Criterion 2.4.7: Focus Visible, W3C | guidance | 2023 | https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html
-SRC: W3C, ARIA Authoring Practices Guide: Developing a Keyboard Interface, W3C | guidance | 2024 | https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/
-Q: Which key moves focus backwards through interactive elements? | Shift and Tab together.
-Q: What does a skip link do? | Lets users jump past repeated content, such as navigation, to the main content.
-M1#design-u08-08-q1@1: Which WCAG criterion requires that focus can always be moved away from a component? | 2.1.2 No Keyboard Trap | 2.4.7 Focus Visible | 1.4.3 Contrast (Minimum) | 2.4.1 Bypass Blocks | No Keyboard Trap, at level A, ensures users are never stuck inside a component.
-SEQ2#design-u08-08-q2@1: Put the steps of good focus management for a modal dialog in order. | User activates the trigger button ; Focus moves into the dialog ; Focus stays within the dialog while open ; Focus returns to the trigger on close | Managing focus this way keeps keyboard and screen reader users oriented.
-M2#design-u08-08-q3@2: A sticky cookie banner covers the focused link at the bottom of the screen. Which WCAG 2.2 criterion does this fail? | 2.4.11 Focus Not Obscured (Minimum) | 2.1.1 Keyboard | 3.3.1 Error Identification | 1.1.1 Non-text Content | WCAG 2.2 added 2.4.11 so focused items are not hidden by author-created content.
-M3#design-u08-08-q4@3: A designer's mock-up shows custom clickable divs for menu items. What is the most robust recommendation? | Use native buttons or links instead | Add hover effects so they look clickable | Make the divs larger for mouse users | Add a tooltip explaining how to click | Native elements are focusable and keyboard operable by default, unlike plain divs.
-SA2#design-u08-08-q5@2,3: Explain how to make an interface usable by keyboard alone. | Every function must be reachable and operable with the keyboard, using Tab, Shift and Tab, Enter, Space and arrow keys, and focus must never become trapped. Focus should move in a logical order that matches the visual layout, and a skip link should let users bypass repeated navigation. A clear, high-contrast focus indicator must always be visible and not hidden by sticky content. Using native elements and managing focus in dialogs helps, and teams should test key tasks with the mouse put away. | Operable by keyboard ; No traps and logical order ; Visible focus ; Native elements and testing
+S: Many people use a keyboard, or devices that act like one, instead of a mouse. This lesson explains WCAG requirements for keyboard access, focus order, visible focus and skip links, and how to test them.
+O: Explain who relies on keyboard access and why
+O: Apply WCAG keyboard and focus criteria to an interface
+O: Test a page for keyboard accessibility
+H: Who uses the keyboard
+P: Keyboard access matters for blind screen reader users, people with motor impairments who use switches, mouth sticks or adapted keyboards (which send keyboard commands), voice control users, and many power users. If something can be done only with a mouse, it excludes them.
+H: The criteria
+- **2.1.1 Keyboard (A)**: all functionality is available from a keyboard.
+- **2.1.2 No Keyboard Trap (A)**: focus can always be moved away from a component using the keyboard.
+- **2.4.1 Bypass Blocks (A)**: a way to skip repeated content, such as a "Skip to main content" link.
+- **2.4.3 Focus Order (A)**: focus moves in an order that preserves meaning.
+- **2.4.7 Focus Visible (AA)**: the keyboard focus indicator is visible.
+- **2.4.11 Focus Not Obscured (Minimum) (AA, new in 2.2)**: the focused item isn't entirely hidden by other content such as sticky headers.
+X: Testing a page with the keyboard.
+> Press Tab from the top: a "Skip to main content" link appears. Good.
+> Keep tabbing: focus jumps from the header to the footer, then back to the middle. Focus order problem.
+> A date picker opens but Esc and Tab don't leave it: keyboard trap.
+> A custom "Buy" button made from a styled div can't be reached by Tab: fails 2.1.1.
+> The focus outline has been removed in CSS, so users can't see where they are: fails 2.4.7.
+K: Use native HTML controls (buttons, links, form fields), which are keyboard accessible by default, and never remove the focus outline without providing a clear replacement.
+!: Building custom controls from generic elements without keyboard support. A clickable div looks like a button but can't be reached or operated with the keyboard unless extra work is done.
+H: Testing
+P: Unplug the mouse and use Tab, Shift+Tab, Enter, Space, the arrow keys and Esc to complete every task. Check that focus is always visible, follows a logical order, can't get stuck and isn't hidden.
+EV: established | WCAG 2.2 requires all functionality to be keyboard operable (2.1.1) with visible focus (2.4.7).
+EV: contested | How strong a focus indicator must be is debated; WCAG 2.2's Focus Appearance criterion was placed at AAA rather than AA after disagreement about its complexity.
+T: Keyboard trap | A situation where keyboard focus enters a component and cannot leave it
+T: Focus indicator | The visible marker, such as an outline, showing which element has keyboard focus
+SUM: All functionality must work by keyboard, without traps, in a logical order, with visible focus.
+SUM: Use native controls, add skip links, keep focus visible and unobscured, and test without a mouse.
+SRC: World Wide Web Consortium, Web Content Accessibility Guidelines (WCAG) 2.2, guidelines 2.1 and 2.4 | standard | 2023 | https://www.w3.org/TR/WCAG22/
+SRC: W3C Web Accessibility Initiative, Understanding Success Criterion 2.4.7: Focus Visible | guidance | 2023 | https://www.w3.org/WAI/WCAG22/Understanding/focus-visible
+Q: What is a keyboard trap? | When keyboard focus enters a component and can't be moved away using the keyboard.
+Q: What is the purpose of a skip link? | To let keyboard and screen reader users skip repeated content, such as navigation, to the main content.
+M1#design-u08-08-q1@1: Which WCAG criterion requires all functionality to be available from a keyboard? | 2.1.1 Keyboard | 1.4.3 Contrast (Minimum) | 1.1.1 Non-text Content | 3.3.2 Labels or Instructions | 2.1.1 is the core keyboard access requirement at level A.
+M2#design-u08-08-q2@2: A designer removes the blue outline around focused links because it "looks messy". What is the issue? | Keyboard users can no longer see where they are, failing Focus Visible | It improves accessibility by reducing clutter | It only affects mouse users | There is no issue as long as colours are high contrast | Removing focus indicators without replacement fails 2.4.7.
+M3#design-u08-08-q3@3: A cookie banner fixed at the bottom of the screen covers the button a keyboard user has tabbed to. Which WCAG 2.2 criterion is most at issue? | Focus Not Obscured (Minimum) | Dragging Movements | Redundant Entry | Use of Color | 2.4.11 requires that focused items aren't entirely hidden by author-created content.
+SEQ2#design-u08-08-q4@2: Put these keyboard test steps in a sensible order. | Put the mouse aside ; Tab from the top and check for a skip link ; Check focus order and visibility through the page ; Operate every control with Enter, Space and arrows ; Check you can leave every component with Tab or Esc | Systematic keyboard testing checks reachability, order, visibility, operation and traps.
+SA3#design-u08-08-q5@1,3: Explain why keyboard accessibility matters and evaluate a website that uses many custom controls built from generic elements. | Keyboard access serves screen reader users, people with motor impairments using switches or adapted keyboards, voice control users and power users. Custom controls built from generic elements often can't be focused or operated by keyboard, lack visible focus and expose no role to assistive technology, failing 2.1.1, 2.4.7 and 4.1.2. Recommend native HTML controls, or full keyboard and ARIA support, and test without a mouse. | Who relies on keyboard ; Problems with custom controls ; Relevant criteria ; Recommendation ; Testing
 
 ## Text alternatives
 LV: Intermediate · Application
-S: People who cannot see images or hear audio need equivalent alternatives. This lesson explains alt text for different image types, captions, transcripts and audio description.
-O: Explain the purpose of text alternatives
+S: People who can't see images or hear audio need equivalent information in another form. This lesson explains alt text for images, when images should be decorative, and captions, transcripts and audio description for media.
+O: Explain the purpose of text alternatives under WCAG 1.1.1
 O: Write appropriate alt text for informative, functional and decorative images
-O: Choose suitable alternatives for audio and video content
-H: Why text alternatives matter
-P: **WCAG 1.1.1 Non-text Content (A)** requires a **text alternative** for all non-text content that serves the same purpose. Text can be read aloud by a **screen reader**, enlarged, shown on a **braille display** or translated. **Alt text** is the short text alternative for an image. Good alt text describes the **purpose** of the image in its context, not every visual detail. The W3C's **alt decision tree** helps designers decide what each image needs. Content designers, not only developers, should write alt text, because it depends on why the image is there.
-H: Types of image
-- **Informative** images: describe the information conveyed, briefly, such as "Map showing the station 200 metres north of the hospital".
-- **Functional** images, such as icons in buttons: describe the action, such as "Search", not "magnifying glass".
-- **Decorative** images: use empty alt text (alt="") so screen readers skip them.
-- **Complex** images such as charts and diagrams: a short alt plus a longer description or data table nearby.
-- **Images of text**: avoid them (1.4.5 Images of Text, AA); use real text so it can be resized and read.
-- Do not start with "image of", because screen readers already announce it as an image.
-H: Audio and video
-- **Captions** for prerecorded video (1.2.2, A) and live video (1.2.4, AA) show speech and important sounds.
-- **Transcripts** give a text version of audio-only content such as podcasts (1.2.1, A).
-- **Audio description** (1.2.5, AA) narrates important visual information that is not in the soundtrack.
-- **Sign language** interpretation of prerecorded video is a level AAA criterion (1.2.6).
-- Auto-generated captions must be checked and corrected for accuracy.
-X: Writing alt text for one photo in two contexts.
-> A photo shows a nurse helping an older man use a tablet.
-> On a news article about digital inclusion, the alt text is "A nurse shows an older patient how to book appointments on a tablet".
-> On a careers page about nursing, the same photo gets "A nurse supporting a patient on the ward".
-> If the photo were only decoration beside a heading that already says this, it would get empty alt text.
-K: Every non-text element needs a text alternative that serves the same purpose: informative images describe their information, functional images describe their action, decorative images get empty alt text, complex images need longer descriptions, and video needs captions, transcripts and audio description.
-!: Describing every detail of an image or using the file name. Alt text should convey the purpose of the image in context, briefly.
-EV: established | WCAG 2.2 success criterion 1.1.1 requires a text alternative that serves the equivalent purpose for all non-text content presented to the user.
-T: Alt text | A short text alternative describing the purpose of an image
-T: Decorative image | An image that adds no information and should be ignored by assistive technology
-T: Audio description | Narration of important visual information in a video
-SUM: Describe purpose, not pixels.
-SUM: Empty alt for decoration.
-SUM: Captions, transcripts, audio description.
-SRC: W3C Web Accessibility Initiative, Images Tutorial and An alt Decision Tree, W3C | guidance | 2022 | https://www.w3.org/WAI/tutorials/images/decision-tree/
-SRC: W3C, Understanding Success Criterion 1.1.1: Non-text Content, W3C | guidance | 2023 | https://www.w3.org/WAI/WCAG22/Understanding/non-text-content.html
-Q: What alt text should a purely decorative image have? | Empty alt text, so screen readers skip it.
-Q: What does audio description provide? | Narration of important visual information not available in the soundtrack.
-M1#design-u08-09-q1@1: Which WCAG success criterion requires text alternatives for non-text content? | 1.1.1 Non-text Content | 1.4.3 Contrast (Minimum) | 2.1.1 Keyboard | 3.3.2 Labels or Instructions | 1.1.1 is a level A criterion under the Perceivable principle.
-MATCH2#design-u08-09-q2@2: Match each image to the best text alternative. | Magnifier icon in a search button = Search ; Decorative swirl = Empty alt text ; Sales bar chart = Short alt plus data table ; Logo linking home = Company name home page | Alt text depends on whether the image is informative, functional, decorative or complex.
-M2#design-u08-09-q3@2: What is the best alt text for a printer icon button that prints the page? | Print this page | Image of a printer | Printer icon in grey | printer-icon-final.png | Functional images should describe the action, not the picture or file name.
-M3#design-u08-09-q4@3: A university posts lecture videos with uncorrected auto-captions full of errors. What should it do? | Review and correct the captions for accuracy | Remove the captions entirely | Add a disclaimer about the errors | Offer audio description instead of captions | Inaccurate captions fail deaf and hard of hearing users; captions must be accurate to serve their purpose.
-SA2#design-u08-09-q5@2,3: Explain how a designer should decide on text alternatives for images and video. | The designer should first ask what purpose each image serves in context. Informative images need a brief description of their information, functional images need text describing the action, decorative images need empty alt text, and complex images such as charts need a short alt plus a longer description or data table. Video needs accurate captions and audio description of key visual information, and audio needs a transcript. The W3C alt decision tree is a helpful guide. | Purpose in context ; Image types ; Captions and audio description ; Transcripts and decision tree
+O: Describe media alternatives: captions, transcripts and audio description
+H: Alt text
+P: **1.1.1 Non-text Content (A)** requires a text alternative that serves the equivalent purpose for all non-text content. On the web this is usually the image's **alt attribute**, read aloud by screen readers. Good alt text depends on the image's purpose in context:
+- **Informative images**: describe the information the image conveys ("Bar chart: sales rose from £2m in 2022 to £3m in 2024").
+- **Functional images** (buttons, linked logos): describe the action or destination ("Search", "Home"), not the picture.
+- **Decorative images**: use empty alt (alt="") so screen readers skip them.
+- **Complex images** (detailed charts, diagrams): a short alt plus a longer description or data table nearby.
+X: Writing alt text for a news photo.
+> Image: a firefighter carrying a child from a flooded house.
+> Poor: "image.jpg" or "Photo".
+> Poor: "A firefighter in a yellow helmet with reflective stripes wading through brown water near a red-brick house with white windows..." (too long, misses the point).
+> Better: "A firefighter carries a child to safety from a flooded house in Doncaster."
+K: Alt text should say what the image means in its context, as briefly as possible; the same picture may need different alt text in different places.
+!: Starting alt text with "Image of..." Screen readers already announce that it is an image.
+H: Time-based media
+- **1.2.2 Captions (Prerecorded) (A)**: synchronised text of speech and important sounds for video.
+- **1.2.4 Captions (Live) (AA)**: captions for live video.
+- **1.2.5 Audio Description (Prerecorded) (AA)**: narration of important visual information for blind users.
+- **Transcripts**: full text of audio or video, useful for deaf-blind users (with braille displays) and for searching.
+EV: established | WCAG 1.1.1 requires text alternatives for non-text content at level A, and 1.2.2 requires captions for prerecorded video.
+EV: contested | How much detail alt text should include, especially for images of people (for example appearance, ethnicity or gender), is debated and depends on context.
+T: Alt text | A short text alternative for an image, read by screen readers and shown if the image fails to load
+T: Audio description | Narration describing important visual information in a video for blind and partially sighted people
+SUM: Every meaningful non-text item needs a text alternative serving the same purpose; decorative images get empty alt.
+SUM: Video needs captions and, for visual information, audio description; transcripts help many users.
+SRC: World Wide Web Consortium, Web Content Accessibility Guidelines (WCAG) 2.2, guidelines 1.1 and 1.2 | standard | 2023 | https://www.w3.org/TR/WCAG22/
+SRC: W3C Web Accessibility Initiative, Images Tutorial | guidance | 2022 | https://www.w3.org/WAI/tutorials/images/
+Q: What alt text should a decorative image have? | Empty alt (alt=""), so screen readers skip it.
+Q: What does audio description provide? | Narration of important visual information in a video for blind and partially sighted people.
+M1#design-u08-09-q1@1: Which WCAG criterion requires text alternatives for images? | 1.1.1 Non-text Content | 2.1.1 Keyboard | 1.4.3 Contrast (Minimum) | 3.3.1 Error Identification | 1.1.1 is the level A requirement for text alternatives.
+M2#design-u08-09-q2@2: What is the best alt text for a magnifying glass icon that submits a search? | Search | Magnifying glass | Image of a magnifying glass icon | Leave it empty because it is an icon | Functional images should describe the action, not the picture.
+M3#design-u08-09-q3@3: A decorative swirl appears beside each heading and has alt text "decorative swirl". What is the problem? | Screen readers announce meaningless text repeatedly; it should have empty alt | Nothing, because all images need descriptive alt text | The alt text should be longer and more detailed | The image should be removed from the page | Decorative images should have empty alt so screen reader users aren't distracted.
+MATCH2#design-u08-09-q4@2: Match each image to the best approach. | Company logo linking to the home page = alt text naming the destination, such as "Home" ; Background texture = empty alt ; Detailed chart of results = short alt plus a data table or long description ; Photo illustrating a news story = brief description of what it shows in context | Alt text depends on the image's purpose.
+SA3#design-u08-09-q5@2,3: A college's promotional video has no captions and shows key information (dates and a web address) only on screen. Explain the barriers and the WCAG requirements, and recommend fixes. | Deaf and hard-of-hearing viewers miss speech (fails 1.2.2 Captions, A); blind viewers miss on-screen dates and address (fails 1.2.5 Audio Description, AA). Fixes: accurate synchronised captions including important sounds; audio description or narration that reads out on-screen text; a transcript including all information; check captions are not auto-generated without correction. These also help viewers watching without sound. | Identifies two barriers ; Names criteria ; Captions fix ; Audio description fix ; Wider benefit or transcript
 
 ## Accessible forms
 LV: Intermediate · Application
-S: Forms are where many users give up, and disabled users face extra barriers. This lesson explains labels, instructions, grouping, error handling and WCAG form criteria, drawing on the GOV.UK Design System.
-O: Describe the WCAG criteria that apply to forms
-O: Design clear labels, hints and grouping
-O: Evaluate error handling in a form
+S: Forms are where many people get stuck: booking, applying, paying. This lesson explains how to make forms accessible: labels, instructions, grouping, error identification and suggestions, input purpose and avoiding redundant entry.
+O: Describe the WCAG requirements most relevant to forms
+O: Design an accessible form field with label, hint and error message
+O: Evaluate a form for accessibility barriers and propose fixes
 H: Labels and instructions
-P: Every form field needs a **visible label** that is programmatically linked to it, so screen readers announce it and clicking the label focuses the field (**1.3.1 Info and Relationships** and **3.3.2 Labels or Instructions, A**). **Placeholder text** inside a field is not a label: it disappears when users type, often has low contrast and can be mistaken for a filled-in value. **Hint text** below the label explains formats, such as "For example, 27 3 2007". Related controls, such as a set of radio buttons, should be grouped with a **fieldset** and **legend** so the question is announced with each option. **1.3.5 Identify Input Purpose (AA)** supports browser autofill for common fields such as name and email.
-H: Errors and prevention
-- **3.3.1 Error Identification, A**: errors are identified and described in text.
-- **3.3.3 Error Suggestion, AA**: suggest how to fix the error where possible, such as "Enter a date in the past".
-- **3.3.4 Error Prevention (Legal, Financial, Data), AA**: allow users to review, confirm or undo important submissions.
-- **3.3.7 Redundant Entry, A** (new in WCAG 2.2): do not make users re-enter information already given in the same process.
-- The GOV.UK Design System puts an **error summary** at the top of the page linking to each field, plus an **error message** next to the field.
-H: Good form design
-- Ask only for what you need, and explain why you need sensitive information.
-- Use **one question per page** for complex services, as GOV.UK recommends.
-- Place labels **above** fields and use a single column.
-- Mark **optional** fields rather than relying on asterisks for required ones.
-- Do not set short **time limits**; if needed, warn users and let them extend (2.2.1 Timing Adjustable, A).
+- **3.3.2 Labels or Instructions (A)**: provide labels or instructions when input is required.
+- **1.3.1 Info and Relationships (A)**: labels must be programmatically linked to fields, so screen readers announce them; related fields (such as date parts or radio buttons) are grouped with a legend.
+- **4.1.2 Name, Role, Value (A)**: custom controls must expose their name, role and state to assistive technology.
+- **1.3.5 Identify Input Purpose (AA)**: common fields (name, email, address) identify their purpose so browsers can autofill them.
+P: Visible labels should sit outside the field, not as placeholder text that disappears. Hints (such as "For example, 27 3 2007") go between the label and the field.
+H: Errors
+- **3.3.1 Error Identification (A)**: errors are identified and described in text.
+- **3.3.3 Error Suggestion (AA)**: suggest how to fix the error when known.
+- **3.3.4 Error Prevention (Legal, Financial, Data) (AA)**: for important submissions, allow checking, correcting or reversing.
+- **3.3.7 Redundant Entry (A, new in 2.2)**: don't ask for information already provided in the same process, unless necessary.
 X: Improving a date of birth field.
-> A form uses a single field with grey placeholder text "DD/MM/YYYY" and shows only a red border on errors.
-> The redesign adds a visible label, "What is your date of birth?", in a fieldset with a legend.
-> It uses three labelled fields for day, month and year with hint text "For example, 27 3 2007".
-> Errors appear in an error summary and next to the field: "Date of birth must include a year".
-K: Accessible forms use visible, programmatically linked labels, hint text, grouping with fieldsets, autofill support and clear text error messages with suggestions and summaries, while avoiding placeholder-only labels, redundant entry and tight time limits.
-!: Using placeholder text instead of a label. Placeholders vanish on input and are often low contrast; always provide a visible label.
-EV: established | The GOV.UK Design System recommends an error summary at the top of the page and an error message beside each invalid field.
-T: Label | Visible text that names a form field and is linked to it in code
-T: Fieldset and legend | Elements that group related controls and give the group a name
-T: Error summary | A list at the top of a page linking to each error in a form
-SUM: Every field has a visible label.
-SUM: Errors in text, with suggestions.
-SUM: Do not ask twice.
-SRC: Government Digital Service, GOV.UK Design System: Error message and Error summary components, gov.uk | guidance | 2024 | https://design-system.service.gov.uk/components/error-message/
-SRC: W3C Web Accessibility Initiative, Forms Tutorial, W3C | guidance | 2022 | https://www.w3.org/WAI/tutorials/forms/
-SRC: Jarrett C. and Gaffney G., Forms that Work: Designing Web Forms for Usability, Morgan Kaufmann | secondary | 2009
-Q: Why is placeholder text not a substitute for a label? | It disappears when users type, is often low contrast and can look like a filled-in value.
-Q: What does WCAG 3.3.7 Redundant Entry require? | Information already entered in a process is not requested again unless necessary.
-M1#design-u08-10-q1@1: Which WCAG 2.2 criterion stops forms asking for the same information twice in one process? | 3.3.7 Redundant Entry | 3.3.1 Error Identification | 1.3.5 Identify Input Purpose | 2.4.7 Focus Visible | Redundant Entry was added in WCAG 2.2 at level A.
-M2#design-u08-10-q2@2: How should a set of radio buttons answering one question be marked up? | In a fieldset with a legend for the question | As separate fields with placeholder text | Inside a table with column headers | With the question in a tooltip | A fieldset and legend group the options so the question is announced with each one.
-TF2#design-u08-10-q3@3: Showing an error only by turning a field border red meets WCAG error requirements. | false | Errors must be identified and described in text, and colour alone fails 1.4.1 Use of Color.
-M3#design-u08-10-q4@3: A bank's transfer form submits immediately with no review step. Which criterion is at risk? | 3.3.4 Error Prevention (Legal, Financial, Data) | 2.5.8 Target Size (Minimum) | 1.2.2 Captions (Prerecorded) | 2.4.1 Bypass Blocks | Financial transactions should be reversible, checked or confirmed before final submission.
-SA2#design-u08-10-q5@2,3: Describe how to design an accessible form, including error handling. | Each field should have a visible label linked to it, with hint text for formats, and related options grouped in a fieldset with a legend. Placeholders should not replace labels, and common fields should support autofill. Errors should be shown in text in an error summary at the top and next to each field, with suggestions on how to fix them, never by colour alone. Important submissions should allow review and confirmation, users should not have to re-enter information, and time limits should be avoided or extendable. | Labels, hints and grouping ; Text error messages ; Error summary and suggestions ; Prevention, redundant entry, timing
+> Before: a placeholder "DD/MM/YYYY" inside one box; on error, the border turns red.
+> After: a visible label "Date of birth", hint "For example, 27 3 2007", three labelled boxes (Day, Month, Year) grouped with a legend.
+> On error: a summary at the top linking to the field, and a message beside it: "Date of birth must be in the past".
+> The error uses text and an icon, not only red.
+K: Every field needs a visible, linked label; every error needs a clear text message saying what went wrong and how to fix it.
+!: Clearing the whole form when one field has an error. It punishes users and is especially hard for people with cognitive or motor impairments.
+H: Patterns that work
+P: The GOV.UK Design System publishes tested, accessible form patterns (such as dates, addresses and error summaries) based on research with many users, including disabled people. Asking one thing per page and avoiding unnecessary questions also helps.
+EV: established | WCAG 2.2 requires labels, error identification and, at AA, error suggestions for forms (3.3.1, 3.3.2, 3.3.3).
+EV: contested | Whether "one thing per page" forms are better than single long forms for all users is debated; it depends on the task and context.
+T: Label | Visible text identifying a form field, programmatically associated with it
+T: Error summary | A list of errors at the top of a form, linking to each field that needs correcting
+SUM: Forms need visible, linked labels, grouped related fields, hints, and input purpose for autofill.
+SUM: Errors must be identified in text with suggestions; avoid redundant entry and colour-only cues.
+SRC: World Wide Web Consortium, Web Content Accessibility Guidelines (WCAG) 2.2, guideline 3.3 Input Assistance | standard | 2023 | https://www.w3.org/TR/WCAG22/
+SRC: Government Digital Service, GOV.UK Design System | guidance | 2024 | https://design-system.service.gov.uk/
+Q: Why shouldn't placeholder text be used as the only label? | It disappears when typing, often has low contrast and may not be announced reliably.
+Q: What does 3.3.7 Redundant Entry require? | Not asking users for information they've already provided in the same process, unless necessary.
+M1#design-u08-10-q1@1: Which WCAG criterion requires labels or instructions for input? | 3.3.2 Labels or Instructions | 1.4.3 Contrast (Minimum) | 2.4.1 Bypass Blocks | 1.2.2 Captions | 3.3.2 is the level A requirement for labelling input.
+M2#design-u08-10-q2@2: A form shows an error only by turning a field's border red. Which is the best improvement? | Add a text message describing the error and how to fix it | Make the red border thicker | Use a flashing border instead | Remove the error indication | Errors must be described in text (3.3.1), with suggestions (3.3.3), not shown by colour alone.
+M3#design-u08-10-q3@3: A checkout asks for the delivery address, then asks for the billing address again with no "same as delivery" option. Which WCAG 2.2 addition is most relevant? | Redundant Entry | Focus Not Obscured | Target Size (Minimum) | Consistent Help | 3.3.7 requires not making people re-enter information already given, such as by offering "same as delivery".
+MS2#design-u08-10-q4@2: Which practices make forms more accessible? Choose all that apply. | Visible labels linked to fields ; Error messages in text ; Grouping radio buttons with a legend | Placeholder text as the only label ; Clearing the form after an error | Labels, text errors and grouping help; placeholder-only labels and clearing forms create barriers.
+SA3#design-u08-10-q5@2,3: Evaluate a job application form that uses placeholder labels, a CAPTCHA puzzle at the end, and errors shown only in red, and recommend improvements. | Barriers: placeholder labels disappear and aren't reliably announced (3.3.2, 1.3.1); a puzzle CAPTCHA blocks people with cognitive or visual impairments (3.3.8 Accessible Authentication applies to logins; for forms, offer alternatives); colour-only errors fail 1.4.1 and 3.3.1. Fixes: visible linked labels and hints; an accessible bot check or none; text error messages with suggestions and an error summary; save progress; test with assistive technology users. | Label barrier ; CAPTCHA barrier ; Error barrier ; Specific fixes ; Testing
 
 ## Assistive technologies
-LV: Intermediate · Foundation
-S: Assistive technologies help disabled people use computers, phones and the web. This lesson describes screen readers, magnifiers, voice control, switches and braille displays, and how designs communicate with them.
+LV: Introductory · Foundation
+S: Assistive technologies help disabled people use computers, phones and other products. This lesson describes the main kinds, screen readers, magnifiers, voice control, switch access, braille displays and captions, and what each needs from a design.
 O: Describe the main types of assistive technology
-O: Explain how screen readers use the accessibility tree
-O: Apply semantic structure so designs work with assistive technology
-H: Types of assistive technology
-P: **Assistive technologies** (**AT**) are tools that increase, maintain or improve the capabilities of disabled people. A **screen reader** converts on-screen content into speech or braille; common examples are **JAWS** and the free **NVDA** on Windows, **VoiceOver** on Apple devices and **TalkBack** on Android. **Screen magnifiers** such as ZoomText enlarge part of the screen. **Voice control**, such as Dragon or Apple Voice Control, lets people operate devices by speaking. **Switch access** lets people with very limited movement operate a device with one or two switches. **Refreshable braille displays** show text as raised pins.
-H: How assistive technology reads a page
-- Browsers build an **accessibility tree** from the code, exposing each element's **name**, **role** and **state**.
-- **4.1.2 Name, Role, Value (A)** requires custom components to expose this information.
-- Screen reader users often navigate by **headings**, **landmarks**, links and form controls rather than reading top to bottom.
-- WebAIM's surveys of screen reader users consistently find that most navigate long pages by headings.
-- The first rule of **ARIA** (Accessible Rich Internet Applications) is to use a native HTML element where one exists rather than adding ARIA.
-H: Designing for assistive technology
-- Use a clear **heading hierarchy** and meaningful **landmarks** such as header, navigation and main.
-- Make **link text** meaningful out of context: "Download the annual report", not "click here".
-- Ensure the visible label matches the accessible name, so voice users can say what they see (**2.5.3 Label in Name, A**).
-- Support **zoom** to 200% and **reflow** at 320 CSS pixels wide without horizontal scrolling (1.4.4 and 1.4.10).
-- Annotate designs with headings, reading order and accessible names for developers.
-X: A voice control user and an icon button.
-> A user with a repetitive strain injury uses voice control.
-> A button shows the visible word "Send" but its accessible name in code is "submit-form-btn".
-> Saying "click Send" fails, because the speech software cannot match the visible label.
-> Changing the accessible name to start with "Send" fixes it, meeting 2.5.3 Label in Name.
-K: Assistive technologies such as screen readers, magnifiers, voice control, switches and braille displays rely on the accessibility tree, which exposes each element's name, role and state; clear headings, landmarks, meaningful link text, matching labels and native elements make designs work with them.
-!: Assuming screen reader users read every word in order. Most skim by headings, landmarks and links, so structure matters as much as text.
-EV: established | WebAIM's screen reader user surveys repeatedly report that navigating by headings is the most common way users find information on a long page.
-T: Screen reader | Software that converts on-screen content into speech or braille
-T: Accessibility tree | The structure browsers expose to assistive technology, with each element's name, role and state
-T: ARIA | Accessible Rich Internet Applications, attributes that add accessibility information to custom components
-SUM: Many kinds of assistive technology.
-SUM: Name, role and state.
-SUM: Structure helps navigation.
-SRC: WebAIM, Screen Reader User Survey number 10 results | data | 2024 | https://webaim.org/projects/screenreadersurvey10/
-SRC: W3C, Using ARIA, W3C Note | guidance | 2021 | https://www.w3.org/TR/using-aria/
-SRC: W3C Web Accessibility Initiative, How People with Disabilities Use the Web, W3C | guidance | 2024 | https://www.w3.org/WAI/people-use-web/
-Q: Name a free screen reader for Windows. | NVDA.
-Q: What three pieces of information does the accessibility tree expose for each element? | Its name, role and state or value.
-M1#design-u08-11-q1@1: Which assistive technology lets someone operate a device using one or two buttons? | Switch access | Screen magnifier | Refreshable braille display | Screen reader | Switch access lets people with very limited movement control a device by scanning through options.
-MATCH1#design-u08-11-q2@1: Match each assistive technology to its platform or function. | VoiceOver = Apple screen reader ; TalkBack = Android screen reader ; ZoomText = Screen magnifier ; Dragon = Voice control | Knowing common tools helps designers plan realistic testing.
-M2#design-u08-11-q3@2: Which link text works best for a screen reader user browsing a list of links? | Download the 2025 annual report | Click here | Read more | Link | Link text should make sense out of context, because users often browse links alone.
-M3#design-u08-11-q4@3: A developer adds ARIA roles to every div in a page built from divs. What is the better approach? | Use native HTML elements, which carry roles already | Add even more ARIA to cover all states | Hide the divs from assistive technology | Add a separate text-only page | The first rule of ARIA is to use a native element where one exists.
-SA2#design-u08-11-q5@2,3: Explain how screen readers interpret a page and what designers can do to support them. | Browsers build an accessibility tree from the code, giving each element a name, role and state, which screen readers use to announce content. Screen reader users often move by headings, landmarks, links and form controls rather than reading everything in order. Designers can support them with a clear heading hierarchy, landmarks, meaningful link text and accessible names that match visible labels. Using native elements rather than custom ARIA widgets and annotating designs for developers makes this reliable. | Accessibility tree ; Navigation by structure ; Headings and link text ; Native elements and annotation
+O: Explain what each assistive technology needs from a design
+O: Evaluate how design choices help or hinder assistive technology users
+H: The main kinds
+- **Screen readers** (for example JAWS and NVDA on Windows, VoiceOver on Apple devices, TalkBack on Android) read the screen aloud or to a braille display. They need text alternatives, headings, labels and correct roles in the code.
+- **Screen magnifiers** enlarge part of the screen; users see only a small area at a time, so related content should be close together and layouts should reflow.
+- **Voice control** (for example Voice Control on Apple devices, Dragon) lets users speak commands such as "click Submit"; it works best when visible labels match the accessible names.
+- **Switch access** uses one or two switches (pressed with a hand, head or breath) to scan through items; it needs keyboard-operable controls and generous time.
+- **Refreshable braille displays** show text as raised braille pins, used by many blind and deaf-blind people.
+- **Captions, hearing loops and relay services** support deaf and hard-of-hearing people.
+- **Built-in settings**: zoom, text size, high contrast, reduced motion and dark mode.
+H: What designs need
+P: Assistive technologies depend on designs exposing information correctly: structure (headings, lists, landmarks), names and roles of controls, text alternatives, keyboard access and responsiveness to user settings. W3C's WAI-ARIA can add roles and states to custom components, but the first rule of ARIA is to use native HTML elements where possible.
+X: A screen reader user navigating a recipe page.
+> She presses H to jump between headings: "Ingredients", "Method". This works only because real heading elements are used.
+> She lists all links; ten say "Click here", which is meaningless out of context, so links should describe their destination.
+> A custom star rating announces only "clickable"; it needs a proper name and value ("Rating: 4 out of 5 stars").
+P: Many people use several technologies together, or only built-in settings: an older person may simply enlarge text and turn on captions. Designs should respect these settings, for example by allowing text to resize to 200% without loss of content and by honouring reduced-motion preferences.
+K: Assistive technology can only present what the design exposes: real structure, names, roles and text make it work.
+!: Assuming all blind people use screen readers the same way, or that disabled people are a single group. Ask and test with a range of users and technologies.
+EV: established | Screen readers, magnifiers, voice control and switch access depend on correct structure, names, roles and keyboard support in designs (W3C WAI-ARIA).
+EV: contested | Whether "accessibility overlay" tools that claim to fix sites automatically help users is strongly disputed; many disabled users and experts report they create new barriers.
+T: Screen reader | Software that reads screen content aloud or to a braille display
+T: Switch access | Controlling a device with one or more switches that scan through options
+T: WAI-ARIA | W3C's specification for adding roles, states and properties to web content for assistive technologies
+SUM: Assistive technologies include screen readers, magnifiers, voice control, switches, braille displays and captions.
+SUM: They depend on designs exposing structure, names, roles, text alternatives and keyboard access.
+SRC: World Wide Web Consortium, Accessible Rich Internet Applications (WAI-ARIA) 1.2, W3C Recommendation | standard | 2023 | https://www.w3.org/TR/wai-aria-1.2/
+SRC: W3C Web Accessibility Initiative, How People with Disabilities Use the Web | guidance | 2024 | https://www.w3.org/WAI/people-use-web/
+Q: What is the first rule of ARIA? | Use native HTML elements and attributes where possible, rather than adding ARIA to generic elements.
+Q: How does voice control relate to visible labels? | Users speak the visible label, so it should match the control's accessible name.
+M1#design-u08-11-q1@1: What does a screen reader do? | Reads screen content aloud or to a braille display | Enlarges part of the screen | Translates speech into commands | Changes the screen's colours | Screen readers convert content to speech or braille.
+M2#design-u08-11-q2@2: A page has ten links that all say "Read more". Which users are most affected? | Screen reader users listing links out of context | Users with colour vision deficiency | Users of large monitors | Users on fast internet connections | Screen reader users often navigate by link lists, where identical text is meaningless.
+M3#design-u08-11-q3@3: A company installs an automatic accessibility overlay instead of fixing its code. What is the strongest criticism? | Overlays don't fix underlying problems and can create new barriers | Overlays are illegal in the UK | Overlays make websites load too slowly to use | Overlays only work on mobile phones | Many disabled users and experts report overlays fail to fix real issues and interfere with assistive technology.
+MATCH1#design-u08-11-q4@1: Match each assistive technology to a need. | Screen reader = text alternatives and correct roles ; Screen magnifier = related content placed close together ; Voice control = visible labels that match accessible names ; Switch access = keyboard-operable controls and enough time | Each technology relies on particular design features.
+SA3#design-u08-11-q5@2,3: Explain how three assistive technologies interact with a website, and evaluate what designers must do to support them. | Screen readers need headings, labels, alt text and correct roles; magnifiers need reflowing layouts and related content close together; voice control needs visible labels matching accessible names; switch users need keyboard operability and time. Designers must use native HTML, meaningful structure and labels, support user settings, avoid overlays, and test with real users of these technologies, since needs vary. | Three technologies explained ; Design needs for each ; Native HTML or structure ; Testing with users ; Evaluation
 
 ## Testing for accessibility
-LV: Intermediate · Evaluation
-S: Accessibility must be checked throughout design and development. This lesson compares automated tools, manual checks, assistive technology testing and research with disabled people, and explains how to plan an accessibility audit.
+LV: Advanced · Evaluation
+S: No single method finds all accessibility barriers. This lesson explains automated testing, manual expert testing, assistive technology checks and testing with disabled people, what each finds and how to combine them.
 O: Describe the main methods of accessibility testing
-O: Explain the limits of automated testing
-O: Evaluate an accessibility testing plan
-H: Methods of testing
-P: No single method finds every accessibility problem, so teams combine several. **Automated tools** such as axe, WAVE and Lighthouse quickly scan pages for detectable failures such as missing alt attributes or low contrast. **Manual checks** by trained people cover what tools cannot judge, such as whether alt text is meaningful or focus order is logical. **Assistive technology testing** uses screen readers, magnification and voice control. **Usability testing with disabled people** reveals whether the product actually works for them. A formal **accessibility audit** tests a sample of pages against every WCAG criterion at the target level.
-H: Limits of automated testing
-- In 2017 the Government Digital Service built a page with **142 deliberate barriers**; the best-performing automated tool found only about **40%** of them.
-- Tools can detect that alt text is missing, but not whether it is **accurate**.
-- Tools cannot judge **reading order**, **meaningful labels** or **plain language** well.
-- The WebAIM Million reports find detectable WCAG failures on more than **90%** of the top million home pages, with **low-contrast text** the most common.
-- A clean automated report is a starting point, not proof of accessibility.
-H: Quick manual checks
-- **Keyboard**: complete key tasks with Tab, Enter, Space and arrows, watching focus.
-- **Zoom**: magnify to 200% and 400% and check content reflows without loss.
-- **Screen reader**: listen to headings, links, labels and error messages.
-- **Contrast and colour**: check text and components, and view in greyscale.
-- **Content**: check headings, link text, captions and plain language.
-H: Planning testing
-- Test **early and often**, starting with designs and prototypes.
-- Recruit disabled participants through specialist agencies and pay them fairly.
-- Record issues with the WCAG criterion, severity and fix.
-- Publish an **accessibility statement** listing known issues and how to get help.
-X: Planning tests for a council parking app.
-> The team runs axe in its build pipeline to catch detectable issues on every change.
-> Designers check contrast and focus states in each design review.
-> Before launch, an auditor tests a sample of screens against WCAG 2.2 AA, and the team tests with five disabled participants, including screen reader and voice control users.
-> Findings are prioritised and the accessibility statement lists remaining issues and a contact route.
-K: Accessibility testing combines automated tools, manual expert checks, assistive technology testing, audits and usability testing with disabled people; automated tools find only a minority of barriers, so they must be supplemented, and testing should start early and continue throughout.
-!: Treating a passing automated scan as proof of accessibility. Tools miss most barriers that require human judgement, such as meaningful alt text and logical order.
-EV: established | A 2017 Government Digital Service experiment found that automated tools detected well under half of 142 known accessibility barriers.
-T: Automated testing | Using software to scan content for detectable accessibility failures
-T: Accessibility audit | A systematic test of a sample of pages against every WCAG criterion at a target level
-T: Reflow | Content adapting to a narrow viewport or high zoom without horizontal scrolling
-SUM: Combine several methods.
-SUM: Tools find only some issues.
-SUM: Test with disabled people.
-SRC: Government Digital Service, What we found when we tested tools on the world's least-accessible webpage, Accessibility in government blog | primary | 2017 | https://accessibility.blog.gov.uk/2017/02/24/what-we-found-when-we-tested-tools-on-the-worlds-least-accessible-webpage/
+O: Plan an accessibility testing approach for a digital product
+O: Evaluate the limits of automated testing
+H: Methods
+- **Automated tools** (for example axe, WAVE, Lighthouse) scan code for detectable failures: missing alt attributes, low contrast, missing labels, invalid ARIA.
+- **Manual expert review** against WCAG: keyboard testing, checking alt text quality, focus order, headings, error handling, zoom to 400% and reflow.
+- **Assistive technology testing**: using screen readers, magnifiers and voice control to complete tasks.
+- **Usability testing with disabled people**: the only way to know whether real users can complete tasks.
+H: What automation can't do
+P: Automated tools can check whether an image has alt text, but not whether the alt text is accurate; whether a label exists, but not whether it makes sense; whether elements can receive focus, but not whether the order is logical. When the UK Government Digital Service tested automated tools on a page with deliberately introduced barriers (2017), the tools found well under half of the barriers, and some found far fewer. WebAIM's annual survey of the top million home pages finds detectable WCAG failures on the great majority of them (over 95% in recent years), showing that even the problems tools can find are widespread.
+X: Planning testing for a council parking permit service.
+> Each build: automated checks in the development pipeline.
+> Each feature: manual keyboard, zoom and screen reader checks by the team.
+> Before launch: an expert audit against WCAG 2.2 AA.
+> Before launch and after major changes: usability sessions with disabled residents, including screen reader, magnifier and voice control users and someone with a learning disability.
+> After launch: an accessibility statement with known issues and a contact for problems.
+P: Testing works best when it is continuous rather than a single audit at the end. Teams that include accessibility checks in their definition of "done" for each feature, and that train designers and developers to test with a keyboard and screen reader, catch barriers when they are cheapest to fix.
+K: Automated testing is a fast first filter; manual, assistive technology and user testing find most of what matters.
+!: Treating an automated score of 100 as proof of accessibility. Many serious barriers are invisible to tools.
+EV: established | Automated tools detect only a minority of accessibility barriers, so manual and user testing are needed (GDS, 2017).
+EV: contested | Estimates of the share of WCAG issues automated tools can detect vary widely between studies and tools.
+T: Automated accessibility testing | Using software to scan code for detectable accessibility failures
+T: Accessibility audit | A systematic expert evaluation of a product against accessibility standards such as WCAG
+SUM: Combine automated scans, manual expert checks, assistive technology testing and testing with disabled people.
+SUM: Automation finds only a minority of barriers; real-user testing shows whether people can complete tasks.
+SRC: Government Digital Service, "What we found when we tested tools on the world's least-accessible webpage", Accessibility in government blog | data | 2017 | https://accessibility.blog.gov.uk/2017/02/24/what-we-found-when-we-tested-tools-on-the-worlds-least-accessible-webpage/
 SRC: WebAIM, The WebAIM Million: an annual accessibility analysis of the top 1,000,000 home pages | data | 2024 | https://webaim.org/projects/million/
-SRC: W3C Web Accessibility Initiative, Evaluating Web Accessibility Overview, W3C | guidance | 2024 | https://www.w3.org/WAI/test-evaluate/
-Q: Name two automated accessibility testing tools. | Any two of axe, WAVE and Lighthouse.
-Q: What is the most common failure found by the WebAIM Million reports? | Low-contrast text.
-M1#design-u08-12-q1@1: What did the 2017 GDS experiment with 142 barriers show? | Automated tools found well under half of them | Automated tools found every barrier | Manual testing found fewer than tools | Screen readers could not be used for testing | The best tool found about 40%, showing the need for manual testing.
-M2#design-u08-12-q2@2: Which problem can an automated tool reliably detect? | An image with no alt attribute at all | Alt text that is inaccurate | A confusing reading order | Unclear plain language | Tools detect missing attributes but cannot judge meaning or quality.
-NUM2#design-u08-12-q3@2: In the 2017 GDS experiment the best tool found about 40% of 142 barriers. To the nearest whole number, how many barriers is that? | 57 | 1 | barriers | 40% of 142 is 56.8, which rounds to about 57 barriers found.
-M3#design-u08-12-q4@3: A team's plan is to run Lighthouse once before launch. What is the most important improvement? | Add manual, assistive technology and user testing throughout | Run Lighthouse twice instead of once | Switch to a different automated tool | Ask developers to sign off the results | Automated scans miss most barriers, so testing must combine methods and start early.
-SA2#design-u08-12-q5@2,3: Evaluate the role of automated tools in accessibility testing and describe a balanced plan. | Automated tools such as axe and WAVE are fast and useful for catching detectable issues like missing alt attributes and low contrast, and can run on every change. However, they find only a minority of barriers, as the GDS experiment showed, and cannot judge meaning, order or clarity. A balanced plan adds manual keyboard, zoom and screen reader checks, a WCAG audit against the target level and usability testing with disabled participants. Testing should start with designs and continue after launch, with issues recorded in an accessibility statement. | Strengths of tools ; Limits shown by evidence ; Manual, audit and user testing ; Early and continuous
+Q: Why can't automated tools fully test accessibility? | They can detect some code failures but can't judge meaning, quality or logic, such as whether alt text is accurate or focus order makes sense.
+Q: Name four methods of accessibility testing. | Automated tools, manual expert review, assistive technology testing and usability testing with disabled people.
+M1#design-u08-12-q1@1: Which can an automated tool reliably detect? | An image with no alt attribute | Whether alt text accurately describes the image | Whether link text makes sense in context | Whether a disabled user can complete a task | Tools detect missing attributes, but not the quality or meaning of content.
+M2#design-u08-12-q2@2: A team's site scores 100 in an automated accessibility checker. What should it conclude? | Detectable failures were not found, but manual and user testing are still needed | The site is fully accessible and needs no more testing | The site meets WCAG 2.2 AAA | Automated tools are useless and the score means nothing | A perfect score shows only the absence of detectable failures.
+M3#design-u08-12-q3@3: Which testing plan is strongest for a new online banking app? | Automated checks, manual and screen reader testing, an audit and sessions with disabled customers | One automated scan just before launch | Asking developers whether they think it is accessible | A survey of non-disabled customers about the colour scheme | Combining methods finds far more barriers than any one alone.
+TF2#design-u08-12-q4@2: Testing with disabled people can reveal barriers that a WCAG audit misses. | true | Real use reveals usability barriers and needs that criteria-based audits may not capture.
+SA3#design-u08-12-q5@2,3: Plan accessibility testing for a university's course application system and evaluate each method. | Automated checks in development (fast, consistent, but find a minority of issues); manual keyboard, zoom and contrast checks (catch focus, reflow and logic issues); screen reader and voice control testing (check names, roles and announcements); expert WCAG 2.2 AA audit (systematic coverage); usability testing with disabled applicants (shows whether tasks can be completed; small samples, recruitment effort); publish an accessibility statement and feedback route. | Automated with limits ; Manual or assistive technology ; Expert audit ; User testing ; Evaluation and statement
 
 ## Cognitive accessibility
-LV: Advanced · Evaluation
-S: Cognitive and learning disabilities affect memory, attention, reading and problem solving. This lesson explains who is affected, the W3C's guidance on cognitive accessibility and design patterns that reduce cognitive load.
-O: Describe the range of cognitive and learning disabilities
-O: Explain key design objectives for cognitive accessibility
-O: Evaluate a service for cognitive barriers
-H: Who is affected
-P: **Cognitive accessibility** concerns people with differences in **memory**, **attention**, **language**, **reading**, **numeracy** and **problem solving**. This includes people with **learning disabilities**, **dyslexia**, **ADHD**, **autism**, **dementia**, **acquired brain injury** and some mental health conditions, as well as anyone who is tired, stressed or using a second language. Mencap estimates about **1.5 million** people in the UK have a learning disability, and the British Dyslexia Association estimates about **10%** of the population is dyslexic. WCAG covers only some cognitive needs, so the W3C published **Making Content Usable for People with Cognitive and Learning Disabilities** (2021) as supplementary guidance.
-H: Design objectives
-- Help users **understand** what things are and how to use them, with familiar patterns and clear labels.
-- Help users **find** what they need, with consistent navigation (**3.2.3 Consistent Navigation, AA**) and help in a consistent place (**3.2.6 Consistent Help, A**).
-- Use **clear content**: plain language, short sentences, one idea per paragraph and helpful images.
-- Help users **avoid mistakes** and recover from them.
-- Help users **focus**, avoiding distractions such as autoplaying media and pop-ups.
-- **Do not rely on memory**: avoid tasks that require recalling information or solving puzzles.
-H: Relevant WCAG 2.2 criteria
-- **3.3.8 Accessible Authentication (Minimum), AA**: no cognitive function test, such as remembering a password or solving a puzzle, unless there is an alternative or help such as allowing paste and password managers.
-- **3.3.7 Redundant Entry, A**: do not ask for the same information twice.
-- **2.2.1 Timing Adjustable, A**: let users turn off, adjust or extend time limits.
-- **2.2.2 Pause, Stop, Hide, A**: let users stop moving, blinking or auto-updating content.
-- **3.1.5 Reading Level, AAA**: provide simpler content when text needs more than lower secondary reading ability.
-X: Simplifying a benefits renewal.
-> A renewal letter uses dense paragraphs and asks users to log in with a code sent weeks earlier.
-> Users with memory difficulties lose the code, and many call the helpline.
-> The redesign uses plain language, numbered steps, a consistent help link and a one-time login link sent by email or text.
-> The service also saves progress so users can stop and return later.
-K: Cognitive accessibility supports people with differences in memory, attention, language and problem solving; designers should use familiar patterns, plain language, consistent navigation and help, error prevention, few distractions, adjustable timing and authentication that does not rely on memory.
-!: Assuming WCAG AA conformance covers cognitive needs fully. Many cognitive needs are addressed only in AAA criteria or in the W3C's supplementary COGA guidance.
-EV: established | The W3C published Making Content Usable for People with Cognitive and Learning Disabilities as a Working Group Note in 2021 to supplement WCAG.
-EV: contested | Experts disagree on how far cognitive accessibility can be captured in objectively testable success criteria.
-T: Cognitive accessibility | Designing so people with differences in memory, attention, language and problem solving can use content
-T: Cognitive load | The mental effort needed to use a product or understand content
-T: Cognitive function test | A task requiring users to remember, transcribe or solve something, such as a password or puzzle
-SUM: Cognitive needs are common.
-SUM: Plain, consistent, forgiving.
-SUM: Do not rely on memory.
+LV: Intermediate · Application
+S: Cognitive and learning disabilities affect memory, attention, language, reasoning and processing. This lesson explains the needs involved, W3C's guidance on making content usable for people with cognitive disabilities, and practical design patterns.
+O: Describe the range of cognitive and learning disabilities and their design implications
+O: Apply W3C cognitive accessibility design patterns
+O: Evaluate why cognitive accessibility is hard to capture in testable criteria
+H: Who and what
+P: **Cognitive and learning disabilities** include learning disabilities, dyslexia, dyscalculia, ADHD, autism, dementia, acquired brain injury and mental health conditions that affect concentration or memory. People may have difficulty with memory, attention, processing speed, reading, numbers, understanding abstract language or managing anxiety. Many people experience similar limits temporarily, such as when tired, stressed, ill or using a second language.
+H: Design patterns
+P: W3C's *Making Content Usable for People with Cognitive and Learning Disabilities* (2021) sets out objectives and patterns, including:
+- **Help users understand what things are and how to use them**: familiar design, clear labels and icons with text.
+- **Help users find what they need**: simple navigation, clear headings, search.
+- **Use clear and understandable content**: plain language, short sentences, common words, explain jargon.
+- **Help users avoid mistakes and know how to correct them**: clear instructions, forgiving inputs, undo.
+- **Help users focus**: minimise distractions, avoid unnecessary animation and pop-ups.
+- **Ensure processes do not rely on memory**: don't require remembering passwords, codes or earlier steps.
+- **Provide help and support**: consistent help, human contact options.
+- **Support adaptation and personalisation**: let users change text size, spacing and presentation.
+X: Making a GP appointment booking easier to understand.
+> Before: "Select your preferred modality for your consultation."
+> After: "How would you like to talk to the doctor? Phone call / Video call / In person."
+> Steps shown with a progress indicator; one question per page; the option to save and return later.
+> A clear "Get help" link in the same place on every page (supporting Consistent Help, WCAG 3.2.6).
+K: Plain language, predictable layouts, fewer demands on memory and clear recovery from mistakes help people with cognitive disabilities, and everyone else.
+!: Assuming simple means childish. Plain language is respectful and clear; people with cognitive disabilities are adults who deserve the same content explained well.
+H: Why it's hard
+P: Cognitive needs vary widely and can conflict (some people need more information, others less), and many patterns aren't easily testable pass-or-fail criteria. WCAG 2.2 added some relevant criteria (Consistent Help, Redundant Entry, Accessible Authentication), and W3C's supplementary guidance covers much more.
+EV: established | W3C publishes supplementary guidance on cognitive accessibility because many needs are not covered by WCAG success criteria (W3C, 2021).
+EV: contested | How to turn cognitive accessibility guidance into testable requirements without oversimplifying diverse needs is debated.
+T: Cognitive accessibility | Making content and interactions usable for people with cognitive and learning disabilities
+T: Plain language | Writing that the intended audience can understand the first time they read or hear it
+SUM: Cognitive disabilities affect memory, attention, language and processing; needs vary and can conflict.
+SUM: Plain language, clear navigation, focus, memory support, error recovery, help and personalisation help everyone.
 SRC: W3C, Making Content Usable for People with Cognitive and Learning Disabilities, W3C Working Group Note | guidance | 2021 | https://www.w3.org/TR/coga-usable/
-SRC: W3C, Understanding Success Criterion 3.3.8: Accessible Authentication (Minimum), W3C | guidance | 2023 | https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html
-SRC: Home Office Digital, Dos and don'ts on designing for accessibility, Accessibility in government blog | guidance | 2016 | https://accessibility.blog.gov.uk/2016/09/02/dos-and-donts-on-designing-for-accessibility/
-Q: What does WCAG 3.3.8 Accessible Authentication (Minimum) aim to prevent? | Login steps that depend on a cognitive function test, such as remembering a password or solving a puzzle, without an alternative.
-Q: What is the W3C's supplementary guidance on cognitive accessibility called? | Making Content Usable for People with Cognitive and Learning Disabilities.
-M1#design-u08-13-q1@1: Roughly what share of the UK population does the British Dyslexia Association estimate is dyslexic? | About 10% | About 1% | About 30% | About 50% | The British Dyslexia Association estimates around one in ten people are dyslexic.
-M2#design-u08-13-q2@2: A login page blocks pasting into the password field. Which WCAG 2.2 criterion is at risk? | 3.3.8 Accessible Authentication (Minimum) | 1.4.3 Contrast (Minimum) | 2.4.1 Bypass Blocks | 1.2.2 Captions (Prerecorded) | Blocking paste stops password managers and forces users to remember or transcribe passwords.
-TF2#design-u08-13-q3@1: Moving the help link to a different place on each page can create a cognitive barrier. | true | WCAG 2.2 criterion 3.2.6 Consistent Help asks for help to appear in the same relative place.
-M3#design-u08-13-q4@3: A booking form times out after three minutes with no warning. What is the best fix for cognitive accessibility? | Warn users and let them extend or turn off the limit | Shorten the time limit to keep users focused | Add a countdown in small text at the bottom | Ask users to restart if they time out | WCAG 2.2.1 Timing Adjustable requires time limits to be adjustable or extendable.
-SA2#design-u08-13-q5@2,3: Evaluate how a public service could reduce barriers for people with cognitive and learning disabilities. | The service should use plain language, short sentences and familiar patterns so users understand what to do, with navigation and help in consistent places. It should prevent errors, explain how to fix them and save progress, avoid distractions such as autoplay, and make time limits adjustable. Authentication should not rely on memory, for example by allowing paste or offering one-time links. Because WCAG AA covers only some cognitive needs, the team should follow the W3C's supplementary guidance and test with people with cognitive disabilities. | Plain and consistent ; Errors and timing ; Memory-free authentication ; Beyond AA and testing
+SRC: World Wide Web Consortium, Web Content Accessibility Guidelines (WCAG) 2.2, success criteria 3.2.6, 3.3.7 and 3.3.8 | standard | 2023 | https://www.w3.org/TR/WCAG22/
+Q: Name three cognitive accessibility design patterns. | Any three of: plain language, clear navigation, minimise distractions, don't rely on memory, help users avoid and correct mistakes, consistent help, personalisation.
+Q: Why is cognitive accessibility hard to put into testable criteria? | Needs vary widely and can conflict, and many good practices aren't simple pass-or-fail tests.
+M1#design-u08-13-q1@1: Which is a cognitive accessibility design pattern from W3C guidance? | Ensure processes do not rely on memory | Use as much jargon as possible | Add animations to every page | Hide help to keep pages clean | Reducing memory demands is a key W3C pattern.
+M2#design-u08-13-q2@2: Which rewrite is clearest for a council form? | When did you move into your home? | Please indicate the date of commencement of residency | Specify residency inception chronology | Input temporal data regarding domicile | Plain, common words make the question understandable at first reading.
+M3#design-u08-13-q3@3: Users with ADHD find a shopping site hard to use because of pop-ups and auto-playing videos. Which pattern addresses this? | Help users focus by minimising distractions | Use clear and understandable content | Support adaptation of text size | Provide a search box | Removing distractions supports attention; the others help other needs.
+MS2#design-u08-13-q4@2: Which design choices support cognitive accessibility? Choose all that apply. | A progress indicator in a long form ; A consistent "Get help" link ; Allowing users to save and return | A login that requires remembering a 16-character code ; Time limits with no option to extend | Progress, consistent help and saving reduce load; memory demands and strict timeouts create barriers.
+SA3#design-u08-13-q5@2,3: Evaluate a benefits application website for cognitive accessibility and recommend improvements. | Possible barriers: complex legal language, long pages with many questions, session timeouts, passwords and memorable words, inconsistent layout, unclear errors. Improvements: plain language with explanations, one question per page, progress indicator, save and return, extendable time limits, accessible authentication alternatives, consistent help with human contact, clear error recovery. Note: needs vary, so test with people with learning disabilities, dementia and others. | Identifies barriers ; Plain language ; Memory or time support ; Help and error recovery ; Testing with users
 
 ## Accessibility and UK law
 LV: Advanced · Evaluation
-S: Accessibility in the UK is shaped by equality law and specific regulations for public sector websites. This lesson explains the Equality Act 2010, the public sector accessibility regulations, accessibility statements and how UK designers are affected by the European Accessibility Act.
-O: Explain the Equality Act 2010 duty to make reasonable adjustments
-O: Describe the public sector accessibility regulations and their requirements
-O: Evaluate an organisation's legal and ethical position on accessibility
+S: In the UK, accessibility is required by equality law and, for public bodies, by specific regulations for websites and apps. This lesson explains the Equality Act 2010's duties, the public sector accessibility regulations, accessibility statements and enforcement, for study rather than legal advice.
+O: Describe the Equality Act 2010 duties relevant to accessible design
+O: Explain the Public Sector Bodies Accessibility Regulations 2018 and accessibility statements
+O: Evaluate how effective UK law is in improving digital accessibility
 H: The Equality Act 2010
-P: The **Equality Act 2010** applies in England, Scotland and Wales and protects people from discrimination on the basis of **protected characteristics**, including **disability**. Service providers, employers and education providers have a **duty to make reasonable adjustments** so that disabled people are not put at a substantial disadvantage. For service providers this duty is **anticipatory**: organisations must think ahead about barriers rather than wait for a complaint. This applies to websites, apps and digital services as well as buildings. In Northern Ireland, disability discrimination is covered by the **Disability Discrimination Act 1995**. This lesson is for learning, not legal advice.
-H: Public sector regulations
-- The **Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018** require public sector websites and apps to meet accessibility standards.
-- The regulations reference **WCAG 2.1 AA**; the UK government now monitors against **WCAG 2.2 AA**.
-- Organisations must publish an **accessibility statement** describing compliance, known issues, alternatives and how to report problems.
-- The **Government Digital Service** monitors compliance; enforcement is by the **Equality and Human Rights Commission** in Great Britain and the **Equality Commission for Northern Ireland**.
-- Some content, such as older office documents and live video, has exemptions, but a **disproportionate burden** claim must be justified.
-H: Beyond the UK and beyond the law
-- The **European Accessibility Act** applies from **28 June 2025** to certain products and services, such as e-commerce, banking and e-books, sold in the EU, including by UK businesses.
-- In the United States, the **Americans with Disabilities Act** has been the basis of many website accessibility lawsuits.
-- Legal compliance is a **minimum**; good practice is to go beyond it and test with disabled people.
-- Designers can raise accessibility early, document decisions and include acceptance criteria in tickets.
-X: A council website complaint.
-> A blind resident cannot complete a council's online parking permit form because a captcha has no alternative.
-> The council's accessibility statement does not mention the problem or any alternative route.
-> The resident complains; the council has failed to make an anticipatory reasonable adjustment and its statement is inaccurate.
-> The council replaces the captcha, adds a phone route and updates its accessibility statement.
-K: The Equality Act 2010 requires anticipatory reasonable adjustments, including for digital services; public sector bodies must meet WCAG-based accessibility regulations and publish accessibility statements, monitored by GDS and enforced by the equality commissions, and the European Accessibility Act affects UK businesses selling into the EU.
-!: Believing private companies have no accessibility duties in the UK. The Equality Act 2010 applies to all service providers, including their websites and apps.
-EV: established | The Equality Act 2010 places an anticipatory duty on service providers to make reasonable adjustments for disabled people.
-EV: established | The public sector accessibility regulations of 2018 require public sector websites and mobile apps to meet accessibility standards and publish an accessibility statement.
-T: Reasonable adjustment | A change an organisation must make so disabled people are not at a substantial disadvantage
-T: Anticipatory duty | A duty to plan for disabled people's needs in advance, not only after a request
-T: Disproportionate burden | An exemption claimed when meeting a requirement would be unreasonably costly, which must be assessed and justified
-SUM: Equality Act: reasonable adjustments.
-SUM: Public sector: WCAG AA and a statement.
-SUM: Law is the minimum.
-SRC: Equality Act 2010, c. 15, legislation.gov.uk | standard | 2010 | https://www.legislation.gov.uk/ukpga/2010/15/contents
-SRC: The Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018, SI 2018/952, legislation.gov.uk | standard | 2018 | https://www.legislation.gov.uk/uksi/2018/952/contents/made
-SRC: Government Digital Service, Understanding accessibility requirements for public sector bodies, gov.uk | guidance | 2024 | https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps
-Q: What duty does the Equality Act 2010 place on service providers regarding disabled people? | An anticipatory duty to make reasonable adjustments.
-Q: What must public sector bodies publish about their websites and apps? | An accessibility statement.
-M1#design-u08-14-q1@1: Which law requires UK service providers to make reasonable adjustments for disabled people? | The Equality Act 2010 | The Data Protection Act 2018 | The Consumer Rights Act 2015 | The Digital Economy Act 2017 | The Equality Act 2010 covers England, Scotland and Wales, including digital services.
-M2#design-u08-14-q2@2: Who enforces the public sector accessibility regulations in Great Britain? | The Equality and Human Rights Commission | The Information Commissioner's Office | The Competition and Markets Authority | Ofcom | GDS monitors compliance, and the EHRC enforces in Great Britain.
-TF2#design-u08-14-q3@3: The duty to make reasonable adjustments for service providers only applies after a disabled person complains. | false | For service providers the duty is anticipatory, so barriers should be addressed in advance.
-M3#design-u08-14-q4@3: A UK online retailer sells to customers in France and Germany. Which law may require it to meet accessibility requirements there? | The European Accessibility Act | The Americans with Disabilities Act | The UK public sector regulations | The UN CRPD alone | The European Accessibility Act applies from June 2025 to certain products and services sold in the EU.
-SA2#design-u08-14-q5@2,3: Explain the main UK legal requirements for digital accessibility and why designers should go beyond them. | The Equality Act 2010 requires service providers, including private companies, to make anticipatory reasonable adjustments so disabled people are not at a substantial disadvantage, which includes websites and apps. Public sector bodies must also meet the 2018 accessibility regulations, based on WCAG AA, and publish an accessibility statement, with GDS monitoring and the EHRC enforcing. UK firms selling into the EU may also be covered by the European Accessibility Act. Designers should go beyond legal minimums because conformance does not guarantee a good experience, so they should test with disabled people and build accessibility in from the start. | Equality Act duty ; Public sector regulations ; European Accessibility Act ; Beyond compliance
+P: The **Equality Act 2010** (applying in England, Scotland and Wales; Northern Ireland has its own disability discrimination legislation) protects disabled people from discrimination. Service providers, employers and educators have a **duty to make reasonable adjustments** (section 20) to avoid disabled people being put at a substantial disadvantage. For services to the public, the duty is **anticipatory**: providers must think in advance about what disabled people might need, not wait until someone complains. The duty includes providing information in accessible formats and removing or avoiding physical features that create barriers, where reasonable.
+H: Public sector websites and apps
+P: The **Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018** require most public sector websites and apps (councils, universities, NHS bodies, government departments) to meet accessibility requirements and publish an **accessibility statement**. The requirement is set by reference to the European standard EN 301 549, which incorporates WCAG AA; UK government guidance now tells public bodies to meet WCAG 2.2 AA, and the Government Digital Service monitors websites and can require fixes.
+- An accessibility statement explains how accessible the service is, lists known issues and why, and gives a way to report problems.
+- Some content is exempt, such as some archived content and some third-party content not under the body's control, but bodies must explain exemptions.
+- Enforcement: the Equality and Human Rights Commission in Great Britain and the Equality Commission for Northern Ireland.
+X: Applying the law (for study).
+> A council's parking permit website can't be used with a keyboard.
+> Under the 2018 Regulations, the council should fix it to meet WCAG AA, and in the meantime list the issue in its accessibility statement with an alternative way to apply.
+> Under the Equality Act, a disabled resident put at a substantial disadvantage could argue the council failed its anticipatory duty to make reasonable adjustments.
+K: The Equality Act applies broadly to service providers, including private companies; the 2018 Regulations add specific technical requirements and statements for public bodies.
+!: Thinking private companies have no legal duty. The 2018 Regulations apply to the public sector, but the Equality Act's reasonable adjustments duty applies to private service providers too. Businesses selling into the EU may also be affected by the European Accessibility Act, applying since June 2025.
+H: How effective is it?
+P: The law has raised awareness and the public sector monitoring regime has led to many fixes, but enforcement relies on monitoring capacity and individuals bringing claims, which is costly and slow, and the WebAIM Million data show widespread failures on private websites. This lesson describes the law for study only; real cases need legal advice.
+EV: established | The Equality Act 2010 imposes an anticipatory duty to make reasonable adjustments on service providers, and the 2018 Regulations require public sector websites and apps to meet accessibility requirements and publish statements.
+EV: contested | How effective UK enforcement is in improving private sector digital accessibility is debated, given reliance on individual claims.
+T: Reasonable adjustment | A change that removes or reduces a disadvantage faced by a disabled person, required where reasonable under the Equality Act 2010
+T: Accessibility statement | A public statement of how accessible a website or app is, known issues and how to report problems
+SUM: The Equality Act 2010 requires reasonable, anticipatory adjustments by service providers, including private ones.
+SUM: The 2018 Regulations require public sector sites and apps to meet WCAG AA and publish accessibility statements.
+SRC: Equality Act 2010, c. 15, section 20 and Schedule 2 | legislation | 2010 | https://www.legislation.gov.uk/ukpga/2010/15/contents
+SRC: The Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018, SI 2018/952 | legislation | 2018 | https://www.legislation.gov.uk/uksi/2018/952/contents/made
+SRC: Central Digital and Data Office and Government Digital Service, Understanding accessibility requirements for public sector bodies | guidance | 2024 | https://www.gov.uk/guidance/accessibility-requirements-for-public-sector-websites-and-apps
+Q: What does "anticipatory" mean in the Equality Act duty for services? | Providers must think in advance about what disabled people might need, not wait for a complaint.
+Q: What must an accessibility statement include? | How accessible the service is, known issues and reasons, and how to report problems.
+M1#design-u08-14-q1@1: Which UK law requires service providers to make reasonable adjustments for disabled people? | The Equality Act 2010 | The Data Protection Act 2018 | The Consumer Rights Act 2015 | The Companies Act 2006 | The Equality Act 2010 (section 20) sets out the duty to make reasonable adjustments.
+M2#design-u08-14-q2@2: A university's website has known accessibility issues it cannot fix immediately. What should it do under the 2018 Regulations? | List the issues in its accessibility statement, explain why, and offer alternatives | Remove the accessibility statement until all issues are fixed | Do nothing, because universities are exempt | Block disabled users from the website | Statements must be honest about known issues and give ways to get help or report problems.
+M3#design-u08-14-q3@3: A private online retailer says accessibility law only applies to councils. What is the best response? | The 2018 Regulations target the public sector, but the Equality Act applies to private service providers too | It is correct, so the retailer has no duty at all | Only the European Accessibility Act applies in the UK | Accessibility law applies only to physical shops | The anticipatory reasonable adjustments duty applies to private businesses providing services to the public.
+TF2#design-u08-14-q4@2: The Public Sector Bodies Accessibility Regulations 2018 require an accessibility statement for covered websites and apps. | true | Covered bodies must publish an accessibility statement in a set format.
+SA3#design-u08-14-q5@1,3: Explain the UK legal framework for digital accessibility and evaluate its effectiveness (for study, not legal advice). | Equality Act 2010: anticipatory duty on service providers, employers and educators to make reasonable adjustments, applying to private and public bodies in Great Britain. 2018 Regulations: public sector websites and apps must meet WCAG AA (current guidance WCAG 2.2) and publish accessibility statements; GDS monitors; EHRC and ECNI enforce. Effectiveness: monitoring has driven public sector fixes, but private enforcement relies on costly individual claims and failures remain widespread; standards are a baseline. | Equality Act duty ; Anticipatory and private scope ; 2018 Regulations and statements ; Enforcement ; Evaluation
 `;
