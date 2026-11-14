@@ -39,7 +39,7 @@ These checks are mechanical. They find text that won't display as written (swall
 | sport | 9 | 6,506 | 64 | 0 | 0 | 0 | 0 |
 | teaching | 10 | 7,809 | 11 | 0 | 0 | 0 | 0 |
 | university | 8 | 5,370 | 7 | 0 | 0 | 0 | 0 |
-| veterinary | 7 | 5,420 | 16 | 0 | 0 | 0 | 0 |
+| veterinary | 8 | 6,231 | 21 | 0 | 0 | 0 | 0 |
 
 Allowed exceptions (correct in context):
 
