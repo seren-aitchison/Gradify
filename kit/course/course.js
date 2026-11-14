@@ -31,6 +31,7 @@ import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, 
 import { lessonTimer, addTime, MIN_LOG_MS, minutesPerLesson } from "./lesson-time.js";
 import { hydrate as glassIcons } from "../core/glass-icons.js";
 import { mountRevalidation } from "./revalidation.js";
+import { tutorEvent } from "../intel/experiments.js";
 import { scoreFeedback } from "../assess/tutor.js";
 import { feedbackHtml, paras } from "../assess/tutor-view.js";
 import { mountTutorPanel, directorHtml, newConversation } from "./tutor-panel.js";
@@ -634,7 +635,11 @@ export function mountCourse(root, cfg) {
   }
 // ---------- the AI tutor (kit/assess/tutor.js → supabase/functions/course-tutor) and written practice ----------
   // One request to the course-tutor function (kit/data/functions.js turns every failure into a clear message)
+  // teaching experiments (kit/intel/experiments.js): the first use of each tutor mode on a lesson, per page view
+  const tutorLogged = new Set();
   async function askTutor(body) {
+    const lid = body.lesson?.id, k = `${body.mode}:${lid}`;
+    if (lid && body.mode && !tutorLogged.has(k)) { tutorLogged.add(k); ledger(tutorEvent({ site: cfg.site, subject: cfg.slug, lesson: lid, mode: body.mode })); }
     const out = await callFunction(await store(), "course-tutor", { subject: cfg.slug, ...body }, { fallback: "The tutor isn't available right now. You can still self-assess with the rubric." });
     // the tutor answered about a lab: challenges met in it from now on count as assisted
     if (body.lab && labLast) labHelped.add(labLast);

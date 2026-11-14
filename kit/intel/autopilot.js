@@ -8,6 +8,7 @@
 // learner's daily time, never outside their free hours) and records in an activity log with an undo.
 // Also here: the catch-up machine, the opportunity detector, task decomposition and floating focus blocks.
 // Pure functions; the browser applies them through kit/app/autopilot-views.js.
+import { forWindow } from "./order.js";
 import { DAY, SEC_PER_CARD, dayKey, minuteOf, hhmm } from "./memory.js";
 import { planDay, freeIntervals, windowsFor } from "./schedule.js";
 import { words } from "../learning/topic-match.js";
@@ -97,9 +98,9 @@ export function opportunities(m) {
   if (next) {
     const gap = next.start_min - nowMin;
     if (gap >= 10 && gap <= 120) {
-      const fit = []; let left = gap - 5;
-      for (const x of m.prio.items) if (x.mins <= left && fit.length < 3) { fit.push(x); left -= x.mins; }
-      if (fit.length) out.push({ id: "gap", tone: "blue", title: `${gap} minutes free before ${next.title}`, why: `${fit.length} short ${fit.length === 1 ? "task fits" : "tasks fit"}: ${fit.map((x) => x.title).join(", ")}.`, href: fit[0].href, cta: "Start the first" });
+      // the learning opportunity engine picks the best use of exactly this window (kit/intel/order.js)
+      const w = forWindow(m, gap - 5), fit = w.items;
+      if (fit.length) out.push({ id: "gap", tone: "blue", title: `${gap} minutes free before ${next.title}`, why: `${fit.map((x) => `${x.title} (${x.mins} min)`).join(", then ")}. ${w.note}`, href: fit[0].href, cta: "Start the first" });
     }
   }
   // a pack fully strong: time to move on

@@ -52,6 +52,15 @@ export function streakOf(days) {
 }
 
 // ---------- courses ----------
+// "u07/Integration" → "Integration"; a bare unit id stands for the unit's title
+function prereqsOf(cfg) {
+  const mods = cfg.concepts?.modules;
+  if (!mods) return [];
+  const name = (k) => { const [u, m] = String(k).split("/"); return m || cfg.units.find((x) => x.id === u)?.title || null; };
+  const out = [];
+  for (const [to, froms] of Object.entries(mods)) for (const f of froms) { const a = name(f), b = name(to); if (a && b && a !== b) out.push({ from: a, to: b }); }
+  return out;
+}
 /** A course's summary from its config (kit/courses/<slug>/course.js) and the learner's progress object. */
 export function courseSummary(cfg, S = {}, { now = Date.now(), profile = null } = {}) {
   const written = (u) => !cfg.written || cfg.written.includes(u.id);
@@ -85,6 +94,10 @@ export function courseSummary(cfg, S = {}, { now = Date.now(), profile = null } 
     done, remaining, lastAt, six: all, schools, revisit: revisit.length, dueCards, cards: Object.keys(S.cards || {}).length, pace, examDate, next: next && { id: next.id, title: next.title },
     weak: weak.map((t) => ({ lesson: t.lesson, title: titleOf(t.lesson), kind: t.kind, why: t.why, for: t.for ? titleOf(t.for) : null })),
     timeMins, minutesPerLesson: perLesson,
+    // for Gradify Intelligence: the course's explicit prerequisites between modules (kit/intel/graph.js), and the
+    // titles of lessons the learner has answered questions on (objective readiness, kit/intel/readiness.js)
+    answers: attempts.filter((a) => a.lesson).slice(-600).map((a) => ({ lesson: a.lesson, subject: a.subject, site: a.site, at: a.at, score: a.score, question: { objectives: a.question?.objectives || [] }, marking: { status: a.marking?.status || "final" } })),
+    prereqs: prereqsOf(cfg), titles: Object.fromEntries([...new Set(attempts.map((a) => a.lesson).filter(Boolean))].map((id) => [id, titleOf(id)])),
     started: Boolean(done || attempts.length || Object.keys(S.cards || {}).length || Object.keys(S.time || {}).length) };
 }
 

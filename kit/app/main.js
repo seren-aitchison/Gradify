@@ -38,6 +38,10 @@ import { record, answerEvent, forgotEvent, stageEvents } from "../intel/ledger.j
 import { learnerMemory } from "../intel/memory.js";
 import { boardHtml, wireBoard, DEFAULT_WIDGETS } from "./widgets.js";
 import { notifyPanelHtml, wireNotify, notifyAskHtml, wireNotifyAsk, startReminders } from "./notify-views.js";
+import { mountIntel3 } from "./intel3-views.js";
+import { orderCards } from "../intel/order.js";
+import { weightedGraph, usable } from "../intel/graph.js";
+import { dependencyGraph } from "../intel/debt.js";
 import { calendarPanelHtml, wireCalendar, intelStripHtml, nextHtml, upcomingHtml, rescheduleHtml, forecastWidget, askWidget, conceptPileWidget, wireIntel, applyMoves, renderIntelPage, renderKnowledgePage, renderRevisePage, askHtml, wireAsk, smartPlanHtml, wireSmartPlan, planWeek } from "./intel-views.js";
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -154,7 +158,7 @@ const routes = { today: renderToday, start: renderStart, new: renderNew, deck: r
 // is remembered for each section during the visit.
 const SECTION_TABS = {
   today: [["overview", "Overview", ".cp-welcome, .notify-ask, .ap-brief, .ap-catch, .i-resched, .i-next"], ["widgets", "Widgets", ".board"]],
-  intel: [["overview", "Overview", ".intel-strip"], ["evidence", "Concepts", ""], ["timeline", "Timeline", ""], ["learning", "How you study", ""], ["control", "Controls", ""], ["log", "Activity log", ""]],
+  intel: [["overview", "Overview", ".intel-strip"], ["readiness", "Readiness", ""], ["free", "Free time", ""], ["evidence", "Concepts", ""], ["cards", "Card coach", ""], ["learning", "How you study", ""], ["control", "Controls", ""], ["log", "Activity", ""]],
   plan: [["day", "Day", ".ap-catch, .i-resched, .i-dayplan"], ["tell", "Tell Gradify", ".ap-tell"], ["week", "Week", "h2.lo-h, .add-block, .week-list"], ["month", "Month", ".cal-top"], ["calendars", "Calendars", ".cal-sync"]],
   revise: [["queue", "Queue", ".seg-chips, .r-list, .revise-page > article.panel:not([data-pane])"], ["breakdown", "Break it down", ""], ["ease", "Ease off", ""]],
   knowledge: [["stages", "Stages", ".k-funnel, .k-grid, .knowledge-page > article.panel:not([data-pane])"], ["debt", "Knowledge debt", ""], ["courses", "Courses", ""]],
@@ -628,8 +632,19 @@ async function renderStudy(arg) {
     if (practice) queue = [...all].sort(() => Math.random() - 0.5);
   }
   const cap = Math.max(10, Math.round(((profile.daily_minutes || 20) * 60) / SEC_PER_CARD));
-  // reviews first, then new cards (a topic session keeps the engine's order)
-  if (!topicKey) queue.sort((a, b) => (a.reps ? 0 : 1) - (b.reps ? 0 : 1) || new Date(a.due_at) - new Date(b.due_at));
+  // Intelligence 3.0 card order (kit/intel/order.js): fading and important cards first, foundations before what
+  // builds on them, sure-but-wrong cards early, new cards capped, topics interleaved, fitted to the learner's minutes.
+  // Practice and topic sessions keep their own order.
+  let ordered = false;
+  if (!topicKey && !practice && queue.length > 1) {
+    try {
+      const reviews = await store.listReviews(400), concepts = learnerMemory({ cards: all, reviews, examDate: profile.exam_date || null });
+      const edges = usable(weightedGraph({ noteEdges: dependencyGraph(all), concepts }));
+      queue = orderCards(queue, { concepts, edges, reviews, examDate: profile.exam_date || null, minutes: profile.daily_minutes || 20 }).queue;
+      ordered = true;
+    } catch (e) { console.warn("Card ordering fell back to due date", e); }
+  }
+  if (!ordered && !topicKey) queue.sort((a, b) => (a.reps ? 0 : 1) - (b.reps ? 0 : 1) || new Date(a.due_at) - new Date(b.due_at));
   queue = queue.slice(0, cap);
   // the ledger: the session starts, and a snapshot of what the learner knew, to see what changed by the end
   const before = queue.length && !practice ? learnerMemory({ cards: all, reviews: await store.listReviews(400) }) : null;
@@ -650,7 +665,7 @@ async function renderStudy(arg) {
     const p = preview(c, srsOpts());
     const deep = c.kind === "why" || c.kind === "apply";
     view.innerHTML = `<section class="study-session">
-      <div class="sess-top"><a href="${topicKey ? `#/topic/${encodeURIComponent(topicKey)}` : deckId ? `#/deck/${deckId}` : "#/today"}" class="back">✕ End</a><span class="goal-bar"><i style="width:${(i / total) * 100}%"></i></span><span class="sub">${Math.min(i + 1, total)} / ${total}${practice ? " · practice" : ""}${topicName ? ` · ${esc(topicName)}` : ""}</span></div>
+      <div class="sess-top"><a href="${topicKey ? `#/topic/${encodeURIComponent(topicKey)}` : deckId ? `#/deck/${deckId}` : "#/today"}" class="back">✕ End</a><span class="goal-bar"><i style="width:${(i / total) * 100}%"></i></span><span class="sub">${Math.min(i + 1, total)} / ${total}${practice ? " · practice" : ""}${topicName ? ` · ${esc(topicName)}` : ""}${ordered ? ` · <span title="Fading and important cards first, foundations before what builds on them, topics mixed">ordered by Gradify</span>` : ""}</span></div>
       <article class="flash-card ${shown ? "shown" : ""}" aria-live="polite">
         <span class="fc-icon" data-g3d="${esc(`${c.topic || ""} ${c.front}`)}" data-g3d-size="58"></span>
         <span class="kicker">${deep ? `<b class="kind-tag ${c.kind}">${c.kind === "why" ? "Explain" : "Apply"}</b>` : ""}${esc(c.topic || "")}${c.reps ? "" : " · new"}</span>
@@ -1410,7 +1425,7 @@ async function renderAi(arg) {
 routes.ai = renderAi;
 
 // ---------- Intelligence, My Knowledge, Revision Centre (kit/app/intel-views.js) ----------
-routes.intel = async () => { const m = await model(); renderIntelPage(view, m, { toast, saveIntel, modes: modesHtml(m) }); view.querySelector(".intel-page .learned")?.insertAdjacentHTML("beforebegin", notifyPanelHtml(m)); wireAutopilot(view, m, apctx()); wireNotify(view, m, apctx()); };
+routes.intel = async () => { const m = await model(); renderIntelPage(view, m, { toast, saveIntel, modes: modesHtml(m) }); view.querySelector(".intel-page .learned")?.insertAdjacentHTML("beforebegin", notifyPanelHtml(m)); mountIntel3(view, m, apctx()); wireAutopilot(view, m, apctx()); wireNotify(view, m, apctx()); };
 routes.knowledge = async () => { const m = await model({ autoMove: false }); renderKnowledgePage(view, m, { courses: m.L?.courses || [] }); };
 routes.revise = async (arg) => { const m = await model({ autoMove: false }); renderRevisePage(view, m, arg); view.querySelector(".revise-page .seg-chips")?.insertAdjacentHTML("beforebegin", decomposeHtml()); wireDecompose(view, m, apctx()); };
 
