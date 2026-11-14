@@ -396,7 +396,7 @@
    "page": "/vetgradify/course/",
    "units": 12,
    "lessons": 209,
-   "lessonsWritten": 106,
+   "lessonsWritten": 124,
    "syllabus": "/kit/api/v1/courses/veterinary.json"
   }
  ]
