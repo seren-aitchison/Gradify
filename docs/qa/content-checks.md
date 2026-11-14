@@ -6,7 +6,7 @@ These checks are mechanical. They find text that won't display as written (swall
 
 | Course | Notes files | Lines | NUM questions | Hard failures | Arithmetic to check | NUM explanations to check | Source links |
 |---|---|---|---|---|---|---|---|
-| art | 8 | 4,992 | 12 | 0 | 0 | 0 | 0 |
+| art | 9 | 5,679 | 14 | 0 | 0 | 0 | 0 |
 | biology | 2 | 1,725 | 11 | 0 | 0 | 1 | 0 |
 | business | 11 | 7,796 | 54 | 0 | 0 | 0 | 0 |
 | careers | 8 | 4,470 | 7 | 0 | 0 | 0 | 0 |
