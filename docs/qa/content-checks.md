@@ -6,14 +6,14 @@ These checks are mechanical. They find text that won't display as written (swall
 
 | Course | Notes files | Lines | NUM questions | Hard failures | Arithmetic to check | NUM explanations to check | Source links |
 |---|---|---|---|---|---|---|---|
-| art | 8 | 5,033 | 14 | 0 | 0 | 0 | 0 |
+| art | 8 | 4,992 | 12 | 0 | 0 | 0 | 0 |
 | biology | 2 | 1,725 | 11 | 0 | 0 | 1 | 0 |
 | business | 11 | 7,796 | 54 | 0 | 0 | 0 | 0 |
-| careers | 8 | 4,534 | 9 | 0 | 0 | 0 | 0 |
+| careers | 8 | 4,470 | 7 | 0 | 0 | 0 | 0 |
 | chemistry | 2 | 1,548 | 30 | 0 | 0 | 4 | 0 |
-| computing | 5 | 3,096 | 0 | 0 | 0 | 0 | 0 |
-| dentistry | 8 | 5,627 | 26 | 0 | 0 | 0 | 0 |
-| design | 9 | 5,112 | 18 | 0 | 0 | 0 | 0 |
+| computing | 6 | 3,709 | 0 | 0 | 0 | 0 | 0 |
+| dentistry | 8 | 5,422 | 18 | 0 | 0 | 0 | 0 |
+| design | 9 | 5,028 | 16 | 0 | 0 | 0 | 0 |
 | ecology | 11 | 8,565 | 48 | 0 | 0 | 0 | 0 |
 | engineering | 11 | 7,490 | 160 | 0 | 0 | 0 | 0 |
 | finance | 12 | 8,647 | 126 | 0 | 0 | 0 | 0 |
@@ -21,6 +21,7 @@ These checks are mechanical. They find text that won't display as written (swall
 | health | 11 | 7,620 | 22 | 0 | 0 | 0 | 0 |
 | history | 18 | 11,526 | 0 | 0 | 0 | 0 | 0 |
 | investing | 7 | 4,260 | 97 | 0 | 0 | 0 | 0 |
+| japanese | 1 | 597 | 0 | 0 | 0 | 0 | 0 |
 | law | 19 | 15,104 | 0 | 0 | 0 | 0 | 0 |
 | literature | 10 | 6,965 | 3 | 0 | 0 | 0 | 0 |
 | maths | 29 | 37,481 | 1023 | 0 | 0 | 42 | 8 |
@@ -29,7 +30,7 @@ These checks are mechanical. They find text that won't display as written (swall
 | nursing | 17 | 19,066 | 0 | 0 | 0 | 0 | 1 |
 | pharmacy | 17 | 7,790 | 21 | 0 | 0 | 0 | 0 |
 | physics | 54 | 31,082 | 0 | 0 | 0 | 0 | 0 |
-| primary | 6 | 2,945 | 0 | 0 | 0 | 0 | 0 |
+| primary | 7 | 3,602 | 0 | 0 | 0 | 0 | 0 |
 | professional | 9 | 6,401 | 16 | 0 | 0 | 0 | 0 |
 | psychology | 16 | 15,002 | 51 | 0 | 0 | 4 | 0 |
 | research | 4 | 2,843 | 9 | 0 | 0 | 0 | 0 |

@@ -72,7 +72,7 @@
    "page": "/techgradify/course/",
    "units": 12,
    "lessons": 179,
-   "lessonsWritten": 80,
+   "lessonsWritten": 96,
    "syllabus": "/kit/api/v1/courses/computing.json"
   },
   {
@@ -184,6 +184,18 @@
    "syllabus": "/kit/api/v1/courses/investing.json"
   },
   {
+   "slug": "japanese",
+   "name": "Japanese",
+   "site": "LanguageGradify",
+   "status": "beta",
+   "accent": "#dd7d6b",
+   "page": "/languagegradify/japanese/",
+   "units": 12,
+   "lessons": 182,
+   "lessonsWritten": 15,
+   "syllabus": "/kit/api/v1/courses/japanese.json"
+  },
+  {
    "slug": "law",
    "name": "Law",
    "site": "LawGradify",
@@ -288,7 +300,7 @@
    "page": "/juniorgradify/course/",
    "units": 12,
    "lessons": 167,
-   "lessonsWritten": 80,
+   "lessonsWritten": 98,
    "syllabus": "/kit/api/v1/courses/primary.json"
   },
   {

@@ -85,8 +85,8 @@ O: Explain what an overflow error is and identify when one occurs
 O: Evaluate the consequences of overflow in real systems
 H: The rules of binary addition
 E: 0 + 0 = 0 ; 0 + 1 = 1 :: no carry
-E: 1 + 1 = 10 :: write 0, carry 1
-E: 1 + 1 + 1 = 11 :: write 1, carry 1
+E: in binary, 1 + 1 = 10 :: write 0, carry 1
+E: in binary, 1 + 1 + 1 = 11 :: write 1, carry 1
 P: Add from the rightmost column to the left, writing the result digit and carrying into the next column, exactly as in denary.
 X: Add 01101101 (109) and 00111011 (59).
 > Column by column from the right: 1 + 1 = 0 carry 1; 0 + 1 + 1 = 0 carry 1; 1 + 0 + 1 = 0 carry 1; 1 + 1 + 1 = 1 carry 1.

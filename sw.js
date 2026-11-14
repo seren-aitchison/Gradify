@@ -1,6 +1,6 @@
 // Gradify service worker: lets the site open offline.
 // Network first, so a new deploy shows straight away; the cache is the fallback.
-const CACHE = "gradify-v79";
+const CACHE = "gradify-v80";
 const SHELL = [
   "./", "index.html", "app.html", "manifest.webmanifest", "gradify.config.js",
   // homepage
@@ -45,6 +45,7 @@ const SHELL = [
   "kit/courses/careers/course.js", "kit/courses/careers/syllabus.js", "kit/courses/careers/ids.js", "kit/courses/careers/qa.js", "kit/courses/careers/interactives.js", "kit/courses/careers/evidence.js", "kit/courses/careers/registry.js",
   "kit/courses/computing/course.js", "kit/courses/computing/syllabus.js", "kit/courses/computing/ids.js", "kit/courses/computing/qa.js", "kit/courses/computing/interactives.js", "kit/courses/computing/evidence.js", "kit/courses/computing/registry.js",
   "kit/courses/spanish/course.js", "kit/courses/spanish/syllabus.js", "kit/courses/spanish/ids.js", "kit/courses/spanish/qa.js", "kit/courses/spanish/interactives.js", "kit/courses/spanish/evidence.js", "kit/courses/spanish/registry.js",
+  "kit/courses/japanese/course.js", "kit/courses/japanese/syllabus.js", "kit/courses/japanese/ids.js", "kit/courses/japanese/qa.js", "kit/courses/japanese/interactives.js", "kit/courses/japanese/evidence.js", "kit/courses/japanese/registry.js",
   // the shared interactive engine and each course's lab lists and evidence maps (each lab itself is cached when first opened)
   "kit/course/review.js", "kit/course/reviews.js", "kit/course/ix-manifest.js", "kit/courses/biology/evidence.js", "kit/courses/chemistry/evidence.js", "kit/courses/physics/evidence.js", "kit/courses/psychology/evidence.js", "kit/courses/sociology/evidence.js", "kit/courses/maths/evidence.js", "kit/courses/maths/interactives.js", "kit/interactive/scenario.js", "kit/interactive/trainers.js", "kit/interactive/pharmcalc.js", "kit/interactive/mathgen.js", "kit/interactive/grapher.js", "kit/interactive/mathexpr.js", "kit/interactive/stepcheck.js", "kit/interactive/reasoning.js", "kit/interactive/clinsim.js", "kit/interactive/news2.js",
 ];
