@@ -37,7 +37,7 @@ These checks are mechanical. They find text that won't display as written (swall
 | sociology | 18 | 16,845 | 112 | 0 | 0 | 8 | 0 |
 | spanish | 8 | 4,542 | 1 | 0 | 0 | 0 | 0 |
 | sport | 10 | 7,177 | 72 | 0 | 0 | 0 | 0 |
-| teaching | 10 | 7,809 | 11 | 0 | 0 | 0 | 0 |
+| teaching | 11 | 8,454 | 12 | 0 | 0 | 0 | 0 |
 | university | 8 | 5,370 | 7 | 0 | 0 | 0 | 0 |
 | veterinary | 8 | 6,231 | 21 | 0 | 0 | 0 | 0 |
 
