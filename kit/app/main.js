@@ -26,6 +26,7 @@ import { AREAS, METRICS, PERIODS, HABIT_MODES, validateGoal, goalProgress, focus
 import { goalData } from "../learning/goal-data.js";
 import { PRO_ON_SALE } from "../data/billing.js";
 import { cockpitHtml, wireCockpit, welcomeHtml } from "./cockpit.js";
+import { hydrate as glassIcons, cluster as glassCluster } from "../core/glass-icons.js";
 import { haptic, hapticsOn, setHaptics, hapticsSupported } from "../core/haptics.js";
 import { complete } from "../core/complete.js";
 import { offerInstall, countVisit } from "../core/install.js";
@@ -249,6 +250,9 @@ async function route() {
   try { await (routes[name] || renderToday)(arg); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
   decorate(view);
   tabify(name);
+  // 3D glass icons from the learner's subject set (kit/core/glass-icons.js), matched to each card, pack and lesson
+  glassIcons(view, profile.site || "Gradify").catch(() => {});
+  const ti = view.querySelector(".today-icons"); if (ti) glassCluster(ti, profile.site || "Gradify", { count: 3, size: 54, words: today() }).catch(() => {});
   // Google sign-in is offered only when the project has it switched on (see authProviders in kit/data/store.js)
   if (view.querySelector("#google, #save-google")) authProviders().then((p) => { if (!p.google) view.querySelectorAll("#google, #save-google").forEach((b) => { b.hidden = true; }); });
   view.focus({ preventScroll: true });
@@ -597,7 +601,7 @@ async function renderNotes() {
       const due = cs.filter((c) => isDue(c)).length;
       const s = siteOf(d.site);
       const m = masteryOf(d.id);
-      return `<a class="doc panel glass" href="#/deck/${d.id}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="icon">${icon(s.i)}</span><b>${esc(d.title)}</b>
+      return `<a class="doc panel glass" href="#/deck/${d.id}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="doc-g3d" data-g3d="${esc(d.title)}" data-g3d-size="52" data-g3d-site="${esc(d.site || profile.site || "Gradify")}" data-g3d-unique></span><b>${esc(d.title)}</b>
         <span class="sub">${cs.length} cards · ${due ? `${due} due` : "nothing due"} · ${fmtDate(d.created_at)}</span><span class="goal-bar" title="${Math.round(m * 100)}% mastery"><i style="width:${Math.round(m * 100)}%"></i></span></a>`;
     }).join("")}</div>` : `<div class="empty-state panel glass">${icon("upload")}<h3>No notes yet</h3><p class="sub">Add your first set of notes and Gradify will make flashcards from them.</p><a class="btn btn-primary lg" href="#/new"><span>Add notes</span></a></div>`}
   </section>`;
@@ -648,6 +652,7 @@ async function renderStudy(arg) {
     view.innerHTML = `<section class="study-session">
       <div class="sess-top"><a href="${topicKey ? `#/topic/${encodeURIComponent(topicKey)}` : deckId ? `#/deck/${deckId}` : "#/today"}" class="back">✕ End</a><span class="goal-bar"><i style="width:${(i / total) * 100}%"></i></span><span class="sub">${Math.min(i + 1, total)} / ${total}${practice ? " · practice" : ""}${topicName ? ` · ${esc(topicName)}` : ""}</span></div>
       <article class="flash-card ${shown ? "shown" : ""}" aria-live="polite">
+        <span class="fc-icon" data-g3d="${esc(`${c.topic || ""} ${c.front}`)}" data-g3d-size="58"></span>
         <span class="kicker">${deep ? `<b class="kind-tag ${c.kind}">${c.kind === "why" ? "Explain" : "Apply"}</b>` : ""}${esc(c.topic || "")}${c.reps ? "" : " · new"}</span>
         <p class="fc-front">${esc(c.front)}</p>
         ${deep && !shown ? `<label class="fc-write"><span>${c.kind === "why" ? "Explain it in your own words" : "Work it out"} <em>optional, just for you</em></span><textarea id="attempt" rows="3" placeholder="${c.kind === "why" ? "Because…" : "It would…, because…"}">${esc(attempt)}</textarea></label>` : ""}
@@ -660,6 +665,7 @@ async function renderStudy(arg) {
             <button type="button" class="sure-skip" id="reveal">Just show me <kbd>Space</kbd></button>
           </div>`}
     </section>`;
+    glassIcons(view, profile.site || "Gradify").catch(() => {});
   };
   const rate = async (r) => {
     haptic(r === "again" ? "warn" : r === "easy" ? "success" : "select");
@@ -804,7 +810,7 @@ async function renderToday() {
     <div class="today-head"><div><span class="kicker lo-kicker">${icon("home")}Command Centre · ${fmtDate(Date.now(), { weekday: "long", day: "numeric", month: "long" })}</span>
       <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""} <span class="wave" aria-hidden="true">👋</span></h1>
       <p class="sub lo-hello">${s.cards.length ? `${n0(s.cards.length)} flashcards across ${n0(s.docs.length)} study ${s.docs.length === 1 ? "pack" : "packs"}${streakDays ? ` · ${streakDays}-day streak` : ""}.` : "Nice to have you here."}</p></div>
-      <a class="cp-pill dark today-cta" href="${esc(M.prio.items[0]?.href || "#/new")}" data-haptic="success">${M.prio.items[0] ? `Start · ${M.prio.items[0].mins} min` : "Add notes"}</a></div>
+      <span class="today-icons g3d-cluster" aria-hidden="true"></span><a class="cp-pill dark today-cta" href="${esc(M.prio.items[0]?.href || "#/new")}" data-haptic="success">${M.prio.items[0] ? `Start · ${M.prio.items[0].mins} min` : "Add notes"}</a></div>
     ${!s.cards.length && !courses.length ? welcomeHtml(profile.display_name) : ""}
     ${notifyAskHtml(M)}
     ${briefingHtml(M, { made: M.made || [] })}

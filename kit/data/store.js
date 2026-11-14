@@ -26,6 +26,8 @@ export function authProviders({ fetch: f = globalThis.fetch } = {}) {
 
 // ---------- This device ----------
 const KEY = "gradify.v1";
+// Card columns carry FSRS state (docs/FSRS.md): interval_days = stability, ease = 10 + difficulty, updated_at = last
+// review. Read them only through kit/learning/srs.js (memoryOf, recallNow).
 const EMPTY = () => ({ profile: { xp: 0, daily_minutes: 20, level: "undergraduate" }, documents: [], packs: [], cards: [], reviews: [], activity: [], blocks: [] });
 
 export class LocalStore {

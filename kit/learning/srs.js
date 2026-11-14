@@ -44,17 +44,25 @@ export function recallNow(card, now = Date.now()) {
   return retrievability((now - m.last) / DAY, m.S);
 }
 
-// the new memory state after an answer
+// the new memory state after an answer: FSRS-5 exactly as the reference implementation (ts-fsrs 4.7, short-term
+// scheduling on) computes it, checked by tests/srs-reference.test.mjs. Elapsed time is whole calendar days (UTC),
+// stability updates use the difficulty from before the answer, and a lapse can't leave stability above
+// S / e^(w17·w18).
+export const calendarDays = (from, to) => Math.floor((Date.UTC(new Date(to).getUTCFullYear(), new Date(to).getUTCMonth(), new Date(to).getUTCDate()) - Date.UTC(new Date(from).getUTCFullYear(), new Date(from).getUTCMonth(), new Date(from).getUTCDate())) / DAY);
+export function nextState(memory, t, g) {
+  if (!memory) return { S: Math.max(initS(g), 0.1), D: initD(g) };
+  const { S, D } = memory, R = retrievability(t, S);
+  const D2 = clampD(W[7] * initD(4) + (1 - W[7]) * (D + (-W[6] * (g - 3) * (10 - D)) / 9));
+  const forget = Math.min(36500, Math.max(0.01, W[11] * Math.pow(D, -W[12]) * (Math.pow(S + 1, W[13]) - 1) * Math.exp(W[14] * (1 - R))));
+  let S2;
+  if (t === 0) S2 = S * Math.exp(W[17] * (g - 3 + W[18]));            // a second look the same day
+  else if (g === 1) S2 = Math.min(forget, S / Math.exp(W[17] * W[18]));
+  else S2 = S * (1 + Math.exp(W[8]) * (11 - D) * Math.pow(S, -W[9]) * (Math.exp(W[10] * (1 - R)) - 1) * (g === 2 ? W[15] : 1) * (g === 4 ? W[16] : 1));
+  return { S: Math.min(36500, Math.max(0.01, S2)), D: D2 };
+}
 function next(card, g, now) {
   const m = memoryOf(card);
-  if (!m) return { S: initS(g), D: initD(g) };
-  const t = (now - m.last) / DAY, R = retrievability(t, m.S);
-  const D = clampD(W[7] * initD(4) + (1 - W[7]) * (m.D + (-W[6] * (g - 3) * (10 - m.D)) / 9));
-  let S;
-  if (t < 1) S = m.S * Math.exp(W[17] * (g - 3 + W[18]));            // a second look the same day
-  else if (g === 1) S = Math.min(m.S, W[11] * Math.pow(D, -W[12]) * (Math.pow(m.S + 1, W[13]) - 1) * Math.exp(W[14] * (1 - R)));
-  else S = m.S * (Math.exp(W[8]) * (11 - D) * Math.pow(m.S, -W[9]) * (Math.exp(W[10] * (1 - R)) - 1) * (g === 2 ? W[15] : 1) * (g === 4 ? W[16] : 1) + 1);
-  return { S: Math.max(0.01, S), D };
+  return nextState(m ? { S: m.S, D: m.D } : null, m ? Math.max(0, calendarDays(m.last, now)) : 0, g);
 }
 
 /**

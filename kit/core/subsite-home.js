@@ -7,6 +7,7 @@ import { ink } from "./colour.js";
 import { modelOf } from "../models/index.js";
 import { applyPrefs } from "../data/profile.js";
 import { trackView } from "./analytics.js";
+import { hydrate as glassIcons, cluster as glassCluster } from "./glass-icons.js";
 applyPrefs();
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
@@ -33,12 +34,14 @@ export function renderHome(el, siteName) {
   statusNotice(site);
 
   el.innerHTML = [
+    // the subject's 3D icon set, floating (kit/core/glass-icons.js)
+    `<section class="sm-iconbar" aria-hidden="true"><div class="g3d-cluster sm-cluster"></div></section>`,
     section("how", fill(k.stepsTitle), "", `<ol class="sm-steps">${k.steps.map(([t, d], i) => `<li class="glass"><em>${i + 1}</em><b>${fill(t)}</b><p>${fill(d)}</p></li>`).join("")}</ol>`),
 
     // sites with a 3D model get a section for it
     model ? `<section class="sm-sec sm-3d glass"><div><span class="sm-kicker">New · 3D model</span><h2>${esc(model.title)}</h2><p>${esc(model.blurb)}</p><div class="sub-ctas"><a class="btn btn-light lg" href="3d.html"><span>Open ${esc(model.nav)}</span> <span aria-hidden="true">→</span></a></div></div><a class="sm-3d-art" href="3d.html" aria-label="Open the 3D model" style="background-image:url(../kit/models/previews/${model.file.replace(".js", ".webp")})"><span></span></a></section>` : "",
 
-    section("topics", fill(k.topicsTitle), fill(k.topicsSub), `<div class="sm-topics">${c.topics.map(([t, d]) => `<a class="sm-topic glass" href="app.html"><i></i><b>${esc(t)}</b><span>${esc(d)}</span><span class="go" aria-hidden="true">→</span></a>`).join("")}</div>`),
+    section("topics", fill(k.topicsTitle), fill(k.topicsSub), `<div class="sm-topics">${c.topics.map(([t, d]) => `<a class="sm-topic glass" href="app.html"><span class="sm-tico" data-g3d="${esc(`${t} ${d}`)}" data-g3d-size="54" data-g3d-unique></span><b>${esc(t)}</b><span>${esc(d)}</span><span class="go" aria-hidden="true">→</span></a>`).join("")}</div>`),
 
     section("features", fillName(k.featuresTitle), "", `<div class="sm-features">${k.features.map(([i, t, d]) => `<article class="sm-feature glass"><span class="sm-ico">${icon(i)}</span><b>${fill(t)}</b><p>${fill(d)}</p></article>`).join("")}</div>`),
 
@@ -57,6 +60,8 @@ export function renderHome(el, siteName) {
 
     `<section class="sm-cta glass"><h2>${fill(k.ctaTitle)}</h2><p>${fill(k.ctaSub)}</p><div class="sub-ctas"><a class="btn btn-light lg" href="app.html"><span>Start free</span> <span aria-hidden="true">→</span></a><a class="btn btn-ghost lg" href="/"><span>Explore Gradify</span></a></div></section>`,
   ].join("");
+  glassIcons(el, site.n).catch(() => {});
+  glassCluster(el.querySelector(".sm-cluster"), site.n, { count: 10, size: 72 }).catch(() => {});
   el.style.setProperty("--accent", accent);
   el.style.setProperty("--accent-ink", ink(site.c));
 }
