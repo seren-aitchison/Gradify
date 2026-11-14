@@ -3,6 +3,7 @@
 // "reviewed" only if `by` says so; it can never complete "sources" or "signoff". Sign-off needs a qualified teacher
 // and initial teacher education tutor.
 export const QA = {
+  u08: { standard: 2, reviewed: null, sources: null, signoff: null },
   u07: { standard: 2, reviewed: null, sources: null, signoff: null },
   u06: { standard: 2, reviewed: null, sources: null, signoff: null },
   u01: { standard: 2, reviewed: null, sources: null, signoff: null },
@@ -16,4 +17,4 @@ export const QA = {
   u10: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from health u05
 };
 // the date each school's notes were first written
-export const WRITTEN_ON = { u10: "2026-11-12", u05: "2026-11-12", u11: "2026-11-12", u12: "2026-11-12", u01: "2026-11-08", u02: "2026-11-12", u03: "2026-11-12", u04: "2026-11-12", u06: "2026-11-13", u07: "2026-11-14" };
+export const WRITTEN_ON = { u10: "2026-11-12", u05: "2026-11-12", u11: "2026-11-12", u12: "2026-11-12", u01: "2026-11-08", u02: "2026-11-12", u03: "2026-11-12", u04: "2026-11-12", u06: "2026-11-13", u07: "2026-11-14", u08: "2026-11-14" };
