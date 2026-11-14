@@ -8,7 +8,7 @@ These checks are mechanical. They find text that won't display as written (swall
 |---|---|---|---|---|---|---|---|
 | art | 8 | 5,033 | 14 | 0 | 0 | 0 | 0 |
 | biology | 2 | 1,725 | 11 | 0 | 0 | 1 | 0 |
-| business | 10 | 7,007 | 50 | 0 | 0 | 0 | 0 |
+| business | 11 | 7,796 | 54 | 0 | 0 | 0 | 0 |
 | careers | 7 | 3,871 | 8 | 0 | 0 | 0 | 0 |
 | chemistry | 2 | 1,548 | 30 | 0 | 0 | 4 | 0 |
 | computing | 5 | 3,096 | 0 | 0 | 0 | 0 | 0 |
