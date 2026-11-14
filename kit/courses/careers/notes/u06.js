@@ -2,677 +2,613 @@
 export default `
 ## How application forms work
 LV: Introductory · Foundation
-S: Many UK graduate schemes, apprenticeships and public-sector jobs ask for an online application form instead of, or as well as, a CV. This lesson explains how forms are structured, how they are screened and scored, and how to plan your answers before you start typing.
-O: Describe the typical sections of a UK online application form
-O: Explain how application forms are screened and scored
-O: Plan and draft form answers efficiently and accurately
-H: Why employers use forms
-P: An **application form** asks every candidate the same questions in the same order. This makes it easier for recruiters to compare people fairly against the **person specification** and the **selection criteria**, and it reduces the influence of polished CV design. Large graduate recruiters, the NHS, the Civil Service, local councils, schools and most apprenticeship providers rely on forms. A form usually sits inside an **applicant tracking system** that stores your answers, applies **eligibility filters** such as right to work or minimum grades, and passes successful candidates to the next stage, which is often online tests or a video interview.
-H: Typical sections
-- **Personal details** and **eligibility**: contact details, right to work in the UK, sometimes location preferences.
-- **Education**: qualifications, grades and predicted grades, often entered module by module.
-- **Employment and experience**: jobs, placements and volunteering, with dates and duties.
-- **Competency, strengths or motivational questions**, often with a word or character limit.
-- **Equal opportunities monitoring**: optional diversity questions that are kept separate from selection.
-- **Declarations**: confirming your answers are true; false statements can lead to an offer being withdrawn.
-H: How forms are screened
-- **Knockout questions** reject candidates automatically if they do not meet essential criteria.
-- Written answers are often scored by trained assessors against a **marking guide** with set indicators.
-- Some employers anonymise forms, hiding names and universities, to reduce bias.
-- Many graduate schemes recruit on a **rolling basis**, so places can fill before the published deadline.
-- Spelling, grammar and answering the actual question all affect scores.
-X: Planning a graduate scheme form.
-> Amira opens a form for a retail management scheme and finds four questions with 250-word limits.
-> She copies the questions into a document and maps each to an example from her evidence bank.
-> She drafts and spellchecks offline, then pastes in her answers, checking the character counts.
-> She submits three weeks before the deadline because the scheme recruits on a rolling basis.
-K: Application forms ask everyone the same questions so recruiters can screen and score candidates fairly against set criteria, so plan answers offline, match each to the criteria, respect word limits and apply early.
-!: Typing answers straight into the online form. Draft offline first so you can edit, spellcheck and keep a copy for later interviews.
-EV: established | Structured application forms allow candidates to be compared on the same criteria, supporting fairer selection than unstructured documents.
-T: Application form | A standard set of questions every candidate for a role must answer
-T: Knockout question | A screening question that automatically rejects candidates who do not meet an essential criterion
-T: Rolling recruitment | Assessing applications as they arrive, so places may fill before the deadline
-SUM: Forms make comparison fair.
-SUM: Expect knockouts and marking guides.
-SUM: Draft offline and apply early.
+S: Most large graduate employers, the public sector and the NHS use online application forms rather than CVs. This lesson explains the typical stages of an online application, how forms are screened and how to manage several applications well.
+O: Describe the stages and sections of a typical online application form
+O: Plan and manage several online applications for a scenario
+O: Evaluate why employers use standardised forms instead of CVs
+PRE: Turning experience into evidence
+H: Why forms, and what's in them
+P: An **application form** asks every candidate the same questions in the same format. Employers use forms because they make comparison fairer and easier: each answer can be scored against the same criteria, and missing information is obvious. Forms are standard in graduate schemes, the civil service, the NHS, teaching, local government and many charities.
+- **Eligibility and screening**: right to work, degree subject and grade, location preferences; some are knockout questions.
+- **Education and employment history**: entered into fields, sometimes with a CV upload as well.
+- **Competency, strengths or motivation questions**: often with word or character limits (such as 250 words).
+- **Online tests**: psychometric tests or game-based assessments, sometimes immediately after the form.
+- **Equal opportunities monitoring**: collected separately from assessment and used only for monitoring.
+H: Typical selection process
+P: A large graduate scheme commonly runs: online form, then online tests, then a video interview (often pre-recorded), then an assessment centre or final interview, then an offer. Each stage filters candidates. Many employers recruit on a **rolling basis**, assessing applications as they arrive, so applying early can matter more than the advertised deadline.
+H: Managing applications
+P: Quality usually beats quantity: five well-researched, tailored applications often achieve more than twenty rushed ones. Draft answers in a document first (forms can time out), check word counts, save copies of every answer for interview preparation, and keep a tracker with employers, roles, deadlines, stages and outcomes.
+X: Maya plans to apply to three graduate schemes with deadlines in November, but one says it recruits on a rolling basis.
+> She applies to the rolling scheme first, in early October, after researching it thoroughly.
+> She drafts answers in a document, tailoring each, and saves copies.
+> Her tracker shows each stage: form submitted, tests due within five days, video interview pending.
+> Conclusion: early, organised and tailored applications give her the best chance, especially with rolling recruitment.
+K: Online application forms standardise information so answers can be scored fairly; expect screening questions, history, competency and motivation questions and tests, apply early when recruitment is rolling, and manage applications with drafts and a tracker.
+!: Leaving applications until the deadline. With rolling recruitment, places may already be filled; and rushed answers are easy to spot.
+EV: established | Most large UK graduate employers use online application forms followed by online assessments, video interviews and assessment centres, according to ISE surveys.
+EV: contested | Standardised forms improve consistency, but long forms can deter applicants with less time, such as those working or caring, and may favour candidates with more coaching.
+T: Application form | A standardised set of questions every candidate answers, allowing consistent comparison and scoring
+T: Rolling recruitment | Assessing applications as they arrive and making offers until places are filled, sometimes before the stated deadline
+SUM: Forms standardise information so answers can be scored consistently; typical sections include eligibility, history, questions, tests and monitoring.
+SUM: Graduate processes usually move from form to tests to video interview to assessment centre; apply early for rolling recruitment and manage applications carefully.
+SRC: Institute of Student Employers, Student Recruitment Survey | data | 2024
 SRC: Prospects (Jisc), "Application forms" | guidance | 2024
-SRC: Institute of Student Employers, Student Recruitment Survey | data | 2023
-SRC: National Careers Service, Application forms | guidance | 2024 | https://nationalcareers.service.gov.uk/careers-advice/job-applications
-Q: Why might you apply well before a graduate scheme deadline? | Many schemes recruit on a rolling basis and may close when places are filled.
-Q: What is the purpose of equal opportunities monitoring questions? | To monitor the diversity of applicants; they are kept separate from selection decisions.
-M1#careers-u06-01-q1@1: What is a knockout question on an application form? | A question that automatically rejects anyone failing an essential criterion | A question scored by an assessor using a detailed marking guide | An optional question that can raise your score if you answer it | A final question that asks which other employers you have applied to | Knockout questions screen out candidates who do not meet essential requirements such as right to work.
-M2#careers-u06-01-q2@2: Why do many employers prefer application forms to CVs for graduate schemes? | Every candidate answers the same questions, so comparison is fairer | Forms let candidates show off their creative design and layout skills | Forms remove the need for any later interviews or online tests | Forms are always shorter and quicker for candidates to complete | Standard questions let assessors score everyone against the same criteria with less bias from presentation.
-M3#careers-u06-01-q3@3: A student plans to submit a form on the deadline day for a popular rolling scheme. What is the best advice? | Apply earlier, as places may already have been filled | Wait for the deadline, as late applications look more considered | Submit an unfinished form now and edit it after the deadline | Ignore the deadline, as employers accept forms all year round | With rolling recruitment, strong candidates who apply late can miss out because places are already offered.
-TF2#careers-u06-01-q4@2: Equal opportunities monitoring answers are normally used by assessors to score your application. | false | Monitoring data are optional and kept separate from selection so that they can be used to check fairness, not to score candidates.
-SA2#careers-u06-01-q5@2,3: Explain how an application form is typically screened and how a candidate should prepare for this. | Forms are usually held in an applicant tracking system that applies knockout questions on essentials such as right to work and minimum grades. Written answers are then scored by trained assessors against a marking guide with indicators linked to the selection criteria, sometimes with names hidden. A candidate should read the person specification, map each question to a strong example, draft and proofread answers offline within the word limits, and submit early because many schemes recruit on a rolling basis. | Knockout or eligibility screening ; Scoring against criteria or marking guide ; Drafting offline and proofreading ; Applying early for rolling schemes
+Q: Why do employers use application forms instead of CVs? | Every candidate answers the same questions, making comparison and scoring fairer and easier.
+Q: What is rolling recruitment? | Assessing applications as they arrive and filling places until none remain, sometimes before the deadline.
+M1#careers-u06-01-q1@1: What usually happens to equal opportunities monitoring information on an application form? | It is kept separate from assessment and used for monitoring | It is scored as part of the candidate's application | It is passed to interviewers to help them choose | It is published on the employer's website by name | Monitoring data is separated from selection and used to check that processes are fair.
+M2#careers-u06-01-q2@2: An employer recruits on a rolling basis with a deadline of 30 November. When should a student apply? | As early as possible once she has prepared a strong application | On 30 November, so that her application is the most recent | In December, after the deadline, to show extra persistence | Only after hearing whether her other applications succeed | With rolling recruitment, places fill as applications arrive, so a strong early application is best.
+TF1#careers-u06-01-q3@1: Online application forms can time out, so drafting answers in a separate document is sensible. | true | Drafting offline prevents lost work and makes checking word counts and spelling easier.
+M3#careers-u06-01-q4@3: Which is the strongest reason employers prefer forms for large graduate schemes? | Consistent questions allow fair, criteria-based scoring across many applicants | Forms let employers avoid reading any details about candidates at all | Forms guarantee the best candidates always apply to the employer | Forms are required by law for all employers with over 50 staff | Standardised answers can be scored consistently against criteria, which improves fairness and efficiency.
+SA3#careers-u06-01-q5@2,3: Evaluate the use of online application forms in graduate recruitment. | Advantages: standardised questions allow consistent, criteria-based scoring; easier comparison; screening questions check eligibility; monitoring data is separated; forms link to online tests. Disadvantages: long forms are time-consuming, possibly deterring candidates with jobs or caring responsibilities; answers can be coached; knockout questions may exclude good candidates; and they reveal less personality than a CV and letter. Overall they support fairness and efficiency for high-volume recruitment if kept proportionate. | Explains standardisation and scoring ; Mentions screening or efficiency ; Identifies time burden or access issues ; Notes coaching or knockout limitations ; Reaches a balanced judgement
 
 ## Competency-based questions
 LV: Intermediate · Application
-S: Competency-based questions ask you to describe a time you showed a particular skill or behaviour. This lesson explains why employers use them, how to recognise the competency being tested and how answers are scored.
-O: Explain the principle behind competency-based questions
-O: Identify the competency behind common question wordings
-O: Select and adapt evidence that meets the scoring indicators
-H: The principle: past behaviour predicts future behaviour
-P: A **competency** is an observable set of behaviours, knowledge and skills linked to good performance, such as teamwork, problem solving or communication. **Competency-based questions** follow the idea that how you behaved in a real situation is a better guide to future performance than what you say you would do. This idea underpins the **behaviour description interview**, studied by Janz in the 1980s. Employers build a **competency framework** for a role, write questions for each competency, and give assessors **positive and negative indicators** to look for. Competency questions appear on forms, in video interviews and in face-to-face interviews.
-H: Recognising the competency
-- "Tell us about a time you worked with others to achieve a goal" tests **teamwork**.
-- "Describe a time you had to change your plans at short notice" tests **adaptability** or **resilience**.
-- "Give an example of when you persuaded someone" tests **influencing** or **communication**.
-- "Describe a time you solved a difficult problem" tests **problem solving** or **analysis**.
-- The job advert and person specification usually list the competencies in advance.
+S: Competency-based questions ask for a specific example of when you showed a skill or behaviour. This lesson explains what competencies are, why employers use past behaviour to predict future performance, and how answers are scored.
+O: Define competencies and explain the logic of competency-based questions
+O: Identify the competency being assessed and plan a suitable example
+O: Evaluate the strengths and limitations of competency-based selection
+PRE: How application forms work
+H: Competencies and past behaviour
+P: A **competency** is an observable behaviour or skill linked to effective performance, such as teamwork, problem solving, communication, leadership, resilience or planning and organising. Employers create a **competency framework** for a role, describing what good performance looks like for each one, often with positive and negative indicators.
+P: **Competency-based questions** rest on the idea that **past behaviour predicts future behaviour**. They usually begin "Tell me about a time when...", "Describe a situation where..." or "Give an example of...". Because they ask for real examples, they are harder to answer with hypothetical claims.
 H: How answers are scored
-- Assessors look for **specific** examples, not general claims or hypothetical plans.
-- **Positive indicators** might include "listens to others' views" or "checks the facts before deciding".
-- **Negative indicators** might include "blames others" or "acts without consulting".
-- The answer must show **your** actions; "we" answers make it hard to credit you.
-- Results and learning add evidence of impact and self-awareness.
-X: Matching an example to a competency.
-> The question: "Describe a time you had to meet a tight deadline while managing competing priorities."
-> The competency is planning and organising, or delivering at pace.
-> A weak choice is a time the whole group worked late; a strong choice is a week when you planned revision around extra shifts.
-> The strong example shows your own prioritising, a plan and a measurable outcome.
-K: Competency-based questions test whether you have shown a key behaviour before, so identify the competency, choose a specific example of your own actions and match it to the positive indicators.
-!: Answering with what you would do. Competency questions ask for a real past example; hypothetical answers score poorly.
-EV: established | Structured, behaviour-based interview questions predict job performance better than unstructured interviews.
-EV: contested | How much competency questions add beyond ability tests, and whether candidates can rehearse answers too easily, is debated.
-T: Competency | Observable behaviours, knowledge and skills linked to effective performance
-T: Competency framework | The set of competencies an employer uses to define and assess good performance
-T: Positive indicator | A behaviour assessors look for as evidence of a competency
-SUM: Past behaviour is the evidence.
-SUM: Decode the competency first.
-SUM: Score against the indicators.
-SRC: Janz T., "Initial comparisons of patterned behavior description interviews versus unstructured interviews", Journal of Applied Psychology, 67(5), 577–580 | primary | 1982
-SRC: Schmidt F. L. and Hunter J. E., "The validity and utility of selection methods in personnel psychology", Psychological Bulletin, 124(2), 262–274 | primary | 1998
+P: Assessors compare your answer against **behavioural indicators**. For "working with others", positive indicators might be "seeks others' views", "shares information", "resolves disagreements constructively"; negative ones might be "takes over without consulting" or "blames others". Answers are often scored on a scale (for example 1 to 4). Answers that describe your own actions in a specific situation, show several positive indicators and end with a clear result score highly.
+- **Read the question carefully**: some ask for a challenge, a failure or a time you changed your approach.
+- **Choose a substantial example**: where your actions made a difference.
+- **Show the indicators**: if you can guess them (often from the employer's values or framework), make sure your actions show them.
+X: The question is: "Describe a time when you had to work with someone whose approach was different from yours."
+> Competency: working with others, especially handling differences constructively.
+> Example: in a group project, one member wanted to start writing immediately while Aisha wanted to plan first.
+> Her actions: she asked him why, recognised his concern about time, proposed a one-hour planning session with a writing schedule, and agreed he would draft the introduction while she organised research.
+> Result: the group submitted early and gained 72%; they used the approach in later projects.
+> Indicators shown: seeks others' views, compromises, shares tasks, focuses on the team goal.
+> Conclusion: a specific example showing positive indicators scores well.
+K: Competencies are observable behaviours linked to performance; competency questions ask for real past examples, which assessors score against positive and negative behavioural indicators.
+!: Answering with what you would do or usually do. Competency questions ask for one specific past situation; hypothetical answers score poorly.
+EV: established | Structured interviews and questions based on past behaviour predict job performance better than unstructured interviews, according to meta-analyses of selection methods.
+EV: contested | Competency-based questions can favour candidates with more varied experiences or coaching, which is one reason some employers moved to strengths-based or situational approaches.
+T: Competency | An observable behaviour or skill linked to effective performance in a role
+T: Behavioural indicator | A description of positive or negative behaviour used to score evidence for a competency
+SUM: Competency questions ask for specific past examples, on the principle that past behaviour predicts future behaviour.
+SUM: Assessors score answers against positive and negative behavioural indicators; choose substantial examples that show positive indicators through your own actions.
+SRC: Schmidt F. L. and Hunter J. E., "The validity and utility of selection methods in personnel psychology: practical and theoretical implications of 85 years of research findings", Psychological Bulletin 124(2), 262–274 | primary | 1998
 SRC: Prospects (Jisc), "Competency-based interviews" | guidance | 2024
-Q: What principle underlies competency-based questions? | Past behaviour in real situations is a good predictor of future behaviour.
-Q: What are negative indicators? | Behaviours an assessor treats as evidence against a competency, such as blaming others.
-M1#careers-u06-02-q1@1: Which competency does "Give an example of when you persuaded someone to change their mind" mainly test? | Influencing and communication | Planning and time management | Numerical analysis and accuracy | Technical knowledge of the sector | Persuading someone is a classic test of influencing, a form of communication competency.
-M2#careers-u06-02-q2@2: Why might "We organised a charity event and it went well" score poorly? | It hides the candidate's own actions behind the group | It is too specific about one real past event | It describes an event that was outside of paid work | It gives far too much detail about the final result | Assessors need to see your personal actions; collective "we" answers make it hard to credit the candidate.
-M3#careers-u06-02-q3@3: A question asks about adapting to change. Which example is strongest? | Rewriting a project plan within a day after a client changed the brief | Describing a team that generally liked to try out new things | Saying that you always enjoy change and stay calm under pressure | Explaining how you would respond if your plans were changed | It is a specific past event showing your own adaptive actions, unlike general claims or hypothetical plans.
-MATCH2#careers-u06-02-q4@2: Match each question to the competency it mainly tests. | Time you worked with others towards a goal = Teamwork ; Time you changed plans at short notice = Adaptability ; Time you solved a difficult problem = Problem solving ; Time you met competing deadlines = Planning and organising | Decoding the competency lets you choose the most relevant example from your evidence bank.
-SA2#careers-u06-02-q5@2,3: Explain why employers use competency-based questions and how a candidate can maximise their score. | Employers use them because evidence of how someone behaved in real situations predicts future performance better than hypothetical claims, and structured questions let assessors score everyone against the same framework. To score well, the candidate should identify the competency behind the wording, using the person specification, and choose a specific, recent example of their own actions. They should show behaviours that match the positive indicators, avoid negative ones such as blaming others, use "I" not "we", and include results and learning. | Past behaviour predicts future ; Structured and fair scoring ; Identify the competency ; Specific personal example with indicators and results
+Q: What principle underlies competency-based questions? | Past behaviour predicts future behaviour.
+Q: What is a behavioural indicator? | A description of positive or negative behaviour used to score evidence of a competency.
+M1#careers-u06-02-q1@1: How do competency-based questions typically begin? | "Tell me about a time when..." | "What would you do if..." | "What is your greatest strength?" | "Where do you see yourself in five years?" | Competency questions ask for real past examples; "What would you do if" is a situational question.
+M2#careers-u06-02-q2@2: Which answer opening fits a competency question about meeting a tight deadline? | In my final year, I had two reports due on the same day after a group member dropped out... | I always manage my time well and I never miss any of my deadlines at all... | If I had a tight deadline, I would make a plan and prioritise my tasks... | Deadlines are very important in business, so managing them is essential... | Competency answers describe a specific past situation; the others are claims, hypotheticals or general statements.
+TF1#careers-u06-02-q3@1: Assessors often score competency answers against positive and negative behavioural indicators. | true | Indicators describe effective and ineffective behaviour, providing consistent scoring.
+M3#careers-u06-02-q4@3: Which is the strongest criticism of competency-based selection? | It can favour candidates with richer experience or coaching, not just ability | It has no evidence of predicting job performance in any research study | It asks candidates hypothetical questions that they can't prepare for | It ignores the behaviours that are needed to do the job well | Competency questions predict performance reasonably well, but candidates with more opportunities and coaching can produce stronger examples.
+SA3#careers-u06-02-q5@2,3: Explain how a student should prepare for competency-based questions on an application form. | Identify the competencies the employer assesses from the advert, framework and values. Build an evidence bank of specific examples from study, work, volunteering and societies, two per competency. For each, note the situation, own actions, reasoning and measurable result. Guess the positive indicators and ensure the examples show them. Read each question carefully (challenge, failure, change), choose the most substantial example, use STAR, and keep within the word limit. | Identifies competencies from employer materials ; Builds an evidence bank ; Focuses on own actions and results ; Considers behavioural indicators ; Reads questions carefully and uses a structure
 
 ## The STAR method
 LV: Intermediate · Application
-S: STAR (Situation, Task, Action, Result) is the most widely used structure for answering competency questions in UK applications and interviews. This lesson teaches each part in detail, how to balance them within word limits, and the STARR and CARL variations.
-O: Describe what belongs in each part of a STAR answer
-O: Write a balanced STAR answer within a word or time limit
-O: Evaluate and improve weak STAR answers
+S: STAR (Situation, Task, Action, Result) is the standard way to structure answers to competency questions. This lesson explains each part, how to balance them, and variations such as STARR, with worked examples within word limits.
+O: Describe each part of the STAR structure and how much space each deserves
+O: Write a STAR answer to a competency question within a word limit
+O: Evaluate the strengths and weaknesses of STAR answers
+PRE: Competency-based questions
 H: The four parts
-P: **Situation** sets the scene briefly: where you were, when, and the context, in one or two sentences. **Task** states your responsibility or the challenge you faced, making clear what you personally needed to achieve. **Action** explains step by step what **you** did, how you did it and **why** you chose that approach; this is where most of the marks are, so it should take around half to two thirds of the answer. **Result** gives the outcome, ideally with **numbers** or feedback, and links back to the competency. Many employers also welcome a **Reflection** (STARR), saying what you learned or would do differently. A related structure, **CARL** (Context, Action, Result, Learning), is common in some universities and the NHS.
-H: Making each part strong
-- **Situation**: one or two sentences only; avoid long backstories and unnecessary names.
-- **Task**: say what was at stake and what your role was, for example "As society treasurer I had to cut costs by 20%".
-- **Action**: use "I", strong verbs and the reasons for your choices; show the skill being tested.
-- **Result**: quantify where you can, such as time saved, money raised, grades or satisfaction scores.
-- **Reflection**: one sentence on what you learned and how you have used it since.
-H: Balancing within limits
-- For a 250-word answer, roughly 30 words Situation, 30 Task, 140 Action and 50 Result and Reflection works well.
-- In an interview, aim for about two minutes per answer.
-- Choose examples with a clear challenge; easy successes give you little to say in Action.
-- If the result was disappointing, show what you did to recover and what you learned.
-- Practise aloud so that the structure feels natural rather than scripted.
-X: Improving a weak answer.
-> Weak: "At my café job it was really busy and we had lots of complaints, so we all worked hard and it got better."
-> Situation and task: "In my Saturday café job, complaints about waiting times rose to around ten a week, and my manager asked me to find a fix."
-> Action: "I timed each stage of service for two weekends, found that the bottleneck was the till, and proposed a second order point at peak times, training two colleagues to run it."
-> Result and reflection: "Complaints fell to about two a week within a month; I learned to gather evidence before suggesting changes."
-K: A STAR answer briefly sets the Situation and Task, spends most of its words on your own Actions and reasons, and ends with a measurable Result and, ideally, a Reflection on what you learned.
-!: Spending most of the answer on the Situation. Keep the scene short and put your effort into Action, where the marks are.
-EV: established | Structuring evidence as situation, actions and outcomes is standard advice from UK careers services for competency questions.
-T: STAR | Situation, Task, Action, Result, a structure for describing a specific example
+- **Situation**: the context, briefly (where, when, what was happening). About 10 to 15% of the answer.
+- **Task**: your responsibility or the challenge you faced. About 10 to 15%.
+- **Action**: what you did, how and why, in several steps, using "I". About 50 to 60%: this is where the competency is shown.
+- **Result**: the outcome, ideally measurable, and its impact. About 15 to 20%.
+P: Many employers and universities add a second R for **Reflection** (STARR): what you learned and what you'd do differently, which shows self-awareness and development. CARL (Context, Action, Result, Learning) is a similar structure.
+H: Common errors
+P: The most common errors are spending too long on the situation, describing what "we" did, listing actions without explaining reasoning, and forgetting the result. Another is using a trivial example: STAR can make any story sound structured, but the example still needs substance. Within a 250-word limit, every sentence should earn its place.
+H: Worked word budget
+P: For a 250-word answer: Situation and Task together about 50 words, Action about 140 words, Result and Reflection about 60 words. Draft freely, then cut description and keep actions and results.
+X: Question: "Describe a time you solved a problem creatively" (250 words). Jamal's outline:
+> Situation (about 30 words): as treasurer of the university climbing club, membership renewals fell by 40% after a fee increase.
+> Task (about 20 words): find a way to restore membership without cutting the budget for equipment.
+> Action (about 140 words): surveyed 60 lapsed members, found cost and inflexible payment were the main barriers, researched other clubs, proposed a termly payment option and a "bring a friend" discount, negotiated with the students' union to process termly payments, and promoted the change through a short video.
+> Result (about 40 words): renewals recovered to 95% of the previous level within one term and new sign-ups rose 20%.
+> Reflection (about 20 words): asking members first, rather than guessing, was the key; he now starts problem solving with data.
+> Conclusion: the budget concentrates words on actions, which is where marks are earned.
+K: STAR structures an answer as Situation, Task, Action and Result, with most words on your own actions and reasoning and a clear, preferably measurable result; adding Reflection shows learning.
+!: Writing a long story about the situation and squeezing the actions into one line. Assessors mark the actions, so give them most of your words.
+EV: established | STAR is the structure recommended by most UK university careers services and many employers for answering competency questions.
+EV: contested | Some recruiters find STAR answers formulaic; structure helps clarity, but authentic detail and reasoning distinguish strong answers.
+T: STAR | A structure for describing an example: Situation, Task, Action, Result
 T: STARR | STAR with an added Reflection on what was learned
-T: CARL | Context, Action, Result, Learning, an alternative evidence structure
-SUM: Situation and Task are short.
-SUM: Action carries the marks.
-SUM: Quantify results and reflect.
+SUM: STAR is Situation, Task, Action and Result; spend about half or more of the answer on your actions and reasoning.
+SUM: Avoid long situations, "we" and missing results; within word limits budget words towards action; STARR adds reflection.
 SRC: Prospects (Jisc), "The STAR method" | guidance | 2024
-SRC: National Careers Service, Interview advice: the STAR method | guidance | 2024 | https://nationalcareers.service.gov.uk/careers-advice/interview-advice
-SRC: Janz T., "Initial comparisons of patterned behavior description interviews versus unstructured interviews", Journal of Applied Psychology, 67(5), 577–580 | primary | 1982
-Q: What does the extra R in STARR stand for? | Reflection, what you learned or would do differently.
-Q: Roughly how long should a spoken STAR answer be in an interview? | About two minutes.
-M1#careers-u06-03-q1@1: Which part of a STAR answer should explain why you chose your approach? | Action | Situation | Task | Result | The reasons behind your choices belong in Action, where assessors judge how you applied the skill.
-M2#careers-u06-03-q2@2: In a 250-word STAR answer, which split is most balanced? | About 30 Situation, 30 Task, 140 Action, 50 Result | About 120 Situation, 60 Task, 40 Action, 30 Result | About 60 Situation, 60 Task, 60 Action, 70 Result | About 20 Situation, 20 Task, 30 Action, 180 Result | Action should take roughly half to two thirds of the words, with brief scene-setting and a clear result.
-M3#careers-u06-03-q3@3: A candidate's result was that the event lost money. What should they do in the Result and Reflection? | State the outcome honestly, show recovery steps and what was learned | Leave the result out and finish the answer at the end of Action | Change the details so that the event appears to have made a profit | Blame the loss on other committee members who made poor choices | Honesty plus recovery and learning still shows resilience and self-awareness; invented or blaming answers fail.
-SEQ1#careers-u06-03-q4@1: Put the parts of a STARR answer in order. | Situation ; Task ; Action ; Result ; Reflection | STARR adds a closing reflection to the standard situation, task, action and result sequence.
-SA2#careers-u06-03-q5@2,3: Write guidance for a student on turning a weak, vague example into a strong STAR answer. | First choose a specific event with a clear challenge and identify the competency being tested. Give the Situation in one or two sentences and state the Task, including what was at stake and the student's own role. Spend most of the answer on Action, using "I", describing the steps taken and the reasons for them. Finish with a quantified Result, such as a fall in complaints or money raised, and a brief Reflection on what was learned, keeping within the word limit. | Specific example with a challenge ; Brief Situation and Task ; Detailed personal Action with reasons ; Quantified Result and Reflection
+SRC: National Careers Service, "Interview tips: the STAR method" | guidance | 2024
+Q: Which part of a STAR answer should usually be longest? | Action, around half or more of the answer.
+Q: What does the extra R in STARR stand for? | Reflection: what you learned and what you'd do differently.
+M1#careers-u06-03-q1@1: In STAR, what does the T stand for? | Task | Team | Time | Target | T is Task: your responsibility or the challenge you faced in the situation.
+M2#careers-u06-03-q2@2: A 250-word STAR answer spends 150 words describing the situation. What is the best improvement? | Cut the situation to about 30 words and expand the actions and reasoning | Add more background detail so the assessor fully understands the context | Remove the result so there is space for the long situation description | Change the example to one with an even more complicated situation | Assessors score actions, so situation should be brief and actions detailed.
+TF1#careers-u06-03-q3@1: In a STAR answer about a team project, you should mainly describe what you personally did. | true | Assessors score your behaviour, so explain your own actions and reasoning, using "I".
+M3#careers-u06-03-q4@3: Which result statement is strongest? | Sales rose 15% over the next term and the approach was adopted by two other stores | Everyone was happy with the outcome and the project went quite well overall | The project finished and we all learned a lot about working together | I think the result was positive, although I'm not completely sure | A measurable, specific result with wider impact is most convincing; the others are vague or uncertain.
+SA3#careers-u06-03-q5@2,3: Write a STAR plan for the question "Tell me about a time you showed leadership", and explain how you would allocate a 250-word limit. | Example: Situation (about 30 words): captain of a five-a-side team losing every match. Task (about 20 words): improve results and morale. Action (about 140 words): asked each player for views, reorganised positions around strengths, introduced a short weekly practice, gave individual encouragement, delegated kit and scheduling. Result (about 40 words): won four of the next six matches, and attendance rose. Reflection (about 20 words): involving people early built commitment. Allocation prioritises action, where the competency is shown. | Gives a relevant leadership example ; Covers all STAR parts ; Allocates most words to actions ; Includes a measurable result ; Explains the reasoning for the allocation
 
 ## Strengths-based questions
 LV: Intermediate · Application
-S: Strengths-based questions explore what you enjoy and do well naturally, rather than what you have done. This lesson explains how strengths-based recruitment works in the UK, typical question styles and how to answer authentically.
-O: Distinguish strengths-based from competency-based questions
-O: Recognise common strengths-based question formats
-O: Prepare authentic answers that show energy and fit
-H: What a strength is
-P: In strengths-based recruitment a **strength** is something you are good at **and** that energises you, so you do it often and improve with practice. Alex Linley and colleagues at the Centre of Applied Positive Psychology (now Cappfinity) developed this approach in the UK, and large employers including EY, Nestlé and parts of the Civil Service have adopted it. The idea is that people perform best and stay longer in roles that use their strengths. Rather than asking for a past example, a strengths question asks how you feel about tasks, what you enjoy and what comes naturally, so **authenticity**, **energy** and **speed of response** matter.
-H: Typical questions
-- "What do you enjoy doing most?" and "What do you find energising?"
-- "What tasks do you leave until last?" which can reveal **weaknesses** or **learned behaviours**.
-- "When are you at your best?" and "Describe a successful day."
-- Quickfire questions such as "Do you prefer starting or finishing tasks?"
-- Questions about how others would describe you.
+S: Strengths-based questions explore what you enjoy and do naturally, rather than what you've done. This lesson explains why employers use them, what they sound like and how to answer authentically.
+O: Describe strengths-based questions and why employers use them
+O: Answer strengths-based questions authentically with supporting examples
+O: Evaluate strengths-based assessment compared with competency-based assessment
+PRE: Strengths and how to use them
+H: What and why
+P: **Strengths-based questions** ask about energy, enjoyment and natural tendencies: "What do you enjoy doing most?", "When are you at your best?", "What do your friends come to you for?", "Do you prefer starting or finishing tasks?", "What did you learn recently that you enjoyed?". The idea, from positive psychology, is that people perform best and stay longer in roles that use their strengths.
+P: Employers also use them because they are harder to rehearse, they reduce the advantage of candidates with lots of experience or coaching, and they can widen access. In 2015 the professional services firm EY introduced a strengths-based approach and removed degree classification and UCAS points from its graduate entry requirements, with the assessment firm Cappfinity. Many large UK employers now combine strengths and competency questions.
 H: Answering well
-- Know your strengths in advance from self-reflection and tools you have used (School 2).
-- Answer honestly; assessors are trained to notice rehearsed or flat responses.
-- Show **enthusiasm** through tone and detail when you talk about what energises you.
-- Give a brief example to back up the strength, but you do not need a full STAR answer.
-- Link strengths to the role's tasks by researching what the job actually involves.
-X: Answering a strengths question.
-> The question: "What kind of tasks give you the most energy?"
-> A flat answer: "I like all kinds of tasks and I'm a hard worker."
-> A strong answer: "Untangling messy information. I volunteered to reorganise our society's membership spreadsheet and lost track of time because I enjoyed it."
-> It names a real strength, shows genuine energy and hints at fit with an analyst role.
-K: Strengths-based questions ask what you enjoy and do naturally well, so know your strengths, answer honestly and with energy, back them up briefly and link them to the role.
-!: Giving the answer you think the employer wants. Strengths questions reward authentic, energised answers; forced ones often sound flat.
-EV: established | Strengths-based recruitment has been adopted by several large UK employers since the early 2010s.
-EV: contested | Independent evidence that strengths-based interviews predict performance better than competency interviews is limited.
-T: Strength | Something you do well that also energises you
-T: Learned behaviour | Something you can do well but that drains rather than energises you
-T: Strengths-based recruitment | Selection focused on what candidates naturally enjoy and do well
-SUM: Strength equals skill plus energy.
-SUM: Expect quickfire and preference questions.
-SUM: Be authentic and link to the role.
-SRC: Linley P. A., Average to A+: Realising Strengths in Yourself and Others, CAPP Press | secondary | 2008
+- **Be honest**: there are no universally right answers; assessors look for strengths that match the role.
+- **Show energy**: interviewers watch for enthusiasm, natural detail and pace when you talk about genuine strengths.
+- **Give a brief example**: a short illustration makes a strength credible, but you don't need full STAR.
+- **Know the role**: research the strengths the role needs (for example, for an auditor: analytical, detail-focused, curious) and reflect on which you genuinely have.
+- **Answer quickly**: some interviews deliberately ask rapid questions to get instinctive responses.
+X: Question: "What kind of tasks give you the most energy?" for a client-facing consulting role.
+> Weak: "I like all kinds of tasks; I'm very flexible." (vague and evasive)
+> Strong: "Untangling messy problems with other people. In my last group project the data was a mess, and I loved sitting down with the team, sorting out what we actually knew and turning it into a clear story. I lose track of time when I'm doing that."
+> The strong answer shows a genuine strength (problem solving with others), energy and a brief example, which matches consulting.
+> Conclusion: authenticity plus a short example is more convincing than a rehearsed list.
+K: Strengths-based questions explore what energises you and what you do naturally; answer honestly, with energy and a brief example, having researched the strengths the role needs.
+!: Trying to guess and fake the "right" strengths. Assessors watch for energy and consistency, and a role that doesn't fit your strengths is unlikely to suit you anyway.
+EV: established | Strengths-based questions are widely used by large UK graduate employers, often alongside competency questions.
+EV: contested | Evidence that strengths-based interviews predict performance better than competency interviews is limited and largely from practitioners; claims of reduced bias and better retention need more independent research.
+T: Strengths-based question | A question exploring what a candidate enjoys, does naturally and is energised by
+T: Energy | In strengths-based assessment, visible enthusiasm and engagement when a candidate discusses an activity
+SUM: Strengths-based questions ask what you enjoy and do naturally, aiming to find people who'll thrive and reduce rehearsed answers.
+SUM: Answer honestly with energy and a brief example, knowing which strengths the role needs; evidence for their superiority is still limited.
+SRC: Linley A., Average to A+: Realising Strengths in Yourself and Others, CAPP Press | secondary | 2008
 SRC: Prospects (Jisc), "Strengths-based interviews" | guidance | 2024
-SRC: Civil Service, Success Profiles: Strengths dictionary | guidance | 2019 | https://www.gov.uk/government/publications/success-profiles
-Q: What two things make something a strength in strengths-based recruitment? | You do it well and it energises you.
-Q: Do strengths questions require a full STAR answer? | No; a brief supporting example is usually enough.
-M1#careers-u06-04-q1@1: Which is a typical strengths-based question? | What do you enjoy doing most in a working day? | Describe a time you resolved a disagreement in a team | What would you do if a customer shouted at you? | Calculate the percentage change in sales between years | Strengths questions explore enjoyment and natural talent rather than past events or hypothetical scenarios.
-M2#careers-u06-04-q2@2: What is the main difference between strengths and competency questions? | Strengths ask what energises you; competencies ask what you have done | Strengths are asked only on forms; competencies only at interviews | Strengths need a long STAR answer; competencies need short replies | Strengths questions test technical skills; competencies test values | Competency questions seek past evidence, while strengths questions explore enjoyment, energy and natural ability.
-M3#careers-u06-04-q3@3: A candidate is asked "What do you leave until last?" What is the best approach? | Answer honestly and say how you make sure such tasks still get done | Say there is nothing you ever leave until last, because you love all tasks | Name a task that is central to the role so that you appear very humble | Refuse to answer, because the question is designed to catch you out | An honest answer with a coping strategy shows self-awareness; claiming to love everything sounds rehearsed.
-TF2#careers-u06-04-q4@2: In strengths-based recruitment, a task you do well but find draining is described as a learned behaviour. | true | Learned behaviours are performed competently but sap energy, so they are not counted as true strengths.
-SA2#careers-u06-04-q5@2,3: A student has a strengths-based interview next week. Explain how they should prepare and answer. | They should first identify their strengths, things they do well that energise them, using reflection, feedback and any strengths tools, and research the tasks the role involves. In the interview they should answer honestly and quickly, letting genuine enthusiasm show, because assessors look for authenticity and energy. Each strength can be backed with a short real example rather than a full STAR answer. For questions about tasks they dislike, they should be honest and explain how they manage them, linking strengths to the role where possible. | Identify own strengths ; Research the role ; Authentic and energetic answers ; Brief examples and handling weaknesses
+Q: Give two examples of strengths-based questions. | Any two such as: What do you enjoy doing most? When are you at your best? What do friends come to you for? Do you prefer starting or finishing tasks?
+Q: Why do employers use strengths-based questions? | To find people who'll thrive in the role, reduce rehearsed answers and the advantage of coaching or experience, and widen access.
+M1#careers-u06-04-q1@1: Which is a strengths-based question? | When do you feel most energised at work? | Tell me about a time you led a team. | How would you value this company? | What is your degree classification? | Strengths questions explore energy and enjoyment; the others are competency, technical or factual questions.
+M2#careers-u06-04-q2@2: In a strengths-based interview, which response is most likely to score well? | An enthusiastic, natural answer with a short real example | A long STAR answer with a detailed situation and task | A rehearsed list of strengths taken from the job advert | A refusal to answer because the question is too personal | Assessors look for genuine energy and credible examples; full STAR isn't needed and rehearsed lists sound inauthentic.
+TF1#careers-u06-04-q3@2: In 2015 EY removed degree classification from its graduate entry requirements and introduced a strengths-based approach. | true | EY announced the change in 2015, working with the strengths assessment firm Cappfinity.
+M3#careers-u06-04-q4@3: Which is the most balanced evaluation of strengths-based assessment? | Promising for fit and access, but evidence of superior prediction is limited | Proven to be the most valid selection method available to any employer | Useless, because candidates can always fake enjoyment of any activity | Illegal, because it asks about candidates' personal feelings and lives | Strengths approaches may aid engagement and access, but independent evidence that they outperform other methods is limited.
+SA3#careers-u06-04-q5@2,3: Compare strengths-based and competency-based questions and explain how a candidate should prepare for each. | Competency questions ask for specific past examples of behaviours, scored against indicators, and reward substantial, well-structured STAR answers. Strengths questions ask what energises the candidate and what they do naturally, assessed partly on authenticity and energy, with brief examples. Prepare for competency questions with an evidence bank and STAR; for strengths questions, reflect honestly on what energises you, research the strengths the role needs, and prepare short examples. Many employers combine both. | Explains competency questions ; Explains strengths questions ; Describes competency preparation ; Describes strengths preparation ; Notes combination or differences in assessment
 
 ## Motivational questions
 LV: Intermediate · Application
-S: Motivational questions test why you want this role, this employer and this sector. This lesson explains what recruiters look for, how to research convincing answers and how to avoid generic responses.
-O: Explain why employers ask motivational questions
-O: Research specific evidence about an employer and role
-O: Write motivational answers that connect you, the role and the employer
-H: What recruiters are testing
-P: **Motivational questions** such as "Why do you want to work for us?" and "Why this role?" check that you understand what the job really involves, that you have chosen it deliberately and that you are likely to stay and perform well. Employers invest heavily in graduates and apprentices, so they look for **genuine interest**, **realistic understanding** and **fit** with their values. Recruiters often report that generic answers which could apply to any employer are among the commonest reasons for rejection. A strong answer connects three things: **you** (your interests, skills and experience), **the role** (what you will actually do) and **the organisation** (what makes it different).
-H: Researching specific evidence
-- Read the employer's own careers pages, annual report or impact report and recent news.
-- Note its **values**, clients, projects, training structure and recent achievements.
-- Use people: careers fairs, insight days, informational interviews and alumni (School 4).
-- Compare it with competitors so that you can say what makes it different.
-- Record where each point came from so that you can discuss it at interview.
-H: Writing the answer
-- Open with your main reason, then give two or three specific supporting points.
-- Link each point to your own experience: "Having volunteered in a food bank, I was drawn to your community partnerships."
-- Avoid salary, location or prestige as main reasons.
-- Avoid copying the employer's slogans back to them without explanation.
-- Show you understand the role's challenges as well as its attractions.
-X: Turning a generic answer into a specific one.
-> Generic: "You are a leading company with great training and I want to develop my skills."
-> Research: the firm runs a two-year rotation, recently won a contract to retrofit social housing and stresses sustainability.
-> Specific: "Your rotation would let me apply my building services modules across design and site work, and your social housing retrofit programme connects with my dissertation on fuel poverty."
-> The specific version could only be written about this employer.
-K: Motivational questions test genuine, informed interest, so research the employer and role in depth and connect specific points about them to your own interests and experience.
-!: Writing an answer that could be sent to any employer. Use details that only apply to this organisation and link each to yourself.
-EV: established | UK graduate recruiters commonly cite a lack of research and motivation as a reason for rejecting applications.
-T: Motivational question | A question that tests why you want a particular role, employer or sector
-T: Fit | How well your values, interests and skills match the role and organisation
-T: Generic answer | A response that could apply equally to any employer
-SUM: Show genuine, informed interest.
-SUM: Research beyond the homepage.
-SUM: Connect you, role and employer.
-SRC: Prospects (Jisc), "Interview questions: why do you want this job?" | guidance | 2024
-SRC: Institute of Student Employers, Student Recruitment Survey | data | 2023
-Q: What three things should a strong motivational answer connect? | You, the role and the organisation.
-Q: Name two reasons to avoid giving as your main motivation. | Salary and prestige, or location.
-M1#careers-u06-05-q1@1: What is the main purpose of the question "Why do you want to work for us?" | To test genuine, informed interest and fit with the employer | To find out how much salary you expect to be paid in the role | To check whether you have applied to any of its competitors | To test how quickly you can recall the firm's founding date | Motivational questions check that you have chosen the employer deliberately and understand what it offers.
-M2#careers-u06-05-q2@2: Which source gives the most distinctive evidence for a motivational answer? | A conversation with a recent graduate at an insight day | The employer's slogan on the homepage banner of its website | A general ranking of the most popular graduate employers | A list of all firms in the sector from a jobs board search | Personal conversations reveal details that are specific and that other applicants are unlikely to have.
-M3#careers-u06-05-q3@3: Which motivational answer is strongest? | Your rotation and fuel poverty projects match my dissertation and placement experience | You are a leading global company with excellent career progression for graduates | I want to work for you because the salary and the London location suit my plans | I have always wanted to work for a big famous company like yours since school | It links specific features of this employer to the candidate's own experience, so it could not be sent anywhere else.
-TF1#careers-u06-05-q4@2: Copying the employer's values statement word for word is enough to show strong motivation. | false | Repeating slogans shows little understanding; you need to explain how specific features connect to your own experience.
-SA2#careers-u06-05-q5@2,3: Explain how a candidate should research and write an answer to "Why do you want to join our graduate scheme?" | They should research beyond the homepage, using the careers site, annual or impact reports, recent news and conversations at fairs, insight days or with alumni, and compare the employer with competitors. The answer should open with the main reason and give two or three specific points, such as the training structure or a particular project. Each point should be linked to the candidate's own interests or experience. They should avoid generic praise, salary or prestige as main reasons, and show realistic understanding of the role. | Research from varied sources ; Specific distinctive points ; Linking to own experience ; Avoiding generic or salary-based reasons
+S: "Why do you want this job?" and "Why us?" appear on almost every application. This lesson shows how to structure motivational answers around the sector, the role and the organisation, and how to make them specific and credible.
+O: Identify the three levels of motivation an employer assesses
+O: Write a motivational answer that is specific, personal and evidenced
+O: Evaluate why motivational answers are a common reason for rejection
+PRE: Showing motivation and fit
+H: What employers ask
+P: Motivational questions include "Why have you applied for this role?", "Why do you want to work for us?", "Why this sector?", "What do you know about us?" and "What attracts you to this scheme?". Employers want evidence that you understand what the job involves, have chosen it deliberately and are likely to accept, stay and succeed. ISE surveys suggest a lack of motivation and understanding of the role is a frequent reason employers reject applicants.
+H: A three-level structure
+- **Sector**: why this field? What sparked and sustained your interest, with evidence (modules, experience, reading, events).
+- **Role**: why this kind of work? Show you understand the day-to-day tasks and how they suit your strengths.
+- **Organisation**: why them? Specific features (projects, clients, training, culture in practice, values, recent news), ideally from conversations or events.
+P: Finish by linking to the future: what you'd contribute and how the role fits your goals. Use your research but don't just list facts; explain why each matters to you.
+H: Making it credible
+P: Credible answers mention **first-hand evidence** (a conversation with an employee, an insight day, a placement) and show that you've thought about the realities, including the less glamorous parts of the job. Avoid salary, location or prestige as the main reasons, although they can be honest secondary considerations.
+X: Question: "Why do you want to join our trainee solicitor programme?" (300 words). Hannah's plan:
+> Sector: her interest in law grew from an employment law module and volunteering at a citizens advice service, helping clients with workplace problems.
+> Role: she enjoys analysing documents, explaining complex rules simply and working with clients, all central to a trainee's work; a vacation scheme confirmed she enjoys the detail.
+> Organisation: the firm's employment team acts for both employers and unions, which a partner described at a law fair; its pro bono partnership with a local law centre fits her advice experience; its SQE training contract includes a seat in employment.
+> Future: she wants to qualify into employment law and contribute to the pro bono work.
+> Conclusion: three levels, specific evidence and a forward link make the answer convincing.
+K: Motivational answers should explain why the sector, why the role and why the organisation, with specific, first-hand evidence and a link to what you'd contribute.
+!: Writing an answer that could be sent to any employer. If it doesn't mention specific features of this organisation and role, it won't convince.
+EV: established | Weak motivation and limited understanding of the role are commonly reported reasons for rejecting graduate applicants.
+EV: hypothetical | Mentioning first-hand contact, such as a conversation at an event, probably strengthens motivational answers because it is hard to fake, though systematic evidence is limited.
+T: Motivational question | A question assessing why a candidate wants the role, sector and organisation
+T: First-hand evidence | Information gained directly, such as from conversations, events or experience, rather than from websites alone
+SUM: Motivational questions test whether you understand and genuinely want the role and are likely to accept and stay.
+SUM: Structure answers by sector, role and organisation, with specific first-hand evidence, and link to your future contribution.
+SRC: Institute of Student Employers, Student Recruitment Survey | data | 2024
+SRC: Prospects (Jisc), "Application forms" | guidance | 2024
+Q: What three levels should a motivational answer cover? | Why the sector, why the role, and why the organisation.
+Q: Why does first-hand evidence strengthen a motivational answer? | It shows genuine engagement that is hard to fake and gives specific detail.
+M1#careers-u06-05-q1@1: Which question is a motivational question? | Why do you want to work for us? | Describe a time you led a team. | What is 15% of 240? | What are your degree modules? | Motivational questions ask why you want the role and organisation; the others test competencies, numeracy or facts.
+M2#careers-u06-05-q2@2: Which sentence best answers "Why us?" for a bank's technology graduate scheme? | Speaking to two graduates at your insight day, I was impressed that new joiners deploy real code within weeks | You are one of the biggest banks in the world and have an excellent reputation | Banking pays very well and I would like a high salary when I graduate | I want to work in London, and you have a large office in the city centre | It uses specific first-hand evidence about the role; the others are generic or focus on self-interest.
+TF1#careers-u06-05-q3@1: Salary should be the main reason given in a motivational answer. | false | Salary may be an honest consideration, but answers should focus on genuine interest in the sector, role and organisation.
+M3#careers-u06-05-q4@3: Why are weak motivational answers a common reason for rejection? | They suggest the candidate may not accept, stay or understand the role | Employers are legally barred from hiring candidates without motivation | Motivational questions carry more marks than all other questions combined | Weak answers show that a candidate has a low degree classification | Employers invest heavily in graduates and want people who understand and want the role, so generic answers raise doubts about commitment.
+SA3#careers-u06-05-q5@2,3: Write a plan for a 300-word answer to "Why do you want to work in our graduate HR scheme?" | Sector: why HR, for example an interest in workplace wellbeing from a psychology module and a student rep role resolving issues. Role: understanding of HR graduate tasks such as recruitment, employee relations and data, linked to strengths in communication and analysis, confirmed through work experience. Organisation: specific features, such as rotations, CIPD qualification support, a wellbeing initiative mentioned by a graduate at a fair. Future: what the candidate would contribute and long-term goals. Specific, personal and evidenced throughout. | Covers why the sector ; Covers why the role with understanding of tasks ; Covers why the organisation specifically ; Uses first-hand evidence ; Links to future contribution
 
 ## Supporting and personal statements
 LV: Intermediate · Application
-S: Many UK applications ask for a longer piece of writing: a supporting statement for a job or a personal statement for a course. This lesson explains how to structure each against the selection criteria, including the UCAS personal statement questions.
-O: Distinguish supporting statements from personal statements
-O: Structure a supporting statement around a person specification
-O: Plan a UCAS or postgraduate personal statement that answers the questions set
-H: Supporting statements for jobs
-P: A **supporting statement** is the free-text section of a job application where you show how you meet the **person specification**. It is standard for NHS, local government, school, charity and university jobs. Shortlisters usually work down the list of **essential** and **desirable criteria**, scoring whether each is met, so the safest approach is to address every criterion **in the same order**, often with short headings. For each one give specific evidence, using STAR or CARL briefly, and make clear which criterion you are answering. A criterion with no evidence usually scores zero, however strong the rest of the statement is.
+S: Many public sector, NHS, education and charity applications ask for a supporting statement that shows how you meet the person specification. This lesson explains how to structure a supporting statement against criteria, and how it differs from a UCAS or postgraduate personal statement.
+O: Describe the purpose of a supporting statement and how it is assessed
+O: Structure a supporting statement against a person specification
+O: Evaluate how supporting statements differ from personal statements for study
+PRE: Competency-based questions
+H: Supporting statements
+P: A **supporting statement** (or "statement in support of your application") is a section of an application, typically in NHS, local government, education, university and charity recruitment, where you explain how you meet the **person specification**. Shortlisters usually score each candidate against each essential criterion, often marking it as met, partly met or not met. If you don't show evidence for a criterion, they can't award marks for it, however good you are.
+H: How to structure it
+- **Follow the person specification**: use the criteria as headings or address them in the same order.
+- **Evidence each criterion**: one or two specific examples, briefly in STAR style, focusing on actions and results.
+- **Prioritise essential criteria**, then desirable ones.
+- **Open and close**: a short introduction (why this role) and a brief conclusion (motivation and what you'd bring).
+- **Check length**: follow any limit; if none is given, one to two pages is typical.
 H: Personal statements for study
-- **UCAS** undergraduate applications for entry from 2026 replaced the free-form statement with **three questions**: why you want to study the course, how your qualifications and studies have prepared you, and what else you have done outside education.
-- The three answers share a total of **4,000 characters**, with a minimum length for each answer.
-- **Postgraduate** personal statements are set by each university and focus on academic motivation, preparation and future plans.
-- Apprenticeship and teacher training applications have their own statement formats, so read the instructions.
-H: Writing techniques that work
-- Mirror the language of the criteria so shortlisters can find your evidence quickly.
-- Prioritise **essential** criteria, then desirable ones.
-- Reflect on what you learned, not just what you did.
-- Keep paragraphs short and avoid quotations, clichés and lists of adjectives.
-- Never reuse a statement without tailoring it to the new criteria.
-X: Structuring an NHS supporting statement.
-> The person specification lists six essential and three desirable criteria for a healthcare assistant post.
-> Lucas uses nine short headings that copy the wording of each criterion.
-> Under "Ability to communicate with people in distress" he describes calming a confused resident during his care home job.
-> Each heading has one specific example, so the shortlister can tick every criterion.
-K: Supporting statements should address every essential and desirable criterion in order with specific evidence, while personal statements for study must answer the questions set, such as the three UCAS questions, within the character limits.
-!: Writing a general life story. Shortlisters score against criteria, so organise your statement around them.
-EV: established | UCAS replaced the free-form undergraduate personal statement with three structured questions for applications to start in 2026.
-T: Supporting statement | Free text in a job application showing how you meet the person specification
-T: Essential criteria | Requirements a candidate must meet to be shortlisted
-T: Desirable criteria | Requirements that strengthen an application but are not compulsory
-SUM: Address every criterion in order.
-SUM: UCAS now uses three questions.
-SUM: Evidence and reflection, not clichés.
-SRC: UCAS, "Writing a personal statement" | guidance | 2025 | https://www.ucas.com/undergraduate/applying-to-university/writing-personal-statement
-SRC: NHS Employers, "Supporting statements" guidance for applicants | guidance | 2023
-SRC: Prospects (Jisc), "Personal statements for postgraduate applications" | guidance | 2024
-Q: How do shortlisters usually read a supporting statement? | They work through the essential and desirable criteria, checking for evidence of each.
-Q: How many questions make up the UCAS personal statement for 2026 entry onwards? | Three.
-M1#careers-u06-06-q1@1: What is a supporting statement designed to show? | How you meet the criteria in the person specification | Your full education history in reverse chronological order | Your preferred salary, holidays and working hours | A list of referees and how they know you well | Shortlisters use supporting statements to check evidence against each essential and desirable criterion.
-M2#careers-u06-06-q2@2: Why is it useful to use headings that copy the criteria wording? | Shortlisters can quickly find evidence for each criterion | It makes the statement longer and so more impressive | It removes the need for any examples under each heading | It lets you skip criteria that you cannot fully meet | Mirroring criteria makes scoring easy and reduces the risk of evidence being missed.
-M3#careers-u06-06-q3@3: A statement covers five of six essential criteria brilliantly but ignores the sixth. What is likely? | It may not be shortlisted, as a missing essential criterion can score zero | It will be shortlisted, as excellence on five criteria outweighs the gap | It will be passed to interview so the sixth criterion can be tested there | It will be rated as desirable, since most of the criteria have been met | Essential criteria are usually all required; an unaddressed one can rule out an otherwise strong candidate.
-TF2#careers-u06-06-q4@1: The UCAS personal statement for 2026 entry asks applicants to answer three set questions. | true | UCAS introduced three structured questions, sharing a 4,000 character limit, for applications to start in 2026.
-SA2#careers-u06-06-q5@2,3: Explain how to write a supporting statement for a public sector job. | Start from the person specification and list every essential and desirable criterion. Address them in the same order, often using headings that mirror their wording, so shortlisters can find evidence quickly. Under each, give a specific example of your own actions and results, using a brief STAR or CARL structure, with reflection on what you learned. Prioritise essentials, never leave a criterion unaddressed, proofread carefully and tailor the statement for each new job. | Uses person specification ; Addresses each criterion in order ; Specific evidence with structure ; Prioritises essentials and tailors
+P: A **personal statement** for university or postgraduate study is different: it explains your academic interest, preparation and suitability for a course. UCAS undergraduate personal statements changed from 2026 entry to a format with three questions (why this course, how your learning has prepared you, and how experiences outside education have helped). Postgraduate statements focus on academic background, research interests, and career goals.
+X: Sam applies for an NHS administrative role with five essential criteria: experience of customer service, IT skills (Microsoft Office), ability to prioritise workload, good written communication and understanding of confidentiality.
+> He uses the five criteria as headings in the supporting statement.
+> Customer service: his call centre role, handling around 60 calls a day with a 95% satisfaction score.
+> IT skills: Excel spreadsheets tracking society finances, Word reports, Outlook calendars.
+> Prioritising: balancing a dissertation, a job and caring for his grandmother, with a weekly plan.
+> Written communication: drafted complaint responses at the call centre that his manager used as templates.
+> Confidentiality: handled customer data under UK GDPR training at the call centre.
+> Conclusion: the shortlister can tick each criterion quickly, so Sam is shortlisted.
+K: Supporting statements are scored against the person specification, so address each essential criterion explicitly with specific evidence, in the same order or as headings; personal statements for study focus on academic interest and suitability.
+!: Writing a general essay about yourself instead of addressing the criteria. Shortlisters can only award marks for criteria you evidence.
+EV: established | Public sector and NHS shortlisters commonly score supporting statements against each person specification criterion, according to NHS Jobs and local government guidance.
+EV: contested | Long supporting statements may disadvantage candidates with less time or less confidence in writing, and some employers have shortened or replaced them.
+T: Supporting statement | A section of an application explaining, with evidence, how the candidate meets each criterion of the person specification
+T: Personal statement | A statement for a study application explaining academic interest, preparation and suitability for a course
+SUM: Supporting statements are scored against the person specification; address every essential criterion with specific evidence, in order or with headings.
+SUM: Personal statements for study (UCAS, postgraduate) focus on academic interest and preparation rather than job criteria.
+SRC: NHS Jobs, "Applying for a job: supporting information" | guidance | 2024
+SRC: UCAS, "Writing a personal statement" | guidance | 2025 | https://www.ucas.com
+Q: How are supporting statements usually assessed? | Against each criterion in the person specification, often as met, partly met or not met.
+Q: How should a supporting statement be structured? | Following the person specification, using criteria as headings or in the same order, with evidence for each, essential criteria first.
+M1#careers-u06-06-q1@1: What should a supporting statement mainly address? | The person specification criteria | The candidate's full life story | The employer's financial results | The candidate's salary expectations | Shortlisters score evidence against each criterion, so the statement should address them directly.
+M2#careers-u06-06-q2@2: A candidate writes an excellent statement but doesn't mention one essential criterion. What is the likely result? | She may score zero on that criterion and miss the shortlist | The shortlister will assume she meets it and give full marks | It makes no difference because only desirable criteria count | The employer will phone her to ask about the missing criterion | Shortlisters can only score evidence they see; missing an essential criterion often means rejection.
+TF1#careers-u06-06-q3@2: Using the person specification criteria as headings in a supporting statement can help shortlisters. | true | Headings make it easy to find and score evidence for each criterion.
+M3#careers-u06-06-q4@3: How does a supporting statement for a job differ from a postgraduate personal statement? | It evidences job criteria; the personal statement shows academic interest and suitability | It focuses on research interests while the personal statement lists job duties | It is always shorter, and the personal statement has no length limit | It is written for the university while the personal statement is for employers | Supporting statements evidence the person specification for a job; study statements explain academic motivation and preparation.
+SA3#careers-u06-06-q5@2,3: Explain how to write a supporting statement for a teaching assistant role with criteria including working with children, supporting learning, teamwork and safeguarding awareness. | Use the criteria as headings or address them in order. Working with children: specific example such as volunteering at a holiday club with a measurable outcome. Supporting learning: tutoring a pupil and the progress made. Teamwork: working with staff at a placement. Safeguarding: training completed and understanding of reporting procedures. Use brief STAR-style examples focused on own actions and results; open with motivation and close with what you'd bring; keep within length. | Structures by criteria ; Gives specific evidence for each criterion ; Uses STAR-style focus on actions ; Includes opening and closing ; Notes length and priority of essential criteria
 
 ## Civil Service Success Profiles
 LV: Intermediate · Application
-S: The UK Civil Service assesses candidates using Success Profiles, a framework of five elements. This lesson explains the elements, the nine behaviours and how to write behaviour statements that score well.
-O: Describe the five elements of Civil Service Success Profiles
-O: Identify the nine Civil Service behaviours
-O: Write a behaviour statement that meets a role's level
+S: The UK Civil Service assesses candidates using Success Profiles, a framework of five elements including nine behaviours. This lesson explains the framework, how behaviour statements are written and assessed, and how it applies to the Fast Stream and other roles.
+O: Describe the five elements of Success Profiles and the nine behaviours
+O: Write a behaviour example suited to Civil Service assessment
+O: Evaluate the advantages of a flexible, multi-element framework for selection
+PRE: The STAR method
 H: The framework
-P: Since 2019 the Civil Service has used **Success Profiles** to recruit, replacing its earlier competency framework. Each job advert says which of five **elements** will be assessed: **Behaviours** (actions and activities shown in work), **Strengths** (things you do regularly, do well and that motivate you), **Ability** (aptitude to perform, often tested online), **Experience** (knowledge and experience in a field) and **Technical** (specific professional skills or qualifications). Not every element is used for every role. The advert also lists which behaviours apply and at what **level**, which rises with grade from administrative roles up to the Senior Civil Service.
-H: The nine behaviours
-- **Seeing the Big Picture** and **Changing and Improving**.
-- **Making Effective Decisions** and **Leadership**.
-- **Communicating and Influencing** and **Working Together**.
-- **Developing Self and Others** and **Managing a Quality Service**.
-- **Delivering at Pace**.
-- Each behaviour has indicators at each level, published in the Behaviours guidance on gov.uk.
-H: Writing behaviour statements
-- Statements are often limited to **250 words** for each behaviour.
-- Use the published indicators for your level as a checklist of what to show.
-- Use a STAR structure with a strong emphasis on your own actions.
-- Assessors score behaviours on a numbered scale, commonly from 1 to 7, and there is often a minimum score to pass.
-- The **lead behaviour** may be used to sift if there are many applicants, so make it your strongest.
-X: Planning a Delivering at Pace statement.
-> An Executive Officer advert lists Delivering at Pace as the lead behaviour.
-> Priya reads the indicators, which include taking responsibility for quality and prioritising tasks.
-> She chooses an example of reorganising her team's rota at a supermarket to clear a backlog of online orders during a staff shortage.
-> In 250 words she shows prioritising, checking quality and the measurable result of clearing the backlog in three days.
-K: Success Profiles assess Behaviours, Strengths, Ability, Experience and Technical skills as stated in each advert, and behaviour statements should use STAR to show the published indicators for the role's level, especially for the lead behaviour.
-!: Ignoring the level. Read the indicators for the grade you are applying for, as expectations differ between levels.
-EV: established | The Civil Service introduced Success Profiles, with nine behaviours, in place of its competency framework from 2019.
-T: Success Profiles | The Civil Service recruitment framework of five elements
-T: Lead behaviour | The behaviour used for an initial sift when there are many applicants
-T: Behaviour statement | A written example showing a Civil Service behaviour, often up to 250 words
-SUM: Five elements, chosen per role.
-SUM: Nine behaviours with levels.
-SUM: STAR against the indicators.
-SRC: Cabinet Office, Success Profiles | guidance | 2019 | https://www.gov.uk/government/publications/success-profiles
-SRC: Cabinet Office, Success Profiles: Civil Service Behaviours | guidance | 2019 | https://www.gov.uk/government/publications/success-profiles
-Q: Name the five elements of Success Profiles. | Behaviours, Strengths, Ability, Experience and Technical.
-Q: What is the lead behaviour used for? | An initial sift when there are many applicants.
-M1#careers-u06-07-q1@1: Which of these is one of the nine Civil Service behaviours? | Delivering at Pace | Commercial Awareness | Creative Thinking | Digital Literacy | Delivering at Pace is one of the nine behaviours; the others listed are not part of the framework.
-M2#careers-u06-07-q2@2: Which Success Profiles element is usually assessed by online tests? | Ability | Behaviours | Experience | Technical | Ability covers aptitude, such as verbal or numerical reasoning and judgement, often tested online.
-M3#careers-u06-07-q3@3: An advert lists four behaviours and says Communicating and Influencing is the lead. How should a candidate prioritise? | Make that statement the strongest, as it may be used to sift | Write equally short answers for all four to save time | Spend most effort on the behaviour they personally prefer | Skip the lead behaviour, as it is tested later at interview | The lead behaviour can be used alone in an initial sift, so it needs the strongest evidence.
-MATCH2#careers-u06-07-q4@1: Match each Success Profiles element to what it covers. | Behaviours = Actions shown in work ; Strengths = What you do well and find motivating ; Ability = Aptitude, often tested online ; Technical = Specific professional skills or qualifications | Knowing each element helps you prepare the right evidence for what the advert says it will assess.
-SA2#careers-u06-07-q5@2,3: Explain how a candidate should prepare a Civil Service application that assesses behaviours. | They should read the advert to see which elements and behaviours are assessed and at what level, noting the lead behaviour. For each behaviour, they should read the published indicators for that level and choose a specific example that shows them. Each statement, often 250 words, should use STAR with most of the words on their own actions and a clear result. The lead behaviour statement should be the strongest because it may be used for the first sift, and all should be proofread. | Identifies elements and level ; Uses published indicators ; STAR within limits ; Prioritises lead behaviour
+P: Since 2019 the Civil Service has used **Success Profiles** for recruitment. Instead of assessing only competencies, it can assess five elements, choosing those relevant to each role:
+- **Behaviours**: the actions and activities that lead to effective performance.
+- **Strengths**: what you do regularly, do well and are motivated by.
+- **Ability**: aptitude or potential, often assessed by online tests.
+- **Experience**: knowledge or mastery gained.
+- **Technical**: professional skills or qualifications for specialist roles.
+P: There are **nine behaviours**: Seeing the Big Picture, Changing and Improving, Making Effective Decisions, Leadership, Communicating and Influencing, Working Together, Developing Self and Others, Managing a Quality Service, and Delivering at Pace. Each has descriptions at different grade levels. Adverts on Civil Service Jobs state which behaviours and elements will be assessed at each stage.
+H: Writing behaviour examples
+P: Applications often ask for a **behaviour statement** of up to 250 words for each named behaviour, scored on a 1 to 7 scale. Use STAR, read the behaviour's description for the grade you're applying for, and make sure your actions show it. For example, "Delivering at Pace" is about taking responsibility for delivering results on time and to a high standard, while staying calm under pressure. At interview, behaviour questions are mixed with strengths questions.
+X: Priya applies for an Executive Officer role assessing "Making Effective Decisions" (250 words).
+> She reads the description: use evidence, consider options and impacts, consult, and explain decisions.
+> Example: as a students' union officer, she had to decide how to allocate a reduced £5,000 budget among 20 societies.
+> Actions: gathered membership and event data, consulted society presidents, identified options and their impact on smaller societies, recommended a weighted formula, explained it at a meeting and published the reasoning.
+> Result: all societies accepted the allocation and complaints fell compared with the previous year.
+> Conclusion: matching actions to the behaviour description makes her example score highly.
+K: Success Profiles assess up to five elements (behaviours, strengths, ability, experience, technical); nine behaviours are described by grade; write 250-word STAR examples showing the behaviour as described for your grade.
+!: Using one generic teamwork example for every behaviour. Each behaviour has a specific description, so choose and frame examples to show its particular actions.
+EV: established | Success Profiles have been the Civil Service's recruitment framework since 2019, assessing behaviours, strengths, ability, experience and technical elements.
+EV: contested | Using several elements may improve fairness and validity over competency-only selection, but independent evaluation of Success Profiles' effects on diversity and performance is limited.
+T: Success Profiles | The UK Civil Service recruitment framework assessing behaviours, strengths, ability, experience and technical skills
+T: Behaviour statement | A written example, often up to 250 words, showing a named Civil Service behaviour
+SUM: Success Profiles assess five elements, chosen for each role; there are nine behaviours described at different grades.
+SUM: Behaviour statements are typically 250 words, scored on a 1 to 7 scale; match STAR examples to the specific behaviour description.
+SRC: Cabinet Office, "Success Profiles" | guidance | 2019 | https://www.gov.uk/government/publications/success-profiles
+SRC: Cabinet Office, "Success Profiles: Civil Service behaviours" | guidance | 2019
+Q: What are the five elements of Success Profiles? | Behaviours, Strengths, Ability, Experience and Technical.
+Q: Name four of the nine Civil Service behaviours. | Any four: Seeing the Big Picture, Changing and Improving, Making Effective Decisions, Leadership, Communicating and Influencing, Working Together, Developing Self and Others, Managing a Quality Service, Delivering at Pace.
+M1#careers-u06-07-q1@1: How many behaviours are in the Civil Service Success Profiles framework? | Nine | Five | Twelve | Three | There are nine behaviours; five is the number of elements in Success Profiles.
+M2#careers-u06-07-q2@2: Which example best fits "Delivering at Pace"? | Taking charge of a late project, reprioritising tasks and delivering on time to a high standard | Explaining a complex policy idea clearly to a group of new colleagues | Thinking about how a team's work links to wider government goals | Coaching a new team member to develop their skills over a term | Delivering at Pace is about taking responsibility for delivering results on time and to standard under pressure.
+TF1#careers-u06-07-q3@1: Civil Service job adverts state which Success Profiles elements will be assessed. | true | Adverts on Civil Service Jobs list the behaviours and other elements assessed at each stage.
+M3#careers-u06-07-q4@3: Which is the strongest advantage of assessing several elements rather than competencies alone? | It gives a fuller picture, including potential and strengths, not just past examples | It means candidates no longer need to prepare for any of the interview questions | It removes the need for any assessment of experience for specialist roles | It guarantees that every successful candidate will perform well in post | Combining elements like ability and strengths with behaviours reduces reliance on past opportunities and gives a rounder assessment, though it can't guarantee performance.
+SA3#careers-u06-07-q5@2,3: Explain how a candidate should prepare a 250-word behaviour statement for "Communicating and Influencing" in a Civil Service application. | Read the behaviour description for the grade, noting expected actions such as communicating clearly, tailoring to the audience, listening and influencing others with evidence. Choose a specific, substantial example, such as persuading a society to adopt a new policy. Use STAR, with brief situation and task, about 150 words of actions showing the described behaviours, and a measurable result. Use "I", check the word count, and avoid reusing the same example across behaviours. | Reads the behaviour description for the grade ; Chooses a specific relevant example ; Uses STAR with emphasis on actions ; Includes a measurable result ; Respects word limit and varies examples
 
 ## What psychometric tests measure
 LV: Introductory · Foundation
-S: Psychometric tests are standardised measures used by many UK employers to assess ability and personality. This lesson explains the main types, what makes a test good, and how scores are compared using norm groups.
-O: Distinguish ability tests from personality measures
-O: Explain reliability, validity and norm groups
-O: Describe how employers use test results in selection
-H: Types of psychometric test
-P: A **psychometric test** is a **standardised** measure of a psychological characteristic, given and scored in the same way for everyone. **Ability** or **aptitude tests** measure **maximum performance**: how well you can do something under timed conditions, such as numerical, verbal, logical or spatial reasoning. **Personality questionnaires** measure **typical performance**: how you usually prefer to behave, with no right or wrong answers. **Situational judgement tests** sit between the two, asking how you would handle work scenarios. Tests of general mental ability are among the best single predictors of job performance found in research, which is why large employers use them early to sift high volumes of applicants.
-H: What makes a good test
-- **Reliability**: the test gives consistent results, for example on a retest.
-- **Validity**: it measures what it claims to and predicts relevant outcomes, such as job performance.
-- **Standardisation**: the same instructions, timing and scoring for everyone.
-- **Fairness**: it should not disadvantage groups for reasons unrelated to the job.
-- The British Psychological Society publishes standards for test use and qualifications for test users.
-H: How scores are used
-- Your **raw score** is compared with a **norm group**, such as previous graduate applicants.
-- Results are often reported as **percentiles**: the 70th percentile means you scored higher than 70% of the norm group.
-- Employers may set a **cut-off**, or combine scores with other evidence.
-- Tests are often taken unsupervised online, then sometimes **verified** with a shorter supervised test later.
-X: Reading a percentile score.
-> Sam takes a numerical test and gets 18 out of 25.
-> Against a norm group of graduate applicants this is the 60th percentile.
-> This means Sam scored better than 60% of that group.
-> The employer's cut-off is the 40th percentile, so Sam passes to the next stage.
-K: Psychometric tests are standardised measures of ability (maximum performance) or personality (typical performance), judged by reliability, validity and fairness, with scores usually compared with a norm group as percentiles.
-!: Thinking a percentile is the percentage of questions right. A percentile compares you with a norm group, not with the total marks.
-EV: established | General mental ability tests are among the strongest single predictors of job performance in meta-analytic research.
-EV: contested | Recent reanalysis suggests the predictive validity of ability tests has been overestimated, placing structured interviews at a similar or higher level.
-T: Psychometric test | A standardised measure of a psychological characteristic
-T: Norm group | A comparison group whose scores are used to interpret yours
-T: Percentile | The percentage of the norm group who scored below you
-SUM: Ability is maximum, personality typical.
-SUM: Reliable, valid and fair.
-SUM: Scores are compared with norms.
-SRC: Schmidt F. L. and Hunter J. E., "The validity and utility of selection methods in personnel psychology", Psychological Bulletin, 124(2), 262–274 | primary | 1998
-SRC: Sackett P. R., Zhang C., Berry C. M. and Lievens F., "Revisiting meta-analytic estimates of validity in personnel selection", Journal of Applied Psychology, 107(11), 2040–2068 | primary | 2022
-SRC: British Psychological Society, Psychological Testing: A User's Guide | guidance | 2017
-Q: What is the difference between maximum and typical performance? | Maximum is how well you can do under test conditions; typical is how you usually behave.
-Q: What does a test's validity mean? | It measures what it claims and predicts relevant outcomes.
-M1#careers-u06-08-q1@1: Which type of measure assesses typical performance? | A personality questionnaire | A numerical reasoning test | A verbal reasoning test | A spatial reasoning test | Personality questionnaires ask how you usually behave, with no right answers, so they measure typical performance.
-M2#careers-u06-08-q2@2: A test gives very different scores when the same person retakes it a week later. What is weak? | Its reliability | Its norm group | Its percentile | Its time limit | Reliability is consistency; large unexplained changes between attempts show the test is unreliable.
-M3#careers-u06-08-q3@3: Why might an employer verify an online test score with a short supervised test later? | To check the unsupervised result was genuinely the candidate's own | To give candidates a second chance to raise a low first score | To replace the norm group with a new set of applicants each year | To measure personality as well as ability in the second sitting | Verification guards against cheating or help in unsupervised online testing.
-NUM2#careers-u06-08-q4@2: Sam scored higher than 72 of the 120 people in a norm group. What percentile is this? | 60 | 0 | – | Percentile = 72 / 120 x 100 = 60, so Sam is at the 60th percentile of that group.
-SA2#careers-u06-08-q5@2,3: Explain what makes a psychometric test useful for selection and how employers interpret the results. | A useful test is standardised, with the same instructions, timing and scoring for all, and reliable, giving consistent results. It must be valid, measuring what it claims and predicting job performance, and fair to different groups. Raw scores are compared with a relevant norm group and often reported as percentiles. Employers may apply a cut-off or combine scores with other evidence, and may verify unsupervised online results with a supervised test. | Standardisation and reliability ; Validity and fairness ; Norm groups and percentiles ; Cut-offs, combination or verification
+S: Psychometric tests are standardised assessments of ability, aptitude or personality used in selection. This lesson explains the main kinds, the ideas of reliability, validity and norm groups, and how employers use results.
+O: Distinguish ability tests from personality questionnaires and describe common test types
+O: Interpret a test score expressed as a percentile against a norm group
+O: Evaluate the reliability, validity and fairness of psychometric testing in selection
+PRE: How application forms work
+H: Kinds of test
+P: **Psychometric tests** are standardised measures of psychological attributes. In graduate recruitment the main kinds are **ability or aptitude tests**, which have right and wrong answers and are usually timed (numerical, verbal, logical or inductive, diagrammatic, abstract reasoning), **situational judgement tests**, which present work scenarios and ask for the best responses, and **personality questionnaires**, which have no right answers and describe preferred ways of behaving. **Game-based assessments** measure similar attributes through short games.
+P: ISE surveys report that most large graduate employers use some form of online assessment early in selection, often to screen large numbers of applicants before interviews. Major test publishers include SHL, Talent Q (now part of Korn Ferry), Saville Assessment, Cappfinity and Kenexa (IBM).
+H: Key concepts
+- **Standardisation**: everyone takes the same test under the same conditions, scored the same way.
+- **Norm group**: scores are compared with a relevant group, such as graduate applicants; a raw score of 18 out of 25 might be the 70th percentile.
+- **Percentile**: the percentage of the norm group scoring below you; the 70th percentile means you scored higher than 70% of them.
+- **Reliability**: consistency of scores across time or items.
+- **Validity**: whether the test measures what it claims and predicts job performance.
+P: General mental ability tests are among the best predictors of job performance in meta-analyses, although a 2022 re-analysis by Sackett and colleagues suggested earlier estimates were too high and that structured interviews predict at least as well. Ability tests can show differences in average scores between demographic groups, so employers must check for **adverse impact** and use cut-offs carefully, in line with the Equality Act 2010.
+X: Jade's numerical test report says: raw score 19 out of 24, 82nd percentile against a graduate norm group. The employer's cut-off is the 40th percentile.
+> 82nd percentile means she scored higher than 82% of the graduate comparison group.
+> She is well above the cut-off, so she passes this stage.
+> If the norm group were experienced finance professionals instead, the same raw score might be a lower percentile.
+> Conclusion: a score means little without knowing the norm group it is compared with.
+K: Psychometric tests are standardised measures of ability, judgement or personality; scores are compared with norm groups as percentiles, and good tests are reliable, valid and checked for adverse impact.
+!: Thinking a percentile is the percentage of questions you got right. The 70th percentile means you scored higher than 70% of the norm group, whatever your raw score.
+EV: established | Cognitive ability tests predict job performance across many occupations, according to decades of meta-analytic research.
+EV: contested | The size of that prediction is debated: Sackett and colleagues (2022) argued earlier estimates were inflated by statistical corrections, placing ability tests below structured interviews.
+T: Norm group | The comparison group against which an individual's test score is interpreted
+T: Percentile | The percentage of a norm group scoring below a given score
+SUM: Ability tests have right answers and are timed; SJTs present scenarios; personality questionnaires describe preferences; games measure similar attributes.
+SUM: Scores are compared with norm groups as percentiles; good tests are reliable and valid; employers must check for adverse impact.
+SRC: Sackett P. R., Zhang C., Berry C. M. and Lievens F., "Revisiting meta-analytic estimates of validity in personnel selection: addressing systematic overcorrection for restriction of range", Journal of Applied Psychology 107(11), 2040–2068 | primary | 2022
+SRC: British Psychological Society, Psychological Testing Centre guidance on test use | guidance | 2024 | https://ptc.bps.org.uk
+Q: What does scoring at the 70th percentile mean? | You scored higher than 70% of the norm group.
+Q: What is the difference between reliability and validity? | Reliability is consistency of scores; validity is whether the test measures what it claims and predicts performance.
+M1#careers-u06-08-q1@1: Which kind of test has no right or wrong answers? | A personality questionnaire | A numerical reasoning test | A verbal reasoning test | An inductive reasoning test | Personality questionnaires describe preferences; ability tests have correct answers.
+M2#careers-u06-08-q2@2: A candidate's raw score is 15 out of 20, which is the 55th percentile. What does this mean? | She scored higher than 55% of the norm group | She answered 55% of the questions correctly | She is in the top 55 candidates applying | She needs 55% more correct answers to pass | Percentiles compare her with the norm group; 15 out of 20 is 75% correct but the 55th percentile.
+TF1#careers-u06-08-q3@2: The same raw score can give different percentiles depending on the norm group used. | true | A score is interpreted relative to the comparison group, so a stronger norm group gives a lower percentile.
+M3#careers-u06-08-q4@3: Why must employers monitor psychometric tests for adverse impact? | Tests can show group differences in average scores, so cut-offs may disadvantage protected groups | Tests always give exactly the same scores to every candidate who sits them | Adverse impact means the test is too easy for most graduate applicants | Employers must prove every candidate who passes will perform well later | Group differences in scores can mean cut-offs disproportionately exclude some groups, which must be justified and minimised under equality law.
+SA3#careers-u06-08-q5@2,3: Evaluate the use of psychometric ability tests in graduate selection. | Strengths: standardised and objective; efficient for screening many applicants; meta-analyses show ability predicts job performance; norm groups allow comparison. Limits: the size of validity is debated (Sackett et al., 2022); group differences can cause adverse impact, raising fairness and legal concerns; test anxiety, practice and unfamiliarity affect scores; and tests measure a narrow range of attributes. Best used alongside other methods, with reasonable adjustments and monitoring. | Explains standardisation and efficiency ; Refers to predictive validity evidence ; Notes debate about validity size ; Identifies adverse impact or fairness ; Recommends combining methods and adjustments
 
 ## Numerical reasoning tests
 LV: Intermediate · Application
-S: Numerical reasoning tests ask you to interpret data in tables and charts under time pressure. This lesson covers the core calculations, how the tests are structured and practical strategies to improve your score.
-O: Describe the format of typical numerical reasoning tests
-O: Carry out core calculations such as percentages, ratios and conversions
-O: Apply time management strategies under test conditions
-H: The format
-P: A **numerical reasoning test** gives you **tables, graphs and short text** about business data, such as sales, costs or survey results, and asks multiple-choice questions about them. The maths is usually no harder than GCSE level, but the challenge is **speed and accuracy**: many graduate tests allow around a minute per question. You can usually use a **calculator**, but check the instructions. Questions often need two or three steps, such as finding the right figures, converting units and then calculating a **percentage change**. Some publishers use **adaptive** tests, where the next question depends on your previous answer.
-H: Core calculations
-- **Percentage change** = (new minus old) divided by old, times 100.
-- **Percentage of a total** = part divided by total, times 100.
-- **Ratios**: divide in proportion, for example 3:2 of 500 gives 300 and 200.
-- **Currency and unit conversions**: multiply or divide by the rate given and check which way round it works.
-- **Averages**: add the values and divide by how many there are.
+S: Numerical reasoning tests check how well you interpret data in tables and charts and calculate under time pressure. This lesson covers the skills tested, worked examples with percentages and ratios, and strategies for practice and for the test itself.
+O: Describe the content and format of graduate numerical reasoning tests
+O: Calculate percentages, percentage change, ratios and conversions from data
+O: Evaluate strategies for improving performance under time pressure
+PRE: What psychometric tests measure
+H: What's tested
+P: Graduate **numerical reasoning tests** present tables, graphs and short business scenarios and ask multiple-choice questions, typically around a minute per question. A calculator is usually allowed. They test GCSE-level maths applied to data: **percentages**, **percentage change**, **ratios and proportions**, **averages**, **currency and unit conversions**, and reading values accurately from charts. The difficulty lies in speed, accuracy and choosing the right data, not advanced maths.
+H: Key calculations
+- **Percentage of**: 15% of £240 = 0.15 × 240 = £36.
+- **Percentage change**: (new − old) ÷ old × 100. From 80 to 92 is 12 ÷ 80 × 100 = 15% increase.
+- **Reverse percentage**: if £138 includes a 15% increase, the original is 138 ÷ 1.15 = £120.
+- **Ratio**: splitting £600 in the ratio 2:3 gives £240 and £360.
+- **Conversion**: at £1 = €1.16, €290 is 290 ÷ 1.16 = £250.
 H: Strategies
-- Read the question first, then find only the data you need.
-- Check units, such as thousands or millions, and time periods.
-- Estimate first to rule out impossible options.
-- Do not get stuck: guess, move on and return if time allows, unless told that wrong answers lose marks.
-- Practise with free tests from publishers and your careers service to get used to the pace.
-X: A two-step question.
-> A table shows a firm's UK sales of £240,000 in 2024 and £300,000 in 2025.
-> Question: what was the percentage increase in UK sales?
-> Change = 300,000 minus 240,000 = 60,000; then 60,000 divided by 240,000 = 0.25.
-> The answer is a 25% increase; a common wrong option, 20%, divides by the new figure instead.
-K: Numerical tests assess fast, accurate interpretation of business data, mostly with GCSE-level maths, so master percentages, ratios and conversions, read questions carefully and manage your time.
-!: Dividing by the new value when calculating percentage change. Always divide the change by the original value.
-EV: established | Numerical reasoning tests are widely used by UK graduate employers in early selection stages.
-T: Numerical reasoning test | A timed test of interpreting numerical data
+P: Practise with free tests from publishers and university careers services to learn formats. In the test: read the question first, then find only the data you need; check units (thousands, millions, percentages); estimate to rule out wrong options; don't spend too long on one question, since many tests score correct answers without penalising wrong ones, so make a best guess rather than leaving blanks (check the instructions). Practice improves speed and familiarity, though gains level off.
+X: A table shows a company's sales: 2023 £4.2 million, 2024 £4.83 million. Question: what was the percentage increase?
+> Change: 4.83 − 4.2 = 0.63 million.
+> Percentage change: 0.63 ÷ 4.2 × 100 = 15%.
+> Check by estimation: 10% of 4.2 is 0.42 and 20% is 0.84, so the answer is between 10% and 20%; 15% fits.
+> A common trap: dividing by the new value (0.63 ÷ 4.83 = 13%) gives a wrong option that is often included.
+> Conclusion: use the original value as the base for percentage change, and estimate to check.
+K: Numerical reasoning tests apply GCSE-level maths (percentages, percentage change, ratios, conversions) to data under time pressure; find only the data you need, check units, estimate and practise the formats.
+!: Calculating percentage change using the new value as the base. Percentage change always divides the change by the original (old) value.
+EV: established | Practice with test formats improves performance on aptitude tests, mainly through familiarity and speed, according to research on test coaching and retest effects.
+EV: contested | Whether practice effects mean tests measure familiarity rather than underlying ability is debated; gains are typically modest and level off after a few attempts.
 T: Percentage change | The change between two values divided by the original value, times 100
-T: Adaptive test | A test that adjusts question difficulty according to earlier answers
-SUM: GCSE maths at speed.
-SUM: Divide change by the original.
-SUM: Estimate, move on, practise.
-SRC: Prospects (Jisc), "Numerical reasoning tests" | guidance | 2024
-SRC: British Psychological Society, Psychological Testing: A User's Guide | guidance | 2017
-Q: What is the formula for percentage change? | (New minus old) divided by old, times 100.
-Q: How should you treat a question you are stuck on? | Make a best guess, move on and return if time allows.
-M1#careers-u06-09-q1@1: Which value do you divide by when calculating percentage change? | The original value | The new value | The average value | The total change | Percentage change is always measured relative to the starting value.
-M2#careers-u06-09-q2@2: Costs are split between two teams in the ratio 3:2. Total costs are £500. What does the first team pay? | £300 | £200 | £250 | £150 | Divide £500 into 5 parts of £100; the first team pays 3 parts, so £300.
-NUM2#careers-u06-09-q3@2: A department's budget falls from £80,000 to £68,000. What is the percentage decrease? | 15 | 0.1 | % | The change is 12,000 and 12,000 divided by 80,000 = 0.15, a decrease of 15%.
-M3#careers-u06-09-q4@3: A candidate has 20 questions and 20 minutes, and is stuck on question 6 after three minutes. What is best? | Choose a best guess, flag it and move on | Keep working until the question is fully solved | Restart the whole test to get a fresh time allowance | Leave the rest blank to focus on accuracy over speed | Spending too long on one item costs easier marks later; guess and return if time allows.
-SA2#careers-u06-09-q5@2,3: Describe how a student should prepare for and approach a graduate numerical reasoning test. | They should revise core GCSE-level skills, especially percentage change, percentages of totals, ratios, averages and conversions, and practise with free tests to get used to the pace. In the test, they should read the question first, find only the data needed and check units and time periods. Estimating helps rule out wrong options. They should manage time by guessing and moving on when stuck, unless wrong answers are penalised, and use a calculator if allowed. | Revise core calculations ; Practise timed tests ; Read questions and check units ; Time management and estimation
+T: Reverse percentage | Finding an original value from a value after a percentage increase or decrease
+SUM: Numerical tests apply percentages, ratios, averages and conversions to tables and charts, at about a minute per question.
+SUM: Divide percentage changes by the original value; read the question first, check units, estimate and practise.
+SRC: SHL, "Numerical reasoning practice test" | guidance | 2024 | https://www.shl.com
+SRC: Hausknecht J. P., Halpert J. A., Di Paolo N. T. and Moriarty Gerrard M. O., "Retesting in selection: a meta-analysis of coaching and practice effects for tests of cognitive ability", Journal of Applied Psychology 92(2), 373–385 | primary | 2007
+Q: What is the formula for percentage change? | (new − old) ÷ old × 100.
+Q: How do you find the original price if £138 includes a 15% increase? | Divide by 1.15: 138 ÷ 1.15 = £120.
+M1#careers-u06-09-q1@1: What is 15% of £240? | £36 | £24 | £16 | £40 | 0.15 × 240 = 36; £24 is 10% and £16 or £40 come from calculation errors.
+M2#careers-u06-09-q2@2: Costs fell from £250,000 to £200,000. What is the percentage decrease? | 20% | 25% | 50% | 80% | The change is £50,000 and 50,000 ÷ 250,000 × 100 = 20%; dividing by the new value gives the wrong answer of 25%.
+TF1#careers-u06-09-q3@2: In percentage change calculations, you divide the change by the original value. | true | The original (old) value is the base for percentage change.
+M3#careers-u06-09-q4@3: A test doesn't penalise wrong answers and time is running out with five questions left. What is the best strategy? | Make quick best guesses, eliminating obviously wrong options where possible | Leave them blank, since any guess counts against your final score | Spend the remaining time checking a single earlier question in detail | Stop the test early so that the assessor sees you were careful | Without a penalty, a reasoned guess can only help; check the instructions first, as some tests differ.
+SA3#careers-u06-09-q5@2,3: A chart shows a team's budget of £80,000 split marketing 35%, staff 50% and other 15%. Next year the total rises by 10% and marketing's share becomes 40%. Calculate the change in the marketing budget in pounds and as a percentage, showing working. | This year: marketing = 0.35 × 80,000 = £28,000. Next year total = 80,000 × 1.10 = £88,000; marketing = 0.40 × 88,000 = £35,200. Change = 35,200 − 28,000 = £7,200. Percentage change = 7,200 ÷ 28,000 × 100 ≈ 25.7%. | Calculates this year's marketing budget correctly ; Calculates next year's total ; Calculates next year's marketing budget ; Finds the change in pounds ; Calculates percentage change using the original value
 
 ## Verbal reasoning tests
 LV: Intermediate · Application
-S: Verbal reasoning tests check how accurately you can judge statements against a written passage. This lesson explains the True, False and Cannot Say format, the common traps and strategies for working quickly.
-O: Describe the format of verbal reasoning tests
-O: Distinguish True, False and Cannot Say judgements
-O: Apply strategies to avoid common traps
+S: Verbal reasoning tests check how accurately you understand and draw conclusions from written passages. This lesson explains the common True, False, Cannot Say format, the logic behind it, and strategies to avoid the usual traps.
+O: Describe the format of graduate verbal reasoning tests
+O: Apply the True, False or Cannot Say rules to statements about a passage
+O: Evaluate common errors and strategies in verbal reasoning tests
+PRE: What psychometric tests measure
 H: The format
-P: A typical **verbal reasoning test** presents a short passage, often 150 to 250 words of business or general text, followed by statements. For each statement you choose **True** (it follows from the passage), **False** (the passage contradicts it) or **Cannot Say** (the passage does not give enough information). The key rule is to use **only the information in the passage**, not your own knowledge, even if you know the statement to be true in real life. Other formats ask you to choose the best summary, spot the main argument or identify an assumption. Tests are timed, so you must read carefully but quickly.
-H: True, False or Cannot Say
-- **True**: the passage states it or it follows directly.
-- **False**: the passage states the opposite or makes it impossible.
-- **Cannot Say**: the passage is silent, or only partly supports it.
-- Watch for **absolute words** such as "all", "always" and "never", which a passage may not support.
-- Watch for **cause and correlation**: two things happening together does not mean one caused the other.
+P: A typical **verbal reasoning test** presents short passages (about 100 to 200 words) on business or general topics, each followed by several statements. You decide whether each statement is **True** (follows logically from the passage), **False** (contradicts the passage) or **Cannot Say** (the passage doesn't give enough information to decide). Some tests use multiple-choice comprehension questions instead. Time limits are tight, often under a minute per statement.
+H: The rules
+- **Use only the passage**: ignore your own knowledge, even if you know the statement is true in real life.
+- **True** requires the passage to state or directly imply it.
+- **False** requires the passage to contradict it.
+- **Cannot Say** applies when the passage is silent or the statement goes beyond it.
+- **Watch qualifiers**: "all", "some", "always", "most", "only", "may" change meaning.
+- **Watch causation**: a passage saying two things happened together doesn't show one caused the other.
 H: Strategies
-- Read the statement first, then scan the passage for the relevant sentence.
-- Underline or note key qualifiers like "most", "some" and "may".
-- Check whether you are using outside knowledge; if so, the answer is probably Cannot Say.
-- Be alert to changes in tense, number or comparison between the passage and statement.
-- Practise regularly; reading quality journalism also builds speed.
-X: Judging a statement.
-> Passage: "Most of the firm's 2025 graduate intake joined through its summer internship. Retention after two years was 85%."
-> Statement 1: "Some graduates joined without doing the internship." True, because "most" implies not all.
-> Statement 2: "Interns are more likely to stay than other graduates." Cannot Say, as retention is not broken down by route.
-> Statement 3: "All graduates stayed for two years." False, because retention was 85%.
-K: Verbal reasoning tests ask you to judge statements using only the passage, answering True if it follows, False if contradicted and Cannot Say if the passage does not settle it, while watching for qualifiers and false causal links.
-!: Using your own knowledge. If the passage does not support a statement, the answer is Cannot Say, even if it is true in reality.
-EV: established | True, False and Cannot Say items are a standard format in commercial verbal reasoning tests.
-T: Verbal reasoning test | A timed test of understanding and evaluating written information
-T: Cannot Say | The answer when a passage gives insufficient information to judge a statement
-T: Qualifier | A word such as "most" or "some" that limits the scope of a claim
-SUM: Use only the passage.
-SUM: Silent passage means Cannot Say.
-SUM: Watch qualifiers and causes.
-SRC: Prospects (Jisc), "Verbal reasoning tests" | guidance | 2024
-SRC: British Psychological Society, Psychological Testing: A User's Guide | guidance | 2017
-Q: What are the three usual answer options in a verbal reasoning test? | True, False and Cannot Say.
-Q: What should you choose if a statement is true in real life but not supported by the passage? | Cannot Say.
-M1#careers-u06-10-q1@1: When should you answer Cannot Say? | When the passage does not give enough information | When the statement is clearly contradicted by it | When the statement repeats a sentence from it | When you personally disagree with the passage | Cannot Say applies when the passage neither confirms nor contradicts the statement.
-M2#careers-u06-10-q2@2: A passage says "Sales rose after the advertising campaign." Statement: "The campaign caused sales to rise." What is the answer? | Cannot Say | True | False | Both | The passage gives timing only, not cause, so it cannot confirm that the campaign caused the rise.
-M3#careers-u06-10-q3@3: A passage says "Some staff work from home on Fridays." Statement: "No staff work from home on Fridays." What is the answer? | False | True | Cannot Say | Partly true | "Some" means at least one person does, which directly contradicts the claim that no one does.
-TF2#careers-u06-10-q4@2: In a verbal reasoning test you should use relevant general knowledge to decide whether a statement is true. | false | Only the passage counts; using outside knowledge is a common trap and leads to wrong answers.
-SA2#careers-u06-10-q5@2,3: Explain how to decide between True, False and Cannot Say, with the main traps to avoid. | Judge each statement using only the passage. Answer True if it is stated or follows directly, False if the passage states the opposite or makes it impossible, and Cannot Say if the passage is silent or only partly supports it. Traps include using outside knowledge, ignoring qualifiers such as "most", "some" and "always", and treating things that happen together as cause and effect. Reading the statement first, then scanning for the relevant sentence, helps work quickly. | Defines True ; Defines False ; Defines Cannot Say ; Names traps such as outside knowledge, qualifiers and causation
+P: Read the statement first, then scan the passage for the relevant sentence. Compare precisely, word for word, looking for changes in qualifiers, dates, numbers or causal claims. If you feel you need to "assume" something to make a statement true, the answer is usually Cannot Say. Practise to build speed and to calibrate how strict the tests are.
+X: Passage: "The company opened 12 new stores last year, most of them in the north of England. Sales rose by 8%, the highest growth in a decade. Some analysts link the growth to the new stores, though online sales also increased."
+> Statement 1: "Sales rose by 8% last year." True: stated directly.
+> Statement 2: "All the new stores were in the north of England." False: the passage says "most".
+> Statement 3: "The new stores caused the rise in sales." Cannot Say: some analysts link them, but causation isn't established and online sales also rose.
+> Statement 4: "The company's profits rose last year." Cannot Say: sales aren't profits, and profits aren't mentioned.
+> Conclusion: precise reading of qualifiers and causal claims decides the answers.
+K: Verbal reasoning tests ask whether statements are True, False or Cannot Say based only on a passage; read precisely, ignore outside knowledge and watch qualifiers, causation and terms like sales versus profit.
+!: Using your own knowledge to answer. Even if a statement is true in the real world, if the passage doesn't support it the answer is Cannot Say.
+EV: established | True, False, Cannot Say is a common format in graduate verbal reasoning tests from major test publishers.
+EV: contested | Verbal tests may disadvantage candidates whose first language isn't English or who are dyslexic, which is why reasonable adjustments and careful validation matter.
+T: Cannot Say | The answer when a passage doesn't give enough information to decide whether a statement is true or false
+T: Qualifier | A word such as all, some, most or only that limits the scope of a statement
+SUM: Verbal tests present passages with statements to judge True, False or Cannot Say, using only the passage.
+SUM: Read the statement first, compare word for word, watch qualifiers and causation, and choose Cannot Say when you'd need to assume.
+SRC: SHL, "Verbal reasoning practice test" | guidance | 2024 | https://www.shl.com
+SRC: Prospects (Jisc), "Psychometric tests" | guidance | 2024
+Q: When should you answer Cannot Say? | When the passage doesn't give enough information to decide whether the statement is true or false.
+Q: Why must you ignore outside knowledge in verbal reasoning tests? | The test checks reasoning from the passage only; statements true in real life may still be Cannot Say.
+M1#careers-u06-10-q1@1: In a True, False, Cannot Say test, what does False mean? | The passage contradicts the statement | The statement is false in real life | The passage doesn't mention the statement | The statement is badly written | False requires a contradiction in the passage; outside knowledge doesn't count, and silence means Cannot Say.
+M2#careers-u06-10-q2@2: Passage: "Most staff work from home on Fridays." Statement: "All staff work from home on Fridays." What is the answer? | False | True | Cannot Say | True or Cannot Say | "Most" implies not all, so the passage contradicts "all"; the answer is False.
+TF1#careers-u06-10-q3@1: In verbal reasoning tests, if a passage says sales rose, you can conclude profits rose. | false | Sales and profits are different; without information on costs or profits, the answer is Cannot Say.
+M3#careers-u06-10-q4@3: Passage: "Since the new training began, error rates have fallen." Statement: "The training reduced error rates." Which answer is best? | Cannot Say, because timing doesn't establish causation | True, because the errors fell after training began | False, because the passage denies a link with training | True, because training usually reduces errors at work | The passage reports a sequence, not a cause; other factors could explain the fall.
+SA3#careers-u06-10-q5@2,3: Explain the strategies a candidate should use in a verbal reasoning test and why they work. | Read the statement first, then find the relevant part of the passage, saving time. Use only the passage, not outside knowledge, because the test measures reasoning from given text. Compare word for word, checking qualifiers (all, some, most), numbers and dates. Distinguish correlation or sequence from causation. Distinguish related terms such as sales and profit. If an assumption is needed, choose Cannot Say. Practise to improve speed and calibrate to the strict logic. | Reads statement first and scans ; Uses only the passage ; Checks qualifiers and details ; Distinguishes causation and related terms ; Uses Cannot Say correctly and practises
 
 ## Logical and inductive reasoning tests
 LV: Intermediate · Application
-S: Logical reasoning tests measure your ability to find rules and draw conclusions from abstract information. This lesson explains inductive, deductive and diagrammatic formats and a systematic way to spot patterns.
+S: Logical, inductive and diagrammatic reasoning tests assess how you spot patterns and rules in abstract shapes or sequences. This lesson explains inductive and deductive reasoning, common rule types and how to work systematically.
 O: Distinguish inductive, deductive and diagrammatic reasoning tests
-O: Apply a systematic method to find rules in shape sequences
-O: Evaluate why employers use abstract reasoning tests
-H: The main formats
-P: **Inductive reasoning** tests show a sequence or grid of shapes and ask which comes next or which is missing; you must work out the underlying **rule** from the examples. They descend from tests such as **Raven's Progressive Matrices**, which use abstract patterns to reduce the influence of language and prior knowledge. **Deductive reasoning** tests give premises and ask which conclusion must follow, as in "All analysts use Excel; Jo is an analyst; therefore Jo uses Excel." **Diagrammatic reasoning** tests show symbols that change shapes as they pass through a process, and you must work out what each operator does. Employers in technology, engineering, consulting and finance often use these tests because they are thought to reflect general problem-solving ability.
-H: A systematic method for patterns
-- Check **one feature at a time**: number, shape, size, colour or shading, position and rotation.
-- Look for **movement**: does an element move one place clockwise each step?
-- Look for **counting rules**: does the number of sides or dots go up by one or alternate?
-- Check rows and columns separately in a grid; rules can differ.
-- Eliminate answer options that break any rule you have confirmed.
-H: Deductive pitfalls
-- A conclusion must follow **necessarily**, not just be likely.
-- "All A are B" does not mean "all B are A".
-- Watch for "some" and "none", which change what can be concluded.
-- Ignore whether the conclusion is true in real life; judge only the logic.
-X: Solving an inductive sequence.
-> A sequence shows a square with one dot, then two dots, then three dots, while a small arrow rotates 90 degrees clockwise each step.
-> Rule 1: the number of dots goes up by one each step.
-> Rule 2: the arrow turns a quarter turn clockwise.
-> The next frame must have four dots and the arrow pointing a quarter turn further on; only one option meets both rules.
-K: Inductive tests ask you to find rules in abstract patterns, deductive tests ask which conclusions must follow from premises, and diagrammatic tests ask what operators do, so work systematically one feature at a time and eliminate options.
-!: Looking at the whole picture at once. Check one feature at a time, such as number, then rotation, then shading.
-EV: established | Abstract reasoning tests such as Raven's Progressive Matrices are widely used measures of general reasoning ability.
-EV: contested | Whether abstract tests are fully culture-fair is debated, since familiarity with such puzzles and practice affect scores.
-T: Inductive reasoning | Working out a general rule from specific examples
+O: Identify the rules governing a sequence of shapes or symbols
+O: Evaluate why employers use abstract reasoning tests and their limitations
+PRE: What psychometric tests measure
+H: Kinds of logical test
+P: **Inductive reasoning** tests show a series of figures that change according to hidden rules; you choose the figure that comes next or the odd one out. They measure the ability to infer general rules from specific examples, closely related to fluid intelligence. **Deductive reasoning** tests give premises and ask what must follow ("All managers attend training; Sam is a manager; therefore Sam attends training"). **Diagrammatic reasoning** tests show inputs passing through operators (symbols that change shapes) and ask which operator does what. Because they use abstract material, these tests depend less on language and maths, and are often used for technology, engineering and consulting roles.
+H: Common rule types
+- **Movement**: a shape moves one position clockwise each step.
+- **Rotation**: a shape rotates 45 or 90 degrees each step.
+- **Count**: the number of sides, dots or lines increases or decreases.
+- **Colour or shading**: alternates, or follows a cycle.
+- **Size**: grows or shrinks.
+- **Several rules at once**: harder questions combine two or three rules acting on different elements.
+H: Working systematically
+P: Look at one element at a time (a single shape, its position, its colour), find its rule, then the next element. Write rules down if allowed. Use the answer options: eliminate those that break any rule you've found. Don't fix on one theory too long; if a rule doesn't fit every step, try another. Practise to build familiarity with common rule types.
+X: A sequence shows a square with a dot. Step 1: dot in the top left corner, square white. Step 2: dot top right, square grey. Step 3: dot bottom right, square white. What comes next?
+> Rule 1 (position): the dot moves one corner clockwise each step, so next it is bottom left.
+> Rule 2 (shading): the square alternates white, grey, white, so next it is grey.
+> Answer: a grey square with the dot in the bottom left corner.
+> Eliminate any option with the dot elsewhere or a white square.
+> Conclusion: isolating one rule per element turns a confusing pattern into a clear answer.
+K: Inductive tests ask you to infer rules from sequences, deductive tests what must follow from premises, and diagrammatic tests what operators do; work one element at a time, combine rules and eliminate options.
+!: Trying to see the whole pattern at once. Breaking it into elements (position, rotation, count, shading) and finding each rule separately is faster and more accurate.
+EV: established | Abstract reasoning tests are less dependent on language and numeracy than verbal or numerical tests and are widely used in technical and consulting recruitment.
+EV: contested | Abstract tests are sometimes described as "culture-fair", but performance is still influenced by familiarity with this kind of puzzle and by test anxiety.
+T: Inductive reasoning | Inferring general rules from specific examples, such as a sequence of shapes
 T: Deductive reasoning | Drawing conclusions that must follow from given premises
-T: Diagrammatic reasoning | Working out what operators do to symbols in a process
-SUM: Find the rule from examples.
-SUM: One feature at a time.
-SUM: Deductions must follow necessarily.
-SRC: Raven J., "The Raven's Progressive Matrices: change and stability over culture and time", Cognitive Psychology, 41(1), 1–48 | primary | 2000
+SUM: Inductive tests find rules in sequences, deductive tests draw necessary conclusions, and diagrammatic tests work out what operators do.
+SUM: Common rules involve movement, rotation, count, shading and size; work one element at a time and eliminate options.
+SRC: Raven J., "The Raven's Progressive Matrices: change and stability over culture and time", Cognitive Psychology 41(1), 1–48 | primary | 2000
 SRC: Prospects (Jisc), "Psychometric tests" | guidance | 2024
-Q: What is the first step in a systematic approach to a shape sequence? | Look at one feature at a time, such as number, shape or rotation.
-Q: Does "All A are B" mean "All B are A"? | No.
-M1#careers-u06-11-q1@1: Which test asks you to work out what symbols do to shapes in a process? | Diagrammatic reasoning | Verbal reasoning | Numerical reasoning | Situational judgement | Diagrammatic tests use operators that transform shapes, and you must infer what each one does.
-M2#careers-u06-11-q2@2: Premises: "All interns attend induction. Maya attends induction." What can be concluded? | Nothing definite about whether Maya is an intern | Maya is definitely an intern on the scheme | Maya is definitely not an intern on the scheme | All people who attend induction are interns | Attending induction does not imply being an intern, since "All A are B" does not reverse.
-M3#careers-u06-11-q3@3: In a 3 by 3 grid, the rows add a side to each shape but the columns change shading. What should you do? | Apply both rules to find the missing cell | Use only the row rule and ignore columns | Choose the option with the most shading | Pick the most complex shape on offer | Rows and columns can carry different rules, and the right answer must satisfy both.
-SEQ2#careers-u06-11-q4@2: Put the steps of a systematic approach to an inductive question in order. | Look at one feature at a time ; Write down a possible rule ; Check the rule against every frame ; Eliminate options that break the rule | Testing each rule against all frames before eliminating options reduces careless errors.
-SA2#careers-u06-11-q5@2,3: Explain the differences between inductive, deductive and diagrammatic reasoning tests and how to approach them. | Inductive tests show patterns or sequences and ask you to infer the rule, such as dots increasing by one while a shape rotates. Deductive tests give premises and ask which conclusion must necessarily follow, judged only on logic. Diagrammatic tests ask what operators do to symbols in a process. A systematic approach checks one feature at a time, tests each rule against all examples and eliminates options, while for deduction you avoid reversing statements and ignore real-world truth. | Inductive defined ; Deductive defined ; Diagrammatic defined ; Systematic strategies
+Q: What is the difference between inductive and deductive reasoning? | Inductive infers general rules from specific examples; deductive draws conclusions that must follow from given premises.
+Q: Name four common rule types in inductive tests. | Any four: movement, rotation, count, shading or colour, size.
+M1#careers-u06-11-q1@1: Which kind of test asks you to find the next figure in a sequence of shapes? | Inductive reasoning | Verbal reasoning | Numerical reasoning | Situational judgement | Inferring the rule behind a sequence is inductive reasoning.
+M2#careers-u06-11-q2@2: In a sequence, an arrow points up, right, down. Which comes next? | Left | Up | Right | Down | The arrow rotates 90 degrees clockwise each step: up, right, down, then left.
+TF1#careers-u06-11-q3@1: Deductive reasoning asks what must follow logically from given premises. | true | Deductive tests check whether conclusions necessarily follow from the information given.
+M3#careers-u06-11-q4@3: Which is the strongest limitation of abstract reasoning tests in selection? | Scores are affected by familiarity with puzzles and anxiety, not just reasoning ability | They require advanced knowledge of mathematics and English grammar | They can't be taken online and must always be completed on paper | They have no relationship at all with any kind of job performance | Abstract tests reduce reliance on language and maths but are still influenced by practice and anxiety, so they aren't fully culture-free.
+SA3#careers-u06-11-q5@2,3: Explain how to approach a difficult inductive reasoning question with several changing elements. | Identify each element separately: shapes, positions, orientation, number, shading and size. For each, compare consecutive steps to find its rule (movement, rotation, count, alternation). Note rules down. Check each rule holds across all steps; if not, try an alternative. Combine rules to predict the next figure. Use the options to eliminate any that break a rule. Manage time by moving on if stuck. | Separates elements ; Identifies a rule per element ; Checks rules across all steps ; Combines rules and eliminates options ; Manages time
 
 ## Situational judgement tests
 LV: Intermediate · Application
-S: Situational judgement tests present realistic workplace scenarios and ask how you would respond. This lesson explains the formats, how they are scored against the employer's values and how to prepare.
-O: Describe the formats of situational judgement tests
-O: Explain how SJT responses are scored
-O: Use an employer's values to judge the most effective response
+S: Situational judgement tests (SJTs) present realistic work scenarios and ask how you would or should respond. This lesson explains SJT formats, what they measure, how they're scored and how to prepare by understanding the employer's values.
+O: Describe the formats of situational judgement tests and what they measure
+O: Rank or rate responses to a work scenario in line with professional values
+O: Evaluate the validity and preparation of SJTs
+PRE: What psychometric tests measure
 H: What SJTs are
-P: A **situational judgement test** (SJT) describes a workplace dilemma, such as a colleague missing a deadline or a customer complaint, and asks you to judge possible responses. SJTs measure **judgement**, **behavioural tendencies** and fit with the organisation's **values**, rather than technical knowledge. They are built by asking experienced staff how effective different responses would be, so the scoring key reflects what the **employer** considers good practice. UK examples include the **Civil Service Judgement Test**, the SJT section of the **UCAT** for medicine and dentistry, and many graduate scheme tests. Some are text-based; others use videos or animations.
-H: Response formats
-- **Rate** each option on a scale from very effective to very ineffective.
-- **Rank** the options from most to least effective.
-- Choose the **most** and **least** effective response.
-- Many tests award partial credit for answers close to the key.
-- There may be no perfect option; choose the best of those offered.
-H: Choosing well
-- Read the employer's **values** and competency framework before the test.
-- Favour responses that are **proactive**, **honest** and solve the problem at the right level.
-- Avoid extremes: ignoring a problem and escalating everything at once are both usually weak.
-- Consider safety, ethics and customers first where they are at stake.
-- Answer as you would genuinely act at your best, since SJTs often feed into later interviews.
-X: Judging a scenario.
-> Scenario: a teammate has not done their share of a client report due tomorrow.
-> Option A: do the whole report yourself without saying anything. Option B: tell your manager immediately that your teammate is lazy.
-> Option C: speak to the teammate today, agree how to finish it and update the manager if it is still at risk.
-> Option C is most effective: it is direct, solves the problem and escalates proportionately.
-K: SJTs ask you to judge responses to realistic work scenarios, scored against the employer's own view of effective behaviour, so learn its values and favour proactive, honest and proportionate responses.
-!: Picking the most dramatic action. Escalating straight to a manager is often less effective than first trying to resolve the issue directly.
-EV: established | Meta-analyses show situational judgement tests predict job performance and can add to cognitive ability tests.
-EV: contested | Exactly what SJTs measure, whether specific job knowledge or general judgement and personality, is debated.
-T: Situational judgement test | A test asking candidates to judge responses to realistic work scenarios
-T: Scoring key | The set of judgements, usually from experienced staff, against which answers are scored
-T: Proportionate escalation | Raising a problem with someone more senior only to the degree that the situation needs
-SUM: Scenarios test judgement and values.
-SUM: Rate, rank or most and least.
-SUM: Proactive, honest, proportionate.
-SRC: McDaniel M. A., Morgeson F. P., Finnegan E. B., Campion M. A. and Braverman E. P., "Use of situational judgment tests to predict job performance: a clarification of the literature", Journal of Applied Psychology, 86(4), 730–740 | primary | 2001
-SRC: Lievens F., Peeters H. and Schollaert E., "Situational judgment tests: a review of recent research", Personnel Review, 37(4), 426–441 | secondary | 2008
-SRC: Prospects (Jisc), "Situational judgement tests" | guidance | 2024
-Q: Who usually decides the scoring key for an SJT? | Experienced staff or experts in the employer's roles.
-Q: Name three SJT response formats. | Rating each option, ranking options, and choosing most and least effective.
-M1#careers-u06-12-q1@1: What does a situational judgement test mainly measure? | Judgement in work situations and fit with values | Speed at calculating figures from complex tables | Knowledge of the employer's history and leaders | Accuracy at spotting grammar errors in passages | SJTs focus on how you would handle realistic dilemmas, scored against the employer's view of good practice.
-M2#careers-u06-12-q2@2: Why should you read an employer's values before an SJT? | The scoring key reflects what that employer sees as effective | Values statements contain the exact answers to every question | Reading values is a legal requirement before any online test | The test asks you to recite the values word for word at the end | SJTs are keyed by experienced staff, so the employer's values guide what counts as effective.
-M3#careers-u06-12-q3@3: A customer is upset about a delayed order. Which response is usually most effective? | Apologise, find out the cause and give a realistic update | Promise immediate delivery even though it is not possible | Pass the customer to your manager straight away without help | Explain that delays are not your fault and end the call quickly | It is honest, proactive and solves the problem at the right level, which SJT keys usually reward.
-TF2#careers-u06-12-q4@2: In an SJT, escalating every problem to a manager immediately is usually rated the most effective response. | false | Keys usually favour trying to resolve issues proportionately first, escalating only when needed.
-SA2#careers-u06-12-q5@2,3: Explain how situational judgement tests are built and scored, and how a candidate can prepare. | SJTs present realistic work scenarios with several responses that candidates rate, rank or choose as most and least effective. The scoring key is built from judgements by experienced staff, so it reflects the employer's view of effective behaviour, and partial credit is often given. To prepare, candidates should research the employer's values and competencies and practise example tests. In the test they should favour proactive, honest and proportionate responses that put safety, ethics and customers first, answering as they would genuinely act at their best. | Formats described ; Scoring key from experienced staff ; Research values and practise ; Proactive, honest, proportionate responses
+P: A **situational judgement test** presents realistic scenarios from the job, such as a difficult customer, a missed deadline or a colleague's mistake, with several possible responses. Formats include choosing the most and least effective response, ranking responses, or rating each on effectiveness. SJTs measure judgement in work situations, often linked to the employer's competencies and values. They are used by many graduate employers, the Civil Service, and in medicine (the UK Foundation Programme uses an SJT for doctors' first jobs).
+P: Scoring compares your answers with a key, usually created by experienced staff or subject experts judging the best responses. Some formats give partial credit for answers close to the key.
+H: Answering well
+- **Learn the values**: read the employer's values and competencies; SJTs reward responses aligned with them (such as customer focus, integrity, teamwork).
+- **Think about the role level**: what is appropriate for a graduate, not a senior manager.
+- **Prefer proactive, constructive responses**: address the problem directly, communicate, and escalate when appropriate.
+- **Avoid extremes**: ignoring a problem or overreacting (such as reporting a colleague to senior management for a first, minor mistake) is usually least effective.
+- **Prioritise safety, ethics and the customer**: where these are at stake, act.
+X: Scenario: you notice a colleague has sent a client a report with an incorrect figure. Your manager is in meetings all day. Rate the responses.
+> A: Do nothing; it's not your report. Least effective: the client receives wrong information.
+> B: Tell your colleague straight away so they can correct it and inform the client. Most effective: direct, quick and respectful.
+> C: Email the client yourself with the correction. Less effective: bypasses your colleague and may cause confusion.
+> D: Message your manager to report your colleague's mistake. Moderately effective at best: escalates before trying the direct route.
+> Conclusion: proactive, constructive and proportionate responses usually score highest.
+K: SJTs present job scenarios and score your judgement against an expert key; prepare by learning the employer's values and choosing proactive, constructive, proportionate responses appropriate to your role.
+!: Answering with what you think sounds impressive rather than what is appropriate for a graduate in the role. Overreaching, such as making senior decisions alone, is often marked down.
+EV: established | Situational judgement tests predict job performance modestly and add to the prediction from ability tests, according to meta-analyses.
+EV: contested | Whether SJTs measure general judgement or knowledge of a particular employer's expectations is debated; coaching can improve scores where values are well known.
+T: Situational judgement test | An assessment presenting realistic work scenarios and asking candidates to judge the effectiveness of responses
+T: Scoring key | The expert judgement of the best responses against which candidates' answers are scored
+SUM: SJTs present realistic scenarios with responses to choose, rank or rate, scored against an expert key.
+SUM: Learn the employer's values, think about your role level and prefer proactive, constructive, proportionate responses.
+SRC: McDaniel M. A., Morgeson F. P., Finnegan E. B., Campion M. A. and Braverman E. P., "Use of situational judgment tests to predict job performance: a clarification of the literature", Journal of Applied Psychology 86(4), 730–740 | primary | 2001
+SRC: UK Foundation Programme Office, "Situational Judgement Test" | guidance | 2024
+Q: What does a situational judgement test measure? | Judgement about how to respond to realistic work situations, often linked to the employer's values and competencies.
+Q: How are SJTs scored? | Against a key of the best responses agreed by experienced staff or subject experts.
+M1#careers-u06-12-q1@1: What do situational judgement tests present? | Realistic work scenarios with possible responses | Sequences of abstract shapes to complete | Tables of numerical data to analyse | Passages to judge true, false or cannot say | SJTs use scenarios from the job; the others describe inductive, numerical and verbal tests.
+M2#careers-u06-12-q2@2: A customer complains loudly in a shop where you're a graduate trainee. Which response is usually most effective? | Listen calmly, apologise for the problem and offer to resolve it or involve a manager | Tell the customer to calm down or leave the shop immediately | Ignore the customer until they become quieter and then help | Give the customer a full refund without checking the policy | Calm, constructive handling within your authority, with escalation if needed, reflects customer focus and judgement.
+TF1#careers-u06-12-q3@2: Situational judgement tests are used in selecting UK doctors for the Foundation Programme. | true | The UK Foundation Programme has used an SJT as part of selection for doctors' first posts.
+M3#careers-u06-12-q4@3: Which is the best way to prepare for an employer's SJT? | Learn its values and competencies and practise judging responses for a graduate role | Memorise answers from websites claiming to have the employer's exact questions | Assume the most senior-sounding, decisive response is always best | Avoid preparation because SJTs can't be affected by understanding values | Understanding values and role level improves judgement; leaked answers are unreliable and senior overreach is often marked down.
+SA3#careers-u06-12-q5@2,3: Evaluate situational judgement tests as a selection method. | Strengths: realistic, job-relevant scenarios; can reflect the employer's values; predict performance modestly and add to ability tests; candidates find them fair and informative about the job; used widely including in medicine. Limits: scoring keys depend on expert opinion; may measure knowledge of employer expectations, so can be coached; cultural differences in what's appropriate; responses describe intentions, not actual behaviour. Useful as part of a combined process. | Explains realism and job relevance ; Refers to predictive validity evidence ; Notes key depends on expert judgement ; Notes coaching or cultural limits ; Reaches a judgement
 
 ## Personality questionnaires
-LV: Intermediate · Evaluation
-S: Many employers use personality questionnaires to understand how candidates prefer to work. This lesson explains the Big Five model, normative and forced-choice formats, how results are used and how to approach them honestly.
-O: Describe the Big Five model of personality
-O: Distinguish normative and ipsative questionnaire formats
-O: Evaluate how employers use and misuse personality results
-H: The Big Five
-P: Most work personality questionnaires are based on, or map onto, the **Big Five** or **five-factor model**: **Openness** to experience, **Conscientiousness**, **Extraversion**, **Agreeableness** and **Neuroticism** (often reported as **emotional stability**), remembered as OCEAN. Each is a continuum, so there are no good or bad scores in general, only better or worse fits with particular roles. A widely cited meta-analysis by Barrick and Mount found **conscientiousness** to be the most consistent predictor of job performance across occupations. Commercial tools used in UK recruitment include SHL's **Occupational Personality Questionnaire (OPQ32)** and the **Hogan Personality Inventory**. The Myers-Briggs Type Indicator is popular for development but is not recommended for selection.
-H: Question formats
-- **Normative** items ask you to rate statements such as "I enjoy meeting new people" on an agree to disagree scale.
-- **Ipsative** or **forced-choice** items make you choose which of several statements is most and least like you.
-- Forced-choice formats make it harder to present yourself as good at everything.
-- Many questionnaires are **untimed**, but you should work steadily and go with your first honest reaction.
-- Consistency checks can show when answers appear contradictory or unrealistically positive.
-H: How results are used
-- Results are compared with a norm group and often with a profile of the role.
-- Good practice is to use them alongside other evidence, not as the only reason to reject someone.
-- They often shape **interview questions**, such as probing a low score on planning.
-- Candidates should be able to request feedback under good-practice standards.
-X: Answering a forced-choice item.
-> The item asks which is most and least like you: "I plan tasks in detail", "I enjoy persuading people" and "I stay calm under pressure".
-> Jordan feels all three are partly true but is most energised by persuading and least drawn to detailed planning.
-> She answers honestly rather than guessing what the employer wants.
-> At interview she is asked about planning and explains the to-do system she uses to compensate.
-K: Personality questionnaires usually measure the Big Five traits in normative or forced-choice formats, and they work best as one piece of evidence that guides interviews, so answer honestly and consistently.
-!: Trying to give the ideal answer to every item. Faking produces inconsistent profiles and can mean a poor fit with the job; answer honestly.
-EV: established | Conscientiousness is the Big Five trait most consistently related to job performance across occupations.
-EV: contested | How far candidates fake personality questionnaires in real selection, and how much this harms their validity, is debated.
-T: Big Five | Openness, Conscientiousness, Extraversion, Agreeableness and Neuroticism
-T: Normative format | Items rated independently on an agreement scale
-T: Ipsative format | Forced-choice items comparing statements with each other
-SUM: OCEAN underpins most tools.
-SUM: Rating or forced choice.
-SUM: Honest answers, used with other evidence.
-SRC: Barrick M. R. and Mount M. K., "The Big Five personality dimensions and job performance: a meta-analysis", Personnel Psychology, 44(1), 1–26 | primary | 1991
-SRC: Costa P. T. and McCrae R. R., NEO PI-R Professional Manual, Psychological Assessment Resources | standard | 1992
-SRC: British Psychological Society, Psychological Testing: A User's Guide | guidance | 2017
-Q: What does OCEAN stand for? | Openness, Conscientiousness, Extraversion, Agreeableness and Neuroticism.
-Q: What is a forced-choice personality item? | One where you choose which statements are most and least like you.
-M1#careers-u06-13-q1@1: Which Big Five trait is most consistently linked to job performance? | Conscientiousness | Extraversion | Openness | Agreeableness | Barrick and Mount's meta-analysis found conscientiousness predicted performance across many occupations.
-M2#careers-u06-13-q2@2: Why do some employers use forced-choice personality items? | They make it harder to rate yourself highly on everything | They are always much quicker than other formats to complete | They measure numerical ability as well as personality traits | They remove the need for any norm group when scoring results | Forcing choices between desirable statements reduces the effect of candidates presenting themselves as ideal.
-M3#careers-u06-13-q3@3: An employer rejects candidates solely because of a low extraversion score for a data analyst role. What is the best evaluation? | Poor practice, as results should be one piece of evidence linked to the role | Good practice, as extraversion is the best predictor of performance in every job | Good practice, because personality results are fully reliable on their own | Poor practice, because personality questionnaires can never be used in selection | Good practice combines personality results with other evidence and relevant role requirements.
-MATCH2#careers-u06-13-q4@1: Match each Big Five trait to a typical description. | Openness = Curious and open to new ideas ; Conscientiousness = Organised and dependable ; Extraversion = Sociable and energised by others ; Agreeableness = Cooperative and considerate | Knowing what each trait describes helps you interpret feedback on your profile.
-SA2#careers-u06-13-q5@2,3: Evaluate the use of personality questionnaires in graduate recruitment and advise candidates how to approach them. | Personality questionnaires, usually based on the Big Five, can add useful information, and conscientiousness in particular predicts performance across jobs. However, they measure preferences rather than ability, can be faked, and should be used with other evidence and linked to role requirements, not as a sole reason for rejection. Forced-choice formats and consistency checks reduce faking, and results often guide interview questions. Candidates should answer honestly and consistently, go with their first reaction and be ready to discuss their profile, asking for feedback if it is offered. | Big Five basis ; Predictive value, especially conscientiousness ; Limitations and good practice ; Honest, consistent answering
+LV: Intermediate · Application
+S: Many employers use personality questionnaires to understand candidates' preferred ways of working. This lesson explains what they measure, how they are used in selection, why faking is a risk, and how to complete them honestly and consistently.
+O: Describe how personality questionnaires are used in graduate selection
+O: Interpret a personality profile against the demands of a role
+O: Evaluate the use of personality questionnaires and the effect of faking
+PRE: Interests and personality tools: uses and limits
+H: What they measure
+P: **Personality questionnaires** in selection ask how much statements describe you ("I enjoy meeting new people", "I like to plan ahead") or force you to choose between statements. Most measure traits related to the Big Five, such as conscientiousness, extraversion, emotional stability, agreeableness and openness, often in work-specific terms (persuasive, detail-conscious, competitive, relaxed). Examples include SHL's OPQ32 and the Hogan Personality Inventory.
+P: They have no right answers. Employers use them to see how a candidate's preferences fit a role, to generate interview questions ("You prefer to work alone; tell me about a time you worked closely with a team") and sometimes in a combined score. Professional guidance says they shouldn't be used alone to reject candidates.
+H: Faking and consistency
+P: Because answers are self-reported, candidates can try to present themselves as the "ideal" employee. Research shows people can raise their scores when instructed to fake, and some do in real selection. Questionnaire designers respond with forced-choice formats, consistency checks and response pattern analysis. Faking is risky: inconsistent answers may be flagged, interviewers may probe, and if successful you may end up in a role that doesn't suit you.
+- **Answer honestly and quickly**: first instincts are usually most accurate.
+- **Think about yourself at work or study**, not at home.
+- **Be consistent**: similar statements appear in different forms.
+- **Don't over-think the "ideal" answer**: different roles value different profiles.
+X: Owen's profile shows high detail-consciousness, moderate sociability and low competitiveness. He is applying for a graduate audit role and a sales role.
+> Audit: detail-consciousness fits well; moderate sociability is fine for client meetings.
+> Sales: low competitiveness and moderate sociability may mean the role is less energising; an interviewer may ask about working to targets.
+> Owen prepares examples showing how he works with targets, but also reflects on whether sales suits him.
+> Conclusion: an honest profile helps both employer and candidate judge fit.
+K: Personality questionnaires describe preferred ways of working, usually related to the Big Five, and are used to judge role fit and shape interviews; answer honestly and consistently, since faking is detectable and can lead to a poor fit.
+!: Trying to answer as a "perfect candidate". There is no single ideal profile, and inconsistent or exaggerated answers can be flagged.
+EV: established | Conscientiousness predicts job performance modestly across occupations, supporting limited use of personality measures in selection.
+EV: contested | How much faking affects real selection decisions is debated; people can fake when instructed, and forced-choice formats reduce but don't eliminate it.
+T: Forced-choice format | A questionnaire format asking candidates to choose between statements of similar desirability, reducing faking
+T: Faking | Presenting yourself unrealistically in a self-report questionnaire to appear more suitable
+SUM: Personality questionnaires measure work-related traits, mostly linked to the Big Five, with no right answers.
+SUM: They inform fit and interview questions; faking is possible but detectable and counter-productive, so answer honestly and consistently.
+SRC: Barrick M. R. and Mount M. K., "The Big Five personality dimensions and job performance: a meta-analysis", Personnel Psychology 44(1), 1–26 | primary | 1991
+SRC: Morgeson F. P. et al., "Reconsidering the use of personality tests in personnel selection contexts", Personnel Psychology 60(3), 683–729 | primary | 2007
+Q: Why shouldn't personality questionnaires be used alone to reject candidates? | They are self-report, predict performance only modestly and are best used alongside other evidence, as professional guidance advises.
+Q: How do questionnaire designers reduce faking? | Forced-choice formats, consistency checks and response pattern analysis.
+M1#careers-u06-13-q1@1: Which statement about personality questionnaires is true? | They have no right or wrong answers | They are always strictly timed | They test numerical skills | They are marked out of 100 | Personality questionnaires describe preferences; they aren't ability tests with correct answers.
+M2#careers-u06-13-q2@2: An interviewer says: "Your profile suggests you prefer working alone." What is the best response? | Acknowledge it honestly and give an example of working effectively in a team | Deny the result and say the questionnaire must be completely wrong | Agree and say you refuse to do any kind of teamwork at all | Change the subject to your degree grades instead of answering | An honest answer with evidence of adapting shows self-awareness and addresses the concern.
+TF1#careers-u06-13-q3@2: Forced-choice questionnaires ask candidates to choose between statements of similar desirability. | true | This makes it harder to choose only the "best-sounding" options and reduces faking.
+M3#careers-u06-13-q4@3: Which is the strongest argument against faking a personality questionnaire? | It may be detected and could lead to a role that doesn't suit you | Faking is a criminal offence that leads to prosecution in the UK | Personality questionnaires never influence any selection decisions | Employers always share the scoring key with candidates beforehand | Inconsistency can be flagged, and even if undetected, a poor fit harms the candidate.
+SA3#careers-u06-13-q5@2,3: Evaluate the use of personality questionnaires in graduate selection. | Strengths: give information on preferences relevant to role fit; conscientiousness predicts performance modestly; useful for structuring interview questions and development; quick and standardised. Limits: self-report and fakeable (though forced-choice formats help); validity for predicting performance is modest; some candidates feel they are intrusive; risk of misuse as a sole cut-off. Best used alongside other methods and discussed with candidates. | Explains uses in fit and interviews ; Refers to evidence on prediction ; Identifies faking or self-report limits ; Notes misuse risk ; Reaches a balanced judgement
 
 ## Game-based assessments
-LV: Intermediate · Evaluation
-S: Some UK employers now use short online games instead of traditional tests. This lesson explains what game-based assessments measure, how to prepare practically and the debate about their fairness and validity.
-O: Describe how game-based assessments work
-O: Prepare practically for a game-based assessment
-O: Evaluate claims made for and against game-based assessment
-H: How they work
-P: A **game-based assessment** asks you to play a series of short games, often on a phone or laptop, while software records **behavioural data** such as reaction times, accuracy, how you respond to feedback and how much risk you take. Some games are adapted from laboratory tasks; for example, inflating a balloon for points until it might burst is based on the **Balloon Analogue Risk Task**, a measure of risk-taking. The data are used to estimate cognitive abilities, such as working memory and attention, and traits, such as resilience or curiosity, which are compared with a profile for the role. Providers in the UK market include Arctic Shores and Cappfinity, and the games are used by some banks, consultancies and public-sector schemes.
-H: Preparing practically
-- You usually cannot rehearse the exact games, so focus on conditions.
-- Use the device recommended, with a stable connection, full battery and notifications off.
-- Choose a quiet time when you are rested and can complete it in one sitting.
-- Read every instruction; some games reward speed, others accuracy or persistence.
-- Play naturally rather than trying to guess the "ideal" behaviour, as patterns over many choices are hard to fake.
-- Ask for **reasonable adjustments** early if you have a disability that affects gameplay.
-H: The debate
-- Supporters argue games are engaging, reduce test anxiety and may show smaller group differences.
-- Critics note that the evidence base is newer and much research comes from providers.
-- It can be hard for candidates to see what is being measured or to get useful feedback.
-- Familiarity with video games may affect performance in ways unrelated to the job.
-X: Approaching a games assessment.
-> Ben is invited to a 30-minute game-based assessment for a bank's graduate scheme.
-> He checks the provider's guidance, uses his laptop on a stable connection and turns off notifications.
-> In a risk game he plays steadily rather than trying to outguess the scoring.
-> He has dyspraxia, so he contacts the bank beforehand and is offered extra time and an alternative to a fast-tapping game.
-K: Game-based assessments infer abilities and traits from behaviour during short games, so prepare your conditions, read instructions and play naturally, while recognising that evidence on their validity and fairness is still developing.
-!: Trying to work out and fake the "right" behaviour. Scoring uses patterns across many actions, so it is better to play naturally.
-EV: contested | Claims that game-based assessments are fairer and as valid as traditional tests rest on a limited, partly provider-funded evidence base.
-T: Game-based assessment | Selection games that measure abilities and traits from in-game behaviour
-T: Behavioural data | Records of actions such as reaction times, accuracy and choices
-T: Balloon Analogue Risk Task | A laboratory task measuring risk-taking by inflating a virtual balloon
-SUM: Games record how you behave.
-SUM: Prepare conditions, play naturally.
-SUM: Evidence is still developing.
-SRC: Lejuez C. W. et al., "Evaluation of a behavioral measure of risk taking: the Balloon Analogue Risk Task (BART)", Journal of Experimental Psychology: Applied, 8(2), 75–84 | primary | 2002
-SRC: Chamorro-Premuzic T., Winsborough D., Sherman R. A. and Hogan R., "New talent signals: shiny new objects or a brave new world?", Industrial and Organizational Psychology, 9(3), 621–640 | secondary | 2016
-SRC: Prospects (Jisc), "Psychometric tests" | guidance | 2024
-Q: What kind of data do game-based assessments record? | Behavioural data, such as reaction times, accuracy and choices.
-Q: Why is faking a game-based assessment difficult? | Scoring uses patterns across many small actions.
-M1#careers-u06-14-q1@1: What does a game-based assessment mainly use to estimate abilities and traits? | Behavioural data recorded during the games | A written statement submitted after the games | The candidate's high score in each separate game | A list of video games the candidate has played | Software analyses reaction times, accuracy and choices to infer abilities and traits.
-M2#careers-u06-14-q2@2: Which preparation is most useful for a game-based assessment? | Setting up a quiet space, stable connection and recommended device | Memorising the exact sequence of each game from online forums | Practising for hours to maximise a score on commercial video games | Reading the employer's annual report in full during the games | You cannot usually rehearse the games, so controlling conditions and reading instructions helps most.
-M3#careers-u06-14-q3@3: A provider claims its games remove all bias from selection. What is the best evaluation? | Treat it cautiously, as independent evidence is limited and game familiarity may matter | Accept it, because any assessment presented as a game must be fair to all groups | Accept it, because computer scoring cannot be influenced by any human bias | Reject game-based assessment entirely, because games can never measure ability | Fairness claims need independent evidence; new methods may reduce some biases but introduce others.
-TF2#careers-u06-14-q4@2: Candidates with a disability can ask for reasonable adjustments to game-based assessments. | true | Employers must consider reasonable adjustments in all stages of recruitment, including games, so ask early.
-SA2#careers-u06-14-q5@2,3: Evaluate the use of game-based assessments in graduate recruitment. | Game-based assessments record behaviour such as reaction times, accuracy and risk-taking during short games to estimate abilities and traits, compared with a role profile. Supporters say they are engaging, may reduce test anxiety, are hard to fake and may show smaller group differences. However, the evidence base is newer and partly provider-funded, candidates often get little feedback or understanding of what is measured, and familiarity with video games may affect results. They are best used alongside other evidence, with reasonable adjustments for disabled candidates. | How they work ; Claimed advantages ; Limitations and evidence concerns ; Use with other evidence and adjustments
+LV: Intermediate · Application
+S: Some employers now replace traditional tests with short online games that measure cognitive abilities and behavioural traits. This lesson explains what game-based assessments measure, how to approach them and the debates about their fairness and validity.
+O: Describe what game-based assessments are and what they measure
+O: Prepare for a game-based assessment appropriately
+O: Evaluate the claims made for game-based assessment
+PRE: What psychometric tests measure
+H: What they are
+P: **Game-based assessments** present a series of short games, often on a phone, lasting 15 to 30 minutes in total. Games may involve inflating balloons for points (risk-taking), remembering sequences (working memory), sorting shapes fast (processing speed), or choosing between rewards (decision-making). Providers such as Arctic Shores and Cappfinity design them to measure cognitive abilities and behavioural traits through how you play, collecting thousands of data points about choices, reaction times and learning. Some don't tell you what each game measures.
+P: Employers use them because candidates often find them more engaging, they are harder to coach for than traditional tests, they can be taken on mobile devices, and some providers report reduced adverse impact compared with conventional tests.
+H: How to approach them
+- **Read instructions carefully**: understand how points are scored.
+- **Find a quiet space and good connection**: some games measure reaction time.
+- **Play naturally**: trying to second-guess which behaviour is "wanted" is difficult and may produce inconsistent results.
+- **Try practice versions** where providers offer them, to get familiar with the format.
+- **Ask about adjustments** if you have a disability affecting speed, vision or motor control.
+H: Debates
+P: Game-based assessments are newer, and published independent research on their validity is limited compared with traditional tests. Questions include whether games measure what they claim, whether people who play more video games have an advantage, and how accessible they are for disabled candidates. Data protection law requires transparency about how data are used and limits on solely automated decisions.
+X: Tomas receives an invitation to a game-based assessment for a retail graduate scheme.
+> He reads the instructions, plays the practice game, and completes it on a laptop in a quiet room.
+> In a balloon game, he balances collecting points with the risk of bursting, rather than trying to guess what the employer wants.
+> He has dyspraxia and requests extra time for fine motor tasks in advance; the employer arranges an alternative assessment.
+> Conclusion: preparing practically, playing naturally and asking for adjustments gives the fairest result.
+K: Game-based assessments measure abilities and traits through how you play short games; read instructions, play naturally in good conditions and ask for adjustments, recognising that independent evidence on their validity and fairness is still developing.
+!: Trying to "game" the game. Many measure patterns across many data points, so playing naturally is more effective than guessing what's wanted.
+EV: established | Game-based assessments are increasingly used by large UK graduate employers, often early in selection.
+EV: contested | Independent evidence on the validity and fairness of game-based assessments is limited; provider claims of reduced adverse impact need more peer-reviewed research.
+T: Game-based assessment | A selection assessment using short games to measure cognitive abilities and behavioural traits
+T: Gamification | Adding game elements, such as points and levels, to non-game activities
+SUM: Game-based assessments use short games to measure abilities and traits through many data points about play.
+SUM: Read instructions, play naturally in good conditions, practise where possible and request adjustments; evidence on validity and fairness is still developing.
+SRC: Landers R. N. and Sanchez D. R., "Game-based, gamified, and gamefully designed assessments for employee selection: definitions, distinctions, design, and validation", International Journal of Selection and Assessment 30(1), 1–13 | primary | 2022
+SRC: Information Commissioner's Office, "Rights related to automated decision making including profiling" | guidance | 2024 | https://ico.org.uk
+Q: What do game-based assessments measure? | Cognitive abilities and behavioural traits, through choices, reaction times and learning during short games.
+Q: Why do employers use game-based assessments? | They're engaging, harder to coach, mobile-friendly and may reduce adverse impact, according to some providers.
+M1#careers-u06-14-q1@1: How do game-based assessments mainly collect evidence? | From how you play, such as choices and reaction times | From an essay you write about your favourite games | From your scores in commercial video games | From a personal interview about your hobbies | They record many data points about behaviour during the games, not outside gaming experience.
+M2#careers-u06-14-q2@2: A candidate with a visual impairment receives a game-based assessment. What should she do? | Contact the employer before starting to ask about reasonable adjustments | Complete it without telling anyone and explain her score afterwards | Ask a friend to complete the games on her behalf to be safe | Decline to apply because games can't ever be adapted | Requesting adjustments in advance lets the employer adapt or replace the assessment; impersonation is dishonest.
+TF1#careers-u06-14-q3@2: Independent published research on game-based assessments is more limited than research on traditional ability tests. | true | Game-based assessment is newer, and much evidence comes from providers rather than independent peer-reviewed studies.
+M3#careers-u06-14-q4@3: Which is the strongest concern about game-based assessments? | Limited independent evidence on whether they measure what they claim, and on accessibility | They are always much longer than traditional ability tests and assessment centres | They can only be taken by candidates who live near the employer's offices | They give candidates far too much information about the job itself | The main debates concern validity, fairness and accessibility, given limited independent research.
+SA3#careers-u06-14-q5@2,3: Evaluate the use of game-based assessments in graduate recruitment. | Advantages: engaging for candidates, harder to coach, mobile-friendly, rich data, and possibly reduced adverse impact. Concerns: limited independent evidence of validity; unclear what some games measure; possible advantage for frequent gamers; accessibility for disabled candidates; transparency and data protection over automated decisions. Judgement: promising but should be validated independently, used alongside other methods, and accompanied by clear information and adjustments. | Identifies advantages ; Notes limited independent evidence ; Identifies accessibility or gaming bias ; Mentions data protection or transparency ; Reaches a judgement
 
 ## Reasonable adjustments in assessment
-LV: Intermediate · Application
-S: Disabled candidates have a legal right to reasonable adjustments throughout recruitment in the UK. This lesson explains the Equality Act 2010 duty, common adjustments for applications and tests, and how to request them confidently.
-O: Explain the duty to make reasonable adjustments under the Equality Act 2010
-O: Identify common adjustments for applications, tests and interviews
-O: Plan how and when to request an adjustment
+LV: Intermediate · Evaluation
+S: Disabled candidates have a legal right to reasonable adjustments in recruitment, including tests and interviews. This lesson explains the Equality Act duty, common adjustments, how and when to ask, and decisions about disclosure.
+O: Explain the duty to make reasonable adjustments in recruitment under the Equality Act 2010
+O: Identify suitable adjustments for candidates in given scenarios
+O: Evaluate the considerations involved in deciding whether to disclose a disability
+PRE: What psychometric tests measure
 H: The legal duty
-P: Under the **Equality Act 2010**, employers must make **reasonable adjustments** so that disabled people are not put at a substantial disadvantage, and this applies to **recruitment** as well as employment. A person is **disabled** under the Act if they have a physical or mental impairment with a **substantial** and **long-term** adverse effect on their ability to carry out normal day-to-day activities; long-term usually means lasting or likely to last at least 12 months. This can include conditions such as dyslexia, autism, ADHD, mental health conditions, diabetes and visual or hearing impairments. Section 60 of the Act limits questions about health before a job offer, but employers may ask whether you need adjustments for the assessment process. Deciding whether to disclose a condition is your choice.
+P: Under the **Equality Act 2010**, employers must make **reasonable adjustments** to remove substantial disadvantages that disabled people face, including in recruitment. A person is **disabled** under the Act if they have a physical or mental impairment with a substantial and long-term adverse effect on their ability to carry out normal day-to-day activities. This can include conditions such as dyslexia, autism, ADHD, mental health conditions, long-term health conditions and sensory impairments. Employers generally must not ask about health before a job offer, except for limited purposes such as making adjustments for the selection process.
 H: Common adjustments
-- **Extra time** in online tests, often a set percentage agreed with the test provider.
-- **Alternative formats**, such as a paper test, large print, screen-reader compatible versions or a different game.
-- **Rest breaks**, a quiet room or a change of interview time.
-- Questions sent in advance or written as well as spoken in interviews.
-- Communication support, such as a British Sign Language interpreter; **Access to Work** can help fund support at a job interview.
-- Accessible venues and step-free access for assessment centres.
-H: Requesting adjustments
-- Look for the employer's adjustments contact or the question on the application form.
-- Ask **early**, ideally before starting online tests, as some adjustments take time to arrange.
-- Explain what you need and why, rather than only naming a condition.
-- Use evidence you already have, such as a university disability support plan, if asked.
-- Some schemes, such as the **Disability Confident** scheme used in the Civil Service, offer an interview to disabled candidates who meet the minimum criteria.
-- If you are refused without good reason, seek advice from your careers service, Acas or the Equality Advisory and Support Service.
-X: Requesting extra time.
-> Zara has dyslexia and receives 25% extra time in university exams.
-> Before starting a graduate scheme's verbal test, she emails the recruitment team to ask for the same extra time.
-> She explains that it allows her to read the passages accurately, and attaches her university support plan.
-> The employer arranges a new test link with extended timing before her deadline.
-K: The Equality Act 2010 requires employers to make reasonable adjustments for disabled candidates throughout recruitment, so request adjustments such as extra time or alternative formats early, explaining what you need and why.
-!: Waiting until after a test to mention a disability. Request adjustments before you start, as results usually cannot be reconsidered afterwards.
-EV: established | The Equality Act 2010 duty to make reasonable adjustments applies to job applicants as well as employees.
-T: Reasonable adjustment | A change that removes or reduces a disadvantage caused by disability
-T: Disability (Equality Act 2010) | An impairment with a substantial, long-term adverse effect on normal day-to-day activities
-T: Access to Work | A government grant scheme that can fund practical support for disabled people in work, including at interviews
-SUM: Adjustments are a legal right.
-SUM: Extra time, formats, breaks, support.
-SUM: Ask early and explain your needs.
-SRC: Equality Act 2010, sections 6, 20 and 60 | standard | 2010 | https://www.legislation.gov.uk/ukpga/2010/15/contents
-SRC: Acas, "Reasonable adjustments at work" | guidance | 2024 | https://www.acas.org.uk/reasonable-adjustments
-SRC: Department for Work and Pensions, Access to Work: get support if you have a disability or health condition | guidance | 2024 | https://www.gov.uk/access-to-work
-Q: How long must an impairment usually last to be long-term under the Equality Act 2010? | At least 12 months, or be likely to.
-Q: When should you request an adjustment for an online test? | Before starting the test, as early as possible.
-M1#careers-u06-15-q1@1: Which law requires UK employers to make reasonable adjustments for disabled job applicants? | Equality Act 2010 | Employment Rights Act 1996 | Data Protection Act 2018 | Health and Safety at Work Act 1974 | The Equality Act 2010 sets the duty to make reasonable adjustments, including during recruitment.
-M2#careers-u06-15-q2@2: Which is a typical reasonable adjustment for an online reasoning test? | Extended time agreed with the test provider | Removing the test entirely for all candidates | Giving the candidate the answers in advance | Lowering the pass mark for every candidate | Extra time removes a disadvantage without changing what the test measures for everyone else.
-M3#careers-u06-15-q3@3: A student with anxiety is unsure whether to mention it before an assessment centre. What is the best advice? | It is their choice; if they need an adjustment, ask early and say what would help | They must disclose it by law on every application, whether or not it affects them | They should never mention it, as employers may not make adjustments for it | They should wait until after the assessment and then ask for a re-sit | Disclosure is a personal choice, but adjustments can only be made if the employer knows what is needed in advance.
-TF2#careers-u06-15-q4@1: The Equality Act 2010 duty to make reasonable adjustments only applies once a person has started a job. | false | The duty covers applicants too, including application forms, tests, interviews and assessment centres.
-SA2#careers-u06-15-q5@2,3: Explain the rights of disabled candidates in UK recruitment and how a candidate should request an adjustment. | Under the Equality Act 2010, employers must make reasonable adjustments so disabled applicants are not substantially disadvantaged, and disability includes long-term conditions such as dyslexia, autism and mental health conditions. Common adjustments include extra time, alternative formats, rest breaks, questions in advance and communication support, which Access to Work can help fund at interviews. Candidates should contact the employer early, before tests, explain what they need and why, and provide existing evidence such as a support plan if asked. Disclosure is their choice, and they can seek advice from careers services or Acas if refused. | Equality Act duty covers recruitment ; Definition of disability ; Examples of adjustments ; Requesting early with explanation
+- **Extra time** in timed tests (often 25% to 50%), or untimed alternatives.
+- **Alternative formats**: screen-reader compatible tests, large print, coloured backgrounds, paper versions.
+- **Replacing an assessment**: such as substituting an interview for a game-based assessment.
+- **Interview adjustments**: questions in advance, a quiet room, breaks, a support worker, an interpreter, step-free access.
+- **Assessment centre adjustments**: rest breaks, separate rooms, adapted group exercises.
+P: Ask early, as soon as you receive an invitation or when the application form asks, explaining what helps you. You don't need to give a diagnosis in detail; describe the effect and the adjustment you need. The government's **Access to Work** scheme can fund support for interviews (such as a communication support worker) as well as in work. Many employers also offer the **Disability Confident** guaranteed interview for disabled candidates who meet the minimum criteria.
+H: Disclosure
+P: Disclosure is a personal choice. Benefits include receiving adjustments, showing strengths such as resilience, and joining employers with good support. Concerns include fear of stigma or discrimination. Researching employers' disability networks, Disability Confident status and adjustment statements helps candidates decide. Discrimination because of disability is unlawful.
+X: Leah has dyslexia and has been invited to complete a verbal reasoning test and a timed written exercise.
+> She contacts the recruiter, explains that she has dyslexia, which slows her reading speed, and asks for 25% extra time and a cream background.
+> The employer agrees for both assessments.
+> At interview she discusses how she uses assistive software, presenting it as part of her organised approach.
+> Conclusion: an early, specific request removed a disadvantage unrelated to the job's demands.
+K: The Equality Act 2010 requires employers to make reasonable adjustments in recruitment for disabled candidates, such as extra time, alternative formats or replaced assessments; ask early and specifically, and decide on disclosure knowing your rights.
+!: Waiting until after a poor test result to mention a need for adjustments. Request adjustments in advance; results from unadjusted tests may be hard to set aside.
+EV: established | The Equality Act 2010 places a duty on employers to make reasonable adjustments for disabled job applicants, including in assessments.
+EV: contested | How much disclosure helps or harms candidates in practice is debated; surveys report both improved support and fear of stigma, and experiences vary by employer.
+T: Reasonable adjustment | A change to remove or reduce a substantial disadvantage a disabled person faces, required by the Equality Act 2010
+T: Disability Confident | A government scheme for employers committed to recruiting and retaining disabled people, often including a guaranteed interview offer
+SUM: The Equality Act 2010 requires reasonable adjustments in recruitment for disabled candidates, defined broadly.
+SUM: Common adjustments include extra time, alternative formats and replaced assessments; ask early and specifically; Access to Work and Disability Confident offer support; disclosure is a personal choice.
+SRC: Equality Act 2010 | legislation | 2010 | https://www.legislation.gov.uk/ukpga/2010/15/contents
+SRC: GOV.UK, "Access to Work: get support if you have a disability or health condition" | guidance | 2024 | https://www.gov.uk/access-to-work
+Q: When is a person disabled under the Equality Act 2010? | When they have a physical or mental impairment with a substantial and long-term adverse effect on their ability to carry out normal day-to-day activities.
+Q: Name three reasonable adjustments in psychometric tests. | Any three: extra time, untimed alternatives, screen-reader compatibility, large print, coloured backgrounds, paper versions, a replaced assessment.
+M1#careers-u06-15-q1@1: Which law requires employers to make reasonable adjustments for disabled job applicants? | The Equality Act 2010 | The Employment Rights Act 1996 | The Data Protection Act 2018 | The National Minimum Wage Act 1998 | The duty to make reasonable adjustments is in the Equality Act 2010.
+M2#careers-u06-15-q2@2: A candidate with ADHD finds timed tests in noisy environments difficult. Which adjustment is most suitable? | Extra time and a quiet room for the assessment | Removing all questions about ADHD from the form | Asking her to bring a friend to complete the test | Skipping the assessment with no alternative at all | Extra time and a quiet environment address the disadvantage while still assessing her ability.
+TF1#careers-u06-15-q3@2: Access to Work can fund support for job interviews as well as in employment. | true | Access to Work can provide support such as a communication support worker at interview.
+M3#careers-u06-15-q4@3: Which is the most balanced advice on disclosing a disability in recruitment? | It's a personal choice; disclosure enables adjustments, and employers' support records can inform the decision | Always disclose every medical detail on the very first page of your CV | Never disclose a disability under any circumstances because it always harms candidates | Only disclose after accepting a job offer, since adjustments aren't available earlier | Disclosure is personal; it unlocks adjustments and legal protections, and researching employers helps candidates decide what and when to share.
+SA3#careers-u06-15-q5@2,3: A candidate with a long-term anxiety condition is invited to a timed online test and an assessment centre. Explain what adjustments she could request, how, and the considerations around disclosure. | Possible adjustments: extra time or untimed testing, a quiet room or separate space, questions in advance at interview, rest breaks, information about the day in advance, and a contact person. Request them early, when invited or via the form, describing effects and what helps rather than detailed diagnosis. Under the Equality Act 2010 the employer must make reasonable adjustments if she is disabled. Disclosure is her choice: it enables adjustments; she can research Disability Confident status and disability networks; discrimination is unlawful. | Identifies relevant adjustments ; Explains how and when to request ; Refers to the Equality Act duty ; Discusses disclosure as a choice ; Mentions support such as Disability Confident or Access to Work
 `;
