@@ -509,7 +509,7 @@
    "id": "u04",
    "n": 4,
    "title": "Reading Academic Texts and Critical Thinking",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u04-01",
@@ -597,7 +597,7 @@
    "id": "u05",
    "n": 5,
    "title": "Academic Writing",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u05-01",
