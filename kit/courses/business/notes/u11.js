@@ -718,7 +718,7 @@ H: Speak-up arrangements
 X: A bank chief executive and a whistleblower.
 > In 2016 anonymous letters raised concerns about a senior hire at Barclays.
 > The chief executive, Jes Staley, asked the bank's security team to try to identify the letter writer.
-> In 2018 the FCA and PRA fined him a total of about £640,000 for failing to act with due skill, care and diligence.
+> In 2018 the FCA and the PRA each fined him £642,430, about £1.28 million in total, for failing to act with due skill, care and diligence.
 > Barclays was required to report annually to the regulators on its whistleblowing procedures.
 K: Whistleblowing exposes wrongdoing that other controls miss; PIDA 1998 protects workers who make qualifying disclosures in the public interest to the right people, and organisations need confidential channels, proper investigation and zero tolerance of retaliation.
 !: Thinking whistleblowers must be certain of wrongdoing to be protected. They need a reasonable belief that the information shows wrongdoing and that disclosure is in the public interest.
