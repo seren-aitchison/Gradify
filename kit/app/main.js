@@ -26,6 +26,7 @@ import { AREAS, METRICS, PERIODS, HABIT_MODES, validateGoal, goalProgress, focus
 import { goalData } from "../learning/goal-data.js";
 import { PRO_ON_SALE } from "../data/billing.js";
 import { cockpitHtml, wireCockpit, welcomeHtml } from "./cockpit.js";
+import { hydrate as glassIcons, cluster as glassCluster } from "../core/glass-icons.js";
 import { haptic, hapticsOn, setHaptics, hapticsSupported } from "../core/haptics.js";
 import { complete } from "../core/complete.js";
 import { offerInstall, countVisit } from "../core/install.js";
@@ -37,6 +38,10 @@ import { record, answerEvent, forgotEvent, stageEvents } from "../intel/ledger.j
 import { learnerMemory } from "../intel/memory.js";
 import { boardHtml, wireBoard, DEFAULT_WIDGETS } from "./widgets.js";
 import { notifyPanelHtml, wireNotify, notifyAskHtml, wireNotifyAsk, startReminders } from "./notify-views.js";
+import { mountIntel3 } from "./intel3-views.js";
+import { orderCards } from "../intel/order.js";
+import { weightedGraph, usable } from "../intel/graph.js";
+import { dependencyGraph } from "../intel/debt.js";
 import { calendarPanelHtml, wireCalendar, intelStripHtml, nextHtml, upcomingHtml, rescheduleHtml, forecastWidget, askWidget, conceptPileWidget, wireIntel, applyMoves, renderIntelPage, renderKnowledgePage, renderRevisePage, askHtml, wireAsk, smartPlanHtml, wireSmartPlan, planWeek } from "./intel-views.js";
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -153,7 +158,7 @@ const routes = { today: renderToday, start: renderStart, new: renderNew, deck: r
 // is remembered for each section during the visit.
 const SECTION_TABS = {
   today: [["overview", "Overview", ".cp-welcome, .notify-ask, .ap-brief, .ap-catch, .i-resched, .i-next"], ["widgets", "Widgets", ".board"]],
-  intel: [["overview", "Overview", ".intel-strip"], ["evidence", "Concepts", ""], ["timeline", "Timeline", ""], ["learning", "How you study", ""], ["control", "Controls", ""], ["log", "Activity log", ""]],
+  intel: [["overview", "Overview", ".intel-strip"], ["readiness", "Readiness", ""], ["free", "Free time", ""], ["evidence", "Concepts", ""], ["cards", "Card coach", ""], ["learning", "How you study", ""], ["control", "Controls", ""], ["log", "Activity", ""]],
   plan: [["day", "Day", ".ap-catch, .i-resched, .i-dayplan"], ["tell", "Tell Gradify", ".ap-tell"], ["week", "Week", "h2.lo-h, .add-block, .week-list"], ["month", "Month", ".cal-top"], ["calendars", "Calendars", ".cal-sync"]],
   revise: [["queue", "Queue", ".seg-chips, .r-list, .revise-page > article.panel:not([data-pane])"], ["breakdown", "Break it down", ""], ["ease", "Ease off", ""]],
   knowledge: [["stages", "Stages", ".k-funnel, .k-grid, .knowledge-page > article.panel:not([data-pane])"], ["debt", "Knowledge debt", ""], ["courses", "Courses", ""]],
@@ -249,6 +254,9 @@ async function route() {
   try { await (routes[name] || renderToday)(arg); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
   decorate(view);
   tabify(name);
+  // 3D glass icons from the learner's subject set (kit/core/glass-icons.js), matched to each card, pack and lesson
+  glassIcons(view, profile.site || "Gradify").catch(() => {});
+  const ti = view.querySelector(".today-icons"); if (ti) glassCluster(ti, profile.site || "Gradify", { count: 3, size: 54, words: today() }).catch(() => {});
   // Google sign-in is offered only when the project has it switched on (see authProviders in kit/data/store.js)
   if (view.querySelector("#google, #save-google")) authProviders().then((p) => { if (!p.google) view.querySelectorAll("#google, #save-google").forEach((b) => { b.hidden = true; }); });
   view.focus({ preventScroll: true });
@@ -597,7 +605,7 @@ async function renderNotes() {
       const due = cs.filter((c) => isDue(c)).length;
       const s = siteOf(d.site);
       const m = masteryOf(d.id);
-      return `<a class="doc panel glass" href="#/deck/${d.id}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="icon">${icon(s.i)}</span><b>${esc(d.title)}</b>
+      return `<a class="doc panel glass" href="#/deck/${d.id}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="doc-g3d" data-g3d="${esc(d.title)}" data-g3d-size="52" data-g3d-site="${esc(d.site || profile.site || "Gradify")}" data-g3d-unique></span><b>${esc(d.title)}</b>
         <span class="sub">${cs.length} cards · ${due ? `${due} due` : "nothing due"} · ${fmtDate(d.created_at)}</span><span class="goal-bar" title="${Math.round(m * 100)}% mastery"><i style="width:${Math.round(m * 100)}%"></i></span></a>`;
     }).join("")}</div>` : `<div class="empty-state panel glass">${icon("upload")}<h3>No notes yet</h3><p class="sub">Add your first set of notes and Gradify will make flashcards from them.</p><a class="btn btn-primary lg" href="#/new"><span>Add notes</span></a></div>`}
   </section>`;
@@ -624,8 +632,19 @@ async function renderStudy(arg) {
     if (practice) queue = [...all].sort(() => Math.random() - 0.5);
   }
   const cap = Math.max(10, Math.round(((profile.daily_minutes || 20) * 60) / SEC_PER_CARD));
-  // reviews first, then new cards (a topic session keeps the engine's order)
-  if (!topicKey) queue.sort((a, b) => (a.reps ? 0 : 1) - (b.reps ? 0 : 1) || new Date(a.due_at) - new Date(b.due_at));
+  // Intelligence 3.0 card order (kit/intel/order.js): fading and important cards first, foundations before what
+  // builds on them, sure-but-wrong cards early, new cards capped, topics interleaved, fitted to the learner's minutes.
+  // Practice and topic sessions keep their own order.
+  let ordered = false;
+  if (!topicKey && !practice && queue.length > 1) {
+    try {
+      const reviews = await store.listReviews(400), concepts = learnerMemory({ cards: all, reviews, examDate: profile.exam_date || null });
+      const edges = usable(weightedGraph({ noteEdges: dependencyGraph(all), concepts }));
+      queue = orderCards(queue, { concepts, edges, reviews, examDate: profile.exam_date || null, minutes: profile.daily_minutes || 20 }).queue;
+      ordered = true;
+    } catch (e) { console.warn("Card ordering fell back to due date", e); }
+  }
+  if (!ordered && !topicKey) queue.sort((a, b) => (a.reps ? 0 : 1) - (b.reps ? 0 : 1) || new Date(a.due_at) - new Date(b.due_at));
   queue = queue.slice(0, cap);
   // the ledger: the session starts, and a snapshot of what the learner knew, to see what changed by the end
   const before = queue.length && !practice ? learnerMemory({ cards: all, reviews: await store.listReviews(400) }) : null;
@@ -646,8 +665,9 @@ async function renderStudy(arg) {
     const p = preview(c, srsOpts());
     const deep = c.kind === "why" || c.kind === "apply";
     view.innerHTML = `<section class="study-session">
-      <div class="sess-top"><a href="${topicKey ? `#/topic/${encodeURIComponent(topicKey)}` : deckId ? `#/deck/${deckId}` : "#/today"}" class="back">✕ End</a><span class="goal-bar"><i style="width:${(i / total) * 100}%"></i></span><span class="sub">${Math.min(i + 1, total)} / ${total}${practice ? " · practice" : ""}${topicName ? ` · ${esc(topicName)}` : ""}</span></div>
+      <div class="sess-top"><a href="${topicKey ? `#/topic/${encodeURIComponent(topicKey)}` : deckId ? `#/deck/${deckId}` : "#/today"}" class="back">✕ End</a><span class="goal-bar"><i style="width:${(i / total) * 100}%"></i></span><span class="sub">${Math.min(i + 1, total)} / ${total}${practice ? " · practice" : ""}${topicName ? ` · ${esc(topicName)}` : ""}${ordered ? ` · <span title="Fading and important cards first, foundations before what builds on them, topics mixed">ordered by Gradify</span>` : ""}</span></div>
       <article class="flash-card ${shown ? "shown" : ""}" aria-live="polite">
+        <span class="fc-icon" data-g3d="${esc(`${c.topic || ""} ${c.front}`)}" data-g3d-size="58"></span>
         <span class="kicker">${deep ? `<b class="kind-tag ${c.kind}">${c.kind === "why" ? "Explain" : "Apply"}</b>` : ""}${esc(c.topic || "")}${c.reps ? "" : " · new"}</span>
         <p class="fc-front">${esc(c.front)}</p>
         ${deep && !shown ? `<label class="fc-write"><span>${c.kind === "why" ? "Explain it in your own words" : "Work it out"} <em>optional, just for you</em></span><textarea id="attempt" rows="3" placeholder="${c.kind === "why" ? "Because…" : "It would…, because…"}">${esc(attempt)}</textarea></label>` : ""}
@@ -660,6 +680,7 @@ async function renderStudy(arg) {
             <button type="button" class="sure-skip" id="reveal">Just show me <kbd>Space</kbd></button>
           </div>`}
     </section>`;
+    glassIcons(view, profile.site || "Gradify").catch(() => {});
   };
   const rate = async (r) => {
     haptic(r === "again" ? "warn" : r === "easy" ? "success" : "select");
@@ -804,7 +825,7 @@ async function renderToday() {
     <div class="today-head"><div><span class="kicker lo-kicker">${icon("home")}Command Centre · ${fmtDate(Date.now(), { weekday: "long", day: "numeric", month: "long" })}</span>
       <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""} <span class="wave" aria-hidden="true">👋</span></h1>
       <p class="sub lo-hello">${s.cards.length ? `${n0(s.cards.length)} flashcards across ${n0(s.docs.length)} study ${s.docs.length === 1 ? "pack" : "packs"}${streakDays ? ` · ${streakDays}-day streak` : ""}.` : "Nice to have you here."}</p></div>
-      <a class="cp-pill dark today-cta" href="${esc(M.prio.items[0]?.href || "#/new")}" data-haptic="success">${M.prio.items[0] ? `Start · ${M.prio.items[0].mins} min` : "Add notes"}</a></div>
+      <span class="today-icons g3d-cluster" aria-hidden="true"></span><a class="cp-pill dark today-cta" href="${esc(M.prio.items[0]?.href || "#/new")}" data-haptic="success">${M.prio.items[0] ? `Start · ${M.prio.items[0].mins} min` : "Add notes"}</a></div>
     ${!s.cards.length && !courses.length ? welcomeHtml(profile.display_name) : ""}
     ${notifyAskHtml(M)}
     ${briefingHtml(M, { made: M.made || [] })}
@@ -1404,7 +1425,7 @@ async function renderAi(arg) {
 routes.ai = renderAi;
 
 // ---------- Intelligence, My Knowledge, Revision Centre (kit/app/intel-views.js) ----------
-routes.intel = async () => { const m = await model(); renderIntelPage(view, m, { toast, saveIntel, modes: modesHtml(m) }); view.querySelector(".intel-page .learned")?.insertAdjacentHTML("beforebegin", notifyPanelHtml(m)); wireAutopilot(view, m, apctx()); wireNotify(view, m, apctx()); };
+routes.intel = async () => { const m = await model(); renderIntelPage(view, m, { toast, saveIntel, modes: modesHtml(m) }); view.querySelector(".intel-page .learned")?.insertAdjacentHTML("beforebegin", notifyPanelHtml(m)); mountIntel3(view, m, apctx()); wireAutopilot(view, m, apctx()); wireNotify(view, m, apctx()); };
 routes.knowledge = async () => { const m = await model({ autoMove: false }); renderKnowledgePage(view, m, { courses: m.L?.courses || [] }); };
 routes.revise = async (arg) => { const m = await model({ autoMove: false }); renderRevisePage(view, m, arg); view.querySelector(".revise-page .seg-chips")?.insertAdjacentHTML("beforebegin", decomposeHtml()); wireDecompose(view, m, apctx()); };
 

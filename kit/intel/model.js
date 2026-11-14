@@ -7,6 +7,11 @@ import { planDay, reschedule, intelOf } from "./schedule.js";
 import { dependencyGraph, knowledgeDebts, dependants } from "./debt.js";
 import { calibrate, applyCalibration } from "./calibrate.js";
 import { learnerOf } from "../data/profile.js";
+import { learnAliases, unify, shared } from "./identity.js";
+import { weightedGraph, usable } from "./graph.js";
+import { cardNeeds } from "./cardgen.js";
+import { teachingExperiments } from "./experiments.js";
+import { objectiveReadiness } from "./readiness.js";
 
 /**
  * @param {object} store the app's store
@@ -29,7 +34,16 @@ export async function loadModel(store, profile, { courseNext = [], courses = [],
     ...(profile.exam_date && profile.exam_date >= today ? [{ day: profile.exam_date, title: `your ${profile.site || ""} exam`.replace("  ", " "), kind: "exam" }] : []),
   ];
   // knowledge debt: from the learner's own notes (terms defined in one topic, used in another) and their courses
-  const edges = dependencyGraph(cards);
+  // Intelligence 3.0: one id per concept wherever it appears, and links weighted by their evidence; only links
+  // Gradify is sure of (confidence ≥ 0.5) drive knowledge debt and card order (kit/intel/graph.js)
+  const aliases = learnAliases(cards);
+  const identity = unify([
+    ...concepts.map((c) => ({ kind: "notes", key: c.key, name: c.name, site: c.site })),
+    ...courses.flatMap((c) => (c.prereqs || []).flatMap((p) => [p.from, p.to]).map((n) => ({ kind: "course", key: `course:${c.site}:${n}`, name: n, site: c.site }))),
+    ...courses.flatMap((c) => Object.entries(c.titles || {}).map(([id, t]) => ({ kind: "lesson", key: `lesson:${c.site}:${id}`, name: t, site: c.site }))),
+  ], aliases);
+  const graph = weightedGraph({ noteEdges: dependencyGraph(cards), concepts, courses, aliases });
+  const edges = usable(graph);
   const courseWeak = courses.flatMap((c) => (c.weak || []).filter((w) => w.kind === "foundation").map((w) => ({ site: c.site, course: c.name, title: w.title, for: w.for, why: w.why, href: c.href ? `${c.href}#/lesson/${w.lesson}` : "#/learning" })));
   const debts = knowledgeDebts(concepts, edges, courseWeak);
   const ranked = prioritise({ concepts, preds, courseNext, deadlines, dailyMinutes, debts, underpins: dependants(edges), now });
@@ -45,5 +59,13 @@ export async function loadModel(store, profile, { courseNext = [], courses = [],
   // the ledger adds what the tables can't show (abandoned sessions, forgetting, stages reached, recommendations followed)
   const LEDGER_ONLY = ["session_abandoned", "forgotten", "stage_reached", "misconception_fixed", "recommendation_followed", "mode_changed", "autopilot_change", "change_undone", "plan_accepted", "tell_applied", "calendar_synced", "notification_opened"];
   const events = [...eventStream({ cards, reviews, activity, blocks, now }), ...(ledger || []).filter((e) => LEDGER_ONLY.includes(e.event))].sort((a, b) => Date.parse(b.at) - Date.parse(a.at));
-  return { cal, edges, debts, chosen, now, profile, learner, intel, dailyMinutes, cards, reviews, activity, docs, blocks, concepts, preds, prio, plan, missed, events, ledger: ledger || [], deadlines, today };
+  const answers = courses.flatMap((c) => c.answers || []);
+  const titles = new Map(courses.flatMap((c) => Object.entries(c.titles || {})));
+  const v3 = {
+    identity, sharedConcepts: shared(identity.concepts), graph,
+    needs: cardNeeds({ concepts, cards }),
+    teaching: teachingExperiments({ ledger: ledger || [], attempts: answers, now }),
+    readiness: objectiveReadiness({ attempts: answers, cards, concepts, examDate: profile.exam_date || null, titles, now }),
+  };
+  return { v3, cal, edges, debts, chosen, now, profile, learner, intel, dailyMinutes, cards, reviews, activity, docs, blocks, concepts, preds, prio, plan, missed, events, ledger: ledger || [], deadlines, today };
 }

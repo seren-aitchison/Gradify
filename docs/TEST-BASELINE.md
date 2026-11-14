@@ -26,6 +26,7 @@ All 10 had one cause: `node_modules` wasn't installed, so `@electric-sql/pglite`
 | --- | --- | --- | --- |
 | `3be2178` | Before the launch work (clean checkout with its own `node_modules`) | 680 | 0 |
 | This branch | After launch, dashboard, Intelligence, Autopilot, calendar sync, coach, ledger, knowledge debt, calibration, push | 729 | 0 |
+| 14 November 2026 | After FSRS reference validation (`srs-reference`), glass icons and Intelligence 3.0 (`intel3`), merged with main | 762 | 0 |
 
 The extra tests on this branch are new suites, not changes to old ones:
 

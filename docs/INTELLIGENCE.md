@@ -29,12 +29,50 @@ Gradify Intelligence is one evolving model of each learner. It's built from ever
 
 Haptics (`kit/core/haptics.js`) fire on card ratings, shuffles, plan accepts and navigation. They're silent on devices without vibration, with reduced motion on, or when turned off in Settings.
 
-## Intelligence 3.0 (in progress): adaptive learning
+## Intelligence 3.0: adaptive learning
+
+Everything below runs in the shared engine (`kit/intel/`), so every site and every screen reads the same results. Nothing in it needs a database change. On screen it's LifeOS → Intelligence, in the Readiness, Free time, Concepts, Card coach and How you study tabs (`kit/app/intel3-views.js`). Tests: `tests/intel3.test.mjs`.
+
 
 - **FSRS-5 spaced repetition** (`kit/learning/srs.js`): published default parameters, with stability, difficulty and retrievability per card.
   - **Storage:** stability goes in `interval_days`, difficulty in `ease` (as 10 + D), and the last review time in `updated_at`. That means it works live with no database change, and old SM-2 cards convert on their next review.
   - **Placement:** reviews land where recall falls to the learner's chosen retention (85%, 90% or 95%), and never after their exam.
   - **Everything else follows:** the Mastery Engine's recall, the forgetting forecast and readiness all come from FSRS retrievability.
+- **Universal concept identity** (`kit/intel/identity.js`): one id per idea, wherever it appears (notes, course modules, lessons, any site).
+  - Names match after normalising case, plurals, punctuation, word order, a leading "Introduction to", and abbreviations. Abbreviations come from a small common list plus the learner's own ("Peak expiratory flow (PEF)").
+  - It's deliberately conservative: "Cardiac output regulation" is not "Cardiac output". A false merge would mix evidence about different ideas.
+- **Evidence-weighted knowledge graph** (`kit/intel/graph.js`): every "A underpins B" link has a confidence and the evidence behind it.
+  - **Course prerequisite** (explicit): 0.90.
+  - **Each term A defines and B uses:** 0.45.
+  - **The learner's answers agreeing:** 0.25.
+  - **A strong, well-evidenced B with a weak A:** −0.25.
+  - Gradify acts on a link only at 0.5 or more, so one shared term alone is never enough. Through concept identity, a course's prerequisites apply to the same concepts in the learner's notes.
+  - Knowledge debt now uses only these usable links. Each debt carries the weakest confidence along its evidence.
+- **Intelligent card ordering** (`kit/intel/order.js`, used by every due-cards session):
+  - Cards rank by forgetting (1 − FSRS recall now), importance (topics resting on the card's topic, and a close exam) and confidence (sure-but-wrong first, low-certainty topics a little higher).
+  - Prerequisites' cards come before the cards that build on them.
+  - New cards are capped at a third of the session, and no topic runs more than three cards in a row.
+  - The session fits the learner's minutes at their own median seconds per card. The session bar says "ordered by Gradify".
+- **Learning opportunity engine** (`forWindow` in `kit/intel/order.js`): the best use of any free window, from the ranked priorities.
+  - **Short windows** favour quick retrieval.
+  - **Medium windows** favour root causes and weak spots.
+  - **Long windows** favour new material.
+  - It picks one item of each kind, and nothing overruns the window. The Free time tab asks "how long have you got?", and calendar gaps on Today use it too.
+- **Adaptive card needs** (`kit/intel/cardgen.js`): what kind of card each topic needs next. Gradify writes a card only by rearranging the learner's own cards:
+  - **Reverse:** a definition known well, asked the other way round.
+  - **Compare:** two terms with the same head noun ("end-diastolic volume" and "end-systolic volume"), one answered wrong.
+  - **Flagged, not written:** apply, explain and rephrase needs. Writing those cards would mean inventing content.
+  - Every suggestion is checked against the deck, so it never duplicates a card.
+- **Adaptive teaching experiments** (`kit/intel/experiments.js`):
+  - Courses log the first use of each tutor mode on a lesson as a `session_started` ledger event with `source: "tutor"`. Using an existing event name means no migration change.
+  - Gradify compares the learner's answers on that lesson from 1 hour to 14 days afterwards with their answers before.
+  - It recommends a mode only after 3 measured uses of at least two modes, with a gap of 10 points or more.
+  - Even then, on one day in three it suggests a less-tried mode, so it doesn't settle on one way of learning too early.
+- **Predictive readiness by objective** (`kit/intel/readiness.js`):
+  - **Course objectives:** each question names the objectives it assesses. Answers are weighted by recency (30-day half-life) into a Beta estimate. That estimate is projected to exam day with a forgetting curve whose stability grows with each separate day the learner answered correctly.
+  - **The range:** an 80% interval, so thin evidence shows as a wide range, and fewer than two answers is "not enough evidence".
+  - **The learner's own topics:** FSRS recall on exam day.
+  - **Data:** course summaries now carry a compact list of answers, the course's module prerequisites and the titles of lessons answered (`kit/learning/learner-data.js`).
 - **Lesson time** (`kit/course/lesson-time.js`): only active, visible time counts (input in the last minute), along with scroll depth and revisits.
   - **Where it's stored:** in course progress, which already syncs to the account. When two devices merge, the larger record wins, so time is never double counted.
   - **Ledger events:** `lesson_time`, `lesson_revisited` and `lesson_completed`.
@@ -136,11 +174,9 @@ Other events: `study_pack_made`, `study_session`, `plan_block_done`, `plan_block
 
 ## Next (backlog, in order)
 
-1. **Lesson events from course pages** into the ledger (time in lesson, revisits, skipped sections).
-3. **Deeper course graph use.** `kit/learning/concepts.js` already has prerequisites and `weakPrerequisites`. Rank "revisit the smallest useful prerequisite" for course lessons, and link note topics to course concepts with `topic-match.js`.
-4. **Misconception and connection cards** written by Gradify AI for the learner's confident mistakes, using the `study-pack` function's `questions` mode, with a follow-up question to verify.
-5. **Prediction service** (Python) once there's enough data: calibrated readiness by topic, learned break lengths and best times of day.
-6. **Academic inbox connections**: read-only OAuth to Outlook or Gmail and Canvas or Moodle, feeding the same `parseInbox`.
-7. **Adaptive pedagogy**: test which teaching mode (visual, worked example, Socratic) improves retention for each learner.
+1. **Skipped sections** in course lessons, as ledger events (time and revisits are already logged).
+2. **Misconception and connection cards** written by Gradify AI for the learner's confident mistakes, using the `study-pack` function's `questions` mode, with a follow-up question to verify.
+3. **Prediction service** (Python) once there's enough data: calibrated readiness by topic, learned break lengths and best times of day.
+4. **Academic inbox connections**: read-only OAuth to Outlook or Gmail and Canvas or Moodle, feeding the same `parseInbox`.
 
-Tests: `tests/srs.test.mjs`, `tests/lesson-time.test.mjs`, `tests/intel.test.mjs`, `tests/nlp.test.mjs`, `tests/ical.test.mjs`, `tests/debt.test.mjs`, `tests/calibrate.test.mjs`, `tests/nudges.test.mjs`, `tests/ledger.test.mjs`, `tests/tutor-modes.test.mjs` (coach) (memory, predictions, priority, scheduler, rescheduling, events, Ask).
+Tests: `tests/intel3.test.mjs`, `tests/srs.test.mjs`, `tests/srs-reference.test.mjs`, `tests/lesson-time.test.mjs`, `tests/intel.test.mjs`, `tests/nlp.test.mjs`, `tests/ical.test.mjs`, `tests/debt.test.mjs`, `tests/calibrate.test.mjs`, `tests/nudges.test.mjs`, `tests/ledger.test.mjs`, `tests/tutor-modes.test.mjs` (coach) (memory, predictions, priority, scheduler, rescheduling, events, Ask).

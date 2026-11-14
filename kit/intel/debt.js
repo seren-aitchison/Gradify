@@ -37,11 +37,14 @@ export function dependencyGraph(cards = []) {
   const edges = [];
   for (const [a, defs] of terms) for (const [b, list] of byTopic) {
     if (a === b || !defs.size) continue;
+    // every term A defines that B uses: one term is a hint, several are stronger evidence (kit/intel/graph.js)
+    const found = [];
     for (const term of defs) {
       const re = new RegExp(`\\b${term.replace(/[-]/g, "\\-")}\\b`, "i");
       const user = list.find((c) => re.test(`${c.front} ${c.back}`) && definedTerm(c) !== term);
-      if (user) { edges.push({ from: a, to: b, term, card: user.front }); break; }
+      if (user) found.push({ term, card: user.front });
     }
+    if (found.length) edges.push({ from: a, to: b, term: found[0].term, card: found[0].card, terms: found.map((f) => f.term) });
   }
   // a pair that points both ways is two topics that define each other's words: keep neither, it isn't a prerequisite
   const pair = new Set(edges.map((e) => `${e.from}>${e.to}`));
@@ -70,14 +73,15 @@ export function knowledgeDebts(concepts = [], edges = [], courseWeak = []) {
     const d = debts.get(a.key) || { key: a.key, root: a, symptoms: [], evidence: [], site: a.site || null, kind: "notes" };
     if (!d.symptoms.some((x) => x.key === b.key)) d.symptoms.push(b);
     const direct = edges.find((e) => e.from === a.key && e.to === b.key) || r;
-    d.evidence.push({ term: direct.term, card: direct.card, topic: b.name });
+    d.evidence.push({ term: direct.term, card: direct.card, topic: b.name, note: direct.sources?.find((x) => x.kind === "course")?.note || null, confidence: direct.confidence ?? null });
     debts.set(a.key, d);
   }
   const out = [...debts.values()].map((d) => ({
     ...d, name: d.root.name,
     mins: Math.max(10, Math.min(20, Math.ceil(((d.root.fresh || 0) + (d.root.due || 0) + 4) * 25 / 60) + 5)),
     why: `${d.symptoms.map((s) => s.name).slice(0, 2).join(" and ")}${d.symptoms.length > 2 ? ` and ${d.symptoms.length - 2} more` : ""} ${d.symptoms.length === 1 ? "depends" : "depend"} on ${d.root.name}, which ${d.root.level === "new" ? "you haven't been tested on yet" : "isn't secure yet"}. Fixing it first is quicker than repeating the later ${d.symptoms.length === 1 ? "topic" : "topics"}.`,
-    because: d.evidence[0] ? `“${d.evidence[0].term}” is defined in ${d.root.name} and used in ${d.evidence[0].topic} (“${d.evidence[0].card}”).` : "",
+    because: !d.evidence[0] ? "" : d.evidence[0].term ? `“${d.evidence[0].term}” is defined in ${d.root.name} and used in ${d.evidence[0].topic} (“${d.evidence[0].card}”).` : d.evidence[0].note || "",
+    confidence: d.evidence.reduce((m, e) => (e.confidence == null ? m : Math.min(m, e.confidence)), 1),
     href: `#/study/t:${encodeURIComponent(d.root.key)}`,
   }));
   for (const w of courseWeak) out.push({ key: `course:${w.site}:${w.title}`, kind: "course", name: w.title, site: w.site, symptoms: w.for ? [{ name: w.for }] : [], mins: 15,

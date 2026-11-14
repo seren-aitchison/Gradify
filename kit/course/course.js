@@ -29,7 +29,9 @@ import { trackView, track } from "../core/analytics.js";
 import { callFunction } from "../data/functions.js";
 import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, confirmAttempts } from "./progress.js";
 import { lessonTimer, addTime, MIN_LOG_MS, minutesPerLesson } from "./lesson-time.js";
+import { hydrate as glassIcons } from "../core/glass-icons.js";
 import { mountRevalidation } from "./revalidation.js";
+import { tutorEvent } from "../intel/experiments.js";
 import { scoreFeedback } from "../assess/tutor.js";
 import { feedbackHtml, paras } from "../assess/tutor-view.js";
 import { mountTutorPanel, directorHtml, newConversation } from "./tutor-panel.js";
@@ -583,7 +585,7 @@ export function mountCourse(root, cfg) {
       <div class="co-crumbs"><a href="#/learn/${u.id}">← ${U} ${u.n}: ${esc(u.title)}</a><span>Lesson ${l.i + 1} of ${u.lessons.length}</span></div>
       <div class="co-steps">${u.lessons.map((x) => `<a href="#/lesson/${x.id}" class="${S.done[x.id] ? "done" : ""} ${x.id === id ? "here" : ""}" title="${esc(x.title)}"></a>`).join("")}</div>
       <div class="mv-page co-notes" style="--c:${t.from}">
-        <header><span class="kicker">${esc(t.name)} · ${U} ${u.n}${l.module ? ` · ${esc(l.module)}` : ""}</span><h2>${esc(l.title)}</h2>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
+        <header><span class="co-licon" data-g3d="${esc(`${l.title} ${l.module || ""} ${u.title}`)}" data-g3d-size="76"></span><span class="kicker">${esc(t.name)} · ${U} ${u.n}${l.module ? ` · ${esc(l.module)}` : ""}</span><h2>${esc(l.title)}</h2>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
           <div class="mv-chips">${S.done[id] ? `<span class="co-chip lit">${ic("check")} Completed</span>` : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${N?.items?.length ? `<span class="co-chip">${N.items.length} check question${N.items.length > 1 ? "s" : ""}</span>` : ""}${N?.cards.length ? `<button data-cards>${ic("cards")} Flashcards (${N.cards.length})</button>` : ""}${N?.level ? `<span class="co-chip">${esc(N.level)}</span>` : ""}</div></header>
         ${N && isDraft(u) ? `<p class="co-draft" role="note"><b>Draft.</b> This ${u1} is written but hasn't yet completed content review, source checking and expert sign-off. Use it alongside your course materials and official sources.</p>` : ""}
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
@@ -603,6 +605,7 @@ export function mountCourse(root, cfg) {
     </article>`;
     scrollTo(0, 0);
     wirePractice(main, "lesson", id);
+    glassIcons(main, cfg.site).catch(() => {});
     // every interactive that names this lesson is reachable from it: those not placed in its notes go at the end
     // (before the tutor, or the footer when the notes aren't written yet), two in full and the rest as links
     {
@@ -632,7 +635,11 @@ export function mountCourse(root, cfg) {
   }
 // ---------- the AI tutor (kit/assess/tutor.js → supabase/functions/course-tutor) and written practice ----------
   // One request to the course-tutor function (kit/data/functions.js turns every failure into a clear message)
+  // teaching experiments (kit/intel/experiments.js): the first use of each tutor mode on a lesson, per page view
+  const tutorLogged = new Set();
   async function askTutor(body) {
+    const lid = body.lesson?.id, k = `${body.mode}:${lid}`;
+    if (lid && body.mode && !tutorLogged.has(k)) { tutorLogged.add(k); ledger(tutorEvent({ site: cfg.site, subject: cfg.slug, lesson: lid, mode: body.mode })); }
     const out = await callFunction(await store(), "course-tutor", { subject: cfg.slug, ...body }, { fallback: "The tutor isn't available right now. You can still self-assess with the rubric." });
     // the tutor answered about a lab: challenges met in it from now on count as assisted
     if (body.lab && labLast) labHelped.add(labLast);
@@ -754,8 +761,9 @@ export function mountCourse(root, cfg) {
     const paint = () => {
       d.innerHTML = `<div class="co-dialog co-fc" role="dialog" aria-modal="true" aria-label="Flashcards">
         <div class="co-fc-top"><span class="co-kicker">${esc(l.title)}</span><span>${i + 1} / ${cards.length}</span><button class="co-x" data-close aria-label="Close">×</button></div>
-        <button class="co-card3d ${flipped ? "flip" : ""}" aria-live="polite"><span class="f"><div>${inline(cards[i][0])}</div><small>Tap to reveal</small></span><span class="b"><div>${inline(cards[i][1])}</div></span></button>
+        <button class="co-card3d ${flipped ? "flip" : ""}" aria-live="polite"><span class="f"><span class="co-fcicon" data-g3d="${esc(`${cards[i][0]} ${l.title}`)}" data-g3d-size="52"></span><div>${inline(cards[i][0])}</div><small>Tap to reveal</small></span><span class="b"><div>${inline(cards[i][1])}</div></span></button>
         <div class="co-row"><button class="btn btn-ghost lg btn-sm" data-prev ${i ? "" : "disabled"}><span>← Back</span></button><button class="btn btn-light lg btn-sm" data-next><span>${i < cards.length - 1 ? "Next →" : "Done"}</span></button></div></div>`;
+      glassIcons(d, cfg.site).catch(() => {});
       d.querySelector(".co-card3d").onclick = () => { flipped = !flipped; d.querySelector(".co-card3d").classList.toggle("flip", flipped); };
       d.querySelector("[data-prev]").onclick = () => { i--; flipped = false; paint(); };
       d.querySelector("[data-next]").onclick = () => { if (i < cards.length - 1) { i++; flipped = false; paint(); } else d.remove(); };
