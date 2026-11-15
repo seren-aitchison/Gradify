@@ -41,10 +41,10 @@ These scores are evidence-based proxies, not judgements:
 | HealthGradify | beta | **73** | 20/20 | 15/20 | 10.3/15 | 9.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, engineering −5.3, content −5 |
 | EcoGradify | beta | **72.9** | 20/20 | 15.9/20 | 9.3/15 | 9.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −5.7, engineering −5.3 |
 | MusicGradify | beta | **72.4** | 20/20 | 16/20 | 8.7/15 | 9.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −6.3, engineering −5.3 |
+| LanguageGradify | beta | **72.3** | 20/20 | 16.4/20 | 8/15 | 9.9/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, engineering −5.1 |
 | DentalGradify | beta | **72** | 20/20 | 16/20 | 8.3/15 | 9.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −6.7, engineering −5.3 |
 | ArtGradify | beta | **72** | 20/20 | 15.3/20 | 9/15 | 9.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −6, engineering −5.3 |
 | FinanceGradify | beta | **71.5** | 20/20 | 16.1/20 | 8/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, engineering −5.6 |
-| LanguageGradify | beta | **71.2** | 20/20 | 15.3/20 | 8/15 | 9.9/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, engineering −5.1 |
 | UnderGradify | beta | **71** | 20/20 | 15.6/20 | 8/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, engineering −5.6 |
 | BusinessGradify | beta | **70.8** | 20/20 | 15.1/20 | 8.3/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −6.7, engineering −5.6 |
 | InvestorGradify | beta | **70.7** | 20/20 | 15.3/20 | 8/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, engineering −5.6 |
