@@ -274,8 +274,10 @@ const picks = {}; // choices made during setup, saved together at the end
 // accessibility settings, shared by set-up and Account; applied on every Gradify site
 const prefsFields = (pr) => `<fieldset class="setup-prefs"><legend>Display</legend>
   <label class="check"><input type="checkbox" name="motion" ${pr.motion === "reduce" ? "checked" : ""}> <span>Reduce motion (no animations)</span></label>
-  <label class="check"><input type="checkbox" name="text" ${pr.text === "large" ? "checked" : ""}> <span>Larger text</span></label></fieldset>`;
-const prefsFrom = (f) => ({ motion: f.get("motion") ? "reduce" : "auto", text: f.get("text") ? "large" : "normal" });
+  <label class="check"><input type="checkbox" name="text" ${pr.text === "large" ? "checked" : ""}> <span>Larger text</span></label>
+  <label class="theme-pick"><span>Appearance <em>on this device, on every Gradify site</em></span><select name="theme">${[["dark", "Dark"], ["light", "Light"], ["system", "Match my device"]].map(([v, l]) => `<option value="${v}" ${(globalThis.gradifyTheme?.get() || "dark") === v ? "selected" : ""}>${l}</option>`).join("")}</select></label></fieldset>`;
+// appearance is a choice for this device (kit/core/theme-boot.js), so it's applied here rather than saved to the account
+const prefsFrom = (f) => { if (f.get("theme")) globalThis.gradifyTheme?.set(f.get("theme")); return { motion: f.get("motion") ? "reduce" : "auto", text: f.get("text") ? "large" : "normal" }; };
 // the subjects most learners pick, shown first in set-up; the rest are one tap (or a search) away
 const POPULAR = ["UnderGradify", "MedGradify", "LawGradify", "NurseGradify", "PsychGradify", "BusinessGradify"];
 const pickBtn = (s) => `<button type="button" class="site-pick ${profile.site === s.n ? "on" : ""}" data-site="${esc(s.n)}" data-s="${esc((s.n + " " + s.d).toLowerCase())}" style="--c:#${s.c};--tile:${tile(s.c)};--ink:${ink(s.c)}"><span class="icon">${icon(s.i)}</span><span><b>${esc(s.n.replace(" · ForgeLab", ""))}</b><em>${esc(s.d.split(/[:.]/)[0])}</em></span></button>`;

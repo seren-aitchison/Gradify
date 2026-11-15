@@ -4,16 +4,24 @@
 
 /* ---------- Tokens ---------- */
 :root {
+  /* theme tokens: dark is Gradify's own look; light is in [data-theme="light"] below. Hard-coded colours in the
+     stylesheets are turned into these by scripts/theme-tokens.mjs (tests/theme.test.mjs keeps it that way). */
   --bg: #000;
   --fg: #fff;
   --mute: #a3a3a3;
   --faint: #8a8a8a;   /* 5.6:1 on black: WCAG AA for body text (was #6e6e6e, 4.0:1) */
-  --panel: rgba(20, 20, 20, .6);
+  --ink-rgb: 255, 255, 255;        /* lines, fills and highlights drawn over the page */
+  --surface-rgb: 20, 20, 20;       /* glass panels */
+  --sink-rgb: 0, 0, 0;             /* wells and darkened areas */
+  --invert-bg: #fff;               /* the high-contrast button (white on dark, ink on light) */
+  --invert-fg: #000;
+  --panel: rgba(var(--surface-rgb), .6);
   --panel-strong: rgba(18, 18, 18, .9);
-  --inset: rgba(0, 0, 0, .55);
-  --line: rgba(255, 255, 255, .1);
-  --line-strong: rgba(255, 255, 255, .22);
-  --edge: rgba(255, 255, 255, .08);
+  --inset: rgba(var(--sink-rgb), .55);
+  --line: rgba(var(--ink-rgb), .1);
+  --line-strong: rgba(var(--ink-rgb), .22);
+  --edge: rgba(var(--ink-rgb), .08);
+  --bar-bg: rgba(14, 14, 16, .9);
   /* a spectrum made from the Gradify brand colours, used sparingly */
   --spectrum: linear-gradient(90deg, #4641ff, #8c27ca 20%, #f055dd 38%, #e52153 54%, #ff5600 70%, #ffc002 84%, #40d4b1);
   --radius: 14px;
@@ -24,6 +32,23 @@
   --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
   color-scheme: dark;
 }
+/* light mode: a soft lavender-white page, white glass, near-black ink; the spectrum and rainbow edges stay */
+:root[data-theme="light"] {
+  --bg: #f6f6fb;
+  --fg: #0d0d18;
+  --mute: #545466;     /* 7.0:1 on the page */
+  --faint: #66667a;    /* 5.5:1 */
+  --ink-rgb: 22, 22, 48;
+  --surface-rgb: 255, 255, 255;
+  --sink-rgb: 214, 214, 232;
+  --invert-bg: #0d0d18;
+  --invert-fg: #fff;
+  --panel: rgba(255, 255, 255, .78);
+  --panel-strong: rgba(255, 255, 255, .96);
+  --bar-bg: rgba(255, 255, 255, .88);
+  color-scheme: light;
+}
+:root[data-theme="light"] body { background: var(--bg); }
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 160px; }
@@ -38,7 +63,7 @@ body {
 }
 a { color: inherit; }
 [hidden] { display: none !important; }
-:focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 12px; }
+:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; border-radius: 12px; }
 .wrap { width: min(var(--page), 100% - 2 * var(--gutter)); margin-inline: auto; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 /* ---------- Background: soft white light on black ---------- */
@@ -60,7 +85,7 @@ a { color: inherit; }
 }
 /* ---------- Glass panels ---------- */
 .glass {
-  background: linear-gradient(180deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .01)), var(--panel);
+  background: linear-gradient(180deg, rgba(var(--ink-rgb), .045), rgba(var(--ink-rgb), .01)), var(--panel);
   -webkit-backdrop-filter: blur(22px) saturate(150%);
   backdrop-filter: blur(22px) saturate(150%);
   border: 1px solid var(--line);
@@ -73,7 +98,7 @@ a { color: inherit; }
 /* recessed area inside a panel */
 .inset {
   background: var(--inset);
-  border: 1px solid rgba(255, 255, 255, .05);
+  border: 1px solid rgba(var(--ink-rgb), .05);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, .35);
   border-radius: 999px;
 }
@@ -81,10 +106,10 @@ a { color: inherit; }
 .lg {
   --glow: 255, 255, 255;
   position: relative; isolation: isolate;
-  border: 1px solid rgba(255, 255, 255, .18);
+  border: 1px solid rgba(var(--ink-rgb), .18);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .02) 48%, rgba(0, 0, 0, .22)),
-    rgba(18, 16, 20, .55);
+    linear-gradient(180deg, rgba(var(--ink-rgb), .14), rgba(var(--ink-rgb), .02) 48%, rgba(var(--sink-rgb), .22)),
+    rgba(var(--surface-rgb), .55);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, .38),
     inset 0 -1px 0 rgba(255, 255, 255, .08),
@@ -98,7 +123,7 @@ a { color: inherit; }
 .lg::before {
   content: ""; position: absolute; inset: 1px; z-index: -1;
   border-radius: inherit; pointer-events: none;
-  background: linear-gradient(180deg, rgba(255, 255, 255, .2) 0%, rgba(255, 255, 255, .07) 38%, rgba(255, 255, 255, 0) 56%);
+  background: linear-gradient(180deg, rgba(var(--ink-rgb), .2) 0%, rgba(var(--ink-rgb), .07) 38%, rgba(var(--ink-rgb), 0) 56%);
 }
 .lg::after {
   content: ""; position: absolute; left: 14%; right: 14%; bottom: -9px; height: 14px; z-index: -1;
@@ -119,10 +144,10 @@ a { color: inherit; }
   --glow: 255, 255, 255;
   color: #000;
   background: linear-gradient(180deg, #fff 0%, #f1f1f1 50%, #d9d9d9 100%);
-  border-color: rgba(255, 255, 255, .9);
+  border-color: rgba(var(--ink-rgb), .9);
   box-shadow: inset 0 1px 0 #fff, inset 0 -3px 6px rgba(0, 0, 0, .12), 0 12px 28px -14px rgba(255, 255, 255, .55);
 }
-.btn-primary.lg::before { background: linear-gradient(180deg, rgba(255, 255, 255, .9), rgba(255, 255, 255, 0)); }
+.btn-primary.lg::before { background: linear-gradient(180deg, rgba(var(--ink-rgb), .9), rgba(var(--ink-rgb), 0)); }
 .btn-primary.lg::after { opacity: .18; }
 .btn-primary.lg:hover::after { opacity: .35; }
 .btn-ghost.lg { --glow: 255, 255, 255; color: var(--fg); }
@@ -131,22 +156,22 @@ a { color: inherit; }
   --glow: var(--spot-glow, 255, 255, 255);
   color: #17121a;
   background: linear-gradient(180deg, #fff, #eae6ea);
-  border-color: rgba(255, 255, 255, .8);
+  border-color: rgba(var(--ink-rgb), .8);
 }
 .btn-sm { padding: 8px 16px; font-size: 14px; }
 .badge {
   display: inline-flex; align-items: center; gap: 6px;
   font: 500 12px var(--sans); white-space: nowrap;
   padding: 3px 10px; border-radius: 999px;
-  color: var(--fg); background: rgba(255, 255, 255, .06); border: 1px solid var(--line-strong);
+  color: var(--fg); background: rgba(var(--ink-rgb), .06); border: 1px solid var(--line-strong);
 }
 .badge .spark { width: 8px; height: 8px; border-radius: 50%; background: conic-gradient(#4641ff, #f055dd, #ff5600, #ffc002, #40d4b1, #4641ff); }
 .pill-white, .pill-dark {
   display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
   font: 600 13px var(--sans); padding: 5px 12px; border-radius: 999px;
 }
-.pill-white { background: #fff; color: #000; box-shadow: 0 4px 14px -6px rgba(0, 0, 0, .5); }
-.pill-dark { background: rgba(0, 0, 0, .3); color: var(--mute); border: 1px solid var(--line); font-weight: 500; }
+.pill-white { background: var(--invert-bg); color: var(--invert-fg); box-shadow: 0 4px 14px -6px rgba(0, 0, 0, .5); }
+.pill-dark { background: rgba(var(--sink-rgb), .3); color: var(--mute); border: 1px solid var(--line); font-weight: 500; }
 /* ---------- Top bar ---------- */
 .bar {
   position: sticky; top: 10px; z-index: 10;
@@ -165,7 +190,7 @@ a { color: inherit; }
   font-size: 15px; font-weight: 500; letter-spacing: -.005em; color: var(--mute);
   transition: color .15s, background .15s;
 }
-.bar .sections a:hover { color: var(--fg); background: rgba(255, 255, 255, .06); }
+.bar .sections a:hover { color: var(--fg); background: rgba(var(--ink-rgb), .06); }
 .bar .sections a.active { color: var(--fg); }
 .bar .sections a::after {
   content: ""; position: absolute; left: 14px; right: 14px; bottom: 2px; height: 2px; border-radius: 2px;
@@ -179,32 +204,33 @@ a { color: inherit; }
 .bar .right .link:hover { color: var(--fg); }
 .icon-btn {
   width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; flex: none; cursor: pointer;
-  color: var(--fg); background: rgba(255, 255, 255, .06); border: 1px solid var(--line); transition: background .15s;
+  color: var(--fg); background: rgba(var(--ink-rgb), .06); border: 1px solid var(--line); transition: background .15s;
 }
-.icon-btn:hover { background: rgba(255, 255, 255, .12); }
+.icon-btn:hover { background: rgba(var(--ink-rgb), .12); }
 .icon-btn svg { width: 17px; height: 17px; }
 .menu-btn { display: none; }
 .menu {
   position: absolute; top: calc(100% + 8px); right: 0; width: min(300px, 100%); z-index: 20;
   display: flex; flex-direction: column; padding: 10px; border-radius: 14px;
-  background: #0e0e0e; border: 1px solid var(--line-strong);
+  background: #0e0e0e;
+  background: light-dark(#ffffff, #0e0e0e); border: 1px solid var(--line-strong);
   box-shadow: inset 0 1px 0 var(--edge), 0 24px 50px -20px rgba(0, 0, 0, .9);
 }
 .menu a { padding: 10px 14px; border-radius: 12px; text-decoration: none; font-size: 15px; }
-.menu a:hover { background: rgba(255, 255, 255, .07); }
+.menu a:hover { background: rgba(var(--ink-rgb), .07); }
 .menu-label { padding: 10px 14px 4px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
 /* round chevron button (rows + cards) */
 .go {
   width: 32px; height: 32px; border-radius: 50%; flex: none;
   display: grid; place-items: center; color: var(--fg);
-  background: linear-gradient(180deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .04));
-  border: 1px solid rgba(255, 255, 255, .14);
+  background: linear-gradient(180deg, rgba(var(--ink-rgb), .16), rgba(var(--ink-rgb), .04));
+  border: 1px solid rgba(var(--ink-rgb), .14);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
   transition: background .2s, color .2s, transform .2s, box-shadow .2s;
 }
 .go svg { width: 16px; height: 16px; }
 .row:hover .go, .card.live:hover .go {
-  background: linear-gradient(180deg, rgba(255, 255, 255, .35), rgba(255, 255, 255, 0) 55%), var(--c);
+  background: linear-gradient(180deg, rgba(var(--ink-rgb), .35), rgba(var(--ink-rgb), 0) 55%), var(--c);
   color: var(--ink); transform: translateX(2px);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), 0 6px 16px -6px var(--c);
 }
@@ -228,6 +254,41 @@ html[data-text="large"] body { zoom: 1.15; }
 /* the Gradify bar, rainbow-edged, everywhere (homepage, pricing, the app, every sub-site) */
 header.bar.glass, header.sub-nav.glass {
   border: 1px solid transparent !important;
-  background: linear-gradient(rgba(14, 14, 16, .9), rgba(14, 14, 16, .9)) padding-box, linear-gradient(90deg, #4641ff, #8b3dff 25%, #f055dd 50%, #ff5600 75%, #ffc002) border-box !important;
+  background: linear-gradient(var(--bar-bg), var(--bar-bg)) padding-box, linear-gradient(90deg, #4641ff, #8b3dff 25%, #f055dd 50%, #ff5600 75%, #ffc002) border-box !important;
 }
 
+
+/* light and dark switch, added to every top bar by kit/core/theme-boot.js */
+.theme-btn .t-moon, :root[data-theme="light"] .theme-btn .t-sun { display: none; }
+:root[data-theme="light"] .theme-btn .t-moon { display: block; }
+.sub-nav .theme-btn { width: 34px; height: 34px; }
+/* light mode: the aurora glow is a soft wash of the brand colours, not white light; shadows are lighter */
+:root[data-theme="light"] .aurora { opacity: .55; }
+:root[data-theme="light"] .aurora span { mix-blend-mode: multiply; }
+:root[data-theme="light"] .glass, :root[data-theme="light"] .panel { box-shadow: 0 1px 2px rgba(22, 22, 48, .06), 0 10px 30px -12px rgba(22, 22, 48, .14); }
+
+/* Dark islands: things that stay dark in light mode (3D stages, the night-time Earth map, lab canvases, the app pictured
+   on the homepage), and cards painted in a brand colour, where text is white whatever the theme. Inside them every
+   token is the dark theme's, so their contents need no light-mode rules of their own. The list of dark ones matches
+   ISLANDS in scripts/theme-tokens.mjs. */
+:root[data-theme="light"] :is(.earth-map, .tree-wrap, .mv-stage, .mv-studio, .sm-3d-art, .lab-3d, .lab-cv, .lab-svg, .co-lab, .tablet, .shot-frame,
+  .vc-stage, .vc-timeline, .vc-props, .holo, .spotlight, .bi-stage, .mv-labels, .mv-tip, .mv-controls, .mv-info,
+  .i-profile, .sub-course, .notify-ask, [class*="tone-"], .k-step:not(.s0), .co-lvbadge, .r-n, .dk-teal, .ng-tile, .cp-hero, .wd-funnel .s1, .wd-funnel .s2, .wd-funnel .s3, .wd-funnel .s4) {
+  --fg: #fff; --mute: rgba(255, 255, 255, .78); --faint: rgba(255, 255, 255, .62);
+  --ink-rgb: 255, 255, 255; --surface-rgb: 20, 20, 20; --sink-rgb: 0, 0, 0; --invert-bg: #fff; --invert-fg: #000;
+  --line: rgba(255, 255, 255, .14); --line-strong: rgba(255, 255, 255, .26); --edge: rgba(255, 255, 255, .1);
+  color-scheme: dark; color: var(--fg);
+}
+/* the bright button: ink with white text in light mode (white with black text in dark) */
+:root[data-theme="light"] .btn-primary.lg { --glow: 70, 65, 255; color: #fff; background: linear-gradient(180deg, #2c2c3e 0%, #15151f 55%, #0d0d18 100%); border-color: rgba(22, 22, 48, .9); }
+:root[data-theme="light"] .btn-primary.lg::before { background: linear-gradient(180deg, rgba(255, 255, 255, .35), rgba(255, 255, 255, 0)); }
+:root[data-theme="light"] .btn-light.lg { --glow: 70, 65, 255; color: #fff; background: linear-gradient(180deg, #2c2c3e, #0d0d18); border-color: rgba(22, 22, 48, .9); }
+/* headline text faded with a gradient, and lesson pages drawn in neon for the dark: darker partners in light mode */
+:root[data-theme="light"] .sub-hero h1 .fade { background-image: linear-gradient(90deg, var(--fg) 0%, var(--fg) 45%, #9a9aae 100%); }
+:root[data-theme="light"] .mv-page { --c: #0a7f99; }
+:root[data-theme="light"] .mv-chips button { color: #075a6c; }
+:root[data-theme="light"] .mv-key { color: var(--fg) !important; }
+:root[data-theme="light"] .co-ex b { color: #0b7a62; }
+:root[data-theme="light"] .i-tag.amber { color: #8a5a00; background: rgba(255, 192, 2, .2); }
+:root[data-theme="light"] .i-tag.green { color: #0b6e57; background: rgba(31, 174, 140, .16); }
+:root[data-theme="light"] .i-tag.blue { color: #2c27b8; } :root[data-theme="light"] .i-tag.hot { color: #b3261e; } :root[data-theme="light"] .i-tag.violet { color: #6a28c9; }
