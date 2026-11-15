@@ -11,6 +11,8 @@
 //   sources:  { date, by, method: "…", checked: n, corrected: ["…"], open: ["…"] }
 //   signoff:  { date, by: "name, qualification" }
 export const QA = {
+  u05: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u04: { standard: 2, reviewed: null, sources: null, signoff: null },
   u19: { standard: 2, reviewed: null, sources: null, signoff: null },
   u18: { standard: 2, reviewed: null, sources: null, signoff: null },
   u15: { standard: 2, reviewed: null, sources: null, signoff: null },
