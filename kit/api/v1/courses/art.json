@@ -1010,7 +1010,7 @@
    "id": "u10",
    "n": 10,
    "title": "Contemporary Art and Ways of Seeing",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u10-01",
@@ -1151,7 +1151,7 @@
    "id": "u12",
    "n": 12,
    "title": "Art in Society and Professional Practice",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u12-01",

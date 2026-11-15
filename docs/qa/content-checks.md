@@ -6,7 +6,7 @@ These checks are mechanical. They find text that won't display as written (swall
 
 | Course | Notes files | Lines | NUM questions | Hard failures | Arithmetic to check | NUM explanations to check | Source links |
 |---|---|---|---|---|---|---|---|
-| art | 10 | 6,546 | 16 | 0 | 0 | 0 | 0 |
+| art | 12 | 7,641 | 18 | 0 | 0 | 0 | 0 |
 | biology | 2 | 1,725 | 11 | 0 | 0 | 1 | 0 |
 | business | 11 | 7,796 | 54 | 0 | 0 | 0 | 0 |
 | careers | 11 | 6,139 | 12 | 0 | 0 | 0 | 0 |
@@ -30,13 +30,13 @@ These checks are mechanical. They find text that won't display as written (swall
 | nursing | 17 | 19,066 | 0 | 0 | 0 | 0 | 1 |
 | pharmacy | 17 | 7,790 | 21 | 0 | 0 | 0 | 0 |
 | physics | 54 | 31,082 | 0 | 0 | 0 | 0 | 0 |
-| primary | 10 | 5,438 | 9 | 0 | 0 | 0 | 0 |
+| primary | 12 | 6,606 | 14 | 0 | 0 | 0 | 0 |
 | professional | 10 | 7,129 | 19 | 0 | 0 | 0 | 0 |
 | psychology | 16 | 15,002 | 51 | 0 | 0 | 4 | 0 |
 | research | 7 | 5,426 | 28 | 0 | 0 | 0 | 0 |
 | sociology | 18 | 16,845 | 112 | 0 | 0 | 8 | 0 |
 | spanish | 10 | 5,929 | 5 | 0 | 0 | 0 | 0 |
-| sport | 11 | 8,071 | 74 | 0 | 0 | 0 | 0 |
+| sport | 12 | 8,669 | 76 | 0 | 0 | 0 | 0 |
 | teaching | 12 | 9,324 | 13 | 0 | 0 | 0 | 0 |
 | university | 9 | 6,135 | 8 | 0 | 0 | 0 | 0 |
 | veterinary | 10 | 7,875 | 25 | 0 | 0 | 0 | 0 |
