@@ -4,7 +4,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
-import { catalogue, courseApi } from "../scripts/build-api.mjs";
+import { catalogue, courseApi, iconSets } from "../scripts/build-api.mjs";
 
 const read = async (p) => JSON.parse(await readFile(new URL(`../${p}`, import.meta.url), "utf8"));
 
@@ -12,6 +12,7 @@ test("the published API matches the courses (run node scripts/build-api.mjs if n
   const cat = await catalogue();
   assert.deepEqual(await read("kit/api/v1/catalogue.json"), cat);
   for (const c of cat.courses) assert.deepEqual(await read(`kit/api/v1/courses/${c.slug}.json`), await courseApi(c.slug), c.slug);
+  for (const [slug, set] of Object.entries(await iconSets())) assert.deepEqual(await read(`kit/api/v1/icons/${slug}.json`), set, `icons/${slug}`);
 });
 
 test("every course in the API has a page, a syllabus and a notes file for each written unit", async () => {
