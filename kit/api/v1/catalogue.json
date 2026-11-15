@@ -192,7 +192,7 @@
    "page": "/languagegradify/japanese/",
    "units": 12,
    "lessons": 182,
-   "lessonsWritten": 15,
+   "lessonsWritten": 31,
    "syllabus": "/kit/api/v1/courses/japanese.json"
   },
   {
@@ -372,7 +372,7 @@
    "page": "/sportgradify/course/",
    "units": 12,
    "lessons": 205,
-   "lessonsWritten": 171,
+   "lessonsWritten": 191,
    "syllabus": "/kit/api/v1/courses/sport.json"
   },
   {
@@ -408,7 +408,7 @@
    "page": "/vetgradify/course/",
    "units": 12,
    "lessons": 209,
-   "lessonsWritten": 163,
+   "lessonsWritten": 178,
    "syllabus": "/kit/api/v1/courses/veterinary.json"
   }
  ]

@@ -21,7 +21,7 @@ These checks are mechanical. They find text that won't display as written (swall
 | health | 11 | 7,620 | 22 | 0 | 0 | 0 | 0 |
 | history | 18 | 11,526 | 0 | 0 | 0 | 0 | 0 |
 | investing | 10 | 6,319 | 124 | 0 | 0 | 0 | 0 |
-| japanese | 1 | 597 | 0 | 0 | 0 | 0 | 0 |
+| japanese | 2 | 1,304 | 2 | 0 | 0 | 0 | 0 |
 | law | 19 | 15,104 | 0 | 0 | 0 | 0 | 0 |
 | literature | 10 | 6,965 | 3 | 0 | 0 | 0 | 0 |
 | maths | 29 | 37,481 | 1023 | 0 | 0 | 42 | 8 |
@@ -36,10 +36,10 @@ These checks are mechanical. They find text that won't display as written (swall
 | research | 7 | 5,426 | 28 | 0 | 0 | 0 | 0 |
 | sociology | 18 | 16,845 | 112 | 0 | 0 | 8 | 0 |
 | spanish | 9 | 5,260 | 4 | 0 | 0 | 0 | 0 |
-| sport | 10 | 7,177 | 72 | 0 | 0 | 0 | 0 |
+| sport | 11 | 8,071 | 74 | 0 | 0 | 0 | 0 |
 | teaching | 12 | 9,324 | 13 | 0 | 0 | 0 | 0 |
 | university | 9 | 6,135 | 8 | 0 | 0 | 0 | 0 |
-| veterinary | 9 | 7,191 | 23 | 0 | 0 | 0 | 0 |
+| veterinary | 10 | 7,875 | 25 | 0 | 0 | 0 | 0 |
 
 Allowed exceptions (correct in context):
 
