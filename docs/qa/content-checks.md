@@ -28,7 +28,7 @@ These checks are mechanical. They find text that won't display as written (swall
 | medicine | 12 | 10,322 | 51 | 0 | 0 | 0 | 0 |
 | music | 12 | 8,669 | 32 | 0 | 0 | 0 | 0 |
 | nursing | 17 | 19,066 | 0 | 0 | 0 | 0 | 1 |
-| pharmacy | 17 | 7,790 | 21 | 0 | 0 | 0 | 0 |
+| pharmacy | 19 | 9,456 | 34 | 0 | 0 | 1 | 0 |
 | physics | 54 | 31,082 | 0 | 0 | 0 | 0 | 0 |
 | primary | 12 | 6,606 | 14 | 0 | 0 | 0 | 0 |
 | professional | 10 | 7,129 | 19 | 0 | 0 | 0 | 0 |
@@ -112,6 +112,10 @@ Allowed exceptions (correct in context):
 ## nursing
 
 - 🔗 u16 Mixed methods: source link isn't https: http://mixedmethodsappraisaltoolpublic.pbworks.com/
+
+## pharmacy
+
+- 🔍 u05: answer 2 doesn't appear in the explanation of "According to Noyes-Whitney, if surface area doubles and everything els"
 
 ## psychology
 

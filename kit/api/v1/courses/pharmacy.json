@@ -607,7 +607,7 @@
    "id": "u04",
    "n": 4,
    "title": "Medicinal and Pharmaceutical Chemistry",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u04-01",
@@ -715,7 +715,7 @@
    "id": "u05",
    "n": 5,
    "title": "Pharmaceutics: Formulation and Dosage Forms",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u05-01",
