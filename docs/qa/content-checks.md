@@ -38,7 +38,7 @@ These checks are mechanical. They find text that won't display as written (swall
 | spanish | 9 | 5,260 | 4 | 0 | 0 | 0 | 0 |
 | sport | 10 | 7,177 | 72 | 0 | 0 | 0 | 0 |
 | teaching | 12 | 9,324 | 13 | 0 | 0 | 0 | 0 |
-| university | 8 | 5,370 | 7 | 0 | 0 | 0 | 0 |
+| university | 9 | 6,135 | 8 | 0 | 0 | 0 | 0 |
 | veterinary | 8 | 6,231 | 21 | 0 | 0 | 0 | 0 |
 
 Allowed exceptions (correct in context):
