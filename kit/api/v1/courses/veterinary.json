@@ -1106,7 +1106,7 @@
    "id": "u10",
    "n": 10,
    "title": "Equine Practice",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u10-01",
