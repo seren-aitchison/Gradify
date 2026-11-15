@@ -145,7 +145,7 @@ export const LESSONS = {
   "u10-12":{"v":1,"hash":"97265aece380","updated":"2026-11-15"},
   "u10-13":{"v":1,"hash":"7c462b5681c8","updated":"2026-11-15"},
   "u10-14":{"v":1,"hash":"3e061c0b4d11","updated":"2026-11-15"},
-  "u10-15":{"v":1,"hash":"89b55a31f4ba","updated":"2026-11-15"}
+  "u10-15":{"v":2,"hash":"e0405c217219","updated":"2026-11-15"}
 };
 export const QUESTIONS = {
   "spanish-u01-01-q1":{"lesson":"u01-01","type":"M","v":1,"hash":"ad946297c63d","updated":"2026-11-12"},
@@ -872,7 +872,7 @@ export const QUESTIONS = {
   "spanish-u10-15-q1":{"lesson":"u10-15","type":"M","v":1,"hash":"e34219f1eebd","updated":"2026-11-15"},
   "spanish-u10-15-q2":{"lesson":"u10-15","type":"M","v":1,"hash":"b288aa07275a","updated":"2026-11-15"},
   "spanish-u10-15-q3":{"lesson":"u10-15","type":"TF","v":1,"hash":"ede98428d2bf","updated":"2026-11-15"},
-  "spanish-u10-15-q4":{"lesson":"u10-15","type":"M","v":1,"hash":"8b878420c669","updated":"2026-11-15"},
+  "spanish-u10-15-q4":{"lesson":"u10-15","type":"M","v":2,"hash":"c9baca709925","updated":"2026-11-15"},
   "spanish-u10-15-q5":{"lesson":"u10-15","type":"SA","v":1,"hash":"6e309040c307","updated":"2026-11-15"}
 };
 export const RETIRED_QUESTIONS = {
