@@ -923,7 +923,7 @@
    "id": "u08",
    "n": 8,
    "title": "Research Ethics and Integrity",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u08-01",
@@ -1026,7 +1026,7 @@
    "id": "u09",
    "n": 9,
    "title": "Research Data Management and Open Research",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u09-01",
@@ -1104,7 +1104,7 @@
    "id": "u10",
    "n": 10,
    "title": "Academic Writing and the Thesis",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u10-01",
@@ -1192,7 +1192,7 @@
    "id": "u11",
    "n": 11,
    "title": "Publishing, Presenting and Impact",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u11-01",
@@ -1270,7 +1270,7 @@
    "id": "u12",
    "n": 12,
    "title": "The Viva and Beyond",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u12-01",
