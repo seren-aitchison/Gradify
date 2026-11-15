@@ -960,7 +960,7 @@
    "id": "u10",
    "n": 10,
    "title": "Skills: Listening, Reading, Speaking, Writing and Translation",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u10-01",
