@@ -1068,7 +1068,7 @@
    "id": "u11",
    "n": 11,
    "title": "Regulation, Protection and Ethics",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u11-01",
@@ -1156,7 +1156,7 @@
    "id": "u12",
    "n": 12,
    "title": "Building Your Plan",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u12-01",

@@ -1145,7 +1145,7 @@
    "id": "u11",
    "n": 11,
    "title": "Oral Surgery, Pain and Anxiety Control",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u11-01",
@@ -1228,7 +1228,7 @@
    "id": "u12",
    "n": 12,
    "title": "Professionalism, Ethics and Law",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u12-01",
