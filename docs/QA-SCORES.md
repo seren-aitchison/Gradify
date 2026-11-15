@@ -52,7 +52,7 @@ These scores are evidence-based proxies, not judgements:
 | ProGradify | beta | **70.2** | 20/20 | 14.8/20 | 8/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, engineering −5.6 |
 | YouthGradify | beta | **69.7** | 20/20 | 14/20 | 8/15 | 9.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, content −6 |
 | InternshipGradify | beta | **69.2** | 20/20 | 13.8/20 | 8/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, content −6.2 |
-| LanguageGradify | beta | **68.2** | 20/20 | 12.3/20 | 8/15 | 9.9/15 | 8/10 | 0/10 | 10/10 | academic quality −10, content −7.7, learning experience −7 |
+| LanguageGradify | beta | **69.1** | 20/20 | 13.2/20 | 8/15 | 9.9/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, content −6.8 |
 | TechGradify · ForgeLab | beta | **59.5** | 20/20 | 8.1/20 | 8/15 | 9.4/15 | 8/10 | 0/10 | 6/10 | content −11.9, academic quality −10, learning experience −7 |
 | Klerio | external | **8** | 0/20 | 0/20 | 0/15 | 0/15 | 8/10 | 0/10 | 0/10 | functionality −20, content −20, learning experience −15 |
 
