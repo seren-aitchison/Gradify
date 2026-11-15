@@ -4,7 +4,7 @@
 // kit/course/notes.js) are fetched and parsed by the client, as the tutor's server does (kit/assess/canon.js).
 //   node scripts/build-api.mjs           writes kit/api/v1/ (CI checks it's up to date)
 //   import { catalogue, courseApi }      used by tests/api.test.mjs
-// Published as https://getgradify.com/kit/api/v1/catalogue.json and …/courses/<slug>.json.
+// Published as https://getgradify.com/kit/api/v1/catalogue.json, …/courses/<slug>.json and …/icons/<site>.json.
 import { mkdir, readdir, writeFile, rm } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { SITES, slugOf } from "../kit/core/site.js";
@@ -83,6 +83,17 @@ export async function catalogue() {
   };
 }
 
+// the 3D glass icon sets (kit/icons3d/<site>.js, kit/core/glass-icons.js) as JSON, so the apps draw the same icons:
+// an array, because the order decides which symbol a lesson gets when nothing matches its words
+export async function iconSets() {
+  const out = {};
+  for (const f of (await readdir(new URL("kit/icons3d/", root))).filter((x) => x.endsWith(".js")).sort()) {
+    const set = (await import(new URL(`kit/icons3d/${f}`, root))).default;
+    out[f.replace(/\.js$/, "")] = { api: API_VERSION, licence: "Lucide (ISC), kit/icons3d/LICENSE", symbols: Object.entries(set).map(([n, v]) => ({ n, t: v.t, d: v.d })) };
+  }
+  return out;
+}
+
 const json = (x) => `${JSON.stringify(x, null, 1)}\n`;
 if (process.argv[1] && new URL(`file://${process.argv[1]}`).href === import.meta.url) {
   await rm(OUT, { recursive: true, force: true });
@@ -90,5 +101,7 @@ if (process.argv[1] && new URL(`file://${process.argv[1]}`).href === import.meta
   const cat = await catalogue();
   await writeFile(new URL("catalogue.json", OUT), json(cat));
   for (const c of cat.courses) await writeFile(new URL(`courses/${c.slug}.json`, OUT), json(await courseApi(c.slug)));
+  await mkdir(new URL("icons/", OUT), { recursive: true });
+  for (const [slug, set] of Object.entries(await iconSets())) await writeFile(new URL(`icons/${slug}.json`, OUT), JSON.stringify(set));
   console.log(`api: ${cat.courses.length} courses, ${cat.courses.reduce((a, c) => a + c.lessons, 0)} lessons`);
 }
