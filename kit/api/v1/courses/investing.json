@@ -902,7 +902,7 @@
    "id": "u09",
    "n": 9,
    "title": "Behavioural Finance",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u09-01",
@@ -980,7 +980,7 @@
    "id": "u10",
    "n": 10,
    "title": "UK Wrappers, Pensions and Tax",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u10-01",

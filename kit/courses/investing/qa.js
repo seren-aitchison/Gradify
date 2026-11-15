@@ -3,6 +3,8 @@
 // "reviewed" only if `by` says so; it can never complete "sources" or "signoff". Sign-off needs an FCA-regulated
 // investment professional or a CFA charterholder educator.
 export const QA = {
+  u10: { standard: 2, reviewed: null, sources: null, signoff: null },
+  u09: { standard: 2, reviewed: null, sources: null, signoff: null },
   u08: { standard: 2, reviewed: null, sources: null, signoff: null },
   u06: { standard: 2, reviewed: null, sources: null, signoff: null },
   u05: { standard: 2, reviewed: null, sources: null, signoff: null },
@@ -19,4 +21,4 @@ export const QA = {
   u07: { standard: 2, reviewed: null, sources: null, signoff: null }, // reused from finance u04
 };
 // the date each school's notes were first written
-export const WRITTEN_ON = { u07: "2026-11-12", u01: "2026-11-07", u02: "2026-11-12", u03: "2026-11-12", u04: "2026-11-12", u05: "2026-11-13", u06: "2026-11-14", u08: "2026-11-14" };
+export const WRITTEN_ON = { u07: "2026-11-12", u01: "2026-11-07", u02: "2026-11-12", u03: "2026-11-12", u04: "2026-11-12", u05: "2026-11-13", u06: "2026-11-14", u08: "2026-11-14", u09: "2026-11-15", u10: "2026-11-15" };

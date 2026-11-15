@@ -939,7 +939,7 @@
    "id": "u09",
    "n": 9,
    "title": "Restorative Dentistry: Operative, Endodontics and Prosthodontics",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u09-01",
@@ -1052,7 +1052,7 @@
    "id": "u10",
    "n": 10,
    "title": "Paediatric Dentistry and Orthodontics",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u10-01",

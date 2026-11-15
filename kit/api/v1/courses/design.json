@@ -1015,7 +1015,7 @@
    "id": "u11",
    "n": 11,
    "title": "Sustainable and Ethical Design",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u11-01",
@@ -1103,7 +1103,7 @@
    "id": "u12",
    "n": 12,
    "title": "Collaboration, Communication and Intellectual Property",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u12-01",
