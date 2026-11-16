@@ -2170,7 +2170,7 @@
    "id": "u16",
    "n": 16,
    "title": "Physical Chemistry and Molecular Science",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u16-01",
