@@ -7,6 +7,7 @@
 // A school is "ready for publication" only when all five are complete; until then the course labels it a
 // draft. Record facts, never aspirations: leave a stage null until it has actually happened.
 export const QA = {
+  u11: { standard: 2, reviewed: null, sources: null, signoff: null },
   u10: { standard: 2, reviewed: null, sources: null, signoff: null },
   u09: { standard: 2, reviewed: null, sources: null, signoff: null },
   u08: { standard: 2, reviewed: null, sources: null, signoff: null },
