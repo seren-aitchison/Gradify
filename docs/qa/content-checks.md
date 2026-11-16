@@ -10,7 +10,7 @@ These checks are mechanical. They find text that won't display as written (swall
 | biology | 14 | 15,826 | 61 | 0 | 0 | 3 | 0 |
 | business | 11 | 7,796 | 54 | 0 | 0 | 0 | 0 |
 | careers | 11 | 6,139 | 12 | 0 | 0 | 0 | 0 |
-| chemistry | 8 | 6,889 | 89 | 0 | 0 | 4 | 0 |
+| chemistry | 9 | 7,792 | 101 | 0 | 0 | 7 | 0 |
 | computing | 6 | 3,709 | 0 | 0 | 0 | 0 | 0 |
 | dentistry | 12 | 8,422 | 27 | 0 | 0 | 0 | 0 |
 | design | 12 | 7,044 | 23 | 0 | 0 | 0 | 0 |
@@ -57,6 +57,9 @@ Allowed exceptions (correct in context):
 - 🔍 u02: answer 100000 doesn't appear in the explanation of "An atom is about 1.0 × 10⁻¹⁰ m across and its nucleus about 1.0 × 10⁻¹"
 - 🔍 u02: answer 600000000000000 doesn't appear in the explanation of "Calculate the frequency of light with wavelength 500 nm (c = 2.998 × 1"
 - 🔍 u02: answer 1.635e-18 doesn't appear in the explanation of "Using Eₙ = −2.18 × 10⁻¹⁸ J ÷ n², calculate the energy (in J) released "
+- 🔍 u09: answer 0.00316 doesn't appear in the explanation of "A weak base at 0.20 mol dm⁻³ has Kb = 5.0 × 10⁻⁵. What is [OH⁻] in mol"
+- 🔍 u09: answer 0.00001 doesn't appear in the explanation of "Ksp of a salt MA is 1.0 × 10⁻¹⁰. What is its solubility in mol dm⁻³?"
+- 🔍 u09: answer 1.1e-8 doesn't appear in the explanation of "Ksp of BaSO₄ is 1.1 × 10⁻¹⁰. What is its solubility in mol dm⁻³ in 0.0"
 
 ## maths
 
