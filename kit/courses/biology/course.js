@@ -22,7 +22,7 @@ export default defineCourse(science, {
   // cumulative exams (kit/assess/exam.js): one per stage and one over the whole course, drawn from written schools only
   exams: scienceExams(UNITS, TRACKS),
   // the schools whose notes are written (tests/sciences.test.mjs checks this matches notes/)
-  written: ["u01", "u02"],
+  written: ["u01", "u02", "u03"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
   overview: {
     headline: "Life, from molecules to ecosystems",
