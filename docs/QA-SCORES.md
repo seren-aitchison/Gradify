@@ -26,7 +26,7 @@ These scores are evidence-based proxies, not judgements:
 | PsychGradify | beta | **84.7** | 20/20 | 20/20 | 13/15 | 13.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −2, backend −2 |
 | MathGradify | beta | **84.7** | 20/20 | 20/20 | 13/15 | 13.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −2, backend −2 |
 | SocGradify | beta | **84.4** | 20/20 | 20/20 | 13/15 | 13.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −2, backend −2 |
-| SciGradify | beta | **82.5** | 20/20 | 17.5/20 | 13/15 | 14/15 | 8/10 | 0/10 | 10/10 | academic quality −10, content −2.5, learning experience −2 |
+| SciGradify | beta | **82.6** | 20/20 | 17.6/20 | 13/15 | 14/15 | 8/10 | 0/10 | 10/10 | academic quality −10, content −2.4, learning experience −2 |
 | NurseGradify | live | **80.9** | 20/20 | 20/20 | 9/15 | 13.7/15 | 8/10 | 0.2/10 | 10/10 | academic quality −9.8, learning experience −6, backend −2 |
 | SportGradify | beta | **80.8** | 20/20 | 16.2/20 | 12.7/15 | 13.9/15 | 8/10 | 0/10 | 10/10 | academic quality −10, content −3.8, learning experience −2.3 |
 | LawGradify | live | **80.3** | 20/20 | 20/20 | 8.7/15 | 13.4/15 | 8/10 | 0.2/10 | 10/10 | academic quality −9.8, learning experience −6.3, backend −2 |
