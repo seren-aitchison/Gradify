@@ -7,7 +7,7 @@ These checks are mechanical. They find text that won't display as written (swall
 | Course | Notes files | Lines | NUM questions | Hard failures | Arithmetic to check | NUM explanations to check | Source links |
 |---|---|---|---|---|---|---|---|
 | art | 12 | 7,641 | 18 | 0 | 0 | 0 | 0 |
-| biology | 3 | 2,963 | 18 | 0 | 0 | 1 | 0 |
+| biology | 4 | 4,392 | 28 | 0 | 0 | 3 | 0 |
 | business | 11 | 7,796 | 54 | 0 | 0 | 0 | 0 |
 | careers | 11 | 6,139 | 12 | 0 | 0 | 0 | 0 |
 | chemistry | 2 | 1,548 | 30 | 0 | 0 | 4 | 0 |
@@ -48,6 +48,8 @@ Allowed exceptions (correct in context):
 ## biology
 
 - 🔍 u02: answer 20000 doesn't appear in the explanation of "A mitochondrion is 2 µm long and appears 40 mm long in an electron mic"
+- 🔍 u04: answer 0.5 doesn't appear in the explanation of "In a cross Aa × Aa, what fraction of offspring are expected to be hete"
+- 🔍 u04: answer 0.67 doesn't appear in the explanation of "Two carriers of an autosomal recessive condition have an unaffected ch"
 
 ## chemistry
 
