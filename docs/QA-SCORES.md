@@ -34,7 +34,7 @@ These scores are evidence-based proxies, not judgements:
 | MedGradify | beta | **79.4** | 20/20 | 17.4/20 | 10.7/15 | 13.3/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −4.3, content −2.6 |
 | HistoryGradify | beta | **76.7** | 20/20 | 20/20 | 9.3/15 | 13.4/15 | 8/10 | 0/10 | 6/10 | academic quality −10, learning experience −5.7, accessibility −4 |
 | EngineerGradify | beta | **76.3** | 20/20 | 15.6/20 | 13/15 | 9.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, engineering −5.3, content −4.4 |
-| LanguageGradify | beta | **75.6** | 20/20 | 19.7/20 | 8/15 | 9.9/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, engineering −5.1 |
+| LanguageGradify | beta | **75.9** | 20/20 | 20/20 | 8/15 | 9.9/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, engineering −5.1 |
 | PostGradify | beta | **75** | 20/20 | 15.9/20 | 11.7/15 | 9.4/15 | 8/10 | 0/10 | 10/10 | academic quality −10, engineering −5.6, content −4.1 |
 | VetGradify | beta | **74.8** | 20/20 | 16.4/20 | 10.7/15 | 9.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, engineering −5.3, learning experience −4.3 |
 | JuniorGradify | beta | **74.4** | 20/20 | 14.7/20 | 8/15 | 13.7/15 | 8/10 | 0/10 | 10/10 | academic quality −10, learning experience −7, content −5.3 |

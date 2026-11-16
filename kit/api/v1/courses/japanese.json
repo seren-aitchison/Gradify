@@ -1171,7 +1171,7 @@
    "id": "u12",
    "n": 12,
    "title": "Exam Skills: GCSE and JLPT",
-   "written": false,
+   "written": true,
    "lessons": [
     {
      "id": "u12-01",
