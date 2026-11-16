@@ -22,7 +22,7 @@ export default defineCourse(science, {
   // cumulative exams (kit/assess/exam.js): one per stage and one over the whole course, drawn from written schools only
   exams: scienceExams(UNITS, TRACKS),
   // the schools whose notes are written (tests/sciences.test.mjs checks this matches notes/)
-  written: ["u01", "u02", "u03", "u04", "u05", "u06", "u07", "u08", "u09", "u10", "u11", "u12", "u13", "u14", "u15"],
+  written: ["u01", "u02", "u03", "u04", "u05", "u06", "u07", "u08", "u09", "u10", "u11", "u12", "u13", "u14", "u15", "u16"],
   notes: (unitId) => import(`./notes/${unitId}.js`).then((m) => m.default),
   overview: {
     headline: "Atoms, molecules and the reactions between them",
