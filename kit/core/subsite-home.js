@@ -22,7 +22,7 @@ export function renderHome(el, siteName) {
   if (!site || !c) return;
   trackView(site.n);
   const foot = document.querySelector(".sub-foot");
-  if (foot && !foot.querySelector(".sub-privacy")) foot.insertAdjacentHTML("beforeend", ` <a class="sub-privacy" href="/privacy.html">Privacy</a>`);
+  if (foot && !foot.querySelector(".sub-privacy")) foot.insertAdjacentHTML("beforeend", ` <a class="sub-privacy" href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>`);
   const k = KINDS[c.kind], model = modelOf(siteName);
   const who = (site.who || "learners").replace(/^./, (x) => x.toLowerCase());
   const fill = (t) => esc(t).replaceAll("{site}", site.n).replaceAll("{who}", esc(who)).replaceAll("{exams}", esc(c.exams || "your exams")).replaceAll("{topic}", esc(c.topics[0][0]));

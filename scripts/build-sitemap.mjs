@@ -1,4 +1,4 @@
-// sitemap.xml for search engines: the homepage, the privacy page and every page of each live or beta site
+// sitemap.xml for search engines: the homepage, the privacy and terms pages and every page of each live or beta site
 // (kit/core/sites.js status). Coming-soon sites stay out until they have content worth finding.
 //   node scripts/build-sitemap.mjs     writes sitemap.xml (tests/launch.test.mjs checks it's up to date)
 import { readdir, writeFile } from "node:fs/promises";
@@ -18,7 +18,7 @@ async function pagesIn(dir) {
 }
 
 export async function sitemapUrls() {
-  const urls = ["", "app.html", "privacy.html"];
+  const urls = ["", "app.html", "privacy.html", "terms.html"];
   for (const s of SITES.filter((x) => x.built && ["live", "beta"].includes(x.status))) urls.push(...(await pagesIn(`${slugOf(s)}/`)).sort());
   return urls.map((u) => `${ORIGIN}/${u.replace(/(^|\/)index\.html$/, "$1")}`);
 }
