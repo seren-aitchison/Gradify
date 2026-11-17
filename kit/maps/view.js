@@ -8,6 +8,9 @@
 // Export: the map's laid-out shapes (branch paths and node boxes, read from the rendered map) are drawn again as a
 // standalone SVG, and onto a 3840 × 2160 canvas for a 4K PNG, at full resolution, never a screenshot scaled up.
 import { mapsFor, MAPS, plain } from "./build.js";
+import { loadSet, pickIcon, glassIcon } from "../core/glass-icons.js";
+import { diagramForNode, glassDiagram } from "../core/glass-diagrams.js";
+import { gate } from "../data/limits.js";
 
 const here = new URL(".", import.meta.url);
 const vendor = (p) => new URL(`../vendor/${p}`, here).href;
@@ -40,6 +43,7 @@ export function mapsSectionHtml(L, o = {}) {
     <div class="mm-head"><h3 id="mm-h">Mind maps</h3><p class="sub">Five ways to see this lesson, made from its notes. ${Math.round(r.coverage.share * 100)}% of the lesson is mapped.</p></div>
     <div class="mm-grid">${r.maps.map((m, i) => `<button type="button" class="mm-card" data-open-map="${i}" aria-label="Open map ${m.n}: ${esc(m.title)}">
       ${previewSvg(m, i)}
+      <span class="mm-cicon" data-g3d="${esc(`${m.title} ${m.root.children.map((c) => c.topic).join(" ")}`)}" data-g3d-size="42" data-g3d-unique></span>
       <span class="mm-n">Map ${m.n}</span><b>${esc(m.title)}</b><span class="mm-purpose">${esc(m.purpose)}</span>
       <span class="mm-scope">${m.limited ? "Little of this in the lesson" : `${m.nodes - 1} ideas · ${m.root.children.length} branches`}</span>
     </button>`).join("")}</div>
@@ -84,6 +88,8 @@ let open = null;   // the open viewer: { overlay, mind, ... }
 /** Open map `i` (0–4) of a lesson in the immersive viewer. */
 export async function openMap(L, i = 0, o = {}) {
   const r = mapsFor(L, o);
+  // Free: 5 mind maps in all (kit/data/limits.js), once Plus is on sale; opening one already opened is free
+  if (!(await gate("map", `${o.id || "map"}:${i}`, { store: o.store }))) return;
   if (open) close();
   const overlay = document.createElement("div");
   overlay.className = "mm-viewer";
@@ -130,13 +136,43 @@ export async function openMap(L, i = 0, o = {}) {
   overlay.querySelector(".mm-select [aria-checked='true']")?.focus();
 }
 
+// Strands: from the side of the idea above to the near side of each fact's bubble, at its middle (Mind Elixir's own
+// sub-branches underline a node; Gradify's maps put every fact in its own bubble at the end of its strand).
+function strand({ pT, pL, pW, pH, cT, cL, cW, cH, direction }) {
+  const gap = parseInt(this.container.style.getPropertyValue("--node-gap-x")) || 0;
+  const left = direction === "lhs";
+  const sx = left ? pL + gap : pL + pW - gap, sy = pT + pH / 2;
+  const ex = left ? cL + cW - gap : cL + gap, ey = cT + cH / 2, k = (ex - sx) / 2;
+  return `M ${sx} ${sy} C ${sx + k} ${sy} ${ex - k} ${ey} ${ex} ${ey}`;
+}
+
+// a main branch's Liquid Glass icon, from the same set as the lesson's own (kit/core/glass-icons.js), no two alike
+function branchHtml(n) {
+  const name = pickIcon(open.icons, `${n.topic} ${n.children.slice(0, 4).map((c) => c.topic).join(" ")}`, { avoid: open.usedIcons });
+  open.usedIcons.push(name);
+  return `<span class="mm-bicon">${glassIcon(open.icons, name, { size: 38, seed: n.id })}</span><span class="mm-btext">${esc(n.topic)}</span>`;
+}
+/** Gradify's Mind Elixir theme (also used by the mind map creator in Tools). */
+export function elixirTheme(dark) {
+  return { name: "Gradify", type: dark ? "dark" : "light", palette: PALETTE, generateSubBranch: strand, cssVar: dark
+      ? { "--main-color": "#f3f3f7", "--main-bgcolor": "#17171f", "--color": "#e4e4ec", "--bgcolor": "transparent", "--root-color": "#0b0b10", "--root-bgcolor": "#ffffff", "--root-border-color": "transparent", "--selected": "#f055dd", "--accent-color": "#f055dd", "--panel-color": "#fff", "--panel-bgcolor": "#17171f", "--main-radius": "14px", "--root-radius": "18px", "--topic-padding": "4px 6px" }
+      : { "--main-color": "#16162a", "--main-bgcolor": "#ffffff", "--color": "#2a2a3c", "--bgcolor": "transparent", "--root-color": "#ffffff", "--root-bgcolor": "#14141f", "--root-border-color": "transparent", "--selected": "#d0249b", "--accent-color": "#d0249b", "--panel-color": "#14141f", "--panel-bgcolor": "#fff", "--main-radius": "14px", "--root-radius": "18px", "--topic-padding": "4px 6px" } };
+}
+/** Mind Elixir, loaded once, with its stylesheet and the viewer's (also used by Tools). */
+export const mindElixir = () => loadLibs().then((x) => x.MindElixir);
+export { strand };
+
 function toElixir(n, depth, color, big, parent = null) {
   open.byId.set(n.id, n); open.parentOf.set(n.id, parent);
   return {
     id: n.id, topic: n.topic, expanded: !(big && depth >= 2 && n.children.length),
     ...(depth === 1 ? { branchColor: color } : {}),
-    ...(depth === 1 && n.icon ? { icons: [n.icon] } : {}),
-    ...(n.kind === "limit" || n.kind === "gap" ? { style: { color: "var(--mm-mute)", fontStyle: "italic" } } : {}),
+    ...(depth === 1 && n.icon && !open.icons ? { icons: [n.icon] } : {}),
+    // a main branch: its Liquid Glass icon (the same set as the lesson's) and its name
+    ...(depth === 1 && open.icons ? { dangerouslySetInnerHTML: branchHtml(n) } : {}),
+    // every fact below: its own bubble, edged in its branch's colour
+    ...(depth >= 2 ? { style: { borderColor: color, ...(n.kind === "limit" || n.kind === "gap" ? { color: "var(--mm-mute)", fontStyle: "italic" } : {}) } }
+      : n.kind === "limit" || n.kind === "gap" ? { style: { color: "var(--mm-mute)", fontStyle: "italic" } } : {}),
     ...(n.kind === "gap" ? { tags: ["Gap"] } : {}),
     ...(["pitfall"].includes(n.kind) ? { tags: ["Mistake"] } : n.kind === "equation" ? { tags: ["Formula"] } : n.kind === "term" ? { tags: ["Term"] } : {}),
     children: n.children.map((c, k) => toElixir(c, depth + 1, depth === 0 ? PALETTE[k % PALETTE.length] : color, big, n.id)),
@@ -144,7 +180,9 @@ function toElixir(n, depth, color, big, parent = null) {
 }
 
 async function show(i) {
-  const { MindElixir } = await loadLibs();
+  if (open.i !== i && !(await gate("map", `${open.o.id || "map"}:${i}`, { store: open.o.store }))) return;
+  const [{ MindElixir }, icons] = await Promise.all([loadLibs(), open.icons ? open.icons : loadSet(open.o.site || "Gradify").catch(() => null)]);
+  open.icons = icons; open.usedIcons = [];
   const m = open.r.maps[i];
   open.i = i; open.byId.clear(); open.parentOf = new Map(); open.sel = null; open.focused = false;
   outline(false);
@@ -157,10 +195,8 @@ async function show(i) {
   const dark = document.documentElement.dataset.theme !== "light";
   const mind = new MindElixir({
     el, direction: MindElixir.SIDE, editable: false, contextMenu: false, toolBar: false, keypress: false, allowUndo: false,
-    overflowHidden: false, alignment: "root", scaleMin: 0.15, scaleMax: 3,
-    theme: { name: "Gradify", type: dark ? "dark" : "light", palette: PALETTE, cssVar: dark
-      ? { "--main-color": "#f3f3f7", "--main-bgcolor": "#17171f", "--color": "#e4e4ec", "--bgcolor": "transparent", "--root-color": "#0b0b10", "--root-bgcolor": "#ffffff", "--root-border-color": "transparent", "--selected": "#f055dd", "--accent-color": "#f055dd", "--panel-color": "#fff", "--panel-bgcolor": "#17171f", "--main-radius": "14px", "--root-radius": "18px", "--topic-padding": "4px 6px" }
-      : { "--main-color": "#16162a", "--main-bgcolor": "#ffffff", "--color": "#2a2a3c", "--bgcolor": "transparent", "--root-color": "#ffffff", "--root-bgcolor": "#14141f", "--root-border-color": "transparent", "--selected": "#d0249b", "--accent-color": "#d0249b", "--panel-color": "#14141f", "--panel-bgcolor": "#fff", "--main-radius": "14px", "--root-radius": "18px", "--topic-padding": "4px 6px" } },
+    overflowHidden: false, alignment: "root", scaleMin: 0.15, scaleMax: 3, generateSubBranch: strand,
+    theme: elixirTheme(dark),
   });
   // links between branches, from the lesson's own words (kit/maps/build.js: linksOf), drawn as quiet dashed connectors
   // the relation ("uses", "about") is in the detail panel, so the canvas stays quiet
@@ -192,7 +228,10 @@ function fit(mind = open?.mind) {
     return { x: x0, y: y0, w: x1 - x0, h: y1 - y0 }; };
   // Mind Elixir sets the zoom (its own scaleFit keeps the canvas whole); then the map's measured extent is centred
   mind.scaleFit();
-  const e = extent(); if (!isFinite(e.w) || !e.w) return;
+  let e = extent(); if (!isFinite(e.w) || !e.w) return;
+  // then smaller still if the map is taller or wider than the space between the title and the toolbar
+  const k = mind.scaleVal || 1, want = Math.min(k, k * area.w / e.w, k * area.h / e.h);
+  if (want < k * 0.98) { mind.scale(Math.max(want, 0.15)); e = extent(); }
   mind.move(area.x + area.w / 2 - (e.x + e.w / 2), area.y + area.h / 2 - (e.y + e.h / 2));
 }
 
@@ -203,6 +242,7 @@ function panel(n) {
   const linked = (open.r.maps[open.i].links || []).filter((l) => l.from === n.id || l.to === n.id)
     .map((l) => (l.from === n.id ? `${l.label} <b>${esc(open.byId.get(l.to)?.topic)}</b>` : `<b>${esc(open.byId.get(l.from)?.topic)}</b> ${l.label} this`));
   p.innerHTML = `<span class="mm-kind">${esc(KIND[n.kind] || "Idea")}</span><h3>${esc(n.topic)}</h3>${n.detail && plain(n.detail) !== n.topic ? `<p>${esc(n.detail)}</p>` : ""}
+    ${glassDiagram(diagramForNode(n), { size: "sm", caption: false })}
     ${linked.length ? `<p class="mm-links">${icon("focus")}${linked.join("<br>")}</p>` : ""}
     ${n.children.length ? `<p class="mm-more">${n.children.length} ${n.children.length === 1 ? "branch" : "branches"} below <button type="button" class="mm-chip" data-act="${open.focused ? "unfocus" : "focus"}">${open.focused ? "Show the whole map" : "Focus on this branch"}</button></p>` : ""}
     <button type="button" class="mm-x" data-act="unselect" aria-label="Close details">${icon("close")}</button>`;
@@ -399,10 +439,12 @@ export function scene(mind) {
         if (last && Math.abs(last.y - p.y) < p.h / 2) { last.text += ` ${w[0]}`; last.x2 = p.x + p.w; } else lines.push({ text: w[0], x: p.x, x2: p.x + p.w, y: p.y, h: p.h });
       }
     }
-    const tag = t.querySelector(".tags span");
+    const tag = t.querySelector(".tags span"), gi = t.querySelector(".g3d");
+    // a glass icon: its colours, where its pane sits and its symbol, drawn again in the export
+    const icon = gi ? { ...at(gi.querySelector(".g3d-pane").getBoundingClientRect()), a: gi.style.getPropertyValue("--a"), b: gi.style.getPropertyValue("--b"), svg: gi.querySelector("svg").innerHTML } : null;
     boxes.push({ ...b, r: parseFloat(cs.borderTopLeftRadius) || 0, fill: cs.backgroundColor, stroke: cs.borderTopColor, sw: parseFloat(cs.borderTopWidth) || 0,
       color: cs.color, font: `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`, size: parseFloat(cs.fontSize), weight: cs.fontWeight, family: cs.fontFamily, italic: cs.fontStyle === "italic", lines,
-      tag: tag ? { text: tag.textContent, ...at(tag.getBoundingClientRect()), fill: getComputedStyle(tag).backgroundColor, color: getComputedStyle(tag).color } : null });
+      icon, tag: tag ? { text: tag.textContent, ...at(tag.getBoundingClientRect()), fill: getComputedStyle(tag).backgroundColor, color: getComputedStyle(tag).color } : null });
   });
   // link labels: text placed beside the links
   layer.querySelectorAll(".label-container > *").forEach((lab) => {
@@ -428,6 +470,10 @@ export function toSvg(s) {
   for (const p of s.paths) parts.push(`<path d="${t(p.d)}" transform="translate(${p.dx.toFixed(2)} ${p.dy.toFixed(2)})" fill="${t(p.fill)}" stroke="${t(p.stroke)}" stroke-width="${p.width}"${p.dash ? ` stroke-dasharray="${t(p.dash)}"` : ""} stroke-linecap="round" stroke-linejoin="round"/>`);
   for (const b of s.boxes) {
     if (visible(b.fill) || (b.sw && visible(b.stroke))) parts.push(`<rect x="${b.x.toFixed(1)}" y="${b.y.toFixed(1)}" width="${b.w.toFixed(1)}" height="${b.h.toFixed(1)}" rx="${b.r}" fill="${visible(b.fill) ? b.fill : "none"}"${b.sw && visible(b.stroke) ? ` stroke="${b.stroke}" stroke-width="${b.sw}"` : ""}/>`);
+    if (b.icon) {
+      const ic = b.icon, gid = `g${parts.length}`;
+      parts.push(`<defs><linearGradient id="${gid}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${t(ic.a)}"/><stop offset="1" stop-color="${t(ic.b)}"/></linearGradient></defs><rect x="${ic.x.toFixed(1)}" y="${ic.y.toFixed(1)}" width="${ic.w.toFixed(1)}" height="${ic.h.toFixed(1)}" rx="${(ic.w * 0.26).toFixed(1)}" fill="url(#${gid})"/><rect x="${ic.x.toFixed(1)}" y="${ic.y.toFixed(1)}" width="${ic.w.toFixed(1)}" height="${ic.h.toFixed(1)}" rx="${(ic.w * 0.26).toFixed(1)}" fill="#fff" fill-opacity=".14" stroke="#fff" stroke-opacity=".5" stroke-width="1"/><svg x="${(ic.x + ic.w * 0.18).toFixed(1)}" y="${(ic.y + ic.h * 0.18).toFixed(1)}" width="${(ic.w * 0.64).toFixed(1)}" height="${(ic.h * 0.64).toFixed(1)}" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${ic.svg}</svg>`);
+    }
     for (const l of b.lines) parts.push(`<text x="${l.x.toFixed(1)}" y="${(l.y + l.h * 0.78).toFixed(1)}" fill="${b.color}" font-family="${t(b.family)}" font-size="${b.size}" font-weight="${b.weight}"${b.italic ? ' font-style="italic"' : ""}>${t(l.text)}</text>`);
     if (b.tag) parts.push(`<rect x="${b.tag.x.toFixed(1)}" y="${b.tag.y.toFixed(1)}" width="${b.tag.w.toFixed(1)}" height="${b.tag.h.toFixed(1)}" rx="${(b.tag.h / 2).toFixed(1)}" fill="${b.tag.fill}"/><text x="${(b.tag.x + b.tag.w / 2).toFixed(1)}" y="${(b.tag.y + b.tag.h * 0.72).toFixed(1)}" text-anchor="middle" fill="${b.tag.color}" font-family="${t(b.family)}" font-size="${(b.tag.h * 0.62).toFixed(1)}">${t(b.tag.text)}</text>`);
   }
@@ -445,10 +491,22 @@ export async function toPng(s, { width = 3840, height = 2160 } = {}) {
   g.translate((width - s.w * k) / 2 - s.x * k, (height - s.h * k) / 2 - s.y * k);
   g.scale(k, k);
   g.lineCap = "round"; g.lineJoin = "round";
+  const symbols = await Promise.all(s.boxes.filter((b) => b.icon).map((b) => new Promise((ok) => {
+    const img = new Image(); img.onload = () => ok([b, img]); img.onerror = () => ok([b, null]);
+    img.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="${Math.round(b.icon.w * 0.64 * k)}" height="${Math.round(b.icon.h * 0.64 * k)}" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${b.icon.svg}</svg>`)}`;
+  })));
+  const symbolOf = new Map(symbols);
   for (const p of s.paths) { g.save(); g.translate(p.dx, p.dy); g.strokeStyle = p.stroke; g.lineWidth = p.width; g.setLineDash(p.dash ? p.dash.split(/[\s,]+/).map(Number).filter((x) => !isNaN(x)) : []); const path = new Path2D(p.d); if (visible(p.fill) && p.fill !== "none") { g.fillStyle = p.fill; g.fill(path); } g.stroke(path); g.restore(); }
   for (const b of s.boxes) {
     if (visible(b.fill)) { g.fillStyle = b.fill; g.beginPath(); g.roundRect(b.x, b.y, b.w, b.h, b.r); g.fill(); }
     if (b.sw && visible(b.stroke)) { g.strokeStyle = b.stroke; g.lineWidth = b.sw; g.beginPath(); g.roundRect(b.x, b.y, b.w, b.h, b.r); g.stroke(); }
+    if (b.icon) {
+      const ic = b.icon, grad = g.createLinearGradient(ic.x, ic.y, ic.x + ic.w, ic.y + ic.h);
+      grad.addColorStop(0, ic.a || "#4641ff"); grad.addColorStop(1, ic.b || "#8b3dff");
+      g.fillStyle = grad; g.beginPath(); g.roundRect(ic.x, ic.y, ic.w, ic.h, ic.w * 0.26); g.fill();
+      g.fillStyle = "rgba(255,255,255,.14)"; g.fill(); g.strokeStyle = "rgba(255,255,255,.5)"; g.lineWidth = 1; g.stroke();
+      const img = symbolOf.get(b); if (img) g.drawImage(img, ic.x + ic.w * 0.18, ic.y + ic.h * 0.18, ic.w * 0.64, ic.h * 0.64);
+    }
     g.fillStyle = b.color; g.font = b.font; g.textBaseline = "alphabetic";
     for (const l of b.lines) g.fillText(l.text, l.x, l.y + l.h * 0.78);
     if (b.tag) { g.fillStyle = b.tag.fill; g.beginPath(); g.roundRect(b.tag.x, b.tag.y, b.tag.w, b.tag.h, b.tag.h / 2); g.fill(); g.fillStyle = b.tag.color; g.font = `${(b.tag.h * 0.62).toFixed(1)}px ${b.family}`; g.textAlign = "center"; g.fillText(b.tag.text, b.tag.x + b.tag.w / 2, b.tag.y + b.tag.h * 0.72); g.textAlign = "start"; }

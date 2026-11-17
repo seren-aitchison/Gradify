@@ -94,6 +94,32 @@ export async function iconSets() {
   return out;
 }
 
+// The lesson search index for Tools (kit/tools/search.js): every written lesson's title, module, unit, key terms and
+// section headings, compact, so one file finds a lesson anywhere on Gradify. The lesson itself is read from its notes.
+export async function lessonIndex() {
+  const { parseNotes, norm } = await import(new URL("kit/course/notes.js", root));
+  const courses = [], lessons = [];
+  for (const slug of await courseSlugs()) {
+    const cfg = (await import(new URL(`kit/courses/${slug}/course.js`, root))).default;
+    const site = SITES.find((s) => s.n === cfg.site), ci = courses.length;
+    courses.push([cfg.slug, cfg.name, cfg.site, site ? await pageOf(slug, site) : null, site?.c ? `#${site.c}` : null]);
+    const written = new Set(cfg.written || cfg.units.map((u) => u.id));
+    for (const u of cfg.units) {
+      if (!written.has(u.id)) continue;
+      let text = null;
+      try { text = await cfg.notes(u.id); } catch { /* not written yet */ }
+      if (typeof text !== "string") continue;
+      const byTitle = Object.fromEntries(parseNotes(text).map((p) => [norm(p.title), p]));
+      for (const l of u.lessons) {
+        const L = byTitle[norm(l.title)]; if (!L) continue;
+        const clean = (x) => String(x).replace(/\*\*|`/g, "").replace(/\|/g, "/").trim();
+        lessons.push([ci, u.id, l.id, clean(l.title), clean(l.module || ""), clean(u.title), L.terms.slice(0, 6).map((t) => clean(t[0])).join("|"), L.blocks.filter((b) => b.t === "h").slice(0, 6).map((b) => clean(b.x)).join("|")]);
+      }
+    }
+  }
+  return { api: API_VERSION, fields: ["course", "unit", "lesson", "title", "module", "unitTitle", "terms", "headings"], courses, lessons };
+}
+
 const json = (x) => `${JSON.stringify(x, null, 1)}\n`;
 if (process.argv[1] && new URL(`file://${process.argv[1]}`).href === import.meta.url) {
   await rm(OUT, { recursive: true, force: true });
@@ -101,6 +127,7 @@ if (process.argv[1] && new URL(`file://${process.argv[1]}`).href === import.meta
   const cat = await catalogue();
   await writeFile(new URL("catalogue.json", OUT), json(cat));
   for (const c of cat.courses) await writeFile(new URL(`courses/${c.slug}.json`, OUT), json(await courseApi(c.slug)));
+  await writeFile(new URL("lessons.json", OUT), JSON.stringify(await lessonIndex()));
   await mkdir(new URL("icons/", OUT), { recursive: true });
   for (const [slug, set] of Object.entries(await iconSets())) await writeFile(new URL(`icons/${slug}.json`, OUT), JSON.stringify(set));
   console.log(`api: ${cat.courses.length} courses, ${cat.courses.reduce((a, c) => a + c.lessons, 0)} lessons`);

@@ -29,9 +29,11 @@ import { trackView, track } from "../core/analytics.js";
 import { callFunction } from "../data/functions.js";
 import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, confirmAttempts } from "./progress.js";
 import { access, plusPanelHtml, promptPlus } from "../data/plan.js";
+import { gate, lockedHtml } from "../data/limits.js";
 import { mapsSectionHtml, wireMaps } from "../maps/view.js";
 import { lessonTimer, addTime, MIN_LOG_MS, minutesPerLesson } from "./lesson-time.js";
 import { hydrate as glassIcons } from "../core/glass-icons.js";
+import { diagramsFor, diagramForCard, glassDiagram } from "../core/glass-diagrams.js";
 import { mountRevalidation } from "./revalidation.js";
 import { tutorEvent } from "../intel/experiments.js";
 import { scoreFeedback } from "../assess/tutor.js";
@@ -590,9 +592,13 @@ export function mountCourse(root, cfg) {
     return `<p class="co-builds"><span>Builds on</span> ${items.join("")}</p>`;
   }
   // the five mind maps (kit/maps): this lesson's id, a kicker for the viewer, and lab names from this course
-  const mapOpts = (l) => ({ id: `${cfg.slug}:${l.id}`, kicker: `${cfg.name || cfg.site} · ${l.title}`, labTitle: (x) => ixs.find((i) => i.id === x)?.title || x });
+  // the lesson's notes with its glass diagrams beside the parts they show (kit/core/glass-diagrams.js)
+  const lessonDiagrams = (N) => { const at = new Map(diagramsFor(N).map((d) => [d.at, d])); return lessonHtml(N, { after: (i) => (at.has(i) ? glassDiagram(at.get(i)) : "") }); };
+  const mapOpts = (l) => ({ id: `${cfg.slug}:${l.id}`, kicker: `${cfg.name || cfg.site} · ${l.title}`, site: cfg.site, store, labTitle: (x) => ixs.find((i) => i.id === x)?.title || x });
   async function viewLesson(id) {
     const l = byId[id]; if (!l) return go("learn");
+    // Free: 10 lessons in each course (kit/data/limits.js), once Plus is on sale
+    if (!(await gate("lesson", id, { course: cfg.slug, store }))) { main.innerHTML = lockedHtml("lesson"); return; }
     lt.start(id);
     if (S.done[id] || S.time?.[id]?.v) ledger({ event: "lesson_revisited", concept: `${cfg.slug}:${id}`, source: "course", detail: { visits: (S.time?.[id]?.v || 0) + 1, done: Boolean(S.done[id]) } });
     const u = l.unit, t = trackOf(u), N = await notesFor(l), prev = u.lessons[l.i - 1], next = u.lessons[l.i + 1] || units[u.n]?.lessons[0];
@@ -606,7 +612,7 @@ export function mountCourse(root, cfg) {
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${buildsOnHtml(id)}
         ${N ? lessonFrame(N).top : ""}
-        ${N ? `<div class="mv-cols">${lessonHtml(N)}</div>${lessonFrame(N).end}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
+        ${N ? `<div class="mv-cols">${lessonDiagrams(N)}</div>${lessonFrame(N).end}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
         ${N ? mapsSectionHtml(N, mapOpts(l)) : ""}
         ${N ? `<section class="co-ask co-tutor"></section>` : ""}
@@ -632,7 +638,7 @@ export function mountCourse(root, cfg) {
     }
     mountIxSlots(main);
     if (N) wireMaps(main, N, mapOpts(l));
-    main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", () => flashcards(N.cards, l)));
+    main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", async () => { if (await gate("flashcards", `${cfg.slug}:${l.id}`, { store })) flashcards(N.cards, l, N); }));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
     const tp = main.querySelector(".co-tutor");
     if (tp) mountTutorPanel(tp, {
@@ -772,13 +778,14 @@ export function mountCourse(root, cfg) {
   }
 
   // flashcards: flip through a lesson's cards
-  function flashcards(cards, l) {
+  function flashcards(cards, l, N) {
     let i = 0, flipped = false;
+    const diagrams = N ? diagramsFor(N, { max: 12 }) : [];
     const d = document.createElement("div"); d.className = "co-modal";
     const paint = () => {
       d.innerHTML = `<div class="co-dialog co-fc" role="dialog" aria-modal="true" aria-label="Flashcards">
         <div class="co-fc-top"><span class="co-kicker">${esc(l.title)}</span><span>${i + 1} / ${cards.length}</span><button class="co-x" data-close aria-label="Close">×</button></div>
-        <button class="co-card3d ${flipped ? "flip" : ""}" aria-live="polite"><span class="f"><span class="co-fcicon" data-g3d="${esc(`${cards[i][0]} ${l.title}`)}" data-g3d-size="52"></span><div>${inline(cards[i][0])}</div><small>Tap to reveal</small></span><span class="b"><div>${inline(cards[i][1])}</div></span></button>
+        <button class="co-card3d ${flipped ? "flip" : ""}" aria-live="polite"><span class="f"><span class="co-fcicon" data-g3d="${esc(`${cards[i][0]} ${l.title}`)}" data-g3d-size="52"></span><div>${inline(cards[i][0])}</div><small>Tap to reveal</small></span><span class="b"><div>${inline(cards[i][1])}</div>${glassDiagram(diagramForCard(diagrams, cards[i][0], cards[i][1]), { size: "sm", caption: false })}</span></button>
         <div class="co-row"><button class="btn btn-ghost lg btn-sm" data-prev ${i ? "" : "disabled"}><span>← Back</span></button><button class="btn btn-light lg btn-sm" data-next><span>${i < cards.length - 1 ? "Next →" : "Done"}</span></button></div></div>`;
       glassIcons(d, cfg.site).catch(() => {});
       d.querySelector(".co-card3d").onclick = () => { flipped = !flipped; d.querySelector(".co-card3d").classList.toggle("flip", flipped); };

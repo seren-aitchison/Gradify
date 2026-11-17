@@ -48,6 +48,13 @@ the notes, any such addition can be checked against the lesson the same way flas
 
 ## The viewer
 
+Every fact sits in its own bubble at the end of its strand: the strands (`strand` in `kit/maps/view.js`, Mind
+Elixir's `generateSubBranch`) run from the side of the idea above to the middle of each fact's bubble, and each bubble
+is edged in its branch's colour. Each main branch carries a Liquid Glass icon from the lesson's own icon set
+(`kit/core/glass-icons.js`), so a map, its lesson and its flashcards share one visual language; the 4K PNG and SVG
+exports draw the icons too. Selecting a branch with steps, a formula, a comparison or a few children shows a glass
+diagram of it in the detail panel (`kit/core/glass-diagrams.js`, see `docs/TOOLS.md`).
+
 `kit/maps/view.js` and `kit/maps/maps.css` draw the five previews in the lesson and the full-screen viewer:
 
 - **Map selector** to switch between the five maps

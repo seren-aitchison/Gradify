@@ -35,7 +35,8 @@ const VIEWS = [["desktop", { viewport: { width: 1440, height: 900 } }, "dark"], 
       const links = Number(await pg.locator(".mm-viewer").getAttribute("data-links"));
       const drawn = await pg.locator(".mm-canvas .topiclinks g, .mm-canvas svg.topiclinks > g").count();
       check(links < 0 || drawn >= links, `${name}: ${links} cross-links drawn (${drawn})`);
-      check(await pg.locator(".mm-canvas .me-main .me-tpc .icons, .mm-canvas .me-main .me-tpc span.icons").count() > 0, `${name}: main branches have icons`);
+      check(await pg.locator(".mm-canvas .me-main .me-tpc .mm-bicon .g3d").count() > 0, `${name}: main branches have Liquid Glass icons`);
+      check(await pg.evaluate(() => [...document.querySelectorAll(".mm-canvas .me-children .me-tpc")].every((t) => parseFloat(getComputedStyle(t).borderTopWidth) > 0)), `${name}: every fact is in its own bubble`);
       await pg.locator(".mm-canvas .me-tpc").nth(2).click(); await pg.waitForTimeout(300);
       check(await pg.locator(".mm-panel").isVisible(), `${name}: selecting a node shows its details`);
       const before = await pg.locator(".mm-panel h3").textContent();
