@@ -116,11 +116,12 @@ test("learners can't get round it or see anyone else's plan", async () => {
 import { PLAN_PRICES, PLUS_ON_SALE } from "../kit/data/billing.js";
 import { access, readOnly, plusPanelHtml, pounds, PLUS_FEATURES } from "../kit/data/plan.js";
 
-test("until Plus is on sale, the app locks nothing for anyone", async () => {
-  assert.equal(PLUS_ON_SALE, false);
-  const a = await access({ mode: "local" });
-  assert.equal(a.enforced, false);
-  for (const f of Object.keys(PLUS_FEATURES)) assert.equal(a.has(f), true, f);
+test("with Plus on sale, a Free learner is locked out of every Plus feature", async () => {
+  assert.equal(PLUS_ON_SALE, true);
+  const a = await access({ mode: "local" }, { fresh: true });
+  assert.equal(a.enforced, true);
+  assert.equal(a.plan, "free");
+  for (const f of Object.keys(PLUS_FEATURES)) assert.equal(a.has(f), false, f);
 });
 
 test("a second device for Free reads normally, refuses study changes clearly, and still saves settings", async () => {

@@ -254,8 +254,10 @@ html[data-text="large"] body { zoom: 1.15; }
 /* the Gradify bar, rainbow-edged, everywhere (homepage, pricing, the app, every sub-site) */
 header.bar.glass, header.sub-nav.glass {
   border: 1px solid transparent !important;
-  background: linear-gradient(var(--bar-bg), var(--bar-bg)) padding-box, linear-gradient(90deg, #4641ff, #8b3dff 25%, #f055dd 50%, #ff5600 75%, #ffc002) border-box !important;
+  background: linear-gradient(var(--bar-bg), var(--bar-bg)) padding-box, var(--bar-rainbow) border-box !important;
 }
+/* the full rainbow, end to end, so the bar reads the same on the web, the installed app and every sub-site */
+:root { --bar-rainbow: linear-gradient(90deg, #ff3b4d, #ff8a00 14%, #ffc002 28%, #34c759 43%, #1fc8c8 57%, #3c78d8 71%, #4641ff 80%, #8b3dff 90%, #f055dd); }
 
 
 /* light and dark switch, added to every top bar by kit/core/theme-boot.js */
