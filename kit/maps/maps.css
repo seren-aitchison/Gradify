@@ -1,0 +1,67 @@
+/* Mind map viewer (kit/maps/view.js). The map is the content: plain, readable nodes on a quiet backdrop with a soft
+   spectrum glow. Liquid Glass (kit/vendor/liquid-glass) is only on the controls floating above it. */
+html.mm-open { overflow: hidden; }
+.mm-viewer {
+  --mm-bg: #0b0b10; --mm-fg: #f3f3f7; --mm-mute: #a3a3b5; --mm-node: #17171f; --mm-hit: #f055dd;
+  position: fixed; inset: 0; z-index: 1000; background: var(--mm-bg); color: var(--mm-fg);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+html[data-theme="light"] .mm-viewer { --mm-bg: #f6f6fa; --mm-fg: #14141f; --mm-mute: #5c5c70; --mm-node: #fff; --mm-hit: #c41f8f; }
+/* something for the glass to bend: a soft wash of colour behind the map */
+.mm-viewer::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background: radial-gradient(40% 40% at 15% 20%, rgba(70, 65, 255, .28), transparent 70%), radial-gradient(35% 40% at 85% 25%, rgba(240, 85, 221, .22), transparent 70%), radial-gradient(40% 40% at 70% 90%, rgba(255, 138, 0, .18), transparent 70%); }
+.mm-stage, .mm-canvas { position: absolute; inset: 0; }
+/* Mind Elixir sets position: relative on its host; keep it filling the viewer */
+.mm-canvas { outline: none; position: absolute !important; inset: 0; width: 100%; height: 100%; }
+.mm-canvas .map-container { background: transparent !important; width: 100% !important; height: 100% !important; }
+.mm-canvas .me-tpc { max-width: 260px; line-height: 1.35; font-family: var(--sans, inherit); }
+.mm-canvas .me-root .me-tpc { max-width: 340px; font-weight: 700; letter-spacing: -.01em; box-shadow: 0 10px 30px -14px rgba(0, 0, 0, .5); }
+.mm-canvas .me-main > .me-wrapper > .me-parent > .me-tpc { font-weight: 600; box-shadow: 0 6px 18px -12px rgba(0, 0, 0, .45); }
+.mm-canvas .tags span { font-size: 10px; letter-spacing: .02em; border-radius: 99px; padding: 1px 7px; }
+.mm-canvas .me-tpc.mm-hit { outline: 2.5px solid var(--mm-hit); outline-offset: 3px; border-radius: 10px; }
+.mm-error { position: absolute; inset: 40% 0 auto; text-align: center; color: var(--mm-mute); }
+
+/* chrome */
+.mm-top { position: absolute; top: 14px; left: 16px; right: 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; pointer-events: none; }
+.mm-top > * { pointer-events: auto; }
+.mm-title .kicker { font: 600 11px var(--mono, monospace); letter-spacing: .08em; text-transform: uppercase; color: var(--mm-mute); }
+.mm-title h2 { margin: 2px 0 0; font-size: clamp(17px, 2vw, 22px); letter-spacing: -.02em; max-width: 46vw; }
+.mm-select { max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.mm-select .glass-segmented__option { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.mm-seg-n { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; font-size: 11px; font-weight: 700; background: var(--glass-fill, rgba(127, 127, 127, .18)); }
+.mm-tools { position: absolute; left: 50%; bottom: max(18px, env(safe-area-inset-bottom)); transform: translateX(-50%); flex-wrap: wrap; justify-content: center; max-width: calc(100% - 24px); }
+.mm-tools svg { width: 20px; height: 20px; }
+.mm-search { position: absolute; left: 50%; bottom: 86px; transform: translateX(-50%); width: min(440px, calc(100% - 32px)); display: flex; align-items: center; }
+.mm-search[hidden] { display: none; }
+.mm-hits { margin-left: auto; padding: 0 12px; font-size: 13px; color: var(--mm-mute); white-space: nowrap; }
+.mm-panel { position: absolute; right: 16px; top: 96px; width: min(360px, calc(100% - 32px)); max-height: calc(100% - 200px); overflow: auto; padding: 18px 20px; border-radius: 24px; }
+.mm-panel[hidden] { display: none; }
+.mm-panel h3 { margin: 6px 28px 8px 0; font-size: 18px; line-height: 1.3; letter-spacing: -.01em; }
+.mm-panel p { margin: 0 0 8px; line-height: 1.55; color: var(--mm-fg); opacity: .9; }
+.mm-panel .mm-more { font-size: 13px; color: var(--mm-mute); }
+.mm-kind { font: 600 11px var(--mono, monospace); letter-spacing: .08em; text-transform: uppercase; color: var(--mm-mute); }
+.mm-x { position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; display: grid; place-items: center; border: 0; border-radius: 50%; background: var(--glass-fill, rgba(127, 127, 127, .18)); color: inherit; cursor: pointer; }
+.mm-x svg { width: 16px; height: 16px; }
+.mm-purpose-line { position: absolute; left: 16px; top: 74px; margin: 0; font-size: 13px; color: var(--mm-mute); max-width: min(560px, 60vw); }
+
+/* presentation: the map alone */
+.mm-viewer.presenting .mm-top, .mm-viewer.presenting .mm-panel, .mm-viewer.presenting .mm-search, .mm-viewer.presenting .mm-purpose-line { display: none; }
+.mm-viewer.presenting .mm-tools { opacity: .25; transition: opacity .2s; }
+.mm-viewer.presenting .mm-tools:hover, .mm-viewer.presenting .mm-tools:focus-within { opacity: 1; }
+
+@media (max-width: 760px) {
+  .mm-top { top: 10px; left: 10px; right: 10px; }
+  .mm-title h2 { max-width: 100%; }
+  .mm-seg-t { display: none; }
+  .mm-purpose-line { display: none; }
+  .mm-panel { top: auto; bottom: 84px; right: 10px; left: 10px; width: auto; max-height: 30vh; padding: 14px 16px; border-radius: 20px; }
+  .mm-panel h3 { font-size: 16px; }
+  .mm-panel p { font-size: 14px; }
+  .mm-search { bottom: 80px; }
+  /* one row that scrolls sideways, rather than a wrapped block */
+  .mm-tools { bottom: max(10px, env(safe-area-inset-bottom)); flex-wrap: nowrap; justify-content: flex-start; width: calc(100% - 20px); overflow-x: auto; scrollbar-width: none; }
+  .mm-tools::-webkit-scrollbar { display: none; }
+  .mm-tools .glass-toolbar__divider { display: none; }
+  .mm-tools .glass-toolbar__btn { flex: none; }
+}
+@media (prefers-reduced-motion: reduce) { .mm-viewer * { transition: none !important; animation: none !important; } }

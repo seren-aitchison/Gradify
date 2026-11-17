@@ -29,6 +29,7 @@ import { trackView, track } from "../core/analytics.js";
 import { callFunction } from "../data/functions.js";
 import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, confirmAttempts } from "./progress.js";
 import { access, plusPanelHtml } from "../data/plan.js";
+import { mapsSectionHtml, wireMaps } from "../maps/view.js";
 import { lessonTimer, addTime, MIN_LOG_MS, minutesPerLesson } from "./lesson-time.js";
 import { hydrate as glassIcons } from "../core/glass-icons.js";
 import { mountRevalidation } from "./revalidation.js";
@@ -577,6 +578,8 @@ export function mountCourse(root, cfg) {
     });
     return `<p class="co-builds"><span>Builds on</span> ${items.join("")}</p>`;
   }
+  // the five mind maps (kit/maps): this lesson's id, a kicker for the viewer, and lab names from this course
+  const mapOpts = (l) => ({ id: `${cfg.slug}:${l.id}`, kicker: `${cfg.name || cfg.site} · ${l.title}`, labTitle: (x) => ixs.find((i) => i.id === x)?.title || x });
   async function viewLesson(id) {
     const l = byId[id]; if (!l) return go("learn");
     lt.start(id);
@@ -594,6 +597,7 @@ export function mountCourse(root, cfg) {
         ${N ? lessonFrame(N).top : ""}
         ${N ? `<div class="mv-cols">${lessonHtml(N)}</div>${lessonFrame(N).end}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
+        ${N ? mapsSectionHtml(N, mapOpts(l)) : ""}
         ${N ? `<section class="co-ask co-tutor"></section>` : ""}
         ${N?.items?.length ? `<section class="co-check"><h3>${ic("target")} Check yourself</h3>${N.items.map((it) => qHtml(it, { confidence: true })).join("")}</section>` : ""}
         <footer>
@@ -616,6 +620,7 @@ export function mountCourse(root, cfg) {
       if (linked.length && at) at.insertAdjacentHTML("beforebegin", `<section class="co-trylab"><h3>Try it yourself</h3>${shown.map((x) => `<div class="co-ixslot" data-ix="${esc(x.id)}"></div>`).join("")}${more.length ? `<p class="co-morelabs">More for this lesson: ${more.map((x) => `<a href="#/practice/${esc(x.id)}">${esc(x.title)}</a>`).join(" · ")}</p>` : ""}</section>`);
     }
     mountIxSlots(main);
+    if (N) wireMaps(main, N, mapOpts(l));
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", () => flashcards(N.cards, l)));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
     const tp = main.querySelector(".co-tutor");
