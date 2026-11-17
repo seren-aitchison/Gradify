@@ -18,7 +18,12 @@ This directory contains the production-ready marketing assets, faceless video sc
    - High-CTR mobile headlines and description tags.
    - Recommended Advantage+ audience targeting, demographics, and retargeting exclusion rules.
 
-3. **[animation-generator.html](animation-generator.html)**:
+3. **[seo-optimised-ads.md](seo-optimised-ads.md)**:
+   - Substantial suite of SEO-optimised Search Ads (Google/Bing Responsive Search Ads) and Social Search Ads (TikTok/Instagram search engine keywords).
+   - 6 High-Intent Search Clusters: *PDF-to-Flashcards*, *Mastery & Spaced Repetition*, *MedGradify / USMLE*, *LawGradify / SQE*, *STEM & SciGradify*, and *Aesthetic LifeOS*.
+   - 90 Pinned Search Headlines, 24 Quality Score Descriptions, Sitelink & Callout Assets, and Negative Keywords.
+
+4. **[animation-generator.html](animation-generator.html)**:
    - A browser-based motion graphics and video ad preview studio built in pure HTML/CSS/JS.
    - Live simulated scenes with Gradify's aurora glow, kinetic text transitions, PDF dropzone, grounded quote inspection cards, and daily heatmap animations.
    - Aspect ratio switchers (9:16 Vertical Video, 1:1 Feed Carousel, 4:5 Feed Portrait).
