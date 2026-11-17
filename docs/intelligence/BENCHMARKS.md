@@ -187,7 +187,7 @@ from public.reviews order by reviewed_at;
 -- course answers → attempts.jsonl
 select json_build_object('user_id', md5(user_id::text), 'id', id, 'created_at', created_at, 'site', site, 'subject', subject, 'context', context,
   'question_id', question_id, 'question_type', question_type, 'difficulty', difficulty, 'objectives', objectives, 'lesson_id', lesson_id,
-  'unit_id', unit_id, 'response', json_build_object('evidence', response->>'evidence'), 'score', score, 'correct', correct, 'attempt', attempt, 'confidence', confidence, 'marking_method', marking_method, 'marking_status', marking_status)
+  'unit_id', unit_id, 'response', json_build_object('evidence', response->>'evidence', 'outcome', response->>'outcome', 'via', response->>'via'), 'score', score, 'correct', correct, 'attempt', attempt, 'confidence', confidence, 'marking_method', marking_method, 'marking_status', marking_status)
 from public.assessment_attempts order by created_at;
 ```
 
@@ -198,7 +198,7 @@ npm run bench -- --reviews reviews.jsonl --attempts attempts.jsonl
 Two columns matter for matching the app:
 
 - `mode`: practice reviews are scored but don't reschedule the card, as in the app
-- the lab `evidence` flag from `response`: exploration challenges are left out of mastery, as in the app
+- the lab fields from `response` (`evidence`, `outcome`, `via`): exploration challenges, challenges tried and left, and failures other than a wrong answer are left out of the scored answers; assisted successes count as assisted. All as in the app. Only these three fields of `response` are exported, never the learner's own answer text
 
 The mastery benchmark needs at least two learners.
 

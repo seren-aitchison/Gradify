@@ -80,4 +80,4 @@ export async function aiVerdicts(set, model = MODEL) {
 }
 
 /** Code checks and AI review together, as production runs them: either one blocking or flagging a card counts. */
-export const combine = (a, b) => a.map((x, i) => ({ blocked: x.blocked || b[i].blocked, flagged: x.flagged || b[i].flagged, why: [x.why, b[i].why].filter(Boolean).join("; ") || null }));
+export const combine = (a, b) => a.map((x, i) => ({ blocked: x.blocked || b[i].blocked, flagged: x.flagged || b[i].flagged, rewritten: Boolean(x.rewritten || b[i].rewritten), why: [x.why, b[i].why].filter(Boolean).join("; ") || null }));

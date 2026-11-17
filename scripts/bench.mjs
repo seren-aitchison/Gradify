@@ -15,6 +15,8 @@ import { recallBenchmark, parseReviewLog } from "./bench/recall.mjs";
 import { masteryBenchmark, readinessBenchmark } from "./bench/mastery.mjs";
 import { cardBenchmark, codeVerdicts, aiVerdicts, combine, tally } from "./bench/cards.mjs";
 import { planBenchmark } from "./bench/plan.mjs";
+import { labOutcome } from "../kit/learning/mastery.js";
+import { evidenceClass } from "../kit/learning/evidence-class.js";
 
 // Results must not depend on the machine: the readiness code reads an exam date as local noon, as the app does.
 process.env.TZ = "UTC";
@@ -41,6 +43,14 @@ export const attemptRecord = (r) => (r.question ? { ...r, user: String(r.user ??
   marking: { method: r.marking_method ?? "auto", status: r.marking_status ?? "final" },
 });
 
+// the answers the app counts towards mastery (kit/learning/mastery.js evidenceFromAttempts): no exploration, and of
+// lab challenges only successes and wrong answers (a challenge tried and left, or failed other than by answering, isn't evidence)
+export const countsForMastery = (a) => {
+  if (evidenceClass(a) === "exploration") return false;
+  const o = labOutcome(a);
+  return !(o === "attempted" || (o === "unsuccessful" && a.response?.via !== "answer"));
+};
+
 const arg = (name) => { const i = process.argv.indexOf(name); return i > 0 ? process.argv[i + 1] : null; };
 
 if (import.meta.url === `file://${process.argv[1]}`) {
@@ -52,7 +62,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   if (arg("--reviews")) out.realRecall = recallBenchmark(parseReviewLog(await readFile(arg("--reviews"), "utf8")));
   if (arg("--attempts")) {
     const rows = (await readFile(arg("--attempts"), "utf8")).split("\n").filter((l) => l.trim()).map((l) => attemptRecord(JSON.parse(l)));
-    out.realMastery = masteryBenchmark(rows.filter((a) => a.lesson && a.marking.status === "final"));
+    out.realMastery = masteryBenchmark(rows.filter((a) => a.lesson && a.marking.status === "final" && countsForMastery(a)));
   }
   if (process.argv.includes("--claude")) {
     const code = cardFixture.sets.map(codeVerdicts), ai = [];
