@@ -386,16 +386,27 @@ export function mountCourse(root, cfg) {
   // the results float above the page: inside the tab bar, which scrolls sideways, they were clipped out of sight
   const res = Object.assign(document.createElement("div"), { className: "co-results co-float", hidden: true });
   document.body.append(res);
+  // below the search box, sized to the space that's really visible (a phone's keyboard takes the bottom half);
+  // above it when there's more room there
   const placeResults = () => {
     if (res.hidden) return;
     const r = q.closest(".co-search").getBoundingClientRect(), w = Math.min(420, innerWidth - 16);
+    const vh = window.visualViewport?.height ?? innerHeight, below = vh - r.bottom - 16, above = r.top - 16;
     res.style.width = `${w}px`;
-    res.style.top = `${Math.round(r.bottom + 8)}px`;
     res.style.left = `${Math.round(Math.min(Math.max(8, r.right - w), innerWidth - w - 8))}px`;
+    if (below >= 220 || below >= above) { res.style.top = `${Math.round(r.bottom + 8)}px`; res.style.maxHeight = `${Math.max(120, Math.round(below))}px`; }
+    else { const h = Math.min(res.scrollHeight, above); res.style.maxHeight = `${Math.round(above)}px`; res.style.top = `${Math.round(Math.max(8, r.top - 8 - h))}px`; }
   };
   addEventListener("resize", placeResults); addEventListener("scroll", placeResults, { passive: true });
-  // opening the search in a crowded bar scrolls it into view (after its width transition)
-  q.addEventListener("focus", () => setTimeout(() => { if (tabs.classList.contains("tight")) { tabs.scrollLeft = tabs.scrollWidth; tabEdges(); } placeResults(); }, 220));
+  window.visualViewport?.addEventListener("resize", placeResults);
+  // opening the search in a crowded bar scrolls it into view (after its width transition); on a phone the page also
+  // scrolls so the search box sits near the top, leaving room for its results above the keyboard
+  q.addEventListener("focus", () => setTimeout(() => {
+    if (tabs.classList.contains("tight")) { tabs.scrollLeft = tabs.scrollWidth; tabEdges(); }
+    const top = q.closest(".co-search").getBoundingClientRect().top;
+    if (innerWidth <= 760 && top > innerHeight * 0.3) scrollBy({ top: top - 84, behavior: "instant" });
+    placeResults();
+  }, 220));
   const searchHtml = (raw) => {
     const t = norm(raw);
     const hits = [...units.filter((u) => norm(u.title).includes(t)).map((u) => ({ href: `#/learn/${u.id}`, k: `${U} ${u.n}`, t: u.title })),
