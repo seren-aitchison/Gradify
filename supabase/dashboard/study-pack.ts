@@ -13,6 +13,12 @@ import { runAi, ledger, estimateTokens, sha256, fail } from "../_shared/ai.js";
 
 const MODEL = "claude-opus-5-5";
 
+// Bloom's taxonomy, the levels a card can test: recalling a fact is not the same as using it. Evaluating is left to
+// the deeper questions and the tutor, since a flashcard rarely tests it well.
+const LEVELS = ["remember", "understand", "apply", "analyse"];
+// The card types Gradify AI can write; the browser extractor writes definition and cloze cards
+const CARD_TYPES = ["definition", "cloze", "why", "reverse", "compare", "sequence", "misconception"];
+
 // JSON schema for structured outputs. Every object closes with additionalProperties: false
 // and lists every key in `required`; optional values are nullable instead.
 const str = { type: "string" };
@@ -68,20 +74,22 @@ const PACK_SCHEMA = {
             items: {
               type: "object",
               additionalProperties: false,
-              required: ["term", "abbreviation", "statement", "kind", "importance", "quote", "page", "card"],
+              required: ["term", "abbreviation", "statement", "kind", "importance", "level", "prerequisites", "quote", "page", "card"],
               properties: {
                 term: nstr,
                 abbreviation: nstr,
                 statement: str,
                 kind: { type: "string", enum: ["definition", "cause", "process", "equation", "example", "list", "other"] },
                 importance: { type: "string", enum: ["core", "supporting", "bonus"] },
+                level: { type: "string", enum: LEVELS },
+                prerequisites: { type: "array", items: str },
                 quote: nstr,
                 page: { type: ["integer", "null"] },
                 card: {
                   type: "object",
                   additionalProperties: false,
                   required: ["type", "front", "back"],
-                  properties: { type: { type: "string", enum: ["definition", "cloze", "why", "reverse"] }, front: str, back: str },
+                  properties: { type: { type: "string", enum: CARD_TYPES }, front: str, back: str },
                 },
               },
             },
@@ -112,7 +120,12 @@ How to read the notes:
 For every fact:
 - "quote" is a short phrase copied exactly, character for character, from the notes that supports the fact (6 to 15 words is ideal). Do not tidy the spelling inside the quote. Use null only for bonus facts.
 - "page" is the page number the quote comes from when the notes are split into pages ("--- page N ---" markers), otherwise null.
-- "card" is one flashcard that tests the fact. Prefer questions that make the learner recall or explain, not recognise. Keep fronts under 25 words and backs under 40 words. Use "cloze" for lists and key phrases (put _____ in the front), "why" for causes and processes, "definition" for terms, "reverse" when the learner should recall a term from its definition. Never put the answer in the question.
+- "card" is one flashcard that tests the fact. Prefer questions that make the learner recall or explain, not recognise. Keep fronts under 25 words and backs under 40 words. Never put the answer in the question.
+  Choose the card type from what the fact is, not by habit:
+  "definition" for a term; "reverse" when the learner should recall a term from its meaning; "cloze" for a key phrase, value or step (put _____ in the front, one blank); "why" for a cause or mechanism; "compare" for the difference between two things the notes contrast (the back gives the deciding difference); "sequence" for the order of steps in a process (ask what comes before or after a named step, not for the whole list); "misconception" when the notes correct a common mistake (ask the learner to spot what's wrong with a plausible wrong statement).
+  One fact per card: a card must test one thing, and a learner must be able to say clearly whether they got it right. If a fact is a list of more than three items, test each item, not the whole list.
+- "level" is the Bloom level the card tests: "remember" (recall a fact), "understand" (explain or put it in their own words), "apply" (use it on a case), "analyse" (break down or compare). Most cards are "remember" or "understand"; that's right for flashcards.
+- "prerequisites" names up to three other concepts in these notes the learner must already know to answer, using those concepts' terms. Empty when none.
 
 Deeper questions: for every topic, write up to three "questions" that go beyond recall.
 - "why": ask the learner to explain a cause, mechanism, difference or consequence that the notes support ("Explain why...", "Explain the difference between..."). The answer is the explanation a good student would give, in 2 to 4 sentences.
@@ -124,9 +137,21 @@ Dates: list exams, deadlines and classes mentioned in the notes. Give "date" as 
 
 Write in clear British English at the learner's level.`;
 
-/** @param {{ title: string, site: string, level: string, text: string, today: string }} o */
+// What a learner's own evidence says they need more of (kit/learning/mastery.js), as a line for the prompt. Only these
+// fixed values are accepted from the client, so nothing a learner types reaches the prompt this way.
+const FOCUS = {
+  apply: "Their recall is strong but they struggle to apply ideas: write an \"apply\" question for every topic the notes support.",
+  explain: "They recall facts but struggle to explain them: favour \"why\" cards and \"why\" questions.",
+  recall: "They're still learning the basics: favour short definition and cloze cards for every core fact.",
+  compare: "They confuse similar terms: write \"compare\" cards wherever the notes contrast two things.",
+};
+/** @param {unknown} focus @returns {string[]} the known focus values only */
+const focusOf = (focus) => (Array.isArray(focus) ? [...new Set(focus.filter((f) => typeof f === "string" && f in FOCUS))].slice(0, 3) : []);
+
+/** @param {{ title: string, site: string, level: string, text: string, today: string, focus?: string[] }} o */
 function userPrompt(o) {
-  return `Learner: studying on ${o.site}, level: ${o.level}. Reference date: ${o.today}.
+  const focus = focusOf(o.focus);
+  return `Learner: studying on ${o.site}, level: ${o.level}. Reference date: ${o.today}.${focus.length ? `\nWhat this learner's results show: ${focus.map((f) => FOCUS[f]).join(" ")}` : ""}
 Document title: ${o.title}
 
 <notes>
@@ -228,6 +253,7 @@ function splitList(card, notes) {
 // The reviewer's checks, from the rules for good flashcards: one clear question, an answer the question doesn't
 // give away, short enough to recall in one go.
 const DEEP = new Set(["why", "apply"]);
+const CONTRAST = new Set(["why", "apply", "compare", "misconception"]);   // may fairly ask what isn't so
 /** @param {Card} card @returns {string[]} what's wrong with it, if anything */
 function reviewCard(card) {
   const issues = [], f = card.front, b = card.back, fw = f.split(/\s+/).length, bw = b.split(/\s+/).length;
@@ -239,7 +265,7 @@ function reviewCard(card) {
   if (fw > 30) issues.push("long-front");
   if (bw > (DEEP.has(card.kind) ? 80 : 40)) issues.push("long-back");
   if (!DEEP.has(card.kind) && /^(is|are|does|do|did|can|could|was|were|has|have|will|should)\b/i.test(f.trim())) issues.push("yes-no");
-  if (/\b(not|never|except|isn't|aren't|doesn't)\b/i.test(f) && !DEEP.has(card.kind) && card.kind !== "cloze") issues.push("negative");
+  if (/\b(not|never|except|isn't|aren't|doesn't)\b/i.test(f) && !CONTRAST.has(card.kind) && card.kind !== "cloze") issues.push("negative");
   return issues;
 }
 // issues that make a card unusable, or that a learner should look at before revising it
@@ -264,8 +290,80 @@ function refineCards(cards, notes) {
   return out;
 }
 
+// ---------- The reviewer: a second, independent read of every card against the notes ----------
+// After Gradify AI writes a pack, a separate request reviews the cards, and can keep, correct or reject each one.
+// Its verdicts are saved in the pack (pack.review), so a pack reused for the same notes gets the same cards. The
+// reviewer's word isn't final either: a corrected card goes through the same checks in code as any other, so a
+// correction that strays from the notes is marked to check. (The reviewer is the idea from pdf2anki; the prompt and
+// the checks are Gradify's.)
+const REVIEW_SCHEMA = {
+  type: "object", additionalProperties: false, required: ["verdicts"],
+  properties: {
+    verdicts: {
+      type: "array",
+      items: {
+        type: "object", additionalProperties: false, required: ["id", "verdict", "reason", "front", "back"],
+        properties: { id: str, verdict: { type: "string", enum: ["keep", "revise", "reject"] }, reason: nstr, front: nstr, back: nstr },
+      },
+    },
+  },
+};
+
+const REVIEW_PROMPT = `You review flashcards that were written from a learner's own notes, before the learner sees them. You didn't write them. Judge every card against the notes, and only against the notes.
+
+For each card give one verdict:
+- "keep": accurate to the notes, one clear question with one right answer, and worth learning.
+- "revise": worth keeping but flawed (unclear, gives the answer away, tests two things, a slightly wrong detail). Give the corrected "front" and "back", using only what the notes say.
+- "reject": the notes don't support it, it's wrong, more than one answer could fairly be right and that can't be fixed, it's trivial, or it repeats another card.
+
+Cards marked [extra] were deliberately added beyond the notes: keep them unless they're wrong.
+"reason" is a few words saying what's wrong, for revise and reject; null for keep. "front" and "back" are null unless the verdict is revise.
+Be strict about accuracy and clarity, not about style. Return a verdict for every card, using its id.`;
+
+/** The reviewer's request: the cards, each with an id, and the notes they must match. */
+function reviewRequest(cards, notes) {
+  const list = cards.map((c, i) => `[c${i + 1}]${c.grounded === "bonus" ? " [extra]" : ""} (${c.kind}) Q: ${c.front}\n      A: ${c.back}`).join("\n");
+  return `<notes>\n${notes}\n</notes>\n\n<cards>\n${list}\n</cards>\n\nReview every card.`;
+}
+
+/** The reviewer's verdicts applied to the cards they were given: rejected cards removed, corrections checked again.
+ * @param {Card[]} cards @param {{ id: string, verdict: string, reason: string | null, front: string | null, back: string | null }[]} verdicts
+ * @returns {{ cards: Card[], rejected: { front: string, reason: string | null }[], revised: number }} */
+function applyReview(cards, verdicts, notes) {
+  const by = new Map((verdicts || []).map((v) => [v.id, v]));
+  const out = [], rejected = [];
+  let revised = 0;
+  cards.forEach((c, i) => {
+    const v = by.get(`c${i + 1}`);
+    if (!v || v.verdict === "keep") { out.push(c); return; }
+    if (v.verdict === "reject") { rejected.push({ front: c.front, reason: v.reason ?? null }); return; }
+    const front = (v.front || "").trim(), back = (v.back || "").trim();
+    if (!front || !back) { out.push(c); return; }
+    revised++;
+    const card = { ...c, front, back, revisedBy: "reviewer" };
+    const issues = reviewCard(card);
+    if (issues.some((x) => DROP.has(x))) { rejected.push({ front: c.front, reason: "the correction wasn't usable" }); return; }
+    const backed = c.grounded === "bonus" || answerSupport(back, notes, card.kind) >= 0.6;
+    out.push({ ...card, issues, grounded: c.grounded === "bonus" ? "bonus" : c.grounded === "yes" && backed && !issues.some((x) => CHECK.has(x)) ? "yes" : c.grounded === "no" ? "no" : "partly" });
+  });
+  return { cards: out, rejected, revised };
+}
+
+/** Coverage: the core facts in a pack that no card tests (after checks and review removed some), so nothing
+ * important is silently missed. @returns {{ core: number, covered: number, share: number, uncovered: string[] }} */
+function coverage(pack, cards) {
+  const core = (pack.topics || []).flatMap((t) => t.facts || []).filter((f) => f.importance === "core" && f.statement);
+  const tested = new Set(cards.map((c) => c.fact).filter(Boolean));
+  const missed = core.filter((f) => !tested.has(f.statement));
+  return { core: core.length, covered: core.length - missed.length, share: core.length ? (core.length - missed.length) / core.length : 1, uncovered: missed.slice(0, 10).map((f) => f.statement) };
+}
+
 /** @typedef {{ topic: string, front: string, back: string, kind: string, importance: string,
- *   sourceQuote: string | null, sourcePage: number | null, grounded: "yes" | "partly" | "no" | "bonus", issues?: string[] }} Card */
+ *   sourceQuote: string | null, sourcePage: number | null, grounded: "yes" | "partly" | "no" | "bonus", issues?: string[],
+ *   level?: string, prerequisites?: string[] }} Card */
+
+/** The Bloom level a card type tests when nothing more specific is known (browser cards, older packs). */
+const levelOf = (kind) => ({ why: "understand", apply: "apply", compare: "analyse", misconception: "analyse", sequence: "understand" })[kind] || "remember";
 
 // Turn a pack into flashcards, flagging any whose quote can't be found in the notes.
 /** @returns {Card[]} */
@@ -285,13 +383,15 @@ function cardsFromPack(pack, notes) {
       const backed = g < 0 || answerSupport(c.back, notes, c.type) >= 0.6;
       out.push({
         topic: t.name, front: c.front.trim(), back: c.back.trim(), kind: c.type, importance: f.importance,
-        sourceQuote: f.quote, sourcePage: f.page ?? null,
+        sourceQuote: f.quote, sourcePage: f.page ?? null, level: LEVELS.includes(f.level) ? f.level : levelOf(c.type),
+        prerequisites: Array.isArray(f.prerequisites) ? f.prerequisites.slice(0, 3) : [], fact: f.statement ?? null,
         grounded: g < 0 ? "bonus" : g >= 0.85 && backed ? "yes" : g >= 0.5 ? "partly" : "no",
       });
     }
     out.push(...questionCards(t, notes, seen));
   }
-  return refineCards(out, notes);
+  const refined = refineCards(out, notes);
+  return pack.review?.verdicts ? applyReview(refined, pack.review.verdicts, notes).cards : refined;
 }
 
 // A topic's deeper questions as cards (kind "why" or "apply"), checked against the notes like facts
@@ -306,7 +406,7 @@ function questionCards(topic, notes, seen = new Set()) {
     seen.add(key);
     const g = groundingScore(q.quote, notes);
     out.push({
-      topic: topic.name, front: q.question.trim(), back: q.answer.trim(), kind: q.type, importance: "core",
+      topic: topic.name, front: q.question.trim(), back: q.answer.trim(), kind: q.type, importance: "core", level: levelOf(q.type),
       sourceQuote: q.quote, sourcePage: q.page ?? null, grounded: g >= 0.85 ? "yes" : g >= 0.5 ? "partly" : "no",
     });
   }
@@ -333,6 +433,10 @@ function packStats(pack, cards) {
     why: cards.filter((c) => c.kind === "why").length,
     apply: cards.filter((c) => c.kind === "apply").length,
     flagged: cards.filter((c) => (c.issues || reviewCard(c)).length).length,
+    levels: Object.fromEntries(LEVELS.map((l) => [l, cards.filter((c) => (c.level || levelOf(c.kind)) === l).length])),
+    factCoverage: coverage(pack, cards).share,
+    reviewed: Boolean(pack.review?.verdicts),
+    rejected: pack.review?.verdicts ? pack.review.verdicts.filter((v) => v.verdict === "reject").length : 0,
   };
 }
 
@@ -350,7 +454,9 @@ function packStats(pack, cards) {
 // ai_settle_for; the service role is used for those ledger calls only. Packs are read and saved with the learner's
 // own token, so row-level security applies. The Claude API key stays here as a server secret.
 
-const MAX_OUTPUT = { pack: 32000, questions: 16000, card: 2000 };
+const MAX_OUTPUT = { pack: 32000, questions: 16000, card: 2000, review: 8000 };
+// The independent card review (about a quarter more per pack: docs/FLASHCARD-ENGINE.md). On unless this secret is "off".
+const REVIEW_ON = (Deno.env.get("GRADIFY_PACK_REVIEW") ?? "on") !== "off";
 const ALLOWED = (Deno.env.get("GRADIFY_ALLOWED_ORIGINS") ?? "https://getgradify.com,http://localhost:8080").split(",");
 
 // created on first use: without ANTHROPIC_API_KEY the SDK throws, and a request refused before any Claude call
@@ -426,7 +532,8 @@ Use only what the fact and notes say. Front under 25 words, back under 40. Never
     if (hasPdf && body.pdfBase64.length > 30_000_000) return json(req, { error: "That PDF is too large." }, 413);
     if (mode === "questions" && !text.trim()) return json(req, { error: "These notes have no text to write questions from." }, 400);
     const topics = (Array.isArray(body.topics) ? body.topics : []).map(String).slice(0, 20);
-    const notesHash = await sha256(JSON.stringify([mode, text, hasPdf ? await sha256(body.pdfBase64) : null, mode === "questions" ? topics : null]));
+    // the learner's focus changes what's written, so it's part of what makes a request the same as an earlier one
+    const notesHash = await sha256(JSON.stringify([mode, text, hasPdf ? await sha256(body.pdfBase64) : null, mode === "questions" ? topics : null, ...(mode === "pack" && focusOf(body.focus).length ? [focusOf(body.focus)] : [])]));
     const engine = mode === "pack" ? "claude" : "claude-questions";
 
     // the same notes again: copy the learner's saved result (a copy, so linking it to a new deck never takes it from
@@ -441,7 +548,7 @@ Use only what the fact and notes say. Front under 25 words, back under 40. Never
       return json(req, { packId: copy.id, pack: p.pack, cards, stats: p.stats ?? packStats(p.pack, cards), model: p.model, reused: true });
     }
 
-    const prompt = userPrompt({ title: String(body.title ?? "My notes").slice(0, 200), site: String(body.site ?? "Gradify"), level: String(body.level ?? "undergraduate"), text, today: new Date().toISOString().slice(0, 10) });
+    const prompt = userPrompt({ title: String(body.title ?? "My notes").slice(0, 200), site: String(body.site ?? "Gradify"), level: String(body.level ?? "undergraduate"), text, today: new Date().toISOString().slice(0, 10), focus: focusOf(body.focus) });
     // notes longer than the learner's plan allows are refused before any Claude call (the use is given back)
     const check = async (claim: { plan: string }) => {
       const { data } = await db.from("ai_plan_caps").select("pack_chars").eq("plan", claim.plan).maybeSingle();
@@ -472,11 +579,30 @@ The learner already has recall flashcards for these notes. Write only the deeper
     const sendPdf = hasPdf && text.trim().length < 200;
     if (sendPdf) content.push({ type: "document", source: { type: "base64", media_type: "application/pdf", data: body.pdfBase64 } });
     content.push({ type: "text", text: prompt });
+    // Two calls under one claim: Claude writes the pack, then a separate request reviews every card against the notes
+    // (kit/notes/pack.js: REVIEW_PROMPT). Their token counts are added together, so the ledger and allowance see one
+    // request at its real cost. If the review fails, the pack is still returned, with every card checked in code.
+    const generateAndReview = async (model: string) => {
+      const gen = await ask(model, SYSTEM_PROMPT, content, PACK_SCHEMA, "high", MAX_OUTPUT.pack);
+      if (gen.stop_reason !== "end_turn") return gen;
+      const pack = JSON.parse(textOf(gen));
+      try {
+        // reviewed against the notes' text; a scanned PDF has none, so its cards are checked in code only
+        if (REVIEW_ON && text.trim().length >= 200) {
+          const rev = await ask(model, REVIEW_PROMPT, [{ type: "text", text: reviewRequest(cardsFromPack(pack, text), text) }], REVIEW_SCHEMA, "medium", MAX_OUTPUT.review);
+          if (rev.stop_reason === "end_turn") pack.review = { verdicts: JSON.parse(textOf(rev)).verdicts, model: rev.model };
+          gen.usage = { ...gen.usage, input_tokens: gen.usage.input_tokens + rev.usage.input_tokens, output_tokens: gen.usage.output_tokens + rev.usage.output_tokens,
+            cache_read_input_tokens: (gen.usage.cache_read_input_tokens ?? 0) + (rev.usage.cache_read_input_tokens ?? 0),
+            cache_creation_input_tokens: (gen.usage.cache_creation_input_tokens ?? 0) + (rev.usage.cache_creation_input_tokens ?? 0) };
+        }
+      } catch (e) { console.error("study-pack review", (e as Error)?.message); }
+      return { ...gen, content: [{ type: "text", text: JSON.stringify(pack), citations: null }] } as Anthropic.Beta.BetaMessage;
+    };
     return send(await runAi(deps, {
-      mode, site, check, maxOutput: MAX_OUTPUT.pack,
-      // a scanned page costs roughly 1,500 to 3,000 tokens; reserve generously
-      estInput: estimateTokens(SYSTEM_PROMPT, prompt) + (sendPdf ? Math.ceil(body.pdfBase64.length / 40) : 0),
-      model: MODEL, call: (model: string) => ask(model, SYSTEM_PROMPT, content, PACK_SCHEMA, "high", MAX_OUTPUT.pack),
+      mode, site, check, maxOutput: MAX_OUTPUT.pack + (REVIEW_ON ? MAX_OUTPUT.review : 0),
+      // a scanned page costs roughly 1,500 to 3,000 tokens; reserve generously. The review reads the notes again.
+      estInput: estimateTokens(SYSTEM_PROMPT, prompt) * (REVIEW_ON ? 2 : 1) + (REVIEW_ON ? estimateTokens(REVIEW_PROMPT) : 0) + (sendPdf ? Math.ceil(body.pdfBase64.length / 40) : 0),
+      model: MODEL, call: generateAndReview,
       parse: async (msg: Anthropic.Beta.BetaMessage) => {
         const pack = JSON.parse(textOf(msg));
         const cards = cardsFromPack(pack, text);
