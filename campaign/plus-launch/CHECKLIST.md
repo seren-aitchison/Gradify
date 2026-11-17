@@ -133,8 +133,7 @@ Gradify's checkout already allows promotion codes (`allow_promotion_codes` in
 
 ## 5. Discord invite and TikTok link
 
-- [ ] Put the Gradify TikTok profile URL in `{{TIKTOK_URL}}` (email header and plain text), or delete the marked
-      TikTok cell.
+- [x] TikTok: https://www.tiktok.com/@gradifyco (in the email header and plain text).
 
 - [ ] Create the server, or confirm it exists, with a #welcome channel, rules and moderation. Turn on AutoMod.
       Some learners will be 13 to 17, which is Discord's minimum age range, so set it up with that in mind.

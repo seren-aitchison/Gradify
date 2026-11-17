@@ -69,7 +69,6 @@ so it matches what the app locks and what the pricing page sells.
 | Placeholder | Where | What |
 | --- | --- | --- |
 | `{{OFFER_ENDS}}` | email.html, email.txt | The code's exact expiry, in UK time, e.g. "Thursday 19 November at 6pm (UK time)". It must match the Stripe expiry. |
-| `{{TIKTOK_URL}}` | email (header, plain text) | The Gradify TikTok profile. Otherwise delete the marked TikTok cell. |
 | `{{DISCORD_URL}}` | email (header and body), signature | A permanent Discord invite (never expires, no use limit). Otherwise delete the marked blocks. |
 | `{{UNSUBSCRIBE_URL}}` | email | The sending service's unsubscribe merge tag (e.g. `{{ unsubscribe_url }}` / `*|UNSUB|*`). |
 | `{{WHY_YOU_GET_THIS}}` | email | One line per audience. For the Plus waitlist: "You're getting this because you asked to be told when Gradify Plus opened. It's the only email you'll get from that list, and your address will be deleted from it now that it's been sent." |
@@ -89,3 +88,17 @@ the SVG at 192 × 192 on a transparent background:
 ```bash
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new --hide-scrollbars --force-device-scale-factor=1 --default-background-color=00000000 --window-size=192,192 --screenshot=assets/email/gradify-logo-glass.png logo.html
 ```
+
+## Send-ready export
+
+`export/` holds the files to load into the sending service, built by `python3 campaign/plus-launch/export.py`:
+
+- `gradify-plus-launch.html`: the HTML part.
+- `gradify-plus-launch.txt`: the plain-text part.
+- `signature.html`: the signature, ready to copy into a mail app.
+- `gradify-plus-launch-test.eml`: for test sends. Open it in Apple Mail and choose Message > Send Again.
+
+The export leaves out the Discord parts until there's an invite. Set `DISCORD_URL` in export.py and run it again to
+put them back. It fills the reason line for the Gradify Plus waitlist. It leaves `{{OFFER_ENDS}}`,
+`{{UNSUBSCRIBE_URL}}` and the three Companies House values for you to fill, in `FILL` in export.py or in the
+sending service.

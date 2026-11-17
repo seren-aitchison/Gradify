@@ -3,7 +3,7 @@ Preheader: Use code GRADIFY48 by {{OFFER_ENDS}}. Then £10 a month, cancel any t
 
 ----------------------------------------------------------------------
 
-Gradify · getgradify.com · TikTok: {{TIKTOK_URL}} · Discord: {{DISCORD_URL}}
+Gradify · getgradify.com · TikTok: https://www.tiktok.com/@gradifyco · Discord: {{DISCORD_URL}}
 [delete the TikTok or Discord part if there's no link]
 
 ----------------------------------------------------------------------
