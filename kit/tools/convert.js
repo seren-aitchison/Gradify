@@ -40,6 +40,8 @@ export function deckOf(p) {
     out.push("", `# ${t.name}`);
     for (const f of t.facts) {
       if (f.term && f.kind === "definition") out.push(`${f.term} :: ${defOf(f)}`);
+      // a cloze card (Gradify AI writes {{c1::…}}) stays a cloze line; any other card goes front to back
+      else if (f.card && /\{\{/.test(f.card.front)) out.push(tidy(f.card.front));
       else if (f.card) out.push(`${tidy(f.card.front)} >> ${tidy(f.card.back)}`);
       else if (f.term) out.push(`${f.term} >> ${defOf(f)}`);
     }

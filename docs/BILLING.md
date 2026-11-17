@@ -145,6 +145,13 @@ Only once Gradify AI is switched on (below), because Pro adds nothing else to Pl
 The AI functions are deployed with every control in place and refuse every request until the owner switches Gradify AI
 on (or adds testers). Controls, monitoring and the switch-on checklist: `docs/AI.md`. Costs per learner: `docs/AI-COSTS.md`.
 
+**Photo to cards** (Gradify Pro): the Flashcard creator's "Photo of notes" button sends up to 5 photos of notes,
+handwriting included, to `study-pack` as image blocks; Claude writes a pack and the creator turns it into cards
+(`deckOf` in `kit/tools/convert.js`). It counts as a study pack against the AI allowances, under the same controls.
+Until `PRO_ON_SALE`, the button explains it's coming with Pro and sends nothing. Switching it on needs: the updated
+`study-pack` function deployed, `ANTHROPIC_API_KEY` set as a function secret, Gradify AI switched on (`docs/AI.md`),
+then `PRO_ON_SALE` and the Pro price live.
+
 ## Sign-in emails (Resend)
 
 Supabase's built-in email sender is rate-limited and not for production. In Resend, verify the `getgradify.com` domain
