@@ -16,7 +16,7 @@ export const PLAN_NAME = { free: "Free", plus: "Gradify Plus", pro: "Gradify Pro
 /** Whether Gradify Plus is on sale, and with it whether Plus features are limited to Plus (and Pro). While it's off,
  *  every learner keeps every feature they have today. Turn it on together with the server's switches: the
  *  GRADIFY_PLUS_ON_SALE secret and billing_settings.plans_enforced (docs/BILLING.md). */
-export const PLUS_ON_SALE = false;
+export const PLUS_ON_SALE = true;
 
 /** Whether Gradify Pro is on sale to everyone. Off until Gradify AI, what Pro adds to Plus, is switched on:
  *  nobody should pay for an allowance they can't use. The billing-checkout function enforces the same rule
