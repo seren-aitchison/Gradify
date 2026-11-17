@@ -70,3 +70,24 @@ test("\"checked against your notes\" needs the answer to be in the notes too, no
   ] }] };
   assert.deepEqual(cardsFromPack(pack, notes).map((c) => c.grounded), ["yes", "partly"]);
 });
+
+// Signed in while Gradify AI is switched off: the server refuses with "ai_off". The learner used to get
+// that error and no pack at all; now the in-browser extractor makes the pack, with a note saying why.
+test("a signed-in learner still gets a pack when Gradify AI is off", async () => {
+  const { generate } = await import("../kit/notes/engine.js");
+  const store = { mode: "cloud", session: async () => ({ access_token: "t" }) };
+  const real = globalThis.fetch;
+  const reply = (status, body) => async () => ({ status, ok: status < 300, json: async () => body });
+  try {
+    globalThis.fetch = reply(503, { reason: "ai_off", error: "Gradify AI isn't switched on yet. Everything else on Gradify works as normal." });
+    const out = await generate({ text: PROSE, title: "Photosynthesis", store });
+    assert.equal(out.engine, "browser");
+    assert.ok(out.cards.length >= 6);
+    assert.match(out.notice, /isn't switched on yet.*made on your device/);
+    // a scanned PDF has no text to fall back on, so the refusal is passed on
+    await assert.rejects(generate({ text: "", pdfBase64: "JVBERi0=", title: "Scan", store }), /switched on/);
+    // a problem with the request itself is passed on too
+    globalThis.fetch = reply(413, { error: "These notes are longer than your plan allows." });
+    await assert.rejects(generate({ text: PROSE, title: "x", store }), /longer than your plan/);
+  } finally { globalThis.fetch = real; }
+});

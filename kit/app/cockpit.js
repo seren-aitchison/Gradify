@@ -231,7 +231,7 @@ function ringsWidget({ s, topicHref }) {
 function aiWidget() {
   return `<article class="cp-card widget" aria-labelledby="w-ai" data-ai>
     <h2 id="w-ai" class="widget-title">${icon("sparkles")} Gradify AI</h2>
-    <p class="small muted" data-ai-body>Reads messy notes, diagrams and scans, writes explain-and-apply questions, and tutors you inside every course.</p>
+    <p class="small muted" data-ai-body>Coming soon: reads messy notes, diagrams and scans, writes explain-and-apply questions, and tutors you inside every course.</p>
     <a class="cp-pill" href="#/ai">Open Gradify AI</a>
   </article>`;
 }
