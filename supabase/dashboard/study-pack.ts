@@ -174,8 +174,94 @@ function answerSupport(answer, notes, kind) {
   return w.filter((x) => n.includes(` ${x.length > 5 ? x.slice(0, x.length - 2) : x}`)).length / w.length;
 }
 
+// ---------- Card quality: one fact per card, no near-duplicates, and a reviewer's checks ----------
+// Ideas from pdf2anki (github.com/NicholasMcCarthy/pdf2anki, MIT licence): splitting list answers into one card
+// per item, fuzzy duplicate detection, and a reviewer that checks every card before a learner sees it. Written
+// for Gradify from scratch, dependency-free, and applied to cards from both engines.
+
+// Character-bigram (Dice) similarity of two strings after normalising: 1 is identical, 0 shares nothing.
+/** @param {string} a @param {string} b @returns {number} */
+function similarity(a, b) {
+  const x = norm(a), y = norm(b);
+  if (x === y) return 1;
+  if (x.length < 2 || y.length < 2) return 0;
+  const grams = (s) => { const m = new Map(); for (let i = 0; i < s.length - 1; i++) { const g = s.slice(i, i + 2); m.set(g, (m.get(g) || 0) + 1); } return m; };
+  const gx = grams(x), gy = grams(y);
+  let hit = 0;
+  for (const [g, n] of gx) hit += Math.min(n, gy.get(g) || 0);
+  return (2 * hit) / (x.length - 1 + y.length - 1);
+}
+
+// "Light intensity, CO2 concentration and temperature" → three items; null unless it's a short list of short items
+function listItems(back) {
+  const t = back.trim().replace(/\.$/, "");
+  if (t.split(/\s+/).length > 30 || /[.;:?]/.test(t) || !t.includes(",")) return null;
+  const items = t.split(/,\s*(?:and\s+|or\s+)?|\s+(?:and|or)\s+(?=[^,]*$)/).map((x) => x.trim()).filter(Boolean);
+  if (items.length < 3 || items.length > 8 || items.some((x) => x.split(/\s+/).length > 5)) return null;
+  return items;
+}
+const joinList = (xs) => (xs.length > 1 ? `${xs.slice(0, -1).join(", ")} and ${xs.at(-1)}` : xs[0]);
+
+// A card asking for a whole list ("What are the limiting factors?") becomes one fill-in-the-blank card per item:
+// each item is a separate fact to remember, and a learner who knows two of three can say so.
+/** @param {Card} card @param {string} notes @returns {Card[]} */
+function splitList(card, notes) {
+  if (!["definition", "reverse"].includes(card.kind)) return [card];
+  const m = card.front.match(/^(?:what|name|list)\s+(?:are|is|were)?\s*(?:the\s+)?(.+?)\??$/i);
+  const items = m && listItems(card.back);
+  if (!items) return [card];
+  const subject = m[1][0].toUpperCase() + m[1].slice(1);
+  // the answer was capitalised as a sentence; the notes say whether its first item really starts with a capital
+  const low = items[0][0].toLowerCase() + items[0].slice(1);
+  if (low !== items[0] && notes.includes(low)) items[0] = low;
+  return items.map((item, i) => {
+    const shown = items.map((x, j) => (j === i ? "_____" : x));
+    return { ...card, front: `${subject}: ${joinList(shown)}.`, back: item, kind: "cloze",
+      grounded: card.grounded === "yes" && answerSupport(item, notes, "cloze") < 1 ? "partly" : card.grounded };
+  });
+}
+
+// The reviewer's checks, from the rules for good flashcards: one clear question, an answer the question doesn't
+// give away, short enough to recall in one go.
+const DEEP = new Set(["why", "apply"]);
+/** @param {Card} card @returns {string[]} what's wrong with it, if anything */
+function reviewCard(card) {
+  const issues = [], f = card.front, b = card.back, fw = f.split(/\s+/).length, bw = b.split(/\s+/).length;
+  const nb = norm(b);
+  if (!nb || !nb.split(" ").some((w) => w.length > 1 || /\d/.test(w))) issues.push("empty");
+  if (card.kind !== "cloze" && nb.length >= 2 && ` ${norm(f)} `.includes(` ${nb} `)) issues.push("leak");
+  if (card.kind === "cloze" && !f.includes("_____")) issues.push("no-blank");
+  if (/^(it|this|they|these|those|he|she)\b/i.test(f.trim())) issues.push("vague");
+  if (fw > 30) issues.push("long-front");
+  if (bw > (DEEP.has(card.kind) ? 80 : 40)) issues.push("long-back");
+  if (!DEEP.has(card.kind) && /^(is|are|does|do|did|can|could|was|were|has|have|will|should)\b/i.test(f.trim())) issues.push("yes-no");
+  if (/\b(not|never|except|isn't|aren't|doesn't)\b/i.test(f) && !DEEP.has(card.kind) && card.kind !== "cloze") issues.push("negative");
+  return issues;
+}
+// issues that make a card unusable, or that a learner should look at before revising it
+const DROP = new Set(["empty", "no-blank"]), CHECK = new Set(["leak", "vague"]);
+
+/** One fact per card, near-duplicates removed (the better-checked copy kept), and each card reviewed.
+ * @param {Card[]} cards @param {string} notes @returns {Card[]} */
+function refineCards(cards, notes) {
+  const rank = { yes: 3, bonus: 2, partly: 1, no: 0 };
+  /** @type {Card[]} */
+  const out = [];
+  for (const c of cards.flatMap((c) => splitList(c, notes))) {
+    const issues = reviewCard(c);
+    if (issues.some((i) => DROP.has(i))) continue;
+    const card = { ...c, issues, grounded: c.grounded === "yes" && issues.some((i) => CHECK.has(i)) ? "partly" : c.grounded };
+    // the same question with the same answer, worded a little differently (cards from one list differ in their answer)
+    const k = out.findIndex((o) => similarity(o.back, card.back) >= 0.8 && similarity(`${o.front} ${o.back}`, `${card.front} ${card.back}`) >= 0.88
+      || (norm(o.back) === norm(card.back) && similarity(o.front, card.front) >= 0.75));
+    if (k < 0) out.push(card);
+    else if (rank[card.grounded] > rank[out[k].grounded]) out[k] = card;
+  }
+  return out;
+}
+
 /** @typedef {{ topic: string, front: string, back: string, kind: string, importance: string,
- *   sourceQuote: string | null, sourcePage: number | null, grounded: "yes" | "partly" | "no" | "bonus" }} Card */
+ *   sourceQuote: string | null, sourcePage: number | null, grounded: "yes" | "partly" | "no" | "bonus", issues?: string[] }} Card */
 
 // Turn a pack into flashcards, flagging any whose quote can't be found in the notes.
 /** @returns {Card[]} */
@@ -201,7 +287,7 @@ function cardsFromPack(pack, notes) {
     }
     out.push(...questionCards(t, notes, seen));
   }
-  return out;
+  return refineCards(out, notes);
 }
 
 // A topic's deeper questions as cards (kind "why" or "apply"), checked against the notes like facts
@@ -242,6 +328,7 @@ function packStats(pack, cards) {
     unclear: (pack.unclear || []).length,
     why: cards.filter((c) => c.kind === "why").length,
     apply: cards.filter((c) => c.kind === "apply").length,
+    flagged: cards.filter((c) => (c.issues || reviewCard(c)).length).length,
   };
 }
 

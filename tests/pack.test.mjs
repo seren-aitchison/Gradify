@@ -33,7 +33,9 @@ const pack = {
 test("cards are flagged by grounding, duplicates dropped", () => {
   const cards = cardsFromPack(pack, notes);
   assert.equal(cards.length, 4);
-  assert.deepEqual(cards.map((c) => c.grounded), ["yes", "no", "bonus", "yes"]);
+  // the last gives its answer away in the question, so the reviewer marks it to check
+  assert.deepEqual(cards.map((c) => c.grounded), ["yes", "no", "bonus", "partly"]);
+  assert.deepEqual(cards[3].issues, ["leak"]);
 });
 test("stats catch ungrounded facts and answers leaked into questions", () => {
   const cards = cardsFromPack(pack, notes);
@@ -42,7 +44,8 @@ test("stats catch ungrounded facts and answers leaked into questions", () => {
   assert.equal(s.bonus, 1);
   assert.equal(s.answerLeaks, 1);
   assert.equal(s.unclear, 1);
-  assert.ok(Math.abs(s.grounded - 2 / 3) < 1e-9);
+  assert.ok(Math.abs(s.grounded - 1 / 3) < 1e-9);
+  assert.equal(s.flagged, 1);
 });
 
 test("the Supabase function's copy of pack.js matches the kit's (run npm run sync after editing it)", async () => {
