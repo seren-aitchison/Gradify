@@ -1,7 +1,7 @@
 <!doctype html>
 <!--
   Gradify Plus launch email: HTML part. Send together with email.txt as the plain-text part.
-  Email-safe: tables, inline styles, no images, no web fonts required, no backdrop-filter, no CSS gradients that
+  Email-safe: tables, inline styles, one image (the logo PNG, with alt text), no web fonts required, no backdrop-filter, no CSS gradients that
   matter (each gradient has a solid bgcolor fallback for Outlook).
   Fill every {{PLACEHOLDER}} before a test send (README.md lists them). Delete the Discord block if there's no invite.
   Subject:   Gradify Plus is open: £5 for your first month, for 48 hours
@@ -24,10 +24,15 @@
       <td align="center" style="padding:32px 16px;">
         <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;">
 
-          <!-- wordmark -->
+          <!-- logo: the glass tile is a PNG (SVG doesn't show in Gmail or Outlook), served from the site once this is on main -->
           <tr>
-            <td style="padding:0 4px 20px 4px;font-family:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,Helvetica,sans-serif;font-size:20px;font-weight:700;letter-spacing:-0.3px;color:#ffffff;">
-              Gradify
+            <td style="padding:0 4px 20px 4px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td valign="middle" style="padding-right:12px;"><a href="https://getgradify.com/?utm_source=email&amp;utm_medium=email&amp;utm_campaign=plus_launch" style="text-decoration:none;"><img src="https://getgradify.com/assets/email/gradify-logo-glass.png" width="44" height="44" alt="Gradify" style="display:block;width:44px;height:44px;border:0;outline:none;text-decoration:none;"></a></td>
+                  <td valign="middle" style="font-family:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,Helvetica,sans-serif;font-size:22px;font-weight:700;letter-spacing:-0.3px;color:#ffffff;">Gradify</td>
+                </tr>
+              </table>
             </td>
           </tr>
 
@@ -43,7 +48,7 @@
               <h1 style="margin:0 0 18px 0;font-size:28px;line-height:1.2;font-weight:700;letter-spacing:-0.5px;color:#ffffff;">Gradify Plus is open</h1>
 
               <p style="margin:0 0 16px 0;">Hi,</p>
-              <p style="margin:0 0 16px 0;">I'm {{FOUNDER_FIRST_NAME}}, and I build Gradify. You asked to be told when Gradify Plus opened. It opened today, so this is that email.</p>
+              <p style="margin:0 0 16px 0;">I'm Seren, and I build Gradify. You asked to be told when Gradify Plus opened. It opened today, so this is that email.</p>
               <p style="margin:0 0 16px 0;">First, nothing you use now is going away. Every course on every Gradify site, flashcards with spaced repetition, your notes and your progress all stay free.</p>
               <p style="margin:0 0 12px 0;">Gradify Plus is the part that organises your learning for you:</p>
 
@@ -95,7 +100,7 @@
               <!-- end DISCORD -->
 
               <p style="margin:0 0 16px 0;">Thank you for being here early. If anything is confusing or doesn't work, just reply to this email. I read every reply.</p>
-              <p style="margin:0;">{{FOUNDER_FIRST_NAME}}<br><span style="color:#9a9aa4;font-size:14px;">Founder, Gradify</span></p>
+              <p style="margin:0;">Seren<br><span style="color:#9a9aa4;font-size:14px;">Founder, Gradify</span></p>
             </td>
           </tr>
 

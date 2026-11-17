@@ -146,7 +146,7 @@ Gradify's checkout already allows promotion codes (`allow_promotion_codes` in
   - [ ] HTML part: email.html.
   - [ ] Plain-text part: email.txt, **without** its Subject and Preheader lines.
   - [ ] Subject: `Gradify Plus is open: £5 for your first month, for 48 hours`.
-  - [ ] From: "{{FOUNDER_FIRST_NAME}} at Gradify" `<hello@getgradify.com>`. Reply-to: the same.
+  - [ ] From: "Seren at Gradify" `<hello@getgradify.com>`. Reply-to: the same.
 - [ ] Turn **off** open and click tracking for the first send, or at least know it rewrites links. Tracked links
       on a brand-new domain can hurt delivery. The `utm_` tags on the links already tell you what came from the
       email.
@@ -154,6 +154,9 @@ Gradify's checkout already allows promotion codes (`allow_promotion_codes` in
       month.
 
 ## 7. Test sends (before any real recipient)
+
+First merge this PR, so the logo is live at https://getgradify.com/assets/email/gradify-logo-glass.png.
+Check that link opens before the first test send.
 
 Send to your own addresses in each of these, and check them in light and dark mode:
 
