@@ -48,11 +48,18 @@ const portal = portals.find((c) => c.is_default) || portals[0];
 const upd = portal?.features?.subscription_update;
 check("Billing portal", portal && portal.features.subscription_cancel.enabled && portal.features.subscription_cancel.mode === "at_period_end" && portal.features.payment_method_update.enabled && portal.features.invoice_history.enabled,
   portal ? `${portal.id}${portal.is_default ? " (default)" : ""}: cancel ${portal.features.subscription_cancel.mode}, card updates ${portal.features.payment_method_update.enabled ? "on" : "off"}, invoices ${portal.features.invoice_history.enabled ? "on" : "off"}` : "missing");
-if (upd && prices.plus && prices.pro) check("Portal plan switching", upd.enabled && [prices.plus, prices.pro].every((p) => upd.products?.some((x) => x.product === p.product.id && x.prices.includes(p.id))), "Plus ↔ Pro (add both products and prices to the portal's subscription update settings)");
+
 
 const sres = await fetch(`https://api.supabase.com/v1/projects/${REF}/secrets`, { headers: { Authorization: `Bearer ${process.env.SUPABASE_ACCESS_TOKEN || "proxy-injected"}` } });
 const secrets = Object.fromEntries((await sres.json()).map((s) => [s.name, s.value]));
-for (const n of ["STRIPE_SECRET_KEY", "STRIPE_WEBHOOK_SECRET", "STRIPE_PRICE_PLUS_MONTH", "STRIPE_PRICE_PRO_MONTH"]) check(`Supabase secret ${n}`, n in secrets, n in secrets ? "set" : "MISSING");
+if (upd && prices.plus) {
+  // the portal offers Plus, offers Pro only once Pro is on sale, and never the original £7.99 / £63.99 Pro prices (a Plus
+  // subscriber could otherwise switch to "Pro" for less than Plus costs)
+  const offered = (upd.products || []).flatMap((x) => x.prices);
+  const proOnSale = Boolean(secrets?.GRADIFY_PRO_ON_SALE);
+  check("Portal plan switching", upd.enabled && offered.includes(prices.plus.id) && (proOnSale ? offered.includes(prices.pro?.id) : !offered.includes(prices.pro?.id)) && !old.some((p) => offered.includes(p.id)),
+    `offers: ${offered.join(", ") || "nothing"}${proOnSale ? " (Pro is on sale: Plus ↔ Pro)" : " (Plus only until Pro opens)"}`);
+}for (const n of ["STRIPE_SECRET_KEY", "STRIPE_WEBHOOK_SECRET", "STRIPE_PRICE_PLUS_MONTH", "STRIPE_PRICE_PRO_MONTH"]) check(`Supabase secret ${n}`, n in secrets, n in secrets ? "set" : "MISSING");
 for (const plan of ["plus", "pro"]) if (prices[plan]) check(`STRIPE_PRICE_${plan.toUpperCase()}_MONTH is the ${NAME[plan]} price`, secrets[`STRIPE_PRICE_${plan.toUpperCase()}_MONTH`] === sha(prices[plan].id), "compared by SHA-256");
 for (const n of ["STRIPE_PRICE_MONTH", "STRIPE_PRICE_YEAR"]) if (n in secrets) check(`Supabase secret ${n}`, true, "the original Pro price: keep it while anyone subscribes on it, so their webhook events still read as Pro");
 check("On sale", true, `GRADIFY_PLUS_ON_SALE ${secrets.GRADIFY_PLUS_ON_SALE ? "set" : "not set"}; GRADIFY_PRO_ON_SALE ${secrets.GRADIFY_PRO_ON_SALE ? "set (check it's only on once Gradify AI is)" : "not set"}; testers ${"GRADIFY_BILLING_TESTERS" in secrets ? "set" : "not set"}`);
