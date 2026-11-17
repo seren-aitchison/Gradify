@@ -72,7 +72,7 @@ test("pricing.html takes every price and allowance from kit/data/billing.js, not
   }
   assert.match(html, /including VAT/);
   assert.equal(PRO_ON_SALE, false, "Gradify Pro stays off sale until Gradify AI is switched on (docs/BILLING.md)");
-  assert.equal(PLUS_ON_SALE, false, "Plus goes on sale only with the server's switches and the live prices (docs/BILLING.md)");
+  assert.equal(PLUS_ON_SALE, true, "Plus is on sale: the server's switches must be on too (docs/BILLING.md)");
 });
 
 test("checkout returns only to the Gradify site, with ?checkout before any #fragment", () => {
