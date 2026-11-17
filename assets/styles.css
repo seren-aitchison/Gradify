@@ -505,3 +505,5 @@ footer b { color: var(--fg); font-weight: 600; }
 @media (max-width: 960px) { .pro-later { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .notify-row { flex-direction: column; } .pro-later { padding: 18px; } }
 .how-cta { display: flex; justify-content: center; margin: 28px 0 0; }
+
+.compare-table .no { color: var(--faint); }

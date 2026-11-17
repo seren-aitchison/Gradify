@@ -5,6 +5,7 @@
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
 
 export const PRO_LIST = "Gradify Pro";
+export const PLUS_LIST = "Gradify Plus";
 // the same pattern as the table's check constraint, plus the longest address email allows (254 characters)
 export const validEmail = (e) => { const s = String(e ?? "").trim(); return s.length <= 254 && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(s); };
 
@@ -13,7 +14,7 @@ export async function joinWaitlist(email, what, { fetch: f = globalThis.fetch?.b
   // one entry per address and list whatever the capitals (the table's unique key is on the exact text)
   email = String(email ?? "").trim().toLowerCase();
   if (!validEmail(email)) throw Object.assign(new Error("Please enter a valid email address."), { invalid: true });
-  const done = what === PRO_LIST ? "Thanks. We'll email you once, when Gradify Pro opens." : `Thanks. We'll email you when ${what} launches.`;
+  const done = what === PRO_LIST || what === PLUS_LIST ? `Thanks. We'll email you once, when ${what} opens.` : `Thanks. We'll email you when ${what} launches.`;
   if (url && key) {
     const res = await f(`${url}/rest/v1/waitlist`, {
       method: "POST",

@@ -5,18 +5,19 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readdir, readFile } from "node:fs/promises";
 import { tempDb } from "../scripts/pg-rehearsal.mjs";
-import { PRO_PRICES, PRO_ON_SALE, AI_ALLOWANCES, money, annualSaving, planOf, describePlan } from "../kit/data/billing.js";
+import { PRO_PRICES, PLAN_PRICES, PRO_ON_SALE, PLUS_ON_SALE, AI_ALLOWANCES, money, annualSaving, planOf, describePlan, includes } from "../kit/data/billing.js";
 import { safeBack, returnUrl, mayBuy } from "../supabase/functions/_shared/billing.js";
 
 const U = "00000000-0000-4000-8000-00000000000a";
 const migrations = async () => { const dir = new URL("../supabase/migrations/", import.meta.url); return Promise.all((await readdir(dir)).filter((f) => f.endsWith(".sql")).sort().map((f) => readFile(new URL(f, dir), "utf8"))); };
 
-test("the annual saving is worked out correctly and is what the page says", () => {
-  assert.deepEqual(PRO_PRICES, { month: 799, year: 6399 });
-  const s = annualSaving();
-  assert.equal(s.twelveMonths, 9588); assert.equal(money(s.twelveMonths), "£95.88");
-  assert.equal(s.saved, 3189); assert.equal(money(s.saved), "£31.89");
-  assert.equal(s.percent, 33); assert.equal(money(s.perMonth), "£5.33"); assert.equal(s.monthsFree, 4);
+test("the plans' prices: Plus £10 and Pro £15 a month, and the yearly arithmetic for a plan that has a yearly price", () => {
+  assert.deepEqual(PLAN_PRICES, { plus: { month: 1000 }, pro: { month: 1500 } });
+  assert.equal(money(PLAN_PRICES.plus.month), "£10.00"); assert.equal(money(PLAN_PRICES.pro.month), "£15.00");
+  assert.deepEqual(PRO_PRICES, PLAN_PRICES.pro);
+  const s = annualSaving({ month: 799, year: 6399 });
+  assert.equal(s.twelveMonths, 9588); assert.equal(s.saved, 3189); assert.equal(s.percent, 33); assert.equal(s.monthsFree, 4);
+  assert.ok(includes("pro", "plus") && includes("plus", "plus") && !includes("free", "plus") && !includes("plus", "pro"));
 });
 
 test("the page's allowances are exactly the server's (public.ai_limits)", async () => {
@@ -65,12 +66,13 @@ test("the Account page says what to do in each state, and offers Manage billing 
 
 test("pricing.html takes every price and allowance from kit/data/billing.js, not hand-typed numbers", async () => {
   const html = await readFile(new URL("../pricing.html", import.meta.url), "utf8");
-  for (const n of ["7.99", "63.99", "5.33", "31.89", "95.88"]) {
+  for (const n of ["7.99", "63.99", "10.00", "15.00", "£10", "£15"]) {
     const script = html.slice(html.indexOf('<script type="module">'));
-    assert.ok(!script.includes(n), `${n} is typed into the page script; use PRO_PRICES/annualSaving()`);
+    assert.ok(!script.includes(n), `${n} is typed into the page script; use PLAN_PRICES`);
   }
   assert.match(html, /including VAT/);
   assert.equal(PRO_ON_SALE, false, "Gradify Pro stays off sale until Gradify AI is switched on (docs/BILLING.md)");
+  assert.equal(PLUS_ON_SALE, false, "Plus goes on sale only with the server's switches and the live prices (docs/BILLING.md)");
 });
 
 test("checkout returns only to the Gradify site, with ?checkout before any #fragment", () => {

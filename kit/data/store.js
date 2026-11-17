@@ -2,6 +2,8 @@
 //  - LocalStore: this browser only (works with no setup; the default until Supabase is configured)
 //  - CloudStore: their Gradify account in Supabase, protected by row-level security
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
+import { PLUS_ON_SALE } from "./billing.js";
+import { deviceId } from "./plan.js";
 
 // a random UUID (the goals table needs one; older browsers without crypto.randomUUID get the same v4 format)
 const uid = () => (crypto.randomUUID ? crypto.randomUUID() : "10000000-1000-4000-8000-100000000000".replace(/[018]/g, (c) => (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)));
@@ -121,7 +123,9 @@ export class CloudStore {
   fresh() { this._shared.clear(); this._cp = null; }
   static async create() {
     if (!cloudConfigured() || !window.supabase) return null;
-    const store = new CloudStore(window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY));
+    // once Plus is on sale, every request says which study device it's from (Free studies on one: kit/data/plan.js)
+    const device = PLUS_ON_SALE ? deviceId() : null;
+    const store = new CloudStore(window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, device ? { global: { headers: { "x-gradify-device": device } } } : undefined));
     // keep the current sign-in at hand, so a save can be sent while the page is closing (beaconCourseProgress)
     store.db.auth.getSession().then(({ data }) => { store.current = data.session; }).catch(() => {});
     store.db.auth.onAuthStateChange((_e, s) => { store.current = s; });
