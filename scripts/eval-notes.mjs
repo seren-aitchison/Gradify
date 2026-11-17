@@ -6,7 +6,7 @@
 //        (--long adds a lecture-length sample, about 25k characters, from Gradify's own law notes). About £1-2 a run.
 // Add your own notes to tests/fixtures/ and the key terms a good pack must cover to expected.json.
 import { readFile, readdir, writeFile, mkdir } from "node:fs/promises";
-import { analyseNotes, normaliseNotes } from "../kit/notes/studio.js";
+import { browserPack, normaliseNotes } from "../kit/notes/studio.js";
 import { notesSource } from "../kit/assess/canon.js";
 import { MODEL, PACK_SCHEMA, SYSTEM_PROMPT, userPrompt, cardsFromPack, packStats } from "../kit/notes/pack.js";
 
@@ -19,19 +19,6 @@ const MODELS = compare ? ["claude-opus-5-5", "claude-sonnet-5-5"] : [MODEL];
 const PRICES = { "claude-opus-5-5": [4, 20, 0.2, 5], "claude-sonnet-5-5": [2, 10, 0.1, 2.5] };
 const pence = (model, u) => { const [i, o, cr, cw] = PRICES[model] || PRICES["claude-opus-5-5"]; return ((u.input_tokens * i + u.output_tokens * o + (u.cache_read_input_tokens || 0) * cr + (u.cache_creation_input_tokens || 0) * cw) / 1e6) * 0.79 * 100; };
 const norm = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-
-// Same conversion the app uses for the browser engine
-function browserPack(text) {
-  const a = analyseNotes(text);
-  const topics = a.groups.map((g) => ({
-    name: g.label,
-    facts: g.facts.map((f) => {
-      const card = a.cards.find((c) => f.term && c.q.toLowerCase().includes(f.term.toLowerCase())) || { type: "Definition", q: `What is ${f.term}?`, a: f.def };
-      return { importance: "core", quote: f.src || f.text, page: null, card: { type: card.type === "Cloze" ? "cloze" : "definition", front: card.q, back: card.a } };
-    }),
-  }));
-  return { topics, unclear: [] };
-}
 
 async function claudePack(text, title, model = MODEL) {
   const { default: Anthropic } = await import("@anthropic-ai/sdk");

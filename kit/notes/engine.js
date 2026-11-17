@@ -2,35 +2,8 @@
 // (supabase/functions/study-pack). Otherwise the browser extractor from Notes Studio runs
 // locally. Both return the same shape, and both are fact-checked against the notes.
 import { callFunction } from "../data/functions.js";
-import { analyseNotes, normaliseNotes, deeperQuestions } from "./studio.js";
+import { analyseNotes, normaliseNotes, deeperQuestions, browserPack } from "./studio.js";
 import { cardsFromPack, packStats, questionCards } from "./pack.js";
-
-// Browser extractor → the same pack shape Claude returns
-function browserPack(text, title) {
-  const a = analyseNotes(text);
-  const deeper = deeperQuestions(a);
-  const topics = a.groups.map((g, gi) => ({
-    questions: deeper.filter((q) => q.group === gi).map(({ type, question, answer, quote }) => ({ type, question, answer, quote, page: null })),
-    name: g.label, theme: g.theme, mnemonic: g.facts.length > 1 ? g.acronym : null,
-    facts: g.facts.map((f) => {
-      const card = a.cards.find((c) => c.q && f.term && c.q.toLowerCase().includes(f.term.toLowerCase())) || { type: "Definition", q: `What is ${f.term}?`, a: f.def };
-      return {
-        term: f.term, abbreviation: f.ab || null, statement: f.text, kind: f.kind === "cause" ? "cause" : f.kind === "eq" ? "equation" : "definition",
-        importance: "core", quote: f.src || f.text, page: null,
-        card: { type: card.type === "Cloze" ? "cloze" : "definition", front: card.q, back: card.a },
-      };
-    }),
-  }));
-  const loose = a.cards.filter((c) => c.type === "Cloze");
-  if (loose.length) topics.push({ name: "Other points", theme: "Other", mnemonic: null, facts: loose.map((c) => ({ term: null, abbreviation: null, statement: c.q.replace("_____", c.a), kind: "other", importance: "core", quote: c.q.split("_____")[0].trim() || c.a, page: null, card: { type: "cloze", front: c.q, back: c.a } })) });
-  return {
-    title: a.title === "My notes" ? title : a.title,
-    summary: `${a.facts.length} facts in ${a.groups.length} topics.`,
-    topics, equations: a.equations.map((e) => ({ symbolic: e, spoken: e })),
-    dates: a.dates.map((d) => ({ what: d.what, date: d.when.toISOString().slice(0, 10), kind: /exam|quiz|test/i.test(d.what) ? "exam" : "deadline" })),
-    unclear: [],
-  };
-}
 
 export async function generate({ text, pdfBase64, title, site, level, store }) {
   const session = store.mode === "cloud" ? await store.session().catch(() => null) : null;

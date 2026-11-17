@@ -55,7 +55,7 @@ function normalise(raw) {
     .replace(/\s\+\s/g, " and ").replace(/\s&\s/g, " and ").replace(/\be\.g\.?/gi, "for example").replace(/\bi\.e\.?/gi, "that is")
     .replace(/\bin 1\b/g, "in one").replace(/\ball 4\b/g, "all four").replace(/\bvs\.?\b/gi, "versus")
     .replace(/([!?])\1+/g, "$1").replace(/[ \t]+/g, " ")
-    .split("\n").map((l) => l.replace(/^\s*[-*–>]+\s*/, "").trim()).filter(Boolean);
+    .split("\n").map((l) => l.replace(/^\s*[-*–>]+\s*/, "").replace(/^\(?\d{1,2}[.)]\s+/, "").trim()).filter(Boolean);
 }
 
 // ---------- 2. Dates ----------
@@ -76,6 +76,18 @@ function findDate(text) {
 }
 
 // ---------- 3. Facts ----------
+// "X is Y" defines X only when X names something and Y is a noun phrase. "Water is split…",
+// "It is found…" and "Glucose is usually stored…" describe what happens, so they aren't definitions.
+const PRONOUN = /^(it|this|that|these|those|they|he|she|there|here|which|what|who|we|you)$/i;
+const PARTICIPLE = new Set("split made found known used taken given seen held built done shown broken kept set put cut born driven written drawn thought brought sent spent lost left met paid sold told understood stored released produced formed".split(" "));
+const ADVERB = new Set("not also very often usually mainly mostly always never only still then now too more less much just generally typically largely partly".split(" "));
+function isDefinition(term, verb, article, rest) {
+  if (PRONOUN.test(term.split(" ")[0])) return false;
+  if (article || !/^(is|are)$/i.test(verb)) return true;
+  const first = rest.split(/[\s,;]/)[0].toLowerCase();
+  return !(PARTICIPLE.has(first) || ADVERB.has(first) || /(ed|ly)$/.test(first) || (/ing$/.test(first) && !/(thing|string|spring|meaning|building|feeling)$/.test(first)));
+}
+
 function readFact(p, abbr) {
   p = strip(p);
   if (p.split(" ").length < 2) return null;
@@ -83,7 +95,7 @@ function readFact(p, abbr) {
   if ((m = p.match(/^(.{2,60}?) (?:is|are) caused by (.+)$/i))) { term = m[1]; def = `caused by ${m[2]}`; kind = "cause"; }
   else if ((m = p.match(/^(.{2,60}?) (?:equals?) (.+)$/i))) { term = m[1]; def = m[2]; kind = "eq"; }
   else if ((m = p.match(/^(.{1,50}?)\s*(?:=|:|\s[-–]\s)\s*(.+)$/))) { term = m[1]; def = m[2]; }
-  else if ((m = p.match(/^(.{2,60}?) (?:is|are|means|refers to) (?:the |a |an )?(.+)$/i))) { term = m[1]; def = m[2]; }
+  else if ((m = p.match(/^(.{2,60}?) (is|are|means|refers to) (the |a |an )?(.+)$/i)) && isDefinition(m[1], m[2], m[3], m[4])) { term = m[1]; def = m[4]; }
   if (!term) return { text: cap(p) + "." };
   // pull abbreviations out of the term: "stroke volume (SV)" and "S1 (first heart sound)"
   let ab;
@@ -99,6 +111,59 @@ function readFact(p, abbr) {
   return { term, ab, def, kind, text };
 }
 
+// ---------- Subjects and key terms ----------
+// "it", "they" or a sentence that starts with a verb ("happens in chloroplasts") borrows the
+// subject of the sentence before. Without one, the sentence is too vague to make a card from.
+const VERB_START = /^(is|are|was|were|has|have|happens?|occurs?|takes?|uses?|makes?|produces?|contains?|releases?|fixes|fix|forms?|involves?|requires?|converts?|found|located)\b/i;
+const SUBJECT_VERB = /^((?:the |a |an )?[A-Za-z0-9][\w-]*(?: [A-Za-z0-9][\w-]*){0,3}?) (?:is|are|was|were|has|have|happens?|occurs?|takes?|uses?|makes?|produces?|contains?|releases?|fixes|fix|forms?|involves?|requires?|converts?|catalyses|catalyzes|controls?|causes?|absorbs?|means|refers)\b/i;
+function resolve(clause, subject) {
+  const m = clause.match(/^(it|they|this|these)\s+(.+)$/i);
+  if (m && /^(this|these)$/i.test(m[1]) && !VERB_START.test(m[2]) && !/^\w+(s|ed)\b/.test(m[2])) return { text: clause, added: 0, vague: true };
+  const rest = m ? m[2] : VERB_START.test(clause) ? clause[0].toLowerCase() + clause.slice(1) : null;
+  if (rest === null) return { text: clause, added: 0, vague: false };
+  if (!subject) return { text: clause, added: 0, vague: true };
+  return { text: `${subject} ${rest}`, added: subject.length + 1, vague: false };
+}
+const subjectFor = (term) => (/^[A-Z0-9]{2,}|^[A-Z]\s/.test(term) || !term.includes(" ") ? cap(term) : `The ${term[0].toLowerCase()}${term.slice(1)}`);
+function subjectOf(text) {
+  const m = text.match(SUBJECT_VERB) || text.match(/^([A-Za-z][\w-]*(?: [A-Za-z][\w-]*){0,3}) (?:\(|->|→)/);
+  return m && !PRONOUN.test(m[1].split(" ")[0]) ? cap(m[1]) : null;
+}
+const plural = (term) => /[a-z]{3}(?<![siu])s$/i.test(term.split(" ").pop()) && !/^[A-Z0-9]{2,}$/.test(term);
+
+// The word a fill-in-the-blank card should hide: the last item of a list, or the sentence's
+// strongest key term (one the notes define, one in brackets, an acronym or a technical
+// compound), never a verb, and never words borrowed from the sentence before.
+const VERBISH = /^(happens?|occurs?|takes?|uses?|makes?|produces?|contains?|releases?|includes?|fixes|catalyses|catalyzes|involves?|requires?|converts?|absorbs?|causes?|controls?|forms?|helps?|allows?|leads?|means|becomes?|gives?|needs?)$/i;
+const GENERIC = new Set("by-product product process way thing part type kind amount number example place result factor something area level form use".split(" "));
+function clozeKey(text, added, known) {
+  const body = text.slice(added);
+  const list = body.match(/\b(?:include|includes|including|such as|are|:)\s+[^.]*,[^.]*?(?:,|\band)\s+([A-Za-z][\w-]*(?: [A-Za-z][\w-]*)?)\.?$/i);
+  if (list && !STOP.has(list[1].toLowerCase())) return list[1];
+  let best = null;
+  for (const m of body.matchAll(/[A-Za-z][A-Za-z0-9-]*[A-Za-z0-9]/g)) {
+    const w = m[0], lw = w.toLowerCase(), i = m.index, before = body.slice(0, i);
+    if (STOP.has(lw) || ADVERB.has(lw) || (w.length < 4 && !/[A-Z]{2}|\d/.test(w))) continue;
+    let s = Math.min(w.length, 12) / 12;
+    if (known.has(lw)) s += 5;
+    // bracketed terms and authorities ("(photolysis)", "(Re McArdle)") are what notes mark as key
+    if (/\($/.test(before.trimEnd()) || (/\([^)]*$/.test(before) && /^[A-Z]/.test(w))) s += 5;
+    if (/[A-Z].*[A-Z]|\d/.test(w)) s += 4;
+    else if (/^[A-Z]/.test(w) && i > 0 && !/[.:]\s*$/.test(before)) s += 3;
+    if (/^[a-z]{4,}-[a-z]{4,}/i.test(w)) s += 3;
+    if (/\b(the|an?)\s+$/i.test(before)) s += 2;
+    if (/\b(in|into)\s+(the\s+)?$/i.test(before)) s += 1;
+    if (VERBISH.test(w) || PARTICIPLE.has(lw) || /(ed|ing)$/.test(lw) && !known.has(lw)) s -= 4;
+    if (GENERIC.has(lw.replace(/s$/, ""))) s -= 3;
+    if (i === 0) s -= 1;
+    if (!best || s > best.s) best = { w, s };
+  }
+  if (!best || best.s <= 0) return null;
+  // a short term in brackets is hidden whole: "(mirror image rule)", not just "mirror"
+  const paren = body.match(new RegExp(`\\((${best.w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?: [A-Za-z][\\w-]*){0,2})\\)`));
+  return paren && !/\sv\s/.test(paren[1]) ? paren[1] : best.w;
+}
+
 function analyse(raw) {
   const lines = normalise(raw);
   let title = "My notes";
@@ -108,6 +173,7 @@ function analyse(raw) {
     title = cap(title.split(" ").map((w, i) => (i && /^[A-Z][a-z]+$/.test(w) ? w.toLowerCase() : w)).join(" ")) || "My notes";
   }
   const facts = [], dates = [], abbr = {};
+  let subject = null;   // what "it" or "they" in the next sentence refers to
   for (const line of lines) {
     for (let clause of line.split(/(?<=[.!?])\s+|!\s*/)) {
       clause = strip(clause);
@@ -123,7 +189,20 @@ function analyse(raw) {
       // a heading like "ECG:" followed by several "x = y" pairs
       const head = clause.match(/^([A-Za-z ]{2,20}):\s*(.+=.+,.+=.+)$/);
       const pieces = head ? head[2].split(/,\s*/) : (clause.match(/=/g) || []).length > 1 ? clause.split(/,\s*/) : [clause];
-      for (const p of pieces) { const f = readFact(p, abbr); if (f) { f.src = strip(p); facts.push(f); } }
+      if (pieces.length > 1) {
+        for (const p of pieces) { const f = readFact(p, abbr); if (f) { f.src = strip(p); facts.push(f); } }
+        subject = null;
+        continue;
+      }
+      const r = resolve(clause, subject);
+      const f = readFact(r.text, abbr);
+      // a loose fragment of a few words ("2 stages") is a heading, not a fact
+      if (!f || (!f.term && !r.added && clause.split(" ").length < 4)) continue;
+      f.src = clause;          // the notes' own words, for checking the card against them
+      f.added = r.added;       // how many characters at the start came from the sentence before
+      f.vague = r.vague;       // starts with "it" or a verb, and there's nothing to say what it is
+      facts.push(f);
+      subject = f.term ? subjectFor(f.term) : subjectOf(r.text) || (r.added ? subject : null);
     }
   }
   // equations in symbols: "cardiac output equals stroke volume multiplied by heart rate" → CO = SV × HR
@@ -178,20 +257,24 @@ function analyse(raw) {
     g.theme = g.name || (g.facts.length > 1 && full ? cap(full) : g.facts[0].term);
     g.c = PALETTE[i % PALETTE.length];
   });
-  // flashcards
-  const cards = facts.map((f) => {
+  // flashcards: one per fact, kept on the fact so its source sentence goes with it
+  const known = new Set(facts.filter((f) => f.term).flatMap((f) => f.term.toLowerCase().split(/\s+/)).filter((w) => w.length > 2 && !STOP.has(w)));
+  for (const f of facts) {
     if (f.term) {
       // keep capitals for acronyms and labels like "P wave"; add "the" before ordinary multi-word terms
       const keep = /^[A-Z0-9]{2,}|^[A-Z]\s/.test(f.term);
       const t = keep ? f.term : f.term[0].toLowerCase() + f.term.slice(1);
       const the = !keep && f.term.includes(" ") ? "the " : "";
       const ab = f.ab ? ` (${f.ab})` : "";
-      const q = f.kind === "cause" ? `What causes ${the}${t}${ab}?` : f.kind === "eq" ? `What does ${t}${ab} equal?` : `What is ${the}${t}${ab}?`;
-      return { type: "Definition", q, a: cap(f.def) + "." };
+      const be = plural(f.term) ? "are" : "is";
+      const q = f.kind === "cause" ? `What causes ${the}${t}${ab}?` : f.kind === "eq" ? `What does ${t}${ab} equal?` : `What ${be} ${the}${t}${ab}?`;
+      f.card = { type: "Definition", q, a: cap(f.def) + ".", src: f.src };
+    } else if (!f.vague) {
+      const key = clozeKey(f.text, f.added, known);
+      f.card = key ? { type: "Cloze", q: f.text.split(key).join("_____"), a: key, src: f.src } : null;
     }
-    const key = (f.text.match(/[A-Za-z][A-Za-z-]{5,}/g) || []).filter((w) => !STOP.has(w.toLowerCase())).sort((a, b) => b.length - a.length)[0];
-    return key ? { type: "Cloze", q: f.text.replace(key, "_____"), a: key } : null;
-  }).filter(Boolean);
+  }
+  const cards = facts.map((f) => f.card).filter(Boolean);
   return { title, facts, groups, cards, dates: dates.filter(Boolean), equations, abbr };
 }
 
@@ -652,6 +735,32 @@ async function make() {
   status.textContent = `Found ${pack.facts.length} facts in ${pack.groups.length} ${pack.groups.length === 1 ? "group" : "groups"}, ${pack.cards.length} flashcards${pack.dates.length ? ` and ${pack.dates.length} ${pack.dates.length === 1 ? "date" : "dates"}` : ""}.`;
   tab = "notes";
   render();
+}
+
+// The browser extractor as a study pack, in the same shape Gradify AI returns
+export function browserPack(text, title = "My notes", today = new Date()) {
+  const a = analyseNotes(text, today);
+  const deeper = deeperQuestions(a);
+  const fact = (f) => ({
+    term: f.term || null, abbreviation: f.ab || null, statement: f.text,
+    kind: !f.term ? "other" : f.kind === "cause" ? "cause" : f.kind === "eq" ? "equation" : "definition",
+    importance: "core", quote: f.src || f.text, page: null,
+    card: f.card ? { type: f.card.type === "Cloze" ? "cloze" : "definition", front: f.card.q, back: f.card.a } : null,
+  });
+  const topics = a.groups.map((g, gi) => ({
+    questions: deeper.filter((q) => q.group === gi).map(({ type, question, answer, quote }) => ({ type, question, answer, quote, page: null })),
+    name: g.label, theme: g.theme, mnemonic: g.facts.length > 1 ? g.acronym : null,
+    facts: g.facts.map(fact),
+  }));
+  const loose = a.facts.filter((f) => !f.term && f.card);
+  if (loose.length) topics.push({ name: "Other points", theme: "Other", mnemonic: null, questions: [], facts: loose.map(fact) });
+  return {
+    title: a.title === "My notes" ? title : a.title,
+    summary: `${a.facts.length} facts in ${a.groups.length} topics.`,
+    topics, equations: a.equations.map((e) => ({ symbolic: e, spoken: e })),
+    dates: a.dates.map((d) => ({ what: d.what, date: d.when.toISOString().slice(0, 10), kind: /exam|quiz|test/i.test(d.what) ? "exam" : "deadline" })),
+    unclear: [],
+  };
 }
 
 // The notes after tidying (bullets, shorthand), as the extractor saw them
