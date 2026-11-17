@@ -16,7 +16,7 @@ import { masteryBenchmark, readinessBenchmark } from "./bench/mastery.mjs";
 import { cardBenchmark, codeVerdicts, aiVerdicts, combine, tally } from "./bench/cards.mjs";
 import { planBenchmark } from "./bench/plan.mjs";
 import { labOutcome } from "../kit/learning/mastery.js";
-import { evidenceClass } from "../kit/learning/evidence-class.js";
+import { evidenceClass, explorationIds } from "../kit/learning/evidence-class.js";
 
 // Results must not depend on the machine: the readiness code reads an exam date as local noon, as the app does.
 process.env.TZ = "UTC";
@@ -44,12 +44,26 @@ export const attemptRecord = (r) => (r.question ? { ...r, user: String(r.user ??
 });
 
 // the answers the app counts towards mastery (kit/learning/mastery.js evidenceFromAttempts): no exploration, and of
-// lab challenges only successes and wrong answers (a challenge tried and left, or failed other than by answering, isn't evidence)
-export const countsForMastery = (a) => {
-  if (evidenceClass(a) === "exploration") return false;
+// lab challenges only successes and wrong answers (a challenge tried and left, or failed other than by answering, isn't evidence).
+// `exploration` is the course's list of exploration challenges, as the course engine passes it (kit/course/course.js),
+// so older records without response.evidence are classified the same way.
+export const countsForMastery = (a, exploration = null) => {
+  if (evidenceClass(a, { exploration }) === "exploration") return false;
   const o = labOutcome(a);
   return !(o === "attempted" || (o === "unsuccessful" && a.response?.via !== "answer"));
 };
+
+/** Each course's exploration challenges (its config's `exploration`), keyed by the course slug that attempts carry in `subject`. */
+export async function explorationBySubject(rows) {
+  const out = new Map();
+  for (const subject of new Set(rows.map((a) => a.subject).filter(Boolean))) {
+    try {
+      const cfg = (await import(new URL(`../kit/courses/${subject}/course.js`, import.meta.url).href)).default;
+      if (cfg?.exploration) out.set(subject, explorationIds(cfg.exploration));
+    } catch { /* not a course in this repository: only response.evidence can mark exploration */ }
+  }
+  return out;
+}
 
 const arg = (name) => { const i = process.argv.indexOf(name); return i > 0 ? process.argv[i + 1] : null; };
 
@@ -62,7 +76,8 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   if (arg("--reviews")) out.realRecall = recallBenchmark(parseReviewLog(await readFile(arg("--reviews"), "utf8")));
   if (arg("--attempts")) {
     const rows = (await readFile(arg("--attempts"), "utf8")).split("\n").filter((l) => l.trim()).map((l) => attemptRecord(JSON.parse(l)));
-    out.realMastery = masteryBenchmark(rows.filter((a) => a.lesson && a.marking.status === "final" && countsForMastery(a)));
+    const explore = await explorationBySubject(rows);
+    out.realMastery = masteryBenchmark(rows.filter((a) => a.lesson && a.marking.status === "final" && countsForMastery(a, explore.get(a.subject) || null)));
   }
   if (process.argv.includes("--claude")) {
     const code = cardFixture.sets.map(codeVerdicts), ai = [];
