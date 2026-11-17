@@ -196,7 +196,7 @@
       "unsupported": {
         "n": 2,
         "blocked": 0,
-        "flagged": 0.5
+        "flagged": 0
       },
       "vague": {
         "n": 2,
@@ -211,7 +211,7 @@
       "yes-no": {
         "n": 2,
         "blocked": 0,
-        "flagged": 0.5
+        "flagged": 1
       }
     }
   },
