@@ -20,8 +20,8 @@ for it succeeded). The live `kit/data/billing.js` was fetched to confirm it matc
 | Feature in the original draft | Status | In the email? |
 | --- | --- | --- |
 | AI tools (Gradify AI: tutor, explanations, study packs, AI quizzes) | **Not live.** The code is merged but switched off, and it belongs to **Gradify Pro**, which isn't on sale (`PRO_ON_SALE = false`). privacy.html says "Gradify AI is not switched on yet." | **No.** Plus doesn't include AI, even once it launches. |
-| Interactive mind maps (PR #87, `feat/mind-maps`) | **Not merged.** PR #87 is open and conflicts with `main`. `kit/maps/view.js` is a 404 on the live site. | **No.** |
-| `feat/tools-and-limits` (mind map creator, flashcard creator, notes converter, lesson search, Free allowances) | **Not merged, and no PR.** 3 commits ahead of `e2b0841`, 47 files. `kit/tools/tools.js` is a 404 on the live site. | **No.** |
+| Interactive mind maps (#87, #92, #94) | **Live** (merged 17 November). Five per lesson, free within Free's 5 mind maps | **Yes**, as part of Free's allowance and Plus's "no limits" |
+| Tools and Free allowances (#94) | **Live** (merged 17 November). Free: 10 lessons per course, 5 flashcard sets, 5 mind maps, 5 uses of each tool; Plus: no limits | **Yes.** The "stays free" line now states Free's allowances, so it isn't misleading |
 | Basic mind map in Notes Studio | Live (free). This is the older flow-diagram map, not #87's interactive maps. | Not named, to avoid confusion with #87. |
 | Smart flashcards | **Live.** Spaced repetition is free. Plus adds "cards ordered by what matters most and is fading", plus adaptive card suggestions (`PLUS_FEATURES.intelligence`). | Yes, as the Plus wording. |
 | Study planning and progress tracking | **Live.** Smart Plan autopilot, readiness forecasts and calendar sync are in Plus. Manual planning and basic progress are free. | Yes. |
