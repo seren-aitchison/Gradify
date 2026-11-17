@@ -37,9 +37,10 @@ Nothing is limited for anyone until step 6. Do them in order:
 4. **Supabase secrets:** `STRIPE_PRICE_PLUS_MONTH` = `price_1UclOUEOmpIuKzUMzo9QxcRh` (£10),
    `STRIPE_PRICE_PRO_MONTH` = `price_1UclOUEOmpIuKzUMxHujazXB` (£15). Keep `STRIPE_PRICE_MONTH` / `STRIPE_PRICE_YEAR`
    while anyone is on the original Pro prices.
-5. **Stripe portal:** Settings → Billing → Customer portal → Subscriptions → allow switching, with the Gradify Plus and
-   Gradify Pro products and their monthly prices. Then `NODE_USE_ENV_PROXY=1 node scripts/check-stripe.mjs`: every
-   line ok.
+5. **Stripe portal:** the customer portal offers the Gradify Plus price only (done 17 November 2026). Never the original
+   £7.99 / £63.99 Pro prices: a Plus subscriber could switch to them and get Pro for less. When Gradify Pro opens, add
+   the Pro £15 price (Settings → Billing → Customer portal → Subscriptions) so learners can move between Plus and Pro.
+   Then `NODE_USE_ENV_PROXY=1 node scripts/check-stripe.mjs`: every line ok.
 6. **One real payment** as a tester (`GRADIFY_BILLING_TESTERS`, then `pricing.html?tester`), as below, for Plus.
 7. **Switch it on, all together:**
    - Supabase secret `GRADIFY_PLUS_ON_SALE` = `on`
