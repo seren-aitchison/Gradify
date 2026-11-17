@@ -31,6 +31,8 @@ import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, 
 import { access, plusPanelHtml, promptPlus } from "../data/plan.js";
 import { lessonTimer, addTime, MIN_LOG_MS, minutesPerLesson } from "./lesson-time.js";
 import { hydrate as glassIcons } from "../core/glass-icons.js";
+import { haptic } from "../core/haptics.js";
+import { gradeTyped, VERDICT_TEXT } from "../learning/typed.js";
 import { mountRevalidation } from "./revalidation.js";
 import { tutorEvent } from "../intel/experiments.js";
 import { scoreFeedback } from "../assess/tutor.js";
@@ -853,6 +855,8 @@ export function mountCourse(root, cfg) {
   const weakLink = () => { const n = weakTargets().length; return n ? `<a class="btn btn-ghost btn-sm" href="#/review/weak"><span>Target my weaknesses (${n})</span></a>` : ""; };
   const revisitLink = () => { const n = revisionQueue(S.attempts || [], { limit: 200 }).length; return n ? `<a class="btn btn-ghost btn-sm" href="#/review/questions"><span>Revisit ${n} ${n === 1 ? "question" : "questions"}</span></a>` : ""; };
 
+  const RATE = ["again", "hard", "good", "easy"];
+  const SURE = [["sure", "I know it", "J"], ["unsure", "Not sure", "K"], ["guess", "No idea", "L"]];
   async function viewReview() {
     await reviewPool(); paintHud();
     const due = shuffle(dueCards()).slice(0, 30);
@@ -861,23 +865,63 @@ export function mountCourse(root, cfg) {
       main.innerHTML = `<div class="co-panel"><span class="co-kicker">Review</span><h2>${total ? "All caught up" : "Nothing to review yet"}</h2><p>${total ? `You've seen ${learned} of ${total} cards. The next ones come due as their intervals pass, so come back tomorrow.` : "Complete lessons and their flashcards join your review queue. Spaced repetition brings each card back just before you'd forget it."}</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Go to the path</span></a> ${revisitLink()}</div>`;
       return;
     }
-    let k = 0, done = 0;
-    const step = () => {
-      if (k >= due.length) { main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic("cards")}</div><h2>${done} cards reviewed</h2><p>+${done * XP.review} XP. Come back tomorrow for the next batch.</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Back to the path</span></a> ${revisitLink()}</div>`; save(); return; }
-      const c = due[k], st = S.cards[c.id] || {}, pv = preview(st);
-      main.innerHTML = `<div class="co-review"><div class="co-crumbs"><span>Review · ${k + 1} of ${due.length}</span><a href="#/lesson/${c.lesson}">${esc(byId[c.lesson].title)}</a></div><div class="co-qbar"><i style="width:${(k / due.length) * 100}%"></i></div>
-        <button class="co-card3d big"><span class="f"><div>${inline(c.front)}</div><small>Tap or press space to reveal</small></span><span class="b"><div>${inline(c.back)}</div></span></button>
-        <div class="co-rate" hidden>${["again", "hard", "good", "easy"].map((r) => `<button data-r="${r}" class="${r}"><b>${r[0].toUpperCase() + r.slice(1)}</b><small>${fmtInterval(pv[r])}</small></button>`).join("")}</div></div>`;
-      const card = main.querySelector(".co-card3d"), rate = main.querySelector(".co-rate");
-      card.onclick = () => { card.classList.add("flip"); rate.hidden = false; };
-      rate.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
-        S.cards[c.id] = { ...st, ...schedule(st, b.dataset.r) }; done++; k++;
-        // the rating is evidence too: recall, and retention once the card comes back after a gap
-        const score = { again: 0, hard: 0.6, good: 1, easy: 1 }[b.dataset.r];
-        record({ Q: { type: "card" }, key: `card:${c.id}`, l: byId[c.lesson] }, "review", "cards", { score, correct: score >= 0.6, method: "self" }, { response: b.dataset.r });
-        award(XP.review, "review", c.id); step();
-      }));
+    // The study app's Liquid Glass card (kit/styles/flashcards.css): say how sure you are, or type an answer, then see
+    // the answer and rate it. Scheduling (kit/learning/srs.js), the attempt record and XP are as before.
+    let k = 0, done = 0, shown = false, attempt = "", grade = null;
+    const ctl = new AbortController();   // keys and clicks last as long as this session
+    addEventListener("hashchange", () => ctl.abort(), { once: true });
+    const plain = (s) => String(s).replace(/\^\{([^}]*)\}|_\{([^}]*)\}/g, "$1$2").replace(/[*`]/g, "");
+    const reveal = () => {
+      if (shown || k >= due.length) return;
+      attempt = main.querySelector("#co-typed")?.value ?? attempt;
+      grade = gradeTyped(attempt, plain(due[k].back));
+      shown = true; step();
     };
+    const rate = (r) => {
+      if (!shown || !RATE.includes(r)) return;
+      haptic(r === "again" ? "warn" : r === "easy" ? "success" : "select");
+      const c = due[k], st = S.cards[c.id] || {};
+      S.cards[c.id] = { ...st, ...schedule(st, r) }; done++; k++;
+      // the rating is evidence too: recall, and retention once the card comes back after a gap
+      const score = { again: 0, hard: 0.6, good: 1, easy: 1 }[r];
+      record({ Q: { type: "card" }, key: `card:${c.id}`, l: byId[c.lesson] }, "review", "cards", { score, correct: score >= 0.6, method: "self" }, { response: r });
+      award(XP.review, "review", c.id);
+      shown = false; attempt = ""; grade = null; step();
+    };
+    const step = () => {
+      if (k >= due.length) { ctl.abort(); main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic("cards")}</div><h2>${done} cards reviewed</h2><p>+${done * XP.review} XP. Come back tomorrow for the next batch.</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Back to the path</span></a> ${revisitLink()}</div>`; save(); return; }
+      const c = due[k], st = S.cards[c.id] || {}, pv = preview(st), l = byId[c.lesson];
+      main.innerHTML = `<section class="co-revsess study-session"><div class="co-crumbs"><span>Review · ${k + 1} of ${due.length}</span><a href="#/lesson/${c.lesson}">${esc(l.title)}</a></div><div class="co-qbar"><i style="width:${(k / due.length) * 100}%"></i></div>
+        <article class="flash-card ${shown ? "shown" : ""}" aria-live="polite">
+          <span class="fc-icon" data-g3d="${esc(`${c.front} ${l.title}`)}" data-g3d-size="58"></span>
+          <span class="kicker">${U} ${l.unit.n}${l.module ? ` · ${esc(l.module)}` : ""}${S.cards[c.id] ? "" : " · new"}</span>
+          <p class="fc-front">${inline(c.front)}</p>
+          ${shown ? "" : `<label class="fc-type"><span class="sr-only">Type your answer (optional)</span><input id="co-typed" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" placeholder="Type your answer, or just think it" value="${esc(attempt)}"></label>`}
+          ${shown && grade ? `<div class="fc-typed v-${grade.verdict}" role="status"><b>${VERDICT_TEXT[grade.verdict]}</b><span>You typed “${esc(attempt)}”</span></div>` : ""}
+          ${shown ? `<p class="fc-back">${inline(c.back)}</p>` : ""}
+        </article>
+        ${shown ? `<div class="rate4" role="group" aria-label="How well did you know it?">${RATE.map((r, i) => `<button type="button" class="r-${r}${grade?.suggest === r ? " suggested" : ""}" data-r="${r}"${grade?.suggest === r ? ' aria-describedby="co-suggest"' : ""}><b>${r[0].toUpperCase() + r.slice(1)}</b><span>${fmtInterval(pv[r])}</span><kbd>${i + 1}</kbd></button>`).join("")}${grade ? `<p class="suggest-note" id="co-suggest">Suggested from what you typed</p>` : ""}</div>`
+          : `<div class="sure" role="group" aria-label="How sure are you? Choosing one shows the answer.">
+              <span class="sure-q">How sure are you?</span>
+              ${SURE.map(([id, label, key]) => `<button type="button" data-sure="${id}" class="sure-${id}"><b>${label}</b><kbd>${key}</kbd></button>`).join("")}
+              <button type="button" class="sure-skip" data-reveal>Just show me <kbd>Space</kbd></button>
+            </div>`}
+      </section>`;
+      glassIcons(main, cfg.site).catch(() => {});
+    };
+    main.addEventListener("click", (e) => {
+      if (!shown) attempt = main.querySelector("#co-typed")?.value ?? attempt;
+      if (e.target.closest("[data-reveal]")) return reveal();
+      if (e.target.closest("[data-sure]")) { haptic("tap"); return reveal(); }
+      const r = e.target.closest("[data-r]"); if (r) rate(r.dataset.r);
+    }, { signal: ctl.signal });
+    addEventListener("keydown", (e) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      // typing an answer: Enter turns the card over and grades it
+      if (e.target.closest?.("input, textarea, select")) { if (!shown && e.key === "Enter" && e.target.id === "co-typed") { e.preventDefault(); reveal(); } return; }
+      if (!shown && (e.key === " " || e.key === "Enter" || SURE.some(([, , key]) => key.toLowerCase() === e.key.toLowerCase()))) { e.preventDefault(); reveal(); }
+      else if (shown && ["1", "2", "3", "4"].includes(e.key)) rate(RATE[+e.key - 1]);
+    }, { signal: ctl.signal });
     step();
   }
 
