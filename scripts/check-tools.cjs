@@ -98,6 +98,55 @@ async function app(b, opts = { viewport: { width: 1440, height: 950 } }) {
     await ctx.close();
   }
   {
+    // Tools in the account: two devices (separate browsers) sharing a stand-in for the account's tables
+    // (public.tool_items, public.tool_images), with the database's own timestamps
+    const tables = { tool_items: [], tool_images: [] }; let tick = 0;
+    const handle = (raw) => {
+      const op = JSON.parse(raw), t = tables[op.table];
+      if (op.op === "select") return JSON.stringify({ data: op.in ? t.filter((r) => op.in[1].includes(r[op.in[0]])) : t, error: null });
+      const i = t.findIndex((r) => r.id === op.row.id);
+      if (op.ignore && i >= 0) return JSON.stringify({ data: null, error: null });
+      const row = { ...(i >= 0 ? t[i] : {}), ...op.row, updated_at: new Date(Date.UTC(2026, 10, 18) + ++tick * 1000).toISOString() };
+      if (i >= 0) t[i] = row; else t.push(row);
+      return JSON.stringify({ data: op.single ? { updated_at: row.updated_at } : null, error: null });
+    };
+    const device = async () => {
+      const ctx = await b.newContext(), pg = await ctx.newPage(), errs = []; pg.on("pageerror", (e) => errs.push(e.message));
+      await pg.exposeFunction("fakeDb", handle);
+      await pg.goto(`${base}/app.html#/start`, { waitUntil: "networkidle" });
+      await pg.evaluate(async () => {
+        const call = (op) => window.fakeDb(JSON.stringify(op)).then(JSON.parse);
+        const db = { from: (table) => ({
+          select: () => ({ in: (col, vals) => call({ table, op: "select", in: [col, vals] }), then: (a, b) => call({ table, op: "select" }).then(a, b) }),
+          upsert: (row, o = {}) => ({ select: () => ({ single: () => call({ table, op: "upsert", row, single: true }) }), then: (a, b) => call({ table, op: "upsert", row, ignore: o.ignoreDuplicates }).then(a, b) }),
+        }) };
+        window.T = await import("/kit/tools/store.js");
+        await window.T.connect({ mode: "cloud", db });
+      });
+      return { ctx, pg, errs };
+    };
+    const A = await device(), B = await device();
+    await A.pg.evaluate(async () => {
+      const c = document.createElement("canvas"); c.width = c.height = 40; c.getContext("2d").fillRect(0, 0, 20, 20);
+      const img = await window.T.addImage(new File([await new Promise((ok) => c.toBlob(ok, "image/png"))], "a.png", { type: "image/png" }));
+      const d = window.T.saveDeck({ id: "dsync1", title: "Cells", text: `Mitochondria >> Make ATP\n![a](img:${img}) Label >> Nucleus` });
+      window.T.saveSchedule(d.id, "card1", { reps: 1, due_at: "2026-12-01T00:00:00Z" });
+      window.T.saveMap({ id: "msync1", title: "Map", data: { nodeData: { id: "root", topic: "Map", children: [] } } });
+      await window.T.sync();
+    });
+    await B.pg.evaluate(() => window.T.sync());
+    const b1 = await B.pg.evaluate(async () => { const d = window.T.deck("dsync1"), id = d.text.match(/img:([a-z0-9-]+)/)[1]; return { title: d.title, srs: window.T.schedules("dsync1").card1?.reps, map: window.T.map("msync1")?.title, img: Boolean((await window.T.imageUrls([id]))(id)) }; });
+    check(b1.title === "Cells" && b1.srs === 1 && b1.map === "Map" && b1.img, `account: a deck (with its schedule and image) and a map made on one device arrive on another ${JSON.stringify(b1)}`);
+    await B.pg.evaluate(async () => { window.T.saveDeck({ ...window.T.deck("dsync1"), title: "Cells, edited on B" }); await window.T.sync(); });
+    await A.pg.evaluate(() => window.T.sync());
+    check(await A.pg.evaluate(() => window.T.deck("dsync1").title) === "Cells, edited on B", "account: an edit on one device reaches the other");
+    await A.pg.evaluate(async () => { window.T.deleteMap("msync1"); await window.T.sync(); });
+    await B.pg.evaluate(() => window.T.sync());
+    check(await B.pg.evaluate(() => window.T.map("msync1")) === null, "account: a deletion reaches the other device, and isn't brought back");
+    check(!A.errs.length && !B.errs.length, `account: no page errors ${[...A.errs, ...B.errs].join("; ")}`);
+    await A.ctx.close(); await B.ctx.close();
+  }
+  {
     // a lesson's glass diagrams
     const ctx = await b.newContext({ viewport: { width: 1280, height: 900 } }), pg = await ctx.newPage();
     await pg.goto(`${base}/medgradify/course/#/lesson/u01-02`, { waitUntil: "networkidle" }); await pg.waitForTimeout(800);

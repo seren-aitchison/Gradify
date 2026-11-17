@@ -2,8 +2,14 @@
 
 ## Tools (app.html#/tools)
 
-Four apps inside Gradify's app, for making study material of your own. Everything made in Tools stays in the browser
-it was made in (`kit/tools/store.js`: decks and maps in localStorage, images in IndexedDB). No AI, nothing sent anywhere.
+Four apps inside Gradify's app, for making study material of your own. No AI.
+
+**Where it's kept** (`kit/tools/store.js`): always in the browser first (decks and maps in localStorage, images in
+IndexedDB), so Tools works offline and signed out. Signed in, everything is also kept in the learner's account
+(`public.tool_items`, `public.tool_images`) and arrives on every device: changes are sent about a second after they're
+made, and each Tools screen fetches what changed elsewhere. When two devices change the same item, the later change
+wins, by the database's own timestamps. Deletions are kept as markers so an older copy can't bring an item back. On
+Free, changes come from the study device only (the same rule as every other study table); other devices can read.
 
 | Tool | What it does | Code |
 |---|---|---|
@@ -59,11 +65,12 @@ tiles have one each. Every label is the lesson's own words, shortened (tested in
 ## Free allowances
 
 See `docs/BILLING.md` ("Free allowances"). In short: 10 lessons in each course, 5 flashcard sets, 5 mind maps and
-5 uses of each tool, applied once Plus is on sale; `?limits=preview` shows them now.
+5 uses of each tool. Signed in, the server counts them (`public.take_allowance`, which also decides the limits), so
+they hold on every device; signed out, the browser counts.
 
 ## Checking it
 
 - `npm test` runs `tests/tools.test.mjs` (card syntax, suggestions, the converter, the search, the allowances,
-  diagrams)
-- In a browser: `python3 -m http.server 8080 &` then `node scripts/check-tools.cjs` (every tool, a phone layout, a
-  lesson's diagrams and icons, and the allowances with the banner), and `node scripts/check-mindmaps.cjs`
+  diagrams) and `tests/tools-db.test.mjs` (the account tables and `take_allowance()` on real PostgreSQL)
+- In a browser: `python3 -m http.server 8080 &` then `node scripts/check-tools.cjs` (every tool, a phone layout, two
+  devices syncing through the account, a lesson's diagrams and icons, and the allowances with the banner), and `node scripts/check-mindmaps.cjs`
