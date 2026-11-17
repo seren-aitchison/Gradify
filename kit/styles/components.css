@@ -1149,3 +1149,19 @@ code { font: 12px var(--mono); color: var(--mute); }
 .plus-badge { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 999px; font: 600 12px/1.4 var(--sans, inherit); letter-spacing: .02em; color: var(--invert-fg); background: var(--spectrum); }
 .device-banner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; margin: 0 0 14px; }
 .device-banner .row-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+
+/* the instant "get Gradify Plus" prompt (promptPlus in kit/data/plan.js) and the lock on Plus sections in the sidebar */
+dialog.plus-prompt { border: 0; padding: 0; background: none; color: var(--fg); max-width: min(460px, calc(100vw - 32px)); width: 100%; }
+dialog.plus-prompt::backdrop { background: rgba(var(--sink-rgb), .6); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.plus-prompt-card { display: grid; gap: 12px; justify-items: start; padding: 26px; border-radius: 24px; border: 1.5px solid transparent;
+  background: linear-gradient(rgba(var(--surface-rgb), .98), rgba(var(--surface-rgb), .98)) padding-box, var(--bar-rainbow, var(--spectrum)) border-box;
+  box-shadow: 0 30px 80px -30px rgba(240, 85, 221, .5); }
+.plus-prompt-card h2 { margin: 0; font-size: 22px; letter-spacing: -.02em; }
+.plus-prompt-card .sub { margin: 0; }
+.plus-prompt-list { margin: 0; padding-left: 18px; display: grid; gap: 4px; color: var(--mute); font-size: 14px; }
+.plus-prompt-price { margin: 4px 0 0; color: var(--mute); }
+.plus-prompt-price b { color: var(--fg); font-size: 18px; }
+.plus-prompt-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.nav-lock { margin-left: auto; display: inline-flex; color: var(--faint); }
+.nav-lock svg { width: 14px !important; height: 14px !important; }
+.tabbar .nav-lock { display: none; }

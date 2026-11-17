@@ -19,7 +19,7 @@ import { generate, regenerateCard, generateQuestions } from "../notes/engine.js"
 import { reviewCard } from "../notes/pack.js";
 import { gradeTyped, VERDICT_TEXT } from "../learning/typed.js";
 import { focusFromProfiles } from "../learning/focus.js";
-import { access, plusPanelHtml, deviceStatus, switchDevice, readOnly } from "../data/plan.js";
+import { access, plusPanelHtml, promptPlus, deviceStatus, switchDevice, readOnly } from "../data/plan.js";
 import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "../learning/srs.js";
 import { topicProfiles, practiceOrder, LEVELS } from "../learning/mastery.js";
 import { sixHtml, calibrationHtml, HOW } from "../learning/mastery-view.js";
@@ -155,6 +155,16 @@ function drawNav() {
   document.querySelector(".tabbar")?.addEventListener("click", (e) => { if (e.target.closest("a, button")) haptic("tap"); });
 }
 drawNav();
+// a small lock on the sections that need Gradify Plus, once the learner's plan is known (only while Plus is on sale)
+const LOCKED = { intel: "intelligence" };
+function markLocks() {
+  for (const a of document.querySelectorAll(".lo-side a, .tabbar a")) {
+    const f = LOCKED[a.dataset.route], locked = Boolean(f && ACCESS.enforced && !ACCESS.has(f));
+    a.classList.toggle("plus-locked", locked);
+    a.querySelector(".nav-lock")?.remove();
+    if (locked) { a.insertAdjacentHTML("beforeend", `<span class="nav-lock" title="Gradify Plus">${icon("lock")}</span>`); a.setAttribute("aria-label", `${a.textContent.trim()} (Gradify Plus)`); }
+  }
+}
 // the pricing page lives on getgradify.com; sub-sites served elsewhere link to it there
 const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/pricing.html" : "https://getgradify.com/pricing.html";
 
@@ -462,7 +472,7 @@ async function renderNew(arg) {
       complete("Study pack ready", { sub: `${out.cards.length} cards from ${doc.title}` });
       if (out.notice) toast(esc(out.notice));
       record(store, { event: "pack_made", site: profile.site, concept: doc.id, source: out.engine, detail: { cards: out.cards.length, title: doc.title.slice(0, 120) } });
-      setTimeout(() => offerInstall({ reason: "Revise this pack anywhere: keep Gradify on your Home Screen, full screen and working offline." }), 2600);
+      setTimeout(() => offerInstall({ reason: "Revise this pack anywhere: get the Gradify app for iPhone, iPad and Mac." }), 2600);
       location.hash = `#/deck/${doc.id}`;
     } catch (err) {
       status.textContent = err.message;
@@ -757,7 +767,7 @@ async function renderStudy(arg) {
     const s = await stats();
     const right = answered - results.again;
     complete("Session complete", { sub: `${answered} ${answered === 1 ? "card" : "cards"} · +${Math.min(xp, 500)} XP` });
-    setTimeout(() => offerInstall({ reason: "Your next reviews will be ready tomorrow. Keep Gradify one tap away, full screen and working offline." }), 1900);
+    setTimeout(() => offerInstall({ reason: "Your next reviews will be ready tomorrow. Get the Gradify app for iPhone, iPad and Mac." }), 1900);
     view.innerHTML = `<section class="done-screen">
       <div class="done-burst">${icon("check")}</div>
       <h1>Session done</h1>
@@ -1469,7 +1479,7 @@ routes.ai = renderAi;
 
 // ---------- Intelligence, My Knowledge, Revision Centre (kit/app/intel-views.js) ----------
 routes.intel = async () => {
-  if (!ACCESS.has("intelligence")) { view.innerHTML = `<section class="intel-page"><div class="deck-head"><div><span class="kicker lo-kicker">${icon("sparkles")}Gradify Intelligence</span><h1>Let Gradify run your studying</h1></div></div>${plusPanelHtml("intelligence", { pricing: PRICING })}${plusPanelHtml("calendar", { pricing: PRICING, compact: true })}</section>`; return; }
+  if (!ACCESS.has("intelligence")) { view.innerHTML = `<section class="intel-page"><div class="deck-head"><div><span class="kicker lo-kicker">${icon("sparkles")}Gradify Intelligence</span><h1>Let Gradify run your studying</h1></div></div>${plusPanelHtml("intelligence", { pricing: PRICING })}${plusPanelHtml("calendar", { pricing: PRICING, compact: true })}</section>`; promptPlus("intelligence", { pricing: PRICING, signedIn: store.mode === "cloud" }); return; }
   const m = await model(); renderIntelPage(view, m, { toast, saveIntel, modes: modesHtml(m) }); view.querySelector(".intel-page .learned")?.insertAdjacentHTML("beforebegin", notifyPanelHtml(m)); mountIntel3(view, m, apctx()); wireAutopilot(view, m, apctx()); wireNotify(view, m, apctx()); };
 routes.knowledge = async () => { const m = await model({ autoMove: false }); renderKnowledgePage(view, m, { courses: m.L?.courses || [] }); };
 routes.revise = async (arg) => { const m = await model({ autoMove: false }); renderRevisePage(view, m, arg); view.querySelector(".revise-page .seg-chips")?.insertAdjacentHTML("beforebegin", decomposeHtml()); wireDecompose(view, m, apctx()); };
@@ -1505,13 +1515,34 @@ function showDeviceBanner(cloud, device) {
 }
 
 // ---------- Start ----------
+// a network step that takes too long is treated as failed, so a slow or unreachable server never leaves a blank screen
+const within = (p, ms, what) => Promise.race([Promise.resolve(p), new Promise((_, no) => setTimeout(() => no(new Error(`${what} took too long`)), ms))]);
 async function boot() {
+  try { await start(); }
+  catch (e) {
+    // the account couldn't be reached or read: open on this device rather than show nothing, and say so
+    console.error("Gradify couldn't open your account", e);
+    try {
+      store = new LocalStore(); ACCESS = await access(store); profile = await store.getProfile();
+      $("#mode").innerHTML = `${icon("lock")}<span>On this device</span>`;
+      view.insertAdjacentHTML("beforebegin", `<aside class="device-banner panel glass" role="status"><div><b>Couldn't reach your account just now.</b> <span class="sub">You're on this device's copy. Nothing in your account is lost.</span></div><div class="row-actions"><button class="btn btn-light btn-sm" type="button" id="boot-retry"><span>Try again</span></button></div></aside>`);
+      $("#boot-retry")?.addEventListener("click", () => location.reload());
+      markLocks();
+      addEventListener("hashchange", route);
+      route();
+    } catch (e2) {
+      console.error(e2);
+      view.innerHTML = `<div class="panel glass"><h3>Gradify couldn't start</h3><p class="sub">${esc(e2.message || String(e2))}</p><button class="btn btn-light btn-sm" type="button" onclick="location.reload()"><span>Try again</span></button></div>`;
+    }
+  }
+}
+async function start() {
   const local = new LocalStore();
-  const cloud = await CloudStore.create();
-  const user = cloud ? await cloud.user() : null;
+  const cloud = await within(CloudStore.create(), 10000, "Connecting");
+  const user = cloud ? await within(cloud.user(), 12000, "Signing in") : null;
   store = user ? cloud : (cloud && cloudConfigured() ? Object.assign(local, { signInWithEmail: (e) => cloud.signInWithEmail(e), signInWithGoogle: () => cloud.signInWithGoogle() }) : local);
   // Free studies on one active device: on any other, everything stays readable and nothing is changed (kit/data/plan.js)
-  const device = user ? await deviceStatus(cloud) : { active: true };
+  const device = user ? await within(deviceStatus(cloud), 8000, "Checking this device").catch(() => ({ active: true })) : { active: true };
   if (user && device.active && local.hasData() && !localStorage.getItem(`gradify.moved.${user.id}`)) {
     try {
       // goals move on their own (below); any not moved yet must survive this wipe
@@ -1529,8 +1560,9 @@ async function boot() {
   // on a sub-site, the app only sees that site's notes and progress
   if (SITE) { store = scopeToSite(store, SITE); picks.site = SITE; }
   if (!device.active) { store = readOnly(store, "You're on Free, which studies on one device. Move your studying here, or get Gradify Plus to study on every device."); showDeviceBanner(cloud, device); }
-  ACCESS = await access(store);
-  profile = await store.getProfile();
+  ACCESS = await within(access(store), 8000, "Checking your plan").catch(() => ({ plan: "free", enforced: false, has: () => true }));
+  profile = await within(store.getProfile(), 12000, "Loading your profile");
+  markLocks();
   syncMirror(profile);   // the account's settings, for every site in this browser
   // arriving from a site card on getgradify.com: "Study MedGradify in Gradify"
   const fromSite = SITE ? null : new URLSearchParams(location.search).get("site");
@@ -1548,7 +1580,7 @@ async function boot() {
   $("#mode").innerHTML = user ? `${icon("check")}<span>${esc(user.email)}</span>` : `${icon("lock")}<span>On this device</span>`;
   addEventListener("hashchange", route);
   route();
-  // a returning learner is offered Gradify on their Home Screen (once; dismissing it keeps it away for three weeks)
+  // a returning learner is offered the Gradify app on the App Store (once the listing is live; dismissing it keeps it away for three weeks)
   if (countVisit() >= 2) setTimeout(() => offerInstall(), 6000);
 }
 boot();

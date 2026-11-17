@@ -1,5 +1,6 @@
-// Top bar search button, the menu on small screens, and installing the site as an app.
+// Top bar search button, the menu on small screens, and the App Store link.
 import { icon } from "../kit/core/icons.js";
+import { appStoreUrl, standalone } from "../kit/core/install.js";
 
 const $ = (s) => document.querySelector(s);
 
@@ -25,24 +26,15 @@ $("#nav-search")?.addEventListener("click", (e) => {
 // Section icons
 document.querySelectorAll(".org-ico[data-icon], .dz-ico[data-icon]").forEach((el) => { el.innerHTML = icon(el.dataset.icon); });
 
-// Install as an app: use the browser's own prompt where there is one
-let installEvent = null;
+// Get the app: Gradify's app comes from the App Store (APP_STORE in gradify.config.js); the site never installs itself
 const installBtn = $("#install");
 const help = $("#install-help");
-const standalone = matchMedia("(display-mode: standalone)").matches || navigator.standalone;
-if (standalone) help.textContent = "You're using the installed app.";
-else if (/iphone|ipad/i.test(navigator.userAgent)) help.textContent = "On iPhone or iPad: tap Share, then “Add to Home Screen”.";
-else help.textContent = "In Chrome or Edge, use the install icon in the address bar. In Safari on Mac, choose File › Add to Dock.";
-addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  installEvent = e;
-  installBtn.hidden = false;
-  help.textContent = "";
-});
-installBtn.addEventListener("click", async () => {
-  if (!installEvent) return;
-  installEvent.prompt();
-  await installEvent.userChoice;
-  installEvent = null;
-  installBtn.hidden = true;
-});
+const store = appStoreUrl();
+// the browser's own "install this site" offer is kept back
+addEventListener("beforeinstallprompt", (e) => e.preventDefault());
+if (installBtn) {
+  if (standalone()) help.textContent = "You're using the installed app.";
+  else if (store) { installBtn.hidden = false; help.textContent = "Free for iPhone, iPad and Mac."; }
+  else help.textContent = "Coming soon to the App Store for iPhone, iPad and Mac.";
+  installBtn.addEventListener("click", () => { if (store) open(store, "_blank", "noopener"); });
+}
