@@ -6,11 +6,10 @@ ending 48 hours after launch. Nothing here has been sent. `campaign/` is left ou
 
 | File | What it is |
 | --- | --- |
-| [email.html](email.html) | The HTML part: tables and inline styles, no `backdrop-filter`. It has the glass logo, a glass button with a glowing rainbow rim and a hover effect, website/TikTok/Discord links in the header, and glass widgets and icons like the app's Today board (with example numbers, captioned as examples). Subject and preheader are in its top comment. |
+| [email.html](email.html) | The HTML part: tables and inline styles, no `backdrop-filter`. Its only image is the logo. Subject and preheader are in its top comment. |
 | [email.txt](email.txt) | The plain-text part. Send both as one multipart email. |
 | [signature.html](signature.html) | The founder's black Liquid Glass signature, email-safe. |
 | [logo-glass.svg](logo-glass.svg) | Source of the logo: the Gradify G on a black Liquid Glass tile with a rainbow border. |
-| [make-icons.mjs](make-icons.mjs) and [icons/](icons/) | Draws the email's icons and renders them to PNGs in `assets/email/`: glass tiles with the app's Lucide icons and tone colours, and white website/TikTok/Discord glyphs. Run `node campaign/plus-launch/make-icons.mjs` from the repo root (needs Google Chrome). |
 | [CHECKLIST.md](CHECKLIST.md) | Everything to do before, during and after the send, with the UK PECR/GDPR rules for who may receive it. |
 
 ## What the email claims, and why (checked 17 November 2026)
@@ -69,17 +68,17 @@ so it matches what the app locks and what the pricing page sells.
 | Placeholder | Where | What |
 | --- | --- | --- |
 | `{{OFFER_ENDS}}` | email.html, email.txt | The code's exact expiry, in UK time, e.g. "Thursday 19 November at 6pm (UK time)". It must match the Stripe expiry. |
-| `{{DISCORD_URL}}` | email (header and body), signature | A permanent Discord invite (never expires, no use limit). Otherwise delete the marked blocks. |
+| `{{DISCORD_URL}}` | email, signature | A permanent Discord invite (never expires, no use limit). Otherwise delete the marked blocks. |
 | `{{UNSUBSCRIBE_URL}}` | email | The sending service's unsubscribe merge tag (e.g. `{{ unsubscribe_url }}` / `*|UNSUB|*`). |
 | `{{WHY_YOU_GET_THIS}}` | email | One line per audience. For the Plus waitlist: "You're getting this because you asked to be told when Gradify Plus opened. It's the only email you'll get from that list, and your address will be deleted from it now that it's been sent." |
 | `{{REGISTERED_IN}}`, `{{COMPANY_NUMBER}}`, `{{REGISTERED_OFFICE}}` | email, signature | From Companies House. A company's emails must show its registered name, number, place of registration and registered office. |
 
 ## The logo
 
-Gmail and Outlook don't show SVG, so the email and signature use PNGs, all in `assets/email/`. The logo is
+Gmail and Outlook don't show SVG, so the email and signature use a PNG:
 `assets/email/gradify-logo-glass.png` (192 × 192, shown at 44 px in the email and 40 px in the signature, so it
 stays sharp on 3× screens). It lives in `assets/` so the site publishes it at
-https://getgradify.com/assets/email/gradify-logo-glass.png, and every image (logo, icons, widgets) only appears **once this PR is merged
+https://getgradify.com/assets/email/gradify-logo-glass.png, and the images only appear **once this PR is merged
 and deployed**. Do the test sends after that.
 
 To change the logo, edit `logo-glass.svg` and render it again with headless Chrome. Use an HTML page that shows

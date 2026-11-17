@@ -131,9 +131,7 @@ Gradify's checkout already allows promotion codes (`allow_promotion_codes` in
       for the first month, then £10 a month until cancelled.
 - [ ] At T + 48 hours, check the code shows as expired. If it doesn't, archive it by hand.
 
-## 5. Discord invite and TikTok link
-
-- [x] TikTok: https://www.tiktok.com/@gradifyco (in the email header and plain text).
+## 5. Discord invite
 
 - [ ] Create the server, or confirm it exists, with a #welcome channel, rules and moderation. Turn on AutoMod.
       Some learners will be 13 to 17, which is Discord's minimum age range, so set it up with that in mind.
@@ -167,9 +165,6 @@ Send to your own addresses in each of these, and check them in light and dark mo
 - [ ] **Outlook:** Windows desktop (the Word renderer: the button and offer box must still look right),
       Outlook.com and the Outlook mobile app.
 - [ ] **Apple Mail:** macOS and iPhone.
-- [ ] Check that every image shows (logo, icons, widgets, TikTok and Discord glyphs), and that the button's
-      rainbow glow and hover show in Apple Mail and Gmail on the web. Outlook on Windows shows a flat dark button
-      with a pink rim and no hover, which is expected.
 - [ ] In each one, check that:
   - [ ] the code `GRADIFY48` is readable and copyable;
   - [ ] every link works, including Unsubscribe, Privacy, Terms and Discord;

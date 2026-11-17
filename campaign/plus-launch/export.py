@@ -29,13 +29,9 @@ txt = open(os.path.join(HERE, "email.txt")).read()
 sig = open(os.path.join(HERE, "signature.html")).read()
 sig = re.sub(r"^<!--.*?-->\s*", "", sig, count=1, flags=re.S)
 if not DISCORD_URL:
-    html = re.sub(r"\s*<!-- DISCORD: delete this cell.*?</td>", "", html, count=1, flags=re.S)
     html = re.sub(r"\s*<!-- DISCORD: delete this block.*?<!-- end DISCORD -->", "", html, count=1, flags=re.S)
-    html = html.replace('<td valign="middle" style="padding-right:6px;">\n                          <a class="pill" href="https://www.tiktok.com', '<td valign="middle">\n                          <a class="pill" href="https://www.tiktok.com')
-    txt = txt.replace(" · Discord: {{DISCORD_URL}}", "")
     txt = re.sub(r"\[DISCORD: delete.*?\[end DISCORD\]\n\n", "", txt, flags=re.S)
     sig = re.sub(r"\s*<!-- DISCORD: delete the next line.*?\n.*?\n", "\n", sig, count=1)
-txt = txt.replace("[delete the TikTok or Discord part if there's no link]\n", "")
 html, txt, sig = fill(html), fill(txt), fill(sig)
 body_txt = txt.split("----------------------------------------------------------------------\n", 1)[1].lstrip("\n")
 
