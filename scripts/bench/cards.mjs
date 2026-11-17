@@ -14,11 +14,12 @@ const norm = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 
 /** The code checks on one subject's cards, in order. Returns, per input card, { blocked, flagged, why }. */
 export function codeVerdicts(set) {
-  const pack = { topics: [{ name: set.subject, facts: set.cards.map((c) => ({ statement: c.front, importance: "core", quote: c.quote, page: null, card: { type: c.kind, front: c.front, back: c.back } })) }] };
+  const pack = { topics: [{ name: set.subject, facts: set.cards.map((c, j) => ({ statement: `input-${j}`, importance: "core", quote: c.quote, page: null, card: { type: c.kind, front: c.front, back: c.back } })) }] };
   const out = cardsFromPack(pack, set.notes);
   // output cards keep the fact they came from; a list answer split into one card per item gives several
-  return set.cards.map((c) => {
-    const os = out.filter((o) => o.fact === c.front);
+  // each input carries a unique fact id, kept on every output card it becomes (even when two fronts are identical)
+  return set.cards.map((c, j) => {
+    const os = out.filter((o) => o.fact === `input-${j}`);
     if (!os.length) return { blocked: true, flagged: true, rewritten: false, why: "removed (duplicate or unusable)" };
     const issues = [...new Set(os.flatMap((o) => o.issues || []))];
     const blocked = os.every((o) => o.grounded === "no");
@@ -69,7 +70,12 @@ export async function aiVerdicts(set, model = MODEL) {
     messages: [{ role: "user", content: [{ type: "text", text: reviewRequest(cards, set.notes) }] }],
   }).finalMessage();
   if (msg.stop_reason !== "end_turn") throw new Error(`stop_reason ${msg.stop_reason}`);
-  const by = new Map(JSON.parse(msg.content.filter((b) => b.type === "text").map((b) => b.text).join("")).verdicts.map((v) => [v.id, v]));
+  const list = JSON.parse(msg.content.filter((b) => b.type === "text").map((b) => b.text).join("")).verdicts;
+  const by = new Map(list.map((v) => [v.id, v]));
+  // an unreviewed card must not count as accepted: every card needs exactly one verdict
+  const ids = set.cards.map((_, i) => `c${i + 1}`);
+  const missing = ids.filter((id) => list.filter((v) => v.id === id).length !== 1);
+  if (missing.length || list.length !== ids.length) throw new Error(`[${set.subject}] the reviewer didn't return exactly one verdict per card (problem ids: ${missing.join(", ") || "extra verdicts"})`);
   return { usage: msg.usage, verdicts: set.cards.map((_, i) => { const v = by.get(`c${i + 1}`); return { blocked: v?.verdict === "reject", flagged: v?.verdict === "reject" || v?.verdict === "revise", why: v?.reason ?? null }; }) };
 }
 

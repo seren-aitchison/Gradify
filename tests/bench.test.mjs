@@ -1,6 +1,7 @@
 // The Gradify Intelligence benchmarks (scripts/bench.mjs): the metrics are right, the simulators are deterministic,
 // and the engines still score what the recorded baseline says. A change to an engine that moves a number must update
 // tests/fixtures/bench/baseline.json (npm run bench -- --write-baseline) in the same pull request.
+process.env.TZ = "UTC";   // as scripts/bench.mjs: results mustn't depend on the machine's time zone
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
@@ -40,7 +41,7 @@ test("benchmarks match the recorded baseline (update it on purpose when an engin
   const now = await syntheticSuite();
   const diffs = [];
   const walk = (a, b, path) => {
-    if (typeof a === "number" && typeof b === "number") { if (Math.abs(a - b) > 0.002) diffs.push(`${path}: baseline ${a}, now ${b}`); return; }
+    if (typeof a === "number" && typeof b === "number") { if (!Number.isFinite(b) || Math.abs(a - b) > 0.002) diffs.push(`${path}: baseline ${a}, now ${b}`); return; }
     if (a && typeof a === "object") for (const k of new Set([...Object.keys(a), ...Object.keys(b || {})])) walk(a[k], b?.[k], `${path}.${k}`);
     else if (a !== b) diffs.push(`${path}: baseline ${a}, now ${b}`);
   };

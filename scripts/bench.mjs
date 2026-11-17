@@ -16,6 +16,8 @@ import { masteryBenchmark, readinessBenchmark } from "./bench/mastery.mjs";
 import { cardBenchmark, codeVerdicts, aiVerdicts, combine, tally } from "./bench/cards.mjs";
 import { planBenchmark } from "./bench/plan.mjs";
 
+// Results must not depend on the machine: the readiness code reads an exam date as local noon, as the app does.
+process.env.TZ = "UTC";
 const FIXTURES = new URL("../tests/fixtures/bench/", import.meta.url);
 
 /** The synthetic suite: deterministic, so it doubles as a regression baseline. */
@@ -56,7 +58,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     const code = cardFixture.sets.map(codeVerdicts), ai = [];
     let tokens = 0;
     for (const set of cardFixture.sets) { const r = await aiVerdicts(set); ai.push(r.verdicts); tokens += r.usage.input_tokens + r.usage.output_tokens; }
-    out.cardsClaude = { reviewer: tally(cardFixture.sets, ai), combined: tally(cardFixture.sets, combine(code, ai)), tokens };
+    out.cardsClaude = { reviewer: tally(cardFixture.sets, ai), combined: tally(cardFixture.sets, code.map((c, i) => combine(c, ai[i]))), tokens };
   }
 
   const s = out.synthetic, pct = (x) => (x == null ? "  -  " : `${(x * 100).toFixed(1)}%`.padStart(6)), f = (x) => (x == null ? "  -   " : x.toFixed(4));

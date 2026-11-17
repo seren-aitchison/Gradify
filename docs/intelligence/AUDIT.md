@@ -65,7 +65,7 @@ The numbers, and what they can't say, are in [BENCHMARKS.md](BENCHMARKS.md). The
 1. **Good maths and computing cards are deleted.** `reviewCard` treats an answer made only of single letters as "empty". So `O(n)`, `f'(g(x)) g'(x)` and `x = y` are dropped as unusable. On the labelled cards, 2 of 9 good STEM cards were removed. This hits exactly the subjects the brief cares most about (equations, notation). `kit/notes/pack.js:249`.
 2. **"Plus or minus" becomes a list.** `splitList` reads "about seven items, plus or minus two" as three items and replaces one good card with three garbled fill-in-the-blank cards. `kit/notes/pack.js:213` `listItems`.
 3. **The Mastery Engine's per-card recall contradicts FSRS.** `recallProbability` in `mastery.js` reads any card last rated "again" as 30% recall forever, even months later. `recallNow` in `srs.js` only does that for the first day. The benchmark shows the Mastery Engine's version is worse on every metric (log loss 0.539 against 0.475). It feeds retention, `forgetIn` and `practiceOrder`.
-4. **Gradify's mastery figures predict the next answer worse than a simple running average.** BKT fitted on other learners beats both. Log loss:
+4. **On synthetic learners, Gradify's mastery figures predict the next answer worse than a simple running average.** BKT fitted on other learners beats both. Log loss:
 
    | Model | Log loss |
    |---|---|
@@ -74,7 +74,7 @@ The numbers, and what they can't say, are in [BENCHMARKS.md](BENCHMARKS.md). The
    | running accuracy | 0.680 |
    | BKT (fitted on other learners) | 0.646 |
 
-   The ranking held on three further seeds. The six-dimension values are reasonable descriptions, but as probabilities they're overconfident (ECE 0.13). Section 3 explains why that matters.
+   The ranking held on three further seeds. The six-dimension values are reasonable descriptions, but as probabilities they're overconfident (ECE 0.13). Section 3 explains why that matters. This is a synthetic result: it shows the weighted averages ignore evidence a probabilistic model uses, not that BKT is best for Gradify's learners. Run the real-data benchmark (item 5 in §5) before relying on the ranking.
 5. **The code checks catch only 2 of 7 factually wrong cards**, and none of the "two questions in one" cards. That's expected: code can check that a quote exists and words overlap, not meaning. It makes the AI reviewer the only real defence against wrong answers, and **the AI reviewer has never been measured.** It also runs on the same model as the generator, which the brief rules out as a sole judge.
 
 Two findings depend on how the simulator forgets, so they're questions to answer with real data, not conclusions:

@@ -25,7 +25,8 @@ export const MASTERY_MODELS = ["gradify-dimension", "gradify-mastery", "running-
 const sequences = (attempts) => {
   const by = new Map();
   for (const a of [...attempts].sort((x, y) => x.at.localeCompare(y.at))) {
-    const k = `${a.user}|${a.lesson}`;
+    // lesson ids are only unique within a course: keep courses apart (the user stays first, for the split below)
+    const k = `${a.user}|${a.site}|${a.subject}|${a.lesson}`;
     (by.get(k) || by.set(k, []).get(k)).push(a);
   }
   return by;
@@ -34,7 +35,8 @@ const sequences = (attempts) => {
 /** @param {object[]} attempts attempt records with a `user` field @param {{ trainShare?: number }} [o] */
 export function masteryBenchmark(attempts, { trainShare = 0.7 } = {}) {
   const users = [...new Set(attempts.map((a) => a.user))].sort();
-  const train = new Set(users.slice(0, Math.round(users.length * trainShare)));
+  if (users.length < 2) throw new Error(`the mastery benchmark needs answers from at least 2 learners (fit on some, score on the rest); got ${users.length}`);
+  const train = new Set(users.slice(0, Math.min(users.length - 1, Math.max(1, Math.round(users.length * trainShare)))));
   const seqs = sequences(attempts);
   const trainSeqs = [...seqs.entries()].filter(([k]) => train.has(k.split("|")[0])).map(([, s]) => s.map((a) => (a.score >= 0.5 ? 1 : 0)));
   const bkt = fitBkt(trainSeqs), bktF = fitBkt(trainSeqs, { forgetting: true });
@@ -78,9 +80,10 @@ export function readinessBenchmark({ seed = 3, learners = 60, days = 45, horizon
   for (const user of sim.users) {
     const mine = sim.attempts.filter((a) => a.user === user);
     const { objectives } = objectiveReadiness({ attempts: mine, examDate, now });
-    for (const o of objectives) {
+    // a stable order for the exam draws, so a change to how Gradify ranks objectives can't change the exam itself
+    for (const o of [...objectives].sort((a, b) => a.id.localeCompare(b.id))) {
       if (o.kind !== "course" || o.status === "unknown") continue;
-      const truth = sim.truth(user, o.lesson, Number(o.id.split("#o")[1]), Date.parse(`${examDate}T12:00:00`));
+      const truth = sim.truth(user, o.lesson, Number(o.id.split("#o")[1]), Date.parse(`${examDate}T12:00:00Z`));
       const y = R.next() < truth ? 1 : 0;   // one exam question on this objective
       rows.gradify.push({ p: o.p, lo: o.lo, hi: o.hi, truth, y });
       // baseline: the same answers, no recency weighting and no forgetting

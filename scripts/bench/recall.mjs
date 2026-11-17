@@ -16,7 +16,7 @@ import { score } from "./metrics.mjs";
 export const RECALL_MODELS = ["fsrs5", "mastery-card", "learner-mean"];
 
 /**
- * @param {{ user: string, card: string, at: number|string, rating: string, first?: boolean }[]} log
+ * @param {{ user: string, card: string, at: number|string, rating: string, mode?: string, first?: boolean }[]} log
  * @returns {{ models: Record<string, object>, reviews: number, users: number }}
  */
 export function recallBenchmark(log) {
@@ -37,7 +37,8 @@ export function recallBenchmark(log) {
       u.right += y; u.n++;
       users.set(r.user, u);
     }
-    cards.set(key, { ...card, ...schedule(card, r.rating, { now: r.at }) });
+    // as in the app (kit/app/main.js rate): a review stored as "practice" is scored but doesn't move the card
+    if (r.mode !== "practice") cards.set(key, { ...card, ...schedule(card, r.rating, { now: r.at }) });
   }
   const models = Object.fromEntries(RECALL_MODELS.map((m) => [m, score(preds[m], ys)]));
   // synthetic logs carry the simulator's true recall probability: the best any model could do on this data
@@ -45,7 +46,7 @@ export function recallBenchmark(log) {
   return { reviews: ys.length, users: users.size, models };
 }
 
-/** Reads an exported review log: one JSON object per line, { user, card, reviewed_at | at, rating }. */
+/** Reads an exported review log: one JSON object per line, { user, card, reviewed_at | at, rating, mode }. */
 export function parseReviewLog(text) {
-  return text.split("\n").filter((l) => l.trim()).map((l) => { const o = JSON.parse(l); return { user: String(o.user ?? o.user_id), card: String(o.card ?? o.card_id), at: o.at ?? o.reviewed_at, rating: o.rating }; });
+  return text.split("\n").filter((l) => l.trim()).map((l) => { const o = JSON.parse(l); return { user: String(o.user ?? o.user_id), card: String(o.card ?? o.card_id), at: o.at ?? o.reviewed_at, rating: o.rating, mode: o.mode ?? "scheduled" }; });
 }

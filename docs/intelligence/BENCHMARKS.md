@@ -142,6 +142,8 @@ Every miss is listed by `npm run bench`.
 - 97.2% of the possible time used
 - top three items placed 73.6% of the time
 - 0 priority inversions
+
+The last two are measured only on days with no energy preference (`energy: "none"`, about a third of the 400). A morning or evening preference deliberately reorders items, so ranking can't be judged there.
 - 10.6% of placed items cut to under half their time
 
 The rankings above held on three further seeds (11, 12, 13). In every run:
@@ -177,7 +179,7 @@ Real numbers need the owner to export anonymised data from Supabase. The SQL edi
 
 ```sql
 -- flashcard reviews → reviews.jsonl
-select json_build_object('user', md5(user_id::text), 'card', md5(card_id::text), 'reviewed_at', reviewed_at, 'rating', rating)
+select json_build_object('user', md5(user_id::text), 'card', md5(card_id::text), 'reviewed_at', reviewed_at, 'rating', rating, 'mode', mode)
 from public.reviews order by reviewed_at;
 ```
 
@@ -185,13 +187,20 @@ from public.reviews order by reviewed_at;
 -- course answers → attempts.jsonl
 select json_build_object('user_id', md5(user_id::text), 'id', id, 'created_at', created_at, 'site', site, 'subject', subject, 'context', context,
   'question_id', question_id, 'question_type', question_type, 'difficulty', difficulty, 'objectives', objectives, 'lesson_id', lesson_id,
-  'unit_id', unit_id, 'score', score, 'correct', correct, 'attempt', attempt, 'confidence', confidence, 'marking_method', marking_method, 'marking_status', marking_status)
+  'unit_id', unit_id, 'response', json_build_object('evidence', response->>'evidence'), 'score', score, 'correct', correct, 'attempt', attempt, 'confidence', confidence, 'marking_method', marking_method, 'marking_status', marking_status)
 from public.assessment_attempts order by created_at;
 ```
 
 ```bash
 npm run bench -- --reviews reviews.jsonl --attempts attempts.jsonl
 ```
+
+Two columns matter for matching the app:
+
+- `mode`: practice reviews are scored but don't reschedule the card, as in the app
+- the lab `evidence` flag from `response`: exploration challenges are left out of mastery, as in the app
+
+The mastery benchmark needs at least two learners.
 
 Results are only meaningful with enough data. As a rough guide:
 
