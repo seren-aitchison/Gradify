@@ -65,7 +65,8 @@ test("server functions act as the signed-in learner, never with the service role
       assert.ok(body.indexOf("x-cron-secret") > -1 && body.indexOf("x-cron-secret") < body.indexOf("createClient"), `${f} must check x-cron-secret before connecting`);
       const tables = [...src.matchAll(/\.from\("(\w+)"\)/g)].map((m) => m[1]);
       for (const t of tables) assert.ok(["push_subscriptions", "cards", "plan_blocks", "activity"].includes(t), `${f} reads ${t}, which notifications don't need`);
-      assert.doesNotMatch(src, /\.insert\(|\.upsert\(|\.rpc\(/, `${f} must not add rows or call functions`);
+      // the one function it may call: plus_allowed_for(), a read-only check that the learner's plan includes reminders
+      assert.doesNotMatch(src.replace(/\.rpc\("plus_allowed_for", \{ uid: userId \}\)/g, ""), /\.insert\(|\.upsert\(|\.rpc\(/, `${f} must not add rows or call functions`);
       for (const m of src.matchAll(/\.from\("(\w+)"\)\.(update|delete)\(/g)) assert.equal(m[1], "push_subscriptions", `${f} may only change push_subscriptions`);
     }
     if (f.includes("tutor") || f.includes("study-pack")) {

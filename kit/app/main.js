@@ -19,6 +19,7 @@ import { generate, regenerateCard, generateQuestions } from "../notes/engine.js"
 import { reviewCard } from "../notes/pack.js";
 import { gradeTyped, VERDICT_TEXT } from "../learning/typed.js";
 import { focusFromProfiles } from "../learning/focus.js";
+import { access, plusPanelHtml, deviceStatus, switchDevice, readOnly } from "../data/plan.js";
 import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "../learning/srs.js";
 import { topicProfiles, practiceOrder, LEVELS } from "../learning/mastery.js";
 import { sixHtml, calibrationHtml, HOW } from "../learning/mastery-view.js";
@@ -27,7 +28,7 @@ import { loadLearner, COURSES } from "../learning/learner-data.js";
 import { mountJourney, journeySummary } from "../game/journey.js";
 import { AREAS, METRICS, PERIODS, HABIT_MODES, validateGoal, goalProgress, focusGoals } from "../learning/goals.js";
 import { goalData } from "../learning/goal-data.js";
-import { PRO_ON_SALE } from "../data/billing.js";
+import { PLUS_ON_SALE } from "../data/billing.js";
 import { cockpitHtml, wireCockpit, welcomeHtml } from "./cockpit.js";
 import { hydrate as glassIcons, cluster as glassCluster } from "../core/glass-icons.js";
 import { haptic, hapticsOn, setHaptics, hapticsSupported } from "../core/haptics.js";
@@ -64,6 +65,10 @@ const SEC_PER_CARD = 25;
 const srsOpts = () => ({ retention: Number(learnerOf(profile).intel?.retention) || 0.9, examDate: profile.exam_date || null });
 
 let store, profile, view = $("#view");
+// what this learner's plan includes (kit/data/plan.js); everything is open until Plus goes on sale
+let ACCESS = { plan: "free", enforced: false, has: () => true };
+// dashboard widgets that are Gradify Intelligence (Plus): forecasts, readiness, planning by conversation, suggestions
+const INTEL_WIDGETS = new Set(["s-ready", "w-forecast", "w-tell", "w-opps", "w-debt", "b-exam"]);
 
 // ---------- Toast ----------
 let toastTimer;
@@ -208,14 +213,14 @@ async function model({ autoMove = true } = {}) {
   let m = await loadModel(store, profile, { courseNext, courses: L?.courses || [] });
   // Adaptive and Autopilot act on their own (moving missed sessions, keeping the week planned, recovering), then
   // the model is rebuilt so the screen shows the result; every change is in the log with an undo
-  if (autoMove && modeOf(m.intel) !== "copilot") {
+  if (autoMove && ACCESS.has("intelligence") && modeOf(m.intel) !== "copilot") {
     const made = await runAutopilot(m, apctx()).catch((e) => { console.warn("Autopilot", e); return []; });
     if (made.length) { profile = await store.getProfile(); m = await loadModel(store, profile, { courseNext, courses: L?.courses || [] }); }
     m.made = made;
   }
   m.L = L;
   m.storeMode = store.mode;
-  backgroundSync(m);
+  if (ACCESS.has("calendar")) backgroundSync(m);
   if (!remindersStarted && m.intel.notify?.on) { remindersStarted = true; startReminders(() => model({ autoMove: false }), m.intel.notify); }
   return m;
 }
@@ -657,7 +662,7 @@ async function renderStudy(arg) {
   // builds on them, sure-but-wrong cards early, new cards capped, topics interleaved, fitted to the learner's minutes.
   // Practice and topic sessions keep their own order.
   let ordered = false;
-  if (!topicKey && !practice && queue.length > 1) {
+  if (!topicKey && !practice && queue.length > 1 && ACCESS.has("intelligence")) {
     try {
       const reviews = await store.listReviews(400), concepts = learnerMemory({ cards: all, reviews, examDate: profile.exam_date || null });
       const edges = usable(weightedGraph({ noteEdges: dependencyGraph(all), concepts }));
@@ -858,11 +863,12 @@ async function renderToday() {
       <p class="sub lo-hello">${s.cards.length ? `${n0(s.cards.length)} flashcards across ${n0(s.docs.length)} study ${s.docs.length === 1 ? "pack" : "packs"}${streakDays ? ` · ${streakDays}-day streak` : ""}.` : "Nice to have you here."}</p></div>
       <span class="today-icons g3d-cluster" aria-hidden="true"></span><a class="cp-pill dark today-cta" href="${esc(M.prio.items[0]?.href || "#/new")}" data-haptic="success">${M.prio.items[0] ? `Start · ${M.prio.items[0].mins} min` : "Add notes"}</a></div>
     ${!s.cards.length && !courses.length ? welcomeHtml(profile.display_name) : ""}
-    ${notifyAskHtml(M)}
-    ${briefingHtml(M, { made: M.made || [] })}
-    ${catchUpHtml(M) || rescheduleHtml(M)}
+    ${ACCESS.has("calendar") ? notifyAskHtml(M) : ""}
+    ${ACCESS.has("intelligence") ? `${briefingHtml(M, { made: M.made || [] })}
+    ${catchUpHtml(M) || rescheduleHtml(M)}` : ""}
     ${nextHtml(M)}
-    ${boardHtml({ m: M, s, G, L, streak: streakDays, xp: gxp, lv, xpForLevel, heat: heatmap(s.byDay) }, M.intel.widgets?.length ? M.intel.widgets : DEFAULT_WIDGETS)}
+    ${boardHtml({ m: M, s, G, L, streak: streakDays, xp: gxp, lv, xpForLevel, heat: heatmap(s.byDay) }, (M.intel.widgets?.length ? M.intel.widgets : DEFAULT_WIDGETS).filter((id) => ACCESS.has("intelligence") || !INTEL_WIDGETS.has(id)))}
+    ${ACCESS.has("intelligence") ? "" : plusPanelHtml("intelligence", { pricing: PRICING, compact: true })}
   </section>`;
   wireCockpit(view, cockpitCtx);
   wireIntel(view, M, { store, toast, rerender });
@@ -904,11 +910,11 @@ function startCourses(L, n = 6) {
 }
 function proCard(sub) {
   const plan = sub ? describePlan(sub) : null;
-  if (plan?.plan === "pro") return `<article class="panel glass lo-pro on"><span class="lo-pro-badge"><span class="pro-gem" aria-hidden="true"></span>Gradify Pro</span><p class="sub">${esc(plan.line)}</p><a class="see" href="#/account">Manage</a></article>`;
-  return `<article class="panel glass lo-pro"><span class="lo-pro-badge"><span class="pro-gem" aria-hidden="true"></span>Gradify Pro</span>
-    <h3>${PRO_ON_SALE ? "Go further with Gradify AI" : "Coming soon"}</h3>
-    <p class="sub">${PRO_ON_SALE ? "Generous monthly Gradify AI allowances on every site." : "The premium Gradify experience, starting with Gradify AI. Everything you use today stays free."}</p>
-    <a class="btn btn-ghost lg btn-sm" href="${PRICING}"><span>${PRO_ON_SALE ? "See plans" : "See what's coming"}</span></a></article>`;
+  if (plan && plan.plan !== "free") return `<article class="panel glass lo-pro on"><span class="lo-pro-badge"><span class="pro-gem" aria-hidden="true"></span>${plan.plan === "plus" ? "Gradify Plus" : "Gradify Pro"}</span><p class="sub">${esc(plan.line)}</p><a class="see" href="#/account">Manage</a></article>`;
+  return `<article class="panel glass lo-pro"><span class="lo-pro-badge"><span class="pro-gem" aria-hidden="true"></span>${PLUS_ON_SALE ? "Gradify Plus" : "Gradify Plus · opening soon"}</span>
+    <h3>Let Gradify run your studying</h3>
+    <p class="sub">Smart Plan autopilot, readiness forecasts, exam preparation, calendar sync and every device${PLUS_ON_SALE ? "" : ". Until Plus opens, everything on Gradify is free"}.</p>
+    <a class="btn btn-ghost lg btn-sm" href="${PRICING}"><span>See plans</span></a></article>`;
 }
 
 // everything waiting for review today, wherever it lives: course flashcards and questions, and decks from notes
@@ -1250,11 +1256,11 @@ async function renderPlan(arg) {
   ].sort((a, b) => a.day.localeCompare(b.day)).slice(0, 8);
   const paced = (L?.courses || []).filter((c) => c.examDate && c.pace && !["done", "no-date"].includes(c.pace.status));
   view.innerHTML = `<section class="planner">
-    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("calendar")}Smart Plan</span><h1>Your plan, worked out for you</h1><p class="sub">Gradify builds each day from what matters most (misconceptions, fading memory, deadlines, due cards and new material) and fits it into your free time, with breaks. <a href="#/intel">Change your hours and energy</a>.</p></div><button type="button" class="btn btn-primary lg" id="autoplan"><span>Plan my week</span></button></div>
-    ${catchUpHtml(M) || rescheduleHtml(M)}
+    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("calendar")}Smart Plan</span><h1>${ACCESS.has("intelligence") ? "Your plan, worked out for you" : "Your study plan"}</h1><p class="sub">${ACCESS.has("intelligence") ? `Gradify builds each day from what matters most (misconceptions, fading memory, deadlines, due cards and new material) and fits it into your free time, with breaks. <a href="#/intel">Change your hours and energy</a>.` : "Plan your study blocks for the week. With Gradify Plus, Gradify works out the plan for you."}</p></div>${ACCESS.has("intelligence") ? `<button type="button" class="btn btn-primary lg" id="autoplan"><span>Plan my week</span></button>` : ""}</div>
+    ${ACCESS.has("intelligence") ? `${catchUpHtml(M) || rescheduleHtml(M)}
     ${tellHtml()}
-    ${smartPlanHtml(M, arg)}
-    ${calendarPanelHtml(M, { signedIn: store.mode === "cloud" })}
+    ${smartPlanHtml(M, arg)}` : plusPanelHtml("intelligence", { pricing: PRICING })}
+    ${ACCESS.has("calendar") ? calendarPanelHtml(M, { signedIn: store.mode === "cloud" }) : plusPanelHtml("calendar", { pricing: PRICING, compact: true })}
     <div class="cal-top">
       <article class="panel glass"><div class="panel-head"><h3>Next five weeks</h3><span class="pill-dark">${fmtDate(Date.now(), { month: "long", year: "numeric" })}</span></div>${monthGrid([...ahead, ...goalDates.map((g) => ({ day: g.target_date, cal: "goal" }))], profile.exam_date)}</article>
       <article class="panel glass"><div class="panel-head"><h3>Coming up</h3></div>
@@ -1306,7 +1312,7 @@ async function renderPlan(arg) {
   wireCalendar(view, M, { store, toast, saveIntel, rerender, complete });
   wireAutopilot(view, M, apctx());
   wireTell(view, M, apctx());
-  $("#autoplan").addEventListener("click", async (e) => {
+  $("#autoplan")?.addEventListener("click", async (e) => {
     e.currentTarget.disabled = true;
     const made = await planWeek(M, store, s.cards);
     if (made) complete("Week planned", { sub: `${made} ${made === 1 ? "session" : "sessions"} in your free time` });
@@ -1456,7 +1462,9 @@ async function renderAi(arg) {
 routes.ai = renderAi;
 
 // ---------- Intelligence, My Knowledge, Revision Centre (kit/app/intel-views.js) ----------
-routes.intel = async () => { const m = await model(); renderIntelPage(view, m, { toast, saveIntel, modes: modesHtml(m) }); view.querySelector(".intel-page .learned")?.insertAdjacentHTML("beforebegin", notifyPanelHtml(m)); mountIntel3(view, m, apctx()); wireAutopilot(view, m, apctx()); wireNotify(view, m, apctx()); };
+routes.intel = async () => {
+  if (!ACCESS.has("intelligence")) { view.innerHTML = `<section class="intel-page"><div class="deck-head"><div><span class="kicker lo-kicker">${icon("sparkles")}Gradify Intelligence</span><h1>Let Gradify run your studying</h1></div></div>${plusPanelHtml("intelligence", { pricing: PRICING })}${plusPanelHtml("calendar", { pricing: PRICING, compact: true })}</section>`; return; }
+  const m = await model(); renderIntelPage(view, m, { toast, saveIntel, modes: modesHtml(m) }); view.querySelector(".intel-page .learned")?.insertAdjacentHTML("beforebegin", notifyPanelHtml(m)); mountIntel3(view, m, apctx()); wireAutopilot(view, m, apctx()); wireNotify(view, m, apctx()); };
 routes.knowledge = async () => { const m = await model({ autoMove: false }); renderKnowledgePage(view, m, { courses: m.L?.courses || [] }); };
 routes.revise = async (arg) => { const m = await model({ autoMove: false }); renderRevisePage(view, m, arg); view.querySelector(".revise-page .seg-chips")?.insertAdjacentHTML("beforebegin", decomposeHtml()); wireDecompose(view, m, apctx()); };
 
@@ -1474,13 +1482,31 @@ async function renderCommunity() {
 }
 routes.community = renderCommunity;
 
+// ---------- Free on a second device ----------
+function showDeviceBanner(cloud, device) {
+  const when = (iso) => new Date(iso).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
+  const can = !device.canSwitchAt || new Date(device.canSwitchAt) <= new Date();
+  view.insertAdjacentHTML("beforebegin", `<aside class="device-banner panel glass" role="status">
+    <div><b>You're studying on another device.</b> <span class="sub">Gradify Free studies on one device at a time. Everything you've made is safe and you can look at it here, but changes are saved only on your study device.</span></div>
+    <div class="row-actions">${can ? `<button class="btn btn-light btn-sm" id="device-here" type="button"><span>Study on this device instead</span></button>` : `<span class="sub">You can move here from ${esc(when(device.canSwitchAt))}.</span>`}
+      <a class="btn btn-ghost btn-sm" href="${PRICING}"><span>Every device with Plus</span></a></div>
+  </aside>`);
+  $("#device-here")?.addEventListener("click", async (e) => {
+    e.currentTarget.disabled = true;
+    try { await switchDevice(cloud); location.reload(); }
+    catch (err) { e.currentTarget.disabled = false; toast(err.message === "too_soon" ? `You can move here from ${esc(when(err.canSwitchAt))}.` : esc(err.message)); }
+  });
+}
+
 // ---------- Start ----------
 async function boot() {
   const local = new LocalStore();
   const cloud = await CloudStore.create();
   const user = cloud ? await cloud.user() : null;
   store = user ? cloud : (cloud && cloudConfigured() ? Object.assign(local, { signInWithEmail: (e) => cloud.signInWithEmail(e), signInWithGoogle: () => cloud.signInWithGoogle() }) : local);
-  if (user && local.hasData() && !localStorage.getItem(`gradify.moved.${user.id}`)) {
+  // Free studies on one active device: on any other, everything stays readable and nothing is changed (kit/data/plan.js)
+  const device = user ? await deviceStatus(cloud) : { active: true };
+  if (user && device.active && local.hasData() && !localStorage.getItem(`gradify.moved.${user.id}`)) {
     try {
       // goals move on their own (below); any not moved yet must survive this wipe
       const keep = await local.listGoals();
@@ -1496,6 +1522,8 @@ async function boot() {
   cloud?.onAuth((u) => { if (Boolean(u) !== Boolean(user)) location.reload(); });
   // on a sub-site, the app only sees that site's notes and progress
   if (SITE) { store = scopeToSite(store, SITE); picks.site = SITE; }
+  if (!device.active) { store = readOnly(store, "You're on Free, which studies on one device. Move your studying here, or get Gradify Plus to study on every device."); showDeviceBanner(cloud, device); }
+  ACCESS = await access(store);
   profile = await store.getProfile();
   syncMirror(profile);   // the account's settings, for every site in this browser
   // arriving from a site card on getgradify.com: "Study MedGradify in Gradify"

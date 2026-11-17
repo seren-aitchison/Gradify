@@ -1083,3 +1083,13 @@ code { font: 12px var(--mono); color: var(--mute); }
 .today-head { align-items: center; }
 .today-head > .today-icons + .today-cta { margin-left: 0; }
 @media (max-width: 760px) { .today-icons { display: none; } .co-licon { float: none; display: block; margin: 0 0 8px; } }
+
+/* ---------- Gradify Plus: a feature that comes with Plus, and Free on a second device (kit/data/plan.js) ---------- */
+.plus-lock { position: relative; display: grid; gap: 8px; justify-items: start; padding: 22px; margin: 12px 0; }
+.plus-lock h3 { margin: 0; font-size: 18px; letter-spacing: -.01em; }
+.plus-lock .sub { margin: 0; max-width: 46em; }
+.plus-lock.compact { padding: 16px 18px; }
+.plus-lock.compact h3 { font-size: 16px; }
+.plus-badge { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 999px; font: 600 12px/1.4 var(--sans, inherit); letter-spacing: .02em; color: var(--invert-fg); background: var(--spectrum); }
+.device-banner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; margin: 0 0 14px; }
+.device-banner .row-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }

@@ -26,19 +26,12 @@
     .notice.ok { border-color: #5fe3a166; } .notice.ok .ic { background: #5fe3a1; color: #000; }
     .notice.warn { border-color: #ffc00266; } .notice.warn .ic { background: #ffc002; color: #000; }
 
-    /* monthly / yearly switch: a real radio group */
-    .period { display: flex; justify-content: center; margin: 0 0 26px; border: 0; padding: 0; }
-    .period legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-    .seg { display: inline-flex; padding: 4px; border-radius: 999px; background: var(--inset); border: 1px solid var(--line); gap: 2px; }
-    .seg input { position: absolute; opacity: 0; pointer-events: none; }
-    .seg label { padding: 9px 18px; border-radius: 999px; font-weight: 500; font-size: 15px; color: var(--mute); cursor: pointer; display: inline-flex; gap: 8px; align-items: center; }
-    .seg input:checked + label { background: #fff; color: #000; }
-    .seg input:focus-visible + label { outline: 2px solid #fff; outline-offset: 2px; }
-    .save-tag { font: 600 11px var(--sans); letter-spacing: .02em; padding: 2px 8px; border-radius: 99px; background: linear-gradient(90deg, #4641ff, #f055dd); color: #fff; }
-
-    .plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 980px; margin: 0 auto; }
+    .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 1180px; margin: 0 auto; align-items: start; }
+    .plan.plus { border: 1px solid transparent; background: linear-gradient(var(--panel-strong), var(--panel-strong)) padding-box, var(--spectrum) border-box; box-shadow: 0 30px 80px -40px rgba(240, 85, 221, .55); }
+    .plan .tag { font: 600 11px var(--sans); text-transform: uppercase; letter-spacing: .08em; color: var(--mute); }
+    .plan h4 { margin: 6px 0 -4px; font-size: 13px; letter-spacing: .02em; color: var(--fg); }
+    .plan .soon { font: 600 11px var(--sans); letter-spacing: .04em; padding: 2px 8px; border-radius: 99px; border: 1px solid var(--line-strong); color: var(--mute); }
     .plan { position: relative; padding: 28px; border-radius: 18px; display: flex; flex-direction: column; gap: 18px; }
-    .plan.pro { border: 1px solid transparent; background: linear-gradient(var(--panel-strong), var(--panel-strong)) padding-box, var(--spectrum) border-box; }
     .plan h2 { margin: 0; font-size: 22px; letter-spacing: -.01em; display: flex; align-items: center; gap: 10px; }
     .plan .for { margin: 4px 0 0; color: var(--mute); line-height: 1.5; }
     .price { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
@@ -79,7 +72,8 @@
     .faq details p { color: var(--mute); line-height: 1.55; margin: 10px 0 0; }
     .foot { max-width: 980px; margin: 56px auto 32px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; color: var(--mute); font-size: 14px; }
     .foot a { color: inherit; }
-    @media (max-width: 760px) { .plans, .faq { grid-template-columns: 1fr; } .plan { padding: 22px; } main { padding-top: 32px; } }
+    @media (max-width: 1020px) { .plans { grid-template-columns: 1fr; max-width: 560px; } }
+    @media (max-width: 760px) { .faq { grid-template-columns: 1fr; } .plan { padding: 22px; } main { padding-top: 32px; } }
   </style>
 </head>
 <body>
@@ -104,25 +98,17 @@
     <main>
       <div class="hero">
         <span class="badge"><span class="spark"></span> Pricing</span>
-        <h1>Learn free.<br><em>Go further with Pro.</em></h1>
-        <p>Every Gradify course, lesson, lab and quiz is free, with your progress saved to your account on every device. Gradify Pro adds generous Gradify AI.</p>
+        <h1>Learn free.<br><em>Let Gradify run the rest.</em></h1>
+        <p>Free is for learning with Gradify. Gradify Plus organises, optimises and manages your learning. Gradify Pro adds Gradify AI.</p>
       </div>
 
       <div id="status" aria-live="polite"></div>
 
-      <fieldset class="period">
-        <legend>Billing period</legend>
-        <div class="seg">
-          <input type="radio" name="period" id="p-month" value="month" checked><label for="p-month">Monthly</label>
-          <input type="radio" name="period" id="p-year" value="year"><label for="p-year">Yearly <span class="save-tag" id="save-tag"></span></label>
-        </div>
-      </fieldset>
-
       <div class="plans">
         <article class="plan glass" aria-labelledby="free-h">
           <div>
+            <span class="tag">Learn with Gradify</span>
             <h2 id="free-h">Free <span class="current" id="free-current" hidden>Your plan</span></h2>
-            <p class="for">For everyone, for as long as you like.</p>
           </div>
           <div class="price"><span class="amt">£0</span><span class="per">forever</span></div>
           <p class="price-note">No card needed.</p>
@@ -130,13 +116,24 @@
           <div class="cta" id="free-cta"></div>
         </article>
 
-        <article class="plan pro" aria-labelledby="pro-h">
+        <article class="plan plus" aria-labelledby="plus-h">
           <div>
-            <h2 id="pro-h">Gradify Pro <span class="current" id="pro-current" hidden>Your plan</span></h2>
-            <p class="for">For regular study with Gradify AI at your side.</p>
+            <span class="tag">Gradify organises, optimises and manages your learning</span>
+            <h2 id="plus-h">Gradify Plus <span class="current" id="plus-current" hidden>Your plan</span></h2>
           </div>
-          <div class="price"><span class="amt" id="pro-amt"></span><span class="per" id="pro-per"></span></div>
-          <p class="price-note" id="pro-note"></p>
+          <div class="price"><span class="amt" id="plus-amt"></span><span class="per">a month</span></div>
+          <p class="price-note">Everything in Free, plus:</p>
+          <div id="plus-list"></div>
+          <div class="cta" id="plus-cta"></div>
+        </article>
+
+        <article class="plan glass" aria-labelledby="pro-h">
+          <div>
+            <span class="tag">Everything in Plus, with Gradify AI</span>
+            <h2 id="pro-h">Gradify Pro <span class="soon" id="pro-soon">Coming soon</span><span class="current" id="pro-current" hidden>Your plan</span></h2>
+          </div>
+          <div class="price"><span class="amt" id="pro-amt"></span><span class="per">a month</span></div>
+          <p class="price-note">Everything in Plus, plus:</p>
           <ul id="pro-list"></ul>
           <div class="cta" id="pro-cta"></div>
         </article>
@@ -144,10 +141,10 @@
 
       <section class="more" aria-labelledby="allow-h">
         <h2 id="allow-h">Gradify AI allowances</h2>
-        <p id="allow-lede">Uses a month, on monthly and yearly billing alike. Allowances reset each month and don't roll over. A request that fails doesn't count.</p>
+        <p id="allow-lede">Uses a month, once Gradify AI launches. Allowances reset each month and don't roll over. A request that fails doesn't count.</p>
         <div class="table-wrap">
           <table>
-            <thead><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Gradify Pro</th></tr></thead>
+            <thead><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Gradify Plus</th><th scope="col">Gradify Pro</th></tr></thead>
             <tbody id="allow-rows"></tbody>
           </table>
         </div>
@@ -169,87 +166,91 @@
   <script src="/kit/vendor/supabase/supabase.js"></script>
   <script type="module">
     import { SUPABASE_URL, SUPABASE_ANON_KEY } from "/gradify.config.js";
-    import { joinWaitlist, PRO_LIST } from "/kit/data/waitlist.js";
-    import { PRO_PRICES, PRO_ON_SALE, AI_ALLOWANCES, uses, money, annualSaving, planOf, describePlan, clientStore, mySubscription, startCheckout, openPortal } from "/kit/data/billing.js";
+    import { joinWaitlist, PRO_LIST, PLUS_LIST } from "/kit/data/waitlist.js";
+    import { PLAN_PRICES, PLUS_ON_SALE, PRO_ON_SALE, AI_ALLOWANCES, uses, planOf, describePlan, clientStore, mySubscription, startCheckout, openPortal } from "/kit/data/billing.js";
+    import { pounds } from "/kit/data/plan.js";
 
     const $ = (s) => document.querySelector(s);
     const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
     const tick = `<svg viewBox="0 0 24 24" fill="none" stroke="#5fe3a1" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7"/></svg>`;
     const spark = `<svg viewBox="0 0 24 24" fill="none" stroke="#f055dd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg>`;
     const li = (ic, t, sub) => `<li>${ic}<span>${t}${sub ? `<small>${sub}</small>` : ""}</span></li>`;
-    const save = annualSaving();
     const tester = new URLSearchParams(location.search).has("tester");
-    const canBuy = PRO_ON_SALE || tester;
-    let period = "month", store = null, sub = null, signedIn = false;
+    const canBuy = { plus: PLUS_ON_SALE || tester, pro: PRO_ON_SALE || tester };
+    let store = null, sub = null, signedIn = false;
 
     // ---------- the parts that don't depend on the learner ----------
-    $("#save-tag").textContent = `Save ${save.percent}%`;
+    $("#plus-amt").textContent = pounds(PLAN_PRICES.plus.month);
+    $("#pro-amt").textContent = pounds(PLAN_PRICES.pro.month);
     $("#free-list").innerHTML = [
-      li(tick, "Every course on every Gradify site", "Lessons, worked examples, labs and quizzes"),
-      li(tick, "Progress saved to your account", "Pick up on any device"),
-      li(tick, "Flashcards and spaced review", "Made from your own notes, in your browser"),
-      li(tick, "Planner, streaks and the Gradify road"),
-      li(spark, PRO_ON_SALE ? "A taste of Gradify AI" : "A taste of Gradify AI, when it launches", AI_ALLOWANCES.map((a) => uses(a, a.free)).join(" · ") + " a month"),
+      li(tick, "Create and use flashcards", "From your own notes, with spaced repetition"),
+      li(tick, "Create and use mind maps"),
+      li(tick, "Every course on every Gradify site", "Lessons, worked examples, labs, unit quizzes and practice questions"),
+      li(tick, "Basic revision and progress", "Due cards, streaks, XP and the Gradify road"),
+      li(tick, "Manual study planning"),
+      li(tick, "One study device", "Your work is kept in your account and you can look at it anywhere; you study on one device at a time, and can move it once a week"),
+      li(spark, "A taste of Gradify AI, when it launches", AI_ALLOWANCES.map((a) => uses(a, a.free)).join(" · ") + " a month"),
+    ].join("");
+    const group = (title, items) => `<h4>${esc(title)}</h4><ul>${items.map(([t, sub]) => li(tick, esc(t), sub ? esc(sub) : "")).join("")}</ul>`;
+    $("#plus-list").innerHTML = [
+      group("Gradify Intelligence", [["Smart Plan autopilot", "Your week planned and kept on track for you"], ["Readiness forecasts"], ["Cards ordered by Gradify", "What matters most and is fading comes first"], ["Adaptive card suggestions and revision recommendations"]]),
+      group("Exam preparation", [["Timed exams", "Over each part of a course and the whole course, with weak areas identified"], ["The complete question bank for every course"]]),
+      group("Calendar and productivity", [["Calendar sync", "Plan around Google, Apple or Outlook calendars and your timetable, and export your plan to them"], ["Reminders, even when Gradify is closed"], ["Automatic study-block scheduling"]]),
+      group("Every device", [["Study on all your devices", "Notes, flashcards, mind maps, progress and revision history, up to date everywhere"]]),
     ].join("");
     $("#pro-list").innerHTML = [
-      li(tick, "Everything in Free"),
+      li(spark, "Gradify AI", "Coming soon"),
       ...AI_ALLOWANCES.map((a) => li(spark, uses(a, a.pro), `a month, instead of ${a.free}`)),
-      li(tick, "Cancel any time", "You keep Pro until the end of the period you've paid for"),
+      li(spark, "More AI-powered learning as it arrives"),
     ].join("");
-    $("#allow-rows").innerHTML = AI_ALLOWANCES.map((a) => `<tr><th scope="row">${esc(a.label)}</th><td class="n">${a.free}</td><td class="n">${a.pro}</td></tr>`).join("");
+    $("#allow-rows").innerHTML = AI_ALLOWANCES.map((a) => `<tr><th scope="row">${esc(a.label)}</th><td class="n">${a.free}</td><td class="n">${a.free}</td><td class="n">${a.pro}</td></tr>`).join("");
 
     const faq = [
-      ["Monthly or yearly?", `Monthly is ${money(PRO_PRICES.month)} each month. Yearly is ${money(PRO_PRICES.year)} once a year, which works out at ${money(save.perMonth)} a month. Twelve monthly payments come to ${money(save.twelveMonths)}, so paying yearly saves ${money(save.saved)} (${save.percent}%), about ${save.monthsFree} months free.`],
-      ["When am I charged?", "Straight away when you subscribe, then on the same date each month or each year. Your Account page shows the next renewal date."],
-      ["How do allowances work on yearly billing?", "The same as monthly: Gradify AI allowances are per month on both plans, and unused uses don't roll over."],
-      ["Can I switch between monthly and yearly?", "Yes, from Manage billing on your Account page. Stripe adjusts the price for the time left on your current period."],
-      ["How do I cancel?", "From Manage billing on your Account page, any time, in two clicks. You keep Pro until the end of the period you've already paid for, then move to Free. Nothing you've made is deleted."],
-      ["What if a payment fails?", "Stripe tries your card again over the next few days and emails you. You keep Pro for 3 days after a renewal date while it does. Update your card in Manage billing to keep Pro going."],
-      ["What happens when Pro ends?", "You move to Free. Every course, note, flashcard and bit of progress stays in your account; only the Gradify AI allowance goes back to Free's."],
-      ["Is there a fair-use limit?", "Yes. As well as the allowances above, each account has a monthly fair-use limit on how much Gradify AI it can use, which keeps Gradify Pro's price low. If you reach it, Gradify AI pauses until your allowance resets; everything else on Gradify keeps working. Long tutor conversations count once, and a study pack you've already made opens again without using anything."],
+      ["When am I charged?", `Straight away when you subscribe, then on the same date each month: ${pounds(PLAN_PRICES.plus.month)} a month for Gradify Plus, ${pounds(PLAN_PRICES.pro.month)} a month for Gradify Pro. Your Account page shows the next renewal date.`],
+      ["Can I switch between Plus and Pro?", "Yes, from Manage billing on your Account page, once Gradify Pro opens. Stripe adjusts the price for the time left in your current month."],
+      ["How do I cancel?", "From Manage billing on your Account page, any time, in two clicks. You keep your plan until the end of the month you've already paid for, then move to Free. Nothing you've made is deleted."],
+      ["What happens when Plus ends?", "You move to Free. Every note, flashcard, mind map and bit of progress stays in your account. You study on one device again, and can choose which; the others can still open everything."],
+      ["What if a payment fails?", "Stripe tries your card again over the next few days and emails you. You keep your plan for 3 days after a renewal date while it does. Update your card in Manage billing to keep it going."],
+      ["Can I change my mind after subscribing?", "Yes. You can cancel within 14 days of subscribing for a refund. If you've already used your plan in that time, the refund is reduced for the days you used. Ask from Manage billing or email hello@getgradify.com. The terms page has the details."],
+      ["Is there a fair-use limit on Gradify AI?", "Yes. As well as the allowances above, each account has a monthly fair-use limit on how much Gradify AI it can use. If you reach it, Gradify AI pauses until your allowance resets; everything else keeps working."],
       ["Do the prices include VAT?", "Yes. Prices are in pounds sterling and include VAT."],
     ];
     $("#faq").innerHTML = faq.map(([q, a]) => `<details class="glass"><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("");
-
-    function renderPrice() {
-      if (period === "year") {
-        $("#pro-amt").textContent = money(PRO_PRICES.year); $("#pro-per").textContent = "a year";
-        $("#pro-note").innerHTML = `${money(save.perMonth)} a month, billed yearly. <b>Save ${money(save.saved)}</b> on monthly.`;
-      } else {
-        $("#pro-amt").textContent = money(PRO_PRICES.month); $("#pro-per").textContent = "a month";
-        $("#pro-note").innerHTML = `Or ${money(PRO_PRICES.year)} a year, and save ${save.percent}%.`;
-      }
-      renderCta();
-    }
 
     function notice(tone, title, text) {
       $("#status").innerHTML = `<div class="notice ${tone}" role="status"><span class="ic" aria-hidden="true">${tone === "ok" ? "✓" : tone === "warn" ? "!" : "i"}</span><p><b>${esc(title)}</b> ${esc(text)}</p></div>`;
     }
 
+    const notifyForm = (id, what) => `<form class="notify" data-list="${esc(what)}" novalidate><label for="${id}">Opening soon. Get one email when it does:</label><div class="notify-row"><input id="${id}" type="email" autocomplete="email" placeholder="you@example.com" required><button class="btn btn-primary lg" type="submit">Notify me</button></div><p class="notify-msg" role="status" aria-live="polite">No payment, no account needed. <a href="/privacy.html#launch-lists">What we keep</a>.</p></form>`;
+    function ctaFor(plan, current) {
+      const name = plan === "plus" ? "Gradify Plus" : "Gradify Pro";
+      if (current === plan || (current !== "free" && sub && describePlan(sub).manage)) return `<button class="btn ${plan === "plus" ? "btn-primary" : "btn-ghost"} lg" data-manage type="button">Manage billing</button><p>Change plan, update your card, see invoices or cancel.</p>`;
+      if (current === "pro" && plan === "plus") return `<p>Included in your Gradify Pro.</p>`;
+      if (!canBuy[plan]) return notifyForm(`notify-${plan}`, plan === "plus" ? PLUS_LIST : PRO_LIST);
+      if (!signedIn) return `<a class="btn ${plan === "plus" ? "btn-primary" : "btn-ghost"} lg" href="/app.html#/account">Sign in to get ${name}</a><p>Sign in first so ${name} is added to your account.</p>`;
+      return `<button class="btn ${plan === "plus" ? "btn-primary" : "btn-ghost"} lg" data-buy="${plan}" type="button">Get ${name} · ${pounds(PLAN_PRICES[plan].month)} a month</button><p>Secure checkout by Stripe. Cancel any time.</p>`;
+    }
     function renderCta() {
       const plan = planOf(sub);
       $("#free-current").hidden = !signedIn || plan !== "free";
+      $("#plus-current").hidden = plan !== "plus";
       $("#pro-current").hidden = plan !== "pro";
+      $("#pro-soon").hidden = PRO_ON_SALE;
       $("#free-cta").innerHTML = signedIn
         ? `<a class="btn btn-ghost lg" href="/app.html">${plan === "free" ? "Keep learning" : "Open Gradify"}</a>`
         : `<a class="btn btn-ghost lg" href="/app.html#/account">Start free</a><p>Sign in with email or Google. No card needed.</p>`;
-      const label = period === "year" ? `Get Pro yearly · ${money(PRO_PRICES.year)}` : `Get Pro monthly · ${money(PRO_PRICES.month)}`;
-      let html;
-      if (plan === "pro" || (sub && describePlan(sub).manage)) html = `<button class="btn btn-primary lg" id="manage" type="button">Manage billing</button><p>Change plan, update your card, see invoices or cancel.</p>`;
-      else if (!canBuy) html = `<form class="notify" id="notify" novalidate><label for="notify-email">Not on sale yet. Get one email when it opens:</label><div class="notify-row"><input id="notify-email" type="email" autocomplete="email" placeholder="you@example.com" required><button class="btn btn-primary lg" type="submit">Notify me</button></div><p id="notify-msg" role="status" aria-live="polite">No payment, no account needed. <a href="/privacy.html#launch-lists">What we keep</a>.</p></form>`;
-      else if (!signedIn) html = `<a class="btn btn-primary lg" href="/app.html#/account">Sign in to get Pro</a><p>Sign in first so Pro is added to your account.</p>`;
-      else html = `<button class="btn btn-primary lg" id="buy" type="button">${label}</button><p>Secure checkout by Stripe. Cancel any time.</p>`;
-      $("#pro-cta").innerHTML = html;
-      $("#notify")?.addEventListener("submit", async (e) => {
+      $("#plus-cta").innerHTML = ctaFor("plus", plan);
+      $("#pro-cta").innerHTML = ctaFor("pro", plan);
+      document.querySelectorAll("form.notify").forEach((f) => f.addEventListener("submit", async (e) => {
         e.preventDefault();
-        const f = e.currentTarget, msg = $("#notify-msg"), input = f.querySelector("input"), btn = f.querySelector("button");
+        const msg = f.querySelector(".notify-msg"), input = f.querySelector("input"), btn = f.querySelector("button");
         btn.disabled = true;
-        try { msg.textContent = await joinWaitlist(input.value, PRO_LIST); f.querySelector(".notify-row").hidden = true; }
+        try { msg.textContent = await joinWaitlist(input.value, f.dataset.list); f.querySelector(".notify-row").hidden = true; }
         catch (err) { msg.textContent = err.invalid ? err.message : "Sorry, that didn't work. Please try again in a moment."; input.focus(); }
         finally { btn.disabled = false; }
-      });
-      $("#buy")?.addEventListener("click", (e) => go(e.currentTarget, () => startCheckout(store, period, "/pricing.html")));
-      $("#manage")?.addEventListener("click", (e) => go(e.currentTarget, () => openPortal(store, "/pricing.html")));
+      }));
+      document.querySelectorAll("[data-buy]").forEach((b) => b.addEventListener("click", (e) => go(e.currentTarget, () => startCheckout(store, b.dataset.buy, "month", "/pricing.html"))));
+      document.querySelectorAll("[data-manage]").forEach((b) => b.addEventListener("click", (e) => go(e.currentTarget, () => openPortal(store, "/pricing.html"))));
     }
 
     async function go(btn, fn) {
@@ -259,7 +260,6 @@
       catch (e) { btn.disabled = false; btn.textContent = was; notice("warn", "That didn't work.", e.message); }
     }
 
-    document.querySelectorAll('input[name="period"]').forEach((r) => r.addEventListener("change", () => { period = r.value; renderPrice(); }));
 
     // ---------- the learner ----------
     async function loadLearner() {
@@ -277,18 +277,19 @@
       const result = new URLSearchParams(location.search).get("checkout");
       if (result === "cancelled") return notice("info", "Checkout cancelled.", "You haven't been charged.");
       if (result !== "success") return;
-      notice("info", "Payment received.", "Adding Gradify Pro to your account…");
-      for (let i = 0; i < 12 && planOf(sub) !== "pro"; i++) {
+      notice("info", "Payment received.", "Adding your plan to your account…");
+      for (let i = 0; i < 12 && planOf(sub) === "free"; i++) {
         await new Promise((r) => setTimeout(r, 2500));
         sub = await mySubscription(store).catch(() => sub);
       }
       renderCta();
-      if (planOf(sub) === "pro") notice("ok", "Welcome to Gradify Pro.", describePlan(sub).line);
-      else notice("warn", "Your payment went through, but Pro isn't showing yet.", "This can take a minute. Refresh this page shortly; if it still says Free, your receipt from Stripe is your proof of payment.");
+      const plan = planOf(sub);
+      if (plan !== "free") notice("ok", `Welcome to ${plan === "plus" ? "Gradify Plus" : "Gradify Pro"}.`, describePlan(sub).line);
+      else notice("warn", "Your payment went through, but your plan isn't showing yet.", "This can take a minute. Refresh this page shortly; if it still says Free, your receipt from Stripe is your proof of payment.");
     }
 
-    if (!canBuy) notice("info", "Gradify Pro is coming soon.", "Everything on Gradify is free and open now. Gradify Pro opens when Gradify AI launches; the prices shown are the planned launch prices.");
-    renderPrice();
+    if (!canBuy.plus) notice("info", "Gradify Plus opens soon.", "Until then, everything on Gradify is free and open, including what will be part of Plus. Gradify Pro opens when Gradify AI launches. The prices shown are the launch prices.");
+    renderCta();
     await loadLearner();
     renderCta();
     if (store) await afterCheckout();

@@ -2,7 +2,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { createHmac } from "node:crypto";
-import { form, verifyStripeEvent, subscriptionRow, userOf, priceFor } from "../supabase/functions/_shared/billing.js";
+import { form, verifyStripeEvent, subscriptionRow, userOf, priceFor, planForPrice, mayBuy } from "../supabase/functions/_shared/billing.js";
 
 const sign = (payload, secret, t) => `t=${t},v1=${createHmac("sha256", secret).update(`${t}.${payload}`).digest("hex")}`;
 
@@ -28,7 +28,7 @@ test("subscription rows come from old and new Stripe API shapes", () => {
   const base = { id: "sub_1", customer: "cus_1", status: "active", cancel_at_period_end: false, metadata: { gradify_user_id: "user-1" } };
   // newer API versions keep the period on the subscription item
   const r = subscriptionRow({ ...base, items: { data: [{ current_period_start: 1_800_000_000, current_period_end: 1_802_592_000, price: { id: "price_m", recurring: { interval: "month" } } }] } });
-  assert.deepEqual({ ...r, updated_at: undefined }, { stripe_customer_id: "cus_1", stripe_subscription_id: "sub_1", status: "active", price_id: "price_m", billing_interval: "month",
+  assert.deepEqual({ ...r, updated_at: undefined }, { plan: "pro", stripe_customer_id: "cus_1", stripe_subscription_id: "sub_1", status: "active", price_id: "price_m", billing_interval: "month",
     current_period_start: new Date(1_800_000_000_000).toISOString(), current_period_end: new Date(1_802_592_000_000).toISOString(), cancel_at_period_end: false, updated_at: undefined });
   // older versions keep it on the subscription
   const o = subscriptionRow({ ...base, status: "past_due", current_period_end: 1_802_592_000, plan: { id: "price_y", recurring: { interval: "year" } } });
@@ -38,10 +38,31 @@ test("subscription rows come from old and new Stripe API shapes", () => {
   assert.equal(userOf({ client_reference_id: "user-2" }), "user-2");
 });
 
-test("checkout maps month and year to the configured prices, and refuses anything else", () => {
-  const env = { STRIPE_PRICE_MONTH: "price_m", STRIPE_PRICE_YEAR: "price_y" };
-  assert.equal(priceFor("month", env), "price_m");
-  assert.equal(priceFor("year", env), "price_y");
-  assert.throws(() => priceFor("week", env), /monthly or yearly/);
-  assert.throws(() => priceFor("month", {}), /isn't on sale yet/);
+test("checkout maps a plan to its configured price, and refuses anything else", () => {
+  const env = { STRIPE_PRICE_PLUS_MONTH: "price_plus", STRIPE_PRICE_PRO_MONTH: "price_pro" };
+  assert.equal(priceFor("plus", "month", env), "price_plus");
+  assert.equal(priceFor("pro", "month", env), "price_pro");
+  assert.throws(() => priceFor("plus", "week", env), /monthly/);
+  assert.throws(() => priceFor("gold", "month", env), /Plus or Gradify Pro/);
+  assert.throws(() => priceFor("plus", "year", env), /isn't on sale yet/, "no yearly price is configured");
+  assert.throws(() => priceFor("plus", "month", {}), /Gradify Plus isn't on sale yet/);
+});
+
+test("a subscription's plan comes from its price: Plus by its price, Pro by its own or the original Pro prices", () => {
+  const env = { STRIPE_PRICE_PLUS_MONTH: "price_plus", STRIPE_PRICE_PRO_MONTH: "price_pro", STRIPE_PRICE_MONTH: "price_old_m", STRIPE_PRICE_YEAR: "price_old_y" };
+  const sub = (price) => ({ id: "sub_1", customer: "cus_1", status: "active", items: { data: [{ price: { id: price, recurring: { interval: "month" } } }] } });
+  assert.equal(planForPrice("price_plus", env), "plus");
+  assert.equal(planForPrice("price_pro", env), "pro");
+  assert.equal(planForPrice("price_old_y", env), "pro");
+  assert.equal(planForPrice("price_other", env), null);
+  assert.equal(subscriptionRow(sub("price_plus"), env).plan, "plus");
+  assert.equal(subscriptionRow(sub("price_old_m"), env).plan, "pro");
+  assert.equal(subscriptionRow(sub("price_plus")).plan, "pro", "without the price ids, everything is Pro, as before");
+});
+
+test("Plus and Pro go on sale separately", () => {
+  assert.equal(mayBuy("a@x.com", { GRADIFY_PLUS_ON_SALE: "on" }, "plus"), true);
+  assert.equal(mayBuy("a@x.com", { GRADIFY_PLUS_ON_SALE: "on" }, "pro"), false);
+  assert.equal(mayBuy("a@x.com", { GRADIFY_PRO_ON_SALE: "on" }, "plus"), false);
+  assert.equal(mayBuy("t@x.com", { GRADIFY_BILLING_TESTERS: "t@x.com" }, "plus"), true);
 });

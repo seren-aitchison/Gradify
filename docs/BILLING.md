@@ -1,7 +1,54 @@
-# Gradify Pro billing: owner runbook
+# Gradify billing: owner runbook
 
-Gradify Pro is £7.99 a month or £63.99 a year (GBP, VAT included). It adds Gradify AI allowances; everything else on
-Gradify is free. Stripe takes the payments; Supabase records who is Pro.
+Three plans (17 November 2026), GBP, VAT included:
+
+| Plan | Price | What it is |
+|---|---|---|
+| Free | £0 | Learn with Gradify: flashcards, mind maps, every course, basic revision, unit quizzes and practice, basic progress, manual planning, on one active study device |
+| Gradify Plus | £10 a month | Gradify organises, optimises and manages your learning: Gradify Intelligence, exam preparation, calendar sync and reminders, every device |
+| Gradify Pro | £15 a month | Everything in Plus, and Gradify AI. Coming soon: on sale once Gradify AI is switched on |
+
+Stripe takes the payments; Supabase records each learner's plan (`subscriptions.plan`, `plan_of()`). The original Pro
+prices (£7.99 a month, £63.99 a year) are still in Stripe for anyone already on them; nobody is (0 subscriptions on
+17 November 2026), so they can be archived.
+
+## Plus: how it's enforced
+
+| Feature | Where it's enforced | How |
+|---|---|---|
+| Every device | Database (strong) | Free: changes only from the active study device (`may_write()`, restrictive RLS on study tables; the app sends `x-gradify-device`). Reading is never limited. `use_device()` / `switch_device()`, once every 7 days (`billing_settings.device_switch_days`) |
+| Calendar sync | Edge Function (strong) | `calendar-sync` refuses without Plus (`plus_allowed()`) |
+| Reminders when Gradify is closed | Edge Function (strong) | `push-send` skips learners without Plus (`plus_allowed_for()`) |
+| Gradify Intelligence | App (soft) | Autopilot, Smart Plan, the Intelligence page, card ordering, readiness and suggestion widgets (`kit/data/plan.js`) |
+| Exam preparation | App (soft) | Course Exams and Problems tabs. Course content itself is public |
+
+Soft means the feature runs in the browser, so someone determined could get round it. That's a commercial limit, not a
+security boundary. Tests: `tests/plans.test.mjs` (database), `tests/billing-*.test.mjs`.
+
+## Putting Gradify Plus on sale (go-live checklist)
+
+Nothing is limited for anyone until step 6. Do them in order:
+
+1. **Payment terms reviewed.** `terms.html#plans` covers renewal, cancellation, the 14-day right to cancel and price
+   changes. Have it checked, and add Gradify Ltd's company number and registered office to the terms and privacy pages.
+2. **Apply the migration** `supabase/migrations/20261117120000_plus_plan.sql` (`node scripts/supabase-admin.mjs migrate`,
+   which rehearses it on a copy of production first). With `plans_enforced` off it changes nothing anyone sees.
+3. **Deploy the functions:** `billing-checkout`, `billing-webhook`, `calendar-sync`, `push-send`.
+4. **Supabase secrets:** `STRIPE_PRICE_PLUS_MONTH` = `price_1UclOUEOmpIuKzUMzo9QxcRh` (£10),
+   `STRIPE_PRICE_PRO_MONTH` = `price_1UclOUEOmpIuKzUMxHujazXB` (£15). Keep `STRIPE_PRICE_MONTH` / `STRIPE_PRICE_YEAR`
+   while anyone is on the original Pro prices.
+5. **Stripe portal:** Settings → Billing → Customer portal → Subscriptions → allow switching, with the Gradify Plus and
+   Gradify Pro products and their monthly prices. Then `NODE_USE_ENV_PROXY=1 node scripts/check-stripe.mjs`: every
+   line ok.
+6. **One real payment** as a tester (`GRADIFY_BILLING_TESTERS`, then `pricing.html?tester`), as below, for Plus.
+7. **Switch it on, all together:**
+   - Supabase secret `GRADIFY_PLUS_ON_SALE` = `on`
+   - `update public.billing_settings set plans_enforced = true;`
+   - `PLUS_ON_SALE = true` in `kit/data/billing.js` (update the test that checks it in the same commit), and push.
+8. Email the Gradify Plus launch list (`select email from public.waitlist where site = 'Gradify Plus'`), then delete it.
+
+To undo: set `plans_enforced = false` and `GRADIFY_PLUS_ON_SALE` off, and `PLUS_ON_SALE = false`. Everything opens again
+at once; subscriptions are untouched.
 
 ## How it fits together
 
@@ -75,7 +122,7 @@ Do this once, before putting Pro on sale. It charges a real card £7.99; refund 
 
 ## Putting Gradify Pro on sale
 
-Only once Gradify AI is switched on (below), because Pro sells nothing else:
+Only once Gradify AI is switched on (below), because Pro adds nothing else to Plus:
 
 1. Supabase secret `GRADIFY_PRO_ON_SALE` = `on`.
 2. `PRO_ON_SALE = true` in `kit/data/billing.js` (a test reminds you of this rule; update it in the same commit).
