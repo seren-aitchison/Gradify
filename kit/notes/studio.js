@@ -196,8 +196,10 @@ function analyse(raw) {
       }
       const r = resolve(clause, subject);
       const f = readFact(r.text, abbr);
-      // a loose fragment of a few words ("2 stages") is a heading, not a fact
-      if (!f || (!f.term && !r.added && clause.split(" ").length < 4)) continue;
+      if (!f) { subject = null; continue; }   // a one-word heading
+      // a loose fragment of a few words ("Respiration", "2 stages") is a heading: it starts a new context, so "it" in
+      // the next sentence mustn't borrow the subject from before it
+      if (!f.term && !r.added && clause.split(" ").length < 4) { subject = null; continue; }
       f.src = clause;          // the notes' own words, for checking the card against them
       f.added = r.added;       // how many characters at the start came from the sentence before
       f.vague = r.vague;       // starts with "it" or a verb, and there's nothing to say what it is
@@ -737,6 +739,9 @@ async function make() {
   render();
 }
 
+// a date as YYYY-MM-DD on the learner's own calendar (toISOString() would be UTC: the day before, in British Summer Time)
+const localDay = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+
 // The browser extractor as a study pack, in the same shape Gradify AI returns
 export function browserPack(text, title = "My notes", today = new Date()) {
   const a = analyseNotes(text, today);
@@ -758,7 +763,7 @@ export function browserPack(text, title = "My notes", today = new Date()) {
     title: a.title === "My notes" ? title : a.title,
     summary: `${a.facts.length} facts in ${a.groups.length} topics.`,
     topics, equations: a.equations.map((e) => ({ symbolic: e, spoken: e })),
-    dates: a.dates.map((d) => ({ what: d.what, date: d.when.toISOString().slice(0, 10), kind: /exam|quiz|test/i.test(d.what) ? "exam" : "deadline" })),
+    dates: a.dates.map((d) => ({ what: d.what, date: localDay(d.when), kind: /exam|quiz|test/i.test(d.what) ? "exam" : "deadline" })),
     unclear: [],
   };
 }

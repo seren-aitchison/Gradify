@@ -91,3 +91,21 @@ test("a signed-in learner still gets a pack when Gradify AI is off", async () =>
     await assert.rejects(generate({ text: PROSE, title: "x", store }), /longer than your plan/);
   } finally { globalThis.fetch = real; }
 });
+
+// From code review: numbers and short terms are checked, headings reset the subject, and dates stay on the local day.
+test("an answer with the wrong number or an unrelated short term isn't 'checked'", () => {
+  const notes = "The human heart has 4 chambers. Mitosis produces 2 daughter cells.";
+  assert.equal(answerSupport("4", notes), 1);
+  assert.ok(answerSupport("5", notes) < 0.6);
+  assert.ok(answerSupport("The human heart has 5 chambers.", notes) < 1);
+  assert.ok(answerSupport("ATP", notes) < 0.6, "a short term the notes never mention");
+  assert.equal(answerSupport("2 daughter cells", notes), 1);
+});
+test("a heading starts a new context: 'it' after it doesn't borrow the subject from before", () => {
+  const cards = cardsOf("Photosynthesis: conversion of light energy into chemical energy.\nRespiration\nIt releases energy in mitochondria.");
+  assert.ok(!cards.some((c) => /^Photosynthesis releases/.test(c.front)), JSON.stringify(cards.map((c) => c.front)));
+});
+test("dates in notes are saved on the learner's own calendar day", () => {
+  const pack = browserPack("Biology\nlab report due 3 November", "Lab", new Date(2026, 9, 1));
+  assert.equal(pack.dates[0].date.slice(5), "11-03");
+});

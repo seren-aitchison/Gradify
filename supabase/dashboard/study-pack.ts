@@ -163,15 +163,19 @@ function groundingScore(quote, notes) {
 // The quote proves the notes say something; this checks the card's answer says the same thing.
 // The share of the answer's content words (or close forms of them) that appear in the notes.
 // A fill-in-the-blank answer has to appear in the notes as it is.
+const SHORT_COMMON = new Set("a an the and or of to in on at by for is are was its it as be has had not but can may per via all any one two how who why use our out off".split(" "));
 const COMMON = new Set("that this with from into when what which their there they them than then have been were will would could should about also because between other some more most only very each such these those where while your".split(" "));
 /** @param {string} answer @param {string} notes @param {string} [kind] @returns {number} */
 function answerSupport(answer, notes, kind) {
   const n = ` ${norm(notes)} `, a = norm(answer);
   if (!a) return 0;
   if (kind === "cloze") return n.includes(` ${a} `) ? 1 : 0;
-  const w = a.split(" ").filter((x) => x.length > 3 && !COMMON.has(x));
-  if (!w.length) return 1;
-  return w.filter((x) => n.includes(` ${x.length > 5 ? x.slice(0, x.length - 2) : x}`)).length / w.length;
+  // numbers and short terms (ATP, CO2, 4) count, and must appear exactly: "5 chambers" isn't "4 chambers"
+  const short = (x) => /\d/.test(x) || (x.length >= 2 && x.length <= 3 && !SHORT_COMMON.has(x));
+  const w = a.split(" ").filter((x) => short(x) || (x.length > 3 && !COMMON.has(x)));
+  // nothing to check isn't proof of support: the whole answer must then be in the notes
+  if (!w.length) return n.includes(` ${a} `) ? 1 : 0;
+  return w.filter((x) => (short(x) ? n.includes(` ${x} `) : n.includes(` ${x.length > 5 ? x.slice(0, x.length - 2) : x}`))).length / w.length;
 }
 
 /** @typedef {{ topic: string, front: string, back: string, kind: string, importance: string,
