@@ -505,5 +505,21 @@ footer b { color: var(--fg); font-weight: 600; }
 @media (max-width: 960px) { .pro-later { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .notify-row { flex-direction: column; } .pro-later { padding: 18px; } }
 .how-cta { display: flex; justify-content: center; margin: 28px 0 0; }
+/* What's inside: numbers from the courses, a real mind map, learners' words (once they've agreed to share them) */
+.proof { padding: clamp(64px, 9vw, 120px) 0 0; }
+.proof-nums { margin: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.proof-num { margin: 0; padding: 18px 18px 16px; border-radius: 20px; display: flex; flex-direction: column-reverse; gap: 4px; }
+.proof-num dd { margin: 0; font-size: clamp(26px, 3.2vw, 38px); font-weight: 800; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.proof-num dt { font-size: 13px; color: var(--mute); }
+.proof-map { margin: 16px 0 0; padding: 14px; border-radius: 24px; }
+.proof-map img { display: block; width: 100%; height: auto; border-radius: 14px; }
+.proof-map figcaption { margin: 12px 4px 2px; font-size: 14px; line-height: 1.5; color: var(--mute); }
+.proof-map figcaption b { color: var(--fg); }
+.proof-quotes { margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.proof-quotes[hidden] { display: none; }
+.proof-quote { margin: 0; padding: 20px; border-radius: 20px; }
+.proof-quote blockquote { margin: 0 0 10px; font-size: 16px; line-height: 1.5; }
+.proof-quote figcaption { font-size: 13px; color: var(--mute); }
+@media (max-width: 900px) { .proof-nums { grid-template-columns: repeat(2, minmax(0, 1fr)); } .proof-num:first-child { grid-column: 1 / -1; } }
 
 .compare-table .no { color: var(--faint); }

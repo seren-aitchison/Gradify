@@ -38,7 +38,10 @@ reference to it.
   link is ("uses", "about", "tests"). The full run drew 23,629 links, in 14,112 of the 49,895 maps.
 - **Gaps are shown, not hidden.** An objective that no part of the lesson answers gets a child node: "The notes don't
   cover this directly yet". `node scripts/map-gaps.mjs` lists all of them in `docs/reports/map-gaps.md`, by
-  subject and lesson, to guide improving the lessons. The full run found 748 objectives in 691 lessons.
+  subject and lesson, to guide improving the lessons. The matcher (engine `maps-3`) also counts the short technical
+  tokens science is written in (pH, Kp, GC, SN1), words with the same stem, and a lesson's key terms, formulas and worked
+  examples; instruction verbs ("describe", "explain") never count. On 17 November 2026, 203 objectives were left, and
+  none in chemistry or biology, which were written up first.
 - **No AI and no storage.** Maps are built in the browser in about 10 ms a lesson, so there's no cost, no database table
   and no background job. The version is a hash of the engine and the notes (`maps-2.<hash>`), so editing a lesson's
   notes changes its maps. Each page builds a lesson's maps once (`mapsFor`).

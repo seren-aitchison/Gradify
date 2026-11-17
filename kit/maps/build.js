@@ -15,7 +15,7 @@
 // regenerate. A map's version is a hash of the engine version and the lesson's notes: change the notes and the maps
 // change with them. Pure, so Node can test it (tests/mindmaps.test.mjs).
 
-export const ENGINE = "maps-2";
+export const ENGINE = "maps-3";
 
 export const MAPS = [
   { key: "topic", n: 1, title: "The complete topic", purpose: "The whole lesson at a glance: every section, its key points and terms." },
@@ -33,6 +33,16 @@ const norm = (s) => plain(s).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim
 // words that carry meaning: an objective is only linked to a point if they share one of these, not "from" or "with"
 const COMMON = new Set("from with that this which their there they them than then have been were will would could should about also more most only very each such these those where while into your what when does done using used make makes made able must need needs between within without other some many much over under after before because".split(" "));
 const words = (s) => norm(s).split(" ").filter((w) => w.length > 3 && !COMMON.has(w));
+// for matching objectives: those words, plus the short technical tokens science and maths are written in (pH, Kp, Ka,
+// Rf, GC, MS, NMR, SN1, E1, ΔG): two or three characters with a digit, a capital after the first letter, or two
+// capitals; or a capital and a lower-case letter that aren't an everyday word ("Be", "In", "Of"…)
+const EVERYDAY = new Set("am an as at be by do go he if in is it me my no of on or so to up us we".split(" "));
+// the instruction in an objective ("Describe…", "Explain…") says what to do, not what about: never a shared word
+const ASK = new Set("describe describes explain explains evaluate identify calculate compare distinguish state define outline discuss analyse analyze apply interpret recognise recognize understand list name give show predict justify assess summarise summarize construct select write convert relate examine illustrate determine estimate demonstrate consider".split(" "));
+const keyWords = (s) => {
+  const short = (plain(s).match(/[\p{L}\p{N}⁺⁻₀-₉]+/gu) || []).filter((t) => t.length >= 2 && t.length <= 3 && (/\p{N}/u.test(t) || /^.\p{Lu}/u.test(t) || /^\p{Lu}{2,}$/u.test(t) || (/^\p{Lu}\p{Ll}$/u.test(t) && !EVERYDAY.has(t.toLowerCase()))));
+  return [...new Set([...words(s).filter((w) => !ASK.has(w)), ...short.map((t) => t.toLowerCase())])];
+};
 
 /** A node's title and detail from a line of notes: a bold lead is the title; a long line keeps its full text as detail. */
 export function split(text, max = 60) {
@@ -177,13 +187,22 @@ function mapApply(L, S, { labTitle = (id) => id } = {}) {
 
 function mapExam(L, S) {
   const kids = [];
-  const pool = S.flatMap((s) => s.items.filter((it) => ["key", "point", "para"].includes(it.kind)).map((it) => ({ it, w: new Set(words(it.text)), s })));
+  // what can answer an objective: the lesson's points and key points, and its formulas, worked examples and key terms
+  const pool = [
+    ...S.flatMap((s) => s.items.filter((it) => ["key", "point", "para", "equation", "example"].includes(it.kind))
+      .map((it) => ({ it, w: new Set(keyWords([it.text, it.note, ...(it.steps || [])].filter(Boolean).join(" "))), s }))),
+    ...(L.terms || []).map(([t, d], i) => ({ it: { kind: "term", text: t, note: d, ref: `t${i}` }, w: new Set(keyWords(`${t} ${d}`)) })),
+  ];
+  const answer = (it) => (it.kind === "equation" || it.kind === "term" ? node(it.text, { detail: it.note, kind: it.kind, src: it.ref }) : fromText(it.text, it.kind, it.ref));
   // each objective with the points that share the most of its words: what to be able to say for it
   if (L.objectives?.length) kids.push(node("Be able to", { kind: "group", children: L.objectives.map((o, i) => {
-    const ow = words(o);
-    const best = pool.map((p) => ({ p, score: ow.filter((w) => p.w.has(w)).length + (p.it.kind === "key" ? 0.5 : 0) })).filter((x) => x.score >= 1).sort((a, b) => b.score - a.score).slice(0, 3);
+    const ow = keyWords(o);
+    // a word matches itself, or a longer word with the same stem ("stereoisomerism" and "stereoisomers")
+    const stem = (w) => (w.length >= 7 ? w.slice(0, 7) : null);
+    const hits = (p) => ow.filter((w) => p.w.has(w) || (stem(w) && [...p.w].some((x) => stem(x) === stem(w)))).length;
+    const best = pool.map((p) => ({ p, score: hits(p) + (p.it.kind === "key" ? 0.5 : 0) })).filter((x) => x.score >= 1).sort((a, b) => b.score - a.score).slice(0, 3);
     // an objective nothing in the notes answers is shown as a gap, not filled in
-    return node(o, { kind: "objective", src: `o${i}`, children: best.length ? best.map(({ p }) => fromText(p.it.text, p.it.kind, p.it.ref)) : [node("The notes don't cover this directly yet", { kind: "gap" })] });
+    return node(o, { kind: "objective", src: `o${i}`, children: best.length ? best.map(({ p }) => answer(p.it)) : [node("The notes don't cover this directly yet", { kind: "gap" })] });
   }) }));
   const must = [...(L.summary || []).map((x, i) => node(x, { kind: "summary", src: `s${i}` })), ...S.flatMap((s) => s.items.filter((it) => it.kind === "key")).map((it) => fromText(it.text, "key", it.ref))];
   if (must.length) kids.push(node("Must know", { kind: "group", children: must }));

@@ -33,6 +33,9 @@ The search index is built with the content API: `node scripts/build-api.mjs` wri
 | `Question >>>` then indented lines | a multi-line card |
 | `![label](img:…)` | an image (added with the Add image button, or pasted) |
 
+**Photo of notes (Gradify Pro):** up to 5 photos of notes, handwriting included, are read by Gradify AI and become
+cards in the deck, to check against the photo. Coming with Gradify Pro: see `docs/BILLING.md`.
+
 A card's id comes from its own text, so editing other lines never resets its schedule. Select words and press Cloze
 (or Ctrl+Shift+C) to hide them. Suggest cards turns plain lines ("Diffusion: the net movement…", "Enzymes are…") into
 cards, using the same browser extractor as Notes Studio (`kit/notes/studio.js`).
