@@ -16,6 +16,8 @@ import { currentSite, nameHtml, pathOf } from "../core/site.js";
 const SITE = currentSite();
 trackView(SITE || "Gradify app");
 import { generate, regenerateCard, generateQuestions } from "../notes/engine.js";
+import { reviewCard } from "../notes/pack.js";
+import { gradeTyped, VERDICT_TEXT } from "../learning/typed.js";
 import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "../learning/srs.js";
 import { topicProfiles, practiceOrder, LEVELS } from "../learning/mastery.js";
 import { sixHtml, calibrationHtml, HOW } from "../learning/mastery-view.js";
@@ -575,8 +577,19 @@ async function renderDeck(id) {
     }
   });
 }
+// what the card reviewer (kit/notes/pack.js) found, in words a learner can act on
+const ISSUES = {
+  leak: "The question gives the answer away. Edit it",
+  vague: "Starts with “it” or “this”. Say what it is",
+  "long-front": "A long question. Try splitting it",
+  "long-back": "A long answer. Try splitting it",
+  "yes-no": "A yes-or-no question. Ask for the fact instead",
+  negative: "Asks what isn't true, which is easy to misread",
+};
 function cardRow(c) {
-  const [cls, label] = GROUNDED[c.grounded] || GROUNDED.bonus;
+  let [cls, label] = GROUNDED[c.grounded] || GROUNDED.bonus;
+  const issue = c.edited ? null : reviewCard(c).find((i) => ISSUES[i]);
+  if (issue && c.grounded !== "no") [cls, label] = ["warn", ISSUES[issue]];
   return `<article class="c-row panel glass" data-id="${c.id}">
     <div class="c-body">${c.kind === "why" || c.kind === "apply" ? `<span class="kind-tag ${c.kind}">${c.kind === "why" ? "Explain" : "Apply"}</span>` : ""}<p class="c-front">${esc(c.front)}</p><p class="c-back">${esc(c.back)}</p>
       ${c.edited ? `<p class="c-src"><span class="g-pill info">Edited by you</span>${c.source_quote ? ` Source: “${esc(c.source_quote)}”` : ""}</p>`
@@ -665,6 +678,13 @@ async function renderStudy(arg) {
   let i = 0, shown = false, sure = null, t0 = Date.now(), xp = 0;
   const again = [];
   let attempt = "";
+  let grade = null;   // how close a typed answer was (kit/learning/typed.js), once the card is turned over
+  const reveal = () => {
+    const c = queue[i];
+    attempt = view.querySelector("#typed, #attempt")?.value ?? attempt;
+    grade = c.kind === "why" || c.kind === "apply" ? null : gradeTyped(attempt, c.back);
+    shown = true; draw();
+  };
   const draw = () => {
     const c = queue[i];
     const p = preview(c, srsOpts());
@@ -675,10 +695,12 @@ async function renderStudy(arg) {
         <span class="fc-icon" data-g3d="${esc(`${c.topic || ""} ${c.front}`)}" data-g3d-size="58"></span>
         <span class="kicker">${deep ? `<b class="kind-tag ${c.kind}">${c.kind === "why" ? "Explain" : "Apply"}</b>` : ""}${esc(c.topic || "")}${c.reps ? "" : " · new"}</span>
         <p class="fc-front">${esc(c.front)}</p>
+        ${!deep && !shown ? `<label class="fc-type"><span class="sr-only">Type your answer (optional)</span><input id="typed" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done" placeholder="Type your answer, or just think it" value="${esc(attempt)}"></label>` : ""}
         ${deep && !shown ? `<label class="fc-write"><span>${c.kind === "why" ? "Explain it in your own words" : "Work it out"} <em>optional, just for you</em></span><textarea id="attempt" rows="3" placeholder="${c.kind === "why" ? "Because…" : "It would…, because…"}">${esc(attempt)}</textarea></label>` : ""}
+        ${shown && grade ? `<div class="fc-typed v-${grade.verdict}" role="status"><b>${VERDICT_TEXT[grade.verdict]}</b><span>You typed “${esc(attempt)}”</span></div>` : ""}
         ${shown ? `${deep && attempt.trim() ? `<div class="fc-compare"><span>Your answer</span><p>${esc(attempt)}</p></div><span class="fc-model">Model answer</span>` : ""}<p class="fc-back">${esc(c.back)}</p>${c.source_quote ? `<p class="c-src">From your notes: “${esc(c.source_quote)}”</p>` : ""}${deep ? `<p class="c-src">Rate how close your ${c.kind === "why" ? "explanation" : "reasoning"} was, not just the result.</p>` : ""}` : ""}
       </article>
-      ${shown ? `<div class="rate4" role="group" aria-label="How well did you know it?">${RATINGS.map((r, k) => `<button type="button" class="r-${r}" data-r="${r}"><b>${r[0].toUpperCase() + r.slice(1)}</b><span>${fmtInterval(p[r])}</span><kbd>${k + 1}</kbd></button>`).join("")}</div>`
+      ${shown ? `<div class="rate4" role="group" aria-label="How well did you know it?">${RATINGS.map((r, k) => `<button type="button" class="r-${r}${grade?.suggest === r ? " suggested" : ""}" data-r="${r}"${grade?.suggest === r ? ' aria-describedby="suggest-note"' : ""}><b>${r[0].toUpperCase() + r.slice(1)}</b><span>${fmtInterval(p[r])}</span><kbd>${k + 1}</kbd></button>`).join("")}${grade ? `<p class="suggest-note" id="suggest-note">Suggested from what you typed</p>` : ""}</div>`
         : `<div class="sure" role="group" aria-label="How sure are you? Choosing one shows the answer.">
             <span class="sure-q">How sure are you?</span>
             ${SURE_BUTTONS.map(([k, label, key]) => `<button type="button" data-sure="${k}" class="sure-${k}"><b>${label}</b><kbd>${key}</kbd></button>`).join("")}
@@ -702,7 +724,7 @@ async function renderStudy(arg) {
       await store.addReview({ card_id: c.id, rating: r, interval_days: next.interval_days ?? null, ms: Date.now() - t0, confidence: sure, mode: reschedule ? "scheduled" : "practice" });
       if (r === "again" && !again.includes(c.id)) { again.push(c.id); queue.push({ ...c, ...next }); }
     }
-    i++; shown = false; sure = null; attempt = ""; t0 = Date.now();
+    i++; shown = false; sure = null; attempt = ""; grade = null; t0 = Date.now();
     if (i >= queue.length) return finish();
     draw();
   };
@@ -739,9 +761,10 @@ async function renderStudy(arg) {
   };
   const keys = (e) => {
     // typing an answer: ⌘/Ctrl+Enter shows the model answer
-    if (e.target.closest("input, textarea")) { if (e.key === "Enter" && (e.metaKey || e.ctrlKey) && !shown) { attempt = e.target.value; shown = true; draw(); } return; }
-    if (!shown && (e.key === " " || e.key === "Enter")) { e.preventDefault(); shown = true; draw(); }
-    else if (!shown && SURE_BUTTONS.some(([, , k]) => k.toLowerCase() === e.key.toLowerCase())) { sure = SURE_BUTTONS.find(([, , k]) => k.toLowerCase() === e.key.toLowerCase())[0]; shown = true; draw(); }
+    // a typed answer: Enter turns the card over and grades it
+    if (e.target.closest("input, textarea")) { if (!shown && e.key === "Enter" && (e.target.id === "typed" || e.metaKey || e.ctrlKey)) { e.preventDefault(); reveal(); } return; }
+    if (!shown && (e.key === " " || e.key === "Enter")) { e.preventDefault(); reveal(); }
+    else if (!shown && SURE_BUTTONS.some(([, , k]) => k.toLowerCase() === e.key.toLowerCase())) { sure = SURE_BUTTONS.find(([, , k]) => k.toLowerCase() === e.key.toLowerCase())[0]; reveal(); }
     else if (shown && ["1", "2", "3", "4"].includes(e.key)) rate(RATINGS[+e.key - 1]);
   };
   // listeners last only as long as this session; otherwise a second session in the same visit
@@ -750,10 +773,10 @@ async function renderStudy(arg) {
   addEventListener("keydown", keys, { signal: session.signal });
   addEventListener("hashchange", () => session.abort(), { once: true });
   view.addEventListener("click", (e) => {
-    attempt = view.querySelector("#attempt")?.value ?? attempt;
-    if (e.target.closest("#reveal")) { shown = true; draw(); return; }
+    if (!shown) attempt = view.querySelector("#typed, #attempt")?.value ?? attempt;
+    if (e.target.closest("#reveal")) { reveal(); return; }
     const sb = e.target.closest("[data-sure]");
-    if (sb) { haptic("tap"); sure = sb.dataset.sure; shown = true; draw(); return; }
+    if (sb) { haptic("tap"); sure = sb.dataset.sure; reveal(); return; }
     const r = e.target.closest("[data-r]");
     if (r) rate(r.dataset.r);
   }, { signal: session.signal });

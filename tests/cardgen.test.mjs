@@ -3,7 +3,7 @@
 // "dioxide", an unexplained "It takes place in the _____", and source quotes cut down to "The".
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { browserPack, normaliseNotes } from "../kit/notes/studio.js";
+import { browserPack, normaliseNotes, analyseNotes } from "../kit/notes/studio.js";
 import { cardsFromPack, answerSupport } from "../kit/notes/pack.js";
 
 const PROSE = `Photosynthesis
@@ -54,8 +54,7 @@ test("every card's quote is its whole source sentence, not the words before the 
 });
 
 test("plural terms ask \"What are…\"", () => {
-  const cards = cardsOf("limiting factors: light intensity, CO2 concentration, temperature");
-  assert.equal(cards[0].front, "What are the limiting factors?");
+  assert.equal(analyseNotes("limiting factors: light intensity, CO2 concentration, temperature").cards[0].q, "What are the limiting factors?");
 });
 
 test("\"checked against your notes\" needs the answer to be in the notes too, not just the quote", () => {

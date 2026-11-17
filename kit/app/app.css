@@ -1232,3 +1232,108 @@ section[data-tab] { gap: 16px; }
 .rd h3 svg, .ft h3 svg, .kg h3 svg, .cc h3 svg, .tx h3 svg { width: 18px; height: 18px; vertical-align: -3px; margin-right: 6px; }
 .rd-bar.empty { background: repeating-linear-gradient(90deg, rgba(var(--ink-rgb), .08) 0 6px, transparent 6px 10px); }
 .theme-pick { display: grid; gap: 6px; margin-top: 10px; } .theme-pick em { font-style: normal; color: var(--mute); font-size: 12.5px; margin-left: 6px; }
+
+/* ---------- Liquid Glass: the flashcard and the buttons under it ----------
+   Frosted, saturated glass over a slow wash of Gradify's spectrum, with a thin rainbow rim that turns, a specular
+   highlight along the top edge, and colour caught in the glass. Everything is CSS (no images), so it's drawn at the
+   screen's own resolution: as sharp on a 4K or Retina display as on any other. */
+@property --lg-a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+.study-session {
+  --lg-spectrum: conic-gradient(from var(--lg-a), #4641ff, #8b3dff, #f055dd, #ff5a4d, #ff8a00, #ffc002, #1fae8c, #3c78d8, #4641ff);
+  --lg-fill: light-dark(rgba(255, 255, 255, .58), rgba(24, 24, 34, .46));
+  --lg-fill-strong: light-dark(rgba(255, 255, 255, .78), rgba(30, 30, 42, .62));
+  --lg-hi: light-dark(rgba(255, 255, 255, .95), rgba(255, 255, 255, .32));
+  --lg-lo: light-dark(rgba(22, 22, 48, .08), rgba(0, 0, 0, .35));
+  --lg-ease: cubic-bezier(.2, .8, .2, 1);
+  position: relative; isolation: isolate;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility;
+}
+/* the light the glass bends: a soft spectrum behind the card */
+.study-session::before {
+  content: ""; position: absolute; z-index: -1; inset: 40px 0 60px; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(40% 50% at 25% 40%, rgba(70, 65, 255, .55), transparent 70%), radial-gradient(40% 50% at 75% 35%, rgba(240, 85, 221, .45), transparent 70%),
+    radial-gradient(35% 45% at 60% 80%, rgba(255, 138, 0, .35), transparent 70%), radial-gradient(30% 40% at 20% 85%, rgba(31, 174, 140, .3), transparent 70%);
+  filter: blur(60px); opacity: light-dark(.45, .6);
+}
+
+.flash-card {
+  position: relative; isolation: isolate; border: 0; border-radius: 32px; padding: 40px 36px; gap: 18px;
+  background: var(--lg-fill);
+  -webkit-backdrop-filter: blur(32px) saturate(190%); backdrop-filter: blur(32px) saturate(190%);
+  box-shadow: inset 0 1px 0 var(--lg-hi), inset 0 -1px 0 var(--lg-lo), inset 0 0 0 .5px rgba(255, 255, 255, .14),
+    0 40px 90px -40px rgba(240, 85, 221, .55), 0 18px 50px -30px rgba(70, 65, 255, .6), 0 2px 6px -2px rgba(0, 0, 0, .25);
+  animation: lg-in .45s var(--lg-ease) both;
+}
+/* the rainbow rim: the spectrum masked to a fine ring */
+.flash-card::before, .rate4 button::before, .sure button:not(.sure-skip)::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; padding: 1.5px; pointer-events: none;
+  background: var(--lg-spectrum);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: lg-turn 10s linear infinite;
+}
+/* the specular highlight along the top, and colour caught in the glass */
+.flash-card::after {
+  content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(120% 55% at 18% -12%, var(--lg-hi), transparent 46%),
+    radial-gradient(70% 55% at 104% 108%, rgba(240, 85, 221, .2), transparent 62%), radial-gradient(65% 50% at -4% 104%, rgba(70, 65, 255, .2), transparent 62%),
+    radial-gradient(55% 40% at 100% -6%, rgba(255, 192, 2, .14), transparent 60%);
+  opacity: light-dark(.75, 1);
+}
+.flash-card.shown { animation: lg-turn-over .5s var(--lg-ease) both; }
+.flash-card .fc-front { font-size: clamp(24px, 3.2vw, 34px); letter-spacing: -.025em; text-wrap: balance; }
+.flash-card .fc-back { font-size: 20px; text-wrap: pretty; border-top: 0; padding-top: 18px; position: relative; }
+.flash-card .fc-back::before { content: ""; position: absolute; top: 0; left: 50%; width: min(240px, 60%); height: 1px; translate: -50% 0; background: linear-gradient(90deg, transparent, #4641ff, #f055dd, #ff8a00, transparent); opacity: .7; }
+
+/* buttons: glass pills, each tinted by what it means */
+.rate4, .sure { gap: 10px; }
+.rate4 button, .sure button:not(.sure-skip) {
+  --tint: 140, 140, 255;
+  position: relative; isolation: isolate; border: 0; border-radius: 24px; padding: 14px 8px;
+  background: radial-gradient(90% 70% at 50% 120%, rgba(var(--tint), .28), transparent 70%), linear-gradient(180deg, color-mix(in srgb, var(--lg-hi) 35%, transparent), transparent 55%), var(--lg-fill);
+  -webkit-backdrop-filter: blur(22px) saturate(180%); backdrop-filter: blur(22px) saturate(180%);
+  box-shadow: inset 0 1px 0 var(--lg-hi), inset 0 -1px 0 var(--lg-lo), 0 12px 30px -18px rgba(var(--tint), .7), 0 2px 4px -2px rgba(0, 0, 0, .3);
+  transition: transform .2s var(--lg-ease), box-shadow .2s var(--lg-ease), background-color .2s;
+}
+.rate4 button::before, .sure button:not(.sure-skip)::before { opacity: .55; transition: opacity .2s; }
+.rate4 button:hover, .sure button:not(.sure-skip):hover { transform: translateY(-2px) scale(1.02); background-color: var(--lg-fill-strong); box-shadow: inset 0 1px 0 var(--lg-hi), inset 0 -1px 0 var(--lg-lo), 0 18px 36px -16px rgba(var(--tint), .85), 0 2px 4px -2px rgba(0, 0, 0, .3); }
+.rate4 button:hover::before, .sure button:not(.sure-skip):hover::before { opacity: 1; }
+.rate4 button:active, .sure button:not(.sure-skip):active { transform: scale(.97); transition-duration: .08s; }
+.rate4 button:focus-visible, .sure button:focus-visible { outline: 2px solid light-dark(#4641ff, #fff); outline-offset: 3px; }
+.rate4 b, .sure b { font-size: 15px; letter-spacing: -.01em; }
+.r-again { --tint: 255, 90, 90; } .r-hard { --tint: 255, 170, 60; } .r-good { --tint: 60, 215, 160; } .r-easy { --tint: 110, 150, 255; }
+.sure .sure-sure { --tint: 60, 215, 160; } .sure .sure-unsure { --tint: 255, 170, 60; } .sure .sure-guess { --tint: 255, 90, 90; }
+/* the rating suggested by a typed answer */
+.rate4 button.suggested { transform: translateY(-2px); box-shadow: inset 0 1px 0 var(--lg-hi), 0 0 0 3px rgba(var(--tint), .45), 0 18px 40px -14px rgba(var(--tint), .9); }
+.rate4 button.suggested::before { opacity: 1; padding: 2px; animation-duration: 3.5s; }
+.suggest-note { grid-column: 1 / -1; margin: 2px 0 0; text-align: center; font-size: 12px; color: var(--faint); }
+
+/* typed recall */
+.fc-type { width: min(100%, 28em); }
+.fc-type input {
+  width: 100%; padding: 13px 18px; border-radius: 999px; font: inherit; font-size: 16px; text-align: center; color: var(--fg);
+  border: 1px solid light-dark(rgba(22, 22, 48, .12), rgba(255, 255, 255, .14)); background: light-dark(rgba(255, 255, 255, .6), rgba(0, 0, 0, .25));
+  box-shadow: inset 0 1px 2px var(--lg-lo); transition: border-color .2s, box-shadow .2s;
+}
+.fc-type input:focus { outline: none; border-color: transparent; box-shadow: inset 0 1px 2px var(--lg-lo), 0 0 0 2px #f055dd, 0 0 0 5px rgba(240, 85, 221, .25); }
+.fc-typed { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 8px; border-radius: 999px; font-size: 14px; color: var(--mute); background: rgba(var(--v), .14); box-shadow: inset 0 0 0 1px rgba(var(--v), .45); max-width: 100%; }
+.fc-typed b { padding: 3px 10px; border-radius: 999px; color: var(--fg); background: rgb(var(--v)); font-size: 13px; }
+.fc-typed span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.v-right { --v: 22, 163, 112; } .v-close { --v: 214, 136, 0; } .v-partial { --v: 214, 136, 0; } .v-wrong { --v: 220, 64, 64; }
+
+@keyframes lg-turn { to { --lg-a: 360deg; } }
+@keyframes lg-in { from { opacity: 0; transform: translateY(10px) scale(.985); } }
+@keyframes lg-turn-over { 0% { transform: perspective(1200px) rotateX(10deg) scale(.985); } 100% { transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .flash-card, .flash-card.shown, .flash-card::before, .rate4 button::before, .sure button::before { animation: none; }
+  .rate4 button, .sure button { transition: none; }
+  .rate4 button:hover, .sure button:not(.sure-skip):hover, .rate4 button.suggested { transform: none; }
+}
+/* browsers without backdrop blur get a solid pane, so text stays readable */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .study-session { --lg-fill: light-dark(#fff, #16161f); --lg-fill-strong: light-dark(#fff, #1d1d29); }
+}
+@media (max-width: 560px) {
+  .flash-card { padding: 28px 20px; border-radius: 26px; min-height: 280px; }
+  .rate4 { gap: 7px; } .rate4 button { border-radius: 20px; padding: 12px 4px; }
+}
