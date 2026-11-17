@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gradify™ · Motion Graphics & Ad Animation Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #09090b;
+      --card-bg: #000000;
+      --spectrum: linear-gradient(90deg, #4641ff, #8c27ca 20%, #f055dd 38%, #e52153 54%, #ff5600 70%, #ffc002 84%, #40d4b1);
+      --spectrum-glow: linear-gradient(135deg, rgba(70,65,255,0.4), rgba(240,85,221,0.3) 40%, rgba(255,86,0,0.3) 70%, rgba(64,212,177,0.3));
+      --sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --mono: "Geist Mono", monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: #fff;
+      font-family: var(--sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px;
+      overflow-x: hidden;
+    }
+
+    header {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-pill {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #a1a1aa;
+    }
+
+    .controls-bar {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background: #27272a;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn:hover { background: #3f3f46; }
+    .btn-primary {
+      background: #fff;
+      color: #000;
+      border-color: #fff;
+    }
+    .btn-primary:hover {
+      background: #e4e4e7;
+    }
+
+    .select-dropdown {
+      background: #18181b;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-family: var(--sans);
+      font-size: 14px;
+      outline: none;
+    }
+
+    /* Studio Layout */
+    .studio {
+      display: flex;
+      gap: 32px;
+      width: 100%;
+      max-width: 1200px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    /* Video Frame Canvas */
+    .viewport-container {
+      position: relative;
+      background: #000;
+      border-radius: 36px;
+      box-shadow: 0 25px 60px -15px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.15);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 9:16 Vertical Video (TikTok / Reel / Story) */
+    .viewport-9-16 {
+      width: 380px;
+      height: 675px; /* 1080x1920 scale */
+    }
+
+    /* 1:1 Square Ad (Feed Carousel) */
+    .viewport-1-1 {
+      width: 500px;
+      height: 500px;
+    }
+
+    /* 4:5 Feed Portrait */
+    .viewport-4-5 {
+      width: 440px;
+      height: 550px;
+    }
+
+    .ad-canvas {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background: #000000;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 36px 28px;
+      user-select: none;
+    }
+
+    /* Ambient Aurora Glow */
+    .aurora-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 10%, rgba(70,65,255,0.18) 0%, transparent 60%),
+                  radial-gradient(circle at 80% 80%, rgba(240,85,221,0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 20% 90%, rgba(255,86,0,0.12) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 1;
+      filter: blur(40px);
+    }
+
+    .ad-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Header in Ad */
+    .ad-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .ad-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+    .ad-badge {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+    }
+
+    /* Dynamic Scenes */
+    .scene-view {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Scene 1: Kinetic Hook */
+    .hook-title {
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+    .spectrum-text {
+      background: var(--spectrum);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hook-sub {
+      font-size: 15px;
+      color: #a1a1aa;
+      line-height: 1.5;
+      max-width: 290px;
+    }
+
+    /* Scene 2: Interactive Drag & Drop Box */
+    .dropzone-card {
+      width: 100%;
+      max-width: 320px;
+      background: rgba(20,20,22,0.7);
+      border: 1.5px dashed rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      backdrop-filter: blur(12px);
+      position: relative;
+    }
+    .floating-doc {
+      width: 58px;
+      height: 72px;
+      background: #18181b;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+      position: relative;
+      animation: floatDoc 3s ease-in-out infinite;
+    }
+    @keyframes floatDoc {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(4deg); }
+    }
+    .doc-badge {
+      font-size: 9px;
+      font-weight: 700;
+      background: #ef4444;
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 4px;
+    }
+
+    /* Scene 3: Flashcard Inspection */
+    .flashcard {
+      width: 100%;
+      max-width: 320px;
+      background: rgba(24,24,27,0.85);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 24px 20px;
+      text-align: left;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+      backdrop-filter: blur(16px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #a1a1aa;
+    }
+    .tag-grounded {
+      background: rgba(64,212,177,0.15);
+      color: #40d4b1;
+      border: 1px solid rgba(64,212,177,0.3);
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .card-question {
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.35;
+      color: #ffffff;
+    }
+    .card-citation {
+      background: rgba(0,0,0,0.5);
+      border-left: 2px solid #8c27ca;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #d4d4d8;
+      font-family: var(--mono);
+      line-height: 1.4;
+    }
+
+    /* Scene 4: LifeOS Heatmap */
+    .lifeos-preview {
+      width: 100%;
+      max-width: 320px;
+      background: rgba(18,18,20,0.85);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    }
+    .streak-counter {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .streak-val {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ff5600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .grid-heatmap {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 4px;
+    }
+    .heat-cell {
+      aspect-ratio: 1;
+      border-radius: 3px;
+      background: rgba(255,255,255,0.06);
+    }
+    .heat-cell.active-1 { background: rgba(70,65,255,0.4); }
+    .heat-cell.active-2 { background: rgba(140,39,202,0.6); }
+    .heat-cell.active-3 { background: rgba(240,85,221,0.85); }
+    .heat-cell.active-4 { background: #40d4b1; box-shadow: 0 0 6px #40d4b1; }
+
+    /* Scene Footer / CTA */
+    .ad-footer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .ad-cta-btn {
+      width: 100%;
+      background: #ffffff;
+      color: #000000;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(255,255,255,0.25);
+    }
+    .ad-trust-line {
+      font-size: 11px;
+      color: #71717a;
+      letter-spacing: 0.02em;
+    }
+
+    /* Side Control Panel */
+    .side-panel {
+      width: 360px;
+      background: #18181b;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .panel-section-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #a1a1aa;
+      margin-bottom: 8px;
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .scene-step {
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: #27272a;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .scene-step:hover {
+      background: #3f3f46;
+    }
+    .scene-step.active {
+      background: rgba(70,65,255,0.15);
+      border-color: #4641ff;
+      color: #fff;
+    }
+    .scene-step .dur {
+      color: #a1a1aa;
+      font-size: 11px;
+      font-family: var(--mono);
+    }
+
+    .instructions-box {
+      background: rgba(0,0,0,0.4);
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 12px;
+      color: #a1a1aa;
+      line-height: 1.6;
+    }
+    .instructions-box strong { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <svg width="24" height="24" viewBox="0 0 32 32" fill="none"><defs><linearGradient id="gg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".35" stop-color="#f055dd"/><stop offset=".7" stop-color="#ff5600"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" stroke="url(#gg2)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Gradify Ad Animation Studio
+      <span class="brand-pill">Campaign Ready</span>
+    </div>
+
+    <div class="controls-bar">
+      <select id="ratio-select" class="select-dropdown">
+        <option value="viewport-9-16">9:16 Vertical (Reel / TikTok / Story)</option>
+        <option value="viewport-1-1">1:1 Square (Feed Carousel)</option>
+        <option value="viewport-4-5">4:5 Portrait (Meta Feed)</option>
+      </select>
+      <button class="btn btn-primary" id="play-btn">▶ Play Full Reel</button>
+      <button class="btn" id="loop-toggle">Loop: ON</button>
+    </div>
+  </header>
+
+  <div class="studio">
+    <!-- Viewport Container -->
+    <div class="viewport-container viewport-9-16" id="viewport">
+      <div class="ad-canvas">
+        <div class="aurora-bg"></div>
+
+        <div class="ad-content">
+          <!-- Top Nav -->
+          <div class="ad-nav">
+            <div class="ad-logo">
+              <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><rect x=".75" y=".75" width="30.5" height="30.5" rx="9" fill="#0b0b0b" stroke="rgba(255,255,255,.25)" stroke-width="1.5"/><path d="M22.9 10.9A8.6 8.6 0 1 0 24.6 16H16.4" stroke="url(#gg2)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Gradify</span>
+            </div>
+            <div class="ad-badge" id="ad-header-badge">LifeOS</div>
+          </div>
+
+          <!-- Dynamic Scene Slot -->
+          <div class="scene-view" id="scene-container">
+            <!-- Injected via JavaScript -->
+          </div>
+
+          <!-- Footer CTA -->
+          <div class="ad-footer">
+            <div class="ad-cta-btn">
+              <span>Start with your notes</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+            <div class="ad-trust-line">getgradify.com · Free to try · No sign-up</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Side Control Panel -->
+    <div class="side-panel">
+      <div>
+        <div class="panel-section-title">Story Timeline (Faceless Script #1)</div>
+        <div class="timeline">
+          <div class="scene-step active" data-scene="0">
+            <span>1. Kinetic Hook</span>
+            <span class="dur">0:00 - 0:03</span>
+          </div>
+          <div class="scene-step" data-scene="1">
+            <span>2. Drop PDF Note</span>
+            <span class="dur">0:03 - 0:08</span>
+          </div>
+          <div class="scene-step" data-scene="2">
+            <span>3. Zero-Hallucination Card</span>
+            <span class="dur">0:08 - 0:15</span>
+          </div>
+          <div class="scene-step" data-scene="3">
+            <span>4. LifeOS Daily Heatmap</span>
+            <span class="dur">0:15 - 0:21</span>
+          </div>
+          <div class="scene-step" data-scene="4">
+            <span>5. Final Call To Action</span>
+            <span class="dur">0:21 - 0:26</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel-section-title">Screen Capture & Production Guide</div>
+        <div class="instructions-box">
+          <strong>How to record for Meta Ads / TikTok:</strong><br>
+          1. Hit <strong>Play Full Reel</strong> above.<br>
+          2. Use <strong>macOS QuickTime</strong> (Cmd+Shift+5) or <strong>OBS</strong> to record the black viewport at 60fps.<br>
+          3. Drop the recorded clip into CapCut or Premiere.<br>
+          4. Add the voiceover and audio tracks from <code>faceless-video-scripts.md</code>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const scenes = [
+      {
+        badge: "Study Smarter",
+        render: () => `
+          <div class="hook-title">
+            Stop spending 4 hours making <span class="spectrum-text">flashcards</span>.
+          </div>
+          <p class="hook-sub">Upload your raw lecture notes and turn them into verified study packs in 10 seconds.</p>
+        `
+      },
+      {
+        badge: "Notes Studio",
+        render: () => `
+          <div class="dropzone-card">
+            <div class="floating-doc">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+              <span class="doc-badge">PDF</span>
+            </div>
+            <div>
+              <div style="font-weight:700; font-size:16px;">Biochem_Lecture_08.pdf</div>
+              <div style="font-size:12px; color:#a1a1aa; margin-top:4px;">Drag & drop your class notes</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.08); border-radius:999px; padding:6px 14px; font-size:12px; font-weight:600; color:#40d4b1;">
+              ⚡ Converting in 2.4s...
+            </div>
+          </div>
+        `
+      },
+      {
+        badge: "Zero Hallucinations",
+        render: () => `
+          <div class="flashcard">
+            <div class="card-meta">
+              <span>Card 1 of 24</span>
+              <span class="tag-grounded">✓ Grounded in Notes</span>
+            </div>
+            <div class="card-question">
+              Explain why uncoupling oxidative phosphorylation generates heat without producing ATP.
+            </div>
+            <div class="card-citation">
+              “Thermogenin uncouples the proton gradient, releasing potential energy purely as heat...” [p. 14, ¶ 3]
+            </div>
+          </div>
+        `
+      },
+      {
+        badge: "LifeOS Engine",
+        render: () => `
+          <div class="lifeos-preview">
+            <div class="streak-counter">
+              <div>
+                <div style="font-size:11px; color:#a1a1aa; text-transform:uppercase; font-weight:600;">Daily Recall Streak</div>
+                <div class="streak-val">🔥 24 Days</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-size:11px; color:#a1a1aa; text-transform:uppercase; font-weight:600;">Mastery</div>
+                <div style="font-size:22px; font-weight:800; color:#40d4b1;">94.8%</div>
+              </div>
+            </div>
+            <div class="grid-heatmap">
+              ${Array.from({length: 48}).map((_, i) => {
+                const levels = ['', 'active-1', 'active-2', 'active-3', 'active-4'];
+                const lvl = levels[Math.floor(Math.random() * levels.length)];
+                return `<div class="heat-cell ${lvl}"></div>`;
+              }).join('')}
+            </div>
+          </div>
+        `
+      },
+      {
+        badge: "getgradify.com",
+        render: () => `
+          <div style="display:flex; flex-direction:column; align-items:center; gap:16px;">
+            <div style="width:72px; height:72px; border-radius:22px; background:radial-gradient(circle at 30% 24%, rgba(255,255,255,0.95), transparent 40%), var(--spectrum); display:grid; place-items:center; box-shadow:0 0 30px rgba(240,85,221,0.5);">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="m5 12 5 5L20 7"/></svg>
+            </div>
+            <div class="hook-title" style="font-size:28px;">
+              Your Notes. <span class="spectrum-text">Instant Mastery.</span>
+            </div>
+            <p class="hook-sub">Open in your browser now. No credit card, no sign-up.</p>
+          </div>
+        `
+      }
+    ];
+
+    let currentScene = 0;
+    let isPlaying = false;
+    let timer = null;
+
+    const sceneContainer = document.getElementById('scene-container');
+    const adHeaderBadge = document.getElementById('ad-header-badge');
+    const steps = document.querySelectorAll('.scene-step');
+    const playBtn = document.getElementById('play-btn');
+    const ratioSelect = document.getElementById('ratio-select');
+    const viewport = document.getElementById('viewport');
+
+    function showScene(idx) {
+      currentScene = idx;
+      sceneContainer.innerHTML = scenes[idx].render();
+      adHeaderBadge.textContent = scenes[idx].badge;
+      steps.forEach((s, i) => s.classList.toggle('active', i === idx));
+    }
+
+    steps.forEach((step) => {
+      step.addEventListener('click', () => {
+        clearInterval(timer);
+        isPlaying = false;
+        playBtn.textContent = '▶ Play Full Reel';
+        showScene(parseInt(step.getAttribute('data-scene')));
+      });
+    });
+
+    ratioSelect.addEventListener('change', (e) => {
+      viewport.className = 'viewport-container ' + e.target.value;
+    });
+
+    function playReel() {
+      isPlaying = true;
+      playBtn.textContent = '⏸ Pause';
+      currentScene = 0;
+      showScene(currentScene);
+
+      const sceneDurations = [3500, 4500, 5500, 5000, 4000];
+
+      function next() {
+        if (!isPlaying) return;
+        currentScene++;
+        if (currentScene >= scenes.length) {
+          currentScene = 0;
+        }
+        showScene(currentScene);
+        timer = setTimeout(next, sceneDurations[currentScene]);
+      }
+
+      timer = setTimeout(next, sceneDurations[0]);
+    }
+
+    playBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        clearInterval(timer);
+        isPlaying = false;
+        playBtn.textContent = '▶ Play Full Reel';
+      } else {
+        playReel();
+      }
+    });
+
+    // Initial render
+    showScene(0);
+  </script>
+</body>
+</html>
