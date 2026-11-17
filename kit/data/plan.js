@@ -11,6 +11,7 @@
 // Until Plus goes on sale (PLUS_ON_SALE in kit/data/billing.js, with the server's switches), nothing is locked:
 // every learner keeps every feature they have today.
 import { PLUS_ON_SALE, PLAN_PRICES, includes, money, planOf } from "./billing.js";
+import { track } from "../core/analytics.js";
 
 export const PLUS_FEATURES = {
   intelligence: { name: "Gradify Intelligence", line: "Smart Plan autopilot, readiness forecasts, cards ordered by what matters most, adaptive card suggestions and revision recommendations." },
@@ -94,6 +95,10 @@ export function promptPlus(feature, { pricing = "/pricing.html", signedIn = fals
     </div>
   </form>`;
   document.body.append(d);
+  // the funnel: this prompt shown, and pressed (anonymous counts; the path names the feature)
+  const site = (location.pathname.split("/").filter(Boolean)[0] || "Gradify").replace(/\.html$/, "");
+  track("plus_prompt", site, { path: `/plus/${feature}` });
+  d.querySelector("[data-plus-go]").addEventListener("click", () => track("plus_click", site, { path: `/plus/${feature}` }));
   d.addEventListener("close", () => d.remove());
   d.addEventListener("click", (e) => { if (e.target === d) d.close(); });   // a click on the backdrop closes it
   try { d.showModal(); } catch { d.setAttribute("open", ""); }

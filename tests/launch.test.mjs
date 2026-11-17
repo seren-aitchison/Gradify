@@ -51,7 +51,19 @@ test("the page_events table has no identifiers and can't be read through the API
   const table = sql.match(/create table[\s\S]*?\n\);/)[0];
   assert.doesNotMatch(table, /user_id|session|\bip\b|created_at|timestamptz/i);
   assert.doesNotMatch(sql, /for select/);
-  for (const e of EVENTS) assert.match(table, new RegExp(`'${e}'`));
+  // every event the site sends is allowed by the table's latest event check (a later migration may widen it)
+  const { readdir } = await import("node:fs/promises");
+  let check = table;
+  for (const f of (await readdir(new URL("../supabase/migrations/", import.meta.url))).sort()) {
+    const m = (await read(`supabase/migrations/${f}`)).match(/add constraint page_events_event_check check \(event in \(([^)]*)\)\)/);
+    if (m) check = m[1];
+  }
+  for (const e of EVENTS) assert.match(check, new RegExp(`'${e}'`), `page_events accepts ${e}`);
+  // later migrations never add identifiers to page_events
+  for (const f of (await readdir(new URL("../supabase/migrations/", import.meta.url)))) {
+    const t = await read(`supabase/migrations/${f}`);
+    assert.doesNotMatch(t, /alter table public\.page_events add column/i, `${f} adds a column to page_events`);
+  }
 });
 
 test("QA scores: weights total 100, each area is capped, and unproven things score nothing", () => {

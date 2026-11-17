@@ -9,7 +9,10 @@
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../../gradify.config.js";
 
 const OFF = "gradify.noanalytics";
-export const EVENTS = ["view", "lesson_complete", "exam_finish", "tutor"];
+export const EVENTS = ["view", "lesson_complete", "exam_finish", "tutor",
+  // the Gradify Plus funnel (supabase/migrations/20261118130000_plus_funnel.sql): a prompt shown and pressed (its path
+  // says what triggered it: /plus/lesson, /plus/tool/cards…), the pricing page, checkout started, paid, cancelled
+  "plus_prompt", "plus_click", "pricing_view", "checkout_start", "checkout_success", "checkout_cancel"];
 
 export function analyticsAllowed(env = globalThis, configured = Boolean(SUPABASE_URL && SUPABASE_ANON_KEY)) {
   const nav = env.navigator || {}, loc = env.location || {};
@@ -23,18 +26,19 @@ export function setAnalytics(on) { try { if (on) localStorage.removeItem(OFF); e
 export const analyticsOptedOut = () => { try { return localStorage.getItem(OFF) === "1"; } catch { return false; } };
 
 // the row for an event: only these fields, cut to the database's limits
-export function eventRow(event, site, env = globalThis) {
+export function eventRow(event, site, env = globalThis, path = null) {
   const loc = env.location || {}, doc = env.document || {}, w = env.innerWidth || 1024;
   let referrer = null;
   try { const r = doc.referrer ? new URL(doc.referrer) : null; if (r && r.hostname !== loc.hostname) referrer = r.hostname.slice(0, 100); } catch { /* not a URL */ }
-  return { site: String(site || "Gradify").slice(0, 40), path: String(loc.pathname || "/").slice(0, 200), event, referrer, device: w < 640 ? "phone" : w < 1024 ? "tablet" : "desktop" };
+  return { site: String(site || "Gradify").slice(0, 40), path: String(path || loc.pathname || "/").slice(0, 200), event, referrer, device: w < 640 ? "phone" : w < 1024 ? "tablet" : "desktop" };
 }
 
-export function track(event, site) {
+/** Count an event. `path` replaces the page's path, for funnel events that say what triggered them (/plus/lesson). */
+export function track(event, site, { path = null } = {}) {
   if (!EVENTS.includes(event) || !analyticsAllowed()) return;
   const headers = { apikey: SUPABASE_ANON_KEY, "Content-Type": "application/json", Prefer: "return=minimal" };
   if (SUPABASE_ANON_KEY.startsWith("eyJ")) headers.Authorization = `Bearer ${SUPABASE_ANON_KEY}`;
-  fetch(`${SUPABASE_URL}/rest/v1/page_events`, { method: "POST", keepalive: true, headers, body: JSON.stringify(eventRow(event, site)) }).catch(() => {});
+  fetch(`${SUPABASE_URL}/rest/v1/page_events`, { method: "POST", keepalive: true, headers, body: JSON.stringify(eventRow(event, site, globalThis, path)) }).catch(() => {});
 }
 let viewed = false;
 export function trackView(site) { if (!viewed) { viewed = true; track("view", site); } }
