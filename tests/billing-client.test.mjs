@@ -51,7 +51,8 @@ test("planOf() agrees with the server's is_pro() for every subscription state", 
 
 test("the Account page says what to do in each state, and offers Manage billing only where there's something to manage", () => {
   const end = new Date(Date.now() + 20 * 86400_000).toISOString();
-  assert.match(describePlan(null).line, /Every course/); assert.equal(describePlan(null).manage, false);
+  // a Free learner's line follows the switch: Plus on sale points to Plus; before that, everything was free
+  assert.match(describePlan(null).line, PLUS_ON_SALE ? /^Learn with Gradify\. Gradify Plus organises/ : /Every course/); assert.equal(describePlan(null).manage, false);
   assert.match(describePlan({ status: "active", billing_interval: "year", current_period_end: end }).title, /billed yearly/);
   assert.match(describePlan({ status: "active", current_period_end: end }).line, /^Renews on/);
   assert.match(describePlan({ status: "active", cancel_at_period_end: true, current_period_end: end }).line, /^Cancelled\. You keep Pro until/);
@@ -72,7 +73,7 @@ test("pricing.html takes every price and allowance from kit/data/billing.js, not
   }
   assert.match(html, /including VAT/);
   assert.equal(PRO_ON_SALE, false, "Gradify Pro stays off sale until Gradify AI is switched on (docs/BILLING.md)");
-  assert.equal(PLUS_ON_SALE, false, "Plus goes on sale only with the server's switches and the live prices (docs/BILLING.md)");
+  assert.equal(PLUS_ON_SALE, true, "Plus is on sale: the server's switches must be on too (docs/BILLING.md)");
 });
 
 test("checkout returns only to the Gradify site, with ?checkout before any #fragment", () => {

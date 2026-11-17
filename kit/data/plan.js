@@ -33,11 +33,12 @@ export async function access(store, { fresh = false } = {}) {
   if (cached && !fresh && cached.store === store) return cached.value;
   let plan = "free";
   if (store?.mode === "cloud" && store.db) {
-    const r = await store.db.rpc("my_plan").catch(() => null);
+    // a Supabase query is thenable but has no .catch of its own, so it is wrapped in a real promise first
+    const r = await Promise.resolve(store.db.rpc("my_plan")).catch(() => null);
     if (r?.data?.plan) plan = r.data.plan;
     else {
       // before the plans migration is applied: the learner's own subscription row, read the same way
-      const { data } = await store.db.from("subscriptions").select("*").maybeSingle().catch(() => ({ data: null }));
+      const { data } = await Promise.resolve(store.db.from("subscriptions").select("*").maybeSingle()).catch(() => ({ data: null }));
       plan = planOf(data);
     }
   }
@@ -69,6 +70,37 @@ export function plusPanelHtml(feature, { pricing = "/pricing.html", compact = fa
 }
 
 /**
+ * The instant "get Gradify Plus" prompt: a dialog shown the moment a Free learner opens a Plus screen (the screen behind
+ * it shows plusPanelHtml, so closing the dialog never leaves them stuck). Does nothing while Plus isn't on sale.
+ * @returns {boolean} whether it was shown
+ */
+export function promptPlus(feature, { pricing = "/pricing.html", signedIn = false } = {}) {
+  if (!PLUS_ON_SALE || typeof document === "undefined") return false;
+  const f = PLUS_FEATURES[feature] || { name: "This", line: "" };
+  document.querySelector("dialog.plus-prompt")?.remove();
+  const d = document.createElement("dialog");
+  d.className = "plus-prompt";
+  d.setAttribute("aria-labelledby", "plus-prompt-title");
+  const href = `${pricing}${pricing.includes("?") ? "&" : "?"}plan=plus&from=${encodeURIComponent(feature)}`;
+  d.innerHTML = `<form method="dialog" class="plus-prompt-card">
+    <span class="plus-badge">Plus</span>
+    <h2 id="plus-prompt-title">${esc(f.name)} is part of Gradify Plus</h2>
+    <p class="sub">${esc(f.line)}</p>
+    <ul class="plus-prompt-list">${Object.values(PLUS_FEATURES).map((x) => `<li>${esc(x.name)}</li>`).join("")}</ul>
+    <p class="plus-prompt-price"><b>${pounds(PLAN_PRICES.plus.month)}</b> a month. Cancel any time.</p>
+    <div class="plus-prompt-actions">
+      <a class="btn btn-primary lg" href="${esc(href)}" data-plus-go><span>${signedIn ? "Get Gradify Plus" : "Sign up for Gradify Plus"}</span></a>
+      <button class="btn btn-ghost lg" value="later"><span>Not now</span></button>
+    </div>
+  </form>`;
+  document.body.append(d);
+  d.addEventListener("close", () => d.remove());
+  d.addEventListener("click", (e) => { if (e.target === d) d.close(); });   // a click on the backdrop closes it
+  try { d.showModal(); } catch { d.setAttribute("open", ""); }
+  return true;
+}
+
+/**
  * Free on a device that isn't the active one: everything stays readable here; changes go to the active device.
  * Returns { active, canSwitchAt } (active is true for Plus and Pro, before Plus is on sale, and without an account).
  */
@@ -76,7 +108,7 @@ export async function deviceStatus(store) {
   if (!PLUS_ON_SALE || store?.mode !== "cloud" || !store.db) return { active: true };
   const id = deviceId();
   if (!id) return { active: true };
-  const r = await store.db.rpc("use_device", { p_device: id }).catch(() => null);
+  const r = await Promise.resolve(store.db.rpc("use_device", { p_device: id })).catch(() => null);
   if (!r || r.error || !r.data || r.data.reason) return { active: true };   // before the migration: nothing is limited
   return { active: Boolean(r.data.active), canSwitchAt: r.data.canSwitchAt || null };
 }
