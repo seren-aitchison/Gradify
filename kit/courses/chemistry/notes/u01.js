@@ -258,6 +258,10 @@ X: Decode the formula CuSO₄ and explain why CO and Co are different.
 > CuSO₄ contains copper (Cu), sulfur (S) and four oxygen (O) atoms.
 > CO is one carbon atom and one oxygen atom: a compound.
 > Co is a single symbol, the element cobalt.
+H: Reading the information in an entry
+- Take **chlorine**: the **atomic number** 17 is the number of protons (and of electrons in the atom), **Cl** is the symbol, and the **relative atomic mass** 35.5 is the average mass of its atoms, weighted by how common each isotope is, on a scale where carbon-12 is exactly 12.
+- Where the entry sits adds more information: the **period** (row) is the number of occupied electron shells, and the **group** (column) gives the outer-shell electrons: the group number for groups 1 and 2, and the group number minus 10 for groups 13 to 18.
+- Some periodic tables also show electronegativity or electron configuration in each entry, so check the key before reading a value.
 K: Symbols start with a capital letter and any second letter is lower case; some come from Latin names.
 IX: periodic-table
 !: Writing a two-letter symbol with two capitals, such as CL for chlorine. It must be Cl.

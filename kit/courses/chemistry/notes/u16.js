@@ -104,6 +104,12 @@ X: Why Born-Oppenheimer works.
 > Electrons adjust almost instantly to nuclear positions.
 > Electronic energy is calculated for fixed nuclei.
 > This gives a potential energy surface for nuclear motion.
+H: The main computational approaches
+- **Ab initio** methods start from the Schrödinger equation with no fitted data: Hartree-Fock, then more accurate methods such as Møller-Plesset perturbation theory and coupled cluster, which add electron correlation at a much higher computational cost.
+- **Density functional theory** works from the electron density with an approximate exchange-correlation functional: the usual choice for molecules of tens to hundreds of atoms.
+- **Semi-empirical** methods simplify the equations using parameters fitted to experiment: fast enough for large molecules, but less reliable outside the data they were fitted to.
+- **Molecular mechanics** leaves out electrons and treats atoms as balls joined by springs (a force field): it handles proteins and materials with many thousands of atoms but cannot describe bonds breaking or forming.
+- Choosing between these **approaches** is a trade-off between accuracy and computational cost, which rises steeply with the number of electrons.
 K: Quantum chemistry describes electrons as wavefunctions with quantised energy; the Born-Oppenheimer approximation separates electronic and nuclear motion and methods such as Hartree-Fock and DFT approximate many-electron systems.
 !: Thinking quantum chemistry solves molecules exactly. Only one-electron systems have exact solutions.
 EV: established | Density functional theory is the most widely used quantum chemistry method (Kohn, 1999).
