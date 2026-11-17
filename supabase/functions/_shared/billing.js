@@ -57,11 +57,26 @@ export async function verifyStripeEvent(payload, header, secret, { tolerance = 3
 const iso = (s) => (s ? new Date(s * 1000).toISOString() : null);
 const STATUSES = new Set(["incomplete", "incomplete_expired", "trialing", "active", "past_due", "canceled", "unpaid", "paused"]);
 
+/** Which plan a Stripe price is: the Plus price, or Pro (Pro's prices, and the original Gradify Pro prices). Prices
+ *  are Edge Function secrets: STRIPE_PRICE_PLUS_MONTH, STRIPE_PRICE_PRO_MONTH (and the older STRIPE_PRICE_MONTH and
+ *  STRIPE_PRICE_YEAR, which were Pro). An unknown price is null, and the subscription doesn't count as either. */
+export function planForPrice(priceId, env = {}) {   // → "plus" | "pro" | null (not a price Gradify knows)
+  if (!priceId) return null;
+  const ids = (...keys) => keys.map((k) => env[k]).filter(Boolean);
+  if (ids("STRIPE_PRICE_PLUS_MONTH", "STRIPE_PRICE_PLUS_YEAR").includes(priceId)) return "plus";
+  if (ids("STRIPE_PRICE_PRO_MONTH", "STRIPE_PRICE_PRO_YEAR", "STRIPE_PRICE_MONTH", "STRIPE_PRICE_YEAR").includes(priceId)) return "pro";
+  return null;
+}
+
 /** The subscriptions row for a Stripe subscription object (periods are on the item in newer API versions). */
-export function subscriptionRow(sub) {
+export function subscriptionRow(sub, env = {}) {
   const item = sub.items?.data?.[0] || {};
   const price = item.price || sub.plan || {};
+  // Plus by its price; anything else is Pro, as every subscription was before there were two plans (only Gradify's
+  // own checkout creates subscriptions, so a learner can't bring their own price)
+  const plan = planForPrice(price.id, env) ?? "pro";
   return {
+    plan,
     stripe_customer_id: typeof sub.customer === "string" ? sub.customer : sub.customer?.id ?? null,
     stripe_subscription_id: sub.id,
     status: STATUSES.has(sub.status) ? sub.status : "none",
@@ -77,10 +92,12 @@ export function subscriptionRow(sub) {
 /** The Gradify user a Stripe object belongs to: metadata set at checkout, or the checkout's client reference. */
 export const userOf = (obj) => obj?.metadata?.gradify_user_id || obj?.client_reference_id || null;
 
-/** Which Stripe price a checkout interval maps to (prices are set as Edge Function secrets). */
-export function priceFor(interval, env) {
-  const id = interval === "year" ? env.STRIPE_PRICE_YEAR : interval === "month" ? env.STRIPE_PRICE_MONTH : null;
-  if (!id) throw Object.assign(new Error(interval === "year" || interval === "month" ? "Gradify Pro isn't on sale yet." : "Choose monthly or yearly."), { status: interval === "year" || interval === "month" ? 503 : 400 });
+/** Which Stripe price a checkout for a plan and interval maps to (prices are Edge Function secrets). */
+export function priceFor(plan, interval, env) {
+  if (plan !== "plus" && plan !== "pro") throw Object.assign(new Error("Choose Gradify Plus or Gradify Pro."), { status: 400 });
+  if (interval !== "month" && interval !== "year") throw Object.assign(new Error("Choose monthly billing."), { status: 400 });
+  const id = env[`STRIPE_PRICE_${plan.toUpperCase()}_${interval === "year" ? "YEAR" : "MONTH"}`];
+  if (!id) throw Object.assign(new Error(`${plan === "plus" ? "Gradify Plus" : "Gradify Pro"} isn't on sale yet.`), { status: 503 });
   return id;
 }
 
@@ -113,7 +130,7 @@ export async function handleStripeEvent(payload, header, deps, opts = {}) {
     const obj = event.data.object;
     // always read the subscription fresh from Stripe rather than trusting the event's copy (also makes order irrelevant)
     const sub = await deps.getSubscription(event.type === "checkout.session.completed" ? obj.subscription : obj.id);
-    const row = subscriptionRow(sub);
+    const row = subscriptionRow(sub, deps.env || {});
     const user = (event.type === "checkout.session.completed" ? userOf(obj) : null) || userOf(sub) || (await deps.userForCustomer(row.stripe_customer_id));
     if (!user) throw new Error(`no Gradify user for customer ${row.stripe_customer_id}`);
     if (!shouldApply(await deps.storedFor(user), row)) return { status: 200, body: "Older subscription; kept the current one." };
@@ -137,9 +154,10 @@ export function returnUrl(site, back, params = {}) {
   return u.toString();
 }
 
-/** Whether this learner may buy Pro now: on sale to all, or listed as a billing tester (for the deliberate first test). */
-export function mayBuy(email, env) {
-  if (env.GRADIFY_PRO_ON_SALE === "on") return true;
+/** Whether this learner may buy a plan now: on sale to all, or listed as a billing tester (for the deliberate first
+ *  test). Plus and Pro go on sale separately (GRADIFY_PLUS_ON_SALE, GRADIFY_PRO_ON_SALE). */
+export function mayBuy(email, env, plan = "pro") {
+  if (env[plan === "plus" ? "GRADIFY_PLUS_ON_SALE" : "GRADIFY_PRO_ON_SALE"] === "on") return true;
   const testers = (env.GRADIFY_BILLING_TESTERS || "").split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
   return Boolean(email) && testers.includes(String(email).toLowerCase());
 }

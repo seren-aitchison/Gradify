@@ -3,7 +3,7 @@
 // records processed ids) and written to public.subscriptions with the service role. Nothing else writes subscriptions.
 // The decision itself is handleStripeEvent in ../_shared/billing.js, tested in tests/billing-stripe.test.mjs.
 // Events: checkout.session.completed, customer.subscription.created / updated / deleted / paused / resumed.
-// Secrets: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET.
+// Secrets: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, and the price ids (STRIPE_PRICE_PLUS_MONTH, STRIPE_PRICE_PRO_MONTH).
 import { createClient } from "npm:@supabase/supabase-js@2.117.0";
 import { stripe, handleStripeEvent } from "../_shared/billing.js";
 
@@ -14,6 +14,7 @@ Deno.serve(async (req) => {
   const admin = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
   const out = await handleStripeEvent(await req.text(), req.headers.get("stripe-signature") ?? "", {
     whsec,
+    env: Deno.env.toObject(),   // the price ids that say which plan a subscription is (planForPrice)
     getSubscription: (id: string) => stripe(secret, "GET", `/subscriptions/${id}`),
     async claimEvent(id: string, type: string) {
       const { error } = await admin.from("billing_events").insert({ id, type });

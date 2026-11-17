@@ -1,8 +1,9 @@
 // Supabase Edge Function: billing-checkout
-// POST { interval: "month" | "year" }  (signed in)  → { url }  a Stripe Checkout page for Gradify Pro
-// Learners who are already Pro get the billing portal instead, so nobody can subscribe twice.
-// Secrets: STRIPE_SECRET_KEY, STRIPE_PRICE_MONTH, STRIPE_PRICE_YEAR (optional: STRIPE_AUTOMATIC_TAX=on).
-// Not on sale until GRADIFY_PRO_ON_SALE=on; before that only GRADIFY_BILLING_TESTERS (comma-separated emails) may buy.
+// POST { plan: "plus" | "pro", interval: "month" }  (signed in)  → { url }  a Stripe Checkout page for that plan
+// Learners already on a paid plan get the billing portal instead (to switch plan), so nobody can subscribe twice.
+// Secrets: STRIPE_SECRET_KEY, STRIPE_PRICE_PLUS_MONTH, STRIPE_PRICE_PRO_MONTH, GRADIFY_PLUS_ON_SALE, GRADIFY_PRO_ON_SALE
+// (optional: STRIPE_AUTOMATIC_TAX=on).
+// Each plan is off sale until its switch is on; before that only GRADIFY_BILLING_TESTERS (comma-separated emails) may buy.
 // The learner is identified from their own Supabase token; their Stripe customer id is stored with the service role.
 import { createClient } from "npm:@supabase/supabase-js@2.117.0";
 import { stripe, priceFor, safeBack, returnUrl, mayBuy } from "../_shared/billing.js";
@@ -23,10 +24,10 @@ Deno.serve(async (req) => {
 
   const asUser = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!, { global: { headers: { Authorization: req.headers.get("Authorization") ?? "" } } });
   const { data: { user } } = await asUser.auth.getUser();
-  if (!user) return json(req, { error: "Please sign in to upgrade to Gradify Pro." }, 401);
+  if (!user) return json(req, { error: "Please sign in to choose a plan." }, 401);
   const admin = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
 
-  let body: { interval?: string; from?: string };
+  let body: { plan?: string; interval?: string; from?: string };
   try { body = await req.json(); } catch { return json(req, { error: "Bad request." }, 400); }
   // where to come back to: a page on the Gradify site only
   const back = safeBack(body.from);
@@ -34,13 +35,15 @@ Deno.serve(async (req) => {
 
   try {
     const { data: sub } = await admin.from("subscriptions").select("*").eq("user_id", user.id).maybeSingle();
-    const { data: pro } = await admin.rpc("is_pro", { uid: user.id });
-    if (pro && sub?.stripe_customer_id) {
+    const plan = body.plan === "pro" ? "pro" : "plus";
+    // already paying: change plan or billing in Stripe's portal (it switches between the plans' prices, with proration)
+    const { data: current } = await admin.rpc("plan_of", { uid: user.id });
+    if (current && current !== "free" && sub?.stripe_customer_id) {
       const portal = await stripe(secret, "POST", "/billing_portal/sessions", { customer: sub.stripe_customer_id, return_url: returnUrl(SITE, back) });
-      return json(req, { url: portal.url, alreadyPro: true });
+      return json(req, { url: portal.url, alreadySubscribed: current });
     }
-    if (!mayBuy(user.email, env)) return json(req, { error: "Gradify Pro opens when Gradify AI launches. Everything else on Gradify is free in the meantime.", notOnSale: true }, 403);
-    const price = priceFor(body.interval ?? "", env);
+    if (!mayBuy(user.email, env, plan)) return json(req, { error: plan === "pro" ? "Gradify Pro opens when Gradify AI launches. Gradify Plus has everything else." : "Gradify Plus isn't on sale yet.", notOnSale: true }, 403);
+    const price = priceFor(plan, body.interval ?? "month", env);
     let customer = sub?.stripe_customer_id as string | undefined;
     if (!customer) {
       const c = await stripe(secret, "POST", "/customers", { email: user.email, metadata: { gradify_user_id: user.id } });
@@ -53,8 +56,8 @@ Deno.serve(async (req) => {
       customer,
       client_reference_id: user.id,
       line_items: [{ price, quantity: 1 }],
-      subscription_data: { metadata: { gradify_user_id: user.id } },
-      metadata: { gradify_user_id: user.id },
+      subscription_data: { metadata: { gradify_user_id: user.id, gradify_plan: plan } },
+      metadata: { gradify_user_id: user.id, gradify_plan: plan },
       allow_promotion_codes: "true",
       automatic_tax: Deno.env.get("STRIPE_AUTOMATIC_TAX") === "on" ? { enabled: "true" } : undefined,
       customer_update: Deno.env.get("STRIPE_AUTOMATIC_TAX") === "on" ? { address: "auto" } : undefined,

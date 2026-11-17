@@ -28,6 +28,7 @@ import { paceFor } from "../learning/pace.js";
 import { trackView, track } from "../core/analytics.js";
 import { callFunction } from "../data/functions.js";
 import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, confirmAttempts } from "./progress.js";
+import { access, plusPanelHtml } from "../data/plan.js";
 import { lessonTimer, addTime, MIN_LOG_MS, minutesPerLesson } from "./lesson-time.js";
 import { hydrate as glassIcons } from "../core/glass-icons.js";
 import { mountRevalidation } from "./revalidation.js";
@@ -1354,6 +1355,8 @@ export function mountCourse(root, cfg) {
     else if (view === "review") await (arg === "questions" ? viewRetrieval() : arg === "weak" ? viewWeak() : viewReview());
     else if (view === "paths") viewPaths();
     else if (view === "tracks") viewTracks();
+    // exam preparation is Gradify Plus: timed exams and the complete question bank (unit quizzes and labs stay free)
+    else if (["problems", "exams", "exam"].includes(view) && !(await access(await store())).has("exams")) main.innerHTML = plusPanelHtml("exams", { pricing: "/pricing.html" });
     else if (view === "problems") await viewProblems();
     else if (view === "cases") await viewAuthorities();
     else if (view === "write") await viewWrite(arg);

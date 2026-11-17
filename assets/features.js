@@ -35,9 +35,9 @@ export const FEATURES = [
   // practise
   { n: "Flashcard feed", cat: "practise", i: "layers", where: "both", d: "A constant-scroll feed of flashcards, mixed with study hacks and inspiring reminders. Zoom out to see your cards as a Pinterest-style board.", try: "study", size: 3, live: true },
   { n: "Confidence ratings", cat: "practise", i: "heartbeat", where: "app", d: "Rate how well you knew every card, get feedback on each, and it comes back at the right time.", try: "study", size: 2, live: true },
-  { n: "Adaptive difficulty", cat: "practise", i: "sparkles", where: "both", d: "Gradify AI makes questions harder or easier as you go.", size: 1 },
-  { n: "Timed quiz mode", cat: "practise", i: "flame", where: "app", d: "Practise against the clock, like the real exam.", try: "study", size: 1, live: true },
-  { n: "Question bank", cat: "practise", i: "board", where: "web", d: "A bank of practice questions with marked feedback on every answer.", size: 2 },
+  { n: "Adaptive difficulty", plan: "pro", cat: "practise", i: "sparkles", where: "both", d: "Gradify AI makes questions harder or easier as you go.", size: 1 },
+  { n: "Timed quiz mode", plan: "plus", cat: "practise", i: "flame", where: "app", d: "Practise against the clock, like the real exam.", try: "study", size: 1, live: true },
+  { n: "Question bank", plan: "plus", cat: "practise", i: "board", where: "web", d: "A bank of practice questions with marked feedback on every answer.", size: 2 },
   { n: "Key-term games", cat: "practise", i: "trophy", where: "both", d: "Quick games for learning the key terms of any topic.", size: 1 },
   { n: "Interim quizzes", cat: "practise", i: "checklist", where: "web", d: "Short quizzes through every course, so you know where you stand.", size: 1 },
   // progress and rewards
@@ -48,10 +48,10 @@ export const FEATURES = [
   { n: "Challenges", cat: "progress", i: "trophy", where: "app", d: "Daily and weekly challenges across your Gradify sites.", try: "view-community", size: 1, live: true },
   { n: "Reward scheme", cat: "progress", i: "award", where: "both", d: "Rewards for milestones like 1,000 questions answered or a 100-day streak.", size: 2 },
   { n: "Projects for XP", cat: "progress", i: "briefcase", where: "web", d: "Real projects to complete for XP and your portfolio.", size: 1 },
-  { n: "Smart reminders", cat: "progress", i: "bell", where: "app", d: "Reminders that know your deadlines and your streak.", try: "view-settings", size: 1, live: true },
+  { n: "Smart reminders", plan: "plus", cat: "progress", i: "bell", where: "app", d: "Reminders that know your deadlines and your streak.", try: "view-settings", size: 1, live: true },
   { n: "Time blocking", cat: "progress", i: "calendar", where: "both", d: "Plan your week in blocks, and let Gradify auto-plan your revision.", try: "plan-cal", size: 3, live: true },
   // people
-  { n: "Gradify AI", cat: "people", i: "sparkles", where: "both", d: "An AI chat in the corner of every page, that knows your progress on every site.", try: "ai", size: 3, live: true },
+  { n: "Gradify AI", plan: "pro", cat: "people", i: "sparkles", where: "both", d: "An AI chat in the corner of every page, that knows your progress on every site.", try: "ai", size: 3, live: true },
   { n: "Tutors", cat: "people", i: "people", where: "web", d: "Book a tutor for any subject.", size: 2 },
   { n: "Student mentors", cat: "people", i: "people", where: "web", d: "Get advice from students a year or two ahead of you.", size: 1 },
   { n: "Study groups", cat: "people", i: "people", where: "both", d: "Virtual study groups with shared sessions and quizzes.", try: "view-community", size: 2, live: true },
@@ -70,11 +70,13 @@ function renderBubbles(filter) {
       <span class="b-ico">${icon(f.i)}</span><span class="b-name">${f.n}</span>${f.live ? '<i class="b-live" title="Try it in the LifeOS preview"></i>' : ""}</button>`;
   }).join("");
 }
+// features that come with a paid plan (pricing.html); everything else is in Free
+const PLAN_LABEL = { plus: "Gradify Plus", pro: "Gradify Pro" };
 function showDetail(f) {
   const c = CATS[f.cat].c;
   $("#bubble-detail").innerHTML = `
     <span class="b-ico big" style="--c:#${c};--tile:${tile(c)};--ink:${ink(c)}">${icon(f.i)}</span>
-    <span class="kicker">${CATS[f.cat].name} · ${WHERE[f.where]}</span>
+    <span class="kicker">${CATS[f.cat].name} · ${WHERE[f.where]}${f.plan ? ` · <a href="pricing.html">${PLAN_LABEL[f.plan]}</a>` : ""}</span>
     <h3>${f.n}</h3>
     <p>${f.d}</p>
     ${f.live ? `<a class="btn btn-light lg btn-sm" href="#${f.try}"><span>Try it in the LifeOS preview</span></a>` : `<span class="pill-dark">Coming soon</span>`}`;

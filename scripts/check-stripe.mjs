@@ -1,12 +1,12 @@
 // Read-only check that Stripe and Supabase are set up to sell exactly what the site says, before a real payment.
 //   NODE_USE_ENV_PROXY=1 node scripts/check-stripe.mjs [--write]
-// Checks, in Stripe: the Gradify Pro product, both prices (GBP, amount, interval, VAT-inclusive, active), the webhook
+// Checks, in Stripe: the Gradify Plus and Gradify Pro products and monthly prices (GBP, amount, VAT-inclusive, active), the webhook
 // (URL, events, enabled, API version) and the billing portal. In Supabase: the Stripe secrets exist, and the price
 // ids stored there are the live prices (compared by SHA-256: Supabase lists only digests). Changes nothing.
 // The Stripe key and Supabase token come from a credential-injecting proxy or STRIPE_SECRET_KEY / SUPABASE_ACCESS_TOKEN.
 import { createHash } from "node:crypto";
 import { appendFile } from "node:fs/promises";
-import { PRO_PRICES } from "../kit/data/billing.js";
+import { PLAN_PRICES } from "../kit/data/billing.js";
 
 const REF = "ezlohntrnassgsbofcfc", API_VERSION = "2025-08-27.basil";
 const HOOK_URL = `https://${REF}.supabase.co/functions/v1/billing-webhook`;
@@ -20,18 +20,22 @@ const rows = [], check = (what, ok, detail = "") => rows.push({ what, ok: Boolea
 
 const account = await stripe("/account");
 check("Stripe account", account.charges_enabled, `${account.country}, default currency ${account.default_currency}, charges ${account.charges_enabled ? "enabled" : "DISABLED"}`);
-const prices = { month: (await stripe("/prices?lookup_keys[]=gradify_pro_month&expand[]=data.product")).data[0], year: (await stripe("/prices?lookup_keys[]=gradify_pro_year&expand[]=data.product")).data[0] };
-const live = prices.month?.livemode;
+// what the site sells (kit/data/billing.js: PLAN_PRICES), found by lookup key
+const LOOKUP = { plus: "gradify_plus_month", pro: "gradify_pro_month_1500" }, NAME = { plus: "Gradify Plus", pro: "Gradify Pro" };
+const prices = {};
+for (const plan of ["plus", "pro"]) prices[plan] = (await stripe(`/prices?lookup_keys[]=${LOOKUP[plan]}&expand[]=data.product`)).data[0];
+const live = (prices.plus || prices.pro)?.livemode;
 check("Mode", true, live ? "LIVE: real payments" : "test mode");
-for (const [interval, p] of Object.entries(prices)) {
-  if (!p) { check(`Gradify Pro ${interval}ly price`, false, "missing (lookup key gradify_pro_" + interval + ")"); continue; }
-  const want = PRO_PRICES[interval];
-  check(`Gradify Pro ${interval}ly price`, p.active && p.currency === "gbp" && p.unit_amount === want && p.type === "recurring" && p.recurring?.interval === interval && p.recurring?.interval_count === 1 && p.recurring?.usage_type === "licensed" && p.tax_behavior === "inclusive" && p.product?.active && p.product?.name === "Gradify Pro",
+for (const plan of ["plus", "pro"]) {
+  const p = prices[plan], want = PLAN_PRICES[plan].month;
+  if (!p) { check(`${NAME[plan]} monthly price`, false, `missing (lookup key ${LOOKUP[plan]})`); continue; }
+  check(`${NAME[plan]} monthly price`, p.active && p.currency === "gbp" && p.unit_amount === want && p.type === "recurring" && p.recurring?.interval === "month" && p.recurring?.interval_count === 1 && p.recurring?.usage_type === "licensed" && p.tax_behavior === "inclusive" && p.product?.active && p.product?.name === NAME[plan],
     `${p.id}: ${p.currency.toUpperCase()} ${(p.unit_amount / 100).toFixed(2)} every ${p.recurring?.interval_count} ${p.recurring?.interval}, ${p.tax_behavior} of tax, ${p.active ? "active" : "INACTIVE"}; product "${p.product?.name}" ${p.product?.active ? "active" : "INACTIVE"}; site sells ${(want / 100).toFixed(2)}`);
 }
-if (prices.month && prices.year) check("Both prices on the same product", prices.month.product.id === prices.year.product.id, prices.month.product.id);
 const products = (await stripe("/products?active=true&limit=100")).data.filter((p) => /gradify/i.test(p.name));
-check("No duplicate Gradify products", products.length === 1, products.map((p) => `${p.id} "${p.name}"`).join(", "));
+check("One product per plan", products.length === 2 && ["Gradify Plus", "Gradify Pro"].every((n) => products.some((p) => p.name === n)), products.map((p) => `${p.id} "${p.name}"`).join(", "));
+const old = (await stripe("/prices?lookup_keys[]=gradify_pro_month&lookup_keys[]=gradify_pro_year")).data.filter((p) => p.active);
+check("Original Pro prices (£7.99 / £63.99)", true, old.length ? `${old.length} still active: existing subscribers keep them; archive them in Stripe once nobody is on them, so the portal offers only the new prices` : "archived");
 
 const hooks = (await stripe("/webhook_endpoints?limit=100")).data.filter((h) => h.url === HOOK_URL);
 const hook = hooks[0];
@@ -44,13 +48,14 @@ const portal = portals.find((c) => c.is_default) || portals[0];
 const upd = portal?.features?.subscription_update;
 check("Billing portal", portal && portal.features.subscription_cancel.enabled && portal.features.subscription_cancel.mode === "at_period_end" && portal.features.payment_method_update.enabled && portal.features.invoice_history.enabled,
   portal ? `${portal.id}${portal.is_default ? " (default)" : ""}: cancel ${portal.features.subscription_cancel.mode}, card updates ${portal.features.payment_method_update.enabled ? "on" : "off"}, invoices ${portal.features.invoice_history.enabled ? "on" : "off"}` : "missing");
-if (upd && prices.month) check("Portal plan switching", upd.enabled && upd.products?.some((x) => x.product === prices.month.product.id && x.prices.includes(prices.month.id) && x.prices.includes(prices.year.id)), "monthly ↔ yearly");
+if (upd && prices.plus && prices.pro) check("Portal plan switching", upd.enabled && [prices.plus, prices.pro].every((p) => upd.products?.some((x) => x.product === p.product.id && x.prices.includes(p.id))), "Plus ↔ Pro (add both products and prices to the portal's subscription update settings)");
 
 const sres = await fetch(`https://api.supabase.com/v1/projects/${REF}/secrets`, { headers: { Authorization: `Bearer ${process.env.SUPABASE_ACCESS_TOKEN || "proxy-injected"}` } });
 const secrets = Object.fromEntries((await sres.json()).map((s) => [s.name, s.value]));
-for (const n of ["STRIPE_SECRET_KEY", "STRIPE_WEBHOOK_SECRET", "STRIPE_PRICE_MONTH", "STRIPE_PRICE_YEAR"]) check(`Supabase secret ${n}`, n in secrets, n in secrets ? "set" : "MISSING");
-for (const [interval, p] of Object.entries(prices)) if (p) check(`STRIPE_PRICE_${interval.toUpperCase()} is the live ${interval}ly price`, secrets[`STRIPE_PRICE_${interval.toUpperCase()}`] === sha(p.id), "compared by SHA-256");
-check("Gradify Pro on sale", true, "GRADIFY_PRO_ON_SALE " + (secrets.GRADIFY_PRO_ON_SALE ? "set (check it's only on once Gradify AI is)" : "not set: only GRADIFY_BILLING_TESTERS can check out") + `; testers ${"GRADIFY_BILLING_TESTERS" in secrets ? "set" : "not set"}`);
+for (const n of ["STRIPE_SECRET_KEY", "STRIPE_WEBHOOK_SECRET", "STRIPE_PRICE_PLUS_MONTH", "STRIPE_PRICE_PRO_MONTH"]) check(`Supabase secret ${n}`, n in secrets, n in secrets ? "set" : "MISSING");
+for (const plan of ["plus", "pro"]) if (prices[plan]) check(`STRIPE_PRICE_${plan.toUpperCase()}_MONTH is the ${NAME[plan]} price`, secrets[`STRIPE_PRICE_${plan.toUpperCase()}_MONTH`] === sha(prices[plan].id), "compared by SHA-256");
+for (const n of ["STRIPE_PRICE_MONTH", "STRIPE_PRICE_YEAR"]) if (n in secrets) check(`Supabase secret ${n}`, true, "the original Pro price: keep it while anyone subscribes on it, so their webhook events still read as Pro");
+check("On sale", true, `GRADIFY_PLUS_ON_SALE ${secrets.GRADIFY_PLUS_ON_SALE ? "set" : "not set"}; GRADIFY_PRO_ON_SALE ${secrets.GRADIFY_PRO_ON_SALE ? "set (check it's only on once Gradify AI is)" : "not set"}; testers ${"GRADIFY_BILLING_TESTERS" in secrets ? "set" : "not set"}`);
 const subs = await stripe("/subscriptions?status=all&limit=100");
 check("Existing subscriptions", true, `${subs.data.length}${subs.has_more ? "+" : ""}`);
 
