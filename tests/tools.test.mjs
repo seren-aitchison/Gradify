@@ -112,3 +112,12 @@ test("glass diagrams are drawn from a lesson's own notes, beside the part they s
   assert.equal(diagramForCard([flow], "What sets the membrane potential?", "The potassium gradient"), flow);
   assert.equal(diagramForCard([flow], "Something else entirely"), null);
 });
+
+test("a Gradify AI pack (as from a photo of notes) becomes cards, with its cloze cards kept as cloze", () => {
+  const pack = { title: "Cells", topics: [{ name: "Organelles", facts: [
+    { term: "Mitochondrion", kind: "definition", statement: "Mitochondrion: the site of aerobic respiration.", card: { type: "definition", front: "What is the mitochondrion?", back: "The site of aerobic respiration." } },
+    { term: null, kind: "other", statement: "Cells divide by mitosis.", card: { type: "cloze", front: "Cells divide by {{c1::mitosis}}.", back: "mitosis" } }] }], equations: [] };
+  const cards = parseDeck(deckOf(pack));
+  assert.deepEqual(cards.map((c) => c.type), ["concept", "concept", "cloze"]);
+  assert.equal(cards[2].front, "Cells divide by {{…}}.");
+});

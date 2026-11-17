@@ -147,7 +147,7 @@ export function userPrompt(o) {
 Document title: ${o.title}
 
 <notes>
-${o.text}
+${o.text || (o.attached ? "(The notes are in the attached pages above, photographed or scanned. Read every page, including handwriting, arrows, diagrams and margin notes; quote the notes as they are written; and where a word can't be read, leave it out rather than guess.)" : "")}
 </notes>
 
 Build the knowledge pack for these notes.`;

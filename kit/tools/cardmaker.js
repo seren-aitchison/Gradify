@@ -56,7 +56,9 @@ async function editor(view, ctx, d) {
         <div class="tl-tools"><button type="button" class="tl-mini" data-act="cloze" title="Make the selected words a cloze gap (Ctrl+Shift+C)">{{ }} Cloze</button>
           <label class="tl-mini">Add image<input type="file" accept="image/*" hidden data-img></label>
           <button type="button" class="tl-mini" data-act="suggest">Suggest cards</button>
-          <button type="button" class="tl-mini" data-act="lessons">From lessons</button></div>
+          <button type="button" class="tl-mini" data-act="lessons">From lessons</button>
+          <label class="tl-mini tl-pro" title="Gradify AI, part of Gradify Pro">Photo of notes <span class="tl-pro-tag">Pro</span><input type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/*" multiple hidden data-photo></label></div>
+        <div class="tl-photo" hidden></div>
         <textarea class="tl-text" spellcheck="true" aria-label="Your notes and cards">${esc(d.text)}</textarea>
         <p class="tl-syntax">${HELP.map(([k, v]) => `<span><code>${esc(k)}</code> ${esc(v)}</span>`).join("")}</p>
         <div class="tl-sugg" hidden></div><div class="tl-lessons" hidden></div>
@@ -81,6 +83,33 @@ async function editor(view, ctx, d) {
   view.querySelector("[data-img]").addEventListener("change", (e) => addImages([...e.target.files]));
   ta.addEventListener("paste", (e) => { const imgs = [...(e.clipboardData?.files || [])].filter((f) => f.type.startsWith("image/")); if (imgs.length) { e.preventDefault(); addImages(imgs); } });
   ta.addEventListener("drop", (e) => { const imgs = [...(e.dataTransfer?.files || [])].filter((f) => f.type.startsWith("image/")); if (imgs.length) { e.preventDefault(); addImages(imgs); } });
+  // Gradify Pro: photos of notes (handwritten too) become cards, written by Gradify AI (supabase/functions/study-pack)
+  const photo = view.querySelector(".tl-photo");
+  view.querySelector("[data-photo]").addEventListener("change", async (e) => {
+    const files = [...e.target.files].slice(0, 5); e.target.value = "";
+    if (!files.length) return;
+    photo.hidden = false;
+    const { PRO_ON_SALE } = await import("../data/billing.js");
+    if (!PRO_ON_SALE) {
+      photo.innerHTML = `<b>Photo to cards is coming with Gradify Pro.</b><p class="sub">Gradify AI will read photos of your notes, handwriting included, and write the cards for you. Until then, type or paste your notes here and press Suggest cards.</p>`;
+      return;
+    }
+    if (ctx.store?.mode !== "cloud") { photo.innerHTML = `<b>Sign in to use Gradify AI.</b><p class="sub"><a href="#/account">Sign in</a>, then try the photo again.</p>`; return; }
+    photo.innerHTML = `<p class="sub">Reading ${files.length === 1 ? "your photo" : `${files.length} photos`}…</p>`;
+    try {
+      const images = await Promise.all(files.map(photoForAi));
+      const { callFunction } = await import("../data/functions.js");
+      const body = await callFunction(ctx.store, "study-pack", { mode: "pack", text: "", images, title: view.querySelector(".tl-title").value || "My notes", site: ctx.site || "Gradify", level: "undergraduate" }, { fallback: "Gradify AI couldn't read those photos. Try a clearer, closer photo." });
+      const { deckOf } = await import("./convert.js");
+      const lines = deckOf({ ...body.pack, title: body.pack?.title || "From your photo", topics: body.pack?.topics || [], equations: body.pack?.equations || [] });
+      const n = parseDeck(lines).length;
+      if (!n) throw new Error("Gradify AI couldn't find anything to make cards from in those photos.");
+      ta.value = `${ta.value.replace(/\s*$/, "")}\n\n${lines}\n`; save();
+      photo.innerHTML = `<b>${fmt(n, "card", "cards")} from your ${files.length === 1 ? "photo" : "photos"}.</b><p class="sub">Check each one against your notes: handwriting can be misread. Edit or delete any line in the box above.</p>`;
+    } catch (err) {
+      photo.innerHTML = `<b>That didn't work.</b><p class="sub">${esc(err.message || "Please try again.")}</p>`;
+    }
+  });
   view.querySelectorAll("[data-style]").forEach((b) => b.addEventListener("click", () => { d = saveDeck({ ...d, style: b.dataset.style }); view.querySelectorAll("[data-style]").forEach((x) => x.setAttribute("aria-checked", String(x === b))); }));
   const sugg = view.querySelector(".tl-sugg"), lessons = view.querySelector(".tl-lessons");
   view.querySelector(".tl-edit").addEventListener("click", async (e) => {
@@ -104,6 +133,15 @@ async function editor(view, ctx, d) {
   });
   view.querySelector('[data-act="delete"]').addEventListener("click", () => { if (confirm(`Delete "${d.title}" and its review history? This can't be undone.`)) { deleteDeck(d.id); location.hash = "#/tools"; } });
   paint();
+}
+
+// a photo ready for Gradify AI: at most 1568 px on its long side (larger is scaled down by the model anyway) as a JPEG
+async function photoForAi(file) {
+  const bmp = await createImageBitmap(file), k = Math.min(1, 1568 / Math.max(bmp.width, bmp.height));
+  const c = document.createElement("canvas"); c.width = Math.round(bmp.width * k); c.height = Math.round(bmp.height * k);
+  c.getContext("2d").drawImage(bmp, 0, 0, c.width, c.height);
+  const url = c.toDataURL("image/jpeg", 0.85);
+  return { type: "image/jpeg", data: url.slice(url.indexOf(",") + 1) };
 }
 
 async function review(view, ctx, d) {

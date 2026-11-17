@@ -65,6 +65,10 @@
 .tl-text { width: 100%; min-height: 380px; resize: vertical; box-sizing: border-box; padding: 14px; border-radius: 14px; border: 1px solid var(--line); background: var(--inset, rgba(127, 127, 127, .06)); color: var(--fg); font: 14px/1.6 var(--mono, ui-monospace, monospace); }
 .tl-syntax { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0; font-size: 12px; color: var(--mute); }
 .tl-syntax code { font-weight: 700; color: var(--fg); }
+.tl-pro-tag { font: 800 9px var(--mono, monospace); letter-spacing: .06em; padding: 1px 6px; border-radius: 99px; color: #fff; background: linear-gradient(135deg, #8b3dff, #f055dd); }
+.tl-photo { padding: 12px 14px; border-radius: 14px; border: 1px solid var(--line); font-size: 14px; }
+.tl-photo[hidden] { display: none; }
+.tl-photo p { margin: 4px 0 0; }
 .tl-sugg ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; max-height: 260px; overflow: auto; }
 .tl-sugg li { display: flex; gap: 8px; align-items: center; justify-content: space-between; font-size: 13px; }
 .tl-sugg code { white-space: normal; }
