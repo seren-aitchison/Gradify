@@ -842,6 +842,11 @@ X: Making propanoic acid from bromoethane.
 > Propanenitrile is hydrolysed with acid.
 > This gives propanoic acid.
 > Two steps lengthen the chain and form the acid group.
+H: Selecting reagents
+- To **select reagents** for a conversion, name the starting functional group and the target, then choose the reaction that links them: oxidation (acidified potassium dichromate), reduction (NaBH₄), substitution (aqueous NaOH, ammonia or KCN) or addition (steam with H₃PO₄).
+- Conditions decide the product: to stop a primary alcohol at the **aldehyde**, distil it off as it forms; for the **carboxylic acid**, heat under reflux with excess oxidising agent.
+- With a haloalkane, **aqueous** NaOH gives an alcohol by substitution, but NaOH in **ethanol**, heated, favours elimination to an alkene.
+- When a conversion needs one more carbon atom, use **KCN**: the nitrile can then be hydrolysed to a carboxylic acid or reduced to an amine.
 K: Functional groups interconvert by known reactions: hydration, hydrolysis, oxidation with dichromate, esterification, substitution with ammonia or cyanide and reduction with NaBH₄, which combine into multi-step syntheses.
 !: Forgetting that cyanide adds a carbon atom. Nitrile routes lengthen the chain by one.
 EV: established | Functional group interconversion is the basis of synthetic planning (Corey, 1991).

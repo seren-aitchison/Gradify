@@ -4,474 +4,146 @@ Made by `node scripts/map-gaps.mjs` from the mind map engine. An objective is li
 summary in its own lesson shares enough of its key words to answer it. Each is a prompt to improve the lesson, not
 necessarily an error.
 
-**748 objectives in 691 of 9979 lessons.**
+**203 objectives in 195 of 9979 lessons.**
 
 | Subject | Lessons | With a gap | Objectives |
 |---|---:|---:|---:|
-| art | 183 | 7 | 8 |
-| biology | 391 | 27 | 30 |
-| business | 178 | 18 | 20 |
-| careers | 145 | 9 | 9 |
-| chemistry | 410 | 50 | 65 |
-| computing | 96 | 7 | 7 |
-| dentistry | 200 | 6 | 6 |
-| design | 173 | 9 | 10 |
-| ecology | 198 | 12 | 13 |
-| engineering | 191 | 22 | 23 |
-| finance | 202 | 11 | 13 |
-| gcse | 149 | 7 | 7 |
-| health | 176 | 11 | 11 |
-| history | 301 | 45 | 52 |
-| investing | 183 | 5 | 5 |
-| japanese | 182 | 36 | 39 |
-| law | 480 | 57 | 59 |
-| literature | 166 | 9 | 9 |
-| maths | 1077 | 91 | 94 |
-| medicine | 234 | 16 | 16 |
-| music | 201 | 15 | 17 |
-| nursing | 497 | 25 | 28 |
-| pharmacy | 318 | 54 | 56 |
+| art | 183 | 2 | 2 |
+| biology | 391 | 0 | 0 |
+| business | 178 | 7 | 7 |
+| careers | 145 | 2 | 2 |
+| chemistry | 410 | 0 | 0 |
+| computing | 96 | 4 | 4 |
+| dentistry | 200 | 2 | 2 |
+| design | 173 | 1 | 1 |
+| ecology | 198 | 5 | 5 |
+| engineering | 191 | 7 | 7 |
+| finance | 202 | 3 | 5 |
+| gcse | 149 | 3 | 3 |
+| health | 176 | 3 | 3 |
+| history | 301 | 10 | 10 |
+| investing | 183 | 2 | 2 |
+| japanese | 182 | 24 | 25 |
+| law | 480 | 23 | 23 |
+| literature | 166 | 3 | 3 |
+| maths | 1077 | 21 | 21 |
+| medicine | 234 | 3 | 3 |
+| music | 201 | 5 | 5 |
+| nursing | 497 | 5 | 5 |
+| pharmacy | 318 | 10 | 11 |
 | physics | 1308 | 0 | 0 |
-| primary | 167 | 22 | 25 |
-| professional | 169 | 14 | 15 |
-| psychology | 393 | 17 | 19 |
-| research | 197 | 13 | 13 |
-| sociology | 438 | 11 | 12 |
-| spanish | 145 | 26 | 27 |
-| sport | 205 | 15 | 15 |
-| teaching | 228 | 6 | 6 |
-| university | 189 | 7 | 7 |
-| veterinary | 209 | 11 | 12 |
+| primary | 167 | 10 | 13 |
+| professional | 169 | 5 | 5 |
+| psychology | 393 | 1 | 1 |
+| research | 197 | 2 | 2 |
+| sociology | 438 | 2 | 2 |
+| spanish | 145 | 16 | 17 |
+| sport | 205 | 7 | 7 |
+| teaching | 228 | 2 | 2 |
+| university | 189 | 4 | 4 |
+| veterinary | 209 | 1 | 1 |
 
 ## art
 
-- **u01: What is art and design?**
-  - Explain why definitions of art have changed over time, using examples
-  - Evaluate competing definitions of art against a borderline case
-- **u01: Composition and the picture plane**
-  - Apply thumbnail sketches to plan and compare compositions
-- **u04: Brushes, knives and tools**
-  - Identify the main brush shapes and the marks each makes
 - **u07: Hierarchy and layout**
   - Evaluate layouts for clarity and readability
-- **u09: Futurism and Constructivism**
-  - Analyse how these movements represented modernity
 - **u09: Pop Art**
   - Analyse key Pop artworks
-- **u12: Curating and exhibitions**
-  - Describe the role of the curator
-
-## biology
-
-- **u02: Cell theory**
-  - Describe the observations that led to it, and who made them
-- **u02: Mitochondria**
-  - Describe the structure of a mitochondrion and relate it to function
-  - State where the stages of aerobic respiration take place
-- **u02: Endoplasmic reticulum**
-  - State the functions of each
-- **u02: Cytoskeleton**
-  - Describe the three types of cytoskeletal filament
-- **u02: Cell junctions**
-  - Relate each type of junction to the tissues where it is common
-- **u03: pH and biological buffers**
-  - Define pH and calculate it from hydrogen ion concentration
-- **u03: DNA and RNA**
-  - Compare the structures and functions of DNA and RNA
-- **u03: ATP and biological energy**
-  - Describe the structure of ATP
-- **u04: Sex-linked inheritance**
-  - Explain how sex is determined in humans
-- **u05: Interphase**
-  - Describe events in G₁, S and G₂
-- **u05: Organogenesis**
-  - Explain the vulnerability of organogenesis to disruption
-- **u07: Neurones**
-  - Describe the structure of a neurone
-- **u07: Blood vessels**
-  - Relate the structure of each vessel to its function
-- **u07: Respiratory system**
-  - Describe the structures of the respiratory system
-- **u07: Muscle contraction**
-  - Explain the sliding filament theory
-- **u08: Photosynthesis**
-  - Describe the structure of the chloroplast
-- **u08: C3 photosynthesis**
-  - Define C3 photosynthesis
-- **u08: CAM photosynthesis**
-  - Describe the CAM pathway
-  - Compare CAM with C3 and C4 photosynthesis
-- **u09: Introduction to microbiology**
-  - Name the main groups of microorganisms
-- **u09: Bacterial genetics**
-  - Describe the organisation of the bacterial genome
-- **u09: Pathogenic microorganisms**
-  - Define pathogen
-- **u09: Transmission**
-  - Describe ways of reducing transmission
-- **u11: Conservation strategies**
-  - Describe examples of each strategy
-- **u12: Cloning vectors**
-  - Choose an appropriate vector for a task
-- **u12: Polymerase chain reaction**
-  - Describe the components of a PCR reaction
-- **u12: Gene expression systems**
-  - Explain why post-translational modification affects host choice
-- **u13: RNA sequencing**
-  - Describe the RNA-seq laboratory workflow
-  - Describe the computational analysis of RNA-seq data
 
 ## business
 
 - **u02: Centralisation and decentralisation**
   - Explain the advantages and disadvantages of each
-  - Evaluate the factors that determine how far a business decentralises
-- **u02: Motivation: process theories**
-  - Evaluate the evidence for each theory
 - **u02: Leadership theories**
   - Evaluate the evidence for each approach
 - **u03: Planned and emergent strategy**
   - Evaluate when each approach is most appropriate
 - **u03: Porter's five forces**
   - Evaluate the strengths and limitations of the framework
-- **u03: Core competences and the VRIO framework**
-  - Apply the VRIO framework to a resource or capability
-- **u03: Porter's generic strategies**
-  - Evaluate the generic strategies with reference to hybrid strategies
-- **u04: Segmentation, targeting and positioning**
-  - Describe the main bases for segmenting consumer markets
-- **u04: Consumer behaviour**
-  - Apply behavioural insights to marketing decisions
-- **u05: Just-in-time**
-  - Describe the requirements for successful JIT
-  - Evaluate the benefits and risks of JIT
-- **u06: What is human resource management?**
-  - Define HRM and list its main activities
 - **u06: Equality, diversity and inclusion**
   - Evaluate interventions to improve inclusion
-- **u06: Discipline, grievance and conflict**
-  - Explain how grievances should be handled
 - **u07: The statement of financial position**
   - State and apply the accounting equation
-- **u08: Price elasticity of demand**
-  - Explain the determinants of PED
-- **u09: Opportunity recognition and the entrepreneurial mindset**
-  - Describe characteristics of the entrepreneurial mindset and their limits
-- **u11: Ethical theories in business**
-  - Evaluate the strengths and limits of each theory
 - **u11: Shareholder and stakeholder theories of the firm**
   - Evaluate the two views of the purpose of the firm
 
 ## careers
 
-- **u03: Unpaid internships and the National Minimum Wage**
-  - Evaluate the arguments for and against banning unpaid internships
-- **u05: What a CV is for**
-  - Explain the purpose of a CV
 - **u05: Common CV mistakes**
   - Explain why accuracy and honesty matter
-- **u06: Civil Service Success Profiles**
-  - Evaluate the advantages of a flexible, multi-element framework for selection
 - **u07: Role-plays**
   - Balance empathy with reaching a practical outcome
-- **u08: Creative and portfolio careers**
-  - Apply the practical basics of working for yourself
-- **u10: Segmentation, targeting and positioning**
-  - Describe the main bases for segmenting consumer markets
-- **u10: Consumer behaviour**
-  - Apply behavioural insights to marketing decisions
-- **u11: Dealing with rejection**
-  - Plan strategies to sustain motivation during a long job search
-
-## chemistry
-
-- **u01: Mixtures**
-  - Calculate and interpret Rf values
-- **u01: Chemical symbols**
-  - Read the information in a periodic table entry
-- **u01: Concentration**
-  - Calculate concentrations in mol/dm³ and g/dm³
-  - Use n = c × V to find amounts of solute
-- **u02: Atomic number and mass number**
-  - Use nuclide notation correctly
-- **u02: Periodic trends**
-  - Predict how a property changes between two named elements
-- **u06: Bond enthalpies**
-  - Explain sources of discrepancy
-- **u06: Spontaneity**
-  - Distinguish thermodynamic and kinetic control
-- **u06: Thermodynamic equilibrium**
-  - Use ΔG⦵ = −RT ln K
-  - Relate the size of K to the sign of ΔG⦵
-- **u06: First law of thermodynamics**
-  - Use ΔU = q + w
-- **u08: Kp**
-  - Write and calculate Kp
-- **u08: Temperature and equilibrium**
-  - Apply this to industrial processes
-- **u08: Thermodynamic interpretation**
-  - Relate K to ΔG⦵
-- **u09: pH**
-  - Define pH
-  - Convert between pH and [H⁺]
-  - Describe methods of measuring pH
-- **u09: pOH**
-  - Define Kw and pOH
-  - Use pH + pOH = 14 at 25 °C
-- **u09: Acid dissociation constants**
-  - Write the expression for Ka
-  - Convert between Ka and pKa
-- **u09: Base dissociation constants**
-  - Write the expression for Kb
-- **u09: Ka and Kb**
-  - Use pKa + pKb = 14 at 25 °C
-  - Predict the pH of salt solutions
-- **u11: Catalytic complexes**
-  - Describe elementary steps in organometallic catalysis
-- **u12: Stereoisomerism**
-  - Define stereoisomerism
-- **u12: E and Z nomenclature**
-  - Name alkenes with E/Z descriptors
-- **u12: Functional group interconversion**
-  - Select reagents for specific conversions
-- **u13: Homolytic and heterolytic cleavage**
-  - Explain conditions favouring each type
-- **u13: Substitution reactions**
-  - Compare SN1 and SN2 pathways
-- **u13: SN1 mechanisms**
-  - Explain conditions favouring SN1
-- **u13: SN2 mechanisms**
-  - Describe the one-step SN2 mechanism
-- **u13: E1 mechanisms**
-  - Explain competition between E1 and SN1
-- **u13: Oxidation reactions**
-  - Compare common oxidising agents
-- **u14: Heterocyclic compounds**
-  - Define heterocyclic compounds
-- **u15: Foundations of analytical chemistry**
-  - Explain why analysis matters in society
-- **u15: Gravimetric analysis**
-  - Describe precipitation gravimetry
-  - Describe volatilisation gravimetry
-- **u15: Nuclear magnetic resonance**
-  - Describe how an NMR spectrum is obtained
-- **u15: Carbon-13 NMR**
-  - Explain why ¹³C NMR is less sensitive than ¹H NMR
-- **u15: NMR chemical shifts**
-  - Explain shielding and deshielding effects
-- **u15: Spin-spin coupling**
-  - Apply the n + 1 rule to predict splitting
-  - Use splitting patterns to deduce structure
-- **u15: Mass spectrometry**
-  - Use isotope patterns to identify elements
-- **u15: Thin-layer chromatography**
-  - Describe how to carry out TLC
-- **u15: Gas chromatography**
-  - Describe the parts of a gas chromatograph
-  - Explain separation in GC
-- **u15: GC-MS**
-  - Describe how GC and MS are combined
-  - Explain the advantages of GC-MS
-  - Describe applications of GC-MS
-- **u15: LC-MS**
-  - Describe how LC and MS are combined
-  - Describe applications of LC-MS
-- **u16: Molecular orbitals**
-  - Construct MO diagrams for second-row diatomic molecules
-- **u16: Quantum chemistry**
-  - Describe the main computational approaches
-- **u16: Partition functions**
-  - Describe contributions from different types of motion
-- **u17: Semiconductors**
-  - Describe semiconductor devices
-- **u17: Biomaterials**
-  - Define biocompatibility
-  - Explain trends in biomaterial design
-- **u17: Industrial chemical processes**
-  - Explain how conditions are chosen in industry
-  - Describe unit operations used in chemical plants
-- **u17: Chemical manufacturing**
-  - Explain the stages of scaling up a process
-- **u17: Petroleum chemistry**
-  - Describe petrochemicals made from oil and gas
-- **u17: Green chemistry**
-  - Describe examples of greener processes
-- **u19: Retrosynthetic analysis**
-  - Identify strategic disconnections in a target
-- **u19: Research integrity**
-  - Explain the responsibilities of researchers
 
 ## computing
 
-- **u01: Flowcharts**
-  - Compare flowcharts and pseudocode as ways of representing algorithms
-- **u02: Data types and casting**
-  - Predict the result or error when values of different types are combined
+- **u03: List operations and methods**
+  - Choose and combine list operations to solve a problem
+- **u03: Sets**
+  - Explain when a set is a better choice than a list
 - **u04: Big O notation**
   - Rank the common complexity classes from most to least efficient
-- **u04: Recursive and iterative solutions**
-  - Judge which approach suits a given problem and justify the choice
-- **u04: Breadth-first and depth-first traversal**
-  - Compare the two traversals and choose one for a given application
-- **u05: Binary search trees**
-  - Explain how balance affects a BST's efficiency
 - **u05: Static and dynamic data structures**
   - Evaluate the advantages and disadvantages of each for a given problem
 
 ## dentistry
 
-- **u01: The facial nerve and other cranial nerves in dentistry**
-  - State the dental relevance of cranial nerves IX, X and XII
-- **u03: Thrombosis, embolism and infarction**
-  - Explain Virchow's triad and apply it to clinical situations
-- **u04: Minimal intervention dentistry**
-  - Describe the principles of minimal intervention dentistry
 - **u05: Peri-implant health and disease**
   - Describe principles of prevention and management
 - **u09: Complete dentures**
   - Manage common problems after fitting and recognise when to refer
-- **u12: The dental team and scope of practice**
-  - Name the GDC registrant groups
 
 ## design
 
-- **u03: Brainwriting and 6-3-5**
-  - Run a 6-3-5 session and calculate its potential output
-- **u03: SCAMPER**
-  - Evaluate the strengths and limits of checklist methods
 - **u03: Morphological analysis**
   - Evaluate the method's strengths and limits
-- **u05: Problem framing and reframing**
-  - Evaluate when reframing adds value and when it delays action
-- **u05: Prioritisation methods**
-  - Evaluate prioritisation methods for bias and usefulness
-- **u06: Minimum viable product**
-  - Evaluate the MVP approach and its risks
-- **u07: What is art and design?**
-  - Explain why definitions of art have changed over time, using examples
-  - Evaluate competing definitions of art against a borderline case
-- **u07: Composition and the picture plane**
-  - Apply thumbnail sketches to plan and compare compositions
-- **u08: Accessible forms**
-  - Describe the WCAG requirements most relevant to forms
 
 ## ecology
 
-- **u01: Biotic interactions: an overview**
-  - Describe an example of each major type of interaction
+- **u02: Estimating population size: mark–release–recapture**
+  - Evaluate how violating the assumptions biases the estimate
 - **u02: Small populations and extinction risk**
   - Apply these ideas to conservation of a threatened species
-- **u02: Population viability analysis**
-  - Evaluate the use of PVA in conservation decision-making
-- **u04: Agricultural ecosystems**
-  - Evaluate approaches to making agriculture more sustainable
+- **u03: Predation**
+  - Describe the types of predation and examples of each
 - **u05: The nitrogen cycle**
   - Identify the microorganisms responsible for each process
-- **u05: Nutrient limitation**
-  - Explain the law of the minimum
-- **u06: The latitudinal diversity gradient**
-  - Explain the main hypotheses for the gradient
-  - Evaluate the evidence for these hypotheses
-- **u09: The scientific method in ecology**
-  - Explain why falsifiability and repeatability matter
-- **u09: Experimental and observational studies**
-  - Evaluate the strengths and limits of each approach in ecology
-- **u09: Replication and pseudoreplication**
-  - Explain why replication is necessary in ecological studies
 - **u09: Sampling animals**
   - Evaluate the biases of animal sampling methods
-- **u11: Environmental impact assessment**
-  - Sequence the main stages of an EIA
 
 ## engineering
 
-- **u01: SI units and dimensional analysis**
-  - Use dimensional analysis to predict the form of a relationship and judge what it cannot tell you
-- **u01: Functions and graphs in engineering**
-  - Linearise data using logarithms and judge which model fits
-- **u01: Taylor series and linearisation**
-  - Write the Taylor and Maclaurin series of standard functions
 - **u01: Probability and reliability**
   - Apply the addition and multiplication rules of probability
-- **u02: Equilibrium of a rigid body in two dimensions**
-  - Calculate support reactions for beams and frames
-- **u02: Equilibrium in three dimensions**
-  - Represent common 3D supports by their reactions
 - **u02: Statical determinacy and stability**
   - Identify partial and improper constraints
-- **u03: Relative motion**
-  - Explain the importance of reference frames in engineering
-- **u05: Crystal structures**
-  - Describe BCC, FCC and HCP crystal structures
 - **u06: Energy, work and heat**
   - Apply a consistent sign convention
 - **u06: Ideal gases**
   - Relate R, c_{p}, c_{v} and γ
-- **u06: Isentropic efficiency**
-  - Apply T_{2s} ÷ T_{1} = (p_{2} ÷ p_{1})^{(γ−1)/γ}
-- **u06: Gas power cycles: Otto, Diesel and Brayton**
-  - Calculate air-standard efficiencies
-- **u06: Refrigeration and heat pumps**
-  - Compare actual and Carnot COP
 - **u06: Heat transfer by conduction**
   - Interpret U-values for building elements
 - **u07: Hydrostatic forces on surfaces**
   - Apply results to gates and walls
 - **u07: Buoyancy and stability**
   - Apply Archimedes' principle
-  - Determine whether an object floats and how deeply
-- **u07: Conservation of mass and continuity**
-  - Apply the continuity equation to changing cross-sections
-- **u07: The Bernoulli equation**
-  - Apply it to find velocities and pressures
-- **u08: Capacitors and inductors**
-  - Calculate capacitance, inductance combinations and stored energy
-- **u11: Professional responsibility and whistleblowing**
-  - Explain the protection given to whistleblowers by UK law
-- **u12: Engineering economics**
-  - Explain the strengths and limits of different appraisal methods
 
 ## finance
 
 - **u03: Qualitative characteristics of useful information**
   - Describe the fundamental and enhancing qualitative characteristics
   - Apply the characteristics to evaluate accounting choices
-- **u03: Share capital and reserves**
-  - Explain the legal rules restricting distributions
-- **u03: Events after the reporting period**
-  - Apply IAS 10 to common examples
-- **u03: Accounting policies, estimates and errors**
-  - Apply retrospective and prospective treatment correctly
-- **u05: Accounting for materials**
-  - Calculate the economic order quantity
-- **u05: Marginal and absorption costing compared**
-  - Evaluate the advantages of each method
 - **u06: Budgeting: purposes and process**
   - Explain the purposes of budgeting
-- **u07: Financial objectives and stakeholders**
-  - Evaluate stakeholder and sustainability objectives
-- **u07: Internal rate of return**
-  - Explain the limitations of IRR compared with NPV
 - **u08: The audit expectation gap**
   - Analyse its components
   - Evaluate measures intended to narrow it
-- **u09: The UK tax system**
-  - Identify the sources of UK tax law and the bodies that administer it
 
 ## gcse
 
 - **u01: Spaced practice and revision timetables**
   - Evaluate a revision timetable and suggest improvements
-- **u01: Timing and exam technique**
-  - Describe practical exam techniques for reading, timing and checking
 - **u03: Post-war and contemporary British drama**
   - Identify the contributions of major playwrights
-- **u05: Tests for gases**
-  - Explain safety precautions when testing gases
-- **u07: Biotic interactions: an overview**
-  - Describe an example of each major type of interaction
-- **u08: Economic change in an emerging economy**
-  - Evaluate the effects of economic development on quality of life and the environment
 - **u09: Understanding risk: absolute and relative**
   - Calculate these measures from simple data
 
@@ -481,149 +153,45 @@ necessarily an error.
   - Calculate these measures from simple data
 - **u03: Salt, sugar and saturated fat**
   - Describe the main dietary sources and health effects of each
-- **u04: The benefits of physical activity**
-  - Explain the strength of the evidence for the main benefits
-- **u06: Depression**
-  - Interpret a PHQ-9 score
-- **u06: Self-harm and suicide prevention**
-  - Recognise warning signs and respond supportively
-- **u07: The COM-B model and the behaviour change wheel**
-  - Describe the components of the COM-B model
-- **u07: Making Every Contact Count**
-  - Plan a short behaviour change conversation
 - **u08: Antimicrobial resistance**
   - Describe the scale of the problem
-- **u09: The three domains of public health**
-  - Give examples of activities in each domain
-- **u09: Epidemiological study designs**
-  - Evaluate the strengths and weaknesses of each design
-- **u10: The founding of the NHS**
-  - Explain the social and political background to the founding of the NHS
 
 ## history
 
 - **u01: Historical argument**
   - Judge between competing explanations
-- **u02: The Norman Conquest**
-  - Evaluate whose claim was strongest
-- **u02: Henry II and legal reform**
-  - Explain his main legal reforms and how they worked
-  - Evaluate the significance of his reforms for English law
-- **u04: Religious tensions under the early Stuarts**
-  - Describe the main religious groups in early Stuart England
-- **u04: The Long Parliament**
-  - Evaluate why the political crisis turned into civil war
-- **u04: The trial and execution of Charles I**
-  - Evaluate the significance of the regicide
-- **u04: The Commonwealth**
-  - Explain the challenges the republic faced
-- **u05: Agricultural change**
-  - Evaluate whether the changes amounted to an agricultural revolution
-- **u05: Urbanisation**
-  - Explain the causes of urbanisation
-- **u05: Housing and sanitation**
-  - Explain why housing was so poor
-- **u06: The development of democracy**
-  - Evaluate when Britain became a democracy
-- **u06: Imperial expansion**
-  - Describe the main areas of British expansion in the nineteenth century
-  - Explain the economic, strategic and ideological motives for expansion
-- **u07: Militarism**
-  - Describe the growth of armies and navies before 1914
+- **u02: The Battle of Hastings**
+  - Describe the armies and the main stages of the battle
 - **u07: Imperial rivalry**
   - Evaluate how far imperial rivalry caused the war
-- **u07: The assassination of Archduke Franz Ferdinand**
-  - Explain who organised and carried out the assassination
-- **u07: The outbreak of war**
-  - Evaluate the claim that Europe greeted war with enthusiasm
 - **u07: The British Home Front, 1914–1918**
   - Describe the main changes to life in Britain during the war
-- **u07: The consequences of the First World War**
-  - Describe the human, political and economic consequences of the war
-- **u08: Tsarist Russia**
-  - Explain how the tsars kept control
-- **u08: The February Revolution**
-  - Explain why the army's role was decisive
-- **u08: The New Economic Policy**
-  - Evaluate the successes and problems of the NEP
-- **u08: Soviet propaganda**
-  - Evaluate how effective Soviet propaganda was
 - **u08: Life under Stalin**
   - Describe living and working conditions in the 1930s
 - **u09: Hyperinflation**
   - Describe its effects on different groups in Germany
-  - Evaluate how far it damaged support for the republic
-- **u09: The Great Depression in Germany**
-  - Evaluate the link between the Depression and the rise of the Nazis
 - **u09: Women and family policy in Nazi Germany**
   - Explain the policies used to raise the birth rate
-- **u09: Resistance to Nazi rule**
-  - Explain why resistance was so difficult
-- **u10: The Battle of Britain**
-  - Explain why the RAF won
-- **u10: The Eastern Front, 1941–1945**
-  - Evaluate the importance of the Eastern Front to Allied victory
-- **u10: The Home Front, 1939–1945**
-  - Evaluate how far the war changed British society
-- **u10: Wartime economies**
-  - Describe how the main powers mobilised their economies for war
-  - Evaluate how far economic power decided the war
 - **u10: D-Day**
   - Evaluate the significance of D-Day
 - **u11: Capitalism and communism**
   - Explain why each superpower distrusted the other
-- **u11: The Iron Curtain**
-  - Explain its purpose and the reactions to it
-  - Evaluate its significance as evidence and as an event
-- **u11: NATO and the Warsaw Pact**
-  - Evaluate the impact of the two alliances on the Cold War
-- **u11: The Cuban Missile Crisis**
-  - Evaluate who gained more from the outcome of the crisis
-- **u12: The creation of the NHS**
-  - Describe the founding principles of the NHS
-  - Evaluate the early successes and problems of the NHS
-- **u12: Britain and Europe**
-  - Evaluate why Europe divided British politics
-- **u13: The New Deal**
-  - Describe the main measures of the First and Second New Deals
-- **u13: The Civil Rights Movement**
-  - Evaluate how far the movement achieved its aims by 1968
-- **u13: The United States and the end of the Cold War**
-  - Evaluate the American contribution to ending the Cold War
-- **u14: Mao and the People's Republic of China**
-  - Evaluate Mao's legacy
-- **u16: The development of political thought**
-  - Evaluate the influence of political thought on political change
 - **u16: Art and cultural movements**
   - Explain how art reflected religious, political and social change
-- **u18: Consequence questions**
-  - Explain the consequences of a historical event
-  - Evaluate the relative importance of consequences
 
 ## investing
 
-- **u02: Savers, borrowers and financial intermediaries**
-  - Identify the main types of financial intermediary and what each does
 - **u03: What a bond is**
   - Evaluate the main risks a bondholder faces
-- **u06: Discounted cash flow valuation**
-  - Describe the steps of a DCF valuation
-- **u06: Earnings per share**
-  - Evaluate EPS as a measure of performance
 - **u06: The price-to-earnings ratio**
   - Explain what drives differences in P/E between companies
 
 ## japanese
 
 - **u01: Hiragana: the t, n and h rows**
-  - Read and write the hiragana of the t, n and h rows
   - Distinguish look-alike hiragana such as ぬ and め, ね and れ, は and ほ
-- **u01: Numbers 0 to 100**
-  - Count from 0 to 100 in Japanese
 - **u02: Katakana: the basic chart**
   - Distinguish the commonly confused pairs シ and ツ, ソ and ン, and similar letters
-- **u02: X wa Y desu**
-  - Build sentences with X は Y です to say what someone or something is
 - **u02: Negative and past of desu**
   - Choose between じゃ and では and between ありません and ないです
 - **u02: Kore, sore, are and dore**
@@ -638,12 +206,6 @@ necessarily an error.
   - Explain the basic difference between は and が
 - **u03: Telling the time**
   - Use ごぜん, ごご and はん correctly
-- **u04: Suki, kirai, jouzu and heta**
-  - Use すき and きらい with が to talk about likes and dislikes
-- **u04: Native numbers and the tsu counter**
-  - Use counters in the correct position in a sentence
-- **u04: Describing a room and a town**
-  - Use や～など and connectors to build a longer description
 - **u05: Kara and node: giving reasons**
   - Choose between から and ので appropriately
 - **u06: Health, the body and illness**
@@ -658,38 +220,23 @@ necessarily an error.
   - Use たら for "if" and "when, after"
 - **u07: Nara: if that is the case**
   - Distinguish なら from たら
-- **u07: Choosing a conditional**
-  - Compare the meanings of と, ば, たら and なら
 - **u07: The causative-passive**
   - Describe things you were made to do
 - **u08: Uchi and soto: in-group and out-group**
   - Explain the concepts of うち and そと
-- **u08: Beautifying o and go**
-  - Use お and ご as beautifying prefixes
-- **u09: Te shimau: completion and regret**
-  - Use ～て しまう to show complete action
 - **u09: Te aru: deliberate results**
   - Use ～て ある to describe intentional states
   - Relate ～て ある to ～て おく
-- **u09: Te iku and te kuru**
-  - Use ～て いく and ～て くる for physical direction
 - **u09: Te miru: trying**
   - Distinguish ～て みる from ～ようと する
 - **u09: Tame ni and you ni: purpose**
   - Choose between ために and ように
 - **u09: Wake and hazu: reasoning**
-  - Use わけだ to draw conclusions
   - Compare わけ and はず
 - **u09: Shika and dake**
   - Choose between しか and だけ for nuance
 - **u10: Four-character compounds and set phrases**
   - Use set phrases appropriately in speech and writing
-- **u10: Onomatopoeia: giongo and gitaigo**
-  - Recognise patterns such as reduplication
-- **u11: Japanese cities and regions**
-  - Explain the prefectural system
-- **u12: Speaking: photo description and conversation**
-  - Use strategies to keep speaking fluently
 
 ## law
 
@@ -699,610 +246,181 @@ necessarily an error.
   - Apply both to a single set of facts
 - **u01: Public and private law**
   - Explain why the distinction matters procedurally
-- **u01: Separation of powers**
-  - Analyse overlaps and reforms in the UK
-- **u01: Alternative dispute resolution**
-  - Describe the main forms of ADR
-- **u01: Case law analysis**
-  - Apply a method for analysing a judgment
-- **u01: Legal writing**
-  - Identify and correct common faults
-- **u02: The Human Rights Act 1998**
-  - Explain the scheme of ss 2, 3, 4 and 6 HRA 1998
-  - Evaluate how the HRA balances rights protection and sovereignty
+- **u02: Illegality**
+  - Identify the main forms of illegality
 - **u02: Contemporary constitutional challenges**
   - Evaluate the constitutional significance of recent disputes
 - **u03: Acceptance**
   - Resolve battle of the forms problems
 - **u03: Representations and terms**
   - Explain the consequences of the classification
-- **u03: Negligent misrepresentation**
-  - Compare it with common law negligent misstatement
-- **u03: Contractual remedies**
-  - Choose the appropriate remedy for a situation
-- **u04: Legal causation**
-  - Apply the rules on multiple and successive causes
-- **u04: Remoteness of damage**
-  - Apply the egg-shell skull rule
+- **u04: Product liability**
+  - Apply strict liability under the Consumer Protection Act 1987
 - **u04: Trespass to land**
   - Apply defences and remedies
 - **u05: Introduction to criminal liability**
   - Use a structured approach to criminal law problems
 - **u05: Actus reus**
   - Identify the components of actus reus
-  - Explain the voluntariness requirement
-- **u05: Secondary liability**
-  - Apply the rules on withdrawal
-- **u05: Homicide**
-  - Describe the structure of homicide offences
-- **u05: Unlawful act manslaughter**
-  - Apply the objective dangerousness test
-- **u06: Witnesses**
-  - Apply the rules on competence and compellability, including spouses
-- **u07: Conveyancing fundamentals**
-  - Describe the conveyancer's core tasks and documents
-- **u08: Remortgaging**
-  - Identify the risks and conduct issues in remortgaging
-- **u08: Transfers of equity**
-  - Describe the steps in a transfer of equity
 - **u08: Professional conduct**
   - Identify common conduct issues in property transactions
-- **u09: Purpose trusts**
-  - Apply the beneficiary principle
-- **u10: Formalities of wills**
-  - Apply the s 9 formalities
-- **u10: Personal representatives**
-  - Apply the protections available to PRs
-- **u11: Business organisations**
-  - Compare the main forms of business organisation
-- **u11: Limited liability partnerships**
-  - Describe how an LLP is formed and regulated
-- **u11: Consumer protection**
-  - Apply the consequences of non-compliance for a business client
 - **u11: Corporate transactions**
   - Describe the main stages and documents in a corporate acquisition
 - **u12: Civil justice system**
   - Identify the four tracks and their thresholds
-- **u12: Settlement**
-  - Describe ways of recording a settlement
-- **u12: Alternative dispute resolution**
-  - Compare the main forms of ADR
-- **u13: Human Rights Act 1998**
-  - Identify the rights the HRA incorporates and its procedural rules
-- **u14: Foundations of EU law**
-  - Outline the development of the EU and its treaties
-- **u14: EU institutions**
-  - Describe the role and composition of the main EU institutions
-- **u14: Competition law**
-  - Apply Articles 101 and 102 TFEU
-- **u15: SRA Codes of Conduct**
-  - Explain how the SRA enforces the Codes
+- **u12: Summary judgment**
+  - Apply the procedure and possible orders
 - **u15: Honesty and integrity**
   - Explain the sanctions that follow
-- **u15: Independence**
-  - Apply the rules on inducements and referrals
 - **u15: Professional duties to the court**
   - Apply them to common litigation scenarios
-- **u15: Professional negligence**
-  - Respond appropriately when a mistake happens
 - **u15: Regulatory compliance**
   - Describe the roles of COLPs and COFAs
-- **u15: Ethical decision-making**
-  - Recognise pressures that cause ethical failures and speak up
 - **u16: Westlaw and LexisNexis concepts**
   - Describe the main features common to subscription platforms
-- **u16: Case analysis**
-  - Extract the ratio from multi-judgment appellate decisions
-- **u16: Legal memoranda**
-  - Structure a legal memorandum
 - **u17: Three legal systems in one UK**
   - Identify what is shared and what differs between them
 - **u17: Northern Ireland's legal system**
   - Describe its constitutional setting and distinctive areas
 - **u17: The Northern Ireland courts**
   - Identify their distinctive features and legal professions
-- **u17: Qualifying and practising in Scotland and Northern Ireland**
-  - Explain how lawyers move between UK jurisdictions
-- **u18: Qualifying work experience**
-  - Apply them to combinations of placements
-- **u18: The vocational component for the Bar**
-  - Identify practical requirements, such as joining an Inn
 - **u18: Answering single-best-answer questions**
   - Handle ethics and timing in SBA assessments
 
 ## literature
 
-- **u02: Analysing a poem: a method**
-  - Write an analytical paragraph that makes and supports a point
 - **u03: Post-war and contemporary British drama**
   - Identify the contributions of major playwrights
-- **u05: The English Renaissance**
-  - Identify the major literary developments of the period
-- **u06: Romanticism: an overview**
-  - Analyse a Romantic poem for key Romantic ideas
 - **u06: The second-generation Romantics**
   - Analyse key poems by the second-generation Romantics
-- **u07: New historicism and cultural materialism**
-  - Apply a historicist reading to a play
-- **u07: Ecocriticism**
-  - Apply an ecocritical reading to a text
 - **u08: A Christmas Carol: Scrooge's transformation**
   - Evaluate whether the transformation is convincing
-- **u10: Introductions and conclusions**
-  - Write a conclusion that synthesises and evaluates
 
 ## maths
 
-- **u02: Extended Euclidean Algorithm**
-  - Use them to compute modular inverses
 - **u02: Chinese Remainder Theorem**
   - Explain uses of the Chinese remainder theorem
 - **u02: Modular Exponentiation**
   - Explain why the method is efficient
-- **u02: RSA Cryptography**
-  - Explain why RSA works and what keeps it secure
-- **u02: Elliptic Curve Cryptography**
-  - Compare ECC and RSA key sizes and explain practical pitfalls
-- **u02: Prime Factorisation Algorithms**
-  - Choose a suitable factorisation algorithm for a problem
 - **u03: Expanding Brackets**
   - Recognise and use the expansions of (a ± b)^{2} and (a + b)(a − b)
-- **u03: Absolute Value Equations**
-  - Solve equations and inequalities involving |x|
-- **u03: Exponential Equations**
-  - Solve exponential equations using logarithms
-- **u03: Transformations of Functions**
-  - Combine transformations and find equations of transformed graphs
-- **u03: Recurrence Relations**
-  - Describe the long-term behaviour of a sequence and find limits
-- **u03: Intermediate Algebra**
-  - Choose an efficient method for a given problem
-- **u04: Algebraic Structures**
-  - Identify magmas, semigroups, monoids and groups
-- **u04: Ring Representations**
-  - State the Artin–Wedderburn theorem and apply it to ℂ[G]
-- **u05: Circle Theorems**
-  - State and apply the circle theorems with correct reasons
-- **u05: 3D Coordinate Geometry**
-  - Find distances and midpoints in three dimensions
 - **u06: Harmonic Functions**
   - Express a sin x + b cos x as R sin(x + α)
 - **u06: Half Angle Formulas**
   - Use the t = tan(x/2) substitution
-- **u06: Trigonometric Inequalities**
-  - Write solution sets as intervals
-- **u07: Differentiability**
-  - Explain the relationship between continuity and differentiability
-- **u07: Quotient Rule**
-  - Derive the derivative of tan x
-- **u07: Related Rates**
-  - Solve related rates problems step by step
-- **u07: Global Optimisation**
-  - Find absolute extrema on closed intervals
-- **u07: Concavity and Convexity**
-  - Determine intervals of concavity using f″
-- **u07: Indefinite Integrals**
-  - Use a boundary condition to find the constant of integration
-- **u07: Improper Integrals**
-  - Evaluate improper integrals with infinite limits or infinite integrands
-- **u07: Numerical Integration**
-  - Explain whether an estimate is an over- or underestimate and how to improve it
 - **u07: Arc Length and Surface Area**
   - Calculate arc lengths of curves
-- **u07: Sequences and Series**
-  - Use sigma notation
-- **u08: Divergence Theorem**
-  - State and apply the divergence theorem
-- **u09: C*-Algebras**
-  - Check the C*-identity in simple examples
 - **u10: First-Order Differential Equations**
   - Recognise the main types of first-order ODE
-- **u10: Wave Equation**
-  - Use d'Alembert's formula and standing wave solutions
-- **u10: Fluid Dynamics Equations**
-  - Calculate and interpret the Reynolds number
 - **u10: Numerical Solutions of PDEs**
   - Describe the main approaches to solving PDEs numerically
-- **u10: Bifurcation Theory**
-  - Draw and interpret simple bifurcation diagrams
-- **u11: Vector Algebra**
-  - Calculate dot and cross products and use them to find angles, areas and volumes
-- **u11: Determinants**
-  - Calculate 2 × 2 and 3 × 3 determinants
-  - Use properties of determinants and interpret them geometrically
-- **u11: Characteristic Polynomials**
-  - Apply the Cayley–Hamilton theorem
-- **u12: Multinomial Distribution**
-  - Describe the marginal distributions and covariances
 - **u12: Chi-Squared Distribution**
   - Describe its main uses in statistics
-- **u12: Pareto Distribution**
-  - Explain how the tail index controls which moments exist
 - **u12: Cauchy Distribution**
   - Explain why the law of large numbers fails for it
 - **u12: Stable Distributions**
   - State the generalised central limit theorem
-- **u13: Descriptive Statistics**
-  - Calculate and choose measures of centre and spread
 - **u13: Data Interpretation**
   - Read and critique graphs and tables
-- **u13: Chi-Squared Tests**
-  - Carry out chi-squared goodness-of-fit and independence tests
-- **u13: Kolmogorov–Smirnov Test**
-  - State the limitations of the KS test
-- **u13: Generalised Linear Models (GLMs)**
-  - Identify the three components of a GLM
-- **u13: Generalised Additive Models**
-  - Describe the structure of a GAM
 - **u13: Multivariate Analysis**
   - Outline other multivariate techniques and their uses
 - **u13: Bayesian Statistics**
   - Explain the Bayesian approach and its main tools
-- **u14: Ramsey Theory**
-  - Prove R(3, 3) = 6
-- **u14: Block Designs**
-  - Use the BIBD parameter relations
-- **u14: Computational Complexity Theory**
-  - Define P, NP and NP-completeness
-- **u14: Game Theory**
-  - Analyse Nim using binary XOR
 - **u15: Graph Theory**
   - Apply the handshake lemma
 - **u15: Planar Graphs**
   - Apply Euler's formula V − E + F = 2
-- **u16: Relations and Functions**
-  - Decide whether a relation is a function
-  - Find domains, codomains and ranges
-- **u16: Functions and Mappings**
-  - Test functions for injectivity, surjectivity and bijectivity
-  - Compose functions and find inverses
-- **u16: Predicate Logic**
-  - Negate quantified statements correctly
-- **u16: Direct Proof**
-  - Structure a proof clearly with stated assumptions and conclusions
 - **u16: Set-Theoretic Mathematics**
   - Explain what "everything is a set" does and doesn't mean in practice
-- **u17: Point-Set Topology**
-  - Find interiors, closures and boundaries of subsets of ℝ
-- **u19: Interval Arithmetic**
-  - Explain the dependency problem and uses in verified computing
 - **u19: Bisection Method**
   - Calculate the number of iterations for a given tolerance
-- **u19: Polynomial Interpolation**
-  - State existence and uniqueness of interpolating polynomials
-- **u21: Net Present Value (NPV)**
-  - Calculate NPV and apply the NPV decision rule
-- **u21: Internal Rate of Return (IRR)**
-  - Calculate IRR by solving NPV(r) = 0
 - **u21: Value at Risk (VaR)**
   - Interpret VaR and explain its limitations
-- **u21: Expected Shortfall**
-  - Explain coherence and why ES improves on VaR
-- **u21: Mathematical Economics**
-  - Solve consumer utility maximisation problems with budget constraints
-- **u22: Autocorrelation**
-  - Calculate and interpret sample autocorrelations
-- **u22: Partial Autocorrelation**
-  - Interpret the partial autocorrelation function
 - **u22: Hidden Markov Models**
   - Describe the components of an HMM
-- **u23: Kullback–Leibler Divergence**
-  - Interpret its asymmetry and its role in statistics and machine learning
-- **u24: Reinforcement Learning**
-  - Describe the agent–environment loop, returns and discounting
 - **u25: PID Control**
   - Explain the effect of P, I and D terms
-- **u25: Linear Quadratic Regulation**
-  - Interpret the weights Q and R and LQR robustness properties
-- **u27: GNU Octave**
-  - Recognise compatibility differences and extensions
-- **u27: JAX**
-  - Explain JAX's functional style and its constraints
-- **u27: SAS**
-  - Recognise SAS's role in regulated industries
-- **u27: Stata**
-  - Fit common econometric and epidemiological models
-- **u27: LaTeX**
-  - Use packages and good practice for mathematical documents
-- **u27: MathJax**
-  - Explain accessibility and rendering options
-- **u27: COMSOL Multiphysics**
-  - Recognise good practice in setting up and checking simulations
-- **u28: ACT Mathematics**
-  - Describe the content of ACT Mathematics
-- **u28: Mental Arithmetic**
-  - Use partitioning, compensation and doubling strategies
-- **u29: Surveying Mathematics**
-  - Calculate heights by trigonometry and levelling
-- **u29: Reading Tables**
-  - Interpret nutrition labels and timetables
-- **u29: Risk and Probability**
-  - Decide whether insurance or a warranty is worth buying
 
 ## medicine
 
-- **u01: Thrombosis, embolism and infarction**
-  - Explain Virchow's triad and apply it to clinical situations
-- **u03: Blood pressure regulation**
-  - Explain how these systems respond to haemorrhage and how drugs target them
-- **u03: Atrial fibrillation**
-  - Recognise AF clinically and on the ECG and classify it
-- **u04: Interstitial lung disease**
-  - Outline investigation and management, including antifibrotic therapy
 - **u05: Coeliac disease**
   - Outline management and long-term complications
 - **u05: Irritable bowel syndrome**
   - Identify red flag features that need further investigation
-- **u06: Renal physiology and glomerular filtration**
-  - Describe the structure and functions of the nephron
-- **u06: Diabetic ketoacidosis and hyperosmolar hyperglycaemic state**
-  - Outline the principles of emergency management
-- **u07: Multiple sclerosis**
-  - Describe the pathology and patterns of multiple sclerosis
-- **u07: Motor neurone disease**
-  - Recognise the presentations of MND
-- **u07: Anxiety disorders and obsessive-compulsive disorder**
-  - Describe recommended psychological and drug treatments
-- **u08: Sepsis**
-  - Describe initial management and escalation
 - **u09: Rheumatoid arthritis**
   - Select investigations and explain the urgency of referral
-- **u09: Seronegative spondyloarthropathies**
-  - Recognise the shared features of the spondyloarthropathies
-- **u09: Vasculitis and polymyalgia rheumatica**
-  - Diagnose and treat polymyalgia rheumatica
-- **u11: Safeguarding children**
-  - Recognise injuries and presentations that should raise concern
 
 ## music
 
 - **u01: Simple time signatures**
   - Complete bars correctly with notes and rests
-- **u01: Compound time signatures**
-  - Distinguish 6/8 from 3/4 by grouping and accent
-- **u01: Grouping notes and rests**
-  - Correct a badly grouped bar and explain each change
-- **u01: Irregular and changing metres**
-  - Read and beam 5/8 and 7/8 according to their groupings
-- **u01: Dynamics and articulation**
-  - Interpret dynamic markings and hairpins
-- **u02: Interval number and quality**
-  - Explain the qualities used to describe intervals
 - **u03: Types of seventh chord**
   - Describe the characteristic sound and use of each type
-- **u04: Principles of voice leading**
-  - Resolve tendency tones correctly
-- **u04: Connecting root-position chords**
-  - Apply the methods to a short progression
 - **u06: Melodic dictation**
-  - Apply a structured method to melodic dictation
   - Check the result for tonal and rhythmic sense
 - **u06: Recognising style and period by ear**
   - Avoid common confusions between periods
-- **u06: Hearing modulation**
-  - Recognise when a piece has changed key
-  - Use cadences and new accidentals as clues
-- **u06: Aural tests in graded exams**
-  - Connect each test type to the skills practised in this school
 - **u09: Bach and Handel**
   - Compare their styles and legacies
-- **u10: Romanticism in music**
-  - Identify the typical musical features of Romantic style
 
 ## nursing
 
-- **u01: Introduction to nursing**
-  - Describe the core activities of the registered nurse
-- **u01: The NMC and professional regulation**
-  - Describe the functions of the NMC
-- **u01: Documentation**
-  - Describe the features of good documentation
-  - Apply rules for correcting and late entries
 - **u01: Professional resilience**
   - Recognise pressures on nurses and signs of strain
-- **u01: Continuing professional development**
-  - State the NMC revalidation requirements
-- **u03: Physical assessment**
-  - Prepare for and carry out physical assessment within competence
-- **u03: Vital signs**
-  - Apply good practice in measuring, recording and acting on observations
-- **u04: Pharmacokinetics**
-  - Describe the four stages of pharmacokinetics
-- **u04: Drug interactions**
-  - Prevent interaction harm when medicines change
-- **u04: Contraindications**
-  - Distinguish contraindications from cautions
-- **u04: The medicines administration process**
-  - Describe the steps before, during and after administration
-- **u04: Intravenous medication principles**
-  - Describe IV administration methods and principles
-  - Recognise and respond to IV complications
-- **u04: Antimicrobials**
-  - Describe main antibiotic groups and other antimicrobials
-- **u05: Immune dysfunction**
-  - Distinguish immunodeficiency, hypersensitivity and autoimmunity
-- **u05: Pulmonary embolism**
-  - Describe Virchow's triad and how PE develops
-  - Recognise PE and support VTE prevention
-- **u06: Personal protective equipment**
-  - Describe the principles of putting on and removing PPE to avoid self-contamination
+- **u06: Aseptic technique**
+  - Identify common breaches of asepsis and how to prevent them
 - **u06: Venepuncture principles**
   - Recognise complications and how to respond
-- **u06: Cannulation principles**
-  - Recognise complications and the importance of prompt removal
-- **u06: Intravenous therapy principles**
-  - Monitor for complications and respond appropriately
-- **u06: Specimen collection**
-  - Recognise safety and labelling requirements for transport
-- **u06: Basic life support**
-  - Explain the role of the automated external defibrillator (AED)
-- **u07: Delegation**
-  - Distinguish responsibility from accountability in delegation
-- **u08: Bacteria**
-  - Describe bacterial structure, classification and growth
-- **u09: Recognition of deterioration**
-  - Explain why deterioration is missed and how to prevent it
-- **u11: Childhood diabetes**
-  - Describe the recognition and principles of management of DKA in children
+- **u06: ECG recording**
+  - Explain how to obtain a good-quality recording and what must be labelled
+- **u12: Mental state examination**
+  - Describe the components of the mental state examination
 
 ## pharmacy
 
-- **u01: Working in multidisciplinary teams**
-  - Describe the pharmacist's contribution to multidisciplinary teams
 - **u02: Drug targets**
   - Give an example of a medicine acting on each
-- **u02: G protein-coupled receptors and second messengers**
-  - Link major G protein types to drug effects
-- **u02: Adrenergic pharmacology**
-  - Describe the adrenoceptor subtypes and the drugs acting on them
-- **u02: Eicosanoids and inflammation**
-  - Describe how eicosanoids are made and what they do
-- **u02: Mechanisms of drug interactions**
-  - Explain enzyme induction and inhibition and their time courses
-- **u02: Pharmacogenomics**
-  - Explain how genetic variation affects drug response
-- **u03: Routes of administration**
-  - Compare the main routes of administration and their pharmacokinetic features
 - **u03: Biliary excretion and enterohepatic recycling**
   - Explain clinical situations where they matter
-- **u03: Bioequivalence**
-  - Define bioequivalence and how it is demonstrated
-- **u04: Lipophilicity and partition coefficients**
-  - Define the partition coefficient and log P
-- **u04: Prodrugs**
-  - Define a prodrug and give examples
-- **u04: Steroid chemistry**
-  - Describe the steroid nucleus and its numbering
-- **u04: Pharmaceutical analysis**
-  - Explain the key parameters of analytical method validation
-- **u05: Surfactants and interfacial phenomena**
-  - Explain micelle formation and the critical micelle concentration
-- **u05: Suspensions**
-  - Describe the components of a pharmaceutical suspension
-- **u05: Inhaled dosage forms**
-  - Describe the main types of inhaler and nebuliser
-- **u06: Quantities to supply**
-  - Apply original pack dispensing and pack-size considerations
-- **u06: Calculations in the registration assessment**
-  - Apply a systematic method to avoid common errors under exam conditions
-- **u07: Hypertension**
-  - Describe how hypertension is diagnosed and staged in UK practice
-- **u07: Stable angina**
-  - Describe the drug treatment of stable angina
-- **u07: Acute coronary syndromes**
-  - Explain dual antiplatelet therapy after ACS
-- **u07: Antiarrhythmic drugs**
-  - Describe the main antiarrhythmic drugs and their uses
-- **u07: Direct oral anticoagulants**
-  - Describe DOAC dosing considerations and monitoring
-- **u07: Antiplatelet drugs**
-  - Describe the mechanisms and uses of the main antiplatelet drugs
 - **u07: Peripheral arterial disease**
   - Describe the management of peripheral arterial disease
 - **u08: Bronchodilators**
   - Describe the classes of bronchodilator and their uses
   - Identify adverse effects and safety issues
-- **u09: Obesity and weight management**
-  - Describe the assessment and management of obesity
-- **u10: Antidepressants**
-  - Compare the main classes of antidepressants
 - **u10: Bipolar disorder and lithium**
   - Describe the treatment of bipolar disorder
-- **u10: Antipsychotics**
-  - Apply physical health monitoring and safety advice
-- **u10: Substance misuse and harm reduction**
-  - Describe opioid substitution therapy and the pharmacy's role
 - **u10: Antiepileptic drugs**
   - Apply safe switching and counselling practice
 - **u10: Multiple sclerosis**
   - Describe the principles of treating multiple sclerosis
-- **u11: Microbiology for pharmacists**
-  - Describe how bacteria are classified and identified
-- **u11: Antibiotic classes and mechanisms**
-  - Describe the mechanisms and spectra of the main antibiotic classes
-- **u11: Choosing an antibiotic**
-  - Apply a systematic approach to choosing an antibiotic
 - **u11: Clostridioides difficile infection**
   - Describe its treatment and prevention
-- **u11: Tuberculosis**
-  - Counsel on adverse effects and interactions of TB medicines
-- **u11: Fungal infections**
-  - Identify important interactions and cautions with antifungals
-- **u11: HIV**
-  - Describe the principles of antiretroviral therapy and prevention
-- **u11: Vaccines and immunisation**
-  - Describe the UK immunisation programme and the principles of vaccination
-- **u12: Irritable bowel syndrome**
-  - Distinguish IBS from conditions needing referral
-- **u12: Acute kidney injury**
-  - Describe the causes and recognition of AKI
-- **u12: Chronic kidney disease**
-  - Describe how CKD is classified and managed
 - **u13: Eye conditions**
   - Manage common minor eye conditions in pharmacy
 - **u14: Safe handling of cytotoxic medicines**
   - Apply safe practice to preparation, spills and disposal
-- **u16: Patient group directions and patient specific directions**
-  - Describe what a PGD is and the legal requirements for one
-- **u17: Structured medication reviews**
-  - Identify who benefits most from an SMR
-- **u17: Counselling on medicines**
-  - Plan and deliver effective medicines counselling
-  - Identify key counselling points for high-risk medicines
-- **u18: Clinical examination skills**
-  - Describe the principles of clinical examination
-- **u18: Prescribing safety and common errors**
-  - Apply strategies to prescribe safely
-- **u18: Antimicrobial prescribing**
-  - Apply stewardship principles to antimicrobial prescribing
-- **u19: Working with your designated supervisor**
-  - Describe the roles and responsibilities of the designated supervisor
 
 ## primary
 
-- **u01: Hundreds, tens and ones**
-  - Explain the job of zero in numbers such as 305
 - **u01: Comparing and ordering numbers**
   - Use the signs <, > and = correctly
 - **u02: Adding in your head**
   - Add one- and two-digit numbers mentally by partitioning
   - Use strategies such as making a ten and rounding and adjusting
-  - Explain how to choose a sensible mental strategy for a calculation
-- **u02: Times tables**
-  - Explain how one known fact can be used to find others, such as using the 2s to find the 4s
 - **u03: Mixed numbers and improper fractions**
   - Explain why 7/4 and 1¾ are the same amount
-- **u03: Decimal place value**
-  - Explain why 0.5 is bigger than 0.45 even though 45 is bigger than 5
-- **u03: Percentages**
-  - Explain how percentages are used to compare amounts, such as discounts
-- **u03: Fractions, decimals and percentages together**
-  - Recall common equivalents such as ½ = 0.5 = 50%
-- **u04: Length and height**
-  - Choose a sensible unit (mm, cm, m or km) for a length
-- **u04: Money**
-  - Add amounts of money and find change
-- **u04: Telling the time**
-  - Explain how to calculate the time taken between two times
 - **u04: 3-D shapes**
   - Name common 3-D shapes and recognise them in everyday objects
-- **u05: Segmenting to spell**
-  - Segment spoken words into their phonemes
-- **u05: Alternative spellings of sounds**
-  - Explain why one grapheme, such as "ow", can make different sounds
 - **u05: Prefixes**
   - Add common prefixes such as un-, dis-, mis-, re-, pre-, sub- and in-
   - Explain how to choose between in-, im-, il- and ir-
 - **u06: Making inferences**
   - Infer characters' feelings, thoughts and motives from what they say and do
-- **u07: Conjunctions**
-  - Explain how a conjunction changes the meaning of the link between ideas
-- **u07: Clauses and sentences**
-  - Identify statements, questions, commands and exclamations
+  - Explain the difference between retrieving and inferring
 - **u07: Apostrophes**
   - Explain why "its" and "it's" are different
-- **u09: Levers, pulleys and gears**
-  - Evaluate which mechanism is best for a particular job
+- **u08: The digestive system**
+  - Describe the job of each organ in order
 - **u10: Circuit symbols**
   - Compare and give reasons for variations in how components work
 - **u12: Grid references**
@@ -1310,138 +428,40 @@ necessarily an error.
 
 ## professional
 
-- **u01: Non-verbal communication**
-  - Explain why the "7-38-55" rule is misapplied
-- **u01: Minutes, decisions and action points**
-  - Evaluate the purpose of different levels of minute detail
 - **u01: Delivering a presentation**
   - Evaluate the strengths and weaknesses of a presentation performance
-- **u02: Conformity**
-  - Describe Asch's procedure, findings and variations
-- **u02: Compliance**
-  - Explain the psychological principles behind them
 - **u03: Centralisation and decentralisation**
   - Explain the advantages and disadvantages of each
-  - Evaluate the factors that determine how far a business decentralises
-- **u03: Motivation: process theories**
-  - Evaluate the evidence for each theory
 - **u03: Leadership theories**
   - Evaluate the evidence for each approach
 - **u06: Planned and emergent strategy**
   - Evaluate when each approach is most appropriate
 - **u06: Porter's five forces**
   - Evaluate the strengths and limitations of the framework
-- **u06: Core competences and the VRIO framework**
-  - Apply the VRIO framework to a resource or capability
-- **u06: Porter's generic strategies**
-  - Evaluate the generic strategies with reference to hybrid strategies
-- **u07: Spotting misleading statistics**
-  - Evaluate statistical claims using a set of critical questions
-- **u10: The physiology of stress**
-  - Describe the SAM and HPA pathways
 
 ## psychology
 
-- **u01: Behaviourism**
-  - Evaluate the behaviourist approach
-- **u02: Neurone structure and types**
-  - Describe the structure of a neurone
-- **u02: Excitatory and inhibitory signalling**
-  - Explain why the balance of excitation and inhibition matters, with examples
-- **u03: Divided attention**
-  - Apply dual-task research to real-world multitasking
-- **u05: Infancy**
-  - Describe methods for studying infant perception and cognition
-- **u06: Conformity**
-  - Describe Asch's procedure, findings and variations
-- **u06: Compliance**
-  - Explain the psychological principles behind them
-- **u07: Temperament**
-  - Explain Kagan's research on behavioural inhibition
-- **u07: Multiple intelligences**
-  - Explain the theory's influence on education
-- **u08: Generalised anxiety disorder**
-  - Evaluate explanations and recommended approaches
-- **u08: Obsessive-compulsive disorder**
-  - Evaluate explanations and approaches to OCD
-- **u09: Mental state assessment**
-  - Describe the main domains of the mental state examination
-  - Apply MSE domains to describe a presentation
-  - Evaluate the strengths and limitations of the MSE
-- **u09: Cognitive behavioural therapy (CBT)**
-  - Describe the principles and structure of CBT
-- **u10: Generalisability**
-  - Define generalisability and identify factors that limit it
-- **u12: Adaptation**
-  - Evaluate the risk of "adaptationist" storytelling
-- **u13: The physiology of stress**
-  - Describe the SAM and HPA pathways
-- **u16: Psychoneuroimmunology**
-  - Evaluate the strength of PNI evidence
+- **u16: Bayesian cognition**
+  - Explain Bayes' theorem in psychological terms
 
 ## research
 
-- **u01: Researcher development and the Vitae RDF**
-  - Use the RDF to carry out a training needs analysis
-- **u01: The supervisory relationship**
-  - Describe the roles in a supervisory team
-- **u02: Finding the gap: gap-spotting and problematisation**
-  - Write a justification for a study's contribution
-- **u02: Synthesising the literature**
-  - Write a synthesising paragraph that compares sources
-- **u03: Critical and transformative paradigms**
-  - Identify key traditions within them
+- **u02: Evaluating sources**
+  - Apply a checklist to evaluate a source
 - **u03: Deduction, induction and abduction**
   - Evaluate the strengths and limits of each
-- **u03: Popper and falsification**
-  - Evaluate criticisms of falsificationism
-- **u04: Experimental designs**
-  - Explain how random allocation supports causal inference
-- **u04: Validity and reliability**
-  - Explain how researchers assess measurement quality
-- **u06: Participant observation**
-  - Evaluate ethical and practical issues in observational research
-- **u08: Research ethics committees**
-  - Explain the membership and types of committee in the UK
-- **u11: The Research Excellence Framework**
-  - Describe the purpose of the REF
-- **u12: Fellowships and grant writing**
-  - Explain the components of a grant application
 
 ## sociology
 
-- **u05: Contemporary class analysis**
-  - Describe the NS-SEC and its use in research
 - **u05: Intergenerational and intragenerational mobility**
   - Explain factors that influence each type
-- **u08: Family structures**
-  - Describe the main family structures in the UK
-  - Interpret ONS data on family types
-- **u10: The criminal justice system**
-  - Describe the main agencies and stages of the CJS in England and Wales
 - **u11: Political inequality**
   - Evaluate evidence on whether governments respond more to the affluent
-- **u11: Power and knowledge**
-  - Evaluate debates about trust in experts and misinformation
-- **u13: Workplace hierarchy**
-  - Evaluate forms of worker resistance and participation
-- **u16: Healthcare institutions**
-  - Evaluate sociological analyses of hospitals as institutions
-- **u17: Bias**
-  - Explain the debate about whether sociology can be value-free
-- **u17: Researching vulnerable groups**
-  - Evaluate the balance between protection and participation
-- **u17: Interpreting findings**
-  - Identify common errors in interpreting sociological findings
 
 ## spanish
 
 - **u01: Greetings and goodbyes**
   - Ask how someone is and answer in several ways
-- **u01: Numbers 0 to 100**
-  - Apply the spelling rules for 16 to 29 and for 31 to 99
-- **u01: Definite and indefinite articles**
-  - Use the contractions al and del correctly
 - **u01: Ser: identity, origin and nationality**
   - Conjugate ser in the present tense
 - **u02: Irregular yo forms: hacer, poner, salir and others**
@@ -1451,18 +471,10 @@ necessarily an error.
 - **u02: Family and relationships**
   - Name family members and describe family structure
   - Compare family structures in Spain and Latin America using evidence
-- **u03: Superlatives**
-  - Form relative superlatives with el más and de
-- **u03: Shopping for food: quantities and large numbers**
-  - Read, write and say numbers from 100 to 1,000,000
 - **u04: Asking for and giving directions**
   - Ask the way politely to a place in town
 - **u04: Holiday plans**
   - Discuss the benefits and problems of tourism
-- **u04: Shopping for clothes**
-  - Ask for sizes and try things on in a shop
-- **u04: Direct object pronouns**
-  - Explain leísmo as a regional variation
 - **u04: Double object pronouns**
   - Change le and les to se before lo, la, los and las
 - **u05: Preterite or imperfect?**
@@ -1473,37 +485,21 @@ necessarily an error.
   - Choose suitable levels of formality
 - **u06: Si clauses: possible conditions**
   - Use the correct tenses in each part
-- **u06: Applying for a job: formal letters and emails**
-  - Write a short job application
-- **u06: Relative pronouns: que, quien and donde**
-  - Use que to join clauses
 - **u06: Lo que and lo with adjectives**
   - Use lo que to mean "what" or "which"
 - **u08: Por and para**
   - Recall the main uses of por
-- **u08: Gerunds and infinitives**
-  - Form regular and irregular gerunds
 - **u09: Central America and the Caribbean**
   - Recall key facts about their history and culture
 - **u09: Family and society today**
   - Compare the past and present using the imperfect and present tenses
-- **u09: Music and dance**
-  - Talk about musical tastes in Spanish
 
 ## sport
 
-- **u01: The sliding filament theory**
-  - Evaluate the evidence for the sliding filament theory
-- **u01: Types of muscle contraction**
-  - Identify the type of contraction in phases of a sporting action
-- **u01: The major muscles used in sport**
-  - Apply knowledge of muscle actions to sporting movements
 - **u02: Structure of the respiratory system**
   - Describe the pathway of air through the respiratory system
 - **u04: Muscle hypertrophy**
   - Explain the roles of nutrition and recovery
-- **u04: Relative energy deficiency in sport (RED-S)**
-  - Explain how RED-S is screened for and managed
 - **u05: Newton's laws of motion**
   - Apply each law to a sporting example
 - **u06: Tapering**
@@ -1512,71 +508,28 @@ necessarily an error.
   - Explain the physiological and psychological benefits of warming up
 - **u08: Salt, sugar and saturated fat**
   - Describe the main dietary sources and health effects of each
-- **u09: The physiology of stress**
-  - Describe the SAM and HPA pathways
 - **u10: Guidance**
   - Evaluate the advantages and disadvantages of each type
-- **u10: Safeguarding and ethics in coaching**
-  - Apply ethical principles to coaching practice
-- **u11: Concussion**
-  - Explain the UK guidance on recognising and removing concussed players
-- **u12: The benefits of physical activity**
-  - Explain the strength of the evidence for the main benefits
 
 ## teaching
 
 - **u02: Cold calling and no opt out**
   - Explain how these techniques increase participation and accountability
-- **u03: Working with teaching assistants**
-  - Explain the EEF's recommendations for deploying TAs
-- **u04: Assessment for learning**
-  - Apply the five strategies to plan a lesson sequence
 - **u04: GCSEs, grading and examinations**
   - Describe the GCSE 9 to 1 grading scale and how it relates to the old letter grades
-- **u06: Spiral and mastery curricula**
-  - Explain the strengths and risks of each approach
-- **u11: Generalisability**
-  - Define generalisability and identify factors that limit it
 
 ## university
 
-- **u05: Paragraphs and the PEEL model**
-  - Revise paragraphs that lack focus or development
+- **u04: Reading a journal article**
+  - Explain what each section is for
+- **u05: Planning and outlining**
+  - Produce an outline with a clear line of argument
 - **u05: Clarity and concision**
   - Identify common sources of wordiness
-- **u06: Numeric styles: Vancouver and IEEE**
-  - Avoid common errors with numbering
-- **u09: Non-verbal communication**
-  - Explain why the "7-38-55" rule is misapplied
-- **u09: Minutes, decisions and action points**
-  - Evaluate the purpose of different levels of minute detail
 - **u09: Delivering a presentation**
   - Evaluate the strengths and weaknesses of a presentation performance
-- **u10: Types of exam**
-  - Identify how preparation should differ between exam types
 
 ## veterinary
 
-- **u04: Principles of animal nutrition**
-  - Identify the main classes of nutrients and their roles
-- **u05: Disorders of growth**
-  - Give veterinary examples of each
-- **u06: Bacteria of veterinary importance**
-  - Explain the main bacterial virulence factors
-- **u07: Corticosteroids**
-  - Explain the need for tapering and species-specific risks
-- **u07: Sedatives and anaesthetic agents**
-  - Describe the main sedative drug groups and their reversal
-- **u07: Cardiovascular drugs**
-  - Describe the mechanisms of the main cardiovascular drug classes
-  - Apply cardiovascular drug knowledge to clinical cases
-- **u09: Hyperadrenocorticism and hypoadrenocorticism**
-  - Choose appropriate diagnostic tests and recognise emergencies
-- **u09: Intestinal foreign bodies**
-  - Explain surgical management and complications
 - **u09: Reptiles and birds in practice**
   - Explain zoonotic risks and when to escalate
-- **u10: Equine infectious and notifiable diseases**
-  - Apply biosecurity measures on a yard
-- **u12: Certification**
-  - Describe common types of veterinary certificate

@@ -760,6 +760,11 @@ X: Distinguishing propanal and propanone.
 > Propanal reduces Ag⁺ to a silver mirror.
 > Propanone gives no change.
 > The aldehyde has a C–H on the carbonyl that can be oxidised.
+H: Comparing oxidising agents
+- **Acidified potassium dichromate(VI)** is the workhorse: primary alcohols to aldehydes (distilled off) or carboxylic acids (under reflux), secondary alcohols to ketones, with orange Cr₂O₇²⁻ turning green Cr³⁺.
+- **Acidified potassium manganate(VII)** is stronger and less selective (purple to colourless): it also attacks C=C double bonds, so it is less useful when other groups must survive.
+- **PCC** (pyridinium chlorochromate) is milder: in a dry solvent it stops a primary alcohol at the aldehyde.
+- **Tollens' reagent** and **Fehling's solution** are weak oxidising agents: strong enough to oxidise aldehydes but not ketones, which is why they are used as tests rather than to make products.
 K: Organic oxidation increases C–O or decreases C–H bonds; primary alcohols oxidise to aldehydes and acids, secondary to ketones and tertiary resist, while dichromate, Tollens' and Fehling's reagents test for oxidisable groups and mild reagents stop at aldehydes.
 !: Thinking ketones can be oxidised as easily as aldehydes. Ketones lack the carbonyl C–H bond.
 EV: established | Tollens' test distinguishes aldehydes from ketones (Tollens, 1882).
