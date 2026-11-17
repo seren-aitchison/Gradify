@@ -15,7 +15,7 @@
 // regenerate. A map's version is a hash of the engine version and the lesson's notes: change the notes and the maps
 // change with them. Pure, so Node can test it (tests/mindmaps.test.mjs).
 
-export const ENGINE = "maps-1";
+export const ENGINE = "maps-2";
 
 export const MAPS = [
   { key: "topic", n: 1, title: "The complete topic", purpose: "The whole lesson at a glance: every section, its key points and terms." },
@@ -30,10 +30,12 @@ export const MAPS = [
 export const plain = (s) => String(s ?? "").replace(/\[([^\]]+)\]\([^)]*\)/g, "$1").replace(/\*\*([^*]+)\*\*/g, "$1").replace(/(^|[^*])\*([^*\s][^*]*)\*/g, "$1$2").replace(/`([^`]+)`/g, "$1").replace(/\s+/g, " ").trim();
 // letters and digits in any script (Japanese titles must stay distinct)
 const norm = (s) => plain(s).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
-const words = (s) => norm(s).split(" ").filter((w) => w.length > 3);
+// words that carry meaning: an objective is only linked to a point if they share one of these, not "from" or "with"
+const COMMON = new Set("from with that this which their there they them than then have been were will would could should about also more most only very each such these those where while into your what when does done using used make makes made able must need needs between within without other some many much over under after before because".split(" "));
+const words = (s) => norm(s).split(" ").filter((w) => w.length > 3 && !COMMON.has(w));
 
 /** A node's title and detail from a line of notes: a bold lead is the title; a long line keeps its full text as detail. */
-export function split(text, max = 72) {
+export function split(text, max = 60) {
   const raw = String(text ?? "").trim();
   const bold = raw.match(/^\*\*([^*]{2,80})\*\*\s*[:.,–—-]?\s*(.*)$/);
   if (bold) return { topic: plain(bold[1]), detail: bold[2].trim() ? plain(raw) : null };
@@ -41,8 +43,11 @@ export function split(text, max = 72) {
   if (p.length <= max) return { topic: p, detail: null };
   const colon = p.match(/^([^:]{3,60}):\s+(.+)$/);
   if (colon) return { topic: colon[1], detail: colon[2] };
-  const sentence = p.match(/^(.{20,90}?[.!?])\s/);
+  const sentence = p.match(/^(.{20,80}?[.!?])\s/);
   if (sentence) return { topic: sentence[1].replace(/[.]$/, ""), detail: p };
+  // keywords, not sentences (mind map practice): stop at the first clause break if there is one early enough
+  const clause = p.slice(0, max + 10).match(/^(.{18,}?)[,;:–—](\s|$)/);
+  if (clause) return { topic: `${clause[1]}…`, detail: p };
   const cut = p.slice(0, max).replace(/\s+\S*$/, "");
   return { topic: `${cut}…`, detail: p };
 }
@@ -177,7 +182,8 @@ function mapExam(L, S) {
   if (L.objectives?.length) kids.push(node("Be able to", { kind: "group", children: L.objectives.map((o, i) => {
     const ow = words(o);
     const best = pool.map((p) => ({ p, score: ow.filter((w) => p.w.has(w)).length + (p.it.kind === "key" ? 0.5 : 0) })).filter((x) => x.score >= 1).sort((a, b) => b.score - a.score).slice(0, 3);
-    return node(o, { kind: "objective", src: `o${i}`, children: best.map(({ p }) => fromText(p.it.text, p.it.kind, p.it.ref)) });
+    // an objective nothing in the notes answers is shown as a gap, not filled in
+    return node(o, { kind: "objective", src: `o${i}`, children: best.length ? best.map(({ p }) => fromText(p.it.text, p.it.kind, p.it.ref)) : [node("The notes don't cover this directly yet", { kind: "gap" })] });
   }) }));
   const must = [...(L.summary || []).map((x, i) => node(x, { kind: "summary", src: `s${i}` })), ...S.flatMap((s) => s.items.filter((it) => it.kind === "key")).map((it) => fromText(it.text, "key", it.ref))];
   if (must.length) kids.push(node("Must know", { kind: "group", children: must }));
@@ -204,6 +210,55 @@ function confusedPairs(terms) {
     if (shareName || dShared / dUnion >= 0.3) out.push([a, b]);
   }
   return out.slice(0, 6);
+}
+
+// ---------- balance, icons and links ----------
+// Mind map practice (mindmap-skill, mindmap-skills: MIT): 4–7 main branches, a handful of items under each, links
+// across branches only where they mean something. A long list is chunked into parts, so no node has a wall of children.
+const CHUNK = 7;
+function balance(n) {
+  n.children.forEach(balance);
+  if (n.kind !== "root" && n.children.length > CHUNK + 2) {
+    const parts = [];
+    for (let k = 0; k < n.children.length; k += CHUNK) {
+      const kids = n.children.slice(k, k + CHUNK);
+      parts.push(node(`Part ${parts.length + 1} (${k + 1}–${k + kids.length})`, { kind: "group", children: kids }));
+    }
+    n.children = parts;
+  }
+  return n;
+}
+
+// one icon for each main branch, from what it holds, so branches are told apart at a glance
+const ICON = { "Key terms": "📘", Definitions: "📘", "Ideas explained": "💡", "Compare and contrast": "🔀", "Builds on": "🧱", "Underlying principles": "🧭",
+  "Formulas, rules and tests": "∑", "Formulas to know": "∑", "Cause and effect": "⚡", "Worked examples": "🧪", Cases: "⚖️", Legislation: "📜",
+  "Medicines in practice": "💊", "Examples in the lesson": "🔍", "Safe practice": "🛡️", "Try it yourself": "🔬", "Be able to": "🎯", "Must know": "⭐",
+  "Common mistakes": "⚠️", "Easily confused": "🔀", "Test yourself": "❓", Overview: "🗺️" };
+const KIND_ICON = { example: "🧪", section: null, mechanism: "⚙️", limit: "·" };
+const iconFor = (n) => ICON[n.topic] ?? KIND_ICON[n.kind] ?? null;
+
+// Links between ideas in different branches, where the lesson's own text makes the connection: a node whose words name
+// a term (or a named idea) defined elsewhere in the map. At most four, so the map stays readable.
+const LINK_LABEL = { example: "uses", step: "uses", case: "applies", equation: "uses", pitfall: "about", question: "tests", objective: "needs", compare: "compares", cause: "involves" };
+function linksOf(root) {
+  const branchOf = new Map(), nodes = [];
+  root.children.forEach((b) => walk(b, (n) => { branchOf.set(n, b); nodes.push(n); }));
+  const targets = nodes.filter((n) => ["term", "concept", "case", "law", "drug"].includes(n.kind) && n.topic.length >= 4 && n.topic.split(" ").length <= 5);
+  const out = [], used = new Set();
+  for (const t of targets) {
+    const re = new RegExp(`(^|[^\\p{L}])${t.topic.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^\\p{L}]|$)`, "iu");
+    for (const n of nodes) {
+      // a node named the same as the target is the same idea, not a relation worth drawing
+      if (n === t || norm(n.topic) === norm(t.topic) || branchOf.get(n) === branchOf.get(t) || ["group", "section", "limit", "gap", "field"].includes(n.kind) || used.has(n.id)) continue;
+      if (re.test(n.topic) || (n.detail && re.test(n.detail))) {
+        out.push({ from: n.id, to: t.id, label: LINK_LABEL[n.kind] || "relates to" });
+        used.add(n.id);
+        break;
+      }
+    }
+    if (out.length >= 4) break;
+  }
+  return out;
 }
 
 // ---------- tidy, check and measure ----------
@@ -234,6 +289,7 @@ export function validateMap(m) {
     const sib = n.children.map((c) => norm(c.topic));
     if (new Set(sib).size !== sib.length) problems.push(`duplicate branches under "${n.topic}"`);
   });
+  for (const l of m.links || []) if (!ids.has(l.from) || !ids.has(l.to) || l.from === l.to) problems.push(`a link to a missing node (${l.from} → ${l.to})`);
   return problems;
 }
 
@@ -241,7 +297,10 @@ export function validateMap(m) {
 export function coverage(L, maps) {
   const all = allRefs(L), used = new Set();
   const per = maps.map((m) => { const mine = new Set(); walk(m.root, (n) => n.src.forEach((r) => { if (all.has(r)) { mine.add(r); used.add(r); } })); return mine.size; });
-  return { total: all.size, used: used.size, share: all.size ? used.size / all.size : 1, perMap: per, missing: [...all].filter((r) => !used.has(r)) };
+  // objectives nothing in the notes answers: a list for improving the lesson
+  const gaps = [];
+  for (const m of maps) walk(m.root, (n) => { if (n.kind === "objective" && n.children.some((c) => c.kind === "gap")) gaps.push(n.topic); });
+  return { total: all.size, used: used.size, share: all.size ? used.size / all.size : 1, perMap: per, missing: [...all].filter((r) => !used.has(r)), gaps };
 }
 
 const fnv = (s) => { let h = 2166136261; for (let i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619); return (h >>> 0).toString(36); };
@@ -258,10 +317,11 @@ export function buildMaps(L, o = {}) {
   const build = { topic: mapTopic, process: mapProcess, concepts: mapConcepts, apply: mapApply, exam: mapExam };
   const maps = MAPS.map((def) => {
     const prefix = `${o.id || "lesson"}-${def.key}`;
-    const root = tidy(node(L.title, { id: `${prefix}-root`, kind: "root", detail: L.lead || null, children: build[def.key](L, S, o) }));
+    const root = balance(tidy(node(L.title, { id: `${prefix}-root`, kind: "root", detail: L.lead || null, children: build[def.key](L, S, o) })));
     let k = 0; walk(root, (n) => { if (n !== root) n.id = `${prefix}-${k++}`; });
-    let nodes = 0; walk(root, () => nodes++);
-    return { ...def, root, nodes, limited: root.children.length === 1 && root.children[0].kind === "limit" };
+    root.children.forEach((b) => { b.icon = iconFor(b); });
+    let nodes = 0, gaps = 0; walk(root, (n) => { nodes++; if (n.kind === "gap") gaps++; });
+    return { ...def, root, nodes, gaps, links: linksOf(root), limited: root.children.length === 1 && root.children[0].kind === "limit" };
   });
   return { lessonId: o.id || null, version: `${ENGINE}.${fnv(`${ENGINE}\n${o.notes ?? JSON.stringify(L)}`)}`, maps, coverage: coverage(L, maps) };
 }

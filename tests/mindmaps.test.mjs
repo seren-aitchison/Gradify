@@ -50,10 +50,16 @@ test("across the course library: no invalid map, full coverage, and every node's
         assert.equal(r.coverage.share, 1, `${subject}/${f}#${i} coverage`);
         for (const m of r.maps) {
           assert.deepEqual(validateMap(m), [], `${subject}/${f}#${i} ${m.key}`);
+          // a link joins two branches only where one node's own words name the other
+          const byId = new Map(all(m).map((n) => [n.id, n]));
+          assert.ok(m.links.length <= 4);
+          for (const l of m.links) assert.ok(flat(`${byId.get(l.from).topic} ${byId.get(l.from).detail || ""}`).includes(flat(byId.get(l.to).topic)), `${subject}/${f}#${i} ${m.key}: link without its words`);
+          // balanced: no wall of children (the centre's main branches are the lesson's own sections)
+          for (const n of all(m)) if (n.kind !== "root") assert.ok(n.children.length <= 9, `${subject}/${f}#${i} ${m.key}: "${n.topic}" has ${n.children.length} children`);
           for (const n of all(m)) {
             nodes++;
             // structure, not claims: the centre, group headings, "not in this lesson", and a case or drug card's field labels
-            if (["root", "group", "limit", "field"].includes(n.kind)) continue;
+            if (["root", "group", "limit", "field", "gap"].includes(n.kind)) continue;
             // a title is the lesson's own words: whole, or the start of a longer line ("…"), or two terms paired ("A vs B")
             const parts = n.topic.replace(/^\d+\.\s*/, "").replace(/…$/, "").split(/ vs /);
             for (const p of parts) assert.ok(hay.includes(flat(p)), `${subject}/${f}#${i} ${m.key}: "${n.topic}" isn't in the lesson`);
@@ -129,4 +135,40 @@ test("the validator catches broken maps", () => {
   assert.match(validateMap({ root: n("r", "Root", [n("a", " ")]) })[0], /no title/);
   let deep = n("d6", "6"); for (let k = 5; k >= 1; k--) deep = n(`d${k}`, String(k), [deep]);
   assert.match(validateMap({ root: n("r", "Root", [deep]) }).join(), /too deep/);
+});
+
+test("an objective the notes don't answer is flagged as a gap, and listed for improving the lesson", () => {
+  const [L] = parseNotes(`## Waves
+S: What waves are and how they carry energy without carrying matter, with the terms used to describe them.
+O: Describe how a wave carries energy
+O: Calculate the speed of a tsunami from its depth
+H: Waves
+- A **wave** carries energy from place to place without moving matter along with it.`);
+  const r = buildMaps(L, { id: "w" });
+  const exam = r.maps.find((m) => m.key === "exam");
+  const objs = exam.root.children.find((c) => c.topic === "Be able to").children;
+  assert.equal(objs[0].children[0].kind, "point", "the first objective is answered by the notes");
+  assert.equal(objs[1].children[0].kind, "gap");
+  assert.deepEqual(r.coverage.gaps, ["Calculate the speed of a tsunami from its depth"]);
+  assert.equal(exam.gaps, 1);
+});
+
+test("main branches get an icon, long lists are chunked into parts, and links are grounded and few", () => {
+  const items = Array.from({ length: 15 }, (_, k) => `- Point number ${k + 1} about osmosis in plant cells.`).join("\n");
+  const [L] = parseNotes(`## Osmosis
+S: Osmosis is the movement of water across a partially permeable membrane, and why it matters for cells and plants.
+T: Osmosis | The net movement of water across a partially permeable membrane
+H: Osmosis in plants
+${items}
+X: A potato in salty water loses mass because of osmosis.
+> Water leaves the potato cells.`);
+  const r = buildMaps(L, { id: "o" });
+  const topic = r.maps[0];
+  const section = topic.root.children.find((c) => c.topic === "Osmosis in plants");
+  assert.ok(section.children.every((c) => c.kind === "group" && /^Part \d+ \(\d+–\d+\)$/.test(c.topic)), "15 points are split into parts");
+  assert.equal(section.children.flatMap((c) => c.children).length, 16);
+  assert.equal(topic.root.children.find((c) => c.topic === "Key terms").icon, "📘");
+  const byId = new Map(all(topic).map((n) => [n.id, n]));
+  assert.ok(topic.links.length >= 1 && topic.links.length <= 4);
+  assert.ok(topic.links.every((l) => byId.get(l.to).topic === "Osmosis" && /osmosis/i.test(byId.get(l.from).topic + (byId.get(l.from).detail || ""))));
 });

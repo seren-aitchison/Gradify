@@ -30,17 +30,43 @@ const VIEWS = [["desktop", { viewport: { width: 1440, height: 900 } }, "dark"], 
         check(n >= 2, `${name}: map ${i + 1} draws (${n} nodes)`);
         if (shots && label !== "light") await pg.screenshot({ path: `${shots}/${site.split("/")[0]}-${label}-map${i + 1}.png` });
       }
+      // map 1 again: links, icons, keyboard, focus, outline, minimap
+      await pg.locator('.mm-select [data-map="0"]').click(); await pg.waitForTimeout(700);
+      const links = Number(await pg.locator(".mm-viewer").getAttribute("data-links"));
+      const drawn = await pg.locator(".mm-canvas .topiclinks g, .mm-canvas svg.topiclinks > g").count();
+      check(links < 0 || drawn >= links, `${name}: ${links} cross-links drawn (${drawn})`);
+      check(await pg.locator(".mm-canvas .me-main .me-tpc .icons, .mm-canvas .me-main .me-tpc span.icons").count() > 0, `${name}: main branches have icons`);
       await pg.locator(".mm-canvas .me-tpc").nth(2).click(); await pg.waitForTimeout(300);
       check(await pg.locator(".mm-panel").isVisible(), `${name}: selecting a node shows its details`);
+      const before = await pg.locator(".mm-panel h3").textContent();
+      await pg.keyboard.press("ArrowLeft"); await pg.waitForTimeout(250);
+      check((await pg.locator(".mm-panel h3").textContent()) !== before, `${name}: arrow keys move between ideas`);
+      const chip = pg.locator('.mm-panel [data-act="focus"]');
+      if (await chip.count()) { await chip.click(); await pg.waitForTimeout(400); check(await pg.locator('.mm-panel [data-act="unfocus"]').count() === 1, `${name}: focus on a branch`); await pg.locator('.mm-panel [data-act="unfocus"]').click(); await pg.waitForTimeout(300); }
+      if (label !== "phone") check((await pg.locator(".mm-mini svg rect").count()) > 3 && await pg.locator(".mm-mini rect.mm-view").count() === 1, `${name}: minimap with the visible area`);
+      await pg.locator('[data-act="outline"]').click(); await pg.waitForTimeout(200);
+      check(await pg.locator(".mm-outline li").count() > 3, `${name}: outline view lists the map`);
+      await pg.locator('[data-act="outline"]').click();
       if (term) {
         await pg.locator('[data-act="search"]').click(); await pg.locator(".mm-search input").fill(term); await pg.waitForTimeout(400);
         check(await pg.locator(".mm-hit").count() > 0, `${name}: search highlights "${term}"`);
+        check(await pg.locator(".mm-results li").count() > 0, `${name}: search lists matches with their paths`);
+        // the centre has no detail card, so open a match on a branch (when the term is only in the centre, skip this)
+        const branch = pg.locator('.mm-results button:not([data-jump$="-root"])');
+        if (await branch.count()) { await branch.first().click(); await pg.waitForTimeout(300); check(await pg.locator(".mm-panel").isVisible(), `${name}: a match opens its node`); }
+        await pg.locator('[data-act="search"]').click();
       }
       if (label !== "phone") {
-        const [svg] = await Promise.all([pg.waitForEvent("download"), pg.locator('[data-act="svg"]').click()]);
+        const exp = async (act, timeout = 10000) => { await pg.locator('[data-act="export"]').click(); const [d] = await Promise.all([pg.waitForEvent("download", { timeout }), pg.locator(`.mm-menu [data-act="${act}"]`).click()]); return d; };
+        const md = fs.readFileSync(await (await exp("md")).path(), "utf8");
+        check(/^---\nmarkmap:|markmap:/.test(md) && /^## /m.test(md) && /^- /m.test(md), `${name}: Markdown export (Markmap headings and bullets)`);
+        const opml = fs.readFileSync(await (await exp("opml")).path(), "utf8");
+        check(/<opml version="2.0">/.test(opml) && (opml.match(/<outline/g) || []).length > 5, `${name}: OPML export`);
+        const svg = await exp("svg");
         const text = fs.readFileSync(await svg.path(), "utf8");
         check(/^<svg[^>]+viewBox/.test(text) && (text.match(/<text/g) || []).length >= 3, `${name}: SVG export is vector, with text`);
-        const [png] = await Promise.all([pg.waitForEvent("download", { timeout: 30000 }), pg.locator('[data-act="png"]').click()]);
+        check(links <= 0 || /stroke-dasharray/.test(text), `${name}: SVG includes the cross-links`);
+        const png = await exp("png", 30000);
         const buf = fs.readFileSync(await png.path());
         check(buf.readUInt32BE(16) === 3840 && buf.readUInt32BE(20) === 2160, `${name}: PNG export is 3840 × 2160 (${buf.readUInt32BE(16)} × ${buf.readUInt32BE(20)})`);
         if (shots) fs.writeFileSync(`${shots}/${site.split("/")[0]}-${label}-4k.png`, buf);
