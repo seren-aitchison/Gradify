@@ -35,6 +35,7 @@ export const EXCLUDE = {
     ".mcp.json": "Claude Code MCP server settings",
     "README.md": "repository documentation",
     "docs": "internal documentation, plans and audit records",
+    "campaign": "marketing: ad copy, video scripts and ad creatives",
     "scripts": "operational and deployment scripts",
     "supabase": "database migrations and server function source",
     "tests": "automated tests",
