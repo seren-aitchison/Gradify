@@ -98,7 +98,7 @@ export async function iconSets() {
 // section headings, compact, so one file finds a lesson anywhere on Gradify. The lesson itself is read from its notes.
 export async function lessonIndex() {
   const { parseNotes, norm } = await import(new URL("kit/course/notes.js", root));
-  const courses = [], lessons = [];
+  const courses = [], lessons = [], totals = { cards: 0, questions: 0 };
   for (const slug of await courseSlugs()) {
     const cfg = (await import(new URL(`kit/courses/${slug}/course.js`, root))).default;
     const site = SITES.find((s) => s.n === cfg.site), ci = courses.length;
@@ -112,12 +112,15 @@ export async function lessonIndex() {
       const byTitle = Object.fromEntries(parseNotes(text).map((p) => [norm(p.title), p]));
       for (const l of u.lessons) {
         const L = byTitle[norm(l.title)]; if (!L) continue;
+        totals.cards += L.cards.length; totals.questions += L.mcq.length + L.tasks.length;
         const clean = (x) => String(x).replace(/\*\*|`/g, "").replace(/\|/g, "/").trim();
         lessons.push([ci, u.id, l.id, clean(l.title), clean(l.module || ""), clean(u.title), L.terms.slice(0, 6).map((t) => clean(t[0])).join("|"), L.blocks.filter((b) => b.t === "h").slice(0, 6).map((b) => clean(b.x)).join("|")]);
       }
     }
   }
-  return { api: API_VERSION, fields: ["course", "unit", "lesson", "title", "module", "unitTitle", "terms", "headings"], courses, lessons };
+  return { api: API_VERSION, fields: ["course", "unit", "lesson", "title", "module", "unitTitle", "terms", "headings"], courses, lessons,
+    // for the homepage's numbers (assets/proof.js): what's on Gradify, counted from the courses themselves
+    stats: { subjects: courses.length, lessons: lessons.length, mindMaps: lessons.length * 5, flashcards: totals.cards, questions: totals.questions } };
 }
 
 const json = (x) => `${JSON.stringify(x, null, 1)}\n`;
@@ -127,7 +130,9 @@ if (process.argv[1] && new URL(`file://${process.argv[1]}`).href === import.meta
   const cat = await catalogue();
   await writeFile(new URL("catalogue.json", OUT), json(cat));
   for (const c of cat.courses) await writeFile(new URL(`courses/${c.slug}.json`, OUT), json(await courseApi(c.slug)));
-  await writeFile(new URL("lessons.json", OUT), JSON.stringify(await lessonIndex()));
+  const ix = await lessonIndex();
+  await writeFile(new URL("lessons.json", OUT), JSON.stringify({ ...ix, stats: undefined }));
+  await writeFile(new URL("stats.json", OUT), json({ api: API_VERSION, about: "What's on Gradify, counted from the courses: written lessons, five mind maps for each, their flashcards and practice questions.", ...ix.stats }));
   await mkdir(new URL("icons/", OUT), { recursive: true });
   for (const [slug, set] of Object.entries(await iconSets())) await writeFile(new URL(`icons/${slug}.json`, OUT), JSON.stringify(set));
   console.log(`api: ${cat.courses.length} courses, ${cat.courses.reduce((a, c) => a + c.lessons, 0)} lessons`);

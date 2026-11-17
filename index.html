@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="kit/styles/components.css">
   <link rel="stylesheet" href="assets/styles.css">
   <script type="module" src="assets/app.js"></script>
+  <script type="module" src="assets/proof.js"></script>
   <script type="module" src="kit/lifeos/lifeos.js"></script>
   <script type="module" src="assets/nav.js"></script>
   <script type="module" src="kit/lifeos/os.js"></script>
@@ -121,6 +122,29 @@
         </li>
       </ol>
       <p class="how-cta"><a class="btn btn-primary lg" href="app.html"><span>Try it with your notes</span> <span aria-hidden="true">→</span></a></p>
+    </section>
+
+    <!-- What's on Gradify: counted from the courses (kit/api/v1/stats.json), a real lesson's mind map, and learners'
+         own words once they've agreed to share them (assets/quotes.json, docs/PROOF.md) -->
+    <section class="proof" id="proof" aria-labelledby="proof-title">
+      <div class="sec-head">
+        <span class="eyebrow">What's inside</span>
+        <h2 id="proof-title">Every lesson, mapped, carded and <span class="grad">checked.</span></h2>
+      </div>
+      <dl class="proof-nums">
+        <div class="proof-num glass"><dt>Subjects</dt><dd data-stat="subjects">34</dd></div>
+        <div class="proof-num glass"><dt>Lessons written</dt><dd data-stat="lessons">9,979</dd></div>
+        <div class="proof-num glass"><dt>Interactive mind maps</dt><dd data-stat="mindMaps">49,895</dd></div>
+        <div class="proof-num glass"><dt>Flashcards in the lessons</dt><dd data-stat="flashcards">20,720</dd></div>
+        <div class="proof-num glass"><dt>Practice questions</dt><dd data-stat="questions">41,670</dd></div>
+      </dl>
+      <figure class="proof-map glass">
+        <a href="scigradify/chemistry/#/lesson/u01-02/map/1" aria-label="Open this mind map, from the Matter and its classification lesson">
+          <img src="assets/example-map.svg" width="1630" height="701" loading="lazy" alt="A mind map of the chemistry lesson Matter and its classification: branches for pure substances and mixtures, kinds of mixture, particle diagrams and key terms, each fact in its own bubble.">
+        </a>
+        <figcaption><b>A real lesson, as one of its five mind maps.</b> Every lesson on Gradify has five, made from its own notes: the whole topic, processes, concepts, examples and exam mastery. <a href="scigradify/chemistry/#/lesson/u01-02/map/1">Open it and explore →</a></figcaption>
+      </figure>
+      <div class="proof-quotes" hidden></div>
     </section>
 
     <!-- One account, every site -->
