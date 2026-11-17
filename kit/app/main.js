@@ -18,6 +18,7 @@ trackView(SITE || "Gradify app");
 import { generate, regenerateCard, generateQuestions } from "../notes/engine.js";
 import { reviewCard } from "../notes/pack.js";
 import { gradeTyped, VERDICT_TEXT } from "../learning/typed.js";
+import { focusFromProfiles } from "../learning/focus.js";
 import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "../learning/srs.js";
 import { topicProfiles, practiceOrder, LEVELS } from "../learning/mastery.js";
 import { sixHtml, calibrationHtml, HOW } from "../learning/mastery-view.js";
@@ -441,7 +442,9 @@ async function renderNew(arg) {
     btn.querySelector("span").textContent = ai ? "Gradify AI is reading your notes…" : "Making your pack…";
     status.textContent = ai ? "This usually takes 30 to 90 seconds." : "";
     try {
-      const out = await generate({ text, pdfBase64, title, site: profile.site, level: profile.level, store });
+      // what the learner's own results say this pack should contain more of (Gradify AI only; fixed values, never free text)
+      const focus = ai ? await store.listCards().then(async (cards) => focusFromProfiles(topicProfiles(cards, await store.listReviews(400)))).catch(() => []) : [];
+      const out = await generate({ text, pdfBase64, title, site: profile.site, level: profile.level, store, focus });
       if (!out.cards.length) throw new Error("No flashcards could be made from these notes. Try notes written in full sentences, or as “term: definition” lines.");
       const doc = await store.addDocument({ title: out.pack.title || title, site: profile.site, file_name: fileName, pages, text });
       if (out.engine === "claude" && store.linkPack) await store.linkPack(out.packId, doc.id);

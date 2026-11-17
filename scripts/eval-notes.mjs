@@ -8,7 +8,7 @@
 import { readFile, readdir, writeFile, mkdir } from "node:fs/promises";
 import { browserPack, normaliseNotes } from "../kit/notes/studio.js";
 import { notesSource } from "../kit/assess/canon.js";
-import { MODEL, PACK_SCHEMA, SYSTEM_PROMPT, userPrompt, cardsFromPack, packStats } from "../kit/notes/pack.js";
+import { MODEL, PACK_SCHEMA, SYSTEM_PROMPT, userPrompt, cardsFromPack, packStats, REVIEW_SCHEMA, REVIEW_PROMPT, reviewRequest } from "../kit/notes/pack.js";
 
 const DIR = new URL("../tests/fixtures/", import.meta.url);
 const expected = JSON.parse(await readFile(new URL("expected.json", DIR), "utf8"));
@@ -31,8 +31,18 @@ async function claudePack(text, title, model = MODEL) {
     messages: [{ role: "user", content: [{ type: "text", text: userPrompt({ title, site: "Gradify", level: "undergraduate", text, today: new Date().toISOString().slice(0, 10) }) }] }],
   }).finalMessage();
   if (msg.stop_reason !== "end_turn") throw new Error(`stop_reason ${msg.stop_reason}`);
-  const text_ = msg.content.filter((b) => b.type === "text").map((b) => b.text).join("");
-  return { pack: JSON.parse(text_), usage: msg.usage, model: msg.model };
+  const textOf = (m) => m.content.filter((b) => b.type === "text").map((b) => b.text).join("");
+  const pack = JSON.parse(textOf(msg)), usage = { ...msg.usage };
+  // the same independent review the study-pack function runs (kit/notes/pack.js: REVIEW_PROMPT)
+  const rev = await client.beta.messages.stream({
+    model, max_tokens: 8000, betas: ["server-side-fallback-2026-07-01"], fallbacks: "default",
+    output_config: { effort: "medium", format: { type: "json_schema", schema: REVIEW_SCHEMA } },
+    system: [{ type: "text", text: REVIEW_PROMPT }],
+    messages: [{ role: "user", content: [{ type: "text", text: reviewRequest(cardsFromPack(pack, text), text) }] }],
+  }).finalMessage();
+  if (rev.stop_reason === "end_turn") pack.review = { verdicts: JSON.parse(textOf(rev)).verdicts, model: rev.model };
+  usage.input_tokens += rev.usage.input_tokens; usage.output_tokens += rev.usage.output_tokens;
+  return { pack, usage, model: msg.model };
 }
 
 function score(cards, terms) {
@@ -68,10 +78,10 @@ for (const [f, text] of samples) {
 }
 
 const pct = (x) => (x == null ? "  -" : `${Math.round(x * 100)}%`.padStart(4));
-console.log("\nfile                  engine   cards  key terms  checked  invented  leaks  long  why/apply  out tokens   cost");
+console.log("\nfile                  engine   cards  key terms  checked  invented  leaks  long  why/apply  rejected  facts tested  out tokens   cost");
 for (const r of rows) {
   if (r.error) { console.log(`${r.file.padEnd(22)}${r.engine.padEnd(9)}ERROR ${r.error}`); continue; }
-  console.log(`${r.file.padEnd(22)}${r.engine.padEnd(9)}${String(r.cards).padStart(5)}  ${pct(r.coverage).padStart(9)}  ${pct(r.grounded).padStart(7)}  ${String(r.ungrounded).padStart(8)}  ${String(r.answerLeaks).padStart(5)}  ${String(r.longFronts).padStart(4)}  ${`${r.why}/${r.apply}`.padStart(9)}  ${String(r.outputTokens).padStart(10)}  ${r.pence ? `${r.pence.toFixed(1)}p` : "-"}`);
+  console.log(`${r.file.padEnd(22)}${r.engine.padEnd(9)}${String(r.cards).padStart(5)}  ${pct(r.coverage).padStart(9)}  ${pct(r.grounded).padStart(7)}  ${String(r.ungrounded).padStart(8)}  ${String(r.answerLeaks).padStart(5)}  ${String(r.longFronts).padStart(4)}  ${`${r.why}/${r.apply}`.padStart(9)}  ${String(r.rejected ?? 0).padStart(8)}  ${pct(r.factCoverage).padStart(12)}  ${String(r.outputTokens).padStart(10)}  ${r.pence ? `${r.pence.toFixed(1)}p` : "-"}`);
   if (r.missing?.length) console.log(`  missing: ${r.missing.join(", ")}`);
 }
 await mkdir(new URL("../tests/reports/", import.meta.url), { recursive: true });

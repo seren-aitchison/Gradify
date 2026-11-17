@@ -7,7 +7,7 @@ const DAY = 864e5;
 
 // What each card type is evidence of. Recall-style cards test remembering; "why" cards test
 // explaining. Application has no card type yet, so it reports "no evidence" rather than guessing.
-const DIMENSION_OF_KIND = { definition: "recall", cloze: "recall", reverse: "recall", why: "explain", apply: "apply" };
+const DIMENSION_OF_KIND = { definition: "recall", cloze: "recall", reverse: "recall", sequence: "recall", why: "explain", compare: "explain", misconception: "explain", apply: "apply" };
 export const DIMENSIONS = [
   { key: "recall", label: "Recall", what: "Remembering facts and terms when asked" },
   { key: "explain", label: "Explanation", what: "Explaining why and how, in your own words" },

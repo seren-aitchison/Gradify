@@ -10,12 +10,12 @@ import { cardsFromPack, packStats, questionCards } from "./pack.js";
 // Only a refusal about the request itself (notes too long, bad input) or a sign-in problem is passed on.
 const usable = (err) => !err?.expired && !err?.signin && !(err?.status >= 400 && err?.status < 500 && !["allowance", "fair_use", "rate"].includes(err?.reason));
 
-export async function generate({ text, pdfBase64, title, site, level, store }) {
+export async function generate({ text, pdfBase64, title, site, level, store, focus = [] }) {
   const session = store.mode === "cloud" ? await store.session().catch(() => null) : null;
   let notice = null;
   if (session) {
     try {
-      const body = await callFunction(store, "study-pack", { mode: "pack", text, pdfBase64, title, site, level }, { fallback: "Gradify AI couldn't make a pack from these notes." });
+      const body = await callFunction(store, "study-pack", { mode: "pack", text, pdfBase64, title, site, level, focus }, { fallback: "Gradify AI couldn't make a pack from these notes." });
       return { engine: "claude", model: body.model || null, packId: body.packId, pack: body.pack, cards: body.cards, stats: body.stats };
     } catch (err) {
       if (!text.trim() || !usable(err)) throw err;
