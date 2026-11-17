@@ -15,7 +15,8 @@ import { readFileSync, writeFileSync } from "node:fs";
 
 export const FILES = ["kit/styles/base.css", "kit/styles/body.css", "kit/styles/components.css", "kit/styles/course.css", "kit/styles/game.css", "kit/styles/labs.css",
   "kit/styles/maths-labs.css", "kit/styles/model.css", "kit/styles/social-labs.css", "kit/styles/subsite.css", "kit/app/app.css", "assets/styles.css"];
-const SKIP_SEL = /g3d|aurora|theme-tokens-skip|:root|\[data-theme/;
+// the glass diagrams (.gd) and the Plus banner (.lim-) are drawn on their own coloured glass, like the icons
+const SKIP_SEL = /g3d|\.gd\b|\.gd-|\.lim-|aurora|theme-tokens-skip|:root|\[data-theme/;
 // things that stay dark in light mode too (a 3D stage, a map at night, a lab canvas, the app pictured on the homepage):
 // their colours are left alone and base.css gives them the dark tokens ("dark islands")
 export const ISLANDS = [".earth-map", ".tree-wrap", ".mv-stage", ".mv-studio", ".sm-3d-art", ".lab-3d", ".lab-cv", ".lab-svg", ".co-lab", ".tablet", ".shot-frame", ".vc-", ".holo", ".sphere", ".spotlight", ".bi-stage", ".mv-labels", ".mv-tip", ".mv-controls", ".mv-info", ".gj-ring"];

@@ -102,13 +102,14 @@ export function parseNotes(text) {
 }
 
 // the notes for one lesson, grouped into sections by their headings
-export function lessonHtml(L) {
+// `after(i)`: anything to place after block i (the lesson's glass diagrams, kit/core/glass-diagrams.js)
+export function lessonHtml(L, { after = () => "" } = {}) {
   const sections = [];
   let cur = { h: null, parts: [] };
-  for (const b of L.blocks) {
-    if (b.t === "h") { if (cur.h || cur.parts.length) sections.push(cur); cur = { h: b.x, parts: [] }; continue; }
-    cur.parts.push(block(b));
-  }
+  L.blocks.forEach((b, i) => {
+    if (b.t === "h") { if (cur.h || cur.parts.length) sections.push(cur); cur = { h: b.x, parts: [] }; return; }
+    cur.parts.push(block(b) + after(i));
+  });
   if (cur.h || cur.parts.length) sections.push(cur);
   return sections.map((s) => `<section>${s.h ? `<h3>${inline(s.h)}</h3>` : ""}${s.parts.join("")}</section>`).join("");
 }
