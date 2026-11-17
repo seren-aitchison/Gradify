@@ -12,7 +12,7 @@ export const SITE_PAGES = {
     ticks: ["Works with your own notes", "Plans around your deadlines", "Free to start"],
     card: { file: "week-6-lecture.pdf", level: "Year 2", q: "Explain the difference between correlation and causation.", a: "Correlation means two things vary together; causation means one produces the other.", checks: ["Key terms used", "Matches your notes", "Gives an example", "Explains why it matters"] } },
   PostGradify: { h: ["Finish the research", "only you can do."], sub: "Keep your reading organised, turn papers into ideas you can recall, and plan your dissertation in steps that actually get done.", go: "Add your first paper",
-    ticks: ["Reads PDFs and scans", "Every card checked against the source", "Free to start"],
+    ticks: ["Works with PDFs and pasted notes", "Every card checked against the source", "Free to start"],
     card: { file: "literature-review.pdf", level: "Masters", q: "What gap in the literature does your study address?", a: "No longitudinal data on remote learning outcomes after 2020.", checks: ["States the gap", "Cites the source", "Links to your question", "Says why it matters"] } },
   ProGradify: { h: ["Get the certification", "your next role needs."], sub: "Short, daily practice for the exams and skills that move careers: CPD, certifications and the knowledge your job assumes you have.", go: "Start your first module",
     ticks: ["Ten minutes a day", "Tracks your CPD hours", "Free to start"],

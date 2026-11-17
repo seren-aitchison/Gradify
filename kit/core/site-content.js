@@ -7,7 +7,7 @@
 export const KINDS = {
   uni: {
     stepsTitle: "From lecture to exam, in three steps",
-    steps: [["Bring your lectures", "Drop in slides, PDFs or messy notes. Gradify turns them into flashcards and checks every one against what you wrote."],
+    steps: [["Bring your lectures", "Drop in a PDF of your lecture or paste your notes. Gradify turns them into flashcards and checks every one against what you wrote."],
       ["Ten minutes a day", "Cards come back just before you'd forget them, and Gradify asks you to explain and apply, not just recall."],
       ["Walk in ready", "See each topic's mastery, what's fading and what to do next, right up to exam day."]],
     topicsTitle: "Everything on your course",

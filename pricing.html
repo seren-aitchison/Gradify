@@ -161,7 +161,7 @@
 
       <div class="foot">
         <span>Prices in pounds sterling (GBP), including VAT.</span>
-        <span><a href="/privacy.html">Privacy</a> · <a href="/app.html#/account">Account</a> · <a href="/">Gradify</a></span>
+        <span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/app.html#/account">Account</a> · <a href="/">Gradify</a></span>
       </div>
     </main>
   </div>
@@ -189,7 +189,7 @@
       li(tick, "Progress saved to your account", "Pick up on any device"),
       li(tick, "Flashcards and spaced review", "Made from your own notes, in your browser"),
       li(tick, "Planner, streaks and the Gradify road"),
-      li(spark, "A taste of Gradify AI", AI_ALLOWANCES.map((a) => uses(a, a.free)).join(" · ") + " a month"),
+      li(spark, PRO_ON_SALE ? "A taste of Gradify AI" : "A taste of Gradify AI, when it launches", AI_ALLOWANCES.map((a) => uses(a, a.free)).join(" · ") + " a month"),
     ].join("");
     $("#pro-list").innerHTML = [
       li(tick, "Everything in Free"),

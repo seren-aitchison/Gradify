@@ -386,12 +386,14 @@ async function renderStart(stepArg) {
 // ---------- Add notes ----------
 async function renderNew(arg) {
   const s = siteOf(profile.site);
-  const ai = store.mode === "cloud" && (await store.user());
+  // Gradify AI reads the notes only when it's switched on for this learner, not just because they're signed in
+  const user = store.mode === "cloud" && (await store.user());
+  const ai = user && (await myAllowance(store).catch(() => [])).some((u) => u.feature === "pack" && u.enabled);
   view.innerHTML = `<section class="new">
     <span class="kicker">${esc(s.n)}</span>
     <h1>Bring your notes</h1>
-    <p class="sub">Upload a PDF of your notes, however messy, or paste them. Gradify turns them into checked flashcards in about a minute.</p>
-    <div class="engine-note ${ai ? "ai" : ""}">${ai ? `${icon("sparkles")}<span><b>Gradify AI</b> (Claude) will read your notes. Every flashcard is checked against them.</span>` : `${icon("lock")}<span><b>Working on this device.</b> The quick extractor runs in your browser and handles tidy definitions best. ${cloudConfigured() ? '<a href="#/account">Sign in</a> to use Gradify AI, which handles messy notes, diagrams and scans.' : "Gradify AI switches on when accounts launch."}</span>`}</div>
+    <p class="sub">Upload a PDF of your notes or paste them. Gradify turns them into flashcards checked against what you wrote, in about a minute.</p>
+    <div class="engine-note ${ai ? "ai" : ""}">${ai ? `${icon("sparkles")}<span><b>Gradify AI</b> (Claude) will read your notes. Every flashcard is checked against them.</span>` : `${icon("lock")}<span><b>Working on this device.</b> The quick extractor runs in your browser. It works best on notes written in full sentences or as “term: definition” lines. ${user ? "Gradify AI, for messy notes and scans, isn't switched on yet." : cloudConfigured() ? '<a href="#/account">Sign in</a> to keep your packs on every device.' : ""}</span>`}</div>
     <form id="upload" class="upload panel glass">
       <label class="dropzone" id="drop"><input type="file" id="file" accept=".pdf,.txt,.md,application/pdf,text/plain"><span class="dz-ico">${icon("upload")}</span><span><b>Drop a PDF here or choose a file</b><em>PDF, .txt or .md · one lecture or topic works best</em></span></label>
       <label class="sr-only" for="text">Or paste your notes</label>
@@ -417,7 +419,7 @@ async function renderNew(arg) {
         pdfBase64 = btoa(bin);
       }
       pages = (text.match(/\f/g) || []).length || null;
-      status.textContent = text.trim() ? `Read ${text.trim().split(/\s+/).length.toLocaleString("en-GB")} words from ${file.name}.` : "This PDF has no selectable text. Gradify AI can read it once you're signed in.";
+      status.textContent = text.trim() ? `Read ${text.trim().split(/\s+/).length.toLocaleString("en-GB")} words from ${file.name}.` : "This PDF has no selectable text, so Gradify can't read it on this device. Paste your notes in instead.";
     } catch { status.textContent = "Couldn't read that file. Try a PDF with selectable text, or a .txt file."; }
   }
   $("#file").addEventListener("change", (e) => take(e.target.files[0]));
@@ -438,7 +440,7 @@ async function renderNew(arg) {
     status.textContent = ai ? "This usually takes 30 to 90 seconds." : "";
     try {
       const out = await generate({ text, pdfBase64, title, site: profile.site, level: profile.level, store });
-      if (!out.cards.length) throw new Error("No flashcards could be made from these notes. Try notes with full sentences, or sign in to use Gradify AI.");
+      if (!out.cards.length) throw new Error("No flashcards could be made from these notes. Try notes written in full sentences, or as “term: definition” lines.");
       const doc = await store.addDocument({ title: out.pack.title || title, site: profile.site, file_name: fileName, pages, text });
       if (out.engine === "claude" && store.linkPack) await store.linkPack(out.packId, doc.id);
       else await store.addPack({ document_id: doc.id, engine: out.engine, model: out.model, pack: out.pack, stats: out.stats });
@@ -447,6 +449,7 @@ async function renderNew(arg) {
       // dates in the notes become plan items
       for (const d of out.pack.dates || []) if (d.date && d.date >= today()) await store.saveBlock({ day: d.date, start_min: 9 * 60, end_min: 9 * 60 + 30, title: d.what, cal: d.kind === "exam" ? "exam" : "deadline" });
       complete("Study pack ready", { sub: `${out.cards.length} cards from ${doc.title}` });
+      if (out.notice) toast(esc(out.notice));
       record(store, { event: "pack_made", site: profile.site, concept: doc.id, source: out.engine, detail: { cards: out.cards.length, title: doc.title.slice(0, 120) } });
       setTimeout(() => offerInstall({ reason: "Revise this pack anywhere: keep Gradify on your Home Screen, full screen and working offline." }), 2600);
       location.hash = `#/deck/${doc.id}`;
@@ -488,7 +491,7 @@ async function renderDeck(id) {
       <div class="${flagged.length ? "warn" : ""}"><b>${flagged.length}</b><span>to check</span></div>
       <div><b>${cards.filter(isLearned).length}</b><span>learned</span></div>
     </div>
-    ${store.mode !== "cloud" && cloudConfigured() ? savePanel(`Save these ${cards.length} cards to your free account`, "Keep this pack on every device, get Gradify AI for messy notes and scans, and let Gradify plan your revision around your exam.") : ""}
+    ${store.mode !== "cloud" && cloudConfigured() ? savePanel(`Save these ${cards.length} cards to your free account`, "Keep this pack on every device, and let Gradify plan your revision around your exam.") : ""}
     ${store.mode === "cloud" ? sharePanel() : ""}
     ${(pack?.pack?.unclear || []).length ? `<div class="unclear panel glass"><b>${icon("bell")}Gradify AI noticed</b><ul>${pack.pack.unclear.map((u) => `<li>${esc(u)}</li>`).join("")}</ul></div>` : ""}
     ${flagged.length ? `<p class="sub">Cards marked <span class="g-pill warn">to check</span> couldn't be fully matched to your notes. Edit them, regenerate them or delete them before you revise.</p>` : ""}

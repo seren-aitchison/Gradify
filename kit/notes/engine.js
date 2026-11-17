@@ -2,54 +2,41 @@
 // (supabase/functions/study-pack). Otherwise the browser extractor from Notes Studio runs
 // locally. Both return the same shape, and both are fact-checked against the notes.
 import { callFunction } from "../data/functions.js";
-import { analyseNotes, normaliseNotes, deeperQuestions } from "./studio.js";
+import { analyseNotes, normaliseNotes, deeperQuestions, browserPack } from "./studio.js";
 import { cardsFromPack, packStats, questionCards } from "./pack.js";
 
-// Browser extractor → the same pack shape Claude returns
-function browserPack(text, title) {
-  const a = analyseNotes(text);
-  const deeper = deeperQuestions(a);
-  const topics = a.groups.map((g, gi) => ({
-    questions: deeper.filter((q) => q.group === gi).map(({ type, question, answer, quote }) => ({ type, question, answer, quote, page: null })),
-    name: g.label, theme: g.theme, mnemonic: g.facts.length > 1 ? g.acronym : null,
-    facts: g.facts.map((f) => {
-      const card = a.cards.find((c) => c.q && f.term && c.q.toLowerCase().includes(f.term.toLowerCase())) || { type: "Definition", q: `What is ${f.term}?`, a: f.def };
-      return {
-        term: f.term, abbreviation: f.ab || null, statement: f.text, kind: f.kind === "cause" ? "cause" : f.kind === "eq" ? "equation" : "definition",
-        importance: "core", quote: f.src || f.text, page: null,
-        card: { type: card.type === "Cloze" ? "cloze" : "definition", front: card.q, back: card.a },
-      };
-    }),
-  }));
-  const loose = a.cards.filter((c) => c.type === "Cloze");
-  if (loose.length) topics.push({ name: "Other points", theme: "Other", mnemonic: null, facts: loose.map((c) => ({ term: null, abbreviation: null, statement: c.q.replace("_____", c.a), kind: "other", importance: "core", quote: c.q.split("_____")[0].trim() || c.a, page: null, card: { type: "cloze", front: c.q, back: c.a } })) });
-  return {
-    title: a.title === "My notes" ? title : a.title,
-    summary: `${a.facts.length} facts in ${a.groups.length} topics.`,
-    topics, equations: a.equations.map((e) => ({ symbolic: e, spoken: e })),
-    dates: a.dates.map((d) => ({ what: d.what, date: d.when.toISOString().slice(0, 10), kind: /exam|quiz|test/i.test(d.what) ? "exam" : "deadline" })),
-    unclear: [],
-  };
-}
+// When Gradify AI can't help (switched off, over budget, allowance used, offline), a learner with text
+// still gets a pack from the in-browser extractor, with a note saying why, instead of nothing at all.
+// Only a refusal about the request itself (notes too long, bad input) or a sign-in problem is passed on.
+const usable = (err) => !err?.expired && !err?.signin && !(err?.status >= 400 && err?.status < 500 && !["allowance", "fair_use", "rate"].includes(err?.reason));
 
 export async function generate({ text, pdfBase64, title, site, level, store }) {
   const session = store.mode === "cloud" ? await store.session().catch(() => null) : null;
+  let notice = null;
   if (session) {
-    const body = await callFunction(store, "study-pack", { mode: "pack", text, pdfBase64, title, site, level }, { fallback: "Gradify AI couldn't make a pack from these notes." });
-    return { engine: "claude", model: body.model || null, packId: body.packId, pack: body.pack, cards: body.cards, stats: body.stats };
+    try {
+      const body = await callFunction(store, "study-pack", { mode: "pack", text, pdfBase64, title, site, level }, { fallback: "Gradify AI couldn't make a pack from these notes." });
+      return { engine: "claude", model: body.model || null, packId: body.packId, pack: body.pack, cards: body.cards, stats: body.stats };
+    } catch (err) {
+      if (!text.trim() || !usable(err)) throw err;
+      notice = `${err.message} This pack was made on your device instead.`;
+    }
   }
-  if (!text.trim()) throw new Error("This PDF has no text layer (it's probably scanned or handwritten). Sign in to use Gradify AI, which can read scans.");
+  if (!text.trim()) throw new Error("This PDF has no text Gradify can read on this device (it's probably scanned or handwritten). Try a PDF with selectable text, or paste your notes in.");
   const pack = browserPack(text, title);
   const cards = cardsFromPack(pack, normaliseNotes(text));
-  return { engine: "browser", model: null, pack, cards, stats: packStats(pack, cards) };
+  return { engine: "browser", model: null, pack, cards, stats: packStats(pack, cards), notice };
 }
 
 // Why and application questions for a deck made before they existed. With an account, Claude
 // writes them; otherwise the browser extractor does what the notes allow.
 export async function generateQuestions({ text, title, site, level, topics, store }) {
   const session = store.mode === "cloud" ? await store.session().catch(() => null) : null;
-  if (session) return (await callFunction(store, "study-pack", { mode: "questions", text, title, site, level, topics }, { fallback: "Gradify AI couldn't write questions for these notes." })).cards;
-  if (!text?.trim()) throw new Error("These notes have no text Gradify can read on this device. Sign in to use Gradify AI.");
+  if (session) {
+    try { return (await callFunction(store, "study-pack", { mode: "questions", text, title, site, level, topics }, { fallback: "Gradify AI couldn't write questions for these notes." })).cards; }
+    catch (err) { if (!text?.trim() || !usable(err)) throw err; }
+  }
+  if (!text?.trim()) throw new Error("These notes have no text Gradify can read on this device.");
   const a = analyseNotes(text), notes = normaliseNotes(text);
   const deeper = deeperQuestions(a);
   // file each question under the existing topic that shares its source quote, else the extractor's group name
@@ -66,8 +53,10 @@ function bestTopic(card, topics) {
 export async function regenerateCard({ card, notes, store }) {
   const session = store.mode === "cloud" ? await store.session().catch(() => null) : null;
   if (session) {
-    const body = await callFunction(store, "study-pack", { mode: "card", fact: `${card.front} → ${card.back}`, notes: card.source_quote || notes.slice(0, 2000), avoid: [card.front], kind: card.kind }, { fallback: "Couldn't regenerate this card." });
-    return { front: body.card.front, back: body.card.back, kind: body.card.type };
+    try {
+      const body = await callFunction(store, "study-pack", { mode: "card", fact: `${card.front} → ${card.back}`, notes: card.source_quote || notes.slice(0, 2000), avoid: [card.front], kind: card.kind }, { fallback: "Couldn't regenerate this card." });
+      return { front: body.card.front, back: body.card.back, kind: body.card.type };
+    } catch (err) { if (!usable(err)) throw err; }
   }
   if (card.kind === "why" || card.kind === "apply") throw new Error("Rewriting Explain and Apply questions needs Gradify AI. You can edit this one yourself.");
   // Without the AI: flip between a question and a fill-in-the-blank version
