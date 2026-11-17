@@ -3,6 +3,7 @@
 .tl { display: grid; gap: 18px; max-width: 1100px; }
 .tl-wide { max-width: none; }
 .tl-back { justify-self: start; }
+.tl-where { margin: 4px 0 0; font-size: 13px; color: var(--mute); }
 .tl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
 .tl-tile { position: relative; display: grid; gap: 8px; align-content: start; padding: 20px; text-decoration: none; color: var(--fg); min-height: 210px; }
 .tl-tile b { font-size: 18px; letter-spacing: -.01em; }

@@ -6,8 +6,9 @@
 // kit/data/billing.js). Before then nothing is limited, so no learner is asked to buy something they can't buy.
 // To see them working before then, open any page with ?limits=preview (and ?limits=off to stop).
 //
-// What a learner has opened is counted in this browser. It's a nudge towards Plus, not a security boundary: the
-// lessons themselves are public pages.
+// Signed in, the server counts what a learner has opened (public.take_allowance, which also decides the limits), so
+// an allowance holds on every device and can't be reset by clearing a browser. Signed out (or offline), this browser
+// counts. The lessons themselves are public pages, so it's a commercial limit, not a security boundary.
 import { access } from "./plan.js";
 import { PLUS_ON_SALE, PLAN_PRICES } from "./billing.js";
 
@@ -44,12 +45,12 @@ export function take(kind, key, o = {}, counts = read(), save = write) {
 }
 
 /** Whether limits apply to this learner now: Free, and Plus on sale (or a preview). */
+const storeOf = async (store) => { try { return typeof store === "function" ? await store() : await store; } catch { return null; } };
 export async function limited(store) {
   if (!PLUS_ON_SALE && !previewing()) return false;
   // the store can be passed as a store, a promise of one, or a function that returns one (course pages)
-  try { const st = typeof store === "function" ? await store() : await store; const a = await access(st); return a.plan === "free"; } catch { return true; }
+  try { const a = await access(await storeOf(store)); return a.plan === "free"; } catch { return true; }
 }
-
 const WHAT = {
   lesson: (n) => `${n} lessons in this course`, flashcards: (n) => `${n} flashcard sets`, map: (n) => `${n} mind maps`, tool: (n, t) => `${t || "each tool"} ${n} times`,
 };
@@ -62,7 +63,18 @@ const WHAT = {
  */
 export async function gate(kind, key, o = {}) {
   if (!(await limited(o.store))) return true;
-  const r = take(kind, key, o), tool = TOOLS[o.tool];
+  const tool = TOOLS[o.tool];
+  let r = null;
+  // signed in: the server counts (public.take_allowance), so the allowance holds on every device and can't be reset
+  // by clearing a browser. This browser's own count is the fallback, signed out or offline.
+  const st = await storeOf(o.store);
+  if (st?.mode === "cloud" && st.db && !previewing()) {
+    const res = await st.db.rpc("take_allowance", { p_bucket: bucket(kind, o), p_item: String(key) }).catch(() => null);
+    const v = res && !res.error ? res.data : null;
+    if (v?.unlimited) return true;
+    if (v && typeof v.ok === "boolean" && !v.reason) { r = v; if (v.ok) take(kind, key, o); }
+  }
+  r ||= take(kind, key, o);
   if (!r.ok) { banner({ kind, locked: true, pricing: o.pricing, tool }); return false; }
   if (r.fresh && r.left === 0) banner({ kind, locked: false, pricing: o.pricing, tool });
   return true;

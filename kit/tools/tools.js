@@ -6,7 +6,7 @@
 //   #/tools/convert         notes in any format into a mind map, flashcards, a chant with a voice, or a cheatsheet
 // On Free each tool can be used 5 times (kit/data/limits.js), once Plus is on sale.
 import { searchLessons, loadLesson, factsOf, loadIndex } from "./search.js";
-import { decks, maps } from "./store.js";
+import { decks, maps, connect, status } from "./store.js";
 import { gate, lockedHtml, toolUsage, limited, TOOLS } from "../data/limits.js";
 import { split } from "../maps/build.js";
 
@@ -36,6 +36,8 @@ const TOOL_LIST = [
  */
 export async function renderTools(view, ctx) {
   toolsCss();
+  // signed in: what was made on other devices arrives first (but a slow network never holds the screen up)
+  await Promise.race([connect(ctx.store).catch(() => {}), new Promise((r) => setTimeout(r, 2500))]);
   const [tool, ...rest] = parts();
   if (!tool) return hub(view, ctx);
   if (tool === "search") return searchPage(view, ctx);
@@ -57,7 +59,7 @@ async function hub(view, ctx) {
   const lim = await limited(ctx.store);
   const ds = decks(), ms = maps();
   view.innerHTML = `<div class="tl">
-    <div class="deck-head"><div><span class="kicker lo-kicker">Tools</span><h1>Tools</h1><p class="sub">Make study material of your own, from Gradify's lessons or your own notes. Everything you make stays in this browser.</p></div></div>
+    <div class="deck-head"><div><span class="kicker lo-kicker">Tools</span><h1>Tools</h1><p class="sub">Make study material of your own, from Gradify's lessons or your own notes.</p><p class="tl-where">${whereHtml()}</p></div></div>
     <div class="tl-grid">${TOOL_LIST.map((t) => {
       const u = lim ? toolUsage(t.id) : null;
       return `<a class="tl-tile panel glass" href="${t.href}"><span class="tl-ico" data-g3d="${esc(t.g3d)}" data-g3d-size="64" data-g3d-unique></span><b>${esc(t.name)}</b><span class="sub">${esc(t.line)}</span>${u ? `<span class="tl-left">${u.left ? `${fmt(u.left, "use", "uses")} left on Free` : "Free uses used: Plus for more"}</span>` : ""}<span class="go" aria-hidden="true">→</span></a>`;
@@ -67,6 +69,13 @@ async function hub(view, ctx) {
       ${ds.map((d) => `<a class="tl-item panel glass" href="#/tools/cards/${esc(d.id)}"><span class="tl-k">Flashcards</span><b>${esc(d.title || "Untitled deck")}</b><span class="sub">${esc(d.summary || "")}</span></a>`).join("")}
     </div>` : ""}
   </div>`;
+}
+// where what you make is kept
+function whereHtml() {
+  if (status.mode !== "cloud") return `Kept in this browser. <a href="#/account">Sign in</a> to keep it in your account, on every device.`;
+  if (status.note === "readonly") return "Kept in your account. On Free you make changes on your study device; Gradify Plus works on every device.";
+  if (status.note === "offline") return "Kept in this browser for now: it goes to your account when you're back online.";
+  return "Kept in your account, on every device you sign in on.";
 }
 const countNodes = (n) => (n ? 1 + (n.children || []).reduce((a, c) => a + countNodes(c), 0) : 0);
 
