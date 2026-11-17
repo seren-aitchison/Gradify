@@ -16,3 +16,9 @@ export const SUPABASE_ANON_KEY = "sb_publishable_TG7ZtA0a9zQdObOW0tub7g_NedlFGj-
 // Push notifications (docs/NOTIFICATIONS.md): the public half of the VAPID key pair the push-send function signs with.
 // Safe to publish. Leave it empty and Gradify still sends reminders while it's open, but not when it's closed.
 export const PUSH_PUBLIC_KEY = "";
+
+// The Gradify app on Apple's App Store (docs/APP-STORE.md). Every "Get the app" button goes here instead of installing
+// the website as an app. Paste each listing's link once it's live, e.g. "https://apps.apple.com/app/gradify/id1234567890".
+// iPhone and iPad share one listing; the Mac app can share it too (one universal purchase) or have its own.
+// Leave them empty and Gradify says the app is coming to the App Store, and installs nothing.
+export const APP_STORE = { ios: "", mac: "" };

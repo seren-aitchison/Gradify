@@ -159,7 +159,14 @@ export class CloudStore {
   async signOut() { await this.db.auth.signOut(); }
   onAuth(cb) { this.db.auth.onAuthStateChange((_e, s) => cb(s?.user || null)); }
   async q(p) { const { data, error } = await p; if (error) throw error; return data; }
-  async getProfile() { const u = await this.user(); return this.q(this.db.from("profiles").select("*").eq("id", u.id).single()); }
+  async getProfile() {
+    const u = await this.user();
+    if (!u) throw new Error("You've been signed out. Sign in again from Settings.");
+    const row = await this.q(this.db.from("profiles").select("*").eq("id", u.id).maybeSingle());
+    if (row) return row;
+    // an account made before the sign-up trigger, or one whose profile row went missing: make it rather than fail
+    return this.q(this.db.from("profiles").upsert({ id: u.id }, { onConflict: "id" }).select().single());
+  }
   async saveProfile(patch) { const { xp, id, ...rest } = patch; const u = await this.user(); return this.q(this.db.from("profiles").update({ ...rest, updated_at: now() }).eq("id", u.id).select().single()); }
   async addDocument(d) { return this.q(this.db.from("documents").insert({ title: d.title, site: d.site, file_name: d.file_name, pages: d.pages, text: d.text }).select().single()); }
   async listDocuments() { return this.q(this.db.from("documents").select("id,title,site,file_name,pages,created_at").order("created_at", { ascending: false })); }
