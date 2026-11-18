@@ -38,7 +38,10 @@ Every request goes through one locked step in the database, `ai_claim_for`, befo
 3. **Rate limits.** Per learner a minute and an hour; overall a minute (`rate`, `busy`).
 4. **Allowance.** Free or Pro, per feature, per month (`allowance`). A tutor conversation counts once for all its
    turns, up to the plan's turn limit (`conversation_long`).
-5. **Fair use.** What the learner's requests have cost this month must be below their plan's cap (`fair_use`).
+5. **Fair use.** What the learner's requests have cost this month, plus this request's worst-case cost, must fit
+   under their plan's cap (`fair_use`). The cap holds as long as the estimate does: output is capped by `max_tokens`,
+   but input tokens are estimated from characters. A request that costs more than its estimate is recorded at its real
+   cost, and the learner's next request is refused.
 
 Then the function calls Claude, with the model the claim names for that feature (`ai_feature_models`), and `ai_settle_for` records the model, input, output and cache tokens, and the cost in
 pence. A failed request (Claude unavailable, a refusal, an unusable answer, notes too long) gives the use back but its
