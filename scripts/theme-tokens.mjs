@@ -19,7 +19,7 @@ export const FILES = ["kit/styles/base.css", "kit/styles/body.css", "kit/styles/
 const SKIP_SEL = /g3d|\.gd\b|\.gd-|\.lim-|aurora|theme-tokens-skip|:root|\[data-theme/;
 // things that stay dark in light mode too (a 3D stage, a map at night, a lab canvas, the app pictured on the homepage):
 // their colours are left alone and base.css gives them the dark tokens ("dark islands")
-export const ISLANDS = [".earth-map", ".tree-wrap", ".mv-stage", ".mv-studio", ".sm-3d-art", ".lab-3d", ".lab-cv", ".lab-svg", ".co-lab", ".tablet", ".shot-frame", ".vc-", ".holo", ".sphere", ".spotlight", ".bi-stage", ".mv-labels", ".mv-tip", ".mv-controls", ".mv-info", ".gj-ring"];
+export const ISLANDS = [".earth-map", ".tree-wrap", ".isle3d", ".isle-tag", ".forest", ".fs-key", ".mv-stage", ".mv-studio", ".sm-3d-art", ".lab-3d", ".lab-cv", ".lab-svg", ".co-lab", ".tablet", ".shot-frame", ".vc-", ".holo", ".sphere", ".spotlight", ".bi-stage", ".mv-labels", ".mv-tip", ".mv-controls", ".mv-info", ".gj-ring"];
 const islandSel = (sel) => ISLANDS.some((x) => sel.includes(x));
 const SHADOW = /^(box-shadow|text-shadow|filter|-webkit-filter|backdrop-filter|-webkit-backdrop-filter|mask|-webkit-mask)/;
 
