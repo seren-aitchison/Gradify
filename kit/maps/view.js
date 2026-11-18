@@ -50,11 +50,18 @@ export function mapsSectionHtml(L, o = {}) {
   </section>`;
 }
 
-/** Wire the previews in `root` to open the viewer. */
+/** Wire the previews in `root` to open the viewer: the spidermap (kit/maps/spider.js), loaded when first needed and
+ *  warmed as the pointer reaches a preview. (openMap below, the Mind Elixir viewer, stays for Tools.) */
 export function wireMaps(root, L, o = {}) {
-  root.querySelectorAll("[data-open-map]").forEach((b) => b.addEventListener("click", () => openMap(L, +b.dataset.openMap, o)));
+  const spider = () => import("./spider.js");
+  const go = (i) => spider().then((s) => s.openLessonMap(L, i, o)).catch((e) => console.error("mind map", e));
+  root.querySelectorAll("[data-open-map]").forEach((b) => {
+    b.addEventListener("click", () => go(+b.dataset.openMap));
+    b.addEventListener("pointerenter", () => spider().then((s) => s.warmLessonMaps()).catch(() => {}), { once: true });
+    b.addEventListener("focus", () => spider().then((s) => s.warmLessonMaps()).catch(() => {}), { once: true });
+  });
   const m = location.hash.match(/\/map\/([1-5])$/);
-  if (m) openMap(L, +m[1] - 1, o);
+  if (m) go(+m[1] - 1);
 }
 
 // ---------- loading the libraries once ----------

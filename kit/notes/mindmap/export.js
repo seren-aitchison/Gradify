@@ -8,7 +8,7 @@ export function toMarkdown(map, intel, memory = null) {
   const line = (n, depth) => {
     const pad = "  ".repeat(depth), m = mem.get(n.id);
     const tail = m ? ` _(${m.state === "new" ? "not reviewed yet" : m.state}${m.recall != null ? `, ${pct(m.recall)} recall` : ""})_` : "";
-    const head = n.type === "term" ? `${pad}- **${n.label}**: ${n.sub}${/[.!?]$/.test(n.sub || "") ? "" : "."}${tail}` : n.type === "eq" ? `${pad}- \`${n.label}\`` : `${pad}- ${n.label}`;
+    const head = n.type === "term" ? `${pad}- **${n.label}**${n.sub ? `: ${n.sub}${/[.!?]$/.test(n.sub) ? "" : "."}` : ""}${tail}` : n.type === "eq" ? `${pad}- \`${n.label}\`` : `${pad}- ${n.label}`;
     return [head, ...kids(n.id).flatMap((k) => line(k, depth + 1))];
   };
   const root = map.byId.get("root");
