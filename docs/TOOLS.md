@@ -77,3 +77,32 @@ they hold on every device; signed out, the browser counts.
   diagrams) and `tests/tools-db.test.mjs` (the account tables and `take_allowance()` on real PostgreSQL)
 - In a browser: `python3 -m http.server 8080 &` then `node scripts/check-tools.cjs` (every tool, a phone layout, two
   devices syncing through the account, a lesson's diagrams and icons, and the allowances with the banner), and `node scripts/check-mindmaps.cjs`
+
+## Every homepage feature, live (November 2026)
+
+Each bubble in the homepage's feature showcase (`assets/features.js`) has an `href` to where it works. The ones added in
+this round:
+
+| Feature | Where | Code |
+|---|---|---|
+| Explainer videos, Chant podcasts, Audio questions, Story posters, Dictionaries and thesaurus, Key-terms sheets, Downloadable resources | `#/tools/explain`, `podcast`, `audio`, `poster`, `dictionary`, `sheets`, `downloads` | `kit/tools/learn.js`, `voice.js` |
+| Flashcard feed (bonus facts, hacks, boosting), Quizzes: practice, timed, adaptive, question bank (the last three Plus), Key-term games | `#/tools/feed`, `quiz/<mode>`, `games` | `kit/tools/practise.js` |
+| Notebook, Handwriting to text, YouTube to notes, Projects for XP | `#/tools/notebook`, `handwriting`, `youtube`, `projects` | `notebook.js`, `handwriting.js`, `youtube.js` (+ `supabase/functions/youtube-notes`), `projects.js` |
+| Subject chats, Study groups, Friends' and school leaderboards, Tutors, Student mentors, InternshipGradify | `#/community/<tab>` | `kit/app/community.js`, `supabase/migrations/20261119120000_community_and_more_tools.sql` |
+| Gradify Tree (from real activity), reward milestones | `#/progress` | `kit/app/main.js` (treeData), `kit/game/achievements.js` |
+
+The learn and practise tools share one picker (`kit/tools/pick.js`) and one shape of study material
+(`kit/tools/material.js`): a Gradify lesson, a whole unit, one of your decks, or pasted notes.
+
+**Community safety**, enforced in the database: a community profile (display name, 13 or over) before posting; no
+links, email addresses or phone numbers in chats or help requests; at most 8 messages a minute and 10 help requests a
+day; three reports hide a message; groups and their chats are members-only; profiles are readable only by their owner
+(others see names through functions); schools are used only to rank the school leaderboard. Tested on real PostgreSQL
+in `tests/community-db.test.mjs`. Rules for learners: `terms.html#community`.
+
+**YouTube**: the `youtube-notes` function reads a video's public watch page for its captions. YouTube often refuses
+requests from servers ("confirm you're not a bot"); Gradify doesn't try to get round that, and the tool asks the
+learner to paste the transcript instead, which gives the same notes, cards, map and chat.
+
+**Handwriting**: read on the device, by the browser's handwriting recogniser where there is one, otherwise Tesseract OCR
+(tesseract.js 5.1.1 from jsDelivr, loaded on first use). Neat print reads best.

@@ -30,20 +30,9 @@ const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 type Track = { baseUrl: string; languageCode: string; kind?: string; name?: { simpleText?: string; runs?: { text: string }[] } };
 const decode = (s: string) => s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n));
 
-// the player's caption tracks: from the Android player API first (it gives caption links that work without a browser),
-// then from the watch page
+// the video's caption tracks, from its public watch page. If YouTube refuses (it sometimes asks servers to prove
+// they're not a bot), Gradify doesn't try to get round that: the learner is asked to paste the transcript instead.
 async function tracksOf(id: string): Promise<{ title: string; channel: string; tracks: Track[] }> {
-  try {
-    const r = await fetch("https://www.youtube.com/youtubei/v1/player?prettyPrint=false", {
-      method: "POST", headers: { "Content-Type": "application/json", "User-Agent": "com.google.android.youtube/19.44.38 (Linux; U; Android 14) gzip", "X-Youtube-Client-Name": "3", "X-Youtube-Client-Version": "19.44.38" },
-      body: JSON.stringify({ videoId: id, context: { client: { clientName: "ANDROID", clientVersion: "19.44.38", androidSdkVersion: 34, hl: "en", gl: "GB" } } }),
-    });
-    if (r.ok) {
-      const p = await r.json();
-      const tracks = p?.captions?.playerCaptionsTracklistRenderer?.captionTracks ?? [];
-      if (tracks.length) return { title: p?.videoDetails?.title ?? "", channel: p?.videoDetails?.author ?? "", tracks };
-    }
-  } catch { /* try the page */ }
   const page = await fetch(`https://www.youtube.com/watch?v=${id}&hl=en&gl=GB`, { headers: { "User-Agent": UA, "Accept-Language": "en-GB,en;q=0.9", Cookie: "CONSENT=YES+1" } }).then((r) => r.text());
   const m = page.match(/ytInitialPlayerResponse\s*=\s*(\{.+?\})\s*;\s*(?:var\s|<\/script)/s);
   if (!m) throw new Error("page");
@@ -89,7 +78,8 @@ Deno.serve(async (req) => {
     if (!segments.length) return json(req, { error: "YouTube didn't send this video's captions. Paste the transcript instead (on YouTube: … More → Show transcript).", id, title }, 502);
     return json(req, { id, title, channel, lang: t.lang, auto: t.auto, segments });
   } catch (e) {
-    const why = (e as { why?: string }).why;
-    return json(req, { error: why ? `YouTube says: ${why}` : "Couldn't read this video's captions just now. Paste the transcript instead (on YouTube: … More → Show transcript).", id }, 502);
+    const why = String((e as { why?: string }).why ?? "");
+    const blocked = /bot|sign in/i.test(why);
+    return json(req, { error: blocked ? "YouTube isn't letting Gradify read this video right now. Paste its transcript instead: on YouTube, open the description and press Show transcript." : why ? `YouTube says: ${why}` : "Couldn't read this video's captions just now. Paste the transcript instead: on YouTube, open the description and press Show transcript.", id, blocked }, 502);
   }
 });

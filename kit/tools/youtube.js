@@ -55,9 +55,9 @@ async function fetchCaptions(url) {
 }
 
 export async function renderYouTube(view, ctx) {
-  view.innerHTML = `<div class="tl">${backLink()}<div class="deck-head"><div><span class="kicker lo-kicker">Notes and creation</span><h1>YouTube to notes</h1><p class="sub">Paste a YouTube link. Gradify reads what's said in the video and makes notes in chapters, flashcards and a mind map, and you can ask questions about it: every answer comes from the video, with the moment it's said.</p></div></div>
+  view.innerHTML = `<div class="tl">${backLink()}<div class="deck-head"><div><span class="kicker lo-kicker">Notes and creation</span><h1>YouTube to notes</h1><p class="sub">Paste a YouTube link (or the video's transcript) and Gradify makes notes in chapters, flashcards and a mind map, and you can ask questions about it: every answer comes from what's said in the video, with the moment it's said. YouTube doesn't always let Gradify read a video; when it doesn't, paste the transcript below.</p></div></div>
     <form class="tl-search panel glass yt-form"><input type="url" placeholder="https://www.youtube.com/watch?v=…" aria-label="YouTube link" required><button class="btn btn-primary lg btn-sm"><span>Make notes</span></button></form>
-    <details class="panel glass yt-paste"><summary>No captions, or it won't load? Paste the transcript</summary><p class="sub">On YouTube, open the video's description, press <b>Show transcript</b>, select it all and paste it here.</p><textarea rows="6" aria-label="Transcript"></textarea><button type="button" class="btn btn-light lg btn-sm" data-paste><span>Use this transcript</span></button></details>
+    <details class="panel glass yt-paste"><summary>Paste the transcript instead</summary><p class="sub">On YouTube, open the video's description, press <b>Show transcript</b>, select it all and paste it here.</p><textarea rows="6" aria-label="Transcript"></textarea><button type="button" class="btn btn-light lg btn-sm" data-paste><span>Use this transcript</span></button></details>
     <p class="sub yt-msg" aria-live="polite"></p><div class="yt-out"></div></div>`;
   const msg = view.querySelector(".yt-msg"), out = view.querySelector(".yt-out"), input = view.querySelector(".yt-form input");
   let lastId = null, lastTitle = "";

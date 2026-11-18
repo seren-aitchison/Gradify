@@ -31,7 +31,7 @@ export const FEATURES = [
   { n: "Notebook", cat: "create", i: "feather", where: "both", d: "A personal notebook like RemNote or Notion: linked notes, customisable pages, and any line can become a flashcard.", size: 2, live: true, href: "app.html#/tools/notebook" },
   { n: "Handwriting to text", cat: "create", i: "pencil", where: "app", d: "Write by hand on a tablet or phone and get searchable text.", size: 1, live: true, href: "app.html#/tools/handwriting" },
   { n: "Notes to songs", cat: "create", i: "music", where: "app", d: "Any notes become a catchy song or chant.", try: "capture", size: 2, live: true, href: "app.html#/tools/convert" },
-  { n: "YouTube to notes", cat: "create", i: "share", where: "web", d: "Paste a YouTube link and get notes, flashcards and a chat about the video.", size: 2, live: true, href: "app.html#/tools/youtube" },
+  { n: "YouTube to notes", cat: "create", i: "share", where: "web", d: "Paste a YouTube link or its transcript and get notes in chapters, flashcards, a mind map and a chat about the video.", size: 2, live: true, href: "app.html#/tools/youtube" },
   { n: "Spidermaps", cat: "create", i: "route", where: "both", d: "Every fact you learn joins your spidermap, with acronyms linking the terms.", try: "capture", size: 2, live: true, href: "app.html#/tools/map/new" },
   { n: "Downloadable resources", cat: "create", i: "upload", where: "web", d: "Notes, posters and sheets to download and print.", try: "capture", size: 1, live: true, href: "app.html#/tools/downloads" },
   // practise
