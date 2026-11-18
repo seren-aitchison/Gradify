@@ -7,7 +7,7 @@
  "overall": 78,
  "dims": {
   "accuracy": 52,
-  "completeness": 85,
+  "completeness": 86,
   "clarity": 95,
   "progression": 47,
   "application": 91,
@@ -584,17 +584,17 @@
    "slug": "physics",
    "name": "Physics",
    "lessons": 1308,
-   "overall": 52,
+   "overall": 53,
    "dims": {
-    "accuracy": 15,
-    "completeness": 10,
+    "accuracy": 16,
+    "completeness": 11,
     "clarity": 84,
-    "progression": 13,
+    "progression": 15,
     "application": 84,
     "assessment": 63,
     "accessibility": 82,
     "engagement": 84,
-    "retention": 32
+    "retention": 33
    },
    "serves": [
     {

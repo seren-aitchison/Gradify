@@ -14,7 +14,7 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Dimension | Score | What it measures |
 |---|---|---|
 | Accuracy | `█████░░░░░ 52` | Dated sources, evidence labels, no mechanical errors. Capped at 60 until a subject expert reviews it. |
-| Completeness | `█████████░ 85` | Objectives stated, each one taught in the body, key terms and a summary. |
+| Completeness | `█████████░ 86` | Objectives stated, each one taught in the body, key terms and a summary. |
 | Clarity | `██████████ 95` | Sentence length, long-sentence share, a clear lead, terms defined. |
 | Progression | `█████░░░░░ 47` | Prerequisites named (or first in its unit) and a stated level. |
 | Application | `█████████░ 91` | Worked examples, common mistakes, and questions above recall level. |
@@ -75,7 +75,7 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 
 | Course | Lessons | Overall | Accuracy | Completeness | Clarity | Progression | Application | Assessment | Accessibility | Engagement | Retention |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Physics | 1308 | **52** | 15 | 10 | 84 | 13 | 84 | 63 | 82 | 84 | 32 |
+| Physics | 1308 | **53** | 16 | 11 | 84 | 15 | 84 | 63 | 82 | 84 | 33 |
 | Law | 480 | **66** | 54 | 97 | 94 | 3 | 37 | 68 | 100 | 55 | 88 |
 | Pharmacy | 318 | **72** | 51 | 96 | 99 | 8 | 68 | 81 | 100 | 65 | 77 |
 | Nursing | 497 | **74** | 49 | 98 | 98 | 47 | 50 | 89 | 100 | 56 | 75 |
@@ -115,20 +115,20 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Fix | Lessons |
 |---|---|
 | Add flashcards for spaced retrieval (Q:) | 9,692 |
-| Name what this builds on (PRE:) | 5,957 |
-| State the level (LV:) | 3,595 |
-| Say how strong the evidence is (EV:) | 3,311 |
+| Name what this builds on (PRE:) | 5,938 |
+| State the level (LV:) | 3,575 |
+| Say how strong the evidence is (EV:) | 3,291 |
 | Even out answer lengths | 3,079 |
-| Teach every objective | 2,017 |
-| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,708 |
-| Add check questions | 1,705 |
+| Teach every objective | 2,020 |
+| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,702 |
+| Add check questions | 1,699 |
 | Add a worked example (X:) | 1,265 |
-| Cite at least two sources (SRC:) | 1,246 |
-| Date every source, so it can be rechecked | 1,171 |
-| State at least two learning objectives (O:) | 1,171 |
-| Define the key terms (T:) | 1,171 |
-| End with a summary (SUM:) | 1,171 |
-| Define terms where they're first used (T:) | 1,171 |
+| Cite at least two sources (SRC:) | 1,226 |
+| Date every source, so it can be rechecked | 1,151 |
+| State at least two learning objectives (O:) | 1,151 |
+| Define the key terms (T:) | 1,151 |
+| End with a summary (SUM:) | 1,151 |
+| Define terms where they're first used (T:) | 1,151 |
 
 ## The 30 lessons to improve first
 
