@@ -43,6 +43,7 @@ import { learnerMemory } from "../intel/memory.js";
 import { boardHtml, wireBoard, DEFAULT_WIDGETS } from "./widgets.js";
 import { notifyPanelHtml, wireNotify, notifyAskHtml, wireNotifyAsk, startReminders } from "./notify-views.js";
 import { mountIntel3 } from "./intel3-views.js";
+import { plannerHtml, wirePlanner, renderSession, sessionPill } from "./session-views.js";
 import { orderCards } from "../intel/order.js";
 import { weightedGraph, usable } from "../intel/graph.js";
 import { dependencyGraph } from "../intel/debt.js";
@@ -133,7 +134,7 @@ const NAV = [
 // the phone tab bar has room for five: the rest are under More
 const TABS = ["today", "study", "notes", "plan"];
 // screens that belong to a section without being one
-const SECTION_OF = { deck: "notes", new: "notes", topic: "progress", start: null, goal: "goals" };
+const SECTION_OF = { deck: "notes", new: "notes", topic: "progress", start: null, goal: "goals", session: "today" };
 function drawNav() {
   // the LifeOS sidebar (wide screens) and, inside it, every section; the top bar keeps the brand and account
   let side = document.querySelector(".lo-side");
@@ -273,6 +274,7 @@ async function route() {
   try { await (routes[name] || renderToday)(arg); } catch (e) { console.error(e); view.innerHTML = `<div class="panel glass"><h3>Something went wrong</h3><p class="sub">${esc(e.message)}</p></div>`; }
   decorate(view);
   tabify(name);
+  sessionPill(name);
   // 3D glass icons from the learner's subject set (kit/core/glass-icons.js), matched to each card, pack and lesson
   glassIcons(view, profile.site || "Gradify").catch(() => {});
   const ti = view.querySelector(".today-icons"); if (ti) glassCluster(ti, profile.site || "Gradify", { count: 3, size: 54, words: today() }).catch(() => {});
@@ -882,11 +884,13 @@ async function renderToday() {
     ${ACCESS.has("calendar") ? notifyAskHtml(M) : ""}
     ${ACCESS.has("intelligence") ? `${briefingHtml(M, { made: M.made || [] })}
     ${catchUpHtml(M) || rescheduleHtml(M)}` : ""}
+    ${plannerHtml(M)}
     ${nextHtml(M)}
     ${boardHtml({ m: M, s, G, L, streak: streakDays, xp: gxp, lv, xpForLevel, heat: heatmap(s.byDay) }, (M.intel.widgets?.length ? M.intel.widgets : DEFAULT_WIDGETS).filter((id) => ACCESS.has("intelligence") || !INTEL_WIDGETS.has(id)))}
     ${ACCESS.has("intelligence") ? "" : plusPanelHtml("intelligence", { pricing: PRICING, compact: true })}
   </section>`;
   wireCockpit(view, cockpitCtx);
+  wirePlanner(view, M);
   wireIntel(view, M, { store, toast, rerender });
   wireAutopilot(view, M, apctx());
   wireTell(view, M, apctx());
@@ -1395,6 +1399,7 @@ async function renderAccount() {
       <p class="sub">Every Gradify site uses these: courses pace your plan from your exam date and daily time.${learnerOf(profile).onboarded_at ? "" : ` <a href="#/start">Run set-up</a>`}</p>
       <button class="btn btn-light lg btn-sm" type="submit"><span>Save</span></button>
     </form>
+    <article class="panel glass" data-pane="prefs"><div class="panel-head"><div><h3>Reading and accessibility</h3><p class="sub">Page size, font, spacing, line length, background tint, contrast, motion, focus mode, read aloud and how long your study blocks are. Each one separately, on every Gradify page.</p></div><button type="button" class="btn btn-light lg btn-sm" id="open-access"><span>Change</span></button></div></article>
     ${hapticsSupported() ? `<article class="panel glass"><div class="panel-head"><div><h3>Haptics</h3><p class="sub">A light buzz when you rate a card, shuffle a pile or plan your day.</p></div><label class="switch"><input type="checkbox" id="haptics" role="switch" ${hapticsOn() ? "checked" : ""}><span class="sw-track lg" aria-hidden="true"><span class="sw-knob"></span></span></label></div></article>` : ""}
     <div id="notify-slot"></div>
     <article class="panel glass"><h3>Your data</h3><p class="sub">${SITE ? `It's yours. Download or delete everything you've added on ${esc(SITE)}. Your notes on other Gradify sites stay as they are.` : "It's yours. Download everything, or delete it."}</p>
@@ -1411,6 +1416,7 @@ async function renderAccount() {
     profile = await store.getProfile();
     toast("Saved.");
   });
+  $("#open-access")?.addEventListener("click", (e) => window.gradifyAccess?.open(e.currentTarget));
   $("#haptics")?.addEventListener("change", (e) => { setHaptics(e.target.checked); haptic("success"); });
   { const nm = { intel: intelOf(learnerOf(profile)), storeMode: store.mode }; const slot = $("#notify-slot"); if (slot) { slot.outerHTML = notifyPanelHtml(nm); wireNotify(view, nm, apctx()); } }
   $("#export").addEventListener("click", async () => {
@@ -1530,6 +1536,7 @@ async function renderCommunity(arg) {
   wireSharePanel();
 }
 routes.community = renderCommunity;
+routes.session = () => renderSession({ view, store, toast });
 
 // ---------- Free on a second device ----------
 function showDeviceBanner(cloud, device) {

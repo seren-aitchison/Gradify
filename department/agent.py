@@ -22,6 +22,12 @@ ROLES_PATH = os.path.join(os.path.dirname(__file__), "roles.json")
 with open(ROLES_PATH, "r") as f:
     ROLES_CONFIG = json.load(f)
 
+# The Gradify Quality Constitution (docs/QUALITY-CONSTITUTION.md), which every agent inherits ahead of its own role.
+# Generated from kit/quality/constitution.js (npm run constitution); tests/constitution.test.mjs keeps them in step.
+CONSTITUTION_PATH = os.path.join(os.path.dirname(__file__), "constitution.txt")
+with open(CONSTITUTION_PATH, "r") as f:
+    CONSTITUTION = f.read().strip()
+
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
 DEFAULT_MODEL = os.environ.get("GRADIFY_AGENT_MODEL", "qwen2.5-coder:3b")
 
@@ -161,7 +167,7 @@ def run_agent_loop(role_id, repo_root, single_task_mode=False):
 
     color = role_info.get("color", "white")
     name = role_info.get("name")
-    system_prompt = role_info.get("system_prompt")
+    system_prompt = f"{CONSTITUTION}\n\nYOUR ROLE\n{role_info.get('system_prompt')}"
     allowed_tools = role_info.get("tools", [])
 
     print(f"{COLORS['bold']}{COLORS[color]}╔═══════════════════════════════════════════════════════════════════════════╗{COLORS['reset']}")
