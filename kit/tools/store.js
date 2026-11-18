@@ -5,7 +5,7 @@
 // every device: changes are sent shortly after they're made, and each Tools screen fetches what changed elsewhere.
 // Two devices changing the same item: the later change wins (by the database's own timestamps). A deletion is kept
 // as a marker, so another device's older copy doesn't bring it back.
-const KEY = { decks: "gradify.tools.decks", maps: "gradify.tools.maps", srs: (id) => `gradify.tools.srs.${id}`, gone: "gradify.tools.deleted", sent: "gradify.tools.imgsent" };
+const KEY = { decks: "gradify.tools.decks", maps: "gradify.tools.maps", notes: "gradify.tools.notes", srs: (id) => `gradify.tools.srs.${id}`, gone: "gradify.tools.deleted", sent: "gradify.tools.imgsent" };
 const read = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
 const write = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch { return false; } };
 export const uid = (p) => `${p}${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
@@ -31,6 +31,7 @@ export const saveSchedule = (id, cardId, st) => {
   const all = schedules(id); all[cardId] = st; write(KEY.srs(id), all);
   // a review changes the deck: it goes to the account with the deck
   const d = deck(id); if (d) put(KEY.decks, { ...d, updated: Date.now(), dirty: true });
+  const n = !d && page(id); if (n) put(KEY.notes, { ...n, updated: Date.now(), dirty: true });
 };
 
 // ---------- mind maps ----------
@@ -39,6 +40,12 @@ export const map = (id) => maps().find((m) => m.id === id) || null;
 export const saveMap = (m) => put(KEY.maps, { ...m, id: m.id || uid("m"), updated: Date.now(), dirty: true });
 export function deleteMap(id) { write(KEY.maps, read(KEY.maps, []).filter((m) => m.id !== id)); gone(id, "map"); }
 function gone(id, kind) { const g = read(KEY.gone, []); if (!g.some((x) => x.id === id)) g.push({ id, kind }); write(KEY.gone, g); soon(); }
+
+// ---------- notebook pages (kit/tools/notebook.js) ----------
+export const pages = () => read(KEY.notes, []).sort((a, b) => (b.updated || 0) - (a.updated || 0));
+export const page = (id) => pages().find((p) => p.id === id) || null;
+export const savePage = (p) => put(KEY.notes, { ...p, id: p.id || uid("n"), updated: Date.now(), created: p.created || Date.now(), dirty: true });
+export function deletePage(id) { write(KEY.notes, read(KEY.notes, []).filter((p) => p.id !== id)); gone(id, "note"); }
 
 // ---------- images ----------
 let dbp = null;
@@ -102,22 +109,26 @@ export function sync() {
   })();
   return running;
 }
-const bodyOf = (kind, x) => (kind === "deck" ? { text: x.text, style: x.style, summary: x.summary || "", srs: schedules(x.id) } : { data: x.data });
+const bodyOf = (kind, x) => (kind === "deck" ? { text: x.text, style: x.style, summary: x.summary || "", srs: schedules(x.id) } : kind === "note" ? { text: x.text || "", srs: schedules(x.id) } : { data: x.data });
+const keyOf = (kind) => (kind === "deck" ? KEY.decks : kind === "note" ? KEY.notes : KEY.maps);
 async function pull() {
   const { data, error } = await cloud.from("tool_items").select("id, kind, title, body, deleted, updated_at");
   if (error) throw error;
   for (const r of data || []) {
-    const key = r.kind === "deck" ? KEY.decks : KEY.maps, all = read(key, []), mine = all.find((x) => x.id === r.id), at = Date.parse(r.updated_at);
+    const key = keyOf(r.kind), all = read(key, []), mine = all.find((x) => x.id === r.id), at = Date.parse(r.updated_at);
     if (mine?.synced === r.updated_at) continue;                       // nothing new
     if (mine?.dirty && (mine.updated || 0) > at) continue;              // this browser's change is later: it'll be sent
     if (r.deleted) { if (mine) write(key, all.filter((x) => x.id !== r.id)); continue; }
     if (r.kind === "deck") {
       put(KEY.decks, { ...(mine || {}), id: r.id, title: r.title, text: r.body.text || "", style: r.body.style || "card", summary: r.body.summary || "", updated: at, created: mine?.created || at, synced: r.updated_at, dirty: false }, { dirty: false });
       write(KEY.srs(r.id), r.body.srs || {});
+    } else if (r.kind === "note") {
+      put(KEY.notes, { ...(mine || {}), id: r.id, title: r.title, text: r.body.text || "", updated: at, created: mine?.created || at, synced: r.updated_at, dirty: false }, { dirty: false });
+      write(KEY.srs(r.id), r.body.srs || {});
     } else put(KEY.maps, { ...(mine || {}), id: r.id, title: r.title, data: r.body.data, updated: at, synced: r.updated_at, dirty: false }, { dirty: false });
   }
   // images the decks use that this browser doesn't have yet
-  const need = new Set(decks().flatMap((d) => [...String(d.text || "").matchAll(/\(img:([a-z0-9-]+)\)/gi)].map((m) => m[1])));
+  const need = new Set([...decks(), ...pages()].flatMap((d) => [...String(d.text || "").matchAll(/\(img:([a-z0-9-]+)\)/gi)].map((m) => m[1])));
   const have = new Set(await tx("readonly", (s) => s.getAllKeys()).catch(() => []));
   const missing = [...need].filter((id) => !have.has(id));
   if (missing.length) {
@@ -126,7 +137,7 @@ async function pull() {
   }
 }
 async function push() {
-  for (const [kind, key] of [["deck", KEY.decks], ["map", KEY.maps]]) {
+  for (const [kind, key] of [["deck", KEY.decks], ["map", KEY.maps], ["note", KEY.notes]]) {
     for (const x of read(key, []).filter((i) => i.dirty)) {
       const { data, error } = await cloud.from("tool_items").upsert({ id: x.id, kind, title: x.title || "", body: bodyOf(kind, x), deleted: false }, { onConflict: "user_id,id" }).select("updated_at").single();
       if (error) throw error;

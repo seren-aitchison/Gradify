@@ -13,7 +13,7 @@ import { access } from "./plan.js";
 import { PLUS_ON_SALE, PLAN_PRICES } from "./billing.js";
 
 export const FREE = { lesson: 10, flashcards: 5, map: 5, tool: 5 };
-export const TOOLS = { search: "Lesson search", map: "Mind map creator", cards: "Flashcard creator", convert: "Notes converter" };
+export const TOOLS = { search: "Lesson search", map: "Mind map creator", cards: "Flashcard creator", convert: "Notes converter", explain: "Explainer videos", podcast: "Chant podcasts", audio: "Audio questions", poster: "Story posters", sheets: "Key-terms sheets", quiz: "Quizzes", games: "Key-term games", handwriting: "Handwriting to text", youtube: "YouTube to notes" };
 const KEY = "gradify.limits", PREVIEW = "gradify.limits.preview";
 const read = () => { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; } };
 const write = (v) => { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch { /* private mode: nothing counted */ } };

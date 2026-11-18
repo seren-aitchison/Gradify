@@ -4,10 +4,14 @@
 //   #/tools/map/<id|new>    the mind map creator: build a map from facts you toggle on, then edit it freely
 //   #/tools/cards/<id|new>  the flashcard creator (RemNote-style syntax, cloze, images, spaced repetition)
 //   #/tools/convert         notes in any format into a mind map, flashcards, a chant with a voice, or a cheatsheet
+//   #/tools/notebook, handwriting, youtube, projects       notes and creation (notebook.js, handwriting.js, youtube.js, projects.js)
+//   #/tools/explain, podcast, audio, poster, dictionary, sheets, downloads   learn (learn.js)
+//   #/tools/feed, quiz[/practice|timed|adaptive|bank], games                   practise (practise.js)
 // On Free each tool can be used 5 times (kit/data/limits.js), once Plus is on sale.
 import { searchLessons, loadLesson, factsOf, loadIndex } from "./search.js";
 import { decks, maps, connect, status } from "./store.js";
 import { gate, lockedHtml, toolUsage, limited, TOOLS } from "../data/limits.js";
+export { TOOLS };
 import { split } from "../maps/build.js";
 
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -28,7 +32,26 @@ const TOOL_LIST = [
   { id: "map", href: "#/tools/map/new", name: "Mind map creator", g3d: "map network branch idea", line: "Build your own mind map: toggle facts on from any lesson, then move, rename and add ideas of your own." },
   { id: "cards", href: "#/tools/cards/new", name: "Flashcard creator", g3d: "cards layers notebook memory", line: "Type cards with >>, :: and {{cloze}}, add images, and review them with spaced repetition, as cards or inline." },
   { id: "convert", href: "#/tools/convert", name: "Notes converter", g3d: "sparkles magic transform music", line: "Paste notes in any format and get a mind map, flashcards, a chant to say along to, or a cheatsheet." },
+  // notes and creation
+  { id: "notebook", group: "create", href: "#/tools/notebook", name: "Notebook", g3d: "notebook feather pages", line: "Linked pages of your own notes, with templates. Any line can become a flashcard." },
+  { id: "handwriting", group: "create", href: "#/tools/handwriting", name: "Handwriting to text", g3d: "pencil write hand", line: "Write by hand on a phone or tablet, or upload a photo, and get searchable text." },
+  { id: "youtube", group: "create", href: "#/tools/youtube", name: "YouTube to notes", g3d: "video play share", line: "Paste a YouTube link: notes in chapters, flashcards, a mind map and a chat about the video." },
+  // learn
+  { id: "explain", group: "learn", href: "#/tools/explain", name: "Explainer videos", g3d: "video film sparkles", line: "Any lesson, unit or your notes as a short narrated explainer video you can download." },
+  { id: "podcast", group: "learn", href: "#/tools/podcast", name: "Chant podcasts", g3d: "music headphones podcast", line: "Every unit of a course as a chant episode, back to back, for a walk or a commute." },
+  { id: "audio", group: "learn", href: "#/tools/audio", name: "Audio questions", g3d: "bell sound voice", line: "Questions read aloud, a pause to answer out loud, then the answer. Hands-free." },
+  { id: "poster", group: "learn", href: "#/tools/poster", name: "Story posters", g3d: "palette poster art", line: "A topic told as a picture story, with a mode that hides the key words to test you." },
+  { id: "dictionary", group: "learn", href: "#/tools/dictionary", name: "Dictionaries and thesaurus", g3d: "book dictionary words", line: "Every key term on Gradify, defined, by subject. And a thesaurus for writing." },
+  { id: "sheets", group: "learn", href: "#/tools/sheets", name: "Key-terms sheets", g3d: "checklist sheet print", line: "A printable key-terms sheet for any lesson, with or without the definitions." },
+  { id: "downloads", group: "learn", href: "#/tools/downloads", name: "Downloadable resources", g3d: "download print files", line: "Notes, sheets, questions, posters and flashcards for Anki, to download and print." },
+  // practise
+  { id: "feed", group: "practise", href: "#/tools/feed", name: "Flashcard feed", g3d: "layers feed scroll", line: "An endless scroll of flashcards with bonus facts and study hacks. Boost the ones you miss." },
+  { id: "quiz", group: "practise", href: "#/tools/quiz", name: "Quizzes and question bank", g3d: "flame clock quiz", line: "Practice, timed and adaptive quizzes, and every practice question on Gradify in one bank." },
+  { id: "games", group: "practise", href: "#/tools/games", name: "Key-term games", g3d: "trophy game play", line: "Match, Speed round and Missing letters, for the key terms of any topic." },
+  // progress
+  { id: "projects", group: "progress", href: "#/tools/projects", name: "Projects for XP", g3d: "briefcase project portfolio", line: "Real projects, step by step, for XP and a portfolio to show." },
 ];
+const GROUPS = [[undefined, "Make your own"], ["create", "Notes and creation"], ["learn", "Learn"], ["practise", "Practise"], ["progress", "Projects"]];
 
 /**
  * Draw the Tools screen for the current hash.
@@ -44,6 +67,14 @@ export async function renderTools(view, ctx) {
   if (tool === "map") return (await import("./mapmaker.js")).renderMapMaker(view, ctx, rest);
   if (tool === "cards") return (await import("./cardmaker.js")).renderCardMaker(view, ctx, rest);
   if (tool === "convert") return (await import("./converter.js")).renderConverter(view, ctx, rest);
+  if (tool === "notebook") return (await import("./notebook.js")).renderNotebook(view, ctx, rest);
+  if (tool === "handwriting") return (await import("./handwriting.js")).renderHandwriting(view, ctx, rest);
+  if (tool === "youtube") return (await import("./youtube.js")).renderYouTube(view, ctx, rest);
+  if (tool === "projects") return (await import("./projects.js")).renderProjects(view, ctx, rest);
+  const { LEARN_TOOLS } = await import("./learn.js");
+  if (LEARN_TOOLS[tool]) return LEARN_TOOLS[tool](view, ctx, rest);
+  const { PRACTISE_TOOLS } = await import("./practise.js");
+  if (PRACTISE_TOOLS[tool]) return PRACTISE_TOOLS[tool](view, ctx, rest);
   return hub(view, ctx);
 }
 
@@ -59,11 +90,11 @@ async function hub(view, ctx) {
   const lim = await limited(ctx.store);
   const ds = decks(), ms = maps();
   view.innerHTML = `<div class="tl">
-    <div class="deck-head"><div><span class="kicker lo-kicker">Tools</span><h1>Tools</h1><p class="sub">Make study material of your own, from Gradify's lessons or your own notes.</p><p class="tl-where">${whereHtml()}</p></div></div>
-    <div class="tl-grid">${TOOL_LIST.map((t) => {
-      const u = lim ? toolUsage(t.id) : null;
+    <div class="deck-head"><div><span class="kicker lo-kicker">Tools</span><h1>Tools</h1><p class="sub">Make, learn, practise and build: every tool works with Gradify's lessons, your own flashcards or your own notes.</p><p class="tl-where">${whereHtml()}</p></div></div>
+    ${GROUPS.map(([g, label]) => `<h2 class="lo-h">${label}</h2><div class="tl-grid">${TOOL_LIST.filter((t) => t.group === g).map((t) => {
+      const u = lim && TOOLS[t.id] ? toolUsage(t.id) : null;
       return `<a class="tl-tile panel glass" href="${t.href}"><span class="tl-ico" data-g3d="${esc(t.g3d)}" data-g3d-size="64" data-g3d-unique></span><b>${esc(t.name)}</b><span class="sub">${esc(t.line)}</span>${u ? `<span class="tl-left">${u.left ? `${fmt(u.left, "use", "uses")} left on Free` : "Free uses used: Plus for more"}</span>` : ""}<span class="go" aria-hidden="true">→</span></a>`;
-    }).join("")}</div>
+    }).join("")}</div>`).join("")}
     ${ms.length || ds.length ? `<h2 class="lo-h">What you've made</h2><div class="tl-made">
       ${ms.map((m) => `<a class="tl-item panel glass" href="#/tools/map/${esc(m.id)}"><span class="tl-k">Mind map</span><b>${esc(m.title || "Untitled map")}</b><span class="sub">${fmt(countNodes(m.data?.nodeData) - 1, "idea", "ideas")}</span></a>`).join("")}
       ${ds.map((d) => `<a class="tl-item panel glass" href="#/tools/cards/${esc(d.id)}"><span class="tl-k">Flashcards</span><b>${esc(d.title || "Untitled deck")}</b><span class="sub">${esc(d.summary || "")}</span></a>`).join("")}
