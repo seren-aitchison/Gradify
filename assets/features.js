@@ -1,7 +1,7 @@
 // Homepage showcase: every Gradify feature as a floating bubble, and "The Gradify road",
 // a winding road with a car that drives along it as you scroll.
 import { ICONS } from "../kit/core/icons.js";
-import { glassIcon } from "../kit/core/glass-icons.js";
+import { glassSymbol } from "../kit/core/glass-icons.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 
@@ -65,7 +65,7 @@ const WHERE = { web: "Website", app: "App", both: "Website and app" };
 
 // each feature's own line symbol, set in the same 3D glass icon as the lessons and site headings (kit/core/glass-icons.js)
 const GLASS_SIZE = { 1: 52, 2: 66, 3: 84 };
-const glass = (f, size) => glassIcon({ [f.i]: { d: ICONS[f.i] } }, f.i, { size, seed: f.n, colours: [`#${CATS[f.cat].c}`, `#${CATS[f.cat].c2}`] });
+const glass = (f, size) => glassSymbol(ICONS[f.i], { size, seed: f.n, colours: [`#${CATS[f.cat].c}`, `#${CATS[f.cat].c2}`] });
 
 function renderBubbles(filter) {
   const list = FEATURES.filter((f) => filter === "all" || f.cat === filter);

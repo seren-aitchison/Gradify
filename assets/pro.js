@@ -3,14 +3,19 @@
 // homepage can't promise something the product doesn't do.
 import { PLAN_PRICES, PLUS_ON_SALE, PRO_ON_SALE, AI_ALLOWANCES, uses } from "../kit/data/billing.js";
 import { pounds } from "../kit/data/plan.js";
-import { icon } from "../kit/core/icons.js";
+import { ICONS } from "../kit/core/icons.js";
+import { glassSymbol } from "../kit/core/glass-icons.js";
 import { joinWaitlist, PRO_LIST } from "../kit/data/waitlist.js";
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const yes = `<span class="ck" aria-label="Included">✓</span>`, no = `<span class="no" aria-label="Not included">–</span>`;
 
-for (const el of document.querySelectorAll(".pro [data-icon]")) el.innerHTML = icon(el.dataset.icon);
+// each feature's symbol as a glass icon, its tile stepping along the Pro gradient (--pro in assets/styles.css)
+const PRO_TILES = [["#8c27ca", "#f055dd"], ["#f055dd", "#ff5600"], ["#ff5600", "#ffc002"], ["#f055dd", "#8c27ca"]];
+document.querySelectorAll(".pro [data-icon]").forEach((el, i) => {
+  el.innerHTML = glassSymbol(ICONS[el.dataset.icon], { size: 52, seed: `${el.dataset.icon}${i}`, colours: PRO_TILES[i % PRO_TILES.length] });
+});
 for (const el of document.querySelectorAll(".pro [data-price]")) el.textContent = pounds(PLAN_PRICES[el.dataset.price].month);
 for (const el of document.querySelectorAll(".pro-n[data-allow]")) {
   const a = AI_ALLOWANCES.find((x) => x.feature === el.dataset.allow);
