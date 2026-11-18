@@ -20,11 +20,11 @@ const read = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; 
 const write = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* fine */ } };
 const SUGGEST = ["water", "glucose", "caffeine", "benzene", "electric field", "standing wave", "projectile", "the heart", "mitochondria", "sine"];
 
-export async function renderVisualise(view, ctx, [kind, id]) {
+export async function renderVisualise(view, ctx, [kind, id, extra]) {
   if (kind === "molecule" && id) {
     view.innerHTML = `<div class="tl">${backLink("#/tools/visualise", "Visualise")}<div class="vz-one"></div></div>`;
     const { mountMolecule } = await import("../visuals/molecule.js"), { speak } = await import("./voice.js");
-    return mountMolecule(view.querySelector(".vz-one"), id, { speak });
+    return mountMolecule(view.querySelector(".vz-one"), id, { speak, review: extra === "review" });
   }
   if (kind === "procedural" && id) {
     const { PROCEDURAL, mountProcedural } = await import("../visuals/procedural.js");

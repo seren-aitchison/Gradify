@@ -68,3 +68,39 @@ test("the world curricula database: valid, honest, and linked to real Gradify co
   assert.equal(claimFor(qualifications().find((q) => q.id === "gb-sqe")).status, "mapped");
   assert.equal(claimFor(qualifications().find((q) => q.id === "in-jee")).status, null, "no claim where nothing is mapped");
 });
+
+const refs = JSON.parse(readFileSync(new URL("../scripts/visuals/references.json", import.meta.url), "utf8"));
+test("checked against references: identity, configuration, and geometry against experiment", () => {
+  for (const [id, r] of Object.entries(refs.molecules)) {
+    const m = mols.find((x) => x.id === id); assert.ok(m, `${id} is published`);
+    if (r.inchikey) assert.equal(m.inchikey, r.inchikey, `${id}: the right compound, stereochemistry included`);
+    if (r.cip) assert.deepEqual({ R: m.stereocentres.filter((s) => s.label === "R").length, S: m.stereocentres.filter((s) => s.label === "S").length }, r.cip, `${id}: R/S`);
+    for (const g of m.reference.geometry) assert.ok(Math.abs(g.model - g.experiment) <= (g.unit === "Å" ? refs.tolerance.bond : refs.tolerance.angle), `${id}: ${g.what} ${g.model} vs ${g.experiment}`);
+  }
+  // L-amino acids: the alpha carbon is S, except cysteine (R), because sulfur outranks the carboxyl group
+  const aa = mols.filter((m) => m.keys.includes("amino acid") && m.id !== "glycine");
+  assert.ok(aa.length >= 19);
+  for (const m of aa) assert.ok(m.stereocentres.length >= 1, m.id);
+  assert.deepEqual(mols.find((m) => m.id === "cysteine").stereocentres.map((s) => s.label), ["R"]);
+  assert.equal(mols.find((m) => m.id === "carbon-dioxide").method, "Experimental geometry (NIST CCCBDB)", "where the force fields fail, the measured structure");
+  assert.ok(mols.find((m) => m.id === "ibuprofen").racemic);
+});
+
+test("functional groups and partial charges come from the structure", () => {
+  const names = (id) => [...new Set(mols.find((m) => m.id === id).groups.map((g) => g.name))].sort();
+  assert.deepEqual(names("aspirin"), ["benzene ring", "carboxylic acid", "ester"]);
+  assert.deepEqual(names("paracetamol"), ["amide", "benzene ring", "phenol (hydroxyl on a ring)"]);
+  assert.ok(names("ethanol").includes("hydroxyl (alcohol)"));
+  assert.ok(names("atp").includes("phosphate"));
+  const w = mols.find((m) => m.id === "water");
+  assert.ok(w.atoms[0].q < 0 && w.atoms[1].q > 0, "water: oxygen δ−, hydrogens δ+");
+});
+
+test("the evidence a learner sees matches the checks", async () => {
+  const { evidence } = await import("../kit/visuals/molecule.js");
+  const lines = evidence(mols.find((m) => m.id === "glucose")).join(" ");
+  assert.match(lines, /InChIKey WQZGKKKJIJFFOK-DVKNGEFBSA-N matches the reference compound's, stereochemistry included/);
+  assert.match(lines, /2 R and 3 S stereocentres/);
+  assert.match(evidence(mols.find((m) => m.id === "carbon-dioxide")).join(" "), /Experimental geometry/);
+  for (const m of mols) assert.ok(m.fingerprint && m.tools?.blender?.startsWith("Blender"), `${m.id}: build recorded`);
+});
