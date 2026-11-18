@@ -21,7 +21,7 @@ const content = (s) => norm(s).split(" ").filter((w) => w && !STOP.has(w));
 // What each negation applies to: the next key word after it in the same clause, which is usually what's negated
 // ("does not dissolve", "neither mass nor charge", "not (a vector)"). "not only … but also" adds rather than negates.
 // A clause ends at a comma, semicolon, sentence end or "but"/"whereas"/…, so a "not" at the end of one reaches nothing
-// in the next. Contractions are expanded first ("isn't" → "is not"). Returns the key words, each marked negated or not;
+// in the next. Two negations in a row cancel. Contractions are expanded first ("isn't" → "is not"). Returns the key words, each marked negated or not;
 // the negation words themselves aren't key words here.
 const NEG = new Set(["not", "no", "never", "none", "neither", "nor", "cannot", "nothing", "nobody", "nowhere"]);
 const CLAUSE = /[,;:!?]|\.(?:\s|$)|\b(?:but|whereas|although|though|however|instead)\b/g;
@@ -31,7 +31,7 @@ function scoped(s) {
   for (const clause of text.split(CLAUSE)) {
     let pending = false;
     for (const w of content(clause || "")) {
-      if (NEG.has(w)) { pending = true; continue; }
+      if (NEG.has(w)) { pending = !pending; continue; }   // two in a row cancel ("not not X"); "neither X nor Y" negates both
       if (pending && w === "only") { pending = false; continue; }   // "not only X but also Y" affirms X
       out.push({ w, neg: pending });
       pending = false;

@@ -60,6 +60,9 @@ test("an answer that negates the card is wrong, however many words match", () =>
   // two negations don't cancel when they negate different things: this denies both halves of the answer
   assert.equal(v("Electrons have neither mass nor charge", "Electrons have mass and charge"), "wrong");
   assert.equal(v("electrons have mass and charge", "Electrons have mass and charge"), "right");
+  // two negations of the same thing cancel; neither … nor doesn't, as each negates its own word
+  assert.equal(v("not not vector", "vector"), "right");
+  assert.equal(v("not not vector", "not a vector"), "wrong");
   // a word in another claim doesn't clear a flipped one: both claims reversed
   assert.equal(v("Cats are not mammals; birds are mammals", "Cats are mammals; birds are not mammals"), "wrong");
   assert.equal(v("cats are mammals; birds are not mammals", "Cats are mammals; birds are not mammals"), "right");
