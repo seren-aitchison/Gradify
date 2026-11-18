@@ -16,7 +16,7 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Accuracy | `█████░░░░░ 52` | Dated sources, evidence labels, no mechanical errors. Capped at 60 until a subject expert reviews it. |
 | Completeness | `█████████░ 86` | Objectives stated, each one taught in the body, key terms and a summary. |
 | Clarity | `██████████ 95` | Sentence length, long-sentence share, a clear lead, terms defined. |
-| Progression | `█████░░░░░ 47` | Prerequisites named (or first in its unit) and a stated level. |
+| Progression | `█████░░░░░ 48` | Prerequisites named (or first in its unit) and a stated level. |
 | Application | `█████████░ 91` | Worked examples, common mistakes, and questions above recall level. |
 | Assessment | `█████████░ 87` | Enough questions, more than one type, each explained, no giveaway answer lengths. |
 | Accessibility | `██████████ 95` | Headed sections, digestible paragraphs, lists, a summary to return to. |
@@ -75,7 +75,7 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 
 | Course | Lessons | Overall | Accuracy | Completeness | Clarity | Progression | Application | Assessment | Accessibility | Engagement | Retention |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Physics | 1308 | **53** | 17 | 13 | 85 | 16 | 84 | 64 | 83 | 84 | 34 |
+| Physics | 1308 | **54** | 18 | 15 | 85 | 18 | 84 | 64 | 83 | 84 | 35 |
 | Law | 480 | **66** | 54 | 97 | 94 | 3 | 37 | 68 | 100 | 55 | 88 |
 | Pharmacy | 318 | **72** | 51 | 96 | 99 | 8 | 68 | 81 | 100 | 65 | 77 |
 | Nursing | 497 | **74** | 49 | 98 | 98 | 47 | 50 | 89 | 100 | 56 | 75 |
@@ -115,20 +115,20 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Fix | Lessons |
 |---|---|
 | Add flashcards for spaced retrieval (Q:) | 9,692 |
-| Name what this builds on (PRE:) | 5,917 |
-| State the level (LV:) | 3,553 |
-| Say how strong the evidence is (EV:) | 3,269 |
+| Name what this builds on (PRE:) | 5,893 |
+| State the level (LV:) | 3,528 |
+| Say how strong the evidence is (EV:) | 3,244 |
 | Even out answer lengths | 3,079 |
-| Teach every objective | 2,027 |
-| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,687 |
-| Add check questions | 1,684 |
+| Teach every objective | 2,032 |
+| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,662 |
+| Add check questions | 1,659 |
 | Add a worked example (X:) | 1,265 |
-| Cite at least two sources (SRC:) | 1,204 |
-| Date every source, so it can be rechecked | 1,129 |
-| State at least two learning objectives (O:) | 1,129 |
-| Define the key terms (T:) | 1,129 |
-| End with a summary (SUM:) | 1,129 |
-| Define terms where they're first used (T:) | 1,129 |
+| Cite at least two sources (SRC:) | 1,179 |
+| Date every source, so it can be rechecked | 1,104 |
+| State at least two learning objectives (O:) | 1,104 |
+| Define the key terms (T:) | 1,104 |
+| End with a summary (SUM:) | 1,104 |
+| Define terms where they're first used (T:) | 1,104 |
 
 ## The 30 lessons to improve first
 

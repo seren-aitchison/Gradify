@@ -41,13 +41,13 @@ caps accuracy at 60 until then.
 
 | Course | Units done | Lessons | Lesson scores before → after |
 |---|---|---|---|
-| Physics | u01–u07 (Foundations, Mathematics for Physics, Experimental Physics, Kinematics and Dynamics, Rotational Mechanics, Oscillations, Gravitation) | 179 of 1,308 | ~40–45 → 83–93 |
+| Physics | u01–u08 (Foundations, Mathematics for Physics, Experimental Physics, Kinematics and Dynamics, Rotational Mechanics, Oscillations, Gravitation, Fluid Mechanics) | 204 of 1,308 | ~40–45 → 83–93 |
 
-Course score: Physics 47 → 53; all of Gradify 77 → 78 (18 November 2026).
+Course score: Physics 47 → 54; all of Gradify 77 → 78 (18 November 2026).
 
 ## Next, in order
 
-1. **Physics u08–u54** (1,129 lessons): the same method. The audit's "30 lessons to improve first" are all in later
+1. **Physics u09–u54** (1,104 lessons): the same method. The audit's "30 lessons to improve first" are all in later
    physics units (u12 statistics, u06 rotation, u25 relativity, u26 orbits…).
 2. **Law** (66), **Pharmacy** (72), **Nursing** (74): mostly missing `PRE:` and `LV:` (progression 3–47) and
    application questions; these are smaller patches (pre-block only for most lessons).
