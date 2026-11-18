@@ -4,6 +4,9 @@
 // more activity. Credentials are gold fruit; each day studied in the last fortnight adds a bush, and studying
 // today brings out flowers. It turns slowly (drag to turn it yourself) and bobs gently; both stop with reduced
 // motion. kit/lifeos/tree.js falls back to the flat drawing where WebGL isn't available.
+// Around it: a twilight sky (in CSS, behind the transparent canvas), low-poly clouds drifting past at different depths,
+// a stream that runs off the edge as a waterfall, fireflies, trees that sway, and a name tag over each site's tree that
+// follows it as the island turns. el.__highlight(name) lifts one site's tree and tag (the legend calls it on hover).
 import * as THREE from "../vendor/three/three.module.min.js";
 
 const live = new WeakMap();
@@ -51,7 +54,7 @@ export function drawIsland(el, { sites, bars, rand }) {
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(32, 1.3, 0.1, 100);
   // framed for the tall lead tree: its crown rises far above the island, so the camera sits back and looks higher
-  camera.position.set(0, 6.6, 27); camera.lookAt(0, 2.3, 0);
+  camera.position.set(0, 6.4, 29); camera.lookAt(0, 2.15, 0);
   scene.add(new THREE.HemisphereLight(0xe6f4ff, 0x36452f, 1.25));
   const sun = new THREE.DirectionalLight(0xfff0d8, 2.4);
   sun.position.set(-5, 9, 6); sun.castShadow = true;
@@ -108,6 +111,27 @@ export function drawIsland(el, { sites, bars, rand }) {
   };
   const GROUND = 0.275;
   const bark = C(0x7b5236), gold = C(0xffc23d);
+  const fruitMat = new THREE.MeshStandardMaterial({ color: gold, emissive: 0xff9a00, emissiveIntensity: 0.7, flatShading: true, roughness: 0.35, metalness: 0.25 });
+
+  // a stream from a spring by the peaks to the island's edge, where it falls away as a waterfall; its path is kept clear
+  const S0 = [1.15, -1.25], SC = [2.6, -0.9], SE = [Math.cos(0.32) * TOP, Math.sin(0.32) * TOP];
+  const along = (t) => [(1 - t) * (1 - t) * S0[0] + 2 * (1 - t) * t * SC[0] + t * t * SE[0], (1 - t) * (1 - t) * S0[1] + 2 * (1 - t) * t * SC[1] + t * t * SE[1]];
+  const water = new THREE.MeshStandardMaterial({ color: 0x4cc3f0, emissive: 0x0f5d8a, emissiveIntensity: 0.55, roughness: 0.15, metalness: 0.1, flatShading: true });
+  for (let i = 0; i < 14; i++) {
+    const [ax, az] = along(i / 14), [bx, bz] = along((i + 1) / 14), len = Math.hypot(bx - ax, bz - az);
+    const seg = new THREE.Mesh(new THREE.BoxGeometry(len + 0.06, 0.03, 0.22 + (i / 14) * 0.1), water);
+    seg.position.set((ax + bx) / 2, GROUND + 0.005, (az + bz) / 2); seg.rotation.y = -Math.atan2(bz - az, bx - ax); seg.receiveShadow = true; isle.add(seg);
+    taken.push([ax, az, 0.32]);
+  }
+  const spring = mesh(paint(new THREE.DodecahedronGeometry(0.2, 0), (m, n) => vary(C(0xa59a8e), n.y * 0.5 + 0.5, 0.2))); spring.position.set(S0[0] - 0.12, GROUND + 0.06, S0[1] - 0.1); isle.add(spring);
+  // the waterfall: drops falling from the edge, and a little mist where they thin out
+  const FALL = 420, fall = new Float32Array(FALL * 3), fallV = new Float32Array(FALL);
+  const dropAt = (i, top) => { const sp = 0.34; fall[i * 3] = SE[0] * 1.04 + (Math.random() - 0.5) * sp; fall[i * 3 + 1] = top ? GROUND - Math.random() * 0.2 : GROUND - Math.random() * 5; fall[i * 3 + 2] = SE[1] * 1.03 + (Math.random() - 0.5) * sp; fallV[i] = 1.6 + Math.random() * 1.4; };
+  for (let i = 0; i < FALL; i++) dropAt(i, false);
+  const fallGeo = new THREE.BufferGeometry(); fallGeo.setAttribute("position", new THREE.BufferAttribute(fall, 3));
+  const fallMat = new THREE.PointsMaterial({ color: 0xa8e4ff, size: 0.11, transparent: true, opacity: 0.75, depthWrite: false, blending: THREE.AdditiveBlending });
+  const falls = new THREE.Points(fallGeo, fallMat); isle.add(falls);
+  const planted = [];
 
   // one tree per site
   const order = [...sites].sort((a, b) => b.k - a.k);
@@ -136,10 +160,11 @@ export function drawIsland(el, { sites, bars, rand }) {
     }
     // credentials hang as gold fruit
     q.creds.forEach((_, f) => {
-      const g = mesh(paint(new THREE.IcosahedronGeometry(0.11, 0), (m, n) => vary(gold, n.y * 0.5 + 0.5, 0.2)));
+      const g = mesh(new THREE.IcosahedronGeometry(0.12, 0), fruitMat);
       const a = f * 2.1 + 0.6; g.position.set(Math.cos(a) * 0.55 * s, (lead || q.k >= 0.45 ? 1.35 : 0.8) * s, Math.sin(a) * 0.55 * s); tree.add(g);
     });
     isle.add(tree);
+    planted.push({ tree, q, top: (lead ? 2.2 : q.k >= 0.45 ? 2.75 : 1.85) * s, phase: rand() * 6 });
   });
 
   // a bush for each day studied in the last fortnight, and flowers for today
@@ -162,11 +187,57 @@ export function drawIsland(el, { sites, bars, rand }) {
     g.position.set(p[0], GROUND + r * 0.4, p[1]); g.rotation.set(rand() * 3, rand() * 3, 0); isle.add(g);
   }
 
+  // tufts of grass all over the top
+  const tuft = new THREE.ConeGeometry(0.05, 0.16, 3), tufts = new THREE.InstancedMesh(tuft, new THREE.MeshStandardMaterial({ color: 0x5f9f3e, flatShading: true, roughness: 1 }), 90);
+  const m4 = new THREE.Matrix4(), tc = new THREE.Color();
+  let nt = 0;
+  for (let k = 0; k < 400 && nt < 90; k++) {
+    const a = rand() * Math.PI * 2, d = Math.sqrt(rand()) * (TOP - 0.35), x = Math.cos(a) * d, z = Math.sin(a) * d;
+    if (!taken.every(([tx, tz, tr]) => Math.hypot(x - tx, z - tz) > tr * 0.8)) continue;
+    m4.compose(new THREE.Vector3(x, GROUND + 0.07, z), new THREE.Quaternion().setFromEuler(new THREE.Euler((rand() - 0.5) * 0.4, rand() * 6, (rand() - 0.5) * 0.4)), new THREE.Vector3(1, 0.7 + rand() * 0.8, 1));
+    tufts.setMatrixAt(nt, m4); tufts.setColorAt(nt, tc.set(0x5f9f3e).offsetHSL(0, 0, (rand() - 0.5) * 0.12)); nt++;
+  }
+  tufts.count = nt; tufts.castShadow = false; tufts.receiveShadow = true; isle.add(tufts);
+
+  // low-poly clouds drifting round the island at different heights and depths
+  const cloudMat = new THREE.MeshStandardMaterial({ color: 0xfff4fb, emissive: 0xffc9e6, emissiveIntensity: 0.35, flatShading: true, roughness: 1, transparent: true, opacity: 0.88 });
+  const sky = new THREE.Group(); scene.add(sky);
+  [[7.4, -2.8, 0.2, 1.1], [8.2, 1.6, 2.2, 0.9], [7.0, -1.2, 3.9, 0.75], [9.0, 3.4, 5.3, 1.2], [6.6, -3.6, 4.6, 0.8]].forEach(([r, y, a, k]) => {
+    const c = new THREE.Group();
+    // a puffy cloud: a big middle and smaller puffs either side, flat underneath
+    [[0, 0.1, 0.78], [-0.7, -0.05, 0.55], [0.72, -0.02, 0.6], [-0.3, 0.32, 0.5], [0.35, 0.3, 0.46], [1.25, -0.12, 0.38], [-1.2, -0.12, 0.36]].forEach(([x, y, r]) => {
+      const b = mesh(new THREE.IcosahedronGeometry(r * k, 1), cloudMat, false, false); b.position.set(x * k, y * k, (rand() - 0.5) * 0.3 * k); b.scale.y = 0.78; c.add(b);
+    });
+    c.position.set(Math.cos(a) * r, y, Math.sin(a) * r); c.lookAt(0, y, 0); sky.add(c);
+  });
+  // fireflies round the trees: soft gold points that drift and glow
+  const FLY = 46, fly = new Float32Array(FLY * 3), flyBase = [];
+  for (let i = 0; i < FLY; i++) { const a = rand() * Math.PI * 2, d = 0.6 + rand() * (TOP - 0.6); flyBase.push([Math.cos(a) * d, GROUND + 0.4 + rand() * 3.2, Math.sin(a) * d, rand() * 6]); }
+  const flyGeo = new THREE.BufferGeometry(); flyGeo.setAttribute("position", new THREE.BufferAttribute(fly, 3));
+  const flyMat = new THREE.PointsMaterial({ color: 0xffe58a, size: 0.09, transparent: true, opacity: 0.9, depthWrite: false, blending: THREE.AdditiveBlending });
+  isle.add(new THREE.Points(flyGeo, flyMat));
+
+  // a name tag over each site's tree, following it as the island turns
+  const tags = document.createElement("div"); tags.className = "isle-tags"; box.append(tags);
+  planted.forEach((p) => {
+    // the busiest site's tree carries its name; the others a dot in their colour that names itself on hover or tap
+    const t = document.createElement("span"); t.className = `isle-tag${p === planted[0] ? " lead" : ""}`; t.style.setProperty("--c", `#${p.q.c}`);
+    t.tabIndex = 0; t.setAttribute("role", "note"); t.setAttribute("aria-label", `${p.q.n}: ${p.q.act ?? 0} activities in the last 30 days`);
+    t.innerHTML = `<i></i>${String(p.q.n).replace(/&/g, "&amp;").replace(/</g, "&lt;")}<b>${p.q.act ?? ""}</b>`; tags.append(t); p.tag = t;
+  });
+  let lit = null;
+  tags.addEventListener("pointerover", (e) => { const t = e.target.closest(".isle-tag"); if (t) el.__highlight(planted.find((p) => p.tag === t)?.q.n); });
+  tags.addEventListener("pointerout", (e) => { if (e.target.closest(".isle-tag")) el.__highlight(null); });
+  tags.addEventListener("focusin", (e) => { const t = e.target.closest(".isle-tag"); if (t) el.__highlight(planted.find((p) => p.tag === t)?.q.n); });
+  tags.addEventListener("focusout", () => el.__highlight(null));
+  el.__highlight = (name) => { lit = name || null; planted.forEach((p) => p.tag.classList.toggle("on", p.q.n === lit)); tags.classList.toggle("focus", Boolean(lit)); kick(); };
+  const wp = new THREE.Vector3();
+
   // size, turning, bobbing; paused while off screen
   let W = 0, H = 0, visible = true, raf = 0, drag = null, spin = -0.35, vel = 0;
   const t0 = performance.now();
   const fit = () => {
-    const w = Math.max(200, box.clientWidth), h = Math.round(Math.min(520, w / 1.25));
+    const w = Math.max(200, box.clientWidth), h = Math.round(Math.min(560, w / (w < 520 ? 0.92 : 1.18)));
     if (w === W && h === H) return; W = w; H = h;
     renderer.setSize(W, H); camera.aspect = W / H; camera.updateProjectionMatrix();
   };
@@ -177,6 +248,32 @@ export function drawIsland(el, { sites, bars, rand }) {
     if (!drag) { spin += reduce ? 0 : 0.0028 + vel; vel *= 0.95; }
     isle.rotation.y = spin;
     isle.position.y = reduce ? 0 : Math.sin(t * 0.9) * 0.08;
+    const dt = Math.min(0.05, (now - (frame.last || now)) / 1000); frame.last = now;
+    if (!reduce) {
+      for (const p of planted) {
+        p.tree.rotation.z = Math.sin(t * 1.1 + p.phase) * 0.025; p.tree.rotation.x = Math.cos(t * 0.9 + p.phase) * 0.018;
+        const want = p.q.n === lit ? 1.12 : 1; p.tree.scale.setScalar(p.tree.scale.x + (want - p.tree.scale.x) * 0.15);
+      }
+      for (let i = 0; i < FALL; i++) { fall[i * 3 + 1] -= fallV[i] * dt; fallV[i] += 3 * dt; if (fall[i * 3 + 1] < -4.8) dropAt(i, true); }
+      fallGeo.attributes.position.needsUpdate = true;
+      flyBase.forEach(([x, y, z, ph], i) => { fly[i * 3] = x + Math.sin(t * 0.6 + ph) * 0.35; fly[i * 3 + 1] = y + Math.sin(t * 0.9 + ph * 2) * 0.25; fly[i * 3 + 2] = z + Math.cos(t * 0.5 + ph) * 0.35; });
+      flyGeo.attributes.position.needsUpdate = true; flyMat.opacity = 0.65 + Math.sin(t * 2.4) * 0.25;
+      sky.rotation.y = t * 0.03;
+    } else for (const p of planted) p.tree.scale.setScalar(p.q.n === lit ? 1.12 : 1);
+    // tags: each tree's top on screen, front trees first; a tag that would overlap one already placed moves up a row,
+    // and every tag stays inside the frame. Those on the far side of the island fade back.
+    const placed = [];
+    planted.map((p) => { p.tree.getWorldPosition(wp); const z = wp.z; wp.y += p.top * p.tree.scale.y; wp.project(camera); return { p, z, x: (wp.x + 1) / 2 * W, y: (1 - wp.y) / 2 * H }; })
+      .sort((a, b) => b.z - a.z)
+      .forEach(({ p, z, x, y }) => {
+        const full = p.tag.classList.contains("lead") || p.q.n === lit, w = full ? p.tag.offsetWidth || 90 : 14, h = full ? 24 : 14;
+        let ty = Math.max(h + 6, y - 8);
+        for (let k = 0; k < 6 && full && placed.some((r) => Math.abs(r.x - x) < (r.w + w) / 2 + 4 && Math.abs(r.y - ty) < h); k++) ty -= h + 2;
+        const tx = Math.min(W - w / 2 - 6, Math.max(w / 2 + 6, x)); ty = Math.max(h + 4, ty);
+        placed.push({ x: tx, y: ty, w });
+        p.tag.style.transform = `translate(${tx.toFixed(1)}px, ${ty.toFixed(1)}px) translate(-50%, -100%)`;
+        p.tag.style.opacity = p.q.n === lit ? 1 : lit ? 0.25 : z < -0.6 ? 0.45 : 1; p.tag.style.zIndex = String(Math.round(z * 10) + 50);
+      });
     renderer.render(scene, camera);
     if (!reduce || drag) raf = requestAnimationFrame(frame);
   };
@@ -193,7 +290,8 @@ export function drawIsland(el, { sites, bars, rand }) {
   live.set(el, () => {
     cancelAnimationFrame(raf); ro.disconnect(); io.disconnect();
     scene.traverse((o) => { o.geometry?.dispose(); });
-    mat.dispose(); crystal.dispose(); renderer.dispose(); renderer.forceContextLoss?.();
+    mat.dispose(); crystal.dispose(); water.dispose(); fruitMat.dispose(); cloudMat.dispose(); fallMat.dispose(); flyMat.dispose(); fallGeo.dispose(); flyGeo.dispose(); tuft.dispose();
+    renderer.dispose(); renderer.forceContextLoss?.(); delete el.__highlight;
   });
   return true;
 }

@@ -57,15 +57,25 @@ export function createGlobe(canvas, { onPick, onHover }) {
     const t = (now - t0) / 1000;
     ctx.clearRect(0, 0, W, H);
     const r = R * zoom;
-    // stars, then the atmosphere's glow into space, then the planet
+    // a faint nebula, stars, then the atmosphere's glow into space, then the planet
+    const neb = ctx.createRadialGradient(W * 0.82, H * 0.18, 0, W * 0.82, H * 0.18, Math.max(W, H) * 0.6);
+    neb.addColorStop(0, "rgba(140,70,220,.16)"); neb.addColorStop(0.5, "rgba(70,60,200,.06)"); neb.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = neb; ctx.fillRect(0, 0, W, H);
+    const neb2 = ctx.createRadialGradient(W * 0.1, H * 0.9, 0, W * 0.1, H * 0.9, Math.max(W, H) * 0.5);
+    neb2.addColorStop(0, "rgba(40,140,220,.12)"); neb2.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = neb2; ctx.fillRect(0, 0, W, H);
     for (const [sx, sy, b, big] of stars) {
       const x = sx * W, y = sy * H; if (Math.hypot(x - cx, y - cy) < r * 1.02) continue;
       ctx.fillStyle = `rgba(220,232,255,${(b * (0.55 + 0.45 * Math.sin(t * 0.7 + sx * 40))).toFixed(3)})`;
       ctx.fillRect(x, y, big ? 1.6 : 1, big ? 1.6 : 1);
     }
-    let g = ctx.createRadialGradient(cx, cy, r * 0.96, cx, cy, r * 1.22);
-    g.addColorStop(0, "rgba(110,175,255,.42)"); g.addColorStop(0.25, "rgba(80,150,255,.16)"); g.addColorStop(1, "rgba(70,140,255,0)");
-    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, r * 1.22, 0, 7); ctx.fill();
+    let g = ctx.createRadialGradient(cx, cy, r * 0.96, cx, cy, r * 1.32);
+    g.addColorStop(0, "rgba(120,185,255,.5)"); g.addColorStop(0.18, "rgba(90,160,255,.22)"); g.addColorStop(0.55, "rgba(110,90,255,.07)"); g.addColorStop(1, "rgba(70,140,255,0)");
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, r * 1.32, 0, 7); ctx.fill();
+    // brighter on the sunlit side (upper left)
+    const sunlit = ctx.createRadialGradient(cx - r * 0.55, cy - r * 0.55, r * 0.4, cx - r * 0.4, cy - r * 0.4, r * 1.25);
+    sunlit.addColorStop(0, "rgba(170,215,255,0)"); sunlit.addColorStop(0.75, "rgba(170,215,255,.14)"); sunlit.addColorStop(1, "rgba(170,215,255,0)");
+    ctx.fillStyle = sunlit; ctx.beginPath(); ctx.arc(cx, cy, r * 1.25, 0, 7); ctx.fill();
     surface.render(ctx, cx, cy, r, yaw, pitch, t, dpr);
     // a thin bright rim where sunlight scatters through the atmosphere
     ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, r + 0.6, 0, 7);
@@ -91,7 +101,8 @@ export function createGlobe(canvas, { onPick, onHover }) {
 
     // hubs: glowing orange city markers, like the reference
     ctx.globalCompositeOperation = "lighter";
-    const hubLabels = [];
+    // every label (cities, portals, topics) is queued and drawn last, most important first, never on top of another
+    const labels = [];
     hubsOnScreen = [];
     for (const [i, hub] of (scene.hubs || []).entries()) {
       const p = project(hub.v);
@@ -101,17 +112,11 @@ export function createGlobe(canvas, { onPick, onHover }) {
       glow.addColorStop(0, `rgba(255,190,110,${k})`); glow.addColorStop(0.2, `rgba(255,120,45,${0.8 * k})`); glow.addColorStop(0.5, `rgba(255,90,30,${0.25 * k})`); glow.addColorStop(1, "rgba(255,80,20,0)");
       ctx.fillStyle = glow; ctx.beginPath(); ctx.arc(p.x, p.y, gr, 0, 7); ctx.fill();
       ctx.fillStyle = `rgba(255,236,210,${k})`; ctx.beginPath(); ctx.arc(p.x, p.y, 3, 0, 7); ctx.fill();
-      if (p.z > 0.35) hubLabels.push([hub.name.toUpperCase(), p.x + 8, p.y - 6, k, hub.id === scene.selected]);
+      if (p.z > 0.35) labels.push({ hub: true, text: hub.name.toUpperCase(), x: p.x + 8, y: p.y - 6, k, on: hub.id === scene.selected, prio: hub.id === scene.selected ? 100 : 20 + p.z * 10 });
       if (hub.id === scene.selected) { ctx.globalCompositeOperation = "source-over"; ctx.beginPath(); ctx.arc(p.x, p.y, 11, 0, 7); ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.stroke(); ctx.globalCompositeOperation = "lighter"; }
       if (p.z > 0.2) hubsOnScreen.push({ id: hub.id, x: p.x, y: p.y, r: 14 });
     }
     ctx.globalCompositeOperation = "source-over";
-    for (const [text, x, y, k, on] of hubLabels) {
-      ctx.font = `${on ? 700 : 600} ${on ? 12 : W < 500 ? 8.5 : 10}px Geist, Inter, system-ui, sans-serif`;
-      ctx.textAlign = "left";
-      ctx.lineWidth = 3; ctx.strokeStyle = "rgba(0,0,0,.8)"; ctx.strokeText(text, x, y);
-      ctx.fillStyle = on ? "#fff" : `rgba(255,255,255,${0.85 * k})`; ctx.fillText(text, x, y);
-    }
 
     // prerequisites: great-circle arcs lifted a little off the surface
     for (const rd of scene.roads) {
@@ -149,7 +154,7 @@ export function createGlobe(canvas, { onPick, onHover }) {
       if (!behind(end, 1.32)) {
         ctx.beginPath(); ctx.arc(end.x, end.y, 9, 0, 7); ctx.fillStyle = "#000"; ctx.fill(); ctx.strokeStyle = po.c; ctx.lineWidth = 2; ctx.stroke();
         ctx.beginPath(); ctx.arc(end.x, end.y, 4, 0, 7); ctx.fillStyle = po.c; ctx.fill();
-        label(`→ ${po.site}`, end.x, end.y - 16, po.c, 10);
+        labels.push({ text: `→ ${po.site}`, x: end.x, y: end.y - 16, color: po.c, size: 10, prio: 60 });
       }
     }
 
@@ -161,6 +166,16 @@ export function createGlobe(canvas, { onPick, onHover }) {
       const fade = 0.45 + 0.55 * p.z, rr = (4 + pin.strength / 22) * (0.7 + 0.3 * p.z), c = pin.c;
       ctx.globalAlpha = fade;
       if (pin.state === "recent") { const k = (t * 0.8) % 1; ctx.beginPath(); ctx.arc(p.x, p.y, rr + 4 + k * 16, 0, 7); ctx.strokeStyle = c; ctx.globalAlpha = fade * (1 - k); ctx.lineWidth = 2; ctx.stroke(); ctx.globalAlpha = fade; }
+      // mastered and recently studied topics send up a column of light in their module's colour
+      if ((pin.state === "mastered" || pin.state === "recent") && p.z > 0.25) {
+        // an upright column of light, taller for stronger topics, fading towards the planet's edge
+        const top = { x: p.x, y: p.y - (16 + pin.strength / 3.2) * (0.5 + 0.5 * p.z) * (r / 220) }, [a, b2, d] = hexRgb(c), beam = ctx.createLinearGradient(p.x, p.y, top.x, top.y);
+        beam.addColorStop(0, `rgba(${a},${b2},${d},${0.75 * p.z})`); beam.addColorStop(1, `rgba(${a},${b2},${d},0)`);
+        ctx.save(); ctx.globalCompositeOperation = "lighter"; ctx.strokeStyle = beam; ctx.lineCap = "round";
+        ctx.lineWidth = rr * 1.3; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(top.x, top.y); ctx.stroke();
+        ctx.lineWidth = rr * 0.4; ctx.strokeStyle = `rgba(255,255,255,${0.5 * p.z})`; ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x + (top.x - p.x) * 0.6, p.y + (top.y - p.y) * 0.6); ctx.stroke();
+        ctx.restore();
+      }
       // outer ring, like the reference's markers
       ctx.beginPath(); ctx.arc(p.x, p.y, rr + 6, 0, 7); ctx.strokeStyle = pin.state === "locked" || pin.state === "new" ? "rgba(255,255,255,.25)" : c; ctx.lineWidth = 1;
       if (pin.state === "fading") ctx.setLineDash([3, 3]);
@@ -171,10 +186,27 @@ export function createGlobe(canvas, { onPick, onHover }) {
       else if (pin.state === "learning") { ctx.fillStyle = "#000"; ctx.fill(); ctx.strokeStyle = c; ctx.lineWidth = 2.5; ctx.stroke(); }
       else if (pin.state === "fading") { const [a, b2, d] = hexRgb(c); ctx.fillStyle = `rgba(${a},${b2},${d},.35)`; ctx.fill(); }
       else { ctx.fillStyle = "#111"; ctx.fill(); ctx.strokeStyle = "rgba(255,255,255,.35)"; ctx.lineWidth = 1.5; ctx.stroke(); }
-      if (pin.id === sel) { ctx.beginPath(); ctx.arc(p.x, p.y, rr + 11, 0, 7); ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.stroke(); }
+      if (pin.id === sel) {
+        ctx.beginPath(); ctx.arc(p.x, p.y, rr + 11, 0, 7); ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.stroke();
+        if (!reduce) { const k = (t * 0.7) % 1; ctx.beginPath(); ctx.arc(p.x, p.y, rr + 11 + k * 22, 0, 7); ctx.globalAlpha = 1 - k; ctx.lineWidth = 1.5; ctx.stroke(); }
+      }
       ctx.globalAlpha = 1;
-      if (pin.id === sel || (W >= 500 && p.z > 0.7)) label(pin.name, p.x, p.y + rr + 18, pin.id === sel ? "#fff" : "rgba(255,255,255,.8)", pin.id === sel ? 12 : 10.5, pin.id === sel);
+      if (pin.id === sel || p.z > (W >= 500 ? 0.55 : 0.8)) labels.push({ text: pin.name, x: p.x, y: p.y + rr + 18, color: pin.id === sel ? "#fff" : "rgba(255,255,255,.85)", size: pin.id === sel ? 12 : W < 500 ? 9.5 : 10.5, bold: pin.id === sel, prio: pin.id === sel ? 200 : 30 + p.z * 20 + pin.strength / 10 });
       pinsOnScreen.push({ id: pin.id, x: p.x, y: p.y, r: rr + 10 });
+    }
+
+    // the labels: most important first; one that would overlap a label already drawn is left out this frame
+    const taken = [];
+    for (const L of labels.sort((a, b) => b.prio - a.prio)) {
+      ctx.font = L.hub ? `${L.on ? 700 : 600} ${L.on ? 12 : W < 500 ? 8.5 : 10}px Geist, Inter, system-ui, sans-serif` : `${L.bold ? 700 : 500} ${L.size}px Geist, Inter, system-ui, sans-serif`;
+      const w = ctx.measureText(L.text).width + 12, h = (L.hub ? 11 : L.size) + 8;
+      const box = L.hub ? { x: L.x - 2, y: L.y - h + 3, w, h } : { x: L.x - w / 2, y: L.y - h + 2, w, h };
+      if (L.prio < 100 && taken.some((o) => box.x < o.x + o.w && o.x < box.x + box.w && box.y < o.y + o.h && o.y < box.y + box.h)) continue;
+      taken.push(box);
+      if (L.hub) {
+        ctx.textAlign = "left"; ctx.lineWidth = 3; ctx.strokeStyle = "rgba(0,0,0,.8)"; ctx.strokeText(L.text, L.x, L.y);
+        ctx.fillStyle = L.on ? "#fff" : `rgba(255,255,255,${0.85 * L.k})`; ctx.fillText(L.text, L.x, L.y);
+      } else label(L.text, L.x, L.y, L.color, L.size, L.bold);
     }
 
     // turn smoothly towards a chosen topic
