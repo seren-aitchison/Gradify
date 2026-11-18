@@ -29,8 +29,11 @@ import { trackView, track } from "../core/analytics.js";
 import { callFunction } from "../data/functions.js";
 import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, confirmAttempts } from "./progress.js";
 import { access, plusPanelHtml, promptPlus } from "../data/plan.js";
+import { gate, lockedHtml } from "../data/limits.js";
+import { mapsSectionHtml, wireMaps } from "../maps/view.js";
 import { lessonTimer, addTime, MIN_LOG_MS, minutesPerLesson } from "./lesson-time.js";
 import { hydrate as glassIcons } from "../core/glass-icons.js";
+import { diagramsFor, diagramForCard, glassDiagram } from "../core/glass-diagrams.js";
 import { haptic } from "../core/haptics.js";
 import { gradeTyped, VERDICT_TEXT } from "../learning/typed.js";
 import { mountRevalidation } from "./revalidation.js";
@@ -385,16 +388,27 @@ export function mountCourse(root, cfg) {
   // the results float above the page: inside the tab bar, which scrolls sideways, they were clipped out of sight
   const res = Object.assign(document.createElement("div"), { className: "co-results co-float", hidden: true });
   document.body.append(res);
+  // below the search box, sized to the space that's really visible (a phone's keyboard takes the bottom half);
+  // above it when there's more room there
   const placeResults = () => {
     if (res.hidden) return;
     const r = q.closest(".co-search").getBoundingClientRect(), w = Math.min(420, innerWidth - 16);
+    const vh = window.visualViewport?.height ?? innerHeight, below = vh - r.bottom - 16, above = r.top - 16;
     res.style.width = `${w}px`;
-    res.style.top = `${Math.round(r.bottom + 8)}px`;
     res.style.left = `${Math.round(Math.min(Math.max(8, r.right - w), innerWidth - w - 8))}px`;
+    if (below >= 220 || below >= above) { res.style.top = `${Math.round(r.bottom + 8)}px`; res.style.maxHeight = `${Math.max(120, Math.round(below))}px`; }
+    else { const h = Math.min(res.scrollHeight, above); res.style.maxHeight = `${Math.round(above)}px`; res.style.top = `${Math.round(Math.max(8, r.top - 8 - h))}px`; }
   };
   addEventListener("resize", placeResults); addEventListener("scroll", placeResults, { passive: true });
-  // opening the search in a crowded bar scrolls it into view (after its width transition)
-  q.addEventListener("focus", () => setTimeout(() => { if (tabs.classList.contains("tight")) { tabs.scrollLeft = tabs.scrollWidth; tabEdges(); } placeResults(); }, 220));
+  window.visualViewport?.addEventListener("resize", placeResults);
+  // opening the search in a crowded bar scrolls it into view (after its width transition); on a phone the page also
+  // scrolls so the search box sits near the top, leaving room for its results above the keyboard
+  q.addEventListener("focus", () => setTimeout(() => {
+    if (tabs.classList.contains("tight")) { tabs.scrollLeft = tabs.scrollWidth; tabEdges(); }
+    const top = q.closest(".co-search").getBoundingClientRect().top;
+    if (innerWidth <= 760 && top > innerHeight * 0.3) scrollBy({ top: top - 84, behavior: "instant" });
+    placeResults();
+  }, 220));
   const searchHtml = (raw) => {
     const t = norm(raw);
     const hits = [...units.filter((u) => norm(u.title).includes(t)).map((u) => ({ href: `#/learn/${u.id}`, k: `${U} ${u.n}`, t: u.title })),
@@ -579,8 +593,14 @@ export function mountCourse(root, cfg) {
     });
     return `<p class="co-builds"><span>Builds on</span> ${items.join("")}</p>`;
   }
+  // the five mind maps (kit/maps): this lesson's id, a kicker for the viewer, and lab names from this course
+  // the lesson's notes with its glass diagrams beside the parts they show (kit/core/glass-diagrams.js)
+  const lessonDiagrams = (N) => { const at = new Map(diagramsFor(N).map((d) => [d.at, d])); return lessonHtml(N, { after: (i) => (at.has(i) ? glassDiagram(at.get(i)) : "") }); };
+  const mapOpts = (l) => ({ id: `${cfg.slug}:${l.id}`, kicker: `${cfg.name || cfg.site} · ${l.title}`, site: cfg.site, store, labTitle: (x) => ixs.find((i) => i.id === x)?.title || x });
   async function viewLesson(id) {
     const l = byId[id]; if (!l) return go("learn");
+    // Free: 10 lessons in each course (kit/data/limits.js), once Plus is on sale
+    if (!(await gate("lesson", id, { course: cfg.slug, store }))) { main.innerHTML = lockedHtml("lesson"); return; }
     lt.start(id);
     if (S.done[id] || S.time?.[id]?.v) ledger({ event: "lesson_revisited", concept: `${cfg.slug}:${id}`, source: "course", detail: { visits: (S.time?.[id]?.v || 0) + 1, done: Boolean(S.done[id]) } });
     const u = l.unit, t = trackOf(u), N = await notesFor(l), prev = u.lessons[l.i - 1], next = u.lessons[l.i + 1] || units[u.n]?.lessons[0];
@@ -594,8 +614,9 @@ export function mountCourse(root, cfg) {
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${buildsOnHtml(id)}
         ${N ? lessonFrame(N).top : ""}
-        ${N ? `<div class="mv-cols">${lessonHtml(N)}</div>${lessonFrame(N).end}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
+        ${N ? `<div class="mv-cols">${lessonDiagrams(N)}</div>${lessonFrame(N).end}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
+        ${N ? mapsSectionHtml(N, mapOpts(l)) : ""}
         ${N ? `<section class="co-ask co-tutor"></section>` : ""}
         ${N?.items?.length ? `<section class="co-check"><h3>${ic("target")} Check yourself</h3>${N.items.map((it) => qHtml(it, { confidence: true })).join("")}</section>` : ""}
         <footer>
@@ -618,7 +639,8 @@ export function mountCourse(root, cfg) {
       if (linked.length && at) at.insertAdjacentHTML("beforebegin", `<section class="co-trylab"><h3>Try it yourself</h3>${shown.map((x) => `<div class="co-ixslot" data-ix="${esc(x.id)}"></div>`).join("")}${more.length ? `<p class="co-morelabs">More for this lesson: ${more.map((x) => `<a href="#/practice/${esc(x.id)}">${esc(x.title)}</a>`).join(" · ")}</p>` : ""}</section>`);
     }
     mountIxSlots(main);
-    main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", () => flashcards(N.cards, l)));
+    if (N) wireMaps(main, N, mapOpts(l));
+    main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", async () => { if (await gate("flashcards", `${cfg.slug}:${l.id}`, { store })) flashcards(N.cards, l, N); }));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
     const tp = main.querySelector(".co-tutor");
     if (tp) mountTutorPanel(tp, {
@@ -758,13 +780,14 @@ export function mountCourse(root, cfg) {
   }
 
   // flashcards: flip through a lesson's cards
-  function flashcards(cards, l) {
+  function flashcards(cards, l, N) {
     let i = 0, flipped = false;
+    const diagrams = N ? diagramsFor(N, { max: 12 }) : [];
     const d = document.createElement("div"); d.className = "co-modal";
     const paint = () => {
       d.innerHTML = `<div class="co-dialog co-fc" role="dialog" aria-modal="true" aria-label="Flashcards">
         <div class="co-fc-top"><span class="co-kicker">${esc(l.title)}</span><span>${i + 1} / ${cards.length}</span><button class="co-x" data-close aria-label="Close">×</button></div>
-        <button class="co-card3d ${flipped ? "flip" : ""}" aria-live="polite"><span class="f"><span class="co-fcicon" data-g3d="${esc(`${cards[i][0]} ${l.title}`)}" data-g3d-size="52"></span><div>${inline(cards[i][0])}</div><small>Tap to reveal</small></span><span class="b"><div>${inline(cards[i][1])}</div></span></button>
+        <button class="co-card3d ${flipped ? "flip" : ""}" aria-live="polite"><span class="f"><span class="co-fcicon" data-g3d="${esc(`${cards[i][0]} ${l.title}`)}" data-g3d-size="52"></span><div>${inline(cards[i][0])}</div><small>Tap to reveal</small></span><span class="b"><div>${inline(cards[i][1])}</div>${glassDiagram(diagramForCard(diagrams, cards[i][0], cards[i][1]), { size: "sm", caption: false })}</span></button>
         <div class="co-row"><button class="btn btn-ghost lg btn-sm" data-prev ${i ? "" : "disabled"}><span>← Back</span></button><button class="btn btn-light lg btn-sm" data-next><span>${i < cards.length - 1 ? "Next →" : "Done"}</span></button></div></div>`;
       glassIcons(d, cfg.site).catch(() => {});
       d.querySelector(".co-card3d").onclick = () => { flipped = !flipped; d.querySelector(".co-card3d").classList.toggle("flip", flipped); };

@@ -29,6 +29,10 @@ This directory contains the production-ready marketing assets, faceless video sc
    - Aspect ratio switchers (9:16 Vertical Video, 1:1 Feed Carousel, 4:5 Feed Portrait).
    - Designed for easy 60fps screen recording (using macOS QuickTime or OBS) to generate pristine B-roll without After Effects.
 
+5. **[plus-launch/](plus-launch/README.md)**:
+   - The Gradify Plus launch email (code GRADIFY48): email-safe HTML and plain text, the founder's email signature, and a launch checklist (PECR/GDPR eligibility, SPF/DKIM/DMARC, Stripe promotion code, test sends, warm-up batches).
+   - Claims only features that are live on getgradify.com. README.md records what was checked.
+
 ---
 
 ## 🚀 Quick Start: Recording Video B-Roll

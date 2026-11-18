@@ -22,6 +22,11 @@ X: Testing lead in drinking water.
 > Samples are collected at set times from several taps.
 > Samples are acidified and analysed by ICP-MS.
 > Results are compared with the regulatory limit and reported with uncertainty.
+H: Why analysis matters in society
+- **Health**: blood tests diagnose disease and monitor drug levels, and every batch of medicine is analysed for identity and purity before release.
+- **Safety**: food is tested for contaminants and allergens, and drinking water against legal limits for substances such as lead and nitrate.
+- **Environment and justice**: monitoring air and rivers enforces pollution law, and forensic analysis provides evidence in court.
+- Because decisions in **society** rest on these numbers, an unreliable analysis can mean a wrong diagnosis, an unsafe product or a wrongful conviction.
 K: Analytical chemistry identifies what is present and how much, following a process of defining the problem, sampling, preparation, measurement, data evaluation and reporting, and it supports medicine, safety, environment and industry.
 !: Thinking the instrument is the most important step. Poor sampling or preparation ruins even precise measurements.
 EV: established | Representative sampling is essential for valid analytical results (Harris, 2015).
@@ -598,6 +603,12 @@ X: A compound containing bromine.
 > They are of equal height.
 > ⁷⁹Br and ⁸¹Br occur in roughly equal amounts.
 > The compound contains one bromine atom: C₂H₅Br.
+H: Isotope patterns
+- Many **elements** have more than one common **isotope**, so a fragment containing them shows a **pattern** of peaks rather than one peak.
+- **Chlorine** (³⁵Cl and ³⁷Cl, about 3:1) gives M and M+2 peaks in a 3:1 ratio; **bromine** (⁷⁹Br and ⁸¹Br, about 1:1) gives M and M+2 peaks of nearly equal height.
+- Two chlorine atoms give M, M+2 and M+4 in about 9:6:1; two bromine atoms give about 1:2:1.
+- The height of the **M+1** peak compared with M estimates the number of carbon atoms: about 1.1% per carbon, because about 1.1% of carbon is ¹³C.
+- The spectrum of an element on its own gives each isotope's mass and abundance, from which its relative atomic mass is calculated.
 K: Mass spectrometry ionises, accelerates, separates by m/z and detects ions; the molecular ion gives Mr, the base peak is the most abundant and M+1 and M+2 peaks reveal carbon count, chlorine and bromine.
 !: Assuming the tallest peak is the molecular ion. The base peak is often a fragment.
 EV: established | Electrospray ionisation enables mass spectrometry of large biomolecules (Fenn et al., 1989).
@@ -926,6 +937,8 @@ X: Finding ethanol in a sample.
 > The sample shows a peak at 2.3 min.
 > Its area is compared with a calibration curve.
 > The ethanol concentration is calculated.
+H: The parts, in order
+- The **parts of a gas chromatograph**, from start to finish: the **carrier gas** supply; a heated **injection port**, where a microsyringe pushes a few microlitres of sample through a rubber septum and it vaporises; the **column** inside its temperature-controlled **oven**; the **detector**; and a data system that draws the chromatogram.
 K: GC uses an inert carrier gas and a heated column with a liquid stationary phase to separate volatile compounds by boiling point and interaction; retention times identify components and peak areas quantify them.
 !: Using GC for non-volatile substances such as sugars or proteins. They do not vaporise without decomposing.
 EV: established | Gas-liquid chromatography was introduced by James and Martin (James and Martin, 1952).

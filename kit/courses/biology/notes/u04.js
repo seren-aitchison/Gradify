@@ -1081,6 +1081,8 @@ X: A carrier mother.
 > Daughters: XᴴXᴴ or XᴴXʰ: unaffected, half are carriers.
 > Sons: XᴴY or XʰY: half are affected.
 > Overall, 1 in 4 children is an affected son.
+- In humans, **sex is determined** at fertilisation by the sperm: every egg carries an X chromosome, and a sperm carries either an X (giving an XX, female, embryo) or a Y (giving an XY, male, embryo), so the two are about equally likely.
+- In an XY embryo, the **SRY** gene switches on testis development at about seven weeks; hormones from the testes, testosterone and anti-Müllerian hormone, then direct male development. Without SRY, the gonads develop as ovaries.
 K: Females are XX and males XY; males are hemizygous for X-linked genes, so X-linked recessive conditions such as haemophilia are more common in males, carrier mothers pass them to half their sons and there is no father-to-son transmission.
 !: Saying an affected father can pass an X-linked condition to his son. Fathers pass their Y, not their X, to sons.
 EV: established | X-linked recessive inheritance patterns, such as in haemophilia, are well documented (Strachan and Read, 2018).

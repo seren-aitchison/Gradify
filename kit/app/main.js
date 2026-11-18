@@ -126,6 +126,7 @@ const NAV = [
   ["learning", "Learn", "Learn", "book"],
   ["study", "Study", "Study", "layers"],
   ["notes", "Notes Studio", "Notes", "upload"],
+  ["tools", "Tools", "Tools", "forge"],
   ["community", "Community", "Community", "people"],
   ["account", "Settings", "Settings", "cog"],
 ];
@@ -647,6 +648,8 @@ async function renderNotes() {
   </section>`;
 }
 routes.notes = renderNotes;
+// Tools (kit/tools): the lesson search, mind map creator, flashcard creator and notes converter, loaded when opened
+routes.tools = async () => (await import("../tools/tools.js")).renderTools(view, { store, toast, site: profile.site || "Gradify", pricing: PRICING });
 
 // ---------- Revision session ----------
 // Answering a card: first say how sure you are (that's evidence too: confident wrong answers point
@@ -656,6 +659,9 @@ async function renderStudy(arg) {
   // #/study/<deck id>, or #/study/t:<topic key> for a targeted practice session on one topic
   const topicKey = arg?.startsWith("t:") ? decodeURIComponent(arg.slice(2)) : null;
   const deckId = topicKey ? topicKey.split("|")[0] : arg;
+  // Free: 5 flashcard sets in all (kit/data/limits.js), once Plus is on sale
+  const { gate, lockedHtml } = await import("../data/limits.js");
+  if (!(await gate("flashcards", deckId || "due", { store, pricing: PRICING }))) { view.innerHTML = lockedHtml("flashcards", { pricing: PRICING }); return; }
   const all = await store.listCards(deckId ? { documentId: deckId } : {});
   let queue, practice = false, topicName = null;
   if (topicKey) {

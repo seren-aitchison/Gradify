@@ -761,6 +761,10 @@ X: Preventing spina bifida.
 > If it fails to close at the lower end, spina bifida results.
 > Folic acid supplements reduce this risk.
 > Women planning pregnancy are advised to take 400 µg of folic acid daily.
+H: Why organogenesis is vulnerable
+- During the **embryonic period** (weeks 3 to 8) cells are dividing, moving and signalling to one another faster than at any other time, so a **disruption** to one signal or cell population can change the shape of a whole organ.
+- Each organ has its own **critical period**, so the timing of an exposure predicts which organs are affected: the neural tube and heart form early, and structures such as the palate later.
+- Before about week 3, a harmful exposure usually either ends the pregnancy or is repaired completely; after week 8, in the fetal period, damage more often affects growth and function than the structure of organs.
 K: In neurulation, the notochord induces ectoderm to form the neural plate, which folds into the neural tube, while neural crest cells migrate; organs form through induction between tissues, mainly in weeks 3 to 8, when teratogens and folic acid deficiency can cause defects.
 !: Assuming folic acid helps only after pregnancy is confirmed. The neural tube closes very early, so supplements are advised before conception.
 EV: established | Folic acid supplementation reduces the risk of neural tube defects (MRC Vitamin Study Research Group, 1991).
