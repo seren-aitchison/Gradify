@@ -189,3 +189,37 @@ test("gaps are words several definitions lean on that no term defines", () => {
   assert.ok(!g.some((x) => ["stroke", "systole", "cardiac"].includes(x.word)));
   assert.ok(insights(buildMap(pack)).insights.some((i) => i.kind === "gap" && i.word === "ventricles"));
 });
+
+// ---------- every lesson's maps in the spidermap ----------
+import { buildTreeMap } from "../kit/notes/mindmap/model.js";
+import { parseNotes } from "../kit/course/notes.js";
+import { buildMaps } from "../kit/maps/build.js";
+
+test("a lesson's five maps become spidermaps with every idea, its kind, its links and a place for each node", async () => {
+  for (const [subject, unit, i] of [["chemistry", "u01", 2], ["law", "u01", 0], ["medicine", "u03", 1], ["history", "u03", 0]]) {
+    const text = (await import(`../kit/courses/${subject}/notes/${unit}.js`)).default;
+    const r = buildMaps(parseNotes(text)[i], { id: `${subject}:${unit}-${i}`, notes: text });
+    for (const m of r.maps) {
+      const map = buildTreeMap(m);
+      assert.equal(map.nodes.length, m.nodes, `${subject} ${m.key}: every node of the lesson map is on the spidermap`);
+      assert.equal(map.nodes.filter((n) => n.type === "topic").length, m.root.children.length);
+      assert.equal(map.links.filter((l) => l.kind === "lesson").length, m.links.length, `${subject} ${m.key}: the lesson's own links`);
+      for (const n of map.nodes) assert.ok(n.type === "root" || map.byId.has(n.parent), `${n.id} has its parent`);
+      const pos = layout(map, "spider");
+      for (const n of map.nodes) assert.ok(Number.isFinite(pos[n.id]?.x), `${subject} ${m.key}: ${n.id} placed`);
+      const intel = insights(map);
+      assert.ok(Array.isArray(intel.insights));
+      for (const t of map.nodes.filter((n) => n.type === "term")) assert.ok(t.fact.term && t.fact.prompt, `${t.id} can be practised`);
+    }
+  }
+});
+
+test("lesson Intelligence uses the lesson's own links, mistakes and test questions", async () => {
+  const text = (await import("../kit/courses/chemistry/notes/u01.js")).default;
+  const r = buildMaps(parseNotes(text)[2], { id: "chemistry:u01-2", notes: text });
+  const exam = buildTreeMap(r.maps.find((m) => m.key === "exam")), x = insights(exam);
+  assert.ok(x.insights.some((i) => i.kind === "question"));
+  assert.ok(x.insights.some((i) => /common mistake/.test(i.title)));
+  const topic = buildTreeMap(r.maps[0]);
+  assert.ok(insights(topic).links.some((l) => l.kind === "builds"), "the lesson's cross-links become builds-on links");
+});

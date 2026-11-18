@@ -63,6 +63,16 @@ export function learningOrder(map, links) {
   return out;
 }
 
+// A lesson map's links come from the lesson itself ("A uses B"): A builds on B. Pairs of its terms defined the same way
+// are still worth contrasting.
+export function lessonLinks(map) {
+  const label = (id) => map.byId.get(id)?.label || id;
+  const own = map.links.filter((l) => l.kind === "lesson").map((l) => ({ from: l.to, to: l.from, kind: "builds", confidence: 0.8,
+    evidence: map.byId.get(l.from)?.fact?.src || label(l.from), why: `${label(l.from)} ${l.label} ${label(l.to)}.` }));
+  const contrast = findLinks({ ...map, nodes: map.nodes.filter((n) => n.lk === "term" || !n.lk) }).filter((l) => l.kind === "contrast");
+  return [...own, ...contrast];
+}
+
 // Words used in two or more definitions that no term on the map defines, most used first.
 export function gaps(map) {
   const terms = map.nodes.filter((n) => n.type === "term" && n.fact);
@@ -88,9 +98,11 @@ export function gaps(map) {
  *   the learner's memory of each term (memory.js), when they have cards for these notes
  */
 export function insights(map, { questions = [], memory = null } = {}) {
-  const links = findLinks(map);
+  const lesson = Boolean(map.lesson);
+  const links = lesson ? lessonLinks(map) : findLinks(map);
   const mem = memory?.terms || new Map();
-  const terms = map.nodes.filter((n) => n.type === "term");
+  // a lesson's "not in the notes yet" nodes aren't ideas to learn
+  const terms = map.nodes.filter((n) => n.type === "term" && !n.gap);
   const topics = map.nodes.filter((n) => n.type === "topic");
   const label = (id) => map.byId.get(id)?.label || id;
   // known: marked as known here or in the flashcard feed, or strong in the learner's real memory
@@ -159,8 +171,16 @@ export function insights(map, { questions = [], memory = null } = {}) {
   for (const l of links.filter((x) => x.kind === "contrast").slice(0, 3)) {
     out.push({ kind: "contrast", icon: "alert", title: `Don't mix up ${label(l.from)} and ${label(l.to)}`, detail: l.why, ids: [l.from, l.to], evidence: l.evidence, confidence: l.confidence });
   }
+  // a lesson's own signals: objectives its notes don't answer, its common mistakes, its test questions
+  if (lesson) {
+    const gapNodes = map.nodes.filter((n) => n.gap && n.lk === "gap"), objectives = [...new Set(gapNodes.map((n) => n.parent))];
+    if (objectives.length) out.push({ kind: "gap", icon: "bulb", title: `${objectives.length} ${objectives.length === 1 ? "objective isn't" : "objectives aren't"} covered by the notes yet`, detail: `${objectives.slice(0, 2).map(label).join("; ")}. Check your textbook or ask your tutor for these.`, ids: [...objectives, ...gapNodes.map((n) => n.id)] });
+    const pit = terms.filter((t) => t.lk === "pitfall");
+    if (pit.length) out.push({ kind: "contrast", icon: "alert", title: `Watch for ${pit.length} common ${pit.length === 1 ? "mistake" : "mistakes"}`, detail: pit.slice(0, 2).map((t) => `“${label(t.id)}”`).join(" and ") + (pit.length > 2 ? " and more." : "."), ids: pit.map((t) => t.id) });
+    for (const t of terms.filter((x) => x.lk === "question").slice(0, 4)) out.push({ kind: "question", icon: "bulb", title: t.label, detail: t.fact.def || "Answer it from the map, then check the lesson.", ids: [t.id, t.parent], qtype: "why" });
+  }
   // gaps: words the definitions lean on that the notes never define ("ventricles" in four definitions, no definition)
-  for (const g of gaps(map).slice(0, 2)) out.push({ kind: "gap", icon: "bulb", title: `Your notes never define “${g.word}”`, detail: `${g.ids.length} definitions use it: ${g.ids.slice(0, 3).map(label).join(", ")}. Add it as a note so the terms that rest on it make sense.`, ids: g.ids, word: g.word });
+  for (const g of lesson ? [] : gaps(map).slice(0, 2)) out.push({ kind: "gap", icon: "bulb", title: `Your notes never define “${g.word}”`, detail: `${g.ids.length} definitions use it: ${g.ids.slice(0, 3).map(label).join(", ")}. Add it as a note so the terms that rest on it make sense.`, ids: g.ids, word: g.word });
 
   for (const q of questions.slice(0, 6)) {
     const t = topics.find((x) => x.topic === q.group);
