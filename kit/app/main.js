@@ -1221,6 +1221,8 @@ async function renderProgress() {
     <h1>Your progress</h1>
     <p class="sub lo-intro">Your activity on every Gradify site, mastery of the topics in your own notes, and below it your level, quests and achievements.</p>
     <article class="panel glass"><div class="panel-head"><h3>Your year</h3><span class="pill-dark">${Object.keys(s.byDay).length} active days</span></div><div class="hm-scroll">${heatmap(s.byDay, 52)}</div></article>
+    <article class="panel glass tree-panel lo-tree" data-pane="year"><div class="panel-head"><div><h3>Your Gradify Tree</h3><p class="sub">It grows from what you actually do: a limb for every Gradify site you've studied on, filling out with your last 30 days there, on an island whose grass is your last 60 days.</p></div><span class="pill-dark">${s.acts.filter((a) => Date.now() - Date.parse(a.at) < 30 * DAY).length} activities in 30 days</span></div>
+      <div class="grow-body"><div class="tree-wrap" id="lo-tree-svg"></div><aside class="grow-side" id="lo-tree-side"></aside></div></article>
     <div class="prog-grid">
       <article class="panel glass"><div class="panel-head"><h3>Mastery by topic</h3><span class="pill-dark">most urgent first</span></div>
         ${s.topics.length ? `<ul class="mastery">${s.topics.map((t) => {
@@ -1234,9 +1236,36 @@ async function renderProgress() {
     </div>
     <section class="gj lo-journey" id="lo-journey" aria-label="Level, quests and achievements"><p class="sub">Loading your level, quests and achievements…</p></section>
   </section>`;
+  drawMyTree(s.acts).catch((e) => console.warn("Tree", e));
   // the Journey (kit/game/journey.js) lives here too, with its own styles, loaded once
   if (!document.querySelector("link[data-game-css]")) document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" data-game-css href="${new URL("../styles/game.css", import.meta.url)}">`);
   mountJourney(document.getElementById("lo-journey"), { embedded: true, store }).catch((e) => { console.warn("Journey", e); });
+}
+
+// The Gradify Tree (kit/lifeos/tree.js), from the learner's own activity log: a limb per site studied on in the last
+// 30 days (or ever, if nothing recent), its leaves filling out with that site's activity; the island's grass is the
+// last 60 days; gold fruit for every 500 XP earned on a site.
+export function treeData(acts, now = Date.now()) {
+  const recent = acts.filter((a) => now - Date.parse(a.at) < 30 * DAY);
+  const bySite = new Map();
+  for (const a of acts) { const k = a.site || "Gradify"; const r = bySite.get(k) || { act: 0, xp: 0 }; r.xp += a.xp || 0; bySite.set(k, r); }
+  for (const a of recent) bySite.get(a.site || "Gradify").act++;
+  const sites = [...bySite.entries()].sort((p, q) => q[1].act - p[1].act || q[1].xp - p[1].xp).slice(0, 8)
+    .map(([n, r]) => ({ n, c: siteOf(n).c, act: r.act, k: Math.min(1, r.act / 36), creds: Array.from({ length: Math.min(4, Math.floor(r.xp / 500)) }, (_, i) => ({ site: n, t: `${(i + 1) * 500} XP` })) }));
+  const bars = Array.from({ length: 60 }, (_, i) => { const day = new Date(now - (59 - i) * DAY).toDateString(); return acts.filter((a) => new Date(a.at).toDateString() === day).length; });
+  return { sites, bars };
+}
+async function drawMyTree(acts) {
+  const el = document.getElementById("lo-tree-svg"); if (!el) return;
+  const { drawTree } = await import("../lifeos/tree.js");
+  const { sites, bars } = treeData(acts);
+  let seed = 7; const rand = () => { seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  drawTree(el, { sites: sites.length ? sites : [{ n: "Gradify", c: "4641ff", act: 0, k: 0, creds: [] }], bars, rand });
+  const side = document.getElementById("lo-tree-side"); if (!side) return;
+  const leaves = sites.reduce((a, x) => a + 4 + Math.round(x.k * 10), 0), fruit = sites.reduce((a, x) => a + x.creds.length, 0);
+  side.innerHTML = sites.length ? `<div class="grow-stats"><div><b>${leaves}</b><span>leaves grown</span></div><div><b>${fruit}</b><span>gold fruit (500 XP each)</span></div><div><b>${bars.slice(-7).reduce((a, b) => a + b, 0)}</b><span>activities this week</span></div></div>
+    <ul class="grow-legend">${sites.map((x) => `<li><i style="background:#${x.c}"></i><span>${esc(x.n)}</span><em>${x.act}</em></li>`).join("")}</ul>`
+    : `<p class="sub">Your tree is a seedling. Finish a lesson, review some cards or use a tool and it starts to grow.</p>`;
 }
 
 // ---------- Plan ----------
@@ -1484,16 +1513,17 @@ routes.intel = async () => {
 routes.knowledge = async () => { const m = await model({ autoMove: false }); renderKnowledgePage(view, m, { courses: m.L?.courses || [] }); };
 routes.revise = async (arg) => { const m = await model({ autoMove: false }); renderRevisePage(view, m, arg); view.querySelector(".revise-page .seg-chips")?.insertAdjacentHTML("beforebegin", decomposeHtml()); wireDecompose(view, m, apctx()); };
 
-// ---------- Community: not built yet; say so, and offer the one real thing (bringing friends) ----------
-async function renderCommunity() {
-  view.innerHTML = `<section class="community-route">
-    <span class="kicker lo-kicker">${icon("people")}Community</span>
-    <h1>Study with other people</h1>
-    <article class="panel glass"><span class="pill-dark">Coming soon</span>
-      <h3>Study groups, shared packs and leaderboards</h3>
-      <p class="sub">Revise with your course mates, share a pack in one tap and see who's on a streak. It isn't built yet, so nothing here is pretend: it'll appear when it's real.</p></article>
-    ${sharePanel()}
-  </section>`;
+// ---------- Community (kit/app/community.js): chats, study groups, friends' and school leaderboards, tutors, mentors, internships ----------
+let catalogueP = null;
+async function renderCommunity(arg) {
+  catalogueP ||= fetch(new URL("../api/v1/catalogue.json", import.meta.url)).then((r) => r.json()).catch(() => ({ courses: [] }));
+  const [{ renderCommunity: draw }, cat] = await Promise.all([import("./community.js"), catalogueP]);
+  const courses = (cat.courses || []).map((c) => ({ slug: c.slug, name: c.name, site: c.site }));
+  // the subjects this learner studies: their site's courses, and any course they've started on this device
+  const started = courses.filter((c) => { try { return localStorage.getItem(`gradify.course.${c.slug}`); } catch { return false; } }).map((c) => c.slug);
+  const subjects = [...new Set([...courses.filter((c) => profile.site && c.site === profile.site).map((c) => c.slug), ...started])];
+  await draw({ view, store, toast, courses, subjects, appProfile: profile }, arg);
+  view.querySelector(".community-route")?.insertAdjacentHTML("beforeend", sharePanel());
   wireSharePanel();
 }
 routes.community = renderCommunity;

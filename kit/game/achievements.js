@@ -37,7 +37,9 @@ export function statsOf(state) {
   const quests = Object.keys(game.paid || {}).filter((k) => k.startsWith("quest:")).length;
   const challenges = Object.keys(game.paid || {}).filter((k) => k.startsWith("challenge:")).length;
   const subjects = courses.filter((c) => (c.S?.log || []).some((e) => e.xp > 0)).length;
-  return { xp: state.xp, level: state.level.n, lessons, unitsTouched, unitsDone, perfect, labs, focus, mastered, comebacks, best: H.best, consistentWeeks: H.consistentWeeks, quests, challenges, subjects, days: H.calendar.size };
+  // every question answered, in every course (the reward scheme's milestones)
+  const answers = courses.reduce((a, c) => a + (c.S?.attempts || []).length, 0);
+  return { answers, xp: state.xp, level: state.level.n, lessons, unitsTouched, unitsDone, perfect, labs, focus, mastered, comebacks, best: H.best, consistentWeeks: H.consistentWeeks, quests, challenges, subjects, days: H.calendar.size };
 }
 
 const n = (key, of) => (s) => ({ n: Math.min(of, Number(s[key]) || 0), of });
@@ -60,6 +62,12 @@ const flag = (key) => (s) => ({ n: s[key] ? 1 : 0, of: 1 });
   ["xp-1000", "1,000 XP", "Earn 1,000 XP across Gradify.", n("xp", 1000), 0, "bolt", "silver", "Milestones"],
   ["xp-5000", "5,000 XP", "Earn 5,000 XP across Gradify.", n("xp", 5000), 0, "bolt", "gold", "Milestones"],
   ["level-10", "Adept", "Reach overall level 10.", n("level", 10), 0, "trophy", "gold", "Milestones"],
+  // the reward scheme: milestones that pay XP
+  ["answers-100", "Hundred Club", "Answer 100 questions.", n("answers", 100), 50, "checklist", "bronze", "Milestones"],
+  ["answers-1000", "Thousand Club", "Answer 1,000 questions.", n("answers", 1000), 250, "trophy", "gold", "Milestones"],
+  ["streak-30", "Month Strong", "Reach a 30-day learning streak.", n("best", 30), 150, "flame", "gold", "Milestones"],
+  ["streak-100", "Unstoppable", "Reach a 100-day learning streak.", n("best", 100), 500, "flame", "gold", "Milestones"],
+  ["xp-25000", "25,000 XP", "Earn 25,000 XP across Gradify.", n("xp", 25000), 0, "bolt", "gold", "Milestones"],
 ].forEach(([id, name, d, progress, xp, icon, tier, group]) => registerAchievement({ id, name, d, progress, xp, icon, tier, group }));
 
 // every achievement with its progress; unlocked ones carry a reward key for engine.claim
