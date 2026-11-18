@@ -55,6 +55,9 @@ export function glassIcon(set, name, { size = 56, seed = name, label = "", colou
   </span>`;
 }
 
+/** Any line symbol (the inner paths of a 24×24 icon, such as kit/core/icons.js ICONS) in a glass icon. */
+export const glassSymbol = (d, opts = {}) => (d ? glassIcon({ symbol: { d } }, "symbol", { seed: d, ...opts }) : "");
+
 /** Fill every [data-g3d] element in `root`: data-g3d="words to match", data-g3d-size, optional data-g3d-site. */
 export async function hydrate(root = document, site = "Gradify") {
   const els = [...root.querySelectorAll("[data-g3d]:not([data-g3d-done])")];

@@ -177,8 +177,8 @@ h1 {
 .orgs, .everywhere { margin-top: 112px; }
 .org-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
 .org { gap: 10px; }
-.org-ico { width: 44px; height: 44px; border-radius: 13px; display: grid; place-items: center; background: linear-gradient(180deg, rgba(var(--ink-rgb), .14), rgba(var(--ink-rgb), .04)); border: 1px solid var(--line); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2); }
-.org-ico .ico { width: 20px; height: 20px; }
+.org-ico { display: block; align-self: flex-start; }
+.org:hover .g3d-pane { transform: rotateX(0) rotateY(0) translateZ(6px); }
 .org h3, .device h3 { font-size: 18px; letter-spacing: -.015em; }
 .org p, .device p { margin: 0; font-size: 14px; color: var(--mute); }
 .devices { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; align-items: stretch; }
@@ -294,7 +294,10 @@ h1 {
 .notify-done { margin-top: 10px !important; font-size: 13px !important; color: #4fe0a6 !important; }
 .card .domain { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .card.soon { cursor: default; }
-.card.soon .icon { filter: saturate(.55) brightness(.85); }
+.card.soon .icon, .card.soon .icon-g3d { filter: saturate(.55) brightness(.85); }
+/* a site's glass icon (kit/core/glass-icons.js) sits a little outside the 44px column, so the card's text doesn't move */
+.icon-g3d { align-self: start; margin: -4px 0 0 -4px; display: block; }
+.card.live:hover .g3d-pane { transform: rotateX(0) rotateY(0) translateZ(6px); }
 .card.soon .foot { color: var(--faint); }
 .card.featured { grid-column: 1 / -1; }
 .empty { display: none; text-align: center; padding: 40px 20px; margin-top: 32px; color: var(--mute); }
@@ -431,8 +434,8 @@ footer b { color: var(--fg); font-weight: 600; }
 .pro-card { padding: 22px; border-radius: 20px; display: flex; flex-direction: column; gap: 10px; }
 .pro-card h3 { margin: 4px 0 0; font-size: 18px; letter-spacing: -.01em; }
 .pro-card p { margin: 0; color: var(--mute); line-height: 1.5; font-size: 15px; }
-.pro-ico { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: linear-gradient(#170d1a, #170d1a) padding-box, var(--pro) border-box; background: linear-gradient(light-dark(#f7f1f8, #170d1a), light-dark(#f7f1f8, #170d1a)) padding-box, var(--pro) border-box; border: 1px solid transparent; }
-.pro-ico svg { width: 20px; height: 20px; }
+.pro-ico { display: block; align-self: flex-start; }
+.pro-card:hover .g3d-pane { transform: rotateX(0) rotateY(0) translateZ(6px); }
 .pro-n { margin-top: auto; padding-top: 8px; font-size: 13px; font-weight: 600; }
 .compare { border-radius: 22px; padding: 24px; }
 .compare h3 { margin: 0 0 14px; font-size: 20px; }

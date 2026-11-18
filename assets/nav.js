@@ -1,5 +1,6 @@
 // Top bar search button, the menu on small screens, and the App Store link.
-import { icon } from "../kit/core/icons.js";
+import { icon, ICONS } from "../kit/core/icons.js";
+import { glassSymbol } from "../kit/core/glass-icons.js";
 import { appStoreUrl, standalone } from "../kit/core/install.js";
 
 const $ = (s) => document.querySelector(s);
@@ -24,7 +25,9 @@ $("#nav-search")?.addEventListener("click", (e) => {
 });
 
 // Section icons
-document.querySelectorAll(".org-ico[data-icon], .dz-ico[data-icon]").forEach((el) => { el.innerHTML = icon(el.dataset.icon); });
+document.querySelectorAll(".dz-ico[data-icon]").forEach((el) => { el.innerHTML = icon(el.dataset.icon); });
+// who Gradify is for: each symbol as a glass icon, like the lessons and site headings
+document.querySelectorAll(".org-ico[data-icon]").forEach((el) => { el.innerHTML = glassSymbol(ICONS[el.dataset.icon], { size: 52, seed: el.dataset.icon }); });
 
 // Get the app: Gradify's app comes from the App Store (APP_STORE in gradify.config.js); the site never installs itself
 const installBtn = $("#install");
