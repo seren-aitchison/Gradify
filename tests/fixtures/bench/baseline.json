@@ -1,0 +1,232 @@
+{
+  "recall": {
+    "reviews": 6951,
+    "users": 40,
+    "models": {
+      "fsrs5": {
+        "n": 6951,
+        "base": 0.8525,
+        "logLoss": 0.4753,
+        "brier": 0.1521,
+        "auc": 0.5514,
+        "ece": 0.0678,
+        "rmseBins": 0.1686
+      },
+      "mastery-card": {
+        "n": 6951,
+        "base": 0.8525,
+        "logLoss": 0.5392,
+        "brier": 0.1818,
+        "auc": 0.5458,
+        "ece": 0.1193,
+        "rmseBins": 0.238
+      },
+      "learner-mean": {
+        "n": 6951,
+        "base": 0.8525,
+        "logLoss": 0.4208,
+        "brier": 0.1264,
+        "auc": 0.5574,
+        "ece": 0.0213,
+        "rmseBins": 0.0337
+      },
+      "oracle": {
+        "n": 6951,
+        "base": 0.8525,
+        "logLoss": 0.3771,
+        "brier": 0.1143,
+        "auc": 0.7179,
+        "ece": 0.004,
+        "rmseBins": 0.0129
+      }
+    }
+  },
+  "mastery": {
+    "answers": 2673,
+    "trainLearners": 42,
+    "testLearners": 18,
+    "fitted": {
+      "bkt": {
+        "L0": 0.05,
+        "T": 0.083,
+        "G": 0.37,
+        "S": 0.248
+      },
+      "bkt-forget": {
+        "L0": 0.05,
+        "T": 0.083,
+        "G": 0.37,
+        "S": 0.248,
+        "F": 0
+      }
+    },
+    "models": {
+      "gradify-dimension": {
+        "n": 2673,
+        "base": 0.5672,
+        "logLoss": 0.7244,
+        "brier": 0.2534,
+        "auc": 0.6365,
+        "ece": 0.132,
+        "rmseBins": 0.1651
+      },
+      "gradify-mastery": {
+        "n": 2673,
+        "base": 0.5672,
+        "logLoss": 0.6903,
+        "brier": 0.2471,
+        "auc": 0.5752,
+        "ece": 0.0764,
+        "rmseBins": 0.124
+      },
+      "running-accuracy": {
+        "n": 2673,
+        "base": 0.5672,
+        "logLoss": 0.6798,
+        "brier": 0.2423,
+        "auc": 0.6246,
+        "ece": 0.0701,
+        "rmseBins": 0.0956
+      },
+      "bkt": {
+        "n": 2673,
+        "base": 0.5672,
+        "logLoss": 0.6457,
+        "brier": 0.227,
+        "auc": 0.6608,
+        "ece": 0.0095,
+        "rmseBins": 0.0124
+      },
+      "bkt-forget": {
+        "n": 2673,
+        "base": 0.5672,
+        "logLoss": 0.6457,
+        "brier": 0.227,
+        "auc": 0.6608,
+        "ece": 0.0095,
+        "rmseBins": 0.0124
+      },
+      "oracle": {
+        "n": 2673,
+        "base": 0.5672,
+        "logLoss": 0.5553,
+        "brier": 0.1869,
+        "auc": 0.7849,
+        "ece": 0.022,
+        "rmseBins": 0.028
+      }
+    }
+  },
+  "readiness": {
+    "objectives": 852,
+    "horizon": 14,
+    "models": {
+      "gradify": {
+        "n": 852,
+        "base": 0.5246,
+        "logLoss": 0.7192,
+        "brier": 0.256,
+        "auc": 0.6444,
+        "ece": 0.1424,
+        "rmseBins": 0.1569,
+        "meanAbsError": 0.1636,
+        "bias": -0.1193,
+        "interval80": 0.8556,
+        "intervalWidth": 0.4874
+      },
+      "beta-no-forgetting": {
+        "n": 852,
+        "base": 0.5246,
+        "logLoss": 0.6767,
+        "brier": 0.2394,
+        "auc": 0.6441,
+        "ece": 0.0596,
+        "rmseBins": 0.0977,
+        "meanAbsError": 0.1327,
+        "bias": -0.0064,
+        "interval80": 0.7758,
+        "intervalWidth": 0.4015
+      }
+    }
+  },
+  "cards": {
+    "cards": 54,
+    "good": 28,
+    "flawed": 26,
+    "detection": {
+      "blocked": 0.231,
+      "flagged": 0.577
+    },
+    "falseRejection": {
+      "blocked": 0.071,
+      "flagged": 0.071
+    },
+    "goodRewritten": 0.036,
+    "byDefect": {
+      "ambiguous": {
+        "n": 3,
+        "blocked": 0,
+        "flagged": 0.667
+      },
+      "duplicate": {
+        "n": 2,
+        "blocked": 0.5,
+        "flagged": 0.5
+      },
+      "leak": {
+        "n": 2,
+        "blocked": 0,
+        "flagged": 0.5
+      },
+      "multi": {
+        "n": 1,
+        "blocked": 0,
+        "flagged": 0
+      },
+      "trivial": {
+        "n": 1,
+        "blocked": 1,
+        "flagged": 1
+      },
+      "ungrounded": {
+        "n": 4,
+        "blocked": 0.75,
+        "flagged": 1
+      },
+      "unsupported": {
+        "n": 2,
+        "blocked": 0,
+        "flagged": 0
+      },
+      "vague": {
+        "n": 2,
+        "blocked": 0,
+        "flagged": 1
+      },
+      "wrong": {
+        "n": 7,
+        "blocked": 0.143,
+        "flagged": 0.286
+      },
+      "yes-no": {
+        "n": 2,
+        "blocked": 0,
+        "flagged": 1
+      }
+    }
+  },
+  "plan": {
+    "plans": 400,
+    "violations": {
+      "outsideWindow": 0,
+      "overlapsCalendar": 0,
+      "overlapsItself": 0,
+      "overBudget": 0,
+      "longStretch": 0
+    },
+    "utilisation": 0.972,
+    "top3Placed": 0.736,
+    "priorityInversions": 0,
+    "truncated": 0.106
+  }
+}

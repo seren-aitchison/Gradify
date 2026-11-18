@@ -28,6 +28,9 @@ All 10 had one cause: `node_modules` wasn't installed, so `@electric-sql/pglite`
 | This branch | After launch, dashboard, Intelligence, Autopilot, calendar sync, coach, ledger, knowledge debt, calibration, push | 729 | 0 |
 | 14 November 2026 | After FSRS reference validation (`srs-reference`), glass icons and Intelligence 3.0 (`intel3`), merged with main | 762 | 0 |
 | 15 November 2026 | Site-wide light mode (`theme`) | 766 | 0 |
+| 17 November 2026 | Intelligence benchmarks (`bench`), on top of the flashcard engine branch | 796 | 5 |
+
+The 5 failures on 17 November are all in `deploy.test.mjs` and are local to the machine, not the code. The top-level allowlist (`scripts/build-site.mjs`) saw an untracked `.claude/` folder in the main checkout, and a `node_modules` symlink in a clean worktree. Nothing else failed.
 
 The extra tests on this branch are new suites, not changes to old ones:
 

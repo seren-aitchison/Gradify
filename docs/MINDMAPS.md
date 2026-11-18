@@ -51,6 +51,18 @@ the notes, any such addition can be checked against the lesson the same way flas
 
 ## The viewer
 
+**Since 18 November 2026 a lesson's maps open in the spidermap** (`kit/maps/spider.js` on `kit/notes/mindmap/`), the same
+viewer as Notes Studio: high-contrast liquid glass, three layouts (spider, flow, tree), arms you can drag, your own notes
+and links, topic colours, undo, a minimap, search with each match's path, arrow keys between ideas, Recall mode, a
+Memory lens synced with the learner's flashcards, guided practice (weakest first, with 2- and 5-minute reviews), "Ask the
+map", and Gradify Intelligence beside it (the lesson's own cross-links, its common mistakes, objectives the notes don't
+cover, its test questions). It keeps the five-map switcher, the Free allowance, deep links (`#/lesson/<id>/map/3`), an
+outline view, full screen, and the 4K PNG, SVG, Markdown and OPML exports (drawn from the spidermap's layout by
+`toPng`/`toSvg` below). The maps themselves are unchanged: still built from the notes by `kit/maps/build.js`. The
+Mind Elixir viewer described next is still what Tools' mind map creator and converter use.
+
+### The Mind Elixir viewer (Tools)
+
 Every fact sits in its own bubble at the end of its strand: the strands (`strand` in `kit/maps/view.js`, Mind
 Elixir's `generateSubBranch`) run from the side of the idea above to the middle of each fact's bubble, and each bubble
 is edged in its branch's colour. Each main branch carries a Liquid Glass icon from the lesson's own icon set

@@ -1,11 +1,11 @@
 import { GROUPS, FEATURED, START_HERE, KEYWORDS } from "../kit/core/sites.js";
-import { icon } from "../kit/core/icons.js";
+import { icon, ICONS } from "../kit/core/icons.js";
 import { triple, mix, ink, tile } from "../kit/core/colour.js";
 import { pathOf, nameHtml } from "../kit/core/site.js";
 import { applyPrefs } from "../kit/data/profile.js";
 import { trackView } from "../kit/core/analytics.js";
 import { captureFirstTouch } from "../kit/core/attribution.js";
-import { hydrate as glassIcons } from "../kit/core/glass-icons.js";
+import { hydrate as glassIcons, glassSymbol } from "../kit/core/glass-icons.js";
 glassIcons(document, "Gradify").catch(() => {});
 captureFirstTouch();
 import { joinWaitlist } from "../kit/data/waitlist.js";
@@ -20,6 +20,10 @@ const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // A site's icon, falling back to its first letters ("MedGradify" -> "Me") if it has none
 const mark = (s, cls) => icon(s.i, cls) || esc((s.n.split(/Gradify/)[0].trim() || s.n).slice(0, 2));
+// A site's symbol as a glass icon in its own colour, like the lessons and site headings; the plain tile if it has no symbol
+const glassMark = (s, size = 52) => ICONS[s.i]
+  ? `<span class="icon-g3d" aria-hidden="true">${glassSymbol(ICONS[s.i], { size, seed: s.n, colours: [mix(s.c, .35), `#${s.c}`] })}</span>`
+  : `<span class="icon" aria-hidden="true">${mark(s)}</span>`;
 // a built sub-site lives in its own folder here (getgradify.com/medgradify/); others link to their own domain
 const domainOf = (s) => esc(s.built ? pathOf(s).replace(/\/$/, "") : s.label || s.u.replace(/^https?:\/\//, ""));
 const siteHref = (s) => (s.built ? pathOf(s) : href(s.u));
@@ -79,7 +83,7 @@ for (const g of GROUPS) {
     const what = s.d.replace(/^For [^:]+:\s*/, "").replace(/^./, (c) => c.toUpperCase());
     const study = s.n === "Klerio" ? "" : `<a class="study-link" href="${s.built ? `${pathOf(s)}app.html` : `app.html?site=${encodeURIComponent(s.n)}`}">Study ${esc(s.n.replace(" · ForgeLab", "").replace(/Gradify$/, "") || s.n)} in Gradify ${ICON.chev}</a>`;
     card.innerHTML = `
-      <span class="icon" aria-hidden="true">${mark(s)}</span>
+      ${glassMark(s)}
       <span class="body">
         <span class="status is-${st === "external" ? "live" : st}">${STATUS_LABEL[st]}</span>
         <h3>${nameOf(s)}${badge}</h3>

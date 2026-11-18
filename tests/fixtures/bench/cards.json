@@ -1,0 +1,113 @@
+{
+  "about": "Labelled flashcards for the card-quality benchmark (scripts/bench/cards.mjs). Notes and cards written for Gradify. Each card is 'good' or has one known defect. Defects: leak (the question gives the answer away), vague (no clear subject), yes-no, ungrounded (the quote isn't in the notes), wrong (the answer contradicts the notes), unsupported (the answer adds claims the notes don't make), duplicate (repeats an earlier card), multi (tests two unrelated things), ambiguous (more than one answer could fairly be right), trivial (not worth learning). A good card's quote appears in its notes.",
+  "sets": [
+    {
+      "subject": "chemistry",
+      "notes": "SN2 reactions happen in a single concerted step: the nucleophile attacks the carbon from the side opposite the leaving group, so the configuration at that carbon is inverted (Walden inversion). The rate depends on both the substrate and the nucleophile, so rate = k[RX][Nu-]. SN2 is fastest for methyl and primary haloalkanes, because bulky groups block the backside attack. SN1 reactions go through a carbocation intermediate; the rate-determining step is loss of the leaving group, so rate = k[RX]. Tertiary haloalkanes favour SN1 because tertiary carbocations are stabilised by the inductive effect of the alkyl groups. Polar protic solvents such as water stabilise the carbocation and favour SN1.",
+      "cards": [
+        { "kind": "definition", "front": "What is the rate equation for an SN2 reaction?", "back": "rate = k[RX][Nu-]", "quote": "so rate = k[RX][Nu-]", "label": "good" },
+        { "kind": "why", "front": "Why are tertiary haloalkanes slow to react by SN2?", "back": "Bulky groups block the nucleophile's backside attack on the carbon.", "quote": "because bulky groups block the backside attack", "label": "good" },
+        { "kind": "definition", "front": "What happens to the configuration at the carbon in an SN2 reaction?", "back": "It is inverted (Walden inversion).", "quote": "the configuration at that carbon is inverted (Walden inversion)", "label": "good" },
+        { "kind": "definition", "front": "What is the rate-determining step of an SN1 reaction?", "back": "Attack of the nucleophile on the carbocation.", "quote": "the rate-determining step is loss of the leaving group", "label": "wrong" },
+        { "kind": "definition", "front": "What is the rate equation of an SN1 reaction, where rate = k[RX]?", "back": "rate = k[RX]", "quote": "so rate = k[RX]", "label": "leak" },
+        { "kind": "definition", "front": "Which solvents favour SN2 reactions?", "back": "Polar aprotic solvents such as acetone and DMSO.", "quote": "Polar aprotic solvents such as acetone favour SN2", "label": "ungrounded" }
+      ]
+    },
+    {
+      "subject": "biology",
+      "notes": "Glycolysis takes place in the cytoplasm and splits one glucose molecule into two molecules of pyruvate. It produces a net gain of two ATP and two reduced NAD per glucose. In aerobic conditions pyruvate enters the mitochondrial matrix and is converted to acetyl coenzyme A in the link reaction, releasing carbon dioxide. The Krebs cycle also takes place in the mitochondrial matrix. Oxidative phosphorylation happens on the inner mitochondrial membrane, where the electron transport chain pumps protons into the intermembrane space; ATP synthase uses the proton gradient to make ATP. Oxygen is the final electron acceptor and is reduced to water.",
+      "cards": [
+        { "kind": "definition", "front": "Where in the cell does glycolysis take place?", "back": "The cytoplasm", "quote": "Glycolysis takes place in the cytoplasm", "label": "good" },
+        { "kind": "definition", "front": "What is the final electron acceptor in oxidative phosphorylation?", "back": "Oxygen, which is reduced to water", "quote": "Oxygen is the final electron acceptor and is reduced to water", "label": "good" },
+        { "kind": "cloze", "front": "Glycolysis gives a net gain of _____ ATP per glucose.", "back": "two", "quote": "It produces a net gain of two ATP and two reduced NAD per glucose", "label": "good" },
+        { "kind": "definition", "front": "Where in the cell does the process of glycolysis happen?", "back": "The cytoplasm", "quote": "Glycolysis takes place in the cytoplasm", "label": "duplicate" },
+        { "kind": "definition", "front": "Where does the Krebs cycle take place, and what does ATP synthase use to make ATP?", "back": "The mitochondrial matrix; the proton gradient across the inner membrane.", "quote": "The Krebs cycle also takes place in the mitochondrial matrix", "label": "multi" },
+        { "kind": "definition", "front": "It happens on the inner mitochondrial membrane. What is it?", "back": "Oxidative phosphorylation", "quote": "Oxidative phosphorylation happens on the inner mitochondrial membrane", "label": "vague" }
+      ]
+    },
+    {
+      "subject": "medicine",
+      "notes": "Cardiac output is the volume of blood pumped by each ventricle per minute, and equals heart rate multiplied by stroke volume. Stroke volume is end-diastolic volume minus end-systolic volume. The Frank-Starling mechanism means that a greater end-diastolic volume stretches the ventricular muscle and increases the force of contraction, so stroke volume rises. Sympathetic stimulation increases both heart rate and contractility. In hypovolaemic shock, low circulating volume reduces end-diastolic volume, so stroke volume and cardiac output fall; the heart rate rises to compensate. Beta blockers reduce heart rate and contractility.",
+      "cards": [
+        { "kind": "definition", "front": "How is stroke volume calculated?", "back": "End-diastolic volume minus end-systolic volume", "quote": "Stroke volume is end-diastolic volume minus end-systolic volume", "label": "good" },
+        { "kind": "why", "front": "Why does cardiac output fall in hypovolaemic shock?", "back": "Low circulating volume reduces end-diastolic volume, so stroke volume falls.", "quote": "low circulating volume reduces end-diastolic volume, so stroke volume and cardiac output fall", "label": "good" },
+        { "kind": "definition", "front": "What does the Frank-Starling mechanism describe?", "back": "A greater end-diastolic volume stretches the ventricle and increases the force of contraction, so stroke volume rises.", "quote": "a greater end-diastolic volume stretches the ventricular muscle and increases the force of contraction", "label": "good" },
+        { "kind": "definition", "front": "What effect do beta blockers have on the heart?", "back": "They increase heart rate and contractility.", "quote": "Beta blockers reduce heart rate and contractility", "label": "wrong" },
+        { "kind": "definition", "front": "Is cardiac output heart rate multiplied by stroke volume?", "back": "Yes", "quote": "equals heart rate multiplied by stroke volume", "label": "yes-no" },
+        { "kind": "definition", "front": "What is the normal resting cardiac output of an adult?", "back": "About 5 litres per minute", "quote": "a normal resting cardiac output is about 5 litres per minute", "label": "ungrounded" }
+      ]
+    },
+    {
+      "subject": "mathematics",
+      "notes": "The derivative of x^n is n x^(n-1) for any real n. The chain rule says that if y = f(g(x)) then dy/dx = f'(g(x)) g'(x). The product rule says that the derivative of u v is u' v + u v'. A stationary point is where the first derivative is zero. If the second derivative is positive there, the point is a local minimum; if it is negative, a local maximum; if it is zero, the test is inconclusive. The integral of 1/x is ln|x| + C.",
+      "cards": [
+        { "kind": "definition", "front": "What does the chain rule give for dy/dx when y = f(g(x))?", "back": "f'(g(x)) g'(x)", "quote": "then dy/dx = f'(g(x)) g'(x)", "label": "good" },
+        { "kind": "definition", "front": "What is the integral of 1/x?", "back": "ln|x| + C", "quote": "The integral of 1/x is ln|x| + C", "label": "good" },
+        { "kind": "why", "front": "At a stationary point the second derivative is zero. What can you conclude?", "back": "Nothing yet: the second-derivative test is inconclusive.", "quote": "if it is zero, the test is inconclusive", "label": "good" },
+        { "kind": "definition", "front": "What is the derivative of u v?", "back": "u' v' ", "quote": "the derivative of u v is u' v + u v'", "label": "wrong" },
+        { "kind": "definition", "front": "What is a stationary point?", "back": "A point on a curve", "quote": "A stationary point is where the first derivative is zero", "label": "ambiguous" },
+        { "kind": "definition", "front": "What letter is used for the constant of integration?", "back": "C", "quote": "The integral of 1/x is ln|x| + C", "label": "trivial" }
+      ]
+    },
+    {
+      "subject": "physics",
+      "notes": "Newton's second law states that the resultant force on a body equals the rate of change of its momentum; for constant mass, F = ma. Momentum is mass multiplied by velocity and is measured in kg m/s. In any collision with no external force, total momentum is conserved. In an elastic collision kinetic energy is also conserved; in an inelastic collision some kinetic energy is transferred to other stores such as heat and sound. Power is the rate of doing work, P = W/t, measured in watts.",
+      "cards": [
+        { "kind": "definition", "front": "What does Newton's second law state?", "back": "The resultant force on a body equals its rate of change of momentum.", "quote": "the resultant force on a body equals the rate of change of its momentum", "label": "good" },
+        { "kind": "compare", "front": "How does an elastic collision differ from an inelastic one?", "back": "In an elastic collision kinetic energy is conserved; in an inelastic collision some is transferred to other stores.", "quote": "In an elastic collision kinetic energy is also conserved", "label": "good" },
+        { "kind": "definition", "front": "What is the unit of momentum?", "back": "kg m/s", "quote": "is measured in kg m/s", "label": "good" },
+        { "kind": "definition", "front": "What is power, measured in watts, the rate of?", "back": "The rate of doing work", "quote": "Power is the rate of doing work", "label": "leak" },
+        { "kind": "definition", "front": "When is momentum conserved?", "back": "Always", "quote": "In any collision with no external force, total momentum is conserved", "label": "wrong" },
+        { "kind": "definition", "front": "What is the resultant force on a body equal to?", "back": "The rate of change of its momentum", "quote": "the resultant force on a body equals the rate of change of its momentum", "label": "duplicate" }
+      ]
+    },
+    {
+      "subject": "computer science",
+      "notes": "Binary search finds an item in a sorted list by repeatedly halving the search interval, so it takes O(log n) comparisons in the worst case. It only works if the list is sorted. Merge sort divides the list in half, sorts each half recursively and merges them; it runs in O(n log n) time in every case and needs O(n) extra space. Quicksort is O(n log n) on average but O(n^2) in the worst case, which happens when the pivot is repeatedly the smallest or largest item. A hash table gives average O(1) lookup.",
+      "cards": [
+        { "kind": "definition", "front": "What is the worst-case time complexity of binary search?", "back": "O(log n)", "quote": "so it takes O(log n) comparisons in the worst case", "label": "good" },
+        { "kind": "why", "front": "When does quicksort take O(n^2) time?", "back": "When the pivot is repeatedly the smallest or largest item.", "quote": "which happens when the pivot is repeatedly the smallest or largest item", "label": "good" },
+        { "kind": "definition", "front": "What extra space does merge sort need?", "back": "O(n)", "quote": "needs O(n) extra space", "label": "good" },
+        { "kind": "definition", "front": "What is the worst-case time complexity of merge sort?", "back": "O(n^2)", "quote": "it runs in O(n log n) time in every case", "label": "wrong" },
+        { "kind": "definition", "front": "What does a hash table give?", "back": "Fast lookup", "quote": "A hash table gives average O(1) lookup", "label": "ambiguous" },
+        { "kind": "definition", "front": "Which is the best sorting algorithm?", "back": "Merge sort, because it is always O(n log n) and stable.", "quote": "it runs in O(n log n) time in every case", "label": "unsupported" }
+      ]
+    },
+    {
+      "subject": "law",
+      "notes": "A contract needs offer, acceptance, consideration and an intention to create legal relations. An invitation to treat, such as goods displayed in a shop window, is not an offer: it invites customers to make offers. Acceptance must be communicated to the offeror, but under the postal rule an acceptance sent by post takes effect when it is posted. Consideration must be sufficient but need not be adequate. Past consideration is generally not good consideration. In domestic and social agreements there is a rebuttable presumption that the parties do not intend to create legal relations.",
+      "cards": [
+        { "kind": "definition", "front": "When does a postal acceptance take effect under the postal rule?", "back": "When it is posted", "quote": "an acceptance sent by post takes effect when it is posted", "label": "good" },
+        { "kind": "misconception", "front": "Goods displayed in a shop window are an offer. What's wrong with that?", "back": "They are an invitation to treat: the customer makes the offer.", "quote": "An invitation to treat, such as goods displayed in a shop window, is not an offer", "label": "good" },
+        { "kind": "definition", "front": "What presumption applies to domestic and social agreements?", "back": "A rebuttable presumption that the parties do not intend to create legal relations", "quote": "there is a rebuttable presumption that the parties do not intend to create legal relations", "label": "good" },
+        { "kind": "definition", "front": "Must consideration be adequate?", "back": "No, only sufficient", "quote": "Consideration must be sufficient but need not be adequate", "label": "yes-no" },
+        { "kind": "definition", "front": "Which case established the postal rule?", "back": "Adams v Lindsell (1818)", "quote": "the postal rule was established in Adams v Lindsell", "label": "ungrounded" },
+        { "kind": "definition", "front": "What does a contract need?", "back": "Agreement", "quote": "A contract needs offer, acceptance, consideration and an intention to create legal relations", "label": "ambiguous" }
+      ]
+    },
+    {
+      "subject": "psychology",
+      "notes": "The multi-store model of memory has three stores: sensory register, short-term memory and long-term memory. Short-term memory has a capacity of about seven items, plus or minus two, and a duration of about 18 to 30 seconds without rehearsal. Information moves from short-term to long-term memory through rehearsal. The working memory model replaced the single short-term store with a central executive, a phonological loop, a visuospatial sketchpad and an episodic buffer. Proactive interference is when old learning disrupts new learning; retroactive interference is when new learning disrupts old learning.",
+      "cards": [
+        { "kind": "definition", "front": "What is the capacity of short-term memory in the multi-store model?", "back": "About seven items, plus or minus two", "quote": "Short-term memory has a capacity of about seven items, plus or minus two", "label": "good" },
+        { "kind": "compare", "front": "How does proactive interference differ from retroactive interference?", "back": "Proactive: old learning disrupts new learning. Retroactive: new learning disrupts old learning.", "quote": "Proactive interference is when old learning disrupts new learning", "label": "good" },
+        { "kind": "definition", "front": "How does information move from short-term to long-term memory?", "back": "Through rehearsal", "quote": "Information moves from short-term to long-term memory through rehearsal", "label": "good" },
+        { "kind": "definition", "front": "What is retroactive interference?", "back": "When old learning disrupts new learning", "quote": "retroactive interference is when new learning disrupts old learning", "label": "wrong" },
+        { "kind": "definition", "front": "They replaced the single short-term store. What are they?", "back": "Central executive, phonological loop, visuospatial sketchpad and episodic buffer", "quote": "a central executive, a phonological loop, a visuospatial sketchpad and an episodic buffer", "label": "vague" },
+        { "kind": "definition", "front": "Who proposed the working memory model, and in what year?", "back": "Baddeley and Hitch, 1974", "quote": "The working memory model was proposed by Baddeley and Hitch in 1974", "label": "ungrounded" }
+      ]
+    },
+    {
+      "subject": "history",
+      "notes": "The Treaty of Versailles was signed in June 1919. It required Germany to accept responsibility for causing the war under Article 231, the so-called war guilt clause. Germany lost about 13 percent of its European territory, including Alsace-Lorraine to France. The German army was limited to 100,000 men and the Rhineland was demilitarised. Reparations were set in 1921 at 132 billion gold marks. Many Germans saw the treaty as a dictated peace, or Diktat, which weakened support for the Weimar Republic.",
+      "cards": [
+        { "kind": "definition", "front": "Which article of the Treaty of Versailles is known as the war guilt clause?", "back": "Article 231", "quote": "under Article 231, the so-called war guilt clause", "label": "good" },
+        { "kind": "definition", "front": "What limit did the Treaty of Versailles set on the German army?", "back": "100,000 men", "quote": "The German army was limited to 100,000 men", "label": "good" },
+        { "kind": "why", "front": "Why did the Treaty of Versailles weaken support for the Weimar Republic?", "back": "Many Germans saw it as a dictated peace (Diktat).", "quote": "Many Germans saw the treaty as a dictated peace, or Diktat, which weakened support for the Weimar Republic", "label": "good" },
+        { "kind": "definition", "front": "When were reparations set, and at what amount?", "back": "1919, at 132 billion gold marks", "quote": "Reparations were set in 1921 at 132 billion gold marks", "label": "wrong" },
+        { "kind": "definition", "front": "Which territory did Germany lose to France?", "back": "Alsace-Lorraine", "quote": "including Alsace-Lorraine to France", "label": "good" },
+        { "kind": "definition", "front": "What caused the Second World War?", "back": "The Treaty of Versailles", "quote": "The Treaty of Versailles was signed in June 1919", "label": "unsupported" }
+      ]
+    }
+  ]
+}

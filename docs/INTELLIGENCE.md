@@ -4,6 +4,8 @@
 
 Gradify Intelligence is one evolving model of each learner. It's built from everything they do on every Gradify site, and every screen in LifeOS reads it. The rules are deterministic, the evidence is visible, and the learner stays in control. Claude is used to interpret notes and write material, never to decide what someone knows.
 
+**Measuring it:** `npm run bench` scores the engines against baselines (recall prediction, mastery as prediction, readiness, card quality, plan feasibility). See `docs/intelligence/BENCHMARKS.md`; the audit and the ranked plan of what to improve next are in `docs/intelligence/AUDIT.md`.
+
 ## What's built (phase 1, and most of phases 2–4)
 
 | Engine | File | What it does |

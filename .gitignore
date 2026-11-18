@@ -2,3 +2,8 @@ tests/reports/
 node_modules/
 .claude/worktrees/
 supabase/.temp/
+
+# the local AI agent orchestrator: compiled Python, its running state and agent worktrees stay on the machine
+department/__pycache__/
+department/state/
+department/worktrees/

@@ -228,7 +228,7 @@ function renderTree() {
         <div><b>${week}</b><span>activities this week</span></div>
         <div><b>${top ? esc(short(top.n).replace("Gradify", "")) : "–"}</b><span>strongest limb</span></div>
       </div>
-      <ul class="grow-legend">${data.map((x) => `<li><i style="background:#${x.c}"></i><span>${esc(short(x.n))}</span><em>${x.act}</em></li>`).join("")}</ul>`;
+      <ul class="grow-legend">${data.map((x) => `<li data-site="${esc(x.n)}" tabindex="0"><i style="background:#${x.c}"></i><span>${esc(short(x.n))}</span><em>${x.act}</em></li>`).join("")}</ul>`;
   } else {
     const span = days.slice(-84).map((d) => ({ ...d, today: d === todayCell }));
     drawForest($("#tree-svg"), { days: span, colourOf: (n) => colourOf(n), off });
@@ -239,6 +239,9 @@ function renderTree() {
   }
   $("#tree-level").textContent = `Level ${userLevel}`;
 }
+// hovering or focusing a site in the legend lifts its tree and name tag on the island
+const liftTree = (e) => { if (growMode !== "tree") return; const li = e.target.closest?.(".grow-legend li[data-site]"); $("#tree-svg").__highlight?.(e.type === "mouseover" || e.type === "focusin" ? li?.dataset.site : null); };
+for (const ev of ["mouseover", "mouseout", "focusin", "focusout"]) $("#grow-side").addEventListener(ev, liftTree);
 $("#tree").addEventListener("click", (e) => {
   const b = e.target.closest("[data-grow]");
   if (!b) return;

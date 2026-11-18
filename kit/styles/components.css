@@ -504,7 +504,50 @@ a.badge:hover { border-color: rgba(var(--ink-rgb), .4); }
 .grow-body { display: grid; grid-template-columns: 1fr 250px; gap: 16px; align-items: center; }
 .tree-wrap { border-radius: 12px; overflow: hidden; background: radial-gradient(90% 80% at 50% 35%, #142224, #070a0b); }
 .tree-wrap svg { display: block; width: 100%; height: auto; max-height: 520px; }
-.isle3d { width: 100%; touch-action: pan-y; }
+/* the Forest (kit/lifeos/tree.js drawForest): a garden at dusk; trees grow in one after another, then sway */
+.tree-wrap:has(.forest) { background: radial-gradient(70% 55% at 50% 40%, rgba(255, 170, 120, .16), transparent 70%), linear-gradient(180deg, #121433 0%, #2a2150 55%, #4a2d55 100%); }
+.forest .fs-tree { transform-box: fill-box; transform-origin: 50% 100%; animation: fs-grow .55s cubic-bezier(.2, 1.5, .4, 1) var(--d, 0s) both, fs-sway var(--sw, 3s) ease-in-out calc(var(--d, 0s) + .6s) infinite alternate; }
+.forest .fs-tile { transition: filter .15s; }
+.forest .fs-tile:hover { filter: brightness(1.25); }
+.forest .fs-tile.today { filter: brightness(1.2) drop-shadow(0 0 6px rgba(255, 255, 255, .55)); }
+.forest .fs-today ellipse { animation: fs-pulse 2.2s ease-in-out infinite; }
+@keyframes fs-grow { from { transform: scale(0); } }
+@keyframes fs-sway { from { transform: rotate(-1.6deg); } to { transform: rotate(1.6deg); } }
+@keyframes fs-pulse { 50% { opacity: .35; } }
+.fs-key { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; margin: 0; padding: 4px 12px 14px; font-size: 12px; color: rgba(255, 255, 255, .7); }
+.fs-key span { display: inline-flex; align-items: center; gap: 5px; }
+.fs-key svg { width: auto; height: 26px; }
+@media (prefers-reduced-motion: reduce) { .forest .fs-tree, .forest .fs-today ellipse { animation: none !important; } }
+/* the island's sky: twilight, a low sun, a few stars, and a soft glow under the island (behind the transparent canvas) */
+.isle3d { position: relative; width: 100%; touch-action: pan-y; overflow: hidden;
+  background:
+    radial-gradient(40% 30% at 50% 88%, rgba(91, 214, 255, .22), transparent 70%),
+    radial-gradient(30% 26% at 18% 74%, rgba(255, 190, 120, .55), transparent 70%),
+    radial-gradient(60% 50% at 20% 78%, rgba(255, 120, 150, .28), transparent 70%),
+    linear-gradient(180deg, #0b1030 0%, #1d1a4f 38%, #4b2a6b 62%, #a3466e 82%, #e8875f 100%); }
+.isle3d::before { content: ""; position: absolute; inset: 0 0 45% 0; pointer-events: none; opacity: .8;
+  background-image: radial-gradient(1.2px 1.2px at 12% 18%, #fff, transparent), radial-gradient(1px 1px at 28% 8%, #fff, transparent), radial-gradient(1.4px 1.4px at 44% 22%, #fff, transparent),
+    radial-gradient(1px 1px at 61% 12%, #fff, transparent), radial-gradient(1.2px 1.2px at 77% 26%, #fff, transparent), radial-gradient(1px 1px at 89% 9%, #fff, transparent),
+    radial-gradient(1px 1px at 6% 34%, #fff, transparent), radial-gradient(1.3px 1.3px at 53% 4%, #fff, transparent), radial-gradient(1px 1px at 95% 30%, #fff, transparent); }
+.isle3d canvas { position: relative; }
+.isle-tags { position: absolute; inset: 0; pointer-events: none; }
+.isle-tag { position: absolute; left: 0; top: 0; display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px 4px 7px; border-radius: 999px; white-space: nowrap;
+  font: 600 11.5px var(--sans); color: #fff; background: rgba(12, 14, 32, .72); border: 1px solid color-mix(in srgb, var(--c) 70%, transparent);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); box-shadow: 0 6px 16px -8px rgba(0, 0, 0, .7); transition: opacity .25s, background .25s; will-change: transform; }
+.isle-tag i { width: 8px; height: 8px; border-radius: 50%; background: var(--c); box-shadow: 0 0 8px var(--c); }
+.isle-tag b { font: 700 10.5px var(--mono); color: rgba(255, 255, 255, .7); }
+.isle-tag::after { content: ""; position: absolute; left: 50%; bottom: -5px; width: 8px; height: 8px; transform: translateX(-50%) rotate(45deg); background: inherit; border-right: inherit; border-bottom: inherit; }
+.isle-tag.on { background: var(--c); border-color: #fff; z-index: 999 !important; }
+/* the quieter trees: just a glowing dot in the site's colour, which opens into the full tag on hover, focus or tap */
+.isle-tag:not(.lead):not(.on) { gap: 0; padding: 0; width: 14px; height: 14px; justify-content: center; font-size: 0; background: rgba(12, 14, 32, .55); border: 2px solid #fff; pointer-events: auto; cursor: pointer; }
+.isle-tag:not(.lead):not(.on) b, .isle-tag:not(.lead):not(.on)::after { display: none; }
+.isle-tag:not(.lead):not(.on) i { width: 8px; height: 8px; }
+.isle-tag.on { pointer-events: auto; }
+.isle-tag:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.isle-tag.on b { color: #fff; }
+.grow-legend li[data-site] { cursor: default; border-radius: 8px; transition: background .15s; }
+.grow-legend li[data-site]:hover, .grow-legend li[data-site]:focus-visible { background: rgba(var(--ink-rgb), .06); outline: none; }
+@media (max-width: 640px) { .isle-tag { font-size: 10.5px; padding: 3px 7px 3px 6px; } .isle-tag b { display: none; } }
 .isle3d canvas { display: block; width: 100%; height: auto; cursor: grab; }
 .isle3d canvas:active { cursor: grabbing; }
 .mote { fill: #e8fff4; opacity: .12; animation: mote 5s ease-in-out infinite alternate; }
@@ -656,35 +699,7 @@ a.badge:hover { border-color: rgba(var(--ink-rgb), .4); }
 .nt-dates .date b, .nt-dates .ev-txt b { color: var(--fg); }
 .nt-dates .go { background: rgb(var(--holo)); color: #00242c; }
 
-/* Mind map: shaped like a flow diagram (notes → spine of topics → terms → definitions), holo style */
-.flowmap { padding: 22px 14px 14px; }
-.fm-scroll { overflow-x: auto; scrollbar-width: thin; }
-.flowmap svg { display: block; width: 100%; min-width: 760px; height: auto; }
-.flowmap.narrow svg { min-width: 0; }
-.fm-line { fill: none; stroke: rgba(223, 249, 255, .8); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw-in .8s var(--d, 0s) ease-out forwards; }
-.fm-spine { stroke: rgba(223, 249, 255, .85); stroke-width: 2.4; }
-.fm-branch { stroke: color-mix(in srgb, var(--c) 70%, #dff9ff); stroke-width: 1.8; }
-.fm-twig { stroke: color-mix(in srgb, var(--c) 45%, rgba(223, 249, 255, .5)); stroke-width: 1.4; opacity: .8; }
-@keyframes draw-in { to { stroke-dashoffset: 0; } }
-.fm-pill { opacity: 0; animation: fade-in .45s var(--d, 0s) forwards; }
-.fm-deftext { opacity: 0; animation: fade-in .45s var(--d, 0s) forwards; }
-@keyframes fade-in { to { opacity: 1; } }
-.fm-pill text { text-anchor: middle; font: 600 12.5px var(--sans); fill: #eaffff; }
-.fm-start rect { fill: rgba(94, 240, 255, .2); stroke: #5ef0ff; stroke-width: 1.6; filter: drop-shadow(0 0 10px rgba(94, 240, 255, .6)); }
-.fm-start text { font-size: 15px; font-weight: 700; }
-.fm-topic rect { fill: color-mix(in srgb, var(--c) 38%, #06161e); stroke: var(--c); stroke-width: 1.6; filter: drop-shadow(0 0 9px color-mix(in srgb, var(--c) 60%, transparent)); }
-.fm-topic text { font-size: 13.5px; font-weight: 700; }
-.fm-term rect { fill: color-mix(in srgb, var(--c) 16%, rgba(6, 22, 30, .92)); stroke: color-mix(in srgb, var(--c) 65%, transparent); stroke-width: 1.2; }
-.fm-term.learnt rect { fill: color-mix(in srgb, var(--c) 45%, #06161e); stroke: var(--c); filter: drop-shadow(0 0 8px var(--c)); }
-.fm-def rect { fill: rgba(94, 240, 255, .06); stroke: rgba(94, 240, 255, .28); }
-.fm-def text { font-weight: 400; fill: #bfdde4; font-size: 11.5px; }
-.fm-deftext text { font: 400 12.5px var(--sans); fill: #bfdde4; }
-.fm-acr { font: 600 10.5px var(--mono); letter-spacing: .3em; fill: color-mix(in srgb, var(--c) 60%, var(--fg)); opacity: .85; }
-.fm-legend text { font: 500 12.5px var(--sans); fill: #cfe9ee; }
-.fm-legend.fm-start circle { fill: rgba(94, 240, 255, .35); stroke: #5ef0ff; }
-.fm-legend.fm-topic circle { fill: rgba(160, 120, 255, .45); stroke: #a78bfa; }
-.fm-legend.fm-term circle { fill: rgba(94, 240, 255, .12); stroke: rgba(94, 240, 255, .6); }
-.fm-legend.fm-def circle { fill: rgba(94, 240, 255, .05); stroke: rgba(94, 240, 255, .3); }
+/* The spidermap has its own stylesheet: kit/notes/mindmap/mindmap.css */
 .sheet svg { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 0 42px -14px rgba(94, 240, 255, .5); }
 
 /* Flashcards: holo cards that flip in 3D */
@@ -1068,37 +1083,42 @@ code { font: 12px var(--mono); color: var(--mute); }
 @keyframes g3d-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(calc(var(--s) * -.08)); } }
 @keyframes g3d-glow { 0%, 100% { transform: scale(1); opacity: .55; } 50% { transform: scale(.82); opacity: .35; } }
 @media (prefers-reduced-motion: reduce) { .g3d, .g3d-glow { animation: none; } }
-/* Glass diagrams (kit/core/glass-diagrams.js): the glass icons' bigger siblings, with a diagram from the lesson on the
-   glass. Same recipe: a tilted colour tile, frosted glass in front with a rainbow edge, a glow and a slow float. */
-.gd { margin: 18px 0; display: grid; gap: 10px; justify-items: start; }
-.gd-art { position: relative; width: min(100%, 400px); aspect-ratio: 16 / 10.4; perspective: 900px; animation: gd-float 7s ease-in-out var(--dl, 0s) infinite; }
-.gd-sm .gd-art { width: min(100%, 300px); }
-.gd-back { position: absolute; inset: 0 0 5% 7%; border-radius: 28px; transform: rotate(var(--tw, 3deg)); background: linear-gradient(140deg, var(--a), var(--b)); box-shadow: inset 0 1px 1px rgba(255, 255, 255, .45); }
-.gd-glow { position: absolute; left: 16%; right: 16%; bottom: -6%; height: 18%; border-radius: 50%; background: var(--b); filter: blur(22px); opacity: .5; }
-.gd-pane { position: absolute; inset: 4% 4% 0 0; display: grid; place-items: center; border-radius: 26px; color: #fff; overflow: hidden;
-  transform: rotateX(4deg) rotateY(-5deg);
-  background: linear-gradient(155deg, rgba(255, 255, 255, .34), rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, .05)), linear-gradient(140deg, color-mix(in srgb, var(--a) 55%, transparent), color-mix(in srgb, var(--b) 45%, transparent));
-  -webkit-backdrop-filter: blur(12px) saturate(170%); backdrop-filter: blur(12px) saturate(170%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .75), 0 18px 36px -18px rgba(0, 0, 0, .6); transition: transform .4s cubic-bezier(.2, .8, .2, 1); }
-.gd-pane::after { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.4px; pointer-events: none;
+/* Glass diagrams (kit/core/glass-diagrams.js): the glass icons' bigger siblings, with a diagram from the lesson on a
+   clear pane. A tilted colour tile behind, a rainbow edge, a glow and a slow float, like the icons; the diagram itself
+   is crisp: coloured parts and lines on a solid surface (light or dark with the theme), text in the page's ink. */
+.gd { --gd-bg: light-dark(#ffffff, #0d1120); --gd-ink: light-dark(#151826, #eef1fb); --gd-soft: light-dark(#5b6275, #a3abc2); --gd-line: light-dark(#8a92a8, #6f7894);
+  margin: 26px 0; display: grid; gap: 12px; justify-items: start; }
+.gd-art { position: relative; width: min(100%, 600px); aspect-ratio: 16 / 10.4; perspective: 1100px; animation: gd-float 8s ease-in-out var(--dl, 0s) infinite; }
+.gd-sm .gd-art { width: min(100%, 320px); }
+.gd-back { position: absolute; inset: 0 0 4% 5%; border-radius: 26px; transform: rotate(var(--tw, 3deg)); background: linear-gradient(140deg, var(--a), var(--b)); box-shadow: inset 0 1px 1px rgba(255, 255, 255, .45); }
+.gd-glow { position: absolute; left: 14%; right: 14%; bottom: -5%; height: 16%; border-radius: 50%; background: var(--b); filter: blur(26px); opacity: .45; }
+.gd-pane { position: absolute; inset: 3% 3% 0 0; display: grid; place-items: center; border-radius: 22px; overflow: hidden; color: var(--gd-ink);
+  transform: rotateX(3deg) rotateY(-4deg);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--gd-bg) 92%, var(--a)), var(--gd-bg));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), 0 24px 44px -22px rgba(0, 0, 0, .55); transition: transform .4s cubic-bezier(.2, .8, .2, 1); }
+.gd-pane::after { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1.5px; pointer-events: none;
   background: linear-gradient(135deg, #4641ff, #f055dd 35%, #ff5600 70%, #ffc002);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); }
-.gd-pane::before { content: ""; position: absolute; inset: 1px; border-radius: inherit; background: radial-gradient(110% 60% at 20% 0%, rgba(255, 255, 255, .45), transparent 50%); pointer-events: none; }
+/* a faint dot grid, like squared paper */
+.gd-pane::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: .5;
+  background: radial-gradient(circle, color-mix(in srgb, var(--gd-line) 45%, transparent) 1px, transparent 1.3px) 0 0 / 18px 18px; }
 .gd:hover .gd-pane { transform: rotateX(0) rotateY(0) translateZ(8px); }
-.gd-svg { position: relative; width: 100%; height: 100%; padding: 4%; filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, .5)) drop-shadow(0 0 4px rgba(0, 0, 0, .18)); }
-.gd-svg text { fill: #fff; stroke: none; letter-spacing: -.01em; }
-.gd-svg .gd-box { fill: rgba(255, 255, 255, .16); stroke: rgba(255, 255, 255, .8); stroke-width: 1.2; }
-.gd-svg .gd-core { fill: rgba(255, 255, 255, .26); stroke: #fff; stroke-width: 1.6; }
-.gd-svg .gd-dot { fill: #fff; stroke: none; }
-.gd-svg text.gd-num { fill: var(--a); }
-.gd-svg .gd-spoke { stroke: rgba(255, 255, 255, .7); stroke-dasharray: 3 4; }
-.gd-svg .gd-axis { stroke-width: 2.4; }
-.gd-svg .gd-venn { fill: rgba(255, 255, 255, .12); stroke: #fff; stroke-width: 1.6; }
-.gd-svg text.gd-soft { fill: rgba(255, 255, 255, .78); }
+.gd-svg { position: relative; width: 100%; height: 100%; padding: 2.5%; }
+.gd-svg text { stroke: none; letter-spacing: -.005em; }
+.gd-svg .gd-t { fill: var(--gd-ink); }
+.gd-svg .gd-strong { fill: var(--gd-ink); }
+.gd-svg .gd-soft { fill: var(--gd-soft); }
+.gd-svg .gd-on { fill: #fff; }
+.gd-svg .gd-line { stroke: var(--gd-line); stroke-width: 2; fill: none; }
+.gd-svg .gd-arrowhead { stroke: var(--gd-line); }
+.gd-svg .gd-axis { stroke: var(--gd-line); stroke-width: 3; }
+.gd-svg .gd-core { fill: color-mix(in srgb, var(--a) 18%, var(--gd-bg)); stroke: var(--a); stroke-width: 2; }
+.gd-svg .gd-ring { stroke: var(--gd-bg); stroke-width: 3; }
+.gd-svg .gd-vs { fill: var(--gd-bg); stroke: var(--gd-line); stroke-width: 1.6; }
 .gd-svg .gd-mono { font-family: var(--mono, ui-monospace, monospace); }
-.gd figcaption { font-size: 13px; line-height: 1.4; color: var(--mute); max-width: 400px; }
-.gd-kind { display: inline-block; margin-right: 8px; padding: 1px 8px; border-radius: 99px; font: 700 10px var(--mono, monospace); letter-spacing: .06em; text-transform: uppercase; color: var(--fg); border: 1px solid var(--line, rgba(127, 127, 127, .3)); }
-@keyframes gd-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+.gd figcaption { font-size: 13.5px; line-height: 1.45; color: var(--mute); max-width: 600px; }
+.gd-kind { display: inline-block; margin-right: 8px; padding: 2px 9px; border-radius: 99px; font: 700 10px var(--mono, monospace); letter-spacing: .06em; text-transform: uppercase; color: var(--fg); border: 1px solid var(--line, rgba(127, 127, 127, .3)); }
+@keyframes gd-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
 @media (prefers-reduced-motion: reduce) { .gd-art { animation: none; } }
 
 /* Free allowance banner (kit/data/limits.js): a Liquid Glass bar with the Plus offer, floating above the page */

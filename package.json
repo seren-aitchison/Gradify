@@ -17,12 +17,14 @@
     "check:sync": "node scripts/check-sync.cjs",
     "supabase:admin": "node scripts/supabase-admin.mjs",
     "check:live": "node scripts/check-live.cjs",
-    "labs": "node scripts/lab-coverage.mjs"
+    "labs": "node scripts/lab-coverage.mjs",
+    "bench": "node scripts/bench.mjs"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "0.133.0",
     "@electric-sql/pglite": "0.5.15",
     "bcryptjs": "2.4.3",
+    "playwright": "1.63.0",
     "ts-fsrs": "4.7.1"
   }
 }
