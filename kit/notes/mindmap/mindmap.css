@@ -50,6 +50,14 @@
 .smap-search input { width: 130px; border: 0; background: none; outline: none; font: 500 13.5px var(--sans); color: var(--ink); }
 .smap-search input::placeholder { color: var(--ink-3); }
 .smap-more { position: relative; }
+.smap-find { position: relative; }
+.smap-results { position: absolute; left: 0; top: calc(100% + 8px); z-index: 10; width: max(100%, 300px); max-height: 360px; overflow: auto; margin: 0; padding: 5px; list-style: none; border-radius: 14px; background: var(--glass-2); animation: smap-in .15s ease-out; }
+.smap-results[hidden] { display: none; }
+.smap-results button { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; width: 100%; padding: 8px 10px; border: 0; border-radius: 9px; background: none; text-align: left; }
+.smap-results button:hover, .smap-results button:focus-visible { background: var(--hair); outline: none; }
+.smap-results b { font-size: 13px; font-weight: 650; }
+.smap-results span { font-size: 11.5px; color: var(--ink-3); }
+.smap-results .more { padding: 8px 10px; font-size: 12px; color: var(--ink-3); }
 .smap-menu { position: absolute; right: 0; top: calc(100% + 8px); z-index: 10; display: flex; flex-direction: column; min-width: 240px; padding: 5px; border-radius: 14px; background: var(--glass-2); animation: smap-in .18s ease-out; }
 .smap-menu[hidden] { display: none; }
 .smap-menu button { display: flex; align-items: center; gap: 10px; height: 36px; padding: 0 10px; border: 0; border-radius: 9px; background: none; font-size: 13px; font-weight: 500; text-align: left; }
@@ -366,8 +374,42 @@ button.smp-part-h:hover { text-decoration: underline; }
 .smp-btn.danger:hover { color: var(--bad); border-color: var(--bad); background: none; }
 .smp-foot { display: flex; gap: 7px; margin: 0; font-size: 11.5px; color: var(--ink-3); }
 
+/* ---------- the lesson viewer: the same map, full screen ---------- */
+html.mm-open { overflow: hidden; }
+.smap-overlay { position: fixed; inset: 0; z-index: 10000; padding: 12px; background: light-dark(#eceef4, #020306); }
+/* the backdrop is opaque from the first frame; only the map fades in, so the lesson never shows through */
+.smap-overlay-host { height: 100%; animation: smap-in .25s ease-out; }
+.smap-overlay .smap { height: 100%; }
+.smap-overlay .smap-body { flex: 1; min-height: 0; }
+.smap-overlay .smap-stage, .smap-overlay .smap-panel { height: 100%; max-height: none; }
+.smap-loading { display: grid; place-items: center; height: 100%; margin: 0; color: light-dark(#6a7188, #7f879c); font-size: 14px; }
+.smap-maps button b { font: 700 12px var(--mono); }
+.smap-maps button span { display: none; }
+.smap-maps button[aria-checked="true"] span { display: inline; }
+.smap-outline { position: absolute; inset: 12px; z-index: 5; overflow: auto; border-radius: 20px; background: var(--glass-2, light-dark(#fff, #11131b)); border: 1px solid light-dark(rgba(8, 12, 28, .1), rgba(255, 255, 255, .1)); color: light-dark(#04060d, #fff); }
+.smap-outline[hidden] { display: none; }
+.smap-outline-in { max-width: 760px; margin: 0 auto; padding: 28px 24px 48px; font-size: 15px; line-height: 1.55; }
+.smap-outline-in header { position: sticky; top: 0; display: flex; align-items: baseline; gap: 12px; padding: 8px 0 14px; background: inherit; }
+.smap-outline-in header b { font-size: 22px; letter-spacing: -.03em; }
+.smap-outline-in header em { font-style: normal; font-size: 13px; color: light-dark(#6a7188, #7f879c); margin-right: auto; }
+.smap-outline-in ul { margin: 0; padding-left: 20px; }
+.smap-outline-in > ul { padding-left: 0; list-style: none; }
+.smap-outline-in li { margin: 6px 0; }
+.smap-outline-in li > span { font-weight: 650; }
+.smap-outline-in li p { margin: 2px 0 0; font-size: 13.5px; color: light-dark(#363d52, #c9cfdc); }
+.e-lesson { stroke: var(--accent); color: var(--accent); stroke-width: 1.5; stroke-dasharray: 5 6; opacity: .75; }
+.sm-term.gap { border-style: dashed; background: transparent; box-shadow: none; }
+.sm-term.gap .sm-label { font-weight: 500; font-style: italic; color: var(--ink-3); }
+.sm-term.lk-pitfall .sm-kick { color: var(--bad); }
+.sm-term.lk-equation .sm-kick { color: var(--warn); }
+.sm-term.lk-question .sm-kick, .sm-term.lk-objective .sm-kick { color: var(--accent); }
+
 /* ---------- small screens ---------- */
 @media (max-width: 900px) {
+  .smap-overlay { overflow: auto; padding: 8px; }
+  .smap-overlay .smap { height: auto; }
+  .smap-overlay .smap-stage { height: 68vh; }
+  .smap-overlay .smap-panel { height: auto; }
   .smap-body, .smap.no-panel .smap-body { grid-template-columns: 1fr; }
   .smap.no-panel .smap-panel { display: none; }
   .smap-panel { max-height: none; }

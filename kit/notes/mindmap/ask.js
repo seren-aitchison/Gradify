@@ -33,7 +33,7 @@ export function ask(question, map, intel, memory = null) {
   const q = String(question || "").trim(), s = q.toLowerCase();
   const mem = memory?.terms || new Map();
   const label = (id) => map.byId.get(id)?.label || id;
-  const def = (n) => `${cap(n.fact.def)}.`;
+  const def = (n) => { const d = n.fact.def || n.fact.term; return `${cap(d)}${/[.!?…:]$/.test(d) ? "" : "."}`; };
   if (!q) return { kind: "empty", title: "Ask about these notes", parts: [], ids: [] };
   const terms = mentioned(q, map);
 

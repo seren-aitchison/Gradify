@@ -9,10 +9,13 @@
 // Smoothness: positions, edges, the view and the minimap are painted at most once a frame (requestAnimationFrame),
 // edges are updated in place rather than rebuilt, and the costliest effects pause while the map is moving.
 //
-// mountMindMap(el, { pack, learnt, questions, esc, onLearn, onPractised, toast }) → { refresh, destroy }
+// mountMindMap(el, { pack | tree, learnt, questions, esc, onLearn, onPractised, toast,
+//                    title, kicker, barExtra, onHead, menuItems, onClose, storeKey }) → { refresh, destroy, scene }
+//   pack: a Notes Studio analysis; tree: a lesson's mind map (kit/maps/build.js). barExtra/onHead add controls to the bar
+//   (the lesson viewer's map switcher), menuItems add to the ⋯ menu ({ act, icon, label, run }), onClose adds ×.
 import { icon } from "../../core/icons.js";
 import { GLYPHS, LAYOUTS, DEFAULTS, SWATCHES } from "./config.js";
-import { buildMap, descendants, newId, mapKey } from "./model.js";
+import { buildMap, buildTreeMap, descendants, newId, mapKey, sentence, LESSON_KIND } from "./model.js";
 import { layout, bounds } from "./layout.js";
 import { insights } from "./intel.js";
 import { memoryFor, loadLearnerCards, STATE, whenText } from "./memory.js";
@@ -51,12 +54,15 @@ const TYPE_NAME = { root: "Your notes", topic: "Topic", term: "Key term", eq: "F
 const RATING = { again: "Forgot", hard: "Hard", good: "Good", easy: "Easy" };
 const APP = "/app.html";
 const SHORTCUTS = [["Drag", "Pan the map, or move a node and its arm"], ["Ctrl/⌘ + scroll", "Zoom (or pinch)"], ["Double-click", "Rename a node, or add a note on empty space"],
-  ["Enter", "Open the focused node"], ["Arrow keys", "Move the focused node (Shift: further)"], ["F2", "Rename"], ["Delete", "Hide or delete"], ["Ctrl/⌘ + Z", "Undo"],
+  ["Enter", "Open the focused node"], ["→ ← ↑ ↓", "Go to a child, the parent, or a sibling"], ["Alt/⌥ + arrows", "Move the focused node and its arm (add Shift: further)"], ["F2", "Rename"], ["Delete", "Hide or delete"], ["Ctrl/⌘ + Z", "Undo"],
   ["/", "Find a term"], ["+  −  0", "Zoom in, out, fit"], ["E  C", "Expand or collapse every arm"], ["Space · 1 · 2", "Reveal, knew it, not yet (while practising)"], ["?", "These shortcuts"], ["Esc", "Close, clear or stop"]];
 
-export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc = (s) => String(s), onLearn = () => {}, onPractised = () => {}, toast = () => {} }) {
+export function mountMindMap(el, { pack = null, tree = null, learnt = new Set(), questions = [], esc = (s) => String(s), onLearn = () => {}, onPractised = () => {}, toast = () => {},
+  title = null, kicker = "Spidermap", barExtra = "", onHead = null, menuItems = [], onClose = null, storeKey = null }) {
   loadMindMapCss();
-  const key = DEFAULTS.storageKey + mapKey(pack);
+  const key = DEFAULTS.storageKey + (storeKey || mapKey(pack));
+  const build = (edits) => (tree ? buildTreeMap(tree, { learnt, edits }) : buildMap(pack, { learnt, edits }));
+  const heading = title || pack?.title || String(tree?.root?.topic || "Mind map").replace(/\*\*/g, "");
   const saved = store.get(key) || {};
   const S = {
     layout: LAYOUTS.some((l) => l.id === saved.layout) ? saved.layout : DEFAULTS.layout,
@@ -79,9 +85,11 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
 
   el.innerHTML = `<div class="smap">
     <div class="smap-bar">
-      <div class="smap-title"><span class="smap-kicker">${ico("spider")}Spidermap<span class="smap-sync" hidden></span></span><h3>${esc(pack.title)}</h3></div>
+      <div class="smap-title"><span class="smap-kicker">${ico("spider")}${esc(kicker)}<span class="smap-sync" hidden></span></span><h3>${esc(heading)}</h3></div>
+      ${barExtra}
       <div class="smap-seg" role="radiogroup" aria-label="Layout">${LAYOUTS.map((l) => `<button type="button" role="radio" data-layout="${l.id}">${ico(l.icon)}<span>${l.name}</span></button>`).join("")}</div>
-      <label class="smap-search">${ico("search")}<input type="search" placeholder="Find a term" aria-label="Find a term on the map" autocomplete="off"><kbd>/</kbd></label>
+      <div class="smap-find"><label class="smap-search">${ico("search")}<input type="search" placeholder="Find a term" aria-label="Find a term on the map" autocomplete="off" aria-controls="smap-results"><kbd>/</kbd></label>
+        <ul class="smap-results smap-glass" id="smap-results" role="listbox" aria-label="Matches" hidden></ul></div>
       <div class="smap-tools">
         <button type="button" class="smap-tool" data-act="recall" title="Hide definitions to test yourself"></button>
         <button type="button" class="smap-tool" data-act="lens" title="Colour each term by how well you remember it">${ico("brain")}<span>Memory</span></button>
@@ -97,14 +105,16 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
             <button type="button" role="menuitem" data-act="copy">${ico("copy")}Copy as an outline</button>
             <button type="button" role="menuitem" data-act="download">${ico("download")}Download as Markdown</button>
             <hr>
+            ${menuItems.length ? `${menuItems.map((m) => `<button type="button" role="menuitem" data-extra="${esc(m.act)}">${ico(m.icon || "download")}${esc(m.label)}</button>`).join("")}<hr>` : ""}
             <button type="button" role="menuitem" data-act="keys">${ico("keyboard")}Keyboard shortcuts <kbd>?</kbd></button>
             <button type="button" role="menuitem" class="danger" data-act="reset">${ico("reset")}Reset this map…</button>
           </div>
         </div>
+        ${onClose ? `<button type="button" class="smap-tool icon-only smap-close" data-act="close" aria-label="Close" title="Close (Esc)">${ico("close")}</button>` : ""}
       </div>
     </div>
     <div class="smap-body">
-      <div class="smap-stage" tabindex="0" role="application" aria-roledescription="mind map" aria-label="Spidermap of ${esc(pack.title)}. Click the map, then drag or scroll to move around; Ctrl or Command and scroll to zoom. Tab to a node, Enter to open it, arrow keys to move it. Press question mark for shortcuts.">
+      <div class="smap-stage" tabindex="0" role="application" aria-roledescription="mind map" aria-label="Mind map of ${esc(heading)}. Click the map, then drag or scroll to move around; Ctrl or Command and scroll to zoom. Tab to a node, Enter to open it, arrow keys to move it. Press question mark for shortcuts.">
         <div class="smap-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
         <div class="smap-world">
           <svg class="smap-edges" aria-hidden="true" overflow="visible">
@@ -141,7 +151,7 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
   // Positions: where the learner put a node, else where the layout puts it. A new node under an arm the learner
   // has moved goes where the layout would put it relative to that arm, so it lands beside its parent.
   function rebuild() {
-    map = buildMap(pack, { learnt, edits: S.edits });
+    map = build(S.edits);
     mem = memoryFor(map, S.data || {});
     intel = insights(map, { questions, memory: mem });
     hidden = new Set([...S.collapsed].filter((id) => map.byId.has(id)).flatMap((id) => descendants(map, id)));
@@ -177,7 +187,7 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
     const s = JSON.parse(snap);
     S.saved = s.saved; S.edits = s.edits; S.collapsed = new Set(s.collapsed);
     learnt.clear(); s.learnt.forEach((t) => learnt.add(t));
-    if (S.selected && !buildMap(pack, { learnt, edits: S.edits }).byId.has(S.selected)) S.selected = null;
+    if (S.selected && !build(S.edits).byId.has(S.selected)) S.selected = null;
     persist();
     const old = pos; rebuild(); const target = pos; pos = old;
     renderNodes(); renderPanel();
@@ -214,7 +224,7 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
   }
   function nodeHtml(n) {
     const c = `#${colourOf(n)}`, m = mem.terms.get(n.id), known = intel.known(n.id), fresh = n.id === justAdded;
-    const cls = `smap-node sm-${n.type}${known ? " learnt" : ""}${n.custom ? " custom" : ""}${m ? ` s-${m.state}` : ""}${m?.due ? " due" : ""}${fresh ? " fresh" : ""}`;
+    const cls = `smap-node sm-${n.type}${known ? " learnt" : ""}${n.custom ? " custom" : ""}${m ? ` s-${m.state}` : ""}${m?.due ? " due" : ""}${fresh ? " fresh" : ""}${n.gap ? " gap" : ""}${n.lk ? ` lk-${n.lk}` : ""}`;
     const attrs = `class="${cls}" data-id="${esc(n.id)}" role="button" tabindex="0" style="--c:${c};--d:${(introOrder.get(n.id) ?? 0) * 0.03}s"`;
     if (n.type === "root") {
       const p = intel.total ? Math.round((intel.learnt / intel.total) * 100) : 0;
@@ -234,7 +244,7 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
       const v = veiled(n);
       return `<div ${attrs} aria-label="${esc(n.label)}${v ? "" : `: ${esc(n.sub)}`}${m ? `. ${STATE[m.state].label}` : ""}${m?.due ? ". Due for review" : ""}${known ? ". Known" : ""}">
         <span class="sm-dot" aria-hidden="true"></span>
-        <span class="sm-txt"><b class="sm-label">${esc(n.label)}</b><span class="sm-def${v ? " veiled" : ""}">${esc(n.sub)}</span>${memChip(m)}</span>
+        <span class="sm-txt">${map.lesson && LESSON_KIND[n.lk] ? `<em class="sm-kick">${esc(LESSON_KIND[n.lk])}</em>` : ""}<b class="sm-label">${esc(n.label)}</b>${n.sub ? `<span class="sm-def${v ? " veiled" : ""}">${esc(n.sub)}</span>` : ""}${memChip(m)}</span>
         ${m?.due ? `<span class="sm-due" aria-hidden="true">Due</span>` : known ? `<span class="sm-tick" aria-hidden="true">${icon("check")}</span>` : ""}</div>`;
     }
     if (n.type === "eq") return `<div ${attrs} aria-label="Formula: ${esc(n.label)}"><span class="sm-ico">${ico("sigma")}</span><span class="sm-txt"><em class="sm-kick">Formula</em><code class="sm-label">${esc(n.label)}</code></span></div>`;
@@ -417,7 +427,9 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
   // questions worth asking, made from this map: a pair that's easy to mix up, and a term that builds on another
   function suggestions() {
     const out = ["What should I learn first?"];
-    const mix = intel.links.find((l) => l.kind === "contrast"), build = intel.links.find((l) => l.kind === "builds");
+    // only short names make a natural question ("What does cardiac output depend on?"), not a lesson's full sentences
+    const named = (id) => { const n = map.byId.get(id); return n && (n.fact?.term || n.label).length <= 32 && !/[.…]$/.test(n.fact?.term || n.label); };
+    const mix = intel.links.find((l) => l.kind === "contrast" && named(l.from) && named(l.to)), build = intel.links.find((l) => l.kind === "builds" && named(l.to));
     // terms read naturally mid-sentence: "systole", but "ECG" and "P wave" keep their capitals
     const short = (id) => { const t = map.byId.get(id).fact?.term || map.byId.get(id).label; return /^[A-Z0-9]{2,}|^[A-Z]\s/.test(t) ? t : t[0].toLowerCase() + t.slice(1); };
     if (mix) out.push(`Compare ${short(mix.from)} and ${short(mix.to)}`);
@@ -445,7 +457,7 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
         ${counts.length ? `<div class="smp-states">${counts.map(([s, n]) => `<span style="--c:#${STATE[s].colour}"><i></i>${n} ${STATE[s].label.toLowerCase()}</span>`).join("")}</div>` : ""}
         <div class="smp-stats"><span><b>${topics}</b>topics</span><span><b>${intel.total}</b>terms</span><span><b>${intel.links.filter((l) => l.kind !== "formula").length}</b>links</span></div>
       </section>
-      ${intel.total ? `<div class="smp-practise-wrap"><button type="button" class="smp-practise" data-act="walk">${ico("target")}<span><b>Practise this map</b><em>${intel.total} terms, weakest and most fundamental first</em></span><kbd>P</kbd></button>
+      ${walkOrder().length ? `<div class="smp-practise-wrap"><button type="button" class="smp-practise" data-act="walk">${ico("target")}<span><b>Practise this map</b><em>${walkOrder().length} ${map.lesson ? "ideas" : "terms"}, weakest and most fundamental first</em></span><kbd>P</kbd></button>
         <div class="smp-quick"><span>Short on time?</span>${[2, 5].map((m) => `<button type="button" data-quick="${m}">${m} min</button>`).join("")}</div></div>` : ""}
       ${rest.length ? `<h4>Insights</h4><ul class="smp-list">${rest.map((x) => `<li><button type="button" class="smp-ins k-${x.kind}" data-ins="${intel.insights.indexOf(x)}">
         <span class="smp-ii">${ico(x.icon)}</span><span class="smp-it"><b>${esc(x.title)}</b><em>${esc(x.detail)}</em>
@@ -474,7 +486,7 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
   }
   function nodePanel(n) {
     const c = `#${colourOf(n)}`;
-    const top = head(ico(n.type === "term" ? "book" : n.icon), `${TYPE_NAME[n.type]}${n.topic != null && n.type !== "topic" ? ` · ${esc(map.byId.get(`t${n.topic}`)?.label || "")}` : ""}`, esc(n.label), `<button type="button" class="smp-x" data-act="deselect" aria-label="Back to Gradify Intelligence">${ico("close")}</button>`, c);
+    const top = head(ico(n.type === "term" ? "book" : n.icon), `${(map.lesson && LESSON_KIND[n.lk]) || TYPE_NAME[n.type]}${n.branch && n.type !== "topic" ? ` · ${esc(map.byId.get(n.branch)?.label || "")}` : ""}`, esc(n.label), `<button type="button" class="smp-x" data-act="deselect" aria-label="Back to Gradify Intelligence">${ico("close")}</button>`, c);
     const acts = [];
     let body = "";
     if (n.type === "term") {
@@ -482,10 +494,10 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
       const into = intel.links.filter((l) => l.kind === "builds" && l.to === n.id).map((l) => l.from);
       const out = intel.links.filter((l) => l.kind !== "contrast" && l.from === n.id).map((l) => l.to);
       const mix = intel.links.filter((l) => l.kind === "contrast" && (l.from === n.id || l.to === n.id)).map((l) => (l.from === n.id ? l.to : l.from));
-      body = `${shown ? `<p class="smp-def">${esc(f.def[0].toUpperCase() + f.def.slice(1))}.</p>` : `<button type="button" class="smp-reveal" data-act="reveal">${ico("eye")}Say it to yourself, then reveal</button>`}
+      body = `${!f.def ? "" : shown ? `<p class="smp-def">${esc(sentence(f.def))}</p>` : `<button type="button" class="smp-reveal" data-act="reveal">${ico("eye")}Say it to yourself, then reveal</button>`}
         ${memSection(n)}
         ${f.card ? `<div class="smp-flash"><em>Flashcard</em><b>${esc(f.card.q)}</b></div>` : ""}
-        ${f.src ? `<blockquote class="smp-src">${ico("quote")}<span><em>From your notes</em>${esc(f.src)}</span></blockquote>` : ""}
+        ${f.src && f.src !== f.def ? `<blockquote class="smp-src">${ico("quote")}<span><em>From your notes</em>${esc(f.src)}</span></blockquote>` : ""}
         ${into.length ? `<h5>Builds on</h5><div class="smp-chips">${into.map((x) => chip(x)).join("")}</div>` : ""}
         ${out.length ? `<h5>Leads to</h5><div class="smp-chips">${out.map((x) => chip(x)).join("")}</div>` : ""}
         ${mix.length ? `<h5>Easy to mix up with</h5><div class="smp-chips">${mix.map((x) => chip(x)).join("")}</div>` : ""}
@@ -523,8 +535,8 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
     return `${head(`<b class="smp-step">${w.i + 1}</b>`, `Practise · ${w.i + 1} of ${w.ids.length}${m ? ` · ${STATE[m.state].label}` : ""}`, esc(n.label), close, `#${colourOf(n)}`)}
       <div class="smp-bar thin"><i style="width:${Math.round((w.i / w.ids.length) * 100)}%"></i></div>
       <div class="smp-body">
-        <div class="smp-flash big"><em>${f.card ? "Flashcard" : "Recall"}</em><b>${esc(f.card?.q || `What is ${n.label}?`)}</b></div>
-        ${w.shown ? `<p class="smp-def">${esc(f.def[0].toUpperCase() + f.def.slice(1))}.</p>${f.src ? `<blockquote class="smp-src">${ico("quote")}<span><em>From your notes</em>${esc(f.src)}</span></blockquote>` : ""}`
+        <div class="smp-flash big"><em>${f.card ? "Flashcard" : "Recall"}</em><b>${esc(f.card?.q || f.prompt || `What is ${n.label}?`)}</b></div>
+        ${w.shown ? `<p class="smp-def">${esc(sentence(f.def))}</p>${f.src && f.src !== f.def ? `<blockquote class="smp-src">${ico("quote")}<span><em>From your notes</em>${esc(f.src)}</span></blockquote>` : ""}`
           : `<button type="button" class="smp-reveal" data-act="walk-show">${ico("eye")}Say it out loud, then reveal <kbd>Space</kbd></button>`}
       </div>
       <div class="smp-acts">${w.shown ? `<button type="button" class="smp-btn primary" data-act="walk-got">${icon("check")}I knew it <kbd>1</kbd></button><button type="button" class="smp-btn" data-act="walk-miss">${ico("reset")}Not yet <kbd>2</kbd></button>` : `<button type="button" class="smp-btn" data-act="walk-skip">Skip</button>`}</div>`;
@@ -730,7 +742,7 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
   // ---------- practise the map: weakest and most fundamental first ----------
   function walkOrder(only = null) {
     const rank = { shaky: 0, fading: 1, new: 2, learning: 3, strong: 5 };
-    const ids = intel.order.filter((id) => !hidden.has(id) && (!only || only.has(id)));
+    const ids = intel.order.filter((id) => { const n = map.byId.get(id); return n && !n.gap && n.fact?.def && !hidden.has(id) && (!only || only.has(id)); });
     return ids.map((id, i) => ({ id, r: (rank[mem.terms.get(id)?.state] ?? 2) + (intel.known(id) ? 4 : 0), i })).sort((a, b) => a.r - b.r || a.i - b.i).map((x) => x.id);
   }
   function startWalk(ids = walkOrder()) {
@@ -828,6 +840,7 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
   const onDocDown = (e) => {
     engaged = stage.contains(e.target); root.classList.toggle("engaged", engaged);
     if (!menu.hidden && !e.target.closest(".smap-more")) toggleMenu(false);
+    if (!e.target.closest(".smap-find")) $(".smap-results").hidden = true;
   };
   // double-click a node to rename it, or empty space to add a note there
   function onDbl(e) {
@@ -843,6 +856,7 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
   function onKey(e) {
     if (e.target.closest?.(".editing") || e.target.matches?.("input, textarea")) {
       if (e.key === "Escape" && e.target === search) { search.value = ""; onSearch(); stage.focus({ preventScroll: true }); }
+      if (e.key === "ArrowDown" && e.target === search) { e.preventDefault(); $(".smap-results button")?.focus(); }
       return;
     }
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "z" && !e.shiftKey) { e.preventDefault(); undo(); return; }
@@ -867,6 +881,14 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); if (S.linking) finishLink(id); else select(id === S.selected ? null : id); return; }
       if (e.key === "F2") { e.preventDefault(); rename(id); return; }
       if ((e.key === "Delete" || e.key === "Backspace") && id !== "root") { e.preventDefault(); remove(id); return; }
+      // arrow keys move between ideas: → to the first child, ← to the parent, ↑ ↓ between siblings
+      if (/^Arrow/.test(e.key) && !e.altKey) {
+        const n = map.byId.get(id), kids = visible().filter((x) => x.parent === id), sibs = n?.parent ? visible().filter((x) => x.parent === n.parent) : [], k = sibs.findIndex((x) => x.id === id);
+        const to = e.key === "ArrowRight" ? kids[0] : e.key === "ArrowLeft" ? map.byId.get(n?.parent) : sibs[k + (e.key === "ArrowDown" ? 1 : -1)];
+        e.preventDefault();
+        if (to) { nodeEls.get(to.id)?.focus({ preventScroll: true }); select(to.id); }
+        return;
+      }
       const step = e.shiftKey ? 60 : 20, mv = { ArrowLeft: [-step, 0], ArrowRight: [step, 0], ArrowUp: [0, -step], ArrowDown: [0, step] }[e.key];
       if (mv && id !== "root") {
         e.preventDefault();
@@ -885,7 +907,7 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
     else if (k === "e" || k === "E") foldAll(false);
     else if (k === "c" || k === "C") foldAll(true);
     else if ((k === "p" || k === "P") && !S.walk) startWalk();
-    else if (k === "Escape") { S.selected = null; S.focus = null; renderPanel(); highlight(); }
+    else if (k === "Escape") { if (!S.selected && !S.focus && !S.query && onClose) { onClose(); return; } S.selected = null; S.focus = null; renderPanel(); highlight(); }
   }
 
   // ---------- clicks on the bar, menu, zoom controls and panel ----------
@@ -895,11 +917,13 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
     const sw = t.closest("[data-colour]"); if (sw && S.selected) { setColour(S.selected, sw.dataset.colour); return; }
     const un = t.closest("[data-unlink]");
     if (un) { const [f, to] = un.dataset.unlink.split("|"); checkpoint(); S.edits.links = S.edits.links.filter((l) => !(l.from === f && l.to === to)); persist(); refreshAll(); snack("Link removed", true); return; }
+    const extra = t.closest("[data-extra]"); if (extra) { toggleMenu(false); menuItems.find((m) => m.act === extra.dataset.extra)?.run(api); return; }
+    if (onHead && t.closest(".smap-bar") && onHead(e, api)) return;
     const sug = t.closest("[data-ask]"); if (sug) { runAsk(sug.dataset.ask); return; }
     const gap = t.closest("[data-gap]"); if (gap) { const w = gap.dataset.gap; addNote("root", null, w[0].toUpperCase() + w.slice(1)); return; }
     // a quick review: as many of the most urgent terms as fit, at about 25 seconds each (as Smart Plan reckons a card)
     const quick = t.closest("[data-quick]"); if (quick) { startWalk(walkOrder().slice(0, Math.max(3, Math.floor((+quick.dataset.quick * 60) / 25)))); return; }
-    const go = t.closest("[data-go]"); if (go && !S.walk) { select(go.dataset.go, { centre: true }); return; }
+    const go = t.closest("[data-go]"); if (go && !S.walk) { if (go.closest(".smap-results")) $(".smap-results").hidden = true; select(go.dataset.go, { centre: true }); return; }
     const ins = t.closest("[data-ins]");
     if (ins) {
       const x = intel.insights[+ins.dataset.ins];
@@ -921,6 +945,7 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
       case "out": zoomAt(W, H, 0.8); break;
       case "fit": fit(); break;
       case "undo": undo(); break;
+      case "close": onClose?.(); break;
       case "menu": toggleMenu(); break;
       case "tidy": tidy(); break;
       case "expand-all": foldAll(false); break;
@@ -969,7 +994,17 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
     S.focus = ids.length ? ids : S.asked?.a?.ids?.length ? S.asked.a.ids : null;
     highlight();
   }
-  function onSearch() { S.query = search.value; S.focus = null; highlight(); }
+  const pathOf = (id) => { const p = []; for (let n = map.byId.get(map.byId.get(id)?.parent); n && n.type !== "root"; n = map.byId.get(n.parent)) p.unshift(n.label); return p.join(" › "); };
+  function onSearch() {
+    S.query = search.value; S.focus = null;
+    const q = S.query.trim().toLowerCase(), list = $(".smap-results");
+    const hits = q.length < 2 ? [] : map.nodes.filter((n) => n.type !== "root" && `${n.label} ${n.sub || ""}`.toLowerCase().includes(q));
+    // a match inside a collapsed arm opens it
+    if (hits.some((n) => hidden.has(n.id))) { hits.forEach((n) => { for (let p = map.byId.get(n.parent); p; p = map.byId.get(p.parent)) S.collapsed.delete(p.id); }); persist(); rebuild(); renderNodes(); }
+    list.innerHTML = q.length < 2 ? "" : hits.length ? hits.slice(0, 8).map((n) => `<li role="option"><button type="button" data-go="${esc(n.id)}"><b>${esc(n.label)}</b>${pathOf(n.id) ? `<span>${esc(pathOf(n.id))}</span>` : ""}</button></li>`).join("") + (hits.length > 8 ? `<li class="more">${hits.length - 8} more lit on the map</li>` : "") : `<li class="more">Nothing on this map matches</li>`;
+    list.hidden = q.length < 2;
+    highlight();
+  }
   function onSearchKey(e) {
     if (e.key !== "Enter") return;
     const q = S.query.trim().toLowerCase();
@@ -1020,6 +1055,42 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
   document.addEventListener("visibilitychange", onVisible);
   window.addEventListener("storage", onStorage);
 
+  // what an export needs: the map as shapes in its own coordinates (kit/maps/view.js toSvg and toPng draw it)
+  function scene() {
+    const k = S.view.k, wb = world.getBoundingClientRect();
+    const at = (r) => ({ x: (r.left - wb.left) / k, y: (r.top - wb.top) / k, w: r.width / k, h: r.height / k });
+    const dark = getComputedStyle(root).colorScheme !== "light" && document.documentElement.dataset.theme !== "light";
+    const paths = edges.map((e) => { const cs = getComputedStyle(e.el); return { d: e.el.getAttribute("d"), dx: 0, dy: 0, stroke: cs.stroke, width: parseFloat(cs.strokeWidth) || 1.5, fill: "none", dash: cs.strokeDasharray !== "none" ? cs.strokeDasharray : null, op: +cs.opacity }; }).filter((p) => p.d && p.op > 0.05);
+    const boxes = [];
+    for (const [id, node] of nodeEls) {
+      const cs = getComputedStyle(node), b = at(node.getBoundingClientRect()), isRoot = id === "root";
+      const lines = [], range = document.createRange(), tw = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+      for (let t = tw.nextNode(); t; t = tw.nextNode()) {
+        if (!t.textContent.trim() || t.parentElement.closest("svg, .sm-fold, .sm-tick, .sm-due")) continue;
+        // the font from its parts: some browsers report the "font" shorthand as empty
+        const ps = getComputedStyle(t.parentElement), font = `${ps.fontStyle} ${ps.fontWeight} ${ps.fontSize} ${ps.fontFamily}`;
+        for (const w of t.textContent.matchAll(/\S+/g)) {
+          range.setStart(t, w.index); range.setEnd(t, w.index + w[0].length);
+          const r = range.getClientRects()[0]; if (!r) continue;
+          const p = at(r), last = lines.at(-1);
+          if (last && Math.abs(last.y - p.y) < p.h / 2 && last.font === font) last.text += ` ${w[0]}`;
+          else lines.push({ text: w[0], x: p.x, y: p.y, h: p.h, font, color: ps.color, size: parseFloat(ps.fontSize), weight: ps.fontWeight, family: ps.fontFamily, italic: ps.fontStyle === "italic" });
+        }
+      }
+      // one box per line style: the node, then its text in the colours and weights it's drawn with
+      boxes.push({ ...b, r: isRoot ? b.w / 2 : parseFloat(cs.borderTopLeftRadius) || 0, fill: isRoot ? (dark ? "#ffffff" : "#04060d") : dark ? "#14172299" : "#ffffffee",
+        stroke: isRoot ? "transparent" : getComputedStyle(node.querySelector(".sm-dot, .sm-ico") || node).backgroundColor, sw: isRoot ? 0 : 1.2, color: cs.color,
+        font: `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`, size: parseFloat(cs.fontSize), weight: cs.fontWeight, family: cs.fontFamily, italic: false, lines: [], tag: null });
+      for (const l of lines) boxes.push({ x: l.x, y: l.y, w: 0, h: l.h, r: 0, fill: "transparent", stroke: "transparent", sw: 0, color: l.color, font: l.font, size: l.size,
+        weight: l.weight, family: l.family, italic: l.italic, lines: [{ text: l.text, x: l.x, y: l.y, h: l.h }], tag: null });
+    }
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+    for (const b of boxes) if (b.w) { x0 = Math.min(x0, b.x); y0 = Math.min(y0, b.y); x1 = Math.max(x1, b.x + b.w); y1 = Math.max(y1, b.y + b.h); }
+    const pad = 56;
+    return { x: x0 - pad, y: y0 - pad, w: x1 - x0 + pad * 2, h: y1 - y0 + pad * 2, paths, boxes, bg: dark ? "#05060a" : "#f5f6f9", title: heading, map: kicker };
+  }
+  const api = { scene, fit: () => fit(), get map() { return map; } };
+
   rebuild();
   root.classList.add("intro");
   renderAll();
@@ -1027,7 +1098,7 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
   setTimeout(() => root.classList.remove("intro"), 2200);
   (window.requestIdleCallback || ((f) => setTimeout(f, 250)))(sync, { timeout: 1200 });
 
-  return {
+  return Object.assign(api, {
     refresh() { refreshAll(); sync(); },
     destroy() {
       alive = false;
@@ -1039,5 +1110,5 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
       window.removeEventListener("pointermove", onMove); window.removeEventListener("pointerup", onUp); window.removeEventListener("pointercancel", onUp);
       el.innerHTML = "";
     },
-  };
+  });
 }
