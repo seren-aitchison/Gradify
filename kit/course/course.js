@@ -880,8 +880,14 @@ export function mountCourse(root, cfg) {
 
   const RATE = ["again", "hard", "good", "easy"];
   const SURE = [["sure", "I know it", "J"], ["unsure", "Not sure", "K"], ["guess", "No idea", "L"]];
+  let reviewCtl = null;   // the Review session in progress: its keys and clicks stop when another starts or the page moves on
   async function viewReview() {
-    await reviewPool(); paintHud();
+    reviewCtl?.abort();
+    const ctl = reviewCtl = new AbortController();
+    addEventListener("hashchange", () => ctl.abort(), { once: true, signal: ctl.signal });
+    await reviewPool();
+    if (ctl.signal.aborted) return;   // left (or re-rendered) while the notes loaded
+    paintHud();
     const due = shuffle(dueCards()).slice(0, 30);
     const learned = Object.keys(S.cards).length, total = cardPool.length;
     if (!due.length) {
@@ -892,23 +898,22 @@ export function mountCourse(root, cfg) {
     // the answer and rate it. Scheduling (kit/learning/srs.js), the attempt record and XP are as before.
     // sure: the "How sure are you?" answer, recorded with the rating as in the study app (kit/app/main.js), so
     // confident wrong answers show up in calibration; t0: when this card was shown, for the time taken
-    let k = 0, done = 0, shown = false, attempt = "", grade = null, sure = null, t0 = Date.now();
+    let k = 0, done = 0, shown = false, attempt = "", grade = null, sure = null, t0 = Date.now(), at = Date.now();
     const CONFIDENCE = { sure: 3, unsure: 2, guess: 1 };
-    const ctl = new AbortController();   // keys and clicks last as long as this session
-    addEventListener("hashchange", () => ctl.abort(), { once: true });
     const plain = (s) => String(s).replace(/\^\{([^}]*)\}|_\{([^}]*)\}/g, "$1$2").replace(/[*`]/g, "");
     const reveal = (how = null) => {
       if (shown || k >= due.length) return;
-      sure = how;
+      sure = how; at = Date.now();   // the intervals shown on the rating buttons, and the one applied, are from this moment
       attempt = main.querySelector("#co-typed")?.value ?? attempt;
       grade = gradeTyped(attempt, plain(due[k].back));
       shown = true; step();
+      main.querySelector(".rate4")?.focus();   // the group, not a button, so a held Enter can't press Again
     };
     const rate = (r) => {
       if (!shown || !RATE.includes(r)) return;
       haptic(r === "again" ? "warn" : r === "easy" ? "success" : "select");
       const c = due[k], st = S.cards[c.id] || {};
-      S.cards[c.id] = { ...st, ...schedule(st, r) }; done++; k++;
+      S.cards[c.id] = { ...st, ...schedule(st, r, { now: at }) }; done++; k++;
       // the rating is evidence too: recall, and retention once the card comes back after a gap
       const score = { again: 0, hard: 0.6, good: 1, easy: 1 }[r];
       record({ Q: { type: "card" }, key: `card:${c.id}`, l: byId[c.lesson] }, "review", "cards", { score, correct: score >= 0.6, method: "self" }, { response: r, confidence: CONFIDENCE[sure] ?? null, ms: Date.now() - t0 });
@@ -917,7 +922,7 @@ export function mountCourse(root, cfg) {
     };
     const step = () => {
       if (k >= due.length) { ctl.abort(); main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic("cards")}</div><h2>${done} cards reviewed</h2><p>+${done * XP.review} XP. Come back tomorrow for the next batch.</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Back to the path</span></a> ${revisitLink()}</div>`; save(); return; }
-      const c = due[k], st = S.cards[c.id] || {}, pv = preview(st), l = byId[c.lesson];
+      const c = due[k], st = S.cards[c.id] || {}, pv = preview(st, { now: at }), l = byId[c.lesson];
       main.innerHTML = `<section class="co-revsess study-session"><div class="co-crumbs"><span>Review · ${k + 1} of ${due.length}</span><a href="#/lesson/${c.lesson}">${esc(l.title)}</a></div><div class="co-qbar"><i style="width:${(k / due.length) * 100}%"></i></div>
         <article class="flash-card ${shown ? "shown" : ""}" aria-live="polite">
           <span class="fc-icon" data-g3d="${esc(`${c.front} ${l.title}`)}" data-g3d-size="58"></span>
@@ -927,7 +932,7 @@ export function mountCourse(root, cfg) {
           ${shown && grade ? `<div class="fc-typed v-${grade.verdict}" role="status"><b>${VERDICT_TEXT[grade.verdict]}</b><span>You typed “${esc(attempt)}”</span></div>` : ""}
           ${shown ? `<p class="fc-back">${inline(c.back)}</p>` : ""}
         </article>
-        ${shown ? `<div class="rate4" role="group" aria-label="How well did you know it?">${RATE.map((r, i) => `<button type="button" class="r-${r}${grade?.suggest === r ? " suggested" : ""}" data-r="${r}"${grade?.suggest === r ? ' aria-describedby="co-suggest"' : ""}><b>${r[0].toUpperCase() + r.slice(1)}</b><span>${fmtInterval(pv[r])}</span><kbd>${i + 1}</kbd></button>`).join("")}${grade ? `<p class="suggest-note" id="co-suggest">Suggested from what you typed</p>` : ""}</div>`
+        ${shown ? `<div class="rate4" role="group" tabindex="-1" aria-label="How well did you know it?">${RATE.map((r, i) => `<button type="button" class="r-${r}${grade?.suggest === r ? " suggested" : ""}" data-r="${r}"${grade?.suggest === r ? ' aria-describedby="co-suggest"' : ""}><b>${r[0].toUpperCase() + r.slice(1)}</b><span>${fmtInterval(pv[r])}</span><kbd>${i + 1}</kbd></button>`).join("")}${grade ? `<p class="suggest-note" id="co-suggest">Suggested from what you typed</p>` : ""}</div>`
           : `<div class="sure" role="group" aria-label="How sure are you? Choosing one shows the answer.">
               <span class="sure-q">How sure are you?</span>
               ${SURE.map(([id, label, key]) => `<button type="button" data-sure="${id}" class="sure-${id}"><b>${label}</b><kbd>${key}</kbd></button>`).join("")}
@@ -944,6 +949,10 @@ export function mountCourse(root, cfg) {
     }, { signal: ctl.signal });
     addEventListener("keydown", (e) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (document.querySelector(".co-modal")) return;   // a level-up dialog is open: its buttons have the keyboard
+      if (e.isComposing || e.keyCode === 229) return;    // an input method is still composing (its Enter picks a word)
+      // Enter and Space on a link or button activate it (a sure button reveals with its answer, the lesson link opens)
+      if ((e.key === " " || e.key === "Enter") && e.target.closest?.("a, button, summary")) return;
       // typing an answer: Enter turns the card over and grades it
       if (e.target.closest?.("input, textarea, select")) { if (!shown && e.key === "Enter" && e.target.id === "co-typed") { e.preventDefault(); reveal(); } return; }
       const how = SURE.find(([, , key]) => key.toLowerCase() === e.key.toLowerCase());
