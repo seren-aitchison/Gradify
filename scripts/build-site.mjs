@@ -31,6 +31,8 @@ export const PUBLISH = {
 export const EXCLUDE = {
   top: {
     ".github": "CI configuration",
+    ".claude": "Claude Code dev-server settings",
+    "department": "the local AI agent orchestrator (Python), run on a developer's machine",
     ".gitignore": "repository settings",
     ".mcp.json": "Claude Code MCP server settings",
     "README.md": "repository documentation",
