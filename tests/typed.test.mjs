@@ -66,6 +66,7 @@ test("an answer that negates the card is wrong, however many words match", () =>
   // a word in another claim doesn't clear a flipped one: both claims reversed
   assert.equal(v("Cats are not mammals; birds are mammals", "Cats are mammals; birds are not mammals"), "wrong");
   assert.equal(v("cats are mammals; birds are not mammals", "Cats are mammals; birds are not mammals"), "right");
+  assert.equal(v("Birds are not mammals; cats are mammals", "Cats are mammals; birds are not mammals"), "right", "the same claims in another order");
   assert.notEqual(v("It dissolves in water.", "It does not dissolve in water."), "right");
 });
 
