@@ -75,7 +75,7 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 
 | Course | Lessons | Overall | Accuracy | Completeness | Clarity | Progression | Application | Assessment | Accessibility | Engagement | Retention |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Physics | 1308 | **53** | 16 | 11 | 84 | 15 | 84 | 63 | 82 | 84 | 33 |
+| Physics | 1308 | **53** | 17 | 13 | 85 | 16 | 84 | 64 | 83 | 84 | 34 |
 | Law | 480 | **66** | 54 | 97 | 94 | 3 | 37 | 68 | 100 | 55 | 88 |
 | Pharmacy | 318 | **72** | 51 | 96 | 99 | 8 | 68 | 81 | 100 | 65 | 77 |
 | Nursing | 497 | **74** | 49 | 98 | 98 | 47 | 50 | 89 | 100 | 56 | 75 |
@@ -115,27 +115,26 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Fix | Lessons |
 |---|---|
 | Add flashcards for spaced retrieval (Q:) | 9,692 |
-| Name what this builds on (PRE:) | 5,938 |
-| State the level (LV:) | 3,575 |
-| Say how strong the evidence is (EV:) | 3,291 |
+| Name what this builds on (PRE:) | 5,917 |
+| State the level (LV:) | 3,553 |
+| Say how strong the evidence is (EV:) | 3,269 |
 | Even out answer lengths | 3,079 |
-| Teach every objective | 2,020 |
-| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,702 |
-| Add check questions | 1,699 |
+| Teach every objective | 2,027 |
+| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,687 |
+| Add check questions | 1,684 |
 | Add a worked example (X:) | 1,265 |
-| Cite at least two sources (SRC:) | 1,226 |
-| Date every source, so it can be rechecked | 1,151 |
-| State at least two learning objectives (O:) | 1,151 |
-| Define the key terms (T:) | 1,151 |
-| End with a summary (SUM:) | 1,151 |
-| Define terms where they're first used (T:) | 1,151 |
+| Cite at least two sources (SRC:) | 1,204 |
+| Date every source, so it can be rechecked | 1,129 |
+| State at least two learning objectives (O:) | 1,129 |
+| Define the key terms (T:) | 1,129 |
+| End with a summary (SUM:) | 1,129 |
+| Define terms where they're first used (T:) | 1,129 |
 
 ## The 30 lessons to improve first
 
 | Course | Lesson | Overall | Fixes |
 |---|---|---|---|
 | Physics | Minkowski spacetime | 40 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
-| Physics | Hohmann transfers | 41 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Expectation values | 41 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Ultrafast molecular dynamics | 41 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Nuclear fission | 41 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
@@ -164,6 +163,7 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Physics | Climate sensitivity | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Biomechanics | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Neural signal processing | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
+| Physics | Wave equations | 43 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 
 ## The constitution, article by article
 

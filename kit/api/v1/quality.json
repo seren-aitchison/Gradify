@@ -586,15 +586,15 @@
    "lessons": 1308,
    "overall": 53,
    "dims": {
-    "accuracy": 16,
-    "completeness": 11,
-    "clarity": 84,
-    "progression": 15,
+    "accuracy": 17,
+    "completeness": 13,
+    "clarity": 85,
+    "progression": 16,
     "application": 84,
-    "assessment": 63,
-    "accessibility": 82,
+    "assessment": 64,
+    "accessibility": 83,
     "engagement": 84,
-    "retention": 33
+    "retention": 34
    },
    "serves": [
     {
