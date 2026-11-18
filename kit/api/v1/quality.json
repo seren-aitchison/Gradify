@@ -14,7 +14,7 @@
   "assessment": 87,
   "accessibility": 95,
   "engagement": 78,
-  "retention": 70
+  "retention": 71
  },
  "coverage": {
   "verified": 0,
@@ -584,17 +584,17 @@
    "slug": "physics",
    "name": "Physics",
    "lessons": 1308,
-   "overall": 54,
+   "overall": 55,
    "dims": {
-    "accuracy": 18,
-    "completeness": 15,
+    "accuracy": 19,
+    "completeness": 16,
     "clarity": 85,
-    "progression": 18,
-    "application": 84,
-    "assessment": 64,
+    "progression": 19,
+    "application": 85,
+    "assessment": 65,
     "accessibility": 83,
     "engagement": 84,
-    "retention": 35
+    "retention": 36
    },
    "serves": [
     {

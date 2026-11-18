@@ -21,7 +21,7 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Assessment | `█████████░ 87` | Enough questions, more than one type, each explained, no giveaway answer lengths. |
 | Accessibility | `██████████ 95` | Headed sections, digestible paragraphs, lists, a summary to return to. |
 | Engagement | `████████░░ 78` | Variety of ways in: examples, key points, interactives, pitfalls. Supports attention, not clicks. |
-| Retention | `███████░░░ 70` | Flashcards for spaced retrieval, key terms and a summary. |
+| Retention | `███████░░░ 71` | Flashcards for spaced retrieval, key terms and a summary. |
 
 ## Curriculum coverage: what Gradify can honestly claim
 
@@ -75,7 +75,7 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 
 | Course | Lessons | Overall | Accuracy | Completeness | Clarity | Progression | Application | Assessment | Accessibility | Engagement | Retention |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Physics | 1308 | **54** | 18 | 15 | 85 | 18 | 84 | 64 | 83 | 84 | 35 |
+| Physics | 1308 | **55** | 19 | 16 | 85 | 19 | 85 | 65 | 83 | 84 | 36 |
 | Law | 480 | **66** | 54 | 97 | 94 | 3 | 37 | 68 | 100 | 55 | 88 |
 | Pharmacy | 318 | **72** | 51 | 96 | 99 | 8 | 68 | 81 | 100 | 65 | 77 |
 | Nursing | 497 | **74** | 49 | 98 | 98 | 47 | 50 | 89 | 100 | 56 | 75 |
@@ -115,20 +115,20 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Fix | Lessons |
 |---|---|
 | Add flashcards for spaced retrieval (Q:) | 9,692 |
-| Name what this builds on (PRE:) | 5,893 |
-| State the level (LV:) | 3,528 |
-| Say how strong the evidence is (EV:) | 3,244 |
+| Name what this builds on (PRE:) | 5,875 |
+| State the level (LV:) | 3,509 |
+| Say how strong the evidence is (EV:) | 3,225 |
 | Even out answer lengths | 3,079 |
-| Teach every objective | 2,032 |
-| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,662 |
-| Add check questions | 1,659 |
+| Teach every objective | 2,033 |
+| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,643 |
+| Add check questions | 1,640 |
 | Add a worked example (X:) | 1,265 |
-| Cite at least two sources (SRC:) | 1,179 |
-| Date every source, so it can be rechecked | 1,104 |
-| State at least two learning objectives (O:) | 1,104 |
-| Define the key terms (T:) | 1,104 |
-| End with a summary (SUM:) | 1,104 |
-| Define terms where they're first used (T:) | 1,104 |
+| Cite at least two sources (SRC:) | 1,160 |
+| Date every source, so it can be rechecked | 1,085 |
+| State at least two learning objectives (O:) | 1,085 |
+| Define the key terms (T:) | 1,085 |
+| End with a summary (SUM:) | 1,085 |
+| Define terms where they're first used (T:) | 1,085 |
 
 ## The 30 lessons to improve first
 
@@ -142,8 +142,6 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Physics | Grand unified theories | 41 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Neutron stars | 41 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Cosmic microwave background | 41 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
-| Physics | Bending and torsion | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
-| Physics | Beam deflection | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Biot–Savart law | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Microwaves | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Protons, neutrons and nucleons | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
@@ -164,6 +162,8 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Physics | Biomechanics | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Neural signal processing | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Wave equations | 43 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
+| Physics | Dispersion | 43 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
+| Physics | Huygens' principle | 43 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 
 ## The constitution, article by article
 
