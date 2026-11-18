@@ -155,7 +155,7 @@ function userPrompt(o) {
 Document title: ${o.title}
 
 <notes>
-${o.text}
+${o.text || (o.attached ? "(The notes are in the attached pages above, photographed or scanned. Read every page, including handwriting, arrows, diagrams and margin notes; quote the notes as they are written; and where a word can't be read, leave it out rather than guess.)" : "")}
 </notes>
 
 Build the knowledge pack for these notes.`;
@@ -442,7 +442,9 @@ function packStats(pack, cards) {
 
 // ---------- Function ----------
 // Supabase Edge Function: study-pack
-// POST { mode: "pack", title, site, level, text, pdfBase64?, documentId? }  → { pack, cards, stats, packId, reused? }
+// POST { mode: "pack", title, site, level, text, pdfBase64?, images?, documentId? }  → { pack, cards, stats, packId, reused? }
+//      images: up to 5 photos of notes (handwritten or printed pages), [{ data: base64, type: "image/jpeg" | "image/png" |
+//      "image/webp" }], read by Claude like a scanned PDF (Gradify Pro's photo-to-cards, kit/tools/cardmaker.js)
 // POST { mode: "card", fact, notes, avoid, kind? }                         → { card }   (regenerate one card)
 // POST { mode: "questions", title, site, level, text, topics }              → { cards, reused? } (why and application
 //      questions for a deck made before they existed)
@@ -528,12 +530,19 @@ Use only what the fact and notes say. Front under 25 words, back under 40. Never
 
     const text = String(body.text ?? "");
     const hasPdf = typeof body.pdfBase64 === "string" && body.pdfBase64.length > 0;
-    if (!text.trim() && !hasPdf) return json(req, { error: "No notes were sent." }, 400);
+    // photos of notes: at most 5, each a JPEG, PNG or WebP of at most about 5 MB (Claude's limit per image)
+    const IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp"];
+    const images = (Array.isArray(body.images) ? body.images : []).filter((im: { data?: unknown; type?: unknown }) => typeof im?.data === "string" && im.data.length > 0 && IMAGE_TYPES.includes(String(im.type)));
+    if (Array.isArray(body.images) && images.length !== body.images.length) return json(req, { error: "Photos must be JPEG, PNG or WebP images." }, 400);
+    if (images.length > 5) return json(req, { error: "Send at most 5 photos at a time." }, 400);
+    if (images.some((im: { data: string }) => im.data.length > 6_900_000)) return json(req, { error: "One of those photos is too large. Try a smaller photo." }, 413);
+    const hasImages = images.length > 0;
+    if (!text.trim() && !hasPdf && !hasImages) return json(req, { error: "No notes were sent." }, 400);
     if (hasPdf && body.pdfBase64.length > 30_000_000) return json(req, { error: "That PDF is too large." }, 413);
     if (mode === "questions" && !text.trim()) return json(req, { error: "These notes have no text to write questions from." }, 400);
     const topics = (Array.isArray(body.topics) ? body.topics : []).map(String).slice(0, 20);
     // the learner's focus changes what's written, so it's part of what makes a request the same as an earlier one
-    const notesHash = await sha256(JSON.stringify([mode, text, hasPdf ? await sha256(body.pdfBase64) : null, mode === "questions" ? topics : null, ...(mode === "pack" && focusOf(body.focus).length ? [focusOf(body.focus)] : [])]));
+    const notesHash = await sha256(JSON.stringify([mode, text, hasPdf ? await sha256(body.pdfBase64) : null, ...(hasImages ? [await Promise.all(images.map((im: { data: string }) => sha256(im.data)))] : []), mode === "questions" ? topics : null, ...(mode === "pack" && focusOf(body.focus).length ? [focusOf(body.focus)] : [])]));
     const engine = mode === "pack" ? "claude" : "claude-questions";
 
     // the same notes again: copy the learner's saved result (a copy, so linking it to a new deck never takes it from
@@ -548,7 +557,7 @@ Use only what the fact and notes say. Front under 25 words, back under 40. Never
       return json(req, { packId: copy.id, pack: p.pack, cards, stats: p.stats ?? packStats(p.pack, cards), model: p.model, reused: true });
     }
 
-    const prompt = userPrompt({ title: String(body.title ?? "My notes").slice(0, 200), site: String(body.site ?? "Gradify"), level: String(body.level ?? "undergraduate"), text, today: new Date().toISOString().slice(0, 10), focus: focusOf(body.focus) });
+    const prompt = userPrompt({ title: String(body.title ?? "My notes").slice(0, 200), site: String(body.site ?? "Gradify"), level: String(body.level ?? "undergraduate"), text, today: new Date().toISOString().slice(0, 10), focus: focusOf(body.focus), attached: !text.trim() && (hasImages || hasPdf) });
     // notes longer than the learner's plan allows are refused before any Claude call (the use is given back)
     const check = async (claim: { plan: string }) => {
       const { data } = await db.from("ai_plan_caps").select("pack_chars").eq("plan", claim.plan).maybeSingle();
@@ -578,6 +587,8 @@ The learner already has recall flashcards for these notes. Write only the deeper
     // Scanned or handwritten PDFs have no text layer: send the pages for Claude to read.
     const sendPdf = hasPdf && text.trim().length < 200;
     if (sendPdf) content.push({ type: "document", source: { type: "base64", media_type: "application/pdf", data: body.pdfBase64 } });
+    // photos of notes come before the instructions, in the order taken, like the pages of a scanned PDF
+    for (const im of images) content.push({ type: "image", source: { type: "base64", media_type: im.type as "image/jpeg" | "image/png" | "image/webp", data: im.data } });
     content.push({ type: "text", text: prompt });
     // Two calls under one claim: Claude writes the pack, then a separate request reviews every card against the notes
     // (kit/notes/pack.js: REVIEW_PROMPT). Their token counts are added together, so the ledger and allowance see one
@@ -601,7 +612,7 @@ The learner already has recall flashcards for these notes. Write only the deeper
     return send(await runAi(deps, {
       mode, site, check, maxOutput: MAX_OUTPUT.pack + (REVIEW_ON ? MAX_OUTPUT.review : 0),
       // a scanned page costs roughly 1,500 to 3,000 tokens; reserve generously. The review reads the notes again.
-      estInput: estimateTokens(SYSTEM_PROMPT, prompt) * (REVIEW_ON ? 2 : 1) + (REVIEW_ON ? estimateTokens(REVIEW_PROMPT) : 0) + (sendPdf ? Math.ceil(body.pdfBase64.length / 40) : 0),
+      estInput: estimateTokens(SYSTEM_PROMPT, prompt) * (REVIEW_ON ? 2 : 1) + (REVIEW_ON ? estimateTokens(REVIEW_PROMPT) : 0) + (sendPdf ? Math.ceil(body.pdfBase64.length / 40) : 0) + images.length * 1800,
       model: MODEL, call: generateAndReview,
       parse: async (msg: Anthropic.Beta.BetaMessage) => {
         const pack = JSON.parse(textOf(msg));

@@ -22,6 +22,7 @@ E: magnification = image size / actual size
 X: A cell is 25 mm across in a photograph taken at ×500. What is its actual size?
 > Actual size = image size ÷ magnification = 25 mm ÷ 500 = 0.05 mm.
 > 0.05 mm × 1000 = 50 µm.
+- The theory rests on **observations** made with better and better microscopes: Hooke saw the walls of dead cork cells (1665), van Leeuwenhoek saw living single-celled organisms (1670s), Schleiden and Schwann found cells in every plant and animal they examined (1838–39), and observations of cells dividing led Remak and Virchow to conclude that cells come only from cells (1850s).
 K: Every organism is made of cells, and every cell comes from another cell: life is continuous at the cellular level.
 !: Confusing magnification with resolution. Enlarging a blurry image more doesn't reveal more detail; only better resolution does.
 T: Cell theory | All organisms are made of cells, the cell is the basic unit of life, and cells arise only from existing cells
@@ -432,6 +433,7 @@ H: Smooth ER: lipids, detoxification and calcium
 - **Detoxifies** drugs and toxins, especially in liver cells, using enzymes that make them more water-soluble so they can be excreted.
 - **Stores calcium ions**: in muscle, the smooth ER (sarcoplasmic reticulum) releases Ca²⁺ to trigger contraction.
 P: A plasma cell making antibodies is full of rough ER; a liver cell exposed to alcohol or some drugs expands its smooth ER.
+- The **functions of each**, side by side: rough ER makes, folds and modifies proteins for secretion, for membranes and for lysosomes, then sends them to the Golgi apparatus in vesicles; smooth ER makes lipids and steroid hormones, detoxifies drugs and toxins, and stores calcium ions.
 K: Rough ER makes and folds proteins for export and membranes; smooth ER makes lipids, detoxifies and stores calcium.
 !: Thinking the rough ER makes all the cell's proteins. Proteins that stay in the cytosol are made on free ribosomes.
 T: Rough endoplasmic reticulum | ER with ribosomes on its surface, where proteins for secretion and membranes are made

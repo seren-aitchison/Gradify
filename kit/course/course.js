@@ -28,9 +28,12 @@ import { paceFor } from "../learning/pace.js";
 import { trackView, track } from "../core/analytics.js";
 import { callFunction } from "../data/functions.js";
 import { mergeProgress, cloudCopy, mergeAttempts, queueAttempt, outboxAttempts, confirmAttempts } from "./progress.js";
-import { access, plusPanelHtml } from "../data/plan.js";
+import { access, plusPanelHtml, promptPlus } from "../data/plan.js";
+import { gate, lockedHtml } from "../data/limits.js";
+import { mapsSectionHtml, wireMaps } from "../maps/view.js";
 import { lessonTimer, addTime, MIN_LOG_MS, minutesPerLesson } from "./lesson-time.js";
 import { hydrate as glassIcons } from "../core/glass-icons.js";
+import { diagramsFor, diagramForCard, glassDiagram } from "../core/glass-diagrams.js";
 import { mountRevalidation } from "./revalidation.js";
 import { tutorEvent } from "../intel/experiments.js";
 import { scoreFeedback } from "../assess/tutor.js";
@@ -66,6 +69,8 @@ const ICON = {
   save: '<path d="M6 3h9l4 4v13a1 1 0 01-1 1H6a1 1 0 01-1-1V4a1 1 0 011-1z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 3v5h7V3M8 21v-7h8v7" fill="none" stroke="currentColor" stroke-width="2"/>',
   target: '<circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/>',
   flag: '<path d="M6 21V4M6 4h11l-2 4 2 4H6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
+  clock: '<circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+  sparkles: '<path d="M10 3.5l1.6 4.4L16 9.5l-4.4 1.6L10 15.5l-1.6-4.4L4 9.5l4.4-1.6z M17.5 13l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z" fill="currentColor"/>',
   search: '<circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
 };
 const ic = (n, cls = "") => `<svg class="co-ic ${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICON[n]}</svg>`;
@@ -383,16 +388,27 @@ export function mountCourse(root, cfg) {
   // the results float above the page: inside the tab bar, which scrolls sideways, they were clipped out of sight
   const res = Object.assign(document.createElement("div"), { className: "co-results co-float", hidden: true });
   document.body.append(res);
+  // below the search box, sized to the space that's really visible (a phone's keyboard takes the bottom half);
+  // above it when there's more room there
   const placeResults = () => {
     if (res.hidden) return;
     const r = q.closest(".co-search").getBoundingClientRect(), w = Math.min(420, innerWidth - 16);
+    const vh = window.visualViewport?.height ?? innerHeight, below = vh - r.bottom - 16, above = r.top - 16;
     res.style.width = `${w}px`;
-    res.style.top = `${Math.round(r.bottom + 8)}px`;
     res.style.left = `${Math.round(Math.min(Math.max(8, r.right - w), innerWidth - w - 8))}px`;
+    if (below >= 220 || below >= above) { res.style.top = `${Math.round(r.bottom + 8)}px`; res.style.maxHeight = `${Math.max(120, Math.round(below))}px`; }
+    else { const h = Math.min(res.scrollHeight, above); res.style.maxHeight = `${Math.round(above)}px`; res.style.top = `${Math.round(Math.max(8, r.top - 8 - h))}px`; }
   };
   addEventListener("resize", placeResults); addEventListener("scroll", placeResults, { passive: true });
-  // opening the search in a crowded bar scrolls it into view (after its width transition)
-  q.addEventListener("focus", () => setTimeout(() => { if (tabs.classList.contains("tight")) { tabs.scrollLeft = tabs.scrollWidth; tabEdges(); } placeResults(); }, 220));
+  window.visualViewport?.addEventListener("resize", placeResults);
+  // opening the search in a crowded bar scrolls it into view (after its width transition); on a phone the page also
+  // scrolls so the search box sits near the top, leaving room for its results above the keyboard
+  q.addEventListener("focus", () => setTimeout(() => {
+    if (tabs.classList.contains("tight")) { tabs.scrollLeft = tabs.scrollWidth; tabEdges(); }
+    const top = q.closest(".co-search").getBoundingClientRect().top;
+    if (innerWidth <= 760 && top > innerHeight * 0.3) scrollBy({ top: top - 84, behavior: "instant" });
+    placeResults();
+  }, 220));
   const searchHtml = (raw) => {
     const t = norm(raw);
     const hits = [...units.filter((u) => norm(u.title).includes(t)).map((u) => ({ href: `#/learn/${u.id}`, k: `${U} ${u.n}`, t: u.title })),
@@ -428,6 +444,7 @@ export function mountCourse(root, cfg) {
   function paintSide() {
     paintHud();
     if (side.hidden) return;
+    if (lessonRail) { side.innerHTML = lessonRail(); root.querySelector(".co-lesson")?.dispatchEvent(new Event("co-rail")); return; }
     const xp = totalXp(), L = levelOf(xp), st = streak(), tx = todayXp(), nl = nextLesson(), c = challenge(), cw = Math.min(c.n, c.of(week()));
     const sw = syncText(storeMode), syncWarn = sw?.warn ? sw.text : null;
     const nu = nl ? byId[nl.id].unit : null, left = nu ? nu.lessons.length - unitDone(nu) : 0;
@@ -577,33 +594,193 @@ export function mountCourse(root, cfg) {
     });
     return `<p class="co-builds"><span>Builds on</span> ${items.join("")}</p>`;
   }
+  // the five mind maps (kit/maps): this lesson's id, a kicker for the viewer, and lab names from this course
+  // the lesson's notes with its glass diagrams beside the parts they show (kit/core/glass-diagrams.js)
+  // five per lesson (kit/core/glass-diagrams.js), each beside the part it shows, full width so their words stay readable;
+  // the ones that sum the lesson up (terms, summary, comparisons, case and drug cards, recall) open its Recap
+  const RECAP_KINDS = new Set(["terms", "summary", "compare", "case", "drug", "evidence", "recall"]);
+  const recapDiagrams = (N) => diagramsFor(N).filter((d) => RECAP_KINDS.has(d.kind));
+  const lessonDiagrams = (N) => {
+    const at = new Map(); for (const d of diagramsFor(N)) if (!RECAP_KINDS.has(d.kind)) at.set(d.at, [...(at.get(d.at) || []), d]);
+    return lessonHtml(N, { after: (i) => (at.get(i) || []).map((d) => glassDiagram(d)).join("") });
+  };
+  const mapOpts = (l) => ({ id: `${cfg.slug}:${l.id}`, kicker: `${cfg.name || cfg.site} · ${l.title}`, site: cfg.site, store, labTitle: (x) => ixs.find((i) => i.id === x)?.title || x });
+  // ---------- reading a lesson: the rail beside it ("On this page"), reading progress and the question count ----------
+  let lessonRail = null, readStop = null;
+  function railHtml(l, N, nQ, mins) {
+    const heads = N ? N.blocks.filter((b) => b.t === "h").map((b, k) => [`co-s${k + 1}`, b.x]) : [];
+    const links = [
+      ...(N && (N.objectives.length || N.prereq.length) ? [["co-top", "Before you start"]] : []),
+      ...heads,
+      ...(main.querySelector("#co-recap") ? [["co-recap", "Recap"]] : []),
+      ...(nQ ? [["co-check", `Check yourself (${nQ})`]] : []),
+      ...(main.querySelector(".co-trylab") ? [["co-trylab", "Try it yourself"]] : []),
+      ...(N ? [["co-deeper", "Go deeper"]] : []),
+      ...(main.querySelector("#co-refs") ? [["co-refs", "Sources"]] : []),
+    ];
+    const R = 22, C = 2 * Math.PI * R;
+    return `<section class="co-card co-rail">
+      ${!links.length ? "" : `<div class="co-railtop"><svg viewBox="0 0 56 56" class="co-ring sm" aria-hidden="true"><circle cx="28" cy="28" r="${R}" class="bg"/><circle cx="28" cy="28" r="${R}" class="fg" stroke-dasharray="${C}" stroke-dashoffset="${C}" data-c="${C}"/></svg>
+        <div><span class="co-kicker">On this page</span><b class="co-readpct">0% read</b>${mins ? `<small>About ${mins} min</small>` : ""}</div></div>
+      <ol class="co-toc">${links.map(([href, t]) => `<li><a href="#${href}" data-jump="${href}">${inline(t)}</a></li>`).join("")}</ol>`}
+      ${nQ ? `<p class="co-railq"><span class="co-checkn"></span></p>` : ""}
+      <button class="btn btn-light lg btn-sm co-complete co-railgo" ${S.done[l.id] ? "disabled" : ""}><span>${S.done[l.id] ? "Completed ✓" : `Complete · +${XP.lesson} XP`}</span></button>
+    </section>`;
+  }
+  // the lesson's key terms, explained where the notes use them: the first use of each in the notes gets a dotted
+  // underline, and hovering, focusing or tapping it shows the definition from the lesson's own key terms
+  function markTerms(N) {
+    const prose = main.querySelector(".co-prose"); if (!prose || !N?.terms?.length) return;
+    const terms = N.terms.map(([t, d]) => [t.replace(/\*\*|`/g, "").trim(), d]).filter(([t]) => t.length >= 3 && t.length <= 60).sort((a, b) => b[0].length - a[0].length);
+    const done = new Set();
+    for (const [t, def] of terms) {
+      const re = new RegExp(`\\b${t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:s|es)?\\b`, "i");
+      const walk = document.createTreeWalker(prose, NodeFilter.SHOW_TEXT, { acceptNode: (n) => (n.parentElement.closest("h3, a, code, button, .gd, .co-term, .co-ixslot, .co-lab, figure") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT) });
+      for (let n = walk.nextNode(); n; n = walk.nextNode()) {
+        const m = n.nodeValue.match(re); if (!m) continue;
+        const after = n.splitText(m.index); after.splitText(m[0].length);
+        const el = Object.assign(document.createElement("button"), { type: "button", className: "co-term", textContent: after.nodeValue });
+        el.dataset.term = t; el.dataset.def = def.replace(/\*\*|`/g, ""); el.setAttribute("aria-label", `${after.nodeValue}: ${el.dataset.def}`);
+        after.replaceWith(el); done.add(t); break;
+      }
+    }
+    if (!done.size) return;
+    const tip = Object.assign(document.createElement("div"), { className: "co-tip", role: "tooltip", hidden: true }); document.body.append(tip);
+    let on = null;
+    const show = (el) => {
+      on = el; tip.innerHTML = `<b>${esc(el.dataset.term)}</b>${esc(el.dataset.def)}`; tip.hidden = false;
+      const r = el.getBoundingClientRect(), w = Math.min(320, innerWidth - 24); tip.style.width = `${w}px`;
+      tip.style.left = `${Math.round(Math.min(Math.max(12, r.left + r.width / 2 - w / 2), innerWidth - w - 12))}px`;
+      const below = r.bottom + 10 + tip.offsetHeight < innerHeight; tip.style.top = `${Math.round(below ? r.bottom + 10 : r.top - 10 - tip.offsetHeight)}px`;
+    };
+    const hide = () => { on = null; tip.hidden = true; };
+    prose.addEventListener("pointerover", (e) => { const el = e.target.closest(".co-term"); if (el && e.pointerType === "mouse") show(el); });
+    prose.addEventListener("pointerout", (e) => { if (e.target.closest(".co-term") && e.pointerType === "mouse") hide(); });
+    prose.addEventListener("focusin", (e) => { const el = e.target.closest(".co-term"); if (el) show(el); });
+    prose.addEventListener("focusout", (e) => { if (e.target.closest(".co-term")) hide(); });
+    prose.addEventListener("click", (e) => { const el = e.target.closest(".co-term"); if (!el) return; if (on === el) hide(); else show(el); });
+    addEventListener("scroll", hide, { passive: true });
+    return () => { tip.remove(); removeEventListener("scroll", hide); };
+  }
+  function wireReading(id, nQ, N, prev, next) {
+    readStop?.();
+    const unTerms = markTerms(N);
+    const art = main.querySelector(".co-lesson"), bar = Object.assign(document.createElement("div"), { className: "co-readbar" });
+    bar.innerHTML = "<i></i>"; document.body.append(bar);
+    if (main.querySelector(".co-frame:not(.co-end):not(.co-refs)")) main.querySelector(".co-frame").id = "co-top";
+    const trylab = main.querySelector(".co-trylab"); if (trylab) trylab.id = "co-trylab";
+    paintSide();
+    // the section headings and parts the rail links to, so it can show which one you're reading
+    const targets = () => [...root.querySelectorAll(".co-toc a")].map((a) => [a, document.getElementById(a.dataset.jump)]).filter(([, el]) => el);
+    let pctShown = -1, lastPlace = null;
+    // where you were in this lesson (this device): offered as "Continue" when you come back before finishing it
+    const PK = `gradify.reading.${cfg.slug}`;
+    const places = () => { try { return JSON.parse(localStorage.getItem(PK) || "{}"); } catch { return {}; } };
+    const place = (sec) => { try { const p = places(); if (S.done[id] || sec === "co-top") delete p[id]; else p[id] = sec; localStorage.setItem(PK, JSON.stringify(p)); } catch { /* private mode */ } };
+    const was = places()[id], wasLink = was && !S.done[id] && root.querySelector(`.co-toc a[data-jump="${was}"]`);
+    if (wasLink && document.getElementById(was) && was !== root.querySelector(".co-toc a")?.dataset.jump) {
+      main.querySelector(".co-lhead .mv-chips")?.insertAdjacentHTML("afterbegin", `<button type="button" class="co-chip co-resume" data-jump="${esc(was)}">${ic("play")} Continue: ${esc(wasLink.textContent)}</button>`);
+    }
+    const onScroll = () => {
+      // 0 at the top of the lesson, 1 once its end is on screen
+      const r = art.getBoundingClientRect(), p = r.bottom <= innerHeight + 2 ? 1 : Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - innerHeight)));
+      bar.firstChild.style.transform = `scaleX(${p})`;
+      const pct = Math.round(p * 100);
+      if (pct !== pctShown) {
+        pctShown = pct;
+        const ring = root.querySelector(".co-rail .fg"); if (ring) ring.style.strokeDashoffset = String(ring.dataset.c * (1 - p));
+        const t = root.querySelector(".co-readpct"); if (t) t.textContent = `${pct}% read`;
+      }
+      let cur = null; for (const [a, el] of targets()) { if (el.getBoundingClientRect().top < innerHeight * 0.3) cur = a; }
+      root.querySelectorAll(".co-toc a").forEach((a) => a.classList.toggle("on", a === cur));
+      if (cur && cur.dataset.jump !== lastPlace) { lastPlace = cur.dataset.jump; place(lastPlace); }
+    };
+    // the questions: how many are right so far, in the section's header and the rail
+    const count = () => {
+      if (!nQ) return;
+      const ok = main.querySelectorAll(".co-check .aq.solved").length;
+      root.querySelectorAll(".co-checkn").forEach((el) => { el.textContent = ok ? `${ok} of ${nQ} right${ok === nQ ? " · all done" : ""}` : `${nQ} question${nQ > 1 ? "s" : ""} · none answered yet`; el.classList.toggle("all", ok === nQ); });
+    };
+    const mo = new MutationObserver(count); const chk = main.querySelector(".co-check"); if (chk) mo.observe(chk, { subtree: true, attributes: true, attributeFilter: ["class"] });
+    count();
+    // the sidebar is redrawn now and then (XP, sync): its rail picks the reading position and question count back up
+    art.addEventListener("co-rail", () => { pctShown = -1; onScroll(); count(); });
+    // in-page links scroll smoothly, below the sticky top bar, without changing the course's #/lesson route
+    const jump = (e) => {
+      const a = e.target.closest("[data-jump]"); if (!a) return;
+      const el = document.getElementById(a.dataset.jump); if (!el) return;
+      e.preventDefault();
+      scrollTo({ top: el.getBoundingClientRect().top + scrollY - 90, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    };
+    root.addEventListener("click", jump);
+    // a diagram opens full size (most useful on a phone): Escape, the close button or a click outside closes it
+    const zoom = (e) => {
+      const fig = e.target.closest(".co-lesson .gd"); if (!fig || e.target.closest("a, button")) return;
+      const box = Object.assign(document.createElement("div"), { className: "gd-zoom", role: "dialog", ariaModal: "true", ariaLabel: fig.querySelector("svg")?.getAttribute("aria-label") || "Diagram" });
+      box.innerHTML = `<div class="gd-zoomin" style="${fig.getAttribute("style")}">${fig.querySelector(".gd-pane").innerHTML}${fig.querySelector("figcaption") ? `<p>${fig.querySelector("figcaption").innerHTML}</p>` : ""}</div><button type="button" class="gd-zoomx" aria-label="Close">×</button>`;
+      const close = () => { box.remove(); removeEventListener("keydown", key); fig.focus?.(); };
+      const key = (k) => { if (k.key === "Escape") close(); };
+      box.addEventListener("click", (k) => { if (k.target === box || k.target.closest(".gd-zoomx")) close(); });
+      addEventListener("keydown", key); document.body.append(box); box.querySelector(".gd-zoomx").focus();
+    };
+    main.addEventListener("click", zoom);
+    main.querySelectorAll(".co-lesson .gd").forEach((f) => { f.tabIndex = 0; f.title = "Open the diagram full size"; f.addEventListener("keydown", (k) => { if (k.key === "Enter" || k.key === " ") { k.preventDefault(); zoom({ target: f }); } }); });
+    // ← and → move to the previous and next lesson (not while typing, or with a diagram open)
+    const keys = (e) => {
+      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey || document.querySelector(".gd-zoom, .co-modal")) return;
+      if (e.target.closest?.("input, textarea, select, [contenteditable], .co-ix, .co-lab")) return;
+      const to = e.key === "ArrowLeft" ? prev : e.key === "ArrowRight" ? next : null;
+      if (to) { e.preventDefault(); location.hash = `#/lesson/${to.id}`; }
+    };
+    addEventListener("keydown", keys);
+    // the rail's Complete button does what the lesson's own does
+    const railGo = (e) => { if (e.target.closest(".co-railgo")) main.querySelector(".co-finish .co-complete")?.click(); };
+    side.addEventListener("click", railGo);
+    addEventListener("scroll", onScroll, { passive: true }); addEventListener("resize", onScroll);
+    requestAnimationFrame(onScroll);
+    readStop = () => { removeEventListener("scroll", onScroll); removeEventListener("resize", onScroll); root.removeEventListener("click", jump); main.removeEventListener("click", zoom); document.querySelector(".gd-zoom")?.remove(); removeEventListener("keydown", keys); unTerms?.(); side.removeEventListener("click", railGo); mo.disconnect(); bar.remove(); readStop = null; };
+  }
   async function viewLesson(id) {
     const l = byId[id]; if (!l) return go("learn");
+    // Free: 10 lessons in each course (kit/data/limits.js), once Plus is on sale
+    if (!(await gate("lesson", id, { course: cfg.slug, store }))) { main.innerHTML = lockedHtml("lesson"); return; }
     lt.start(id);
     if (S.done[id] || S.time?.[id]?.v) ledger({ event: "lesson_revisited", concept: `${cfg.slug}:${id}`, source: "course", detail: { visits: (S.time?.[id]?.v || 0) + 1, done: Boolean(S.done[id]) } });
     const u = l.unit, t = trackOf(u), N = await notesFor(l), prev = u.lessons[l.i - 1], next = u.lessons[l.i + 1] || units[u.n]?.lessons[0];
-    main.innerHTML = `<article class="co-lesson" style="--a:${t.from};--b:${t.to}">
-      <div class="co-crumbs"><a href="#/learn/${u.id}">← ${U} ${u.n}: ${esc(u.title)}</a><span>Lesson ${l.i + 1} of ${u.lessons.length}</span></div>
-      <div class="co-steps">${u.lessons.map((x) => `<a href="#/lesson/${x.id}" class="${S.done[x.id] ? "done" : ""} ${x.id === id ? "here" : ""}" title="${esc(x.title)}"></a>`).join("")}</div>
+    const F = N ? lessonFrame(N) : null, nQ = N?.items?.length || 0;
+    const mins = N ? Math.max(2, Math.round(lessonText(N).split(/\s+/).length / 200 + nQ * 0.75)) : 0;
+    const card = (x, dir) => (x = x && byId[x.id]) ? `<a class="co-pncard ${dir}" href="#/lesson/${x.id}"><small>${dir === "prev" ? "← Previous lesson" : "Next lesson →"}</small><b>${esc(x.title)}</b>${x.unit !== u ? `<i>${U} ${x.unit.n}: ${esc(x.unit.title)}</i>` : ""}</a>` : "<span></span>";
+    main.innerHTML = `<article class="co-lesson co-read" style="--a:${t.from};--b:${t.to}">
+      <div class="co-lbar">
+        <div class="co-crumbs"><a href="#/learn/${u.id}">← ${U} ${u.n}: ${esc(u.title)}</a><span>Lesson ${l.i + 1} of ${u.lessons.length}</span></div>
+        <div class="co-steps">${u.lessons.map((x, k) => `<a href="#/lesson/${x.id}" class="${S.done[x.id] ? "done" : ""} ${x.id === id ? "here" : ""}" title="${esc(x.title)}" aria-label="Lesson ${k + 1}: ${esc(x.title)}${S.done[x.id] ? " (done)" : ""}"></a>`).join("")}</div>
+      </div>
       <div class="mv-page co-notes" style="--c:${t.from}">
-        <header><span class="co-licon" data-g3d="${esc(`${l.title} ${l.module || ""} ${u.title}`)}" data-g3d-size="76"></span><span class="kicker">${esc(t.name)} · ${U} ${u.n}${l.module ? ` · ${esc(l.module)}` : ""}</span><h2>${esc(l.title)}</h2>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
-          <div class="mv-chips">${S.done[id] ? `<span class="co-chip lit">${ic("check")} Completed</span>` : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${N?.items?.length ? `<span class="co-chip">${N.items.length} check question${N.items.length > 1 ? "s" : ""}</span>` : ""}${N?.cards.length ? `<button data-cards>${ic("cards")} Flashcards (${N.cards.length})</button>` : ""}${N?.level ? `<span class="co-chip">${esc(N.level)}</span>` : ""}</div></header>
+        <header class="co-lhead"><span class="co-licon" data-g3d="${esc(`${l.title} ${l.module || ""} ${u.title}`)}" data-g3d-size="88"></span>
+          <span class="kicker">${esc(t.name)} · ${U} ${u.n}${l.module ? ` · ${esc(l.module)}` : ""}</span><h2>${esc(l.title)}</h2>${N?.lead ? `<p class="mv-lead">${inline(N.lead)}</p>` : ""}
+          <div class="mv-chips">${S.done[id] ? `<span class="co-chip lit">${ic("check")} Completed</span>` : `<span class="co-chip">${ic("bolt")} +${XP.lesson} XP</span>`}${mins ? `<span class="co-chip">${ic("clock")} About ${mins} min</span>` : ""}${N?.level ? `<span class="co-chip">${esc(N.level)}</span>` : ""}${nQ ? `<a class="co-chip co-jump" href="#co-check" data-jump="co-check">${ic("target")} ${nQ} check question${nQ > 1 ? "s" : ""}</a>` : ""}${N?.cards.length ? `<button data-cards>${ic("cards")} Flashcards (${N.cards.length})</button>` : ""}</div></header>
         ${N && isDraft(u) ? `<p class="co-draft" role="note"><b>Draft.</b> This ${u1} is written but hasn't yet completed content review, source checking and expert sign-off. Use it alongside your course materials and official sources.</p>` : ""}
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${buildsOnHtml(id)}
-        ${N ? lessonFrame(N).top : ""}
-        ${N ? `<div class="mv-cols">${lessonHtml(N)}</div>${lessonFrame(N).end}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
+        ${N ? F.top : ""}
+        ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N)}</div>${F.end || recapDiagrams(N).length ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${recapDiagrams(N).map((d) => glassDiagram(d)).join("")}${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
-        ${N ? `<section class="co-ask co-tutor"></section>` : ""}
-        ${N?.items?.length ? `<section class="co-check"><h3>${ic("target")} Check yourself</h3>${N.items.map((it) => qHtml(it, { confidence: true })).join("")}</section>` : ""}
-        <footer>
-          <button class="btn btn-light lg co-complete" ${S.done[id] ? "disabled" : ""}><span>${S.done[id] ? "Completed ✓" : `Complete lesson · +${XP.lesson} XP`}</span></button>
-          ${N?.cards.length ? `<button class="btn btn-ghost lg" data-cards><span>${ic("cards")} Flashcards</span></button>` : ""}
-          ${N ? `<button class="btn btn-ghost lg" data-save><span>${ic("save")} ${S.saved[id] ? "Saved to your account ✓" : "Save notes and cards"}</span></button>` : ""}
+        ${nQ ? `<section class="co-check" id="co-check"><header><h3 class="co-part">${ic("target")} Check yourself</h3><span class="co-checkn" aria-live="polite"></span></header>${N.items.map((it, k) => `<div class="co-qn" data-n="${k + 1} of ${nQ}">${qHtml(it, { confidence: true })}</div>`).join("")}</section>` : ""}
+        ${N ? `<section class="co-deeper" id="co-deeper"><h3 class="co-part">${ic("sparkles")} Go deeper</h3><section class="co-ask co-tutor"></section>${mapsSectionHtml(N, mapOpts(l))}</section>` : ""}
+        ${N && F.refs ? `<section class="co-refsec" id="co-refs">${F.refs}</section>` : ""}
+        <footer class="co-finish">
+          <div class="co-finish-txt"><b>${S.done[id] ? "You've finished this lesson" : N ? "Finished reading?" : "Notes coming soon"}</b><span>${S.done[id] ? "Review it any time, or carry on to the next one." : `Mark it complete for +${XP.lesson} XP${next ? " and go straight on to the next lesson" : ""}.`}</span></div>
+          <div class="co-finish-btns">
+            <button class="btn btn-light lg co-complete" ${S.done[id] ? "disabled" : ""}><span>${S.done[id] ? "Completed ✓" : `Complete lesson · +${XP.lesson} XP`}</span></button>
+            ${N?.cards.length ? `<button class="btn btn-ghost lg" data-cards><span>${ic("cards")} Flashcards</span></button>` : ""}
+            ${N ? `<button class="btn btn-ghost lg" data-save><span>${ic("save")} ${S.saved[id] ? "Saved to your account ✓" : "Save notes and cards"}</span></button>` : ""}
+          </div>
         </footer>
       </div>
-      <div class="co-pn">${prev ? `<a href="#/lesson/${prev.id}">← ${esc(prev.title)}</a>` : "<span></span>"}${next ? `<a href="#/lesson/${next.id}">${esc(next.title)} →</a>` : ""}</div>
+      <nav class="co-pn" aria-label="Other lessons">${card(prev, "prev")}${card(next, "next")}</nav>
     </article>`;
+    // the rail beside the lesson: its sections, how far through you are, and its questions
+    lessonRail = () => railHtml(l, N, nQ, mins);
     scrollTo(0, 0);
     wirePractice(main, "lesson", id);
     glassIcons(main, cfg.site).catch(() => {});
@@ -616,7 +793,9 @@ export function mountCourse(root, cfg) {
       if (linked.length && at) at.insertAdjacentHTML("beforebegin", `<section class="co-trylab"><h3>Try it yourself</h3>${shown.map((x) => `<div class="co-ixslot" data-ix="${esc(x.id)}"></div>`).join("")}${more.length ? `<p class="co-morelabs">More for this lesson: ${more.map((x) => `<a href="#/practice/${esc(x.id)}">${esc(x.title)}</a>`).join(" · ")}</p>` : ""}</section>`);
     }
     mountIxSlots(main);
-    main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", () => flashcards(N.cards, l)));
+    wireReading(id, nQ, N, prev && byId[prev.id], next && byId[next.id]);
+    if (N) wireMaps(main, N, mapOpts(l));
+    main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", async () => { if (await gate("flashcards", `${cfg.slug}:${l.id}`, { store })) flashcards(N.cards, l, N); }));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
     const tp = main.querySelector(".co-tutor");
     if (tp) mountTutorPanel(tp, {
@@ -756,13 +935,14 @@ export function mountCourse(root, cfg) {
   }
 
   // flashcards: flip through a lesson's cards
-  function flashcards(cards, l) {
+  function flashcards(cards, l, N) {
     let i = 0, flipped = false;
+    const diagrams = N ? diagramsFor(N, { max: 12 }) : [];
     const d = document.createElement("div"); d.className = "co-modal";
     const paint = () => {
       d.innerHTML = `<div class="co-dialog co-fc" role="dialog" aria-modal="true" aria-label="Flashcards">
         <div class="co-fc-top"><span class="co-kicker">${esc(l.title)}</span><span>${i + 1} / ${cards.length}</span><button class="co-x" data-close aria-label="Close">×</button></div>
-        <button class="co-card3d ${flipped ? "flip" : ""}" aria-live="polite"><span class="f"><span class="co-fcicon" data-g3d="${esc(`${cards[i][0]} ${l.title}`)}" data-g3d-size="52"></span><div>${inline(cards[i][0])}</div><small>Tap to reveal</small></span><span class="b"><div>${inline(cards[i][1])}</div></span></button>
+        <button class="co-card3d ${flipped ? "flip" : ""}" aria-live="polite"><span class="f"><span class="co-fcicon" data-g3d="${esc(`${cards[i][0]} ${l.title}`)}" data-g3d-size="52"></span><div>${inline(cards[i][0])}</div><small>Tap to reveal</small></span><span class="b"><div>${inline(cards[i][1])}</div>${glassDiagram(diagramForCard(diagrams, cards[i][0], cards[i][1]), { size: "sm", caption: false })}</span></button>
         <div class="co-row"><button class="btn btn-ghost lg btn-sm" data-prev ${i ? "" : "disabled"}><span>← Back</span></button><button class="btn btn-light lg btn-sm" data-next><span>${i < cards.length - 1 ? "Next →" : "Done"}</span></button></div></div>`;
       glassIcons(d, cfg.site).catch(() => {});
       d.querySelector(".co-card3d").onclick = () => { flipped = !flipped; d.querySelector(".co-card3d").classList.toggle("flip", flipped); };
@@ -1341,6 +1521,7 @@ export function mountCourse(root, cfg) {
   async function route() {
     unmountIx();
     lt.stop();
+    lessonRail = null; readStop?.();
     const home = cfg.overview ? "overview" : "learn";
     const [v0, arg] = location.hash.replace(/^#\/?/, "").split("/"), v = v0 || home;
     const view = VIEWS.some(([id]) => id === v) || ["lesson", "quiz", "exam"].includes(v) ? v : home;
@@ -1348,6 +1529,8 @@ export function mountCourse(root, cfg) {
     showTab();
     const wide = ["me", "features", "leaderboard", "tracks", "paths", "exams", "exam", "practice", "overview", cfg.workspace?.route].includes(view);
     side.hidden = wide; root.querySelector(".co-body").classList.toggle("wide", wide);
+    // reading a lesson: the course's header, progress and tabs fold away so the lesson starts at the top
+    root.classList.toggle("co-reading", view === "lesson");
     if (view !== "learn") scrollTo(0, 0);
     if (view === "learn") { if (arg) openUnit(arg); viewLearn(arg); }
     else if (view === "lesson") await viewLesson(arg);
@@ -1356,7 +1539,7 @@ export function mountCourse(root, cfg) {
     else if (view === "paths") viewPaths();
     else if (view === "tracks") viewTracks();
     // exam preparation is Gradify Plus: timed exams and the complete question bank (unit quizzes and labs stay free)
-    else if (["problems", "exams", "exam"].includes(view) && !(await access(await store())).has("exams")) main.innerHTML = plusPanelHtml("exams", { pricing: "/pricing.html" });
+    else if (["problems", "exams", "exam"].includes(view) && !(await access(await store())).has("exams")) { main.innerHTML = plusPanelHtml("exams", { pricing: "/pricing.html" }); promptPlus("exams", { pricing: "/pricing.html", signedIn: (await store())?.mode === "cloud" }); }
     else if (view === "problems") await viewProblems();
     else if (view === "cases") await viewAuthorities();
     else if (view === "write") await viewWrite(arg);

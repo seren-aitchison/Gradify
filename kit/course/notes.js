@@ -102,15 +102,18 @@ export function parseNotes(text) {
 }
 
 // the notes for one lesson, grouped into sections by their headings
-export function lessonHtml(L) {
+// `after(i)`: anything to place after block i (the lesson's glass diagrams, kit/core/glass-diagrams.js)
+export function lessonHtml(L, { after = () => "" } = {}) {
   const sections = [];
   let cur = { h: null, parts: [] };
-  for (const b of L.blocks) {
-    if (b.t === "h") { if (cur.h || cur.parts.length) sections.push(cur); cur = { h: b.x, parts: [] }; continue; }
-    cur.parts.push(block(b));
-  }
+  L.blocks.forEach((b, i) => {
+    if (b.t === "h") { if (cur.h || cur.parts.length) sections.push(cur); cur = { h: b.x, parts: [] }; return; }
+    cur.parts.push(block(b) + after(i));
+  });
   if (cur.h || cur.parts.length) sections.push(cur);
-  return sections.map((s) => `<section>${s.h ? `<h3>${inline(s.h)}</h3>` : ""}${s.parts.join("")}</section>`).join("");
+  // each headed section has an id, so a lesson can list its sections ("On this page") and link to them
+  let n = 0;
+  return sections.map((s) => `<section${s.h ? ` id="co-s${++n}"` : ""}>${s.h ? `<h3>${inline(s.h)}</h3>` : ""}${s.parts.join("")}</section>`).join("");
 }
 function block(b) {
   if (b.t === "p") return `<p>${inline(b.x)}</p>`;
@@ -138,8 +141,8 @@ export function lessonText(L) {
   return out.join("\n").replace(/\*\*|`|\^\{|_\{|\}/g, "");
 }
 
-// the lesson's framing (objectives, prerequisites) and its closing material (summary, key terms,
-// sources with their kind and date, further reading), drawn around the notes
+// the lesson's framing (objectives, prerequisites), its recap (summary, key terms, case, statute and drug cards,
+// the strength of the evidence) and its references (sources with their kind and date, further reading)
 // case and statute cards (CASE: and LAW: lines), in a lesson and in the course's authorities view
 export function authorityCards(list) {
   return `<div class="co-auths">${list.map((a) => a.kind === "drug"
@@ -153,13 +156,17 @@ export function lessonFrame(L) {
   const top = (L.objectives.length || L.prereq.length) ? `<div class="co-frame">${L.objectives.length ? `<section><h3>By the end of this lesson you can</h3><ul>${L.objectives.map((o) => `<li>${inline(o)}</li>`).join("")}</ul></section>` : ""}${L.prereq.length ? `<section><h3>Before you start</h3><ul>${L.prereq.map((o) => `<li>${inline(o)}</li>`).join("")}</ul></section>` : ""}</div>` : "";
   const KIND = { legislation: "Legislation", case: "Case law", rule: "Professional rules", guidance: "Guidance", standard: "Standard", primary: "Primary source", secondary: "Secondary source", data: "Data source" };
   const EVN = { established: "Established", contested: "Contested", hypothetical: "Hypothetical" };
+  // the recap: what to take away from the lesson
   const end = [
     L.summary.length ? `<section><h3>Summary</h3><ul>${L.summary.map((x) => `<li>${inline(x)}</li>`).join("")}</ul></section>` : "",
     L.terms.length ? `<section><h3>Key terms</h3><dl class="co-terms">${L.terms.map(([t, d]) => `<dt>${inline(t)}</dt><dd>${inline(d)}</dd>`).join("")}</dl></section>` : "",
-    L.sources.length ? `<section><h3>Sources</h3><ul class="co-sources">${L.sources.map((x) => `<li>${x.url && /^https:\/\//.test(x.url) ? `<a href="${esc(x.url)}" rel="noopener" target="_blank">${inline(x.cite)}</a>` : inline(x.cite)}${x.kind ? ` <small>${esc(KIND[x.kind] || x.kind)}${x.date ? ` · ${esc(x.date)}` : ""}</small>` : ""}</li>`).join("")}</ul></section>` : "",
     L.authorities?.length ? `<section><h3>${L.authorities.every((a) => a.kind === "drug") ? "Drug cards" : L.authorities.some((a) => a.kind === "drug") ? "Drug, case and statute cards" : "Case and statute cards"}</h3>${authorityCards(L.authorities)}</section>` : "",
     L.evidence?.length ? `<section><h3>How strong is the evidence?</h3><ul class="co-evidence">${L.evidence.map((e) => `<li><span class="co-ev co-ev-${esc(e.status)}">${esc(EVN[e.status] || e.status)}</span> ${inline(e.claim)}</li>`).join("")}</ul></section>` : "",
+  ].join("");
+  // the references: where it comes from, and where to read more
+  const refs = [
+    L.sources.length ? `<section><h3>Sources</h3><ul class="co-sources">${L.sources.map((x) => `<li>${x.url && /^https:\/\//.test(x.url) ? `<a href="${esc(x.url)}" rel="noopener" target="_blank">${inline(x.cite)}</a>` : inline(x.cite)}${x.kind ? ` <small>${esc(KIND[x.kind] || x.kind)}${x.date ? ` · ${esc(x.date)}` : ""}</small>` : ""}</li>`).join("")}</ul></section>` : "",
     L.reading.length ? `<section><h3>Further reading</h3><ul>${L.reading.map((x) => `<li>${inline(x)}</li>`).join("")}</ul></section>` : "",
   ].join("");
-  return { top, end: end ? `<div class="co-frame co-end">${end}</div>` : "" };
+  return { top, end: end ? `<div class="co-frame co-end">${end}</div>` : "", refs: refs ? `<div class="co-frame co-refs">${refs}</div>` : "" };
 }

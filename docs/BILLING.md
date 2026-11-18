@@ -21,9 +21,22 @@ prices (£7.99 a month, £63.99 a year) are still in Stripe for anyone already o
 | Reminders when Gradify is closed | Edge Function (strong) | `push-send` skips learners without Plus (`plus_allowed_for()`) |
 | Gradify Intelligence | App (soft) | Autopilot, Smart Plan, the Intelligence page, card ordering, readiness and suggestion widgets (`kit/data/plan.js`) |
 | Exam preparation | App (soft) | Course Exams and Problems tabs. Course content itself is public |
+| Free allowances | Database for signed-in learners, app otherwise | `kit/data/limits.js`: on Free, 10 lessons in each course, 5 flashcard sets, 5 mind maps and 5 uses of each tool in Tools. Anything already opened stays open. When one runs out, a Liquid Glass banner offers Plus. Signed in: `take_allowance()` counts in `free_usage` and decides the limits (learners can't write the table). Signed out: counted in the browser |
 
 Soft means the feature runs in the browser, so someone determined could get round it. That's a commercial limit, not a
 security boundary. Tests: `tests/plans.test.mjs` (database), `tests/billing-*.test.mjs`.
+
+### Free allowances
+
+Free learners can open 10 lessons in each course they start, 5 flashcard sets in all (a course lesson's cards, a deck in
+the app's Study, counted once each), 5 mind maps in all (each of a lesson's five maps counts) and use each tool in
+Tools 5 times (a lesson opened from the search, a new mind map, a new deck, a conversion). Opening something again never
+counts. The last free one shows a gentle banner; after that the banner offers Plus and the page shows a Plus panel.
+
+They switch on with `PLUS_ON_SALE`, like the other Plus features, so nobody is asked to buy what isn't on sale. To see
+them before then, open any page with `?limits=preview` (and `?limits=off` to stop): this browser then behaves as a
+Free learner would after launch. `scripts/check-tools.cjs` checks them in a browser. The counts live in this browser's
+storage when signed out (clearing it resets them); signed in, the server counts them in `public.free_usage`.
 
 ## Putting Gradify Plus on sale (go-live checklist)
 
@@ -131,6 +144,13 @@ Only once Gradify AI is switched on (below), because Pro adds nothing else to Pl
 
 The AI functions are deployed with every control in place and refuse every request until the owner switches Gradify AI
 on (or adds testers). Controls, monitoring and the switch-on checklist: `docs/AI.md`. Costs per learner: `docs/AI-COSTS.md`.
+
+**Photo to cards** (Gradify Pro): the Flashcard creator's "Photo of notes" button sends up to 5 photos of notes,
+handwriting included, to `study-pack` as image blocks; Claude writes a pack and the creator turns it into cards
+(`deckOf` in `kit/tools/convert.js`). It counts as a study pack against the AI allowances, under the same controls.
+Until `PRO_ON_SALE`, the button explains it's coming with Pro and sends nothing. Switching it on needs: the updated
+`study-pack` function deployed, `ANTHROPIC_API_KEY` set as a function secret, Gradify AI switched on (`docs/AI.md`),
+then `PRO_ON_SALE` and the Pro price live.
 
 ## Sign-in emails (Resend)
 

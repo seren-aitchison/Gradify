@@ -1190,6 +1190,9 @@ X: Return of the red kite.
 > From 1989, birds from Spain and Sweden were released in England and Scotland.
 > Laws protected them from poisoning and shooting.
 > Today there are thousands of breeding pairs across the UK.
+H: Examples of each strategy
+- **In-situ examples**: the Serengeti National Park protects the habitat of the wildebeest migration, and Lundy, England's first marine conservation zone, protects its seabed and reef life from damaging fishing.
+- **Ex-situ examples**: captive breeding saved the Arabian oryx after it became extinct in the wild, and animals were reintroduced to Oman, Saudi Arabia and Israel; the Millennium Seed Bank at Kew stores seeds of tens of thousands of wild plant species.
 K: In-situ conservation protects species in their habitats through protected areas, restoration and threat control, while ex-situ conservation uses zoos, captive breeding, seed and gene banks; reintroduction and rewilding, such as red kites and beavers, restore species and processes.
 !: Thinking zoos alone can save endangered species. Most species need protected habitats to survive long-term.
 EV: established | Red kite reintroduction has been one of the UK's most successful conservation programmes (Carter, 2007).

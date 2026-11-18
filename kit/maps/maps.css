@@ -1,0 +1,116 @@
+/* Mind map viewer (kit/maps/view.js). The map is the content: plain, readable nodes on a quiet backdrop with a soft
+   spectrum glow. Liquid Glass (kit/vendor/liquid-glass) is only on the controls floating above it. */
+html.mm-open { overflow: hidden; }
+.mm-viewer {
+  --mm-bg: #0b0b10; --mm-fg: #f3f3f7; --mm-mute: #a3a3b5; --mm-node: #17171f; --mm-hit: #f055dd;
+  position: fixed; inset: 0; z-index: 1000; background: var(--mm-bg); color: var(--mm-fg);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+html[data-theme="light"] .mm-viewer { --mm-bg: #f6f6fa; --mm-fg: #14141f; --mm-mute: #5c5c70; --mm-node: #fff; --mm-hit: #c41f8f; }
+/* something for the glass to bend: a soft wash of colour behind the map */
+.mm-viewer::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5;
+  background: radial-gradient(40% 40% at 15% 20%, rgba(70, 65, 255, .28), transparent 70%), radial-gradient(35% 40% at 85% 25%, rgba(240, 85, 221, .22), transparent 70%), radial-gradient(40% 40% at 70% 90%, rgba(255, 138, 0, .18), transparent 70%); }
+.mm-stage, .mm-canvas { position: absolute; inset: 0; }
+/* Mind Elixir sets position: relative on its host; keep it filling the viewer */
+.mm-canvas { outline: none; position: absolute !important; inset: 0; width: 100%; height: 100%; }
+.mm-canvas .map-container { background: transparent !important; width: 100% !important; height: 100% !important; }
+.mm-canvas .me-tpc { max-width: 260px; line-height: 1.35; font-family: var(--sans, inherit); }
+.mm-canvas .me-root .me-tpc { max-width: 340px; font-weight: 700; letter-spacing: -.01em; box-shadow: 0 10px 30px -14px rgba(0, 0, 0, .5); }
+.mm-canvas .me-main > .me-wrapper > .me-parent > .me-tpc { font-weight: 600; box-shadow: 0 6px 18px -12px rgba(0, 0, 0, .45); }
+/* every fact in its own bubble at the end of its strand, edged in its branch's colour */
+.mm-canvas .me-children .me-tpc { background: var(--mm-node); border: 1.5px solid; border-radius: 12px; padding: 7px 12px; box-shadow: 0 4px 14px -10px rgba(0, 0, 0, .55); }
+/* a main branch: its Liquid Glass icon beside its name (still, so a big map stays calm) */
+.mm-canvas .me-main > .me-wrapper > .me-parent > .me-tpc { display: flex; align-items: center; gap: 10px; }
+.mm-bicon { display: inline-flex; flex: none; margin: -4px 0 -4px -10px; }
+.mm-bicon .g3d, .mm-bicon .g3d-glow { animation: none; }
+.mm-canvas .tags span { font-size: 10px; letter-spacing: .02em; border-radius: 99px; padding: 1px 7px; }
+.mm-canvas .me-tpc.selected { outline: 2.5px solid var(--glass-accent, #0a84ff); outline-offset: 3px; border-radius: 10px; }
+.mm-canvas .me-tpc.mm-hit { outline: 2.5px solid var(--mm-hit); outline-offset: 3px; border-radius: 10px; }
+.mm-error { position: absolute; inset: 40% 0 auto; text-align: center; color: var(--mm-mute); }
+
+/* chrome */
+.mm-top { position: absolute; top: 14px; left: 16px; right: 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; pointer-events: none; }
+.mm-top > * { pointer-events: auto; }
+.mm-title .kicker { font: 600 11px var(--mono, monospace); letter-spacing: .08em; text-transform: uppercase; color: var(--mm-mute); }
+.mm-title h2 { margin: 2px 0 0; font-size: clamp(17px, 2vw, 22px); letter-spacing: -.02em; max-width: 46vw; }
+.mm-select { max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.mm-select .glass-segmented__option { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.mm-seg-n { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; font-size: 11px; font-weight: 700; background: var(--glass-fill, rgba(127, 127, 127, .18)); }
+.mm-tools { position: absolute; left: 50%; bottom: max(18px, env(safe-area-inset-bottom)); transform: translateX(-50%); flex-wrap: wrap; justify-content: center; max-width: calc(100% - 24px); }
+.mm-tools svg { width: 20px; height: 20px; }
+.mm-search { position: absolute; left: 50%; bottom: 86px; transform: translateX(-50%); width: min(440px, calc(100% - 32px)); display: flex; align-items: center; }
+.mm-search[hidden] { display: none; }
+.mm-hits { margin-left: auto; padding: 0 12px; font-size: 13px; color: var(--mm-mute); white-space: nowrap; }
+.mm-panel { position: absolute; right: 16px; top: 172px; width: min(360px, calc(100% - 32px)); max-height: calc(100% - 270px); overflow: auto; padding: 18px 20px; border-radius: 24px; }
+.mm-panel[hidden] { display: none; }
+.mm-panel h3 { margin: 6px 28px 8px 0; font-size: 18px; line-height: 1.3; letter-spacing: -.01em; }
+.mm-panel p { margin: 0 0 8px; line-height: 1.55; color: var(--mm-fg); opacity: .9; }
+.mm-panel .gd { margin: 6px 0 12px; }
+.mm-panel .gd-art { width: 100%; }
+.mm-panel .mm-more { font-size: 13px; color: var(--mm-mute); }
+.mm-kind { font: 600 11px var(--mono, monospace); letter-spacing: .08em; text-transform: uppercase; color: var(--mm-mute); }
+.mm-x { position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; display: grid; place-items: center; border: 0; border-radius: 50%; background: var(--glass-fill, rgba(127, 127, 127, .18)); color: inherit; cursor: pointer; }
+.mm-x svg { width: 16px; height: 16px; }
+.mm-purpose-line { margin: 4px 0 0; font-size: 13px; color: var(--mm-mute); max-width: min(560px, 60vw); }
+
+/* presentation: the map alone */
+.mm-viewer.presenting .mm-top, .mm-viewer.presenting .mm-panel, .mm-viewer.presenting .mm-outline, .mm-viewer.presenting .mm-search, .mm-viewer.presenting .mm-purpose-line { display: none; }
+.mm-viewer.presenting .mm-tools { opacity: .25; transition: opacity .2s; }
+.mm-viewer.presenting .mm-tools:hover, .mm-viewer.presenting .mm-tools:focus-within { opacity: 1; }
+
+.mm-search { flex-wrap: wrap; }
+.mm-results { list-style: none; margin: 0; padding: 0; position: absolute; left: 0; right: 0; bottom: calc(100% + 8px); display: grid; gap: 4px; }
+.mm-results:empty { display: none; }
+.mm-results button { all: unset; box-sizing: border-box; display: block; width: 100%; cursor: pointer; padding: 8px 14px; border-radius: 14px; background: var(--mm-node); color: var(--mm-fg); box-shadow: 0 6px 18px -10px rgba(0, 0, 0, .5); }
+.mm-results button:hover, .mm-results button:focus-visible { outline: 2px solid var(--mm-hit); outline-offset: -2px; }
+.mm-results b { display: block; font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mm-results span { display: block; font-size: 12px; color: var(--mm-mute); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mm-panel .mm-links { display: flex; gap: 8px; font-size: 13px; color: var(--mm-mute); }
+.mm-panel .mm-links svg { flex: none; width: 16px; height: 16px; margin-top: 2px; fill: none; stroke: currentColor; stroke-width: 2; }
+.mm-chip { margin-left: 8px; font: inherit; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 99px; border: 1px solid var(--mm-mute); background: transparent; color: var(--mm-fg); cursor: pointer; }
+.mm-chip:hover { border-color: var(--mm-hit); }
+/* export menu */
+.mm-menu { position: absolute; left: 50%; bottom: 86px; transform: translateX(-50%); width: min(320px, calc(100% - 32px)); padding: 6px; border-radius: 22px; display: grid; gap: 2px; z-index: 2; }
+.mm-menu[hidden] { display: none; }
+.mm-menu button { all: unset; box-sizing: border-box; cursor: pointer; padding: 10px 14px; border-radius: 16px; color: var(--glass-text-primary, var(--mm-fg)); }
+.mm-menu button:hover, .mm-menu button:focus-visible { background: var(--glass-fill-hover, rgba(127, 127, 127, .15)); }
+.mm-menu b { display: block; font-size: 14px; font-weight: 600; }
+.mm-menu span { display: block; font-size: 12px; color: var(--glass-text-secondary, var(--mm-mute)); }
+/* outline view: the same map as a readable list */
+.mm-outline { position: absolute; inset: 96px max(16px, calc(50% - 380px)) 90px; overflow: auto; padding: 22px 26px; border-radius: 24px; background: var(--mm-node); color: var(--mm-fg); box-shadow: 0 20px 50px -24px rgba(0, 0, 0, .6); outline: none; }
+.mm-outline[hidden] { display: none; }
+.mm-viewer.outlining .mm-canvas, .mm-viewer.outlining .mm-mini, .mm-viewer.outlining .mm-panel { visibility: hidden; }
+.mm-outline h3 { margin: 0; font-size: 20px; letter-spacing: -.01em; }
+.mm-outline .mm-o-sub { margin: 2px 0 14px; font-size: 13px; color: var(--mm-mute); }
+.mm-outline ul { list-style: none; margin: 0; padding-left: 18px; border-left: 1px solid rgba(127, 127, 127, .25); }
+.mm-outline .mm-o-root { padding-left: 0; border: 0; }
+.mm-outline li { margin: 6px 0; }
+.mm-outline li.d1 { margin-top: 16px; }
+.mm-outline li.d1 > .mm-o-t { font-size: 16px; font-weight: 700; }
+.mm-outline .mm-o-t { font-weight: 500; line-height: 1.4; }
+.mm-outline em { font-style: normal; font-size: 11px; font-weight: 600; color: var(--mm-mute); margin-left: 4px; }
+.mm-outline p { margin: 2px 0 0; font-size: 13px; line-height: 1.5; color: var(--mm-mute); }
+/* minimap */
+.mm-mini { position: absolute; left: 16px; bottom: 18px; width: 180px; height: 112px; padding: 6px; border-radius: 18px; cursor: pointer; }
+.mm-mini svg { width: 100%; height: 100%; display: block; }
+.mm-mini rect { fill: var(--mm-mute); opacity: .55; }
+.mm-mini rect.mm-view { fill: none; opacity: 1; stroke: var(--mm-hit); stroke-width: 2; }
+.mm-viewer.presenting .mm-mini, .mm-viewer.presenting .mm-menu { display: none; }
+@media (max-width: 1100px) { .mm-mini { display: none; } }
+@media (max-width: 760px) {
+  .mm-top { top: 10px; left: 10px; right: 10px; }
+  .mm-title h2 { max-width: 100%; }
+  .mm-seg-t { display: none; }
+  .mm-purpose-line { display: none; }
+  .mm-panel { top: auto; bottom: 84px; right: 10px; left: 10px; width: auto; max-height: 30vh; padding: 14px 16px; border-radius: 20px; }
+  .mm-panel h3 { font-size: 16px; }
+  .mm-panel p { font-size: 14px; }
+  .mm-search, .mm-menu { bottom: 80px; }
+  .mm-outline { inset: 120px 10px 80px; padding: 16px 18px; }
+  /* one row that scrolls sideways, rather than a wrapped block */
+  .mm-tools { bottom: max(10px, env(safe-area-inset-bottom)); flex-wrap: nowrap; justify-content: flex-start; width: calc(100% - 20px); overflow-x: auto; scrollbar-width: none; }
+  .mm-tools::-webkit-scrollbar { display: none; }
+  .mm-tools .glass-toolbar__divider { display: none; }
+  .mm-tools .glass-toolbar__btn { flex: none; }
+}
+@media (prefers-reduced-motion: reduce) { .mm-viewer * { transition: none !important; animation: none !important; } }

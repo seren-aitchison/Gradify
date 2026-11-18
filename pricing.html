@@ -168,6 +168,7 @@
     import { SUPABASE_URL, SUPABASE_ANON_KEY } from "/gradify.config.js";
     import { joinWaitlist, PRO_LIST, PLUS_LIST } from "/kit/data/waitlist.js";
     import { PLAN_PRICES, PLUS_ON_SALE, PRO_ON_SALE, AI_ALLOWANCES, uses, planOf, describePlan, clientStore, mySubscription, startCheckout, openPortal } from "/kit/data/billing.js";
+    import { FREE } from "/kit/data/limits.js";
     import { pounds } from "/kit/data/plan.js";
 
     const $ = (s) => document.querySelector(s);
@@ -183,9 +184,10 @@
     $("#plus-amt").textContent = pounds(PLAN_PRICES.plus.month);
     $("#pro-amt").textContent = pounds(PLAN_PRICES.pro.month);
     $("#free-list").innerHTML = [
-      li(tick, "Create and use flashcards", "From your own notes, with spaced repetition"),
-      li(tick, "Create and use mind maps"),
-      li(tick, "Every course on every Gradify site", "Lessons, worked examples, labs, unit quizzes and practice questions"),
+      li(tick, `${FREE.lesson} lessons in each course you start`, "On every Gradify site, with their worked examples, labs and practice questions"),
+      li(tick, `${FREE.flashcards} flashcard sets`, "With spaced repetition"),
+      li(tick, `${FREE.map} mind maps`),
+      li(tick, `Tools: each ${FREE.tool} times`, "Lesson search, the mind map and flashcard creators, and the notes converter"),
       li(tick, "Basic revision and progress", "Due cards, streaks, XP and the Gradify road"),
       li(tick, "Manual study planning"),
       li(tick, "One study device", "Your work is kept in your account and you can look at it anywhere; you study on one device at a time, and can move it once a week"),
@@ -193,6 +195,7 @@
     ].join("");
     const group = (title, items) => `<h4>${esc(title)}</h4><ul>${items.map(([t, sub]) => li(tick, esc(t), sub ? esc(sub) : "")).join("")}</ul>`;
     $("#plus-list").innerHTML = [
+      group("No limits", [["Every lesson in every course"], ["Every flashcard set and mind map"], ["Every tool, as often as you like", "Lesson search, the mind map and flashcard creators, and the notes converter"]]),
       group("Gradify Intelligence", [["Smart Plan autopilot", "Your week planned and kept on track for you"], ["Readiness forecasts"], ["Cards ordered by Gradify", "What matters most and is fading comes first"], ["Adaptive card suggestions and revision recommendations"]]),
       group("Exam preparation", [["Timed exams", "Over each part of a course and the whole course, with weak areas identified"], ["The complete question bank for every course"]]),
       group("Calendar and productivity", [["Calendar sync", "Plan around Google, Apple or Outlook calendars and your timetable, and export your plan to them"], ["Reminders, even when Gradify is closed"], ["Automatic study-block scheduling"]]),

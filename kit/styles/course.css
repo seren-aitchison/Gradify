@@ -84,7 +84,7 @@
 .co-ubar { width: min(260px, 60vw); height: 6px; margin-top: 8px; border-radius: 9px; background: rgba(var(--sink-rgb), .25); overflow: hidden; }
 .co-ubar i { display: block; height: 100%; background: var(--invert-bg); border-radius: inherit; }
 .co-bbtns { display: flex; flex-direction: column; gap: 8px; z-index: 1; }
-.co-bbtn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 9px 14px; border-radius: 12px; font: 600 13.5px var(--sans); color: #111; background: var(--invert-bg); border: 0; text-decoration: none; cursor: pointer; white-space: nowrap; box-shadow: 0 4px 0 rgba(0, 0, 0, .25); }
+.co-bbtn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 9px 14px; border-radius: 12px; font: 600 13.5px var(--sans); color: var(--invert-fg); background: var(--invert-bg); border: 0; text-decoration: none; cursor: pointer; white-space: nowrap; box-shadow: 0 4px 0 rgba(0, 0, 0, .25); }
 .co-bbtn:active { transform: translateY(2px); box-shadow: 0 2px 0 rgba(0, 0, 0, .25); }
 .co-bbtn.ghost { color: var(--fg); background: rgba(var(--sink-rgb), .22); box-shadow: none; }
 .co-pathnote { margin-bottom: 14px; padding: 12px 16px; border-radius: 14px; background: rgba(var(--ink-rgb), .04); border: 1px solid var(--line); font-size: 14px; color: var(--mute); }
@@ -101,11 +101,17 @@
 .co-car { position: absolute; z-index: 2; width: 260px; height: 260px; margin: -130px 0 0 -130px; overflow: visible; pointer-events: none; }
 .co-node { position: absolute; z-index: 3; width: 66px; height: 66px; margin: -33px 0 0 -33px; display: grid; place-items: center; border-radius: 50%; color: rgba(var(--ink-rgb), .55); text-decoration: none; cursor: pointer;
   background: #2a2a31; border: 0; box-shadow: 0 6px 0 #16161a, inset 0 2px 0 rgba(255, 255, 255, .1); transition: transform .12s; }
+/* theme-tokens-skip: the road and its lesson nodes are dark in both themes, so the centre line and the nodes' icons stay
+   light in both (the labels beside the nodes sit on the page and still follow the theme). Later .done, .cur, .chest and
+   .quiz rules set their own colours. */
+.co-road .co-r-dash { stroke: rgba(255, 255, 255, .28); }
+/* theme-tokens-skip (as above) */
+.co-node { color: rgba(255, 255, 255, .55); }
 .co-node .co-ic { width: 28px; height: 28px; }
 .co-node:hover { transform: translateY(-2px); }
 .co-node:active { transform: translateY(3px); box-shadow: 0 3px 0 #16161a; }
 .co-node.done { color: #fff; background: linear-gradient(140deg, var(--a, #ff5600), var(--b, #f055dd)); box-shadow: 0 6px 0 color-mix(in srgb, var(--b, #f055dd) 45%, #000), inset 0 2px 0 rgba(255, 255, 255, .3); }
-.co-node.cur { width: 78px; height: 78px; margin: -39px 0 0 -39px; color: #111; background: var(--invert-bg); box-shadow: 0 7px 0 #b9b9c4, 0 0 0 8px rgba(255, 255, 255, .1), 0 0 40px rgba(255, 255, 255, .25); }
+.co-node.cur { width: 78px; height: 78px; margin: -39px 0 0 -39px; color: var(--invert-fg); background: var(--invert-bg); box-shadow: 0 7px 0 #b9b9c4, 0 0 0 8px rgba(255, 255, 255, .1), 0 0 40px rgba(255, 255, 255, .25); }
 .co-node.cur::before { content: ""; position: absolute; inset: -14px; border-radius: 50%; border: 3px solid rgba(var(--ink-rgb), .5); animation: co-pulse 1.8s infinite; }
 @keyframes co-pulse { from { transform: scale(.85); opacity: 1; } to { transform: scale(1.25); opacity: 0; } }
 .co-node.chest { border-radius: 12px; color: rgba(255, 192, 2, .35); }
@@ -125,7 +131,7 @@
 .co-node.done .co-label { color: rgba(var(--ink-rgb), .55); }
 .co-node.cur .co-label { color: var(--fg); font-size: 15px; font-weight: 600; width: 220px; }
 .co-node:hover .co-label { color: var(--fg); }
-.co-bubble { color: #111; background: var(--invert-bg); max-width: 260px; overflow: hidden; text-overflow: ellipsis; box-shadow: 0 8px 20px -6px rgba(0, 0, 0, .6); animation: co-bob 2s ease-in-out infinite; }
+.co-bubble { color: var(--invert-fg); background: var(--invert-bg); max-width: 260px; overflow: hidden; text-overflow: ellipsis; box-shadow: 0 8px 20px -6px rgba(0, 0, 0, .6); animation: co-bob 2s ease-in-out infinite; }
 .co-bubble::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -6px; border: 6px solid transparent; border-top-color: #fff; }
 @keyframes co-bob { 50% { transform: translate(-50%, -4px); } }
 
@@ -763,3 +769,204 @@ button.rx-s { cursor: pointer; border-bottom: 1px dashed var(--line-strong); } b
 .co-review { padding: 2px 9px; border-radius: 999px; border: 1px solid var(--line-strong); color: var(--fg); }
 .co-review.reviewed { border-color: rgba(64, 212, 177, .6); color: #40d4b1; }
 .co-review.updated { border-color: rgba(245, 158, 11, .6); color: #f5b041; color: light-dark(#b87100, #f5b041); }
+
+/* ---------- Mind maps: five previews in a lesson (kit/maps/view.js) ---------- */
+.mm-section { margin: 28px 0 8px; }
+.mm-head h3 { margin: 0 0 4px; font-size: 20px; letter-spacing: -.01em; }
+.mm-head .sub { margin: 0 0 14px; color: var(--mute); }
+.mm-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
+.mm-card { position: relative; display: grid; gap: 4px; align-content: start; text-align: left; padding: 14px; border-radius: 18px; cursor: pointer; font: inherit; color: var(--fg); background: var(--panel); border: 1px solid var(--line); transition: transform .18s cubic-bezier(.2, .8, .2, 1), border-color .18s, box-shadow .18s; }
+.mm-card:hover { transform: translateY(-2px); border-color: var(--line-strong); box-shadow: 0 18px 40px -26px rgba(var(--sink-rgb, 0, 0, 0), .6); }
+.mm-card:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+.mm-card .mm-sketch { width: 100%; height: auto; aspect-ratio: 16 / 10; border-radius: 12px; background: var(--inset); margin-bottom: 6px; }
+.mm-card .mm-cicon { position: absolute; top: 10px; right: 10px; }
+.mm-card .mm-n { font: 600 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--mute); }
+.mm-card b { font-size: 15px; line-height: 1.3; }
+.mm-card .mm-purpose { font-size: 13px; color: var(--mute); line-height: 1.45; }
+.mm-card .mm-scope { font-size: 12px; color: var(--faint); margin-top: 4px; }
+@media (prefers-reduced-motion: reduce) { .mm-card { transition: none; } .mm-card:hover { transform: none; } }
+
+/* ---------- Reading a lesson (kit/course/course.js viewLesson, .co-reading on the course) ----------
+   The course's header, XP counters, notice and tabs fold away so the lesson starts at the top. Beside it, a rail lists
+   the lesson's sections and how far through you are. The notes are set for reading: larger type, a comfortable line
+   length and numbered sections; then the recap, the check questions, going deeper and the sources, in that order,
+   and a finish panel with the next and previous lessons. */
+.co.co-reading .co-head, .co.co-reading .co-notice, .co.co-reading .co-tabs { display: none; }
+.co.co-reading .co-body { margin-top: 18px; grid-template-columns: minmax(0, 1fr) 270px; gap: 32px; }
+.co.co-reading .co-side { top: 24px; }
+@media (max-width: 1020px) { .co.co-reading .co-body { grid-template-columns: minmax(0, 1fr); } .co.co-reading .co-side { display: none; } }
+
+/* reading progress, a thin spectrum line along the top of the window */
+.co-readbar { position: fixed; inset: 0 0 auto; height: 3px; z-index: 120; pointer-events: none; }
+.co-readbar i { display: block; height: 100%; transform: scaleX(0); transform-origin: 0 50%; background: linear-gradient(90deg, #4641ff, #f055dd 40%, #ff5600 75%, #ffc002); box-shadow: 0 0 10px rgba(240, 85, 221, .6); transition: transform .12s linear; }
+
+/* where you are in the school */
+.co-lbar { margin-bottom: 14px; }
+.co-read .co-steps { margin-top: 10px; }
+.co-read .co-steps a { height: 5px; transition: transform .15s; }
+.co-read .co-steps a:hover { transform: scaleY(1.8); }
+
+/* the page itself: quieter frame, more room */
+.co-read .co-notes { margin-top: 0; padding: clamp(22px, 5vw, 56px); border-radius: 24px; }
+
+/* the lesson's header */
+.co-lhead { position: relative; padding-bottom: 28px !important; }
+.co-lhead .co-licon { float: right; margin: -6px -6px 12px 20px; }
+.co-lhead h2 { font-size: clamp(32px, 4.6vw, 52px) !important; line-height: 1.04; letter-spacing: -.04em; margin-top: 12px !important; text-wrap: balance; }
+.co-lhead .mv-lead { font-size: clamp(17px, 1.6vw, 19.5px); line-height: 1.6; max-width: 62ch; margin-top: 16px; text-wrap: pretty; }
+.co-lhead .mv-chips { margin-top: 20px; gap: 8px; }
+.co-jump { text-decoration: none; color: var(--fg); cursor: pointer; }
+.co-jump:hover { border-color: var(--c); }
+.co-jump .co-ic { color: var(--c) !important; }
+.co-read .co-draft { margin: 22px 0 0; display: flex; gap: 8px; }
+.co-read .co-reviewed { margin-top: 12px; }
+.co-read .co-builds { margin: 18px 0 0; }
+
+/* before you start */
+.co-read .co-frame:not(.co-end):not(.co-refs) { margin: 26px 0 0; padding: 20px 22px; border-radius: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px 28px;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--c) 10%, transparent), transparent 70%); border-color: color-mix(in srgb, var(--c) 30%, var(--line)); }
+.co-read .co-frame h3 { font: 600 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--c); margin-bottom: 10px; }
+.co-read .co-frame:not(.co-end):not(.co-refs) ul { list-style: none; padding: 0; display: grid; gap: 8px; color: var(--fg); font-size: 15.5px; line-height: 1.5; }
+.co-read .co-frame:not(.co-end):not(.co-refs) li { position: relative; padding-left: 26px; margin: 0; }
+.co-read .co-frame:not(.co-end):not(.co-refs) li::before { content: ""; position: absolute; left: 0; top: .2em; width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid var(--c); background: radial-gradient(circle, var(--c) 0 3px, transparent 3.5px); opacity: .9; }
+
+/* the notes, set for reading: one column, about 70 characters a line, numbered sections */
+.co-read .co-prose { columns: auto; max-width: 70ch; margin-top: 12px; counter-reset: sec; }
+.co-read .co-prose section { margin: 0; scroll-margin-top: 90px; }
+.co-read .co-prose section[id] { padding-top: 34px; }
+.co-read .co-prose section[id] h3 { counter-increment: sec; margin: 0 0 14px; font-size: clamp(21px, 2.2vw, 25px); line-height: 1.25; letter-spacing: -.02em; align-items: baseline; gap: 12px; }
+.co-read .co-prose section[id] h3::before { content: counter(sec, decimal-leading-zero); flex: none; width: auto; height: auto; padding: 3px 8px; border-radius: 8px; box-shadow: none; transform: translateY(-3px);
+  font: 600 12px var(--mono); letter-spacing: .06em; color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent); border: 1px solid color-mix(in srgb, var(--c) 35%, transparent); }
+.co-read .co-prose p { font-size: 17px; line-height: 1.75; margin: 0 0 16px; text-wrap: pretty; }
+.co-read .co-prose ul { font-size: 17px; line-height: 1.65; gap: 10px; margin: 0 0 18px; padding-left: 22px; }
+.co-read .co-prose li { padding-left: 4px; }
+.co-read .co-prose b { font-weight: 650; }
+.co-read .co-prose .mv-key { margin: 20px 0; padding: 16px 20px; font-size: 17.5px; line-height: 1.6; font-weight: 500; border-left-width: 3px; border-radius: 0 16px 16px 0; }
+.co-read .co-prose .co-ex { margin: 20px 0; padding: 18px 20px; border-radius: 18px; }
+.co-read .co-prose .co-ex p, .co-read .co-prose .co-ex ol { font-size: 16px; line-height: 1.65; }
+.co-read .co-prose .co-ex ol { gap: 8px; margin-top: 10px; padding-left: 0; list-style: none; counter-reset: step; }
+.co-read .co-prose .co-ex ol li { counter-increment: step; position: relative; padding-left: 36px; }
+.co-read .co-prose .co-ex ol li::before { content: counter(step); position: absolute; left: 0; top: .1em; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font: 600 12px var(--mono); color: #062a22; background: #40d4b1; }
+.co-read .co-prose .co-pit, .co-read .co-prose .co-safe { margin: 20px 0; padding: 16px 20px; border-radius: 18px; font-size: 16px; line-height: 1.6; }
+.co-read .co-prose .co-eq { margin: 18px 0; padding: 16px 18px; border-radius: 16px; }
+.co-read .co-prose .co-eq code { font-size: 18px; }
+.co-read .co-prose .co-eq span { font-size: 14.5px; }
+.co-read .co-prose .co-ixslot, .co-read .co-prose .g3d-diagram, .co-read .co-prose figure { max-width: none; }
+
+/* the lesson's parts after the notes: Recap, Check yourself, Go deeper */
+.co-part { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; font-size: clamp(22px, 2.4vw, 28px); letter-spacing: -.025em; }
+.co-part .co-ic { width: 26px; height: 26px; padding: 5px; border-radius: 10px; color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent); }
+.co-recap, .co-read .co-check, .co-deeper, .co-refsec, .co-read .co-trylab { margin-top: 52px; padding-top: 34px; border-top: 1px solid var(--line); scroll-margin-top: 90px; }
+.co-recap .co-frame { margin: 0; padding: 22px; gap: 22px; border-radius: 18px; }
+.co-recap .co-frame ul { color: var(--fg); font-size: 16px; line-height: 1.55; display: grid; gap: 6px; }
+.co-recap .co-terms { font-size: 15.5px; }
+
+/* check yourself: a header with how many are right, each question numbered */
+.co-read .co-check { gap: 18px; }
+.co-check > header { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.co-check > header .co-part { margin: 0; }
+.co-checkn { font: 600 12px var(--mono); letter-spacing: .04em; color: var(--mute); padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .03); }
+.co-checkn.all { color: #2ecc71; border-color: rgba(46, 204, 113, .5); background: rgba(46, 204, 113, .1); }
+.co-qn { position: relative; }
+.co-qn::before { content: "Question " attr(data-n); display: block; margin: 0 0 8px 4px; font: 600 11px var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--c); }
+.co-read .co-check .aq { margin: 0; padding: clamp(18px, 3vw, 26px); border-radius: 20px; background: linear-gradient(170deg, rgba(var(--ink-rgb), .05), rgba(var(--ink-rgb), .015)); transition: border-color .25s, box-shadow .25s; }
+.co-read .co-check .aq.solved { border-color: rgba(46, 204, 113, .55); box-shadow: 0 0 0 1px rgba(46, 204, 113, .2), 0 20px 40px -30px rgba(46, 204, 113, .7); }
+.co-read .co-check .aq-q { font-size: 18px; line-height: 1.45; margin-bottom: 14px; }
+.co-read .co-check .aq-q small { margin-top: 8px; }
+/* how sure are you: one quiet line, not a second set of buttons competing with the answers */
+.co-read .co-check .aq-conf { gap: 6px; align-items: center; margin: 0 0 14px; }
+.co-read .co-check .aq-conf legend { float: left; width: auto; margin: 0 6px 0 0; font-size: 13px; }
+.co-read .co-check .aq-conf label { min-height: 32px; padding: 4px 11px; font-size: 13px; }
+.co-read .co-check .aq-conf input { width: 12px; height: 12px; margin: 0; }
+.co-read .co-check .aq-opts { gap: 10px; }
+.co-read .co-check .aq-opts button, .co-read .co-check .aq-checks label { min-height: 54px; padding: 12px 16px; border-radius: 14px; font-size: 16px; transition: border-color .15s, background .15s, transform .15s; }
+.co-read .co-check .aq-opts button:hover:not(:disabled) { transform: translateX(3px); }
+
+/* go deeper: the tutor and the mind maps */
+.co-deeper > .co-ask { margin-top: 0; }
+.co-deeper .mm-section, .co-deeper > section + section { margin-top: 28px; }
+.co-refsec .co-frame { margin: 0; padding: 0; border: 0; background: none; gap: 18px; }
+.co-refsec .co-sources { font-size: 14.5px; }
+
+/* the finish panel */
+.co-finish { margin-top: 52px !important; padding: 24px !important; border: 1px solid transparent !important; border-radius: 22px; display: flex !important; align-items: center; justify-content: space-between; gap: 18px 24px; flex-wrap: wrap;
+  background: linear-gradient(var(--panel-strong, #111), var(--panel-strong, #111)) padding-box, linear-gradient(120deg, var(--a, #4641ff), var(--b, #f055dd)) border-box;
+  background: linear-gradient(var(--panel-strong, light-dark(#ffffff, #111)), var(--panel-strong, light-dark(#ffffff, #111))) padding-box, linear-gradient(120deg, var(--a, #4641ff), var(--b, #f055dd)) border-box; box-shadow: 0 30px 60px -40px var(--a, #4641ff); }
+.co-finish-txt { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1 1 260px; }
+.co-finish-txt b { font-size: 20px; letter-spacing: -.02em; }
+.co-finish-txt span { color: var(--mute); font-size: 14.5px; line-height: 1.5; }
+.co-finish-btns { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* the next and previous lessons, as cards */
+.co-read + .co-pn, .co-lesson .co-pn { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; font-size: inherit; }
+.co-pncard { display: flex; flex-direction: column; gap: 6px; min-width: 0; max-width: none !important; padding: 18px 20px; border-radius: 18px; border: 1px solid var(--line); background: rgba(var(--ink-rgb), .03); color: var(--fg) !important; text-decoration: none; transition: border-color .2s, transform .2s, background .2s; }
+.co-pncard:hover { border-color: var(--a, var(--line-strong)); background: rgba(var(--ink-rgb), .06); transform: translateY(-2px); }
+.co-pncard small { font: 600 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
+.co-pncard b { font-size: 17px; line-height: 1.3; letter-spacing: -.01em; }
+.co-pncard i { font-style: normal; font-size: 13px; color: var(--mute); }
+.co-pncard.next { text-align: right; grid-column: 2; }
+@media (max-width: 640px) {
+  .co-lesson .co-pn { grid-template-columns: 1fr; }
+  .co-pncard.next { grid-column: 1; grid-row: 1; text-align: left; }
+  .co-lhead .co-licon { position: absolute; top: -10px; right: -10px; margin: 0; }
+  .co-lhead > .kicker { display: block; padding-right: 64px; }
+  .co-lhead .co-licon .g3d { --s: 62px !important; }
+  .co-read .co-notes { padding: 22px 18px; border-radius: 20px; }
+  .co-read .co-prose p, .co-read .co-prose ul { font-size: 16.5px; }
+  .co-finish-btns, .co-finish-btns .btn { width: 100%; }
+  .co-finish-btns .btn { justify-content: center; }
+}
+
+/* the rail: on this page, reading progress, the questions and Complete */
+.co-rail { display: flex; flex-direction: column; gap: 14px; padding: 18px; border-radius: 18px; }
+.co-railtop { display: flex; align-items: center; gap: 12px; }
+.co-railtop > div { display: flex; flex-direction: column; gap: 2px; }
+.co-railtop b { font-size: 16px; }
+.co-ring.sm { width: 50px; height: 50px; }
+.co-ring.sm circle { stroke-width: 6; }
+.co-ring.sm .fg { transition: stroke-dashoffset .15s linear; }
+.co-toc { list-style: none; margin: 0; padding: 0 0 0 2px; display: flex; flex-direction: column; border-left: 1px solid var(--line); }
+.co-toc a { display: block; margin-left: -1px; padding: 6px 10px 6px 14px; border-left: 2px solid transparent; font-size: 13.5px; line-height: 1.35; color: var(--mute); text-decoration: none; transition: color .15s, border-color .15s; }
+.co-toc a:hover { color: var(--fg); }
+.co-toc a.on { color: var(--fg); border-left-color: #40d4b1; font-weight: 600; }
+.co-railq { margin: 0 !important; }
+.co-railq .co-checkn { display: block; border-radius: 12px; line-height: 1.5; }
+.co-railgo { justify-content: center; }
+.co-railgo[disabled] { opacity: .6; cursor: default; }
+@media (prefers-reduced-motion: reduce) { .co-readbar i, .co-ring.sm .fg, .co-pncard, .co-read .co-check .aq-opts button { transition: none; } }
+
+/* a lesson's glass diagrams: full width, each opens full size */
+.co-lesson .gd { cursor: zoom-in; }
+.co-lesson .gd:focus-visible { outline: 2px solid var(--fg); outline-offset: 6px; border-radius: 22px; }
+.co-lesson .gd figcaption::after { content: "Open full size ↗"; margin-left: 10px; font-size: 12px; color: var(--faint, var(--mute)); opacity: 0; transition: opacity .2s; }
+.co-lesson .gd:hover figcaption::after, .co-lesson .gd:focus-visible figcaption::after { opacity: 1; }
+@media (hover: none) { .co-lesson .gd figcaption::after { content: "Tap to enlarge"; opacity: .8; } }
+.co-recap > .gd { margin: 0 0 26px; }
+.gd-zoom { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: max(16px, 3vw); background: rgba(0, 0, 0, .78); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); animation: gd-zin .18s ease-out; }
+.gd-zoomin { --gd-bg: light-dark(#ffffff, #0d1120); --gd-ink: light-dark(#151826, #eef1fb); --gd-soft: light-dark(#5b6275, #a3abc2); --gd-line: light-dark(#8a92a8, #6f7894);
+  position: relative; width: min(100%, 1100px, calc((100vh - 120px) * 1.6)); padding: 12px; border-radius: 24px; color: var(--gd-ink); background: var(--gd-bg); box-shadow: 0 40px 100px -30px rgba(0, 0, 0, .8); }
+.gd-zoomin::after { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; pointer-events: none; background: linear-gradient(135deg, #4641ff, #f055dd 35%, #ff5600 70%, #ffc002);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); }
+.gd-zoomin .gd-svg { display: block; width: 100%; height: auto; padding: 0; }
+.gd-zoomin p { margin: 6px 12px 4px; font-size: 14px; color: var(--gd-soft); }
+.gd-zoomx { position: fixed; top: 14px; right: 14px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .3); background: rgba(20, 20, 28, .8); color: #fff; font: 400 26px/1 var(--sans); cursor: pointer; }
+@keyframes gd-zin { from { opacity: 0; } }
+
+/* key terms in the notes: a dotted underline; the definition shows on hover, focus or tap */
+.co-term { all: unset; cursor: help; font: inherit; color: inherit; border-bottom: 1.5px dotted color-mix(in srgb, var(--c, #40d4b1) 80%, transparent); transition: background .15s; border-radius: 2px; }
+.co-term:hover, .co-term:focus-visible { background: color-mix(in srgb, var(--c, #40d4b1) 16%, transparent); outline: none; }
+.co-tip { position: fixed; z-index: 140; padding: 12px 14px; border-radius: 14px; font-size: 14px; line-height: 1.5; color: var(--fg); pointer-events: none;
+  background: var(--panel-strong, #151826); border: 1px solid var(--line-strong, rgba(var(--ink-rgb), .2)); box-shadow: 0 18px 40px -16px rgba(0, 0, 0, .6); }
+.co-tip b { display: block; margin-bottom: 3px; font: 700 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: #40d4b1; }
+.co-tip[hidden] { display: none; }
+
+/* continue where you left off */
+.co-resume { cursor: pointer; color: var(--fg); border-color: color-mix(in srgb, #40d4b1 60%, transparent); background: color-mix(in srgb, #40d4b1 12%, transparent); font: inherit; font-size: 12.5px; }
+.co-resume .co-ic { color: #40d4b1 !important; }
+.co-resume:hover { background: color-mix(in srgb, #40d4b1 22%, transparent); }
+
+/* the keys for the next and previous lesson, shown where there's a keyboard */
+@media (hover: hover) and (pointer: fine) {
+  .co-pncard.prev small::after { content: "  ·  ←"; opacity: .7; }
+  .co-pncard.next small::before { content: "→  ·  "; opacity: .7; }
+}
