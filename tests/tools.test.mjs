@@ -147,3 +147,16 @@ test("signed in, opening a lesson works with Supabase's real query builder (awai
   const down = { mode: "cloud", db: { rpc: () => ({ then: (ok, no) => Promise.reject(new Error("offline")).then(ok, no) }) }, async getProfile() { return {}; } };
   assert.equal(await gate("lesson", "u01-02", { course: "law", store: down }), true);
 });
+
+test("the Gradify Tree's leaves are the learner's real lessons, flashcard sessions and quizzes", async () => {
+  const { leafKind, activityDays } = await import("../kit/learning/learner-data.js");
+  // course kinds are "<course>-<kind>" (kit/course/course.js award); the app logs flashcard reviews as "session"
+  assert.equal(leafKind("law-lesson"), "lesson");
+  for (const k of ["law-review", "session"]) assert.equal(leafKind(k), "flashcard", k);
+  for (const k of ["law-quiz", "maths-check", "nursing-practice", "physics-mock", "law-write"]) assert.equal(leafKind(k), "quiz", k);
+  for (const k of ["pack", "block", "workout", "law-chest", undefined]) assert.equal(leafKind(k), null, String(k));
+  const at = new Date().toISOString();
+  const day = activityDays([{ at, site: "LawGradify", kind: "law-lesson" }, { at, site: "LawGradify", kind: "law-quiz" }, { at, site: "LawGradify", kind: "pack" }], { weeks: 1 }).at(-1);
+  assert.deepEqual(day.leaves.LawGradify, { lesson: 1, flashcard: 0, quiz: 1 }, "a pack of notes isn't a leaf");
+  assert.equal(day.counts.LawGradify, 3, "but every activity still counts towards the day");
+});

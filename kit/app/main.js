@@ -24,7 +24,7 @@ import { schedule, preview, isDue, isLearned, fmtInterval, RATINGS } from "../le
 import { topicProfiles, practiceOrder, LEVELS } from "../learning/mastery.js";
 import { sixHtml, calibrationHtml, HOW } from "../learning/mastery-view.js";
 import { levelOf as gameLevelOf } from "../game/engine.js";
-import { loadLearner, COURSES } from "../learning/learner-data.js";
+import { loadLearner, COURSES, leafKind } from "../learning/learner-data.js";
 import { mountJourney, journeySummary } from "../game/journey.js";
 import { AREAS, METRICS, PERIODS, HABIT_MODES, validateGoal, goalProgress, focusGoals } from "../learning/goals.js";
 import { goalData } from "../learning/goal-data.js";
@@ -1249,9 +1249,10 @@ export function treeData(acts, now = Date.now()) {
   const recent = acts.filter((a) => now - Date.parse(a.at) < 30 * DAY);
   const bySite = new Map();
   for (const a of acts) { const k = a.site || "Gradify"; const r = bySite.get(k) || { act: 0, xp: 0 }; r.xp += a.xp || 0; bySite.set(k, r); }
-  for (const a of recent) bySite.get(a.site || "Gradify").act++;
+  // each lesson, flashcard session and quiz in the last 30 days is a leaf on that site's tree (leafKind, learner-data.js)
+  for (const a of recent) { const r = bySite.get(a.site || "Gradify"); r.act++; r.leaves ||= { lesson: 0, flashcard: 0, quiz: 0 }; const k = leafKind(a.kind); if (k) r.leaves[k]++; }
   const sites = [...bySite.entries()].sort((p, q) => q[1].act - p[1].act || q[1].xp - p[1].xp).slice(0, 8)
-    .map(([n, r]) => ({ n, c: siteOf(n).c, act: r.act, k: Math.min(1, r.act / 36), creds: Array.from({ length: Math.min(4, Math.floor(r.xp / 500)) }, (_, i) => ({ site: n, t: `${(i + 1) * 500} XP` })) }));
+    .map(([n, r]) => ({ n, c: siteOf(n).c, act: r.act, k: Math.min(1, r.act / 36), leaves: r.leaves || { lesson: 0, flashcard: 0, quiz: 0 }, creds: Array.from({ length: Math.min(4, Math.floor(r.xp / 500)) }, (_, i) => ({ site: n, t: `${(i + 1) * 500} XP` })) }));
   const bars = Array.from({ length: 60 }, (_, i) => { const day = new Date(now - (59 - i) * DAY).toDateString(); return acts.filter((a) => new Date(a.at).toDateString() === day).length; });
   return { sites, bars };
 }
@@ -1262,8 +1263,10 @@ async function drawMyTree(acts) {
   let seed = 7; const rand = () => { seed = (seed + 0x6d2b79f5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
   drawTree(el, { sites: sites.length ? sites : [{ n: "Gradify", c: "4641ff", act: 0, k: 0, creds: [] }], bars, rand });
   const side = document.getElementById("lo-tree-side"); if (!side) return;
-  const leaves = sites.reduce((a, x) => a + 4 + Math.round(x.k * 10), 0), fruit = sites.reduce((a, x) => a + x.creds.length, 0);
-  side.innerHTML = sites.length ? `<div class="grow-stats"><div><b>${leaves}</b><span>leaves grown</span></div><div><b>${fruit}</b><span>gold fruit (500 XP each)</span></div><div><b>${bars.slice(-7).reduce((a, b) => a + b, 0)}</b><span>activities this week</span></div></div>
+  const L3 = sites.reduce((a, x) => ({ lesson: a.lesson + x.leaves.lesson, flashcard: a.flashcard + x.leaves.flashcard, quiz: a.quiz + x.leaves.quiz }), { lesson: 0, flashcard: 0, quiz: 0 });
+  const leaves = L3.lesson + L3.flashcard + L3.quiz, fruit = sites.reduce((a, x) => a + x.creds.length, 0);
+  side.innerHTML = sites.length ? `<div class="grow-stats"><div><b>${leaves}</b><span>leaves · last 30 days</span></div><div><b>${fruit}</b><span>gold fruit (500 XP each)</span></div><div><b>${bars.slice(-7).reduce((a, b) => a + b, 0)}</b><span>activities this week</span></div></div>
+    <p class="leaf-key"><span><i class="lk-lesson"></i>${L3.lesson} lessons</span><span><i class="lk-flashcard"></i>${L3.flashcard} flashcard sessions</span><span><i class="lk-quiz"></i>${L3.quiz} quizzes</span></p>
     <ul class="grow-legend">${sites.map((x) => `<li><i style="background:#${x.c}"></i><span>${esc(x.n)}</span><em>${x.act}</em></li>`).join("")}</ul>`
     : `<p class="sub">Your tree is a seedling. Finish a lesson, review some cards or use a tool and it starts to grow.</p>`;
 }
