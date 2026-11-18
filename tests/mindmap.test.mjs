@@ -74,3 +74,95 @@ test("insights start with what to learn next, quote their evidence, and carry th
   const all = buildMap(pack, { learnt: new Set(pack.facts.filter((f) => f.term).map((f) => f.term.toLowerCase())) });
   assert.equal(insights(all).insights[0].kind, "done");
 });
+
+// ---------- synced with the learner's memory ----------
+import { memoryFor, cardsAbout, whenText } from "../kit/notes/mindmap/memory.js";
+const NOW = Date.parse("2026-11-18T12:00:00Z"), D = 864e5;
+const iso = (t) => new Date(t).toISOString();
+const card = (id, front, back, o) => ({ id, front, back, reps: 2, ease: 2.5, suspended: false, last_rating: "good", ...o });
+const CARDS = [
+  card("sv", "What is stroke volume (SV)?", "Amount of blood ejected per beat.", { reps: 4, interval_days: 30, due_at: iso(NOW + 25 * D) }),
+  card("sys", "What is systole?", "Phase when ventricles contract.", { interval_days: 1, due_at: iso(NOW - 5 * D) }),
+  card("s1", "What causes the first heart sound (S1)?", "Closure of the mitral and tricuspid valves.", { interval_days: 1, due_at: iso(NOW + D), last_rating: "again" }),
+  card("other", "What is a mitochondrion?", "The powerhouse of the cell.", { interval_days: 5, due_at: iso(NOW + 3 * D) }),
+];
+const REVIEWS = [
+  { card_id: "s1", rating: "again", confidence: "sure", reviewed_at: iso(NOW - 2 * D) },
+  { card_id: "s1", rating: "good", confidence: "unsure", reviewed_at: iso(NOW - 6 * D) },
+  { card_id: "sv", rating: "good", reviewed_at: iso(NOW - 5 * D) },
+];
+
+test("the map finds the learner's own cards for each term, by name or abbreviation, and ignores the rest", () => {
+  assert.deepEqual(cardsAbout("Stroke volume", "SV", CARDS).map((c) => c.id), ["sv"]);
+  assert.deepEqual(cardsAbout("First heart sound", "S1", CARDS).map((c) => c.id), ["s1"]);
+  assert.deepEqual(cardsAbout("Diastole", null, CARDS), []);
+});
+
+test("each term's memory comes from the learner's real answers: strong, fading, shaky or not tracked", () => {
+  const m = buildMap(pack);
+  const id = (term) => m.nodes.find((n) => n.fact?.term === term).id;
+  const r = memoryFor(m, { cards: CARDS, reviews: REVIEWS, now: NOW });
+  assert.equal(r.synced, true);
+  assert.equal(r.tracked, 3);
+  assert.equal(r.terms.get(id("Stroke volume")).state, "strong");
+  assert.equal(r.terms.get(id("Systole")).state, "fading");
+  assert.ok(r.terms.get(id("Systole")).due);
+  assert.equal(r.terms.get(id("First heart sound")).state, "shaky");
+  assert.equal(r.terms.get(id("First heart sound")).sureWrong, 1);
+  assert.ok(!r.terms.has(id("Diastole")));
+  assert.equal(memoryFor(m, {}).synced, false);
+  assert.equal(whenText(NOW + 2 * D, NOW), "in 2 days");
+});
+
+test("Intelligence puts the learner's misconceptions and fading terms first, and counts strong terms as known", () => {
+  const m = buildMap(pack);
+  const memory = memoryFor(m, { cards: CARDS, reviews: REVIEWS, now: NOW });
+  const r = insights(m, { memory });
+  assert.equal(r.insights[0].kind, "shaky");
+  assert.ok(r.insights.some((i) => i.kind === "fading"));
+  assert.ok(r.known(m.nodes.find((n) => n.fact?.term === "Stroke volume").id));
+  assert.equal(r.learnt, 1);
+  // stroke volume is known now, so the next thing to learn is something else
+  assert.ok(!r.insights.find((i) => i.kind === "next").title.includes("Stroke volume"));
+});
+
+// ---------- ask the map, export, and the learner's own links and colours ----------
+import { ask, mentioned } from "../kit/notes/mindmap/ask.js";
+import { toMarkdown } from "../kit/notes/mindmap/export.js";
+
+test("Ask the map finds the terms a question names, longest first, by name or abbreviation", () => {
+  const m = buildMap(pack);
+  assert.deepEqual(mentioned("compare S1 and the second heart sound", m).map((n) => n.fact.term), ["First heart sound", "Second heart sound"]);
+  assert.deepEqual(mentioned("what is cardiac output?", m).map((n) => n.fact.term), ["Cardiac output"]);
+});
+
+test("Ask the map answers only from the notes: compare, depends on, first steps, memory, and says when it can't", () => {
+  const m = buildMap(pack), intel = insights(m);
+  const cmp = ask("Compare systole and diastole", m, intel);
+  assert.equal(cmp.kind, "compare");
+  assert.match(cmp.parts.at(-1).text, /easy to mix up/);
+  const dep = ask("What does cardiac output depend on?", m, intel);
+  assert.equal(dep.kind, "term");
+  assert.ok(dep.parts.some((p) => p.head === "Builds on" && /Stroke volume/.test(p.text)));
+  assert.equal(ask("What should I learn first?", m, intel).kind, "order");
+  assert.match(ask("What am I forgetting?", m, intel).title, /can't see your memory/);
+  assert.equal(ask("Who won the 1966 World Cup?", m, intel).kind, "none");
+  const memory = memoryFor(m, { cards: CARDS, reviews: REVIEWS, now: NOW });
+  const forgetting = ask("What am I forgetting?", m, insights(m, { memory }), memory);
+  assert.ok(forgetting.ids.includes(m.nodes.find((n) => n.fact?.term === "First heart sound").id));
+});
+
+test("the learner's own links and topic colours survive in the map, and links to hidden nodes are dropped", () => {
+  const m = buildMap(pack, { edits: { colours: { t0: "ff5a4d" }, links: [{ from: "t0.f0", to: "t3.f1" }, { from: "t0.f0", to: "t9.f9" }] } });
+  assert.equal(m.byId.get("t0").colour, "ff5a4d");
+  assert.ok(m.nodes.filter((n) => n.parent === "t0").every((n) => n.colour === "ff5a4d"));
+  assert.deepEqual(m.links.filter((l) => l.kind === "user").map((l) => `${l.from}>${l.to}`), ["t0.f0>t3.f1"]);
+});
+
+test("the map exports as a Markdown outline with every topic, term, formula and link", () => {
+  const m = buildMap(pack), md = toMarkdown(m, insights(m));
+  assert.match(md, /^# Cardiac cycle/);
+  for (const g of pack.groups) for (const f of g.facts) assert.ok(md.includes(`**${f.term}`), f.term);
+  assert.match(md, /`CO = SV × HR`/);
+  assert.match(md, /Cardiac output \(CO\) builds on Stroke volume \(SV\)/);
+});

@@ -611,6 +611,7 @@ function render() {
     spidermap = mountMindMap($("#spidermap-root"), {
       pack, learnt, questions: deeperQuestions(pack), esc: ctx.esc, toast: ctx.toast,
       onLearn: (term, known) => { if (known) ctx.logActivity("MedGradify", `Marked “${term}” as known on the spidermap`, "review", 5); },
+      onPractised: ({ knew, total }) => ctx.logActivity("MedGradify", `Practised the spidermap: knew ${knew} of ${total} terms`, "review", Math.min(40, knew * 3)),
     });
   }
 }

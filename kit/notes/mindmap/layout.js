@@ -17,10 +17,10 @@ export function spider(map) {
   const weight = (a) => Math.max(1, (kids.get(a.id) || []).length);
   const total = arms.reduce((s, a) => s + weight(a), 0);
   const R1 = Math.max(250, arms.length * 48);
-  let R2 = R1 + 220;
+  let R2 = R1 + 240;
   for (const a of arms) {
     const n = (kids.get(a.id) || []).length, sector = (2 * Math.PI * weight(a)) / total;
-    if (n > 1) R2 = Math.max(R2, (125 * n) / (sector * 0.86));
+    if (n > 1) R2 = Math.max(R2, (150 * n) / (sector * 0.86));
   }
   let angle = -Math.PI / 2 - (Math.PI * weight(arms[0])) / total;
   for (const a of arms) {
@@ -50,7 +50,7 @@ function placeOutward(kids, n, pos, t) {
 // Arms go to whichever side is shorter so far, so the two sides balance.
 export function flow(map) {
   const kids = childrenOf(map), arms = kids.get("root") || [], pos = { root: { x: 0, y: 0 } };
-  const ROW = 96, GAP = 44, X = [0, 330, 640, 900];
+  const ROW = 124, GAP = 48, X = [0, 340, 680, 980];
   const rows = (n) => Math.max(1, leafCount(kids, n));
   const sides = [{ dir: 1, arms: [], h: 0 }, { dir: -1, arms: [], h: 0 }];
   for (const a of arms) { const s = sides[0].h <= sides[1].h ? sides[0] : sides[1]; s.arms.push(a); s.h += rows(a) * ROW + GAP; }
@@ -76,14 +76,14 @@ const leafCount = (kids, n) => { const k = kids.get(n.id) || []; return k.length
 // the tree: a knowledge organiser, notes at the top and each topic a column of its terms
 export function tree(map) {
   const kids = childrenOf(map), arms = kids.get("root") || [], pos = { root: { x: 0, y: 0 } };
-  const COL = 250, width = (arms.length - 1) * COL;
+  const COL = 280, width = (arms.length - 1) * COL;
   arms.forEach((a, i) => {
     const x = i * COL - width / 2;
-    pos[a.id] = { x, y: 230 };
-    let y = 230 + 120;
+    pos[a.id] = { x, y: 250 };
+    let y = 250 + 128;
     for (const c of kids.get(a.id) || []) {
-      pos[c.id] = { x, y }; y += 96;
-      for (const g of kids.get(c.id) || []) { pos[g.id] = { x: x + 14, y }; y += 76; }
+      pos[c.id] = { x, y }; y += 124;
+      for (const g of kids.get(c.id) || []) { pos[g.id] = { x: x + 14, y }; y += 80; }
     }
   });
   return pos;

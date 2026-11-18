@@ -6,11 +6,11 @@
 //   DEFAULTS     starting view and behaviour
 
 export const NODE_TYPES = {
-  root:  { label: "Your notes", icon: "brain",   w: 220, h: 220 },
-  topic: { label: "Topic",      icon: "layers",  w: 190, h: 96 },
-  term:  { label: "Key term",   icon: "dot",     w: 210, h: 78 },
-  eq:    { label: "Formula",    icon: "sigma",   w: 200, h: 64 },
-  note:  { label: "Your note",  icon: "pencil",  w: 190, h: 60 },
+  root:  { label: "Your notes", icon: "brain",   w: 236, h: 236 },
+  topic: { label: "Topic",      icon: "layers",  w: 224, h: 104 },
+  term:  { label: "Key term",   icon: "dot",     w: 256, h: 112 },
+  eq:    { label: "Formula",    icon: "sigma",   w: 220, h: 76 },
+  note:  { label: "Your note",  icon: "pencil",  w: 214, h: 64 },
 };
 
 // first match wins; the fallback is "layers"
@@ -51,8 +51,17 @@ export const GLYPHS = {
   close: '<path d="M18 6 6 18M6 6l12 12"/>',
   download: '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>',
   edit: '<path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>',
+  undo: '<path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/>',
+  wand: '<path d="m15 4 5 5"/><path d="M3 21 15.5 8.5"/><path d="M19 2v3M17.5 3.5h3M6 3v2M5 4h2M20 13v2M19 14h2"/>',
+  more: '<circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/>',
+  copy: '<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>',
+  keyboard: '<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M6 13h.01M18 13h.01M8 16h8"/>',
+  send: '<path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/>',
   sparkle: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.5 2.5M15.2 15.2l2.5 2.5M6.3 17.7l2.5-2.5M15.2 8.8l2.5-2.5"/>',
 };
+
+// colours a learner can give a topic (its arm and its terms take the colour too)
+export const SWATCHES = ["4641ff", "7b86ff", "f055dd", "ff5a4d", "e69138", "ffc002", "1fae8c", "3c78d8", "5ef0ff", "8b93ad"];
 
 export const LAYOUTS = [
   { id: "spider", name: "Spider", icon: "spider" },
