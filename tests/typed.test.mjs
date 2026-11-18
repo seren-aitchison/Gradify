@@ -67,6 +67,9 @@ test("an answer that negates the card is wrong, however many words match", () =>
   assert.equal(v("Cats are not mammals; birds are mammals", "Cats are mammals; birds are not mammals"), "wrong");
   assert.equal(v("cats are mammals; birds are not mammals", "Cats are mammals; birds are not mammals"), "right");
   assert.equal(v("Birds are not mammals; cats are mammals", "Cats are mammals; birds are not mammals"), "right", "the same claims in another order");
+  const virus = "Viruses are not cells; cells infected by viruses contain viruses";
+  assert.equal(v(virus, virus), "right", "an exact copy, with a word repeated across its claims");
+  assert.equal(v("Cells infected by viruses contain viruses; viruses are not cells", virus), "right", "and reordered");
   assert.notEqual(v("It dissolves in water.", "It does not dissolve in water."), "right");
 });
 

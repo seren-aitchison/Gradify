@@ -40,20 +40,22 @@ function scoped(s) {
   return out;
 }
 // The share of the card's key words that the typed answer has with the opposite sense (negated on one side only).
-// A word that appears more than once is paired with the occurrence in the clause sharing most of its clause's other
-// words ("cats are mammals" with "cats are not mammals"), so a match in another claim can't clear a flipped one, and
-// reordered claims still pair up; ties go in order (the first with the first).
+// A word that appears more than once is paired with the occurrence in the most similar clause (the share of their
+// distinct key words they have in common: "cats are mammals" with "cats are not mammals"), so a match in another claim
+// can't clear a flipped one, and reordered claims still pair up; ties go in order (the first with the first).
 function flipped(typed, expected) {
   const T = scoped(typed), E = scoped(expected);
   if (!E.length) return 0;
-  const words = (L, c) => L.filter((x) => x.c === c).map((x) => x.w);
+  // the same key words with the same negations in the same order: nothing can be flipped
+  if (T.length === E.length && T.every((t, i) => t.w === E[i].w && t.neg === E[i].neg)) return 0;
+  const words = (L, c) => [...new Set(L.filter((x) => x.c === c).map((x) => x.w))];   // distinct, so a repeat can't outweigh
   const seen = new Map();
   const n = E.filter((e) => {
     const m = T.filter((t) => wordMatch(t.w, e.w));
     if (!m.length) return false;
     const i = seen.get(e.w) || 0; seen.set(e.w, i + 1);
-    const ctx = words(E, e.c).filter((w) => w !== e.w);
-    const overlap = (t) => words(T, t.c).filter((w) => w !== t.w && ctx.some((x) => wordMatch(w, x))).length;
+    const ctx = words(E, e.c);
+    const overlap = (t) => { const tw = words(T, t.c), shared = tw.filter((w) => ctx.some((x) => wordMatch(w, x))).length; return shared / (tw.length + ctx.length - shared); };
     const best = Math.max(...m.map(overlap));
     const top = m.filter((t) => overlap(t) === best);
     // the in-order occurrence if it's among the best matches, else the first best
