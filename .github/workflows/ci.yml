@@ -1,8 +1,8 @@
 # Tests every push and pull request, and publishes getgradify.com only when they pass.
-#   push to main      test → (pass) → deploy to GitHub Pages
+#   push to main      test and signed-in → (both pass) → deploy to GitHub Pages
 #                           (fail) → nothing is published; the live site stays as it was
-#   any other branch  test only
-#   pull request      test only, never deploys
+#   any other branch  test and signed-in only
+#   pull request      test and signed-in, never deploys
 # For this to be the only way the site is published, GitHub Pages must use "GitHub Actions" as its source
 # (Settings → Pages → Build and deployment → Source). Until then the old branch deploy also runs.
 # Only the allowlisted website files are published (scripts/build-site.mjs, tested in tests/deploy.test.mjs).
@@ -57,9 +57,44 @@ jobs:
             exit 1
           }
 
+  signed-in:
+    # The signed-in student journey in a real browser (scripts/check-sync.cjs): the real course pages against a stand-in
+    # Supabase, as a signed-in learner. Progress and answers reach the account, a second device sees them, offline work
+    # syncs once, the AI tutor's failures get plain messages, and no page errors. Everything in "test" runs signed out,
+    # which is how lessons stopped opening for signed-in learners (17 to 18 Nov) without anything failing.
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: signed-in-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Install pinned dev dependencies (including Playwright)
+        run: npm ci --no-audit --no-fund
+
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Serve the site
+        run: |
+          python3 -m http.server 8080 --bind 127.0.0.1 > /dev/null 2>&1 &
+          for i in $(seq 1 30); do curl -fsS -o /dev/null http://127.0.0.1:8080/ && exit 0; sleep 1; done
+          echo "::error::The site didn't start on port 8080"; exit 1
+
+      - name: Signed-in journey (stand-in Supabase)
+        run: node scripts/check-sync.cjs
+        env:
+          BASE: http://127.0.0.1:8080
+
   deploy:
-    # only after every test step has passed, and only from main (never from a pull request or another branch)
-    needs: test
+    # only after every test step and the signed-in journey have passed, and only from main (never from a pull request
+    # or another branch)
+    needs: [test, signed-in]
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 10

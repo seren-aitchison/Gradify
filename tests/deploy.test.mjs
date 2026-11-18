@@ -79,7 +79,9 @@ test("CI checks the build on every push and deploys only the allowlisted build",
   assert.match(testJob, /node scripts\/build-site\.mjs --check/);
   assert.match(deployJob, /node scripts\/build-site\.mjs "\$RUNNER_TEMP\/site"/);
   assert.doesNotMatch(deployJob, /rsync|cp -r|path: \.\s*$/m, "the deploy must not copy the repository wholesale");
-  assert.match(deployJob, /needs: test/);
+  // the deploy waits for the signed-in journey too: a break only signed-in learners see can't go live
+  assert.match(deployJob, /needs: \[test, signed-in\]/);
+  assert.match(testJob, /\n  signed-in:\n[\s\S]*npx playwright install --with-deps chromium[\s\S]*node scripts\/check-sync\.cjs/);
 });
 
 test("the service worker precaches each file once and every file exists (a duplicate or a 404 stops it installing)", async () => {
