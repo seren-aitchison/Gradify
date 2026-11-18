@@ -18,7 +18,7 @@ async function pagesIn(dir) {
 }
 
 export async function sitemapUrls() {
-  const urls = ["", "app.html", "privacy.html", "terms.html"];
+  const urls = ["", "app.html", "privacy.html", "terms.html", "quality.html"];
   for (const s of SITES.filter((x) => x.built && ["live", "beta"].includes(x.status))) urls.push(...(await pagesIn(`${slugOf(s)}/`)).sort());
   return urls.map((u) => `${ORIGIN}/${u.replace(/(^|\/)index\.html$/, "$1")}`);
 }

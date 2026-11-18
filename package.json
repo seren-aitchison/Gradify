@@ -18,7 +18,9 @@
     "supabase:admin": "node scripts/supabase-admin.mjs",
     "check:live": "node scripts/check-live.cjs",
     "labs": "node scripts/lab-coverage.mjs",
-    "bench": "node scripts/bench.mjs"
+    "bench": "node scripts/bench.mjs",
+    "audit:quality": "node scripts/quality-audit.mjs",
+    "constitution": "node -e \"import('./kit/quality/constitution.js').then(m=>require('fs').writeFileSync('department/constitution.txt', m.asText()+'\\n'))\""
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "0.133.0",
