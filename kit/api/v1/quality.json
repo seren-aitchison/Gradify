@@ -7,12 +7,12 @@
  "overall": 78,
  "dims": {
   "accuracy": 52,
-  "completeness": 86,
+  "completeness": 87,
   "clarity": 95,
   "progression": 48,
   "application": 91,
   "assessment": 87,
-  "accessibility": 95,
+  "accessibility": 96,
   "engagement": 78,
   "retention": 71
  },
@@ -587,14 +587,14 @@
    "overall": 55,
    "dims": {
     "accuracy": 19,
-    "completeness": 16,
-    "clarity": 85,
-    "progression": 19,
+    "completeness": 18,
+    "clarity": 86,
+    "progression": 21,
     "application": 85,
     "assessment": 65,
-    "accessibility": 83,
+    "accessibility": 84,
     "engagement": 84,
-    "retention": 36
+    "retention": 37
    },
    "serves": [
     {
