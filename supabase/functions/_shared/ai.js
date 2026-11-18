@@ -36,7 +36,8 @@ export function refusal(claim, mode) {
     case "budget": return { status: 503, body: { ...base, error: "Gradify AI is taking a short break. Please try again later." } };
     case "busy": return { status: 503, body: { ...base, error: "Gradify AI is busy right now. Please try again in a minute." } };
     case "rate": return { status: 429, body: { ...base, error: "That's a lot of requests in a short time. Wait a minute, then try again." } };
-    case "fair_use": return { status: 429, body: { ...base, error: `You've reached this month's fair-use limit for Gradify AI.${on ? ` It resets on ${on}.` : ""}` } };
+    // refused when this request's worst case doesn't fit what's left of the cap, so the learner may be just under it
+    case "fair_use": return { status: 429, body: { ...base, error: `This request would go over this month's fair-use limit for Gradify AI. A shorter request may still fit.${on ? ` The limit resets on ${on}.` : ""}` } };
     case "conversation_long": return { status: 429, body: { ...base, error: "This conversation has reached its length limit. Start a new one to keep going." } };
     case "allowance": {
       const n = claim.allowance ?? 0, free = claim.plan !== "pro";

@@ -10,7 +10,8 @@
 --
 -- What the cap still can't guarantee: the estimate is an upper bound only as far as its inputs are. Output is capped by
 -- max_tokens, but input tokens are estimated from characters (and PDFs from their size). If a request really costs more
--- than its estimate, its real cost is recorded and counts, and the learner's next request is refused.
+-- than its estimate, its real cost is recorded and counts, and a later request is refused once its own estimate no
+-- longer fits in what's left of the cap.
 --
 -- Only ai_claim_for changes. It is copied whole from 20261111120000_ai_controls.sql (its only definition) with the one
 -- check below changed; same signature, so its grants are kept. Replaces the 12 November draft (PR #6), which was dated

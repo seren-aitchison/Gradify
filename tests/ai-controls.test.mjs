@@ -320,7 +320,8 @@ test("fair-use cap: in-flight requests count at their worst case, so two at once
   assert.equal((await x.claim(A, "socratic")).reason, "fair_use", "the second can't use the same remaining budget");
   // the reservation is released at its real cost when the first finishes
   await x.settle(A, first.usage_id, { input: 100, output: 100 });
-  assert.ok((await x.claim(A, "socratic", { input: 100, output: 100 })).usage_id, "room freed by the real, smaller cost");
+  // the same full-size request now fits: it would not if the first still counted at its worst case (2 estimates > 1.5)
+  assert.ok((await x.claim(A, "socratic")).usage_id, "room freed by the real, smaller cost");
   // another learner is unaffected throughout
   assert.ok((await x.claim(B, "explain")).usage_id);
   await x.close();
