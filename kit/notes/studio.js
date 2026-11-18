@@ -5,6 +5,7 @@
 // (see docs/AI-PIPELINE.md in the repo).
 import { icon } from "../core/icons.js";
 import { mountVideo } from "./video3d.js";
+import { mountMindMap, loadMindMapCss } from "./mindmap/view.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 let ctx, pack = null, tab = "notes", stopPlayback = () => {};
@@ -315,129 +316,10 @@ function cardsView(p) {
   <div class="out-actions"><button type="button" class="btn btn-light lg btn-sm" id="add-cards"><span>Add ${p.cards.length} cards to my flashcard feed</span></button><button type="button" class="btn btn-ghost lg btn-sm" data-dl="csv"><span>Download for Anki (.csv)</span></button></div>`;
 }
 
-// The mind map, shaped like a flow diagram: your notes start on the left, flow into a spine
-// of topics, and each topic fans out to its terms, each term leading on to its definition.
-// Pills throughout, in the holo style. Terms rated Good or Easy glow and get a tick.
-const mixHex = (h, t, to = 255) => "#" + [0, 2, 4].map((k) => Math.round(parseInt(h.substr(k, 2), 16) * (1 - t) + to * t).toString(16).padStart(2, "0")).join("");
-function wrapWords(text, max) {
-  const out = []; let line = "";
-  for (const w of text.split(" ")) { if ((line + " " + w).trim().length > max) { if (line) out.push(line.trim()); line = w; } else line += " " + w; }
-  if (line.trim()) out.push(line.trim());
-  return out;
-}
-// a pill: rounded rectangle with centred text (one or two lines)
-function pill(x, y, w, h, lines, cls, extra = "") {
-  const lh = 15, top = y + h / 2 - ((lines.length - 1) * lh) / 2 + 4.5;
-  return `<g class="fm-pill ${cls}" ${extra}><rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${h}" rx="${Math.min(h / 2, 14)}"/>${lines.map((l, k) => `<text x="${(x + w / 2).toFixed(1)}" y="${(top + k * lh).toFixed(1)}">${ctx.esc(l)}</text>`).join("")}</g>`;
-}
-// the curly-bracket fan from one point out to several rows, like the reference
-const fan = (x0, y0, x1, y1, r = 16) => {
-  if (Math.abs(y1 - y0) < 1) return `M${x0} ${y0} H${x1}`;
-  const xm = x0 + 18, dir = y1 > y0 ? 1 : -1, rr = Math.min(r, Math.abs(y1 - y0) / 2);
-  return `M${x0} ${y0} H${xm - rr} Q${xm} ${y0} ${xm} ${y0 + dir * rr} V${y1 - dir * rr} Q${xm} ${y1} ${xm + rr} ${y1} H${x1}`;
-};
-const LEGEND = [["fm-start", "Your notes"], ["fm-topic", "Topic"], ["fm-term", "Key term"], ["fm-def", "Definition"]];
-const legendSvg = (x, y) => LEGEND.map(([cls, label], k) => `<g class="fm-legend ${cls}" transform="translate(${x} ${y + k * 26})"><circle cx="9" cy="0" r="8"/><text x="26" y="4">${label}</text></g>`).join("");
-
-function mapView(p) {
-  // phones get the same diagram reading downwards
-  const narrow = (typeof document !== "undefined" ? document.querySelector("#studio-out")?.clientWidth || 999 : 999) < 620;
-  if (narrow) return mapViewNarrow(p);
-  const ROW = 36, PH = 26, TOPIC_GAP = 30, TOP = 40;
-  const tw = (t, px = 6.9) => t.length * px + 30;   // pill width for text at ~12–13px
-  const titleLines = wrapWords(p.title, 16), titleW = Math.max(...titleLines.map((l) => tw(l, 8))) + 10;
-  const topics = p.groups.map((g) => {
-    const lines = wrapWords(g.label, 22).slice(0, 3);
-    const terms = g.facts.map((f) => ({ f, text: `${f.term}${f.ab ? ` (${f.ab})` : ""}`, def: short(f.def, 7) }));
-    return { g, lines, terms, h: Math.max(lines.length * 15 + 22, terms.length * ROW) };
-  });
-  const topicW = Math.min(230, Math.max(...topics.flatMap((t) => t.lines.map((l) => tw(l, 7.6))))) + 10;
-  const termW = Math.max(...topics.flatMap((t) => t.terms.map((x) => tw(x.text, 7))));
-  const X_TITLE = 30, X_TOPIC = X_TITLE + titleW + 90, X_TERM = X_TOPIC + topicW + 74, X_DEF = X_TERM + termW + 48;
-  const defW = Math.max(...topics.flatMap((t) => t.terms.map((x) => tw(x.def, 6.2))));
-  const W = X_DEF + defW + 30;
-  const place = (start) => { let y = start; topics.forEach((t) => { t.y = y; t.cy = y + t.h / 2; y += t.h + TOPIC_GAP; }); return y; };
-  let y = place(TOP);
-  // the legend sits top left; move everything down only if the notes pill would run into it
-  const titleH = titleLines.length * 15 + 22, legendBottom = TOP + 10 + LEGEND.length * 26;
-  const clash = legendBottom + 24 - ((topics[0].cy + topics.at(-1).cy) / 2 - titleH / 2);
-  if (clash > 0) y = place(TOP + clash);
-  const H = Math.max(y + 10, 360);
-  const cyTitle = (topics[0].cy + topics.at(-1).cy) / 2;
-  let lines = "", nodes = "", n = 0;
-  const line = (d, cls = "", arrow = false, colour = "") => { lines += `<path d="${d}" class="fm-line ${cls}" ${arrow ? 'marker-end="url(#fm-arrow)"' : ""} style="${colour ? `--c:${colour};` : ""}--d:${(n++) * 0.04}s" pathLength="1"/>`; };
-  // the spine through the topics, and the notes flowing into it
-  const spineX = X_TOPIC + topicW / 2;
-  line(`M${spineX} ${topics[0].cy} V${topics.at(-1).cy}`, "fm-spine");
-  const xb = X_TOPIC - 40;
-  line(`M${X_TITLE + titleW + 6} ${cyTitle} H${xb}`, "fm-main");
-  line(fan(xb - 18, cyTitle, X_TOPIC - 4, topics[0].cy), "fm-main", true);
-  if (topics.length > 1) line(fan(xb - 18, cyTitle, X_TOPIC - 4, topics.at(-1).cy), "fm-main", true);
-  nodes += pill(X_TITLE, cyTitle - (titleLines.length * 15 + 22) / 2, titleW, titleLines.length * 15 + 22, titleLines, "fm-start", 'style="--d:0s"');
-  topics.forEach((t, ti) => {
-    const c = `#${t.g.c}`, ph = t.lines.length * 15 + 22;
-    nodes += pill(X_TOPIC, t.cy - ph / 2, topicW, ph, t.lines, "fm-topic", `style="--c:${c};--d:${0.1 + ti * 0.08}s"`);
-    if (t.g.facts.length > 1) nodes += `<text class="fm-acr" x="${X_TOPIC + 12}" y="${t.cy + ph / 2 + 15}" text-anchor="start" style="--c:${c}">${t.g.acronym}</text>`;
-    const first = t.cy - ((t.terms.length - 1) * ROW) / 2;
-    t.terms.forEach((x, k) => {
-      const ry = first + k * ROW, on = learnt.has(x.f.term.toLowerCase());
-      line(fan(X_TOPIC + topicW, t.cy, X_TERM - 2, ry), "fm-branch", false, c);
-      line(`M${X_TERM + tw(x.text, 7) + 2} ${ry} H${X_DEF - 2}`, "fm-twig", false, c);
-      nodes += pill(X_TERM, ry - PH / 2, tw(x.text, 7), PH, [x.text + (on ? " ✓" : "")], `fm-term ${on ? "learnt" : ""}`, `style="--c:${c};--d:${0.25 + ti * 0.08 + k * 0.04}s"`) +
-        pill(X_DEF, ry - PH / 2, tw(x.def, 6.2), PH, [x.def], "fm-def", `style="--d:${0.35 + ti * 0.08 + k * 0.04}s"`).replace("</g>", `<title>${ctx.esc(x.f.text)}</title></g>`);
-    });
-  });
-  return `<div class="flowmap holo">
-      <span class="holo-kicker">Mind map</span>
-      <div class="fm-scroll"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Mind map of ${ctx.esc(p.title)}">
-        <defs><marker id="fm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#dff9ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
-          <filter id="fm-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-        ${legendSvg(32, TOP + 10)}
-        <g filter="url(#fm-glow)">${lines}</g>${nodes}
-      </svg></div>
-      ${sparkles(8)}
-    </div>
-    <p class="sub">The letters under each topic are memory hooks: the first letters of its terms. Terms you rate Good or Easy in the flashcard feed glow and get a tick.</p>`;
-}
-
-function mapViewNarrow(p) {
-  const W = 400, PH = 26, X0 = 20;
-  const titleLines = wrapWords(p.title, 22), th = titleLines.length * 15 + 22;
-  let y = 140, lines = "", nodes = "", n = 0;
-  const spineX = X0 + 14;
-  const line = (d, cls, extra = "", colour = "") => { lines += `<path d="${d}" class="fm-line ${cls}" ${extra} style="${colour ? `--c:${colour};` : ""}--d:${(n++) * 0.04}s" pathLength="1"/>`; };
-  nodes += pill(X0, y, 240, th, titleLines, "fm-start");
-  y += th + 26;
-  const topicYs = [];
-  p.groups.forEach((g, ti) => {
-    const c = `#${g.c}`, tl = wrapWords(g.label, 30).slice(0, 2), ph = tl.length * 15 + 20;
-    const x = X0 + 34;
-    topicYs.push(y + ph / 2);
-    nodes += pill(x, y, Math.min(W - x - 20, Math.max(...tl.map((l) => l.length * 7.6 + 30))), ph, tl, "fm-topic", `style="--c:${c};--d:${0.1 + ti * 0.08}s"`);
-    if (g.facts.length > 1) nodes += `<text class="fm-acr" x="${W - 24}" y="${y + ph / 2 + 4}" text-anchor="end" style="--c:${c}">${g.acronym}</text>`;
-    const top = y + ph;
-    y += ph + 14;
-    g.facts.forEach((f, k) => {
-      const text = `${f.term}${f.ab ? ` (${f.ab})` : ""}`, on = learnt.has(f.term.toLowerCase());
-      const tx = x + 30, w = Math.min(W - tx - 16, text.length * 7 + 30);
-      line(`M${x + 16} ${top} V${y + PH / 2 - 10} Q${x + 16} ${y + PH / 2} ${x + 26} ${y + PH / 2} H${tx - 2}`, "fm-branch", "", c);
-      nodes += pill(tx, y, w, PH, [text + (on ? " ✓" : "")], `fm-term ${on ? "learnt" : ""}`, `style="--c:${c};--d:${0.25 + ti * 0.08 + k * 0.04}s"`);
-      const dl = wrapWords(f.def, 44).slice(0, 3);
-      nodes += `<g class="fm-deftext" style="--d:${0.35 + ti * 0.08 + k * 0.04}s">${dl.map((l, m) => `<text x="${tx + 8}" y="${y + PH + 16 + m * 16}">${ctx.esc(l)}</text>`).join("")}<title>${ctx.esc(f.text)}</title></g>`;
-      y += PH + 12 + dl.length * 16 + 10;
-    });
-    y += 18;
-  });
-  // the spine from the notes down past every topic, with an arrow into each
-  line(`M${spineX} ${140 + th} V${topicYs.at(-1)}`, "fm-spine");
-  topicYs.forEach((ty) => line(`M${spineX} ${ty} H${X0 + 30}`, "fm-main", 'marker-end="url(#fm-arrow)"'));
-  const H = y + 10;
-  return `<div class="flowmap holo narrow"><span class="holo-kicker">Mind map</span><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Mind map of ${ctx.esc(p.title)}">
-      <defs><marker id="fm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#dff9ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
-        <filter id="fm-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-      ${LEGEND.map(([cls, label], k) => `<g class="fm-legend ${cls}" transform="translate(${X0 + (k % 2) * 170} ${40 + Math.floor(k / 2) * 30})"><circle cx="9" cy="0" r="8"/><text x="26" y="4">${label}</text></g>`).join("")}
-      <g filter="url(#fm-glow)">${lines}</g>${nodes}</svg>${sparkles(6)}</div>
-    <p class="sub">The letters beside each topic are memory hooks. Terms you rate Good or Easy in the flashcard feed glow and get a tick.</p>`;
+// The spidermap: an interactive liquid-glass mind map with Gradify Intelligence beside it.
+// It lives in kit/notes/mindmap/ (config, model, layouts, intelligence, view and styles), so each part is easy to change.
+function mapView() {
+  return `<div id="spidermap-root"></div>`;
 }
 
 function sheetSvg(p) {
@@ -711,9 +593,11 @@ const TABS = [
   { id: "audio", name: "Audio quiz", i: "bell", type: "Listen and answer" },
 ];
 let video = null;   // the mounted 3D video, while its tab is open
+let spidermap = null; // the mounted spidermap, while its tab is open
 function render() {
   stopPlayback();
   video?.destroy(); video = null;
+  spidermap?.destroy(); spidermap = null;
   $("#studio-tabs").innerHTML = TABS.map((t) => `<button type="button" class="st-tab" role="tab" data-tab="${t.id}" aria-selected="${t.id === tab}" ${pack ? "" : "disabled"}>${icon(t.i)}<span><b>${t.name}</b><em>${t.type}</em></span></button>`).join("");
   const out = $("#studio-out");
   if (!pack) { out.innerHTML = '<p class="empty-note">Your study pack appears here: clean notes, flashcards, a spidermap, a cheat sheet, a narrated video, a chant and an audio quiz.</p>'; return; }
@@ -722,6 +606,12 @@ function render() {
   if (tab === "video") {
     video = mountVideo($("#video-root"), { slides: slidesOf(pack), say, cancelSpeech: () => synth?.cancel(), esc: ctx.esc, toast: ctx.toast });
     stopPlayback = () => video?.stop();
+  }
+  if (tab === "map") {
+    spidermap = mountMindMap($("#spidermap-root"), {
+      pack, learnt, questions: deeperQuestions(pack), esc: ctx.esc, toast: ctx.toast,
+      onLearn: (term, known) => { if (known) ctx.logActivity("MedGradify", `Marked “${term}” as known on the spidermap`, "review", 5); },
+    });
   }
 }
 
@@ -826,6 +716,7 @@ export function deeperQuestions(a) {
 
 export function initStudio(context) {
   ctx = context;
+  loadMindMapCss();
   const root = $("#capture");
   $("#sample-notes").addEventListener("click", () => { $("#notes").value = SAMPLE; make(); });
   $("#make-cards").addEventListener("click", make);
@@ -873,7 +764,7 @@ export function initStudio(context) {
     if (!pack) return;
     const text = e.detail.toLowerCase();
     for (const f of pack.facts) if (f.term && text.includes(f.term.toLowerCase())) learnt.add(f.term.toLowerCase());
-    if (tab === "map") render();
+    if (tab === "map") spidermap?.refresh();
   });
   document.addEventListener("lifeos:view", (e) => { if (e.detail !== "capture") stopPlayback(); });
   render();

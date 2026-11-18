@@ -12,7 +12,7 @@ Version: see `VERSION`.
 |---|---|---|
 | `app/` | The study app: setup, add notes, deck, study session, Today, Topic, Progress, Plan, Account | **Real.** Saves to the browser, or to a Gradify account once Supabase is switched on |
 | `notes/` | Notes → study pack. Gradify AI (Claude, on the server) or the browser extractor. Recall cards, Explain and Apply questions, each checked against the notes | **Real** |
-| `notes/studio.js` + `notes/video3d.js` | Notes Studio: clean notes, flashcards, mind map, cheat-sheet poster, a 3D animated video (Blender-style viewport, dope sheet and settings, renders to .webm), a chant and an audio quiz | **Real**, runs in the browser |
+| `notes/studio.js` + `notes/video3d.js` + `notes/mindmap/` | Notes Studio: clean notes, flashcards, an interactive liquid-glass spidermap (drag arms, rename, add notes, three layouts, recall mode, Gradify Intelligence links and learning order; edit `mindmap/config.js` to change node types, icons and layouts), cheat-sheet poster, a 3D animated video (Blender-style viewport, dope sheet and settings, renders to .webm), a chant and an audio quiz | **Real**, runs in the browser |
 | `learning/` | Spaced repetition (`srs.js`) and the Mastery Engine (`mastery.js`) | **Real**, unit-tested |
 | `data/` | Where a learner's data lives: `LocalStore` (this browser), `CloudStore` (Supabase), `scopeToSite` (one site's view of the shared account) | **Real** |
 | `earth/` | The 3D dot globe: drag to turn, pins, arcs, portals, glowing city markers | **Real component.** You give it the scene |
