@@ -133,3 +133,17 @@ test("a Gradify AI pack (as from a photo of notes) becomes cards, with its cloze
   assert.deepEqual(cards.map((c) => c.type), ["concept", "concept", "cloze"]);
   assert.equal(cards[2].front, "Cells divide by {{…}}.");
 });
+
+test("signed in, opening a lesson works with Supabase's real query builder (awaitable, but with no .catch)", async () => {
+  const { gate } = await import("../kit/data/limits.js");
+  // supabase-js's rpc() returns a builder with then() and nothing else; calling .catch on it threw, so no lesson opened
+  const thenable = (value) => ({ then: (ok, no) => Promise.resolve(value).then(ok, no) });
+  const calls = [];
+  const db = { rpc: (name, args) => { calls.push(name); return thenable(name === "take_allowance" ? { data: { ok: true, used: 1, limit: 10, left: 9 }, error: null } : { data: { plan: "free" }, error: null }); } };
+  const store = { mode: "cloud", db, async getProfile() { return {}; } };
+  assert.equal(await gate("lesson", "u01-01", { course: "law", store }), true, "the lesson opens");
+  assert.ok(calls.includes("take_allowance"), "the server counted it");
+  // and a server that's down doesn't stop the lesson opening either: this device's own count is the fallback
+  const down = { mode: "cloud", db: { rpc: () => ({ then: (ok, no) => Promise.reject(new Error("offline")).then(ok, no) }) }, async getProfile() { return {}; } };
+  assert.equal(await gate("lesson", "u01-02", { course: "law", store: down }), true);
+});

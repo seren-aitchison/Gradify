@@ -69,7 +69,9 @@ export async function gate(kind, key, o = {}) {
   // by clearing a browser. This browser's own count is the fallback, signed out or offline.
   const st = await storeOf(o.store);
   if (st?.mode === "cloud" && st.db && !previewing()) {
-    const res = await st.db.rpc("take_allowance", { p_bucket: bucket(kind, o), p_item: String(key) }).catch(() => null);
+    // rpc() gives a query builder you can await but that has no .catch, so it's wrapped in a real promise first:
+    // calling .catch on it threw, and every lesson failed to open for signed-in learners
+    const res = await Promise.resolve(st.db.rpc("take_allowance", { p_bucket: bucket(kind, o), p_item: String(key) })).catch(() => null);
     const v = res && !res.error ? res.data : null;
     if (v?.unlimited) return true;
     if (v && typeof v.ok === "boolean" && !v.reason) { r = v; if (v.ok) take(kind, key, o); }
