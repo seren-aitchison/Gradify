@@ -9,19 +9,19 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 
 ## The whole of Gradify
 
-9,979 written lessons in 34 courses. Overall **77/100**.
+9,979 written lessons in 34 courses. Overall **78/100**.
 
 | Dimension | Score | What it measures |
 |---|---|---|
-| Accuracy | `█████░░░░░ 51` | Dated sources, evidence labels, no mechanical errors. Capped at 60 until a subject expert reviews it. |
-| Completeness | `████████░░ 84` | Objectives stated, each one taught in the body, key terms and a summary. |
+| Accuracy | `█████░░░░░ 52` | Dated sources, evidence labels, no mechanical errors. Capped at 60 until a subject expert reviews it. |
+| Completeness | `█████████░ 85` | Objectives stated, each one taught in the body, key terms and a summary. |
 | Clarity | `██████████ 95` | Sentence length, long-sentence share, a clear lead, terms defined. |
-| Progression | `█████░░░░░ 46` | Prerequisites named (or first in its unit) and a stated level. |
+| Progression | `█████░░░░░ 47` | Prerequisites named (or first in its unit) and a stated level. |
 | Application | `█████████░ 91` | Worked examples, common mistakes, and questions above recall level. |
 | Assessment | `█████████░ 87` | Enough questions, more than one type, each explained, no giveaway answer lengths. |
 | Accessibility | `██████████ 95` | Headed sections, digestible paragraphs, lists, a summary to return to. |
 | Engagement | `████████░░ 78` | Variety of ways in: examples, key points, interactives, pitfalls. Supports attention, not clicks. |
-| Retention | `███████░░░ 69` | Flashcards for spaced retrieval, key terms and a summary. |
+| Retention | `███████░░░ 70` | Flashcards for spaced retrieval, key terms and a summary. |
 
 ## Curriculum coverage: what Gradify can honestly claim
 
@@ -75,7 +75,7 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 
 | Course | Lessons | Overall | Accuracy | Completeness | Clarity | Progression | Application | Assessment | Accessibility | Engagement | Retention |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Physics | 1308 | **47** | 10 | 0 | 82 | 3 | 82 | 60 | 80 | 84 | 25 |
+| Physics | 1308 | **51** | 14 | 9 | 84 | 12 | 83 | 62 | 82 | 84 | 31 |
 | Law | 480 | **66** | 54 | 97 | 94 | 3 | 37 | 68 | 100 | 55 | 88 |
 | Pharmacy | 318 | **72** | 51 | 96 | 99 | 8 | 68 | 81 | 100 | 65 | 77 |
 | Nursing | 497 | **74** | 49 | 98 | 98 | 47 | 50 | 89 | 100 | 56 | 75 |
@@ -114,27 +114,26 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 
 | Fix | Lessons |
 |---|---|
-| Add flashcards for spaced retrieval (Q:) | 9,711 |
-| Name what this builds on (PRE:) | 6,089 |
-| State the level (LV:) | 3,732 |
-| Say how strong the evidence is (EV:) | 3,448 |
-| Even out answer lengths | 3,076 |
-| Teach every objective | 1,981 |
-| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,818 |
-| Add check questions | 1,815 |
-| Cite at least two sources (SRC:) | 1,383 |
-| Date every source, so it can be rechecked | 1,308 |
-| State at least two learning objectives (O:) | 1,308 |
-| Define the key terms (T:) | 1,308 |
-| End with a summary (SUM:) | 1,308 |
-| Define terms where they're first used (T:) | 1,308 |
-| Add a worked example (X:) | 1,268 |
+| Add flashcards for spaced retrieval (Q:) | 9,692 |
+| Name what this builds on (PRE:) | 5,976 |
+| State the level (LV:) | 3,615 |
+| Say how strong the evidence is (EV:) | 3,331 |
+| Even out answer lengths | 3,079 |
+| Teach every objective | 2,011 |
+| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,728 |
+| Add check questions | 1,725 |
+| Cite at least two sources (SRC:) | 1,266 |
+| Add a worked example (X:) | 1,265 |
+| Date every source, so it can be rechecked | 1,191 |
+| State at least two learning objectives (O:) | 1,191 |
+| Define the key terms (T:) | 1,191 |
+| End with a summary (SUM:) | 1,191 |
+| Define terms where they're first used (T:) | 1,191 |
 
 ## The 30 lessons to improve first
 
 | Course | Lesson | Overall | Fixes |
 |---|---|---|---|
-| Physics | Statistics and error propagation | 36 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Rotational kinetic energy | 38 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Minkowski spacetime | 40 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Hohmann transfers | 41 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
@@ -164,6 +163,7 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Physics | Space plasma physics | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Planetary geophysics | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Solar and terrestrial radiation | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
+| Physics | Precipitation physics | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 
 ## The constitution, article by article
 

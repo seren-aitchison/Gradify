@@ -126,6 +126,26 @@ function block(b) {
   if (b.t === "ix") return `<div class="co-ixslot" data-ix="${esc(b.id)}"></div>`;
   return "";
 }
+// The Gradify Learning Standard keeps teaching material and revision notes apart (docs/CURRICULUM_CONTENT_STANDARD.md).
+// The same lesson gives both: lessonHtml teaches it to someone meeting it for the first time; revisionHtml is the
+// condensed sheet for someone revising, built only from what the lesson already states (key points,
+// formulas, common mistakes, summary, key terms and flashcards), so the two can never disagree.
+export function revisionHtml(L) {
+  const pick = (t) => L.blocks.filter((b) => b.t === t);
+  const keys = pick("key").map((b) => b.x), pits = pick("pit").map((b) => b.x), eqs = pick("eq").flatMap((b) => b.rows);
+  const ex = pick("ex").map((b) => b.x);
+  const part = (h, body) => body ? `<section><h3>${h}</h3>${body}</section>` : "";
+  const list = (xs, cls = "") => xs.length ? `<ul${cls ? ` class="${cls}"` : ""}>${xs.map((x) => `<li>${inline(x)}</li>`).join("")}</ul>` : "";
+  return `<div class="co-revise">
+    ${part("Must know", list([...keys, ...L.summary]))}
+    ${part("Formulas and rules", eqs.length ? `<div class="co-eq">${eqs.map(([x, n]) => `<div><code>${inline(x)}</code>${n ? `<span>${inline(n)}</span>` : ""}</div>`).join("")}</div>` : "")}
+    ${part("Key terms", L.terms.length ? `<dl class="co-terms">${L.terms.map(([t, d]) => `<dt>${inline(t)}</dt><dd>${inline(d)}</dd>`).join("")}</dl>` : "")}
+    ${part("Don't fall for", list(pits))}
+    ${part("Practise with", list(ex))}
+    ${part("Test yourself", L.cards.length ? `<ol class="co-rv-cards">${L.cards.map(([q, a]) => `<li><details><summary>${inline(q)}</summary><p>${inline(a)}</p></details></li>`).join("")}</ol>` : "")}
+  </div>`;
+}
+
 // the lesson as plain text, for saving to the learner's documents
 export function lessonText(L) {
   const out = [L.title, "", L.lead, ""];

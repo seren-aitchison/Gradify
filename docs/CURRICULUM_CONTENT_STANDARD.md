@@ -1,5 +1,20 @@
 # Curriculum content standard
 
+## The Gradify Learning Standard
+
+Every lesson, every subject, every age. The goal is not shorter lessons: it is the most understanding and memory for the time a learner spends. The six principles below sit under the [Quality Constitution](QUALITY-CONSTITUTION.md) (accuracy always comes first), and the format rules further down are how each one is written.
+
+| # | Principle | What it means for a writer | Where it lives in the notes format |
+|---|---|---|---|
+| 01 | **Comprehensive knowledge** | Accurate and complete. Nothing important is dropped to make a lesson shorter. Claims are sourced and their strength labelled. | Body text, `SRC:`, `EV:` |
+| 02 | **Intelligent compression** | Cut repetition, filler and irrelevant asides; keep every important concept. One idea per sentence, one job per block. | Lead under three sentences; `K:` for what must stick |
+| 03 | **Cognitive organisation** | Break the topic into connected ideas with a clear hierarchy: what it is, how it works, how to use it, where it goes wrong. | `H:` sections, `PRE:` links, `O:` objectives |
+| 04 | **Visual learning** | Tables, equations, labelled steps, timelines and diagrams wherever they make it easier to understand than prose. | `E:` rows, `X:` with `>` steps, lists, `IX:` interactives; glass diagrams are drawn from these |
+| 05 | **Active recall** | Learners retrieve, apply and explain, not just reread. Flashcards feed spaced repetition. | `Q:` cards, `M1`–`M3`, `SA:`, `NUM:` |
+| 06 | **Progressive mastery** | Build from the foundation to advanced application with no unexplained jumps; questions climb the same ladder. | `LV:`, `PRE:`, question levels 1→3 |
+
+**Teaching material and revision notes are different things.** Someone meeting a topic for the first time needs the explanation, the reasoning and a worked example; someone revising for an exam needs the essentials, fast. Gradify writes each lesson once, as teaching material, and every lesson page has a **Teach me / Revision notes** switch. Revision notes are built from the lesson itself (`revisionHtml` in `kit/course/notes.js`): its key points (`K:`), summary (`SUM:`), formulas (`E:`), key terms (`T:`), common mistakes (`!:`), worked-example prompts (`X:`) and flashcards (`Q:`). So write those lines to stand on their own: a `K:` or `SUM:` line must make sense with no surrounding paragraph, and together they must cover everything a learner would need in the exam. If the revision view of a lesson reads thin, the lesson is missing key points, not the view.
+
 The rules every lesson in a Gradify course follows. `tests/course.test.mjs` (physics) and `tests/courses.test.mjs` (law, nursing) enforce the mechanical parts; reviewers enforce the rest.
 
 ## The notes format

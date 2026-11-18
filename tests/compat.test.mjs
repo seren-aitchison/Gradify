@@ -11,7 +11,8 @@ import * as old from "./fixtures/legacy-parser/kit/course/notes.js";
 
 test("physics: every lesson parses to the same check questions, in the same order, as before", async () => {
   for (const id of physics.written) {
-    const text = await physics.notes(id), a = old.parseNotes(text), b = parseNotes(text);
+    // objective links (M3@2:) are newer than the old parser; strip them for it, as the nursing and law test does
+    const text = await physics.notes(id), a = old.parseNotes(text.replace(/^((?:M|TF|MS|SEQ|MATCH|SA)[123]?)(?:@[\d,]+)?:/gm, "$1:")), b = parseNotes(text);
     assert.equal(b.length, a.length, id);
     a.forEach((L, i) => {
       assert.equal(b[i].mcq.length, L.mcq.length, `${id} ${L.title}: same number of questions, so saved lesson#index keys still match`);

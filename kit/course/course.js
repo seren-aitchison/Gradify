@@ -12,7 +12,7 @@
 import { schedule, isDue, preview, fmtInterval } from "../learning/srs.js";
 import { LocalStore, CloudStore, scopeToSite } from "../data/store.js";
 import { roadDefs, car } from "./road.js";
-import { parseNotes, lessonHtml, lessonText, lessonFrame, authorityCards, esc, inline, norm } from "./notes.js";
+import { parseNotes, lessonHtml, lessonText, lessonFrame, revisionHtml, authorityCards, esc, inline, norm } from "./notes.js";
 import { renderQuestion, wireQuestions, normalize, TYPES as QTYPES } from "../assess/questions.js";
 import { makeAttempt, analyse } from "../assess/attempts.js";
 import { evidenceFromAttempts, sixProfiles, revisionQueue, labPractice, SIX } from "../learning/mastery.js";
@@ -740,6 +740,21 @@ export function mountCourse(root, cfg) {
     requestAnimationFrame(onScroll);
     readStop = () => { removeEventListener("scroll", onScroll); removeEventListener("resize", onScroll); root.removeEventListener("click", jump); main.removeEventListener("click", zoom); document.querySelector(".gd-zoom")?.remove(); removeEventListener("keydown", keys); unTerms?.(); side.removeEventListener("click", railGo); mo.disconnect(); bar.remove(); readStop = null; };
   }
+  // Teach me / Revision notes (the Gradify Learning Standard): one lesson, two ways to read it. The choice is
+  // remembered on this device, because someone revising for an exam usually wants every lesson condensed.
+  const MODE_KEY = "gradify.lessonMode";
+  function wireMode(root) {
+    const bar = root.querySelector(".co-mode"); if (!bar) return;
+    const rev = root.querySelector(".co-revwrap"), teach = [...root.querySelectorAll(".co-prose, #co-recap, .co-trylab")];
+    const set = (m, keep) => {
+      bar.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.mode === m)));
+      rev.hidden = m !== "revise"; teach.forEach((el) => { el.hidden = m === "revise"; });
+      if (keep) try { localStorage.setItem(MODE_KEY, m); } catch { /* private mode */ }
+    };
+    let m = "teach"; try { m = localStorage.getItem(MODE_KEY) === "revise" ? "revise" : "teach"; } catch { /* private mode */ }
+    set(m, false);
+    bar.addEventListener("click", (e) => { const b = e.target.closest("[data-mode]"); if (b) set(b.dataset.mode, true); });
+  }
   async function viewLesson(id) {
     const l = byId[id]; if (!l) return go("learn");
     // Free: 10 lessons in each course (kit/data/limits.js), once Plus is on sale
@@ -763,6 +778,7 @@ export function mountCourse(root, cfg) {
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${buildsOnHtml(id)}
         ${N ? F.top : ""}
+        ${N ? `<div class="co-mode" role="group" aria-label="How to read this lesson"><button type="button" data-mode="teach" aria-pressed="true">Teach me</button><button type="button" data-mode="revise" aria-pressed="false">Revision notes</button></div><div class="co-revwrap" hidden>${revisionHtml(N)}</div>` : ""}
         ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N)}</div>${F.end || recapDiagrams(N).length ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${recapDiagrams(N).map((d) => glassDiagram(d)).join("")}${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
         ${nQ ? `<section class="co-check" id="co-check"><header><h3 class="co-part">${ic("target")} Check yourself</h3><span class="co-checkn" aria-live="polite"></span></header>${N.items.map((it, k) => `<div class="co-qn" data-n="${k + 1} of ${nQ}">${qHtml(it, { confidence: true })}</div>`).join("")}</section>` : ""}
@@ -793,6 +809,7 @@ export function mountCourse(root, cfg) {
       if (linked.length && at) at.insertAdjacentHTML("beforebegin", `<section class="co-trylab"><h3>Try it yourself</h3>${shown.map((x) => `<div class="co-ixslot" data-ix="${esc(x.id)}"></div>`).join("")}${more.length ? `<p class="co-morelabs">More for this lesson: ${more.map((x) => `<a href="#/practice/${esc(x.id)}">${esc(x.title)}</a>`).join(" · ")}</p>` : ""}</section>`);
     }
     mountIxSlots(main);
+    wireMode(main);
     wireReading(id, nQ, N, prev && byId[prev.id], next && byId[next.id]);
     if (N) wireMaps(main, N, mapOpts(l));
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", async () => { if (await gate("flashcards", `${cfg.slug}:${l.id}`, { store })) flashcards(N.cards, l, N); }));
