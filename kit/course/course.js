@@ -596,7 +596,14 @@ export function mountCourse(root, cfg) {
   }
   // the five mind maps (kit/maps): this lesson's id, a kicker for the viewer, and lab names from this course
   // the lesson's notes with its glass diagrams beside the parts they show (kit/core/glass-diagrams.js)
-  const lessonDiagrams = (N) => { const at = new Map(diagramsFor(N).map((d) => [d.at, d])); return lessonHtml(N, { after: (i) => (at.has(i) ? glassDiagram(at.get(i)) : "") }); };
+  // five per lesson (kit/core/glass-diagrams.js), each beside the part it shows, full width so their words stay readable;
+  // the ones that sum the lesson up (terms, summary, comparisons, case and drug cards, recall) open its Recap
+  const RECAP_KINDS = new Set(["terms", "summary", "compare", "case", "drug", "evidence", "recall"]);
+  const recapDiagrams = (N) => diagramsFor(N).filter((d) => RECAP_KINDS.has(d.kind));
+  const lessonDiagrams = (N) => {
+    const at = new Map(); for (const d of diagramsFor(N)) if (!RECAP_KINDS.has(d.kind)) at.set(d.at, [...(at.get(d.at) || []), d]);
+    return lessonHtml(N, { after: (i) => (at.get(i) || []).map((d) => glassDiagram(d)).join("") });
+  };
   const mapOpts = (l) => ({ id: `${cfg.slug}:${l.id}`, kicker: `${cfg.name || cfg.site} · ${l.title}`, site: cfg.site, store, labTitle: (x) => ixs.find((i) => i.id === x)?.title || x });
   // ---------- reading a lesson: the rail beside it ("On this page"), reading progress and the question count ----------
   let lessonRail = null, readStop = null;
@@ -620,8 +627,44 @@ export function mountCourse(root, cfg) {
       <button class="btn btn-light lg btn-sm co-complete co-railgo" ${S.done[l.id] ? "disabled" : ""}><span>${S.done[l.id] ? "Completed ✓" : `Complete · +${XP.lesson} XP`}</span></button>
     </section>`;
   }
-  function wireReading(id, nQ) {
+  // the lesson's key terms, explained where the notes use them: the first use of each in the notes gets a dotted
+  // underline, and hovering, focusing or tapping it shows the definition from the lesson's own key terms
+  function markTerms(N) {
+    const prose = main.querySelector(".co-prose"); if (!prose || !N?.terms?.length) return;
+    const terms = N.terms.map(([t, d]) => [t.replace(/\*\*|`/g, "").trim(), d]).filter(([t]) => t.length >= 3 && t.length <= 60).sort((a, b) => b[0].length - a[0].length);
+    const done = new Set();
+    for (const [t, def] of terms) {
+      const re = new RegExp(`\\b${t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:s|es)?\\b`, "i");
+      const walk = document.createTreeWalker(prose, NodeFilter.SHOW_TEXT, { acceptNode: (n) => (n.parentElement.closest("h3, a, code, button, .gd, .co-term, .co-ixslot, .co-lab, figure") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT) });
+      for (let n = walk.nextNode(); n; n = walk.nextNode()) {
+        const m = n.nodeValue.match(re); if (!m) continue;
+        const after = n.splitText(m.index); after.splitText(m[0].length);
+        const el = Object.assign(document.createElement("button"), { type: "button", className: "co-term", textContent: after.nodeValue });
+        el.dataset.term = t; el.dataset.def = def.replace(/\*\*|`/g, ""); el.setAttribute("aria-label", `${after.nodeValue}: ${el.dataset.def}`);
+        after.replaceWith(el); done.add(t); break;
+      }
+    }
+    if (!done.size) return;
+    const tip = Object.assign(document.createElement("div"), { className: "co-tip", role: "tooltip", hidden: true }); document.body.append(tip);
+    let on = null;
+    const show = (el) => {
+      on = el; tip.innerHTML = `<b>${esc(el.dataset.term)}</b>${esc(el.dataset.def)}`; tip.hidden = false;
+      const r = el.getBoundingClientRect(), w = Math.min(320, innerWidth - 24); tip.style.width = `${w}px`;
+      tip.style.left = `${Math.round(Math.min(Math.max(12, r.left + r.width / 2 - w / 2), innerWidth - w - 12))}px`;
+      const below = r.bottom + 10 + tip.offsetHeight < innerHeight; tip.style.top = `${Math.round(below ? r.bottom + 10 : r.top - 10 - tip.offsetHeight)}px`;
+    };
+    const hide = () => { on = null; tip.hidden = true; };
+    prose.addEventListener("pointerover", (e) => { const el = e.target.closest(".co-term"); if (el && e.pointerType === "mouse") show(el); });
+    prose.addEventListener("pointerout", (e) => { if (e.target.closest(".co-term") && e.pointerType === "mouse") hide(); });
+    prose.addEventListener("focusin", (e) => { const el = e.target.closest(".co-term"); if (el) show(el); });
+    prose.addEventListener("focusout", (e) => { if (e.target.closest(".co-term")) hide(); });
+    prose.addEventListener("click", (e) => { const el = e.target.closest(".co-term"); if (!el) return; if (on === el) hide(); else show(el); });
+    addEventListener("scroll", hide, { passive: true });
+    return () => { tip.remove(); removeEventListener("scroll", hide); };
+  }
+  function wireReading(id, nQ, N, prev, next) {
     readStop?.();
+    const unTerms = markTerms(N);
     const art = main.querySelector(".co-lesson"), bar = Object.assign(document.createElement("div"), { className: "co-readbar" });
     bar.innerHTML = "<i></i>"; document.body.append(bar);
     if (main.querySelector(".co-frame:not(.co-end):not(.co-refs)")) main.querySelector(".co-frame").id = "co-top";
@@ -629,7 +672,15 @@ export function mountCourse(root, cfg) {
     paintSide();
     // the section headings and parts the rail links to, so it can show which one you're reading
     const targets = () => [...root.querySelectorAll(".co-toc a")].map((a) => [a, document.getElementById(a.dataset.jump)]).filter(([, el]) => el);
-    let pctShown = -1;
+    let pctShown = -1, lastPlace = null;
+    // where you were in this lesson (this device): offered as "Continue" when you come back before finishing it
+    const PK = `gradify.reading.${cfg.slug}`;
+    const places = () => { try { return JSON.parse(localStorage.getItem(PK) || "{}"); } catch { return {}; } };
+    const place = (sec) => { try { const p = places(); if (S.done[id] || sec === "co-top") delete p[id]; else p[id] = sec; localStorage.setItem(PK, JSON.stringify(p)); } catch { /* private mode */ } };
+    const was = places()[id], wasLink = was && !S.done[id] && root.querySelector(`.co-toc a[data-jump="${was}"]`);
+    if (wasLink && document.getElementById(was) && was !== root.querySelector(".co-toc a")?.dataset.jump) {
+      main.querySelector(".co-lhead .mv-chips")?.insertAdjacentHTML("afterbegin", `<button type="button" class="co-chip co-resume" data-jump="${esc(was)}">${ic("play")} Continue: ${esc(wasLink.textContent)}</button>`);
+    }
     const onScroll = () => {
       // 0 at the top of the lesson, 1 once its end is on screen
       const r = art.getBoundingClientRect(), p = r.bottom <= innerHeight + 2 ? 1 : Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - innerHeight)));
@@ -642,6 +693,7 @@ export function mountCourse(root, cfg) {
       }
       let cur = null; for (const [a, el] of targets()) { if (el.getBoundingClientRect().top < innerHeight * 0.3) cur = a; }
       root.querySelectorAll(".co-toc a").forEach((a) => a.classList.toggle("on", a === cur));
+      if (cur && cur.dataset.jump !== lastPlace) { lastPlace = cur.dataset.jump; place(lastPlace); }
     };
     // the questions: how many are right so far, in the section's header and the rail
     const count = () => {
@@ -661,12 +713,32 @@ export function mountCourse(root, cfg) {
       scrollTo({ top: el.getBoundingClientRect().top + scrollY - 90, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
     };
     root.addEventListener("click", jump);
+    // a diagram opens full size (most useful on a phone): Escape, the close button or a click outside closes it
+    const zoom = (e) => {
+      const fig = e.target.closest(".co-lesson .gd"); if (!fig || e.target.closest("a, button")) return;
+      const box = Object.assign(document.createElement("div"), { className: "gd-zoom", role: "dialog", ariaModal: "true", ariaLabel: fig.querySelector("svg")?.getAttribute("aria-label") || "Diagram" });
+      box.innerHTML = `<div class="gd-zoomin" style="${fig.getAttribute("style")}">${fig.querySelector(".gd-pane").innerHTML}${fig.querySelector("figcaption") ? `<p>${fig.querySelector("figcaption").innerHTML}</p>` : ""}</div><button type="button" class="gd-zoomx" aria-label="Close">×</button>`;
+      const close = () => { box.remove(); removeEventListener("keydown", key); fig.focus?.(); };
+      const key = (k) => { if (k.key === "Escape") close(); };
+      box.addEventListener("click", (k) => { if (k.target === box || k.target.closest(".gd-zoomx")) close(); });
+      addEventListener("keydown", key); document.body.append(box); box.querySelector(".gd-zoomx").focus();
+    };
+    main.addEventListener("click", zoom);
+    main.querySelectorAll(".co-lesson .gd").forEach((f) => { f.tabIndex = 0; f.title = "Open the diagram full size"; f.addEventListener("keydown", (k) => { if (k.key === "Enter" || k.key === " ") { k.preventDefault(); zoom({ target: f }); } }); });
+    // ← and → move to the previous and next lesson (not while typing, or with a diagram open)
+    const keys = (e) => {
+      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey || document.querySelector(".gd-zoom, .co-modal")) return;
+      if (e.target.closest?.("input, textarea, select, [contenteditable], .co-ix, .co-lab")) return;
+      const to = e.key === "ArrowLeft" ? prev : e.key === "ArrowRight" ? next : null;
+      if (to) { e.preventDefault(); location.hash = `#/lesson/${to.id}`; }
+    };
+    addEventListener("keydown", keys);
     // the rail's Complete button does what the lesson's own does
     const railGo = (e) => { if (e.target.closest(".co-railgo")) main.querySelector(".co-finish .co-complete")?.click(); };
     side.addEventListener("click", railGo);
     addEventListener("scroll", onScroll, { passive: true }); addEventListener("resize", onScroll);
     requestAnimationFrame(onScroll);
-    readStop = () => { removeEventListener("scroll", onScroll); removeEventListener("resize", onScroll); root.removeEventListener("click", jump); side.removeEventListener("click", railGo); mo.disconnect(); bar.remove(); readStop = null; };
+    readStop = () => { removeEventListener("scroll", onScroll); removeEventListener("resize", onScroll); root.removeEventListener("click", jump); main.removeEventListener("click", zoom); document.querySelector(".gd-zoom")?.remove(); removeEventListener("keydown", keys); unTerms?.(); side.removeEventListener("click", railGo); mo.disconnect(); bar.remove(); readStop = null; };
   }
   async function viewLesson(id) {
     const l = byId[id]; if (!l) return go("learn");
@@ -691,7 +763,7 @@ export function mountCourse(root, cfg) {
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${buildsOnHtml(id)}
         ${N ? F.top : ""}
-        ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N)}</div>${F.end ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
+        ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N)}</div>${F.end || recapDiagrams(N).length ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${recapDiagrams(N).map((d) => glassDiagram(d)).join("")}${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
         ${nQ ? `<section class="co-check" id="co-check"><header><h3 class="co-part">${ic("target")} Check yourself</h3><span class="co-checkn" aria-live="polite"></span></header>${N.items.map((it, k) => `<div class="co-qn" data-n="${k + 1} of ${nQ}">${qHtml(it, { confidence: true })}</div>`).join("")}</section>` : ""}
         ${N ? `<section class="co-deeper" id="co-deeper"><h3 class="co-part">${ic("sparkles")} Go deeper</h3><section class="co-ask co-tutor"></section>${mapsSectionHtml(N, mapOpts(l))}</section>` : ""}
@@ -721,7 +793,7 @@ export function mountCourse(root, cfg) {
       if (linked.length && at) at.insertAdjacentHTML("beforebegin", `<section class="co-trylab"><h3>Try it yourself</h3>${shown.map((x) => `<div class="co-ixslot" data-ix="${esc(x.id)}"></div>`).join("")}${more.length ? `<p class="co-morelabs">More for this lesson: ${more.map((x) => `<a href="#/practice/${esc(x.id)}">${esc(x.title)}</a>`).join(" · ")}</p>` : ""}</section>`);
     }
     mountIxSlots(main);
-    wireReading(id, nQ);
+    wireReading(id, nQ, N, prev && byId[prev.id], next && byId[next.id]);
     if (N) wireMaps(main, N, mapOpts(l));
     main.querySelectorAll("[data-cards]").forEach((b) => b.addEventListener("click", async () => { if (await gate("flashcards", `${cfg.slug}:${l.id}`, { store })) flashcards(N.cards, l, N); }));
     main.querySelector("[data-save]")?.addEventListener("click", (e) => saveLesson(l, N, e.currentTarget));
