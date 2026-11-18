@@ -903,7 +903,7 @@ export function mountCourse(root, cfg) {
     const plain = (s) => String(s).replace(/\^\{([^}]*)\}|_\{([^}]*)\}/g, "$1$2").replace(/[*`]/g, "");
     const reveal = (how = null) => {
       if (shown || k >= due.length) return;
-      sure = how; at = Date.now();   // the intervals shown on the rating buttons, and the one applied, are from this moment
+      sure = how; at = Date.now();   // the intervals shown on the rating buttons are worked out at the reveal
       attempt = main.querySelector("#co-typed")?.value ?? attempt;
       grade = gradeTyped(attempt, plain(due[k].back));
       shown = true; step();
@@ -913,7 +913,8 @@ export function mountCourse(root, cfg) {
       if (!shown || !RATE.includes(r)) return;
       haptic(r === "again" ? "warn" : r === "easy" ? "success" : "select");
       const c = due[k], st = S.cards[c.id] || {};
-      S.cards[c.id] = { ...st, ...schedule(st, r, { now: at }) }; done++; k++;
+      // scheduled from the rating itself, so a card left open a while is never already due when rated
+      S.cards[c.id] = { ...st, ...schedule(st, r) }; done++; k++;
       // the rating is evidence too: recall, and retention once the card comes back after a gap
       const score = { again: 0, hard: 0.6, good: 1, easy: 1 }[r];
       record({ Q: { type: "card" }, key: `card:${c.id}`, l: byId[c.lesson] }, "review", "cards", { score, correct: score >= 0.6, method: "self" }, { response: r, confidence: CONFIDENCE[sure] ?? null, ms: Date.now() - t0 });
