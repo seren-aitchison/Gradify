@@ -1,0 +1,1646 @@
+{
+ "api": 1,
+ "about": "The world's curricula: country → education system → qualification (kit/curriculum/world.js). Listed from public information; `checked` is the date an entry was checked against its official source, or null. Listing is not a claim that Gradify covers it.",
+ "stats": {
+  "countries": 22,
+  "systems": 27,
+  "qualifications": 65,
+  "checked": 0
+ },
+ "countries": [
+  {
+   "country": "United Kingdom",
+   "iso": "GB",
+   "systems": [
+    {
+     "id": "gb-eng",
+     "name": "England",
+     "regulator": "Ofqual",
+     "qualifications": [
+      {
+       "id": "gb-eng-gcse",
+       "name": "GCSE",
+       "kind": "secondary",
+       "ages": "14–16",
+       "level": 2,
+       "body": "AQA, Pearson Edexcel, OCR, WJEC Eduqas (regulated by Ofqual)",
+       "url": "https://www.gov.uk/government/organisations/ofqual",
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ],
+       "coverage": "gcse"
+      },
+      {
+       "id": "gb-eng-alevel",
+       "name": "A level",
+       "kind": "school-leaving",
+       "ages": "16–18",
+       "level": 3,
+       "body": "AQA, Pearson Edexcel, OCR, WJEC Eduqas (regulated by Ofqual)",
+       "url": "https://www.gov.uk/government/organisations/ofqual",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "psychology",
+        "sociology",
+        "business",
+        "art",
+        "music",
+        "spanish"
+       ],
+       "coverage": "a-level"
+      },
+      {
+       "id": "gb-eng-tlevel",
+       "name": "T Level",
+       "kind": "school-leaving",
+       "ages": "16–19",
+       "level": 3,
+       "body": "Institute for Apprenticeships and Technical Education; awarding organisations",
+       "url": "https://www.tlevels.gov.uk/",
+       "checked": null,
+       "gradify": [
+        "health",
+        "engineering",
+        "computing",
+        "business",
+        "teaching"
+       ]
+      },
+      {
+       "id": "gb-eng-btec",
+       "name": "BTEC Nationals",
+       "kind": "school-leaving",
+       "ages": "16–19",
+       "level": 3,
+       "body": "Pearson",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "business",
+        "sport",
+        "health",
+        "engineering",
+        "computing",
+        "art"
+       ]
+      },
+      {
+       "id": "gb-eng-apprenticeship",
+       "name": "Apprenticeships (levels 2–7)",
+       "kind": "vocational",
+       "ages": "16+",
+       "level": 4,
+       "body": "Employers and training providers, with end-point assessment",
+       "url": "https://www.gov.uk/apply-apprenticeship",
+       "checked": null,
+       "gradify": [
+        "careers",
+        "professional",
+        "engineering",
+        "business"
+       ]
+      },
+      {
+       "id": "gb-eng-degree",
+       "name": "Bachelor's degree",
+       "kind": "higher",
+       "ages": "18+",
+       "level": 6,
+       "body": "Universities (quality body: QAA)",
+       "url": "https://www.qaa.ac.uk/",
+       "checked": null,
+       "gradify": [
+        "university",
+        "research",
+        "law",
+        "medicine",
+        "nursing",
+        "pharmacy",
+        "dentistry",
+        "veterinary",
+        "psychology",
+        "engineering",
+        "computing",
+        "business",
+        "finance",
+        "biology",
+        "chemistry",
+        "physics"
+       ],
+       "coverage": "degree"
+      }
+     ]
+    },
+    {
+     "id": "gb-wls",
+     "name": "Wales",
+     "regulator": "Qualifications Wales",
+     "qualifications": [
+      {
+       "id": "gb-wls-gcse",
+       "name": "GCSE (Wales)",
+       "kind": "secondary",
+       "ages": "14–16",
+       "level": 2,
+       "body": "WJEC (regulated by Qualifications Wales)",
+       "url": "https://qualifications.wales/",
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      },
+      {
+       "id": "gb-wls-alevel",
+       "name": "A level (Wales)",
+       "kind": "school-leaving",
+       "ages": "16–18",
+       "level": 3,
+       "body": "WJEC (regulated by Qualifications Wales)",
+       "url": "https://qualifications.wales/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "psychology"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "gb-sct",
+     "name": "Scotland",
+     "regulator": "SQA",
+     "qualifications": [
+      {
+       "id": "gb-sct-n5",
+       "name": "National 5",
+       "kind": "secondary",
+       "ages": "15–16",
+       "level": 3,
+       "body": "Scottish Qualifications Authority",
+       "url": "https://www.sqa.org.uk/",
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      },
+      {
+       "id": "gb-sct-higher",
+       "name": "Higher",
+       "kind": "school-leaving",
+       "ages": "16–17",
+       "level": 3,
+       "body": "Scottish Qualifications Authority",
+       "url": "https://www.sqa.org.uk/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "psychology",
+        "business"
+       ]
+      },
+      {
+       "id": "gb-sct-ah",
+       "name": "Advanced Higher",
+       "kind": "school-leaving",
+       "ages": "17–18",
+       "level": 3,
+       "body": "Scottish Qualifications Authority",
+       "url": "https://www.sqa.org.uk/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "gb-nir",
+     "name": "Northern Ireland",
+     "regulator": "CCEA",
+     "qualifications": [
+      {
+       "id": "gb-nir-gcse",
+       "name": "GCSE (Northern Ireland)",
+       "kind": "secondary",
+       "ages": "14–16",
+       "level": 2,
+       "body": "CCEA",
+       "url": "https://ccea.org.uk/",
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      },
+      {
+       "id": "gb-nir-alevel",
+       "name": "A level (Northern Ireland)",
+       "kind": "school-leaving",
+       "ages": "16–18",
+       "level": 3,
+       "body": "CCEA",
+       "url": "https://ccea.org.uk/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "gb-prof",
+     "name": "Professional (UK-wide)",
+     "qualifications": [
+      {
+       "id": "gb-sqe",
+       "name": "Solicitors Qualifying Examination (SQE)",
+       "kind": "professional",
+       "ages": "Graduate",
+       "level": "P",
+       "body": "Solicitors Regulation Authority",
+       "url": "https://www.sra.org.uk/",
+       "checked": null,
+       "gradify": [
+        "law"
+       ],
+       "coverage": "sqe"
+      },
+      {
+       "id": "gb-nmc",
+       "name": "NMC standards of proficiency for registered nurses",
+       "kind": "professional",
+       "ages": "Pre-registration",
+       "level": "P",
+       "body": "Nursing and Midwifery Council",
+       "url": "https://www.nmc.org.uk/",
+       "checked": null,
+       "gradify": [
+        "nursing",
+        "health"
+       ],
+       "coverage": "nmc"
+      },
+      {
+       "id": "gb-gphc",
+       "name": "GPhC registration assessment",
+       "kind": "professional",
+       "ages": "Pre-registration",
+       "level": "P",
+       "body": "General Pharmaceutical Council",
+       "url": "https://www.pharmacyregulation.org/",
+       "checked": null,
+       "gradify": [
+        "pharmacy"
+       ],
+       "coverage": "gphc"
+      },
+      {
+       "id": "gb-mla",
+       "name": "Medical Licensing Assessment (MLA)",
+       "kind": "professional",
+       "ages": "Final-year medical students",
+       "level": "P",
+       "body": "General Medical Council",
+       "url": "https://www.gmc-uk.org/",
+       "checked": null,
+       "gradify": [
+        "medicine"
+       ],
+       "coverage": "mla"
+      },
+      {
+       "id": "gb-aca",
+       "name": "ACA chartered accountancy",
+       "kind": "professional",
+       "ages": "Graduate",
+       "level": "P",
+       "body": "ICAEW",
+       "url": "https://www.icaew.com/",
+       "checked": null,
+       "gradify": [
+        "finance",
+        "business"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "Ireland",
+   "iso": "IE",
+   "systems": [
+    {
+     "id": "ie",
+     "name": "Ireland",
+     "regulator": "State Examinations Commission",
+     "qualifications": [
+      {
+       "id": "ie-jc",
+       "name": "Junior Cycle",
+       "kind": "secondary",
+       "ages": "12–15",
+       "level": 2,
+       "body": "State Examinations Commission",
+       "url": "https://www.examinations.ie/",
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      },
+      {
+       "id": "ie-lc",
+       "name": "Leaving Certificate",
+       "kind": "school-leaving",
+       "ages": "16–18",
+       "level": 3,
+       "body": "State Examinations Commission",
+       "url": "https://www.examinations.ie/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "business",
+        "spanish"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "International",
+   "iso": "INT",
+   "systems": [
+    {
+     "id": "int",
+     "name": "International programmes",
+     "qualifications": [
+      {
+       "id": "int-ibdp",
+       "name": "IB Diploma Programme",
+       "kind": "school-leaving",
+       "ages": "16–19",
+       "level": 3,
+       "body": "International Baccalaureate",
+       "url": "https://www.ibo.org/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "psychology",
+        "business",
+        "computing",
+        "art",
+        "music",
+        "spanish",
+        "research"
+       ]
+      },
+      {
+       "id": "int-ibmyp",
+       "name": "IB Middle Years Programme",
+       "kind": "secondary",
+       "ages": "11–16",
+       "level": 2,
+       "body": "International Baccalaureate",
+       "url": "https://www.ibo.org/",
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      },
+      {
+       "id": "int-igcse",
+       "name": "Cambridge IGCSE",
+       "kind": "secondary",
+       "ages": "14–16",
+       "level": 2,
+       "body": "Cambridge International Education",
+       "url": "https://www.cambridgeinternational.org/",
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      },
+      {
+       "id": "int-caie-al",
+       "name": "Cambridge International AS & A Level",
+       "kind": "school-leaving",
+       "ages": "16–19",
+       "level": 3,
+       "body": "Cambridge International Education",
+       "url": "https://www.cambridgeinternational.org/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "psychology",
+        "sociology",
+        "business",
+        "computing"
+       ]
+      },
+      {
+       "id": "int-ial",
+       "name": "Pearson Edexcel International GCSE and A level",
+       "kind": "secondary",
+       "ages": "14–19",
+       "level": 3,
+       "body": "Pearson",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      },
+      {
+       "id": "int-cfa",
+       "name": "CFA Program",
+       "kind": "professional",
+       "ages": "Graduate",
+       "level": "P",
+       "body": "CFA Institute",
+       "url": "https://www.cfainstitute.org/",
+       "checked": null,
+       "gradify": [
+        "finance",
+        "investing"
+       ]
+      },
+      {
+       "id": "int-acca",
+       "name": "ACCA Qualification",
+       "kind": "professional",
+       "ages": "16+",
+       "level": "P",
+       "body": "ACCA",
+       "url": "https://www.accaglobal.com/",
+       "checked": null,
+       "gradify": [
+        "finance",
+        "business"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "United States",
+   "iso": "US",
+   "systems": [
+    {
+     "id": "us",
+     "name": "United States (state-run, with national tests)",
+     "qualifications": [
+      {
+       "id": "us-hsd",
+       "name": "High school diploma",
+       "kind": "school-leaving",
+       "ages": "14–18",
+       "level": 3,
+       "body": "Each state's education department",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      },
+      {
+       "id": "us-ccss",
+       "name": "Common Core State Standards (maths and English)",
+       "kind": "framework",
+       "ages": "5–18",
+       "level": 2,
+       "body": "Adopted state by state",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "maths",
+        "literature",
+        "primary"
+       ]
+      },
+      {
+       "id": "us-ngss",
+       "name": "Next Generation Science Standards",
+       "kind": "framework",
+       "ages": "5–18",
+       "level": 2,
+       "body": "Adopted state by state",
+       "url": "https://www.nextgenscience.org/",
+       "checked": null,
+       "gradify": [
+        "biology",
+        "chemistry",
+        "physics",
+        "ecology"
+       ]
+      },
+      {
+       "id": "us-ap",
+       "name": "Advanced Placement (AP)",
+       "kind": "school-leaving",
+       "ages": "15–18",
+       "level": 3,
+       "body": "College Board",
+       "url": "https://apcentral.collegeboard.org/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "history",
+        "psychology",
+        "computing",
+        "literature",
+        "spanish",
+        "art",
+        "music"
+       ]
+      },
+      {
+       "id": "us-sat",
+       "name": "SAT",
+       "kind": "entrance",
+       "ages": "16–18",
+       "level": 3,
+       "body": "College Board",
+       "url": "https://satsuite.collegeboard.org/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "literature"
+       ]
+      },
+      {
+       "id": "us-act",
+       "name": "ACT",
+       "kind": "entrance",
+       "ages": "16–18",
+       "level": 3,
+       "body": "ACT",
+       "url": "https://www.act.org/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "literature",
+        "biology",
+        "chemistry",
+        "physics"
+       ]
+      },
+      {
+       "id": "us-usmle",
+       "name": "USMLE",
+       "kind": "professional",
+       "ages": "Medical students and graduates",
+       "level": "P",
+       "body": "FSMB and NBME",
+       "url": "https://www.usmle.org/",
+       "checked": null,
+       "gradify": [
+        "medicine"
+       ]
+      },
+      {
+       "id": "us-nclex",
+       "name": "NCLEX",
+       "kind": "professional",
+       "ages": "Nursing graduates",
+       "level": "P",
+       "body": "NCSBN",
+       "url": "https://www.ncsbn.org/",
+       "checked": null,
+       "gradify": [
+        "nursing"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "Canada",
+   "iso": "CA",
+   "systems": [
+    {
+     "id": "ca",
+     "name": "Canada (provincial)",
+     "qualifications": [
+      {
+       "id": "ca-ossd",
+       "name": "Ontario Secondary School Diploma",
+       "kind": "school-leaving",
+       "ages": "14–18",
+       "level": 3,
+       "body": "Ontario Ministry of Education",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      },
+      {
+       "id": "ca-prov",
+       "name": "Provincial secondary diplomas (other provinces)",
+       "kind": "school-leaving",
+       "ages": "14–18",
+       "level": 3,
+       "body": "Each province's ministry of education",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "Australia",
+   "iso": "AU",
+   "systems": [
+    {
+     "id": "au",
+     "name": "Australia (national curriculum, state certificates)",
+     "regulator": "ACARA",
+     "qualifications": [
+      {
+       "id": "au-ac",
+       "name": "Australian Curriculum",
+       "kind": "framework",
+       "ages": "5–16",
+       "level": 2,
+       "body": "ACARA",
+       "url": "https://www.australiancurriculum.edu.au/",
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      },
+      {
+       "id": "au-hsc",
+       "name": "Higher School Certificate (New South Wales)",
+       "kind": "school-leaving",
+       "ages": "16–18",
+       "level": 3,
+       "body": "NSW Education Standards Authority",
+       "url": "https://www.educationstandards.nsw.edu.au/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "business"
+       ]
+      },
+      {
+       "id": "au-vce",
+       "name": "Victorian Certificate of Education",
+       "kind": "school-leaving",
+       "ages": "16–18",
+       "level": 3,
+       "body": "Victorian Curriculum and Assessment Authority",
+       "url": "https://www.vcaa.vic.edu.au/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "psychology"
+       ]
+      },
+      {
+       "id": "au-qce",
+       "name": "Queensland Certificate of Education",
+       "kind": "school-leaving",
+       "ages": "16–18",
+       "level": 3,
+       "body": "Queensland Curriculum and Assessment Authority",
+       "url": "https://www.qcaa.qld.edu.au/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature"
+       ]
+      },
+      {
+       "id": "au-wace",
+       "name": "Western Australian Certificate of Education",
+       "kind": "school-leaving",
+       "ages": "16–18",
+       "level": 3,
+       "body": "School Curriculum and Standards Authority",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "New Zealand",
+   "iso": "NZ",
+   "systems": [
+    {
+     "id": "nz",
+     "name": "New Zealand",
+     "regulator": "NZQA",
+     "qualifications": [
+      {
+       "id": "nz-ncea",
+       "name": "NCEA (levels 1–3)",
+       "kind": "school-leaving",
+       "ages": "15–18",
+       "level": 3,
+       "body": "NZQA",
+       "url": "https://www2.nzqa.govt.nz/",
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "India",
+   "iso": "IN",
+   "systems": [
+    {
+     "id": "in",
+     "name": "India (national boards and entrance tests)",
+     "qualifications": [
+      {
+       "id": "in-cbse10",
+       "name": "CBSE Class 10 (Secondary School Examination)",
+       "kind": "secondary",
+       "ages": "15–16",
+       "level": 2,
+       "body": "Central Board of Secondary Education",
+       "url": "https://www.cbse.gov.in/",
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      },
+      {
+       "id": "in-cbse12",
+       "name": "CBSE Class 12 (Senior School Certificate)",
+       "kind": "school-leaving",
+       "ages": "17–18",
+       "level": 3,
+       "body": "Central Board of Secondary Education",
+       "url": "https://www.cbse.gov.in/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "computing",
+        "business",
+        "psychology",
+        "history"
+       ]
+      },
+      {
+       "id": "in-icse",
+       "name": "ICSE (Class 10) and ISC (Class 12)",
+       "kind": "school-leaving",
+       "ages": "15–18",
+       "level": 3,
+       "body": "CISCE",
+       "url": "https://cisce.org/",
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      },
+      {
+       "id": "in-jee",
+       "name": "JEE Main",
+       "kind": "entrance",
+       "ages": "17–19",
+       "level": 3,
+       "body": "National Testing Agency",
+       "url": "https://nta.ac.in/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "physics",
+        "chemistry"
+       ]
+      },
+      {
+       "id": "in-neet",
+       "name": "NEET (UG)",
+       "kind": "entrance",
+       "ages": "17–19",
+       "level": 3,
+       "body": "National Testing Agency",
+       "url": "https://nta.ac.in/",
+       "checked": null,
+       "gradify": [
+        "biology",
+        "chemistry",
+        "physics",
+        "medicine"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "Singapore",
+   "iso": "SG",
+   "systems": [
+    {
+     "id": "sg",
+     "name": "Singapore",
+     "regulator": "SEAB",
+     "qualifications": [
+      {
+       "id": "sg-olevel",
+       "name": "GCE O-Level (being replaced by the Singapore-Cambridge Secondary Education Certificate from 2027)",
+       "kind": "secondary",
+       "ages": "15–16",
+       "level": 2,
+       "body": "SEAB with Cambridge",
+       "url": "https://www.seab.gov.sg/",
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      },
+      {
+       "id": "sg-alevel",
+       "name": "Singapore-Cambridge GCE A-Level",
+       "kind": "school-leaving",
+       "ages": "17–18",
+       "level": 3,
+       "body": "SEAB with Cambridge",
+       "url": "https://www.seab.gov.sg/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "Hong Kong",
+   "iso": "HK",
+   "systems": [
+    {
+     "id": "hk",
+     "name": "Hong Kong",
+     "qualifications": [
+      {
+       "id": "hk-dse",
+       "name": "Hong Kong Diploma of Secondary Education (HKDSE)",
+       "kind": "school-leaving",
+       "ages": "15–18",
+       "level": 3,
+       "body": "HKEAA",
+       "url": "https://www.hkeaa.edu.hk/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "business",
+        "computing"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "South Africa",
+   "iso": "ZA",
+   "systems": [
+    {
+     "id": "za",
+     "name": "South Africa",
+     "qualifications": [
+      {
+       "id": "za-nsc",
+       "name": "National Senior Certificate (matric)",
+       "kind": "school-leaving",
+       "ages": "17–18",
+       "level": 3,
+       "body": "Department of Basic Education; IEB for many independent schools",
+       "url": "https://www.education.gov.za/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "history",
+        "business",
+        "computing"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "Nigeria",
+   "iso": "NG",
+   "systems": [
+    {
+     "id": "ng",
+     "name": "Nigeria",
+     "qualifications": [
+      {
+       "id": "ng-wassce",
+       "name": "WASSCE",
+       "kind": "school-leaving",
+       "ages": "15–18",
+       "level": 3,
+       "body": "West African Examinations Council",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "business",
+        "history"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "Ghana",
+   "iso": "GH",
+   "systems": [
+    {
+     "id": "gh",
+     "name": "Ghana",
+     "qualifications": [
+      {
+       "id": "gh-wassce",
+       "name": "WASSCE",
+       "kind": "school-leaving",
+       "ages": "15–18",
+       "level": 3,
+       "body": "West African Examinations Council",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "business"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "Kenya",
+   "iso": "KE",
+   "systems": [
+    {
+     "id": "ke",
+     "name": "Kenya",
+     "qualifications": [
+      {
+       "id": "ke-kcse",
+       "name": "Kenya Certificate of Secondary Education (KCSE)",
+       "kind": "school-leaving",
+       "ages": "16–18",
+       "level": 3,
+       "body": "Kenya National Examinations Council",
+       "url": "https://www.knec.ac.ke/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "business",
+        "history"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "France",
+   "iso": "FR",
+   "systems": [
+    {
+     "id": "fr",
+     "name": "France",
+     "qualifications": [
+      {
+       "id": "fr-brevet",
+       "name": "Diplôme national du brevet",
+       "kind": "secondary",
+       "ages": "14–15",
+       "level": 2,
+       "body": "Ministère de l'Éducation nationale",
+       "url": "https://www.education.gouv.fr/",
+       "checked": null,
+       "gradify": [
+        "gcse",
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "literature",
+        "history",
+        "computing",
+        "spanish",
+        "art",
+        "music",
+        "business",
+        "psychology",
+        "sociology",
+        "ecology",
+        "sport"
+       ]
+      },
+      {
+       "id": "fr-bac",
+       "name": "Baccalauréat",
+       "kind": "school-leaving",
+       "ages": "17–18",
+       "level": 3,
+       "body": "Ministère de l'Éducation nationale",
+       "url": "https://www.education.gouv.fr/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "history",
+        "literature"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "Germany",
+   "iso": "DE",
+   "systems": [
+    {
+     "id": "de",
+     "name": "Germany (run by each Land)",
+     "qualifications": [
+      {
+       "id": "de-abitur",
+       "name": "Abitur",
+       "kind": "school-leaving",
+       "ages": "17–19",
+       "level": 3,
+       "body": "Each Land's ministry, coordinated by the Kultusministerkonferenz",
+       "url": "https://www.kmk.org/",
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "history",
+        "literature"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "Spain",
+   "iso": "ES",
+   "systems": [
+    {
+     "id": "es",
+     "name": "Spain",
+     "qualifications": [
+      {
+       "id": "es-bach",
+       "name": "Bachillerato, with the university entrance exam (PAU; EBAU or EvAU in some regions)",
+       "kind": "school-leaving",
+       "ages": "16–18",
+       "level": 3,
+       "body": "Ministry of Education and the autonomous communities",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "history",
+        "literature"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "Italy",
+   "iso": "IT",
+   "systems": [
+    {
+     "id": "it",
+     "name": "Italy",
+     "qualifications": [
+      {
+       "id": "it-maturita",
+       "name": "Esame di Stato (maturità)",
+       "kind": "school-leaving",
+       "ages": "18–19",
+       "level": 3,
+       "body": "Ministero dell'Istruzione e del Merito",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "history",
+        "literature"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "Netherlands",
+   "iso": "NL",
+   "systems": [
+    {
+     "id": "nl",
+     "name": "Netherlands",
+     "qualifications": [
+      {
+       "id": "nl-havo-vwo",
+       "name": "HAVO and VWO diplomas",
+       "kind": "school-leaving",
+       "ages": "16–18",
+       "level": 3,
+       "body": "College voor Toetsen en Examens",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "history",
+        "business"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "Japan",
+   "iso": "JP",
+   "systems": [
+    {
+     "id": "jp",
+     "name": "Japan",
+     "qualifications": [
+      {
+       "id": "jp-common",
+       "name": "Common Test for University Admissions",
+       "kind": "entrance",
+       "ages": "17–18",
+       "level": 3,
+       "body": "National Center for University Entrance Examinations",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "japanese"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "China",
+   "iso": "CN",
+   "systems": [
+    {
+     "id": "cn",
+     "name": "China (mainland)",
+     "qualifications": [
+      {
+       "id": "cn-gaokao",
+       "name": "National College Entrance Examination (gaokao)",
+       "kind": "entrance",
+       "ages": "17–18",
+       "level": 3,
+       "body": "Ministry of Education and provincial authorities",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "South Korea",
+   "iso": "KR",
+   "systems": [
+    {
+     "id": "kr",
+     "name": "South Korea",
+     "qualifications": [
+      {
+       "id": "kr-csat",
+       "name": "College Scholastic Ability Test (Suneung)",
+       "kind": "entrance",
+       "ages": "17–18",
+       "level": 3,
+       "body": "Korea Institute for Curriculum and Evaluation",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "country": "Brazil",
+   "iso": "BR",
+   "systems": [
+    {
+     "id": "br",
+     "name": "Brazil",
+     "qualifications": [
+      {
+       "id": "br-enem",
+       "name": "ENEM (Exame Nacional do Ensino Médio)",
+       "kind": "entrance",
+       "ages": "17–18",
+       "level": 3,
+       "body": "INEP",
+       "url": null,
+       "checked": null,
+       "gradify": [
+        "maths",
+        "biology",
+        "chemistry",
+        "physics",
+        "history",
+        "literature"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
