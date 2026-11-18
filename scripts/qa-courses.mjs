@@ -9,6 +9,7 @@
 import { readFile, writeFile, mkdir, readdir } from "node:fs/promises";
 import { parseNotes, norm } from "../kit/course/notes.js";
 import { updateRegistry } from "./curriculum-registry.mjs";
+import { writeDoc } from "./write-doc.mjs";
 import { ADAPTERS } from "../kit/subjects/index.js";
 import { standard2Rules } from "../kit/subjects/social.js";
 
@@ -147,7 +148,7 @@ for (const C0 of COURSES) {
     }
     rows.push(row);
   }
-  await writeFile(new URL(`../docs/qa/${C.slug}-sources.md`, import.meta.url), sourceDoc.join("\n") + "\n");
+  await writeDoc(new URL(`../docs/qa/${C.slug}-sources.md`, import.meta.url), sourceDoc.join("\n") + "\n");
   if (course.publish) {
     const stages = (u) => ["reviewed", "sources", "signoff"].filter((k) => !QA[u.id]?.[k]).map((k) => ({ reviewed: "content review", sources: "source check", signoff: `sign-off by ${C.expert}` })[k]);
     const flagged = queue.filter((q) => q.flags.length), counts = {};
@@ -160,7 +161,7 @@ for (const C0 of COURSES) {
       const qs = flagged.filter((q) => q.unit === u); if (!qs.length) continue;
       doc.push(`### School ${u.n}: ${u.title}`, "", "| Lesson | Check first |", "|---|---|", ...qs.map((q) => `| \`${q.l.id}\` ${q.l.title.replace(/\|/g, "/")} | ${q.flags.join("; ")} |`), "");
     }
-    await writeFile(new URL(`../docs/qa/${C.slug}-review-queue.md`, import.meta.url), doc.join("\n") + "\n");
+    await writeDoc(new URL(`../docs/qa/${C.slug}-review-queue.md`, import.meta.url), doc.join("\n") + "\n");
   }
   report.push({ C, course, QA, rows });
 }
@@ -219,7 +220,7 @@ for (const { C, course, rows } of report) {
     md.push("");
   }
 }
-await writeFile(new URL("../docs/CURRICULUM_PROGRESS.md", import.meta.url), md.join("\n") + "\n");
+await writeDoc(new URL("../docs/CURRICULUM_PROGRESS.md", import.meta.url), md.join("\n") + "\n");
 if (process.argv.includes("--all")) for (const { rows } of report) for (const r of rows) for (const w of r.warn) console.log(`${r.unit.id}  ${w}`);
 for (const { C, rows } of report) console.log(`${C.name}: ${rows.filter((r) => r.written).length} schools written, ${rows.filter((r) => r.written && !r.hard.length).length} pass hard checks, ${rows.reduce((a, r) => a + r.warn.length, 0)} warnings`);
 if (failures.length) { console.error(failures.join("\n")); process.exit(1); }

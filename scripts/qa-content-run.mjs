@@ -3,7 +3,8 @@
 //   node scripts/qa-content-run.mjs     (also run by `npm run qa`)
 // Hard failures (exit 1): text the page can't show as written. Lines a reviewer should look at are listed, not
 // failed: the checks can find arithmetic that doesn't add up, but never whether the content is right.
-import { readFile, readdir, writeFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
+import { writeDoc } from "./write-doc.mjs";
 import { pathToFileURL } from "node:url";
 import { escaping, notation, separatorInBrackets, numLine, numAnswerExplained, arithmetic, sourceUrl } from "./qa-content.mjs";
 import { parseNotes } from "../kit/course/notes.js";
@@ -52,7 +53,7 @@ if (import.meta.url === pathToFileURL(process.argv[1]).href) {
     if (items.length) md.push(`## ${c.slug}`, "", ...items, "");
   }
   md.push("Key: ❌ hard failure; 🔢 arithmetic that doesn't add up as written; 🔗 a source link to check; 🔍 a numerical answer that its explanation doesn't show (often fine: a count, or an answer worded in the explanation), to check by eye.", "");
-  await writeFile(new URL("docs/qa/content-checks.md", ROOT), md.join("\n"));
+  await writeDoc(new URL("docs/qa/content-checks.md", ROOT), md.join("\n"));
   for (const c of res) console.log(`content ${c.slug}: ${c.hard.length} hard, ${c.review.arithmetic.length} arithmetic, ${c.review.numWhy.length} NUM explanations, ${c.review.url.length} links to check`);
   const hard = res.flatMap((c) => c.hard.map((h) => `${c.slug} ${h}`));
   if (hard.length) { console.error(hard.join("\n")); process.exit(1); }
