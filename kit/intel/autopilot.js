@@ -114,7 +114,7 @@ export function opportunities(m) {
   const avg = (l, k) => l.reduce((a, c) => a + c.dims[k].value, 0) / l.length;
   if (rec.length >= 2 && (!app.length || avg(app, "apply") < avg(rec, "recall") - 0.2)) {
     const d = m.docs[0];
-    out.push({ id: "apply", tone: "violet", title: app.length ? "Application is lagging your recall" : "You haven't tried applying what you know", why: app.length ? `You recall about ${Math.round(avg(rec, "recall") * 100)}% but apply about ${Math.round(avg(app, "apply") * 100)}%. A few apply questions a day closes the gap, and it's what exams test.` : "Recall is solid. Questions that make you use ideas on new problems are the next step, and what exams test.", href: d ? `#/deck/${d.id}` : "#/notes", cta: "Add apply questions" });
+    out.push({ id: "apply", tone: "violet", title: app.length ? "Application is lagging your recall" : "You haven't tried applying what you know", why: app.length ? `You recall about ${Math.round(avg(rec, "recall") * 100)}% but apply about ${Math.round(avg(app, "apply") * 100)}%. A few apply questions a day closes the gap, and it's what exams test.` : "Recall is solid. Questions that make you use ideas on new problems are the next step, and what exams test.", href: d ? `#/deck/${d.id}` : "#/library", cta: "Add apply questions" });
   }
   // an exam soon, with no full mixed practice yet
   const exam = m.deadlines.find((x) => x.kind === "exam");
