@@ -9,6 +9,7 @@ live site on the date given; where a more detailed tracker exists, this page lin
 
 | Area | Document | Kept current by |
 |---|---|---|
+| The standards everything else follows | [QUALITY_CONSTITUTION.md](QUALITY_CONSTITUTION.md), baseline in [audit/QUALITY-BASELINE-2026-11.md](audit/QUALITY-BASELINE-2026-11.md) | the owner (constitution); `tests/constitution.test.mjs` |
 | Every site's release status | [ECOSYSTEM-STATUS.md](ECOSYSTEM-STATUS.md) | `node scripts/audit-sites.mjs` |
 | New subject sites | [SITE-PRODUCTION.md](SITE-PRODUCTION.md) | the site-production session |
 | Backend and accounts | [BACKEND-STATUS.md](BACKEND-STATUS.md), [SETUP.md](SETUP.md) | `node scripts/verify-backend.mjs` |

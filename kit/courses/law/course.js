@@ -15,7 +15,7 @@ export default defineCourse(law, {
   // quality record per school (docs/CURRICULUM_QA.md); unready schools are labelled as drafts
   qa: QA,
   // published in full while review continues; what still needs checking is in docs/qa/law-review-queue.md
-  publish: true,
+  publish: true, reviewLine: true,
   // written practice tasks (#/write) and the AI tutor in lessons (kit/assess/tutor.js)
   writing: WRITING, writingTitle: "Problem questions, SQE2 writing and client interviews", writingNote: "Fictional facts; the law of England and Wales as at 2026.",
   tutor: "Answers come from Gradify AI, using this lesson's notes. It's study help, not legal advice, and it can be wrong: check it against the notes and authoritative sources.",

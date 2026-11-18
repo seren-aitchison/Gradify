@@ -15,7 +15,7 @@ export default defineCourse(nursing, {
   // quality record per school (docs/CURRICULUM_QA.md); unready schools are labelled as drafts
   qa: QA,
   // published in full while review continues; what still needs checking is in docs/qa/nursing-review-queue.md
-  publish: true,
+  publish: true, reviewLine: true,
   // written practice tasks (#/write) and the AI tutor in lessons (kit/assess/tutor.js)
   // the NMC revalidation helper (#/revalidation, kit/course/revalidation.js)
   revalidation: true,

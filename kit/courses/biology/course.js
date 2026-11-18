@@ -12,7 +12,7 @@ export default defineCourse(science, {
   slug: "biology", name: "Biology",
   units: UNITS, tracks: TRACKS, paths: PATHS, blurbs: BLURBS,
   // quality record per school (docs/CURRICULUM_QA.md); unready schools are labelled as drafts
-  qa: QA,
+  qa: QA, reviewLine: true,
   // names for difficulty levels 1–3 in questions, quizzes and the problem bank
   levels: ["Foundation", "Application", "Biological reasoning"],
   // the subject's colours for the course chrome (Physics keeps the original spectrum)

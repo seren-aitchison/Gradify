@@ -22,6 +22,32 @@ ROLES_PATH = os.path.join(os.path.dirname(__file__), "roles.json")
 with open(ROLES_PATH, "r") as f:
     ROLES_CONFIG = json.load(f)
 
+# The Quality Constitution (docs/QUALITY_CONSTITUTION.md): its agent brief goes in front of every role's
+# system prompt, so every agent inherits the same non-negotiable standards from one file.
+CONSTITUTION_PATH = os.path.join(os.path.dirname(__file__), "..", "docs", "QUALITY_CONSTITUTION.md")
+BRIEF_START, BRIEF_END = "<!-- agent-brief:start -->", "<!-- agent-brief:end -->"
+
+def load_constitution_brief(path=CONSTITUTION_PATH):
+    with open(path, "r", encoding="utf-8") as f:
+        text = f.read()
+    if BRIEF_START not in text or BRIEF_END not in text:
+        raise RuntimeError(f"No agent brief in {path}: agents must not run without the Quality Constitution")
+    return text.split(BRIEF_START, 1)[1].split(BRIEF_END, 1)[0].strip()
+
+# Only these roles may mark work complete; everyone else's file changes go to QA (Article 4)
+FINISHING_ROLES = {"qa"}
+# Review, source-check and sign-off records are written by people, never by agents (Article 4)
+PROTECTED_PATHS = ("kit/courses/*/qa.js",)
+
+def inside(root, full_path):
+    root = os.path.realpath(root)
+    return os.path.commonpath([root, os.path.realpath(full_path)]) == root
+
+def is_protected(rel_path):
+    import fnmatch
+    rel = os.path.normpath(rel_path).replace(os.sep, "/")
+    return any(fnmatch.fnmatch(rel, pat) for pat in PROTECTED_PATHS)
+
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
 DEFAULT_MODEL = os.environ.get("GRADIFY_AGENT_MODEL", "qwen2.5-coder:3b")
 
@@ -89,7 +115,7 @@ def execute_tool(tool_call, repo_root):
     if tool_name == "read_file":
         rel_path = args.get("path", "")
         full_path = os.path.normpath(os.path.join(repo_root, rel_path))
-        if not full_path.startswith(repo_root):
+        if not inside(repo_root, full_path):
             return {"error": "Access denied: path outside workspace"}
         if not os.path.exists(full_path):
             return {"error": f"File not found: {rel_path}"}
@@ -104,8 +130,10 @@ def execute_tool(tool_call, repo_root):
         rel_path = args.get("path", "")
         content = args.get("content", "")
         full_path = os.path.normpath(os.path.join(repo_root, rel_path))
-        if not full_path.startswith(repo_root):
+        if not inside(repo_root, full_path):
             return {"error": "Access denied: path outside workspace"}
+        if is_protected(os.path.relpath(full_path, repo_root)):
+            return {"error": "Refused: review, source and sign-off records are written by people, not agents (Quality Constitution, article 4). Report your findings in a handoff note instead."}
         try:
             os.makedirs(os.path.dirname(full_path), exist_ok=True)
             with open(full_path, "w", encoding="utf-8") as f:
@@ -117,6 +145,8 @@ def execute_tool(tool_call, repo_root):
     elif tool_name == "list_dir":
         rel_path = args.get("path", ".")
         full_path = os.path.normpath(os.path.join(repo_root, rel_path))
+        if not inside(repo_root, full_path):
+            return {"error": "Access denied: path outside workspace"}
         if not os.path.exists(full_path):
             return {"error": "Directory not found"}
         try:
@@ -161,7 +191,7 @@ def run_agent_loop(role_id, repo_root, single_task_mode=False):
 
     color = role_info.get("color", "white")
     name = role_info.get("name")
-    system_prompt = role_info.get("system_prompt")
+    system_prompt = load_constitution_brief() + "\n\nYOUR ROLE\n" + role_info.get("system_prompt")
     allowed_tools = role_info.get("tools", [])
 
     print(f"{COLORS['bold']}{COLORS[color]}╔═══════════════════════════════════════════════════════════════════════════╗{COLORS['reset']}")
@@ -225,6 +255,7 @@ Analyze the task and provide your step-by-step reasoning and action."""
 
             step = 1
             max_steps = 6
+            files_written = []
 
             while step <= max_steps:
                 print(f"\n{COLORS['dim']}─── Step {step}/{max_steps} ───{COLORS['reset']}")
@@ -252,6 +283,14 @@ Analyze the task and provide your step-by-step reasoning and action."""
                         update_heartbeat(role_id, "idle", task_completed=True)
                         break
 
+                    elif t_name == "finish_task" and role_id not in FINISHING_ROLES and files_written:
+                        # Article 4: changed files go to QA, never straight to done
+                        note = f"Changed {', '.join(files_written)}. Author's summary: {t_args.get('summary', '')}"
+                        handoff_task(task_id, role_id, "qa", "verification", note)
+                        log_agent(role_id, f"Task #{task_id} changed files, so it goes to QA for verification", "yellow")
+                        update_heartbeat(role_id, "idle", task_completed=True)
+                        break
+
                     elif t_name == "finish_task":
                         summary = t_args.get("summary", "Task finished.")
                         update_task_status(task_id, "completed", summary)
@@ -261,16 +300,33 @@ Analyze the task and provide your step-by-step reasoning and action."""
                         break
 
                     else:
-                        tool_result = execute_tool(tool_call, repo_root)
+                        if t_name not in allowed_tools:
+                            tool_result = {"error": f"Tool not available to this role: {t_name}"}
+                        else:
+                            tool_result = execute_tool(tool_call, repo_root)
+                        if t_name == "write_file" and tool_result.get("status") == "success":
+                            files_written.append(t_args.get("path", "?"))
                         log_agent(role_id, f"Tool Result: {json.dumps(tool_result)[:150]}...", "dim")
                         prompt = f"Tool output: {json.dumps(tool_result)}\n\nNext step or call finish_task/delegate_task."
                         step += 1
                 else:
-                    # If model didn't call a tool, conclude the task with the text output
-                    log_agent(role_id, f"Model concluded with analysis.", color)
-                    update_task_status(task_id, "completed", response[:1000])
+                    # The model answered in prose. Only QA's verdict closes a task; anything else (above all
+                    # a task that changed files) goes to QA with the answer attached, rather than silently "done".
+                    if role_id in FINISHING_ROLES and not files_written:
+                        log_agent(role_id, "Model concluded with analysis.", color)
+                        update_task_status(task_id, "completed", response[:1000])
+                    else:
+                        changed = f"Changed {', '.join(files_written)}. " if files_written else ""
+                        handoff_task(task_id, role_id, "qa", "verification", f"{changed}Agent's answer: {response[:900]}")
+                        log_agent(role_id, f"Task #{task_id} handed to QA to check the answer", "yellow")
                     update_heartbeat(role_id, "idle", task_completed=True)
                     break
+
+            else:
+                # ran out of steps: say so instead of leaving the task looking active
+                update_task_status(task_id, "blocked", f"Stopped after {max_steps} steps without finishing")
+                log_agent(role_id, f"Task #{task_id} stopped after {max_steps} steps", "red")
+                update_heartbeat(role_id, "idle")
 
             if single_task_mode:
                 break

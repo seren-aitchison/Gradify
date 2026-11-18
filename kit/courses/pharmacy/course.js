@@ -14,7 +14,7 @@ export default defineCourse(pharmacy, {
   map: MAP, frameworks: FRAMEWORKS,
   // quality record per school (docs/CURRICULUM_QA.md); published while review continues, with what still
   // needs checking in docs/qa/pharmacy-review-queue.md
-  qa: QA, publish: true,
+  qa: QA, publish: true, reviewLine: true,
   // written practice tasks (#/write) and the AI tutor in lessons (kit/assess/tutor.js)
   writing: WRITING, writingTitle: "Clinical checks, counselling, interventions and records", writingNote: "Fictional patients and illustrative doses. Writing practice, not clinical guidance.",
   tutor: "Answers come from Gradify AI, using this lesson's notes. It's education, not clinical advice: for a real patient, use the current BNF and SPC, local guidance and your professional judgement, and ask a pharmacist or prescriber. It can be wrong, so check it against the notes.",

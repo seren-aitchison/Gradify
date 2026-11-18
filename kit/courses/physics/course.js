@@ -8,6 +8,8 @@ import science from "../../subjects/science.js";
 export default defineCourse(science, {
   slug: "physics", name: "Physics", unitWord: "Unit", trackWord: "Track",
   units: UNITS, tracks: TRACKS, paths: PATHS,
+  // no QA record yet (docs/CURRICULUM_QA.md): each unit still says it hasn't been reviewed or source-checked
+  reviewLine: true,
   // interactives (kit/labs/physics/): listed in the Lab tab and shown at the end of the lessons they link to
   interactives: INTERACTIVES, evidence: EVIDENCE, exploration: EXPLORATION,   // evidence: each challenge → its lesson (mastery)
   practiceNote: "Every lab runs a real physical model, with its simplifications stated underneath. Challenges inside them earn XP.",
