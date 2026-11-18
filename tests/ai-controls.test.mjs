@@ -290,7 +290,7 @@ test("each feature names its model: Opus for tutoring and explanations, Sonnet f
   await x.close();
 });
 
-// The fair-use cap counts the request being claimed (20261118150000_fair_use_cap_includes_request.sql)
+// The fair-use cap counts the request being claimed (20261119130000_fair_use_cap_includes_request.sql)
 const capCost = async (x, model, input, output) => Number((await x.owner(`select public.ai_cost_pence('${model}', ${input}, ${output}, 0, 0) as c`))[0].c);
 const spent = async (x, uid) => Number((await x.owner(`select public.ai_user_month_spend_pence('${uid}') as c`))[0].c);
 

@@ -92,7 +92,7 @@ failures with their reasons.
 
 1. Migration applied and both functions deployed (10 November 2026, after a verified backup and a rehearsal on a copy of
    the live data; `docs/BACKEND-LOG.md`). While AI is off they refuse every request before any Claude call.
-   Also apply `20261118150000_fair_use_cap_includes_request.sql` (the fair-use cap counts the request being claimed)
+   Also apply `20261119130000_fair_use_cap_includes_request.sql` (the fair-use cap counts the request being claimed)
    and redeploy the functions for its refusal message, before switching AI on.
 2. Set the key: Supabase → Edge Functions → Secrets → `ANTHROPIC_API_KEY`. Set a spend limit on the Anthropic side
    too (Anthropic Console → Limits) as a second safety net.
