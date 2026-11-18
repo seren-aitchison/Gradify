@@ -133,6 +133,22 @@ export function drawIsland(el, { sites, bars, rand }) {
   const falls = new THREE.Points(fallGeo, fallMat); isle.add(falls);
   const planted = [];
 
+  // a single leaf: a pointed oval with a fold down its middle, drawn on both sides; each tree's leaves share it
+  const leafGeo = new THREE.BufferGeometry();
+  {
+    const L = 0.26, rim = [[0, 0], [0.05, 0.05], [0.075, 0.11], [0.068, 0.17], [0.04, 0.22], [0, L]], v = [];
+    // the midrib sits slightly forward of the edges, so the two halves fold like a real leaf
+    for (const side of [1, -1]) for (let i = 0; i < rim.length - 1; i++) {
+      const [x0, y0] = rim[i], [x1, y1] = rim[i + 1];
+      v.push(0, y0, 0.018, side * x0, y0, 0, side * x1, y1, 0, 0, y0, 0.018, side * x1, y1, 0, 0, y1, 0.018);
+    }
+    leafGeo.setAttribute("position", new THREE.Float32BufferAttribute(v, 3));
+  }
+  leafGeo.computeVertexNormals();
+  const leafMat = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide, flatShading: true, roughness: 0.5, metalness: 0, emissive: 0x000000 });
+  const LEAF = [C(0x52d63c), C(0xffb703), C(0xff4d3d)];   // a lesson, a flashcard session, a quiz
+  const m4 = new THREE.Matrix4(), tc = new THREE.Color();
+
   // one tree per site
   const order = [...sites].sort((a, b) => b.k - a.k);
   order.forEach((q, idx) => {
@@ -140,15 +156,18 @@ export function drawIsland(el, { sites, bars, rand }) {
     const lead = idx === 0;
     const p = lead ? (taken.push([0.2, -0.2, 0.9]), [0.2, -0.2]) : spot(0.55 + q.k * 0.25);
     if (!p) return;
-    const s = (0.7 + q.k * 0.72) * (lead ? 2.6 : 1), leaf = C(0x5fae47).lerp(C(`#${q.c}`), 0.24), tree = new THREE.Group();
+    const s = (0.7 + q.k * 0.72) * (lead ? 2.6 : 1), leaf = C(0x3f8a3a).lerp(C(`#${q.c}`), 0.08), tree = new THREE.Group();
+    const crowns = [];   // [x, y, z, radius] of each leafy part, where this tree's leaves grow
     tree.position.set(p[0], GROUND, p[1]); tree.rotation.y = rand() * 6;
     if (lead || q.k >= 0.45) {
       // a broad tree: a trunk that forks, with clumps of leaves
       const trunk = paint(new THREE.CylinderGeometry(0.09 * s, 0.17 * s, 1.5 * s, 6), () => bark);
       const t = mesh(trunk); t.position.y = 0.75 * s; tree.add(t);
       for (const [bx, by, bz, br] of [[0, 1.75, 0, 0.75], [-0.55, 1.45, 0.1, 0.55], [0.55, 1.5, -0.1, 0.58], [0.1, 1.35, 0.5, 0.5], [-0.1, 2.1, -0.25, 0.48]]) {
-        const g = jitter(new THREE.IcosahedronGeometry(br * s, 0), (x, y, z) => [x * (1 + jit(x, y, z, 11) * 0.12), y * 0.82, z * (1 + jit(x, y, z, 12) * 0.12)]);
+        const core = q.leaves ? 0.88 : 1;   // with leaves to show, the crown is a little smaller, so they sit on its surface
+        const g = jitter(new THREE.IcosahedronGeometry(br * s * core, 0), (x, y, z) => [x * (1 + jit(x, y, z, 11) * 0.12), y * 0.82, z * (1 + jit(x, y, z, 12) * 0.12)]);
         const c = mesh(paint(g, (m, n, f) => vary(leaf, n.y * 0.5 + 0.5, 0.18))); c.position.set(bx * s, by * s, bz * s); tree.add(c);
+        crowns.push([bx * s, by * s, bz * s, br * s]);
       }
     } else {
       // a young pine: a thin trunk and stacked cones
@@ -156,6 +175,7 @@ export function drawIsland(el, { sites, bars, rand }) {
       const pine = leaf.clone().lerp(C(0x2f7d4a), 0.35);
       [[0.62, 0.75, 0.55], [0.5, 0.65, 1.0], [0.36, 0.55, 1.4]].forEach(([r, h, y]) => {
         const c = mesh(paint(new THREE.ConeGeometry(r * s, h * s, 7), (m, n, f) => vary(pine, n.y * 0.5 + 0.5, 0.16))); c.position.y = y * s; tree.add(c);
+        crowns.push([0, (y - h * 0.15) * s, 0, r * s * 0.78]);
       });
     }
     // credentials hang as gold fruit
@@ -163,6 +183,25 @@ export function drawIsland(el, { sites, bars, rand }) {
       const g = mesh(new THREE.IcosahedronGeometry(0.12, 0), fruitMat);
       const a = f * 2.1 + 0.6; g.position.set(Math.cos(a) * 0.55 * s, (lead || q.k >= 0.45 ? 1.35 : 0.8) * s, Math.sin(a) * 0.55 * s); tree.add(g);
     });
+    // one leaf for every lesson, flashcard session and quiz completed on this site in the last 30 days, on the
+    // crowns' surface, each facing outwards at its own angle: green, gold and coral (a few at most per crown at small sizes)
+    const L = q.leaves || {}, kinds = [...Array(L.lesson || 0).fill(0), ...Array(L.flashcard || 0).fill(1), ...Array(L.quiz || 0).fill(2)].slice(0, 400);
+    if (kinds.length && crowns.length) {
+      const leaves = new THREE.InstancedMesh(leafGeo, leafMat, kinds.length), weights = crowns.map((c) => c[3] * c[3]), wsum = weights.reduce((a, b) => a + b, 0);
+      const dir = new THREE.Vector3(), q4 = new THREE.Quaternion(), spinQ = new THREE.Quaternion(), Z = new THREE.Vector3(0, 0, 1), pos = new THREE.Vector3(), sc = new THREE.Vector3();
+      kinds.forEach((kind, i) => {
+        let pick = rand() * wsum, ci = 0; while (pick > weights[ci] && ci < crowns.length - 1) pick -= weights[ci++];
+        const [cx, cy, cz, cr] = crowns[ci];
+        dir.set(rand() * 2 - 1, rand() * 2 - 1, rand() * 2 - 1).normalize(); if (dir.y < -0.35) dir.y = -dir.y * 0.5; dir.normalize();
+        const out = 0.98 + rand() * 0.14;
+        pos.set(cx + dir.x * cr * out, cy + dir.y * cr * out * 0.85, cz + dir.z * cr * out);
+        q4.setFromUnitVectors(Z, dir).multiply(spinQ.setFromAxisAngle(Z, rand() * Math.PI * 2));
+        const k = (0.9 + rand() * 0.35) * (0.6 + cr * 1.15); sc.set(k, k, k);
+        m4.compose(pos, q4, sc); leaves.setMatrixAt(i, m4);
+        leaves.setColorAt(i, tc.copy(LEAF[kind]).offsetHSL((rand() - 0.5) * 0.03, 0, (rand() - 0.5) * 0.12));
+      });
+      leaves.castShadow = true; tree.add(leaves);
+    }
     isle.add(tree);
     planted.push({ tree, q, top: (lead ? 2.2 : q.k >= 0.45 ? 2.75 : 1.85) * s, phase: rand() * 6 });
   });
@@ -189,7 +228,6 @@ export function drawIsland(el, { sites, bars, rand }) {
 
   // tufts of grass all over the top
   const tuft = new THREE.ConeGeometry(0.05, 0.16, 3), tufts = new THREE.InstancedMesh(tuft, new THREE.MeshStandardMaterial({ color: 0x5f9f3e, flatShading: true, roughness: 1 }), 90);
-  const m4 = new THREE.Matrix4(), tc = new THREE.Color();
   let nt = 0;
   for (let k = 0; k < 400 && nt < 90; k++) {
     const a = rand() * Math.PI * 2, d = Math.sqrt(rand()) * (TOP - 0.35), x = Math.cos(a) * d, z = Math.sin(a) * d;
@@ -290,7 +328,7 @@ export function drawIsland(el, { sites, bars, rand }) {
   live.set(el, () => {
     cancelAnimationFrame(raf); ro.disconnect(); io.disconnect();
     scene.traverse((o) => { o.geometry?.dispose(); });
-    mat.dispose(); crystal.dispose(); water.dispose(); fruitMat.dispose(); cloudMat.dispose(); fallMat.dispose(); flyMat.dispose(); fallGeo.dispose(); flyGeo.dispose(); tuft.dispose();
+    mat.dispose(); crystal.dispose(); water.dispose(); leafGeo.dispose(); leafMat.dispose(); fruitMat.dispose(); cloudMat.dispose(); fallMat.dispose(); flyMat.dispose(); fallGeo.dispose(); flyGeo.dispose(); tuft.dispose();
     renderer.dispose(); renderer.forceContextLoss?.(); delete el.__highlight;
   });
   return true;

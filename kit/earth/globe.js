@@ -1,8 +1,10 @@
-// Gradify Earth as a 3D globe on a canvas: a lit planet with land, oceans, clouds, a night side with
+// Gradify Earth as a 3D globe on a canvas: a lit planet with land, oceans, clouds and, over the land, Gradify Earth's
+// original grid of glowing dots, each module's region lit in its colour; a night side with
 // city lights and an atmosphere (kit/earth/surface.js), each module tinting its own continent, topics as pins, prerequisites as arcs over the surface, and portals
 // to other Gradify sites arcing up into space. Drag to turn it; it keeps spinning a little
 // when you let go, and drifts slowly when left alone.
 import { createSurface } from "./surface.js";
+import { LAND } from "./earth-land.js";
 
 const RAD = Math.PI / 180;
 const reduce = globalThis.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
@@ -14,6 +16,9 @@ const angle = (p, q) => Math.acos(Math.max(-1, Math.min(1, p[0] * q[0] + p[1] * 
 const hash = (i) => { let x = Math.sin(i * 12.9898) * 43758.5453; return x - Math.floor(x); };
 const hexRgb = (h) => { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
 
+// every land point (Natural Earth, kit/earth/earth-land.js) as a unit vector, for the dot layer
+const LAND_V = []; for (let i = 0; i < LAND.length; i += 2) LAND_V.push(vec(LAND[i] / 10, LAND[i + 1] / 10));
+
 export function createGlobe(canvas, { onPick, onHover }) {
   const ctx = canvas.getContext("2d");
   let W = 0, H = 0, R = 0, cx = 0, cy = 0, dpr = 1;
@@ -22,7 +27,7 @@ export function createGlobe(canvas, { onPick, onHover }) {
   let vyaw = 0, vpitch = 0, dragging = false, moved = false, last = null, idle = 0;
   let target = null;                                      // animate to face a topic
   let scene = { regions: [], pins: [], roads: [], portals: [], selected: null, rings: true };
-  let pinsOnScreen = [], hubsOnScreen = [], visible = true, raf = 0, t0 = performance.now();
+  let pinsOnScreen = [], hubsOnScreen = [], visible = true, raf = 0, t0 = performance.now(), dotTint = [];
   // the planet itself, and a field of stars behind it
   const surface = createSurface();
   const stars = Array.from({ length: 220 }, (_, i) => [hash(i + 0.5), hash(i + 101.3), 0.25 + hash(i + 57.7) * 0.75, hash(i + 9.1) > 0.92]);
@@ -50,6 +55,12 @@ export function createGlobe(canvas, { onPick, onHover }) {
   function setScene(s) {
     scene = s;
     surface.setRegions(scene.regions);
+    // each land dot takes the colour of the module region it's in, strongest at the region's centre
+    dotTint = LAND_V.map((v) => {
+      let best = null, d = 1e9;
+      for (const rg of scene.regions || []) { const a = angle(v, rg.v); if (a < rg.radius && a < d) { d = a; best = rg; } }
+      return best ? { rgb: best.rgb, k: (1 - d / best.radius) * best.light, locked: best.locked } : null;
+    });
     kick();
   }
 
@@ -77,6 +88,27 @@ export function createGlobe(canvas, { onPick, onHover }) {
     sunlit.addColorStop(0, "rgba(170,215,255,0)"); sunlit.addColorStop(0.75, "rgba(170,215,255,.14)"); sunlit.addColorStop(1, "rgba(170,215,255,0)");
     ctx.fillStyle = sunlit; ctx.beginPath(); ctx.arc(cx, cy, r * 1.25, 0, 7); ctx.fill();
     surface.render(ctx, cx, cy, r, yaw, pitch, t, dpr);
+    // the original Gradify Earth: land as a grid of glowing dots over the planet, blue-white, warm city lights here and
+    // there, and each module's region lit in its colour (dimmer towards the night side and the edge)
+    {
+      const size = Math.max(1.2, r / 165);
+      ctx.globalCompositeOperation = "lighter";
+      for (let i = 0; i < LAND_V.length; i++) {
+        const p = project(LAND_V[i]);
+        if (p.z < 0.03) continue;
+        const shade = 0.25 + 0.75 * p.z, h = hash(i), tint = dotTint[i];
+        let col, a, sz = size * (0.7 + p.z * 0.45);
+        if (tint && !tint.locked && h <= 0.9) {
+          const m = Math.min(1, tint.k * 1.8), blue = [140, 190, 255];
+          col = blue.map((c, j) => Math.round(c + (tint.rgb[j] - c) * m));
+          a = shade * (0.62 + 0.18 * m + 0.12 * m * Math.sin(t * 1.6 + h * 20)); sz *= 1 + m * 0.35;
+        } else if (h > 0.9) { col = [255, 170, 100]; a = shade * (0.45 + 0.25 * Math.sin(t * 2 + h * 40)); sz *= 1.2; }
+        else { col = tint?.locked ? [160, 160, 175] : [150, 200, 255]; a = shade * (tint?.locked ? 0.25 : 0.55); }
+        ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${Math.min(1, a).toFixed(3)})`;
+        ctx.fillRect(p.x - sz / 2, p.y - sz / 2, sz, sz);
+      }
+      ctx.globalCompositeOperation = "source-over";
+    }
     // a thin bright rim where sunlight scatters through the atmosphere
     ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, r + 0.6, 0, 7);
     const rim = ctx.createLinearGradient(cx - r, cy - r, cx + r * 0.6, cy + r * 0.8);
