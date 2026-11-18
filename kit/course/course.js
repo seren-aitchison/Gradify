@@ -624,7 +624,7 @@ export function mountCourse(root, cfg) {
         <div><span class="co-kicker">On this page</span><b class="co-readpct">0% read</b>${mins ? `<small>About ${mins} min</small>` : ""}</div></div>
       <ol class="co-toc">${links.map(([href, t]) => `<li><a href="#${href}" data-jump="${href}">${inline(t)}</a></li>`).join("")}</ol>`}
       ${nQ ? `<p class="co-railq"><span class="co-checkn"></span></p>` : ""}
-      <button class="btn btn-light lg btn-sm co-complete co-railgo" ${S.done[l.id] ? "disabled" : ""}><span>${S.done[l.id] ? "Completed ✓" : `Complete · +${XP.lesson} XP`}</span></button>
+      <button class="btn btn-light lg btn-sm co-railgo" ${S.done[l.id] ? "disabled" : ""}><span>${S.done[l.id] ? "Completed ✓" : `Complete · +${XP.lesson} XP`}</span></button>
     </section>`;
   }
   // the lesson's key terms, explained where the notes use them: the first use of each in the notes gets a dotted
