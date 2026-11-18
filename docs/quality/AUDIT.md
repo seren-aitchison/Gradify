@@ -75,7 +75,7 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 
 | Course | Lessons | Overall | Accuracy | Completeness | Clarity | Progression | Application | Assessment | Accessibility | Engagement | Retention |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Physics | 1308 | **51** | 14 | 9 | 84 | 12 | 83 | 62 | 82 | 84 | 31 |
+| Physics | 1308 | **52** | 15 | 10 | 84 | 13 | 84 | 63 | 82 | 84 | 32 |
 | Law | 480 | **66** | 54 | 97 | 94 | 3 | 37 | 68 | 100 | 55 | 88 |
 | Pharmacy | 318 | **72** | 51 | 96 | 99 | 8 | 68 | 81 | 100 | 65 | 77 |
 | Nursing | 497 | **74** | 49 | 98 | 98 | 47 | 50 | 89 | 100 | 56 | 75 |
@@ -115,26 +115,25 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Fix | Lessons |
 |---|---|
 | Add flashcards for spaced retrieval (Q:) | 9,692 |
-| Name what this builds on (PRE:) | 5,976 |
-| State the level (LV:) | 3,615 |
-| Say how strong the evidence is (EV:) | 3,331 |
+| Name what this builds on (PRE:) | 5,957 |
+| State the level (LV:) | 3,595 |
+| Say how strong the evidence is (EV:) | 3,311 |
 | Even out answer lengths | 3,079 |
-| Teach every objective | 2,011 |
-| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,728 |
-| Add check questions | 1,725 |
-| Cite at least two sources (SRC:) | 1,266 |
+| Teach every objective | 2,017 |
+| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,708 |
+| Add check questions | 1,705 |
 | Add a worked example (X:) | 1,265 |
-| Date every source, so it can be rechecked | 1,191 |
-| State at least two learning objectives (O:) | 1,191 |
-| Define the key terms (T:) | 1,191 |
-| End with a summary (SUM:) | 1,191 |
-| Define terms where they're first used (T:) | 1,191 |
+| Cite at least two sources (SRC:) | 1,246 |
+| Date every source, so it can be rechecked | 1,171 |
+| State at least two learning objectives (O:) | 1,171 |
+| Define the key terms (T:) | 1,171 |
+| End with a summary (SUM:) | 1,171 |
+| Define terms where they're first used (T:) | 1,171 |
 
 ## The 30 lessons to improve first
 
 | Course | Lesson | Overall | Fixes |
 |---|---|---|---|
-| Physics | Rotational kinetic energy | 38 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Minkowski spacetime | 40 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Hohmann transfers | 41 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Expectation values | 41 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
@@ -144,8 +143,6 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Physics | Grand unified theories | 41 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Neutron stars | 41 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Cosmic microwave background | 41 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
-| Physics | Rotational dynamics | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
-| Physics | Perpendicular-axis theorem | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Bending and torsion | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Beam deflection | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Biot–Savart law | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
@@ -164,6 +161,9 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Physics | Planetary geophysics | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Solar and terrestrial radiation | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Precipitation physics | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
+| Physics | Climate sensitivity | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
+| Physics | Biomechanics | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
+| Physics | Neural signal processing | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 
 ## The constitution, article by article
 
