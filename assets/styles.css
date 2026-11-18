@@ -86,39 +86,28 @@ h1 {
 .showcase, .journey { margin-top: 112px; }
 .bubble-filter { max-width: 100%; overflow-x: auto; scrollbar-width: none; margin-bottom: 18px; }
 .bubble-stage { display: grid; grid-template-columns: 1fr 320px; gap: 20px; align-items: start; }
-.bubbles { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px; padding: 10px 0; }
+.bubbles { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 18px 10px; padding: 10px 0; }
+/* each feature is its own symbol in a 3D glass icon (kit/core/glass-icons.js, styled in kit/styles/components.css),
+   with its name underneath; the icon floats on its own, so the button itself stays still */
 .bubble {
-  --s: 108px; position: relative; width: var(--s); height: var(--s); border-radius: 50%; cursor: pointer; flex: none;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 12px; text-align: center;
-  font: inherit; color: var(--fg);
-  background:
-    radial-gradient(circle at 30% 22%, rgba(var(--ink-rgb), .55), rgba(var(--ink-rgb), 0) 26%),
-    radial-gradient(circle at 70% 85%, color-mix(in srgb, var(--c) 55%, transparent), transparent 60%),
-    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--c) 22%, rgba(var(--surface-rgb), .6)), rgba(var(--surface-rgb), .75));
-  border: 1px solid color-mix(in srgb, var(--c) 45%, rgba(var(--ink-rgb), .25));
-  box-shadow: inset 0 -10px 24px color-mix(in srgb, var(--c) 35%, transparent), inset 0 2px 6px rgba(255, 255, 255, .25), 0 14px 30px -14px var(--c);
-  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
-  animation: bob-b var(--t) ease-in-out var(--d) infinite alternate;
-  transition: transform .25s cubic-bezier(.2, 1.4, .4, 1), box-shadow .25s;
+  position: relative; width: 104px; cursor: pointer; flex: none; padding: 6px 4px 8px; border: 0; border-radius: 20px; background: none;
+  display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; font: inherit; color: var(--fg);
+  transition: transform .25s cubic-bezier(.2, 1.4, .4, 1), background .2s;
 }
-.bubble.s1 { --s: 92px; }
-.bubble.s2 { --s: 118px; }
-.bubble.s3 { --s: 150px; }
-.bubble:hover, .bubble:focus-visible { transform: scale(1.08); z-index: 1; animation-play-state: paused; }
-.bubble.sel { box-shadow: 0 0 0 3px #fff, inset 0 -10px 24px color-mix(in srgb, var(--c) 35%, transparent), 0 18px 36px -12px var(--c); animation-play-state: paused; }
-@keyframes bob-b { from { translate: 0 -5px; } to { translate: 0 6px; } }
-.b-ico { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--tile); color: var(--ink); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4); flex: none; }
-.b-ico .ico { width: 17px; height: 17px; }
-.bubble.s1 .b-ico { width: 28px; height: 28px; }
-.bubble.s3 .b-ico { width: 44px; height: 44px; }
-.bubble.s3 .b-ico .ico { width: 22px; height: 22px; }
-.b-name { font-size: 11.5px; font-weight: 600; line-height: 1.15; }
-.bubble.s1 .b-name { font-size: 10.5px; }
-.bubble.s3 .b-name { font-size: 14px; }
-.b-live { position: absolute; top: 12%; right: 14%; width: 9px; height: 9px; border-radius: 50%; background: var(--invert-bg); box-shadow: 0 0 8px #fff; }
+.bubble.s1 { width: 90px; }
+.bubble.s3 { width: 124px; }
+.bubble:hover, .bubble:focus-visible { transform: translateY(-3px); z-index: 1; }
+.bubble:hover .g3d-pane, .bubble:focus-visible .g3d-pane { transform: rotateX(0) rotateY(0) translateZ(6px); }
+.bubble:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.bubble.sel { background: color-mix(in srgb, var(--c) 16%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c) 55%, transparent); }
+.b-ico { position: relative; display: grid; place-items: center; flex: none; }
+.b-name { font-size: 12px; font-weight: 600; line-height: 1.2; color: var(--mute); }
+.bubble.sel .b-name, .bubble:hover .b-name { color: var(--fg); }
+.bubble.s1 .b-name { font-size: 11px; }
+.bubble.s3 .b-name { font-size: 13.5px; }
+.b-live { position: absolute; top: -2px; right: -2px; width: 10px; height: 10px; border-radius: 50%; background: var(--invert-bg); box-shadow: 0 0 0 2px var(--bg), 0 0 8px #fff; z-index: 2; }
 .bubble-detail { position: sticky; top: 90px; gap: 10px; }
-.b-ico.big { width: 56px; height: 56px; border-radius: 16px; }
-.b-ico.big .ico { width: 26px; height: 26px; }
+.b-ico.big { align-self: flex-start; }
 .bubble-detail h3 { font-size: 24px; letter-spacing: -.02em; }
 .bubble-detail p { margin: 0; color: var(--mute); font-size: 15px; }
 .bubble-detail .btn, .bubble-detail .pill-dark { align-self: flex-start; }
@@ -333,10 +322,10 @@ footer b { color: var(--fg); font-weight: 600; }
   .hero { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 640px) {
-  .bubbles { gap: 8px; }
-  .bubble { --s: 92px; }
-  .bubble.s1 { --s: 80px; }
-  .bubble.s3 { --s: 118px; }
+  .bubbles { gap: 12px 4px; }
+  .bubble { width: 92px; }
+  .bubble.s1 { width: 82px; }
+  .bubble.s3 { width: 108px; }
   .ai-fab .fab-txt { display: none; }
   .ai-fab { padding: 8px; }
   .org-grid, .devices { grid-template-columns: 1fr; }
