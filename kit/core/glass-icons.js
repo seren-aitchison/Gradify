@@ -44,10 +44,10 @@ export function pickIcon(set, text, { avoid = [] } = {}) {
  * One glass icon, as HTML. `size` in px; `seed` varies the colours and the float timing.
  * @param {object} set  a loaded set; @param {string} name  a symbol in it
  */
-export function glassIcon(set, name, { size = 56, seed = name, label = "" } = {}) {
+export function glassIcon(set, name, { size = 56, seed = name, label = "", colours = null } = {}) {
   const icon = set?.[name];
   if (!icon) return "";
-  const h = hash(seed), [a, b] = PAIRS[h % PAIRS.length];
+  const h = hash(seed), [a, b] = colours || PAIRS[h % PAIRS.length];
   const delay = -((h % 4000) / 1000).toFixed(2), turn = ((h >> 4) % 2 ? 1 : -1) * (6 + ((h >> 6) % 6));
   return `<span class="g3d" style="--s:${size}px;--a:${a};--b:${b};--dl:${delay}s;--tw:${turn}deg" ${label ? `role="img" aria-label="${String(label).replace(/"/g, "&quot;")}"` : 'aria-hidden="true"'}>
     <span class="g3d-glow"></span><span class="g3d-back"></span>

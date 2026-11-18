@@ -1,17 +1,18 @@
 // Homepage showcase: every Gradify feature as a floating bubble, and "The Gradify road",
 // a winding road with a car that drives along it as you scroll.
-import { icon } from "../kit/core/icons.js";
-import { tile, ink } from "../kit/core/colour.js";
+import { ICONS } from "../kit/core/icons.js";
+import { glassIcon } from "../kit/core/glass-icons.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 
 // where: web, app or both. try: a LifeOS view or element to open in the preview.
+// c: the category's colour; c2: the second colour of its glass tile's gradient
 const CATS = {
-  learn: { name: "Learn", c: "4641ff" },
-  create: { name: "Notes and creation", c: "f055dd" },
-  practise: { name: "Practise", c: "ff5a4d" },
-  progress: { name: "Progress and rewards", c: "ffc002" },
-  people: { name: "People", c: "1fae8c" },
+  learn: { name: "Learn", c: "4641ff", c2: "8b3dff" },
+  create: { name: "Notes and creation", c: "f055dd", c2: "ff6aa8" },
+  practise: { name: "Practise", c: "ff5a4d", c2: "ff5600" },
+  progress: { name: "Progress and rewards", c: "ffc002", c2: "ff8a00" },
+  people: { name: "People", c: "1fae8c", c2: "3c78d8" },
 };
 export const FEATURES = [
   // learn
@@ -62,20 +63,20 @@ export const FEATURES = [
 
 const WHERE = { web: "Website", app: "App", both: "Website and app" };
 
+// each feature's own line symbol, set in the same 3D glass icon as the lessons and site headings (kit/core/glass-icons.js)
+const GLASS_SIZE = { 1: 52, 2: 66, 3: 84 };
+const glass = (f, size) => glassIcon({ [f.i]: { d: ICONS[f.i] } }, f.i, { size, seed: f.n, colours: [`#${CATS[f.cat].c}`, `#${CATS[f.cat].c2}`] });
+
 function renderBubbles(filter) {
   const list = FEATURES.filter((f) => filter === "all" || f.cat === filter);
-  $("#bubbles").innerHTML = list.map((f, i) => {
-    const c = CATS[f.cat].c;
-    return `<button type="button" class="bubble s${f.size}" data-n="${f.n}" style="--c:#${c};--tile:${tile(c)};--ink:${ink(c)};--d:${(i * 0.37) % 5}s;--t:${6 + (i % 5)}s">
-      <span class="b-ico">${icon(f.i)}</span><span class="b-name">${f.n}</span>${f.live ? '<i class="b-live" title="Try it in the LifeOS preview"></i>' : ""}</button>`;
-  }).join("");
+  $("#bubbles").innerHTML = list.map((f) => `<button type="button" class="bubble s${f.size}" data-n="${f.n}" style="--c:#${CATS[f.cat].c}">
+      <span class="b-ico">${glass(f, GLASS_SIZE[f.size])}${f.live ? '<i class="b-live" title="Try it in the LifeOS preview"></i>' : ""}</span><span class="b-name">${f.n}</span></button>`).join("");
 }
 // features that come with a paid plan (pricing.html); everything else is in Free
 const PLAN_LABEL = { plus: "Gradify Plus", pro: "Gradify Pro" };
 function showDetail(f) {
-  const c = CATS[f.cat].c;
   $("#bubble-detail").innerHTML = `
-    <span class="b-ico big" style="--c:#${c};--tile:${tile(c)};--ink:${ink(c)}">${icon(f.i)}</span>
+    <span class="b-ico big">${glass(f, 72)}</span>
     <span class="kicker">${CATS[f.cat].name} · ${WHERE[f.where]}${f.plan ? ` · <a href="pricing.html">${PLAN_LABEL[f.plan]}</a>` : ""}</span>
     <h3>${f.n}</h3>
     <p>${f.d}</p>
