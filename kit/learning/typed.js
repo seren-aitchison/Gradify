@@ -9,10 +9,17 @@
 //   partial  some of a longer answer's key words                                       → suggests Hard
 //   wrong    little of it                                                              → suggests Again
 // Easy is never suggested: only the learner knows it was effortless.
+// A typed answer that negates the card ("not vector" for "vector", or "vector" for "not a vector") says the opposite,
+// however many words match: a short answer is then wrong, and a longer one at most partial.
 
 const STOP = new Set("a an the of to in on at by for with from into and or is are was were be it its this that as".split(" "));
 const norm = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9×+=\-−÷%.]+/g, " ").replace(/\s\.|\.(\s|$)/g, " ").trim();
 const content = (s) => norm(s).split(" ").filter((w) => w && !STOP.has(w));
+
+// negations, counted before norm() splits "isn't" into "isn t"; an even number cancels out ("not unlike")
+const NEG = new Set(["not", "no", "never", "none", "neither", "nor", "cannot", "nothing", "nobody", "nowhere"]);
+const negations = (s) => String(s || "").toLowerCase().replace(/\bcan['’]t\b/g, "cannot").replace(/\bwon['’]t\b/g, "will not")
+  .replace(/n['’]t\b/g, " not").split(/[^a-z]+/).filter((w) => NEG.has(w)).length;
 
 // edit distance, for typos in short answers
 function distance(a, b) {
@@ -35,6 +42,14 @@ const wordMatch = (t, e) => t === e || (e.length > 5 && t.length > 5 && t.slice(
  *   null when nothing was typed
  */
 export function gradeTyped(typed, expected) {
+  const r = grade(typed, expected);
+  if (!r || negations(typed) % 2 === negations(expected) % 2) return r;
+  // one says "not" and the other doesn't: the opposite answer, whatever words they share
+  if (content(expected).length <= 3) return { verdict: "wrong", suggest: "again", score: 0 };
+  return r.verdict === "right" || r.verdict === "close" ? { verdict: "partial", suggest: "hard", score: Math.min(r.score, 0.5) } : r;
+}
+
+function grade(typed, expected) {
   const t = content(typed), e = content(expected);
   if (!t.length) return null;
   if (!e.length) return null;

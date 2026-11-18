@@ -42,3 +42,19 @@ test("nothing typed means nothing to grade", () => {
   assert.equal(gradeTyped("  ", "stroma"), null);
   assert.equal(gradeTyped("the", "stroma"), null);
 });
+
+test("an answer that negates the card is wrong, however many words match", () => {
+  // short answers: the opposite of the answer
+  assert.deepEqual([v("not vector", "vector"), gradeTyped("not vector", "vector").suggest], ["wrong", "again"]);
+  assert.equal(v("vector", "not a vector"), "wrong", "leaving out the card's not is the opposite too");
+  assert.equal(v("it isn't reversible", "reversible"), "wrong", "contractions count");
+  assert.equal(v("no", "yes"), "wrong");
+  // the same negation on both sides is fine, and the positive answer is still right
+  assert.equal(v("vector", "vector"), "right");
+  assert.equal(v("not a vector", "not a vector"), "right");
+  assert.equal(v("No", "no"), "right");
+  // longer answers: the key words may all be there, but a flipped meaning is at most partial
+  const e = "Amount of blood ejected by each ventricle per beat.";
+  assert.deepEqual([v("the amount of blood each ventricle does not eject per beat", e), gradeTyped("the amount of blood each ventricle does not eject per beat", e).suggest], ["partial", "hard"]);
+  assert.equal(v("the reaction does not need light", "The reaction needs light energy to split water"), "partial");
+});
