@@ -63,6 +63,24 @@ export function learningOrder(map, links) {
   return out;
 }
 
+// Words used in two or more definitions that no term on the map defines, most used first.
+export function gaps(map) {
+  const terms = map.nodes.filter((n) => n.type === "term" && n.fact);
+  const named = new Set(terms.flatMap((t) => words(`${t.fact.term} ${t.fact.ab || ""}`)));
+  const COMMON = new Set("phase amount much when befor after each per make made part type kind thing way used use the".split(" "));
+  const uses = new Map();
+  for (const t of terms) for (const w of new Set(words(t.fact.def))) {
+    if (w.length < 5 || named.has(w) || COMMON.has(w) || /\d/.test(w)) continue;
+    if (!uses.has(w)) uses.set(w, []);
+    uses.get(w).push(t.id);
+  }
+  return [...uses.entries()].filter(([, ids]) => ids.length >= 2).sort((a, b) => b[1].length - a[1].length || b[0].length - a[0].length).map(([w, ids]) => {
+    // the notes' own spelling of the word, not its stem
+    const raw = terms.find((t) => t.id === ids[0]).fact.def.toLowerCase().match(new RegExp(`\\b${w}[a-z]*`));
+    return { word: raw ? raw[0] : w, ids };
+  });
+}
+
 /**
  * Everything the Intelligence panel shows. Each insight: { kind, icon, title, detail, ids: node ids to light up, evidence? }
  * @param {object} map from buildMap
@@ -108,6 +126,16 @@ export function insights(map, { questions = [], memory = null } = {}) {
   }).filter((x) => x.n >= 2).sort((a, b) => a.v - b.v);
   if (avg.length >= 2 && avg[0].v < 0.8) out.push({ kind: "weak", icon: "target", title: `${label(avg[0].t.id)} is your weakest topic`, detail: `About ${Math.round(avg[0].v * 100)}% recall across ${avg[0].n} terms you've reviewed, against ${Math.round(avg.at(-1).v * 100)}% for ${label(avg.at(-1).t.id)}.`, ids: [avg[0].t.id, ...terms.filter((x) => x.parent === avg[0].t.id).map((x) => x.id)] });
 
+  // the exam forecast: what will have slipped below 70% by the morning of the learner's exam, if they don't review it
+  if (memory?.examAt) {
+    const slip = terms.filter((t) => { const m = mem.get(t.id); return m?.atExam != null && m.atExam < 0.7; }).sort((a, b) => mem.get(a.id).atExam - mem.get(b.id).atExam);
+    const tracked = terms.filter((t) => mem.get(t.id)?.atExam != null).length;
+    const day = new Date(memory.examAt).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short" });
+    if (tracked) out.push(slip.length
+      ? { kind: "exam", icon: "calendar", title: `${slip.length} of ${tracked} ${tracked === 1 ? "term" : "terms"} will slip before your exam`, detail: `Left alone, ${slip.slice(0, 3).map((t) => label(t.id)).join(", ")}${slip.length > 3 ? " and more" : ""} will be below 70% recall by ${day}. Reviewing them now pushes that past the exam.`, ids: slip.map((t) => t.id) }
+      : { kind: "exam", icon: "calendar", title: "Exam-ready on what you've reviewed", detail: `All ${tracked} terms you've reviewed stay above 70% recall until your exam on ${day}.`, ids: [] });
+  }
+
   // 2. what to learn next: a term whose prerequisites are known, preferring the one that unlocks the most
   const unlocks = (id) => builds.filter((l) => l.from === id).length;
   const ready = order.filter((id) => !known(id) && mem.get(id)?.state !== "learning" && !builds.some((l) => l.to === id && !known(l.from)));
@@ -131,6 +159,9 @@ export function insights(map, { questions = [], memory = null } = {}) {
   for (const l of links.filter((x) => x.kind === "contrast").slice(0, 3)) {
     out.push({ kind: "contrast", icon: "alert", title: `Don't mix up ${label(l.from)} and ${label(l.to)}`, detail: l.why, ids: [l.from, l.to], evidence: l.evidence, confidence: l.confidence });
   }
+  // gaps: words the definitions lean on that the notes never define ("ventricles" in four definitions, no definition)
+  for (const g of gaps(map).slice(0, 2)) out.push({ kind: "gap", icon: "bulb", title: `Your notes never define “${g.word}”`, detail: `${g.ids.length} definitions use it: ${g.ids.slice(0, 3).map(label).join(", ")}. Add it as a note so the terms that rest on it make sense.`, ids: g.ids, word: g.word });
+
   for (const q of questions.slice(0, 6)) {
     const t = topics.find((x) => x.topic === q.group);
     out.push({ kind: "question", icon: "bulb", title: q.question, detail: q.answer, ids: t ? [t.id] : [], qtype: q.type });

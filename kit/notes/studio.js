@@ -5,7 +5,6 @@
 // (see docs/AI-PIPELINE.md in the repo).
 import { icon } from "../core/icons.js";
 import { mountVideo } from "./video3d.js";
-import { mountMindMap, loadMindMapCss } from "./mindmap/view.js";
 
 const $ = (s, el = document) => el.querySelector(s);
 let ctx, pack = null, tab = "notes", stopPlayback = () => {};
@@ -318,8 +317,13 @@ function cardsView(p) {
 
 // The spidermap: an interactive liquid-glass mind map with Gradify Intelligence beside it.
 // It lives in kit/notes/mindmap/ (config, model, layouts, intelligence, view and styles), so each part is easy to change.
+// It's loaded only when it's needed: warmed in the background once there's a study pack or when the pointer reaches
+// its tab, so Notes Studio opens without it and the tab still opens instantly.
+let mapModule = null;
+const loadMap = () => (mapModule ||= import("./mindmap/view.js").then(async (m) => { await m.loadMindMapCss(); return m; }).catch((e) => { mapModule = null; throw e; }));
+const whenIdle = (f) => (globalThis.requestIdleCallback || ((g) => setTimeout(g, 300)))(f, { timeout: 3000 });
 function mapView() {
-  return `<div id="spidermap-root"></div>`;
+  return `<div id="spidermap-root"><p class="empty-note" aria-live="polite">Opening the spidermap…</p></div>`;
 }
 
 function sheetSvg(p) {
@@ -608,11 +612,15 @@ function render() {
     stopPlayback = () => video?.stop();
   }
   if (tab === "map") {
-    spidermap = mountMindMap($("#spidermap-root"), {
+    const host = $("#spidermap-root"), forPack = pack;
+    loadMap().then(({ mountMindMap }) => {
+      if (tab !== "map" || pack !== forPack || !host.isConnected) return;   // the learner moved on while it loaded
+      spidermap = mountMindMap(host, {
       pack, learnt, questions: deeperQuestions(pack), esc: ctx.esc, toast: ctx.toast,
       onLearn: (term, known) => { if (known) ctx.logActivity("MedGradify", `Marked “${term}” as known on the spidermap`, "review", 5); },
       onPractised: ({ knew, total }) => ctx.logActivity("MedGradify", `Practised the spidermap: knew ${knew} of ${total} terms`, "review", Math.min(40, knew * 3)),
-    });
+      });
+    }).catch(() => { if (host.isConnected) host.innerHTML = '<p class="empty-note">Couldn\'t load the spidermap. Check your connection, then open the tab again.</p>'; });
   }
 }
 
@@ -628,6 +636,7 @@ async function make() {
   status.textContent = `Found ${pack.facts.length} facts in ${pack.groups.length} ${pack.groups.length === 1 ? "group" : "groups"}, ${pack.cards.length} flashcards${pack.dates.length ? ` and ${pack.dates.length} ${pack.dates.length === 1 ? "date" : "dates"}` : ""}.`;
   tab = "notes";
   render();
+  whenIdle(() => loadMap().catch(() => {}));   // warm the spidermap while the learner reads their notes
 }
 
 // a date as YYYY-MM-DD on the learner's own calendar (toISOString() would be UTC: the day before, in British Summer Time)
@@ -717,7 +726,6 @@ export function deeperQuestions(a) {
 
 export function initStudio(context) {
   ctx = context;
-  loadMindMapCss();
   const root = $("#capture");
   $("#sample-notes").addEventListener("click", () => { $("#notes").value = SAMPLE; make(); });
   $("#make-cards").addEventListener("click", make);
@@ -733,6 +741,9 @@ export function initStudio(context) {
   drop.addEventListener("dragover", (e) => { e.preventDefault(); drop.classList.add("over"); });
   drop.addEventListener("dragleave", () => drop.classList.remove("over"));
   drop.addEventListener("drop", (e) => { e.preventDefault(); drop.classList.remove("over"); take(e.dataTransfer.files[0]); });
+  const warm = (e) => { if (e.target.closest?.('[data-tab="map"]')) loadMap().catch(() => {}); };
+  root.addEventListener("pointerover", warm);
+  root.addEventListener("focusin", warm);
   root.addEventListener("click", (e) => {
     const t = e.target.closest("[data-tab]");
     if (t) { tab = t.dataset.tab; render(); return; }

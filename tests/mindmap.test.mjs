@@ -166,3 +166,26 @@ test("the map exports as a Markdown outline with every topic, term, formula and 
   assert.match(md, /`CO = SV × HR`/);
   assert.match(md, /Cardiac output \(CO\) builds on Stroke volume \(SV\)/);
 });
+
+// ---------- exam forecast, gaps in the notes ----------
+import { gaps } from "../kit/notes/mindmap/intel.js";
+
+test("recall is forecast for the learner's exam day, and Intelligence warns about what will slip before it", () => {
+  const m = buildMap(pack);
+  const examDate = new Date(NOW + 30 * D).toISOString().slice(0, 10);
+  const memory = memoryFor(m, { cards: CARDS, reviews: REVIEWS, now: NOW, examDate });
+  const sv = memory.terms.get(m.nodes.find((n) => n.fact?.term === "Stroke volume").id);
+  assert.ok(sv.atExam < sv.recall, "memory fades between now and the exam");
+  const exam = insights(m, { memory }).insights.find((i) => i.kind === "exam");
+  assert.ok(exam && exam.ids.length >= 1);
+  // a past exam date isn't forecast
+  assert.equal(memoryFor(m, { cards: CARDS, reviews: REVIEWS, now: NOW, examDate: "2020-01-01" }).examAt, null);
+});
+
+test("gaps are words several definitions lean on that no term defines", () => {
+  const g = gaps(buildMap(pack));
+  assert.equal(g[0].word, "ventricles");
+  assert.ok(g[0].ids.length >= 3);
+  assert.ok(!g.some((x) => ["stroke", "systole", "cardiac"].includes(x.word)));
+  assert.ok(insights(buildMap(pack)).insights.some((i) => i.kind === "gap" && i.word === "ventricles"));
+});

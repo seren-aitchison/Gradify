@@ -20,9 +20,12 @@ export function cardsAbout(term, ab, cards) {
  * @param {object} map from buildMap
  * @param {{ cards?: object[], reviews?: object[], now?: number }} o the learner's cards and answers
  * @returns {{ terms: Map<string, object>, tracked: number, answers: number, due: number, synced: boolean }}
- *   per term: { state: "new"|"strong"|"learning"|"fading"|"shaky", recall, fadesIn, nextReview, due, answers, wrong, sureWrong, cards, history }
+ * @param {string|null} [o.examDate] YYYY-MM-DD from the learner's profile: recall is forecast for that day too
+ *   per term: { state: "new"|"strong"|"learning"|"fading"|"shaky", recall, atExam, fadesIn, nextReview, due, answers, wrong, sureWrong, cards, history }
  */
-export function memoryFor(map, { cards = [], reviews = [], now = Date.now() } = {}) {
+export function memoryFor(map, { cards = [], reviews = [], now = Date.now(), examDate = null } = {}) {
+  // the learner's exam (from their profile): recall is also forecast for that morning
+  const examAt = examDate ? Date.parse(`${examDate}T09:00:00`) : null, exam = examAt && examAt > now ? examAt : null;
   const byCard = new Map();
   for (const r of reviews) (byCard.get(r.card_id) || byCard.set(r.card_id, []).get(r.card_id)).push(r);
   const terms = new Map();
@@ -39,14 +42,16 @@ export function memoryFor(map, { cards = [], reviews = [], now = Date.now() } = 
     const ps = seen.map((c) => recallProbability(c, now)).filter((p) => p != null);
     const recall = ps.length ? ps.reduce((a, p) => a + p, 0) / ps.length : null;
     const fadesIn = seen.length ? forgetIn(seen, now) : null;
+    const ex = exam ? seen.map((c) => recallProbability(c, exam)).filter((p) => p != null) : [];
+    const atExam = ex.length ? ex.reduce((a, p) => a + p, 0) / ex.length : null;
     const nextReview = seen.length ? Math.min(...seen.map((c) => Date.parse(c.due_at))) : null;
     const isDue = cs.some((c) => Date.parse(c.due_at) <= now);
     const state = !seen.length ? "new" : sureWrong || wrong >= 2 ? "shaky" : recall != null && recall < 0.7 ? "fading" : recall >= 0.85 && fadesIn > 7 ? "strong" : "learning";
     answers += rs.length; if (isDue) due++;
-    terms.set(n.id, { state, recall, fadesIn, nextReview, due: isDue, answers: rs.length, wrong, sureWrong, cards: cs.length,
+    terms.set(n.id, { state, recall, atExam, fadesIn, nextReview, due: isDue, answers: rs.length, wrong, sureWrong, cards: cs.length,
       history: rs.slice(0, 8).map((r) => ({ at: r.reviewed_at, rating: r.rating, confidence: r.confidence || null })) });
   }
-  return { terms, tracked: terms.size, answers, due, synced: terms.size > 0 };
+  return { terms, tracked: terms.size, answers, due, synced: terms.size > 0, examAt: exam };
 }
 
 export const STATE = {
@@ -70,7 +75,7 @@ export async function loadLearnerCards() {
     const { LocalStore, CloudStore } = await import("../../data/store.js");
     let store = new LocalStore();
     try { const cloud = await CloudStore.create(); if (cloud && (await cloud.user())) store = cloud; } catch { /* this device */ }
-    const [cards, reviews] = await Promise.all([store.listCards().catch(() => []), store.listReviews(400).catch(() => [])]);
-    return { cards, reviews, mode: store.mode };
+    const [cards, reviews, profile] = await Promise.all([store.listCards().catch(() => []), store.listReviews(400).catch(() => []), store.getProfile().catch(() => ({}))]);
+    return { cards, reviews, examDate: profile?.exam_date || null, mode: store.mode };
   } catch { return { cards: [], reviews: [], mode: "none" }; }
 }

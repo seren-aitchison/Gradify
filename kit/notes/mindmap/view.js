@@ -23,12 +23,19 @@ export const ico = (n, cls = "") => (GLYPHS[n]
   ? `<svg class="ico ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${GLYPHS[n]}</svg>`
   : icon(n, cls));
 
-// the stylesheet travels with the module, so any page that shows the map gets its look
+// the stylesheet travels with the module, so any page that shows the map gets its look. Resolves once it has
+// loaded (or failed), so the map is never shown unstyled
+let cssReady = null;
 export function loadMindMapCss() {
-  if (typeof document === "undefined" || document.querySelector("link[data-smap]")) return;
+  if (typeof document === "undefined") return Promise.resolve();
+  if (cssReady) return cssReady;
+  const have = document.querySelector("link[data-smap]");
+  if (have) return (cssReady = Promise.resolve());
   const l = document.createElement("link");
   l.rel = "stylesheet"; l.href = new URL("./mindmap.css", import.meta.url).href; l.dataset.smap = "";
+  cssReady = new Promise((done) => { l.onload = l.onerror = () => done(); });
   document.head.append(l);
+  return cssReady;
 }
 
 const store = {
@@ -438,10 +445,11 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
         ${counts.length ? `<div class="smp-states">${counts.map(([s, n]) => `<span style="--c:#${STATE[s].colour}"><i></i>${n} ${STATE[s].label.toLowerCase()}</span>`).join("")}</div>` : ""}
         <div class="smp-stats"><span><b>${topics}</b>topics</span><span><b>${intel.total}</b>terms</span><span><b>${intel.links.filter((l) => l.kind !== "formula").length}</b>links</span></div>
       </section>
-      ${intel.total ? `<button type="button" class="smp-practise" data-act="walk">${ico("target")}<span><b>Practise this map</b><em>${intel.total} terms, weakest and most fundamental first</em></span><kbd>P</kbd></button>` : ""}
+      ${intel.total ? `<div class="smp-practise-wrap"><button type="button" class="smp-practise" data-act="walk">${ico("target")}<span><b>Practise this map</b><em>${intel.total} terms, weakest and most fundamental first</em></span><kbd>P</kbd></button>
+        <div class="smp-quick"><span>Short on time?</span>${[2, 5].map((m) => `<button type="button" data-quick="${m}">${m} min</button>`).join("")}</div></div>` : ""}
       ${rest.length ? `<h4>Insights</h4><ul class="smp-list">${rest.map((x) => `<li><button type="button" class="smp-ins k-${x.kind}" data-ins="${intel.insights.indexOf(x)}">
         <span class="smp-ii">${ico(x.icon)}</span><span class="smp-it"><b>${esc(x.title)}</b><em>${esc(x.detail)}</em>
-        ${x.confidence ? `<span class="smp-conf" title="How sure Gradify is: ${pct(x.confidence)}"><i style="width:${Math.round(x.confidence * 100)}%"></i></span>` : ""}</span></button></li>`).join("")}</ul>` : ""}
+        ${x.confidence ? `<span class="smp-conf" title="How sure Gradify is: ${pct(x.confidence)}"><i style="width:${Math.round(x.confidence * 100)}%"></i></span>` : ""}</span></button>${x.kind === "gap" ? `<button type="button" class="smp-gapadd" data-gap="${esc(x.word)}">${ico("plus")}Add “${esc(x.word)}” as a note</button>` : ""}</li>`).join("")}</ul>` : ""}
       ${qs.length ? `<h4>Test yourself</h4><div class="smp-qs">${qs.map((x) => `<details class="smp-q"><summary><span class="smp-qt">${x.qtype === "apply" ? "Apply" : "Explain"}</span>${esc(x.title)}</summary><p>${esc(x.detail)}</p></details>`).join("")}</div>` : ""}
       ${intel.order.length > 1 ? `<h4>Suggested order</h4><ol class="smp-order">${intel.order.slice(0, 14).map((id) => `<li class="${intel.known(id) ? "done" : ""}">${chip(id)}</li>`).join("")}</ol>` : ""}
       <p class="smp-foot">${ico("quote")}Worked out from your notes and your own answers. Every link quotes the words it rests on.</p>`;
@@ -453,7 +461,7 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
     return `<section class="smp-mem s-${m.state}" style="--m:#${STATE[m.state].colour}">
       <div class="smp-row"><span class="smp-state"><i></i>${STATE[m.state].label}${m.due ? ` · <span class="smp-due">due</span>` : ""}</span>${m.recall != null ? `<span class="smp-recall"><b>${pct(m.recall)}</b> recall now</span>` : ""}</div>
       <div class="smp-meter"><i style="width:${m.recall != null ? Math.round(m.recall * 100) : 0}%"></i><span class="t70" title="70%: below this, Gradify brings it back"></span></div>
-      <dl><div><dt>Below 70%</dt><dd>${fade}</dd></div><div><dt>Next review</dt><dd>${m.nextReview ? whenText(m.nextReview) : "–"}</dd></div><div><dt>Answers</dt><dd>${m.answers}</dd></div></dl>
+      <dl><div><dt>Below 70%</dt><dd>${fade}</dd></div><div><dt>Next review</dt><dd>${m.nextReview ? whenText(m.nextReview) : "–"}</dd></div>${m.atExam != null ? `<div><dt>On exam day</dt><dd class="${m.atExam < 0.7 ? "warn" : ""}">${pct(m.atExam)}</dd></div>` : `<div><dt>Answers</dt><dd>${m.answers}</dd></div>`}</dl>
       ${m.history.length ? `<div class="smp-hist" aria-label="Your last answers, newest first">${m.history.map((h) => `<i class="r-${h.rating}" title="${RATING[h.rating] || h.rating}${h.confidence ? `, ${h.confidence}` : ""} · ${new Date(h.at).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}"></i>`).join("")}<em>last answers</em></div>` : ""}
       ${m.sureWrong ? `<p class="smp-warn">${icon("alert")}You were sure but wrong ${m.sureWrong} ${m.sureWrong === 1 ? "time" : "times"} recently: likely a misconception.</p>` : ""}
       ${m.due ? `<a class="smp-link" href="${APP}#/study">Review it now →</a>` : ""}
@@ -598,10 +606,10 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
     refreshAll();
     if (known) toast(`Marked “${esc(n.fact.term)}” as known.`);
   }
-  function addNote(parent, at = null) {
+  function addNote(parent, at = null, label = null) {
     checkpoint();
     const id = newId();
-    S.edits.added.push({ id, parent, label: "New note" });
+    S.edits.added.push({ id, parent, label: label || "New note" });
     rebuild();
     if (at) pos[id] = at;
     save([id]);
@@ -609,7 +617,7 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
     justAdded = id;
     renderNodes();
     select(id);
-    rename(id, true);
+    if (label) { centreOn(id); snack(`Added “${esc(label)}” as a note`, true); } else rename(id, true);
   }
   let snackTimer = 0;
   function snack(text, undoable = false) {
@@ -888,6 +896,9 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
     const un = t.closest("[data-unlink]");
     if (un) { const [f, to] = un.dataset.unlink.split("|"); checkpoint(); S.edits.links = S.edits.links.filter((l) => !(l.from === f && l.to === to)); persist(); refreshAll(); snack("Link removed", true); return; }
     const sug = t.closest("[data-ask]"); if (sug) { runAsk(sug.dataset.ask); return; }
+    const gap = t.closest("[data-gap]"); if (gap) { const w = gap.dataset.gap; addNote("root", null, w[0].toUpperCase() + w.slice(1)); return; }
+    // a quick review: as many of the most urgent terms as fit, at about 25 seconds each (as Smart Plan reckons a card)
+    const quick = t.closest("[data-quick]"); if (quick) { startWalk(walkOrder().slice(0, Math.max(3, Math.floor((+quick.dataset.quick * 60) / 25)))); return; }
     const go = t.closest("[data-go]"); if (go && !S.walk) { select(go.dataset.go, { centre: true }); return; }
     const ins = t.closest("[data-ins]");
     if (ins) {
@@ -1014,7 +1025,7 @@ export function mountMindMap(el, { pack, learnt = new Set(), questions = [], esc
   renderAll();
   fit(null, false);
   setTimeout(() => root.classList.remove("intro"), 2200);
-  sync();
+  (window.requestIdleCallback || ((f) => setTimeout(f, 250)))(sync, { timeout: 1200 });
 
   return {
     refresh() { refreshAll(); sync(); },
