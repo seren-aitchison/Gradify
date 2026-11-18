@@ -214,20 +214,24 @@ function renderTree() {
   const sum = (list, n) => list.reduce((a, d) => a + (d.counts[n] || 0), 0);
   if (growMode === "tree") {
     const recent = days.slice(-30);
-    const data = sites.map((n) => ({ n, c: colourOf(n), act: sum(recent, n), k: Math.min(1, sum(recent, n) / 36), creds: CREDS.filter((cr) => cr.site === n) }));
+    // the example learner's activities, each a lesson, a flashcard session or a quiz (a fixed split, so it's the same
+    // on every visit): one leaf each on that site's tree
+    const leavesOf = (n) => recent.reduce((a, d, di) => { for (let i = 0; i < (d.counts[n] || 0); i++) { const h = ((di * 31 + i * 17 + n.length * 7) % 20) / 20; a[h < 0.45 ? "lesson" : h < 0.8 ? "flashcard" : "quiz"]++; } return a; }, { lesson: 0, flashcard: 0, quiz: 0 });
+    const data = sites.map((n) => ({ n, c: colourOf(n), act: sum(recent, n), k: Math.min(1, sum(recent, n) / 36), creds: CREDS.filter((cr) => cr.site === n), leaves: leavesOf(n) }));
     const bars = days.slice(-60).map((d) => Object.entries(d.counts).filter(([n]) => !off.has(n)).reduce((a, [, c]) => a + c, 0));
     drawTree($("#tree-svg"), { sites: data, bars, rand: rng(7) });
-    const leaves = data.reduce((a, x) => a + 4 + Math.round(x.k * 10), 0);
+    const L3 = data.reduce((a, x) => ({ lesson: a.lesson + x.leaves.lesson, flashcard: a.flashcard + x.leaves.flashcard, quiz: a.quiz + x.leaves.quiz }), { lesson: 0, flashcard: 0, quiz: 0 }), leaves = L3.lesson + L3.flashcard + L3.quiz;
     const week = days.slice(-7).reduce((a, d) => a + Object.entries(d.counts).filter(([n]) => !off.has(n)).reduce((t, [, c]) => t + c, 0), 0);
     const top = [...data].sort((p, q) => q.act - p.act)[0];
-    $("#tree-sub").textContent = "Each connected site grows its own tree, filling out with that site's activity over the last 30 days. Gold fruit are credentials, and the days you've studied recently grow the greenery around them.";
+    $("#tree-sub").textContent = "Each connected site grows its own tree. Every leaf is something you completed there in the last 30 days: green for a lesson, gold for a flashcard session, coral for a quiz. Gold fruit are credentials.";
     $("#grow-side").innerHTML = `
       <div class="grow-stats">
-        <div><b>${leaves}</b><span>leaves grown</span></div>
+        <div><b>${leaves}</b><span>leaves · last 30 days</span></div>
         <div><b>${data.reduce((a, x) => a + x.creds.length, 0)}</b><span>fruit</span></div>
         <div><b>${week}</b><span>activities this week</span></div>
         <div><b>${top ? esc(short(top.n).replace("Gradify", "")) : "–"}</b><span>strongest limb</span></div>
       </div>
+      <p class="leaf-key"><span><i class="lk-lesson"></i>${L3.lesson} lessons</span><span><i class="lk-flashcard"></i>${L3.flashcard} flashcard sessions</span><span><i class="lk-quiz"></i>${L3.quiz} quizzes</span></p>
       <ul class="grow-legend">${data.map((x) => `<li data-site="${esc(x.n)}" tabindex="0"><i style="background:#${x.c}"></i><span>${esc(short(x.n))}</span><em>${x.act}</em></li>`).join("")}</ul>`;
   } else {
     const span = days.slice(-84).map((d) => ({ ...d, today: d === todayCell }));
@@ -260,9 +264,12 @@ const FEED = [
   { site: "UnderGradify", what: "Submitted the anatomy practical write-up", when: "Sunday, 16:45", xp: 30 },
 ];
 function renderFeed() {
+  let lastDay = null;
   $("#feed").innerHTML = FEED.filter((f) => !off.has(f.site)).slice(0, 7).map((f) => {
-    const c = colourOf(f.site);
-    return `<li class="${f.fresh ? "fresh" : ""}"><span class="icon" style="--c:#${c};--tile:${tile(c)};--ink:${ink(c)}">${icon(SITES.get(f.site).i)}</span>
+    const c = colourOf(f.site), dayName = String(f.when).split(",")[0];
+    const head = dayName !== lastDay ? `<li class="feed-day" aria-hidden="true">${esc(dayName)}</li>` : "";
+    lastDay = dayName;
+    return `${head}<li class="${f.fresh ? "fresh" : ""}" style="--c:#${c}"><span class="icon" style="--c:#${c};--tile:${tile(c)};--ink:${ink(c)}">${icon(SITES.get(f.site).i)}</span>
       <span class="feed-txt"><b>${esc(f.what)}</b><span>${esc(short(f.site))} · ${esc(f.when)}</span></span><em>+${f.xp} XP</em></li>`;
   }).join("");
 }
@@ -384,11 +391,50 @@ function addXp(n) {
   while (xp >= xpFor(userLevel)) { xp -= xpFor(userLevel); userLevel++; unlock("level"); toast(`Level up! Alex is now level ${userLevel}.`); }
   renderProfile();
 }
+// ---------- Today's header: a greeting, what today looks like, and four numbers with their last two weeks ----------
+function renderHero() {
+  const view = $("#view-today"); if (!view) return;
+  let hero = $("#today-hero");
+  if (!hero) { hero = Object.assign(document.createElement("div"), { id: "today-hero", className: "today-hero" }); view.prepend(hero); }
+  const h = new Date().getHours(), hello = h < 12 ? "Good morning" : h < 18 ? "Good afternoon" : "Good evening";
+  const totals = days.map((d) => summarise(d).total), last14 = totals.slice(-14);
+  let streak = 0; for (let i = totals.length - 1; i >= 0 && totals[i]; i--) streak++;
+  const goalsDone = GOALS.filter((g) => g.n >= g.of).length, goalPct = GOALS.reduce((a, g) => a + Math.min(1, g.n / g.of), 0) / GOALS.length;
+  const mins7 = totals.slice(-7).reduce((a, n) => a + n, 0) * MIN_PER, next = EVENTS[0];
+  const spark = (vals, c) => {
+    const max = Math.max(1, ...vals), w = 84, hh = 26;
+    const pts = vals.map((v, i) => `${((i / (vals.length - 1)) * w).toFixed(1)},${(hh - 2 - (v / max) * (hh - 4)).toFixed(1)}`).join(" ");
+    return `<svg viewBox="0 0 ${w} ${hh}" class="spark" aria-hidden="true"><polyline points="0,${hh} ${pts} ${w},${hh}" fill="${c}" opacity=".16"/><polyline points="${pts}" fill="none" stroke="${c}" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg>`;
+  };
+  // the streak: a dot for each of the last 14 days, filled where you studied
+  const dots = (vals, c) => `<svg viewBox="0 0 84 26" class="spark" aria-hidden="true">${vals.map((v, i) => `<circle cx="${(3 + i * 6).toFixed(1)}" cy="${i % 2 ? 15 : 11}" r="2.4" fill="${v ? c : "none"}" stroke="${c}" stroke-width="1" opacity="${v ? 1 : 0.4}"/>`).join("")}</svg>`;
+  const RR = 30, CC = 2 * Math.PI * RR;
+  hero.innerHTML = `
+    <div class="th-main">
+      <span class="th-date">${esc(fmt(today, { weekday: "long", day: "numeric", month: "long" }))}</span>
+      <h2>${hello}, Alex.</h2>
+      <p>${goalsDone} of ${GOALS.length} goals done · a ${streak}-day streak${next ? ` · ${esc(next.what)} in ${next.in} ${next.in === 1 ? "day" : "days"}` : ""}</p>
+    </div>
+    <div class="th-ring" role="img" aria-label="Today's goals: ${Math.round(goalPct * 100)}% done">
+      <svg viewBox="0 0 76 76"><defs><linearGradient id="th-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4641ff"/><stop offset=".5" stop-color="#f055dd"/><stop offset="1" stop-color="#ffc002"/></linearGradient></defs>
+        <circle cx="38" cy="38" r="${RR}" class="bg"/><circle cx="38" cy="38" r="${RR}" class="fg" stroke-dasharray="${CC.toFixed(1)}" stroke-dashoffset="${(CC * (1 - goalPct)).toFixed(1)}"/></svg>
+      <span><b>${Math.round(goalPct * 100)}%</b>of goals</span>
+    </div>
+    <div class="th-stats">
+      ${[["Day streak", streak, "flame", "#ff8a3d", last14.map((v) => (v ? 1 : 0))],
+         ["XP this week", (420 + sessionXp).toLocaleString("en-GB"), "trend", "#ffc002", last14.map((v) => v * 12)],
+         ["Study time · 7 days", `${(mins7 / 60).toFixed(1)} h`, "clock", "#40d4b1", last14.map((v) => v * MIN_PER)],
+         ["Activities today", totals.at(-1), "sparkles", "#f055dd", last14]].map(([label, val, i, c, vals]) =>
+        `<div class="th-stat" style="--c:${c}"><span class="th-ico">${icon(i)}</span><b>${val}</b><small>${label}</small>${label === "Day streak" ? dots(vals, c) : spark(vals, c)}</div>`).join("")}
+    </div>`;
+}
+
 function renderProfile() {
   $("#level-name").textContent = `Level ${userLevel} · ${LEVELS[Math.min(LEVELS.length - 1, Math.floor(userLevel / 6))]}`;
   $("#xp-level").textContent = `Level ${userLevel + 1}`;
   $("#xp-text").textContent = `${xp.toLocaleString("en-GB")} / ${xpFor(userLevel).toLocaleString("en-GB")} XP`;
   $("#xp-fill").style.width = `${(xp / xpFor(userLevel)) * 100}%`;
+  renderHero();
 }
 
 const BADGES = [
@@ -417,12 +463,13 @@ const GOALS = [
 function renderGoals() {
   $("#goals").innerHTML = GOALS.map((g) => {
     const done = g.n >= g.of;
-    return `<div class="goal ${done ? "done" : ""}">
+    return `<div class="goal ${done ? "done" : ""}" style="--p:${Math.round((g.n / g.of) * 100)};--c:${["#40d4b1", "#ff8a3d", "#8b3dff", "#3c78d8"][GOALS.indexOf(g) % 4]}">
       <span class="goal-ico">${icon(done ? "check" : g.i)}</span>
       <span class="goal-txt"><b>${esc(g.label)}</b><span>${g.week ? "This week" : "Today"} · ${g.n}/${g.of}</span></span>
       <span class="goal-bar"><i style="width:${(g.n / g.of) * 100}%"></i></span>
     </div>`;
   }).join("");
+  renderHero();
 }
 
 // Recommended next action: the most urgent fading topic on Gradify Earth
@@ -479,7 +526,7 @@ function renderUpcoming() {
   const when = (n) => (n === 0 ? "today" : n === 1 ? "tomorrow" : `in ${n} days`);
   $("#events").innerHTML = EVENTS.slice(0, 5).map((e) => {
     const d = new Date(+d0 + e.in * DAY), c = colourOf(e.site);
-    return `<div class="event${e.planned ? " planned" : ""}"><span class="date"><b>${d.getDate()}</b>${fmt(d, { month: "short" })}</span>
+    return `<div class="event${e.planned ? " planned" : ""}" data-soon="${e.in <= 3 ? "now" : e.in <= 7 ? "week" : "later"}" style="--c:#${c}"><span class="date"><b>${d.getDate()}</b>${fmt(d, { month: "short" })}</span>
       <span class="ev-txt"><b>${esc(e.what)}</b><span><i style="background:#${c}"></i>${e.planned ? "Planned · " : ""}${esc(short(e.site))} · ${when(e.in)}</span></span></div>`;
   }).join("");
 }

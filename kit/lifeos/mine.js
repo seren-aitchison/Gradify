@@ -51,7 +51,9 @@ export async function mountMine({ after = document.querySelector("#lifeos .life-
   after.after(sec);
   if (used.length) {
     drawTree(sec.querySelector("#mine-tree"), {
-      sites: used.slice(0, 8).map((n) => ({ n, c: colour(n), act: sum(recent, n), k: Math.min(1, sum(recent, n) / 36), creds: [] })),
+      // each leaf is a lesson, flashcard session or quiz completed on that site in the last 30 days
+      sites: used.slice(0, 8).map((n) => ({ n, c: colour(n), act: sum(recent, n), k: Math.min(1, sum(recent, n) / 36), creds: [],
+        leaves: recent.reduce((a, d) => { const l = d.leaves?.[n]; if (l) for (const k of ["lesson", "flashcard", "quiz"]) a[k] += l[k]; return a; }, { lesson: 0, flashcard: 0, quiz: 0 }) })),
       bars: last60.map((d) => Object.values(d.counts).reduce((a, b) => a + b, 0)), rand: rng(11),
     });
   }
