@@ -34,14 +34,28 @@ export const COURSES = {
 const dayKey = (t) => { const d = new Date(t); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
 
 // ---------- activity: the life heatmap and the Tree ----------
-// activity rows { at, site, xp } → one entry per day for the last `weeks` weeks, Monday first, with counts by site
+// what kind of leaf an activity grows on the Gradify Tree: a lesson finished, a flashcard session, or a quiz (quizzes,
+// check questions, practice, mock exams and written answers). Anything else (a workout, a plan block) grows no leaf.
+export function leafKind(kind = "") {
+  const k = String(kind);
+  if (/(^|-)lesson$/.test(k)) return "lesson";
+  if (/(^|-)(review|session|cards|flashcards)$/.test(k)) return "flashcard";
+  if (/(^|-)(quiz|check|practice|mock|exam|write)$/.test(k)) return "quiz";
+  return null;
+}
+// activity rows { at, site, kind, xp } → one entry per day for the last `weeks` weeks, Monday first, with counts by site,
+// and `leaves`: by site, how many lessons, flashcard sessions and quizzes were completed that day
 export function activityDays(activity = [], { now = Date.now(), weeks = 52 } = {}) {
   const today = new Date(now); today.setHours(0, 0, 0, 0);
   const start = new Date(+today - weeks * 7 * DAY); start.setDate(start.getDate() - ((start.getDay() + 6) % 7));
-  const by = new Map();
-  for (const a of activity) { const k = dayKey(Date.parse(a.at)); const c = by.get(k) || {}; c[a.site || "Gradify"] = (c[a.site || "Gradify"] || 0) + 1; by.set(k, c); }
+  const by = new Map(), leaves = new Map();
+  for (const a of activity) {
+    const k = dayKey(Date.parse(a.at)), site = a.site || "Gradify", c = by.get(k) || {}; c[site] = (c[site] || 0) + 1; by.set(k, c);
+    const leaf = leafKind(a.kind); if (!leaf) continue;
+    const l = leaves.get(k) || {}; l[site] ||= { lesson: 0, flashcard: 0, quiz: 0 }; l[site][leaf]++; leaves.set(k, l);
+  }
   const out = [];
-  for (let d = new Date(start); d <= today; d = new Date(+d + DAY)) out.push({ date: d, key: dayKey(+d), counts: by.get(dayKey(+d)) || {} });
+  for (let d = new Date(start); d <= today; d = new Date(+d + DAY)) out.push({ date: d, key: dayKey(+d), counts: by.get(dayKey(+d)) || {}, leaves: leaves.get(dayKey(+d)) || {} });
   return out;
 }
 // the current streak counts today if there's activity, otherwise up to yesterday (today isn't over yet)
