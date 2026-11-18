@@ -57,4 +57,15 @@ test("an answer that negates the card is wrong, however many words match", () =>
   const e = "Amount of blood ejected by each ventricle per beat.";
   assert.deepEqual([v("the amount of blood each ventricle does not eject per beat", e), gradeTyped("the amount of blood each ventricle does not eject per beat", e).suggest], ["partial", "hard"]);
   assert.equal(v("the reaction does not need light", "The reaction needs light energy to split water"), "partial");
+  // two negations don't cancel when they negate different things: this denies both halves of the answer
+  assert.equal(v("Electrons have neither mass nor charge", "Electrons have mass and charge"), "wrong");
+  assert.equal(v("electrons have mass and charge", "Electrons have mass and charge"), "right");
+});
+
+test("negating something other than the answer is fine; negating the answer is not", () => {
+  assert.equal(v("stroma, not thylakoid", "stroma"), "right");
+  assert.equal(v("stroma not thylakoid", "stroma"), "right");
+  assert.equal(v("not stroma", "stroma"), "wrong");
+  assert.equal(v("not stroma but thylakoid", "stroma"), "wrong");
+  assert.equal(v("it does not dissolve in water", "It does not dissolve in water."), "right");
 });

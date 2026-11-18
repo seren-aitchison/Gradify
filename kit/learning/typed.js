@@ -9,17 +9,39 @@
 //   partial  some of a longer answer's key words                                       → suggests Hard
 //   wrong    little of it                                                              → suggests Again
 // Easy is never suggested: only the learner knows it was effortless.
-// A typed answer that negates the card ("not vector" for "vector", or "vector" for "not a vector") says the opposite,
-// however many words match: a short answer is then wrong, and a longer one at most partial.
+// A typed answer that negates what the card says ("not vector" for "vector", "vector" for "not a vector", "neither
+// mass nor charge" for "mass and charge") says the opposite, however many words match: a short answer is then wrong,
+// and a longer one partial (wrong if most of its key words are flipped). Negating something else is fine:
+// "stroma, not thylakoid" is still right for "stroma".
 
 const STOP = new Set("a an the of to in on at by for with from into and or is are was were be it its this that as".split(" "));
 const norm = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9×+=\-−÷%.]+/g, " ").replace(/\s\.|\.(\s|$)/g, " ").trim();
 const content = (s) => norm(s).split(" ").filter((w) => w && !STOP.has(w));
 
-// negations, counted before norm() splits "isn't" into "isn t"; an even number cancels out ("not unlike")
+// What each negation applies to: the key words after it, up to the next negation or the end of its clause (a comma,
+// semicolon, sentence end or "but"). Contractions are expanded before norm() would split "isn't" into "isn t".
+// Returns the answer's key words, each marked negated or not; the negation words themselves aren't key words here.
 const NEG = new Set(["not", "no", "never", "none", "neither", "nor", "cannot", "nothing", "nobody", "nowhere"]);
-const negations = (s) => String(s || "").toLowerCase().replace(/\bcan['’]t\b/g, "cannot").replace(/\bwon['’]t\b/g, "will not")
-  .replace(/n['’]t\b/g, " not").split(/[^a-z]+/).filter((w) => NEG.has(w)).length;
+const CLAUSE = /[,;:!?()]|\.(?:\s|$)|\b(?:but|whereas|although|though|however|instead)\b/;
+function scoped(s) {
+  const text = String(s || "").toLowerCase().replace(/\bcan['’]t\b/g, "cannot").replace(/\bwon['’]t\b/g, "will not").replace(/n['’]t\b/g, " not");
+  const out = [];
+  for (const clause of text.split(new RegExp(CLAUSE.source, "g"))) {
+    let neg = false;
+    for (const w of content(clause || "")) {
+      if (NEG.has(w)) { neg = true; continue; }
+      out.push({ w, neg });
+    }
+  }
+  return out;
+}
+// The share of the card's key words that the typed answer has with the opposite sense (negated on one side only).
+function flipped(typed, expected) {
+  const T = scoped(typed), E = scoped(expected);
+  if (!E.length) return 0;
+  const n = E.filter((e) => { const m = T.filter((t) => wordMatch(t.w, e.w)); return m.length && !m.some((t) => t.neg === e.neg); }).length;
+  return n / E.length;
+}
 
 // edit distance, for typos in short answers
 function distance(a, b) {
@@ -43,9 +65,10 @@ const wordMatch = (t, e) => t === e || (e.length > 5 && t.length > 5 && t.slice(
  */
 export function gradeTyped(typed, expected) {
   const r = grade(typed, expected);
-  if (!r || negations(typed) % 2 === negations(expected) % 2) return r;
-  // one says "not" and the other doesn't: the opposite answer, whatever words they share
-  if (content(expected).length <= 3) return { verdict: "wrong", suggest: "again", score: 0 };
+  const f = r ? flipped(typed, expected) : 0;
+  if (!f) return r;
+  // part of the card's answer is negated on one side only: the opposite, whatever words they share
+  if (content(expected).length <= 3 || f >= 0.5) return { verdict: "wrong", suggest: "again", score: 0 };
   return r.verdict === "right" || r.verdict === "close" ? { verdict: "partial", suggest: "hard", score: Math.min(r.score, 0.5) } : r;
 }
 
