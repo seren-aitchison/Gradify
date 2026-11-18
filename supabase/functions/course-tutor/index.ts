@@ -23,6 +23,7 @@ import { createClient } from "npm:@supabase/supabase-js@2.117.0";
 import { MODEL, FEEDBACK_MODES, buildRequest, checkReply } from "../_shared/tutor.js";
 import { canonicalLesson } from "../_shared/canon.js";
 import { runAi, ledger, estimateTokens, cacheable, cacheKey, normaliseQuestion, conversationOf, fail } from "../_shared/ai.js";
+import { aiProviders } from "../_shared/provider.js";
 
 // modes that are grounded in a lesson's notes
 const LESSON_MODES = ["explain", "diagnose", "socratic", "examiner", "challenge", "connect"];
@@ -42,6 +43,9 @@ const ALLOWED = (Deno.env.get("GRADIFY_ALLOWED_ORIGINS") ?? "https://getgradify.
 // (AI off, allowance used) must still get its proper answer
 let client: Anthropic | null = null;
 const anthropic = () => (client ??= new Anthropic()); // reads ANTHROPIC_API_KEY
+// Claude, or a local Ollama model when served locally with GRADIFY_AI_PROVIDER / GRADIFY_AI_ROUTES (docs/LOCAL-AI.md).
+// A deployed function always uses Claude.
+const ai = aiProviders((k) => Deno.env.get(k), { ollamaUrl: "http://host.docker.internal:11434" });
 
 function cors(req: Request) {
   const origin = req.headers.get("origin") ?? "";
@@ -85,10 +89,10 @@ Deno.serve(async (req) => {
     conversationId: conversationOf(r.mode, body.conversationId),
     estInput: estimateTokens(r.system, r.messages),
     maxOutput: r.maxTokens,
-    cacheKey: cacheable(r.mode, body) ? await cacheKey(MODEL, r) : null,
+    cacheKey: cacheable(r.mode, body) ? await cacheKey(ai.cacheModel(r.mode, MODEL), r) : null,
     model: MODEL,
     // the model for this feature comes from the claim (public.ai_feature_models): Opus for tutoring and explanations
-    call: (model: string) => anthropic().beta.messages.stream({
+    call: (model: string) => ai.run(r.mode, { system: r.system, messages: r.messages, schema: r.schema, maxTokens: r.maxTokens }, () => anthropic().beta.messages.stream({
       model,
       max_tokens: r.maxTokens,
       betas: ["server-side-fallback-2026-07-01"],
@@ -96,7 +100,7 @@ Deno.serve(async (req) => {
       output_config: { effort: r.effort, ...(r.schema ? { format: { type: "json_schema", schema: r.schema } } : {}) },
       system: [{ type: "text", text: r.system, cache_control: { type: "ephemeral" } }],
       messages: r.messages,
-    }).finalMessage(),
+    }).finalMessage()),
     parse: (msg: Anthropic.Beta.BetaMessage) => {
       const text = msg.content.filter((b) => b.type === "text").map((b) => (b as { text: string }).text).join("").trim();
       if (!r.schema) { if (!text) fail(502, "The tutor didn't reply. Please try again.", "empty"); return { reply: text, model: msg.model }; }

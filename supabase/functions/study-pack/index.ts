@@ -16,6 +16,7 @@ import Anthropic from "npm:@anthropic-ai/sdk@0.133.0";
 import { createClient } from "npm:@supabase/supabase-js@2.117.0";
 import { MODEL, PACK_SCHEMA, QUESTIONS_SCHEMA, SYSTEM_PROMPT, userPrompt, cardsFromPack, packStats, questionCards, REVIEW_SCHEMA, REVIEW_PROMPT, reviewRequest, focusOf } from "../_shared/pack.js";
 import { runAi, ledger, estimateTokens, sha256, fail } from "../_shared/ai.js";
+import { aiProviders } from "../_shared/provider.js";
 
 const MAX_OUTPUT = { pack: 32000, questions: 16000, card: 2000, review: 8000 };
 // The independent card review (about a quarter more per pack: docs/FLASHCARD-ENGINE.md). On unless this secret is "off".
@@ -26,6 +27,9 @@ const ALLOWED = (Deno.env.get("GRADIFY_ALLOWED_ORIGINS") ?? "https://getgradify.
 // (AI off, allowance used) must still get its proper answer
 let client: Anthropic | null = null;
 const anthropic = () => (client ??= new Anthropic()); // reads ANTHROPIC_API_KEY
+// Claude, or a local Ollama model when served locally with GRADIFY_AI_PROVIDER / GRADIFY_AI_ROUTES (docs/LOCAL-AI.md).
+// A deployed function always uses Claude. PDFs and photos always go to Claude (the local model reads text only).
+const ai = aiProviders((k) => Deno.env.get(k), { ollamaUrl: "http://host.docker.internal:11434" });
 
 function cors(req: Request) {
   const origin = req.headers.get("origin") ?? "";
@@ -42,8 +46,9 @@ const json = (req: Request, body: unknown, status = 200) =>
 // One Claude call with structured output. Streams so long packs don't hit HTTP timeouts,
 // and opts into server-side fallback so a rare false-positive safety decline is retried.
 // The model comes from the claim (public.ai_feature_models): Sonnet for packs and quizzes, Opus for card rewrites.
-const ask = (model: string, system: string, content: Anthropic.Beta.BetaContentBlockParam[], schema: Record<string, unknown>, effort: "low" | "medium" | "high", maxTokens: number) =>
-  anthropic().beta.messages.stream({
+// `mode` picks the provider (pack, questions, card).
+const ask = (mode: string, model: string, system: string, content: Anthropic.Beta.BetaContentBlockParam[], schema: Record<string, unknown>, effort: "low" | "medium" | "high", maxTokens: number) =>
+  ai.run(mode, { system, messages: [{ role: "user", content }], schema, maxTokens }, () => anthropic().beta.messages.stream({
     model,
     max_tokens: maxTokens,
     betas: ["server-side-fallback-2026-07-01"],
@@ -51,7 +56,7 @@ const ask = (model: string, system: string, content: Anthropic.Beta.BetaContentB
     output_config: { effort, format: { type: "json_schema", schema } },
     system: [{ type: "text", text: system, cache_control: { type: "ephemeral" } }],
     messages: [{ role: "user", content }],
-  }).finalMessage();
+  }).finalMessage());
 const textOf = (msg: Anthropic.Beta.BetaMessage) => msg.content.filter((b) => b.type === "text").map((b) => (b as { text: string }).text).join("");
 
 const CARD_SCHEMA: Record<string, unknown> = {
@@ -84,7 +89,7 @@ Supporting notes: ${String(body.notes ?? "").slice(0, 4000)}
 Use only what the fact and notes say. Front under 25 words, back under 40. Never put the answer in the question.${["why", "apply"].includes(body.kind) ? ` Keep it a "${body.kind}" question: ${body.kind === "why" ? "the learner must explain a cause, mechanism or difference" : "the learner must use the idea on a situation or problem"}. Backs for these can run to 60 words.` : ""}`;
       return send(await runAi(deps, {
         mode, site, estInput: estimateTokens(SYSTEM_PROMPT, prompt), maxOutput: MAX_OUTPUT.card,
-        model: MODEL, call: (model: string) => ask(model, SYSTEM_PROMPT, [{ type: "text", text: prompt }], CARD_SCHEMA, "medium", MAX_OUTPUT.card),
+        model: MODEL, call: (model: string) => ask(mode, model, SYSTEM_PROMPT, [{ type: "text", text: prompt }], CARD_SCHEMA, "medium", MAX_OUTPUT.card),
         parse: (msg: Anthropic.Beta.BetaMessage) => ({ card: JSON.parse(textOf(msg)) }),
       }));
     }
@@ -103,7 +108,9 @@ Use only what the fact and notes say. Front under 25 words, back under 40. Never
     if (mode === "questions" && !text.trim()) return json(req, { error: "These notes have no text to write questions from." }, 400);
     const topics = (Array.isArray(body.topics) ? body.topics : []).map(String).slice(0, 20);
     // the learner's focus changes what's written, so it's part of what makes a request the same as an earlier one
-    const notesHash = await sha256(JSON.stringify([mode, text, hasPdf ? await sha256(body.pdfBase64) : null, ...(hasImages ? [await Promise.all(images.map((im: { data: string }) => sha256(im.data)))] : []), mode === "questions" ? topics : null, ...(mode === "pack" && focusOf(body.focus).length ? [focusOf(body.focus)] : [])]));
+    const notesHash = await sha256(JSON.stringify([mode, text, hasPdf ? await sha256(body.pdfBase64) : null, ...(hasImages ? [await Promise.all(images.map((im: { data: string }) => sha256(im.data)))] : []), mode === "questions" ? topics : null, ...(mode === "pack" && focusOf(body.focus).length ? [focusOf(body.focus)] : []),
+      // a pack written by a local model is never reused once Claude is in use again (and the other way round)
+      ...(ai.providerFor(mode) === "ollama" ? [ai.cacheModel(mode, MODEL)] : [])]));
     const engine = mode === "pack" ? "claude" : "claude-questions";
 
     // the same notes again: copy the learner's saved result (a copy, so linking it to a new deck never takes it from
@@ -132,7 +139,7 @@ Use only what the fact and notes say. Front under 25 words, back under 40. Never
 The learner already has recall flashcards for these notes. Write only the deeper questions ("why" and "apply"), following the rules for deeper questions. Use exactly these topic names: ${JSON.stringify(topics)}.`;
       return send(await runAi(deps, {
         mode, site, estInput: estimateTokens(SYSTEM_PROMPT, ask_), maxOutput: MAX_OUTPUT.questions, check,
-        model: MODEL, call: (model: string) => ask(model, SYSTEM_PROMPT, [{ type: "text", text: ask_ }], QUESTIONS_SCHEMA, "high", MAX_OUTPUT.questions),
+        model: MODEL, call: (model: string) => ask(mode, model, SYSTEM_PROMPT, [{ type: "text", text: ask_ }], QUESTIONS_SCHEMA, "high", MAX_OUTPUT.questions),
         parse: async (msg: Anthropic.Beta.BetaMessage) => {
           const data = JSON.parse(textOf(msg));
           const seen = new Set<string>();
@@ -155,13 +162,13 @@ The learner already has recall flashcards for these notes. Write only the deeper
     // (kit/notes/pack.js: REVIEW_PROMPT). Their token counts are added together, so the ledger and allowance see one
     // request at its real cost. If the review fails, the pack is still returned, with every card checked in code.
     const generateAndReview = async (model: string) => {
-      const gen = await ask(model, SYSTEM_PROMPT, content, PACK_SCHEMA, "high", MAX_OUTPUT.pack);
+      const gen = await ask(mode, model, SYSTEM_PROMPT, content, PACK_SCHEMA, "high", MAX_OUTPUT.pack);
       if (gen.stop_reason !== "end_turn") return gen;
       const pack = JSON.parse(textOf(gen));
       try {
         // reviewed against the notes' text; a scanned PDF has none, so its cards are checked in code only
         if (REVIEW_ON && text.trim().length >= 200) {
-          const rev = await ask(model, REVIEW_PROMPT, [{ type: "text", text: reviewRequest(cardsFromPack(pack, text), text) }], REVIEW_SCHEMA, "medium", MAX_OUTPUT.review);
+          const rev = await ask(mode, model, REVIEW_PROMPT, [{ type: "text", text: reviewRequest(cardsFromPack(pack, text), text) }], REVIEW_SCHEMA, "medium", MAX_OUTPUT.review);
           if (rev.stop_reason === "end_turn") pack.review = { verdicts: JSON.parse(textOf(rev)).verdicts, model: rev.model };
           gen.usage = { ...gen.usage, input_tokens: gen.usage.input_tokens + rev.usage.input_tokens, output_tokens: gen.usage.output_tokens + rev.usage.output_tokens,
             cache_read_input_tokens: (gen.usage.cache_read_input_tokens ?? 0) + (rev.usage.cache_read_input_tokens ?? 0),
