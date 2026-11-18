@@ -11,35 +11,47 @@
 // Easy is never suggested: only the learner knows it was effortless.
 // A typed answer that negates what the card says ("not vector" for "vector", "vector" for "not a vector", "neither
 // mass nor charge" for "mass and charge") says the opposite, however many words match: a short answer is then wrong,
-// and a longer one partial (wrong if most of its key words are flipped). Negating something else is fine:
-// "stroma, not thylakoid" is still right for "stroma".
+// and a longer one partial (wrong if half its key words are flipped). Negating something else is fine: "stroma, not
+// thylakoid" is still right for "stroma", and so is a reordered answer ("in water, it does not dissolve").
 
 const STOP = new Set("a an the of to in on at by for with from into and or is are was were be it its this that as".split(" "));
 const norm = (s) => String(s || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9×+=\-−÷%.]+/g, " ").replace(/\s\.|\.(\s|$)/g, " ").trim();
 const content = (s) => norm(s).split(" ").filter((w) => w && !STOP.has(w));
 
-// What each negation applies to: the key words after it, up to the next negation or the end of its clause (a comma,
-// semicolon, sentence end or "but"). Contractions are expanded before norm() would split "isn't" into "isn t".
-// Returns the answer's key words, each marked negated or not; the negation words themselves aren't key words here.
+// What each negation applies to: the next key word after it in the same clause, which is usually what's negated
+// ("does not dissolve", "neither mass nor charge", "not (a vector)"). "not only … but also" adds rather than negates.
+// A clause ends at a comma, semicolon, sentence end or "but"/"whereas"/…, so a "not" at the end of one reaches nothing
+// in the next. Contractions are expanded first ("isn't" → "is not"). Returns the key words, each marked negated or not;
+// the negation words themselves aren't key words here.
 const NEG = new Set(["not", "no", "never", "none", "neither", "nor", "cannot", "nothing", "nobody", "nowhere"]);
-const CLAUSE = /[,;:!?()]|\.(?:\s|$)|\b(?:but|whereas|although|though|however|instead)\b/;
+const CLAUSE = /[,;:!?]|\.(?:\s|$)|\b(?:but|whereas|although|though|however|instead)\b/g;
 function scoped(s) {
   const text = String(s || "").toLowerCase().replace(/\bcan['’]t\b/g, "cannot").replace(/\bwon['’]t\b/g, "will not").replace(/n['’]t\b/g, " not");
   const out = [];
-  for (const clause of text.split(new RegExp(CLAUSE.source, "g"))) {
-    let neg = false;
+  for (const clause of text.split(CLAUSE)) {
+    let pending = false;
     for (const w of content(clause || "")) {
-      if (NEG.has(w)) { neg = true; continue; }
-      out.push({ w, neg });
+      if (NEG.has(w)) { pending = true; continue; }
+      if (pending && w === "only") { pending = false; continue; }   // "not only X but also Y" affirms X
+      out.push({ w, neg: pending });
+      pending = false;
     }
   }
   return out;
 }
 // The share of the card's key words that the typed answer has with the opposite sense (negated on one side only).
+// A word that appears more than once is paired in order (the first with the first), so a match in another claim
+// can't clear a flipped one ("cats are not mammals; birds are mammals").
 function flipped(typed, expected) {
   const T = scoped(typed), E = scoped(expected);
   if (!E.length) return 0;
-  const n = E.filter((e) => { const m = T.filter((t) => wordMatch(t.w, e.w)); return m.length && !m.some((t) => t.neg === e.neg); }).length;
+  const seen = new Map();
+  const n = E.filter((e) => {
+    const m = T.filter((t) => wordMatch(t.w, e.w));
+    if (!m.length) return false;
+    const i = seen.get(e.w) || 0; seen.set(e.w, i + 1);
+    return m[Math.min(i, m.length - 1)].neg !== e.neg;
+  }).length;
   return n / E.length;
 }
 

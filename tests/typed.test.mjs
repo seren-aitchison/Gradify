@@ -55,11 +55,22 @@ test("an answer that negates the card is wrong, however many words match", () =>
   assert.equal(v("No", "no"), "right");
   // longer answers: the key words may all be there, but a flipped meaning is at most partial
   const e = "Amount of blood ejected by each ventricle per beat.";
-  assert.deepEqual([v("the amount of blood each ventricle does not eject per beat", e), gradeTyped("the amount of blood each ventricle does not eject per beat", e).suggest], ["partial", "hard"]);
+  assert.deepEqual([v("blood not ejected by each ventricle per beat", e), gradeTyped("blood not ejected by each ventricle per beat", e).suggest], ["partial", "hard"]);
   assert.equal(v("the reaction does not need light", "The reaction needs light energy to split water"), "partial");
   // two negations don't cancel when they negate different things: this denies both halves of the answer
   assert.equal(v("Electrons have neither mass nor charge", "Electrons have mass and charge"), "wrong");
   assert.equal(v("electrons have mass and charge", "Electrons have mass and charge"), "right");
+  // a word in another claim doesn't clear a flipped one: both claims reversed
+  assert.equal(v("Cats are not mammals; birds are mammals", "Cats are mammals; birds are not mammals"), "wrong");
+  assert.equal(v("cats are mammals; birds are not mammals", "Cats are mammals; birds are not mammals"), "right");
+  assert.notEqual(v("It dissolves in water.", "It does not dissolve in water."), "right");
+});
+
+test("a negation applies to what it negates, so reordering and additive phrases are fine", () => {
+  assert.equal(v("In water, it does not dissolve.", "It does not dissolve in water."), "right");
+  assert.equal(v("Electrons have not only mass but also charge", "Electrons have mass and charge"), "right");
+  assert.equal(v("not (a vector)", "vector"), "wrong", "a bracket doesn't end the negation");
+  assert.equal(v("stroma (not thylakoid)", "stroma"), "right");
 });
 
 test("negating something other than the answer is fine; negating the answer is not", () => {
