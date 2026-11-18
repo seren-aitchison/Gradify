@@ -890,12 +890,16 @@ export function mountCourse(root, cfg) {
     }
     // The study app's Liquid Glass card (kit/styles/flashcards.css): say how sure you are, or type an answer, then see
     // the answer and rate it. Scheduling (kit/learning/srs.js), the attempt record and XP are as before.
-    let k = 0, done = 0, shown = false, attempt = "", grade = null;
+    // sure: the "How sure are you?" answer, recorded with the rating as in the study app (kit/app/main.js), so
+    // confident wrong answers show up in calibration; t0: when this card was shown, for the time taken
+    let k = 0, done = 0, shown = false, attempt = "", grade = null, sure = null, t0 = Date.now();
+    const CONFIDENCE = { sure: 3, unsure: 2, guess: 1 };
     const ctl = new AbortController();   // keys and clicks last as long as this session
     addEventListener("hashchange", () => ctl.abort(), { once: true });
     const plain = (s) => String(s).replace(/\^\{([^}]*)\}|_\{([^}]*)\}/g, "$1$2").replace(/[*`]/g, "");
-    const reveal = () => {
+    const reveal = (how = null) => {
       if (shown || k >= due.length) return;
+      sure = how;
       attempt = main.querySelector("#co-typed")?.value ?? attempt;
       grade = gradeTyped(attempt, plain(due[k].back));
       shown = true; step();
@@ -907,9 +911,9 @@ export function mountCourse(root, cfg) {
       S.cards[c.id] = { ...st, ...schedule(st, r) }; done++; k++;
       // the rating is evidence too: recall, and retention once the card comes back after a gap
       const score = { again: 0, hard: 0.6, good: 1, easy: 1 }[r];
-      record({ Q: { type: "card" }, key: `card:${c.id}`, l: byId[c.lesson] }, "review", "cards", { score, correct: score >= 0.6, method: "self" }, { response: r });
+      record({ Q: { type: "card" }, key: `card:${c.id}`, l: byId[c.lesson] }, "review", "cards", { score, correct: score >= 0.6, method: "self" }, { response: r, confidence: CONFIDENCE[sure] ?? null, ms: Date.now() - t0 });
       award(XP.review, "review", c.id);
-      shown = false; attempt = ""; grade = null; step();
+      shown = false; attempt = ""; grade = null; sure = null; t0 = Date.now(); step();
     };
     const step = () => {
       if (k >= due.length) { ctl.abort(); main.innerHTML = `<div class="co-panel co-result"><div class="co-burst">${ic("cards")}</div><h2>${done} cards reviewed</h2><p>+${done * XP.review} XP. Come back tomorrow for the next batch.</p><a class="btn btn-light lg btn-sm" href="#/learn"><span>Back to the path</span></a> ${revisitLink()}</div>`; save(); return; }
@@ -935,14 +939,15 @@ export function mountCourse(root, cfg) {
     main.addEventListener("click", (e) => {
       if (!shown) attempt = main.querySelector("#co-typed")?.value ?? attempt;
       if (e.target.closest("[data-reveal]")) return reveal();
-      if (e.target.closest("[data-sure]")) { haptic("tap"); return reveal(); }
+      const s = e.target.closest("[data-sure]"); if (s) { haptic("tap"); return reveal(s.dataset.sure); }
       const r = e.target.closest("[data-r]"); if (r) rate(r.dataset.r);
     }, { signal: ctl.signal });
     addEventListener("keydown", (e) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       // typing an answer: Enter turns the card over and grades it
       if (e.target.closest?.("input, textarea, select")) { if (!shown && e.key === "Enter" && e.target.id === "co-typed") { e.preventDefault(); reveal(); } return; }
-      if (!shown && (e.key === " " || e.key === "Enter" || SURE.some(([, , key]) => key.toLowerCase() === e.key.toLowerCase()))) { e.preventDefault(); reveal(); }
+      const how = SURE.find(([, , key]) => key.toLowerCase() === e.key.toLowerCase());
+      if (!shown && (e.key === " " || e.key === "Enter" || how)) { e.preventDefault(); reveal(how ? how[0] : null); }
       else if (shown && ["1", "2", "3", "4"].includes(e.key)) rate(RATE[+e.key - 1]);
     }, { signal: ctl.signal });
     step();
