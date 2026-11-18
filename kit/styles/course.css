@@ -890,7 +890,8 @@ button.rx-s { cursor: pointer; border-bottom: 1px dashed var(--line-strong); } b
 
 /* the finish panel */
 .co-finish { margin-top: 52px !important; padding: 24px !important; border: 1px solid transparent !important; border-radius: 22px; display: flex !important; align-items: center; justify-content: space-between; gap: 18px 24px; flex-wrap: wrap;
-  background: linear-gradient(var(--panel-strong, #111), var(--panel-strong, #111)) padding-box, linear-gradient(120deg, var(--a, #4641ff), var(--b, #f055dd)) border-box; box-shadow: 0 30px 60px -40px var(--a, #4641ff); }
+  background: linear-gradient(var(--panel-strong, #111), var(--panel-strong, #111)) padding-box, linear-gradient(120deg, var(--a, #4641ff), var(--b, #f055dd)) border-box;
+  background: linear-gradient(var(--panel-strong, light-dark(#ffffff, #111)), var(--panel-strong, light-dark(#ffffff, #111))) padding-box, linear-gradient(120deg, var(--a, #4641ff), var(--b, #f055dd)) border-box; box-shadow: 0 30px 60px -40px var(--a, #4641ff); }
 .co-finish-txt { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1 1 260px; }
 .co-finish-txt b { font-size: 20px; letter-spacing: -.02em; }
 .co-finish-txt span { color: var(--mute); font-size: 14.5px; line-height: 1.5; }
@@ -933,3 +934,39 @@ button.rx-s { cursor: pointer; border-bottom: 1px dashed var(--line-strong); } b
 .co-railgo { justify-content: center; }
 .co-railgo[disabled] { opacity: .6; cursor: default; }
 @media (prefers-reduced-motion: reduce) { .co-readbar i, .co-ring.sm .fg, .co-pncard, .co-read .co-check .aq-opts button { transition: none; } }
+
+/* a lesson's glass diagrams: full width, each opens full size */
+.co-lesson .gd { cursor: zoom-in; }
+.co-lesson .gd:focus-visible { outline: 2px solid var(--fg); outline-offset: 6px; border-radius: 22px; }
+.co-lesson .gd figcaption::after { content: "Open full size ↗"; margin-left: 10px; font-size: 12px; color: var(--faint, var(--mute)); opacity: 0; transition: opacity .2s; }
+.co-lesson .gd:hover figcaption::after, .co-lesson .gd:focus-visible figcaption::after { opacity: 1; }
+@media (hover: none) { .co-lesson .gd figcaption::after { content: "Tap to enlarge"; opacity: .8; } }
+.co-recap > .gd { margin: 0 0 26px; }
+.gd-zoom { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: max(16px, 3vw); background: rgba(0, 0, 0, .78); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); animation: gd-zin .18s ease-out; }
+.gd-zoomin { --gd-bg: light-dark(#ffffff, #0d1120); --gd-ink: light-dark(#151826, #eef1fb); --gd-soft: light-dark(#5b6275, #a3abc2); --gd-line: light-dark(#8a92a8, #6f7894);
+  position: relative; width: min(100%, 1100px, calc((100vh - 120px) * 1.6)); padding: 12px; border-radius: 24px; color: var(--gd-ink); background: var(--gd-bg); box-shadow: 0 40px 100px -30px rgba(0, 0, 0, .8); }
+.gd-zoomin::after { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 2px; pointer-events: none; background: linear-gradient(135deg, #4641ff, #f055dd 35%, #ff5600 70%, #ffc002);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0); }
+.gd-zoomin .gd-svg { display: block; width: 100%; height: auto; padding: 0; }
+.gd-zoomin p { margin: 6px 12px 4px; font-size: 14px; color: var(--gd-soft); }
+.gd-zoomx { position: fixed; top: 14px; right: 14px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .3); background: rgba(20, 20, 28, .8); color: #fff; font: 400 26px/1 var(--sans); cursor: pointer; }
+@keyframes gd-zin { from { opacity: 0; } }
+
+/* key terms in the notes: a dotted underline; the definition shows on hover, focus or tap */
+.co-term { all: unset; cursor: help; font: inherit; color: inherit; border-bottom: 1.5px dotted color-mix(in srgb, var(--c, #40d4b1) 80%, transparent); transition: background .15s; border-radius: 2px; }
+.co-term:hover, .co-term:focus-visible { background: color-mix(in srgb, var(--c, #40d4b1) 16%, transparent); outline: none; }
+.co-tip { position: fixed; z-index: 140; padding: 12px 14px; border-radius: 14px; font-size: 14px; line-height: 1.5; color: var(--fg); pointer-events: none;
+  background: var(--panel-strong, #151826); border: 1px solid var(--line-strong, rgba(var(--ink-rgb), .2)); box-shadow: 0 18px 40px -16px rgba(0, 0, 0, .6); }
+.co-tip b { display: block; margin-bottom: 3px; font: 700 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: #40d4b1; }
+.co-tip[hidden] { display: none; }
+
+/* continue where you left off */
+.co-resume { cursor: pointer; color: var(--fg); border-color: color-mix(in srgb, #40d4b1 60%, transparent); background: color-mix(in srgb, #40d4b1 12%, transparent); font: inherit; font-size: 12.5px; }
+.co-resume .co-ic { color: #40d4b1 !important; }
+.co-resume:hover { background: color-mix(in srgb, #40d4b1 22%, transparent); }
+
+/* the keys for the next and previous lesson, shown where there's a keyboard */
+@media (hover: hover) and (pointer: fine) {
+  .co-pncard.prev small::after { content: "  ·  ←"; opacity: .7; }
+  .co-pncard.next small::before { content: "→  ·  "; opacity: .7; }
+}

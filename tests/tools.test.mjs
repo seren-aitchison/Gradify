@@ -96,14 +96,26 @@ test("Free allowances: 10 lessons per course, 5 flashcard sets, 5 maps, 5 uses o
 test("glass diagrams are drawn from a lesson's own notes, beside the part they show", async () => {
   const text = (await import("../kit/courses/medicine/notes/u01.js")).default;
   const L = parseNotes(text)[1], ds = diagramsFor(L);
-  assert.ok(ds.length >= 2 && ds.length <= 4);
+  assert.equal(ds.length, 5, "five for a lesson");
   assert.deepEqual(ds.map((d) => d.at), [...ds.map((d) => d.at)].sort((a, b) => a - b), "in the lesson's order");
   for (const d of ds) {
-    assert.ok(L.blocks[d.at], "placed after a real block");
-    const svg = diagramSvg(d);
-    assert.match(svg, /^<svg viewBox="0 0 320 200"/);
-    const words = (d.items || []).map((x) => (x.text || x).replace(/…$/, "")).filter(Boolean);
-    for (const w of words) assert.ok(text.replace(/\*\*/g, "").includes(w), `"${w}" is in the notes`);
+    assert.ok(L.blocks[d.at] && L.blocks[d.at].t !== "h", "placed after a real block of notes, not a heading");
+    assert.match(diagramSvg(d), /^<svg viewBox="0 0 480 300"/);
+  }
+  // every word on every diagram is the notes' own: checked across courses, never made up
+  const flat = (t) => String(t).replace(/\*\*|__|`/g, "").replace(/\^\{([^}]*)\}/g, "^$1").replace(/_\{([^}]*)\}/g, "_$1").replace(/\s+/g, " ");
+  const shown = (d) => [d.wrong, d.right, d.text, ...(d.before || []), ...(d.notes || []), ...(d.rows || []).flatMap((r) => [r.f, r.m]),
+    ...(d.items || []).flatMap((x) => (typeof x === "string" ? [x] : [x.text, x.term, x.def, x.q, x.a]))].filter(Boolean);
+  for (const course of ["medicine", "law", "maths", "biology", "nursing", "pharmacy", "history"]) {
+    const notes = (await import(`../kit/courses/${course}/notes/u02.js`)).default, all = flat(notes);
+    for (const L2 of parseNotes(notes).slice(0, 6)) {
+      const ds2 = diagramsFor(L2);
+      assert.ok(ds2.length === 5, `${course}: ${L2.title} has five`);
+      for (const d of ds2) for (const w of shown(d)) {
+        const bit = w.replace(/…$/, "").replace(/[.,;:]+$/, "").trim();
+        if (bit.length > 2) assert.ok(all.includes(bit), `${course} ${d.kind}: "${bit}" is in the notes`);
+      }
+    }
   }
   assert.match(glassDiagram(ds[0]), /class="gd gd-md"/);
   assert.equal(label("**Channels**: ions flow through pores"), "Channels");
