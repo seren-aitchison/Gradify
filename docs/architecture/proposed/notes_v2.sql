@@ -95,7 +95,7 @@ create table public.kb_assets (
   user_id uuid not null default auth.uid() references auth.users (id) on delete cascade,
   kind text not null check (kind in ('pdf', 'image', 'scan', 'drawing', 'audio', 'file')),
   mime text not null check (length(mime) <= 100),
-  bytes bigint not null check (bytes > 0 and bytes <= 200000000),
+  bytes bigint not null check (bytes > 0),      -- per-plan limits are set later, from measured costs, not here
   sha256 text not null check (sha256 ~ '^[0-9a-f]{64}$'),
   pages int,
   storage_path text not null,

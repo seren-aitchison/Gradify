@@ -1,6 +1,6 @@
 # Gradify Notes: architecture review
 
-**Status:** a review and proposal only. Nothing here has been applied. There are no migrations, no deploys and no changes to the Notes code on this branch. The proposed schema is in [`proposed/notes_v2.sql`](proposed/notes_v2.sql), outside `supabase/migrations/`, so no tool picks it up.
+**Status:** a review and proposal only. The decisions in §8 were made on 18 November 2026, and blockers B1 and B2 are fixed on #116. Nothing here has been applied. There are no migrations, no deploys and no changes to the Notes code on this branch. The proposed schema is in [`proposed/notes_v2.sql`](proposed/notes_v2.sql), outside `supabase/migrations/`, so no tool picks it up.
 **Scope:** Gradify Notes as built in [seren-aitchison/Gradify#116](https://github.com/seren-aitchison/Gradify/pull/116) (`kit/notes/kb/`), and how it should grow into the rest of Gradify.
 **Date:** 18 November 2026.
 
@@ -31,7 +31,7 @@ The model is sound. Its main strengths:
 Most of what's recommended below changes **where data is kept and how it moves**. The in-memory model and its API can stay as they are, which keeps the risk to the working feature low.
 
 Four problems stand out:
-1. **Two blockers for #116** (§2): syncing is quadratic and freezes the page once the knowledge base has a few thousand bullets, and the `kb_shares` read policy lets anyone list every shared note.
+1. **Two blockers for #116** (§2): syncing was quadratic and froze the page once the knowledge base had a few thousand bullets, and the `kb_shares` read policy let anyone list every shared note. **Both are now fixed on #116** (commit `338d895`).
 2. **The single-row sync caps the knowledge base at about 8,000 bullets** and re-sends all of it on every save. The fix is per-block rows with a server-assigned version feed (§3).
 3. **Ask your notes can get AI answers in two phases.** Phase 1 uses the existing AI request flow with passages the browser selects. Phase 2 has the server search the learner's own rows under their own permissions (§5).
 4. **Notes can reference official lessons and concepts without copying them.** Lesson ids are already permanent and concept identity already exists (§4, §7).
@@ -61,7 +61,7 @@ Wider Gradify pieces that Notes should build on rather than duplicate:
 
 ## 2. Blockers for PR #116
 
-These should be fixed on #116 before it merges. Each is small and leaves behaviour unchanged.
+**Both fixed on #116 in commit `338d895`**, with regression tests, before it merges. The findings are kept below as found.
 
 **B1. `merge()` is quadratic.** For each rem, `order()` scans every rem to find its children.
 
@@ -74,6 +74,16 @@ These should be fixed on #116 before it merges. Each is small and leaves behavio
 
 The page runs a merge on every sync, 1.5 s after each burst of edits, so a medium-sized knowledge base freezes the page repeatedly. The fix is to build a `parent → children` map once (O(n)) and use a `Set` in place of `kept.includes`. Add a test that merges 10,000 rems within a time budget.
 
+*Fixed:* children are now grouped in one pass, and the loop check remembers ancestor chains known to reach the top level. Its decisions are identical, proved against the pre-fix model on 20 randomised pairs of diverged copies merged both ways. Sync also skips the download and merge when the account copy is still this device's last save.
+
+| Bullets | Before | After |
+|---|---|---|
+| 1,000 | 50 ms | 8 ms |
+| 2,000 | 779 ms | 35 ms |
+| 4,000 | 3.7 s | 59 ms |
+| 8,000 | 17.4 s | 123 ms |
+| 10,000 | 29.6 s | 167 ms |
+
 **B2. The `kb_shares` read policy lets anyone list every shared note.** `for select to anon, authenticated using (public)` allows `select * from kb_shares` with no id, so a visitor with the public anon key can enumerate every public share along with its sharer's `user_id` and `rem`. Sharing is meant to work as "anyone **with the link**".
 
 The fix:
@@ -81,6 +91,15 @@ The fix:
 - add a `security definer` function, `kb_share(p_id uuid)`, that returns only `title`, `snapshot` and `updated_at` for one public id;
 - have `openShare()` call it through `rpc()`;
 - add a test that an anonymous select returns nothing and the function returns only the requested share.
+
+*Fixed:* the select policy is gone; signed-out visitors have no privileges on the table; and `kb_share(uuid)` returns one public share's title, snapshot and date. `tests/kb-db.test.mjs` covers:
+- attempts to list shares, as a visitor and as another learner;
+- no extra fields in what a link returns;
+- private, unknown and malformed ids;
+- revocation;
+- that only the owner can change or delete a share.
+
+Run against the original migration, the listing test fails, which is the leak reproduced.
 
 **B3. Smaller things to record on #116** (not blockers):
 - The real limit is about **8,000 bullets**: an average bullet takes about 230 bytes, against the 1.9 MB row limit. `localStorage`'s usual 5 MB quota is close behind. Drawings use more.
@@ -218,7 +237,7 @@ The autocomplete would offer lessons from the learner's courses alongside their 
 
 This needs no new tables, and works as soon as accounts are switched on.
 
-A new `mode: "notes"` in `course-tutor` (or its own function sharing `_shared/ai.js`). It counts against the `explain` allowance and goes through the usual claim and settle steps.
+A new `mode: "notes"` in `course-tutor` (decided: not a separate function). It counts against the **AI Tutor allowance** (`FEATURE_OF.notes = "tutor"`, decided) and goes through the usual claim and settle steps.
 
 1. The browser runs the existing `ask.js` and sends the question plus at most 8 passages: `{ id, path, text }`, capped at about 1,500 characters each.
 2. The prompt marks the passages as **the learner's own notes, as data, not instructions**. They're kept apart from the curriculum content (step 3).
@@ -259,7 +278,7 @@ kb_asset_text   asset_id, page, text (and a full-text index)   ← search, Ask y
 - **Download:** short-lived signed URLs. The **offline cache** in IndexedDB keeps recently opened assets within a budget (about 200 MB by default) and evicts the least recently used. Everything pinned to a document marked "Available offline" stays.
 - **Compression:** images as now (at most 1200 px, JPEG or WebP). PDFs are kept as they are, because recompressing them in the browser is unreliable. Audio as Opus/WebM through `MediaRecorder`. Drawings stay as vector JSON inside their block until they pass about 100 KB, then move to an asset.
 - **Text extraction:** done in the browser with pdf.js, as now, and uploaded to `kb_asset_text`. Scans get Tesseract OCR as now, and the text is saved with the asset.
-- **Limits per plan:** sizes and total storage per learner, enforced in a server function or a storage policy, and shown in Settings.
+- **Limits per plan:** sizes and total storage per learner, enforced in a server function or a storage policy, and shown in Settings. The values are **set after measuring** real storage, bandwidth and processing costs, and are configuration, not schema.
 - **Moving existing images:** `tool_images` data URLs → Storage objects, in batches, keeping the ids. The old rows are deleted only after the copy is verified, as a separate approved step.
 
 **Dependency: the bucket can't be created by a migration.** The `tool_images` migration notes the migration tool can't create Storage buckets. Creating `kb-assets` is an **owner action** in the Supabase dashboard or CLI, and its `storage.objects` policies need the same rehearsal and review as a migration.
@@ -300,12 +319,25 @@ kb_asset_text   asset_id, page, text (and a full-text index)   ← search, Ask y
 | AI cost and trust | Existing allowances; citations checked; "not covered" shown when it applies |
 | Migrations against live data | `pg-rehearsal` with the allowlist; backups per `docs/RECOVERY.md`; owner approval |
 
-**Decisions needed from you:**
-1. Approve **per-block rows with a version feed** (§3) over a CRDT, with collaboration later on the same model.
-2. Phase 1 of Ask your notes: a **new `course-tutor` mode or a separate function**, and which allowance it counts against (`explain` is suggested).
-3. Embeddings for Ask your notes: **not now** (suggested), or now, with a privacy-page entry.
-4. Storage: create the `kb-assets` bucket, and set the per-plan size limits.
-5. Fixing B1 and B2 on #116 before review continues (recommended).
+**Decisions (made 18 November 2026):**
+
+| Decision | Outcome |
+|---|---|
+| Per-bullet rows or a CRDT | **Per-bullet rows** (§3). Reliable offline sync and conflict handling first; collaborative editing later on the same model |
+| Ask your notes | **A new mode in the existing `course-tutor`**, not a separate function |
+| Its allowance | **The AI Tutor allowance** (`tutor`), not `explain`, so note questions can't become an unmetered route to the tutor |
+| Embeddings | **Deferred.** Start with full-text search under the learner's own permissions, and measure answer quality before adding vector search |
+| File storage | **A private bucket**, created by the owner, with explicit access policies reviewed like a migration |
+| File-size limits | **Not fixed yet.** Set per plan once real storage, bandwidth and processing costs are measured; nothing in the design hard-codes them |
+| Blockers B1, B2 | **Fixed first**, on #116 |
+
+As agreed, per-bullet rows don't solve sync by themselves. The design still has to get these right, and §9 tests each one:
+- updates applied atomically;
+- stable ids;
+- ordering;
+- deletion and tombstones;
+- conflict resolution;
+- an offline queue that's safe to retry.
 
 ## 9. Tests needed
 
@@ -333,7 +365,7 @@ kb_asset_text   asset_id, page, text (and a full-text index)   ← search, Ask y
 
 Each step stands alone and is reviewed separately. Steps marked **(migration)** need your approval, a rehearsal and backups first.
 
-1. Fix B1 and B2 on #116, then finish its review. Nothing else depends on Notes being merged first.
+1. ~~Fix B1 and B2 on #116~~ (done, `338d895`), then finish its review. Nothing else depends on Notes being merged first.
 2. `graph-bridge.js` and the `[[lesson:…]]` references. This is pure code with no database changes, so learners can link notes to lessons straight away.
 3. Ask your notes, phase 1 (a new tutor mode, no tables).
 4. **(migration)** v2 tables, `cards.source_ref`, `kb_push`; then the client that reads v1 and writes v2.
