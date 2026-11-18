@@ -58,10 +58,14 @@ export function sync() {
   if (running) return running.then(() => sync());
   running = (async () => {
     try {
-      const { data, error } = await cloud.from("tool_items").select("body, updated_at").eq("id", ROW).maybeSingle();
-      if (error) throw error;
-      const before = JSON.stringify(kb.rems).length;
-      if (data?.body?.rems) { kb = merge(kb, data.body); persist(); if (JSON.stringify(kb.rems).length !== before || data.updated_at !== status.at) emit(); }
+      // the account's copy, unless it's still the one this device saved last (then there's nothing new to merge)
+      const head = await cloud.from("tool_items").select("updated_at").eq("id", ROW).maybeSingle();
+      if (head.error) throw head.error;
+      if (head.data && head.data.updated_at !== status.at) {
+        const { data, error } = await cloud.from("tool_items").select("body, updated_at").eq("id", ROW).maybeSingle();
+        if (error) throw error;
+        if (data?.body?.rems) { kb = merge(kb, data.body); persist(); emit(); }
+      }
       const body = bodyOf(kb), size = JSON.stringify(body).length;
       if (size > MAX_BYTES) { status.note = "too-big"; return status; }
       const up = await cloud.from("tool_items").upsert({ id: ROW, kind: "kb", title: "Gradify Notes", body, deleted: false }, { onConflict: "user_id,id" }).select("updated_at").single();
@@ -107,7 +111,12 @@ export async function myShares(appStore) { if (appStore?.mode !== "cloud") retur
 export async function openShare(appStore, id) {
   const client = appStore?.db || (window.supabase && (await import("../../../gradify.config.js").then((c) => window.supabase.createClient(c.SUPABASE_URL, c.SUPABASE_ANON_KEY))));
   if (!client) throw new Error("Shared notes need Gradify accounts, which aren't set up here.");
-  const { data, error } = await client.from("kb_shares").select("id, title, snapshot, updated_at").eq("id", id).maybeSingle();
-  if (error || !data) throw new Error("That shared document isn't available. It may have been unshared.");
-  return data;
+  const gone = new Error("That shared document isn't available. It may have been unshared.");
+  // a link with a malformed id is the same as one that's been unshared (and isn't sent to the server)
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(String(id))) throw gone;
+  // kb_share() returns only this one share, and only while it's public: the table itself can't be read
+  const { data, error } = await client.rpc("kb_share", { p_id: id });
+  const row = Array.isArray(data) ? data[0] : data;
+  if (error || !row?.snapshot) throw gone;
+  return { id, ...row };
 }

@@ -520,12 +520,25 @@ export function merge(a, b) {
   }
   // the tree: a rem's own parent is the truth
   for (const r of Object.values(out.rems)) if (r.parent && (!out.rems[r.parent] || r.parent === r.id)) r.parent = null;
-  // break any loop two devices' moves made (a under b on one, b under a on the other)
-  for (const r of Object.values(out.rems)) { const seen = new Set([r.id]); let p = r.parent; while (p) { if (seen.has(p)) { r.parent = null; break; } seen.add(p); p = out.rems[p]?.parent; } }
+  // break any loop two devices' moves made (a under b on one, b under a on the other). Each rem's walk up the tree
+  // stops at the first ancestor already known to reach the top level, so the whole check is linear. That's the same
+  // decision as walking all the way up: a chain that reaches the top can't loop back into the path below it, and
+  // cutting a loop only ever ends chains sooner, so a chain known to be good stays good.
+  const reachesTop = new Set();
+  for (const r of Object.values(out.rems)) {
+    const path = [r.id], seen = new Set(path);
+    let p = r.parent, looped = false;
+    while (p && !reachesTop.has(p)) { if (seen.has(p)) { looped = true; break; } seen.add(p); path.push(p); p = out.rems[p]?.parent; }
+    if (looped) r.parent = null;
+    else for (const x of path) reachesTop.add(x);
+  }
+  // each parent's children, found in one pass (in the rems' own order, so ties sort exactly as before)
+  const childrenOf = new Map();
+  for (const r of Object.values(out.rems)) { if (!childrenOf.has(r.parent)) childrenOf.set(r.parent, []); childrenOf.get(r.parent).push(r.id); }
   const order = (list, parent) => {
-    const mine = Object.values(out.rems).filter((r) => r.parent === parent).map((r) => r.id), set = new Set(mine);
-    const kept = [...new Set(list)].filter((id) => set.has(id));
-    return [...kept, ...mine.filter((id) => !kept.includes(id)).sort((p, q) => out.rems[p].c - out.rems[q].c)];
+    const mine = childrenOf.get(parent) || [], set = new Set(mine);
+    const kept = [...new Set(list)].filter((id) => set.has(id)), keptSet = new Set(kept);
+    return [...kept, ...mine.filter((id) => !keptSet.has(id)).sort((p, q) => out.rems[p].c - out.rems[q].c)];
   };
   for (const r of Object.values(out.rems)) r.kids = order(r.kids, r.id);
   const newer = b.u > a.u ? b : a;

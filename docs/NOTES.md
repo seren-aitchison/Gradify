@@ -20,6 +20,10 @@
 
 Apply `supabase/migrations/20261120120000_notes_knowledge_base.sql` (allows `tool_items.kind = 'kb'` and adds `kb_shares`). Until then, notes work on the device and sharing says it isn't switched on.
 
+**Sharing and privacy.** Only a share's owner can read, change or delete its `kb_shares` row. A visitor or another learner can't select from the table at all. A share link is opened with `kb_share(id)`, a security-definer function that returns that one share's title, snapshot and date while it's public, and never the sharer's user id or the note's id. Unsharing deletes the row, so the link stops working at once; an unknown, private or malformed id opens nothing. `tests/kb-db.test.mjs` checks all of this on real PostgreSQL with Supabase's default privileges.
+
+**Sync cost.** `merge()` is linear (about 170 ms for 10,000 bullets; it was 29.6 s before the fix), and a sync only downloads and merges the account's copy when another device has changed it since this one last saved.
+
 ## Known limits
 
 - The whole knowledge base syncs as one row (merged bullet by bullet). Past about 1.9 MB it stays on the device and the sidebar says so. Per-document rows are the next step.

@@ -283,3 +283,68 @@ test("ask your notes: finds the passage that answers, and quotes it", async () =
   const pdf = A.rank(A.passages(kb, [{ id: "p", doc: "p", path: ["Lecture.pdf", "page 3"], text: "Equilibrium constants depend on temperature." }]), "equilibrium temperature");
   assert.equal(pdf[0].id, "p");
 });
+
+// ---------- merge: linear time, the same result as before ----------
+const BEFORE = await import("./fixtures/kb-model-before-linear-merge.mjs");
+let seed = 7;
+const rand = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
+/** Two device copies of one base, diverged: edits, moves (some making loops between the copies), deletions, new rems. */
+function diverged(n) {
+  const base = M.emptyKb();
+  const docs = Array.from({ length: Math.max(2, Math.round(n / 100)) }, (_, i) => M.create(base, { text: `Doc ${i}`, doc: true }));
+  const ids = [];
+  for (let i = 0; i < n; i++) { const p = ids.length && rand() < 0.6 ? ids[Math.floor(rand() * ids.length)] : docs[Math.floor(rand() * docs.length)].id; ids.push(M.create(base, { parent: p, text: `r${i}` }).id); }
+  for (const r of Object.values(base.rems)) r.c = Math.floor(rand() * 50);   // ties in creation time, on purpose
+  const a = structuredClone(base), b = structuredClone(base);
+  for (const [k, side] of [[0, a], [1, b]]) {
+    for (let i = 0; i < n / 20; i++) {
+      const x = ids[Math.floor(rand() * ids.length)], r = side.rems[x]; if (!r) continue;
+      const roll = rand();
+      if (roll < 0.4) { r.text += ` (${k})`; r.u += 1 + Math.floor(rand() * 20); }
+      else if (roll < 0.7) { const to = ids[Math.floor(rand() * ids.length)]; if (to !== x && side.rems[to]) { r.parent = to; side.rems[to].kids.push(x); r.u += 1 + Math.floor(rand() * 20); } }
+      else if (roll < 0.8) M.remove(side, x);
+      else M.create(side, { parent: x, text: `new ${k}${i}` });
+    }
+    side.u += k + 1;
+  }
+  // a deliberate loop across the two copies, and a duplicate in a child list
+  const [p, q] = [ids[1], ids[2]];
+  if (a.rems[p] && a.rems[q] && b.rems[p] && b.rems[q]) { a.rems[p].parent = q; a.rems[p].u += 99; b.rems[q].parent = p; b.rems[q].u += 99; }
+  const d = docs[0].id; a.rems[d].kids.push(a.rems[d].kids[0]);
+  return [a, b];
+}
+const shape = (kb) => ({ roots: kb.roots, tree: Object.fromEntries(Object.values(kb.rems).map((r) => [r.id, [r.parent, r.kids, r.text]])), gone: Object.keys(kb.gone).sort() });
+
+test("merge gives exactly the same result as before the speed-up, on 20 randomised pairs of copies", () => {
+  for (let k = 0; k < 20; k++) {
+    const [a, b] = diverged(300 + k * 40);
+    const now = shape(M.merge(structuredClone(a), structuredClone(b))), then = shape(BEFORE.merge(structuredClone(a), structuredClone(b)));
+    assert.deepEqual(now, then, `pair ${k}`);
+    // and both ways round
+    assert.deepEqual(shape(M.merge(structuredClone(b), structuredClone(a))), shape(BEFORE.merge(structuredClone(b), structuredClone(a))), `pair ${k}, reversed`);
+  }
+});
+
+test("merge always leaves a valid tree: no loops, every rem listed once by its parent", () => {
+  for (let k = 0; k < 10; k++) {
+    const m = M.merge(...diverged(500));
+    const listed = new Map();
+    for (const id of m.roots) listed.set(id, null);
+    for (const r of Object.values(m.rems)) for (const c of r.kids) { assert.ok(!listed.has(c), "listed once"); listed.set(c, r.id); }
+    for (const r of Object.values(m.rems)) {
+      assert.equal(listed.get(r.id), r.parent, "listed by the parent it names");
+      const seen = new Set(); let p = r.parent; while (p) { assert.ok(!seen.has(p), "no loops"); seen.add(p); p = m.rems[p].parent; }
+    }
+  }
+});
+
+test("merge takes linear time: 1,000 to 10,000 bullets (it took 29 s at 10,000 before)", () => {
+  const times = {};
+  for (const n of [1000, 2000, 4000, 8000, 10000]) {
+    const [a, b] = diverged(n);
+    const t = performance.now(); M.merge(a, b); times[n] = performance.now() - t;
+  }
+  // generous for slow machines: quadratic growth would be ~100× from 1,000 to 10,000, linear ~10×
+  assert.ok(times[10000] < 3000, `10,000 bullets merged in ${Math.round(times[10000])} ms`);
+  assert.ok(times[10000] / Math.max(times[1000], 5) < 40, `growth ${JSON.stringify(Object.fromEntries(Object.entries(times).map(([k, v]) => [k, Math.round(v)])))}`);
+});
