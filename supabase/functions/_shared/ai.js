@@ -25,9 +25,17 @@ export const CONVERSATION_MODES = ["roleplay", "socratic", "examiner"];
 const day = (iso) => (iso ? new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", timeZone: "Europe/London" }) : null);
 const plural = (f, n) => (LABEL[f] ? LABEL[f][n === 1 ? 0 : 1] : "uses");
 
+/** When the fair-use spend resets: the 1st of next month, 00:00 UTC. ai_user_month_spend_pence counts from
+ * date_trunc('month', now()) in the database's time zone (UTC on Supabase), not from the learner's billing period. */
+export function fairUseResetsAt(now = Date.now()) {
+  const d = new Date(now);
+  return new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1)).toISOString();
+}
+
 /** The learner-facing answer when a claim is refused. */
-export function refusal(claim, mode) {
-  const feature = FEATURE_OF[mode] ?? null, resetsAt = claim.period_end ?? null, on = day(resetsAt);
+export function refusal(claim, mode, now = Date.now()) {
+  // allowances reset with the learner's period; the fair-use cap resets with the calendar month
+  const feature = FEATURE_OF[mode] ?? null, resetsAt = claim.reason === "fair_use" ? fairUseResetsAt(now) : claim.period_end ?? null, on = day(resetsAt);
   const base = { reason: claim.reason, feature, plan: claim.plan ?? null, used: claim.used ?? 0, allowance: claim.allowance ?? 0, resetsAt, upgrade: false };
   switch (claim.reason) {
     case "signed_out": return { status: 401, body: { ...base, error: "Please sign in to use Gradify AI." } };

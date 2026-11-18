@@ -310,6 +310,23 @@ test("fair-use cap: a request whose worst case would pass the cap is refused bef
   await x.close();
 });
 
+test("fair-use cap: a request that exactly fills the cap is allowed; one a fraction over is refused", async () => {
+  const x = await db();
+  await x.owner(`${OPEN}; update public.ai_plan_caps set monthly_pence = 1000000 where plan = 'free'`);
+  const r1 = await x.claim(A, "explain"); await x.settle(A, r1.usage_id, { input: 1000, output: 1000 });
+  // what the next claim reserves: its worst case at the feature's own model
+  const [{ m }] = await x.owner("select coalesce((select model from public.ai_feature_models where feature = 'explain'), 'claude-opus-5-5') as m");
+  const next = await capCost(x, m, 500, 500), before = await spent(x, A);
+  // a cap a fraction short of spend + this request: refused
+  await x.owner(`update public.ai_plan_caps set monthly_pence = ${before + next - 0.0001} where plan = 'free'`);
+  assert.equal((await x.claim(A, "explain", { input: 500, output: 500 })).reason, "fair_use");
+  // exactly spend + this request: allowed, and spend lands on the cap (a >= check would refuse it)
+  await x.owner(`update public.ai_plan_caps set monthly_pence = ${before + next} where plan = 'free'`);
+  assert.ok((await x.claim(A, "explain", { input: 500, output: 500 })).usage_id, "a request that exactly fills the cap");
+  assert.equal(await spent(x, A), before + next, "spend equals the cap");
+  await x.close();
+});
+
 test("fair-use cap: in-flight requests count at their worst case, so two at once can't share the last room", async () => {
   const x = await db();
   const est = await capCost(x, "claude-opus-5-5", 1000, 1000);
