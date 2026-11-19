@@ -75,7 +75,7 @@ Run 2026-11-19 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 
 | Course | Lessons | Overall | Accuracy | Completeness | Clarity | Progression | Application | Assessment | Accessibility | Engagement | Retention |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Physics | 1308 | **57** | 21 | 22 | 86 | 25 | 86 | 66 | 84 | 84 | 40 |
+| Physics | 1308 | **58** | 22 | 24 | 87 | 27 | 86 | 67 | 85 | 84 | 41 |
 | Law | 480 | **66** | 54 | 97 | 94 | 3 | 37 | 68 | 100 | 55 | 88 |
 | Pharmacy | 318 | **72** | 51 | 96 | 99 | 8 | 68 | 81 | 100 | 65 | 77 |
 | Nursing | 497 | **74** | 49 | 98 | 98 | 47 | 50 | 89 | 100 | 56 | 75 |
@@ -115,20 +115,20 @@ Run 2026-11-19 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Fix | Lessons |
 |---|---|
 | Add flashcards for spaced retrieval (Q:) | 9,692 |
-| Name what this builds on (PRE:) | 5,801 |
-| State the level (LV:) | 3,432 |
-| Say how strong the evidence is (EV:) | 3,148 |
-| Even out answer lengths | 3,081 |
-| Teach every objective | 2,051 |
-| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,577 |
-| Add check questions | 1,574 |
+| Name what this builds on (PRE:) | 5,776 |
+| State the level (LV:) | 3,406 |
+| Say how strong the evidence is (EV:) | 3,122 |
+| Even out answer lengths | 3,083 |
+| Teach every objective | 2,056 |
+| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,555 |
+| Add check questions | 1,552 |
 | Add a worked example (X:) | 1,265 |
-| Cite at least two sources (SRC:) | 1,083 |
-| Date every source, so it can be rechecked | 1,008 |
-| State at least two learning objectives (O:) | 1,008 |
-| Define the key terms (T:) | 1,008 |
-| End with a summary (SUM:) | 1,008 |
-| Define terms where they're first used (T:) | 1,008 |
+| Cite at least two sources (SRC:) | 1,057 |
+| Date every source, so it can be rechecked | 982 |
+| State at least two learning objectives (O:) | 982 |
+| Define the key terms (T:) | 982 |
+| End with a summary (SUM:) | 982 |
+| Define terms where they're first used (T:) | 982 |
 
 ## The 30 lessons to improve first
 
@@ -161,9 +161,9 @@ Run 2026-11-19 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Physics | Climate sensitivity | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Biomechanics | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Neural signal processing | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
-| Physics | Partition functions | 43 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Magnetic dipoles | 43 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Quantum measurement | 43 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
+| Physics | Density matrices | 43 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 
 ## The constitution, article by article
 
