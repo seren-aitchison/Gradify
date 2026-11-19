@@ -24,6 +24,12 @@ for (const slug of slugs) {
   const res = await fetch(`${API}/functions/deploy?slug=${slug}`, { method: "POST", headers: auth, body: form });
   const out = await res.json().catch(() => ({}));
   if (!res.ok) throw new Error(`${slug}: deploy failed (${res.status}) ${JSON.stringify(out).slice(0, 300)}`);
-  const after = await (await fetch(`${API}/functions/${slug}`, { headers: auth })).json();
+  let after = null;
+  for (let i = 0; i < 3 && !after; i++) {   // read back only; never redeploy
+    const r = await fetch(`${API}/functions/${slug}`, { headers: auth });
+    const body = await r.json().catch(() => null);
+    if (r.ok && body?.version && body?.status) after = body; else await new Promise((ok) => setTimeout(ok, 2000));
+  }
+  if (!after) { console.error(`${slug}: deployed, but reading it back failed; check it in the Supabase dashboard.`); process.exit(1); }
   console.log(`${slug}: v${before.version} → v${after.version}, ${after.status}, verify_jwt ${after.verify_jwt}, files ${[entry, ...shared].join(", ")}`);
 }

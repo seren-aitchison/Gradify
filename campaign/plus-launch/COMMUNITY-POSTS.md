@@ -40,11 +40,12 @@ the tags until the visitor makes an account, where they're stored as `first_touc
 19 November: 8 sign-ups since 1 November, all before tracking, 0 paying):
 
 ```sql
--- registrations, opened Pro checkout, paying Pro: by the link that first brought each account
+-- registrations, opened Pro checkout, and currently paying Pro: by the link that first brought each account
+-- (paying_pro_now drops anyone who has since cancelled; Stripe → Payments has every purchase)
 select coalesce(u.raw_user_meta_data->'first_touch'->>'utm_source', '(no source)') as source,
        count(*) as registrations,
        count(s.stripe_customer_id) as opened_checkout,
-       count(s.user_id) filter (where s.plan = 'plus' and s.status in ('active', 'trialing', 'past_due')) as paying_pro
+       count(s.user_id) filter (where s.plan = 'plus' and s.status in ('active', 'trialing', 'past_due')) as paying_pro_now
 from auth.users u
 left join public.subscriptions s on s.user_id = u.id
 where u.created_at >= '2026-11-19'
@@ -104,7 +105,7 @@ with a stated self-promotion or resources channel. Add each to the table with it
 >
 > There's also **Gradify Pro**, which plans your revision week for you around your free time, shows how ready you are
 > for an exam, and ranks what to revise next. Launch offer until **Sunday 22 Nov (23:59 UK)**: **£5 for your first
-> month**, then £10/month, cancel any time. The code applies itself through this link:
+> month**, then £10/month, cancel any time (first Gradify Pro subscription only). The code applies itself through this link:
 > 👉 LINK
 >
 > I'm a solo founder, so honest feedback (what's confusing, what's missing) genuinely helps. Happy to answer anything here.
@@ -113,7 +114,7 @@ with a stated self-promotion or resources channel. Add each to the table with it
 
 > 📚 I built **Gradify**, a free revision site: courses (GCSE → uni), flashcards with spaced repetition, practice
 > questions, and flashcards made from your own notes. Free, no card. Pro plans your revision week for you: **£5 first
-> month** until Sun 22 Nov (then £10/mo, cancel any time) 👉 LINK
+> month** until Sun 22 Nov (then £10/mo, cancel any time; first Pro subscription only) 👉 LINK
 > I'm the founder, so feedback very welcome!
 
 ### 3. GCSE / A-level version
@@ -128,7 +129,7 @@ with a stated self-promotion or resources channel. Add each to the table with it
 >
 > Free, no card needed. If you want it to plan your revision for you, **Gradify Pro** fits sessions into your free
 > time, shows how ready you are for your exams and what to revise next. **£5 for the first month** until Sunday
-> 22 Nov (then £10/month, cancel any time) 👉 LINK
+> 22 Nov (then £10/month, cancel any time; first Pro subscription only) 👉 LINK
 >
 > Tell me what your exam board / subjects are and what's missing: I'm building this actively.
 
@@ -144,8 +145,8 @@ with a stated self-promotion or resources channel. Add each to the table with it
 > • **Pro:** a weekly plan built around your free time and exam dates, readiness forecasts, timed exams, and calendar
 >   sync with Google/Apple/Outlook
 >
-> Free to use. Pro launch offer: **£5 first month** until Sun 22 Nov 23:59 UK, then £10/month, cancel any time
-> 👉 LINK
+> Free to use. Pro launch offer: **£5 first month** until Sun 22 Nov 23:59 UK, then £10/month, cancel any time (first Pro subscription
+> only) 👉 LINK
 >
 > I'm the founder; I'd really value hearing how your course revises and where this falls short.
 
@@ -196,7 +197,7 @@ one day.
 >
 > **The paid part (Gradify Pro, £10/month):** it plans your week around your free time and exam dates, forecasts
 > readiness, ranks what to revise next with a reason, and adds timed exams and calendar sync. This week it's £5 for
-> the first month (until Sunday 22 Nov, 23:59 UK; cancel any time).
+> the first month (until Sunday 22 Nov, 23:59 UK; first Pro subscription only; cancel any time).
 >
 > Link: LINK
 >
@@ -213,7 +214,7 @@ one day.
 > Free, no card.
 >
 > There's a paid tier that plans your revision for you; it's £5 for the first month until Sunday 22 Nov (then
-> £10/month). You don't need it to use the site.
+> £10/month; first Pro subscription only). You don't need it to use the site.
 >
 > LINK
 >
@@ -227,7 +228,7 @@ one day.
 > flashcards it suggests, everything uses spaced repetition, and there are courses for medicine, law, nursing,
 > pharmacy, engineering, computing, psychology and more. Free to use.
 >
-> The paid tier (£10/month; £5 first month until Sun 22 Nov) plans your week around your free time and exam dates,
+> The paid tier (£10/month; £5 first month until Sun 22 Nov, first Pro subscription only) plans your week around your free time and exam dates,
 > forecasts readiness, adds timed exams and syncs with Google/Apple/Outlook calendars.
 >
 > Disclosure: it's mine. LINK
@@ -244,7 +245,8 @@ one day.
 >
 > I ended up building those ideas into a site, **Gradify** (getgradify.com; I'm the founder): flashcards with spaced
 > repetition, a revision queue that says why each item is next, and a weekly plan that moves when you miss a day. The
-> free part covers flashcards and courses; the planning is in a paid tier (£5 first month this week).
+> free part covers flashcards and courses; the planning is in a paid tier (£5 first month until Sun 22 Nov, first
+> Pro subscription only): LINK
 >
 > But I'm more interested in your answers: what's worked for you?
 
@@ -252,7 +254,7 @@ one day.
 
 > **Gradify** (getgradify.com): free revision site, GCSE to university. Courses with practice questions, flashcards
 > with spaced repetition, flashcards from your own notes. Pro (£10/mo) plans your revision week; £5 first month until
-> Sun 22 Nov. I'm the founder; feedback welcome. LINK
+> Sun 22 Nov (first Pro subscription only). I'm the founder; feedback welcome. LINK
 
 ## Posting schedule (Thursday 19 to Sunday 22 November)
 
@@ -280,4 +282,5 @@ What the research found (19 November):
   addresses. Only use an address the organisation publishes for that purpose, and check it's the organisation itself
   (a company, university or charity), not an individual or an unincorporated society.
 
-Keep `campaign/plus-launch/do-not-contact.md`: anyone who says no, or doesn't want contact, goes on it the same day.
+Before each email, check `campaign/plus-launch/do-not-contact.md` and skip anyone on it. Anyone who says no, or
+doesn't want contact, goes on it the same day.
