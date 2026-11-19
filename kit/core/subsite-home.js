@@ -8,6 +8,8 @@ import { modelOf } from "../models/index.js";
 import { applyPrefs } from "../data/profile.js";
 import { trackView } from "./analytics.js";
 import { hydrate as glassIcons, cluster as glassCluster } from "./glass-icons.js";
+// the Blender preview renders of a model, at the widths scripts/blender/encode-previews.mjs makes
+const pv = (model, type) => [960, 1920, 3840].map((w) => `../kit/models/previews/${model.file.replace(".js", "")}-${w}.${type} ${w}w`).join(", ");
 applyPrefs();
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
@@ -39,7 +41,7 @@ export function renderHome(el, siteName) {
     section("how", fill(k.stepsTitle), "", `<ol class="sm-steps">${k.steps.map(([t, d], i) => `<li class="glass"><em>${i + 1}</em><b>${fill(t)}</b><p>${fill(d)}</p></li>`).join("")}</ol>`),
 
     // sites with a 3D model get a section for it
-    model ? `<section class="sm-sec sm-3d glass"><div><span class="sm-kicker">New · 3D model</span><h2>${esc(model.title)}</h2><p>${esc(model.blurb)}</p><div class="sub-ctas"><a class="btn btn-light lg" href="3d.html"><span>Open ${esc(model.nav)}</span> <span aria-hidden="true">→</span></a></div></div><a class="sm-3d-art" href="3d.html" aria-label="Open the 3D model" style="background-image:url(../kit/models/previews/${model.file.replace(".js", ".webp")})"><span></span></a></section>` : "",
+    model ? `<section class="sm-sec sm-3d glass"><div><span class="sm-kicker">New · 3D model</span><h2>${esc(model.title)}</h2><p>${esc(model.blurb)}</p><div class="sub-ctas"><a class="btn btn-light lg" href="3d.html"><span>Open ${esc(model.nav)}</span> <span aria-hidden="true">→</span></a></div></div><a class="sm-3d-art" href="3d.html" aria-label="Open the 3D model"><picture><source type="image/avif" srcset="${pv(model, "avif")}" sizes="(max-width: 760px) 100vw, 50vw"><img src="../kit/models/previews/${model.file.replace(".js", ".webp")}" srcset="${pv(model, "webp")}" sizes="(max-width: 760px) 100vw, 50vw" alt="" loading="lazy" decoding="async"></picture><span></span></a></section>` : "",
 
     section("topics", fill(k.topicsTitle), fill(k.topicsSub), `<div class="sm-topics">${c.topics.map(([t, d]) => `<a class="sm-topic glass" href="app.html"><span class="sm-tico" data-g3d="${esc(`${t} ${d}`)}" data-g3d-size="54" data-g3d-unique></span><b>${esc(t)}</b><span>${esc(d)}</span><span class="go" aria-hidden="true">→</span></a>`).join("")}</div>`),
 

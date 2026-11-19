@@ -1,13 +1,18 @@
 // Gradify service worker: lets the site open offline.
 // Network first, so a new deploy shows straight away; the cache is the fallback.
-const CACHE = "gradify-v91";
+const CACHE = "gradify-v92";
+// Heavy files that rarely change (3D models, vendor libraries, preview renders, fonts) live in their own cache
+// that a new deploy doesn't throw away: they're served from it at once and refreshed in the background
+// (stale-while-revalidate), so a 3D page opens without re-downloading megabytes.
+const ASSETS = "gradify-assets-v1";
+const HEAVY = /\/kit\/vendor\/|\/kit\/models\/previews\/|\.(glb|avif|webp|woff2?)(\?|$)/;
 const SHELL = [
   "./", "index.html", "app.html", "manifest.webmanifest", "gradify.config.js",
   // homepage
   "assets/styles.css", "assets/app.js", "assets/proof.js", "assets/nav.js", "assets/features.js", "assets/favicon.svg", "assets/icons/icon-192.png", "assets/icons/icon-512.png",
   // the Gradify Kit
   "kit/styles/base.css", "kit/styles/components.css",
-  "kit/core/icons.js", "kit/core/colour.js", "kit/core/sites.js", "kit/core/site.js", "kit/core/subnav.js", "kit/core/site-pages.js", "kit/core/site-content.js", "kit/core/subsite-home.js", "kit/core/site-maps.js", "kit/earth/subject-map.js", "kit/learning/topic-match.js", "kit/models/viewer.js", "kit/models/index.js", "kit/models/anatomy-glb.js", "kit/vendor/three/addons/GLTFLoader.js", "kit/vendor/three/addons/meshopt_decoder.module.js", "kit/vendor/three/addons/BufferGeometryUtils.js", "kit/styles/model.css", "kit/vendor/three/addons/EffectComposer.js", "kit/vendor/three/addons/RenderPass.js", "kit/vendor/three/addons/ShaderPass.js", "kit/vendor/three/addons/MaskPass.js", "kit/vendor/three/addons/Pass.js", "kit/vendor/three/addons/UnrealBloomPass.js", "kit/vendor/three/addons/OutputPass.js", "kit/vendor/three/addons/CopyShader.js", "kit/vendor/three/addons/LuminosityHighPassShader.js", "kit/vendor/three/addons/OutputShader.js", "kit/vendor/three/addons/RoomEnvironment.js", "kit/vendor/three/three.module.min.js", "kit/vendor/three/OrbitControls.js", "kit/styles/subsite.css",
+  "kit/core/icons.js", "kit/core/colour.js", "kit/core/sites.js", "kit/core/site.js", "kit/core/subnav.js", "kit/core/site-pages.js", "kit/core/site-content.js", "kit/core/subsite-home.js", "kit/core/site-maps.js", "kit/earth/subject-map.js", "kit/learning/topic-match.js", "kit/models/viewer.js", "kit/models/index.js", "kit/models/anatomy-glb.js", "kit/core/render-quality.js", "kit/vendor/three/addons/GTAOPass.js", "kit/vendor/three/addons/GTAOShader.js", "kit/vendor/three/addons/PoissonDenoiseShader.js", "kit/vendor/three/addons/SimplexNoise.js", "kit/vendor/three/addons/GLTFLoader.js", "kit/vendor/three/addons/meshopt_decoder.module.js", "kit/vendor/three/addons/BufferGeometryUtils.js", "kit/styles/model.css", "kit/vendor/three/addons/EffectComposer.js", "kit/vendor/three/addons/RenderPass.js", "kit/vendor/three/addons/ShaderPass.js", "kit/vendor/three/addons/MaskPass.js", "kit/vendor/three/addons/Pass.js", "kit/vendor/three/addons/UnrealBloomPass.js", "kit/vendor/three/addons/OutputPass.js", "kit/vendor/three/addons/CopyShader.js", "kit/vendor/three/addons/LuminosityHighPassShader.js", "kit/vendor/three/addons/OutputShader.js", "kit/vendor/three/addons/RoomEnvironment.js", "kit/vendor/three/three.module.min.js", "kit/vendor/three/OrbitControls.js", "kit/styles/subsite.css",
   "kit/app/main.js", "kit/app/cockpit.js", "kit/app/intel-views.js", "kit/intel/memory.js", "kit/intel/priority.js", "kit/intel/schedule.js", "kit/intel/ask.js", "kit/intel/model.js", "kit/intel/coach.js", "kit/intel/ical.js", "kit/intel/calsync.js", "kit/intel/autopilot.js", "kit/intel/nlp.js", "kit/app/autopilot-views.js", "kit/app/widgets.js", "kit/app/notify-views.js", "kit/intel/debt.js", "kit/intel/calibrate.js", "kit/intel/ledger.js", "kit/intel/nudges.js", "kit/core/push.js", "kit/course/lesson-time.js", "kit/core/haptics.js", "kit/core/complete.js", "kit/core/install.js", "kit/core/glass-icons.js", "kit/core/theme-boot.js", "kit/app/intel3-views.js", "kit/intel/identity.js", "kit/intel/graph.js", "kit/intel/order.js", "kit/intel/cardgen.js", "kit/intel/experiments.js", "kit/intel/readiness.js", "kit/icons3d/gradify.js", "kit/app/app.css", "kit/data/store.js", "kit/data/functions.js", "kit/data/profile.js", "kit/data/billing.js", "kit/data/plan.js", "kit/core/analytics.js", "kit/core/attribution.js", "kit/learning/pace.js",
   "kit/learning/srs.js", "kit/learning/goal-data.js", "kit/learning/course-states.js", "kit/learning/concepts.js", "kit/learning/goals.js", "kit/game/engine.js", "kit/game/journey.js", "kit/game/challenges.js", "kit/game/achievements.js", "kit/game/quests.js", "kit/data/waitlist.js", "assets/pro.js", "kit/learning/typed.js", "kit/learning/focus.js", "kit/learning/mastery.js", "kit/learning/evidence-class.js", "kit/learning/targets.js", "kit/learning/achievements.js", "kit/learning/mastery-view.js", "kit/learning/learner-data.js", "kit/lifeos/mine.js",
   "kit/course/course.js", "kit/course/notes.js", "kit/maps/build.js", "kit/maps/view.js", "kit/maps/spider.js", "kit/maps/maps.css", "kit/core/glass-diagrams.js", "kit/data/limits.js", "kit/tools/tools.js", "kit/tools/tools.css", "kit/tools/search.js", "kit/tools/cards.js", "kit/tools/store.js", "kit/tools/convert.js", "kit/tools/mapmaker.js", "kit/tools/cardmaker.js", "kit/tools/converter.js", "kit/core/access-panel.js", "kit/intel/session.js", "kit/app/session-views.js", "kit/tools/material.js", "kit/tools/pick.js", "kit/tools/voice.js", "kit/tools/learn.js", "kit/tools/practise.js", "kit/tools/notebook.js", "kit/tools/handwriting.js", "kit/tools/youtube.js", "kit/tools/projects.js", "kit/app/community.js", "kit/vendor/mind-elixir/MindElixir.js", "kit/vendor/mind-elixir/MindElixir.css", "kit/vendor/liquid-glass/tokens.css", "kit/vendor/liquid-glass/glass-toolbar.css", "kit/vendor/liquid-glass/glass-segmented.css", "kit/vendor/liquid-glass/glass-search.css", "kit/vendor/liquid-glass/glass-surface.css", "kit/vendor/liquid-glass/liquid-glass.js", "kit/course/road.js", "kit/course/syllabus.js", "kit/core/text.js", "kit/assess/questions.js", "kit/assess/model.js", "kit/assess/types.js", "kit/assess/attempts.js", "kit/assess/exam.js", "kit/assess/tutor.js", "kit/assess/tutor-view.js", "kit/course/tutor-panel.js", "kit/course/lab-state.js", "kit/styles/course.css", "kit/courses/physics/course.js", "kit/courses/physics/interactives.js", "kit/courses/physics/syllabus.js", "kit/courses/law/course.js", "kit/courses/law/syllabus.js", "kit/courses/law/qa.js", "kit/courses/law/ids.js", "kit/courses/law/registry.js", "kit/courses/law/map.js", "kit/courses/nursing/course.js", "kit/courses/nursing/syllabus.js", "kit/courses/nursing/qa.js", "kit/courses/nursing/ids.js", "kit/courses/nursing/registry.js", "kit/courses/nursing/map.js",
@@ -56,7 +61,7 @@ self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL.map((u) => new Request(u, { cache: "reload" })))).then(() => self.skipWaiting()));
 });
 self.addEventListener("activate", (e) => {
-  e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim()));
+  e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE && k !== ASSETS).map((k) => caches.delete(k)))).then(() => self.clients.claim()));
 });
 self.addEventListener("fetch", (e) => {
   const req = e.request;
@@ -64,6 +69,15 @@ self.addEventListener("fetch", (e) => {
   const sameOrigin = new URL(req.url).origin === location.origin;
   const isFont = /fonts\.(googleapis|gstatic)\.com$/.test(new URL(req.url).hostname);
   if (!sameOrigin && !isFont) return;
+  if (sameOrigin && HEAVY.test(new URL(req.url).pathname) && !req.headers.has("range")) {
+    e.respondWith(caches.open(ASSETS).then(async (c) => {
+      const hit = await c.match(req);
+      const fresh = fetch(req, { cache: "no-cache" }).then((res) => { if (res.ok) c.put(req, res.clone()); return res; });
+      if (hit) { e.waitUntil(fresh.catch(() => {})); return hit; }
+      return fresh;
+    }));
+    return;
+  }
   e.respondWith(
     // same-origin files are revalidated with the server (a cheap 304 when unchanged): a module from the HTTP cache can be
     // older than the module importing it, and after a deploy that mix fails to load
