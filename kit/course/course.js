@@ -2256,6 +2256,9 @@ export function mountCourse(root, cfg) {
     unmountIx();
     lt.stop();
     lessonRail = null; readStop?.(); routeStop?.(); routeStop = null;
+    // a dialog belongs to the view it opened on (the lesson-complete summary, a celebration, flashcards): moving to
+    // another place by link, Back or the search closes it, so it never sits over the next page
+    document.querySelectorAll(".co-modal").forEach((m) => m.remove());
     curLesson = null; curN = null; combo = 0;
     // a learner who has started lands on Home; someone new lands on the course's overview when it has one
     const started = Object.keys(S.done).length || (S.log || []).length || (S.recent || []).length;
