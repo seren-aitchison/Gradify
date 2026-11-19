@@ -185,6 +185,15 @@ test("each kind of card has the ways to practise that suit it, and the small car
     }
   }
   assert.ok(seen >= 10, "lessons get small cards");
+  // review fixes: a grouped number is never half-covered; a tie in dates can't be put in order; a small map has no buttons;
+  // the Recap's questions are left out exactly, not by their first words
+  const numL = { title: "t", blocks: [{ t: "h", x: "A" }, { t: "p", x: "The band runs from 1,000,000 Hz up. A fibre is about 25 kHz here. Another 40% now." }], cards: [] };
+  assert.deepEqual(minisFor(numL)[0].items.map((l) => l.n), ["25 kHz", "40%"]);
+  assert.ok(!modes({ kind: "timeline", title: "t", items: [{ year: "1900", text: "a" }, { year: "1900", text: "b" }, { year: "2000", text: "c" }] }).includes("order"));
+  assert.doesNotMatch(glassDiagram({ kind: "map", title: "M", items: ["One", "Two", "Three"] }, { size: "sm", caption: false }), /<button/);
+  const qL = { title: "t", blocks: [{ t: "h", x: "Osmosis" }, { t: "p", x: "Osmosis moves water across membranes towards solutes." }], cards: [["What is osmosis? How does it differ from diffusion?", "Water moving across membranes towards solutes."]] };
+  assert.equal(minisFor(qL, { skipQ: ["What is osmosis?"] })[0]?.kind, "check", "a longer question isn't dropped for starting the same way");
+  assert.equal(minisFor(qL, { skipQ: ["What is osmosis? How does it differ from diffusion?"] }).length, 0, "an exact repeat is");
   // a card in a lesson carries its key, so it can remember what's been practised on it; a small card does too
   assert.match(glassDiagram({ kind: "key", title: "k", text: "an idea" }, { key: "med:u01-02:key-3" }), /data-gd-key="med:u01-02:key-3"/);
   assert.doesNotMatch(glassDiagram({ kind: "key", title: "k", text: "an idea" }, { key: "x", size: "sm" }), /data-gd-key/, "not on a flashcard");

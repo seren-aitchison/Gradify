@@ -1040,14 +1040,15 @@ export function mountCourse(root, cfg) {
   // each card's key (course, lesson, card) is how it remembers, on this device, what the learner has practised on it
   const lessonCards = (N, lid) => {
     const ds = diagramsFor(N, { skip: ["path"] });
-    return ds.map((d, k) => ({ d, recap: RECAP_KINDS.has(d.kind), opts: { n: k + 1, of: ds.length, id: `co-d${k + 1}`, key: `${cfg.slug}:${lid}:${d.kind}-${d.at}` } }));
+    return ds.map((d, k) => ({ d, recap: RECAP_KINDS.has(d.kind), opts: { n: k + 1, of: ds.length, id: `co-d${k + 1}`, key: `${cfg.slug}:${lid}:${d.id}` } }));
   };
   const recapDiagrams = (N, lid) => lessonCards(N, lid).filter((x) => x.recap);
   const lessonDiagrams = (N, lid) => {
     const at = new Map(); for (const x of lessonCards(N, lid)) if (!x.recap) at.set(x.d.at, [...(at.get(x.d.at) || []), x]);
     // and the small cards (Quick check, Numbers to know) dotted through the sections, never asking a question the
     // Recap's Test yourself card asks too
-    const recallQs = lessonCards(N, lid).flatMap((x) => (x.d.kind === "recall" ? x.d.items.map((it) => it.q.replace(/…$/, "")) : []));
+    // the Recap's Test yourself card asks the lesson's first questions (diagramsFor): those exact questions, in full
+    const recallQs = lessonCards(N, lid).some((x) => x.d.kind === "recall") ? N.cards.slice(0, 4).map(([q]) => q) : [];
     const minis = new Map(); for (const m of minisFor(N, { skipQ: recallQs })) minis.set(m.at, [...(minis.get(m.at) || []), m]);
     return lessonHtml(N, { after: (i) => (at.get(i) || []).map((x) => glassDiagram(x.d, x.opts)).join("") + (minis.get(i) || []).map((m) => miniCard(m, { key: `${cfg.slug}:${lid}:${m.kind}-${m.at}` })).join("") });
   };

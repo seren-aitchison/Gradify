@@ -104,7 +104,7 @@ export function diagramsFor(L, { max = 5, skip = [] } = {}) {
   let heading = null, headingAt = -1;
   blocks.forEach((b, i) => {
     if (b.t === "h") { heading = b.x; headingAt = i; return; }
-    if (b.t === "ex" && b.steps.length >= 2) out.push({ kind: "flow", ex: true, at: i, title: cut(b.x, 90), items: b.steps.slice(0, 6).map((s) => cut(s, 240)), weight: 5 });
+    if (b.t === "ex" && b.steps.length >= 2) out.push({ kind: "flow", ex: true, at: i, title: cut(b.x, 90), items: b.steps.slice(0, 6).map((s) => cut(s, 600)), weight: 5 });
     else if (b.t === "eq" && b.rows.length && !b.rows.some(([f]) => MATHS.test(plain(f)))) out.push({ kind: "facts", at: i, title: plain(heading || "Key facts"), items: b.rows.slice(0, 4).map(([f, m]) => ({ term: cut(f, 100), def: m ? cut(m, 160) : "" })), weight: 3.4 });
     else if (b.t === "eq" && b.rows.length) out.push({ kind: "formula", at: i, title: plain(heading || "Formulas"), rows: b.rows.slice(0, 3).map(([f, m]) => ({ f: plain(f), m: m ? cut(m, 140) : "" })), formula: plain(b.rows[0][0]), more: Math.max(0, b.rows.length - 3), weight: 4.5 });
     else if (b.t === "pit") {
@@ -413,9 +413,10 @@ const cued = (t) => {
 const num = (i, c) => `<span class="gd-n" style="--c:${c}" aria-hidden="true">${i + 1}</span>`;
 const tick = (c, s = "✓") => `<span class="gd-n" style="--c:${c}" aria-hidden="true">${s}</span>`;
 
-function bodyHub(d, { map = false, cycle = false } = {}) {
+function bodyHub(d, { map = false, cycle = false, inert = false } = {}) {
   const li = d.items.map((x, i) => {
     const c = ink(i);
+    if (map && inert) return `<li class="gd-item" style="--c:${c}">${num(i, c)}<span>${esc(x)}</span></li>`;
     if (map) return `<li><button type="button" class="gd-item gd-node" data-jump="co-s${i + 1}" style="--c:${c}">${num(i, c)}<span>${esc(x)}</span></button></li>`;
     const note = d.notes?.[i];
     const words = note ? `<b class="gd-k">${esc(x)}</b>${A(note, "span", "gd-sub")}` : cycle && i === 0 ? `<b class="gd-k">${esc(x)}</b>` : `<b class="gd-k">${A(x)}</b>`;
@@ -491,9 +492,9 @@ function bodyRows(d, kind) {
 function bodyKey(d) {
   return `<div class="gd-item gd-keybox" style="--c:${ink(0)}"><p>${cued(d.text)}</p></div>`;
 }
-function cardBody(d) {
+function cardBody(d, { inert = false } = {}) {
   switch (d.kind) {
-    case "map": return bodyHub(d, { map: true });
+    case "map": return bodyHub(d, { map: true, inert });
     case "cycle": return bodyHub(d, { cycle: true });
     case "flow": return bodyFlow(d);
     case "timeline": return bodyTimeline(d);
@@ -530,7 +531,7 @@ const MODE_LABEL = { quiz: "Cover & recall", step: "Step through", order: "Put i
 function modesOf(d, body) {
   const m = [];
   if ((d.kind === "flow" || d.kind === "cycle") && d.items?.length >= 2) m.push("step");
-  if ((d.kind === "flow" || d.kind === "timeline") && d.items?.length >= 3) m.push("order");
+  if ((d.kind === "flow" || (d.kind === "timeline" && new Set(d.items.map((it) => it.year)).size === d.items.length)) && d.items?.length >= 3) m.push("order");
   if ((body.match(/data-gd-row/g) || []).length >= 2) m.push("match");
   if (d.kind === "mistake" && d.right) m.push("pick");
   if (d.kind === "evidence" && d.items?.length >= 2) m.push("rate");
@@ -550,7 +551,7 @@ const tipOf = (d) => (d.kind === "flow" && d.ex ? "Work it through yourself: ste
 export function glassDiagram(d, { size = "md", seed = d?.title, caption = true, quiz = false, n = 0, of = 0, id = "", key = "" } = {}) {
   if (!d) return "";
   const h = hash(seed || d.kind), [a, b] = PAIRS[h % PAIRS.length], turn = ((h >> 4) % 2 ? 1 : -1) * (0.8 + ((h >> 6) % 3) * 0.4);
-  const body = cardBody(d), full = caption && size !== "sm", kind = kindName(d);
+  const full = caption && size !== "sm", body = cardBody(d, { inert: !full }), kind = kindName(d);
   const modes = full ? modesOf(d, body) : [], covered = quiz && modes.includes("quiz");
   const answers = (body.match(/class="[^"]*\bgd-a\b/g) || []).length;
   // the title, unless the card already shows it (a structure's middle, a mistake's own words) or it only repeats the kind
@@ -574,7 +575,7 @@ export function glassDiagram(d, { size = "md", seed = d?.title, caption = true, 
 // sentence from the notes, with the number covered to recall. Quick check: one of the lesson's own questions, beside
 // the section it tests. Every word is the notes' own; a section gets one at most, and a lesson four at most.
 const UNIT = "%|°C|°F|mV|µV|mmol\\/L|µmol\\/L|mmHg|kPa|Pa|mg\\/kg|mg\\/day|mg|µg|mcg|ng|g\\/L|g\\/dL|kg|g|mL\\/min|mL|ml|L|ms|s|min|minutes|hours|hrs|h|days|weeks|months|years|Hz|kHz|nm|µm|mm|cm|km|m|bpm|breaths\\/min|kcal|kJ|J|W|kW|V|A|mol|M|K|dB|units?|times|fold";
-const NUM = new RegExp(`(?<![\\w.^_/])([−–-]?\\d+(?:[.,]\\d+)?(?:\\s?(?:–|-|to)\\s?[−–-]?\\d+(?:[.,]\\d+)?)?)\\s?(${UNIT})(?![\\w/])`);
+const NUM = new RegExp(`(?<![\\w.^_/]|\\d[.,])([−–-]?\\d+(?:[.,]\\d+)?(?:\\s?(?:–|-|to)\\s?[−–-]?\\d+(?:[.,]\\d+)?)?)\\s?(${UNIT})(?![\\w/])`);
 const words = (t) => String(t).split(/\s+/).filter(Boolean);
 function numberLine(sentence) {
   const m = sentence.match(NUM); if (!m) return null;
@@ -601,7 +602,7 @@ const bag = (t) => new Set((plain(t).toLowerCase().match(/[a-z]{5,}/g) || []));
 
 /** The small cards for a lesson: [{ kind: "numbers" | "check" | "gap", at, … }], `at` the last block of the section each checks. */
 export function minisFor(L, { skipQ = [], max = 4 } = {}) {
-  const secs = sectionsOf(L), cards = (L?.cards || []).filter(([q]) => !skipQ.some((x) => x && plain(q).startsWith(x)));
+  const secs = sectionsOf(L), cards = (L?.cards || []).filter(([q]) => !skipQ.map(plain).includes(plain(q)));
   const used = new Set(), out = [], bolds = boldTerms(L);
   secs.forEach((sec, k) => {
     const blocks = sec.blocks.map((i) => L.blocks[i]);
@@ -724,7 +725,7 @@ const MODES = {
       fig.querySelector(".gd-body").insertAdjacentHTML("afterend", `<div class="gd-play gd-stepbar">${ring}<button type="button" class="gd-btn gd-ghost" data-gd-prev aria-label="Previous step">←</button><p class="gd-say" aria-live="polite"></p><button type="button" class="gd-btn gd-main" data-gd-next>Next →</button></div>`);
       show(fig, 0); fig.querySelector("[data-gd-next]").focus({ preventScroll: true });
     },
-    off(fig) { fig.classList.remove("stepping"); fig.querySelector(".gd-stepbar")?.remove(); steps(fig).forEach((s) => s.classList.remove("on", "done", "todo")); },
+    off(fig) { fig.classList.remove("stepping"); delete fig.dataset.seen; fig.querySelector(".gd-stepbar")?.remove(); steps(fig).forEach((s) => s.classList.remove("on", "done", "todo")); },
   },
   match: {
     on(fig) {
@@ -796,7 +797,8 @@ function show(fig, i) {
   i = cyc ? (i + n) % n : Math.max(0, Math.min(n - 1, i));
   fig.dataset.step = i;
   // what's come before stays; what's still to come is hidden, so you can say it before you see it
-  ss.forEach((s, k) => { s.classList.toggle("on", k === i); s.classList.toggle("done", cyc ? false : k < i); s.classList.toggle("todo", cyc ? false : k > i); });
+  const seen = new Set((fig.dataset.seen || "").split(",").filter(Boolean).map(Number)); seen.add(i); fig.dataset.seen = [...seen].join(",");
+  ss.forEach((s, k) => { s.classList.toggle("on", k === i); s.classList.toggle("done", cyc ? false : k < i); s.classList.toggle("todo", cyc ? !seen.has(k) : k > i); });
   fig.querySelectorAll(".gd-ringd").forEach((d) => d.classList.toggle("on", Number(d.dataset.i) === i));
   if (cyc) ringPick(fig, i);
   const k = ss[i].querySelector(".gd-k"), sub = ss[i].querySelector(".gd-sub");
@@ -846,7 +848,7 @@ function placeChip(fig, row) {
   const chip = fig.querySelector('.gd-chip[aria-pressed="true"]'), poolSay = fig.querySelector(".gd-pool .gd-say");
   if (!chip) { poolSay.textContent = "Pick a meaning first, then its term."; return; }
   const rows = fig.querySelectorAll("[data-gd-row]");
-  if (chip.dataset.gdChip === row.dataset.i) {
+  if (chip.dataset.gdChip === row.dataset.i || chip.textContent.trim() === row.querySelector(".gd-a")?.textContent.trim()) {
     row.classList.add("gd-ok"); row.querySelector(".gd-a")?.classList.remove("gd-slot"); unButton(row); chip.remove();
     const placed = fig.querySelectorAll("[data-gd-row].gd-ok").length, miss = Number(fig.dataset.miss);
     if (placed === rows.length) done(fig, "match", !miss);
@@ -857,6 +859,7 @@ function placeChip(fig, row) {
     fig.dataset.miss = String(Number(fig.dataset.miss) + 1);
     flash(row);
     poolSay.textContent = `That one doesn't go with ${cueOf(row)}. Read it again and try another.`;
+    say(fig, `Not ${cueOf(row)}. ${fig.querySelectorAll("[data-gd-row].gd-ok").length} of ${rows.length} matched`);
   }
 }
 function reveal(el) {
@@ -870,8 +873,9 @@ function zoom(fig) {
   const dlg = document.createElement("dialog");
   dlg.className = "gd-zoom";
   dlg.setAttribute("aria-label", fig.querySelector(".gd-head")?.textContent.trim() || "Diagram");
-  if (fig.dataset.mode) setMode(fig, null);
   const copy = fig.cloneNode(true);
+  // a covered card stays covered in the copy; a half-done exercise starts afresh there, and the card on the page is untouched
+  if (copy.dataset.mode && copy.dataset.mode !== "quiz") switchMode(copy, null);
   copy.removeAttribute("id"); copy.classList.replace("gd-md", "gd-lg");
   copy.querySelector("[data-gd-zoom]")?.remove();
   copy.querySelectorAll("[data-jump]").forEach((b) => b.setAttribute("data-gd-close", ""));
@@ -900,7 +904,7 @@ if (typeof document !== "undefined" && !globalThis.__gdWired) {
     const fill = t.closest("[data-gd-fill]");
     if (fill) {
       const li = fill.closest("li"), gapEl = li.querySelector(".gd-a");
-      if (fill.dataset.gdFill === "1") { if (!li.querySelector("[data-gd-fill].gd-no, [data-gd-fill]:disabled")) li.dataset.clean = "1"; fill.classList.add("gd-ok"); li.querySelectorAll("[data-gd-fill]").forEach((b) => (b.disabled = true)); if (!gapEl.classList.contains("seen")) reveal(gapEl); }
+      if (fill.dataset.gdFill === "1") { if (!gapEl.classList.contains("seen") && !li.querySelector("[data-gd-fill].gd-no, [data-gd-fill]:disabled")) li.dataset.clean = "1"; fill.classList.add("gd-ok"); li.querySelectorAll("[data-gd-fill]").forEach((b) => (b.disabled = true)); if (!gapEl.classList.contains("seen")) reveal(gapEl); }
       else { flash(fill); fill.disabled = true; }
       return;
     }
@@ -932,6 +936,8 @@ if (typeof document !== "undefined" && !globalThis.__gdWired) {
     }
     const z = t.closest("[data-gd-zoom]"); if (z) { zoom(fig); return; }
     const dlg = t.closest("dialog.gd-zoom");
+    const jump = dlg && t.closest("[data-jump]");
+    if (jump) { dlg.close(); const el = document.getElementById(jump.dataset.jump); if (el) scrollTo({ top: el.getBoundingClientRect().top + scrollY - 90, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); return; }
     if (dlg && (t === dlg || t.closest("[data-gd-close]"))) dlg.close();
   });
   document.addEventListener("keydown", (e) => {
