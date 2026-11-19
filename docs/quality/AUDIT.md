@@ -9,14 +9,14 @@ Run 2026-11-19 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 
 ## The whole of Gradify
 
-9,979 written lessons in 34 courses. Overall **78/100**.
+9,979 written lessons in 34 courses. Overall **79/100**.
 
 | Dimension | Score | What it measures |
 |---|---|---|
-| Accuracy | `█████░░░░░ 52` | Dated sources, evidence labels, no mechanical errors. Capped at 60 until a subject expert reviews it. |
+| Accuracy | `█████░░░░░ 53` | Dated sources, evidence labels, no mechanical errors. Capped at 60 until a subject expert reviews it. |
 | Completeness | `█████████░ 87` | Objectives stated, each one taught in the body, key terms and a summary. |
 | Clarity | `██████████ 95` | Sentence length, long-sentence share, a clear lead, terms defined. |
-| Progression | `█████░░░░░ 48` | Prerequisites named (or first in its unit) and a stated level. |
+| Progression | `█████░░░░░ 49` | Prerequisites named (or first in its unit) and a stated level. |
 | Application | `█████████░ 91` | Worked examples, common mistakes, and questions above recall level. |
 | Assessment | `█████████░ 88` | Enough questions, more than one type, each explained, no giveaway answer lengths. |
 | Accessibility | `██████████ 96` | Headed sections, digestible paragraphs, lists, a summary to return to. |
@@ -75,7 +75,7 @@ Run 2026-11-19 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 
 | Course | Lessons | Overall | Accuracy | Completeness | Clarity | Progression | Application | Assessment | Accessibility | Engagement | Retention |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Physics | 1308 | **56** | 20 | 20 | 86 | 23 | 85 | 65 | 84 | 84 | 38 |
+| Physics | 1308 | **57** | 21 | 22 | 86 | 25 | 86 | 66 | 84 | 84 | 40 |
 | Law | 480 | **66** | 54 | 97 | 94 | 3 | 37 | 68 | 100 | 55 | 88 |
 | Pharmacy | 318 | **72** | 51 | 96 | 99 | 8 | 68 | 81 | 100 | 65 | 77 |
 | Nursing | 497 | **74** | 49 | 98 | 98 | 47 | 50 | 89 | 100 | 56 | 75 |
@@ -115,20 +115,20 @@ Run 2026-11-19 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Fix | Lessons |
 |---|---|
 | Add flashcards for spaced retrieval (Q:) | 9,692 |
-| Name what this builds on (PRE:) | 5,831 |
-| State the level (LV:) | 3,463 |
-| Say how strong the evidence is (EV:) | 3,179 |
+| Name what this builds on (PRE:) | 5,801 |
+| State the level (LV:) | 3,432 |
+| Say how strong the evidence is (EV:) | 3,148 |
 | Even out answer lengths | 3,081 |
-| Teach every objective | 2,043 |
-| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,606 |
-| Add check questions | 1,603 |
+| Teach every objective | 2,051 |
+| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,577 |
+| Add check questions | 1,574 |
 | Add a worked example (X:) | 1,265 |
-| Cite at least two sources (SRC:) | 1,114 |
-| Date every source, so it can be rechecked | 1,039 |
-| State at least two learning objectives (O:) | 1,039 |
-| Define the key terms (T:) | 1,039 |
-| End with a summary (SUM:) | 1,039 |
-| Define terms where they're first used (T:) | 1,039 |
+| Cite at least two sources (SRC:) | 1,083 |
+| Date every source, so it can be rechecked | 1,008 |
+| State at least two learning objectives (O:) | 1,008 |
+| Define the key terms (T:) | 1,008 |
+| End with a summary (SUM:) | 1,008 |
+| Define terms where they're first used (T:) | 1,008 |
 
 ## The 30 lessons to improve first
 

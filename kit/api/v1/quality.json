@@ -4,12 +4,12 @@
  "at": "2026-11-19",
  "lessons": 9979,
  "reviewed": 0,
- "overall": 78,
+ "overall": 79,
  "dims": {
-  "accuracy": 52,
+  "accuracy": 53,
   "completeness": 87,
   "clarity": 95,
-  "progression": 48,
+  "progression": 49,
   "application": 91,
   "assessment": 88,
   "accessibility": 96,
@@ -584,17 +584,17 @@
    "slug": "physics",
    "name": "Physics",
    "lessons": 1308,
-   "overall": 56,
+   "overall": 57,
    "dims": {
-    "accuracy": 20,
-    "completeness": 20,
+    "accuracy": 21,
+    "completeness": 22,
     "clarity": 86,
-    "progression": 23,
-    "application": 85,
-    "assessment": 65,
+    "progression": 25,
+    "application": 86,
+    "assessment": 66,
     "accessibility": 84,
     "engagement": 84,
-    "retention": 38
+    "retention": 40
    },
    "serves": [
     {
