@@ -513,10 +513,12 @@ function firstLetters(d) {
 //   match  Match up: the meanings shuffled into a pile; put each with its term
 //   pick   Which is true?: the mistake and the truth, side by side; choose before you see which is which
 //   rate   Rate the evidence: say how strong each claim is before you see it
-const MODE_LABEL = { quiz: "Cover & recall", step: "Step through", match: "Match up", pick: "Which is true?", rate: "Rate the evidence" };
+//   order  Put in order: the steps (or a timeline's events) shuffled; tap them in the order they come
+const MODE_LABEL = { quiz: "Cover & recall", step: "Step through", order: "Put in order", match: "Match up", pick: "Which is true?", rate: "Rate the evidence" };
 function modesOf(d, body) {
   const m = [];
   if ((d.kind === "flow" || d.kind === "cycle") && d.items?.length >= 2) m.push("step");
+  if ((d.kind === "flow" || d.kind === "timeline") && d.items?.length >= 3) m.push("order");
   if ((body.match(/data-gd-row/g) || []).length >= 2) m.push("match");
   if (d.kind === "mistake" && d.right) m.push("pick");
   if (d.kind === "evidence" && d.items?.length >= 2) m.push("rate");
@@ -668,6 +670,19 @@ const MODES = {
     },
     off(fig) { fig.classList.remove("matching"); fig.querySelector(".gd-pool")?.remove(); fig.querySelectorAll("[data-gd-row]").forEach((r) => { unButton(r); r.classList.remove("gd-ok", "gd-no"); r.querySelector(".gd-a")?.classList.remove("gd-slot"); }); },
   },
+  order: {
+    on(fig) {
+      fig.classList.add("ordering"); fig.dataset.miss = "0"; fig.dataset.next = "0";
+      const items = orderItems(fig), tl = fig.dataset.kind === "timeline";
+      items.forEach((li) => li.querySelector(".gd-a")?.classList.add("gd-slot"));
+      const chips = shuffle(items.map((li, i) => [i, li.querySelector(".gd-a")?.textContent.trim() || ""]));
+      fig.querySelector(".gd-body").insertAdjacentHTML("beforebegin", `<div class="gd-play gd-pool"><p class="gd-say">${tl ? `What happened in ${items[0].querySelector(".gd-year")?.textContent}? Tap it.` : "Which step comes first? Tap it."}</p><div class="gd-chips">${chips.map(([i, t]) => `<button type="button" class="gd-chip" data-gd-ochip="${i}">${esc(t)}</button>`).join("")}</div></div>`);
+      items[0]?.classList.add("gd-next");
+      say(fig, `0 of ${items.length} in place`);
+      fig.querySelector(".gd-chip")?.focus({ preventScroll: true });
+    },
+    off(fig) { fig.classList.remove("ordering"); fig.querySelector(".gd-pool")?.remove(); orderItems(fig).forEach((li) => { li.classList.remove("gd-ok", "gd-next", "gd-no"); li.querySelector(".gd-a")?.classList.remove("gd-slot"); }); },
+  },
   pick: {
     on(fig) {
       fig.classList.add("picking");
@@ -688,7 +703,16 @@ const MODES = {
     off(fig) { fig.classList.remove("rating"); fig.querySelectorAll(".gd-rate").forEach((g) => g.remove()); fig.querySelectorAll("li[data-status]").forEach((li) => li.classList.remove("rated")); },
   },
 };
+// switching mode: the card cross-fades into its new state (where the browser can, and the learner hasn't asked for less motion)
 function setMode(fig, mode) {
+  const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!document.startViewTransition || calm || !fig.isConnected) return switchMode(fig, mode);
+  fig.style.viewTransitionName = "gd-active";
+  document.documentElement.classList.add("gd-vt");
+  const vt = document.startViewTransition(() => switchMode(fig, mode));
+  vt.finished.finally(() => { fig.style.viewTransitionName = ""; document.documentElement.classList.remove("gd-vt"); });
+}
+function switchMode(fig, mode) {
   const cur = fig.dataset.mode;
   if (cur) { MODES[cur].off(fig); delete fig.dataset.mode; say(fig, ""); }
   fig.querySelectorAll("[data-gd-mode]").forEach((b) => { b.setAttribute("aria-pressed", "false"); b.textContent = MODE_LABEL[b.dataset.gdMode]; });
@@ -714,6 +738,26 @@ function show(fig, i) {
   prev.disabled = !cyc && i === 0;
   ss[i].scrollIntoView?.({ block: "nearest", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
 }
+// a wrong try: a short shake and a red edge, then back to normal
+const flash = (el) => { el.classList.remove("gd-no"); void el.offsetWidth; el.classList.add("gd-no"); setTimeout(() => el.classList.remove("gd-no"), 700); };
+// Put in order: each tap fills the next place, if it's the right one
+const orderItems = (fig) => [...fig.querySelectorAll(".gd-flow > li, .gd-time > li")];
+function orderTap(fig, chip) {
+  const items = orderItems(fig), k = Number(fig.dataset.next), li = items[k], poolSay = fig.querySelector(".gd-pool .gd-say"), tl = fig.dataset.kind === "timeline";
+  if (Number(chip.dataset.gdOchip) === k) {
+    li.classList.remove("gd-next"); li.classList.add("gd-ok"); li.querySelector(".gd-a")?.classList.remove("gd-slot"); chip.remove();
+    fig.dataset.next = String(k + 1);
+    const nx = items[k + 1], miss = Number(fig.dataset.miss);
+    if (nx) { nx.classList.add("gd-next"); poolSay.textContent = tl ? `Yes. And in ${nx.querySelector(".gd-year")?.textContent}?` : `Yes. What comes next: step ${k + 2}?`; }
+    else poolSay.textContent = miss ? `All in order, with ${miss} wrong tr${miss > 1 ? "ies" : "y"}. Go through it once more later.` : "All in order, first time. You know this one.";
+    say(fig, `${k + 1} of ${items.length} in place`);
+    fig.querySelector(".gd-chip")?.focus({ preventScroll: true });
+  } else {
+    fig.dataset.miss = String(Number(fig.dataset.miss) + 1);
+    flash(chip);
+    poolSay.textContent = tl ? `Not that one: that comes ${Number(chip.dataset.gdOchip) > k ? "later" : "earlier"}. What happened in ${li.querySelector(".gd-year")?.textContent}?` : `Not yet: that one comes later. Which is step ${k + 1}?`;
+  }
+}
 // Match up
 function chooseChip(fig, chip) {
   fig.querySelectorAll(".gd-chip").forEach((c) => c.setAttribute("aria-pressed", String(c === chip && c.getAttribute("aria-pressed") !== "true")));
@@ -731,7 +775,7 @@ function placeChip(fig, row) {
     fig.querySelector(".gd-chip")?.focus({ preventScroll: true });
   } else {
     fig.dataset.miss = String(Number(fig.dataset.miss) + 1);
-    row.classList.remove("gd-no"); void row.offsetWidth; row.classList.add("gd-no");
+    flash(row);
     poolSay.textContent = `That one doesn't go with ${cueOf(row)}. Read it again and try another.`;
   }
 }
@@ -767,6 +811,7 @@ if (typeof document !== "undefined" && !globalThis.__gdWired) {
     const a = t.closest(".gd.quiz .gd-a:not(.seen)"); if (a) { e.preventDefault(); reveal(a); return; }
     if (t.closest("[data-gd-next]")) { const i = Number(fig.dataset.step) + 1, n = steps(fig).length; show(fig, fig.dataset.kind !== "cycle" && i >= n ? 0 : i); return; }
     if (t.closest("[data-gd-prev]")) { show(fig, Number(fig.dataset.step) - 1); return; }
+    const oc = t.closest("[data-gd-ochip]"); if (oc) { orderTap(fig, oc); return; }
     const chip = t.closest(".gd-chip"); if (chip) { chooseChip(fig, chip); return; }
     const row = t.closest(".matching [data-gd-row]:not(.gd-ok)"); if (row) { placeChip(fig, row); return; }
     const opt = t.closest("[data-gd-opt]");

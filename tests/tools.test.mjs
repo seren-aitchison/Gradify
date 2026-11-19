@@ -160,6 +160,7 @@ test("each kind of card has the ways to practise that suit it, and the small car
   assert.deepEqual(modes({ kind: "evidence", title: "e", items: [{ status: "established", text: "a" }, { status: "contested", text: "b" }] }), ["rate", "quiz"]);
   assert.deepEqual(modes({ kind: "cycle", title: "c", items: ["One", "Two", "Three"] }), ["step", "quiz"]);
   assert.deepEqual(modes({ kind: "key", title: "k", text: "short idea" }), ["quiz"]);
+  assert.deepEqual(modes({ kind: "flow", title: "f", items: ["a", "b", "c"] }), ["step", "order", "quiz"], "three or more steps can be put in order");
   // a worked example is called one; a timeline is drawn to scale, with the gaps in years
   assert.match(glassDiagram({ kind: "flow", ex: true, title: "q", items: ["a", "b"] }), />Worked example</);
   const tl = glassDiagram({ kind: "timeline", title: "t", items: [{ year: "1900", text: "a" }, { year: "1990", text: "b" }, { year: "2000", text: "c" }] });

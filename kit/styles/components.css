@@ -1308,6 +1308,18 @@ dialog.gd-zoom[open] { animation: gd-zin .18s ease-out; }
 .gd [data-gd-row].gd-no { animation: gd-shake .45s; }
 @keyframes gd-shake { 20%, 60% { transform: translateX(-5px); } 40%, 80% { transform: translateX(5px); } }
 
+/* a card changing mode: only the card animates, the page stays put */
+html.gd-vt::view-transition-old(root), html.gd-vt::view-transition-new(root) { animation: none; }
+::view-transition-group(gd-active) { animation-duration: .28s; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
+::view-transition-old(gd-active), ::view-transition-new(gd-active) { animation-duration: .22s; height: 100%; object-fit: none; object-position: top; }
+
+/* Put in order: the place to fill next is outlined; filled places lock in green */
+.gd.ordering :is(.gd-flow, .gd-time) > li.gd-next .gd-item { box-shadow: inset 4px 0 0 var(--c), 0 0 0 2px var(--a); }
+.gd.ordering :is(.gd-flow, .gd-time) > li.gd-ok .gd-item { box-shadow: inset 4px 0 0 #16a34a, 0 0 0 1.5px #16a34a; }
+.gd.ordering .gd-flow > li .gd-item:has(.gd-slot) { padding: 6px 10px; }
+.gd.ordering .gd-time > li .gd-slot { min-height: 3em; }
+.gd-chip.gd-no { animation: gd-shake .45s; border-color: #ef4444; }
+
 /* Which is true?: two statements to choose from; the panels with the answer wait below */
 .gd.picking .gd-body { display: none; }
 .gd-opt em { display: block; margin-top: 4px; font: 800 11px/1.3 var(--mono, monospace); font-style: normal; letter-spacing: .06em; text-transform: uppercase; }
