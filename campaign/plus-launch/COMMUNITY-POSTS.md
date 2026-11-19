@@ -33,20 +33,34 @@ Don't claim: user numbers, results, grade improvements, "AI", reviews or testimo
 Pattern: `https://getgradify.com/pricing.html?offer=GRADIFY48&utm_source=SOURCE&utm_medium=MEDIUM&utm_campaign=pro_launch`
 
 The offer and the tags only work through this link (getgradify.com's front page doesn't pick them up). Pricing keeps
-the tags until the visitor makes an account, where they're stored as `first_touch` (fixed 19 Nov, see the release
-notes). `OUTREACH.md` has the first set; add one per new community: `utm_source=reddit_6thform`,
+the tags until the visitor makes an account, where they're stored as `first_touch` (fixed 19 Nov in #124). `OUTREACH.md` has the first set; add one per new community: `utm_source=reddit_6thform`,
 `utm_source=reddit_uniuk`, `utm_source=discord_<server>` and so on, `utm_medium=community`.
 
-**Counting sign-ups and buyers per source** (Supabase SQL editor, read-only):
+**The four numbers, per source** (Supabase → SQL editor; read-only queries, checked against the live database on
+19 November: 8 sign-ups since 1 November, all before tracking, 0 paying):
 
 ```sql
-select u.raw_user_meta_data->'first_touch'->>'utm_source' as source,
-       count(*) as signups,
-       count(*) filter (where public.plan_of(u.id) <> 'free') as paying
+-- registrations, opened Pro checkout, paying Pro: by the link that first brought each account
+select coalesce(u.raw_user_meta_data->'first_touch'->>'utm_source', '(no source)') as source,
+       count(*) as registrations,
+       count(s.stripe_customer_id) as opened_checkout,
+       count(s.user_id) filter (where s.plan = 'plus' and s.status in ('active', 'trialing', 'past_due')) as paying_pro
 from auth.users u
+left join public.subscriptions s on s.user_id = u.id
 where u.created_at >= '2026-11-19'
-group by 1 order by signups desc;
+group by 1 order by registrations desc;
+
+-- visits to Pricing (anonymous counts, not unique people) by referring site, from 19 November
+select day, coalesce(referrer, '(none: app, email or direct)') as referrer, count(*) as visits
+from public.page_events
+where path = '/pricing.html' and event = 'view' and day >= '2026-11-19'
+group by 1, 2 order by 1, 3 desc;
 ```
+
+`opened_checkout` counts accounts that started a Stripe Checkout at least once (Gradify creates their Stripe customer
+then). Visits can't be split by `utm_source` (the counter never stores anything after `?`), only by referring site;
+the Discord app sends no referrer, so Discord visits show as "(none)". Registrations and buyers are the reliable
+per-link numbers. Paying customers also show in Stripe → Payments.
 
 ## Discord
 

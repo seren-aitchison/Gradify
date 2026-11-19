@@ -178,6 +178,7 @@
     import { pounds } from "/kit/data/plan.js";
     import { OFFER, captureOffer, offerToShow, offerTerms } from "/kit/data/offer.js";
     import { captureFirstTouch } from "/kit/core/attribution.js";
+    import { trackView } from "/kit/core/analytics.js";
 
     const $ = (s) => document.querySelector(s);
     const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -189,6 +190,8 @@
     let store = null, sub = null, signedIn = false, learner = null;
     // where this visitor came from (utm_* tags), kept until they make an account (kit/core/attribution.js)
     captureFirstTouch();
+    // an anonymous page-view count (kit/core/analytics.js): no cookie, no identifier, nothing after ? or #
+    trackView("Gradify");
     // the Pro launch offer, from the campaign link or kept from an earlier visit (kit/data/offer.js)
     captureOffer();
     const offer = () => offerToShow({ plan: planOf(sub), learner, includeDismissed: true });

@@ -115,4 +115,5 @@ test("Pricing keeps the campaign's tracking tags, so sign-ups from each post can
   const html = await (await import("node:fs/promises")).readFile(new URL("../pricing.html", import.meta.url), "utf8");
   assert.match(html, /import \{ captureFirstTouch \} from "\/kit\/core\/attribution\.js";/);
   assert.ok(html.indexOf("captureFirstTouch();") > -1 && html.indexOf("captureFirstTouch();") < html.indexOf("captureOffer();"), "captured on arrival");
+  assert.match(html, /trackView\("Gradify"\);/, "Pricing visits are counted like the homepage's");
 });
