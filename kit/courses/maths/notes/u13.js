@@ -30,7 +30,7 @@ Q: Which measure of centre is resistant to outliers? | The median.
 Q: In right-skewed data, which is larger, the mean or the median? | The mean.
 SUM: Summaries describe centre, spread and shape.
 SUM: Choose robust measures when data are skewed.
-SRC: Freedman D, Pisani R, Purves R, Statistics (4th edn, Norton 2007) | textbook | 2007 | https://wwnorton.com/
+SRC: Freedman D, Pisani R, Purves R, Statistics (4th edn, Norton 2007) | secondary | 2007 | https://wwnorton.com/
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
 NUM1#maths-u13-01-q1@1: Find the sample standard deviation of 2, 4, 6, to 3 decimal places. | 2 | 0.001 |  | Mean 4; squared deviations 4, 0, 4 sum to 8; s = √(8/2) = 2.
 M1#maths-u13-01-q2@1: Which pair of summaries suits house prices best? | Median and interquartile range | Mean and range | Mode and range | Mean and standard deviation | Maximum and minimum | House prices are right-skewed, so robust measures describe them better.
@@ -67,8 +67,8 @@ Q: What does r = −0.9 indicate? | A strong negative linear relationship.
 Q: When is Spearman's coefficient preferred over Pearson's? | For ranks, ordinal data or monotonic but non-linear relationships.
 SUM: Correlation measures linear association.
 SUM: It doesn't establish causation.
-SRC: Freedman D, Pisani R, Purves R, Statistics (4th edn, Norton 2007) | textbook | 2007 | https://wwnorton.com/
-SRC: Anscombe FJ, Graphs in statistical analysis, The American Statistician 27(1), 17 | journal | 1973 | https://doi.org/10.1080/00031305.1973.10478966
+SRC: Freedman D, Pisani R, Purves R, Statistics (4th edn, Norton 2007) | secondary | 2007 | https://wwnorton.com/
+SRC: Anscombe FJ, Graphs in statistical analysis, The American Statistician 27(1), 17 | primary | 1973 | https://doi.org/10.1080/00031305.1973.10478966
 NUM1#maths-u13-02-q1@1: S_{xy} = 12, S_{xx} = 16 and S_{yy} = 25. Find r. | 0.6 | 0.001 |  | r = 12/√(16 × 25) = 12/20 = 0.6.
 M1#maths-u13-02-q2@1: A correlation of r = 0.8 means a straight line explains what share of the variation in y? | 64% | 80% | 8% | 40% | 89% | The proportion explained is r^{2} = 0.64.
 M3#maths-u13-02-q3@2: The points lie exactly on y = x^{2} for x = −2, −1, 0, 1, 2. What is Pearson's r? | 0 | 1 | −1 | 0.5 | It's undefined | The pattern is a perfect symmetric curve with no linear trend, so r = 0.
@@ -104,7 +104,7 @@ Q: A rate rises from 4% to 6%. What is the rise in percentage points, and in per
 Q: Why compare crime rates per 1,000 people rather than totals? | Areas have different populations.
 SUM: Read charts critically.
 SUM: Absolute risks give context to relative ones.
-SRC: Spiegelhalter D, The Art of Statistics: Learning from Data (Pelican 2019) | textbook | 2019 | https://www.penguin.co.uk/
+SRC: Spiegelhalter D, The Art of Statistics: Learning from Data (Pelican 2019) | secondary | 2019 | https://www.penguin.co.uk/
 SRC: Office for Statistics Regulation, Code of Practice for Statistics (edition 2.0) | standard | 2018 | https://code.statisticsauthority.gov.uk/
 NUM1#maths-u13-03-q1@1: Unemployment falls from 5.0% to 4.0%. By what percentage has the rate fallen? | 20 | 0 | % | The fall is 1 percentage point, which is 1/5 = 20% of the original rate.
 M1#maths-u13-03-q2@1: A bar chart's y-axis starts at 95 instead of 0. What's the risk? | Small differences look large | Bars become hidden | The data are wrong | Large differences look small | Nothing | Truncating the axis exaggerates the visual difference between bars.
@@ -173,7 +173,7 @@ Q: Is the mean height of all UK adults a parameter or a statistic? | A parameter
 Q: Name three tasks of statistical inference. | Estimation, hypothesis testing and prediction.
 SUM: Inference generalises from samples.
 SUM: It always comes with uncertainty.
-SRC: Wasserman L, All of Statistics: A Concise Course in Statistical Inference (Springer 2004) | textbook | 2004 | https://link.springer.com/
+SRC: Wasserman L, All of Statistics: A Concise Course in Statistical Inference (Springer 2004) | secondary | 2004 | https://link.springer.com/
 SRC: Department for Education, Mathematics AS and A level subject content: statistics | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 NUM1#maths-u13-05-q1@1: A sample of 100 has p̂ = 0.5. Find the standard error of p̂. | 0.05 | 0.0001 |  | √(0.5 × 0.5/100) = √0.0025 = 0.05.
 M1#maths-u13-05-q2@1: Which is a statistic? | The mean of 50 sampled exam marks | The mean of all exam marks nationally | The true proportion of left-handers | The population variance | The probability of heads for a coin | A statistic is calculated from sample data; the national mean and true proportions are parameters.
@@ -208,8 +208,8 @@ Q: What is the MSE of an estimator with bias 2 and variance 5? | 9.
 Q: Why divide by n − 1 in the sample variance? | To make it unbiased for σ^{2}.
 SUM: Estimators trade bias against variance.
 SUM: Frameworks differ in their meaning of probability.
-SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | textbook | 2002 | https://www.cengage.com/
-SRC: Wasserman L, All of Statistics: A Concise Course in Statistical Inference (Springer 2004) | textbook | 2004 | https://link.springer.com/
+SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | secondary | 2002 | https://www.cengage.com/
+SRC: Wasserman L, All of Statistics: A Concise Course in Statistical Inference (Springer 2004) | secondary | 2004 | https://link.springer.com/
 NUM1#maths-u13-06-q1@1: With n = 5, what is E(Σ(x − x̄)^{2}/n) as a multiple of σ^{2}? | 0.8 | 0.001 |  | (n − 1)/n = 4/5 = 0.8.
 M1#maths-u13-06-q2@1: Which property means an estimator gets arbitrarily close to the truth with enough data? | Consistency | Unbiasedness | Sufficiency | Robustness | Efficiency at small n | Consistency means θ̂ → θ as n → ∞: more data bring the estimate arbitrarily close.
 M2#maths-u13-06-q3@2: Which framework treats an unknown parameter as having a probability distribution? | Bayesian | Frequentist | Likelihood-free | Descriptive | Non-parametric only | Bayesians describe uncertainty about θ with a prior and posterior distribution.
@@ -245,8 +245,8 @@ Q: What must you do to halve a margin of error? | Quadruple the sample size.
 Q: Why use stratified sampling? | To guarantee each subgroup is represented and improve precision.
 SUM: Sampling design decides what we can learn.
 SUM: Sample size sets precision.
-SRC: Lohr SL, Sampling: Design and Analysis (3rd edn, CRC Press 2021) | textbook | 2021 | https://www.routledge.com/
-SRC: Cochran WG, Sampling Techniques (3rd edn, Wiley 1977) | textbook | 1977 | https://www.wiley.com/
+SRC: Lohr SL, Sampling: Design and Analysis (3rd edn, CRC Press 2021) | secondary | 2021 | https://www.routledge.com/
+SRC: Cochran WG, Sampling Techniques (3rd edn, Wiley 1977) | secondary | 1977 | https://www.wiley.com/
 NUM1#maths-u13-07-q1@1: Find the minimum sample size for a 95% margin of error of 5 points (use p = 0.5). | 385 | 0 |  | 0.9604/0.0025 = 384.2, rounded up to 385.
 M1#maths-u13-07-q2@1: A survey picks 20 schools at random and tests every pupil in them. What design is that? | Cluster sampling | Stratified sampling | Systematic sampling | Quota sampling | Simple random sampling of pupils | Whole groups (clusters) are sampled, not individuals.
 M3#maths-u13-07-q3@2: A national poll and a city poll each use 1,000 random respondents. How do their margins of error compare? | About the same | The national poll's is much larger | The city poll's is much larger | It depends only on population size | The national poll's is 100 times larger | Precision depends on the sample size, not the population size, when the sample is a small fraction.
@@ -280,7 +280,7 @@ Q: What is the standard error of x̄ for σ = 10 and n = 25? | 2.
 Q: What does a sampling distribution describe? | How a statistic varies across repeated samples.
 SUM: Statistics vary from sample to sample.
 SUM: The standard error measures that variation.
-SRC: Wasserman L, All of Statistics: A Concise Course in Statistical Inference (Springer 2004) | textbook | 2004 | https://link.springer.com/
+SRC: Wasserman L, All of Statistics: A Concise Course in Statistical Inference (Springer 2004) | secondary | 2004 | https://link.springer.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u13-08-q1@1: For p = 0.3 and n = 84, find the standard error of p̂, to 3 decimal places. | 0.05 | 0.001 |  | √(0.3 × 0.7/84) = √0.0025 = 0.05.
 M1#maths-u13-08-q2@1: How does the standard error of the mean change if n increases from 25 to 100? | It halves | It quarters | It doubles | It stays the same | It falls by 75 | The standard error is proportional to 1/√n; quadrupling n divides it by √4 = 2.
@@ -317,8 +317,8 @@ Q: Does doubling a biased sample remove the bias? | No: it only reduces random e
 Q: What is survivorship bias? | Drawing conclusions only from cases that survived some selection.
 SUM: Bias is systematic error from selection.
 SUM: Large samples don't cure it.
-SRC: Squire P, Why the 1936 Literary Digest poll failed, Public Opinion Quarterly 52(1), 125 | journal | 1988 | https://doi.org/10.1086/269085
-SRC: Sturgis P et al, Report of the inquiry into the 2015 British general election opinion polls (British Polling Council and Market Research Society 2016) | report | 2016 | https://www.britishpollingcouncil.org/
+SRC: Squire P, Why the 1936 Literary Digest poll failed, Public Opinion Quarterly 52(1), 125 | primary | 1988 | https://doi.org/10.1086/269085
+SRC: Sturgis P et al, Report of the inquiry into the 2015 British general election opinion polls (British Polling Council and Market Research Society 2016) | secondary | 2016 | https://www.britishpollingcouncil.org/
 NUM1#maths-u13-09-q1@1: 300 of 500 people respond; 50% of respondents agree. What is the lowest possible agreement rate among all 500, in per cent? | 30 | 0 | % | 150 agree; if all 200 non-respondents disagree, 150/500 = 30%.
 M1#maths-u13-09-q2@1: A radio phone-in asks listeners to call with views on a policy. What's the main problem? | Voluntary response bias | Too small a sample | Stratification | Random error only | No problem | Those who choose to call tend to hold stronger views than typical listeners.
 M2#maths-u13-09-q3@2: Why did Wald recommend armouring the parts of returning aircraft with no bullet holes? | Planes hit there didn't return | Those parts were heaviest | Holes were random | Pilots asked for it | The engines had holes | The returning sample was biased towards survivable hits: survivorship bias.
@@ -350,8 +350,8 @@ Q: Which critical value is used for a 99% normal interval? | 2.576.
 Q: What happens to an interval's width when n is multiplied by 4? | It halves.
 SUM: Intervals show estimates with uncertainty.
 SUM: Confidence describes the method.
-SRC: Altman DG, Machin D, Bryant TN, Gardner MJ, Statistics with Confidence (2nd edn, BMJ Books 2000) | textbook | 2000 | https://www.wiley.com/
-SRC: Wasserman L, All of Statistics: A Concise Course in Statistical Inference (Springer 2004) | textbook | 2004 | https://link.springer.com/
+SRC: Altman DG, Machin D, Bryant TN, Gardner MJ, Statistics with Confidence (2nd edn, BMJ Books 2000) | secondary | 2000 | https://www.wiley.com/
+SRC: Wasserman L, All of Statistics: A Concise Course in Statistical Inference (Springer 2004) | secondary | 2004 | https://link.springer.com/
 NUM1#maths-u13-10-q1@1: A 95% interval for a mean is (18.2, 21.8). What is the point estimate? | 20 | 0 |  | The interval is symmetric about the estimate: (18.2 + 21.8)/2 = 20.
 M1#maths-u13-10-q2@1: Which change makes a confidence interval narrower? | Increasing the sample size | Raising the confidence level to 99% | Using a smaller sample | Having more variable data | Using t instead of z for small n | Width is proportional to σ/√n, so more data narrows it.
 M2#maths-u13-10-q3@2: A 95% interval for a difference in means is (−1.2, 3.4). What does a two-sided 5% test of "no difference" conclude? | Don't reject: 0 is inside the interval | Reject: the interval is wide | Reject: the upper limit is positive | Accept that the difference is exactly 0 | Nothing can be said | Values inside the 95% interval are not rejected at the 5% level.
@@ -385,8 +385,8 @@ Q: What is the MLE of p after 7 successes in 20 trials? | 0.35.
 Q: What does the invariance property say? | The MLE of g(θ) is g(θ̂).
 SUM: MLE picks the parameter that best explains the data.
 SUM: It's efficient in large samples.
-SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | textbook | 2002 | https://www.cengage.com/
-SRC: Fisher RA, On the mathematical foundations of theoretical statistics, Philosophical Transactions of the Royal Society A 222, 309 | journal | 1922 | https://doi.org/10.1098/rsta.1922.0009
+SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | secondary | 2002 | https://www.cengage.com/
+SRC: Fisher RA, On the mathematical foundations of theoretical statistics, Philosophical Transactions of the Royal Society A 222, 309 | primary | 1922 | https://doi.org/10.1098/rsta.1922.0009
 NUM1#maths-u13-11-q1@1: Counts of 2, 5, 3 and 6 are modelled as Poisson(λ). Find the MLE of λ. | 4 | 0 |  | For the Poisson, λ̂ = x̄ = 16/4 = 4.
 M1#maths-u13-11-q2@1: Why do we usually maximise the log-likelihood rather than the likelihood? | Logs turn products into sums with the same maximum | The log-likelihood is always larger | Likelihoods can't be maximised | Logs remove the parameter | It gives a different, better answer | ln is increasing, so the maximiser is unchanged and the algebra is simpler.
 M3#maths-u13-11-q3@2: The MLE of a normal σ^{2} is 9. What is the MLE of σ? | 3 | 9 | 81 | 4.5 | It must be found separately | By invariance, the MLE of √(σ^{2}) is √9 = 3.
@@ -418,8 +418,8 @@ Q: What is the method of moments estimator of θ for Uniform(0, θ)? | 2x̄.
 Q: Who introduced the method of moments? | Karl Pearson (1894).
 SUM: Match moments, solve for parameters.
 SUM: Quick but often less efficient.
-SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | textbook | 2002 | https://www.cengage.com/
-SRC: Hansen LP, Large sample properties of generalized method of moments estimators, Econometrica 50(4), 1029 | journal | 1982 | https://doi.org/10.2307/1912775
+SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | secondary | 2002 | https://www.cengage.com/
+SRC: Hansen LP, Large sample properties of generalized method of moments estimators, Econometrica 50(4), 1029 | primary | 1982 | https://doi.org/10.2307/1912775
 NUM1#maths-u13-12-q1@1: Data have mean 6 and variance 12 and are modelled as Gamma(k, λ). Find the method of moments estimate of k. | 3 | 0 |  | k̂ = x̄^{2}/s^{2} = 36/12 = 3 (and λ̂ = 6/12 = 0.5).
 M1#maths-u13-12-q2@1: How many moment equations do you need for a two-parameter model? | Two | One | Three | As many as data points | None | Each unknown parameter needs its own equation.
 M2#maths-u13-12-q3@2: Compared with maximum likelihood, the method of moments is usually… | simpler but less efficient | always more accurate | impossible for the normal | identical in every case | slower to compute | It gives easy closed forms, but MLE typically has smaller variance.
@@ -454,7 +454,7 @@ Q: What does "significant at the 5% level" mean? | The p-value is below 0.05.
 SUM: Tests weigh data against a null claim.
 SUM: Conclude cautiously and in context.
 SRC: Department for Education, Mathematics AS and A level subject content: statistics | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | textbook | 2002 | https://www.cengage.com/
+SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | secondary | 2002 | https://www.cengage.com/
 NUM1#maths-u13-13-q1@1: Under H₀: p = 0.5 with n = 10, find P(X ≥ 9), to 4 decimal places. | 0.0107 | 0.0001 |  | (C(10, 9) + C(10, 10))/2^{10} = 11/1024 ≈ 0.0107.
 M1#maths-u13-13-q2@1: A test gives p = 0.12 at α = 0.05. What is the correct conclusion? | There's insufficient evidence to reject H₀ | H₀ is proved true | H₁ is proved true | Reject H₀, since 0.12 is a small probability | The test is invalid | A p-value above α means the data aren't surprising enough to reject H₀.
 M2#maths-u13-13-q3@2: For a two-tailed test at 5% using a normal statistic, what are the critical values? | ±1.96 | ±1.645 | ±2.576 | +1.96 only | ±0.05 | A two-tailed 5% test puts 2.5% in each tail, beyond ±1.96 for the standard normal.
@@ -488,8 +488,8 @@ Q: What is p-hacking? | Trying multiple analyses until one gives p < 0.05.
 Q: Name one practice that reduces false positives in research. | Pre-registering hypotheses and analysis plans.
 SUM: NHST is widely used and widely misused.
 SUM: Effect sizes and design matter more.
-SRC: Wasserstein RL, Lazar NA, The ASA statement on p-values: context, process, and purpose, The American Statistician 70(2), 129 | journal | 2016 | https://doi.org/10.1080/00031305.2016.1154108
-SRC: Open Science Collaboration, Estimating the reproducibility of psychological science, Science 349(6251), aac4716 | journal | 2015 | https://doi.org/10.1126/science.aac4716
+SRC: Wasserstein RL, Lazar NA, The ASA statement on p-values: context, process, and purpose, The American Statistician 70(2), 129 | primary | 2016 | https://doi.org/10.1080/00031305.2016.1154108
+SRC: Open Science Collaboration, Estimating the reproducibility of psychological science, Science 349(6251), aac4716 | primary | 2015 | https://doi.org/10.1126/science.aac4716
 M1#maths-u13-14-q1@1: What is publication bias? | Significant results are more likely to be published than null results | Peer review rejects most studies | Results are always reported accurately | Authors cite their own work | Journals prefer to publish longer, more detailed papers | Selective publication makes the literature overstate effects.
 M2#maths-u13-14-q2@2: Why can a tiny effect be statistically significant? | With a very large sample, the standard error is tiny | Because α is too small | Because p-values are always small | Because the effect is large | It can't be | The test statistic grows with √n for any fixed non-zero effect.
 
@@ -523,8 +523,8 @@ Q: Which is larger for the same z, the one- or two-tailed p-value? | The two-tai
 Q: Does p = 0.4 show that H₀ is true? | No: it shows only that the data aren't surprising under H₀.
 SUM: A p-value measures surprise under H₀.
 SUM: It's not the probability H₀ is true.
-SRC: Wasserstein RL, Lazar NA, The ASA statement on p-values: context, process, and purpose, The American Statistician 70(2), 129 | journal | 2016 | https://doi.org/10.1080/00031305.2016.1154108
-SRC: Greenland S et al, Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations, European Journal of Epidemiology 31, 337 | journal | 2016 | https://doi.org/10.1007/s10654-016-0149-3
+SRC: Wasserstein RL, Lazar NA, The ASA statement on p-values: context, process, and purpose, The American Statistician 70(2), 129 | primary | 2016 | https://doi.org/10.1080/00031305.2016.1154108
+SRC: Greenland S et al, Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations, European Journal of Epidemiology 31, 337 | primary | 2016 | https://doi.org/10.1007/s10654-016-0149-3
 NUM1#maths-u13-15-q1@1: A one-tailed z-test gives z = 1.8. Find the p-value, to 4 decimal places. | 0.0359 | 0.0005 |  | P(Z ≥ 1.8) = 1 − 0.9641 = 0.0359.
 M1#maths-u13-15-q2@1: Which statement about p = 0.02 is correct? | Data this extreme would occur 2% of the time if H₀ were true | There's a 2% chance H₀ is true | There's a 98% chance H₁ is true | The effect is large | The result will replicate 98% of the time | That's the definition: a probability computed assuming H₀.
 M3#maths-u13-15-q3@2: Two studies test the same effect: A (n = 20) has p = 0.30, B (n = 2,000) has p = 0.30. Which conclusion is fairest? | Both lack evidence against H₀, but B more strongly suggests any effect is small | Both prove no effect | A proves no effect, while B is inconclusive | B shows a large effect | They contradict each other | Equal p-values with very different n mean different things about plausible effect sizes.
@@ -557,7 +557,7 @@ Q: What is a Type I error in a fire alarm? | The alarm sounds with no fire.
 Q: How can both α and β be reduced? | Increase the sample size.
 SUM: Tests can make false alarms or misses.
 SUM: Their balance depends on costs and sample size.
-SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | textbook | 2002 | https://www.cengage.com/
+SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | secondary | 2002 | https://www.cengage.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u13-16-q1@1: A test rejects H₀: p = 0.5 if X ≥ 9 in 10 trials. What is the actual probability of a Type I error, to 4 decimal places? | 0.0107 | 0.0001 |  | P(X ≥ 9 ∣ p = 0.5) = 11/1024 ≈ 0.0107.
 M1#maths-u13-16-q2@1: A screening test misses a patient who has the disease. Which error is that, if H₀ is "no disease"? | Type II | Type I | Both | Neither | A sampling error | Failing to reject a false H₀ (missing the disease) is a Type II error.
@@ -592,8 +592,8 @@ Q: What is the conventional target power? | 80%.
 Q: Does power increase or decrease with more variable data? | It decreases.
 SUM: Power is the chance of detecting a real effect.
 SUM: Plan sample sizes to achieve it.
-SRC: Cohen J, Statistical Power Analysis for the Behavioral Sciences (2nd edn, Lawrence Erlbaum 1988) | textbook | 1988 | https://www.routledge.com/
-SRC: Button KS et al, Power failure: why small sample size undermines the reliability of neuroscience, Nature Reviews Neuroscience 14, 365 | journal | 2013 | https://doi.org/10.1038/nrn3475
+SRC: Cohen J, Statistical Power Analysis for the Behavioral Sciences (2nd edn, Lawrence Erlbaum 1988) | secondary | 1988 | https://www.routledge.com/
+SRC: Button KS et al, Power failure: why small sample size undermines the reliability of neuroscience, Nature Reviews Neuroscience 14, 365 | primary | 2013 | https://doi.org/10.1038/nrn3475
 NUM1#maths-u13-17-q1@1: Using n = ((z_{α/2} + z_{β})σ/δ)^{2} with z-values summing to 2.8, σ = 10 and δ = 4, find n (round up). | 49 | 0 |  | (2.8 × 10/4)^{2} = 7^{2} = 49.
 M1#maths-u13-17-q2@1: Which change increases a test's power? | A larger sample | A smaller effect size | A smaller α | More variable data | Fewer observations | More data shrink the standard error, making a fixed effect easier to detect.
 M3#maths-u13-17-q3@2: An underpowered study reports a significant effect. Why might the estimate be too large? | Only overestimates cross the significance threshold when power is low | Significant results are always exact | Significance guarantees accuracy | Power doesn't affect estimates | Small studies always overestimate every effect they measure | With low power, only the luckiest (largest) estimates reach significance: the winner's curse.
@@ -626,8 +626,8 @@ Q: What is Cohen's d if the means differ by 3 and the pooled SD is 6? | 0.5.
 Q: What is the NNT if the ARR is 2%? | 50.
 SUM: Effect sizes say how big an effect is.
 SUM: NNT makes risk reductions concrete.
-SRC: Cohen J, Statistical Power Analysis for the Behavioral Sciences (2nd edn, Lawrence Erlbaum 1988) | textbook | 1988 | https://www.routledge.com/
-SRC: Cook RJ, Sackett DL, The number needed to treat: a clinically useful measure of treatment effect, BMJ 310, 452 | journal | 1995 | https://doi.org/10.1136/bmj.310.6977.452
+SRC: Cohen J, Statistical Power Analysis for the Behavioral Sciences (2nd edn, Lawrence Erlbaum 1988) | secondary | 1988 | https://www.routledge.com/
+SRC: Cook RJ, Sackett DL, The number needed to treat: a clinically useful measure of treatment effect, BMJ 310, 452 | primary | 1995 | https://doi.org/10.1136/bmj.310.6977.452
 NUM1#maths-u13-18-q1@1: Control risk is 12% and treatment risk 8%. Find the NNT. | 25 | 0 |  | ARR = 0.04, so NNT = 1/0.04 = 25.
 M1#maths-u13-18-q2@1: Why report an effect size as well as a p-value? | The p-value doesn't show how large the effect is | Effect sizes replace sample sizes | p-values are always wrong | Effect sizes prove causation | Journals require two numbers | A tiny effect can be significant with enough data; the effect size shows its magnitude.
 M2#maths-u13-18-q3@2: By Cohen's rough guide, what is d = 0.8? | Large | Small | Medium | Negligible | Impossible | Cohen suggested 0.2, 0.5 and 0.8 as small, medium and large, with context mattering most.
@@ -660,8 +660,8 @@ Q: What is the Bonferroni threshold for 10 tests at α = 0.05? | 0.005.
 Q: Is Holm's method more or less powerful than Bonferroni's? | More powerful, with the same FWER guarantee.
 SUM: Many tests produce chance findings.
 SUM: Corrections control the error rate.
-SRC: Bland JM, Altman DG, Multiple significance tests: the Bonferroni method, BMJ 310, 170 | journal | 1995 | https://doi.org/10.1136/bmj.310.6973.170
-SRC: Holm S, A simple sequentially rejective multiple test procedure, Scandinavian Journal of Statistics 6(2), 65 | journal | 1979 | https://www.jstor.org/stable/4615733
+SRC: Bland JM, Altman DG, Multiple significance tests: the Bonferroni method, BMJ 310, 170 | primary | 1995 | https://doi.org/10.1136/bmj.310.6973.170
+SRC: Holm S, A simple sequentially rejective multiple test procedure, Scandinavian Journal of Statistics 6(2), 65 | primary | 1979 | https://www.jstor.org/stable/4615733
 NUM1#maths-u13-19-q1@1: Five independent tests are each run at α = 0.05 with all nulls true. Find the FWER, to 4 decimal places. | 0.2262 | 0.0005 |  | 1 − 0.95^{5} ≈ 1 − 0.7738 = 0.2262.
 M1#maths-u13-19-q2@1: With Holm's method for 4 tests at α = 0.05, what threshold does the smallest p-value face? | 0.0125 | 0.05 | 0.0167 | 0.025 | 0.2 | The smallest is compared with α/m = 0.05/4.
 M2#maths-u13-19-q3@2: Why is the Bonferroni correction called conservative? | It controls the FWER at or below α, often well below, losing power | It increases false positives | It ignores the number of tests | It only works for independent tests | It uses larger thresholds, so it rejects more often | Dividing α by m guarantees control but often rejects fewer than necessary.
@@ -695,8 +695,8 @@ Q: What does FDR control at 10% mean? | On average, at most 10% of declared disc
 Q: What is the BH threshold for the 3rd smallest of 10 p-values at q = 0.05? | 0.015.
 SUM: FDR controls the share of false discoveries.
 SUM: Benjamini–Hochberg is the standard method.
-SRC: Benjamini Y, Hochberg Y, Controlling the false discovery rate, Journal of the Royal Statistical Society B 57(1), 289 | journal | 1995 | https://doi.org/10.1111/j.2517-6161.1995.tb02031.x
-SRC: Storey JD, Tibshirani R, Statistical significance for genomewide studies, PNAS 100(16), 9440 | journal | 2003 | https://doi.org/10.1073/pnas.1530509100
+SRC: Benjamini Y, Hochberg Y, Controlling the false discovery rate, Journal of the Royal Statistical Society B 57(1), 289 | primary | 1995 | https://doi.org/10.1111/j.2517-6161.1995.tb02031.x
+SRC: Storey JD, Tibshirani R, Statistical significance for genomewide studies, PNAS 100(16), 9440 | primary | 2003 | https://doi.org/10.1073/pnas.1530509100
 NUM1#maths-u13-20-q1@1: With m = 100 tests and q = 0.05, what is the BH threshold for the 20th smallest p-value? | 0.01 | 0.00001 |  | (k/m)q = (20/100) × 0.05 = 0.01.
 M1#maths-u13-20-q2@1: When is FDR control preferred to FWER control? | When screening many hypotheses for follow-up | When one false positive would be disastrous | When there's only one test | Never | When p-values are large | Screening accepts a few false leads in exchange for many more true discoveries.
 M2#maths-u13-20-q3@2: In Benjamini–Hochberg, p₍₂₎ fails its threshold but p₍₃₎ passes. What happens to hypothesis 2? | It's rejected too | It's not rejected | The procedure stops | It's retested | It's removed | All hypotheses up to the largest passing k are rejected.
@@ -730,7 +730,7 @@ Q: Which transformation often helps with right-skewed positive data? | Taking lo
 SUM: Parametric methods assume a model.
 SUM: Check assumptions before trusting results.
 SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, section 1.3.3.24: Normal probability plot | guidance | 2012 | https://www.itl.nist.gov/div898/handbook/
-SRC: Altman DG, Practical Statistics for Medical Research (Chapman & Hall 1991) | textbook | 1991 | https://www.routledge.com/
+SRC: Altman DG, Practical Statistics for Medical Research (Chapman & Hall 1991) | secondary | 1991 | https://www.routledge.com/
 M1#maths-u13-21-q1@1: Which is an assumption of the pooled two-sample t-test? | Equal population variances | Equal sample sizes | Integer data | A sample size above 100 | Uniformly distributed data | The pooled version assumes a common variance; Welch's version drops it.
 M2#maths-u13-21-q2@2: Why might a t-test still be reasonable for moderately skewed data with n = 200? | The CLT makes the sample mean approximately normal | Skewness doesn't exist for large samples | t-tests need no assumptions | Large samples are always normal | It isn't reasonable | Inference for means relies on the sampling distribution of x̄, which the CLT makes nearly normal.
 
@@ -764,8 +764,8 @@ Q: Which nonparametric test compares two independent groups? | The Mann–Whitne
 Q: What information does the sign test ignore? | The sizes of the differences.
 SUM: Nonparametric methods trade assumptions for robustness.
 SUM: Ranks and signs carry the information.
-SRC: Hollander M, Wolfe DA, Chicken E, Nonparametric Statistical Methods (3rd edn, Wiley 2014) | textbook | 2014 | https://www.wiley.com/
-SRC: Altman DG, Practical Statistics for Medical Research (Chapman & Hall 1991) | textbook | 1991 | https://www.routledge.com/
+SRC: Hollander M, Wolfe DA, Chicken E, Nonparametric Statistical Methods (3rd edn, Wiley 2014) | secondary | 2014 | https://www.wiley.com/
+SRC: Altman DG, Practical Statistics for Medical Research (Chapman & Hall 1991) | secondary | 1991 | https://www.routledge.com/
 NUM1#maths-u13-22-q1@1: In a sign test with 12 non-zero differences, all 12 are positive. Find the one-tailed p-value, to 5 decimal places. | 0.00024 | 0.00001 |  | (1/2)^{12} = 1/4096 ≈ 0.00024.
 M1#maths-u13-22-q2@1: Which data most clearly call for a nonparametric test? | Satisfaction ratings on a 1–5 scale from 12 people | Exam marks for a large national cohort of students | Reaction times of 1,000 people | Masses of 200 machine parts | Weights of 300 newborn babies | Small samples of ordinal ratings don't suit normal-based methods.
 M3#maths-u13-22-q3@2: Under perfectly normal data, how efficient is the Wilcoxon test relative to the t-test asymptotically? | About 95% | About 50% | About 64% | Exactly 100% | About 10% | The asymptotic relative efficiency is 3/π ≈ 0.955: very little is lost.
@@ -799,7 +799,7 @@ Q: How is a two-proportion z-test related to a chi-squared test? | z^{2} equals 
 SUM: z-tests use the standard normal.
 SUM: They need known σ or large samples.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | textbook | 2013 | https://www.wiley.com/
+SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
 NUM1#maths-u13-23-q1@1: Test H₀: p = 0.5 with n = 100 and p̂ = 0.6. Find z. | 2 | 0.001 |  | SE = √(0.25/100) = 0.05, so z = 0.1/0.05 = 2.
 M1#maths-u13-23-q2@1: When is a z-test for a mean appropriate rather than a t-test? | When σ is known or n is large | When n is small and σ unknown | Always | Never | When data are ordinal | With σ estimated from a small sample, the extra uncertainty calls for t.
 M2#maths-u13-23-q3@2: In an A/B test, which standard error does the two-proportion z-test use under H₀? | One based on the pooled proportion | The larger sample's | √(p̂₁ + p̂₂) | The difference in proportions | σ/√n | Under H₀ both groups share one p, best estimated by pooling.
@@ -832,8 +832,8 @@ Q: How many degrees of freedom does a paired t-test on 15 pairs use? | 14.
 Q: Which two-sample t-test doesn't assume equal variances? | Welch's t-test.
 SUM: t-tests compare means with estimated SDs.
 SUM: Match the version to the design.
-SRC: Student, The probable error of a mean, Biometrika 6(1), 1 | journal | 1908 | https://doi.org/10.1093/biomet/6.1.1
-SRC: Altman DG, Practical Statistics for Medical Research (Chapman & Hall 1991) | textbook | 1991 | https://www.routledge.com/
+SRC: Student, The probable error of a mean, Biometrika 6(1), 1 | primary | 1908 | https://doi.org/10.1093/biomet/6.1.1
+SRC: Altman DG, Practical Statistics for Medical Research (Chapman & Hall 1991) | secondary | 1991 | https://www.routledge.com/
 NUM1#maths-u13-24-q1@1: A sample of 16 has x̄ = 54 and s = 6. Find t for H₀: μ = 50, to 3 decimal places. | 2.667 | 0.001 |  | SE = 6/4 = 1.5, so t = 4/1.5 ≈ 2.667.
 M1#maths-u13-24-q2@1: Students take a test before and after a course. Which t-test fits? | Paired | Two-sample pooled | Welch two-sample | One-sample against 0 using the raw scores | None | Each student gives two linked scores, so analyse their differences.
 M2#maths-u13-24-q3@2: What is the pooled two-sample t-test's degrees of freedom for groups of 12 and 15? | 25 | 27 | 26 | 11 | 14 | The pooled test loses one degree of freedom per group: n₁ + n₂ − 2 = 25.
@@ -866,7 +866,7 @@ Q: How do you find an expected count in a contingency table? | (Row total × col
 Q: How many degrees of freedom for testing a Poisson fit over 6 classes with λ estimated? | 6 − 1 − 1 = 4.
 SUM: Chi-squared compares observed with expected counts.
 SUM: It tests fit and independence.
-SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | textbook | 2013 | https://www.wiley.com/
+SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u13-25-q1@1: In a 2 × 2 table, a cell has row total 40, column total 30 and grand total 100. Find its expected count. | 12 | 0 |  | 40 × 30/100 = 12.
 M1#maths-u13-25-q2@1: Why should percentages never be used in place of counts in a chi-squared test? | The statistic depends on sample size, which percentages hide | Percentages are always wrong | Percentages can't be squared, so the formula fails | Counts are easier to type | It makes no difference | The same percentages from 10 or 10,000 people carry very different evidence.
@@ -900,8 +900,8 @@ Q: Which distribution underlies Fisher's exact test? | The hypergeometric.
 Q: In the tea experiment, what is P(all four correct) by guessing? | 1/70.
 SUM: Fisher's test is exact for 2 × 2 tables.
 SUM: It suits small samples.
-SRC: Fisher RA, The Design of Experiments (Oliver and Boyd 1935) | textbook | 1935 | https://archive.org/
-SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | textbook | 2013 | https://www.wiley.com/
+SRC: Fisher RA, The Design of Experiments (Oliver and Boyd 1935) | secondary | 1935 | https://archive.org/
+SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
 NUM1#maths-u13-26-q1@1: How many ways are there to choose which 4 of 8 cups were milk-first? | 70 | 0 |  | C(8, 4) = 70.
 M1#maths-u13-26-q2@1: When is Fisher's exact test preferred to the chi-squared test? | When expected counts are small | When the table is very large | When data are continuous | When the sample has thousands of observations | Never | The chi-squared approximation is poor for small expected counts.
 M2#maths-u13-26-q3@2: What does Fisher's test hold fixed when computing probabilities? | Both sets of margins (row and column totals) | The difference in proportions | Only the grand total of the table | The cell counts | The odds ratio | Conditioning on the margins makes the table's distribution hypergeometric.
@@ -934,8 +934,8 @@ Q: What is U₁ + U₂ always equal to? | n₁n₂.
 Q: What effect size does U₁/(n₁n₂) estimate? | P(X > Y), the probability a group 1 value exceeds a group 2 value.
 SUM: Mann–Whitney compares two groups by ranks.
 SUM: It's robust and assumption-light.
-SRC: Mann HB, Whitney DR, On a test of whether one of two random variables is stochastically larger than the other, Annals of Mathematical Statistics 18(1), 50 | journal | 1947 | https://doi.org/10.1214/aoms/1177730491
-SRC: Hollander M, Wolfe DA, Chicken E, Nonparametric Statistical Methods (3rd edn, Wiley 2014) | textbook | 2014 | https://www.wiley.com/
+SRC: Mann HB, Whitney DR, On a test of whether one of two random variables is stochastically larger than the other, Annals of Mathematical Statistics 18(1), 50 | primary | 1947 | https://doi.org/10.1214/aoms/1177730491
+SRC: Hollander M, Wolfe DA, Chicken E, Nonparametric Statistical Methods (3rd edn, Wiley 2014) | secondary | 2014 | https://www.wiley.com/
 NUM1#maths-u13-27-q1@1: Group 1 (n₁ = 5) has rank sum 40 in a combined ranking. Find U₁. | 25 | 0 |  | U₁ = 40 − 5 × 6/2 = 40 − 15 = 25.
 M1#maths-u13-27-q2@1: Which situation suits a Mann–Whitney U test? | Comparing pain ratings between two independent groups | Comparing before and after scores on the same people | Comparing three groups | Testing a correlation | Testing a proportion | Two independent groups and ordinal data suit the rank-sum approach.
 M2#maths-u13-27-q3@2: What is the mean of U under H₀ for groups of 10 and 12? | 60 | 120 | 11 | 22 | 66 | Under H₀ the U statistic is centred at half of n₁n₂: E(U) = 120/2 = 60.
@@ -968,8 +968,8 @@ Q: What do W⁺ and W⁻ add up to for n non-zero differences? | n(n + 1)/2.
 Q: What assumption does the signed-rank test make that the sign test doesn't? | The differences are symmetric about their median.
 SUM: Signed ranks use both direction and size.
 SUM: It suits paired, non-normal data.
-SRC: Wilcoxon F, Individual comparisons by ranking methods, Biometrics Bulletin 1(6), 80 | journal | 1945 | https://doi.org/10.2307/3001968
-SRC: Hollander M, Wolfe DA, Chicken E, Nonparametric Statistical Methods (3rd edn, Wiley 2014) | textbook | 2014 | https://www.wiley.com/
+SRC: Wilcoxon F, Individual comparisons by ranking methods, Biometrics Bulletin 1(6), 80 | primary | 1945 | https://doi.org/10.2307/3001968
+SRC: Hollander M, Wolfe DA, Chicken E, Nonparametric Statistical Methods (3rd edn, Wiley 2014) | secondary | 2014 | https://www.wiley.com/
 NUM1#maths-u13-28-q1@1: Under H₀, what is the mean of W⁺ for n = 20 non-zero differences? | 105 | 0 |  | n(n + 1)/4 = 20 × 21/4 = 105.
 M1#maths-u13-28-q2@1: What does the signed-rank test use that the sign test ignores? | The sizes of the differences, through their ranks | The order of collection | The sample mean | The variance | The order in which the pairs were collected | Ranking |d| brings in magnitude, which adds power.
 M3#maths-u13-28-q3@2: Paired differences are strongly skewed. Which test is safest? | The sign test | The Wilcoxon signed-rank test | The paired t-test | A two-sample t-test | Fisher's exact test | Skewness violates the signed-rank test's symmetry assumption; the sign test needs none.
@@ -1002,8 +1002,8 @@ Q: What is the parametric counterpart of the Kruskal–Wallis test? | One-way AN
 Q: How many degrees of freedom does H have for 4 groups? | 3.
 SUM: Kruskal–Wallis compares several groups by ranks.
 SUM: Follow up to find which differ.
-SRC: Kruskal WH, Wallis WA, Use of ranks in one-criterion variance analysis, Journal of the American Statistical Association 47(260), 583 | journal | 1952 | https://doi.org/10.1080/01621459.1952.10483441
-SRC: Hollander M, Wolfe DA, Chicken E, Nonparametric Statistical Methods (3rd edn, Wiley 2014) | textbook | 2014 | https://www.wiley.com/
+SRC: Kruskal WH, Wallis WA, Use of ranks in one-criterion variance analysis, Journal of the American Statistical Association 47(260), 583 | primary | 1952 | https://doi.org/10.1080/01621459.1952.10483441
+SRC: Hollander M, Wolfe DA, Chicken E, Nonparametric Statistical Methods (3rd edn, Wiley 2014) | secondary | 2014 | https://www.wiley.com/
 NUM1#maths-u13-29-q1@1: For 5 groups, what is the 5% critical value of the χ^{2} approximation to H, to 2 decimal places? | 9.49 | 0.01 |  | With k − 1 = 4 degrees of freedom, the upper 5% point of χ^{2}₄ is 9.49.
 M1#maths-u13-29-q2@1: Which test fits comparing pain scores across four independent treatment groups with skewed data? | Kruskal–Wallis | Paired t-test | Mann–Whitney U | Fisher's exact | Two-sample z-test | Several independent groups with non-normal data call for Kruskal–Wallis.
 M2#maths-u13-29-q3@2: A Kruskal–Wallis test is significant. What should you do next? | Run corrected pairwise comparisons, such as Dunn's test | Conclude all groups differ | Conclude the largest group differs | Run another Kruskal–Wallis | Conclude that every group differs from every other | H tells you some difference exists, not where.
@@ -1036,7 +1036,7 @@ Q: What does the KS statistic measure? | The largest vertical distance between t
 Q: Which test gives more weight to the tails than KS? | The Anderson–Darling test.
 SUM: KS compares entire distributions.
 SUM: Watch for estimated parameters.
-SRC: Massey FJ, The Kolmogorov–Smirnov test for goodness of fit, Journal of the American Statistical Association 46(253), 68 | journal | 1951 | https://doi.org/10.1080/01621459.1951.10500769
+SRC: Massey FJ, The Kolmogorov–Smirnov test for goodness of fit, Journal of the American Statistical Association 46(253), 68 | primary | 1951 | https://doi.org/10.1080/01621459.1951.10500769
 SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, section 1.3.5.16: Kolmogorov–Smirnov goodness-of-fit test | guidance | 2012 | https://www.itl.nist.gov/div898/handbook/
 NUM1#maths-u13-30-q1@1: Find the approximate 5% KS critical value for n = 400, to 3 decimal places. | 0.068 | 0.001 |  | 1.36/√400 = 1.36/20 = 0.068.
 M1#maths-u13-30-q2@1: What is a weakness of the KS test? | It has low power for differences in the tails | It only detects differences in means | It requires normal data | It can't compare two samples | It needs large expected counts | The CDF gap is naturally small in the tails, so tail differences are hard to detect.
@@ -1071,7 +1071,7 @@ Q: What are the degrees of freedom for one-way ANOVA with 4 groups and 20 observ
 Q: What does a significant ANOVA F-test tell you? | At least one group mean differs.
 SUM: ANOVA compares between- and within-group variation.
 SUM: The F-test checks for any difference in means.
-SRC: Montgomery DC, Design and Analysis of Experiments (9th edn, Wiley 2017) | textbook | 2017 | https://www.wiley.com/
+SRC: Montgomery DC, Design and Analysis of Experiments (9th edn, Wiley 2017) | secondary | 2017 | https://www.wiley.com/
 SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, section 7.4.3: Are the means equal? | guidance | 2012 | https://www.itl.nist.gov/div898/handbook/
 NUM1#maths-u13-31-q1@1: An ANOVA has SS_{B} = 30 with 3 groups and SS_{W} = 54 with 30 observations. Find F, to 2 decimal places. | 7.5 | 0.01 |  | MS_{B} = 30/2 = 15, MS_{W} = 54/27 = 2, F = 7.5.
 M1#maths-u13-31-q2@1: Why use ANOVA rather than all pairwise t-tests for five groups? | Ten separate tests would inflate the chance of a false positive | t-tests can't compare means | t-tests need equal group sizes | ANOVA needs fewer assumptions | ANOVA gives each pair's difference with a p-value | Ten tests at 5% give a much higher family-wise error rate than one F-test.
@@ -1106,7 +1106,7 @@ Q: Why adjust for baseline in a randomised trial? | To improve precision and cor
 SUM: ANCOVA adjusts comparisons for covariates.
 SUM: It increases precision in trials.
 SRC: European Medicines Agency, Guideline on adjustment for baseline covariates in clinical trials (EMA/CHMP/295050/2013) | guidance | 2015 | https://www.ema.europa.eu/
-SRC: Vickers AJ, Altman DG, Analysing controlled trials with baseline and follow up measurements, BMJ 323, 1123 | journal | 2001 | https://doi.org/10.1136/bmj.323.7321.1123
+SRC: Vickers AJ, Altman DG, Analysing controlled trials with baseline and follow up measurements, BMJ 323, 1123 | primary | 2001 | https://doi.org/10.1136/bmj.323.7321.1123
 NUM1#maths-u13-32-q1@1: Raw means differ by 10, baseline means by 5, and the covariate slope is 1.2. Find the adjusted difference. | 4 | 0 |  | 10 − 1.2 × 5 = 4.
 M1#maths-u13-32-q2@1: Which ANCOVA assumption is checked by testing a group × covariate interaction? | Homogeneity of regression slopes | Normality of the covariate | Equal group sizes | Independence of groups | No missing data | Equal slopes mean the adjustment is the same in every group.
 M2#maths-u13-32-q3@2: In a trial, why shouldn't you adjust for a variable measured after treatment started? | It may be affected by the treatment, biasing the estimated effect | It's always uncorrelated | It reduces sample size | It reduces the sample size available for the analysis | It makes ANCOVA impossible | Adjusting for a consequence of treatment can remove part of the treatment's real effect.
@@ -1139,8 +1139,8 @@ Q: What are the odds for a probability of 0.75? | 3 (3 to 1).
 Q: Which test suits paired binary data? | McNemar's test.
 SUM: Categorical outcomes use odds and proportions.
 SUM: OR and RR differ for common outcomes.
-SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | textbook | 2013 | https://www.wiley.com/
-SRC: Bland JM, Altman DG, The odds ratio, BMJ 320, 1468 | journal | 2000 | https://doi.org/10.1136/bmj.320.7247.1468
+SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
+SRC: Bland JM, Altman DG, The odds ratio, BMJ 320, 1468 | primary | 2000 | https://doi.org/10.1136/bmj.320.7247.1468
 NUM1#maths-u13-33-q1@1: A probability of 0.2 corresponds to what odds? | 0.25 | 0.0001 |  | 0.2/0.8 = 0.25.
 M1#maths-u13-33-q2@1: Which study design can estimate an odds ratio but not a relative risk directly? | Case–control study | Randomised trial | Cohort study | Census | Cross-over trial | Case–control studies fix the numbers of cases and controls, so risks can't be computed, but odds ratios can.
 M2#maths-u13-33-q3@2: An outcome is rare (1%). How do the OR and RR compare? | They're nearly equal | The OR is much larger | The RR is much larger | They're unrelated | The OR is always 1 | When p is small, p/(1 − p) ≈ p, so odds and risks almost coincide.
@@ -1174,8 +1174,8 @@ Q: What causes Simpson's paradox? | A lurking variable linked to both the groupi
 Q: What range does Cramér's V take? | From 0 (no association) to 1.
 SUM: Contingency tables cross-tabulate counts.
 SUM: Lurking variables can reverse comparisons.
-SRC: Charig CR, Webb DR, Payne SR, Wickham JE, Comparison of treatment of renal calculi by open surgery, PCNL and ESWL, BMJ 292, 879 | journal | 1986 | https://doi.org/10.1136/bmj.292.6524.879
-SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | textbook | 2013 | https://www.wiley.com/
+SRC: Charig CR, Webb DR, Payne SR, Wickham JE, Comparison of treatment of renal calculi by open surgery, PCNL and ESWL, BMJ 292, 879 | primary | 1986 | https://doi.org/10.1136/bmj.292.6524.879
+SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
 NUM1#maths-u13-34-q1@1: A 2 × 2 table with n = 200 gives χ^{2} = 8. Find Cramér's V. | 0.2 | 0.001 |  | V = √(8/(200 × 1)) = √0.04 = 0.2.
 M1#maths-u13-34-q2@1: Of 120 smokers, 30 have a cough; of 80 non-smokers, 8 do. What percentage of smokers have a cough? | 25% | 30% | 15% | 37.5% | 20% | 30/120 = 25%: use the smokers' row total as the denominator.
 M2#maths-u13-34-q3@2: Treatment A beats B within men and within women, but B beats A overall. What's the likely explanation? | Simpson's paradox from different sex mixes in each treatment group | A data entry error | Chance alone, since paradoxes like this are random | The treatments are identical | Men and women can't be combined | Unequal mixes of an influential subgroup can reverse the combined comparison.
@@ -1211,8 +1211,8 @@ Q: Which regression model suits a yes/no response? | Logistic regression.
 Q: What is a residual? | Observed value minus fitted value.
 SUM: Regression relates a response to predictors.
 SUM: Respect the data's range and confounders.
-SRC: Gelman A, Hill J, Vehtari A, Regression and Other Stories (Cambridge University Press 2020) | textbook | 2020 | https://avehtari.github.io/ROS-Examples/
-SRC: Barnett AG, van der Pols JC, Dobson AJ, Regression to the mean: what it is and how to deal with it, International Journal of Epidemiology 34(1), 215 | journal | 2005 | https://doi.org/10.1093/ije/dyh299
+SRC: Gelman A, Hill J, Vehtari A, Regression and Other Stories (Cambridge University Press 2020) | secondary | 2020 | https://avehtari.github.io/ROS-Examples/
+SRC: Barnett AG, van der Pols JC, Dobson AJ, Regression to the mean: what it is and how to deal with it, International Journal of Epidemiology 34(1), 215 | primary | 2005 | https://doi.org/10.1093/ije/dyh299
 M1#maths-u13-35-q1@1: Patients with the highest blood pressure readings are retested and their average falls, with no treatment. What explains it? | Regression to the mean | A placebo effect only | Measurement fraud | Extrapolation | Overfitting | Extreme readings partly reflect random variation, which tends not to repeat.
 M2#maths-u13-35-q2@2: Which model suits the number of hospital admissions per day? | Poisson (or negative binomial) regression | Linear regression on raw counts only | Logistic regression | Survival analysis | Fisher's exact test | Counts are non-negative integers, suited to count models with a log link.
 M2#maths-u13-35-q3@2: What does a curved pattern in the residuals suggest? | The straight-line model is missing a non-linear relationship | The model fits perfectly | The data have no errors | r must be 1 | Nothing | Residuals should look like random scatter if the model form is right.
@@ -1249,7 +1249,7 @@ Q: What does a funnel-shaped residual plot suggest? | Non-constant variance.
 SUM: Least squares fits the best straight line.
 SUM: Residuals check the fit.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Weisberg S, Applied Linear Regression (4th edn, Wiley 2014) | textbook | 2014 | https://www.wiley.com/
+SRC: Weisberg S, Applied Linear Regression (4th edn, Wiley 2014) | secondary | 2014 | https://www.wiley.com/
 NUM1#maths-u13-36-q1@1: Using ŷ = 2.2 + 0.6x, predict y at x = 3.5. | 4.3 | 0.001 |  | 2.2 + 0.6 × 3.5 = 2.2 + 2.1 = 4.3.
 M1#maths-u13-36-q2@1: A regression of exam mark on hours studied has slope 3.2. What does that mean? | Each extra hour is associated with 3.2 more marks on average | Each mark needs 3.2 hours | The intercept is 3.2 | The correlation between hours and marks | Studying causes exactly 3.2% more marks per hour | The slope is the average change in y per unit of x (an association, not proof of cause).
 M3#maths-u13-36-q3@2: Why is a prediction interval wider than a confidence interval for the mean response at the same x? | It includes the scatter of individual points as well as uncertainty in the line | It uses a larger significance level than the confidence interval | It ignores the slope | It uses fewer data | They're the same width | A new observation varies about the true line, adding σ^{2} to the uncertainty.
@@ -1283,8 +1283,8 @@ Q: How many dummy variables represent a factor with 4 categories? | 3.
 Q: Can R^{2} decrease when a predictor is added? | No; adjusted R^{2} can.
 SUM: Multiple regression adjusts for several predictors.
 SUM: Check collinearity and overfitting.
-SRC: Weisberg S, Applied Linear Regression (4th edn, Wiley 2014) | textbook | 2014 | https://www.wiley.com/
-SRC: James G, Witten D, Hastie T, Tibshirani R, An Introduction to Statistical Learning (2nd edn, Springer 2021) | textbook | 2021 | https://www.statlearning.com/
+SRC: Weisberg S, Applied Linear Regression (4th edn, Wiley 2014) | secondary | 2014 | https://www.wiley.com/
+SRC: James G, Witten D, Hastie T, Tibshirani R, An Introduction to Statistical Learning (2nd edn, Springer 2021) | secondary | 2021 | https://www.statlearning.com/
 NUM1#maths-u13-37-q1@1: Using price = 50 + 2.5 × area + 10 × bedrooms (£000), find the predicted price difference between two flats of equal size with 2 and 4 bedrooms, in £000. | 20 | 0 | £000 | Holding area fixed, 2 extra bedrooms add 2 × 10 = 20.
 M1#maths-u13-37-q2@1: What does a high variance inflation factor indicate? | A predictor is highly correlated with the others | The model fits perfectly | Residuals are non-normal | The residuals are far from normally distributed | The intercept is wrong | VIF measures how much collinearity inflates a coefficient's variance.
 M2#maths-u13-37-q3@2: In a model with an interaction x₁x₂, what does the interaction coefficient describe? | How the effect of x₁ changes with x₂ | The average of x₁ and x₂ | The correlation of x₁ and x₂ | The intercept | The residual variance | With an interaction, the slope for x₁ is β₁ + β₁₂x₂.
@@ -1317,8 +1317,8 @@ Q: What is p when η = 0? | 0.5.
 Q: What does e^{β} represent in logistic regression? | The odds ratio for a one-unit increase in the predictor.
 SUM: Logistic regression models binary outcomes.
 SUM: Its coefficients are log odds ratios.
-SRC: Hosmer DW, Lemeshow S, Sturdivant RX, Applied Logistic Regression (3rd edn, Wiley 2013) | textbook | 2013 | https://www.wiley.com/
-SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | textbook | 2013 | https://www.wiley.com/
+SRC: Hosmer DW, Lemeshow S, Sturdivant RX, Applied Logistic Regression (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
+SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
 NUM1#maths-u13-38-q1@1: logit(p) = −1 + 0.2x. Find p at x = 5. | 0.5 | 0.001 |  | η = −1 + 1 = 0, so p = 1/(1 + 1) = 0.5.
 M1#maths-u13-38-q2@1: A logistic coefficient for smoking is 0.7. What is the odds ratio? | About 2.01 | 0.7 | About 1.07 | About 0.5 | About 7 | e^{0.7} ≈ 2.01: smokers have about twice the odds.
 M2#maths-u13-38-q3@2: Why is logistic regression used instead of linear regression for a binary outcome? | Linear models can predict probabilities below 0 or above 1 | Linear regression can't handle two predictors | Binary data are always normal | Logistic regression is always more accurate | There's no difference | The logit link keeps predicted probabilities between 0 and 1.
@@ -1351,8 +1351,8 @@ Q: What does an offset of log(person-years) do? | Turns the model into one for r
 Q: What should you use if count data are overdispersed? | Quasi-Poisson or negative binomial regression.
 SUM: Poisson regression models counts and rates.
 SUM: Coefficients are log rate ratios.
-SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | textbook | 2013 | https://www.wiley.com/
-SRC: Hilbe JM, Negative Binomial Regression (2nd edn, Cambridge University Press 2011) | textbook | 2011 | https://www.cambridge.org/
+SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
+SRC: Hilbe JM, Negative Binomial Regression (2nd edn, Cambridge University Press 2011) | secondary | 2011 | https://www.cambridge.org/
 NUM1#maths-u13-39-q1@1: A Poisson regression has coefficient −0.3 for a safety feature. Find the rate ratio, to 3 decimal places. | 0.741 | 0.001 |  | e^{−0.3} ≈ 0.741: about a 26% lower rate.
 M1#maths-u13-39-q2@1: Why does Poisson regression use a log link? | It keeps predicted counts positive and makes effects multiplicative | Counts are always normal | It removes the need to check overdispersion | It removes the need for data | It makes the model linear in the response y itself | μ = e^{η} is always positive, and coefficients act as rate ratios.
 M2#maths-u13-39-q3@2: Hospitals are observed for different lengths of time. How should a Poisson model account for that? | Include log(observation time) as an offset | Divide all counts by 2 to average them | Divide counts by 2 | Use logistic regression | Remove short observations | The offset turns counts into rates per unit time.
@@ -1384,8 +1384,8 @@ Q: Is y = a + bx + cx^{2} a nonlinear regression model? | No: it's linear in the
 Q: What does K_{m} mean in the Michaelis–Menten model? | The substrate level at which the rate is half of V_{max}.
 SUM: Nonlinear regression fits scientific models.
 SUM: It needs iteration and good starting values.
-SRC: Bates DM, Watts DG, Nonlinear Regression Analysis and Its Applications (Wiley 1988) | textbook | 1988 | https://www.wiley.com/
-SRC: Motulsky H, Christopoulos A, Fitting Models to Biological Data Using Linear and Nonlinear Regression (Oxford University Press 2004) | textbook | 2004 | https://global.oup.com/
+SRC: Bates DM, Watts DG, Nonlinear Regression Analysis and Its Applications (Wiley 1988) | secondary | 1988 | https://www.wiley.com/
+SRC: Motulsky H, Christopoulos A, Fitting Models to Biological Data Using Linear and Nonlinear Regression (Oxford University Press 2004) | secondary | 2004 | https://global.oup.com/
 NUM1#maths-u13-40-q1@1: For y = 20(1 − e^{−0.5x}), find y at x = 2, to 2 decimal places. | 12.64 | 0.01 |  | 20(1 − e^{−1}) ≈ 20 × 0.6321 = 12.64.
 M1#maths-u13-40-q2@1: Which model is non-linear in its parameters? | y = ae^{bx} | y = a + bx | y = a + bx + cx^{2} | y = a + b log x | y = a + b/x | b sits inside the exponential, so least squares has no closed form.
 M2#maths-u13-40-q3@2: What is a common practical difficulty in nonlinear regression? | The fitting algorithm may need good starting values to converge | It can't produce standard errors | It needs categorical data | It can't handle more than one x | It always has a closed-form solution that is hard to compute | Iterative methods can stall or find local minima from poor starts.
@@ -1420,8 +1420,8 @@ Q: What is the breakdown point of ordinary least squares? | 0%: one bad point ca
 Q: How is the Theil–Sen slope calculated? | The median of the slopes between all pairs of points.
 SUM: Robust regression resists outliers.
 SUM: Big differences from least squares are a warning.
-SRC: Huber PJ, Ronchetti EM, Robust Statistics (2nd edn, Wiley 2009) | textbook | 2009 | https://www.wiley.com/
-SRC: Rousseeuw PJ, Leroy AM, Robust Regression and Outlier Detection (Wiley 1987) | textbook | 1987 | https://www.wiley.com/
+SRC: Huber PJ, Ronchetti EM, Robust Statistics (2nd edn, Wiley 2009) | secondary | 2009 | https://www.wiley.com/
+SRC: Rousseeuw PJ, Leroy AM, Robust Regression and Outlier Detection (Wiley 1987) | secondary | 1987 | https://www.wiley.com/
 NUM1#maths-u13-41-q1@1: Pairwise slopes between points are 0.8, 1.1, 0.9, 1.0 and 12. Find the Theil–Sen slope. | 1 | 0 |  | The median of 0.8, 0.9, 1.0, 1.1, 12 is 1.0.
 M1#maths-u13-41-q2@1: Why is least squares sensitive to outliers? | Squaring residuals gives large errors huge weight | It ignores large residuals and fits small ones only | It uses medians | It only fits horizontal lines | It isn't sensitive | A residual of 10 contributes 100 to the sum, dominating smaller ones.
 M2#maths-u13-41-q3@2: Which estimator minimises the sum of absolute residuals? | Least absolute deviations (median regression) | Ridge regression | Ordinary least squares with weights | Logistic regression | The method of moments | LAD replaces squares with absolute values, limiting outliers' pull.
@@ -1455,8 +1455,8 @@ Q: Which quantile regression is the same as least absolute deviations? | Median 
 Q: Name one use of quantile regression. | Growth charts, value at risk or prediction intervals.
 SUM: Quantile regression models whole distributions.
 SUM: It uses an asymmetric loss.
-SRC: Koenker R, Bassett G, Regression quantiles, Econometrica 46(1), 33 | journal | 1978 | https://doi.org/10.2307/1913643
-SRC: Koenker R, Quantile Regression (Cambridge University Press 2005) | textbook | 2005 | https://www.cambridge.org/
+SRC: Koenker R, Bassett G, Regression quantiles, Econometrica 46(1), 33 | primary | 1978 | https://doi.org/10.2307/1913643
+SRC: Koenker R, Quantile Regression (Cambridge University Press 2005) | secondary | 2005 | https://www.cambridge.org/
 NUM1#maths-u13-42-q1@1: For τ = 0.25, find the check loss for a residual of −4. | 3 | 0 |  | Negative residual: (1 − 0.25) × 4 = 3.
 M1#maths-u13-42-q2@1: What does quantile regression with τ = 0.1 estimate? | The 10th percentile of y given x | The mean of y | The variance of y | The top 10% of x | The probability y > 0.1 | It targets the conditional 10th percentile.
 M2#maths-u13-42-q3@2: Why might a 90th-percentile regression slope differ from a median regression slope? | The predictor affects the spread as well as the centre | Quantile regression is biased at high quantiles | Quantile slopes are always flatter | They must be equal | Because of rounding | If x widens the distribution, upper quantiles rise faster than the middle.
@@ -1489,8 +1489,8 @@ Q: What does ridge regression become when λ = 0? | Ordinary least squares.
 Q: Can ridge regression set a coefficient exactly to zero? | No, it only shrinks towards zero.
 SUM: Ridge shrinks coefficients to cut variance.
 SUM: Cross-validation chooses λ.
-SRC: Hoerl AE, Kennard RW, Ridge regression: biased estimation for nonorthogonal problems, Technometrics 12(1), 55 | journal | 1970 | https://doi.org/10.1080/00401706.1970.10488634
-SRC: Hastie T, Tibshirani R, Friedman J, The Elements of Statistical Learning (2nd edn, Springer 2009) | textbook | 2009 | https://hastie.su.domains/ElemStatLearn/
+SRC: Hoerl AE, Kennard RW, Ridge regression: biased estimation for nonorthogonal problems, Technometrics 12(1), 55 | primary | 1970 | https://doi.org/10.1080/00401706.1970.10488634
+SRC: Hastie T, Tibshirani R, Friedman J, The Elements of Statistical Learning (2nd edn, Springer 2009) | secondary | 2009 | https://hastie.su.domains/ElemStatLearn/
 NUM1#maths-u13-43-q1@1: With one predictor, S_{xy} = 30 and S_{xx} = 15. Find the ridge estimate with λ = 5. | 1.5 | 0.001 |  | 30/(15 + 5) = 1.5 (least squares would give 2).
 M1#maths-u13-43-q2@1: What problem does ridge regression especially help with? | Highly correlated predictors | Missing response values | Binary outcomes | Too few predictors | Non-random sampling | Collinearity makes least squares unstable; the penalty stabilises it.
 M2#maths-u13-43-q3@2: Ridge regression corresponds to which Bayesian prior on the coefficients? | Normal centred at zero | Uniform on all reals | Laplace (double exponential) | Beta | Poisson | The squared penalty is the log of a normal prior.
@@ -1523,8 +1523,8 @@ Q: Which penalty can set coefficients exactly to zero, ridge or lasso? | The las
 Q: What does the elastic net combine? | The lasso and ridge penalties.
 SUM: The lasso shrinks and selects variables.
 SUM: Elastic net handles correlated groups.
-SRC: Tibshirani R, Regression shrinkage and selection via the lasso, Journal of the Royal Statistical Society B 58(1), 267 | journal | 1996 | https://doi.org/10.1111/j.2517-6161.1996.tb02080.x
-SRC: Hastie T, Tibshirani R, Wainwright M, Statistical Learning with Sparsity: The Lasso and Generalizations (CRC Press 2015) | textbook | 2015 | https://hastie.su.domains/StatLearnSparsity/
+SRC: Tibshirani R, Regression shrinkage and selection via the lasso, Journal of the Royal Statistical Society B 58(1), 267 | primary | 1996 | https://doi.org/10.1111/j.2517-6161.1996.tb02080.x
+SRC: Hastie T, Tibshirani R, Wainwright M, Statistical Learning with Sparsity: The Lasso and Generalizations (CRC Press 2015) | secondary | 2015 | https://hastie.su.domains/StatLearnSparsity/
 NUM1#maths-u13-44-q1@1: With orthonormal predictors and λ = 0.5, a least squares estimate of −2 becomes what lasso estimate? | -1.5 | 0.001 |  | Soft-thresholding: sign(−2) × (2 − 0.5) = −1.5.
 M1#maths-u13-44-q2@1: Why does the lasso produce exact zeros while ridge doesn't? | The absolute-value penalty has a corner at zero | Ridge uses absolute values of coefficients | Ridge ignores the intercept | The lasso deletes data | The lasso uses a larger λ than ridge in practice | The non-differentiable point at 0 lets the optimum sit exactly there.
 M3#maths-u13-44-q3@2: Two predictors are almost perfectly correlated and both matter. What does the plain lasso tend to do? | Keep one and drop the other, somewhat arbitrarily | Keep both with equal coefficients | Drop both | Make both negative | Fail to converge | The lasso picks one from a correlated group; the elastic net tends to keep both.
@@ -1557,8 +1557,8 @@ Q: What link function does logistic regression use? | The logit.
 Q: Which distribution suits positive, right-skewed claim sizes? | The gamma.
 SUM: GLMs unify regression models.
 SUM: Choose distribution and link by response type.
-SRC: McCullagh P, Nelder JA, Generalized Linear Models (2nd edn, Chapman & Hall 1989) | textbook | 1989 | https://www.routledge.com/
-SRC: Nelder JA, Wedderburn RWM, Generalized linear models, Journal of the Royal Statistical Society A 135(3), 370 | journal | 1972 | https://doi.org/10.2307/2344614
+SRC: McCullagh P, Nelder JA, Generalized Linear Models (2nd edn, Chapman & Hall 1989) | secondary | 1989 | https://www.routledge.com/
+SRC: Nelder JA, Wedderburn RWM, Generalized linear models, Journal of the Royal Statistical Society A 135(3), 370 | primary | 1972 | https://doi.org/10.2307/2344614
 NUM1#maths-u13-45-q1@1: A Poisson GLM with log link has η = 1.2 for a case. Find the predicted mean, to 3 decimal places. | 3.32 | 0.002 |  | μ = e^{1.2} ≈ 3.320.
 M1#maths-u13-45-q2@1: Which three parts make up a GLM? | A response distribution, a linear predictor and a link function | A mean, a median and a mode | A test, a p-value and an interval | Data, code and output | A prior, a likelihood and a posterior distribution | That's Nelder and Wedderburn's framework.
 M2#maths-u13-45-q3@2: How are GLMs usually fitted? | Iteratively reweighted least squares (maximum likelihood) | Ordinary least squares in one step | Ordinary least squares with no weighting | The method of moments, matched to the mean only | Bootstrap only | IRLS solves the likelihood equations by repeated weighted least squares.
@@ -1591,8 +1591,8 @@ Q: What does an ICC of 0 mean? | Groups explain none of the variance: observatio
 Q: Which groups are shrunk most in partial pooling? | Small or noisy groups.
 SUM: Mixed models handle clustered data.
 SUM: Partial pooling borrows strength across groups.
-SRC: Gelman A, Hill J, Data Analysis Using Regression and Multilevel/Hierarchical Models (Cambridge University Press 2007) | textbook | 2007 | https://www.cambridge.org/
-SRC: Bates D, Mächler M, Bolker B, Walker S, Fitting linear mixed-effects models using lme4, Journal of Statistical Software 67(1), 1 | journal | 2015 | https://doi.org/10.18637/jss.v067.i01
+SRC: Gelman A, Hill J, Data Analysis Using Regression and Multilevel/Hierarchical Models (Cambridge University Press 2007) | secondary | 2007 | https://www.cambridge.org/
+SRC: Bates D, Mächler M, Bolker B, Walker S, Fitting linear mixed-effects models using lme4, Journal of Statistical Software 67(1), 1 | primary | 2015 | https://doi.org/10.18637/jss.v067.i01
 NUM1#maths-u13-46-q1@1: Find the ICC when σ_{u}^{2} = 2 and σ_{e}^{2} = 8. | 0.2 | 0.001 |  | 2/(2 + 8) = 0.2.
 M1#maths-u13-46-q2@1: Pupils are nested in 50 schools. Why use a mixed model rather than ordinary regression? | Pupils in the same school are correlated, so ordinary standard errors are too small | Random effects remove all bias | Mixed models need fewer data | It makes all schools equal | Ordinary regression can't handle more than 20 groups | Clustering violates independence; random effects account for it.
 M2#maths-u13-46-q3@2: How does partial pooling treat a school with only 2 sampled pupils? | Its estimate is shrunk strongly towards the overall mean | It's ignored | It's treated as exact | It gets the largest weight | It's pooled with the largest school | Little data means little evidence that the school differs, so shrinkage is strong.
@@ -1627,8 +1627,8 @@ Q: What does an effective degrees of freedom of about 1 suggest? | The effect is
 Q: What controls how wiggly a GAM smooth can be? | The smoothing penalty λ.
 SUM: GAMs model non-linear effects smoothly.
 SUM: Penalties keep them from overfitting.
-SRC: Wood SN, Generalized Additive Models: An Introduction with R (2nd edn, CRC Press 2017) | textbook | 2017 | https://www.routledge.com/
-SRC: Hastie T, Tibshirani R, Generalized additive models, Statistical Science 1(3), 297 | journal | 1986 | https://doi.org/10.1214/ss/1177013604
+SRC: Wood SN, Generalized Additive Models: An Introduction with R (2nd edn, CRC Press 2017) | secondary | 2017 | https://www.routledge.com/
+SRC: Hastie T, Tibshirani R, Generalized additive models, Statistical Science 1(3), 297 | primary | 1986 | https://doi.org/10.1214/ss/1177013604
 NUM1#maths-u13-47-q1@1: With a log link, f(x₂) − f(x₁) = −0.2. Find the ratio of expected responses, to 3 decimal places. | 0.819 | 0.001 |  | e^{−0.2} ≈ 0.819: about 18% lower.
 M1#maths-u13-47-q2@1: What happens to a GAM smooth as the penalty λ becomes very large? | It becomes a straight line | It becomes more wiggly | It disappears | It passes through every point | It becomes a step function | The penalty on curvature forces f″ towards zero.
 M2#maths-u13-47-q3@2: What distinguishes a GAM from a GLM? | Predictors enter through smooth functions rather than straight lines | GAMs can't be plotted | GAMs only use normal data | GLMs can't have several predictors | GAMs have no link function, so responses must be normal | The additive smooth terms replace linear terms.
@@ -1662,8 +1662,8 @@ Q: Is a lower or higher AIC better? | Lower.
 Q: Which criterion penalises extra parameters more heavily for large n, AIC or BIC? | BIC.
 SUM: Modelling is an iterative craft.
 SUM: Information criteria balance fit and complexity.
-SRC: Burnham KP, Anderson DR, Model Selection and Multimodel Inference (2nd edn, Springer 2002) | textbook | 2002 | https://link.springer.com/
-SRC: Breiman L, Statistical modeling: the two cultures, Statistical Science 16(3), 199 | journal | 2001 | https://doi.org/10.1214/ss/1009213726
+SRC: Burnham KP, Anderson DR, Model Selection and Multimodel Inference (2nd edn, Springer 2002) | secondary | 2002 | https://link.springer.com/
+SRC: Breiman L, Statistical modeling: the two cultures, Statistical Science 16(3), 199 | primary | 2001 | https://doi.org/10.1214/ss/1009213726
 NUM1#maths-u13-48-q1@1: A model has 4 parameters and log-likelihood −50. Find its AIC. | 108 | 0 |  | AIC = 2 × 4 − 2 × (−50) = 8 + 100 = 108.
 M1#maths-u13-48-q2@1: What does George Box's "all models are wrong, but some are useful" mean? | Models simplify reality, and the aim is usefulness, not perfect truth | Only complex models with many parameters are useful | Statistics is useless | Models should never be used | All models are equally good | Every model leaves things out; a good one serves its purpose.
 M3#maths-u13-48-q3@2: Researchers fit 50 models and report only the one with the best fit and smallest p-value. What's the risk? | The reported fit and significance are overstated | The model will be too simple to be useful | Nothing is wrong with it | The sample becomes biased | AIC becomes negative | Searching many models capitalises on chance, so performance on new data is likely worse.
@@ -1696,8 +1696,8 @@ Q: What distribution does D^{2} follow for multivariate normal data in p dimensi
 Q: What is the multivariate generalisation of the t-test? | Hotelling's T^{2}.
 SUM: Multivariate methods handle many variables at once.
 SUM: Distances must allow for scale and correlation.
-SRC: Johnson RA, Wichern DW, Applied Multivariate Statistical Analysis (6th edn, Pearson 2007) | textbook | 2007 | https://www.pearson.com/
-SRC: Mahalanobis PC, On the generalized distance in statistics, Proceedings of the National Institute of Sciences of India 2(1), 49 | journal | 1936 | https://insa.nic.in/
+SRC: Johnson RA, Wichern DW, Applied Multivariate Statistical Analysis (6th edn, Pearson 2007) | secondary | 2007 | https://www.pearson.com/
+SRC: Mahalanobis PC, On the generalized distance in statistics, Proceedings of the National Institute of Sciences of India 2(1), 49 | primary | 1936 | https://insa.nic.in/
 NUM1#maths-u13-49-q1@1: Independent variables have variances 4 and 9. Find D^{2} for the point (2, 3) from mean (0, 0). | 2 | 0.001 |  | D^{2} = 4/4 + 9/9 = 2.
 M1#maths-u13-49-q2@1: Why is Mahalanobis distance preferred to Euclidean distance for outlier detection? | It accounts for each variable's spread and the correlations | It ignores correlation but rescales by the mean | It uses absolute rather than squared differences | It needs no covariance matrix | It works only in 1D | Scaling by Σ^{−1} measures distance in standard-deviation units along the data's shape.
 M2#maths-u13-49-q3@2: Which test compares mean vectors across three groups? | MANOVA | Paired t-test | Chi-squared goodness of fit | Fisher's exact test | Kolmogorov–Smirnov | MANOVA extends ANOVA to several response variables at once.
@@ -1731,8 +1731,8 @@ Q: What do the eigenvalues in PCA represent? | The variance along each principal
 Q: Which method maps a contingency table's rows and columns? | Correspondence analysis.
 SUM: Multivariate analysis finds structure.
 SUM: PCA reduces dimension by variance.
-SRC: Jolliffe IT, Principal Component Analysis (2nd edn, Springer 2002) | textbook | 2002 | https://link.springer.com/
-SRC: Johnson RA, Wichern DW, Applied Multivariate Statistical Analysis (6th edn, Pearson 2007) | textbook | 2007 | https://www.pearson.com/
+SRC: Jolliffe IT, Principal Component Analysis (2nd edn, Springer 2002) | secondary | 2002 | https://link.springer.com/
+SRC: Johnson RA, Wichern DW, Applied Multivariate Statistical Analysis (6th edn, Pearson 2007) | secondary | 2007 | https://www.pearson.com/
 NUM1#maths-u13-50-q1@1: Eigenvalues are 3, 1.5, 0.5. What percentage of variance does PC1 explain? | 60 | 0 | % | 3/5 = 60%.
 M1#maths-u13-50-q2@1: In PCA, why are the components chosen to be orthogonal? | So each captures new, uncorrelated variation | To make them equal | Because data are always orthogonal | So they're easier to name | They aren't | Orthogonal components avoid double-counting variance.
 M2#maths-u13-50-q3@2: Which technique places cities on a map from a table of travel times alone? | Multidimensional scaling | Logistic regression | ANOVA | Kaplan–Meier | Lasso | MDS finds coordinates whose distances reproduce the given dissimilarities.
@@ -1765,8 +1765,8 @@ Q: What is the communality of a variable with loading 0.6 on one factor? | 0.36.
 Q: What does factor rotation change? | The loadings' pattern, for interpretability, not the model's fit.
 SUM: Factor analysis explains correlations with latent factors.
 SUM: It underpins questionnaire measurement.
-SRC: Spearman C, "General intelligence," objectively determined and measured, American Journal of Psychology 15(2), 201 | journal | 1904 | https://doi.org/10.2307/1412107
-SRC: Fabrigar LR, Wegener DT, Exploratory Factor Analysis (Oxford University Press 2012) | textbook | 2012 | https://global.oup.com/
+SRC: Spearman C, "General intelligence," objectively determined and measured, American Journal of Psychology 15(2), 201 | primary | 1904 | https://doi.org/10.2307/1412107
+SRC: Fabrigar LR, Wegener DT, Exploratory Factor Analysis (Oxford University Press 2012) | secondary | 2012 | https://global.oup.com/
 NUM1#maths-u13-51-q1@1: A standardised variable has loadings 0.6 and 0.3 on two uncorrelated factors. Find its uniqueness. | 0.55 | 0.001 |  | Communality = 0.36 + 0.09 = 0.45, so uniqueness = 0.55.
 M1#maths-u13-51-q2@1: What is the main difference between factor analysis and PCA? | Factor analysis models shared variance through latent factors; PCA summarises total variance | PCA uses latent factors; factor analysis summarises variance | They give identical loadings after rotation | Factor analysis has no loadings | PCA needs rotation | FA posits underlying causes; PCA is a data reduction.
 M2#maths-u13-51-q3@2: A researcher specifies in advance which items load on which factors and tests the fit. What is this? | Confirmatory factor analysis | Exploratory factor analysis | Cluster analysis | PCA | Discriminant analysis | Confirmatory factor analysis tests a structure specified in advance, unlike exploratory analysis.
@@ -1799,8 +1799,8 @@ Q: What shape are LDA's decision boundaries? | Linear (straight lines or planes)
 Q: How many discriminant directions are there for 4 classes (with enough variables)? | 3.
 SUM: Discriminant analysis classifies into known groups.
 SUM: Assumptions set the boundary shape.
-SRC: Fisher RA, The use of multiple measurements in taxonomic problems, Annals of Eugenics 7(2), 179 | journal | 1936 | https://doi.org/10.1111/j.1469-1809.1936.tb02137.x
-SRC: Hastie T, Tibshirani R, Friedman J, The Elements of Statistical Learning (2nd edn, Springer 2009) | textbook | 2009 | https://hastie.su.domains/ElemStatLearn/
+SRC: Fisher RA, The use of multiple measurements in taxonomic problems, Annals of Eugenics 7(2), 179 | primary | 1936 | https://doi.org/10.1111/j.1469-1809.1936.tb02137.x
+SRC: Hastie T, Tibshirani R, Friedman J, The Elements of Statistical Learning (2nd edn, Springer 2009) | secondary | 2009 | https://hastie.su.domains/ElemStatLearn/
 NUM1#maths-u13-52-q1@1: Two equally likely normal classes with the same variance have means 4 and 10. Where is the LDA boundary? | 7 | 0 |  | With equal priors and variances, the boundary is the midpoint (4 + 10)/2.
 M1#maths-u13-52-q2@1: What does QDA allow that LDA doesn't? | Different covariance matrices for each class | More than two classes | Non-normal data | More than two predictor variables | Categorical predictors in place of continuous ones | Separate covariances make the boundaries quadratic.
 M2#maths-u13-52-q3@2: How should a discriminant classifier's error rate be estimated? | By cross-validation or a separate test set | On the training data used to fit the boundary | By the number of variables | It can't be estimated | From the priors alone | Training error is optimistic; held-out data give an honest estimate.
@@ -1834,8 +1834,8 @@ Q: What does k-means minimise? | The total within-cluster sum of squared distanc
 Q: Which method can find non-spherical clusters and flag noise? | DBSCAN.
 SUM: Clustering finds groups without labels.
 SUM: Results depend on method, scale and k.
-SRC: Kaufman L, Rousseeuw PJ, Finding Groups in Data: An Introduction to Cluster Analysis (Wiley 1990) | textbook | 1990 | https://www.wiley.com/
-SRC: James G, Witten D, Hastie T, Tibshirani R, An Introduction to Statistical Learning (2nd edn, Springer 2021) | textbook | 2021 | https://www.statlearning.com/
+SRC: Kaufman L, Rousseeuw PJ, Finding Groups in Data: An Introduction to Cluster Analysis (Wiley 1990) | secondary | 1990 | https://www.wiley.com/
+SRC: James G, Witten D, Hastie T, Tibshirani R, An Introduction to Statistical Learning (2nd edn, Springer 2021) | secondary | 2021 | https://www.statlearning.com/
 NUM1#maths-u13-53-q1@1: A cluster contains points 2, 4 and 9. What is its k-means centre? | 5 | 0 |  | The centre is the mean: (2 + 4 + 9)/3 = 5.
 M1#maths-u13-53-q2@1: Why run k-means from several random starts? | It can converge to different local minima | It always gives the same result | To increase k | To standardise the data | To remove outliers | The algorithm only guarantees a local optimum.
 M3#maths-u13-53-q3@2: Data are uniformly scattered with no real groups, and k-means is run with k = 3. What happens? | It still returns three clusters | It returns an error | It finds one cluster | It finds no clusters | It finds the true groups | Clustering algorithms always partition; checking stability and validity is up to you.
@@ -1868,8 +1868,8 @@ Q: In frequentist statistics, is a parameter random? | No: it's fixed but unknow
 Q: What does 95% coverage mean? | 95% of intervals from repeated samples contain the true value.
 SUM: Frequentism judges methods by long-run performance.
 SUM: It underpins regulatory science.
-SRC: Neyman J, Outline of a theory of statistical estimation based on the classical theory of probability, Philosophical Transactions of the Royal Society A 236, 333 | journal | 1937 | https://doi.org/10.1098/rsta.1937.0005
-SRC: Efron B, Hastie T, Computer Age Statistical Inference (Cambridge University Press 2016) | textbook | 2016 | https://hastie.su.domains/CASI/
+SRC: Neyman J, Outline of a theory of statistical estimation based on the classical theory of probability, Philosophical Transactions of the Royal Society A 236, 333 | primary | 1937 | https://doi.org/10.1098/rsta.1937.0005
+SRC: Efron B, Hastie T, Computer Age Statistical Inference (Cambridge University Press 2016) | secondary | 2016 | https://hastie.su.domains/CASI/
 NUM1#maths-u13-54-q1@1: How many of 200 independent 95% confidence intervals are expected to miss the true value? | 10 | 0 |  | 5% of 200 = 10.
 M1#maths-u13-54-q2@1: How does a frequentist interpret "probability"? | As a long-run relative frequency | As a degree of personal belief | As a logical certainty | As a betting quote only | As a fixed constant | Frequentist probability describes repeated experiments.
 M2#maths-u13-54-q3@2: Why do regulators often favour frequentist designs for drug trials? | They give pre-specified, controllable error rates | They need no data | They always show benefit | They're cheaper | Bayesian methods are banned in regulatory submissions | Fixed α and power make decisions auditable before results are seen.
@@ -1903,8 +1903,8 @@ Q: How do posterior odds relate to prior odds? | Posterior odds = Bayes factor �
 Q: Can a Bayes factor provide evidence for a null hypothesis? | Yes.
 SUM: Bayesian statistics updates beliefs with data.
 SUM: It gives direct probability statements.
-SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | textbook | 2013 | https://sites.stat.columbia.edu/gelman/book/
-SRC: Kass RE, Raftery AE, Bayes factors, Journal of the American Statistical Association 90(430), 773 | journal | 1995 | https://doi.org/10.1080/01621459.1995.10476572
+SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | secondary | 2013 | https://sites.stat.columbia.edu/gelman/book/
+SRC: Kass RE, Raftery AE, Bayes factors, Journal of the American Statistical Association 90(430), 773 | primary | 1995 | https://doi.org/10.1080/01621459.1995.10476572
 NUM1#maths-u13-55-q1@1: Prior odds are 1:4 for H₁ and the Bayes factor in favour of H₁ is 20. Find the posterior odds for H₁. | 5 | 0 |  | Posterior odds = 20 × 1/4 = 5 (5 to 1).
 M1#maths-u13-55-q2@1: What does a Bayesian 95% credible interval mean? | Given the model and data, the parameter lies in it with probability 0.95 | 95% of repeated intervals cover the parameter | The p-value is 0.05 | The prior is 95% certain | The data are 95% accurate | Bayesian intervals are direct probability statements about the parameter.
 M2#maths-u13-55-q3@2: What is the main criticism of Bayesian methods? | Results can depend on the choice of prior | They can't handle data | They never give intervals | They're always identical to frequentist results | They can't compare hypotheses | Priors bring judgement in, so sensitivity analysis is important.
@@ -1938,8 +1938,8 @@ Q: What happens to the prior's influence as n grows? | It shrinks: the data domi
 Q: What does a posterior predictive check compare? | Observed data with data simulated from the fitted model.
 SUM: Bayesian inference fits, summarises and checks.
 SUM: Conjugate updates show the mechanics.
-SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | textbook | 2013 | https://sites.stat.columbia.edu/gelman/book/
-SRC: McElreath R, Statistical Rethinking (2nd edn, CRC Press 2020) | textbook | 2020 | https://xcelab.net/rm/
+SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | secondary | 2013 | https://sites.stat.columbia.edu/gelman/book/
+SRC: McElreath R, Statistical Rethinking (2nd edn, CRC Press 2020) | secondary | 2020 | https://xcelab.net/rm/
 NUM1#maths-u13-56-q1@1: Prior precision is 0.02 and data precision is 0.08. Find the posterior variance. | 10 | 0 |  | Posterior precision 0.10, so variance 1/0.1 = 10.
 M1#maths-u13-56-q2@1: In normal–normal updating, which has more influence on the posterior mean? | Whichever of prior and data has the higher precision | Always the prior | Neither: they always count equally | Always the data, whatever the prior | Whichever of prior and data has the larger mean | The posterior mean weights each source by its precision.
 M3#maths-u13-56-q3@2: Doubling the number of observations in a normal model does what to the data's precision? | Doubles it | Halves it | Leaves it unchanged | Squares it | Quadruples it | Data precision is n/σ^{2}, proportional to n.
@@ -1973,8 +1973,8 @@ Q: How many observations is a Beta(10, 30) prior roughly worth? | 40.
 Q: What is a weakly informative prior for? | Ruling out absurd values while letting the data dominate.
 SUM: Priors encode existing knowledge.
 SUM: Their influence should be shown, not hidden.
-SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | textbook | 2013 | https://sites.stat.columbia.edu/gelman/book/
-SRC: O'Hagan A et al, Uncertain Judgements: Eliciting Experts' Probabilities (Wiley 2006) | textbook | 2006 | https://www.wiley.com/
+SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | secondary | 2013 | https://sites.stat.columbia.edu/gelman/book/
+SRC: O'Hagan A et al, Uncertain Judgements: Eliciting Experts' Probabilities (Wiley 2006) | secondary | 2006 | https://www.wiley.com/
 NUM1#maths-u13-57-q1@1: A Beta(4, 6) prior is updated with 6 successes in 10 trials. Find the posterior mean. | 0.5 | 0.001 |  | Posterior Beta(10, 10), mean 10/20 = 0.5.
 M1#maths-u13-57-q2@1: Which prior lets the data dominate while excluding absurd values? | A weakly informative prior | A strongly informative prior | A point-mass prior | No prior at all | An improper posterior | Weakly informative priors regularise gently without imposing strong beliefs.
 M2#maths-u13-57-q3@2: Why might a flat prior on a probability p not be "uninformative" about the odds p/(1 − p)? | A flat distribution on one scale isn't flat after transformation | Flat priors are invalid for any probability | It's always uninformative | Odds don't exist | Odds are always 1 | Non-linear transformations reshape a uniform distribution.
@@ -2009,8 +2009,8 @@ Q: Are bootstrap samples drawn with or without replacement? | With replacement.
 Q: What variant of the bootstrap suits time series? | The block bootstrap.
 SUM: The bootstrap estimates uncertainty by resampling.
 SUM: It has known failure cases.
-SRC: Efron B, Bootstrap methods: another look at the jackknife, Annals of Statistics 7(1), 1 | journal | 1979 | https://doi.org/10.1214/aos/1176344552
-SRC: Efron B, Tibshirani RJ, An Introduction to the Bootstrap (Chapman & Hall 1993) | textbook | 1993 | https://www.routledge.com/
+SRC: Efron B, Bootstrap methods: another look at the jackknife, Annals of Statistics 7(1), 1 | primary | 1979 | https://doi.org/10.1214/aos/1176344552
+SRC: Efron B, Tibshirani RJ, An Introduction to the Bootstrap (Chapman & Hall 1993) | secondary | 1993 | https://www.routledge.com/
 NUM1#maths-u13-58-q1@1: For n = 10, find the probability that a particular observation is absent from a bootstrap resample, to 4 decimal places. | 0.3487 | 0.0005 |  | (1 − 1/10)^{10} = 0.9^{10} ≈ 0.3487.
 M1#maths-u13-58-q2@1: What does the standard deviation of bootstrap replicates estimate? | The standard error of the statistic | The population mean | The sample size | The p-value | The mean of the population being sampled | Replicates mimic repeated sampling, so their spread estimates the sampling SD.
 M3#maths-u13-58-q3@2: Why does the basic bootstrap work poorly for the sample maximum? | Resamples can never exceed the observed maximum, so they understate the uncertainty | It needs normally distributed data | Bootstraps only work for means | The maximum has no sampling distribution at all | Maxima can't be resampled | The replicates pile up at the observed maximum, missing the chance that the true maximum is higher.
@@ -2043,8 +2043,8 @@ Q: What assumption does a permutation test need? | Exchangeability of labels und
 Q: How many ways can 6 observations be split into two groups of 3? | 20.
 SUM: Permutation tests shuffle labels.
 SUM: They give exact p-values under exchangeability.
-SRC: Good PI, Permutation, Parametric, and Bootstrap Tests of Hypotheses (3rd edn, Springer 2005) | textbook | 2005 | https://link.springer.com/
-SRC: Fisher RA, The Design of Experiments (Oliver and Boyd 1935) | textbook | 1935 | https://archive.org/
+SRC: Good PI, Permutation, Parametric, and Bootstrap Tests of Hypotheses (3rd edn, Springer 2005) | secondary | 2005 | https://link.springer.com/
+SRC: Fisher RA, The Design of Experiments (Oliver and Boyd 1935) | secondary | 1935 | https://archive.org/
 NUM1#maths-u13-59-q1@1: Of 2,000 random shuffles, 37 give a statistic at least as extreme as observed. Estimate the p-value, to 4 decimal places. | 0.0185 | 0.0001 |  | 37/2000 = 0.0185.
 M1#maths-u13-59-q2@1: Why are permutation tests natural for randomised experiments? | Randomisation makes every label assignment equally likely under H₀ | They need normal data | They're always more powerful | They're faster to compute than t-tests on any data | They always reject | The random assignment itself generates the null distribution.
 M2#maths-u13-59-q3@2: What is the smallest possible exact two-sided p-value with groups of 2 and 2? | 1/3 | 1/6 | 1/24 | 0.05 | 1/12 | With 6 arrangements, the two most extreme (one in each direction) give 2/6 = 1/3.
@@ -2078,8 +2078,8 @@ Q: By what factor must N grow to halve the Monte Carlo error? | 4.
 Q: Name one variance reduction technique. | Antithetic variables, control variates, importance sampling or stratification.
 SUM: Simulation estimates what algebra can't.
 SUM: Error falls as 1/√N.
-SRC: Robert CP, Casella G, Monte Carlo Statistical Methods (2nd edn, Springer 2004) | textbook | 2004 | https://link.springer.com/
-SRC: Metropolis N, Ulam S, The Monte Carlo method, Journal of the American Statistical Association 44(247), 335 | journal | 1949 | https://doi.org/10.1080/01621459.1949.10483310
+SRC: Robert CP, Casella G, Monte Carlo Statistical Methods (2nd edn, Springer 2004) | secondary | 2004 | https://link.springer.com/
+SRC: Metropolis N, Ulam S, The Monte Carlo method, Journal of the American Statistical Association 44(247), 335 | primary | 1949 | https://doi.org/10.1080/01621459.1949.10483310
 NUM1#maths-u13-60-q1@1: A simulation's single-run SD is 5. What is the Monte Carlo standard error of the average of 10,000 runs? | 0.05 | 0.0001 |  | 5/√10000 = 5/100 = 0.05.
 M1#maths-u13-60-q2@1: Why is Monte Carlo integration attractive in high dimensions? | Its error rate doesn't depend on the dimension | It's exact, with no random error at all | It needs no random numbers | Grids are always better | It has zero variance | Grid methods need exponentially many points as dimension grows; Monte Carlo doesn't.
 M2#maths-u13-60-q3@2: What does importance sampling do? | Samples more from the regions that matter most, then reweights | Removes randomness | Doubles the sample | Ignores rare events | Removes the randomness from the simulation | Concentrating draws where the integrand is large, then correcting with weights, reduces variance.
@@ -2113,8 +2113,8 @@ Q: Why doesn't Metropolis–Hastings need the posterior's normalising constant? 
 Q: What does an R̂ close to 1 suggest? | Multiple chains agree: likely convergence.
 SUM: MCMC samples from complex distributions.
 SUM: Diagnostics check that it worked.
-SRC: Metropolis N et al, Equation of state calculations by fast computing machines, Journal of Chemical Physics 21(6), 1087 | journal | 1953 | https://doi.org/10.1063/1.1699114
-SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | textbook | 2013 | https://sites.stat.columbia.edu/gelman/book/
+SRC: Metropolis N et al, Equation of state calculations by fast computing machines, Journal of Chemical Physics 21(6), 1087 | primary | 1953 | https://doi.org/10.1063/1.1699114
+SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | secondary | 2013 | https://sites.stat.columbia.edu/gelman/book/
 NUM1#maths-u13-61-q1@1: With a symmetric proposal, π(current) = 0.08 and π(proposed) = 0.02. Find the acceptance probability. | 0.25 | 0.001 |  | min(1, 0.02/0.08) = 0.25.
 M1#maths-u13-61-q2@1: What is burn-in in MCMC? | Early draws discarded before the chain settles into its target distribution | A diagnostic statistic computed at the end | The proposal distribution | The thinning interval | The final draws, kept as the main sample | Starting values may be unrepresentative, so initial draws are dropped.
 M2#maths-u13-61-q3@2: Which sampler updates each parameter in turn from its full conditional distribution? | Gibbs sampling | Rejection sampling | Bootstrap | Importance sampling | k-means | Gibbs cycles through conditionals, a special case of Metropolis–Hastings with acceptance 1.
@@ -2148,7 +2148,7 @@ Q: What makes a simulation reproducible? | Recording the random seed, code and s
 SUM: Numerical care prevents silent errors.
 SUM: Scripts and seeds make analyses reproducible.
 SRC: R Core Team, R: A language and environment for statistical computing (R Foundation for Statistical Computing 2025) | software | 2025 | https://www.r-project.org/
-SRC: Higham NJ, Accuracy and Stability of Numerical Algorithms (2nd edn, SIAM 2002) | textbook | 2002 | https://epubs.siam.org/
+SRC: Higham NJ, Accuracy and Stability of Numerical Algorithms (2nd edn, SIAM 2002) | secondary | 2002 | https://epubs.siam.org/
 NUM1#maths-u13-62-q1@1: Find the population variance of 1,000,000,001, 1,000,000,002 and 1,000,000,003 by subtracting 1,000,000,000 first, to 4 decimal places. | 0.6667 | 0.0005 |  | The shifted values 1, 2, 3 have variance 2/3; shifting doesn't change variance.
 M1#maths-u13-62-q2@1: What is the log-sum-exp trick for? | Adding exponentials without overflow or underflow | Speeding up sorting | Sorting a list quickly | Inverting matrices | Generating random numbers on a log scale | Factoring out the maximum keeps the exponents in a safe range.
 M2#maths-u13-62-q3@2: Why should a simulation study record its random seed? | So the exact results can be reproduced | To make results more random | Seeds improve accuracy | It's required by law | To speed up the code | Pseudo-random numbers are deterministic given the seed.
@@ -2182,8 +2182,8 @@ Q: What is the purpose of blocking? | To remove known sources of variation from 
 Q: What is allocation concealment? | Hiding the upcoming treatment assignments from those enrolling participants.
 SUM: Design makes comparisons fair and precise.
 SUM: Randomise, replicate, block.
-SRC: Fisher RA, The Design of Experiments (Oliver and Boyd 1935) | textbook | 1935 | https://archive.org/
-SRC: Schulz KF, Altman DG, Moher D, CONSORT 2010 statement, BMJ 340, c332 | journal | 2010 | https://doi.org/10.1136/bmj.c332
+SRC: Fisher RA, The Design of Experiments (Oliver and Boyd 1935) | secondary | 1935 | https://archive.org/
+SRC: Schulz KF, Altman DG, Moher D, CONSORT 2010 statement, BMJ 340, c332 | primary | 2010 | https://doi.org/10.1136/bmj.c332
 NUM1#maths-u13-63-q1@1: In how many ways can 3 treatments be randomly ordered within one block? | 6 | 0 |  | 3! = 6 orderings.
 M1#maths-u13-63-q2@1: Why does randomisation matter in an experiment? | It balances unknown confounders on average between groups | It makes groups identical | It makes the groups identical in every respect | It removes the need for analysis | It guarantees significance | Chance allocation prevents systematic differences other than the treatment.
 M2#maths-u13-63-q3@2: Which design gives each participant every treatment in sequence? | Crossover | Completely randomised | Cluster randomised | Case–control | Cross-sectional | Each person acts as their own control, with washout between periods.
@@ -2217,8 +2217,8 @@ Q: How many runs does a full 2^{4} factorial need? | 16.
 Q: What is aliasing in a fractional factorial? | Two effects being estimated by the same contrast, so they can't be separated.
 SUM: Factorial designs study many factors efficiently.
 SUM: They reveal interactions.
-SRC: Montgomery DC, Design and Analysis of Experiments (9th edn, Wiley 2017) | textbook | 2017 | https://www.wiley.com/
-SRC: Box GEP, Hunter JS, Hunter WG, Statistics for Experimenters (2nd edn, Wiley 2005) | textbook | 2005 | https://www.wiley.com/
+SRC: Montgomery DC, Design and Analysis of Experiments (9th edn, Wiley 2017) | secondary | 2017 | https://www.wiley.com/
+SRC: Box GEP, Hunter JS, Hunter WG, Statistics for Experimenters (2nd edn, Wiley 2005) | secondary | 2005 | https://www.wiley.com/
 NUM1#maths-u13-64-q1@1: How many runs does a half fraction of a 2^{6} factorial need? | 32 | 0 |  | 2^{6−1} = 32.
 M1#maths-u13-64-q2@1: Why are factorial designs better than changing one factor at a time? | They estimate interactions and use every run for every effect | They need fewer runs because they ignore interactions | They ignore interactions | They're only for two factors | They need no randomisation | Each run contributes to every main effect estimate, and interactions become visible.
 M2#maths-u13-64-q3@2: In a 2^{2} design, A's effect is 8 when B is high and 2 when B is low. What is the AB interaction? | 3 | 5 | 6 | 10 | 0 | The interaction is half the difference between A's effects at the two levels of B: (8 − 2)/2 = 3.
@@ -2252,8 +2252,8 @@ Q: What is the fundamental problem of causal inference? | Only one potential out
 Q: What key assumption does difference-in-differences make? | Parallel trends: without treatment, both groups would have changed equally.
 SUM: Causation needs more than correlation.
 SUM: Designs and assumptions make it estimable.
-SRC: Hernán MA, Robins JM, Causal Inference: What If (CRC Press 2020) | textbook | 2020 | https://miguelhernan.org/whatifbook
-SRC: Pearl J, Glymour M, Jewell NP, Causal Inference in Statistics: A Primer (Wiley 2016) | textbook | 2016 | https://www.wiley.com/
+SRC: Hernán MA, Robins JM, Causal Inference: What If (CRC Press 2020) | secondary | 2020 | https://miguelhernan.org/whatifbook
+SRC: Pearl J, Glymour M, Jewell NP, Causal Inference in Statistics: A Primer (Wiley 2016) | secondary | 2016 | https://www.wiley.com/
 NUM1#maths-u13-65-q1@1: Treated outcomes go from 20 to 26; control outcomes from 18 to 21. Find the difference-in-differences estimate. | 3 | 0 |  | (26 − 20) − (21 − 18) = 6 − 3 = 3.
 M1#maths-u13-65-q2@1: Why do randomised experiments estimate causal effects directly? | Randomisation balances confounders between groups on average | They use larger samples | They don't need statistics | They measure both potential outcomes for each person | They avoid all bias in measurement | Chance assignment makes the groups comparable except for treatment.
 M3#maths-u13-65-q3@2: Hospitalised patients show a negative association between two diseases that are unrelated in the population. What's the likely cause? | Conditioning on a collider (hospitalisation) | Reverse causation between the two diseases | Confounding by age among the hospitalised patients | Measurement error | Random chance only | Both diseases cause hospitalisation; selecting on it induces a spurious association (Berkson's bias).
@@ -2286,8 +2286,8 @@ Q: How is an indirect effect calculated in a path model? | Multiply the coeffici
 Q: What does a CFI above 0.95 suggest? | Good model fit (by a common rule of thumb).
 SUM: SEM tests networks of relationships.
 SUM: Fit doesn't establish causation.
-SRC: Kline RB, Principles and Practice of Structural Equation Modeling (4th edn, Guilford Press 2016) | textbook | 2016 | https://www.guilford.com/
-SRC: Hu L, Bentler PM, Cutoff criteria for fit indexes in covariance structure analysis, Structural Equation Modeling 6(1), 1 | journal | 1999 | https://doi.org/10.1080/10705519909540118
+SRC: Kline RB, Principles and Practice of Structural Equation Modeling (4th edn, Guilford Press 2016) | secondary | 2016 | https://www.guilford.com/
+SRC: Hu L, Bentler PM, Cutoff criteria for fit indexes in covariance structure analysis, Structural Equation Modeling 6(1), 1 | primary | 1999 | https://doi.org/10.1080/10705519909540118
 NUM1#maths-u13-66-q1@1: Paths X → M = 0.6 and M → Y = 0.5, with direct X → Y = 0.1. Find the total effect. | 0.4 | 0.001 |  | Indirect 0.6 × 0.5 = 0.3, plus direct 0.1, gives 0.4.
 M1#maths-u13-66-q2@1: What does the measurement part of an SEM do? | Links latent variables to their observed indicators | Estimates sample size | Draws the structural paths between latent variables | Removes outliers | Estimates the sample size needed | It's a confirmatory factor model for the latent constructs.
 M2#maths-u13-66-q3@2: Two SEMs with opposite causal arrows fit the data equally well. What does that show? | Fit alone can't establish causal direction | The data are wrong | One must have a coding error | Both are proven | SEM is invalid | Equivalent models imply the same covariances, so data can't choose between them.
@@ -2322,7 +2322,7 @@ Q: What might an asymmetric funnel plot indicate? | Publication bias or small-st
 SUM: Meta-analysis combines studies.
 SUM: Heterogeneity and bias need checking.
 SRC: Higgins JPT et al (eds), Cochrane Handbook for Systematic Reviews of Interventions (version 6.4, Cochrane 2023) | guidance | 2023 | https://training.cochrane.org/handbook
-SRC: DerSimonian R, Laird N, Meta-analysis in clinical trials, Controlled Clinical Trials 7(3), 177 | journal | 1986 | https://doi.org/10.1016/0197-2456(86)90046-2
+SRC: DerSimonian R, Laird N, Meta-analysis in clinical trials, Controlled Clinical Trials 7(3), 177 | primary | 1986 | https://doi.org/10.1016/0197-2456(86)90046-2
 NUM1#maths-u13-67-q1@1: Cochran's Q = 20 with 5 studies (df = 4). Find I^{2} as a percentage. | 80 | 0 | % | (20 − 4)/20 = 0.8 = 80%: high heterogeneity.
 M1#maths-u13-67-q2@1: What does the diamond at the bottom of a forest plot show? | The pooled estimate and its confidence interval | The heaviest study's weight | The publication date | The largest study, drawn at its own size | The p-value only | Its centre is the pooled effect and its width the interval.
 M2#maths-u13-67-q3@2: Studies' true effects clearly differ. Which model is more appropriate? | Random effects | Fixed effect | No pooling is ever possible | Simple averaging without weights | Median of p-values | Random effects allow the true effect to vary between studies.
@@ -2355,8 +2355,8 @@ Q: Under which mechanism is complete case analysis unbiased? | MCAR.
 Q: What type of missingness occurs if depressed patients skip a depression questionnaire? | Missing not at random (MNAR).
 SUM: How data go missing determines the bias.
 SUM: Principled methods need the right assumptions.
-SRC: Little RJA, Rubin DB, Statistical Analysis with Missing Data (3rd edn, Wiley 2019) | textbook | 2019 | https://www.wiley.com/
-SRC: Rubin DB, Inference and missing data, Biometrika 63(3), 581 | journal | 1976 | https://doi.org/10.1093/biomet/63.3.581
+SRC: Little RJA, Rubin DB, Statistical Analysis with Missing Data (3rd edn, Wiley 2019) | secondary | 2019 | https://www.wiley.com/
+SRC: Rubin DB, Inference and missing data, Biometrika 63(3), 581 | primary | 1976 | https://doi.org/10.1093/biomet/63.3.581
 NUM1#maths-u13-68-q1@1: A survey has 400 respondents with complete data out of 500. What percentage of cases would complete case analysis discard? | 20 | 0 | % | 100 of 500 = 20%.
 M1#maths-u13-68-q2@1: Blood samples are lost when a freezer fails at random. What is the missingness mechanism? | MCAR | MAR | MNAR | Censoring | Imputation | The loss is unrelated to any patient characteristic or value.
 M2#maths-u13-68-q3@2: Why is replacing missing values with the mean a poor method? | It understates variability and weakens relationships | It's too slow | It can only be used for categories | It requires MNAR | It always overestimates the mean of the variable | Every imputed value sits at the centre, shrinking the spread and diluting correlations.
@@ -2391,8 +2391,8 @@ Q: What does the between-imputation variance B capture? | Uncertainty about the 
 Q: What does MICE stand for? | Multiple imputation by chained equations.
 SUM: Multiple imputation reflects uncertainty.
 SUM: Rubin's rules combine the results.
-SRC: van Buuren S, Flexible Imputation of Missing Data (2nd edn, CRC Press 2018) | textbook | 2018 | https://stefvanbuuren.name/fimd/
-SRC: Sterne JAC et al, Multiple imputation for missing data in epidemiological and clinical research: potential and pitfalls, BMJ 338, b2393 | journal | 2009 | https://doi.org/10.1136/bmj.b2393
+SRC: van Buuren S, Flexible Imputation of Missing Data (2nd edn, CRC Press 2018) | secondary | 2018 | https://stefvanbuuren.name/fimd/
+SRC: Sterne JAC et al, Multiple imputation for missing data in epidemiological and clinical research: potential and pitfalls, BMJ 338, b2393 | primary | 2009 | https://doi.org/10.1136/bmj.b2393
 NUM1#maths-u13-69-q1@1: With m = 10, W̄ = 2 and B = 1, find the total variance T. | 3.1 | 0.001 |  | T = 2 + (1 + 0.1) × 1 = 3.1.
 M1#maths-u13-69-q2@1: Why does single imputation give standard errors that are too small? | It treats imputed values as if they were observed | It drops cases | It always overestimates means | It uses too few variables in the imputation model | It ignores the sample size | No allowance is made for uncertainty in the filled-in values.
 M2#maths-u13-69-q3@2: Which variables should a multiple imputation model include? | All variables in the analysis model, including the outcome | Only complete variables | Only the outcome | None | Only the variable being imputed, alone | Omitting analysis variables (especially the outcome) biases relationships towards zero.
@@ -2426,8 +2426,8 @@ Q: What does a hazard ratio of 0.5 mean? | Half the event rate at any time.
 Q: Which test compares two Kaplan–Meier curves? | The log-rank test.
 SUM: Survival analysis handles censored times.
 SUM: KM curves and Cox models are the core tools.
-SRC: Kaplan EL, Meier P, Nonparametric estimation from incomplete observations, Journal of the American Statistical Association 53(282), 457 | journal | 1958 | https://doi.org/10.1080/01621459.1958.10501452
-SRC: Cox DR, Regression models and life-tables, Journal of the Royal Statistical Society B 34(2), 187 | journal | 1972 | https://doi.org/10.1111/j.2517-6161.1972.tb00899.x
+SRC: Kaplan EL, Meier P, Nonparametric estimation from incomplete observations, Journal of the American Statistical Association 53(282), 457 | primary | 1958 | https://doi.org/10.1080/01621459.1958.10501452
+SRC: Cox DR, Regression models and life-tables, Journal of the Royal Statistical Society B 34(2), 187 | primary | 1972 | https://doi.org/10.1111/j.2517-6161.1972.tb00899.x
 NUM1#maths-u13-70-q1@1: A Cox coefficient for a treatment is −0.36. Find the hazard ratio, to 2 decimal places. | 0.7 | 0.005 |  | e^{−0.36} ≈ 0.698, about 0.70: a 30% lower hazard.
 M1#maths-u13-70-q2@1: What does censoring mean in survival data? | The event hadn't occurred by the end of a subject's follow-up | The data were deleted | The subject's data were deleted for errors | The subject had the event during follow-up | The subject was excluded | We know only that the event time exceeds the last observation.
 M3#maths-u13-70-q3@2: Patients who drop out of a trial are those becoming sicker. What assumption does that violate? | Non-informative censoring | Proportional hazards | Normality | Independence of groups | Equal sample sizes | Censoring linked to prognosis biases survival estimates upwards.
@@ -2460,8 +2460,8 @@ Q: What is kriging? | Optimal spatial interpolation based on the semivariogram.
 Q: What does a positive Moran's I suggest? | Similar values cluster together.
 SUM: Location matters in spatial data.
 SUM: Variograms and kriging use that structure.
-SRC: Cressie NAC, Statistics for Spatial Data (revised edn, Wiley 1993) | textbook | 1993 | https://www.wiley.com/
-SRC: Tobler WR, A computer movie simulating urban growth in the Detroit region, Economic Geography 46, 234 | journal | 1970 | https://doi.org/10.2307/143141
+SRC: Cressie NAC, Statistics for Spatial Data (revised edn, Wiley 1993) | secondary | 1993 | https://www.wiley.com/
+SRC: Tobler WR, A computer movie simulating urban growth in the Detroit region, Economic Geography 46, 234 | primary | 1970 | https://doi.org/10.2307/143141
 NUM1#maths-u13-71-q1@1: Three pairs at distance h have differences 3, 1 and 2. Find γ(h), to 3 decimal places. | 2.333 | 0.001 |  | (9 + 1 + 4)/(2 × 3) = 14/6 ≈ 2.333.
 M1#maths-u13-71-q2@1: What does the range of a semivariogram represent? | The distance beyond which observations are effectively uncorrelated | The largest value measured | The number of sites | The measurement error | The largest difference measured between any two sites | Beyond the range, the semivariogram levels off at the sill.
 M2#maths-u13-71-q3@2: Disease rates for large regions are correlated with average income. Why can't we conclude the same for individuals? | The ecological fallacy | Kriging error | Spatial randomness | The nugget effect | Survivorship bias | Group-level associations needn't hold for the individuals within them.
@@ -2496,7 +2496,7 @@ Q: What does the bathtub curve describe? | Early failures, a period of constant 
 SUM: Reliability quantifies time to failure.
 SUM: Redundancy and design change system reliability.
 SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, chapter 8: Assessing product reliability | guidance | 2012 | https://www.itl.nist.gov/div898/handbook/
-SRC: Meeker WQ, Escobar LA, Pascual FG, Statistical Methods for Reliability Data (2nd edn, Wiley 2022) | textbook | 2022 | https://www.wiley.com/
+SRC: Meeker WQ, Escobar LA, Pascual FG, Statistical Methods for Reliability Data (2nd edn, Wiley 2022) | secondary | 2022 | https://www.wiley.com/
 NUM1#maths-u13-72-q1@1: Two independent components with reliabilities 0.8 and 0.7 are in parallel. Find the system reliability. | 0.94 | 0.001 |  | 1 − 0.2 × 0.3 = 1 − 0.06 = 0.94.
 M1#maths-u13-72-q2@1: What happens to a series system's reliability as components are added? | It falls | It rises | It stays the same | It becomes 1 | It becomes 0.5 | Every extra component is another way for the system to fail.
 M2#maths-u13-72-q3@2: Why can redundancy fail to deliver its calculated reliability? | Common-cause failures can disable all copies at once | Parallel systems are always weaker | Redundancy reduces MTTF | Components can't be duplicated | It always delivers | The parallel formula assumes independent failures, which shared causes break.
@@ -2529,8 +2529,8 @@ Q: Which distribution models exceedances over a high threshold? | The generalise
 Q: Why might peaks over threshold be preferred to block maxima? | It uses more of the extreme data.
 SUM: EVT estimates rare-event probabilities.
 SUM: Tail models need careful thresholds and honest intervals.
-SRC: Coles S, An Introduction to Statistical Modeling of Extreme Values (Springer 2001) | textbook | 2001 | https://link.springer.com/
-SRC: Davison AC, Smith RL, Models for exceedances over high thresholds, Journal of the Royal Statistical Society B 52(3), 393 | journal | 1990 | https://doi.org/10.1111/j.2517-6161.1990.tb01796.x
+SRC: Coles S, An Introduction to Statistical Modeling of Extreme Values (Springer 2001) | secondary | 2001 | https://link.springer.com/
+SRC: Davison AC, Smith RL, Models for exceedances over high thresholds, Journal of the Royal Statistical Society B 52(3), 393 | primary | 1990 | https://doi.org/10.1111/j.2517-6161.1990.tb01796.x
 NUM1#maths-u13-73-q1@1: Exceedances over u = 20 occur with rate 0.1 and are exponential with σ = 5. Find P(X > 30), to 4 decimal places. | 0.0135 | 0.0002 |  | 0.1 × e^{−10/5} = 0.1 × e^{−2} ≈ 0.0135.
 M1#maths-u13-73-q2@1: What is a weakness of the block maxima method? | It discards all values in each block except the largest | It can't estimate return levels | It can't be used to estimate return levels at all | It ignores extremes | It assumes normality | Only one value per block is used, wasting other large observations.
 M2#maths-u13-73-q3@2: Why are confidence intervals for a 1,000-year return level usually very wide? | Extrapolating far beyond the data magnifies parameter uncertainty | Floods follow a normal law | Extremes are normal | Data are always biased | They're calculated wrongly by standard software | Small changes in the tail shape make huge differences far out in the tail.
@@ -2564,8 +2564,8 @@ Q: Under squared-error loss, which posterior summary is the Bayes estimate? | Th
 Q: What does the minimax rule minimise? | The worst-case (maximum) loss.
 SUM: Decision theory weighs consequences by probabilities.
 SUM: Information is worth its expected improvement.
-SRC: Berger JO, Statistical Decision Theory and Bayesian Analysis (2nd edn, Springer 1985) | textbook | 1985 | https://link.springer.com/
-SRC: Wald A, Statistical Decision Functions (Wiley 1950) | textbook | 1950 | https://archive.org/
+SRC: Berger JO, Statistical Decision Theory and Bayesian Analysis (2nd edn, Springer 1985) | secondary | 1985 | https://link.springer.com/
+SRC: Wald A, Statistical Decision Functions (Wiley 1950) | secondary | 1950 | https://archive.org/
 NUM1#maths-u13-74-q1@1: An action costs 100 if a state with probability 0.15 occurs and 0 otherwise. Find its expected loss. | 15 | 0 |  | 100 × 0.15 = 15.
 M1#maths-u13-74-q2@1: Under absolute-error loss, which posterior summary minimises expected loss? | The posterior median | The posterior mean | The posterior mode | The prior mean | The maximum | The median minimises expected absolute deviation.
 M2#maths-u13-74-q3@2: When is it not worth collecting more data before deciding? | When the expected value of the information is less than its cost | When the prior distribution is uniform | Always | When the sample is already large | When losses are equal | Information is only worth buying if it's expected to improve the decision by more than it costs.
@@ -2599,8 +2599,8 @@ Q: What is overfitting? | Fitting noise in the training data, so performance on 
 Q: Which part of the expected test error can no model reduce? | The irreducible noise.
 SUM: Statistical learning predicts from data.
 SUM: Validation keeps it honest.
-SRC: James G, Witten D, Hastie T, Tibshirani R, An Introduction to Statistical Learning (2nd edn, Springer 2021) | textbook | 2021 | https://www.statlearning.com/
-SRC: Hastie T, Tibshirani R, Friedman J, The Elements of Statistical Learning (2nd edn, Springer 2009) | textbook | 2009 | https://hastie.su.domains/ElemStatLearn/
+SRC: James G, Witten D, Hastie T, Tibshirani R, An Introduction to Statistical Learning (2nd edn, Springer 2021) | secondary | 2021 | https://www.statlearning.com/
+SRC: Hastie T, Tibshirani R, Friedman J, The Elements of Statistical Learning (2nd edn, Springer 2009) | secondary | 2009 | https://hastie.su.domains/ElemStatLearn/
 NUM1#maths-u13-75-q1@1: A model has squared bias 1.5, variance 2.5 and noise variance 1. Find the expected test MSE. | 5 | 0 |  | 1.5 + 2.5 + 1 = 5.
 M1#maths-u13-75-q2@1: Which is an unsupervised learning task? | Grouping customers by purchasing behaviour without labels | Predicting house prices | Classifying emails as spam | Forecasting sales | Diagnosing disease from labelled scans | No outcome labels are used: it's clustering.
 M3#maths-u13-75-q3@2: A model's training error keeps falling as complexity grows, but its validation error starts rising. What's happening? | Overfitting: variance now outweighs the drop in bias | Underfitting: the model is still too simple | The data are too simple | The validation set is wrong | Bias is increasing as complexity grows | Beyond the optimum, extra flexibility fits noise.

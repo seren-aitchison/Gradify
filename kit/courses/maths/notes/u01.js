@@ -91,7 +91,7 @@ Q: What is the value of the 5 in 3,507? | 500: five hundreds.
 Q: Why is zero important in a positional system? | It holds empty places, so 3,507 and 357 can be told apart.
 SUM: Our number system is positional with base 10.
 SUM: Other bases and systems represent the same numbers differently.
-SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | textbook | 1996 | https://global.oup.com/
+SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | secondary | 1996 | https://global.oup.com/
 SRC: Department for Education, Mathematics programmes of study: key stage 3 | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study
 M1#maths-u01-03-q1@1: What is the value of the digit 4 in 64,215? | 4,000 | 4 | 40 | 400 | 40,000 | The 4 is in the thousands place, so it's worth 4 × 1,000 = 4,000.
 M2#maths-u01-03-q2@2: Why are written calculations hard with Roman numerals? | They aren't positional and have no zero | They use letters instead of digits only | They only go up to 100 | They can't show odd numbers | They're base 2 | Positional notation lets column methods work; Roman numerals don't line up by place value.
@@ -119,8 +119,8 @@ Q: Is ℕ closed under subtraction? | No: for example 3 − 5 = −2 isn't natur
 Q: Why is there no largest natural number? | For any n, n + 1 is also natural and bigger.
 SUM: ℕ is the set of counting numbers.
 SUM: Closure fails under subtraction and division, motivating larger number systems.
-SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | textbook | 1996 | https://global.oup.com/
-SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
+SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | secondary | 1996 | https://global.oup.com/
+SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 M1#maths-u01-04-q1@1: Which of these is a natural number in every convention? | 7 | 0 | −2 | 1/2 | 0.5 | 7 is a counting number; 0 depends on the convention.
 M2#maths-u01-04-q2@2: Under which operation is ℕ closed? | Multiplication | Subtraction | Division | Taking square roots | Halving | The product of two natural numbers is always natural.
 
@@ -181,7 +181,7 @@ Q: Which fractions in lowest terms give terminating decimals? | Those whose deno
 SUM: Rational numbers are fractions of integers.
 SUM: Recurring decimals can be written as fractions.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
+SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 M1#maths-u01-06-q1@1: Which number is rational? | 0.454545… | √2 | π | √3 | e | Any recurring decimal is rational: 0.4545… = 5/11.
 M2#maths-u01-06-q2@2: Which fraction gives a terminating decimal? | 7/40 | 1/3 | 2/7 | 5/6 | 4/9 | 40 = 2^{3} × 5, so 7/40 = 0.175 terminates.
 M3#maths-u01-06-q3@2: What is 0.\\dot{1}\\dot{8} as a fraction in its simplest form? | 2/11 | 18/100 | 9/50 | 1/8 | 18/90 | Let x = 0.1818…; then 100x − x = 18, so x = 18/99, which simplifies to 2/11.
@@ -208,7 +208,7 @@ Q: Why must p be even if p^{2} is even? | If p were odd, p^{2} would be odd.
 Q: Can two irrational numbers add up to a rational number? | Yes: for example √2 + (−√2) = 0.
 SUM: Irrational numbers have non-repeating, non-terminating decimals.
 SUM: The irrationality of √2 is the classic proof by contradiction.
-SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | textbook | 2008 | https://global.oup.com/
+SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | secondary | 2008 | https://global.oup.com/
 SRC: Department for Education, Mathematics AS and A level subject content: proof | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u01-07-q1@1: Which number is irrational? | √7 | √49 | 0.25 | 3/11 | −4 | 7 isn't a perfect square, so √7 is irrational.
 M2#maths-u01-07-q2@2: In the proof that √2 is irrational, what gives the contradiction? | Both p and q turn out to be even, though p/q was in lowest terms | p turns out to be negative | q turns out to be zero | √2 turns out to equal 1 | p^{2} turns out to be odd | Lowest terms means p and q share no common factor, but both are even.
@@ -240,7 +240,7 @@ Q: Is every rational number real? | Yes: ℚ ⊂ ℝ.
 Q: What does the interval (1, 4] mean? | All real x with 1 < x ≤ 4.
 SUM: The real numbers fill the number line.
 SUM: Number sets nest inside one another.
-SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
+SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
 M1#maths-u01-08-q1@1: Which set contains π? | The real numbers | The integers | The rational numbers | The natural numbers | None of them | π is irrational, so it's real but not rational.
 M2#maths-u01-08-q2@2: Which inequality matches the interval [−2, 3)? | −2 ≤ x < 3 | −2 < x ≤ 3 | −2 < x < 3 | −2 ≤ x ≤ 3 | x < −2 or x ≥ 3 | The square bracket includes −2; the round bracket excludes 3.
@@ -305,7 +305,7 @@ Q: How do you test for divisibility by 4? | Check whether the last two digits fo
 Q: Why does the digit-sum test work for 9? | Each power of 10 leaves remainder 1 on division by 9.
 SUM: Divisibility tests avoid long division.
 SUM: The digit-sum tests come from 10 leaving remainder 1.
-SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | textbook | 2008 | https://global.oup.com/
+SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | secondary | 2008 | https://global.oup.com/
 SRC: Department for Education, Mathematics programmes of study: key stage 3 | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study
 M1#maths-u01-10-q1@1: Which number is divisible by 9? | 5,814 | 5,813 | 5,812 | 5,810 | 5,815 | 5 + 8 + 1 + 4 = 18, which is divisible by 9.
 M2#maths-u01-10-q2@2: Which number is divisible by 6? | 2,334 | 2,335 | 1,334 | 2,333 | 1,331 | 2,334 is even and its digit sum 12 is divisible by 3.
@@ -337,7 +337,7 @@ Q: Why isn't 1 a prime number? | It has only one factor, and excluding it keeps 
 Q: Up to what number must you test when checking if n is prime? | √n.
 SUM: Primes have exactly two factors.
 SUM: Euclid proved there are infinitely many primes.
-SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | textbook | 2008 | https://global.oup.com/
+SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | secondary | 2008 | https://global.oup.com/
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
 M1#maths-u01-11-q1@1: Which number is prime? | 37 | 39 | 51 | 57 | 91 | 37 has no factors other than 1 and 37; 39 = 3 × 13, 51 = 3 × 17, 57 = 3 × 19, 91 = 7 × 13.
 M2#maths-u01-11-q2@2: To test whether 199 is prime, which primes must you try? | 2, 3, 5, 7, 11 and 13 | All primes up to 199 | Only 2 and 3 | All odd numbers up to 100 | 2, 3 and 5 only | √199 ≈ 14.1, so primes up to 13 are enough.
@@ -371,7 +371,7 @@ Q: Is 1 prime, composite or neither? | Neither.
 Q: How do you prove 87 is composite? | Show a factor pair: 87 = 3 × 29.
 SUM: Composites have more than two factors.
 SUM: There are arbitrarily long runs of composite numbers.
-SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | textbook | 2008 | https://global.oup.com/
+SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | secondary | 2008 | https://global.oup.com/
 SRC: Department for Education, Mathematics programmes of study: key stage 3 | standard | 2013 | https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study
 M1#maths-u01-12-q1@1: Which number is composite? | 119 | 113 | 109 | 107 | 103 | 119 = 7 × 17, so it has factors other than 1 and itself; the others are prime.
 M2#maths-u01-12-q2@2: Why is 6! + 4 composite? | It's divisible by 4 | It's even and greater than 2 only by coincidence | It's a square number | It's divisible by 7 | 6! is prime | 6! = 720 is divisible by 4, so 720 + 4 is too.
@@ -404,7 +404,7 @@ Q: What is 72 as a product of prime factors? | 2^{3} × 3^{2}.
 Q: How can you tell from its factorisation that a number is a perfect square? | Every prime's power is even.
 SUM: Prime factorisation is unique.
 SUM: It reveals squares, cubes and common factors.
-SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | textbook | 2008 | https://global.oup.com/
+SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | secondary | 2008 | https://global.oup.com/
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
 M1#maths-u01-13-q1@1: What is 84 as a product of prime factors? | 2^{2} × 3 × 7 | 2 × 42 | 4 × 21 | 2^{2} × 21 | 2 × 3 × 14 | 84 = 2 × 2 × 3 × 7; the other answers include composite factors.
 M2#maths-u01-13-q2@2: What is the smallest number you can multiply 2^{3} × 3 × 5^{2} by to make a square? | 6 | 2 | 3 | 5 | 30 | Multiplying by 2 × 3 makes the powers 2^{4} × 3^{2} × 5^{2}, all even.
@@ -436,7 +436,7 @@ Q: How do you find the HCF from prime factorisations? | Multiply the common prim
 Q: What does co-prime mean? | The numbers have HCF 1.
 SUM: The HCF is the largest common factor.
 SUM: Euclid's algorithm finds it efficiently.
-SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | textbook | 2008 | https://global.oup.com/
+SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | secondary | 2008 | https://global.oup.com/
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
 NUM1#maths-u01-14-q1@1: Find the HCF of 84 and 126. | 42 | 0 |  | 84 = 2^{2} × 3 × 7 and 126 = 2 × 3^{2} × 7, so HCF = 2 × 3 × 7 = 42.
 M1#maths-u01-14-q2@1: Which pair of numbers is co-prime? | 9 and 16 | 6 and 15 | 8 and 12 | 14 and 21 | 10 and 25 | 9 = 3^{2} and 16 = 2^{4} share no prime factors.
@@ -470,7 +470,7 @@ Q: For two numbers, how are the HCF and LCM related? | HCF × LCM = the product 
 SUM: The LCM is the smallest common multiple.
 SUM: It gives common denominators and coincidence times.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | textbook | 2008 | https://global.oup.com/
+SRC: Hardy GH, Wright EM, An Introduction to the Theory of Numbers (6th edn, Oxford University Press 2008) | secondary | 2008 | https://global.oup.com/
 NUM1#maths-u01-15-q1@1: Find the LCM of 18 and 30. | 90 | 0 |  | 18 = 2 × 3^{2} and 30 = 2 × 3 × 5, so the LCM is 2 × 3^{2} × 5 = 90.
 M1#maths-u01-15-q2@1: What is the LCM of 9 and 12? | 36 | 108 | 3 | 72 | 21 | 9 = 3^{2}, 12 = 2^{2} × 3, so the LCM is 2^{2} × 3^{2} = 36.
 M3#maths-u01-15-q3@2: Two numbers have HCF 6 and LCM 72. One is 18. What is the other? | 24 | 12 | 36 | 4 | 54 | For two numbers, HCF × LCM = their product: 6 × 72 = 432, and 432 ÷ 18 = 24.
@@ -842,7 +842,7 @@ Q: What is the sum of the first 20 odd numbers? | 400: 20^{2}.
 SUM: Number patterns reveal mathematical structure.
 SUM: Explain patterns with diagrams or algebra.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | textbook | 1996 | https://global.oup.com/
+SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | secondary | 1996 | https://global.oup.com/
 NUM1#maths-u01-26-q1@1: What is the 12th triangular number? | 78 | 0 |  | 12 × 13 ÷ 2 = 78.
 M1#maths-u01-26-q2@1: Which is the next Fibonacci number after 21, 34? | 55 | 47 | 68 | 89 | 42 | Each Fibonacci number is the sum of the two before it: 21 + 34 = 55.
 M3#maths-u01-26-q3@2: What is the nth term of 4, 9, 16, 25, 36, …? | (n + 1)^{2} | n^{2} + 3 | 5n − 1 | n^{2} + 4 | 2n + 2 | These are the squares 2^{2}, 3^{2}, 4^{2}, …: term n is (n + 1)^{2}.
@@ -871,8 +871,8 @@ Q: What is 213₄ in base 10? | 2 × 16 + 1 × 4 + 3 = 39.
 Q: What digits does base 8 use? | 0 to 7.
 SUM: Bases change the multiplier between places.
 SUM: Hexadecimal is a compact way to write binary.
-SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | textbook | 1996 | https://global.oup.com/
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw Hill 2019) | textbook | 2019 | https://www.mheducation.com/
+SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | secondary | 1996 | https://global.oup.com/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw Hill 2019) | secondary | 2019 | https://www.mheducation.com/
 NUM1#maths-u01-27-q1@1: Convert 1043₅ (base 5) to base 10. | 148 | 0 |  | 1 × 125 + 0 × 25 + 4 × 5 + 3 = 148.
 M1#maths-u01-27-q2@1: What is the hexadecimal digit for 13? | D | C | E | B | 13 | Hexadecimal uses letters for 10 to 15: A = 10, B = 11, C = 12, D = 13.
 M2#maths-u01-27-q3@2: What is 45 in base 3? | 1200₃ | 1020₃ | 2100₃ | 1110₃ | 45₃ | 45 = 1 × 27 + 2 × 9 + 0 × 3 + 0, so 1200₃.
@@ -902,7 +902,7 @@ Q: What is 11001₂ in denary? | 25: 16 + 8 + 1.
 Q: How many values can a byte store? | 256 (0 to 255).
 SUM: Binary is base 2, the language of computers.
 SUM: Binary arithmetic follows the same column rules as denary.
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw Hill 2019) | textbook | 2019 | https://www.mheducation.com/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw Hill 2019) | secondary | 2019 | https://www.mheducation.com/
 SRC: Department for Education, Computer science GCSE subject content | standard | 2015 | https://www.gov.uk/government/publications/gcse-computer-science
 NUM1#maths-u01-28-q1@1: Convert 1101001₂ to denary. | 105 | 0 |  | 64 + 32 + 8 + 1 = 105.
 M1#maths-u01-28-q2@1: What is 13 in binary? | 1101 | 1011 | 1110 | 1001 | 111 | 13 = 8 + 4 + 1, so there are 1s in the 8, 4 and 1 columns and a 0 in the 2 column: 1101.

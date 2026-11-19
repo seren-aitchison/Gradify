@@ -34,8 +34,8 @@ Q: What is arbitrage? | A riskless profit from mispricing.
 Q: Why is money now worth more than money later? | It can earn interest in the meantime.
 SUM: Money has time value.
 SUM: Risk needs probability models.
-SRC: Kellison SG, The Theory of Interest (3rd edn, McGraw-Hill 2009) | textbook | 2009 | https://www.mheducation.com/
-SRC: Hull JC, Options, Futures, and Other Derivatives (11th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
+SRC: Kellison SG, The Theory of Interest (3rd edn, McGraw-Hill 2009) | secondary | 2009 | https://www.mheducation.com/
+SRC: Hull JC, Options, Futures, and Other Derivatives (11th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
 NUM1#maths-u21-01-q1@1: At a 5% annual interest rate, what is the present value in £ of £2100 received in one year? | 2000 | 0 | £ | PV = 2100/1.05 = £2000.
 M1#maths-u21-01-q2@1: Which principle says two portfolios with identical future payoffs must have the same price? | No arbitrage | The time value of money | Diversification | Compound interest | Risk aversion | If prices differed, buying the cheap one and selling the dear one would give a riskless profit.
 M2#maths-u21-01-q3@2: Why must cash flows at different dates be discounted before comparing them? | Money at different times has different value because of interest | Discounting removes all risk from the cash flows | Future cash is always worthless compared with cash now | Cash flows at all dates are always equal in value | It isn't necessary when the amounts are the same | Converting to present values puts every payment on the same footing.
@@ -70,8 +70,8 @@ Q: What is the simple interest on £800 at 5% for 3 years? | £120.
 Q: How does simple interest grow over time? | Linearly.
 SUM: Interest on principal only.
 SUM: Linear growth.
-SRC: Kellison SG, The Theory of Interest (3rd edn, McGraw-Hill 2009) | textbook | 2009 | https://www.mheducation.com/
-SRC: Vaaler LJF, Daniel JW, Mathematical Interest Theory (3rd edn, American Mathematical Society 2021) | textbook | 2021 | https://bookstore.ams.org/
+SRC: Kellison SG, The Theory of Interest (3rd edn, McGraw-Hill 2009) | secondary | 2009 | https://www.mheducation.com/
+SRC: Vaaler LJF, Daniel JW, Mathematical Interest Theory (3rd edn, American Mathematical Society 2021) | secondary | 2021 | https://bookstore.ams.org/
 NUM1#maths-u21-02-q1@1: What simple interest rate (in %) turns £2000 into £2300 over 3 years? | 5 | 0 | % | I = 300 = 2000 × r × 3, so r = 300/6000 = 0.05 = 5%.
 M1#maths-u21-02-q2@1: £1200 is invested at 4% simple interest for 6 months. How much interest is earned? | £24 | £48 | £288 | £4.80 | £240 | Simple interest is I = Prt = 1200 × 0.04 × 0.5 = £24, with the 6 months written as half a year.
 M2#maths-u21-02-q3@2: Why does compound interest eventually exceed simple interest at the same rate? | It earns interest on previously added interest, giving exponential rather than linear growth | Compound interest rates are always set higher than simple rates by banks | Simple interest stops being paid after the first year of any investment | Compound interest is paid more often, so it must be at a higher rate | It doesn't: simple interest always grows faster over long periods | Each period's interest joins the principal for the next period.
@@ -108,8 +108,8 @@ Q: What is the AER of 6% compounded quarterly? | About 6.14%.
 Q: What does the rule of 72 estimate? | Doubling time: 72 divided by the percentage rate.
 SUM: Interest earns interest.
 SUM: Compare using effective rates.
-SRC: Kellison SG, The Theory of Interest (3rd edn, McGraw-Hill 2009) | textbook | 2009 | https://www.mheducation.com/
-SRC: Financial Conduct Authority, Consumer Credit sourcebook (CONC) App 1: Total charge for credit (APR) | guideline | 2024 | https://www.handbook.fca.org.uk/handbook/CONC/App/1/
+SRC: Kellison SG, The Theory of Interest (3rd edn, McGraw-Hill 2009) | secondary | 2009 | https://www.mheducation.com/
+SRC: Financial Conduct Authority, Consumer Credit sourcebook (CONC) App 1: Total charge for credit (APR) | guidance | 2024 | https://www.handbook.fca.org.uk/handbook/CONC/App/1/
 NUM1#maths-u21-03-q1@1: What is £500 worth after 3 years at 4% compounded annually, to the nearest penny? | 562.43 | 0.01 | £ | 500 × 1.04^{3} = 500 × 1.124864 = £562.43.
 M1#maths-u21-03-q2@1: What is the effective annual rate of 12% compounded monthly? | About 12.68% | Exactly 12% | About 1% | About 144% | About 12.36% | (1 + 0.12/12)^{12} − 1 = 1.01^{12} − 1 ≈ 0.1268.
 M2#maths-u21-03-q3@2: Why does continuous compounding give the largest amount for a given nominal rate? | (1 + r/m)^{m} increases with m and tends to e^{r} as m → ∞ | Continuous compounding uses a higher rate | It adds interest only once | It removes the principal | It gives the smallest amount | More frequent compounding means interest starts earning interest sooner.
@@ -145,8 +145,8 @@ Q: What is the discount factor at 10% for one year? | 1/1.1 ≈ 0.909.
 Q: What is the exact real rate for 5% nominal and 2% inflation? | 1.05/1.02 − 1 ≈ 2.94%.
 SUM: Move money through time with interest.
 SUM: Equations of value solve problems.
-SRC: Kellison SG, The Theory of Interest (3rd edn, McGraw-Hill 2009) | textbook | 2009 | https://www.mheducation.com/
-SRC: Brealey RA, Myers SC, Allen F, Principles of Corporate Finance (14th edn, McGraw-Hill 2023) | textbook | 2023 | https://www.mheducation.com/
+SRC: Kellison SG, The Theory of Interest (3rd edn, McGraw-Hill 2009) | secondary | 2009 | https://www.mheducation.com/
+SRC: Brealey RA, Myers SC, Allen F, Principles of Corporate Finance (14th edn, McGraw-Hill 2023) | secondary | 2023 | https://www.mheducation.com/
 NUM1#maths-u21-04-q1@1: At 8% a year, what is the present value in £ of £1000 due in 2 years, to the nearest penny? | 857.34 | 0.01 | £ | 1000/1.08^{2} = 1000/1.1664 ≈ £857.34.
 M1#maths-u21-04-q2@1: Nominal interest is 6% and inflation is 6%. What is the real interest rate? | 0% | 6% | 12% | 36% | −6% | (1.06/1.06) − 1 = 0: savings only keep pace with prices.
 M2#maths-u21-04-q3@2: Why does the choice of comparison date not affect an equation of value? | Moving both sides by the same factor (1 + i)ᵏ keeps them equal | Every date gives different answers | Only the present date is valid | Interest is zero at the comparison date | It does affect it | Accumulating or discounting every cash flow by the same factor preserves equality.
@@ -181,8 +181,8 @@ Q: What is the PV of a perpetuity paying C at rate r? | C/r.
 Q: How does raising the discount rate affect PV? | It lowers it.
 SUM: Discount future money to today.
 SUM: The discount rate is crucial.
-SRC: Brealey RA, Myers SC, Allen F, Principles of Corporate Finance (14th edn, McGraw-Hill 2023) | textbook | 2023 | https://www.mheducation.com/
-SRC: HM Treasury, The Green Book: Central Government Guidance on Appraisal and Evaluation | guideline | 2022 | https://www.gov.uk/government/publications/the-green-book-appraisal-and-evaluation-in-central-government
+SRC: Brealey RA, Myers SC, Allen F, Principles of Corporate Finance (14th edn, McGraw-Hill 2023) | secondary | 2023 | https://www.mheducation.com/
+SRC: HM Treasury, The Green Book: Central Government Guidance on Appraisal and Evaluation | guidance | 2022 | https://www.gov.uk/government/publications/the-green-book-appraisal-and-evaluation-in-central-government
 NUM1#maths-u21-05-q1@1: What is the present value in £ of a perpetuity paying £60 a year at a 4% discount rate? | 1500 | 0 | £ | PV = 60/0.04 = £1500.
 M1#maths-u21-05-q2@1: Which cash flow has the lowest present value at 6%? | £1000 in 10 years | £1000 in 5 years | £1000 in 1 year | £1000 now | £1000 in 2 years | Further-off cash flows are discounted more heavily.
 M2#maths-u21-05-q3@2: Why do long-term projects' values depend so strongly on the discount rate? | Discount factors (1 + r)^{−t} change rapidly with r when t is large | Long projects have no cash flows | Discount rates are always zero for long terms | PV ignores distant cash flows | They don't depend on it | At t = 50, moving from 3% to 5% cuts the discount factor from 0.23 to 0.09.
@@ -217,8 +217,8 @@ Q: What is the FV factor for regular end-of-period savings? | ((1 + r)ⁿ − 1)
 Q: How do start-of-period payments change the FV? | Multiply by (1 + r).
 SUM: Savings grow by compounding.
 SUM: Start early.
-SRC: Kellison SG, The Theory of Interest (3rd edn, McGraw-Hill 2009) | textbook | 2009 | https://www.mheducation.com/
-SRC: Vaaler LJF, Daniel JW, Mathematical Interest Theory (3rd edn, American Mathematical Society 2021) | textbook | 2021 | https://bookstore.ams.org/
+SRC: Kellison SG, The Theory of Interest (3rd edn, McGraw-Hill 2009) | secondary | 2009 | https://www.mheducation.com/
+SRC: Vaaler LJF, Daniel JW, Mathematical Interest Theory (3rd edn, American Mathematical Society 2021) | secondary | 2021 | https://bookstore.ams.org/
 NUM1#maths-u21-06-q1@1: Saving £1000 at the end of each year for 3 years at 10%, what is the future value in £? | 3310 | 0 | £ | 1000 × (1.1^{3} − 1)/0.1 = 1000 × 3.31 = £3310.
 M1#maths-u21-06-q2@1: What is £2000 worth after 2 years at 3% compounded annually? | £2121.80 | £2120.00 | £2060.00 | £2180.00 | £2000.00 | 2000 × 1.03^{2} = 2000 × 1.0609 = £2121.80.
 M2#maths-u21-06-q3@2: Why does starting to save ten years earlier make such a difference at retirement? | Early contributions compound for longer, and growth is exponential in time | Interest rates are higher for young savers than for older ones | Savings made later in life earn no interest at all | Contributions are always larger when savers are young | It makes little difference, since interest is the same each year | Each extra decade multiplies those contributions by (1 + r)^{10}.
@@ -255,8 +255,8 @@ Q: What is the PV factor of an annuity immediate? | (1 − vⁿ)/i.
 Q: What does aₙ approach as n → ∞? | 1/i.
 SUM: Level payments sum as geometric series.
 SUM: Timing changes the factor.
-SRC: Kellison SG, The Theory of Interest (3rd edn, McGraw-Hill 2009) | textbook | 2009 | https://www.mheducation.com/
-SRC: Dickson DCM, Hardy MR, Waters HR, Actuarial Mathematics for Life Contingent Risks (3rd edn, Cambridge University Press 2020) | textbook | 2020 | https://www.cambridge.org/
+SRC: Kellison SG, The Theory of Interest (3rd edn, McGraw-Hill 2009) | secondary | 2009 | https://www.mheducation.com/
+SRC: Dickson DCM, Hardy MR, Waters HR, Actuarial Mathematics for Life Contingent Risks (3rd edn, Cambridge University Press 2020) | secondary | 2020 | https://www.cambridge.org/
 NUM1#maths-u21-07-q1@1: What is the PV in £ of £500 at the end of each year for 2 years at 10%, to the nearest penny? | 867.77 | 0.01 | £ | 500/1.1 + 500/1.21 = 454.55 + 413.22 = £867.77.
 M1#maths-u21-07-q2@1: How does the PV of an annuity due compare with that of an annuity immediate with the same payments? | It is larger by a factor (1 + i) | It is smaller by a factor (1 + i) | They are always equal | It is larger by a factor i | It is n times larger | Each payment arrives one period earlier, so it's discounted one period less.
 M2#maths-u21-07-q3@2: Why does a 30-year annuity at 5% have a PV only a little below a perpetuity's? | Payments beyond 30 years add little because v^{30} ≈ 0.23 shrinks them heavily | Perpetuities have no value, since their payments never end | Annuities pay more each year than perpetuities of the same size | Interest rates fall to zero after 30 years, so later payments vanish | It is far below, since a perpetuity has infinitely many more payments | a₃₀ ≈ 15.37 compared with 1/0.05 = 20 for the perpetuity.
@@ -290,8 +290,8 @@ Q: How is each period's interest calculated? | Interest rate times the outstandi
 Q: What is total interest on a level-payment loan? | nP − L.
 SUM: Payments repay interest then capital.
 SUM: Balances equal PV of remaining payments.
-SRC: Kellison SG, The Theory of Interest (3rd edn, McGraw-Hill 2009) | textbook | 2009 | https://www.mheducation.com/
-SRC: Broverman SA, Mathematics of Investment and Credit (7th edn, ACTEX 2017) | textbook | 2017 | https://www.actexlearning.com/
+SRC: Kellison SG, The Theory of Interest (3rd edn, McGraw-Hill 2009) | secondary | 2009 | https://www.mheducation.com/
+SRC: Broverman SA, Mathematics of Investment and Credit (7th edn, ACTEX 2017) | secondary | 2017 | https://www.actexlearning.com/
 NUM1#maths-u21-08-q1@1: A loan of £5000 at 2% per period is repaid with level payments of £1060.80 over 5 periods. What is the interest in the first period, in £? | 100 | 0 | £ | Interest = 0.02 × 5000 = £100; the remaining £960.80 repays capital.
 M1#maths-u21-08-q2@1: In a level-payment loan, how does the interest part of each payment change over time? | It falls as the balance falls | It rises steadily | It stays constant | It is zero until the last payment | It equals the full payment | Interest is charged on a shrinking balance.
 M2#maths-u21-08-q3@2: Why do the prospective and retrospective methods give the same outstanding balance? | Both satisfy the same equation of value between the loan and its payments | They use different interest rates, which happen to cancel | One method ignores interest, so the answers agree only by luck | They give different answers, and lenders choose the larger | Only the prospective method is valid; the other is an estimate | The loan equals the PV of all payments, so past and future sides balance.
@@ -325,8 +325,8 @@ Q: What does LTV mean? | Loan-to-value ratio.
 Q: How does a longer term affect a mortgage? | Lower monthly payments but more total interest.
 SUM: Mortgages are long amortising loans.
 SUM: Rates and terms matter enormously.
-SRC: Financial Conduct Authority, Mortgages and Home Finance: Conduct of Business sourcebook (MCOB) | guideline | 2024 | https://www.handbook.fca.org.uk/handbook/MCOB/
-SRC: Broverman SA, Mathematics of Investment and Credit (7th edn, ACTEX 2017) | textbook | 2017 | https://www.actexlearning.com/
+SRC: Financial Conduct Authority, Mortgages and Home Finance: Conduct of Business sourcebook (MCOB) | guidance | 2024 | https://www.handbook.fca.org.uk/handbook/MCOB/
+SRC: Broverman SA, Mathematics of Investment and Credit (7th edn, ACTEX 2017) | secondary | 2017 | https://www.actexlearning.com/
 NUM1#maths-u21-09-q1@1: For the £150,000 mortgage at 6% over 25 years with payments of £966.45, what is the total interest paid, to the nearest pound? | 139935 | 1 | £ | 300 × 966.45 = £289,935, minus the £150,000 borrowed, gives £139,935 interest.
 M1#maths-u21-09-q2@1: A house worth £250,000 is bought with a £200,000 mortgage. What is the LTV? | 80% | 20% | 125% | 50% | 75% | Loan-to-value is the loan divided by the property value: 200,000/250,000 = 0.8, so an 80% LTV with a 20% deposit.
 M2#maths-u21-09-q3@2: Why do overpayments early in a mortgage save so much interest? | They cut the balance on which interest is charged for many remaining years | They reduce the interest rate charged on the rest of the mortgage | They are refunded with interest at the end of the mortgage term | They don't save interest; they only reduce the final payment | They only shorten the term, leaving total interest unchanged | Every pound repaid early avoids compound interest for the rest of the term.
@@ -361,8 +361,8 @@ Q: What does WACC combine? | The costs of debt and equity weighted by their shar
 Q: How is terminal value often calculated? | As a growing perpetuity of cash flows.
 SUM: Value is discounted future cash.
 SUM: Assumptions drive the result.
-SRC: Koller T, Goedhart M, Wessels D, Valuation: Measuring and Managing the Value of Companies (7th edn, Wiley 2020) | textbook | 2020 | https://www.wiley.com/
-SRC: Damodaran A, Investment Valuation (3rd edn, Wiley 2012) | textbook | 2012 | https://pages.stern.nyu.edu/~adamodar/
+SRC: Koller T, Goedhart M, Wessels D, Valuation: Measuring and Managing the Value of Companies (7th edn, Wiley 2020) | secondary | 2020 | https://www.wiley.com/
+SRC: Damodaran A, Investment Valuation (3rd edn, Wiley 2012) | secondary | 2012 | https://pages.stern.nyu.edu/~adamodar/
 NUM1#maths-u21-10-q1@1: In the example, what is the firm's value in £m if the discount rate rises to 10% (same £10m growing 3%), to 1 decimal place? | 142.9 | 0.1 | £m | 10/(0.10 − 0.03) = 10/0.07 ≈ £142.9m, about 14% lower.
 M1#maths-u21-10-q2@1: A firm has 60% equity costing 10% and 40% debt costing 5% before tax, with a 25% tax rate. What is its WACC? | 7.5% | 8.0% | 7.0% | 15% | 6.5% | 0.6 × 10% + 0.4 × 5% × 0.75 = 6% + 1.5% = 7.5%.
 M2#maths-u21-10-q3@2: Why can the terminal value dominate a DCF valuation? | It captures all cash flows beyond the forecast period, often most of the total value | It is always zero, so the forecast years carry all the value | Forecast years are weighted more heavily than later years | Discounting doesn't apply to it, so it stays at full size | It never dominates; the explicit forecast years always do | For growing firms, flows after year 10 can be 60–80% of the present value.
@@ -397,8 +397,8 @@ Q: What does a positive NPV indicate? | The project earns more than the required
 Q: Should sunk costs be included in NPV? | No.
 SUM: NPV measures value added.
 SUM: Accept positive NPV projects.
-SRC: Brealey RA, Myers SC, Allen F, Principles of Corporate Finance (14th edn, McGraw-Hill 2023) | textbook | 2023 | https://www.mheducation.com/
-SRC: Graham JR, Harvey CR, The theory and practice of corporate finance: evidence from the field, Journal of Financial Economics 60(2–3), 187 | journal | 2001 | https://doi.org/10.1016/S0304-405X(01)00044-7
+SRC: Brealey RA, Myers SC, Allen F, Principles of Corporate Finance (14th edn, McGraw-Hill 2023) | secondary | 2023 | https://www.mheducation.com/
+SRC: Graham JR, Harvey CR, The theory and practice of corporate finance: evidence from the field, Journal of Financial Economics 60(2–3), 187 | primary | 2001 | https://doi.org/10.1016/S0304-405X(01)00044-7
 NUM1#maths-u21-11-q1@1: A project costs £2000 and pays £1210 at the end of year 2 and £1100 at the end of year 1. What is its NPV at 10%, in £? | 0 | 0.01 | £ | 1100/1.1 + 1210/1.21 = 1000 + 1000 = 2000, so NPV = 0.
 M1#maths-u21-11-q2@1: Two exclusive projects have NPVs of £500 and £800. Which should be chosen? | The £800 project | The £500 project | Both projects together | Neither project | Whichever has the shorter payback | For mutually exclusive projects, the higher NPV adds more value.
 M3#maths-u21-11-q3@2: Why is NPV preferred to the payback period? | It accounts for the time value of money and all cash flows, including those after payback | Payback uses discounting more carefully than NPV does in practice | NPV ignores risk, which makes it simpler than payback to compute | Payback measures value added in money, while NPV gives only a time | It isn't preferred: payback is the standard rule in corporate finance | Payback ignores flows after the cut-off and doesn't discount.
@@ -434,8 +434,8 @@ Q: What is the NPV of a project at its IRR? | Zero.
 Q: When can a project have several IRRs? | When cash flows change sign more than once.
 SUM: IRR is the break-even discount rate.
 SUM: Use it with NPV, not instead.
-SRC: Brealey RA, Myers SC, Allen F, Principles of Corporate Finance (14th edn, McGraw-Hill 2023) | textbook | 2023 | https://www.mheducation.com/
-SRC: Hazen GB, A new perspective on multiple internal rates of return, The Engineering Economist 48(1), 31 | journal | 2003 | https://doi.org/10.1080/00137910308965050
+SRC: Brealey RA, Myers SC, Allen F, Principles of Corporate Finance (14th edn, McGraw-Hill 2023) | secondary | 2023 | https://www.mheducation.com/
+SRC: Hazen GB, A new perspective on multiple internal rates of return, The Engineering Economist 48(1), 31 | primary | 2003 | https://doi.org/10.1080/00137910308965050
 NUM1#maths-u21-12-q1@1: A project costs £1000 and pays £1210 after 2 years. What is its IRR as a percentage? | 10 | 0 | % | (1 + r)^{2} = 1.21, so r = 10%.
 M1#maths-u21-12-q2@1: A small project has IRR 50% and NPV £100; a large one has IRR 15% and NPV £10,000. They're mutually exclusive. Which should be chosen? | The large project, since it adds more value | The small project, since its IRR is higher | Both projects together | Neither project | It's impossible to say | NPV measures value created; IRR ignores scale.
 M2#maths-u21-12-q3@2: Why can cash flows −100, +230, −132 have two IRRs? | The NPV polynomial changes sign twice, so it can have two positive roots (here 10% and 20%) | IRR is always unique for any pattern of cash flows, so it can't | These flows have no IRR at all, since the NPV is always negative | The discount rate becomes negative, creating a second spurious IRR | They have only one IRR, at 10%, since IRR is defined to be unique | Two sign changes allow up to two positive real roots by Descartes' rule.
@@ -470,8 +470,8 @@ Q: When does a bond trade at par? | When its coupon rate equals its yield.
 Q: What does modified duration approximate? | The percentage price change per unit change in yield.
 SUM: Bonds are discounted cash flows.
 SUM: Duration measures rate risk.
-SRC: Fabozzi FJ, Bond Markets, Analysis, and Strategies (10th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
-SRC: Macaulay FR, Some Theoretical Problems Suggested by the Movements of Interest Rates, Bond Yields and Stock Prices in the United States since 1856 (NBER 1938) | report | 1938 | https://www.nber.org/books-and-chapters/
+SRC: Fabozzi FJ, Bond Markets, Analysis, and Strategies (10th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
+SRC: Macaulay FR, Some Theoretical Problems Suggested by the Movements of Interest Rates, Bond Yields and Stock Prices in the United States since 1856 (NBER 1938) | secondary | 1938 | https://www.nber.org/books-and-chapters/
 NUM1#maths-u21-13-q1@1: What is the price in £ of a zero-coupon bond paying £100 in 2 years at a 5% yield, to the nearest penny? | 90.70 | 0.01 | £ | 100/1.05^{2} = 100/1.1025 ≈ £90.70.
 M1#maths-u21-13-q2@1: A bond has modified duration 7. If yields rise by 0.5 percentage points, roughly how does its price change? | It falls by about 3.5% | It rises by about 3.5% | It falls by about 7% | It falls by about 0.5% | It doesn't change | Using ΔP/P ≈ −D_{mod}Δy = −7 × 0.005 = −0.035, the price falls by about 3.5% (convexity makes the fall slightly smaller).
 M2#maths-u21-13-q3@2: Why does a long-dated zero-coupon bond have high duration? | All its value comes from one payment far in the future, so discounting changes affect it strongly | It pays large coupons that are very sensitive to rates | Its yield is always zero, which makes its duration large | Duration falls as maturity increases, so it's actually low | It has low duration, since there's only one payment | The Macaulay duration of a zero equals its maturity.
@@ -507,8 +507,8 @@ Q: What is the Gordon growth model? | P₀ = D₁/(r − g).
 Q: What does a P/E ratio compare? | Price with earnings per share.
 SUM: Shares are worth their future payouts.
 SUM: Growth and risk assumptions dominate.
-SRC: Gordon MJ, Dividends, earnings, and stock prices, Review of Economics and Statistics 41(2), 99 | journal | 1959 | https://doi.org/10.2307/1927792
-SRC: Damodaran A, Investment Valuation (3rd edn, Wiley 2012) | textbook | 2012 | https://pages.stern.nyu.edu/~adamodar/
+SRC: Gordon MJ, Dividends, earnings, and stock prices, Review of Economics and Statistics 41(2), 99 | primary | 1959 | https://doi.org/10.2307/1927792
+SRC: Damodaran A, Investment Valuation (3rd edn, Wiley 2012) | secondary | 2012 | https://pages.stern.nyu.edu/~adamodar/
 NUM1#maths-u21-14-q1@1: A share costs £50 and next year's dividend is £2.50 with 5% growth. What required return (in %) does the Gordon model imply? | 10 | 0 | % | r = D₁/P₀ + g = 2.5/50 + 0.05 = 0.10.
 M1#maths-u21-14-q2@1: A firm's earnings per share are £3 and its P/E is 15. What is its share price? | £45 | £5 | £18 | £12 | £0.20 | Price equals the P/E ratio times earnings per share: 15 × £3 = £45, so investors pay 15 years' current earnings.
 M2#maths-u21-14-q3@2: Why does the Gordon model break down when g approaches r? | The denominator r − g tends to zero, so the value explodes towards infinity | Dividends stop growing once g gets close to r | It gives negative values for every possible g | Growth doesn't affect value in the Gordon model | It never breaks down for any growth rate | Sustained growth at or above the discount rate would make the sum of dividends infinite.
@@ -542,8 +542,8 @@ Q: What correlation gives no diversification benefit? | +1.
 Q: Which risk can't be diversified away? | Systematic (market) risk.
 SUM: Combine assets to cut risk.
 SUM: Correlation is the key.
-SRC: Markowitz H, Portfolio selection, Journal of Finance 7(1), 77 | journal | 1952 | https://doi.org/10.1111/j.1540-6261.1952.tb01525.x
-SRC: Bodie Z, Kane A, Marcus AJ, Investments (13th edn, McGraw-Hill 2023) | textbook | 2023 | https://www.mheducation.com/
+SRC: Markowitz H, Portfolio selection, Journal of Finance 7(1), 77 | primary | 1952 | https://doi.org/10.1111/j.1540-6261.1952.tb01525.x
+SRC: Bodie Z, Kane A, Marcus AJ, Investments (13th edn, McGraw-Hill 2023) | secondary | 2023 | https://www.mheducation.com/
 NUM1#maths-u21-15-q1@1: Two assets with σ = 10% and correlation −1 are combined 50/50. What is the portfolio volatility in %? | 0 | 0 | % | σ_{p} = |0.5 × 10 − 0.5 × 10| = 0%: perfect negative correlation cancels the risk.
 M1#maths-u21-15-q2@1: A portfolio is 70% in an asset returning 8% and 30% in one returning 4%. What is its expected return? | 6.8% | 6.0% | 12% | 5.2% | 7.4% | Portfolio expected return is the weighted average: 0.7 × 8% + 0.3 × 4% = 5.6% + 1.2% = 6.8%.
 M2#maths-u21-15-q3@2: Why does diversification across many shares fail to remove all risk? | Shares share exposure to market-wide factors, so their covariances don't average away | Every share has zero variance, so there is nothing left to diversify | Correlations between shares are always −1, which adds risk | Diversification removes all risk once enough shares are held | It does remove all risk; only concentrated portfolios have any | As n grows, portfolio variance tends to the average covariance, not zero.
@@ -577,8 +577,8 @@ Q: Who founded modern portfolio theory? | Harry Markowitz (1952).
 Q: What does the Sharpe ratio measure? | Excess return per unit of total risk.
 SUM: Efficient portfolios balance return and risk.
 SUM: The Sharpe ratio compares them.
-SRC: Markowitz H, Portfolio selection, Journal of Finance 7(1), 77 | journal | 1952 | https://doi.org/10.1111/j.1540-6261.1952.tb01525.x
-SRC: Sharpe WF, Mutual fund performance, Journal of Business 39(1), 119 | journal | 1966 | https://doi.org/10.1086/294846
+SRC: Markowitz H, Portfolio selection, Journal of Finance 7(1), 77 | primary | 1952 | https://doi.org/10.1111/j.1540-6261.1952.tb01525.x
+SRC: Sharpe WF, Mutual fund performance, Journal of Business 39(1), 119 | primary | 1966 | https://doi.org/10.1086/294846
 NUM1#maths-u21-16-q1@1: A portfolio returns 9% with volatility 14%, and the risk-free rate is 2%. What is its Sharpe ratio? | 0.5 | 0.001 |  | (9 − 2)/14 = 0.5.
 M1#maths-u21-16-q2@1: What does two-fund separation say about investors' choices? | They all hold the risk-free asset plus the same tangency portfolio, in different proportions | They all hold only cash, avoiding risky assets entirely | Each holds a unique risky portfolio matched to their tastes | They avoid the risk-free asset and hold only shares | They hold two randomly chosen shares in equal amounts | With a risk-free asset, the capital market line dominates the frontier.
 M3#maths-u21-16-q3@2: Why do mean–variance optimisers often give extreme, unstable weights? | Small errors in expected return estimates are magnified, pushing weights towards assets that look best by chance | Covariances are known exactly, so the optimiser has no uncertainty | The optimiser ignores risk and maximises expected return only | Expected returns never change, so extreme weights are correct | They give stable, moderate weights whatever the input estimates | Optimisation acts as an "error maximiser" when inputs are noisy.
@@ -613,8 +613,8 @@ Q: What does β = 1 mean? | The asset moves one-for-one with the market on avera
 Q: Which risk does CAPM say is rewarded? | Systematic (market) risk.
 SUM: Return depends on beta.
 SUM: Multi-factor models extend CAPM.
-SRC: Sharpe WF, Capital asset prices: a theory of market equilibrium under conditions of risk, Journal of Finance 19(3), 425 | journal | 1964 | https://doi.org/10.1111/j.1540-6261.1964.tb02865.x
-SRC: Fama EF, French KR, The capital asset pricing model: theory and evidence, Journal of Economic Perspectives 18(3), 25 | journal | 2004 | https://doi.org/10.1257/0895330042162430
+SRC: Sharpe WF, Capital asset prices: a theory of market equilibrium under conditions of risk, Journal of Finance 19(3), 425 | primary | 1964 | https://doi.org/10.1111/j.1540-6261.1964.tb02865.x
+SRC: Fama EF, French KR, The capital asset pricing model: theory and evidence, Journal of Economic Perspectives 18(3), 25 | primary | 2004 | https://doi.org/10.1257/0895330042162430
 NUM1#maths-u21-17-q1@1: With r_{f} = 2%, market return 7% and β = 0.8, what is the CAPM required return in %? | 6 | 0 | % | 2 + 0.8 × (7 − 2) = 2 + 4 = 6%.
 M1#maths-u21-17-q2@1: An asset has covariance 0.03 with the market, whose variance is 0.02. What is its beta? | 1.5 | 0.67 | 0.06 | 0.01 | 0.5 | Beta is the covariance with the market divided by the market variance: 0.03/0.02 = 1.5, so it amplifies market moves.
 M2#maths-u21-17-q3@2: A fund earned 12% when CAPM predicted 9%. What is its alpha? | +3% | −3% | 12% | 21% | 0% | Alpha = actual − predicted = 12 − 9 = 3 percentage points.
@@ -648,8 +648,8 @@ Q: Who proposed arbitrage pricing theory? | Stephen Ross (1976).
 Q: Does APT specify which factors to use? | No.
 SUM: Returns reflect several risk factors.
 SUM: No arbitrage drives the pricing.
-SRC: Ross SA, The arbitrage theory of capital asset pricing, Journal of Economic Theory 13(3), 341 | journal | 1976 | https://doi.org/10.1016/0022-0531(76)90046-6
-SRC: Fama EF, French KR, A five-factor asset pricing model, Journal of Financial Economics 116(1), 1 | journal | 2015 | https://doi.org/10.1016/j.jfineco.2014.10.010
+SRC: Ross SA, The arbitrage theory of capital asset pricing, Journal of Economic Theory 13(3), 341 | primary | 1976 | https://doi.org/10.1016/0022-0531(76)90046-6
+SRC: Fama EF, French KR, A five-factor asset pricing model, Journal of Financial Economics 116(1), 1 | primary | 2015 | https://doi.org/10.1016/j.jfineco.2014.10.010
 NUM1#maths-u21-18-q1@1: With r_{f} = 2%, factor premiums 3% and 1%, and betas 1.5 and 2, what is the APT expected return in %? | 8.5 | 0.01 | % | 2 + 1.5 × 3 + 2 × 1 = 2 + 4.5 + 2 = 8.5%.
 M1#maths-u21-18-q2@1: How is CAPM related to APT? | CAPM is a special case with the market as the single factor | They are unrelated models with no common ground | APT is a special case of CAPM with one factor | CAPM uses five factors, while APT uses only one | APT ignores systematic risk, unlike CAPM | One factor (the market portfolio) recovers the security market line.
 M2#maths-u21-18-q3@2: Why should factor discoveries from back-tests be treated with caution? | Testing many candidate factors makes some look significant by chance (data mining) | Factors always persist once they've been found in past data | Back-tests are never wrong, so every factor found is genuine | No factor has ever been found that explains any returns | They need no caution: more factors always improve models | Multiple testing inflates false positives, so many published factors fail out of sample.
@@ -685,8 +685,8 @@ Q: Under the risk-neutral measure, what do discounted prices form? | Martingales
 Q: Which measure is used for Value at Risk? | The real-world measure P.
 SUM: Quants price and manage risk.
 SUM: Pricing and forecasting use different measures.
-SRC: Hull JC, Options, Futures, and Other Derivatives (11th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
-SRC: Meucci A, 'P' versus 'Q': differences and commonalities between the two areas of quantitative finance, GARP Risk Professional, 47 | journal | 2011 | https://doi.org/10.2139/ssrn.1717163
+SRC: Hull JC, Options, Futures, and Other Derivatives (11th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
+SRC: Meucci A, 'P' versus 'Q': differences and commonalities between the two areas of quantitative finance, GARP Risk Professional, 47 | primary | 2011 | https://doi.org/10.2139/ssrn.1717163
 NUM1#maths-u21-19-q1@1: A stock is £80 and the risk-free rate is 4% (annual compounding). What is its risk-neutral expected price in one year, in £? | 83.2 | 0.01 | £ | E^{Q}[S₁] = 80 × 1.04 = £83.20.
 M1#maths-u21-19-q2@1: Which probability measure is used to price derivatives by no-arbitrage? | The risk-neutral measure Q | The real-world measure P | A uniform measure | The historical frequency only | Any measure chosen by the trader | Pricing relies on Q, where discounted prices are martingales.
 M2#maths-u21-19-q3@2: What is model risk in quantitative finance? | Losses from using a wrong or misapplied model, or wrong parameters | The risk that markets close unexpectedly | The risk from holding too much cash | Risk from currency changes only | It doesn't exist if the maths is correct | Even correct maths can mislead when its assumptions don't hold in the market.
@@ -721,8 +721,8 @@ Q: What does the second fundamental theorem say? | A market is complete iff the 
 Q: What is a martingale? | A process whose expected future value given the present equals its current value.
 SUM: No arbitrage means a martingale measure exists.
 SUM: Completeness means it's unique.
-SRC: Harrison JM, Pliska SR, Martingales and stochastic integrals in the theory of continuous trading, Stochastic Processes and their Applications 11(3), 215 | journal | 1981 | https://doi.org/10.1016/0304-4149(81)90026-0
-SRC: Shreve SE, Stochastic Calculus for Finance II: Continuous-Time Models (Springer 2004) | textbook | 2004 | https://link.springer.com/
+SRC: Harrison JM, Pliska SR, Martingales and stochastic integrals in the theory of continuous trading, Stochastic Processes and their Applications 11(3), 215 | primary | 1981 | https://doi.org/10.1016/0304-4149(81)90026-0
+SRC: Shreve SE, Stochastic Calculus for Finance II: Continuous-Time Models (Springer 2004) | secondary | 2004 | https://link.springer.com/
 NUM1#maths-u21-20-q1@1: A stock is £50 and moves to £60 or £45 in one period, with r = 0. What is the risk-neutral up probability, as a decimal to 3 places? | 0.333 | 0.001 |  | 50 = 60q + 45(1 − q) gives 15q = 5, so q = 1/3.
 M1#maths-u21-20-q2@1: What does the first fundamental theorem of asset pricing equate? | Absence of arbitrage and existence of an equivalent martingale measure | Completeness of the market and absence of all risk | Positive interest rates and the absence of arbitrage | Expected returns on assets and their volatilities | Share prices and the present value of their dividends | No-arbitrage is equivalent to a measure making discounted prices martingales.
 M3#maths-u21-20-q3@2: Why does adding stochastic volatility make a market incomplete? | Volatility risk can't be hedged with the stock and bond alone, so many martingale measures fit | It removes all arbitrage, which forces the market to become incomplete | It makes all prices deterministic, so there's nothing left to hedge | It adds more traded assets, which always makes markets incomplete | It keeps the market complete, since volatility can be traded freely | A new source of randomness without a matching traded asset leaves claims unreplicable.
@@ -758,8 +758,8 @@ Q: What check confirms a three-statement model is consistent? | The balance shee
 Q: What is break-even volume? | Fixed costs divided by contribution per unit.
 SUM: Models forecast and value businesses.
 SUM: Structure and checks prevent errors.
-SRC: Tjia JS, Building Financial Models (3rd edn, McGraw-Hill 2018) | textbook | 2018 | https://www.mheducation.com/
-SRC: Panko RR, What we know about spreadsheet errors, Journal of End User Computing 10(2), 15 | journal | 1998 | https://doi.org/10.4018/joeuc.1998040102
+SRC: Tjia JS, Building Financial Models (3rd edn, McGraw-Hill 2018) | secondary | 2018 | https://www.mheducation.com/
+SRC: Panko RR, What we know about spreadsheet errors, Journal of End User Computing 10(2), 15 | primary | 1998 | https://doi.org/10.4018/joeuc.1998040102
 NUM1#maths-u21-21-q1@1: Fixed costs are £120,000, price £50 and variable cost £30 per unit. What is the break-even volume in units? | 6000 | 0 | units | Contribution £20 per unit, so 120,000/20 = 6,000 units.
 M1#maths-u21-21-q2@1: Which practice makes a financial model easier to audit? | Keeping assumptions in a separate, labelled input section | Typing numbers directly into formulas | Hiding rows and columns | Using different formulas across a row | Avoiding any checks | Separate inputs make every assumption visible and changeable.
 M2#maths-u21-21-q3@2: Why are sensitivity tables useful in financial models? | They show how outputs change as key inputs vary, revealing which assumptions matter most | They remove all uncertainty from the model's outputs | They replace the need for forecasts of any kind | They make the balance sheet balance automatically | They aren't useful in professional financial models | A valuation that swings widely with one input deserves scrutiny of that input.
@@ -794,8 +794,8 @@ Q: What is (dW)^{2} in Itô calculus? | dt.
 Q: What is ∫₀ᵗ W dW? | ½(W_{t}^{2} − t).
 SUM: Random paths need new calculus.
 SUM: Itô's lemma adds a second-order term.
-SRC: Øksendal B, Stochastic Differential Equations (6th edn, Springer 2003) | textbook | 2003 | https://link.springer.com/
-SRC: Itô K, Stochastic integral, Proceedings of the Imperial Academy 20(8), 519 | journal | 1944 | https://doi.org/10.3792/pia/1195572786
+SRC: Øksendal B, Stochastic Differential Equations (6th edn, Springer 2003) | secondary | 2003 | https://link.springer.com/
+SRC: Itô K, Stochastic integral, Proceedings of the Imperial Academy 20(8), 519 | primary | 1944 | https://doi.org/10.3792/pia/1195572786
 NUM1#maths-u21-22-q1@1: What is the variance of W₄ − W₁ for standard Brownian motion? | 3 | 0 |  | Increments are N(0, t − s), so the variance is 4 − 1 = 3.
 M1#maths-u21-22-q2@1: Which multiplication rule holds in Itô calculus? | dW·dW = dt | dW·dW = 0 | dt·dt = dt | dt·dW = dW | dW·dW = dW | Quadratic variation of Brownian motion gives (dW)^{2} = dt.
 M2#maths-u21-22-q3@2: Why does Itô's lemma contain a ½σ^{2}f_{xx} term absent from ordinary calculus? | Brownian increments have size √dt, so their squares contribute at order dt | It corrects a typing convention used by early probabilists | Ordinary calculus also has this term, so nothing is new | It accounts for interest rates in the stock price model | It doesn't contain one; the chain rule is unchanged | In a Taylor expansion, (dX)^{2} ≈ σ^{2}dt survives instead of vanishing.
@@ -830,8 +830,8 @@ Q: What is E[S_{T}] under GBM? | S₀e^{μT}.
 Q: What distribution do GBM prices have? | Log-normal.
 SUM: GBM models positive, compounding prices.
 SUM: Volatility drags the median.
-SRC: Samuelson PA, Rational theory of warrant pricing, Industrial Management Review 6(2), 13 | journal | 1965 | https://www.proquest.com/
-SRC: Hull JC, Options, Futures, and Other Derivatives (11th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
+SRC: Samuelson PA, Rational theory of warrant pricing, Industrial Management Review 6(2), 13 | primary | 1965 | https://www.proquest.com/
+SRC: Hull JC, Options, Futures, and Other Derivatives (11th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
 NUM1#maths-u21-23-q1@1: Under GBM with μ = 10% and σ = 30%, what is the median annual log growth rate, in %? | 5.5 | 0.01 | % | μ − ½σ^{2} = 0.10 − 0.045 = 0.055 = 5.5%.
 M1#maths-u21-23-q2@1: Which statement about GBM prices is true? | They are log-normally distributed and always positive | They are normally distributed and can be negative | They follow a uniform distribution | They never change | They are always increasing | S_{T} = S₀e^{normal} is positive and log-normal.
 M3#maths-u21-23-q3@2: Why is the median GBM price below the mean? | The log-normal distribution is right-skewed: rare large gains raise the mean above the typical outcome | The median is always zero under geometric Brownian motion | Volatility increases the median above the mean over time | They are equal, since the log-normal distribution is symmetric | The median is above the mean, since prices are bounded below | E[e^{X}] = e^{E[X] + ½Var X} exceeds e^{E[X]}, the median.
@@ -867,8 +867,8 @@ Q: What is the forward price of a non-dividend stock? | S₀e^{rT}.
 Q: State put–call parity. | C − P = S₀ − Ke^{−rT}.
 SUM: Derivatives derive value from underlyings.
 SUM: No arbitrage sets their prices.
-SRC: Hull JC, Options, Futures, and Other Derivatives (11th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
-SRC: Wilmott P, Paul Wilmott Introduces Quantitative Finance (2nd edn, Wiley 2007) | textbook | 2007 | https://www.wiley.com/
+SRC: Hull JC, Options, Futures, and Other Derivatives (11th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
+SRC: Wilmott P, Paul Wilmott Introduces Quantitative Finance (2nd edn, Wiley 2007) | secondary | 2007 | https://www.wiley.com/
 NUM1#maths-u21-24-q1@1: A European call costs £8, the stock is £100, K = £100, r = 5% and T = 1 (continuous). What should the put cost by put–call parity, in £, to 2 decimal places? | 3.12 | 0.01 | £ | P = C − S₀ + Ke^{−rT} = 8 − 100 + 100e^{−0.05} ≈ 8 − 100 + 95.12 = £3.12.
 M1#maths-u21-24-q2@1: The forward price of a stock is above S₀e^{rT}. What arbitrage is possible? | Borrow, buy the stock and sell the forward | Buy the forward and sell the stock | Do nothing, as forwards can't be mispriced | Buy both the stock and the forward | Sell the stock and lend the proceeds | Cash-and-carry locks in the difference between F and S₀e^{rT}.
 M2#maths-u21-24-q3@2: Why do derivative prices not depend on investors' expected returns for the underlying? | The derivative can be replicated by trading the underlying and cash, so its price is fixed by the replication cost | Investors all expect the same return, so it cancels out of the price | Expected returns are always zero in efficient markets, so they don't appear | Derivatives have no risk of their own, so returns don't matter to them | They do depend on them: higher expected returns always raise call prices | Hedging removes exposure to the drift, leaving only volatility and rates.
@@ -904,8 +904,8 @@ Q: What does vega measure? | Sensitivity of option value to volatility.
 Q: When is it optimal to exercise an American call on a non-dividend stock early? | Never.
 SUM: Options give rights, not obligations.
 SUM: Volatility raises their value.
-SRC: Hull JC, Options, Futures, and Other Derivatives (11th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
-SRC: Natenberg S, Option Volatility and Pricing (2nd edn, McGraw-Hill 2015) | textbook | 2015 | https://www.mheducation.com/
+SRC: Hull JC, Options, Futures, and Other Derivatives (11th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
+SRC: Natenberg S, Option Volatility and Pricing (2nd edn, McGraw-Hill 2015) | secondary | 2015 | https://www.mheducation.com/
 NUM1#maths-u21-25-q1@1: A put with strike £80 expires when the stock is £72. What is its payoff in £? | 8 | 0 | £ | max(80 − 72, 0) = £8.
 M1#maths-u21-25-q2@1: How does an increase in volatility affect the value of a call option? | It increases it | It decreases it | It has no effect | It makes it zero | It depends only on the strike | More volatility raises the chance of big payoffs while losses stay capped at the premium.
 M3#maths-u21-25-q3@2: Why is early exercise of an American call on a non-dividend-paying stock never optimal? | Selling the call is worth at least its intrinsic value plus time value, which exceeds exercising | Early exercise is forbidden by the terms of American option contracts | The call has no value before expiry, so exercising gains nothing | Interest rates are negative, so waiting always costs the holder money | It is always optimal to exercise as soon as the call is in the money | The call is worth at least S − Ke^{−r(T−t)} > S − K, so exercising gives up value.
@@ -939,8 +939,8 @@ Q: What is the risk-neutral probability in a binomial tree? | q = (e^{rΔt} − 
 Q: What do binomial prices converge to as steps increase? | Black–Scholes prices.
 SUM: Trees price options step by step.
 SUM: Backward induction handles early exercise.
-SRC: Cox JC, Ross SA, Rubinstein M, Option pricing: a simplified approach, Journal of Financial Economics 7(3), 229 | journal | 1979 | https://doi.org/10.1016/0304-405X(79)90015-1
-SRC: Shreve SE, Stochastic Calculus for Finance I: The Binomial Asset Pricing Model (Springer 2004) | textbook | 2004 | https://link.springer.com/
+SRC: Cox JC, Ross SA, Rubinstein M, Option pricing: a simplified approach, Journal of Financial Economics 7(3), 229 | primary | 1979 | https://doi.org/10.1016/0304-405X(79)90015-1
+SRC: Shreve SE, Stochastic Calculus for Finance I: The Binomial Asset Pricing Model (Springer 2004) | secondary | 2004 | https://link.springer.com/
 NUM1#maths-u21-26-q1@1: In the example (S = 100, u = 1.2, d = 0.8, r = 0), what is the one-step put price with K = 100, in £? | 10 | 0 | £ | Put payoffs are 0 (up) and 20 (down), so 0.5 × 0 + 0.5 × 20 = £10, matching put–call parity with r = 0.
 M1#maths-u21-26-q2@1: In a one-step tree with S = 100, u = 1.1, d = 0.9 and r = 0, what is q? | 0.5 | 0.55 | 0.45 | 0.9 | 1.1 | q = (1 − 0.9)/(1.1 − 0.9) = 0.1/0.2 = 0.5.
 M2#maths-u21-26-q3@2: How is early exercise handled for an American put on a binomial tree? | At each node, its value is the larger of immediate exercise and the discounted continuation value | Early exercise is ignored, since the tree only prices European options | Only the final nodes matter, so earlier exercise can't be included | The tree is solved forwards from today, checking exercise along the way | It can't be handled on a tree; a separate PDE method is needed | Backward induction compares exercising now with holding at every node.
@@ -975,8 +975,8 @@ Q: Which parameter of the stock does the Black–Scholes price not depend on? | 
 Q: Who received the 1997 Nobel prize for the model? | Robert Merton and Myron Scholes.
 SUM: A closed form for European options.
 SUM: Hedging removes the drift.
-SRC: Black F, Scholes M, The pricing of options and corporate liabilities, Journal of Political Economy 81(3), 637 | journal | 1973 | https://doi.org/10.1086/260062
-SRC: Merton RC, Theory of rational option pricing, Bell Journal of Economics and Management Science 4(1), 141 | journal | 1973 | https://doi.org/10.2307/3003143
+SRC: Black F, Scholes M, The pricing of options and corporate liabilities, Journal of Political Economy 81(3), 637 | primary | 1973 | https://doi.org/10.1086/260062
+SRC: Merton RC, Theory of rational option pricing, Bell Journal of Economics and Management Science 4(1), 141 | primary | 1973 | https://doi.org/10.2307/3003143
 NUM1#maths-u21-27-q1@1: For an at-the-money call with r = 0, the price is approximately 0.4Sσ√T. Estimate it for S = £100, σ = 25%, T = 1, in £. | 10 | 0.1 | £ | 0.4 × 100 × 0.25 × 1 = £10 (the exact value is about £9.95).
 M1#maths-u21-27-q2@1: In the Black–Scholes formula, what is d₂? | d₁ − σ√T | d₁ + σ√T | σ√T | ln(S/K) | d₁/σ | By definition d₂ = d₁ − σ√T; N(d₂) is the risk-neutral probability that the call finishes in the money.
 M3#maths-u21-27-q3@2: Why does the expected return μ drop out of the Black–Scholes equation? | A delta-hedged portfolio is riskless, so it must earn r regardless of μ | μ is always equal to r in real markets, so it cancels | Investors don't care about expected returns when trading options | The formula ignores the stock price, so μ can't appear | It doesn't drop out; it appears inside d₁ and d₂ | Continuous hedging cancels the dW terms, and with them any dependence on drift.
@@ -1012,8 +1012,8 @@ Q: What feature makes rates return to a long-run level? | Mean reversion.
 Q: Which short-rate model keeps rates non-negative? | Cox–Ingersoll–Ross (CIR).
 SUM: Models describe rates across time and maturity.
 SUM: Calibration fits today's curve.
-SRC: Vasicek O, An equilibrium characterization of the term structure, Journal of Financial Economics 5(2), 177 | journal | 1977 | https://doi.org/10.1016/0304-405X(77)90016-2
-SRC: Brigo D, Mercurio F, Interest Rate Models: Theory and Practice (2nd edn, Springer 2006) | textbook | 2006 | https://link.springer.com/
+SRC: Vasicek O, An equilibrium characterization of the term structure, Journal of Financial Economics 5(2), 177 | primary | 1977 | https://doi.org/10.1016/0304-405X(77)90016-2
+SRC: Brigo D, Mercurio F, Interest Rate Models: Theory and Practice (2nd edn, Springer 2006) | secondary | 2006 | https://link.springer.com/
 NUM1#maths-u21-28-q1@1: The 1-year spot rate is 3% and the 2-year spot rate is 4% (annual compounding). What is the 1-year forward rate starting in one year, in %, to 2 decimal places? | 5.01 | 0.01 | % | (1.04^{2}/1.03) − 1 = 1.0816/1.03 − 1 ≈ 0.0501.
 M1#maths-u21-28-q2@1: What does an inverted yield curve mean? | Short-term rates are higher than long-term rates | Long-term rates are higher than short-term rates | All rates are zero | Rates are equal at all maturities | Bonds have no yield | Inversion means the curve slopes downwards.
 M2#maths-u21-28-q3@2: Why do Hull–White models include a time-dependent long-run level b(t)? | So the model reproduces today's observed yield curve exactly | To make interest rates constant over time | To remove all randomness from the rate | To prevent any mean reversion in rates | They don't include a time-dependent level | Exact calibration to market prices is needed before pricing derivatives.
@@ -1047,8 +1047,8 @@ Q: What is the net profit condition? | Premiums exceed expected claims (θ > 0).
 Q: What does Lundberg's inequality bound? | The probability of ruin, by e^{−Ru}.
 SUM: Model surplus as income minus claims.
 SUM: Loading and capital control ruin.
-SRC: Asmussen S, Albrecher H, Ruin Probabilities (2nd edn, World Scientific 2010) | textbook | 2010 | https://www.worldscientific.com/
-SRC: Klugman SA, Panjer HH, Willmot GE, Loss Models: From Data to Decisions (5th edn, Wiley 2019) | textbook | 2019 | https://www.wiley.com/
+SRC: Asmussen S, Albrecher H, Ruin Probabilities (2nd edn, World Scientific 2010) | secondary | 2010 | https://www.worldscientific.com/
+SRC: Klugman SA, Panjer HH, Willmot GE, Loss Models: From Data to Decisions (5th edn, Wiley 2019) | secondary | 2019 | https://www.wiley.com/
 NUM1#maths-u21-29-q1@1: In the exponential-claims formula, what is ψ(0) when θ = 0.25? | 0.8 | 0.001 |  | ψ(0) = 1/(1 + θ) = 1/1.25 = 0.8.
 M1#maths-u21-29-q2@1: Claims arrive at 100 per year with mean £500 and θ = 0.2. What is the annual premium income? | £60,000 | £50,000 | £10,000 | £600 | £120,000 | Premium income is (1 + θ) × expected claims = 1.2 × 100 × £500 = £60,000 a year, including a 20% safety loading.
 M2#maths-u21-29-q3@2: Why is ruin certain if premiums equal expected claims exactly? | Random fluctuations then have no upward drift to offset them, so the surplus eventually hits zero | Claims stop arriving once premiums match expected claims exactly | Capital then grows without bound, which counts as ruin by definition | Ruin becomes impossible in that case, since income equals outgo | It isn't certain; ruin then has a probability of exactly one half | A random walk with zero drift eventually reaches any level below its start.
@@ -1082,8 +1082,8 @@ Q: What does backtesting check? | Whether actual losses exceed predicted thresho
 Q: What λ does RiskMetrics use for daily EWMA? | 0.94.
 SUM: Model losses from market moves.
 SUM: Validate with backtests and stress tests.
-SRC: Jorion P, Value at Risk: The New Benchmark for Managing Financial Risk (3rd edn, McGraw-Hill 2007) | textbook | 2007 | https://www.mheducation.com/
-SRC: J.P. Morgan/Reuters, RiskMetrics: Technical Document (4th edn 1996) | report | 1996 | https://www.msci.com/
+SRC: Jorion P, Value at Risk: The New Benchmark for Managing Financial Risk (3rd edn, McGraw-Hill 2007) | secondary | 2007 | https://www.mheducation.com/
+SRC: J.P. Morgan/Reuters, RiskMetrics: Technical Document (4th edn 1996) | secondary | 1996 | https://www.msci.com/
 NUM1#maths-u21-30-q1@1: With daily volatility 1.5%, what is the approximate 10-day volatility in %, using the square-root-of-time rule, to 2 decimal places? | 4.74 | 0.01 | % | 1.5 × √10 ≈ 1.5 × 3.162 ≈ 4.74%.
 M1#maths-u21-30-q2@1: Which market risk method uses no distributional assumption about returns? | Historical simulation | Variance–covariance | Normal parametric VaR | Delta-normal approximation | A single scenario | Historical simulation replays actual past market changes on today's portfolio, so it assumes no particular return distribution.
 M2#maths-u21-30-q3@2: Why do banks run stress tests as well as statistical risk models? | Statistical models based on recent data can miss extreme, rare scenarios | Stress tests replace backtesting | Statistical models are always too conservative | Regulators forbid statistical models | They don't run them | Scenarios like 2008 may lie outside the history window used by the model.
@@ -1119,8 +1119,8 @@ Q: What is LGD in terms of the recovery rate? | 1 − recovery rate.
 Q: In the Merton model, what is equity equivalent to? | A call option on the firm's assets.
 SUM: Credit risk is default risk.
 SUM: Correlation drives portfolio losses.
-SRC: Merton RC, On the pricing of corporate debt: the risk structure of interest rates, Journal of Finance 29(2), 449 | journal | 1974 | https://doi.org/10.1111/j.1540-6261.1974.tb03058.x
-SRC: Basel Committee on Banking Supervision, An Explanatory Note on the Basel II IRB Risk Weight Functions | guideline | 2005 | https://www.bis.org/bcbs/irbriskweight.htm
+SRC: Merton RC, On the pricing of corporate debt: the risk structure of interest rates, Journal of Finance 29(2), 449 | primary | 1974 | https://doi.org/10.1111/j.1540-6261.1974.tb03058.x
+SRC: Basel Committee on Banking Supervision, An Explanatory Note on the Basel II IRB Risk Weight Functions | guidance | 2005 | https://www.bis.org/bcbs/irbriskweight.htm
 NUM1#maths-u21-31-q1@1: A bond has default intensity λ = 3% a year and LGD 50%. What approximate credit spread does this imply, in %? | 1.5 | 0.01 | % | Spread ≈ λ × LGD = 0.03 × 0.5 = 1.5%.
 M1#maths-u21-31-q2@1: A £500,000 exposure has PD 1% and LGD 45%. What is the expected loss? | £2,250 | £5,000 | £225,000 | £4,500 | £2,750 | Expected loss = PD × LGD × EAD = 0.01 × 0.45 × £500,000 = £2,250.
 M3#maths-u21-31-q3@2: Why did Gaussian copula models of mortgage portfolios fail in 2008? | They underestimated how strongly defaults cluster in extreme downturns (weak tail dependence) | They overestimated default rates, making mortgage securities look too risky | They ignored interest rates but modelled default correlation perfectly | They were far too conservative, so banks held too much capital | They didn't fail; losses in 2008 matched the models' predictions | The Gaussian copula has no tail dependence, so joint extreme defaults seemed very unlikely.
@@ -1156,8 +1156,8 @@ Q: What does a 95% one-day VaR of £1m mean? | Losses exceed £1m on about 5% of
 Q: What z-value gives 99% one-sided normal VaR? | About 2.326.
 SUM: VaR is a loss threshold.
 SUM: It ignores tail size.
-SRC: Jorion P, Value at Risk: The New Benchmark for Managing Financial Risk (3rd edn, McGraw-Hill 2007) | textbook | 2007 | https://www.mheducation.com/
-SRC: Artzner P, Delbaen F, Eber JM, Heath D, Coherent measures of risk, Mathematical Finance 9(3), 203 | journal | 1999 | https://doi.org/10.1111/1467-9965.00068
+SRC: Jorion P, Value at Risk: The New Benchmark for Managing Financial Risk (3rd edn, McGraw-Hill 2007) | secondary | 2007 | https://www.mheducation.com/
+SRC: Artzner P, Delbaen F, Eber JM, Heath D, Coherent measures of risk, Mathematical Finance 9(3), 203 | primary | 1999 | https://doi.org/10.1111/1467-9965.00068
 NUM1#maths-u21-32-q1@1: A £5m portfolio has daily volatility 2%. What is its 95% one-day normal VaR in £ (z = 1.645)? | 164500 | 1 | £ | 1.645 × 0.02 × 5,000,000 = £164,500.
 M1#maths-u21-32-q2@1: Which statement about VaR is correct? | It gives a loss threshold exceeded with a stated small probability | It is the largest loss that can possibly occur | It measures the average return of the portfolio | It is always subadditive across portfolios | It measures the average size of tail losses | VaR is a quantile, not a worst case or a tail average.
 M2#maths-u21-32-q3@2: Why can VaR discourage diversification? | It isn't always subadditive, so a combined portfolio can show higher VaR than the sum of its parts | It always rewards diversification, so it can't discourage it | It ignores correlations completely between portfolio positions | It is only defined for a single asset, never for portfolios | It can't: VaR always falls when positions are combined | With certain discrete or skewed losses, VaR(A + B) > VaR(A) + VaR(B).
@@ -1191,8 +1191,8 @@ Q: Is expected shortfall subadditive? | Yes: it's coherent.
 Q: What confidence level does Basel FRTB use for ES? | 97.5%.
 SUM: ES averages the tail.
 SUM: It's coherent, unlike VaR.
-SRC: Acerbi C, Tasche D, On the coherence of expected shortfall, Journal of Banking and Finance 26(7), 1487 | journal | 2002 | https://doi.org/10.1016/S0378-4266(02)00283-2
-SRC: Basel Committee on Banking Supervision, Minimum capital requirements for market risk (FRTB) | guideline | 2019 | https://www.bis.org/bcbs/publ/d457.htm
+SRC: Acerbi C, Tasche D, On the coherence of expected shortfall, Journal of Banking and Finance 26(7), 1487 | primary | 2002 | https://doi.org/10.1016/S0378-4266(02)00283-2
+SRC: Basel Committee on Banking Supervision, Minimum capital requirements for market risk (FRTB) | guidance | 2019 | https://www.bis.org/bcbs/publ/d457.htm
 NUM1#maths-u21-33-q1@1: For normal losses with σ = £1m, what is 97.5% expected shortfall in £m, using ES ≈ 2.338σ? | 2.338 | 0.001 | £m | 2.338 × 1 = £2.338m, close to the 99% VaR of £2.326m.
 M1#maths-u21-33-q2@1: Which property does expected shortfall have that VaR lacks in general? | Subadditivity | Monotonicity | Translation invariance | Positive homogeneity | Being a quantile | ES is coherent, so diversification never increases it.
 M3#maths-u21-33-q3@2: Why can two portfolios with the same VaR have very different expected shortfalls? | VaR marks only the threshold, while ES averages the losses beyond it, which can differ greatly in size | VaR and ES are always equal, so they can't differ | ES ignores the tail and looks only at typical losses | VaR already measures the size of tail losses fully | They can't differ when VaR is the same at that level | A fat-tailed portfolio has far larger losses beyond the same threshold.
@@ -1228,8 +1228,8 @@ Q: What does ₜpₓ mean? | The probability that a life aged x survives t more 
 Q: What does the equivalence principle set equal? | Expected present values of premiums and benefits.
 SUM: Probability plus interest values life contingencies.
 SUM: Premiums balance expected benefits.
-SRC: Dickson DCM, Hardy MR, Waters HR, Actuarial Mathematics for Life Contingent Risks (3rd edn, Cambridge University Press 2020) | textbook | 2020 | https://www.cambridge.org/
-SRC: Bowers NL et al., Actuarial Mathematics (2nd edn, Society of Actuaries 1997) | textbook | 1997 | https://www.soa.org/
+SRC: Dickson DCM, Hardy MR, Waters HR, Actuarial Mathematics for Life Contingent Risks (3rd edn, Cambridge University Press 2020) | secondary | 2020 | https://www.cambridge.org/
+SRC: Bowers NL et al., Actuarial Mathematics (2nd edn, Society of Actuaries 1997) | secondary | 1997 | https://www.soa.org/
 NUM1#maths-u21-34-q1@1: A life table has l₅₀ = 95,000 and l₆₀ = 90,250. What is ₁₀p₅₀? | 0.95 | 0.001 |  | ₁₀p₅₀ = l₆₀/l₅₀ = 90,250/95,000 = 0.95.
 M1#maths-u21-34-q2@1: If q₇₀ = 0.02, what is p₇₀? | 0.98 | 0.02 | 1.02 | 0.2 | 0.5 | Survival and death probabilities over one year sum to 1.
 M2#maths-u21-34-q3@2: Why must actuaries model mortality improvement over time? | People are living longer, so using old tables underestimates annuity and pension costs | Mortality rates never change, so old tables are always correct | Mortality improvement reduces life expectancy over time | It only affects term insurance, never pensions or annuities | They needn't, since regulators set mortality assumptions | Longevity risk means payments last longer than older tables predict.
@@ -1265,8 +1265,8 @@ Q: What is E[S] for a compound distribution? | E[N]E[X].
 Q: What does a credibility factor Z = 1 mean? | Full weight on the policyholder's own experience.
 SUM: Claims combine frequency and severity.
 SUM: Credibility blends evidence.
-SRC: Klugman SA, Panjer HH, Willmot GE, Loss Models: From Data to Decisions (5th edn, Wiley 2019) | textbook | 2019 | https://www.wiley.com/
-SRC: Bühlmann H, Experience rating and credibility, ASTIN Bulletin 4(3), 199 | journal | 1967 | https://doi.org/10.1017/S0515036100008989
+SRC: Klugman SA, Panjer HH, Willmot GE, Loss Models: From Data to Decisions (5th edn, Wiley 2019) | secondary | 2019 | https://www.wiley.com/
+SRC: Bühlmann H, Experience rating and credibility, ASTIN Bulletin 4(3), 199 | primary | 1967 | https://doi.org/10.1017/S0515036100008989
 NUM1#maths-u21-35-q1@1: With Bühlmann credibility k = 10 and n = 5 years of data, what is Z, to 3 decimal places? | 0.333 | 0.001 |  | Z = n/(n + k) = 5/15 ≈ 0.333.
 M1#maths-u21-35-q2@1: Claim count averages 2 per year and claim size averages £300. What are expected aggregate claims per year? | £600 | £300 | £150 | £1200 | £302 | Expected aggregate claims are E[N] × E[X] = 2 × £300 = £600 a year, by the compound distribution formula.
 M2#maths-u21-35-q3@2: Why are Pareto distributions used for some insurance claim sizes? | They have heavy tails, matching rare but very large claims such as liability losses | They are bounded above, so claims can't exceed a limit | They have no variance, which simplifies premium setting | They model the number of claims rather than their size | They aren't used in insurance, only in economics | Large commercial and catastrophe claims follow power-law tails.
@@ -1301,8 +1301,8 @@ Q: What is the survival function of an exponential distribution? | e^{−λt}.
 Q: What does a hazard ratio of 2 mean? | The event rate is twice as high in one group at any time.
 SUM: Model time to event.
 SUM: Handle censoring properly.
-SRC: Kaplan EL, Meier P, Nonparametric estimation from incomplete observations, Journal of the American Statistical Association 53(282), 457 | journal | 1958 | https://doi.org/10.1080/01621459.1958.10501452
-SRC: Cox DR, Regression models and life-tables, Journal of the Royal Statistical Society B 34(2), 187 | journal | 1972 | https://doi.org/10.1111/j.2517-6161.1972.tb00899.x
+SRC: Kaplan EL, Meier P, Nonparametric estimation from incomplete observations, Journal of the American Statistical Association 53(282), 457 | primary | 1958 | https://doi.org/10.1080/01621459.1958.10501452
+SRC: Cox DR, Regression models and life-tables, Journal of the Royal Statistical Society B 34(2), 187 | primary | 1972 | https://doi.org/10.1111/j.2517-6161.1972.tb00899.x
 NUM1#maths-u21-36-q1@1: With constant hazard λ = 0.1 per year, what is the probability of surviving 5 years, to 3 decimal places? | 0.607 | 0.001 |  | S(5) = e^{−0.5} ≈ 0.607.
 M1#maths-u21-36-q2@1: In a Cox model, a covariate has β = ln 2. What is its hazard ratio? | 2 | 0.69 | ln 2 | 0.5 | 1 | The hazard ratio is e^{β} = e^{ln 2} = 2.
 M2#maths-u21-36-q3@2: Why must censored observations be included in survival estimation? | They show the subject survived at least until censoring, and excluding them biases survival downwards | They are deaths and must be counted as events | They contain no information about survival | They should be counted as events at the censoring time | They must be excluded to avoid bias | Kaplan–Meier keeps them in the risk set until they leave.
@@ -1337,8 +1337,8 @@ Q: Who bears investment risk in a DC scheme? | The member.
 Q: What is a funding level below 100%? | A deficit: assets are less than liabilities.
 SUM: Pensions are long-term promises.
 SUM: Assumptions drive valuations.
-SRC: Dickson DCM, Hardy MR, Waters HR, Actuarial Mathematics for Life Contingent Risks (3rd edn, Cambridge University Press 2020) | textbook | 2020 | https://www.cambridge.org/
-SRC: The Pensions Regulator, Defined benefit funding code of practice | guideline | 2024 | https://www.thepensionsregulator.gov.uk/
+SRC: Dickson DCM, Hardy MR, Waters HR, Actuarial Mathematics for Life Contingent Risks (3rd edn, Cambridge University Press 2020) | secondary | 2020 | https://www.cambridge.org/
+SRC: The Pensions Regulator, Defined benefit funding code of practice | guidance | 2024 | https://www.thepensionsregulator.gov.uk/
 NUM1#maths-u21-37-q1@1: A scheme has assets of £900m and liabilities of £1,000m. What is its funding level in %? | 90 | 0 | % | 900/1000 = 90%, a £100m deficit.
 M1#maths-u21-37-q2@1: Under a 1/80 accrual DB scheme, what pension does 40 years' service on £40,000 final salary give? | £20,000 a year | £32,000 a year | £16,000 a year | £10,000 a year | £40,000 a year | The pension is service × accrual rate × final salary: 40/80 × £40,000 = £20,000 a year.
 M2#maths-u21-37-q3@2: Why did falling interest rates increase many DB scheme deficits? | Lower discount rates raise the present value of long-dated liabilities more than typical asset gains | Liabilities don't depend on interest rates, so assets must have fallen | Lower rates reduce promised benefits, which raises deficits | Assets always rise more than liabilities when rates fall | They decreased deficits, since lower rates cut liability values | With long durations, liability values are very sensitive to the discount rate.
@@ -1374,8 +1374,8 @@ Q: What does the first welfare theorem say? | Competitive equilibria are Pareto 
 Q: Who proved existence of general equilibrium in 1954? | Arrow and Debreu.
 SUM: Economics as optimisation and equilibrium.
 SUM: Fixed points prove existence.
-SRC: Mas-Colell A, Whinston MD, Green JR, Microeconomic Theory (Oxford University Press 1995) | textbook | 1995 | https://global.oup.com/
-SRC: Arrow KJ, Debreu G, Existence of an equilibrium for a competitive economy, Econometrica 22(3), 265 | journal | 1954 | https://doi.org/10.2307/1907353
+SRC: Mas-Colell A, Whinston MD, Green JR, Microeconomic Theory (Oxford University Press 1995) | secondary | 1995 | https://global.oup.com/
+SRC: Arrow KJ, Debreu G, Existence of an equilibrium for a competitive economy, Econometrica 22(3), 265 | primary | 1954 | https://doi.org/10.2307/1907353
 NUM1#maths-u21-38-q1@1: With u = x^{0.3}y^{0.7}, income £200 and p_{x} = £3, how many units of x are demanded, to 1 decimal place? | 20 | 0.1 | units | Spend 30% of income on x: 0.3 × 200/3 = 20 units.
 M1#maths-u21-38-q2@1: At an interior utility maximum, what equals the price ratio p_{x}/p_{y}? | The marginal rate of substitution | Total utility | Income | The quantity of x | The elasticity of demand | Tangency of the indifference curve and budget line sets MU_{x}/MU_{y} = p_{x}/p_{y}.
 M2#maths-u21-38-q3@2: Which mathematical result did Arrow and Debreu use to prove equilibrium exists? | A fixed-point theorem (Kakutani's) | The central limit theorem | The fundamental theorem of calculus | Pythagoras' theorem | Fermat's last theorem | Equilibrium prices are fixed points of an excess-demand correspondence.
@@ -1409,8 +1409,8 @@ Q: What is the OLS estimator? | (XᵀX)^{−1}Xᵀy.
 Q: What two properties must an instrument have? | Relevance (correlated with the regressor) and exogeneity (uncorrelated with the error).
 SUM: Statistics meets economic data.
 SUM: Causality needs careful design.
-SRC: Wooldridge JM, Introductory Econometrics: A Modern Approach (7th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.com/
-SRC: Angrist JD, Pischke JS, Mostly Harmless Econometrics (Princeton University Press 2009) | textbook | 2009 | https://press.princeton.edu/
+SRC: Wooldridge JM, Introductory Econometrics: A Modern Approach (7th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.com/
+SRC: Angrist JD, Pischke JS, Mostly Harmless Econometrics (Princeton University Press 2009) | secondary | 2009 | https://press.princeton.edu/
 NUM1#maths-u21-39-q1@1: A log–log regression of quantity on price gives a coefficient −1.5. By roughly what percentage does quantity fall when price rises 10%? | 15 | 0 | % | The coefficient is an elasticity: −1.5 × 10% = −15%.
 M1#maths-u21-39-q2@1: Which problem arises when a regressor is correlated with the error term? | Endogeneity, which biases OLS estimates | Multicollinearity only | A perfect fit to the data | Heteroscedasticity only | No problem for OLS | Exogeneity E[ε ∣ X] = 0 fails, so OLS no longer estimates the causal effect.
 M2#maths-u21-39-q3@2: Why might regressing crime on police numbers suggest police increase crime? | Reverse causality: areas with more crime hire more police | Police always increase crime wherever they are deployed | The data must be wrong if this result appears | OLS is always biased upwards for any public policy data | It wouldn't suggest this; the coefficient is always negative | Simultaneity makes police numbers endogenous, so instruments are needed.
@@ -1445,8 +1445,8 @@ Q: Where does a monopolist produce? | Where marginal revenue equals marginal cos
 Q: What determines tax incidence? | The relative elasticities of supply and demand.
 SUM: Markets balance supply and demand.
 SUM: Structure changes outcomes.
-SRC: Varian HR, Intermediate Microeconomics with Calculus (2nd edn, W. W. Norton 2019) | textbook | 2019 | https://wwnorton.com/
-SRC: Mas-Colell A, Whinston MD, Green JR, Microeconomic Theory (Oxford University Press 1995) | textbook | 1995 | https://global.oup.com/
+SRC: Varian HR, Intermediate Microeconomics with Calculus (2nd edn, W. W. Norton 2019) | secondary | 2019 | https://wwnorton.com/
+SRC: Mas-Colell A, Whinston MD, Green JR, Microeconomic Theory (Oxford University Press 1995) | secondary | 1995 | https://global.oup.com/
 NUM1#maths-u21-40-q1@1: With demand P = 100 − Q and marginal cost 20, what quantity does a monopolist produce? | 40 | 0 | units | Revenue PQ = 100Q − Q^{2} gives MR = 100 − 2Q; setting MR = 20 gives Q = 40.
 M1#maths-u21-40-q2@1: Demand Q = 50 − P and supply Q = P − 10. What is the equilibrium price? | 30 | 20 | 40 | 10 | 25 | Setting demand equal to supply, 50 − P = P − 10 gives 2P = 60, so P = 30 and Q = 20.
 M2#maths-u21-40-q3@2: Why does a monopoly create deadweight loss? | It restricts output below the level where price equals marginal cost, losing mutually beneficial trades | It produces too much output, beyond what consumers want to buy | It charges a price equal to marginal cost, below the efficient level | It increases consumer surplus at the expense of producer surplus | It doesn't: monopoly transfers surplus without any efficiency loss | Units valued above their cost go unproduced.
@@ -1482,8 +1482,8 @@ Q: What drives long-run growth in the Solow model? | Technological progress.
 Q: What does the Lucas critique say? | Relationships estimated under one policy may change when policy changes.
 SUM: Models of whole economies.
 SUM: Useful but uncertain.
-SRC: Solow RM, A contribution to the theory of economic growth, Quarterly Journal of Economics 70(1), 65 | journal | 1956 | https://doi.org/10.2307/1884513
-SRC: Taylor JB, Discretion versus policy rules in practice, Carnegie-Rochester Conference Series on Public Policy 39, 195 | journal | 1993 | https://doi.org/10.1016/0167-2231(93)90009-L
+SRC: Solow RM, A contribution to the theory of economic growth, Quarterly Journal of Economics 70(1), 65 | primary | 1956 | https://doi.org/10.2307/1884513
+SRC: Taylor JB, Discretion versus policy rules in practice, Carnegie-Rochester Conference Series on Public Policy 39, 195 | primary | 1993 | https://doi.org/10.1016/0167-2231(93)90009-L
 NUM1#maths-u21-41-q1@1: In a Solow model with f(k) = √k, saving rate s = 0.2 and n + δ = 0.05, what is the steady-state capital per worker k*? | 16 | 0 |  | s√k = (n + δ)k gives √k = s/(n + δ) = 4, so k* = 16.
 M1#maths-u21-41-q2@1: According to the Taylor rule, how should rates respond when inflation rises above target? | Rise by more than the increase in inflation | Fall | Stay unchanged | Rise by exactly half the increase | Become zero | The coefficient on inflation is 1.5 in total (Taylor principle), raising real rates.
 M3#maths-u21-41-q3@2: Why does the Lucas critique matter for policy models? | People's behaviour responds to policy, so relationships estimated under old policies may break under new ones | Policy never affects how people behave, so models are stable | Models always include expectations correctly, so it's irrelevant | It only applies to microeconomics, not to macroeconomic policy | It doesn't matter for policy, only for academic forecasting | Reduced-form correlations aren't structural; models need deep parameters.
@@ -1518,8 +1518,8 @@ Q: In a second-price sealed-bid auction, what should you bid? | Your true value.
 Q: What does Bertrand competition with identical firms predict? | Price equals marginal cost.
 SUM: Strategy depends on others' choices.
 SUM: Nash equilibrium predicts outcomes.
-SRC: Nash JF, Equilibrium points in n-person games, Proceedings of the National Academy of Sciences 36(1), 48 | journal | 1950 | https://doi.org/10.1073/pnas.36.1.48
-SRC: Osborne MJ, An Introduction to Game Theory (Oxford University Press 2004) | textbook | 2004 | https://global.oup.com/
+SRC: Nash JF, Equilibrium points in n-person games, Proceedings of the National Academy of Sciences 36(1), 48 | primary | 1950 | https://doi.org/10.1073/pnas.36.1.48
+SRC: Osborne MJ, An Introduction to Game Theory (Oxford University Press 2004) | secondary | 2004 | https://global.oup.com/
 NUM1#maths-u21-42-q1@1: Three identical firms with zero costs face P = 120 − Q in Cournot competition. What is each firm's output? | 30 | 0 | units | With n firms, each produces (a − c)/(n + 1) = 120/4 = 30.
 M1#maths-u21-42-q2@1: In the prisoner's dilemma, what is the Nash equilibrium? | Both players defect | Both cooperate | One cooperates and one defects | There is no equilibrium | Players alternate | Defecting is a dominant strategy for each player.
 M2#maths-u21-42-q3@2: Why is bidding your true value optimal in a second-price auction? | The price you pay is set by the next-highest bid, so shading your bid can only lose auctions you'd want to win | You pay your own bid, so bidding your value avoids overpaying | Overbidding is always safe because you never pay your bid | Bids don't affect whether you win, only what you pay | It isn't optimal; shading below value always earns more | Truthful bidding is weakly dominant (Vickrey 1961).
@@ -1555,8 +1555,8 @@ Q: What is the UK Green Book's standard social discount rate? | 3.5%.
 Q: What does a BCR above 1 mean? | Benefits exceed costs in present value.
 SUM: Compare social costs and benefits.
 SUM: Discounting and valuation are contentious.
-SRC: HM Treasury, The Green Book: Central Government Guidance on Appraisal and Evaluation | guideline | 2022 | https://www.gov.uk/government/publications/the-green-book-appraisal-and-evaluation-in-central-government
-SRC: Boardman AE, Greenberg DH, Vining AR, Weimer DL, Cost-Benefit Analysis: Concepts and Practice (5th edn, Cambridge University Press 2018) | textbook | 2018 | https://www.cambridge.org/
+SRC: HM Treasury, The Green Book: Central Government Guidance on Appraisal and Evaluation | guidance | 2022 | https://www.gov.uk/government/publications/the-green-book-appraisal-and-evaluation-in-central-government
+SRC: Boardman AE, Greenberg DH, Vining AR, Weimer DL, Cost-Benefit Analysis: Concepts and Practice (5th edn, Cambridge University Press 2018) | secondary | 2018 | https://www.cambridge.org/
 NUM1#maths-u21-43-q1@1: A project's benefits have PV £15m and costs have PV £12m. What is its benefit–cost ratio? | 1.25 | 0.001 |  | BCR = 15/12 = 1.25.
 M1#maths-u21-43-q2@1: A health intervention costs £50,000 and gains 2 QALYs. What is its cost per QALY? | £25,000 | £100,000 | £50,000 | £12,500 | £2,000 | 50,000/2 = £25,000, within NICE's usual range.
 M3#maths-u21-43-q3@2: Why did the Stern and Nordhaus climate analyses reach very different conclusions? | They used very different discount rates, which hugely change the present value of damages a century away | They used different climate data only, but the same economics | One of them ignored the costs of cutting emissions entirely | They agreed closely, since both used the Green Book rate | Discounting doesn't matter for climate, so it was the damages | At 1.4% versus about 4.5%, a £1 damage in 100 years is worth roughly 25p versus 1p today.
@@ -1592,8 +1592,8 @@ Q: What is the naive forecast? | The next value equals the last observed value.
 Q: What do fan charts show? | The range of likely outcomes around a central forecast.
 SUM: Forecasts need benchmarks.
 SUM: Uncertainty must be shown.
-SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | textbook | 2021 | https://otexts.com/fpp3/
-SRC: Makridakis S, Spiliotis E, Assimakopoulos V, The M4 Competition: 100,000 time series and 61 forecasting methods, International Journal of Forecasting 36(1), 54 | journal | 2020 | https://doi.org/10.1016/j.ijforecast.2019.04.014
+SRC: Hyndman RJ, Athanasopoulos G, Forecasting: Principles and Practice (3rd edn, OTexts 2021) | secondary | 2021 | https://otexts.com/fpp3/
+SRC: Makridakis S, Spiliotis E, Assimakopoulos V, The M4 Competition: 100,000 time series and 61 forecasting methods, International Journal of Forecasting 36(1), 54 | primary | 2020 | https://doi.org/10.1016/j.ijforecast.2019.04.014
 NUM1#maths-u21-44-q1@1: Actual sales were 200 and 250; forecasts were 180 and 260. What is the MAPE in %? | 7 | 0 | % | Errors are 10% and 4%, so MAPE = (10 + 4)/2 = 7%.
 M1#maths-u21-44-q2@1: Why is the naive forecast an important benchmark? | A method that can't beat it isn't adding value | It is always the most accurate | It uses the most data | It has no errors | It isn't important | Many sophisticated methods fail to beat "no change" on real data.
 M2#maths-u21-44-q3@2: Why do combined forecasts often outperform individual methods? | Different methods' errors partly cancel when averaged | Combinations use more parameters | Individual methods are always biased | They don't outperform | Averaging removes all uncertainty | Diversifying across models reduces the variance of forecast errors.
@@ -1629,8 +1629,8 @@ Q: What does volatility clustering mean? | Large moves tend to follow large move
 Q: Who introduced ARCH models? | Robert Engle (1982).
 SUM: Returns have stylised facts.
 SUM: GARCH models changing volatility.
-SRC: Engle RF, Autoregressive conditional heteroscedasticity with estimates of the variance of United Kingdom inflation, Econometrica 50(4), 987 | journal | 1982 | https://doi.org/10.2307/1912773
-SRC: Cont R, Empirical properties of asset returns: stylized facts and statistical issues, Quantitative Finance 1(2), 223 | journal | 2001 | https://doi.org/10.1080/713665670
+SRC: Engle RF, Autoregressive conditional heteroscedasticity with estimates of the variance of United Kingdom inflation, Econometrica 50(4), 987 | primary | 1982 | https://doi.org/10.2307/1912773
+SRC: Cont R, Empirical properties of asset returns: stylized facts and statistical issues, Quantitative Finance 1(2), 223 | primary | 2001 | https://doi.org/10.1080/713665670
 NUM1#maths-u21-45-q1@1: A GARCH(1,1) has α = 0.08 and β = 0.9. What is its persistence α + β? | 0.98 | 0.001 |  | 0.08 + 0.9 = 0.98: shocks to volatility decay slowly.
 M1#maths-u21-45-q2@1: Which feature is a stylised fact of daily equity returns? | Fat tails relative to the normal distribution | Strong positive autocorrelation of returns | Constant volatility over time | Exactly normal distributions | Positive skew always | Extreme returns occur far more often than a normal model predicts.
 M2#maths-u21-45-q3@2: Why do squared returns show autocorrelation even when returns themselves don't? | Volatility clusters, so the size of moves is predictable even though their direction isn't | Returns are perfectly predictable in both size and direction | Squaring creates fake patterns from purely random data | Markets are inefficient in direction, so signs are predictable | They don't show it; squared returns are independent too | Periods of high variance persist, which shows up in squared returns.

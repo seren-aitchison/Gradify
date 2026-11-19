@@ -30,7 +30,7 @@ Q: What is the vector from A(1, 2) to B(4, 6)? | (3, 4).
 Q: What is the magnitude of (1, 1)? | √2.
 SUM: Vectors combine size and direction.
 SUM: Components make geometry algebraic.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 SRC: Department for Education, Mathematics AS and A level subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 NUM1#maths-u11-01-q1@1: Find the magnitude of (2, −1, 2). | 3 | 0 |  | √(4 + 1 + 4) = 3.
 M1#maths-u11-01-q2@1: What is the midpoint of A(2, 6) and B(8, 0)? | (5, 3) | (6, −6) | (10, 6) | (3, 5) | (4, 3) | Average the coordinates: ((2 + 8)/2, (6 + 0)/2).
@@ -67,7 +67,7 @@ Q: What is i × j? | k.
 Q: When is a · b negative? | When the angle between a and b is obtuse.
 SUM: Dot products give angles.
 SUM: Cross products give perpendiculars and areas.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u11-02-q1@1: Find the area of the parallelogram spanned by (1, 2, 0) and (3, 1, 0). | 5 | 0 |  | The cross product is (0, 0, 1 − 6) = (0, 0, −5), with length 5.
 M1#maths-u11-02-q2@1: Are (2, −1, 3) and (1, 5, 1) perpendicular? | Yes: their dot product is 0 | No: their dot product is 6 | Yes: their cross product is 0 | No: they have different lengths | It can't be decided | The dot product is 2 − 5 + 3 = 0, and a zero dot product means perpendicular.
@@ -102,8 +102,8 @@ Q: What is the dimension of P₂ (polynomials of degree at most 2)? | 3.
 Q: Is the set {(x, y) : y = 2x + 1} a vector space? | No: it doesn't contain (0, 0).
 SUM: Vector spaces share one set of rules.
 SUM: Many familiar objects are vectors.
-SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | textbook | 2024 | https://linear.axler.net/
-SRC: Halmos PR, Finite-Dimensional Vector Spaces (Springer 1974) | textbook | 1974 | https://link.springer.com/
+SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | secondary | 2024 | https://linear.axler.net/
+SRC: Halmos PR, Finite-Dimensional Vector Spaces (Springer 1974) | secondary | 1974 | https://link.springer.com/
 NUM1#maths-u11-03-q1@1: What is the dimension of P₃, the polynomials of degree at most 3? | 4 | 0 |  | A basis is 1, x, x^{2}, x^{3}: four elements.
 M1#maths-u11-03-q2@1: Which set is a vector space under the usual operations? | All polynomials of degree at most 4 | Polynomials of degree exactly 4 | Positive real numbers | Integer pairs over ℝ | Vectors of length 1 | Degree at most 4 is closed under addition and scaling and contains 0.
 M2#maths-u11-03-q3@2: Why aren't polynomials of degree exactly 3 a vector space? | x^{3} + (−x^{3}) = 0 isn't of degree 3, so the set isn't closed | They have too many terms | They can't be scaled | Their degree is odd | They are a vector space | Sums can drop in degree, and the zero polynomial is missing.
@@ -137,8 +137,8 @@ Q: Is the intersection of two subspaces a subspace? | Yes.
 Q: Is the union of the x-axis and y-axis a subspace of ℝ^{2}? | No: (1, 0) + (0, 1) isn't in it.
 SUM: Subspaces are vector spaces inside vector spaces.
 SUM: Zero, closure under + and × are the tests.
-SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
-SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | textbook | 2024 | https://linear.axler.net/
+SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
+SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | secondary | 2024 | https://linear.axler.net/
 NUM1#maths-u11-04-q1@1: What is the dimension of the plane x + 2y − z = 0 in ℝ^{3}? | 2 | 0 |  | One linear condition on three variables leaves two free parameters.
 M1#maths-u11-04-q2@1: Which subset of ℝ^{2} is a subspace? | The line y = 3x | The line y = 3x + 1 | The circle x^{2} + y^{2} = 1 | The first quadrant | The set {(1, 1)} | Only y = 3x passes through the origin and is closed under both operations.
 M3#maths-u11-04-q3@2: Why is the set of solutions of Ax = b (with b ≠ 0) never a subspace? | A·0 = 0 ≠ b, so the zero vector isn't a solution | It has too many solutions | A must be square | It's always empty | It is a subspace | Every subspace contains 0, which fails Ax = b when b ≠ 0.
@@ -171,8 +171,8 @@ Q: Is (0, 0) a linear combination of any vectors? | Yes: take all coefficients 0
 Q: In matrix form, what system gives the coefficients? | [v₁ … v_{k}]c = b.
 SUM: Linear combinations build vectors.
 SUM: Coefficients come from linear systems.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
-SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
 NUM1#maths-u11-05-q1@1: Write (4, 7) = a(1, 1) + b(1, 2). Find b. | 3 | 0 |  | a + b = 4 and a + 2b = 7, so b = 3 (and a = 1).
 M1#maths-u11-05-q2@1: Which vector is a linear combination of (1, 0, 0) and (0, 1, 0)? | (3, −2, 0) | (0, 0, 1) | (1, 1, 1) | (2, 0, 5) | (0, 3, 4) | Combinations of these have third component 0.
 M2#maths-u11-05-q3@2: When does [v₁ v₂ v₃]c = b have a solution? | When b lies in the span of v₁, v₂ and v₃ | Always | Only when b = 0 | Only when the v_{i} are unit vectors | Never | Solvability means b is some combination of the columns.
@@ -206,8 +206,8 @@ Q: What does one non-zero vector in ℝ^{3} span? | A line through the origin.
 Q: What is the minimum number of vectors needed to span ℝ^{4}? | 4.
 SUM: The span is everything you can build.
 SUM: It's always a subspace.
-SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
-SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | textbook | 2024 | https://linear.axler.net/
+SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
+SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | secondary | 2024 | https://linear.axler.net/
 NUM1#maths-u11-06-q1@1: What is the dimension of span{(1, 2), (2, 4)}? | 1 | 0 |  | (2, 4) = 2(1, 2), so the span is a single line.
 M1#maths-u11-06-q2@1: What is span{(1, 0, 0), (0, 1, 0)} in ℝ^{3}? | The xy-plane | All of ℝ^{3} | The x-axis | A line through (1, 1, 0) | The z-axis | Combinations (a, b, 0) fill the plane z = 0.
 M2#maths-u11-06-q3@2: Adding a vector w to a set S doesn't change span(S). What does that tell you? | w is already a linear combination of the vectors in S | w is the zero vector only | S spans the whole space | w is perpendicular to S | Nothing | A new vector enlarges the span only if it's outside it.
@@ -241,8 +241,8 @@ Q: Are (1, 0) and (2, 0) independent? | No: (2, 0) = 2(1, 0).
 Q: Can four vectors in ℝ^{3} be independent? | No.
 SUM: Independence means no redundancy.
 SUM: Determinants and pivots test it.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
-SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
 NUM1#maths-u11-07-q1@1: Find det [[1, 3], [2, 4]], and so decide whether (1, 2) and (3, 4) are independent. | -2 | 0 |  | 1 × 4 − 3 × 2 = −2 ≠ 0, so they're independent.
 M1#maths-u11-07-q2@1: Which set is linearly dependent? | {(1, 2), (2, 4)} | {(1, 0), (0, 1)} | {(1, 1), (1, −1)} | {(2, 3), (3, 2)} | {(1, 2), (0, 5)} | (2, 4) = 2(1, 2), so one vector is a multiple of the other and the set is dependent.
 M2#maths-u11-07-q3@2: Why is any set containing the zero vector dependent? | 1 × 0 = 0 is a non-trivial combination giving 0 | The zero vector has no direction | Zero can't be scaled | It isn't dependent | Zero is always a multiple of every vector only in ℝ^{2} | A coefficient of 1 on the zero vector, 0 elsewhere, gives a non-trivial relation.
@@ -275,8 +275,8 @@ Q: What is the dimension of M_{2×3}? | 6.
 Q: In ℝ^{3}, do any three independent vectors form a basis? | Yes.
 SUM: Bases are minimal complete building sets.
 SUM: Dimension counts independent directions.
-SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | textbook | 2024 | https://linear.axler.net/
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | secondary | 2024 | https://linear.axler.net/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 NUM1#maths-u11-08-q1@1: What is the dimension of the space of 3 × 3 matrices? | 9 | 0 |  | Nine independent entries, one basis matrix for each.
 M1#maths-u11-08-q2@1: Which set is a basis for ℝ^{2}? | {(1, 1), (1, −1)} | {(1, 2), (2, 4)} | {(1, 0)} | {(0, 0), (1, 1)} | {(1, 0), (0, 1), (1, 1)} | Two independent vectors in ℝ^{2} span it; the others are dependent or too few.
 M3#maths-u11-08-q3@2: What are the coordinates of (5, 1) relative to the basis {(1, 1), (1, −1)}? | (3, 2) | (5, 1) | (2, 3) | (6, 4) | (1, 5) | Solve a(1, 1) + b(1, −1) = (5, 1): a + b = 5 and a − b = 1 give a = 3, b = 2.
@@ -312,7 +312,7 @@ Q: What size is a matrix with 3 rows and 5 columns? | 3 × 5.
 Q: What is AI for any compatible A? | A.
 SUM: Matrices organise numbers in rows and columns.
 SUM: They represent systems, maps and data.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u11-09-q1@1: How many entries does a 4 × 5 matrix have? | 20 | 0 |  | 4 rows × 5 columns = 20.
 M1#maths-u11-09-q2@1: Which matrix is upper triangular? | [[1, 2], [0, 3]] | [[1, 0], [2, 3]] | [[0, 1], [1, 0]] | [[1, 2], [3, 4]] | [[0, 0], [1, 0]] | Upper triangular means every entry below the main diagonal is zero, as in [[1, 2], [0, 3]].
@@ -348,8 +348,8 @@ Q: Expand (A + B)^{2} for matrices. | A^{2} + AB + BA + B^{2}.
 Q: If AB = AC and A is invertible, what follows? | B = C.
 SUM: Matrix algebra mostly follows familiar rules.
 SUM: Commutativity and cancellation fail.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
-SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | textbook | 2013 | https://www.cambridge.org/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | secondary | 2013 | https://www.cambridge.org/
 NUM1#maths-u11-10-q1@1: For AB = [[2, 1], [1, 1]] above, find its trace. | 3 | 0 |  | 2 + 1 = 3 (and BA has the same trace, as always).
 M1#maths-u11-10-q2@1: Which pair of non-zero matrices has product zero? | [[1, 0], [0, 0]] and [[0, 0], [0, 1]] | [[1, 0], [0, 1]] and [[1, 0], [0, 1]] | [[1, 1], [1, 1]] and [[1, 0], [0, 1]] | [[2, 0], [0, 2]] and [[1, 1], [0, 1]] | None exist | The first kills the second coordinate, the second kills the first.
 M2#maths-u11-10-q3@2: Which property holds for all compatible matrices? | A(BC) = (AB)C | AB = BA | AB = 0 implies A = 0 | AB = AC implies B = C | (AB)^{2} = A^{2}B^{2} | Associativity holds; the others fail in general.
@@ -382,8 +382,8 @@ Q: What does swapping two rows do to the determinant? | Multiplies it by −1.
 Q: What is tr([[3, 1], [4, 7]])? | 10.
 SUM: Row operations drive elimination.
 SUM: Trace and entrywise operations are simple tools.
-SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 NUM1#maths-u11-11-q1@1: Find tr(2A − B) for A = [[1, 0], [0, 3]] and B = [[2, 5], [1, 1]]. | 5 | 0 |  | 2A − B has diagonal 0 and 5, so the trace is 5.
 M1#maths-u11-11-q2@1: Which is an elementary row operation? | Adding 3 times row 1 to row 2 | Multiplying row 2 by 0 | Squaring every entry of row 1 | Swapping two columns | Adding 1 to every entry | Adding a multiple of one row to another is allowed and keeps solutions.
 M2#maths-u11-11-q3@2: Adding a multiple of one row to another changes the determinant how? | It doesn't change it | It doubles it | It changes its sign | It makes it zero | It multiplies it by the multiple | That operation's elementary matrix has determinant 1.
@@ -416,8 +416,8 @@ Q: What size is the product of a 2 × 3 and a 3 × 4 matrix? | 2 × 4.
 Q: Is the product of a 3 × 2 and a 3 × 2 matrix defined? | No: the inner sizes (2 and 3) don't match.
 SUM: Multiply rows by columns.
 SUM: Products compose linear maps.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
-SRC: Strassen V, Gaussian elimination is not optimal, Numerische Mathematik 13, 354 | journal | 1969 | https://doi.org/10.1007/BF02165411
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Strassen V, Gaussian elimination is not optimal, Numerische Mathematik 13, 354 | primary | 1969 | https://doi.org/10.1007/BF02165411
 NUM1#maths-u11-12-q1@1: In [[1, 2], [3, 4]][[5, 6], [7, 8]], what is the (2, 2) entry? | 50 | 0 |  | 3 × 6 + 4 × 8 = 18 + 32 = 50.
 M1#maths-u11-12-q2@1: Which product is defined? | (2 × 3)(3 × 5) | (2 × 3)(2 × 3) | (4 × 1)(4 × 1) | (3 × 2)(3 × 2) | (5 × 2)(3 × 5) | Only (2 × 3)(3 × 5) has matching inner sizes.
 M2#maths-u11-12-q3@2: R rotates by 90° and F reflects in the x-axis. What does the product FR do to a vector? | Rotates it, then reflects it | Reflects it, then rotates it | Only rotates it | Only reflects it | Nothing | In FRv the matrix nearest v acts first, so R rotates and then F reflects.
@@ -452,8 +452,8 @@ Q: What is (ABC)ᵀ? | CᵀBᵀAᵀ.
 Q: Is AᵀA always symmetric? | Yes.
 SUM: Transposes swap rows and columns.
 SUM: Products transpose in reverse order.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
-SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | textbook | 2013 | https://www.cambridge.org/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | secondary | 2013 | https://www.cambridge.org/
 NUM1#maths-u11-13-q1@1: A is 3 × 5. How many entries does AᵀA have? | 25 | 0 |  | AᵀA is 5 × 5.
 M1#maths-u11-13-q2@1: Which matrix is symmetric? | [[2, 7], [7, 3]] | [[2, 7], [−7, 3]] | [[1, 2], [3, 4]] | [[0, 1], [0, 0]] | [[1, 2, 3]] | A symmetric matrix equals its transpose: the entries above and below the diagonal match.
 M2#maths-u11-13-q3@2: What is the symmetric part of A = [[1, 4], [2, 3]]? | [[1, 3], [3, 3]] | [[1, 4], [4, 3]] | [[0, 1], [−1, 0]] | [[1, 2], [4, 3]] | [[2, 6], [6, 6]] | The symmetric part is (A + Aᵀ)/2 = [[2, 6], [6, 6]]/2 = [[1, 3], [3, 3]].
@@ -488,7 +488,7 @@ Q: When does a square matrix have no inverse? | When its determinant is 0.
 Q: What is det(A^{−1}) if det A = 5? | ⅕.
 SUM: Inverses undo matrices.
 SUM: They exist only for non-zero determinants.
-SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
+SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u11-14-q1@1: A has determinant 4. Find det(A^{−1}). | 0.25 | 0.0001 |  | det(A^{−1}) = 1/det A = ¼.
 M1#maths-u11-14-q2@1: Which matrix is singular? | [[2, 4], [1, 2]] | [[1, 2], [3, 4]] | [[1, 0], [0, 1]] | [[0, 1], [1, 0]] | [[3, 1], [1, 3]] | det [[2, 4], [1, 2]] = 2 × 2 − 4 × 1 = 0, so it has no inverse.
@@ -527,7 +527,7 @@ Q: What is det(kA) for a 3 × 3 matrix? | k^{3} det A.
 Q: What does det A = 0 mean geometrically? | A flattens space into a lower dimension.
 SUM: Determinants test invertibility.
 SUM: They measure volume scaling.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u11-15-q1@1: A is 3 × 3 with det A = 5. Find det(2A). | 40 | 0 |  | det(2A) = 2^{3} × 5 = 40.
 M1#maths-u11-15-q2@1: What is det [[4, 7], [2, 3]]? | −2 | 2 | 26 | −26 | 12 | For a 2 × 2 matrix det = ad − bc = 4 × 3 − 7 × 2 = 12 − 14 = −2.
@@ -565,8 +565,8 @@ Q: What is the largest possible rank of a 4 × 6 matrix? | 4.
 Q: What does rank A < rank [A ∣ b] mean? | The system Ax = b has no solution.
 SUM: Rank counts independent rows and columns.
 SUM: Rank and nullity add to the number of columns.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
-SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
 NUM1#maths-u11-16-q1@1: A 3 × 5 matrix has rank 3. What is its nullity? | 2 | 0 |  | Nullity = 5 − 3 = 2.
 M1#maths-u11-16-q2@1: What is the rank of [[1, 1], [1, 1]]? | 1 | 2 | 0 | 4 | 3 | The rows are equal, so only one is independent.
 M3#maths-u11-16-q3@2: A 5 × 5 matrix has rank 4. Which statement is true? | Ax = 0 has non-zero solutions | A is invertible | det A ≠ 0 | Ax = b always has a unique solution | The columns are independent | Nullity 1 means a one-dimensional space of solutions to Ax = 0.
@@ -601,8 +601,8 @@ Q: What is col(I) for the 3 × 3 identity? | All of ℝ^{3}.
 Q: In which space does the column space of a 4 × 2 matrix lie? | ℝ^{4}.
 SUM: The column space is all possible outputs.
 SUM: It decides solvability.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
-SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
 NUM1#maths-u11-17-q1@1: What is the dimension of the column space of a 4 × 6 matrix with rank 3? | 3 | 0 |  | dim col(A) = rank = 3.
 M1#maths-u11-17-q2@1: Which vector is in the column space of [[1, 0], [0, 1], [0, 0]]? | (2, 5, 0) | (0, 0, 1) | (1, 1, 1) | (3, 0, 2) | (0, 1, 4) | Combinations of the columns have third component 0.
 M2#maths-u11-17-q3@2: Why take basis vectors from the original matrix's pivot columns rather than the reduced matrix? | Row operations change the column space but keep column dependencies | The reduced matrix has no columns | The original has fewer columns | They give the same vectors | It doesn't matter | Row operations preserve which columns are independent, not the columns themselves.
@@ -634,8 +634,8 @@ Q: Do row operations change the row space? | No.
 Q: What is the relationship between row(A) and null(A)? | They're orthogonal complements in ℝⁿ.
 SUM: Row spaces survive row operations.
 SUM: They're perpendicular to null spaces.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
-SRC: Strang G, The fundamental theorem of linear algebra, American Mathematical Monthly 100(9), 848 | journal | 1993 | https://doi.org/10.2307/2324660
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Strang G, The fundamental theorem of linear algebra, American Mathematical Monthly 100(9), 848 | primary | 1993 | https://doi.org/10.2307/2324660
 NUM1#maths-u11-18-q1@1: What is the dimension of the row space in the example? | 2 | 0 |  | Two non-zero echelon rows remain, so the rank is 2.
 M1#maths-u11-18-q2@1: In which space does the row space of a 3 × 5 matrix lie? | ℝ^{5} | ℝ^{3} | ℝ^{15} | ℝ^{8} | ℝ^{2} | Each row of a 3 × 5 matrix has 5 entries, so the rows (and their span) live in ℝ^{5}.
 M2#maths-u11-18-q3@2: x is in null(A) and r is a row of A. What is r · x? | 0 | 1 | |r||x| | It depends on A | Undefined | Ax = 0 means each row dotted with x is zero.
@@ -668,8 +668,8 @@ Q: What is the nullity of an invertible n × n matrix? | 0.
 Q: What do all solutions of Ax = b look like? | One particular solution plus any null space vector.
 SUM: The null space solves Ax = 0.
 SUM: It governs uniqueness.
-SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 NUM1#maths-u11-19-q1@1: A is 4 × 7 with rank 4. What is the nullity? | 3 | 0 |  | 7 − 4 = 3 free variables.
 M1#maths-u11-19-q2@1: Which vector is in the null space of [[1, 1], [2, 2]]? | (1, −1) | (1, 1) | (2, 1) | (0, 1) | (1, 2) | Multiplying gives (1 − 1, 2 − 2) = (0, 0), so (1, −1) is in the null space.
 M3#maths-u11-19-q3@2: Ax = b has a solution x_{p}, and null(A) is a line. How many solutions are there? | Infinitely many, forming a line through x_{p} | Exactly one | Exactly two | None | It depends on b only | Every x_{p} + tn (n spanning the null space) solves the system.
@@ -703,7 +703,7 @@ Q: What does a row [0 0 0 ∣ 5] in the reduced augmented matrix mean? | The sys
 Q: Can 2 equations in 3 unknowns have a unique solution? | No.
 SUM: Elimination solves linear systems.
 SUM: Echelon form reveals how many solutions there are.
-SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
+SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u11-20-q1@1: Solve x + y = 5, x − y = 1. Give x. | 3 | 0 |  | Adding gives 2x = 6, so x = 3 (and y = 2).
 M1#maths-u11-20-q2@1: The system x + y = 2, 2x + 2y = 5 has how many solutions? | None | One | Two | Infinitely many | Three | The second equation would need x + y = 2.5, contradicting the first.
@@ -739,8 +739,8 @@ Q: What does a linear map always do to the zero vector? | Sends it to zero.
 Q: What is the matrix of reflection in the line y = x? | [[0, 1], [1, 0]].
 SUM: Linear maps are matrices.
 SUM: Columns are images of basis vectors.
-SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | textbook | 2024 | https://linear.axler.net/
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | secondary | 2024 | https://linear.axler.net/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 NUM1#maths-u11-21-q1@1: The shear [[1, 2], [0, 1]] maps (3, 1) to (x, y). Find x. | 5 | 0 |  | x = 3 + 2 × 1 = 5 (and y = 1).
 M1#maths-u11-21-q2@1: Which map from ℝ^{2} to ℝ^{2} is linear? | (x, y) ↦ (2x, x − y) | (x, y) ↦ (x + 1, y) | (x, y) ↦ (x^{2}, y) | (x, y) ↦ (xy, y) | (x, y) ↦ (|x|, y) | Each component is a linear combination of x and y with no constant.
 M2#maths-u11-21-q3@2: What is the kernel of the projection onto the x-axis? | The y-axis | The x-axis | Only the origin | All of ℝ^{2} | The line y = x | Projection onto the x-axis sends (0, y) to the origin, so the kernel is the y-axis.
@@ -775,8 +775,8 @@ Q: What is P^{−1} if P's columns form an orthonormal basis? | Pᵀ.
 Q: How does a map's matrix change under change of basis? | It becomes P^{−1}AP.
 SUM: Coordinates depend on the basis.
 SUM: A good basis simplifies problems.
-SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | textbook | 2024 | https://linear.axler.net/
-SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
+SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | secondary | 2024 | https://linear.axler.net/
+SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
 NUM1#maths-u11-22-q1@1: In the example, what is the second new coordinate of v = (4, 3)? | 2 | 0 |  | [v]_{new} = (1, 2).
 M1#maths-u11-22-q2@1: The basis {(1, 0), (0, 2)} is used. What are the coordinates of (3, 4)? | (3, 2) | (3, 4) | (3, 8) | (1, 2) | (4, 3) | Solve a(1, 0) + b(0, 2) = (3, 4): a = 3 and 2b = 4, so the coordinates are (3, 2).
 M2#maths-u11-22-q3@2: Why are orthonormal bases convenient for changing coordinates? | The inverse of the change-of-basis matrix is just its transpose | They have no coordinates | They make every matrix diagonal | They only exist in 2D | They aren't convenient | With orthonormal columns PᵀP = I, so P^{−1} = Pᵀ and no matrix inversion is needed.
@@ -809,8 +809,8 @@ Q: What is the trace of any matrix similar to [[3, 1], [0, 5]]? | 8.
 Q: Are I and [[1, 1], [0, 1]] similar? | No: only I is similar to I.
 SUM: Similarity changes basis, not the map.
 SUM: Invariants survive similarity.
-SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | textbook | 2013 | https://www.cambridge.org/
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | secondary | 2013 | https://www.cambridge.org/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 NUM1#maths-u11-23-q1@1: B is similar to A, and det A = 7. Find det B. | 7 | 0 |  | det(P^{−1}AP) = det A.
 M1#maths-u11-23-q2@1: Which property do similar matrices always share? | Their eigenvalues | Their entries | Their eigenvectors | Their first columns | Their inverses' entries | Eigenvalues are basis-independent; eigenvectors change with the basis.
 M3#maths-u11-23-q3@2: A has trace 5 and B has trace 6. What can you conclude? | They aren't similar | They are similar | They have equal determinants | They have the same eigenvectors | Nothing at all | Trace is a similarity invariant, so different traces rule similarity out.
@@ -847,7 +847,7 @@ Q: What are the eigenvalues of [[3, 7], [0, −2]]? | 3 and −2.
 Q: Does a 90° rotation matrix have real eigenvalues? | No: its eigenvalues are ±i.
 SUM: Eigenvalues are the stretching factors.
 SUM: They sum to the trace.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u11-24-q1@1: Find the product of the eigenvalues of [[4, 1], [2, 3]]. | 10 | 0 |  | The product of eigenvalues equals the determinant, 10.
 M1#maths-u11-24-q2@1: A has eigenvalue 3. What is an eigenvalue of A^{2} + I? | 10 | 9 | 4 | 3 | 7 | If Av = 3v, then (A^{2} + I)v = (9 + 1)v.
@@ -884,8 +884,8 @@ Q: Can the zero vector be an eigenvector? | No, by definition.
 Q: Which eigenvalue's eigenvector gives a Markov chain's steady state? | λ = 1.
 SUM: Eigenvectors are unturned directions.
 SUM: They describe modes and long-run states.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
-SRC: Brin S, Page L, The anatomy of a large-scale hypertextual Web search engine, Computer Networks and ISDN Systems 30, 107 | journal | 1998 | https://doi.org/10.1016/S0169-7552(98)00110-X
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Brin S, Page L, The anatomy of a large-scale hypertextual Web search engine, Computer Networks and ISDN Systems 30, 107 | primary | 1998 | https://doi.org/10.1016/S0169-7552(98)00110-X
 NUM1#maths-u11-25-q1@1: The transition matrix [[0.9, 0.2], [0.1, 0.8]] has steady state (p, 1 − p). Find p to 4 decimal places. | 0.6667 | 0.0001 |  | Solve 0.9p + 0.2(1 − p) = p: 0.2 = 0.3p, so p = 2/3.
 M1#maths-u11-25-q2@1: Which is an eigenvector of [[2, 0], [0, 5]]? | (0, 1) | (1, 1) | (1, 2) | (2, 5) | (1, −1) | A diagonal matrix scales each axis: A(0, 1) = (0, 5) = 5(0, 1), an eigenvector for 5.
 M2#maths-u11-25-q3@2: What does the power method compute? | The dominant eigenvector, by repeatedly multiplying by A | All eigenvalues at once | The determinant | The inverse matrix | The smallest eigenvalue directly | Aⁿx aligns with the eigenvector of largest |λ|.
@@ -918,8 +918,8 @@ Q: What is the geometric multiplicity of λ = 1 for [[1, 1], [0, 1]]? | 1.
 Q: When is a matrix defective? | When some eigenvalue's geometric multiplicity is less than its algebraic multiplicity.
 SUM: Eigenspaces collect eigenvectors.
 SUM: Their dimensions decide diagonalisability.
-SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | textbook | 2024 | https://linear.axler.net/
-SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | textbook | 2013 | https://www.cambridge.org/
+SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | secondary | 2024 | https://linear.axler.net/
+SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | secondary | 2013 | https://www.cambridge.org/
 NUM1#maths-u11-26-q1@1: For diag(2, 2, 3), what is the geometric multiplicity of λ = 2? | 2 | 0 |  | E₂ is spanned by e₁ and e₂.
 M1#maths-u11-26-q2@1: Which matrix has an eigenvalue with geometric multiplicity less than its algebraic multiplicity? | [[3, 1], [0, 3]] | [[3, 0], [0, 3]] | [[1, 0], [0, 2]] | [[2, 1], [1, 2]] | [[0, 1], [1, 0]] | λ = 3 twice, but A − 3I has rank 1, giving only a line of eigenvectors.
 M2#maths-u11-26-q3@2: What is always true of an eigenspace? | It's a subspace containing the zero vector | It contains only eigenvectors | It's one-dimensional | It equals the column space | It's empty for repeated eigenvalues | E_{λ} is a null space, so it's a subspace (zero included).
@@ -951,8 +951,8 @@ Q: What is the characteristic polynomial of [[2, 0], [0, 3]]? | (λ − 2)(λ �
 Q: What does Cayley–Hamilton let you write A^{−1} as? | A polynomial in A (when det A ≠ 0).
 SUM: Characteristic polynomials hold the eigenvalues.
 SUM: Matrices satisfy their own.
-SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | textbook | 2013 | https://www.cambridge.org/
-SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | textbook | 2024 | https://linear.axler.net/
+SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | secondary | 2013 | https://www.cambridge.org/
+SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | secondary | 2024 | https://linear.axler.net/
 NUM1#maths-u11-27-q1@1: For [[1, 2], [3, 4]], what is the constant term of λ^{2} − (tr A)λ + det A? | -2 | 0 |  | det A = 4 − 6 = −2.
 M1#maths-u11-27-q2@1: Using A^{2} = 5A + 2I for A = [[1, 2], [3, 4]], which expression equals A^{−1}? | (A − 5I)/2 | (5I − A)/2 | (A + 5I)/2 | 2A − 5I | A/2 | Rearrange A^{2} − 5A = 2I as A(A − 5I) = 2I, so A^{−1} = (A − 5I)/2.
 M3#maths-u11-27-q3@2: Why are large-matrix eigenvalues not computed from the characteristic polynomial? | Polynomial roots are very sensitive to rounding, so direct iterative methods are more accurate | Characteristic polynomials don't exist for large matrices | The roots are always complex | It's faster to use determinants only | They are computed that way | Tiny coefficient errors can move roots a lot; the QR algorithm works on A directly.
@@ -986,7 +986,7 @@ Q: Is a matrix with 3 distinct eigenvalues (3 × 3) diagonalisable? | Yes.
 Q: What is D^{k} for D = diag(2, −1)? | diag(2^{k}, (−1)^{k}).
 SUM: Diagonalisation simplifies to scaling.
 SUM: Powers become easy.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u11-28-q1@1: For the example, what is the largest eigenvalue of A^{3}? | 125 | 0 |  | 5^{3} = 125.
 M1#maths-u11-28-q2@1: Which matrix is not diagonalisable? | [[2, 1], [0, 2]] | [[2, 0], [0, 3]] | [[1, 2], [2, 1]] | [[0, 1], [1, 0]] | [[4, 1], [2, 3]] | λ = 2 is repeated with only one independent eigenvector.
@@ -1019,8 +1019,8 @@ Q: What Jordan form does a diagonalisable matrix have? | A diagonal one (all blo
 Q: What is e^{Jt} for J = [[λ, 1], [0, λ]]? | e^{λt}[[1, t], [0, 1]].
 SUM: Jordan form handles non-diagonalisable matrices.
 SUM: Blocks explain repeated-root solutions.
-SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | textbook | 2013 | https://www.cambridge.org/
-SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | textbook | 2024 | https://linear.axler.net/
+SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | secondary | 2013 | https://www.cambridge.org/
+SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | secondary | 2024 | https://linear.axler.net/
 NUM1#maths-u11-29-q1@1: In the example, what is the size of the largest Jordan block? | 2 | 0 |  | A single 2 × 2 block for λ = 2.
 M1#maths-u11-29-q2@1: Which matrix is a Jordan block? | [[5, 1], [0, 5]] | [[5, 1], [1, 5]] | [[5, 0], [1, 5]] | [[1, 5], [0, 1]] | [[5, 2], [0, 5]] | λ on the diagonal, 1 on the superdiagonal, zeros elsewhere.
 M2#maths-u11-29-q3@2: Why isn't the Jordan form computed in numerical software? | Tiny rounding changes can alter block structure completely | It doesn't exist for real matrices | It requires infinite precision only for diagonal matrices | It's always diagonal | It is computed routinely | The Jordan form is discontinuous in the matrix entries.
@@ -1052,8 +1052,8 @@ Q: Are the eigenvalues of a real symmetric matrix always real? | Yes.
 Q: What is Q^{−1} for an orthogonal Q? | Qᵀ.
 SUM: Symmetric matrices have orthonormal eigenbases.
 SUM: They diagonalise quadratic forms.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
-SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | textbook | 2013 | https://www.cambridge.org/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | secondary | 2013 | https://www.cambridge.org/
 NUM1#maths-u11-30-q1@1: Find the sum of the eigenvalues of [[2, 1], [1, 2]]. | 4 | 0 |  | The trace 2 + 2 = 4 equals the sum (1 + 3).
 M1#maths-u11-30-q2@1: Which quadratic form corresponds to [[1, 3], [3, 4]]? | x^{2} + 6xy + 4y^{2} | x^{2} + 3xy + 4y^{2} | x^{2} + 9xy + 4y^{2} | 4x^{2} + 6xy + y^{2} | x^{2} + 4y^{2} | The off-diagonal 3 appears twice, giving 2 × 3 = 6xy.
 M3#maths-u11-30-q3@2: Why are eigenvectors of a symmetric matrix for different eigenvalues orthogonal? | λ₁ v₁ · v₂ = Av₁ · v₂ = v₁ · Av₂ = λ₂ v₁ · v₂, forcing v₁ · v₂ = 0 | Symmetric matrices have only one eigenvalue | All eigenvectors are unit vectors | It's a coincidence | They aren't | Symmetry lets A move across the dot product, and λ₁ ≠ λ₂.
@@ -1087,8 +1087,8 @@ Q: Are the diagonal entries of a Hermitian matrix real? | Yes.
 Q: What are the eigenvalues of the Pauli matrix σ_{z}? | ±1.
 SUM: Hermitian matrices are complex symmetric matrices.
 SUM: Their eigenvalues are real.
-SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | textbook | 2013 | https://www.cambridge.org/
-SRC: Nielsen MA, Chuang IL, Quantum Computation and Quantum Information (10th anniversary edn, Cambridge University Press 2010) | textbook | 2010 | https://www.cambridge.org/
+SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | secondary | 2013 | https://www.cambridge.org/
+SRC: Nielsen MA, Chuang IL, Quantum Computation and Quantum Information (10th anniversary edn, Cambridge University Press 2010) | secondary | 2010 | https://www.cambridge.org/
 NUM1#maths-u11-31-q1@1: Find the larger eigenvalue of [[2, i], [−i, 2]]. | 3 | 0 |  | (2 − λ)^{2} = 1 gives λ = 1 or 3.
 M1#maths-u11-31-q2@1: Which matrix is Hermitian? | [[1, 2 + i], [2 − i, 3]] | [[1, 2 + i], [2 + i, 3]] | [[i, 0], [0, 1]] | [[1, i], [i, 1]] | [[0, 1], [−1, 0]] | Real diagonal and conjugate off-diagonal pairs.
 M2#maths-u11-31-q3@2: Why must quantum observables be Hermitian? | Their eigenvalues (possible measurements) must be real | Hermitian matrices are always diagonal | They make states unnormalised | Quantum mechanics uses only real matrices | They needn't be | Hermitian operators have real spectra and orthogonal eigenstates.
@@ -1121,8 +1121,8 @@ Q: Is [[1, 2], [2, 1]] positive definite? | No: its determinant is −3.
 Q: What does a positive definite Hessian at a critical point indicate? | A local minimum.
 SUM: Positive definite matrices describe bowls.
 SUM: Several equivalent tests exist.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
-SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | textbook | 2013 | https://www.cambridge.org/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | secondary | 2013 | https://www.cambridge.org/
 NUM1#maths-u11-32-q1@1: Find the determinant of [[2, −1], [−1, 2]]. | 3 | 0 |  | 4 − 1 = 3, the second leading minor.
 M1#maths-u11-32-q2@1: Which matrix is positive definite? | [[3, 1], [1, 2]] | [[1, 3], [3, 1]] | [[−1, 0], [0, 2]] | [[0, 0], [0, 1]] | [[2, 3], [3, 2]] | It's symmetric with leading minors 3 > 0 and 3 × 2 − 1 = 5 > 0, so Sylvester's test passes.
 M2#maths-u11-32-q3@2: Why are covariance matrices positive semi-definite? | xᵀΣx is the variance of the combination xᵀX, which can't be negative | They're always diagonal | All covariances are positive | They have unit determinant | They aren't | For any weights x, xᵀΣx is the variance of xᵀX, and a variance can never be negative.
@@ -1158,8 +1158,8 @@ Q: Are sin x and cos x orthogonal on [−π, π]? | Yes: ∫ sin x cos x dx = 0 
 Q: What does Cauchy–Schwarz say? | |⟨u, v⟩| ≤ ‖u‖‖v‖.
 SUM: Inner products bring geometry to any space.
 SUM: Functions can be orthogonal.
-SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | textbook | 2024 | https://linear.axler.net/
-SRC: Kreyszig E, Introductory Functional Analysis with Applications (Wiley 1978) | textbook | 1978 | https://www.wiley.com/
+SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | secondary | 2024 | https://linear.axler.net/
+SRC: Kreyszig E, Introductory Functional Analysis with Applications (Wiley 1978) | secondary | 1978 | https://www.wiley.com/
 NUM1#maths-u11-33-q1@1: With ⟨f, g⟩ = ∫₀¹ fg dx, find ⟨1, x⟩. | 0.5 | 0.0001 |  | ∫₀¹ x dx = ½.
 M1#maths-u11-33-q2@1: Which formula is an inner product on ℝ^{2}? | ⟨x, y⟩ = 2x₁y₁ + 3x₂y₂ | ⟨x, y⟩ = x₁y₁ − x₂y₂ | ⟨x, y⟩ = x₁y₂ | ⟨x, y⟩ = x₁ + y₁ | ⟨x, y⟩ = |x₁y₁| | Positive weights keep it symmetric, bilinear and positive definite.
 M2#maths-u11-33-q3@2: Why does ⟨x, y⟩ = x₁y₁ − x₂y₂ fail to be an inner product? | ⟨(0, 1), (0, 1)⟩ = −1 < 0, breaking positivity | It isn't symmetric | It isn't linear | It's always zero | It is one | Inner products need ⟨v, v⟩ > 0 for v ≠ 0.
@@ -1195,8 +1195,8 @@ Q: What is the ∞-norm of (−7, 2, 5)? | 7.
 Q: What does a large condition number warn of? | A system whose solution is very sensitive to errors.
 SUM: Norms measure size in different ways.
 SUM: Condition numbers measure sensitivity.
-SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | textbook | 1997 | https://epubs.siam.org/
-SRC: Golub GH, Van Loan CF, Matrix Computations (4th edn, Johns Hopkins University Press 2013) | textbook | 2013 | https://www.press.jhu.edu/
+SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | secondary | 1997 | https://epubs.siam.org/
+SRC: Golub GH, Van Loan CF, Matrix Computations (4th edn, Johns Hopkins University Press 2013) | secondary | 2013 | https://www.press.jhu.edu/
 NUM1#maths-u11-34-q1@1: Find the 1-norm of (1, −2, 3). | 6 | 0 |  | |1| + |−2| + |3| = 6.
 M1#maths-u11-34-q2@1: What is the ∞-norm (largest row sum) of [[1, −2], [3, 4]]? | 7 | 4 | 6 | 10 | 5 | Absolute row sums are |1| + |−2| = 3 and |3| + |4| = 7, so the ∞-norm is 7.
 M3#maths-u11-34-q3@2: A system has κ(A) = 10^{8}, and data are accurate to 16 digits. Roughly how many digits of the solution can you trust? | About 8 | About 16 | About 24 | None | About 2 | As a rule you lose about log₁₀ κ = 8 of the 16 digits, leaving roughly 8 trustworthy digits.
@@ -1229,8 +1229,8 @@ Q: What is the determinant of an orthogonal matrix? | +1 or −1.
 Q: What is Q^{−1} for an orthogonal matrix Q? | Qᵀ.
 SUM: Orthonormal bases make coordinates easy.
 SUM: Orthogonal matrices preserve geometry.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
-SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | textbook | 1997 | https://epubs.siam.org/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | secondary | 1997 | https://epubs.siam.org/
 NUM1#maths-u11-35-q1@1: In the example, find c₁ to 3 decimal places. | 2.828 | 0.001 |  | 2√2 ≈ 2.828.
 M1#maths-u11-35-q2@1: Which matrix is orthogonal? | [[0, 1], [1, 0]] | [[1, 1], [0, 1]] | [[2, 0], [0, 2]] | [[1, 2], [3, 4]] | [[1, 1], [1, 1]] | Its columns are orthonormal: it's a reflection.
 M2#maths-u11-35-q3@2: Why are orthogonal matrices numerically ideal? | They don't amplify errors: ‖Qx‖ = ‖x‖ and their condition number is 1 | They're always diagonal | They have no inverses | Their entries are integers | They aren't ideal | Preserving norms means rounding errors aren't magnified.
@@ -1263,8 +1263,8 @@ Q: What is P^{2} for a projection matrix? | P.
 Q: What equations give the least squares solution? | AᵀAx̂ = Aᵀb.
 SUM: Projections find closest points.
 SUM: Errors are perpendicular.
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
-SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | textbook | 2021 | https://www.pearson.com/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Lay DC, Lay SR, McDonald JJ, Linear Algebra and Its Applications (6th edn, Pearson 2021) | secondary | 2021 | https://www.pearson.com/
 NUM1#maths-u11-36-q1@1: Find the distance from (1, 2, 3) to the line through (1, 1, 1), to 3 decimal places. | 1.414 | 0.001 |  | The error vector (−1, 0, 1) has length √2 ≈ 1.414.
 M1#maths-u11-36-q2@1: What is the projection of (4, 3) onto the x-axis? | (4, 0) | (0, 3) | (4, 3) | (3, 0) | (5, 0) | Dropping perpendicularly onto the x-axis keeps x and zeroes y.
 M3#maths-u11-36-q3@2: Why is the least squares fit the projection of b onto col(A)? | It minimises ‖Ax − b‖, and the closest point in a subspace is the orthogonal projection | It makes Ax equal to b exactly | It uses the largest eigenvalue | It ignores the columns of A | It isn't | Minimising distance to a subspace gives a perpendicular residual: Aᵀ(b − Ax̂) = 0.
@@ -1296,8 +1296,8 @@ Q: What does Gram–Schmidt produce from a dependent set? | A zero vector at the
 Q: Which polynomials come from Gram–Schmidt on 1, x, x^{2} over [−1, 1]? | Legendre polynomials (up to scaling).
 SUM: Gram–Schmidt orthonormalises.
 SUM: It underlies QR.
-SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | textbook | 1997 | https://epubs.siam.org/
-SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | textbook | 2023 | https://math.mit.edu/~gs/linearalgebra/
+SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | secondary | 1997 | https://epubs.siam.org/
+SRC: Strang G, Introduction to Linear Algebra (6th edn, Wellesley-Cambridge Press 2023) | secondary | 2023 | https://math.mit.edu/~gs/linearalgebra/
 NUM1#maths-u11-37-q1@1: Find ‖u₂‖ = ‖(½, −½, 1)‖ to 4 decimal places. | 1.2247 | 0.0001 |  | √(0.25 + 0.25 + 1) = √1.5 ≈ 1.2247.
 M1#maths-u11-37-q2@1: Applying Gram–Schmidt to (3, 4) gives which first vector? | (0.6, 0.8) | (3, 4) | (0.8, 0.6) | (1, 1) | (0.75, 1) | The first step just normalises: (3, 4) has length 5, giving (0.6, 0.8).
 M2#maths-u11-37-q3@2: Why is modified Gram–Schmidt preferred to the classical version? | It keeps vectors closer to orthogonal in floating-point arithmetic | It uses fewer vectors | It needs no normalisation | It works only on square matrices | It isn't preferred | Subtracting components one at a time reduces the build-up of rounding errors.
@@ -1331,7 +1331,7 @@ Q: Which decomposition suits symmetric positive definite systems? | Cholesky.
 Q: About how much work is a triangular solve? | About n^{2} operations.
 SUM: Decompositions make problems easy.
 SUM: Choose by the matrix's structure.
-SRC: Golub GH, Van Loan CF, Matrix Computations (4th edn, Johns Hopkins University Press 2013) | textbook | 2013 | https://www.press.jhu.edu/
+SRC: Golub GH, Van Loan CF, Matrix Computations (4th edn, Johns Hopkins University Press 2013) | secondary | 2013 | https://www.press.jhu.edu/
 SRC: Anderson E et al, LAPACK Users' Guide (3rd edn, SIAM 1999) | guidance | 1999 | https://www.netlib.org/lapack/lug/
 NUM1#maths-u11-38-q1@1: In the example, find x₁. | 1.5 | 0.0001 |  | Back substitution gives x₁ = (4 − 1)/2 = 1.5.
 M1#maths-u11-38-q2@1: Which decomposition is best for computing a low-rank approximation of an image? | The singular value decomposition | LU decomposition | Cholesky decomposition | Jordan form | Row echelon form | Truncating the SVD gives the best low-rank approximation.
@@ -1367,8 +1367,8 @@ Q: What does L contain below its diagonal? | The elimination multipliers.
 Q: Why is pivoting needed for [[0, 1], [1, 1]]? | The first pivot is zero.
 SUM: LU records elimination.
 SUM: Pivoting keeps it stable.
-SRC: Golub GH, Van Loan CF, Matrix Computations (4th edn, Johns Hopkins University Press 2013) | textbook | 2013 | https://www.press.jhu.edu/
-SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | textbook | 1997 | https://epubs.siam.org/
+SRC: Golub GH, Van Loan CF, Matrix Computations (4th edn, Johns Hopkins University Press 2013) | secondary | 2013 | https://www.press.jhu.edu/
+SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | secondary | 1997 | https://epubs.siam.org/
 NUM1#maths-u11-39-q1@1: For A = [[2, 1], [6, 4]], find the product of U's diagonal entries. | 2 | 0 |  | U = [[2, 1], [0, 1]], so 2 × 1 = 2 = det A.
 M1#maths-u11-39-q2@1: For A = [[1, 2], [4, 9]], what is U in A = LU? | [[1, 2], [0, 1]] | [[1, 2], [0, 9]] | [[1, 0], [4, 1]] | [[4, 9], [0, 2]] | [[1, 2], [4, 1]] | Subtract 4 × row 1 from row 2: (4, 9) − (4, 8) = (0, 1), so U = [[1, 2], [0, 1]].
 M3#maths-u11-39-q3@2: What is the approximate cost of LU for an n × n matrix? | About 2n^{3}/3 operations | About n^{2} operations | About n operations | About 2ⁿ operations | About n log n operations | Elimination works on (n − k)^{2} entries at step k, summing to ~2n^{3}/3.
@@ -1400,8 +1400,8 @@ Q: How is least squares solved with QR? | Solve Rx = Qᵀb.
 Q: What does the QR algorithm compute? | Eigenvalues.
 SUM: QR is orthogonal times triangular.
 SUM: It's the stable route to least squares.
-SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | textbook | 1997 | https://epubs.siam.org/
-SRC: Householder AS, Unitary triangularization of a nonsymmetric matrix, Journal of the ACM 5(4), 339 | journal | 1958 | https://doi.org/10.1145/320941.320947
+SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | secondary | 1997 | https://epubs.siam.org/
+SRC: Householder AS, Unitary triangularization of a nonsymmetric matrix, Journal of the ACM 5(4), 339 | primary | 1958 | https://doi.org/10.1145/320941.320947
 NUM1#maths-u11-40-q1@1: In the example, find r₂₂. | 3 | 0 |  | The remaining component (−2.4, 1.8) has length 3.
 M1#maths-u11-40-q2@1: What kind of matrix is Q in A = QR? | One with orthonormal columns | Upper triangular | Diagonal | Symmetric positive definite | Singular | Q collects an orthonormal basis for col(A).
 M2#maths-u11-40-q3@2: Why is QR preferred to the normal equations for ill-conditioned least squares? | Forming AᵀA squares the condition number, losing accuracy | QR is always faster | The normal equations have no solution | QR needs no arithmetic | It isn't preferred | κ(AᵀA) = κ(A)^{2}, so the normal equations amplify errors.
@@ -1435,8 +1435,8 @@ Q: What does a negative number under the square root in Cholesky indicate? | The
 Q: How do you generate normals with covariance Σ = LLᵀ? | Take x = Lz with z standard normal.
 SUM: Cholesky factors positive definite matrices.
 SUM: It's fast and stable.
-SRC: Golub GH, Van Loan CF, Matrix Computations (4th edn, Johns Hopkins University Press 2013) | textbook | 2013 | https://www.press.jhu.edu/
-SRC: Glasserman P, Monte Carlo Methods in Financial Engineering (Springer 2003) | textbook | 2003 | https://link.springer.com/
+SRC: Golub GH, Van Loan CF, Matrix Computations (4th edn, Johns Hopkins University Press 2013) | secondary | 2013 | https://www.press.jhu.edu/
+SRC: Glasserman P, Monte Carlo Methods in Financial Engineering (Springer 2003) | secondary | 2003 | https://link.springer.com/
 NUM1#maths-u11-41-q1@1: For A = [[9, 3], [3, 5]], find l₂₂ in the Cholesky factor. | 2 | 0 |  | l₁₁ = 3, l₂₁ = 1, l₂₂ = √(5 − 1) = 2.
 M1#maths-u11-41-q2@1: Which matrix has a Cholesky decomposition? | [[4, 2], [2, 3]] | [[1, 2], [2, 1]] | [[0, 1], [1, 0]] | [[−1, 0], [0, 1]] | [[1, 3], [2, 1]] | It's symmetric with positive leading minors (4 and 8).
 M2#maths-u11-41-q3@2: Why is Cholesky about twice as fast as LU? | Symmetry means only one triangular factor needs computing | It uses fewer rows | It skips the diagonal | It works only on 2 × 2 matrices | It isn't faster | A = LLᵀ needs only L, half the work of separate L and U.
@@ -1468,8 +1468,8 @@ Q: What is the 2-norm of A in terms of its SVD? | The largest singular value σ�
 Q: Does every matrix have an SVD? | Yes.
 SUM: The SVD decomposes any matrix.
 SUM: Truncation gives the best approximations.
-SRC: Eckart C, Young G, The approximation of one matrix by another of lower rank, Psychometrika 1(3), 211 | journal | 1936 | https://doi.org/10.1007/BF02288367
-SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | textbook | 1997 | https://epubs.siam.org/
+SRC: Eckart C, Young G, The approximation of one matrix by another of lower rank, Psychometrika 1(3), 211 | primary | 1936 | https://doi.org/10.1007/BF02288367
+SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | secondary | 1997 | https://epubs.siam.org/
 NUM1#maths-u11-42-q1@1: Find the largest singular value of [[3, 0], [4, 5]], to 3 decimal places. | 6.708 | 0.001 |  | √45 ≈ 6.708.
 M1#maths-u11-42-q2@1: A 1,000 × 1,000 image is approximated with rank 20. About how many numbers are stored? | About 40,000 | About 1,000,000 | About 20 | About 2,000 | About 400 | Each of the 20 terms stores a u vector, a v vector and a singular value: 20 × 2,001 ≈ 40,000.
 M3#maths-u11-42-q3@2: What is the condition number of a square matrix with singular values 10, 2 and 0.01? | 1,000 | 10 | 5 | 0.001 | 100 | The 2-norm condition number is σ_{max}/σ_{min} = 10/0.01 = 1,000.
@@ -1502,8 +1502,8 @@ Q: What do PCA's eigenvalues represent? | The variance along each principal comp
 Q: Why centre the data before PCA? | So components describe variation around the mean, not the mean itself.
 SUM: PCA finds directions of greatest variance.
 SUM: It reduces dimension with minimal loss.
-SRC: Jolliffe IT, Cadima J, Principal component analysis: a review and recent developments, Philosophical Transactions of the Royal Society A 374, 20150202 | journal | 2016 | https://doi.org/10.1098/rsta.2015.0202
-SRC: James G, Witten D, Hastie T, Tibshirani R, An Introduction to Statistical Learning (2nd edn, Springer 2021) | textbook | 2021 | https://www.statlearning.com/
+SRC: Jolliffe IT, Cadima J, Principal component analysis: a review and recent developments, Philosophical Transactions of the Royal Society A 374, 20150202 | primary | 2016 | https://doi.org/10.1098/rsta.2015.0202
+SRC: James G, Witten D, Hastie T, Tibshirani R, An Introduction to Statistical Learning (2nd edn, Springer 2021) | secondary | 2021 | https://www.statlearning.com/
 NUM1#maths-u11-43-q1@1: In the example, what percentage of variance does PC1 explain, to 1 decimal place? | 85.7 | 0.05 | % | 6/7 ≈ 85.7%.
 M1#maths-u11-43-q2@1: How are principal components computed in practice? | From the SVD of the centred data matrix | From the determinant of the data | From the row echelon form | From the mean of each variable | By sorting the data | The right singular vectors of centred data are the principal directions.
 M2#maths-u11-43-q3@2: Two variables have perfect correlation. What does PCA give? | One component with all the variance and one with none | Two equal components | No components | Components along the axes | Negative variance | All points lie on a line, so a single direction carries everything.
@@ -1536,8 +1536,8 @@ Q: How many non-zeros does a tridiagonal n × n matrix have? | 3n − 2.
 Q: What is fill-in? | New non-zeros created during factorisation.
 SUM: Sparse matrices store only non-zeros.
 SUM: Special methods keep them sparse.
-SRC: Davis TA, Direct Methods for Sparse Linear Systems (SIAM 2006) | textbook | 2006 | https://epubs.siam.org/
-SRC: Saad Y, Iterative Methods for Sparse Linear Systems (2nd edn, SIAM 2003) | textbook | 2003 | https://www-users.cse.umn.edu/~saad/IterMethBook_2ndEd.pdf
+SRC: Davis TA, Direct Methods for Sparse Linear Systems (SIAM 2006) | secondary | 2006 | https://epubs.siam.org/
+SRC: Saad Y, Iterative Methods for Sparse Linear Systems (2nd edn, SIAM 2003) | secondary | 2003 | https://www-users.cse.umn.edu/~saad/IterMethBook_2ndEd.pdf
 NUM1#maths-u11-44-q1@1: How many non-zeros does a 10 × 10 tridiagonal matrix have? | 28 | 0 |  | 3 × 10 − 2 = 28.
 M1#maths-u11-44-q2@1: Which method needs only matrix-vector products with A? | The conjugate gradient method | Dense LU decomposition | Computing A^{−1} explicitly | Cramer's rule | Gauss–Jordan on the full matrix | Krylov iterative methods use A only through products Av.
 M2#maths-u11-44-q3@2: Why do sparse direct solvers reorder the matrix first? | A good ordering reduces fill-in, saving memory and time | Reordering changes the solution | It makes the matrix dense | It's required for symmetry | It doesn't help | Elimination order determines how many zeros become non-zero.
@@ -1570,8 +1570,8 @@ Q: What is the inverse of the block diagonal matrix diag(A, D)? | diag(A^{−1},
 Q: What is det of block triangular [[A, B], [0, D]]? | det A × det D.
 SUM: Blocks simplify large matrices.
 SUM: The Schur complement reduces systems.
-SRC: Zhang F (ed), The Schur Complement and Its Applications (Springer 2005) | textbook | 2005 | https://link.springer.com/
-SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | textbook | 2013 | https://www.cambridge.org/
+SRC: Zhang F (ed), The Schur Complement and Its Applications (Springer 2005) | secondary | 2005 | https://link.springer.com/
+SRC: Horn RA, Johnson CR, Matrix Analysis (2nd edn, Cambridge University Press 2013) | secondary | 2013 | https://www.cambridge.org/
 NUM1#maths-u11-45-q1@1: In the example, what is the Schur complement S? | 2.5 | 0.0001 |  | 3 − 1 × ½ × 1 = 2.5.
 M1#maths-u11-45-q2@1: What is det [[A, 0], [0, D]] with det A = 3 and det D = 4? | 12 | 7 | 1 | 0 | 34 | Determinants of block diagonal matrices multiply: 3 × 4 = 12.
 M2#maths-u11-45-q3@2: Why must block multiplication keep the order of blocks? | Matrix blocks generally don't commute | Blocks are scalars | Order never matters | It changes the size | It doesn't need to | Each block product is a matrix product, which isn't commutative.
@@ -1604,8 +1604,8 @@ Q: What is double-precision machine epsilon, roughly? | About 10^{−16}.
 Q: Which iterative method suits symmetric positive definite systems? | Conjugate gradient.
 SUM: Numerical linear algebra balances speed and accuracy.
 SUM: Conditioning limits what any algorithm can do.
-SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | textbook | 1997 | https://epubs.siam.org/
-SRC: Hestenes MR, Stiefel E, Methods of conjugate gradients for solving linear systems, Journal of Research of the National Bureau of Standards 49(6), 409 | journal | 1952 | https://doi.org/10.6028/jres.049.044
+SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | secondary | 1997 | https://epubs.siam.org/
+SRC: Hestenes MR, Stiefel E, Methods of conjugate gradients for solving linear systems, Journal of Research of the National Bureau of Standards 49(6), 409 | primary | 1952 | https://doi.org/10.6028/jres.049.044
 NUM1#maths-u11-46-q1@1: For κ = 100, find the CG reduction factor (√κ − 1)/(√κ + 1) to 3 decimal places. | 0.818 | 0.001 |  | 9/11 ≈ 0.818.
 M1#maths-u11-46-q2@1: What does backward stability guarantee? | The computed answer is exact for slightly perturbed input | The answer is exactly right | The algorithm never rounds | The matrix is well conditioned | The method is iterative | Small backward error plus good conditioning gives accurate answers.
 M3#maths-u11-46-q3@2: An iterative solver converges slowly because κ(A) is huge. What usually helps most? | A good preconditioner that reduces the effective condition number | Using single precision | Removing pivoting | Inverting A explicitly | More digits in the answer | Preconditioning transforms the system so Krylov methods converge in far fewer steps.
@@ -1638,8 +1638,8 @@ Q: What is f(2x, 3y) for a bilinear f? | 6f(x, y).
 Q: What happens to a determinant when two columns are swapped? | It changes sign.
 SUM: Multilinear maps are linear slot by slot.
 SUM: The determinant is the key example.
-SRC: Greub W, Multilinear Algebra (2nd edn, Springer 1978) | textbook | 1978 | https://link.springer.com/
-SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | textbook | 2024 | https://linear.axler.net/
+SRC: Greub W, Multilinear Algebra (2nd edn, Springer 1978) | secondary | 1978 | https://link.springer.com/
+SRC: Axler S, Linear Algebra Done Right (4th edn, Springer 2024) | secondary | 2024 | https://linear.axler.net/
 NUM1#maths-u11-47-q1@1: For the bilinear form f(x, y) = xᵀAy with A = [[1, 2], [3, 4]], find f(e₁, e₂). | 2 | 0 |  | f(e₁, e₂) = a₁₂ = 2.
 M1#maths-u11-47-q2@1: Which function is bilinear on ℝ^{2} × ℝ^{2}? | f(x, y) = x₁y₂ − x₂y₁ | f(x, y) = x₁ + y₁ | f(x, y) = x₁^{2}y₁ | f(x, y) = |x · y| | f(x, y) = x₁y₁ + 1 | Each term is linear in x and linear in y.
 M2#maths-u11-47-q3@2: Why is the determinant called alternating? | Swapping two columns changes its sign | It alternates between 0 and 1 | Its entries alternate in sign | It's only defined for even n | It isn't | Antisymmetry under swaps also makes it zero when two columns are equal.
@@ -1671,8 +1671,8 @@ Q: What is the dimension of the state space of three qubits? | 8 (2 × 2 × 2).
 Q: What size is the Kronecker product of a 2 × 2 and a 3 × 3 matrix? | 6 × 6.
 SUM: Tensor products multiply dimensions.
 SUM: Non-elementary tensors are entangled.
-SRC: Nielsen MA, Chuang IL, Quantum Computation and Quantum Information (10th anniversary edn, Cambridge University Press 2010) | textbook | 2010 | https://www.cambridge.org/
-SRC: Greub W, Multilinear Algebra (2nd edn, Springer 1978) | textbook | 1978 | https://link.springer.com/
+SRC: Nielsen MA, Chuang IL, Quantum Computation and Quantum Information (10th anniversary edn, Cambridge University Press 2010) | secondary | 2010 | https://www.cambridge.org/
+SRC: Greub W, Multilinear Algebra (2nd edn, Springer 1978) | secondary | 1978 | https://link.springer.com/
 NUM1#maths-u11-48-q1@1: What is the dimension of ℂ^{2} ⊗ ℂ^{2} ⊗ ℂ^{2} ⊗ ℂ^{2}? | 16 | 0 |  | 2^{4} = 16.
 M1#maths-u11-48-q2@1: Which element of ℝ^{2} ⊗ ℝ^{2} (written in the basis e_{i} ⊗ e_{j}) is elementary? | (1, 2, 3, 6) | (1, 0, 0, 1) | (0, 1, 1, 0) | (1, 0, 0, −1) | (1, 1, 1, −1) | (1, 2, 3, 6) = (1, 3) ⊗ (1, 2); as a 2 × 2 matrix it has rank 1.
 M3#maths-u11-48-q3@2: Why is the Bell state (e₁ ⊗ e₁ + e₂ ⊗ e₂)/√2 entangled? | As a 2 × 2 coefficient matrix it has rank 2, so it isn't a single product u ⊗ v | It has length 1 | It's a sum of two terms | It's in ℂ^{4} | It isn't entangled | Elementary tensors correspond to rank-1 coefficient matrices.
@@ -1705,8 +1705,8 @@ Q: What type of tensor is a linear map V → V? | (1, 1).
 Q: What is the contraction of v ⊗ w (with a covector) called for matrices? | The trace.
 SUM: Tensor algebra organises all tensors.
 SUM: Contraction and symmetry shape them.
-SRC: Kolda TG, Bader BW, Tensor decompositions and applications, SIAM Review 51(3), 455 | journal | 2009 | https://doi.org/10.1137/07070111X
-SRC: Greub W, Multilinear Algebra (2nd edn, Springer 1978) | textbook | 1978 | https://link.springer.com/
+SRC: Kolda TG, Bader BW, Tensor decompositions and applications, SIAM Review 51(3), 455 | primary | 2009 | https://doi.org/10.1137/07070111X
+SRC: Greub W, Multilinear Algebra (2nd edn, Springer 1978) | secondary | 1978 | https://link.springer.com/
 NUM1#maths-u11-49-q1@1: What is the dimension of the symmetric 2-tensors on ℝ^{3}? | 6 | 0 |  | C(3 + 2 − 1, 2) = C(4, 2) = 6, like symmetric 3 × 3 matrices.
 M1#maths-u11-49-q2@1: What is the dimension of V^{⊗2} for dim V = 4? | 16 | 8 | 6 | 10 | 4 | Tensor products multiply dimensions, so dim(V ⊗ V) = 4 × 4 = 16.
 M2#maths-u11-49-q3@2: What does contracting a (1, 1) tensor give? | A scalar: its trace | A vector | A (2, 2) tensor | A matrix of the same size | Nothing | Pairing the upper and lower index sums the diagonal.
@@ -1740,8 +1740,8 @@ Q: What is v ∧ v? | 0.
 Q: What is the dimension of Λ^{2}(ℝ^{3})? | 3.
 SUM: Wedge products measure oriented volumes.
 SUM: They underlie determinants and forms.
-SRC: Spivak M, Calculus on Manifolds (W. A. Benjamin 1965) | textbook | 1965 | https://www.routledge.com/
-SRC: Winitzki S, Linear Algebra via Exterior Products (2nd edn, self-published 2020) | textbook | 2020 | https://sites.google.com/site/winitzki/linalg
+SRC: Spivak M, Calculus on Manifolds (W. A. Benjamin 1965) | secondary | 1965 | https://www.routledge.com/
+SRC: Winitzki S, Linear Algebra via Exterior Products (2nd edn, self-published 2020) | secondary | 2020 | https://sites.google.com/site/winitzki/linalg
 NUM1#maths-u11-50-q1@1: What is the dimension of Λ^{2}(ℝ^{4})? | 6 | 0 |  | C(4, 2) = 6.
 M1#maths-u11-50-q2@1: What is e₂ ∧ e₁ in terms of e₁ ∧ e₂? | −e₁ ∧ e₂ | e₁ ∧ e₂ | 0 | 2e₁ ∧ e₂ | e₂ ∧ e₂ | Swapping the factors of a wedge product changes its sign, so e₂ ∧ e₁ = −e₁ ∧ e₂.
 M2#maths-u11-50-q3@2: Why does Λ^{2}(ℝ^{3}) let the cross product be treated as a vector? | It has dimension 3, matching ℝ^{3} itself | It has dimension 9 | Wedges are always vectors | It equals ℝ^{2} | It doesn't | C(3, 2) = 3, so 2-vectors pair with ordinary vectors in three dimensions.

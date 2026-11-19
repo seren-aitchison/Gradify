@@ -28,7 +28,7 @@ Q: Why must trigonometric calculus use radians? | The derivative formulas (such 
 SUM: Calculus builds on precalculus skills.
 SUM: Index form makes differentiation and integration routine.
 SRC: Department for Education, Mathematics AS and A level subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-01-q1@1: Which is 5/x^{3} in index form? | 5x^{−3} | 5x^{3} | x^{−15} | 5^{−3}x | (5x)^{−3} | Dividing by x^{3} is multiplying by x^{−3}, and the 5 stays as a coefficient.
 M2#maths-u07-01-q2@2: Which is (x^{2} + 3)/√x in index form? | x^{3/2} + 3x^{−1/2} | x^{2} + 3x^{−1/2} | x^{3/2} + 3 | x + 3x^{1/2} | x^{5/2} + 3x^{−1/2} | x^{2}/x^{1/2} = x^{3/2} and 3/x^{1/2} = 3x^{−1/2}: divide each term separately.
 
@@ -57,8 +57,8 @@ Q: Who independently invented calculus? | Isaac Newton and Gottfried Leibniz.
 Q: What does integration measure? | Accumulation, such as area under a curve or total distance.
 SUM: Calculus studies change and accumulation.
 SUM: Limits gave calculus its rigorous foundation.
-SRC: Boyer CB, The History of the Calculus and Its Conceptual Development (Dover 1959) | textbook | 1959 | https://store.doverpublications.com/
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Boyer CB, The History of the Calculus and Its Conceptual Development (Dover 1959) | secondary | 1959 | https://store.doverpublications.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-02-q1@1: Whose notation, dy/dx and ∫, do we use today? | Leibniz | Newton | Euler | Archimedes | Cauchy | Leibniz introduced dy/dx and the integral sign; Newton used dots and "fluxions".
 M2#maths-u07-02-q2@2: What made calculus rigorous in the 19th century? | The precise definition of a limit | The invention of computers | Euclid's axioms | Decimal notation | The discovery of π | Cauchy and Weierstrass defined limits precisely, replacing vague infinitesimals.
 
@@ -90,8 +90,8 @@ Q: What is lim_{x→1} (x^{2} − 1)/(x − 1)? | 2.
 Q: When does lim_{x→a} f(x) exist? | When the left and right limits exist and are equal.
 SUM: Limits describe approaching behaviour.
 SUM: Indeterminate forms need algebraic work.
-SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | https://www.publishorperish.com/
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-03-q1@1: Find lim_{x→2} (x^{3} − 8)/(x − 2). | 12 | 0 |  | x^{3} − 8 = (x − 2)(x^{2} + 2x + 4), so the limit is 4 + 4 + 4 = 12.
 M1#maths-u07-03-q2@1: What is lim_{x→∞} (5x + 2)/(2x − 1)? | 5/2 | 0 | ∞ | −2 | 5 | Divide top and bottom by x: (5 + 2/x)/(2 − 1/x) → 5/2.
 M3#maths-u07-03-q3@2: What is lim_{x→0} (sin 3x)/x? | 3 | 1 | 0 | 1/3 | It doesn't exist | (sin 3x)/x = 3 × (sin 3x)/(3x), and (sin u)/u → 1 as u → 0.
@@ -121,7 +121,7 @@ Q: Is f(x) = 1/(x − 2) continuous at x = 2? | No: it isn't defined there (an i
 Q: What does the intermediate value theorem need? | A function continuous on a closed interval.
 SUM: Continuity means no breaks.
 SUM: Sign changes locate roots of continuous functions.
-SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | https://www.publishorperish.com/
+SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 SRC: Department for Education, Mathematics AS and A level subject content: numerical methods | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u07-04-q1@1: Which function is continuous for all real x? | sin x + x^{2} | 1/x | ln x | tan x | 1/(x^{2} − 1) | Sums of continuous functions are continuous, and sin x and x^{2} are both continuous everywhere.
 M2#maths-u07-04-q2@2: f(x) = x^{2} + k for x < 1 and 3x for x ≥ 1 is continuous. What is k? | 2 | 3 | 1 | 0 | 4 | At x = 1 the pieces must agree: 1 + k = 3, so k = 2.
@@ -154,8 +154,8 @@ Q: Is |x − 3| differentiable at x = 3? | No: it has a corner there.
 Q: Does differentiability imply continuity? | Yes.
 SUM: Differentiable functions are smooth.
 SUM: Continuity is necessary but not sufficient.
-SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | https://www.publishorperish.com/
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-05-q1@1: Where is f(x) = |x + 2| not differentiable? | At x = −2 | At x = 0 | At x = 2 | Nowhere | Everywhere | The graph has a corner where x + 2 = 0, so the slope jumps from −1 to 1.
 M2#maths-u07-05-q2@2: Which statement about continuity and differentiability is true? | Every differentiable function is continuous | Every continuous function is differentiable | |x| is differentiable at 0 | A jump discontinuity can still be differentiable | ∛x has derivative 0 at x = 0 | Differentiability at a point forces continuity there; the converse fails, as |x| shows.
 M2#maths-u07-05-q3@2: Why is |x| continuous but not differentiable at 0? | Its graph has no gap, but the gradient jumps from −1 to +1 at a corner | Its graph has a gap at 0, so neither property holds | Its gradient is infinite at 0, like a vertical tangent | It isn't defined at 0, so it can't be differentiated | It is differentiable at 0, with derivative 0 there | Continuity needs no break; differentiability needs a single tangent, which a corner lacks.
@@ -188,7 +188,7 @@ Q: If s is displacement and t is time, what is ds/dt? | Velocity.
 SUM: The derivative measures instantaneous rate of change.
 SUM: Chord gradients approach it as h → 0.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-06-q1@1: Find the gradient of the chord of y = x^{3} from x = 1 to x = 2. | 7 | 0 |  | (8 − 1)/(2 − 1) = 7. (The tangent gradients at the ends are 3 and 12.)
 M1#maths-u07-06-q2@1: What does a negative derivative tell you about a function? | It's decreasing at that point | It's negative at that point | It has a maximum | It's increasing | It's zero | The derivative is the gradient: negative gradient means the function is going down.
 M2#maths-u07-06-q3@2: A chord of y = f(x) from x = 2 to x = 2 + h has gradient 5 + 3h. What is f′(2)? | 5 | 8 | 3 | 5 + 3h | 0 | The derivative is the limit as h → 0: 5 + 3h → 5.
@@ -226,7 +226,7 @@ Q: What is the derivative of cos x? | −sin x.
 SUM: Derivatives come from a limit.
 SUM: Standard results make differentiation fast.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | https://www.publishorperish.com/
+SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 M1#maths-u07-07-q1@1: What is d/dx (6x^{3} − 2x + 9)? | 18x^{2} − 2 | 18x^{2} − 2x | 6x^{2} − 2 | 18x^{3} − 2 | 2x^{2} − 2 + 9 | Multiply by the power and reduce it by one; the constant 9 differentiates to 0.
 M2#maths-u07-07-q2@2: What is d/dx (4/x)? | −4/x^{2} | 4 | 4/x^{2} | −4x | 4 ln x | 4/x = 4x^{−1}, which differentiates to −4x^{−2}.
 NUM1#maths-u07-07-q3@1: Differentiate 4x^{3} − 2x and evaluate at x = 1. | 10 | 0 |  | The derivative is 12x^{2} − 2, which is 10 at x = 1.
@@ -260,7 +260,7 @@ Q: Where is f(x) = x^{2} − 6x increasing? | For x > 3.
 SUM: f′ gives tangents, normals and monotonicity.
 SUM: Normals are perpendicular to tangents.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-08-q1@1: Find the gradient of y = x^{3} − 4x^{2} + 2 at x = 3. | 3 | 0 |  | dy/dx = 3x^{2} − 8x = 27 − 24 = 3.
 M1#maths-u07-08-q2@1: What is the tangent to y = x^{2} at (3, 9)? | y = 6x − 9 | y = 6x + 9 | y = 2x + 3 | y = 9x − 18 | y = 3x | The gradient is 2x = 6, so y − 9 = 6(x − 3), giving y = 6x − 9.
 M2#maths-u07-08-q3@2: For which x is f(x) = 2x^{3} − 6x decreasing? | −1 < x < 1 | x > 1 | x < −1 | x > 0 | All x | f′(x) = 6x^{2} − 6 = 6(x − 1)(x + 1) is negative between −1 and 1.
@@ -291,7 +291,7 @@ Q: What is d^{2}s/dt^{2} for motion? | Acceleration.
 SUM: Higher derivatives differentiate repeatedly.
 SUM: The second derivative measures changing gradient.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-09-q1@1: f(x) = 2x^{4} − x^{3}. Find f″(1). | 18 | 0 |  | f′(x) = 8x^{3} − 3x^{2}, f″(x) = 24x^{2} − 6x, so f″(1) = 18.
 M1#maths-u07-09-q2@1: What is the 4th derivative of sin x? | sin x | cos x | −sin x | −cos x | 0 | Derivatives of sin x cycle cos x, −sin x, −cos x, sin x, so the 4th returns to sin x.
 M2#maths-u07-09-q3@2: What is d^{2}/dx^{2} (e^{3x})? | 9e^{3x} | 3e^{3x} | e^{3x} | 6e^{3x} | e^{9x} | Each differentiation multiplies by 3, so twice gives 9e^{3x}.
@@ -324,7 +324,7 @@ Q: Differentiate ln(3x^{2} + 1). | 6x/(3x^{2} + 1).
 SUM: The chain rule handles functions of functions.
 SUM: Multiply the outer derivative by the inner derivative.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-10-q1@1: What is d/dx (e^{4x})? | 4e^{4x} | e^{4x} | 4xe^{4x−1} | e^{4} | 4e^{x} | The inner function 4x has derivative 4, which multiplies e^{4x}.
 M2#maths-u07-10-q2@2: What is d/dx sin(x^{2})? | 2x cos(x^{2}) | cos(x^{2}) | 2x cos(2x) | −2x cos(x^{2}) | 2 cos(x) | Outer cos(x^{2}) times inner derivative 2x.
 M3#maths-u07-10-q3@2: What is d/dx (1/(2x + 3)^{2})? | −4/(2x + 3)^{3} | −2/(2x + 3)^{3} | 1/(2(2x + 3)) | −4/(2x + 3)^{2} | 4/(2x + 3)^{3} | (2x + 3)^{−2} gives −2(2x + 3)^{−3} × 2 = −4(2x + 3)^{−3}.
@@ -360,7 +360,7 @@ Q: Differentiate x^{2} cos x. | 2x cos x − x^{2} sin x.
 SUM: Products need the product rule.
 SUM: Factorise to simplify.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-11-q1@1: What is d/dx (x ln x)? | ln x + 1 | 1/x | ln x | x/x | 1 | u = x and v = ln x: 1 × ln x + x × 1/x = ln x + 1.
 M2#maths-u07-11-q2@2: What is d/dx (x^{3}e^{2x})? | x^{2}e^{2x}(3 + 2x) | 3x^{2}e^{2x} | 6x^{2}e^{2x} | x^{3}e^{2x}(3 + 2x) | 3x^{2} + 2e^{2x} | 3x^{2}e^{2x} + 2x^{3}e^{2x} = x^{2}e^{2x}(3 + 2x).
 
@@ -391,7 +391,7 @@ Q: What is d/dx tan x? | sec^{2} x.
 SUM: Quotients need the quotient rule.
 SUM: Order matters in the numerator.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-12-q1@1: What is d/dx (1/x^{2}) by any method? | −2/x^{3} | −2/x | 2/x^{3} | −1/x^{3} | 1/(2x) | x^{−2} differentiates to −2x^{−3}; the quotient rule gives the same answer.
 M2#maths-u07-12-q2@2: What is d/dx ((x − 1)/(x + 1))? | 2/(x + 1)^{2} | −2/(x + 1)^{2} | 1 | 2x/(x + 1)^{2} | 0 | ((x + 1) − (x − 1))/(x + 1)^{2} = 2/(x + 1)^{2}.
 
@@ -422,7 +422,7 @@ Q: What is d/dx (xy)? | y + x dy/dx.
 SUM: Implicit differentiation needs no rearranging.
 SUM: The chain rule supplies the dy/dx factors.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-13-q1@1: For x^{2} + y^{2} = 13, what is dy/dx at (2, 3)? | −2/3 | 2/3 | −3/2 | 3/2 | 0 | Differentiating gives 2x + 2y dy/dx = 0, so dy/dx = −x/y = −2/3 at (2, 3).
 M2#maths-u07-13-q2@2: What is dy/dx for y^{2} = 4x? | 2/y | 4 | 2y | 4/y^{2} | y/2 | Differentiating y^{2} implicitly gives 2y dy/dx = 4, so dy/dx = 2/y.
 
@@ -453,7 +453,7 @@ Q: What is d/dx (3^{x})? | 3^{x} ln 3.
 Q: What is d/dx (x^{x})? | x^{x}(ln x + 1).
 SUM: Logs turn products and powers into sums.
 SUM: They handle variable exponents.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 NUM1#maths-u07-14-q1@1: For y = x^{x}, find dy/dx at x = 1. | 1 | 0 |  | dy/dx = x^{x}(ln x + 1) = 1 × (0 + 1) = 1.
 M1#maths-u07-14-q2@1: What is d/dx (2^{x})? | 2^{x} ln 2 | x2^{x−1} | 2^{x} | 2^{x}/ln 2 | ln 2 | ln y = x ln 2, so dy/dx = y ln 2 = 2^{x} ln 2.
@@ -488,7 +488,7 @@ Q: Where does a parametric curve have a vertical tangent? | Where dx/dt = 0 and 
 SUM: The chain rule gives parametric gradients.
 SUM: Use the parameter value at the point.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-15-q1@1: For x = t^{2} + 1, y = 4t, find dy/dx at t = 2. | 1 | 0 |  | dx/dt = 2t = 4 and dy/dt = 4, so dy/dx = 4/4 = 1.
 M1#maths-u07-15-q2@1: For x = 5 cos t, y = 5 sin t, what is dy/dx? | −cot t | tan t | −tan t | cot t | 5 | dy/dt = 5 cos t and dx/dt = −5 sin t, so dy/dx = −cos t/sin t.
 M2#maths-u07-15-q3@2: For x = t^{3} − 3t, y = t^{2}, where are the vertical tangents? | t = ±1 | t = 0 | t = ±3 | t = 3 | None | dx/dt = 3t^{2} − 3 = 0 at t = ±1, where dy/dt = 2t ≠ 0.
@@ -519,7 +519,7 @@ Q: What is the marginal cost if C(q) = 3q^{2} + 50? | C′(q) = 6q.
 SUM: Derivatives model rates of change.
 SUM: Units and signs carry meaning.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-16-q1@1: A ball's height is h = 30t − 4.9t^{2} m. Find its velocity at t = 2 s. | 10.4 | 0.01 | m/s | dh/dt = 30 − 9.8t = 30 − 19.6 = 10.4 m s^{−1}.
 M1#maths-u07-16-q2@1: P = 200e^{0.05t}. What is dP/dt when P = 400? | 20 | 10 | 400 | 0.05 | 200 | dP/dt = 0.05P, so 0.05 × 400 = 20 per unit time.
 M2#maths-u07-16-q3@2: The volume of a cube of side x is V = x^{3}. What is dV/dx when x = 4? | 48 | 64 | 12 | 16 | 3 | dV/dx = 3x^{2} = 48: the volume grows by about 48 units^{3} per unit of side.
@@ -550,7 +550,7 @@ Q: When should you substitute the given values? | After differentiating.
 SUM: Related rates use the chain rule in time.
 SUM: Substitute values at the end.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-17-q1@1: A circle's radius grows at 2 cm/s. How fast is its area growing when r = 10 cm? Give the answer to 1 decimal place. | 125.7 | 0.1 | cm²/s | dA/dt = 2πr dr/dt = 2π × 10 × 2 = 40π ≈ 125.7 cm^{2} s^{−1}.
 M1#maths-u07-17-q2@1: For a cube of side x, dx/dt = 0.1 cm/s. What is dV/dt when x = 10 cm? | 30 cm³/s | 300 cm³/s | 3 cm³/s | 100 cm³/s | 0.3 cm³/s | By the chain rule dV/dt = 3x^{2} × dx/dt = 300 × 0.1 = 30 cm^{3} s^{−1}.
 M2#maths-u07-17-q3@2: A sphere's volume increases at 36π cm³/s. What is dr/dt when r = 3 cm? | 1 cm/s | 3 cm/s | 1/3 cm/s | 9 cm/s | 4 cm/s | dV/dt = 4πr^{2} dr/dt: 36π = 36π dr/dt, so dr/dt = 1.
@@ -582,8 +582,8 @@ Q: What is lim_{x→0} (e^{3x} − 1)/x? | 3.
 Q: Does L'Hôpital's rule use the quotient rule? | No: differentiate the top and bottom separately.
 SUM: L'Hôpital's rule handles 0/0 and ∞/∞.
 SUM: Other indeterminate forms must be rewritten first.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
-SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | https://www.publishorperish.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
+SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 NUM1#maths-u07-18-q1@1: Find lim_{x→0} (sin 4x)/(2x). | 2 | 0 |  | 0/0, so differentiate: 4 cos 4x/2 → 4/2 = 2.
 M1#maths-u07-18-q2@1: What is lim_{x→∞} ln x/x? | 0 | 1 | ∞ | e | −1 | ∞/∞, so (1/x)/1 → 0: logarithms grow more slowly than x.
 M3#maths-u07-18-q3@2: Why can't L'Hôpital's rule be used for lim_{x→1} (x^{2} + 1)/(x + 1)? | It isn't an indeterminate form: the limit is simply 1 | The functions aren't differentiable | The limit is infinite | x → 1 isn't allowed | It gives the same answer anyway | Substitution gives 2/2 = 1; the rule only applies to 0/0 or ∞/∞.
@@ -612,7 +612,7 @@ Q: What is a stationary point of inflection? | A stationary point where the grad
 SUM: Stationary points have zero gradient.
 SUM: The second derivative usually classifies them.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-19-q1@1: Find the x-coordinate of the stationary point of y = x^{2} − 10x + 3. | 5 | 0 |  | dy/dx = 2x − 10 = 0 gives x = 5 (a minimum, since d^{2}y/dx^{2} = 2 > 0).
 M1#maths-u07-19-q2@1: At a stationary point, f″(x) = 4. What kind of point is it? | A minimum | A maximum | An inflection | Not stationary | It can't be decided | A positive second derivative means the curve is concave up, so it's a minimum.
 M2#maths-u07-19-q3@2: What kind of stationary point does y = x^{3} have at the origin? | A stationary point of inflection | A maximum | A minimum | It has none | A corner | The gradient 3x^{2} is positive on both sides of 0, so it's an inflection, not a turning point.
@@ -641,8 +641,8 @@ Q: Is x = 0 a critical point of f(x) = |x|? | Yes: the derivative doesn't exist 
 Q: Does every critical point give a maximum or minimum? | No: x^{3} at 0 is a counterexample.
 SUM: Critical points are candidates for extrema.
 SUM: Include points where f′ doesn't exist.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
-SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | https://www.publishorperish.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
+SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 M1#maths-u07-20-q1@1: Which is a critical point of f(x) = x^{2} − 4x? | x = 2 | x = 0 | x = 4 | x = −2 | x = 1 | Critical points are where f′(x) = 0: here 2x − 4 = 0, so x = 2.
 M2#maths-u07-20-q2@2: Where are the critical points of f(x) = √(x)(x − 3) for x ≥ 0? | x = 0 and x = 1 | x = 3 only | x = 1 only | x = 0 and x = 3 | x = 3/2 | f′(x) = (3x − 3)/(2√x): zero at x = 1, undefined at x = 0 (an endpoint where f is defined).
 
@@ -669,7 +669,7 @@ Q: What does the first derivative test check? | Whether f′ changes sign at the
 Q: Can a local minimum be higher than a local maximum? | Yes.
 SUM: Local extrema are peaks and valleys.
 SUM: The first derivative test always works.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 M1#maths-u07-21-q1@1: f′ changes from positive to negative at x = 2. What is at x = 2? | A local maximum | A local minimum | A point of inflection | An asymptote | Nothing | The function rises then falls, so x = 2 is a peak.
 M2#maths-u07-21-q2@2: What is the local minimum value of f(x) = x^{3} − 3x? | −2 | 2 | 0 | −1 | 1 | f′(x) = 3x^{2} − 3 = 0 at x = ±1; f″(1) = 6 > 0, and f(1) = −2.
@@ -697,7 +697,7 @@ Q: Where can the global maximum of a continuous function on [a, b] occur? | At a
 Q: What does the extreme value theorem guarantee? | A continuous function on a closed interval has a maximum and a minimum.
 SUM: Global extrema compare critical points and endpoints.
 SUM: Modelling needs a one-variable function.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 NUM1#maths-u07-22-q1@1: Find the maximum value of f(x) = 12x − x^{3} on 0 ≤ x ≤ 3. | 16 | 0 |  | f′ = 12 − 3x^{2} = 0 at x = 2, f(2) = 16; f(0) = 0 and f(3) = 9, so the maximum is 16.
 M1#maths-u07-22-q2@1: Two positive numbers add to 20. What is the largest possible product? | 100 | 96 | 400 | 200 | 99 | P = x(20 − x), P′ = 20 − 2x = 0 at x = 10, giving 10 × 10 = 100.
@@ -730,7 +730,7 @@ Q: What does convexity guarantee about minima? | Any local minimum is a global m
 SUM: The second derivative measures bending.
 SUM: Convexity makes optimisation reliable.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | textbook | 2004 | https://web.stanford.edu/~boyd/cvxbook/
+SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | secondary | 2004 | https://web.stanford.edu/~boyd/cvxbook/
 M1#maths-u07-23-q1@1: On which interval is f(x) = x^{3} − 3x^{2} concave? | x < 1 | x > 1 | x < 0 | x > 3 | All x | The curve is concave where f″(x) < 0: f″(x) = 6x − 6 < 0 when x < 1.
 M2#maths-u07-23-q2@2: Which function is convex for all real x? | x^{2} + e^{x} | ln x | −x^{2} | sin x | x^{3} | Both x^{2} and e^{x} have positive second derivatives, so their sum does too.
 
@@ -760,7 +760,7 @@ Q: Does y = x^{4} have an inflection at x = 0? | No: f″ = 12x^{2} doesn't chan
 SUM: Inflections change concavity.
 SUM: Check the sign change of f″.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-24-q1@1: Find the x-coordinate of the point of inflection of y = x^{3} + 3x^{2} − 9x. | -1 | 0 |  | y″ = 6x + 6 = 0 at x = −1, where y″ changes sign.
 M1#maths-u07-24-q2@1: Which curve has a point of inflection at the origin? | y = x^{3} | y = x^{2} | y = x^{4} | y = |x| | y = e^{x} | y″ = 6x changes sign at 0; for x^{4}, y″ = 12x^{2} doesn't.
 M2#maths-u07-24-q3@2: For y = sin x on 0 < x < 2π, where is the inflection? | x = π | x = π/2 | x = 3π/2 | x = π/4 | There isn't one | y″ = −sin x is zero at x = π and changes sign there, so it's an inflection.
@@ -794,7 +794,7 @@ Q: What is the horizontal asymptote of y = (2x + 1)/(x − 5)? | y = 2.
 SUM: Sketches show key features.
 SUM: Calculus finds turning points; algebra finds intercepts and asymptotes.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-25-q1@1: What is the vertical asymptote of y = 3/(x + 4)? | x = −4 | x = 4 | y = 0 | x = 3 | y = 3 | The denominator is zero at x = −4, where y grows without bound.
 M2#maths-u07-25-q2@2: What is the horizontal asymptote of y = (6x^{2} + 1)/(3x^{2} − 2)? | y = 2 | y = 6 | y = 0 | y = 1/2 | None | As x → ∞, the leading terms dominate: 6x^{2}/3x^{2} = 2.
 M2#maths-u07-25-q3@2: Where are the asymptotes of y = 2/(x − 1) + 1? | x = 1 and y = 1 | x = −1 and y = 1 | x = 2 and y = 1 | x = 1 and y = 2 | There are none | The denominator is zero at x = 1, and the curve approaches y = 1 as x grows.
@@ -828,7 +828,7 @@ Q: How do you find distance from a velocity function? | Integrate the velocity o
 SUM: Integration accumulates.
 SUM: It reverses differentiation.
 SRC: Department for Education, Mathematics AS and A level subject content: integration | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-26-q1@1: A tap's flow rate is r(t) = 2t litres per minute. How many litres flow in the first 5 minutes? | 25 | 0 | litres | ∫_{0}^{5} 2t dt = [t^{2}]_{0}^{5} = 25 litres.
 M1#maths-u07-26-q2@1: Which quantity is found by integrating acceleration with respect to time? | Velocity | Displacement | Force | Jerk | Mass | Acceleration is the derivative of velocity, so integrating it gives velocity.
 M2#maths-u07-26-q3@2: What does ∫_{a}^{b} f(x) dx represent if f is positive? | The area between the curve and the x-axis from a to b | The gradient at b | The average of f(a) and f(b) | The length of the curve | f(b) − f(a) | For a positive function, the definite integral is the area under the curve.
@@ -864,7 +864,7 @@ Q: What is ∫ e^{2x} dx? | ½e^{2x} + c.
 SUM: Indefinite integrals are families of antiderivatives.
 SUM: Boundary conditions fix the constant.
 SRC: Department for Education, Mathematics AS and A level subject content: integration | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-27-q1@1: What is ∫ (4x − 1) dx? | 2x^{2} − x + c | 4 + c | 2x^{2} − 1 + c | 4x^{2} − x + c | x^{2} − x + c | 4x integrates to 2x^{2}, −1 integrates to −x, plus the constant c.
 M2#maths-u07-27-q2@2: dy/dx = 2x and y = 7 when x = 2. What is y? | x^{2} + 3 | x^{2} + 7 | x^{2} − 3 | 2x^{2} − 1 | x^{2} | y = x^{2} + c, and 7 = 4 + c gives c = 3.
 M3#maths-u07-27-q3@2: What is ∫ 1/(3x) dx? | (1/3) ln|x| + c | ln|3x|/3x + c | 3 ln|x| + c | x^{0}/0 + c | ln|x|/x + c | 1/(3x) = (1/3) × 1/x, and ∫ 1/x dx = ln|x|.
@@ -898,8 +898,8 @@ Q: Does a left Riemann sum over- or underestimate for an increasing function? | 
 Q: Where does the notation ∫ ... dx come from? | A sum (S) of f(x) times small widths Δx.
 SUM: Riemann sums approximate areas with rectangles.
 SUM: The definite integral is their limit.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
-SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | https://www.publishorperish.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
+SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 NUM1#maths-u07-28-q1@1: Estimate ∫_{0}^{3} x dx with three strips and left endpoints. | 3 | 0 |  | Δx = 1; heights 0, 1 and 2 sum to 3; 3 × 1 = 3 (exact value 4.5).
 M1#maths-u07-28-q2@1: With n strips on [a, b], what is the width of each? | (b − a)/n | n/(b − a) | b − a | (a + b)/n | 1/n | The interval's length divided equally into n parts.
 M2#maths-u07-28-q3@2: For a decreasing function, how does a right Riemann sum compare with the integral? | It underestimates | It overestimates | It's exact | It's always zero | It depends on n only | Right endpoints of a decreasing function are the lowest points in each strip.
@@ -937,7 +937,7 @@ Q: Why is ∫_{−1}^{1} x^{3} dx = 0? | The equal areas above and below the axi
 SUM: Definite integrals give net signed areas.
 SUM: Split at roots for total area.
 SRC: Department for Education, Mathematics AS and A level subject content: integration | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-29-q1@1: Evaluate ∫_{1}^{4} 3√x dx. | 14 | 0 |  | [2x^{3/2}]_{1}^{4} = 2 × 8 − 2 × 1 = 14.
 M1#maths-u07-29-q2@1: What is ∫_{0}^{2} (x^{3} + 1) dx? | 6 | 4 | 5 | 8 | 2 | An antiderivative is x^{4}/4 + x; evaluating from 0 to 2 gives 4 + 2 − 0 = 6.
 M2#maths-u07-29-q3@2: What is the total area between y = x − 1 and the x-axis from x = 0 to x = 2? | 1 | 0 | 2 | 1/2 | −1 | Each triangle has area 1/2, one below and one above the axis; the total area is 1, though the integral is 0.
@@ -969,8 +969,8 @@ Q: What is d/dx ∫_{2}^{x} t^{3} dt? | x^{3}.
 Q: Which two processes does the theorem show are inverses? | Differentiation and integration.
 SUM: Calculus has two halves linked by one theorem.
 SUM: Antiderivatives evaluate definite integrals.
-SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | https://www.publishorperish.com/
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-30-q1@1: What is d/dx ∫_{0}^{x} √(1 + t^{2}) dt? | √(1 + x^{2}) | √(1 + x^{2}) − 1 | x√(1 + x^{2}) | 0 | 1/(2√(1 + x^{2})) | Part 1 of the theorem: the derivative of the accumulation function is the integrand at x.
 M2#maths-u07-30-q2@2: What is d/dx ∫_{0}^{x^{3}} sin t dt? | 3x^{2} sin(x^{3}) | sin(x^{3}) | −cos(x^{3}) | 3x^{2} cos(x^{3}) | sin x | The integrand at the upper limit, sin(x^{3}), times the derivative of x^{3}, which is 3x^{2}.
 NUM1#maths-u07-30-q3@1: Using F(x) = x^{3}/3, what is ∫₀^{3} x^{2} dx? | 9 | 0 |  | F(3) − F(0) = 27/3 = 9, the value the Riemann sums approach.
@@ -1002,7 +1002,7 @@ Q: What substitution suits ∫ cos x e^{sin x} dx? | u = sin x.
 SUM: Substitution reverses the chain rule.
 SUM: Change limits in definite integrals.
 SRC: Department for Education, Mathematics AS and A level subject content: integration | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-31-q1@1: What is ∫ 2x e^{x^{2}} dx? | e^{x^{2}} + c | 2e^{x^{2}} + c | x^{2}e^{x^{2}} + c | e^{2x} + c | e^{x^{2}}/(2x) + c | With u = x^{2}, du = 2x dx, the integral becomes ∫ e^{u} du = e^{u} + c.
 M2#maths-u07-31-q2@2: What is ∫ (2x + 3)^{4} dx? | (2x + 3)^{5}/10 + c | (2x + 3)^{5}/5 + c | 2(2x + 3)^{5}/5 + c | (2x + 3)^{3}/12 + c | 4(2x + 3)^{3} + c | With u = 2x + 3, dx = du/2, so ∫ u^{4}/2 du = u^{5}/10 + c.
 
@@ -1035,7 +1035,7 @@ Q: How do you integrate ln x by parts? | Take u = ln x and dv/dx = 1.
 SUM: Parts reverses the product rule.
 SUM: Choose u to simplify when differentiated.
 SRC: Department for Education, Mathematics AS and A level subject content: integration | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-32-q1@1: Evaluate ∫_{0}^{1} x e^{x} dx. | 1 | 0 |  | [x e^{x} − e^{x}]_{0}^{1} = (e − e) − (0 − 1) = 1.
 M1#maths-u07-32-q2@1: For ∫ x^{2} ln x dx, which choice of u is best? | u = ln x | u = x^{2} | u = x^{2} ln x | u = 1 | u = x | Logarithms come first in LIATE, and ln x simplifies to 1/x when differentiated.
 M3#maths-u07-32-q3@2: What is ∫ ln x dx? | x ln x − x + c | 1/x + c | x ln x + c | (ln x)^{2}/2 + c | ln x − x + c | Parts with u = ln x, dv = dx gives x ln x − ∫ 1 dx.
@@ -1067,7 +1067,7 @@ Q: What is ∫ 1/(x − 2)^{2} dx? | −1/(x − 2) + c.
 SUM: Partial fractions make rational integrals routine.
 SUM: Repeated factors give non-log terms.
 SRC: Department for Education, Mathematics AS and A level subject content: integration | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u07-33-q1@1: What is ∫ (1/x − 1/(x + 1)) dx? | ln|x/(x + 1)| + c | ln|x(x + 1)| + c | 1/x^{2} + c | ln|x| + c | −1/(x(x + 1)) + c | ln|x| − ln|x + 1| combines to ln|x/(x + 1)|.
 M2#maths-u07-33-q2@2: What is ∫ 2/(x^{2} − 1) dx? | ln|(x − 1)/(x + 1)| + c | 2 ln|x^{2} − 1| + c | ln|x^{2} − 1| + c | 2 arctan x + c | ln|(x + 1)/(x − 1)| + c | 2/(x^{2} − 1) = 1/(x − 1) − 1/(x + 1), which integrates to ln|x − 1| − ln|x + 1|.
 
@@ -1099,7 +1099,7 @@ Q: What is ∫ cos 3x dx? | (1/3) sin 3x + c.
 SUM: Identities turn powers into integrable forms.
 SUM: Substitution handles odd powers.
 SRC: Department for Education, Mathematics AS and A level subject content: integration | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 NUM1#maths-u07-34-q1@1: Evaluate ∫_{0}^{π} sin x dx. | 2 | 0 |  | [−cos x]_{0}^{π} = 1 − (−1) = 2.
 M1#maths-u07-34-q2@1: What is ∫ sec^{2} 2x dx? | (1/2) tan 2x + c | tan 2x + c | 2 tan 2x + c | sec 2x + c | (1/2) sec^{2} 2x + c | d/dx tan 2x = 2 sec^{2} 2x, so divide by 2.
 M2#maths-u07-34-q3@2: Which identity integrates sin^{2} x? | sin^{2} x = ½(1 − cos 2x) | sin^{2} x = 1 + cos^{2} x | sin^{2} x = 2 sin x cos x | sin^{2} x = tan^{2} x + 1 | sin^{2} x = cos 2x | The double angle formula replaces the square with a first-power cosine, which integrates directly.
@@ -1132,7 +1132,7 @@ Q: Does ∫_{1}^{∞} 1/x^{3} dx converge? | Yes, to 1/2.
 Q: Does ∫_{1}^{∞} 1/√x dx converge? | No: p = 1/2 ≤ 1.
 SUM: Improper integrals are limits.
 SUM: They converge or diverge.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u07-35-q1@1: Evaluate ∫_{2}^{∞} 4/x^{3} dx. | 0.5 | 0.001 |  | [−2/x^{2}]_{2}^{∞} = 0 − (−2/4) = 1/2.
 M1#maths-u07-35-q2@1: Which integral diverges? | ∫_{1}^{∞} 1/x dx | ∫_{1}^{∞} 1/x^{2} dx | ∫_{0}^{∞} e^{−x} dx | ∫_{0}^{1} 1/√x dx | ∫_{1}^{∞} x^{−1.5} dx | ∫ 1/x = ln x, which grows without bound as x → ∞.
@@ -1165,7 +1165,7 @@ Q: How many strips does Simpson's rule need? | An even number.
 SUM: Numerical methods estimate definite integrals.
 SUM: Convexity decides the error's direction for the trapezium rule.
 SRC: Department for Education, Mathematics AS and A level subject content: numerical methods | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | textbook | 2016 | https://www.cengage.co.uk/
+SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | secondary | 2016 | https://www.cengage.co.uk/
 NUM1#maths-u07-36-q1@1: Use the trapezium rule with 2 strips to estimate ∫_{0}^{2} x^{2} dx. | 3 | 0 |  | h = 1; (1/2)[0 + 2(1) + 4] = 3 (exact value 8/3).
 M1#maths-u07-36-q2@1: In the trapezium rule with n strips on [a, b], what is h? | (b − a)/n | n/(b − a) | (b − a)/(n + 1) | b − a | 1/n | h is the strip width: the interval's length divided by the number of strips.
 M2#maths-u07-36-q3@2: Which rule is usually more accurate for a smooth function with the same points? | Simpson's rule | The trapezium rule | They're always equal | A left Riemann sum | A right Riemann sum | Simpson's rule fits parabolas, giving errors of order h^{4} instead of h^{2}.
@@ -1198,7 +1198,7 @@ Q: What is the surface area of a sphere of radius r? | 4πr^{2}.
 SUM: Arc length sums tiny hypotenuses.
 SUM: Surface area sums bands of circumference 2πy.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-37-q1@1: Find the length of the line y = 3x/4 from x = 0 to x = 4. | 5 | 0 |  | √(1 + 9/16) = 5/4, and ∫_{0}^{4} 5/4 dx = 5 (a 3-4-5 triangle).
 M1#maths-u07-37-q2@1: Which integral gives the arc length of y = x^{2} from 0 to 1? | ∫_{0}^{1} √(1 + 4x^{2}) dx | ∫_{0}^{1} √(1 + x^{4}) dx | ∫_{0}^{1} (1 + 2x) dx | ∫_{0}^{1} 2πx^{2} dx | ∫_{0}^{1} √(1 + 2x) dx | dy/dx = 2x, so (dy/dx)^{2} = 4x^{2} goes under the root.
 M2#maths-u07-37-q3@2: Rotating y = x from x = 0 to x = 1 about the x-axis gives a cone. What is its curved surface area? | π√2 | 2π | π | 2π√2 | π/√2 | S = 2π ∫_{0}^{1} x√2 dx = 2π√2 × ½ = π√2, matching πrl with r = 1, l = √2.
@@ -1229,7 +1229,7 @@ Q: What's the formula for the volume about the y-axis? | V = π ∫ x^{2} dy.
 SUM: Discs sum to volumes.
 SUM: Washers handle hollow solids.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-38-q1@1: Find the volume when y = x is rotated about the x-axis from x = 0 to x = 3, as a multiple of π. | 9 | 0 | π | π ∫_{0}^{3} x^{2} dx = π × 9: a cone of radius 3 and height 3.
 M1#maths-u07-38-q2@1: Rotating y = √x from 0 to 2 about the x-axis gives a volume of: | 2π | 4π | π | 8π/3 | √2π | V = π ∫ y^{2} dx = π ∫_{0}^{2} x dx = π × [x^{2}/2]_{0}^{2} = 2π.
 M3#maths-u07-38-q3@2: Which integral gives the volume between y = 3 and y = x^{2} + 1 (from x = −√2 to √2) rotated about the x-axis? | π ∫ (9 − (x^{2} + 1)^{2}) dx | π ∫ (3 − x^{2} − 1)^{2} dx | π ∫ (x^{2} + 1)^{2} dx | 2π ∫ x(2 − x^{2}) dx | π ∫ 9 dx | Washers: outer radius 3 and inner radius x^{2} + 1, so subtract the squares.
@@ -1298,7 +1298,7 @@ Q: Does the harmonic series converge? | No: it diverges.
 SUM: Some infinite series have finite sums.
 SUM: Geometric series converge when |r| < 1.
 SRC: Department for Education, Mathematics AS and A level subject content: sequences and series | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | https://www.publishorperish.com/
+SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 NUM1#maths-u07-40-q1@1: Find the sum to infinity of 27 − 9 + 3 − 1 + …. | 20.25 | 0.001 |  | a = 27 and r = −1/3, so S = 27/(4/3) = 20.25.
 M1#maths-u07-40-q2@1: For which r does a geometric series converge? | |r| < 1 | r > 1 | r = 1 | r < 0 | All r | The terms shrink to zero fast enough only when |r| < 1.
 M3#maths-u07-40-q3@2: Why does 1 + 1/2 + 1/3 + 1/4 + … diverge although its terms tend to 0? | Its partial sums grow without bound (like ln n) | It doesn't: it converges to 2 | Its terms are negative | It's a geometric series with r = 1 | It converges to π^{2}/6 | Grouping terms shows each block of terms adds at least ½, so the sum is unbounded.
@@ -1328,8 +1328,8 @@ Q: Does Σ 1/n^{3} converge? | Yes: it's a p-series with p = 3 > 1.
 Q: What does the ratio test conclude if L = 1? | Nothing: it's inconclusive.
 SUM: Convergence tests decide behaviour without summing.
 SUM: Absolute convergence is the safer kind.
-SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | https://www.publishorperish.com/
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 M1#maths-u07-41-q1@1: Which series converges? | Σ 1/n^{2} | Σ 1/n | Σ 1/√n | Σ 1 | Σ n | A p-series with p = 2 > 1 converges (to π^{2}/6).
 M2#maths-u07-41-q2@2: The ratio test gives L = 3 for a series. What follows? | It diverges | It converges | It's inconclusive | It converges absolutely | It sums to 3 | L > 1 means the terms eventually grow, so the series diverges.
 
@@ -1359,8 +1359,8 @@ Q: What is the radius of convergence of Σ x^{n}/n!? | Infinite.
 Q: What function is 1 + x + x^{2} + … for |x| < 1? | 1/(1 − x).
 SUM: Power series are infinite polynomials.
 SUM: They converge within a radius.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
-SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | https://www.publishorperish.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
+SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 NUM1#maths-u07-42-q1@1: What is the radius of convergence of Σ x^{n}/3^{n}? | 3 | 0 |  | It's geometric with ratio x/3, converging when |x/3| < 1, so R = 3.
 M1#maths-u07-42-q2@1: Which function has the power series x − x^{3}/3 + x^{5}/5 − …? | arctan x | sin x | ln(1 + x) | e^{−x} | tan x | Integrating 1/(1 + x^{2}) = 1 − x^{2} + x^{4} − … term by term gives arctan x.
 M2#maths-u07-42-q3@2: For Σ x^{n}/n, what is the interval of convergence? | −1 ≤ x < 1 | −1 < x < 1 | −1 ≤ x ≤ 1 | x < 1 | All real x | R = 1; at x = −1 it's the alternating harmonic series (converges), at x = 1 the harmonic series (diverges).
@@ -1389,8 +1389,8 @@ Q: What is the first-order Taylor polynomial of f about a? | f(a) + f′(a)(x �
 Q: Why is sin θ ≈ θ for small θ? | It's the first term of the Taylor (Maclaurin) series of sin.
 SUM: Taylor series build functions from derivatives.
 SUM: Truncations give accurate local approximations.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
-SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | textbook | 2008 | https://www.publishorperish.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
+SRC: Spivak M, Calculus (4th edn, Publish or Perish 2008) | secondary | 2008 | https://www.publishorperish.com/
 M1#maths-u07-43-q1@1: What is the coefficient of (x − a)^{2} in a Taylor series? | f″(a)/2 | f″(a) | 2f″(a) | f′(a)/2 | f(a)/2 | Each term is f^{(n)}(a)(x − a)^{n}/n!, so the x^{2} term has f″(a)/2! = f″(a)/2.
 M2#maths-u07-43-q2@2: The linear approximation of e^{x} about x = 0 gives e^{0.1} ≈ | 1.1 | 1.0 | 1.105 | 0.9 | 1.01 | e^{x} ≈ 1 + x near 0, so e^{0.1} ≈ 1.1 (true value 1.105…).
 
@@ -1421,7 +1421,7 @@ Q: For which x is the series for ln(1 + x) valid? | −1 < x ≤ 1.
 SUM: Maclaurin series expand functions about 0.
 SUM: The standard series combine to give many more.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
 NUM1#maths-u07-44-q1@1: Use the first three terms of the series for e^{x} to estimate e^{0.2}, to 3 decimal places. | 1.22 | 0.0005 |  | 1 + 0.2 + 0.04/2 = 1.22 (true value 1.2214…).
 M1#maths-u07-44-q2@1: What is the coefficient of x^{3} in the Maclaurin series of sin x? | −1/6 | 1/6 | 1/3 | −1/3 | 0 | sin x = x − x^{3}/3! + x^{5}/5! − …, and 3! = 6, so the coefficient is −1/6.
 M3#maths-u07-44-q3@2: What is the Maclaurin series of e^{−x^{2}} up to x^{4}? | 1 − x^{2} + x^{4}/2 | 1 − x^{2} + x^{4} | 1 + x^{2} + x^{4}/2 | 1 − 2x + 2x^{2} | 1 − x^{2}/2 + x^{4}/24 | Substitute −x^{2} into e^{u} = 1 + u + u^{2}/2: 1 − x^{2} + x^{4}/2.

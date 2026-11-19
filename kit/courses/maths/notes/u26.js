@@ -32,8 +32,8 @@ Q: What is a conjecture? | A statement believed true but not yet proved.
 Q: What does specialising mean? | Trying particular cases to understand a problem.
 SUM: Explore, conjecture, test, prove.
 SUM: Habits of mind can be practised.
-SRC: Pólya G, How to Solve It (Princeton University Press 1945; 2nd edn 1957) | textbook | 1957 | https://press.princeton.edu/
-SRC: Mason J, Burton L, Stacey K, Thinking Mathematically (2nd edn, Pearson 2010) | textbook | 2010 | https://www.pearson.com/
+SRC: Pólya G, How to Solve It (Princeton University Press 1945; 2nd edn 1957) | secondary | 1957 | https://press.princeton.edu/
+SRC: Mason J, Burton L, Stacey K, Thinking Mathematically (2nd edn, Pearson 2010) | secondary | 2010 | https://www.pearson.com/
 NUM1#maths-u26-01-q1@1: Using the pattern that the first n odd numbers sum to n^{2}, what is 1 + 3 + 5 + … + 39? | 400 | 0 |  | There are 20 odd numbers up to 39, so the sum is 20^{2} = 400.
 M1#maths-u26-01-q2@1: What is the best response to a conjecture that holds for the first ten cases? | Look for counterexamples and then try to prove it | Accept it as proved, since ten cases is plenty | Check one more case, then call it a theorem | Abandon it, since patterns usually break | Publish it as a theorem without proof | Patterns can fail later, so the conjecture needs testing and proof.
 M2#maths-u26-01-q3@2: Why do mathematicians specialise before generalising? | Particular cases reveal structure and suggest what the general statement and proof should be | Special cases are always enough, so no general statement is ever needed | Generalising is never useful until every special case has been checked | It avoids the need for a proof, since examples settle the question | They don't; mathematicians always begin with the most general case | Working examples builds the intuition that guides a general argument.
@@ -69,8 +69,8 @@ Q: What is a lemma? | A helping result used to prove a theorem.
 Q: What should you suspect if a proof never uses one of its hypotheses? | Either the result is stronger than stated or the proof has a gap.
 SUM: Proofs justify every step.
 SUM: Read them critically.
-SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
-SRC: Houston K, How to Think Like a Mathematician (Cambridge University Press 2009) | textbook | 2009 | https://www.cambridge.org/
+SRC: Velleman DJ, How to Prove It: A Structured Approach (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
+SRC: Houston K, How to Think Like a Mathematician (Cambridge University Press 2009) | secondary | 2009 | https://www.cambridge.org/
 NUM1#maths-u26-02-q1@1: In the faulty proof that 1 = 2, which step number (counting a = b as step 1, a^{2} = ab as step 2, a^{2} − b^{2} = ab − b^{2} as step 3, the factorisation as step 4 and a + b = b as step 5) contains the error? | 5 | 0 |  | Getting from step 4 to step 5 divides by a − b = 0.
 M1#maths-u26-02-q2@1: What is a corollary? | A result that follows readily from a theorem | An unproved conjecture awaiting proof | A definition introduced before a theorem | An axiom accepted without any proof | A counterexample to a general claim | Corollaries are quick consequences of a main result.
 M2#maths-u26-02-q3@2: Why should a proof be tested on a specific example? | Seeing the steps work on a concrete case can expose hidden errors or gaps | Examples prove the general case, so testing completes the proof | It replaces the proof entirely once one example works | Examples are never useful for checking a proof's steps | It shouldn't be; examples only confuse the reader | A step that fails on an example can't be valid in general.
@@ -106,8 +106,8 @@ Q: What does modus tollens conclude from P → Q and not Q? | Not P.
 Q: What makes an argument sound? | It is valid and its premises are true.
 SUM: Valid forms guarantee conclusions.
 SUM: Watch for look-alike fallacies.
-SRC: Hurley PJ, Watson L, A Concise Introduction to Logic (13th edn, Cengage 2018) | textbook | 2018 | https://www.cengage.com/
-SRC: Enderton HB, A Mathematical Introduction to Logic (2nd edn, Academic Press 2001) | textbook | 2001 | https://www.elsevier.com/
+SRC: Hurley PJ, Watson L, A Concise Introduction to Logic (13th edn, Cengage 2018) | secondary | 2018 | https://www.cengage.com/
+SRC: Enderton HB, A Mathematical Introduction to Logic (2nd edn, Academic Press 2001) | secondary | 2001 | https://www.elsevier.com/
 NUM1#maths-u26-03-q1@1: How many rows of a truth table must be checked to test the validity of an argument with 3 propositional variables? | 8 | 0 | rows | Each variable is true or false, giving 2^{3} = 8 rows.
 M1#maths-u26-03-q2@1: Which argument form is valid? | If P then Q; not Q; therefore not P | If P then Q; Q; therefore P | If P then Q; not P; therefore not Q | P or Q; P; therefore not Q | If P then Q; therefore Q | Modus tollens is valid; the others are fallacies or unwarranted.
 M2#maths-u26-03-q3@2: Why can a valid argument have a false conclusion? | Validity guarantees truth only when every premise is true; a false premise can lead to a false conclusion | Valid arguments always have true conclusions, whatever their premises | Validity depends on whether the conclusion turns out to be true | A false conclusion automatically makes the argument invalid | It can't; validity and truth are the same property | Validity is about form, not the actual truth of premises.
@@ -142,8 +142,8 @@ Q: Is mathematical induction a form of inductive reasoning? | No, it's deductive
 Q: How many regions do 6 points on a circle give with all chords? | 31.
 SUM: Patterns suggest; proofs confirm.
 SUM: Inductive conclusions are probable.
-SRC: Pólya G, Mathematics and Plausible Reasoning, Volume 1: Induction and Analogy in Mathematics (Princeton University Press 1954) | textbook | 1954 | https://press.princeton.edu/
-SRC: Guy RK, The strong law of small numbers, American Mathematical Monthly 95(8), 697 | journal | 1988 | https://doi.org/10.1080/00029890.1988.11972074
+SRC: Pólya G, Mathematics and Plausible Reasoning, Volume 1: Induction and Analogy in Mathematics (Princeton University Press 1954) | secondary | 1954 | https://press.princeton.edu/
+SRC: Guy RK, The strong law of small numbers, American Mathematical Monthly 95(8), 697 | primary | 1988 | https://doi.org/10.1080/00029890.1988.11972074
 NUM1#maths-u26-04-q1@1: For the circle-chord problem, the number of regions for n points is 1 + C(n, 2) + C(n, 4). What is it for n = 7? | 57 | 0 | regions | 1 + 21 + 35 = 57.
 M1#maths-u26-04-q2@1: Which conclusion comes from inductive reasoning? | The Sun has risen every day observed, so it will rise tomorrow | 2 + 2 = 4 from the axioms | All squares have four sides by definition | A proof by mathematical induction | A valid syllogism | It generalises from past observations, so it's probable rather than certain.
 M3#maths-u26-04-q3@2: What does Guy's "strong law of small numbers" warn about? | Small numbers are too few for all the patterns asked of them, so coincidences pose as rules | Small numbers are always prime, so patterns among them are rules | Patterns found in small numbers are always true for large ones | Large numbers behave randomly, so only small cases matter | It warns about nothing; it's a joke with no mathematical content | Many early patterns are coincidences that break down later.
@@ -179,8 +179,8 @@ Q: What is the payoff of proving a theorem for all groups? | It applies to every
 Q: What is a structure-preserving map? | A map respecting the relevant operations or relations.
 SUM: Abstraction reveals common structure.
 SUM: Examples keep it grounded.
-SRC: Gowers T (ed), The Princeton Companion to Mathematics (Princeton University Press 2008) | textbook | 2008 | https://press.princeton.edu/
-SRC: Cheng E, How to Bake Pi: An Edible Exploration of the Mathematics of Mathematics (Basic Books 2015) | textbook | 2015 | https://www.basicbooks.com/
+SRC: Gowers T (ed), The Princeton Companion to Mathematics (Princeton University Press 2008) | secondary | 2008 | https://press.princeton.edu/
+SRC: Cheng E, How to Bake Pi: An Edible Exploration of the Mathematics of Mathematics (Basic Books 2015) | secondary | 2015 | https://www.basicbooks.com/
 NUM1#maths-u26-05-q1@1: The rotations of a square form a group. How many elements does it have? | 4 | 0 | elements | Rotations by 0°, 90°, 180° and 270°.
 M1#maths-u26-05-q2@1: Which collection forms a group under the stated operation? | The integers under addition | The natural numbers under subtraction | The integers under multiplication | The positive integers under addition | All real numbers under multiplication | Integers under addition have an identity (0) and inverses; the others lack inverses or closure.
 M2#maths-u26-05-q3@2: Why does abstraction make mathematics more efficient? | A result proved for the structure holds in every example of it | Abstraction makes every proof longer, but easier to read | Examples become unnecessary once a structure is defined | It removes all theorems, leaving only definitions | It doesn't; each example still needs its own proof | Lagrange's theorem, proved once for groups, applies to every finite group.
@@ -216,8 +216,8 @@ Q: What's the difference between a percentage-point and a percentage change? | P
 Q: What is base-rate neglect? | Ignoring how common something is when interpreting evidence.
 SUM: Numbers need context.
 SUM: Use natural frequencies.
-SRC: Gigerenzer G, Reckoning with Risk: Learning to Live with Uncertainty (Penguin 2003) | textbook | 2003 | https://www.penguin.co.uk/
-SRC: Spiegelhalter D, The Art of Statistics: Learning from Data (Pelican 2019) | textbook | 2019 | https://www.penguin.co.uk/
+SRC: Gigerenzer G, Reckoning with Risk: Learning to Live with Uncertainty (Penguin 2003) | secondary | 2003 | https://www.penguin.co.uk/
+SRC: Spiegelhalter D, The Art of Statistics: Learning from Data (Pelican 2019) | secondary | 2019 | https://www.penguin.co.uk/
 NUM1#maths-u26-06-q1@1: A risk rises from 2 in 1000 to 3 in 1000. What is the relative increase in %? | 50 | 0 | % | (3 − 2)/2 = 0.5, a 50% relative rise but only 1 in 1000 in absolute terms.
 M1#maths-u26-06-q2@1: An interest rate rises from 4% to 5%. Which description is correct? | A rise of 1 percentage point, or 25% in relative terms | A rise of 1% in relative terms only | A rise of 25 percentage points | A rise of 5% in absolute terms | No change, since both are small | The absolute change is 5 − 4 = 1 percentage point, while the relative change is 1/4 = 25%, which is why the two descriptions sound so different.
 M3#maths-u26-06-q3@2: What does Simpson's paradox show? | A trend in every subgroup can reverse when unequal groups are combined | Averages always agree across subgroups and combined groups | Combining groups never changes the direction of a trend | Subgroups are always misleading compared with totals | It shows nothing beyond ordinary sampling error | Unequal group weights can flip the aggregate comparison.
@@ -253,8 +253,8 @@ Q: What are Pólya's four steps? | Understand, plan, carry out, look back.
 Q: What is an invariant? | A quantity unchanged by allowed moves.
 SUM: Problem solving can be learned.
 SUM: Heuristics open doors.
-SRC: Pólya G, How to Solve It (Princeton University Press 1945; 2nd edn 1957) | textbook | 1957 | https://press.princeton.edu/
-SRC: Zeitz P, The Art and Craft of Problem Solving (3rd edn, Wiley 2017) | textbook | 2017 | https://www.wiley.com/
+SRC: Pólya G, How to Solve It (Princeton University Press 1945; 2nd edn 1957) | secondary | 1957 | https://press.princeton.edu/
+SRC: Zeitz P, The Art and Craft of Problem Solving (3rd edn, Wiley 2017) | secondary | 2017 | https://www.wiley.com/
 NUM1#maths-u26-07-q1@1: By the pigeonhole principle, how many people guarantee two share a birth month? | 13 | 0 | people | With 12 months, 13 people force at least two into the same month.
 M1#maths-u26-07-q2@1: Which heuristic suits a problem that asks how to reach a known final state? | Working backwards from the goal | Guessing randomly | Ignoring the conditions | Adding more unknowns | Skipping the plan | Reversing steps from the end often reveals the path.
 M2#maths-u26-07-q3@2: Why are invariants useful for proving something impossible? | If moves preserve a quantity, states with another value are unreachable | Invariants always change with each move, tracking progress | They only show what is possible, never what is impossible | They replace calculation entirely in every problem | They aren't useful for impossibility, only for counting | The domino colouring argument rules out a tiling without trying every arrangement.
@@ -290,8 +290,8 @@ Q: About how many seconds are in a year? | About 3 × 10^{7}.
 Q: What is a Fermi problem? | An estimate built from chaining rough factors.
 SUM: Rough answers fast.
 SUM: Check plausibility.
-SRC: Weinstein L, Adam JA, Guesstimation: Solving the World's Problems on the Back of a Cocktail Napkin (Princeton University Press 2008) | textbook | 2008 | https://press.princeton.edu/
-SRC: Mahajan S, Street-Fighting Mathematics (MIT Press 2010) | textbook | 2010 | https://mitpress.mit.edu/
+SRC: Weinstein L, Adam JA, Guesstimation: Solving the World's Problems on the Back of a Cocktail Napkin (Princeton University Press 2008) | secondary | 2008 | https://press.princeton.edu/
+SRC: Mahajan S, Street-Fighting Mathematics (MIT Press 2010) | secondary | 2010 | https://mitpress.mit.edu/
 NUM1#maths-u26-08-q1@1: To the nearest power of 10, how many minutes are in a year (give the exponent)? | 6 | 0 |  | 365 × 24 × 60 = 525,600, and log₁₀ 525,600 ≈ 5.72, which is nearer 6 than 5, so the nearest power of 10 is 10^{6}.
 M1#maths-u26-08-q2@1: What is the order of magnitude of 4700? | 10^{4} | 10^{3} | 10^{2} | 10^{5} | 10^{1} | 4700 is closer to 10^{4} than 10^{3} on a logarithmic scale (log₁₀ 4700 ≈ 3.67).
 M2#maths-u26-08-q3@2: Why do Fermi estimates often land within a factor of a few of the truth? | Over- and under-estimates in independent factors tend to partly cancel | Every factor in a Fermi estimate is known exactly | Rounding always errs in the same direction, which helps | They're never close; Fermi estimates are just guesses | They use precise data from official statistics | Multiplying several rough factors averages their errors in log terms.
@@ -328,8 +328,8 @@ Q: What is the binomial approximation for (1 + x)ⁿ? | 1 + nx for small x.
 Q: For which unit is sin θ ≈ θ valid? | Radians.
 SUM: Approximate with known error.
 SUM: Know the valid range.
-SRC: Stewart J, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.com/
-SRC: Bender CM, Orszag SA, Advanced Mathematical Methods for Scientists and Engineers (McGraw-Hill 1978; Springer 1999) | textbook | 1999 | https://link.springer.com/
+SRC: Stewart J, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.com/
+SRC: Bender CM, Orszag SA, Advanced Mathematical Methods for Scientists and Engineers (McGraw-Hill 1978; Springer 1999) | secondary | 1999 | https://link.springer.com/
 NUM1#maths-u26-09-q1@1: Use the binomial approximation to estimate 1.02^{10}, to 2 decimal places. | 1.2 | 0.001 |  | (1 + 0.02)^{10} ≈ 1 + 10 × 0.02 = 1.20 (the true value is 1.219).
 M1#maths-u26-09-q2@1: What is the small-angle approximation for sin(0.1 rad)? | 0.1 | 0.01 | 1 | 0.9 | 10 | sin θ ≈ θ for small θ in radians; sin 0.1 ≈ 0.0998.
 M3#maths-u26-09-q3@2: Why does the binomial approximation (1 + x)ⁿ ≈ 1 + nx get worse for large n even with small x? | The neglected term n(n − 1)x^{2}/2 grows with n^{2}, so it stops being small when nx isn't small | The approximation improves as n grows for fixed x | x itself becomes large when n increases | The formula changes form for large n | It doesn't get worse for any n | The first neglected term is n(n − 1)x^{2}/2, roughly (nx)^{2}/2, so the approximation needs nx to be small, not just x.
@@ -365,8 +365,8 @@ Q: How do relative uncertainties combine for a product of independent quantities
 Q: What happens to relative uncertainty when a quantity is squared? | It doubles.
 SUM: Track how errors spread.
 SUM: Use quadrature for independent errors.
-SRC: Taylor JR, An Introduction to Error Analysis (2nd edn, University Science Books 1997) | textbook | 1997 | https://uscibooks.aip.org/
-SRC: Joint Committee for Guides in Metrology, Evaluation of measurement data: Guide to the expression of uncertainty in measurement (JCGM 100:2008) | guideline | 2008 | https://www.bipm.org/en/committees/jc/jcgm/publications
+SRC: Taylor JR, An Introduction to Error Analysis (2nd edn, University Science Books 1997) | secondary | 1997 | https://uscibooks.aip.org/
+SRC: Joint Committee for Guides in Metrology, Evaluation of measurement data: Guide to the expression of uncertainty in measurement (JCGM 100:2008) | guidance | 2008 | https://www.bipm.org/en/committees/jc/jcgm/publications
 NUM1#maths-u26-10-q1@1: A radius is 2.00 ± 0.02 m. What is the relative uncertainty in the area πr^{2}, in %? | 2 | 0 | % | Relative uncertainty in r is 1%, doubled for the square: 2%.
 M1#maths-u26-10-q2@1: Two independent lengths 4.0 ± 0.3 and 6.0 ± 0.4 are added. What is the uncertainty of the sum? | ±0.5 | ±0.7 | ±0.1 | ±0.35 | ±0.12 | Independent absolute uncertainties add in quadrature for a sum: √(0.3^{2} + 0.4^{2}) = √0.25 = 0.5, so the sum is 10.0 ± 0.5.
 M3#maths-u26-10-q3@2: Why does subtracting two nearly equal measured values give a large relative uncertainty? | The absolute uncertainties combine while the difference itself is small | Subtraction removes the uncertainty from both values | The relative errors of the two values cancel exactly | The difference becomes exact when values are close | It doesn't; subtraction always reduces uncertainty | (10.0 ± 0.1) − (9.8 ± 0.1) = 0.2 ± 0.14, a 70% relative uncertainty.
@@ -402,8 +402,8 @@ Q: What makes a good research question? | It is precise and answerable.
 Q: Why keep a research log? | To record attempts, ideas and failures for later reference.
 SUM: Research is systematic enquiry.
 SUM: Start with a precise question.
-SRC: Thomas G, How to Do Your Research Project (4th edn, SAGE 2022) | textbook | 2022 | https://uk.sagepub.com/
-SRC: Tao T, Career advice: work hard; ask yourself dumb questions (blog, What's New) | review | 2007 | https://terrytao.wordpress.com/career-advice/
+SRC: Thomas G, How to Do Your Research Project (4th edn, SAGE 2022) | secondary | 2022 | https://uk.sagepub.com/
+SRC: Tao T, Career advice: work hard; ask yourself dumb questions (blog, What's New) | secondary | 2007 | https://terrytao.wordpress.com/career-advice/
 NUM1#maths-u26-11-q1@1: How many of the stages question, explore, develop, validate and disseminate come before results are developed? | 2 | 0 |  | Choosing the question and exploring come before developing results.
 M1#maths-u26-11-q2@1: Which is the most precise research question? | Does the sequence aₙ = n^{2} + 1 contain infinitely many primes? | Are prime numbers interesting? | What about numbers in general? | Is mathematics useful to society? | How do sequences work? | It names a specific object and a yes/no property to establish.
 M2#maths-u26-11-q3@2: Why are computational experiments valuable even in pure mathematics research? | They generate data that suggest conjectures and test them before proof attempts | They replace proofs, since computers don't make mistakes | They are always conclusive about infinite questions | They aren't valuable in pure mathematics, only in applied | They're only used in statistics, never in proof-based work | Experiments guided conjectures from Gauss's prime tables to the Birch–Swinnerton-Dyer conjecture.
@@ -439,8 +439,8 @@ Q: What is forward citation chaining? | Finding later papers that cite a given p
 Q: Name two databases for mathematical literature. | MathSciNet and zbMATH Open.
 SUM: Know what's already known.
 SUM: Synthesise, don't just list.
-SRC: Booth WC et al., The Craft of Research (4th edn, University of Chicago Press 2016) | textbook | 2016 | https://press.uchicago.edu/
-SRC: zbMATH Open, The first resource for mathematics | dataset | 2024 | https://zbmath.org/
+SRC: Booth WC et al., The Craft of Research (4th edn, University of Chicago Press 2016) | secondary | 2016 | https://press.uchicago.edu/
+SRC: zbMATH Open, The first resource for mathematics | data | 2024 | https://zbmath.org/
 NUM1#maths-u26-12-q1@1: A paper has 40 references and 25 citing papers. How many sources do one round of backward and forward chaining reveal? | 65 | 0 | sources | 40 backward plus 25 forward gives 65 candidates to screen.
 M1#maths-u26-12-q2@1: Which source is a preprint server widely used by mathematicians? | arXiv | MathSciNet reviews only | A dictionary | A citation style guide | A spreadsheet | arXiv hosts preprints before or alongside journal publication.
 M2#maths-u26-12-q3@2: Why should a literature review synthesise rather than list sources? | Synthesis shows how results connect, conflict and leave gaps, which motivates new work | Lists are always better, since they're easier to check | Synthesis hides the original sources from readers | Reviewers and examiners prefer simple lists of papers | It shouldn't; summaries of each paper are the standard | A list of summaries doesn't explain the state of knowledge.
@@ -475,8 +475,8 @@ Q: What is HARKing? | Hypothesising after the results are known.
 Q: What makes a hypothesis falsifiable? | Some possible outcome would show it false.
 SUM: State clearly what you expect.
 SUM: Make it possible to be wrong.
-SRC: Popper K, The Logic of Scientific Discovery (Hutchinson 1959; Routledge 2002) | textbook | 2002 | https://www.routledge.com/
-SRC: Nosek BA et al., The preregistration revolution, Proceedings of the National Academy of Sciences 115(11), 2600 | journal | 2018 | https://doi.org/10.1073/pnas.1708274114
+SRC: Popper K, The Logic of Scientific Discovery (Hutchinson 1959; Routledge 2002) | secondary | 2002 | https://www.routledge.com/
+SRC: Nosek BA et al., The preregistration revolution, Proceedings of the National Academy of Sciences 115(11), 2600 | primary | 2018 | https://doi.org/10.1073/pnas.1708274114
 NUM1#maths-u26-13-q1@1: Testing 20 independent true null hypotheses at the 5% level, how many false positives are expected? | 1 | 0 |  | 20 × 0.05 = 1 expected false positive.
 M1#maths-u26-13-q2@1: Which hypothesis is falsifiable? | Adding a fertiliser raises wheat yield by at least 5% | Fertiliser works in mysterious ways | Some things affect yield | Yield might change | Fertiliser is good | It predicts a measurable effect that experiments could contradict.
 M2#maths-u26-13-q3@2: Why does pre-registration improve research credibility? | Fixing hypotheses and analyses in advance stops them being tuned to the results | It guarantees that every study finds a positive result | It replaces peer review with an automatic approval | It makes studies shorter by skipping data collection | It doesn't improve credibility in any measurable way | It separates confirmatory tests from exploratory findings.
@@ -512,8 +512,8 @@ Q: What is out-of-sample validation? | Testing a model on data not used to fit i
 Q: How does calibration differ from validation? | Calibration fits parameters to data; validation tests predictions on independent data.
 SUM: Test against independent data.
 SUM: Validity depends on purpose.
-SRC: Oberkampf WL, Roy CJ, Verification and Validation in Scientific Computing (Cambridge University Press 2010) | textbook | 2010 | https://www.cambridge.org/
-SRC: Sargent RG, Verification and validation of simulation models, Journal of Simulation 7(1), 12 | journal | 2013 | https://doi.org/10.1057/jos.2012.20
+SRC: Oberkampf WL, Roy CJ, Verification and Validation in Scientific Computing (Cambridge University Press 2010) | secondary | 2010 | https://www.cambridge.org/
+SRC: Sargent RG, Verification and validation of simulation models, Journal of Simulation 7(1), 12 | primary | 2013 | https://doi.org/10.1057/jos.2012.20
 NUM1#maths-u26-14-q1@1: Of 50 validation points, 43 fall inside the model's 90% prediction intervals. What is the observed coverage in %? | 86 | 0 | % | 43/50 = 0.86, slightly below the nominal 90%.
 M1#maths-u26-14-q2@1: Which data should be used to validate a model? | Data not used in building or calibrating it | The calibration data | Any data at random, including training data | Data invented to match | No data | Independent data test genuine predictive ability.
 M3#maths-u26-14-q3@2: Why must a model's validity domain be documented? | A model validated under some conditions may fail under others, so users need to know its limits | Models validated once are valid everywhere, so it's a formality | Documentation replaces the need for any validation | It isn't necessary when the model is mathematically correct | Validity never changes once a model has been calibrated | Extrapolation beyond tested conditions is a common source of failure.
@@ -548,8 +548,8 @@ Q: What does code verification check? | That software correctly solves its mathe
 Q: What should happen to errors in a convergence test? | They should fall at the theoretical rate as the mesh is refined.
 SUM: Solve the equations right.
 SUM: Test systematically.
-SRC: Roache PJ, Code verification by the method of manufactured solutions, Journal of Fluids Engineering 124(1), 4 | journal | 2002 | https://doi.org/10.1115/1.1436090
-SRC: Wilson G et al., Best practices for scientific computing, PLOS Biology 12(1), e1001745 | journal | 2014 | https://doi.org/10.1371/journal.pbio.1001745
+SRC: Roache PJ, Code verification by the method of manufactured solutions, Journal of Fluids Engineering 124(1), 4 | primary | 2002 | https://doi.org/10.1115/1.1436090
+SRC: Wilson G et al., Best practices for scientific computing, PLOS Biology 12(1), e1001745 | primary | 2014 | https://doi.org/10.1371/journal.pbio.1001745
 NUM1#maths-u26-15-q1@1: A code's errors are 0.08 at h and 0.01 at h/2. What observed order of accuracy does this give? | 3 | 0 |  | Ratio 8 = 2^{p} gives p = 3.
 M1#maths-u26-15-q2@1: Which activity is verification rather than validation? | Checking a solver against an exact analytical solution | Comparing predictions with field measurements | Asking users whether results look realistic | Collecting new experimental data | Choosing which physics to model | Exact-solution tests check the code, not the model's realism.
 M3#maths-u26-15-q3@2: Why are manufactured solutions useful for verifying PDE codes? | They give exact solutions for complex equations, so every term can be tested | They replace the need for any convergence study | They model reality exactly, so validation is complete | They need no source terms in the equations | They aren't useful for codes that solve PDEs | Real problems rarely have exact solutions, but manufactured ones always do.
@@ -585,8 +585,8 @@ Q: Why fix a random seed? | To make stochastic runs reproducible.
 Q: What is a parameter sweep? | Running a computation over a range of parameter values.
 SUM: Experiment with computers carefully.
 SUM: Replicate and report honestly.
-SRC: Johnson DS, A theoretician's guide to the experimental analysis of algorithms, DIMACS Series in Discrete Mathematics 59, 215 | journal | 2002 | https://www.ams.org/
-SRC: Borwein J, Bailey D, Mathematics by Experiment: Plausible Reasoning in the 21st Century (2nd edn, A K Peters 2008) | textbook | 2008 | https://www.routledge.com/
+SRC: Johnson DS, A theoretician's guide to the experimental analysis of algorithms, DIMACS Series in Discrete Mathematics 59, 215 | primary | 2002 | https://www.ams.org/
+SRC: Borwein J, Bailey D, Mathematics by Experiment: Plausible Reasoning in the 21st Century (2nd edn, A K Peters 2008) | secondary | 2008 | https://www.routledge.com/
 NUM1#maths-u26-16-q1@1: A full factorial experiment varies 3 parameters at 4 levels each. How many configurations are there? | 64 | 0 | configurations | 4^{3} = 64 combinations.
 M1#maths-u26-16-q2@1: Which practice makes a stochastic computational experiment reproducible? | Recording random seeds and software versions | Running it once only | Changing parameters without notes | Deleting failed runs | Using different machines randomly | Seeds and versions let others regenerate the same results.
 M2#maths-u26-16-q3@2: Why should failed or unfavourable runs be reported? | Hiding them biases conclusions and misleads others about reliability | Failures are irrelevant to the conclusions of a study | Only successful runs count as genuine results | Reporting failures breaks the reproducibility of a study | They shouldn't be; failed runs only confuse readers | Selective reporting inflates apparent performance.
@@ -621,8 +621,8 @@ Q: What does FAIR stand for? | Findable, Accessible, Interoperable, Reusable.
 Q: What's the difference between reproducibility and replicability? | Same data and code versus a new study with new data.
 SUM: Others should be able to re-run your work.
 SUM: Share code, data and environments.
-SRC: Wilkinson MD et al., The FAIR Guiding Principles for scientific data management and stewardship, Scientific Data 3, 160018 | journal | 2016 | https://doi.org/10.1038/sdata.2016.18
-SRC: National Academies of Sciences, Engineering, and Medicine, Reproducibility and Replicability in Science (National Academies Press 2019) | report | 2019 | https://doi.org/10.17226/25303
+SRC: Wilkinson MD et al., The FAIR Guiding Principles for scientific data management and stewardship, Scientific Data 3, 160018 | primary | 2016 | https://doi.org/10.1038/sdata.2016.18
+SRC: National Academies of Sciences, Engineering, and Medicine, Reproducibility and Replicability in Science (National Academies Press 2019) | secondary | 2019 | https://doi.org/10.17226/25303
 NUM1#maths-u26-17-q1@1: How many letters are there in the acronym FAIR, each standing for one principle? | 4 | 0 | principles | Findable, Accessible, Interoperable and Reusable.
 M1#maths-u26-17-q2@1: Which tool records every change to code and lets others retrieve exact versions? | Version control such as Git | A word processor | Email attachments | A spreadsheet of notes | Memory | Git tracks history and allows exact versions to be shared and restored.
 M2#maths-u26-17-q3@2: Why do containers help reproducibility? | They package the software environment so code runs with the same versions anywhere | They make code run much faster | They replace version control entirely | They hide the code from other users | They don't help reproducibility at all | Library version differences are a common cause of non-reproducible results.
@@ -658,8 +658,8 @@ Q: What does a straight line on a log–log plot indicate? | A power law relatio
 Q: Why use colour-blind-safe palettes? | So all readers can distinguish the categories.
 SUM: Pictures reveal patterns.
 SUM: Design honestly and clearly.
-SRC: Tufte ER, The Visual Display of Quantitative Information (2nd edn, Graphics Press 2001) | textbook | 2001 | https://www.edwardtufte.com/
-SRC: Wilke CO, Fundamentals of Data Visualization (O'Reilly 2019) | textbook | 2019 | https://clauswilke.com/dataviz/
+SRC: Tufte ER, The Visual Display of Quantitative Information (2nd edn, Graphics Press 2001) | secondary | 2001 | https://www.edwardtufte.com/
+SRC: Wilke CO, Fundamentals of Data Visualization (O'Reilly 2019) | secondary | 2019 | https://clauswilke.com/dataviz/
 NUM1#maths-u26-18-q1@1: On a log–log plot, data from y = 5x^{3} form a line. What is its slope? | 3 | 0 |  | log y = log 5 + 3 log x, so the slope is 3.
 M1#maths-u26-18-q2@1: Which plot best shows the distribution of a single continuous variable? | A histogram | A pie chart | A line graph of categories | A scatter plot of one variable against itself | A table of totals | Histograms show how values are spread across ranges.
 M2#maths-u26-18-q3@2: Why can a truncated y-axis on a bar chart mislead? | Bar lengths no longer represent values proportionally, exaggerating differences | It always makes data clearer to read | It shows the uncertainty in each bar | It improves the accuracy of the data | It can't mislead if the axis is labelled | A bar starting at 90 instead of 0 makes 92 versus 95 look like a huge gap.
@@ -695,8 +695,8 @@ Q: What should a talk to decision-makers emphasise? | Key findings, uncertainty 
 Q: What is signposting? | Telling the audience where an explanation is going and why.
 SUM: Know your audience.
 SUM: Explain why, not just what.
-SRC: Higham NJ, Handbook of Writing for the Mathematical Sciences (3rd edn, SIAM 2020) | textbook | 2020 | https://epubs.siam.org/
-SRC: Alley M, The Craft of Scientific Presentations (2nd edn, Springer 2013) | textbook | 2013 | https://link.springer.com/
+SRC: Higham NJ, Handbook of Writing for the Mathematical Sciences (3rd edn, SIAM 2020) | secondary | 2020 | https://epubs.siam.org/
+SRC: Alley M, The Craft of Scientific Presentations (2nd edn, Springer 2013) | secondary | 2013 | https://link.springer.com/
 NUM1#maths-u26-19-q1@1: A 20-minute talk allows about 1 slide per minute, leaving 5 minutes for questions. How many slides should it have? | 15 | 0 | slides | 20 − 5 = 15 minutes of talking at about one slide a minute.
 M1#maths-u26-19-q2@1: When explaining a new idea to students, what usually works best first? | A concrete example | The most general abstract definition | A long list of notation | The full proof with no motivation | Historical dates only | Examples motivate and ground the abstract statement.
 M2#maths-u26-19-q3@2: Why is saying "I don't know" acceptable when answering questions after a talk? | Honest uncertainty is better than a wrong or invented answer, and you can follow up later | It always looks unprofessional and should be avoided | It ends the discussion and stops further questions | Audiences expect certainty on every topic raised | It isn't acceptable for a speaker giving a talk | Credibility depends on accuracy, not on appearing to know everything.
@@ -732,8 +732,8 @@ Q: What typesetting system is standard in mathematics? | LaTeX.
 Q: Should equations be part of sentences? | Yes, with punctuation.
 SUM: Write sentences, not just symbols.
 SUM: Keep notation consistent.
-SRC: Higham NJ, Handbook of Writing for the Mathematical Sciences (3rd edn, SIAM 2020) | textbook | 2020 | https://epubs.siam.org/
-SRC: Knuth DE, Larrabee T, Roberts PM, Mathematical Writing (Mathematical Association of America 1989) | textbook | 1989 | https://www.maa.org/
+SRC: Higham NJ, Handbook of Writing for the Mathematical Sciences (3rd edn, SIAM 2020) | secondary | 2020 | https://epubs.siam.org/
+SRC: Knuth DE, Larrabee T, Roberts PM, Mathematical Writing (Mathematical Association of America 1989) | secondary | 1989 | https://www.maa.org/
 NUM1#maths-u26-20-q1@1: A section has 5 displayed equations, and only 2 of them are referred to later in the text. How many should be numbered? | 2 | 0 |  | Number only the equations you refer to; numbering the rest adds clutter without helping the reader.
 M1#maths-u26-20-q2@1: Which sentence follows good mathematical writing practice? | Let f be continuous on [a, b]; then f attains a maximum | f continuous ⇒ max on [a, b] attained | Continuous f, max exists, [a, b] closed | max f if cont. on closed bounded int. | ∃ max since f cts and [a, b] cpt | It uses full words, defines f and states the conclusion clearly.
 M2#maths-u26-20-q3@2: Why should new notation be introduced before it's used? | Readers can't follow an argument whose symbols haven't been defined | It makes the document shorter overall | Notation is always obvious from context | Definitions belong at the end of a paper | It shouldn't; readers can guess meanings | Undefined symbols force readers to guess meanings.
@@ -769,8 +769,8 @@ Q: What does IMRaD stand for? | Introduction, Methods, Results and Discussion.
 Q: What should be reported alongside a p-value? | An effect size with a confidence interval.
 SUM: Structure reports for readers.
 SUM: Be transparent about methods and limits.
-SRC: Day RA, Gastel B, How to Write and Publish a Scientific Paper (9th edn, Cambridge University Press 2022) | textbook | 2022 | https://www.cambridge.org/
-SRC: EQUATOR Network, Enhancing the QUAlity and Transparency Of health Research: reporting guidelines | guideline | 2024 | https://www.equator-network.org/
+SRC: Day RA, Gastel B, How to Write and Publish a Scientific Paper (9th edn, Cambridge University Press 2022) | secondary | 2022 | https://www.cambridge.org/
+SRC: EQUATOR Network, Enhancing the QUAlity and Transparency Of health Research: reporting guidelines | guidance | 2024 | https://www.equator-network.org/
 NUM1#maths-u26-21-q1@1: How many main sections does the IMRaD structure have? | 4 | 0 | sections | Introduction, Methods, Results and Discussion.
 M1#maths-u26-21-q2@1: Which section of a report should describe limitations of the study? | The Discussion | The Abstract only | The Methods | The title | The references | The Discussion interprets results and acknowledges limits.
 M2#maths-u26-21-q3@2: Why should a Methods section give enough detail to reproduce the work? | Others must be able to check and build on the results | It makes papers longer for reviewers | Methods are rarely read | Reproduction is unnecessary | It shouldn't | Reproducibility is how science verifies and corrects findings.

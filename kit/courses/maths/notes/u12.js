@@ -32,7 +32,7 @@ Q: What is P(A′) if P(A) = 0.35? | 0.65.
 Q: What is the sample space for tossing one coin twice? | {HH, HT, TH, TT}.
 SUM: Probability measures uncertainty from 0 to 1.
 SUM: Count equally likely outcomes or use complements.
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
 NUM1#maths-u12-01-q1@1: A card is drawn from a standard 52-card pack. What is the probability it's a heart or a king, as a decimal to 4 decimal places? | 0.3077 | 0.0001 |  | 13 hearts + 4 kings − 1 king of hearts = 16 cards, and 16/52 ≈ 0.3077.
 M1#maths-u12-01-q2@1: Which value can't be a probability? | 1.2 | 0 | 1 | 0.999 | 1/3 | Probabilities lie between 0 and 1 inclusive, so 1.2 is impossible.
@@ -69,8 +69,8 @@ Q: What is P(A ∪ B) for mutually exclusive A and B? | P(A) + P(B).
 Q: What does Kolmogorov's second axiom say? | P(Ω) = 1: something in the sample space happens.
 SUM: Three axioms underpin all of probability.
 SUM: Subtract the overlap when adding.
-SRC: Kolmogorov AN, Foundations of the Theory of Probability (2nd English edn, Chelsea 1956) | textbook | 1956 | https://archive.org/
-SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | textbook | 2020 | https://global.oup.com/
+SRC: Kolmogorov AN, Foundations of the Theory of Probability (2nd English edn, Chelsea 1956) | secondary | 1956 | https://archive.org/
+SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | secondary | 2020 | https://global.oup.com/
 NUM1#maths-u12-02-q1@1: P(A) = 0.6, P(B) = 0.5 and P(A ∪ B) = 0.8. Find P(A ∩ B). | 0.3 | 0.001 |  | Rearrange the addition rule: 0.6 + 0.5 − 0.8 = 0.3.
 M1#maths-u12-02-q2@1: Which follows directly from Kolmogorov's axioms? | P(∅) = 0 | P(A ∩ B) = P(A)P(B) | P(A ∣ B) = P(A) | All outcomes are equally likely | P(A) = 0.5 | Ω and ∅ are mutually exclusive and Ω ∪ ∅ = Ω, so P(∅) must be 0.
 M3#maths-u12-02-q3@2: Can P(A) = 0.7 and P(B) = 0.6 for mutually exclusive events A and B? | No: their probabilities would add to 1.3 | Yes, always | Yes, if they're independent | Only if Ω is infinite | Only if P(A ∩ B) = 0.3 | Mutually exclusive means P(A ∪ B) = P(A) + P(B), which can't exceed 1.
@@ -106,7 +106,7 @@ Q: If A and B are independent with P(A) = 0.3 and P(B) = 0.5, what is P(A ∩ B)
 Q: What is the gambler's fallacy? | Believing independent outcomes become "due" after a run of the other result.
 SUM: Independent events multiply.
 SUM: Independence isn't mutual exclusivity.
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 SRC: Royal Statistical Society, Statement regarding statistical issues in the Sally Clark case | guidance | 2001 | https://rss.org.uk/
 NUM1#maths-u12-03-q1@1: A system has three independent components, each working with probability 0.9. It works only if all three work. Find the probability it works. | 0.729 | 0.0001 |  | Multiply the independent probabilities: 0.9^{3} = 0.729.
 M1#maths-u12-03-q2@1: Events A and B satisfy P(A) = 0.4, P(B) = 0.5 and P(A ∩ B) = 0.2. Are they independent? | Yes, because 0.4 × 0.5 = 0.2 | No, because they overlap | No, because 0.4 + 0.5 ≠ 1 | Yes, because P(A) < P(B) | It can't be determined | The product rule holds exactly, which is the definition of independence.
@@ -140,7 +140,7 @@ Q: What is P(A ∣ B) if P(A ∩ B) = 0.12 and P(B) = 0.4? | 0.3.
 Q: Is P(A ∣ B) generally equal to P(B ∣ A)? | No: they're equal only if P(A) = P(B) (or both are zero).
 SUM: Conditioning shrinks the sample space.
 SUM: Multiply along trees, add across paths.
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 SRC: Department for Education, Mathematics AS and A level subject content: statistics | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 NUM1#maths-u12-04-q1@1: In a class, 60% study French, and 25% study both French and Spanish. What is P(Spanish ∣ French), to 4 decimal places? | 0.4167 | 0.0001 |  | P(S ∣ F) = 0.25/0.6 ≈ 0.4167.
 M1#maths-u12-04-q2@1: Two cards are drawn without replacement from a 52-card pack. What is P(both aces)? | 1/221 | 1/169 | 1/26 | 4/52 | 2/13 | Multiply along the tree, with one fewer ace for the second draw: (4/52) × (3/51) = 1/221.
@@ -174,8 +174,8 @@ Q: How do you find P(X = 2) from a joint table? | Add the row (or column) for X 
 Q: What must all the entries of a joint probability table sum to? | 1.
 SUM: Joint distributions describe variables together.
 SUM: Marginals sum out; conditionals divide.
-SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | textbook | 2020 | https://global.oup.com/
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | secondary | 2020 | https://global.oup.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 NUM1#maths-u12-05-q1@1: Using the joint table P(0,0) = 0.3, P(0,1) = 0.2, P(1,0) = 0.1, P(1,1) = 0.4, find P(Y = 1 ∣ X = 1). | 0.8 | 0.001 |  | P(X = 1) = 0.5, so P(Y = 1 ∣ X = 1) = 0.4/0.5 = 0.8.
 M1#maths-u12-05-q2@1: What is a marginal distribution? | The distribution of one variable, summed over the others | The edge of a probability table that's always zero | The most likely value | A conditional distribution | The joint distribution itself | Summing the joint probabilities over the other variable leaves one variable's distribution.
 M2#maths-u12-05-q3@2: A joint density factorises as f(x, y) = g(x)h(y) on a rectangle. What does that show? | X and Y are independent | X and Y are equal | X and Y are perfectly correlated | The density is invalid | Nothing about dependence | A product form on a rectangular support means the joint density is the product of the marginals.
@@ -210,8 +210,8 @@ Q: What is the prior in a diagnostic test problem? | The prevalence: P(disease) 
 Q: What is specificity? | P(negative test ∣ no disease).
 SUM: Bayes' theorem turns P(B ∣ A) into P(A ∣ B).
 SUM: Base rates matter.
-SRC: Gigerenzer G, Reckoning with Risk: Learning to Live with Uncertainty (Penguin 2003) | textbook | 2003 | https://www.penguin.co.uk/
-SRC: Bayes T, An essay towards solving a problem in the doctrine of chances, Philosophical Transactions of the Royal Society 53, 370 | journal | 1763 | https://doi.org/10.1098/rstl.1763.0053
+SRC: Gigerenzer G, Reckoning with Risk: Learning to Live with Uncertainty (Penguin 2003) | secondary | 2003 | https://www.penguin.co.uk/
+SRC: Bayes T, An essay towards solving a problem in the doctrine of chances, Philosophical Transactions of the Royal Society 53, 370 | primary | 1763 | https://doi.org/10.1098/rstl.1763.0053
 NUM1#maths-u12-06-q1@1: A factory's machine A makes 60% of items with 2% faulty; machine B makes 40% with 5% faulty. An item is faulty. Find P(it came from A), to 4 decimal places. | 0.375 | 0.001 |  | P(faulty) = 0.012 + 0.02 = 0.032, so P(A ∣ faulty) = 0.012/0.032 = 0.375.
 M1#maths-u12-06-q2@1: What does Bayes' theorem calculate from P(B ∣ A), P(A) and P(B)? | P(A ∣ B) | P(A ∩ B) only | P(A ∪ B) | P(A′) | P(B′) | It reverses the direction of conditioning.
 M3#maths-u12-06-q3@2: A rare condition (1 in 10,000) has a test with 99% sensitivity and 99% specificity. Roughly what fraction of positives are true positives? | About 1% | About 99% | About 50% | About 90% | About 10% | Per million: 99 true positives against about 10,000 false positives, so roughly 1%.
@@ -246,8 +246,8 @@ Q: Is the time until a bus arrives discrete or continuous? | Continuous.
 Q: What is the expected value of an indicator of event A? | P(A).
 SUM: Random variables map outcomes to numbers.
 SUM: Discrete variables count; continuous ones measure.
-SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | textbook | 2020 | https://global.oup.com/
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | secondary | 2020 | https://global.oup.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 M1#maths-u12-07-q1@1: Which is a discrete random variable? | The number of emails received in an hour | A person's height | The time to run 100 m | The temperature at noon | The mass of an apple | Counts take separate, countable values, unlike measurements.
 M2#maths-u12-07-q2@2: Three coins are tossed and X counts heads. What is P(X ≥ 2)? | 1/2 | 3/8 | 1/8 | 7/8 | 3/4 | Add the probabilities of 2 and 3 heads: P(X = 2) + P(X = 3) = 3/8 + 1/8 = 1/2.
 M2#maths-u12-07-q3@2: Why is a sample mean a random variable? | It depends on which values happen to be sampled, so it varies from sample to sample | It is always equal to the population mean | It has no distribution | It is a fixed number | It only varies for normal populations | Each new random sample gives a different mean, with its own distribution.
@@ -281,7 +281,7 @@ Q: What is E(3X − 1) if E(X) = 4? | 11.
 SUM: Discrete distributions list values and probabilities.
 SUM: Sums give probabilities and means.
 SRC: Department for Education, Mathematics AS and A level subject content: statistics | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 NUM1#maths-u12-08-q1@1: X takes values 1, 2 and 3 with probabilities 0.2, 0.5 and 0.3. Find E(X). | 2.1 | 0.001 |  | E(X) = 0.2 + 1.0 + 0.9 = 2.1.
 M1#maths-u12-08-q2@1: Which of these is a valid probability distribution for X = 0, 1, 2? | 0.25, 0.5, 0.25 | 0.5, 0.5, 0.5 | 0.2, 0.3, 0.4 | −0.1, 0.6, 0.5 | 1, 1, 1 | Only 0.25, 0.5, 0.25 is non-negative and adds to exactly 1.
 M2#maths-u12-08-q3@2: If Var(X) = 4, what is Var(3X + 7)? | 36 | 12 | 19 | 43 | 4 | Adding 7 doesn't change spread; multiplying by 3 multiplies the variance by 9.
@@ -315,7 +315,7 @@ Q: How do you find E(X) for a continuous variable? | ∫ x f(x) dx over the supp
 SUM: Continuous probabilities are areas.
 SUM: Integrals give means; equations give medians.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 NUM1#maths-u12-09-q1@1: X has density f(x) = x/2 on 0 ≤ x ≤ 2. Find E(X), to 4 decimal places. | 1.3333 | 0.0001 |  | E(X) = ∫_{0}^{2} x^{2}/2 dx = [x^{3}/6]_{0}^{2} = 8/6 ≈ 1.3333.
 M1#maths-u12-09-q2@1: Why is P(X = 3) zero for a continuous X? | A single point has no width, so its area is zero | Because 3 is outside the support | Because densities are always below 1 | It isn't zero | Because continuous variables can't equal whole numbers | An integral over an interval of length zero is zero.
 M3#maths-u12-09-q3@2: X has density f(x) = 2x on [0, 1]. What is its median? | 1/√2 ≈ 0.707 | 0.5 | 2/3 | 0.25 | 0.75 | The CDF is F(x) = x^{2}; setting F(m) = 0.5 gives m = √0.5 ≈ 0.707.
@@ -350,7 +350,7 @@ Q: Which distribution models the time until the next radioactive decay? | Expone
 SUM: Families of distributions model common situations.
 SUM: Check the assumptions.
 SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, section 1.3.6: Probability distributions | guidance | 2012 | https://www.itl.nist.gov/div898/handbook/
-SRC: Box GEP, Science and statistics, Journal of the American Statistical Association 71(356), 791 | journal | 1976 | https://doi.org/10.1080/01621459.1976.10480949
+SRC: Box GEP, Science and statistics, Journal of the American Statistical Association 71(356), 791 | primary | 1976 | https://doi.org/10.1080/01621459.1976.10480949
 M1#maths-u12-10-q1@1: Which distribution best models the number of typing errors on a page, at a known average rate? | Poisson | Binomial with n = 2 | Uniform | Normal with mean 0 | Geometric | Errors occur randomly in a fixed "interval" (a page) at a constant rate.
 M2#maths-u12-10-q2@2: A model assumes trials are independent with constant success probability. Which family is that? | Binomial | Poisson | Hypergeometric | Exponential | Uniform | Independence and fixed p over n trials define the binomial; the hypergeometric drops independence.
 
@@ -383,7 +383,7 @@ Q: What does p(3) mean for a pmf p? | P(X = 3).
 Q: Can a pmf have infinitely many values? | Yes, if the masses sum to 1, as in the geometric and Poisson distributions.
 SUM: A pmf lists the probability of each value.
 SUM: It determines everything about X.
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 SRC: Department for Education, Mathematics AS and A level subject content: statistics | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 NUM1#maths-u12-11-q1@1: p(x) = k(x + 1) for x = 0, 1, 2, 3. Find k. | 0.1 | 0.0001 |  | k(1 + 2 + 3 + 4) = 10k = 1, so k = 0.1.
 M1#maths-u12-11-q2@1: For p(x) = (1/2)^{x}, x = 1, 2, 3, …, what is P(X ≤ 2)? | 3/4 | 1/2 | 1/4 | 7/8 | 1 | P(X ≤ 2) adds the masses at 1 and 2: p(1) + p(2) = 1/2 + 1/4 = 3/4.
@@ -418,7 +418,7 @@ Q: How do you find an unknown constant in a pdf? | Set the integral over the sup
 SUM: Densities give probability per unit.
 SUM: Areas under them are probabilities.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | textbook | 2020 | https://global.oup.com/
+SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | secondary | 2020 | https://global.oup.com/
 NUM1#maths-u12-12-q1@1: f(x) = c on 2 ≤ x ≤ 6 (and 0 elsewhere). Find c. | 0.25 | 0.0001 |  | The rectangle has width 4, so c × 4 = 1 and c = 0.25.
 M1#maths-u12-12-q2@1: Which function could be a pdf on [0, 1]? | f(x) = 2x | f(x) = x | f(x) = x − 0.5 | f(x) = 3 | f(x) = −2x | ∫_{0}^{1} 2x dx = 1 and 2x ≥ 0; the others fail positivity or the area condition.
 M3#maths-u12-12-q3@2: X is uniform on (0, 1). What is the distribution of Y = −ln X? | Exponential with rate 1 | Uniform on (0, 1) | Normal | Poisson with mean 1 | Uniform on (−1, 0) | P(Y > y) = P(X < e^{−y}) = e^{−y}, the exponential survival function.
@@ -451,8 +451,8 @@ Q: How do you get the pdf from a continuous CDF? | Differentiate: f(x) = F′(x)
 Q: What is P(X > a) in terms of F? | 1 − F(a).
 SUM: The CDF works for every random variable.
 SUM: Inverting it gives quantiles and simulations.
-SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | textbook | 2020 | https://global.oup.com/
-SRC: Devroye L, Non-Uniform Random Variate Generation (Springer 1986) | textbook | 1986 | https://luc.devroye.org/rnbookindex.html
+SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | secondary | 2020 | https://global.oup.com/
+SRC: Devroye L, Non-Uniform Random Variate Generation (Springer 1986) | secondary | 1986 | https://luc.devroye.org/rnbookindex.html
 NUM1#maths-u12-13-q1@1: F(x) = x^{2}/16 for 0 ≤ x ≤ 4. Find the upper quartile. | 3.4641 | 0.001 |  | x^{2}/16 = 0.75, so x^{2} = 12 and x = √12 ≈ 3.464.
 M1#maths-u12-13-q2@1: Which property must every CDF have? | It never decreases | It's always continuous | It's always differentiable | It's symmetric about 0 | It can exceed 1 | F(x) = P(X ≤ x) accumulates probability, so it can only stay level or rise.
 M2#maths-u12-13-q3@2: How does inverse transform sampling produce an exponential(λ) value from a uniform U? | X = −ln(1 − U)/λ | X = λU | X = e^{U} | X = U/λ | X = ln U × λ | Solving 1 − e^{−λx} = U for x gives the exponential quantile function.
@@ -485,7 +485,7 @@ Q: What is E(X + Y) if E(X) = 3 and E(Y) = 5? | 8, whether or not they're indepe
 Q: What is the expected score on a fair four-sided die (1 to 4)? | 2.5.
 SUM: Expected value is the long-run average.
 SUM: It's linear, which simplifies many problems.
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 SRC: Department for Education, Mathematics AS and A level subject content: statistics | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 NUM1#maths-u12-14-q1@1: A raffle has 500 tickets at £1 each; one prize of £200 and two of £50. What is the expected gain per ticket, in pounds? | -0.4 | 0.001 | £ | Expected winnings are (200 + 100)/500 = £0.60, minus the £1 cost, giving −£0.40.
 M1#maths-u12-14-q2@1: Which statement about expectation is always true? | E(X + Y) = E(X) + E(Y) | E(XY) = E(X)E(Y) | E(X^{2}) = [E(X)]^{2} | E(1/X) = 1/E(X) | E(X) is a possible value of X | Linearity needs no independence; the others fail in general.
@@ -520,7 +520,7 @@ Q: What is Var(5) for the constant 5? | 0.
 Q: If Var(X) = 3, what is Var(−2X)? | 12.
 SUM: Variance is the expected squared deviation.
 SUM: Independent variances add.
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 SRC: Joint Committee for Guides in Metrology, Evaluation of measurement data: Guide to the expression of uncertainty in measurement (JCGM 100:2008) | standard | 2008 | https://www.bipm.org/en/committees/jc/jcgm/publications
 NUM1#maths-u12-15-q1@1: X has E(X) = 4 and E(X^{2}) = 20. Find Var(X). | 4 | 0 |  | Var(X) = 20 − 4^{2} = 4.
 M1#maths-u12-15-q2@1: Independent X and Y have variances 4 and 9. What is Var(X − Y)? | 13 | 5 | −5 | 36 | √13 | Variances of independent variables add for sums and differences: 4 + 9 = 13.
@@ -554,7 +554,7 @@ Q: What is SD(3X) if SD(X) = 2? | 6.
 Q: For a normal distribution, roughly what percentage lies within 2σ of the mean? | About 95%.
 SUM: Standard deviation is spread in the original units.
 SUM: Chebyshev and the normal rule describe concentration.
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, section 1.3.5: Quantitative techniques | guidance | 2012 | https://www.itl.nist.gov/div898/handbook/
 NUM1#maths-u12-16-q1@1: Independent X and Y have standard deviations 3 and 4. Find SD(X + Y). | 5 | 0 |  | Add the variances: 9 + 16 = 25, then take the square root to get 5.
 M1#maths-u12-16-q2@1: By Chebyshev, at least what proportion of any distribution lies within 3 standard deviations of the mean? | 8/9 | 1/9 | 3/4 | 99.7% | 2/3 | Chebyshev bounds the outside by 1/k^{2}, so the inside is at least 1 − 1/9 = 8/9 ≈ 89%.
@@ -588,8 +588,8 @@ Q: What is Cov(X, X)? | Var(X).
 Q: What does a correlation of −1 mean? | An exact decreasing linear relationship.
 SUM: Covariance measures joint variation.
 SUM: Correlation is its unit-free version.
-SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | textbook | 2020 | https://global.oup.com/
-SRC: Markowitz H, Portfolio selection, Journal of Finance 7(1), 77 | journal | 1952 | https://doi.org/10.1111/j.1540-6261.1952.tb01525.x
+SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | secondary | 2020 | https://global.oup.com/
+SRC: Markowitz H, Portfolio selection, Journal of Finance 7(1), 77 | primary | 1952 | https://doi.org/10.1111/j.1540-6261.1952.tb01525.x
 NUM1#maths-u12-17-q1@1: Var(X) = 4, Var(Y) = 9 and Cov(X, Y) = 3. Find Var(X + Y). | 19 | 0 |  | Var(X + Y) = 4 + 9 + 2 × 3 = 19.
 M1#maths-u12-17-q2@1: If Cov(X, Y) = 6, σ_{X} = 2 and σ_{Y} = 5, what is the correlation? | 0.6 | 6 | 0.3 | 1.2 | 0.06 | Divide the covariance by both standard deviations: ρ = 6/(2 × 5) = 0.6.
 M3#maths-u12-17-q3@2: X is uniform on {−1, 0, 1} and Y = X^{2}. What is Cov(X, Y)? | 0, even though Y depends on X | 1 | −1 | 2/3 | It's undefined | E(XY) = E(X^{3}) = 0 and E(X) = 0, so Cov = 0 despite total dependence.
@@ -622,8 +622,8 @@ Q: What is M(0) for any MGF? | 1.
 Q: What is the excess kurtosis of a normal distribution? | 0.
 SUM: Moments describe shape.
 SUM: MGFs generate moments and identify distributions.
-SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | textbook | 2002 | https://www.cengage.com/
-SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | textbook | 2020 | https://global.oup.com/
+SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | secondary | 2002 | https://www.cengage.com/
+SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | secondary | 2020 | https://global.oup.com/
 NUM1#maths-u12-18-q1@1: X has MGF M(t) = e^{3t + 2t^{2}}. Find E(X). | 3 | 0 |  | M′(t) = (3 + 4t)e^{3t + 2t^{2}}, so M′(0) = 3 (this is a normal with mean 3, variance 4).
 M1#maths-u12-18-q2@1: What does positive skewness indicate? | A longer tail to the right | A longer tail to the left | A symmetric distribution | Light tails | A negative mean | Large values far above the mean make the third central moment positive.
 M2#maths-u12-18-q3@2: X and Y are independent with MGFs M_{X} and M_{Y}. What is the MGF of X + Y? | M_{X}(t)M_{Y}(t) | M_{X}(t) + M_{Y}(t) | M_{X}(t)/M_{Y}(t) | M_{X}(M_{Y}(t)) | M_{X}(2t) | E(e^{t(X+Y)}) = E(e^{tX})E(e^{tY}) by independence.
@@ -659,8 +659,8 @@ Q: What does the sample proportion of heads converge to? | The probability of he
 Q: Which distribution's sample means don't converge? | The Cauchy (it has no mean).
 SUM: Averages converge to expected values.
 SUM: Streaks are diluted, not corrected.
-SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | textbook | 2020 | https://global.oup.com/
-SRC: Bernoulli J, Ars Conjectandi (Basel 1713), trans. Sylla ED, The Art of Conjecturing (Johns Hopkins University Press 2006) | textbook | 2006 | https://www.press.jhu.edu/
+SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | secondary | 2020 | https://global.oup.com/
+SRC: Bernoulli J, Ars Conjectandi (Basel 1713), trans. Sylla ED, The Art of Conjecturing (Johns Hopkins University Press 2006) | secondary | 2006 | https://www.press.jhu.edu/
 NUM1#maths-u12-19-q1@1: Each simulation result has variance 4. What is the variance of the mean of 400 results? | 0.01 | 0.0001 |  | Var(X̄) = σ^{2}/n = 4/400 = 0.01.
 M1#maths-u12-19-q2@1: What does the law of large numbers guarantee? | The sample mean approaches the population mean as n grows | Each outcome becomes more predictable | Streaks are followed by opposite streaks | The sample mean equals μ after 30 trials | The distribution becomes normal | It's about averages, not about individual outcomes or the shape of the distribution.
 M2#maths-u12-19-q3@2: After 100 tosses, a fair coin shows 60 heads. What is the expected number of heads after 1,000 tosses in total? | 510 | 500 | 490 | 600 | 550 | The next 900 tosses are expected to give 450 heads; the earlier excess is diluted, not reversed.
@@ -696,7 +696,7 @@ Q: What is the standard error of the mean of 64 values with σ = 16? | 2.
 Q: What condition does the CLT need besides independence? | A finite variance.
 SUM: Sums of many effects are approximately normal.
 SUM: The standard error shrinks like 1/√n.
-SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | textbook | 2020 | https://global.oup.com/
+SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | secondary | 2020 | https://global.oup.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u12-20-q1@1: Bags of flour have mean mass 1,000 g and SD 20 g. What is the SD of the mean mass of 16 bags, in grams? | 5 | 0 | g | σ/√n = 20/√16 = 5 g.
 M1#maths-u12-20-q2@1: What does the central limit theorem describe? | The approximate normality of sums and means | The convergence of probabilities to 0.5 | The exact distribution of every variable | Why variances add | How to calculate medians | It concerns the distribution of sums and averages of many independent variables.
@@ -731,8 +731,8 @@ Q: What is the variance of a Bernoulli(0.5) variable? | 0.25.
 Q: What do you get by adding n independent Bernoulli(p) variables? | A binomial(n, p) variable.
 SUM: Bernoulli trials have two outcomes.
 SUM: They build many other distributions.
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
-SRC: Bernoulli J, Ars Conjectandi (Basel 1713), trans. Sylla ED, The Art of Conjecturing (Johns Hopkins University Press 2006) | textbook | 2006 | https://www.press.jhu.edu/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
+SRC: Bernoulli J, Ars Conjectandi (Basel 1713), trans. Sylla ED, The Art of Conjecturing (Johns Hopkins University Press 2006) | secondary | 2006 | https://www.press.jhu.edu/
 NUM1#maths-u12-21-q1@1: X is Bernoulli with p = 0.8. Find Var(X). | 0.16 | 0.0001 |  | Var(X) = 0.8 × 0.2 = 0.16.
 M1#maths-u12-21-q2@1: For which p is a Bernoulli variable's variance largest? | 0.5 | 0 | 1 | 0.25 | 0.75 | p(1 − p) is a downward parabola with its peak at p = 0.5.
 M2#maths-u12-21-q3@2: What is E(X^{5}) for a Bernoulli(p) variable? | p | p^{5} | 5p | 1 | 0 | X only takes 0 and 1, so X^{5} = X and E(X^{5}) = p.
@@ -767,7 +767,7 @@ Q: How do you find P(X ≥ 4) from a cumulative table? | 1 − P(X ≤ 3).
 SUM: Binomial counts successes in n trials.
 SUM: Mean np, variance np(1 − p).
 SRC: Department for Education, Mathematics AS and A level subject content: statistics | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 NUM1#maths-u12-22-q1@1: A fair coin is tossed 5 times. Find P(exactly 3 heads). | 0.3125 | 0.0001 |  | C(5, 3) × 0.5^{5} = 10/32 = 0.3125.
 M1#maths-u12-22-q2@1: Which situation is binomial? | Number of sixes in 30 rolls of a die | Number of rolls until the first six | Height of a student | Number of aces in a 5-card hand | Time between buses | Fixed n, independent rolls, constant p = 1/6; the hand of cards is without replacement.
 M2#maths-u12-22-q3@2: X ~ B(n, p) has mean 6 and variance 4.2. What is n? | 20 | 10 | 30 | 15 | 6 | 1 − p = 4.2/6 = 0.7, so p = 0.3 and n = 6/0.3 = 20.
@@ -801,7 +801,7 @@ Q: What is the mean number of tosses of a fair coin until the first head? | 2.
 Q: What is P(X > 5) for a geometric variable with p = 0.1? | 0.9^{5} ≈ 0.590.
 SUM: Geometric counts trials to the first success.
 SUM: It forgets the past.
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u12-23-q1@1: X ~ Geo(0.2). Find P(X > 3). | 0.512 | 0.0001 |  | The first three trials must all fail: 0.8^{3} = 0.512.
 M1#maths-u12-23-q2@1: Which distribution is the discrete counterpart of the exponential? | Geometric | Binomial | Poisson | Hypergeometric | Uniform | Both model waiting times and both are memoryless.
@@ -834,8 +834,8 @@ Q: What is the negative binomial with r = 1? | The geometric distribution.
 Q: What is overdispersion? | Count data with variance larger than the mean.
 SUM: Negative binomial waits for r successes.
 SUM: It models overdispersed counts.
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
-SRC: Hilbe JM, Negative Binomial Regression (2nd edn, Cambridge University Press 2011) | textbook | 2011 | https://www.cambridge.org/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
+SRC: Hilbe JM, Negative Binomial Regression (2nd edn, Cambridge University Press 2011) | secondary | 2011 | https://www.cambridge.org/
 NUM1#maths-u12-24-q1@1: What is the mean number of trials to get 4 successes when p = 0.25? | 16 | 0 |  | E(X) = r/p = 4/0.25 = 16.
 M1#maths-u12-24-q2@1: Why might an analyst choose a negative binomial model over a Poisson for counts? | The counts' variance is well above their mean | The counts are negative | There are only two outcomes | The counts are continuous | The mean is zero | The Poisson forces variance = mean; the negative binomial allows extra variation.
 M2#maths-u12-24-q3@2: For trials to the 2nd success with p = 0.5, what is P(X = 2)? | 0.25 | 0.5 | 0.125 | 0.75 | 1 | Both first trials must succeed: 0.5^{2} = 0.25.
@@ -868,7 +868,7 @@ Q: What is the mean number of aces in a 5-card hand? | 5 × 4/52 ≈ 0.385.
 Q: When is the binomial a good approximation to the hypergeometric? | When the population is large compared with the sample.
 SUM: Hypergeometric handles sampling without replacement.
 SUM: It underlies lotteries and exact tests.
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 SRC: The National Lottery, Lotto: how to play and odds | data | 2025 | https://www.national-lottery.co.uk/games/lotto
 NUM1#maths-u12-25-q1@1: A committee of 3 is chosen at random from 4 women and 6 men. Find P(all 3 are women), to 4 decimal places. | 0.0333 | 0.0001 |  | C(4, 3)/C(10, 3) = 4/120 ≈ 0.0333.
 M1#maths-u12-25-q2@1: Which situation calls for the hypergeometric distribution? | Counting hearts in a 5-card hand | Counting heads in 10 tosses | Counting calls in an hour | Rolling until a six | Measuring a height | Cards are dealt without replacement from a finite pack.
@@ -904,7 +904,7 @@ Q: Calls arrive at 6 per hour. What is λ for a 20-minute period? | 2.
 SUM: Poisson counts random events.
 SUM: Mean equals variance.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Bortkiewicz L von, Das Gesetz der kleinen Zahlen (Teubner 1898) | textbook | 1898 | https://archive.org/
+SRC: Bortkiewicz L von, Das Gesetz der kleinen Zahlen (Teubner 1898) | secondary | 1898 | https://archive.org/
 NUM1#maths-u12-26-q1@1: X ~ Po(4). Find P(X = 0), to 4 decimal places. | 0.0183 | 0.0001 |  | P(X = 0) = e^{−4} ≈ 0.0183.
 M1#maths-u12-26-q2@1: A batch of 2,000 items has a defect rate of 0.1%. Which model approximates the number of defects? | Po(2) | Po(0.001) | B(2000, 0.5) | N(0, 1) | Geo(0.001) | n is large and p small, so Po(np) = Po(2) works well.
 M2#maths-u12-26-q3@2: Observed counts have mean 3.1 and variance 9.4. What does that suggest? | A Poisson model doesn't fit: the data are overdispersed | A Poisson model fits perfectly | The data are binomial | The mean must be wrong | Variance can't exceed the mean | A Poisson needs variance ≈ mean; here it's three times larger.
@@ -937,8 +937,8 @@ Q: What is the marginal distribution of one multinomial count? | Binomial(n, p_{
 Q: Why are multinomial counts negatively correlated? | They share a fixed total n.
 SUM: Multinomial extends the binomial.
 SUM: It underlies goodness-of-fit tests.
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
-SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | textbook | 2013 | https://www.wiley.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
+SRC: Agresti A, Categorical Data Analysis (3rd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
 NUM1#maths-u12-27-q1@1: Blood groups O, A, B, AB occur with probabilities 0.45, 0.4, 0.1, 0.05. In a sample of 20, what is the expected number with group A? | 8 | 0 |  | The count for A is binomial with n = 20, p = 0.4, mean 8.
 M1#maths-u12-27-q2@1: A multinomial has n = 10 and p₁ = 0.3, p₂ = 0.5. What is Cov(X₁, X₂)? | −1.5 | 1.5 | 0 | −0.15 | 2.1 | Multinomial counts covary negatively: Cov = −np₁p₂ = −10 × 0.3 × 0.5 = −1.5.
 M2#maths-u12-27-q3@2: Which distribution is the multinomial with exactly two categories? | Binomial | Poisson | Geometric | Hypergeometric | Normal | Two categories, success and failure, give the binomial.
@@ -971,8 +971,8 @@ Q: What is the mean of a beta-binomial with n = 10, α = 2, β = 3? | 10 × 2/5 
 Q: What does α = β = 1 give for the beta-binomial? | A uniform distribution on 0, 1, …, n.
 SUM: Beta-binomial mixes binomials over p.
 SUM: It captures extra-binomial variation.
-SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | textbook | 2013 | https://sites.stat.columbia.edu/gelman/book/
-SRC: Johnson NL, Kemp AW, Kotz S, Univariate Discrete Distributions (3rd edn, Wiley 2005) | textbook | 2005 | https://www.wiley.com/
+SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | secondary | 2013 | https://sites.stat.columbia.edu/gelman/book/
+SRC: Johnson NL, Kemp AW, Kotz S, Univariate Discrete Distributions (3rd edn, Wiley 2005) | secondary | 2005 | https://www.wiley.com/
 NUM1#maths-u12-28-q1@1: A beta-binomial has n = 20, α = 3 and β = 7. Find its mean. | 6 | 0 |  | nα/(α + β) = 20 × 3/10 = 6.
 M1#maths-u12-28-q2@1: Why does a beta-binomial have more variance than a binomial with the same mean? | Its success probability varies as well as the outcomes | It has more trials | It's continuous | Its mean is larger | It doesn't | Variation in p adds to the ordinary binomial variation.
 M2#maths-u12-28-q3@2: As α + β becomes very large with α/(α + β) fixed, what does the beta-binomial approach? | The binomial | The Poisson | The normal with mean 0 | The uniform | The geometric | The beta distribution concentrates at one value of p, removing the extra variation.
@@ -1005,8 +1005,8 @@ Q: What is the mean of U(2, 10)? | 6.
 Q: What is the density of U(0, 4)? | 1/4 on [0, 4].
 SUM: Uniform means equally likely across an interval.
 SUM: It's the basis of random number generation.
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
-SRC: Devroye L, Non-Uniform Random Variate Generation (Springer 1986) | textbook | 1986 | https://luc.devroye.org/rnbookindex.html
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
+SRC: Devroye L, Non-Uniform Random Variate Generation (Springer 1986) | secondary | 1986 | https://luc.devroye.org/rnbookindex.html
 NUM1#maths-u12-29-q1@1: Find the variance of U(0, 6). | 3 | 0 |  | (b − a)^{2}/12 = 36/12 = 3.
 M1#maths-u12-29-q2@1: X ~ U(10, 30). What is P(X < 15)? | 0.25 | 0.5 | 0.15 | 0.75 | 0.05 | The interval from 10 to 15 is 5 out of a total length of 20.
 M2#maths-u12-29-q3@2: Which distribution describes the error from rounding to the nearest integer? | U(−0.5, 0.5) | N(0, 1) | U(0, 1) | Po(0.5) | Exponential with mean 0.5 | Any value between −0.5 and 0.5 is equally likely if the original value is spread smoothly.
@@ -1115,7 +1115,7 @@ Q: What is the variance of Exp(2)? | 1/4.
 Q: What is the half-life of a substance with decay rate λ? | ln 2/λ.
 SUM: The exponential models waiting times.
 SUM: It's memoryless.
-SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Ross SM, A First Course in Probability (10th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, section 8.1.6.1: Exponential distribution | guidance | 2012 | https://www.itl.nist.gov/div898/handbook/
 NUM1#maths-u12-32-q1@1: X ~ Exp(0.5). Find the median, to 3 decimal places. | 1.386 | 0.001 |  | ln 2/0.5 = 2 ln 2 ≈ 1.386.
 M1#maths-u12-32-q2@1: Machines A and B fail independently at rates 0.1 and 0.3 per year. What is the distribution of the time to the first failure? | Exponential with rate 0.4 | Exponential with rate 0.03 | Exponential with rate 0.2 | Normal | Poisson with mean 0.4 | The minimum of independent exponentials is exponential with the rates added.
@@ -1149,8 +1149,8 @@ Q: What is Γ(5)? | 4! = 24.
 Q: Which gamma distribution is the exponential? | Shape k = 1.
 SUM: Gamma generalises the exponential.
 SUM: It waits for the kth event.
-SRC: Johnson NL, Kotz S, Balakrishnan N, Continuous Univariate Distributions, vol 1 (2nd edn, Wiley 1994) | textbook | 1994 | https://www.wiley.com/
-SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | textbook | 2002 | https://www.cengage.com/
+SRC: Johnson NL, Kotz S, Balakrishnan N, Continuous Univariate Distributions, vol 1 (2nd edn, Wiley 1994) | secondary | 1994 | https://www.wiley.com/
+SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | secondary | 2002 | https://www.cengage.com/
 NUM1#maths-u12-33-q1@1: X ~ Gamma(4, 0.5) (shape 4, rate 0.5). Find Var(X). | 16 | 0 |  | k/λ^{2} = 4/0.25 = 16.
 M1#maths-u12-33-q2@1: What is the sum of 5 independent Exp(3) variables? | Gamma(5, 3) | Exp(15) | Exp(3/5) | Po(15) | N(5, 3) | Summing k independent exponentials with rate λ gives Gamma(k, λ).
 M2#maths-u12-33-q3@2: What is Γ(1/2)? | √π | 1/2 | 1 | π | 0 | A classic result: Γ(1/2) = √π, linked to the normal density's constant.
@@ -1183,8 +1183,8 @@ Q: What is Beta(1, 1)? | The uniform distribution on [0, 1].
 Q: What is the mean of Beta(3, 7)? | 0.3.
 SUM: Beta models proportions.
 SUM: It updates neatly with binomial data.
-SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | textbook | 2013 | https://sites.stat.columbia.edu/gelman/book/
-SRC: Johnson NL, Kotz S, Balakrishnan N, Continuous Univariate Distributions, vol 2 (2nd edn, Wiley 1995) | textbook | 1995 | https://www.wiley.com/
+SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | secondary | 2013 | https://sites.stat.columbia.edu/gelman/book/
+SRC: Johnson NL, Kotz S, Balakrishnan N, Continuous Univariate Distributions, vol 2 (2nd edn, Wiley 1995) | secondary | 1995 | https://www.wiley.com/
 NUM1#maths-u12-34-q1@1: A prior Beta(1, 1) is updated with 3 successes and 1 failure. What is the posterior mean? | 0.6667 | 0.0005 |  | Posterior Beta(4, 2), with mean 4/6 ≈ 0.667.
 M1#maths-u12-34-q2@1: Which beta distribution is skewed towards 1? | Beta(5, 2) | Beta(2, 5) | Beta(1, 1) | Beta(3, 3) | Beta(1, 4) | With α > β the mass sits nearer 1; the mean is 5/7.
 M3#maths-u12-34-q3@2: What is the distribution of the largest of 4 independent U(0, 1) values? | Beta(4, 1) | Beta(1, 4) | U(0, 1) | Beta(2, 2) | Exp(4) | P(max ≤ x) = x^{4}, whose density 4x^{3} is Beta(4, 1).
@@ -1218,7 +1218,7 @@ Q: What are the mean and variance of χ^{2}₄? | 4 and 8.
 Q: How many degrees of freedom for a 3 × 4 contingency table test? | (3 − 1)(4 − 1) = 6.
 SUM: Chi-squared sums squared normals.
 SUM: It tests counts and variances.
-SRC: Pearson K, On the criterion that a given system of deviations…, Philosophical Magazine 50(302), 157 | journal | 1900 | https://doi.org/10.1080/14786440009463897
+SRC: Pearson K, On the criterion that a given system of deviations…, Philosophical Magazine 50(302), 157 | primary | 1900 | https://doi.org/10.1080/14786440009463897
 SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, section 1.3.6.6.6: Chi-square distribution | guidance | 2012 | https://www.itl.nist.gov/div898/handbook/
 NUM1#maths-u12-35-q1@1: What is the variance of a chi-squared variable with 12 degrees of freedom? | 24 | 0 |  | Variance = 2ν = 24.
 M1#maths-u12-35-q2@1: Which statement about χ^{2}_{ν} is correct? | It's the sum of ν squared independent standard normals | It can be negative | It's symmetric | Its mean is 0 | Its variance is ν | A sum of squares is non-negative, with mean ν and variance 2ν.
@@ -1252,7 +1252,7 @@ Q: How many degrees of freedom does a one-sample t-interval with n = 15 use? | 1
 Q: What does the t-distribution approach as ν → ∞? | The standard normal.
 SUM: The t-distribution handles unknown σ.
 SUM: Heavier tails reflect extra uncertainty.
-SRC: Student, The probable error of a mean, Biometrika 6(1), 1 | journal | 1908 | https://doi.org/10.1093/biomet/6.1.1
+SRC: Student, The probable error of a mean, Biometrika 6(1), 1 | primary | 1908 | https://doi.org/10.1093/biomet/6.1.1
 SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, section 1.3.6.6.4: t distribution | guidance | 2012 | https://www.itl.nist.gov/div898/handbook/
 NUM1#maths-u12-36-q1@1: What is the variance of a t-distribution with 6 degrees of freedom? | 1.5 | 0.001 |  | ν/(ν − 2) = 6/4 = 1.5.
 M1#maths-u12-36-q2@1: Compared with the standard normal, the t-distribution has… | heavier tails | lighter tails | a larger mean | a skew to the right | no symmetry | Estimating σ adds uncertainty, which spreads probability into the tails.
@@ -1287,7 +1287,7 @@ Q: In ANOVA, what does a large F statistic suggest? | The group means differ mor
 SUM: F compares variances.
 SUM: It's the test statistic of ANOVA.
 SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, section 1.3.6.6.5: F distribution | guidance | 2012 | https://www.itl.nist.gov/div898/handbook/
-SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | textbook | 2002 | https://www.cengage.com/
+SRC: Casella G, Berger RL, Statistical Inference (2nd edn, Duxbury 2002) | secondary | 2002 | https://www.cengage.com/
 NUM1#maths-u12-37-q1@1: What is the mean of an F(5, 12) distribution, to 3 decimal places? | 1.2 | 0.001 |  | d₂/(d₂ − 2) = 12/10 = 1.2.
 M1#maths-u12-37-q2@1: Which test statistic follows an F-distribution under the null hypothesis? | The ratio of two sample variances from normal populations | A sample mean | A sample proportion | A count of successes | A correlation of exactly 1 | Each scaled sample variance is chi-squared, and their ratio is F.
 M2#maths-u12-37-q3@2: If X ~ F(4, 9), what is the distribution of 1/X? | F(9, 4) | F(4, 9) | t₉ | χ^{2}₄ | F(1, 9) | Inverting the ratio swaps the numerator and denominator degrees of freedom.
@@ -1321,7 +1321,7 @@ Q: Which Weibull shape gives the exponential distribution? | k = 1.
 Q: What does k > 1 indicate about failures? | An increasing failure rate: wear-out.
 SUM: Weibull models lifetimes.
 SUM: Its shape sets the failure pattern.
-SRC: Weibull W, A statistical distribution function of wide applicability, Journal of Applied Mechanics 18, 293 | journal | 1951 | https://doi.org/10.1115/1.4010337
+SRC: Weibull W, A statistical distribution function of wide applicability, Journal of Applied Mechanics 18, 293 | primary | 1951 | https://doi.org/10.1115/1.4010337
 SRC: NIST/SEMATECH, e-Handbook of Statistical Methods, section 8.1.6.2: Weibull distribution | guidance | 2012 | https://www.itl.nist.gov/div898/handbook/
 NUM1#maths-u12-38-q1@1: A Weibull distribution has λ = 10 and k = 1. Find its median, to 3 decimal places. | 6.931 | 0.001 |  | With k = 1 it's exponential: the median is 10 ln 2 ≈ 6.931.
 M1#maths-u12-38-q2@1: A Weibull fit to early failures of new electronics gives k = 0.6. What does that suggest? | Failure rates fall with age: early defects | Parts wear out | The failure rate is constant | The model is invalid | Failures are normally distributed | k < 1 means a decreasing hazard, typical of manufacturing defects.
@@ -1356,8 +1356,8 @@ Q: If ln X ~ N(2, 0.5^{2}), what is the median of X? | e^{2} ≈ 7.39.
 Q: Why are incomes often log-normal? | They grow by multiplicative (percentage) changes.
 SUM: Log-normal is normal on a log scale.
 SUM: It suits products and growth.
-SRC: Limpert E, Stahel WA, Abbt M, Log-normal distributions across the sciences: keys and clues, BioScience 51(5), 341 | journal | 2001 | https://doi.org/10.1641/0006-3568(2001)051[0341:LNDATS]2.0.CO;2
-SRC: Johnson NL, Kotz S, Balakrishnan N, Continuous Univariate Distributions, vol 1 (2nd edn, Wiley 1994) | textbook | 1994 | https://www.wiley.com/
+SRC: Limpert E, Stahel WA, Abbt M, Log-normal distributions across the sciences: keys and clues, BioScience 51(5), 341 | primary | 2001 | https://doi.org/10.1641/0006-3568(2001)051[0341:LNDATS]2.0.CO;2
+SRC: Johnson NL, Kotz S, Balakrishnan N, Continuous Univariate Distributions, vol 1 (2nd edn, Wiley 1994) | secondary | 1994 | https://www.wiley.com/
 NUM1#maths-u12-39-q1@1: ln X ~ N(1, 0.4). Find E(X), to 3 decimal places. | 3.32 | 0.002 |  | e^{1 + 0.4/2} = e^{1.2} ≈ 3.320.
 M1#maths-u12-39-q2@1: For a log-normal distribution, how do the mean and median compare? | The mean is larger than the median | The mean equals the median | The median is larger | Either could be larger | Both are zero | Right skew pulls the mean e^{μ + σ^{2}/2} above the median e^{μ}.
 M2#maths-u12-39-q3@2: Which process naturally produces a log-normal distribution? | Repeated growth by random percentages | Counting rare events | Adding many small errors | Waiting for the first success | Drawing without replacement | Logs turn a product of factors into a sum, which the CLT makes normal.
@@ -1391,8 +1391,8 @@ Q: Which Pareto distributions have a finite variance? | Those with α > 2.
 Q: What does a Pareto tail look like on a log–log plot? | A straight line with gradient −α.
 SUM: Pareto is the classic power law.
 SUM: Its tail index sets which moments exist.
-SRC: Newman MEJ, Power laws, Pareto distributions and Zipf's law, Contemporary Physics 46(5), 323 | journal | 2005 | https://doi.org/10.1080/00107510500052444
-SRC: Clauset A, Shalizi CR, Newman MEJ, Power-law distributions in empirical data, SIAM Review 51(4), 661 | journal | 2009 | https://doi.org/10.1137/070710111
+SRC: Newman MEJ, Power laws, Pareto distributions and Zipf's law, Contemporary Physics 46(5), 323 | primary | 2005 | https://doi.org/10.1080/00107510500052444
+SRC: Clauset A, Shalizi CR, Newman MEJ, Power-law distributions in empirical data, SIAM Review 51(4), 661 | primary | 2009 | https://doi.org/10.1137/070710111
 NUM1#maths-u12-40-q1@1: X is Pareto with x_{m} = 10 and α = 3. Find P(X > 20). | 0.125 | 0.0001 |  | (10/20)^{3} = 1/8 = 0.125.
 M1#maths-u12-40-q2@1: A Pareto distribution has α = 1.5. Which statement is true? | Its mean is finite but its variance is infinite | Both mean and variance are finite | Neither exists | Its variance is finite but its mean isn't | It's normal | The mean needs α > 1; the variance needs α > 2.
 M3#maths-u12-40-q3@2: For Pareto losses with α = 2 and x_{m} = 1, how does P(X > 100) compare with P(X > 10)? | It's 100 times smaller | It's 10 times smaller | It's the same | It's e^{−90} times smaller | It's 2 times smaller | Multiplying x by 10 divides the tail by 10^{α} = 100: a power law, not an exponential drop.
@@ -1426,8 +1426,8 @@ Q: What is the median of the standard Cauchy? | 0.
 Q: What is the distribution of the ratio of two independent standard normals? | Standard Cauchy.
 SUM: Cauchy has no mean or variance.
 SUM: Averages of Cauchy data don't converge.
-SRC: Johnson NL, Kotz S, Balakrishnan N, Continuous Univariate Distributions, vol 1 (2nd edn, Wiley 1994) | textbook | 1994 | https://www.wiley.com/
-SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | textbook | 2020 | https://global.oup.com/
+SRC: Johnson NL, Kotz S, Balakrishnan N, Continuous Univariate Distributions, vol 1 (2nd edn, Wiley 1994) | secondary | 1994 | https://www.wiley.com/
+SRC: Grimmett G, Stirzaker D, Probability and Random Processes (4th edn, Oxford University Press 2020) | secondary | 2020 | https://global.oup.com/
 NUM1#maths-u12-41-q1@1: For the standard Cauchy, find P(X < √3), to 4 decimal places. | 0.8333 | 0.0005 |  | F(√3) = 1/2 + arctan(√3)/π = 1/2 + (π/3)/π = 5/6 ≈ 0.8333.
 M1#maths-u12-41-q2@1: What is the distribution of the mean of 100 independent standard Cauchy variables? | Exactly the same as one observation's | Approximately normal | Cauchy with scale 1/10 | Degenerate at 0 | Uniform | Cauchy averages keep the same distribution; the CLT's finite-variance condition fails.
 M2#maths-u12-41-q3@2: Which estimator of the centre should you use for Cauchy data? | The sample median | The sample mean | The sample maximum | The sample variance | The range | The median is consistent for the location; the mean never settles.
@@ -1461,8 +1461,8 @@ Q: What shape are the density contours of a bivariate normal? | Ellipses.
 Q: What is Var(Y ∣ X = x) in a bivariate normal? | σ_{Y}^{2}(1 − ρ^{2}).
 SUM: The multivariate normal is defined by μ and Σ.
 SUM: Its conditionals give linear regression.
-SRC: Anderson TW, An Introduction to Multivariate Statistical Analysis (3rd edn, Wiley 2003) | textbook | 2003 | https://www.wiley.com/
-SRC: Galton F, Regression towards mediocrity in hereditary stature, Journal of the Anthropological Institute 15, 246 | journal | 1886 | https://doi.org/10.2307/2841583
+SRC: Anderson TW, An Introduction to Multivariate Statistical Analysis (3rd edn, Wiley 2003) | secondary | 2003 | https://www.wiley.com/
+SRC: Galton F, Regression towards mediocrity in hereditary stature, Journal of the Anthropological Institute 15, 246 | primary | 1886 | https://doi.org/10.2307/2841583
 NUM1#maths-u12-42-q1@1: In the heights example (SDs 7, ρ = 0.5), find Var(son's height ∣ father's height). | 36.75 | 0.01 | cm² | σ^{2}(1 − ρ^{2}) = 49 × 0.75 = 36.75 cm^{2}.
 M1#maths-u12-42-q2@1: X ~ N₂(μ, Σ). What is the distribution of X₁ + X₂? | Normal | Chi-squared | Uniform | Bivariate normal | Unknown without more information | Any linear combination of a multivariate normal vector is normal.
 M3#maths-u12-42-q3@2: Two variables each have a normal marginal and zero correlation. Must they be independent? | No, unless they're jointly normal | Yes, always | Yes, because both are normal | Only if their means are 0 | Only if their variances are equal | Normal marginals don't make the pair jointly normal; only joint normality turns zero correlation into independence.
@@ -1496,8 +1496,8 @@ Q: What does the multivariate t approach as ν → ∞? | The multivariate norma
 Q: What distribution are the marginals of a multivariate t? | Univariate t with the same degrees of freedom.
 SUM: Multivariate t has heavy joint tails.
 SUM: It models simultaneous extremes.
-SRC: Kotz S, Nadarajah S, Multivariate t Distributions and Their Applications (Cambridge University Press 2004) | textbook | 2004 | https://www.cambridge.org/
-SRC: McNeil AJ, Frey R, Embrechts P, Quantitative Risk Management (revised edn, Princeton University Press 2015) | textbook | 2015 | https://press.princeton.edu/
+SRC: Kotz S, Nadarajah S, Multivariate t Distributions and Their Applications (Cambridge University Press 2004) | secondary | 2004 | https://www.cambridge.org/
+SRC: McNeil AJ, Frey R, Embrechts P, Quantitative Risk Management (revised edn, Princeton University Press 2015) | secondary | 2015 | https://press.princeton.edu/
 NUM1#maths-u12-43-q1@1: A multivariate t has ν = 4 and scale matrix entry Σ₁₁ = 3. Find Var(X₁). | 6 | 0 |  | Var = ν/(ν − 2) × Σ₁₁ = 2 × 3 = 6.
 M1#maths-u12-43-q2@1: Why do risk managers use a multivariate t rather than a normal for asset returns? | It allows more frequent joint extremes | It has lighter tails | It's easier to compute | It ignores correlation | Returns are always positive | Market crashes hit many assets at once, which normal models understate.
 M2#maths-u12-43-q3@2: In a multivariate t with diagonal Σ, are the components independent? | No: they share a random scale factor | Yes, always | Only when ν = 1 | Only when the means are zero | Yes, because they're uncorrelated | The common divisor √(W/ν) links their sizes.
@@ -1532,8 +1532,8 @@ Q: What is the Dirichlet with two categories? | The beta distribution.
 Q: What is the posterior after a Dir(2, 2, 2) prior and counts (1, 0, 3)? | Dir(3, 2, 5).
 SUM: Dirichlet distributions generate probability vectors.
 SUM: They're conjugate to the multinomial.
-SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | textbook | 2013 | https://sites.stat.columbia.edu/gelman/book/
-SRC: Blei DM, Ng AY, Jordan MI, Latent Dirichlet allocation, Journal of Machine Learning Research 3, 993 | journal | 2003 | https://www.jmlr.org/papers/v3/blei03a.html
+SRC: Gelman A, Carlin JB, Stern HS, Dunson DB, Vehtari A, Rubin DB, Bayesian Data Analysis (3rd edn, CRC Press 2013) | secondary | 2013 | https://sites.stat.columbia.edu/gelman/book/
+SRC: Blei DM, Ng AY, Jordan MI, Latent Dirichlet allocation, Journal of Machine Learning Research 3, 993 | primary | 2003 | https://www.jmlr.org/papers/v3/blei03a.html
 NUM1#maths-u12-44-q1@1: For Dir(2, 3, 5), find E(p₃). | 0.5 | 0.001 |  | α₃/α₀ = 5/10 = 0.5.
 M1#maths-u12-44-q2@1: Which vectors can a Dirichlet distribution produce? | Non-negative vectors whose entries add to 1 | Any real vectors | Integer vectors | Vectors of length 1 in Euclidean norm | Vectors of zeros | Its support is the probability simplex: non-negative entries with total 1.
 M2#maths-u12-44-q3@2: How does increasing all α_{i} by the same factor change a Dirichlet distribution? | It keeps the mean and reduces the spread | It changes the mean | It increases the spread | It makes it uniform | It has no effect | The mean α_{i}/α₀ is unchanged, but a larger α₀ concentrates the probability.
@@ -1566,8 +1566,8 @@ Q: What is the Wishart distribution with p = 1? | A scaled chi-squared: σ^{2}χ
 Q: What is E(W) for W ~ W_{p}(Σ, n)? | nΣ.
 SUM: Wishart describes random covariance matrices.
 SUM: It generalises chi-squared.
-SRC: Wishart J, The generalised product moment distribution in samples from a normal multivariate population, Biometrika 20A(1–2), 32 | journal | 1928 | https://doi.org/10.1093/biomet/20A.1-2.32
-SRC: Anderson TW, An Introduction to Multivariate Statistical Analysis (3rd edn, Wiley 2003) | textbook | 2003 | https://www.wiley.com/
+SRC: Wishart J, The generalised product moment distribution in samples from a normal multivariate population, Biometrika 20A(1–2), 32 | primary | 1928 | https://doi.org/10.1093/biomet/20A.1-2.32
+SRC: Anderson TW, An Introduction to Multivariate Statistical Analysis (3rd edn, Wiley 2003) | secondary | 2003 | https://www.wiley.com/
 NUM1#maths-u12-45-q1@1: W ~ W₂(Σ, 8) where Σ has diagonal entries 3 and 5. Find E(W₂₂). | 40 | 0 |  | E(W) = nΣ, so E(W₂₂) = 8 × 5 = 40.
 M1#maths-u12-45-q2@1: Which distribution does the Wishart generalise? | Chi-squared | Poisson | Cauchy | Uniform | Bernoulli | With one dimension it's a scaled chi-squared: a sum of squared normals.
 M2#maths-u12-45-q3@2: In Bayesian analysis of normal data, which prior is conjugate for the precision matrix? | Wishart | Dirichlet | Beta | Poisson | Cauchy | The Wishart prior on Σ^{−1} gives a Wishart posterior.
@@ -1600,8 +1600,8 @@ Q: What does the law of total variance split variance into? | Within-group (aver
 Q: Which algorithm usually fits Gaussian mixture models? | The EM (expectation–maximisation) algorithm.
 SUM: Mixtures combine subpopulations.
 SUM: Variance includes between-group spread.
-SRC: McLachlan G, Peel D, Finite Mixture Models (Wiley 2000) | textbook | 2000 | https://www.wiley.com/
-SRC: Dempster AP, Laird NM, Rubin DB, Maximum likelihood from incomplete data via the EM algorithm, Journal of the Royal Statistical Society B 39(1), 1 | journal | 1977 | https://doi.org/10.1111/j.2517-6161.1977.tb01600.x
+SRC: McLachlan G, Peel D, Finite Mixture Models (Wiley 2000) | secondary | 2000 | https://www.wiley.com/
+SRC: Dempster AP, Laird NM, Rubin DB, Maximum likelihood from incomplete data via the EM algorithm, Journal of the Royal Statistical Society B 39(1), 1 | primary | 1977 | https://doi.org/10.1111/j.2517-6161.1977.tb01600.x
 NUM1#maths-u12-46-q1@1: A 30:70 mixture of N(10, 4) and N(20, 4). Find the mean. | 17 | 0 |  | 0.3 × 10 + 0.7 × 20 = 17.
 M1#maths-u12-46-q2@1: Which feature often reveals a mixture in a histogram? | Two or more peaks | A perfect bell shape | A flat top | No tails | Negative values | Separate subpopulations create separate modes.
 M3#maths-u12-46-q3@2: A Poisson count has a gamma-distributed rate. What is the resulting mixture? | Negative binomial | Poisson | Normal | Binomial | Exponential | Mixing Poisson over a gamma rate produces the overdispersed negative binomial.
@@ -1634,8 +1634,8 @@ Q: By how much does F_{n} jump at a single (untied) observation? | 1/n.
 Q: What does the Glivenko–Cantelli theorem say? | The empirical CDF converges uniformly to the true CDF.
 SUM: The empirical distribution comes straight from data.
 SUM: It underpins the bootstrap.
-SRC: Efron B, Tibshirani RJ, An Introduction to the Bootstrap (Chapman & Hall 1993) | textbook | 1993 | https://www.routledge.com/
-SRC: van der Vaart AW, Asymptotic Statistics (Cambridge University Press 1998) | textbook | 1998 | https://www.cambridge.org/
+SRC: Efron B, Tibshirani RJ, An Introduction to the Bootstrap (Chapman & Hall 1993) | secondary | 1993 | https://www.routledge.com/
+SRC: van der Vaart AW, Asymptotic Statistics (Cambridge University Press 1998) | secondary | 1998 | https://www.cambridge.org/
 NUM1#maths-u12-47-q1@1: Data: 1, 4, 4, 6, 7, 9, 10, 12. Find F₈(6.5). | 0.5 | 0.001 |  | Four of the eight values (1, 4, 4, 6) are ≤ 6.5, giving 4/8 = 0.5.
 M1#maths-u12-47-q2@1: How are bootstrap samples drawn? | With replacement from the data, of the same size n | Without replacement, of size n | From a normal distribution | From a uniform distribution | One observation at a time without replacement | Sampling with replacement from F_{n} mimics sampling from the population.
 M2#maths-u12-47-q3@2: Which test compares a sample's empirical CDF with a hypothesised continuous CDF? | Kolmogorov–Smirnov | Student's t | F-test | Chi-squared for variances | Fisher's exact | The KS statistic is the largest vertical gap between F_{n} and F.
@@ -1668,8 +1668,8 @@ Q: What does a power-law tail look like on a log–log survival plot? | A straig
 Q: What is the catastrophe principle? | Large totals of heavy-tailed variables are driven by a single huge value.
 SUM: Heavy tails make extremes common.
 SUM: They break normal-based intuitions.
-SRC: Clauset A, Shalizi CR, Newman MEJ, Power-law distributions in empirical data, SIAM Review 51(4), 661 | journal | 2009 | https://doi.org/10.1137/070710111
-SRC: Embrechts P, Klüppelberg C, Mikosch T, Modelling Extremal Events for Insurance and Finance (Springer 1997) | textbook | 1997 | https://link.springer.com/
+SRC: Clauset A, Shalizi CR, Newman MEJ, Power-law distributions in empirical data, SIAM Review 51(4), 661 | primary | 2009 | https://doi.org/10.1137/070710111
+SRC: Embrechts P, Klüppelberg C, Mikosch T, Modelling Extremal Events for Insurance and Finance (Springer 1997) | secondary | 1997 | https://link.springer.com/
 NUM1#maths-u12-48-q1@1: A power-law tail has α = 3. By what factor does P(X > x) fall when x doubles? | 8 | 0 |  | P scales as x^{−3}, so doubling x divides the tail probability by 2^{3} = 8.
 M1#maths-u12-48-q2@1: Which distribution is heavy-tailed? | Pareto | Normal | Exponential | Uniform | Binomial | Its tail falls as a power of x, slower than any exponential.
 M2#maths-u12-48-q3@2: For a power-law tail with α = 1.5, which moments exist? | The mean but not the variance | Both mean and variance | Neither | The variance but not the mean | All moments | Moments of order below α (here, order 1) exist; order 2 doesn't.
@@ -1703,8 +1703,8 @@ Q: Which stable distribution has finite variance? | The normal (α = 2).
 Q: How does the sum of n iid stable(α) variables scale? | Like n^{1/α}.
 SUM: Stable laws reproduce under addition.
 SUM: They generalise the CLT to heavy tails.
-SRC: Nolan JP, Univariate Stable Distributions (Springer 2020) | textbook | 2020 | https://link.springer.com/
-SRC: Mandelbrot B, The variation of certain speculative prices, Journal of Business 36(4), 394 | journal | 1963 | https://doi.org/10.1086/294632
+SRC: Nolan JP, Univariate Stable Distributions (Springer 2020) | secondary | 2020 | https://link.springer.com/
+SRC: Mandelbrot B, The variation of certain speculative prices, Journal of Business 36(4), 394 | primary | 1963 | https://doi.org/10.1086/294632
 NUM1#maths-u12-49-q1@1: For a stable law with α = 0.5, by what factor is the sum of 4 iid copies scaled relative to one? | 16 | 0 |  | n^{1/α} = 4^{2} = 16.
 M1#maths-u12-49-q2@1: Which value of the stability index gives the normal distribution? | 2 | 1 | 0.5 | 0 | 3 | α = 2 is the only stable case with finite variance: the normal.
 M3#maths-u12-49-q3@2: Sums of iid variables with tail index α = 1.5 are suitably scaled. What is their limit? | A stable law with α = 1.5 | The normal | The Cauchy | No limit exists | The exponential | Infinite variance rules out the normal; the generalised CLT gives a stable limit with the same α.
@@ -1739,7 +1739,7 @@ Q: What is the probability of a 50-year event in any given year? | 1/50 = 2%.
 Q: Which extreme value type arises from heavy-tailed data? | Fréchet (ξ > 0).
 SUM: Maxima follow extreme value laws.
 SUM: Return levels guide flood and wind design.
-SRC: Coles S, An Introduction to Statistical Modeling of Extreme Values (Springer 2001) | textbook | 2001 | https://link.springer.com/
+SRC: Coles S, An Introduction to Statistical Modeling of Extreme Values (Springer 2001) | secondary | 2001 | https://link.springer.com/
 SRC: Environment Agency, Flood estimation guidelines (LIT 11832) | guidance | 2022 | https://www.gov.uk/government/organisations/environment-agency
 NUM1#maths-u12-50-q1@1: A 100-year flood has a 1% chance each year. Find the probability of at least one in 30 years, to 3 decimal places. | 0.26 | 0.002 |  | 1 − 0.99^{30} ≈ 1 − 0.740 = 0.260.
 M1#maths-u12-50-q2@1: Which extreme value type arises from maxima of normal data? | Gumbel | Fréchet | Reversed Weibull | Cauchy | Pareto | Light, exponential-type tails give the Gumbel (ξ = 0).

@@ -63,7 +63,7 @@ Q: What symbol shows an identity? | ≡.
 SUM: Algebra follows the laws of arithmetic.
 SUM: Expressions, equations, formulae and identities are different kinds of statement.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-02-q1@1: Which is an identity? | 3(x + 2) ≡ 3x + 6 | 3x + 2 = 11 | y = 3x + 2 | 3x + 2 | 3x > 2 | It's true for every value of x, so it's an identity.
 M2#maths-u03-02-q2@2: Which law justifies 7 × 98 = 7 × 100 − 7 × 2? | The distributive law | The commutative law | The associative law | The law of indices | The inverse law | 7(100 − 2) = 7 × 100 − 7 × 2 multiplies across a bracket.
 
@@ -449,7 +449,7 @@ Q: What does a squared factor (x − a)^{2} mean for the graph? | It touches the
 SUM: Cubics factorise once one root is found.
 SUM: Roots and the leading coefficient give the graph's shape.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-14-q1@1: What are the roots of x(x − 4)(x + 1) = 0? | 0, 4 and −1 | 4 and −1 only | 0, −4 and 1 | 4 only | 0 only | Each factor gives a root: x = 0, x = 4, x = −1.
 M2#maths-u03-14-q2@2: Which value is a root of x^{3} − 2x^{2} − 5x + 6? | x = 1 | x = −1 | x = 2 | x = −2 | x = 6 | Substituting gives f(1) = 1 − 2 − 5 + 6 = 0, so x = 1 is a root.
 
@@ -479,7 +479,7 @@ Q: Is there a general formula for degree 5 polynomials? | No: the Abel–Ruffini
 SUM: Many polynomial equations reduce to quadratics.
 SUM: Higher degrees often need numerical methods.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | textbook | 2022 | https://www.routledge.com/
+SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | secondary | 2022 | https://www.routledge.com/
 NUM1#maths-u03-15-q1@2: How many real solutions does x^{4} − 10x^{2} + 9 = 0 have? | 4 | 0 |  | u^{2} − 10u + 9 = 0 gives u = 1 or 9, so x = ±1 or ±3: four solutions.
 M1#maths-u03-15-q2@1: What is the maximum number of real roots a degree 4 polynomial can have? | 4 | 2 | 3 | 5 | 8 | A polynomial of degree n has at most n real roots.
 M2#maths-u03-15-q3@2: What are the real solutions of x^{4} − 81 = 0? | x = 3 or x = −3 | x = 3 only | x = ±9 | x = ±3 and ±3i as real roots | x = 81 | (x^{2} − 9)(x^{2} + 9) = 0; x^{2} + 9 = 0 has no real roots.
@@ -572,7 +572,7 @@ Q: Write |x − 5| < 2 without a modulus. | 3 < x < 7.
 SUM: |x| is distance from zero.
 SUM: Modulus problems split into cases.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-18-q1@1: Solve |2x| = 10. | x = 5 or x = −5 | x = 5 | x = 20 | x = ±20 | x = −5 | The modulus is 10 when 2x = 10 or 2x = −10, giving x = 5 or x = −5.
 M2#maths-u03-18-q2@2: Which describes |x − 1| ≥ 4? | x ≤ −3 or x ≥ 5 | −3 ≤ x ≤ 5 | x ≥ 5 | x ≥ 3 | x ≤ −5 or x ≥ 3 | The distance from 1 is at least 4: x ≤ 1 − 4 or x ≥ 1 + 4.
 
@@ -602,7 +602,7 @@ Q: Two machines take 4 and 12 hours alone. How long together? | 3 hours (1/4 + 1
 SUM: Clear denominators to solve rational equations.
 SUM: Always check against excluded values.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 NUM1#maths-u03-19-q1@1: Solve 6/x + 1 = 4. | 2 | 0 |  | 6/x = 3, so x = 2 (which isn't excluded).
 M2#maths-u03-19-q2@2: How many solutions does (x^{2} − 9)/(x − 3) = 6 have? | None | One | Two | Three | Infinitely many | It simplifies to x + 3 = 6, so x = 3, but x = 3 is excluded: no solutions.
 M3#maths-u03-19-q3@2: Solve 1/x + 1/(x + 1) = 5/6. | x = 2 or x = −3/5 | x = 2 only | x = 3 | x = −2 or x = 3/5 | x = 6 | 6(x + 1) + 6x = 5x(x + 1) gives 5x^{2} − 7x − 6 = 0, so (5x + 3)(x − 2) = 0.
@@ -674,7 +674,7 @@ Q: Write 3 ln x − ln y as a single logarithm. | ln(x^{3}/y).
 SUM: Logarithms are inverse to powers.
 SUM: The laws turn products into sums.
 SRC: Department for Education, Mathematics AS and A level subject content: exponentials and logarithms | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | textbook | 1996 | https://global.oup.com/
+SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | secondary | 1996 | https://global.oup.com/
 NUM1#maths-u03-21-q1@1: Evaluate log_{3} 81 + log_{2} (1/4). | 2 | 0 |  | log_{3} 81 = 4 and log_{2} (1/4) = −2, so the total is 2.
 M1#maths-u03-21-q2@1: Which statement is equivalent to log_{5} 125 = 3? | 5^{3} = 125 | 3^{5} = 125 | 125^{3} = 5 | 5 × 3 = 125 | 125^{5} = 3 | The logarithm is the power: 5 raised to 3 gives 125.
 M2#maths-u03-21-q3@2: Which equals log 12? | log 3 + log 4 | log 3 × log 4 | log 6 + log 6 | 12 log 1 | log 24 − log 12 | The log of a product is the sum of the logs: log(3 × 4) = log 3 + log 4.
@@ -707,7 +707,7 @@ Q: Why does 2^{x} = −2 have no real solution? | 2^{x} is positive for every re
 SUM: Logs bring exponents down.
 SUM: Substitution turns some exponential equations into quadratics.
 SRC: Department for Education, Mathematics AS and A level subject content: exponentials and logarithms | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | textbook | 1996 | https://global.oup.com/
+SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | secondary | 1996 | https://global.oup.com/
 NUM1#maths-u03-22-q1@1: Solve 2^{x} = 50, to 3 significant figures. | 5.64 | 0.01 |  | x = ln 50/ln 2 ≈ 5.644, which is 5.64 to 3 significant figures.
 M1#maths-u03-22-q2@1: Solve 8^{x} = 32. | x = 5/3 | x = 4 | x = 1/4 | x = 3/5 | x = 2 | Write both as powers of 2: 2^{3x} = 2^{5}, so 3x = 5 and x = 5/3.
 M3#maths-u03-22-q3@2: Solve 9^{x} − 4 × 3^{x} + 3 = 0. | x = 0 or x = 1 | x = 1 or x = 3 | x = 0 only | x = 3 only | x = −1 or x = 1 | With u = 3^{x}: u^{2} − 4u + 3 = 0, so u = 1 or 3, giving x = 0 or 1.
@@ -742,7 +742,7 @@ Q: Why reject x = −2 in log_{2} x + log_{2}(x − 2) = 3? | log_{2}(−2) isn'
 SUM: Combine logs, then exponentiate.
 SUM: Check that arguments are positive.
 SRC: Department for Education, Mathematics AS and A level subject content: exponentials and logarithms | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | textbook | 1996 | https://global.oup.com/
+SRC: Courant R, Robbins H, What Is Mathematics? (2nd edn, Oxford University Press 1996) | secondary | 1996 | https://global.oup.com/
 NUM1#maths-u03-23-q1@1: Solve log_{2} (3x − 1) = 5. | 11 | 0 |  | 3x − 1 = 2^{5} = 32, so 3x = 33 and x = 11.
 M1#maths-u03-23-q2@1: Solve log_{10} x = −2. | x = 0.01 | x = −100 | x = 100 | x = −0.01 | No solution | Convert to exponential form: x = 10^{−2} = 0.01, which is positive, so it's valid.
 M2#maths-u03-23-q3@2: Solve log x + log (x − 3) = log 10. | x = 5 | x = −2 or x = 5 | x = −2 | x = 13 | x = 10 | x(x − 3) = 10 gives x = 5 or −2; x = −2 makes log x undefined.
@@ -773,7 +773,7 @@ Q: How many turning points can a quartic have at most? | 3.
 SUM: Polynomials use whole-number powers.
 SUM: Degree governs roots, turning points and end behaviour.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-24-q1@1: Which is a polynomial? | 4x^{3} − x + 2 | 2/x + 1 | √x + 3 | 3^{x} | x^{−2} | Every power of x is a whole number in 4x^{3} − x + 2.
 M2#maths-u03-24-q2@2: What is the end behaviour of y = −x^{4} + 3x? | Both ends go down | Both ends go up | Down on the left, up on the right | Up on the left, down on the right | It levels off | Even degree with a negative leading coefficient: both ends go down.
 
@@ -804,7 +804,7 @@ Q: If (x + 1)(x + b) ≡ x^{2} + 5x + 4, what is b? | 4.
 SUM: Polynomials add and multiply term by term.
 SUM: Identical polynomials have equal coefficients.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 NUM1#maths-u03-25-q1@1: Find the coefficient of x in (3x^{2} − 2x + 5)(x − 4). | 13 | 0 |  | The x terms are −2x × (−4) = 8x and 5 × x = 5x, giving 13x.
 M2#maths-u03-25-q2@2: If 2x^{2} + 9x + 7 ≡ (2x + a)(x + b), what are a and b? | a = 7, b = 1 | a = 1, b = 7 | a = 2, b = 7 | a = 9, b = 7 | a = 7, b = 2 | Expanding (2x + 7)(x + 1) gives 2x^{2} + 2x + 7x + 7 = 2x^{2} + 9x + 7.
 M3#maths-u03-25-q3@2: What is the degree of (x^{4} − 1)(x^{3} + x) − x^{7}? | 5 | 7 | 4 | 12 | 3 | The x^{7} terms cancel, leaving x^{5} − x^{3} − x: degree 5.
@@ -834,7 +834,7 @@ Q: How do you handle x^{3} − 8 in long division? | Write it as x^{3} + 0x^{2} 
 SUM: Polynomial division works like number division.
 SUM: Dividing by a known factor leaves a simpler polynomial.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-26-q1@1: What is (x^{2} + 5x + 6) ÷ (x + 2)? | x + 3 | x + 2 | x − 3 | x + 6 | x^{2} + 3 | x^{2} + 5x + 6 factorises as (x + 2)(x + 3), so dividing by (x + 2) leaves x + 3.
 M2#maths-u03-26-q2@2: What is the quotient when x^{3} − 1 is divided by x − 1? | x^{2} + x + 1 | x^{2} − 1 | x^{2} − x + 1 | x^{2} + 1 | x + 1 | (x − 1)(x^{2} + x + 1) = x^{3} − 1 (difference of two cubes).
 
@@ -865,7 +865,7 @@ Q: What is the remainder when x^{4} − 3 is divided by (x − 2)? | 13.
 Q: What do you substitute to find the remainder on division by (2x − 1)? | x = 1/2.
 SUM: The remainder is f(a).
 SUM: Remainder conditions give equations for unknowns.
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
 NUM1#maths-u03-27-q1@1: Find the remainder when x^{3} − 4x^{2} + 2x + 7 is divided by (x − 3). | 4 | 0 |  | f(3) = 27 − 36 + 6 + 7 = 4.
 M1#maths-u03-27-q2@1: What is the remainder when x^{2} + 3x − 1 is divided by (x + 1)? | −3 | 3 | 1 | −1 | 5 | By the remainder theorem, substitute x = −1: f(−1) = 1 − 3 − 1 = −3.
@@ -897,7 +897,7 @@ Q: Which values should you try first as roots of x^{3} + 2x^{2} − 5x − 6? | 
 SUM: f(a) = 0 means (x − a) is a factor.
 SUM: One factor reduces a cubic to a quadratic.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 M1#maths-u03-28-q1@1: Which is a factor of x^{3} − 4x^{2} + x + 6? | x − 2 | x + 2 | x − 1 | x + 3 | x − 6 | By the factor theorem, f(2) = 8 − 16 + 2 + 6 = 0, so (x − 2) is a factor.
 M2#maths-u03-28-q2@2: (x − 3) is a factor of x^{3} − 2x^{2} + kx − 6. What is k? | −1 | 1 | −3 | 3 | 6 | f(3) = 27 − 18 + 3k − 6 = 0 gives 3k = −3, so k = −1.
 M3#maths-u03-28-q3@2: Factorise x^{3} + x^{2} − 10x + 8 completely. | (x − 1)(x − 2)(x + 4) | (x + 1)(x + 2)(x − 4) | (x − 1)(x + 2)(x − 4) | (x − 2)^{2}(x + 2) | (x − 1)(x^{2} + 2x − 8) | f(1) = 0, and x^{2} + 2x − 8 = (x − 2)(x + 4).
@@ -929,7 +929,7 @@ Q: If 1 − i is a root of a real polynomial, what else must be a root? | 1 + i.
 SUM: Roots correspond to linear factors.
 SUM: Every polynomial has its full set of roots in the complex numbers.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | textbook | 2022 | https://www.routledge.com/
+SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | secondary | 2022 | https://www.routledge.com/
 M1#maths-u03-29-q1@1: What happens to the graph of y = (x − 3)^{2}(x + 1) at x = 3? | It touches the x-axis and turns | It crosses the x-axis | It has an asymptote | It has a gap | It crosses with a flat point | A double root means the graph touches the axis there.
 M2#maths-u03-29-q2@2: A real quartic has roots 2i and 1 (single). How many real roots does it have in total? | 2 | 1 | 3 | 4 | 0 | 2i and −2i account for two roots, leaving two real ones: 1 and one more.
 M2#maths-u03-29-q3@2: Where does y = (x − 2)(x + 3)(x + 1) cross the x-axis? | At x = 2, −3 and −1 | At x = −2, 3 and 1 | At x = 2, 3 and 1 | Only at x = 2 | At x = 6 | Each linear factor (x − r) is zero at x = r.
@@ -963,7 +963,7 @@ Q: Write α^{2} + β^{2} in terms of α + β and αβ. | (α + β)^{2} − 2αβ
 SUM: Coefficients encode symmetric facts about roots.
 SUM: Expressions in the roots can be found without solving.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | textbook | 2022 | https://www.routledge.com/
+SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | secondary | 2022 | https://www.routledge.com/
 NUM1#maths-u03-30-q1@1: The roots of x^{2} + 5x − 3 = 0 are α and β. Find 1/α + 1/β. | 1.6667 | 0.001 |  | (α + β)/(αβ) = (−5)/(−3) = 5/3 ≈ 1.667.
 M1#maths-u03-30-q2@1: What is the product of the roots of 3x^{2} − 4x − 12 = 0? | −4 | 4 | 4/3 | −12 | 12 | By Vieta's formulas the product of the roots is c/a = −12/3 = −4.
 M3#maths-u03-30-q3@2: The roots of x^{2} − 3x + 1 = 0 are α and β. Which equation has roots α + 1 and β + 1? | x^{2} − 5x + 5 = 0 | x^{2} − 3x + 2 = 0 | x^{2} − 4x + 2 = 0 | x^{2} − 5x + 2 = 0 | x^{2} + 5x + 5 = 0 | New sum = 3 + 2 = 5; new product = αβ + (α + β) + 1 = 1 + 3 + 1 = 5.
@@ -992,8 +992,8 @@ Q: Is x^{2}y + xy^{2} symmetric? | Yes: it equals xy(x + y).
 Q: Express x^{2} + y^{2} using e₁ and e₂. | e₁^{2} − 2e₂.
 SUM: Symmetric polynomials are invariant under swapping variables.
 SUM: They reduce to elementary symmetric polynomials.
-SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | textbook | 2022 | https://www.routledge.com/
-SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | textbook | 1993 | https://link.springer.com/
+SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | secondary | 2022 | https://www.routledge.com/
+SRC: Gelfand IM, Shen A, Algebra (Birkhäuser 1993) | secondary | 1993 | https://link.springer.com/
 NUM1#maths-u03-31-q1@1: If x + y = 4 and xy = 1, find (x − y)^{2}. | 12 | 0 |  | (x − y)^{2} = (x + y)^{2} − 4xy = 16 − 4 = 12.
 M1#maths-u03-31-q2@1: Which polynomial is symmetric in x and y? | x^{2} + 3xy + y^{2} | x^{2} − y^{2} | x + 2y | x^{3}y | x − y | Swapping x and y leaves x^{2} + 3xy + y^{2} unchanged.
 M2#maths-u03-31-q3@2: If a + b = 3 and ab = −2, what is a^{2} + b^{2}? | 13 | 5 | 9 | 7 | 1 | Use a^{2} + b^{2} = (a + b)^{2} − 2ab = 9 − 2(−2) = 9 + 4 = 13.
@@ -1023,7 +1023,7 @@ Q: What must you do first if the numerator's degree is at least the denominator'
 SUM: Partial fractions undo adding fractions.
 SUM: Repeated factors need a term for each power.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u03-32-q1@1: Which is the correct form for (3x + 1)/((x − 2)(x + 5))? | A/(x − 2) + B/(x + 5) | A/(x − 2)(x + 5) | (Ax + B)/(x − 2) | A/(x − 2)^{2} + B/(x + 5) | A + B/(x + 5) | Two distinct linear factors give two simple fractions.
 M2#maths-u03-32-q2@2: If 4/((x − 1)(x + 1)) ≡ A/(x − 1) + B/(x + 1), what is A? | 2 | −2 | 4 | 1 | 1/2 | 4 ≡ A(x + 1) + B(x − 1); with x = 1, 4 = 2A, so A = 2.
 
@@ -1090,7 +1090,7 @@ Q: What is the range of f(x) = (x + 1)^{2} − 5? | f(x) ≥ −5.
 SUM: The domain is what goes in; the range is what comes out.
 SUM: Sketch to find ranges.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
+SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 M1#maths-u03-34-q1@1: What is the domain of f(x) = √(4 − x)? | x ≤ 4 | x ≥ 4 | x > 4 | x ≥ 0 | All real x | The square root needs 4 − x ≥ 0, so the domain is x ≤ 4.
 M2#maths-u03-34-q2@2: What is the range of f(x) = x^{2} − 2x for −1 ≤ x ≤ 4? | −1 ≤ f(x) ≤ 8 | 3 ≤ f(x) ≤ 8 | 0 ≤ f(x) ≤ 8 | f(x) ≥ −1 | −1 ≤ f(x) ≤ 3 | (x − 1)^{2} − 1 has minimum −1 at x = 1 and maximum 8 at x = 4.
 
@@ -1220,7 +1220,7 @@ Q: What does a step function look like? | Horizontal segments with jumps between
 SUM: Piecewise functions change rule across intervals.
 SUM: Continuity means the pieces meet.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
+SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 M1#maths-u03-38-q1@1: f(x) = x + 4 for x < 0 and 4 − x^{2} for x ≥ 0. What is f(−1) + f(2)? | 3 | 0 | 6 | 7 | −1 | −1 uses the first rule: f(−1) = 3; 2 uses the second: f(2) = 4 − 4 = 0. Total 3.
 M2#maths-u03-38-q2@2: Is f(x) = 2x for x < 1 and x + 2 for x ≥ 1 continuous at x = 1? | No: the pieces give 2 and 3 | Yes | Yes: both pieces are linear | No: f(1) is undefined | Only from the right | The left piece approaches 2 but the right piece gives 3: a jump.
 
@@ -1250,7 +1250,7 @@ Q: For x = t^{3}, y = t^{2}, what is the Cartesian equation? | y = x^{2/3} (or y
 SUM: Parameters describe both coordinates.
 SUM: Eliminate the parameter for Cartesian form.
 SRC: Department for Education, Mathematics AS and A level subject content: coordinate geometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 NUM1#maths-u03-39-q1@1: A curve has x = 3t − 1, y = t^{2}. Find y when x = 5. | 4 | 0 |  | 3t − 1 = 5 gives t = 2, so y = 4.
 M1#maths-u03-39-q2@1: Which Cartesian equation matches x = t + 1, y = 2t? | y = 2x − 2 | y = 2x + 2 | y = x + 1 | y = 2x | y = x/2 − 1 | From x = t + 1, t = x − 1; substituting gives y = 2(x − 1) = 2x − 2.
 M2#maths-u03-39-q3@2: Which curve is x = 4 cos t, y = 2 sin t? | An ellipse | A circle | A parabola | A hyperbola | A straight line | x^{2}/16 + y^{2}/4 = cos^{2} t + sin^{2} t = 1.
@@ -1280,7 +1280,7 @@ Q: Why might you leave a curve in implicit form? | Solving for y may be impossib
 SUM: Implicit equations describe curves without y as the subject.
 SUM: Substitute to test points and find intersections.
 SRC: Department for Education, Mathematics AS and A level subject content: differentiation | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | textbook | 2020 | https://www.bloomsbury.com/
+SRC: Stroud KA, Booth DJ, Engineering Mathematics (8th edn, Bloomsbury 2020) | secondary | 2020 | https://www.bloomsbury.com/
 M1#maths-u03-40-q1@1: Which point lies on x^{2} − y^{2} = 16? | (5, 3) | (4, 1) | (3, 5) | (5, 4) | (2, 2) | Substituting (5, 3): 5^{2} − 3^{2} = 25 − 9 = 16, so the point lies on the curve.
 M2#maths-u03-40-q2@2: On x^{2} + xy + y^{2} = 7, what are the y-values when x = 1? | 2 and −3 | 3 and −2 | 2 only | ±√6 | 7 and −1 | 1 + y + y^{2} = 7 gives (y + 3)(y − 2) = 0.
 
@@ -1311,7 +1311,7 @@ Q: What is the limit of u_{n+1} = 0.2u_{n} + 8? | 10.
 SUM: Recurrences build sequences step by step.
 SUM: Some converge to a limit found by solving L = f(L).
 SRC: Department for Education, Mathematics AS and A level subject content: sequences and series | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw Hill 2019) | textbook | 2019 | https://www.mheducation.com/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw Hill 2019) | secondary | 2019 | https://www.mheducation.com/
 NUM1#maths-u03-41-q1@1: u_{1} = 2 and u_{n+1} = u_{n}^{2} − 1. Find u_{4}. | 63 | 0 |  | u_{2} = 3, u_{3} = 8, u_{4} = 63.
 M1#maths-u03-41-q2@1: Which type of sequence is u_{n+1} = −u_{n}, u_{1} = 5? | Periodic | Increasing | Decreasing | Convergent to 0 | Arithmetic | It alternates 5, −5, 5, −5, …, repeating every 2 terms.
 M2#maths-u03-41-q3@2: u_{n+1} = 0.75u_{n} + 5. What is its limit? | 20 | 5 | 6.67 | 15 | It has none | L = 0.75L + 5 gives 0.25L = 5, so L = 20.
@@ -1341,7 +1341,7 @@ Q: When is completing the square better than the formula? | When you need the tu
 SUM: Intermediate algebra combines methods.
 SUM: Strategy matters as much as technique.
 SRC: Department for Education, Mathematics AS and A level subject content: algebra and functions | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Pólya G, How to Solve It (Princeton University Press 2004) | textbook | 2004 | https://press.princeton.edu/
+SRC: Pólya G, How to Solve It (Princeton University Press 2004) | secondary | 2004 | https://press.princeton.edu/
 M1#maths-u03-42-q1@1: For what value of k is y = 4x + k a tangent to y = x^{2}? | −4 | 4 | 0 | 2 | −2 | x^{2} − 4x − k = 0 needs 16 + 4k = 0, so k = −4.
 M2#maths-u03-42-q2@2: Where does y = 2x meet y = x^{2} − 3? | (3, 6) and (−1, −2) | (3, 6) only | (−3, −6) and (1, 2) | (2, 4) and (0, 0) | They don't meet | Set 2x = x^{2} − 3: x^{2} − 2x − 3 = 0, so x = 3 or −1, giving (3, 6) and (−1, −2).
 
@@ -1369,7 +1369,7 @@ Q: What are the two parts of a proof by induction? | The base case and the induc
 SUM: The binomial theorem expands powers of brackets.
 SUM: Induction proves statements for all natural numbers.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
+SRC: Liebeck M, A Concise Introduction to Pure Mathematics (4th edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
 NUM1#maths-u03-43-q1@1: Find the coefficient of x^{2} in (3 + 2x)^{5}. | 1080 | 0 |  | 5C2 × 3^{3} × 2^{2} = 10 × 27 × 4 = 1080.
 M1#maths-u03-43-q2@1: What is the coefficient of x in (1 + x)^{−2}? | −2 | 2 | 1 | −1 | 3 | In (1 + x)^{n} = 1 + nx + …, the coefficient of x is n, which is −2 here.
 M3#maths-u03-43-q3@2: In the inductive step for 1 + 3 + … + (2n − 1) = n^{2}, what must you show? | k^{2} + (2k + 1) = (k + 1)^{2} | k^{2} = (k + 1)^{2} | 1 = 1^{2} | 2k − 1 = k^{2} | (k + 1)^{2} − k^{2} = 1 | Adding the next odd number, 2(k + 1) − 1 = 2k + 1, to k^{2} must give (k + 1)^{2}.
@@ -1403,7 +1403,7 @@ Q: What is (2 − 3i)(2 + 3i)? | 13.
 SUM: Complex numbers solve every polynomial equation.
 SUM: The Argand diagram shows them as points.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Needham T, Visual Complex Analysis (Oxford University Press 2023) | textbook | 2023 | https://global.oup.com/
+SRC: Needham T, Visual Complex Analysis (Oxford University Press 2023) | secondary | 2023 | https://global.oup.com/
 NUM1#maths-u03-44-q1@1: Find |6 − 8i|. | 10 | 0 |  | √(36 + 64) = √100 = 10.
 M1#maths-u03-44-q2@1: What is (4 + i) − (1 − 3i)? | 3 + 4i | 3 − 2i | 5 − 2i | 3 + 2i | 5 + 4i | Real parts: 4 − 1 = 3; imaginary parts: 1 − (−3) = 4.
 M2#maths-u03-44-q3@2: What are the roots of z^{2} + 9 = 0? | 3i and −3i | 3 and −3 | 9i and −9i | 3 + i and 3 − i | There are none | z^{2} = −9, and √−9 = 3i, so the roots are the conjugate pair z = ±3i.
@@ -1437,7 +1437,7 @@ Q: What is NOT (A OR B) by De Morgan's law? | (NOT A) AND (NOT B).
 Q: How many rows does a truth table for 3 variables have? | 8.
 SUM: Boolean algebra describes logic.
 SUM: Its laws simplify circuits and conditions.
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw Hill 2019) | textbook | 2019 | https://www.mheducation.com/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw Hill 2019) | secondary | 2019 | https://www.mheducation.com/
 SRC: Department for Education, Computer science GCSE subject content | standard | 2015 | https://www.gov.uk/government/publications/gcse-computer-science
 M1#maths-u03-45-q1@1: What is 1 AND 0? | 0 | 1 | 2 | 10 | Undefined | AND gives 1 only when both inputs are 1; here one input is 0, so the result is 0.
 M2#maths-u03-45-q2@2: Which expression equals A + A·B? | A | B | A·B | A + B | 1 | By absorption: A + A·B = A·(1 + B) = A·1 = A.

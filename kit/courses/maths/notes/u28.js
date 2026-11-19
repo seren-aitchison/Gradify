@@ -169,7 +169,7 @@ Q: What is a Fermi estimate? | An order-of-magnitude estimate from rough, stated
 SUM: Core Maths applies maths to life and study.
 SUM: Assumptions and communication matter.
 SRC: Department for Education, Core maths qualifications: technical guidance | guidance | 2022 | https://www.gov.uk/government/publications/core-maths-qualifications-technical-guidance
-SRC: Advisory Committee on Mathematics Education, Core Maths: what's the point? | report | 2017 | https://www.acme-uk.org/
+SRC: Advisory Committee on Mathematics Education, Core Maths: what's the point? | secondary | 2017 | https://www.acme-uk.org/
 NUM1#maths-u28-05-q1@1: A £600 annual subscription rises by 4% a year. What will it cost after 2 rises, in pounds? | 648.96 | 0.01 | £ | 600 × 1.04^{2} = 600 × 1.0816 = £648.96.
 M1#maths-u28-05-q2@1: What is Core Maths roughly equivalent to in size? | Half an A level | A full A level | A GCSE | A degree module | Two A levels | It's a Level 3 qualification of about half A level size.
 M2#maths-u28-05-q3@2: In a Fermi estimate, what matters most? | Stating reasonable assumptions and getting the right order of magnitude | Giving an answer to many decimal places | Using a calculator for every step | Avoiding any assumptions | Matching an exact published figure | The aim is a well-reasoned rough estimate, not false precision.
@@ -237,7 +237,7 @@ Q: What is the first step of a proof by contradiction? | Assume the statement is
 SUM: Pure maths is the core of A level.
 SUM: Proof is a central skill.
 SRC: Department for Education, Mathematics AS and A level subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Velleman DJ, How to Prove It (3rd edn, Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
+SRC: Velleman DJ, How to Prove It (3rd edn, Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
 NUM1#maths-u28-07-q1@1: Find the sum of the first 20 terms of the arithmetic series 3 + 7 + 11 + …. | 820 | 0 |  | S = (20/2)(2 × 3 + 19 × 4) = 10 × 82 = 820.
 M1#maths-u28-07-q2@1: Which statement does n = 2 disprove? | "n^{2} + 1 is always even" | "n^{2} is always non-negative" | "2n is always even" | "n + n = 2n" | "n^{2} ≥ n for integers" | 2^{2} + 1 = 5 is odd, so n = 2 is a counterexample; the other statements are true for n = 2.
 M3#maths-u28-07-q3@2: To prove there's no largest even number by contradiction, what should you assume? | There is a largest even number N | Every number is even | N is odd | There are infinitely many even numbers | N = 2 | Assume the negation, then note N + 2 is a larger even number.
@@ -405,7 +405,7 @@ Q: Name two problem-solving heuristics. | For example, trying small cases and wo
 SUM: Admissions tests reward problem solving.
 SUM: Practise and study solutions.
 SRC: University of Cambridge, STEP support and preparation | guidance | 2024 | https://maths.org/step/
-SRC: Pólya G, How to Solve It (2nd edn, Princeton University Press 1957) | textbook | 1957 | https://press.princeton.edu/
+SRC: Pólya G, How to Solve It (2nd edn, Princeton University Press 1957) | secondary | 1957 | https://press.princeton.edu/
 NUM1#maths-u28-12-q1@1: How many positive integers less than 100 are divisible by 3 or 5? | 46 | 0 |  | 33 multiples of 3, 19 of 5, minus 6 of 15: 33 + 19 − 6 = 46.
 M1#maths-u28-12-q2@1: What do university maths admissions tests mainly assess? | Problem solving with familiar content in unfamiliar ways | Memorised formulas | Speed arithmetic only | Coursework | Programming | They aim to see how candidates think when no method is given.
 M2#maths-u28-12-q3@2: How should you use past paper solutions when preparing? | Study ideas you missed and apply them to new problems | Memorise answers to repeat | Avoid them | Read them before trying problems | Only check final numbers | Learning techniques you didn't think of builds problem-solving skill.
@@ -511,7 +511,7 @@ Q: Which values should you test in quantitative comparisons? | Special cases lik
 SUM: GRE Quant tests reasoning with school maths.
 SUM: Test special values.
 SRC: ETS, GRE General Test: Quantitative Reasoning overview | guidance | 2024 | https://www.ets.org/gre/
-SRC: ETS, The Official Guide to the GRE General Test (3rd edn, McGraw-Hill 2021) | textbook | 2021 | https://www.ets.org/gre/
+SRC: ETS, The Official Guide to the GRE General Test (3rd edn, McGraw-Hill 2021) | secondary | 2021 | https://www.ets.org/gre/
 NUM1#maths-u28-15-q1@1: What is 15% of 240? | 36 | 0 |  | 0.15 × 240 = 36.
 M3#maths-u28-15-q2@1: Compare A: 3n and B: n + 3 for an integer n. Which answer is correct? | It cannot be determined | A is greater | B is greater | They're equal | A is always double B | n = 2 gives 6 > 5 but n = 1 gives 3 < 4, so different integers give different answers.
 M2#maths-u28-15-q3@2: Which strategy helps with quantitative comparisons? | Doing the same operation to both quantities to simplify | Always computing exact values | Choosing A when unsure | Ignoring negative values | Multiplying both by an unknown that might be negative | Equal simplifications keep the comparison intact (but multiplying by a negative reverses it).
@@ -545,7 +545,7 @@ Q: Translate "the sum of a number and 4 is 3 times the number". | x + 4 = 3x.
 Q: Why define variables with units? | It keeps the meaning clear and avoids mixing quantities.
 SUM: Word problems test translation.
 SUM: Check the answer against the wording.
-SRC: Pólya G, How to Solve It (2nd edn, Princeton University Press 1957) | textbook | 1957 | https://press.princeton.edu/
+SRC: Pólya G, How to Solve It (2nd edn, Princeton University Press 1957) | secondary | 1957 | https://press.princeton.edu/
 SRC: National Centre for Excellence in the Teaching of Mathematics, Bar modelling: a problem-solving tool | guidance | 2020 | https://www.ncetm.org.uk/
 NUM1#maths-u28-16-q1@1: Two numbers add to 50 and differ by 14. What is the larger number? | 32 | 0 |  | x + y = 50 and x − y = 14 give 2x = 64, so x = 32.
 M1#maths-u28-16-q2@1: Which equation matches "a number decreased by 8 equals half the number"? | x − 8 = x/2 | 8 − x = x/2 | x − 8 = 2x | x/2 − 8 = x | 8x = x/2 | "Decreased by 8" subtracts 8 from the number.
@@ -719,8 +719,8 @@ Q: What are Pólya's four stages? | Understand, plan, carry out, look back.
 Q: What is an invariant? | A quantity that doesn't change during a process.
 SUM: Problem solving is a learnable process.
 SUM: Small cases reveal patterns; proof confirms them.
-SRC: Pólya G, How to Solve It (2nd edn, Princeton University Press 1957) | textbook | 1957 | https://press.princeton.edu/
-SRC: Mason J, Burton L, Stacey K, Thinking Mathematically (2nd edn, Pearson 2010) | textbook | 2010 | https://www.pearson.com/
+SRC: Pólya G, How to Solve It (2nd edn, Princeton University Press 1957) | secondary | 1957 | https://press.princeton.edu/
+SRC: Mason J, Burton L, Stacey K, Thinking Mathematically (2nd edn, Pearson 2010) | secondary | 2010 | https://www.pearson.com/
 NUM1#maths-u28-21-q1@1: How many diagonals does a convex 8-sided polygon have? | 20 | 0 |  | Each vertex joins 5 non-adjacent vertices: 8 × 5/2 = 20.
 M3#maths-u28-21-q2@1: A chessboard has two opposite corners removed. Why can't 31 dominoes cover it? | Each domino covers one black and one white square, but the removed corners are the same colour | 62 isn't even | Dominoes can't be rotated | There are too many squares | It can be covered | Colouring gives an invariant: 32 of one colour and 30 of the other can't be paired.
 M3#maths-u28-21-q3@2: Thirteen people are in a room. What must be true? | At least two share a birth month | Everyone has a different birth month | At least two share a birthday | Someone was born in January | Exactly one month is shared | Pigeonhole: 13 people into 12 months forces a repeat.

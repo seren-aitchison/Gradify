@@ -31,8 +31,8 @@ Q: What is empirical risk? | The average loss on the training data.
 Q: Name the three main types of machine learning. | Supervised, unsupervised and reinforcement learning.
 SUM: Four branches of maths underpin ML.
 SUM: Generalisation is the goal.
-SRC: Deisenroth MP, Faisal AA, Ong CS, Mathematics for Machine Learning (Cambridge University Press 2020) | textbook | 2020 | https://mml-book.github.io/
-SRC: Hastie T, Tibshirani R, Friedman J, The Elements of Statistical Learning (2nd edn, Springer 2009) | textbook | 2009 | https://hastie.su.domains/ElemStatLearn/
+SRC: Deisenroth MP, Faisal AA, Ong CS, Mathematics for Machine Learning (Cambridge University Press 2020) | secondary | 2020 | https://mml-book.github.io/
+SRC: Hastie T, Tibshirani R, Friedman J, The Elements of Statistical Learning (2nd edn, Springer 2009) | secondary | 2009 | https://hastie.su.domains/ElemStatLearn/
 NUM1#maths-u24-01-q1@1: Predictions are 10 and 14 for targets 12 and 13. What is the mean absolute error? | 1.5 | 0.001 |  | Absolute errors are 2 and 1, so the mean is 1.5.
 M1#maths-u24-01-q2@1: Which branch of mathematics provides gradients for training models? | Calculus | Number theory | Topology | Combinatorics | Logic | Gradients come from differentiation via the chain rule.
 M2#maths-u24-01-q3@2: Why is training error usually lower than test error? | The model's parameters were chosen to fit the training data, including some of its noise | Test data are always harder by design, with noisier labels than training data | Training sets are always larger, which mechanically lowers the measured error | Test error is computed with a different, stricter formula than training error | It is always higher, because training error includes a regularisation penalty | Optimising on a sample tailors the model to that sample.
@@ -67,8 +67,8 @@ Q: What is the VC dimension of linear classifiers in d dimensions? | d + 1.
 Q: What three parts make up expected squared error? | Bias squared, variance and irreducible noise.
 SUM: Complexity controls generalisation.
 SUM: Bias and variance trade off.
-SRC: Vapnik VN, Statistical Learning Theory (Wiley 1998) | textbook | 1998 | https://www.wiley.com/
-SRC: Shalev-Shwartz S, Ben-David S, Understanding Machine Learning: From Theory to Algorithms (Cambridge University Press 2014) | textbook | 2014 | https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/
+SRC: Vapnik VN, Statistical Learning Theory (Wiley 1998) | secondary | 1998 | https://www.wiley.com/
+SRC: Shalev-Shwartz S, Ben-David S, Understanding Machine Learning: From Theory to Algorithms (Cambridge University Press 2014) | secondary | 2014 | https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/
 NUM1#maths-u24-02-q1@1: A model's expected squared error has bias^{2} = 0.04, variance 0.09 and noise variance 0.25. What is the expected squared error? | 0.38 | 0.001 |  | 0.04 + 0.09 + 0.25 = 0.38.
 M1#maths-u24-02-q2@1: Which change usually reduces a model's variance? | Adding regularisation | Adding many more parameters | Training on less data | Removing all constraints | Increasing polynomial degree | Regularisation restricts flexibility, reducing sensitivity to the training sample.
 M3#maths-u24-02-q3@2: Why can't any set of 4 points in the plane be shattered by straight lines? | Some labelling, such as the XOR pattern, always needs a non-linear boundary | Lines can only ever label two points correctly, whatever their arrangement | Any four points in the plane always lie on a single straight line | Lines can shatter any number of points if they're placed carefully | They can be shattered; the VC dimension of lines in the plane is 4 | Radon's theorem guarantees a partition of 4 points that no line separates.
@@ -105,8 +105,8 @@ Q: Which penalty produces sparse coefficients? | The L1 (lasso) penalty.
 Q: What does e^{w} mean in logistic regression? | The odds ratio for a one-unit increase in x.
 SUM: Weighted sums make strong baselines.
 SUM: Regularisation controls complexity.
-SRC: Tibshirani R, Regression shrinkage and selection via the lasso, Journal of the Royal Statistical Society B 58(1), 267 | journal | 1996 | https://doi.org/10.1111/j.2517-6161.1996.tb02080.x
-SRC: James G, Witten D, Hastie T, Tibshirani R, An Introduction to Statistical Learning (2nd edn, Springer 2021) | textbook | 2021 | https://www.statlearning.com/
+SRC: Tibshirani R, Regression shrinkage and selection via the lasso, Journal of the Royal Statistical Society B 58(1), 267 | primary | 1996 | https://doi.org/10.1111/j.2517-6161.1996.tb02080.x
+SRC: James G, Witten D, Hastie T, Tibshirani R, An Introduction to Statistical Learning (2nd edn, Springer 2021) | secondary | 2021 | https://www.statlearning.com/
 NUM1#maths-u24-03-q1@1: What is σ(0) for the sigmoid function? | 0.5 | 0 |  | 1/(1 + e^{0}) = 1/2.
 M1#maths-u24-03-q2@1: A logistic coefficient is w = ln 3. What happens to the odds when x rises by 1? | They triple | They rise by 3 percentage points | They halve | They stay the same | They rise by ln 3 | In logistic regression the odds ratio for a one-unit rise in x is e^{w} = e^{ln 3} = 3, so the odds triple.
 M2#maths-u24-03-q3@2: Why does ridge regression help when features are highly correlated? | Adding λI makes XᵀX + λI well conditioned, stabilising coefficient estimates | It removes the correlated features from the model before fitting | It increases the variance of the coefficients to explore more values | It ignores the data and shrinks every coefficient exactly to zero | It doesn't help; ridge only matters when features are independent | Near-singular XᵀX makes ordinary least squares unstable.
@@ -144,8 +144,8 @@ Q: What does Adam combine? | Momentum and adaptive per-parameter step sizes.
 Q: What is learning-rate warm-up? | Starting with a small learning rate and increasing it over early steps.
 SUM: Optimisers drive training.
 SUM: Learning rates matter most.
-SRC: Kingma DP, Ba J, Adam: a method for stochastic optimization, arXiv:1412.6980 | journal | 2014 | https://arxiv.org/abs/1412.6980
-SRC: Bottou L, Curtis FE, Nocedal J, Optimization methods for large-scale machine learning, SIAM Review 60(2), 223 | journal | 2018 | https://doi.org/10.1137/16M1080173
+SRC: Kingma DP, Ba J, Adam: a method for stochastic optimization, arXiv:1412.6980 | primary | 2014 | https://arxiv.org/abs/1412.6980
+SRC: Bottou L, Curtis FE, Nocedal J, Optimization methods for large-scale machine learning, SIAM Review 60(2), 223 | primary | 2018 | https://doi.org/10.1137/16M1080173
 NUM1#maths-u24-04-q1@1: With momentum β = 0.9 and a constant gradient g, what multiple of g does the velocity approach? | 10 | 0 |  | The steady state v = βv + g gives v = g/(1 − β) = 10g.
 M1#maths-u24-04-q2@1: Which optimiser adapts a separate step size for each parameter? | Adam | Plain gradient descent | Newton's method with fixed steps | Bisection | Simulated annealing | Adam scales steps by running estimates of squared gradients.
 M2#maths-u24-04-q3@2: Why is cosine annealing of the learning rate helpful near the end of training? | Smaller steps let the optimiser settle into a minimum instead of bouncing around it | Larger steps near the end always help the optimiser escape bad regions | It removes the need to compute gradients in the final epochs of training | It increases the training loss deliberately to prevent overfitting | It isn't helpful; a constant learning rate always converges faster | Decaying η reduces noise-driven oscillation as training converges.
@@ -183,8 +183,8 @@ Q: Is the mini-batch gradient an unbiased estimate of the full gradient? | Yes, 
 Q: What is an epoch? | One pass through the whole training set.
 SUM: Small random batches, many steps.
 SUM: Noise can help.
-SRC: Robbins H, Monro S, A stochastic approximation method, Annals of Mathematical Statistics 22(3), 400 | journal | 1951 | https://doi.org/10.1214/aoms/1177729586
-SRC: Goyal P et al., Accurate, large minibatch SGD: training ImageNet in 1 hour, arXiv:1706.02677 | journal | 2017 | https://arxiv.org/abs/1706.02677
+SRC: Robbins H, Monro S, A stochastic approximation method, Annals of Mathematical Statistics 22(3), 400 | primary | 1951 | https://doi.org/10.1214/aoms/1177729586
+SRC: Goyal P et al., Accurate, large minibatch SGD: training ImageNet in 1 hour, arXiv:1706.02677 | primary | 2017 | https://arxiv.org/abs/1706.02677
 NUM1#maths-u24-05-q1@1: Training uses 1,200,000 images with batch size 256 for 90 epochs. How many steps is that, to the nearest whole number? | 421875 | 1 | steps | 1,200,000/256 = 4687.5 steps per epoch; × 90 = 421,875.
 M1#maths-u24-05-q2@1: How does gradient noise variance change if the batch size quadruples? | It falls to a quarter | It quadruples | It doubles | It halves | It stays the same | Averaging B independent gradients divides variance by B.
 M3#maths-u24-05-q3@2: Why can SGD's gradient noise help training of neural networks? | It perturbs the parameters out of saddle points and sharp minima, favouring flatter solutions | Noise always makes training fail unless the batch is the full dataset | It makes the loss landscape convex, so any minimum found is global | It removes the need for a learning rate, since noise sets the step size | It never helps; exact full-batch gradients always generalise better | Exact gradients can stall at saddles that stochastic steps escape.
@@ -221,8 +221,8 @@ Q: What is the maximum derivative of the sigmoid function? | 0.25.
 Q: What does gradient clipping prevent? | Exploding gradients.
 SUM: Chain rule backwards through layers.
 SUM: Watch for vanishing gradients.
-SRC: Rumelhart DE, Hinton GE, Williams RJ, Learning representations by back-propagating errors, Nature 323, 533 | journal | 1986 | https://doi.org/10.1038/323533a0
-SRC: Goodfellow I, Bengio Y, Courville A, Deep Learning (MIT Press 2016) | textbook | 2016 | https://www.deeplearningbook.org/
+SRC: Rumelhart DE, Hinton GE, Williams RJ, Learning representations by back-propagating errors, Nature 323, 533 | primary | 1986 | https://doi.org/10.1038/323533a0
+SRC: Goodfellow I, Bengio Y, Courville A, Deep Learning (MIT Press 2016) | secondary | 2016 | https://www.deeplearningbook.org/
 NUM1#maths-u24-06-q1@1: If each of 10 sigmoid layers multiplies the gradient by at most 0.25, what is the largest possible overall factor, in scientific form 10^{−k}? Give k to 1 decimal place. | 6 | 0.1 |  | 0.25^{10} ≈ 9.5 × 10^{−7} ≈ 10^{−6.0}, so gradients can shrink a millionfold.
 M1#maths-u24-06-q2@1: For h = ReLU(a), what is ∂h/∂a when a = 3? | 1 | 0 | 3 | 0.25 | −1 | ReLU is the identity for positive inputs, so its derivative there is 1.
 M2#maths-u24-06-q3@2: Why do residual connections ease training of very deep networks? | They give gradients an identity path backwards, so they don't shrink through every layer | They remove all non-linearities, making the network a linear model | They make the network shallower by skipping most of its layers entirely | They increase vanishing gradients, which stabilises the early layers | They don't help; residual networks train no better than plain ones | y = x + F(x) has ∂y/∂x = I + ∂F/∂x, preserving gradient flow.
@@ -257,8 +257,8 @@ Q: Which loss corresponds to Gaussian noise? | Squared error.
 Q: What does a generative model describe? | The distribution of the data itself, p(x) or p(x, y).
 SUM: Models generate data randomly.
 SUM: Losses reflect noise assumptions.
-SRC: Murphy KP, Probabilistic Machine Learning: An Introduction (MIT Press 2022) | textbook | 2022 | https://probml.github.io/pml-book/
-SRC: Bishop CM, Pattern Recognition and Machine Learning (Springer 2006) | textbook | 2006 | https://link.springer.com/
+SRC: Murphy KP, Probabilistic Machine Learning: An Introduction (MIT Press 2022) | secondary | 2022 | https://probml.github.io/pml-book/
+SRC: Bishop CM, Pattern Recognition and Machine Learning (Springer 2006) | secondary | 2006 | https://link.springer.com/
 NUM1#maths-u24-07-q1@1: Counts 2, 4, 3, 5 and 6 are modelled as Poisson. What is the maximum likelihood estimate of λ? | 4 | 0 |  | The Poisson MLE is the sample mean: 20/5 = 4.
 M1#maths-u24-07-q2@1: Which noise assumption makes mean absolute error the maximum likelihood loss? | Laplace (double exponential) noise | Gaussian (normal) noise | Uniform noise on an interval | Poisson count noise | No noise at all | The Laplace log-density is −|error|/b plus a constant.
 M2#maths-u24-07-q3@2: What distinguishes a discriminative model from a generative one? | It models p(y ∣ x) directly rather than how the inputs themselves are distributed | It always performs worse | It models only p(x) | It can generate new inputs | There's no difference | Logistic regression is discriminative; naive Bayes is generative.
@@ -292,8 +292,8 @@ Q: What is the posterior for a Beta(a, b) prior after k successes in n trials? |
 Q: What prior makes MAP estimation equal to ridge regression? | A zero-mean Gaussian prior on the weights.
 SUM: Update beliefs with data.
 SUM: Uncertainty comes built in.
-SRC: Gelman A et al., Bayesian Data Analysis (3rd edn, CRC Press 2013) | textbook | 2013 | https://sites.stat.columbia.edu/gelman/book/
-SRC: Blei DM, Kucukelbir A, McAuliffe JD, Variational inference: a review for statisticians, Journal of the American Statistical Association 112(518), 859 | journal | 2017 | https://doi.org/10.1080/01621459.2017.1285773
+SRC: Gelman A et al., Bayesian Data Analysis (3rd edn, CRC Press 2013) | secondary | 2013 | https://sites.stat.columbia.edu/gelman/book/
+SRC: Blei DM, Kucukelbir A, McAuliffe JD, Variational inference: a review for statisticians, Journal of the American Statistical Association 112(518), 859 | primary | 2017 | https://doi.org/10.1080/01621459.2017.1285773
 NUM1#maths-u24-08-q1@1: A Beta(1, 1) prior is updated with 3 successes in 4 trials. What is the posterior mean? | 0.667 | 0.001 |  | Posterior Beta(4, 2) has mean 4/6 ≈ 0.667.
 M1#maths-u24-08-q2@1: Which method samples from posterior distributions? | Markov chain Monte Carlo | Gradient descent on the loss | The simplex method | k-means clustering | Principal component analysis | MCMC builds a Markov chain whose stationary distribution is the posterior.
 M2#maths-u24-08-q3@2: Why does the influence of the prior fade as data accumulate? | The likelihood grows sharper with more data, dominating the fixed prior | Priors are deleted after the first update, so only data remain | The posterior ignores the data and keeps only the prior | Priors become stronger as more data are collected | It doesn't fade; the prior always dominates the posterior | Log-likelihood grows with n while the log-prior stays fixed.
@@ -327,8 +327,8 @@ Q: How does a Bayesian network factorise the joint distribution? | As the produc
 Q: What is explaining away? | Two independent causes becoming dependent once their common effect is observed.
 SUM: Graphs encode dependence.
 SUM: Colliders behave differently.
-SRC: Pearl J, Probabilistic Reasoning in Intelligent Systems (Morgan Kaufmann 1988) | textbook | 1988 | https://www.elsevier.com/
-SRC: Koller D, Friedman N, Probabilistic Graphical Models: Principles and Techniques (MIT Press 2009) | textbook | 2009 | https://mitpress.mit.edu/
+SRC: Pearl J, Probabilistic Reasoning in Intelligent Systems (Morgan Kaufmann 1988) | secondary | 1988 | https://www.elsevier.com/
+SRC: Koller D, Friedman N, Probabilistic Graphical Models: Principles and Techniques (MIT Press 2009) | secondary | 2009 | https://mitpress.mit.edu/
 NUM1#maths-u24-09-q1@1: Five binary variables form a chain A → B → C → D → E. How many free parameters does the network need? | 9 | 0 | parameters | A needs 1; each of the other four needs 2 (one per parent value): 1 + 4 × 2 = 9, versus 31 for a full table.
 M1#maths-u24-09-q2@1: In the chain A → B → C, which statement holds? | A and C are independent given B | A and C are always independent | B and C are independent | A causes nothing | A and C are dependent given B | Conditioning on the middle of a chain blocks the path.
 M3#maths-u24-09-q3@2: Why does observing a common effect make its two independent causes dependent? | Learning one cause occurred lowers the need for the other to explain the effect | Observing effects always makes variables independent | Causes become identical | The graph gains a new edge | It doesn't | In a collider, conditioning on the child opens the path between the parents.
@@ -364,8 +364,8 @@ Q: What does the Hammersley–Clifford theorem state? | Positive distributions s
 Q: Where is belief propagation exact? | On tree-structured graphs.
 SUM: Graphs represent dependence.
 SUM: Message passing computes marginals.
-SRC: Koller D, Friedman N, Probabilistic Graphical Models: Principles and Techniques (MIT Press 2009) | textbook | 2009 | https://mitpress.mit.edu/
-SRC: Kschischang FR, Frey BJ, Loeliger HA, Factor graphs and the sum-product algorithm, IEEE Transactions on Information Theory 47(2), 498 | journal | 2001 | https://doi.org/10.1109/18.910572
+SRC: Koller D, Friedman N, Probabilistic Graphical Models: Principles and Techniques (MIT Press 2009) | secondary | 2009 | https://mitpress.mit.edu/
+SRC: Kschischang FR, Frey BJ, Loeliger HA, Factor graphs and the sum-product algorithm, IEEE Transactions on Information Theory 47(2), 498 | primary | 2001 | https://doi.org/10.1109/18.910572
 NUM1#maths-u24-10-q1@1: Unnormalised potentials over two binary variables give scores 1, 2, 3 and 4. What is the probability of the configuration scoring 4? | 0.4 | 0.001 |  | Z = 1 + 2 + 3 + 4 = 10, so p = 4/10 = 0.4.
 M1#maths-u24-10-q2@1: Which statement about Markov random fields is true? | A node is independent of all others given its neighbours | Edges have directions | They can't have cycles | They need no normalisation | Every node depends on every other given its neighbours | The local Markov property holds with the neighbourhood as a blanket.
 M2#maths-u24-10-q3@2: Why is computing the partition function Z often hard? | It sums over exponentially many configurations of all variables | Z is always equal to 1, so it never needs computing | It needs only the single most likely configuration | It's computed by sorting the variables by their values | It's never hard, even for very large graphs | Z sums the unnormalised scores over every joint configuration, and 100 binary variables already give 2^{100} terms.
@@ -401,8 +401,8 @@ Q: What equation defines a stationary distribution? | πP = π.
 Q: What is PageRank? | The stationary distribution of a random web surfer.
 SUM: The future depends only on the present.
 SUM: Stationary distributions describe the long run.
-SRC: Norris JR, Markov Chains (Cambridge University Press 1997) | textbook | 1997 | https://www.cambridge.org/
-SRC: Brin S, Page L, The anatomy of a large-scale hypertextual web search engine, Computer Networks and ISDN Systems 30(1–7), 107 | journal | 1998 | https://doi.org/10.1016/S0169-7552(98)00110-X
+SRC: Norris JR, Markov Chains (Cambridge University Press 1997) | secondary | 1997 | https://www.cambridge.org/
+SRC: Brin S, Page L, The anatomy of a large-scale hypertextual web search engine, Computer Networks and ISDN Systems 30(1–7), 107 | primary | 1998 | https://doi.org/10.1016/S0169-7552(98)00110-X
 NUM1#maths-u24-11-q1@1: For P = [[0.8, 0.2], [0.4, 0.6]], what is the stationary probability of state 1, to 3 decimal places? | 0.667 | 0.001 |  | 0.2π₁ = 0.4π₂ gives π₁ = 2π₂, so π₁ = 2/3.
 M1#maths-u24-11-q2@1: What must each row of a transition matrix sum to? | 1 | 0 | The number of states | Any positive number | −1 | Each row is a probability distribution over next states.
 M2#maths-u24-11-q3@2: Why does PageRank include a random "teleportation" step? | It makes the chain irreducible and aperiodic, guaranteeing a unique stationary distribution | It removes all the links between pages, so every page ranks equally | It makes all page ranks exactly equal, which is fairer to small sites | It speeds up how quickly web pages load for the random surfer | It has no mathematical purpose; it was added only for marketing | Dangling pages and disconnected parts would otherwise break convergence.
@@ -437,8 +437,8 @@ Q: What does the length scale ℓ control? | How quickly correlation between fun
 Q: What is the computational cost of exact GP regression? | O(n^{3}).
 SUM: Distributions over functions.
 SUM: Uncertainty comes free.
-SRC: Rasmussen CE, Williams CKI, Gaussian Processes for Machine Learning (MIT Press 2006) | textbook | 2006 | https://gaussianprocess.org/gpml/
-SRC: Matheron G, Principles of geostatistics, Economic Geology 58(8), 1246 | journal | 1963 | https://doi.org/10.2113/gsecongeo.58.8.1246
+SRC: Rasmussen CE, Williams CKI, Gaussian Processes for Machine Learning (MIT Press 2006) | secondary | 2006 | https://gaussianprocess.org/gpml/
+SRC: Matheron G, Principles of geostatistics, Economic Geology 58(8), 1246 | primary | 1963 | https://doi.org/10.2113/gsecongeo.58.8.1246
 NUM1#maths-u24-12-q1@1: For a squared exponential kernel with σ^{2} = 1 and ℓ = 2, what is k(0, 2), to 3 decimal places? | 0.607 | 0.001 |  | exp(−4/(2 × 4)) = exp(−0.5) ≈ 0.607.
 M1#maths-u24-12-q2@1: Where is a GP's predictive uncertainty largest? | Far from any training points | Exactly at training points | Where the data are densest | At the mean of the inputs | It's the same everywhere | Without nearby observations the posterior reverts to the prior variance.
 M3#maths-u24-12-q3@2: Why does choosing a kernel matter so much in GP regression? | The kernel encodes assumptions such as smoothness, periodicity and scale, which shape every prediction | Kernels don't affect GP predictions at all, only the computation time | Any kernel gives the same posterior once there's enough training data | Kernels only change the speed of training, never the predictions | It doesn't matter; GP regression works the same with every kernel | Different kernels define different priors over functions.
@@ -473,8 +473,8 @@ Q: Which uncertainty shrinks with more data? | Epistemic uncertainty.
 Q: What does temperature scaling adjust? | The sharpness of softmax probabilities, to improve calibration.
 SUM: Know what the model doesn't know.
 SUM: Calibrate confidence.
-SRC: Lakshminarayanan B, Pritzel A, Blundell C, Simple and scalable predictive uncertainty estimation using deep ensembles, NeurIPS 30 | journal | 2017 | https://arxiv.org/abs/1612.01474
-SRC: Guo C, Pleiss G, Sun Y, Weinberger KQ, On calibration of modern neural networks, ICML 2017 | journal | 2017 | https://arxiv.org/abs/1706.04599
+SRC: Lakshminarayanan B, Pritzel A, Blundell C, Simple and scalable predictive uncertainty estimation using deep ensembles, NeurIPS 30 | primary | 2017 | https://arxiv.org/abs/1612.01474
+SRC: Guo C, Pleiss G, Sun Y, Weinberger KQ, On calibration of modern neural networks, ICML 2017 | primary | 2017 | https://arxiv.org/abs/1706.04599
 NUM1#maths-u24-13-q1@1: Five ensemble members predict 0.62, 0.58, 0.60, 0.61 and 0.59. What is their mean prediction? | 0.6 | 0.001 |  | (0.62 + 0.58 + 0.60 + 0.61 + 0.59)/5 = 3.0/5 = 0.6; their small spread signals low epistemic uncertainty.
 M1#maths-u24-13-q2@1: Which source of uncertainty can't be reduced by collecting more data? | Aleatoric uncertainty from noise in the labels | Epistemic uncertainty about parameters | Uncertainty from a tiny training set | Uncertainty about model weights | Uncertainty about unseen regions | Noise inherent in the data remains whatever the sample size.
 M2#maths-u24-13-q3@2: Why do deep ensembles give useful uncertainty estimates? | Independently trained models disagree more on unfamiliar inputs, so their spread reflects epistemic uncertainty | Ensemble members always agree exactly, which proves they're certain | They remove all uncertainty by averaging the members' predictions | They need no training, since members are random initialisations | They don't; ensembles only improve accuracy, never uncertainty | Different random initialisations converge to different solutions away from the data.
@@ -509,8 +509,8 @@ Q: What assumption does conformal prediction need? | Exchangeable data.
 Q: Is conformal coverage conditional on each input? | No, it's marginal.
 SUM: Wrap any model with guaranteed coverage.
 SUM: Exchangeability is the key assumption.
-SRC: Vovk V, Gammerman A, Shafer G, Algorithmic Learning in a Random World (Springer 2005) | textbook | 2005 | https://link.springer.com/
-SRC: Angelopoulos AN, Bates S, A gentle introduction to conformal prediction and distribution-free uncertainty quantification, arXiv:2107.07511 | review | 2021 | https://arxiv.org/abs/2107.07511
+SRC: Vovk V, Gammerman A, Shafer G, Algorithmic Learning in a Random World (Springer 2005) | secondary | 2005 | https://link.springer.com/
+SRC: Angelopoulos AN, Bates S, A gentle introduction to conformal prediction and distribution-free uncertainty quantification, arXiv:2107.07511 | secondary | 2021 | https://arxiv.org/abs/2107.07511
 NUM1#maths-u24-14-q1@1: With n = 19 calibration points and α = 0.1, which rank of sorted scores gives q̂? | 18 | 0 |  | ⌈(19 + 1) × 0.9⌉ = ⌈18⌉ = 18.
 M1#maths-u24-14-q2@1: Which models can conformal prediction be applied to? | Any model that produces predictions | Only linear regression | Only Bayesian models | Only Gaussian processes | Only models with calibrated probabilities | It treats the model as a black box and calibrates its errors.
 M3#maths-u24-14-q3@2: Why does conformal prediction fail to guarantee coverage for time series? | Observations aren't exchangeable, since order and dependence matter | Time series have no predictions | The quantile can't be computed | Coverage is always perfect for time series | It doesn't fail | The finite-sample guarantee relies on exchangeability of calibration and test points.
@@ -543,8 +543,8 @@ Q: What does the representer theorem say? | Regularised solutions are combinatio
 Q: What feature space does the RBF kernel correspond to? | An infinite-dimensional one.
 SUM: Linear methods, non-linear features.
 SUM: The kernel does the work.
-SRC: Schölkopf B, Smola AJ, Learning with Kernels (MIT Press 2002) | textbook | 2002 | https://mitpress.mit.edu/
-SRC: Rahimi A, Recht B, Random features for large-scale kernel machines, NeurIPS 20 | journal | 2007 | https://papers.nips.cc/
+SRC: Schölkopf B, Smola AJ, Learning with Kernels (MIT Press 2002) | secondary | 2002 | https://mitpress.mit.edu/
+SRC: Rahimi A, Recht B, Random features for large-scale kernel machines, NeurIPS 20 | primary | 2007 | https://papers.nips.cc/
 NUM1#maths-u24-15-q1@1: For the polynomial kernel k(x, y) = (xᵀy + 1)^{2}, what is k([1, 2], [3, 1])? | 36 | 0 |  | xᵀy = 3 + 2 = 5, so (5 + 1)^{2} = 36.
 M1#maths-u24-15-q2@1: Which function is a valid kernel? | k(x, y) = exp(−‖x − y‖^{2}) | k(x, y) = −‖x − y‖^{2} only | k(x, y) = x − y | k(x, y) = sin(x + y) | k(x, y) = −1 | The Gaussian kernel is positive definite for all inputs.
 M2#maths-u24-15-q3@2: Why can kernel methods be slow on very large datasets? | They need the n × n kernel matrix, costing O(n^{2}) memory and up to O(n^{3}) time | Kernels are always linear, which makes them slow on big data | They ignore most of the data, which wastes computation | They need gradients for every pair of examples at each step | They aren't slow; kernel methods scale linearly with n | A million examples give a 10^{12}-entry Gram matrix.
@@ -580,8 +580,8 @@ Q: Which points determine an SVM's boundary? | The support vectors.
 Q: What does a large C do in a soft-margin SVM? | Penalises training errors more, giving a narrower margin.
 SUM: Widest margin wins.
 SUM: Support vectors decide.
-SRC: Cortes C, Vapnik V, Support-vector networks, Machine Learning 20(3), 273 | journal | 1995 | https://doi.org/10.1007/BF00994018
-SRC: Burges CJC, A tutorial on support vector machines for pattern recognition, Data Mining and Knowledge Discovery 2(2), 121 | journal | 1998 | https://doi.org/10.1023/A:1009715923555
+SRC: Cortes C, Vapnik V, Support-vector networks, Machine Learning 20(3), 273 | primary | 1995 | https://doi.org/10.1007/BF00994018
+SRC: Burges CJC, A tutorial on support vector machines for pattern recognition, Data Mining and Knowledge Discovery 2(2), 121 | primary | 1998 | https://doi.org/10.1023/A:1009715923555
 NUM1#maths-u24-16-q1@1: A point with label y = 1 has SVM score f(x) = 0.4. What is its hinge loss? | 0.6 | 0.001 |  | max(0, 1 − 1 × 0.4) = 0.6: it's inside the margin.
 M1#maths-u24-16-q2@1: What happens to a training point far from the boundary on the correct side when it's removed? | The SVM solution doesn't change | The boundary shifts greatly | The margin doubles | All support vectors change | The SVM fails | Only support vectors affect the solution.
 M2#maths-u24-16-q3@2: Why does the SVM dual formulation allow kernels? | The data appear only through inner products xᵢᵀxⱼ, which a kernel can replace | The dual problem contains no data at all, only the labels | Kernels change the labels into a form the dual can use | The primal is easier, so kernels are applied there instead | It doesn't; kernels can only be used in the primal problem | Replacing inner products with k(xᵢ, xⱼ) works in feature space implicitly.
@@ -617,8 +617,8 @@ Q: What is the Gini impurity of a pure node? | 0.
 Q: What does cost-complexity pruning penalise? | The number of leaves.
 SUM: Ask questions to split data.
 SUM: Prune to avoid overfitting.
-SRC: Breiman L, Friedman JH, Olshen RA, Stone CJ, Classification and Regression Trees (Wadsworth 1984) | textbook | 1984 | https://www.routledge.com/
-SRC: Quinlan JR, Induction of decision trees, Machine Learning 1(1), 81 | journal | 1986 | https://doi.org/10.1007/BF00116251
+SRC: Breiman L, Friedman JH, Olshen RA, Stone CJ, Classification and Regression Trees (Wadsworth 1984) | secondary | 1984 | https://www.routledge.com/
+SRC: Quinlan JR, Induction of decision trees, Machine Learning 1(1), 81 | primary | 1986 | https://doi.org/10.1007/BF00116251
 NUM1#maths-u24-17-q1@1: What is the Gini impurity of a node with class proportions 0.7 and 0.3? | 0.42 | 0.001 |  | 1 − (0.49 + 0.09) = 0.42.
 M1#maths-u24-17-q2@1: What is the entropy in bits of a node with equal numbers of two classes? | 1 | 0 | 0.5 | 2 | 0.25 | −2 × 0.5 log₂ 0.5 = 1 bit, the maximum for two classes.
 M3#maths-u24-17-q3@2: Why are single decision trees said to have high variance? | Small changes in the training data can change early splits and so the whole tree | Trees always predict the mean, so their predictions never vary | Trees have too few parameters, which makes them unstable | Trees can't fit training data closely, so their errors vary | They have low variance; single trees are very stable models | Greedy top-down splitting propagates early differences through the structure.
@@ -653,8 +653,8 @@ Q: What limits the variance reduction from averaging models? | Their correlation
 Q: What does bagging stand for? | Bootstrap aggregating.
 SUM: Many models beat one.
 SUM: Diversity drives the gain.
-SRC: Breiman L, Bagging predictors, Machine Learning 24(2), 123 | journal | 1996 | https://doi.org/10.1007/BF00058655
-SRC: Wolpert DH, Stacked generalization, Neural Networks 5(2), 241 | journal | 1992 | https://doi.org/10.1016/S0893-6080(05)80023-1
+SRC: Breiman L, Bagging predictors, Machine Learning 24(2), 123 | primary | 1996 | https://doi.org/10.1007/BF00058655
+SRC: Wolpert DH, Stacked generalization, Neural Networks 5(2), 241 | primary | 1992 | https://doi.org/10.1016/S0893-6080(05)80023-1
 NUM1#maths-u24-18-q1@1: With infinitely many models of variance 4 and correlation 0.25, what does the variance of their average approach? | 1 | 0 |  | As B → ∞, the variance tends to ρσ^{2} = 0.25 × 4 = 1.
 M1#maths-u24-18-q2@1: Which method trains models sequentially, each focusing on the previous ones' errors? | Boosting | Bagging | Stacking with a fixed blend | Random subspace averaging | Simple voting | Boosting reweights or fits residuals of earlier models.
 M2#maths-u24-18-q3@2: Why does bagging help unstable models like deep trees most? | They have high variance, which averaging over bootstrap resamples reduces | Stable models have high variance, so bagging helps them more | Bagging reduces bias mainly, which unstable models suffer from | Trees have no variance, so bagging works by reducing bias | It doesn't help; bagging only works for linear models | Low-variance models like linear regression gain little.
@@ -689,8 +689,8 @@ Q: What fraction of data is out of bag for each tree? | About 36.8%.
 Q: What is a typical number of features tried per split for classification? | About √p.
 SUM: Randomness decorrelates trees.
 SUM: OOB error validates for free.
-SRC: Breiman L, Random forests, Machine Learning 45(1), 5 | journal | 2001 | https://doi.org/10.1023/A:1010933404324
-SRC: Strobl C, Boulesteix AL, Zeileis A, Hothorn T, Bias in random forest variable importance measures, BMC Bioinformatics 8, 25 | journal | 2007 | https://doi.org/10.1186/1471-2105-8-25
+SRC: Breiman L, Random forests, Machine Learning 45(1), 5 | primary | 2001 | https://doi.org/10.1023/A:1010933404324
+SRC: Strobl C, Boulesteix AL, Zeileis A, Hothorn T, Bias in random forest variable importance measures, BMC Bioinformatics 8, 25 | primary | 2007 | https://doi.org/10.1186/1471-2105-8-25
 NUM1#maths-u24-19-q1@1: A classification forest uses p = 100 features. How many are typically tried at each split with the √p rule? | 10 | 0 | features | √100 = 10.
 M1#maths-u24-19-q2@1: Why does adding more trees to a random forest not cause overfitting? | The prediction converges to the average over the tree distribution, so extra trees only reduce noise | More trees always overfit, so forests must be kept small | Trees are pruned automatically as more are added | Each new tree uses all the data, cancelling the others | It does cause overfitting beyond about 50 trees | Breiman showed the generalisation error converges as trees are added.
 M2#maths-u24-19-q3@2: How does feature subsampling improve a random forest? | It forces trees to use different features, lowering their correlation so averaging helps more | It makes each individual tree far more accurate on its own | It reduces the number of trees needed to just one or two | It removes all bias from each tree in the forest | It doesn't help; it only speeds up the training | Without it, strong features would dominate every tree's top splits.
@@ -726,8 +726,8 @@ Q: What are pseudo-residuals for squared loss? | The ordinary residuals y − F(
 Q: What does AdaBoost do to misclassified examples? | Increases their weights.
 SUM: Weak learners add up to strong ones.
 SUM: Each step corrects errors.
-SRC: Freund Y, Schapire RE, A decision-theoretic generalization of on-line learning and an application to boosting, Journal of Computer and System Sciences 55(1), 119 | journal | 1997 | https://doi.org/10.1006/jcss.1997.1504
-SRC: Friedman JH, Greedy function approximation: a gradient boosting machine, Annals of Statistics 29(5), 1189 | journal | 2001 | https://doi.org/10.1214/aos/1013203451
+SRC: Freund Y, Schapire RE, A decision-theoretic generalization of on-line learning and an application to boosting, Journal of Computer and System Sciences 55(1), 119 | primary | 1997 | https://doi.org/10.1006/jcss.1997.1504
+SRC: Friedman JH, Greedy function approximation: a gradient boosting machine, Annals of Statistics 29(5), 1189 | primary | 2001 | https://doi.org/10.1214/aos/1013203451
 NUM1#maths-u24-20-q1@1: A weak learner has error ε = 0.5 in AdaBoost. What weight α does it receive? | 0 | 0 |  | α = ½ ln(0.5/0.5) = ½ ln 1 = 0: random guessing contributes nothing.
 M1#maths-u24-20-q2@1: In gradient boosting with squared loss, what does each new tree fit? | The residuals of the current ensemble | The original targets, ignoring earlier trees | Random noise added to the targets | The squared values of the targets | The class labels only, not residuals | The negative gradient of ½(y − F)^{2} is y − F.
 M3#maths-u24-20-q3@2: Why can boosting overfit noisy labels while bagging rarely does? | Boosting keeps increasing focus on hard examples, including mislabelled ones, while bagging averages them out | Bagging fits noise more strongly because it averages many deep trees | Boosting ignores errors once training accuracy reaches 100% | Both methods always overfit noisy labels to the same degree | Boosting never overfits, whatever the level of label noise | Reweighting concentrates effort on points that may simply be wrong.
@@ -762,8 +762,8 @@ Q: What does k-means++ improve? | The choice of initial centroids.
 Q: Which method can find clusters of arbitrary shape and label noise? | DBSCAN.
 SUM: Group similar points.
 SUM: Choose the method for the cluster shape.
-SRC: Lloyd SP, Least squares quantization in PCM, IEEE Transactions on Information Theory 28(2), 129 | journal | 1982 | https://doi.org/10.1109/TIT.1982.1056489
-SRC: Ester M, Kriegel HP, Sander J, Xu X, A density-based algorithm for discovering clusters in large spatial databases with noise, KDD-96, 226 | journal | 1996 | https://dl.acm.org/
+SRC: Lloyd SP, Least squares quantization in PCM, IEEE Transactions on Information Theory 28(2), 129 | primary | 1982 | https://doi.org/10.1109/TIT.1982.1056489
+SRC: Ester M, Kriegel HP, Sander J, Xu X, A density-based algorithm for discovering clusters in large spatial databases with noise, KDD-96, 226 | primary | 1996 | https://dl.acm.org/
 NUM1#maths-u24-21-q1@1: A point has mean distance 2 to its own cluster and 6 to the nearest other cluster. What is its silhouette score, to 3 decimal places? | 0.667 | 0.001 |  | (6 − 2)/6 ≈ 0.667, indicating a good assignment.
 M1#maths-u24-21-q2@1: What is the centroid of the points (0, 0), (2, 0) and (1, 3)? | (1, 1) | (1, 0) | (2, 3) | (0, 3) | (1, 1.5) | The centroid averages each coordinate: x = (0 + 2 + 1)/3 = 1 and y = (0 + 0 + 3)/3 = 1, giving (1, 1).
 M2#maths-u24-21-q3@2: Why must features usually be standardised before k-means? | Distances are dominated by features with large scales, distorting the clusters | k-means ignores feature scale, so standardising is only a habit | Standardising changes the number of clusters k-means will find | Centroids can't be computed for features with different units | It isn't needed, since k-means uses correlations, not distances | A variable in metres would swamp one in kilometres.
@@ -799,8 +799,8 @@ Q: What do the principal components of data correspond to? | Eigenvectors of the
 Q: What does the Johnson–Lindenstrauss lemma guarantee? | Random projections approximately preserve pairwise distances.
 SUM: Keep the directions that matter.
 SUM: PCA maximises variance.
-SRC: Jolliffe IT, Cadima J, Principal component analysis: a review and recent developments, Philosophical Transactions of the Royal Society A 374, 20150202 | review | 2016 | https://doi.org/10.1098/rsta.2015.0202
-SRC: Eckart C, Young G, The approximation of one matrix by another of lower rank, Psychometrika 1(3), 211 | journal | 1936 | https://doi.org/10.1007/BF02288367
+SRC: Jolliffe IT, Cadima J, Principal component analysis: a review and recent developments, Philosophical Transactions of the Royal Society A 374, 20150202 | secondary | 2016 | https://doi.org/10.1098/rsta.2015.0202
+SRC: Eckart C, Young G, The approximation of one matrix by another of lower rank, Psychometrika 1(3), 211 | primary | 1936 | https://doi.org/10.1007/BF02288367
 NUM1#maths-u24-22-q1@1: Eigenvalues are 8, 4, 2, 1 and 1. What fraction of variance does the first component explain, as a decimal? | 0.5 | 0.001 |  | 8/16 = 0.5.
 M1#maths-u24-22-q2@1: Which decomposition is used to compute PCA stably? | The singular value decomposition | LU decomposition | Cholesky decomposition only | QR without pivoting | The Fourier transform | The SVD of the centred data matrix gives components and variances directly.
 M3#maths-u24-22-q3@2: Why can PCA discard information useful for prediction? | It keeps directions of high variance, but the target may depend on a low-variance direction | PCA always keeps all the information in the original data | PCA uses the target variable to choose its components | Low-variance directions are always pure noise, so nothing is lost | It can't discard anything; components are just rotations | PCA is unsupervised; variance isn't the same as relevance.
@@ -835,8 +835,8 @@ Q: What does Isomap preserve? | Geodesic distances along the data manifold.
 Q: Which parameter controls neighbourhood size in t-SNE? | Perplexity.
 SUM: Data lie on curved surfaces.
 SUM: Local structure is preserved.
-SRC: Tenenbaum JB, de Silva V, Langford JC, A global geometric framework for nonlinear dimensionality reduction, Science 290(5500), 2319 | journal | 2000 | https://doi.org/10.1126/science.290.5500.2319
-SRC: van der Maaten L, Hinton G, Visualizing data using t-SNE, Journal of Machine Learning Research 9, 2579 | journal | 2008 | https://jmlr.org/papers/v9/vandermaaten08a.html
+SRC: Tenenbaum JB, de Silva V, Langford JC, A global geometric framework for nonlinear dimensionality reduction, Science 290(5500), 2319 | primary | 2000 | https://doi.org/10.1126/science.290.5500.2319
+SRC: van der Maaten L, Hinton G, Visualizing data using t-SNE, Journal of Machine Learning Research 9, 2579 | primary | 2008 | https://jmlr.org/papers/v9/vandermaaten08a.html
 NUM1#maths-u24-23-q1@1: A Swiss roll lives in 3D but is intrinsically a 2D sheet. What is its intrinsic dimension? | 2 | 0 |  | It's a rolled-up surface, so two coordinates describe position on it.
 M1#maths-u24-23-q2@1: Which method is designed mainly for visualising high-dimensional data in 2D or 3D? | t-SNE | Linear regression | k-means | Ridge regression | Logistic regression | t-SNE embeds neighbourhoods into low dimensions for plotting.
 M2#maths-u24-23-q3@2: Why shouldn't gaps between clusters in a t-SNE plot be read as true distances? | t-SNE preserves local neighbourhoods and can stretch or shrink global distances arbitrarily | t-SNE preserves every pairwise distance exactly, so gaps are accurate | Gaps are always zero in t-SNE plots, so there's nothing to read | Clusters never appear in t-SNE plots unless they're in the data | They should be read literally as distances between cluster centres | Its heavy-tailed low-dimensional kernel exaggerates separation between groups.
@@ -871,8 +871,8 @@ Q: Who proved an early universal approximation theorem in 1989? | George Cybenko
 Q: Does universal approximation say how many neurons are needed? | No.
 SUM: Networks can approximate anything.
 SUM: Learning them is the harder question.
-SRC: Cybenko G, Approximation by superpositions of a sigmoidal function, Mathematics of Control, Signals and Systems 2(4), 303 | journal | 1989 | https://doi.org/10.1007/BF02551274
-SRC: Jacot A, Gabriel F, Hongler C, Neural tangent kernel: convergence and generalization in neural networks, NeurIPS 31 | journal | 2018 | https://arxiv.org/abs/1806.07572
+SRC: Cybenko G, Approximation by superpositions of a sigmoidal function, Mathematics of Control, Signals and Systems 2(4), 303 | primary | 1989 | https://doi.org/10.1007/BF02551274
+SRC: Jacot A, Gabriel F, Hongler C, Neural tangent kernel: convergence and generalization in neural networks, NeurIPS 31 | primary | 2018 | https://arxiv.org/abs/1806.07572
 NUM1#maths-u24-24-q1@1: A layer maps 512 inputs to 256 outputs with biases. How many parameters does it have? | 131328 | 0 | parameters | 512 × 256 + 256 = 131,072 + 256 = 131,328.
 M1#maths-u24-24-q2@1: What does the universal approximation theorem guarantee? | Existence of a one-hidden-layer network approximating any continuous function on a compact set | That gradient descent always finds the best network | That small networks suffice for any function | That neural networks never overfit training data | That deep networks are never necessary in practice | It's an existence result, saying nothing about size or training.
 M3#maths-u24-24-q3@2: Why can deeper networks be more efficient than wide shallow ones? | Composing layers reuses features, so some functions need exponentially fewer units with depth | Depth reduces the number of parameters to zero | Shallow networks can't approximate any function | Depth removes the need for non-linear activations | They can't be more efficient than shallow networks | Results by Telgarsky and others show depth separations for certain functions.
@@ -907,8 +907,8 @@ Q: What variance does He initialisation use? | 2/n_{in}.
 Q: What does dropout do during training? | Randomly sets some units to zero.
 SUM: Each design choice has a mathematical reason.
 SUM: Keep signal variance stable.
-SRC: He K, Zhang X, Ren S, Sun J, Delving deep into rectifiers: surpassing human-level performance on ImageNet classification, ICCV 2015 | journal | 2015 | https://arxiv.org/abs/1502.01852
-SRC: Ioffe S, Szegedy C, Batch normalization: accelerating deep network training by reducing internal covariate shift, ICML 2015 | journal | 2015 | https://arxiv.org/abs/1502.03167
+SRC: He K, Zhang X, Ren S, Sun J, Delving deep into rectifiers: surpassing human-level performance on ImageNet classification, ICCV 2015 | primary | 2015 | https://arxiv.org/abs/1502.01852
+SRC: Ioffe S, Szegedy C, Batch normalization: accelerating deep network training by reducing internal covariate shift, ICML 2015 | primary | 2015 | https://arxiv.org/abs/1502.03167
 NUM1#maths-u24-25-q1@1: A 64 × 64 input is convolved with a 3 × 3 kernel, padding 1 and stride 2. What is the output width? | 32 | 0 |  | Output width = ⌊(n − k + 2p)/s⌋ + 1 = ⌊(64 − 3 + 2)/2⌋ + 1 = ⌊31.5⌋ + 1 = 32.
 M1#maths-u24-25-q2@1: How many weights does a 3 × 3 convolution with 16 input and 32 output channels have (excluding biases)? | 4608 | 288 | 512 | 9 | 147,456 | 3 × 3 × 16 × 32 = 4,608, independent of image size.
 M2#maths-u24-25-q3@2: Why does weight sharing in convolutions suit images? | The same pattern (such as an edge) can appear anywhere, so one filter detects it at all positions | Images have no spatial structure, so sharing loses nothing | It increases the number of parameters to fit more detail | It removes the effect of where objects appear in the image | It doesn't suit images; fully connected layers work better | Translation equivariance matches how visual features recur across an image.
@@ -944,8 +944,8 @@ Q: What does an autoencoder's bottleneck force? | A compressed representation of
 Q: What does contrastive learning pull together? | Representations of similar (positive) pairs.
 SUM: Learn features, don't hand-craft them.
 SUM: Good representations transfer.
-SRC: Bengio Y, Courville A, Vincent P, Representation learning: a review and new perspectives, IEEE Transactions on Pattern Analysis and Machine Intelligence 35(8), 1798 | review | 2013 | https://doi.org/10.1109/TPAMI.2013.50
-SRC: Chen T, Kornblith S, Norouzi M, Hinton G, A simple framework for contrastive learning of visual representations, ICML 2020 | journal | 2020 | https://arxiv.org/abs/2002.05709
+SRC: Bengio Y, Courville A, Vincent P, Representation learning: a review and new perspectives, IEEE Transactions on Pattern Analysis and Machine Intelligence 35(8), 1798 | secondary | 2013 | https://doi.org/10.1109/TPAMI.2013.50
+SRC: Chen T, Kornblith S, Norouzi M, Hinton G, A simple framework for contrastive learning of visual representations, ICML 2020 | primary | 2020 | https://arxiv.org/abs/2002.05709
 NUM1#maths-u24-26-q1@1: Find the cosine similarity of u = (1, 0) and v = (1, 1), to 3 decimal places. | 0.707 | 0.001 |  | u·v = 1 and ‖u‖‖v‖ = √2, so cos θ = 1/√2 ≈ 0.707.
 M1#maths-u24-26-q2@1: What is the training target of a standard autoencoder? | Its own input | A class label | The next word in a sentence | A random vector | Nothing | It learns to reconstruct x from its compressed code.
 M2#maths-u24-26-q3@2: Why does pretraining on large unlabelled data help small labelled tasks? | It learns general features that make the small task easier to fit with few labels | Unlabelled data secretly contain the labels for the small task | It removes the need for any labelled data in the small task | It makes the model overfit the small task less by ignoring it | It doesn't help; small tasks should be trained from scratch | Transferred representations reduce how much must be learned from scarce labels.
@@ -980,8 +980,8 @@ Q: Why divide attention scores by √d_{k}? | To stop large dot products saturat
 Q: What is the cost of self-attention in sequence length n? | O(n^{2}).
 SUM: Weigh inputs by relevance.
 SUM: Queries match keys to mix values.
-SRC: Vaswani A et al., Attention is all you need, NeurIPS 30 | journal | 2017 | https://arxiv.org/abs/1706.03762
-SRC: Bahdanau D, Cho K, Bengio Y, Neural machine translation by jointly learning to align and translate, arXiv:1409.0473 | journal | 2014 | https://arxiv.org/abs/1409.0473
+SRC: Vaswani A et al., Attention is all you need, NeurIPS 30 | primary | 2017 | https://arxiv.org/abs/1706.03762
+SRC: Bahdanau D, Cho K, Bengio Y, Neural machine translation by jointly learning to align and translate, arXiv:1409.0473 | primary | 2014 | https://arxiv.org/abs/1409.0473
 NUM1#maths-u24-27-q1@1: Two attention scores are equal. What weight does each value receive? | 0.5 | 0 |  | Softmax of equal scores gives equal weights summing to 1.
 M1#maths-u24-27-q2@1: How does self-attention's memory grow if the sequence length doubles? | It roughly quadruples | It doubles | It stays the same | It halves | It grows eightfold | The attention matrix is n × n, so its size scales with n^{2}.
 M3#maths-u24-27-q3@2: Why are attention scores scaled by 1/√d_{k}? | Dot products of random d_{k}-dimensional vectors have variance ~d_{k}, so unscaled scores saturate the softmax and kill gradients | It makes the softmax linear, which simplifies the gradient computation | It reduces the memory needed to store the attention matrix | It's required so that several attention heads can run in parallel | It isn't necessary; unscaled scores train just as well at any size | Scaling keeps score variance about 1 regardless of dimension.
@@ -1016,8 +1016,8 @@ Q: What does a causal mask prevent? | Positions attending to future tokens.
 Q: What is the approximate training compute for N parameters and D tokens? | About 6ND floating-point operations.
 SUM: Attention plus feed-forward, stacked.
 SUM: Scales predictably.
-SRC: Vaswani A et al., Attention is all you need, NeurIPS 30 | journal | 2017 | https://arxiv.org/abs/1706.03762
-SRC: Kaplan J et al., Scaling laws for neural language models, arXiv:2001.08361 | journal | 2020 | https://arxiv.org/abs/2001.08361
+SRC: Vaswani A et al., Attention is all you need, NeurIPS 30 | primary | 2017 | https://arxiv.org/abs/1706.03762
+SRC: Kaplan J et al., Scaling laws for neural language models, arXiv:2001.08361 | primary | 2020 | https://arxiv.org/abs/2001.08361
 NUM1#maths-u24-28-q1@1: Using compute ≈ 6ND, how many FLOPs does training a 10^{9}-parameter model on 2 × 10^{10} tokens need, in units of 10^{20}? | 1.2 | 0.001 |  | 6 × 10^{9} × 2 × 10^{10} = 1.2 × 10^{20}.
 M1#maths-u24-28-q2@1: Why do transformers need positional encodings? | Self-attention alone is permutation-invariant, so order must be supplied | Tokens already contain their positions | Attention can't process words without them | They make transformer models smaller | They don't need them at all | Without them, shuffled inputs would give the same representations.
 M2#maths-u24-28-q3@2: Why does lowering the sampling temperature make generated text more predictable? | Dividing logits by T < 1 sharpens the softmax, concentrating probability on top tokens | It adds randomness to every token choice | It changes the size of the vocabulary | It removes the softmax from the model | It doesn't affect predictability | As T → 0 sampling approaches always picking the most likely token.
@@ -1051,8 +1051,8 @@ Q: What two terms make up the ELBO? | Expected reconstruction log-likelihood min
 Q: What does InfoNCE bound? | Mutual information (from below).
 SUM: Information theory shapes ML losses.
 SUM: Compression links to generalisation.
-SRC: Kingma DP, Welling M, Auto-encoding variational Bayes, arXiv:1312.6114 | journal | 2013 | https://arxiv.org/abs/1312.6114
-SRC: Tishby N, Pereira FC, Bialek W, The information bottleneck method, arXiv:physics/0004057 | journal | 2000 | https://arxiv.org/abs/physics/0004057
+SRC: Kingma DP, Welling M, Auto-encoding variational Bayes, arXiv:1312.6114 | primary | 2013 | https://arxiv.org/abs/1312.6114
+SRC: Tishby N, Pereira FC, Bialek W, The information bottleneck method, arXiv:physics/0004057 | primary | 2000 | https://arxiv.org/abs/physics/0004057
 NUM1#maths-u24-29-q1@1: A model achieves cross-entropy 1.2 bits per character on text whose true entropy is 1.0 bits per character. What is the KL divergence in bits per character? | 0.2 | 0.001 | bits | KL = cross-entropy − entropy = 1.2 − 1.0 = 0.2.
 M1#maths-u24-29-q2@1: What does the KL term in a VAE's ELBO encourage? | The approximate posterior to stay close to the prior | Perfect reconstruction of every input | Larger latent codes for each input | Zero entropy in the latent space | Random outputs unrelated to inputs | Penalising KL keeps the latent space regular and samplable.
 M2#maths-u24-29-q3@2: Why is the ELBO a lower bound on log p(x)? | log p(x) = ELBO + D_{KL}(q ‖ true posterior), and KL is non-negative | The ELBO is always zero, which is below any log-likelihood | It equals log p(x) exactly when the decoder is trained | It's actually an upper bound on the log-likelihood | It isn't a bound; it's an unrelated training heuristic | The gap is precisely the KL divergence from the true posterior.
@@ -1088,8 +1088,8 @@ Q: What does the discount factor γ control? | How much future rewards count com
 Q: What is RLHF? | Reinforcement learning from human feedback.
 SUM: Learn by trial and error.
 SUM: Maximise discounted reward.
-SRC: Sutton RS, Barto AG, Reinforcement Learning: An Introduction (2nd edn, MIT Press 2018) | textbook | 2018 | http://incompleteideas.net/book/the-book-2nd.html
-SRC: Silver D et al., Mastering the game of Go with deep neural networks and tree search, Nature 529, 484 | journal | 2016 | https://doi.org/10.1038/nature16961
+SRC: Sutton RS, Barto AG, Reinforcement Learning: An Introduction (2nd edn, MIT Press 2018) | secondary | 2018 | http://incompleteideas.net/book/the-book-2nd.html
+SRC: Silver D et al., Mastering the game of Go with deep neural networks and tree search, Nature 529, 484 | primary | 2016 | https://doi.org/10.1038/nature16961
 NUM1#maths-u24-30-q1@1: An agent gets reward 10 at every step forever with γ = 0.95. What is its return? | 200 | 0 |  | 10/(1 − 0.95) = 200.
 M1#maths-u24-30-q2@1: Which approach learns a model of the environment and plans with it? | Model-based reinforcement learning | Pure Q-learning | REINFORCE without a model | Random search | Supervised classification | Model-based methods learn transitions and rewards, then simulate.
 M2#maths-u24-30-q3@2: Why is exploration necessary in reinforcement learning? | Without trying unfamiliar actions, the agent can't discover that they might be better | Exploration always lowers the agent's total reward | Agents know all action values in advance | It's only needed in board games like Go | It isn't necessary once training starts | Greedy agents can lock into suboptimal habits.
@@ -1124,8 +1124,8 @@ Q: Why does value iteration converge? | The Bellman operator is a contraction fo
 Q: How is V^{π} found directly? | V = (I − γP^{π})^{−1}R^{π}.
 SUM: Value = reward + discounted next value.
 SUM: Contraction guarantees convergence.
-SRC: Bellman R, Dynamic Programming (Princeton University Press 1957) | textbook | 1957 | https://press.princeton.edu/
-SRC: Bertsekas DP, Reinforcement Learning and Optimal Control (Athena Scientific 2019) | textbook | 2019 | http://www.athenasc.com/
+SRC: Bellman R, Dynamic Programming (Princeton University Press 1957) | secondary | 1957 | https://press.princeton.edu/
+SRC: Bertsekas DP, Reinforcement Learning and Optimal Control (Athena Scientific 2019) | secondary | 2019 | http://www.athenasc.com/
 NUM1#maths-u24-31-q1@1: In a single-state problem with reward 3 per step and γ = 0.9, what is V? | 30 | 0 |  | V = 3 + 0.9V gives V = 3/0.1 = 30.
 M1#maths-u24-31-q2@1: Which equation includes a maximum over actions? | The Bellman optimality equation | The Bellman expectation equation for a fixed policy | The definition of the return | The policy gradient theorem | The softmax function | Optimal values take the best action at each step.
 M3#maths-u24-31-q3@2: Why does bootstrapping in TD learning introduce bias but reduce variance? | It updates from current value estimates, which may be wrong, instead of waiting for noisy full returns | It uses no estimates at all, only observed rewards | It removes all randomness from the learning targets | It always increases variance compared with full returns | It has no effect on bias or variance in practice | One-step targets depend on one reward plus an estimate, not many random rewards.
@@ -1160,8 +1160,8 @@ Q: What does subtracting a baseline do to the policy gradient? | Reduces varianc
 Q: What does PPO clip? | The probability ratio between new and old policies.
 SUM: Climb the gradient of expected return.
 SUM: Keep updates small and stable.
-SRC: Williams RJ, Simple statistical gradient-following algorithms for connectionist reinforcement learning, Machine Learning 8, 229 | journal | 1992 | https://doi.org/10.1007/BF00992696
-SRC: Schulman J, Wolski F, Dhariwal P, Radford A, Klimov O, Proximal policy optimization algorithms, arXiv:1707.06347 | journal | 2017 | https://arxiv.org/abs/1707.06347
+SRC: Williams RJ, Simple statistical gradient-following algorithms for connectionist reinforcement learning, Machine Learning 8, 229 | primary | 1992 | https://doi.org/10.1007/BF00992696
+SRC: Schulman J, Wolski F, Dhariwal P, Radford A, Klimov O, Proximal policy optimization algorithms, arXiv:1707.06347 | primary | 2017 | https://arxiv.org/abs/1707.06347
 NUM1#maths-u24-32-q1@1: In a state, Q(s, a) = 8 and V(s) = 5. What is the advantage of action a? | 3 | 0 |  | A = Q − V = 8 − 5 = 3.
 M1#maths-u24-32-q2@1: What is the role of the critic in actor–critic methods? | Estimating values to give lower-variance learning signals for the actor | Choosing the actions directly | Generating the environment's rewards | Storing a model of the environment | Nothing; it's an unused component | The critic supplies baselines or advantage estimates.
 M2#maths-u24-32-q3@2: Why do TRPO and PPO limit how much the policy changes per update? | Large policy changes can collapse performance, since gradient estimates are only valid near the old policy | Small changes always slow learning, so limits are a compromise for speed | Limits remove exploration, which makes training more stable | Policies can't change by more than a fixed amount in any RL method | They don't limit it; PPO allows unrestricted policy updates | Trust regions keep updates where the surrogate objective is reliable.
@@ -1196,8 +1196,8 @@ Q: How does the best achievable regret grow with time? | Logarithmically.
 Q: What does Thompson sampling sample? | Each arm's mean reward from its posterior.
 SUM: Explore uncertain options, exploit good ones.
 SUM: Regret measures the cost of learning.
-SRC: Lai TL, Robbins H, Asymptotically efficient adaptive allocation rules, Advances in Applied Mathematics 6(1), 4 | journal | 1985 | https://doi.org/10.1016/0196-8858(85)90002-8
-SRC: Lattimore T, Szepesvári C, Bandit Algorithms (Cambridge University Press 2020) | textbook | 2020 | https://tor-lattimore.com/downloads/book/book.pdf
+SRC: Lai TL, Robbins H, Asymptotically efficient adaptive allocation rules, Advances in Applied Mathematics 6(1), 4 | primary | 1985 | https://doi.org/10.1016/0196-8858(85)90002-8
+SRC: Lattimore T, Szepesvári C, Bandit Algorithms (Cambridge University Press 2020) | secondary | 2020 | https://tor-lattimore.com/downloads/book/book.pdf
 NUM1#maths-u24-33-q1@1: The best arm pays 0.7 on average. An algorithm earns an expected 650 over 1000 plays. What is its regret? | 50 | 0 |  | Tμ* − earned = 700 − 650 = 50.
 M1#maths-u24-33-q2@1: Which algorithm chooses arms by sampling from posterior distributions of their rewards? | Thompson sampling | UCB1 | ε-greedy | Round robin | Pure exploitation | It plays the arm whose sampled mean is highest.
 M3#maths-u24-33-q3@2: Why does ε-greedy with fixed ε have regret growing linearly in time? | It keeps exploring at a constant rate forever, losing reward on bad arms in every period | It never explores, so it can't find the best arm | Its regret is always zero once the best arm is known | It finds the best arm immediately and stops exploring | It has logarithmic regret like UCB and Thompson sampling | A constant fraction ε of plays go to random arms however much is known.
@@ -1233,8 +1233,8 @@ Q: What is the fundamental problem of causal inference? | Each unit's outcome is
 Q: What is a propensity score? | The probability of receiving treatment given covariates.
 SUM: Estimate effects of interventions.
 SUM: Assumptions must be explicit.
-SRC: Pearl J, Causality: Models, Reasoning, and Inference (2nd edn, Cambridge University Press 2009) | textbook | 2009 | https://www.cambridge.org/
-SRC: Chernozhukov V et al., Double/debiased machine learning for treatment and structural parameters, Econometrics Journal 21(1), C1 | journal | 2018 | https://doi.org/10.1111/ectj.12097
+SRC: Pearl J, Causality: Models, Reasoning, and Inference (2nd edn, Cambridge University Press 2009) | secondary | 2009 | https://www.cambridge.org/
+SRC: Chernozhukov V et al., Double/debiased machine learning for treatment and structural parameters, Econometrics Journal 21(1), C1 | primary | 2018 | https://doi.org/10.1111/ectj.12097
 NUM1#maths-u24-34-q1@1: A patient with propensity score 0.25 is treated. What inverse probability weight do they receive? | 4 | 0 |  | Weight = 1/e(x) = 1/0.25 = 4.
 M1#maths-u24-34-q2@1: Which design identifies causal effects without assuming no unmeasured confounders? | A randomised controlled trial | A purely observational regression | Correlation analysis | A predictive neural network | A cross-sectional survey | Randomisation makes treatment independent of all confounders, measured or not.
 M2#maths-u24-34-q3@2: Why can adjusting for a variable caused by both treatment and outcome bias the estimate? | It's a collider, and conditioning on it creates a spurious association | Adjusting for any variable always removes bias | Such a variable is a confounder that must be adjusted for | Adjusting for it has no effect on the estimate | It can't bias estimates if the sample is large | Conditioning on a common effect opens a non-causal path.
@@ -1270,8 +1270,8 @@ Q: What property makes Shapley values sum to the prediction minus the baseline? 
 Q: What is a counterfactual explanation? | The smallest input change that alters the decision.
 SUM: Explain individual predictions.
 SUM: Methods differ and can disagree.
-SRC: Lundberg SM, Lee SI, A unified approach to interpreting model predictions, NeurIPS 30 | journal | 2017 | https://arxiv.org/abs/1705.07874
-SRC: Wachter S, Mittelstadt B, Russell C, Counterfactual explanations without opening the black box, Harvard Journal of Law and Technology 31(2), 841 | journal | 2018 | https://doi.org/10.2139/ssrn.3063289
+SRC: Lundberg SM, Lee SI, A unified approach to interpreting model predictions, NeurIPS 30 | primary | 2017 | https://arxiv.org/abs/1705.07874
+SRC: Wachter S, Mittelstadt B, Russell C, Counterfactual explanations without opening the black box, Harvard Journal of Law and Technology 31(2), 841 | primary | 2018 | https://doi.org/10.2139/ssrn.3063289
 NUM1#maths-u24-35-q1@1: For f(x₁, x₂) = 4x₁ − x₂ with baseline (0, 0) at input (2, 3), what is the Shapley value of x₂? | -3 | 0 |  | For a linear model φ₂ = w₂(x₂ − 0) = −1 × 3 = −3.
 M1#maths-u24-35-q2@1: Which explanation method fits a simple model to perturbations around one input? | LIME | Permutation importance across the dataset | Integrated gradients | A global decision tree | PCA | LIME builds a local surrogate weighted by proximity.
 M3#maths-u24-35-q3@2: Why can Shapley attributions be misleading when features are strongly correlated? | Evaluating a feature's absence by sampling it independently creates unrealistic inputs, splitting credit arbitrarily | Shapley values ignore features that are correlated with others | Correlation makes all Shapley values exactly zero | Shapley values are always causal, so correlation can't affect them | They can't be misleading, since they satisfy the fairness axioms | Off-manifold perturbations make attributions depend on the chosen conditioning scheme.

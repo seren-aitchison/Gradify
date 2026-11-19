@@ -30,8 +30,8 @@ Q: Is ℚ complete? | No: some bounded sets, like {q : q^{2} < 2}, have no ratio
 Q: What does Bolzano–Weierstrass guarantee? | Every bounded sequence has a convergent subsequence.
 SUM: Analysis makes calculus rigorous.
 SUM: Completeness is the key property of ℝ.
-SRC: Abbott S, Understanding Analysis (2nd edn, Springer 2015) | textbook | 2015 | https://link.springer.com/
-SRC: Rudin W, Principles of Mathematical Analysis (3rd edn, McGraw-Hill 1976) | textbook | 1976 | https://www.mheducation.com/
+SRC: Abbott S, Understanding Analysis (2nd edn, Springer 2015) | secondary | 2015 | https://link.springer.com/
+SRC: Rudin W, Principles of Mathematical Analysis (3rd edn, McGraw-Hill 1976) | secondary | 1976 | https://www.mheducation.com/
 NUM1#maths-u09-01-q1@1: For ε = 0.01, find the smallest whole N such that 5/(n + 3) < ε for all n > N. | 497 | 0 |  | Need n + 3 > 500, so n > 497: N = 497 works and no smaller N does.
 M1#maths-u09-01-q2@1: Which sequence converges? | (1 + 1/n) | (−1)^{n} | n^{2} | sin(n) | (−2)^{n} | 1 + 1/n → 1; the others oscillate or diverge.
 M3#maths-u09-01-q3@2: The functions f_{n}(x) = x^{n} on [0, 1] converge pointwise. Why isn't the convergence uniform? | The limit is discontinuous at 1, but uniform limits of continuous functions are continuous | The functions aren't continuous | They don't converge at all | Uniform convergence needs differentiability | The convergence is uniform, because every f_{n} is bounded by 1 | The limit is 0 for x < 1 and 1 at x = 1, a jump that uniform convergence would forbid.
@@ -66,8 +66,8 @@ Q: What is ∮ dz/z around the unit circle? | 2πi.
 Q: Is f(z) = conj(z) holomorphic? | No: it fails the Cauchy–Riemann equations.
 SUM: Complex differentiability is very strong.
 SUM: Residues evaluate integrals.
-SRC: Stein EM, Shakarchi R, Complex Analysis (Princeton University Press 2003) | textbook | 2003 | https://press.princeton.edu/
-SRC: Ahlfors LV, Complex Analysis (3rd edn, McGraw-Hill 1979) | textbook | 1979 | https://www.mheducation.com/
+SRC: Stein EM, Shakarchi R, Complex Analysis (Princeton University Press 2003) | secondary | 2003 | https://press.princeton.edu/
+SRC: Ahlfors LV, Complex Analysis (3rd edn, McGraw-Hill 1979) | secondary | 1979 | https://www.mheducation.com/
 NUM1#maths-u09-02-q1@1: What is the residue of e^{z}/z at z = 0? | 1 | 0 |  | A simple pole: lim z × e^{z}/z = e^{0} = 1.
 M1#maths-u09-02-q2@1: Which function is entire (holomorphic everywhere)? | e^{z} | 1/z | |z|^{2} | conj(z) | 1/(1 − z) | e^{z} has a convergent power series everywhere; the others have poles or fail Cauchy–Riemann.
 M2#maths-u09-02-q3@2: How does Liouville's theorem prove the fundamental theorem of algebra? | If p had no roots, 1/p would be bounded and entire, hence constant | It shows all polynomials are linear | It computes roots explicitly | It applies only to real polynomials | It bounds every polynomial on ℂ, forcing all of them to be constant | A non-constant polynomial p makes 1/p non-constant, so p must have a root.
@@ -101,8 +101,8 @@ Q: What did Carleson prove? | Fourier series of L^{2} functions converge almost 
 Q: What does Fejér's theorem say? | Cesàro means of the Fourier series of a continuous periodic function converge uniformly.
 SUM: Harmonic analysis studies decomposition into waves.
 SUM: Convergence is deep and subtle.
-SRC: Stein EM, Shakarchi R, Fourier Analysis: An Introduction (Princeton University Press 2003) | textbook | 2003 | https://press.princeton.edu/
-SRC: Carleson L, On convergence and growth of partial sums of Fourier series, Acta Mathematica 116, 135 | journal | 1966 | https://doi.org/10.1007/BF02392815
+SRC: Stein EM, Shakarchi R, Fourier Analysis: An Introduction (Princeton University Press 2003) | secondary | 2003 | https://press.princeton.edu/
+SRC: Carleson L, On convergence and growth of partial sums of Fourier series, Acta Mathematica 116, 135 | primary | 1966 | https://doi.org/10.1007/BF02392815
 NUM1#maths-u09-03-q1@1: Evaluate π^{2}/6 to 4 decimal places. | 1.6449 | 0.0001 |  | π^{2}/6 ≈ 9.8696/6 ≈ 1.6449, the sum of 1/n^{2}.
 M1#maths-u09-03-q2@1: What guarantees that Fourier series of square-integrable functions converge in mean square? | Completeness of the trigonometric system in L^{2} | Every function is continuous | Fourier series are finite | Pointwise convergence everywhere | Carleson's theorem alone | The sines and cosines form an orthonormal basis of L^{2}.
 M2#maths-u09-03-q3@2: Why are wavelets useful where Fourier series struggle? | They localise in both time and frequency, capturing short events | Their coefficients never need computing, as they come from tables | They need no computation | They converge everywhere always | They ignore high frequencies | Sines spread over the whole interval; wavelets capture transients and edges compactly.
@@ -135,8 +135,8 @@ Q: What is the Lebesgue measure of ℚ? | 0.
 Q: Why are measures defined on σ-algebras rather than all subsets? | Some sets can't be consistently measured.
 SUM: Measures generalise length and probability.
 SUM: Measure-zero sets can still be large.
-SRC: Folland GB, Real Analysis: Modern Techniques and Their Applications (2nd edn, Wiley 1999) | textbook | 1999 | https://www.wiley.com/
-SRC: Tao T, An Introduction to Measure Theory (American Mathematical Society 2011) | textbook | 2011 | https://terrytao.files.wordpress.com/2012/12/gsm-126-tao5-measure-book.pdf
+SRC: Folland GB, Real Analysis: Modern Techniques and Their Applications (2nd edn, Wiley 1999) | secondary | 1999 | https://www.wiley.com/
+SRC: Tao T, An Introduction to Measure Theory (American Mathematical Society 2011) | secondary | 2011 | https://terrytao.files.wordpress.com/2012/12/gsm-126-tao5-measure-book.pdf
 NUM1#maths-u09-04-q1@1: Find the total length removed from [0, 1] after the first three steps of the Cantor construction, to 4 decimal places. | 0.7037 | 0.0001 |  | 1/3 + 2/9 + 4/27 = 19/27 ≈ 0.7037.
 M1#maths-u09-04-q2@1: Which set has Lebesgue measure zero? | The integers | The interval [0, 0.001] | The irrationals in [0, 1] | The interval (2, 3) | The real line | Countable sets such as ℤ have measure 0; the others have positive measure.
 M3#maths-u09-04-q3@2: The irrational numbers in [0, 1] have what Lebesgue measure? | 1 | 0 | ½ | It's undefined | π/4 | [0, 1] has measure 1 and the rationals have measure 0, so the irrationals have measure 1.
@@ -169,8 +169,8 @@ Q: What is the Lebesgue integral of Dirichlet's function on [0, 1]? | 0.
 Q: What does the dominated convergence theorem need? | Pointwise convergence and a single integrable bound.
 SUM: Lebesgue integration slices by value.
 SUM: Its convergence theorems are its power.
-SRC: Folland GB, Real Analysis: Modern Techniques and Their Applications (2nd edn, Wiley 1999) | textbook | 1999 | https://www.wiley.com/
-SRC: Rudin W, Real and Complex Analysis (3rd edn, McGraw-Hill 1987) | textbook | 1987 | https://www.mheducation.com/
+SRC: Folland GB, Real Analysis: Modern Techniques and Their Applications (2nd edn, Wiley 1999) | secondary | 1999 | https://www.wiley.com/
+SRC: Rudin W, Real and Complex Analysis (3rd edn, McGraw-Hill 1987) | secondary | 1987 | https://www.mheducation.com/
 NUM1#maths-u09-05-q1@1: Find ∫₀¹ x^{9} dx. | 0.1 | 0.0001 |  | 1/(9 + 1) = 0.1.
 M1#maths-u09-05-q2@1: Which function is Lebesgue but not Riemann integrable on [0, 1]? | The indicator of the rationals | x^{2} | sin x | A step function | The constant 1 | It's discontinuous everywhere, defeating Riemann sums, but its Lebesgue integral is 0.
 M3#maths-u09-05-q3@2: Why doesn't ∫ f_{n} → ∫ f for f_{n} = n on (0, 1/n) and 0 elsewhere? | No integrable function dominates all the f_{n} | The f_{n} don't converge | The limit isn't measurable | Lebesgue integrals can't be computed | It does converge | f_{n} → 0 pointwise but each has integral 1; the bound sup f_{n} isn't integrable.
@@ -204,8 +204,8 @@ Q: What is the derivative of the Heaviside step function? | The Dirac delta δ.
 Q: What is ∫ δ(x) cos x dx? | 1.
 SUM: Distributions generalise functions.
 SUM: They can always be differentiated.
-SRC: Strichartz RS, A Guide to Distribution Theory and Fourier Transforms (World Scientific 2003) | textbook | 2003 | https://www.worldscientific.com/
-SRC: Schwartz L, Théorie des distributions (Hermann 1950) | textbook | 1950 | https://www.editions-hermann.fr/
+SRC: Strichartz RS, A Guide to Distribution Theory and Fourier Transforms (World Scientific 2003) | secondary | 2003 | https://www.worldscientific.com/
+SRC: Schwartz L, Théorie des distributions (Hermann 1950) | secondary | 1950 | https://www.editions-hermann.fr/
 NUM1#maths-u09-06-q1@1: Evaluate ∫ δ(x − 1)(x^{2} + 3) dx. | 4 | 0 |  | The delta samples the function at x = 1: 1 + 3 = 4.
 M1#maths-u09-06-q2@1: How is the derivative of a distribution T defined? | ⟨T′, φ⟩ = −⟨T, φ′⟩ | ⟨T′, φ⟩ = ⟨T, φ⟩′ | ⟨T′, φ⟩ = ⟨T, φ⟩^{2} | ⟨T′, φ⟩ = φ(0) | It can't be defined | Integration by parts moves the derivative onto the smooth test function.
 M2#maths-u09-06-q3@2: What is a Green's function for a linear operator L? | A solution of LG = δ, used to solve Lu = f by convolution | Any harmonic function | The inverse of a matrix only | The eigenvalue of L | A harmonic function chosen to vanish on the boundary of the region | Superposing responses to point sources gives the solution for any source f.
@@ -238,8 +238,8 @@ Q: Is differentiation a bounded operator on C[0, 1] with the max norm? | No: ‖
 Q: What does the Hahn–Banach theorem allow? | Extending bounded linear functionals from a subspace to the whole space.
 SUM: Functional analysis is linear algebra in infinite dimensions.
 SUM: Compactness and boundedness need care.
-SRC: Kreyszig E, Introductory Functional Analysis with Applications (Wiley 1978) | textbook | 1978 | https://www.wiley.com/
-SRC: Brezis H, Functional Analysis, Sobolev Spaces and Partial Differential Equations (Springer 2011) | textbook | 2011 | https://link.springer.com/
+SRC: Kreyszig E, Introductory Functional Analysis with Applications (Wiley 1978) | secondary | 1978 | https://www.wiley.com/
+SRC: Brezis H, Functional Analysis, Sobolev Spaces and Partial Differential Equations (Springer 2011) | secondary | 2011 | https://link.springer.com/
 NUM1#maths-u09-07-q1@1: Find the ℓ^{2} norm of the sequence (3, 4, 0, 0, …). | 5 | 0 |  | √(3^{2} + 4^{2}) = 5.
 M1#maths-u09-07-q2@1: Which property fails in infinite-dimensional normed spaces? | The closed unit ball is compact | Vectors can be added | Norms satisfy the triangle inequality | Scalars can multiply vectors | Zero is a vector | Riesz's lemma shows the closed unit ball is compact only in finite dimensions.
 M2#maths-u09-07-q3@2: What does the uniform boundedness principle say? | A family of bounded operators on a Banach space bounded at each point is bounded in norm | Every operator is bounded | Every linear operator between Banach spaces is automatically bounded | Every sequence converges | Functionals can be extended | Pointwise bounds on a complete space force a uniform bound on the operator norms.
@@ -271,8 +271,8 @@ Q: Are polynomials on [0, 1] with the max norm a Banach space? | No: they aren't
 Q: What does the Banach fixed-point theorem need? | A contraction on a complete metric space.
 SUM: Completeness makes limits exist.
 SUM: Contractions have unique fixed points.
-SRC: Kreyszig E, Introductory Functional Analysis with Applications (Wiley 1978) | textbook | 1978 | https://www.wiley.com/
-SRC: Banach S, Sur les opérations dans les ensembles abstraits et leur application aux équations intégrales, Fundamenta Mathematicae 3, 133 | journal | 1922 | https://doi.org/10.4064/fm-3-1-133-181
+SRC: Kreyszig E, Introductory Functional Analysis with Applications (Wiley 1978) | secondary | 1978 | https://www.wiley.com/
+SRC: Banach S, Sur les opérations dans les ensembles abstraits et leur application aux équations intégrales, Fundamenta Mathematicae 3, 133 | primary | 1922 | https://doi.org/10.4064/fm-3-1-133-181
 NUM1#maths-u09-08-q1@1: Find the max norm of f(x) = x − x^{2} on [0, 1]. | 0.25 | 0.0001 |  | The maximum is at x = ½: ½ − ¼ = ¼.
 M1#maths-u09-08-q2@1: Which space is a Banach space? | C[0, 1] with the maximum norm | The rationals with |·| | Polynomials on [0, 1] with the maximum norm | Continuous functions on [0, 1] with the L¹ norm | Finite sequences with the ℓ^{2} norm | Uniform limits of continuous functions are continuous, so C[0, 1] is complete in the max norm.
 M2#maths-u09-08-q3@2: Why does the Banach fixed-point theorem prove that y′ = f(t, y), y(0) = y₀ has a unique solution (for Lipschitz f, on a short interval)? | The integral form defines a contraction on a complete space of functions | Linear ODEs are the only ones it covers, through matrix powers | Solutions are always polynomials | Fixed points never exist | It doesn't prove it | Picard's operator y ↦ y₀ + ∫ f(s, y(s)) ds is a contraction for small t.
@@ -305,8 +305,8 @@ Q: What does Cauchy–Schwarz state? | |⟨x, y⟩| ≤ ‖x‖‖y‖.
 Q: Which Hilbert space is every separable infinite-dimensional one isomorphic to? | ℓ^{2}.
 SUM: Hilbert spaces have geometry in infinite dimensions.
 SUM: They host Fourier series and quantum mechanics.
-SRC: Kreyszig E, Introductory Functional Analysis with Applications (Wiley 1978) | textbook | 1978 | https://www.wiley.com/
-SRC: Reed M, Simon B, Methods of Modern Mathematical Physics I: Functional Analysis (revised edn, Academic Press 1980) | textbook | 1980 | https://www.sciencedirect.com/
+SRC: Kreyszig E, Introductory Functional Analysis with Applications (Wiley 1978) | secondary | 1978 | https://www.wiley.com/
+SRC: Reed M, Simon B, Methods of Modern Mathematical Physics I: Functional Analysis (revised edn, Academic Press 1980) | secondary | 1980 | https://www.sciencedirect.com/
 NUM1#maths-u09-09-q1@1: Find ⟨x, y⟩ in ℓ^{2} for x = (1, 2, 0, …) and y = (3, −1, 5, …) with all other entries zero. | 1 | 0 |  | 1 × 3 + 2 × (−1) + 0 × 5 = 1.
 M1#maths-u09-09-q2@1: What does the projection theorem guarantee in a Hilbert space? | A unique closest point in any closed subspace | Every subspace is finite-dimensional | All vectors are orthogonal | Every operator is bounded | Every functional is zero | Completeness and the inner product guarantee a unique best approximation.
 M2#maths-u09-09-q3@2: What does the Riesz representation theorem say? | Every bounded linear functional is an inner product with a fixed vector | Bounded operators on Hilbert spaces always have eigenvalues | Every Banach space is a Hilbert space | Fourier series converge pointwise | Hilbert spaces are finite-dimensional | Each bounded linear functional f has the form f(x) = ⟨x, y_{f}⟩ for one unique vector y_{f}.
@@ -339,8 +339,8 @@ Q: What is the adjoint of a real matrix? | Its transpose.
 Q: Is the right shift on ℓ^{2} surjective? | No: nothing maps to e₁.
 SUM: Operators generalise matrices.
 SUM: Infinite dimensions bring new behaviour.
-SRC: Conway JB, A Course in Functional Analysis (2nd edn, Springer 1990) | textbook | 1990 | https://link.springer.com/
-SRC: Kreyszig E, Introductory Functional Analysis with Applications (Wiley 1978) | textbook | 1978 | https://www.wiley.com/
+SRC: Conway JB, A Course in Functional Analysis (2nd edn, Springer 1990) | secondary | 1990 | https://link.springer.com/
+SRC: Kreyszig E, Introductory Functional Analysis with Applications (Wiley 1978) | secondary | 1978 | https://www.wiley.com/
 NUM1#maths-u09-10-q1@1: Find the operator norm of the matrix diag(2, −7). | 7 | 0 |  | A diagonal matrix's norm is its largest absolute entry, |−7| = 7.
 M1#maths-u09-10-q2@1: Which operator is self-adjoint? | A real symmetric matrix | The right shift on ℓ^{2} | A rotation by 90° | A non-symmetric real matrix | Differentiation with no domain conditions | Real symmetric matrices satisfy A = Aᵀ = A*.
 M2#maths-u09-10-q3@2: The right shift S on ℓ^{2} satisfies S*S = I. Why isn't it unitary? | SS* ≠ I: S isn't onto, so it has no two-sided inverse | It doesn't preserve norms | S* doesn't exist | It's not linear | It is unitary | Unitary operators must also be surjective; e₁ is missed by S.
@@ -374,8 +374,8 @@ Q: What is the spectrum of multiplication by x on L^{2}[0, 1]? | [0, 1].
 Q: Are the eigenvalues of a self-adjoint operator real? | Yes.
 SUM: Spectra generalise eigenvalues.
 SUM: The spectral theorem diagonalises.
-SRC: Reed M, Simon B, Methods of Modern Mathematical Physics I: Functional Analysis (revised edn, Academic Press 1980) | textbook | 1980 | https://www.sciencedirect.com/
-SRC: Conway JB, A Course in Functional Analysis (2nd edn, Springer 1990) | textbook | 1990 | https://link.springer.com/
+SRC: Reed M, Simon B, Methods of Modern Mathematical Physics I: Functional Analysis (revised edn, Academic Press 1980) | secondary | 1980 | https://www.sciencedirect.com/
+SRC: Conway JB, A Course in Functional Analysis (2nd edn, Springer 1990) | secondary | 1990 | https://link.springer.com/
 NUM1#maths-u09-11-q1@1: Find the spectral radius of [[2, 1], [1, 2]]. | 3 | 0 |  | The eigenvalues are 1 and 3, so the spectral radius is 3.
 M1#maths-u09-11-q2@1: Which statement holds for every bounded operator on a complex Banach space? | Its spectrum is non-empty and compact | Its spectrum is empty | Every spectral value is an eigenvalue | Its spectrum is all of ℂ | Its spectrum is a single point | Gelfand proved non-emptiness; closedness and boundedness give compactness.
 M3#maths-u09-11-q3@2: Why does multiplication by x on L^{2}[0, 1] have no eigenvalues? | xf(x) = λf(x) forces f = 0 except at the single point λ, a set of measure 0 | The operator is unbounded | Multiplication by x is unbounded, so eigenvalues can't be defined | Every function is an eigenvector | It has eigenvalue 1 only | (x − λ)f = 0 almost everywhere means f = 0 in L^{2}.
@@ -408,8 +408,8 @@ Q: What is the spectrum of a function in C[0, 1]? | Its range.
 Q: What does the Gelfand–Mazur theorem say? | A complex Banach division algebra is ℂ.
 SUM: Banach algebras add multiplication to Banach spaces.
 SUM: Gelfand theory represents them as functions.
-SRC: Conway JB, A Course in Functional Analysis (2nd edn, Springer 1990) | textbook | 1990 | https://link.springer.com/
-SRC: Rudin W, Functional Analysis (2nd edn, McGraw-Hill 1991) | textbook | 1991 | https://www.mheducation.com/
+SRC: Conway JB, A Course in Functional Analysis (2nd edn, Springer 1990) | secondary | 1990 | https://link.springer.com/
+SRC: Rudin W, Functional Analysis (2nd edn, McGraw-Hill 1991) | secondary | 1991 | https://www.mheducation.com/
 NUM1#maths-u09-12-q1@1: If ‖x‖ = 0.2 in a Banach algebra, what bound does the Neumann series give for ‖(1 − x)^{−1}‖? | 1.25 | 0.0001 |  | 1/(1 − 0.2) = 1.25.
 M1#maths-u09-12-q2@1: Which is a Banach algebra under its natural product? | The bounded operators on a Banach space | The natural numbers | Polynomials with the max norm on [0, 1] | The rationals | Finite sets | B(X) is complete in the operator norm, and composition satisfies ‖ST‖ ≤ ‖S‖‖T‖.
 M2#maths-u09-12-q3@2: Why does 1 − x have an inverse when ‖x‖ < 1? | The series 1 + x + x^{2} + … converges in the complete space and inverts it | Every element is invertible | Banach algebras make all elements invertible, whatever their norm | Because ‖1‖ = 0 | It needn't have one | Absolute convergence (Σ‖x‖ⁿ < ∞) in a Banach space gives a convergent geometric series.
@@ -442,8 +442,8 @@ Q: What is the involution on C₀(X)? | Complex conjugation of functions.
 Q: What are commutative C*-algebras, by Gelfand–Naimark? | Algebras C₀(X) of continuous functions.
 SUM: C*-algebras abstract operator algebras.
 SUM: Commutative ones are function algebras.
-SRC: Murphy GJ, C*-Algebras and Operator Theory (Academic Press 1990) | textbook | 1990 | https://www.sciencedirect.com/
-SRC: Davidson KR, C*-Algebras by Example (American Mathematical Society 1996) | textbook | 1996 | https://bookstore.ams.org/
+SRC: Murphy GJ, C*-Algebras and Operator Theory (Academic Press 1990) | secondary | 1990 | https://www.sciencedirect.com/
+SRC: Davidson KR, C*-Algebras by Example (American Mathematical Society 1996) | secondary | 1996 | https://bookstore.ams.org/
 NUM1#maths-u09-13-q1@1: In a C*-algebra, ‖x‖ = 4. What is ‖x*x‖? | 16 | 0 |  | The C*-identity gives ‖x*x‖ = ‖x‖^{2} = 16.
 M1#maths-u09-13-q2@1: Which is a C*-algebra? | B(H) with the operator adjoint | ℓ¹ with convolution and no involution | Polynomials with the max norm | The integers | Any Banach space | B(H) is complete, closed under adjoints, and satisfies the C*-identity ‖T*T‖ = ‖T‖^{2}.
 M2#maths-u09-13-q3@2: What is the significance of the second Gelfand–Naimark theorem? | Every C*-algebra can be realised concretely as operators on a Hilbert space | Every C*-algebra is commutative | C*-algebras are all commutative, so they're spaces of functions | All operators are compact | Hilbert spaces are finite | Abstract C*-algebras embed isometrically into some B(H).
@@ -476,8 +476,8 @@ Q: What is a factor? | A von Neumann algebra with trivial centre.
 Q: Which knot invariant came from subfactor theory? | The Jones polynomial.
 SUM: Operator algebras study symmetry and observables.
 SUM: Factors are their building blocks.
-SRC: Jones VFR, A polynomial invariant for knots via von Neumann algebras, Bulletin of the American Mathematical Society 12(1), 103 | journal | 1985 | https://doi.org/10.1090/S0273-0979-1985-15304-2
-SRC: Murray FJ, von Neumann J, On rings of operators, Annals of Mathematics 37(1), 116 | journal | 1936 | https://doi.org/10.2307/1968693
+SRC: Jones VFR, A polynomial invariant for knots via von Neumann algebras, Bulletin of the American Mathematical Society 12(1), 103 | primary | 1985 | https://doi.org/10.1090/S0273-0979-1985-15304-2
+SRC: Murray FJ, von Neumann J, On rings of operators, Annals of Mathematics 37(1), 116 | primary | 1936 | https://doi.org/10.2307/1968693
 NUM1#maths-u09-14-q1@1: What is the dimension of the commutant of the diagonal 2 × 2 matrices? | 2 | 0 |  | The commutant consists of diagonal matrices, which form a 2-dimensional algebra.
 M1#maths-u09-14-q2@1: What does the double commutant theorem characterise? | Weakly closed unital *-algebras of operators | Finite groups | Banach spaces | Prime ideals | Measure-zero sets | A unital *-algebra M is a von Neumann algebra iff M = M″.
 M2#maths-u09-14-q3@2: Which field uses type III factors? | Quantum field theory | Elementary number theory | Euclidean geometry | Linear programming | Classical mechanics only | Algebras of local observables in relativistic quantum field theory are type III.

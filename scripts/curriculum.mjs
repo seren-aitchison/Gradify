@@ -30,7 +30,7 @@ export async function loadLessons(slugs) {
 }
 export const coursesIn = (kb) => [...kb.lessonMaps.map((b) => b.course), ...kb.pathways.map((p) => p.course)];
 
-const STATUS = { covered: "✅ Covered", partial: "🟠 Partly covered", "above-level": "🟡 Taught above this level", "below-level": "🟠 Taught below this level", gap: "❌ Gap", "no-course": "⚪ No course offers this" };
+const STATUS = { covered: "✅ Covered", partial: "🟠 Partly covered", "above-level": "🟡 Taught above this level", "below-level": "🟠 Taught below this level", gap: "❌ Gap", "no-course": "⚪ No course offers this", unmapped: "· Not yet mapped" };
 
 export function report(kb, lessons) {
   const s = summary(kb, lessons), problems = validate(kb, lessons), findings = consistency(kb, lessons);

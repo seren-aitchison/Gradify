@@ -29,8 +29,8 @@ Q: How many binary strings of length 8 are there? | 256.
 Q: What are the two parts of an induction proof? | The base case and the inductive step.
 SUM: Discrete maths studies countable structures.
 SUM: It's the mathematics of computing.
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
-SRC: Biggs NL, Discrete Mathematics (2nd edn, Oxford University Press 2002) | textbook | 2002 | https://global.oup.com/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | secondary | 2019 | https://www.mheducation.com/
+SRC: Biggs NL, Discrete Mathematics (2nd edn, Oxford University Press 2002) | secondary | 2002 | https://global.oup.com/
 NUM1#maths-u14-01-q1@1: How many binary strings of length 10 are there? | 1024 | 0 |  | Each position has 2 choices: 2^{10} = 1,024.
 M1#maths-u14-01-q2@1: Which area belongs to discrete rather than continuous mathematics? | Graph theory | Differential equations | Real analysis | Fluid dynamics | Calculus of variations | Graphs consist of separate vertices and edges.
 M2#maths-u14-01-q3@2: Why is discrete mathematics central to computer science? | Computers store and process separate symbols, bits and structures | Computers can only do calculus | It avoids proofs | Continuous maths is incorrect | It isn't central | Data, programs and networks are discrete objects.
@@ -63,8 +63,8 @@ Q: What is the third Catalan number C₃? | 5.
 Q: How many shortest paths go from (0, 0) to (2, 2)? | 6.
 SUM: Combinatorics counts and constructs.
 SUM: Bijections reveal hidden equalities.
-SRC: Stanley RP, Enumerative Combinatorics, vol 1 (2nd edn, Cambridge University Press 2011) | textbook | 2011 | https://www.cambridge.org/
-SRC: Graham RL, Knuth DE, Patashnik O, Concrete Mathematics (2nd edn, Addison-Wesley 1994) | textbook | 1994 | https://www.pearson.com/
+SRC: Stanley RP, Enumerative Combinatorics, vol 1 (2nd edn, Cambridge University Press 2011) | secondary | 2011 | https://www.cambridge.org/
+SRC: Graham RL, Knuth DE, Patashnik O, Concrete Mathematics (2nd edn, Addison-Wesley 1994) | secondary | 1994 | https://www.pearson.com/
 NUM1#maths-u14-02-q1@1: Find the Catalan number C₄. | 14 | 0 |  | C(8, 4)/5 = 70/5 = 14.
 M1#maths-u14-02-q2@1: How many shortest lattice paths go from (0, 0) to (4, 3)? | 35 | 12 | 7 | 70 | 24 | Choose the 3 up-steps among 7: C(7, 3) = 35.
 M2#maths-u14-02-q3@2: What does a bijective proof show? | Two sets have the same size, by pairing their elements exactly | A formula holds for small cases, so it holds for all cases | A set is infinite | A formula is false | Nothing about size | A one-to-one correspondence proves equal cardinality.
@@ -98,7 +98,7 @@ Q: A café offers 5 mains and 3 desserts. How many main-plus-dessert meals? | 15
 Q: How many ways can 6 people sit round a circular table (rotations the same)? | 120.
 SUM: Add, multiply, subtract, divide.
 SUM: Choose the principle carefully.
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | secondary | 2019 | https://www.mheducation.com/
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
 NUM1#maths-u14-03-q1@1: How many 4-digit PINs have at least one repeated digit? | 4960 | 0 |  | 10,000 − 10 × 9 × 8 × 7 = 4,960.
 M1#maths-u14-03-q2@1: Number plates have 2 letters then 3 digits. How many are possible? | 676,000 | 46,800 | 26,000 | 6,760 | 175,760 | Multiply the choices for each position: 26 × 26 × 10 × 10 × 10 = 676,000.
@@ -134,8 +134,8 @@ Q: How many ways can 5 runners finish first, second and third? | P(5, 3) = 60.
 Q: What is 0!? | 1.
 SUM: Permutations count orderings.
 SUM: Adjust for repeats and symmetry.
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
-SRC: Graham RL, Knuth DE, Patashnik O, Concrete Mathematics (2nd edn, Addison-Wesley 1994) | textbook | 1994 | https://www.pearson.com/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | secondary | 2019 | https://www.mheducation.com/
+SRC: Graham RL, Knuth DE, Patashnik O, Concrete Mathematics (2nd edn, Addison-Wesley 1994) | secondary | 1994 | https://www.pearson.com/
 NUM1#maths-u14-04-q1@1: Find P(10, 3). | 720 | 0 |  | 10 × 9 × 8 = 720.
 M1#maths-u14-04-q2@1: How many arrangements are there of the letters of LEVEL? | 30 | 120 | 60 | 20 | 10 | 5!/(2! × 2!) = 120/4 = 30 (two Ls and two Es).
 M2#maths-u14-04-q3@2: How many ways can 7 people sit around a round table, if only relative positions matter? | 720 | 5,040 | 840 | 49 | 120 | Fix one person to remove rotations: (7 − 1)! = 720.
@@ -170,7 +170,7 @@ Q: What is C(8, 2)? | 28.
 Q: How many subsets does a 6-element set have? | 64.
 SUM: Combinations count selections.
 SUM: Stars and bars counts distributions.
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | secondary | 2019 | https://www.mheducation.com/
 SRC: Department for Education, Mathematics AS and A level subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
 NUM1#maths-u14-05-q1@1: In how many ways can 10 identical sweets be shared among 3 children (some may get none)? | 66 | 0 |  | Stars and bars: C(10 + 3 − 1, 2) = C(12, 2) = 66.
 M1#maths-u14-05-q2@1: How many 5-card hands can be dealt from a 52-card pack? | 2,598,960 | 311,875,200 | 260 | 380,204,032 | 1,326 | C(52, 5) = 2,598,960; order doesn't matter in a hand.
@@ -206,7 +206,7 @@ Q: What is the first-order approximation to (1 + x)^{−1} for small x? | 1 − 
 SUM: The binomial theorem expands powers by counting.
 SUM: Newton extended it to any exponent.
 SRC: Department for Education, Mathematics AS and A level subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Graham RL, Knuth DE, Patashnik O, Concrete Mathematics (2nd edn, Addison-Wesley 1994) | textbook | 1994 | https://www.pearson.com/
+SRC: Graham RL, Knuth DE, Patashnik O, Concrete Mathematics (2nd edn, Addison-Wesley 1994) | secondary | 1994 | https://www.pearson.com/
 NUM1#maths-u14-06-q1@1: Find the coefficient of x^{2} in (1 − 3x)^{6}. | 135 | 0 |  | C(6, 2) × (−3)^{2} = 15 × 9 = 135.
 M1#maths-u14-06-q2@1: What is the fourth row (n = 4) of Pascal's triangle? | 1, 4, 6, 4, 1 | 1, 3, 3, 1 | 1, 4, 4, 1 | 1, 5, 10, 10, 5, 1 | 1, 2, 3, 2, 1 | Row n lists C(n, k) for k = 0 to n; for n = 4 that's 1, 4, 6, 4, 1.
 M2#maths-u14-06-q3@2: Using the binomial series, what is √(1.02) to 4 decimal places? | 1.0100 | 1.0200 | 1.0010 | 1.0141 | 0.9900 | 1 + 0.02/2 − 0.0004/8 = 1.00995 ≈ 1.0100.
@@ -238,8 +238,8 @@ Q: How many socks must you take from a drawer of red and blue socks to be sure o
 Q: Why can't a compression algorithm shorten every file? | There are fewer shorter files than files of a given length (pigeonhole).
 SUM: Too many pigeons force a shared hole.
 SUM: Choosing holes is the skill.
-SRC: Engel A, Problem-Solving Strategies (Springer 1998) | textbook | 1998 | https://link.springer.com/
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
+SRC: Engel A, Problem-Solving Strategies (Springer 1998) | secondary | 1998 | https://link.springer.com/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | secondary | 2019 | https://www.mheducation.com/
 NUM1#maths-u14-07-q1@1: What is the minimum number of people needed to guarantee that 3 share a birth month? | 25 | 0 |  | 2 × 12 + 1 = 25.
 M1#maths-u14-07-q2@1: Any 6 numbers chosen from 1 to 10 must include what? | Two that add to 11 | Two that are equal | Three primes | Two that multiply to 10 | Two consecutive odd numbers | The five pairs {1, 10}, …, {5, 6} are the holes.
 M2#maths-u14-07-q3@2: Why must any 11 integers include two whose difference is divisible by 10? | There are only 10 possible last digits | Integers are infinite | All integers are even | Differences are always divisible by 10 | It isn't true | Two share a remainder mod 10, so their difference is a multiple of 10.
@@ -273,8 +273,8 @@ Q: What is D₃, the number of derangements of 3 items? | 2.
 Q: What does the probability that a random permutation is a derangement approach? | 1/e ≈ 0.368.
 SUM: Inclusion–exclusion corrects overlaps.
 SUM: Signs alternate.
-SRC: Stanley RP, Enumerative Combinatorics, vol 1 (2nd edn, Cambridge University Press 2011) | textbook | 2011 | https://www.cambridge.org/
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
+SRC: Stanley RP, Enumerative Combinatorics, vol 1 (2nd edn, Cambridge University Press 2011) | secondary | 2011 | https://www.cambridge.org/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | secondary | 2019 | https://www.mheducation.com/
 NUM1#maths-u14-08-q1@1: Find D₄, the number of derangements of 4 items. | 9 | 0 |  | 4!(1 − 1 + ½ − 1/6 + 1/24) = 24 × 9/24 = 9.
 M1#maths-u14-08-q2@1: In a class, 20 study French, 15 Spanish, and 6 both. How many study at least one? | 29 | 35 | 41 | 26 | 9 | Add the two groups and subtract the overlap counted twice: 20 + 15 − 6 = 29.
 M3#maths-u14-08-q3@2: Four letters go into four addressed envelopes at random. What is the probability none is correct? | 3/8 | 1/4 | 1/24 | 1/e exactly | 5/8 | There are D₄ = 9 derangements among 4! = 24 arrangements, so the probability is 9/24 = 3/8.
@@ -307,8 +307,8 @@ Q: What is the generating function of the sequence 1, 1, 1, …? | 1/(1 − x).
 Q: What is the generating function of the Fibonacci numbers (F₀ = 0)? | x/(1 − x − x^{2}).
 SUM: Generating functions encode sequences.
 SUM: Algebra on them counts.
-SRC: Wilf HS, generatingfunctionology (3rd edn, A K Peters 2006) | textbook | 2006 | https://www2.math.upenn.edu/~wilf/DownldGF.html
-SRC: Flajolet P, Sedgewick R, Analytic Combinatorics (Cambridge University Press 2009) | textbook | 2009 | https://algo.inria.fr/flajolet/Publications/book.pdf
+SRC: Wilf HS, generatingfunctionology (3rd edn, A K Peters 2006) | secondary | 2006 | https://www2.math.upenn.edu/~wilf/DownldGF.html
+SRC: Flajolet P, Sedgewick R, Analytic Combinatorics (Cambridge University Press 2009) | secondary | 2009 | https://algo.inria.fr/flajolet/Publications/book.pdf
 NUM1#maths-u14-09-q1@1: In how many ways can 10p be made from 1p, 2p and 5p coins? | 10 | 0 |  | 6 + 3 + 1 = 10 by cases on the number of 5p coins.
 M1#maths-u14-09-q2@1: What is the coefficient of x^{3} in 1/(1 − x)^{2} = Σ (n + 1)xⁿ? | 4 | 3 | 1 | 6 | 8 | The coefficient of xⁿ in Σ (n + 1)xⁿ is n + 1, so for x^{3} it's 4.
 M2#maths-u14-09-q3@2: Why does multiplying generating functions count combined choices? | The coefficient of xⁿ in a product sums over all ways to split n between the factors | Multiplication adds sequences | It squares every term | It only works for Fibonacci | It doesn't count anything | [xⁿ]A(x)B(x) = Σ aₖb_{n−k}, exactly the combined count.
@@ -341,8 +341,8 @@ Q: What is the Bell number B₃? | 5.
 Q: What is S(n, 1)? | 1.
 SUM: Enumeration counts structured families.
 SUM: Special numbers recur everywhere.
-SRC: Stanley RP, Enumerative Combinatorics, vol 1 (2nd edn, Cambridge University Press 2011) | textbook | 2011 | https://www.cambridge.org/
-SRC: Andrews GE, The Theory of Partitions (Cambridge University Press 1998) | textbook | 1998 | https://www.cambridge.org/
+SRC: Stanley RP, Enumerative Combinatorics, vol 1 (2nd edn, Cambridge University Press 2011) | secondary | 2011 | https://www.cambridge.org/
+SRC: Andrews GE, The Theory of Partitions (Cambridge University Press 1998) | secondary | 1998 | https://www.cambridge.org/
 NUM1#maths-u14-10-q1@1: Find p(6), the number of partitions of 6. | 11 | 0 |  | 6, 5+1, 4+2, 4+1+1, 3+3, 3+2+1, 3+1+1+1, 2+2+2, 2+2+1+1, 2+1+1+1+1, 1+1+1+1+1+1.
 M1#maths-u14-10-q2@1: What is S(3, 2)? | 3 | 2 | 1 | 6 | 4 | Splitting {1, 2, 3} into two blocks means choosing which element stands alone: 3 ways.
 M2#maths-u14-10-q3@2: Which sequence counts all partitions of an n-element set? | The Bell numbers | The Catalan numbers | The Fibonacci numbers | The binomial coefficients | The factorials | The Bell number B_{n} = Σ_{k} S(n, k) counts set partitions into any number of blocks.
@@ -376,8 +376,8 @@ Q: What is the extremal triangle-free graph? | The balanced complete bipartite g
 Q: What is the largest antichain of subsets of a 6-element set? | C(6, 3) = 20.
 SUM: Extremal problems find the limits of structures.
 SUM: Classic bounds are often achieved by symmetric examples.
-SRC: Jukna S, Extremal Combinatorics (2nd edn, Springer 2011) | textbook | 2011 | https://link.springer.com/
-SRC: Alon N, Spencer JH, The Probabilistic Method (4th edn, Wiley 2016) | textbook | 2016 | https://www.wiley.com/
+SRC: Jukna S, Extremal Combinatorics (2nd edn, Springer 2011) | secondary | 2011 | https://link.springer.com/
+SRC: Alon N, Spencer JH, The Probabilistic Method (4th edn, Wiley 2016) | secondary | 2016 | https://www.wiley.com/
 NUM1#maths-u14-11-q1@1: What is the largest antichain of subsets of a 4-element set, by Sperner's theorem? | 6 | 0 |  | C(4, 2) = 6.
 M1#maths-u14-11-q2@1: By Mantel's theorem, how many edges can a triangle-free graph on 8 vertices have at most? | 16 | 28 | 8 | 12 | 20 | Mantel's bound is ⌊n^{2}/4⌋, which for n = 8 is 64/4 = 16 edges.
 M2#maths-u14-11-q3@2: Which technique did Erdős pioneer for extremal problems? | The probabilistic method | Gaussian elimination | Fourier series | The simplex method | Mathematical induction only | Showing a random construction has the property with positive probability proves existence.
@@ -409,8 +409,8 @@ Q: What is R(3, 3)? | 6.
 Q: What does van der Waerden's theorem guarantee? | Long monochromatic arithmetic progressions in any finite colouring of the integers.
 SUM: Complete disorder is impossible.
 SUM: Ramsey numbers are notoriously hard.
-SRC: Graham RL, Rothschild BL, Spencer JH, Ramsey Theory (2nd edn, Wiley 1990) | textbook | 1990 | https://www.wiley.com/
-SRC: Radziszowski SP, Small Ramsey numbers, Electronic Journal of Combinatorics, Dynamic Survey DS1 | journal | 2024 | https://www.combinatorics.org/
+SRC: Graham RL, Rothschild BL, Spencer JH, Ramsey Theory (2nd edn, Wiley 1990) | secondary | 1990 | https://www.wiley.com/
+SRC: Radziszowski SP, Small Ramsey numbers, Electronic Journal of Combinatorics, Dynamic Survey DS1 | primary | 2024 | https://www.combinatorics.org/
 NUM1#maths-u14-12-q1@1: What is R(4, 4)? | 18 | 0 |  | Greenwood and Gleason showed R(4, 4) = 18 in 1955.
 M1#maths-u14-12-q2@1: Why is R(3, 3) greater than 5? | K₅ can be 2-coloured as a red pentagon and blue pentagram with no monochromatic triangle | K₅ has no triangles | Five is odd | Every colouring of K₅ has one | It isn't greater | That colouring avoids monochromatic triangles, so 5 vertices don't suffice.
 M3#maths-u14-12-q3@2: In the R(3, 3) proof, why does one vertex have 3 edges of the same colour? | Its 5 edges in 2 colours force at least ⌈5/2⌉ = 3 of one colour | Every vertex has exactly 3 edges | Colours alternate | Graphs are symmetric | It doesn't | The generalised pigeonhole principle applies to the 5 edges.
@@ -443,8 +443,8 @@ Q: For which v do Steiner triple systems exist? | v ≡ 1 or 3 (mod 6).
 Q: Which famous problem has no pair of orthogonal Latin squares of order 6? | Euler's 36 officers problem.
 SUM: Designs balance arrangements perfectly.
 SUM: They serve experiments and schedules.
-SRC: Stinson DR, Combinatorial Designs: Constructions and Analysis (Springer 2004) | textbook | 2004 | https://link.springer.com/
-SRC: Colbourn CJ, Dinitz JH (eds), Handbook of Combinatorial Designs (2nd edn, Chapman & Hall/CRC 2006) | textbook | 2006 | https://www.routledge.com/
+SRC: Stinson DR, Combinatorial Designs: Constructions and Analysis (Springer 2004) | secondary | 2004 | https://link.springer.com/
+SRC: Colbourn CJ, Dinitz JH (eds), Handbook of Combinatorial Designs (2nd edn, Chapman & Hall/CRC 2006) | secondary | 2006 | https://www.routledge.com/
 NUM1#maths-u14-13-q1@1: In Kirkman's schoolgirl problem (15 girls, 5 triples a day, 7 days), how many triples are used in total? | 35 | 0 |  | 5 × 7 = 35, which equals C(15, 2)/3, covering each pair exactly once.
 M1#maths-u14-13-q2@1: Which grid is a Latin square? | (1, 2), (2, 1) | (1, 1), (2, 2) | (1, 2), (1, 2) | (2, 2), (1, 1) | (1, 2), (2, 2) | Each symbol appears once in every row and column.
 M2#maths-u14-13-q3@2: Does a Steiner triple system exist on 9 points? | Yes, since 9 ≡ 3 (mod 6) | No, since 9 is odd | No, since 9 is a square | Only on 7 points | Only for even numbers | Kirkman's condition v ≡ 1 or 3 (mod 6) is met.
@@ -477,8 +477,8 @@ Q: In a BIBD, what does λ count? | The number of blocks containing any given pa
 Q: What are the parameters of the Fano plane? | (7, 7, 3, 3, 1).
 SUM: BIBDs balance pairs across blocks.
 SUM: Counting gives necessary conditions.
-SRC: Stinson DR, Combinatorial Designs: Constructions and Analysis (Springer 2004) | textbook | 2004 | https://link.springer.com/
-SRC: Lam CWH, The search for a finite projective plane of order 10, American Mathematical Monthly 98(4), 305 | journal | 1991 | https://doi.org/10.2307/2323798
+SRC: Stinson DR, Combinatorial Designs: Constructions and Analysis (Springer 2004) | secondary | 2004 | https://link.springer.com/
+SRC: Lam CWH, The search for a finite projective plane of order 10, American Mathematical Monthly 98(4), 305 | primary | 1991 | https://doi.org/10.2307/2323798
 NUM1#maths-u14-14-q1@1: A BIBD has v = 9, k = 3 and λ = 1. Find r. | 4 | 0 |  | r = λ(v − 1)/(k − 1) = 8/2 = 4 (and b = vr/k = 12).
 M1#maths-u14-14-q2@1: Which relation holds in every BIBD? | bk = vr | b = v | k = λ | r = k | v = λ + 1 | Both sides count the pairs (point, block containing it).
 M3#maths-u14-14-q3@2: Can a BIBD have v = 8, k = 3, λ = 1? | No: r = 7/2 isn't a whole number | Yes, it's the Fano plane | Yes, with b = 8 | Only if λ = 2 | It depends on the blocks chosen | λ(v − 1) = r(k − 1) gives 7 = 2r, impossible.
@@ -511,8 +511,8 @@ Q: What is a monovariant used for? | Proving that a process terminates.
 Q: Why does Euclid's algorithm terminate? | The remainders strictly decrease and stay non-negative.
 SUM: Invariants prove what's impossible.
 SUM: Monovariants prove processes end.
-SRC: Engel A, Problem-Solving Strategies (Springer 1998) | textbook | 1998 | https://link.springer.com/
-SRC: Zeitz P, The Art and Craft of Problem Solving (3rd edn, Wiley 2017) | textbook | 2017 | https://www.wiley.com/
+SRC: Engel A, Problem-Solving Strategies (Springer 1998) | secondary | 1998 | https://link.springer.com/
+SRC: Zeitz P, The Art and Craft of Problem Solving (3rd edn, Wiley 2017) | secondary | 2017 | https://www.wiley.com/
 NUM1#maths-u14-15-q1@1: In the example, what is the parity-determining initial sum of 1 to 10? | 55 | 0 |  | 10 × 11/2 = 55, which is odd.
 M1#maths-u14-15-q2@1: A knight moves on a chessboard. What changes with every move? | The colour of its square | The row number's parity only | Nothing | The column number only | Its distance from the corner | Each knight move goes from a light square to a dark one or vice versa.
 M3#maths-u14-15-q3@2: Why can't the 15-puzzle be solved if two tiles are swapped from the solved state? | A permutation-parity invariant combined with the blank's position never changes, but a swap flips it | Tiles can't move | The puzzle has no solutions at all | It can be solved | Only corner tiles can move | Each move preserves the combined parity, while a single swap changes it.
@@ -545,8 +545,8 @@ Q: What is the rate of the Hamming (7, 4) code? | 4/7.
 Q: How many errors can a code with minimum distance 3 correct? | 1.
 SUM: Codes add structured redundancy.
 SUM: Distance sets their power.
-SRC: Hamming RW, Error detecting and error correcting codes, Bell System Technical Journal 29(2), 147 | journal | 1950 | https://doi.org/10.1002/j.1538-7305.1950.tb00463.x
-SRC: MacWilliams FJ, Sloane NJA, The Theory of Error-Correcting Codes (North-Holland 1977) | textbook | 1977 | https://www.sciencedirect.com/
+SRC: Hamming RW, Error detecting and error correcting codes, Bell System Technical Journal 29(2), 147 | primary | 1950 | https://doi.org/10.1002/j.1538-7305.1950.tb00463.x
+SRC: MacWilliams FJ, Sloane NJA, The Theory of Error-Correcting Codes (North-Holland 1977) | secondary | 1977 | https://www.sciencedirect.com/
 NUM1#maths-u14-16-q1@1: How many errors can a code with minimum distance 7 correct? | 3 | 0 |  | ⌊(7 − 1)/2⌋ = 3.
 M1#maths-u14-16-q2@1: What is the Hamming distance between 10110 and 11100? | 2 | 1 | 3 | 5 | 0 | Compare position by position: 10110 and 11100 differ in positions 2 and 4, so the distance is 2.
 M2#maths-u14-16-q3@2: Why are Reed–Solomon codes used on CDs and QR codes? | They correct bursts of errors, such as scratches or smudges | They need no redundancy | They compress data | They encrypt the data | They're the only codes known | Working with symbols rather than bits, they handle clustered damage well.
@@ -580,8 +580,8 @@ Q: How many rows does the truth table of a 4-variable function have? | 16.
 Q: Which single gate type can build every Boolean function? | NAND (or NOR).
 SUM: Boolean functions underlie digital circuits.
 SUM: Simplification saves hardware.
-SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | textbook | 2019 | https://www.mheducation.com/
-SRC: O'Donnell R, Analysis of Boolean Functions (Cambridge University Press 2014) | textbook | 2014 | https://www.cambridge.org/
+SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2019) | secondary | 2019 | https://www.mheducation.com/
+SRC: O'Donnell R, Analysis of Boolean Functions (Cambridge University Press 2014) | secondary | 2014 | https://www.cambridge.org/
 NUM1#maths-u14-17-q1@1: How many Boolean functions of 2 variables are there? | 16 | 0 |  | 2^{2^{2}} = 2^{4} = 16.
 M1#maths-u14-17-q2@1: What does XOR output for inputs 1 and 1? | 0 | 1 | 2 | Undefined | It depends on order | XOR is 1 only when exactly one input is 1.
 M2#maths-u14-17-q3@2: Why are Karnaugh maps arranged in Gray code order? | Adjacent cells differ in one variable, so grouping them eliminates that variable | It makes the map square | It sorts outputs numerically | It's a random convention | They aren't | Grouping neighbours that differ in one input lets xy + xy′ = x simplify visually.
@@ -614,8 +614,8 @@ Q: What is the complexity of binary search? | O(log n).
 Q: If n doubles, how does O(n^{2}) running time change? | It roughly quadruples.
 SUM: Big-O describes how algorithms scale.
 SUM: Algorithm choice beats hardware.
-SRC: Cormen TH, Leiserson CE, Rivest RL, Stein C, Introduction to Algorithms (4th edn, MIT Press 2022) | textbook | 2022 | https://mitpress.mit.edu/
-SRC: Knuth DE, The Art of Computer Programming, vol 3: Sorting and Searching (2nd edn, Addison-Wesley 1998) | textbook | 1998 | https://www-cs-faculty.stanford.edu/~knuth/taocp.html
+SRC: Cormen TH, Leiserson CE, Rivest RL, Stein C, Introduction to Algorithms (4th edn, MIT Press 2022) | secondary | 2022 | https://mitpress.mit.edu/
+SRC: Knuth DE, The Art of Computer Programming, vol 3: Sorting and Searching (2nd edn, Addison-Wesley 1998) | secondary | 1998 | https://www-cs-faculty.stanford.edu/~knuth/taocp.html
 NUM1#maths-u14-18-q1@1: What is the maximum number of comparisons for binary search on 1,000,000 sorted items? | 20 | 0 |  | ⌈log₂ 1,000,000⌉ = 20.
 M1#maths-u14-18-q2@1: Which complexity do efficient comparison sorts achieve? | O(n log n) | O(log n) | O(n^{2}) | O(2ⁿ) | O(1) | Merge sort and heapsort run in O(n log n), matching the lower bound.
 M2#maths-u14-18-q3@2: An algorithm loops over all pairs of n items. What is its complexity? | O(n^{2}) | O(n) | O(log n) | O(n log n) | O(2ⁿ) | There are n(n − 1)/2 ≈ n^{2}/2 pairs, so the running time grows as O(n^{2}).
@@ -649,8 +649,8 @@ Q: What was the first problem proved NP-complete? | Boolean satisfiability (SAT)
 Q: What would P = NP imply for cryptography? | Many systems would become breakable.
 SUM: Complexity classifies problem difficulty.
 SUM: P versus NP is the central open question.
-SRC: Sipser M, Introduction to the Theory of Computation (3rd edn, Cengage 2013) | textbook | 2013 | https://www.cengage.co.uk/
-SRC: Cook SA, The complexity of theorem-proving procedures, Proceedings of the 3rd ACM Symposium on Theory of Computing, 151 | journal | 1971 | https://doi.org/10.1145/800157.805047
+SRC: Sipser M, Introduction to the Theory of Computation (3rd edn, Cengage 2013) | secondary | 2013 | https://www.cengage.co.uk/
+SRC: Cook SA, The complexity of theorem-proving procedures, Proceedings of the 3rd ACM Symposium on Theory of Computing, 151 | primary | 1971 | https://doi.org/10.1145/800157.805047
 NUM1#maths-u14-19-q1@1: A brute-force SAT solver tries every assignment of 30 variables. How many assignments, in millions to the nearest million? | 1074 | 1 | million | 2^{30} = 1,073,741,824, about 1,074 million.
 M1#maths-u14-19-q2@1: Which problem is in P? | Finding shortest paths in a graph | Boolean satisfiability in general | Graph 3-colouring in general | The travelling salesperson decision problem | General Sudoku | Dijkstra's algorithm solves shortest paths in polynomial time.
 M3#maths-u14-19-q3@2: Problem X is NP-complete and you find a polynomial algorithm for it. What follows? | P = NP | X wasn't really NP-complete | Only X becomes easy | Nothing | P ≠ NP | Every NP problem reduces to X, so all would be solvable in polynomial time.
@@ -684,8 +684,8 @@ Q: What extra memory does a pushdown automaton have? | A stack.
 Q: Name a problem no Turing machine can solve. | The halting problem.
 SUM: Automata model computation in layers.
 SUM: Turing machines set the ultimate limits.
-SRC: Hopcroft JE, Motwani R, Ullman JD, Introduction to Automata Theory, Languages, and Computation (3rd edn, Pearson 2006) | textbook | 2006 | https://www.pearson.com/
-SRC: Turing AM, On computable numbers, with an application to the Entscheidungsproblem, Proceedings of the London Mathematical Society s2-42(1), 230 | journal | 1937 | https://doi.org/10.1112/plms/s2-42.1.230
+SRC: Hopcroft JE, Motwani R, Ullman JD, Introduction to Automata Theory, Languages, and Computation (3rd edn, Pearson 2006) | secondary | 2006 | https://www.pearson.com/
+SRC: Turing AM, On computable numbers, with an application to the Entscheidungsproblem, Proceedings of the London Mathematical Society s2-42(1), 230 | primary | 1937 | https://doi.org/10.1112/plms/s2-42.1.230
 NUM1#maths-u14-20-q1@1: How many states does a minimal DFA need to test whether a binary number is divisible by 5? | 5 | 0 |  | One state for each possible remainder mod 5.
 M1#maths-u14-20-q2@1: Which language can a finite automaton recognise? | Binary strings ending in 01 | Strings aⁿbⁿ for all n | Balanced brackets of any depth | Palindromes of any length | Prime-length strings | Recognising a fixed ending needs only bounded memory.
 M2#maths-u14-20-q3@2: Why are NFAs no more powerful than DFAs? | The subset construction turns any NFA into an equivalent DFA | NFAs have fewer states | DFAs can guess | NFAs need a stack | They are more powerful | A DFA's states can track the set of states the NFA might be in.
@@ -718,8 +718,8 @@ Q: Which machine recognises context-free languages? | A pushdown automaton.
 Q: Is aⁿbⁿ regular? | No.
 SUM: Formal languages are rule-defined string sets.
 SUM: The Chomsky hierarchy classifies them.
-SRC: Sipser M, Introduction to the Theory of Computation (3rd edn, Cengage 2013) | textbook | 2013 | https://www.cengage.co.uk/
-SRC: Chomsky N, Three models for the description of language, IRE Transactions on Information Theory 2(3), 113 | journal | 1956 | https://doi.org/10.1109/TIT.1956.1056813
+SRC: Sipser M, Introduction to the Theory of Computation (3rd edn, Cengage 2013) | secondary | 2013 | https://www.cengage.co.uk/
+SRC: Chomsky N, Three models for the description of language, IRE Transactions on Information Theory 2(3), 113 | primary | 1956 | https://doi.org/10.1109/TIT.1956.1056813
 NUM1#maths-u14-21-q1@1: How many strings of length 3 are there over the alphabet {a, b}? | 8 | 0 |  | 2^{3} = 8.
 M1#maths-u14-21-q2@1: Which string matches the regular expression a(b|c)*a? | abcba | abcab | abac | bca | ab | It starts and ends with a, with only b and c between.
 M3#maths-u14-21-q3@2: Why can't any finite automaton recognise aⁿbⁿ? | It would need to remember n, but has only finitely many states | aⁿbⁿ is infinite | Automata can't read b | It can | The language is empty | By the pumping lemma, long enough strings would let the machine be fooled.
@@ -752,8 +752,8 @@ Q: How many elementary cellular automaton rules are there? | 256.
 Q: What is a glider in the Game of Life? | A small pattern that moves across the grid.
 SUM: Simple local rules create complexity.
 SUM: Some CAs can compute anything.
-SRC: Gardner M, Mathematical games: the fantastic combinations of John Conway's new solitaire game "life", Scientific American 223(4), 120 | journal | 1970 | https://doi.org/10.1038/scientificamerican1070-120
-SRC: Cook M, Universality in elementary cellular automata, Complex Systems 15(1), 1 | journal | 2004 | https://www.complex-systems.com/
+SRC: Gardner M, Mathematical games: the fantastic combinations of John Conway's new solitaire game "life", Scientific American 223(4), 120 | primary | 1970 | https://doi.org/10.1038/scientificamerican1070-120
+SRC: Cook M, Universality in elementary cellular automata, Complex Systems 15(1), 1 | primary | 2004 | https://www.complex-systems.com/
 NUM1#maths-u14-22-q1@1: How many neighbourhood patterns does an elementary cellular automaton rule specify outputs for? | 8 | 0 |  | Three binary cells give 2^{3} = 8 patterns.
 M1#maths-u14-22-q2@1: Which elementary rule is known to be Turing complete? | Rule 110 | Rule 30 | Rule 90 | Rule 0 | Rule 255 | Matthew Cook proved in 2004 that Rule 110 can simulate any Turing machine.
 M2#maths-u14-22-q3@2: In the Game of Life, what happens to a dead cell with exactly 3 live neighbours? | It becomes alive | It stays dead | It dies again | It moves | Nothing is defined | Conway's birth rule (B3) brings a dead cell to life when exactly 3 neighbours are alive.
@@ -786,8 +786,8 @@ Q: What is the Nash equilibrium of the one-shot prisoner's dilemma? | Both defec
 Q: In Nim, when is the player to move in a losing position? | When the nim-sum is 0.
 SUM: Game theory analyses strategic choice.
 SUM: Equilibria needn't be optimal for all.
-SRC: Osborne MJ, An Introduction to Game Theory (Oxford University Press 2004) | textbook | 2004 | https://global.oup.com/
-SRC: Nash JF, Equilibrium points in n-person games, Proceedings of the National Academy of Sciences 36(1), 48 | journal | 1950 | https://doi.org/10.1073/pnas.36.1.48
+SRC: Osborne MJ, An Introduction to Game Theory (Oxford University Press 2004) | secondary | 2004 | https://global.oup.com/
+SRC: Nash JF, Equilibrium points in n-person games, Proceedings of the National Academy of Sciences 36(1), 48 | primary | 1950 | https://doi.org/10.1073/pnas.36.1.48
 NUM1#maths-u14-23-q1@1: What is the nim-sum of heaps 1, 2 and 3? | 0 | 0 |  | 1 XOR 2 = 3, and 3 XOR 3 = 0: the player to move loses.
 M1#maths-u14-23-q2@1: What does Nash's theorem guarantee? | Every finite game has at least one equilibrium in mixed strategies | Every game has a pure equilibrium | Equilibria are always fair | Cooperation always wins | Zero-sum games have no equilibria | Allowing randomised strategies guarantees existence.
 M2#maths-u14-23-q3@2: Why do both players defect in the one-shot prisoner's dilemma? | Defecting is better for each player whatever the other does | They prefer worse outcomes | Cooperation is illegal | They can communicate | They don't defect | Defection is a dominant strategy, even though mutual cooperation pays more.

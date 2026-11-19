@@ -29,8 +29,8 @@ Q: Name three structures studied in abstract algebra. | For example groups, ring
 Q: Who used groups to study the solvability of polynomial equations? | Évariste Galois.
 SUM: Abstract algebra studies structures through axioms.
 SUM: One proof covers every example.
-SRC: Dummit DS, Foote RM, Abstract Algebra (3rd edn, Wiley 2004) | textbook | 2004 | https://www.wiley.com/
-SRC: Fraleigh JB, A First Course in Abstract Algebra (7th edn, Pearson 2003) | textbook | 2003 | https://www.pearson.com/
+SRC: Dummit DS, Foote RM, Abstract Algebra (3rd edn, Wiley 2004) | secondary | 2004 | https://www.wiley.com/
+SRC: Fraleigh JB, A First Course in Abstract Algebra (7th edn, Pearson 2003) | secondary | 2003 | https://www.pearson.com/
 NUM1#maths-u04-01-q1@1: How many elements of the integers mod 6 under addition generate the whole group? | 2 | 0 |  | 1 and 5 generate everything; 2, 3 and 4 share a factor with 6, and 0 generates only itself.
 M1#maths-u04-01-q2@1: Which set and operation form a group? | The integers under addition | The natural numbers under addition | The integers under multiplication | All rationals under multiplication | The integers under subtraction | Addition on ℤ has identity 0 and inverses −a; the others lack inverses or associativity.
 M2#maths-u04-01-q3@2: Why is it useful to prove theorems for groups in general? | Each theorem then applies to every example of a group at once | General proofs are always shorter than proofs about examples | It avoids needing any examples | Groups are the only structures that matter | Specific examples can't be proved | Abstraction means one argument covers integers, symmetries, matrices and more.
@@ -64,8 +64,8 @@ Q: What does a monoid have that a semigroup may not? | An identity element.
 Q: Is ℤ₆ a field? | No: 2 has no multiplicative inverse (2 × 3 = 0).
 SUM: Structures form a hierarchy by axioms.
 SUM: More axioms give more theorems.
-SRC: Fraleigh JB, A First Course in Abstract Algebra (7th edn, Pearson 2003) | textbook | 2003 | https://www.pearson.com/
-SRC: Burris S, Sankappanavar HP, A Course in Universal Algebra (Springer 1981) | textbook | 1981 | https://www.math.uwaterloo.ca/~snburris/htdocs/ualg.html
+SRC: Fraleigh JB, A First Course in Abstract Algebra (7th edn, Pearson 2003) | secondary | 2003 | https://www.pearson.com/
+SRC: Burris S, Sankappanavar HP, A Course in Universal Algebra (Springer 1981) | secondary | 1981 | https://www.math.uwaterloo.ca/~snburris/htdocs/ualg.html
 NUM1#maths-u04-02-q1@1: What is the identity element of the natural numbers {0, 1, 2, …} under addition? | 0 | 0 |  | a + 0 = a for every natural number, so 0 is the identity; it's a monoid without inverses.
 M1#maths-u04-02-q2@1: Which structure is a field? | The rationals with + and × | The integers with + and × | 2 × 2 matrices with + and × | ℤ₈ with + and × | Polynomials with + and × | Every non-zero rational has a multiplicative inverse; the others lack some inverses.
 M2#maths-u04-02-q3@2: Strings of letters under concatenation form which structure? | A monoid but not a group | A group | A field | A ring | Not even a semigroup | Concatenation is associative with the empty string as identity, but there are no inverses.
@@ -99,8 +99,8 @@ Q: What is the order of D₆, the symmetries of a hexagon? | 12.
 Q: Why is every group of prime order cyclic? | Any non-identity element has order dividing p, so its order is p and it generates the group.
 SUM: Groups formalise symmetry.
 SUM: Lagrange's theorem constrains subgroups.
-SRC: Armstrong MA, Groups and Symmetry (Springer 1988) | textbook | 1988 | https://link.springer.com/
-SRC: Gallian JA, Contemporary Abstract Algebra (10th edn, CRC Press 2021) | textbook | 2021 | https://www.routledge.com/
+SRC: Armstrong MA, Groups and Symmetry (Springer 1988) | secondary | 1988 | https://link.springer.com/
+SRC: Gallian JA, Contemporary Abstract Algebra (10th edn, CRC Press 2021) | secondary | 2021 | https://www.routledge.com/
 NUM1#maths-u04-03-q1@1: What is the order of the symmetric group S₅? | 120 | 0 |  | |S₅| = 5! = 120.
 M1#maths-u04-03-q2@1: Can a group of order 15 have a subgroup of order 4? | No: 4 doesn't divide 15 | Yes, always | Yes, if it's cyclic | Only if it's abelian | Only if it's non-abelian | Lagrange's theorem forbids subgroup orders that don't divide the group order.
 M3#maths-u04-03-q3@2: What is the order of 9 in ℤ₁₂? | 4 | 3 | 9 | 12 | 2 | The order of k in ℤ_{n} is n/gcd(k, n) = 12/3 = 4: the multiples run 9, 6, 3, 0.
@@ -134,8 +134,8 @@ Q: What is the kernel of the sign homomorphism on S_{n}? | The alternating group
 Q: When is a homomorphism injective? | When its kernel is just the identity.
 SUM: Homomorphisms preserve structure.
 SUM: Kernels give quotients.
-SRC: Dummit DS, Foote RM, Abstract Algebra (3rd edn, Wiley 2004) | textbook | 2004 | https://www.wiley.com/
-SRC: Artin M, Algebra (2nd edn, Pearson 2011) | textbook | 2011 | https://www.pearson.com/
+SRC: Dummit DS, Foote RM, Abstract Algebra (3rd edn, Wiley 2004) | secondary | 2004 | https://www.wiley.com/
+SRC: Artin M, Algebra (2nd edn, Pearson 2011) | secondary | 2011 | https://www.pearson.com/
 NUM1#maths-u04-04-q1@1: What is the order of the kernel of the sign homomorphism on S₄? | 12 | 0 |  | The image {±1} has order 2, so |ker| = 24/2 = 12 (it's A₄).
 M1#maths-u04-04-q2@1: Which map is a homomorphism from (ℝ, +) to (ℝ_{>0}, ×)? | x ↦ e^{x} | x ↦ x^{2} | x ↦ x + 1 | x ↦ |x| | x ↦ 1/x | e^{x+y} = e^{x}e^{y}, turning addition into multiplication.
 M2#maths-u04-04-q3@2: A homomorphism from a group of order 12 has image of order 4. What is the order of its kernel? | 3 | 4 | 8 | 12 | 48 | By the first isomorphism theorem, |ker| = 12/4 = 3.
@@ -168,8 +168,8 @@ Q: How many groups of order 6 are there up to isomorphism? | Two: ℤ₆ and S�
 Q: What does Cayley's theorem say? | Every group is isomorphic to a group of permutations.
 SUM: Isomorphisms identify structures.
 SUM: Invariants distinguish them.
-SRC: Gallian JA, Contemporary Abstract Algebra (10th edn, CRC Press 2021) | textbook | 2021 | https://www.routledge.com/
-SRC: Artin M, Algebra (2nd edn, Pearson 2011) | textbook | 2011 | https://www.pearson.com/
+SRC: Gallian JA, Contemporary Abstract Algebra (10th edn, CRC Press 2021) | secondary | 2021 | https://www.routledge.com/
+SRC: Artin M, Algebra (2nd edn, Pearson 2011) | secondary | 2011 | https://www.pearson.com/
 NUM1#maths-u04-05-q1@1: How many groups of order 4 are there, up to isomorphism? | 2 | 0 |  | ℤ₄ and the Klein four-group ℤ₂ × ℤ₂.
 M1#maths-u04-05-q2@1: Which invariant shows ℤ₆ and S₃ aren't isomorphic? | ℤ₆ is abelian but S₃ isn't | They have different orders | Both are cyclic | Neither has an identity | S₃ has no elements of order 2 | Being abelian is preserved by isomorphisms.
 M3#maths-u04-05-q3@2: Is ℤ₂ × ℤ₄ isomorphic to ℤ₈? | No: ℤ₂ × ℤ₄ has no element of order 8 | Yes, since both have order 8 | Yes, because 2 × 4 = 8 | Only if both are cyclic | It can't be decided | ℤ_{m} × ℤ_{n} ≅ ℤ_{mn} only when gcd(m, n) = 1; here the largest element order is lcm(2, 4) = 4.
@@ -202,8 +202,8 @@ Q: How many automorphisms does ℤ₇ have? | 6.
 Q: What are the inner automorphisms of an abelian group? | Only the identity map.
 SUM: Automorphisms are symmetries of structures.
 SUM: They form a group.
-SRC: Dummit DS, Foote RM, Abstract Algebra (3rd edn, Wiley 2004) | textbook | 2004 | https://www.wiley.com/
-SRC: Rotman JJ, An Introduction to the Theory of Groups (4th edn, Springer 1995) | textbook | 1995 | https://link.springer.com/
+SRC: Dummit DS, Foote RM, Abstract Algebra (3rd edn, Wiley 2004) | secondary | 2004 | https://www.wiley.com/
+SRC: Rotman JJ, An Introduction to the Theory of Groups (4th edn, Springer 1995) | secondary | 1995 | https://link.springer.com/
 NUM1#maths-u04-06-q1@1: Find |Aut(ℤ₁₂)|. | 4 | 0 |  | |Aut(ℤ₁₂)| = φ(12) = 4 (multiplication by 1, 5, 7 or 11).
 M1#maths-u04-06-q2@1: Which group is Aut(ℤ₂ × ℤ₂) isomorphic to? | S₃ | ℤ₄ | ℤ₂ | ℤ₂ × ℤ₂ | The trivial group | Any permutation of the three non-identity elements preserves the operation.
 M2#maths-u04-06-q3@2: Why does complex conjugation count as a field automorphism of ℂ? | It's a bijection preserving both addition and multiplication | It changes the sign of every number | It maps every complex number onto the real line, fixing ℝ | It's the identity map | It reverses the order of numbers | conj(z + w) = conj z + conj w and conj(zw) = conj z × conj w.
@@ -237,8 +237,8 @@ Q: What is the order of S₄/A₄? | 2.
 Q: What ring is ℤ/7ℤ? | The integers mod 7, a field.
 SUM: Quotients divide out substructures.
 SUM: Normal subgroups and ideals make them work.
-SRC: Dummit DS, Foote RM, Abstract Algebra (3rd edn, Wiley 2004) | textbook | 2004 | https://www.wiley.com/
-SRC: Artin M, Algebra (2nd edn, Pearson 2011) | textbook | 2011 | https://www.pearson.com/
+SRC: Dummit DS, Foote RM, Abstract Algebra (3rd edn, Wiley 2004) | secondary | 2004 | https://www.wiley.com/
+SRC: Artin M, Algebra (2nd edn, Pearson 2011) | secondary | 2011 | https://www.pearson.com/
 NUM1#maths-u04-07-q1@1: What is the order of the quotient group ℤ₁₈/⟨3⟩? | 3 | 0 |  | ⟨3⟩ = {0, 3, …, 15} has 6 elements, so the quotient has 18/6 = 3.
 M1#maths-u04-07-q2@1: Which subgroup is guaranteed to be normal? | Any subgroup of an abelian group | Any subgroup of S₃ | Any subgroup of order 2 | Any cyclic subgroup | Any subgroup of a non-abelian group | In an abelian group gng^{−1} = n, so every subgroup is normal.
 M2#maths-u04-07-q3@2: In ℝ[x]/(x^{2} + 1), what is x^{2}? | −1 | 1 | 0 | x | x + 1 | Modulo x^{2} + 1, x^{2} = −1, so x behaves like i.
@@ -271,8 +271,8 @@ Q: What is the largest element order in ℤ₆ × ℤ₁₀? | lcm(6, 10) = 30.
 Q: Is ℤ₃ × ℤ₅ cyclic? | Yes: it's isomorphic to ℤ₁₅.
 SUM: Direct products combine structures.
 SUM: They classify finite abelian groups.
-SRC: Gallian JA, Contemporary Abstract Algebra (10th edn, CRC Press 2021) | textbook | 2021 | https://www.routledge.com/
-SRC: Fraleigh JB, A First Course in Abstract Algebra (7th edn, Pearson 2003) | textbook | 2003 | https://www.pearson.com/
+SRC: Gallian JA, Contemporary Abstract Algebra (10th edn, CRC Press 2021) | secondary | 2021 | https://www.routledge.com/
+SRC: Fraleigh JB, A First Course in Abstract Algebra (7th edn, Pearson 2003) | secondary | 2003 | https://www.pearson.com/
 NUM1#maths-u04-08-q1@1: How many abelian groups of order 36 are there, up to isomorphism? | 4 | 0 |  | 36 = 2^{2} × 3^{2}; each prime square gives 2 options, so 2 × 2 = 4.
 M1#maths-u04-08-q2@1: What is the order of (1, 1) in ℤ₄ × ℤ₆? | 12 | 24 | 6 | 4 | 10 | The order of a pair is the lcm of the component orders: lcm(4, 6) = 12.
 M3#maths-u04-08-q3@2: Which group is cyclic? | ℤ₉ × ℤ₄ | ℤ₂ × ℤ₆ | ℤ₃ × ℤ₃ | ℤ₄ × ℤ₆ | ℤ₂ × ℤ₂ | gcd(9, 4) = 1, so ℤ₉ × ℤ₄ ≅ ℤ₃₆; each of the others has a shared factor.
@@ -305,8 +305,8 @@ Q: Give a presentation of ℤ₅. | ⟨a | a^{5}⟩.
 Q: What does Nielsen–Schreier say? | Subgroups of free groups are free.
 SUM: Free groups have no extra relations.
 SUM: Presentations describe groups compactly.
-SRC: Magnus W, Karrass A, Solitar D, Combinatorial Group Theory (2nd edn, Dover 2004) | textbook | 2004 | https://store.doverpublications.com/
-SRC: Hatcher A, Algebraic Topology (Cambridge University Press 2002) | textbook | 2002 | https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
+SRC: Magnus W, Karrass A, Solitar D, Combinatorial Group Theory (2nd edn, Dover 2004) | secondary | 2004 | https://store.doverpublications.com/
+SRC: Hatcher A, Algebraic Topology (Cambridge University Press 2002) | secondary | 2002 | https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
 NUM1#maths-u04-09-q1@1: How many reduced words of length 2 are there in the free group on a and b? | 12 | 0 |  | 4 choices for the first letter (a, a^{−1}, b, b^{−1}), then 3 that don't cancel it: 4 × 3 = 12.
 M1#maths-u04-09-q2@1: Which word is reduced in the free group on a and b? | ab^{−1}ab | abb^{−1}a | a^{−1}ab | baa^{−1} | bb^{−1} | Only ab^{−1}ab has no adjacent pair xx^{−1} or x^{−1}x.
 M2#maths-u04-09-q3@2: Why is every group a quotient of a free group? | Mapping generators to the group's elements extends to a surjective homomorphism from the free group | Every group is itself free, so it is its own quotient | Free groups are finite | Every group is abelian | Only cyclic groups are quotients | The universal property gives the map; the first isomorphism theorem gives the quotient.
@@ -339,8 +339,8 @@ Q: Is ℤ₇ an integral domain? | Yes: it's a field, since 7 is prime.
 Q: Give a zero divisor in the ring of 2 × 2 matrices. | For example [[1, 0], [0, 0]], whose product with [[0, 0], [0, 1]] is 0.
 SUM: Rings generalise integer arithmetic.
 SUM: Units, zero divisors and ideals describe them.
-SRC: Dummit DS, Foote RM, Abstract Algebra (3rd edn, Wiley 2004) | textbook | 2004 | https://www.wiley.com/
-SRC: Fraleigh JB, A First Course in Abstract Algebra (7th edn, Pearson 2003) | textbook | 2003 | https://www.pearson.com/
+SRC: Dummit DS, Foote RM, Abstract Algebra (3rd edn, Wiley 2004) | secondary | 2004 | https://www.wiley.com/
+SRC: Fraleigh JB, A First Course in Abstract Algebra (7th edn, Pearson 2003) | secondary | 2003 | https://www.pearson.com/
 NUM1#maths-u04-10-q1@1: How many units are there in ℤ₂₀? | 8 | 0 |  | The units are the residues coprime to 20: φ(20) = 8.
 M1#maths-u04-10-q2@1: Which ring has zero divisors? | ℤ₁₀ | ℤ | ℚ | ℤ₁₁ | ℝ | In ℤ₁₀, 2 × 5 = 10 ≡ 0 with both factors non-zero, so 2 and 5 are zero divisors.
 M3#maths-u04-10-q3@2: Why is every finite integral domain a field? | Multiplying by a non-zero a is injective, hence onto, so some b gives ab = 1 | Every ring is a field | Every ring is a field, so it's automatic | Integral domains are always infinite | Finite rings never contain zero, so every element is invertible | Without zero divisors x ↦ ax is injective; on a finite set, injective implies surjective.
@@ -374,8 +374,8 @@ Q: What is the minimal polynomial of √5 over ℚ? | x^{2} − 5.
 Q: How many elements can a finite field have? | A prime power p^{n}.
 SUM: Field extensions are measured by degree.
 SUM: Degrees settle classical construction problems.
-SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | textbook | 2022 | https://www.routledge.com/
-SRC: Wantzel PL, Recherches sur les moyens de reconnaître si un problème de géométrie peut se résoudre avec la règle et le compas, Journal de Mathématiques Pures et Appliquées 2, 366 | journal | 1837 | http://www.numdam.org/
+SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | secondary | 2022 | https://www.routledge.com/
+SRC: Wantzel PL, Recherches sur les moyens de reconnaître si un problème de géométrie peut se résoudre avec la règle et le compas, Journal de Mathématiques Pures et Appliquées 2, 366 | primary | 1837 | http://www.numdam.org/
 NUM1#maths-u04-11-q1@1: What is [ℚ(∛2) : ℚ]? | 3 | 0 |  | x^{3} − 2 is irreducible over ℚ, so the degree is 3.
 M1#maths-u04-11-q2@1: Which field size is impossible for a finite field? | 6 | 8 | 9 | 25 | 2 | Finite fields have prime-power order, and 6 isn't a prime power.
 M2#maths-u04-11-q3@2: Why can't a cube be doubled with ruler and compass? | ∛2 has degree 3, but constructible numbers have degree a power of 2 | Cubes have no diagonals to measure | Cubes have no diagonals | Compasses can't draw cubes | ∛2 is irrational, and compasses only draw rational lengths | Each construction step gives an extension of degree at most 2.
@@ -409,8 +409,8 @@ Q: What kind of module is an abelian group? | A ℤ-module.
 Q: What is the rank of ℤ^{3} ⊕ ℤ₄? | 3.
 SUM: Modules generalise vector spaces.
 SUM: The structure theorem unifies classifications.
-SRC: Dummit DS, Foote RM, Abstract Algebra (3rd edn, Wiley 2004) | textbook | 2004 | https://www.wiley.com/
-SRC: Atiyah MF, Macdonald IG, Introduction to Commutative Algebra (Addison-Wesley 1969) | textbook | 1969 | https://www.routledge.com/
+SRC: Dummit DS, Foote RM, Abstract Algebra (3rd edn, Wiley 2004) | secondary | 2004 | https://www.wiley.com/
+SRC: Atiyah MF, Macdonald IG, Introduction to Commutative Algebra (Addison-Wesley 1969) | secondary | 1969 | https://www.routledge.com/
 NUM1#maths-u04-12-q1@1: How many elements does the ℤ-module ℤ₂ ⊕ ℤ₃ have? | 6 | 0 |  | 2 × 3 = 6 (it's isomorphic to ℤ₆).
 M1#maths-u04-12-q2@1: Which statement about modules is true? | A module over a field is a vector space | Every module has a basis | Modules never have torsion | Modules need a commutative field | ℤ₂ is a free ℤ-module | Over a field, the module axioms are exactly the vector space axioms.
 M2#maths-u04-12-q3@2: What does the structure theorem give when R = F[x]? | Canonical forms of matrices, such as the Jordan form | The classification of finite fields | Galois groups | Free group presentations | The fundamental theorem of calculus | A linear map makes the space an F[x]-module, and its decomposition gives canonical forms.
@@ -444,8 +444,8 @@ Q: What is ji in the quaternions? | −k.
 Q: What dimension does the algebra M₃(ℝ) have? | 9.
 SUM: Algebras combine vector spaces with multiplication.
 SUM: Quaternions are the key non-commutative example.
-SRC: Hamilton WR, On quaternions; or on a new system of imaginaries in algebra, Philosophical Magazine 25, 489 | journal | 1844 | https://www.maths.tcd.ie/pub/HistMath/People/Hamilton/OnQuat/
-SRC: Conway JH, Smith DA, On Quaternions and Octonions (A K Peters 2003) | textbook | 2003 | https://www.routledge.com/
+SRC: Hamilton WR, On quaternions; or on a new system of imaginaries in algebra, Philosophical Magazine 25, 489 | primary | 1844 | https://www.maths.tcd.ie/pub/HistMath/People/Hamilton/OnQuat/
+SRC: Conway JH, Smith DA, On Quaternions and Octonions (A K Peters 2003) | secondary | 2003 | https://www.routledge.com/
 NUM1#maths-u04-13-q1@1: What is the dimension of the algebra M₄(ℝ) of 4 × 4 real matrices? | 16 | 0 |  | An n × n matrix has n^{2} entries: 4^{2} = 16.
 M1#maths-u04-13-q2@1: What is i^{2} in the quaternions? | −1 | 1 | k | 0 | i | Hamilton's rules give i^{2} = j^{2} = k^{2} = −1.
 M3#maths-u04-13-q3@2: Why are unit quaternions used for 3D rotations in graphics? | They compose smoothly without gimbal lock | They commute, making rotations order-independent | They need fewer than three numbers | They avoid all floating-point error | They're the same as Euler angles | Quaternions represent rotations without the singularities of angle triples, and interpolate well.
@@ -479,8 +479,8 @@ Q: Is (x^{2} + 1) maximal in ℝ[x]? | Yes: ℝ[x]/(x^{2} + 1) ≅ ℂ is a fiel
 Q: What does Hilbert's basis theorem say? | If R is Noetherian, then R[x] is Noetherian.
 SUM: Prime and maximal ideals generalise primes.
 SUM: Quotients test them.
-SRC: Atiyah MF, Macdonald IG, Introduction to Commutative Algebra (Addison-Wesley 1969) | textbook | 1969 | https://www.routledge.com/
-SRC: Eisenbud D, Commutative Algebra with a View Toward Algebraic Geometry (Springer 1995) | textbook | 1995 | https://link.springer.com/
+SRC: Atiyah MF, Macdonald IG, Introduction to Commutative Algebra (Addison-Wesley 1969) | secondary | 1969 | https://www.routledge.com/
+SRC: Eisenbud D, Commutative Algebra with a View Toward Algebraic Geometry (Springer 1995) | secondary | 1995 | https://link.springer.com/
 NUM1#maths-u04-14-q1@1: How many maximal ideals does ℤ₁₂ have? | 2 | 0 |  | Maximal ideals of ℤ₁₂ correspond to primes dividing 12: (2) and (3).
 M1#maths-u04-14-q2@1: Which ideal of ℤ is prime but not maximal? | (0) | (2) | (7) | (4) | ℤ itself | ℤ/(0) ≅ ℤ is an integral domain but not a field, so (0) is prime but not maximal.
 M2#maths-u04-14-q3@2: Why is every maximal ideal prime? | A field is an integral domain, so R/M being a field makes it a domain | Prime ideals are always larger | Maximal ideals are always zero | Maximal ideals always contain every prime ideal of the ring | Every ideal is prime | If M is maximal then R/M is a field, every field is a domain, so R/M is a domain and M is prime.
@@ -513,8 +513,8 @@ Q: What is the Galois group of x^{2} − 3 over ℚ? | ℤ₂.
 Q: Why is the general quintic not solvable by radicals? | Its Galois group S₅ isn't solvable.
 SUM: Galois theory links fields and groups.
 SUM: It settles solvability by radicals.
-SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | textbook | 2022 | https://www.routledge.com/
-SRC: Artin E, Galois Theory (Dover 1998, from the 2nd edn 1944) | textbook | 1998 | https://store.doverpublications.com/
+SRC: Stewart I, Galois Theory (5th edn, CRC Press 2022) | secondary | 2022 | https://www.routledge.com/
+SRC: Artin E, Galois Theory (Dover 1998, from the 2nd edn 1944) | secondary | 1998 | https://store.doverpublications.com/
 NUM1#maths-u04-15-q1@1: What is the order of the Galois group of the splitting field of x^{3} − 2 over ℚ? | 6 | 0 |  | The splitting field ℚ(∛2, ω) has degree 6, and its Galois group is S₃.
 M1#maths-u04-15-q2@1: Which polynomial is solvable by radicals? | x^{5} − 2 | x^{5} − x − 1 | x^{5} − 4x + 2 | x^{5} − 6x + 3 | None of them | The roots of x^{5} − 2 are the real fifth root of 2 times the fifth roots of unity, all expressible by radicals.
 M3#maths-u04-15-q3@2: In the fundamental theorem, what does a subgroup of order 2 in a Galois group of order 8 correspond to? | An intermediate field of degree 4 over the base | A field of degree 2 over the base | The base field | The whole extension | Nothing | The fixed field E of H satisfies [K : E] = |H| = 2, so [E : F] = 8/2 = 4.
@@ -547,8 +547,8 @@ Q: What is the condition for a sequence of maps to be a chain complex? | Each co
 Q: What is a short exact sequence? | 0 → A → B → C → 0 exact at every place.
 SUM: Homological algebra measures exactness.
 SUM: Homology turns failure into algebraic invariants.
-SRC: Weibel CA, An Introduction to Homological Algebra (Cambridge University Press 1994) | textbook | 1994 | https://www.cambridge.org/
-SRC: Hatcher A, Algebraic Topology (Cambridge University Press 2002) | textbook | 2002 | https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
+SRC: Weibel CA, An Introduction to Homological Algebra (Cambridge University Press 1994) | secondary | 1994 | https://www.cambridge.org/
+SRC: Hatcher A, Algebraic Topology (Cambridge University Press 2002) | secondary | 2002 | https://pi.math.cornell.edu/~hatcher/AT/ATpage.html
 NUM1#maths-u04-16-q1@1: For the complex 0 → ℤ → ℤ → 0 with the middle map multiplication by 3, what is the order of the homology at the second ℤ? | 3 | 0 |  | Kernel of the zero map is ℤ, image of ×3 is 3ℤ, so the homology is ℤ/3ℤ, of order 3.
 M1#maths-u04-16-q2@1: What does it mean for a sequence to be exact at B in A → B → C? | The image of A → B equals the kernel of B → C | The maps are bijections | B is zero | The composite is the identity | A and C are isomorphic | Exactness means image equals kernel at each place.
 M2#maths-u04-16-q3@2: What is Tor(ℤ₄, ℤ₆)? | ℤ₂ | ℤ₄ | ℤ₆ | ℤ₁₂ | 0 | Tor(ℤ_{m}, ℤ_{n}) ≅ ℤ_{gcd(m, n)}, and gcd(4, 6) = 2.
@@ -581,8 +581,8 @@ Q: Are abelian groups a variety? | Yes: add the identity xy = yx to the group id
 Q: What does HSP stand for in Birkhoff's theorem? | Homomorphic images, subalgebras and products.
 SUM: Universal algebra studies structures in general.
 SUM: Varieties are defined by equations.
-SRC: Burris S, Sankappanavar HP, A Course in Universal Algebra (Springer 1981) | textbook | 1981 | https://www.math.uwaterloo.ca/~snburris/htdocs/ualg.html
-SRC: Birkhoff G, On the structure of abstract algebras, Mathematical Proceedings of the Cambridge Philosophical Society 31(4), 433 | journal | 1935 | https://doi.org/10.1017/S0305004100013463
+SRC: Burris S, Sankappanavar HP, A Course in Universal Algebra (Springer 1981) | secondary | 1981 | https://www.math.uwaterloo.ca/~snburris/htdocs/ualg.html
+SRC: Birkhoff G, On the structure of abstract algebras, Mathematical Proceedings of the Cambridge Philosophical Society 31(4), 433 | primary | 1935 | https://doi.org/10.1017/S0305004100013463
 NUM1#maths-u04-17-q1@1: How many binary operations are there on a 2-element set? | 16 | 0 |  | Each of the 4 ordered pairs can map to either of 2 elements: 2^{4} = 16.
 M1#maths-u04-17-q2@1: Which class is a variety? | Abelian groups | Fields | Integral domains | Finite groups | Division rings | Abelian groups are defined by identities; the others need non-equational conditions.
 M2#maths-u04-17-q3@2: Why can't integral domains be defined by identities alone? | "ab = 0 implies a = 0 or b = 0" isn't an identity, and products of domains have zero divisors | Integral domains can't be described by any axioms at all | Domains are always fields | They have no operations | They're always finite | ℤ × ℤ isn't a domain, so the class isn't closed under products.
@@ -615,8 +615,8 @@ Q: What does Maschke's theorem guarantee? | Complete reducibility of representat
 Q: What is the trivial representation? | Every group element acts as the identity map.
 SUM: Representations turn algebra into linear algebra.
 SUM: Irreducibles are the building blocks.
-SRC: James G, Liebeck M, Representations and Characters of Groups (2nd edn, Cambridge University Press 2001) | textbook | 2001 | https://www.cambridge.org/
-SRC: Fulton W, Harris J, Representation Theory: A First Course (Springer 1991) | textbook | 1991 | https://link.springer.com/
+SRC: James G, Liebeck M, Representations and Characters of Groups (2nd edn, Cambridge University Press 2001) | secondary | 2001 | https://www.cambridge.org/
+SRC: Fulton W, Harris J, Representation Theory: A First Course (Springer 1991) | secondary | 1991 | https://link.springer.com/
 NUM1#maths-u04-18-q1@1: What is the trace of the 90° rotation matrix [[0, −1], [1, 0]]? | 0 | 0 |  | The diagonal entries are 0 and 0, so the trace is 0.
 M1#maths-u04-18-q2@1: What is an irreducible representation? | One with no proper non-zero invariant subspace | One that's injective | One of dimension 1 only | One with real entries only | One whose matrices are all of dimension 1 | Irreducibles can't be broken into smaller invariant pieces.
 M2#maths-u04-18-q3@2: Why does representation theory help with chemistry? | Molecular symmetry groups act on vibrations and orbitals, which decompose into irreducibles | Molecules are groups | Molecules are themselves groups | It predicts reaction rates directly | It replaces quantum mechanics in calculating molecular energies | Symmetry classifies vibrational modes and selection rules in spectroscopy.
@@ -650,8 +650,8 @@ Q: How many irreducible representations does an abelian group of order 10 have? 
 Q: What is a character constant on? | Conjugacy classes.
 SUM: Characters summarise representations.
 SUM: Counting formulas pin down dimensions.
-SRC: James G, Liebeck M, Representations and Characters of Groups (2nd edn, Cambridge University Press 2001) | textbook | 2001 | https://www.cambridge.org/
-SRC: Serre JP, Linear Representations of Finite Groups (Springer 1977) | textbook | 1977 | https://link.springer.com/
+SRC: James G, Liebeck M, Representations and Characters of Groups (2nd edn, Cambridge University Press 2001) | secondary | 2001 | https://www.cambridge.org/
+SRC: Serre JP, Linear Representations of Finite Groups (Springer 1977) | secondary | 1977 | https://link.springer.com/
 NUM1#maths-u04-19-q1@1: A group of order 12 has irreducible representations of dimensions 1, 1, 1 and d. Find d. | 3 | 0 |  | 1 + 1 + 1 + d^{2} = 12 gives d^{2} = 9, so d = 3 (this is A₄).
 M1#maths-u04-19-q2@1: How many irreducible complex representations does S₃ have? | 3 | 6 | 2 | 1 | 4 | S₃ has three conjugacy classes, so three irreducibles.
 M3#maths-u04-19-q3@2: The standard 2-dimensional character of S₃ takes which value on a 3-cycle? | −1 | 0 | 2 | 1 | 3 | A 3-cycle acts as a 120° rotation on the 2-dimensional space, with trace 2 cos 120° = −1.
@@ -683,8 +683,8 @@ Q: What is a representation of a ring R the same as? | An R-module.
 Q: What is the dimension of ℂ[G] for |G| = 10? | 10.
 SUM: Modules are ring representations.
 SUM: Artin–Wedderburn decomposes semisimple rings.
-SRC: Lam TY, A First Course in Noncommutative Rings (2nd edn, Springer 2001) | textbook | 2001 | https://link.springer.com/
-SRC: Etingof P et al, Introduction to Representation Theory (American Mathematical Society 2011) | textbook | 2011 | https://math.mit.edu/~etingof/repb.pdf
+SRC: Lam TY, A First Course in Noncommutative Rings (2nd edn, Springer 2001) | secondary | 2001 | https://link.springer.com/
+SRC: Etingof P et al, Introduction to Representation Theory (American Mathematical Society 2011) | secondary | 2011 | https://math.mit.edu/~etingof/repb.pdf
 NUM1#maths-u04-20-q1@1: What is the dimension of the group algebra ℂ[S₄]? | 24 | 0 |  | ℂ[G] has a basis indexed by G, and |S₄| = 24.
 M1#maths-u04-20-q2@1: What does the Artin–Wedderburn theorem describe? | Semisimple rings as products of matrix rings over division rings | All rings as fields | Groups as permutations | Lie algebras by root systems | Every ring as a product of fields of prime order | That's the structure theorem for semisimple rings.
 M2#maths-u04-20-q3@2: When is the group algebra F[G] not semisimple? | When the characteristic of F divides |G| | When G is abelian | When F = ℂ | When G is cyclic | Whenever G is abelian, whatever the field | Maschke's theorem fails exactly when char F divides |G|.
@@ -718,8 +718,8 @@ Q: What is the dimension of SL₂(ℝ)? | 3.
 Q: What gauge group does the Standard Model use? | SU(3) × SU(2) × U(1).
 SUM: Lie groups combine algebra and smoothness.
 SUM: They describe continuous symmetry.
-SRC: Hall BC, Lie Groups, Lie Algebras, and Representations (2nd edn, Springer 2015) | textbook | 2015 | https://link.springer.com/
-SRC: Stillwell J, Naive Lie Theory (Springer 2008) | textbook | 2008 | https://link.springer.com/
+SRC: Hall BC, Lie Groups, Lie Algebras, and Representations (2nd edn, Springer 2015) | secondary | 2015 | https://link.springer.com/
+SRC: Stillwell J, Naive Lie Theory (Springer 2008) | secondary | 2008 | https://link.springer.com/
 NUM1#maths-u04-21-q1@1: What is the dimension of SO(4)? | 6 | 0 |  | n(n − 1)/2 = 4 × 3/2 = 6.
 M1#maths-u04-21-q2@1: Which group is a Lie group? | The rotations SO(3) | The integers ℤ₁₂ | The symmetric group S₅ | The free group on two letters | The quaternion group of order 8 | SO(3) is a smooth 3-dimensional manifold; the others are discrete.
 M2#maths-u04-21-q3@2: According to Noether's theorem, which conservation law comes from rotational symmetry? | Angular momentum | Energy | Linear momentum | Electric charge | Mass | Invariance under rotations gives conservation of angular momentum.
@@ -752,8 +752,8 @@ Q: What is [X, X] in any Lie algebra? | 0.
 Q: How many exceptional simple complex Lie algebras are there? | Five.
 SUM: Lie algebras linearise Lie groups.
 SUM: Simple ones are completely classified.
-SRC: Humphreys JE, Introduction to Lie Algebras and Representation Theory (Springer 1972) | textbook | 1972 | https://link.springer.com/
-SRC: Hall BC, Lie Groups, Lie Algebras, and Representations (2nd edn, Springer 2015) | textbook | 2015 | https://link.springer.com/
+SRC: Humphreys JE, Introduction to Lie Algebras and Representation Theory (Springer 1972) | secondary | 1972 | https://link.springer.com/
+SRC: Hall BC, Lie Groups, Lie Algebras, and Representations (2nd edn, Springer 2015) | secondary | 2015 | https://link.springer.com/
 NUM1#maths-u04-22-q1@1: What is the dimension of sl₃, the trace-zero 3 × 3 matrices? | 8 | 0 |  | 9 entries with one condition (trace 0): 9 − 1 = 8.
 M1#maths-u04-22-q2@1: Which property does every Lie bracket have? | Antisymmetry: [X, Y] = −[Y, X] | Commutativity: [X, Y] = [Y, X] | Associativity of the bracket | An identity element for the bracket | Invertibility of every element | Antisymmetry and the Jacobi identity define a Lie algebra.
 M2#maths-u04-22-q3@2: What is so(3) isomorphic to as a Lie algebra? | ℝ^{3} with the cross product | ℝ^{3} with the dot product | ℂ with multiplication | sl₃ | The quaternions | Antisymmetric 3 × 3 matrices correspond to vectors, with the bracket as the cross product.

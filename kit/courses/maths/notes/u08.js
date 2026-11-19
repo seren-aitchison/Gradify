@@ -29,8 +29,8 @@ Q: Find ∂/∂y of x^{3}y^{2}. | 2x^{3}y.
 Q: What does Clairaut's theorem say? | Mixed second partials are equal if they're continuous.
 SUM: Partial derivatives measure change one direction at a time.
 SUM: Tangent planes approximate surfaces.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
-SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | textbook | 2012 | https://www.macmillanlearning.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
+SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | secondary | 2012 | https://www.macmillanlearning.com/
 NUM1#maths-u08-01-q1@1: For f(x, y) = x^{3}y^{2}, find f_{xy} at (1, 1). | 6 | 0 |  | f_{x} = 3x^{2}y^{2}, then f_{xy} = 6x^{2}y = 6 at (1, 1).
 M1#maths-u08-01-q2@1: What is ∂/∂x of x^{2}y + y^{3}? | 2xy | x^{2} + 3y^{2} | 2x + 3y^{2} | 2xy + 3y^{2} | x^{2}y | Treat y as a constant: the y^{3} term vanishes and x^{2}y gives 2xy.
 M2#maths-u08-01-q3@2: Why does xy/(x^{2} + y^{2}) have no limit at (0, 0)? | Different paths give different values: 0 on the axes, ½ on y = x | It's undefined at every point | The numerator grows faster | Both partials are infinite there | It does have a limit of 0 | A limit must be the same along every path of approach.
@@ -64,8 +64,8 @@ Q: In which direction does f decrease fastest? | −∇f.
 Q: What is the directional derivative along a level curve? | 0.
 SUM: Directional derivatives use the gradient.
 SUM: The gradient gives the steepest ascent.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
-SRC: Apostol TM, Calculus, vol 2 (2nd edn, Wiley 1969) | textbook | 1969 | https://www.wiley.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
+SRC: Apostol TM, Calculus, vol 2 (2nd edn, Wiley 1969) | secondary | 1969 | https://www.wiley.com/
 NUM1#maths-u08-02-q1@1: For f = x^{2} + y^{2} at (1, 2), find the greatest rate of increase, to 3 decimal places. | 4.472 | 0.001 |  | |∇f| = |(2, 4)| = √20 ≈ 4.472.
 M1#maths-u08-02-q2@1: ∇f = (3, 4) at a point. What is the rate of change in the direction (0, 1)? | 4 | 3 | 5 | 7 | 0 | (0, 1) is already a unit vector, and (3, 4) · (0, 1) = 4.
 M2#maths-u08-02-q3@2: ∇f = (6, 8) at P. What is the rate of change in the direction of (−8, 6)? | 0, since it's perpendicular to ∇f | 10, the length of the gradient | −10, the steepest descent | 14, the sum of components | 2, the difference of components | (6, 8) · (−8, 6) = −48 + 48 = 0: that direction runs along the level curve.
@@ -98,8 +98,8 @@ Q: What is ∇ of f = xyz? | (yz, xz, xy).
 Q: What is ∇f at a smooth local minimum? | The zero vector.
 SUM: The gradient points uphill.
 SUM: It's normal to level sets.
-SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | textbook | 2012 | https://www.macmillanlearning.com/
-SRC: Schey HM, Div, Grad, Curl, and All That (4th edn, W. W. Norton 2005) | textbook | 2005 | https://wwnorton.com/
+SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | secondary | 2012 | https://www.macmillanlearning.com/
+SRC: Schey HM, Div, Grad, Curl, and All That (4th edn, W. W. Norton 2005) | secondary | 2005 | https://wwnorton.com/
 NUM1#maths-u08-03-q1@1: Find |∇f| for f(x, y) = 3x + 4y. | 5 | 0 |  | ∇f = (3, 4) everywhere, with length √(9 + 16) = 5.
 M1#maths-u08-03-q2@1: Which vector is normal to the sphere x^{2} + y^{2} + z^{2} = 9 at (1, 2, 2)? | (2, 4, 4) | (1, −2, 2) | (2, −1, 0) | (0, 2, −2) | (1, 1, 1) | ∇(x^{2} + y^{2} + z^{2}) = (2x, 2y, 2z) = (2, 4, 4), along the radius.
 M2#maths-u08-03-q3@2: What does one step of gradient descent do? | Moves x a small step in the direction −∇f(x) | Moves x along a level curve of f | Sets x to the point where f is largest | Moves x in the direction +∇f(x) | Doubles the gradient each time | Stepping against the gradient decreases f fastest locally.
@@ -131,8 +131,8 @@ Q: What does ∬_{R} 1 dA give? | The area of R.
 Q: How do you find the average of f over R? | Divide ∬_{R} f dA by the area of R.
 SUM: Multiple integrals add over regions.
 SUM: Fubini turns them into repeated integrals.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
-SRC: Apostol TM, Calculus, vol 2 (2nd edn, Wiley 1969) | textbook | 1969 | https://www.wiley.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
+SRC: Apostol TM, Calculus, vol 2 (2nd edn, Wiley 1969) | secondary | 1969 | https://www.wiley.com/
 NUM1#maths-u08-04-q1@1: Find the average value of f(x, y) = x + y over the square 0 ≤ x, y ≤ 2. | 2 | 0 |  | ∬(x + y) dA = 8 and the area is 4, giving an average of 2.
 M1#maths-u08-04-q2@1: What does ∬_{R} ρ(x, y) dA give if ρ is a density in kg per m^{2}? | The total mass of the plate in kg | The plate's average density | The plate's area in m^{2} | The plate's centre of mass | The density's maximum value | Integrating mass per unit area over the region gives total mass.
 M2#maths-u08-04-q3@2: Why can ∬ e^{x} sin y dA over a rectangle be computed as a product of two integrals? | The integrand separates into a function of x times a function of y | Every double integral splits this way | e^{x} and sin y are both periodic | The rectangle has equal sides | It can't be split | For f = g(x)h(y) on a rectangle, ∬ f dA = (∫ g dx)(∫ h dy).
@@ -165,8 +165,8 @@ Q: What is ∫_{−∞}^{∞} e^{−x^{2}} dx? | √π.
 Q: In polar coordinates, what replaces dx dy? | r dr dθ.
 SUM: Limits come from the region.
 SUM: Polar coordinates suit circular regions.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
-SRC: Riley KF, Hobson MP, Bence SJ, Mathematical Methods for Physics and Engineering (3rd edn, Cambridge University Press 2006) | textbook | 2006 | https://www.cambridge.org/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
+SRC: Riley KF, Hobson MP, Bence SJ, Mathematical Methods for Physics and Engineering (3rd edn, Cambridge University Press 2006) | secondary | 2006 | https://www.cambridge.org/
 NUM1#maths-u08-05-q1@1: Use polar coordinates to find the area of a disc of radius 3, to 2 decimal places. | 28.27 | 0.01 |  | ∫₀^{2π}∫₀³ r dr dθ = 2π × 9/2 = 9π ≈ 28.27.
 M1#maths-u08-05-q2@1: What are the limits for ∬ over the region between y = x^{2} and y = x, integrating dy first? | x from 0 to 1, y from x^{2} to x | x from 0 to 1, y from x to x^{2} | x from −1 to 1, y from 0 to 1 | y from 0 to 1, x from x^{2} to x | x from 0 to 2, y from x^{2} to 2x | The curves meet at x = 0 and 1, and x ≥ x^{2} between them.
 M3#maths-u08-05-q3@2: Why reverse the order in ∫₀¹∫_{y}¹ e^{x^{2}} dx dy? | e^{x^{2}} has no elementary antiderivative in x, but after swapping the inner integral is in y | Reversing always makes integrals smaller | The original limits are wrong | Polar coordinates would be needed otherwise | The integral is zero either way | Swapping gives ∫₀¹ x e^{x^{2}} dx = (e − 1)/2, which is elementary.
@@ -201,8 +201,8 @@ Q: What is dV in cylindrical coordinates? | r dr dθ dz.
 Q: What range does φ cover in spherical coordinates? | 0 to π.
 SUM: Triple integrals measure solids.
 SUM: Match coordinates to the shape.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
-SRC: Boas ML, Mathematical Methods in the Physical Sciences (3rd edn, Wiley 2006) | textbook | 2006 | https://www.wiley.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
+SRC: Boas ML, Mathematical Methods in the Physical Sciences (3rd edn, Wiley 2006) | secondary | 2006 | https://www.wiley.com/
 NUM1#maths-u08-06-q1@1: Evaluate ∭ xyz dV over the unit cube [0, 1]^{3}. | 0.125 | 0.0001 |  | The integral separates: (½)(½)(½) = 1/8.
 M1#maths-u08-06-q2@1: Which coordinates suit a solid cylinder of radius 2 and height 5? | Cylindrical | Spherical | Polar in 2D only | Cartesian with no change | Elliptic | A cylinder about the z-axis is simply 0 ≤ r ≤ 2, 0 ≤ z ≤ 5.
 M2#maths-u08-06-q3@2: A solid has constant density. Where is its centre of mass if it's symmetric about the z-axis? | On the z-axis | At the origin always | At its highest point | On the x-axis | Outside the solid | Symmetry makes the x and y moments cancel, so x̄ = ȳ = 0.
@@ -236,8 +236,8 @@ Q: What is the Jacobian determinant for polar coordinates? | r.
 Q: What does det J = 0 at a point mean? | The map collapses area there and may have no local inverse.
 SUM: Jacobians measure local stretching.
 SUM: They make changes of variables work.
-SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | textbook | 2012 | https://www.macmillanlearning.com/
-SRC: Apostol TM, Mathematical Analysis (2nd edn, Addison-Wesley 1974) | textbook | 1974 | https://www.pearson.com/
+SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | secondary | 2012 | https://www.macmillanlearning.com/
+SRC: Apostol TM, Mathematical Analysis (2nd edn, Addison-Wesley 1974) | secondary | 1974 | https://www.pearson.com/
 NUM1#maths-u08-07-q1@1: Find the Jacobian determinant of x = 2u + v, y = u + 3v. | 5 | 0 |  | det [[2, 1], [1, 3]] = 6 − 1 = 5.
 M1#maths-u08-07-q2@1: What does |det J| = 3 mean for a transformation at a point? | Small areas near the point are tripled | Lengths are tripled in every direction | The map is not invertible there | Angles are tripled | The function value is 3 | The Jacobian determinant is the local area scaling factor.
 M2#maths-u08-07-q3@2: When does the inverse function theorem guarantee a local inverse? | When the Jacobian determinant is non-zero at the point | When the Jacobian is the identity matrix | When all partial derivatives are positive | When the map is linear only | When the determinant is negative | det J ≠ 0 means the linear approximation is invertible, and so is the map nearby.
@@ -269,8 +269,8 @@ Q: What is |∂(x, y)/∂(u, v)| if |∂(u, v)/∂(x, y)| = 2? | ½.
 Q: What is the area of an ellipse with semi-axes 5 and 2? | 10π.
 SUM: Change variables to simplify.
 SUM: Always include |det J|.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
-SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | textbook | 2012 | https://www.macmillanlearning.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
+SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | secondary | 2012 | https://www.macmillanlearning.com/
 NUM1#maths-u08-08-q1@1: Find the area of the ellipse x^{2}/9 + y^{2}/4 ≤ 1, to 2 decimal places. | 18.85 | 0.01 |  | πab = π × 3 × 2 = 6π ≈ 18.85.
 M1#maths-u08-08-q2@1: With u = x + y and v = x − y, what is |∂(x, y)/∂(u, v)|? | ½ | 2 | 1 | −2 | 4 | ∂(u, v)/∂(x, y) = −2, so the inverse Jacobian has absolute value ½.
 M2#maths-u08-08-q3@2: A region is bounded by xy = 1, xy = 4, y = x and y = 2x. Which substitution helps? | u = xy, v = y/x | u = x + y, v = x − y | Polar coordinates centred at the origin | u = x^{2}, v = y^{2} | Spherical coordinates | Each boundary becomes a constant: u from 1 to 4 and v from 1 to 2.
@@ -303,8 +303,8 @@ Q: What is div(curl F) for any smooth F? | 0.
 Q: What kind of object is ∇ · F? | A scalar field.
 SUM: Vector calculus studies fields with three operators.
 SUM: Integral theorems connect regions and boundaries.
-SRC: Schey HM, Div, Grad, Curl, and All That (4th edn, W. W. Norton 2005) | textbook | 2005 | https://wwnorton.com/
-SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | textbook | 2023 | https://www.cambridge.org/
+SRC: Schey HM, Div, Grad, Curl, and All That (4th edn, W. W. Norton 2005) | secondary | 2005 | https://wwnorton.com/
+SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | secondary | 2023 | https://www.cambridge.org/
 NUM1#maths-u08-09-q1@1: For F = (x^{2}, y^{2}, z^{2}), find ∇ · F at (1, 1, 1). | 6 | 0 |  | ∇ · F = 2x + 2y + 2z = 6 at (1, 1, 1).
 M1#maths-u08-09-q2@1: Which operator takes a scalar field to a vector field? | The gradient | The divergence | The Laplacian | The line integral | The determinant | The gradient ∇f turns a scalar field into a vector field, one vector at each point.
 M3#maths-u08-09-q3@2: Why must a gradient field be irrotational? | curl(∇f) = 0 because mixed partial derivatives are equal | Gradients are always constant | All vector fields are irrotational | Gradients have zero divergence | Gradient fields can't be differentiated | Each curl component is a difference of equal mixed partials, like f_{xy} − f_{yx}.
@@ -338,8 +338,8 @@ Q: What is the divergence of F = (−y, x, 0)? | 0.
 Q: What does ∇ · B = 0 tell us physically? | There are no magnetic monopoles.
 SUM: Divergence measures spreading.
 SUM: Zero divergence means no sources.
-SRC: Schey HM, Div, Grad, Curl, and All That (4th edn, W. W. Norton 2005) | textbook | 2005 | https://wwnorton.com/
-SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | textbook | 2023 | https://www.cambridge.org/
+SRC: Schey HM, Div, Grad, Curl, and All That (4th edn, W. W. Norton 2005) | secondary | 2005 | https://wwnorton.com/
+SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | secondary | 2023 | https://www.cambridge.org/
 NUM1#maths-u08-10-q1@1: Find ∇ · F for F = (3x, −2y, 5z). | 6 | 0 |  | 3 − 2 + 5 = 6.
 M1#maths-u08-10-q2@1: A flow has negative divergence at a point. What is happening there? | Fluid is converging: the point acts as a sink | Fluid is spreading out from a source | The fluid is rotating without spreading | The flow is incompressible there | The velocity is zero | Negative divergence means net inflow per unit volume.
 M2#maths-u08-10-q3@2: Which field is solenoidal (divergence-free)? | (y, z, x) | (x, y, z) | (x^{2}, 0, 0) | (x, 0, 0) | (0, y^{2}, 0) | Each component is independent of its own variable: ∂y/∂x + ∂z/∂y + ∂x/∂z = 0 + 0 + 0.
@@ -372,8 +372,8 @@ Q: What is the curl of a gradient field? | Zero.
 Q: What does curl of fluid velocity measure? | Vorticity: the local spinning of the fluid.
 SUM: Curl measures rotation.
 SUM: Zero curl signals a potential.
-SRC: Schey HM, Div, Grad, Curl, and All That (4th edn, W. W. Norton 2005) | textbook | 2005 | https://wwnorton.com/
-SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | textbook | 2012 | https://www.macmillanlearning.com/
+SRC: Schey HM, Div, Grad, Curl, and All That (4th edn, W. W. Norton 2005) | secondary | 2005 | https://wwnorton.com/
+SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | secondary | 2012 | https://www.macmillanlearning.com/
 NUM1#maths-u08-11-q1@1: For F = (y^{2}, x^{2}, 0), find the k-component of curl F at (1, 2). | -2 | 0 |  | ∂Q/∂x − ∂P/∂y = 2x − 2y = 2 − 4 = −2.
 M1#maths-u08-11-q2@1: Which field is irrotational? | (2x, 2y, 2z) | (−y, x, 0) | (y, 0, 0) | (0, x, 0) | (z, 0, −x) | (2x, 2y, 2z) = ∇(x^{2} + y^{2} + z^{2}), and gradients have zero curl.
 M2#maths-u08-11-q3@2: The shear flow v = (y, 0, 0) has straight streamlines. What is its curl? | (0, 0, −1), so it still rotates small paddles | (0, 0, 0), because the lines are straight | (1, 0, 0), along the flow | (0, 1, 0), across the flow | (0, 0, 1), anticlockwise | ∂Q/∂x − ∂P/∂y = 0 − 1 = −1: faster flow on one side spins a paddle wheel.
@@ -406,8 +406,8 @@ Q: Is f = xy harmonic? | Yes: f_{xx} + f_{yy} = 0 + 0 = 0.
 Q: Which equation is ∇^{2}φ = 0? | Laplace's equation.
 SUM: The Laplacian compares a value with its neighbours.
 SUM: It underlies the classical PDEs.
-SRC: Evans LC, Partial Differential Equations (2nd edn, American Mathematical Society 2010) | textbook | 2010 | https://bookstore.ams.org/
-SRC: Riley KF, Hobson MP, Bence SJ, Mathematical Methods for Physics and Engineering (3rd edn, Cambridge University Press 2006) | textbook | 2006 | https://www.cambridge.org/
+SRC: Evans LC, Partial Differential Equations (2nd edn, American Mathematical Society 2010) | secondary | 2010 | https://bookstore.ams.org/
+SRC: Riley KF, Hobson MP, Bence SJ, Mathematical Methods for Physics and Engineering (3rd edn, Cambridge University Press 2006) | secondary | 2006 | https://www.cambridge.org/
 NUM1#maths-u08-12-q1@1: Find ∇^{2}(x^{3} + y^{3}) at (1, 1). | 12 | 0 |  | ∇^{2} = 6x + 6y = 12 at (1, 1).
 M1#maths-u08-12-q2@1: Which function is harmonic in the plane? | e^{x} cos y | x^{2} + y^{2} | x^{3} | e^{x} e^{y} | sin x sin y | f_{xx} = e^{x} cos y and f_{yy} = −e^{x} cos y sum to 0.
 M3#maths-u08-12-q3@2: Why can't a non-constant harmonic function have a maximum inside its domain? | Its value equals the average over any small sphere, so it can't exceed all nearby values | Harmonic functions are always linear | Their gradient is never zero | They're unbounded | It can have one | The mean value property rules out strict interior maxima (the maximum principle).
@@ -441,8 +441,8 @@ Q: What is ∮ ∇φ · dr around any closed curve? | 0.
 Q: What happens to ∫_{C} F · dr if C is reversed? | It changes sign.
 SUM: Line integrals add along curves.
 SUM: Potentials make them path-independent.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
-SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | textbook | 2012 | https://www.macmillanlearning.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
+SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | secondary | 2012 | https://www.macmillanlearning.com/
 NUM1#maths-u08-13-q1@1: F = (2x, 2y) is conservative. Find the work done moving from (0, 0) to (3, 4). | 25 | 0 |  | φ = x^{2} + y^{2}, so the work is 25 − 0 = 25.
 M1#maths-u08-13-q2@1: Which quantity is a line integral of a vector field? | The work done by a force along a path | The area enclosed by a curve | The volume under a surface | The flux through a surface | The length of a vector | Work is the line integral ∫ F · dr of the force along the path taken.
 M2#maths-u08-13-q3@2: Why does the work done by gravity on a closed loop equal zero? | Gravity is conservative, so loop integrals of its field vanish | Gravity is zero on average | The path has zero length | Work is always zero | Gravity acts only vertically | A gradient field gives φ(end) − φ(start), which is 0 when they coincide.
@@ -475,8 +475,8 @@ Q: What is dS on a sphere of radius R? | R^{2} sin φ dφ dθ.
 Q: What does a flux integral measure? | The rate a field flows through a surface.
 SUM: Surface integrals add over curved surfaces.
 SUM: Flux measures flow through them.
-SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | textbook | 2012 | https://www.macmillanlearning.com/
-SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | textbook | 2023 | https://www.cambridge.org/
+SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | secondary | 2012 | https://www.macmillanlearning.com/
+SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | secondary | 2023 | https://www.cambridge.org/
 NUM1#maths-u08-14-q1@1: Find the upward flux of F = (0, 0, 3) through the square 0 ≤ x, y ≤ 2 in the plane z = 0. | 12 | 0 |  | F · k = 3 over an area of 4, giving 12.
 M1#maths-u08-14-q2@1: What is the flux of F = (1, 0, 0) through the square 0 ≤ y, z ≤ 1 in the plane z = 0, with normal k? | 0, because F runs parallel to the surface | 1, the square's area | −1, flowing backwards | 2, counting both sides | π, a circle's area | F · k = 0: the field skims along the plane without crossing it.
 M2#maths-u08-14-q3@2: For the graph z = g(x, y), what is dS? | √(1 + g_{x}^{2} + g_{y}^{2}) dx dy | (1 + g_{x} + g_{y}) dx dy | g_{x}g_{y} dx dy | √(g_{x}^{2} + g_{y}^{2}) dx dy | dx dy only | The cross product of (1, 0, g_{x}) and (0, 1, g_{y}) has that length.
@@ -509,8 +509,8 @@ Q: How do you find the total charge in a region? | Integrate the charge density 
 Q: Which theorem turns a volume integral of a divergence into a surface integral? | The divergence theorem.
 SUM: Volume integrals total quantities in solids.
 SUM: They balance boundary fluxes.
-SRC: Riley KF, Hobson MP, Bence SJ, Mathematical Methods for Physics and Engineering (3rd edn, Cambridge University Press 2006) | textbook | 2006 | https://www.cambridge.org/
-SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | textbook | 2023 | https://www.cambridge.org/
+SRC: Riley KF, Hobson MP, Bence SJ, Mathematical Methods for Physics and Engineering (3rd edn, Cambridge University Press 2006) | secondary | 2006 | https://www.cambridge.org/
+SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | secondary | 2023 | https://www.cambridge.org/
 NUM1#maths-u08-15-q1@1: A ball of radius 1 has constant density 3. Find its mass, to 2 decimal places. | 12.57 | 0.01 |  | Mass = 3 × 4π/3 = 4π ≈ 12.57.
 M1#maths-u08-15-q2@1: What does ∭_{V} ρ dV give if ρ is charge density? | The total charge in V | The electric field in V | The charge density at the centre | The voltage across V | The surface area of V | Integrating charge per unit volume gives total charge.
 M2#maths-u08-15-q3@2: Fluid mass inside a fixed region is decreasing. What does conservation of mass imply about the boundary? | There's a net outward flux of mass through it | There's a net inward flux through it | The fluid's density must be constant | The boundary's area is shrinking | Nothing about the boundary | The rate of change of ∭ρ dV equals minus the outward flux of ρv.
@@ -543,8 +543,8 @@ Q: Give a line integral formula for area. | ½∮ (x dy − y dx).
 Q: Which orientation does Green's theorem use for the outer boundary? | Anticlockwise (region on the left).
 SUM: Green's theorem links boundary and region.
 SUM: It turns circulation into area integrals.
-SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.co.uk/
-SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | textbook | 2012 | https://www.macmillanlearning.com/
+SRC: Stewart J, Clegg D, Watson S, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.co.uk/
+SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | secondary | 2012 | https://www.macmillanlearning.com/
 NUM1#maths-u08-16-q1@1: Use Green's theorem to find ∮ (−y dx + x dy) anticlockwise around the square [0, 1]^{2}. | 2 | 0 |  | The integrand of the double integral is 2, over area 1.
 M1#maths-u08-16-q2@1: By Green's theorem, ∮ (x^{2} dx + y^{2} dy) around any simple closed curve equals what? | 0, since ∂Q/∂x − ∂P/∂y = 0 | The enclosed area | Twice the enclosed area | The curve's length | It depends on the curve | Q_{x} = 0 and P_{y} = 0, so the double integral vanishes.
 M2#maths-u08-16-q3@2: How does a planimeter find the area of a shape? | By tracing the boundary, computing a line integral equal to the area | By counting grid squares inside | By weighing a cut-out shape | By measuring the longest diameter | By using the shape's perimeter squared | Green's theorem turns the area integral into a boundary integral the instrument accumulates.
@@ -577,8 +577,8 @@ Q: What is the flux of ∇ × F through a closed surface? | 0.
 Q: Which law of electromagnetism uses Stokes' theorem with changing magnetic flux? | Faraday's law.
 SUM: Stokes links circulation and curl.
 SUM: Any bounding surface works.
-SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | textbook | 2012 | https://www.macmillanlearning.com/
-SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | textbook | 2023 | https://www.cambridge.org/
+SRC: Marsden JE, Tromba AJ, Vector Calculus (6th edn, W. H. Freeman 2012) | secondary | 2012 | https://www.macmillanlearning.com/
+SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | secondary | 2023 | https://www.cambridge.org/
 NUM1#maths-u08-17-q1@1: For F = (−y, x, 0), find ∮ F · dr anticlockwise around the circle of radius 2 in the xy-plane, to 2 decimal places. | 25.13 | 0.01 |  | Flux of curl (0, 0, 2) through the disc: 2 × 4π = 8π ≈ 25.13.
 M1#maths-u08-17-q2@1: Two surfaces share the same boundary curve. What does Stokes' theorem say about the flux of curl F through them? | It's the same through both (with matching orientation) | It's always zero through both | The larger surface has more flux | They're negatives of each other | It depends on their areas | Both equal the same line integral around the shared boundary.
 M3#maths-u08-17-q3@2: Why is the flux of curl F through a closed sphere zero? | A closed surface has no boundary curve to integrate around | Curl fields are always zero | Spheres have no normal vector | The divergence is non-zero | It isn't zero | Splitting the sphere into two hemispheres gives equal and opposite boundary integrals (equivalently, div curl = 0).
@@ -611,8 +611,8 @@ Q: What is the flux of F = (x, y, z) through the boundary of the unit cube? | 3 
 Q: What physical law is the divergence theorem applied to electric fields? | Gauss's law.
 SUM: Flux out equals sources in.
 SUM: It underpins conservation laws.
-SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | textbook | 2023 | https://www.cambridge.org/
-SRC: Schey HM, Div, Grad, Curl, and All That (4th edn, W. W. Norton 2005) | textbook | 2005 | https://wwnorton.com/
+SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | secondary | 2023 | https://www.cambridge.org/
+SRC: Schey HM, Div, Grad, Curl, and All That (4th edn, W. W. Norton 2005) | secondary | 2005 | https://wwnorton.com/
 NUM1#maths-u08-18-q1@1: Find the outward flux of F = (2x, 0, 0) through the boundary of the box [0, 1] × [0, 2] × [0, 3]. | 12 | 0 |  | ∇ · F = 2 and the volume is 6, so the flux is 12.
 M1#maths-u08-18-q2@1: What does the divergence theorem require of the surface? | It must be closed, with an outward normal | It must be flat | It must be a sphere | It must have a boundary curve | It must be infinite | The theorem relates a closed surface to the volume it encloses.
 M2#maths-u08-18-q3@2: The flux of a field through every closed surface is zero. What can you conclude? | Its divergence is zero everywhere | Its curl is zero everywhere | The field is zero everywhere | The field is conservative | Nothing at all | Shrinking surfaces around any point shows the divergence there must vanish.
@@ -647,7 +647,7 @@ Q: What are the least squares normal equations? | XᵀXβ = Xᵀy.
 SUM: Matrix calculus differentiates in many dimensions.
 SUM: It yields the normal equations.
 SRC: Petersen KB, Pedersen MS, The Matrix Cookbook (Technical University of Denmark 2012) | guidance | 2012 | https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf
-SRC: Magnus JR, Neudecker H, Matrix Differential Calculus with Applications in Statistics and Econometrics (3rd edn, Wiley 2019) | textbook | 2019 | https://www.wiley.com/
+SRC: Magnus JR, Neudecker H, Matrix Differential Calculus with Applications in Statistics and Econometrics (3rd edn, Wiley 2019) | secondary | 2019 | https://www.wiley.com/
 NUM1#maths-u08-19-q1@1: For f(x) = x₁^{2} + 3x₁x₂, find ∂f/∂x₁ at (1, 1). | 5 | 0 |  | ∂f/∂x₁ = 2x₁ + 3x₂ = 2 + 3 = 5.
 M1#maths-u08-19-q2@1: What is ∇_{x}(xᵀAx) for a symmetric matrix A? | 2Ax | Ax | xᵀA | Aᵀx + 1 | 2xᵀ | In general ∇(xᵀAx) = (A + Aᵀ)x, which equals 2Ax when A is symmetric.
 M2#maths-u08-19-q3@2: Why do automatic differentiation libraries matter for machine learning? | They compute gradients of losses with many parameters efficiently and exactly | They avoid needing any gradients | They solve the normal equations symbolically | They compute only numerical estimates by finite differences | They replace matrix calculus with guesswork | Reverse-mode differentiation (backpropagation) gets the whole gradient in about the cost of one function evaluation.
@@ -681,8 +681,8 @@ Q: What is δ_{ii} in three dimensions? | 3.
 Q: What does the metric tensor determine? | Lengths and angles (the geometry of the space).
 SUM: Tensors carry many-indexed quantities.
 SUM: The metric encodes geometry.
-SRC: Schutz B, A First Course in General Relativity (3rd edn, Cambridge University Press 2022) | textbook | 2022 | https://www.cambridge.org/
-SRC: Riley KF, Hobson MP, Bence SJ, Mathematical Methods for Physics and Engineering (3rd edn, Cambridge University Press 2006) | textbook | 2006 | https://www.cambridge.org/
+SRC: Schutz B, A First Course in General Relativity (3rd edn, Cambridge University Press 2022) | secondary | 2022 | https://www.cambridge.org/
+SRC: Riley KF, Hobson MP, Bence SJ, Mathematical Methods for Physics and Engineering (3rd edn, Cambridge University Press 2006) | secondary | 2006 | https://www.cambridge.org/
 NUM1#maths-u08-20-q1@1: In four-dimensional spacetime, what is δ_{ii} (summed)? | 4 | 0 |  | Each of the four diagonal entries is 1, summing to 4.
 M1#maths-u08-20-q2@1: In index notation, what does a_{i}b_{i} represent? | The dot product a · b | The cross product a × b | The matrix ab^{T} | A single component a₁b₁ only | The sum a + b | The repeated index i is summed: Σ a_{i}b_{i}.
 M2#maths-u08-20-q3@2: Why are Christoffel symbols needed in curved coordinates? | Basis vectors change from point to point, so derivatives must correct for that | They replace the metric tensor entirely | They make all derivatives zero | Coordinates in flat space never need them | They convert vectors into scalars | Covariant derivatives add Christoffel terms so the result transforms as a tensor.
@@ -716,8 +716,8 @@ Q: What curve solves the brachistochrone problem? | A cycloid.
 Q: What does Hamilton's principle make stationary? | The action, ∫ (T − V) dt.
 SUM: Variational problems optimise functionals.
 SUM: Euler–Lagrange finds the extremals.
-SRC: Gelfand IM, Fomin SV, Calculus of Variations (Dover 2000, from the 1963 edn) | textbook | 2000 | https://store.doverpublications.com/
-SRC: Goldstein H, Poole C, Safko J, Classical Mechanics (3rd edn, Addison-Wesley 2002) | textbook | 2002 | https://www.pearson.com/
+SRC: Gelfand IM, Fomin SV, Calculus of Variations (Dover 2000, from the 1963 edn) | secondary | 2000 | https://store.doverpublications.com/
+SRC: Goldstein H, Poole C, Safko J, Classical Mechanics (3rd edn, Addison-Wesley 2002) | secondary | 2002 | https://www.pearson.com/
 NUM1#maths-u08-21-q1@1: For L = y′^{2} + 4y, the Euler–Lagrange equation gives y″ = c. Find c. | 2 | 0 |  | ∂L/∂y = 4 and d/dx(2y′) = 2y″, so 4 − 2y″ = 0 and y″ = 2.
 M1#maths-u08-21-q2@1: For L = y′^{2} − y^{2}, what does the Euler–Lagrange equation give? | y″ = −y | y″ = y | y′ = y | y″ = 0 | y = 0 only | ∂L/∂y = −2y and d/dx(2y′) = 2y″, so −2y − 2y″ = 0.
 M2#maths-u08-21-q3@2: Which principle gives Snell's law of refraction? | Fermat's principle of least time | The principle of least distance | Conservation of momentum | The isoperimetric inequality | Newton's third law | Light takes the path of stationary travel time, giving sin θ₁/v₁ = sin θ₂/v₂.
@@ -750,8 +750,8 @@ Q: What is Γ(3/2)? | √π/2.
 Q: Why are fractional derivatives said to have memory? | They depend on the function's values over the whole interval, not just near the point.
 SUM: Fractional calculus generalises order.
 SUM: Its operators remember the past.
-SRC: Podlubny I, Fractional Differential Equations (Academic Press 1999) | textbook | 1999 | https://www.sciencedirect.com/
-SRC: Oldham KB, Spanier J, The Fractional Calculus (Academic Press 1974) | textbook | 1974 | https://store.doverpublications.com/
+SRC: Podlubny I, Fractional Differential Equations (Academic Press 1999) | secondary | 1999 | https://www.sciencedirect.com/
+SRC: Oldham KB, Spanier J, The Fractional Calculus (Academic Press 1974) | secondary | 1974 | https://store.doverpublications.com/
 NUM1#maths-u08-22-q1@1: Find Γ(3/2) to 4 decimal places. | 0.8862 | 0.0001 |  | Γ(3/2) = ½Γ(½) = √π/2 ≈ 0.8862.
 M1#maths-u08-22-q2@1: What is D^{½} applied twice to a suitable function f? | The first derivative f′ | The second derivative f″ | f itself | The integral of f | Zero | Two half-derivatives compose to an ordinary first derivative.
 M3#maths-u08-22-q3@2: Why are fractional derivatives used to model viscoelastic materials? | Their memory captures behaviour between a pure spring and a pure fluid damper | They're simpler than ordinary derivatives | They remove the need for any data | Viscoelastic materials are always fractals | They make every equation linear | Stress depends on the whole strain history, which non-local operators represent naturally.

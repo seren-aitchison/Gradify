@@ -89,7 +89,9 @@ test("a lesson edited after its binding was checked is flagged for re-confirmati
 test("coverage tells covered, partial, above-level, gaps and pathways no course offers apart", () => {
   const status = (spec) => Object.fromEntries(coverage(KB, spec, lessons).outcomes.map((o) => [o.outcome.id, o.status]));
   // A level: SciGradify Biology teaches all four at post-16; the required practical has no lesson
-  assert.deepEqual(status("aqa-7402"), { "3.2.3-membrane": "covered", "3.2.3-diffusion": "covered", "3.2.3-osmosis": "covered", "3.2.3-active": "covered", "rp-water-potential": "gap" });
+  const a = status("aqa-7402");
+  for (const o of ["3.2.3-membrane", "3.2.3-diffusion", "3.2.3-osmosis", "3.2.3-active"]) assert.equal(a[o], "covered", o);
+  assert.equal(a["rp-water-potential"], "gap");
   // GCSE Biology via SciGradify Biology: taught, but pitched at A level
   assert.equal(status("aqa-8461")["4.1.3.2"], "above-level");
   // GCSE Combined Science via GCSE Core: diffusion applied at the alveoli only, and no osmosis or active transport lesson

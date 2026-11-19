@@ -31,6 +31,9 @@ export const CONCEPT_TYPES = ["process", "structure", "principle", "quantity", "
 export const ROLES = ["teaches", "applies", "mentions"];
 // The strength of a mapping claim, as in kit/curriculum/coverage.js.
 export const CLAIMS = ["verified", "mapped", "aligned"];
+// How well a lesson meets a specification outcome in a direct mapping (mappings/coverage/): "covers" it at the
+// outcome's level, or "partial" (some of it, or at another depth).
+export const FITS = ["covers", "partial"];
 
 // BIO-CELL-OSMOSIS-001: subject, domain, name, serial. Permanent: never reuse or rename an id; retire it instead.
 export const CONCEPT_ID = /^[A-Z]{2,5}-[A-Z0-9]{2,12}-[A-Z0-9-]{2,40}-\d{3}$/;
@@ -98,7 +101,11 @@ export function checkSpec(s) {
   for (const f of ["id", "body", "title", "system", "version", "url", "wording"]) if (!isStr(s[f])) p.push(`${w}: needs ${f}`);
   if (!["verbatim", "paraphrased"].includes(s.wording)) p.push(`${w}: wording must be "verbatim" or "paraphrased"`);
   if (!BANDS.includes(s.band)) p.push(`${w}: unknown band "${s.band}"`);
-  // a specification's references and wording are "checked" only against the published document, by someone, on a date
+  // two separate stages: `extracted` means the references and titles were taken by machine from the published
+  // document, recorded with its URL, date and SHA-256 (source verified, automatically); `checked` means a named person
+  // has checked them against it. Neither implies the other.
+  if (s.extracted && !(/^https:\/\//.test(s.extracted.from || "") && isDate(s.extracted.on) && /^[a-f0-9]{64}$/.test(s.extracted.sha256 || ""))) p.push(`${w}: extracted needs from (https URL of the document), on (date) and sha256 (of the file)`);
+  if (s.extracted && s.wording !== "verbatim" && s.outcomes?.some((o) => o.quote)) p.push(`${w}: outcome quotes need wording "verbatim"`);
   if (s.checked && !(isDate(s.checked.on) && isStr(s.checked.by))) p.push(`${w}: checked needs on and by`);
   const refs = new Set();
   for (const o of s.outcomes || []) {

@@ -32,8 +32,8 @@ Q: How do you turn a maximisation into a minimisation? | Minimise the negative o
 Q: What guarantees that a continuous function has a minimum on a set? | The set being non-empty and compact (Weierstrass).
 SUM: Optimisation picks the best feasible choice.
 SUM: Problem class guides the method.
-SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | textbook | 2004 | https://web.stanford.edu/~boyd/cvxbook/
-SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | textbook | 2006 | https://link.springer.com/
+SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | secondary | 2004 | https://web.stanford.edu/~boyd/cvxbook/
+SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | secondary | 2006 | https://link.springer.com/
 NUM1#maths-u18-01-q1@1: With 60 m of fencing and a wall on one side, what is the maximum rectangular area in m^{2}? | 450 | 0 | m^{2} | 2x + y = 60 gives A = x(60 − 2x), maximised at x = 15, y = 30, so A = 450 m^{2}.
 M1#maths-u18-01-q2@1: Which part of an optimisation problem describes the choices being made? | The decision variables | The objective function value | The optimal value only | The sensitivity report | The feasible region's boundary | Decision variables are the unknowns we set; the objective and constraints are written in terms of them.
 M2#maths-u18-01-q3@2: What does it mean if an optimisation problem is unbounded? | The objective can be improved without limit over the feasible set | No point satisfies all of the constraints | The optimum lies exactly on a boundary | Every feasible point gives the same value | The constraints are all nonlinear ones | Unbounded means feasible points exist but the objective has no finite best value.
@@ -71,8 +71,8 @@ Q: What does a negative-definite Hessian at a stationary point indicate? | A loc
 Q: What are the normal equations for least squares? | AᵀAx = Aᵀb.
 SUM: Gradients find candidates.
 SUM: Hessians classify them.
-SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | textbook | 2006 | https://link.springer.com/
-SRC: Luenberger DG, Ye Y, Linear and Nonlinear Programming (4th edn, Springer 2016) | textbook | 2016 | https://link.springer.com/
+SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | secondary | 2006 | https://link.springer.com/
+SRC: Luenberger DG, Ye Y, Linear and Nonlinear Programming (4th edn, Springer 2016) | secondary | 2016 | https://link.springer.com/
 NUM1#maths-u18-02-q1@1: Find the minimum value of f(x) = x^{2} − 6x + 11. | 2 | 0 |  | f′(x) = 2x − 6 = 0 at x = 3, and f(3) = 9 − 18 + 11 = 2; f″ = 2 > 0 confirms a minimum.
 M1#maths-u18-02-q2@1: For f(x, y) = x^{2} − y^{2}, what kind of point is the origin? | A saddle point, with D = −4 < 0 | A strict local minimum of f | A strict local maximum of f | A global minimum of the function | Not a stationary point at all | The Hessian diag(2, −2) has eigenvalues of both signs, so f rises one way and falls the other.
 M2#maths-u18-02-q3@2: Why is a stationary point of a convex function a global minimum? | Convexity puts the graph above every tangent plane, so the flat tangent at that point lies below all values | Convex functions have no stationary points, so the question never arises in practice | Convex functions are always linear, so every point has the same objective value | Every stationary point of a convex function is a maximum, never a minimum | It is only a local minimum; convexity says nothing about other regions | f(y) ≥ f(x) + ∇f(x)ᵀ(y − x) = f(x) when ∇f(x) = 0.
@@ -109,8 +109,8 @@ Q: What is an active constraint? | One that holds with equality at the point.
 Q: What does a penalty method do? | Adds a cost for violating constraints to the objective.
 SUM: Constraints define the feasible set.
 SUM: Optima often sit on the boundary.
-SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | textbook | 2006 | https://link.springer.com/
-SRC: Bertsekas DP, Nonlinear Programming (3rd edn, Athena Scientific 2016) | textbook | 2016 | http://www.athenasc.com/
+SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | secondary | 2006 | https://link.springer.com/
+SRC: Bertsekas DP, Nonlinear Programming (3rd edn, Athena Scientific 2016) | secondary | 2016 | http://www.athenasc.com/
 NUM1#maths-u18-03-q1@1: Minimise f(x) = (x − 5)^{2} subject to 1 ≤ x ≤ 3. What is the minimum value? | 4 | 0 |  | The unconstrained minimiser 5 is infeasible; f decreases on [1, 3], so the minimum is f(3) = 4.
 M1#maths-u18-03-q2@1: Where must the minimum of a linear function over a bounded polygon occur? | At a vertex of the polygon (possibly along a whole edge) | At the centroid of the polygon | Strictly inside the polygon | At the midpoint of the longest edge | Wherever the gradient equals zero | A linear objective improves steadily in one direction, so the best point is a corner.
 M3#maths-u18-03-q3@2: Why can the gradient of the objective be non-zero at a constrained minimum? | Moving in the downhill direction would leave the feasible set, so the constraint blocks further improvement | Gradients are always zero at minima, so a non-zero gradient means a mistake | Constraints make the objective constant near the boundary of the feasible set | The gradient is undefined on boundaries, so its value there is arbitrary | It must be zero: every constrained minimum is also an unconstrained one | At a boundary optimum, −∇f points out of the feasible region.
@@ -145,8 +145,8 @@ Q: What is the geometric meaning of the Lagrange condition? | ∇f is parallel t
 Q: What does λ measure in economics? | The marginal value of the constrained resource.
 SUM: Multipliers handle equality constraints.
 SUM: They are shadow prices.
-SRC: Bertsekas DP, Nonlinear Programming (3rd edn, Athena Scientific 2016) | textbook | 2016 | http://www.athenasc.com/
-SRC: Stewart J, Calculus: Early Transcendentals (9th edn, Cengage 2020) | textbook | 2020 | https://www.cengage.com/
+SRC: Bertsekas DP, Nonlinear Programming (3rd edn, Athena Scientific 2016) | secondary | 2016 | http://www.athenasc.com/
+SRC: Stewart J, Calculus: Early Transcendentals (9th edn, Cengage 2020) | secondary | 2020 | https://www.cengage.com/
 NUM1#maths-u18-04-q1@1: Maximise xy subject to x + y = 16. What is the maximum value? | 64 | 0 |  | The Lagrange conditions give x = y = 8, so the maximum is 8 × 8 = 64.
 M1#maths-u18-04-q2@1: What condition holds at the optimum of f subject to h(x) = 0? | ∇f(x) = −λ∇h(x) for some multiplier λ | ∇f(x) = 0 and ∇h(x) = 0 together | f(x) = h(x) at the optimal point | ∇f is perpendicular to ∇h there | λ must equal zero at the optimum | The objective's gradient must lie along the constraint's normal, so no feasible move improves f.
 M2#maths-u18-04-q3@2: If the optimal cost is 200 and the budget constraint's multiplier is 3, roughly what happens if the budget rises by 1 unit? | The optimal objective changes by about 3 | The optimal objective changes by about 200 | The optimum stays exactly the same | The problem becomes infeasible | The multiplier becomes zero | The multiplier is the derivative of the optimal value with respect to the constraint level.
@@ -181,8 +181,8 @@ Q: What does complementary slackness say? | Each multiplier is zero unless its c
 Q: Are the KKT conditions sufficient for convex problems? | Yes.
 SUM: KKT handles inequalities.
 SUM: Complementary slackness picks the active set.
-SRC: Kuhn HW, Tucker AW, Nonlinear programming, Proceedings of the Second Berkeley Symposium, 481 | journal | 1951 | https://projecteuclid.org/
-SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | textbook | 2004 | https://web.stanford.edu/~boyd/cvxbook/
+SRC: Kuhn HW, Tucker AW, Nonlinear programming, Proceedings of the Second Berkeley Symposium, 481 | primary | 1951 | https://projecteuclid.org/
+SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | secondary | 2004 | https://web.stanford.edu/~boyd/cvxbook/
 NUM1#maths-u18-05-q1@1: Minimise x^{2} subject to x ≥ 3. What is the KKT multiplier μ at the optimum? | 6 | 0 |  | The constraint is active at x = 3, and stationarity 2x − μ = 0 gives μ = 6 ≥ 0.
 M1#maths-u18-05-q2@1: Which condition is part of the KKT conditions but not the Lagrange conditions? | Complementary slackness μᵢgᵢ(x) = 0 | Stationarity of the Lagrangian in x | Feasibility of the equality constraints | Differentiability of the objective | Continuity of the constraint functions | Complementary slackness and sign conditions are what inequality constraints add.
 M3#maths-u18-05-q3@2: Why must the multiplier of an inactive constraint be zero? | An inactive constraint has slack, so small moves don't touch it and it can't influence the optimum | Inactive constraints are always violated, so their multiplier is set to zero | The multiplier of an inactive constraint would otherwise become infinite | Inactive constraints are really equality constraints in disguise | It needn't be zero: inactive constraints usually have the largest multipliers | Removing a slack constraint leaves the local solution unchanged, so its shadow price is zero.
@@ -217,8 +217,8 @@ Q: Is the maximum of two convex functions convex? | Yes.
 Q: What does weak duality state? | The dual optimum is a lower bound on the primal optimum.
 SUM: Convexity makes optimisation tractable.
 SUM: Duality gives bounds and certificates.
-SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | textbook | 2004 | https://web.stanford.edu/~boyd/cvxbook/
-SRC: Rockafellar RT, Convex Analysis (Princeton University Press 1970) | textbook | 1970 | https://press.princeton.edu/
+SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | secondary | 2004 | https://web.stanford.edu/~boyd/cvxbook/
+SRC: Rockafellar RT, Convex Analysis (Princeton University Press 1970) | secondary | 1970 | https://press.princeton.edu/
 NUM1#maths-u18-06-q1@1: A minimisation problem has primal optimum 10 and dual optimum 7. What is the duality gap? | 3 | 0 |  | The duality gap is primal minus dual, 10 − 7 = 3; strong duality would make it zero.
 M1#maths-u18-06-q2@1: Which function is convex on ℝ? | f(x) = eˣ | f(x) = sin x | f(x) = −x^{2} | f(x) = x^{3} | f(x) = log x | eˣ has second derivative eˣ > 0 everywhere, so it is convex.
 M2#maths-u18-06-q3@2: What does Slater's condition guarantee for a convex problem? | Strong duality: the primal and dual optimal values are equal | That the problem has integer solutions | That every point is optimal | That the dual is unbounded | That the objective is linear | A strictly feasible point closes the duality gap for convex problems.
@@ -256,8 +256,8 @@ Q: Are general nonconvex quadratic programs easy? | No: they are NP-hard.
 Q: What is multi-start? | Running a local method from many starting points.
 SUM: Nonconvexity creates many local optima.
 SUM: Global methods and heuristics help.
-SRC: Floudas CA, Deterministic Global Optimization (Springer 2000) | textbook | 2000 | https://link.springer.com/
-SRC: Goodfellow I, Bengio Y, Courville A, Deep Learning (MIT Press 2016) | textbook | 2016 | https://www.deeplearningbook.org/
+SRC: Floudas CA, Deterministic Global Optimization (Springer 2000) | secondary | 2000 | https://link.springer.com/
+SRC: Goodfellow I, Bengio Y, Courville A, Deep Learning (MIT Press 2016) | secondary | 2016 | https://www.deeplearningbook.org/
 NUM1#maths-u18-07-q1@1: How many local minima does f(x) = x^{4} − 4x^{2} + x have? | 2 | 0 |  | f′ has three real roots: two are minima (near −1.47 and 1.35) and the middle one is a maximum.
 M1#maths-u18-07-q2@1: Why might gradient descent on a nonconvex function return a poor answer? | It converges to whichever local minimum is nearest its starting point | It always diverges on nonconvex functions, whatever the step | It can only find maxima, never minima, of nonconvex functions | It needs the function to be linear before it can take a step | It never stops moving, since the gradient is never zero | Local methods follow the slope downhill and stop at the first minimum reached.
 M2#maths-u18-07-q3@2: Which technique gives a certified global optimum for small nonconvex problems? | Spatial branch and bound with convex relaxations | A single run of gradient descent | Random sampling of one point | Simulated annealing with fast cooling | Newton's method from the origin | Relaxations give lower bounds that prune regions until the gap closes.
@@ -294,8 +294,8 @@ Q: What does SQP solve at each step? | A quadratic programming approximation.
 Q: Name a widely used interior-point NLP solver. | IPOPT.
 SUM: NLP handles smooth nonlinear models.
 SUM: SQP and interior points are the workhorses.
-SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | textbook | 2006 | https://link.springer.com/
-SRC: Wächter A, Biegler LT, On the implementation of an interior-point filter line-search algorithm for large-scale nonlinear programming, Mathematical Programming 106, 25 | journal | 2006 | https://doi.org/10.1007/s10107-004-0559-y
+SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | secondary | 2006 | https://link.springer.com/
+SRC: Wächter A, Biegler LT, On the implementation of an interior-point filter line-search algorithm for large-scale nonlinear programming, Mathematical Programming 106, 25 | primary | 2006 | https://doi.org/10.1007/s10107-004-0559-y
 NUM1#maths-u18-08-q1@1: For the penalty problem x + (ρ/2)(x − 1)^{2} with ρ = 20, what is the minimiser x? | 0.95 | 0.001 |  | x = 1 − 1/ρ = 1 − 0.05 = 0.95, which approaches the true solution 1 as ρ grows.
 M1#maths-u18-08-q2@1: Which method solves an NLP by repeatedly solving quadratic programming subproblems? | Sequential quadratic programming | The simplex algorithm on a linear model | Branch and bound on integer variables | Dynamic programming over stages | A genetic algorithm on random points | SQP applies Newton-type steps to the KKT conditions through QP approximations.
 M2#maths-u18-08-q3@2: Why are augmented Lagrangian methods preferred to pure penalty methods? | They reach feasibility with moderate penalty parameters, avoiding ill-conditioning | They need no derivatives of any kind, unlike penalty methods | They always find global optima, even for nonconvex problems | They only work for linear problems, where penalties are exact | They ignore the constraints, so the subproblems are simpler | Multiplier updates do the work that would otherwise need a huge penalty weight.
@@ -330,8 +330,8 @@ Q: When is a QP convex? | When Q is positive semidefinite.
 Q: Which machine learning model is trained by solving a QP? | The support vector machine.
 SUM: QPs combine quadratic cost with linear constraints.
 SUM: Convex QPs are efficiently solvable.
-SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | textbook | 2006 | https://link.springer.com/
-SRC: Markowitz H, Portfolio selection, Journal of Finance 7(1), 77 | journal | 1952 | https://doi.org/10.1111/j.1540-6261.1952.tb01525.x
+SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | secondary | 2006 | https://link.springer.com/
+SRC: Markowitz H, Portfolio selection, Journal of Finance 7(1), 77 | primary | 1952 | https://doi.org/10.1111/j.1540-6261.1952.tb01525.x
 NUM1#maths-u18-09-q1@1: Minimise x^{2} + y^{2} subject to x + y = 6. What is the minimum value? | 18 | 0 |  | Symmetry and the KKT conditions give x = y = 3, so the minimum is 9 + 9 = 18.
 M1#maths-u18-09-q2@1: Which QP is guaranteed to be convex? | One whose matrix Q is positive semidefinite | One whose matrix Q has a negative eigenvalue | One with more constraints than variables | One with integer-valued variables | One whose objective has no linear term | Positive semidefinite Q makes the quadratic objective convex.
 M2#maths-u18-09-q3@2: In the Markowitz portfolio QP, what does the quadratic term wᵀΣw represent? | The variance (risk) of the portfolio's return | The expected return of the portfolio | The number of assets held | The transaction costs paid | The budget constraint | Σ is the covariance matrix, so wᵀΣw is the variance of the weighted return.
@@ -366,8 +366,8 @@ Q: What is the Pareto front? | The set of best achievable trade-offs between obj
 Q: Which method can find non-convex parts of the front? | The ε-constraint method.
 SUM: Conflicting goals give trade-off curves.
 SUM: Pareto points are undominated.
-SRC: Ehrgott M, Multicriteria Optimization (2nd edn, Springer 2005) | textbook | 2005 | https://link.springer.com/
-SRC: Deb K, Pratap A, Agarwal S, Meyarivan T, A fast and elitist multiobjective genetic algorithm: NSGA-II, IEEE Transactions on Evolutionary Computation 6(2), 182 | journal | 2002 | https://doi.org/10.1109/4235.996017
+SRC: Ehrgott M, Multicriteria Optimization (2nd edn, Springer 2005) | secondary | 2005 | https://link.springer.com/
+SRC: Deb K, Pratap A, Agarwal S, Meyarivan T, A fast and elitist multiobjective genetic algorithm: NSGA-II, IEEE Transactions on Evolutionary Computation 6(2), 182 | primary | 2002 | https://doi.org/10.1109/4235.996017
 NUM1#maths-u18-10-q1@1: Of the points (1, 9), (3, 6), (4, 7), (6, 2) and (7, 3), minimising both coordinates, how many are Pareto optimal? | 3 | 0 |  | (4, 7) is dominated by (3, 6) and (7, 3) by (6, 2), leaving (1, 9), (3, 6) and (6, 2).
 M1#maths-u18-10-q2@1: What does it mean for solution x to dominate solution y? | x is no worse in every objective and strictly better in at least one | x is better in exactly one objective | x has a lower weighted sum for some weights | x and y lie on the same front | x is feasible and y isn't | Dominance requires no losses and at least one gain.
 M3#maths-u18-10-q3@2: Why can the weighted-sum method miss some Pareto-optimal points? | It only reaches points on the convex hull of the front, so points in non-convex dents are never optimal for any weights | It always returns infeasible points, which can't lie on the Pareto front at all | Its weights must be negative, so it searches in the wrong direction entirely | It doesn't miss any: weighted sums find every point on the front for some weights | It works only with one objective, so a second objective is simply ignored | Minimising a weighted sum is minimising a linear function, which favours the front's convex hull.
@@ -402,8 +402,8 @@ Q: What does SAA replace an expectation with? | An average over sampled scenario
 Q: Give step sizes satisfying the Robbins–Monro conditions. | αₖ = 1/k.
 SUM: Optimise under randomness.
 SUM: Sampling and noisy gradients do the work.
-SRC: Shapiro A, Dentcheva D, Ruszczyński A, Lectures on Stochastic Programming (3rd edn, SIAM 2021) | textbook | 2021 | https://epubs.siam.org/
-SRC: Robbins H, Monro S, A stochastic approximation method, Annals of Mathematical Statistics 22(3), 400 | journal | 1951 | https://doi.org/10.1214/aoms/1177729586
+SRC: Shapiro A, Dentcheva D, Ruszczyński A, Lectures on Stochastic Programming (3rd edn, SIAM 2021) | secondary | 2021 | https://epubs.siam.org/
+SRC: Robbins H, Monro S, A stochastic approximation method, Annals of Mathematical Statistics 22(3), 400 | primary | 1951 | https://doi.org/10.1214/aoms/1177729586
 NUM1#maths-u18-11-q1@1: In the newsvendor example (cost £3, price £5, demand 10 or 20 equally likely), what is the expected profit in £ of ordering 15? | 17.5 | 0.01 | £ | Demand 10 gives 50 − 45 = £5 and demand 20 gives 75 − 45 = £30, so the average is £17.50, still below ordering 10.
 M1#maths-u18-11-q2@1: Which step-size sequence satisfies the Robbins–Monro conditions? | αₖ = 1/k | αₖ = 1/k^{2} | αₖ = 0.1 for every k | αₖ = k | αₖ = 2^{−k} | Σ 1/k diverges while Σ 1/k^{2} converges, as the conditions require.
 M2#maths-u18-11-q3@2: What is a recourse decision in a two-stage stochastic program? | An adjustment made after the uncertain data are revealed | A decision made before any planning starts | A constraint that can never be relaxed | The expected value of the objective | A random sample of scenarios | Recourse lets the second stage react to the realised scenario.
@@ -438,8 +438,8 @@ Q: What problem class does ellipsoidal uncertainty in an LP lead to? | A second-
 Q: What is the price of robustness? | The loss in nominal objective from protecting against uncertainty.
 SUM: Robust means safe in the worst case.
 SUM: Uncertainty sets keep it tractable.
-SRC: Ben-Tal A, El Ghaoui L, Nemirovski A, Robust Optimization (Princeton University Press 2009) | textbook | 2009 | https://press.princeton.edu/
-SRC: Bertsimas D, Sim M, The price of robustness, Operations Research 52(1), 35 | journal | 2004 | https://doi.org/10.1287/opre.1030.0065
+SRC: Ben-Tal A, El Ghaoui L, Nemirovski A, Robust Optimization (Princeton University Press 2009) | secondary | 2009 | https://press.princeton.edu/
+SRC: Bertsimas D, Sim M, The price of robustness, Operations Research 52(1), 35 | primary | 2004 | https://doi.org/10.1287/opre.1030.0065
 NUM1#maths-u18-12-q1@1: With the robust constraint x₁ + 3x₂ ≤ 10 and x₁ = 4, what is the largest feasible x₂? | 2 | 0 |  | 4 + 3x₂ ≤ 10 gives x₂ ≤ 2, the most allowed so that every a in [1, 3] is safe.
 M1#maths-u18-12-q2@1: What does robust optimisation require of its solution? | Feasibility for every data value in the uncertainty set | Feasibility only for the average data | Feasibility with probability 0.5 | Optimality for one sampled scenario | Feasibility for most scenarios only | Robust counterparts impose constraints for all u ∈ U.
 M2#maths-u18-12-q3@2: When is robust optimisation preferable to stochastic programming? | When probabilities are unknown or unreliable and failures must be avoided | When probability distributions are known exactly | When there is no uncertainty at all | When the problem has no constraints | It is never preferable | Robust methods need only an uncertainty set, not a distribution.
@@ -473,8 +473,8 @@ Q: What equation does P satisfy in infinite-horizon LQR? | The algebraic Riccati
 Q: What is bang-bang control? | Switching between the extreme control values.
 SUM: Control chooses inputs over time.
 SUM: LQR gives linear feedback.
-SRC: Kirk DE, Optimal Control Theory: An Introduction (Prentice Hall 1970; Dover 2004) | textbook | 2004 | https://store.doverpublications.com/
-SRC: Bertsekas DP, Dynamic Programming and Optimal Control (4th edn, Athena Scientific 2017) | textbook | 2017 | http://www.athenasc.com/
+SRC: Kirk DE, Optimal Control Theory: An Introduction (Prentice Hall 1970; Dover 2004) | secondary | 2004 | https://store.doverpublications.com/
+SRC: Bertsekas DP, Dynamic Programming and Optimal Control (4th edn, Athena Scientific 2017) | secondary | 2017 | http://www.athenasc.com/
 NUM1#maths-u18-13-q1@1: For ẋ = u with cost ∫ (4x^{2} + u^{2}) dt, the Riccati equation gives −P^{2} + 4 = 0. What is the feedback gain K in u = −Kx? | 2 | 0 |  | P = 2 (positive root) and K = R^{−1}BP = 2, so u = −2x.
 M1#maths-u18-13-q2@1: Which equation is the continuous-time dynamic programming condition for optimal control? | The Hamilton–Jacobi–Bellman equation | The heat equation | The Navier–Stokes equation | The wave equation | Laplace's equation | HJB is a PDE for the value function, from Bellman's principle of optimality.
 M3#maths-u18-13-q3@2: Why are optimal controls with bounded inputs often bang-bang? | When the Hamiltonian is linear in u, it's optimised at an extreme of the allowed range | Controls must be discontinuous by law in engineering standards | Smooth controls are always infeasible when inputs are bounded | The cost function forbids zero control at every moment | They are never bang-bang; optimal controls are always smooth | A linear function of u on an interval is minimised at an endpoint, so the control switches between limits.
@@ -509,8 +509,8 @@ Q: Where does an LP's optimum occur, if it exists? | At a vertex of the feasible
 Q: What does weak duality say for a maximisation primal? | Every feasible primal value is at most every feasible dual value.
 SUM: LPs optimise over polyhedra.
 SUM: Duality gives bounds and prices.
-SRC: Dantzig GB, Thapa MN, Linear Programming 1: Introduction (Springer 1997) | textbook | 1997 | https://link.springer.com/
-SRC: Vanderbei RJ, Linear Programming: Foundations and Extensions (5th edn, Springer 2020) | textbook | 2020 | https://link.springer.com/
+SRC: Dantzig GB, Thapa MN, Linear Programming 1: Introduction (Springer 1997) | secondary | 1997 | https://link.springer.com/
+SRC: Vanderbei RJ, Linear Programming: Foundations and Extensions (5th edn, Springer 2020) | secondary | 2020 | https://link.springer.com/
 NUM1#maths-u18-14-q1@1: Maximise 2x + 5y subject to x + y ≤ 4, x + 3y ≤ 6, x, y ≥ 0. What is the optimal value? | 11 | 0 |  | The vertices (0, 0), (4, 0), (0, 2) and (3, 1) give 0, 8, 10 and 11, so the optimum is 11.
 M1#maths-u18-14-q2@1: What is the dual of maximise cᵀx subject to Ax ≤ b, x ≥ 0? | Minimise bᵀy subject to Aᵀy ≥ c, y ≥ 0 | Maximise bᵀy subject to Aᵀy ≤ c, y ≥ 0 | Minimise cᵀy subject to Ay ≥ b, y ≥ 0 | Maximise cᵀx subject to Ax ≥ b | Minimise bᵀx subject to x ≥ 0 only | Each primal constraint gives a dual variable and each primal variable a dual constraint.
 M2#maths-u18-14-q3@2: What does a positive dual value for a resource constraint indicate? | The resource is fully used, and one more unit would raise the optimum by about that value | The resource is unused and plentiful at the optimum | The problem has no feasible solution at all | The primal objective can grow without limit | The constraint can be deleted without any effect | Complementary slackness: positive shadow prices go with binding constraints.
@@ -545,8 +545,8 @@ Q: Who invented the simplex algorithm? | George Dantzig (1947).
 Q: Which rule prevents cycling? | Bland's rule.
 SUM: Simplex walks along vertices.
 SUM: It is fast in practice.
-SRC: Dantzig GB, Thapa MN, Linear Programming 1: Introduction (Springer 1997) | textbook | 1997 | https://link.springer.com/
-SRC: Spielman DA, Teng SH, Smoothed analysis of algorithms: why the simplex algorithm usually takes polynomial time, Journal of the ACM 51(3), 385 | journal | 2004 | https://doi.org/10.1145/990308.990310
+SRC: Dantzig GB, Thapa MN, Linear Programming 1: Introduction (Springer 1997) | secondary | 1997 | https://link.springer.com/
+SRC: Spielman DA, Teng SH, Smoothed analysis of algorithms: why the simplex algorithm usually takes polynomial time, Journal of the ACM 51(3), 385 | primary | 2004 | https://doi.org/10.1145/990308.990310
 NUM1#maths-u18-15-q1@1: In a ratio test, the right-hand sides are 12, 10 and 9 and the entering column has entries 3, 5 and −1. What is the minimum ratio? | 2 | 0 |  | Only positive entries count: 12/3 = 4 and 10/5 = 2; the minimum, 2, picks the second row to leave.
 M1#maths-u18-15-q2@1: What does the minimum ratio test choose? | The leaving variable, keeping the next vertex feasible | The entering variable with best reduced cost | The final optimal objective value | Whether the problem is infeasible | The starting vertex for Phase I | The smallest ratio is the first constraint to become tight as the entering variable grows.
 M3#maths-u18-15-q3@2: Why does the simplex method run fast in practice despite exponential worst cases? | Smoothed analysis shows small random perturbations make the expected pivot count polynomial | It always takes exactly one pivot from any starting vertex | Worst cases are impossible to construct for the simplex method | It checks every vertex of the polyhedron at once in parallel | It is polynomial in the worst case, as Dantzig proved in 1947 | Spielman and Teng proved Klee–Minty-type cases are fragile under perturbation.
@@ -581,8 +581,8 @@ Q: Who introduced the practical interior-point method in 1984? | Narendra Karmar
 Q: What happens to the barrier parameter μ? | It is reduced towards zero.
 SUM: Interior points cut through the middle.
 SUM: They are polynomial and scale well.
-SRC: Karmarkar N, A new polynomial-time algorithm for linear programming, Combinatorica 4(4), 373 | journal | 1984 | https://doi.org/10.1007/BF02579150
-SRC: Wright SJ, Primal-Dual Interior-Point Methods (SIAM 1997) | textbook | 1997 | https://epubs.siam.org/
+SRC: Karmarkar N, A new polynomial-time algorithm for linear programming, Combinatorica 4(4), 373 | primary | 1984 | https://doi.org/10.1007/BF02579150
+SRC: Wright SJ, Primal-Dual Interior-Point Methods (SIAM 1997) | secondary | 1997 | https://epubs.siam.org/
 NUM1#maths-u18-16-q1@1: For the barrier problem minimise x − μ log x, what is x(μ) when μ = 0.01? | 0.01 | 0.0001 |  | Setting 1 − μ/x = 0 gives x = μ = 0.01, close to the true minimiser 0.
 M1#maths-u18-16-q2@1: What does the logarithmic barrier prevent? | Iterates from reaching or crossing the boundary of the feasible region | The objective from decreasing during any of the iterations | Newton steps from being computed at points near the centre | The dual problem from being formed alongside the primal | Convergence to the optimum, which is why μ is never reduced | −log s → ∞ as s → 0, so iterates stay strictly inside.
 M2#maths-u18-16-q3@2: Why is simplex often preferred inside branch and bound? | It warm-starts quickly from the previous vertex after a bound changes | It is polynomial in the worst case, unlike interior points | It never needs pivots once the root node is solved | Interior-point methods can't solve linear programs at all | It ignores integer constraints, so branching is unnecessary | Re-solving after a small change takes few simplex pivots from the old basis.
@@ -617,8 +617,8 @@ Q: Is integer programming NP-hard in general? | Yes.
 Q: What does the LP relaxation provide? | A bound on the integer optimum.
 SUM: Integers model discrete choices.
 SUM: Relaxations give bounds.
-SRC: Wolsey LA, Integer Programming (2nd edn, Wiley 2020) | textbook | 2020 | https://www.wiley.com/
-SRC: Conforti M, Cornuéjols G, Zambelli G, Integer Programming (Springer 2014) | textbook | 2014 | https://link.springer.com/
+SRC: Wolsey LA, Integer Programming (2nd edn, Wiley 2020) | secondary | 2020 | https://www.wiley.com/
+SRC: Conforti M, Cornuéjols G, Zambelli G, Integer Programming (Springer 2014) | secondary | 2014 | https://link.springer.com/
 NUM1#maths-u18-17-q1@1: A knapsack has items of value 8, 5, 3 and weight 5, 4, 2 with capacity 7. What is the best integer value? | 11 | 0 |  | Options: items 1 and 3 (weight 7, value 11), items 2 and 3 (weight 6, value 8), or item 1 alone (8); the best is 11.
 M1#maths-u18-17-q2@1: How is "open facility j before shipping from it" modelled with a binary yⱼ? | xᵢⱼ ≤ M yⱼ, so shipping is zero unless yⱼ = 1 | xᵢⱼ ≥ M yⱼ for every customer | yⱼ ≤ xᵢⱼ / M with no other link | xᵢⱼ + yⱼ = 1 for each pair | yⱼ = xᵢⱼ for every customer i | Big-M constraints switch off continuous flows when the binary is zero.
 M2#maths-u18-17-q3@2: Why do totally unimodular constraint matrices make integer programs easy? | With integer data, every LP vertex is integral, so the LP relaxation solves the integer problem | They make the problem infeasible, so there is nothing left to solve | They force all variables to zero, which is trivially integral | They remove the objective function, leaving a pure feasibility problem | They only appear in nonlinear problems, where integrality is automatic | Assignment and network-flow matrices are totally unimodular, so simplex returns integer solutions.
@@ -653,8 +653,8 @@ Q: What does the MIP optimality gap measure? | The relative difference between t
 Q: What are Gomory cuts? | Cutting planes derived from simplex tableaux to remove fractional solutions.
 SUM: MIPs mix discrete and continuous choices.
 SUM: Branch and cut solves them.
-SRC: Wolsey LA, Integer Programming (2nd edn, Wiley 2020) | textbook | 2020 | https://www.wiley.com/
-SRC: Bixby RE, A brief history of linear and mixed-integer programming computation, Documenta Mathematica Extra Volume ISMP, 107 | journal | 2012 | https://www.math.uni-bielefeld.de/documenta/
+SRC: Wolsey LA, Integer Programming (2nd edn, Wiley 2020) | secondary | 2020 | https://www.wiley.com/
+SRC: Bixby RE, A brief history of linear and mixed-integer programming computation, Documenta Mathematica Extra Volume ISMP, 107 | primary | 2012 | https://www.math.uni-bielefeld.de/documenta/
 NUM1#maths-u18-18-q1@1: A solver's best solution costs 104 and its best lower bound is 100. What is the optimality gap as a percentage of the solution value, to 1 decimal place? | 3.8 | 0.1 | % | (104 − 100)/104 ≈ 0.0385, about 3.8%.
 M1#maths-u18-18-q2@1: Why should big-M constants be chosen as small as valid? | Smaller M gives a tighter LP relaxation and faster solving | Larger M always speeds up the solver | M has no effect on solver performance | Small M makes the model nonlinear | M must equal the optimal objective value | Loose big-M values let fractional solutions cheat, weakening the bound.
 M3#maths-u18-18-q3@2: Why do MIP solvers run primal heuristics alongside branch and bound? | Good feasible solutions found early give incumbents that prune many nodes | Heuristics prove optimality on their own | Branch and bound can't find feasible solutions | Heuristics replace the LP relaxation | They don't use heuristics | A strong incumbent lets nodes with worse bounds be discarded immediately.
@@ -689,8 +689,8 @@ Q: What is the incumbent? | The best feasible solution found so far.
 Q: Name three reasons to prune a node. | Infeasible, integral, or bound no better than the incumbent.
 SUM: Branch to split, bound to prune.
 SUM: Strategy choices matter.
-SRC: Land AH, Doig AG, An automatic method of solving discrete programming problems, Econometrica 28(3), 497 | journal | 1960 | https://doi.org/10.2307/1910129
-SRC: Wolsey LA, Integer Programming (2nd edn, Wiley 2020) | textbook | 2020 | https://www.wiley.com/
+SRC: Land AH, Doig AG, An automatic method of solving discrete programming problems, Econometrica 28(3), 497 | primary | 1960 | https://doi.org/10.2307/1910129
+SRC: Wolsey LA, Integer Programming (2nd edn, Wiley 2020) | secondary | 2020 | https://www.wiley.com/
 NUM1#maths-u18-19-q1@1: In a maximisation, the incumbent has value 50. A node's LP bound is 48. Should it be explored (1 = yes, 0 = no)? | 0 | 0 |  | No solution in that subtree can exceed 48, which is worse than 50, so the node is pruned by bound.
 M1#maths-u18-19-q2@1: If an LP relaxation gives x = 3.7, which pair of branches is created? | x ≤ 3 and x ≥ 4 | x ≤ 3.7 and x ≥ 3.7 | x = 3 and x = 4 only | x ≤ 4 and x ≥ 3 | x ≥ 0 and x ≤ 10 | Branching excludes the fractional value while keeping every integer option.
 M2#maths-u18-19-q3@2: What is the advantage of depth-first node selection? | It reaches integer solutions quickly, giving early incumbents for pruning | It always proves optimality first | It uses the least memory and the best bound at once | It avoids solving relaxations | It explores every node in parallel | Diving deep tends to find feasible leaves fast, though the bound improves slowly.
@@ -725,8 +725,8 @@ Q: Is the minimum spanning tree problem NP-hard? | No: Kruskal and Prim solve it
 Q: What ratio does Christofides guarantee for metric TSP? | 1.5.
 SUM: Huge finite search spaces.
 SUM: Exact, approximate or heuristic methods.
-SRC: Korte B, Vygen J, Combinatorial Optimization: Theory and Algorithms (6th edn, Springer 2018) | textbook | 2018 | https://link.springer.com/
-SRC: Williamson DP, Shmoys DB, The Design of Approximation Algorithms (Cambridge University Press 2011) | textbook | 2011 | https://www.designofapproxalgs.com/
+SRC: Korte B, Vygen J, Combinatorial Optimization: Theory and Algorithms (6th edn, Springer 2018) | secondary | 2018 | https://link.springer.com/
+SRC: Williamson DP, Shmoys DB, The Design of Approximation Algorithms (Cambridge University Press 2011) | secondary | 2011 | https://www.designofapproxalgs.com/
 NUM1#maths-u18-20-q1@1: How many distinct tours (ignoring direction and start) does a symmetric TSP with 6 cities have? | 60 | 0 |  | (n − 1)!/2 = 5!/2 = 60 tours, a number that explodes as n grows.
 M1#maths-u18-20-q2@1: Which problem has a polynomial-time algorithm? | Minimum spanning tree | Travelling salesman | Graph 3-colouring | Maximum clique | Minimum set cover | Kruskal's greedy algorithm finds an MST in O(m log m) time.
 M3#maths-u18-20-q3@2: Why does taking both endpoints of a maximal matching give a 2-approximation for vertex cover? | Any cover must contain one endpoint of each matched edge, and we take only two per edge | Maximal matchings are always perfect, so the cover is exact | It finds the optimal vertex cover exactly in every graph | Vertex cover is easy, so any reasonable rule gives factor 2 | It gives a factor of 10, not 2, in the worst case | The optimum is at least the matching size k, and our cover has 2k vertices.
@@ -761,8 +761,8 @@ Q: What does the principle of optimality say? | Remaining decisions of an optima
 Q: What is the time complexity of knapsack DP with n items and capacity W? | O(nW).
 SUM: DP reuses subproblem answers.
 SUM: Bellman's principle justifies it.
-SRC: Bellman R, Dynamic Programming (Princeton University Press 1957) | textbook | 1957 | https://press.princeton.edu/
-SRC: Cormen TH, Leiserson CE, Rivest RL, Stein C, Introduction to Algorithms (4th edn, MIT Press 2022) | textbook | 2022 | https://mitpress.mit.edu/
+SRC: Bellman R, Dynamic Programming (Princeton University Press 1957) | secondary | 1957 | https://press.princeton.edu/
+SRC: Cormen TH, Leiserson CE, Rivest RL, Stein C, Introduction to Algorithms (4th edn, MIT Press 2022) | secondary | 2022 | https://mitpress.mit.edu/
 NUM1#maths-u18-21-q1@1: What is the edit distance between "kitten" and "sitting"? | 3 | 0 |  | Substitute k→s and e→i, then insert g: three operations, the classic minimum.
 M1#maths-u18-21-q2@1: Which recursion gives the 0–1 knapsack value V(i, w)? | max(V(i − 1, w), vᵢ + V(i − 1, w − wᵢ)) | V(i − 1, w) + vᵢ for every item | min(V(i − 1, w), V(i, w − 1)) | vᵢ × V(i − 1, w) | V(i, w − wᵢ) − vᵢ | Item i is either skipped or taken, and the better choice is kept.
 M2#maths-u18-21-q3@2: What is the curse of dimensionality in dynamic programming? | The number of states grows exponentially with the number of state variables | DP fails for one-dimensional problems with many stages | Recursions can't be written for problems with large data | DP always needs exponential time, whatever the state space | It doesn't affect DP, only Monte Carlo methods | Ten state variables with 100 values each give 10^{20} states to tabulate.
@@ -798,8 +798,8 @@ Q: What happens if the learning rate is too large? | The iterates can oscillate 
 Q: What rate does Nesterov acceleration achieve for smooth convex functions? | O(1/k^{2}).
 SUM: Step downhill repeatedly.
 SUM: Step size and conditioning matter.
-SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | textbook | 2006 | https://link.springer.com/
-SRC: Kingma DP, Ba J, Adam: A method for stochastic optimization, arXiv:1412.6980 | journal | 2014 | https://arxiv.org/abs/1412.6980
+SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | secondary | 2006 | https://link.springer.com/
+SRC: Kingma DP, Ba J, Adam: A method for stochastic optimization, arXiv:1412.6980 | primary | 2014 | https://arxiv.org/abs/1412.6980
 NUM1#maths-u18-22-q1@1: Gradient descent on f(x) = x^{2} with α = 0.1 starts at x₀ = 10. What is x₂? | 6.4 | 0.01 |  | Each step multiplies x by 1 − 2α = 0.8, so x₂ = 10 × 0.8^{2} = 6.4.
 M1#maths-u18-22-q2@1: For f(x) = x^{2}, which step size makes gradient descent diverge? | α = 1.5 | α = 0.1 | α = 0.5 | α = 0.25 | α = 0.9 | x is multiplied by 1 − 2α each step; for α = 1.5 that's −2, so |x| doubles.
 M2#maths-u18-22-q3@2: Why does gradient descent zigzag on ill-conditioned problems? | The gradient points across the narrow valley rather than along it, so steps bounce between the walls | The function has no minimum, so the iterates wander without settling down | Ill-conditioned functions are linear, so the gradient never changes direction | The step size is always zero on ill-conditioned problems, causing oscillation | It doesn't zigzag: ill-conditioning only slows each step, not its direction | A large condition number makes contours long ellipses, and the steepest direction is nearly perpendicular to the valley.
@@ -836,8 +836,8 @@ Q: How many Newton steps minimise a positive definite quadratic exactly? | One.
 Q: What is the 1D Newton step for minimisation? | x − f′(x)/f″(x).
 SUM: Newton uses curvature.
 SUM: It converges quadratically near the minimum.
-SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | textbook | 2006 | https://link.springer.com/
-SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | textbook | 2004 | https://web.stanford.edu/~boyd/cvxbook/
+SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | secondary | 2006 | https://link.springer.com/
+SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | secondary | 2004 | https://web.stanford.edu/~boyd/cvxbook/
 NUM1#maths-u18-23-q1@1: In the example minimising x − ln x, the error is 1 − x. If the error is 0.01 at one step, what is it at the next? | 0.0001 | 0.000001 |  | The update 2x − x^{2} gives 1 − x_{new} = (1 − x)^{2}, so the error squares: 0.01^{2} = 0.0001.
 M1#maths-u18-23-q2@1: What does each Newton step for minimisation require? | The gradient and the Hessian (or a linear solve with it) | Only function values at random points | Only the gradient, never curvature | A list of all local minima | The global minimum in advance | x − H^{−1}∇f uses both first and second derivatives.
 M3#maths-u18-23-q3@2: Why can pure Newton steps head towards a maximum? | They find stationary points of the quadratic model, which is a maximum when the Hessian is negative definite | Newton's method only ever finds maxima, whatever the starting point | Gradients always point towards maxima, so Newton follows them uphill | The Newton step is always zero, so the iterate drifts at random | They can't: Newton steps always decrease the objective function | Newton solves ∇f = 0 without checking curvature, so modifications are needed for minimisation.
@@ -872,8 +872,8 @@ Q: What does L-BFGS store? | The most recent m pairs of step and gradient differ
 Q: What kind of convergence does BFGS achieve near a minimum? | Superlinear.
 SUM: Learn curvature from gradients.
 SUM: BFGS and L-BFGS are workhorses.
-SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | textbook | 2006 | https://link.springer.com/
-SRC: Liu DC, Nocedal J, On the limited memory BFGS method for large scale optimization, Mathematical Programming 45, 503 | journal | 1989 | https://doi.org/10.1007/BF01589116
+SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | secondary | 2006 | https://link.springer.com/
+SRC: Liu DC, Nocedal J, On the limited memory BFGS method for large scale optimization, Mathematical Programming 45, 503 | primary | 1989 | https://doi.org/10.1007/BF01589116
 NUM1#maths-u18-24-q1@1: In 1D, f′(2) = 6 and f′(3) = 10. What curvature B does the secant condition give? | 4 | 0 |  | B = (10 − 6)/(3 − 2) = 4, an estimate of f″ from two gradient values.
 M1#maths-u18-24-q2@1: What information do quasi-Newton methods use to approximate the Hessian? | Differences of successive gradients and steps | Exact second derivatives at every step | Function values at random points | The global minimum location | Integer constraints | The secant condition B s = y builds curvature from gradient changes.
 M2#maths-u18-24-q3@2: Why is L-BFGS suited to problems with millions of variables? | It stores a few vector pairs instead of an n × n matrix, costing O(mn) per step | It computes the exact Hessian cheaply using sparse matrices | It needs no gradients at all, only function values | It converges in one step for every smooth function | It isn't suited to them; it is meant for small problems | A dense n × n matrix would need 10^{12} entries for a million variables.
@@ -909,8 +909,8 @@ Q: What does a 2-opt move do? | Reverses a segment of the tour to remove two cro
 Q: What does nearest neighbour do for TSP? | Always travels to the closest unvisited city.
 SUM: Heuristics are fast and good enough.
 SUM: Local search improves solutions.
-SRC: Aarts E, Lenstra JK (eds), Local Search in Combinatorial Optimization (Princeton University Press 2003) | textbook | 2003 | https://press.princeton.edu/
-SRC: Applegate DL, Bixby RE, Chvátal V, Cook WJ, The Traveling Salesman Problem: A Computational Study (Princeton University Press 2006) | textbook | 2006 | https://press.princeton.edu/
+SRC: Aarts E, Lenstra JK (eds), Local Search in Combinatorial Optimization (Princeton University Press 2003) | secondary | 2003 | https://press.princeton.edu/
+SRC: Applegate DL, Bixby RE, Chvátal V, Cook WJ, The Traveling Salesman Problem: A Computational Study (Princeton University Press 2006) | secondary | 2006 | https://press.princeton.edu/
 NUM1#maths-u18-25-q1@1: For cities at 0, 2, 3 and 10 on a line, what is the nearest-neighbour tour length from 0, returning to 0? | 20 | 0 |  | 0 → 2 → 3 → 10 → 0 gives 2 + 1 + 7 + 10 = 20.
 M1#maths-u18-25-q2@1: Which statement about local search is true? | It stops at a solution with no better neighbour, which may not be globally optimal | It always finds the global optimum if run long enough | It never improves on the solution it started from | It needs the LP relaxation to choose its next move | It explores every solution before deciding which is best | Local optima depend on the neighbourhood, and better solutions may lie further away.
 M2#maths-u18-25-q3@2: How can a heuristic solution's quality be judged without knowing the optimum? | By comparing it with a lower bound, such as an LP relaxation | By running it once more | By checking it is feasible only | By its running time | It can't be judged | The gap to a valid bound limits how far from optimal it can be.
@@ -945,8 +945,8 @@ Q: What does the no free lunch theorem say? | Averaged over all problems, no sea
 Q: Name a population-based metaheuristic. | A genetic algorithm (or particle swarm, ant colony).
 SUM: Metaheuristics escape local optima.
 SUM: Balance exploration and exploitation.
-SRC: Glover F, Tabu search, Part I, ORSA Journal on Computing 1(3), 190 | journal | 1989 | https://doi.org/10.1287/ijoc.1.3.190
-SRC: Wolpert DH, Macready WG, No free lunch theorems for optimization, IEEE Transactions on Evolutionary Computation 1(1), 67 | journal | 1997 | https://doi.org/10.1109/4235.585893
+SRC: Glover F, Tabu search, Part I, ORSA Journal on Computing 1(3), 190 | primary | 1989 | https://doi.org/10.1287/ijoc.1.3.190
+SRC: Wolpert DH, Macready WG, No free lunch theorems for optimization, IEEE Transactions on Evolutionary Computation 1(1), 67 | primary | 1997 | https://doi.org/10.1109/4235.585893
 NUM1#maths-u18-26-q1@1: A tabu search forbids a move for 7 iterations after it's used. If move m is used at iteration 12, at what iteration can it next be used? | 20 | 0 |  | It's tabu during iterations 13 to 19 (seven iterations), so it becomes allowed again at iteration 20.
 M1#maths-u18-26-q2@1: Which metaheuristic keeps a short-term memory of forbidden moves? | Tabu search | Simulated annealing | Particle swarm optimisation | Gradient descent | The simplex method | The tabu list stores recent moves so they can't be undone immediately.
 M3#maths-u18-26-q3@2: Why does the no free lunch theorem warn against claims that one metaheuristic is universally best? | Averaged over all possible problems, every search algorithm performs equally, so advantages come from matching structure | It proves genetic algorithms are always best, whatever the problem structure | It shows metaheuristics never work, so exact methods must be used instead | It applies only to convex problems, where gradient methods are always best | It supports such claims, since one method must win on average over all problems | Gains on one problem class are balanced by losses on others.
@@ -981,8 +981,8 @@ Q: What does elitism do? | Copies the best individuals unchanged into the next g
 Q: Who introduced genetic algorithms in the 1970s? | John Holland.
 SUM: Evolve solutions by selection and variation.
 SUM: Encodings and diversity matter.
-SRC: Holland JH, Adaptation in Natural and Artificial Systems (University of Michigan Press 1975) | textbook | 1975 | https://press.umich.edu/
-SRC: Goldberg DE, Genetic Algorithms in Search, Optimization and Machine Learning (Addison-Wesley 1989) | textbook | 1989 | https://www.pearson.com/
+SRC: Holland JH, Adaptation in Natural and Artificial Systems (University of Michigan Press 1975) | secondary | 1975 | https://press.umich.edu/
+SRC: Goldberg DE, Genetic Algorithms in Search, Optimization and Machine Learning (Addison-Wesley 1989) | secondary | 1989 | https://www.pearson.com/
 NUM1#maths-u18-27-q1@1: In roulette-wheel selection with fitnesses 2, 3 and 5, what is the probability (as a decimal) of selecting the fittest individual? | 0.5 | 0.001 |  | Selection probability is fitness over total: 5/(2 + 3 + 5) = 0.5.
 M1#maths-u18-27-q2@1: Which operator mainly preserves diversity in a genetic algorithm? | Mutation | Elitism | Selection | Fitness evaluation | Sorting the population | Random changes reintroduce variation that selection would otherwise remove.
 M2#maths-u18-27-q3@2: Why can standard one-point crossover fail for TSP permutations? | Children may repeat some cities and miss others, so they aren't valid tours | Tours have no fitness function, so offspring can't be compared | Crossover only works on real numbers, never on lists of cities | Permutations can't be mutated, so crossover is the only operator | It works perfectly: every child of two tours is itself a tour | Permutation encodings need operators like order crossover that preserve validity.
@@ -1018,8 +1018,8 @@ Q: What is the acceptance probability for an improving move? | 1.
 Q: Who introduced simulated annealing for optimisation in 1983? | Kirkpatrick, Gelatt and Vecchi.
 SUM: Accept uphill moves sometimes.
 SUM: Cool slowly to settle low.
-SRC: Kirkpatrick S, Gelatt CD, Vecchi MP, Optimization by simulated annealing, Science 220(4598), 671 | journal | 1983 | https://doi.org/10.1126/science.220.4598.671
-SRC: Aarts E, Korst J, Simulated Annealing and Boltzmann Machines (Wiley 1989) | textbook | 1989 | https://www.wiley.com/
+SRC: Kirkpatrick S, Gelatt CD, Vecchi MP, Optimization by simulated annealing, Science 220(4598), 671 | primary | 1983 | https://doi.org/10.1126/science.220.4598.671
+SRC: Aarts E, Korst J, Simulated Annealing and Boltzmann Machines (Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 NUM1#maths-u18-28-q1@1: At temperature T = 4, what is the probability of accepting a move that worsens the cost by 2, to 3 decimal places? | 0.607 | 0.001 |  | e^{−2/4} = e^{−0.5} ≈ 0.607.
 M1#maths-u18-28-q2@1: What happens to the acceptance of worse moves as the temperature falls? | It becomes less likely, so the search settles into a minimum | It becomes more likely as the search proceeds | It stays constant throughout the run | It becomes certain at low temperature | It depends only on the step count | e^{−Δ/T} shrinks towards zero as T decreases.
 M2#maths-u18-28-q3@2: Why isn't the logarithmic cooling schedule used in practice? | It guarantees convergence but cools far too slowly for realistic run times | It never converges at all | It accepts no moves | It makes the algorithm greedy | It is used everywhere | T = c/log k decreases so slowly that useful runs would take astronomically long.
@@ -1055,8 +1055,8 @@ Q: What does the social term pull a particle towards? | The global best position
 Q: Who introduced PSO? | Kennedy and Eberhart (1995).
 SUM: Swarms share information.
 SUM: Inertia, memory and social pull.
-SRC: Kennedy J, Eberhart R, Particle swarm optimization, Proceedings of ICNN'95 4, 1942 | journal | 1995 | https://doi.org/10.1109/ICNN.1995.488968
-SRC: Clerc M, Particle Swarm Optimization (ISTE 2006) | textbook | 2006 | https://www.wiley.com/
+SRC: Kennedy J, Eberhart R, Particle swarm optimization, Proceedings of ICNN'95 4, 1942 | primary | 1995 | https://doi.org/10.1109/ICNN.1995.488968
+SRC: Clerc M, Particle Swarm Optimization (ISTE 2006) | secondary | 2006 | https://www.wiley.com/
 NUM1#maths-u18-29-q1@1: A particle at x = 0 with v = 0, personal best 2 and global best 4 uses w = 0.7, c₁ = c₂ = 1 and r₁ = r₂ = 1. What is its new position? | 6 | 0 |  | v = 0 + 1 × (2 − 0) + 1 × (4 − 0) = 6, so x = 0 + 6 = 6.
 M1#maths-u18-29-q2@1: What does the inertia weight w control in PSO? | How much of the previous velocity a particle keeps | How far the global best moves each step | The number of particles in the swarm | The fitness function's scale | The random numbers r₁ and r₂ | Higher w keeps particles moving and exploring; lower w lets them settle.
 M2#maths-u18-29-q3@2: What risk does a very large social weight c₂ create? | The swarm converges prematurely on the current global best | Particles stop sharing information | The swarm never moves | Velocities become negative | There is no risk | Strong attraction to one point reduces diversity, risking a local optimum.
@@ -1091,8 +1091,8 @@ Q: What surrogate model is most commonly used? | A Gaussian process.
 Q: What does a high σ(x) indicate? | High uncertainty about f at x.
 SUM: Model the function, then sample wisely.
 SUM: Acquisition balances explore and exploit.
-SRC: Frazier PI, A tutorial on Bayesian optimization, arXiv:1807.02811 | review | 2018 | https://arxiv.org/abs/1807.02811
-SRC: Rasmussen CE, Williams CKI, Gaussian Processes for Machine Learning (MIT Press 2006) | textbook | 2006 | https://gaussianprocess.org/gpml/
+SRC: Frazier PI, A tutorial on Bayesian optimization, arXiv:1807.02811 | secondary | 2018 | https://arxiv.org/abs/1807.02811
+SRC: Rasmussen CE, Williams CKI, Gaussian Processes for Machine Learning (MIT Press 2006) | secondary | 2006 | https://gaussianprocess.org/gpml/
 NUM1#maths-u18-30-q1@1: Minimising with lower confidence bound μ − 2σ, a point has μ = 3 and σ = 0.4. What is its score? | 2.2 | 0.001 |  | 3 − 2 × 0.4 = 2.2; lower scores are more attractive to evaluate next.
 M1#maths-u18-30-q2@1: When is Bayesian optimisation most appropriate? | When each function evaluation is expensive and the dimension is modest | When the function is cheap and has a known formula | When there are thousands of variables | When gradients are cheap and exact | When the function is linear | It spends computation choosing points to save costly evaluations.
 M3#maths-u18-30-q3@2: Why does expected improvement sometimes choose a point with a worse predicted mean? | High uncertainty gives a real chance of a big improvement, which raises the expected gain | EI ignores uncertainty entirely and looks only at the mean | EI always picks the worst predicted point to learn from it | Means are never used by EI, only the variance at each point | It never does this; EI always picks the lowest predicted mean | EI integrates over the predicted distribution, rewarding variance as well as mean.
@@ -1127,8 +1127,8 @@ Q: Where did operations research begin? | In British military planning during th
 Q: Name three OR techniques. | Optimisation, simulation and queueing theory.
 SUM: OR models decisions.
 SUM: Validation and implementation matter.
-SRC: Hillier FS, Lieberman GJ, Introduction to Operations Research (11th edn, McGraw-Hill 2021) | textbook | 2021 | https://www.mheducation.com/
-SRC: Kirby MW, Operational Research in War and Peace: The British Experience from the 1930s to 1970 (Imperial College Press 2003) | textbook | 2003 | https://www.worldscientific.com/
+SRC: Hillier FS, Lieberman GJ, Introduction to Operations Research (11th edn, McGraw-Hill 2021) | secondary | 2021 | https://www.mheducation.com/
+SRC: Kirby MW, Operational Research in War and Peace: The British Experience from the 1930s to 1970 (Imperial College Press 2003) | secondary | 2003 | https://www.worldscientific.com/
 NUM1#maths-u18-31-q1@1: In what year was the UK's Operational Research Society founded (as the OR Club)? | 1948 | 0 |  | The Operational Research Club was formed in 1948 and became the Operational Research Society in 1953.
 M1#maths-u18-31-q2@1: Which step comes first in an OR study? | Defining the problem, objectives and constraints with the decision-makers | Choosing the solver software | Running a large simulation | Implementing the solution | Writing the final report | A precise problem statement guides which data and model are needed.
 M2#maths-u18-31-q3@2: Why is sensitivity analysis important before implementing an OR model? | It shows how the recommendation changes if data or assumptions are wrong | It makes the model run faster | It removes all uncertainty | It proves the model is correct | It isn't important | Robust recommendations shouldn't flip when uncertain inputs vary slightly.
@@ -1162,8 +1162,8 @@ Q: How are chance nodes evaluated when rolling back a tree? | By probability-wei
 Q: What shape is a risk-averse utility function? | Concave.
 SUM: Trees structure uncertain choices.
 SUM: Information has a calculable value.
-SRC: Clemen RT, Reilly T, Making Hard Decisions with DecisionTools (3rd edn, Cengage 2014) | textbook | 2014 | https://www.cengage.com/
-SRC: Kahneman D, Tversky A, Prospect theory: an analysis of decision under risk, Econometrica 47(2), 263 | journal | 1979 | https://doi.org/10.2307/1914185
+SRC: Clemen RT, Reilly T, Making Hard Decisions with DecisionTools (3rd edn, Cengage 2014) | secondary | 2014 | https://www.cengage.com/
+SRC: Kahneman D, Tversky A, Prospect theory: an analysis of decision under risk, Econometrica 47(2), 263 | primary | 1979 | https://doi.org/10.2307/1914185
 NUM1#maths-u18-32-q1@1: A gamble pays £100 or £0 with equal probability. For utility u(x) = √x, what is its certainty equivalent in £? | 25 | 0 | £ | Expected utility is 0.5 × 10 + 0.5 × 0 = 5, and √CE = 5 gives CE = £25.
 M1#maths-u18-32-q2@1: How is a decision node evaluated when rolling back a decision tree? | By choosing the branch with the best expected value | By averaging all its branches equally | By multiplying its branch values together | By choosing the riskiest branch | By ignoring it entirely | The decision-maker controls decision nodes, so the best option is taken.
 M2#maths-u18-32-q3@2: Why is EVPI an upper limit on what any forecast is worth? | No real forecast can do better than knowing the outcome exactly | Forecasts are always worthless | EVPI is the cost of a forecast | Information always has zero value | It isn't an upper limit | Perfect information gives the most possible improvement in expected value.
@@ -1198,8 +1198,8 @@ Q: What does Little's law state? | L = λW.
 Q: What does M stand for in Kendall notation? | Markovian (memoryless): Poisson arrivals or exponential service.
 SUM: Queues depend on utilisation.
 SUM: Little's law links length and time.
-SRC: Kleinrock L, Queueing Systems, Volume 1: Theory (Wiley 1975) | textbook | 1975 | https://www.wiley.com/
-SRC: Little JDC, A proof for the queuing formula L = λW, Operations Research 9(3), 383 | journal | 1961 | https://doi.org/10.1287/opre.9.3.383
+SRC: Kleinrock L, Queueing Systems, Volume 1: Theory (Wiley 1975) | secondary | 1975 | https://www.wiley.com/
+SRC: Little JDC, A proof for the queuing formula L = λW, Operations Research 9(3), 383 | primary | 1961 | https://doi.org/10.1287/opre.9.3.383
 NUM1#maths-u18-33-q1@1: In an M/M/1 queue with λ = 9 and μ = 10 per hour, what is the average number in the system? | 9 | 0 |  | ρ = 0.9, so L = 0.9/0.1 = 9: a small rise in load from 0.8 has more than doubled the queue.
 M1#maths-u18-33-q2@1: A shop averages 20 customers inside and each spends 0.5 hours there. What is the arrival rate? | 40 per hour | 10 per hour | 20 per hour | 0.5 per hour | 80 per hour | Little's law λ = L/W = 20/0.5 = 40 per hour.
 M3#maths-u18-33-q3@2: Why does average waiting time in M/M/1 grow so sharply as ρ approaches 1? | W = 1/(μ − λ), and the denominator shrinks to zero, so random bursts take ever longer to clear | Service rates fall as queues grow, because servers tire | Customers leave when queues are long, raising waiting time | It grows linearly, not sharply, as utilisation increases | It doesn't grow: waiting time is independent of utilisation | With little spare capacity, any backlog from random arrivals persists.
@@ -1233,8 +1233,8 @@ Q: At the EOQ, how do ordering and holding costs compare? | They're equal.
 Q: What is the newsvendor critical ratio? | cᵤ/(cᵤ + cₒ).
 SUM: Balance ordering and holding costs.
 SUM: Safety stock buffers uncertainty.
-SRC: Harris FW, How many parts to make at once, Factory, The Magazine of Management 10(2), 135 | journal | 1913 | https://doi.org/10.1287/opre.38.6.947
-SRC: Silver EA, Pyke DF, Thomas DJ, Inventory and Production Management in Supply Chains (4th edn, CRC Press 2017) | textbook | 2017 | https://www.routledge.com/
+SRC: Harris FW, How many parts to make at once, Factory, The Magazine of Management 10(2), 135 | primary | 1913 | https://doi.org/10.1287/opre.38.6.947
+SRC: Silver EA, Pyke DF, Thomas DJ, Inventory and Production Management in Supply Chains (4th edn, CRC Press 2017) | secondary | 2017 | https://www.routledge.com/
 NUM1#maths-u18-34-q1@1: Find the EOQ for D = 800 units/year, S = £25 per order and H = £4 per unit per year. | 100 | 0 | units | √(2 × 800 × 25/4) = √10000 = 100 units.
 M1#maths-u18-34-q2@1: A newspaper costs 40p and sells for £1, and unsold copies are worthless. What is the critical ratio? | 0.6 | 0.4 | 0.5 | 1.0 | 0.29 | cᵤ = 60p lost profit and cₒ = 40p wasted, so 60/(60 + 40) = 0.6.
 M2#maths-u18-34-q3@2: Why does using a slightly wrong order quantity usually cost little in the EOQ model? | The total cost curve is flat near its minimum, so small deviations change cost only slightly | EOQ costs are always zero, so any order quantity is optimal | Holding costs vanish near the optimum, leaving only ordering costs | The EOQ model has no minimum, so every quantity costs about the same | It costs a great deal: total cost rises steeply away from the EOQ | Ordering 20% too much raises total cost by under 2%.
@@ -1268,8 +1268,8 @@ Q: Which rule minimises maximum lateness on one machine? | Earliest due date.
 Q: What does 1 || ΣCⱼ mean? | One machine, no special constraints, minimise total completion time.
 SUM: Simple rules solve single machines.
 SUM: Multi-machine problems are hard.
-SRC: Pinedo ML, Scheduling: Theory, Algorithms, and Systems (6th edn, Springer 2022) | textbook | 2022 | https://link.springer.com/
-SRC: Johnson SM, Optimal two- and three-stage production schedules with setup times included, Naval Research Logistics Quarterly 1(1), 61 | journal | 1954 | https://doi.org/10.1002/nav.3800010110
+SRC: Pinedo ML, Scheduling: Theory, Algorithms, and Systems (6th edn, Springer 2022) | secondary | 2022 | https://link.springer.com/
+SRC: Johnson SM, Optimal two- and three-stage production schedules with setup times included, Naval Research Logistics Quarterly 1(1), 61 | primary | 1954 | https://doi.org/10.1002/nav.3800010110
 NUM1#maths-u18-35-q1@1: Jobs with processing times 5, 2, 7 and 1 are sequenced by SPT on one machine. What is the total completion time? | 28 | 0 |  | Order 1, 2, 5, 7 gives completion times 1, 3, 8 and 15, totalling 28.
 M1#maths-u18-35-q2@1: Which rule minimises the maximum lateness on a single machine? | Earliest due date first | Shortest processing time first | Longest processing time first | Random order | Highest weight first | Jackson's rule (EDD) is optimal for maximum lateness.
 M2#maths-u18-35-q3@2: What does Johnson's rule optimise? | The makespan of a two-machine flow shop | Total lateness on parallel machines | The number of late jobs on one machine | Weighted completion time in job shops | The cost of machines | It sequences jobs to finish all work on both machines as early as possible.
@@ -1304,8 +1304,8 @@ Q: What is the bullwhip effect? | Growing order variability moving upstream in a
 Q: Name a remedy for the bullwhip effect. | Sharing point-of-sale demand data.
 SUM: Coordinate the whole chain.
 SUM: Information sharing tames bullwhip.
-SRC: Lee HL, Padmanabhan V, Whang S, Information distortion in a supply chain: the bullwhip effect, Management Science 43(4), 546 | journal | 1997 | https://doi.org/10.1287/mnsc.43.4.546
-SRC: Chopra S, Supply Chain Management: Strategy, Planning, and Operation (7th edn, Pearson 2019) | textbook | 2019 | https://www.pearson.com/
+SRC: Lee HL, Padmanabhan V, Whang S, Information distortion in a supply chain: the bullwhip effect, Management Science 43(4), 546 | primary | 1997 | https://doi.org/10.1287/mnsc.43.4.546
+SRC: Chopra S, Supply Chain Management: Strategy, Planning, and Operation (7th edn, Pearson 2019) | secondary | 2019 | https://www.pearson.com/
 NUM1#maths-u18-36-q1@1: If order variance doubles at each of three stages above retail, by what factor has variance grown at the top stage? | 8 | 0 |  | Doubling three times gives 2^{3} = 8 times the retail variance.
 M1#maths-u18-36-q2@1: Which decision is strategic in supply chain management? | Where to build a new distribution centre | Today's delivery routes for vans | This week's production schedule | Which order to pick first | The next replenishment quantity | Facility location shapes the network for years, so it's a strategic decision.
 M3#maths-u18-36-q3@2: Why does order batching contribute to the bullwhip effect? | Steady customer demand turns into occasional large orders upstream, which look like extreme variability | Batching removes all variability from orders, which confuses suppliers | Batching makes forecasts perfect, so upstream stages over-react | Suppliers ignore batched orders and plan only from past sales | It doesn't contribute; only price promotions cause the bullwhip effect | Ordering monthly in bulk creates spikes and gaps that upstream stages misread as demand changes.
@@ -1339,8 +1339,8 @@ Q: What does the max-flow min-cut theorem say? | The maximum flow equals the min
 Q: Which shortest-path algorithm handles negative weights? | Bellman–Ford.
 SUM: Graphs model routes and flows.
 SUM: Max-flow equals min-cut.
-SRC: Ahuja RK, Magnanti TL, Orlin JB, Network Flows: Theory, Algorithms, and Applications (Prentice Hall 1993) | textbook | 1993 | https://www.pearson.com/
-SRC: Ford LR, Fulkerson DR, Maximal flow through a network, Canadian Journal of Mathematics 8, 399 | journal | 1956 | https://doi.org/10.4153/CJM-1956-045-5
+SRC: Ahuja RK, Magnanti TL, Orlin JB, Network Flows: Theory, Algorithms, and Applications (Prentice Hall 1993) | secondary | 1993 | https://www.pearson.com/
+SRC: Ford LR, Fulkerson DR, Maximal flow through a network, Canadian Journal of Mathematics 8, 399 | primary | 1956 | https://doi.org/10.4153/CJM-1956-045-5
 NUM1#maths-u18-37-q1@1: A network has only two parallel paths from s to t, with edge capacities 4 then 6 on one, and 5 then 3 on the other. What is the maximum flow? | 7 | 0 |  | Each path is limited by its smallest edge: 4 + 3 = 7, matching the min cut.
 M1#maths-u18-37-q2@1: Which algorithm finds shortest paths with non-negative weights efficiently? | Dijkstra's algorithm | Bellman–Ford only | Kruskal's algorithm | The Hungarian algorithm | Johnson's rule | Dijkstra settles vertices in order of distance, using non-negativity.
 M2#maths-u18-37-q3@2: Why do network flow problems with integer capacities have integer optimal flows? | Their constraint matrices are totally unimodular, so LP vertices are integral | Flows are always zero | The objective is integer-valued | Capacities are irrelevant | They don't | Node–arc incidence matrices are totally unimodular, giving integral basic solutions.
@@ -1375,8 +1375,8 @@ Q: Which model minimises the worst-case distance? | The p-centre problem.
 Q: Where is the 1-median on a line? | At the median of the customer positions.
 SUM: Location models trade cost and access.
 SUM: Choose the objective carefully.
-SRC: Daskin MS, Network and Discrete Location: Models, Algorithms, and Applications (2nd edn, Wiley 2013) | textbook | 2013 | https://www.wiley.com/
-SRC: Laporte G, Nickel S, Saldanha da Gama F (eds), Location Science (2nd edn, Springer 2019) | textbook | 2019 | https://link.springer.com/
+SRC: Daskin MS, Network and Discrete Location: Models, Algorithms, and Applications (2nd edn, Wiley 2013) | secondary | 2013 | https://www.wiley.com/
+SRC: Laporte G, Nickel S, Saldanha da Gama F (eds), Location Science (2nd edn, Springer 2019) | secondary | 2019 | https://link.springer.com/
 NUM1#maths-u18-38-q1@1: Customers at 0, 4, 5, 9 and 20 on a line. What is the minimum total distance to one facility? | 25 | 0 |  | The median is 5, giving distances 5 + 1 + 0 + 4 + 15 = 25.
 M1#maths-u18-38-q2@1: Which model suits placing ambulance stations so no one is too far away? | A p-centre or set covering model | A p-median model with total distance | An EOQ inventory model | A minimum spanning tree | A queueing model only | Emergency services care about the worst-case response, not just the average.
 M2#maths-u18-38-q3@2: In the UFL model, what does the constraint xᵢⱼ ≤ yⱼ ensure? | Customers can only be assigned to facilities that are open | Every facility is opened | Customers are split equally | Fixed costs are zero | Distances are symmetric | If yⱼ = 0, no customer may use facility j.
@@ -1409,8 +1409,8 @@ Q: How many basic variables does an m × n transportation problem have? | m + n 
 Q: What does a negative reduced cost indicate? | Shipping on that route would lower total cost.
 SUM: Ship at least cost.
 SUM: Structure makes it easy.
-SRC: Hillier FS, Lieberman GJ, Introduction to Operations Research (11th edn, McGraw-Hill 2021) | textbook | 2021 | https://www.mheducation.com/
-SRC: Hitchcock FL, The distribution of a product from several sources to numerous localities, Journal of Mathematics and Physics 20, 224 | journal | 1941 | https://doi.org/10.1002/sapm1941201224
+SRC: Hillier FS, Lieberman GJ, Introduction to Operations Research (11th edn, McGraw-Hill 2021) | secondary | 2021 | https://www.mheducation.com/
+SRC: Hitchcock FL, The distribution of a product from several sources to numerous localities, Journal of Mathematics and Physics 20, 224 | primary | 1941 | https://doi.org/10.1002/sapm1941201224
 NUM1#maths-u18-39-q1@1: How many basic variables does a transportation problem with 4 sources and 6 destinations have? | 9 | 0 |  | m + n − 1 = 4 + 6 − 1 = 9, since one supply–demand equation is redundant.
 M1#maths-u18-39-q2@1: Supply totals 100 and demand totals 80. How is the problem balanced? | Add a dummy destination with demand 20 and zero costs | Add a dummy source with supply 20 | Reduce every supply by 20% | Delete the cheapest route | Nothing: it's already balanced | Excess supply is "shipped" to a dummy sink, representing unused capacity.
 M2#maths-u18-39-q3@2: Why is Vogel's method often better than the northwest corner rule? | It uses cost differences to avoid expensive cells, giving a near-optimal start | It ignores costs completely | It always gives the exact optimum | It needs fewer basic variables | It isn't better | The northwest corner rule fills cells by position only, regardless of cost.
@@ -1445,8 +1445,8 @@ Q: What is the running time of the Hungarian algorithm? | O(n^{3}).
 Q: How many possible assignments are there for 10 workers and 10 tasks? | 10! = 3,628,800.
 SUM: Match one-to-one at least cost.
 SUM: The Hungarian algorithm is efficient.
-SRC: Kuhn HW, The Hungarian method for the assignment problem, Naval Research Logistics Quarterly 2(1–2), 83 | journal | 1955 | https://doi.org/10.1002/nav.3800020109
-SRC: Burkard R, Dell'Amico M, Martello S, Assignment Problems (rev. edn, SIAM 2012) | textbook | 2012 | https://epubs.siam.org/
+SRC: Kuhn HW, The Hungarian method for the assignment problem, Naval Research Logistics Quarterly 2(1–2), 83 | primary | 1955 | https://doi.org/10.1002/nav.3800020109
+SRC: Burkard R, Dell'Amico M, Martello S, Assignment Problems (rev. edn, SIAM 2012) | secondary | 2012 | https://epubs.siam.org/
 NUM1#maths-u18-40-q1@1: For costs [[3, 7], [5, 4]], what is the minimum total assignment cost? | 7 | 0 |  | The options are 3 + 4 = 7 or 7 + 5 = 12, so the minimum is 7.
 M1#maths-u18-40-q2@1: What is the first step of the Hungarian algorithm? | Subtract each row's minimum from every entry in that row | Assign each worker its cheapest task | Add a dummy worker to every problem | Multiply all costs by −1 | Sort tasks by cost | Row and column reductions create zeros without changing which assignment is optimal.
 M2#maths-u18-40-q3@2: How is a maximisation assignment problem converted for the Hungarian method? | Replace each value by (largest value − value), then minimise | Take the reciprocal of each value | Add the largest value to each entry | Swap rows and columns | It can't be converted | Minimising the regret relative to the maximum is equivalent to maximising the total.
@@ -1482,8 +1482,8 @@ Q: What does proportional fairness maximise? | The sum of the logarithms of allo
 Q: When is greedy marginal allocation optimal? | When benefits have diminishing returns (concave).
 SUM: Allocate scarce resources well.
 SUM: Efficiency and fairness can conflict.
-SRC: Ibaraki T, Katoh N, Resource Allocation Problems: Algorithmic Approaches (MIT Press 1988) | textbook | 1988 | https://mitpress.mit.edu/
-SRC: Kelly FP, Maulloo AK, Tan DKH, Rate control for communication networks: shadow prices, proportional fairness and stability, Journal of the Operational Research Society 49(3), 237 | journal | 1998 | https://doi.org/10.1057/palgrave.jors.2600523
+SRC: Ibaraki T, Katoh N, Resource Allocation Problems: Algorithmic Approaches (MIT Press 1988) | secondary | 1988 | https://mitpress.mit.edu/
+SRC: Kelly FP, Maulloo AK, Tan DKH, Rate control for communication networks: shadow prices, proportional fairness and stability, Journal of the Operational Research Society 49(3), 237 | primary | 1998 | https://doi.org/10.1057/palgrave.jors.2600523
 NUM1#maths-u18-41-q1@1: In the clinic example, with 4 staff to allocate, how many extra patients are seen in total? | 29 | 0 |  | The fourth unit goes to B2 (gain 5), so the total is 24 + 5 = 29.
 M1#maths-u18-41-q2@1: Which allocation rule maximises the benefit to the worst-off party? | Max–min fairness | Utilitarian total maximisation | Proportional fairness | First come, first served | Random allocation | Max–min fairness raises the smallest share as far as possible.
 M2#maths-u18-41-q3@2: Why is allocating each unit to the highest marginal gain optimal under diminishing returns? | Concave benefits mean earlier units are always worth more, so greedy choices never need revisiting | Marginal gains are all equal under diminishing returns, so any order works | It is never optimal: dynamic programming is always needed for allocation | Diminishing returns make benefits linear, so greedy is trivially correct | Resources are unlimited under diminishing returns, so allocation is free | With concave returns, the greedy order matches the order of the optimal allocation.
@@ -1519,8 +1519,8 @@ Q: What does the Markov property say? | The future depends only on the current s
 Q: Name two methods for solving MDPs exactly. | Value iteration and policy iteration.
 SUM: MDPs model sequential decisions.
 SUM: Bellman's equation gives optimal policies.
-SRC: Puterman ML, Markov Decision Processes: Discrete Stochastic Dynamic Programming (Wiley 1994) | textbook | 1994 | https://www.wiley.com/
-SRC: Bellman R, A Markovian decision process, Journal of Mathematics and Mechanics 6(5), 679 | journal | 1957 | https://www.jstor.org/stable/24900506
+SRC: Puterman ML, Markov Decision Processes: Discrete Stochastic Dynamic Programming (Wiley 1994) | secondary | 1994 | https://www.wiley.com/
+SRC: Bellman R, A Markovian decision process, Journal of Mathematics and Mechanics 6(5), 679 | primary | 1957 | https://www.jstor.org/stable/24900506
 NUM1#maths-u18-42-q1@1: A policy earns reward 2 every step forever with γ = 0.8. What is its discounted value? | 10 | 0 |  | V = 2 + 0.8V gives V = 2/(1 − 0.8) = 10.
 M1#maths-u18-42-q2@1: What does a policy specify in an MDP? | The action to take in each state | The reward of every action | The transition probabilities | The discount factor | The initial state only | Solving the MDP means finding the best state-to-action rule.
 M3#maths-u18-42-q3@2: Why does value iteration converge for γ < 1? | The Bellman update is a contraction by factor γ, so successive errors shrink geometrically | Values are always zero, so the iteration starts at the fixed point | It converges only for γ = 1, where rewards are not discounted | Every MDP has one state, so a single update is always enough | It doesn't converge; value iteration only approximates V* loosely | By the contraction mapping theorem, repeated application reaches the unique fixed point V*.
@@ -1555,8 +1555,8 @@ Q: Is Q-learning on-policy or off-policy? | Off-policy.
 Q: What is the TD error? | r + γV(s′) − V(s).
 SUM: Learn values from experience.
 SUM: Balance exploration and exploitation.
-SRC: Sutton RS, Barto AG, Reinforcement Learning: An Introduction (2nd edn, MIT Press 2018) | textbook | 2018 | http://incompleteideas.net/book/the-book-2nd.html
-SRC: Mnih V et al., Human-level control through deep reinforcement learning, Nature 518, 529 | journal | 2015 | https://doi.org/10.1038/nature14236
+SRC: Sutton RS, Barto AG, Reinforcement Learning: An Introduction (2nd edn, MIT Press 2018) | secondary | 2018 | http://incompleteideas.net/book/the-book-2nd.html
+SRC: Mnih V et al., Human-level control through deep reinforcement learning, Nature 518, 529 | primary | 2015 | https://doi.org/10.1038/nature14236
 NUM1#maths-u18-43-q1@1: With V(s) = 5, reward 2, γ = 0.5 and V(s′) = 4, what is the TD error δ? | -1 | 0 |  | δ = 2 + 0.5 × 4 − 5 = 4 − 5 = −1, so V(s) will be lowered.
 M1#maths-u18-43-q2@1: What does ε-greedy exploration do? | Takes a random action with probability ε and the best-known one otherwise | Always takes the best-known action | Always takes random actions | Picks actions by their rewards' variance | Stops learning after ε steps | A small chance of random actions keeps discovering better options.
 M2#maths-u18-43-q3@2: What distinguishes policy-gradient methods from Q-learning? | They adjust a parameterised policy directly using gradients of expected return | They never use rewards, only state visit counts | They need the full transition model of the MDP | They only work for problems with one state | There is no difference; the names are synonyms | Policy gradients optimise πθ, while Q-learning learns action values and acts greedily on them.

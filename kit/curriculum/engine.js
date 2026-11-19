@@ -17,7 +17,7 @@
 // missing), "editorial" (an optional improvement) and "curriculum-dependent" (right or wrong depending on the
 // learner's specification). The engine only finds the last three mechanically. It never declares a factual error and
 // never edits a lesson: a person or a research step with sources decides that.
-import { BANDS, ROLES, CLAIMS, bandRank, checkConcept, checkSystem, checkSpec } from "./schema.js";
+import { BANDS, ROLES, CLAIMS, FITS, bandRank, checkConcept, checkSystem, checkSpec } from "./schema.js";
 import { QUALIFICATIONS, SYSTEMS as COVERAGE_SYSTEMS } from "./coverage.js";
 
 const key = (course, lesson) => `${course}/${lesson}`;
@@ -37,6 +37,7 @@ export function indexOf(kb) {
     mapsByConcept: new Map(kb.concepts.map((c) => [c.id, kb.outcomeMaps.filter((m) => m.concepts.includes(c.id))])),
     mapsByOutcome: by(kb.outcomeMaps, (m) => okey(m.spec, m.outcome)),
     pathwaysBySpec: by(kb.pathways, (p) => p.spec),
+    directByOutcome: by(kb.outcomeLessons || [], (m) => okey(m.spec, m.outcome)),
   };
 }
 
@@ -106,7 +107,17 @@ export function validate(kb, lessons = null) {
     if (m.claim === "verified" && !(m.reviewed?.by && m.reviewed?.on)) p.push(`${w}: "verified" needs reviewed.by and reviewed.on`);
     if (m.claim === "verified" && !ix.spec.get(m.spec)?.checked) p.push(`${w}: can't be verified while the specification itself is unchecked`);
   }
-  for (const s of kb.specs) for (const o of s.outcomes) if (!ix.mapsByOutcome.has(okey(s.id, o.id))) p.push(`${s.id}#${o.id}: outcome has no mapping to knowledge`);
+  dup(kb.outcomeLessons || [], (m) => okey(m.spec, m.outcome), "direct outcome mapping");
+  for (const m of kb.outcomeLessons || []) {
+    const w = `direct mapping ${okey(m.spec, m.outcome)}`;
+    if (!ix.outcome.has(okey(m.spec, m.outcome))) p.push(`${w}: no such specification outcome`);
+    if (!Array.isArray(m.lessons)) p.push(`${w}: lessons must be a list (empty means a known gap)`);
+    for (const l of m.lessons || []) {
+      if (!FITS.includes(l.fit)) p.push(`${w}: unknown fit ${l.fit}`);
+      if (lessons && !lessons.has(key(l.course, l.lesson))) p.push(`${w}: no written lesson ${key(l.course, l.lesson)}`);
+    }
+    if (!(m.mapped?.on && m.mapped?.by)) p.push(`${w}: mapped needs on and by (a person or "automated")`);
+  }
   for (const b of kb.lessonMaps) {
     const w = `binding ${key(b.course, b.lesson)} → ${b.concept}`;
     if (!ix.concept.has(b.concept)) p.push(`${w}: unknown concept`);
@@ -145,15 +156,24 @@ export function pathwaysFor(kb, conceptId) {
 /** Every lesson bound to the concept. */
 export const lessonsFor = (kb, conceptId) => indexOf(kb).bindingsByConcept.get(conceptId) || [];
 
-const RANK = { gap: 0, "no-course": 0, "below-level": 1, partial: 2, "above-level": 2, covered: 3 };
+const RANK = { gap: 0, "no-course": 0, unmapped: 0, "below-level": 1, partial: 2, "above-level": 2, covered: 3 };
 /** For each outcome of a specification: is there a lesson, on a course that offers the specification, that teaches
  *  what it needs at the right band? */
 export function coverage(kb, specId, lessons = null) {
   const ix = indexOf(kb), s = ix.spec.get(specId);
   if (!s) throw new Error(`unknown specification ${specId}`);
-  const courses = (ix.pathwaysBySpec.get(specId) || []).map((p) => p.course);
+  const direct = s.outcomes.flatMap((o) => ix.directByOutcome.get(okey(specId, o.id)) || []);
+  const courses = [...new Set([...(ix.pathwaysBySpec.get(specId) || []).map((p) => p.course), ...direct.flatMap((m) => m.lessons.map((l) => l.course))])];
   const outcomes = s.outcomes.map((o) => {
     const maps = ix.mapsByOutcome.get(okey(specId, o.id)) || [];
+    // an outcome with no concept mapping is resolved through its direct lesson mapping, if it has one
+    const dm = ix.directByOutcome.get(okey(specId, o.id))?.[0];
+    if (!maps.length) {
+      if (!dm) return { outcome: o, concepts: [], status: "unmapped", lessons: [], note: "Not yet mapped to lessons." };
+      const live = dm.lessons.filter((l) => !lessons || lessons.has(key(l.course, l.lesson)));
+      const st = live.some((l) => l.fit === "covers") ? "covered" : live.length ? "partial" : courses.length ? "gap" : "no-course";
+      return { outcome: o, concepts: [], status: st, lessons: live.map((l) => key(l.course, l.lesson)), note: dm.note || (st === "gap" ? "No Gradify lesson teaches this yet." : ""), direct: true };
+    }
     const concepts = [...new Set(maps.flatMap((m) => m.concepts))], practical = maps.some((m) => m.practical);
     if (!courses.length) return { outcome: o, concepts, status: "no-course", lessons: [], note: "No Gradify course offers this specification yet." };
     let worst = "covered"; const found = [], notes = [];
@@ -244,7 +264,9 @@ export function summary(kb, lessons = null) {
     awardingBodies: new Set(kb.specs.map((s) => s.body)).size,
     specificationsChecked: kb.specs.filter((s) => s.checked).length,
     outcomes: cov.length,
-    outcomesMapped: kb.specs.reduce((n, s) => n + s.outcomes.filter((o) => kb.outcomeMaps.some((m) => m.spec === s.id && m.outcome === o.id)).length, 0),
+    outcomesMapped: cov.filter((o) => o.status !== "unmapped").length,
+    outcomesUnmapped: cov.filter((o) => o.status === "unmapped").length,
+    specificationsExtracted: kb.specs.filter((s) => s.extracted).length,
     outcomesCovered: count(cov.map((o) => o.status), "covered"),
     outcomesAboveLevel: count(cov.map((o) => o.status), "above-level"),
     outcomesPartial: count(cov.map((o) => o.status), "partial"),

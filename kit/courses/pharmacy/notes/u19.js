@@ -86,7 +86,7 @@ Q: Why answer before looking at the options? | To avoid being swayed by plausibl
 SUM: SBAs test judgement between plausible options.
 SUM: Technique and time management improve scores.
 SRC: General Pharmaceutical Council, Registration assessment: sample questions | guidance | 2025 | https://www.pharmacyregulation.org/
-SRC: Case SM, Swanson DB, Constructing written test questions for the basic and clinical sciences (3rd edn, NBME 2002) | textbook | 2002 | https://www.nbme.org/
+SRC: Case SM, Swanson DB, Constructing written test questions for the basic and clinical sciences (3rd edn, NBME 2002) | secondary | 2002 | https://www.nbme.org/
 M1#pharmacy-u19-03-q1@1: How many options does a typical SBA question have? | Five | Two | Three | Ten | Twenty | Registration assessment SBAs have five options.
 M2#pharmacy-u19-03-q2@2: Two options seem correct. What's the best approach? | Choose the one that best answers the specific lead-in in this scenario | Pick whichever option is longest and most detailed | Pick the first plausible option to save time | Leave it blank to avoid losing marks | Pick the option you'd use in your own workplace | Context and the lead-in determine the best option.
 M2#pharmacy-u19-03-q3@1: Why read the lead-in first? | It tells you what to look for in the scenario | It usually repeats the correct answer word for word | It tells you how many marks the question carries | It lists which options to rule out first | It describes the patient's full medical history | Knowing the question focuses your reading.
@@ -117,7 +117,7 @@ Q: Name a good revision theme for EMQs. | For example adverse effects, interacti
 SUM: EMQs test discrimination between similar options.
 SUM: Theme-based revision suits EMQs.
 SRC: General Pharmaceutical Council, Registration assessment: sample questions | guidance | 2025 | https://www.pharmacyregulation.org/
-SRC: Case SM, Swanson DB, Extended-matching items: a practical alternative to free-response questions, Teaching and Learning in Medicine 5(2) 107 | journal | 1993 | https://doi.org/10.1080/10401339309539601
+SRC: Case SM, Swanson DB, Extended-matching items: a practical alternative to free-response questions, Teaching and Learning in Medicine 5(2) 107 | primary | 1993 | https://doi.org/10.1080/10401339309539601
 M1#pharmacy-u19-04-q1@1: What do EMQs in a set share? | A theme and an option list | The same correct answer for every scenario | The same patient in every scenario | A shared calculation worked across questions | A single scenario with several lead-ins | Several scenarios in a set use the same theme and option list.
 M2#pharmacy-u19-04-q2@2: In an EMQ set, the answer to question 2 seems to be the same as question 1. What's right? | Choose it: options can be used more than once | Pick a different option, as each is used once | Leave it blank and return to it at the end | Skip the whole set as probably flawed | Choose the option next to it in the list | EMQ options can be used once, more than once, or not at all.
 M2#pharmacy-u19-04-q3@1: Which revision approach suits EMQs best? | Grouping topics by theme, such as adverse effects | Reading the BNF from cover to cover | Memorising BNF chapter numbers | Revising law and ethics only | Avoiding timed practice questions | Themes such as adverse effects mirror how EMQ sets are organised.
@@ -176,8 +176,8 @@ Q: What is retrieval practice? | Testing yourself to strengthen memory.
 Q: Why use spaced repetition? | Revisiting at intervals improves long-term retention.
 SUM: Steady, active revision beats cramming.
 SUM: Learn from mistakes and protect wellbeing.
-SRC: Dunlosky J et al, Improving students' learning with effective learning techniques, Psychological Science in the Public Interest 14(1) 4 | journal | 2013 | https://doi.org/10.1177/1529100612453266
-SRC: Education Endowment Foundation, Cognitive science approaches in the classroom | report | 2021 | https://educationendowmentfoundation.org.uk/
+SRC: Dunlosky J et al, Improving students' learning with effective learning techniques, Psychological Science in the Public Interest 14(1) 4 | primary | 2013 | https://doi.org/10.1177/1529100612453266
+SRC: Education Endowment Foundation, Cognitive science approaches in the classroom | secondary | 2021 | https://educationendowmentfoundation.org.uk/
 M1#pharmacy-u19-06-q1@1: Which technique involves testing yourself? | Retrieval practice | Rereading | Highlighting | Copying notes | Listening passively | Retrieval strengthens memory more than rereading.
 M2#pharmacy-u19-06-q2@2: What should you do after a mock exam? | Analyse each mistake and why it happened | Just record the score | Throw it away | Retake it immediately to memorise answers | Avoid looking at the answers | Analysing why each answer was wrong targets weak knowledge and technique.
 M3#pharmacy-u19-06-q3@2: Which revision approach has strong evidence? | Spaced retrieval practice mixed across topics | Cramming the night before | Highlighting every page | Rereading notes many times | Studying one topic for a whole week | Spacing, retrieval and interleaving improve long-term learning.
@@ -263,7 +263,7 @@ Q: Where can a trainee go if the supervisory relationship isn't working? | The t
 SUM: Supervisors guide and assess trainees.
 SUM: Honest, active engagement makes supervision effective.
 SRC: General Pharmaceutical Council, Guidance on supervising pharmacy professionals in training | guidance | 2024 | https://www.pharmacyregulation.org/
-SRC: Pendleton D et al, The consultation: an approach to learning and teaching (OUP 1984) | textbook | 1984 | https://global.oup.com/
+SRC: Pendleton D et al, The consultation: an approach to learning and teaching (OUP 1984) | secondary | 1984 | https://global.oup.com/
 M1#pharmacy-u19-09-q1@1: Who completes the final declaration of a trainee's competence? | The designated supervisor | The trainee alone | A patient | The pharmacy owner | The pharmaceutical wholesaler | The supervisor makes the final declaration.
 M3#pharmacy-u19-09-q2@2: A trainee makes a dispensing error that's caught before supply. What's best? | Tell the supervisor and reflect on what happened | Correct it quietly without telling anyone | Record it as a colleague's error | Ignore it because no harm was done | Wait to see if anyone else notices | Being open about near misses supports learning and patient safety.
 M2#pharmacy-u19-09-q3@1: When should a trainee raise workload concerns? | As soon as they arise | At the end of the year | Never | Only after failing | Only in the exit interview | Raising concerns early allows support before problems grow.

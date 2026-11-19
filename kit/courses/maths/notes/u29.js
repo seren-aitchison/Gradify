@@ -65,7 +65,7 @@ Q: In the 50/30/20 rule, what is the 20% for? | Saving or paying off debt.
 SUM: A budget turns income into a plan.
 SUM: Track, review and plan for irregular costs.
 SRC: Money and Pensions Service, MoneyHelper: budget planner | guidance | 2025 | https://www.moneyhelper.org.uk/en/everyday-money/budgeting/budget-planner
-SRC: Warren E, Tyagi AW, All Your Worth: The Ultimate Lifetime Money Plan (Free Press 2005) | textbook | 2005 | https://www.simonandschuster.com/
+SRC: Warren E, Tyagi AW, All Your Worth: The Ultimate Lifetime Money Plan (Free Press 2005) | secondary | 2005 | https://www.simonandschuster.com/
 NUM1#maths-u29-02-q1@1: A coffee costs £3.20 and is bought 5 days a week. Find the yearly cost in pounds. | 832 | 0 | £ | 3.20 × 5 × 52 = £832.
 M1#maths-u29-02-q2@1: Which is a fixed expense for most people? | Rent | Groceries | Petrol | Eating out | Gifts | Rent stays the same each month; the others vary.
 M2#maths-u29-02-q3@2: Monthly take-home pay is £1,800 and spending is £1,950. What does the budget show? | A £150 monthly deficit that needs cutting back or more income | A £150 surplus | Nothing useful | A £1,950 surplus | A balanced budget | Spending of £1,950 exceeds income of £1,800, a monthly shortfall of £150 to close.
@@ -243,7 +243,7 @@ Q: What is the margin on the same item? | 20%.
 SUM: Profit drives business decisions.
 SUM: Markup and margin aren't the same.
 SRC: GOV.UK, Business finance explained | guidance | 2024 | https://www.gov.uk/business-finance-support
-SRC: Atrill P, McLaney E, Accounting and Finance for Non-Specialists (12th edn, Pearson 2023) | textbook | 2023 | https://www.pearson.com/
+SRC: Atrill P, McLaney E, Accounting and Finance for Non-Specialists (12th edn, Pearson 2023) | secondary | 2023 | https://www.pearson.com/
 NUM1#maths-u29-07-q1@1: A trader buys a bike for £240 and sells it for £204. Find the percentage loss. | 15 | 0 | % | Loss £36; 36/240 = 15%.
 M1#maths-u29-07-q2@1: A product costs £20 and has a 40% markup. What is its selling price? | £28 | £24 | £33.33 | £12 | £60 | Markup is a percentage of cost, so the price is £20 × 1.4 = £28.
 M2#maths-u29-07-q3@2: A 50% markup corresponds to what margin? | 33.3% | 50% | 25% | 66.7% | 150% | Cost 100, price 150: profit 50 is a third of the price.
@@ -310,7 +310,7 @@ Q: £1 = $1.30 and €1 = $1.10. What is £1 in euros? | About €1.18.
 SUM: Exchange rates move constantly.
 SUM: Their changes affect prices and earnings.
 SRC: Bank of England, What are exchange rates? | guidance | 2024 | https://www.bankofengland.co.uk/explainers/
-SRC: Krugman PR, Obstfeld M, Melitz MJ, International Economics: Theory and Policy (12th edn, Pearson 2022) | textbook | 2022 | https://www.pearson.com/
+SRC: Krugman PR, Obstfeld M, Melitz MJ, International Economics: Theory and Policy (12th edn, Pearson 2022) | secondary | 2022 | https://www.pearson.com/
 NUM1#maths-u29-09-q1@1: The rate falls from £1 = $1.30 to £1 = $1.17. By what percentage has the pound depreciated? | 10 | 0.01 | % | (1.30 − 1.17)/1.30 = 0.10, a 10% fall.
 M1#maths-u29-09-q2@1: The pound strengthens against the euro. What happens to UK holidays in Spain? | They get cheaper for UK tourists | They get more expensive | Nothing changes | Hotels close | They must be paid in pounds | A stronger pound buys more euros, so prices in Spain cost UK tourists fewer pounds.
 M3#maths-u29-09-q3@2: £1 = $1.20 and $1 = ¥150. What is £1 in yen? | ¥180 | ¥125 | ¥150 | ¥1.80 | ¥0.008 | Chain the rates: £1 buys $1.20, and each dollar buys ¥150, so £1 buys 1.20 × 150 = ¥180.
@@ -514,7 +514,7 @@ Q: What does diversification do? | Reduces the impact of any one investment doin
 SUM: Returns include income and growth.
 SUM: Fees and risk matter as much as headline gains.
 SRC: Financial Conduct Authority, Investing: understanding risk | guidance | 2025 | https://www.fca.org.uk/consumers/investing
-SRC: Bodie Z, Kane A, Marcus AJ, Investments (13th edn, McGraw-Hill 2024) | textbook | 2024 | https://www.mheducation.co.uk/
+SRC: Bodie Z, Kane A, Marcus AJ, Investments (13th edn, McGraw-Hill 2024) | secondary | 2024 | https://www.mheducation.co.uk/
 NUM1#maths-u29-15-q1@1: A share bought for £60 pays a £3 dividend. Find the dividend yield. | 5 | 0 | % | 3/60 = 5%.
 M1#maths-u29-15-q2@1: £10,000 grows at 5% a year for 20 years. Roughly what is it worth? | £26,500 | £20,000 | £15,000 | £30,000 | £21,900 | Compounding gives 10,000 × 1.05^{20} ≈ 10,000 × 2.653 ≈ £26,533.
 M3#maths-u29-15-q3@2: Fund A returns 7% with a 1.5% annual fee; fund B returns 6.5% with a 0.2% fee. Which is better, assuming equal risk? | Fund B (6.3% net against 5.5%) | Fund A, because 7% is higher | They're equal | Neither: fees don't matter | Fund A over long periods | Compare returns after fees: 7 − 1.5 = 5.5% against 6.5 − 0.2 = 6.3%.
@@ -688,7 +688,7 @@ Q: Dough uses 500 g flour at 70% hydration. How much water? | 350 g.
 SUM: Recipes are ratios.
 SUM: Multiply every ingredient by the scale factor.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Ruhlman M, Ratio: The Simple Codes Behind the Craft of Everyday Cooking (Scribner 2009) | textbook | 2009 | https://www.simonandschuster.com/
+SRC: Ruhlman M, Ratio: The Simple Codes Behind the Craft of Everyday Cooking (Scribner 2009) | secondary | 2009 | https://www.simonandschuster.com/
 NUM1#maths-u29-20-q1@1: A smoothie recipe uses fruit and yoghurt in the ratio 3:2. How much fruit is in 750 g of smoothie, in grams? | 450 | 0 | g | 3/5 × 750 = 450 g.
 M1#maths-u29-20-q2@1: Pastry uses flour and butter in the ratio 2:1. How much butter goes with 350 g of flour? | 175 g | 700 g | 117 g | 233 g | 350 g | In a 2:1 ratio the butter is half the flour, so 350 ÷ 2 = 175 g.
 M2#maths-u29-20-q3@2: A recipe for 6 needs 450 g of rice. How much for 10 people? | 750 g | 600 g | 270 g | 4,500 g | 900 g | Find one serving first: 450 ÷ 6 = 75 g, then 75 × 10 = 750 g.
@@ -826,7 +826,7 @@ Q: What does a backsight reading measure? | The staff reading on a point of know
 SUM: Surveying measures land with trigonometry.
 SUM: Levelling tracks heights carefully.
 SRC: Ordnance Survey, A guide to coordinate systems in Great Britain | guidance | 2020 | https://www.ordnancesurvey.co.uk/
-SRC: Uren J, Price WF, Surveying for Engineers (5th edn, Palgrave Macmillan 2010) | textbook | 2010 | https://link.springer.com/
+SRC: Uren J, Price WF, Surveying for Engineers (5th edn, Palgrave Macmillan 2010) | secondary | 2010 | https://link.springer.com/
 NUM1#maths-u29-24-q1@1: From 60 m away, the top of a building is at an elevation of 25°, measured from an instrument 1.5 m high. Find the height, to 1 decimal place. | 29.5 | 0.05 | m | 60 tan 25° ≈ 27.98, plus 1.5 ≈ 29.5 m.
 M1#maths-u29-24-q2@1: A drain falls 0.5 m over 40 m. What is its gradient? | 1 in 80 | 1 in 20 | 1 in 40 | 1 in 8 | 1 in 200 | Divide the horizontal distance by the drop: 40 ÷ 0.5 = 80, so 1 in 80, or 1.25%.
 M2#maths-u29-24-q3@2: The height of instrument is 32.40 m and the foresight on a point is 1.85 m. What is the point's level? | 30.55 m | 34.25 m | 32.40 m | 1.85 m | 30.85 m | Level = height of instrument − foresight.
@@ -930,7 +930,7 @@ Q: Express a 0.4% risk as a natural frequency. | 4 in 1,000.
 Q: Why are insurance premiums higher than expected payouts? | They cover the insurer's costs and profit.
 SUM: Risk decisions weigh probability and cost.
 SUM: Natural frequencies clarify risk.
-SRC: Spiegelhalter D, The Art of Statistics: Learning from Data (Pelican 2019) | textbook | 2019 | https://www.penguin.co.uk/
+SRC: Spiegelhalter D, The Art of Statistics: Learning from Data (Pelican 2019) | secondary | 2019 | https://www.penguin.co.uk/
 SRC: Winton Centre for Risk and Evidence Communication, Communicating risk | guidance | 2022 | https://wintoncentre.maths.cam.ac.uk/
 NUM1#maths-u29-27-q1@1: A £1,200 bike has a 10% chance of theft each year. Insurance has a £100 excess. Find the expected yearly payout, in pounds. | 110 | 0 | £ | 0.1 × (1,200 − 100) = £110.
 M1#maths-u29-27-q2@1: Which is the clearest way to present a 0.2% risk to the public? | 2 in 1,000 people | 0.002 | 0.2% | One-fifth of a per cent | A relative risk of 1.2 | Natural frequencies are easiest to picture.

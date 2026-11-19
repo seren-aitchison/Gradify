@@ -25,8 +25,8 @@ Q: What does the parallel postulate say (Playfair's form)? | Through a point not
 Q: Which postulate is needed to prove the triangle angle sum? | The parallel postulate.
 SUM: Euclid built geometry from axioms.
 SUM: The parallel postulate defines flat geometry.
-SRC: Heath TL (trans.), Euclid: The Thirteen Books of the Elements (Dover 1956) | textbook | 1956 | https://store.doverpublications.com/
-SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | textbook | 2000 | https://link.springer.com/
+SRC: Heath TL (trans.), Euclid: The Thirteen Books of the Elements (Dover 1956) | secondary | 1956 | https://store.doverpublications.com/
+SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 M1#maths-u05-01-q1@1: Around when did Euclid write the Elements? | About 300 BCE | About 1600 CE | About 1000 BCE | About 1900 CE | About 500 CE | Euclid worked in Alexandria around 300 BCE.
 M2#maths-u05-01-q2@2: Which result depends on the parallel postulate? | The angles in a triangle add to 180° | All right angles are equal | A circle can be drawn with any centre | A line can be extended | A point has no part | The angle sum proof uses a parallel line and alternate angles, which rely on the parallel postulate.
 
@@ -57,7 +57,7 @@ Q: What do the angles in a quadrilateral add up to? | 360°.
 SUM: Plane geometry is the geometry of flat shapes.
 SUM: Properties and reasons solve problems.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | textbook | 2000 | https://link.springer.com/
+SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 M1#maths-u05-02-q1@1: An isosceles triangle has an apex angle of 50°. What is each base angle? | 65° | 50° | 130° | 75° | 40° | The base angles share 180 − 50 = 130°, so each is 65°.
 M2#maths-u05-02-q2@2: Which shape always has exactly one pair of parallel sides? | A trapezium | A rectangle | A rhombus | A parallelogram | A kite | A trapezium has exactly one pair (in the UK definition); the others have two or none.
 
@@ -87,7 +87,7 @@ Q: How many points determine a plane? | Three, if they aren't collinear.
 Q: Can skew lines exist in a plane? | No: only in three or more dimensions.
 SUM: Points, lines and planes are geometry's building blocks.
 SUM: 3D adds skew lines.
-SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | textbook | 2000 | https://link.springer.com/
+SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
 M1#maths-u05-03-q1@1: What are points that lie on the same straight line called? | Collinear | Coplanar | Concurrent | Skew | Parallel | Collinear means on one line; coplanar means on one plane.
 M2#maths-u05-03-q2@2: Two distinct planes that aren't parallel meet in: | A line | A point | A plane | Two points | Nothing | Two non-parallel planes always intersect along a straight line, like the pages of a book along the spine.
@@ -183,7 +183,7 @@ Q: Can sides of 5, 6 and 12 form a triangle? | No: 5 + 6 < 12.
 SUM: Triangles have angle sum 180°.
 SUM: The exterior angle theorem saves steps.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | textbook | 2000 | https://link.springer.com/
+SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 NUM1#maths-u05-06-q1@1: A triangle has angles x, 2x and 3x. Find the largest angle. | 90 | 0 | ° | 6x = 180, so x = 30 and the largest angle is 90°.
 M1#maths-u05-06-q2@1: Which set of lengths can form a triangle? | 4, 5, 8 | 2, 3, 6 | 1, 1, 3 | 5, 5, 11 | 3, 4, 7 | 4 + 5 = 9 > 8; in the others, the two shorter sides don't exceed the longest.
 M2#maths-u05-06-q3@2: An isosceles triangle has one angle of 100°. What are the other two? | 40° and 40° | 100° and −20° | 80° and 0° | 50° and 30° | 100° and 100° | 100° must be the apex (two 100° angles would exceed 180°), so the base angles share 80°.
@@ -213,7 +213,7 @@ Q: If lengths double, what happens to the area? | It multiplies by 4.
 SUM: Congruence means identical; similarity means scaled.
 SUM: Area and volume scale by k^{2} and k^{3}.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | textbook | 2000 | https://link.springer.com/
+SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 NUM1#maths-u05-07-q1@1: Two similar shapes have areas 20 cm² and 45 cm². What is the length scale factor? | 1.5 | 0 |  | The area scale factor is 45/20 = 2.25, so k = √2.25 = 1.5.
 M1#maths-u05-07-q2@1: Which condition does NOT prove two triangles congruent? | AAA | SSS | SAS | RHS | ASA | Equal angles alone give similar triangles of possibly different sizes.
 M3#maths-u05-07-q3@2: Two similar cones have volumes 54 cm³ and 16 cm³. The larger has surface area 90 cm². What is the smaller's? | 40 cm² | 26.7 cm² | 60 cm² | 30 cm² | 10 cm² | Volume ratio 16/54 = (2/3)^{3}, so k = 2/3 and the area ratio is 4/9: 90 × 4/9 = 40.
@@ -312,7 +312,7 @@ Q: What is the distance between (1, 2) and (4, 6)? | 5.
 SUM: Pythagoras links the sides of right-angled triangles.
 SUM: It gives distances in 2D and 3D.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Maor E, The Pythagorean Theorem: A 4,000-Year History (Princeton University Press 2007) | textbook | 2007 | https://press.princeton.edu/
+SRC: Maor E, The Pythagorean Theorem: A 4,000-Year History (Princeton University Press 2007) | secondary | 2007 | https://press.princeton.edu/
 NUM1#maths-u05-10-q1@1: A ladder 6.5 m long reaches 6 m up a wall. How far is its foot from the wall? | 2.5 | 0.01 | m | √(6.5^{2} − 6^{2}) = √(42.25 − 36) = √6.25 = 2.5 m.
 M1#maths-u05-10-q2@1: Which is a Pythagorean triple? | 8, 15, 17 | 6, 8, 12 | 5, 6, 7 | 2, 3, 4 | 9, 12, 16 | Check a^{2} + b^{2} = c^{2}: 8^{2} + 15^{2} = 64 + 225 = 289 = 17^{2}.
 M3#maths-u05-10-q3@2: What is the distance between (−2, 3) and (4, −5)? | 10 | 14 | 8 | √20 | 6 | The differences are 6 and 8, so the distance is √(6^{2} + 8^{2}) = √100 = 10.
@@ -346,7 +346,7 @@ Q: What is a chord? | A line segment joining two points on a circle.
 SUM: Circles are defined by a centre and radius.
 SUM: π links diameter, circumference and area.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Beckmann P, A History of Pi (St Martin's Press 1971) | textbook | 1971 | https://us.macmillan.com/
+SRC: Beckmann P, A History of Pi (St Martin's Press 1971) | secondary | 1971 | https://us.macmillan.com/
 NUM1#maths-u05-11-q1@1: A circle has area 64π cm². What is its circumference, in terms of π? | 16 | 0 | π cm | r^{2} = 64, so r = 8 and C = 2π × 8 = 16π cm.
 M1#maths-u05-11-q2@1: What is the area of a circle with diameter 10 cm? | 25π cm² | 100π cm² | 10π cm² | 5π cm² | 20π cm² | The radius is 5 cm, so the area is π × 5^{2} = 25π.
 M2#maths-u05-11-q3@2: What is the region between a chord and its arc called? | A segment | A sector | A tangent | A radius | An annulus | A sector is bounded by two radii; a segment by a chord and an arc.
@@ -413,7 +413,7 @@ Q: What do opposite angles in a cyclic quadrilateral add up to? | 180°.
 SUM: Circle theorems connect angles and arcs.
 SUM: State the theorem as the reason.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Heath TL (trans.), Euclid: The Thirteen Books of the Elements (Dover 1956) | textbook | 1956 | https://store.doverpublications.com/
+SRC: Heath TL (trans.), Euclid: The Thirteen Books of the Elements (Dover 1956) | secondary | 1956 | https://store.doverpublications.com/
 NUM1#maths-u05-13-q1@1: In a cyclic quadrilateral, one angle is 4x and its opposite angle is 5x. Find x. | 20 | 0 | ° | Opposite angles add to 180°: 9x = 180, so x = 20.
 M1#maths-u05-13-q2@1: AB is a diameter and C is on the circle. What is angle ACB? | 90° | 180° | 45° | 60° | It depends on C | The angle in a semicircle is a right angle.
 M3#maths-u05-13-q3@2: The angle between a tangent and chord AB at A is 52°. What is the angle subtended by AB in the alternate segment? | 52° | 104° | 38° | 128° | 26° | By the alternate segment theorem, it equals the tangent–chord angle.
@@ -444,7 +444,7 @@ Q: How do you construct a 30° angle? | Construct 60° (an equilateral triangle)
 SUM: Constructions use only compasses and a straight edge.
 SUM: Bisectors are loci of equidistant points.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | textbook | 2000 | https://link.springer.com/
+SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 M1#maths-u05-14-q1@1: Which construction finds all points equidistant from two points A and B? | The perpendicular bisector of AB | The angle bisector | A circle centred on A | A line parallel to AB | The midpoint only | Every point on the perpendicular bisector is the same distance from A and B.
 M2#maths-u05-14-q2@2: Which angle can't be constructed with compasses and a straight edge alone by bisecting standard angles? | 20° | 30° | 45° | 15° | 22.5° | Bisecting 60° and 90° gives 30°, 45°, 15° and 22.5°; trisecting 60° to get 20° is impossible with these tools (Wantzel, 1837).
 
@@ -634,7 +634,7 @@ Q: How many different nets does a cube have? | 11.
 SUM: Solids are classified by their shapes and faces.
 SUM: 2D views represent 3D solids.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 M1#maths-u05-20-q1@1: Which solid has a constant circular cross-section? | A cylinder | A cone | A sphere | A pyramid | A hemisphere | A cylinder is a prism with a circular cross-section.
 M3#maths-u05-20-q2@2: Which cross-section is impossible when slicing a cube with a flat plane? | A heptagon | A triangle | A hexagon | A pentagon | A rectangle | A cube has 6 faces, so a plane can cut at most 6 of them: at most a hexagon.
 
@@ -664,8 +664,8 @@ Q: How many faces does an octahedron have? | 8.
 Q: Check Euler's formula for a tetrahedron. | 4 − 6 + 4 = 2.
 SUM: Polyhedra have flat polygonal faces.
 SUM: Euler's formula holds for all convex polyhedra.
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
-SRC: Richeson DS, Euler's Gem: The Polyhedron Formula and the Birth of Topology (Princeton University Press 2008) | textbook | 2008 | https://press.princeton.edu/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
+SRC: Richeson DS, Euler's Gem: The Polyhedron Formula and the Birth of Topology (Princeton University Press 2008) | secondary | 2008 | https://press.princeton.edu/
 NUM1#maths-u05-21-q1@1: A convex polyhedron has 12 faces and 20 vertices. How many edges does it have? | 30 | 0 |  | V − E + F = 2 gives 20 − E + 12 = 2, so E = 30 (a dodecahedron).
 M1#maths-u05-21-q2@1: How many Platonic solids are there? | 5 | 3 | 4 | 6 | Infinitely many | Only five convex regular polyhedra exist: tetrahedron, cube, octahedron, dodecahedron and icosahedron.
 M2#maths-u05-21-q3@2: Which Platonic solid has pentagonal faces? | Dodecahedron | Icosahedron | Octahedron | Tetrahedron | Cube | The dodecahedron has 12 regular pentagonal faces.
@@ -764,7 +764,7 @@ Q: What does a negative scale factor do in an enlargement? | It places the image
 SUM: Transformations move and resize shapes.
 SUM: Full descriptions need every detail.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 M1#maths-u05-24-q1@1: Where does (4, 1) go after reflection in the line y = x? | (1, 4) | (−4, 1) | (4, −1) | (−1, −4) | (1, −4) | Reflection in y = x swaps the coordinates.
 M2#maths-u05-24-q2@2: Where does (2, 5) go after a 90° clockwise rotation about the origin? | (5, −2) | (−5, 2) | (−2, 5) | (2, −5) | (−5, −2) | A 90° clockwise rotation maps (x, y) to (y, −x).
 M2#maths-u05-24-q3@2: What does the matrix [[3, 0], [0, 3]] do to shapes? | Enlarges them by scale factor 3 about the origin, multiplying areas by 9 | Rotates them by 3° | Reflects them in y = x | Translates them by 3 | Enlarges by 9 and areas by 3 | Both coordinates triple, so lengths ×3 and areas ×9 = det.
@@ -794,7 +794,7 @@ Q: How many lines of symmetry does a rectangle (not a square) have? | 2.
 SUM: Symmetry is invariance under transformation.
 SUM: Symmetries form groups.
 SRC: Department for Education, Mathematics GCSE subject content and assessment objectives | standard | 2013 | https://www.gov.uk/government/publications/gcse-mathematics-subject-content-and-assessment-objectives
-SRC: Armstrong MA, Groups and Symmetry (Springer 1988) | textbook | 1988 | https://link.springer.com/
+SRC: Armstrong MA, Groups and Symmetry (Springer 1988) | secondary | 1988 | https://link.springer.com/
 M1#maths-u05-25-q1@1: How many lines of symmetry does a regular pentagon have? | 5 | 1 | 2 | 10 | 0 | A regular n-sided polygon has n lines of symmetry.
 M2#maths-u05-25-q2@2: Which shape has rotational symmetry of order 2 but no lines of symmetry? | A (non-rectangular, non-rhombus) parallelogram | A square | A kite | An isosceles trapezium | An equilateral triangle | A general parallelogram looks the same after a half turn, but no mirror line maps it onto itself.
 
@@ -823,8 +823,8 @@ Q: Why don't regular pentagons tessellate? | Their 108° angles can't add to exa
 Q: Does every quadrilateral tessellate? | Yes.
 SUM: Tessellations need angles summing to 360°.
 SUM: Only three regular polygons tile alone.
-SRC: Grünbaum B, Shephard GC, Tilings and Patterns (2nd edn, Dover 2016) | textbook | 2016 | https://store.doverpublications.com/
-SRC: Smith D, Myers JS, Kaplan CS, Goodman-Strauss C, An aperiodic monotile, Combinatorial Theory 4(1) | journal | 2024 | https://doi.org/10.5070/C64163843
+SRC: Grünbaum B, Shephard GC, Tilings and Patterns (2nd edn, Dover 2016) | secondary | 2016 | https://store.doverpublications.com/
+SRC: Smith D, Myers JS, Kaplan CS, Goodman-Strauss C, An aperiodic monotile, Combinatorial Theory 4(1) | primary | 2024 | https://doi.org/10.5070/C64163843
 M1#maths-u05-26-q1@1: Which regular polygon tessellates on its own? | Hexagon | Pentagon | Octagon | Heptagon | Decagon | Three hexagons meet at a vertex: 3 × 120° = 360°.
 M2#maths-u05-26-q2@2: Which combination of regular polygons fits exactly around a vertex? | Two octagons and a square | Two pentagons and a square | Three pentagons | Two hexagons and a square | An octagon and two triangles | The angles at the vertex must total 360°: 135° + 135° + 90° = 360°.
 
@@ -887,7 +887,7 @@ Q: How do you test whether a line is tangent to a circle? | Substitute and check
 SUM: Equations describe curves.
 SUM: Algebra answers geometric questions.
 SRC: Department for Education, Mathematics AS and A level subject content: coordinate geometry | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 NUM1#maths-u05-28-q1@1: What is the radius of x^{2} + y^{2} + 8x − 2y − 8 = 0? | 5 | 0 |  | (x + 4)^{2} + (y − 1)^{2} = 8 + 16 + 1 = 25, so r = 5.
 M1#maths-u05-28-q2@1: What is the centre of (x + 2)^{2} + (y − 5)^{2} = 9? | (−2, 5) | (2, −5) | (2, 5) | (−2, −5) | (5, −2) | (x − a)^{2} + (y − b)^{2}: here a = −2 and b = 5.
 M3#maths-u05-28-q3@2: Does the line y = x + 5 meet the circle x^{2} + y^{2} = 4? | No | Yes, twice | Yes, once (tangent) | Only at the origin | It lies inside | Substituting gives 2x^{2} + 10x + 21 = 0, with discriminant 100 − 168 < 0.
@@ -955,7 +955,7 @@ Q: What is the normal vector to the plane 2x − y + 3z = 7? | (2, −1, 3).
 SUM: Coordinates extend naturally to 3D.
 SUM: Vectors describe lines and planes.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Anton H, Rorres C, Elementary Linear Algebra (12th edn, Wiley 2019) | textbook | 2019 | https://www.wiley.com/
+SRC: Anton H, Rorres C, Elementary Linear Algebra (12th edn, Wiley 2019) | secondary | 2019 | https://www.wiley.com/
 M1#maths-u05-30-q1@1: What is the distance from the origin to (2, 3, 6)? | 7 | 11 | 5 | √11 | 49 | The 3D distance formula gives √(2^{2} + 3^{2} + 6^{2}) = √49 = 7.
 M2#maths-u05-30-q2@2: Which point lies on the line r = (1, 0, 2) + λ(1, 2, −1)? | (3, 4, 0) | (2, 2, 3) | (1, 2, 1) | (0, 0, 0) | (3, 4, 4) | λ = 2 gives (1 + 2, 0 + 4, 2 − 2) = (3, 4, 0).
 
@@ -986,7 +986,7 @@ Q: Which conic do planets follow? | Ellipses.
 SUM: Conics come from slicing a cone.
 SUM: Their equations and eccentricity classify them.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 M1#maths-u05-31-q1@1: Which conic is x^{2}/25 + y^{2}/9 = 1? | An ellipse | A hyperbola | A parabola | A circle | Two lines | Both squared terms are positive with different denominators: an ellipse.
 M2#maths-u05-31-q2@2: What eccentricity does a parabola have? | 1 | 0 | Between 0 and 1 | Greater than 1 | Infinite | A parabola is the boundary case between ellipses (e < 1) and hyperbolas (e > 1).
 
@@ -1016,7 +1016,7 @@ Q: Why are satellite dishes parabolic? | Signals parallel to the axis reflect to
 SUM: Parabolas balance focus and directrix distances.
 SUM: Their reflective property has many uses.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 NUM1#maths-u05-32-q1@1: The parabola y^{2} = 4ax has focus (5, 0). What is a? | 5 | 0 |  | The focus of y^{2} = 4ax is (a, 0), so a = 5 (the equation is y^{2} = 20x).
 M1#maths-u05-32-q2@1: What is the directrix of y^{2} = 16x? | x = −4 | x = 4 | y = −4 | x = −16 | y = 4 | 4a = 16 gives a = 4, and the directrix is x = −a.
 M2#maths-u05-32-q3@2: Where should a bulb be placed in a parabolic headlight to make a parallel beam? | At the focus | At the vertex | On the directrix | At the rim | Anywhere on the axis | Rays from the focus reflect off the parabola parallel to its axis.
@@ -1080,7 +1080,7 @@ Q: Is y = 1/x a hyperbola? | Yes: a rectangular hyperbola, xy = 1.
 SUM: Hyperbolas have constant difference of distances to two foci.
 SUM: They have two branches and two asymptotes.
 SRC: Department for Education, AS and A level further mathematics subject content | standard | 2016 | https://www.gov.uk/government/publications/gce-as-and-a-level-further-mathematics
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
 NUM1#maths-u05-34-q1@1: For x^{2}/9 − y^{2}/16 = 1, find c, the distance from the centre to each focus. | 5 | 0 |  | c^{2} = a^{2} + b^{2} = 9 + 16 = 25, so c = 5.
 M1#maths-u05-34-q2@1: Which equation is a hyperbola? | x^{2}/4 − y^{2}/9 = 1 | x^{2}/4 + y^{2}/9 = 1 | y = x^{2} | x^{2} + y^{2} = 9 | y = 2x + 1 | A hyperbola has x^{2} and y^{2} terms with opposite signs, as in the first option.
 M2#maths-u05-34-q3@2: What is the eccentricity of x^{2}/16 − y^{2}/9 = 1? | 5/4 | 4/5 | 3/4 | 5/3 | 1 | c^{2} = 16 + 9 = 25, so c = 5 and a = 4, giving e = c/a = 5/4.
@@ -1110,8 +1110,8 @@ Q: How many parallels through a point does hyperbolic geometry allow? | Infinite
 Q: Which physical theory uses non-Euclidean geometry? | Einstein's general relativity.
 SUM: Non-Euclidean geometries replace the parallel postulate.
 SUM: Curvature distinguishes them.
-SRC: Greenberg MJ, Euclidean and Non-Euclidean Geometries (4th edn, WH Freeman 2008) | textbook | 2008 | https://www.macmillanlearning.com/
-SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | textbook | 2000 | https://link.springer.com/
+SRC: Greenberg MJ, Euclidean and Non-Euclidean Geometries (4th edn, WH Freeman 2008) | secondary | 2008 | https://www.macmillanlearning.com/
+SRC: Hartshorne R, Geometry: Euclid and Beyond (Springer 2000) | secondary | 2000 | https://link.springer.com/
 M1#maths-u05-35-q1@1: In which geometry do triangles have angle sums less than 180°? | Hyperbolic | Spherical | Euclidean | Projective | Affine | Negative curvature makes triangles "thin", with angle sums below 180°.
 M2#maths-u05-35-q2@2: Who independently developed hyperbolic geometry in the 1820s and 1830s? | Bolyai and Lobachevsky (and Gauss, unpublished) | Euclid and Archimedes | Newton and Leibniz | Descartes and Fermat | Einstein and Minkowski | Bolyai and Lobachevsky published; Gauss had the ideas but didn't publish them.
 
@@ -1140,8 +1140,8 @@ Q: Are lines of longitude great circles? | Yes.
 Q: What is the area of a spherical triangle with angle excess E (radians) on a sphere of radius R? | R^{2}E.
 SUM: Great circles are spherical lines.
 SUM: Angle excess measures area.
-SRC: Greenberg MJ, Euclidean and Non-Euclidean Geometries (4th edn, WH Freeman 2008) | textbook | 2008 | https://www.macmillanlearning.com/
-SRC: Todhunter I, Spherical Trigonometry (Macmillan 1886) | textbook | 1886 | https://archive.org/
+SRC: Greenberg MJ, Euclidean and Non-Euclidean Geometries (4th edn, WH Freeman 2008) | secondary | 2008 | https://www.macmillanlearning.com/
+SRC: Todhunter I, Spherical Trigonometry (Macmillan 1886) | secondary | 1886 | https://archive.org/
 NUM1#maths-u05-36-q1@1: A spherical triangle on a unit sphere has angles 100°, 80° and 90°. What is its area, as a multiple of π? | 0.5 | 0.001 | π | The excess is 270 − 180 = 90° = π/2, so the area is π/2 = 0.5π.
 M1#maths-u05-36-q2@1: Which of these is a great circle on the Earth? | The equator | The Arctic Circle | The Tropic of Cancer | Latitude 51.5°N | The Tropic of Capricorn | Only the equator, among lines of latitude, has its centre at the Earth's centre.
 M2#maths-u05-36-q3@2: How many points do two distinct great circles share? | Two (antipodal points) | None | One | Infinitely many | Four | Two planes through the centre meet in a line through the centre, which hits the sphere twice.
@@ -1171,8 +1171,8 @@ Q: What is the largest possible area of a hyperbolic triangle (curvature −1)? 
 Q: How do hyperbolic triangles' angle sums compare with 180°? | They're less than 180°.
 SUM: Hyperbolic geometry is negatively curved.
 SUM: Area equals the angle defect.
-SRC: Greenberg MJ, Euclidean and Non-Euclidean Geometries (4th edn, WH Freeman 2008) | textbook | 2008 | https://www.macmillanlearning.com/
-SRC: Anderson JW, Hyperbolic Geometry (2nd edn, Springer 2005) | textbook | 2005 | https://link.springer.com/
+SRC: Greenberg MJ, Euclidean and Non-Euclidean Geometries (4th edn, WH Freeman 2008) | secondary | 2008 | https://www.macmillanlearning.com/
+SRC: Anderson JW, Hyperbolic Geometry (2nd edn, Springer 2005) | secondary | 2005 | https://link.springer.com/
 NUM1#maths-u05-37-q1@1: A hyperbolic triangle (curvature −1) has angles π/3, π/4 and π/6. Find its area as a multiple of π. | 0.25 | 0.001 | π | The angles sum to 3π/4, so the defect and area are π/4 = 0.25π.
 M1#maths-u05-37-q2@1: What do lines look like in the Poincaré disc model? | Arcs meeting the boundary at right angles, or diameters | Straight chords only | Concentric circles | Spirals | Points | Hyperbolic lines are represented by circular arcs orthogonal to the boundary circle.
 M2#maths-u05-37-q3@2: How does a circle's circumference grow in the hyperbolic plane compared with 2πr? | Faster (exponentially) | Slower | The same | It shrinks | It's constant | Negative curvature makes space "spread out", so circumference grows exponentially with radius.
@@ -1201,8 +1201,8 @@ Q: Do affine maps preserve parallel lines? | Yes.
 Q: What does an affine map do to a circle? | It maps it to an ellipse (or a circle).
 SUM: Affine geometry keeps lines and parallelism.
 SUM: Ratios along lines are invariant.
-SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | textbook | 1989 | https://www.wiley.com/
-SRC: Brannan DA, Esplen MF, Gray JJ, Geometry (2nd edn, Cambridge University Press 2011) | textbook | 2011 | https://www.cambridge.org/
+SRC: Coxeter HSM, Introduction to Geometry (2nd edn, Wiley 1989) | secondary | 1989 | https://www.wiley.com/
+SRC: Brannan DA, Esplen MF, Gray JJ, Geometry (2nd edn, Cambridge University Press 2011) | secondary | 2011 | https://www.cambridge.org/
 NUM1#maths-u05-38-q1@1: An affine map has matrix A = [[3, 1], [0, 2]]. By what factor does it scale areas? | 6 | 0 |  | The area scale factor is |det A| = 3 × 2 − 1 × 0 = 6.
 M1#maths-u05-38-q2@1: Which property is preserved by every affine transformation? | Parallelism | Lengths | Angles | Circles | Perpendicularity | Affine maps keep parallel lines parallel but can change lengths and angles.
 M3#maths-u05-38-q3@2: Why can a ratio theorem proved for an equilateral triangle be applied to every triangle? | Any triangle is the affine image of an equilateral triangle, and ratios along lines are preserved | All triangles are similar | All triangles are congruent | Angles are preserved | It can't | Affine maps carry any triangle to any other while keeping ratios along lines.
@@ -1232,8 +1232,8 @@ Q: Where do parallel lines meet in the projective plane? | At a point at infinit
 Q: Which quantity is preserved by projection? | The cross-ratio.
 SUM: Projective geometry is the geometry of perspective.
 SUM: Points at infinity make every pair of lines meet.
-SRC: Coxeter HSM, Projective Geometry (2nd edn, Springer 1987) | textbook | 1987 | https://link.springer.com/
-SRC: Brannan DA, Esplen MF, Gray JJ, Geometry (2nd edn, Cambridge University Press 2011) | textbook | 2011 | https://www.cambridge.org/
+SRC: Coxeter HSM, Projective Geometry (2nd edn, Springer 1987) | secondary | 1987 | https://link.springer.com/
+SRC: Brannan DA, Esplen MF, Gray JJ, Geometry (2nd edn, Cambridge University Press 2011) | secondary | 2011 | https://www.cambridge.org/
 M1#maths-u05-39-q1@1: In the projective plane, how many points do two distinct lines share? | Exactly one | None or one | Two | Infinitely many | It depends | Parallel lines meet at a point at infinity, so every pair of distinct lines meets exactly once.
 M2#maths-u05-39-q2@2: What are the homogeneous coordinates of the Euclidean point (3, 5)? | [3 : 5 : 1] (or any multiple) | [3 : 5 : 0] | [1 : 3 : 5] | [5 : 3 : 1] | [0 : 3 : 5] | Append 1; any non-zero multiple, such as [6 : 10 : 2], is the same point.
 
@@ -1263,8 +1263,8 @@ Q: What is the dimension of the Koch curve? | log 4/log 3 ≈ 1.26.
 Q: What happens to the Koch curve's length after infinitely many steps? | It becomes infinite.
 SUM: Fractals have detail at all scales.
 SUM: Their dimensions can be fractional.
-SRC: Mandelbrot BB, The Fractal Geometry of Nature (WH Freeman 1982) | textbook | 1982 | https://www.macmillanlearning.com/
-SRC: Falconer K, Fractal Geometry: Mathematical Foundations and Applications (3rd edn, Wiley 2014) | textbook | 2014 | https://www.wiley.com/
+SRC: Mandelbrot BB, The Fractal Geometry of Nature (WH Freeman 1982) | secondary | 1982 | https://www.macmillanlearning.com/
+SRC: Falconer K, Fractal Geometry: Mathematical Foundations and Applications (3rd edn, Wiley 2014) | secondary | 2014 | https://www.wiley.com/
 NUM1#maths-u05-40-q1@1: A fractal is made of 8 copies of itself, each scaled by 1/2. Find its similarity dimension. | 3 | 0 |  | D = log 8/log 2 = 3 (like a solid cube made of 8 half-size cubes).
 M1#maths-u05-40-q2@1: What is the similarity dimension of the Sierpiński triangle? | log 3/log 2 ≈ 1.58 | 2 | 1 | log 2/log 3 ≈ 0.63 | 3/2 exactly | It's made of N = 3 copies scaled by r = 1/2.
 M2#maths-u05-40-q3@2: After each step of the Koch construction, the curve's length is multiplied by: | 4/3 | 3/4 | 2 | 1/3 | 3 | Each segment is replaced by 4 segments each a third as long.
@@ -1293,8 +1293,8 @@ Q: What is the densest packing of equal circles in the plane? | The hexagonal pa
 Q: Who proved the Kepler conjecture? | Thomas Hales (1998; formally verified 2014).
 SUM: Discrete geometry studies arrangements of objects.
 SUM: Pick's theorem counts lattice points to find area.
-SRC: Matoušek J, Lectures on Discrete Geometry (Springer 2002) | textbook | 2002 | https://link.springer.com/
-SRC: Hales TC et al, A formal proof of the Kepler conjecture, Forum of Mathematics, Pi 5 | journal | 2017 | https://doi.org/10.1017/fmp.2017.1
+SRC: Matoušek J, Lectures on Discrete Geometry (Springer 2002) | secondary | 2002 | https://link.springer.com/
+SRC: Hales TC et al, A formal proof of the Kepler conjecture, Forum of Mathematics, Pi 5 | primary | 2017 | https://doi.org/10.1017/fmp.2017.1
 NUM1#maths-u05-41-q1@1: A lattice polygon has 10 interior points and 6 boundary points. Find its area. | 12 | 0 |  | Pick's theorem: 10 + 6/2 − 1 = 12.
 M1#maths-u05-41-q2@1: What fraction of space do equal spheres fill in the densest packing? | About 74% | About 52% | About 90.7% | 100% | About 50% | Kepler's conjecture, proved by Hales: π/(3√2) ≈ 0.7405.
 M2#maths-u05-41-q3@2: When does Pick's theorem apply? | To polygons whose vertices are all lattice points (no holes) | To any polygon | To circles | To 3D polyhedra | Only to triangles | It needs integer-coordinate vertices and a simple polygon.
@@ -1324,8 +1324,8 @@ Q: Is a star shape convex? | No: segments between some points leave the shape.
 Q: What is the convex hull of a set of points? | The smallest convex set containing them.
 SUM: Convex sets contain all their connecting segments.
 SUM: Convexity underpins optimisation.
-SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | textbook | 2004 | https://web.stanford.edu/~boyd/cvxbook/
-SRC: Matoušek J, Lectures on Discrete Geometry (Springer 2002) | textbook | 2002 | https://link.springer.com/
+SRC: Boyd S, Vandenberghe L, Convex Optimization (Cambridge University Press 2004) | secondary | 2004 | https://web.stanford.edu/~boyd/cvxbook/
+SRC: Matoušek J, Lectures on Discrete Geometry (Springer 2002) | secondary | 2002 | https://link.springer.com/
 M1#maths-u05-42-q1@1: Which set is convex? | A filled triangle | A crescent moon shape | An annulus (ring) | Two separate discs | A star | Any segment between two points of a triangle stays inside it.
 M2#maths-u05-42-q2@2: Which operation always preserves convexity? | Intersection | Union | Complement | Removing a point from the interior | Taking the boundary | The intersection of convex sets is convex, but unions and complements usually aren't.
 
@@ -1353,8 +1353,8 @@ Q: What does a zero orientation value mean? | The three points are collinear.
 Q: What is a Voronoi region? | The set of points closer to one site than to any other.
 SUM: Computational geometry makes geometry algorithmic.
 SUM: Simple primitives build efficient algorithms.
-SRC: de Berg M, Cheong O, van Kreveld M, Overmars M, Computational Geometry: Algorithms and Applications (3rd edn, Springer 2008) | textbook | 2008 | https://link.springer.com/
-SRC: O'Rourke J, Computational Geometry in C (2nd edn, Cambridge University Press 1998) | textbook | 1998 | https://www.cambridge.org/
+SRC: de Berg M, Cheong O, van Kreveld M, Overmars M, Computational Geometry: Algorithms and Applications (3rd edn, Springer 2008) | secondary | 2008 | https://link.springer.com/
+SRC: O'Rourke J, Computational Geometry in C (2nd edn, Cambridge University Press 1998) | secondary | 1998 | https://www.cambridge.org/
 NUM1#maths-u05-43-q1@1: Use the shoelace formula to find the area of the triangle (0, 0), (5, 0), (2, 4). | 10 | 0 |  | ½|0 × 0 − 5 × 0 + 5 × 4 − 2 × 0 + 2 × 0 − 0 × 4| = ½ × 20 = 10.
 M1#maths-u05-43-q2@1: What is the time complexity of the best general convex hull algorithms? | O(n log n) | O(n^{2}) | O(n^{3}) | O(log n) | O(2^{n}) | Sorting the points is the bottleneck, giving O(n log n), which is optimal in general.
 M2#maths-u05-43-q3@2: What is the dual structure of a Voronoi diagram? | The Delaunay triangulation | The convex hull | A spanning tree | A kd-tree | A grid | Joining sites whose Voronoi regions share an edge gives the Delaunay triangulation.
@@ -1383,8 +1383,8 @@ Q: Who posed the needle problem? | Georges-Louis Leclerc, Comte de Buffon (1777)
 Q: What does stereology use integral geometry for? | Estimating 3D quantities from 2D slices.
 SUM: Integral geometry measures sets of geometric objects.
 SUM: Buffon's needle links probability and π.
-SRC: Santaló LA, Integral Geometry and Geometric Probability (2nd edn, Cambridge University Press 2004) | textbook | 2004 | https://www.cambridge.org/
-SRC: Klain DA, Rota GC, Introduction to Geometric Probability (Cambridge University Press 1997) | textbook | 1997 | https://www.cambridge.org/
+SRC: Santaló LA, Integral Geometry and Geometric Probability (2nd edn, Cambridge University Press 2004) | secondary | 2004 | https://www.cambridge.org/
+SRC: Klain DA, Rota GC, Introduction to Geometric Probability (Cambridge University Press 1997) | secondary | 1997 | https://www.cambridge.org/
 NUM1#maths-u05-44-q1@1: A needle of length 3 cm is dropped on lines 4 cm apart. Find the probability it crosses a line, to 3 decimal places. | 0.477 | 0.0005 |  | 2 × 3/(π × 4) = 6/(4π) ≈ 0.477.
 M1#maths-u05-44-q2@1: If needles equal in length to the line spacing are dropped, about what fraction cross a line? | 2/π ≈ 0.64 | 1/2 | 1/π ≈ 0.32 | π/4 ≈ 0.79 | 1 | With needle length equal to the spacing, P = 2l/(πd) = 2/π ≈ 0.64.
 M3#maths-u05-44-q3@2: In 1,000 drops with l = d, 640 needles cross a line. What is the estimate of π? | About 3.125 | About 3.2 | About 1.56 | About 0.64 | About 6.4 | The observed proportion 0.64 estimates 2/π, so π ≈ 2/0.64 = 3.125.
@@ -1413,8 +1413,8 @@ Q: What is the curvature of a circle of radius 4? | 1/4.
 Q: Why can't a perfect flat map of the Earth exist? | Gaussian curvature is intrinsic, and a sphere's (positive) differs from a plane's (zero).
 SUM: Curvature measures bending.
 SUM: Gaussian curvature is intrinsic.
-SRC: do Carmo MP, Differential Geometry of Curves and Surfaces (2nd edn, Dover 2016) | textbook | 2016 | https://store.doverpublications.com/
-SRC: Pressley A, Elementary Differential Geometry (2nd edn, Springer 2010) | textbook | 2010 | https://link.springer.com/
+SRC: do Carmo MP, Differential Geometry of Curves and Surfaces (2nd edn, Dover 2016) | secondary | 2016 | https://store.doverpublications.com/
+SRC: Pressley A, Elementary Differential Geometry (2nd edn, Springer 2010) | secondary | 2010 | https://link.springer.com/
 NUM1#maths-u05-45-q1@1: What is the curvature of a circle of radius 0.25 m? | 4 | 0 | m⁻¹ | κ = 1/R = 1/0.25 = 4 m^{−1}.
 M1#maths-u05-45-q2@1: What is the Gaussian curvature of a cylinder? | Zero | Positive | Negative | Infinite | It varies | One principal curvature is zero (along the axis), so their product is zero: a cylinder can be unrolled flat.
 M2#maths-u05-45-q3@2: Which surface has negative Gaussian curvature at its centre? | A saddle (y^{2} − x^{2}) | A sphere | A plane | A cylinder | An egg | At a saddle, the surface curves up in one direction and down in the other.
@@ -1443,8 +1443,8 @@ Q: What are the geodesics on a sphere? | Great circles.
 Q: What does the Gauss–Bonnet theorem relate? | Total curvature and the Euler characteristic.
 SUM: Riemannian geometry measures curved spaces.
 SUM: It underpins general relativity.
-SRC: do Carmo MP, Riemannian Geometry (Birkhäuser 1992) | textbook | 1992 | https://link.springer.com/
-SRC: Carroll SM, Spacetime and Geometry (Cambridge University Press 2019) | textbook | 2019 | https://www.cambridge.org/
+SRC: do Carmo MP, Riemannian Geometry (Birkhäuser 1992) | secondary | 1992 | https://link.springer.com/
+SRC: Carroll SM, Spacetime and Geometry (Cambridge University Press 2019) | secondary | 2019 | https://www.cambridge.org/
 NUM1#maths-u05-46-q1@1: A closed surface has Euler characteristic 0 (a torus). What is its total Gaussian curvature? | 0 | 0 |  | By Gauss–Bonnet, ∫ K dA = 2πχ = 0: positive and negative curvature cancel.
 M1#maths-u05-46-q2@1: In general relativity, what do freely falling objects follow? | Geodesics of space-time | Straight lines in space | Circles | Parabolas only | Great circles on the Earth | Gravity is curvature, and free motion is along geodesics.
 M2#maths-u05-46-q3@2: What is the total Gaussian curvature of any sphere, whatever its radius? | 4π | 4πR^{2} | 2π | 1/R^{2} | 0 | Curvature 1/R^{2} times area 4πR^{2} always gives 4π.
@@ -1473,8 +1473,8 @@ Q: What does Liouville's theorem say? | Hamiltonian flows preserve phase-space v
 Q: In 2D, when is a map symplectic? | When its Jacobian determinant is 1 everywhere.
 SUM: Symplectic geometry is mechanics' natural geometry.
 SUM: Hamiltonian motion preserves its structure.
-SRC: Arnold VI, Mathematical Methods of Classical Mechanics (2nd edn, Springer 1989) | textbook | 1989 | https://link.springer.com/
-SRC: McDuff D, Salamon D, Introduction to Symplectic Topology (3rd edn, Oxford University Press 2017) | textbook | 2017 | https://global.oup.com/
+SRC: Arnold VI, Mathematical Methods of Classical Mechanics (2nd edn, Springer 1989) | secondary | 1989 | https://link.springer.com/
+SRC: McDuff D, Salamon D, Introduction to Symplectic Topology (3rd edn, Oxford University Press 2017) | secondary | 2017 | https://global.oup.com/
 M1#maths-u05-47-q1@1: What does phase space combine? | Positions and momenta | Time and energy only | Mass and charge | Length and area | Velocity and acceleration only | Each point records the system's state: where it is and how it's moving.
 M3#maths-u05-47-q2@2: Which 2D linear map is symplectic? | [[2, 3], [1, 2]] | [[2, 0], [0, 2]] | [[1, 1], [1, 1]] | [[3, 0], [0, 1]] | [[0, 2], [1, 0]] | Its determinant is 4 − 3 = 1, so it preserves oriented area.
 
@@ -1502,8 +1502,8 @@ Q: In how many points can two conics meet? | At most 4 (exactly 4 counting compl
 Q: Which famous theorem was proved using algebraic geometry? | Fermat's Last Theorem.
 SUM: Algebraic geometry studies polynomial shapes.
 SUM: Bézout's theorem counts intersections.
-SRC: Reid M, Undergraduate Algebraic Geometry (Cambridge University Press 1988) | textbook | 1988 | https://www.cambridge.org/
-SRC: Hartshorne R, Algebraic Geometry (Springer 1977) | textbook | 1977 | https://link.springer.com/
+SRC: Reid M, Undergraduate Algebraic Geometry (Cambridge University Press 1988) | secondary | 1988 | https://www.cambridge.org/
+SRC: Hartshorne R, Algebraic Geometry (Springer 1977) | secondary | 1977 | https://link.springer.com/
 M1#maths-u05-48-q1@1: At most how many points can a line and a cubic curve share? | 3 | 2 | 1 | 6 | 9 | Bézout: degrees 1 and 3 give at most 1 × 3 = 3.
 M2#maths-u05-48-q2@2: Who proved Fermat's Last Theorem? | Andrew Wiles (with Richard Taylor) | Pierre de Fermat | Leonhard Euler | Alexander Grothendieck | Grigori Perelman | Wiles's 1995 proof used elliptic curves and modular forms.
 
@@ -1532,8 +1532,8 @@ Q: What is the genus of a sphere? | 0.
 Q: Why are a mug and a doughnut topologically the same? | Each has exactly one hole and can be deformed into the other.
 SUM: Topology ignores lengths and angles.
 SUM: Holes and orientability classify surfaces.
-SRC: Armstrong MA, Basic Topology (Springer 1983) | textbook | 1983 | https://link.springer.com/
-SRC: Richeson DS, Euler's Gem: The Polyhedron Formula and the Birth of Topology (Princeton University Press 2008) | textbook | 2008 | https://press.princeton.edu/
+SRC: Armstrong MA, Basic Topology (Springer 1983) | secondary | 1983 | https://link.springer.com/
+SRC: Richeson DS, Euler's Gem: The Polyhedron Formula and the Birth of Topology (Princeton University Press 2008) | secondary | 2008 | https://press.princeton.edu/
 NUM1#maths-u05-49-q1@1: What is the Euler characteristic of a closed orientable surface of genus 3? | -4 | 0 |  | χ = 2 − 2g = 2 − 6 = −4.
 M1#maths-u05-49-q2@1: Which shape is homeomorphic to a doughnut (torus)? | A coffee mug with one handle | A sphere | A disc | A figure eight | A solid ball | Both have one hole, so one can be continuously deformed into the other.
 M2#maths-u05-49-q3@2: Which surface has only one side? | A Möbius strip | A torus | A sphere | A cylinder | A disc | A Möbius strip is non-orientable: you can travel from one "side" to the other without crossing an edge.
@@ -1563,8 +1563,8 @@ Q: What is the crossing number of the trefoil? | 3.
 Q: Why are invariants useful? | If two knots have different invariant values, they can't be the same knot.
 SUM: Knot theory classifies loops in space.
 SUM: Invariants tell knots apart.
-SRC: Adams CC, The Knot Book (American Mathematical Society 2004) | textbook | 2004 | https://bookstore.ams.org/
-SRC: Lickorish WBR, An Introduction to Knot Theory (Springer 1997) | textbook | 1997 | https://link.springer.com/
+SRC: Adams CC, The Knot Book (American Mathematical Society 2004) | secondary | 2004 | https://bookstore.ams.org/
+SRC: Lickorish WBR, An Introduction to Knot Theory (Springer 1997) | secondary | 1997 | https://link.springer.com/
 M1#maths-u05-50-q1@1: What is the simplest non-trivial knot? | The trefoil | The figure-eight knot | The unknot | The granny knot | The square knot | The trefoil, with crossing number 3, is the simplest knot that can't be untied.
 M2#maths-u05-50-q2@2: What do Reidemeister moves do? | Change a knot diagram without changing the knot | Cut and rejoin the strands | Count the crossings | Colour the arcs | Turn a knot into a link | Any two diagrams of the same knot are related by a sequence of these three local moves.
 `;

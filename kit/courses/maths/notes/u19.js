@@ -32,8 +32,8 @@ Q: What is truncation error? | Error from replacing an exact process by a finite
 Q: Who developed backward error analysis? | James Wilkinson.
 SUM: Numerical analysis makes computation trustworthy.
 SUM: Know where errors come from.
-SRC: Süli E, Mayers DF, An Introduction to Numerical Analysis (Cambridge University Press 2003) | textbook | 2003 | https://www.cambridge.org/
-SRC: Trefethen LN, Numerical analysis, in The Princeton Companion to Mathematics (Princeton University Press 2008) | textbook | 2008 | https://people.maths.ox.ac.uk/trefethen/NAessay.pdf
+SRC: Süli E, Mayers DF, An Introduction to Numerical Analysis (Cambridge University Press 2003) | secondary | 2003 | https://www.cambridge.org/
+SRC: Trefethen LN, Numerical analysis, in The Princeton Companion to Mathematics (Princeton University Press 2008) | secondary | 2008 | https://people.maths.ox.ac.uk/trefethen/NAessay.pdf
 NUM1#maths-u19-01-q1@1: Approximating e^{0.2} by 1 + x + x^{2}/2, what value do you get? | 1.22 | 0.0001 |  | 1 + 0.2 + 0.02 = 1.22, against the true value 1.2214; the omitted x^{3}/6 term is about 0.0013.
 M1#maths-u19-01-q2@1: Which kind of error comes from cutting a Taylor series off after a few terms? | Truncation error | Rounding error | Modelling error | Data error | Overflow error | Replacing an infinite series by a finite sum is a truncation (discretisation) error.
 M2#maths-u19-01-q3@2: Why can't rounding error be eliminated by using a better formula alone? | Every floating-point operation rounds its result to finitely many digits | A better formula always removes rounding, so it can be eliminated | Rounding happens only when numbers are first typed in as input | Computers store every real number exactly, so there's no rounding | Rounding only affects division, so avoiding division eliminates it | Finite precision means each arithmetic step may introduce a small error.
@@ -68,8 +68,8 @@ Q: If halving h divides the error by 8, what is the order? | 3.
 Q: What does Richardson extrapolation do? | Combines results at different h to cancel the leading error term.
 SUM: Choose methods by accuracy, cost and robustness.
 SUM: Verify by refinement.
-SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | textbook | 2016 | https://www.cengage.com/
-SRC: Heath MT, Scientific Computing: An Introductory Survey (2nd edn, SIAM 2018) | textbook | 2018 | https://epubs.siam.org/
+SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | secondary | 2016 | https://www.cengage.com/
+SRC: Heath MT, Scientific Computing: An Introductory Survey (2nd edn, SIAM 2018) | secondary | 2018 | https://epubs.siam.org/
 NUM1#maths-u19-02-q1@1: A fourth-order method has error 0.0032 with step h. Estimate its error with step h/2. | 0.0002 | 0.00001 |  | Halving h divides a fourth-order error by 2^{4} = 16: 0.0032/16 = 0.0002.
 M1#maths-u19-02-q2@1: What does quadratic convergence mean for an iterative method? | The error is roughly squared each iteration, doubling the correct digits | The error is roughly halved each iteration, adding one bit per step | The error falls by a fixed amount each step until it reaches zero | The method needs two starting points and two evaluations per step | The method always converges in exactly two iterations from any start | e_{k+1} ≈ Ce_{k}^{2}, so 10^{−3} becomes about 10^{−6}.
 M2#maths-u19-02-q3@2: How can you check a simulation code is implemented correctly? | Run it on a manufactured problem with a known solution and confirm errors shrink at the expected rate | Run it once with a large step size and check the output looks plausible | Check that it prints many significant digits for every output value | Compare a single run with a different input and see if the answers differ | Trust the output once the code compiles and runs without any error messages | Correct codes show the theoretical convergence order when the mesh is refined.
@@ -104,8 +104,8 @@ Q: What does the Weierstrass theorem guarantee? | Continuous functions on a clos
 Q: What is T₂(x)? | 2x^{2} − 1.
 SUM: Approximate hard functions by easy ones.
 SUM: Minimax spreads error evenly.
-SRC: Trefethen LN, Approximation Theory and Approximation Practice (extended edn, SIAM 2019) | textbook | 2019 | https://people.maths.ox.ac.uk/trefethen/ATAP/
-SRC: Powell MJD, Approximation Theory and Methods (Cambridge University Press 1981) | textbook | 1981 | https://www.cambridge.org/
+SRC: Trefethen LN, Approximation Theory and Approximation Practice (extended edn, SIAM 2019) | secondary | 2019 | https://people.maths.ox.ac.uk/trefethen/ATAP/
+SRC: Powell MJD, Approximation Theory and Methods (Cambridge University Press 1981) | secondary | 1981 | https://www.cambridge.org/
 NUM1#maths-u19-03-q1@1: Evaluate the Chebyshev polynomial T₃(x) = 4x^{3} − 3x at x = 0.5. | -1 | 0 |  | 4 × 0.125 − 1.5 = 0.5 − 1.5 = −1, matching cos(3 arccos 0.5) = cos π = −1.
 M1#maths-u19-03-q2@1: Which approximation minimises the largest error over an interval? | The minimax (best uniform) approximation | The Taylor polynomial at the midpoint | The least-squares polynomial | Linear interpolation at the endpoints | The constant function zero | Minimax approximation is defined by minimising the maximum absolute error.
 M3#maths-u19-03-q3@2: What property identifies a best minimax polynomial of degree n? | Its error reaches its maximum size at n + 2 points with alternating signs | Its error is exactly zero at every one of the n + 1 nodes | Its coefficients are all equal to the Taylor coefficients of f | It matches f and its first n derivatives at the midpoint | Its error has the same sign everywhere on the interval | Chebyshev's equioscillation theorem characterises the best approximation this way.
@@ -140,8 +140,8 @@ Q: What is backward error? | The input change needed for the computed result to 
 Q: How do relative errors combine in a product? | They approximately add.
 SUM: Measure errors relatively.
 SUM: Backward error plus conditioning gives forward error.
-SRC: Higham NJ, Accuracy and Stability of Numerical Algorithms (2nd edn, SIAM 2002) | textbook | 2002 | https://epubs.siam.org/
-SRC: Wilkinson JH, Rounding Errors in Algebraic Processes (Prentice Hall 1963; Dover 1994) | textbook | 1994 | https://store.doverpublications.com/
+SRC: Higham NJ, Accuracy and Stability of Numerical Algorithms (2nd edn, SIAM 2002) | secondary | 2002 | https://epubs.siam.org/
+SRC: Wilkinson JH, Rounding Errors in Algebraic Processes (Prentice Hall 1963; Dover 1994) | secondary | 1994 | https://store.doverpublications.com/
 NUM1#maths-u19-04-q1@1: A length of 50 cm is measured as 50.4 cm. What is the relative error as a percentage? | 0.8 | 0.001 | % | 0.4/50 = 0.008, which is 0.8%.
 M1#maths-u19-04-q2@1: If x has relative error 1% and y has relative error 2%, what is the approximate relative error of xy? | 3% | 2% | 1% | 0.02% | 1.5% | For products, relative errors approximately add: 1% + 2% = 3%.
 M2#maths-u19-04-q3@2: What does a small backward error tell you about an algorithm's answer? | It is the exact answer to a problem very close to the one posed | It is always exactly the correct answer to the original problem | Its forward error must be small too, whatever the conditioning | The problem itself must be well conditioned and easy to solve | Nothing useful, since backward error ignores the actual output | Backward stability says the algorithm solved a nearby problem; conditioning decides how close that answer is.
@@ -176,8 +176,8 @@ Q: Is 0.1 exactly representable in binary floating point? | No.
 Q: What is machine epsilon for IEEE double precision? | About 2.2 × 10^{−16}.
 SUM: Floats are finite-precision numbers.
 SUM: Reformulate to avoid cancellation.
-SRC: IEEE, IEEE Standard for Floating-Point Arithmetic (IEEE 754-2019) | guideline | 2019 | https://doi.org/10.1109/IEEESTD.2019.8766229
-SRC: Goldberg D, What every computer scientist should know about floating-point arithmetic, ACM Computing Surveys 23(1), 5 | journal | 1991 | https://doi.org/10.1145/103162.103163
+SRC: IEEE, IEEE Standard for Floating-Point Arithmetic (IEEE 754-2019) | guidance | 2019 | https://doi.org/10.1109/IEEESTD.2019.8766229
+SRC: Goldberg D, What every computer scientist should know about floating-point arithmetic, ACM Computing Surveys 23(1), 5 | primary | 1991 | https://doi.org/10.1145/103162.103163
 NUM1#maths-u19-05-q1@1: How many bits does the significand of an IEEE 754 double have (including the hidden bit)? | 53 | 0 | bits | 52 stored bits plus an implicit leading 1 give 53 bits, about 15.95 decimal digits.
 M1#maths-u19-05-q2@1: Which computation suffers from catastrophic cancellation? | √(x + 1) − √x for very large x | √(x + 1) + √x for very large x | x × y for moderate x and y | e^{x} for x = 1 | The sum of two positive numbers | Subtracting two nearly equal square roots loses most of the significant digits.
 M2#maths-u19-05-q3@2: Why is floating-point addition not associative? | Each addition rounds its result, so the order of operations changes which digits are lost | Computers add numbers in a random order chosen by the hardware each time | Addition is undefined for very large numbers, so the order must change | Floats are stored exactly, so associativity fails only through overflow | It is associative; only multiplication fails to be associative in floating point | (a + b) + c and a + (b + c) round different intermediate sums.
@@ -211,8 +211,8 @@ Q: Is Householder QR backward stable? | Yes.
 Q: What kind of method do stiff ODEs need? | Implicit methods.
 SUM: Stability keeps errors bounded.
 SUM: Choose algorithms that don't amplify errors.
-SRC: Higham NJ, Accuracy and Stability of Numerical Algorithms (2nd edn, SIAM 2002) | textbook | 2002 | https://epubs.siam.org/
-SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | textbook | 1997 | https://epubs.siam.org/
+SRC: Higham NJ, Accuracy and Stability of Numerical Algorithms (2nd edn, SIAM 2002) | secondary | 2002 | https://epubs.siam.org/
+SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | secondary | 1997 | https://epubs.siam.org/
 NUM1#maths-u19-06-q1@1: Explicit Euler is applied to y′ = −50y. What is the largest step h for stability? | 0.04 | 0.0001 |  | Stability needs hλ ≤ 2, so h ≤ 2/50 = 0.04.
 M1#maths-u19-06-q2@1: Which algorithm for QR factorisation is backward stable? | Householder reflections | Classical Gram–Schmidt | Normal equations | Cramer's rule | Unpivoted elimination | Householder QR has small backward error, while classical Gram–Schmidt loses orthogonality.
 M3#maths-u19-06-q3@2: Why is backward recursion stable for Iₙ₋₁ = (1 − Iₙ)/n? | Each step divides the existing error by n, so errors shrink rather than grow | It uses fewer arithmetic operations than the forward recursion | It needs no starting value, so no initial error can enter it | Integrals of positive functions are always computed stably | It isn't stable: both directions multiply errors by n each step | The forward recursion multiplies errors by n; reversing it divides them.
@@ -247,8 +247,8 @@ Q: What is the condition number of an orthogonal matrix? | 1.
 Q: About how many digits are lost when κ(A) = 10^{10}? | About 10.
 SUM: Conditioning is sensitivity.
 SUM: It bounds achievable accuracy.
-SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | textbook | 1997 | https://epubs.siam.org/
-SRC: Golub GH, Van Loan CF, Matrix Computations (4th edn, Johns Hopkins University Press 2013) | textbook | 2013 | https://www.press.jhu.edu/
+SRC: Trefethen LN, Bau D, Numerical Linear Algebra (SIAM 1997) | secondary | 1997 | https://epubs.siam.org/
+SRC: Golub GH, Van Loan CF, Matrix Computations (4th edn, Johns Hopkins University Press 2013) | secondary | 2013 | https://www.press.jhu.edu/
 NUM1#maths-u19-07-q1@1: What is the condition number κ(x) = |x f′(x)/f(x)| of f(x) = x^{5}? | 5 | 0 |  | x × 5x^{4}/x^{5} = 5: a 1% change in x gives about a 5% change in x^{5}.
 M1#maths-u19-07-q2@1: A matrix has singular values 100 and 0.01. What is its 2-norm condition number? | 10^{4} | 100 | 0.01 | 10^{−4} | 1 | κ₂ = σ_{max}/σ_{min} = 100/0.01 = 10^{4}.
 M2#maths-u19-07-q3@2: Why can a backward stable algorithm still give an inaccurate answer? | If the problem is ill-conditioned, the small backward error is magnified into a large forward error | Backward stable algorithms always give the exact answer, so they never do | Rounding errors don't exist in backward stable algorithms by definition | Stability guarantees full accuracy whenever the input data are exact | It can't: a stable algorithm on any problem gives a small forward error | Forward error ≲ κ × backward error, so large κ spoils the result.
@@ -283,8 +283,8 @@ Q: What is [2, 3] + [−1, 1]? | [1, 4].
 Q: Which famous attractor's existence was proved with interval methods? | The Lorenz attractor (Tucker 2002).
 SUM: Intervals give guaranteed bounds.
 SUM: Watch for the dependency problem.
-SRC: Moore RE, Kearfott RB, Cloud MJ, Introduction to Interval Analysis (SIAM 2009) | textbook | 2009 | https://epubs.siam.org/
-SRC: Tucker W, A rigorous ODE solver and Smale's 14th problem, Foundations of Computational Mathematics 2, 53 | journal | 2002 | https://doi.org/10.1007/s002080010018
+SRC: Moore RE, Kearfott RB, Cloud MJ, Introduction to Interval Analysis (SIAM 2009) | secondary | 2009 | https://epubs.siam.org/
+SRC: Tucker W, A rigorous ODE solver and Smale's 14th problem, Foundations of Computational Mathematics 2, 53 | primary | 2002 | https://doi.org/10.1007/s002080010018
 NUM1#maths-u19-08-q1@1: What is the width of the interval [1, 3] × [2, 4]? | 10 | 0 |  | The product is [2, 12], whose width is 12 − 2 = 10.
 M1#maths-u19-08-q2@1: What is [−2, 1] × [3, 4]? | [−8, 4] | [−6, 4] | [−8, 3] | [3, 4] | [−2, 4] | Endpoint products are −6, −8, 3 and 4, so the result is [−8, 4].
 M3#maths-u19-08-q3@2: Why does x(1 − x) on [0, 1] give a wider interval than x − x^{2} written as ¼ − (x − ½)^{2}? | Each form treats repeated occurrences of x independently; the second uses x only once, removing the overestimation | The second form is mathematically wrong, so its narrower interval can't be trusted | Interval arithmetic ignores how a formula is written, so the widths must agree | Squares can't be computed with intervals, so the second form is just a guess | They give the same width, because both formulas describe the same function | x(1 − x) evaluates to [0, 1] × [0, 1] = [0, 1], while the single-use form gives the exact [0, ¼].
@@ -321,8 +321,8 @@ Q: What order of convergence does the secant method have? | About 1.618.
 Q: Which hybrid root-finder is widely used? | Brent's method.
 SUM: Bracket for safety, open for speed.
 SUM: Hybrids combine both.
-SRC: Brent RP, Algorithms for Minimization without Derivatives (Prentice Hall 1973; Dover 2002) | textbook | 2002 | https://store.doverpublications.com/
-SRC: Press WH, Teukolsky SA, Vetterling WT, Flannery BP, Numerical Recipes (3rd edn, Cambridge University Press 2007) | textbook | 2007 | https://numerical.recipes/
+SRC: Brent RP, Algorithms for Minimization without Derivatives (Prentice Hall 1973; Dover 2002) | secondary | 2002 | https://store.doverpublications.com/
+SRC: Press WH, Teukolsky SA, Vetterling WT, Flannery BP, Numerical Recipes (3rd edn, Cambridge University Press 2007) | secondary | 2007 | https://numerical.recipes/
 NUM1#maths-u19-09-q1@1: One Newton step for x^{3} − 2x − 5 from x₀ = 2: what is x₁? | 2.1 | 0.0001 |  | f(2) = −1 and f′(2) = 10, so x₁ = 2 + 1/10 = 2.1.
 M1#maths-u19-09-q2@1: Which method is guaranteed to converge for a continuous function with a sign change? | Bisection | Newton's method | The secant method | Fixed-point iteration | Steffensen's method | Bisection always keeps a root inside a halving bracket.
 M2#maths-u19-09-q3@2: Why does Newton's method slow down at a double root? | f′ also vanishes at the root, so convergence drops from quadratic to linear | Double roots don't exist for smooth functions, so it never happens | Newton's method never converges to any root, whatever its multiplicity | The derivative becomes infinite at a double root, so steps vanish | It speeds up at double roots, since the function is flatter there | With f′(x*) = 0, the error is only roughly halved each step.
@@ -361,8 +361,8 @@ Q: By what factor does the bracket shrink per bisection step? | 2.
 Q: Can bisection find the root of x^{2} = 0? | No: there's no sign change.
 SUM: Halve the bracket each step.
 SUM: Slow but certain.
-SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | textbook | 2016 | https://www.cengage.com/
-SRC: Süli E, Mayers DF, An Introduction to Numerical Analysis (Cambridge University Press 2003) | textbook | 2003 | https://www.cambridge.org/
+SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | secondary | 2016 | https://www.cengage.com/
+SRC: Süli E, Mayers DF, An Introduction to Numerical Analysis (Cambridge University Press 2003) | secondary | 2003 | https://www.cambridge.org/
 NUM1#maths-u19-10-q1@1: How many bisection steps reduce a bracket of width 1 to width at most 10^{−3}? | 10 | 0 | steps | 2^{10} = 1024 ≥ 1000, while 2^{9} = 512 isn't enough, so 10 steps are needed.
 M1#maths-u19-10-q2@1: On f(x) = x^{3} − x − 1 with bracket [1, 2], what is the next bracket? | [1, 1.5], since f(1.5) = 0.875 > 0 and f(1) < 0 | [1.5, 2], since f(1.5) > 0 and f(2) > 0 as well | [1, 2], unchanged, since the midpoint has no sign change | [0, 1], since the root must lie below the old bracket | [1.25, 1.5], since one bisection step always quarters it | f(1) = −1 and f(1.5) = 0.875, so the sign change is in [1, 1.5].
 M2#maths-u19-10-q3@2: Why can bisection report a "root" of 1/x on [−1, 1]? | The function changes sign across its discontinuity at 0, though it has no root | 1/x really has a root at 0, so bisection reports it correctly | Bisection never stops on 1/x, so it reports the last midpoint | The bracket [−1, 1] is invalid, since 1/x has no sign change | It can't: bisection always checks continuity before it starts | The intermediate value theorem needs continuity, which 1/x lacks at 0.
@@ -399,8 +399,8 @@ Q: What is the Newton iteration for √a? | x_{n+1} = ½(xₙ + a/xₙ).
 Q: What convergence does Newton have at a double root? | Linear.
 SUM: Follow the tangent to the axis.
 SUM: Fast near roots, risky far away.
-SRC: Süli E, Mayers DF, An Introduction to Numerical Analysis (Cambridge University Press 2003) | textbook | 2003 | https://www.cambridge.org/
-SRC: Ypma TJ, Historical development of the Newton–Raphson method, SIAM Review 37(4), 531 | journal | 1995 | https://doi.org/10.1137/1037125
+SRC: Süli E, Mayers DF, An Introduction to Numerical Analysis (Cambridge University Press 2003) | secondary | 2003 | https://www.cambridge.org/
+SRC: Ypma TJ, Historical development of the Newton–Raphson method, SIAM Review 37(4), 531 | primary | 1995 | https://doi.org/10.1137/1037125
 NUM1#maths-u19-11-q1@1: Apply one Newton step for √10 (f(x) = x^{2} − 10) from x₀ = 3. | 3.1667 | 0.0001 |  | x₁ = ½(3 + 10/3) = ½(6.3333) = 3.1667, against √10 ≈ 3.1623.
 M1#maths-u19-11-q2@1: Newton's method on x^{3} − 2x + 2 from x₀ = 0 gives what behaviour? | It cycles between 0 and 1 forever | It converges quadratically to a root | It diverges to infinity | It stops because f′ = 0 at the start | It converges in one step | x₁ = 0 − 2/(−2) = 1 and x₂ = 1 − 1/1 = 0, so it repeats.
 M3#maths-u19-11-q3@2: Why does Newton converge quadratically near a simple root? | The tangent matches f to first order, so the remaining error comes from the second-order term, proportional to eₙ^{2} | It halves the error each step because the tangent bisects the interval | It uses two starting points, so it gains two digits per iteration | Every function is exactly linear near a root, so one step suffices | It converges only linearly near simple roots, and quadratically at double roots | Taylor expansion gives e_{n+1} ≈ (f″(x*)/2f′(x*)) eₙ^{2}.
@@ -437,8 +437,8 @@ Q: How many function evaluations does each secant step need? | One new evaluatio
 Q: Which method generalises secant to systems? | Broyden's method.
 SUM: Secant swaps derivatives for differences.
 SUM: Superlinear and efficient.
-SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | textbook | 2016 | https://www.cengage.com/
-SRC: Dennis JE, Schnabel RB, Numerical Methods for Unconstrained Optimization and Nonlinear Equations (SIAM 1996) | textbook | 1996 | https://epubs.siam.org/
+SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | secondary | 2016 | https://www.cengage.com/
+SRC: Dennis JE, Schnabel RB, Numerical Methods for Unconstrained Optimization and Nonlinear Equations (SIAM 1996) | secondary | 1996 | https://epubs.siam.org/
 NUM1#maths-u19-12-q1@1: Apply one secant step to f(x) = x^{2} − 4 with x₀ = 1 and x₁ = 3. | 1.75 | 0.0001 |  | f(1) = −3 and f(3) = 5, slope 8/2 = 4, so x₂ = 3 − 5/4 = 1.75.
 M1#maths-u19-12-q2@1: What does the secant method use in place of f′(xₙ)? | The slope of the line through the last two iterates | The second derivative estimated at xₙ | The function value f(xₙ) divided by xₙ | A random estimate of the local slope | The midpoint of the current bracket | (f(xₙ) − f(xₙ₋₁))/(xₙ − xₙ₋₁) approximates the derivative.
 M2#maths-u19-12-q3@2: Why can false position (regula falsi) converge slowly? | One endpoint can stay fixed for many steps, so the bracket shrinks from one side only | It never keeps a bracket, so it can wander away from the root | It uses exact derivatives, which are expensive to compute | It always diverges unless the function is linear | It is always fast, since it combines bisection and secant | When f is convex in the bracket, one end barely moves; Illinois-type modifications fix this.
@@ -473,8 +473,8 @@ Q: When does fixed-point iteration converge locally? | When |g′(x*)| < 1.
 Q: What does Aitken's Δ^{2} process do? | Accelerates a linearly convergent sequence.
 SUM: Iterate a contraction to its fixed point.
 SUM: The rearrangement matters.
-SRC: Süli E, Mayers DF, An Introduction to Numerical Analysis (Cambridge University Press 2003) | textbook | 2003 | https://www.cambridge.org/
-SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | textbook | 2016 | https://www.cengage.com/
+SRC: Süli E, Mayers DF, An Introduction to Numerical Analysis (Cambridge University Press 2003) | secondary | 2003 | https://www.cambridge.org/
+SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | secondary | 2016 | https://www.cengage.com/
 NUM1#maths-u19-13-q1@1: For g(x) = √(x + 2) at its fixed point 2, what is the asymptotic convergence rate |g′(2)|? | 0.25 | 0.001 |  | g′(x) = 1/(2√(x + 2)), so g′(2) = 1/(2 × 2) = 0.25: each step cuts the error by about 4.
 M1#maths-u19-13-q2@1: Which rearrangement of x^{2} − x − 2 = 0 converges to the root x = 2? | x = √(x + 2) | x = x^{2} − 2 | x = 2/(x − 1) | x = 2x^{2} − x − 2 | x = x^{3} − 6 | Its derivative at 2 is 1/4, below 1; x = x^{2} − 2 has derivative 4 there.
 M2#maths-u19-13-q3@2: Why does Newton's method converge faster than a typical fixed-point iteration? | As a fixed-point map its derivative is zero at the root, so the linear error term vanishes | It uses a contraction with constant 0.9, which is very fast | It needs no starting point, so it begins at the exact root | It always converges globally, from any starting value | It doesn't: fixed-point iteration is always faster than Newton | With g′(x*) = 0, the error is controlled by the quadratic term.
@@ -509,8 +509,8 @@ Q: How many points determine a cubic interpolant? | 4.
 Q: Which nodes avoid the Runge phenomenon? | Chebyshev nodes.
 SUM: Unique polynomial through the data.
 SUM: Node choice controls the error.
-SRC: Trefethen LN, Approximation Theory and Approximation Practice (extended edn, SIAM 2019) | textbook | 2019 | https://people.maths.ox.ac.uk/trefethen/ATAP/
-SRC: Berrut JP, Trefethen LN, Barycentric Lagrange interpolation, SIAM Review 46(3), 501 | journal | 2004 | https://doi.org/10.1137/S0036144502417715
+SRC: Trefethen LN, Approximation Theory and Approximation Practice (extended edn, SIAM 2019) | secondary | 2019 | https://people.maths.ox.ac.uk/trefethen/ATAP/
+SRC: Berrut JP, Trefethen LN, Barycentric Lagrange interpolation, SIAM Review 46(3), 501 | primary | 2004 | https://doi.org/10.1137/S0036144502417715
 NUM1#maths-u19-14-q1@1: Using the interpolant p(x) = x^{2} + x + 1 through (0, 1), (1, 3) and (2, 7), estimate the value at x = 3. | 13 | 0 |  | p(3) = 9 + 3 + 1 = 13 (an extrapolation, so less reliable than interpolation).
 M1#maths-u19-14-q2@1: How many distinct nodes are needed to determine a unique polynomial of degree at most 5? | 6 | 5 | 4 | 7 | 10 | Degree ≤ n needs n + 1 conditions, so degree 5 needs 6 points.
 M3#maths-u19-14-q3@2: Why do Chebyshev nodes reduce interpolation error compared with equispaced nodes? | They cluster near the ends, minimising the maximum of the node polynomial Π(x − xᵢ) | They are evenly spaced, which spreads the error uniformly | They make the function being interpolated smoother | They use fewer points, so there's less to go wrong | They don't reduce error; they only make computation faster | The error formula contains Π(x − xᵢ), which Chebyshev nodes make as small as possible in max norm.
@@ -544,8 +544,8 @@ Q: What is Σ ℓᵢ(x) for any x? | 1.
 Q: How fast does the Lebesgue constant grow for Chebyshev nodes? | Like log n.
 SUM: Basis polynomials pick out each data value.
 SUM: Barycentric form computes it well.
-SRC: Berrut JP, Trefethen LN, Barycentric Lagrange interpolation, SIAM Review 46(3), 501 | journal | 2004 | https://doi.org/10.1137/S0036144502417715
-SRC: Higham NJ, The numerical stability of barycentric Lagrange interpolation, IMA Journal of Numerical Analysis 24(4), 547 | journal | 2004 | https://doi.org/10.1093/imanum/24.4.547
+SRC: Berrut JP, Trefethen LN, Barycentric Lagrange interpolation, SIAM Review 46(3), 501 | primary | 2004 | https://doi.org/10.1137/S0036144502417715
+SRC: Higham NJ, The numerical stability of barycentric Lagrange interpolation, IMA Journal of Numerical Analysis 24(4), 547 | primary | 2004 | https://doi.org/10.1093/imanum/24.4.547
 NUM1#maths-u19-15-q1@1: For nodes 0, 1 and 2, evaluate the Lagrange basis polynomial ℓ₁(x) = x(x − 2)/(1 × (1 − 2)) at x = 0.5. | 0.75 | 0.001 |  | ℓ₁(0.5) = 0.5 × (−1.5)/(−1) = 0.75.
 M1#maths-u19-15-q2@1: What value does the Lagrange basis polynomial ℓᵢ take at node xⱼ with j ≠ i? | 0 | 1 | yᵢ | −1 | xⱼ | Each basis polynomial vanishes at every node except its own.
 M2#maths-u19-15-q3@2: What is the main computational advantage of the barycentric formula? | Evaluation costs O(n) per point and is numerically stable | It needs no data values | It makes the polynomial degree smaller | It avoids using nodes | It has no advantage | After precomputing weights, each evaluation is a short weighted sum.
@@ -579,8 +579,8 @@ Q: What does adding a new node do to the Newton form? | Adds one new term withou
 Q: What is f[x₀, x₁] for f(x) = x^{2}? | x₀ + x₁.
 SUM: Divided differences build the interpolant.
 SUM: Easy to extend.
-SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | textbook | 2016 | https://www.cengage.com/
-SRC: de Boor C, A Practical Guide to Splines (rev. edn, Springer 2001) | textbook | 2001 | https://link.springer.com/
+SRC: Burden RL, Faires JD, Burden AM, Numerical Analysis (10th edn, Cengage 2016) | secondary | 2016 | https://www.cengage.com/
+SRC: de Boor C, A Practical Guide to Splines (rev. edn, Springer 2001) | secondary | 2001 | https://link.springer.com/
 NUM1#maths-u19-16-q1@1: For f(x) = x^{3} at nodes 0, 1, 2 and 3, what is the third divided difference f[0, 1, 2, 3]? | 1 | 0 |  | The nth divided difference of a degree-n polynomial is its leading coefficient, here 1 (f‴/3! = 6/6).
 M1#maths-u19-16-q2@1: For data (1, 2), (2, 5), (4, 11), what is the second divided difference f[1, 2, 4]? | 0 | 1 | 3 | 2 | 6 | f[1, 2] = 3 and f[2, 4] = 3, so f[1, 2, 4] = (3 − 3)/(4 − 1) = 0: the data lie on a line.
 M2#maths-u19-16-q3@2: Why is Newton's form convenient when data arrive one point at a time? | A new point adds a single term while existing coefficients stay unchanged | It needs no divided differences, only the raw function values | It makes the interpolating polynomial linear whatever the data | It discards old points, so only the newest point is ever used | It isn't convenient; the whole polynomial must be recomputed | The divided difference table grows by one diagonal, giving one new coefficient.
@@ -616,8 +616,8 @@ Q: Which spline minimises the integral of s″^{2}? | The natural cubic spline.
 Q: What kind of linear system determines a cubic spline? | A tridiagonal system.
 SUM: Splines are smooth piecewise polynomials.
 SUM: End conditions complete them.
-SRC: de Boor C, A Practical Guide to Splines (rev. edn, Springer 2001) | textbook | 2001 | https://link.springer.com/
-SRC: Schoenberg IJ, Contributions to the problem of approximation of equidistant data by analytic functions, Quarterly of Applied Mathematics 4, 45 | journal | 1946 | https://doi.org/10.1090/qam/15914
+SRC: de Boor C, A Practical Guide to Splines (rev. edn, Springer 2001) | secondary | 2001 | https://link.springer.com/
+SRC: Schoenberg IJ, Contributions to the problem of approximation of equidistant data by analytic functions, Quarterly of Applied Mathematics 4, 45 | primary | 1946 | https://doi.org/10.1090/qam/15914
 NUM1#maths-u19-17-q1@1: How many unknown coefficients does a cubic spline with 10 intervals have? | 40 | 0 |  | Each interval has a cubic with 4 coefficients: 10 × 4 = 40.
 M1#maths-u19-17-q2@1: Which derivatives of a cubic spline are continuous at the interior knots? | The first and second derivatives | Only the first derivative | All derivatives of every order | Only the function values | The third derivative only | Cubic splines are C^{2}: value, slope and curvature match across knots.
 M2#maths-u19-17-q3@2: Why are B-splines preferred for computation over the piecewise-power form? | Each basis function is non-zero on only a few intervals, giving local control and stable evaluation | They have higher degree than ordinary cubic splines, so they're more accurate | They need no knots, so the mesh never has to be chosen at all | They are single global polynomials, which avoids joining pieces | They aren't preferred; the piecewise-power form is the standard choice | Local support makes changes local and keeps the linear systems well conditioned.
@@ -655,8 +655,8 @@ Q: What is the error order of the central difference? | O(h^{2}).
 Q: What is the optimal forward-difference step in double precision? | About 10^{−8}.
 SUM: Differences approximate derivatives.
 SUM: Balance truncation against rounding.
-SRC: Fornberg B, Generation of finite difference formulas on arbitrarily spaced grids, Mathematics of Computation 51, 699 | journal | 1988 | https://doi.org/10.1090/S0025-5718-1988-0935077-0
-SRC: Griewank A, Walther A, Evaluating Derivatives: Principles and Techniques of Algorithmic Differentiation (2nd edn, SIAM 2008) | textbook | 2008 | https://epubs.siam.org/
+SRC: Fornberg B, Generation of finite difference formulas on arbitrarily spaced grids, Mathematics of Computation 51, 699 | primary | 1988 | https://doi.org/10.1090/S0025-5718-1988-0935077-0
+SRC: Griewank A, Walther A, Evaluating Derivatives: Principles and Techniques of Algorithmic Differentiation (2nd edn, SIAM 2008) | secondary | 2008 | https://epubs.siam.org/
 NUM1#maths-u19-18-q1@1: Use the central difference with h = 0.1 to estimate the derivative of x^{3} at x = 1. | 3.01 | 0.0001 |  | (1.1^{3} − 0.9^{3})/0.2 = (1.331 − 0.729)/0.2 = 3.01; the exact value is 3, with error h^{2} = 0.01.
 M1#maths-u19-18-q2@1: Which finite-difference formula has error O(h^{2})? | (f(x + h) − f(x − h))/(2h) | (f(x + h) − f(x))/h | (f(x) − f(x − h))/h | f(x + h)/h | (f(x + 2h) − f(x))/h | Odd error terms cancel in the symmetric central difference.
 M2#maths-u19-18-q3@2: Why does a forward difference with h = 10^{−15} give a poor derivative? | Rounding error of size ε/h dominates when h is tiny | Truncation error grows as h shrinks | Derivatives don't exist at that scale | The formula needs h = 1 | It gives an excellent derivative | f(x + h) and f(x) agree in nearly all digits, so their difference is mostly rounding noise.
@@ -692,8 +692,8 @@ Q: What degree of exactness does an n-point Gauss rule have? | 2n − 1.
 Q: What are the two-point Gauss–Legendre nodes? | ±1/√3.
 SUM: Optimal nodes double the exactness.
 SUM: Orthogonal polynomials supply the nodes.
-SRC: Davis PJ, Rabinowitz P, Methods of Numerical Integration (2nd edn, Academic Press 1984; Dover 2007) | textbook | 2007 | https://store.doverpublications.com/
-SRC: Golub GH, Welsch JH, Calculation of Gauss quadrature rules, Mathematics of Computation 23, 221 | journal | 1969 | https://doi.org/10.1090/S0025-5718-69-99647-1
+SRC: Davis PJ, Rabinowitz P, Methods of Numerical Integration (2nd edn, Academic Press 1984; Dover 2007) | secondary | 2007 | https://store.doverpublications.com/
+SRC: Golub GH, Welsch JH, Calculation of Gauss quadrature rules, Mathematics of Computation 23, 221 | primary | 1969 | https://doi.org/10.1090/S0025-5718-69-99647-1
 NUM1#maths-u19-19-q1@1: What is the highest polynomial degree a 4-point Gauss–Legendre rule integrates exactly? | 7 | 0 |  | 2n − 1 = 2 × 4 − 1 = 7.
 M1#maths-u19-19-q2@1: Which rule integrates all quintic polynomials exactly on [−1, 1]? | Three-point Gauss–Legendre | Two-point Gauss–Legendre | The trapezium rule | Simpson's rule with one panel | The midpoint rule | Three Gauss points give degree 2 × 3 − 1 = 5; Simpson is exact only to degree 3.
 M3#maths-u19-19-q3@2: Why can Gaussian quadrature reach degree 2n − 1 with only n points? | Choosing the n nodes as well as the n weights gives 2n free parameters to match 2n moments | It uses equally spaced nodes with carefully tuned weights | It integrates only even functions, which halves the work | All its weights equal 1, which doubles the degree | It can't: n points always give degree n − 1 at most | With nodes at orthogonal polynomial roots, the rule matches ∫ xᵏ for k = 0 to 2n − 1.
@@ -728,8 +728,8 @@ Q: Which method uses updated values immediately? | Gauss–Seidel.
 Q: Which Krylov method suits symmetric positive definite matrices? | Conjugate gradients.
 SUM: Iterate to solve large sparse systems.
 SUM: Preconditioning is the key.
-SRC: Saad Y, Iterative Methods for Sparse Linear Systems (2nd edn, SIAM 2003) | textbook | 2003 | https://epubs.siam.org/
-SRC: Briggs WL, Henson VE, McCormick SF, A Multigrid Tutorial (2nd edn, SIAM 2000) | textbook | 2000 | https://epubs.siam.org/
+SRC: Saad Y, Iterative Methods for Sparse Linear Systems (2nd edn, SIAM 2003) | secondary | 2003 | https://epubs.siam.org/
+SRC: Briggs WL, Henson VE, McCormick SF, A Multigrid Tutorial (2nd edn, SIAM 2000) | secondary | 2000 | https://epubs.siam.org/
 NUM1#maths-u19-20-q1@1: Do one Gauss–Seidel step for 4x + y = 9, x + 3y = 7 from (0, 0). What is the new y? | 1.5833 | 0.0001 |  | x₁ = 9/4 = 2.25, then y₁ = (7 − 2.25)/3 = 1.5833, using the new x immediately.
 M1#maths-u19-20-q2@1: What condition guarantees Jacobi iteration converges? | The matrix is strictly diagonally dominant | The matrix is singular | The right-hand side is zero | The matrix has a zero diagonal | The matrix is upper triangular with zeros | Diagonal dominance makes the iteration matrix's spectral radius less than 1.
 M2#maths-u19-20-q3@2: Why are iterative solvers preferred for very large sparse systems? | They need only matrix–vector products, avoiding the fill-in and memory of factorisation | They always give exact answers in a fixed number of steps | Direct methods can't solve sparse systems at all | They need no starting guess and no stopping test | They aren't preferred; direct LU is always faster | LU factors of sparse matrices can be much denser than A itself.
@@ -765,8 +765,8 @@ Q: In which norm does CG minimise the error? | The energy (A-) norm.
 Q: Who introduced the conjugate gradient method? | Hestenes and Stiefel (1952).
 SUM: CG minimises along conjugate directions.
 SUM: It converges with √κ.
-SRC: Hestenes MR, Stiefel E, Methods of conjugate gradients for solving linear systems, Journal of Research of the National Bureau of Standards 49(6), 409 | journal | 1952 | https://doi.org/10.6028/jres.049.044
-SRC: Shewchuk JR, An Introduction to the Conjugate Gradient Method Without the Agonizing Pain (Carnegie Mellon University 1994) | review | 1994 | https://www.cs.cmu.edu/~quake-papers/painless-conjugate-gradient.pdf
+SRC: Hestenes MR, Stiefel E, Methods of conjugate gradients for solving linear systems, Journal of Research of the National Bureau of Standards 49(6), 409 | primary | 1952 | https://doi.org/10.6028/jres.049.044
+SRC: Shewchuk JR, An Introduction to the Conjugate Gradient Method Without the Agonizing Pain (Carnegie Mellon University 1994) | secondary | 1994 | https://www.cs.cmu.edu/~quake-papers/painless-conjugate-gradient.pdf
 NUM1#maths-u19-21-q1@1: For κ = 400, what is the CG error-bound reduction factor (√κ − 1)/(√κ + 1), to 3 decimal places? | 0.905 | 0.001 |  | √400 = 20, so the factor is 19/21 ≈ 0.905.
 M1#maths-u19-21-q2@1: Which systems is the standard conjugate gradient method designed for? | Symmetric positive definite systems | Any square nonsingular system | Rectangular least-squares systems | Systems with complex eigenvalues | Singular systems | CG's minimisation view requires A to be SPD; GMRES handles general matrices.
 M2#maths-u19-21-q3@2: Why does CG usually converge much faster than steepest descent? | Its iteration count scales with √κ rather than κ, because it never undoes progress in earlier directions | It uses the exact inverse matrix, so it finishes in one step | It needs no matrix–vector products, only vector additions | It only works for diagonal matrices, where it's trivially fast | It doesn't: steepest descent is usually faster than conjugate gradients | Conjugacy keeps each new step from spoiling the minimisation in previous directions.
@@ -803,8 +803,8 @@ Q: What is backpropagation? | Reverse-mode automatic differentiation applied to 
 Q: How many finite-difference evaluations does a gradient in n variables need? | n + 1 (forward differences).
 SUM: Gradients guide numerical methods.
 SUM: Reverse mode makes them cheap.
-SRC: Griewank A, Walther A, Evaluating Derivatives: Principles and Techniques of Algorithmic Differentiation (2nd edn, SIAM 2008) | textbook | 2008 | https://epubs.siam.org/
-SRC: Baydin AG, Pearlmutter BA, Radul AA, Siskind JM, Automatic differentiation in machine learning: a survey, Journal of Machine Learning Research 18(153), 1 | journal | 2018 | https://jmlr.org/papers/v18/17-468.html
+SRC: Griewank A, Walther A, Evaluating Derivatives: Principles and Techniques of Algorithmic Differentiation (2nd edn, SIAM 2008) | secondary | 2008 | https://epubs.siam.org/
+SRC: Baydin AG, Pearlmutter BA, Radul AA, Siskind JM, Automatic differentiation in machine learning: a survey, Journal of Machine Learning Research 18(153), 1 | primary | 2018 | https://jmlr.org/papers/v18/17-468.html
 NUM1#maths-u19-22-q1@1: A model has 1000 parameters. How many function evaluations does a forward-difference gradient need? | 1001 | 0 |  | One base evaluation plus one perturbed evaluation for each of the 1000 parameters.
 M1#maths-u19-22-q2@1: Which method gives the full gradient of a scalar function for roughly the cost of a few function evaluations? | Reverse-mode automatic differentiation | Forward-mode automatic differentiation | Forward finite differences | Central finite differences | Symbolic expansion by hand | One backward sweep yields every partial derivative of a scalar output.
 M2#maths-u19-22-q3@2: What is the main cost of reverse-mode differentiation? | Memory to store the intermediate values of the forward pass | Many more arithmetic operations than the function | Truncation error in the derivatives | Needing a second derivative | It has no costs | The backward pass needs values from the forward pass, which checkpointing trades for recomputation.
@@ -842,8 +842,8 @@ Q: What does the Armijo condition require? | Sufficient decrease in f relative t
 Q: Name a derivative-free optimisation method. | Nelder–Mead (or pattern search).
 SUM: Globalisation makes local methods robust.
 SUM: Choose by derivatives and size.
-SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | textbook | 2006 | https://link.springer.com/
-SRC: Conn AR, Gould NIM, Toint PL, Trust-Region Methods (SIAM 2000) | textbook | 2000 | https://epubs.siam.org/
+SRC: Nocedal J, Wright SJ, Numerical Optimization (2nd edn, Springer 2006) | secondary | 2006 | https://link.springer.com/
+SRC: Conn AR, Gould NIM, Toint PL, Trust-Region Methods (SIAM 2000) | secondary | 2000 | https://epubs.siam.org/
 NUM1#maths-u19-23-q1@1: A trust-region step predicted a decrease of 4 but the actual decrease was 3. What is the ratio ρ used to adjust the radius? | 0.75 | 0.001 |  | ρ = actual/predicted = 3/4 = 0.75, a good agreement that typically keeps or enlarges the radius.
 M1#maths-u19-23-q2@1: What happens to the trust-region radius when the model predicts the decrease poorly? | It is reduced, so the next step stays closer to the current point | It is doubled, so the model can be tested further out | It stays the same regardless of how the step performed | The method stops, since the model has failed | The model is discarded and replaced by bisection | A small ratio of actual to predicted decrease means the model isn't trustworthy that far out.
 M2#maths-u19-23-q3@2: Which method suits optimising a function whose derivatives are unavailable and noisy? | A derivative-free method such as Nelder–Mead or model-based trust regions | Newton's method with exact Hessians from the formula | Conjugate gradients applied to the normal equations | Reverse-mode automatic differentiation of the function | Steepest descent using exact analytic gradients | Derivative-free methods use only function values.
@@ -881,8 +881,8 @@ Q: What is the global order of RK4? | 4.
 Q: What kind of method suits stiff ODEs? | An implicit method such as BDF.
 SUM: Step through time on a grid.
 SUM: Match the method to stiffness and accuracy.
-SRC: Hairer E, Nørsett SP, Wanner G, Solving Ordinary Differential Equations I: Nonstiff Problems (2nd edn, Springer 1993) | textbook | 1993 | https://link.springer.com/
-SRC: LeVeque RJ, Finite Difference Methods for Ordinary and Partial Differential Equations (SIAM 2007) | textbook | 2007 | https://epubs.siam.org/
+SRC: Hairer E, Nørsett SP, Wanner G, Solving Ordinary Differential Equations I: Nonstiff Problems (2nd edn, Springer 1993) | secondary | 1993 | https://link.springer.com/
+SRC: LeVeque RJ, Finite Difference Methods for Ordinary and Partial Differential Equations (SIAM 2007) | secondary | 2007 | https://epubs.siam.org/
 NUM1#maths-u19-24-q1@1: Apply two Euler steps of h = 0.5 to y′ = −2y with y(0) = 1. What is y(1)? | 0 | 0 |  | Each step multiplies by 1 − 2 × 0.5 = 0, so y₁ = 0 and y₂ = 0 (exact e^{−2} ≈ 0.135): a step at the stability edge.
 M1#maths-u19-24-q2@1: Which method is fourth-order accurate? | Classical Runge–Kutta (RK4) | Forward Euler | Backward Euler | The midpoint method | The trapezium rule | RK4 combines four slope evaluations to cancel error terms up to h^{4}.
 M3#maths-u19-24-q3@2: Why are implicit methods preferred for stiff ODEs? | Their large stability regions allow steps set by accuracy, not by the fastest decaying mode | They are cheaper per step than explicit methods | They are always more accurate for every step size | Explicit methods can't solve ODEs with more than one variable | They aren't preferred; explicit methods handle stiffness best | Explicit methods need h below 2/λ_{max}, which is tiny when fast modes exist.
@@ -919,8 +919,8 @@ Q: What does Céa's lemma say? | The Galerkin solution is quasi-optimal in the e
 Q: What error does linear FEM give in the L^{2} norm for smooth problems? | O(h^{2}).
 SUM: Elements approximate complex domains.
 SUM: Weak forms make it rigorous.
-SRC: Brenner SC, Scott LR, The Mathematical Theory of Finite Element Methods (3rd edn, Springer 2008) | textbook | 2008 | https://link.springer.com/
-SRC: Zienkiewicz OC, Taylor RL, Zhu JZ, The Finite Element Method: Its Basis and Fundamentals (7th edn, Butterworth-Heinemann 2013) | textbook | 2013 | https://www.elsevier.com/
+SRC: Brenner SC, Scott LR, The Mathematical Theory of Finite Element Methods (3rd edn, Springer 2008) | secondary | 2008 | https://link.springer.com/
+SRC: Zienkiewicz OC, Taylor RL, Zhu JZ, The Finite Element Method: Its Basis and Fundamentals (7th edn, Butterworth-Heinemann 2013) | secondary | 2013 | https://www.elsevier.com/
 NUM1#maths-u19-25-q1@1: For −u″ = 1 on [0, 1] with zero boundary values, what is the exact solution at x = 0.25? | 0.09375 | 0.00001 |  | u = x(1 − x)/2 = 0.25 × 0.75/2 = 0.09375.
 M1#maths-u19-25-q2@1: What is the weak form of a PDE? | An integral equation obtained by multiplying by test functions and integrating by parts | The PDE with all of its derivative terms removed | A version with weaker boundary conditions only | The PDE solved on a deliberately coarse grid | A linearised version of a nonlinear PDE | Integrating by parts moves derivatives onto test functions, allowing less smooth solutions.
 M2#maths-u19-25-q3@2: Why does finite element analysis lead to sparse matrices? | Each basis function overlaps only its neighbours, so most matrix entries are zero | Every basis function covers the whole domain, so most products vanish | The PDE has no derivatives once it's written in weak form | Elements are always square, which forces a banded structure | It doesn't: finite element matrices are always completely dense | Local support means the stiffness entry Kᵢⱼ is non-zero only for nearby nodes.
@@ -956,8 +956,8 @@ Q: What does the Delaunay condition say? | No point lies inside any triangle's c
 Q: Which kind of mesh fits arbitrary geometry most easily? | Unstructured (triangles or tetrahedra).
 SUM: Meshes discretise geometry.
 SUM: Quality affects accuracy.
-SRC: Cheng SW, Dey TK, Shewchuk JR, Delaunay Mesh Generation (CRC Press 2012) | textbook | 2012 | https://www.routledge.com/
-SRC: Geuzaine C, Remacle JF, Gmsh: a 3-D finite element mesh generator, International Journal for Numerical Methods in Engineering 79(11), 1309 | journal | 2009 | https://doi.org/10.1002/nme.2579
+SRC: Cheng SW, Dey TK, Shewchuk JR, Delaunay Mesh Generation (CRC Press 2012) | secondary | 2012 | https://www.routledge.com/
+SRC: Geuzaine C, Remacle JF, Gmsh: a 3-D finite element mesh generator, International Journal for Numerical Methods in Engineering 79(11), 1309 | primary | 2009 | https://doi.org/10.1002/nme.2579
 NUM1#maths-u19-26-q1@1: What is the sum of the interior angles of any triangle element, in degrees? | 180 | 0 | ° | Angles always sum to 180°, so one very large angle forces the others to be small.
 M1#maths-u19-26-q2@1: Which property does a Delaunay triangulation maximise among triangulations of a point set? | The minimum angle | The maximum angle | The number of triangles | The total edge length | The area of the largest triangle | Avoiding points in circumcircles avoids skinny triangles.
 M2#maths-u19-26-q3@2: Why are poorly shaped elements harmful in finite element analysis? | They increase interpolation error and make the stiffness matrix ill-conditioned | They reduce the number of unknowns below what's needed | They make the PDE linear when it should be nonlinear | They speed up the solver but give no answer at all | They aren't harmful; only the number of elements matters | Very large or small angles degrade gradient approximations and the solver's conditioning.
@@ -992,8 +992,8 @@ Q: What is a posteriori error estimation? | Estimating error from the computed s
 Q: What does p-refinement change? | The polynomial degree of the elements.
 SUM: Refine where the error is.
 SUM: Estimators guide the mesh.
-SRC: Ainsworth M, Oden JT, A Posteriori Error Estimation in Finite Element Analysis (Wiley 2000) | textbook | 2000 | https://www.wiley.com/
-SRC: Berger MJ, Oliger J, Adaptive mesh refinement for hyperbolic partial differential equations, Journal of Computational Physics 53(3), 484 | journal | 1984 | https://doi.org/10.1016/0021-9991(84)90073-1
+SRC: Ainsworth M, Oden JT, A Posteriori Error Estimation in Finite Element Analysis (Wiley 2000) | secondary | 2000 | https://www.wiley.com/
+SRC: Berger MJ, Oliger J, Adaptive mesh refinement for hyperbolic partial differential equations, Journal of Computational Physics 53(3), 484 | primary | 1984 | https://doi.org/10.1016/0021-9991(84)90073-1
 NUM1#maths-u19-27-q1@1: Splitting each triangle into four (red refinement) three times turns one triangle into how many? | 64 | 0 |  | Each step multiplies the count by 4: 4^{3} = 64.
 M1#maths-u19-27-q2@1: Which elements are refined in an adaptive loop? | Those whose estimated error is largest | Every element equally | Those with the smallest error | Only boundary elements | A random selection of elements | Marking focuses effort where the estimator shows the error is concentrated.
 M3#maths-u19-27-q3@2: Why does adaptivity restore optimal convergence near a corner singularity? | Grading the mesh towards the corner balances the error across elements, which uniform meshes can't do | Corners have no error, so refining elsewhere fixes the rate | Adaptive meshes remove the singularity from the PDE itself | Refinement makes the exact solution smooth near the corner | It doesn't: adaptivity only reduces cost, never improves rates | Uniform meshes waste elements in smooth regions while the corner error dominates.
@@ -1028,8 +1028,8 @@ Q: What did PSLQ help discover in 1995? | The BBP formula for π.
 Q: Name a theorem proved with computer assistance. | The four colour theorem.
 SUM: Computers suggest and prove mathematics.
 SUM: Rigour needs verification.
-SRC: Borwein J, Bailey D, Mathematics by Experiment: Plausible Reasoning in the 21st Century (2nd edn, A K Peters 2008) | textbook | 2008 | https://www.routledge.com/
-SRC: Bailey D, Borwein P, Plouffe S, On the rapid computation of various polylogarithmic constants, Mathematics of Computation 66, 903 | journal | 1997 | https://doi.org/10.1090/S0025-5718-97-00856-9
+SRC: Borwein J, Bailey D, Mathematics by Experiment: Plausible Reasoning in the 21st Century (2nd edn, A K Peters 2008) | secondary | 2008 | https://www.routledge.com/
+SRC: Bailey D, Borwein P, Plouffe S, On the rapid computation of various polylogarithmic constants, Mathematics of Computation 66, 903 | primary | 1997 | https://doi.org/10.1090/S0025-5718-97-00856-9
 NUM1#maths-u19-28-q1@1: In what year did Appel and Haken announce their computer-assisted proof of the four colour theorem? | 1976 | 0 |  | Appel and Haken announced the proof in 1976, checking 1,936 configurations by computer (later reduced).
 M1#maths-u19-28-q2@1: What does the PSLQ algorithm find? | Integer relations among given real numbers | Prime factors of large integers | Roots of polynomials only | Shortest paths in graphs | Eigenvalues of matrices | PSLQ searches for integers a₁, …, aₙ with Σ aᵢxᵢ ≈ 0.
 M2#maths-u19-28-q3@2: Why must computer-assisted proofs use rigorous arithmetic or verification? | Floating-point rounding could otherwise make a false inequality look true | Computers never make errors, so rigour is only a formality | Proofs by computer don't need the same rigour as hand proofs | Rounding always helps by making inequalities more strict | They needn't: floating-point results are accepted as proof | Interval arithmetic and formal checking turn computations into guaranteed statements.
@@ -1065,8 +1065,8 @@ Q: What limits speed-up in Amdahl's law? | The serial fraction of the code.
 Q: Which benchmark ranks the TOP500? | LINPACK (High-Performance Linpack).
 SUM: HPC needs parallel thinking.
 SUM: Memory and communication often dominate.
-SRC: Amdahl GM, Validity of the single processor approach to achieving large scale computing capabilities, AFIPS Conference Proceedings 30, 483 | journal | 1967 | https://doi.org/10.1145/1465482.1465560
-SRC: Williams S, Waterman A, Patterson D, Roofline: an insightful visual performance model for multicore architectures, Communications of the ACM 52(4), 65 | journal | 2009 | https://doi.org/10.1145/1498765.1498785
+SRC: Amdahl GM, Validity of the single processor approach to achieving large scale computing capabilities, AFIPS Conference Proceedings 30, 483 | primary | 1967 | https://doi.org/10.1145/1465482.1465560
+SRC: Williams S, Waterman A, Patterson D, Roofline: an insightful visual performance model for multicore architectures, Communications of the ACM 52(4), 65 | primary | 2009 | https://doi.org/10.1145/1498765.1498785
 NUM1#maths-u19-29-q1@1: A program is 10% serial. What is the maximum possible speed-up with unlimited processors? | 10 | 0 |  | Amdahl's limit is 1/s = 1/0.1 = 10, however many processors are used.
 M1#maths-u19-29-q2@1: A kernel does 1 flop per 8 bytes on a machine with 100 GB/s bandwidth and 10 Tflop/s peak. What limits it? | Memory bandwidth, giving about 12.5 Gflop/s | Peak compute, giving 10 Tflop/s | Network latency only | The serial fraction | Disk speed | Roofline: 100 GB/s × 0.125 flop/byte = 12.5 Gflop/s, far below peak.
 M2#maths-u19-29-q3@2: What does weak scaling measure? | How run time changes when the problem size grows in proportion to the processors | Speed-up for a fixed problem size as processors are added | The fraction of the code that must run serially | The speed of one processor core running alone | The total memory capacity of the whole machine | Weak scaling keeps work per processor fixed, as Gustafson's law describes.
@@ -1102,8 +1102,8 @@ Q: What is a halo exchange? | Swapping boundary data between neighbouring subdom
 Q: Why are dot products costly in parallel? | They need global reductions across all processors.
 SUM: Divide work, minimise communication.
 SUM: Balance load across processors.
-SRC: Dongarra J et al. (eds), Sourcebook of Parallel Computing (Morgan Kaufmann 2003) | textbook | 2003 | https://www.elsevier.com/
-SRC: Smith B, Bjørstad P, Gropp W, Domain Decomposition: Parallel Multilevel Methods for Elliptic Partial Differential Equations (Cambridge University Press 1996) | textbook | 1996 | https://www.cambridge.org/
+SRC: Dongarra J et al. (eds), Sourcebook of Parallel Computing (Morgan Kaufmann 2003) | secondary | 2003 | https://www.elsevier.com/
+SRC: Smith B, Bjørstad P, Gropp W, Domain Decomposition: Parallel Multilevel Methods for Elliptic Partial Differential Equations (Cambridge University Press 1996) | secondary | 1996 | https://www.cambridge.org/
 NUM1#maths-u19-30-q1@1: A 1000 × 1000 grid is split into 100 square subdomains. How many grid points does each contain? | 10000 | 0 | points | 10^{6}/100 = 10,000 points, a 100 × 100 block.
 M1#maths-u19-30-q2@1: Which task is embarrassingly parallel? | Running independent Monte Carlo samples | Solving a tridiagonal system by elimination | A single long time-stepping loop | Computing a recursive sequence | Sorting by insertion | Samples are independent, so they need no communication until the final average.
 M3#maths-u19-30-q3@2: Why do communication-avoiding Krylov methods help at scale? | They combine several iterations' global reductions into one, cutting synchronisation that dominates at large core counts | They need no matrix–vector products, so the communication disappears | They avoid all arithmetic, so only communication is left to optimise | They make the matrices dense, which suits parallel machines better | They don't help; communication costs fall as more cores are added | Each global reduction stalls every processor, so fewer of them speeds up large runs.
@@ -1139,8 +1139,8 @@ Q: Does e^{x^{2}} have an elementary antiderivative? | No.
 Q: Who introduced Gröbner bases? | Bruno Buchberger (1965).
 SUM: Symbolic means exact.
 SUM: Key algorithms decide and solve.
-SRC: von zur Gathen J, Gerhard J, Modern Computer Algebra (3rd edn, Cambridge University Press 2013) | textbook | 2013 | https://www.cambridge.org/
-SRC: Cox DA, Little J, O'Shea D, Ideals, Varieties, and Algorithms (4th edn, Springer 2015) | textbook | 2015 | https://link.springer.com/
+SRC: von zur Gathen J, Gerhard J, Modern Computer Algebra (3rd edn, Cambridge University Press 2013) | secondary | 2013 | https://www.cambridge.org/
+SRC: Cox DA, Little J, O'Shea D, Ideals, Varieties, and Algorithms (4th edn, Springer 2015) | secondary | 2015 | https://link.springer.com/
 NUM1#maths-u19-31-q1@1: How many irreducible factors does x^{4} − 1 have over ℚ? | 3 | 0 |  | x^{4} − 1 = (x − 1)(x + 1)(x^{2} + 1), and x^{2} + 1 is irreducible over ℚ.
 M1#maths-u19-31-q2@1: What problem does a Gröbner basis solve algorithmically? | Deciding polynomial ideal membership and eliminating variables from polynomial systems | Computing eigenvalues of large dense matrices accurately | Integrating stiff differential equations numerically | Finding shortest paths in weighted directed graphs | Sorting long lists of polynomials by their degree | Buchberger's algorithm reduces polynomial system questions to normal forms.
 M2#maths-u19-31-q3@2: What is expression swell in symbolic computation? | Exact intermediate expressions growing much larger than the input or final answer | Rounding errors accumulating over long computations | Floating-point overflow when numbers become too large | A shortage of variable names in long computations | It isn't a real issue in modern computer algebra | Exact rational arithmetic can produce huge numerators and denominators along the way.
@@ -1175,8 +1175,8 @@ Q: Name an open-source computer algebra system. | SageMath (or SymPy, Maxima).
 Q: When does √(x^{2}) = x hold for real x? | When x ≥ 0.
 SUM: CAS make symbolic work easy.
 SUM: Always check assumptions.
-SRC: Stein W et al., SageMath, the Sage Mathematics Software System | dataset | 2024 | https://www.sagemath.org/
-SRC: Meurer A et al., SymPy: symbolic computing in Python, PeerJ Computer Science 3, e103 | journal | 2017 | https://doi.org/10.7717/peerj-cs.103
+SRC: Stein W et al., SageMath, the Sage Mathematics Software System | data | 2024 | https://www.sagemath.org/
+SRC: Meurer A et al., SymPy: symbolic computing in Python, PeerJ Computer Science 3, e103 | primary | 2017 | https://doi.org/10.7717/peerj-cs.103
 NUM1#maths-u19-32-q1@1: A CAS solves ax = b as x = b/a. For how many values of a does this generic answer fail? | 1 | 0 |  | It fails only at a = 0, where there are no solutions or infinitely many.
 M1#maths-u19-32-q2@1: Which simplification is valid for all real x? | √(x^{2}) = |x| | √(x^{2}) = x | log(eˣ) = x for complex x | (x^{2})^{1/2} = x | √(x^{2}) = −x | The principal square root is non-negative, so it equals |x|.
 M2#maths-u19-32-q3@2: What is a good way to check a CAS antiderivative? | Differentiate it and compare with the integrand, also numerically at sample points | Trust the output, since computer algebra systems don't make mistakes | Integrate it again and check the result is a second antiderivative | Check that the answer is shorter than the original integrand | Ask another CAS only, without any independent mathematical check | Differentiation verifies the result exactly; numerical checks catch domain errors.
@@ -1210,8 +1210,8 @@ Q: How does Monte Carlo error scale with the number of samples? | Like 1/√N.
 Q: Which kind of uncertainty can more data reduce? | Epistemic uncertainty.
 SUM: Quantify how uncertain predictions are.
 SUM: Propagate forward, calibrate backward.
-SRC: Smith RC, Uncertainty Quantification: Theory, Implementation, and Applications (SIAM 2014) | textbook | 2014 | https://epubs.siam.org/
-SRC: Kennedy MC, O'Hagan A, Bayesian calibration of computer models, Journal of the Royal Statistical Society B 63(3), 425 | journal | 2001 | https://doi.org/10.1111/1467-9868.00294
+SRC: Smith RC, Uncertainty Quantification: Theory, Implementation, and Applications (SIAM 2014) | secondary | 2014 | https://epubs.siam.org/
+SRC: Kennedy MC, O'Hagan A, Bayesian calibration of computer models, Journal of the Royal Statistical Society B 63(3), 425 | primary | 2001 | https://doi.org/10.1111/1467-9868.00294
 NUM1#maths-u19-33-q1@1: A Monte Carlo study has standard error 0.6 with 400 samples. What is the standard error with 3600 samples? | 0.2 | 0.001 |  | Nine times the samples gives √9 = 3 times smaller error: 0.6/3 = 0.2.
 M1#maths-u19-33-q2@1: Which is an example of epistemic uncertainty? | An unknown material constant that more testing could pin down | Random gusts of wind buffeting a bridge | Thermal noise in an electronic sensor | The timing of individual radioactive decays | The outcome of rolling a fair die | More data can reduce uncertainty from lack of knowledge.
 M2#maths-u19-33-q3@2: Why are surrogate models often used in uncertainty quantification? | Each full simulation is expensive, and Monte Carlo needs thousands of runs | Surrogates are always more accurate than the full simulation | They remove all uncertainty, so no sampling is needed | They need no data from the expensive simulation | They aren't used, since Monte Carlo never needs many runs | A cheap approximation lets many samples be drawn at little cost.
@@ -1246,8 +1246,8 @@ Q: What does a total-effect Sobol index include? | The input's main effect plus 
 Q: When do first-order Sobol indices sum to 1? | For additive models without interactions.
 SUM: Find which inputs matter.
 SUM: Global methods capture interactions.
-SRC: Saltelli A et al., Global Sensitivity Analysis: The Primer (Wiley 2008) | textbook | 2008 | https://www.wiley.com/
-SRC: Sobol IM, Global sensitivity indices for nonlinear mathematical models and their Monte Carlo estimates, Mathematics and Computers in Simulation 55, 271 | journal | 2001 | https://doi.org/10.1016/S0378-4754(00)00270-6
+SRC: Saltelli A et al., Global Sensitivity Analysis: The Primer (Wiley 2008) | secondary | 2008 | https://www.wiley.com/
+SRC: Sobol IM, Global sensitivity indices for nonlinear mathematical models and their Monte Carlo estimates, Mathematics and Computers in Simulation 55, 271 | primary | 2001 | https://doi.org/10.1016/S0378-4754(00)00270-6
 NUM1#maths-u19-34-q1@1: For y = 3x₁ + x₂ with independent unit-variance inputs, what is the first-order Sobol index of x₁? | 0.9 | 0.001 |  | Var(y) = 9 + 1 = 10, so S₁ = 9/10 = 0.9.
 M1#maths-u19-34-q2@1: What is the elasticity of y = x^{2} with respect to x? | 2 | 1 | x | 0.5 | x^{2} | (dy/dx)(x/y) = 2x × x/x^{2} = 2: a 1% change in x gives about 2% change in y.
 M3#maths-u19-34-q3@2: Why can one-at-a-time sensitivity analysis mislead? | It misses interactions, where an input matters only when another input changes too | It is always exact, so it can only mislead through bugs | It uses too many samples, so random noise dominates | It ranks inputs at random rather than by importance | It never misleads for any model, however nonlinear | For y = x₁x₂ around x₂ = 0, varying x₁ alone shows no effect, though it matters elsewhere.
@@ -1283,8 +1283,8 @@ Q: What design is often used to choose training inputs? | A Latin hypercube.
 Q: Which surrogate provides its own uncertainty estimates? | A Gaussian process.
 SUM: Replace expensive models with cheap ones.
 SUM: Validate and don't extrapolate.
-SRC: Forrester AIJ, Sóbester A, Keane AJ, Engineering Design via Surrogate Modelling (Wiley 2008) | textbook | 2008 | https://www.wiley.com/
-SRC: Santner TJ, Williams BJ, Notz WI, The Design and Analysis of Computer Experiments (2nd edn, Springer 2018) | textbook | 2018 | https://link.springer.com/
+SRC: Forrester AIJ, Sóbester A, Keane AJ, Engineering Design via Surrogate Modelling (Wiley 2008) | secondary | 2008 | https://www.wiley.com/
+SRC: Santner TJ, Williams BJ, Notz WI, The Design and Analysis of Computer Experiments (2nd edn, Springer 2018) | secondary | 2018 | https://link.springer.com/
 NUM1#maths-u19-35-q1@1: A Latin hypercube design uses 10 samples in each of 3 dimensions. How many expensive simulation runs does it need? | 10 | 0 | runs | A Latin hypercube with n samples needs n runs, unlike a full grid needing 10^{3} = 1000.
 M1#maths-u19-35-q2@1: Why validate a surrogate on held-out simulation runs? | To check its accuracy on inputs it wasn't trained on | To make it slower | To increase its training error | To avoid using data | Validation isn't necessary | Held-out runs reveal how well the surrogate generalises.
 M2#maths-u19-35-q3@2: Which surrogate type naturally reports how uncertain its predictions are? | A Gaussian process emulator | A fixed polynomial fit | A look-up table | A linear interpolant | A constant model | GP predictions come with a variance that grows away from training points.
@@ -1320,8 +1320,8 @@ Q: What does verification check? | That the code correctly solves the mathematic
 Q: What does validation check? | That the model represents reality adequately for its purpose.
 SUM: Simulation complements theory and experiment.
 SUM: Verify and validate.
-SRC: Oberkampf WL, Roy CJ, Verification and Validation in Scientific Computing (Cambridge University Press 2010) | textbook | 2010 | https://www.cambridge.org/
-SRC: National Research Council, Assessing the Reliability of Complex Models: Mathematical and Statistical Foundations of Verification, Validation, and Uncertainty Quantification (National Academies Press 2012) | guideline | 2012 | https://doi.org/10.17226/13395
+SRC: Oberkampf WL, Roy CJ, Verification and Validation in Scientific Computing (Cambridge University Press 2010) | secondary | 2010 | https://www.cambridge.org/
+SRC: National Research Council, Assessing the Reliability of Complex Models: Mathematical and Statistical Foundations of Verification, Validation, and Uncertainty Quantification (National Academies Press 2012) | guidance | 2012 | https://doi.org/10.17226/13395
 NUM1#maths-u19-36-q1@1: An N-body simulation computes all pairwise forces directly. How many pairs are there for 1000 bodies? | 499500 | 0 | pairs | n(n − 1)/2 = 1000 × 999/2 = 499,500, which is why tree and fast multipole methods are used.
 M1#maths-u19-36-q2@1: Which activity is verification? | Checking that errors fall at the expected rate as the mesh is refined | Comparing predictions with wind-tunnel measurements | Asking experts whether the model seems realistic | Measuring the real system to collect new data | Choosing which physical model to implement | Convergence studies test that the equations are solved correctly.
 M2#maths-u19-36-q3@2: Why is reproducibility important in scientific simulation? | Others must be able to rerun and check results, which needs code, data and parameters | It makes simulations run faster on any machine | It removes numerical error from every result | It replaces the need for validation against data | It isn't important once results are published | Without the exact setup, results can't be confirmed or built on.
@@ -1357,8 +1357,8 @@ Q: What is LAPACK built on? | BLAS.
 Q: Should you solve Ax = b by computing A^{−1}? | No: use a solver such as LU.
 SUM: Good libraries encode expertise.
 SUM: Use them rather than reinventing.
-SRC: Anderson E et al., LAPACK Users' Guide (3rd edn, SIAM 1999) | textbook | 1999 | https://netlib.org/lapack/lug/
-SRC: Virtanen P et al., SciPy 1.0: fundamental algorithms for scientific computing in Python, Nature Methods 17, 261 | journal | 2020 | https://doi.org/10.1038/s41592-019-0686-2
+SRC: Anderson E et al., LAPACK Users' Guide (3rd edn, SIAM 1999) | secondary | 1999 | https://netlib.org/lapack/lug/
+SRC: Virtanen P et al., SciPy 1.0: fundamental algorithms for scientific computing in Python, Nature Methods 17, 261 | primary | 2020 | https://doi.org/10.1038/s41592-019-0686-2
 NUM1#maths-u19-37-q1@1: An LU solve costs about (2/3)n^{3} flops. Roughly how many flops for n = 3000? | 18000000000 | 100000000 | flops | (2/3) × 2.7 × 10^{10} = 1.8 × 10^{10} flops, a fraction of a second on a modern CPU.
 M1#maths-u19-37-q2@1: Which library provides fast Fourier transforms? | FFTW | LAPACK | BLAS level 1 | PETSc's Krylov solvers | SUNDIALS | FFTW ("Fastest Fourier Transform in the West") adapts its algorithm to the hardware.
 M2#maths-u19-37-q3@2: Why are optimised BLAS implementations so much faster than naive loops? | They are tuned to the machine's caches and vector units, reusing data in fast memory | They skip some of the arithmetic to save time | They use lower precision than requested | They run only on special-purpose hardware | They aren't faster than straightforward loops | Blocking for cache and using SIMD instructions keeps the processor busy.

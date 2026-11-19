@@ -31,8 +31,8 @@ Q: What are Hadamard's three conditions for well-posedness? | Existence, uniquen
 Q: Which branch of pure mathematics grew from studying heat flow? | Fourier analysis.
 SUM: Applied maths connects maths and the world.
 SUM: Methods and theory develop together.
-SRC: Higham NJ (ed), The Princeton Companion to Applied Mathematics (Princeton University Press 2015) | textbook | 2015 | https://press.princeton.edu/
-SRC: Lin CC, Segel LA, Mathematics Applied to Deterministic Problems in the Natural Sciences (SIAM 1988) | textbook | 1988 | https://epubs.siam.org/
+SRC: Higham NJ (ed), The Princeton Companion to Applied Mathematics (Princeton University Press 2015) | secondary | 2015 | https://press.princeton.edu/
+SRC: Lin CC, Segel LA, Mathematics Applied to Deterministic Problems in the Natural Sciences (SIAM 1988) | secondary | 1988 | https://epubs.siam.org/
 NUM1#maths-u20-01-q1@1: For u′ = u, u(0) = 1.01, what is u(1) to 4 decimal places? | 2.7456 | 0.0001 |  | u(1) = 1.01e ≈ 2.7456, close to e ≈ 2.7183: small data changes give small solution changes.
 M1#maths-u20-01-q2@1: Which of Hadamard's conditions does the backward heat equation fail? | Continuous dependence on the data, since tiny changes grow explosively | Existence of a solution for every smooth initial state | Uniqueness of solutions for given data | Linearity of the governing equation | Having any physical meaning at all | Running diffusion backwards amplifies high-frequency errors without bound.
 M2#maths-u20-01-q3@2: Why do applied mathematicians care about well-posedness? | An ill-posed model's predictions can be destroyed by small errors in data | Well-posed problems are always linear, which makes them easy to solve | Ill-posed problems have no solutions at all, so they can be ignored | It only matters in pure mathematics, never in applications | They don't care about it, since numerical methods fix any problem | Real data are never exact, so useful models must be stable under small perturbations.
@@ -68,8 +68,8 @@ Q: Who said "all models are wrong, but some are useful"? | George Box.
 Q: What is a mechanistic model? | One built from underlying processes or laws.
 SUM: Models simplify reality on purpose.
 SUM: Test them against new data.
-SRC: Bender EA, An Introduction to Mathematical Modeling (Wiley 1978; Dover 2000) | textbook | 2000 | https://store.doverpublications.com/
-SRC: Box GEP, Science and statistics, Journal of the American Statistical Association 71(356), 791 | journal | 1976 | https://doi.org/10.1080/01621459.1976.10480949
+SRC: Bender EA, An Introduction to Mathematical Modeling (Wiley 1978; Dover 2000) | secondary | 2000 | https://store.doverpublications.com/
+SRC: Box GEP, Science and statistics, Journal of the American Statistical Association 71(356), 791 | primary | 1976 | https://doi.org/10.1080/01621459.1976.10480949
 NUM1#maths-u20-02-q1@1: Using T(t) = 20 + 70e^{−0.056t}, predict the tea's temperature in °C after 20 minutes. | 42.9 | 0.2 | °C | 70e^{−1.12} ≈ 70 × 0.326 ≈ 22.8, so T ≈ 42.8 °C.
 M1#maths-u20-02-q2@1: Which step of the modelling cycle compares predictions with independent data? | Validation | Formulation | Simplification | Non-dimensionalisation | Parameter naming | Validation tests whether the model's outputs match observations it wasn't fitted to.
 M2#maths-u20-02-q3@2: Why is parsimony valued in modelling? | Models with fewer parameters are less prone to overfitting and easier to interpret and test | Simple models are always correct, so extra detail only adds risk | Complex models can't be solved, so simplicity is the only option | Parsimony guarantees accurate predictions on any new data set | It isn't valued: the most detailed model is always preferred | Each extra parameter can absorb noise rather than signal.
@@ -103,8 +103,8 @@ Q: What are the dimensions of force? | MLT^{−2}.
 Q: How many dimensionless groups arise from 5 variables with 3 dimensions? | 2.
 SUM: Units constrain physical laws.
 SUM: Π groups reduce variables.
-SRC: Barenblatt GI, Scaling, Self-Similarity, and Intermediate Asymptotics (Cambridge University Press 1996) | textbook | 1996 | https://www.cambridge.org/
-SRC: Taylor GI, The formation of a blast wave by a very intense explosion II, Proceedings of the Royal Society A 201, 175 | journal | 1950 | https://doi.org/10.1098/rspa.1950.0050
+SRC: Barenblatt GI, Scaling, Self-Similarity, and Intermediate Asymptotics (Cambridge University Press 1996) | secondary | 1996 | https://www.cambridge.org/
+SRC: Taylor GI, The formation of a blast wave by a very intense explosion II, Proceedings of the Royal Society A 201, 175 | primary | 1950 | https://doi.org/10.1098/rspa.1950.0050
 NUM1#maths-u20-03-q1@1: A pendulum 1 m long has period about 2 s. Using T ∝ √L, what is the period of a 4 m pendulum in seconds? | 4 | 0 | s | Quadrupling the length doubles the period: 2 × √4 = 4 s.
 M1#maths-u20-03-q2@1: What are the dimensions of energy? | ML^{2}T^{−2} | MLT^{−2} | ML^{2}T^{−1} | MLT^{−1} | L^{2}T^{−2} | Energy is force times distance: MLT^{−2} × L = ML^{2}T^{−2}.
 M3#maths-u20-03-q3@2: Why can't dimensional analysis determine the 2π in T = 2π√(L/g)? | Pure numbers are dimensionless, so units place no constraint on them | It always determines every constant, so 2π must come from it | 2π has units of time, so it follows from the dimensions | The formula is wrong, so there's no constant to find | It can determine it once the mass is included | Only the full dynamical solution fixes the dimensionless prefactor.
@@ -139,8 +139,8 @@ Q: What is the similarity variable for the heat equation? | η = x/√(Dt).
 Q: Which number do ship models usually match? | The Froude number.
 SUM: Self-similar shapes simplify PDEs.
 SUM: Dimensionless numbers transfer results across scales.
-SRC: Barenblatt GI, Scaling, Self-Similarity, and Intermediate Asymptotics (Cambridge University Press 1996) | textbook | 1996 | https://www.cambridge.org/
-SRC: Schlichting H, Gersten K, Boundary-Layer Theory (9th edn, Springer 2017) | textbook | 2017 | https://link.springer.com/
+SRC: Barenblatt GI, Scaling, Self-Similarity, and Intermediate Asymptotics (Cambridge University Press 1996) | secondary | 1996 | https://www.cambridge.org/
+SRC: Schlichting H, Gersten K, Boundary-Layer Theory (9th edn, Springer 2017) | secondary | 2017 | https://link.springer.com/
 NUM1#maths-u20-04-q1@1: For diffusion with D = 10^{−9} m^{2}/s, estimate the spreading length √(Dt) in mm after t = 1000 s. | 1 | 0.01 | mm | √(10^{−9} × 1000) = √(10^{−6}) = 10^{−3} m = 1 mm.
 M1#maths-u20-04-q2@1: To test a 1:20 model aircraft wing fairly, which quantity should match full scale? | The Reynolds number (and Mach number for high speeds) | The wing's mass, scaled down by the factor 20^{3} | The air temperature only, kept the same as in flight | The model's colour and surface paint finish | The wing area, kept the same as full scale | Dynamic similarity requires the governing dimensionless numbers to be equal.
 M2#maths-u20-04-q3@2: Why can't a ship model match both Froude and Reynolds numbers in water? | Matching Froude needs velocity to scale like √L, while Reynolds needs it to scale like 1/L, which conflict | Water has no viscosity, so the Reynolds number is undefined for ship models | Froude numbers don't apply to ships, only to rivers and open channels | Both are matched automatically whenever the model is geometrically similar | They can both be matched easily by running the model at the full-scale speed | With the same fluid, the two scalings are incompatible, so corrections are applied.
@@ -174,8 +174,8 @@ Q: What does Kleiber's law state? | Metabolic rate scales as body mass to the ¾
 Q: What is the slope of y = 5x^{3} on a log–log plot? | 3.
 SUM: Power laws link sizes.
 SUM: Fit exponents with care.
-SRC: West GB, Brown JH, Enquist BJ, A general model for the origin of allometric scaling laws in biology, Science 276(5309), 122 | journal | 1997 | https://doi.org/10.1126/science.276.5309.122
-SRC: Clauset A, Shalizi CR, Newman MEJ, Power-law distributions in empirical data, SIAM Review 51(4), 661 | journal | 2009 | https://doi.org/10.1137/070710111
+SRC: West GB, Brown JH, Enquist BJ, A general model for the origin of allometric scaling laws in biology, Science 276(5309), 122 | primary | 1997 | https://doi.org/10.1126/science.276.5309.122
+SRC: Clauset A, Shalizi CR, Newman MEJ, Power-law distributions in empirical data, SIAM Review 51(4), 661 | primary | 2009 | https://doi.org/10.1137/070710111
 NUM1#maths-u20-05-q1@1: If y ∝ x^{3/4}, by what factor does y grow when x increases 16-fold? | 8 | 0 |  | 16^{3/4} = (2^{4})^{3/4} = 2^{3} = 8.
 M1#maths-u20-05-q2@1: Two points on a log–log plot are (x, y) = (10, 100) and (1000, 10,000). What exponent α fits? | 1 | 2 | 0.5 | 3 | 10 | Slope = (log 10,000 − log 100)/(log 1000 − log 10) = (4 − 2)/(3 − 1) = 1.
 M2#maths-u20-05-q3@2: What does the square–cube law imply for scaling up an animal by a factor of 10 in length? | Weight rises 1000-fold but bone strength only 100-fold, so bones must be relatively thicker | Weight and strength both rise 1000-fold, so the proportions can stay the same | Strength rises faster than weight, so larger animals can have thinner bones | Nothing changes, since all animals scale geometrically without any problem | Weight falls as size increases, because density decreases with length | Cross-sectional areas scale as L^{2} and volumes as L^{3}.
@@ -209,8 +209,8 @@ Q: What does f ~ g mean? | f/g → 1 in the limit.
 Q: What is Stirling's approximation to n!? | √(2πn)(n/e)ⁿ.
 SUM: Asymptotics captures limiting behaviour.
 SUM: Divergent series can still be useful.
-SRC: Bender CM, Orszag SA, Advanced Mathematical Methods for Scientists and Engineers (McGraw-Hill 1978; Springer 1999) | textbook | 1999 | https://link.springer.com/
-SRC: Hinch EJ, Perturbation Methods (Cambridge University Press 1991) | textbook | 1991 | https://www.cambridge.org/
+SRC: Bender CM, Orszag SA, Advanced Mathematical Methods for Scientists and Engineers (McGraw-Hill 1978; Springer 1999) | secondary | 1999 | https://link.springer.com/
+SRC: Hinch EJ, Perturbation Methods (Cambridge University Press 1991) | secondary | 1991 | https://www.cambridge.org/
 NUM1#maths-u20-06-q1@1: Using Stirling's formula n! ≈ √(2πn)(n/e)ⁿ, estimate 5! to the nearest whole number. | 118 | 1 |  | √(10π) ≈ 5.605 and (5/e)^{5} ≈ 21.06, so 5! ≈ 118.0, against the true 120.
 M1#maths-u20-06-q2@1: As x → ∞, which statement is true? | x^{2} + x ~ x^{2} | x^{2} + x ~ x | eˣ = O(x^{100}) | log x ~ x | x = o(log x) | (x^{2} + x)/x^{2} = 1 + 1/x → 1, so x^{2} + x ~ x^{2}; eˣ grows faster than any power, and log x is much smaller than x.
 M3#maths-u20-06-q3@2: Why can a divergent asymptotic series still give accurate approximations? | Its terms first shrink rapidly, and stopping at the smallest term gives an error about that size | Divergent series always converge eventually if enough terms are kept | Every term of a divergent series is zero, so truncation has no effect | It can't give accurate approximations; divergence makes it useless | Asymptotic series are always convergent, so the question doesn't arise | Optimal truncation exploits the initial decrease before factorial growth takes over.
@@ -244,8 +244,8 @@ Q: What signals a singular perturbation in an ODE? | ε multiplying the highest 
 Q: What is a secular term? | A term in an expansion that grows with time, breaking uniformity.
 SUM: Expand in the small parameter.
 SUM: Singular cases need extra structure.
-SRC: Hinch EJ, Perturbation Methods (Cambridge University Press 1991) | textbook | 1991 | https://www.cambridge.org/
-SRC: Holmes MH, Introduction to Perturbation Methods (2nd edn, Springer 2013) | textbook | 2013 | https://link.springer.com/
+SRC: Hinch EJ, Perturbation Methods (Cambridge University Press 1991) | secondary | 1991 | https://www.cambridge.org/
+SRC: Holmes MH, Introduction to Perturbation Methods (2nd edn, Springer 2013) | secondary | 2013 | https://link.springer.com/
 NUM1#maths-u20-07-q1@1: Using x ≈ 1 − ε/2 + ε^{2}/8, approximate the positive root of x^{2} + 0.2x − 1 = 0. | 0.905 | 0.001 |  | 1 − 0.1 + 0.005 = 0.905; the exact root is (−0.2 + √4.04)/2 ≈ 0.9050.
 M1#maths-u20-07-q2@1: Which problem is a singular perturbation as ε → 0? | εy″ + y′ = 1 with two boundary conditions | y′ = εy with one initial condition | x^{2} + εx = 1 | y″ + εy = 0 with two conditions | x = 1 + εx^{2} | Setting ε = 0 drops the highest derivative, so one boundary condition can't be satisfied.
 M2#maths-u20-07-q3@2: Why do naive perturbation expansions of weakly nonlinear oscillators fail at long times? | Secular terms like εt sin t grow without bound, so the expansion stops being small | The oscillator stops moving at long times, so the expansion is irrelevant | Nonlinear terms vanish at long times, leaving only the linear solution | The expansion converges too fast, overshooting the true solution | They don't fail: the naive expansion stays uniformly valid for all time | When εt is no longer small, the correction is as large as the leading term.
@@ -281,8 +281,8 @@ Q: What is structural uncertainty? | Uncertainty about the form of the model its
 Q: What does a tornado diagram show? | The output range caused by varying each input between bounds.
 SUM: Know which assumptions drive results.
 SUM: Report uncertainty honestly.
-SRC: Saltelli A et al., Five ways to ensure that models serve society: a manifesto, Nature 582, 482 | journal | 2020 | https://doi.org/10.1038/d41586-020-01812-9
-SRC: Raue A et al., Structural and practical identifiability analysis of partially observed dynamical models by exploiting the profile likelihood, Bioinformatics 25(15), 1923 | journal | 2009 | https://doi.org/10.1093/bioinformatics/btp358
+SRC: Saltelli A et al., Five ways to ensure that models serve society: a manifesto, Nature 582, 482 | primary | 2020 | https://doi.org/10.1038/d41586-020-01812-9
+SRC: Raue A et al., Structural and practical identifiability analysis of partially observed dynamical models by exploiting the profile likelihood, Bioinformatics 25(15), 1923 | primary | 2009 | https://doi.org/10.1093/bioinformatics/btp358
 NUM1#maths-u20-08-q1@1: In a tornado diagram, input A moves the output from 40 to 70 and input B from 50 to 58. What is the ratio of A's swing to B's swing? | 3.75 | 0.01 |  | A's swing is 30 and B's is 8, so the ratio is 30/8 = 3.75.
 M1#maths-u20-08-q2@1: Which kind of uncertainty do multi-model ensembles mainly address? | Structural uncertainty about the model's form | Rounding error in arithmetic | Uncertainty in a single parameter only | Typing mistakes in the code | None at all | Running several plausible model structures shows how much conclusions depend on model choice.
 M2#maths-u20-08-q3@2: What does it mean if a parameter is not identifiable from the data? | Different values of it fit the data equally well, so the data can't pin it down | It has no effect on the model output at all | It has been measured exactly by experiment | It must be zero for the model to fit | It is the most important parameter in the model | Non-identifiability shows up as a flat profile likelihood.
@@ -318,8 +318,8 @@ Q: At what population size is logistic growth fastest? | N = K/2.
 Q: When are stochastic models preferred in biology? | When molecule or individual numbers are small.
 SUM: Models span biological scales.
 SUM: Choose the type to suit the system.
-SRC: Murray JD, Mathematical Biology I: An Introduction (3rd edn, Springer 2002) | textbook | 2002 | https://link.springer.com/
-SRC: Edelstein-Keshet L, Mathematical Models in Biology (SIAM Classics 2005) | textbook | 2005 | https://epubs.siam.org/
+SRC: Murray JD, Mathematical Biology I: An Introduction (3rd edn, Springer 2002) | secondary | 2002 | https://link.springer.com/
+SRC: Edelstein-Keshet L, Mathematical Models in Biology (SIAM Classics 2005) | secondary | 2005 | https://epubs.siam.org/
 NUM1#maths-u20-09-q1@1: For logistic growth with r = 0.4 per day and K = 1000, what is the maximum growth rate per day? | 100 | 0 | per day | The maximum rK/4 occurs at N = K/2: 0.4 × 1000/4 = 100.
 M1#maths-u20-09-q2@1: Which model type suits tracking individual cells that move and interact by local rules? | An agent-based model | A single ODE for total cell number | A linear regression | A Leslie matrix of ages | A Michaelis–Menten curve | Agent-based models represent each individual and its interactions explicitly.
 M2#maths-u20-09-q3@2: Why are biological models often hard to parameterise? | Many parameters can't be measured directly and vary between individuals | Biology has no parameters, so models can't be calibrated | Every parameter is already known exactly from textbooks | Models need no data, so parameters are chosen freely | They aren't hard: all rates are easy to measure directly | Rates inside cells are often inferred indirectly and differ across organisms.
@@ -354,8 +354,8 @@ Q: What did the Hodgkin–Huxley model describe? | How ion currents generate ner
 Q: What does Turing's mechanism require? | An activator and an inhibitor diffusing at different rates.
 SUM: Simple equations explain life's patterns.
 SUM: Landmarks show the power of modelling.
-SRC: Turing AM, The chemical basis of morphogenesis, Philosophical Transactions of the Royal Society B 237, 37 | journal | 1952 | https://doi.org/10.1098/rstb.1952.0012
-SRC: Hodgkin AL, Huxley AF, A quantitative description of membrane current and its application to conduction and excitation in nerve, Journal of Physiology 117(4), 500 | journal | 1952 | https://doi.org/10.1113/jphysiol.1952.sp004764
+SRC: Turing AM, The chemical basis of morphogenesis, Philosophical Transactions of the Royal Society B 237, 37 | primary | 1952 | https://doi.org/10.1098/rstb.1952.0012
+SRC: Hodgkin AL, Huxley AF, A quantitative description of membrane current and its application to conduction and excitation in nerve, Journal of Physiology 117(4), 500 | primary | 1952 | https://doi.org/10.1113/jphysiol.1952.sp004764
 NUM1#maths-u20-10-q1@1: For Lotka–Volterra with a = 1, b = 0.02, c = 0.5 and d = 0.01, what is the prey equilibrium x*? | 50 | 0 |  | x* = c/d = 0.5/0.01 = 50.
 M1#maths-u20-10-q2@1: Which ingredient is essential for a Turing instability? | An inhibitor that diffuses faster than the activator | Equal diffusion rates for both chemicals | No diffusion at all | A single chemical species | Constant external forcing | Long-range inhibition with short-range activation destabilises the uniform state.
 M3#maths-u20-10-q3@2: Why do Lotka–Volterra populations cycle rather than settle? | The model conserves a quantity, so orbits are closed curves around the equilibrium | Populations always settle to equilibrium in the Lotka–Volterra model | Predators grow without bound, forcing the prey to oscillate | The equilibrium is a stable node, so cycles decay to it | They don't cycle; Lotka–Volterra predicts steady populations | The first integral dx − c ln x + by − a ln y is constant along solutions, giving neutral cycles.
@@ -389,8 +389,8 @@ Q: What are Hardy–Weinberg genotype frequencies? | p^{2}, 2pq and q^{2}.
 Q: What is the doubling time for growth rate r? | ln 2/r.
 SUM: Quantitative tools support biology.
 SUM: Null models test hypotheses.
-SRC: Hardy GH, Mendelian proportions in a mixed population, Science 28(706), 49 | journal | 1908 | https://doi.org/10.1126/science.28.706.49
-SRC: Felsenstein J, Inferring Phylogenies (Sinauer 2004) | textbook | 2004 | https://global.oup.com/
+SRC: Hardy GH, Mendelian proportions in a mixed population, Science 28(706), 49 | primary | 1908 | https://doi.org/10.1126/science.28.706.49
+SRC: Felsenstein J, Inferring Phylogenies (Sinauer 2004) | secondary | 2004 | https://global.oup.com/
 NUM1#maths-u20-11-q1@1: A culture grows at r = 0.0347 per minute. What is its doubling time, to the nearest minute? | 20 | 0.5 | minutes | ln 2/0.0347 ≈ 0.693/0.0347 ≈ 20 minutes, typical of E. coli.
 M1#maths-u20-11-q2@1: If the recessive allele frequency is q = 0.1, what fraction of the population are carriers? | 0.18 | 0.01 | 0.81 | 0.1 | 0.2 | Carriers are heterozygotes with frequency 2pq = 2 × 0.9 × 0.1 = 0.18; q^{2} = 0.01 are affected and p^{2} = 0.81 are unaffected non-carriers.
 M2#maths-u20-11-q3@2: Which assumption must hold for Hardy–Weinberg proportions? | Random mating with no selection, mutation, migration or drift | Strong natural selection acting on one allele | Small populations with frequent genetic drift | Only asexual reproduction with no mating | Constant mutation pressure on both alleles | Departures from these conditions shift genotype frequencies away from p^{2}, 2pq, q^{2}.
@@ -426,8 +426,8 @@ Q: What is the maximum sustainable yield for logistic growth? | rK/4.
 Q: What does the dominant eigenvalue of a Leslie matrix give? | The long-run growth rate per step.
 SUM: Births, deaths and limits shape populations.
 SUM: Age structure needs matrices.
-SRC: May RM, Simple mathematical models with very complicated dynamics, Nature 261, 459 | journal | 1976 | https://doi.org/10.1038/261459a0
-SRC: Caswell H, Matrix Population Models (2nd edn, Sinauer 2001) | textbook | 2001 | https://global.oup.com/
+SRC: May RM, Simple mathematical models with very complicated dynamics, Nature 261, 459 | primary | 1976 | https://doi.org/10.1038/261459a0
+SRC: Caswell H, Matrix Population Models (2nd edn, Sinauer 2001) | secondary | 2001 | https://global.oup.com/
 NUM1#maths-u20-12-q1@1: A fishery follows logistic growth with r = 0.3 per year and K = 20,000 tonnes. What is its maximum sustainable yield in tonnes per year? | 1500 | 0 | tonnes | MSY = rK/4 = 0.3 × 20,000/4 = 1500.
 M1#maths-u20-12-q2@1: For the Leslie matrix [[0, 2], [0.5, 0]], what happens to the population in the long run? | It stays constant, since λ = 1 | It grows by 41% per step | It declines to zero | It grows by 100% per step | It oscillates chaotically | The characteristic equation is λ^{2} = 2 × 0.5 = 1, so the dominant eigenvalue is λ = 1 and the population neither grows nor declines in the long run.
 M2#maths-u20-12-q3@2: Why can the discrete logistic map be chaotic when the continuous logistic equation isn't? | Discrete steps can overshoot the equilibrium, creating oscillations that become chaotic as r increases | Continuous logistic models are always chaotic, so the map just inherits it | The discrete map has no equilibrium, so it can never settle down | Chaos needs at least three variables in discrete time, so it can't happen | It can't be chaotic; the discrete logistic map always converges to K | A one-dimensional autonomous ODE can't oscillate, but a map can jump past K.
@@ -463,8 +463,8 @@ Q: What does the competitive exclusion principle say? | Two species on exactly t
 Q: What is a Holling type II response? | Predation that rises with prey density and then saturates.
 SUM: Interactions drive ecological dynamics.
 SUM: Space and community structure matter.
-SRC: Levins R, Some demographic and genetic consequences of environmental heterogeneity for biological control, Bulletin of the Entomological Society of America 15(3), 237 | journal | 1969 | https://doi.org/10.1093/besa/15.3.237
-SRC: Otto SP, Day T, A Biologist's Guide to Mathematical Modeling in Ecology and Evolution (Princeton University Press 2007) | textbook | 2007 | https://press.princeton.edu/
+SRC: Levins R, Some demographic and genetic consequences of environmental heterogeneity for biological control, Bulletin of the Entomological Society of America 15(3), 237 | primary | 1969 | https://doi.org/10.1093/besa/15.3.237
+SRC: Otto SP, Day T, A Biologist's Guide to Mathematical Modeling in Ecology and Evolution (Princeton University Press 2007) | secondary | 2007 | https://press.princeton.edu/
 NUM1#maths-u20-13-q1@1: In the Levins model with c = 0.5 and e = 0.2, what fraction of patches is occupied at equilibrium? | 0.6 | 0.001 |  | p* = 1 − e/c = 1 − 0.4 = 0.6.
 M1#maths-u20-13-q2@1: In the Levins model, what happens if extinction e exceeds colonisation c? | The species goes extinct across the landscape | All the patches become occupied in the long run | Occupancy oscillates forever between two values | Occupancy settles at exactly half of the patches | Nothing changes from the starting occupancy | p* = 1 − e/c is negative, so the only equilibrium is p = 0.
 M3#maths-u20-13-q3@2: What is the paradox of enrichment? | Raising prey carrying capacity can destabilise the equilibrium into large cycles that risk extinction | More food always stabilises ecosystems and prevents population cycles | Predators disappear whenever the prey's food supply is enriched | Enrichment has no effect on predator–prey dynamics in any model | It isn't a real effect; it was a numerical error in early studies | In the Rosenzweig–MacArthur model, high K makes the equilibrium lose stability.
@@ -498,8 +498,8 @@ Q: What is R₀ in the SIR model? | β/γ.
 Q: What is the herd immunity threshold for R₀ = 4? | 75%.
 SUM: Models quantify spread.
 SUM: They compare interventions.
-SRC: Anderson RM, May RM, Infectious Diseases of Humans: Dynamics and Control (Oxford University Press 1991) | textbook | 1991 | https://global.oup.com/
-SRC: Ferguson NM et al., Report 9: Impact of non-pharmaceutical interventions to reduce COVID-19 mortality and healthcare demand (Imperial College London 2020) | report | 2020 | https://doi.org/10.25561/77482
+SRC: Anderson RM, May RM, Infectious Diseases of Humans: Dynamics and Control (Oxford University Press 1991) | secondary | 1991 | https://global.oup.com/
+SRC: Ferguson NM et al., Report 9: Impact of non-pharmaceutical interventions to reduce COVID-19 mortality and healthcare demand (Imperial College London 2020) | secondary | 2020 | https://doi.org/10.25561/77482
 NUM1#maths-u20-14-q1@1: For R₀ = 2.5, what is the herd immunity threshold as a percentage? | 60 | 0 | % | 1 − 1/2.5 = 0.6, so 60% must be immune.
 M1#maths-u20-14-q2@1: If R₀ = 3 and 50% of the population is immune, what is Rₜ? | 1.5 | 3 | 0.5 | 1 | 6 | Rₜ = R₀ × susceptible fraction = 3 × 0.5 = 1.5.
 M2#maths-u20-14-q3@2: Why are epidemic model outputs often given as scenarios rather than forecasts? | Future behaviour and policy are uncertain, so outputs are conditional on assumed choices | Models can't produce numbers, only qualitative descriptions | Data are never available during an epidemic, so nothing can be fitted | Scenarios are always more accurate than forecasts | They are always forecasts; scenarios are never used | A projection says what would happen if certain measures were taken, not what will happen.
@@ -533,8 +533,8 @@ Q: What is the endemic susceptible fraction in SIR with births? | 1/R₀.
 Q: Who proved the epidemic threshold theorem in 1927? | Kermack and McKendrick.
 SUM: Epidemics have thresholds and final sizes.
 SUM: Heterogeneity changes R₀.
-SRC: Kermack WO, McKendrick AG, A contribution to the mathematical theory of epidemics, Proceedings of the Royal Society A 115, 700 | journal | 1927 | https://doi.org/10.1098/rspa.1927.0118
-SRC: Diekmann O, Heesterbeek JAP, Roberts MG, The construction of next-generation matrices for compartmental epidemic models, Journal of the Royal Society Interface 7(47), 873 | journal | 2010 | https://doi.org/10.1098/rsif.2009.0386
+SRC: Kermack WO, McKendrick AG, A contribution to the mathematical theory of epidemics, Proceedings of the Royal Society A 115, 700 | primary | 1927 | https://doi.org/10.1098/rspa.1927.0118
+SRC: Diekmann O, Heesterbeek JAP, Roberts MG, The construction of next-generation matrices for compartmental epidemic models, Journal of the Royal Society Interface 7(47), 873 | primary | 2010 | https://doi.org/10.1098/rsif.2009.0386
 NUM1#maths-u20-15-q1@1: In a branching-process model with R₀ = 4, what is the probability that a single introduced case causes no major outbreak? | 0.25 | 0.001 |  | For a Poisson offspring approximation the minor-outbreak probability is close to 1/R₀ (exactly 1/R₀ for geometric offspring): 0.25.
 M1#maths-u20-15-q2@1: For R₀ = 2, which final infected fraction does the SIR final size relation give? | About 80% | Exactly 50% | About 20% | 100% | About 95% | Solving z = 1 − e^{−2z} numerically gives z ≈ 0.797, so about 80% are eventually infected, well above the 50% herd immunity threshold.
 M3#maths-u20-15-q3@2: Why does an unmitigated epidemic infect more people than the herd immunity threshold? | When immunity reaches the threshold, many people are still infectious and keep infecting others as the epidemic declines | Herd immunity is never reached in an unmitigated epidemic, so infections continue | Infections stop instantly at the threshold, so there's no overshoot at all | The threshold is always 100%, so the final size can't exceed it | It doesn't overshoot: final size always equals the herd immunity threshold | Incidence falls after Rₜ = 1 but stays positive for a while, adding infections.
@@ -569,8 +569,8 @@ Q: Which compartment does SEIR add to SIR? | Exposed (infected but not yet infec
 Q: What is the mean infectious period in terms of γ? | 1/γ.
 SUM: Compartments track disease states.
 SUM: Choose the structure to match the disease.
-SRC: Keeling MJ, Rohani P, Modeling Infectious Diseases in Humans and Animals (Princeton University Press 2008) | textbook | 2008 | https://press.princeton.edu/
-SRC: Hethcote HW, The mathematics of infectious diseases, SIAM Review 42(4), 599 | journal | 2000 | https://doi.org/10.1137/S0036144500371907
+SRC: Keeling MJ, Rohani P, Modeling Infectious Diseases in Humans and Animals (Princeton University Press 2008) | secondary | 2008 | https://press.princeton.edu/
+SRC: Hethcote HW, The mathematics of infectious diseases, SIAM Review 42(4), 599 | primary | 2000 | https://doi.org/10.1137/S0036144500371907
 NUM1#maths-u20-16-q1@1: In an SIR model with recovery rate γ = 0.2 per day, what is the mean infectious period in days? | 5 | 0 | days | The mean infectious period is 1/γ = 1/0.2 = 5 days.
 M1#maths-u20-16-q2@1: Which model suits a disease where recovery gives no immunity? | SIS | SIR | SEIR | SIRS with lifelong immunity | SI with permanent recovery | In SIS, recovered individuals return straight to the susceptible class.
 M2#maths-u20-16-q3@2: In the SIR model, why does the number of infectious people peak when S/N = 1/R₀? | Then each infection replaces itself exactly, so dI/dt = 0 | Everyone has already been infected by then | Recovery stops at that point in the epidemic | The transmission rate β becomes zero | It peaks at S/N = 1, at the very start | dI/dt = γI(R₀S/N − 1), which changes sign when S/N = 1/R₀.
@@ -606,8 +606,8 @@ Q: What does a compartment represent? | A well-mixed pool described by one quant
 Q: What is the steady state of dx/dt = Ax + u? | x* = −A^{−1}u.
 SUM: Mass balance on well-mixed pools.
 SUM: Matrices solve linear systems of compartments.
-SRC: Jacquez JA, Compartmental Analysis in Biology and Medicine (3rd edn, BioMedware 1996) | textbook | 1996 | https://www.biomedware.com/
-SRC: Godfrey K, Compartmental Models and Their Application (Academic Press 1983) | textbook | 1983 | https://www.elsevier.com/
+SRC: Jacquez JA, Compartmental Analysis in Biology and Medicine (3rd edn, BioMedware 1996) | secondary | 1996 | https://www.biomedware.com/
+SRC: Godfrey K, Compartmental Models and Their Application (Academic Press 1983) | secondary | 1983 | https://www.elsevier.com/
 NUM1#maths-u20-17-q1@1: In the lake example (V = 10^{6} m^{3}, Q = 10^{4} m^{3}/day), what is the flushing time scale in days? | 100 | 0 | days | The time scale is V/Q = 10^{6}/10^{4} = 100 days.
 M1#maths-u20-17-q2@1: In a linear compartmental matrix A, what does a diagonal entry represent? | Minus the total rate of outflow from that compartment | The inflow from outside the system | The volume of the compartment | The steady-state amount | The number of compartments | Each compartment loses material at the sum of its outgoing rate constants.
 M2#maths-u20-17-q3@2: Why might only some rate constants be identifiable from data? | Different combinations of rates can produce the same measured curves when only some compartments are observed | All rate constants are always identifiable from any data set | Rates don't affect the measured data in compartmental models | Data contain no information about rates, only about volumes | Compartmental models have no rate constants to estimate | Observing only the blood compartment may not separate tissue exchange rates.
@@ -642,8 +642,8 @@ Q: What is the steady-state concentration for infusion rate R? | R/CL.
 Q: How many half-lives does it take to reach about 97% of steady state? | About 5.
 SUM: PK predicts drug concentrations.
 SUM: Clearance and volume set the dose.
-SRC: Rowland M, Tozer TN, Clinical Pharmacokinetics and Pharmacodynamics (5th edn, Wolters Kluwer 2020) | textbook | 2020 | https://shop.lww.com/
-SRC: Gabrielsson J, Weiner D, Pharmacokinetic and Pharmacodynamic Data Analysis (5th edn, Swedish Pharmaceutical Press 2016) | textbook | 2016 | https://www.apotekarsocieteten.se/
+SRC: Rowland M, Tozer TN, Clinical Pharmacokinetics and Pharmacodynamics (5th edn, Wolters Kluwer 2020) | secondary | 2020 | https://shop.lww.com/
+SRC: Gabrielsson J, Weiner D, Pharmacokinetic and Pharmacodynamic Data Analysis (5th edn, Swedish Pharmaceutical Press 2016) | secondary | 2016 | https://www.apotekarsocieteten.se/
 NUM1#maths-u20-18-q1@1: A drug with clearance 5 L/h is infused at 20 mg/h. What is the steady-state concentration in mg/L? | 4 | 0 | mg/L | C_{ss} = R/CL = 20/5 = 4 mg/L.
 M1#maths-u20-18-q2@1: A drug has V = 40 L and CL = 4 L/h. What is its half-life? | About 6.9 hours | About 10 hours | About 0.1 hours | About 160 hours | About 1 hour | The half-life is t_{½} = 0.693V/CL = 0.693 × 40/4 ≈ 6.9 hours, since the elimination rate constant is k = CL/V = 0.1 per hour.
 M2#maths-u20-18-q3@2: Why is a loading dose sometimes given before maintenance doses? | It reaches the target concentration quickly instead of waiting 4–5 half-lives | It reduces total drug exposure over the course | It shortens the drug's half-life in the body | It increases the clearance of the drug | It isn't useful; maintenance doses suffice | Starting at the target level avoids the slow approach to steady state.
@@ -679,8 +679,8 @@ Q: At what concentration is the effect half-maximal? | EC₅₀.
 Q: What does a Hill coefficient above 1 mean? | A steeper, more switch-like response.
 SUM: PD links concentration to effect.
 SUM: Saturation limits dose increases.
-SRC: Holford NHG, Sheiner LB, Understanding the dose-effect relationship: clinical application of pharmacokinetic-pharmacodynamic models, Clinical Pharmacokinetics 6(6), 429 | journal | 1981 | https://doi.org/10.2165/00003088-198106060-00002
-SRC: Rowland M, Tozer TN, Clinical Pharmacokinetics and Pharmacodynamics (5th edn, Wolters Kluwer 2020) | textbook | 2020 | https://shop.lww.com/
+SRC: Holford NHG, Sheiner LB, Understanding the dose-effect relationship: clinical application of pharmacokinetic-pharmacodynamic models, Clinical Pharmacokinetics 6(6), 429 | primary | 1981 | https://doi.org/10.2165/00003088-198106060-00002
+SRC: Rowland M, Tozer TN, Clinical Pharmacokinetics and Pharmacodynamics (5th edn, Wolters Kluwer 2020) | secondary | 2020 | https://shop.lww.com/
 NUM1#maths-u20-19-q1@1: With E_{max} = 80, EC₅₀ = 4 and Hill coefficient 2, what is the effect at C = 4? | 40 | 0 |  | At C = EC₅₀ the effect is always half of E_{max}: 80/2 = 40, whatever the Hill coefficient.
 M1#maths-u20-19-q2@1: In the Emax model with EC₅₀ = 1 mg/L, what fraction of E_{max} is reached at C = 9 mg/L? | 90% | 50% | 99% | 9% | 100% | E/E_{max} = C/(EC₅₀ + C) = 9/(1 + 9) = 0.9, so 90% of the maximum effect: raising the concentration further gains little.
 M3#maths-u20-19-q3@2: What does hysteresis in a concentration–effect plot indicate? | Effect lags behind plasma concentration, often modelled with an effect compartment | The drug has no effect at any concentration measured | The pharmacokinetic model is linear in the dose | Concentrations have been measured incorrectly in the assay | Effect always leads concentration, so the drug acts early | The same concentration gives different effects when rising and falling, showing a delay.
@@ -715,8 +715,8 @@ Q: What does positive feedback in gene regulation create? | Bistable switches.
 Q: What does flux balance analysis assume? | Steady state Sv = 0 and an objective such as growth.
 SUM: Networks generate cell behaviour.
 SUM: Feedback shapes dynamics.
-SRC: Alon U, An Introduction to Systems Biology: Design Principles of Biological Circuits (2nd edn, CRC Press 2019) | textbook | 2019 | https://www.routledge.com/
-SRC: Elowitz MB, Leibler S, A synthetic oscillatory network of transcriptional regulators, Nature 403, 335 | journal | 2000 | https://doi.org/10.1038/35002125
+SRC: Alon U, An Introduction to Systems Biology: Design Principles of Biological Circuits (2nd edn, CRC Press 2019) | secondary | 2019 | https://www.routledge.com/
+SRC: Elowitz MB, Leibler S, A synthetic oscillatory network of transcriptional regulators, Nature 403, 335 | primary | 2000 | https://doi.org/10.1038/35002125
 NUM1#maths-u20-20-q1@1: A protein is degraded at α = 0.05 per minute. What is its response time ln 2/α in minutes, to 1 decimal place? | 13.9 | 0.1 | minutes | 0.693/0.05 ≈ 13.9 minutes.
 M1#maths-u20-20-q2@1: Which network feature creates a bistable switch? | Positive feedback | Negative feedback without delay | A linear pathway | Constant production only | A single degradation step | Self-reinforcement can lock a system into one of two stable states.
 M2#maths-u20-20-q3@2: What does a coherent feed-forward loop do to signals? | It filters out brief input pulses and responds only to sustained signals | It amplifies noise in the input signal | It creates chaotic oscillations in the output | It removes all responses to any input | It has no effect on how signals pass through | The output needs both direct and delayed indirect activation, so short pulses are ignored.
@@ -752,8 +752,8 @@ Q: What is the residence time of a reactor? | τ = V/Q.
 Q: What is the first-order CSTR conversion? | kτ/(1 + kτ).
 SUM: Models connect molecules to reactors.
 SUM: Mass balances drive reactor design.
-SRC: Levenspiel O, Chemical Reaction Engineering (3rd edn, Wiley 1999) | textbook | 1999 | https://www.wiley.com/
-SRC: Fogler HS, Elements of Chemical Reaction Engineering (6th edn, Pearson 2020) | textbook | 2020 | https://www.pearson.com/
+SRC: Levenspiel O, Chemical Reaction Engineering (3rd edn, Wiley 1999) | secondary | 1999 | https://www.wiley.com/
+SRC: Fogler HS, Elements of Chemical Reaction Engineering (6th edn, Pearson 2020) | secondary | 2020 | https://www.pearson.com/
 NUM1#maths-u20-21-q1@1: A CSTR with τ = 10 minutes runs a first-order reaction with k = 0.1 per minute. What fraction is converted? | 0.5 | 0.001 |  | kτ = 1, so conversion = 1/(1 + 1) = 0.5.
 M1#maths-u20-21-q2@1: A reactor has volume 6 m^{3} and flow rate 2 m^{3}/h. What is its residence time? | 3 hours | 12 hours | 0.33 hours | 8 hours | 4 hours | The residence time is τ = V/Q = 6/2 = 3 hours, the average time a fluid element spends inside the reactor.
 M2#maths-u20-21-q3@2: Why can an exothermic CSTR have several steady states? | Heat generation is a sigmoidal function of temperature, which can cross the linear heat-removal line more than once | Reactors never have steady states when the reaction releases heat | Mass balances always have exactly one solution, so it must be the flow | The flow rate keeps changing, so the reactor never settles at all | It can only have one steady state, whatever the reaction kinetics | Arrhenius kinetics make heat production rise steeply, giving low, middle and high intersections.
@@ -786,8 +786,8 @@ Q: What is the half-life of a first-order reaction? | ln 2/k.
 Q: What plot is linear for a second-order reaction? | 1/[A] against t.
 SUM: Rates depend on concentrations.
 SUM: Orders come from experiment.
-SRC: Atkins P, de Paula J, Keeler J, Atkins' Physical Chemistry (12th edn, Oxford University Press 2022) | textbook | 2022 | https://global.oup.com/
-SRC: Houston PL, Chemical Kinetics and Reaction Dynamics (McGraw-Hill 2001; Dover 2006) | textbook | 2006 | https://store.doverpublications.com/
+SRC: Atkins P, de Paula J, Keeler J, Atkins' Physical Chemistry (12th edn, Oxford University Press 2022) | secondary | 2022 | https://global.oup.com/
+SRC: Houston PL, Chemical Kinetics and Reaction Dynamics (McGraw-Hill 2001; Dover 2006) | secondary | 2006 | https://store.doverpublications.com/
 NUM1#maths-u20-22-q1@1: A first-order reaction has k = 0.0231 per minute. What is its half-life in minutes, to the nearest minute? | 30 | 0.5 | minutes | t_{½} = 0.693/0.0231 ≈ 30 minutes.
 M1#maths-u20-22-q2@1: Which plot is a straight line for a first-order reaction? | ln[A] against time | [A] against time | 1/[A] against time | [A]^{2} against time | Rate against time | Integrating d[A]/dt = −k[A] gives ln[A] = ln[A]₀ − kt, a straight line of slope −k when ln[A] is plotted against time.
 M2#maths-u20-22-q3@2: Why is a first-order half-life independent of starting concentration? | The fraction reacting per unit time is constant, so halving always takes ln 2/k | Concentration doesn't affect the rate of any reaction | All chemical reactions are first order in practice | The rate constant changes with concentration to compensate | It isn't independent; it doubles as concentration doubles | Exponential decay removes the same proportion in equal times.
@@ -821,8 +821,8 @@ Q: What is K_{m} in Michaelis–Menten kinetics? | The substrate concentration g
 Q: What do you plot to find an activation energy? | ln k against 1/T.
 SUM: Mechanisms explain rate laws.
 SUM: Temperature acts through E_{a}.
-SRC: Michaelis L, Menten ML, Die Kinetik der Invertinwirkung, Biochemische Zeitschrift 49, 333 | journal | 1913 | https://archive.org/
-SRC: Atkins P, de Paula J, Keeler J, Atkins' Physical Chemistry (12th edn, Oxford University Press 2022) | textbook | 2022 | https://global.oup.com/
+SRC: Michaelis L, Menten ML, Die Kinetik der Invertinwirkung, Biochemische Zeitschrift 49, 333 | primary | 1913 | https://archive.org/
+SRC: Atkins P, de Paula J, Keeler J, Atkins' Physical Chemistry (12th edn, Oxford University Press 2022) | secondary | 2022 | https://global.oup.com/
 NUM1#maths-u20-23-q1@1: An enzyme has V_{max} = 100 μM/s and K_{m} = 5 μM. What is the rate at [S] = 20 μM? | 80 | 0 | μM/s | v = 100 × 20/(5 + 20) = 80 μM/s.
 M1#maths-u20-23-q2@1: In a two-step mechanism with a slow first step and fast second step, what determines the overall rate? | The slow first step | The fast second step | Both steps equally | Neither step | The stoichiometry only | The rate-determining step is the bottleneck of the sequence.
 M3#maths-u20-23-q3@2: Why does the steady-state approximation apply to the enzyme–substrate complex in Michaelis–Menten kinetics? | ES forms and breaks down quickly, so its concentration stays nearly constant after a brief initial phase | ES never forms in significant amounts, so its rate of change is exactly zero | Substrate concentration is always zero, so ES can't change | Enzymes are consumed by the reaction, so ES falls steadily to zero | It doesn't apply; Michaelis–Menten uses the pre-equilibrium approximation only | With enzyme much scarcer than substrate, [ES] quickly reaches a quasi-steady level.
@@ -856,8 +856,8 @@ Q: What does deficiency zero with weak reversibility guarantee? | A unique, stab
 Q: What is a linkage class? | A connected component of the reaction graph.
 SUM: Structure constrains dynamics.
 SUM: Deficiency zero means simple behaviour.
-SRC: Feinberg M, Foundations of Chemical Reaction Network Theory (Springer 2019) | textbook | 2019 | https://link.springer.com/
-SRC: Horn F, Jackson R, General mass action kinetics, Archive for Rational Mechanics and Analysis 47, 81 | journal | 1972 | https://doi.org/10.1007/BF00251225
+SRC: Feinberg M, Foundations of Chemical Reaction Network Theory (Springer 2019) | secondary | 2019 | https://link.springer.com/
+SRC: Horn F, Jackson R, General mass action kinetics, Archive for Rational Mechanics and Analysis 47, 81 | primary | 1972 | https://doi.org/10.1007/BF00251225
 NUM1#maths-u20-24-q1@1: The network A ⇌ B ⇌ C has how many complexes? | 3 | 0 |  | The complexes are A, B and C; with one linkage class and rank 2, its deficiency is 3 − 1 − 2 = 0.
 M1#maths-u20-24-q2@1: Under mass-action kinetics, what is the rate of A + B → C? | k[A][B] | k[A] + k[B] | k[C] | k[A]^{2} | k/[A][B] | Mass action makes the rate proportional to the product of reactant concentrations.
 M2#maths-u20-24-q3@2: Why is the deficiency zero theorem powerful for biology? | It rules out multiple equilibria and oscillations for any rate constants, which are often unknown | It gives exact values for all the rate constants of a network | It applies only to networks with a single reaction | It predicts chaotic behaviour in large biochemical networks | It isn't useful in biology, only in industrial chemistry | Conclusions follow from network structure alone, without measuring parameters.
@@ -891,8 +891,8 @@ Q: What is the Fisher–KPP minimum wave speed? | 2√(rD).
 Q: Which chemical reaction shows spiral waves? | The Belousov–Zhabotinsky reaction.
 SUM: Reaction plus diffusion makes waves and patterns.
 SUM: Speeds and wavelengths are predictable.
-SRC: Fisher RA, The wave of advance of advantageous genes, Annals of Eugenics 7(4), 355 | journal | 1937 | https://doi.org/10.1111/j.1469-1809.1937.tb02153.x
-SRC: Murray JD, Mathematical Biology II: Spatial Models and Biomedical Applications (3rd edn, Springer 2003) | textbook | 2003 | https://link.springer.com/
+SRC: Fisher RA, The wave of advance of advantageous genes, Annals of Eugenics 7(4), 355 | primary | 1937 | https://doi.org/10.1111/j.1469-1809.1937.tb02153.x
+SRC: Murray JD, Mathematical Biology II: Spatial Models and Biomedical Applications (3rd edn, Springer 2003) | secondary | 2003 | https://link.springer.com/
 NUM1#maths-u20-25-q1@1: For Fisher–KPP with r = 2 per day and D = 0.5 mm^{2}/day, what is the wave speed in mm/day? | 2 | 0 | mm/day | c = 2√(2 × 0.5) = 2√1 = 2 mm/day.
 M1#maths-u20-25-q2@1: How does the Fisher–KPP wave speed change if the diffusion coefficient quadruples? | It doubles | It quadruples | It halves | It stays the same | It increases 16-fold | c = 2√(rD) scales with √D, so 4D gives twice the speed.
 M3#maths-u20-25-q3@2: Why does diffusion, which smooths things out, help create Turing patterns? | Different diffusion rates let an inhibitor spread faster than the activator, so local peaks grow while neighbours are suppressed | Diffusion always creates patterns on its own, without any reactions | Patterns need equal diffusion rates for the activator and inhibitor | Diffusion has no role in Turing patterns; reactions alone make them | It doesn't help: diffusion always destroys patterns, as intuition suggests | Differential diffusion destabilises the uniform state at certain wavelengths.
@@ -928,8 +928,8 @@ Q: What is a constitutive relation? | A material-specific law, such as Hooke's o
 Q: What is the thermal diffusivity in terms of k, ρ and c? | α = k/(ρc).
 SUM: Conservation plus constitutive laws.
 SUM: Scaling decides what to keep.
-SRC: Fowler AC, Mathematical Models in the Applied Sciences (Cambridge University Press 1997) | textbook | 1997 | https://www.cambridge.org/
-SRC: Lin CC, Segel LA, Mathematics Applied to Deterministic Problems in the Natural Sciences (SIAM 1988) | textbook | 1988 | https://epubs.siam.org/
+SRC: Fowler AC, Mathematical Models in the Applied Sciences (Cambridge University Press 1997) | secondary | 1997 | https://www.cambridge.org/
+SRC: Lin CC, Segel LA, Mathematics Applied to Deterministic Problems in the Natural Sciences (SIAM 1988) | secondary | 1988 | https://epubs.siam.org/
 NUM1#maths-u20-26-q1@1: Copper has k = 400 W/(m·K), ρ = 9000 kg/m^{3} and c = 385 J/(kg·K). Find its thermal diffusivity in units of 10^{−4} m^{2}/s, to 2 decimal places. | 1.15 | 0.01 |  | α = 400/(9000 × 385) ≈ 1.15 × 10^{−4} m^{2}/s.
 M1#maths-u20-26-q2@1: Which is a constitutive relation rather than a conservation law? | Fourier's law q = −k∇T | Conservation of mass | Conservation of energy | Conservation of momentum | Conservation of charge | Fourier's law describes how a particular material conducts heat.
 M2#maths-u20-26-q3@2: When can a heated object be modelled with a single temperature (a lumped model)? | When the Biot number is small, so internal conduction is fast compared with surface heat loss | When the object is very large compared with its surroundings | When heat transfer to the surroundings is exactly zero | When the object is a gas rather than a solid | Never: real objects always need spatial temperature models | Small Bi means temperature is nearly uniform inside the body.
@@ -965,8 +965,8 @@ Q: Which symmetry gives conservation of energy? | Time-translation symmetry.
 Q: Who proved the link between symmetries and conservation laws in 1918? | Emmy Noether.
 SUM: Physics needs and inspires mathematics.
 SUM: Symmetry gives conservation.
-SRC: Noether E, Invariante Variationsprobleme, Nachrichten von der Gesellschaft der Wissenschaften zu Göttingen, 235 | journal | 1918 | https://eudml.org/
-SRC: Arnold VI, Mathematical Methods of Classical Mechanics (2nd edn, Springer 1989) | textbook | 1989 | https://link.springer.com/
+SRC: Noether E, Invariante Variationsprobleme, Nachrichten von der Gesellschaft der Wissenschaften zu Göttingen, 235 | primary | 1918 | https://eudml.org/
+SRC: Arnold VI, Mathematical Methods of Classical Mechanics (2nd edn, Springer 1989) | secondary | 1989 | https://link.springer.com/
 NUM1#maths-u20-27-q1@1: In what year did Emmy Noether publish her theorem on symmetries and conservation laws? | 1918 | 0 |  | Noether's "Invariante Variationsprobleme" appeared in 1918.
 M1#maths-u20-27-q2@1: Rotational symmetry of a system implies conservation of which quantity? | Angular momentum | Linear momentum | Energy | Electric charge | Mass | By Noether's theorem, invariance under rotations conserves angular momentum.
 M2#maths-u20-27-q3@2: Which branch of mathematics provides the setting for quantum mechanics? | Operator theory on Hilbert spaces | Euclidean geometry alone | Elementary number theory | Finite graph theory | Boolean algebra | States are vectors in a Hilbert space and observables are self-adjoint operators.
@@ -1001,8 +1001,8 @@ Q: What type is the heat equation? | Parabolic.
 Q: What is d'Alembert's solution of the wave equation? | u = f(x − ct) + g(x + ct).
 SUM: A few PDEs describe much of physics.
 SUM: Type determines behaviour.
-SRC: Evans LC, Partial Differential Equations (2nd edn, American Mathematical Society 2010) | textbook | 2010 | https://bookstore.ams.org/
-SRC: Strauss WA, Partial Differential Equations: An Introduction (2nd edn, Wiley 2008) | textbook | 2008 | https://www.wiley.com/
+SRC: Evans LC, Partial Differential Equations (2nd edn, American Mathematical Society 2010) | secondary | 2010 | https://bookstore.ams.org/
+SRC: Strauss WA, Partial Differential Equations: An Introduction (2nd edn, Wiley 2008) | secondary | 2008 | https://www.wiley.com/
 NUM1#maths-u20-28-q1@1: For u(x, t) = e^{−4t} sin 2x (a heat equation solution), what is u(π/4, 0.25)? | 0.368 | 0.001 |  | sin(π/2) = 1 and e^{−1} ≈ 0.368.
 M1#maths-u20-28-q2@1: What type is u_{xx} + u_{yy} = 0? | Elliptic | Hyperbolic | Parabolic | First-order | Nonlinear | A = C = 1, B = 0 give B^{2} − 4AC = −4 < 0.
 M3#maths-u20-28-q3@2: Why do disturbances in the wave equation travel at finite speed while heat spreads instantly? | Hyperbolic equations carry information along characteristics at speed c, while parabolic smoothing affects all points at once | Heat travels at the speed of light, while waves are slower than sound | Waves have infinite speed, while heat spreads at a fixed finite speed | Both travel at the same finite speed, set by the material's density | Both spread instantly, since all linear PDEs have infinite propagation speed | The heat kernel is positive everywhere for any t > 0, unlike wave solutions.
@@ -1037,8 +1037,8 @@ Q: What is the Lagrangian of a system? | Kinetic energy minus potential energy.
 Q: What does Liouville's theorem say? | Hamiltonian flow preserves phase-space volume.
 SUM: Forces determine motion.
 SUM: Lagrangians and Hamiltonians generalise Newton.
-SRC: Goldstein H, Poole C, Safko J, Classical Mechanics (3rd edn, Addison-Wesley 2002) | textbook | 2002 | https://www.pearson.com/
-SRC: Landau LD, Lifshitz EM, Mechanics (3rd edn, Butterworth-Heinemann 1976) | textbook | 1976 | https://www.elsevier.com/
+SRC: Goldstein H, Poole C, Safko J, Classical Mechanics (3rd edn, Addison-Wesley 2002) | secondary | 2002 | https://www.pearson.com/
+SRC: Landau LD, Lifshitz EM, Mechanics (3rd edn, Butterworth-Heinemann 1976) | secondary | 1976 | https://www.elsevier.com/
 NUM1#maths-u20-29-q1@1: A small-angle pendulum has length 2.45 m with g = 9.8 m/s^{2}. What is its period in seconds, to 2 decimal places? | 3.14 | 0.01 | s | T = 2π√(L/g) = 2π√0.25 = π ≈ 3.14 s.
 M1#maths-u20-29-q2@1: A 2 kg ball falls 5 m from rest (g = 10 m/s^{2}). What is its speed just before landing? | 10 m/s | 5 m/s | 50 m/s | 100 m/s | 20 m/s | Energy conservation: ½v^{2} = gh = 50, so v = 10 m/s.
 M2#maths-u20-29-q3@2: What advantage does the Lagrangian formulation have over Newton's laws for constrained systems? | Generalised coordinates build constraints in, so constraint forces never need computing | It ignores energy, so friction forces drop out automatically | It only works for systems without any constraints at all | It needs more equations than Newton's laws, but each is simpler | It has no advantage; it is just Newton's laws in different notation | A pendulum needs one angle, not two coordinates plus tension.
@@ -1074,8 +1074,8 @@ Q: What does the material derivative represent? | The rate of change following a
 Q: Why is the stress tensor symmetric? | Balance of angular momentum.
 SUM: Materials as continua.
 SUM: Stress, strain and balance laws.
-SRC: Gonzalez O, Stuart AM, A First Course in Continuum Mechanics (Cambridge University Press 2008) | textbook | 2008 | https://www.cambridge.org/
-SRC: Gurtin ME, Fried E, Anand L, The Mechanics and Thermodynamics of Continua (Cambridge University Press 2010) | textbook | 2010 | https://www.cambridge.org/
+SRC: Gonzalez O, Stuart AM, A First Course in Continuum Mechanics (Cambridge University Press 2008) | secondary | 2008 | https://www.cambridge.org/
+SRC: Gurtin ME, Fried E, Anand L, The Mechanics and Thermodynamics of Continua (Cambridge University Press 2010) | secondary | 2010 | https://www.cambridge.org/
 NUM1#maths-u20-30-q1@1: A rod of cross-section 2 × 10^{−4} m^{2} carries 10,000 N. What is the axial stress in MPa? | 50 | 0 | MPa | σ = 10,000/(2 × 10^{−4}) = 5 × 10^{7} Pa = 50 MPa.
 M1#maths-u20-30-q2@1: Which description follows individual material particles as they move? | The Lagrangian description | The Eulerian description | The Hamiltonian description | The spectral description | The statistical description | Lagrangian coordinates label material points, natural for solids.
 M2#maths-u20-30-q3@2: In a bar under axial tension, on which plane is the shear stress largest? | Planes at 45° to the axis | Planes perpendicular to the axis | Planes parallel to the axis | All planes equally | No plane | Shear stress σ sin θ cos θ is maximised at θ = 45°.
@@ -1110,8 +1110,8 @@ Q: What is the stress concentration factor for a circular hole in a wide plate u
 Q: What is the Euler buckling load? | π^{2}EI/L^{2} (pinned ends).
 SUM: Beams bend; structures fail in several ways.
 SUM: Design guards against each failure mode.
-SRC: Gere JM, Goodno BJ, Mechanics of Materials (9th edn, Cengage 2018) | textbook | 2018 | https://www.cengage.com/
-SRC: Timoshenko SP, Goodier JN, Theory of Elasticity (3rd edn, McGraw-Hill 1970) | textbook | 1970 | https://www.mheducation.com/
+SRC: Gere JM, Goodno BJ, Mechanics of Materials (9th edn, Cengage 2018) | secondary | 2018 | https://www.cengage.com/
+SRC: Timoshenko SP, Goodier JN, Theory of Elasticity (3rd edn, McGraw-Hill 1970) | secondary | 1970 | https://www.mheducation.com/
 NUM1#maths-u20-31-q1@1: How does a cantilever's tip deflection change if its length doubles (same load)? | 8 | 0 | times | δ ∝ L^{3}, so doubling L multiplies deflection by 2^{3} = 8.
 M1#maths-u20-31-q2@1: Why are I-beams efficient in bending? | They place most material far from the neutral axis, giving a large second moment of area | They are lighter than every other cross-section of the same height | They have no neutral axis, so bending stresses can't develop | They resist torsion better than any other open cross-section | They aren't efficient; solid rectangular beams are always better | Bending stiffness depends on I = ∫ y^{2} dA, which rewards distance from the axis.
 M2#maths-u20-31-q3@2: Which failure mode governs a long slender column under compression? | Buckling | Tensile yielding | Fatigue cracking | Creep | Corrosion | Slender columns become unstable at the Euler load, often well below the yield load.
@@ -1146,8 +1146,8 @@ Q: What is Poisson's ratio for an incompressible material? | 0.5.
 Q: Which seismic waves arrive first? | P waves.
 SUM: Elastic materials spring back.
 SUM: Moduli quantify stiffness.
-SRC: Timoshenko SP, Goodier JN, Theory of Elasticity (3rd edn, McGraw-Hill 1970) | textbook | 1970 | https://www.mheducation.com/
-SRC: Landau LD, Lifshitz EM, Theory of Elasticity (3rd edn, Butterworth-Heinemann 1986) | textbook | 1986 | https://www.elsevier.com/
+SRC: Timoshenko SP, Goodier JN, Theory of Elasticity (3rd edn, McGraw-Hill 1970) | secondary | 1970 | https://www.mheducation.com/
+SRC: Landau LD, Lifshitz EM, Theory of Elasticity (3rd edn, Butterworth-Heinemann 1986) | secondary | 1986 | https://www.elsevier.com/
 NUM1#maths-u20-32-q1@1: A material has E = 210 GPa and ν = 0.3. What is its shear modulus G in GPa, to the nearest whole number? | 81 | 1 | GPa | G = E/(2(1 + ν)) = 210/2.6 ≈ 80.8 GPa.
 M1#maths-u20-32-q2@1: A rod is stretched with axial strain 0.001 and ν = 0.25. What is its lateral strain? | −0.00025 | 0.00025 | −0.001 | 0.004 | −0.25 | Lateral strain = −ν × axial strain = −0.25 × 0.001.
 M2#maths-u20-32-q3@2: Why do P waves travel faster than S waves? | P-wave speed involves λ + 2μ, which exceeds the shear modulus μ alone | S waves carry more energy, which slows them down | P waves travel only in liquids, where sound is fast | Their speeds are equal in every elastic solid | S waves are faster, since shear is stiffer than compression | Compressional stiffness is greater than shear stiffness, so √((λ + 2μ)/ρ) > √(μ/ρ).
@@ -1182,8 +1182,8 @@ Q: Which stress component doesn't cause yielding in metals? | Hydrostatic pressu
 Q: What is the Bauschinger effect? | A lower yield stress on reversed loading after plastic deformation.
 SUM: Plasticity is permanent deformation.
 SUM: Yield criteria and flow rules govern it.
-SRC: Hill R, The Mathematical Theory of Plasticity (Oxford University Press 1950, reissued 1998) | textbook | 1998 | https://global.oup.com/
-SRC: Lubliner J, Plasticity Theory (Dover 2008) | textbook | 2008 | https://store.doverpublications.com/
+SRC: Hill R, The Mathematical Theory of Plasticity (Oxford University Press 1950, reissued 1998) | secondary | 1998 | https://global.oup.com/
+SRC: Lubliner J, Plasticity Theory (Dover 2008) | secondary | 2008 | https://store.doverpublications.com/
 NUM1#maths-u20-33-q1@1: By the Tresca criterion, what is the maximum shear stress for principal stresses 300, 100 and 0 MPa, in MPa? | 150 | 0 | MPa | (σ_{max} − σ_{min})/2 = (300 − 0)/2 = 150 MPa.
 M1#maths-u20-33-q2@1: What happens to a metal bar loaded past yield and then unloaded? | It keeps a permanent plastic strain | It returns exactly to its original length | It fractures immediately | It becomes elastic with no yield stress | It shrinks below its original length | Plastic strain remains after the elastic part recovers.
 M3#maths-u20-33-q3@2: Why can a steel beam carry more load than the load at first yield? | After the outer fibres yield, inner material takes more stress until a full plastic hinge forms | Steel never yields under bending, so first yield never occurs | First yield is the collapse load, so it can't carry any more | Hardening is infinite in steel, so the load can rise forever | It can't: a beam collapses as soon as any fibre yields | Plastic redistribution raises the collapse moment above the yield moment (by 1.5 for rectangles).
@@ -1217,8 +1217,8 @@ Q: What is the pressure 10 m below a water surface (ignoring air pressure)? | Ab
 Q: How does laminar flow rate in a pipe scale with radius? | As r^{4}.
 SUM: Fluids at rest and in motion.
 SUM: Continuity and Bernoulli are the basics.
-SRC: White FM, Fluid Mechanics (9th edn, McGraw-Hill 2021) | textbook | 2021 | https://www.mheducation.com/
-SRC: Acheson DJ, Elementary Fluid Dynamics (Oxford University Press 1990) | textbook | 1990 | https://global.oup.com/
+SRC: White FM, Fluid Mechanics (9th edn, McGraw-Hill 2021) | secondary | 2021 | https://www.mheducation.com/
+SRC: Acheson DJ, Elementary Fluid Dynamics (Oxford University Press 1990) | secondary | 1990 | https://global.oup.com/
 NUM1#maths-u20-34-q1@1: Water drains from a hole 5 m below the surface of a tank (g = 9.8 m/s^{2}). What is the outflow speed in m/s, to 1 decimal place? | 9.9 | 0.1 | m/s | Torricelli: v = √(2 × 9.8 × 5) = √98 ≈ 9.9 m/s.
 M1#maths-u20-34-q2@1: A block of volume 0.002 m^{3} is fully submerged in water (ρ = 1000 kg/m^{3}, g = 10 m/s^{2}). What is the buoyant force? | 20 N | 2 N | 200 N | 0.02 N | 2000 N | Weight of displaced water = 1000 × 0.002 × 10 = 20 N.
 M2#maths-u20-34-q3@2: By how much does laminar flow rate increase if a pipe's radius doubles at the same pressure drop? | 16 times | 2 times | 4 times | 8 times | It stays the same | Poiseuille's law makes flow proportional to r^{4}.
@@ -1254,8 +1254,8 @@ Q: What does the Reynolds number compare? | Inertial and viscous forces.
 Q: Above roughly what Reynolds number does pipe flow become turbulent? | About 2300.
 SUM: Navier–Stokes governs fluid motion.
 SUM: Re decides laminar versus turbulent.
-SRC: Batchelor GK, An Introduction to Fluid Dynamics (Cambridge University Press 1967) | textbook | 1967 | https://www.cambridge.org/
-SRC: Fefferman CL, Existence and smoothness of the Navier–Stokes equation (Clay Mathematics Institute 2000) | report | 2000 | https://www.claymath.org/millennium/navier-stokes-equation/
+SRC: Batchelor GK, An Introduction to Fluid Dynamics (Cambridge University Press 1967) | secondary | 1967 | https://www.cambridge.org/
+SRC: Fefferman CL, Existence and smoothness of the Navier–Stokes equation (Clay Mathematics Institute 2000) | secondary | 2000 | https://www.claymath.org/millennium/navier-stokes-equation/
 NUM1#maths-u20-35-q1@1: Air (kinematic viscosity 1.5 × 10^{−5} m^{2}/s) flows at 30 m/s past a car mirror 0.15 m across. What is the Reynolds number UL/ν? | 300000 | 1000 |  | Re = 30 × 0.15/(1.5 × 10^{−5}) = 300,000, well into the high-Re regime with thin boundary layers.
 M1#maths-u20-35-q2@1: Which term in the Navier–Stokes equations is nonlinear? | The convective term v·∇v | The pressure gradient −∇p | The viscous term μ∇^{2}v | The body force f | The time derivative ∂v/∂t | v·∇v multiplies the velocity by its own gradient, making the equations nonlinear.
 M2#maths-u20-35-q3@2: Why can bacteria swim without coasting? | At very low Reynolds number viscous forces dominate, so motion stops as soon as propulsion stops | Bacteria are too heavy to coast, so they sink when they stop | Water has no viscosity at small scales, so they stop instantly | They swim at high Reynolds number, where coasting is short | They can coast for metres after each stroke, like fish | With Re ≈ 10^{−5}, inertia is negligible (Purcell's "life at low Reynolds number").
@@ -1290,8 +1290,8 @@ Q: What is C_{L} in thin-aerofoil theory? | About 2πα, with α in radians.
 Q: Above roughly what Mach number does compressibility matter? | About 0.3.
 SUM: Wings make lift through circulation.
 SUM: Compressibility changes the flow at high speed.
-SRC: Anderson JD, Fundamentals of Aerodynamics (6th edn, McGraw-Hill 2017) | textbook | 2017 | https://www.mheducation.com/
-SRC: Babinsky H, How do wings work?, Physics Education 38(6), 497 | journal | 2003 | https://doi.org/10.1088/0031-9120/38/6/001
+SRC: Anderson JD, Fundamentals of Aerodynamics (6th edn, McGraw-Hill 2017) | secondary | 2017 | https://www.mheducation.com/
+SRC: Babinsky H, How do wings work?, Physics Education 38(6), 497 | primary | 2003 | https://doi.org/10.1088/0031-9120/38/6/001
 NUM1#maths-u20-36-q1@1: A plane flies at Mach 2. What is the Mach angle in degrees? | 30 | 0 | ° | sin μ = 1/M = 0.5, so μ = 30°.
 M1#maths-u20-36-q2@1: How does lift change if airspeed doubles at the same angle of attack? | It quadruples | It doubles | It halves | It stays the same | It increases eightfold | L = ½ρv^{2}SC_{L}, so lift scales with v^{2}.
 M3#maths-u20-36-q3@2: Why does the Kutta condition matter for predicting lift? | Potential flow allows any circulation, and requiring smooth flow off the sharp trailing edge selects the physically correct one | It removes viscosity from the equations, making them solvable | It sets the air density at the wing surface | It forces lift to be zero for symmetric aerofoils at any angle | It doesn't matter; potential flow fixes the lift uniquely | Without it, the circulation and hence the lift would be undetermined.
@@ -1326,8 +1326,8 @@ Q: What is the fundamental frequency of a string of length L with wave speed v? 
 Q: What is group velocity? | dω/dk, the speed of energy transport.
 SUM: Waves transport energy, not matter.
 SUM: Dispersion separates phase and group speeds.
-SRC: Lighthill J, Waves in Fluids (Cambridge University Press 1978) | textbook | 1978 | https://www.cambridge.org/
-SRC: Whitham GB, Linear and Nonlinear Waves (Wiley 1974) | textbook | 1974 | https://www.wiley.com/
+SRC: Lighthill J, Waves in Fluids (Cambridge University Press 1978) | secondary | 1978 | https://www.cambridge.org/
+SRC: Whitham GB, Linear and Nonlinear Waves (Wiley 1974) | secondary | 1974 | https://www.wiley.com/
 NUM1#maths-u20-37-q1@1: A guitar string 0.65 m long has wave speed 286 m/s. What is its fundamental frequency in Hz? | 220 | 0.5 | Hz | f₁ = v/(2L) = 286/1.3 = 220 Hz (the A below middle C).
 M1#maths-u20-37-q2@1: Two tuning forks of 440 Hz and 444 Hz sound together. What beat frequency is heard? | 4 Hz | 442 Hz | 884 Hz | 2 Hz | 0 Hz | Beats occur at the difference frequency |444 − 440| = 4 Hz.
 M2#maths-u20-37-q3@2: Why do long swell waves from a distant storm arrive before short ones? | Deep-water waves are dispersive, and longer wavelengths have higher group velocity | All ocean waves travel at the same speed, so they arrive together | Short waves are faster in deep water, so they actually arrive first | Swell is generated later in the storm than the short waves | They arrive together; the storm sends all wavelengths at once | v_{g} = ½√(g/k) grows as k falls (longer wavelength).
@@ -1361,8 +1361,8 @@ Q: How much does the level rise when two equal incoherent sources play together?
 Q: What is the speed of sound in air at 20 °C? | About 343 m/s.
 SUM: Sound is a pressure wave.
 SUM: Decibels compress huge ranges.
-SRC: Kinsler LE, Frey AR, Coppens AB, Sanders JV, Fundamentals of Acoustics (4th edn, Wiley 2000) | textbook | 2000 | https://www.wiley.com/
-SRC: Sabine WC, Collected Papers on Acoustics (Harvard University Press 1922) | textbook | 1922 | https://archive.org/
+SRC: Kinsler LE, Frey AR, Coppens AB, Sanders JV, Fundamentals of Acoustics (4th edn, Wiley 2000) | secondary | 2000 | https://www.wiley.com/
+SRC: Sabine WC, Collected Papers on Acoustics (Harvard University Press 1922) | secondary | 1922 | https://archive.org/
 NUM1#maths-u20-38-q1@1: An ambulance siren at 700 Hz approaches at 30 m/s (c = 340 m/s). What frequency does a stationary listener hear, to the nearest Hz? | 768 | 1 | Hz | f′ = 700 × 340/(340 − 30) = 700 × 1.0968 ≈ 768 Hz.
 M1#maths-u20-38-q2@1: What is the fundamental frequency of a 0.5 m pipe open at both ends (c = 340 m/s)? | 340 Hz | 170 Hz | 680 Hz | 85 Hz | 510 Hz | For a pipe open at both ends, f₁ = c/(2L) = 340/(2 × 0.5) = 340 Hz, with the fundamental wavelength twice the pipe length.
 M2#maths-u20-38-q3@2: Why is gel applied between an ultrasound probe and the skin? | It removes the air gap, whose very different impedance would reflect almost all the sound | It cools the probe so that it can run at higher power | It increases the ultrasound frequency for sharper images | It makes the image appear in colour on the screen | It has no acoustic role; it only makes the probe glide smoothly | Air's impedance is tiny compared with tissue's, so without gel little sound enters the body.
@@ -1398,8 +1398,8 @@ Q: What is ΔU in the first law? | Q − W, heat in minus work done by the syste
 Q: When is a reaction spontaneous at constant T and p? | When ΔG < 0.
 SUM: Energy is conserved; entropy grows.
 SUM: Carnot limits all engines.
-SRC: Callen HB, Thermodynamics and an Introduction to Thermostatistics (2nd edn, Wiley 1985) | textbook | 1985 | https://www.wiley.com/
-SRC: Fermi E, Thermodynamics (Prentice Hall 1937; Dover 1956) | textbook | 1956 | https://store.doverpublications.com/
+SRC: Callen HB, Thermodynamics and an Introduction to Thermostatistics (2nd edn, Wiley 1985) | secondary | 1985 | https://www.wiley.com/
+SRC: Fermi E, Thermodynamics (Prentice Hall 1937; Dover 1956) | secondary | 1956 | https://store.doverpublications.com/
 NUM1#maths-u20-39-q1@1: What is the Carnot efficiency of an engine between 500 °C and 25 °C, as a percentage to the nearest whole number? | 61 | 0.5 | % | Convert to kelvin: 1 − 298/773 ≈ 0.614, about 61%.
 M1#maths-u20-39-q2@1: What is the entropy change when 3000 J of heat flows reversibly into a system at 300 K? | 10 J/K | 900,000 J/K | 0.1 J/K | 3000 J/K | 300 J/K | For reversible heat flow at constant temperature, ΔS = Q/T = 3000/300 = 10 J/K, with temperature in kelvin.
 M2#maths-u20-39-q3@2: Why can't any heat engine convert all its heat input into work? | The second law requires rejecting some heat to a colder reservoir to avoid decreasing total entropy | The first law forbids converting heat into any work at all | Friction is unavoidable in principle, so some heat is always lost | Heat isn't a form of energy, so it can't become work entirely | It can, if the engine is reversible and has no friction | Turning heat entirely into work would lower the universe's entropy.
@@ -1435,8 +1435,8 @@ Q: How does radiated power depend on temperature? | As T^{4}.
 Q: When can a body be treated as having one uniform temperature? | When the Biot number is below about 0.1.
 SUM: Three modes of heat transfer.
 SUM: Resistances combine like circuits.
-SRC: Incropera FP, DeWitt DP, Bergman TL, Lavine AS, Fundamentals of Heat and Mass Transfer (8th edn, Wiley 2017) | textbook | 2017 | https://www.wiley.com/
-SRC: Lienhard JH IV, Lienhard JH V, A Heat Transfer Textbook (5th edn, Phlogiston Press 2019) | textbook | 2019 | https://ahtt.mit.edu/
+SRC: Incropera FP, DeWitt DP, Bergman TL, Lavine AS, Fundamentals of Heat and Mass Transfer (8th edn, Wiley 2017) | secondary | 2017 | https://www.wiley.com/
+SRC: Lienhard JH IV, Lienhard JH V, A Heat Transfer Textbook (5th edn, Phlogiston Press 2019) | secondary | 2019 | https://ahtt.mit.edu/
 NUM1#maths-u20-40-q1@1: Two layers with thermal resistances 0.05 K/W and 0.15 K/W are in series with a 40 K temperature difference. What heat flow passes, in W? | 200 | 0 | W | Total R = 0.2 K/W, so Q = 40/0.2 = 200 W.
 M1#maths-u20-40-q2@1: By what factor does radiated power increase when absolute temperature doubles? | 16 | 2 | 4 | 8 | 32 | Radiation scales as T^{4}, and 2^{4} = 16.
 M2#maths-u20-40-q3@2: Why do cooling fins help electronics? | They increase surface area for convection, lowering the convective resistance | They raise the thermal conductivity of the chip itself | They stop radiation, which would otherwise heat the chip | They reduce air flow, keeping cool air near the chip | They don't help; fins only change the device's appearance | Convective heat flow is hAΔT, so adding fins increases the area A and lowers the convective resistance 1/(hA), carrying more heat away.
@@ -1471,8 +1471,8 @@ Q: How does diffusion time scale with distance? | As distance squared (L^{2}/D).
 Q: What is the Sherwood number? | k_{c}L/D, the dimensionless mass transfer coefficient.
 SUM: Species move down concentration gradients.
 SUM: Diffusion is slow over long distances.
-SRC: Cussler EL, Diffusion: Mass Transfer in Fluid Systems (3rd edn, Cambridge University Press 2009) | textbook | 2009 | https://www.cambridge.org/
-SRC: Bird RB, Stewart WE, Lightfoot EN, Transport Phenomena (2nd edn, Wiley 2002) | textbook | 2002 | https://www.wiley.com/
+SRC: Cussler EL, Diffusion: Mass Transfer in Fluid Systems (3rd edn, Cambridge University Press 2009) | secondary | 2009 | https://www.cambridge.org/
+SRC: Bird RB, Stewart WE, Lightfoot EN, Transport Phenomena (2nd edn, Wiley 2002) | secondary | 2002 | https://www.wiley.com/
 NUM1#maths-u20-41-q1@1: How long (in seconds) does a molecule with D = 10^{−9} m^{2}/s take to diffuse about 1 mm? | 1000 | 0 | s | t ~ L^{2}/D = 10^{−6}/10^{−9} = 1000 s, about 17 minutes.
 M1#maths-u20-41-q2@1: Which law states that diffusive flux is proportional to the concentration gradient? | Fick's first law | Fourier's law | Newton's law of viscosity | Ohm's law | Henry's law | Fick's first law J = −D∇c says species diffuse down their concentration gradient at a rate set by the diffusivity D.
 M2#maths-u20-41-q3@2: If the diffusion distance triples, how does the diffusion time change? | It increases 9-fold | It triples | It stays the same | It increases 27-fold | It falls by a third | Diffusion time scales as t ~ L^{2}/D, so tripling the distance multiplies the time by 3^{2} = 9.
@@ -1508,8 +1508,8 @@ Q: What does the Prandtl number compare? | Momentum diffusivity and thermal diff
 Q: What does a large Péclet number mean? | Advection dominates diffusion.
 SUM: Three kinds of transport, one structure.
 SUM: Dimensionless numbers compare them.
-SRC: Bird RB, Stewart WE, Lightfoot EN, Transport Phenomena (2nd edn, Wiley 2002) | textbook | 2002 | https://www.wiley.com/
-SRC: Chilton TH, Colburn AP, Mass transfer (absorption) coefficients: prediction from data on heat transfer and fluid friction, Industrial and Engineering Chemistry 26(11), 1183 | journal | 1934 | https://doi.org/10.1021/ie50299a012
+SRC: Bird RB, Stewart WE, Lightfoot EN, Transport Phenomena (2nd edn, Wiley 2002) | secondary | 2002 | https://www.wiley.com/
+SRC: Chilton TH, Colburn AP, Mass transfer (absorption) coefficients: prediction from data on heat transfer and fluid friction, Industrial and Engineering Chemistry 26(11), 1183 | primary | 1934 | https://doi.org/10.1021/ie50299a012
 NUM1#maths-u20-42-q1@1: Water has ν = 10^{−6} m^{2}/s and α = 1.4 × 10^{−7} m^{2}/s. What is its Prandtl number, to 1 decimal place? | 7.1 | 0.1 |  | Pr = ν/α = 10^{−6}/(1.4 × 10^{−7}) ≈ 7.1.
 M1#maths-u20-42-q2@1: Which law describes momentum transport in a Newtonian fluid? | τ = μ dv/dy | q = −k dT/dy | J = −D dc/dy | V = IR | F = ma | Shear stress proportional to velocity gradient is Newton's law of viscosity.
 M2#maths-u20-42-q3@2: Why is the concentration boundary layer in a liquid much thinner than its velocity boundary layer? | The Schmidt number is about 1000, so species diffuse far more slowly than momentum | Liquids have no viscosity | Diffusion is faster than momentum transport in liquids | They are always equal | It is thicker | Boundary-layer thickness ratios scale like Sc^{−1/3}, about 0.1 for Sc = 1000.
@@ -1545,8 +1545,8 @@ Q: How does the RMS displacement of a diffusing particle grow with time? | As �
 Q: What did Perrin's Brownian motion experiments determine? | Avogadro's number.
 SUM: Random steps make diffusion.
 SUM: Spread grows like √t.
-SRC: Einstein A, Über die von der molekularkinetischen Theorie der Wärme geforderte Bewegung von in ruhenden Flüssigkeiten suspendierten Teilchen, Annalen der Physik 17, 549 | journal | 1905 | https://doi.org/10.1002/andp.19053220806
-SRC: Berg HC, Random Walks in Biology (expanded edn, Princeton University Press 1993) | textbook | 1993 | https://press.princeton.edu/
+SRC: Einstein A, Über die von der molekularkinetischen Theorie der Wärme geforderte Bewegung von in ruhenden Flüssigkeiten suspendierten Teilchen, Annalen der Physik 17, 549 | primary | 1905 | https://doi.org/10.1002/andp.19053220806
+SRC: Berg HC, Random Walks in Biology (expanded edn, Princeton University Press 1993) | secondary | 1993 | https://press.princeton.edu/
 NUM1#maths-u20-43-q1@1: A diffusing particle has RMS displacement 10 μm after 1 s. What is its RMS displacement after 100 s, in μm? | 100 | 0 | μm | RMS grows as √t: 10 × √100 = 100 μm.
 M1#maths-u20-43-q2@1: In 3D, what is the mean squared displacement after time t with diffusion coefficient D? | 6Dt | 2Dt | 3Dt | Dt | 4Dt | In d dimensions ⟨r^{2}⟩ = 2dDt, since each of the d independent coordinates contributes 2Dt; in 3D that's 6Dt.
 M3#maths-u20-43-q3@2: Why does the probability density from a point release become Gaussian? | Displacement is a sum of many independent small steps, so the central limit theorem applies | Particles all move together, so their spread stays Gaussian | Diffusion has no randomness, so the shape is fixed by the equation | The density becomes uniform at once, which looks Gaussian | It is never Gaussian; diffusion gives a triangular profile | Adding many independent increments gives a normal distribution with variance 2Dt.
@@ -1581,8 +1581,8 @@ Q: Which Maxwell equation says there are no magnetic monopoles? | ∇·B = 0.
 Q: What does Faraday's law describe? | A changing magnetic field inducing an electric field.
 SUM: Four equations govern electromagnetism.
 SUM: Light is an electromagnetic wave.
-SRC: Maxwell JC, A dynamical theory of the electromagnetic field, Philosophical Transactions of the Royal Society 155, 459 | journal | 1865 | https://doi.org/10.1098/rstl.1865.0008
-SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | textbook | 2023 | https://www.cambridge.org/
+SRC: Maxwell JC, A dynamical theory of the electromagnetic field, Philosophical Transactions of the Royal Society 155, 459 | primary | 1865 | https://doi.org/10.1098/rstl.1865.0008
+SRC: Griffiths DJ, Introduction to Electrodynamics (5th edn, Cambridge University Press 2023) | secondary | 2023 | https://www.cambridge.org/
 NUM1#maths-u20-44-q1@1: Two charges of 1 μC each are 0.1 m apart. What is the Coulomb force in N, using k = 9 × 10^{9} N·m^{2}/C^{2}? | 0.9 | 0.001 | N | F = kq₁q₂/r^{2} = 9 × 10^{9} × 10^{−12}/0.01 = 0.9 N.
 M1#maths-u20-44-q2@1: Which law explains how a transformer works? | Faraday's law of induction | Gauss's law for electricity | Gauss's law for magnetism | Coulomb's law | The Lorentz force on a static charge | A changing current in one coil makes a changing B, inducing a voltage in the other.
 M2#maths-u20-44-q3@2: Why was Maxwell's displacement current term essential? | It makes the equations consistent with charge conservation and predicts electromagnetic waves | It describes static charges, which Ampère's law had missed | It removes magnetic fields from situations with no current | It explains gravity as an electromagnetic effect | It wasn't essential; it was later dropped from the equations | Without ∂E/∂t in Ampère's law, there's no wave equation and no light.
@@ -1618,8 +1618,8 @@ Q: What are the energy levels of a quantum harmonic oscillator? | ħω(n + ½).
 Q: What does the Born rule state? | |ψ|^{2} gives the probability density.
 SUM: Quantum states are vectors in Hilbert space.
 SUM: Energy is quantised.
-SRC: Griffiths DJ, Schroeter DF, Introduction to Quantum Mechanics (3rd edn, Cambridge University Press 2018) | textbook | 2018 | https://www.cambridge.org/
-SRC: Dirac PAM, The Principles of Quantum Mechanics (4th edn, Oxford University Press 1958) | textbook | 1958 | https://global.oup.com/
+SRC: Griffiths DJ, Schroeter DF, Introduction to Quantum Mechanics (3rd edn, Cambridge University Press 2018) | secondary | 2018 | https://www.cambridge.org/
+SRC: Dirac PAM, The Principles of Quantum Mechanics (4th edn, Oxford University Press 1958) | secondary | 1958 | https://global.oup.com/
 NUM1#maths-u20-45-q1@1: For a particle in a box, how many times larger is E₃ than E₁? | 9 | 0 |  | Eₙ ∝ n^{2}, so E₃/E₁ = 9.
 M1#maths-u20-45-q2@1: What is the ground-state energy of a quantum harmonic oscillator? | ½ħω | 0 | ħω | 2ħω | −½ħω | Eₙ = ħω(n + ½) with n = 0 gives ½ħω, the zero-point energy.
 M3#maths-u20-45-q3@2: Why can't a quantum particle in a box have zero energy? | Zero energy would need zero momentum, so infinite position uncertainty, impossible inside a finite box | Boxes always heat the particles inside them by collisions | Energy is always negative for bound quantum particles | The Schrödinger equation forbids any motion inside a box | It can have zero energy if it sits still at the centre | Confinement to width L forces momentum uncertainty ~ħ/L, giving positive minimum energy.
@@ -1653,8 +1653,8 @@ Q: What is Boltzmann's entropy formula? | S = k_{B} ln W.
 Q: Who solved the 2D Ising model exactly? | Lars Onsager (1944).
 SUM: Statistics explains thermodynamics.
 SUM: Partition functions encode everything.
-SRC: Sethna JP, Statistical Mechanics: Entropy, Order Parameters, and Complexity (2nd edn, Oxford University Press 2021) | textbook | 2021 | https://global.oup.com/
-SRC: Onsager L, Crystal statistics I: a two-dimensional model with an order-disorder transition, Physical Review 65, 117 | journal | 1944 | https://doi.org/10.1103/PhysRev.65.117
+SRC: Sethna JP, Statistical Mechanics: Entropy, Order Parameters, and Complexity (2nd edn, Oxford University Press 2021) | secondary | 2021 | https://global.oup.com/
+SRC: Onsager L, Crystal statistics I: a two-dimensional model with an order-disorder transition, Physical Review 65, 117 | primary | 1944 | https://doi.org/10.1103/PhysRev.65.117
 NUM1#maths-u20-46-q1@1: A system has W = e^{100} microstates. What is its entropy in units of k_{B}? | 100 | 0 | k_{B} | S = k_{B} ln W = k_{B} × 100.
 M1#maths-u20-46-q2@1: By equipartition, what is the average kinetic energy of a monatomic gas atom? | (3/2)k_{B}T | ½k_{B}T | k_{B}T | 3k_{B}T | (5/2)k_{B}T | Three translational quadratic terms each contribute ½k_{B}T.
 M2#maths-u20-46-q3@2: Why does the partition function contain all thermodynamic information for a system at fixed temperature? | Derivatives of ln Z give energy, entropy, pressure and heat capacity | Z equals the temperature, which fixes every other quantity | Z counts only the ground state, which determines the rest | It contains no information beyond the number of particles | It depends only on volume, which sets the thermodynamics | F = −k_{B}T ln Z, and other quantities follow by differentiation.
@@ -1689,8 +1689,8 @@ Q: What bifurcation creates a limit cycle from a fixed point? | A Hopf bifurcati
 Q: What does ẋ = r + x^{2} show as r crosses 0? | A saddle-node bifurcation.
 SUM: Nonlinear systems settle, oscillate or switch.
 SUM: Bifurcations mark qualitative changes.
-SRC: Strogatz SH, Nonlinear Dynamics and Chaos (2nd edn, CRC Press 2015) | textbook | 2015 | https://www.routledge.com/
-SRC: Guckenheimer J, Holmes P, Nonlinear Oscillations, Dynamical Systems, and Bifurcations of Vector Fields (Springer 1983) | textbook | 1983 | https://link.springer.com/
+SRC: Strogatz SH, Nonlinear Dynamics and Chaos (2nd edn, CRC Press 2015) | secondary | 2015 | https://www.routledge.com/
+SRC: Guckenheimer J, Holmes P, Nonlinear Oscillations, Dynamical Systems, and Bifurcations of Vector Fields (Springer 1983) | secondary | 1983 | https://link.springer.com/
 NUM1#maths-u20-47-q1@1: For ẋ = r + x^{2} with r = −4, what is the stable fixed point? | -2 | 0 |  | Fixed points are x = ±2; f′(x) = 2x is negative at x = −2, so that one is stable.
 M1#maths-u20-47-q2@1: A 2D fixed point has Jacobian trace 3 and determinant −2. What type is it? | A saddle | A stable node | An unstable spiral | A centre | A stable spiral | A negative determinant means real eigenvalues of opposite sign: a saddle.
 M2#maths-u20-47-q3@2: Why can't a two-dimensional autonomous flow be chaotic? | Trajectories can't cross in the plane, so by Poincaré–Bendixson bounded orbits approach fixed points or closed orbits | 2D systems are always linear, so they can't be chaotic | Chaos needs discrete time, which 2D flows don't have | 2D flows have no fixed points, so nothing can be chaotic | They can be chaotic, as the Lorenz system shows in 2D | Chaos needs at least three dimensions in continuous time.
@@ -1726,8 +1726,8 @@ Q: What sign of Lyapunov exponent indicates chaos? | Positive.
 Q: Who discovered the butterfly effect in a weather model? | Edward Lorenz (1963).
 SUM: Deterministic yet unpredictable.
 SUM: Complex systems show emergence.
-SRC: Lorenz EN, Deterministic nonperiodic flow, Journal of the Atmospheric Sciences 20(2), 130 | journal | 1963 | https://doi.org/10.1175/1520-0469(1963)020<0130:DNF>2.0.CO;2
-SRC: Mitchell M, Complexity: A Guided Tour (Oxford University Press 2009) | textbook | 2009 | https://global.oup.com/
+SRC: Lorenz EN, Deterministic nonperiodic flow, Journal of the Atmospheric Sciences 20(2), 130 | primary | 1963 | https://doi.org/10.1175/1520-0469(1963)020<0130:DNF>2.0.CO;2
+SRC: Mitchell M, Complexity: A Guided Tour (Oxford University Press 2009) | secondary | 2009 | https://global.oup.com/
 NUM1#maths-u20-48-q1@1: An initial error of 10^{−6} grows with Lyapunov exponent 1 per unit time. After how many time units does it reach 1, to 1 decimal place? | 13.8 | 0.1 |  | t = ln(10^{6})/1 ≈ 13.8.
 M1#maths-u20-48-q2@1: Near which value of r does the logistic map first become chaotic? | About 3.57 | About 1 | About 2 | Exactly 4.67 | About 0.5 | Period doubling accumulates at r ≈ 3.5699, beyond which chaos appears.
 M3#maths-u20-48-q3@2: Why does improving measurements only slowly extend a chaotic forecast's horizon? | The horizon grows like the logarithm of the initial accuracy, so a 10-fold improvement adds only ln 10/λ | Better measurements shorten the forecast horizon, oddly enough | Chaos removes all predictability at once, whatever the accuracy | The horizon is infinite for perfect deterministic models | It extends it greatly: ten times better data gives ten times longer | Exponential error growth means each factor of 10 buys a fixed extra time.
@@ -1763,8 +1763,8 @@ Q: What did Schelling's model show? | Mild individual preferences can produce st
 Q: What are the three Boids rules? | Separation, alignment and cohesion.
 SUM: Individuals following rules create patterns.
 SUM: Validation needs multiple patterns.
-SRC: Schelling TC, Dynamic models of segregation, Journal of Mathematical Sociology 1(2), 143 | journal | 1971 | https://doi.org/10.1080/0022250X.1971.9989794
-SRC: Grimm V et al., The ODD protocol for describing agent-based and other simulation models: a second update, Journal of Artificial Societies and Social Simulation 23(2), 7 | journal | 2020 | https://doi.org/10.18564/jasss.4259
+SRC: Schelling TC, Dynamic models of segregation, Journal of Mathematical Sociology 1(2), 143 | primary | 1971 | https://doi.org/10.1080/0022250X.1971.9989794
+SRC: Grimm V et al., The ODD protocol for describing agent-based and other simulation models: a second update, Journal of Artificial Societies and Social Simulation 23(2), 7 | primary | 2020 | https://doi.org/10.18564/jasss.4259
 NUM1#maths-u20-49-q1@1: An agent on a square grid has 8 neighbours and wants at least 30% similar. What is the minimum number of similar neighbours that satisfies it? | 3 | 0 |  | 30% of 8 is 2.4, so at least 3 similar neighbours are needed.
 M1#maths-u20-49-q2@1: Which feature is a key strength of agent-based models? | Representing heterogeneous individuals and local interactions explicitly | Always having closed-form analytical solutions | Needing no parameters or data to run | Being completely deterministic in every run | Avoiding the need for any computation | Individual-level detail is what ODE population models average away.
 M2#maths-u20-49-q3@2: Why must agent-based models be run many times? | Their randomness means outcomes vary between runs, so distributions are needed | One run is always enough when the code is correct | They are deterministic, so runs only check the code | Running them repeatedly changes the agents' rules | They can only be run once before agents adapt | Stochastic rules give different trajectories; averages and spreads describe behaviour.
@@ -1799,8 +1799,8 @@ Q: How many elementary cellular automaton rules are there? | 256.
 Q: What makes a dead cell come alive in the Game of Life? | Exactly three live neighbours.
 SUM: Simple local rules, complex behaviour.
 SUM: Some automata are universal computers.
-SRC: Wolfram S, Statistical mechanics of cellular automata, Reviews of Modern Physics 55(3), 601 | journal | 1983 | https://doi.org/10.1103/RevModPhys.55.601
-SRC: Nagel K, Schreckenberg M, A cellular automaton model for freeway traffic, Journal de Physique I 2(12), 2221 | journal | 1992 | https://doi.org/10.1051/jp1:1992277
+SRC: Wolfram S, Statistical mechanics of cellular automata, Reviews of Modern Physics 55(3), 601 | primary | 1983 | https://doi.org/10.1103/RevModPhys.55.601
+SRC: Nagel K, Schreckenberg M, A cellular automaton model for freeway traffic, Journal de Physique I 2(12), 2221 | primary | 1992 | https://doi.org/10.1051/jp1:1992277
 NUM1#maths-u20-50-q1@1: How many possible neighbourhood patterns (cell plus two neighbours, two states each) does an elementary cellular automaton rule specify outputs for? | 8 | 0 |  | 2^{3} = 8 patterns, and choosing an output for each gives 2^{8} = 256 rules.
 M1#maths-u20-50-q2@1: In the Game of Life, what happens to a live cell with four live neighbours? | It dies of overcrowding | It survives | It splits into two | It stays alive only on even steps | It becomes a glider | Survival needs 2 or 3 live neighbours; more than 3 kills the cell.
 M3#maths-u20-50-q3@2: Why is Rule 110 significant? | It was proved Turing-complete, showing a very simple 1D rule can perform any computation | It is the only elementary rule that behaves chaotically | It always reaches a fixed state from any starting row | It models motorway traffic exactly, including jams | It has no special significance among the 256 rules | Cook's proof showed universal computation in one of the simplest possible systems.
@@ -1836,8 +1836,8 @@ Q: What do balancing feedback loops do? | Push a system towards a goal or equili
 Q: Who founded system dynamics? | Jay Forrester.
 SUM: Structure drives behaviour.
 SUM: Feedback and delays matter most.
-SRC: Meadows DH, Thinking in Systems: A Primer (Chelsea Green 2008) | textbook | 2008 | https://www.chelseagreen.com/
-SRC: Sterman JD, Business Dynamics: Systems Thinking and Modeling for a Complex World (McGraw-Hill 2000) | textbook | 2000 | https://www.mheducation.com/
+SRC: Meadows DH, Thinking in Systems: A Primer (Chelsea Green 2008) | secondary | 2008 | https://www.chelseagreen.com/
+SRC: Sterman JD, Business Dynamics: Systems Thinking and Modeling for a Complex World (McGraw-Hill 2000) | secondary | 2000 | https://www.mheducation.com/
 NUM1#maths-u20-51-q1@1: A stock of 500 units has inflow 20 per day and outflow 45 per day. After how many days is it empty? | 20 | 0 | days | Net outflow is 25 per day, so 500/25 = 20 days.
 M1#maths-u20-51-q2@1: Which loop type drives exponential growth? | A reinforcing (positive) feedback loop | A balancing (negative) feedback loop | A loop with no feedback | A delay with no loop | A constant flow | Each increase feeds further increases, as in compound interest.
 M2#maths-u20-51-q3@2: Why do balancing loops with long delays often overshoot their targets? | Corrective actions keep acting after the target is reached because their effects arrive late | Delays turn balancing loops into reinforcing ones | Targets move at random, so the loop can't settle | Balancing loops never reach their targets at all | They don't overshoot; delays only slow the approach | The system responds to old information, as in a slow shower thermostat.
