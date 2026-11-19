@@ -197,6 +197,8 @@ test("each kind of card has the ways to practise that suit it, and the small car
   assert.deepEqual(minisFor(numL)[0].items.map((l) => l.n), ["25 kHz", "40%"]);
   assert.ok(!modes({ kind: "timeline", title: "t", items: [{ year: "1900", text: "a" }, { year: "1900", text: "b" }, { year: "2000", text: "c" }] }).includes("order"));
   assert.doesNotMatch(glassDiagram({ kind: "map", title: "M", items: ["One", "Two", "Three"] }, { size: "sm", caption: false }), /<button/);
+  assert.doesNotMatch(glassDiagram({ kind: "cycle", title: "C", items: ["One", "Two", "Three", "Four"] }, { size: "sm", caption: false }), /<button|data-gd-ring/, "a small cycle has no ring buttons");
+  assert.match(glassDiagram({ kind: "cycle", title: "C", items: ["One", "Two", "Three", "Four"] }), /data-gd-ring="3"/, "a full one does");
   const qL = { title: "t", blocks: [{ t: "h", x: "Osmosis" }, { t: "p", x: "Osmosis moves water across membranes towards solutes." }], cards: [["What is osmosis? How does it differ from diffusion?", "Water moving across membranes towards solutes."]] };
   assert.equal(minisFor(qL, { skipQ: ["What is osmosis?"] })[0]?.kind, "check", "a longer question isn't dropped for starting the same way");
   assert.equal(minisFor(qL, { skipQ: ["What is osmosis? How does it differ from diffusion?"] }).length, 0, "an exact repeat is");

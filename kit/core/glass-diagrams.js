@@ -422,7 +422,8 @@ function bodyHub(d, { map = false, cycle = false, inert = false } = {}) {
     const words = note ? `<b class="gd-k">${esc(x)}</b>${A(note, "span", "gd-sub")}` : cycle && i === 0 ? `<b class="gd-k">${esc(x)}</b>` : `<b class="gd-k">${A(x)}</b>`;
     return `<li class="gd-item"${note ? " data-gd-row" : ""} style="--c:${c}">${cycle ? `${num(i, c)}<div>${words}</div>` : words}</li>`;
   }).join("");
-  const core = cycle ? ringView(d) : `<p class="gd-core">${esc(d.title)}</p>`;
+  // the ring is interactive, so a small card (inside a flashcard, itself a button) shows the list alone
+  const core = cycle ? (inert ? "" : ringView(d)) : `<p class="gd-core">${esc(d.title)}</p>`;
   return `<div class="gd-hub${cycle ? " gd-cyc" : ""}">${core}<${map || cycle ? "ol" : "ul"} class="gd-branches${d.items.length === 4 ? " gd-four" : ""}">${li}</${map || cycle ? "ol" : "ul"}>${cycle ? `<p class="gd-loop"><span aria-hidden="true">↻</span> then back to 1, and round again</p>` : ""}</div>`;
 }
 // a cycle as a real loop (on a wide card): the stages round a ring, an arrow from each to the next, and the stage you
@@ -495,7 +496,7 @@ function bodyKey(d) {
 function cardBody(d, { inert = false } = {}) {
   switch (d.kind) {
     case "map": return bodyHub(d, { map: true, inert });
-    case "cycle": return bodyHub(d, { cycle: true });
+    case "cycle": return bodyHub(d, { cycle: true, inert });
     case "flow": return bodyFlow(d);
     case "timeline": return bodyTimeline(d);
     case "formula": return bodyFormula(d);
