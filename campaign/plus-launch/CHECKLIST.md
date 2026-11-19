@@ -1,4 +1,4 @@
-# Gradify Plus launch email: checklist
+# Gradify Pro launch email: checklist
 
 Work through this in order. Each step is yours to do or approve: nothing here has been sent, created or changed.
 "Launch" (T) is the moment the first batch goes out. The code expires at T + 48 hours.
@@ -34,24 +34,24 @@ Apply this to every one of the 1,000 addresses, by where each address came from:
 
 | Source | May they get this email? | Why |
 | --- | --- | --- |
-| `public.waitlist`, `site = 'Gradify Plus'` | **Yes, once.** | They consented to "one email when Gradify Plus opens". This is it. Afterwards delete their rows, because privacy.html promises that, and don't add them to any ongoing list. |
-| `public.waitlist`, `site = 'Gradify Pro'` | **No, not yet.** | They asked to hear when **Pro** opens, and Pro isn't open. Keep them for the Pro launch email. |
-| `public.waitlist`, a coming-soon site | **No.** | They asked about that site, not Plus. |
-| Gradify account holders who aren't on the Plus list | **No.** | Sign-up collected no marketing consent and offered no opt-out, so soft opt-in fails, and privacy.html says nothing about marketing to accounts. Tell them in the app instead (the Plus card already shows). |
+| `public.waitlist`, `site = 'Gradify Pro'` | **Yes, once.** | They consented to "one email when Gradify Pro opens". This is it. Afterwards delete their rows, because privacy.html promises that, and don't add them to any ongoing list. |
+| `public.waitlist`, `site = 'Gradify Ultra'` | **No, not yet.** | They asked to hear when **Ultra** opens, and Ultra isn't open. Keep them for the Ultra launch email. |
+| `public.waitlist`, a coming-soon site | **No.** | They asked about that site, not Pro. |
+| Gradify account holders who aren't on the Pro list | **No.** | Sign-up collected no marketing consent and offered no opt-out, so soft opt-in fails, and privacy.html says nothing about marketing to accounts. Tell them in the app instead (the Pro card already shows). |
 | Contacts from anywhere else: personal contacts, social followers, other projects, bought, rented or scraped lists | **No**, unless each person gave Gradify consent you can show. | Consent must be specific to Gradify and recorded. Never use a bought list. |
 | Corporate addresses (e.g. a business or school's general inbox) | **Only** with a clear business reason, a legitimate interests assessment and an updated privacy notice. | Usually not worth it for this launch. Skip them. |
 
 Before anything is sent:
 
 - [ ] Export the eligible list from the Supabase dashboard (SQL editor). The table can't be read through the
-      website: `select email, created_at from public.waitlist where site = 'Gradify Plus' order by created_at;`
+      website: `select email, created_at from public.waitlist where site = 'Gradify Pro' order by created_at;`
 - [ ] Keep that export privately as your consent record: address, list and date joined. Don't commit it to this
       repository.
 - [ ] Remove anyone who has asked privacy@getgradify.com to be removed, and any address that has bounced before.
 - [ ] Count what's left. If it's well under 1,000, that's the right number. Don't top it up from ineligible
       sources.
 - [ ] Choose the `{{WHY_YOU_GET_THIS}}` line for this audience (README.md).
-- [ ] After the send: delete the sent rows from `public.waitlist` (`site = 'Gradify Plus'`). privacy.html says
+- [ ] After the send: delete the sent rows from `public.waitlist` (`site = 'Gradify Pro'`). privacy.html says
       that happens. Keep only the sending service's suppression list (unsubscribes and bounces), which you need
       to stop emailing them.
 - [ ] Later, if you want an ongoing marketing list: add an unticked "Email me about Gradify news and offers"
@@ -111,13 +111,13 @@ Gradify's checkout already allows promotion codes (`allow_promotion_codes` in
   - [ ] the first invoice is **£5.00**;
   - [ ] the next upcoming invoice is **£10.00**;
   - [ ] the code is refused a second time on the same account;
-  - [ ] the webhook still records the plan as Plus.
+  - [ ] the webhook still records the plan as Pro.
 - [ ] **Coupon:** Product catalogue → Coupons → Create.
-  - [ ] Name: "Gradify Plus launch: £5 off the first month".
-  - [ ] Type **Fixed amount**, **£5.00 GBP**. Plus is £10 VAT-inclusive, so £5 off makes the first month £5.
+  - [ ] Name: "Gradify Pro launch: £5 off the first month".
+  - [ ] Type **Fixed amount**, **£5.00 GBP**. Pro is £10 VAT-inclusive, so £5 off makes the first month £5.
         Confirm that on the test invoice, especially if Stripe Tax is on.
   - [ ] Duration **Once**.
-  - [ ] **Apply to specific products: Gradify Plus only**, so it can't discount Pro later.
+  - [ ] **Apply to specific products: Gradify Pro only**, so it can't discount Ultra later.
 - [ ] **Promotion code** on that coupon:
   - [ ] Code `GRADIFY48`.
   - [ ] Tick **Eligible for first-time order only**. Stripe then only accepts it from a customer with no previous
@@ -145,12 +145,12 @@ Gradify's checkout already allows promotion codes (`allow_promotion_codes` in
 - [ ] In the sending service, create the campaign:
   - [ ] HTML part: email.html.
   - [ ] Plain-text part: email.txt, **without** its Subject and Preheader lines.
-  - [ ] Subject: `Gradify Plus is open: £5 for your first month, for 48 hours`.
+  - [ ] Subject: `Gradify Pro is open: £5 for your first month, for 48 hours`.
   - [ ] From: "Seren at Gradify" `<hello@getgradify.com>`. Reply-to: the same.
 - [ ] Turn **off** open and click tracking for the first send, or at least know it rewrites links. Tracked links
       on a brand-new domain can hurt delivery. The `utm_` tags on the links already tell you what came from the
       email.
-- [ ] Check the prices against `kit/data/billing.js` once more: Plus £10 a month, and the offer £5 off the first
+- [ ] Check the prices against `kit/data/billing.js` once more: Pro £10 a month, and the offer £5 off the first
       month.
 
 ## 7. Test sends (before any real recipient)
@@ -201,5 +201,5 @@ If the list ends up much smaller than 1,000, two batches (T and T + 4 h) are eno
 
 - [ ] Reply to replies from hello@ within a day.
 - [ ] Process unsubscribes immediately. The service does this, but check that no manual list bypasses it.
-- [ ] Delete the sent Plus-waitlist rows, as section 1 says.
+- [ ] Delete the sent Pro-waitlist rows, as section 1 says.
 - [ ] Note what was sent, to how many people, when and from which list. Keep that as your record.

@@ -44,7 +44,7 @@ A backup is a picture of the database **at the moment it was taken**. Restoring 
 
 - goals, notes, flashcards, reviews and course progress learners created or changed after the backup;
 - new accounts' data, waitlist sign-ups, page-view logs;
-- billing changes recorded by the billing server (a learner who subscribed after the backup would lose their Pro record,
+- billing changes recorded by the billing server (a learner who subscribed after the backup would lose their Ultra record,
   even though Stripe still charges them).
 
 Lost data can't be recovered unless a newer backup holds it. That's why every recovery starts with a fresh backup of the

@@ -8,7 +8,7 @@ Costs: `docs/AI-COSTS.md`. The app contract: `docs/APP-API.md` (Gradify AI).
 
 Gradify AI is on hold while the core app is finished. Everything stays as deployed: the controls, the allowances and
 caps, and both functions, which refuse every request (`ai_off`). There is no Anthropic key, no API credit and no
-testers or owners yet, so nothing can cost money. Pro checkout stays closed.
+testers or owners yet, so nothing can cost money. Ultra checkout stays closed.
 
 The model choice (`ai_feature_models`: Opus 5.5 for tutoring and explanations, Sonnet 5.5 for packs and quizzes) is a
 starting proposal, not a decision. Before launch, compare both models on identical notes (`node scripts/eval-notes.mjs
@@ -22,10 +22,10 @@ Two separate layers of spending control:
 | Anthropic Console | Auto-reload of prepaid credits | **Off** |
 | Anthropic Console | Organisation / workspace spend limit | a strict monthly cap, in a separate "Gradify production" workspace |
 | Gradify (`ai_settings`) | Budgets for everyone together | £50 a month, £5 a day (set now) |
-| Gradify (`ai_limits`) | Allowance per learner | Free 5 / 5 / 1 / 2, Pro 40 / 25 / 5 / 8 a month (set now) |
-| Gradify (`ai_plan_caps`) | Fair-use cap per learner | Free £1, Pro £5 a month (set now) |
+| Gradify (`ai_limits`) | Allowance per learner | Free 5 / 5 / 1 / 2, Ultra 40 / 25 / 5 / 8 a month (set now) |
+| Gradify (`ai_plan_caps`) | Fair-use cap per learner | Free £1, Ultra £5 a month (set now) |
 
-The Gradify caps are per learner (1,000 Pro learners each have their own £5), so the overall budget and the Anthropic
+The Gradify caps are per learner (1,000 Ultra learners each have their own £5), so the overall budget and the Anthropic
 workspace cap are what bound the total.
 
 ## How a request is controlled
@@ -36,7 +36,7 @@ Every request goes through one locked step in the database, `ai_claim_for`, befo
 2. **Spending caps.** This month's and today's spend for everyone, plus the request's worst-case cost, must fit the
    monthly and daily budgets (`budget`). In-flight requests count at their worst case, so a burst can't overshoot.
 3. **Rate limits.** Per learner a minute and an hour; overall a minute (`rate`, `busy`).
-4. **Allowance.** Free or Pro, per feature, per month (`allowance`). A tutor conversation counts once for all its
+4. **Allowance.** Free or Ultra, per feature, per month (`allowance`). A tutor conversation counts once for all its
    turns, up to the plan's turn limit (`conversation_long`).
 5. **Fair use.** What the learner's requests have cost this month must be below their plan's cap (`fair_use`).
 
@@ -97,7 +97,7 @@ failures with their reasons.
    tokens and cost recorded, uses counted as expected.
 5. Compare the real cost per request with `docs/AI-COSTS.md`, re-run `node scripts/ai-cost-model.mjs` with the real
    figures, and settle the model choice, allowances and fair-use caps.
-6. Switch on for everyone: `update public.ai_settings set enabled = true;` (and put Gradify Pro on sale, docs/BILLING.md).
+6. Switch on for everyone: `update public.ai_settings set enabled = true;` (and put Gradify Ultra on sale, docs/BILLING.md).
    Off again at any time: `update public.ai_settings set enabled = false;` (takes effect on the next request).
 
 ## Tests

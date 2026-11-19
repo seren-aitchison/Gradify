@@ -21,9 +21,9 @@ App Store listing in `APP_STORE` in `gradify.config.js`, and until that's filled
    push notifications through APNs, Home Screen widgets (due cards, streak), offline study, Sign in with Apple.
 3. **Sign in with Apple** (guideline 4.8): required because the app offers Google sign-in. Supabase supports it as a
    provider.
-4. **Payments for Plus and Pro inside the app** (guideline 3.1.1): digital subscriptions bought in an iOS app must
+4. **Payments for Pro and Ultra inside the app** (guideline 3.1.1): digital subscriptions bought in an iOS app must
    use Apple's In-App Purchase, except in storefronts where a link out to the website is allowed (the US, and the EU
-   under the DMA, with conditions). Plan: IAP products for Plus and Pro in App Store Connect, verified server-side by
+   under the DMA, with conditions). Plan: IAP products for Pro and Ultra in App Store Connect, verified server-side by
    a new Edge Function that writes `public.subscriptions` like `billing-webhook` does for Stripe.
 5. **App Store Connect listing:** name, subtitle, screenshots (6.9" iPhone, 13" iPad, Mac), privacy nutrition labels
    (match `privacy.html`), age rating, support URL, the privacy policy URL.

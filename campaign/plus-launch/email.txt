@@ -1,4 +1,4 @@
-Subject: Gradify Plus is open: £5 for your first month, for 48 hours
+Subject: Gradify Pro is open: £5 for your first month, for 48 hours
 Preheader: Use code GRADIFY48 by {{OFFER_ENDS}}. Then £10 a month, cancel any time.
 
 ----------------------------------------------------------------------
@@ -7,11 +7,11 @@ GRADIFY PLUS IS OPEN
 
 Hi,
 
-I'm Seren, and I build Gradify. You asked to be told when Gradify Plus opened. It opened today, so this is that email.
+I'm Seren, and I build Gradify. You asked to be told when Gradify Pro opened. It opened today, so this is that email.
 
 First, nothing you use now is going away. Every course on every Gradify site, flashcards with spaced repetition, your notes and your progress all stay free.
 
-Gradify Plus is the part that organises your learning for you:
+Gradify Pro is the part that organises your learning for you:
 
 - Smart Plan autopilot. Your week planned for you, and kept on track when life gets in the way.
 - Readiness forecasts and revision recommendations. Your cards ordered by what matters most and what you're starting to forget.
@@ -21,18 +21,18 @@ Gradify Plus is the part that organises your learning for you:
 
 
 LAUNCH OFFER, 48 HOURS
-£5 for your first month of Gradify Plus
+£5 for your first month of Gradify Pro
 
 Code: GRADIFY48
 
-Ends {{OFFER_ENDS}}. One use per person, for your first Gradify Plus subscription.
+Ends {{OFFER_ENDS}}. One use per person, for your first Gradify Pro subscription.
 
-Get Gradify Plus:
+Get Gradify Pro:
 https://getgradify.com/pricing.html?utm_source=email&utm_medium=email&utm_campaign=plus_launch
 
-How to use the code: sign in to Gradify, open Pricing and choose "Get Gradify Plus". On the Stripe checkout page, choose "Add promotion code" and enter GRADIFY48.
+How to use the code: sign in to Gradify, open Pricing and choose "Get Gradify Pro". On the Stripe checkout page, choose "Add promotion code" and enter GRADIFY48.
 
-What you'll pay: £5 today for your first month. After that, Gradify Plus renews automatically at £10 a month (VAT included) on the same date each month until you cancel. You can cancel any time from "Manage billing" on your Account page; you keep Plus until the end of the month you've paid for. If you change your mind within 14 days of subscribing you can cancel for a refund, reduced for any days you've already used.
+What you'll pay: £5 today for your first month. After that, Gradify Pro renews automatically at £10 a month (VAT included) on the same date each month until you cancel. You can cancel any time from "Manage billing" on your Account page; you keep Pro until the end of the month you've paid for. If you change your mind within 14 days of subscribing you can cancel for a refund, reduced for any days you've already used.
 
 [DISCORD: delete this paragraph if there's no invite link yet]
 Come and study with us. There's now a Gradify Discord for learners: ask questions, find study partners and tell me what to build next.

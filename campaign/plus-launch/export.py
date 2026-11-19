@@ -1,7 +1,7 @@
 """Builds the send-ready files in export/ from email.html, email.txt and signature.html.
 Run from the repo root: python3 campaign/plus-launch/export.py
 - Drops the authoring comment, and the Discord parts while there's no invite (DISCORD_URL below).
-- Fills the reason line for the Gradify Plus waitlist.
+- Fills the reason line for the Gradify Pro waitlist.
 - Leaves the five values only you can give as {{...}}: OFFER_ENDS, UNSUBSCRIBE_URL, REGISTERED_IN, COMPANY_NUMBER,
   REGISTERED_OFFICE. Fill them here (FILL) and run again, or in the sending service.
 - Writes an .eml for test sends: open it in Apple Mail, then Message > Send Again."""
@@ -12,10 +12,10 @@ from email.utils import formatdate, make_msgid
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "export")
 DISCORD_URL = ""  # e.g. "https://discord.gg/xxxx"; empty drops the Discord parts
-WHY = ("You're getting this because you asked to be told when Gradify Plus opened. It's the only email you'll get "
+WHY = ("You're getting this because you asked to be told when Gradify Pro opened. It's the only email you'll get "
        "from that list, and your address will be deleted from it now that it's been sent.")
 FILL = {}  # e.g. {"OFFER_ENDS": "Thursday 19 November at 6pm (UK time)", "COMPANY_NUMBER": "12345678"}
-SUBJECT = "Gradify Plus is open: £5 for your first month, for 48 hours"
+SUBJECT = "Gradify Pro is open: £5 for your first month, for 48 hours"
 
 def fill(s):
     s = s.replace("{{WHY_YOU_GET_THIS}}", WHY)

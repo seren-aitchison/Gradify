@@ -1,27 +1,29 @@
 # Gradify billing: owner runbook
 
+> **Plan names and ids.** Learners see **Gradify Pro** (id `plus`) and **Gradify Ultra** (id `pro`). The ids in the code, the database, Stripe price settings and the stored waitlist list names (`Gradify Plus`, `Gradify Pro`) are unchanged.
+
 Three plans (17 November 2026), GBP, VAT included:
 
 | Plan | Price | What it is |
 |---|---|---|
 | Free | £0 | Learn with Gradify: flashcards, mind maps, every course, basic revision, unit quizzes and practice, basic progress, manual planning, on one active study device |
-| Gradify Plus | £10 a month | Gradify organises, optimises and manages your learning: Gradify Intelligence, exam preparation, calendar sync and reminders, every device |
-| Gradify Pro | £15 a month | Everything in Plus, and Gradify AI. Coming soon: on sale once Gradify AI is switched on |
+| Gradify Pro | £10 a month | Gradify organises, optimises and manages your learning: Gradify Intelligence, exam preparation, calendar sync and reminders, every device |
+| Gradify Ultra | £15 a month | Everything in Pro, and Gradify AI. Coming soon: on sale once Gradify AI is switched on |
 
-Stripe takes the payments; Supabase records each learner's plan (`subscriptions.plan`, `plan_of()`). The original Pro
+Stripe takes the payments; Supabase records each learner's plan (`subscriptions.plan`, `plan_of()`). The original Ultra
 prices (£7.99 a month, £63.99 a year) are still in Stripe for anyone already on them; nobody is (0 subscriptions on
 17 November 2026), so they can be archived.
 
-## Plus: how it's enforced
+## Pro: how it's enforced
 
 | Feature | Where it's enforced | How |
 |---|---|---|
 | Every device | Database (strong) | Free: changes only from the active study device (`may_write()`, restrictive RLS on study tables; the app sends `x-gradify-device`). Reading is never limited. `use_device()` / `switch_device()`, once every 7 days (`billing_settings.device_switch_days`) |
-| Calendar sync | Edge Function (strong) | `calendar-sync` refuses without Plus (`plus_allowed()`) |
-| Reminders when Gradify is closed | Edge Function (strong) | `push-send` skips learners without Plus (`plus_allowed_for()`) |
+| Calendar sync | Edge Function (strong) | `calendar-sync` refuses without Pro (`plus_allowed()`) |
+| Reminders when Gradify is closed | Edge Function (strong) | `push-send` skips learners without Pro (`plus_allowed_for()`) |
 | Gradify Intelligence | App (soft) | Autopilot, Smart Plan, the Intelligence page, card ordering, readiness and suggestion widgets (`kit/data/plan.js`) |
 | Exam preparation | App (soft) | Course Exams and Problems tabs. Course content itself is public |
-| Free allowances | Database for signed-in learners, app otherwise | `kit/data/limits.js`: on Free, 10 lessons in each course, 5 flashcard sets, 5 mind maps and 5 uses of each tool in Tools. Anything already opened stays open. When one runs out, a Liquid Glass banner offers Plus. Signed in: `take_allowance()` counts in `free_usage` and decides the limits (learners can't write the table). Signed out: counted in the browser |
+| Free allowances | Database for signed-in learners, app otherwise | `kit/data/limits.js`: on Free, 10 lessons in each course, 5 flashcard sets, 5 mind maps and 5 uses of each tool in Tools. Anything already opened stays open. When one runs out, a Liquid Glass banner offers Pro. Signed in: `take_allowance()` counts in `free_usage` and decides the limits (learners can't write the table). Signed out: counted in the browser |
 
 Soft means the feature runs in the browser, so someone determined could get round it. That's a commercial limit, not a
 security boundary. Tests: `tests/plans.test.mjs` (database), `tests/billing-*.test.mjs`.
@@ -31,14 +33,14 @@ security boundary. Tests: `tests/plans.test.mjs` (database), `tests/billing-*.te
 Free learners can open 10 lessons in each course they start, 5 flashcard sets in all (a course lesson's cards, a deck in
 the app's Study, counted once each), 5 mind maps in all (each of a lesson's five maps counts) and use each tool in
 Tools 5 times (a lesson opened from the search, a new mind map, a new deck, a conversion). Opening something again never
-counts. The last free one shows a gentle banner; after that the banner offers Plus and the page shows a Plus panel.
+counts. The last free one shows a gentle banner; after that the banner offers Pro and the page shows a Pro panel.
 
-They switch on with `PLUS_ON_SALE`, like the other Plus features, so nobody is asked to buy what isn't on sale. To see
+They switch on with `PLUS_ON_SALE`, like the other Pro features, so nobody is asked to buy what isn't on sale. To see
 them before then, open any page with `?limits=preview` (and `?limits=off` to stop): this browser then behaves as a
 Free learner would after launch. `scripts/check-tools.cjs` checks them in a browser. The counts live in this browser's
 storage when signed out (clearing it resets them); signed in, the server counts them in `public.free_usage`.
 
-## Putting Gradify Plus on sale (go-live checklist)
+## Putting Gradify Pro on sale (go-live checklist)
 
 Nothing is limited for anyone until step 6. Do them in order:
 
@@ -49,16 +51,16 @@ Nothing is limited for anyone until step 6. Do them in order:
 3. **Deploy the functions:** `billing-checkout`, `billing-webhook`, `calendar-sync`, `push-send`.
 4. **Supabase secrets:** `STRIPE_PRICE_PLUS_MONTH` = `price_1UclOUEOmpIuKzUMzo9QxcRh` (£10),
    `STRIPE_PRICE_PRO_MONTH` = `price_1UclOUEOmpIuKzUMxHujazXB` (£15). Keep `STRIPE_PRICE_MONTH` / `STRIPE_PRICE_YEAR`
-   while anyone is on the original Pro prices.
-5. **Stripe portal:** Settings → Billing → Customer portal → Subscriptions → allow switching, with the Gradify Plus and
-   Gradify Pro products and their monthly prices. Then `NODE_USE_ENV_PROXY=1 node scripts/check-stripe.mjs`: every
+   while anyone is on the original Ultra prices.
+5. **Stripe portal:** Settings → Billing → Customer portal → Subscriptions → allow switching, with the Gradify Pro and
+   Gradify Ultra products and their monthly prices. Then `NODE_USE_ENV_PROXY=1 node scripts/check-stripe.mjs`: every
    line ok.
-6. **One real payment** as a tester (`GRADIFY_BILLING_TESTERS`, then `pricing.html?tester`), as below, for Plus.
+6. **One real payment** as a tester (`GRADIFY_BILLING_TESTERS`, then `pricing.html?tester`), as below, for Pro.
 7. **Switch it on, all together:**
    - Supabase secret `GRADIFY_PLUS_ON_SALE` = `on`
    - `update public.billing_settings set plans_enforced = true;`
    - `PLUS_ON_SALE = true` in `kit/data/billing.js` (update the test that checks it in the same commit), and push.
-8. Email the Gradify Plus launch list (`select email from public.waitlist where site = 'Gradify Plus'`), then delete it.
+8. Email the Gradify Pro launch list (`select email from public.waitlist where site = 'Gradify Pro'`), then delete it.
 
 To undo: set `plans_enforced = false` and `GRADIFY_PLUS_ON_SALE` off, and `PLUS_ON_SALE = false`. Everything opens again
 at once; subscriptions are untouched.
@@ -67,21 +69,21 @@ at once; subscriptions are untouched.
 
 | Piece | Where | What it does |
 |---|---|---|
-| Pricing page | `pricing.html` | Free and Pro, monthly/yearly switch, the annual saving, allowances, billing FAQ |
+| Pricing page | `pricing.html` | Free and Ultra, monthly/yearly switch, the annual saving, allowances, billing FAQ |
 | Account page | `kit/app/main.js` (Your plan) | The learner's plan, what to do if a payment failed, Manage billing, AI used this month |
 | Browser helpers | `kit/data/billing.js` | Prices, allowances, `planOf()` (mirrors `is_pro()`), checkout and portal calls |
-| `billing-checkout` | Edge Function | Signed-in learner → Stripe Checkout. Refuses unless Pro is on sale (or the learner is a tester) |
+| `billing-checkout` | Edge Function | Signed-in learner → Stripe Checkout. Refuses unless Ultra is on sale (or the learner is a tester) |
 | `billing-portal` | Edge Function | Signed-in learner → Stripe's portal (card, plan switch, invoices, cancel) |
 | `billing-webhook` | Edge Function, no JWT | Stripe → verified signature → applied once → `public.subscriptions` |
 | Schema | `supabase/migrations/20261110120000_…`, `20261110180000_…` | `subscriptions`, `billing_events`, `is_pro()`, AI allowances (monthly on both plans) |
 | Check | `scripts/check-stripe.mjs` | Read-only: Stripe product, prices, webhook, portal and Supabase secrets all match the site |
 
 Only the webhook (and checkout, to link a learner to their Stripe customer) can write `subscriptions`. Learners can
-read their own row and nothing else (tested live: a learner trying to make themselves Pro gets 403).
+read their own row and nothing else (tested live: a learner trying to make themselves Ultra gets 403).
 
 ## What is set up (live mode, 10 November 2026)
 
-- Product **Gradify Pro**, prices `gradify_pro_month` (£7.99 every month) and `gradify_pro_year` (£63.99 every year),
+- Product **Gradify Ultra**, prices `gradify_pro_month` (£7.99 every month) and `gradify_pro_year` (£63.99 every year),
   both VAT-inclusive.
 - Customer portal (default): card updates, invoices, monthly ↔ yearly switching with proration, cancel at period end.
 - Webhook to `https://ezlohntrnassgsbofcfc.supabase.co/functions/v1/billing-webhook` for
@@ -98,7 +100,7 @@ NODE_USE_ENV_PROXY=1 node scripts/check-stripe.mjs --write
 
 ## Lifecycle: what happens when
 
-| Event | Stripe sends | Row becomes | Pro? |
+| Event | Stripe sends | Row becomes | Ultra? |
 |---|---|---|---|
 | Checkout paid | `checkout.session.completed`, `customer.subscription.created` | `active`, period set | Yes |
 | Renewal paid | `customer.subscription.updated` | new period | Yes |
@@ -116,26 +118,26 @@ emails to the customer are set in the Stripe dashboard (Settings → Billing →
 
 ## The first real payment: a deliberate, documented test
 
-Do this once, before putting Pro on sale. It charges a real card £7.99; refund it afterwards if you like.
+Do this once, before putting Ultra on sale. It charges a real card £7.99; refund it afterwards if you like.
 
 1. Run `scripts/check-stripe.mjs`: every line must say ok.
 2. In Supabase → Edge Functions → Secrets, add `GRADIFY_BILLING_TESTERS` = the email of the Gradify account you'll
    test with. Only that account can check out; everyone else still sees "Opens when Gradify AI launches".
 3. Signed in as that account, open `https://getgradify.com/pricing.html?tester`, choose **Monthly** and pay with your
    own card.
-4. Expect: back on the pricing page with "Welcome to Gradify Pro" within about 30 seconds; the Account page shows
-   *Your plan: Gradify Pro, billed monthly · Renews on …*.
+4. Expect: back on the pricing page with "Welcome to Gradify Ultra" within about 30 seconds; the Account page shows
+   *Your plan: Gradify Ultra, billed monthly · Renews on …*.
 5. In Stripe → Developers → Webhooks → the endpoint: the deliveries for this checkout show **200**.
 6. Account → **Manage billing** opens Stripe's portal. Cancel there. Expect the Account page to say *Cancelled. You keep
-   Pro until …* and Pro to stay on.
+   Ultra until …* and Ultra to stay on.
 7. Optional: refund the payment in Stripe (Payments → the charge → Refund). A refund doesn't end the subscription;
    cancelling it immediately in the dashboard does, and the Account page then shows Free.
 8. Remove `GRADIFY_BILLING_TESTERS` (or leave just your own email) and write the outcome under a dated heading in
    `docs/BACKEND-LOG.md`: date, interval, amount, webhook result, what the Account page showed at each step.
 
-## Putting Gradify Pro on sale
+## Putting Gradify Ultra on sale
 
-Only once Gradify AI is switched on (below), because Pro adds nothing else to Plus:
+Only once Gradify AI is switched on (below), because Ultra adds nothing else to Pro:
 
 1. Supabase secret `GRADIFY_PRO_ON_SALE` = `on`.
 2. `PRO_ON_SALE = true` in `kit/data/billing.js` (a test reminds you of this rule; update it in the same commit).
@@ -145,12 +147,12 @@ Only once Gradify AI is switched on (below), because Pro adds nothing else to Pl
 The AI functions are deployed with every control in place and refuse every request until the owner switches Gradify AI
 on (or adds testers). Controls, monitoring and the switch-on checklist: `docs/AI.md`. Costs per learner: `docs/AI-COSTS.md`.
 
-**Photo to cards** (Gradify Pro): the Flashcard creator's "Photo of notes" button sends up to 5 photos of notes,
+**Photo to cards** (Gradify Ultra): the Flashcard creator's "Photo of notes" button sends up to 5 photos of notes,
 handwriting included, to `study-pack` as image blocks; Claude writes a pack and the creator turns it into cards
 (`deckOf` in `kit/tools/convert.js`). It counts as a study pack against the AI allowances, under the same controls.
-Until `PRO_ON_SALE`, the button explains it's coming with Pro and sends nothing. Switching it on needs: the updated
+Until `PRO_ON_SALE`, the button explains it's coming with Ultra and sends nothing. Switching it on needs: the updated
 `study-pack` function deployed, `ANTHROPIC_API_KEY` set as a function secret, Gradify AI switched on (`docs/AI.md`),
-then `PRO_ON_SALE` and the Pro price live.
+then `PRO_ON_SALE` and the Ultra price live.
 
 ## Sign-in emails (Resend)
 
@@ -165,15 +167,15 @@ the live checks. Their passwords are not in this repository. Learner A has a Str
 
 ## Launch lists (notify me)
 
-The "Notify me" forms (homepage Pro section, pricing page, coming-soon site cards) add one row to `public.waitlist`:
-email (lower case), the list (`site`: "Gradify Pro" or a site's name) and the time. Visitors can only add rows; nobody
+The "Notify me" forms (homepage Ultra section, pricing page, coming-soon site cards) add one row to `public.waitlist`:
+email (lower case), the list (`site`: "Gradify Ultra" or a site's name) and the time. Visitors can only add rows; nobody
 can read them through the API. privacy.html#launch-lists promises one email per list and deletion after it, or within
 12 months. To keep that promise:
 
 ```sql
--- who to email when Gradify Pro opens (export, send one email, then delete)
-select email from public.waitlist where site = 'Gradify Pro' order by created_at;
-delete from public.waitlist where site = 'Gradify Pro';
+-- who to email when Gradify Ultra opens (export, send one email, then delete)
+select email from public.waitlist where site = 'Gradify Ultra' order by created_at;
+delete from public.waitlist where site = 'Gradify Ultra';
 -- monthly housekeeping: entries older than 12 months
 delete from public.waitlist where created_at < now() - interval '12 months';
 -- a removal request

@@ -10,7 +10,7 @@ signed-in experience on top of Gradify's existing systems, never a second applic
 | Area | What exists | Where |
 |---|---|---|
 | Identity | One Supabase account for every site: email link, Google, password; profile with goal, level, exam date, daily minutes, accessibility settings | `kit/data/store.js`, `kit/data/profile.js`, `profiles` |
-| Subscriptions | Gradify Pro (Stripe live, not on sale), plan on the Account page, Manage billing | `kit/data/billing.js`, `subscriptions`, billing functions |
+| Subscriptions | Gradify Ultra (Stripe live, not on sale), plan on the Account page, Manage billing | `kit/data/billing.js`, `subscriptions`, billing functions |
 | Courses | 24 course folders, thousands of lessons, quizzes, exams, paths, problems; progress synced to the account | `kit/course/`, `kit/courses/`, `course_progress` |
 | Interactives | 10 interactive engines and 11 lab sets, placed inside lessons | `kit/interactive/`, `kit/labs/` |
 | Notes to flashcards | Notes Studio in the browser; decks, card checking against notes, spaced repetition | `kit/notes/`, `kit/learning/srs.js`, `documents`, `packs`, `cards`, `reviews` |
@@ -63,8 +63,8 @@ a month calendar with events, the persistent life-wide Earth, and the Academic D
 
 ## 3. Stages
 
-1. **Website (started).** Homepage that shows the product and the ecosystem, Pro visible in the navigation, hero,
-   a showcase, the Free and Pro comparison and the closing call to action; real product screens; mobile-first.
+1. **Website (started).** Homepage that shows the product and the ecosystem, Ultra visible in the navigation, hero,
+   a showcase, the Free and Ultra comparison and the closing call to action; real product screens; mobile-first.
 2. **LifeOS dashboard.** `app.html` becomes the signed-in LifeOS: Command Centre, My Learning, Calendar, My Progress
    (the Journey content), My Library (decks and packs), Account. Built from what exists; goals and notifications
    need the first migration.
@@ -75,23 +75,23 @@ a month calendar with events, the persistent life-wide Earth, and the Academic D
 
 ## 4. Decisions needed from the owner
 
-1. **What Gradify Pro includes.** Today Pro adds only Gradify AI allowances, and AI is off; everything else is free.
-   The brief describes Pro benefits (more resources, advanced progress tools, specialist tools) that don't exist as
-   Pro-only features. The website says only what's true. Before Pro is promoted harder, decide which non-AI features
-   (if any) become Pro, knowing that moving something free behind Pro takes it away from current learners.
+1. **What Gradify Ultra includes.** Today Ultra adds only Gradify AI allowances, and AI is off; everything else is free.
+   The brief describes Ultra benefits (more resources, advanced progress tools, specialist tools) that don't exist as
+   Ultra-only features. The website says only what's true. Before Ultra is promoted harder, decide which non-AI features
+   (if any) become Ultra, knowing that moving something free behind Ultra takes it away from current learners.
 2. **Brand colour.** The brief mentions an existing blue palette; the live identity is black with the multicolour
    Gradify spectrum (blue to violet, pink, orange, gold). Stage 1 keeps the existing identity.
 3. **Approval for each production change:** commits, pushes (pushing `main` publishes the site) and migrations.
 
 ## 5. Progress (10 November 2026)
 
-- **Pro (released separately, once privacy@getgradify.com is verified):** presented as the forthcoming premium experience (Gradify AI at launch, more LifeOS tools planned and not
+- **Ultra (released separately, once privacy@getgradify.com is verified):** presented as the forthcoming premium experience (Gradify AI at launch, more LifeOS tools planned and not
   listed until real), with a notify-me form on the homepage and pricing page using the existing insert-only
-  `waitlist` table (list "Gradify Pro"). Privacy page: new "Launch lists" section.
+  `waitlist` table (list "Gradify Ultra"). Privacy page: new "Launch lists" section.
 - **One LifeOS app:** one navigation for all 33 app pages (Command Centre, My Learning, Calendar, My Progress,
   Library), drawn by `kit/app/main.js`.
 - **Command Centre:** the most important next step across every course and deck; then the rest across Gradify,
-  courses with progress, exam pace, today's plan, heatmap and a Pro card.
+  courses with progress, exam pace, today's plan, heatmap and a Ultra card.
 - **My Learning:** every started course with progress, pace and continue; flashcards from notes; more courses.
 - **Calendar:** five-week view and "Coming up" (exam date, deadlines from notes, course pace).
 - **My Progress:** activity year and topic mastery, with the Journey (level, quests, challenge, achievements) inside.

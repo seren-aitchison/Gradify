@@ -138,7 +138,7 @@ Prices and token counts come from `docs/AI-COSTS.md` and `public.ai_prices`: pac
 |---|---|---|---|
 | Typical study pack (25k characters) | 10.7p | about 13.2p | +2.5p (+24%) |
 | Review call | n/a | about 8,500 tokens in (instructions, the notes again, the cards), about 1,500 out | |
-| Pro learner, 5 packs a month | 54p | about 66p | +12.5p a month at most |
+| Ultra learner, 5 packs a month | 54p | about 66p | +12.5p a month at most |
 | Free learner, 1 pack a month | 10.7p | about 13.2p | |
 
 These are estimates. Measure them with:

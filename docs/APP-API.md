@@ -35,7 +35,7 @@ Request bodies are documented at the top of each function (`supabase/functions/c
 `supabase/functions/study-pack/index.ts`). Two additions matter to clients:
 
 - **`conversationId`** (a UUID) on `socratic`, `examiner` and `roleplay` turns. Make one per conversation and send it
-  with every turn: the turns then share one use of the learner's tutor allowance (up to 12 turns on Free, 30 on Pro,
+  with every turn: the turns then share one use of the learner's tutor allowance (up to 12 turns on Free, 30 on Ultra,
   within a day). Without it every turn counts as a new conversation.
 - **Saved packs.** Reopen a deck from the learner's `packs` rows (row-level security returns only theirs); never ask
   `study-pack` again for the same deck. Sending exactly the same notes again returns a copy of the saved pack with
@@ -50,7 +50,7 @@ Every successful reply carries the learner's position:
 `cached: true` means the answer came from the response cache (no use was taken). A refusal has an HTTP status and:
 
 ```json
-{ "error": "You've used your 5 free AI tutor conversations this month. They reset on 1 December. Gradify Pro has many more.",
+{ "error": "You've used your 5 free AI tutor conversations this month. They reset on 1 December. Gradify Ultra has many more.",
   "reason": "allowance", "feature": "tutor", "plan": "free", "used": 5, "allowance": 5, "resetsAt": "2026-12-01T00:00:00Z", "upgrade": true }
 ```
 
@@ -58,7 +58,7 @@ Every successful reply carries the learner's position:
 |---|---|---|---|
 | `signed_out` | 401 | no or expired token | refresh the session once, then ask the learner to sign in |
 | `ai_off` | 503 | Gradify AI isn't switched on (or not for this learner yet) | hide or disable AI features |
-| `allowance` | 429 | this feature's monthly allowance is used | show `error`; if `upgrade`, offer Gradify Pro |
+| `allowance` | 429 | this feature's monthly allowance is used | show `error`; if `upgrade`, offer Gradify Ultra |
 | `conversation_long` | 429 | the conversation reached its turn limit | offer to start a new conversation |
 | `fair_use` | 429 | the learner's monthly fair-use limit is reached | show `error` (says when it resets) |
 | `rate` | 429 | too many requests in a minute or an hour | ask the learner to wait a minute |
@@ -68,4 +68,4 @@ Every successful reply carries the learner's position:
 Show `error` as written: it is plain English for learners. To show allowances before a request, call the
 `my_ai_allowance` database function (`POST {SUPABASE_URL}/rest/v1/rpc/my_ai_allowance`, learner's token): one row per
 feature with `feature, plan, used, allowance, period_end, enabled`. Allowances are monthly on both plans; Free resets on
-the 1st of each month, Pro on the monthly anniversary of its billing period.
+the 1st of each month, Ultra on the monthly anniversary of its billing period.

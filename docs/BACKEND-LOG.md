@@ -176,10 +176,10 @@ Everything matches what the site sells.
 |---|---|---|
 | Stripe account | ok | GB, default currency gbp, charges enabled |
 | Mode | ok | LIVE: real payments |
-| Gradify Pro monthly price | ok | price_1Ua3NEEOmpIuKzUMXI11yUK4: GBP 7.99 every 1 month, inclusive of tax, active; product "Gradify Pro" active; site sells 7.99 |
-| Gradify Pro yearly price | ok | price_1Ua3NEEOmpIuKzUM8q1nDCab: GBP 63.99 every 1 year, inclusive of tax, active; product "Gradify Pro" active; site sells 63.99 |
+| Gradify Ultra monthly price | ok | price_1Ua3NEEOmpIuKzUMXI11yUK4: GBP 7.99 every 1 month, inclusive of tax, active; product "Gradify Ultra" active; site sells 7.99 |
+| Gradify Ultra yearly price | ok | price_1Ua3NEEOmpIuKzUM8q1nDCab: GBP 63.99 every 1 year, inclusive of tax, active; product "Gradify Ultra" active; site sells 63.99 |
 | Both prices on the same product | ok | prod_VbFtYIrZfgHAtD |
-| No duplicate Gradify products | ok | prod_VbFtYIrZfgHAtD "Gradify Pro" |
+| No duplicate Gradify products | ok | prod_VbFtYIrZfgHAtD "Gradify Ultra" |
 | Webhook endpoint | ok | we_1Ua3NFEOmpIuKzUM5WTc9Qwp enabled, API 2025-08-27.basil, 1 endpoint(s) for this URL |
 | Webhook events | ok | checkout.session.completed, customer.subscription.created, customer.subscription.updated, customer.subscription.deleted, customer.subscription.paused, customer.subscription.resumed |
 | Billing portal | ok | bpc_1Ua3NFEOmpIuKzUMj2Ai3lNL (default): cancel at_period_end, card updates on, invoices on |
@@ -190,7 +190,7 @@ Everything matches what the site sells.
 | Supabase secret STRIPE_PRICE_YEAR | ok | set |
 | STRIPE_PRICE_MONTH is the live monthly price | ok | compared by SHA-256 |
 | STRIPE_PRICE_YEAR is the live yearly price | ok | compared by SHA-256 |
-| Gradify Pro on sale | ok | GRADIFY_PRO_ON_SALE not set: only GRADIFY_BILLING_TESTERS can check out; testers not set |
+| Gradify Ultra on sale | ok | GRADIFY_PRO_ON_SALE not set: only GRADIFY_BILLING_TESTERS can check out; testers not set |
 | Existing subscriptions | ok | 0 |
 
 Changes made by this check: none.
@@ -347,7 +347,7 @@ Checked live with a test learner: explain, Socratic turn, marking, study pack, A
 403; reading `ai_settings`, `ai_prices`, `ai_feature_models`, `ai_cache`, `ai_testers` or `ai_admins` returns no rows;
 `my_ai_allowance` shows Free 5 / 5 / 1 / 2 with `enabled` false. `ai-usage.html`: signed out and non-owner messages
 correct; the owner view was checked with sample data only (adding a test account as an owner was not done).
-Settings after deploy: AI off, 0 testers, 0 owners; Pro allowances 40 / 25 / 5 / 8; caps Free £1, Pro £5; models:
+Settings after deploy: AI off, 0 testers, 0 owners; Ultra allowances 40 / 25 / 5 / 8; caps Free £1, Ultra £5; models:
 tutor and explain claude-opus-5-5, pack and quiz claude-sonnet-5-5.
 
 Changes made by this check: none.

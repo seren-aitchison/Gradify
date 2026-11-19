@@ -28,7 +28,7 @@ This is a plan, not an implementation. Apart from workstream 14 (the allowlist d
 1. **Corrected: privacy of the repository doesn't protect anything deployed.** GitHub Pages serves the published files to everyone, whatever the repository's visibility. Premium content must be kept out of the published site altogether, not just out of a public repository (§1A).
 2. **New finding: internal documents are published.** The deploy publishes `docs/`, `scripts/` and `supabase/` to getgradify.com: business plans, security posture, audits, the backend log. They need to be excluded from the site (risk R2). **Resolved in 2.1:** the allowlist deploy went live on 6 November 2026, and none of these files is reachable any more (see R2 in §11).
 3. **Corrected: 131 registered interactives, not 132.** There are also ten shared practice tools outside the registries (NEWS2, drug calculations, clinical scenarios, legal reasoning, maths grapher and others) that the simulation strategy must include.
-4. **Corrected: some Pro benefits work today without accounts.** Adaptive revision, mastery and Revisit already work on a single device (§5).
+4. **Corrected: some Ultra benefits work today without accounts.** Adaptive revision, mastery and Revisit already work on a single device (§5).
 5. **New risk: selling unreviewed professional content.** Law, nursing and pharmacy content has no expert sign-off yet. Charging for it is a legal and reputational risk, so review becomes a launch gate for those subjects (§5, R14).
 6. **Changed: test accounts.** The SQL-based creator added on 6 November contradicts the requirement to use the official Admin API. It's replaced in the plan by a temporary Edge Function that uses the Admin API (§1C), and will be removed from the tools when that's built.
 7. **Changed: retention** is now set per kind of record, not a blanket six years (§1D).
@@ -83,7 +83,7 @@ This is a plan, not an implementation. Apart from workstream 14 (the allowlist d
 | Server logic and prompts | `supabase/functions/` in the repository | Never | Server only |
 | Internal documents | `docs/` in the repository | Never (after the fix) | The team |
 
-Already-public lessons can't be withdrawn. They could still be made Pro going forward, but copies exist. **Decision:** which existing lessons become Pro. The pragmatic choice is to keep everything published so far free, and make *new* material, deeper resources and AI features the Pro value.
+Already-public lessons can't be withdrawn. They could still be made Ultra going forward, but copies exist. **Decision:** which existing lessons become Ultra. The pragmatic choice is to keep everything published so far free, and make *new* material, deeper resources and AI features the Ultra value.
 
 ### B. Payment provider
 
@@ -169,14 +169,14 @@ Effort is in focused engineering days, including tests and review rounds. Owner 
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | **Production backend and Supabase security** | 10 migrations, 2 functions, RLS, the deployment tooling (rehearsed on real PostgreSQL), the isolation matrix including forged writes | Preflight (needs storage, extensions, schemas, cron, webhooks, publications, grants, auth settings); the schema diff; data-change manifests | The live project and run; the Admin API helper | Decisions D1, D3, D4; the project created | 2–6, 12, 14 | No: it's the critical path | Token too broad; migration damage; auth table misuse | Every runbook step passes live; evidence in `BACKEND-LOG.md`; token revoked | 4–6 | Yes (D3, D4) |
 | 2 | **Accounts, authentication, profiles** | Passwordless sign-in in the app; the shared store across all sites (same origin, so one session works everywhere); profile and set-up; device-to-account sync (simulated) | Onboarding in the app only | Registration and account pages on every site; email settings; profile fields (country, programme, year, theme); custom SMTP | 1 | 3, 7, 9 (sync), 6 | No | Email deliverability; site-to-site inconsistency | A real learner registers, verifies, signs in and out, edits the profile, and sees the same account on every site, live | 6–9 | D5 (SMTP provider) |
-| 3 | **Memberships and entitlements** | — | — | Plans, entitlements, `has_entitlement()`, tier-aware AI limits, institutional tier (schema only) | 1, 2; D6 | 5, 6, 4 (entitlement writes) | No | Client-side bypass; RLS gaps | A free learner can't read Pro content or exceed free AI limits through any request; the isolation matrix is extended; live | 5–7 | D6 |
+| 3 | **Memberships and entitlements** | — | — | Plans, entitlements, `has_entitlement()`, tier-aware AI limits, institutional tier (schema only) | 1, 2; D6 | 5, 6, 4 (entitlement writes) | No | Client-side bypass; RLS gaps | A free learner can't read Ultra content or exceed free AI limits through any request; the isolation matrix is extended; live | 5–7 | D6 |
 | 4 | **Payment provider integration** | — | — | Checkout, webhook, portal, payment history, lifecycle (renewal, dunning, grace, refunds, chargebacks), idempotency | 3; D2; the provider account approved; legal terms drafted (11) | 6 (live checkout) | Partly: code against the provider's sandbox once D2 is settled | Webhook spoofing or replay; lost events; refund policy | In the provider's sandbox: every lifecycle event produces the right entitlement, replays are ignored, unsigned events are rejected; then one real live payment and refund | 8–12 | D2, D7 |
-| 5 | **Free and Pro content separation** | Course engine with permanent lesson IDs; status chips | — | An allowlist-based deploy; the premium content pipeline into `lesson_content`; the locked-content panel; the service worker never caching premium content | D1, D6; 3 | 6 | The deploy allowlist can start now | Premium content leaking into Pages or caches; breaking offline mode | A premium lesson is unreachable signed out, as a free learner, by direct URL or from the cache; free lessons are unaffected | 5–8 | D1, D6 |
+| 5 | **Free and Ultra content separation** | Course engine with permanent lesson IDs; status chips | — | An allowlist-based deploy; the premium content pipeline into `lesson_content`; the locked-content panel; the service worker never caching premium content | D1, D6; 3 | 6 | The deploy allowlist can start now | Premium content leaking into Pages or caches; breaking offline mode | A premium lesson is unreachable signed out, as a free learner, by direct URL or from the cache; free lessons are unaffected | 5–8 | D1, D6 |
 | 6 | **Plans, pricing, checkout, conversion** | Honest status badges; privacy page | — | `plans.html`; the shared price module and table; homepage calls to action; upgrade routes; account billing page | 3, 4, 5; D7, D8; 9 (both themes) | Commercial launch | Design and copy can start now (unpublished) | Misleading claims; prices differing between pages | Every claim is live for that learner; one price source; tested in both themes, on desktop and mobile | 5–7 | D7, D8 |
 | 7 | **International country and curriculum architecture** | Courses, schools, modules, lessons; paths; framework mappings | UK-only pathways | The curriculum graph; country suggestion and confirmation; routing | 2 (profile); D9, D10 | 8, regional pricing display | The model and research can start now; tables wait for 1 | A rigid hierarchy; mixing up the three countries | UK nations' systems modelled and routed; country change doesn't touch billing | 6–9 | D9, D10 |
-| 8 | **University years and course expansion** | 9 courses (Physics 1,308 lessons, Law 480 and Nursing 497 complete; others partial); University Year 1 paths | Partly written courses | Year 2+ and school-year pathways; non-UK variants | 7 (structure); experts; D11 | Pro value; international claims | Writing can continue now in the existing course format; mapping to years waits for 7 | Placeholders; unreviewed content sold | Each year published only when written to the standard and reviewed | Long-running (§7) | D11 |
+| 8 | **University years and course expansion** | 9 courses (Physics 1,308 lessons, Law 480 and Nursing 497 complete; others partial); University Year 1 paths | Partly written courses | Year 2+ and school-year pathways; non-UK variants | 7 (structure); experts; D11 | Ultra value; international claims | Writing can continue now in the existing course format; mapping to years waits for 7 | Placeholders; unreviewed content sold | Each year published only when written to the standard and reviewed | Long-running (§7) | D11 |
 | 9 | **Dark/light theme system** | Dark design; set-up settings already applied site-wide | — | Colour variables everywhere (about 1,350 in CSS, 360 in canvas code); light palette; no flash of the wrong theme; first-visit prompt; account sync | Nothing (sync waits for 2) | 6, 10 (theme support) | **Yes, can start now** | A light theme that's an inverted afterthought; broken contrast | Both themes pass the contrast and focus checks on every page; no flash of the wrong theme; the preference syncs | 6–10 | D12 (light palette sign-off) |
-| 10 | **Simulations and visualisation** | 161 registered interactives (17 Physics and 13 Maths labs added 7 Nov 2026; audit and plan in [INTERACTIVE-ROADMAP.md](INTERACTIVE-ROADMAP.md)) + 10 shared tools + 3D anatomy; science values pinned in tests | Metadata (kind, note, lessons) | Learning outcomes; QA and accuracy records; Physics; theme-aware colours; accessibility | 9's colour variables (for theming); experts for accuracy | Pro claim "understand visually" | The audit can start now | Decorative rather than educational; inaccuracy | Each has an outcome, an expert accuracy sign-off, both themes, keyboard use, mobile, and a performance budget | Audit 2; then per simulation | — |
+| 10 | **Simulations and visualisation** | 161 registered interactives (17 Physics and 13 Maths labs added 7 Nov 2026; audit and plan in [INTERACTIVE-ROADMAP.md](INTERACTIVE-ROADMAP.md)) + 10 shared tools + 3D anatomy; science values pinned in tests | Metadata (kind, note, lessons) | Learning outcomes; QA and accuracy records; Physics; theme-aware colours; accessibility | 9's colour variables (for theming); experts for accuracy | Ultra claim "understand visually" | The audit can start now | Decorative rather than educational; inaccuracy | Each has an outcome, an expert accuracy sign-off, both themes, keyboard use, mobile, and a performance budget | Audit 2; then per simulation | — |
 | 11 | **IP, licensing, ownership** | Vendor licences; anatomy attribution; dated sources | Privacy draft | The register; chain-of-title documents; terms; trademark search | D1; a solicitor | 4 (terms), 6 (launch) | **The register can start now** | Unclear ownership of AI-assisted content; reproduced source material | Register complete; every third-party item licensed; assignments signed; documents reviewed | 2–3 prep, then legal | D13, D14 |
 | 12 | **Logging, monitoring, administration** | CI history; deploy gate; `BACKEND-LOG.md`; anonymous usage | AI usage counts | Operational, security and commercial events; request IDs; redaction; retention jobs; alerts; admin role and dashboard | 1; D15 | Launch readiness | The design and redaction helper can start now | Logging personal data; admin access leaks | Every failure is findable by request ID; learners can't read any log; retention jobs run | 5–8 | D15 |
 | 13 | **Shared architecture across sites** | The shared kit; the same origin, so one sign-in; the sites registry; course engine | — | `kit/commerce/`, `kit/core/theme.js`, a shared account menu; the guard tests in §8 | Nothing | Every other workstream | **Yes, can start now** (the guard tests) | Parallel sessions duplicating components | One module per concern, enforced by tests | 2–3 | — |
@@ -215,7 +215,7 @@ Effort is in focused engineering days, including tests and review rounds. Owner 
 
 **Category 4: needs the payment provider.**
 1. Business verification of Gradify Ltd.
-2. Product and price configuration: Pro monthly at £15 in the UK, annual, regional prices.
+2. Product and price configuration: Ultra monthly at £15 in the UK, annual, regional prices.
 3. Sandbox webhooks, then the full lifecycle test suite in sandbox.
 4. Live webhooks; tax settings, confirmed with the provider.
 5. One real live payment, then a refund, as the go-live check.
@@ -235,7 +235,7 @@ Steps 1 and 2 can start as soon as D2 is decided. Verification can take days to 
 
 There are three levels of readiness:
 - **Technically functional** (end of M3): real accounts, sync, AI and entitlements work live.
-- **Commercially launchable** (M7): a UK learner can pay, receive Pro, cancel and be refunded, under reviewed terms, with honest claims.
+- **Commercially launchable** (M7): a UK learner can pay, receive Ultra, cancel and be refunded, under reviewed terms, with honest claims.
 - **Mature international platform** (M8 onwards): several countries' curricula, years and simulations, reviewed.
 
 | Milestone | Deliverables | Prerequisites | Acceptance and tests | Done when | Don't start until done |
@@ -243,16 +243,16 @@ There are three levels of readiness:
 | **M0 Decisions and safe groundwork** | Decisions D1–D6 recorded; the deploy allowlist; the guard tests; the IP register started; the audits | — | The deploy publishes only site files (checked by a test listing the artifact); guard tests in CI | D1–D6 written into `docs/DECISIONS.md` | M1's live run |
 | **M1 Production backend** | The controlled deployment: preflight, verified backups, the 10 migrations, RLS audit, the functions, the Admin API helper, live verification, the site connected | M0; the project; the token | Every runbook check passes live; the isolation matrix including forgery; the live journey per flow | `BACKEND-LOG.md` shows every step passed; token revoked | Any new migration |
 | **M2 Accounts and profiles** | Registration and account pages on every site; profile v2; custom SMTP; theme preference sync (if the theme work has landed) | M1; D5 | Live: register, verify, sign in and out on two devices and three sites; a profile edit appears everywhere | The live check passes | M3 |
-| **M3 Memberships and premium content** | Plans, entitlements, `has_entitlement()`; plan-based AI limits; the premium pipeline and locked panel; service worker exclusions | M2; D1, D6 | Live: a free learner is denied Pro content and premium AI via the page, direct requests, edited requests, local-storage tampering and the cache; granting Pro manually (admin) unlocks it, revoking it removes it | All denial tests pass live. **This is "technically functional"** | M4's live checkout |
+| **M3 Memberships and premium content** | Plans, entitlements, `has_entitlement()`; plan-based AI limits; the premium pipeline and locked panel; service worker exclusions | M2; D1, D6 | Live: a free learner is denied Ultra content and premium AI via the page, direct requests, edited requests, local-storage tampering and the cache; granting Ultra manually (admin) unlocks it, revoking it removes it | All denial tests pass live. **This is "technically functional"** | M4's live checkout |
 | **M4 Payments and subscription lifecycle** | Checkout, webhook, portal, history, dunning and grace, refunds, chargebacks | M3; D2, D7; provider approved; terms drafted | Sandbox: every lifecycle event; replayed and unsigned events; out-of-order delivery. Live: one real payment and refund | All sandbox tests pass; the live payment and refund are reconciled | M5 publishing |
-| **M5 Commercial website and conversion** | Homepage calls to action; `plans.html`; Free/Pro markers; upgrade routes; account billing page | M4; theme work done; D8 | Every claim checked against live features for a fresh learner; one price source; both themes; accessibility checks | Owner sign-off on the page and copy | M7 |
-| **M6 UK curriculum structure and launch content** | The curriculum graph; UK nations' systems; country suggestion and confirmation; routing; Pro content for the launch subjects reviewed by experts | M2; D9–D11; experts | The routing tests; reviews recorded in the quality records; no placeholders | The launch subjects' Pro content is reviewed | Non-UK countries |
-| **M7 Production verification and UK launch** | Full live verification; legal documents live; logging, alerts and admin minimum; backup and restore drill; launch checklist | M1–M6; D13–D15 | The end-to-end journey from registration to payment, Pro, cancellation and refund, live, on desktop and mobile; incident drill | The owner approves the launch. **This is "commercially launchable"** | — |
+| **M5 Commercial website and conversion** | Homepage calls to action; `plans.html`; Free/Ultra markers; upgrade routes; account billing page | M4; theme work done; D8 | Every claim checked against live features for a fresh learner; one price source; both themes; accessibility checks | Owner sign-off on the page and copy | M7 |
+| **M6 UK curriculum structure and launch content** | The curriculum graph; UK nations' systems; country suggestion and confirmation; routing; Ultra content for the launch subjects reviewed by experts | M2; D9–D11; experts | The routing tests; reviews recorded in the quality records; no placeholders | The launch subjects' Ultra content is reviewed | Non-UK countries |
+| **M7 Production verification and UK launch** | Full live verification; legal documents live; logging, alerts and admin minimum; backup and restore drill; launch checklist | M1–M6; D13–D15 | The end-to-end journey from registration to payment, Ultra, cancellation and refund, live, on desktop and mobile; incident drill | The owner approves the launch. **This is "commercially launchable"** | — |
 | **M8 onwards: international expansion** | The second country (systems, pathways, regional prices); University Years 2+; the simulation programme; institutional tier | M7 | Each country and year is reviewed before it's marked available | Continuous. **This is the "mature international" vision** | — |
 
 ---
 
-## 5. The £15/month Pro proposition
+## 5. The £15/month Ultra proposition
 
 | Proposed benefit | Status today | At launch (M7)? |
 |---|---|---|
@@ -267,7 +267,7 @@ There are three levels of readiness:
 **Can it justify £15 a month?**
 - **For professional learners** (SQE, nursing, pharmacy), yes on value, if the content is expert-reviewed. Unreviewed professional content shouldn't be sold.
 - **For GCSE and A level learners**, it's a premium price: justified only with the AI tutor working well, complete specification-mapped content, and strong interactives.
-- **Recommendation:** launch Pro on the subjects that are both complete and reviewed, list exactly what Pro includes for each, and add subjects as they pass review.
+- **Recommendation:** launch Ultra on the subjects that are both complete and reviewed, list exactly what Ultra includes for each, and add subjects as they pass review.
 
 ---
 
@@ -326,7 +326,7 @@ A simulation is "complete" only when every field passes. The priority is educati
 - Decisions D1–D6: about 1–2 sessions.
 - Provider business verification: days to weeks.
 - Solicitor's drafting and review of the terms, privacy, refund policy and IP assignments: weeks.
-- Expert review of the launch subjects' Pro content: weeks, depending on availability.
+- Expert review of the launch subjects' Ultra content: weeks, depending on availability.
 - **These are likely to be the real limits on the launch date, not engineering.**
 
 ---
@@ -356,7 +356,7 @@ A simulation is "complete" only when every field passes. The priority is educati
 1. **Migrations:** timestamps unique and increasing, and every file listed in `supabase/MIGRATIONS.md`.
 2. **Pricing:** no price literal (such as `£15` or `15.00`) outside `kit/commerce/`.
 3. **Theme:** no theme switching or storage outside `kit/core/theme.js`; no new hard-coded colours in CSS outside the token files, using a ratchet so the count can only fall.
-4. **Entitlements:** no client-side Pro checks; Pro access only through the shared module, which asks the server.
+4. **Entitlements:** no client-side Ultra checks; Ultra access only through the shared module, which asks the server.
 5. **Premium content:** no premium lesson files in the published site (the deploy allowlist test).
 6. **Shared components:** no duplicate account menu or paywall implementations; one module each.
 
@@ -382,8 +382,8 @@ A simulation is "complete" only when every field passes. The priority is educati
 |---|---|---|
 | Countries | UK only, stated honestly; other visitors can use Gradify free and see "UK curricula" | Several countries' systems, with regional pricing |
 | Accounts | Passwordless, on every site; custom SMTP | + Apple sign-in; institution SSO |
-| Membership | Free and Pro (monthly £15, annual); institutional tier in the schema only | Institutional and university tiers |
-| Content | Pro on the subjects that are complete and reviewed, each listed | All subjects, school years, University Years 1 to the final year, country variants |
+| Membership | Free and Ultra (monthly £15, annual); institutional tier in the schema only | Institutional and university tiers |
+| Content | Ultra on the subjects that are complete and reviewed, each listed | All subjects, school years, University Years 1 to the final year, country variants |
 | AI | The tutor live, with the plan's limits stated | Tutor memory, deeper subject-specific reasoning |
 | Simulations | The existing ones, labelled honestly; Physics core started | Every high-value topic simulated and reviewed |
 | Themes | Dark and light | — |
@@ -432,7 +432,7 @@ A simulation is "complete" only when every field passes. The priority is educati
 | R11 | Sign-in emails not delivered | Commercial | High without custom SMTP | High | Custom SMTP before M2 |
 | R12 | Parallel sessions conflicting | Architecture | **High** | Medium | Path ownership; migration reservations; guard tests; branch protection |
 | R13 | Misleading plans claims | Legal, commercial | Medium | High | Every claim tied to live status; owner sign-off (D8) |
-| R14 | Selling unreviewed professional content (law, nursing, pharmacy) | Legal, reputational | **High if launched as-is** | High | Expert review gates Pro for those subjects |
+| R14 | Selling unreviewed professional content (law, nursing, pharmacy) | Legal, reputational | **High if launched as-is** | High | Expert review gates Ultra for those subjects |
 | R15 | Free-tier projects pausing, or missing platform backups | Operations | Depends on plan | High | A paid plan (D4, unverified) |
 | R16 | Light theme breaks contrast or the interactives | UX, accessibility | Medium | Medium | Colour variables; contrast checks in both themes; simulation QA record |
 | R17 | Over-scoping the launch (international at launch) | Commercial | Medium | Medium | UK-first MVP (§9) |
@@ -453,4 +453,4 @@ Each is local and tested in CI, and needs only the owner's go-ahead.
 7. The plans page design and copy, unpublished.
 8. The Part A tool changes: the extended preflight, the schema diff, data-change manifests, the Admin API helper code.
 9. The logging design and redaction helper, tested locally.
-10. Expert review queues for the launch subjects' Pro candidates.
+10. Expert review queues for the launch subjects' Ultra candidates.

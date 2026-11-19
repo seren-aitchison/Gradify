@@ -33,8 +33,8 @@ The search index is built with the content API: `node scripts/build-api.mjs` wri
 | `Question >>>` then indented lines | a multi-line card |
 | `![label](img:…)` | an image (added with the Add image button, or pasted) |
 
-**Photo of notes (Gradify Pro):** up to 5 photos of notes, handwriting included, are read by Gradify AI and become
-cards in the deck, to check against the photo. Coming with Gradify Pro: see `docs/BILLING.md`.
+**Photo of notes (Gradify Ultra):** up to 5 photos of notes, handwriting included, are read by Gradify AI and become
+cards in the deck, to check against the photo. Coming with Gradify Ultra: see `docs/BILLING.md`.
 
 A card's id comes from its own text, so editing other lines never resets its schedule. Select words and press Cloze
 (or Ctrl+Shift+C) to hide them. Suggest cards turns plain lines ("Diffusion: the net movement…", "Enzymes are…") into
@@ -86,7 +86,7 @@ this round:
 | Feature | Where | Code |
 |---|---|---|
 | Explainer videos, Chant podcasts, Audio questions, Story posters, Dictionaries and thesaurus, Key-terms sheets, Downloadable resources | `#/tools/explain`, `podcast`, `audio`, `poster`, `dictionary`, `sheets`, `downloads` | `kit/tools/learn.js`, `voice.js` |
-| Flashcard feed (bonus facts, hacks, boosting), Quizzes: practice, timed, adaptive, question bank (the last three Plus), Key-term games | `#/tools/feed`, `quiz/<mode>`, `games` | `kit/tools/practise.js` |
+| Flashcard feed (bonus facts, hacks, boosting), Quizzes: practice, timed, adaptive, question bank (the last three Pro), Key-term games | `#/tools/feed`, `quiz/<mode>`, `games` | `kit/tools/practise.js` |
 | Notebook, Handwriting to text, YouTube to notes, Projects for XP | `#/tools/notebook`, `handwriting`, `youtube`, `projects` | `notebook.js`, `handwriting.js`, `youtube.js` (+ `supabase/functions/youtube-notes`), `projects.js` |
 | Subject chats, Study groups, Friends' and school leaderboards, Tutors, Student mentors, InternshipGradify | `#/community/<tab>` | `kit/app/community.js`, `supabase/migrations/20261119120000_community_and_more_tools.sql` |
 | Gradify Tree (from real activity), reward milestones | `#/progress` | `kit/app/main.js` (treeData), `kit/game/achievements.js` |
