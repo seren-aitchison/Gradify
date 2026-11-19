@@ -152,8 +152,23 @@ can't reach api.stripe.com). See "Still to verify in Stripe" below.
 | Portal `bpc_1Ua3NFEOmpIuKzUMj2Ai3lNL` (default) | cancel at period end, card update, invoices; switching limited to the Gradify Pro £10 price; login link off |
 | Subscriptions | none yet |
 
-Not checked from here: the Supabase secrets (`STRIPE_PRICE_PLUS_MONTH` must be `price_1UclOUEOmpIuKzUMzo9QxcRh`). Run
-`scripts/check-stripe.mjs` with `SUPABASE_ACCESS_TOKEN` set to compare them.
+Tidy-ups made the same evening (with approval): the original Ultra prices £7.99/month (`price_1Ua3NEEOmpIuKzUMXI11yUK4`)
+and £63.99/year (`price_1Ua3NEEOmpIuKzUM8q1nDCab`) archived, no subscription had ever used them; internal price labels
+now "Gradify Pro monthly (£10)", "Gradify Ultra monthly (£15)" and "Original Ultra … (archived)".
+
+Live Checkout check: one session built exactly as `billing-checkout` builds it (no customer), read back and expired at
+once: subscription, GBP, "Gradify Pro" £10, discount "Gradify Pro: £5 first month" £5, **£5 due today**, renewal note
+shown.
+
+**Still unproven (Supabase, not reachable from the session that did this):** the deployed `billing-checkout` has never
+opened a Checkout on the £10 price (its only live sessions are from 10 November, on the original prices). So check:
+`STRIPE_PRICE_PLUS_MONTH` = `price_1UclOUEOmpIuKzUMzo9QxcRh`, `GRADIFY_PLUS_ON_SALE` = `on`, the migration
+`20261117120000_plus_plan.sql` applied, and `billing_settings.plans_enforced`. `scripts/check-stripe.mjs` with
+`SUPABASE_ACCESS_TOKEN` compares the secrets; one real purchase proves all of it.
+
+**Account settings to fix in the Dashboard (not possible through the API):** the statement descriptor is "DATARESCUE",
+which is what buyers' banks show for the charge; set it to "GRADIFY" (Settings → Business → Public details). Add
+`hello@getgradify.com` as the support email there too, and check the support phone number is one you want on receipts.
 
 ## Stripe sandbox (set up and verified 19 November 2026)
 
