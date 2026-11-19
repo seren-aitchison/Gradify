@@ -1,7 +1,7 @@
 {
  "api": 1,
  "about": "Gradify's quality audit: structural scores for every written lesson (scripts/quality-audit.mjs). Not proof that students learn; see docs/QUALITY-CONSTITUTION.md.",
- "at": "2026-11-18",
+ "at": "2026-11-19",
  "lessons": 9979,
  "reviewed": 0,
  "overall": 78,
@@ -11,7 +11,7 @@
   "clarity": 95,
   "progression": 48,
   "application": 91,
-  "assessment": 87,
+  "assessment": 88,
   "accessibility": 96,
   "engagement": 78,
   "retention": 71
@@ -584,17 +584,17 @@
    "slug": "physics",
    "name": "Physics",
    "lessons": 1308,
-   "overall": 55,
+   "overall": 56,
    "dims": {
-    "accuracy": 19,
-    "completeness": 18,
+    "accuracy": 20,
+    "completeness": 20,
     "clarity": 86,
-    "progression": 21,
+    "progression": 23,
     "application": 85,
     "assessment": 65,
     "accessibility": 84,
     "engagement": 84,
-    "retention": 37
+    "retention": 38
    },
    "serves": [
     {

@@ -1,6 +1,6 @@
 # Gradify quality audit
 
-Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constitution](../QUALITY-CONSTITUTION.md).
+Run 2026-11-19 by `node scripts/quality-audit.mjs`, against the [Quality Constitution](../QUALITY-CONSTITUTION.md).
 
 > **Read this first.** Every score is a structural proxy: it checks that what good teaching needs is present and well
 > formed. It can't tell whether an explanation is right, or whether students learn from it. **9979 of 9979 lessons
@@ -18,7 +18,7 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Clarity | `██████████ 95` | Sentence length, long-sentence share, a clear lead, terms defined. |
 | Progression | `█████░░░░░ 48` | Prerequisites named (or first in its unit) and a stated level. |
 | Application | `█████████░ 91` | Worked examples, common mistakes, and questions above recall level. |
-| Assessment | `█████████░ 87` | Enough questions, more than one type, each explained, no giveaway answer lengths. |
+| Assessment | `█████████░ 88` | Enough questions, more than one type, each explained, no giveaway answer lengths. |
 | Accessibility | `██████████ 96` | Headed sections, digestible paragraphs, lists, a summary to return to. |
 | Engagement | `████████░░ 78` | Variety of ways in: examples, key points, interactives, pitfalls. Supports attention, not clicks. |
 | Retention | `███████░░░ 71` | Flashcards for spaced retrieval, key terms and a summary. |
@@ -75,7 +75,7 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 
 | Course | Lessons | Overall | Accuracy | Completeness | Clarity | Progression | Application | Assessment | Accessibility | Engagement | Retention |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Physics | 1308 | **55** | 19 | 18 | 86 | 21 | 85 | 65 | 84 | 84 | 37 |
+| Physics | 1308 | **56** | 20 | 20 | 86 | 23 | 85 | 65 | 84 | 84 | 38 |
 | Law | 480 | **66** | 54 | 97 | 94 | 3 | 37 | 68 | 100 | 55 | 88 |
 | Pharmacy | 318 | **72** | 51 | 96 | 99 | 8 | 68 | 81 | 100 | 65 | 77 |
 | Nursing | 497 | **74** | 49 | 98 | 98 | 47 | 50 | 89 | 100 | 56 | 75 |
@@ -115,20 +115,20 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Fix | Lessons |
 |---|---|
 | Add flashcards for spaced retrieval (Q:) | 9,692 |
-| Name what this builds on (PRE:) | 5,851 |
-| State the level (LV:) | 3,484 |
-| Say how strong the evidence is (EV:) | 3,200 |
-| Even out answer lengths | 3,080 |
-| Teach every objective | 2,039 |
-| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,627 |
-| Add check questions | 1,624 |
+| Name what this builds on (PRE:) | 5,831 |
+| State the level (LV:) | 3,463 |
+| Say how strong the evidence is (EV:) | 3,179 |
+| Even out answer lengths | 3,081 |
+| Teach every objective | 2,043 |
+| Add questions that ask learners to apply it, not just recall it (M2/M3, SA:, NUM:) | 1,606 |
+| Add check questions | 1,603 |
 | Add a worked example (X:) | 1,265 |
-| Cite at least two sources (SRC:) | 1,135 |
-| Date every source, so it can be rechecked | 1,060 |
-| State at least two learning objectives (O:) | 1,060 |
-| Define the key terms (T:) | 1,060 |
-| End with a summary (SUM:) | 1,060 |
-| Define terms where they're first used (T:) | 1,060 |
+| Cite at least two sources (SRC:) | 1,114 |
+| Date every source, so it can be rechecked | 1,039 |
+| State at least two learning objectives (O:) | 1,039 |
+| Define the key terms (T:) | 1,039 |
+| End with a summary (SUM:) | 1,039 |
+| Define terms where they're first used (T:) | 1,039 |
 
 ## The 30 lessons to improve first
 
@@ -161,9 +161,9 @@ Run 2026-11-18 by `node scripts/quality-audit.mjs`, against the [Quality Constit
 | Physics | Climate sensitivity | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Biomechanics | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Neural signal processing | 42 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
-| Physics | Musical instruments and acoustics | 43 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Partition functions | 43 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 | Physics | Magnetic dipoles | 43 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
+| Physics | Quantum measurement | 43 | Cite at least two sources (SRC:); Date every source, so it can be rechecked; Say how strong the evidence is (EV:); State at least two learning objectives (O:) |
 
 ## The constitution, article by article
 
