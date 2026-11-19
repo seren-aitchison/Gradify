@@ -137,6 +137,24 @@ redirect without query string, set-up to `#/offer`, Today card, dismiss and retu
 campaign, no horizontal scroll at 390 px). Not tested here: real sign-in, and anything in Stripe (this environment
 can't reach api.stripe.com). See "Still to verify in Stripe" below.
 
+## Stripe live account (read-only check, 19 November 2026, 18:28 UTC)
+
+`node scripts/verify-offer-stripe.mjs` with a restricted live key: every row ok. Nothing was changed.
+
+| What | Live state |
+| --- | --- |
+| Account `acct_1Ua36wEOmpIuKzUM` (GB) | charges and payouts enabled, nothing due |
+| Gradify Pro `prod_Ve3V6tEjlR4hfV` (renamed from Gradify Plus) | `price_1UclOUEOmpIuKzUMzo9QxcRh`, £10/month GBP, VAT inclusive, lookup `gradify_plus_month` |
+| Gradify Ultra `prod_VbFtYIrZfgHAtD` | `price_1UclOUEOmpIuKzUMxHujazXB`, £15/month, lookup `gradify_pro_month_1500`; the original £7.99/month and £63.99/year prices are still active, with no subscriptions ever on them |
+| `GRADIFY48` `promo_1UdWwnEOmpIuKzUMqORXVU9l` | active, first-time customers only, expires 22 Nov 2026 23:59:59 UK, redeemed 0 |
+| Coupon `kwB3RfKh` | £5 off GBP, once, Gradify Pro only, valid until the deadline |
+| Webhook `we_1Ua3NFEOmpIuKzUM5WTc9Qwp` | enabled, API 2025-08-27.basil, to `billing-webhook`, with the six events the function handles |
+| Portal `bpc_1Ua3NFEOmpIuKzUMj2Ai3lNL` (default) | cancel at period end, card update, invoices; switching limited to the Gradify Pro £10 price; login link off |
+| Subscriptions | none yet |
+
+Not checked from here: the Supabase secrets (`STRIPE_PRICE_PLUS_MONTH` must be `price_1UclOUEOmpIuKzUMzo9QxcRh`). Run
+`scripts/check-stripe.mjs` with `SUPABASE_ACCESS_TOKEN` set to compare them.
+
 ## Stripe sandbox (set up and verified 19 November 2026)
 
 The sandbox (`acct_1Ua37LCs0RXrefV0`, test mode) was empty, which is why test checkouts got stuck. Created:
