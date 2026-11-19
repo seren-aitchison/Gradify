@@ -183,3 +183,21 @@ test("each topic's quest steps have their own reward keys, even within one chapt
   assert.equal(bonding[0].topic, "Bonding");
   assert.ok(bonding.every((q) => !q.paid && q.key !== structure.key), "Structure's paid step doesn't mark Bonding's");
 });
+
+test("a step earned in one topic stays claimable after moving on to another topic or course", async () => {
+  const { gameState, claim } = await import("../kit/game/engine.js");
+  const { quests } = await import("../kit/game/quests.js");
+  const day = new Date(), at = (h) => { const d = new Date(day); d.setHours(h, 0, 0, 0); return +d; }, now = at(12);
+  const chem = { slug: "chemistry", site: "SciGradify", name: "Chemistry", units: [{ id: "u01", n: 1, title: "Atoms", lessons: [{ id: "u01-01", module: "Structure" }, { id: "u01-02", module: "Bonding" }] }], S: { done: { "u01-01": at(9) }, log: [], attempts: [] } };
+  const bio = { slug: "biology", site: "SciGradify", name: "Biology", units: [{ id: "u01", n: 1, title: "Cells", lessons: [{ id: "u01-01", module: "Organelles" }] }], S: { done: {}, log: [], attempts: [] } };
+  // Structure's Understand is earned at 9; then the learner answers in Bonding (10) and in Biology (11), unclaimed
+  chem.S.attempts.push({ id: "c", lesson: "u01-02", question: { id: "b1", type: "sba" }, score: 1, correct: true, attempt: 1, at: new Date(at(10)).toISOString() });
+  bio.S.attempts.push({ id: "d", lesson: "u01-01", question: { id: "o1", type: "sba" }, score: 1, correct: true, attempt: 1, at: new Date(at(11)).toISOString() });
+  const qs = quests(gameState([chem, bio], {}, { now })).filter((q) => q.kind === "topic");
+  assert.equal(qs.find((q) => !q.earlier).topic, "Organelles", "today's topic is the latest one");
+  const left = qs.find((q) => q.earlier && q.topic === "Structure" && q.id === "topic-understand");
+  assert.ok(left?.done && !left.paid, "Structure's earned step is still there to claim");
+  assert.ok(!qs.some((q) => q.earlier && !q.done), "earlier topics only list what's already earned");
+  const after = quests(gameState([chem, bio], claim({}, left, now), { now })).filter((q) => q.kind === "topic");
+  assert.ok(!after.some((q) => q.earlier && q.topic === "Structure"), "once claimed, it leaves the list");
+});

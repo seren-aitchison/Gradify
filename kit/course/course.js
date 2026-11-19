@@ -1002,8 +1002,8 @@ export function mountCourse(root, cfg) {
               : `<p class="co-empty">Answer the check questions in your lessons and Gradify works out, topic by topic, what you know and what needs another look.</p>`}</section>
         </div>
         <div class="cx-col">
-          ${(() => { const tq = missions().filter((q) => q.kind === "topic"); if (!tq.length) return ""; const q0 = tq[0].quest, got = tq.filter((q) => q.done).length;
-            return `<section class="cx-panel cx-tquest"><div class="cx-sech"><h3>${ic("flag")} Today's topic quest</h3><span class="cx-tqxp">${got} / ${tq.length} · +${q0.xp} XP</span></div><p class="cx-tqname"><b>${esc(q0.topic)}</b> Understand it, remember it, apply it: each step pays only for learning.</p>${missionsHtml("topic", true)}</section>`; })()}
+          ${(() => { const tq = missions().filter((q) => q.kind === "topic"); if (!tq.length) return ""; const cur = tq.filter((q) => !q.earlier), q0 = tq[0].quest, got = cur.filter((q) => q.done).length;
+            return `<section class="cx-panel cx-tquest"><div class="cx-sech"><h3>${ic("flag")} Today's topic quest</h3><span class="cx-tqxp">${got} / ${cur.length} · +${q0.xp} XP</span></div><p class="cx-tqname"><b>${esc(q0.topic)}</b> Understand it, remember it, apply it: each step pays only for learning.</p>${missionsHtml("topic", true)}</section>`; })()}
           <section class="cx-panel"><div class="cx-sech"><h3>${ic("target")} Today's missions</h3><a href="/journey.html">Journey →</a></div>${missionsHtml("daily") || `<p class="co-empty">Missions appear once you've started.</p>`}</section>
           <section class="cx-panel"><div class="cx-sech"><h3>${ic("book")} Your course</h3><a href="#/learn">Syllabus →</a></div>
             <div class="cx-course">${ring(all.coverage, 84, 9)}<div><b>${pc(all.coverage)}</b><small>of the course complete</small></div>

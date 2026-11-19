@@ -58,16 +58,21 @@ export const TOPIC_STEPS = [
   { id: "remember", label: "Remember", xp: 35, of: 10 },
   { id: "apply", label: "Apply", xp: 40, of: 5, mean: 0.8 },
 ];
-export function topicQuest(x, courses) {
-  // the day's topic is the one worked on most recently today (an answer, a card, a lesson finished), so finishing
-  // its last lesson keeps the quest and its unclaimed steps; before anything today, the next open lesson's topic
-  const worked = [
-    ...x.attemptsToday.map((a) => ({ course: a.course, id: a.lesson, t: a.ms || 0 })),
-    ...courses.flatMap((c) => Object.entries(c.S?.done || {}).filter(([, t]) => dayKey(t) === x.day).map(([id, t]) => ({ course: c.slug, id, t }))),
-  ].filter((w) => w.id).sort((a, b) => b.t - a.t)[0];
-  const l = worked || x.open[0]; if (!l) return null;
+// the lessons worked on today (an answer, a card, a lesson finished), most recent first
+const workedToday = (x, courses) => [
+  ...x.attemptsToday.map((a) => ({ course: a.course, id: a.lesson, t: a.ms || 0 })),
+  ...courses.flatMap((c) => Object.entries(c.S?.done || {}).filter(([, t]) => dayKey(t) === x.day).map(([id, t]) => ({ course: c.slug, id, t }))),
+].filter((w) => w.id).sort((a, b) => b.t - a.t);
+
+/**
+ * The topic quest for today's topic: the one worked on most recently today, so finishing its last lesson keeps it;
+ * before anything today, the next open lesson's topic. `at` picks a particular lesson's topic instead.
+ */
+export function topicQuest(x, courses, at = null) {
+  const l0 = at || workedToday(x, courses)[0] || x.open[0]; if (!l0) return null;
+  const l = { ...l0 };
   const c = courses.find((y) => y.slug === l.course), u = (c?.units || []).find((y) => y.lessons.some((z) => z.id === l.id)); if (!u) return null;
-  Object.assign(l, { module: u.lessons.find((z) => z.id === l.id).module });
+  l.module = u.lessons.find((z) => z.id === l.id).module;
   const lessons = u.lessons.filter((z) => (z.module || null) === (l.module || null)), ids = new Set(lessons.map((z) => z.id));
   const topic = l.module || u.title, today = x.attemptsToday.filter((a) => a.course === c.slug && ids.has(a.lesson));
   // distinct cards and questions, first tries only: repeating one question, or trying options until right, fills nothing
@@ -95,9 +100,20 @@ export function quests(state, opts = {}) {
   const wk = dayKey(x.ws);
   for (const id of ["days", "xp", "turnaround", "module", "mock"]) { if (out.filter((q) => q.kind === "weekly").length >= 3) break; mk("weekly", wk, id, WEEKLY[id](x)); }
   // the topic quest's three steps, keyed by day, course, chapter, topic and step (two topics in one chapter never
-  // share a reward)
-  const tq = topicQuest(x, state.courses || []);
-  if (tq) for (const st of tq.steps) mk("topic", `${x.day}:${tq.course}:${tq.unit}:${tq.topic}`, `topic-${st.id}`, { ...st, topic: tq.topic, lesson: { lesson: tq.lesson, course: tq.course }, quest: tq });
+  // share a reward). Steps already earned today in an earlier topic stay listed until they're claimed, so moving on
+  // to another topic or course never loses a reward.
+  const courses = state.courses || [], tq = topicQuest(x, courses);
+  const topicKey = (q) => `${x.day}:${q.course}:${q.unit}:${q.topic}`;
+  if (tq) for (const st of tq.steps) mk("topic", topicKey(tq), `topic-${st.id}`, { ...st, topic: tq.topic, lesson: { lesson: tq.lesson, course: tq.course }, quest: tq });
+  const seen = new Set(tq ? [topicKey(tq)] : []);
+  for (const w of workedToday(x, courses)) {
+    const q = topicQuest(x, courses, w); if (!q || seen.has(topicKey(q))) continue;
+    seen.add(topicKey(q));
+    for (const st of q.steps) {
+      const key = `quest:${topicKey(q)}:topic-${st.id}`;
+      if (st.n >= st.of && !state.game.paid?.[key]) mk("topic", topicKey(q), `topic-${st.id}`, { ...st, title: `${st.title} · ${q.topic}`, earlier: true, topic: q.topic, lesson: { lesson: q.lesson, course: q.course }, quest: q });
+    }
+  }
   return out.map((q) => ({ ...q, paid: !!state.game.paid?.[q.key] }));
 }
 

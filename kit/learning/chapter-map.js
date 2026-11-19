@@ -87,8 +87,9 @@ export function chapterPrereqsFromConcepts(units, concepts) {
   // two chapters whose modules build on each other (fine for modules) become one link at chapter level: the earlier
   // chapter is the foundation
   for (const [a, set] of Object.entries(out)) for (const b of [...set]) if (out[b]?.has(Number(a)) && b > Number(a)) set.delete(b);
-  // a longer loop (1 → 3 → 2 → 1) can appear when modules are collapsed into chapters: break each one at its link from
-  // the latest chapter back to an earlier one, and say which chapters were involved, so no cycle reaches the map
+  // a longer loop (1 → 3 → 2 → 1) can appear when modules are collapsed into chapters: break each one by dropping the
+  // link where a chapter builds on the highest-numbered chapter in the loop (for 1 → 3 → 2 → 1, "1 builds on 3", which
+  // leaves the natural order 3 → 2 → 1), and say which chapters were involved, so no cycle reaches the map
   for (;;) {
     const cycle = findCycle(out); if (!cycle) break;
     let cut = null; for (let i = 0; i < cycle.length - 1; i++) { const a = cycle[i], b = cycle[i + 1]; if (!cut || b > cut[1]) cut = [a, b]; }
