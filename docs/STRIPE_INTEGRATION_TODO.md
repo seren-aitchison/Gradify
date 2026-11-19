@@ -8,7 +8,7 @@ No new files, routes or webhooks were added.
 None. Every `sample_only` value already has a real value in the code:
 
 **Files containing these values:**
-- [supabase/functions/billing-checkout/index.ts](supabase/functions/billing-checkout/index.ts)
+- [supabase/functions/billing-checkout/index.ts](../supabase/functions/billing-checkout/index.ts)
 
 | Field | Current value | Notes |
 |-------|---------------|-------|
@@ -22,7 +22,7 @@ None. Every `sample_only` value already has a real value in the code:
 These come from Checkout Studio.
 
 **Files containing these parameters:**
-- [supabase/functions/billing-checkout/index.ts](supabase/functions/billing-checkout/index.ts)
+- [supabase/functions/billing-checkout/index.ts](../supabase/functions/billing-checkout/index.ts)
 
 | Parameter | Value |
 |-----------|-------|

@@ -137,6 +137,27 @@ redirect without query string, set-up to `#/offer`, Today card, dismiss and retu
 campaign, no horizontal scroll at 390 px). Not tested here: real sign-in, and anything in Stripe (this environment
 can't reach api.stripe.com). See "Still to verify in Stripe" below.
 
+## Stripe sandbox (set up and verified 19 November 2026)
+
+The sandbox (`acct_1Ua37LCs0RXrefV0`, test mode) was empty, which is why test checkouts got stuck. Created:
+
+| What | ID |
+| --- | --- |
+| Product "Gradify Pro", £10/month GBP, VAT inclusive, lookup `gradify_plus_month` | `prod_VetNz4jT7XKUm6`, `price_1UdZaOCs0RXrefV0Wag7rZWa` |
+| Product "Gradify Ultra", £15/month GBP, VAT inclusive, lookup `gradify_pro_month_1500` | `prod_VetNi3GIMoeGBd`, `price_1UdZaPCs0RXrefV0TVvt4xlq` |
+| Coupon: £5 off, once, Gradify Pro only, redeem by 22 Nov 2026 23:59:59 UK | `J2DXOi7E` |
+| Promotion code `GRADIFY48`: first-time customers, same expiry | `promo_1UdZaXCs0RXrefV0inWklV5s` |
+| Billing portal (default): cancel at period end, card update, invoices, no plan switching | `bpc_1UdZcpCs0RXrefV0QX4fPRNw` |
+
+`node scripts/verify-offer-stripe.mjs --simulate` against it: every check ok. A new customer's Checkout is £5 due, the
+first invoice is £5 paid, the preview and the actual renewal 32 days later (test clock) are £10 with no discount, the
+discount is gone from the subscription, a customer who has paid is refused the code, and the fallback Checkout is £10.
+Checkout Sessions with the final parameters (Checkout Studio settings and the renewal note) are accepted.
+
+Not connected in the sandbox: a webhook. The production `billing-webhook` checks signatures with the live webhook secret
+and writes to the production database, so sandbox events must not go there. Testing the whole chain in test mode needs
+a staging Supabase project with test-mode secrets.
+
 ## Still to verify in Stripe (before sending)
 
 `scripts/verify-offer-stripe.mjs` checks all of this. Set the key in your own terminal (never in chat or a file in
