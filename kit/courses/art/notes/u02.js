@@ -42,6 +42,16 @@ M2#art-u02-01-q2@2: A student has only highly finished drawings copied from phot
 TF1#art-u02-01-q3@1: In the DfE subject content, students are expected to use drawing for different needs and purposes. | true | The subject content names drawing for different needs and purposes as a required skill.
 M3#art-u02-01-q4@3: Which is the most accurate evaluation of Betty Edwards's approach? | Her perceptual exercises are useful, though her right-brain explanation is not supported by neuroscience | Her explanation is proven and her exercises are useless | Drawing is innate, so the exercises cannot help | Both her method and explanation are entirely unsupported | The exercises (edges, spaces, relationships) help many learners; the hemispheric explanation is an outdated simplification.
 SA2#art-u02-01-q5@1,3: Explain three different purposes of drawing and give an example of each from art or design. | Observation and recording: Ruskin's studies, or sketchbook drawings of a place. Thinking and invention: Leonardo's notebooks working out machines and anatomy. Planning and communication: architects' sketches, storyboards or design development drawings. Expression: Rembrandt's ink sketches or a finished large drawing. | Names three purposes ; Gives a valid example for each ; Explains what each drawing does ; Links to process or assessment ; Accurate vocabulary
+Q: What did John Ruskin argue about drawing in The Elements of Drawing (1857)? | That drawing from life teaches you to see.
+Q: How do Leonardo's notebooks show drawing as thinking and invention? | They mix anatomy, machines and compositions, working out ideas on paper.
+Q: Which kinds of drawing serve communication? | Technical drawing, storyboards and diagrams that explain an idea to others.
+Q: Besides AO3, which assessment objectives can drawing support? | AO1, through studies of sources, and AO2, through design development drawings.
+Q: Why can a sketchbook of only polished drawings be a weakness? | It can hide the process; quick, honest drawings that show thinking are valued.
+Q: Why is it a mistake to think drawing must be realistic to count? | Diagrams, gestural sketches, maps, rubbings and annotated thumbnails are all drawing and often show thinking better than a polished copy.
+Q: What is observational drawing? | Drawing made by looking directly at a subject, also called drawing from life.
+Q: What is annotation in a sketchbook? | Written notes alongside drawings and studies that explain observations, intentions and decisions.
+Q: What did Betty Edwards argue about observational drawing? | That it is a learnable skill of perception: seeing edges, spaces, relationships, light and shadow.
+Q: Is Betty Edwards's "right brain" explanation of drawing supported by neuroscience? | No; current neuroscience shows both hemispheres working together, though structured practice does improve drawing.
 
 ## Drawing materials: graphite, charcoal, ink and pastel
 LV: Introductory · Foundation
@@ -80,6 +90,16 @@ TF1#art-u02-02-q3@1: Oil pastels resist water, unlike soft pastels. | true | Oil
 MS2#art-u02-02-q4@2: Which choices suit a detailed botanical study? | Smooth hot-pressed paper ; A range of H to B pencils ; A fine pen | Willow charcoal on rough paper ; A large decorator's brush | Precision needs a smooth surface and fine, controllable tools.
 M3#art-u02-02-q5@3: Why would a Renaissance draughtsman draw in black chalk with white highlights on blue paper? | The toned paper acts as the mid-tone, so dark and light can model form quickly | Blue paper was cheaper than white | White paper did not exist then | To prevent the chalk smudging | A mid-tone ground lets the artist add shadow and highlight, modelling form efficiently.
 SA2#art-u02-02-q6@2,3: Compare two drawing media and explain which you would choose for a portrait study and why. | For example, soft graphite gives controlled line and a smooth tonal range, good for a precise likeness; charcoal gives broad, rich darks and fast tone, good for an expressive, lit head. Choice depends on intention: a detailed, intimate likeness suggests graphite on smooth paper; a dramatic chiaroscuro study suggests charcoal on textured paper, lifted with a putty rubber. | Describes properties of two media ; Relates properties to marks or tone ; Makes a choice ; Justifies by intention ; Mentions paper or technique
+Q: What kind of line does an H pencil give? | A light, fine, precise line, because H pencils are hard.
+Q: What range does a typical drawing pencil set cover? | From 2H to 8B.
+Q: What is charcoal made from? | Carbonised wood.
+Q: How is charcoal stopped from smudging? | With a spray fixative, used outdoors or with ventilation.
+Q: What kind of line does a dip pen with a steel nib give? | A line that swells with pressure.
+Q: What is a wash in drawing? | A diluted layer of ink or watercolour used to create areas of tone.
+Q: What is the conservation problem with iron-gall ink? | It browns and can corrode or degrade paper over time.
+Q: What is the difference between soft pastels and oil pastels? | Soft pastels are chalky and blend easily; oil pastels are waxy and resist water.
+Q: Why is using one pencil for everything a mistake? | A single HB cannot give both fine construction lines and deep darks; a range of grades widens the tonal scale.
+Q: Which paper suits pen and fine pencil, and which suits charcoal and pastel? | Smooth hot-pressed paper suits pen and fine pencil; textured cold-pressed or rough paper catches charcoal and pastel.
 
 ## Mark-making
 LV: Introductory · Application
@@ -118,6 +138,16 @@ M2#art-u02-03-q2@2: A drawing of a landscape looks uniform. What is the most eff
 TF2#art-u02-03-q3@2: Marks made with unconventional tools such as twigs or card can be valid evidence of experimenting with media. | true | Experimenting with tools and processes is part of AO2.
 M3#art-u02-03-q4@3: Why does Frank Auerbach's repeated scraping and redrawing matter to the meaning of his charcoal heads? | The worked surface records time and the struggle of looking, so process becomes part of the content | It hides mistakes so the drawing looks smooth | It makes the portrait more photographic | It was a way to save paper | The layered, erased marks show the history of making and looking, part of what the drawings express.
 SA2#art-u02-03-q5@2,3: Describe how you would explore mark-making at the start of a project, and explain why it is useful. | Create a sheet of experiments with varied tools (pencil, charcoal, stick and ink, eraser, brush, card) and actions (stipple, hatch, drag, scribble, wash), relating each to the subject's surfaces and moods, with annotation. It widens the visual vocabulary, helps choose marks suited to intentions, avoids uniform drawing, and evidences experimentation and recording. | Names varied tools ; Names varied actions or marks ; Relates marks to subject ; Mentions annotation ; Explains usefulness for development or assessment
+Q: What is mark-making? | The range of lines, patterns and textures created with a tool, and the practice of exploring them.
+Q: What are descriptive marks? | Marks that follow form or represent texture, such as short strokes for grass or curving hatching for a round surface.
+Q: What are expressive marks? | Marks that convey energy or feeling, such as a violent scribble or a calm wash.
+Q: What is a gestural mark? | A mark that records the movement of the artist's hand, arm or body.
+Q: Name three unconventional tools for mark-making. | Any three: sticks dipped in ink, twigs, sponges, fingers, erasers or the edge of card.
+Q: How do Van Gogh's 1888 reed-pen drawings of Provence use marks? | A vocabulary of dots, dashes and hatching distinguishes fields, trees and sky, like a written script.
+Q: How does Cy Twombly's work relate to mark-making? | His scribbled, looping marks make mark-making itself the subject.
+Q: Why is using the same mark everywhere a mistake? | Uniform marks fail to separate materials, planes and distances; differentiated marks do.
+Q: How might a student build a mark-making sheet for a project on trees? | Divide a page into squares, try a different tool and action in each, annotate what each suggests and choose marks for a larger drawing.
+Q: Why do experimental mark-making sheets help in a portfolio? | They help find a language suited to the subject and themselves evidence refinement (AO2).
 
 ## Measuring and sighting
 LV: Introductory · Application
@@ -157,6 +187,16 @@ M2#art-u02-04-q2@2: A student's standing figure looks as if it is falling forwar
 SEQ2#art-u02-04-q3@2: Order the steps of drawing a still life in proportion by comparative measuring. | Choose a unit ; Measure the overall height and width in units ; Mark the extremes on the paper ; Locate key points by alignment ; Draw by eye and check | A framework comes first; detail follows once proportions are set.
 M3#art-u02-04-q4@3: Which is the best evaluation of measuring in observational drawing? | It corrects drawing from knowledge, but used constantly it can make work stiff, so artists establish a framework then draw by eye | It is cheating and should be avoided | It guarantees a good drawing on its own | It only works for drawing buildings | Measuring is a tool for accuracy; expression and liveliness depend on drawing by eye within the framework.
 SA2#art-u02-04-q5@1,2: Explain how you would use sighting to draw a chair in proportion. | Hold the pencil at arm's length, elbow locked, one eye closed. Choose a unit (seat height or width), measure overall height and width in units, and mark the extremes. Sight angles of the legs and seat edges relative to vertical and horizontal, check alignments with plumb lines, then draw the shapes and refine by eye, re-checking. | Correct holding method ; Uses a unit and comparisons ; Sights angles ; Checks alignments ; Mentions drawing by eye or re-checking
+Q: What is sighting in drawing? | Measuring proportions or angles by eye, typically with a pencil held at arm's length.
+Q: How should the pencil be oriented when sighting? | Parallel to the picture plane, with the arm locked and one eye closed.
+Q: What is a unit in comparative measuring? | A measured length, such as a head, against which other lengths are compared.
+Q: How is angle sighting done? | Hold the pencil along an edge and transfer that angle to the paper relative to the vertical or horizontal.
+Q: What is sight-size drawing? | A method where the paper sits beside the subject and the drawing is made at the size it appears from a fixed viewpoint.
+Q: What goes wrong if you bend your elbow or move closer between measurements? | The unit changes size, so proportions drift.
+Q: What tendency does measurement correct? | Drawing what we know, such as a large head or round table top, rather than what we see.
+Q: What is the risk of over-measuring a drawing? | It can make the drawing stiff; most artists measure a framework, then draw by eye and check at intervals.
+Q: What viewpoint does measuring assume? | A single fixed viewpoint, as linear perspective does.
+Q: How do horizontal alignments help in observational drawing? | They show which features sit level with each other.
 
 ## Contour and blind contour drawing
 LV: Introductory · Application
@@ -195,6 +235,16 @@ M2#art-u02-05-q2@2: A student draws every eye as the same almond shape. Which ex
 TF2#art-u02-05-q3@2: Cross-contour lines are useful in product design sketches to show surface curvature. | true | Lines across a surface, like a wireframe, show how it curves.
 M3#art-u02-05-q4@3: What is the strongest justification for including blind contour drawings in a sketchbook? | They show close observation and experimentation with line, evidencing recording and refinement even though they are distorted | They are accurate likenesses | Examiners only reward distorted drawings | They take less time than other drawings | Their value is in observation and line quality; annotated, they show the learning process.
 SA2#art-u02-05-q5@1,3: Explain the difference between contour, blind contour and cross-contour drawing, and say what each is for. | Contour drawing follows outer and inner edges slowly with a continuous line to build observation; blind contour does so without looking at the paper, breaking the habit of drawing symbols and producing lively, observed line; cross-contours travel across a form to describe volume and curvature, useful for figures and product design. | Defines contour ; Defines blind contour ; Defines cross-contour ; States purpose of each ; Accurate vocabulary
+Q: What is a contour drawing? | A slow, continuous line following a subject's outer and inner edges, as if the pencil were touching the surface.
+Q: Who described contour drawing in The Natural Way to Draw (1941)? | Kimon Nicolaïdes.
+Q: What is modified contour drawing? | Contour drawing in which you glance at the paper occasionally to check position, but look at the subject most of the time.
+Q: What is continuous line drawing? | Drawing in which the pen never leaves the paper, linking forms in one line.
+Q: What is the aim of contour drawing? | Close observation, not a finished likeness.
+Q: Why is it a mistake to judge blind contour drawings by likeness? | Their purpose is to break the habit of drawing symbols and slow looking down; distortion is expected.
+Q: What symbol habit does contour drawing break? | Drawing a remembered symbol, such as an almond for an eye, instead of the shape actually seen.
+Q: What does Edwards call the skill trained by contour drawing? | Perceiving edges, the first of her five perceptual skills.
+Q: How does contour practice affect line quality? | It makes line more varied and sensitive, as the eye leads the hand.
+Q: In a blind contour drawing of a hand, what are the wrinkles and knuckles drawn as? | Internal contours.
 
 ## Negative space
 LV: Introductory · Application
@@ -232,6 +282,16 @@ M2#art-u02-06-q2@2: A student's drawing of a plant looks cramped against the edg
 TF1#art-u02-06-q3@1: Negative shapes can be used to check the proportions of an observational drawing. | true | Comparing the shapes of the gaps against what you see reveals errors in the positive shapes.
 M3#art-u02-06-q4@3: Why is the gap between the fingers in Michelangelo's Creation of Adam so effective? | The small negative space between the almost-touching hands becomes the focal point and charges the moment with tension | The fingers are drawn in great detail | It is the largest area of the fresco | The gap is painted in gold | The tiny interval separates God and Adam; the negative space itself carries the drama.
 SA2#art-u02-06-q5@2,3: Explain how negative space can be used both as a drawing method and as a compositional tool. | As a method, drawing the shapes between and around objects bypasses symbols and improves proportion (for example drawing the spaces in a chair). As a tool, planned negative space shapes composition, isolates focal points, gives breathing room in design, creates tension (the gap in the Creation of Adam) and can carry double images (figure-ground). | Explains drawing method ; Gives example ; Explains compositional role ; Gives design or art example ; Mentions figure-ground or focus
+Q: What is a negative shape? | An enclosed area of negative space, such as the gap between a chair's legs.
+Q: How do you draw a chair by its negative spaces? | Draw and shade the shapes of wall visible between the legs, rungs and back; the chair appears as the unshaded positive shape.
+Q: What does Edwards call the skill of drawing negative shapes? | Perceiving spaces.
+Q: How does negative space create tension in Michelangelo's Creation of Adam? | The small gap between the near-touching fingers carries the tension.
+Q: How can negative shapes be used to check proportion? | Compare a gap, such as the triangle of wall under an elbow, with what you actually see.
+Q: How can negative space isolate a focal point? | Surrounding an element with deliberate empty space draws attention to it.
+Q: Why is treating the background as leftover a mistake? | Unconsidered negative space often produces awkward shapes and cramped compositions.
+Q: When can figure and ground flip in an image? | When negative and positive shapes are equally strong, as in Rubin's vase or Escher's tessellations.
+Q: Why do designers exploit figure-ground reversal? | To create double meaning, such as hidden images in negative space.
+Q: What does negative space give a graphic design layout? | Breathing room, and it can hide images such as the FedEx arrow.
 
 ## Tonal drawing and chiaroscuro
 LV: Intermediate · Application
@@ -268,6 +328,16 @@ M2#art-u02-07-q2@2: In a tonal drawing, the face looks cut out and pasted on. Wh
 SEQ1#art-u02-07-q3@1: Order the stages of a tonal drawing. | Squint and simplify ; Block in large values ; Refine shapes and edges ; Add darkest darks and highlights | Work from general to particular, saving the extremes for last.
 M3#art-u02-07-q4@3: How does sfumato in Leonardo's Mona Lisa differ from Caravaggio's tenebrism? | Sfumato uses soft, gradual transitions; tenebrism uses abrupt contrasts against deep darkness | Both use hard edges and no gradation | Sfumato is a drawing technique only | Tenebrism avoids dark tones | Both use tone, but one softens transitions to create subtlety, the other heightens contrast for drama.
 SA3#art-u02-07-q5@2,3: Explain how you would make a tonal drawing of a lit object and evaluate the role of edges in your drawing. | Squint to simplify into three or four values; tone the paper or build up from white; block in large masses of light and shadow; refine shapes; add darkest darks and highlights last. Edges: hard edges where forms turn sharply or overlap draw attention; soft or lost edges in shadow integrate forms and create atmosphere; varying edges focuses the eye and avoids a cut-out look. | Describes simplifying values ; Describes block-in to refinement ; Mentions additive or subtractive method ; Explains hard and lost edges ; Evaluates effect on focus or realism
+Q: How does tonal drawing differ from line drawing? | It builds form with masses of light and dark rather than outlines.
+Q: How should values be handled at the start of a tonal drawing? | Squint to simplify the subject into three or four values and block these in, saving the darkest darks and lightest lights for last.
+Q: What is additive drawing? | Building tone up on white paper.
+Q: What do hard edges do in a tonal drawing? | They attract the eye and suggest sharp turns or contrasts.
+Q: What is a lost edge? | An edge that dissolves into a neighbouring area of similar tone.
+Q: Why is controlling edges important in tonal drawing? | Edges control focus and atmosphere, so they matter as much as values.
+Q: What is chiaroscuro? | Modelling forms with strong contrast between light and dark.
+Q: How did Renaissance chiaroscuro drawings and 16th-century chiaroscuro woodcuts create tone? | Drawings used white heightening on tinted paper; woodcuts used several blocks for tones.
+Q: Why is outlining forms and then shading them a mistake in tonal drawing? | A dark line around a lit edge contradicts the light; tone should meet tone instead.
+Q: What did infrared and X-ray studies show about the Mona Lisa? | Leonardo built up very thin translucent layers to achieve sfumato.
 
 ## Hatching and cross-hatching
 LV: Introductory · Application
@@ -307,6 +377,16 @@ M2#art-u02-08-q2@2: A pen drawing of a vase looks flat although the hatching is 
 TF1#art-u02-08-q3@1: Dürer's Melencolia I is an engraving. | true | Melencolia I (1514) is one of Dürer's three "master engravings".
 M3#art-u02-08-q4@3: Why did 17th-century reproductive engravers develop the dot-and-lozenge system? | To translate the continuous tones of paintings into a systematic, even line structure suitable for printing | To make prints faster than woodcuts | To imitate the texture of canvas | Because hatching was banned | Systematic crossing lines with dots allowed smooth, controllable tones in a medium that cannot blend.
 SA2#art-u02-08-q5@2,3: Explain how an artist can use hatching to model a rounded form in pen and ink, and analyse one historic example. | Use contour hatching that curves with the surface; vary spacing and weight from light to dark; add cross-hatched layers in the shadow; leave paper white for highlights. Dürer's engravings use swelling, curving lines that thicken in shadow, modelling drapery and flesh with great tonal range; Rembrandt's etchings combine loose hatching with dense cross-hatched darks for atmosphere. | Explains contour hatching ; Explains variation of density ; Mentions highlights or layers ; Analyses a named example ; Accurate vocabulary
+Q: What is hatching? | Building tone with a series of closely spaced parallel lines.
+Q: What is contour hatching? | Hatching that curves around a form, so it describes volume as well as tone.
+Q: Name three ways to darken tone with hatching. | Closer spacing, thicker lines and more crossing layers.
+Q: What happens when all hatching runs in one direction regardless of form? | It flattens the form; lines that follow the form model it.
+Q: How do you make a five-step hatched tonal scale? | Leave the first square white, then increase line density and add crossing layers step by step until nearly black, checking by squinting.
+Q: How do Dürer's engravings such as Melencolia I (1514) model form? | With swelling, curving hatching that gives an extraordinary tonal range.
+Q: How do Rembrandt's etchings use hatching? | They mix loose hatching with dense cross-hatched darks.
+Q: What is the mistake of hesitant, scratchy hatching in random directions? | It creates a messy surface; confident, evenly spaced strokes give clean tone.
+Q: What is dot-and-lozenge engraving? | Lozenge-shaped cross-hatching with dots in the gaps, developed by 17th-century engravers to reproduce paintings.
+Q: Name two alternatives to straight hatching for building tone with line. | Any two: stippling, scribble hatching, dot-and-lozenge engraving.
 
 ## One-point perspective
 LV: Intermediate · Application
@@ -348,6 +428,16 @@ M2#art-u02-09-q2@2: A student draws a street seen from a bus top deck, but the h
 TF1#art-u02-09-q3@1: In Leonardo's Last Supper, the vanishing point is placed at Christ's head. | true | The orthogonals of the room converge on Christ, making him the geometric and spiritual focus.
 M3#art-u02-09-q4@3: Which is the best evaluation of linear perspective? | It accurately represents what one fixed eye sees, but distorts at the edges and is one convention among several | It is the only correct way to show space | It was invented by photography | It shows how two moving eyes see | Perspective is geometrically consistent for a single fixed viewpoint; other conventions and critiques show it is not the only valid system.
 SA3#art-u02-09-q5@2,3: Explain how one-point perspective was used in a Renaissance work and evaluate how it contributes to the meaning. | In Leonardo's Last Supper (c.1495–98), the ceiling beams and walls are orthogonals converging on a vanishing point at Christ's head; the window frames him. Perspective creates convincing space extending the refectory and directs attention to Christ, so geometry reinforces his centrality and calm amid the apostles' agitation. Some argue the strict perspective works only from one ideal viewpoint high on the wall. | Names a work and its vanishing point ; Explains orthogonals and convergence ; Explains spatial effect ; Links to meaning or focus ; Evaluates limits or viewpoint
+Q: What is linear perspective? | A geometrical system for showing depth on a flat surface, in which receding parallel lines converge on vanishing points.
+Q: What are orthogonals? | Lines receding at right angles to the picture plane, converging on the vanishing point.
+Q: In one-point perspective, what happens to verticals and horizontals facing the viewer? | They stay vertical and horizontal.
+Q: How do you space floor tiles in a one-point perspective room? | Draw a diagonal across the floor grid and draw horizontals where it crosses the orthogonals.
+Q: How did Brunelleschi demonstrate perspective around 1415? | With a painted panel of the Florence Baptistery viewed through a hole and reflected in a mirror.
+Q: What is an early painted example of linear perspective? | Masaccio's Holy Trinity (c.1427, Santa Maria Novella).
+Q: Why is placing the horizon line where the ground ends a mistake? | The horizon is always at the viewer's eye level, whatever is in front of it.
+Q: What is the main limit of one-point perspective? | It assumes a single fixed eye, so objects far to the side become distorted.
+Q: What did Panofsky argue about perspective, and who defended it? | Panofsky (1927) called it a cultural convention; Gombrich defended it as matching the optics of seeing.
+Q: How does perspective help explain the Müller-Lyer illusion? | One explanation is that the fins are read as the corners of a room or building seen in perspective.
 
 ## Two- and three-point perspective
 LV: Intermediate · Application
@@ -387,6 +477,16 @@ M2#art-u02-10-q2@2: A product designer needs a drawing in which all lengths alon
 MATCH2#art-u02-10-q3@1,2: Match each view to the perspective system it most needs. | A corridor seen straight down its length = One-point ; A house seen from its corner = Two-point ; A skyscraper seen from the pavement looking up = Three-point ; An exploded furniture assembly diagram = Isometric | Viewpoint and purpose decide the system.
 M3#art-u02-10-q4@3: A student's two-point box looks stretched and distorted at the corner. What is the most likely cause? | The vanishing points are too close together | The horizon line is at eye level | The verticals are vertical | The box is below the horizon | Close vanishing points force steep angles at the near corner; spacing them widely gives a natural view.
 SA2#art-u02-10-q5@1,3: Explain the difference between one-, two- and three-point perspective and when each would be used. | One-point: viewer faces a surface squarely; receding lines to one VP; used for corridors, roads and formal interiors. Two-point: object seen corner-on; two sets of horizontals to two VPs on the horizon, verticals parallel; used for buildings and products at an angle. Three-point: looking steeply up or down; verticals converge to a third VP; used for dramatic height or bird's-eye views. | Explains one-point and use ; Explains two-point and use ; Explains three-point and use ; Links system to viewpoint ; Accurate vocabulary
+Q: In two-point perspective, what happens to vertical lines? | They stay vertical.
+Q: What subjects suit two-point perspective? | Buildings seen at an angle, product sketches and interiors viewed into a corner.
+Q: How do you start a box in two-point perspective? | Draw a horizon with a vanishing point near each end, a vertical for the nearest corner, and join its top and bottom to both vanishing points.
+Q: Why can you see the top of a box drawn in two-point perspective below the horizon? | Because the box is below eye level.
+Q: When is three-point perspective used? | When looking steeply up or down, to give a strong sense of height or depth in comics, storyboards and architectural drawings.
+Q: What goes wrong if the two vanishing points are too close together? | Corners look over-steep and distorted; keep the points wide, often beyond the paper's edges.
+Q: What views suit one-point perspective? | Formal, central, symmetrical views such as corridors, roads and interiors seen straight on.
+Q: What is isometric drawing? | A drawing with no convergence, its three axes at 120 degrees, so measurements stay true.
+Q: Why do designers and engineers use isometric or axonometric drawing? | Because without convergence, measurements stay true.
+Q: How do two- and three-point perspective relate to one-point perspective? | They follow the same geometry, applied to different orientations of viewer and object.
 
 ## Atmospheric perspective
 LV: Introductory · Application
@@ -425,6 +525,16 @@ M2#art-u02-11-q2@2: In a landscape, the far mountains seem to sit in front of th
 TF2#art-u02-11-q3@2: Atmospheric perspective can create depth even in a picture with no linear perspective. | true | Tonal and colour changes alone signal distance, as in Chinese landscape painting.
 M3#art-u02-11-q4@3: Which statement best describes Turner's use of atmosphere in Rain, Steam and Speed (1844)? | He exaggerates atmospheric effects so that light and vapour dissolve the distance and much of the form | He uses strict linear perspective with sharp detail throughout | He avoids blue entirely | He paints distant forms darker than near ones | Turner pushes aerial effects towards dissolution, making atmosphere and speed the subject.
 SA2#art-u02-11-q5@1,2: Explain how you would use atmospheric perspective to create depth in a drawing in graphite only. | Without colour, rely on tone, contrast, edge and detail: keep the farthest forms light, close in value to the sky, low in contrast and soft-edged; make middle planes a little darker and firmer; keep the foreground darkest, with the strongest contrasts, sharp edges and the most texture. This separates planes and pushes the distance back. | Uses tone for distance ; Uses contrast ; Uses edges ; Uses detail ; Organises planes from far to near
+Q: What is atmospheric perspective? | Showing distance by making far objects paler, bluer, lower in contrast and less detailed; also called aerial perspective.
+Q: Why does more air between viewer and object change its appearance? | Air scatters light, adding scattered light and losing the object's own light.
+Q: What is Rayleigh scattering? | Scattering of light by particles much smaller than its wavelength, which is stronger for blue light.
+Q: What did Leonardo call atmospheric perspective? | The perspective of colour and of disappearance.
+Q: How did Chinese landscape painters show depth before Leonardo? | With mist and diminishing ink tone, as in Northern Song painting by Fan Kuan.
+Q: What should foreground forms look like under atmospheric perspective? | Dark, warm, saturated, high in contrast and detailed.
+Q: In painting three ranges of hills at dusk, how should the farthest hills be painted? | Slightly darker than the sky, very blue-grey, with soft edges.
+Q: Why is making distant forms darker or more detailed a mistake? | It flattens the space; the strongest contrast and detail belong in the foreground or focal point.
+Q: How did Turner treat distance in Rain, Steam and Speed (1844)? | He dissolved distance in light and vapour.
+Q: How do film-makers and concept artists use atmospheric perspective? | They use haze and fog to separate planes and suggest scale.
 
 ## Foreshortening
 LV: Intermediate · Application
@@ -461,6 +571,16 @@ M2#art-u02-12-q2@2: A student draws a reclining figure seen from the feet, but t
 TF2#art-u02-12-q3@2: In a foreshortened cylinder, the ellipses become rounder as it points more directly at the viewer. | true | Seen end-on, the circular cross-section approaches a full circle.
 M3#art-u02-12-q4@3: Why did Mantegna depart from strict perspective in the Lamentation over the Dead Christ? | Strict perspective would make the feet very large and the head tiny, so he reduced the feet to keep the head and its expression readable | He did not understand perspective | Strict perspective was forbidden in religious art | To fit the canvas size | Scholars note his adjustment balanced dramatic viewpoint with legibility and devotional focus.
 SA3#art-u02-12-q5@2,3: Analyse the use of foreshortening in Mantegna's Lamentation over the Dead Christ and evaluate its effect. | The body is seen from the feet, compressed along its length, with the wounded feet and hands nearest the viewer and the head raised on a pillow. The viewer stands at the foot of the slab as a mourner, confronted by the wounds. Mantegna tempers strict perspective, reducing the feet so the face remains legible. The effect is intimate, shocking and devotional. | Describes the viewpoint and compression ; Notes wounds or overlap ; Explains viewer's position ; Notes the adjustment to perspective ; Evaluates emotional or devotional effect
+Q: Why does an arm pointing at you look short? | Its length is compressed in the image while its near end appears larger.
+Q: How is foreshortening related to perspective? | It is perspective applied to a single form: nearer parts larger, further parts smaller and overlapped.
+Q: How should overlap be used when drawing a foreshortened limb? | Nearer forms, such as the hand, overlap further ones, such as the forearm and upper arm.
+Q: Why is drawing the known full length of a limb a mistake? | The mind insists the arm is long, but measuring shows how short it appears when it points at you.
+Q: Which painting by Mantegna shows Christ's body dramatically foreshortened from the feet? | The Lamentation over the Dead Christ (c.1480, Pinacoteca di Brera, Milan).
+Q: Where did Mantegna use di sotto in sù foreshortening? | In the oculus of the Camera degli Sposi, completed 1474, in Mantua.
+Q: How do comics and film posters use foreshortening? | A fist or gun barrel thrust at the viewer gives impact.
+Q: What shape does a circle appear as when seen at an angle? | An ellipse.
+Q: How does an ellipse change as it nears eye level? | It appears narrower the closer it is to eye level.
+Q: Why do artists temper or exaggerate foreshortening? | For drama and legibility, as Mantegna reduced the feet so Christ's head stayed readable.
 
 ## Drawing the figure: proportion and gesture
 LV: Intermediate · Application
@@ -500,6 +620,16 @@ M2#art-u02-13-q2@2: In a drawing of a figure resting on its right leg, which is 
 SEQ2#art-u02-13-q3@2: Order the stages of a timed figure drawing. | Gesture and line of action ; Balance check with a plumb line ; Proportion in head units ; Simple volumes of ribcage, pelvis and limbs ; Refined contour and detail | Work from the whole pose to the parts.
 M3#art-u02-13-q4@3: Which is the best evaluation of using an eight-head canon in life drawing? | It helps check and invent figures, but a model should be drawn as observed, since real proportions vary | It must always be followed exactly | It is useless because no body has proportions | It applies equally to children and adults | Canons are averages or ideals; observation of the particular body is the aim of life drawing.
 SA2#art-u02-13-q5@1,2: Explain how you would approach a five-minute drawing of a standing model. | Begin with a gesture: line of action, tilt of shoulders and hips, the weight-bearing leg. Check balance with a plumb line from the pit of the neck to the supporting foot. Mark the full height to fit the page and check proportion in head units (crotch near halfway). Block in ribcage and pelvis as masses, then limbs, and refine contours if time allows. | Starts with gesture or line of action ; Identifies weight and contrapposto ; Checks balance ; Uses head units ; Works from whole to detail
+Q: What is a gesture drawing? | A quick drawing, often 30 seconds to two minutes, capturing the pose, movement and weight of the whole figure rather than details.
+Q: What is a line of action? | A single imagined curve through the body that sums up the pose; animators use it to keep poses dynamic.
+Q: How can you check a standing figure's balance? | Drop a plumb line from the pit of the neck; it usually lands on or near the supporting foot.
+Q: How should the torso be simplified in figure drawing? | As two masses, the ribcage and pelvis, linked by the flexible spine.
+Q: How tall is an average adult in head units? | About seven and a half heads; the idealised academic figure is eight.
+Q: On an eight-head figure, where do the knees fall? | At about six heads down.
+Q: How many heads tall may a young child be? | About four to five heads.
+Q: Why is starting with a detailed head a common mistake in figure drawing? | You may run out of paper for the feet; establish the whole figure's extent and gesture first.
+Q: Which early Greek sculpture shows contrapposto? | The Kritios Boy (c.480 BCE).
+Q: Why do artists such as Jenny Saville and Lucian Freud matter to the use of canons? | They emphasise drawing the particular body observed, not an ideal, since real bodies vary widely.
 
 ## Anatomy for artists
 LV: Intermediate · Foundation
@@ -541,6 +671,16 @@ M2#art-u02-14-q2@2: A figure drawing shows both ankle bones at the same height. 
 TF2#art-u02-14-q3@2: Muscles become shorter and fuller when they contract. | true | Contraction shortens the muscle belly, which bulges, changing the surface form.
 M3#art-u02-14-q4@3: Which is the best evaluation of anatomical knowledge for a figurative artist? | It helps the artist understand and invent forms, especially from imagination, but over-applied it produces chart-like figures | It replaces the need to look at the model | It is irrelevant to drawing | It is useful only for medical illustration | Anatomy supports understanding; observation keeps drawings true to the particular body.
 SA2#art-u02-14-q5@2,3: Explain how knowledge of anatomy can help you draw a figure raising one arm. | Raising the arm rotates the scapula upward and outward; the clavicle lifts; the deltoid contracts and bulges at the shoulder while the pectoral stretches; the ribcage may tilt and the torso on that side lengthens. Knowing this helps place the shoulder correctly, show the stretch and avoid a stiff, pasted-on arm, while observation adjusts for the individual model. | Mentions scapula or clavicle movement ; Mentions a muscle change ; Mentions torso or ribcage change ; Explains benefit for drawing ; Balances anatomy with observation
+Q: What is a bony landmark? | A point where bone lies close to the surface, used for measuring and constructing a figure.
+Q: Which vertebra marks the base of the neck as a landmark? | The seventh cervical vertebra.
+Q: What do the scapulae do as the arms move? | The shoulder blades slide over the back.
+Q: What forms the kneecap and the ankle bones? | The patella forms the kneecap; the malleoli form the ankle bones.
+Q: What do muscles do when they contract and relax? | They shorten and bulge when contracted, and stretch when relaxed.
+Q: Where does the sternocleidomastoid run? | From behind the ear to the sternum and clavicle, shaping the neck.
+Q: Why does the forearm twist when the palm turns down? | In pronation the radius rotates across the ulna, so the muscle masses spiral.
+Q: Why is drawing every muscle as a separate bulge a mistake? | Muscles are smoothed by fat and skin on most bodies, so an anatomy-chart figure looks false.
+Q: What did Vesalius's De humani corporis fabrica (1543) achieve? | It set new standards of anatomical illustration.
+Q: When does anatomical knowledge matter most for artists? | Especially when drawing from imagination.
 
 ## Drawing the portrait
 LV: Intermediate · Application
@@ -582,6 +722,16 @@ M2#art-u02-15-q2@2: A student's portraits all look as though the forehead is too
 TF1#art-u02-15-q3@1: In a three-quarter view, the far eye appears narrower than the near eye. | true | The far eye is foreshortened as the head turns.
 M3#art-u02-15-q4@3: Which statement best explains how a quick sketch can capture a likeness without detailed features? | Likeness depends mainly on the overall head shape, tilt and the relationships between features | Likeness depends only on accurate eyelashes | A likeness is impossible without colour | Only photographs can capture likeness | Recognition relies heavily on configuration; Holbein achieved likeness with few lines.
 SA3#art-u02-15-q5@2,3: Evaluate the view that the purpose of a portrait is to produce an exact likeness. | Likeness matters, and measuring and construction serve it. But portraits also convey status, identity and character through pose, dress, setting and handling: Holbein's court portraits project power; Rembrandt's self-portraits explore age and introspection; modern portraits may distort for expression. A portrait is constructed by artist and sitter, so likeness is one aim among several. | Acknowledges role of likeness and method ; Discusses status or identity ; Discusses character or expression ; Uses named examples ; Reaches a judgement
+Q: Where do the ears sit on the head? | From about the brow line to the base of the nose.
+Q: How many eyes wide is the head? | About five eyes wide.
+Q: What do the corners of the mouth line up with? | Roughly with the pupils.
+Q: How does Andrew Loomis construct the head? | As a ball with the sides sliced off and the face plane attached.
+Q: What do the centre line and brow line show in head construction? | The head's tilt and turn.
+Q: What happens to the centre line and far side of the face in a three-quarter view? | The centre line curves and the far side of the face is narrower.
+Q: Which shadow shapes should be blocked in before the features of a portrait? | Eye sockets, under the nose, under the lower lip and chin.
+Q: Why is drawing features as separate symbols on a flat oval a mistake? | Eyes sit in sockets, the nose projects and the mouth wraps around the teeth; think in planes and shadows.
+Q: What does likeness depend on most? | The relationships of features and the overall shape and tilt of the head, more than detail.
+Q: How did Holbein achieve likeness in his drawings for Henry VIII's court? | With economical contour on pink-primed paper.
 
 ## Expressive and experimental drawing
 LV: Intermediate · Evaluation
@@ -621,6 +771,16 @@ M2#art-u02-16-q2@2: A student has twenty pages of random experiments but no deve
 TF2#art-u02-16-q3@2: Drawing with the non-dominant hand can be a valid experimental strategy. | true | It disrupts habitual marks and can produce more searching, expressive lines.
 M3#art-u02-16-q4@3: Which is the most balanced evaluation of experimental drawing? | It can expand what drawing achieves, and is strongest when it is grounded in observation and purposeful reflection | It is always better than observational drawing | It shows a lack of skill | It cannot be assessed | Both experimental and observational approaches have value; purpose and reflection make experiment meaningful.
 SA3#art-u02-16-q5@2,3: Evaluate the claim that expressive drawing is less skilful than accurate observational drawing. | Accurate observation requires trained perception and control, but expressive drawing also requires skill: control of mark, intention, selection and the ability to communicate feeling (Kollwitz, Schiele). Skill depends on the aim; many expressive artists trained in observation. Criteria should fit the intention, though grounding in observation often strengthens expression. | Recognises skill in observation ; Identifies skills in expressive drawing ; Uses named examples ; Links criteria to intention ; Reaches a judgement
+Q: What is expressive drawing? | Drawing that prioritises emotion and energy over accurate depiction.
+Q: How does Käthe Kollwitz convey suffering in her drawings? | With heavy, worked marks in charcoal and lithographic drawings of grieving mothers.
+Q: Name two ways of changing the body in experimental drawing. | Any two: non-dominant hand, eyes closed, whole arm at large scale.
+Q: Name two chance or process methods in experimental drawing. | Any two: frottage, blots, dripping, drawing with a timer or by rules.
+Q: How is Alexander Calder's work an example of expanded drawing? | His wire sculptures draw in space.
+Q: How can photography be used to draw? | By light drawing with long exposures, such as a torch moving in the dark.
+Q: Why is experimenting without reflection a mistake? | Random experiments do not evidence refinement unless you select, annotate and build on the results.
+Q: How does the Royal Drawing School's view of drawing differ from Vitamin D's? | It emphasises observational drawing as a discipline, while Vitamin D treats drawing as a way of thinking in any medium.
+Q: When is experimental drawing strongest? | When it is grounded in looking.
+Q: Name two mixed or layered media approaches to drawing. | Any two: collage, ink with bleach, wax resist, digital drawing combined with hand marks.
 
 ## Drawing from imagination and memory
 LV: Intermediate · Application
@@ -661,4 +821,14 @@ M2#art-u02-17-q2@2: An imagined building looks unconvincing because its shadows 
 TF1#art-u02-17-q3@1: The DfE subject content expects students to draw from observation, experience and imagination. | true | The subject content names drawing from observation, experience and imagination.
 M3#art-u02-17-q4@3: Which is the best evaluation of using photographic reference for an imagined illustration? | Reference supports believable detail, provided it is transformed and acknowledged as part of the process | It is cheating and should be avoided | It removes the need for imagination | Reference is only acceptable for portraits | Artists have always used studies and references; transformation and process make the work original.
 SA2#art-u02-17-q5@2,3: Explain how an illustrator could make an imagined scene convincing. | Build from thumbnails and silhouettes; construct forms from simple volumes in perspective; set a consistent light source with cast shadows and atmospheric perspective; borrow believable details from observation and reference (anatomy, materials, architecture) and transform them; keep a visual library through sketchbook study; annotate decisions. | Mentions construction or perspective ; Mentions consistent light ; Mentions reference or observation ; Mentions thumbnails or silhouettes ; Explains why each adds conviction
+Q: How did Lecoq de Boisbaudran train memory drawing? | Pupils studied a subject, then drew it from memory, with the delay extended over time.
+Q: Which artists did Lecoq de Boisbaudran's method influence? | Artists including Fantin-Latour and Rodin.
+Q: What does memory drawing force an artist to notice? | What matters: big shapes, gesture and relationships.
+Q: How do observation and imagination relate in drawing? | The more you observe and draw from life, the more convincing invented images become.
+Q: How are invented subjects constructed? | From simple forms such as boxes, cylinders and spheres in perspective, modelled by a consistent light source.
+Q: What is reference in illustration? | Images, objects or studies consulted to inform a drawing, especially an imagined one.
+Q: How can real animals help in designing an imagined creature? | Borrow anatomy, such as a hare's legs or heron's neck, studied from photographs or zoo drawings.
+Q: Why is it a mistake to think using reference is cheating? | Illustrators and history painters have always used studies, models and photographs; what matters is how sources are transformed.
+Q: Name two examples of drawing what cannot be observed. | Any two: Blake's visionary watercolours, Goya's Los Caprichos (1799), Surrealist automatic drawing.
+Q: How does keeping an observation sketchbook support imaginative drawing? | It builds a visual library to draw on.
 `;

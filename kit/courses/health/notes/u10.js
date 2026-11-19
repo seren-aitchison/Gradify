@@ -43,6 +43,16 @@ M2#health-u10-01-q2@2: Which principle means patients do not pay when they recei
 M3#health-u10-01-q3@3: Why did Aneurin Bevan resign in 1951? | Charges were introduced for dentures and glasses | The NHS was abolished | Doctors refused to join the NHS | Prescription charges were scrapped | Bevan resigned in protest at charges that breached the free-at-the-point-of-use principle.
 SEQ1#health-u10-01-q4@1: Order these events. | Beveridge Report ; National Health Service Act ; Launch of the NHS ; Introduction of prescription charges | 1942, 1946, 1948 and 1952.
 SA2#health-u10-01-q5@1,2: Explain how the founding principles of the NHS addressed problems in health care before 1948. | Before 1948, access depended on money, insurance through work or charity, so many people, especially women, children and older people, went without care. A comprehensive service available to all, free at the point of use and based on clinical need, removed cost as a barrier and spread the cost of illness across society through taxation. | Unequal access ; Comprehensive ; Free at point of use ; Clinical need ; Shared risk
+Q: What was the Beveridge Report? | A 1942 report proposing a welfare state to tackle five giants: want, disease, ignorance, squalor and idleness.
+Q: Which Act created the NHS, and who steered it through Parliament? | The National Health Service Act 1946, steered through by Health Minister Aneurin Bevan.
+Q: How did access to health care depend on money before 1948? | It depended on ability to pay, work-based insurance, charity or local authority services, so many women, children and older people had no cover.
+Q: What wartime service showed that national organisation of hospitals could work? | The wartime Emergency Medical Service.
+Q: What are the three founding principles of the NHS? | Comprehensive (available to all), free at the point of use, and based on clinical need rather than ability to pay.
+Q: How is the NHS mainly funded? | Mainly through general taxation.
+Q: Why were NHS charges introduced in the early 1950s? | Demand was much higher than expected and costs rose quickly, so charges for dentures, glasses and then prescriptions followed.
+Q: Where have prescription charges been abolished in the UK, and when? | Wales in 2007, Northern Ireland in 2010 and Scotland in 2011; they remain in England with many exemptions.
+Q: When was the NHS Constitution for England first published, and how many principles does it set out? | First published in 2009, it sets out seven principles plus rights and responsibilities of patients and staff.
+Q: Is it true that the NHS has always been completely free for everything? | No. Charges for prescriptions in England, dental care and some other services have existed since the early 1950s.
 
 ## How the NHS in England is organised
 LV: Level 3 · Foundation
@@ -85,6 +95,16 @@ M2#health-u10-02-q2@2: What is the main role of an integrated care board? | Plan
 M3#health-u10-02-q3@3: What was the main aim of the Health and Care Act 2022? | To encourage collaboration rather than competition | To privatise all hospitals | To abolish GP practices | To end free care at the point of use | ICSs bring organisations together to plan and integrate care.
 MATCH1#health-u10-02-q4@2: Match each organisation to its role. | DHSC = Policy and funding ; ICB = Local planning and paying ; NHS trust = Providing hospital care ; CQC = Regulating quality | Each body plays a different part in the system.
 SA2#health-u10-02-q5@2,3: Explain the difference between commissioning and providing in the NHS and why it matters. | Commissioners, such as integrated care boards, assess local needs, plan services and pay for them. Providers, such as hospital trusts and GP practices, deliver care. Separating the roles was intended to improve efficiency and accountability; ICSs now try to keep the distinction while encouraging collaboration so that services are planned around patients rather than organisations. | Commissioning role ; Providing role ; Accountability ; Collaboration
+Q: What does the Department of Health and Social Care (DHSC) do? | Led by the Secretary of State, it sets health policy and funding for England.
+Q: What change to NHS England was announced in 2025? | The government announced that NHS England would be merged into the DHSC.
+Q: Name three national bodies in the English health system other than the DHSC and NHS England. | The Care Quality Commission, NICE, the UK Health Security Agency, and the professional regulators.
+Q: What is an integrated care partnership (ICP)? | A partnership bringing together the NHS, local authorities and others to set a strategy for health and care in an ICS area.
+Q: What shift in how NHS organisations relate to each other did integrated care systems aim for? | A move from competition to collaboration between organisations.
+Q: What is the difference between commissioners and providers in the NHS? | Commissioners plan and pay for services; providers deliver the care.
+Q: What is a foundation trust? | An NHS trust with greater financial and operational freedom.
+Q: Name three kinds of NHS provider. | Hospital, mental health, community and ambulance trusts; GP practices; community pharmacies, dentists and optometrists; and independent or voluntary organisations under NHS contracts.
+Q: How are GP practices in England paid? | Through national contracts for their patients.
+Q: Why is it wrong to think of the NHS as one single organisation? | It is a system of many separate bodies, such as the DHSC, regulators, ICBs and trusts, each with different roles.
 
 ## Health care across the four UK nations
 LV: Level 3 · Application
@@ -127,6 +147,16 @@ M2#health-u10-03-q2@2: How is NHS care planned and delivered in Wales? | By seve
 M3#health-u10-03-q3@3: Which policy most clearly distinguishes Scotland's social care from England's? | Free personal care for adults assessed as needing it | Free hospital care for everyone who needs it | Free GP appointments for all registered patients | Charges for prescriptions for working-age adults | Scotland funds personal care without means-testing; England means-tests social care.
 MATCH2#health-u10-03-q4@1: Match each nation to a feature. | England = Integrated care systems ; Scotland = 14 NHS boards ; Wales = 7 local health boards ; Northern Ireland = Integrated health and social care trusts | The four systems are organised differently.
 SA3#health-u10-03-q5@2,3: Discuss the advantages and disadvantages of health policy differing across the four UK nations. | Advantages: policies can reflect local priorities and needs; nations can try different approaches (such as minimum unit pricing or free prescriptions) and learn from each other; decisions are closer to communities. Disadvantages: differences can seem unfair ("postcode lottery"), cross-border care can be complicated, and comparing performance is difficult because data differ. | Local priorities ; Policy experiments ; Perceived unfairness ; Cross-border issues ; Comparison problems
+Q: Since when has health been devolved to Scotland, Wales and Northern Ireland? | Since devolution in 1999.
+Q: How are the devolved health systems mainly funded? | Mainly through a block grant from the UK government.
+Q: How is NHS care planned and delivered in Scotland? | By 14 territorial NHS boards, with integration authorities linking health and social care and no internal market.
+Q: How many local health boards plan and deliver care in Wales? | Seven, alongside national NHS trusts such as the Welsh Ambulance Service.
+Q: What is Health and Social Care (HSC) in Northern Ireland? | An integrated system combining health and social care since 1973, delivered by five HSC trusts plus the ambulance trust.
+Q: How does personal care for adults differ between Scotland and England? | Scotland provides free personal care to adults assessed as needing it; social care in England is means-tested.
+Q: Which UK nations introduced minimum unit pricing for alcohol, and when? | Scotland in 2018 and Wales in 2020.
+Q: What is a health board in Scotland or Wales? | An organisation that both plans and delivers health care for an area.
+Q: What is a common mistake about NHS policy across the UK? | Assuming England's NHS policy applies UK-wide; health policy is decided separately in each nation.
+Q: What do the four UK health systems still share despite devolution? | The founding NHS principles, including care free at the point of use.
 
 ## Primary care
 LV: Level 3 · Application
@@ -170,6 +200,16 @@ M2#health-u10-04-q2@2: Why does the NHS use GPs as gatekeepers? | To manage dema
 M3#health-u10-04-q3@3: What is the main purpose of Pharmacy First in England? | To let pharmacists treat some common conditions without a GP visit | To close GP surgeries and move all their patients to pharmacies | To introduce a charge for every prescription item in England | To replace hospital emergency departments for serious illness | It eases pressure on GPs by using pharmacists' skills.
 MATCH1#health-u10-04-q4@2: Match each professional to a primary care role. | GP = Diagnosis and referral ; Practice nurse = Long-term condition clinics ; Community pharmacist = Medicines advice and minor illness ; Social prescribing link worker = Linking people to community support | Primary care is a team effort.
 SA3#health-u10-04-q5@2,3: Explain why continuity of care in general practice is valued and why it has declined. | Seeing the same GP builds trust and knowledge of the patient's history, leading to better diagnosis, more appropriate prescribing, fewer hospital admissions and lower mortality. It has declined because of larger practices, more part-time working, workforce shortages, pressure to provide rapid access and the use of a wider range of professionals and remote consultations. | Trust and knowledge ; Better outcomes ; Practice changes ; Workforce pressures ; Access versus continuity
+Q: What four main services make up primary care? | General practice, community pharmacy, dentistry and optometry.
+Q: How are most GP practices organised as businesses? | Most are independent businesses that hold NHS contracts.
+Q: Why is continuity of care valued in general practice? | Seeing the same clinician is associated with better outcomes and fewer hospital admissions.
+Q: Besides consultations, what other work do GP practices carry out? | Screening, immunisation and management of long-term conditions such as diabetes and asthma.
+Q: Name three additional roles employed by primary care networks. | Clinical pharmacists, physiotherapists, paramedics and social prescribing link workers.
+Q: When were GP practices in England grouped into primary care networks? | Since 2019.
+Q: What does Pharmacy First (2024) allow community pharmacists in England to do? | Treat several common conditions, such as sinusitis and uncomplicated urinary tract infections in women, including supplying some prescription medicines.
+Q: What pressures does primary care face? | Rising demand, workforce shortages and difficulty getting appointments.
+Q: What services does a community pharmacy offer? | Dispensing, advice, vaccinations and treatment of minor illnesses.
+Q: Why is it a mistake to treat the GP as the only route into primary care? | Pharmacists, dentists, optometrists and other professionals are also first points of contact.
 
 ## Secondary and tertiary care
 LV: Level 3 · Application
@@ -210,6 +250,16 @@ M2#health-u10-05-q2@2: What does the four-hour standard measure? | Time from arr
 M3#health-u10-05-q3@3: Why do delayed discharges increase pressure on hospitals? | Medically fit patients occupy beds needed for new admissions | They reduce the number of doctors working in each hospital | They lower waiting lists by keeping patients under observation | They increase the number of GP referrals but nothing else | When social care is not available, patients cannot leave, so beds are blocked.
 MATCH1#health-u10-05-q4@1: Match each service to its level of care. | GP appointment = Primary ; Hip replacement at a district hospital = Secondary ; Liver transplant = Tertiary ; Pharmacy minor illness consultation = Primary | Levels reflect how specialised care is.
 SA3#health-u10-05-q5@2,3: Explain why waiting lists for planned hospital treatment have grown and suggest ways to reduce them. | The pandemic postponed much planned treatment, adding to a list already growing because of an ageing population, rising demand, workforce shortages, limited beds and delayed discharges. Solutions include ring-fenced surgical hubs, extra diagnostic centres, use of independent sector capacity, better discharge with social care, workforce expansion, and shifting care to community and preventive services. | Pandemic backlog ; Demand and ageing ; Capacity constraints ; Solutions ; Social care links
+Q: What is secondary care? | Specialist assessment and treatment, usually after referral, such as outpatient clinics, planned surgery, maternity care and emergency departments.
+Q: What is tertiary care, and where is it usually provided? | Highly specialised care for complex conditions, usually in regional centres and often after referral from secondary care.
+Q: What proportion of patients is the 18-week referral to treatment target meant to cover? | 92% of patients.
+Q: What does the four-hour emergency department standard aim for? | Patients being admitted, transferred or discharged within four hours of arrival; the original target was 95%.
+Q: What is the cancer faster diagnosis standard? | Diagnosis or ruling out of cancer within 28 days of urgent referral.
+Q: How large did England's elective waiting list become after the COVID-19 pandemic? | Over 7 million in 2023 and 2024.
+Q: What is elective care? | Planned, non-emergency treatment.
+Q: Name four pressures on hospital services. | An ageing population with more long-term conditions, workforce shortages, limited beds, delayed discharges and strikes.
+Q: Name three responses used to reduce elective waiting lists. | Surgical hubs, independent sector capacity, community diagnostic centres and virtual wards at home.
+Q: Why is it wrong to say secondary care means only hospitals? | Secondary care also includes community and mental health services provided by specialists.
 
 ## Funding health care
 LV: Level 3 · Application
@@ -252,6 +302,16 @@ M2#health-u10-06-q2@2: Why does health care spending tend to rise faster than th
 M3#health-u10-06-q3@3: Which is the main drawback of out-of-pocket funding? | People may face financial hardship or go without care | It guarantees universal coverage for the whole population | It spreads the cost of illness evenly across everyone | It removes all waiting lists because patients pay directly | Paying directly makes the sick bear costs, deterring care for the poor.
 MATCH2#health-u10-06-q4@2: Match each model to a country. | Tax-funded = United Kingdom ; Social insurance = Germany ; Mainly private insurance with public programmes = United States ; Single-payer national insurance = Canada | Countries fund health care in different ways.
 SA3#health-u10-06-q5@2,3: Compare the advantages and disadvantages of tax-funded and social insurance health systems. | Tax-funded systems provide universal coverage, pool risk widely and let government control total spending, but funding competes with other public priorities and can be squeezed, causing waiting lists. Social insurance systems link funding to contributions, often giving more choice and stable revenue, but can be more complex and administratively costly, and some groups may need separate coverage. Outcomes depend more on resources and management than on the model alone. | Tax-funded strengths ; Tax-funded weaknesses ; Social insurance strengths ; Social insurance weaknesses ; Judgement
+Q: Apart from general taxation, what other sources fund the NHS? | National Insurance contributions and a small amount from user charges, such as prescription charges in England.
+Q: Roughly what share of GDP does total UK health spending make up? | Around 11% of GDP, public and private, in recent ONS estimates.
+Q: What is the Beveridge model of health funding? | A tax-funded system with universal coverage, where government controls total spending, as in the UK, Spain and Nordic countries.
+Q: How is health care mainly funded in the USA? | Through private insurance often linked to employment, with public programmes such as Medicare for older people and Medicaid for some on low incomes.
+Q: What is risk pooling in health funding? | Combining contributions so the cost of illness is shared across a population.
+Q: Why is health care described as labour-intensive, and why does that raise costs? | Care depends heavily on staff, so productivity gains are hard to achieve and costs rise faster than the economy.
+Q: Name four reasons health spending tends to rise faster than the economy. | An ageing population, new technologies and medicines, rising expectations and the labour-intensive nature of care.
+Q: How do governments respond to rising health spending? | By increasing funding, improving efficiency, setting priorities (for example through NICE) and investing in prevention.
+Q: Where are out-of-pocket payments common, and what is their effect? | They are common in low-income countries and can cause financial hardship.
+Q: Are tax-funded systems always cheaper than social insurance systems? | No. The UK spends a similar share of GDP to many social insurance systems; outcomes depend on how money is used.
 
 ## Social care
 LV: Level 3 · Application
@@ -294,6 +354,16 @@ M2#health-u10-07-q2@2: What is the wellbeing principle in the Care Act 2014? | C
 M3#health-u10-07-q3@3: How does a shortage of social care affect hospitals? | Patients who are medically fit cannot be discharged, blocking beds | Hospitals receive more funding automatically each winter | Fewer patients attend emergency departments overall | GP waiting times fall because demand moves elsewhere | Without care at home or in a care home, discharge is delayed.
 MATCH2#health-u10-07-q4@1: Match each Care Act duty to its description. | Wellbeing = Promote the person's wellbeing ; Prevention = Reduce or delay needs ; Assessment = Assess anyone who may need care ; Safeguarding = Make enquiries about abuse or neglect | The Act sets out a range of council duties.
 SA3#health-u10-07-q5@2,3: Analyse the main challenges facing adult social care in England. | Demand is rising because of an ageing population and more people with complex needs. Councils face funding pressures, and means-testing leaves some people with very high costs. The workforce is low paid, with high turnover and vacancies, making care hard to provide. Reform, such as a cap on care costs, has repeatedly stalled. The pressures spill into the NHS through delayed discharges. | Rising demand ; Funding ; Workforce ; Stalled reform ; NHS impact
+Q: What is adult social care? | Support with personal care and daily living, including home care, day services, care homes, equipment, adaptations and support for carers.
+Q: Who uses adult social care? | Older people and people with learning disabilities, physical disabilities or mental health problems.
+Q: Under the Care Act 2014, what must councils apply when assessing someone's need for care? | National eligibility criteria.
+Q: What safeguarding duty does the Care Act 2014 give local authorities? | A duty to make enquiries when an adult may be at risk of abuse or neglect.
+Q: What is means-testing in social care? | Assessing a person's income and assets to decide how much they pay; those above an upper limit usually pay the full cost.
+Q: What happened to the cap on lifetime care costs in England? | It was legislated but repeatedly delayed and then cancelled in 2024.
+Q: What workforce problems does social care face? | Low pay, high turnover and over 100,000 vacancies in recent Skills for Care estimates.
+Q: Who provides the most care to people with care needs overall? | Unpaid family carers provide much more care than formal services.
+Q: An 82-year-old man struggling after a stroke has savings below the upper limit. What happens after his needs assessment? | If he meets eligibility criteria, the council contributes to his care, such as daily home care visits.
+Q: Is social care in England free like the NHS? | No. It is means-tested and many people pay towards it.
 
 ## Integrated care
 LV: Level 3 · Application
@@ -337,6 +407,16 @@ M2#health-u10-08-q2@2: Why is integrated care especially important for older peo
 M3#health-u10-08-q3@3: What does the evidence suggest about integrated care? | It improves experience but has mixed effects on admissions and costs | It always reduces hospital admissions dramatically | It has no effect on patient experience at all | It always increases total costs for the NHS | Evaluations show consistent benefits for experience but inconsistent effects on cost.
 MATCH2#health-u10-08-q4@2: Match each form of integration to an example. | Structural = Integrated care system ; Financial = Better Care Fund ; Clinical = Multidisciplinary team ; Digital = Shared care record | Integration operates at several levels.
 SA3#health-u10-08-q5@2,3: Evaluate how far integrated care systems are likely to improve care for people with complex needs. | ICSs bring NHS bodies and councils together to plan care, pool resources and focus on population health, which could reduce gaps and duplication. However, benefits depend on frontline teams, shared records and trust between organisations, and structural change can distract and take years. Funding and workforce shortages limit what integration can achieve. Evidence so far shows better experience but mixed effects on hospital use. | Shared planning ; Frontline dependency ; Reorganisation risks ; Resource limits ; Evidence
+Q: What is integrated care? | Care coordinated across services around the needs of the person rather than organisations.
+Q: What problems do fragmented services cause? | Repeated assessments, gaps, delays, duplicated tests and confusing journeys.
+Q: What does it mean for patients to "tell their story once"? | Coordinated care planned with them, so they do not repeat information to every service.
+Q: Give an example of structural integration. | Joint organisations such as integrated care systems in England or Health and Social Care trusts in Northern Ireland.
+Q: What is an example of digital integration in care? | Shared care records across organisations.
+Q: What is intermediate care? | Short-term support to help people recover after illness or a hospital stay.
+Q: What is social prescribing? | Linking people with community activities.
+Q: What is a multidisciplinary team? | A team of professionals from different disciplines, such as doctors, nurses, social workers and therapists, working together.
+Q: When does integration work best, according to the evidence? | When it focuses on relationships, shared goals and the needs of specific groups, rather than reorganisation alone.
+Q: Does merging organisations automatically integrate care? | No. Integration depends on teams, relationships and shared goals at the front line.
 
 ## Urgent and emergency care
 LV: Level 3 · Application
@@ -380,6 +460,16 @@ M2#health-u10-09-q2@2: What does a category 1 ambulance call involve? | An immed
 M3#health-u10-09-q3@3: Why do ambulance handover delays happen? | Emergency departments are full because patients cannot be moved to wards | Ambulance crews choose to wait outside hospitals | Hospitals have too many empty beds available | There are too few people calling 999 | Blocked flow through hospitals leaves no space to receive new patients.
 SEQ2#health-u10-09-q4@2: Order the steps in the flow problem. | Delayed discharges fill wards ; Patients wait in the emergency department for beds ; Ambulances cannot hand over ; Response times to new calls lengthen | Pressure in one part of the system spreads to others.
 SA3#health-u10-09-q5@2,3: Analyse the causes of long waits in emergency departments. | Demand has risen with an ageing population and difficulty accessing primary care. Within hospitals, high bed occupancy, staff shortages and delayed discharges caused by social care shortages mean patients needing admission cannot leave the department. Crowding then slows care for everyone, and ambulances cannot hand over. Solutions must address whole-system flow, including social care and community services. | Rising demand ; Primary care access ; Bed occupancy ; Delayed discharges ; Whole-system solutions
+Q: What are urgent treatment centres for? | Walk-in or booked care for urgent but not life-threatening problems, such as minor injuries and illnesses.
+Q: What is same day emergency care (SDEC)? | Assessment and treatment without overnight admission.
+Q: What is the mean response target for category 2 ambulance calls, and what are they? | A mean of 18 minutes, for emergencies such as stroke or heart attack.
+Q: What is a handover delay? | Time an ambulance crew waits before transferring a patient to hospital staff.
+Q: What is patient flow? | The movement of patients through stages of care, from arrival to discharge.
+Q: How do delayed discharges lead to corridor care? | Full wards mean emergency patients wait in the department for a bed, causing crowding and care in corridors.
+Q: How can a shortage of social care delay an ambulance reaching a stroke patient? | Fit patients cannot leave hospital, beds stay full, ambulances queue to hand over, so fewer are free for new calls.
+Q: Why do solutions to emergency department pressure focus on the whole system? | Long waits come from blocked flow through hospitals and into social care, not just the emergency department.
+Q: What are emergency departments (A&E) for? | Serious and life-threatening emergencies.
+Q: What is a common mistake when explaining emergency department crowding? | Blaming people attending inappropriately; most crowding results from difficulty admitting and discharging patients.
 
 ## Choosing the right NHS service
 LV: Level 3 · Application
@@ -425,6 +515,16 @@ M2#health-u10-10-q2@2: A person has sudden chest pain spreading to the left arm 
 M3#health-u10-10-q3@3: Why might someone attend A&E with a minor problem? | They cannot get a GP appointment or do not know the options | They prefer to wait a long time for care | A&E is the only service open in the daytime | They have been told never to use pharmacies | Access problems and lack of information drive A&E use.
 MATCH1#health-u10-10-q4@2: Match each problem to the best service. | Minor burn needing dressing = Urgent treatment centre ; Hay fever = Community pharmacy ; Signs of stroke = Call 999 ; Managing diabetes = GP practice | Matching problems to services gets people the right care.
 SA3#health-u10-10-q5@2,3: Explain how improving access to primary care and information could reduce pressure on emergency departments. | Many people attend A&E because they cannot get timely GP appointments or do not know about pharmacies, NHS 111 and urgent treatment centres. Better GP access, expanded pharmacy services and clear, accessible information, including for people with language or digital barriers, help people choose appropriate services, keeping A&E for emergencies. However, much crowding is due to patient flow, so this alone will not solve pressures. | GP access ; Alternative services ; Accessible information ; Barriers ; Limits
+Q: What is self-care suitable for? | Minor illnesses such as colds, using rest, fluids and over-the-counter medicines.
+Q: What should a woman with burning on passing urine do first? | Visit a community pharmacy under Pharmacy First, or see her GP.
+Q: Why should a 999 call for suspected stroke or chest pain never be delayed? | Suspected emergencies need immediate help; delaying to avoid wasting time is a common and dangerous mistake.
+Q: What is a GP practice the right service for? | Ongoing or non-urgent problems, long-term conditions and referral.
+Q: Where should a man with a deep cut needing stitches go? | An urgent treatment centre.
+Q: What should be done for an older person with sudden facial droop and arm weakness? | Call 999 immediately, as these are signs of stroke.
+Q: How can someone in England in a mental health crisis get help? | Call NHS 111 and choose the mental health option, or contact local crisis teams.
+Q: Name three reasons people may go to A&E rather than another service. | Not getting a GP appointment, not knowing other options, distrusting phone advice, or language, digital or disability barriers.
+Q: What helps people choose the right NHS service? | Clear information, accessible services and reliable primary care.
+Q: Name three symptoms that need A&E or 999. | Chest pain, severe breathing difficulty, signs of stroke, major injury or loss of consciousness.
 
 ## Mental health services
 LV: Level 3 · Application
@@ -470,6 +570,16 @@ M2#health-u10-11-q2@2: What is the purpose of crisis resolution and home treatme
 M3#health-u10-11-q3@3: Which fact best shows that parity of esteem has not been achieved? | People with severe mental illness die much earlier, often from preventable physical illness | Talking therapies exist in every area of England | Mental health law includes safeguards for patients | GPs can refer patients to mental health services | Large health inequalities show mental health still receives less priority.
 MATCH2#health-u10-11-q4@1: Match each service to its role. | GP = First contact for common problems ; Community mental health team = Complex or severe conditions ; Crisis team = Urgent support at home ; Inpatient ward = Care when community treatment is unsafe | Services form a stepped pathway.
 SA3#health-u10-11-q5@2,3: Evaluate progress towards parity of esteem for mental health in England. | Progress includes the legal duty since 2012, expansion of talking therapies, investment through the Five Year Forward View and Long Term Plan, and mental health support teams in schools. But waiting times for some services remain long, children's services struggle, out-of-area placements continue, and people with severe mental illness still die much earlier than others. Parity is improving but not yet achieved. | Legal duty ; Service expansion ; Waiting times ; Physical health gap ; Judgement
+Q: What is stepped care in mental health? | Offering the least intensive effective treatment first and stepping up as needed.
+Q: What was NHS Talking Therapies formerly called? | IAPT.
+Q: What do community mental health teams provide? | Care for people with more complex or severe mental health conditions.
+Q: When is inpatient mental health care used? | For people who cannot be treated safely in the community.
+Q: What does the Mental Health Act 1983 allow? | Detention in hospital for assessment or treatment of a mental disorder when necessary for the person's health or safety or to protect others.
+Q: What safeguards exist for people detained under the Mental Health Act 1983? | The right to appeal to a tribunal and access to an independent mental health advocate.
+Q: Which Act introduced the parity of esteem duty for NHS bodies? | The Health and Social Care Act 2012.
+Q: What evidence shows people with severe mental illness have poorer physical health? | They die on average much earlier than the general population, often from preventable physical illness.
+Q: A student's anxiety does not improve with online self-help. What is the next step under stepped care? | She can self-refer to NHS Talking Therapies for a course of CBT.
+Q: Does most mental health care happen in hospital? | No. Most is provided in primary care and the community.
 
 ## Quality and safety in health care
 LV: Level 3 · Evaluation
@@ -512,6 +622,16 @@ M2#health-u10-12-q2@2: What does the Swiss cheese model explain? | How harm occu
 M3#health-u10-12-q3@3: What was a central finding of the Mid Staffordshire inquiry? | A focus on targets and finances led to neglect of basic patient care | The hospital had too many staff and too much funding | Patients received excellent care but complained | Problems were caused by a single doctor only | Francis found a culture that put targets and finances before patients.
 MATCH2#health-u10-12-q4@2: Match each term to its source. | Six quality domains = Institute of Medicine ; Swiss cheese model = James Reason ; Duty of candour = Francis Report ; Maternity failures in Shrewsbury and Telford = Ockenden review | Key ideas and reforms in patient safety.
 SA3#health-u10-12-q5@2,3: Evaluate why the NHS has moved from a blame culture to a learning culture in patient safety. | Blaming individuals discourages staff from reporting errors and near misses, so organisations lose the information they need to fix weaknesses. Most harm results from system failures, as the Swiss cheese model shows. A just, learning culture encourages reporting, identifies system causes and supports openness with patients through the duty of candour. Accountability remains for reckless or deliberate harm. Inquiries such as Mid Staffordshire showed the dangers of closed cultures. | Blame discourages reporting ; System causes ; Learning and improvement ; Candour ; Accountability
+Q: What did Lord Darzi's 2008 review emphasise about quality? | Safety, effectiveness and patient experience.
+Q: What is clinical governance? | The framework through which NHS organisations are accountable for continuously improving the quality of care.
+Q: What causes most errors in health care? | System failures rather than individual carelessness.
+Q: What does James Reason's Swiss cheese model show? | Harm happens when holes in several layers of defence line up.
+Q: Give an example of a never event. | Wrong-site surgery.
+Q: What is the focus of the NHS Patient Safety Incident Response Framework? | Learning and improvement rather than blame; it was introduced from 2022 to 2024.
+Q: What did the Mid Staffordshire inquiry find caused appalling care? | A focus on targets and finances and a culture that ignored patients' and staff concerns.
+Q: Who led the Mid Staffordshire public inquiry, and how many recommendations did it make? | Robert Francis, in 2013; it made 290 recommendations.
+Q: What does the duty of candour require of providers? | To be open and honest with patients and families when things go wrong that cause harm, and to apologise.
+Q: Why is blaming individuals a poor response to errors? | Blame discourages reporting and leaves system weaknesses in place.
 
 ## Regulation of health and social care
 LV: Level 3 · Application
@@ -554,6 +674,16 @@ M2#health-u10-13-q2@2: What does "fitness to practise" refer to? | Whether a pro
 M3#health-u10-13-q3@3: A physiotherapist is reported for unsafe practice. Which regulator investigates? | The Health and Care Professions Council | The General Medical Council | The Care Quality Commission | The Nursing and Midwifery Council | The HCPC regulates allied health professions, including physiotherapists.
 MATCH2#health-u10-13-q4@1: Match each regulator to whom it regulates. | GMC = Doctors ; NMC = Nurses and midwives ; GPhC = Pharmacists ; CQC = Health and care services in England | Regulators cover services or professions.
 SA3#health-u10-13-q5@2,3: Explain how regulation protects patients and discuss its limitations. | Service regulators register providers, inspect against standards, publish ratings that inform the public and take enforcement action. Professional regulators set standards, keep registers and remove unsafe practitioners. Limitations: inspections are snapshots and may miss problems, regulators can be slow or under-resourced (as the 2024 review of the CQC showed), and regulation cannot replace a good culture and leadership within services. | Standards and inspection ; Ratings ; Professional registers ; Snapshot limits ; Culture matters
+Q: Under which Act does the CQC regulate services in England? | The Health and Social Care Act 2008.
+Q: What four ratings can the CQC give a service? | Outstanding, good, requires improvement or inadequate.
+Q: What enforcement power does the CQC have at its most serious? | It can close services.
+Q: What did a 2024 independent review find about the CQC? | Serious problems with the CQC's own operations, so changes are being made.
+Q: What do professional regulators do? | Keep registers of qualified professionals, set education and conduct standards, and investigate fitness to practise.
+Q: Which body regulates doctors? | The General Medical Council.
+Q: Which body oversees the professional regulators? | The Professional Standards Authority.
+Q: Which body regulates social workers in England? | Social Work England.
+Q: Which bodies regulate health and care services in Scotland? | Healthcare Improvement Scotland and the Care Inspectorate.
+Q: What is the difference between service regulation and professional regulation? | Service regulators like the CQC regulate organisations; professional regulators like the NMC regulate individual professionals.
 
 ## Consent and mental capacity
 LV: Level 3 · Application
@@ -598,6 +728,16 @@ M2#health-u10-14-q2@2: A patient makes a decision that staff think is unwise. Wh
 M3#health-u10-14-q3@3: A 14-year-old asks for treatment and understands fully what is involved. What is the legal position? | She may be Gillick competent to consent | She can never consent before age 18 | Only a court can give consent for her | Her parents' wishes always override hers | A child under 16 with sufficient understanding can consent.
 SEQ1#health-u10-14-q4@2: Order the steps in a capacity assessment. | Identify the specific decision ; Check for an impairment of the mind or brain ; Assess understanding, retaining, weighing and communicating ; Record the conclusion | Capacity is assessed for each decision.
 SA3#health-u10-14-q5@2,3: Explain how decisions are made for a person who lacks capacity. | Under the Mental Capacity Act, decisions must be made in the person's best interests. The decision-maker considers whether the person may regain capacity, involves them as far as possible, takes into account their past and present wishes, feelings, beliefs and values, and consults family, carers and anyone with lasting power of attorney. The least restrictive option should be chosen. A valid advance decision or attorney's decision must be respected. | Best interests ; Involve the person ; Wishes and values ; Consultation ; Least restrictive
+Q: What three conditions make consent valid? | It must be voluntary, informed and given by someone with capacity.
+Q: In what ways can consent be given, and can it be withdrawn? | Verbally, in writing or by actions, and it can be withdrawn at any time.
+Q: What did Montgomery v Lanarkshire Health Board (2015) establish? | Professionals must discuss material risks that matter to the individual person.
+Q: Who does the Mental Capacity Act 2005 apply to? | People aged 16 and over in England and Wales.
+Q: What is the first stage of the two-stage capacity test? | Is there an impairment of, or disturbance in the functioning of, the mind or brain?
+Q: What does it mean that capacity is decision-specific and time-specific? | Capacity is judged for a particular decision at the time it needs to be made.
+Q: What must best interests decisions consider? | The person's past and present wishes, beliefs and values, and the views of others close to them.
+Q: Can 16- and 17-year-olds consent to treatment? | Yes; they are presumed able to consent to treatment.
+Q: Which laws cover mental capacity in Scotland and Northern Ireland? | The Adults with Incapacity (Scotland) Act 2000 and the Mental Capacity Act (Northern Ireland) 2016.
+Q: Does a dementia diagnosis or an unwise choice mean a person lacks capacity? | No. Capacity is assessed for each decision, and people may make unwise decisions.
 
 ## Confidentiality and health data
 LV: Level 3 · Application
@@ -641,6 +781,16 @@ M2#health-u10-15-q2@2: Under data protection law, what type of data is health in
 M3#health-u10-15-q3@3: A nurse is told by a patient that her partner is seriously harming her children. What should the nurse do? | Share the concern through safeguarding procedures, as protecting children overrides confidentiality | Keep it secret because the patient asked | Post about it on social media to warn others | Wait until the next annual review to act | Safeguarding children at risk justifies sharing information.
 MATCH2#health-u10-15-q4@1: Match each disclosure to its justification. | Notifying a case of measles = Required by law ; Telling the DVLA about an unsafe driver = Public interest ; Sharing with the care team = Implied consent for care ; Reporting child abuse = Safeguarding | Disclosure needs a lawful basis.
 SA3#health-u10-15-q5@2,3: Explain how the Caldicott principles guide the use of patient information. | They require a justified purpose for using identifiable information, using it only when necessary and using the minimum necessary, with access limited to those who need it. Everyone must understand their responsibilities and comply with the law. The duty to share information for care can be as important as the duty to protect it, and people should be informed about how their data is used. | Justified purpose ; Minimum necessary ; Need to know ; Duty to share ; Transparency
+Q: Why does confidentiality matter in health care? | It builds trust, encouraging people to seek help and share sensitive information.
+Q: May information be shared within the care team? | Yes, to provide care, as people would reasonably expect.
+Q: How many Caldicott principles are there now, and when were they first set out? | Eight, first set out in 1997.
+Q: Name three of the Caldicott principles. | Justify the purpose, use only when necessary, use the minimum necessary, need-to-know access, comply with the law, and the duty to share can matter as much as protecting.
+Q: Which laws govern health data as special category data? | The UK GDPR and the Data Protection Act 2018.
+Q: What is the national data opt-out? | A choice for people in England not to have their data used for research and planning.
+Q: Which case is an example of disclosure in the public interest? | W v Egdell (1990).
+Q: Give an example of disclosure required by law. | Reporting notifiable diseases or complying with a court order.
+Q: A patient with epilepsy and recent seizures refuses to stop driving. What may the GP do? | Following GMC guidance, disclose to the DVLA in the public interest, telling the patient first and recording the reasons.
+Q: Is confidentiality absolute? | No. It can be overridden in specific circumstances, such as preventing serious harm or meeting legal requirements.
 
 ## Ethical principles in health care
 LV: Level 3 · Evaluation
@@ -685,6 +835,16 @@ M2#health-u10-16-q2@2: A nurse respects a patient's informed refusal of medicati
 M3#health-u10-16-q3@3: Deciding to fund a treatment that helps the most people with a fixed budget reflects which theory? | Consequentialism (utilitarianism) | Deontology | Virtue ethics | Egoism | Maximising total benefit is a utilitarian approach.
 MATCH2#health-u10-16-q4@2: Match each theory to its focus. | Consequentialism = Outcomes ; Deontology = Duties and rules ; Virtue ethics = Character ; Four principles = Balancing autonomy, beneficence, non-maleficence and justice | Different theories ask different questions.
 SA3#health-u10-16-q5@2,3: Discuss the ethical issues when a person with capacity refuses life-saving treatment. | Respect for autonomy supports accepting the refusal, while beneficence and non-maleficence push towards treatment. In UK law, a capacitous adult's informed refusal must be respected, even if it leads to death. Professionals should check capacity carefully, ensure the person is informed and free from pressure, explore reasons and alternatives, and offer support, recording the decision. Deontological and virtue perspectives also emphasise respect and compassion. | Autonomy ; Beneficence conflict ; Legal position ; Checking capacity and information ; Support and alternatives
+Q: Who proposed the four principles of biomedical ethics? | Beauchamp and Childress.
+Q: What is beneficence? | Acting in the person's best interests and doing good.
+Q: What is non-maleficence? | The duty to avoid causing harm: "first, do no harm".
+Q: What does the principle of justice mean in health care ethics? | Fairness in the distribution of resources and treatment.
+Q: What does deontology hold? | That some actions, such as telling the truth or keeping promises, are right or wrong in themselves.
+Q: Which philosopher is associated with deontology? | Kant.
+Q: What question does virtue ethics ask? | What a good, compassionate and honest professional would do.
+Q: Which ethical theory underpins much public health and resource allocation? | Consequentialism, such as utilitarianism, seeking the greatest good for the greatest number.
+Q: What can professionals draw on to resolve ethical dilemmas? | The principles, professional codes such as the NMC Code and GMC guidance, the law, colleagues and clinical ethics committees.
+Q: Why is it a mistake to treat the four principles as a formula? | They often conflict and must be balanced with judgement in each situation.
 
 ## NICE and priority setting
 LV: Level 3 · Evaluation
@@ -728,6 +888,16 @@ NUM2#health-u10-17-q2@2: A treatment costs £15,000 more than current care and g
 M2#health-u10-17-q3@3: What is the funding mandate for NICE technology appraisals? | NHS bodies in England must normally fund recommended treatments within three months | NHS bodies may choose whether to follow the recommendation | Patients must pay for recommended treatments themselves | Treatments are funded only in Scotland and Wales | The mandate ends local variation in access.
 M3#health-u10-17-q4@2: Which is a common criticism of QALYs? | They may disadvantage older and disabled people | They ignore the cost of treatments completely | They only measure length of life | They make decisions less transparent | Critics argue QALYs can undervalue gains for some groups.
 SA3#health-u10-17-q5@2,3: Evaluate the use of QALYs in deciding which treatments the NHS should fund. | Strengths: QALYs give a common measure of benefit across conditions, making decisions consistent and transparent and maximising health gains from a limited budget. Weaknesses: they may disadvantage older people, disabled people and rare diseases; measuring quality of life is difficult; and they ignore values such as need and fairness. NICE adds flexibility, consultation and procedural fairness, but debate continues. | Common measure ; Efficiency and transparency ; Equity concerns ; Measurement problems ; Flexibility
+Q: What does NICE stand for, and why was it set up? | The National Institute for Health and Care Excellence, set up in 1999 to reduce variation in care.
+Q: What three main kinds of output does NICE produce? | Guidelines, technology appraisals of new medicines and devices, and quality standards.
+Q: What is the NICE funding mandate? | NHS bodies in England must normally make a medicine recommended in a technology appraisal available within three months.
+Q: What is an ICER? | The incremental cost-effectiveness ratio: the extra cost per extra QALY of a new treatment compared with current care.
+Q: What is the equation for an ICER? | (Cost of new − cost of old) ÷ (QALYs of new − QALYs of old).
+Q: A new drug costs £20,000 more than current care and gives 1.0 extra QALY. What is the ICER? | £20,000 per QALY, within NICE's usual threshold range.
+Q: What is the severity modifier in NICE appraisals? | Flexibility in the threshold for treatments for very serious conditions.
+Q: What do supporters say QALYs achieve? | Transparent, consistent decisions that maximise health from a fixed budget.
+Q: Which groups do critics say QALYs can disadvantage? | Older and disabled people, people with rare diseases, and treatments with small benefits.
+Q: What was the postcode lottery before NICE? | Variation in access to treatments depending on where a person lived.
 
 ## Comparing health systems
 LV: Level 3 · Evaluation
@@ -768,4 +938,14 @@ M2#health-u10-18-q2@2: What is a feature of the German health system? | Compulso
 M3#health-u10-18-q3@3: Why is the USA often ranked low despite the highest spending? | Gaps in coverage, high costs and poorer outcomes | It has the longest life expectancy of all | It spends too little on hospitals | It has no specialist doctors at all | Spending does not translate into equal access or better outcomes.
 MATCH2#health-u10-18-q4@1: Match each country to its model. | United Kingdom = Tax-funded national health service ; Germany = Social health insurance ; Canada = Single-payer public insurance ; United States = Mixed private and public insurance | Countries combine funding and delivery differently.
 SA3#health-u10-18-q5@2,3: Evaluate the strengths and weaknesses of the UK's NHS compared with another country's health system. | Compared with the USA, the NHS gives universal coverage free at the point of use, protects people from financial hardship and costs less per person, but has longer waiting times and fewer resources such as beds and scanners. The USA offers rapid access to advanced care for the insured and much choice, but leaves gaps in coverage, high personal costs and worse average outcomes. Judgements depend on which goals, such as equity or speed, are valued most. | NHS strengths ; NHS weaknesses ; Comparator strengths ; Comparator weaknesses ; Values in judgement
+Q: When did the WHO describe the six building blocks of a health system? | In 2007.
+Q: What are the main features of the UK health system? | Tax-funded, universal coverage, free at the point of use, strong primary care and gatekeeping, but long waits recently.
+Q: What are the features of the German health system? | Social health insurance with many competing sickness funds, universal coverage, many hospital beds and doctors, and choice of providers.
+Q: What did the Affordable Care Act (2010) do in the USA? | It expanded health coverage.
+Q: What is a single-payer system? | A system in which one public body pays for most health care.
+Q: On what measures are health systems compared? | Health outcomes, access, equity, efficiency and patient experience.
+Q: How does the Commonwealth Fund usually rank the UK? | Well on equity and protection from cost, but less well on outcomes.
+Q: What is avoidable mortality? | Deaths that should not occur with timely and effective health care or public health.
+Q: Why are international health system comparisons difficult? | Populations, data and wider determinants of health differ between countries.
+Q: Why is spending alone a poor measure of a health system? | High spending can coexist with poor outcomes and unequal access, as in the USA.
 `;

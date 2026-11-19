@@ -41,6 +41,16 @@ M2#business-u08-01-q2@2: Incomes rise and demand for a good falls. What kind of 
 M3#business-u08-01-q3@3: The price of coffee rises sharply. What happens to the demand for tea? | It shifts right, as tea is a substitute | It shifts left, as tea is a complement | There is a movement along the tea curve | Nothing, as the goods are unrelated | Applying the standard result: Buyers switch to the substitute.
 MATCH1#business-u08-01-q4@2: Match each change to its effect on the demand for cinema tickets. | Higher incomes = Demand shifts right ; Cheaper streaming services = Demand shifts left ; Higher ticket prices = Movement along the curve ; Cheaper popcorn = Demand shifts right | Shifts come from non-price factors.
 SA2#business-u08-01-q5@2,3: Explain the difference between a change in demand and a change in quantity demanded, with examples. | A change in quantity demanded is a movement along a fixed demand curve, caused only by a change in the good's own price, such as fewer bus journeys after a fare rise. A change in demand is a shift of the whole curve caused by other factors, such as more bus journeys at every fare when fuel prices make driving more expensive. | Movement along ; Own price ; Shift of curve ; Other factors
+Q: Which way does a demand curve slope, and why? | Downwards from left to right, because quantity demanded falls as price rises.
+Q: What is the income effect of a price rise? | Higher prices reduce buyers' real purchasing power, so they buy less.
+Q: What is the substitution effect of a price rise? | Buyers switch to relatively cheaper alternatives.
+Q: What is effective demand? | Demand backed by the ability to pay.
+Q: What is a normal good? | A good for which demand rises as income rises.
+Q: What happens to demand for a good when the price of a complement rises? | Demand for the good falls.
+Q: Name three non-price factors that shift demand. | Income, prices of related goods, tastes, expectations and population.
+Q: What causes a shift of the whole demand curve? | A change in any factor other than the good's own price.
+Q: More public charging points open. What happens to demand for electric cars? | It shifts right, because charging is a complement.
+Q: Why is it wrong to say "demand fell" after a price rise? | A price rise causes a fall in quantity demanded, a movement along the curve, not a shift.
 
 ## Supply and market equilibrium
 LV: Introductory · Application
@@ -83,6 +93,16 @@ M2#business-u08-02-q2@2: What happens to equilibrium price and quantity when dem
 NUM2#business-u08-02-q3@2: Demand is Q_{d} = 120 − 3P and supply is Q_{s} = 3P. What is the equilibrium price? | 20 | 0 | £ | 120 − 3P = 3P gives 6P = 120, so the equilibrium price is 20.
 M3#business-u08-02-q4@3: A new government subsidy is paid to producers of solar panels. What happens? | Supply shifts right; price falls and quantity rises | Demand shifts left; price falls | Supply shifts left; price rises | Nothing changes in the market | Applying the standard result: Subsidies lower producers' costs.
 SA2#business-u08-02-q5@2,3: Explain the three functions of the price mechanism. | Prices signal information: a rising price shows that a good is scarce relative to demand. They provide incentives: higher prices encourage firms to produce more and attract new entrants. They ration goods: higher prices limit purchases to buyers most willing and able to pay, so resources are allocated without central direction. | Signalling ; Incentives ; Rationing ; Allocation
+Q: Why does the supply curve slope upwards? | Higher prices make production more profitable and let higher-cost producers cover their costs.
+Q: What is excess supply? | A surplus at prices above equilibrium, which pushes prices down.
+Q: What happens when price is below equilibrium? | There is excess demand, a shortage, which pushes prices up.
+Q: What happens to price and quantity when supply increases? | Price falls and quantity rises.
+Q: What does the signalling function of the price mechanism do? | Prices signal scarcity.
+Q: How do prices ration goods? | They allocate goods among buyers according to who is willing and able to pay.
+Q: How do indirect taxes and subsidies affect supply? | They shift it: taxes reduce supply and subsidies increase it.
+Q: When both demand and supply shift, what determines the effect on price or quantity? | The size of the shifts.
+Q: Demand is Q_{d} = 100 − 2P and supply Q_{s} = 20 + 2P. What is equilibrium price? | 20.
+Q: What is the mistake in thinking a price rise shifts supply? | A price change moves along the supply curve; only other factors shift it.
 
 ## Price elasticity of demand
 LV: Introductory · Application
@@ -129,6 +149,16 @@ M2#business-u08-03-q2@2: Which product is likely to have the most price-elastic 
 NUM2#business-u08-03-q3@2: A firm cuts its price by 5% and sales rise by 2%. What is the PED? | -0.4 | 0.01 | – | PED = 2 ÷ (−5) = −0.4, so demand is inelastic.
 M3#business-u08-03-q4@3: Why might a government tax cigarettes heavily? | Demand is inelastic, so revenue is raised and consumption falls slightly | Demand is elastic, so the tax eliminates smoking | Cigarettes have many cheap substitutes | Taxing cigarettes reduces government revenue | Applying the standard result: Inelastic demand sustains tax revenue.
 SA2#business-u08-03-q5@2,3: Explain why understanding PED is important for a firm's pricing strategy. | PED shows how customers will respond to price changes. If demand is inelastic, the firm can raise prices to increase revenue and margins; if it is elastic, price rises lose revenue, so the firm may cut prices or compete on value. Firms also try to reduce elasticity through branding and differentiation, and PED varies over time and between customer groups. | Customer response ; Inelastic pricing ; Elastic pricing ; Branding
+Q: What is the formula for price elasticity of demand? | PED = percentage change in quantity demanded ÷ percentage change in price.
+Q: When is demand described as price elastic? | When the absolute value of PED exceeds 1.
+Q: What does unit elastic demand mean? | PED is exactly 1, so quantity changes in the same proportion as price.
+Q: How do substitutes affect PED? | The more close substitutes, the more elastic demand is.
+Q: How does time affect price elasticity? | Demand becomes more elastic as buyers find alternatives.
+Q: How does the share of income spent on a good affect PED? | Goods taking a larger share of income tend to be more elastic.
+Q: How does brand loyalty affect elasticity? | It reduces elasticity, giving firms pricing power.
+Q: Why do governments often tax fuel and tobacco? | Demand is inelastic, so taxes raise revenue.
+Q: A gym raises fees by 10% and memberships fall by 25%. What is PED? | −2.5, so demand is elastic and revenue falls.
+Q: How is total revenue calculated? | Price multiplied by quantity sold.
 
 ## Market failure
 LV: Introductory · Application
@@ -178,6 +208,16 @@ M2#business-u08-04-q2@2: Why are public goods underprovided by markets? | People
 M3#business-u08-04-q3@3: A government wants to cut carbon emissions at the lowest total cost. Which tool lets firms trade reductions? | Tradable emissions permits | A ban on all fossil fuels | Food labelling | Direct state provision | Permits let firms with cheap reductions sell spare allowances.
 MATCH1#business-u08-04-q4@2: Match each failure to a typical response. | Pollution = Tax or tradable permits ; Street lighting = Direct provision ; Hidden car faults = Information requirements ; Underuse of education = Subsidies | Responses target each failure.
 SA2#business-u08-04-q5@2,3: Evaluate the use of taxes to correct negative externalities. | A tax raises the price of the harmful good to reflect its external cost, reducing consumption towards the socially optimal level and raising revenue, as with the Soft Drinks Industry Levy. However, external costs are hard to measure, taxes on inelastic goods may change behaviour little, they can be regressive, and firms may lobby against them, so taxes often work best alongside regulation or information. | Internalises cost ; Revenue ; Measurement problems ; Inelastic and regressive effects
+Q: What is a negative externality? Give an example. | A cost imposed on third parties, such as pollution from a factory or congestion from driving.
+Q: Give an example of a positive externality. | Vaccination or education.
+Q: What two features define a public good? | It is non-rival and non-excludable.
+Q: What is asymmetric information? | When one party in a transaction knows more than the other.
+Q: What is Akerlof's "market for lemons" an example of? | Information failure in the used car market.
+Q: Why are merit goods underconsumed? | People misjudge their benefits.
+Q: What is social cost? | Private cost plus external cost.
+Q: With a negative externality, why is a good overproduced? | The market price reflects only private costs, not the external cost.
+Q: How did manufacturers respond to the Soft Drinks Industry Levy? | Many reformulated drinks to cut sugar before the levy began.
+Q: Name three ways government intervention can fail. | Poor information, unintended consequences or lobbying.
 
 ## Perfect competition and monopoly
 LV: Introductory · Application
@@ -220,6 +260,16 @@ M2#business-u08-05-q2@2: At what output does a firm maximise profit? | Where mar
 NUM2#business-u08-05-q3@2: A firm's marginal revenue is £15 and its marginal cost is £11 for the next unit. By how much will producing it change profit, in £? | 4 | 0 | £ | Profit rises by 15 − 11 = 4, so the firm should expand.
 M3#business-u08-05-q4@3: Which is a barrier to entry that protects a pharmaceutical firm's new drug? | A patent | Perfect information | Many small competitors | Identical products | Applying the standard result: Patents give temporary exclusive rights.
 SA2#business-u08-05-q5@2,3: Compare the outcomes of perfect competition and monopoly for consumers. | In perfect competition, free entry keeps prices at minimum average cost and profits normal in the long run, so consumers enjoy low prices and efficient output. A monopoly, protected by barriers to entry, restricts output and charges higher prices, creating a deadweight loss. However, monopolies may achieve economies of scale or fund innovation, which could benefit consumers. | Competitive prices ; Monopoly restriction ; Deadweight loss ; Possible benefits
+Q: What are the four assumptions of perfect competition? | Many small firms, identical products, perfect information, and free entry and exit.
+Q: What happens to supernormal profits in perfect competition? | New firms enter, raising supply and lowering price until only normal profit remains.
+Q: Why is perfect competition efficient in the long run? | Price equals minimum average cost and marginal cost, so resources are allocated efficiently.
+Q: What market share may make a firm dominant in UK competition law? | Often around 40% or more.
+Q: Name three barriers to entry. | Patents, economies of scale, control of resources or network effects.
+Q: What is a price maker? | A firm, such as a monopolist, that can choose its price.
+Q: Compared with competition, what does monopoly typically mean? | Higher prices, lower output and a deadweight loss.
+Q: What possible benefit can large monopoly firms bring? | They may fund research and innovation.
+Q: Give an example of a natural monopoly and its regulator. | Water pipes, regulated by Ofwat with price controls.
+Q: Marginal revenue is £12 and marginal cost £9. Should the firm produce that unit? | Yes; it adds £3 to profit, so the firm should expand.
 
 ## Oligopoly and game theory
 LV: Introductory · Application
@@ -263,6 +313,16 @@ M2#business-u08-06-q2@2: What is a Nash equilibrium? | A position where no playe
 NUM2#business-u08-06-q3@2: The four largest firms in a market have shares of 30%, 25%, 15% and 10%. What is the four-firm concentration ratio, in per cent? | 80 | 0 | % | CR4 = 30 + 25 + 15 + 10 = 80%.
 M3#business-u08-06-q4@3: Why does repeated interaction make cooperation between oligopolists more likely? | Firms can punish rivals who cheat in later periods | Repeated games make collusion legal | Prices are fixed by law in repeated markets | Firms forget earlier decisions | The threat of retaliation sustains cooperation.
 SA2#business-u08-06-q5@2,3: Explain how the prisoner's dilemma helps explain price competition in oligopoly. | Each firm reasons that cutting its price is better whether its rival keeps prices high, when it gains share, or cuts too, when it avoids losing share. So both cut prices and earn less than if both had kept prices high. The model shows why competition can persist even when collusion would be more profitable, and why firms seek ways to signal or enforce cooperation. | Dominant strategy ; Worse joint outcome ; Persistence of competition ; Cooperation and enforcement
+Q: What is an oligopoly? | A market dominated by a few large firms, with barriers to entry.
+Q: What is a four-firm concentration ratio? | The combined market share of the four largest firms.
+Q: Name three UK markets often described as oligopolies. | Grocery retail, energy supply and mobile networks.
+Q: Give three forms of non-price competition. | Advertising, loyalty schemes, product innovation and service.
+Q: What is collusion? | Firms agreeing to fix prices or share markets.
+Q: What is tacit collusion? | Firms following a price leader without any agreement.
+Q: What does game theory study? | Decisions where outcomes depend on others' choices.
+Q: In the prisoner's dilemma, why do firms both cut prices? | Each does better individually by cutting whatever the rival does, though both end up worse off.
+Q: What is a dominant strategy in the pricing example? | Pricing low, which is best for each firm whatever its rival does.
+Q: Are cartels legal in the UK? | No, they are illegal in the UK and EU.
 
 ## Competition policy
 LV: Introductory · Application
@@ -307,6 +367,16 @@ M2#business-u08-07-q2@2: Which is an example of a Chapter I infringement? | Comp
 M3#business-u08-07-q3@3: A dominant firm sells below cost to drive out a new rival, then raises prices. What is this? | Predatory pricing, an abuse of dominance | Normal competitive pricing | A legal loyalty discount | Tacit collusion | Applying the standard result: Exclusionary pricing abuses dominance.
 TF1#business-u08-07-q4@1: Holding a dominant position in a market is itself illegal under UK law. | false | Only the abuse of a dominant position is prohibited.
 SA2#business-u08-07-q5@2,3: Evaluate the role of competition policy in protecting consumers. | Competition policy deters and punishes cartels and abuses of dominance, blocks mergers that would raise prices, and investigates markets that are not working well, which generally lowers prices and spurs innovation. However, investigations can be slow and costly, firms may argue that size brings efficiencies, and digital markets change rapidly, so authorities must balance intervention against the risk of harming beneficial growth. | Deterrence and enforcement ; Merger control ; Costs and delays ; Balancing efficiencies
+Q: What does Chapter I of the Competition Act 1998 ban? | Agreements that prevent, restrict or distort competition, such as price-fixing, bid-rigging and market sharing.
+Q: Give two examples of abuse of a dominant position. | Predatory pricing, refusing to supply or imposing unfair prices.
+Q: Which act allows individuals in cartels to face criminal prosecution? | The Enterprise Act 2002.
+Q: When can the CMA block a merger? | If it would substantially lessen competition.
+Q: What are CMA market studies? | Investigations into whole sectors, such as audit, groceries or veterinary services.
+Q: What power does the Digital Markets, Competition and Consumers Act 2024 give the CMA? | To designate firms with strategic market status in digital activities and impose conduct requirements.
+Q: Name three sector regulators that share competition powers. | Ofgem, Ofwat and Ofcom.
+Q: What are the benefits of competition for consumers? | Lower prices, higher quality and more innovation.
+Q: What criticisms are made of competition regulation? | It can be slow and costly, and large firms may achieve economies of scale.
+Q: What options do firms have if the CMA rules against their merger? | Sell parts of their businesses or abandon the deal.
 
 ## Economic growth and the business cycle
 LV: Introductory · Application
@@ -350,6 +420,16 @@ M2#business-u08-08-q2@2: Why is real GDP used rather than nominal GDP to measure
 NUM2#business-u08-08-q3@2: Real GDP grows from £1,800bn to £1,845bn. What is the growth rate, in per cent? | 2.5 | 0.05 | % | Growth = 45 ÷ 1,800 × 100 = 2.5%.
 M3#business-u08-08-q4@3: In a recession, which business is most likely to see sales rise? | A discount supermarket | A luxury car dealer | A premium travel agent | A high-end restaurant | Applying the standard result: Buyers trade down to cheaper options.
 SA2#business-u08-08-q5@2,3: Explain how a business might respond to an expected recession. | A business may cut costs, delay or cancel investment, reduce stock and tighten credit control to protect cash. It might shift towards cheaper product lines, target new markets or renegotiate with suppliers. Firms with strong balance sheets may instead invest or acquire rivals cheaply, positioning themselves for the recovery. | Cost and cash control ; Investment decisions ; Product and market changes ; Opportunities
+Q: What is gross domestic product? | The total value of goods and services produced in an economy over a period.
+Q: What is economic growth? | The increase in real GDP, adjusted for inflation.
+Q: Which UK body publishes GDP estimates? | The Office for National Statistics.
+Q: What does long-run growth depend on? | More and better labour and capital, and productivity, especially technology and innovation.
+Q: What three things does GDP per head ignore as a measure of living standards? | Distribution, unpaid work and environmental costs.
+Q: What features mark a boom? | Rapid growth, rising employment, possible inflation and capacity shortages.
+Q: What is the output gap? | The difference between actual and potential output.
+Q: Which businesses may gain during a recession? | Sellers of inferior goods and discount retailers.
+Q: How do firms usually respond to a downturn? | Cutting costs, delaying investment, reducing stock and protecting cash.
+Q: Real GDP rises from £2,000bn to £2,050bn. What is the growth rate? | 2.5%.
 
 ## Inflation
 LV: Introductory · Application
@@ -394,6 +474,16 @@ M2#business-u08-09-q2@2: Energy prices surge and firms pass on the costs. What t
 NUM2#business-u08-09-q3@2: Nominal wages rise by 6% while inflation is 4%. What is the approximate real wage growth, in per cent? | 2 | 0.1 | % | Real growth is roughly 6 − 4 = 2%.
 M3#business-u08-09-q4@3: Inflation falls from 8% to 4%. What happens to prices? | They keep rising, but more slowly | They fall by 4% | They return to earlier levels | They stay exactly the same | Applying the standard result: Lower inflation is not deflation.
 SA2#business-u08-09-q5@2,3: Explain how high inflation can affect a manufacturing business. | Rising energy, materials and wage costs squeeze margins unless the firm can raise prices, which depends on the price elasticity of its products. Uncertainty makes it harder to plan, price contracts and invest. Staff may demand higher pay, and if UK inflation exceeds that abroad, exports become less competitive, though the real value of any borrowing falls. | Rising costs ; Pricing power ; Uncertainty ; Wages and competitiveness
+Q: What is inflation? | The rate at which the general level of prices rises over time.
+Q: How is the CPI constructed? | From the prices of a representative basket of goods and services, weighted by household spending.
+Q: What is deflation? | A fall in the general price level.
+Q: What is demand-pull inflation? | Inflation caused by total demand growing faster than the economy's capacity to supply.
+Q: How can expectations cause inflation? | People expecting inflation demand higher wages and firms raise prices, creating a wage–price spiral.
+Q: What is imported inflation? | Inflation from a weaker pound raising import prices.
+Q: Why can inflation benefit borrowers? | It reduces the real value of their debt.
+Q: How can higher UK inflation hurt exporters? | They may lose competitiveness if UK inflation is higher than abroad.
+Q: Staff get a 5% pay rise when inflation is 3%. What happens to real wages? | They rise by roughly 2%.
+Q: What is the difference between real and nominal values? | Real values adjust for inflation; nominal values do not.
 
 ## Unemployment and the labour market
 LV: Introductory · Application
@@ -438,6 +528,16 @@ M2#business-u08-10-q2@2: Coal miners lose jobs as pits close and lack skills for
 NUM2#business-u08-10-q3@2: There are 31.5 million employed and 1.5 million unemployed. What is the unemployment rate, in per cent? | 4.5 | 0.05 | % | Labour force is 33 million; 1.5 ÷ 33 × 100 is about 4.5%.
 M3#business-u08-10-q4@3: A hotel chain struggles to recruit chefs. What is the likely effect on chefs' wages? | They rise as firms compete for scarce workers | They fall because demand is weak | They are fixed by the National Living Wage | They are unaffected by shortages | Applying the standard result: Shortages push wages up.
 SA2#business-u08-10-q5@2,3: Evaluate the effect of a large rise in the National Living Wage on businesses. | A higher minimum wage raises costs for labour-intensive firms such as retail and hospitality, squeezing margins and possibly leading to price rises, reduced hours or automation. However, it can improve staff motivation and retention, reduce recruitment costs and increase consumer spending among low earners. The overall effect depends on the size of the rise, the sector and firms' ability to pass on costs. | Higher costs ; Responses ; Motivation and retention ; Overall balance
+Q: What is the ILO definition of unemployment? | Without a job, having looked for work in the past four weeks and able to start within two weeks.
+Q: How is the unemployment rate calculated? | Number unemployed ÷ labour force × 100.
+Q: Which survey is the UK unemployment rate based on? | The Labour Force Survey, published by the ONS.
+Q: What is frictional unemployment? | Short-term unemployment between jobs.
+Q: What is seasonal unemployment? Give an example industry. | Unemployment that varies with the seasons, as in tourism and agriculture.
+Q: What is cyclical unemployment? | Demand-deficient unemployment caused by recession.
+Q: Why is the demand for labour called derived demand? | It comes from demand for the product, together with workers' productivity.
+Q: What factors change the supply of and demand for labour? | Migration, training and automation.
+Q: What do critics argue about higher minimum wages? | They may reduce hiring in some sectors.
+Q: Why can unemployment fall without new jobs being created? | People leaving the labour force as inactive also reduce the rate.
 
 ## Interest rates and monetary policy
 LV: Introductory · Application
@@ -482,6 +582,16 @@ M2#business-u08-11-q2@2: How does a rise in Bank Rate usually affect business in
 NUM2#business-u08-11-q3@2: A firm has a £400,000 variable-rate loan, and its interest rate rises by 1.5 percentage points. By how much do annual interest costs rise, in £? | 6000 | 0 | £ | 1.5% × 400,000 = 6000 extra per year.
 M3#business-u08-11-q4@3: Inflation is forecast to fall well below 2%. What is the MPC most likely to do? | Cut Bank Rate | Raise Bank Rate sharply | Raise taxes | Fix the exchange rate | Applying the standard result: Lower rates stimulate demand.
 SA2#business-u08-11-q5@2,3: Explain how a rise in interest rates can reduce inflation. | Higher Bank Rate increases borrowing costs and the reward for saving, so households spend less, especially on credit, and firms delay investment. Lower asset prices reduce wealth and spending, and a stronger pound cuts import prices and makes exports dearer. Lower overall demand reduces pressure on prices, bringing inflation down over time. | Borrowing and saving ; Investment ; Asset prices and pound ; Lower demand
+Q: Since when has the Bank of England been operationally independent? | Since 1997.
+Q: What is Bank Rate? | The interest rate paid on reserves held by commercial banks, the Bank of England's main policy rate.
+Q: What does the MPC tend to do if it expects inflation to rise above target? | Raise Bank Rate.
+Q: How does a higher Bank Rate affect households? | Borrowing costs rise and saving pays more, so households cut spending, especially on credit.
+Q: How do higher interest rates affect asset prices? | House and share prices tend to fall, reducing wealth.
+Q: How does a stronger pound from higher rates affect trade? | Exports become dearer and imports cheaper.
+Q: What did quantitative easing involve? | The Bank creating money to buy government and corporate bonds, lowering longer-term interest rates.
+Q: What is quantitative tightening? | Reversing QE by reducing the Bank's bond holdings.
+Q: What is forward guidance? | Signalling the likely path of interest rates.
+Q: How might a furniture retailer respond to a rise in Bank Rate? | Cut stock, delay new stores and promote cheaper ranges as interest costs rise and credit sales fall.
 
 ## Fiscal policy and taxation
 LV: Introductory · Application
@@ -527,6 +637,16 @@ M2#business-u08-12-q2@2: Which is an example of an automatic stabiliser? | Risin
 NUM2#business-u08-12-q3@2: A company has taxable profits of £600,000 and pays corporation tax at 25%. What is its tax bill, in £? | 150000 | 0 | £ | 25% × 600,000 = 150000.
 M3#business-u08-12-q4@3: The government cuts spending and raises taxes to reduce borrowing. What is the likely short-term effect on demand? | It falls | It rises sharply | It stays the same | It becomes negative | Applying the standard result: Contractionary policy reduces demand.
 SA2#business-u08-12-q5@2,3: Explain how fiscal policy can affect a construction business. | Government spending on infrastructure, housing and schools directly creates contracts for construction firms, so expansionary policy boosts demand and contractionary cuts reduce it. Tax changes affect costs and profits, for example through employer National Insurance or capital allowances on machinery, and changes in household taxes affect demand for private building work. | Public contracts ; Tax costs ; Investment allowances ; Private demand
+Q: What is fiscal policy? | The use of government spending and taxation to influence the economy.
+Q: What is expansionary fiscal policy? | Higher spending or lower taxes to boost demand.
+Q: What is the national debt? | The total accumulated government borrowing.
+Q: When was the Office for Budget Responsibility created? | In 2010.
+Q: What are business rates? | A tax on non-domestic property.
+Q: Give two examples of excise duties. | Fuel, alcohol and tobacco duties.
+Q: How do capital allowances such as full expensing affect a firm? | They reduce taxable profit when the firm invests in qualifying plant and machinery.
+Q: Who collects VAT for HMRC? | Businesses, on most sales.
+Q: How can government spending help particular sectors? | It creates contracts for sectors such as construction and defence.
+Q: Taxable profit falls from £200,000 to £120,000 after full expensing. What is the new tax bill at 25%? | £30,000.
 
 ## Exchange rates
 LV: Introductory · Application
@@ -571,6 +691,16 @@ M2#business-u08-13-q2@2: Why might higher UK interest rates strengthen the pound
 NUM2#business-u08-13-q3@2: A UK product costs £50. The exchange rate is $1.30 per pound. What is the price in dollars? | 65 | 0 | $ | 50 × 1.30 = 65 dollars.
 M3#business-u08-13-q4@3: A UK importer of components fears the pound will fall in six months. What can it do? | Buy currency forward at today's rate | Invoice its customers in dollars | Wait and hope the rate improves | Sell more products abroad | Applying the standard result: A forward contract fixes the cost.
 SA2#business-u08-13-q5@2,3: Explain how a depreciation of the pound affects a UK manufacturer that imports materials and exports products. | A weaker pound makes its exports cheaper abroad, potentially increasing sales, especially if overseas demand is price elastic. But imported materials become more expensive in pounds, raising costs and squeezing margins. The net effect depends on the share of imported inputs, the elasticity of export demand and whether the firm has hedged its currency exposure. | Cheaper exports ; Dearer imports ; Elasticity ; Hedging and net effect
+Q: What does it mean that the pound floats? | Its value is set by supply and demand in currency markets.
+Q: What increases demand for pounds? | Foreigners buying UK exports, investing in the UK or being attracted by higher UK interest rates.
+Q: What increases the supply of pounds? | UK residents buying imports or investing abroad.
+Q: What is a depreciation of the pound? | A fall in its value.
+Q: Who benefits from a strong pound? | Firms that import materials.
+Q: What determines how much export volumes fall when the pound rises? | The price elasticity of demand for the product abroad.
+Q: What is a currency option? | The right, but not the obligation, to exchange at a set rate.
+Q: How does invoicing in pounds reduce currency risk? | It passes the exchange rate risk to the customer.
+Q: How does a stronger pound affect multinationals' overseas profits? | They fall when converted into pounds.
+Q: A £10,000 machine sells at $1.25 per pound. What is the US price if the pound rises to $1.40? | $14,000, unless the firm cuts its sterling price.
 
 ## International trade and protectionism
 LV: Introductory · Application
@@ -617,6 +747,16 @@ M2#business-u08-14-q2@2: What does comparative advantage depend on? | Lower oppo
 NUM2#business-u08-14-q3@2: Country A gives up 3 units of cloth to make 1 unit of food; Country B gives up 1.5 units of cloth. What is A's opportunity cost of food in cloth? | 3 | 0 | units | A gives up 3 units of cloth per unit of food, so B, at 1.5, has the comparative advantage in food.
 M3#business-u08-14-q4@3: After Brexit, a UK exporter to the EU faces new customs declarations but no tariffs. What has changed? | Non-tariff barriers have increased | Tariffs have been imposed on all goods | Quotas now limit all exports | The exporter is now in the EU customs union | Paperwork and checks are non-tariff barriers.
 SA2#business-u08-14-q5@2,3: Evaluate the case for protectionism. | Protection can shield infant and strategic industries, preserve jobs in vulnerable regions and respond to unfair practices such as dumping. However, it raises prices for consumers and businesses that rely on imported inputs, reduces competition and efficiency, and risks retaliation that hurts exporters. Most economists see targeted, temporary measures as less harmful than broad protection. | Industry protection ; Jobs ; Higher prices ; Retaliation and efficiency
+Q: Who developed the theory of comparative advantage, and when? | David Ricardo, in 1817.
+Q: What is absolute advantage? | Being better at producing a good than another country.
+Q: Name three benefits of trade besides comparative advantage. | Wider markets, economies of scale, more competition and more consumer choice.
+Q: What is a tariff? | A tax on imported goods, raising their price.
+Q: Give two examples of non-tariff barriers. | Regulations, standards, paperwork and rules of origin.
+Q: Give two reasons for protectionism. | Protecting infant or strategic industries, jobs or national security, or responding to dumping.
+Q: What are the costs of protectionism? | Higher prices, retaliation and less efficiency.
+Q: How does a customs union differ from a free trade area? | Both remove tariffs between members, but a customs union also shares a common external tariff.
+Q: What does the WTO do? | It sets rules for trade and settles disputes.
+Q: Which Pacific trade agreement did the UK join in 2024? | The CPTPP.
 
 ## Behavioural economics for business
 LV: Introductory · Evaluation
@@ -664,4 +804,14 @@ M2#business-u08-15-q2@2: A shop shows a "was £80, now £50" price. Which bias d
 M3#business-u08-15-q3@3: Why might a subscription that renews automatically and is hard to cancel be criticised? | It exploits default bias in a way that may mislead consumers | It always lowers prices for customers | It removes all choice from consumers | It is required by consumer law | Dark patterns raise ethical and legal concerns.
 MATCH2#business-u08-15-q4@2: Match each concept to an example. | Default effect = Pension auto-enrolment ; Framing = "95% fat-free" labels ; Social norms = "Most guests reuse towels" ; Present bias = Choosing pay now over a pension | Each shows a behavioural insight.
 SA2#business-u08-15-q5@2,3: Evaluate the use of behavioural economics by businesses. | Behavioural insights help firms design products, prices and messages that match how people really decide, such as clear defaults and simple choices that benefit customers. But techniques like anchoring, decoys, scarcity claims and hard-to-cancel subscriptions can exploit biases against customers' interests, damaging trust and breaching consumer law, so ethical use that helps customers make good decisions is likely to be more sustainable. | Realistic design ; Customer benefit ; Exploitation risks ; Trust and law
+Q: Who argued that decision-makers have bounded rationality, and when? | Herbert Simon, in 1955.
+Q: What are heuristics? | Mental shortcuts that create predictable biases.
+Q: Roughly how much more painful are losses than equivalent gains, according to prospect theory? | About twice as painful.
+Q: What is framing? Give an example. | Presentation changing choices, as "95% fat-free" sounds better than "5% fat".
+Q: What is the default effect? | People tend to stick with the pre-set option.
+Q: What is present bias? | Overvaluing immediate rewards over future ones.
+Q: What is a nudge? | A change in choice architecture that influences behaviour without removing options.
+Q: Who described nudges in 2008? | Richard Thaler and Cass Sunstein.
+Q: What are dark patterns? | Designs that exploit biases, such as hidden subscription renewals.
+Q: How did adding a £3.60 medium coffee change sales? | More customers bought the £3.80 large, which looked good value next to the decoy.
 `;

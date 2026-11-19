@@ -43,6 +43,16 @@ M2#music-u01-01-q2@2: A note sits in the second space from the bottom of the bas
 TF1#music-u01-01-q3@1: Moving a note from a line to the space directly above it raises its pitch by one letter name. | true | Each step on the stave, line to space or space to line, moves to the next letter name.
 M3#music-u01-01-q4@3: A pianist reads a chord with one note in each stave. Why is the grand stave clearer than writing both notes on one stave? | It keeps notes near the five lines and makes middle C a shared reference, so both hands read with few ledger lines | It makes the notes sound louder | It means the bass clef can be ignored | It forces both hands to play the same notes | The grand stave divides the piano's range at middle C so each hand reads close to its own stave instead of across many ledger lines.
 SA3#music-u01-01-q5@1,3: Explain how a clef and the grand stave together let a keyboard player read pitch accurately across a wide range. | A clef fixes one line to a named pitch: G4 on line 2 in treble, F3 on line 4 in bass. Every other line and space follows step by step. The grand stave places a treble stave over a bass stave with middle C on one ledger line between them, so pitch reads continuously from low to high with few ledger lines, and each hand reads its own stave. | States what a clef does ; Names the treble G line and bass F line ; Explains middle C as the link ; Notes the reduction in ledger lines
+Q: What is pitch? | How high or low a sound is heard to be, corresponding mainly to the frequency of vibration.
+Q: What happens to the frequency of a note when it goes up an octave? | It doubles.
+Q: To what frequency is the A above middle C tuned in the international standard? | 440 Hz.
+Q: What is a step on the stave? | Moving up one position, from a line to the space above or a space to the line above, raising the pitch by one letter name.
+Q: Why does a stave need a clef? | On its own a stave shows only relative height; the clef fixes one line to a named pitch so every other position follows.
+Q: What notes do the spaces of the treble clef spell from the bottom? | F A C E.
+Q: What notes are on the lines of the bass clef, from the bottom? | G B D F A.
+Q: Which note does the bass clef fix, and on which line? | F3, the F below middle C, on the fourth line, between the clef's two dots.
+Q: What note is on the middle line of the treble clef, and of the bass clef? | B4 in the treble clef and D3 in the bass clef.
+Q: What mistake makes learners misread every bass clef note by a third? | Reading bass clef as if it were treble, for example calling the bottom line E instead of G.
 
 ## Note names, ledger lines and octave registers
 LV: Introductory · Foundation
@@ -84,6 +94,16 @@ M2#music-u01-02-q2@1: A note sits on the first ledger line below the bass stave.
 TF2#music-u01-02-q3@2: In the Helmholtz system, c′ and C4 name the same pitch. | true | Both name middle C: Helmholtz uses a prime, scientific notation uses the octave number 4.
 M3#music-u01-02-q4@3: A violin melody climbs to notes needing six ledger lines above the treble stave for several bars. What would an experienced copyist most likely do? | Write the passage an octave lower with 8va above it | Keep the six ledger lines, as they are always clearest | Change to bass clef | Write the notes as text names | Notation guides recommend an octave sign once ledger lines become hard to count; a bass clef would make high notes worse, not better.
 SA2#music-u01-02-q5@1,3: Explain three ways of writing notes far above the treble stave and when each is suitable. | Ledger lines suit a few notes up to about three or four lines. An octave sign (8va, or 15ma for two octaves) suits a longer high passage, keeping the notes on or near the stave with a dashed line showing its extent. Some instruments change clef instead, but treble is already the highest common clef, so for very high treble notes the octave sign is the usual choice. | Ledger lines for a few notes ; Octave sign for longer passages with extent shown ; Mentions 15ma ; Notes limits of clef changes for high treble parts
+Q: What are the seven letter names of the musical alphabet? | A B C D E F G, after which the letters start again.
+Q: Why is the octave called an octave? | From Latin octavus, eighth: counting both ends, the octave is the eighth letter name.
+Q: How can you find C on a piano keyboard? | Each C sits immediately to the left of a group of two black keys.
+Q: What are ledger lines? | Short lines added above or below the stave for notes outside it, spaced like stave lines.
+Q: What does 8vb (8va bassa) below a passage mean? | Play it an octave lower than written.
+Q: What does 15ma mean? | Play two octaves higher than written.
+Q: What does loco mean after an octave sign? | It confirms the return to written pitch.
+Q: Beyond about how many ledger lines do notation guides recommend an octave sign or clef change? | About three or four, because many ledger lines are slow to read.
+Q: What range does the piano's 88 keys cover in scientific pitch notation? | From A0 to C8.
+Q: In scientific pitch notation, what is the B directly below middle C called? | B3, because octave numbers change at C, not at A.
 
 ## Accidentals: sharps, flats and naturals
 LV: Introductory · Foundation
@@ -125,6 +145,16 @@ M2#music-u01-03-q2@2: In one bar a B has a flat. Later in the same bar another B
 MS2#music-u01-03-q3@2: A note F4 with a sharp is tied from the last beat of a bar to the first beat of the next, and the next bar later has another F4 without an accidental. Which statements are true? Choose all that apply. | The tied note in the new bar is F♯ ; The later untied F4 in the new bar is F natural (assuming no key signature) | The later F4 is F♯ because the tie carries the sharp through the bar ; The tied note becomes F natural at the barline | A tie extends the sounding note only; the barline still cancels the accidental for any new note.
 M3#music-u01-03-q4@3: An editor adds a bracketed natural to an F in the bar after an F♯. A student says this is wrong because the barline already cancelled the sharp. Which is the best evaluation? | The natural is a correct cautionary accidental: redundant by rule but helpful to performers | The student is right: brackets are never used in notation | The editor has made the F a double flat | The bracket means the note is optional | Cautionary accidentals don't change pitch; they prevent the common error of carrying an accidental over the barline.
 SA3#music-u01-03-q5@2,3: Explain the rules for how long an accidental lasts, and why editors add cautionary accidentals. | An accidental applies to the note it precedes and to later notes on the same line or space in that bar, in that octave; the barline cancels it. A tie across the barline carries it only to the tied note. Because performers often carry an accidental into the next bar, or are unsure about other octaves, editors add cautionary accidentals (often bracketed) that confirm the pitch without changing it. | Same line or space until the barline ; Octave-specific in modern practice ; Tie carries it only to the tied note ; Cautionary accidental prevents misreading without changing pitch
+Q: What does a sharp do to a note? | Raises it by one semitone, as F to F♯.
+Q: What does a double sharp do, and how is it written? | Raises a note by two semitones; it is written as a small x.
+Q: Where is an accidental written relative to the notehead? | Immediately before the notehead, on the same line or space, though it is spoken after the letter.
+Q: According to modern notation guides, does an accidental affect the same letter in a different octave? | No, it applies only to that line or space in that octave; careful editions repeat it if the other octave is meant.
+Q: What cancels an accidental? | The barline at the end of the bar, or a natural sign.
+Q: How does a key signature differ from an accidental? | A key signature applies to every octave for the whole piece; an accidental is a local exception lasting to the barline.
+Q: How do you restore a note sharpened by the key signature? | Write a natural before it.
+Q: What is a cautionary accidental? | A reminder accidental, sometimes bracketed, that confirms a pitch already true to prevent misreading, without changing it.
+Q: In a bar of 4/4, F♯4 is followed later in the same bar by F4 with no sign. What is the second note? | Still F♯, because the accidental lasts to the end of the bar on that line or space.
+Q: Why do editors often add cautionary accidentals just after a barline? | Because players tend to carry an accidental into the next bar, though the barline cancels it.
 
 ## Tones, semitones and enharmonic equivalents
 LV: Introductory · Foundation
@@ -165,6 +195,16 @@ M2#music-u01-04-q2@2: Which pair is a diatonic semitone? | B–C | C–C♯ :: S
 MATCH1#music-u01-04-q3@1,3: Match each note to its enharmonic equivalent. | F♯ = G♭ ; E♯ = F ; C♭ = B ; D♯ = E♭ | Each pair sounds the same on a keyboard in equal temperament but is spelt with a different letter.
 M3#music-u01-04-q4@3: A student writes the leading note of E major as E♭ instead of D♯. Why is this marked wrong although it sounds identical on the piano? | The scale must use each letter once; E♭ repeats E and misrepresents the note's function | E♭ is lower than D♯ on the piano | Key signatures can't contain flats | D♯ and E♭ are a tone apart | A major scale spells seven different letters; the seventh degree of E major is a D, raised to D♯.
 SA3#music-u01-04-q5@2,3: Explain enharmonic equivalence and evaluate the claim that spelling doesn't matter because the notes sound the same. | Enharmonic notes, such as F♯ and G♭, share one pitch in equal temperament but have different letter names. Spelling matters because it shows function and interval: the leading note of G major must be F♯, and C–E♭ is a minor third while C–D♯ is an augmented second. In unequal historical tunings the notes even sound different. So the claim holds only for the keyboard sound in equal temperament. | Defines enharmonic equivalence with an example ; Spelling shows key and function ; Spelling determines the interval name ; Notes historical tunings where they differ ; Reaches a judgement
+Q: What is a semitone on the piano? | The distance from one key to the very next key, black or white.
+Q: How many semitones are there in an octave? | Twelve.
+Q: What is a tone, and what is its American name? | Two semitones; the American name is a whole step.
+Q: How far apart are most neighbouring white keys, and why? | A tone, because a black key lies between them.
+Q: What is a diatonic semitone? | A semitone between two different letter names, such as E–F, C♯–D or B–C.
+Q: Is G♯ to A a diatonic or chromatic semitone? | Diatonic, because the letters G and A differ.
+Q: What are enharmonic equivalents? | Notes that sound the same in equal temperament but are spelt differently, such as F♯ and G♭.
+Q: Give the three names of the piano key D. | D, C double sharp and E double flat.
+Q: Why is the leading note of D major spelt C♯ rather than D♭? | Because the scale needs one of each letter name.
+Q: How do C to E♭ and C to D♯ differ, though both are three semitones? | C to E♭ is a minor third; C to D♯ is an augmented second. The spelling shows the interval.
 
 ## The alto and tenor clefs
 LV: Intermediate · Application
@@ -204,6 +244,16 @@ M2#music-u01-05-q2@1: In the tenor clef, which note is on the top line? | E4 | G
 TF2#music-u01-05-q3@1,3: The note on the middle line of the alto clef sounds the same as the note on the first ledger line below the treble stave. | true | Both are middle C (C4).
 M3#music-u01-05-q4@3: A cello passage around E4 to A4 is written in bass clef with several ledger lines. What is the best way to make it easier to read? | Change to tenor clef, which places this range on or near the stave | Change to alto clef, which cellists always read | Rewrite it an octave lower | Add an 8vb sign | Cellists read tenor clef for high passages; alto clef isn't normal for cello, and changing the octave would change the music.
 SA3#music-u01-05-q5@1,2: Explain why C clefs exist and how a player reads alto and tenor clef efficiently. | C clefs put middle C on a chosen line so that a middle-range part sits on the stave without ledger lines: alto clef places C4 on line 3, suiting the viola; tenor clef places C4 on line 4, suiting the high register of cello, bassoon and trombone. Reading is fastest by anchoring on middle C and stepping from it, or by learning the lines and spaces as a set, rather than translating from another clef. | Purpose: keep the range on the stave ; Alto clef position and instrument ; Tenor clef position and instruments ; Reading strategy anchored on middle C
+Q: How do you recognise which line a C clef marks as middle C? | The line through the central point where the clef's two curved arms meet is middle C.
+Q: What notes are on the lines of the alto clef, from the bottom? | F3 A3 C4 E4 G4.
+Q: What notes are on the lines of the tenor clef, from the bottom? | D3 F3 A3 C4 E4.
+Q: Why do instruments with a middle range use C clefs? | Placing middle C on a chosen line lets them avoid ledger lines.
+Q: Name three less common C clef positions. | Soprano (C on line 1), mezzo-soprano (line 2) and baritone (line 5), found in older vocal music and score-reading exercises.
+Q: Why does the alto clef suit the viola? | Its lowest string, C3, sits just below the first ledger line under the stave, so almost all its normal range lies on the stave.
+Q: Which clef does viola music switch to for high passages? | The treble clef.
+Q: When do cellists and bassoonists read tenor clef? | For higher passages, to avoid ledger lines above the bass stave.
+Q: What is the safest way to rewrite a passage in a different clef at the same pitch? | Name each note with its octave number in the old clef, then place that pitch in the new clef.
+Q: Why is reading alto clef as treble shifted by one note a poor method? | The real shift is a seventh with an octave change, which is unreliable mentally; anchor on middle C on the middle line instead.
 
 ## Note values and rests
 LV: Introductory · Foundation
@@ -247,6 +297,16 @@ M2#music-u01-06-q2@2: How many demisemiquavers make one crotchet? | Eight | Four
 SEQ1#music-u01-06-q3@1: Put these note values in order from longest to shortest. | Breve ; Semibreve ; Minim ; Crotchet ; Quaver ; Semiquaver | Each value is half the one before it.
 M3#music-u01-06-q4@3: A student writes a minim rest followed by a crotchet rest for an entire silent bar of 3/4. What would most editors prefer? | A single semibreve rest centred in the bar | A dotted minim rest | Three crotchet rests | Leave the bar empty | By convention a semibreve rest shows any whole bar of silence; a dotted minim rest is avoided in this role.
 SA2#music-u01-06-q5@2,3: Explain why note values are described as relative, giving an example of how the same notated rhythm can last different lengths of time. | Note values give proportions, not seconds: a minim is always two crotchets, but how long a crotchet lasts depends on the tempo. At crotchet = 60 a crotchet lasts one second and a minim two; at crotchet = 120 the same notation lasts half as long. So two pieces with identical notation can last very different times. | Values are proportional ; Tempo sets the actual duration ; Worked example with two tempos ; Conclusion about notation versus time
+Q: What is the relationship between each note value and the one above it? | Each value is half the one above it.
+Q: What is a breve worth? | Two semibreves; its American name is double whole note.
+Q: What does a minim look like? | An open notehead with a stem.
+Q: How does a crotchet look different from a minim? | A crotchet has a filled notehead with a stem; a minim's notehead is open.
+Q: How many flags or beams does a semiquaver have? | Two.
+Q: What are the American names for the demisemiquaver and hemidemisemiquaver? | 32nd note and 64th note.
+Q: Why are note values described as relative? | They are not fixed in seconds: how long a crotchet lasts depends on the tempo.
+Q: Where does the minim rest sit on the stave? | On the third line.
+Q: How is a very long silence shown in an instrumental part? | With a multi-bar rest that has a number above it.
+Q: How many semiquavers equal a minim? | Eight: a minim is two crotchets, each worth four semiquavers.
 
 ## Dotted notes and ties
 LV: Introductory · Foundation
@@ -289,6 +349,16 @@ M2#music-u01-07-q2@1: A double-dotted crotchet is worth how many semiquavers? | 
 TF2#music-u01-07-q3@3: A curved line joining a G and an A is a tie. | false | A curve between different pitches is a slur; ties join only notes of the same pitch.
 M3#music-u01-07-q4@2: In 4/4, a note lasting three crotchets starts on beat 2. How is it usually written so the middle of the bar stays visible? | A crotchet on beat 2 tied to a minim on beat 3 | A dotted minim on beat 2 | Three tied crotchets | A minim on beat 2 tied to a crotchet on beat 4 | Notation keeps beats 1–2 and 3–4 visible; a dotted minim starting on beat 2 would hide the half-bar, so a crotchet is tied to a minim.
 SA3#music-u01-07-q5@1,2,3: Explain how dots and ties extend note values, and why a composer might use a tie where a dotted note would give the same total length. | A dot adds half a note's value and a double dot a further quarter. A tie adds two same-pitch notes together. Both can produce the same duration, but ties are needed across barlines and are preferred where a dotted note would hide the beat or the half-bar, so the performer can see where the beats fall. Ties must not be confused with slurs, which join different pitches. | Dot rule with example ; Tie rule ; Ties needed across barlines ; Ties keep the beat structure visible ; Distinguishes tie from slur
+Q: How much does a dot add to a note? | Half of the note's value.
+Q: How long is a dotted minim? | Three crotchets: a minim plus a crotchet.
+Q: What equation gives the length of a double-dotted note? | Double-dotted value = value × 7/4, because the second dot adds half of the first dot.
+Q: How many semiquavers is a double-dotted minim? | Fourteen: 8 for the minim, 4 for the first dot and 2 for the second.
+Q: Can rests be dotted? | Yes, in the same way as notes.
+Q: When are ties needed? | When a note crosses a barline; they are also used inside a bar to keep the beat structure visible.
+Q: How would you write a note lasting five crotchets that starts on beat 1 of a 4/4 bar? | A semibreve filling the bar, tied to a crotchet on beat 1 of the next bar.
+Q: What does a slur tell a string player? | To play the slurred notes in one bow, smoothly connected.
+Q: Which notes can be joined by a tie? | Only adjacent notes on the same line or space with the same accidental.
+Q: A curve joins a C and a D. Is the D played? | Yes: a curve between different pitches is a slur, not a tie.
 
 ## Pulse, beat and metre
 LV: Introductory · Foundation
@@ -326,6 +396,16 @@ M2#music-u01-08-q2@2: A march goes "LEFT right LEFT right" with the accent every
 MATCH1#music-u01-08-q3@2: Match each dance or form to its usual metre. | Waltz = Triple ; Military march = Duple ; Minuet = Triple ; Many hymn tunes in 4/4 = Quadruple | Waltzes and minuets are in threes; marches in twos; many hymns in four.
 M3#music-u01-08-q4@3: A student says a slow 4/4 movement and a fast 4/4 movement have different metres because they feel so different. Which is the best evaluation? | Wrong: both are quadruple; they differ in tempo, and at extremes listeners may feel a half- or double-time pulse | Right: metre is defined by speed | Right: only fast music has metre | Wrong: 4/4 has no metre | The written metre is the same; tempo changes the feel, and very fast or slow tempos can make listeners tap a different beat level.
 SA3#music-u01-08-q5@1,3: Distinguish pulse, rhythm, metre and tempo, using one piece you know as an example. | Pulse is the steady beat a listener taps; tempo is its speed; metre is how the beats are grouped into strong and weak (duple, triple, quadruple); rhythm is the pattern of note lengths heard over the pulse. For example, a waltz has a moderate-to-fast tempo, triple metre with a strong first beat, and melodic rhythms that vary while the pulse stays steady. | Defines pulse ; Defines tempo ; Defines metre ; Defines rhythm ; Applies all four to an example
+Q: What is pulse? | The steady series of beats a listener taps along to.
+Q: What is rhythm, as distinct from pulse? | The pattern of note lengths, rests and accents heard against the pulse.
+Q: What is tempo? | How fast the pulse goes.
+Q: Can a pulse change speed and still be a pulse? | Yes: it may speed up or slow down, but it doesn't wander from beat to beat.
+Q: What is a bar, and what is its American name? | A repeating group of beats marked off by barlines; in American usage, a measure.
+Q: What is the accent pattern of duple metre, and which music typically uses it? | Strong, weak; marches.
+Q: Which dances are typically in triple metre? | Waltzes and minuets.
+Q: What is the difference between simple and compound metre? | In simple metre each beat divides in two; in compound metre each beat divides in three.
+Q: You hear ONE two three ONE two three. What metre is it? | Triple metre, because the accent recurs every three beats.
+Q: Why is it a mistake to confuse metre with tempo? | Metre describes how beats group, tempo how fast they go; a slow piece can be duple and a fast one triple.
 
 ## Simple time signatures
 LV: Introductory · Foundation
@@ -366,6 +446,16 @@ M2#music-u01-09-q2@2: How would 3/2 be described? | Simple triple | Simple duple
 MS2#music-u01-09-q3@3: Which of these would correctly fill one bar of 3/4? Choose all that apply. | A dotted minim ; A minim and a crotchet ; Six quavers | A semibreve ; Two dotted crotchets and a crotchet | 3/4 holds three crotchets; a semibreve is four, and two dotted crotchets plus a crotchet is four crotchets.
 M3#music-u01-09-q4@2: Which time signature means the same number and type of beat as the symbol C? | 4/4 | 2/2 :: That is cut-C | 4/2 | 2/4 | C stands for common time, four crotchet beats per bar.
 SA3#music-u01-09-q5@1,2: Explain how to read and classify any simple time signature, using 2/4, 3/8 and 4/2 as examples. | In simple time each beat divides into two. The top number is the number of beats per bar and the bottom names the beat value. 2/4 has two crotchet beats: simple duple. 3/8 has three quaver beats: simple triple. 4/2 has four minim beats: simple quadruple. | States the beat divides in two ; Explains top number ; Explains bottom number ; Classifies all three correctly
+Q: Where is a time signature written? | Once at the start, after the clef and key signature, as two stacked numbers.
+Q: In a simple time signature, what does the top number show? | The number of beats in a bar.
+Q: What does a bottom number of 8 mean in a simple time signature? | The beat is a quaver.
+Q: What does a bottom number of 2 mean in a time signature? | The beat is a minim.
+Q: Name the three simple triple time signatures. | 3/2, 3/4 and 3/8.
+Q: What does the symbol C stand for as a time signature? | Common time, 4/4.
+Q: How is alla breve written as a symbol? | As C with a vertical stroke, meaning 2/2.
+Q: What fills one bar of 3/2? | Three minims, which equals six crotchets or twelve quavers.
+Q: Why is 3/2 called simple triple? | It has three minim beats, and each minim divides into two crotchets.
+Q: What common mistake do learners make with the bottom number of a time signature? | Reading it as a number of beats; it names the beat's note value, so the 4 in 3/4 means crotchet.
 
 ## Compound time signatures
 LV: Introductory · Application
@@ -406,6 +496,16 @@ M2#music-u01-10-q2@2: What is 6/4 classified as? | Compound duple, with dotted-m
 MATCH2#music-u01-10-q3@2: Match each time signature to its classification. | 9/8 = Compound triple ; 3/4 = Simple triple ; 12/8 = Compound quadruple ; 2/4 = Simple duple | In compound time divide the top number by three; in simple time it already counts the beats.
 M3#music-u01-10-q4@3: A student beams six quavers in a bar of 3/4 as two groups of three. What is the effect, and is it correct? | It makes the bar look like 6/8, hiding the three crotchet beats; in 3/4 the quavers should be grouped in twos or all six together | It is correct, as quavers are always grouped in threes | It changes the time signature to 9/8 | It has no effect because beaming is decorative | Beaming shows the beats; grouping in threes implies two dotted-crotchet beats, the opposite of 3/4.
 SA3#music-u01-10-q5@1,3: Explain why compound time signatures count divisions rather than beats, and how 6/8 and 3/4 differ although both contain six quavers. | A compound beat is a dotted note, which has no single-number fraction of a semibreve, so the time signature counts its subdivisions: 6/8 means six quavers, grouped into two dotted-crotchet beats. 3/4 also holds six quavers, but grouped into three crotchet beats, each dividing in two. The difference shows in beaming (3+3 against 2+2+2) and in accent (a lilting two against a three). | Compound beat is dotted ; Why divisions are counted ; Grouping in 6/8 ; Grouping in 3/4 ; Accent or feel difference
+Q: Why does a compound time signature count divisions rather than beats? | Because the beat is a dotted note, which can't be written as a single number.
+Q: How do you find the number of beats in a compound time signature? | Divide the top number (6, 9 or 12) by three.
+Q: What is the beat in 6/8? | A dotted crotchet, worth three quavers.
+Q: What is the beat in 6/4? | A dotted minim; there are two per bar (compound duple).
+Q: Classify 9/16 and name its beat. | Compound triple, with a dotted-quaver beat of three semiquavers.
+Q: Name the three compound quadruple time signatures. | 12/4, 12/8 and 12/16.
+Q: How does the feel of 6/8 differ from 3/4? | 6/8 feels like a lilting two; 3/4 feels like a three.
+Q: What shows a reader whether six quavers are in 6/8 or 3/4? | The beaming: 3 + 3 in 6/8, 2 + 2 + 2 in 3/4.
+Q: What effect is created by alternating 6/8 and 3/4 groupings? | A hemiola.
+Q: When might performers count six quavers in 6/8? | Only in very slow music; the metre is still compound duple.
 
 ## Grouping notes and rests
 LV: Intermediate · Application
@@ -446,6 +546,16 @@ M2#music-u01-11-q2@2: In 4/4 a bar has silence on beats 3 and 4 only. Which rest
 TF2#music-u01-11-q3@2: In 3/4, six quavers may be beamed together under one beam. | true | A full bar of six quavers in 3/4 may share one beam; beaming them in threes would imply 6/8.
 M3#music-u01-11-q4@3: In 6/8, a dotted crotchet on beat 1 is followed by a silent second beat. Which rest is conventional for beat 2? | A dotted crotchet rest | A crotchet rest and a quaver rest, in that order | Three quaver rests | A minim rest | In compound time a whole silent dotted-crotchet beat takes one dotted crotchet rest; splitting it is reserved for part-beats.
 SA3#music-u01-11-q5@1,2,3: A bar of 4/4 is written as a crotchet, four quavers beamed together on beats 2 and 3, and a crotchet. Explain what is wrong, using the grouping principles, and rewrite it. | The governing principle is that every beat, and the middle of a 4/4 bar, must be visible. Four quavers may be beamed together only as the first or second half of the bar; here the beam crosses from beat 2 to beat 3 and hides the half-bar. Rewrite as crotchet, two quavers beamed (beat 2), two quavers beamed (beat 3), crotchet. | States the visibility principle ; Half-bar rule for four quavers in 4/4 ; Identifies the beam crossing the middle ; Gives the corrected grouping
+Q: What is the governing principle of grouping notes and rests? | The performer should be able to see where each beat begins.
+Q: In simple time, how are quavers and semiquavers beamed? | By the beat: two quavers or four semiquavers per crotchet beat.
+Q: When may four quavers be beamed together in 4/4? | When they make up the first or second half of the bar, beats 1–2 or 3–4.
+Q: Why are rest conventions stricter than beaming conventions? | Because a rest has no sound to help the reader find the beat.
+Q: How should a quaver on the beat followed by silence for the rest of the beat be written? | Quaver then quaver rest, completing the beat before the next one starts.
+Q: When may a minim rest be used in 4/4? | To fill the first or second half of the bar.
+Q: Are dotted rests used in simple time? | They are generally avoided in simple time but normal in compound time.
+Q: What rest fills a whole silent beat in compound time? | A dotted-crotchet rest, in 6/8, 9/8 or 12/8.
+Q: How do you correct a 4/4 bar of crotchet, minim rest, crotchet? | Replace the minim rest with two crotchet rests on beats 2 and 3.
+Q: What is a beam? | A thick line joining the stems of quavers or shorter notes, replacing their flags and showing beat groupings.
 
 ## Triplets, duplets and irregular divisions
 LV: Intermediate · Application
@@ -482,6 +592,16 @@ M2#music-u01-12-q2@2: In 6/8, a beat is written as two quavers marked 2. What is
 TF2#music-u01-12-q3@2: In 4/4, five semiquavers in the time of four are written as semiquavers with a 5 above. | true | Quintuplets take the note value of the normal group of four they replace.
 M3#music-u01-12-q4@3: A Chopin nocturne has 11 notes in the right hand over a bar of steady left-hand quavers. How should a performer approach it? | Shape the group freely within the bar, keeping the left hand steady and arriving together at the next downbeat | Count each note exactly as an eleventh of the bar with a metronome | Play the notes as semiquavers and let them overflow into the next bar | Ignore some notes to make the rhythm even | Large Romantic groups are expressive ornaments: the start and end points are fixed and the inside is shaped with rubato.
 SA3#music-u01-12-q5@1,2: Explain how triplets and duplets let music borrow divisions from the other kind of metre, with an example of each. | Simple time divides beats in two; a triplet borrows the compound division of three, for example three triplet quavers in one crotchet beat of 2/4. Compound time divides beats in three; a duplet borrows the simple division of two, for example two quavers marked 2 in one dotted-crotchet beat of 6/8, each lasting a dotted quaver. | Normal divisions in simple and compound time ; Triplet definition and example ; Duplet definition and example ; Correct note values and duration
+Q: How is a triplet marked? | With a 3 above or below the notes, often with a bracket.
+Q: What do triplets bring into simple time? | Compound-style division, three notes in the time of two.
+Q: What is a duplet? | Two notes played in the time of three of the same value, marked 2, mainly in compound time.
+Q: How long does each note of a quaver duplet in 6/8 really last? | One and a half ordinary quavers, the same as a dotted quaver.
+Q: Into the time of how many notes do a quintuplet and sextuplet usually fit? | Four of the same value.
+Q: What note value is used for an irregular group? | The value of the next lower normal grouping, so five in the time of four semiquavers are semiquavers.
+Q: How do modern scores remove doubt about an irregular group? | By marking the full ratio, such as 3:2 or 5:4.
+Q: Whose piano music is known for very large irregular groups against a regular left hand? | Chopin's, with groups such as 11, 13 or 22 notes.
+Q: Besides two quavers marked 2, how else may a 6/8 duplet be written? | As two dotted quavers, which needs no 2.
+Q: What is an irregular division? | Dividing a beat into a number of parts other than its normal two or three.
 
 ## Syncopation, anacrusis and cross-rhythm
 LV: Intermediate · Application
@@ -520,6 +640,16 @@ M2#music-u01-13-q2@2: A song in 4/4 begins with a quaver anacrusis. How long sho
 MS2#music-u01-13-q3@3: Which are examples of hemiola or cross-rhythm? Choose all that apply. | Two bars of 3/4 accented as three minims ; Triplets in one hand against quavers in the other ; A repeating three-quaver pattern across bars of 4/4 | A crescendo over four bars ; A melody that starts on an upbeat | Each correct option sets one grouping against another; dynamics and an anacrusis don't.
 M3#music-u01-13-q4@3: In a Baroque minuet in 3/4, the bar before the final cadence has a tie across the barline into the cadence bar, with notes accented every two beats. What is most likely happening? | A hemiola: the two bars are grouped as three minims, broadening the approach to the cadence | A change to 2/4 time | A syncopated anacrusis | An error in the score | Hemiola regroups 3 + 3 crotchets as 2 + 2 + 2, a standard Baroque cadential gesture.
 SA3#music-u01-13-q5@1,3: Explain three ways rhythm can work against the metre, giving an example of each. | Syncopation accents weak beats or off-beats, for example a note tied across beat 3 in 4/4, as in ragtime. Cross-rhythm sets two groupings together, for example three against two between the hands. Hemiola regroups two bars of triple time into three duple units, as at Baroque cadences in minuets. An anacrusis also displaces the start of the melody from the downbeat. | Syncopation with example ; Cross-rhythm or polyrhythm with example ; Hemiola with example ; Clear link to the underlying metre
+Q: Name three common ways of creating syncopation. | A note tied across a strong beat, an accent on the "and" between beats, and a rest on the downbeat.
+Q: In which styles is syncopation central? | Ragtime, jazz, Latin and much popular music, though it is also found throughout Western art music.
+Q: Why is the final bar shortened when a piece begins with an anacrusis? | So that the opening and closing bars together make one complete bar.
+Q: A melody in 3/4 begins with a one-crotchet anacrusis. How long is the last bar? | Two crotchets, for example a minim.
+Q: What number is usually given to an incomplete opening bar? | Bar 0; bar 1 is the first full bar.
+Q: What is a cross-rhythm? | Two conflicting groupings set against each other, such as three even notes in one part against two in another.
+Q: What is polyrhythm, and where is it fundamental? | Sustained cross-rhythm; it is fundamental to much West African drumming.
+Q: In 3/4, how does a hemiola accent two bars of six crotchets? | As three minims, 1–2, 3–4, 5–6, often marked by ties.
+Q: Why do Baroque dances use hemiola before a cadence? | It is a standard way of slowing the motion into the cadence, in dances such as the courante and minuet.
+Q: Why does it matter not to count the anacrusis as bar 1? | Because bar numbers then shift, which matters when an exam asks about a specific bar.
 
 ## Irregular and changing metres
 LV: Intermediate · Application
@@ -558,6 +688,16 @@ M2#music-u01-14-q2@2: Seven quavers in 7/8 are beamed 3 + 2 + 2. How many beats 
 MATCH2#music-u01-14-q3@2: Match each piece to its metre. | Holst, Mars from The Planets = 5/4 ; Tchaikovsky, Symphony No. 6, second movement = 5/4 ; Many Balkan dances = Additive metres such as 7/8 ; Stravinsky, Sacrificial Dance = Changing metres | Each is a standard example of irregular or changing metre.
 M3#music-u01-14-q4@3: A composer sets a text whose stresses fall irregularly. Why might they choose changing metres rather than keep 4/4 with syncopation? | Changing metres place each stress on a downbeat, so the notation and the performers' sense of accent match the text | Changing metres are easier to read | 4/4 can't contain syncopation | Changing metres always sound faster | Writing the irregular stresses as syncopations against 4/4 implies a regular metre the music doesn't have; changing metres make the real accents strong beats.
 SA3#music-u01-14-q5@1,3: Evaluate the use of irregular and changing metres, with examples, compared with regular metres. | Irregular metres such as 5/4 and 7/8 are built from twos and threes and create unequal beats, giving a limping or restless effect (Holst's Mars, Balkan aksak). Changing metres, as in The Rite of Spring, let accents fall where the music needs them instead of imposing a regular pattern. They gain energy and flexibility but are harder to perform and to entrain to; regular metres support dance, ensemble coordination and predictability. The choice depends on expressive aim and tradition. | Explains additive grouping ; Gives repertoire examples ; Explains changing metres ; Weighs gains against difficulty ; Reaches a judgement
+Q: What is an irregular, or asymmetrical, metre? | A metre whose beats can't be divided into equal twos or threes, typically 5 or 7.
+Q: Name three ways of grouping a bar of 7/8. | 2 + 2 + 3, 3 + 2 + 2 or 2 + 3 + 2.
+Q: How is 8/8 often grouped in Latin and popular music? | As 3 + 3 + 2, an uneven grouping of eight quavers.
+Q: How can a score show the grouping of an irregular metre? | By beaming, or by writing the grouping in the time signature itself, such as 3+2+2/8.
+Q: How does a bar of 7/8 grouped 2 + 2 + 3 feel at speed? | As three beats of unequal length: short, short, long.
+Q: Which Tchaikovsky movement is a waltz-like movement in 5/4? | The second movement of his Symphony No. 6.
+Q: Name two well-known pieces in 5/4 besides Tchaikovsky's. | Mars from Holst's The Planets, and Take Five, recorded by the Dave Brubeck Quartet in 1959.
+Q: What does aksak mean? | Turkish for limping: Balkan and Turkish additive rhythm with beats of unequal length, as in 7/8 or 11/16.
+Q: What are changing, or mixed, metres? | Metres in which the time signature changes frequently, sometimes every bar, so the barline follows the accents.
+Q: Why is it wrong to count 7/8 as seven equal beats at speed? | Performers feel the groups as unequal beats; counting seven evenly destroys the characteristic limp.
 
 ## Tempo and metronome marks
 LV: Introductory · Foundation
@@ -602,6 +742,16 @@ M2#music-u01-15-q2@2: At crotchet = 60, how long does a bar of 4/4 last? | Four 
 SEQ1#music-u01-15-q3@1: Order these terms from slowest to fastest. | Largo ; Adagio ; Andante ; Allegro ; Presto | Largo and adagio are slow, andante walking pace, allegro fast, presto very fast.
 M3#music-u01-15-q4@3: An editor finds a metronome mark from Beethoven that most pianists find too fast to play musically. What is the most defensible approach? | Treat the mark as important evidence of character and pace, while weighing the debate about Beethoven's metronome and the musical result | Ignore all metronome marks as unreliable | Play exactly at the mark whatever the result | Halve the speed | The marks are primary evidence, but their reliability is disputed; good practice weighs both rather than ignoring or obeying blindly.
 SA3#music-u01-15-q5@2,3: Explain how tempo is indicated in a score, and evaluate whether a metronome mark fixes the tempo a composer wanted. | Tempo is shown by words, usually Italian (adagio, allegro), which describe speed and character, by terms for change (rall., accel., a tempo, rubato), and by metronome marks giving beats per minute. A metronome mark is precise but not decisive: composers' own marks sometimes seem impractical, as with Beethoven's disputed marks, acoustics and instruments affect the best speed, and expressive music bends tempo. It is strong evidence to be interpreted. | Words and their character ; Change-of-tempo terms ; Metronome marks explained ; Limits of metronome marks with example ; Judgement
+Q: Why do most tempo terms come from Italian? | Italian became the international language of tempo in the 17th and 18th centuries.
+Q: What do largo and lento mean? | Largo means broad, very slow; lento means slow.
+Q: What does allegro literally mean? | Cheerful; as a tempo it means lively and fast.
+Q: What do the qualifiers molto, poco and non troppo mean? | Very, a little and not too much.
+Q: How does ritenuto differ from rallentando? | Ritenuto means held back, usually at once; rallentando means gradually slowing.
+Q: What does allargando mean? | Broadening, often getting louder too.
+Q: What is rubato? | Flexible tempo, borrowing time for expression.
+Q: What does a pause (fermata) instruct? | Hold the note or rest longer than its value.
+Q: Who patented the metronome, and when? | Johann Maelzel, around 1815.
+Q: At crotchet = 120, how long does a bar of 3/4 last? | 1.5 seconds: each crotchet lasts 0.5 seconds and there are three.
 
 ## Dynamics and articulation
 LV: Introductory · Foundation
@@ -646,6 +796,16 @@ M2#music-u01-16-q2@2: A note is marked with a short horizontal line above it. Ho
 MATCH1#music-u01-16-q3@2: Match each sign to its meaning. | Dot above a note = Staccato ; Wedge above a note = Staccatissimo ; > above a note = Accent ; Opening hairpin = Crescendo | Each is a standard articulation or dynamic sign.
 M3#music-u01-16-q4@3: A string quartet plays a passage marked ff that sounds quieter on a meter than an orchestral passage marked mf. Is this a problem? | No: dynamics are relative to the ensemble and the music, so ff means very loud for this group | Yes: ff must always be louder than mf in decibels | Yes: the quartet has misread the score | No: dynamics are optional | Dynamic markings describe intent and relative level, not fixed sound levels.
 SA2#music-u01-16-q5@2,3: Explain the difference between dynamics and articulation, giving two markings of each and how a performer would respond. | Dynamics concern loudness: p asks for quiet playing and a crescendo hairpin for a gradual increase. Articulation concerns how notes begin, last and connect: staccato shortens and detaches a note, a slur connects notes smoothly in one bow or breath. Dynamics are relative to the instrument and context. | Defines dynamics ; Two dynamic markings with responses ; Defines articulation ; Two articulation markings with responses
+Q: What does mp mean? | Mezzo piano: moderately quiet.
+Q: How is a crescendo shown besides the word cresc.? | By an opening hairpin.
+Q: What does fp mean? | Forte-piano: loud, then immediately quiet.
+Q: Why are dynamics described as relative? | A forte on a solo flute is far quieter in decibels than a forte for full orchestra.
+Q: Why is the piano called the pianoforte? | It means soft-loud: Cristofori's instrument of about 1700 could play both, unlike the harpsichord.
+Q: What does a wedge above a note mean? | Staccatissimo: very short and detached.
+Q: What is the difference between an accent and marcato? | An accent (>) is played with emphasis; marcato (^) is strongly accented.
+Q: What does mezzo staccato look like and mean? | Dots under a slur: slightly detached, gently separated.
+Q: What do pizzicato and arco mean? | Pizzicato means plucked; arco means bowed.
+Q: What does a slur mean for a wind player? | Play the notes in one breath without tonguing.
 
 ## Ornaments
 LV: Intermediate · Application
@@ -687,6 +847,16 @@ M2#music-u01-17-q2@2: In a Baroque sonata, how does a trill on E normally begin?
 SEQ2#music-u01-17-q3@2: Put the notes of a turn on C5 in C major in order. | D5 ; C5 ; B4 ; C5 | A turn goes upper note, main note, lower note, main note.
 M3#music-u01-17-q4@3: Two editions of a Bach keyboard piece realise the same ornament differently. What is the best explanation? | Ornament practice varied and the treatises disagree, so editors make informed but different choices | One edition must be a misprint | Bach never wrote ornaments | Ornaments have exactly one correct realisation in all music | Performance-practice evidence leaves room for judgement, so realisations legitimately differ.
 SA3#music-u01-17-q5@2,3: Describe how three ornaments are performed and explain why their performance depends on historical style. | A trill alternates the note with the note above; a turn plays upper, main, lower, main; an appoggiatura leans on the beat, taking about half the main note's value, and resolves by step. Execution depends on period: Baroque and Classical trills usually start on the upper note while many 19th-century trills start on the main note, and treatises such as C. P. E. Bach's describe practices that differ by place and time, so a performer chooses according to the style. | Three ornaments correctly described ; Notes from the key unless altered ; Trill start differs by period ; Reference to treatises or historical evidence
+Q: How does a trill often end? | With a turn, called a nachschlag.
+Q: Where does a trill usually begin in 19th-century music? | On the main note.
+Q: What is an inverted turn? | A turn that starts on the lower note.
+Q: What notes does an upper mordent play? | Main note, note above, main note, quickly.
+Q: How is a lower mordent written and played? | A wavy line with a vertical stroke: main note, note below, main note.
+Q: How much time does an appoggiatura usually take from the main note? | Usually half its value, or two-thirds before a dotted note, by the 18th-century rule.
+Q: How are an ornament's extra notes normally chosen? | From the key, unless an accidental is printed above or below the sign.
+Q: What were Baroque performers expected to do on a repeat in an aria or slow movement? | Decorate it, adding ornaments that were not written at all.
+Q: Write out a turn on a crotchet D5 in G major in 2/4. | Four semiquavers: E5, D5, C5, D5.
+Q: Why do editors' realisations of ornaments differ? | The treatises of C. P. E. Bach, Leopold Mozart and Quantz don't agree on every point.
 
 ## Repeats, signs and score navigation
 LV: Introductory · Application
@@ -729,4 +899,14 @@ M2#music-u01-18-q2@1: A repeat ends with a bar under a 1. bracket and continues 
 SEQ2#music-u01-18-q3@3: A piece has sections A (bars 1–8, Fine at bar 8) and B (bars 9–16, ending D.C. al Fine). Put the performance in order. | A ; B ; A again | D.C. al Fine returns from the end of B to the beginning and stops at the Fine at the end of A: ternary (ABA) shape.
 M3#music-u01-18-q4@3: A singer performs a Baroque da capo aria. What would an informed performer do on the return of the A section? | Repeat it with added ornaments, as the style expected | Sing it exactly as written, as decoration is never allowed | Omit it | Sing the B section again | The da capo convention expected the singer to decorate the returning A section.
 SA3#music-u01-18-q5@1,3: A score has repeat marks around bars 5–8 with first- and second-time bars (bar 8 is the first-time bar, bar 9 the second), a sign at bar 3, Fine at bar 12 and D.S. al Fine at bar 16. Write out the order of bars and explain each step. | Play 1–7 and the first-time bar 8, then repeat from bar 5: 5–7, skip bar 8 and play 9, continue to 16. D.S. sends you back to the sign at bar 3; play 3–7 and, by convention without the repeat, go to the second-time bar 9, then 10–12, stopping at Fine. Order: 1–8, 5–7, 9–16, 3–7, 9–12. | First pass with first-time bar ; Repeat skipping to second-time bar ; D.S. returns to the sign ; Repeats omitted after D.S. and correct use of second-time bar ; Stops at Fine
+Q: What happens at a closing repeat mark with no opening repeat mark? | Go back to the beginning and play again.
+Q: What does simile mean? | Continue in the same way.
+Q: What does a repeat bar sign look like and mean? | A slash between dots; it repeats the previous bar.
+Q: What does D.S. mean and what does the sign look like? | Dal segno: go back to the sign, an S crossed with a slash and two dots.
+Q: What does the word coda mean, and how is the coda marked? | Tail; it is marked with a circle crossed by lines.
+Q: What does con repetizione mean after a D.C.? | Take the internal repeats again, which otherwise would usually be omitted.
+Q: What is the form of a Baroque da capo aria? | A–B–A: A is written once, then B and Da capo, and the singer decorates A on its return.
+Q: Bars 1–4 have repeat marks, D.C. al Fine is at bar 8 and Fine at bar 4. What is the order? | 1–4, 1–4, 5–8, then 1–4 again without the repeat, stopping at Fine.
+Q: What are rehearsal letters or figures for? | Boxed letters or numbers that let a conductor or ensemble restart at an agreed place.
+Q: Where are bar numbers usually printed? | At the start of each system.
 `;

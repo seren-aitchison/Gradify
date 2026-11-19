@@ -43,6 +43,16 @@ M2#business-u07-01-q2@2: How does management accounting differ from financial ac
 M3#business-u07-01-q3@3: A fast-growing firm reports record profits but cannot pay its suppliers. What is the most likely cause? | Cash tied up in stock and slow-paying customers | The accounts must contain a deliberate error | Profits are always equal to the cash received | It has too much cash invested in a bank | Applying the standard result: Growth can absorb cash despite profit.
 TF1#business-u07-01-q4@1: Under the accruals basis, a sale is recorded only when the customer pays. | false | Revenue is recorded when earned, not when cash is received.
 SA2#business-u07-01-q5@2,3: Explain why a business can be profitable yet run out of cash. | Profit is measured on the accruals basis, so sales count when made and expenses when incurred. If customers pay late, stock builds up, or the firm invests in equipment, cash leaves before it returns. Rapid growth magnifies this, so the business may be unable to pay wages and suppliers even though its income statement shows a profit. | Accruals basis ; Timing of cash ; Investment and stock ; Overtrading risk
+Q: Which users of accounting information judge whether a business will survive to pay or deliver? | Suppliers and customers.
+Q: What do shareholders and investors use accounts to judge? | Returns, risk and the value of their stake.
+Q: What does financial accounting report on? | The past performance and position of the whole business, for outside users.
+Q: What kind of information does management accounting produce? | Internal, forward-looking information such as budgets, costings and forecasts.
+Q: Does management accounting have a legal format? | No. It uses whatever format helps managers decide, often produced weekly or monthly.
+Q: Under the accruals basis, when are revenue and expenses recorded? | Revenue when earned and expenses when incurred, not when cash moves.
+Q: Why does buying equipment hit cash harder than profit in the year of purchase? | The cash is paid at once, but only that year's depreciation reaches the income statement.
+Q: A furniture maker delivers £200,000 of goods in March on 90-day terms. When does the cash arrive? | In June, while wages, materials and rent must still be paid in March to May.
+Q: What is the difference between what profit and cash measure? | Profit measures performance; cash measures the ability to pay bills now.
+Q: What is a common reason for small business failure, according to the evidence on finance? | Cash flow problems, rather than lack of profit.
 
 ## The income statement
 LV: Introductory · Application
@@ -83,6 +93,16 @@ M2#business-u07-02-q2@2: A machine costs £50,000, has a residual value of £10,
 NUM2#business-u07-02-q3@2: Revenue is £800,000, cost of sales £480,000 and operating expenses £200,000. What is operating profit, in £? | 120000 | 0 | £ | Gross profit is 800,000 − 480,000 = 320,000; operating profit is 320,000 − 200,000 = 120000.
 M3#business-u07-02-q4@3: Rent of £12,000 is paid on 1 October for the next 12 months; the year ends 31 December. What rent expense is recognised this year? | £3,000 | £12,000 | £9,000 | £0 | Three months belong to this year; nine are prepaid.
 SA2#business-u07-02-q5@2,3: Explain why buying a delivery van does not reduce profit by its full cost in the year of purchase. | The van will be used for several years, so it is recorded as a non-current asset. Under the accruals concept, its cost is spread over its useful life through depreciation, so each year's income statement bears only that year's share, matching the expense to the periods that benefit. | Non-current asset ; Several years' use ; Depreciation ; Matching
+Q: How is operating profit calculated from gross profit? | Gross profit minus operating expenses such as distribution, administration and selling costs.
+Q: What is deducted from operating profit to give profit before tax? | Finance costs, meaning interest on borrowing.
+Q: What is profit for the year available for? | Dividends or retention in the business.
+Q: What is a prepayment? | An amount paid in advance for a later period, such as next year's rent, which is not this year's expense.
+Q: What is an accrual in the income statement? | An expense incurred in the period but not yet paid, such as a March bill paid in April.
+Q: What is the formula for straight-line depreciation? | (Cost − residual value) ÷ useful life, giving the annual charge.
+Q: What principle does the income statement follow when matching costs? | It matches revenue with the expenses incurred to earn it in the same period.
+Q: In the example, revenue is £500,000 and cost of sales £300,000. What is gross profit? | £200,000.
+Q: Profit before tax is £70,000 and tax is 25%. What is profit for the year? | £52,500, after tax of £17,500.
+Q: What is the common mistake when a business buys a new machine? | Treating its full purchase price as an expense; only that year's depreciation is an expense and the machine is an asset.
 
 ## The statement of financial position
 LV: Introductory · Application
@@ -126,6 +146,16 @@ M2#business-u07-03-q2@2: Which is a non-current liability? | A five-year bank lo
 NUM2#business-u07-03-q3@2: A company has total assets of £900,000 and total liabilities of £350,000. What is its equity, in £? | 550000 | 0 | £ | Equity = assets − liabilities = 900,000 − 350,000 = 550000.
 M3#business-u07-03-q4@3: A business pays £20,000 cash to a supplier it owed. What happens to the statement? | Cash and trade payables both fall by £20,000 | Cash falls and equity rises by £20,000 | Assets rise and liabilities fall by £20,000 | Nothing changes, as it is just a payment | Both sides fall equally, so it still balances.
 SA2#business-u07-03-q5@2,3: Explain why the statement of financial position always balances. | Every resource the business holds was financed either by the owners or by creditors. Equity is defined as what remains after liabilities are deducted from assets, so assets must equal equity plus liabilities. Every transaction changes at least two items, keeping the equation in balance. | Sources of finance ; Equity as residual ; Equation ; Double effect of transactions
+Q: What is the accounting equation? | Assets = equity + liabilities.
+Q: What is an asset in accounting terms? | A resource the business controls that is expected to bring future benefits.
+Q: What is a liability? | A present obligation to transfer resources to others.
+Q: What are non-current assets? | Assets held for more than a year, such as property, plant, equipment and intangible assets.
+Q: Name the three typical current assets. | Inventory, trade receivables and cash.
+Q: Give two examples of current liabilities. | Trade payables, overdrafts or tax due, all due within a year.
+Q: What makes up equity on the statement of financial position? | Share capital plus retained earnings and other reserves.
+Q: How does depreciation affect the statement of financial position? | It reduces the carrying amount of non-current assets.
+Q: How does the statement of financial position differ in timing from the income statement? | It is a snapshot at a point in time; the income statement covers the period between two snapshots.
+Q: Why is it wrong to think equity is cash the business holds? | Equity is a claim on net assets, which may be tied up in buildings, stock and receivables.
 
 ## The statement of cash flows
 LV: Introductory · Application
@@ -167,6 +197,16 @@ M2#business-u07-04-q2@2: Inventory increased during the year. How is it treated 
 NUM2#business-u07-04-q3@2: Operating profit is £60,000, depreciation £15,000, and receivables fell by £5,000, with no other changes. What is operating cash flow, in £? | 80000 | 0 | £ | 60,000 + 15,000 = 75,000; the fall in receivables adds 5,000, giving 80000.
 M3#business-u07-04-q4@3: A company reports profits for three years but negative operating cash flow each year. What should concern an analyst? | Profits are not turning into cash, perhaps through rising receivables | It is investing heavily in new equipment | It has repaid some long-term borrowing | It paid larger dividends than last year | Profit without operating cash is a warning sign.
 SA2#business-u07-04-q5@2,3: Explain what a company's cash flow pattern can tell a manager about its stage of development. | A mature, stable firm usually generates strong operating cash flow that pays for modest investment and dividends. A fast-growing firm spends heavily on investing activities, often funded by new shares or loans in financing. A struggling firm may show weak operating cash flow and rely on borrowing or asset sales to survive. | Mature pattern ; Growth pattern ; Distress pattern ; Funding sources
+Q: What are the three sections of the statement of cash flows? | Operating, investing and financing activities.
+Q: What do operating activities include? | Cash from trading, such as receipts from customers less payments to suppliers and staff.
+Q: In which section are loan repayments and share issues shown? | Financing activities.
+Q: Where does the indirect method start? | From operating profit, which is then adjusted to cash.
+Q: How is an increase in trade payables treated in the indirect method? | It is added, because cash has been kept in the business.
+Q: Why is an increase in receivables deducted in the indirect method? | More receivables means cash not yet collected from customers.
+Q: What cash flow pattern is typical of a healthy mature firm? | Positive operating cash flow funding investment and dividends.
+Q: What cash flow pattern is typical of a growing firm? | Heavy investing outflows, often funded by financing inflows.
+Q: What is a warning sign in a company's cash flows? | Persistently negative operating cash flow despite reported profits.
+Q: Operating profit is £80,000 and depreciation £20,000, with no other changes. What is operating cash flow? | £100,000, because depreciation is added back.
 
 ## Profitability ratios
 LV: Introductory · Application
@@ -208,6 +248,16 @@ M2#business-u07-05-q2@2: Gross margin is steady but operating margin has fallen.
 NUM2#business-u07-05-q3@2: Operating profit is £90,000 and capital employed is £600,000. What is ROCE, in per cent? | 15 | 0.1 | % | ROCE = 90,000 ÷ 600,000 × 100 = 15%.
 M3#business-u07-05-q4@3: Firm A has ROCE of 8% and borrows at 10%. What does this suggest? | Its capital earns less than the cost of borrowing | It is highly profitable compared with lenders | Its gross margin must be very high | It should immediately borrow far more | Returns below borrowing costs destroy value.
 SA2#business-u07-05-q5@2,3: Explain why a profitability ratio should be compared with benchmarks before conclusions are drawn. | A ratio on its own has little meaning: what counts as a good margin or ROCE depends on the industry, the firm's strategy and economic conditions. Comparing with previous years shows trends, while comparing with competitors or industry averages shows relative performance, and investigating the causes explains the figures. | No meaning alone ; Industry differences ; Trends over time ; Competitor comparison
+Q: How is operating profit margin calculated? | Operating profit ÷ revenue × 100.
+Q: What does gross profit margin mainly reflect? | Pricing and purchasing.
+Q: What does operating profit margin reflect that gross margin does not? | Overhead control, as it is measured after all operating costs.
+Q: What is the formula for ROCE? | Operating profit ÷ capital employed × 100.
+Q: What does ROCE show about a business? | How well management uses the long-term funds in the business to generate profit.
+Q: Why might a software firm and a supermarket have very different gross margins? | Margins vary by industry: supermarkets run thin margins on high volumes, while software can have very high gross margins.
+Q: What three benchmarks should ratios be compared with? | Previous years, competitors and industry averages.
+Q: Why should ratio results be treated with some caution? | They rely on accounting figures, which may be affected by policy choices.
+Q: Revenue is £500,000 and gross profit £200,000. What is the gross margin? | 40%.
+Q: Is a 3% margin a sign of poor performance? | It depends on industry: normal for a supermarket but poor for a consultancy.
 
 ## Liquidity and efficiency ratios
 LV: Introductory · Application
@@ -249,6 +299,16 @@ M2#business-u07-06-q2@2: Receivables days have risen from 30 to 50. What does th
 NUM2#business-u07-06-q3@2: Inventory days are 40, receivables days 35 and payables days 30. What is the cash conversion cycle, in days? | 45 | 0 | days | 40 + 35 − 30 = 45 days.
 M3#business-u07-06-q4@3: A supermarket has a current ratio of 0.6. Why may this be acceptable? | It sells stock for cash before paying suppliers | Supermarkets never pay their suppliers at all | Its inventory never needs to be sold | Liquidity ratios do not apply to retailers | Fast cash sales and credit from suppliers fund it.
 SA2#business-u07-06-q5@2,3: Explain how a manager could release cash by managing working capital. | Cash is tied up in stock and customer debts while suppliers are being paid. Reducing stock through better forecasting or just-in-time ordering, collecting receivables faster through credit control or early-payment discounts, and negotiating longer supplier terms all shorten the cash conversion cycle and free cash for other uses. | Stock reduction ; Faster collection ; Longer payables ; Shorter cycle
+Q: How is the current ratio calculated? | Current assets ÷ current liabilities.
+Q: How is the acid-test ratio calculated? | (Current assets − inventory) ÷ current liabilities.
+Q: What acid-test ratio is often seen as comfortable? | Around 1.
+Q: What current ratio range is often quoted? | Around 1.5 to 2, although norms vary by industry.
+Q: How are receivables days calculated? | Trade receivables ÷ revenue × 365.
+Q: How are inventory days calculated? | Inventory ÷ cost of sales × 365.
+Q: What do payables days measure? | How long the business takes to pay its suppliers.
+Q: What does the cash conversion cycle show? | How long cash is tied up between paying suppliers and receiving cash from customers.
+Q: Why can a very high current ratio be a bad sign? | It may mean idle cash or excess stock.
+Q: Current assets are £150,000 including £45,000 inventory; current liabilities are £100,000. What is the acid-test ratio? | 1.05.
 
 ## Gearing and investor ratios
 LV: Introductory · Application
@@ -290,6 +350,16 @@ M2#business-u07-07-q2@2: Why can moderate gearing raise returns to shareholders?
 NUM2#business-u07-07-q3@2: A company's EPS is 40p and its share price is £8. What is its P/E ratio? | 20 | 0.1 | times | P/E = 800p ÷ 40p = 20.
 M3#business-u07-07-q4@3: A firm's dividend cover falls from 3 to 1.1. What does this suggest? | Almost all profit is being paid out, so the dividend is less secure | The firm is retaining much more profit than before | The share price must have doubled | Gearing has fallen sharply | Low cover leaves little margin if profits fall.
 SA2#business-u07-07-q5@2,3: Explain the trade-off a manager faces when deciding whether to increase gearing. | Borrowing can be cheaper than issuing shares, and interest reduces tax, so extra debt can raise earnings per share when the business earns more on the money than it costs. But interest is a fixed commitment: if profits fall or rates rise, interest cover weakens, and in the worst case the firm may default, so higher gearing raises financial risk. | Cheaper finance ; Tax benefit ; Fixed interest commitment ; Higher risk
+Q: How is gearing calculated? | Non-current liabilities ÷ (equity + non-current liabilities) × 100.
+Q: Why can borrowing be cheaper than equity for a business? | Borrowing is often cheaper than equity, and interest is tax-deductible.
+Q: Why does high gearing raise financial risk? | Interest must be paid whatever profits are, which is dangerous when profits fall or interest rates rise.
+Q: How is interest cover calculated? | Operating profit ÷ interest.
+Q: How is earnings per share calculated? | Profit attributable to ordinary shareholders ÷ number of ordinary shares.
+Q: How is dividend yield calculated? | Dividend per share ÷ share price × 100.
+Q: What does dividend cover show? | How many times profits could pay the dividend: EPS ÷ dividend per share.
+Q: What does a high P/E ratio combined with a low dividend yield often signal? | A growth company reinvesting its profits.
+Q: Operating profit is £80,000 and interest is £10,000. What is interest cover? | 8 times.
+Q: What is the mistake in assuming any borrowing is bad? | Moderate gearing can raise shareholder returns; the danger is borrowing more than profits can safely service.
 
 ## Costs and break-even analysis
 LV: Introductory · Application
@@ -334,6 +404,16 @@ M2#business-u07-08-q2@2: How is break-even output calculated? | Fixed costs ÷ c
 NUM2#business-u07-08-q3@2: Price is £25, variable cost £15 and fixed costs £40,000. What is the break-even output, in units? | 4000 | 0 | units | Contribution is 25 − 15 = 10, so break-even is 40,000 ÷ 10 = 4000 units.
 M3#business-u07-08-q4@3: A firm raises its selling price while costs stay the same. What happens to break-even output? | It falls | It rises | It stays the same | It becomes zero | Higher contribution covers fixed costs sooner.
 SA2#business-u07-08-q5@2,3: Explain why a manager should treat break-even analysis with caution. | The model assumes a constant selling price and variable cost per unit, fixed costs that do not change, and that all output is sold, often for a single product. In reality, discounts, bulk-buying savings, step changes in fixed costs and a changing sales mix all alter the result, so the break-even point is an estimate within a relevant range. | Constant price and cost ; Fixed costs fixed ; All output sold ; Relevant range
+Q: What is a fixed cost? | A cost that stays the same in total as output changes within a relevant range, such as rent and salaries.
+Q: What is a variable cost? | A cost that rises in proportion to output, such as materials and sales commission.
+Q: What is a semi-variable cost? Give an example. | A cost with fixed and variable parts, such as a phone bill with line rental and a charge per call.
+Q: What is the formula for break-even output in units? | Total fixed costs ÷ contribution per unit.
+Q: What happens to profit for each unit sold above break-even? | Each extra unit adds its contribution to profit.
+Q: How is profit calculated using contribution? | (Units sold × contribution per unit) − fixed costs.
+Q: How is the margin of safety calculated? | Actual or budgeted sales minus break-even sales, often shown as a percentage of sales.
+Q: Fixed costs are £60,000 and contribution is £20 per unit. What is break-even output? | 3,000 units.
+Q: Name two assumptions that limit break-even analysis. | Constant price and variable cost per unit, fixed costs staying fixed, and all output being sold.
+Q: Why is break-even analysis harder for a firm selling many products? | The sales mix changes, making a single contribution figure hard to apply.
 
 ## Contribution and short-term decisions
 LV: Introductory · Application
@@ -376,6 +456,16 @@ M2#business-u07-09-q2@2: With spare capacity, when should a special order be acc
 NUM2#business-u07-09-q3@2: A firm with spare capacity is offered 500 units at £38 each. The variable cost is £30 per unit, with no extra fixed costs. By how much does profit change, in £? | 4000 | 0 | £ | Extra contribution is 500 × (38 − 30) = 4000.
 M3#business-u07-09-q4@3: A product shows a £5,000 loss after shared overheads but a £12,000 contribution. If dropped, overheads stay the same. What happens to total profit? | It falls by £12,000 | It rises by £5,000 | It rises by £12,000 | It does not change | The lost contribution no longer covers overheads.
 SA2#business-u07-09-q5@2,3: Explain why a product that shows a loss in the accounts may still be worth keeping. | Shared fixed overheads are often allocated across products, making some appear loss-making. If the product's revenue exceeds its variable costs, it makes a positive contribution towards those overheads. Dropping it would remove that contribution, while the overheads would remain, so overall profit would fall. | Allocated overheads ; Positive contribution ; Overheads remain ; Profit falls
+Q: What is a relevant cost? | A future cash cost that differs between the options being considered.
+Q: Are fixed costs that will be paid whatever is decided relevant? | No, unavoidable fixed costs are irrelevant to the decision.
+Q: What is an opportunity cost, and is it relevant? | The benefit forgone by using a resource one way rather than another; yes, it is relevant.
+Q: What should be compared in a make-or-buy decision? | The supplier's price against the variable cost of making, plus fixed costs saved and the opportunity cost of capacity.
+Q: Why can dropping a loss-making product reduce total profit? | It may still make a positive contribution to shared fixed costs that remain.
+Q: What is a limiting factor? | A scarce resource, such as labour hours, that restricts output.
+Q: Product A earns £20 contribution using 2 labour hours; B earns £15 using 1 hour. Which should get labour first? | Product B, as it earns £15 per scarce hour against A's £10.
+Q: Name one qualitative factor in a special order decision. | The effect on regular customers' prices and expectations.
+Q: What qualitative factors matter in a make-or-buy decision? | Supplier reliability and quality.
+Q: Besides price, what condition should a special order meet before being accepted? | It should not harm normal sales, and the business needs spare capacity.
 
 ## Budgeting
 LV: Introductory · Application
@@ -421,6 +511,16 @@ M2#business-u07-10-q2@2: What is a main drawback of incremental budgeting? | It 
 NUM2#business-u07-10-q3@2: Budgeted sales are 8,000 units, required closing inventory is 600 units and opening inventory is 900 units. How many units should be produced? | 7700 | 0 | units | Production = 8,000 + 600 − 900 = 7700 units.
 M3#business-u07-10-q4@3: A firm wants budgets that keep a 12-month horizon all year. Which approach fits? | Rolling budgets | Incremental budgets | Zero-based budgets | Fixed annual budgets | Applying the standard result: Rolling budgets are updated each period.
 SA2#business-u07-10-q5@2,3: Compare top-down and participative budgeting. | Top-down budgets are set by senior managers; they are quick and align with strategy but may be unrealistic and resented. Participative budgets involve the managers who must deliver them, drawing on local knowledge and improving commitment, but they take longer and may include budgetary slack. | Top-down speed ; Strategic alignment ; Participation and commitment ; Slack risk
+Q: Name the five purposes of budgeting. | Planning, coordination, communication, control and motivation.
+Q: How do budgets help with control? | They give a benchmark against which actual results are compared.
+Q: What does the sales budget drive in the master budget? | The production budget, which drives materials, labour and overhead budgets.
+Q: Which three statements make up the master budget? | Budgeted income statement, cash budget and budgeted statement of financial position.
+Q: What is incremental budgeting? | Adjusting last year's figures; it is quick but can carry forward waste.
+Q: What is zero-based budgeting? | Requiring every cost to be justified from scratch; thorough but time-consuming.
+Q: What is the benefit and risk of participative budgeting? | It improves commitment from those who deliver it but risks budgetary slack.
+Q: What formula gives the production budget? | Production = sales + closing inventory − opening inventory.
+Q: What is a rolling budget? | A budget updated each month or quarter to keep a 12-month horizon.
+Q: Why is setting impossible budget targets a mistake? | Unachievable budgets usually demotivate staff and encourage gaming of the figures.
 
 ## Variance analysis
 LV: Introductory · Application
@@ -464,6 +564,16 @@ M2#business-u07-11-q2@2: Why might an adverse labour variance follow a favourabl
 NUM2#business-u07-11-q3@2: Budgeted price is £20 per unit and 1,200 units are sold at £19. What is the sales price variance, in £ (adverse)? | 1200 | 0 | £ | (19 − 20) × 1,200 = −1200, an adverse variance of £1200.
 M3#business-u07-11-q4@3: Sales were 20% above budget and total variable costs were 15% above the original budget. What does a flexed comparison suggest? | Variable costs were controlled well | Variable costs were overspent badly | Fixed costs must have fallen | Sales prices must have been cut | Applying the standard result: Flexed costs would be 20% higher.
 SA2#business-u07-11-q5@2,3: Explain why variance analysis should focus on causes rather than the numbers alone. | A variance shows only that results differed from the budget. The cause might be poor performance, an unrealistic standard, a change in market prices or a link with another variance. Investigating why, and who controlled the factor, allows managers to take the right corrective action or update future budgets. | Numbers show difference ; Possible causes ; Linked variances ; Corrective action
+Q: What is a flexed budget? | A budget recalculated at the actual level of activity.
+Q: When flexing a budget, which costs change? | Variable costs are adjusted; fixed costs stay the same.
+Q: How is the sales price variance calculated? | (Actual price − budgeted price) × actual units sold.
+Q: How is the sales volume variance calculated? | (Actual units − budgeted units) × budgeted contribution per unit.
+Q: How is the materials price variance calculated? | (Standard price − actual price) × actual quantity used.
+Q: How is the materials usage variance calculated? | (Standard quantity for actual output − actual quantity) × standard price.
+Q: What is an adverse variance? | A difference from budget that reduces profit.
+Q: Should managers investigate every variance? | No, they should investigate significant variances, not every small one.
+Q: Standard price is £5 per kg and 2,100 kg are bought at £4.80. What is the materials price variance? | £420 favourable.
+Q: What question should a manager ask about the cause of a variance? | Whether the budget was unrealistic or something went wrong.
 
 ## Cash flow forecasting
 LV: Introductory · Application
@@ -507,6 +617,16 @@ M2#business-u07-12-q2@2: Sales in March are on two-month credit. When does the c
 NUM2#business-u07-12-q3@2: The opening balance is £3,000, receipts are £14,000 and payments £16,500. What is the closing balance, in £? | 500 | 0 | £ | 3,000 + 14,000 − 16,500 = 500.
 M3#business-u07-12-q4@3: A forecast shows a shortfall in three months' time. What is the most sensible first step? | Arrange an overdraft or delay spending now | Wait to see if the shortfall happens | Cut prices to boost sales immediately | Pay all suppliers early this month | Applying the standard result: Early action keeps options open.
 SA2#business-u07-12-q5@2,3: Explain how a manager can use a cash flow forecast to manage a seasonal business. | The forecast shows months when receipts fall below payments, such as before a busy season when stock is bought. Knowing this in advance, the manager can arrange an overdraft, time stock purchases, negotiate supplier terms or build reserves in strong months, so the business can pay its bills throughout the year. | Identify low months ; Plan finance ; Time purchases ; Build reserves
+Q: Give three examples of cash receipts in a cash flow forecast. | Cash sales, cash from credit customers, loans received and asset sales.
+Q: How is net cash flow calculated? | Receipts − payments for the month.
+Q: How is a month's closing balance used in the next month? | It becomes next month's opening balance.
+Q: Customers pay one month after sale. When do January's credit sales appear? | As February receipts.
+Q: What can cause sharp swings in a cash flow forecast? | Seasonal patterns, one-off purchases and quarterly bills such as VAT.
+Q: What should a business arrange before a forecast cash shortfall? | An overdraft or short-term loan.
+Q: Name two ways to improve cash inflows from customers. | Chase receivables and offer early-payment discounts.
+Q: How can leasing help a business with a forecast cash shortfall? | Leasing rather than buying equipment avoids a large one-off payment.
+Q: The balance is £9,000, receipts are £20,000 and payments £31,000. What is the closing balance? | A £2,000 overdraft.
+Q: Why does a forecast record cash when it moves rather than when a sale is made? | It aims to show the actual cash position, which depends on payment timing, not sales.
 
 ## Sources of finance
 LV: Introductory · Application
@@ -549,6 +669,16 @@ M2#business-u07-13-q2@2: What is a main disadvantage of equity finance for exist
 M3#business-u07-13-q3@3: A start-up with no profits or assets needs £2 million to scale up quickly. Which source fits best? | Venture capital in exchange for equity | A short-term bank overdraft | Retained profits from past years | Trade credit from its suppliers | Applying the standard result: High-risk growth suits equity investors.
 MATCH1#business-u07-13-q4@2: Match each need to a suitable source of finance. | Seasonal stock = Bank overdraft ; New factory = Long-term loan ; Slow-paying customers = Invoice factoring ; High-growth start-up = Venture capital | Match the finance to the need.
 SA2#business-u07-13-q5@2,3: Explain why the term of finance should match the use of the funds. | Long-term assets such as machinery generate returns over many years, so funding them with long-term loans or equity spreads repayment over the period they earn. Using short-term finance like an overdraft risks it being withdrawn before the asset has paid for itself, while using long-term debt for short-term needs means paying interest when funds are no longer needed. | Asset life ; Long-term returns ; Overdraft risk ; Unnecessary interest
+Q: What are the advantages of retained profit as a source of finance? | It involves no interest and no dilution of ownership.
+Q: What limits retained profit as a source of finance? | It is limited by past profits and competes with dividends.
+Q: How can better working capital management act as a source of finance? | It releases cash tied up in stock and receivables.
+Q: Give two short-term external sources of finance. | Bank overdrafts, trade credit, and invoice factoring or discounting.
+Q: Give two sources of equity finance for a growing business. | Business angels, venture capital, new shares from owners or a stock market listing.
+Q: What is invoice factoring? | Selling receivables to a third party for immediate cash.
+Q: What might lenders demand alongside interest? | Security or covenants.
+Q: Why do equity investors expect higher returns than lenders? | They bear more risk.
+Q: What finance fits a retailer needing extra stock before Christmas? | A short-term source such as an overdraft or trade credit.
+Q: Why is funding a long-term machine with an overdraft risky? | Overdrafts are repayable on demand, so the bank could withdraw it at short notice.
 
 ## Investment appraisal: payback and ARR
 LV: Introductory · Application
@@ -590,6 +720,16 @@ M2#business-u07-14-q2@2: Why might a firm short of cash favour payback? | It hig
 NUM2#business-u07-14-q3@2: A £60,000 project returns £20,000 a year for five years. What is its payback period, in years? | 3 | 0 | years | 60,000 ÷ 20,000 = 3 years.
 M3#business-u07-14-q4@3: Project X pays back in 2 years then earns nothing; Project Y pays back in 3 years then earns well for 7 more. What does payback alone suggest? | Choose X, though Y may create more value | Choose Y, as it has the longer life | They are equally good investments | Payback cannot compare these projects | Applying the standard result: Payback ignores later cash flows.
 SA2#business-u07-14-q5@2,3: Evaluate payback as a method of investment appraisal. | Payback is simple, easy to explain and favours projects that return cash quickly, which reduces risk and suits firms short of cash. However, it ignores cash flows after the payback date, so it may reject long-term projects that create more value, and it ignores the time value of money. It is best used alongside discounted methods. | Simple and quick ; Risk and liquidity ; Ignores later flows ; Ignores time value
+Q: What is the payback period? | The time taken for a project's cash inflows to repay the initial investment.
+Q: Why does a shorter payback period suggest lower risk? | Money is at risk for less time.
+Q: What is the formula for ARR? | Average annual profit ÷ average investment × 100.
+Q: How is average investment calculated for ARR? | (Initial cost + residual value) ÷ 2.
+Q: What is one advantage of ARR? | It uses profit, which managers understand.
+Q: What are two weaknesses of ARR? | It ignores the timing of returns and depends on accounting policies.
+Q: What is the time value of money? | The idea that money now is worth more than the same sum later.
+Q: How do firms often use payback in practice? | As a first screen, setting a maximum payback such as three years.
+Q: What is a target ARR often compared with? | ROCE.
+Q: A £100,000 project recovers £70,000 in two years and £50,000 in year 3. What is payback? | 2.6 years.
 
 ## Net present value
 LV: Introductory · Evaluation
@@ -630,6 +770,16 @@ M2#business-u07-15-q2@2: What is the internal rate of return? | The discount rat
 NUM2#business-u07-15-q3@2: A project costs £50,000 and its inflows have a total present value of £56,400 at the cost of capital. What is its NPV, in £? | 6400 | 0 | £ | NPV = 56,400 − 50,000 = 6400.
 M3#business-u07-15-q4@3: The required rate of return rises from 8% to 12%. What happens to a project's NPV? | It falls | It rises | It stays the same | It always becomes negative | Higher discount rates shrink future values.
 SA2#business-u07-15-q5@2,3: Explain why NPV is generally preferred to payback and ARR. | NPV considers all cash flows over the project's life, not just those before payback, and uses cash rather than accounting profit. Crucially, it discounts future flows to allow for the time value of money and risk through the required return, and expresses the result as the value added in pounds, directly linked to shareholder wealth. | All cash flows ; Cash not profit ; Time value of money ; Value in pounds
+Q: What does discounting do? | It converts future cash flows into today's values.
+Q: What is the formula for the present value of a cash flow in year n? | Cash flow ÷ (1 + r)^{n}, where r is the required rate of return.
+Q: How is NPV calculated? | Present value of inflows minus the initial investment.
+Q: What does a positive NPV mean? | The project earns more than the required return and adds value.
+Q: What decision rule applies to IRR? | Accept the project if IRR exceeds the cost of capital.
+Q: Which method is the better guide for mutually exclusive projects, NPV or IRR? | NPV, because it measures value in pounds.
+Q: Where are discount factors such as 1 ÷ (1 + r)^{n} usually found? | In discount tables.
+Q: What is the discount factor for year 1 at 10%? | 0.909.
+Q: Inflows have a present value of £111,520 against a £100,000 investment. What is NPV? | £11,520.
+Q: Why must the discount rate be chosen carefully in NPV? | The result depends on it: a project positive at 8% may be negative at 15%.
 
 ## Working capital management
 LV: Introductory · Application
@@ -669,6 +819,16 @@ M2#business-u07-16-q2@2: Which technique speeds up cash from customers? | Offeri
 NUM2#business-u07-16-q3@2: Annual demand is 3,600 units, the cost per order is £20 and the holding cost is £2 per unit per year. What is the EOQ, in units? | 268 | 1 | units | 2 × 3,600 × 20 ÷ 2 = 72,000, and √72,000 is about 268 units.
 M3#business-u07-16-q4@3: Why might just-in-time inventory be risky for a manufacturer? | A supplier delay can halt production | It increases the cost of storing stock | It requires very large stock holdings | It slows down the production process | Little buffer stock means disruption spreads quickly.
 SA2#business-u07-16-q5@2,3: Explain the trade-off between liquidity and profitability in working capital management. | Holding plenty of cash, stock and generous credit keeps a business safe from running out of money or stock, but these resources earn little and cost money to hold. Cutting them releases cash for profitable uses but increases the risk of shortages or being unable to pay bills, so managers must balance safety against return. | Liquidity benefits ; Holding costs ; Releasing cash ; Risk of shortage
+Q: What is net working capital? | Current assets minus current liabilities.
+Q: What is the risk of too little working capital? | The business may be unable to pay its bills.
+Q: What is the formula for the economic order quantity? | EOQ = √(2DS ÷ H), with D annual demand, S cost per order and H holding cost per unit per year.
+Q: When is just-in-time supply appropriate? | Where suppliers are reliable.
+Q: Name three ways to manage receivables. | Check credit, set clear terms, invoice promptly, chase overdue debts, offer early-payment discounts or use factoring.
+Q: What are the risks of paying suppliers late? | Damaged relationships, lost discounts and less reliable supply.
+Q: How should a business manage its cash? | Forecast regularly, keep a buffer and invest surpluses short-term.
+Q: Name two inventory management techniques. | Forecasting demand, setting reorder levels, the economic order quantity and just-in-time supply.
+Q: Annual demand is 10,000, order cost £50, holding cost £4. What is the EOQ? | 500 units per order.
+Q: What is just-in-time inventory? | Receiving stock only as it is needed in production.
 
 ## The cost of capital
 LV: Introductory · Evaluation
@@ -713,4 +873,14 @@ M2#business-u07-17-q2@2: Why is the cost of debt adjusted by (1 − tax rate)? |
 NUM2#business-u07-17-q3@2: The risk-free rate is 3%, the market return 8% and beta 1.4. What is the cost of equity, in per cent? | 10 | 0.1 | % | K_{e} = 3 + 1.4 × 5 = 3 + 7 = 10%.
 M3#business-u07-17-q4@3: A firm with a WACC of 8% considers a project much riskier than its usual work. What discount rate should it use? | A rate above 8% reflecting the extra risk | Exactly 8%, the firm's WACC | A rate below 8%, as risk is shared | The risk-free rate alone | Riskier projects need higher required returns.
 SA2#business-u07-17-q5@2,3: Explain why a project earning a profit can still reduce shareholder value. | Investors require a return that compensates them for risk, measured by the cost of capital. If a project's return, after allowing for the timing of cash flows, is below this rate, its NPV is negative: shareholders could earn more elsewhere at similar risk. So even a profitable project destroys value if it fails to cover the cost of capital. | Required return ; Cost of capital ; Negative NPV ; Opportunity cost
+Q: What is the cost of capital? | The minimum return investors require on their funds to compensate for risk.
+Q: What role does the cost of capital play in NPV? | It is the discount rate used.
+Q: What is the CAPM formula for the cost of equity? | K_{e} = R_{f} + β (R_{m} − R_{f}).
+Q: How is the after-tax cost of debt calculated? | K_{d} × (1 − tax rate).
+Q: What is WACC? | The average cost of a firm's finance, with each source weighted by its share of total finance.
+Q: What values should be used for WACC weights where possible? | Market values.
+Q: When is WACC the right discount rate? | Only for projects with similar risk to the existing business.
+Q: What did Modigliani and Miller show about financing mix? | In a perfect market without taxes, financing mix does not change firm value.
+Q: Why does financing mix matter in practice despite Modigliani and Miller? | Taxes and the costs of financial distress.
+Q: Equity costs 10%, after-tax debt 4.5%, with 60% equity and 40% debt. What is WACC? | 7.8%.
 `;

@@ -37,6 +37,16 @@ M2#history-u13-01-q2@2: Why did Progressives attack the trusts? | Giant corporat
 TF1#history-u13-01-q3@1: Wilson's administration segregated federal offices. | true | Progressive reform did little to challenge racial segregation.
 M3#history-u13-01-q4@3: Which judgement about Progressive reform is best supported? | It expanded federal power, but served some Americans far more than others | It ended the power of big business completely | It gave equal rights to all Americans by 1920 | It reduced the role of the federal government | Reform was real but uneven in who it helped.
 SA3#history-u13-01-q5@2,3: How far did the Progressive era change the United States? | Muckrakers such as Tarbell and Sinclair exposed abuses; Roosevelt pursued trusts (Northern Securities 1904) and food safety laws (1906); Wilson created the Federal Reserve (1913); amendments brought income tax, direct election of senators, Prohibition and women's votes (1920). But trusts remained powerful, and segregation deepened, including in federal offices. A strong answer weighs these. | Explains the problems ; Explains reforms ; Explains amendments ; Explains limits ; Reaches a judgement
+Q: Who were the muckrakers? | Journalists, such as Ida Tarbell, who exposed corruption and abuses by big business and city governments.
+Q: What was a trust in the Progressive era? | A large combination of companies controlling a market, such as John D. Rockefeller's Standard Oil.
+Q: Which case did Theodore Roosevelt win against a trust in 1904? | The Northern Securities case.
+Q: Which two food safety laws were passed in 1906? | The Pure Food and Drug Act and the Meat Inspection Act.
+Q: What did the 18th and 19th Amendments bring? | Prohibition (the 18th, ratified 1919) and votes for women (the 19th, 1920).
+Q: What was Prohibition? | The national ban on making and selling alcohol, from 1920 to 1933.
+Q: Why did Progressive reform do little for Black Americans? | Segregation spread in the South and Wilson's administration segregated federal offices in the same years.
+Q: Why have some historians seen Prohibition as more than a social reform? | Many reformers were middle-class Protestants, and campaigns such as Prohibition targeted immigrants' habits as well as social problems.
+Q: What common mistake is made about who gained from Progressive reform? | Thinking it helped all Americans equally, when segregation deepened in the same years.
+Q: What debate about the Progressives does Hofstadter's work raise? | Whether they were democratic reformers or middle-class groups imposing their own values.
 
 ## The Great Depression
 LV: GCSE and A level · Application
@@ -76,6 +86,16 @@ M2#history-u13-02-q2@2: Why did bank failures deepen the Depression? | Depositor
 TF1#history-u13-02-q3@1: The Bonus Army was driven out of Washington by troops in 1932. | true | The veterans had demanded early payment of a promised bonus.
 M3#history-u13-02-q4@3: Which judgement about Hoover's response is best supported? | More than his reputation suggests, but too little and too late | A complete success that ended the Depression | No action of any kind by the federal government | A programme identical to the New Deal | Hoover acted, but within the narrow limits of his beliefs.
 SA3#history-u13-02-q5@2,3: Why did the Wall Street Crash lead to a Great Depression in the United States? | Speculation on the margin drove share prices up until the crash of 24 and 29 October 1929. Overproduction, unequal incomes, thousands of bank failures, the Smoot-Hawley Tariff (1930) and, Friedman and Schwartz argue, a collapse in the money supply deepened the slump, leaving about a quarter unemployed by 1933. Hoover's limited response failed. A strong answer weighs these causes. | Explains the crash ; Explains economic weaknesses ; Explains policy mistakes ; Explains effects ; Reaches a judgement
+Q: What happened on "Black Thursday" and "Black Tuesday" in 1929? | Share prices began to collapse on 24 October, and panic selling followed on 29 October.
+Q: How did overproduction contribute to the Great Depression? | Factories and farms produced more than Americans could afford to buy.
+Q: How did unequal wealth weaken the American economy before the Depression? | Much income went to a small minority, so most people could not buy enough goods.
+Q: What were Hoovervilles? | Shanty towns of homeless people that grew during the Depression.
+Q: What was the Dust Bowl? | The drought-stricken Great Plains of the 1930s, hit by dust storms.
+Q: What did Milton Friedman and Anna Schwartz blame for the Depression? | The Federal Reserve, for letting the money supply collapse.
+Q: What did Hoover's Reconstruction Finance Corporation of 1932 do? | It lent money to banks and businesses, but help reached ordinary people slowly.
+Q: Which belief limited Hoover's response to the Depression? | "Rugged individualism" and a belief in limited federal action.
+Q: What common mistake is made about the Wall Street Crash and the Depression? | Thinking the crash alone caused it; weak banks, inequality, overproduction and policy mistakes turned a crash into a depression.
+Q: Why did buying on the margin make the 1929 crash worse? | Borrowed money had pushed share prices far above companies' real value, so prices had far to fall.
 
 ## Franklin D. Roosevelt
 LV: GCSE and A level · Application
@@ -113,6 +133,16 @@ M2#history-u13-03-q2@2: Why did Roosevelt avoid challenging segregation? | He ne
 TF1#history-u13-03-q3@1: Roosevelt was paralysed by polio in 1921. | true | He returned to politics and became Governor of New York in 1928.
 M3#history-u13-03-q4@3: Which judgement about Roosevelt's leadership is best supported? | A transformative leader whose political skill sometimes outran his principles | A weak leader who made no lasting impact | A leader who never faced any opposition | A president who served only one term | His achievements and compromises both matter.
 SA3#history-u13-03-q5@2,3: How effective was Franklin D. Roosevelt as president between 1933 and 1941? | Roosevelt restored confidence (the inaugural address of March 1933), communicated through fireside chats, experimented with policy and built a coalition that re-elected him in 1936 and 1940. But the court-packing plan (1937) failed, the recession of 1937 to 1938 hit, and he tolerated segregation for Southern votes. A strong answer weighs these. | Explains confidence and communication ; Explains the coalition ; Explains failures ; Explains compromises ; Reaches a judgement
+Q: In which years did Franklin D. Roosevelt win presidential elections? | 1932, 1936, 1940 and 1944.
+Q: What illness paralysed Roosevelt's legs in 1921? | Polio.
+Q: What office did Roosevelt hold before becoming president? | Governor of New York, from 1928.
+Q: What did Roosevelt promise in the 1932 election? | A "new deal for the American people".
+Q: What was the court-packing plan? | Roosevelt's 1937 proposal to add up to six new justices to the Supreme Court.
+Q: What happened to the court-packing plan? | It was defeated in Congress and damaged Roosevelt politically, though the Court soon began upholding New Deal laws.
+Q: Which groups made up Roosevelt's coalition? | Workers, farmers, city dwellers, Southern whites and, increasingly, Black voters.
+Q: How did Roosevelt approach policy-making? | He experimented, often trying several approaches at once.
+Q: What weaknesses are counted against Roosevelt's leadership? | The court-packing plan, the recession of 1937 to 1938 and his tolerance of Southern segregation.
+Q: When did Franklin D. Roosevelt die? | In April 1945.
 
 ## The New Deal
 LV: GCSE and A level · Evaluation
@@ -153,6 +183,16 @@ M2#history-u13-04-q2@2: Why did Huey Long criticise the New Deal? | He thought i
 TF1#history-u13-04-q3@1: Unemployment in the United States was still around 15% in 1940. | true | Wartime spending finally ended mass unemployment.
 M3#history-u13-04-q4@3: Which judgement about the New Deal is best supported? | It relieved suffering and reformed the system, but did not by itself end the Depression | It ended the Depression completely by 1935 | It achieved nothing of lasting importance | It reduced the size of the federal government | Relief and reform were stronger than recovery.
 SA3#history-u13-04-q5@2,3: How successful was the New Deal? | The First New Deal stabilised banks (the Emergency Banking Act), created jobs (CCC), raised farm prices (AAA) and built the TVA; the Second created the WPA, Social Security and union rights (1935). But unemployment stayed around 15% in 1940, recession returned in 1937 to 1938, critics such as Long and the Liberty League attacked it, and the Court struck down laws. A strong answer weighs relief, recovery and reform. | Explains the First New Deal ; Explains the Second New Deal ; Explains critics ; Explains limits ; Reaches a judgement
+Q: What did the Emergency Banking Act of 1933 achieve? | It restored confidence in the banks during the Hundred Days.
+Q: What was the Civilian Conservation Corps? | A New Deal agency that employed young men on conservation projects.
+Q: What did the National Recovery Administration do, and what happened to it? | It set codes for wages and prices; the Supreme Court struck it down in 1935.
+Q: What did the Works Progress Administration do? | From 1935 it employed millions on public works and arts projects.
+Q: What did the Wagner Act of 1935 protect? | Workers' right to join unions.
+Q: Which group of conservatives called the New Deal socialism? | The American Liberty League.
+Q: What was Huey Long's alternative to the New Deal called? | The "Share Our Wealth" plan.
+Q: What were the Hundred Days? | The first period of Roosevelt's presidency in 1933, when many New Deal laws passed.
+Q: What finally ended mass unemployment after the New Deal? | Wartime spending.
+Q: What were the lasting legacies of the New Deal? | Social Security, union rights and a larger federal role.
 
 ## The Second World War and America
 LV: GCSE and A level · Application
@@ -194,6 +234,16 @@ M2#history-u13-05-q2@2: Why did unemployment almost disappear during the war? | 
 TF1#history-u13-05-q3@1: Most Japanese Americans interned in the war were US citizens. | true | The government formally apologised and paid compensation in 1988.
 M3#history-u13-05-q4@3: Which judgement about the war's effect on American society is best supported? | It opened opportunities and exposed injustices that shaped post-war struggles | It brought full equality for every group by 1945 | It had no effect on life at home | It ended racial segregation in the armed forces in 1941 | Opportunity and injustice existed side by side.
 SA3#history-u13-05-q5@2,3: How far did the Second World War change American society? | War production ended the Depression; millions of women took industrial jobs; Executive Order 8802 and the Double V campaign advanced Black Americans' demands. But most women left work after 1945, the forces stayed segregated until 1948, and about 120,000 Japanese Americans were interned under Executive Order 9066. A strong answer weighs change against continuity for different groups. | Explains the economy ; Explains women ; Explains Black Americans ; Explains Japanese Americans ; Reaches a judgement
+Q: What were the Neutrality Acts of 1935 to 1937 meant to do? | Keep the United States out of foreign wars.
+Q: What did "cash and carry" allow from 1939? | It allowed Britain and France to buy arms from the United States.
+Q: What did Roosevelt call America during the war? | The "arsenal of democracy".
+Q: How much did the American economy grow during the Second World War? | It roughly doubled in size.
+Q: What did Executive Order 8802 of 1941 do? | Banned discrimination in defence industries.
+Q: What was Executive Order 9066? | The February 1942 order under which about 120,000 Japanese Americans were forced into internment camps.
+Q: What did "Rosie the Riveter" symbolise? | The millions of women who took industrial jobs in the war.
+Q: When were the American armed forces desegregated? | In 1948; they stayed segregated through the war.
+Q: When did the US government apologise for Japanese American internment? | Only in 1988.
+Q: What mistake is often made about women and the Second World War in America? | Thinking it brought lasting equality; most women war workers left or were pushed out of their jobs after 1945.
 
 ## Post-war prosperity
 LV: GCSE and A level · Application
@@ -233,6 +283,16 @@ M2#history-u13-06-q2@2: Why were many Black families excluded from new suburbs? 
 TF1#history-u13-06-q3@1: Levittown was begun on Long Island in 1947. | true | It became a symbol of mass-built suburbs.
 M3#history-u13-06-q4@3: Which judgement about post-war prosperity is best supported? | Wide but far from universal, and its exclusions fed later protest | Shared equally by every American family | Limited to a tiny elite of the very rich | Ended by a depression in 1950 | Gains and exclusions both shaped the period.
 SA3#history-u13-06-q5@2,3: How far did all Americans share in post-war prosperity? | The GI Bill (1944), the baby boom, defence spending and the Highway Act (1956) drove growth; suburbs such as Levittown (1947), cars and television spread. But discriminatory rules and lending excluded many Black families, Harrington (1962) found tens of millions poor, and McCarthyism created fear. A strong answer weighs prosperity against exclusion. | Explains causes ; Explains consumer society ; Explains racial exclusion ; Explains poverty ; Reaches a judgement
+Q: What was the baby boom, and why did it boost the economy? | The sharp rise in births after the war, which raised demand for homes, schools and goods.
+Q: What did the Federal-Aid Highway Act of 1956 fund? | A national network of interstate highways.
+Q: What was Levittown? | A mass-built suburb on Long Island, begun in 1947, offering affordable houses to young families.
+Q: Who wrote The Affluent Society, and when? | The economist J. K. Galbraith, in 1958.
+Q: What was McCarthyism? | Accusations of communism against Americans without fair evidence, in the early 1950s.
+Q: When was Senator McCarthy censured by the Senate? | In 1954.
+Q: Which factors kept the post-war American economy growing besides the GI Bill? | Pent-up demand, wartime savings and high government spending, including defence.
+Q: Where did poverty persist during the post-war boom? | In rural areas, inner cities and among the old.
+Q: Which three things spread rapidly in the post-war consumer society? | Car ownership, television and advertising.
+Q: How did the exclusions of post-war prosperity affect later American history? | They fed later protest.
 
 ## The Civil Rights Movement
 LV: GCSE and A level · Application
@@ -274,6 +334,16 @@ M2#history-u13-07-q2@2: Why did the Birmingham protests of 1963 matter? | Televi
 TF1#history-u13-07-q3@1: Plessy v. Ferguson (1896) upheld "separate but equal". | true | Brown v. Board overturned this for schools in 1954.
 M3#history-u13-07-q4@3: Which judgement about the movement by 1968 is best supported? | A historic legal victory, but economic and social equality remained far off | Complete equality achieved in every part of the country | No legal change of any kind by 1968 | A movement opposed by every Black American | Legal gains outran social and economic change.
 SA3#history-u13-07-q5@2,3: How far had the Civil Rights Movement achieved its aims by 1968? | Brown v. Board (1954), Little Rock (1957), sit-ins (1960), Freedom Rides (1961), Birmingham and the March on Washington (1963) and Selma (1965) led to the Civil Rights Act (1964) and Voting Rights Act (1965), ending legal segregation and raising Black voting. But poverty, Northern housing segregation and discrimination persisted, and riots and Black Power showed frustration. A strong answer weighs these. | Explains segregation ; Explains campaigns ; Explains the laws ; Explains limits ; Reaches a judgement
+Q: What were Jim Crow laws? | The system of segregation laws in the American South, covering schools, transport and public places.
+Q: How were most Black Southerners prevented from voting before 1965? | By literacy tests, poll taxes and violence.
+Q: What happened at Little Rock in 1957? | Federal troops escorted nine Black students into Central High School.
+Q: What were the Freedom Rides of 1961? | Protests that challenged segregation on buses.
+Q: How many people attended the March on Washington on 28 August 1963? | Around 250,000.
+Q: What was Bloody Sunday at Selma in 1965? | An attack on civil rights marchers, which led to new voting legislation.
+Q: What did the Civil Rights Act of 1964 outlaw? | Segregation in public places and discrimination in employment.
+Q: What problems remained for Black Americans after the 1964 and 1965 Acts? | Poverty, housing segregation and discrimination in the North.
+Q: What common mistake is made about leadership of the Civil Rights Movement? | Thinking it was led only by a few famous figures; local organisers, students and churches drove most campaigns.
+Q: What is the "long civil rights movement" debate about? | Whether the movement should be seen as a short movement of 1954 to 1968 or a longer struggle (Hall).
 
 ## Martin Luther King Jr.
 LV: GCSE and A level · Application
@@ -312,6 +382,16 @@ M2#history-u13-08-q2@2: Why did non-violent direct action work as a strategy? | 
 TF1#history-u13-08-q3@1: King publicly opposed the Vietnam War in 1967. | true | His stand cost him President Johnson's support.
 M3#history-u13-08-q4@3: Which judgement about King's importance is best supported? | The most important national voice, with success resting on thousands of local activists | The only person responsible for every civil rights victory | A minor figure with no influence on legislation | A leader who rejected non-violence | National leadership and local organising worked together.
 SA3#history-u13-08-q5@2,3: How important was Martin Luther King Jr. to the Civil Rights Movement? | King led the Montgomery boycott (1955), co-founded the SCLC (1957), led Birmingham (1963) and Selma (1965), wrote the Letter from Birmingham Jail and gave the "I Have a Dream" speech, helping win the Acts of 1964 and 1965. But local activists, SNCC and organisers led many campaigns, and his Chicago campaign (1966) had limited success. A strong answer weighs King against others. | Explains King's campaigns ; Explains non-violence ; Explains local activism ; Explains his later years ; Reaches a judgement
+Q: When and where was Martin Luther King Jr. born? | In Atlanta, in 1929.
+Q: What role did King take in Montgomery in 1955? | As a Baptist minister there, he was chosen to lead the bus boycott.
+Q: What was the SCLC set up to do? | Coordinate civil rights protests through Black churches; King helped found it in 1957.
+Q: Which two influences shaped King's philosophy of protest? | Christian teaching and Gandhi's non-violent resistance.
+Q: What is non-violent direct action? | Protest that deliberately confronts injustice without using violence.
+Q: Where did King give his "I Have a Dream" speech? | At the March on Washington in August 1963.
+Q: When did King win the Nobel Peace Prize? | In 1964.
+Q: What did King campaign against in Chicago from 1966? | Housing segregation, with limited success.
+Q: What was King doing in Memphis when he was assassinated? | Supporting striking sanitation workers.
+Q: What was the cost to King of opposing the Vietnam War in 1967? | He lost support from President Johnson, and many former supporters turned against him.
 
 ## Malcolm X
 LV: GCSE and A level · Application
@@ -351,6 +431,16 @@ M2#history-u13-09-q2@2: Why did Malcolm X reject integration? | He believed whit
 TF1#history-u13-09-q3@1: Malcolm X criticised the March on Washington. | true | He saw it as too dependent on white support.
 M3#history-u13-09-q4@3: Which judgement about Malcolm X's influence is best supported? | His influence grew after his death, rivalling King's in the long term | He had no influence on later Black politics | He was a supporter of segregation by white Southerners | His views never changed during his life | His legacy shaped Black identity and politics.
 SA3#history-u13-09-q5@2,3: How did Malcolm X's ideas differ from those of Martin Luther King Jr.? | Malcolm X, a Nation of Islam minister, rejected integration and non-violence, defended self-defence "by any means necessary", stressed Black pride and separation and criticised the March on Washington; King sought integration through non-violent direct action. After leaving the Nation (1964) and visiting Mecca, Malcolm X spoke of human rights and wider alliances. A strong answer compares and explains change. | Explains Malcolm X's ideas ; Explains King's ideas ; Explains change after 1964 ; Explains influence ; Reaches a judgement
+Q: What was Malcolm X's name at birth? | Malcolm Little, born in 1925.
+Q: Where did Malcolm X join the Nation of Islam? | In prison; he then became its leading minister.
+Q: What was the Nation of Islam? | An African American religious and political movement that preached separation.
+Q: What is Black nationalism? | The belief that Black people should build their own institutions and communities.
+Q: What did Malcolm X mean by winning freedom "by any means necessary"? | He defended self-defence rather than accepting non-violence as the only method.
+Q: Which organisation did Malcolm X found after leaving the Nation of Islam? | The Organization of Afro-American Unity.
+Q: When and where was Malcolm X assassinated? | In New York, on 21 February 1965.
+Q: Who wrote The Autobiography of Malcolm X with him? | Alex Haley; it appeared in 1965.
+Q: What was Black Power? | A movement from 1966 stressing Black pride, self-reliance and self-defence, inspired partly by Malcolm X.
+Q: What common mistake is made about Malcolm X's ideas? | Treating them as fixed; they changed significantly in the last year of his life.
 
 ## The Montgomery Bus Boycott
 LV: GCSE and A level · Application
@@ -389,6 +479,16 @@ M2#history-u13-10-q2@2: Why did the boycott put pressure on the bus company? | M
 TF1#history-u13-10-q3@1: Claudette Colvin was arrested for refusing to give up her seat before Rosa Parks. | true | Colvin was arrested in March 1955, aged fifteen.
 M3#history-u13-10-q4@3: Which explanation of the boycott's success is best supported? | Mass economic pressure and a legal challenge together won | The bus company chose to end segregation on its own | Federal troops forced the city to desegregate | The boycott failed and segregation continued | Mass protest and the courts combined to end bus segregation.
 SA3#history-u13-10-q5@2,3: Why did the Montgomery Bus Boycott succeed? | Rosa Parks's arrest (1 December 1955) was followed by leaflets from Jo Ann Robinson's Women's Political Council, the MIA under King, church meetings and car pools that kept most Black residents off the buses for 381 days despite arrests and bombings. Browder v. Gayle (1956) gave the legal victory. A strong answer weighs unity, organisation and the courts. | Explains the spark ; Explains organisation ; Explains resistance faced ; Explains the court case ; Reaches a judgement
+Q: When was Rosa Parks arrested on a Montgomery bus? | On 1 December 1955.
+Q: What role did Rosa Parks hold in the local civil rights movement? | She was an experienced activist and secretary of the local NAACP branch.
+Q: Who was Claudette Colvin? | A fifteen-year-old arrested in March 1955 for refusing to give up her bus seat, before Rosa Parks.
+Q: What did the Women's Political Council do at the start of the boycott? | It printed thousands of leaflets overnight calling for a boycott.
+Q: What was the Montgomery Improvement Association? | The organisation formed to lead the boycott, with Martin Luther King Jr. as president.
+Q: How did Black residents of Montgomery travel during the boycott? | By car pools and walking instead of the buses.
+Q: What violence did boycott leaders face? | Arrests, and King's house was bombed in January 1956.
+Q: When were Montgomery's buses desegregated? | In December 1956.
+Q: What is a boycott? | Refusing to use or buy something as a protest.
+Q: What common mistake is made about Rosa Parks? | Seeing her as a tired woman acting on impulse; she was an experienced activist within an organised movement.
 
 ## The Vietnam War and American society
 LV: GCSE and A level · Application
@@ -428,6 +528,16 @@ M2#history-u13-11-q2@2: Why did the Tet Offensive increase opposition to the war
 TF1#history-u13-11-q3@1: Over half a million American troops were in Vietnam by 1968. | true | Many of them were conscripted through the draft.
 M3#history-u13-11-q4@3: What was the Vietnam War's deepest effect on American society? | It broke the post-war trust between many Americans and their government | It united Americans behind their government | It had no effect on American politics | It ended conscription before it began | Division and distrust were lasting effects.
 SA3#history-u13-11-q5@2,3: How did the Vietnam War affect American society between 1964 and 1975? | Escalation after the Gulf of Tonkin (1964) and the draft brought over half a million troops by 1968; Tet (1968), television, My Lai, Kent State (1970) and the Pentagon Papers (1971) fuelled protest and a credibility gap; Johnson did not run in 1968, and the War Powers Resolution (1973) followed. A strong answer weighs division, political change and trust. | Explains escalation ; Explains protest ; Explains distrust ; Explains political consequences ; Reaches a judgement
+Q: When did President Johnson send combat troops to Vietnam? | In 1965, after the Gulf of Tonkin Resolution of August 1964.
+Q: About how many Americans died in the Vietnam War? | About 58,000, along with far larger numbers of Vietnamese.
+Q: What was the My Lai massacre? | A massacre in March 1968, revealed in 1969, that horrified many Americans.
+Q: Which famous boxer refused the draft in 1967? | Muhammad Ali.
+Q: What was the draft? | Compulsory conscription into the armed forces.
+Q: Who leaked the Pentagon Papers in 1971? | Daniel Ellsberg.
+Q: What ended American involvement in Vietnam in January 1973? | The Paris Peace Accords.
+Q: What was the War Powers Resolution of 1973? | A law trying to limit the president's power to send troops into combat without Congress.
+Q: What was the "credibility gap" during the Vietnam War? | The difference between what the government said and what the public believed.
+Q: What common mistake is made about American opposition to the Vietnam War? | Thinking most opposed it from the start; opposition grew gradually and was strongest after 1968.
 
 ## The Watergate scandal
 LV: GCSE and A level · Application
@@ -468,6 +578,16 @@ M2#history-u13-12-q2@2: Why did the tapes destroy Nixon's presidency? | One show
 TF1#history-u13-12-q3@1: Gerald Ford pardoned Nixon in September 1974. | true | The pardon was controversial and damaged Ford politically.
 M3#history-u13-12-q4@3: Which judgement about what Watergate showed is best supported? | The system worked in the end, but only after a long struggle and some luck | Checks and balances failed completely | The president was proved innocent of all wrongdoing | Congress played no part in the scandal | Institutions held, but narrowly and after a long struggle.
 SA3#history-u13-12-q5@2,3: What does the Watergate scandal reveal about the American political system? | The break-in (June 1972) and cover-up were exposed by Woodward and Bernstein, the Senate hearings that revealed the tapes, the reaction to the Saturday Night Massacre (1973) and United States v. Nixon (1974); impeachment articles forced Nixon's resignation (August 1974). The press, Congress and courts checked abuse, but only after a long struggle, and trust fell. A strong answer weighs strength against weakness. | Explains events ; Explains the press ; Explains Congress and the courts ; Explains effects on trust ; Reaches a judgement
+Q: Who were the Watergate burglars linked to? | President Richard Nixon's re-election committee.
+Q: Who was "Deep Throat"? | A secret source who helped Woodward and Bernstein investigate Watergate.
+Q: What did the Senate hearings of 1973 reveal? | That Nixon had secretly taped conversations in his office.
+Q: What was the "Saturday Night Massacre"? | Nixon's firing of the special prosecutor in October 1973, which provoked outrage.
+Q: What did the House Judiciary Committee do in July 1974? | It approved articles of impeachment against Nixon.
+Q: When did Nixon resign? | On 9 August 1974.
+Q: What is impeachment? | Formal charges brought by the House of Representatives against an official.
+Q: What are checks and balances? | The constitutional system by which branches of government limit each other.
+Q: What common mistake is made about Nixon's role in Watergate? | Thinking he ordered the break-in; the evidence centres on his role in the cover-up afterwards.
+Q: Why is Ford's pardon of Nixon debated? | Some argue it helped the nation recover; others say it let Nixon escape justice.
 
 ## Reaganomics
 LV: GCSE and A level · Application
@@ -508,6 +628,16 @@ M2#history-u13-13-q2@2: Why did large budget deficits grow under Reagan? | Tax c
 TF1#history-u13-13-q3@1: Reagan dismissed over 11,000 striking air traffic controllers in 1981. | true | The decision weakened unions across the country.
 M3#history-u13-13-q4@3: Which judgement about Reaganomics is best supported? | It reshaped economic thinking, with costs critics see as lasting | It eliminated the national debt by 1989 | It caused a depression throughout the 1980s | It raised taxes on the rich to record levels | Its effects included both growth and debt.
 SA3#history-u13-13-q5@2,3: How successful were Reagan's economic policies? | Supply-side ideas led to tax cuts (1981, 1986), deregulation, cuts to some social spending and higher defence spending; Reagan broke the air traffic controllers' strike (1981). After the 1981 to 1982 recession, growth was strong and inflation low, helped by Volcker's Federal Reserve. But deficits grew, the national debt tripled and inequality rose. A strong answer weighs these. | Explains ideas ; Explains policies ; Explains successes ; Explains costs ; Reaches a judgement
+Q: What did Reagan say about government in his view of the economy? | "Government is not the solution to our problem; government is the problem."
+Q: How did the top income tax rate change under Reagan? | It fell from 70% to 50% in 1981, and to 28% after the Tax Reform Act of 1986.
+Q: Which industries did Reagan deregulate? | Industries such as airlines, banking and energy.
+Q: How did Reagan's spending priorities change? | Spending on some social programmes was cut, while defence spending rose sharply.
+Q: How high did unemployment rise in the recession of 1981 to 1982? | To around 10%.
+Q: What is deregulation? | Reducing government rules on industry.
+Q: What is a budget deficit? | The gap when government spending exceeds revenue in a year.
+Q: What happened to income inequality under Reagan? | It grew.
+Q: What common mistake is made about who defeated inflation in the 1980s? | Crediting Reagan's tax cuts alone; the Federal Reserve's high interest rates under Volcker were central.
+Q: What were the claimed successes of Reaganomics? | Lower inflation, long growth from 1983 and renewed confidence.
 
 ## The United States and the end of the Cold War
 LV: A level · Evaluation
@@ -545,6 +675,16 @@ M2#history-u13-14-q2@2: Why do some historians credit Reagan's pressure with end
 TF1#history-u13-14-q3@1: The INF Treaty eliminated a whole class of nuclear missiles. | true | It was signed by Reagan and Gorbachev in December 1987.
 M3#history-u13-14-q4@3: Which judgement about the American contribution is best supported? | The United States shaped how it ended, but internal Soviet events drove it | The United States alone caused the Soviet collapse | The United States played no part at all | The Cold War ended because of a nuclear war | Both American policy and Soviet change mattered, unequally.
 SA3#history-u13-14-q5@2,3: How far was the United States responsible for the end of the Cold War? | Reagan's defence build-up, "evil empire" rhetoric and SDI (1983) added pressure, and his diplomacy with Gorbachev (Geneva 1985, Reykjavik 1986, the INF Treaty 1987) built trust. But Soviet economic stagnation, Gorbachev's reforms, nationalism and the revolutions of 1989 drove the collapse of 1991. A strong answer weighs these, using Gaddis and Brown. | Explains confrontation ; Explains diplomacy ; Explains Soviet causes ; Uses interpretations ; Reaches a judgement
+Q: What was the Strategic Defense Initiative? | Reagan's planned missile defence shield, announced in March 1983.
+Q: Where did the United States support anti-communist forces in the 1980s? | In Afghanistan, Central America and elsewhere.
+Q: When did Mikhail Gorbachev become Soviet leader, and what did he want? | In 1985, seeking to reform a stagnating economy.
+Q: Where did Reagan and Gorbachev first meet? | At Geneva, in 1985.
+Q: What did the INF Treaty of 1987 do? | It eliminated intermediate-range nuclear missiles, a whole class of weapons.
+Q: When was the Berlin Wall opened? | On 9 November 1989.
+Q: Where did George H. W. Bush and Gorbachev meet in December 1989? | At Malta.
+Q: Which Soviet causes do many historians stress for the end of the Cold War? | Economic stagnation, Gorbachev's reforms, nationalism and the Eastern European revolutions.
+Q: How did Reagan's diplomacy contribute to ending the Cold War? | His willingness to negotiate with Gorbachev made agreements possible.
+Q: What common mistake is made about who won the Cold War? | Claiming Reagan alone won it; Soviet problems, Gorbachev's reforms and Eastern European revolutions were central.
 
 ## The changing role of the United States
 LV: GCSE and A level · Evaluation
@@ -582,4 +722,14 @@ M2#history-u13-15-q2@2: Why did the Iraq War damage American credibility? | Its 
 TF1#history-u13-15-q3@1: Barack Obama was elected president in November 2008. | true | He was the first African American president.
 M3#history-u13-15-q4@3: Which judgement about American power after 1991 is best supported? | The leading power, but no longer an unchallenged one | A power that collapsed completely after 2008 | A power that withdrew from all world affairs | A power unchanged since 1945 | American dominance remained, but it was increasingly contested.
 SA3#history-u13-15-q5@2,3: How did the United States' role in the world change between 1991 and 2016? | After the Gulf War (1991) and NAFTA (1994) the United States dominated as the sole superpower; 9/11 (2001) led to wars in Afghanistan and Iraq (2003), the latter justified by false claims; the 2008 crisis and China's growth challenged its position. A strong answer weighs continued dominance against new limits, and treats recent judgements as provisional. | Explains the unipolar moment ; Explains 9/11 and the wars ; Explains the 2008 crisis ; Explains China's rise ; Reaches a judgement
+Q: What does "unipolar" mean? | A world with one dominant power.
+Q: What is globalisation? | The growing connection of the world's economies and societies.
+Q: Which trade agreement did the United States join in 1994? | The North American Free Trade Agreement.
+Q: When did the United States invade Afghanistan? | In October 2001.
+Q: How was the 2003 invasion of Iraq justified? | By claims about weapons of mass destruction that proved false.
+Q: Where did the financial crisis of 2008 begin? | In the American housing market, before spreading worldwide.
+Q: What was significant about Barack Obama's election in 2008? | He was the first African American president.
+Q: Which country's rapid growth made it a major rival to the United States? | China.
+Q: In what ways did the United States remain dominant after 2001? | It had the largest economy, military and cultural influence.
+Q: Why must judgements about very recent American history be handled with care? | Many records are closed and consequences are still unfolding, so judgements are provisional.
 `;

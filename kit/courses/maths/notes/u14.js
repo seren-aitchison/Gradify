@@ -34,6 +34,16 @@ SRC: Biggs NL, Discrete Mathematics (2nd edn, Oxford University Press 2002) | te
 NUM1#maths-u14-01-q1@1: How many binary strings of length 10 are there? | 1024 | 0 |  | Each position has 2 choices: 2^{10} = 1,024.
 M1#maths-u14-01-q2@1: Which area belongs to discrete rather than continuous mathematics? | Graph theory | Differential equations | Real analysis | Fluid dynamics | Calculus of variations | Graphs consist of separate vertices and edges.
 M2#maths-u14-01-q3@2: Why is discrete mathematics central to computer science? | Computers store and process separate symbols, bits and structures | Computers can only do calculus | It avoids proofs | Continuous maths is incorrect | It isn't central | Data, programs and networks are discrete objects.
+Q: What kind of objects does discrete mathematics study? | Countable, separate objects such as integers, graphs, logical statements, finite sets and algorithms.
+Q: What is a discrete structure? | A set of separate objects with relations between them, such as a graph or a set of strings.
+Q: What does a proof by induction establish once P(1) holds and P(k) implies P(k + 1)? | That P(n) is true for all n ≥ 1.
+Q: Name three counting methods used in discrete mathematics. | Counting arguments, bijections and recurrences.
+Q: Why is discrete mathematics the natural mathematics of computers? | Computers store and manipulate discrete data such as bits, strings and graphs.
+Q: Name four areas that discrete models underpin. | Databases, networks, scheduling, coding and cryptography.
+Q: How many subsets does an n-element set have? | 2ⁿ.
+Q: In the induction proof that an n-element set has 2ⁿ subsets, how are the subsets of a (k + 1)-element set split? | Into those that omit the new element (2ᵏ) and those that include it (2ᵏ), giving 2^{k+1}.
+Q: What is the common mistake when writing an inductive step? | Proving the step for one specific k rather than for a general k.
+Q: Besides counting and induction, name two other tools of discrete mathematics. | The pigeonhole principle and invariants (also recurrences and logic).
 
 ## Combinatorics
 S: Combinatorics is the mathematics of counting, arranging and selecting. It asks how many ways something can be done, whether a structure exists, and how to build or optimise it, with answers that feed probability, computer science and chemistry.
@@ -68,6 +78,16 @@ SRC: Graham RL, Knuth DE, Patashnik O, Concrete Mathematics (2nd edn, Addison-We
 NUM1#maths-u14-02-q1@1: Find the Catalan number C₄. | 14 | 0 |  | C(8, 4)/5 = 70/5 = 14.
 M1#maths-u14-02-q2@1: How many shortest lattice paths go from (0, 0) to (4, 3)? | 35 | 12 | 7 | 70 | 24 | Choose the 3 up-steps among 7: C(7, 3) = 35.
 M2#maths-u14-02-q3@2: What does a bijective proof show? | Two sets have the same size, by pairing their elements exactly | A formula holds for small cases, so it holds for all cases | A set is infinite | A formula is false | Nothing about size | A one-to-one correspondence proves equal cardinality.
+Q: What three kinds of question does combinatorics ask? | Enumeration (how many?), existence (is there one?) and construction or optimisation (build the best one).
+Q: What is a bijective proof? | A proof that two sets have the same size by pairing their elements exactly.
+Q: What is the formula for the Catalan number Cₙ? | Cₙ = C(2n, n)/(n + 1).
+Q: How many shortest lattice paths go from (0, 0) to (m, n) using right and up steps? | C(m + n, n).
+Q: Name three structures counted by Catalan numbers. | Balanced bracket sequences, binary trees and triangulations of polygons.
+Q: Why is the number of lattice paths from (0, 0) to (3, 2) equal to C(5, 2)? | Each path has 5 steps, and you choose which 2 of them are up steps.
+Q: What is the common mistake when counting lattice paths? | Counting them as m × n instead of choosing the positions of the steps.
+Q: What are the first six Catalan numbers? | 1, 1, 2, 5, 14, 42.
+Q: Which branch of combinatorics includes existence questions such as Ramsey theory and pigeonhole? | Existence problems: asking whether a structure with some property must exist.
+Q: What often explains why two different counts in combinatorics agree? | A bijection between the two sets.
 
 ## Counting Principles
 S: The basic counting principles (add for "or", multiply for "and", subtract the complement, divide out overcounting) solve a huge range of problems. Choosing the right principle is most of the work.
@@ -103,6 +123,16 @@ SRC: Department for Education, Mathematics GCSE subject content and assessment o
 NUM1#maths-u14-03-q1@1: How many 4-digit PINs have at least one repeated digit? | 4960 | 0 |  | 10,000 − 10 × 9 × 8 × 7 = 4,960.
 M1#maths-u14-03-q2@1: Number plates have 2 letters then 3 digits. How many are possible? | 676,000 | 46,800 | 26,000 | 6,760 | 175,760 | Multiply the choices for each position: 26 × 26 × 10 × 10 × 10 = 676,000.
 M3#maths-u14-03-q3@2: How many 3-letter strings from A–Z contain at least one vowel (A, E, I, O, U)? | 8,315 | 9,261 | 2,197 | 5,000 | 125 | Total 17,576 minus 21^{3} = 9,261 with no vowels.
+Q: What does the sum rule of counting say? | Disjoint alternatives add: for example, a dessert or a cheese from 4 and 3 options gives 4 + 3.
+Q: What does the product rule of counting say? | If a task has stages with m and n options, there are mn ways overall.
+Q: How is an "at least one" count usually found most easily? | As total minus none, using the complement principle.
+Q: What does the division rule say? | If each outcome is counted k times, divide the total by k.
+Q: How many outfits can be made from 3 shirts and 4 trousers? | 12, by the product rule.
+Q: How many three-course meals come from 4 starters, 6 mains and 3 desserts? | 4 × 6 × 3 = 72.
+Q: How many 4-digit PINs have all digits different? | 10 × 9 × 8 × 7 = 5,040.
+Q: What must you check before adding counts of cases? | That the cases are disjoint, so nothing is counted twice.
+Q: Which two questions should you always ask about a counting problem? | Does order matter, and is repetition allowed?
+Q: What is a quick way to check a counting argument? | Test it on a small example.
 
 ## Permutations
 S: A permutation is an ordered arrangement. Counting permutations answers questions about rankings, seatings, passwords and anagrams, using factorials and adjustments for repeated items.
@@ -139,6 +169,16 @@ SRC: Graham RL, Knuth DE, Patashnik O, Concrete Mathematics (2nd edn, Addison-We
 NUM1#maths-u14-04-q1@1: Find P(10, 3). | 720 | 0 |  | 10 × 9 × 8 = 720.
 M1#maths-u14-04-q2@1: How many arrangements are there of the letters of LEVEL? | 30 | 120 | 60 | 20 | 10 | 5!/(2! × 2!) = 120/4 = 30 (two Ls and two Es).
 M2#maths-u14-04-q3@2: How many ways can 7 people sit around a round table, if only relative positions matter? | 720 | 5,040 | 840 | 49 | 120 | Fix one person to remove rotations: (7 − 1)! = 720.
+Q: What is a permutation? | An ordered arrangement of objects.
+Q: What is the formula for P(n, r)? | P(n, r) = n!/(n − r)!.
+Q: How many ways can n distinct objects be arranged in a row? | n!.
+Q: How many ordered choices of r from n are there when repetition is allowed? | nʳ.
+Q: How many ways can n objects be arranged in a circle when only relative positions matter? | (n − 1)!.
+Q: How many distinct arrangements are there of the letters of MISSISSIPPI? | 11!/(4! × 4! × 2!) = 34,650.
+Q: What is a derangement? | A permutation in which no item is in its original place.
+Q: What is Stirling's approximation for n!? | n! ≈ √(2πn)(n/e)ⁿ.
+Q: Why is brute force over all orderings hopeless for the travelling salesperson problem with large n? | Factorials grow faster than exponentials, so there are far too many orderings.
+Q: Is choosing a committee a permutation problem? | No: rankings (first, second, third) are permutations, but committees ignore order.
 
 ## Combinations
 S: A combination is a selection where order doesn't matter: a committee, a lottery ticket, a hand of cards. The binomial coefficient C(n, r) counts them, and the stars-and-bars method counts selections with repetition.
@@ -175,6 +215,16 @@ SRC: Department for Education, Mathematics AS and A level subject content | stan
 NUM1#maths-u14-05-q1@1: In how many ways can 10 identical sweets be shared among 3 children (some may get none)? | 66 | 0 |  | Stars and bars: C(10 + 3 − 1, 2) = C(12, 2) = 66.
 M1#maths-u14-05-q2@1: How many 5-card hands can be dealt from a 52-card pack? | 2,598,960 | 311,875,200 | 260 | 380,204,032 | 1,326 | C(52, 5) = 2,598,960; order doesn't matter in a hand.
 M3#maths-u14-05-q3@2: How many ways can 3 of 8 people be chosen if two particular people refuse to serve together? | 50 | 56 | 6 | 336 | 20 | All C(8, 3) = 56 minus those with both: 6 (choose the third from 6).
+Q: What is a combination? | A selection where order doesn't matter, such as a committee or a lottery ticket.
+Q: What is the formula for C(n, r)? | C(n, r) = n!/(r!(n − r)!).
+Q: What does the symmetry property of binomial coefficients say? | C(n, r) = C(n, n − r).
+Q: What is Pascal's rule? | C(n, r) = C(n − 1, r − 1) + C(n − 1, r).
+Q: What is the sum of C(n, r) over all r? | 2ⁿ.
+Q: What does stars and bars count? | The ways to put n identical items into k groups: C(n + k − 1, k − 1).
+Q: How many ways are there to choose r items from n types with repetition allowed? | C(n + r − 1, r).
+Q: How do you handle fixed members when counting committees? | Include them first, then choose the rest of the committee from those left.
+Q: How many possible tickets are there for a lottery choosing 6 of 59 numbers? | C(59, 6) = 45,057,474.
+Q: What mistake overcounts selections by a factor of r!? | Using permutations when order doesn't matter.
 
 ## Binomial Theorem
 S: The binomial theorem expands (a + b)ⁿ using binomial coefficients, connecting algebra to counting. Pascal's triangle displays the coefficients, and Newton's generalisation to any power gives important series.
@@ -210,6 +260,16 @@ SRC: Graham RL, Knuth DE, Patashnik O, Concrete Mathematics (2nd edn, Addison-We
 NUM1#maths-u14-06-q1@1: Find the coefficient of x^{2} in (1 − 3x)^{6}. | 135 | 0 |  | C(6, 2) × (−3)^{2} = 15 × 9 = 135.
 M1#maths-u14-06-q2@1: What is the fourth row (n = 4) of Pascal's triangle? | 1, 4, 6, 4, 1 | 1, 3, 3, 1 | 1, 4, 4, 1 | 1, 5, 10, 10, 5, 1 | 1, 2, 3, 2, 1 | Row n lists C(n, k) for k = 0 to n; for n = 4 that's 1, 4, 6, 4, 1.
 M2#maths-u14-06-q3@2: Using the binomial series, what is √(1.02) to 4 decimal places? | 1.0100 | 1.0200 | 1.0010 | 1.0141 | 0.9900 | 1 + 0.02/2 − 0.0004/8 = 1.00995 ≈ 1.0100.
+Q: What does the binomial theorem state? | (a + b)ⁿ = Σ C(n, k) a^{n−k}b^{k}, summed from k = 0 to n.
+Q: Why are the coefficients in (a + b)ⁿ binomial coefficients? | Each term picks a or b from each of n brackets, and there are C(n, k) ways to pick b exactly k times.
+Q: How is each entry in Pascal's triangle found? | It is the sum of the two entries above it.
+Q: What is the coefficient of x^{3} in (2 + x)^{5}? | C(5, 3) × 2^{2} = 40.
+Q: What is the alternating sum of the binomial coefficients in row n (n ≥ 1)? | 0, found by setting a = 1 and b = −1.
+Q: What is the general binomial series for (1 + x)^{α}? | 1 + αx + α(α − 1)x^{2}/2! + …, valid for |x| < 1.
+Q: What is the approximation to √(1 + x) for small x? | 1 + x/2 − x^{2}/8.
+Q: How does the binomial series differ when α is negative or not a whole number? | The series is infinite rather than stopping.
+Q: What is the common mistake when finding a coefficient in (2 + x)^{5}? | Forgetting to raise the constant to its power, writing × 2 instead of × 2^{2}.
+Q: Which coefficient is the largest in row 2n of Pascal's triangle? | The middle coefficient, C(2n, n).
 
 ## Pigeonhole Principle
 S: If more than n pigeons go into n holes, some hole has at least two. This simple principle proves surprising existence results: shared birthdays, repeated remainders and close points, without finding them explicitly.
@@ -243,6 +303,16 @@ SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2
 NUM1#maths-u14-07-q1@1: What is the minimum number of people needed to guarantee that 3 share a birth month? | 25 | 0 |  | 2 × 12 + 1 = 25.
 M1#maths-u14-07-q2@1: Any 6 numbers chosen from 1 to 10 must include what? | Two that add to 11 | Two that are equal | Three primes | Two that multiply to 10 | Two consecutive odd numbers | The five pairs {1, 10}, …, {5, 6} are the holes.
 M2#maths-u14-07-q3@2: Why must any 11 integers include two whose difference is divisible by 10? | There are only 10 possible last digits | Integers are infinite | All integers are even | Differences are always divisible by 10 | It isn't true | Two share a remainder mod 10, so their difference is a multiple of 10.
+Q: What does the pigeonhole principle state? | If N objects are placed in k boxes and N > k, some box contains at least two.
+Q: What does the generalised pigeonhole principle state? | If N objects go into k boxes, some box contains at least ⌈N/k⌉ objects.
+Q: Why must two of 13 people share a birth month? | There are 13 people but only 12 months, so by pigeonhole two share one.
+Q: Why must two of any 6 integers have a difference divisible by 5? | There are only 5 remainders mod 5, so two share a remainder and their difference is a multiple of 5.
+Q: Why must two of five points in a unit square be within √2/2 of each other? | Split the square into four half-size squares; two points fall in the same one.
+Q: How many people guarantee that three share a birth month? | 25, since 24 could be two per month and ⌈25/12⌉ = 3.
+Q: Name four things that can serve as pigeonholes. | Remainders, ranges, colours, sub-regions, or pairs summing to a fixed total.
+Q: What is the main skill in using the pigeonhole principle? | Choosing the holes so that a shared hole guarantees the property you need.
+Q: Which large area of mathematics generalises the pigeonhole principle? | Ramsey theory.
+Q: Does the pigeonhole principle tell you which box has the repeat? | No: it proves existence without finding the objects explicitly.
 
 ## Inclusion–Exclusion Principle
 S: Inclusion–exclusion counts the union of overlapping sets by adding sizes, subtracting pairwise overlaps, adding back triple overlaps and so on. It counts divisibility, derangements and surjections.
@@ -278,6 +348,16 @@ SRC: Rosen KH, Discrete Mathematics and Its Applications (8th edn, McGraw-Hill 2
 NUM1#maths-u14-08-q1@1: Find D₄, the number of derangements of 4 items. | 9 | 0 |  | 4!(1 − 1 + ½ − 1/6 + 1/24) = 24 × 9/24 = 9.
 M1#maths-u14-08-q2@1: In a class, 20 study French, 15 Spanish, and 6 both. How many study at least one? | 29 | 35 | 41 | 26 | 9 | Add the two groups and subtract the overlap counted twice: 20 + 15 − 6 = 29.
 M3#maths-u14-08-q3@2: Four letters go into four addressed envelopes at random. What is the probability none is correct? | 3/8 | 1/4 | 1/24 | 1/e exactly | 5/8 | There are D₄ = 9 derangements among 4! = 24 arrangements, so the probability is 9/24 = 3/8.
+Q: What is the inclusion–exclusion formula for three sets? | |A ∪ B ∪ C| = |A| + |B| + |C| − |A ∩ B| − |A ∩ C| − |B ∩ C| + |A ∩ B ∩ C|.
+Q: Why does inclusion–exclusion alternate signs? | Adding set sizes counts overlaps more than once, so you subtract and add back in turn to correct.
+Q: What is the formula for the number of derangements Dₙ? | Dₙ = n! Σ (−1)^{k}/k!, summed from k = 0 to n.
+Q: How many integers from 1 to 100 are divisible by 2, 3 or 5? | 103 − 32 + 3 = 74.
+Q: How many surjections are there from a 4-element set onto a 2-element set? | 2^{4} − 2 = 14.
+Q: What is the common mistake with three-set inclusion–exclusion? | Forgetting to add back the triple intersection.
+Q: What is the complement form of inclusion–exclusion used for? | Counting the elements in none of the sets.
+Q: What do Bonferroni inequalities give? | Bounds on a union, found by truncating the inclusion–exclusion sum.
+Q: Name three things inclusion–exclusion is used to count. | Divisibility counts, derangements and surjections (also Euler's totient).
+Q: What is the hat-check problem about? | The chance that no one gets their own hat back, which is a derangement; it tends to 1/e.
 
 ## Generating Functions
 S: A generating function packs a whole sequence into the coefficients of a power series. Algebra on the series (adding, multiplying, solving equations) then answers counting questions and solves recurrences.
@@ -312,6 +392,16 @@ SRC: Flajolet P, Sedgewick R, Analytic Combinatorics (Cambridge University Press
 NUM1#maths-u14-09-q1@1: In how many ways can 10p be made from 1p, 2p and 5p coins? | 10 | 0 |  | 6 + 3 + 1 = 10 by cases on the number of 5p coins.
 M1#maths-u14-09-q2@1: What is the coefficient of x^{3} in 1/(1 − x)^{2} = Σ (n + 1)xⁿ? | 4 | 3 | 1 | 6 | 8 | The coefficient of xⁿ in Σ (n + 1)xⁿ is n + 1, so for x^{3} it's 4.
 M2#maths-u14-09-q3@2: Why does multiplying generating functions count combined choices? | The coefficient of xⁿ in a product sums over all ways to split n between the factors | Multiplication adds sequences | It squares every term | It only works for Fibonacci | It doesn't count anything | [xⁿ]A(x)B(x) = Σ aₖb_{n−k}, exactly the combined count.
+Q: What is an ordinary generating function? | A power series A(x) = Σ aₙxⁿ whose coefficients are the terms of a sequence.
+Q: What does [xⁿ]A(x) mean? | The coefficient of xⁿ in A(x), which gives aₙ.
+Q: Why does multiplying generating functions help count choices? | Choosing from several independent sources corresponds to multiplying their generating functions.
+Q: What generating function counts ways to make amounts from 1, 2 and 5 coins? | 1/((1 − x)(1 − x^{2})(1 − x^{5})).
+Q: How many ways can 10p be made from 1p, 2p and 5p coins? | 10.
+Q: What kind of generating function does a linear recurrence give? | A rational generating function.
+Q: Which formula do partial fractions recover from the Fibonacci generating function? | Binet's formula.
+Q: What are exponential generating functions and what do they suit? | Series Σ aₙxⁿ/n!, suited to labelled structures.
+Q: What is Euler's generating function for integer partitions? | The product Π 1/(1 − xᵏ).
+Q: What is the common mistake when multiplying generating functions? | Multiplying them for choices that aren't independent.
 
 ## Enumerative Combinatorics
 S: Enumerative combinatorics counts families of structures: partitions of numbers and sets, permutations with given properties, trees and lattice paths. Special number families (Stirling, Bell, Catalan) appear again and again.
@@ -346,6 +436,16 @@ SRC: Andrews GE, The Theory of Partitions (Cambridge University Press 1998) | te
 NUM1#maths-u14-10-q1@1: Find p(6), the number of partitions of 6. | 11 | 0 |  | 6, 5+1, 4+2, 4+1+1, 3+3, 3+2+1, 3+1+1+1, 2+2+2, 2+2+1+1, 2+1+1+1+1, 1+1+1+1+1+1.
 M1#maths-u14-10-q2@1: What is S(3, 2)? | 3 | 2 | 1 | 6 | 4 | Splitting {1, 2, 3} into two blocks means choosing which element stands alone: 3 ways.
 M2#maths-u14-10-q3@2: Which sequence counts all partitions of an n-element set? | The Bell numbers | The Catalan numbers | The Fibonacci numbers | The binomial coefficients | The factorials | The Bell number B_{n} = Σ_{k} S(n, k) counts set partitions into any number of blocks.
+Q: What is an integer partition? | A way to write n as a sum of positive integers, with order ignored.
+Q: What is p(5)? | 7.
+Q: What does the Stirling number of the second kind S(n, k) count? | The ways to split an n-element set into k non-empty blocks.
+Q: What is S(4, 2) and why? | 7: 4 ways with one element apart and 3 ways as two pairs.
+Q: How are Bell numbers related to Stirling numbers of the second kind? | Bₙ is the sum of S(n, k) over all k.
+Q: What are the first six Bell numbers? | 1, 1, 2, 5, 15, 52.
+Q: What is the recurrence for S(n, k)? | S(n, k) = kS(n − 1, k) + S(n − 1, k − 1).
+Q: What congruence did Ramanujan find for partitions? | p(5n + 4) ≡ 0 (mod 5).
+Q: What do Stirling numbers of the first kind count? | Permutations, counted by their number of cycles.
+Q: What is the common mistake when counting partitions of a number? | Counting 3 + 2 and 2 + 3 as different partitions.
 
 ## Extremal Combinatorics
 S: Extremal combinatorics asks how large or small a structure can be while avoiding (or forcing) some property: the most edges in a graph with no triangle, the largest family of sets where none contains another. Its answers guide network design and coding.
@@ -381,6 +481,16 @@ SRC: Alon N, Spencer JH, The Probabilistic Method (4th edn, Wiley 2016) | textbo
 NUM1#maths-u14-11-q1@1: What is the largest antichain of subsets of a 4-element set, by Sperner's theorem? | 6 | 0 |  | C(4, 2) = 6.
 M1#maths-u14-11-q2@1: By Mantel's theorem, how many edges can a triangle-free graph on 8 vertices have at most? | 16 | 28 | 8 | 12 | 20 | Mantel's bound is ⌊n^{2}/4⌋, which for n = 8 is 64/4 = 16 edges.
 M2#maths-u14-11-q3@2: Which technique did Erdős pioneer for extremal problems? | The probabilistic method | Gaussian elimination | Fourier series | The simplex method | Mathematical induction only | Showing a random construction has the property with positive probability proves existence.
+Q: What question does extremal combinatorics ask? | How large or small a structure can be while avoiding or forcing some property.
+Q: What does Mantel's theorem state? | A triangle-free graph on n vertices has at most ⌊n^{2}/4⌋ edges.
+Q: What is an antichain of sets? | A family of sets in which no set contains another.
+Q: What does Sperner's theorem state? | The largest antichain of subsets of an n-set has size C(n, ⌊n/2⌋).
+Q: Which theorem generalises Mantel's to graphs without a complete subgraph K_{r}? | Turán's theorem.
+Q: What does the Erdős–Ko–Rado theorem concern? | The largest families of k-subsets that pairwise intersect.
+Q: What is the largest number of edges in a triangle-free graph on 10 vertices? | 25, by splitting into two groups of 5 and joining every pair across.
+Q: Name three methods used in extremal combinatorics. | Double counting, averaging, the probabilistic method, shifting or compression, and linear algebra bounds.
+Q: What is the common mistake about extremal graphs? | Expecting a random-looking graph to achieve the bound, when it's usually a structured, symmetric one.
+Q: Name two uses of extremal combinatorics. | Bounds on codes, network design that avoids unwanted substructures, and lower bounds in computer science.
 
 ## Ramsey Theory
 S: Ramsey theory shows that complete disorder is impossible: any large enough structure contains an orderly substructure. Among any six people, three are mutual friends or three are mutual strangers, and the general question leads to some of mathematics' hardest computations.
@@ -414,6 +524,16 @@ SRC: Radziszowski SP, Small Ramsey numbers, Electronic Journal of Combinatorics,
 NUM1#maths-u14-12-q1@1: What is R(4, 4)? | 18 | 0 |  | Greenwood and Gleason showed R(4, 4) = 18 in 1955.
 M1#maths-u14-12-q2@1: Why is R(3, 3) greater than 5? | K₅ can be 2-coloured as a red pentagon and blue pentagram with no monochromatic triangle | K₅ has no triangles | Five is odd | Every colouring of K₅ has one | It isn't greater | That colouring avoids monochromatic triangles, so 5 vertices don't suffice.
 M3#maths-u14-12-q3@2: In the R(3, 3) proof, why does one vertex have 3 edges of the same colour? | Its 5 edges in 2 colours force at least ⌈5/2⌉ = 3 of one colour | Every vertex has exactly 3 edges | Colours alternate | Graphs are symmetric | It doesn't | The generalised pigeonhole principle applies to the 5 edges.
+Q: What is the central message of Ramsey theory? | Complete disorder is impossible: any large enough structure contains an orderly substructure.
+Q: What is the Ramsey number R(s, t)? | The smallest n such that every red/blue colouring of K_{n}'s edges has a red K_{s} or a blue K_{t}.
+Q: What is a monochromatic clique? | A set of vertices all joined by edges of the same colour.
+Q: How can K₅ be coloured with no monochromatic triangle? | Colour a pentagon red and the pentagram inside it blue.
+Q: In proving R(3, 3) = 6, what happens if no edge among the three same-colour neighbours A, B, C is red? | Then A, B and C form a blue triangle.
+Q: What are the known bounds on R(5, 5)? | 43 ≤ R(5, 5) ≤ 46; its exact value is unknown.
+Q: What was Erdős's joke about R(6, 6)? | If aliens demanded R(6, 6), we should attack them rather than try to answer.
+Q: What exponential bounds hold for R(k, k)? | √2^{k} < R(k, k) < 4^{k}.
+Q: What did a 2023 result show about Ramsey numbers? | It improved the upper bound's base below 4.
+Q: What is the common mistake about colourings of K₅? | Thinking every colouring of K₅ must contain a monochromatic triangle.
 
 ## Design Theory
 S: Design theory constructs arrangements with perfect balance: Latin squares, Steiner systems and block designs in which every pair of items appears together equally often. They schedule tournaments, design fair experiments and build error-correcting codes.
@@ -448,6 +568,16 @@ SRC: Colbourn CJ, Dinitz JH (eds), Handbook of Combinatorial Designs (2nd edn, C
 NUM1#maths-u14-13-q1@1: In Kirkman's schoolgirl problem (15 girls, 5 triples a day, 7 days), how many triples are used in total? | 35 | 0 |  | 5 × 7 = 35, which equals C(15, 2)/3, covering each pair exactly once.
 M1#maths-u14-13-q2@1: Which grid is a Latin square? | (1, 2), (2, 1) | (1, 1), (2, 2) | (1, 2), (1, 2) | (2, 2), (1, 1) | (1, 2), (2, 2) | Each symbol appears once in every row and column.
 M2#maths-u14-13-q3@2: Does a Steiner triple system exist on 9 points? | Yes, since 9 ≡ 3 (mod 6) | No, since 9 is odd | No, since 9 is a square | Only on 7 points | Only for even numbers | Kirkman's condition v ≡ 1 or 3 (mod 6) is met.
+Q: What does design theory construct? | Arrangements with perfect balance, such as Latin squares, Steiner systems and block designs.
+Q: What is a Latin square? | An n × n grid with n symbols, each appearing exactly once in every row and column.
+Q: What is a Steiner triple system? | A collection of 3-element blocks such that every pair of points lies in exactly one block.
+Q: How are group multiplication tables related to Latin squares? | Every group's multiplication table is a Latin square.
+Q: How does a Sudoku solution relate to Latin squares? | It is a 9 × 9 Latin square with extra box constraints.
+Q: What is the Fano plane in design theory? | The Steiner triple system on 7 points.
+Q: What does Kirkman's schoolgirl problem ask? | For 15 girls to walk in 5 rows of 3 for 7 days so that no two walk together twice.
+Q: Give a 3 × 3 Latin square. | Rows (1, 2, 3), (2, 3, 1), (3, 1, 2): the addition table of ℤ₃, relabelled.
+Q: What is the common mistake when checking a Latin square? | Checking only the rows, or only the columns.
+Q: Name three uses of design theory. | Balanced experimental design, tournament and timetable scheduling, and error-correcting codes or key distribution.
 
 ## Block Designs
 S: A balanced incomplete block design (BIBD) arranges v items into b blocks of size k so that every pair of items appears together in exactly λ blocks. Simple counting gives necessary conditions, and the Fano plane is the smallest interesting example.
@@ -482,6 +612,16 @@ SRC: Lam CWH, The search for a finite projective plane of order 10, American Mat
 NUM1#maths-u14-14-q1@1: A BIBD has v = 9, k = 3 and λ = 1. Find r. | 4 | 0 |  | r = λ(v − 1)/(k − 1) = 8/2 = 4 (and b = vr/k = 12).
 M1#maths-u14-14-q2@1: Which relation holds in every BIBD? | bk = vr | b = v | k = λ | r = k | v = λ + 1 | Both sides count the pairs (point, block containing it).
 M3#maths-u14-14-q3@2: Can a BIBD have v = 8, k = 3, λ = 1? | No: r = 7/2 isn't a whole number | Yes, it's the Fano plane | Yes, with b = 8 | Only if λ = 2 | It depends on the blocks chosen | λ(v − 1) = r(k − 1) gives 7 = 2r, impossible.
+Q: What is a balanced incomplete block design (BIBD)? | An arrangement of v points into b blocks of size k so every pair appears together in exactly λ blocks.
+Q: What does r mean in a BIBD (v, b, r, k, λ)? | The number of blocks containing each point.
+Q: What counting condition links b, k, v and r in a BIBD? | bk = vr, found by counting point–block incidences two ways.
+Q: What counting condition links λ, v, r and k in a BIBD? | λ(v − 1) = r(k − 1), found by counting pairs containing a fixed point.
+Q: What does Fisher's inequality state? | In any BIBD, b ≥ v.
+Q: What is a symmetric design? | A design with b = v, such as the Fano plane.
+Q: What are the parameters of the affine plane of order 3? | (9, 12, 4, 3, 1).
+Q: Which projective plane order was shown not to exist by a 1989 computer proof? | Order 10.
+Q: What is the common mistake with BIBD counting conditions? | Assuming any parameters satisfying them give an actual design; they are necessary, not sufficient.
+Q: Why are block designs useful in experiments? | They balance treatments when not every treatment fits in every block.
 
 ## Invariants
 S: An invariant is a quantity that doesn't change when allowed moves are made. Finding one proves that some configurations can never be reached, a powerful technique in puzzles, olympiad problems and the analysis of algorithms.
@@ -516,6 +656,16 @@ SRC: Zeitz P, The Art and Craft of Problem Solving (3rd edn, Wiley 2017) | textb
 NUM1#maths-u14-15-q1@1: In the example, what is the parity-determining initial sum of 1 to 10? | 55 | 0 |  | 10 × 11/2 = 55, which is odd.
 M1#maths-u14-15-q2@1: A knight moves on a chessboard. What changes with every move? | The colour of its square | The row number's parity only | Nothing | The column number only | Its distance from the corner | Each knight move goes from a light square to a dark one or vice versa.
 M3#maths-u14-15-q3@2: Why can't the 15-puzzle be solved if two tiles are swapped from the solved state? | A permutation-parity invariant combined with the blank's position never changes, but a swap flips it | Tiles can't move | The puzzle has no solutions at all | It can be solved | Only corner tiles can move | Each move preserves the combined parity, while a single swap changes it.
+Q: What is an invariant? | A property preserved by every allowed move.
+Q: How does an invariant prove that a target can't be reached? | If the start and target differ in the invariant, no sequence of moves can get there.
+Q: Name three common kinds of invariant. | Parity, colourings, remainders, signs of permutations or products.
+Q: Why must a positive integer quantity that strictly decreases eventually stop? | It can't decrease forever without going below 1, so the process must end.
+Q: Why do sorting algorithms terminate? | The number of inversions falls with each step.
+Q: Why is the 15-puzzle with two tiles swapped unsolvable? | Each move preserves a permutation parity invariant that the swap changes.
+Q: When 1 to 10 are repeatedly replaced by |a − b|, why can't the last number be 0? | a + b and |a − b| share parity, so the total stays odd, starting at 55.
+Q: Which Rubik's cube move is impossible because of an invariant? | Twisting a single corner piece.
+Q: How does a monovariant differ from an invariant? | An invariant stays fixed, while a monovariant always increases or always decreases.
+Q: What is the common mistake when claiming an invariant? | Using a quantity that changes only sometimes and calling it invariant.
 
 ## Coding Theory
 S: Coding theory designs ways to send information reliably over noisy channels by adding structured redundancy. Error-correcting codes protect phone calls, QR codes, spacecraft signals and data storage.
@@ -550,6 +700,16 @@ SRC: MacWilliams FJ, Sloane NJA, The Theory of Error-Correcting Codes (North-Hol
 NUM1#maths-u14-16-q1@1: How many errors can a code with minimum distance 7 correct? | 3 | 0 |  | ⌊(7 − 1)/2⌋ = 3.
 M1#maths-u14-16-q2@1: What is the Hamming distance between 10110 and 11100? | 2 | 1 | 3 | 5 | 0 | Compare position by position: 10110 and 11100 differ in positions 2 and 4, so the distance is 2.
 M2#maths-u14-16-q3@2: Why are Reed–Solomon codes used on CDs and QR codes? | They correct bursts of errors, such as scratches or smudges | They need no redundancy | They compress data | They encrypt the data | They're the only codes known | Working with symbols rather than bits, they handle clustered damage well.
+Q: What does coding theory aim to do? | Send information reliably over noisy channels by adding structured redundancy.
+Q: What is Hamming distance? | The number of positions in which two strings differ.
+Q: What is the rate of a code that sends n bits carrying k bits of information? | k/n.
+Q: How many errors can a code with minimum distance d detect? | d − 1.
+Q: How many errors can a code with minimum distance d correct? | ⌊(d − 1)/2⌋.
+Q: What are the properties of the repetition code that sends each bit 3 times? | Minimum distance 3, corrects 1 error, rate ⅓.
+Q: How does the Hamming (7, 4) code locate an error? | The syndrome, the result of the parity checks, points to the error position.
+Q: What is the trade-off in choosing a code's minimum distance? | Larger distance gives more protection but a lower rate.
+Q: Why does linear algebra help with linear codes? | Linear codes are subspaces of 𝔽₂ⁿ.
+Q: What is the common mistake about detection and correction? | Confusing error detection (d − 1) with error correction (⌊(d − 1)/2⌋).
 
 ## Boolean Functions
 S: A Boolean function takes true/false inputs and returns true or false. Every digital circuit computes Boolean functions, and simplifying them saves gates, power and time.
@@ -585,6 +745,16 @@ SRC: O'Donnell R, Analysis of Boolean Functions (Cambridge University Press 2014
 NUM1#maths-u14-17-q1@1: How many Boolean functions of 2 variables are there? | 16 | 0 |  | 2^{2^{2}} = 2^{4} = 16.
 M1#maths-u14-17-q2@1: What does XOR output for inputs 1 and 1? | 0 | 1 | 2 | Undefined | It depends on order | XOR is 1 only when exactly one input is 1.
 M2#maths-u14-17-q3@2: Why are Karnaugh maps arranged in Gray code order? | Adjacent cells differ in one variable, so grouping them eliminates that variable | It makes the map square | It sorts outputs numerically | It's a random convention | They aren't | Grouping neighbours that differ in one input lets xy + xy′ = x simplify visually.
+Q: What is a Boolean function? | A function f: {0, 1}ⁿ → {0, 1} taking true/false inputs to a true/false output.
+Q: How many Boolean functions of n variables are there? | 2^{2ⁿ}.
+Q: How is a function's disjunctive normal form read from its truth table? | As an OR of ANDs, one for each row where f = 1.
+Q: What is the difference between DNF and CNF? | DNF is a sum of products (OR of ANDs); CNF is a product of sums (AND of ORs).
+Q: Simplify f = x′y + xy. | f = (x′ + x)y = y.
+Q: What does the XOR (parity) function output? | 1 when an odd number of inputs are 1.
+Q: What is the Boolean expression for the majority of three inputs? | xy + yz + xz.
+Q: What tools simplify Boolean functions beyond about 4 to 6 variables? | Algorithms such as Quine–McCluskey and Espresso.
+Q: Which two properties must Boolean functions in cryptography have? | They must be balanced and highly nonlinear.
+Q: What is the common mistake about the number of Boolean functions of n variables? | Saying 2ⁿ, which is the number of input rows, not functions.
 
 ## Algorithms and Complexity
 S: An algorithm is a precise step-by-step procedure; complexity measures how its running time or memory grows with input size. Big-O notation compares algorithms independently of hardware, so you can predict what will scale.
@@ -619,6 +789,16 @@ SRC: Knuth DE, The Art of Computer Programming, vol 3: Sorting and Searching (2n
 NUM1#maths-u14-18-q1@1: What is the maximum number of comparisons for binary search on 1,000,000 sorted items? | 20 | 0 |  | ⌈log₂ 1,000,000⌉ = 20.
 M1#maths-u14-18-q2@1: Which complexity do efficient comparison sorts achieve? | O(n log n) | O(log n) | O(n^{2}) | O(2ⁿ) | O(1) | Merge sort and heapsort run in O(n log n), matching the lower bound.
 M2#maths-u14-18-q3@2: An algorithm loops over all pairs of n items. What is its complexity? | O(n^{2}) | O(n) | O(log n) | O(n log n) | O(2ⁿ) | There are n(n − 1)/2 ≈ n^{2}/2 pairs, so the running time grows as O(n^{2}).
+Q: What is an algorithm? | A precise step-by-step procedure.
+Q: What does f(n) = O(g(n)) mean? | f(n) ≤ Cg(n) for all large n: g gives an upper bound on growth.
+Q: What is worst-case complexity? | The largest running time over all inputs of size n.
+Q: What is the complexity of efficient sorting such as merge sort? | O(n log n).
+Q: What complexity does brute force over all orderings have? | O(n!).
+Q: When analysing an algorithm, how do loops and sequential steps combine? | Loops multiply; sequential steps add.
+Q: What complexity does the recurrence T(n) = 2T(n/2) + n give? | O(n log n).
+Q: What is the lower bound on comparisons for comparison sorting? | About n log₂ n comparisons.
+Q: Why do good algorithms matter more than faster computers for large inputs? | Growth rate dominates: a faster machine can't rescue an algorithm whose time explodes with n.
+Q: What is the common mistake about O(n^{2}) algorithms? | Treating one as fine because it's fast on small test inputs.
 
 ## Computational Complexity Theory
 S: Complexity theory classifies problems by the resources needed to solve them. Its central question, P versus NP, asks whether every problem whose solutions can be checked quickly can also be solved quickly: one of the Millennium Prize problems.
@@ -654,6 +834,16 @@ SRC: Cook SA, The complexity of theorem-proving procedures, Proceedings of the 3
 NUM1#maths-u14-19-q1@1: A brute-force SAT solver tries every assignment of 30 variables. How many assignments, in millions to the nearest million? | 1074 | 1 | million | 2^{30} = 1,073,741,824, about 1,074 million.
 M1#maths-u14-19-q2@1: Which problem is in P? | Finding shortest paths in a graph | Boolean satisfiability in general | Graph 3-colouring in general | The travelling salesperson decision problem | General Sudoku | Dijkstra's algorithm solves shortest paths in polynomial time.
 M3#maths-u14-19-q3@2: Problem X is NP-complete and you find a polynomial algorithm for it. What follows? | P = NP | X wasn't really NP-complete | Only X becomes easy | Nothing | P ≠ NP | Every NP problem reduces to X, so all would be solvable in polynomial time.
+Q: What does the class P contain? | Problems solvable in polynomial time, such as sorting, shortest paths and linear programming.
+Q: What does the class NP contain? | Decision problems whose yes answers can be verified in polynomial time given a certificate.
+Q: What is an NP-complete problem? | A problem in NP to which every NP problem reduces in polynomial time.
+Q: What does the P versus NP question ask? | Whether every problem whose solutions can be checked quickly can also be solved quickly.
+Q: What does it mean for problem A to reduce to problem B? | A fast algorithm for B would give a fast algorithm for A.
+Q: How do you show a new problem is NP-complete? | Reduce a known NP-complete problem to it (and show it's in NP).
+Q: Name three NP-complete problems. | SAT, 3-colouring and the travelling salesperson decision problem.
+Q: How are NP-hard problems tackled in practice? | With approximation algorithms, heuristics and special cases.
+Q: Why is checking a Sudoku easy but solving it possibly hard? | Checking rows, columns and boxes is polynomial, but solving general Sudoku is NP-complete.
+Q: What does NP stand for, and what is the common mistake? | Non-deterministic polynomial; people wrongly read it as "not polynomial".
 
 ## Automata Theory
 S: Automata are abstract machines that read input and change state. Finite automata recognise patterns such as valid numbers or passwords, and the hierarchy up to Turing machines defines what computers can and can't do.
@@ -689,6 +879,16 @@ SRC: Turing AM, On computable numbers, with an application to the Entscheidungsp
 NUM1#maths-u14-20-q1@1: How many states does a minimal DFA need to test whether a binary number is divisible by 5? | 5 | 0 |  | One state for each possible remainder mod 5.
 M1#maths-u14-20-q2@1: Which language can a finite automaton recognise? | Binary strings ending in 01 | Strings aⁿbⁿ for all n | Balanced brackets of any depth | Palindromes of any length | Prime-length strings | Recognising a fixed ending needs only bounded memory.
 M2#maths-u14-20-q3@2: Why are NFAs no more powerful than DFAs? | The subset construction turns any NFA into an equivalent DFA | NFAs have fewer states | DFAs can guess | NFAs need a stack | They are more powerful | A DFA's states can track the set of states the NFA might be in.
+Q: What is an automaton? | An abstract machine that reads input and changes state.
+Q: What are the parts of a deterministic finite automaton? | Finitely many states, a start state, accepting states and a transition for each state and symbol.
+Q: When does a DFA accept its input? | When it ends in an accepting state after reading the whole input.
+Q: What is a Turing machine? | A machine with an unbounded tape and a read/write head, the standard model of computation.
+Q: What does the Church–Turing thesis say? | Turing machines capture all algorithmic computation.
+Q: How many states does a DFA need to test whether a binary number is divisible by 3? | 3, one for each remainder.
+Q: How does a mod 3 DFA update its remainder on reading bit b? | r becomes (2r + b) mod 3.
+Q: What kind of language does a pushdown automaton recognise? | Context-free languages, such as balanced brackets.
+Q: Name three uses of automata. | Lexical analysis in compilers, regular expression engines, protocol design, hardware controllers and model checking.
+Q: What is the common mistake about finite automata and counting? | Thinking they can count arbitrarily high; they can't recognise aⁿbⁿ.
 
 ## Formal Languages
 S: A formal language is a set of strings over an alphabet, defined by rules. Grammars and the Chomsky hierarchy classify languages by the machines that recognise them, which is the theory behind programming languages, compilers and parts of linguistics.
@@ -723,6 +923,16 @@ SRC: Chomsky N, Three models for the description of language, IRE Transactions o
 NUM1#maths-u14-21-q1@1: How many strings of length 3 are there over the alphabet {a, b}? | 8 | 0 |  | 2^{3} = 8.
 M1#maths-u14-21-q2@1: Which string matches the regular expression a(b|c)*a? | abcba | abcab | abac | bca | ab | It starts and ends with a, with only b and c between.
 M3#maths-u14-21-q3@2: Why can't any finite automaton recognise aⁿbⁿ? | It would need to remember n, but has only finitely many states | aⁿbⁿ is infinite | Automata can't read b | It can | The language is empty | By the pumping lemma, long enough strings would let the machine be fooled.
+Q: What is a formal language? | A set of strings over an alphabet, defined by rules.
+Q: What is a grammar? | A set of rules for rewriting symbols that generate the strings of a language.
+Q: What is the order of the Chomsky hierarchy? | Regular ⊂ context-free ⊂ context-sensitive ⊂ recursively enumerable.
+Q: What does the regular expression (0|1)*01 describe? | Binary strings ending in 01.
+Q: Which machines recognise regular languages? | Finite automata.
+Q: What lemma shows aⁿbⁿ isn't regular? | The pumping lemma.
+Q: Which grammar generates aⁿbⁿ? | S → aSb or ε.
+Q: Give a context-sensitive language that is not context-free. | aⁿbⁿcⁿ.
+Q: Which natural language feature goes beyond context-free grammars? | Cross-serial dependencies, as in Swiss German.
+Q: Why does the theory of formal languages matter for programming? | Programming language syntax is mostly context-free, so parsers build syntax trees from grammars.
 
 ## Cellular Automata
 S: A cellular automaton is a grid of cells, each updating its state by a simple rule depending on its neighbours. Despite simple rules, they produce complex patterns, randomness and even universal computation.
@@ -757,6 +967,16 @@ SRC: Cook M, Universality in elementary cellular automata, Complex Systems 15(1)
 NUM1#maths-u14-22-q1@1: How many neighbourhood patterns does an elementary cellular automaton rule specify outputs for? | 8 | 0 |  | Three binary cells give 2^{3} = 8 patterns.
 M1#maths-u14-22-q2@1: Which elementary rule is known to be Turing complete? | Rule 110 | Rule 30 | Rule 90 | Rule 0 | Rule 255 | Matthew Cook proved in 2004 that Rule 110 can simulate any Turing machine.
 M2#maths-u14-22-q3@2: In the Game of Life, what happens to a dead cell with exactly 3 live neighbours? | It becomes alive | It stays dead | It dies again | It moves | Nothing is defined | Conway's birth rule (B3) brings a dead cell to life when exactly 3 neighbours are alive.
+Q: What is a cellular automaton? | A grid of cells, each updating its state by a simple rule depending on its neighbours.
+Q: What is an elementary cellular automaton? | A one-dimensional binary CA where each cell's next state depends on itself and its two neighbours.
+Q: What are the Game of Life rules? | A live cell survives with 2 or 3 live neighbours; a dead cell is born with exactly 3.
+Q: How are elementary CA rules numbered? | 0 to 255, by their outputs on the 8 neighbourhoods.
+Q: What is Rule 30 known for? | Producing randomness; it has been used as a random number generator.
+Q: What pattern does Rule 90 draw? | The Sierpiński triangle.
+Q: Who introduced the Game of Life, and when? | John Conway, in 1970.
+Q: What happens to a blinker in the Game of Life? | A row of three becomes a column of three and back, alternating with period 2.
+Q: What idea do cellular automata illustrate? | Emergence: complex global behaviour from simple local rules.
+Q: What is the common mistake when simulating a cellular automaton? | Updating cells one at a time instead of all at once from the previous generation.
 
 ## Game Theory
 S: Game theory studies strategic decisions where each player's outcome depends on others' choices. Nash equilibria, mixed strategies and combinatorial game analysis apply to economics, biology, politics and recreational games like Nim.
@@ -791,4 +1011,14 @@ SRC: Nash JF, Equilibrium points in n-person games, Proceedings of the National 
 NUM1#maths-u14-23-q1@1: What is the nim-sum of heaps 1, 2 and 3? | 0 | 0 |  | 1 XOR 2 = 3, and 3 XOR 3 = 0: the player to move loses.
 M1#maths-u14-23-q2@1: What does Nash's theorem guarantee? | Every finite game has at least one equilibrium in mixed strategies | Every game has a pure equilibrium | Equilibria are always fair | Cooperation always wins | Zero-sum games have no equilibria | Allowing randomised strategies guarantees existence.
 M2#maths-u14-23-q3@2: Why do both players defect in the one-shot prisoner's dilemma? | Defecting is better for each player whatever the other does | They prefer worse outcomes | Cooperation is illegal | They can communicate | They don't defect | Defection is a dominant strategy, even though mutual cooperation pays more.
+Q: What does game theory study? | Strategic decisions where each player's outcome depends on the others' choices.
+Q: What is a Nash equilibrium? | A combination of strategies where no player can gain by changing strategy alone.
+Q: What is the nim-sum? | The XOR (binary sum without carry) of the heap sizes in Nim.
+Q: What are the rules of Nim? | Players take any number of objects from one heap; whoever takes the last object wins.
+Q: What did Bouton prove about Nim in 1901? | A position is losing for the player to move iff the nim-sum is 0.
+Q: In Nim with heaps 3, 4 and 5, what is a winning first move? | Reduce the heap of 3 to 1, making the nim-sum 0.
+Q: What does Sprague–Grundy theory do? | Reduces many impartial games to Nim.
+Q: Which theorem covers zero-sum games? | Von Neumann's minimax theorem.
+Q: What lesson does the prisoner's dilemma teach? | Individually rational choices can leave everyone worse off than cooperating.
+Q: What is the common mistake about Nash equilibria? | Assuming an equilibrium is the best outcome for the players collectively.
 `;

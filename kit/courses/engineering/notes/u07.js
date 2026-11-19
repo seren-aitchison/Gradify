@@ -40,6 +40,16 @@ M2#engineering-u07-01-q2@2: Which fluid is non-Newtonian? | Toothpaste | Water |
 NUM2#engineering-u07-01-q3@2: An oil has a density of 850 kg/m^{3}. What is its specific gravity? | 0.85 | 0.01 | – | SG = 850 ÷ 1000 = 0.85.
 M3#engineering-u07-01-q4@3: The gap in an oil film halves while the plate speed is unchanged. What happens to the shear stress? | It doubles | It halves | It stays the same | It quadruples | Applying the standard result: du/dy doubles, so τ doubles.
 SA2#engineering-u07-01-q5@2,3: Explain the difference between dynamic and kinematic viscosity and when each is used. | Dynamic viscosity μ relates shear stress to velocity gradient and is used to calculate shear forces, as in lubrication. Kinematic viscosity ν = μ ÷ ρ compares viscous to inertial effects per unit density and appears naturally in the Reynolds number and in flow analysis where density matters. | Definition of μ ; Shear force use ; Definition of ν ; Reynolds number use
+Q: What is the density of water at room conditions? | About 1000 kg/m^{3}.
+Q: What is the density of air at room conditions? | About 1.2 kg/m^{3}.
+Q: How is specific weight defined? | Weight per unit volume, γ = ρg; about 9.81 kN/m^{3} for water.
+Q: What does the bulk modulus of a fluid measure? | Its resistance to compression.
+Q: What effect does surface tension cause in narrow tubes? | Capillary rise.
+Q: What is Newton's law of viscosity? | Shear stress is proportional to velocity gradient: τ = μ du/dy.
+Q: What are the units of dynamic viscosity and kinematic viscosity? | Pa s for dynamic viscosity μ; m^{2}/s for kinematic viscosity ν.
+Q: How does the viscosity of a gas change as temperature rises? | It rises, unlike a liquid, whose viscosity falls.
+Q: Give three examples of non-Newtonian fluids. | Paint, blood and toothpaste.
+Q: A plate slides at 2 m/s over a 2 mm oil film with μ = 0.1 Pa s. What is the shear stress? | 100 Pa, since du/dy = 1000 s^{-1} and τ = 0.1 × 1000.
 
 ## Pressure and manometry
 LV: Year 1 · Foundation
@@ -85,6 +95,16 @@ M2#engineering-u07-02-q2@2: A gauge reads 150 kPa where atmospheric pressure is 
 NUM2#engineering-u07-02-q3@2: What is the gauge pressure at a depth of 5 m in water, in kPa? | 49.05 | 0.1 | kPa | p = 1000 × 9.81 × 5 = 49,050 Pa, which is 49.05 kPa.
 M3#engineering-u07-02-q4@3: Why is mercury used in manometers for large pressure differences? | Its high density gives a manageable column height | It is cheaper than water | It does not need calibration | It has very low density | Applying the standard result: Dense fluids give shorter columns.
 SA2#engineering-u07-02-q5@2,3: Explain how a U-tube manometer is used to find a pressure. | Starting from one end, the pressure is traced through the fluids, adding ρgh going down and subtracting going up. Pressures at the same horizontal level within the same continuous fluid are equal, which gives an equation linking the unknown pressure to atmospheric pressure and the measured column heights. | Trace through fluids ; Add and subtract ρgh ; Equal levels ; Solve for unknown
+Q: What is the hydrostatic equation for pressure at depth h? | p = p_{0} + ρgh, where p_{0} is the pressure at the surface.
+Q: Does hydrostatic pressure depend on the shape of the container? | No. It depends only on depth.
+Q: By how much does water pressure rise per metre of depth? | About 9.81 kPa.
+Q: From what reference is absolute pressure measured? | A perfect vacuum.
+Q: How are absolute and gauge pressure related? | Absolute pressure = gauge pressure + atmospheric pressure.
+Q: What is atmospheric pressure at sea level? | About 101.3 kPa.
+Q: What is a piezometer suited to? | Showing the pressure head directly for small pressures in liquids.
+Q: What rule is used when analysing a U-tube manometer? | Equate pressures at the same level in the same fluid.
+Q: What is the equation for a differential manometer? | p_{A} − p_{B} = (ρ_{m} − ρ) g h.
+Q: What is a common mistake when combining pressures in a calculation? | Mixing absolute and gauge pressure; decide which is used and convert consistently.
 
 ## Hydrostatic forces on surfaces
 LV: Year 1 · Intermediate
@@ -128,6 +148,16 @@ M2#engineering-u07-03-q2@2: For a vertical rectangle with its top at the surface
 NUM2#engineering-u07-03-q3@2: A vertical gate 1 m wide and 2 m high has its top at the water surface. What is the resultant force, in kN? | 19.62 | 0.1 | kN | h_{c} = 1 m and A = 2 m^{2}, so F = 1000 × 9.81 × 1 × 2 = 19,620 N, which is 19.62 kN.
 M3#engineering-u07-03-q4@3: The water level behind a vertical gate doubles in depth, with the gate fully submerged from the surface. How does the force change? | It increases about fourfold | It doubles | It stays the same | It halves | Applying the standard result: Both h_{c} and A double.
 SA2#engineering-u07-03-q5@2,3: Explain why the centre of pressure on a submerged vertical wall is below its centroid. | Pressure increases linearly with depth, so the lower parts of the wall carry greater pressure than the upper parts. The resultant of this triangular distribution acts nearer the bottom than the geometric centre, and the formula y_{p} = y_{c} + I_{xc} ÷ (y_{c} A) shows the offset, which decreases as the surface is submerged more deeply. | Linear pressure increase ; Uneven distribution ; Resultant lower ; Formula and depth effect
+Q: What is the resultant force on a submerged plane surface? | F = ρ g h_{c} A, the pressure at the centroid times the area.
+Q: In what direction does the hydrostatic force on a plane surface act? | Perpendicular to the surface.
+Q: What is the formula for the centre of pressure measured along the plane? | y_{p} = y_{c} + I_{xc} ÷ (y_{c} A).
+Q: What is the second moment of area of a rectangle of width b and height d about its centroid? | I_{xc} = b d^{3} ÷ 12.
+Q: How is the horizontal force on a curved submerged surface found? | It equals the force on the vertical projection of the surface.
+Q: What is a common mistake about where the hydrostatic resultant acts? | Placing it at the centroid; it acts lower, at the centre of pressure.
+Q: What is the centroid of an area? | Its geometric centre.
+Q: A 2 m wide, 3 m high vertical gate has its top at the water surface. What is the resultant force? | About 88.3 kN, from 1000 × 9.81 × 1.5 × 6.
+Q: For a 3 m high vertical gate with its top at the surface, how deep is the centre of pressure? | 2.0 m below the surface, two-thirds of the depth.
+Q: What does h_{c} mean in F = ρ g h_{c} A? | The vertical depth of the centroid of the surface.
 
 ## Buoyancy and stability
 LV: Year 1 · Intermediate
@@ -169,6 +199,16 @@ M2#engineering-u07-04-q2@2: A body of density 800 kg/m^{3} floats in water. What
 NUM2#engineering-u07-04-q3@2: A 0.02 m^{3} object is fully submerged in water. What is the buoyant force, in N? | 196.2 | 1 | N | F_{B} = 1000 × 9.81 × 0.02 = 196.2 N.
 M3#engineering-u07-04-q4@3: Loading heavy cargo high on a ship's deck raises G. What happens to stability? | GM falls, reducing stability | GM rises, improving stability | Buoyancy force doubles | Nothing changes at all | Applying the standard result: Raising G reduces GM.
 SA2#engineering-u07-04-q5@2,3: Explain why a floating body can be stable even when its centre of gravity is above its centre of buoyancy. | When a floating body tilts, the shape of the displaced volume changes, so the centre of buoyancy moves towards the lower side. The buoyant force then acts through the metacentre. If the metacentre lies above the centre of gravity, the buoyant force and weight form a restoring couple that returns the body upright. | Tilting shifts B ; Metacentre ; Restoring couple ; Positive GM
+Q: What is the formula for buoyant force? | F_{B} = ρ_{fluid} g V_{displaced}.
+Q: Through what point does the buoyant force act? | The centre of buoyancy, the centroid of the displaced volume.
+Q: What fraction of a floating body is submerged? | The ratio of body density to fluid density.
+Q: When is a fully submerged body stable? | When its centre of gravity G is below its centre of buoyancy B.
+Q: What is the metacentre of a floating body? | The point where the buoyancy force line crosses the body's centreline after a small tilt.
+Q: How is metacentric height calculated? | GM = BM − BG, with BM = I ÷ V.
+Q: In BM = I ÷ V, what are I and V? | I is the second moment of area of the waterplane; V is the displaced volume.
+Q: Why do wide, flat floating shapes tend to be stable? | Their large waterplane second moment gives a large BM.
+Q: A 0.5 m^{3} timber block of density 600 kg/m^{3} floats in fresh water. What volume is submerged? | 0.3 m^{3}, displacing 300 kg of water.
+Q: Why can a floating body stay stable with G above B? | B moves sideways as the body tilts, so it is stable if the metacentre lies above G.
 
 ## Conservation of mass and continuity
 LV: Year 1 · Foundation
@@ -209,6 +249,16 @@ M2#engineering-u07-05-q2@2: A pipe of 0.04 m^{2} carries water at 2 m/s into a j
 NUM2#engineering-u07-05-q3@2: Water flows at 3 m/s through a pipe of area 0.01 m^{2}. What is the volume flow rate, in m^{3}/s? | 0.03 | 0.001 | m^{3}/s | Q = 0.01 × 3 = 0.03 m^{3}/s.
 M3#engineering-u07-05-q4@3: A hose nozzle reduces the outlet area to one-fifth. How does the exit velocity change? | It increases five times | It increases twenty-five times | It falls to one-fifth | It stays the same | Applying the standard result: A_{1}V_{1} = A_{2}V_{2}.
 SA2#engineering-u07-05-q5@2,3: Explain why a garden hose sprays further when the end is partly covered. | Partly covering the outlet reduces the flow area. With roughly the same volume flow rate from the tap, continuity requires a higher exit velocity, V = Q ÷ A. The faster jet carries further before falling, though in practice the reduced area also raises resistance and can reduce the flow somewhat. | Reduced area ; Continuity ; Higher velocity ; Practical limits
+Q: What is the volume flow rate in terms of area and velocity? | Q = A V, area times mean velocity.
+Q: What is the mass flow rate of a flow? | ṁ = ρQ = ρAV.
+Q: What is the continuity equation for steady incompressible flow? | A_{1} V_{1} = A_{2} V_{2}.
+Q: How do flows balance at a pipe junction? | Total flow in equals total flow out, for example Q_{1} = Q_{2} + Q_{3}.
+Q: What happens to the area when a pipe's diameter halves? | It falls to a quarter.
+Q: What is a common mistake when scaling velocity between pipe sizes? | Scaling with diameter instead of area; velocity changes with the square of the diameter ratio.
+Q: In a pipe without branches, what stays the same at every section in steady incompressible flow? | The volume flow rate.
+Q: Water flows at 0.02 m^{3}/s through a 100 mm pipe. What is the velocity? | About 2.55 m/s, as the area is about 0.00785 m^{2}.
+Q: What is the continuity equation a statement of? | Conservation of mass in a flow.
+Q: Why does narrowing a pipe raise the flow velocity? | AV is constant, so a smaller area needs a higher velocity.
 
 ## The Bernoulli equation
 LV: Year 1 · Intermediate
@@ -253,6 +303,16 @@ M2#engineering-u07-06-q2@2: In a horizontal pipe, velocity increases between two
 NUM2#engineering-u07-06-q3@2: Water drains from a large open tank through a small hole 1.25 m below the surface. What is the jet velocity, in m/s? | 4.95 | 0.05 | m/s | V = √(2 × 9.81 × 1.25) = √24.525, about 4.95 m/s.
 M3#engineering-u07-06-q4@3: Why is the height of a siphon limited? | Low pressure at the top can cause the liquid to vaporise | Velocity becomes zero at the top | The tank empties too slowly | Bernoulli does not apply to siphons | Applying the standard result: Pressure falls with height and velocity.
 SA2#engineering-u07-06-q5@2,3: Explain the assumptions of the Bernoulli equation and the consequences of violating them. | It assumes steady, incompressible, inviscid flow along a streamline with no work done. In real pipes friction causes head losses, so the total head falls along the flow; pumps and turbines add or remove head; high-speed gases are compressible; and unsteady flows need extra terms. Violating these makes the simple equation inaccurate unless corrections are added. | Assumptions listed ; Friction losses ; Machines ; Compressibility and unsteadiness
+Q: What is the Bernoulli equation? | p ÷ ρg + V^{2} ÷ 2g + z = constant along a streamline.
+Q: What are the three heads in the Bernoulli equation? | Pressure head, velocity head and elevation head.
+Q: What is total head? | The sum of pressure, velocity and elevation heads.
+Q: Below what speed can gases be treated as incompressible for Bernoulli? | Below about 0.3 of the speed of sound.
+Q: What is Torricelli's result for a tank draining through a small orifice? | V = √(2gh), where h is the depth below the surface.
+Q: Which flow meter is based on pressure falling where velocity rises in a contraction? | The Venturi meter.
+Q: What is a streamline? | A line tangent to the velocity everywhere in the flow.
+Q: What is a common mistake when applying Bernoulli across a pump or long pipe? | Ignoring pump head and friction losses, which must be added to the energy equation.
+Q: Horizontal water speeds up from 2 m/s at 200 kPa to 6 m/s. What is the new pressure? | 184 kPa, since ½ × 1000 × (36 − 4) = 16 kPa is lost.
+Q: Why must Bernoulli be applied with no pumps or turbines between the points? | These add or remove energy, so total head would not be constant.
 
 ## The momentum equation and jet forces
 LV: Year 1 · Intermediate
@@ -296,6 +356,16 @@ M2#engineering-u07-07-q2@2: Why does flow round a bend at constant speed need a 
 NUM2#engineering-u07-07-q3@2: A water jet with Q = 0.01 m^{3}/s and V = 15 m/s strikes a flat plate normally. What is the force, in N? | 150 | 1 | N | F = ρQV = 1000 × 0.01 × 15 = 150 N.
 M3#engineering-u07-07-q4@3: A plate moves away from a jet at half the jet speed. How does the force compare with a fixed plate? | It is about a quarter | It is about half | It is the same | It is doubled | Both relative velocity and the mass rate striking it halve.
 SA2#engineering-u07-07-q5@2,3: Explain how the momentum equation is applied to find the force on a pipe bend. | A control volume is drawn around the bend. In each direction, the net force on the fluid, from inlet and outlet pressures and the bend wall, equals the mass flow rate times the change in velocity component. Solving gives the force the bend exerts on the fluid; the fluid exerts an equal and opposite force on the bend, which supports or thrust blocks must resist. | Control volume ; Component equations ; Pressure and wall forces ; Reaction on bend
+Q: What is the steady-flow momentum equation? | ΣF = ρQ (V_{out} − V_{in}), applied in each direction.
+Q: What forces are included in the momentum equation for a control volume? | Pressure forces at inlet and outlet, the boundary force and, where significant, weight.
+Q: What is the force of a jet striking a flat plate normally? | F = ρQV = ρAV^{2}.
+Q: What velocity is used when a plate moves away from a jet at speed u? | The relative velocity, V − u.
+Q: What is a control volume? | A fixed region in space through which fluid flows.
+Q: What is momentum flux? | The rate at which momentum is carried by a flow, ρQV.
+Q: Why must firefighters hold a hose nozzle firmly? | The nozzle produces a reaction force from the change in momentum.
+Q: What is a common mistake about momentum when flow changes direction? | Forgetting velocity is a vector; a change of direction at constant speed still changes momentum.
+Q: A 50 mm water jet at 20 m/s hits a fixed flat plate normally. What is the force? | About 785 N, with Q about 0.0393 m^{3}/s.
+Q: Why does a pipe bend exert a force on the fluid? | The bend changes the flow direction, so the fluid's momentum changes.
 
 ## Flow measurement
 LV: Year 1 · Intermediate
@@ -340,6 +410,16 @@ M2#engineering-u07-08-q2@2: What is the typical discharge coefficient of a sharp
 NUM2#engineering-u07-08-q3@2: A Pitot-static tube in water (ρ = 1000 kg/m^{3}) reads a dynamic pressure of 2000 Pa. What is the velocity, in m/s? | 2 | 0.05 | m/s | V = √(2 × 2000 ÷ 1000) = √4 = 2 m/s.
 M3#engineering-u07-08-q4@3: A water utility wants to measure flow with no obstruction or pressure loss. Which meter fits best? | An electromagnetic flow meter | A sharp-edged orifice plate | A Venturi meter | A Pitot tube | Applying the standard result: It has no moving parts or restriction.
 SA2#engineering-u07-08-q5@2,3: Explain how a Venturi meter determines flow rate. | Fluid accelerates through the throat, so by continuity its velocity rises and, by Bernoulli, its pressure falls. Measuring the pressure difference between the inlet and the throat, and knowing the areas, allows the ideal velocity and flow rate to be calculated. A discharge coefficient corrects for small friction losses, and the gradual expansion recovers most of the pressure. | Acceleration at throat ; Pressure drop ; Calculating flow ; Discharge coefficient
+Q: What is the shape of a Venturi meter? | A smooth contraction to a throat followed by a gradual expansion.
+Q: What is a discharge coefficient? | The ratio of actual to ideal flow through a meter.
+Q: What is a typical discharge coefficient for a Venturi meter? | About 0.98.
+Q: What is the main drawback of an orifice plate compared with a Venturi? | It causes a larger permanent pressure loss.
+Q: Which standard specifies the geometry and installation of Venturi and orifice meters? | ISO 5167.
+Q: What does a Pitot-static tube measure? | Stagnation and static pressure, giving the dynamic pressure ½ρV^{2}.
+Q: How is velocity found from a Pitot-static tube reading? | V = √(2Δp ÷ ρ).
+Q: What is stagnation pressure? | The pressure where the flow is brought to rest.
+Q: A Pitot-static tube in air of 1.2 kg/m^{3} reads 450 Pa dynamic pressure. What is the speed? | About 27.4 m/s.
+Q: Which flow meter can be clamped on the outside of a pipe? | An ultrasonic meter.
 
 ## Viscous flow and the Reynolds number
 LV: Year 1 · Intermediate
@@ -383,6 +463,16 @@ M2#engineering-u07-09-q2@2: Which change makes pipe flow more likely to be turbu
 NUM2#engineering-u07-09-q3@2: Oil with ν = 1.0 × 10^{-4} m^{2}/s flows at 0.5 m/s in a 0.1 m pipe. What is the Reynolds number? | 500 | 5 | – | Re = 0.5 × 0.1 ÷ (1.0 × 10^{-4}) = 500, so the flow is laminar.
 M3#engineering-u07-09-q4@3: Why is heat transfer higher in turbulent flow? | Eddies mix fluid across the pipe | The fluid is always hotter | Viscosity is zero in turbulence | The velocity profile is parabolic | Mixing carries heat to and from the wall.
 SA2#engineering-u07-09-q5@2,3: Describe Reynolds' dye experiment and what it showed. | Reynolds injected dye into water flowing through a glass pipe. At low velocities the dye stayed as a straight line, showing laminar flow, but above a certain velocity it broke up and mixed across the pipe, showing turbulence. He found the transition depended on the combination ρVD ÷ μ, now the Reynolds number, rather than velocity alone. | Dye experiment ; Laminar thread ; Turbulent mixing ; Reynolds number
+Q: What did Osborne Reynolds' 1883 experiment use? | Dye injected into water flowing through a glass tube.
+Q: What is the formula for the Reynolds number in pipe flow? | Re = ρVD ÷ μ = VD ÷ ν.
+Q: Above roughly what Reynolds number is pipe flow turbulent? | About 4000.
+Q: What Reynolds number range is transitional in pipe flow? | Roughly 2300 to 4000.
+Q: How does the velocity profile in turbulent pipe flow differ from laminar flow? | It is flatter, with much greater mixing and friction.
+Q: Are most engineering pipe flows of water and air laminar or turbulent? | Turbulent.
+Q: Give two examples where laminar flow occurs. | Viscous oils, blood in small vessels and microfluidic devices.
+Q: Water with ν = 1.0 × 10^{-6} m^{2}/s flows at 1 m/s in a 50 mm pipe. What is Re? | 50,000, so the flow is turbulent.
+Q: What is a common mistake when calculating a Reynolds number? | Inconsistent units; it must be dimensionless, so use consistent SI units.
+Q: What is laminar flow? | Smooth flow in parallel layers.
 
 ## Pipe flow and friction losses
 LV: Year 1 · Advanced
@@ -426,6 +516,16 @@ M2#engineering-u07-10-q2@2: In turbulent flow, the friction factor depends on: |
 NUM2#engineering-u07-10-q3@2: Laminar flow in a pipe has a Reynolds number of 1600. What is the Darcy friction factor? | 0.04 | 0.001 | – | f = 64 ÷ Re = 64 ÷ 1600 = 0.04.
 M3#engineering-u07-10-q4@3: Corrosion makes an old pipe's wall much rougher. What happens to head loss at the same flow? | It increases | It decreases | It stays the same | It becomes zero | Applying the standard result: Higher roughness raises f.
 SA2#engineering-u07-10-q5@2,3: Explain why increasing pipe diameter is an effective way to reduce friction losses. | For a given flow, velocity is inversely proportional to the square of the diameter. Head loss depends on V^{2} and on L ÷ D, so increasing the diameter reduces both the velocity head and the L ÷ D ratio, cutting losses sharply, though larger pipes cost more to buy and install. | Velocity and diameter ; V-squared dependence ; L over D ; Cost trade-off
+Q: What is the Darcy–Weisbach equation? | h_{f} = f (L ÷ D) (V^{2} ÷ 2g).
+Q: How is the friction pressure drop found from head loss? | Δp = ρ g h_{f}.
+Q: In turbulent flow, what does the friction factor depend on? | The Reynolds number and the relative roughness ε ÷ D.
+Q: What is relative roughness? | Pipe wall roughness divided by diameter.
+Q: What does the Moody chart show? | Friction factor against Reynolds number and relative roughness.
+Q: What happens to the friction factor at very high Re in rough pipes? | It becomes constant, called fully rough.
+Q: What are typical turbulent friction factors for water pipes? | Around 0.015 to 0.03.
+Q: Why do older pipes have higher friction losses? | Corrosion and scale make them rougher.
+Q: Water flows at 2 m/s through 100 m of 0.1 m pipe with f = 0.02. What is the head loss? | About 4.08 m of head, or about 40 kPa.
+Q: Does the laminar friction factor depend on pipe roughness? | No. It is f = 64 ÷ Re, independent of roughness.
 
 ## Minor losses and pipe systems
 LV: Year 1 · Advanced
@@ -467,6 +567,16 @@ M2#engineering-u07-11-q2@2: For pipes in series, how are head losses combined? |
 NUM2#engineering-u07-11-q3@2: Water leaves a pipe at 3 m/s into a large tank (K = 1.0). What is the exit loss, in m of head? | 0.459 | 0.005 | m | h_{m} = 1.0 × 9 ÷ 19.62, about 0.459 m.
 M3#engineering-u07-11-q4@3: A valve is partly closed in a pipe system with a fixed pump head. What happens? | Its loss coefficient rises and flow falls | Flow increases through the system | The pump head increases | Friction losses vanish | Applying the standard result: Closing a valve adds resistance.
 SA2#engineering-u07-11-q5@2,3: Explain how to determine the head a pump must supply to move water between two reservoirs. | Apply the energy equation between the reservoir surfaces, where pressures are atmospheric and velocities negligible. The pump head equals the difference in surface elevation plus the friction losses, from Darcy–Weisbach, and the sum of minor losses from entrances, bends, valves and the exit, all calculated at the design flow rate. | Energy equation ; Static lift ; Friction losses ; Minor losses
+Q: What is the formula for a minor loss? | h_{m} = K V^{2} ÷ 2g, where K is a loss coefficient.
+Q: What is a typical loss coefficient for a sharp-edged pipe entrance? | About 0.5.
+Q: What is a typical loss coefficient for a 90° elbow? | About 0.3 to 0.9.
+Q: What is a typical loss coefficient for a fully open gate valve? | Around 0.2, rising steeply as it closes.
+Q: Between two open reservoirs, what does the head difference equal? | The total losses, as pressures are atmospheric and velocities small.
+Q: How are flows combined for pipes in parallel? | Flows add, while the head loss is the same across each branch.
+Q: How are pipe networks such as water mains solved? | Iteratively, for example by the Hardy Cross method or software.
+Q: What is a minor loss? | A head loss caused by a fitting rather than straight pipe.
+Q: When can minor losses dominate over friction losses? | In short systems with many fittings.
+Q: Water at 2 m/s passes fittings with a total K of 3.0. What is the minor loss? | About 0.61 m of head, since V^{2} ÷ 2g is about 0.204 m.
 
 ## Pumps and system curves
 LV: Year 1 · Advanced
@@ -510,6 +620,16 @@ M2#engineering-u07-12-q2@2: Two identical pumps run in parallel. What mainly inc
 NUM2#engineering-u07-12-q3@2: A pump delivers 0.02 m^{3}/s of water against 15 m of head. What is the hydraulic power, in W? | 2943 | 10 | W | P_{h} = 1000 × 9.81 × 0.02 × 15 = 2943 W.
 M3#engineering-u07-12-q4@3: A pump starts cavitating after the water temperature rises. Why? | Higher vapour pressure reduces NPSH available | Hot water is denser than cold | Viscosity increases with temperature | The pump speed falls | Applying the standard result: Warmer water vaporises more readily.
 SA2#engineering-u07-12-q5@2,3: Explain how pump and system curves are used to select a pump. | The system curve is calculated from the static head plus friction and minor losses, which rise with the square of flow. Plotting candidate pump curves on the same axes shows where each would operate. A suitable pump meets the required flow and head at an operating point near its best efficiency point, with enough NPSH margin to avoid cavitation. | System curve ; Pump curves ; Operating point ; Efficiency and NPSH
+Q: How does a centrifugal pump add head? | By spinning fluid with an impeller.
+Q: What shape does a centrifugal pump's head–flow curve have? | Head falls as flow rate increases.
+Q: What is the equation of a system curve? | H = H_{static} + kQ^{2}.
+Q: What is a pump's hydraulic power? | P_{h} = ρ g Q H, the power delivered to the fluid.
+Q: How do two pumps in series combine? | They add head at the same flow.
+Q: According to the affinity laws, how do flow and head scale with pump speed? | Flow scales with speed and head with speed squared.
+Q: What damage does cavitation cause in pumps? | Noise, vibration, loss of performance and erosion damage.
+Q: What condition avoids cavitation in terms of NPSH? | NPSH available must exceed NPSH required.
+Q: What raises the risk of pump cavitation? | High suction lift, hot liquids and long, narrow suction pipes.
+Q: Why should a pump operate near its best efficiency point? | Far from it, the pump wastes energy and may wear quickly.
 
 ## Boundary layers, drag and lift
 LV: Year 1 · Advanced
@@ -553,6 +673,16 @@ M2#engineering-u07-13-q2@2: What happens when an aircraft wing stalls? | Flow se
 NUM2#engineering-u07-13-q3@2: An object with C_{D} = 1.0 and area 0.5 m^{2} moves at 10 m/s through air of density 1.2 kg/m^{3}. What is the drag force, in N? | 30 | 0.5 | N | F_{D} = 0.5 × 1.2 × 100 × 1.0 × 0.5 = 30 N.
 M3#engineering-u07-13-q4@3: A cyclist doubles speed. By roughly what factor does the power needed to overcome drag rise? | 8 | 2 | 4 | 16 | Applying the standard result: Power rises with V^{3}.
 SA2#engineering-u07-13-q5@2,3: Explain how streamlining reduces drag on a vehicle. | Bluff shapes cause the boundary layer to separate early, leaving a large low-pressure wake that produces form drag. Streamlined shapes, with gently tapering rears, keep the pressure rise gradual so the boundary layer stays attached longer, shrinking the wake. Form drag falls substantially, although skin friction may rise slightly because of the larger wetted area. | Bluff bodies and wakes ; Delayed separation ; Reduced form drag ; Skin friction trade-off
+Q: Who showed in 1904 that viscous effects are confined to a thin layer near a surface? | Ludwig Prandtl.
+Q: What happens to velocity across a boundary layer? | It rises from zero at the wall to the free-stream value.
+Q: What causes boundary layer separation? | Rising pressure along the surface pushes the slow fluid near the wall back.
+Q: What is the drag force equation? | F_{D} = ½ρV^{2} C_{D} A.
+Q: What causes skin friction drag? | Shear stress in the boundary layer.
+Q: In which direction does lift act? | Perpendicular to the flow.
+Q: How do streamlined shapes reduce drag? | They delay separation, shrinking the wake and form drag.
+Q: What is a typical drag coefficient for a sphere and for a modern car? | About 0.47 for a sphere and about 0.25 to 0.35 for a car.
+Q: How does the power to overcome drag change with speed? | It rises with V^{3}, since drag rises with V^{2}.
+Q: A car with C_{D} = 0.3 and area 2.2 m^{2} travels at 30 m/s in air of 1.2 kg/m^{3}. What is the drag? | About 356 N, from 540 Pa dynamic pressure.
 
 ## Dimensional analysis and similitude
 LV: Year 1 · Advanced
@@ -597,4 +727,14 @@ M2#engineering-u07-14-q2@2: A problem has 6 variables and 3 basic dimensions. Ho
 NUM2#engineering-u07-14-q3@2: A 1:16 ship model is tested under Froude similarity for a ship speed of 8 m/s. What model speed is needed, in m/s? | 2 | 0.05 | m/s | V_{m} = 8 ÷ √16 = 8 ÷ 4 = 2 m/s.
 M3#engineering-u07-14-q4@3: A 1:10 model of a submarine is tested in water under Reynolds similarity. What velocity is needed relative to the prototype? | Ten times higher | One-tenth | The same | About three times higher | Applying the standard result: Same fluid: VL must be equal.
 SA2#engineering-u07-14-q5@2,3: Explain why it is usually impossible to achieve full dynamic similarity in ship model tests. | Wave-making depends on the Froude number, which requires model velocity to scale with the square root of length, while friction depends on the Reynolds number, which requires model velocity to increase as length decreases if the same fluid is used. Both cannot be satisfied at once with water, so tests match Froude number and correct for friction separately. | Froude requirement ; Reynolds requirement ; Conflict ; Correction method
+Q: What does dimensional homogeneity mean? | Each term in an equation has the same dimensions.
+Q: How many dimensionless groups describe drag on a sphere? | Two, the drag coefficient and Reynolds number, from five variables and three dimensions.
+Q: What is the Froude number formula? | Fr = V ÷ √(gL).
+Q: What is the Mach number? | Ma = V ÷ c, flow speed divided by the speed of sound.
+Q: What is geometric similarity between a model and prototype? | They have the same shape.
+Q: What is dynamic similarity? | Equality of the relevant dimensionless groups between model and prototype.
+Q: Which similarity is used for fully submerged bodies? | Reynolds similarity.
+Q: What is the model speed formula under Froude similarity? | V_{m} = V_{p} × √(L_{m} ÷ L_{p}).
+Q: A 1:25 ship model represents a ship sailing at 10 m/s. What is the model speed under Froude similarity? | 2 m/s, since 10 ÷ √25 = 2.
+Q: What is a common mistake in planning model tests? | Expecting to match every dimensionless group; usually only the most important can be matched.
 `;

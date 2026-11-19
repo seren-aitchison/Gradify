@@ -44,6 +44,16 @@ M2#dentistry-u01-01-q2@2: A patient has numbness of the lower lip and chin after
 MATCH1#dentistry-u01-01-q3@2: Match each opening to what it transmits. | Foramen spinosum = Middle meningeal artery ; Hypoglossal canal = Hypoglossal nerve ; Jugular foramen = Glossopharyngeal, vagus and accessory nerves ; Infraorbital foramen = Infraorbital nerve | These openings are the landmarks for skull base pathology and for local anaesthesia of the face.
 M3#dentistry-u01-01-q4@3: After a fall onto the cheek, a patient has a flattened cheekbone and numbness of the upper lip and side of the nose. What best explains the numbness? | The fracture runs through the infraorbital foramen and injures the infraorbital nerve | The facial nerve has been torn at the stylomastoid foramen | The mandibular nerve has been compressed at foramen ovale | The ophthalmic nerve has been cut in the superior orbital fissure | Zygomatic complex fractures commonly cross the orbital floor and infraorbital foramen, so the infraorbital branch of V2, which supplies the upper lip, cheek and side of nose, is injured. The facial nerve is motor to the face, not sensory.
 SA3#dentistry-u01-01-q5@2,3: Explain why the infratemporal fossa is important in dental practice. | It lies deep to the ramus and behind the maxilla and contains the medial and lateral pterygoid muscles, the maxillary artery and its branches, the pterygoid venous plexus and the mandibular nerve and its branches (inferior alveolar, lingual, buccal). The inferior alveolar nerve block deposits anaesthetic here; a posterior superior alveolar block can puncture the plexus and cause a haematoma; infection can spread into it from upper molars, causing trismus. | Location ; Contents: pterygoids and maxillary artery ; Pterygoid venous plexus ; Branches of V3 ; Link to IANB or PSA haematoma ; Link to spread of infection or trismus
+Q: How many bones does the adult skull have, excluding the ear ossicles? | 22: eight in the neurocranium and fourteen in the viscerocranium.
+Q: Which skull bone is freely movable? | Only the mandible, at the temporomandibular joint.
+Q: When does the anterior fontanelle close? | In the second year of life.
+Q: Why do the cranial base and face grow at different rates? | The vault and face form by intramembranous ossification while the cranial base forms in cartilage (endochondral ossification).
+Q: What passes through the superior orbital fissure? | The ophthalmic nerve (V1) and the nerves to the eye muscles (III, IV and VI).
+Q: What does the foramen spinosum carry? | The middle meningeal artery.
+Q: What mnemonic gives the exits of the three trigeminal divisions? | "Standing Room Only": superior orbital fissure (V1), foramen rotundum (V2), foramen ovale (V3).
+Q: Why does a blow to the cheek usually fracture the whole zygomatic complex? | The force passes to the thin sutural buttresses joining the zygoma to four bones, which break around it, displacing it as a unit.
+Q: Why is it wrong to think the facial skeleton is uniformly strong? | It has strong vertical buttresses with thin bone between, such as the maxillary sinus walls, which fracture easily.
+Q: What does the pterygopalatine fossa contain? | The pterygopalatine ganglion, V2 and the third part of the maxillary artery.
 
 ## The maxilla and palate
 LV: BDS Year 1 · Foundation
@@ -80,6 +90,16 @@ M2#dentistry-u01-02-q2@2: Why is buccal infiltration usually effective for upper
 TF1#dentistry-u01-02-q3@2: Gravity drains the maxillary sinus efficiently because its ostium lies in the floor of the sinus. | false | The ostium is high on the medial wall, so drainage relies on mucociliary clearance rather than gravity.
 M3#dentistry-u01-02-q4@3: A patient has dull aching of the upper right premolars and molars for a week after a cold; all the teeth are slightly tender to percussion and pain worsens on bending forward. What is the most likely explanation? | Maxillary sinusitis irritating the superior alveolar nerves | Irreversible pulpitis in each of the teeth at once | An oroantral communication | Trigeminal neuralgia of the mandibular division | Several adjacent upper posterior teeth aching together after a cold, worse on bending, suggests sinusitis: the superior alveolar nerves run in the sinus walls. Pulpitis of many teeth at once is unlikely, and trigeminal neuralgia causes brief electric pains.
 SA2#dentistry-u01-02-q5@2,3: Explain how the anatomy of the maxillary sinus makes oroantral communication possible after extraction of an upper first molar. | The sinus floor lies close to the roots of the upper molars, sometimes separated only by thin bone or mucosa, and pneumatisation extends it into the alveolus. Removing the tooth, especially with divergent roots or if bone fractures, can leave a direct opening from the socket into the sinus, an oroantral communication. | Floor close to molar roots ; Thin bone or mucosa only ; Pneumatisation ; Removal or fracture creates opening ; Names the communication
+Q: Name the four processes of the maxilla. | Frontal, zygomatic, alveolar and palatine.
+Q: What is the canine eminence? | The bulge on the anterior maxilla over the long canine root.
+Q: What lines the maxillary sinus? | Respiratory (pseudostratified ciliated) epithelium.
+Q: Why does maxillary sinus drainage depend on cilia rather than gravity? | Its ostium lies high on the medial wall, not in the floor.
+Q: Where does the greater palatine foramen usually lie? | Opposite the upper second or third molar.
+Q: Why are palatal injections uncomfortable and limited in volume? | The palatal mucoperiosteum is bound tightly to bone.
+Q: What is pneumatisation of the maxillary sinus? | Expansion of the sinus into the alveolus after tooth loss, bringing the floor close to the roots or crest.
+Q: What sign suggests an oroantral communication after an upper molar extraction? | Air bubbling through the socket when the patient blows with the nostrils pinched.
+Q: What features suggest upper posterior pain comes from the sinus rather than a tooth? | Tenderness of several adjacent teeth, worse on bending forward.
+Q: Why can sinusitis cause aching in upper posterior teeth? | The superior alveolar nerves run in the walls of the maxillary sinus.
 
 ## The mandible
 LV: BDS Year 1 · Foundation
@@ -118,6 +138,16 @@ M2#dentistry-u01-03-q2@3: An abscess from a lower right second molar perforates 
 SEQ1#dentistry-u01-03-q3@2: Put the course of the inferior alveolar nerve in order. | Branches from the posterior division of V3 ; Enters the mandibular foramen ; Runs in the mandibular canal below the apices ; Divides into mental and incisive nerves | The nerve enters on the medial ramus, runs forward in the canal and divides near the premolars.
 M3#dentistry-u01-03-q4@3: A man in his eighties who has worn a complete lower denture for decades reports burning pain and tingling of the lower lip when he bites. What anatomical change best explains this? | Alveolar resorption has brought the mental foramen close to the crest, so the denture compresses the mental nerve | The lingual nerve has moved onto the ridge | The mandibular canal has closed with age | The inferior alveolar nerve has regenerated into the denture-bearing mucosa | After long-term tooth loss the alveolar ridge resorbs down towards the canal and mental foramen; pressure from the denture flange then irritates the mental nerve. The lingual nerve supplies the tongue, not the lip.
 SA3#dentistry-u01-03-q5@2,3: Explain why the mandible commonly fractures at the angle and condylar neck, and why fractures are often bilateral. | The angle is weakened where the body meets the ramus, especially when an unerupted third molar occupies the bone; the condylar neck is narrow and receives force transmitted from a blow to the chin. The mandible is a U-shaped ring articulated at both ends, so a force on one side can fracture the opposite side as well (for example parasymphysis plus contralateral angle or condyle). | Angle weakened by third molar ; Narrow condylar neck ; Force transmitted from chin ; Ring or arch shape ; Gives a bilateral pattern
+Q: What separates the coronoid and condylar processes of the mandible? | The mandibular notch.
+Q: When do the two halves of the mandible fuse at the symphysis? | In the first year of life.
+Q: Where does the buccal nerve cross the mandible? | The retromolar triangle, behind the last molar.
+Q: Into which two nerves does the inferior alveolar nerve divide? | The mental nerve and the incisive nerve.
+Q: What does the mental nerve supply? | The lower lip, chin and labial gingiva.
+Q: Why do lower molars usually need an inferior alveolar nerve block rather than buccal infiltration? | The adult mandible has a thick buccal cortical plate, especially in the molar region.
+Q: Why does lingual pus from a lower incisor or premolar enter the sublingual space? | Their apices lie above the mylohyoid line, where the mylohyoid attaches.
+Q: Name three common sites of mandibular fracture. | The condylar neck, the angle and the parasymphysis.
+Q: Why does a blow to one side of the mandible often fracture the other side too? | The mandible behaves like a ring.
+Q: What is the error of placing an inferior alveolar block too low? | It misses the nerve before it enters the canal; the foramen lies roughly level with the occlusal plane in adults.
 
 ## The temporomandibular joint
 LV: BDS Year 1 · Core
@@ -157,6 +187,16 @@ M2#dentistry-u01-04-q2@2: In early mouth opening, what movement mainly takes pla
 TF1#dentistry-u01-04-q3@1: The lateral ligament of the TMJ limits posterior movement of the condyle. | true | The temporomandibular (lateral) ligament restricts posterior and inferior displacement of the condyle, protecting the retrodiscal tissue.
 M3#dentistry-u01-04-q4@3: A patient who had a clicking jaw for months wakes with opening limited to about 25 mm, deviation to the left on opening and no click. What is the most likely explanation? | Left anterior disc displacement without reduction | Right anterior disc displacement with reduction | Bilateral anterior dislocation of the condyles | Fracture of the right coronoid process | Loss of a previous click with sudden limited opening and deviation towards the affected side suggests the left disc can no longer be recaptured (closed lock): the left condyle cannot translate, so the jaw swings towards it. Dislocation leaves the mouth stuck open.
 SA3#dentistry-u01-04-q5@2,3: Using the anatomy of the TMJ, explain disc displacement with reduction. | The disc normally sits on the condyle, with its posterior band above the condylar head. If it is displaced forward at rest, on opening the condyle moves forward under it and snaps back into its normal relation with the disc, producing an opening click. On closing, the disc slips forward off the condyle again, giving a reciprocal click. Opening range is usually preserved because the disc reduces. | Normal disc position ; Anterior displacement at rest ; Condyle recaptures disc on opening, giving click ; Disc slips forward on closing ; Opening range preserved
+Q: What type of joint is the TMJ? | A synovial joint between the mandibular condyle and the articular fossa and eminence of the temporal bone.
+Q: Why are the TMJ surfaces covered by fibrocartilage rather than hyaline cartilage? | It reflects the joint's intramembranous origin and allows remodelling.
+Q: In which TMJ compartment does rotation occur? | The lower compartment, between the disc and the condyle.
+Q: What does the lateral (temporomandibular) ligament do? | Strengthens the capsule and limits posterior and inferior movement of the condyle.
+Q: Which nerves mainly supply the TMJ? | The auriculotemporal and masseteric nerves (V3).
+Q: What is normal maximum mouth opening in adults? | Typically about 40–50 mm interincisally.
+Q: What does ginglymoarthrodial mean for the TMJ? | It combines a hinge (rotation) with gliding (translation).
+Q: What causes the reciprocal click in disc displacement with reduction? | On closing, the disc slips forward off the condyle again.
+Q: Should every TMJ click be treated as disease? | No. Joint sounds are common without pain; management is guided by pain and function.
+Q: What happens in TMJ dislocation? | The condyle moves forward over the articular eminence and cannot return, so the mouth is stuck open.
 
 ## Muscles of mastication
 LV: BDS Year 1 · Foundation
@@ -196,6 +236,16 @@ M2#dentistry-u01-05-q2@2: To move the mandible to the left, which muscle contrac
 MATCH1#dentistry-u01-05-q3@1: Match each muscle to an origin. | Masseter = Zygomatic arch ; Temporalis = Temporal fossa ; Medial pterygoid (deep head) = Medial surface of lateral pterygoid plate ; Lateral pterygoid (inferior head) = Lateral surface of lateral pterygoid plate | The two pterygoids both arise from the lateral pterygoid plate, on opposite surfaces.
 M3#dentistry-u01-05-q4@3: Three days after removal of a lower third molar, a patient has worsening trismus, fever and swelling below the angle of the jaw, and is finding it hard to swallow. What is the most appropriate interpretation? | A spreading infection into the fascial spaces that needs same-day urgent assessment | Normal post-operative muscle stiffness to be managed with jaw exercises at home | Dislocation of the TMJ | Temporalis tendinitis from mouth opening | Worsening trismus with fever, swelling and difficulty swallowing suggests spread into the pterygomandibular and submandibular spaces; difficulty swallowing or breathing is an emergency (999). Mild stiffness improves, rather than worsens, over the first days.
 SA3#dentistry-u01-05-q5@2,3: Explain why trismus can follow an inferior alveolar nerve block. | The needle passes through or close to the medial pterygoid muscle to reach the pterygomandibular space. Bleeding (haematoma), direct muscle trauma or, rarely, infection introduced by the needle causes inflammation and spasm of this elevator, limiting opening. It usually resolves, but persistent or worsening trismus, fever or swelling requires assessment for infection. | Needle path near medial pterygoid ; Haematoma or trauma ; Spasm of an elevator ; Usually temporary ; Worsening signs need assessment
+Q: Where does masseter run from and to? | From the zygomatic arch to the lateral surface of the ramus and angle.
+Q: What do the horizontal posterior fibres of temporalis do? | Retrude the mandible.
+Q: Where does the lateral pterygoid insert? | The pterygoid fovea on the condylar neck and the TMJ disc and capsule.
+Q: What does one lateral pterygoid acting alone do? | Swings the jaw to the opposite side.
+Q: Which other first-arch muscles share the V3 supply with the muscles of mastication? | Mylohyoid, the anterior belly of digastric, tensor veli palatini and tensor tympani.
+Q: Which muscles complete depression of the mandible? | The suprahyoid muscles (digastric, mylohyoid and geniohyoid), with gravity.
+Q: What is trismus? | Restricted mouth opening due to spasm, inflammation or injury of the muscles of mastication.
+Q: What is the pterygomasseteric sling? | The sling around the angle of the mandible formed by the medial pterygoid and masseter.
+Q: Why is it wrong to say the lateral pterygoid closes the mouth? | It pulls the condyle forward onto the eminence: it protrudes and helps open.
+Q: Which muscles can hypertrophy with bruxism? | Masseter and temporalis.
 
 ## Mandibular movements
 LV: BDS Year 1 · Core
@@ -237,6 +287,16 @@ M2#dentistry-u01-06-q2@2: In right lateral excursion, what does the left condyle
 TF2#dentistry-u01-06-q3@1: Occlusal vertical dimension is greater than rest vertical dimension. | false | Face height is greater at rest, when the teeth are apart; the difference is the freeway space.
 M3#dentistry-u01-06-q4@3: New complete dentures are made too tall, so the patient has no freeway space. What is the most likely result? | Constant tooth contact, sore ridges and clicking of the teeth on speech | Better chewing efficiency with no drawbacks | Collapse of the lower face and angular cheilitis | Increased freeway space and overclosure | Excess occlusal vertical dimension removes the freeway space, so the teeth meet constantly, overloading the denture-bearing mucosa. Overclosure (too little height) causes collapse of the lower face and angular cheilitis.
 SA3#dentistry-u01-06-q5@2,3: Explain the difference between canine guidance and group function, and why non-working-side contacts are avoided in restorations. | In canine guidance only the working-side canines contact in lateral excursion, separating the posterior teeth; in group function the load is shared by several working-side teeth. Non-working-side contacts occur on the balancing side, where the teeth meet with poor axial loading and close to the elevator muscles' force, overloading teeth or restorations and potentially disturbing function, so restorations are adjusted to remove them. | Defines canine guidance ; Defines group function ; Identifies non-working side ; Explains harm from interferences ; Restorations adjusted to avoid them
+Q: What is the retruded contact position? | The first tooth contact when the mandible is guided along its retruded hinge axis with the condyles in centric relation.
+Q: How far is RCP usually from ICP? | About 1 mm behind ICP in most people.
+Q: What is the rest position of the mandible? | The position adopted at rest, upright, with muscles relaxed and the teeth apart.
+Q: What is occlusal vertical dimension? | The face height with the teeth together.
+Q: What happens to the condyles in protrusion? | Both move forward and down the articular eminences.
+Q: What is anterior guidance? | The incisors guiding the mandible in protrusion so the back teeth separate.
+Q: What does the non-working-side condyle do in lateral excursion? | It moves forward, down and medially.
+Q: What is group function? | Lateral guidance in which several working-side teeth, such as canine and premolars, share contact.
+Q: What does Posselt's envelope show? | The limits of incisor movement in the sagittal plane.
+Q: A crown on a lower left molar touches when the jaw moves right. What is this contact? | A non-working-side interference, which is adjusted away.
 
 ## Muscles of facial expression
 LV: BDS Year 1 · Foundation
@@ -273,6 +333,16 @@ M2#dentistry-u01-07-q2@3: A patient's lower complete denture lifts whenever they
 TF1#dentistry-u01-07-q3@2: In an upper motor neurone lesion of the facial nerve pathway, the forehead is usually spared. | true | The forehead's motor neurones receive input from both hemispheres, so a unilateral upper motor neurone lesion leaves it working.
 M3#dentistry-u01-07-q4@3: Minutes after an inferior alveolar nerve block, a patient cannot close the left eye or raise the left eyebrow, but speaks normally and has no arm weakness. What is the most likely cause and immediate priority? | Anaesthetic in the parotid has caused transient facial palsy; protect the eye | A stroke; the forehead involvement confirms a central lesion | An allergic reaction; give adrenaline | Damage to the trigeminal nerve; refer for nerve repair | Whole-side weakness including the forehead is a lower motor neurone pattern, here from anaesthetic reaching the facial nerve in the parotid. It resolves, but the eye cannot blink, so it must be protected. If there were speech or limb symptoms a stroke must be considered (999).
 SA2#dentistry-u01-07-q5@1,3: Explain how buccinator and orbicularis oris influence the design of complete dentures. | Buccinator and orbicularis oris press inward on the dentures, balanced by the tongue pressing outward. Teeth and flanges set in the neutral zone between these forces are stabilised by the muscles; teeth set too far buccally or lingually are displaced. Buccinator also helps keep food on the occlusal table, and the polished surfaces are shaped so that its action seats rather than lifts the denture. | Inward force of lips and cheek ; Outward force of tongue ; Neutral zone defined ; Teeth set outside it are displaced ; Shaping of polished surfaces
+Q: Which muscle encircles the mouth and closes the lips? | Orbicularis oris.
+Q: What does mentalis do? | Raises and protrudes the lower lip and wrinkles the chin.
+Q: Where does buccinator arise? | From the outer alveolar bone opposite the molars and the pterygomandibular raphe.
+Q: What is buccinator's role in chewing? | It keeps food on the occlusal table.
+Q: Which nerve gives sensory supply to the area of buccinator? | The buccal nerve (V3).
+Q: From which pharyngeal arch do the muscles of facial expression come? | The second pharyngeal arch.
+Q: What happens to complete denture teeth set outside the neutral zone? | They are displaced by the muscles.
+Q: Why does anaesthetic placed too far back in an inferior alveolar block cause facial palsy? | It enters the parotid gland, where the facial nerve divides, and blocks its motor branches.
+Q: Why must the eye be protected in transient facial palsy? | The blink reflex is lost, so the eye is kept closed or covered until function returns.
+Q: How does a lower motor neurone facial lesion differ from an upper motor neurone lesion? | Lower motor neurone lesions weaken the whole side including the forehead; upper motor neurone lesions largely spare the forehead.
 
 ## The tongue and floor of the mouth
 LV: BDS Year 1 · Foundation
@@ -311,6 +381,16 @@ M2#dentistry-u01-08-q2@2: After third molar surgery a patient has numbness and l
 MS2#dentistry-u01-08-q3@2: Which statements about the tongue's nerve supply are correct? Choose all that apply. | The lingual nerve carries general sensation from the anterior two-thirds ; The glossopharyngeal nerve carries taste from the circumvallate papillae | The hypoglossal nerve carries taste from the tip ; The trigeminal nerve supplies the extrinsic muscles | The circumvallate papillae lie just in front of the sulcus terminalis but are supplied by IX; XII is motor only and V supplies no tongue muscles.
 M3#dentistry-u01-08-q4@3: On protrusion, a patient's tongue deviates to the left and the left side looks wasted. Where is the lesion most likely to be? | Left hypoglossal nerve | Right hypoglossal nerve | Left lingual nerve | Right glossopharyngeal nerve | The healthy right genioglossus pushes the tongue towards the weak left side; wasting indicates a lower motor neurone (nerve) lesion on the left. The lingual nerve is sensory.
 SA3#dentistry-u01-08-q5@2,3: Explain how the development of the tongue accounts for its sensory and taste supply. | The anterior two-thirds develops from first-arch tissue, so its general sensation comes from the first-arch nerve, the trigeminal (lingual nerve); its taste is carried by the chorda tympani (VII), which joins the lingual nerve. The posterior third develops from the third arch, so both sensation and taste come from the third-arch nerve, the glossopharyngeal. A small fourth-arch region near the epiglottis is supplied by the vagus. Motor supply comes from occipital myotomes, hence the hypoglossal. | Anterior two-thirds from first arch, V3 ; Chorda tympani taste ; Posterior third from third arch, IX ; Fourth arch area, vagus ; Muscles from occipital somites, XII
+Q: What do the intrinsic muscles of the tongue do? | Change the tongue's shape.
+Q: What does hyoglossus do? | Depresses the tongue.
+Q: What does styloglossus do? | Retracts and elevates the tongue.
+Q: Why does the protruded tongue deviate towards the side of a hypoglossal lesion? | The healthy genioglossus pushes the tongue across towards the weak side.
+Q: What lies at the apex of the sulcus terminalis? | The foramen caecum, the origin of the thyroid gland.
+Q: From which pharyngeal arches does the tongue develop? | Anterior two-thirds from the first arch; posterior third from the third, with a contribution from the fourth.
+Q: Which nerve carries taste from the anterior two-thirds of the tongue? | The chorda tympani (VII), travelling with the lingual nerve.
+Q: What supplies the small area of tongue near the epiglottis? | The internal laryngeal branch of the vagus (X).
+Q: Where does the submandibular duct open? | At the sublingual papilla beside the lingual frenum.
+Q: Does the hypoglossal nerve carry taste? | No. It is purely motor; taste comes from VII and IX.
 
 ## The trigeminal nerve
 LV: BDS Year 1 · Core
@@ -348,6 +428,16 @@ M2#dentistry-u01-09-q2@2: Which branch of V3 is sensory to the buccal gingiva of
 SEQ2#dentistry-u01-09-q3@2: Put the course of the infraorbital nerve in order. | Leaves the skull in V2 through foramen rotundum ; Crosses the pterygopalatine fossa ; Runs in the floor of the orbit in the infraorbital groove and canal ; Gives the middle and anterior superior alveolar nerves ; Emerges at the infraorbital foramen | The infraorbital nerve is the continuation of V2 and supplies upper teeth before ending on the face.
 M3#dentistry-u01-09-q4@3: A patient has had repeated root canal treatments and an extraction for "lower right toothache" that comes as seconds-long shocks when shaving. What is the most appropriate next step? | Stop dental treatment and refer for assessment of probable trigeminal neuralgia | Extract the next tooth along | Prescribe antibiotics for a hidden abscess | Replace all the restorations in the quadrant | Paroxysmal, triggered shocks with no dental cause suggest trigeminal neuralgia; further dental treatment will not help and the patient should be assessed by a GP or specialist.
 SA3#dentistry-u01-09-q5@2,3: Explain why dental pain is often poorly localised and can be referred to other teeth or the ear. | Sensory fibres from all the teeth, gingivae and much of the face converge on the spinal trigeminal nucleus, where second-order neurones receive input from several areas. The brain cannot always tell which source is active, so pain from a lower molar may be felt in the upper teeth on the same side, or in the ear through the auriculotemporal nerve territory. Pain usually stays on one side because each nucleus receives ipsilateral input. Pulpal A-delta and C fibres also lack the precise proprioceptive localisation of the periodontal ligament. | Convergence on spinal nucleus ; Shared second-order neurones ; Example of upper–lower referral ; Referral to ear via auriculotemporal ; Stays on same side ; Pulp lacks proprioception
+Q: Where is the trigeminal ganglion? | In a dural pocket, Meckel's cave, on the petrous temporal bone.
+Q: Which trigeminal nucleus handles pain and temperature? | The spinal nucleus.
+Q: Why is the mesencephalic nucleus unusual? | Its sensory cell bodies lie inside the brainstem.
+Q: Which reflex does V1 carry the afferent for? | The corneal reflex.
+Q: Which nerve supplies the upper molars? | The posterior superior alveolar nerve, from V2.
+Q: Which branches does the posterior division of V3 give? | The auriculotemporal, lingual and inferior alveolar nerves.
+Q: What features suggest trigeminal neuralgia? | Brief, unilateral, electric-shock pains in one division, triggered by light touch, with no dental cause.
+Q: Why is extracting teeth for trigeminal neuralgia a mistake? | The pain arises in the nerve, so dental treatment doesn't cure it and teeth are lost needlessly.
+Q: Why can dental pain be referred to the ear? | Via the auriculotemporal nerve, since dental and facial input converge on the spinal trigeminal nucleus.
+Q: Does referred dental pain usually cross the midline? | No, it rarely crosses the midline.
 
 ## Nerve supply of the teeth and gingivae
 LV: BDS Year 1 · Core
@@ -391,6 +481,16 @@ M2#dentistry-u01-10-q2@2: For extraction of an upper right second premolar, whic
 MATCH1#dentistry-u01-10-q3@1: Match each area to its nerve. | Lower lip = Mental nerve ; Upper canine pulp = Anterior superior alveolar nerve ; Lingual gingiva of lower molars = Lingual nerve ; Upper molar buccal gingiva = Posterior superior alveolar nerve | Knowing these pairings is the basis of every local anaesthetic plan.
 M3#dentistry-u01-10-q4@3: After a successful left inferior alveolar block (lip and tongue numb), a patient still feels the lower left central incisor during a restoration. What is the most likely reason? | Cross-innervation from the right incisive nerve | The block missed the inferior alveolar nerve | The lingual nerve supplies the incisor pulp | The buccal nerve supplies the incisor | A numb lip shows the block worked; the remaining sensation in a midline tooth is explained by fibres crossing from the opposite side, managed by a local infiltration.
 SA3#dentistry-u01-10-q5@2,3: Explain anatomical reasons why an inferior alveolar nerve block may fail to anaesthetise a lower molar. | The mandibular foramen varies in height and position, so the solution may be deposited too low or too far forward; the nerve may enter before reaching the deposit or the canal may be bifid. Accessory supply from the nerve to mylohyoid, the cervical plexus or buccal nerve may reach the tooth. Inflammation lowers pH and reduces the effectiveness of anaesthetic. A numb lip without pulpal anaesthesia suggests accessory supply or a partial block. | Variation in foramen position ; Bifid canal ; Accessory innervation named ; Inflammation and pH ; Interprets numb lip
+Q: Which nerve supplies the upper canine and incisors? | The anterior superior alveolar nerve.
+Q: What does the middle superior alveolar nerve supply when present? | The premolars and the mesiobuccal root of the upper first molar.
+Q: What supplies the palatal gingiva from the upper molars to the canine? | The greater palatine nerve.
+Q: What does the lingual nerve supply? | All the lingual gingiva, the floor of the mouth and the anterior two-thirds of the tongue.
+Q: Why does extracting a lower molar need a buccal infiltration as well as a block? | The block doesn't anaesthetise the buccal gingiva of the molars, supplied by the buccal nerve.
+Q: What is cross-innervation? | Supply of a midline tooth by nerve fibres from the opposite side.
+Q: Name sources of accessory innervation to the lower teeth. | The nerve to mylohyoid, the cervical plexus or the buccal nerve.
+Q: Why does inflammation such as an acute abscess reduce anaesthetic effect? | It lowers tissue pH.
+Q: What anatomical variations of the mandibular foramen cause block failure? | It may be higher or further back than expected, or the nerve may be bifid.
+Q: Who may administer local anaesthesia? | Only registered clinicians trained and competent in it, after a medical history, with consent and following guidance.
 
 ## The facial nerve and other cranial nerves in dentistry
 LV: BDS Year 1 · Core
@@ -429,6 +529,16 @@ M2#dentistry-u01-11-q2@2: Which nerve is the efferent limb of the gag reflex? | 
 TF1#dentistry-u01-11-q3@1: The chorda tympani carries secretomotor fibres to the parotid gland. | false | The chorda tympani supplies the submandibular and sublingual glands; the parotid's secretomotor supply comes from IX through the otic ganglion.
 M3#dentistry-u01-11-q4@3: A patient with a history of breast cancer has had numbness of the right lower lip and chin for three weeks; the teeth and radiographs show no cause. What is the most appropriate action? | Urgent referral, because unexplained mental nerve numbness can indicate metastatic disease | Reassure and review in six months | Prescribe antibiotics for a likely dental infection | Remove the lower right premolars | Numb chin without a dental cause can signal metastasis to the mandible or skull base, especially with a cancer history, and needs urgent investigation.
 SA3#dentistry-u01-11-q5@2,3: Describe the dental relevance of the facial nerve's branches inside and outside the temporal bone. | Inside the temporal bone it gives the greater petrosal nerve to lacrimal, nasal and palatal glands, and the chorda tympani carrying taste from the anterior two-thirds of the tongue and secretomotor fibres to the submandibular and sublingual glands, so lesions can affect taste and saliva. Outside, in the parotid, it gives five motor branches to the muscles of facial expression; anaesthetic in the parotid causes transient palsy, and the marginal mandibular branch is at risk in submandibular incisions. | Greater petrosal and glands ; Chorda tympani taste ; Chorda tympani salivary ; Five motor branches ; Transient palsy from anaesthetic ; Marginal mandibular at risk
+Q: What is the course of the facial nerve out of the skull? | Through the internal acoustic meatus and facial canal in the temporal bone, exiting at the stylomastoid foramen.
+Q: What does the greater petrosal nerve supply? | Secretomotor fibres to the lacrimal gland and nasal and palatal glands via the pterygopalatine ganglion.
+Q: Why are incisions below the jaw placed well below the lower border? | To avoid the marginal mandibular branch and weakness of the lower lip.
+Q: Which nerve is the afferent limb of the gag reflex? | The glossopharyngeal nerve (IX).
+Q: Which way does the uvula deviate in a vagus lesion? | Away from the affected side.
+Q: How can a posterior superior alveolar injection cause double vision? | Anaesthetic can spread into the orbit, transiently affecting nerves III, IV or VI.
+Q: How can gagging during an impression be reduced? | Distraction, a short tray and breathing through the nose.
+Q: What is numb chin syndrome? | Numbness in the mental nerve territory without dental cause, a possible sign of malignancy.
+Q: What should be done for sudden facial weakness with limb weakness or speech disturbance? | Suspect a stroke and call 999.
+Q: How is Bell's palsy diagnosed? | Only after other causes are excluded.
 
 ## Blood supply and lymphatic drainage of the head and neck
 LV: BDS Year 1 · Core
@@ -468,6 +578,16 @@ M2#dentistry-u01-12-q2@2: A swelling of the cheek develops immediately after a p
 MS3#dentistry-u01-12-q3@3: Which features of a neck lymph node are red flags for malignancy? Choose all that apply. | Hard ; Fixed to surrounding tissue ; Painless and enlarging | Tender and soft during a sore throat ; Mobile and shrinking after an infection | Reactive nodes are usually tender, soft and mobile and settle; hard, fixed, painless or enlarging nodes need urgent referral.
 M3#dentistry-u01-12-q4@3: A patient has a hard, painless node in the left submandibular region. Which part of the mouth should be examined most carefully? | The left lateral tongue, floor of mouth, lips and buccal mucosa | Only the right side of the tongue | The upper incisors alone | The nasopharynx alone | The submandibular nodes drain most of the teeth, lips, anterior and lateral tongue and floor of mouth on that side; a hard, painless node requires a full oral examination and urgent referral.
 SA3#dentistry-u01-12-q5@2,3: Explain how an infection of an upper tooth could reach the cavernous sinus. | Infection may spread from the upper teeth into the infratemporal fossa or into the canine region of the face. The pterygoid venous plexus in the infratemporal fossa connects through emissary veins to the cavernous sinus; the facial vein connects to the ophthalmic veins at the medial angle of the eye, which drain into the sinus. Infected thrombus can propagate along these veins, causing cavernous sinus thrombosis with eye signs, headache and systemic illness, a medical emergency. | Spread to infratemporal fossa or canine space ; Pterygoid plexus link ; Facial–ophthalmic vein link ; Thrombosis described ; Emergency recognised
+Q: At what level does the common carotid artery divide? | About the upper border of the thyroid cartilage.
+Q: Does the internal carotid artery have branches in the neck? | No; it supplies the brain and orbit.
+Q: Which branches come from the first part of the maxillary artery? | The inferior alveolar and middle meningeal arteries.
+Q: What does the second part of the maxillary artery supply? | The muscles of mastication and the buccal region.
+Q: Which is the main vessel to avoid in palatal surgery? | The greater palatine artery, running forward from the greater palatine foramen.
+Q: What does the pterygoid venous plexus connect with? | The cavernous sinus via emissary veins, and the facial vein via the deep facial vein.
+Q: What causes a rapidly enlarging cheek swelling after a posterior superior alveolar injection? | A haematoma from puncturing the pterygoid venous plexus or PSA vessels.
+Q: What is the problem with teaching that facial veins have no valves? | Dissection has found valves in the facial vein; the communications with the cavernous sinus matter more.
+Q: Which lymph nodes receive all lymph from the head and neck? | The deep cervical nodes along the internal jugular vein.
+Q: Why can a cancer at the tongue tip spread to both sides of the neck? | The tongue tip and midline structures drain bilaterally.
 
 ## The oral cavity: anatomy and landmarks
 LV: BDS Year 1 · Foundation
@@ -513,6 +633,16 @@ M2#dentistry-u01-13-q2@2: A hard, smooth, bony midline swelling of the palate ha
 TF1#dentistry-u01-13-q3@1: The vestibule is the space between the lips and cheeks and the teeth. | true | The vestibule lies outside the dental arches; the oral cavity proper lies inside them.
 M3#dentistry-u01-13-q4@3: During a routine examination a dentist finds a painless ulcer on the left lateral border of the tongue that the patient says has been there for over a month, with no sharp tooth nearby. What is the most appropriate action? | Refer on a suspected cancer pathway | Review in a year at the next check-up | Prescribe an antiseptic mouthwash and discharge | Smooth the adjacent teeth and reassure | Unexplained oral ulceration lasting more than 3 weeks meets the NICE NG12 criteria for a suspected cancer referral; the lateral tongue is a high-risk site.
 SA2#dentistry-u01-13-q5@1,3: Describe a systematic examination of the oral soft tissues. | Start extraorally with face, TMJs, muscles and neck nodes; then examine the lips and labial mucosa, buccal mucosa and sulci on both sides, the hard and soft palate and oropharynx, the dorsum, lateral borders and ventral tongue (holding it with gauze), and the floor of mouth, then the gingivae and teeth, recording all findings. | Extraoral first including nodes ; Lips and buccal mucosa ; Palate and oropharynx ; Tongue including lateral and ventral surfaces ; Floor of mouth ; Records findings
+Q: What are the two divisions of the mouth? | The vestibule and the oral cavity proper.
+Q: Where does the oral cavity open into the oropharynx? | At the palatoglossal arches, the oropharyngeal isthmus.
+Q: What is the linea alba of the cheek? | A line on the buccal mucosa along the occlusal line.
+Q: What are the fovea palatinae used for? | As a posterior denture landmark on the palate.
+Q: What is a torus? | A benign bony outgrowth of the palate or lingual mandible.
+Q: What is leukoedema? | A grey-white filmy appearance of the buccal mucosa that fades when stretched.
+Q: Why should normal oral variants be known? | To prevent unnecessary alarm and biopsy, while recording and following up lesions that don't fit.
+Q: In what order does a systematic oral examination proceed? | Extraoral first, then lips, buccal mucosa, palate and oropharynx, tongue and floor of mouth, then gingivae and teeth.
+Q: Why must the lateral and ventral tongue and floor of mouth be inspected every time? | They are among the commonest UK sites of oral cancer.
+Q: When does NICE NG12 recommend considering a suspected cancer referral for oral ulceration? | For unexplained ulceration in the oral cavity lasting more than 3 weeks.
 
 ## The salivary glands
 LV: BDS Year 1 · Foundation
@@ -551,6 +681,16 @@ M2#dentistry-u01-14-q2@3: A patient has painful swelling below the jaw that come
 MATCH1#dentistry-u01-14-q3@2: Match each gland to its parasympathetic ganglion. | Parotid = Otic ganglion ; Submandibular = Submandibular ganglion ; Sublingual = Submandibular ganglion ; Lacrimal = Pterygopalatine ganglion | IX reaches the parotid via the otic ganglion; VII reaches the others via the submandibular and pterygopalatine ganglia.
 M3#dentistry-u01-14-q4@3: A patient has a slowly enlarging lump in front of the ear and, recently, weakness of the corner of the mouth on the same side. What is the most appropriate interpretation? | Possible parotid malignancy involving the facial nerve; refer urgently | A benign pleomorphic adenoma; review in a year | Mumps; advise rest and fluids | A blocked parotid duct from a stone; massage the gland | Benign parotid tumours rarely cause facial weakness; a parotid lump with facial nerve involvement suggests malignancy and needs urgent referral.
 SA3#dentistry-u01-14-q5@1,3: Explain why the submandibular gland is the commonest site of salivary stones. | Its saliva is more viscous, mucous and alkaline, with higher calcium and phosphate content, than parotid saliva. Its duct is long and runs upward from the gland to the floor of the mouth, so flow works against gravity and stasis is more likely. Stasis and alkaline, mineral-rich saliva favour precipitation of calcium salts around a nidus, forming a stone. | Viscous mucous saliva ; Alkaline and mineral-rich ; Long duct ; Upward course against gravity ; Stasis leads to precipitation
+Q: What type of secretion does the parotid gland mainly produce? | Mainly serous saliva.
+Q: Which structures lie within the parotid gland? | The facial nerve divides within it, with the retromandibular vein and external carotid artery deeper.
+Q: What route does the parotid duct take? | It crosses masseter, turns through buccinator and opens at the parotid papilla opposite the upper second molar.
+Q: How are the superficial and deep parts of the submandibular gland joined? | Around the posterior border of mylohyoid.
+Q: What are von Ebner's glands? | Serous minor salivary glands opening into the trenches of the circumvallate papillae.
+Q: How do sympathetic nerves affect saliva? | They mainly alter its composition, making it more protein-rich and viscous.
+Q: Why do most salivary stones form in the submandibular gland? | Its saliva is more mucous, alkaline and calcium-rich, and its long duct runs upward against gravity, slowing flow.
+Q: What is a ranula? | A mucocele-like swelling in the floor of the mouth from the sublingual gland.
+Q: What is the commonest parotid tumour? | The pleomorphic adenoma, which is benign.
+Q: What does facial weakness with a parotid lump suggest? | Malignancy, needing urgent referral.
 
 ## The pharynx and larynx
 LV: BDS Year 1 · Foundation
@@ -587,6 +727,16 @@ M2#dentistry-u01-15-q2@2: Which event prevents food entering the nasal cavity du
 SEQ2#dentistry-u01-15-q3@2: Put the events of the pharyngeal phase of swallowing in order. | Bolus reaches the oropharynx and triggers the reflex ; Soft palate rises to seal the nasopharynx ; Larynx rises and the epiglottis tips back ; Constrictors propel the bolus into the oesophagus | Once triggered the sequence runs as a reflex, protecting the nose and airway before the bolus passes.
 M3#dentistry-u01-15-q4@3: During root canal treatment without rubber dam, a file slips and the reclined patient coughs, then says they feel fine. What is the most appropriate action? | Refer for imaging to establish whether it was inhaled or swallowed | Reassure and continue, as the patient has no symptoms | Ask the patient to drink water and review in six months | Give antibiotics and discharge | The file could be in the airway or gut, and lack of symptoms does not exclude inhalation; imaging is needed. Rubber dam would have prevented this, which is why it is the standard for endodontics.
 SA3#dentistry-u01-15-q5@2,3: Explain how the anatomy of the airway informs safe practice in the dental chair. | The mouth opens directly into the oropharynx, where the airway and food passages cross; a reclined, sedated or anaesthetised patient has reduced protective reflexes. Small objects can therefore be swallowed or inhaled, usually into the right main bronchus. Safe practice uses rubber dam, throat packs, floss ligatures, careful handling and appropriate positioning, and any lost object is located by imaging; choking is managed using Resuscitation Council UK guidance. | Shared pathway at oropharynx ; Reduced reflexes when reclined or sedated ; Right main bronchus ; Preventive measures named ; Lost object located ; Choking guidance
+Q: What are the three parts of the pharynx? | The nasopharynx, oropharynx and laryngopharynx.
+Q: How far does the pharynx extend? | From the skull base to the level of the sixth cervical vertebra.
+Q: Which pharyngeal constrictor attaches to the pterygomandibular raphe? | The superior constrictor, alongside buccinator.
+Q: What does the nasopharynx contain? | The openings of the auditory tubes and the adenoids.
+Q: Name the cartilages of the larynx. | Thyroid, cricoid and arytenoid cartilages and the epiglottis.
+Q: What happens to the larynx in the pharyngeal phase of swallowing? | It is pulled up and forward under the tongue base, the epiglottis tips back and the vocal folds close.
+Q: Why are supine or sedated patients at greater risk of aspiration? | Only the oral phase of swallowing is voluntary; the pharyngeal phase is a reflex.
+Q: Does coughing after a dropped crown show whether it was swallowed or inhaled? | No. The patient needs imaging to locate it.
+Q: Why is it a mistake to assume a lost object is harmless if the patient seems well? | An inhaled object may cause few symptoms at first, then pneumonia or lung segment collapse.
+Q: Name measures that protect the airway in dental treatment. | Rubber dam, throat packs, floss ligatures on small items and careful or upright positioning.
 
 ## Fascial spaces of the head and neck
 LV: BDS Year 1 · Core
@@ -626,4 +776,14 @@ M2#dentistry-u01-16-q2@2: Pus from an upper canine perforates the labial plate a
 TF1#dentistry-u01-16-q3@2: Pus from a lower premolar that perforates the lingual plate above mylohyoid enters the sublingual space. | true | Premolar apices lie above the mylohyoid line, so lingual spread goes into the sublingual space.
 M3#dentistry-u01-16-q4@3: A patient with a lower molar infection has a firm swelling of the floor of the mouth on both sides, drooling and a muffled voice, and is sitting forward. What is the priority? | Call 999 for emergency hospital care to secure the airway | Prescribe antibiotics and review in 48 hours | Incise intraorally in the dental surgery and discharge | Arrange a routine referral to oral surgery | These are signs of Ludwig's angina with airway threat; it is an emergency needing hospital airway management, drainage and removal of the source.
 SA3#dentistry-u01-16-q5@2,3: Explain how the relationship of tooth apices to muscle attachments determines where an odontogenic infection presents. | Pus perforates the thinnest cortex near the apex. If it emerges inside the attachment of buccinator (maxilla below, mandible above) it points into the buccal sulcus; outside it, it enters the buccal space and swells the face. In the mandible, lingual perforation above mylohyoid (premolars, anterior teeth) enters the sublingual space; below it (second and third molars) the submandibular space. Spread can continue to the pterygomandibular, parapharyngeal and deep neck spaces. | Thinnest cortex ; Buccinator rule ; Mylohyoid rule with examples ; Facial versus intraoral presentation ; Onward spread to deep spaces
+Q: What layers make up the deep cervical fascia? | An investing layer, a pretracheal layer, a prevertebral layer and the carotid sheath.
+Q: What is a fascial space? | A potential space between fascial layers and muscles through which infection can spread.
+Q: Which space lies between the anterior bellies of digastric? | The submental space.
+Q: Name the fascial spaces around the mandibular ramus. | The submasseteric, pterygomandibular and infratemporal spaces.
+Q: Which deep neck space can carry infection to the mediastinum? | The danger space.
+Q: Where does pus from a periapical abscess first perforate? | The thinnest cortical plate nearest the apex.
+Q: What happens to pus that emerges above a muscle attachment? | It points into the mouth as a sulcus swelling.
+Q: Where would pus from a lower third molar perforating lingually below mylohyoid go? | The submandibular space, swelling below the angle of the jaw.
+Q: What is Ludwig's angina usually caused by? | Lower molar infection spreading to the submandibular, sublingual and submental spaces on both sides.
+Q: What is wrong with treating a spreading facial swelling with antibiotics alone at home? | Swelling with breathing or swallowing difficulty, trismus or systemic illness needs emergency hospital care and drainage.
 `;
