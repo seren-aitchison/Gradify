@@ -148,3 +148,21 @@ test("topic quest rewards use the one XP economy: paid once, through the same le
   assert.equal(gameState(courses, claim(game, step, now), { now }).xp, after.xp, "claiming again pays nothing");
   assert.ok(quests(after).find((q) => q.key === step.key).paid, "and shows as claimed");
 });
+
+test("a lesson with only retries isn't measured (not 0%); a genuine first-try 0% still is", async () => {
+  const { lessonSignals, rollup } = await import("../kit/learning/topic-status.js");
+  const at = (i) => new Date(1e12 + i).toISOString();
+  const sig = lessonSignals([
+    { lesson: "R", question: { id: "q" }, score: 1, attempt: 2, at: at(1) },
+    { lesson: "Z", question: { id: "q" }, score: 0, attempt: 1, at: at(2) },
+  ]);
+  assert.equal(rollup(["R"], () => "practised", sig).mastery, null, "retries alone: not measured");
+  assert.equal(rollup(["Z"], () => "practised", sig).mastery, 0, "a first try that was wrong: measured, 0%");
+  assert.equal(rollup(["R", "Z"], () => "practised", sig).measured, 1);
+  // lab challenges carry their try number like questions: a same-sitting success after a failure isn't first-try evidence
+  const lab = lessonSignals([
+    { lesson: "L", question: { id: "ix:a", type: "lab" }, score: 0, attempt: 1, at: at(1), response: { outcome: "fail" } },
+    { lesson: "L", question: { id: "ix:a", type: "lab" }, score: 1, attempt: 2, at: at(2), response: { outcome: "success" } },
+  ]).get("L");
+  assert.equal(lab.latestMean, 0);
+});

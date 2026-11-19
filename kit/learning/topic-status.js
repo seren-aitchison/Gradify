@@ -64,7 +64,8 @@ export function rollup(ids, statusOf, sig = new Map(), isDone = (id) => ["learne
   let measured = 0, sum = 0, done = 0;
   for (const id of ids) {
     c[statusOf(id)]++; if (isDone(id)) done++;
-    const g = sig.get(id); if (g) { measured++; sum += g.latestMean; }
+    // measured only where there's a first-try answer (a lesson with nothing but retries isn't measured, and isn't 0%)
+    const g = sig.get(id); if (g && (g.questions ?? 1) > 0) { measured++; sum += g.latestMean; }
   }
   const total = ids.length;
   return { total, counts: c, done, coverage: total ? done / total : 0, mastery: measured ? sum / measured : null, measured,
