@@ -99,7 +99,8 @@ if (args.has("--simulate")) {
     // the same customer (has paid) asks for the code again: Stripe should refuse, and billing-checkout falls back
     let refused = null;
     try { await stripe("POST", "/checkout/sessions", { mode: "subscription", customer: customer.id, line_items: [{ price: plus.id, quantity: 1 }], discounts: [{ promotion_code: promo.id }], success_url: "https://getgradify.com/", cancel_url: "https://getgradify.com/" }); }
-    catch (e) { if (/prior transactions|first[- ]time|cannot be redeemed|not eligible/i.test(e.message)) refused = e.message; else throw e; }
+    // only Stripe's first-time-customer refusal counts; a server error or any other refusal fails the run
+    catch (e) { if (e.status >= 400 && e.status < 500 && /prior transactions|first[- ]time/i.test(e.message)) refused = e.message; else throw e; }
     check("A past customer is refused the code", refused, refused ? `Stripe: "${refused}"; billing-checkout then opens Checkout with Add promotion code` : "Stripe ACCEPTED it: first-time restriction isn't working");
     const fallback = await stripe("POST", "/checkout/sessions", { mode: "subscription", customer: customer.id, line_items: [{ price: plus.id, quantity: 1 }], allow_promotion_codes: "true", success_url: "https://getgradify.com/", cancel_url: "https://getgradify.com/" });
     check("…and the fallback Checkout opens at £10", fallback.amount_total === PLAN_PRICES.plus.month, gbp(fallback.amount_total));
