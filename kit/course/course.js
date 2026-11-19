@@ -2103,13 +2103,18 @@ export function mountCourse(root, cfg) {
   const labDecl = new Map(), labMetNow = new Map(), labTouched = new Set(), labOnOpen = new Map();
   const labDeclared = (x) => labDecl.get(x.id) || labDecl.set(x.id, new Map()).get(x.id);   // kept for the page's life
   const labMet = (x) => labMetNow.get(x.id) || labMetNow.set(x.id, new Set()).get(x.id);     // met this visit
-  // tries at each lab challenge in this sitting (cleared when the learner leaves the lab), so a success after a failure
-  // in the same sitting is a retry, not first-try evidence (kit/learning/topic-status.js counts first tries only)
-  const labTries = new Map();
+  // tries at each lab challenge in this sitting, so a success after a failure in the same sitting is a retry, not
+  // first-try evidence (kit/learning/topic-status.js counts first tries only). The sitting ends when the learner goes
+  // somewhere else, not when the page redraws in place (an account sync re-renders the same view). Only scored
+  // outcomes are tries: touching a challenge without finishing it ("attempted") isn't.
+  const labTries = new Map(); let labWhere = null;
   const labRecord = (x, task, label, outcome, extra = {}) => {
     const l = byId[x.evidence?.[task]]; if (!l) return null;
     const ok = outcome === "success" || outcome === "assisted_success";
-    const k = `${x.id}:${task}`, attempt = (labTries.get(k) || 0) + 1; labTries.set(k, attempt);
+    const where = location.hash.split("/").slice(0, 3).join("/");
+    if (where !== labWhere) { labTries.clear(); labWhere = where; }
+    const k = `${x.id}:${task}`, scored = outcome !== "attempted", attempt = (labTries.get(k) || 0) + (scored ? 1 : 0);
+    if (scored) labTries.set(k, attempt);
     record({ Q: { type: "lab", d: 2, objectives: [] }, key: `ix:${x.id}:${task}`, v: null, l }, "practice", x.id,
       { score: ok ? 1 : 0, correct: ok, method: "auto", status: "final" }, { attempt, response: { challenge: label || task, outcome, evidence: EXPLORE.has(`ix:${x.id}:${task}`) ? "exploration" : "practice", ...extra } });
   };
@@ -2153,7 +2158,7 @@ export function mountCourse(root, cfg) {
     return state ? { title: ixById[id].title, state } : null;
   };
   const mounted = new Set();
-  const unmountIx = () => { endTries(); for (const stop of mounted) { try { stop(); } catch { /* already gone */ } } mounted.clear(); labTries.clear(); labNow.clear(); labHelped.clear(); labShown.clear(); labFailed.clear(); labMetNow.clear(); labTouched.clear(); labLast = null; };
+  const unmountIx = () => { endTries(); for (const stop of mounted) { try { stop(); } catch { /* already gone */ } } mounted.clear(); labNow.clear(); labHelped.clear(); labShown.clear(); labFailed.clear(); labMetNow.clear(); labTouched.clear(); labLast = null; };
   async function mountIx(x, el) {
     try {
       const ctx = ixCtx(x), mod = await x.load(); el.innerHTML = ""; const stop = mod.mount(el, ctx); if (typeof stop === "function") mounted.add(stop);
