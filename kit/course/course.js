@@ -2111,7 +2111,7 @@ export function mountCourse(root, cfg) {
   const labRecord = (x, task, label, outcome, extra = {}) => {
     const l = byId[x.evidence?.[task]]; if (!l) return null;
     const ok = outcome === "success" || outcome === "assisted_success";
-    const attempt = nextLabTry(labTries, location.hash.split("/").slice(0, 3).join("/"), `${x.id}:${task}`, outcome);
+    const attempt = nextLabTry(labTries, (routedHash ?? location.hash).split("/").slice(0, 3).join("/"), `${x.id}:${task}`, outcome);
     record({ Q: { type: "lab", d: 2, objectives: [] }, key: `ix:${x.id}:${task}`, v: null, l }, "practice", x.id,
       { score: ok ? 1 : 0, correct: ok, method: "auto", status: "final" }, { attempt, response: { challenge: label || task, outcome, evidence: EXPLORE.has(`ix:${x.id}:${task}`) ? "exploration" : "practice", ...extra } });
   };
@@ -2310,8 +2310,9 @@ export function mountCourse(root, cfg) {
   let routeStop = null;   // a view's own clean-up (the target test's timer)
   let routedHash = null;
   async function route() {
-    // a real change of place ends a lab sitting; a redraw of the same place (an account sync) doesn't
-    if (location.hash !== routedHash) { routedHash = location.hash; labLeave(labTries); }
+    // a real change of place ends a lab sitting; a redraw of the same place (an account sync) doesn't. A try still
+    // open when the learner leaves is recorded first, against the place they're leaving and in that sitting
+    if (location.hash !== routedHash) { endTries(); routedHash = location.hash; labLeave(labTries); }
     unmountIx();
     lt.stop();
     lessonRail = null; readStop?.(); routeStop?.(); routeStop = null;
