@@ -23,6 +23,20 @@ safe route where they're unclear.
 | 7 | r/GCSE | GCSE students (wary of paid apps) | Modmail: reddit.com/message/compose?to=/r/GCSE | to send | Message R1, free-first |
 | 8 | r/GetStudying | Study habits, global | Modmail: reddit.com/message/compose?to=/r/GetStudying | to send | Message R1 |
 
+## Tracked link for each community (use only this one there)
+
+| Community | Link |
+|---|---|
+| Revision Server | https://getgradify.com/pricing.html?offer=GRADIFY48&utm_source=discord_revision_server&utm_medium=community&utm_campaign=pro_launch |
+| Blair's Brainiacs | https://getgradify.com/pricing.html?offer=GRADIFY48&utm_source=discord_blairs_brainiacs&utm_medium=community&utm_campaign=pro_launch |
+| The Resit Room | https://getgradify.com/pricing.html?offer=GRADIFY48&utm_source=discord_resit_room&utm_medium=community&utm_campaign=pro_launch |
+| Study With Me | https://getgradify.com/pricing.html?offer=GRADIFY48&utm_source=discord_study_with_me&utm_medium=community&utm_campaign=pro_launch |
+| r/6thForm | https://getgradify.com/pricing.html?offer=GRADIFY48&utm_source=reddit_6thform&utm_medium=community&utm_campaign=pro_launch |
+| r/UniUK | https://getgradify.com/pricing.html?offer=GRADIFY48&utm_source=reddit_uniuk&utm_medium=community&utm_campaign=pro_launch |
+| r/GCSE | https://getgradify.com/pricing.html?offer=GRADIFY48&utm_source=reddit_gcse&utm_medium=community&utm_campaign=pro_launch |
+| r/GetStudying | https://getgradify.com/pricing.html?offer=GRADIFY48&utm_source=reddit_getstudying&utm_medium=community&utm_campaign=pro_launch |
+| r/SideProject | https://getgradify.com/pricing.html?offer=GRADIFY48&utm_source=reddit_sideproject&utm_medium=community&utm_campaign=pro_launch |
+
 ## B. Students' unions: official advertising routes (UK university students)
 
 | # | Organisation | Audience (their claim) | Route | Source | Status |
@@ -65,6 +79,31 @@ inboxes are for running those jobs (see COMMUNITY-POSTS.md).
 **Still to research (next batch):** course societies (via each SU's society directory: check the society's own
 rules on external resources), sixth-form and college student unions, and UK study creators (business email on their
 own YouTube "About" page or website only).
+
+## First five students' union enquiries (send these first)
+
+Chosen for a direct, published route and UK undergraduate reach. Rates are only what the union itself has published;
+ask for the current rate card.
+
+| Union | Send to | Published cost | Source |
+|---|---|---|---|
+| Bournemouth SU (SUBU) | `susales@bournemouth.ac.uk` (named in its media pack) | Solus student email £375 per send to 14,000 to 15,000 students (2024-25 pack); a triple (shared) email is cheaper | https://www.subu.org.uk/advertise/mediapack/ |
+| University of Plymouth SU (UPSU) | `sales@upsu.com` | Not published: ask | https://upsu.com/advertise |
+| Edge Hill SU | `SUmediasales@edgehill.ac.uk` | Not published: ask | https://www.edgehillsu.org.uk/advertise |
+| Nottingham Trent SU | Email on its advertise page | Not published: ask (claims reach of 14,000) | https://www.trentstudents.org/about-us/advertise-with-us |
+| King's College London SU | Contact on its advertise page | Not published: ask (50,000+ members) | https://kclsu.org/about/advertise/ |
+
+Ask each for: the all-student email (solus or shared), digital/social options, exam-season timing, and any rules for
+education products. Paid email to a union's own opted-in list is the union's audience, not a list you hold.
+
+## Next batch (started; research continues)
+
+| Organisation | Type | Route | Source | Status |
+|---|---|---|---|---|
+| Blackpool Sixth (sixth form college) student union | Sixth form students | `student.union@blackpoolsixth.ac.uk` **verified page** | https://www.blackpoolsixth.ac.uk/current-students/student-union/ | to send (C1-style, ask if useful to students) |
+| Leeds City College Students' Union (serves Leeds Sixth Form College) | Sixth form and college students | Contact via college enquiries **page found** | https://leedssixthform.ac.uk/?p=4658 | find route |
+| Course societies (medicine, law, sciences) | University students by subject | Via each SU's society directory; check the society is the right body to contact | per SU | to research |
+| UK study creators | GCSE, A-level, university | Business email on the creator's own YouTube "About" page or website only | per creator | to research |
 
 ## Messages (adapt the bracketed parts to each one)
 
