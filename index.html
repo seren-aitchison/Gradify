@@ -38,6 +38,7 @@
   <script type="module" src="kit/lifeos/os.js"></script>
   <script type="module" src="assets/features.js"></script>
   <script type="module" src="assets/pro.js"></script>
+  <script type="module">import { mountContinue } from "./kit/core/continue.js"; mountContinue(document.getElementById("continue"));</script>
 </head>
 <body>
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
@@ -94,6 +95,8 @@
         <figcaption>A real study pack, made from the sample notes in the app.</figcaption>
       </figure>
     </section>
+    <!-- Continue learning: the last lessons opened in any Gradify course on this device (kit/core/continue.js) -->
+    <section class="continue-strip" id="continue" hidden></section>
 
     <!-- How Gradify works -->
     <section class="how" id="how" aria-labelledby="how-title">

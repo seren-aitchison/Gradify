@@ -42,6 +42,10 @@ export function mergeProgress(local = {}, cloud = {}) {
     // lesson time (kit/course/lesson-time.js): the larger record wins, so copies merged again and again never double count
     time: union(local.time, cloud.time, (x, y) => ({ s: Math.max(x.s || 0, y.s || 0), v: Math.max(x.v || 0, y.v || 0), depth: Math.max(x.depth || 0, y.depth || 0), first: Math.min(x.first || Infinity, y.first || Infinity), last: Math.max(x.last || 0, y.last || 0) })),
     mocks,
+    // bookmarks: + time when added, − time when removed; the latest change wins, so a removal isn't undone by the other copy
+    marks: union(local.marks, cloud.marks, (x, y) => (Math.abs(y) > Math.abs(x) ? y : x)),
+    // recently viewed lessons: newest visit to each, newest first
+    recent: dedupe([...(local.recent || []), ...(cloud.recent || [])].sort((a, b) => b.t - a.t), (r) => r.id).slice(0, 20),
     log: dedupe([...(local.log || []), ...(cloud.log || [])], (e) => `${e.t}|${e.k}|${e.id}`).sort((a, b) => a.t - b.t),
     goal: newer.goal ?? local.goal, path: newer.path ?? null,
     open: newer.open || [], closed: newer.closed || [],

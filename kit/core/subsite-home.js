@@ -8,6 +8,7 @@ import { modelOf } from "../models/index.js";
 import { applyPrefs } from "../data/profile.js";
 import { trackView } from "./analytics.js";
 import { hydrate as glassIcons, cluster as glassCluster } from "./glass-icons.js";
+import { mountContinue } from "./continue.js";
 applyPrefs();
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
@@ -34,6 +35,8 @@ export function renderHome(el, siteName) {
   statusNotice(site);
 
   el.innerHTML = [
+    // where the learner left off in this site's courses (kit/core/continue.js); hidden until they've started one
+    `<section class="sm-continue" hidden></section>`,
     // the subject's 3D icon set, floating (kit/core/glass-icons.js)
     `<section class="sm-iconbar" aria-hidden="true"><div class="g3d-cluster sm-cluster"></div></section>`,
     section("how", fill(k.stepsTitle), "", `<ol class="sm-steps">${k.steps.map(([t, d], i) => `<li class="glass"><em>${i + 1}</em><b>${fill(t)}</b><p>${fill(d)}</p></li>`).join("")}</ol>`),
@@ -60,6 +63,7 @@ export function renderHome(el, siteName) {
 
     `<section class="sm-cta glass"><h2>${fill(k.ctaTitle)}</h2><p>${fill(k.ctaSub)}</p><div class="sub-ctas"><a class="btn btn-light lg" href="app.html"><span>Start free</span> <span aria-hidden="true">→</span></a><a class="btn btn-ghost lg" href="/"><span>Explore Gradify</span></a></div></section>`,
   ].join("");
+  mountContinue(el.querySelector(".sm-continue"), { site: site.n });
   glassIcons(el, site.n).catch(() => {});
   glassCluster(el.querySelector(".sm-cluster"), site.n, { count: 10, size: 72 }).catch(() => {});
   el.style.setProperty("--accent", accent);
