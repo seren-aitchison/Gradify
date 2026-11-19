@@ -175,10 +175,18 @@ const money = (pence) => `£${(pence / 100).toFixed(pence % 100 ? 2 : 0)}`;
  * renews automatically, at what price, and how to cancel. From the real price and, when applied, the coupon's amount off
  * for the first month ("once" coupons only; any other discount gets the plain wording).
  */
-export function renewalNote(unitAmount, coupon = null) {
-  const first = coupon?.duration === "once" && coupon.amount_off > 0 && coupon.amount_off < unitAmount ? unitAmount - coupon.amount_off : null;
-  const start = first != null ? `${money(first)} for your first month, then ${money(unitAmount)} a month` : `${money(unitAmount)} a month`;
-  return `A monthly membership: ${start} (VAT included), taken automatically each month until you cancel. Cancel any time from Manage billing on your Gradify Account page.`;
+export function renewalNote(unitAmount, coupon = null, { codeEntry = false } = {}) {
+  const cancel = "Cancel any time from Manage billing on your Gradify Account page.";
+  if (coupon) {
+    // a one-off amount off: the exact first payment and what follows
+    if (coupon.duration === "once" && coupon.amount_off > 0 && coupon.amount_off < unitAmount)
+      return `A monthly membership: ${money(unitAmount - coupon.amount_off)} for your first month, then ${money(unitAmount)} a month (VAT included), taken automatically each month until you cancel. ${cancel}`;
+    // any other discount: no amount this line can't be sure of; Checkout shows the schedule
+    return `A monthly membership, taken automatically each month at the price shown above until you cancel. ${cancel}`;
+  }
+  // the buyer may still add a code here, so the first payment can differ from the monthly price
+  const after = codeEntry ? " once any discount shown above has ended" : "";
+  return `A monthly membership: ${money(unitAmount)} a month (VAT included)${after}, taken automatically each month until you cancel. ${cancel}`;
 }
 
 export function safeBack(from, fallback = "/pricing.html") {

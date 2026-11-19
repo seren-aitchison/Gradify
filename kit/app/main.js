@@ -386,8 +386,9 @@ function wireOffer(root) {
     catch (err) { b.disabled = false; label.textContent = was; toast(esc(err.message)); }
   }));
   root.querySelector("[data-dismiss-offer]")?.addEventListener("click", (e) => {
-    dismissOffer();
-    if (signedIn()) saveLearner(store, offerForAccount({ ...storedOffer(), dismissed: true })).catch(() => {});
+    const shown = storedOffer(Date.now(), learnerOf(profile));   // from this browser or, on another device, the account
+    dismissOffer(shown);
+    if (signedIn() && shown) saveLearner(store, offerForAccount({ ...shown, dismissed: true })).then(async () => { profile = await store.getProfile(); }).catch(() => {});
     e.currentTarget.closest(".offer-card")?.remove();
     toast("Hidden. The offer is still on the Gradify Pro page until it ends.");
   });
@@ -1666,7 +1667,8 @@ async function start() {
   markLocks();
   syncMirror(profile);   // the account's settings, for every site in this browser
   // the launch offer follows the account to the learner's other devices
-  if (user) { const o = storedOffer(Date.now(), learnerOf(profile)); if (o && !learnerOf(profile).offer) saveLearner(store, offerForAccount(o)).catch(() => {}); }
+  // (awaited, once per account, so it can't race a set-up or settings save made straight after)
+  if (user) { const o = storedOffer(Date.now(), learnerOf(profile)); if (o && !learnerOf(profile).offer) { await saveLearner(store, offerForAccount(o)).catch(() => {}); profile = await store.getProfile(); } }
   // arriving from a site card on getgradify.com: "Study MedGradify in Gradify"
   const fromSite = SITE ? null : new URLSearchParams(location.search).get("site");
   if (fromSite && SITES.some((x) => x.n === fromSite)) {

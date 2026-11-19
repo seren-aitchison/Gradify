@@ -85,8 +85,28 @@ test("Checkout tells the buyer it's a monthly membership that renews automatical
     "A monthly membership: £5 for your first month, then £10 a month (VAT included), taken automatically each month until you cancel. Cancel any time from Manage billing on your Gradify Account page.");
   assert.match(renewalNote(1000), /^A monthly membership: £10 a month \(VAT included\), taken automatically/);
   assert.match(renewalNote(1500), /£15 a month/);
-  // anything but a one-off amount off gets the plain wording, never a wrong first-month price
-  assert.match(renewalNote(1000, { duration: "forever", amount_off: 500 }), /^A monthly membership: £10 a month/);
-  assert.match(renewalNote(1000, { duration: "once", percent_off: 50 }), /^A monthly membership: £10 a month/);
+  // any other discount: no amount the line can't be sure of (a "forever" £5 off makes every month £5, not £10)
+  for (const c of [{ duration: "forever", amount_off: 500 }, { duration: "once", percent_off: 50 }, { duration: "repeating", amount_off: 500 }]) {
+    const note = renewalNote(1000, c);
+    assert.doesNotMatch(note, /£/, JSON.stringify(c));
+    assert.match(note, /^A monthly membership, taken automatically each month at the price shown above/);
+  }
+  // Checkout with the code field: the buyer may still add GRADIFY48, so the £10 is what follows any discount
+  assert.equal(renewalNote(1000, null, { codeEntry: true }),
+    "A monthly membership: £10 a month (VAT included) once any discount shown above has ended, taken automatically each month until you cancel. Cancel any time from Manage billing on your Gradify Account page.");
   assert.ok(renewalNote(1000, { duration: "once", amount_off: 500 }).length <= 1200, "Stripe's custom_text limit");
+});
+
+test("dismissing an offer that only the account knows (another device) keeps it, marked dismissed", () => {
+  const fromAccount = { code: "GRADIFY48", at: "2026-11-19T10:00:00Z", dismissed: false };
+  dismissOffer(fromAccount);   // nothing in this browser yet
+  assert.equal(offerToShow({ now: BEFORE, learner: { offer: fromAccount } }), null, "hidden here");
+  const kept = storedOffer(BEFORE, { offer: fromAccount });
+  assert.deepEqual(offerForAccount(kept), { offer: { code: "GRADIFY48", at: "2026-11-19T10:00:00Z", dismissed: true } }, "what's saved back keeps the code");
+});
+
+test("billing-checkout opens monthly checkouts only", async () => {
+  const src = await (await import("node:fs/promises")).readFile(new URL("../supabase/functions/billing-checkout/index.ts", import.meta.url), "utf8");
+  assert.match(src, /\(body\.interval \?\? "month"\) !== "month"\) return json\(req, \{ error: "Choose monthly billing\." \}, 400\)/);
+  assert.match(src, /priceFor\(plan, "month", env\)/);
 });

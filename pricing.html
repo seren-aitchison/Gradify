@@ -185,10 +185,10 @@
     const li = (ic, t, sub) => `<li>${ic}<span>${t}${sub ? `<small>${sub}</small>` : ""}</span></li>`;
     const tester = new URLSearchParams(location.search).has("tester");
     const canBuy = { plus: PLUS_ON_SALE || tester, pro: PRO_ON_SALE || tester };
-    let store = null, sub = null, signedIn = false;
+    let store = null, sub = null, signedIn = false, learner = null;
     // the Pro launch offer, from the campaign link or kept from an earlier visit (kit/data/offer.js)
     captureOffer();
-    const offer = () => offerToShow({ plan: planOf(sub), includeDismissed: true });
+    const offer = () => offerToShow({ plan: planOf(sub), learner, includeDismissed: true });
 
     // ---------- the parts that don't depend on the learner ----------
     $("#plus-amt").textContent = pounds(PLAN_PRICES.plus.month);
@@ -291,6 +291,8 @@
       signedIn = Boolean(data.session);
       $("#acct-link").textContent = signedIn ? "Account" : "Sign in";
       if (signedIn) sub = await mySubscription(store).catch(() => null);
+      // an offer kept in the account (from another browser or device): the learner's own profile row
+      if (signedIn) learner = (await Promise.resolve(client.from("profiles").select("learner").maybeSingle()).catch(() => ({ data: null }))).data?.learner || null;
     }
 
     // Back from Stripe Checkout. The webhook usually lands within a few seconds; until then the row still says Free.

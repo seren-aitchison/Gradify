@@ -45,7 +45,9 @@ Deno.serve(async (req) => {
       return json(req, { url: portal.url, alreadySubscribed: current });
     }
     if (!mayBuy(user.email, env, plan)) return json(req, { error: plan === "pro" ? "Gradify Ultra opens when Gradify AI launches. Gradify Pro has everything else." : "Gradify Pro isn't on sale yet.", notOnSale: true }, 403);
-    const price = priceFor(plan, body.interval ?? "month", env);
+    // monthly only: the plans and the renewal note are monthly (a yearly price secret must never open a yearly checkout)
+    if ((body.interval ?? "month") !== "month") return json(req, { error: "Choose monthly billing." }, 400);
+    const price = priceFor(plan, "month", env);
     let customer = sub?.stripe_customer_id as string | undefined;
     if (!customer) {
       const c = await stripe(secret, "POST", "/customers", { email: user.email, metadata: { gradify_user_id: user.id } });
@@ -74,7 +76,7 @@ Deno.serve(async (req) => {
       integration_identifier: "hosted_web_0001",
       origin_context: "web",
       // what the buyer agrees to, beside the pay button: monthly, renews automatically, the price after any first-month offer
-      custom_text: { submit: { message: renewalNote(unit, coupon) } },
+      custom_text: { submit: { message: renewalNote(unit, coupon as Record<string, unknown> | null, { codeEntry: Boolean(discount.allow_promotion_codes) }) } },
       success_url: returnUrl(SITE, back, { checkout: "success" }),
       cancel_url: returnUrl(SITE, back, { checkout: "cancelled" }),
     });

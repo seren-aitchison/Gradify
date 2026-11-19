@@ -17,8 +17,10 @@ export const OFFER = Object.freeze({
 });
 
 const KEY = "gradify.offer";
-const read = () => { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { return null; } };
-const write = (v) => { try { v ? localStorage.setItem(KEY, JSON.stringify(v)) : localStorage.removeItem(KEY); } catch { /* storage blocked: the offer lasts this page only */ } };
+// the offer for this page when the browser blocks storage (used only once a storage call has failed)
+let memory = null, blocked = false;
+const read = () => { if (blocked) return memory; try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { blocked = true; return memory; } };
+const write = (v) => { memory = v || null; try { v ? localStorage.setItem(KEY, JSON.stringify(v)) : localStorage.removeItem(KEY); } catch { blocked = true; } };
 
 export const offerLive = (now = Date.now()) => now <= new Date(OFFER.ends).getTime();
 
@@ -51,7 +53,8 @@ export function offerToShow({ plan = "free", learner = null, now = Date.now(), i
   return includeDismissed || !o.dismissed ? o : null;
 }
 
-export function dismissOffer() { const o = read(); if (o) write({ ...o, dismissed: true }); }
+/** Hide the offer card. `known` is the offer as shown (it may come only from the account, on another device). */
+export function dismissOffer(known = null) { const o = read() || known; if (o) write({ ...o, dismissed: true }); }
 export function forgetOffer() { write(null); }
 /** The fields to save into profiles.learner so the offer follows the learner's account to their other devices. */
 export const offerForAccount = (o) => (o ? { offer: { code: o.code, at: o.at, dismissed: Boolean(o.dismissed) } } : {});

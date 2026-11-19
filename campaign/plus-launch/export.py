@@ -34,6 +34,8 @@ if not DISCORD_URL:
 html, txt, sig = fill(html), fill(txt), fill(sig)
 body_txt = txt.split("----------------------------------------------------------------------\n", 1)[1].lstrip("\n")
 
+# refuse before writing anything
+assert "{$unsubscribe}" in html and "{$unsubscribe}" in body_txt, "the MailerLite unsubscribe link is missing"
 os.makedirs(OUT, exist_ok=True)
 open(os.path.join(OUT, "gradify-plus-launch.html"), "w").write(html)
 open(os.path.join(OUT, "gradify-plus-launch.txt"), "w").write(body_txt)
@@ -48,5 +50,4 @@ m.set_content(body_txt)
 m.add_alternative(html, subtype="html")
 open(os.path.join(OUT, "gradify-plus-launch-test.eml"), "w").write(m.as_string())
 left = sorted(set(re.findall(r"\{\{([A-Z_]+)\}\}", html + body_txt + sig)))
-assert "{$unsubscribe}" in html and "{$unsubscribe}" in body_txt, "the MailerLite unsubscribe link is missing"
 print("still to fill:", ", ".join(left) or "nothing")
