@@ -86,10 +86,14 @@ function serve(dir) {
         await step((t) => { const g = [...document.querySelectorAll(".co-labstage, .co-ix")].find((e) => e.gradifyIx).gradifyIx; g.ctx.focus?.(null); g.ctx.fail(t, "check"); g.ctx.fail(t, "check", { revealed: true }); g.ctx.complete(t, "check"); });
         await go(p, "#/practice", 400); await go(p, `#/practice/${x.id}`, 1200);
         await step((t) => { const g = [...document.querySelectorAll(".co-labstage, .co-ix")].find((e) => e.gradifyIx).gradifyIx; g.touch(); g.ctx.complete(t, "check"); });
-        const recs = await p.evaluate((t) => { const g = [...document.querySelectorAll(".co-labstage, .co-ix")].find((e) => e.gradifyIx).gradifyIx; return g.attempts().filter((a) => a.question?.id === `ix:${g.id}:${t}`).map((a) => ({ o: a.response?.outcome, l: a.lesson })); }, T);
+        const recs = await p.evaluate((t) => { const g = [...document.querySelectorAll(".co-labstage, .co-ix")].find((e) => e.gradifyIx).gradifyIx; return g.attempts().filter((a) => a.question?.id === `ix:${g.id}:${t}`).map((a) => ({ o: a.response?.outcome, l: a.lesson, n: a.attempt })); }, T);
         const want = [x.evidence || cfg.evidence?.[x.id] ? "attempted" : null, "unsuccessful", "assisted_success", "success"].filter(Boolean);
-        const got = recs.map((r) => r.o), lessonsOk = recs.every((r) => r.l === lesson);
-        if (JSON.stringify(got) === JSON.stringify(want) && lessonsOk) results[slug].outcomes++; else fail(`outcomes ${JSON.stringify(got)} (expected ${JSON.stringify(want)})${lessonsOk ? "" : `, lesson ${recs.map((r) => r.l)} not ${lesson}`}`);
+        // try numbers (kit/course/lab-state.js): touching isn't a try (stored as 1, the schema's floor, and never evidence),
+        // so the wrong answer is still the first; the assisted success in the same sitting is a retry; the success after
+        // leaving and coming back starts a new sitting
+        const TRIES = { attempted: 1, unsuccessful: 1, assisted_success: 2, success: 1 };
+        const got = recs.map((r) => r.o), lessonsOk = recs.every((r) => r.l === lesson), triesOk = recs.every((r) => r.n === TRIES[r.o]);
+        if (JSON.stringify(got) === JSON.stringify(want) && lessonsOk && triesOk) results[slug].outcomes++; else fail(`outcomes ${JSON.stringify(got)} (expected ${JSON.stringify(want)})${lessonsOk ? "" : `, lesson ${recs.map((r) => r.l)} not ${lesson}`}${triesOk ? "" : `, tries ${JSON.stringify(recs.map((r) => r.n))} (expected ${JSON.stringify(recs.map((r) => TRIES[r.o]))})`}`);
       }
       // reachable from its first lesson
       await go(p, `#/lesson/${x.lessons[0]}`, 1200);
