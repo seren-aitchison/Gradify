@@ -1313,6 +1313,17 @@ html.gd-vt::view-transition-old(root), html.gd-vt::view-transition-new(root) { a
 ::view-transition-group(gd-active) { animation-duration: .28s; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
 ::view-transition-old(gd-active), ::view-transition-new(gd-active) { animation-duration: .22s; height: 100%; object-fit: none; object-position: top; }
 
+/* what the learner has practised on this card (remembered on this device) */
+.gd-done { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 99px; font: 700 11.5px/1.4 var(--sans, inherit); letter-spacing: 0; text-transform: none;
+  color: color-mix(in oklab, #16a34a 65%, var(--gd-ink)); background: color-mix(in srgb, #16a34a 13%, transparent); border: 1px solid color-mix(in srgb, #16a34a 45%, transparent); }
+.gd-done.gd-star { color: color-mix(in oklab, #d97706 60%, var(--gd-ink)); background: color-mix(in srgb, #f59e0b 15%, transparent); border-color: color-mix(in srgb, #f59e0b 55%, transparent); }
+.gd-head .gd-done { margin-left: auto; } .gd-head .gd-done + .gd-num { margin-left: 0; }
+.gd-mhead .gd-done + .gd-mbtn { margin-left: 0; } .gd-mhead .gd-done { margin-left: auto; }
+.gd-done.gd-fresh { animation: gd-pop .5s cubic-bezier(.2, 1.4, .4, 1); }
+@keyframes gd-pop { from { transform: scale(.4); opacity: 0; } }
+.gd-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .gd-done.gd-fresh { animation: none; } }
+
 /* Put in order: the place to fill next is outlined; filled places lock in green */
 .gd.ordering :is(.gd-flow, .gd-time) > li.gd-next .gd-item { box-shadow: inset 4px 0 0 var(--c), 0 0 0 2px var(--a); }
 .gd.ordering :is(.gd-flow, .gd-time) > li.gd-ok .gd-item { box-shadow: inset 4px 0 0 #16a34a, 0 0 0 1.5px #16a34a; }

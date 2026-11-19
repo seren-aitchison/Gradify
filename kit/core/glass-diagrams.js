@@ -535,7 +535,7 @@ const tipOf = (d) => (d.kind === "flow" && d.ex ? "Work it through yourself: ste
  *   quiz     true: start with the answers covered, for recall (the lesson's Recap)
  *   n, of    its place among the lesson's diagrams ("2 of 5")
  */
-export function glassDiagram(d, { size = "md", seed = d?.title, caption = true, quiz = false, n = 0, of = 0, id = "" } = {}) {
+export function glassDiagram(d, { size = "md", seed = d?.title, caption = true, quiz = false, n = 0, of = 0, id = "", key = "" } = {}) {
   if (!d) return "";
   const h = hash(seed || d.kind), [a, b] = PAIRS[h % PAIRS.length], turn = ((h >> 4) % 2 ? 1 : -1) * (0.8 + ((h >> 6) % 3) * 0.4);
   const body = cardBody(d), full = caption && size !== "sm", kind = kindName(d);
@@ -549,7 +549,7 @@ export function glassDiagram(d, { size = "md", seed = d?.title, caption = true, 
   const foot = full ? `<div class="gd-foot"><p class="gd-tip">${esc(tipOf(d))}${fl ? ` <span class="gd-cue">First letters: <b>${esc(fl)}</b></span>` : ""}</p>
       <div class="gd-acts">${modes.map(btn).join("")}<button type="button" class="gd-btn gd-ghost" data-gd-zoom aria-label="Open this diagram full size">Expand</button></div>
       <p class="gd-score" aria-live="polite">${covered ? `0 of ${answers} revealed` : ""}</p></div>` : "";
-  let html = `<figure class="gd gd-${size}${covered ? " quiz" : ""}"${covered ? ' data-mode="quiz"' : ""}${id ? ` id="${esc(id)}"` : ""} data-kind="${d.kind}" style="--a:${a};--b:${b};--tw:${turn.toFixed(1)}deg">
+  let html = `<figure class="gd gd-${size}${covered ? " quiz" : ""}"${covered ? ' data-mode="quiz"' : ""}${id ? ` id="${esc(id)}"` : ""}${key && full ? ` data-gd-key="${esc(key)}"` : ""} data-kind="${d.kind}" style="--a:${a};--b:${b};--tw:${turn.toFixed(1)}deg">
     <span class="gd-back" aria-hidden="true"></span><div class="gd-card">${head}<div class="gd-body">${body}</div>${foot}</div></figure>`;
   // covered from the start: each answer is a button until it's revealed
   if (covered) html = html.replace(/class="([^"]*\bgd-a\b[^"]*)"/g, `role="button" tabindex="0" aria-label="Hidden answer: reveal" class="$1"`);
@@ -646,18 +646,19 @@ function gapLine(raw, bolds) {
 }
 const MINI_ICON = { numbers: '<path d="M5 9h14M5 15h14M10 4 8 20M16 4l-2 16"/>', check: ICON.recall, gap: '<path d="M4 7h4M16 7h4M4 17h16M10 4.5h4v5h-4z"/>' };
 /** A small card, as HTML: always starts covered, so it asks before it tells. */
-export function miniCard(m) {
+export function miniCard(m, { key = "" } = {}) {
   if (!m) return "";
+  const k = key ? ` data-gd-key="${esc(key)}"` : "";
   const h = hash(m.q || m.title || m.kind), [a, b] = PAIRS[h % PAIRS.length], c = INK[h % INK.length];
   const btn = (label) => `role="button" tabindex="0" aria-label="${label}"`;
   const head = (name, extra = "") => `<figcaption class="gd-mhead"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${MINI_ICON[m.kind]}</svg><span>${name}</span>${extra}</figcaption>`;
-  if (m.kind === "gap") return `<figure class="gd gd-mini quiz" data-mode="quiz" data-kind="gap" style="--a:${a};--b:${b};--c:${c}">${head("Fill the gap")}
+  if (m.kind === "gap") return `<figure class="gd gd-mini quiz" data-mode="quiz" data-kind="gap"${k} style="--a:${a};--b:${b};--c:${c}">${head("Fill the gap")}
     <ul class="gd-nums gd-gaps">${m.items.map((g, i) => `<li style="--c:${INK[(h + i) % INK.length]}"><p>${esc(g.pre)} <span class="gd-a gd-numa gd-gapa" ${btn("Hidden word: reveal")}>${esc(g.ans)}</span> ${esc(g.post)}</p>
       <span class="gd-opts" role="group" aria-label="Which word fits the gap?">${g.choices.map((t) => `<button type="button" class="gd-chip" data-gd-fill="${t === g.ans ? 1 : 0}">${esc(t)}</button>`).join("")}</span></li>`).join("")}</ul>
     <p class="gd-mhint">Which word fits? Tap one, or tap the gap to see it.</p></figure>`;
-  if (m.kind === "check") return `<figure class="gd gd-mini quiz" data-mode="quiz" data-kind="check" style="--a:${a};--b:${b};--c:${c}">${head("Quick check")}
+  if (m.kind === "check") return `<figure class="gd gd-mini quiz" data-mode="quiz" data-kind="check"${k} style="--a:${a};--b:${b};--c:${c}">${head("Quick check")}
     <p class="gd-mq">${esc(m.q)}</p><p class="gd-a gd-ma" ${btn("Hidden answer: reveal")}>${esc(m.a)}</p><p class="gd-mhint">Answer it in your head, then tap the band.</p></figure>`;
-  return `<figure class="gd gd-mini quiz" data-mode="quiz" data-kind="numbers" style="--a:${a};--b:${b};--c:${c}">${head("Numbers to know", `<button type="button" class="gd-mbtn" data-gd-mode="quiz" aria-pressed="true">Show all</button>`)}
+  return `<figure class="gd gd-mini quiz" data-mode="quiz" data-kind="numbers"${k} style="--a:${a};--b:${b};--c:${c}">${head("Numbers to know", `<button type="button" class="gd-mbtn" data-gd-mode="quiz" aria-pressed="true">Show all</button>`)}
     <ul class="gd-nums">${m.items.map((l, i) => `<li style="--c:${INK[(h + i) % INK.length]}">${esc(l.pre)} <span class="gd-a gd-numa" ${btn("Hidden number: reveal")}>${esc(l.n)}</span> ${esc(l.post)}${/^\d+(\.\d+)?%$/.test(l.n) && parseFloat(l.n) <= 100 ? `<span class="gd-bar" aria-hidden="true"><i style="width:${parseFloat(l.n)}%"></i></span>` : ""}</li>`).join("")}</ul>
     <p class="gd-mhint">What's each number? Say it, then tap to check.</p></figure>`;
 }
@@ -673,6 +674,30 @@ function score(fig) {
   if (fig.dataset.mode !== "quiz") return;
   const all = fig.querySelectorAll(".gd-a").length, seen = fig.querySelectorAll(".gd-a.seen").length;
   say(fig, seen < all ? `${seen} of ${all} revealed` : `All ${all} revealed. How many did you know?`);
+  if (all && seen === all) done(fig, "quiz", fig.dataset.kind === "gap" && [...fig.querySelectorAll(".gd-gaps li")].every((li) => li.dataset.clean));
+}
+// ---------- what the learner has practised, remembered on this device: a badge on each card they've worked through ----------
+// { "<course>:<lesson>:<card>": { "<mode>": { clean, n, t } } }; clean: got it all right without a wrong try
+const STORE = "gradify:diagrams:v1";
+const loadAll = () => { try { return JSON.parse(localStorage.getItem(STORE) || "{}") || {}; } catch { return {}; } };
+function done(fig, mode, clean) {
+  const key = fig.dataset.gdKey; if (!key) return;
+  try {
+    const all = loadAll(), r = (all[key] ||= {}), was = r[mode];
+    r[mode] = { clean: Boolean(clean || was?.clean), n: (was?.n || 0) + 1, t: Date.now() };
+    localStorage.setItem(STORE, JSON.stringify(all));
+  } catch { /* private window or storage off: the badge just won't stay */ }
+  showBadge(fig, true);
+}
+const VERB = { quiz: "recalled", step: "stepped through", order: "put in order", match: "matched", pick: "answered", rate: "rated" };
+function showBadge(fig, fresh = false) {
+  const key = fig.dataset.gdKey, head = fig.querySelector(".gd-head, .gd-mhead"); if (!key || !head) return;
+  const r = loadAll()[key]; fig.querySelector(".gd-done")?.remove(); if (!r) return;
+  const modes = Object.keys(r), clean = modes.some((m) => r[m].clean);
+  const what = modes.map((m) => VERB[m] || m).join(", ");
+  const el = `<span class="gd-done${clean ? " gd-star" : ""}${fresh ? " gd-fresh" : ""}" title="${esc(`You've ${what}${clean ? ", with no wrong tries" : ""}`)}"><span aria-hidden="true">${clean ? "★" : "✓"}</span> ${clean ? "First time" : "Practised"}<span class="gd-sr">: you've ${esc(what)}</span></span>`;
+  const num = head.querySelector(".gd-num, .gd-mbtn");
+  num ? num.insertAdjacentHTML("beforebegin", el) : head.insertAdjacentHTML("beforeend", el);
 }
 const MODES = {
   quiz: {
@@ -765,6 +790,7 @@ function show(fig, i) {
   const txt = k && sub ? `${k.textContent.trim()}: ${sub.textContent.trim()}` : (ss[i].querySelector(".gd-item, div") || ss[i]).textContent.trim();
   fig.querySelector(".gd-say").textContent = `${cyc ? "Stage" : "Step"} ${i + 1} of ${n}: ${txt}`;
   const next = fig.querySelector("[data-gd-next]"), prev = fig.querySelector("[data-gd-prev]");
+  if (i === n - 1) done(fig, "step", false);
   next.textContent = cyc ? (i === n - 1 ? "Back to 1 ↻" : "Next →") : i === n - 1 ? "Start again" : `What's step ${i + 2}? →`;
   prev.disabled = !cyc && i === 0;
   ss[i].scrollIntoView?.({ block: "nearest", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
@@ -780,7 +806,7 @@ function orderTap(fig, chip) {
     fig.dataset.next = String(k + 1);
     const nx = items[k + 1], miss = Number(fig.dataset.miss);
     if (nx) { nx.classList.add("gd-next"); poolSay.textContent = tl ? `Yes. And in ${nx.querySelector(".gd-year")?.textContent}?` : `Yes. What comes next: step ${k + 2}?`; }
-    else poolSay.textContent = miss ? `All in order, with ${miss} wrong tr${miss > 1 ? "ies" : "y"}. Go through it once more later.` : "All in order, first time. You know this one.";
+    else { done(fig, "order", !miss); poolSay.textContent = miss ? `All in order, with ${miss} wrong tr${miss > 1 ? "ies" : "y"}. Go through it once more later.` : "All in order, first time. You know this one."; }
     say(fig, `${k + 1} of ${items.length} in place`);
     fig.querySelector(".gd-chip")?.focus({ preventScroll: true });
   } else {
@@ -800,9 +826,10 @@ function placeChip(fig, row) {
   const rows = fig.querySelectorAll("[data-gd-row]");
   if (chip.dataset.gdChip === row.dataset.i) {
     row.classList.add("gd-ok"); row.querySelector(".gd-a")?.classList.remove("gd-slot"); unButton(row); chip.remove();
-    const done = fig.querySelectorAll("[data-gd-row].gd-ok").length, miss = Number(fig.dataset.miss);
-    poolSay.textContent = done === rows.length ? (miss ? `All matched, with ${miss} wrong try${miss > 1 ? "s" : ""}. Try again later to get them first time.` : "All matched, first time. Well done.") : `Yes: that's ${cueOf(row)}. Pick the next meaning.`;
-    say(fig, `${done} of ${rows.length} matched`);
+    const placed = fig.querySelectorAll("[data-gd-row].gd-ok").length, miss = Number(fig.dataset.miss);
+    if (placed === rows.length) done(fig, "match", !miss);
+    poolSay.textContent = placed === rows.length ? (miss ? `All matched, with ${miss} wrong try${miss > 1 ? "s" : ""}. Try again later to get them first time.` : "All matched, first time. Well done.") : `Yes: that's ${cueOf(row)}. Pick the next meaning.`;
+    say(fig, `${placed} of ${rows.length} matched`);
     fig.querySelector(".gd-chip")?.focus({ preventScroll: true });
   } else {
     fig.dataset.miss = String(Number(fig.dataset.miss) + 1);
@@ -834,6 +861,10 @@ function zoom(fig) {
 }
 if (typeof document !== "undefined" && !globalThis.__gdWired) {
   globalThis.__gdWired = true;
+  // cards the learner has practised before get their badge as soon as they're on the page
+  const deco = (n) => { if (n.nodeType !== 1) return; if (n.matches(".gd[data-gd-key]")) showBadge(n); else n.querySelectorAll?.(".gd[data-gd-key]").forEach((f) => showBadge(f)); };
+  const watch = () => { deco(document.body); new MutationObserver((ms) => ms.forEach((m) => m.addedNodes.forEach(deco))).observe(document.body, { childList: true, subtree: true }); };
+  document.body ? watch() : addEventListener("DOMContentLoaded", watch, { once: true });
   document.addEventListener("click", (e) => {
     const t = e.target;
     if (!(t instanceof Element) || !t.closest(".gd, dialog.gd-zoom")) return;
@@ -846,7 +877,7 @@ if (typeof document !== "undefined" && !globalThis.__gdWired) {
     const fill = t.closest("[data-gd-fill]");
     if (fill) {
       const li = fill.closest("li"), gapEl = li.querySelector(".gd-a");
-      if (fill.dataset.gdFill === "1") { fill.classList.add("gd-ok"); li.querySelectorAll("[data-gd-fill]").forEach((b) => (b.disabled = true)); if (!gapEl.classList.contains("seen")) reveal(gapEl); }
+      if (fill.dataset.gdFill === "1") { if (!li.querySelector("[data-gd-fill].gd-no, [data-gd-fill]:disabled")) li.dataset.clean = "1"; fill.classList.add("gd-ok"); li.querySelectorAll("[data-gd-fill]").forEach((b) => (b.disabled = true)); if (!gapEl.classList.contains("seen")) reveal(gapEl); }
       else { flash(fill); fill.disabled = true; }
       return;
     }
@@ -860,6 +891,7 @@ if (typeof document !== "undefined" && !globalThis.__gdWired) {
       fig.querySelectorAll("[data-gd-opt]").forEach((o) => o.insertAdjacentHTML("beforeend", `<em>${o.dataset.gdOpt === "right" ? "✓ True" : "✗ The common mistake"}</em>`));
       fig.querySelector(".gd-pick .gd-say").textContent = ok ? "Yes, that's true. The other one is the mistake it's easy to make." : "No: that's the common mistake. The other one is what's true, and why.";
       say(fig, ok ? "Right first time." : "Worth another look later.");
+      done(fig, "pick", ok);
       return;
     }
     const r = t.closest("[data-gd-rate]");
@@ -869,8 +901,9 @@ if (typeof document !== "undefined" && !globalThis.__gdWired) {
       li.classList.add("rated");
       li.querySelectorAll("[data-gd-rate]").forEach((b) => { b.disabled = true; if (b.dataset.gdRate === li.dataset.status) b.classList.add("gd-ok"); else if (b === r) b.classList.add("gd-no"); });
       if (ok) fig.dataset.right = String(Number(fig.dataset.right) + 1);
-      const all = fig.querySelectorAll("li[data-status]").length, done = fig.querySelectorAll("li.rated").length;
-      say(fig, done < all ? `${ok ? "Right." : `It's ${li.dataset.status}.`} ${done} of ${all} rated` : `${fig.dataset.right} of ${all} right.`);
+      const all = fig.querySelectorAll("li[data-status]").length, rated = fig.querySelectorAll("li.rated").length;
+      say(fig, rated < all ? `${ok ? "Right." : `It's ${li.dataset.status}.`} ${rated} of ${all} rated` : `${fig.dataset.right} of ${all} right.`);
+      if (rated === all) done(fig, "rate", Number(fig.dataset.right) === all);
       li.parentElement.querySelector("li[data-status]:not(.rated) [data-gd-rate]")?.focus({ preventScroll: true });
       return;
     }

@@ -185,6 +185,10 @@ test("each kind of card has the ways to practise that suit it, and the small car
     }
   }
   assert.ok(seen >= 10, "lessons get small cards");
+  // a card in a lesson carries its key, so it can remember what's been practised on it; a small card does too
+  assert.match(glassDiagram({ kind: "key", title: "k", text: "an idea" }, { key: "med:u01-02:key-3" }), /data-gd-key="med:u01-02:key-3"/);
+  assert.doesNotMatch(glassDiagram({ kind: "key", title: "k", text: "an idea" }, { key: "x", size: "sm" }), /data-gd-key/, "not on a flashcard");
+  assert.match(miniCard({ kind: "check", q: "Why?", a: "Because." }, { key: "med:u01-02:check-4" }), /data-gd-key="med:u01-02:check-4"/);
   assert.ok(kinds.has("gap"), "some sections get a gap to fill");
 });
 

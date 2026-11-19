@@ -600,20 +600,21 @@ export function mountCourse(root, cfg) {
   // box at the top already says it. The ones that sum the lesson up (terms, summary, comparisons, case and drug
   // cards, evidence, recall) open its Recap instead, covered, so the Recap is a chance to recall rather than reread.
   const RECAP_KINDS = new Set(["terms", "summary", "compare", "case", "drug", "evidence", "recall"]);
-  const lessonCards = (N) => {
+  // each card's key (course, lesson, card) is how it remembers, on this device, what the learner has practised on it
+  const lessonCards = (N, lid) => {
     const ds = diagramsFor(N, { skip: ["path"] });
-    return ds.map((d, k) => ({ d, recap: RECAP_KINDS.has(d.kind), opts: { n: k + 1, of: ds.length, id: `co-d${k + 1}` } }));
+    return ds.map((d, k) => ({ d, recap: RECAP_KINDS.has(d.kind), opts: { n: k + 1, of: ds.length, id: `co-d${k + 1}`, key: `${cfg.slug}:${lid}:${d.kind}-${d.at}` } }));
   };
-  const recapDiagrams = (N) => lessonCards(N).filter((x) => x.recap);
-  const lessonDiagrams = (N) => {
-    const at = new Map(); for (const x of lessonCards(N)) if (!x.recap) at.set(x.d.at, [...(at.get(x.d.at) || []), x]);
+  const recapDiagrams = (N, lid) => lessonCards(N, lid).filter((x) => x.recap);
+  const lessonDiagrams = (N, lid) => {
+    const at = new Map(); for (const x of lessonCards(N, lid)) if (!x.recap) at.set(x.d.at, [...(at.get(x.d.at) || []), x]);
     // and the small cards (Quick check, Numbers to know) dotted through the sections, never asking a question the
     // Recap's Test yourself card asks too
-    const recallQs = lessonCards(N).flatMap((x) => (x.d.kind === "recall" ? x.d.items.map((it) => it.q.replace(/…$/, "")) : []));
+    const recallQs = lessonCards(N, lid).flatMap((x) => (x.d.kind === "recall" ? x.d.items.map((it) => it.q.replace(/…$/, "")) : []));
     const minis = new Map(); for (const m of minisFor(N, { skipQ: recallQs })) minis.set(m.at, [...(minis.get(m.at) || []), m]);
-    return lessonHtml(N, { after: (i) => (at.get(i) || []).map((x) => glassDiagram(x.d, x.opts)).join("") + (minis.get(i) || []).map(miniCard).join("") });
+    return lessonHtml(N, { after: (i) => (at.get(i) || []).map((x) => glassDiagram(x.d, x.opts)).join("") + (minis.get(i) || []).map((m) => miniCard(m, { key: `${cfg.slug}:${lid}:${m.kind}-${m.at}` })).join("") });
   };
-  const recapHtml = (N) => { const xs = recapDiagrams(N); return xs.length ? `<p class="co-recapintro">Before you read the recap, see what you can remember: each card starts covered. Tap a band, or press Enter, to check yourself.</p>${xs.map((x) => glassDiagram(x.d, { ...x.opts, quiz: true })).join("")}` : ""; };
+  const recapHtml = (N, lid) => { const xs = recapDiagrams(N, lid); return xs.length ? `<p class="co-recapintro">Before you read the recap, see what you can remember: each card starts covered. Tap a band, or press Enter, to check yourself.</p>${xs.map((x) => glassDiagram(x.d, { ...x.opts, quiz: true })).join("")}` : ""; };
   const mapOpts = (l) => ({ id: `${cfg.slug}:${l.id}`, kicker: `${cfg.name || cfg.site} · ${l.title}`, site: cfg.site, store, labTitle: (x) => ixs.find((i) => i.id === x)?.title || x });
   // ---------- reading a lesson: the rail beside it ("On this page"), reading progress and the question count ----------
   let lessonRail = null, readStop = null;
@@ -761,7 +762,7 @@ export function mountCourse(root, cfg) {
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${buildsOnHtml(id)}
         ${N ? F.top : ""}
-        ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N)}</div>${F.end || recapDiagrams(N).length ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${recapHtml(N)}${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
+        ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N, id)}</div>${F.end || recapDiagrams(N, id).length ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${recapHtml(N, id)}${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
         ${nQ ? `<section class="co-check" id="co-check"><header><h3 class="co-part">${ic("target")} Check yourself</h3><span class="co-checkn" aria-live="polite"></span></header>${N.items.map((it, k) => `<div class="co-qn" data-n="${k + 1} of ${nQ}">${qHtml(it, { confidence: true })}</div>`).join("")}</section>` : ""}
         ${N ? `<section class="co-deeper" id="co-deeper"><h3 class="co-part">${ic("sparkles")} Go deeper</h3><section class="co-ask co-tutor"></section>${mapsSectionHtml(N, mapOpts(l))}</section>` : ""}
