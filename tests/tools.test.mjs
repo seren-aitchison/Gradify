@@ -117,12 +117,39 @@ test("glass diagrams are drawn from a lesson's own notes, beside the part they s
       }
     }
   }
-  assert.match(glassDiagram(ds[0]), /class="gd gd-md"/);
+  assert.match(glassDiagram(ds[0]), /class="gd gd-md/);
   assert.equal(label("**Channels**: ions flow through pores"), "Channels");
   assert.equal(diagramForNode({ topic: "Steps", kind: "example", children: [{ topic: "1. A", children: [] }, { topic: "2. B", children: [] }] }).kind, "flow");
   const flow = { kind: "flow", title: "Nernst equation potassium", items: ["potassium gradient", "membrane potential"] };
   assert.equal(diagramForCard([flow], "What sets the membrane potential?", "The potassium gradient"), flow);
   assert.equal(diagramForCard([flow], "Something else entirely"), null);
+});
+
+test("diagram cards show every word as text, can be covered for recall, and stay inert on a flashcard", () => {
+  const long = "Sustained depolarisation inactivates voltage-gated sodium channels, so the net effect in the heart is depressed conduction and a risk of arrhythmia";
+  const flow = { kind: "flow", title: "What happens to E_K?", items: ["E_K becomes less negative", long] };
+  const html = glassDiagram(flow, { n: 2, of: 5, id: "co-d2" });
+  assert.ok(html.includes(long), "the whole step, never cut to fit a box");
+  assert.match(html, /<figcaption class="gd-head">/, "a figure named by its caption");
+  assert.match(html, /2 of 5/);
+  assert.match(html, /<ol class="gd-flow/, "a process is an ordered list to a screen reader");
+  assert.match(html, /data-gd-quiz aria-pressed="false"/, "Cover & recall, off to start");
+  assert.match(html, /data-gd-zoom/);
+  assert.doesNotMatch(html, /role="button"/, "answers are plain text until covered");
+  // covered from the start (the Recap): each answer is a button until revealed
+  const quiz = glassDiagram(flow, { quiz: true });
+  assert.match(quiz, /class="gd gd-md quiz"/);
+  assert.equal((quiz.match(/role="button" tabindex="0" aria-label="Hidden answer: reveal"/g) || []).length, 2);
+  // small (inside a flashcard, itself a button): no buttons or other controls in it
+  assert.doesNotMatch(glassDiagram(flow, { size: "sm", caption: false }), /<button|role="button"|data-gd-/);
+  // a lesson map links to its sections, and a two-section lesson gets none
+  const map = glassDiagram({ kind: "map", title: "Cells", items: ["Structure", "Function", "Injury"] });
+  assert.match(map, /data-jump="co-s3"/);
+  assert.match(map, /First letters: <b>S · F · I<\/b>/, "a first-letter cue for short parts");
+  assert.ok(!glassDiagram({ kind: "hub", title: "AOs", items: ["AO1 Develop", "AO2 Refine", "AO3 Record", "AO4 Present"] }).includes("First letters"), "no cue when the letters don't tell the parts apart");
+  const L = { title: "T", blocks: [{ t: "h", x: "One" }, { t: "p", x: "A first. A second." }, { t: "h", x: "Two" }, { t: "p", x: "B." }], objectives: ["Do x", "Do y"], prereq: [], terms: [], cards: [], summary: [] };
+  assert.ok(!diagramsFor(L).some((d) => d.kind === "map"), "two sections: no map");
+  assert.ok(diagramsFor(L).some((d) => d.kind === "path") && !diagramsFor(L, { skip: ["path"] }).some((d) => d.kind === "path"), "a kind can be left out");
 });
 
 test("a Gradify AI pack (as from a photo of notes) becomes cards, with its cloze cards kept as cloze", () => {

@@ -595,15 +595,21 @@ export function mountCourse(root, cfg) {
     return `<p class="co-builds"><span>Builds on</span> ${items.join("")}</p>`;
   }
   // the five mind maps (kit/maps): this lesson's id, a kicker for the viewer, and lab names from this course
-  // the lesson's notes with its glass diagrams beside the parts they show (kit/core/glass-diagrams.js)
-  // five per lesson (kit/core/glass-diagrams.js), each beside the part it shows, full width so their words stay readable;
-  // the ones that sum the lesson up (terms, summary, comparisons, case and drug cards, recall) open its Recap
+  // the lesson's diagram cards (kit/core/glass-diagrams.js): five per lesson, each straight after the part of the notes
+  // it shows, the full width of the notes so every word reads. No learning-path card: the "By the end of this lesson"
+  // box at the top already says it. The ones that sum the lesson up (terms, summary, comparisons, case and drug
+  // cards, evidence, recall) open its Recap instead, covered, so the Recap is a chance to recall rather than reread.
   const RECAP_KINDS = new Set(["terms", "summary", "compare", "case", "drug", "evidence", "recall"]);
-  const recapDiagrams = (N) => diagramsFor(N).filter((d) => RECAP_KINDS.has(d.kind));
-  const lessonDiagrams = (N) => {
-    const at = new Map(); for (const d of diagramsFor(N)) if (!RECAP_KINDS.has(d.kind)) at.set(d.at, [...(at.get(d.at) || []), d]);
-    return lessonHtml(N, { after: (i) => (at.get(i) || []).map((d) => glassDiagram(d)).join("") });
+  const lessonCards = (N) => {
+    const ds = diagramsFor(N, { skip: ["path"] });
+    return ds.map((d, k) => ({ d, recap: RECAP_KINDS.has(d.kind), opts: { n: k + 1, of: ds.length, id: `co-d${k + 1}` } }));
   };
+  const recapDiagrams = (N) => lessonCards(N).filter((x) => x.recap);
+  const lessonDiagrams = (N) => {
+    const at = new Map(); for (const x of lessonCards(N)) if (!x.recap) at.set(x.d.at, [...(at.get(x.d.at) || []), x]);
+    return lessonHtml(N, { after: (i) => (at.get(i) || []).map((x) => glassDiagram(x.d, x.opts)).join("") });
+  };
+  const recapHtml = (N) => { const xs = recapDiagrams(N); return xs.length ? `<p class="co-recapintro">Before you read the recap, see what you can remember: each card starts covered. Tap a band, or press Enter, to check yourself.</p>${xs.map((x) => glassDiagram(x.d, { ...x.opts, quiz: true })).join("")}` : ""; };
   const mapOpts = (l) => ({ id: `${cfg.slug}:${l.id}`, kicker: `${cfg.name || cfg.site} · ${l.title}`, site: cfg.site, store, labTitle: (x) => ixs.find((i) => i.id === x)?.title || x });
   // ---------- reading a lesson: the rail beside it ("On this page"), reading progress and the question count ----------
   let lessonRail = null, readStop = null;
@@ -713,21 +719,9 @@ export function mountCourse(root, cfg) {
       scrollTo({ top: el.getBoundingClientRect().top + scrollY - 90, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
     };
     root.addEventListener("click", jump);
-    // a diagram opens full size (most useful on a phone): Escape, the close button or a click outside closes it
-    const zoom = (e) => {
-      const fig = e.target.closest(".co-lesson .gd"); if (!fig || e.target.closest("a, button")) return;
-      const box = Object.assign(document.createElement("div"), { className: "gd-zoom", role: "dialog", ariaModal: "true", ariaLabel: fig.querySelector("svg")?.getAttribute("aria-label") || "Diagram" });
-      box.innerHTML = `<div class="gd-zoomin" style="${fig.getAttribute("style")}">${fig.querySelector(".gd-pane").innerHTML}${fig.querySelector("figcaption") ? `<p>${fig.querySelector("figcaption").innerHTML}</p>` : ""}</div><button type="button" class="gd-zoomx" aria-label="Close">×</button>`;
-      const close = () => { box.remove(); removeEventListener("keydown", key); fig.focus?.(); };
-      const key = (k) => { if (k.key === "Escape") close(); };
-      box.addEventListener("click", (k) => { if (k.target === box || k.target.closest(".gd-zoomx")) close(); });
-      addEventListener("keydown", key); document.body.append(box); box.querySelector(".gd-zoomx").focus();
-    };
-    main.addEventListener("click", zoom);
-    main.querySelectorAll(".co-lesson .gd").forEach((f) => { f.tabIndex = 0; f.title = "Open the diagram full size"; f.addEventListener("keydown", (k) => { if (k.key === "Enter" || k.key === " ") { k.preventDefault(); zoom({ target: f }); } }); });
     // ← and → move to the previous and next lesson (not while typing, or with a diagram open)
     const keys = (e) => {
-      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey || document.querySelector(".gd-zoom, .co-modal")) return;
+      if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey || document.querySelector("dialog.gd-zoom[open], .co-modal")) return;
       if (e.target.closest?.("input, textarea, select, [contenteditable], .co-ix, .co-lab")) return;
       const to = e.key === "ArrowLeft" ? prev : e.key === "ArrowRight" ? next : null;
       if (to) { e.preventDefault(); location.hash = `#/lesson/${to.id}`; }
@@ -738,7 +732,7 @@ export function mountCourse(root, cfg) {
     side.addEventListener("click", railGo);
     addEventListener("scroll", onScroll, { passive: true }); addEventListener("resize", onScroll);
     requestAnimationFrame(onScroll);
-    readStop = () => { removeEventListener("scroll", onScroll); removeEventListener("resize", onScroll); root.removeEventListener("click", jump); main.removeEventListener("click", zoom); document.querySelector(".gd-zoom")?.remove(); removeEventListener("keydown", keys); unTerms?.(); side.removeEventListener("click", railGo); mo.disconnect(); bar.remove(); readStop = null; };
+    readStop = () => { removeEventListener("scroll", onScroll); removeEventListener("resize", onScroll); root.removeEventListener("click", jump); document.querySelector("dialog.gd-zoom")?.close(); removeEventListener("keydown", keys); unTerms?.(); side.removeEventListener("click", railGo); mo.disconnect(); bar.remove(); readStop = null; };
   }
   async function viewLesson(id) {
     const l = byId[id]; if (!l) return go("learn");
@@ -763,7 +757,7 @@ export function mountCourse(root, cfg) {
         ${N && cfg.reviewLine ? `<p class="co-reviewed">${reviewLine(u)}</p>` : ""}
         ${buildsOnHtml(id)}
         ${N ? F.top : ""}
-        ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N)}</div>${F.end || recapDiagrams(N).length ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${recapDiagrams(N).map((d) => glassDiagram(d)).join("")}${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
+        ${N ? `<div class="mv-cols co-prose">${lessonDiagrams(N)}</div>${F.end || recapDiagrams(N).length ? `<section class="co-recap" id="co-recap"><h3 class="co-part">${ic("check")} Recap</h3>${recapHtml(N)}${F.end}</section>` : ""}` : `<p class="co-empty">The notes for this lesson are still being written. You can still mark it done and come back later.</p>`}
         ${N && cfg.anatomy3d?.lessons && id in cfg.anatomy3d.lessons ? anatomyPanel(cfg.anatomy3d.lessons[id]) : ""}
         ${nQ ? `<section class="co-check" id="co-check"><header><h3 class="co-part">${ic("target")} Check yourself</h3><span class="co-checkn" aria-live="polite"></span></header>${N.items.map((it, k) => `<div class="co-qn" data-n="${k + 1} of ${nQ}">${qHtml(it, { confidence: true })}</div>`).join("")}</section>` : ""}
         ${N ? `<section class="co-deeper" id="co-deeper"><h3 class="co-part">${ic("sparkles")} Go deeper</h3><section class="co-ask co-tutor"></section>${mapsSectionHtml(N, mapOpts(l))}</section>` : ""}
