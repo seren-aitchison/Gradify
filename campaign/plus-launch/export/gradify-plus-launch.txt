@@ -36,9 +36,8 @@ Founder, Gradify
 
 ----------------------------------------------------------------------
 
-This is a one-off email from Gradify. We won't email you again unless you sign up. If you'd rather not hear from us at all, unsubscribe below and we'll remove your address.
+This is a one-off email from Gradify. We won't email you again unless you sign up. If you'd rather not hear from us at all, reply to this email and say so, and we'll remove your address.
 
-Unsubscribe: {{UNSUBSCRIBE_URL}}
 Privacy: https://getgradify.com/privacy.html
 Terms: https://getgradify.com/terms.html
 Contact: hello@getgradify.com

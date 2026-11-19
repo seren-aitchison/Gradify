@@ -48,7 +48,6 @@ Founder, Gradify
 
 {{WHY_YOU_GET_THIS}}
 
-Unsubscribe: {{UNSUBSCRIBE_URL}}
 Privacy: https://getgradify.com/privacy.html
 Terms: https://getgradify.com/terms.html
 Contact: hello@getgradify.com

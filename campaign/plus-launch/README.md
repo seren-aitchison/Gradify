@@ -101,3 +101,13 @@ The export leaves out the Discord parts until there's an invite. Set `DISCORD_UR
 put them back. It fills the reason line for the Gradify Plus waitlist. It leaves `{{OFFER_ENDS}}`,
 `{{UNSUBSCRIBE_URL}}` and the three Companies House values for you to fill, in `FILL` in export.py or in the
 sending service.
+
+## Stripe (live, set up 19 November 2026)
+
+| What | ID | Settings |
+| --- | --- | --- |
+| Coupon "Gradify Pro: £5 first month" | `kwB3RfKh` | £5 off (GBP), once, only for the £10 product `prod_Ve3V6tEjlR4hfV` (still named "Gradify Plus" in Stripe), redeemable until 22 Nov 2026 23:59:59 UK |
+| Promotion code `GRADIFY48` | `promo_1UdWwnEOmpIuKzUMqORXVU9l` | first-time customers only, expires 22 Nov 2026 23:59:59 UK (`expires_at` 1795391999) |
+
+Checkout already shows **Add promotion code** (`allow_promotion_codes` in `supabase/functions/billing-checkout`).
+The email has no unsubscribe link: opting out is by replying, as its footer says.
