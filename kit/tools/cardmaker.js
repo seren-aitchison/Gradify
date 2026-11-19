@@ -57,7 +57,7 @@ async function editor(view, ctx, d) {
           <label class="tl-mini">Add image<input type="file" accept="image/*" hidden data-img></label>
           <button type="button" class="tl-mini" data-act="suggest">Suggest cards</button>
           <button type="button" class="tl-mini" data-act="lessons">From lessons</button>
-          <label class="tl-mini tl-pro" title="Gradify AI, part of Gradify Pro">Photo of notes <span class="tl-pro-tag">Pro</span><input type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/*" multiple hidden data-photo></label></div>
+          <label class="tl-mini tl-pro" title="Gradify AI, part of Gradify Ultra">Photo of notes <span class="tl-pro-tag">Ultra</span><input type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/*" multiple hidden data-photo></label></div>
         <div class="tl-photo" hidden></div>
         <textarea class="tl-text" spellcheck="true" aria-label="Your notes and cards">${esc(d.text)}</textarea>
         <p class="tl-syntax">${HELP.map(([k, v]) => `<span><code>${esc(k)}</code> ${esc(v)}</span>`).join("")}</p>
@@ -83,7 +83,7 @@ async function editor(view, ctx, d) {
   view.querySelector("[data-img]").addEventListener("change", (e) => addImages([...e.target.files]));
   ta.addEventListener("paste", (e) => { const imgs = [...(e.clipboardData?.files || [])].filter((f) => f.type.startsWith("image/")); if (imgs.length) { e.preventDefault(); addImages(imgs); } });
   ta.addEventListener("drop", (e) => { const imgs = [...(e.dataTransfer?.files || [])].filter((f) => f.type.startsWith("image/")); if (imgs.length) { e.preventDefault(); addImages(imgs); } });
-  // Gradify Pro: photos of notes (handwritten too) become cards, written by Gradify AI (supabase/functions/study-pack)
+  // Gradify Ultra: photos of notes (handwritten too) become cards, written by Gradify AI (supabase/functions/study-pack)
   const photo = view.querySelector(".tl-photo");
   view.querySelector("[data-photo]").addEventListener("change", async (e) => {
     const files = [...e.target.files].slice(0, 5); e.target.value = "";
@@ -91,7 +91,7 @@ async function editor(view, ctx, d) {
     photo.hidden = false;
     const { PRO_ON_SALE } = await import("../data/billing.js");
     if (!PRO_ON_SALE) {
-      photo.innerHTML = `<b>Photo to cards is coming with Gradify Pro.</b><p class="sub">Gradify AI will read photos of your notes, handwriting included, and write the cards for you. Until then, type or paste your notes here and press Suggest cards.</p>`;
+      photo.innerHTML = `<b>Photo to cards is coming with Gradify Ultra.</b><p class="sub">Gradify AI will read photos of your notes, handwriting included, and write the cards for you. Until then, type or paste your notes here and press Suggest cards.</p>`;
       return;
     }
     if (ctx.store?.mode !== "cloud") { photo.innerHTML = `<b>Sign in to use Gradify AI.</b><p class="sub"><a href="#/account">Sign in</a>, then try the photo again.</p>`; return; }

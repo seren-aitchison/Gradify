@@ -1,24 +1,24 @@
-// Gradify Pro in the browser: the plan's prices and allowances, the learner's current plan, and the two ways into
+// Gradify's paid plans (Pro and Ultra) in the browser: their prices and allowances, the learner's current plan, and the two ways into
 // Stripe (checkout to subscribe, the portal to manage). Used by pricing.html and the Account page (kit/app/main.js).
 // The server is the authority: public.subscriptions (written only by the billing-webhook function) and is_pro() /
 // ai_claim() in supabase/migrations/20261110120000_billing_and_ai_allowances.sql. planOf() mirrors is_pro() so the
 // page shows what the server will enforce; tests/billing-client.test.mjs keeps the two, and these numbers, in step.
 import { callFunction } from "./functions.js";
 
-/** The plans, cheapest first. Free; Gradify Plus (Gradify organises and manages your learning); Gradify Pro (Plus and
+/** The plans, cheapest first. Free; Gradify Pro (Gradify organises and manages your learning); Gradify Ultra (Pro and
  *  Gradify AI). Prices in pence a month (GBP, VAT included). Must match the Stripe prices: scripts/check-stripe.mjs. */
 export const PLANS = ["free", "plus", "pro"];
 export const PLAN_PRICES = { plus: { month: 1000 }, pro: { month: 1500 } };
 export const PRO_PRICES = PLAN_PRICES.pro;
 export const CURRENCY = "GBP";
-export const PLAN_NAME = { free: "Free", plus: "Gradify Plus", pro: "Gradify Pro" };
+export const PLAN_NAME = { free: "Free", plus: "Gradify Pro", pro: "Gradify Ultra" };
 
-/** Whether Gradify Plus is on sale, and with it whether Plus features are limited to Plus (and Pro). While it's off,
+/** Whether Gradify Pro is on sale, and with it whether Pro features are limited to Pro (and Ultra). While it's off,
  *  every learner keeps every feature they have today. Turn it on together with the server's switches: the
  *  GRADIFY_PLUS_ON_SALE secret and billing_settings.plans_enforced (docs/BILLING.md). */
 export const PLUS_ON_SALE = true;
 
-/** Whether Gradify Pro is on sale to everyone. Off until Gradify AI, what Pro adds to Plus, is switched on:
+/** Whether Gradify Ultra is on sale to everyone. Off until Gradify AI, what Ultra adds to Pro, is switched on:
  *  nobody should pay for an allowance they can't use. The billing-checkout function enforces the same rule
  *  (GRADIFY_PRO_ON_SALE), so this only decides what the page shows. */
 export const PRO_ON_SALE = false;
@@ -43,7 +43,7 @@ export function annualSaving(prices = PRO_PRICES) {
 
 const GRACE_MS = 3 * 86400_000;
 /** "free", "plus" or "pro" for a subscriptions row, exactly as public.plan_of() decides it. A paid-up row from before
- *  there were two paid plans has no plan, and was Gradify Pro. */
+ *  there were two paid plans has no plan, and was Gradify Ultra. */
 export function planOf(row, now = Date.now()) {
   if (!row) return "free";
   const end = row.current_period_end ? new Date(row.current_period_end).getTime() : now + 86400_000;
@@ -51,7 +51,7 @@ export function planOf(row, now = Date.now()) {
   const paidUp = row.status === "active" || row.status === "trialing" || (row.status === "past_due" && Boolean(row.current_period_end) && end > now - GRACE_MS);
   return paidUp && end > now - GRACE_MS ? (row.plan === "plus" ? "plus" : "pro") : "free";
 }
-/** Whether a plan includes another: Pro includes Plus, and both include Free. */
+/** Whether a plan includes another: Ultra includes Pro, and both include Free. */
 export const includes = (plan, needed) => PLANS.indexOf(plan) >= PLANS.indexOf(needed);
 
 const day = (iso) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
@@ -61,18 +61,18 @@ export function describePlan(row, now = Date.now()) {
   const plan = planOf(row, now);
   const every = row?.billing_interval === "year" ? "yearly" : row?.billing_interval === "month" ? "monthly" : "";
   if (plan !== "free") {
-    const short = plan === "plus" ? "Plus" : "Pro";
+    const short = plan === "plus" ? "Pro" : "Ultra";
     const title = `${PLAN_NAME[plan]}${every ? `, billed ${every}` : ""}`;
     if (row.status === "past_due") return { plan, title, tone: "warn", line: `Your last payment didn't go through. Update your card in Manage billing to keep ${short}; Stripe will try again automatically.`, manage: true };
     if (row.cancel_at_period_end) return { plan, title, tone: "info", line: row.current_period_end ? `Cancelled. You keep ${short} until ${day(row.current_period_end)}, then move to Free. You can resume any time before then.` : `Cancelled. You keep ${short} until the end of the period you've paid for.`, manage: true };
     if (row.status === "trialing") return { plan, title, tone: "ok", line: row.current_period_end ? `Free trial until ${day(row.current_period_end)}.` : "Free trial.", manage: true };
     return { plan, title, tone: "ok", line: row.current_period_end ? `Renews on ${day(row.current_period_end)}.` : "Active.", manage: true };
   }
-  const paid = row?.plan === "plus" ? "Gradify Plus" : row?.plan === "pro" ? "Gradify Pro" : "Your subscription";
+  const paid = row?.plan === "plus" ? "Gradify Pro" : row?.plan === "pro" ? "Gradify Ultra" : "Your subscription";
   if (row?.status === "past_due" || row?.status === "unpaid") return { plan, title: "Free", tone: "warn", line: `${paid} is paused because a payment didn't go through. Update your card in Manage billing to restore it.`, manage: true };
   if (row?.status === "incomplete") return { plan, title: "Free", tone: "info", line: "Your checkout wasn't finished. You haven't been charged.", manage: false };
   if (row?.status === "canceled" || row?.status === "incomplete_expired") return { plan, title: "Free", tone: "info", line: `${paid} has ended. Your notes and progress are all still here.`, manage: Boolean(row.stripe_customer_id) };
-  return { plan, title: "Free", tone: "info", line: PLUS_ON_SALE ? "Learn with Gradify. Gradify Plus organises, optimises and manages your learning." : "Every course, lesson, lab and quiz is free.", manage: false };
+  return { plan, title: "Free", tone: "info", line: PLUS_ON_SALE ? "Learn with Gradify. Gradify Pro organises, optimises and manages your learning." : "Every course, lesson, lab and quiz is free.", manage: false };
 }
 
 /** A minimal store over a Supabase client, for pages that don't run the full app (pricing.html). */
@@ -99,9 +99,11 @@ export async function myAllowance(store) {
 }
 
 const here = () => `${location.pathname}${location.hash || ""}`.replace(/^\/\//, "/");
-/** Send the learner to Stripe Checkout for a plan ("plus" or "pro"), billed monthly. Resolves only on an error. */
-export async function startCheckout(store, plan = "plus", interval = "month", from = here()) {
-  const { url } = await callFunction(store, "billing-checkout", { plan, interval, from }, { fallback: "Checkout couldn't be started. Please try again in a minute." });
+/** Send the learner to Stripe Checkout for a plan ("plus" or "pro"), billed monthly. With a promotion code, checkout
+ *  opens with it applied when Stripe accepts it for this learner, and with "Add promotion code" otherwise.
+ *  Resolves only on an error. */
+export async function startCheckout(store, plan = "plus", interval = "month", from = here(), promo = undefined) {
+  const { url } = await callFunction(store, "billing-checkout", { plan, interval, from, ...(promo ? { promo } : {}) }, { fallback: "Checkout couldn't be started. Please try again in a minute." });
   location.assign(url);
 }
 /** Send the learner to Stripe's billing portal: card, plan, invoices, cancel. */

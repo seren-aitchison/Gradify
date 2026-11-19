@@ -6,7 +6,8 @@ import { icon } from "../core/icons.js";
 import { tile, ink } from "../core/colour.js";
 import { SAMPLE, readFile } from "../notes/studio.js";
 import { LocalStore, CloudStore, cloudConfigured, scopeToSite, authProviders } from "../data/store.js";
-import { describePlan, mySubscription, myAllowance, openPortal, AI_ALLOWANCES } from "../data/billing.js";
+import { describePlan, mySubscription, myAllowance, openPortal, startCheckout, AI_ALLOWANCES, PLAN_PRICES } from "../data/billing.js";
+import { OFFER, captureOffer, offerToShow, storedOffer, dismissOffer, offerForAccount, offerTerms } from "../data/offer.js";
 import { learnerOf, saveLearner, syncMirror, needsSetup, applyPrefs, PRIOR } from "../data/profile.js";
 import { trackView } from "../core/analytics.js";
 import { captureFirstTouch, recordFirstTouch } from "../core/attribution.js";
@@ -15,6 +16,8 @@ applyPrefs();
 import { currentSite, nameHtml, pathOf } from "../core/site.js";
 // on a sub-site (getgradify.com/medgradify/), the app belongs to that site
 const SITE = currentSite();
+// the Pro launch offer, kept from the campaign link through sign-in and set-up (kit/data/offer.js)
+captureOffer();
 trackView(SITE || "Gradify app");
 import { generate, regenerateCard, generateQuestions } from "../notes/engine.js";
 import { reviewCard } from "../notes/pack.js";
@@ -67,9 +70,9 @@ const SEC_PER_CARD = 25;
 const srsOpts = () => ({ retention: Number(learnerOf(profile).intel?.retention) || 0.9, examDate: profile.exam_date || null });
 
 let store, profile, view = $("#view");
-// what this learner's plan includes (kit/data/plan.js); everything is open until Plus goes on sale
+// what this learner's plan includes (kit/data/plan.js); everything is open until Pro goes on sale
 let ACCESS = { plan: "free", enforced: false, has: () => true };
-// dashboard widgets that are Gradify Intelligence (Plus): forecasts, readiness, planning by conversation, suggestions
+// dashboard widgets that are Gradify Intelligence (Pro): forecasts, readiness, planning by conversation, suggestions
 const INTEL_WIDGETS = new Set(["s-ready", "w-forecast", "w-tell", "w-opps", "w-debt", "b-exam"]);
 
 // ---------- Toast ----------
@@ -150,21 +153,21 @@ function drawNav() {
   document.querySelector(".tabbar")?.addEventListener("click", (e) => { if (e.target.closest("a, button")) haptic("tap"); });
 }
 drawNav();
-// a small lock on the sections that need Gradify Plus, once the learner's plan is known (only while Plus is on sale)
+// a small lock on the sections that need Gradify Pro, once the learner's plan is known (only while Pro is on sale)
 const LOCKED = { intel: "intelligence" };
 function markLocks() {
   for (const a of document.querySelectorAll(".lo-side a, .tabbar a")) {
     const f = LOCKED[a.dataset.route], locked = Boolean(f && ACCESS.enforced && !ACCESS.has(f));
     a.classList.toggle("plus-locked", locked);
     a.querySelector(".nav-lock")?.remove();
-    if (locked) { a.insertAdjacentHTML("beforeend", `<span class="nav-lock" title="Gradify Plus">${icon("lock")}</span>`); a.setAttribute("aria-label", `${a.textContent.trim()} (Gradify Plus)`); }
+    if (locked) { a.insertAdjacentHTML("beforeend", `<span class="nav-lock" title="Gradify Pro">${icon("lock")}</span>`); a.setAttribute("aria-label", `${a.textContent.trim()} (Gradify Pro)`); }
   }
 }
 // the pricing page lives on getgradify.com; sub-sites served elsewhere link to it there
 const PRICING = /(^|\.)getgradify\.com$|^localhost/.test(location.hostname) ? "/pricing.html" : "https://getgradify.com/pricing.html";
 
 // ---------- Router ----------
-const routes = { today: renderToday, start: renderStart, new: renderNew, deck: renderDeck, study: renderStudy, topic: renderTopic, progress: renderProgress, plan: renderPlan, account: renderAccount };
+const routes = { offer: renderOffer, today: renderToday, start: renderStart, new: renderNew, deck: renderDeck, study: renderStudy, topic: renderTopic, progress: renderProgress, plan: renderPlan, account: renderAccount };
 // ---------- Section tabs: each LifeOS section's own top bar ----------
 // Every section's page is split into a few panes, shown one at a time from tabs in the top bar (white labels, a
 // rainbow line under the one that's open), so each is a short scroll. A pane is an element marked data-pane="id", or
@@ -328,6 +331,69 @@ function wireSharePanel() {
   });
 }
 
+// ---------- The Gradify Pro launch offer ----------
+// Shown to learners on Free who came from the campaign link (kit/data/offer.js): a full screen straight after set-up,
+// then a card on Today they can dismiss. Claiming it opens Stripe Checkout with the code already applied.
+const signedIn = () => store?.mode === "cloud";
+function currentOffer({ includeDismissed = false } = {}) {
+  return offerToShow({ plan: ACCESS.enforced ? ACCESS.plan : "free", learner: learnerOf(profile), includeDismissed });
+}
+const OFFER_PERKS = [
+  ["calendar", "Smart Plan autopilot", "Your week planned for you, and kept on track when life gets in the way."],
+  ["trend", "Readiness forecasts", "How ready you are for your exam, and the cards that matter most and are fading first."],
+  ["clock", "Exam preparation", "Timed exams over each part of a course and the whole course, and the complete question bank."],
+  ["bell", "Calendar sync and reminders", "Plan around Google, Apple or Outlook, with reminders even when Gradify is closed."],
+];
+function offerClaimHtml(id) {
+  return signedIn()
+    ? `<button type="button" class="btn btn-primary lg" data-claim id="${id}"><span>Claim my £5 month</span></button>`
+    : `<a class="btn btn-primary lg" href="#/account"><span>Sign in to claim</span></a>`;
+}
+function offerCardHtml() {
+  const o = currentOffer();
+  if (!o) return "";
+  return `<article class="panel glass offer-card" aria-labelledby="offer-card-h">
+    <button type="button" class="offer-x" data-dismiss-offer aria-label="Dismiss the offer">✕</button>
+    <span class="offer-kicker">Launch offer · ends ${esc(OFFER.endsLabel.replace(/ 2026$/, ""))}</span>
+    <h3 id="offer-card-h">Your first month of Gradify Pro for £5</h3>
+    <p class="sub">${esc(offerTerms(PLAN_PRICES.plus.month))} Code <b class="offer-code">${OFFER.code}</b> is applied for you at checkout.</p>
+    <div class="row-actions">${offerClaimHtml("claim-card")}<a class="btn btn-ghost lg btn-sm" href="#/offer"><span>What's in Pro</span></a></div>
+  </article>`;
+}
+async function renderOffer() {
+  const o = currentOffer({ includeDismissed: true });
+  if (!o) { location.replace("#/today"); return; }
+  view.innerHTML = `<section class="offer-page">
+    <span class="offer-kicker">Launch offer · ends ${esc(OFFER.endsLabel)}</span>
+    <h1>Your £5 month of Gradify Pro is ready</h1>
+    <p class="sub">You're set up. Gradify Free is yours to keep. Gradify Pro is the part that organises your learning for you.</p>
+    <ul class="offer-perks">${OFFER_PERKS.map(([ic, t, d]) => `<li class="panel glass">${icon(ic)}<div><b>${esc(t)}</b><span>${esc(d)}</span></div></li>`).join("")}</ul>
+    <div class="panel glass offer-box">
+      <p class="offer-price"><b>£5</b> for your first month</p>
+      <p class="sub">${esc(offerTerms(PLAN_PRICES.plus.month))} Stripe shows the £5 total and the renewal price before you pay.</p>
+      <p class="sub">Code <b class="offer-code">${OFFER.code}</b> is applied for you. One use per person, for your first Gradify Pro subscription.</p>
+      <div class="row-actions">${offerClaimHtml("claim-page")}<a class="btn btn-ghost lg" href="#/new" data-not-now><span>Not now, keep learning free</span></a></div>
+    </div>
+  </section>`;
+  wireOffer(view);
+}
+function wireOffer(root) {
+  root.querySelectorAll("[data-claim]").forEach((b) => b.addEventListener("click", async () => {
+    const label = b.querySelector("span"), was = label.textContent;
+    b.disabled = true; label.textContent = "Opening Stripe…";
+    // back to the pricing page, which waits for the plan to arrive and says so (or says nothing was charged)
+    try { await startCheckout(store, "plus", "month", "/pricing.html", OFFER.code); }
+    catch (err) { b.disabled = false; label.textContent = was; toast(esc(err.message)); }
+  }));
+  root.querySelector("[data-dismiss-offer]")?.addEventListener("click", (e) => {
+    const shown = storedOffer(Date.now(), learnerOf(profile));   // from this browser or, on another device, the account
+    dismissOffer(shown);
+    if (signedIn() && shown) saveLearner(store, offerForAccount({ ...shown, dismissed: true })).then(async () => { profile = await store.getProfile(); }).catch(() => {});
+    e.currentTarget.closest(".offer-card")?.remove();
+    toast("Hidden. The offer is still on the Gradify Pro page until it ends.");
+  });
+}
+
 async function renderStart(stepArg) {
   const step = Number(stepArg) || 1;
   const p = profile;
@@ -394,7 +460,7 @@ async function renderStart(stepArg) {
     const l = learnerOf(profile);
     await saveLearner(store, { subjects: [...new Set([...l.subjects, site])], prior: { [site]: f.get("prior") }, prefs: prefsFrom(f), onboarded_at: l.onboarded_at || new Date().toISOString(), skipped_at: null });
     profile = await store.getProfile();
-    location.hash = "#/new";
+    location.hash = currentOffer() ? "#/offer" : "#/new";
   });
 }
 
@@ -655,7 +721,7 @@ async function renderStudy(arg) {
   // #/study/<deck id>, or #/study/t:<topic key> for a targeted practice session on one topic
   const topicKey = arg?.startsWith("t:") ? decodeURIComponent(arg.slice(2)) : null;
   const deckId = topicKey ? topicKey.split("|")[0] : arg;
-  // Free: 5 flashcard sets in all (kit/data/limits.js), once Plus is on sale
+  // Free: 5 flashcard sets in all (kit/data/limits.js), once Pro is on sale
   const { gate, lockedHtml } = await import("../data/limits.js");
   if (!(await gate("flashcards", deckId || "due", { store, pricing: PRICING }))) { view.innerHTML = lockedHtml("flashcards", { pricing: PRICING }); return; }
   const all = await store.listCards(deckId ? { documentId: deckId } : {});
@@ -874,6 +940,7 @@ async function renderToday() {
       <h1>${hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening"}${profile.display_name ? `, ${esc(profile.display_name)}` : ""} <span class="wave" aria-hidden="true">👋</span></h1>
       <p class="sub lo-hello">${s.cards.length ? `${n0(s.cards.length)} flashcards across ${n0(s.docs.length)} study ${s.docs.length === 1 ? "pack" : "packs"}${streakDays ? ` · ${streakDays}-day streak` : ""}.` : "Nice to have you here."}</p></div>
       <span class="today-icons g3d-cluster" aria-hidden="true"></span><a class="cp-pill dark today-cta" href="${esc(M.prio.items[0]?.href || "#/new")}" data-haptic="success">${M.prio.items[0] ? `Start · ${M.prio.items[0].mins} min` : "Add notes"}</a></div>
+    ${offerCardHtml()}
     ${!s.cards.length && !courses.length ? welcomeHtml(profile.display_name) : ""}
     ${ACCESS.has("calendar") ? notifyAskHtml(M) : ""}
     ${ACCESS.has("intelligence") ? `${briefingHtml(M, { made: M.made || [] })}
@@ -883,6 +950,7 @@ async function renderToday() {
     ${boardHtml({ m: M, s, G, L, streak: streakDays, xp: gxp, lv, xpForLevel, heat: heatmap(s.byDay) }, (M.intel.widgets?.length ? M.intel.widgets : DEFAULT_WIDGETS).filter((id) => ACCESS.has("intelligence") || !INTEL_WIDGETS.has(id)))}
     ${ACCESS.has("intelligence") ? "" : plusPanelHtml("intelligence", { pricing: PRICING, compact: true })}
   </section>`;
+  wireOffer(view);
   wireCockpit(view, cockpitCtx);
   wirePlanner(view, M);
   wireIntel(view, M, { store, toast, rerender });
@@ -924,10 +992,10 @@ function startCourses(L, n = 6) {
 }
 function proCard(sub) {
   const plan = sub ? describePlan(sub) : null;
-  if (plan && plan.plan !== "free") return `<article class="panel glass lo-pro on"><span class="lo-pro-badge"><span class="pro-gem" aria-hidden="true"></span>${plan.plan === "plus" ? "Gradify Plus" : "Gradify Pro"}</span><p class="sub">${esc(plan.line)}</p><a class="see" href="#/account">Manage</a></article>`;
-  return `<article class="panel glass lo-pro"><span class="lo-pro-badge"><span class="pro-gem" aria-hidden="true"></span>${PLUS_ON_SALE ? "Gradify Plus" : "Gradify Plus · opening soon"}</span>
+  if (plan && plan.plan !== "free") return `<article class="panel glass lo-pro on"><span class="lo-pro-badge"><span class="pro-gem" aria-hidden="true"></span>${plan.plan === "plus" ? "Gradify Pro" : "Gradify Ultra"}</span><p class="sub">${esc(plan.line)}</p><a class="see" href="#/account">Manage</a></article>`;
+  return `<article class="panel glass lo-pro"><span class="lo-pro-badge"><span class="pro-gem" aria-hidden="true"></span>${PLUS_ON_SALE ? "Gradify Pro" : "Gradify Pro · opening soon"}</span>
     <h3>Let Gradify run your studying</h3>
-    <p class="sub">Smart Plan autopilot, readiness forecasts, exam preparation, calendar sync and every device${PLUS_ON_SALE ? "" : ". Until Plus opens, everything on Gradify is free"}.</p>
+    <p class="sub">Smart Plan autopilot, readiness forecasts, exam preparation, calendar sync and every device${PLUS_ON_SALE ? "" : ". Until Pro opens, everything on Gradify is free"}.</p>
     <a class="btn btn-ghost lg btn-sm" href="${PRICING}"><span>See plans</span></a></article>`;
 }
 
@@ -1302,7 +1370,7 @@ async function renderPlan(arg) {
   ].sort((a, b) => a.day.localeCompare(b.day)).slice(0, 8);
   const paced = (L?.courses || []).filter((c) => c.examDate && c.pace && !["done", "no-date"].includes(c.pace.status));
   view.innerHTML = `<section class="planner">
-    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("calendar")}Smart Plan</span><h1>${ACCESS.has("intelligence") ? "Your plan, worked out for you" : "Your study plan"}</h1><p class="sub">${ACCESS.has("intelligence") ? `Gradify builds each day from what matters most (misconceptions, fading memory, deadlines, due cards and new material) and fits it into your free time, with breaks. <a href="#/intel">Change your hours and energy</a>.` : "Plan your study blocks for the week. With Gradify Plus, Gradify works out the plan for you."}</p></div>${ACCESS.has("intelligence") ? `<button type="button" class="btn btn-primary lg" id="autoplan"><span>Plan my week</span></button>` : ""}</div>
+    <div class="deck-head"><div><span class="kicker lo-kicker">${icon("calendar")}Smart Plan</span><h1>${ACCESS.has("intelligence") ? "Your plan, worked out for you" : "Your study plan"}</h1><p class="sub">${ACCESS.has("intelligence") ? `Gradify builds each day from what matters most (misconceptions, fading memory, deadlines, due cards and new material) and fits it into your free time, with breaks. <a href="#/intel">Change your hours and energy</a>.` : "Plan your study blocks for the week. With Gradify Pro, Gradify works out the plan for you."}</p></div>${ACCESS.has("intelligence") ? `<button type="button" class="btn btn-primary lg" id="autoplan"><span>Plan my week</span></button>` : ""}</div>
     ${ACCESS.has("intelligence") ? `${catchUpHtml(M) || rescheduleHtml(M)}
     ${tellHtml()}
     ${smartPlanHtml(M, arg)}` : plusPanelHtml("intelligence", { pricing: PRICING })}
@@ -1375,7 +1443,7 @@ async function renderAccount() {
     <h1>Account</h1>
     <article class="panel glass">
       ${user ? `<div class="panel-head"><div><h3>Signed in</h3><p class="sub">${esc(user.email)} · your notes and progress are saved to your Gradify account.</p></div><button type="button" class="btn btn-ghost lg btn-sm" id="signout"><span>Sign out</span></button></div>`
-        : cloudConfigured() ? `<h3>Save your progress to a Gradify account</h3><p class="sub">Sign in to keep your notes on every device and to use Gradify AI. Anything on this device moves across.</p>
+        : cloudConfigured() ? `${currentOffer({ includeDismissed: true }) ? `<p class="offer-note"><b>Your £5 Gradify Pro offer is saved.</b> Sign in or create your free account, and it'll be waiting for you.</p>` : ""}<h3>Save your progress to a Gradify account</h3><p class="sub">Sign in to keep your notes on every device and to use Gradify AI. Anything on this device moves across.</p>
           <form id="signin" class="signin"><label class="sr-only" for="email">Email</label><input id="email" type="email" required placeholder="you@example.com" autocomplete="email"><button class="btn btn-primary lg btn-sm" type="submit"><span>Email me a sign-in link</span></button></form>
           <button type="button" class="btn btn-ghost lg btn-sm" id="google"><span>Continue with Google</span></button>`
         : `<h3>Saved on this device</h3><p class="sub">Gradify accounts aren't switched on yet, so your notes and progress are saved in this browser${store.persistent ? "" : " for this visit only (this browser is blocking storage)"}. Export a copy below to keep it safe.</p>`}
@@ -1434,7 +1502,7 @@ async function renderAccount() {
   $("#signout")?.addEventListener("click", async () => { await store.signOut(); location.reload(); });
 }
 
-// The learner's Gradify plan on the Account page: Free or Pro, what needs doing, Manage billing, and Gradify AI used
+// The learner's Gradify plan on the Account page: Free, Pro or Ultra, what needs doing, Manage billing, and Gradify AI used
 // this month. The subscription row is the learner's own (row-level security); only the billing webhook writes it.
 async function renderBillingPlan() {
   const box = $("#plan-panel");
@@ -1450,7 +1518,7 @@ async function renderBillingPlan() {
     ? `<ul class="plan-uses">${uses.map((u) => `<li><span>${esc(AI_ALLOWANCES.find((a) => a.feature === u.feature)?.label || u.feature)}</span><b>${u.used} of ${u.allowance}</b></li>`).join("")}</ul><p class="sub">Gradify AI used this month${uses[0]?.period_end ? `, resetting on ${new Date(uses[0].period_end).toLocaleDateString("en-GB", { day: "numeric", month: "long" })}` : ""}.</p>`
     : `<p class="sub">Gradify AI isn't switched on yet. Your allowance will show here when it is.</p>`;
   box.innerHTML = `<div class="panel-head"><div><h3>Your plan: ${esc(p.title)}</h3><p class="sub plan-line ${p.tone}"><span aria-hidden="true">${tone}</span> ${esc(p.line)}</p></div>
-      <div class="row-actions">${p.manage ? `<button type="button" class="btn btn-light lg btn-sm" id="manage-billing"><span>Manage billing</span></button>` : ""}<a class="btn btn-ghost lg btn-sm" href="${pricing}"><span>${p.plan === "pro" ? "See plans" : "See Gradify Pro"}</span></a></div></div>
+      <div class="row-actions">${p.manage ? `<button type="button" class="btn btn-light lg btn-sm" id="manage-billing"><span>Manage billing</span></button>` : ""}<a class="btn btn-ghost lg btn-sm" href="${pricing}"><span>${p.plan === "free" ? "See Gradify Pro" : "See plans"}</span></a></div></div>
     ${usage}`;
   $("#manage-billing")?.addEventListener("click", async (e) => {
     const b = e.currentTarget; b.disabled = true; b.querySelector("span").textContent = "Opening Stripe…";
@@ -1539,7 +1607,7 @@ function showDeviceBanner(cloud, device) {
   view.insertAdjacentHTML("beforebegin", `<aside class="device-banner panel glass" role="status">
     <div><b>You're studying on another device.</b> <span class="sub">Gradify Free studies on one device at a time. Everything you've made is safe and you can look at it here, but changes are saved only on your study device.</span></div>
     <div class="row-actions">${can ? `<button class="btn btn-light btn-sm" id="device-here" type="button"><span>Study on this device instead</span></button>` : `<span class="sub">You can move here from ${esc(when(device.canSwitchAt))}.</span>`}
-      <a class="btn btn-ghost btn-sm" href="${PRICING}"><span>Every device with Plus</span></a></div>
+      <a class="btn btn-ghost btn-sm" href="${PRICING}"><span>Every device with Pro</span></a></div>
   </aside>`);
   $("#device-here")?.addEventListener("click", async (e) => {
     e.currentTarget.disabled = true;
@@ -1593,11 +1661,14 @@ async function start() {
   cloud?.onAuth((u) => { if (Boolean(u) !== Boolean(user)) location.reload(); });
   // on a sub-site, the app only sees that site's notes and progress
   if (SITE) { store = scopeToSite(store, SITE); picks.site = SITE; }
-  if (!device.active) { store = readOnly(store, "You're on Free, which studies on one device. Move your studying here, or get Gradify Plus to study on every device."); showDeviceBanner(cloud, device); }
+  if (!device.active) { store = readOnly(store, "You're on Free, which studies on one device. Move your studying here, or get Gradify Pro to study on every device."); showDeviceBanner(cloud, device); }
   ACCESS = await within(access(store), 8000, "Checking your plan").catch(() => ({ plan: "free", enforced: false, has: () => true }));
   profile = await within(store.getProfile(), 12000, "Loading your profile");
   markLocks();
   syncMirror(profile);   // the account's settings, for every site in this browser
+  // the launch offer follows the account to the learner's other devices
+  // (awaited, once per account, so it can't race a set-up or settings save made straight after)
+  if (user) { const o = storedOffer(Date.now(), learnerOf(profile)); if (o && !learnerOf(profile).offer) { await saveLearner(store, offerForAccount(o)).catch(() => {}); profile = await store.getProfile(); } }
   // arriving from a site card on getgradify.com: "Study MedGradify in Gradify"
   const fromSite = SITE ? null : new URLSearchParams(location.search).get("site");
   if (fromSite && SITES.some((x) => x.n === fromSite)) {

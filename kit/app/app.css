@@ -1021,7 +1021,7 @@ a.cp-mini:hover { border-color: var(--line-strong); transform: translateY(-2px);
 .i-why-bar i { display: block; height: 100%; border-radius: 6px; background: linear-gradient(90deg, #4641ff, #f055dd); }
 .i-why-bar i.f-urgency { background: linear-gradient(90deg, #ff8a00, #ffc002); } .i-why-bar i.f-importance { background: linear-gradient(90deg, #4641ff, #8b3dff); }
 .i-why-bar i.f-forgetting { background: linear-gradient(90deg, #f055dd, #ff5a4d); } .i-why-bar i.f-evidence { background: linear-gradient(90deg, #1fae8c, #3c78d8); }
-.r-list li > .i-why { padding: 0 16px 12px 64px; margin-top: -6px; }
+.r-list li > .i-why { padding: 0 16px 4px 64px; margin-top: 6px; }
 .debt-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .debt-list a { display: grid; grid-template-columns: minmax(0, auto) 24px minmax(0, 1fr) auto; grid-template-areas: "root arrow sym min" "why why why why"; gap: 8px 12px; align-items: center; padding: 14px 16px; border-radius: 16px; color: var(--fg); text-decoration: none;
   background: linear-gradient(135deg, rgba(255, 90, 77, .1), rgba(255, 138, 0, .05)); border: 1px solid rgba(255, 90, 77, .3); }
@@ -1412,3 +1412,25 @@ section[data-tab] { gap: 16px; }
 .ss-felt > span { color: var(--mute); margin-right: 4px; }
 .ss-pill { position: fixed; left: 50%; bottom: calc(84px + env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 60; padding: 10px 18px; border-radius: 99px; background: var(--invert-bg); color: var(--invert-fg); font-weight: 700; text-decoration: none; box-shadow: 0 10px 30px rgba(0, 0, 0, .4); }
 @media (max-width: 640px) { .ss-step { grid-template-columns: 1fr auto; } .ss-step .ss-ph { grid-column: 1 / -1; } }
+
+/* ---------- Gradify Pro launch offer (kit/data/offer.js; renderOffer and offerCardHtml in main.js) ---------- */
+.offer-card { position: relative; display: grid; gap: 8px; margin-bottom: 18px; border: 1px solid transparent; background: linear-gradient(var(--panel-strong), var(--panel-strong)) padding-box, linear-gradient(135deg, #4641ff, #f055dd 35%, #ff5600 70%, #ffc002) border-box; }
+.offer-card h3 { margin: 0; padding-right: 36px; }
+.offer-card .sub { margin: 0; }
+.offer-x { position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--mute); cursor: pointer; font: 600 13px var(--sans); }
+.offer-x:hover, .offer-x:focus-visible { color: var(--fg); border-color: var(--line-strong); }
+.offer-kicker { font: 600 12px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: #ffc002; }
+.offer-code { font-family: var(--mono); letter-spacing: .12em; border: 1px dashed #f055dd; border-radius: 8px; padding: 1px 7px; color: var(--fg); }
+.offer-page { max-width: 760px; margin: 0 auto; display: grid; gap: 14px; }
+.offer-page h1 { margin: 0; font-size: clamp(28px, 4vw, 40px); letter-spacing: -.02em; }
+.offer-page > .sub { margin: 0; }
+.offer-perks { list-style: none; margin: 6px 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.offer-perks li { display: flex; gap: 12px; align-items: flex-start; padding: 16px; }
+.offer-perks li > svg { flex: none; width: 22px; height: 22px; color: #f055dd; }
+.offer-perks b { display: block; margin-bottom: 2px; }
+.offer-perks span { color: var(--mute); font-size: 14px; line-height: 1.45; }
+.offer-box { display: grid; gap: 8px; border: 1px solid transparent; background: linear-gradient(var(--panel-strong), var(--panel-strong)) padding-box, linear-gradient(135deg, #4641ff, #f055dd 35%, #ff5600 70%, #ffc002) border-box; }
+.offer-box .sub { margin: 0; }
+.offer-price { margin: 0; font-size: 18px; } .offer-price b { font-size: 40px; letter-spacing: -.02em; margin-right: 4px; }
+.offer-note { margin: 0 0 12px; padding: 10px 14px; border-radius: 12px; border: 1px dashed #f055dd; color: var(--mute); }
+.offer-note b { color: var(--fg); }

@@ -25,7 +25,7 @@ Deno.serve(async (req) => {
   const back = safeBack(body.from);
   // the learner's own row, read with their token (row-level security)
   const { data: sub } = await asUser.from("subscriptions").select("stripe_customer_id").maybeSingle();
-  if (!sub?.stripe_customer_id) return json(req, { error: "You don't have a Gradify Pro subscription yet." }, 404);
+  if (!sub?.stripe_customer_id) return json(req, { error: "You don't have a Gradify subscription yet." }, 404);
   try {
     const portal = await stripe(secret, "POST", "/billing_portal/sessions", { customer: sub.stripe_customer_id, return_url: returnUrl(SITE, back) });
     return json(req, { url: portal.url });

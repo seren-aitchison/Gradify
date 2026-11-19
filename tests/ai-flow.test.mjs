@@ -27,7 +27,7 @@ test("every refusal reason gives a clear message, the right status and what the 
   const base = { plan: "free", used: 5, allowance: 5, period_end: "2026-12-01T00:00:00Z" };
   const r = refusal({ ...base, reason: "allowance" }, "socratic");
   assert.equal(r.status, 429); assert.equal(r.body.reason, "allowance"); assert.equal(r.body.upgrade, true); assert.equal(r.body.feature, "tutor");
-  assert.equal(r.body.error, "You've used your 5 free AI tutor conversations this month. They reset on 1 December. Gradify Pro has many more.");
+  assert.equal(r.body.error, "You've used your 5 free AI tutor conversations this month. They reset on 1 December. Gradify Ultra has many more.");
   const p = refusal({ ...base, plan: "pro", used: 20, allowance: 20, reason: "allowance" }, "pack");
   assert.equal(p.body.upgrade, false);
   assert.equal(p.body.error, "You've used this month's 20 study packs. Your allowance resets on 1 December.");
