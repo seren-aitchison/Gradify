@@ -31,7 +31,7 @@ signed-in experience on top of Gradify's existing systems, never a second applic
 | Goals | The tour shows goals; the real profile has one learning goal and a daily XP goal, no goal records |
 | Calendar | Real `plan_blocks` for 7 days in the app; the month calendar, deadlines and events exist only in the tour |
 | Community | Tour only (made-up group and board); no friends, no social data |
-| Gradify Earth (whole life) | The life-wide planet is example data; the per-subject globes are real |
+| Gradify Earth (whole life) | The life-wide planet is example data; the per-subject globes are real, and a subject site's LifeOS Earth opens on the learner's own map |
 | Path / career | Course paths are real per course; a life-wide path is tour only |
 
 ### Needs connecting
