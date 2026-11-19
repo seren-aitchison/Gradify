@@ -421,8 +421,20 @@ function bodyHub(d, { map = false, cycle = false } = {}) {
     const words = note ? `<b class="gd-k">${esc(x)}</b>${A(note, "span", "gd-sub")}` : cycle && i === 0 ? `<b class="gd-k">${esc(x)}</b>` : `<b class="gd-k">${A(x)}</b>`;
     return `<li class="gd-item"${note ? " data-gd-row" : ""} style="--c:${c}">${cycle ? `${num(i, c)}<div>${words}</div>` : words}</li>`;
   }).join("");
-  const core = cycle ? "" : `<p class="gd-core">${esc(d.title)}</p>`;
+  const core = cycle ? ringView(d) : `<p class="gd-core">${esc(d.title)}</p>`;
   return `<div class="gd-hub${cycle ? " gd-cyc" : ""}">${core}<${map || cycle ? "ol" : "ul"} class="gd-branches${d.items.length === 4 ? " gd-four" : ""}">${li}</${map || cycle ? "ol" : "ul"}>${cycle ? `<p class="gd-loop"><span aria-hidden="true">↻</span> then back to 1, and round again</p>` : ""}</div>`;
+}
+// a cycle as a real loop (on a wide card): the stages round a ring, an arrow from each to the next, and the stage you
+// pick explained in the middle. On a narrow card, and while practising, the stages show as a list instead.
+function ringView(d) {
+  const n = d.items.length; if (n < 3 || n > 6) return "";
+  const X = 300, Y = 190, RX = 222, RY = 140, pt = (t) => [X + RX * Math.cos(t), Y + RY * Math.sin(t)], ang = (i) => -Math.PI / 2 + (i / n) * 2 * Math.PI;
+  const gap = n <= 4 ? 0.42 : 0.34;
+  const arcs = d.items.map((_, i) => { const [x1, y1] = pt(ang(i) + gap), [x2, y2] = pt(ang(i + 1) - gap); return `<path d="M${f1(x1)} ${f1(y1)} A${RX} ${RY} 0 0 1 ${f1(x2)} ${f1(y2)}" class="gd-rarc" style="--c:${ink(i)}" marker-end="url(#gdr-${n})"/>`; }).join("");
+  const nodes = d.items.map((x, i) => { const [cx, cy] = pt(ang(i)); return `<button type="button" class="gd-rnode" data-gd-ring="${i}" aria-pressed="false" style="left:${f1(cx / 6)}%;top:${f1(cy / 3.8)}%;--c:${ink(i)}">${num(i, ink(i))}<span>${esc(x)}</span></button>`; }).join("");
+  const notes = d.items.map((x, i) => `<template data-gd-note="${i}"><b class="gd-k" style="--c:${ink(i)}">${i + 1}. ${esc(x)}</b>${d.notes?.[i] ? `<span>${esc(d.notes[i])}</span>` : ""}<small>Then: ${esc(d.items[(i + 1) % n])} ${i === n - 1 ? "↻" : "→"}</small></template>`).join("");
+  return `<div class="gd-ringview"><svg viewBox="0 0 600 380" aria-hidden="true"><defs><marker id="gdr-${n}" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M1.5 1.5 8 5 1.5 8.5" fill="none" stroke="context-stroke" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs><ellipse cx="${X}" cy="${Y}" rx="${RX}" ry="${RY}" class="gd-rtrack"/>${arcs}</svg>
+    ${nodes}<div class="gd-rmid" aria-live="polite"><b>${esc(d.title)}</b><span>Tap a stage to read it, or step through the loop.</span></div>${notes}</div>`;
 }
 function bodyFlow(d) {
   return `<ol class="gd-flow${d.items.length <= 3 ? " gd-row" : ""}">${d.items.map((s, i) => `<li style="--c:${ink(i)}">${num(i, ink(i))}<p class="gd-item">${A(s)}</p></li>`).join("")}</ol>`;
@@ -786,9 +798,12 @@ function show(fig, i) {
   // what's come before stays; what's still to come is hidden, so you can say it before you see it
   ss.forEach((s, k) => { s.classList.toggle("on", k === i); s.classList.toggle("done", cyc ? false : k < i); s.classList.toggle("todo", cyc ? false : k > i); });
   fig.querySelectorAll(".gd-ringd").forEach((d) => d.classList.toggle("on", Number(d.dataset.i) === i));
+  if (cyc) ringPick(fig, i);
   const k = ss[i].querySelector(".gd-k"), sub = ss[i].querySelector(".gd-sub");
   const txt = k && sub ? `${k.textContent.trim()}: ${sub.textContent.trim()}` : (ss[i].querySelector(".gd-item, div") || ss[i]).textContent.trim();
-  fig.querySelector(".gd-say").textContent = `${cyc ? "Stage" : "Step"} ${i + 1} of ${n}: ${txt}`;
+  // with the ring showing, its middle already says the stage: the bar just counts
+  const ringOn = cyc && fig.querySelector(".gd-ringview") && getComputedStyle(fig.querySelector(".gd-ringview")).display !== "none";
+  fig.querySelector(".gd-say").textContent = ringOn ? `Stage ${i + 1} of ${n}` : `${cyc ? "Stage" : "Step"} ${i + 1} of ${n}: ${txt}`;
   const next = fig.querySelector("[data-gd-next]"), prev = fig.querySelector("[data-gd-prev]");
   if (i === n - 1) done(fig, "step", false);
   next.textContent = cyc ? (i === n - 1 ? "Back to 1 ↻" : "Next →") : i === n - 1 ? "Start again" : `What's step ${i + 2}? →`;
@@ -797,6 +812,13 @@ function show(fig, i) {
 }
 // a wrong try: a short shake and a red edge, then back to normal
 const flash = (el) => { el.classList.remove("gd-no"); void el.offsetWidth; el.classList.add("gd-no"); setTimeout(() => el.classList.remove("gd-no"), 700); };
+// the ring: the stage picked lights up, and the middle explains it
+function ringPick(fig, i) {
+  const mid = fig.querySelector(".gd-rmid"), tpl = fig.querySelector(`template[data-gd-note="${i}"]`); if (!mid || !tpl) return;
+  fig.querySelectorAll(".gd-rnode").forEach((b) => { const on = Number(b.dataset.gdRing) === i; b.setAttribute("aria-pressed", String(on)); b.classList.toggle("on", on); });
+  fig.querySelectorAll(".gd-rarc").forEach((a, k) => a.classList.toggle("on", k === i));
+  mid.innerHTML = tpl.innerHTML; mid.classList.remove("gd-in"); void mid.offsetWidth; mid.classList.add("gd-in");
+}
 // Put in order: each tap fills the next place, if it's the right one
 const orderItems = (fig) => [...fig.querySelectorAll(".gd-flow > li, .gd-time > li")];
 function orderTap(fig, chip) {
@@ -873,6 +895,7 @@ if (typeof document !== "undefined" && !globalThis.__gdWired) {
     const a = t.closest(".gd.quiz .gd-a:not(.seen)"); if (a) { e.preventDefault(); reveal(a); return; }
     if (t.closest("[data-gd-next]")) { const i = Number(fig.dataset.step) + 1, n = steps(fig).length; show(fig, fig.dataset.kind !== "cycle" && i >= n ? 0 : i); return; }
     if (t.closest("[data-gd-prev]")) { show(fig, Number(fig.dataset.step) - 1); return; }
+    const rn = t.closest("[data-gd-ring]"); if (rn) { if (fig.dataset.mode === "step") show(fig, Number(rn.dataset.gdRing)); else ringPick(fig, Number(rn.dataset.gdRing)); return; }
     const oc = t.closest("[data-gd-ochip]"); if (oc) { orderTap(fig, oc); return; }
     const fill = t.closest("[data-gd-fill]");
     if (fill) {

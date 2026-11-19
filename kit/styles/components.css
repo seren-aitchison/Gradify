@@ -1324,6 +1324,28 @@ html.gd-vt::view-transition-old(root), html.gd-vt::view-transition-new(root) { a
 .gd-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) { .gd-done.gd-fresh { animation: none; } }
 
+/* a cycle as a loop: the ring on a wide card, the list on a narrow one or while practising (except stepping round it) */
+.gd-ringview { display: none; }
+@container gd (min-width: 640px) {
+  .gd:is(:not([data-mode]), [data-mode="step"]) .gd-ringview { display: block; position: relative; aspect-ratio: 600 / 380; margin: 4px 0 2px; }
+  .gd:is(:not([data-mode]), [data-mode="step"]) .gd-cyc:has(.gd-ringview) :is(.gd-branches, .gd-loop) { display: none; }
+  .gd[data-mode="step"] .gd-cyc:has(.gd-ringview) ~ .gd-stepbar .gd-ring, .gd[data-mode="step"] .gd-body:has(.gd-ringview) + .gd-stepbar .gd-ring { display: none; }
+}
+.gd-ringview svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.gd-rtrack { fill: none; stroke: var(--gd-line); stroke-width: 10; }
+.gd-rarc { fill: none; stroke: color-mix(in srgb, var(--c) 70%, var(--gd-soft)); stroke-width: 2.6; stroke-linecap: round; transition: stroke-width .2s, stroke .2s; }
+.gd-rarc.on { stroke: var(--c); stroke-width: 4; }
+.gd-rnode { all: unset; box-sizing: border-box; position: absolute; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 8px; max-width: 30%; padding: 8px 12px 8px 8px; border-radius: 14px; cursor: pointer;
+  font-weight: 750; font-size: .95em; line-height: 1.25; color: color-mix(in oklab, var(--c) 55%, var(--gd-ink)); background: color-mix(in srgb, var(--c) 12%, var(--gd-bg)); border: 1.5px solid color-mix(in srgb, var(--c) 55%, transparent);
+  box-shadow: 0 8px 20px -14px rgba(0, 0, 0, .6); transition: transform .2s, box-shadow .2s, background .2s; }
+.gd-rnode:hover { transform: translate(-50%, -50%) scale(1.04); }
+.gd-rnode.on { background: color-mix(in srgb, var(--c) 24%, var(--gd-bg)); box-shadow: 0 0 0 2px var(--c), 0 12px 30px -12px var(--c); transform: translate(-50%, -50%) scale(1.06); }
+.gd-rnode:focus-visible { outline: 2px solid var(--gd-ink); outline-offset: 3px; }
+.gd-rmid { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 44%; max-height: 52%; overflow: auto; display: grid; gap: 6px; text-align: center; font-size: .94em; line-height: 1.45; }
+.gd-rmid b { font-size: 1.04em; } .gd-rmid span { color: var(--gd-soft); } .gd-rmid small { font-size: 12px; font-weight: 650; color: var(--gd-soft); }
+.gd-rmid.gd-in { animation: gd-seen .3s ease-out; }
+@media (prefers-reduced-motion: reduce) { .gd-rnode, .gd-rarc { transition: none; } .gd-rmid.gd-in { animation: none; } }
+
 /* Put in order: the place to fill next is outlined; filled places lock in green */
 .gd.ordering :is(.gd-flow, .gd-time) > li.gd-next .gd-item { box-shadow: inset 4px 0 0 var(--c), 0 0 0 2px var(--a); }
 .gd.ordering :is(.gd-flow, .gd-time) > li.gd-ok .gd-item { box-shadow: inset 4px 0 0 #16a34a, 0 0 0 1.5px #16a34a; }
