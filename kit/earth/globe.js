@@ -111,6 +111,8 @@ export function createGlobe(canvas, { onPick, onHover }) {
   const copy = (layer) => { ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.drawImage(layer, 0, 0); ctx.restore(); };
 
   function draw(now) {
+    // hidden (a view that isn't open, a collapsed panel): nothing to draw, and a zero-sized layer can't be copied
+    if (!(W > 0 && H > 0 && R > 0)) return;
     const t = (now - t0) / 1000;
     ctx.clearRect(0, 0, W, H);
     const r = R * zoom;
