@@ -1,5 +1,5 @@
-Subject: Try Gradify Pro: £5 for your first month, for 48 hours
-Preheader: Use code GRADIFY48 by {{OFFER_ENDS}}. Then £10 a month, cancel any time.
+Subject: Try Gradify Pro: £5 for your first month, until 22 November
+Preheader: Use code GRADIFY48 by Sunday 22 November 2026. Then £10 a month, cancel any time.
 
 ----------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ I'm Seren, and I build Gradify: a place to learn and revise that turns your note
 
 Most of Gradify is free, with no card needed: every course on every Gradify site, flashcards with spaced repetition, your notes and your progress.
 
-Gradify Pro is the part that organises your learning for you, and for the next 48 hours your first month is £5:
+Gradify Pro is the part that organises your learning for you, and until Sunday 22 November 2026 your first month is £5:
 
 - Smart Plan autopilot. Your week planned for you, and kept on track when life gets in the way.
 - Readiness forecasts and revision recommendations. Your cards ordered by what matters most and what you're starting to forget.
@@ -20,12 +20,12 @@ Gradify Pro is the part that organises your learning for you, and for the next 4
 - Every device. Your notes, flashcards and progress up to date wherever you study.
 
 
-LAUNCH OFFER, 48 HOURS
+OFFER ENDS 22 NOVEMBER
 £5 for your first month of Gradify Pro
 
 Code: GRADIFY48
 
-Ends {{OFFER_ENDS}}. One use per person, for your first Gradify Pro subscription.
+Ends Sunday 22 November 2026. One use per person, for your first Gradify Pro subscription.
 
 Get Gradify Pro:
 https://getgradify.com/pricing.html?utm_source=email&utm_medium=email&utm_campaign=pro_launch
@@ -52,5 +52,3 @@ Unsubscribe: {{UNSUBSCRIBE_URL}}
 Privacy: https://getgradify.com/privacy.html
 Terms: https://getgradify.com/terms.html
 Contact: hello@getgradify.com
-
-Gradify is run by Gradify Ltd, a company registered in {{REGISTERED_IN}}, company number {{COMPANY_NUMBER}}. Registered office: {{REGISTERED_OFFICE}}.

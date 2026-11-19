@@ -2,8 +2,7 @@
 Run from the repo root: python3 campaign/plus-launch/export.py
 - Drops the authoring comment, and the Discord parts while there's no invite (DISCORD_URL below).
 - Fills the reason line (WHY): this is a one-off outreach email, not a reply to a sign-up.
-- Leaves the five values only you can give as {{...}}: OFFER_ENDS, UNSUBSCRIBE_URL, REGISTERED_IN, COMPANY_NUMBER,
-  REGISTERED_OFFICE. Fill them here (FILL) and run again, or in the sending service.
+- Leaves UNSUBSCRIBE_URL as {{...}}: fill it here (FILL) and run again, or in the sending service.
 - Writes an .eml for test sends: open it in Apple Mail, then Message > Send Again."""
 import re, os
 from email.message import EmailMessage
@@ -14,8 +13,8 @@ OUT = os.path.join(HERE, "export")
 DISCORD_URL = ""  # e.g. "https://discord.gg/xxxx"; empty drops the Discord parts
 WHY = ("This is a one-off email from Gradify. We won't email you again unless you sign up. If you'd rather not "
        "hear from us at all, unsubscribe below and we'll remove your address.")
-FILL = {}  # e.g. {"OFFER_ENDS": "Thursday 19 November at 6pm (UK time)", "COMPANY_NUMBER": "12345678"}
-SUBJECT = "Try Gradify Pro: £5 for your first month, for 48 hours"
+FILL = {}  # e.g. {"UNSUBSCRIBE_URL": "https://..."}
+SUBJECT = "Try Gradify Pro: £5 for your first month, until 22 November"
 
 def fill(s):
     s = s.replace("{{WHY_YOU_GET_THIS}}", WHY)
