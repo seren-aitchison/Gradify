@@ -1346,6 +1346,10 @@ html.gd-vt::view-transition-old(root), html.gd-vt::view-transition-new(root) { a
 .gd-rmid { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 44%; max-height: 52%; overflow: auto; display: grid; gap: 6px; text-align: center; font-size: .94em; line-height: 1.45; }
 .gd-rmid b { font-size: 1.04em; } .gd-rmid span { color: var(--gd-soft); } .gd-rmid small { font-size: 12px; font-weight: 650; color: var(--gd-soft); }
 .gd-rmid.gd-in { animation: gd-seen .3s ease-out; }
+/* stepping round the ring: stages not reached yet show their number only, and the middle doesn't name what comes next */
+.gd.stepping .gd-rnode.todo > span:not(.gd-n) { visibility: hidden; }
+.gd.stepping .gd-rnode.todo { background: repeating-linear-gradient(-45deg, color-mix(in srgb, var(--c) 22%, var(--gd-bg)) 0 7px, color-mix(in srgb, var(--c) 9%, var(--gd-bg)) 7px 14px); }
+.gd.stepping .gd-rmid small { display: none; }
 @media (prefers-reduced-motion: reduce) { .gd-rnode, .gd-rarc { transition: none; } .gd-rmid.gd-in { animation: none; } }
 
 /* Put in order: the place to fill next is outlined; filled places lock in green */

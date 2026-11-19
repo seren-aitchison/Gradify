@@ -726,7 +726,7 @@ const MODES = {
       fig.querySelector(".gd-body").insertAdjacentHTML("afterend", `<div class="gd-play gd-stepbar">${ring}<button type="button" class="gd-btn gd-ghost" data-gd-prev aria-label="Previous step">←</button><p class="gd-say" aria-live="polite"></p><button type="button" class="gd-btn gd-main" data-gd-next>Next →</button></div>`);
       show(fig, 0); fig.querySelector("[data-gd-next]").focus({ preventScroll: true });
     },
-    off(fig) { fig.classList.remove("stepping"); delete fig.dataset.seen; fig.querySelector(".gd-stepbar")?.remove(); steps(fig).forEach((s) => s.classList.remove("on", "done", "todo")); },
+    off(fig) { fig.classList.remove("stepping"); delete fig.dataset.seen; fig.querySelectorAll(".gd-rnode").forEach((nd) => { nd.classList.remove("todo"); nd.removeAttribute("aria-label"); }); fig.querySelector(".gd-stepbar")?.remove(); steps(fig).forEach((s) => s.classList.remove("on", "done", "todo")); },
   },
   match: {
     on(fig) {
@@ -801,6 +801,8 @@ function show(fig, i) {
   const seen = new Set((fig.dataset.seen || "").split(",").filter(Boolean).map(Number)); seen.add(i); fig.dataset.seen = [...seen].join(",");
   ss.forEach((s, k) => { s.classList.toggle("on", k === i); s.classList.toggle("done", cyc ? false : k < i); s.classList.toggle("todo", cyc ? !seen.has(k) : k > i); });
   fig.querySelectorAll(".gd-ringd").forEach((d) => d.classList.toggle("on", Number(d.dataset.i) === i));
+  // the ring too: a stage not reached yet keeps its number but not its name
+  fig.querySelectorAll(".gd-rnode").forEach((nd) => { const k = Number(nd.dataset.gdRing), hide = cyc && !seen.has(k); nd.classList.toggle("todo", hide); hide ? nd.setAttribute("aria-label", `Stage ${k + 1}, not reached yet`) : nd.removeAttribute("aria-label"); });
   if (cyc) ringPick(fig, i);
   const k = ss[i].querySelector(".gd-k"), sub = ss[i].querySelector(".gd-sub");
   const txt = k && sub ? `${k.textContent.trim()}: ${sub.textContent.trim()}` : (ss[i].querySelector(".gd-item, div") || ss[i]).textContent.trim();
