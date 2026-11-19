@@ -557,6 +557,7 @@ export function glassDiagram(d, { size = "md", seed = d?.title, caption = true, 
 }
 
 // ---------- the small cards, dotted through the notes ----------
+// Fill the gap: a sentence with its bold term taken out, the term and two of the lesson's other terms to choose from.
 // Numbers to know: the values a section turns on (a resting potential, a dose, a percentage, a year), each in its own
 // sentence from the notes, with the number covered to recall. Quick check: one of the lesson's own questions, beside
 // the section it tests. Every word is the notes' own; a section gets one at most, and a lesson four at most.
@@ -586,10 +587,10 @@ const sectionsOf = (L) => {
 const textOf = (b) => (b.t === "ul" ? b.items.join(" ") : b.t === "eq" ? b.rows.map((r) => r.join(" ")).join(" ") : b.t === "ex" ? [b.x, ...b.steps].join(" ") : b.x || "");
 const bag = (t) => new Set((plain(t).toLowerCase().match(/[a-z]{5,}/g) || []));
 
-/** The small cards for a lesson: [{ kind: "numbers" | "check", at, … }], `at` the block each sits beside. */
+/** The small cards for a lesson: [{ kind: "numbers" | "check" | "gap", at, … }], `at` the last block of the section each checks. */
 export function minisFor(L, { skipQ = [], max = 4 } = {}) {
   const secs = sectionsOf(L), cards = (L?.cards || []).filter(([q]) => !skipQ.some((x) => x && plain(q).startsWith(x)));
-  const used = new Set(), out = [];
+  const used = new Set(), out = [], bolds = boldTerms(L);
   secs.forEach((sec, k) => {
     const blocks = sec.blocks.map((i) => L.blocks[i]);
     // numbers: one line for each sentence that holds one, from the section's prose and lists
@@ -606,28 +607,58 @@ export function minisFor(L, { skipQ = [], max = 4 } = {}) {
     let best = -1, score = 1;
     cards.forEach(([q, a], j) => { if (used.has(j)) return; const s = [...bag(`${q} ${a}`)].filter((w) => sb.has(w)).length; if (s > score) { score = s; best = j; } });
     const check = best >= 0 ? { kind: "check", q: cut(cards[best][0], 200), a: cut(cards[best][1], 260), j: best } : null;
+    // a gap to fill: a sentence with the term the notes put in bold taken out, and three to choose from
+    const gaps = [];
+    for (const b of blocks) if (b.t === "p") for (const raw of rawSentences(b.x)) {
+      const g = gapLine(raw, bolds); if (g && !gaps.some((x) => x.ans.toLowerCase() === g.ans.toLowerCase())) gaps.push(g);
+    }
+    const gap = gaps.length ? { kind: "gap", title: plain(sec.heading || L.title || ""), items: gaps.slice(0, 2) } : null;
     // one a section, taking turns, so the lesson gets a mix
-    const pickNow = (k % 2 ? [check, nums] : [nums, check]).find(Boolean);
+    const pickNow = [[nums, check, gap], [check, gap, nums], [gap, nums, check]][k % 3].find(Boolean);
     if (!pickNow) return;
     if (pickNow.kind === "check") used.add(pickNow.j);
-    // beside the section's first paragraph, so the words around it wrap round it
-    const first = sec.blocks.find((i) => L.blocks[i].t === "p") ?? sec.blocks[0];
+    // at the end of the section: read it, then check yourself on it
     const { j, ...m } = pickNow;
-    out.push({ ...m, at: first });
+    out.push({ ...m, at: sec.blocks.at(-1) });
   });
   return out.slice(0, max);
 }
-const MINI_ICON = { numbers: '<path d="M5 9h14M5 15h14M10 4 8 20M16 4l-2 16"/>', check: ICON.recall };
+// the terms a lesson puts in bold in its prose: the gaps, and the other choices for each gap
+function boldTerms(L) {
+  const out = new Map();
+  for (const b of L?.blocks || []) if (b.t === "p") for (const m of String(b.x).matchAll(/\*\*([^*]{3,40})\*\*/g)) {
+    const t = plain(m[1]); if (/[a-z]/i.test(t) && !out.has(t.toLowerCase())) out.set(t.toLowerCase(), t);
+  }
+  return [...out.values()];
+}
+const rawSentences = (t) => String(t ?? "").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1").split(/(?<=[a-z0-9)%*][.!?])\s+(?=[A-Z*])/).map((x) => x.trim()).filter(Boolean);
+function gapLine(raw, bolds) {
+  const m = raw.match(/\*\*([^*]{3,40})\*\*/); if (!m) return null;
+  const ans = plain(m[1]), pre = plain(raw.slice(0, m.index)), post = plain(raw.slice(m.index + m[0].length));
+  const len = pre.length + ans.length + post.length;
+  // the sentence has to say enough round the gap to work it out, and the lesson has to have other terms to choose from
+  if (len < 40 || len > 260 || pre.length + post.length < 25) return null;
+  const others = bolds.filter((t) => t.toLowerCase() !== ans.toLowerCase() && !raw.toLowerCase().includes(t.toLowerCase()));
+  if (others.length < 2) return null;
+  const pick = others.map((t) => [hash(`${ans}|${t}`), t]).sort((a, b) => a[0] - b[0]).slice(0, 2).map(([, t]) => t);
+  const choices = [ans, ...pick].map((t) => [hash(`${raw}|${t}`), t]).sort((a, b) => a[0] - b[0]).map(([, t]) => t);
+  return { pre, ans, post, choices };
+}
+const MINI_ICON = { numbers: '<path d="M5 9h14M5 15h14M10 4 8 20M16 4l-2 16"/>', check: ICON.recall, gap: '<path d="M4 7h4M16 7h4M4 17h16M10 4.5h4v5h-4z"/>' };
 /** A small card, as HTML: always starts covered, so it asks before it tells. */
 export function miniCard(m) {
   if (!m) return "";
   const h = hash(m.q || m.title || m.kind), [a, b] = PAIRS[h % PAIRS.length], c = INK[h % INK.length];
   const btn = (label) => `role="button" tabindex="0" aria-label="${label}"`;
   const head = (name, extra = "") => `<figcaption class="gd-mhead"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${MINI_ICON[m.kind]}</svg><span>${name}</span>${extra}</figcaption>`;
+  if (m.kind === "gap") return `<figure class="gd gd-mini quiz" data-mode="quiz" data-kind="gap" style="--a:${a};--b:${b};--c:${c}">${head("Fill the gap")}
+    <ul class="gd-nums gd-gaps">${m.items.map((g, i) => `<li style="--c:${INK[(h + i) % INK.length]}"><p>${esc(g.pre)} <span class="gd-a gd-numa gd-gapa" ${btn("Hidden word: reveal")}>${esc(g.ans)}</span> ${esc(g.post)}</p>
+      <span class="gd-opts" role="group" aria-label="Which word fits the gap?">${g.choices.map((t) => `<button type="button" class="gd-chip" data-gd-fill="${t === g.ans ? 1 : 0}">${esc(t)}</button>`).join("")}</span></li>`).join("")}</ul>
+    <p class="gd-mhint">Which word fits? Tap one, or tap the gap to see it.</p></figure>`;
   if (m.kind === "check") return `<figure class="gd gd-mini quiz" data-mode="quiz" data-kind="check" style="--a:${a};--b:${b};--c:${c}">${head("Quick check")}
     <p class="gd-mq">${esc(m.q)}</p><p class="gd-a gd-ma" ${btn("Hidden answer: reveal")}>${esc(m.a)}</p><p class="gd-mhint">Answer it in your head, then tap the band.</p></figure>`;
   return `<figure class="gd gd-mini quiz" data-mode="quiz" data-kind="numbers" style="--a:${a};--b:${b};--c:${c}">${head("Numbers to know", `<button type="button" class="gd-mbtn" data-gd-mode="quiz" aria-pressed="true">Show all</button>`)}
-    <ul class="gd-nums">${m.items.map((l, i) => `<li style="--c:${INK[(h + i) % INK.length]}">${esc(l.pre)} <span class="gd-a gd-numa" ${btn("Hidden number: reveal")}>${esc(l.n)}</span> ${esc(l.post)}</li>`).join("")}</ul>
+    <ul class="gd-nums">${m.items.map((l, i) => `<li style="--c:${INK[(h + i) % INK.length]}">${esc(l.pre)} <span class="gd-a gd-numa" ${btn("Hidden number: reveal")}>${esc(l.n)}</span> ${esc(l.post)}${/^\d+(\.\d+)?%$/.test(l.n) && parseFloat(l.n) <= 100 ? `<span class="gd-bar" aria-hidden="true"><i style="width:${parseFloat(l.n)}%"></i></span>` : ""}</li>`).join("")}</ul>
     <p class="gd-mhint">What's each number? Say it, then tap to check.</p></figure>`;
 }
 
@@ -812,6 +843,13 @@ if (typeof document !== "undefined" && !globalThis.__gdWired) {
     if (t.closest("[data-gd-next]")) { const i = Number(fig.dataset.step) + 1, n = steps(fig).length; show(fig, fig.dataset.kind !== "cycle" && i >= n ? 0 : i); return; }
     if (t.closest("[data-gd-prev]")) { show(fig, Number(fig.dataset.step) - 1); return; }
     const oc = t.closest("[data-gd-ochip]"); if (oc) { orderTap(fig, oc); return; }
+    const fill = t.closest("[data-gd-fill]");
+    if (fill) {
+      const li = fill.closest("li"), gapEl = li.querySelector(".gd-a");
+      if (fill.dataset.gdFill === "1") { fill.classList.add("gd-ok"); li.querySelectorAll("[data-gd-fill]").forEach((b) => (b.disabled = true)); if (!gapEl.classList.contains("seen")) reveal(gapEl); }
+      else { flash(fill); fill.disabled = true; }
+      return;
+    }
     const chip = t.closest(".gd-chip"); if (chip) { chooseChip(fig, chip); return; }
     const row = t.closest(".matching [data-gd-row]:not(.gd-ok)"); if (row) { placeChip(fig, row); return; }
     const opt = t.closest("[data-gd-opt]");

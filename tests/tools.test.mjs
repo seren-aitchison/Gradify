@@ -167,7 +167,7 @@ test("each kind of card has the ways to practise that suit it, and the small car
   assert.match(tl, /left:4\.0%/); assert.match(tl, /left:96\.0%/); assert.match(tl, /90 years/);
   // the small cards: every word from the notes, at most one a section, and they start covered
   const flat = (t) => String(t).replace(/\*\*|__|`/g, "").replace(/\^\{([^}]*)\}/g, "^$1").replace(/_\{([^}]*)\}/g, "_$1").replace(/\s+/g, " ");
-  let seen = 0;
+  let seen = 0; const kinds = new Set();
   for (const course of ["medicine", "biology", "physics", "history", "nursing"]) {
     const notes = (await import(`../kit/courses/${course}/notes/u01.js`)).default, all = flat(notes);
     for (const L of parseNotes(notes).slice(0, 6)) {
@@ -177,13 +177,15 @@ test("each kind of card has the ways to practise that suit it, and the small car
       for (const m of ms) {
         seen++;
         assert.ok(L.blocks[m.at] && L.blocks[m.at].t !== "h");
-        const bits = m.kind === "check" ? [m.q, m.a] : m.items.flatMap((l) => [l.pre, l.n, l.post]);
+        const bits = m.kind === "check" ? [m.q, m.a] : m.kind === "gap" ? m.items.flatMap((g) => [g.pre, g.ans, g.post, ...g.choices]) : m.items.flatMap((l) => [l.pre, l.n, l.post]);
+        if (m.kind === "gap") for (const g of m.items) { assert.equal(g.choices.length, 3); assert.ok(g.choices.includes(g.ans), "the right word is one of the choices"); kinds.add("gap"); }
         for (const w of bits) { const bit = w.replace(/^…|…$/g, "").replace(/[.,;:]+$/, "").trim(); if (bit.length > 2) assert.ok(all.includes(bit), `${course} ${m.kind}: "${bit}" is in the notes`); }
         assert.match(miniCard(m), /class="gd gd-mini quiz"/);
       }
     }
   }
   assert.ok(seen >= 10, "lessons get small cards");
+  assert.ok(kinds.has("gap"), "some sections get a gap to fill");
 });
 
 test("a Gradify AI pack (as from a photo of notes) becomes cards, with its cloze cards kept as cloze", () => {

@@ -1376,12 +1376,16 @@ html.gd-vt::view-transition-old(root), html.gd-vt::view-transition-new(root) { a
 .gd-numa { font: 800 1.05em/1.3 var(--mono, monospace); padding: 0 4px; border-radius: 5px; color: color-mix(in oklab, var(--c) 62%, var(--gd-ink)); background: color-mix(in srgb, var(--c) 12%, transparent); white-space: nowrap; }
 .gd.quiz .gd-numa:not(.seen) { display: inline-block; min-width: 4.5em; }
 .gd-mini:has(.gd-a.seen) .gd-mhint, .gd-mini:not(.quiz) .gd-mhint { visibility: hidden; height: 0; }
-/* on a wide screen they sit beside the text, which wraps round them */
-@media (min-width: 1180px) {
-  .co-read .co-prose .gd.gd-mini { float: right; clear: right; width: 290px; margin: 4px -8px 16px 26px; font-size: 14px; }
-  .co-read .co-prose section::after { content: ""; display: block; clear: both; }
-  .co-read .co-prose .gd-md, .co-read .co-prose .co-ex, .co-read .co-prose .co-eq { clear: both; }
-}
+/* at the end of a section: compact, not the full width of the notes */
+.co-read .co-prose .gd.gd-mini { max-width: 640px; }
+.gd.gd-mini.gd-mini .gd-gaps li { display: grid; gap: 7px; }
+.gd-opts { display: flex; flex-wrap: wrap; gap: 6px; }
+.gd-opts .gd-chip { padding: 6px 11px; font-size: 13px; }
+.gd-opts .gd-chip:disabled { opacity: .45; cursor: default; }
+.gd-opts .gd-chip.gd-ok { opacity: 1; border-color: #16a34a; background: color-mix(in srgb, #16a34a 16%, var(--gd-bg)); }
+.gd-bar { display: block; height: 7px; margin-top: 6px; border-radius: 99px; background: var(--gd-line); overflow: hidden; }
+.gd-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--c), color-mix(in srgb, var(--c) 60%, #fff)); transition: width .6s cubic-bezier(.2, .8, .2, 1); }
+.gd.quiz li:has(.gd-numa:not(.seen)) .gd-bar i { width: 0 !important; }
 @media (prefers-reduced-motion: reduce) { .gd [data-gd-row].gd-no { animation: none; } .gd-flow > li, .gd-cyc .gd-branches > li { transition: none; } }
 @media print { .gd-play, .gd-mbtn, .gd-mhint, .gd-rate { display: none !important; } .gd .gd-slot { color: inherit !important; border: 0; } .gd.picking .gd-body { display: block !important; } }
 
